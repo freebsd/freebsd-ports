@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-MAT
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,10 +32,6 @@ RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.29:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .else
 BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
 RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
-.endif
-
-.if ${PERL_LEVEL} >= 502200
-BROKEN=		fails to build with Perl 5.22 or above, see https://rt.cpan.org/Public/Bug/Display.html?id=100458 for further information
 .endif
 
 post-install:
