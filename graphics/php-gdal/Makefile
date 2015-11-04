@@ -15,16 +15,16 @@ COMMENT=	PHP binding for GDAL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/swig3.0:${PORTSDIR}/devel/swig30
+BUILD_DEPENDS=	swig3.0:${PORTSDIR}/devel/swig30
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 
 ALL_TARGET=	php_gdal.so php_gdalconst.so php_ogr.so php_osr.so
-CFLAGS+=	-I${LOCALBASE}/include -fPIC
+CFLAGS+=	-fPIC
 MAKEFILE=	GNUmakefile
 PHP_MOD_NAME=	php_${PORTNAME}
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
-USES=		gmake tar:xz
+USES=		gmake localbase tar:xz
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/php
 
