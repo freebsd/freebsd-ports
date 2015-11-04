@@ -28,11 +28,11 @@ USES=		gmake iconv libtool pathfix pkgconfig
 
 PORTDOCS=	*
 
-PST2DII_BUILD_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+PST2DII_BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 PST2DII_CONFIGURE_OFF=	--enable-dii=no
 PST2DII_CONFIGURE_ON=	--enable-dii=yes
 PST2DII_LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
-PST2DII_RUN_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+PST2DII_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 post-patch:
 	@${GREP} -lr malloc.h ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g'
