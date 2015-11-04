@@ -29,28 +29,24 @@ CONFIGURE_ARGS=	--disable-python-bindings \
 		--enable-app \
 		--enable-examples \
 		--with-spdylay
-CONFIGURE_ENV=	LIBEV_CFLAGS="-I${LOCALBASE}/include" \
-		LIBEV_LIBS="-L${LOCALBASE}/lib -lev" \
-		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
 		ZLIB_CFLAGS="-I${INCLUDEDIR}" \
 		ZLIB_LIBS="-L${LIBDIR} -lz"
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-LIBS+=		-L${LOCALBASE}/lib -lev
 USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USES=		compiler:c++11-lib gmake libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib gmake libtool localbase pathfix pkgconfig tar:xz
 
 PORTDATA=	fetch-ocsp-response
 PORTDOCS=	*
 
 ASIO_BUILD_DEPENDS=	boost-libs>=1.54.0:${PORTSDIR}/devel/boost-libs
 ASIO_CONFIGURE_OFF=	--with-boost=no
-ASIO_CONFIGURE_ON=	--enable-asio-lib --with-boost=${LOCALBASE} --with-boost-asio --with-boost-system --with-boost-thread
+ASIO_CONFIGURE_ON=	--enable-asio-lib --with-boost-asio --with-boost-system --with-boost-thread
 ASIO_LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 ASIO_RUN_DEPENDS=	boost-libs>=1.54.0:${PORTSDIR}/devel/boost-libs
 HPACK_CONFIGURE_ENABLE=	hpack-tools
