@@ -114,6 +114,7 @@ DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 BIN_DISTFILES:=		${DISTFILES}
 SRC_DISTFILES?=		${DISTNAME}${SRC_SUFX}:SOURCE
 EXTRACT_ONLY?=		${BIN_DISTFILES:C/:[^:]+$//}
+WRKSRC:=		${WRKSRC:S/-${RPMVERSION}$//}
 
 .	if defined(PACKAGE_BUILDING)
 DISTFILES+=		${SRC_DISTFILES}
@@ -175,7 +176,7 @@ pre-install: linux-rpm-generate-plist
 .  if !target(linux-rpm-generate-plist)
 linux-rpm-generate-plist:
 	cd ${WRKSRC} && \
-	${FIND} * ! -path "stage/*" ! -type d | ${SORT} > ${PLIST}
+	${FIND} * ! -type d | ${SORT} > ${PLIST}
 .	endif
 .  endif
 
@@ -189,7 +190,7 @@ do-install:
 .	if ${BRANDELF_FILES}
 		@cd ${WRKSRC} && ${BRANDELF} -t Linux ${BRANDELF_FILES}
 .	endif
-	cd ${WRKSRC} && ${FIND} * ! -path "stage*" -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/{}" \;
-	cd ${WRKSRC} && ${FIND} * ! -path "stage/*" ! -type d | ${CPIO} -pm -R root:wheel ${STAGEDIR}${PREFIX}
+	cd ${WRKSRC} && ${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/{}" \;
+	cd ${WRKSRC} && ${FIND} * ! -type d | ${CPIO} -pm -R root:wheel ${STAGEDIR}${PREFIX}
 .  endif
 .endif
