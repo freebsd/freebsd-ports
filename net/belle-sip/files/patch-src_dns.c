@@ -1,6 +1,6 @@
---- src/dns.c.orig	2014-08-16 15:34:00.457977967 +0600
-+++ src/dns.c	2014-08-16 15:34:32.647973864 +0600
-@@ -4306,6 +4306,7 @@
+--- src/dns.c.orig	2015-10-19 11:43:47 UTC
++++ src/dns.c
+@@ -4345,6 +4345,7 @@ int dns_resconf_loadfromresolv(struct dn
  	union res_sockaddr_union addresses[3];
  	int i,error;
  

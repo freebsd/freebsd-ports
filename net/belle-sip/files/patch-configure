@@ -1,4 +1,4 @@
---- configure.orig	2015-03-11 16:44:12 UTC
+--- configure.orig	2015-11-02 13:36:49 UTC
 +++ configure
 @@ -16787,10 +16787,10 @@ libresolv_have_res_get_servers=no
  resolv_h_hav_res_ndestroy=no
