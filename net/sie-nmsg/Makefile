@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sie-nmsg
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	net dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -17,8 +17,6 @@ LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
 
 GNU_CONFIGURE=	yes
 USES=	gmake libtool pathfix pkgconfig
-
-PORTSCOUT=	${MASTER_SITES:N*FreeBSD*:S/^https/site:http/}
 
 INSTALL_TARGET=	install-strip
 
