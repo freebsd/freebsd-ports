@@ -3,6 +3,7 @@
 
 PORTNAME=	znc
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/ \
 		http://znc.in/releases/archive/
@@ -11,6 +12,7 @@ MAINTAINER=	jase@FreeBSD.org
 COMMENT=	Advanced IRC bouncer
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	znc
