@@ -25,11 +25,11 @@
 %%WWWDIR%%/example.php
 %%WWWDIR%%/log
 %%WWWDIR%%/plurk_api.php
-@dirrm %%WWWDIR%%/documents/php-plurk-api
-@dirrm %%WWWDIR%%/documents/media/images
-@dirrm %%WWWDIR%%/documents/media
-@dirrm %%WWWDIR%%/documents/default
-@dirrm %%WWWDIR%%/documents
-@dirrm %%WWWDIR%%
-@owner root
-@group wheel
+@dir %%WWWDIR%%/documents/php-plurk-api
+@dir %%WWWDIR%%/documents/media/images
+@dir %%WWWDIR%%/documents/media
+@dir %%WWWDIR%%/documents/default
+@dir %%WWWDIR%%/documents
+@dir %%WWWDIR%%
+@owner
+@group
