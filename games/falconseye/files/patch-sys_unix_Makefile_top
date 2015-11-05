@@ -37,7 +37,7 @@
  # setgid instead of setuid. Therefore we must also allow group writing 
  # for the files and directories.
 -GAMEPERM = 02755
-+GAMEPERM = 02555
++GAMEPERM = 0555
  FILEPERM = 0664
  EXEPERM = 0755
  DIRPERM = 0775
