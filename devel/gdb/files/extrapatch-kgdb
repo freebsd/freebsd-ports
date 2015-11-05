@@ -2,6 +2,16 @@ diff --git gdb/Makefile.in gdb/Makefile.in
 index dfaa8a3..182d875 100644
 --- gdb/Makefile.in
 +++ gdb/Makefile.in
+@@ -207,7 +207,8 @@
+ 
+ # Generated headers in the gnulib directory.  These must be listed
+ # so that they are generated before other files are compiled.
+-GNULIB_H = $(GNULIB_BUILDDIR)/import/string.h @GNULIB_STDINT_H@
++GNULIB_H = $(GNULIB_BUILDDIR)/import/string.h \
++	$(GNULIB_BUILDDIR)/import/alloca.h @GNULIB_STDINT_H@
+ 
+ #
+ # CLI sub directory definitons
 @@ -650,7 +650,8 @@ ALL_64_TARGET_OBS = \
  	ia64-linux-tdep.o ia64-vms-tdep.o ia64-tdep.o \
  	mips64obsd-tdep.o \
