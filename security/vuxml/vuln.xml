@@ -65,6 +65,10 @@ Notes:
 	<name>apache-openoffice</name>
 	<range><lt>4.1.2</lt></range>
       </package>
+      <package>
+	<name>apache-openoffice-devel</name>
+	<range><lt>4.2.1705368,3</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -116,6 +120,7 @@ Notes:
     <dates>
       <discovery>2015-11-04</discovery>
       <entry>2015-11-05</entry>
+      <modified>2015-11-05</modified>
     </dates>
   </vuln>
 
