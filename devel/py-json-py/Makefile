@@ -19,7 +19,7 @@ USES=		python zip
 
 do-build:
 	# compile python files
-	cd ${WRKDIR}; \
+	cd ${WRKSRC}; \
 	FILES=$$(${FIND} . -name "*.py" ); \
 	for FILE in $${FILES}; do \
 	    ${ECHO} import `basename $${FILE} .py` | ${PYTHON_CMD}; \
@@ -27,7 +27,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	@cd ${WRKDIR}; \
+	@cd ${WRKSRC}; \
 	${FIND} . \( -name "*.py" -or -name "*.pyc" \) -exec ${INSTALL_SCRIPT} \{\} ${STAGEDIR}${PYTHON_SITELIBDIR} \;
 
 .include <bsd.port.mk>

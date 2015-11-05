@@ -39,9 +39,9 @@ STRIFE_DISTFILES=	strife0.wad.bz2
 .include <bsd.port.options.mk>
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}
-	@${BZIP2_CMD} -dc ${_DISTDIR}/${f} > ${WRKDIR}/${f:S/.bz2$//}
+	@${BZIP2_CMD} -dc ${_DISTDIR}/${f} > ${WRKSRC}/${f:S/.bz2$//}
 .endfor
 
 do-install:

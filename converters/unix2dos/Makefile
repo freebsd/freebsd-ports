@@ -14,9 +14,9 @@ PLIST_FILES=	bin/dos2unix bin/unix2dos \
 NO_WRKSUBDIR=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/unix2dos ${STAGEDIR}${PREFIX}/bin/unix2dos
+	${INSTALL_PROGRAM} ${WRKSRC}/unix2dos ${STAGEDIR}${PREFIX}/bin/unix2dos
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/unix2dos ${STAGEDIR}${PREFIX}/bin/dos2unix
-	${INSTALL_MAN} ${WRKDIR}/man1/unix2dos.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIR}/man1/dos2unix.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man1/unix2dos.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man1/dos2unix.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

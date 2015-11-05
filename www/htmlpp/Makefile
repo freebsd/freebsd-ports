@@ -22,13 +22,13 @@ NO_ARCH=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
-	${INSTALL_SCRIPT} ${WRKDIR}/htmlpp ${STAGEDIR}${PREFIX}/bin/htmlpp
-	${INSTALL_DATA} ${WRKDIR}/htmlpp.d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/htmlpp.d
-	(cd ${WRKDIR}; for FILE in *.pl; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/$${FILE}; done)
-	(cd ${WRKDIR}; for FILE in *.def; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${PREFIX}/bin/$${FILE}; done)
-	${INSTALL_DATA} ${WRKDIR}/guru_opt.fmt ${STAGEDIR}${PREFIX}/bin/guru.fmt
-	(cd ${WRKDIR}; ${MKDIR} ${STAGEDIR}${DOCSDIR}; for FILE in *.htm; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${DOCSDIR}/$${FILE}; done)
-	(cd ${WRKDIR}; for FILE in *.gif; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${DOCSDIR}/$${FILE}; done)
-	(cd ${WRKDIR}; for FILE in *.txt; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${DOCSDIR}/$${FILE}; done)
+	${INSTALL_SCRIPT} ${WRKSRC}/htmlpp ${STAGEDIR}${PREFIX}/bin/htmlpp
+	${INSTALL_DATA} ${WRKSRC}/htmlpp.d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/htmlpp.d
+	(cd ${WRKSRC}; for FILE in *.pl; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/$${FILE}; done)
+	(cd ${WRKSRC}; for FILE in *.def; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${PREFIX}/bin/$${FILE}; done)
+	${INSTALL_DATA} ${WRKSRC}/guru_opt.fmt ${STAGEDIR}${PREFIX}/bin/guru.fmt
+	(cd ${WRKSRC}; ${MKDIR} ${STAGEDIR}${DOCSDIR}; for FILE in *.htm; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${DOCSDIR}/$${FILE}; done)
+	(cd ${WRKSRC}; for FILE in *.gif; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${DOCSDIR}/$${FILE}; done)
+	(cd ${WRKSRC}; for FILE in *.txt; do ${INSTALL_DATA} $${FILE} ${STAGEDIR}${DOCSDIR}/$${FILE}; done)
 
 .include <bsd.port.mk>

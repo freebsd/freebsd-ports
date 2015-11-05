@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e 's|file:.*/docs|file://${DOCSDIR}|' \
-		${WRKDIR}/thud.py
+		${WRKSRC}/thud.py
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC} 2>/dev/null
@@ -32,10 +32,10 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/*.py ${STAGEDIR}${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.pyc ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKDIR}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .	for d in koomvalley img
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${d}
-	@(cd ${WRKDIR}/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${d})
+	@(cd ${WRKSRC}/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${d})
 .	endfor
 
 .include <bsd.port.mk>

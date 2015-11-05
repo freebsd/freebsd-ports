@@ -18,6 +18,7 @@ FONTNAME=	misc
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 SUB_FILES=	Makefile pkg-install
+MAKEFILE=	${WRKDIR}/Makefile
 SUB_LIST=	BDFTOPCF_CMD="${LOCALBASE}/bin/bdftopcf" \
 		GZIP_CMD="${GZIP_CMD}" \
 		FONTSALIAS="${DATADIR}/fonts.alias"
@@ -36,7 +37,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	cd ${STAGEDIR}${FONTSDIR} && \
 	    ${LN} -s ../../../${DATADIR_REL}/*.pcf.gz .
-	${INSTALL_DATA} ${WRKDIR}/fonts.alias ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/fonts.alias ${STAGEDIR}${DATADIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

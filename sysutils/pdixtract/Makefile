@@ -19,9 +19,9 @@ USES=		zip
 PLIST_FILES=	bin/pdixtract
 
 do-build:
-	cd ${WRKDIR}; ${CC} ${CFLAGS} pdixtract.c -o pdixtract
+	cd ${WRKSRC}; ${CC} ${CFLAGS} pdixtract.c -o pdixtract
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/pdixtract ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pdixtract ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

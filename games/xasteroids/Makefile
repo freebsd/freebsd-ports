@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.sh.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 based asteroids style arcade game
 
-EXTRACT_CMD=	( cd ${WRKDIR}; zcat | ${SH} -s )
+EXTRACT_CMD=	( cd ${WRKSRC}; zcat | ${SH} -s )
 EXTRACT_BEFORE_ARGS=	<
 EXTRACT_AFTER_ARGS=	# empty
 

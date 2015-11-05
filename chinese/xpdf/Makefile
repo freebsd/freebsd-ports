@@ -47,7 +47,7 @@ do-install:
 	cd ${WRKSRC}/xpdf-chinese-traditional && \
 	    ${INSTALL_DATA} ${TRAD_FILES} \
 		${STAGEDIR}${DATADIR}/chinese-traditional
-	${INSTALL_DATA} ${WRKSRC}/dot.xpdfrc \
+	${INSTALL_DATA} ${WRKDIR}/dot.xpdfrc \
 	    ${STAGEDIR}${DATADIR}/chinese-traditional
 	${MKDIR} ${STAGEDIR}${DATADIR}/chinese-traditional/CMap
 	cd ${STAGEDIR}${DATADIR}/chinese-traditional/CMap && \

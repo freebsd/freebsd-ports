@@ -19,10 +19,10 @@ SHEBANG_FILES=	radreport
 PLIST_FILES=	bin/radreport
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@for i in ${DISTFILES}; do ${CP} ${DISTDIR}/$$i ${WRKDIR}; done
+	@${MKDIR} ${WRKSRC}
+	@for i in ${DISTFILES}; do ${CP} ${DISTDIR}/$$i ${WRKSRC}; done
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/radreport ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/radreport ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

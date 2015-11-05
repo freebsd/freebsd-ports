@@ -18,8 +18,8 @@ USE_XORG=	x11 xkbfile
 NO_WRKSUBDIR=	yes
 
 do-extract:
-		@${RM} -rf ${WRKDIR}
-		@${MKDIR} ${WRKDIR}
+		@${RM} -rf ${WRKSRC}
+		@${MKDIR} ${WRKSRC}
 		@for _file in ${DISTFILES}; do \
 			${CP} ${DISTDIR}/${DIST_SUBDIR}/$${_file} ${WRKSRC}; \
 		done

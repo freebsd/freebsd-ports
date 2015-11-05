@@ -28,7 +28,7 @@ PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/${DISTNAME} \
 		${EMACS_VERSION_SITE_LISPDIR}/${DISTNAME}c
 
 do-build:
-	@cd ${WRKDIR} && ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
+	@cd ${WRKSRC} && ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
 		-f batch-byte-compile ${DISTNAME}
 
 do-install:

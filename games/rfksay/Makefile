@@ -17,8 +17,8 @@ NO_WRKSUBDIR=	yes
 SHEBANG_FILES=	rfksay kittensay robotsay
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/kittensay ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/robotsay ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/kittensay ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/robotsay ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -15,8 +15,8 @@ PLIST_FILES=	bin/setcdboot
 .include <bsd.port.pre.mk>
 
 do-extract:
-	${MKDIR} ${WRKDIR}
-	${CP} ${FILESDIR}/setcdboot.c ${WRKDIR}
+	${MKDIR} ${WRKSRC}
+	${CP} ${FILESDIR}/setcdboot.c ${WRKSRC}
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o setcdboot setcdboot.c)

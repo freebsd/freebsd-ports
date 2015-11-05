@@ -19,9 +19,9 @@ PLIST_FILES=	bin/cue2toc.pl
 SHEBANG_FILES=	cue2toc
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|use warnings;||' ${WRKDIR}/cue2toc
+	@${REINPLACE_CMD} -e 's|use warnings;||' ${WRKSRC}/cue2toc
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/cue2toc ${STAGEDIR}${PREFIX}/bin/cue2toc.pl
+	${INSTALL_SCRIPT} ${WRKSRC}/cue2toc ${STAGEDIR}${PREFIX}/bin/cue2toc.pl
 
 .include <bsd.port.mk>

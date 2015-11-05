@@ -23,7 +23,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 do-install:
-	(cd ${WRKDIR} && ${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX})
 	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/cmucl/lib/motifd
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cmucl/lib/motifd
 	${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/cmucl/lib/motifd

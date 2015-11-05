@@ -19,17 +19,17 @@ USES=		ghostscript:run
 NO_WRKSUBDIR=	yes
 
 pre-patch:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/pstoepsi ${WRKDIR}/pstoepsi.prefix
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/README.this-site ${WRKDIR}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/pstoepsi ${WRKSRC}/pstoepsi.prefix
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/README.this-site ${WRKSRC}
 
 do-build:
-	${SED} -e "s+%%PREFIX%%+${PREFIX}+g" ${WRKDIR}/pstoepsi.prefix > \
-						${WRKDIR}/pstoepsi
-	${GZIP_CMD} ${WRKDIR}/README.this-site
+	${SED} -e "s+%%PREFIX%%+${PREFIX}+g" ${WRKSRC}/pstoepsi.prefix > \
+						${WRKSRC}/pstoepsi
+	${GZIP_CMD} ${WRKSRC}/README.this-site
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/pstoepsi ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/pstoepsi ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/README.this-site.gz ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.this-site.gz ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

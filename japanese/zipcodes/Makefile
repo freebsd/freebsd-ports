@@ -20,8 +20,8 @@ PORTVERSION_K?=	${PORTVERSION}
 PORTVERSION_J?=	${PORTVERSION}
 
 post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
-	cd ${WRKDIR}; ${MV} KEN_ALL.CSV ken_all.csv; ${MV} JIGYOSYO.CSV jigyosyo.csv
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	cd ${WRKSRC}; ${MV} KEN_ALL.CSV ken_all.csv; ${MV} JIGYOSYO.CSV jigyosyo.csv
 
 # for maintenance.
 fetch1:

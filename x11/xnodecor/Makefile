@@ -16,8 +16,8 @@ USE_XORG=	x11
 PLIST_FILES=	bin/xnodecor
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 .include <bsd.port.mk>

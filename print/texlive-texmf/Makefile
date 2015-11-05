@@ -255,7 +255,7 @@ EXCLUDE_FILES=	\*/doc/man \
 EXTRACT_AFTER_ARGS=| ${TAR} xf - ${EXCLUDE_FILES:S,^,--exclude ${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}/,}
 
 post-extract:
-	cd ${WRKDIR}/latex-base-20150101.2 && \
+	cd ${WRKSRC}/latex-base-20150101.2 && \
 	    ${SETENV} TEXMF=. ${LOCALBASE}/bin/tex -ini unpack.ins && \
 	    ${RM} README *.log *.aux *.pdf *.dtx *.ins *.txt *.ist *.fdd *.err
 
@@ -264,7 +264,7 @@ do-install:
 		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/tex/latex/base
-	cd ${WRKDIR}/latex-base-20150101.2 && ${PAX} -rw . \
+	cd ${WRKSRC}/latex-base-20150101.2 && ${PAX} -rw . \
 	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/tex/latex/base
 	${REINPLACE_CMD} -i '' 's/\\def\\magyar@sugg@ie@low#1#2#3/\\def\\magyar@sugg@ie@low\\protect #1#2#3/' ${STAGEDIR}${PREFIX}/share/texmf-dist/tex/generic/babel-hungarian/magyar.ldf
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/doc

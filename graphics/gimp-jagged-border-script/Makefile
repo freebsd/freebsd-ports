@@ -33,6 +33,6 @@ post-extract:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${GIMP_SCRIPTS_DIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/${GIMP_SCRIPTS_DIR}/
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/${GIMP_SCRIPTS_DIR}/
 
 .include <bsd.port.mk>

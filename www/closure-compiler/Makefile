@@ -24,6 +24,6 @@ PLIST_FILES=	bin/closure-compiler \
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/compiler.jar ${STAGEDIR}${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/closure-compiler ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/closure-compiler ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

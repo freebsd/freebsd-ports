@@ -32,11 +32,11 @@ DOCS_DISTFILES=	${GFF2PS_MAN}.gz:doc
 .include <bsd.port.options.mk>
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
 	@${GZCAT} ${DISTDIR}/${PORTNAME}_v${PORTVERSION}.gz \
-		> ${WRKDIR}/${PORTNAME}
+		> ${WRKSRC}/${PORTNAME}
 do-extract-DOCS-on:
-	@${GZCAT} ${DISTDIR}/${GFF2PS_MAN}.gz > ${WRKDIR}/${GFF2PS_MAN}
+	@${GZCAT} ${DISTDIR}/${GFF2PS_MAN}.gz > ${WRKSRC}/${GFF2PS_MAN}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -44,9 +44,9 @@ post-patch:
 		 s|/usr/local/bin/gawk|${LOCALBASE}/bin/gawk|' ${WRKSRC}/gff2ps
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/gff2ps ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/gff2ps ${STAGEDIR}${PREFIX}/bin
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${GFF2PS_MAN} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${GFF2PS_MAN} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DMAXALIGN=8 -Iinclude" \
 		LD="${CC}" LDFLAGS="" EXTRAS="" BUILDDIR=${PKGNAME}
 PLIST_SUB=	CIIMAJOR="${CIIMAJOR}"
 
-CIIBUILD=	${WRKDIR}/${PKGNAME}
+CIIBUILD=	${WRKSRC}/${PKGNAME}
 CIIMAJOR=	1
 CIIDEST=	${PREFIX}/lib/cii
 
@@ -48,7 +48,7 @@ post-patch:
 pre-build:
 	@${MKDIR} ${CIIBUILD}
 	@${MKDIR} ${CIIBUILD}/include
-	@${CP} ${WRKDIR}/include/*.h ${CIIBUILD}/include
+	@${CP} ${WRKSRC}/include/*.h ${CIIBUILD}/include
 
 # ${PREFIX}/lib/cii/${CIIMAJOR}/
 # ${PREFIX}/lib/cii/${CIIMAJOR}/include

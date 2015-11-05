@@ -22,8 +22,8 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/demoroniser man/man1/demoroniser.1.gz
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/demoroniser.pl \
+	${INSTALL_SCRIPT} ${WRKSRC}/demoroniser.pl \
 		${STAGEDIR}${PREFIX}/bin/demoroniser
-	${INSTALL_MAN} ${WRKDIR}/demoroniser.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/demoroniser.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

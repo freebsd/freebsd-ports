@@ -57,24 +57,24 @@ pre-fetch:
 .endif
 
 post-extract:
-	@if [ -f ${WRKDIR}/etc/ldap.conf ]; then \
-		${MV} ${WRKDIR}/etc/ldap.conf ${WRKDIR}/etc/ldap.conf.dist; \
+	@if [ -f ${WRKSRC}/etc/ldap.conf ]; then \
+		${MV} ${WRKSRC}/etc/ldap.conf ${WRKSRC}/etc/ldap.conf.dist; \
 	fi
 .if !${PORT_OPTIONS:MPAM}
-	@if [ -f ${WRKDIR}/lib/security/pam_ldap.so ]; then \
-		${RM} -rf ${WRKDIR}/lib/; \
+	@if [ -f ${WRKSRC}/lib/security/pam_ldap.so ]; then \
+		${RM} -rf ${WRKSRC}/lib/; \
 	fi
-	@if [ -f ${WRKDIR}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/COPYING.pam_ldap ]; then \
-		${RM} ${WRKDIR}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/*.pam*; \
-		${RM} -rf ${WRKDIR}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/pam.d; \
+	@if [ -f ${WRKSRC}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/COPYING.pam_ldap ]; then \
+		${RM} ${WRKSRC}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/*.pam*; \
+		${RM} -rf ${WRKSRC}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/pam.d; \
 	fi
-	@if [ -f ${WRKDIR}/usr/share/man/man5/pam_ldap.5.gz ]; then \
-		${RM} ${WRKDIR}/usr/share/man/man5/pam_ldap.5.gz; \
+	@if [ -f ${WRKSRC}/usr/share/man/man5/pam_ldap.5.gz ]; then \
+		${RM} ${WRKSRC}/usr/share/man/man5/pam_ldap.5.gz; \
 	fi
 .else
 .if !${PORT_OPTIONS:MDOCS}
-	@if [ -d ${WRKDIR}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/pam.d ]; then \
-		${RM} -rf ${WRKDIR}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/pam.d/; \
+	@if [ -d ${WRKSRC}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/pam.d ]; then \
+		${RM} -rf ${WRKSRC}/usr/share/doc/${PORTNAME}-${NSS_LDAP_VERSION}/pam.d/; \
 	fi
 .endif
 .endif

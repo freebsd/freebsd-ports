@@ -54,7 +54,7 @@ do-install-DOCS-on:
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for e in ${EXAMPLES_DISTFILES:R:C|:[^:]+$||}
-	(cd ${WRKDIR}/${e} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC}/${e} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endfor
 
 .include <bsd.port.mk>

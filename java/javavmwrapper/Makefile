@@ -25,7 +25,7 @@ do-configure:
 .for _script in ${SCRIPTS}
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|;' \
 	       -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|;' \
-		${SRC}/${_script}.sh >${WRKDIR}/${_script}.sh
+		${SRC}/${_script}.sh >${WRKSRC}/${_script}.sh
 .endfor
 	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|;' \
 		${FILESDIR}/pkg-install.in > ${PKGINSTALL}
@@ -33,20 +33,20 @@ do-configure:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|;' \
 	       -e 's|%%LOCALBASE%%|${LOCALBASE}|;' \
 	       -e 's|%%PORTSDIR%%|${PORTSDIR}|;' \
-	       ${SRC}/${_man} > ${WRKDIR}/${_man}
+	       ${SRC}/${_man} > ${WRKSRC}/${_man}
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/classpath.sh ${STAGEDIR}${PREFIX}/bin/classpath
-	${INSTALL_SCRIPT} ${WRKDIR}/javavmwrapper.sh ${STAGEDIR}${PREFIX}/bin/javavm
+	${INSTALL_SCRIPT} ${WRKSRC}/classpath.sh ${STAGEDIR}${PREFIX}/bin/classpath
+	${INSTALL_SCRIPT} ${WRKSRC}/javavmwrapper.sh ${STAGEDIR}${PREFIX}/bin/javavm
 	${LN} -sf javavm ${STAGEDIR}${PREFIX}/bin/checkvms
 	${LN} -sf javavm ${STAGEDIR}${PREFIX}/bin/manvm
 	${LN} -sf javavm ${STAGEDIR}${PREFIX}/bin/registervm
 	${LN} -sf javavm ${STAGEDIR}${PREFIX}/bin/unregistervm
-	${INSTALL_MAN} ${WRKDIR}/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIR}/registervm.1 \
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/registervm.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/unregistervm.1
-	${INSTALL_MAN} ${WRKDIR}/*.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/*.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
 	${INSTALL_DATA} ${FILESDIR}/javavm_opts.conf.dist \
 		${STAGEDIR}${PREFIX}/etc/javavm_opts.conf.dist
 

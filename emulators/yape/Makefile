@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|cpp|h|txt)" -print0 | \
+	@${FIND} -E ${WRKSRC} -type f -iregex ".*\.(c|cpp|h|txt)" -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
 	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/Makefile
 

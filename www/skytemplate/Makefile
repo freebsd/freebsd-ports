@@ -11,11 +11,8 @@ DISTNAME=	SkyTemplate.v${PORTVERSION:S/.//g}
 MAINTAINER=	munggo@gmail.com
 COMMENT=	Yet another PHP compiling template engine
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

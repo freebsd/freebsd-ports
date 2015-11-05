@@ -14,9 +14,9 @@ COMMENT=	Decode tcpdump(1) output
 NO_WRKSUBDIR=	yes
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/tcpshow.c ${WRKDIR}
-	@${CP} ${DISTDIR}/tcpshow.1 ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/tcpshow.c ${WRKSRC}
+	@${CP} ${DISTDIR}/tcpshow.1 ${WRKSRC}
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o tcpshow tcpshow.c)

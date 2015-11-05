@@ -18,8 +18,8 @@ NO_WRKSUBDIR=	yes
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/readme_eng.txt ${STAGEDIR}${DOCSDIR}/readme.txt
+	${INSTALL_DATA} ${WRKSRC}/readme_eng.txt ${STAGEDIR}${DOCSDIR}/readme.txt
 
 .include <bsd.port.mk>

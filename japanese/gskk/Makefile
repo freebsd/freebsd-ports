@@ -38,7 +38,7 @@ INSTALL_DIC=	${INSTALL} ${COPY} -m 664
 OPTIONS_DEFINE=	DOCS
 
 do-build:
-	cd ${WRKDIR} && mkbindic ${PORTNAME}.t
+	cd ${WRKSRC} && mkbindic ${PORTNAME}.t
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DICDIR}

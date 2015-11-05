@@ -19,7 +19,7 @@ RUN_DEPENDS=	paperconf:${PORTSDIR}/print/libpaper
 
 USES=		perl5 shebangfix
 USE_PERL5=	run
-SHEBANG_FILES=	${WRKDIR}/a2ps-j
+SHEBANG_FILES=	${WRKSRC}/a2ps-j
 perl_OLD_CMD=	/usr/local/bin/perl
 PLIST_FILES=	bin/a2ps-j
 EXTRACT_CMD=	${INSTALL_SCRIPT}
@@ -29,9 +29,9 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKDIR}/a2ps-j
+	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/a2ps-j
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/a2ps-j ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/a2ps-j ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

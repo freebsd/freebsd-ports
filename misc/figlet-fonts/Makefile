@@ -20,27 +20,27 @@ DATADIR=	${PREFIX}/share/figlet
 PLIST_SUB=	DATADIR=${DATADIR:S|^${PREFIX}/||}
 
 post-extract:
-	@cd ${WRKDIR}/contributed && \
-		${TAR} xf Obanner-canon.tgz -C ${WRKDIR}/contributed/ && \
-		${MV} ./Obanner-canon/* ${WRKDIR}/contributed/ && \
+	@cd ${WRKSRC}/contributed && \
+		${TAR} xf Obanner-canon.tgz -C ${WRKSRC}/contributed/ && \
+		${MV} ./Obanner-canon/* ${WRKSRC}/contributed/ && \
 		${RMDIR} ./Obanner-canon && \
 		${RM} -f Obanner-canon.tgz && \
-		${TAR} xf Obanner.tgz -C ${WRKDIR}/contributed/ && \
-		${MV} ./Obanner/* ${WRKDIR}/contributed/ && \
+		${TAR} xf Obanner.tgz -C ${WRKSRC}/contributed/ && \
+		${MV} ./Obanner/* ${WRKSRC}/contributed/ && \
 		${RMDIR} ./Obanner && \
 		${RM} -f Obanner.tgz && \
-		${MV} ./C64-fonts/* ${WRKDIR}/contributed/ && \
+		${MV} ./C64-fonts/* ${WRKSRC}/contributed/ && \
 		${RMDIR} ./C64-fonts && \
-		${MV} ./bdffonts/* ${WRKDIR}/contributed/ && \
+		${MV} ./bdffonts/* ${WRKSRC}/contributed/ && \
 		${RMDIR} ./bdffonts
-	@cd ${WRKDIR}/international && \
-		${TAR} xf cjkfonts.tar.gz -C ${WRKDIR}/international/ && \
+	@cd ${WRKSRC}/international && \
+		${TAR} xf cjkfonts.tar.gz -C ${WRKSRC}/international/ && \
 		${RM} -f cjkfonts.tar.gz
-	@${RM} -f ${WRKDIR}/contributed/banner.flf
+	@${RM} -f ${WRKSRC}/contributed/banner.flf
 
 do-install:
 .for f in contributed international
-	@cd ${WRKDIR}/${f} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC}/${f} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 .endfor
 
 .include <bsd.port.mk>

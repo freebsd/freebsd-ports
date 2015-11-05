@@ -39,10 +39,10 @@ SUB_FILES=	pkg-message
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 .for i in ${EFRONT_FILES}
-	@cd ${WRKDIR} && ${CP} ${i} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${CP} ${i} ${STAGEDIR}${WWWDIR}
 .endfor
 .for i in ${EFRONT_DIRS}
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}
 .endfor
 	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
 

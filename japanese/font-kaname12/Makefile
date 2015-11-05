@@ -39,6 +39,6 @@ post-install:
 	    ${LN} -s ../../../${DATADIR_REL}/*.pcf.gz .
 
 post-install-DOCS-on:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install-doc
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-doc
 
 .include <bsd.port.mk>

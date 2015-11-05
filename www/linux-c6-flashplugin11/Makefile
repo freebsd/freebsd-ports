@@ -61,17 +61,17 @@ INSTALLS_ICONS=	yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' -e '/^NotShowIn=KDE/d' ${WRKDIR}/usr/share/applications/flash-player-properties.desktop
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' -e '/^NotShowIn=KDE/d' ${WRKSRC}/usr/share/applications/flash-player-properties.desktop
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR}
-	${INSTALL_LIB} ${WRKDIR}/libflashplayer.so ${STAGEDIR}${WEBPLUGIN_DIR}
+	${INSTALL_LIB} ${WRKSRC}/libflashplayer.so ${STAGEDIR}${WEBPLUGIN_DIR}
 .if ! ${PORT_OPTIONS:MALSA}
 	${MKDIR} ${STAGEDIR}${LINUXBASE}/usr/lib
-	${INSTALL_LIB} ${WRKDIR}/libflashsupport.so ${STAGEDIR}${LINUXBASE}/usr/lib
+	${INSTALL_LIB} ${WRKSRC}/libflashsupport.so ${STAGEDIR}${LINUXBASE}/usr/lib
 .endif
-	${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/flash-player-properties ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/usr/share/applications/flash-player-properties.desktop ${STAGEDIR}${DESKTOPDIR}
-	(cd ${WRKDIR}/usr/share/icons && ${COPYTREE_SHARE} hicolor ${STAGEDIR}${PREFIX}/share/icons)
+	${INSTALL_PROGRAM} ${WRKSRC}/usr/bin/flash-player-properties ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/usr/share/applications/flash-player-properties.desktop ${STAGEDIR}${DESKTOPDIR}
+	(cd ${WRKSRC}/usr/share/icons && ${COPYTREE_SHARE} hicolor ${STAGEDIR}${PREFIX}/share/icons)
 
 .include <bsd.port.mk>
