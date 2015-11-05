@@ -186,10 +186,6 @@
 %%MPIDIR%%/include/mpif-sentinels.h
 %%MPIDIR%%/include/mpif-sizeof.h
 %%MPIDIR%%/include/mpif.h
-%%MPIDIR%%/include/shmem-compat.h
-%%MPIDIR%%/include/shmemx.h
-%%MPIDIR%%/include/mpp/shmem.fh
-%%MPIDIR%%/include/mpp/shmem.h
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/comm.h
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/comm_inln.h
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/constants.h
@@ -221,8 +217,6 @@
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/topology_inln.h
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/win.h
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/win_inln.h
-%%MPIDIR%%/include/shmem.fh
-%%MPIDIR%%/include/shmem.h
 %%MPIDIR%%/lib/libmca_common_sm.la
 %%MPIDIR%%/lib/libmca_common_sm.so
 %%MPIDIR%%/lib/libmca_common_sm.so.4
@@ -230,7 +224,7 @@
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.12
-%%MPIDIR%%/lib/libmpi.so.12.0.0
+%%MPIDIR%%/lib/libmpi.so.12.0.1
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so
 %%MPIDIR%%/lib/libmpi_cxx.so.1
@@ -242,7 +236,7 @@
 %%MPIDIR%%/lib/libmpi_usempi.la
 %%MPIDIR%%/lib/libmpi_usempi.so
 %%MPIDIR%%/lib/libmpi_usempi.so.1
-%%MPIDIR%%/lib/libmpi_usempi.so.1.4.0
+%%MPIDIR%%/lib/libmpi_usempi.so.1.4.1
 %%MPIDIR%%/lib/libompitrace.la
 %%MPIDIR%%/lib/libompitrace.so
 %%MPIDIR%%/lib/libompitrace.so.0
@@ -250,11 +244,11 @@
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.13
-%%MPIDIR%%/lib/libopen-pal.so.13.0.0
+%%MPIDIR%%/lib/libopen-pal.so.13.0.1
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.12
-%%MPIDIR%%/lib/libopen-rte.so.12.0.0
+%%MPIDIR%%/lib/libopen-rte.so.12.0.1
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.la
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.so
@@ -490,6 +484,8 @@
 %%MPIDIR%%/man/man3/MPI_Add_error_code.3.gz
 %%MPIDIR%%/man/man3/MPI_Add_error_string.3.gz
 %%MPIDIR%%/man/man3/MPI_Address.3.gz
+%%MPIDIR%%/man/man3/MPI_Aint_add.3.gz
+%%MPIDIR%%/man/man3/MPI_Aint_diff.3.gz
 %%MPIDIR%%/man/man3/MPI_Allgather.3.gz
 %%MPIDIR%%/man/man3/MPI_Allgatherv.3.gz
 %%MPIDIR%%/man/man3/MPI_Alloc_mem.3.gz
@@ -820,13 +816,18 @@
 %%MPIDIR%%/man/man3/MPI_Waitall.3.gz
 %%MPIDIR%%/man/man3/MPI_Waitany.3.gz
 %%MPIDIR%%/man/man3/MPI_Waitsome.3.gz
+%%MPIDIR%%/man/man3/MPI_Win_allocate.3.gz
+%%MPIDIR%%/man/man3/MPI_Win_allocate_shared.3.gz
+%%MPIDIR%%/man/man3/MPI_Win_attach.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_c2f.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_call_errhandler.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_complete.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_create.3.gz
+%%MPIDIR%%/man/man3/MPI_Win_create_dynamic.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_create_errhandler.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_create_keyval.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_delete_attr.3.gz
+%%MPIDIR%%/man/man3/MPI_Win_detach.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_f2c.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_fence.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_flush.3.gz
@@ -847,6 +848,7 @@
 %%MPIDIR%%/man/man3/MPI_Win_set_errhandler.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_set_info.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_set_name.3.gz
+%%MPIDIR%%/man/man3/MPI_Win_shared_query.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_start.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_sync.3.gz
 %%MPIDIR%%/man/man3/MPI_Win_test.3.gz
@@ -932,8 +934,6 @@
 %%MPIDIR%%/%%DATADIR%%/help-regex.txt
 %%MPIDIR%%/%%DATADIR%%/help-rmaps_rank_file.txt
 %%MPIDIR%%/%%DATADIR%%/help-sec-base.txt
-%%MPIDIR%%/%%DATADIR%%/help-shmem-api.txt
-%%MPIDIR%%/%%DATADIR%%/help-shmem-runtime.txt
 %%MPIDIR%%/%%DATADIR%%/help-state-staged-hnp.txt
 %%MPIDIR%%/%%DATADIR%%/mca-coll-ml.config
 %%MPIDIR%%/%%DATADIR%%/mpiCC-wrapper-data.txt
@@ -945,5 +945,3 @@
 %%MPIDIR%%/%%DATADIR%%/mpifort-wrapper-data.txt
 %%MPIDIR%%/%%DATADIR%%/openmpi-valgrind.supp
 %%MPIDIR%%/%%DATADIR%%/ortecc-wrapper-data.txt
-%%MPIDIR%%/%%DATADIR%%/shmemcc-wrapper-data.txt
-%%MPIDIR%%/%%DATADIR%%/shmemfort-wrapper-data.txt
