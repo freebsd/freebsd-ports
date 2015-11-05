@@ -59,7 +59,6 @@ USE_PERL_SUB_LIST_OFF=	LINK_USRBIN=no
 
 PORTSCOUT=	limit:^${PERL_VER}.
 
-# Remember to update Mk/Uses/perl5.mk too.
 .include "version.mk"
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
