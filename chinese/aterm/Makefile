@@ -12,10 +12,9 @@ COMMENT=	Color vt102 terminal emulator with transparency support
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xim --enable-big5
+MAKE_JOBS_UNSAFE=	yes
 
-post-install:
-	@${CHMOD} 4711 ${STAGEDIR}${PREFIX}/bin/aterm
-
-PLIST_FILES=	bin/aterm man/man1/aterm.1.gz
+PLIST_FILES=	"@(,,4711) bin/aterm" \
+		man/man1/aterm.1.gz
 
 .include <bsd.port.mk>
