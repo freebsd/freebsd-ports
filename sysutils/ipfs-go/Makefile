@@ -16,9 +16,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ipfs
 GH_PROJECT=	go-ipfs
 
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	Does not build on i386 due to a dependency
-
 MAKE_ENV+=	GOPATH=${WRKSRC}
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -26,6 +23,12 @@ PLIST_FILES=	bin/${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
 
 STRIP=		# stripping can break go binaries
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-32bit
+.endif
 
 # Prepare for possible extra modules in future
 post-extract:
@@ -41,4 +44,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/cmd/ipfs/ipfs ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
