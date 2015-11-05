@@ -745,6 +745,7 @@
     SUBDIR += py-mysql2pgsql
     SUBDIR += py-odbc
     SUBDIR += py-oops
+    SUBDIR += py-oursql
     SUBDIR += py-peewee
     SUBDIR += py-pg8000
     SUBDIR += py-pg_pqueue
