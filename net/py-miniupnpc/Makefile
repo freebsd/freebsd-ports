@@ -10,7 +10,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/miniupnpc:build
 MASTERDIR=	${.CURDIR}/../miniupnpc
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 
 WRKDIR=		${WRKDIRPREFIX}${MASTERDIR}/work
 PLIST=		${.CURDIR}/pkg-plist
