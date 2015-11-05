@@ -18,7 +18,7 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	ISBN PYDOT MYSQL GOOG MWPARSE PILLOW
+OPTIONS_DEFINE=	ISBN PYDOT MYSQL GOOGLE MWPARSE PILLOW
 ISBN_DESC=	Support for standard numbers and codes via stdnum package
 PYDOT_DESC=	Support for Graphviz via pydot module
 MYSQL_DESC=	Support for MySQL via oursql module
