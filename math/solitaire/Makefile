@@ -21,8 +21,7 @@ STRIP=
 OPTIONS_DEFINE=	DOCS
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} -r ${DISTDIR}/sol.pl ${DISTDIR}/sol-test.txt ${WRKDIR}
+	@${CP} ${DISTDIR}/sol.pl ${DISTDIR}/sol-test.txt ${WRKSRC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sol.pl ${STAGEDIR}${PREFIX}/bin/solitaire

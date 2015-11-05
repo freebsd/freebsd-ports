@@ -17,7 +17,7 @@ COMMENT=	Snow-Apple Icons for Gnome
 
 RESTRICTED=	${REASON}
 
-WRKSRC=		"${WRKDIR}/Snow-Apple"
+NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

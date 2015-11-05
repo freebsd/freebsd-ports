@@ -25,10 +25,10 @@ do-build:
 	@${ECHO_MSG} '================================================================'
 	@${ECHO_MSG} 'Ignore warnings about illegal moves.  These warnings are normal.'
 	@${ECHO_MSG} '================================================================'
-	(cd ${WRKDIR} && crafty bookpath=. <${FILESDIR}/book-building)
+	(cd ${WRKSRC} && crafty bookpath=. <${FILESDIR}/book-building)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/crafty
-	${INSTALL_DATA} ${WRKDIR}/book.bin ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
+	${INSTALL_DATA} ${WRKSRC}/book.bin ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
 
 .include <bsd.port.mk>

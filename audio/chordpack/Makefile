@@ -19,12 +19,12 @@ NO_BUILD=	true
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/chordpack ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/chordpack ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
-	${INSTALL_DATA} ${WRKDIR}/chordpro-mode.el  \
+	${INSTALL_DATA} ${WRKSRC}/chordpro-mode.el  \
 		${STAGEDIR}${PREFIX}/share/emacs/site-lisp
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/chordpack-documentation.html	\
+	${INSTALL_MAN} ${WRKSRC}/chordpack-documentation.html	\
 		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

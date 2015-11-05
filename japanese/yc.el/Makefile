@@ -29,12 +29,12 @@ ICANNA_DESC=	Enable icanna support
 ICANNA_RUN_DEPENDS=	icanna:${PORTSDIR}/japanese/icanna
 
 do-build:
-	@cd ${WRKDIR} && \
+	@cd ${WRKSRC} && \
 	${EMACS_CMD} -batch -f batch-byte-compile yc.el
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${YC_LISPDIR}
-	@cd ${WRKDIR} && \
+	@cd ${WRKSRC} && \
 	${INSTALL_SCRIPT} yc.el yc.elc ${STAGEDIR}${YC_LISPDIR}
 
 .include <bsd.port.mk>

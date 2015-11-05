@@ -21,6 +21,6 @@ SHEBANG_FILES=	*.pl
 USE_PERL5=	run
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/*.pl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

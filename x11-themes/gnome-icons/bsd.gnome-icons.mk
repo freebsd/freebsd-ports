@@ -14,12 +14,4 @@ INSTALLS_ICONS=	yes
 do-install: icon-do-install
 
 icon-do-install:
-	cd ${WRKDIR} && ${FIND} * -type d ! -empty \
-		! -path 'stage*' \
-		-exec ${MKDIR} -m 0755 \
-		${STAGEDIR}${PREFIX}/share/icons/"{}" \;
-	cd ${WRKDIR} && ${FIND} * ! -type d ! -name 'plist' ! -name '*.bak' \
-		! -name '${LICENSE}' \
-		! -path 'stage/*' \
-		-exec ${INSTALL_DATA} ${WRKDIR}/"{}" \
-		${STAGEDIR}${PREFIX}/share/icons/"{}" \;
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/icons/

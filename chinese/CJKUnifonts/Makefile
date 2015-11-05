@@ -23,8 +23,8 @@ TTF=		ukai.ttc uming.ttc
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKDIR}/ukai.ttc ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKDIR}/uming.ttc ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ukai.ttc ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/uming.ttc ${STAGEDIR}${FONTSDIR}
 
 .include "${.CURDIR}/../ttfm/Makefile.ttf"
 .include <bsd.port.mk>

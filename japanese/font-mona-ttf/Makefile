@@ -28,7 +28,7 @@ PLIST_FILES=	%%DATADIR%%/fonts.dir \
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/mona.ttf ${FILESDIR}/fonts.dir \
+	${INSTALL_DATA} ${WRKSRC}/mona.ttf ${FILESDIR}/fonts.dir \
 	    ${STAGEDIR}${DATADIR}
 
 post-install:

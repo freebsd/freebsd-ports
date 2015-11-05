@@ -27,7 +27,7 @@ PLIST_FILES=	%%NEWSBIN%%/fastcancel %%NEWSBIN%%/c-nocem
 CNEWS_PORT?=	news/cnews
 #CNEWSWRK?=	${WRKDIRPREFIX}${PORTSDIR}/${CNEWS_PORT}/work
 # ${.CURDIR}/../.. can be diffrent from ${PORTSDIR}
-CNEWSWRK?=	${WRKDIRPREFIX}${.CURDIR}/../../${CNEWS_PORT}/work
+CNEWSWRK!=	${MAKE} -C ${.CURDIR}/../../${CNEWS_PORT} -V WRKSRC
 NEWSBIN?=	${PREFIX}/libexec/cnews
 
 post-patch:

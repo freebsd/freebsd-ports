@@ -55,18 +55,18 @@ SUB_FILES=	pkg-message
 .endif
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && uncompress -c ${DISTDIR}/${Q2_SRC} | \
+	@${MKDIR} ${WRKSRC}
+	@cd ${WRKSRC} && uncompress -c ${DISTDIR}/${Q2_SRC} | \
 		${TAIL} +434 | ${SH}
-	@${UNZIP_CMD} -q -d ${WRKDIR} \
+	@${UNZIP_CMD} -q -d ${WRKSRC} \
 		${DISTDIR}/${Q2_UPDATE} baseq2/* -x *.dll
 .if ${PORT_OPTIONS:MMANUAL}
-	@${UNZIP_CMD} -ajq -d ${WRKDIR}/DOCS \
+	@${UNZIP_CMD} -ajq -d ${WRKSRC}/DOCS \
 		${DISTDIR}/${Q2_DEMO} Install/Data/DOCS/*
 .endif
 .if ${PORT_OPTIONS:MSHAREWARE}
-	@${RM} ${WRKDIR}/baseq2/pak[^0].pak
-	@${UNZIP_CMD} -jq -d ${WRKDIR}/baseq2 \
+	@${RM} ${WRKSRC}/baseq2/pak[^0].pak
+	@${UNZIP_CMD} -jq -d ${WRKSRC}/baseq2 \
 		${DISTDIR}/${Q2_DEMO} Install/Data/baseq2/pak0.pak
 .endif
 

@@ -12,7 +12,7 @@ COMMENT=	Test remote system for unsecured mail relay
 
 EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
-EXTRACT_AFTER_ARGS=	> ${WRKDIR}/${PORTNAME}
+EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${PORTNAME}
 
 NO_WRKSUBDIR=	yes
 

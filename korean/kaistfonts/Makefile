@@ -23,9 +23,9 @@ NO_WRKSUBDIR=	yes
 MAKE_ENV=	DISTDIR=${DISTDIR} DISTFILES="${DISTFILES}" FONTSDIR="${FONTSDIR}"
 
 do-extract:
-	@${RM} -fr ${WRKDIR} && \
-	${MKDIR} ${WRKDIR} && \
-	cd ${WRKDIR} && \
+	@${RM} -fr ${WRKSRC} && \
+	${MKDIR} ${WRKSRC} && \
+	cd ${WRKSRC} && \
 	for file in ${DISTFILES}; do \
 		${GUNZIP_CMD} -c < ${_DISTDIR}/$$file > `${ECHO_CMD} $$file | ${SED} -e 's/\.Z//' -e 's/\.gz//'`; \
 	done

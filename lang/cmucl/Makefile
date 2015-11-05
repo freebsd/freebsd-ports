@@ -29,11 +29,11 @@ PLIST_SUB=	VER=${PORTVERSION}
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/lisp ${STAGEDIR}${PREFIX}/bin
-	(cd ${WRKDIR} && ${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX})
-	${INSTALL_MAN} ${WRKDIR}/man/man1/cmucl.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIR}/man/man1/lisp.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/lisp ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX})
+	${INSTALL_MAN} ${WRKSRC}/man/man1/cmucl.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/lisp.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/doc/cmucl/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/cmucl/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

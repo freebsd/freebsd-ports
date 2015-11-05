@@ -43,7 +43,7 @@ IMAGES_TYPE=	-DGIF
 USER_OPTIONS?=
 
 do-build:
-	cd ${WRKDIR};\
+	cd ${WRKSRC};\
 	${CC} ${CFLAGS} ${STATIC_MIMETEX} ${IMAGES_TYPE} ${USER_OPTIONS} mimetex.c gifsave.c -lm -o mimetex.cgi
 
 do-install:

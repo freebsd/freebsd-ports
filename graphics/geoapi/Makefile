@@ -23,12 +23,12 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 .for jar in ${JARFILES}
-	${INSTALL_DATA} ${WRKDIR}/${jar}.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/${jar}.jar ${STAGEDIR}${JAVAJARDIR}
 .endfor
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKDIR}/javadoc \
+	cd ${WRKSRC}/javadoc \
 		&& ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; \
 		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${DOCSDIR}/\{} \;
 

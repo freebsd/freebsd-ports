@@ -34,8 +34,7 @@ USE_LINUX_APPS+=dri
 .endif
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && ${TAIL} +376 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+	@cd ${WRKSRC} && ${TAIL} +376 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} zxf -
 
 do-build:

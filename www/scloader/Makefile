@@ -32,7 +32,7 @@ PORTEXAMPLES=	loader.cnf
 do-configure:
 		${SED} -e "s|%%JAVA%%|${LOCALBASE}/bin/java|" \
 		-e "s|%%JAVAJARDIR%%|${JAVAJARDIR}|" \
-		${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}
+		${FILESDIR}/${PORTNAME}.sh > ${WRKSRC}/${PORTNAME}
 
 do-install:
 		${INSTALL} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

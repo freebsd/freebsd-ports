@@ -17,7 +17,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/tsMuxeR bin/tsMuxerGUI
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/tsMuxeR ${WRKDIR}/tsMuxerGUI \
+	${INSTALL_PROGRAM} ${WRKSRC}/tsMuxeR ${WRKSRC}/tsMuxerGUI \
 		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

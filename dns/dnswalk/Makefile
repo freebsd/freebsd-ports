@@ -22,15 +22,15 @@ SHEBANG_FILES=	dnswalk makereports
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/do-dnswalk \
-		${WRKDIR}/makereports \
-		${WRKDIR}/sendreports \
+	${INSTALL_SCRIPT} ${WRKSRC}/do-dnswalk \
+		${WRKSRC}/makereports \
+		${WRKSRC}/sendreports \
 		${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/README \
-		${WRKDIR}/dnswalk.errors \
+	${INSTALL_DATA} ${WRKSRC}/README \
+		${WRKSRC}/dnswalk.errors \
 		${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/dnswalk.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_SCRIPT} ${WRKDIR}/dnswalk ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dnswalk.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/dnswalk ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

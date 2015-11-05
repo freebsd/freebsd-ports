@@ -46,11 +46,11 @@ MAKE_ARGS=	-DX11
 .endif
 
 post-extract:
-	${RM} ${WRKDIR}/swe[a-z]*
+	${RM} ${WRKSRC}/swe[a-z]*
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/astrolog
-	cd ${WRKDIR} && \
+	cd ${WRKSRC} && \
 		${INSTALL_DATA} fixstars.ast *.se1 ${STAGEDIR}${PREFIX}/lib/astrolog
 	cd ${WRKSRC}; \
 		${INSTALL_DATA} astrolog.dat ${STAGEDIR}${PREFIX}/lib/astrolog/astrolog.dat-dist

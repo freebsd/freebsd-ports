@@ -65,7 +65,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .for s in 16 32 64
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
-	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a${s}.png \
+	${INSTALL_DATA} ${WRKSRC}/org/gudy/azureus2/ui/icons/a${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/${PORTNAME}.png
 .endfor
 

@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI editor to create and edit metalinks
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKDIR}/license.txt
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 OPTIONS_DEFINE=	DOCS
 

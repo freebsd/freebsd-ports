@@ -17,7 +17,7 @@ NO_WRKSUBDIR=		yes
 
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	| gunshar -d ${WRKDIR}
+EXTRACT_AFTER_ARGS=	| gunshar -d ${WRKSRC}
 
 CFLAGS+=	-Wno-return-type
 # XXX upstream puts CFLAGS in CC

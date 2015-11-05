@@ -24,11 +24,11 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	${RM} ${WRKDIR}/*exe
-	${REINPLACE_CMD} -i '' -e 's|ommited|omitted|' ${WRKDIR}/util.c
+	${RM} ${WRKSRC}/*exe
+	${REINPLACE_CMD} -i '' -e 's|ommited|omitted|' ${WRKSRC}/util.c
 
 do-build:
-	cd ${WRKDIR} && ${CC} ${CFLAGS} -DMPU8086 *.c -o lc_CLI
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -DMPU8086 *.c -o lc_CLI
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lc_CLI ${STAGEDIR}${PREFIX}/bin

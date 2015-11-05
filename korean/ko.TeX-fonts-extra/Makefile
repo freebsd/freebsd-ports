@@ -31,8 +31,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-	(cd ${WRKDIR}/fonts && ${COPYTREE_SHARE} . ${STAGEDIR}${TEXMF_FONTS})
-	(cd ${WRKDIR}/tex && ${COPYTREE_SHARE} . ${STAGEDIR}${TEXMF_TEX})
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/fonts && ${COPYTREE_SHARE} . ${STAGEDIR}${TEXMF_FONTS})
+	(cd ${WRKSRC}/tex && ${COPYTREE_SHARE} . ${STAGEDIR}${TEXMF_TEX})
 
 .include <bsd.port.mk>

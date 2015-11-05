@@ -28,10 +28,10 @@ NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/dict
-	@${INSTALL_DATA} ${WRKDIR}/*.index ${STAGEDIR}${PREFIX}/lib/dict
-	@${INSTALL_DATA} ${WRKDIR}/*.dict.dz ${STAGEDIR}${PREFIX}/lib/dict
-	@cd ${WRKDIR}/world02-2003-02-15/ && dictzip -k world02.dict
-	@${INSTALL_DATA} ${WRKDIR}/world02-2003-02-15/*.index ${STAGEDIR}${PREFIX}/lib/dict
-	@${INSTALL_DATA} ${WRKDIR}/world02-2003-02-15/*.dict.dz ${STAGEDIR}${PREFIX}/lib/dict
+	@${INSTALL_DATA} ${WRKSRC}/*.index ${STAGEDIR}${PREFIX}/lib/dict
+	@${INSTALL_DATA} ${WRKSRC}/*.dict.dz ${STAGEDIR}${PREFIX}/lib/dict
+	@cd ${WRKSRC}/world02-2003-02-15/ && dictzip -k world02.dict
+	@${INSTALL_DATA} ${WRKSRC}/world02-2003-02-15/*.index ${STAGEDIR}${PREFIX}/lib/dict
+	@${INSTALL_DATA} ${WRKSRC}/world02-2003-02-15/*.dict.dz ${STAGEDIR}${PREFIX}/lib/dict
 
 .include <bsd.port.mk>
