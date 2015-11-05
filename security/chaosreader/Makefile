@@ -22,11 +22,11 @@ PLIST_FILES=	bin/${PORTNAME} bin/sshkeydata
 SHEBANG_FILES=	chaosreader sshkeydata
 
 post-extract:
-	@${CP} ${DISTDIR}/${PORTNAME}${PORTVERSION} ${WRKDIR}/${PORTNAME}
-	@${CP} ${DISTDIR}/sshkeydata0.20 ${WRKDIR}/sshkeydata
+	@${CP} ${DISTDIR}/${PORTNAME}${PORTVERSION} ${WRKSRC}/${PORTNAME}
+	@${CP} ${DISTDIR}/sshkeydata0.20 ${WRKSRC}/sshkeydata
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/sshkeydata ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/sshkeydata ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

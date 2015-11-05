@@ -15,8 +15,8 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	sbin/nnap
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${DISTNAME}.c)

@@ -18,11 +18,11 @@ PLIST_FILES=	bin/pilot_makedoc
 ALL_TARGET=	pilot_makedoc
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
-	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/pilot_makedoc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pilot_makedoc ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

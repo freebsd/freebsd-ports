@@ -21,7 +21,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 post-extract:
-	${CP} ${DISTDIR}/NotoEmoji-Regular.ttf ${WRKDIR}
+	${CP} ${DISTDIR}/NotoEmoji-Regular.ttf ${WRKSRC}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}

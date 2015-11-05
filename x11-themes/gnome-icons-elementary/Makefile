@@ -20,7 +20,7 @@ INSTALLS_ICONS=	yes
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/icons/elementary/ \
-		"! -name 'plist' ! -name '*.bak' ! -name '${LICENSE}' ! -path 'stage/*' "
+		"! -name '*.bak' ! -name '${LICENSE}'"
 	${FIND} ${STAGEDIR}${PREFIX}/share/icons/elementary/ -depth 2 \
 		-type d -empty | \
 		${XARGS} ${RMDIR}

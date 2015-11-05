@@ -39,14 +39,14 @@ post-patch:
 		's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/VAX/vax_sysdev.c
 
 do-install:
-	(cd ${WRKDIR}/BIN && ${INSTALL_PROGRAM} ${BIN_FILES} \
+	(cd ${WRKSRC}/BIN && ${INSTALL_PROGRAM} ${BIN_FILES} \
 		${STAGEDIR}${PREFIX}/bin)
 # eclipse conflicts with java/eclipse, install it as simh-eclipse
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/eclipse \
+	${INSTALL_PROGRAM} ${WRKSRC}/BIN/eclipse \
 		${STAGEDIR}${PREFIX}/bin/simh-eclipse
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/VAX/ka655x.bin ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/VAX/ka655x.bin ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKDIR} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

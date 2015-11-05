@@ -17,7 +17,7 @@ COMMENT=	Stylish Icons for Gnome
 
 RESTRICTED=	${REASON}
 
-WRKSRC=		"${WRKDIR}/${PORTNAME}"
+NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

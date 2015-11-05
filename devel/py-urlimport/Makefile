@@ -18,8 +18,8 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 do-extract:
-	${MKDIR} ${WRKDIR}
-	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/${PORTNAME}.py
+	${MKDIR} ${WRKSRC}
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/${PORTNAME}.py
 	${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${FILESDIR}/setup.py \
 		> ${WRKSRC}/setup.py
 

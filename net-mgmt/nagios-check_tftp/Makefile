@@ -25,12 +25,12 @@ post-patch:
 		${WRKSRC}/check_tftp
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${PORTNAME} ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${PORTNAME} ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} \
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/libexec/nagios
 
 .include <bsd.port.mk>

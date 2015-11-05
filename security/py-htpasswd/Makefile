@@ -21,6 +21,6 @@ NO_WRKSUBDIR=	yes
 SHEBANG_FILES=	${PORTNAME}.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.py ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

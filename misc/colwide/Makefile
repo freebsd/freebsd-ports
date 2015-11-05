@@ -22,9 +22,9 @@ SHEBANG_FILES=	colwide
 PLIST_FILES=	bin/${PORTNAME}
 
 do-extract:
-	${CP} ${DISTDIR}/colwide-${PORTVERSION} ${WRKDIR}/colwide
+	${CP} ${DISTDIR}/colwide-${PORTVERSION} ${WRKSRC}/colwide
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/colwide ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/colwide ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

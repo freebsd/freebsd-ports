@@ -23,10 +23,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^\(CC[^g]*\)gcc$$|\1${CC}|' ${WRKSRC}/Makefile
 
 do-install:
-	(cd ${WRKDIR}; ${INSTALL_PROGRAM} fujiplay yycc2ppm ${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}; ${INSTALL_PROGRAM} fujiplay yycc2ppm ${STAGEDIR}${PREFIX}/bin)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/fujiplay
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/share/doc/fujiplay
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/share/doc/fujiplay
 .endfor
 
 .include <bsd.port.mk>

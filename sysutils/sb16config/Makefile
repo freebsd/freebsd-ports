@@ -19,7 +19,7 @@ PLIST_FILES=	bin/sb16config \
 
 post-extract:
 .for _i in ${DISTFILES}
-	@${GZCAT} ${DISTDIR}/${_i} >${WRKDIR}/${_i:R}
+	@${GZCAT} ${DISTDIR}/${_i} >${WRKSRC}/${_i:R}
 .endfor
 
 .include <bsd.port.mk>

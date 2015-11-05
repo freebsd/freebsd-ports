@@ -40,7 +40,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/sbin/3dm2
 	${INSTALL_DATA} ${WRKSRC}/tdm_msg_en ${STAGEDIR}${MSGDIR}
 	${INSTALL_DATA} ${WRKSRC}/tw_msg_en ${STAGEDIR}${MSGDIR}
-	${INSTALL_DATA} ${WRKSRC}/3dm2.conf.sample ${STAGEDIR}${ETCDIR}2
+	${INSTALL_DATA} ${WRKDIR}/3dm2.conf.sample ${STAGEDIR}${ETCDIR}2
 
 # 3ware uses a hardcoded config dir location that doesn't match hier(9)
 

@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible calculator that behaves much like units(1)
 
 EXTRACT_BEFORE_ARGS=	-aq
-EXTRACT_AFTER_ARGS=	-x physcalc -d ${WRKDIR}
+EXTRACT_AFTER_ARGS=	-x physcalc -d ${WRKSRC}
 
 NO_WRKSUBDIR=	yes
 USES=		zip:infozip

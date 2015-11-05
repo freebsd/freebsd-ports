@@ -46,7 +46,7 @@ PLIST_FILES+=	${MESHES:S|^|%%EXAMPLESDIR%%/|}
 . endif
 
 post-extract:
-	cd ${WRKDIR} &&	\
+	cd ${WRKSRC} &&	\
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${LIBTARBALL} ${EXTRACT_AFTER_ARGS} --exclude ${MAKEFILE}
 	${CP} ${FILESDIR}/gttime.c ${WRKSRC}/sources/
 .for l in lplib2.c lplib2.h

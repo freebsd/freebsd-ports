@@ -42,7 +42,7 @@ post-patch:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	@(cd ${WRKSRC}/qmc2/inst; ${SED} -e 's|DATADIR|${PREFIX}/share|' \
 		< qmc2.ini.template > qmc2.ini)
-	@${REINPLACE_CMD} -e 's/bash/sh/' ${WRKDIR}/qmc2/scripts/sdl-libs.sh
+	@${REINPLACE_CMD} -e 's/bash/sh/' ${WRKSRC}/qmc2/scripts/sdl-libs.sh
 
 do-install:
 	(cd ${WRKSRC}/qmc2 && ${INSTALL_PROGRAM} qmc2-sdlmame \

@@ -22,11 +22,11 @@ NO_WRKSUBDIR=	yes
 
 JAR_DIR=	${JAVASHAREDIR}/${PORTNAME}
 STY_DIR=	${PREFIX}/share/texmf/tex/latex/${PORTNAME}
-STY_FILES=	${WRKDIR}/pause.sty ${WRKDIR}/background.sty \
-		${WRKDIR}/pp4link.sty ${WRKDIR}/mpmulti.sty
-EXAMPLE_FILES=	${WRKDIR}/leveldemo.tex
+STY_FILES=	${WRKSRC}/pause.sty ${WRKSRC}/background.sty \
+		${WRKSRC}/pp4link.sty ${WRKSRC}/mpmulti.sty
+EXAMPLE_FILES=	${WRKSRC}/leveldemo.tex
 .for i in 1 2 3 4 5 6 7
-EXAMPLE_FILES+=	${WRKDIR}/example.${i}
+EXAMPLE_FILES+=	${WRKSRC}/example.${i}
 .endfor
 PLIST_SUB=	STY_DIR="${STY_DIR:S,^${PREFIX}/,,}" \
 		JAR_DIR="${JAR_DIR:S,^${PREFIX}/,,}"

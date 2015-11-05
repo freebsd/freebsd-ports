@@ -16,8 +16,8 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/undms
 
 do-extract:
-	${MKDIR} ${WRKDIR}
-	${GZCAT} ${DISTDIR}/${DISTFILES} > ${WRKDIR}/${DISTNAME}
+	${MKDIR} ${WRKSRC}
+	${GZCAT} ${DISTDIR}/${DISTFILES} > ${WRKSRC}/${DISTNAME}
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o undms undms-1.3.c

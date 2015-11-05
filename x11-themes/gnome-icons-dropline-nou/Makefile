@@ -10,7 +10,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Dropline Nou Icons for Gnome
 
 USES=		tar:bzip2
-WRKSRC=		"${WRKDIR}/Nou"
+NO_WRKSUBDIR=	yes
 
 post-extract:
 	@${RM} ${WRKSRC}/.icon-theme.cache

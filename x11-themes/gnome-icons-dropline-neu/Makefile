@@ -10,7 +10,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Dropline Neu Icons for Gnome
 
 USES=		tar:bzip2
-WRKSRC=		"${WRKDIR}/Neu"
+NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ COMMENT=	Refined Icons for Gnome
 
 RESTRICTED=	${REASON}
 
-WRKSRC=		"${WRKDIR}/gnome-rh8"
+NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

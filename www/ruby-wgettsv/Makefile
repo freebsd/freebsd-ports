@@ -23,10 +23,10 @@ SHEBANG_FILES=	wgettsv
 PLIST_FILES=	bin/wgettsv
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}/${DISTNAME}
+	@${MKDIR} ${WRKSRC}
+	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/${DISTNAME}
 
 do-install:
-	${INSTALL_DATA} -m0755 ${WRKDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} -m0755 ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

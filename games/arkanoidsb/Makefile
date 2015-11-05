@@ -13,7 +13,6 @@ COMMENT=	Arkanoid and space game
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		tar:bzip2
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	libogg sdlmixer sdlimage

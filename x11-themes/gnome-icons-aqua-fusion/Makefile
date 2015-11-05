@@ -18,7 +18,7 @@ COMMENT=	AquaFusion Icons for Gnome
 RESTRICTED=	${REASON}
 
 USES=	tar:bzip2
-WRKSRC=		"${WRKDIR}/AquaFusion"
+NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

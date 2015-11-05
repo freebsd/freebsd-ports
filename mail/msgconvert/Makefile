@@ -29,7 +29,7 @@ PLIST_FILES=	bin/msgconvert.pl bin/msgconvert
 SHEBANG_FILES=	${PORTNAME}.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.pl \
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}.pl
 	${LN} -s ${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
