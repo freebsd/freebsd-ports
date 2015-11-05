@@ -3,7 +3,7 @@
 
 PORTNAME=	falconseye
 PORTVERSION=	1.9.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/NetHack-Falcon_s%20Eye%20%28source%29/${PORTVERSION}
 DISTNAME=	nethack_source_331_jtp_${PORTVERSION:S/.//g}
@@ -14,8 +14,8 @@ COMMENT=	NetHack derivative
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USES=		perl5 zip
-NHDIR=		"${PREFIX}/share/falconseyedir"
-MAKE_ENV=	NHDIR="${NHDIR}" NETHACKCONFIG="${NETHACKCONFIG}"
+DATADIR=	${PREFIX}/share/falconseyedir
+MAKE_ENV=	NHDIR="${DATADIR}" NETHACKCONFIG="${NETHACKCONFIG}"
 NETHACKCONFIG=	${FILESDIR}/x-config
 USE_SDL=	sdl
 USE_PERL5=	build
@@ -45,5 +45,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/man/man6/frecover.6
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} nethack.6 \
 		${STAGEDIR}${PREFIX}/man/man6/falconseye.6
+	${TOUCH} ${STAGEDIR}${DATADIR}/logfile ${STAGEDIR}${DATADIR}/perm \
+		${STAGEDIR}${DATADIR}/record
 
 .include <bsd.port.mk>
