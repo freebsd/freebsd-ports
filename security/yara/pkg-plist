@@ -25,6 +25,6 @@ lib/libyara.a
 lib/libyara.so
 lib/libyara.so.3
 lib/libyara.so.3.4.0
-lib/pkgconfig/yara.pc
+libdata/pkgconfig/yara.pc
 man/man1/yara.1.gz
 man/man1/yarac.1.gz
