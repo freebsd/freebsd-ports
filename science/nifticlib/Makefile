@@ -17,10 +17,12 @@ USES=		gmake
 # nifti bins by itself.
 CONFLICTS=	afni-[0-9]* dbh-[0-9]*
 
+MAKE_JOBS_UNSAFE=	yes
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/*.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_MAN} ${FILESDIR}/nifticlib.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/nifticlib.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
