@@ -4,10 +4,9 @@ PORTNAME=	subversion-book
 DISTVERSION=	4515
 CATEGORIES=	devel misc
 MASTER_SITES=	LOCAL/lev
-DISTFILES=	svn-book-html-r${DISTVERSION}.tar.bz2 \
-		svn-book-r${DISTVERSION}.pdf
+DISTFILES=	# empty
 DIST_SUBDIR=	subversion18
-EXTRACT_ONLY=	svn-book-html-r${DISTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Subversion Documentation HTML/PDF
@@ -25,6 +24,8 @@ OPTIONS_DEFAULT=	HTML_SINGLE
 
 HTML_SINGLE_DESC=	Single HTML page edition
 PDF_DESC=		PDF edition
+HTML_SINGLE_DISTFILES=	svn-book-html-r${DISTVERSION}.tar.bz2
+PDF_DISTFILES=		svn-book-r${DISTVERSION}.pdf
 
 .include <bsd.port.options.mk>
 
@@ -32,21 +33,16 @@ PDF_DESC=		PDF edition
 IGNORE=	it does not make sense to install dedicated documentation if DOCS are globally disabled
 .endif
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 
-.if ${PORT_OPTIONS:MHTML_SINGLE}
-	${TAR} -xof ${DISTDIR}/${DIST_SUBDIR}/svn-book-html-r${PORTVERSION}.tar.bz2 \
+do-install-HTML_SINGLE-on:
+	${TAR} -xof ${DISTDIR}/${DIST_SUBDIR}/${HTML_SINGLE_DISTFILES} \
 		-C ${STAGEDIR}${DOCSDIR}
 	(cd ${STAGEDIR}${DOCSDIR}/svn-book-html && ${LN} -s svn-book.html index.html)
-.endif
 
-.if ${PORT_OPTIONS:MPDF}
-	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/svn-book-r${PORTVERSION}.pdf \
+do-install-PDF-on:
+	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/${PDF_DISTFILES} \
 		${STAGEDIR}${DOCSDIR}/svn-book.pdf
-.endif
 
 .include <bsd.port.mk>
