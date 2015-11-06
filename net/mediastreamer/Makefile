@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediastreamer
-PORTVERSION=	2.11.2
-PORTREVISION=	3
+PORTVERSION=	2.12.0
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/mediastreamer
 
@@ -21,8 +20,8 @@ LIB_DEPENDS=	libortp.so:${PORTSDIR}/net/ortp \
 CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alsa --disable-matroska --disable-pulseaudio \
-		--disable-silent-rules --disable-strict \
+CONFIGURE_ARGS=	--disable-alsa --disable-documentation --disable-matroska \
+		--disable-pulseaudio --disable-silent-rules --disable-strict \
 		--with-gsm=${LOCALBASE} --with-srtp=${LOCALBASE} \
 		--with-polarssl=${LOCALBASE} xxd_found=yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_ARC4RANDOM

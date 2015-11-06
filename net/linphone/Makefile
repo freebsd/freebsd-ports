@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	linphone
-PORTVERSION=	3.8.5
+PORTVERSION=	3.9.0
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	SAVANNAH/linphone/3.8.x/sources
+MASTER_SITES=	SAVANNAH/linphone/3.9.x/sources
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	SIP client supporting voice/video calls and text messaging
@@ -18,8 +18,9 @@ LIB_DEPENDS=	libbellesip.so:${PORTSDIR}/net/belle-sip \
 CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-deplibs-link --disable-silent-rules \
-		--disable-speex --disable-strict --disable-tutorials \
+CONFIGURE_ARGS=	--disable-deplibs-link --disable-documentation \
+		--disable-silent-rules --disable-speex --disable-strict \
+		--disable-tutorials \
 		--enable-external-mediastreamer --enable-external-ortp \
 		--enable-lime --with-polarssl=${LOCALBASE} \
 		--with-readline=${LOCALBASE}
