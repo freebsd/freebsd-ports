@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XML interface for rubygem-debugger
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-builder32>=2.0.0:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-byebug>=0:${PORTSDIR}/devel/rubygem-byebug
