@@ -1,6 +1,5 @@
 bin/imagew
 include/imagew.h
+lib/libimageworsener-1.2.0.so
 lib/libimageworsener.a
 lib/libimageworsener.so
-lib/libimageworsener.so.1
-lib/libimageworsener.so.1.1.0
