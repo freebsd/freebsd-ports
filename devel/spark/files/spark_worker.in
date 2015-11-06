@@ -21,8 +21,8 @@ export SPARK_IDENT_STRING=%%SPARK_USER%%
 export SPARK_WORKER_DIR=${spark_worker_dir}
 
 pidfile=${SPARK_PID_DIR}/spark-${SPARK_IDENT_STRING}-org.apache.spark.deploy.worker.Worker-1.pid
-start_cmd="/usr/bin/su -m %%SPARK_USER%% -c \"%%DATADIR%%/sbin/start-slave.sh 1 ${spark_worker_master}\""
-stop_cmd='/usr/bin/su -m %%SPARK_USER%% -c "%%DATADIR%%/sbin/spark-daemon.sh stop org.apache.spark.deploy.worker.Worker 1"'
+start_cmd="/usr/bin/su -m %%SPARK_USER%% -c \"%%DATADIR%%/sbin/start-slave.sh ${spark_worker_master}\""
+stop_cmd='/usr/bin/su -m %%SPARK_USER%% -c "%%DATADIR%%/sbin/spark-daemon.sh stop org.apache.spark.deploy.worker.Worker"'
 
 export PATH=$PATH:%%LOCALBASE%%/bin
 

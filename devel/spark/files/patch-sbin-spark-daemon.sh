@@ -1,5 +1,5 @@
---- sbin/spark-daemon.sh.orig	2014-12-20 14:07:28.000000000 +0300
-+++ sbin/spark-daemon.sh	2014-12-20 14:07:31.000000000 +0300
+--- sbin/spark-daemon.sh.orig	2015-10-26 09:05:25.709519603 +0000
++++ sbin/spark-daemon.sh	2015-10-26 09:07:31.767513027 +0000
 @@ -99,14 +99,6 @@
  if [ "$SPARK_LOG_DIR" = "" ]; then
    export SPARK_LOG_DIR="$SPARK_HOME/logs"
@@ -15,12 +15,12 @@
  
  if [ "$SPARK_PID_DIR" = "" ]; then
    SPARK_PID_DIR=/tmp
-@@ -126,8 +118,6 @@
+@@ -125,8 +117,6 @@
+   mode="$1"
+   shift
  
-   (start|spark-submit)
- 
--    mkdir -p "$SPARK_PID_DIR"
+-  mkdir -p "$SPARK_PID_DIR"
 -
-     if [ -f $pid ]; then
-       if kill -0 `cat $pid` > /dev/null 2>&1; then
-         echo $command running as process `cat $pid`.  Stop it first.
+   if [ -f "$pid" ]; then
+     TARGET_ID="$(cat "$pid")"
+     if [[ $(ps -p "$TARGET_ID" -o comm=) =~ "java" ]]; then
