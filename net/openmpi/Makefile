@@ -31,7 +31,10 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--mandir=${PREFIX}/${MPIDIR}/man \
 			--program-prefix= \
 			--with-hwloc=${LOCALBASE} \
-			--with-libltdl=${LOCALBASE}
+			--with-libltdl=${LOCALBASE} \
+			--enable-mpi-fortran=usempi \
+			ompi_cv_fortran_ignore_tkr_data=0
+
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi
