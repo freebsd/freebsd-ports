@@ -1,5 +1,5 @@
---- img/codec_tiff.c.orig	2008-10-29 12:15:32.000000000 +0100
-+++ img/codec_tiff.c	2010-08-26 21:32:37.000000000 +0200
+--- img/codec_tiff.c.orig	2008-10-29 11:15:32 UTC
++++ img/codec_tiff.c
 @@ -164,7 +164,7 @@
  static ImgCodecInfo codec_info = {
     "TIFF Bitmap",
