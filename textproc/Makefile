@@ -438,6 +438,7 @@
     SUBDIR += linux-f10-scim-gtk
     SUBDIR += linux-f10-scim-libs
     SUBDIR += linuxdoc
+    SUBDIR += linuxdoc-tools
     SUBDIR += localize
     SUBDIR += loook
     SUBDIR += lt-aspell
