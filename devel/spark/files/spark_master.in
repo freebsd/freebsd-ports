@@ -12,11 +12,13 @@ rcvar=spark_master_enable
 load_rc_config $name
 
 : ${spark_master_enable:=NO}
+: ${spark_master_ip=:`hostname`}
 : ${spark_master_port:=7077}
 : ${spark_master_webui_port:=8080}
 
 export SPARK_PID_DIR=/var/run/spark
 export SPARK_LOG_DIR=/var/log/spark
+export SPARK_MASTER_IP=${spark_master_ip}
 export SPARK_MASTER_PORT=${spark_master_port}
 export SPARK_MASTER_WEBUI_PORT=${spark_master_webui_port}
 export SPARK_IDENT_STRING=%%SPARK_USER%%
