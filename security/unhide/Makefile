@@ -4,9 +4,8 @@
 PORTNAME=	unhide
 PORTVERSION=	20121229
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 DISTNAME=	${PORTNAME}_${DISTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	Forensic tool to find hidden processes and TCP/UDP ports
@@ -14,6 +13,7 @@ COMMENT=	Forensic tool to find hidden processes and TCP/UDP ports
 LICENSE=	GPLv3
 
 NO_WRKSUBDIR=	true
+USES=		tar:tgz
 PLIST_FILES=	man/man8/unhide.8.gz \
 		man/man8/unhide-tcp.8.gz \
 		sbin/unhide \
