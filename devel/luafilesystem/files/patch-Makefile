@@ -1,8 +1,12 @@
---- Makefile.orig	2015-01-17 21:15:55.311388044 +0300
-+++ Makefile	2015-01-17 21:16:41.813384957 +0300
-@@ -12,14 +12,14 @@
+--- Makefile.orig	2015-01-15 18:58:20 UTC
++++ Makefile
+@@ -11,15 +11,18 @@ OBJS= src/$T.o
+ 
  lib: src/lfs.so
  
++$(OBJS): $(SRCS)
++	$(CC) $(CFLAGS) -c $(SRCS) -o $(OBJS)
++
  src/lfs.so: $(OBJS)
 -	MACOSX_DEPLOYMENT_TARGET="10.3"; export MACOSX_DEPLOYMENT_TARGET; $(CC) $(CFLAGS) $(LIB_OPTION) -o src/lfs.so $(OBJS)
 +	$(CC) $(CFLAGS) $(LIB_OPTION) -o src/lfs.so $(OBJS)
