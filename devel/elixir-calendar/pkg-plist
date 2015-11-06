@@ -1,4 +1,5 @@
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.AmbiguousDateTime.beam
+lib/elixir/lib/calendar/ebin/Elixir.Calendar.CalendarTranslations.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDate.Calendar.Date.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDate.Calendar.DateTime.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDate.Calendar.NaiveDateTime.beam
@@ -20,6 +21,7 @@ lib/elixir/lib/calendar/ebin/Elixir.Calendar.DateTime.Format.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.DateTime.Parse.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.DateTime.TzPeriod.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.DateTime.beam
+lib/elixir/lib/calendar/ebin/Elixir.Calendar.DefaultTranslations.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.NaiveDateTime.Format.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.NaiveDateTime.Parse.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.NaiveDateTime.beam
