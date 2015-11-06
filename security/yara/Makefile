@@ -2,8 +2,8 @@
 
 PORTNAME=	yara
 PORTVERSION=	3.4.0
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	wxs@FreeBSD.org
@@ -17,7 +17,8 @@ GH_ACCOUNT=	plusvic
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		alias autoreconf libtool
+USES=		alias autoreconf libtool pathfix
 USE_LDCONFIG=	yes
+PATHFIX_MAKEFILEIN=	Makefile.am
 
 .include <bsd.port.mk>
