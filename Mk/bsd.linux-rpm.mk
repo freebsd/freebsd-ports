@@ -146,9 +146,9 @@ pre-patch: linux-rpm-clean-portdocs
 .		if !target(linux-rpm-clean-portdocs)
 linux-rpm-clean-portdocs:
 .			for x in ${PORTDOCS}
-	@${RM} -f ${WRKDIR}/${DOCSDIR_REL}/${x}
+	@${RM} -f ${WRKSRC}/${DOCSDIR_REL}/${x}
 .			endfor
-	@${RMDIR} ${WRKDIR}/${DOCSDIR_REL}
+	@${RMDIR} ${WRKSRC}/${DOCSDIR_REL}
 .		endif
 .  endif
 
