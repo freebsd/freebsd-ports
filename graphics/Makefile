@@ -133,6 +133,7 @@
     SUBDIR += digikam-kde4-l10n
     SUBDIR += ditaa
     SUBDIR += djview4
+    SUBDIR += djview4-qt4
     SUBDIR += djvulibre
     SUBDIR += dmtx-utils
     SUBDIR += dri
