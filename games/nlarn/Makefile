@@ -3,10 +3,11 @@
 
 PORTNAME=	nlarn
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	martin@arp242.net
+MAINTAINER=	ports@toco-domains.de
 COMMENT=	Roguelike game and as such a remake of the classic game Larn
 
 LICENSE=	GPLv3
