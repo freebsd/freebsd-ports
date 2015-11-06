@@ -1,6 +1,6 @@
---- configure.orig	2015-04-02 09:04:58 UTC
+--- configure.orig	2015-11-02 13:54:22 UTC
 +++ configure
-@@ -20382,12 +20382,6 @@ $as_echo "#define HAVE_NOTIFY1 1" >>conf
+@@ -20432,12 +20432,6 @@ $as_echo "#define HAVE_NOTIFY1 1" >>conf
  	fi
  fi
  
@@ -13,12 +13,37 @@
  case "$host_cpu" in
  	*arm*)
  
-@@ -22149,7 +22143,7 @@ fi
+@@ -22107,14 +22101,14 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_sqlite3_sqlite3_open" >&5
+ $as_echo "$ac_cv_lib_sqlite3_sqlite3_open" >&6; }
+ if test "x$ac_cv_lib_sqlite3_sqlite3_open" = xyes; then :
+-  SQLITE3_LIBS+=" -lsqlite3 "; found_sqlite=yes
++  SQLITE3_LIBS="$SQLITE3_LIBS -lsqlite3 "; found_sqlite=yes
+ else
+   foo=bar
+ fi
  
  	fi
  	if test "$found_sqlite" = "yes"; then
--		SQLITE3_CFLAGS+="-DMSG_STORAGE_ENABLED"
+-		SQLITE3_CFLAGS+=" -DMSG_STORAGE_ENABLED"
 +		SQLITE3_CFLAGS="$SQLITE3_CFLAGS -DMSG_STORAGE_ENABLED"
  		if test "$build_macos" = "yes" -o "$ios_found" = "yes"; then
  			SQLITE3_LIBS+=" -liconv"
  		fi
+@@ -22262,14 +22256,14 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_sqlite3_sqlite3_open" >&5
+ $as_echo "$ac_cv_lib_sqlite3_sqlite3_open" >&6; }
+ if test "x$ac_cv_lib_sqlite3_sqlite3_open" = xyes; then :
+-  SQLITE3_LIBS+=" -lsqlite3 "; found_sqlite=yes
++  SQLITE3_LIBS="$SQLITE3_LIBS -lsqlite3 "; found_sqlite=yes
+ else
+   foo=bar
+ fi
+ 
+         fi
+         if test "$found_sqlite" = "yes"; then
+-                SQLITE3_CFLAGS+=" -DCALL_LOGS_STORAGE_ENABLED"
++                SQLITE3_CFLAGS="$SQLITE3_CFLAGS -DCALL_LOGS_STORAGE_ENABLED"
+                 if test "$build_macos" = "yes" -o "$ios_found" = "yes"; then
+                         SQLITE3_LIBS+=" -liconv"
+                 fi
