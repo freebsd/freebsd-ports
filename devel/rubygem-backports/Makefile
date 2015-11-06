@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backports
-PORTVERSION=	3.6.6
+PORTVERSION=	3.6.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +10,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby 1.9 backports for 1.8
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
