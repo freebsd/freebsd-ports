@@ -98,12 +98,12 @@ RUN_DEPENDS=								\
 		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
 AOOVERSION1=	4
-AOOVERSION2=	1
-AOOVERSION3=	2
+AOOVERSION2=	2
+AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO412m3\(Build:9782\)
-SVNREVISION=	1709696
-AOORC=rc3
+AOOTAG=		AOO420m1\(Build:9800\)
+SVNREVISION=	1712473
+#AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
@@ -147,11 +147,12 @@ WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
 
-OPTIONS_DEFINE=		CUPS GNOME GNOMEVFS MMEDIA SDK WIKI_PUBLISHER CCACHE
-OPTIONS_DEFAULT=	CUPS GNOME GNOMEVFS MMEDIA WIKI_PUBLISHER
+OPTIONS_DEFINE=		CUPS GNOME GNOMEVFS MMEDIA PDFIMPORT SDK WIKI_PUBLISHER CCACHE
+OPTIONS_DEFAULT=	CUPS GNOME GNOMEVFS MMEDIA PDFIMPORT WIKI_PUBLISHER
 GNOME_DESC=		GConf + screensaver presentation control via DBUS
 GNOMEVFS_DESC=		GNOME Virtual File System
 MMEDIA_DESC=		Multimedia backend for impress
+PDFIMPORT_DESC=		Build and install PDF import extension
 SDK_DESC=		Build and install software development kit
 WIKI_PUBLISHER_DESC=	Build and install Wiki Publisher extension
 CCACHE_DESC=		Mimimize compile time of C/C++ programs
@@ -173,8 +174,9 @@ MMEDIA_USE=			GSTREAMER=yes
 
 SDK_CONFIGURE_ENABLE=		odk
 
+PDFIMPORT_CONFIGURE_ENABLE=	pdfimport
+
 WIKI_PUBLISHER_CONFIGURE_ENABLE=	wiki-publisher
-WIKI_PUBLISHER_VARS=	BUNDLED_EXTENSIONS+=swext/wiki-publisher.oxt
 
 .include <bsd.port.pre.mk>
 
@@ -275,10 +277,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-vigra				\
 			--with-system-xrender				\
 			--with-system-zlib
-
-.if defined (BUNDLED_EXTENSIONS)
-CONFIGURE_ARGS+=	--with-bundled-prereg-extensions="${BUNDLED_EXTENSIONS}"
-.endif
 
 CREATE_TREE=	${WRKSRC}/sysui/desktop/share/create_tree.sh
 
@@ -443,7 +441,7 @@ do-install:
 		ICON_THEMES="hicolor/??x??"			\
 		KDEMAINDIR=${PREFIX}				\
 		PREFIX=openoffice${AOOVERSION1}			\
-		${SH} -c ${CREATE_TREE} ;			\
+		${SH} ${CREATE_TREE} ;				\
 	    ${INSTALL_DATA} apacheopenoffice.xml		\
 		${STAGEDIR}/${PREFIX}/share/mime/packages
 
