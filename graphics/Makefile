@@ -39,6 +39,7 @@
     SUBDIR += aeskulap
     SUBDIR += agave
     SUBDIR += agg
+    SUBDIR += alembic
     SUBDIR += alpng
     SUBDIR += amide
     SUBDIR += ampasACES-container
