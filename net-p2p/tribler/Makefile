@@ -42,7 +42,6 @@ USE_OPENSSL=	yes
 USE_PYTHON=	run
 USE_WX=		2.8
 WX_COMPS=	python
-WX_UNICODE=	yes
 
 CFLAGS+=	-D__STDC_LIMIT_MACROS=1
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -96,14 +95,16 @@ do-install:
 		*.desktop ${STAGEDIR}${PREFIX}/share/applications)
 	(cd ${WRKSRC}/usr/share/pixmaps && ${INSTALL_DATA} \
 		*.xpm ${STAGEDIR}${PREFIX}/share/pixmaps)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/usr/share/tribler/Tribler && ${INSTALL_DATA} \
-		*LICENSE*.txt readme.txt ${STAGEDIR}${DOCSDIR})
 	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O -m compileall \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/usr/share/tribler/Tribler && ${INSTALL_DATA} \
+		*LICENSE*.txt readme.txt ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
