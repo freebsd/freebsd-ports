@@ -1,6 +1,6 @@
---- src/gtimelapse.cpp.orig
+--- src/gtimelapse.cpp.orig	2009-06-08 12:13:59 UTC
 +++ src/gtimelapse.cpp
-@@ -155,7 +155,11 @@
+@@ -155,7 +155,11 @@ wxPanel *display_widgets (wxPanel *panel
  					//cout << "type: RADIO" << endl;
  					//cout << "current: " << current << endl;
  
@@ -12,7 +12,7 @@
  					
  					for ( i=0; i<cnt; i++) {
  						const char *choice;
-@@ -165,6 +169,10 @@
+@@ -165,6 +169,10 @@ wxPanel *display_widgets (wxPanel *panel
  						choices[i] = mystring;
  					}
  			
