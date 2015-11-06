@@ -4,8 +4,7 @@
 PORTNAME=	ragel
 PORTVERSION=	6.9
 CATEGORIES=	devel
-MASTER_SITES=	http://www.colm.net/wp-content/uploads/2014/10/ \
-		http://www.complang.org/ragel/
+MASTER_SITES=	http://www.colm.net/files/${PORTNAME}/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Compile regular languages into executable C/C++ code
