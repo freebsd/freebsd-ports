@@ -244,6 +244,7 @@
     SUBDIR += openark-kit
     SUBDIR += openbase-jdbc
     SUBDIR += opendbx
+    SUBDIR += opentsdb
     SUBDIR += oracle7-client
     SUBDIR += oracle8-client
     SUBDIR += oracle_odbc_driver
