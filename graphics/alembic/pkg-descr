@@ -1,0 +1,12 @@
+Alembic is an open computer graphics interchange framework.  It distills
+complex, animated scenes into a non-procedural, application-independent
+set of baked geometric results.  This "distillation" of scenes into baked
+geometry is exactly analogous to the distillation of lighting and
+rendering scenes into rendered image data.
+
+Alembic is focused on efficiently storing the computed results of complex
+procedural geometric constructions.  It is very specifically NOT concerned
+with storing the complex dependency graph of procedural tools used to
+create the computed results.
+
+WWW: http://alembic.io/
