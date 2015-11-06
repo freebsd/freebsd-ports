@@ -816,6 +816,7 @@
     SUBDIR += py-kerberos
     SUBDIR += py-keyczar
     SUBDIR += py-keyring
+    SUBDIR += py-letsencrypt
     SUBDIR += py-libnacl
     SUBDIR += py-m2crypto
     SUBDIR += py-mcrypt
