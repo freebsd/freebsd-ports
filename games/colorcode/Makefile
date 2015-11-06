@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	colorcode
-PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTVERSION=	0.8.5
 CATEGORIES=	games
 MASTER_SITES=	http://colorcode.laebisch.com/download/
 DISTNAME=	ColorCode-${PORTVERSION}
@@ -10,12 +9,12 @@ DISTNAME=	ColorCode-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Advanced MasterMind game and solver
 
-USE_QT4=	gui moc_build rcc_build uic_build
+USE_QT5=	gui widgets buildtools_build
 USES=		qmake
 WRKSRC=		${WRKDIR}/ColorCode-${PORTVERSION}
 
-DESKTOP_ENTRIES=	"ColorCode" "${COMMENT}" \
-			"${PREFIX}/share/pixmaps/colorcode.png" "colorcode" \
+DESKTOP_ENTRIES=	ColorCode "" \
+			colorcode colorcode \
 			"LogicGame;Game;Qt;" true
 
 PLIST_FILES=	bin/colorcode \
