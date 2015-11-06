@@ -176,14 +176,19 @@ post-patch:
 		/jackEnvironment/s|'asound'|''|" ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e "s|linux/if.h|sys/types.h|" \
 		${WRKSRC}/OOps/remote.c
+	@${REINPLACE_CMD} -e "/Str/!s|fdclose|my_fdclose|" \
+		${WRKSRC}/OOps/*.c \
+		${WRKSRC}/Top/csound.c \
+		${WRKSRC}/Engine/auxfd.c \
+		${WRKSRC}/H/prototyp.h
 
 post-install:
 	${LN} -sf libcsound64.so.5 ${STAGEDIR}${PREFIX}/lib/libcsound64.so
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKDIR}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/*.so* \
 		${STAGEDIR}${PREFIX}/lib/csound/plugins64/*.so
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKDIR}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
