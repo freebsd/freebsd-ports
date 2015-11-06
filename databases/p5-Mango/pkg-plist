@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Mango/BSON/Binary.pm
 %%SITE_PERL%%/Mango/BSON/Code.pm
 %%SITE_PERL%%/Mango/BSON/Document.pm
+%%SITE_PERL%%/Mango/BSON/Number.pm
 %%SITE_PERL%%/Mango/BSON/ObjectID.pm
 %%SITE_PERL%%/Mango/BSON/Time.pm
 %%SITE_PERL%%/Mango/BSON/Timestamp.pm
@@ -24,6 +25,7 @@
 %%PERL5_MAN3%%/Mango::BSON::Binary.3.gz
 %%PERL5_MAN3%%/Mango::BSON::Code.3.gz
 %%PERL5_MAN3%%/Mango::BSON::Document.3.gz
+%%PERL5_MAN3%%/Mango::BSON::Number.3.gz
 %%PERL5_MAN3%%/Mango::BSON::ObjectID.3.gz
 %%PERL5_MAN3%%/Mango::BSON::Time.3.gz
 %%PERL5_MAN3%%/Mango::BSON::Timestamp.3.gz
