@@ -357,6 +357,7 @@
     SUBDIR += pauker
     SUBDIR += pcbsd-base
     SUBDIR += pcbsd-i18n
+    SUBDIR += pcbsd-i18n-qt5
     SUBDIR += pcbsd-meta-awesome
     SUBDIR += pcbsd-meta-cinnamon
     SUBDIR += pcbsd-meta-fvwm
