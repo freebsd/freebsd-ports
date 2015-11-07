@@ -178,6 +178,7 @@
     SUBDIR += daa2iso
     SUBDIR += dae
     SUBDIR += daedalus
+    SUBDIR += daemonize
     SUBDIR += daemontools
     SUBDIR += daemontools-encore
     SUBDIR += dar
