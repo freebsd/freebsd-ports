@@ -1,5 +1,5 @@
---- lisp-kernel/memory.c.orig	2014-10-08 10:40:13.000000000 -0400
-+++ lisp-kernel/memory.c	2014-10-08 10:41:19.000000000 -0400
+--- lisp-kernel/memory.c.orig	2015-11-06 20:10:03 UTC
++++ lisp-kernel/memory.c
 @@ -89,7 +89,7 @@ ReserveMemoryForHeap(LogicalAddress want
    start = mmap((void *)want,
  	       totalsize + heap_segment_size,
@@ -18,7 +18,7 @@
        return NULL;
      }
    }
-@@ -877,7 +877,7 @@ ReserveMemory(natural size)
+@@ -907,7 +907,7 @@ ReserveMemory(natural size)
                     PAGE_NOACCESS);
    return p;
  #else
