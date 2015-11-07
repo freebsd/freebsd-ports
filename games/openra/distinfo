@@ -26,5 +26,5 @@ SHA256 (SDL2-CS.dll) = acb68619a8043b044f55a0e3bf9eaaf7b418962dd58757defd6d74c01
 SIZE (SDL2-CS.dll) = 2884608
 SHA256 (Eluant.dll) = abb67679c241ae35a430f79696792cbd9093ceda5998f6f578d0fd763ee440b0
 SIZE (Eluant.dll) = 64000
-SHA256 (GeoLite2-Country.mmdb.gz) = ec7d5c78024b3d952742ccf62619de35863b78c3c43fd738d66750916dc2bd52
-SIZE (GeoLite2-Country.mmdb.gz) = 1016027
+SHA256 (GeoLite2-Country.mmdb.gz) = adf566544ee7ac8029933ce4d247868eadc087147e1dcc85a7e8324b8419dfa2
+SIZE (GeoLite2-Country.mmdb.gz) = 1059657
