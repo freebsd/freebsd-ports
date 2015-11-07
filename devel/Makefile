@@ -4035,6 +4035,7 @@
     SUBDIR += py-geotypes
     SUBDIR += py-gevent
     SUBDIR += py-gflags
+    SUBDIR += py-git-up
     SUBDIR += py-gitdb
     SUBDIR += py-gitosis
     SUBDIR += py-gitpython
@@ -4191,7 +4192,6 @@
     SUBDIR += py-pyflakes
     SUBDIR += py-pygit2
     SUBDIR += py-pygithub
-    SUBDIR += py-pygitup
     SUBDIR += py-pygpx
     SUBDIR += py-pykde4
     SUBDIR += py-pykdeuic4
