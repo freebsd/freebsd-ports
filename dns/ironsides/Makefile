@@ -3,7 +3,6 @@
 
 PORTNAME=	ironsides
 PORTVERSION=	${SNAPSHOT:S/_//g}
-PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://ironsides.martincarlisle.com/
 DISTNAME=	ironsides_authoritative-${SNAPSHOT}
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/spark2012/spark.ads:${PORTSDIR}/devel/libspa
 
 USES=		ada dos2unix zip
 DOS2UNIX_FILES=	dfcs.usafa.edu.zonefile ironsides.1
-SNAPSHOT=	2014_02_20
+SNAPSHOT=	2015_04_15
 WRKSRC=		${WRKDIR}/${DISTFILES:S/.zip//}
 PLIST_FILES=	sbin/ironsides man/man1/ironsides.1.gz
 PORTEXAMPLES=	dfcs.usafa.edu.zonefile
