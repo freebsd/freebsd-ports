@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hedgewars
-PORTVERSION=	0.9.21.1
-PORTREVISION=	2
+PORTVERSION=	0.9.22
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/hedgewars/ \
 		http://mirror.amdmi3.ru/distfiles/
