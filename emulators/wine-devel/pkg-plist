@@ -2417,10 +2417,10 @@ lib/wine/xmllite.dll.so
 lib/wine/xolehlp.dll.so
 lib/wine/xpsprint.dll.so
 lib/wine/xpssvcs.dll.so
-man/de.UTF-8/man1/wine.1.gz
+%%WINE32%%man/de.UTF-8/man1/wine.1.gz
 man/de.UTF-8/man1/winemaker.1.gz
 man/de.UTF-8/man1/wineserver.1.gz
-man/fr.UTF-8/man1/wine.1.gz
+%%WINE32%%man/fr.UTF-8/man1/wine.1.gz
 man/fr.UTF-8/man1/winemaker.1.gz
 man/fr.UTF-8/man1/wineserver.1.gz
 man/man1/msiexec.1.gz
@@ -2428,7 +2428,7 @@ man/man1/notepad.1.gz
 man/man1/regedit.1.gz
 man/man1/regsvr32.1.gz
 man/man1/widl.1.gz
-man/man1/wine.1.gz
+%%WINE32%%man/man1/wine.1.gz
 man/man1/wineboot.1.gz
 man/man1/winebuild.1.gz
 man/man1/winecfg.1.gz
@@ -2445,7 +2445,7 @@ man/man1/winepath.1.gz
 man/man1/wineserver.1.gz
 man/man1/wmc.1.gz
 man/man1/wrc.1.gz
-man/pl.UTF-8/man1/wine.1.gz
+%%WINE32%%man/pl.UTF-8/man1/wine.1.gz
 share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
