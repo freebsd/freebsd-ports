@@ -3,6 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap
@@ -11,7 +12,7 @@ DISTFILES=	${RUST_SOURCE}:src \
 		${RUST_BOOT}:bootstrap
 EXTRACT_ONLY=	${RUST_SOURCE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Language with a focus on memory safety and concurrency
 
 LICENSE=	APACHE20 \
@@ -58,9 +59,9 @@ CONFIGURE_ARGS=	--disable-valgrind --disable-docs \
 		--release-channel=${RUST_CHANNEL}
 
 # Use LLVM from ports, instead of the copy shipped with rust.
-LLVM_VER=	36
-BUILD_DEPENDS+=	llvm${LLVM_VER}>=0:${PORTSDIR}/devel/llvm${LLVM_VER}
-CONFIGURE_ARGS+=--llvm-root=${LOCALBASE}/llvm${LLVM_VER}
+#LLVM_VER=	36
+#BUILD_DEPENDS+=	llvm${LLVM_VER}>=0:${PORTSDIR}/devel/llvm${LLVM_VER}
+#CONFIGURE_ARGS+=--llvm-root=${LOCALBASE}/llvm${LLVM_VER}
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 MAKE_ARGS+=	VERBOSE=1
@@ -70,6 +71,10 @@ OPTIONS_DEFINE=		LLNEXTGEN
 LLNEXTGEN_DESC=		Build with grammar verification
 
 LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:${PORTSDIR}/devel/llnextgen
+
+# Note that make test does not work when rust is already installed
+TEST_TARGET=	check
+TEST_ENV+=	ALLOW_NONZERO_RLIMIT_CORE=1
 
 .include <bsd.port.options.mk>
 
