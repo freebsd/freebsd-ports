@@ -1302,6 +1302,8 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.5by5/URL/5by5/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.abc/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.abc/URL/ABC/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.abcfamily/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.abcfamily/URL/ABC Family/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.absoluteradio/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.absoluteradio/URL/Absolute Radio/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.adobetv/ServiceInfo.plist
@@ -1311,7 +1313,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aetv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aetv/URL/AETV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.amt/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.amt/URL/Apple Movie Trailers/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.amt/URL/iTunes Movie Trailers/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.annakimphotography/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.annakimphotography/URL/Anna Kim Photography/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.aolon/ServiceInfo.plist
@@ -1467,8 +1469,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nationalgeographic/URL/National Geographic Photography/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nationalgeographic/URL/National Geographic/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/URL/MSNBC Podcast/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/URL/MSNBC/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nbc/URL/NBC/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ndtv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ndtv/URL/NDTV/ServiceCode.pys
@@ -1495,6 +1495,7 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/faststream.in/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/gorillavid.in/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/letwatch.us/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/nosvideo.com/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/royalvids.eu/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/vidzi.tv/ServiceCode.pys
@@ -1563,8 +1564,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theberrics/URL/The Berrics/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thecw/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thecw/URL/The CW/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thedailyshow/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thedailyshow/URL/The Daily Show/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theguardian/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.theguardian/URL/The Guardian/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.thenytimes/ServiceInfo.plist
@@ -1639,8 +1638,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.wsj/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.wsj/URL/WSJ/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.xxx/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.xxx/URL/4tube/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.xxx/URL/FUX/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.xxx/URL/RedTube/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.xxx/URL/beeg/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.xxx/URL/xHamster/ServiceCode.pys
