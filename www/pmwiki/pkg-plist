@@ -91,6 +91,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.BasicEditing
 %%PMWIKIDIR%%/wikilib.d/PmWiki.BasicVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Blocklist
+%%PMWIKIDIR%%/wikilib.d/PmWiki.BlockMarkup
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Categories
 %%PMWIKIDIR%%/wikilib.d/PmWiki.ChangeLog
 %%PMWIKIDIR%%/wikilib.d/PmWiki.ConditionalMarkup
