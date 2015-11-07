@@ -55,9 +55,9 @@
 %%T%%/lib/tomcat-websocket.jar
 %%T%%/lib/websocket-api.jar
 %%T%%/temp/safeToDelete.tmp
-@dir %%T%%/temp
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
+@dir %%T%%/temp
 %%T%%/webapps/ROOT/RELEASE-NOTES.txt
 %%T%%/webapps/ROOT/WEB-INF/web.xml
 %%T%%/webapps/ROOT/asf-logo-wide.gif
