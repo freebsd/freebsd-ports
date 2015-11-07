@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	srv2pf
-PORTVERSION=	20151101
+PORTVERSION=	20151106
 CATEGORIES=	net
 MASTER_SITES=	GH
+PKGNAMEPREFIX=  p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Create and update PF tables from LDAP groups
@@ -19,6 +20,6 @@ GH_ACCOUNT=	dag-erling
 USES=		perl5
 USE_PERL5=	configure run
 
-PLIST_FILES=	bin/srv2pf
+PLIST_FILES=	bin/${PORTNAME} ${SITE_MAN1_REL}/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

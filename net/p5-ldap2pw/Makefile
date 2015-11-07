@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2pw
-PORTVERSION=	20151101
+PORTVERSION=	20151106
 CATEGORIES=	net
 MASTER_SITES=	GH
+PKGNAMEPREFIX=  p5-
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Synchronize local user database with LDAP directory
@@ -21,6 +22,6 @@ GH_ACCOUNT=	dag-erling
 USES=		perl5
 USE_PERL5=	configure run
 
-PLIST_FILES=	bin/ldap2pw
+PLIST_FILES=	bin/${PORTNAME} ${SITE_MAN1_REL}/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>
