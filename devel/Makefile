@@ -4973,6 +4973,7 @@
     SUBDIR += rubygem-slack-notifier
     SUBDIR += rubygem-slim
     SUBDIR += rubygem-slop
+    SUBDIR += rubygem-slop3
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-spring
     SUBDIR += rubygem-sprockets
