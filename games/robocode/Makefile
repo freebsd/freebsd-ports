@@ -31,7 +31,7 @@ SUB_FILES=	${PORTNAME}-MeleeRumble ${PORTNAME}-RoboRumble \
 		${PORTNAME}-TwinDuel pkg-deinstall pkg-message
 
 do-install:
-	cd ${WRKDIR} && ${INSTALL_SCRIPT} ${SUB_FILES:M${PORTNAME}*} \
+	cd ${WRKDIR} && ${INSTALL_SCRIPT} ${SUB_FILES:Mrobocode-*} \
 		${STAGEDIR}${PREFIX}/bin/
 
 .for d in battles compilers javadoc libs license roborumble robots \
