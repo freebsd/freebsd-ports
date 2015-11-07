@@ -1,20 +1,20 @@
 bin/lynis
-@sample etc/lynis/default.prf.sample
+@sample %%ETCDIR%%/default.prf.sample
 man/man8/lynis.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bash_completion.d/lynis
 %%DATADIR%%/db/fileperms.db
 %%DATADIR%%/db/hints.db
 %%DATADIR%%/db/integrity.db
-%%DATADIR%%/db/malware.db
 %%DATADIR%%/db/malware-susp.db
+%%DATADIR%%/db/malware.db
 %%DATADIR%%/db/sbl.db
-%%DATADIR%%/plugins/custom_plugin.template
-%%DATADIR%%/plugins/README
 @mode 0400
 %%DATADIR%%/include/binaries
 %%DATADIR%%/include/consts
 %%DATADIR%%/include/data_upload
 %%DATADIR%%/include/functions
+%%DATADIR%%/include/helper_audit_dockerfile
+%%DATADIR%%/include/helper_update
 %%DATADIR%%/include/osdetection
 %%DATADIR%%/include/parameters
 %%DATADIR%%/include/profiles
@@ -23,6 +23,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/tests_authentication
 %%DATADIR%%/include/tests_banners
 %%DATADIR%%/include/tests_boot_services
+%%DATADIR%%/include/tests_containers
 %%DATADIR%%/include/tests_crypto
 %%DATADIR%%/include/tests_custom.template
 %%DATADIR%%/include/tests_databases
@@ -30,7 +31,6 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/tests_file_permissions
 %%DATADIR%%/include/tests_filesystems
 %%DATADIR%%/include/tests_firewalls
-%%DATADIR%%/include/tests_hardening_tools
 %%DATADIR%%/include/tests_hardening
 %%DATADIR%%/include/tests_homedirs
 %%DATADIR%%/include/tests_insecure_services
@@ -55,9 +55,10 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/tests_ssh
 %%DATADIR%%/include/tests_storage
 %%DATADIR%%/include/tests_storage_nfs
-%%DATADIR%%/include/tests_tcpwrappers
 %%DATADIR%%/include/tests_time
 %%DATADIR%%/include/tests_tooling
 %%DATADIR%%/include/tests_virtualization
 %%DATADIR%%/include/tests_webservers
 @mode
+%%DATADIR%%/plugins/README
+%%DATADIR%%/plugins/custom_plugin.template
