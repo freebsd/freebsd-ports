@@ -35,7 +35,6 @@ share/icons/hicolor/scalable/apps/texstudio.svg
 %%DATADIR%%/doc20.png
 %%DATADIR%%/doc21.png
 %%DATADIR%%/doc3.png
-%%DATADIR%%/doc4.png
 %%DATADIR%%/doc5.png
 %%DATADIR%%/doc6.png
 %%DATADIR%%/doc7.png
@@ -46,6 +45,8 @@ share/icons/hicolor/scalable/apps/texstudio.svg
 %%DATADIR%%/en_GB.dic
 %%DATADIR%%/en_US.aff
 %%DATADIR%%/en_US.dic
+%%DATADIR%%/es_ES.aff
+%%DATADIR%%/es_ES.dic
 %%DATADIR%%/fr.stopWords
 %%DATADIR%%/fr_FR.aff
 %%DATADIR%%/fr_FR.dic
