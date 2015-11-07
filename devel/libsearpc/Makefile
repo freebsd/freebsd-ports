@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsearpc
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	3.0.7
 CATEGORIES=	devel
 
 MAINTAINER=	ultima1252@gmail.com
