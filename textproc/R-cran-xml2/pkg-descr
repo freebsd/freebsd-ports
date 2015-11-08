@@ -1,0 +1,4 @@
+Work with XML files using a simple, consistent interface. Built on
+top of the 'libxml2' C library.
+
+WWW: https://cran.r-project.org/web/packages/xml2/
