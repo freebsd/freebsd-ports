@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	texinfo
-PORTVERSION=	6.0.20151013
+PORTVERSION=	6.0.20151108
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/ \
+		http://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/ \
 		GNU
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} htmlxref.cnf texinfo.tex texi2dvi
