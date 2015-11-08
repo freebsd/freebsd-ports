@@ -5,16 +5,18 @@ PKGNAMESUFFIX=	100-client
 
 COMMENT=	Multithreaded SQL database (client)
 
+LICENSE+=	LGPL21
+
 MASTERDIR=	${.CURDIR}/../mariadb100-server
 
 FILESDIR=	${.CURDIR}/files
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
-CONFLICTS_INSTALL=	mysql[0-9][0-9]-client-* \
-			mariadb[0-46-9][0-9]-client-* \
-			mariadb5.[0-46-9]-client-* \
-			percona[0-9][0-9]-client-*
+CONFLICTS_INSTALL=	mariadb5*-client-* \
+			mariadb10[1-9]-client-* \
+			mysql*-client-* \
+			percona*-client-*
 
 CMAKE_ARGS+=	-DWITHOUT_SERVER=1
 
