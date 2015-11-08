@@ -62,7 +62,7 @@ bin/soapui.sh
 %%DATADIR%%/bin/loadtestrunner.sh
 %%DATADIR%%/bin/mockservicerunner.sh
 %%DATADIR%%/bin/securitytestrunner.sh
-%%DATADIR%%/bin/soapui-5.2.0.jar
+%%DATADIR%%/bin/soapui-5.2.1.jar
 %%DATADIR%%/bin/soapui-errors.log
 %%DATADIR%%/bin/soapui-log4j.xml
 %%DATADIR%%/bin/soapui.log
@@ -74,7 +74,7 @@ bin/soapui.sh
 %%DATADIR%%/bin/updateinstallation.sh
 %%DATADIR%%/bin/wargenerator.sh
 %%DATADIR%%/lib/activation-1.1.jar
-%%DATADIR%%/lib/analytics-core-5.2.0.jar
+%%DATADIR%%/lib/analytics-core-5.2.1.jar
 %%DATADIR%%/lib/animal-sniffer-annotations-1.11.jar
 %%DATADIR%%/lib/bcprov-jdk15-144.jar
 %%DATADIR%%/lib/binding-2.0.1.jar
@@ -137,7 +137,7 @@ bin/soapui.sh
 %%DATADIR%%/lib/org.apache.oltu.oauth2.client-0.31.jar
 %%DATADIR%%/lib/org.apache.oltu.oauth2.common-0.31.jar
 %%DATADIR%%/lib/org.apache.oltu.oauth2.httpclient4-0.31.jar
-%%DATADIR%%/lib/out-app-analytics-provider-5.2.0.jar
+%%DATADIR%%/lib/out-app-analytics-provider-5.2.1.jar
 %%DATADIR%%/lib/proxy-vole-20131209.jar
 %%DATADIR%%/lib/reflections-0.9.9-RC1.jar
 %%DATADIR%%/lib/rsyntaxtextarea-2.5.0.jar
