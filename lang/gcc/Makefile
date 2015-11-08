@@ -3,7 +3,6 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.8.5
-PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 
@@ -47,14 +46,6 @@ OPTIONS_DEFAULT_i386=	JAVA
 OPTIONS_DEFAULT_amd64=	JAVA
 OPTIONS_EXCLUDE_DragonFly=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
-.if exists(/usr/lib32/libc.so)
-OPTIONS_DEFINE+=	MULTILIB
-OPTIONS_DEFAULT+=	MULTILIB
-MULTILIB_DESC=		Build support for 32-bit and 64-bit target types
-MULTILIB_CONFIGURE_ENABLE=	multilib
-.else
-CONFIGURE_ARGS+=	--disable-multilib
-.endif
 
 .include <bsd.port.pre.mk>
 
