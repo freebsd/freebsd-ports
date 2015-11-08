@@ -42,15 +42,15 @@ share/emacs/site-lisp/quilt.el
 %%DATADIR%%/scripts/backup-files
 %%DATADIR%%/scripts/dependency-graph
 %%DATADIR%%/scripts/edmail
-%%DATADIR%%/scripts/inspect
+%%DATADIR%%/scripts/inspect-wrapper
 %%DATADIR%%/scripts/patchfns
 %%DATADIR%%/scripts/remove-trailing-ws
 %%DATADIR%%/scripts/utilfns
-%%DATADIR%%/wrapper/patch
 %%DATADIR%%/compat/awk
 %%DATADIR%%/compat/cp
 %%DATADIR%%/compat/date
 %%DATADIR%%/compat/getopt
+%%DATADIR%%/compat/md5sum
 %%DATADIR%%/compat/patch
 %%DATADIR%%/compat/sed
 %%SENDMAIL%%%%DATADIR%%/compat/sendmail
