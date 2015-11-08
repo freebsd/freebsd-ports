@@ -12,6 +12,9 @@ DISTNAME=	django_evolution-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database schema evolution tool for the Django web framework
 
+DEPRECATED=	Django 1.4 extended support ended on 2015-10-01
+EXPIRATION_DATE=	2015-12-09
+
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>=1.1.1:${PORTSDIR}/www/py-django14
