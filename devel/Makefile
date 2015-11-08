@@ -3761,7 +3761,6 @@
     SUBDIR += php56-tokenizer
     SUBDIR += phpbt
     SUBDIR += phpsh
-    SUBDIR += phptags
     SUBDIR += phpunit
     SUBDIR += physfs
     SUBDIR += physfs-devel
