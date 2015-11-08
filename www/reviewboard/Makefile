@@ -9,6 +9,9 @@ DISTNAME=	ReviewBoard-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based code review tool
 
+DEPRECATED=	Django 1.4 extended support ended on 2015-10-01
+EXPIRATION_DATE=	2015-12-09
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 

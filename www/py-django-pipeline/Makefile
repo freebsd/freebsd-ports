@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asset (css/js) packaging library for Django
 
+DEPRECATED=	Django 1.4 extended support ended on 2015-10-01
+EXPIRATION_DATE=	2015-12-09
+
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>0:${PORTSDIR}/www/py-django14
