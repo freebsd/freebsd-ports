@@ -3,10 +3,11 @@
 
 PORTNAME=	pkg-plist
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt python
 MASTER_SITES=	http://code.arp242.net/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
-MAINTAINER=	martin@arp242.net
+MAINTAINER=	ports@toco-domains.de
 COMMENT=	Generate a pkg-plist for a port
 
 LICENSE=	MIT
@@ -18,6 +19,8 @@ WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 BB_ACCOUNT=	Carpetsmoker
 BB_PROJECT=	${PORTNAME}
 BB_COMMIT=	ff040a64c20b
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/pkg-plist man/man1/pkg-plist.1.gz
 
