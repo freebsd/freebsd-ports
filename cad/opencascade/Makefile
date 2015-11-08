@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	opencascade
-PORTVERSION=	6.8.0
-PORTREVISION=	4
+PORTVERSION=	6.9.1
 CATEGORIES=	cad science
-MASTER_SITES=	http://files.opencascade.com/OCCT/OCC_${PORTVERSION}_release/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	thierry
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Open CASCADE Technology, 3D modeling & numerical simulation
