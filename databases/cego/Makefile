@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.26.9
+PORTVERSION=	2.26.10
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -44,5 +44,8 @@ post-install:
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcego.so.2.0.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgwrap.so.2.0.0
+
+do-test:
+	cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.mk>
