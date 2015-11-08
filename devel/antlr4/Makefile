@@ -22,8 +22,6 @@ SUB_FILES=	antlr.sh
 PLIST_FILES=	bin/${PORTNAME} \
 		${JAVAJARDIR}/${INSTALL_JAR}
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${JAVAJARDIR}/${INSTALL_JAR}
