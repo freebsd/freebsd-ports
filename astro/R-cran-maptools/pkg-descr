@@ -5,4 +5,4 @@ interface wrappers for exchanging spatial objects with packages
 such as PBSmapping, spatstat, maps, RArcInfo, Stata tmap, WinBUGS,
 Mondrian, and others.
 
-WWW: http://cran.r-project.org/web/packages/maptools/
+WWW: https://cran.r-project.org/web/packages/maptools/
