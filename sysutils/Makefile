@@ -1020,7 +1020,6 @@
     SUBDIR += tmux
     SUBDIR += topless
     SUBDIR += torque
-    SUBDIR += torsmo
     SUBDIR += toshctl
     SUBDIR += tracker
     SUBDIR += tree
