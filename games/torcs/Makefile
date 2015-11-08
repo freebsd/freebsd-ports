@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Open Racing Car Simulator
 
 LICENSE=	GPLv2
