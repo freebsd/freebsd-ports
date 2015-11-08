@@ -1,0 +1,4 @@
+wdfs is a WebDAV filesystem with special features for accessing
+Subversion repositories. It uses Fuse and Neon.
+
+WWW: http://noedler.de/projekte/wdfs/
