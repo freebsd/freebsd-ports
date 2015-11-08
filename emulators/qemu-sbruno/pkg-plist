@@ -44,6 +44,7 @@
 %%NONX86%%bin/qemu-system-xtensaeb
 %%SOFTMMU%%man/man1/qemu.1.gz
 %%SOFTMMU%%man/man1/qemu-img.1.gz
+%%SOFTMMU%%man/man8/qemu-ga.8.gz
 %%SOFTMMU%%man/man8/qemu-nbd.8.gz
 %%SOFTMMU%%@sample etc/qemu-ifup.sample
 %%SOFTMMU%%@sample etc/qemu-ifdown.sample
