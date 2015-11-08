@@ -3,7 +3,7 @@
 
 PORTNAME=	validator
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/
@@ -32,7 +32,7 @@ USE_PERL5=	run
 SHEBANG_FILES=	httpd/cgi-bin/check \
 		httpd/cgi-bin/sendfeedback.pl
 
-SUB_FILES=	pkg-message validator.conf.sample
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	HTML_TIDY
 OPTIONS_DEFAULT=HTML_TIDY
@@ -46,21 +46,26 @@ HTML_TIDY_RUN_DEPENDS=	p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy
 RUN_DEPENDS+=	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 .endif
 
-post-extract:
-	@${RM} ${WRKSRC}/README.cvs
-	@${RM} -rf ${WRKSRC}/misc
-	@${RM} -rf ${WRKSRC}/httpd/conf
-	@${RM} ${WRKSRC}/htdocs/config/validator.conf
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%WWWDIR%%|${WWWDIR}|' \
+		${WRKSRC}/htdocs/config/validator.conf \
+		${WRKSRC}/httpd/cgi-bin/check \
+		${WRKSRC}/httpd/cgi-bin/sendfeedback.pl \
+		${WRKSRC}/httpd/conf/httpd.conf
 
 pre-install:
-	${CP} -f ${WRKDIR}/validator.conf.sample ${WRKSRC}/htdocs/config/
+	${MV} ${WRKSRC}/htdocs/config/validator.conf \
+		${WRKSRC}/htdocs/config/validator.conf.sample
+	${MV} ${WRKSRC}/httpd/conf/httpd.conf \
+		${WRKSRC}/httpd/conf/httpd.conf.sample
+	${FIND} ${WRKSRC} \( -name \*.bak -or -name \*.orig \) -delete
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/validator/htdocs
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/validator/httpd/cgi-bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/validator/httpd
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/validator/share
-	(cd ${WRKSRC}/htdocs && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/validator/htdocs/)
-	${INSTALL_SCRIPT} ${WRKSRC}/httpd/cgi-bin/* ${STAGEDIR}${PREFIX}/www/validator/httpd/cgi-bin
-	(cd ${WRKSRC}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/validator/share/)
+	(cd ${WRKSRC}/htdocs && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/htdocs/)
+	(cd ${WRKSRC}/httpd && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/httpd/)
+	(cd ${WRKSRC}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/share/)
 
 .include <bsd.port.post.mk>
