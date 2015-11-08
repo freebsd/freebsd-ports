@@ -6984,7 +6984,6 @@ games/alienarena-data||2014-09-07|Useless with alienarena removed
 net/libexosip2-legacy|net/libexosip2|2014-09-07|Has expired: Superseded by net/libexosip2
 net/libosip|net/libosip2|2014-09-07|Has expired: Superseded by net/libosip2
 lang/caml-light||2014-09-07|Not staged
-sysutils/fusefs-wdfs||2014-09-07|Not staged
 devel/pybaz||2014-09-07|Obsolete, use devel/bzr instead
 devel/baz||2014-09-07|Unstaged, obsolete, distfiles don't exist. Use devel/bzr instead
 security/prelude-lml||2014-09-07|Not staged
