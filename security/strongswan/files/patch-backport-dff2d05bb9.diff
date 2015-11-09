@@ -1,0 +1,27 @@
+From dff2d05bb9bec684b3b2efdafc9a47219550bbe1 Mon Sep 17 00:00:00 2001
+From: Renato Botelho <garga@FreeBSD.org>
+Date: Fri, 6 Nov 2015 17:07:38 -0200
+Subject: [PATCH] kernel-pfkey: Enable ENCR_AES_CTR when it's available
+
+Obtained-from:	pfSense
+Sponsored-by:	Rubicon Communications (Netgate)
+Closes strongswan/strongswan#17.
+---
+ src/libhydra/plugins/kernel_pfkey/kernel_pfkey_ipsec.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/libhydra/plugins/kernel_pfkey/kernel_pfkey_ipsec.c b/src/libhydra/plugins/kernel_pfkey/kernel_pfkey_ipsec.c
+index 5027e17..0df6fb5 100644
+--- src/libhydra/plugins/kernel_pfkey/kernel_pfkey_ipsec.c
++++ src/libhydra/plugins/kernel_pfkey/kernel_pfkey_ipsec.c
+@@ -843,7 +843,9 @@ static kernel_algorithm_t encryption_algs[] = {
+ /*	{ENCR_DES_IV32,				0							}, */
+ 	{ENCR_NULL,					SADB_EALG_NULL				},
+ 	{ENCR_AES_CBC,				SADB_X_EALG_AESCBC			},
+-/*	{ENCR_AES_CTR,				SADB_X_EALG_AESCTR			}, */
++#ifdef SADB_X_EALG_AESCTR
++	{ENCR_AES_CTR,				SADB_X_EALG_AESCTR			},
++#endif
+ /*  {ENCR_AES_CCM_ICV8,			SADB_X_EALG_AES_CCM_ICV8	}, */
+ /*	{ENCR_AES_CCM_ICV12,		SADB_X_EALG_AES_CCM_ICV12	}, */
+ /*	{ENCR_AES_CCM_ICV16,		SADB_X_EALG_AES_CCM_ICV16	}, */
