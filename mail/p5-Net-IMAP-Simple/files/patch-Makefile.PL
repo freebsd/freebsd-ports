@@ -1,5 +1,5 @@
---- ./Makefile.PL.orig	2010-08-09 15:49:20.000000000 +0200
-+++ ./Makefile.PL	2010-09-18 18:17:48.000000000 +0200
+--- Makefile.PL.orig	2010-08-09 13:49:20 UTC
++++ Makefile.PL
 @@ -1,8 +1,7 @@
  use ExtUtils::MakeMaker;
  use ExtUtils::Command qw(cp);

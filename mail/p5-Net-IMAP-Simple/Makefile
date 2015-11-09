@@ -39,6 +39,7 @@ SX_DESC=	Simple protocol extensions (use Parse::RecDescent)
 
 PORTSCOUT=	skipv:1.20271
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
