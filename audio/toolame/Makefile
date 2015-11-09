@@ -11,9 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimized mpeg 1/2 layer 2 audio encoder
 
-OPTIONS_DEFINE=	DOCS
-
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LGPL.txt
 
 USES=		gmake tar:tgz
 ALL_TARGET=	${PORTNAME}
@@ -23,11 +22,15 @@ USE_CSTD=	gnu89
 PLIST_FILES=	bin/toolame
 PORTDOCS=	FUTURE HISTORY LGPL.txt README
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/toolame ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${INSTALL_PROGRAM} ${WRKSRC}/toolame ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
