@@ -16,17 +16,6 @@
 # the standard SDL and SDL_sound, use "USE_SDL=sdl sound" and the
 # required libraries are included in your LIB_DEPENDS.
 #
-# If you want to check for the availability for certain SDL ports, you
-# can set WANT_SDL and run it through bsd.port.pre.mk:
-#	WANT_SDL=	yes
-#	USE_SDL=	sdl
-#	.include <bsd.port.pre.mk>
-#	.if ${HAVE_SDL:Mgraphics}
-#	USE_SDL+=	graphics
-#	.endif
-#	.include <bsd.port.post.mk>
-# Run "make -V USE_SDL" to see which libs are asked for at the end.
-#
 
 #
 # $FreeBSD$
@@ -130,26 +119,6 @@ _SUBDIR_ttf2=	graphics
 _PORTDIR_ttf2=	sdl2_ttf
 _LIB_ttf2=	libSDL2_ttf.so
 _REQUIRES_ttf2=	sdl2
-
-#
-# If WANT_SDL is defined, check for the available libraries
-#
-.if !defined(AFTERPORTMK)
-.if !defined(SDL_Include_pre)
-
-SDL_Include_pre=	bsd.sdl.mk
-
-HAVE_SDL?=
-.if defined(WANT_SDL)
-.for component in ${_USE_SDL_ALL}
-.if exists(${LOCALBASE}/lib/lib${_LIB_${component}}.so)
-HAVE_SDL+=	${component}
-.endif
-.endfor
-.endif
-
-.endif
-.endif
 
 #
 # If USE_SDL is defined, make dependencies for the libraries
