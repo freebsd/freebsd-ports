@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puma
-PORTVERSION=	2.14.0
+PORTVERSION=	2.15.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, multithreaded and highly concurrent ruby web server
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
