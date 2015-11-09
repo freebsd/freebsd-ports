@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="56665ccb-8723-11e5-9b13-14dae9d210b8">
+    <topic>powerdns -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><ge>3.4.4</ge><lt>3.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS reports:</p>
+	<blockquote cite="https://doc.powerdns.com/md/security/powerdns-advisory-2015-03/">
+	  <p>A bug was found using afl-fuzz in our packet parsing code.
+	    This bug, when exploited, causes an assertion error and consequent
+	    termination of the the pdns_server process, causing a Denial of Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://doc.powerdns.com/md/security/powerdns-advisory-2015-03/</url>
+      <cvename>CVE-2015-5311</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-03</discovery>
+      <entry>2015-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0cb0afd9-86b8-11e5-bf60-080027ef73ec">
     <topic>PuTTY -- memory corruption in terminal emulator's erase character handling</topic>
     <affects>
