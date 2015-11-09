@@ -12,6 +12,7 @@ MAINTAINER=	johan@stromnet.se
 COMMENT=	JSON reader and writer library for C++
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		dos2unix scons
 USE_LDCONFIG=	yes
