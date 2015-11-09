@@ -20,7 +20,6 @@ LIB_DEPENDS=	libadplug.so:${PORTSDIR}/audio/libadplug \
 
 GNU_CONFIGURE=	yes
 USES=		libtool
-WANT_SDL=	yes
 
 DBFILE=		adplug.db
 DBVERSION=	2006-07-07

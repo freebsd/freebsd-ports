@@ -22,7 +22,6 @@ RUN_DEPENDS=	noegnud-data>0:${PORTSDIR}/games/noegnud-data
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
 USES=		bison tar:bzip2
 USE_GL=		yes
-WANT_SDL=	yes
 USE_SDL=	sdl image mixer
 WRKSRC=		${WRKDIR}/${DISTNAME}/variants
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
@@ -30,14 +29,10 @@ ALL_TARGET=	nh342-dt
 INSTALL_TARGET=	install_nh342-dt
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
-
 pre-everything::
-.if ${HAVE_SDL}
 	@${ECHO_MSG} "This port depends on SDL with OpenGL support."
 	@${ECHO_MSG} "If your SDL does not support OpenGL, hit ^C now and reinstall SDL"
 	@${ECHO_MSG} "with OpenGL support turned on."
-.endif
 
 post-extract:
 	@${CP} ${DISTDIR}/nethack-342.tgz ${WRKSRC}/tarballs
@@ -55,4 +50,4 @@ post-patch:
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} ${NOEGNUDVERSION}-nethack-3.4.2-deet/Makefile)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
