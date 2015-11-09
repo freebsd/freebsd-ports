@@ -58,6 +58,46 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0cb0afd9-86b8-11e5-bf60-080027ef73ec">
+    <topic>PuTTY -- memory corruption in terminal emulator's erase character handling</topic>
+    <affects>
+      <package>
+	<name>putty</name>
+	<range><ge>0.54</ge><lt>0.66</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ben Harris reports:</p>
+	<blockquote cite="http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-ech-overflow.html">
+	  <p>Versions of PuTTY and pterm between 0.54 and 0.65 inclusive have a
+	    potentially memory-corrupting integer overflow in the handling of
+	    the ECH (erase characters) control sequence in the terminal
+	    emulator.</p>
+	  <p>To exploit a vulnerability in the terminal emulator, an attacker
+	    must be able to insert a carefully crafted escape sequence into the
+	    terminal stream. For a PuTTY SSH session, this must be before
+	    encryption, so the attacker likely needs access to the server you're
+	    connecting to. For instance, an attacker on a multi-user machine
+	    that you connect to could trick you into running cat on a file they
+	    control containing a malicious escape sequence. (Unix write(1) is
+	    not a vector for this, if implemented correctly.)</p>
+	  <p>Only PuTTY, PuTTYtel, and pterm are affected; other PuTTY tools do
+	    not include the terminal emulator, so cannot be exploited this
+	    way.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-ech-overflow.html</url>
+      <cvename>CVE-2015-5309</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-06</discovery>
+      <entry>2015-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="18b3c61b-83de-11e5-905b-ac9e174be3af">
     <topic>OpenOffice 4.1.1 -- multiple vulnerabilities</topic>
     <affects>
