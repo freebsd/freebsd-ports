@@ -11,6 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Perl library to access Domain Name Registries/Registrars
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-ISO8601>0.06:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601 \
 		p5-DateTime-Format-Strptime>0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
@@ -29,6 +33,7 @@ RUN_DEPENDS=	p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime \
 		p5-Net-DNS>0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-MIME-Tools>0:${PORTSDIR}/mail/p5-MIME-Tools
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
