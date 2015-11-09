@@ -10,6 +10,7 @@ bin/mbedtls_dh_genprime
 bin/mbedtls_dh_server
 bin/mbedtls_dtls_client
 bin/mbedtls_dtls_server
+bin/mbedtls_ecdh_curve25519
 bin/mbedtls_ecdsa
 bin/mbedtls_gen_entropy
 bin/mbedtls_gen_key
@@ -67,6 +68,7 @@ include/mbedtls/des.h
 include/mbedtls/dhm.h
 include/mbedtls/ecdh.h
 include/mbedtls/ecdsa.h
+include/mbedtls/ecjpake.h
 include/mbedtls/ecp.h
 include/mbedtls/entropy.h
 include/mbedtls/entropy_poll.h
