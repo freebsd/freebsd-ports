@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for GIF89a transparent option and interlace mode
 
+BROKEN=		unfetchable
+
 NO_CDROM=	Shareware
 
 NO_WRKSUBDIR=	yes

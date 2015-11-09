@@ -12,6 +12,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Core Packages for the Enthought Tool Suite
 
+BROKEN=		unfetchable
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${DISTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP Simple HTML DOM Parser
 
+BROKEN=		unfetchable
+
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSRC=	yes

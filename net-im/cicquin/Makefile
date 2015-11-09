@@ -12,6 +12,8 @@ MASTER_SITES=	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Look up users in the CenterICQ user database
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:

@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.nagilum.org/unix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to copy/move pictures from a directory
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 

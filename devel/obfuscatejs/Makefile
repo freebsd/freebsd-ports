@@ -15,6 +15,8 @@ EXTRACT_ONLY=
 MAINTAINER= 	ports@FreeBSD.org
 COMMENT=	JavaScript code obfuscator
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

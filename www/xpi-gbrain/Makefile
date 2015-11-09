@@ -9,6 +9,8 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keeps your browser history at Google bookmarks
 
+BROKEN=		unfetchable
+
 XPI_NUM=	2515
 XPI_ID=		gbrain@andreas.gohr
 XPI_FILES=	chrome/gbrain.jar chrome.manifest defaults/preferences/gbrain.js install.rdf

@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.insidesystems.net/daedalus/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible process monitor/restart daemon written in ruby
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_RUBY=	yes

@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.hlfl.org/pub/hlfl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Level Firewall Language
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 

@@ -12,6 +12,8 @@ DISTNAME=	sourcenavigator-NG${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source code analysis tool
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

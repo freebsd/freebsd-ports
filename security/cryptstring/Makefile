@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crypto Strings for PHP
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes

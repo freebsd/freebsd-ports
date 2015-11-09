@@ -10,6 +10,8 @@ MASTER_SITES=	http://mirror.facebook.net/facebook/flvtool++/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for hinting and manipulating the metadata of FLV files
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 
 CFLAGS+=	-I${LOCALBASE}/include/boost

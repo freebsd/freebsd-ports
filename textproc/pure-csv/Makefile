@@ -11,6 +11,8 @@ DIST_SUBDIR=	pure
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CSV reading and writing module for the Pure language
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 USES=		pure

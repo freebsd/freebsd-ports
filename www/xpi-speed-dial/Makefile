@@ -11,6 +11,8 @@ MASTER_SITES=	http://speeddial.uworks.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access websites through custom thumbnail views
 
+BROKEN=		unfetchable
+
 XPI_DISTNAME=	speed_dial
 XPI_ID=		{64161300-e22b-11db-8314-0800200c9a66}
 XPI_NUM=	4810

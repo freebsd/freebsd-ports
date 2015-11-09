@@ -12,6 +12,8 @@ DISTFILES=	td${PORTVERSION:S/.//}s.lzh \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tells you what day today is
 
+BROKEN=		unfetchable
+
 EXTRACT_DEPENDS=nkf:${PORTSDIR}/japanese/nkf
 
 NO_WRKSUBDIR=	yes

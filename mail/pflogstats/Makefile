@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://ftp.aerasec.de/pub/linux/postfix/pflogsumm/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Postfix Log Statistics Reporter
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 
 RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \

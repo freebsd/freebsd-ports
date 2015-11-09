@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/circus-linux/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"Circus Linux!" is a clone of the Atari 2600 game "Circus Atari"
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 

@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese address book
 
+BROKEN=		unfetchable
+
 ALL_TARGET=
 USE_GNOME=	gtk12
 

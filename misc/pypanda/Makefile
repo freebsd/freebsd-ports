@@ -10,6 +10,8 @@ MASTER_SITES=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for San Diego Zoo Pandacam written in Python
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYGAME}
 
 USES=		python

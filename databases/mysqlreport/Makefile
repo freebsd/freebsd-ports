@@ -10,6 +10,8 @@ MASTER_SITES=	http://hackmysql.com/scripts/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mysqlreport makes a friendly report of important MySQL status values
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 

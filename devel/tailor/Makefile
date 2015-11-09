@@ -10,6 +10,8 @@ MASTER_SITES=	http://darcs.arstecnica.it/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Migrates changesets between version control systems
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
 
 USES=		python

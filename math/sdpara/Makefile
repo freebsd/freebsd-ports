@@ -13,6 +13,8 @@ EXTRACT_ONLY=	${SRCFILE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDPARA parallel version of SDPA (math/sdpa)
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libscalapack.so:${PORTSDIR}/math/scalapack \
 		libblacs.so:${PORTSDIR}/math/blacs \
 		libmpich.so:${PORTSDIR}/net/mpich2

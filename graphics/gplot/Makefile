@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic utilities for the processing of CGM metafiles
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=	DOCS
 
 CFLAGS+=	-Wno-return-type

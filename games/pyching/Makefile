@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/pyChing/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Consult a I Ching, an ancient Chinese book of wisdom
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 

@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configure various qmail services to run under daemontools
 
+BROKEN=		unfetchable
+
 USES=		qmail:run
 
 ALL_TARGET=	prog

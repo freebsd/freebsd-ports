@@ -14,6 +14,8 @@ EXTRACT_ONLY=	Jmol-${PORTVERSION}-full.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java viewer for chemical structures in 3D
 
+BROKEN=		unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USE_ANT=	yes

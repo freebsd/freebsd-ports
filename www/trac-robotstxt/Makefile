@@ -12,6 +12,8 @@ DISTNAME=	TracRobotsTxt-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows simple management of a robots.txt
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
 USES=		python:2

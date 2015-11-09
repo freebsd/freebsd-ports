@@ -9,6 +9,8 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control cookie permissions
 
+BROKEN=		unfetchable
+
 XPI_ID=		{9D23D0AA-D8F5-11DA-B3FC-0928ABF316DD}
 XPI_NUM=	2497
 XPI_FILES=	chrome/cookiesafe.jar defaults/preferences/cookiesafe.js \

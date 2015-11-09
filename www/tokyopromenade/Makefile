@@ -10,6 +10,8 @@ MASTER_SITES=	http://fallabs.com/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Content management system
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	tokyocabinet>=1.4.31:${PORTSDIR}/databases/tokyocabinet \
 		fcgi-devkit>=0:${PORTSDIR}/www/fcgi
 LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet

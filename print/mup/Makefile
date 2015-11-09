@@ -10,6 +10,8 @@ DISTFILES=	mup${PORTVERSION:S/.//}src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shareware program for typesetting music
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/mkmupfnt bin/mup bin/mupdisp bin/mupprnt \
 		man/man1/mup.1.gz man/man1/mkmupfnt.1.gz \
 		man/man1/mupdisp.1.gz man/man1/mupprnt.1.gz

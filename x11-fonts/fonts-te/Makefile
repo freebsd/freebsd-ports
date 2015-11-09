@@ -11,6 +11,8 @@ MASTER_SITES=	http://itachi.prudhvi.org/te_fonts/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Telugu fonts for te_IN
 
+BROKEN=		unfetchable
+
 USES=		fonts tar:bzip2
 NO_BUILD=	yes
 PORTDOCS=	MANUAL.PDF

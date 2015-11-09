@@ -9,6 +9,8 @@ MASTER_SITES=	http://t3x.org/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpreter for purely symbolic LISP
 
+BROKEN=		unfetchable
+
 USES=		uidfix
 USE_LDCONFIG=	yes
 

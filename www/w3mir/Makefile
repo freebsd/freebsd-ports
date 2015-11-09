@@ -10,6 +10,8 @@ MASTER_SITES=	http://langfeldt.net/w3mir/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	All-purpose HTTP copying and mirroring tool
 
+BROKEN=		unfetchable
+
 LICENSE=	ART10
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww

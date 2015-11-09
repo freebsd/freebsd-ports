@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC-8801 emulator for X
 
+BROKEN=		unfetchable
+
 USE_XORG=	x11 xext
 USES=		gmake tar:tgz
 MAKE_ENV=	DATADIR="${DATADIR}" _CC="${CC}" _CFLAGS="${CFLAGS}" \

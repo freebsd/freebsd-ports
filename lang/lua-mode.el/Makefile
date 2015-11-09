@@ -13,6 +13,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs/XEmacs major mode for editing Lua scripts
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

@@ -9,6 +9,8 @@ MASTER_SITES=	http://fivebits.net/files/dbeacon/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed multicast beacon server
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 
 USES=		gmake

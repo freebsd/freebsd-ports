@@ -11,6 +11,8 @@ DISTNAME=	v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension library for Qt
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BDB=	44+

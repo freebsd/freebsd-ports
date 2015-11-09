@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.mired.org/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for decoding and using the output of a :Cue:Cat(TM) wand scanner
 
+BROKEN=		unfetchable
+
 USES=		python shebangfix
 
 SHEBANG_FILES=	*.py

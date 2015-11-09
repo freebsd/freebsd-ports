@@ -12,6 +12,8 @@ DIST_SUBDIR=	sdpa
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very efficient SDP (semidefinite programming) solver
 
+BROKEN=		unfetchable
+
 USES=		fortran gmake
 
 SRCDATE=	20090729

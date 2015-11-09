@@ -10,6 +10,8 @@ MASTER_SITES=	http://swtch.com/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of many Plan 9 programs to Unix-like operating systems
 
+BROKEN=		unfetchable
+
 LICENSE=	LUCENT
 LICENSE_NAME=	Lucent Public License Version 1.02
 LICENSE_FILE=	${WRKSRC}/LICENSE

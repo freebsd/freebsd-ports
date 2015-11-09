@@ -10,6 +10,8 @@ MASTER_SITES=	http://koti.mbnet.fi/~turol/sdlquake2/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Combination of R1Q2 and R1GL with SDL code from Quake2Forge
 
+BROKEN=		unfetchable
+
 USES=		execinfo gmake tar:bzip2
 
 OPTIONS_DEFINE=	CLIENT DEDICATED GAME

@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extractor from uuencoded files
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 USES=		lha
