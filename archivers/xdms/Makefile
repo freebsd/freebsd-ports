@@ -9,7 +9,10 @@ MASTER_SITES=	http://zakalwe.fi/~shd/foss/xdms/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for decompressing Amiga DMS files
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	PD
+LICENSE_NAME=	Public Domain
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		tar:bzip2
 HAS_CONFIGURE=	yes
@@ -21,14 +24,16 @@ USE_CSTD=	gnu89
 PORTDOCS=	xdms.txt
 PLIST_FILES=	bin/xdms
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} "s@-O2 -Wall@$${CFLAGS} -Wall@g" ${WRKSRC}/src/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xdms ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/xdms.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
