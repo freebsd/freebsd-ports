@@ -15,7 +15,7 @@ LICENSE=	MIT
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}django>=1.5:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.5:${PORTSDIR}/www/py-django
 
 .include <bsd.port.mk>
 
