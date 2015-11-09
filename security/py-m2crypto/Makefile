@@ -27,4 +27,10 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/M2Crypto/_m2crypto.py \
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/M2Crypto/__m2crypto.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
+IGNORE=		py-m2crypto requires OpenSSL 1.0.1e+
+.endif
+
+.include <bsd.port.post.mk>
