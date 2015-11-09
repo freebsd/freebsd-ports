@@ -2,7 +2,7 @@
 
 PORTNAME=	riak-cs
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/riak-cs/${PORTVERSION:R}/${PORTVERSION}/ \
 		http://downloads.basho.com.s3.amazonaws.com/riak-cs/${PORTVERSION:R}/${PORTVERSION}/
@@ -19,7 +19,7 @@ USES=		gmake readline shebangfix
 SHEBANG_FILES=	deps/eper/priv/bin/dtop \
 		deps/eper/priv/bin/ntop \
 		deps/eper/priv/bin/redbug
-USE_RC_SUBR=	riak-cs
+USE_RC_SUBR=	riak_cs
 
 USERS=		riakcs
 GROUPS=		riak
