@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.puchalla-online.de/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast command line MP3 editor
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		tar:bzip2 readline
 
 PLIST_FILES=	bin/cutmp3 man/man1/cutmp3.1.gz
@@ -19,8 +22,10 @@ PORTDOCS=	README README.timetable USAGE
 OPTIONS_DEFINE=	DOCS
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
