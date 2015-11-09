@@ -5047,6 +5047,9 @@ check-orphans: check-plist
 stage-qa:
 	@${ECHO_MSG} "====> Running Q/A tests (stage-qa)"
 	@${SETENV} ${QA_ENV} ${SH} ${SCRIPTSDIR}/qa.sh
+.if !defined(DEVELOPER)
+	@${ECHO_MSG} "/!\\ To run stage-qa automatically add DEVELOPER=yes to your environment /!\\"
+.endif
 .endif
 
 # Fake installation of package so that user can pkg delete it later.
@@ -5728,6 +5731,8 @@ _STAGE_SEQ=		050:stage-message 100:stage-dir 150:run-depends \
 				${_OPTIONS_stage} ${_USES_stage}
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	995:stage-qa
+.else
+stage-qa: stage
 .endif
 _TEST_DEP=		stage
 _TEST_SEQ=		100:test-message 150:test-depends 300:pre-test 500:do-test \
