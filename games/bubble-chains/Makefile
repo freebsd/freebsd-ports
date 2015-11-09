@@ -15,6 +15,8 @@ EXTRACT_ONLY=	chains-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The aim is to remove all of the targets on each level
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip

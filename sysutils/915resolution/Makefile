@@ -11,6 +11,8 @@ MASTER_SITES=	LOCAL/ehaupt
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolution tool for Intel i915 video cards
 
+BROKEN=		unfetchable
+
 USE_RC_SUBR=	915resolution
 
 PLIST_FILES=	sbin/915resolution

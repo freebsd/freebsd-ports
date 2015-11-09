@@ -11,6 +11,8 @@ MASTER_SITES=	http://frama-c.com/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible platform for source-code analysis of C
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21
 
 EXTRACT_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar

@@ -10,6 +10,8 @@ MASTER_SITES=	http://anp.ath.cx/sshit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks for SSH/FTP bruteforce and blocks given IPs
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-IPC-Shareable>=0:${PORTSDIR}/devel/p5-IPC-Shareable \
 		p5-Proc-PID-File>=0:${PORTSDIR}/devel/p5-Proc-PID-File

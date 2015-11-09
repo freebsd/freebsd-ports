@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 USES=		gmake

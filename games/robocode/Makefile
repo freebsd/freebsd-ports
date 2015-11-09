@@ -11,6 +11,8 @@ DIST_SUBDIR=	java
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game for learning Java[tm] programming language
 
+BROKEN=		unfetchable
+
 LICENSE=	EPL
 
 USES=		dos2unix zip

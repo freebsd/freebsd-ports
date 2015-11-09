@@ -10,6 +10,8 @@ MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/art/anime/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kaleidoscope on X
 
+BROKEN=		unfetchable
+
 USE_XORG=	x11 xpm xaw
 ALL_TARGET=	xmangekyou
 

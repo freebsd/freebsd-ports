@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.t3x.org/s9fes/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Scheme interpreter with a Unix interface
 
+BROKEN=		unfetchable
+
 LICENSE=	public
 LICENSE_NAME=	Public Domain
 LICENSE_FILE=	${WRKSRC}/LICENSE

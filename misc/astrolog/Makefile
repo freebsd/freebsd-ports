@@ -14,6 +14,8 @@ DISTFILES=	a541gsrc.tar.gz:dist ${EPHE} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astrology program for X11 and alpha-numeric terminals
 
+BROKEN=		unfetchable
+
 # Swiss Ephemeris GPLv2 licensed, see
 # http://www.astro.com/ftp/swisseph/LICENSE.TXT
 LICENSE=	GPLv2 # (or later)

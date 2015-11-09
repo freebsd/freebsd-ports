@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-x11
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultimate programming font
 
+BROKEN=		unfetchable
+
 USES=		fonts
 
 do-build:

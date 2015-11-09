@@ -15,6 +15,8 @@ DIST_SUBDIR=	himeno
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Himeno bench benchmark, solves Poisson eq. with Jacobi's method
 
+BROKEN=		unfetchable
+
 USES=		lha
 NO_WRKSUBDIR=	yes
 

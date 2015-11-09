@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple window manager for X, with features from ratpoison and dwm
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
 USE_XORG=	x11

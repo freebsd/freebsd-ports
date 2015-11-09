@@ -10,6 +10,8 @@ MASTER_SITES=	http://sd.wareonearth.com/~phil/xdu/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphically display output of du
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 USES=		imake tar:Z
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

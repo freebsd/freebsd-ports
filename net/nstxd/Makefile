@@ -16,6 +16,8 @@ PATCHFILES=	nstx_1.1-beta6-4.diff.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS tunnel server
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 

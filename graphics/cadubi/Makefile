@@ -10,6 +10,8 @@ MASTER_SITES=	http://langworth.com/pub/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII drawing utility
 
+BROKEN=		unfetchable
+
 LICENSE=	ART10
 
 RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey

@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}${PORTVERSION:R:R}/${PORTNAME}/${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible vector graphics editor with LaTeX support
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3 # (or later)
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils

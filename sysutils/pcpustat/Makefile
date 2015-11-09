@@ -9,6 +9,8 @@ MASTER_SITES=	http://chipstips.com/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Per-CPU usage statistics
 
+BROKEN=		unfetchable
+
 LICENSE=	OWL
 
 USES=		tar:bzip2

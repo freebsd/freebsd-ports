@@ -10,6 +10,8 @@ MASTER_SITES=	http://alioth.debian.org/frs/download.php/1469/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Diff application for semistructured data such as XML files
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # (or later)
 
 GNU_CONFIGURE=	yes

@@ -10,6 +10,8 @@ DISTNAME=	atmailopen
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Webmail Client
 
+BROKEN=		unfetchable
+
 USES=		tar:tgz
 USE_PHP=	mysql pcre session
 WRKSRC=		${WRKDIR}/${DISTNAME}

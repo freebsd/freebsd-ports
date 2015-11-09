@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tar_.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	qmail spam filter written in Perl using Bayesian classification
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 
 USES=		shebangfix perl5

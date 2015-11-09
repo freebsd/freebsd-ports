@@ -10,6 +10,8 @@ MASTER_SITES=	http://offload2.icculus.org:9090/d2x/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix port of Descent 2 Game
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_SDL=	sdl image

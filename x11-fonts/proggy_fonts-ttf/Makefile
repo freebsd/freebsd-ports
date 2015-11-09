@@ -14,6 +14,8 @@ DIST_SUBDIR=	proggy_fonts-ttf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The perfect monospaced bitmap programming fonts, TTF version
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 
 USES=		fonts zip

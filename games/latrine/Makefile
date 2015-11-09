@@ -10,6 +10,8 @@ MASTER_SITES=	http://alioth.debian.org/frs/download.php/3085/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based LAnguage TRaINEr
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	p5-DBI>0:${PORTSDIR}/databases/p5-DBI

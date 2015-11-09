@@ -10,6 +10,8 @@ DIST_SUBDIR=	pure
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Readline interface for the Pure language
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE GPLv3
 LICENSE_COMB=	dual
 

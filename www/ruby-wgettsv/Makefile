@@ -13,6 +13,8 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collect WWW resources and generate TSV data
 
+BROKEN=		unfetchable
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.gitphp.org/attachments/download/47/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based git repository browser written in PHP
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		gettext tar:bzip2

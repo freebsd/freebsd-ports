@@ -10,6 +10,8 @@ MASTER_SITES=	http://classic.guesswork.jp/download/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP lightweight framework
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
 
 NO_BUILD=	yes

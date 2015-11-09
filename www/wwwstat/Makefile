@@ -14,6 +14,8 @@ PATCHFILES=	patch-2.01.txt
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webserver logfile analysis package
 
+BROKEN=		unfetchable
+
 LICENSE=	ART10
 
 USE_APACHE_RUN=	22+

@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.druid.net/darcy/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple text pre-processor
 
+BROKEN=		unfetchable
+
 USES=		gmake tar:tgz
 
 MAKE_ARGS=	BINDIR=${STAGEDIR}${PREFIX}/bin \

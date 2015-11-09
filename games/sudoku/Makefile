@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based Sudoku games
 
+BROKEN=		unfetchable
+
 USES=		ncurses tar:bzip2
 PLIST_FILES=	bin/sudoku \
 		man/man6/sudoku.6.gz \

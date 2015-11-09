@@ -15,6 +15,8 @@ DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Action flight simulation computer program using OSG
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE_GNU_GPL_2.txt
 

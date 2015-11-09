@@ -13,6 +13,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Upload email stored in mbox file format to an IMAP server
 
+BROKEN=		unfetchable
+
 USES=		python
 NO_BUILD=	yes
 

@@ -9,6 +9,8 @@ MASTER_SITES=	# disappeared
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplistic reader for SOUP (HDPF) mail and news packets
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 MAKEFILE=	src/Makefile

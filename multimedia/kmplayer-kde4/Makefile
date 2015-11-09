@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE frontend to Phonon / KDE4
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 

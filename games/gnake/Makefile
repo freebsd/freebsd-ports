@@ -10,6 +10,8 @@ DISTNAME=	Gnake.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nibbles clone for GNU/Linux and *BSD
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS

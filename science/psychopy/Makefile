@@ -11,6 +11,8 @@ DISTNAME=	PsychoPy-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Psychophysics toolkit for Python
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3 # (or later)
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \

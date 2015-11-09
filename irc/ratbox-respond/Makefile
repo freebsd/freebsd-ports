@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client-side implementation of the challenge oper system in ircd-ratbox
 
+BROKEN=		unfetchable
+
 CONFIGURE_WRKSRC=${WRKSRC}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 

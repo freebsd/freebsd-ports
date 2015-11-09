@@ -10,6 +10,8 @@ MASTER_SITES=	http://projects.netlab.jp/gpass/release/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password manager for GNOME2
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
 		libmhash.so:${PORTSDIR}/security/mhash
 

@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The noeGNUd UI for Nethack with DeeT's hack font patch
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	noegnud-data>0:${PORTSDIR}/games/noegnud-data
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0

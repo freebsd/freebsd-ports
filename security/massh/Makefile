@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel ssh command execution and file transfer on multiple hosts
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3 # or later
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \

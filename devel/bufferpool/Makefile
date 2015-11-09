@@ -10,6 +10,8 @@ MASTER_SITES=	http://lscube.org/files/downloads/bufferpool/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bufferpool - the memory management library Feng and Felix depend upon
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig tar:bzip2

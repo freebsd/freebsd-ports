@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://odin.mda.uth.tmc.edu/pub/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of C Routines for Cumulative Distribution Functions
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/dcdflib.c/src
 USES=		uidfix
 USE_LDCONFIG=	yes

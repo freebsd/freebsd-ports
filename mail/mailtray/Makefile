@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display email status in tray
 
+BROKEN=		unfetchable
+
 USE_GNOME=	pygtk2
 USES=		python
 USE_PYTHON=	distutils

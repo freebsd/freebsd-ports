@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display X11 color names and colors
 
+BROKEN=		unfetchable
+
 USES=		imake
 USE_XORG=	x11 xext
 DOCDIR=		${PREFIX}/share/doc/xco

@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+/ncurses rc.conf editor/management tool
 
+BROKEN=		unfetchable
+
 USES=		pkgconfig
 WANT_GNOME=	yes
 

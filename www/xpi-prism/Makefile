@@ -9,6 +9,8 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create Prism applications directly from Firefox
 
+BROKEN=		unfetchable
+
 XPI_ID=	refractor@developer.mozilla.org
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
