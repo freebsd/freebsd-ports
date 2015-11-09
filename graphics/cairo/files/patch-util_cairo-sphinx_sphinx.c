@@ -1,6 +1,6 @@
---- util/cairo-sphinx/sphinx.c.orig	2014-10-06 15:22:24.000000000 -0400
-+++ util/cairo-sphinx/sphinx.c	2014-10-06 15:23:04.000000000 -0400
-@@ -1325,7 +1325,7 @@ client_shm (const char *shm_path)
+--- util/cairo-sphinx/sphinx.c.orig	2015-03-10 22:21:07 UTC
++++ util/cairo-sphinx/sphinx.c
+@@ -1337,7 +1337,7 @@ client_shm (const char *shm_path)
  
      base = mmap (NULL, DATA_SIZE,
  		 PROT_READ | PROT_WRITE,
