@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mydumper
-PORTVERSION=	0.6.2
+PORTVERSION=	0.9.1
 CATEGORIES=	databases
 MASTER_SITES=	http://code.launchpad.net/mydumper/${PORTVERSION:R}/${PORTVERSION}/+download/
 
@@ -13,6 +13,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
+CMAKE_ARGS=	-DBUILD_DOCS=OFF -DWITH_BINLOG=OFF
 USE_GNOME=	glib20
 USE_MYSQL=	yes
 USES=		cmake pkgconfig
@@ -20,9 +21,7 @@ USES=		cmake pkgconfig
 PLIST_FILES=	sbin/mydumper sbin/myloader
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e '/link_libraries(mydumper/s/)$$/ -lm)/' \
-		-e 's|-Werror||' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/link_libraries(mydumper/ s|)$$| -lm)|; s|-Werror||' ${WRKSRC}/CMakeLists.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mydumper ${WRKSRC}/myloader ${STAGEDIR}${PREFIX}/sbin/
