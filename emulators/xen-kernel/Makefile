@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hypervisor using a microkernel design
 
 LICENSE=	GPLv2
