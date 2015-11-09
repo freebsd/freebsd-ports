@@ -64,8 +64,9 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 post-patch:
 	@${REINPLACE_CMD} '/install:/s/:.*/:/' \
 		${WRKSRC}/Makefile.in \
-		${WRKSRC}/support/sdbinutils/bfd/doc/Makefile.in \
 		${WRKSRC}/support/sdbinutils/libiberty/Makefile.in
+	@${REINPLACE_CMD} '/^SUBDIRS =/s/doc//' \
+		${WRKSRC}/support/sdbinutils/bfd/Makefile.in
 .if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
 		${WRKSRC}/Makefile.in \
