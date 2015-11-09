@@ -19,9 +19,6 @@ USES=		gmake
 PLIST_FILES=	bin/makelist bin/netmap
 
 do-install:
-.for i in makelist netmap
-	(cd ${WRKSRC}/${i} && ${INSTALL_PROGRAM} ${i} \
-		${STAGEDIR}${PREFIX}/bin)
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/makelist/makelist ${WRKSRC}/netmap/netmap ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
