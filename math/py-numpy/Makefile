@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	numpy
-PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTVERSION=	1.10.1
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
-		CHEESESHOP:source
+		CHEESESHOP:source \
+		SF:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
-		numpy-ref-${DOCVERSION}.pdf:doc \
-		numpy-user-${DOCVERSION}.pdf:doc
+		numpy-ref-${PORTVERSION}.pdf:doc \
+		numpy-user-${PORTVERSION}.pdf:doc
 EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	The New Numeric Extension to Python
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 PYDISTUTILS_BUILDARGS=		--fcompiler=gnu95
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
@@ -35,7 +36,6 @@ TESTS_DESC=		Install test suite requirements
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/${DISTNAME:S/r/rc/}
-DOCVERSION=	${PORTVERSION}
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
 
@@ -95,7 +95,7 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/numpy-ref-${DOCVERSION}.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/numpy-user-${DOCVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/numpy-ref-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/numpy-user-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
