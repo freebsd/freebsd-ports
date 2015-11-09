@@ -10,6 +10,8 @@ MASTER_SITES=	http://netmon.grnet.gr/weathermap/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This tool displays the utilization of the network links
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

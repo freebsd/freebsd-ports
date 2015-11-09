@@ -10,6 +10,8 @@ DISTNAME=	HLstatsX_V${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time player and clan rankings and statistics for HL2 and mods
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 USE_APACHE_RUN=	22+
 USE_PHP=	gd mysql

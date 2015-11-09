@@ -10,6 +10,8 @@ MASTER_SITES=	http://offload1.icculus.org:9090/~jcspray/LucidLife/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 implementation of Conway's Game of Life
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 

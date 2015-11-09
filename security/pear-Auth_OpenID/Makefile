@@ -10,6 +10,8 @@ DISTNAME=	php-openid-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP OpenID library v2 for PEAR
 
+BROKEN=		unfetchable
+
 CONFLICTS=	php-Auth_OpenID-1.*
 
 LICENSE=	APACHE20

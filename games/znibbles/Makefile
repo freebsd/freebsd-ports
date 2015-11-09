@@ -11,6 +11,8 @@ MASTER_SITES=	http://old.koalateam.com/ftp/pub/games/znibbles/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player networked nibbles game
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	GTK1

@@ -10,6 +10,8 @@ MASTER_SITES=	http://lisas.de/kover/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG CD cover printer
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 

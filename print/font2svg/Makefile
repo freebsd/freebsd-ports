@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.gdv.uni-hannover.de/~peinecke/font2svg/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	All font to svg-font converter
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		ghostscript:run

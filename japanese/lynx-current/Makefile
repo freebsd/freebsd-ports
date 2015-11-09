@@ -13,6 +13,8 @@ PKGNAMESUFFIX=	-current
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal WWW client with multi-byte modification (development version)
 
+BROKEN=		unfetchable
+
 VERSION=	2.8.8
 MINOR_VERSION=	dev.3
 

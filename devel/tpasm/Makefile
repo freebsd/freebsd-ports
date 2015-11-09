@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-assembler for variety of microprocessors and controllers
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		gmake tar:tgz

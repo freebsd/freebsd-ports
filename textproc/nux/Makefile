@@ -11,6 +11,8 @@ MASTER_SITES=	http://dsd.lbl.gov/nux-download/releases/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small open-source XQuery extension of the XOM library
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom \
 		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel
 

@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS to Perforce Converter
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 
 REINPLACE_ARGS=	-i ""

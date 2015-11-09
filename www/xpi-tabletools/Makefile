@@ -10,6 +10,8 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sort any HTML data table
 
+BROKEN=		unfetchable
+
 XPI_NUM=	2637
 XPI_ID=		{7C7F5C11-4ACD-4CDB-9293-2E3F46654E2A}
 

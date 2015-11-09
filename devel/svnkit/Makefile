@@ -10,6 +10,8 @@ DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The only pure Java Subversion client library in the world
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=	DOCS
 
 USES=		zip

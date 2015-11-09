@@ -12,6 +12,8 @@ DISTFILES=	p2c-1.21alpha2.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pascal to C translator
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/p2c-1.21alpha-07.Dec.93/src

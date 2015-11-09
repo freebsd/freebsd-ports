@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP XMPP client interface
 
+BROKEN=		unfetchable
+
 USE_PYTHON=	distutils autoplist
 USES=		python twisted:words,web,conch,names
 

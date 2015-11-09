@@ -11,6 +11,8 @@ DISTFILES=	vnroff.c.Z vnroff.1.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts Vietnamese VIQR text into troff format
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/vnroff man/man1/vnroff.1.gz
 NO_WRKSUBDIR=	yes
 

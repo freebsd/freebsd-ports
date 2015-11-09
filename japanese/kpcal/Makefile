@@ -14,6 +14,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make Calendar in Postscript format
 
+BROKEN=		unfetchable
+
 ALL_TARGET=	kpcal
 
 PLIST_FILES=	bin/kpcal man/man1/kpcal.1.gz

@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.ac.auone-net.jp/~baba/jfbterm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual terminal emulator for framebuffer
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 

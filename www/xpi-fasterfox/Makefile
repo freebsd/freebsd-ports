@@ -9,6 +9,8 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance and network tweaks for Firefox
 
+BROKEN=		unfetchable
+
 XPI_NUM=	1269
 XPI_ID=		{c36177c0-224a-11da-8cd6-0800200c9a66}
 XPI_FILES=	chrome/fasterfox.jar chrome.manifest defaults/preferences/fasterfox.js \

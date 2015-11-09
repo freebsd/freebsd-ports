@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Getting and setting Xv attributes
 
+BROKEN=		unfetchable
+
 USE_XORG=	x11 xv
 WANT_GNOME=	yes
 USES=		pkgconfig

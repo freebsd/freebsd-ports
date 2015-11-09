@@ -10,6 +10,8 @@ MASTER_SITES=	http://hackmysql.com/scripts/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mysqlsla analyzes general, slow, and raw MySQL statement logs
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \

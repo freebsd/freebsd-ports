@@ -11,6 +11,8 @@ DISTNAME=	eyeclk20
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clock with eyes following the mouse pointer
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11 xau xdmcp xpm xt ice

@@ -11,6 +11,8 @@ DISTNAME=	exult-20130315-0400
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultima VII engine
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 

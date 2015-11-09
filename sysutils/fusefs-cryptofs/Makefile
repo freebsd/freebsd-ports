@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encrypted filesystem for FUSE
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libglib-2.0.so:${PORTSDIR}/devel/glib20
 

@@ -9,6 +9,8 @@ MASTER_SITES=	http://wt1.ld.infoseek.co.jp/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text file to postscript converter (with Japanese support)
 
+BROKEN=		unfetchable
+
 USES=		tar:bzip2
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 

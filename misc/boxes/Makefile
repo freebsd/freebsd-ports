@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draws ASCII-art configurable boxes around text or code
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		bison gmake

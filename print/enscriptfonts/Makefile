@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	More than 120 free- and share-ware fonts to extend enscript-1.5
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	YES
 NO_MANCOMPRESS=	YES
 NO_BUILD=	YES

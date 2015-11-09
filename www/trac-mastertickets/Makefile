@@ -13,6 +13,8 @@ DISTNAME=	coderanger-trac-${PORTNAME}-43a7537
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support for ticket dependencies
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
 
 WRKSRC=			${WRKDIR}/${DISTNAME}

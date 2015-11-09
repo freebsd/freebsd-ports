@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.kybs.de/boris/sw/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Packet filter and firewall log analyzer
 
+BROKEN=		unfetchable
+
 USES=		gettext tar:bzip2
 MAKE_ENV=	MKDIR="${MKDIR}"
 INSTALL_TARGET=	install install-config install-i18n

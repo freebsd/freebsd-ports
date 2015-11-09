@@ -10,6 +10,8 @@ MASTER_SITES=	http://kosmos.ttyv0.se/attachments/download/37/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small tool for incremental backups over network
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 USES=		perl5

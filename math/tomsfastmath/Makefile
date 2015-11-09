@@ -9,6 +9,8 @@ DISTNAME=	tfm-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable fixed precision math library for fast exponentiations
 
+BROKEN=		unfetchable
+
 BROKEN_powerpc=	internal compiler error at src/mul/fp_mul_comba_48.c:398
 
 USES=		compiler:features gmake tar:bzip2

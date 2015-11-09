@@ -10,6 +10,8 @@ DISTNAME=	luna19s
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display the moon's phase
 
+BROKEN=		unfetchable
+
 USES=		dos2unix lha
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/luna

@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${PORTNAME}-2.2-b6${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netmond - IP network monitoring daemon
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.2-b6
 
 USERS=	netmon

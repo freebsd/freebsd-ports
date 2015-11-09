@@ -10,6 +10,8 @@ MASTER_SITES=	http://coto.marsrakete.de/projects/xlupe/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Magnifying glass for X. like xmag but with continously updates
 
+BROKEN=		unfetchable
+
 USES=		imake
 USE_XORG=	xaw
 

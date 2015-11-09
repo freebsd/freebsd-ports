@@ -12,6 +12,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quote text with a semi-box in Emacs/XEmacs
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
