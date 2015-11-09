@@ -490,10 +490,11 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-NGINX_PUSH_VERSION=	0.692
-MASTER_SITES+=	http://pushmodule.slact.net/downloads/:push
-DISTFILES+=	nginx_http_push_module-${NGINX_PUSH_VERSION}.tar.gz:push
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_http_push_module-${NGINX_PUSH_VERSION}
+GIT_PUSH_VERSION=	0.731
+GH_ACCOUNT+=	slact:push
+GH_PROJECT+=	nchan:push
+GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push
+CONFIGURE_ARGS+=--add-module=${WRKSRC_push}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH_STREAM}
