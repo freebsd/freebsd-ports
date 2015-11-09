@@ -98,6 +98,7 @@
     SUBDIR += arm-none-eabi-gcc492
     SUBDIR += aros-sdk
     SUBDIR += art
+    SUBDIR += artifactory
     SUBDIR += as31
     SUBDIR += asl
     SUBDIR += asmutils
