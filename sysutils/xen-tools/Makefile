@@ -8,7 +8,7 @@ MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
 		http://code.coreboot.org/p/seabios/downloads/get/:seabios
 PKGNAMESUFFIX=	-tools
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xen management tool, based on LibXenlight
 
 LICENSE=	GPLv2 LGPL3
