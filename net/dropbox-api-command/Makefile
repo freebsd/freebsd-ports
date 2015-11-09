@@ -21,6 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_GITHUB=	yes
 GH_ACCOUNT=	s-aska
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
