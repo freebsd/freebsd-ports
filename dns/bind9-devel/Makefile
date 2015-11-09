@@ -6,8 +6,12 @@ PORTVERSION=	${ISCVERSION:S/-P/P/}
 PORTREVISION=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	LOCAL/mat/bind
+#MASTER_SITES=	https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=snapshot;h=${HASH};sf=tgz;f=
 PKGNAMESUFFIX=	9-devel
-DISTNAME=	${PORTNAME}-${HASH}
+DISTNAME=	${PORTNAME}9-${HASH}
+
+# Force the filename when fetched from the ISC gitweb.
+FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
@@ -15,12 +19,12 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.0.a20151106
-HASH=		f4b1a7e
+ISCVERSION=	9.11.0.a20151109
+HASH=		e13d04f
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=	cpe libedit tar:xz
+USES=	cpe libedit
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -206,13 +210,6 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 
 PORTDOCS=	*
-
-make-distfile:
-	git pull; \
-		git show-ref --abbrev HEAD; \
-		rev=`git rev-parse --short HEAD`; \
-		git archive --format tar -o bind-$${rev}.tar --prefix bind-$${rev}/ $${rev}; \
-		xz -v9 bind-$${rev}.tar
 
 post-extract:
 	echo "SRCID=${HASH}" > ${WRKSRC}/srcid
