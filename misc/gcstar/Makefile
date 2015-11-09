@@ -39,6 +39,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		perl5 desktop-file-utils shared-mime-info shebangfix
 SHEBANG_FILES=	bin/gcstar
 USE_PERL5=	run
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
