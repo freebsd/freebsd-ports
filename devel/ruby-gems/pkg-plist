@@ -114,6 +114,16 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/resolver/local_specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/lock_set.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/lock_specification.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/errors.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/gem_metadata.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/modules/specification_provider.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/modules/ui.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/resolution.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/resolver.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/state.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/requirement_list.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/set.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/spec_specification.rb
@@ -154,8 +164,8 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/uri_formatter.rb
 %%RUBY_SITELIBDIR%%/rubygems/user_interaction.rb
 %%RUBY_SITELIBDIR%%/rubygems/util.rb
+%%RUBY_SITELIBDIR%%/rubygems/util/licenses.rb
 %%RUBY_SITELIBDIR%%/rubygems/util/list.rb
-%%RUBY_SITELIBDIR%%/rubygems/util/stringio.rb
 %%RUBY_SITELIBDIR%%/rubygems/validator.rb
 %%RUBY_SITELIBDIR%%/rubygems/version.rb
 %%RUBY_SITELIBDIR%%/rubygems/version_option.rb
