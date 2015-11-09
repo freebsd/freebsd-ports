@@ -1987,7 +1987,6 @@ REINPLACE_CMD?=	${SED} ${REINPLACE_ARGS}
 EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PORTNAME}.${PREFIX:S/\//_/g}
 CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done.${PORTNAME}.${PREFIX:S/\//_/g}
 INSTALL_COOKIE?=	${WRKDIR}/.install_done.${PORTNAME}.${PREFIX:S/\//_/g}
-TEST_COOKIE?=		${WRKDIR}/.test_done.${PORTNAME}.${PREFIX:S/\//_/g}
 BUILD_COOKIE?=		${WRKDIR}/.build_done.${PORTNAME}.${PREFIX:S/\//_/g}
 PATCH_COOKIE?=		${WRKDIR}/.patch_done.${PORTNAME}.${PREFIX:S/\//_/g}
 PACKAGE_COOKIE?=	${WRKDIR}/.package_done.${PORTNAME}.${PREFIX:S/\//_/g}
@@ -2981,7 +2980,7 @@ build: configure
 # Disable test
 .if defined(NO_TEST) && !target(test)
 test: stage
-	@${TOUCH} ${TOUCH_FLAGS} ${TEST_COOKIE}
+	@${DO_NADA}
 .endif
 
 # Disable package
@@ -5788,7 +5787,7 @@ _${_t}_REAL_SUSEQ+=	${s}
 # See above *_SEQ and *_DEP. The _DEP will run before this defined target is
 # ran. The _SEQ will run as this target once _DEP is satisfied.
 
-.for target in extract patch configure build stage install test package
+.for target in extract patch configure build stage install package
 
 # Check if config dialog needs to show and execute it if needed. If is it not
 # needed (_OPTIONS_OK), then just depend on the cookie which is defined later
@@ -5855,6 +5854,10 @@ fetch: ${_FETCH_DEP} ${_FETCH_REAL_SEQ}
 
 .if !target(pkg)
 pkg: ${_PKG_DEP} ${_PKG_REAL_SEQ}
+.endif
+
+.if !target(test)
+test: ${_TEST_DEP} ${_TEST_REAL_SEQ}
 .endif
 
 .endif
