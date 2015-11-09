@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious-Plugin-SetUserGroup
-PORTVERSION=	0.002
+PORTVERSION=	0.003
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DBOOK
@@ -12,17 +12,19 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mojolicious plugin to set unprivileged credentials
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Mojolicious>=6.0:${PORTSDIR}/www/p5-Mojolicious \
 		p5-Unix-Groups>=0:${PORTSDIR}/devel/p5-Unix-Groups
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501905
+.if ${PERL_LEVEL} < 502000
 BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.33:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.33:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
