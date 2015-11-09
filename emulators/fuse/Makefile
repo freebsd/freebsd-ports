@@ -3,7 +3,7 @@
 
 PORTNAME=	fuse
 PORTVERSION=	1.1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -17,12 +17,10 @@ LIB_DEPENDS=	libspectrum.so:${PORTSDIR}/emulators/libspectrum \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake
+USES=		gmake localbase pkgconfig
 USE_GNOME=	libxml2 glib20
 
 CONFIGURE_ARGS+=--without-alsa --without-joystick
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		AO ICONS ROMS
 OPTIONS_DEFAULT=	ICONS GTK2
