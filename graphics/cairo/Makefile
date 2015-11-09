@@ -87,6 +87,6 @@ post-patch:
 		${WRKSRC}/util/*/Makefile.in \
 		${WRKSRC}/boilerplate/Makefile.in
 
-.endif
-
 .include <bsd.port.mk>
+
+.endif
