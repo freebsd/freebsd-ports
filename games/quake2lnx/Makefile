@@ -17,7 +17,6 @@ COMMENT=	Icculus.org version of the original Quake II
 LICENSE=	GPLv2
 
 USES=		gmake
-WANT_SDL=	yes
 ALL_TARGET=	build_release
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}

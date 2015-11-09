@@ -17,7 +17,6 @@ LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 USE_LDCONFIG=	yes
 USES=		gmake libtool pkgconfig tar:bzip2
 USE_GCC=	any
-WANT_SDL=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oss

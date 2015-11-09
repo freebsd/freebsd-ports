@@ -25,7 +25,6 @@ PORTSCOUT=	limit:^0\.7.*
 USES=		cpe gmake perl5 pkgconfig tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
 USE_PERL5=	build
-WANT_SDL=	yes
 
 FFMPEG_SUFFIX=	0
 HAS_CONFIGURE=	yes

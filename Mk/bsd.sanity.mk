@@ -153,6 +153,10 @@ DEV_WARNING+=	"PYDISTUTILS_INSTALLNOSINGLE is deprecated, please do not use it a
 DEV_ERROR+=	"INSTALLS_EGGINFO is no longer supported, please add the entry directly to the plist"
 .endif
 
+.if defined(WANT_SDL)
+DEV_ERROR+=	"WANT_SDL is no longer supported. If you need SDL, use USE_SDL, if you need optional dependency, use options"
+.endif
+
 SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
 		USE_READLINE USE_ICONV PERL_CONFIGURE PERL_MODBUILD \
 		USE_PERL5_BUILD USE_PERL5_RUN USE_DISPLAY USE_FUSE \
