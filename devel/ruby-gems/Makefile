@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gems
-PORTVERSION=	2.4.8
+PORTVERSION=	2.5.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://production.cf.rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -14,11 +14,13 @@ COMMENT=	Package management framework for the Ruby language
 
 LICENSE=	MIT RUBY
 LICENSE_COMB=	dual
+LICENSE_FILE_MIT=	${WRKSRC}/MIT.txt
+LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
 
+NO_ARCH=	yes
+NO_BUILD=	yes
 USE_RUBY=	yes
 RUBY_SETUP=	setup.rb
-
-NO_BUILD=	yes
 USES=		tar:tgz
 
 GEMS_BASE_DIR=		lib/ruby/gems
@@ -37,7 +39,7 @@ CACHE_DIR=		${GEMS_VER_DIR}/cache
 SPEC_DIR=		${GEMS_VER_DIR}/specifications
 EXT_DIR=		${GEMS_VER_DIR}/extensions
 
-PLIST_SUB+=	DISTNAME="${DISTNAME}" \
+PLIST_SUB=	DISTNAME="${DISTNAME}" \
 		RUBY_VER_SHORT="${RUBY_VER_SHORT}" \
 		GEMS_DIR="${GEMS_DIR}" \
 		DOC_DIR="${DOC_DIR}" \
@@ -47,17 +49,13 @@ PLIST_SUB+=	DISTNAME="${DISTNAME}" \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-RUBY_SETUP_OPTIONS=	--destdir=${STAGEDIR}
 GEM_ENV=		GEM_HOME=${STAGEDIR}${PREFIX}/${GEMS_VER_DIR}
 
-.if !${PORT_OPTIONS:MDOCS}
-RUBY_SETUP_OPTIONS+=	--no-ri --no-rdoc
-.endif
+DOCS_VARS_OFF=		RUBY_SETUP_OPTIONS="--destdir=${STAGEDIR} --no-ri --no-rdoc"
+DOCS_VARS=		RUBY_SETUP_OPTIONS="--destdir=${STAGEDIR}"
 
 do-install:
-	cd ${WRKSRC}; ${SETENV} ${GEM_ENV} ${RUBY} ${RUBY_SETUP} ${RUBY_SETUP_OPTIONS}
+	cd ${WRKSRC}/ && ${SETENV} ${GEM_ENV} ${RUBY} ${RUBY_SETUP} ${RUBY_SETUP_OPTIONS}
 
 post-install:
 	@${LN} -sf gem${RUBY_VER_SHORT} ${STAGEDIR}${PREFIX}/bin/gem
@@ -65,9 +63,7 @@ post-install:
 #
 # Find all RDOC and RI files
 #
-.if ${PORT_OPTIONS:MDOCS}
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEMS_DOC_DIR}/ ! -type d | \
-	    ${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-.endif
+post-install-DOCS-on:
+	cd ${STAGEDIR}${PREFIX}/ && ${FIND} -ds ${GEMS_DOC_DIR}/ ! -type d >> ${TMPPLIST}
 
 .include <bsd.port.mk>
