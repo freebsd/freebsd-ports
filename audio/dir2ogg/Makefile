@@ -10,17 +10,19 @@ MASTER_SITES=	http://jak-linux.org/projects/dir2ogg/${PORTVERSION:R}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line {wav,mp3,m4a} to ogg converter
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	faad:${PORTSDIR}/audio/faad \
 		mutagen-inspect:${PORTSDIR}/audio/py-mutagen \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools
 
-USES=		python:2 shebangfix
+USES=		python:2,run shebangfix
 
 SHEBANG_FILES=	${PORTNAME}
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	NEWS README
 PLIST_FILES=	bin/${PORTNAME} \
@@ -31,6 +33,8 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
