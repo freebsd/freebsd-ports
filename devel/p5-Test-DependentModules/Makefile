@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-DependentModules
-PORTVERSION=	0.24
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test all modules which depend on your module
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-File-chdir>=0:${PORTSDIR}/devel/p5-File-chdir \
