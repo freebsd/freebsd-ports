@@ -1,0 +1,4 @@
+A configuration library for Ruby with YAML/JSON/TOML backends with
+unified object access.
+
+WWW: https://github.com/ytti/asetus
