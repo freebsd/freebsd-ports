@@ -10,8 +10,6 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular IRC client with many features
 
-BROKEN=		unfetchable
-
 LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20
 
 CONFLICTS=	irssi-0.8*
