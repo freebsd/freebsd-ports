@@ -11,6 +11,10 @@ COMMENT=	Dynamic web content management system (CMS)
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Joomla 2.5.x reached its End of Life in December 2014. Please update to a current version
+FORBIDDEN=	No longer supported upstream, multiple unresolved security issues
+EXPIRATION_DATE=        2015-12-18
+
 GH_PROJECT=	${PORTNAME}-cms
 
 NO_BUILD=	yes
