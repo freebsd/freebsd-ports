@@ -1,6 +1,6 @@
---- include/pstypes.h.orig	Sat Apr 12 01:51:48 2003
-+++ include/pstypes.h	Mon Apr  5 17:45:06 2004
-@@ -46,7 +46,7 @@
+--- include/pstypes.h.orig	2003-04-11 23:51:48 UTC
++++ include/pstypes.h
+@@ -46,7 +46,7 @@ typedef uint16_t u_int16_t;
  # include <sys/types.h>
  # define _MAX_PATH 1024
  # define _MAX_DIR 256

@@ -1,6 +1,6 @@
---- main/console.c.orig	Fri Jun  6 23:59:49 2003
-+++ main/console.c	Tue Apr  6 14:45:18 2004
-@@ -70,7 +70,7 @@
+--- main/console.c.orig	2003-06-06 21:59:49 UTC
++++ main/console.c
+@@ -70,7 +70,7 @@ void con_printf(int priority, char *fmt,
  	va_list arglist;
  	char buffer[2048];
  
