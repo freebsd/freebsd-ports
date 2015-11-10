@@ -31,10 +31,8 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/LIBS/ { s/-ldl//g; s/-lrt//g; }' \
 		-e 's/python-config/${PYTHON_CMD:T}-config/g' \
 		-e '/pythonlibs/s/--libs/--ldflags/' \
-		-e '/-D_GNU_SOURCE/d' \
+		-e '/_GNU_SOURCE/d' \
 		-e '/lt_cv_dlopen/s/-ldl//g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e '/if.*_GNU_SOURCE/,/endif/d' \
-		${WRKSRC}/include/config.h.in
 	${REINPLACE_CMD} '/LIBADD/s/-ldl//g' \
 		${WRKSRC}/modules/mixer/simple/Makefile.in
 	${REINPLACE_CMD} 's|/etc|${PREFIX}&|g' \
