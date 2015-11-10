@@ -7358,11 +7358,13 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-8041</cvename>
       <url>http://w1.fi/security/2015-5/incomplete-wps-and-p2p-nfc-ndef-record-payload-length-validation.txt</url>
     </references>
     <dates>
       <discovery>2015-07-08</discovery>
       <entry>2015-07-09</entry>
+      <modified>2015-11-10</modified>
     </dates>
   </vuln>
 
