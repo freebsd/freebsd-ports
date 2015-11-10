@@ -210,14 +210,10 @@
     SUBDIR += mysql-q4m
     SUBDIR += mysql-udf
     SUBDIR += mysql-udf-sys
-    SUBDIR += mysql-workbench51
     SUBDIR += mysql-workbench52
     SUBDIR += mysql-xql
     SUBDIR += mysql2odbc
     SUBDIR += mysql2pgsql
-    SUBDIR += mysql51-client
-    SUBDIR += mysql51-scripts
-    SUBDIR += mysql51-server
     SUBDIR += mysql55-client
     SUBDIR += mysql55-server
     SUBDIR += mysql56-client
@@ -319,7 +315,6 @@
     SUBDIR += p5-DBD-XBase
     SUBDIR += p5-DBD-cego
     SUBDIR += p5-DBD-mysql
-    SUBDIR += p5-DBD-mysql51
     SUBDIR += p5-DBI
     SUBDIR += p5-DBI-Shell
     SUBDIR += p5-DBICx-Deploy
@@ -712,7 +707,6 @@
     SUBDIR += pxtools
     SUBDIR += py-Elixir
     SUBDIR += py-MySQLdb
-    SUBDIR += py-MySQLdb51
     SUBDIR += py-MySQLdb55
     SUBDIR += py-MySQLdb56
     SUBDIR += py-PyGreSQL
