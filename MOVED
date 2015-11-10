@@ -7929,3 +7929,9 @@ devel/py-parsing|devel/py-pyparsing|2015-11-04|Renamed to match upstream naming
 devel/py-pygitup|devel/py-git-up|2015-11-07|Renamed to match upstream naming
 devel/phptags||2015-11-08|Has expired: abandoned upstream
 sysutils/torsmo|sysutils/conky|2015-11-08|Has expired: no new releases for years, consider using sysutils/conky
+databases/mysql-workbench51|databases/mysql-workbench52|2015-11-10|Has expired: EOL upstream, use databases/mysql-workbench52 instead
+databases/mysql51-client||2015-11-10|Has expired: EOL upstream, use mysql55 or mysql56 instead
+databases/mysql51-scripts||2015-11-10|Has expired: EOL upstream, use mysql55 or mysql56 instead
+databases/mysql51-server||2015-11-10|Has expired: EOL upstream, use mysql55 or mysql56 instead
+databases/p5-DBD-mysql51|databases/p5-DBD-mysql|2015-11-10|Has expired: EOL upstream, use databases/p5-DBD-mysql instead
+databases/py-MySQLdb51||2015-11-10|Has expired: EOL upstream, use databases/py-MySQLdb instead
