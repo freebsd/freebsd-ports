@@ -1,4 +1,6 @@
-Diehard is a battery of tests for random number generators developed by
-Dr. George Marsaglia of Florida State University Department of
+Diehard is a battery of tests for random number generators developed
+by Dr. George Marsaglia of Florida State University Department of
 Statistics.  Originally developed for testing pseudo-random generators,
 Diehard has since become a de facto standard for testing RNGs.
+
+WWW: http://stat.fsu.edu/pub/diehard/

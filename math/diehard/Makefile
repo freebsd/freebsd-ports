@@ -4,17 +4,14 @@
 PORTNAME=	diehard
 PORTVERSION=	0.1
 CATEGORIES=	math
-MASTER_SITES=	http://www.cs.hku.hk/~diehard/cdrom/ \
-		http://stat.fsu.edu/pub/diehard/
-DISTNAME=	die.c
+MASTER_SITES=	http://stat.fsu.edu/pub/diehard/
+DISTNAME=	die-c
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Marsaglia's Diehard Battery of Tests of Randomness
 
-BROKEN=		unfetchable
-
 ALL_TARGET=	diehard
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/die.c
 PLIST_SUB=	DOCSDIR="share/doc/${PORTNAME}" DATADIR="share/${PORTNAME}"
 
 DOCSLIST=	NOTES readme
@@ -30,6 +27,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/diehard ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/operm5.cov ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCSLIST:S!^!${WRKSRC}/!} ${STAGEDIR}${DOCSDIR}
 
