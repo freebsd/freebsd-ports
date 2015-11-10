@@ -28,8 +28,6 @@ X11_USE=	xorg=x11,xft
 X11_USES=	pkgconfig
 X11_ALL_TARGET_OFF=unix
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} \
 		-e '/hide = /s/@//' \
@@ -49,18 +47,18 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e '/#include <Xft/s|<|<X11/|' \
 		${WRKSRC}/src/c/arch/unix/x11/x11.h
-.if ! ${PORT_OPTIONS:MX11}
-	# This is not strictly speaking required, but it cuts
-	# down on some unnecessary work and error messages.
+
+# This is not strictly speaking required, but it cuts
+# down on some unnecessary work and error messages.
+post-patch-X11-off:
 	${REINPLACE_CMD} \
 		-e '/$$(eval $$(build-wordgrinder-x11))/d' \
 		${WRKSRC}/Makefile
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wordgrinder
-.if ${PORT_OPTIONS:MX11}
+
+post-install-X11-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/xwordgrinder ${STAGEDIR}${PREFIX}/bin
-.endif
 
 .include <bsd.port.mk>
