@@ -31,8 +31,12 @@ do-install:
 .for p in ${PLIST_FILES:T}
 	(cd ${WRKSRC}/unix && ${INSTALL_PROGRAM} ${p} ${STAGEDIR}${PREFIX}/bin)
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/documentation && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR})
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR})
 
