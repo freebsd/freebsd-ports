@@ -641,7 +641,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	0.9.16
+NGINX_LUA_VERSION=	0.9.18
 GH_ACCOUNT+=	openresty:lua
 GH_PROJECT+=	lua-nginx-module:lua
 GH_TAGNAME+=	v${NGINX_LUA_VERSION}:lua
@@ -649,7 +649,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_lua}
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
-NGINX_MEMC_VERSION=	0.15
+NGINX_MEMC_VERSION=	0.16
 GH_ACCOUNT+=	openresty:memc
 GH_PROJECT+=	memc-nginx-module:memc
 GH_TAGNAME+=	v${NGINX_MEMC_VERSION}:memc
@@ -702,7 +702,7 @@ CFLAGS+=	-DNDEBUG
 
 .if ${PORT_OPTIONS:MPOSTGRES}
 USES+=	pgsql
-NGINX_POSTGRES_VERSION=		1.0rc5-1-g49855a0
+NGINX_POSTGRES_VERSION=		1.0rc7
 GH_ACCOUNT+=	FRiCKLE:postgres
 GH_PROJECT+=	ngx_postgres:postgres
 GH_TAGNAME+=	${NGINX_POSTGRES_VERSION}:postgres
@@ -711,7 +711,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres-config
 .endif
 
 .if ${PORT_OPTIONS:MRDS_CSV}
-NGINX_RDS_CSV_VERSION=	0.05
+NGINX_RDS_CSV_VERSION=	0.07
 GH_ACCOUNT+=	openresty:rdscsv
 GH_PROJECT+=	rds-csv-nginx-module:rdscsv
 GH_TAGNAME+=	v${NGINX_RDS_CSV_VERSION}:rdscsv
@@ -719,7 +719,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_rdscsv}
 .endif
 
 .if ${PORT_OPTIONS:MRDS_JSON}
-NGINX_RDS_JSON_VERSION=	0.13
+NGINX_RDS_JSON_VERSION=	0.14
 GH_ACCOUNT+=	openresty:rdsjson
 GH_PROJECT+=	rds-json-nginx-module:rdsjson
 GH_TAGNAME+=	v${NGINX_RDS_JSON_VERSION}:rdsjson
@@ -727,7 +727,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_rdsjson}
 .endif
 
 .if ${PORT_OPTIONS:MREDIS2}
-NGINX_REDIS2_VERSION=	0.11
+NGINX_REDIS2_VERSION=	0.12
 GH_ACCOUNT+=	openresty:redis2
 GH_PROJECT+=	redis2-nginx-module:redis2
 GH_TAGNAME+=	v${NGINX_REDIS2_VERSION}:redis2
@@ -743,7 +743,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_rtmp}
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
-NGINX_SET_MISC_VERSION=	0.28
+NGINX_SET_MISC_VERSION=	0.29
 GH_ACCOUNT+=	openresty:setmisc
 GH_PROJECT+=	set-misc-nginx-module:setmisc
 GH_TAGNAME+=	v${NGINX_SET_MISC_VERSION}:setmisc
