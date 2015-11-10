@@ -1,6 +1,6 @@
---- mem/mem.c.orig	Mon Apr  5 15:37:36 2004
-+++ mem/mem.c	Mon Apr  5 15:38:11 2004
-@@ -34,11 +34,6 @@
+--- mem/mem.c.orig	2003-04-11 23:51:48 UTC
++++ mem/mem.c
+@@ -34,11 +34,6 @@ COPYRIGHT 1993-1999 PARALLAX SOFTWARE CO
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
