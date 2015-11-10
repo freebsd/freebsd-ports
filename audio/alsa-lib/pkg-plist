@@ -25,14 +25,17 @@ include/alsa/seq.h
 include/alsa/seq_event.h
 include/alsa/seq_midi_event.h
 include/alsa/seqmid.h
+include/alsa/sound/asoc.h
 include/alsa/sound/asound_fm.h
 include/alsa/sound/emu10k1.h
 include/alsa/sound/hdsp.h
 include/alsa/sound/hdspm.h
 include/alsa/sound/sb16_csp.h
 include/alsa/sound/sscape_ioctl.h
+include/alsa/sound/tlv.h
 include/alsa/sound/type_compat.h
 include/alsa/timer.h
+include/alsa/topology.h
 include/alsa/use-case.h
 include/alsa/version.h
 include/sys/asoundlib.h
@@ -130,6 +133,7 @@ share/alsa/pcm/surround51.conf
 share/alsa/pcm/surround71.conf
 share/alsa/smixer.conf
 share/alsa/sndo-mixer.alisp
+share/alsa/topology/broadwell/broadwell.conf
 share/alsa/ucm/DAISY-I2S/DAISY-I2S.conf
 share/alsa/ucm/DAISY-I2S/HiFi.conf
 share/alsa/ucm/GoogleNyan/GoogleNyan.conf
@@ -158,5 +162,7 @@ share/alsa/ucm/SDP4430/hifiLP
 share/alsa/ucm/SDP4430/record
 share/alsa/ucm/SDP4430/voice
 share/alsa/ucm/SDP4430/voiceCall
+share/alsa/ucm/broadwell-rt286/HiFi
+share/alsa/ucm/broadwell-rt286/broadwell-rt286.conf
 share/alsa/ucm/tegraalc5632/tegraalc5632.conf
 @sample etc/asound.conf.sample

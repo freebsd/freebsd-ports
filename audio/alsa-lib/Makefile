@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alsa-lib
-PORTVERSION=	1.0.29
+PORTVERSION=	1.1.0
 CATEGORIES=	audio
 MASTER_SITES=	ALSA/lib \
 		GENTOO
@@ -33,6 +33,8 @@ post-patch:	.SILENT
 		-e '/pythonlibs/s/--libs/--ldflags/' \
 		-e '/-D_GNU_SOURCE/d' \
 		-e '/lt_cv_dlopen/s/-ldl//g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e '/if.*_GNU_SOURCE/,/endif/d' \
+		${WRKSRC}/include/config.h.in
 	${REINPLACE_CMD} '/LIBADD/s/-ldl//g' \
 		${WRKSRC}/modules/mixer/simple/Makefile.in
 	${REINPLACE_CMD} 's|/etc|${PREFIX}&|g' \
