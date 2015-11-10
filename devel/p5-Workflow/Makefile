@@ -3,7 +3,7 @@
 
 PORTNAME=	Workflow
 PORTVERSION=	1.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,6 +33,8 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
