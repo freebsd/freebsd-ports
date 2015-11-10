@@ -24,7 +24,7 @@ PLIST_FILES=	include/alpng.h \
 		lib/libalpng.a
 
 do-configure:
-	@${REINPLACE_CMD} -e "s/gcc/${CC}/g" ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e "s|gcc|${CC}|g" ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libalpng.a ${STAGEDIR}${PREFIX}/lib/
