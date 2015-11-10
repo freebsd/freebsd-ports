@@ -1,6 +1,6 @@
---- cdomso.c.orig	2012-11-30 16:01:24.000000000 +0100
-+++ cdomso.c	2012-11-30 16:02:15.000000000 +0100
-@@ -89,7 +89,7 @@
+--- cdomso.c.orig	1998-04-02 15:29:02 UTC
++++ cdomso.c
+@@ -89,7 +89,7 @@ unsigned long get_w(char *fn, short bits
  }
  
  
