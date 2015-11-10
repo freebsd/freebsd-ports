@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	protobuffs
-PORTVERSION=	0.8.1p5
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Protocol Buffers interface for Erlang
+
+LICENSE=	APACHE20
 
 USES=		erlang:rebar
 USE_GITHUB=	yes
