@@ -17,9 +17,10 @@ SRCS+=	util.cpp
 SRCS+=	usb_freebsd.cpp
 SRCS+=	util_freebsd.cpp
 
-# required by libziparchive
+# required by fastboot and libziparchive
 .PATH: ${.CURDIR}/../base
 SRCS+=	file.cpp
+SRCS+=	strings.cpp
 
 # required by fastboot
 .PATH: ${.CURDIR}/../ext4_utils
