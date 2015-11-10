@@ -45,9 +45,6 @@
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += aarch64-binutils
-    SUBDIR += amd64-binutils
-    SUBDIR += amd64-gcc
-    SUBDIR += amd64-xtoolchain-gcc
     SUBDIR += abi-compliance-checker
     SUBDIR += ace
     SUBDIR += ace+tao-doc
@@ -66,6 +63,9 @@
     SUBDIR += allegro
     SUBDIR += allegro-devel
     SUBDIR += alog
+    SUBDIR += amd64-binutils
+    SUBDIR += amd64-gcc
+    SUBDIR += amd64-xtoolchain-gcc
     SUBDIR += android-tools-adb
     SUBDIR += android-tools-adb-devel
     SUBDIR += android-tools-fastboot
@@ -96,6 +96,7 @@
     SUBDIR += arm-none-eabi-binutils
     SUBDIR += arm-none-eabi-gcc
     SUBDIR += arm-none-eabi-gcc492
+    SUBDIR += arm-none-eabi-gdb
     SUBDIR += aros-sdk
     SUBDIR += art
     SUBDIR += artifactory
