@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6ca7eddd-d436-486a-b169-b948436bcf14">
+    <topic>libvpx -- buffer overflow in vp9_init_context_buffers</topic>
+    <affects>
+      <package>
+	<name>libvpx</name>
+	<range><lt>1.4.0.488_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/security/advisories/mfsa2015-101/">
+	  <p>Security researcher Khalil Zhani reported that a
+	    maliciously crafted vp9 format video could be used to
+	    trigger a buffer overflow while parsing the file. This leads
+	    to a potentially exploitable crash due to a flaw in the
+	    libvpx library.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4506</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-101/</url>
+    </references>
+    <dates>
+      <discovery>2015-09-22</discovery>
+      <entry>2015-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="56665ccb-8723-11e5-9b13-14dae9d210b8">
     <topic>powerdns -- Denial of Service</topic>
     <affects>
