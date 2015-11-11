@@ -12,12 +12,13 @@ COMMENT=	High-performance HTTP accelerator
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libedit.so.0:${PORTSDIR}/devel/libedit
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS=	varnish-2.* varnish-3.*
+BROKEN_arm=	does not configure
 
-USES=		autoreconf cpe gmake libtool pkgconfig python:2,build readline shebangfix
+USES=		autoreconf cpe gmake libedit libtool pkgconfig python:2,build \
+		readline shebangfix
 SHEBANG_FILES=	lib/libvcc/vmodtool.py
 CPE_VENDOR=	varnish-cache
 CFLAGS+=	-I${LOCALBASE}/include
@@ -47,10 +48,4 @@ post-patch:
 regression-test check test: build
 	${MAKE_CMD} TESTS_PARALLELISM=1 -C ${WRKSRC} check
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "arm"
-BROKEN=		Does not configure on arm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
