@@ -1,5 +1,5 @@
---- session.c	2013-03-14 19:22:37.000000000 -0500
-+++ session.c	2013-04-12 21:10:44.510757912 -0500
+--- session.c	2013-03-14 19:22:37 UTC
++++ session.c
 @@ -1131,6 +1136,9 @@
  	struct passwd *pw = s->pw;
  #if !defined (HAVE_LOGIN_CAP) && !defined (HAVE_CYGWIN)
