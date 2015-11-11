@@ -3,7 +3,7 @@
 
 PORTNAME=	io
 PORTVERSION=	2013.12.04
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,6 +25,7 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_GROUP=	ADDONS
+OPTIONS_SUB=	yes
 
 .include "${.CURDIR}/Makefile.addons"
 
@@ -37,7 +38,7 @@ post-patch:
 	${FIND} ${WRKSRC}/addons -name "*.bak" -o -name "*.orig" -delete
 
 post-install:
-	${FIND} -d ${STAGEDIR}${PREFIX}/lib/io/addons -type d -empty -exec rmdir {} \;
+	${FIND} -d ${STAGEDIR}${PREFIX}/lib/io/addons -type d -empty -delete
 	${FIND} ${STAGEDIR}${PREFIX}/lib/io/addons -type f -name "*.so" -exec \
 		${STRIP_CMD} {} \;
 	${MKDIR}  ${STAGEDIR}${DOCSDIR}
