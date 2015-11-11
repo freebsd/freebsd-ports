@@ -839,6 +839,7 @@
     SUBDIR += p5-Dancer-Logger-Log4perl
     SUBDIR += p5-Dancer-Plugin-ExtDirect
     SUBDIR += p5-Dancer-Plugin-Feed
+    SUBDIR += p5-Dancer-Plugin-FlashMessage
     SUBDIR += p5-Dancer-Plugin-Lexicon
     SUBDIR += p5-Dancer-Plugin-Memcached
     SUBDIR += p5-Dancer-Plugin-REST
