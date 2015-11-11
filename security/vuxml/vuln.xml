@@ -58,6 +58,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2f7f4db2-8819-11e5-ab94-002590263bf5">
+    <topic>p5-HTML-Scrubber -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>p5-HTML-Scrubber</name>
+	<range><lt>0.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5667">
+	  <p>Cross-site scripting (XSS) vulnerability in the HTML-Scrubber
+	    module before 0.15 for Perl, when the comment feature is enabled,
+	    allows remote attackers to inject arbitrary web script or HTML via
+	    a crafted comment.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5667</cvename>
+      <url>https://metacpan.org/release/HTML-Scrubber</url>
+      <url>http://jvndb.jvn.jp/jvndb/JVNDB-2015-000171</url>
+      <url>http://jvn.jp/en/jp/JVN53973084/index.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-10</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ca7eddd-d436-486a-b169-b948436bcf14">
     <topic>libvpx -- buffer overflow in vp9_init_context_buffers</topic>
     <affects>
