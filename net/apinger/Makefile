@@ -3,7 +3,7 @@
 
 PORTNAME=	apinger
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 		http://www.bnet.pl/~jajcus/apinger/
@@ -16,16 +16,13 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	apinger
 SUB_FILES=	pkg-message
+PORTDOCS=	AUTHORS NEWS README
 
-OPTIONS_DEFINE=	IPV6
+OPTIONS_DEFINE=	IPV6 DOCS
 
 USES=		bison
 
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/apinger.conf ${STAGEDIR}${PREFIX}/etc/apinger.conf.sample
