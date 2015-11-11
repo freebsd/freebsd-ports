@@ -58,6 +58,98 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="851a0eea-88aa-11e5-90e7-b499baebfeaf">
+    <topic>MySQL - Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>mariadb-client</name>
+       <range><lt>5.3.13</lt></range>
+      </package>
+      <package>
+       <name>mariadb-server</name>
+       <range><lt>5.3.13</lt></range>
+      </package>
+      <package>
+       <name>mariadb55-client</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mariadb55-server</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mariadb100-client</name>
+       <range><lt>10.0.22</lt></range>
+      </package>
+      <package>
+       <name>mariadb100-server</name>
+       <range><lt>10.0.22</lt></range>
+      </package>
+      <package>
+       <name>mysql55-client</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mysql55-server</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mysql56-client</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+      <package>
+       <name>mysql56-server</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+      <package>
+       <name>percona55-client</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>percona55-server</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>percona56-client</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+      <package>
+       <name>percona56-server</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Oracle reports:</p>
+       <blockquote cite="http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html">
+       <p>Critical Patch Update: MySQL Server, version(s) 5.5.45 and prior, 5.6.26 and prior</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html</url>
+      <cvename>CVE-2015-4802</cvename>
+      <cvename>CVE-2015-4807</cvename>
+      <cvename>CVE-2015-4815</cvename>
+      <cvename>CVE-2015-4826</cvename>
+      <cvename>CVE-2015-4830</cvename>
+      <cvename>CVE-2015-4836</cvename>
+      <cvename>CVE-2015-4858</cvename>
+      <cvename>CVE-2015-4861</cvename>
+      <cvename>CVE-2015-4870</cvename>
+      <cvename>CVE-2015-4913</cvename>
+      <cvename>CVE-2015-4792</cvename>
+      <url>https://mariadb.com/kb/en/mariadb/mariadb-5546-release-notes/</url>
+      <url>https://mariadb.com/kb/en/mariadb/mariadb-10022-release-notes/</url>
+      <url>https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.46-37.5.html</url>
+      <url>https://www.percona.com/doc/percona-server/5.6/release-notes/Percona-Server-5.6.27-75.0.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-10</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b665668a-91db-4f13-8113-9e4b5b0e47f7">
     <topic>jenkins -- remote code execution via unsafe deserialization</topic>
     <affects>
