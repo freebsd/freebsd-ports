@@ -1,10 +1,10 @@
---- base/gdevplib.c.orig	2012-02-08 17:48:47.000000000 +0900
-+++ base/gdevplib.c	2012-02-13 01:23:46.000000000 +0900
-@@ -151,7 +151,11 @@
+--- base/gdevplib.c.orig	2012-08-08 08:01:36 UTC
++++ base/gdevplib.c
+@@ -153,7 +153,11 @@ void __aebi_memmove(void *dest, const vo
  
  #ifdef  TESTING_WITH_NO_BAND_DONOR
  
-+#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__DragonFly__)
  #include <malloc.h>
 +#else
 +#include <stdlib.h>
