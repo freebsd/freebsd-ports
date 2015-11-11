@@ -15,15 +15,6 @@
  			break;
  		case TLS::DTLS_v1:
  		default:
-@@ -5801,7 +5803,7 @@ public:
- 	{
- 		SessionInfo sessInfo;
- 
--		sessInfo.isCompressed = (0 != ssl->session->compress_meth);
-+		sessInfo.isCompressed = (0 != SSL_SESSION_get_compress_id(ssl->session));
- 
- 		if (ssl->version == TLS1_VERSION)
- 			sessInfo.version = TLS::TLS_v1;
 @@ -7297,7 +7299,7 @@ public:
  			return new CMSContext( this );
  		else if ( type == "ca" )
