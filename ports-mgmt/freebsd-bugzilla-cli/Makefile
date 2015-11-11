@@ -3,12 +3,15 @@
 
 PORTNAME=	freebsd-bugzilla-cli
 PORTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Interact with the FreeBSD bugzilla instance
 
 LICENSE=	APACHE20
+
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 OPTIONS_GROUP=	BACKEND
 OPTIONS_GROUP_BACKEND=	PYBUGZ
