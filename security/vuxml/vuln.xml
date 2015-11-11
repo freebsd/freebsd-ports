@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f0b9049f-88c4-11e5-aed7-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>46.0.2490.86</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/11/stable-channel-update.html">
+	  <p>[520422] High CVE-2015-1302: Information leak in PDF viewer.
+	    Credit to Rob Wu.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1302</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/11/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-10</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="851a0eea-88aa-11e5-90e7-b499baebfeaf">
     <topic>MySQL - Multiple vulnerabilities</topic>
     <affects>
