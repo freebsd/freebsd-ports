@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b665668a-91db-4f13-8113-9e4b5b0e47f7">
+    <topic>jenkins -- remote code execution via unsafe deserialization</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.638</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>1.625.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Developers report:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-11-11">
+	  <p>Unsafe deserialization allows unauthenticated remote attackers to
+	    run arbitrary code on the Jenkins master.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-11-11</url>
+      <url>https://jenkins-ci.org/content/mitigating-unauthenticated-remote-code-execution-0-day-jenkins-cli</url>
+      <url>http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/#thefix</url>
+    </references>
+    <dates>
+      <discovery>2015-11-06</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="71af4ded-8864-11e5-af1b-001999f8d30b">
     <topic>owncloudclient -- Improper validation of certificates when using self-signed certificates</topic>
     <affects>
