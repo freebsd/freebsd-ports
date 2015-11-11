@@ -1,3 +1,4 @@
+--- UTC
 r99053 | des | 2002-06-29 05:57:13 -0500 (Sat, 29 Jun 2002) | 4 lines
 Changed paths:
    M /head/crypto/openssh/auth2.c

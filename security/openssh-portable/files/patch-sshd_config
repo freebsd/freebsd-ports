@@ -1,4 +1,4 @@
---- sshd_config.orig	2013-02-11 18:02:09.000000000 -0600
+--- sshd_config.orig	2013-02-11 18:02:09.000000000 UTC
 +++ sshd_config	2013-05-13 06:46:45.153627197 -0500
 @@ -10,6 +10,9 @@
  # possible, but leave them commented.  Uncommented options override the

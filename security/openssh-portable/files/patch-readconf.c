@@ -1,3 +1,4 @@
+--- UTC
 base defaults
 
 r99048 | des | 2002-06-29 05:51:56 -0500 (Sat, 29 Jun 2002) | 4 lines
