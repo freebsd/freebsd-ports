@@ -3,7 +3,7 @@
 
 PORTNAME=	onyx
 PORTVERSION=	5.1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
@@ -13,10 +13,9 @@ COMMENT=	Embeddable stack-based threaded interpreted language
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
-LIB_DEPENDS=	libedit.so:${PORTSDIR}/devel/libedit \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		tar:bzip2 shebangfix
+USES=		libedit shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libedit-prefix=${LOCALBASE} \
 		--with-pcre-prefix=${LOCALBASE}
