@@ -1620,6 +1620,7 @@
     SUBDIR += words
     SUBDIR += wv
     SUBDIR += wv2
+    SUBDIR += xalan-c
     SUBDIR += xalan-j
     SUBDIR += xerces-c3
     SUBDIR += xerces-j
