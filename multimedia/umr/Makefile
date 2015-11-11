@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.oldunreal.com/mods/other/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Media Ripper
 
-
 PLIST_FILES=	bin/${PORTNAME}
+FETCH_AFTER_ARGS=	--referer=http://www.oldunreal.com/mods.html
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
