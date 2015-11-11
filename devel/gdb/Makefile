@@ -12,6 +12,9 @@ COMMENT=	GNU GDB of newer version than comes with the system
 
 LICENSE=	GPLv3
 
+TEST_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
+
+TEST_TARGET=	check
 USES=		cpe iconv gmake libtool tar:xz
 USE_CSTD=	gnu89
 CPE_VENDOR=	gnu
