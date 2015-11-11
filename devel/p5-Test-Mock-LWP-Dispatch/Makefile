@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Mock-LWP-Dispatch
-PORTVERSION=	0.06
-PORTREVISION=	1
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

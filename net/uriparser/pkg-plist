@@ -1,3 +1,4 @@
+bin/uriparse
 include/uriparser/Uri.h
 include/uriparser/UriBase.h
 include/uriparser/UriDefsAnsi.h
@@ -7,5 +8,5 @@ include/uriparser/UriIp4.h
 lib/liburiparser.a
 lib/liburiparser.so
 lib/liburiparser.so.1
-lib/liburiparser.so.1.0.14
+lib/liburiparser.so.1.0.20
 libdata/pkgconfig/liburiparser.pc

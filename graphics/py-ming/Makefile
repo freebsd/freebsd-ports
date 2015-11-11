@@ -22,8 +22,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 CONFIGURE_ARGS=	--enable-python
 CONFIGURE_ENV=	PYTHON_LDFLAGS="-L${PYTHON_LIBDIR} -l${PYTHON_VERSION}${PYTHON_ABIVER}"
 GNU_CONFIGURE=	yes
-USE_PYTHON=	autoplist distutils
-USES=		autoreconf libtool localbase python:2
+USE_PYTHON=	autoplist concurrent distutils
+USES=		autoreconf libtool localbase python
 
 CONFIGURE_WRKSRC=	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/py_ext

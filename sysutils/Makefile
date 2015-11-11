@@ -413,12 +413,14 @@
     SUBDIR += i2c-tools
     SUBDIR += i7z
     SUBDIR += iat
+    SUBDIR += inotify-tools
     SUBDIR += installwatch
     SUBDIR += intel-pcm
     SUBDIR += iocage
     SUBDIR += iocage-devel
     SUBDIR += iogen
     SUBDIR += iograph
+    SUBDIR += iohyve
     SUBDIR += ioping
     SUBDIR += ipa
     SUBDIR += ipad_charge
@@ -600,6 +602,7 @@
     SUBDIR += obliterate
     SUBDIR += odo
     SUBDIR += ods2
+    SUBDIR += ohmu
     SUBDIR += open
     SUBDIR += openipmi
     SUBDIR += openupsd
@@ -934,7 +937,6 @@
     SUBDIR += screenie
     SUBDIR += scterc
     SUBDIR += sd-agent
-    SUBDIR += sdd
     SUBDIR += sdparm
     SUBDIR += searchmonkey
     SUBDIR += seatools
@@ -1030,6 +1032,7 @@
     SUBDIR += tss
     SUBDIR += tty-clock
     SUBDIR += ttyload
+    SUBDIR += tuptime
     SUBDIR += tw_cli
     SUBDIR += tzdialog
     SUBDIR += u-boot-bananapi
@@ -1136,7 +1139,6 @@
     SUBDIR += xfce4-diskperf-plugin
     SUBDIR += xfce4-fsguard-plugin
     SUBDIR += xfce4-genmon-plugin
-    SUBDIR += xfce4-minicmd-plugin
     SUBDIR += xfce4-mount-plugin
     SUBDIR += xfce4-netload-plugin
     SUBDIR += xfce4-power-manager

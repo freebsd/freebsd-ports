@@ -60,6 +60,7 @@ sbin/visudo
 %%NLS%%share/locale/gl/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sudo.mo
@@ -75,6 +76,8 @@ sbin/visudo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/sudo.mo

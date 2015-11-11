@@ -1,23 +1,17 @@
-# Contains non-trivial handling of option variables
-# and build environment. Must be included after
-# bsd.port.pre.mk
-#
-# Some of the knobs are not tunable by the OPTIONS framework. These are
-# explained here in detail.
-#
 # $FreeBSD$
 #
-# Feature options:
-# These options influence some general behaviour of mplayer. Almost all of the featues,
-# for example all the codecs, are selected via the OPTIONS framework.
-# The following options WITH_DVD_DEVICE, WITH_CDROM_DEVICE, are *not*
-# selected via the options framework and must be set via make.conf or by passing
-# the variable to make during build, e.g. make WITH_DVD_DEVICE=/dev/cd0
+# Non-helper handling of option variables and build environment.
+# Include after bsd.port.pre.mk
+#
+# Almost all of mplayer's build-time configuration is controlled via the
+# OPTIONS framework. Exceptions are listed below. These variables must be
+# set via make.conf or by passing the variable to make during build, e.g.
+# make WITH_DVD_DEVICE=/dev/cd0
 #
 # WITH_DVD_DEVICE=/path/to/desired/device
 # default: /dev/cd0
-# This option changes the default device where mplayer looks for
-# a DVD medium
+# This option changes the default device where mplayer looks by default
+# for a DVD medium
 #
 # WITH_CDROM_DEVICE=/path/to/desired/device
 # default: /dev/cd0
@@ -44,54 +38,16 @@ DEFAULT_KERN_HZ=${WITH_KERN_HZ}
 DEFAULT_KERN_HZ=1024
 .endif
 
-
-# Non-simplified OPTIONS handling
-# ===============================
-
-.if ${PORT_OPTIONS:MIPV6}
-CATEGORIES+=	ipv6
-.else
-CONFIGURE_ARGS+=	--disable-inet6
-.endif
-
-.if ${PORT_OPTIONS:MRTMP}
-LIB_DEPENDS+=		librtmp.so:${PORTSDIR}/multimedia/librtmp
-CONFIGURE_ARGS+=	--enable-librtmp
-EXTRA_LIBS+=		-lrtmp
-.else
-CONFIGURE_ARGS+=	--disable-librtmp
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl
-LIB_DEPENDS+=		libaa.so:${PORTSDIR}/graphics/aalib
-.else
-CONFIGURE_ARGS+=	--disable-sdl
-.endif
-
-.if ${PORT_OPTIONS:MV4L}
-BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS+=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
-CONFIGURE_ARGS+=	--enable-tv-v4l1 \
-			--enable-tv-v4l2
-EXTRA_LIBS+=		-lv4l1 -lv4l2
-.else
-CONFIGURE_ARGS+=	--disable-tv-v4l1 \
-			--disable-tv-v4l2
-.endif
-
-
 # Build system handling (including OPTIONS)
 # =========================================
+
+.if ${ARCH} == "sparc64"
+BROKEN=	Does not compile on sparc64
+.endif
 
 # Support for aligned_alloc
 .if ${OSVERSION} >= 1000000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aligned_alloc
-.endif
-
-# Unsupported architectures
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
@@ -101,11 +57,11 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang-version
 CFLAGS_i386+=	-mstack-alignment=16 -mstackrealign
 .endif # ${CHOSEN_COMPILER_TYPE} == clang
 
-CFLAGS_armv6+=	-no-integrated-as
-
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 .endif
+
+CFLAGS_armv6+=	-no-integrated-as
 
 # Extra build options for debugging and optimised CFLAGS
 # ======================================================
@@ -127,11 +83,4 @@ CONFIGURE_ARGS+=	--codecsdir=${LOCALBASE}/lib/win32
 .else
 CONFIGURE_ARGS+=	--disable-win32dll \
 			--disable-qtx
-.endif
-
-# Additional extra libraries handling
-# ===================================
-
-.if defined(EXTRA_LIBS)
-CONFIGURE_ARGS+=	--extra-libs="${EXTRA_LIBS}"
 .endif

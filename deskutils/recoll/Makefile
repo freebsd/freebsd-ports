@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-PORTVERSION=	1.21.1
+PORTVERSION=	1.21.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 

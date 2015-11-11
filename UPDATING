@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151101:
+  AFFECTS: users of www/codeigniter
+  AUTHOR: junovitch@FreeBSD.org
+
+  CodeIgniter has been updated to the 3.0.x release branch. End users
+  must ensure their web applications are compliant with the guidance
+  in the "Upgrading From a Previous Version" document.
+
+  http://www.codeigniter.com/user_guide/installation/upgrade_300.html
+
+  CodeIgniter 2.2.x has reached EOL as of 31 October 2015 but may be
+  installed in the interim from the www/codeigniter22 port.
+
+20151020:
+  AFFECTS: users of security/keepassx2
+
+  Due to a package name change, first remove the existing package
+  and then reinstall it:
+
+  # pkg delete security/keepassx2
+  # portmaster security/keepassx2
+
 20151019:
   AFFECTS: users of www/varnish4
   AUTHOR: feld@FreeBSD.org
@@ -24,6 +46,12 @@ you update your ports collection, before attempting any port upgrades.
   # rm /var/run/varnishncsa.pid
   # chown varnishlog /var/log/varnish.log
   # chown varnishlog /var/log/varnishncsa.log
+
+  Please also note that the syntax for binding to additional IPs has
+  changed in 4.1.0. Multiple listening addresses are now specified by
+  using multiple -a arguments. In rc.conf it would look like this:
+
+  varnishd_listen="x.x.x.x:80 -a y.y.y.y:80"
 
 20151015:
   AFFECTS: users of devel/subversion, its bindings and www/mod_dav_svn

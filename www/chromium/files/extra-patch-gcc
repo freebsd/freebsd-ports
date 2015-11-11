@@ -147,3 +147,13 @@
  #include "src/allocation.h"
  #include "src/base/platform/mutex.h"
  #include "src/flags.h"
+--- third_party/webrtc/modules/remote_bitrate_estimator/overuse_detector.cc.orig	2015-10-22 21:00:59.000000000 +0200
++++ third_party/webrtc/modules/remote_bitrate_estimator/overuse_detector.cc	2015-11-01 11:32:36.293750000 +0100
+@@ -11,6 +11,7 @@
+ #include "webrtc/modules/remote_bitrate_estimator/overuse_detector.h"
+ 
+ #include <algorithm>
++#include <cstdio>
+ #include <sstream>
+ #include <math.h>
+ #include <stdlib.h>

@@ -1,0 +1,11 @@
+--- backend/GNUmakefile.orig	2015-02-20 13:02:20 UTC
++++ backend/GNUmakefile
+@@ -21,7 +21,7 @@
+ ##################################################################################
+ 
+ all clean::
+-	@for dir in contrib src; do $(MAKE) -C $$dir $@ || exit 1; done
++	@for dir in src; do $(MAKE) -C $$dir $@ || exit 1; done
+ 
+ clean::
+ 	rm -f *~

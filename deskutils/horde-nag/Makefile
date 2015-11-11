@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nag
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.6
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 

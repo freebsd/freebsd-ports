@@ -14,6 +14,8 @@ COMMENT=	Digital audio interface for the Pure language
 LICENSE=	BSD3CLAUSE
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \

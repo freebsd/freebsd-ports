@@ -10,6 +10,9 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	The m17n IMEngine for IBus framework
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libibus-1.0.so:${PORTSDIR}/textproc/ibus \
 		libm17n.so:${PORTSDIR}/devel/m17n-lib
 RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus
@@ -20,16 +23,9 @@ USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_SUB=	yes
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/m17n|$${pkgdatadir}|g' \

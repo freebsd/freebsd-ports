@@ -1,12 +1,12 @@
---- ./lib/cpp/src/thrift/server/TNonblockingServer.h.orig	2013-08-15 18:04:29.000000000 +0400
-+++ ./lib/cpp/src/thrift/server/TNonblockingServer.h	2013-10-16 01:15:53.000000000 +0400
-@@ -38,7 +38,8 @@
- #include <unistd.h>
- #endif
- #include <event.h>
--
+--- lib/cpp/src/thrift/server/TNonblockingServer.h.orig	2015-10-13 19:19:36 UTC
++++ lib/cpp/src/thrift/server/TNonblockingServer.h
+@@ -41,6 +41,9 @@
+ #include <event2/event_compat.h>
+ #include <event2/event_struct.h>
+ 
 +#include <sys/types.h>
 +#include <sys/socket.h>
- 
- 
- namespace apache { namespace thrift { namespace server {
++
+ namespace apache {
+ namespace thrift {
+ namespace server {

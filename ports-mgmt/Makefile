@@ -52,7 +52,6 @@
     SUBDIR += portsearch
     SUBDIR += portshaker
     SUBDIR += portshaker-config
-    SUBDIR += portsopt
     SUBDIR += portsreinstall
     SUBDIR += porttools
     SUBDIR += porttree

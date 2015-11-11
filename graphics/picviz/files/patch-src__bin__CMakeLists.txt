@@ -1,8 +1,0 @@
---- ./src/bin/CMakeLists.txt.orig	2008-10-27 11:39:31.000000000 +0000
-+++ ./src/bin/CMakeLists.txt	2014-01-25 16:50:49.000000000 +0000
-@@ -3,4 +3,4 @@
- add_executable(pcv pcv.c)
- target_link_libraries(pcv picviz)
- 
--INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/pcv   DESTINATION bin)
-+INSTALL(TARGETS pcv DESTINATION bin)

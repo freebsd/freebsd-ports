@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/README.md
 %%WWWDIR%%/config.php
 %%WWWDIR%%/img/asc.gif
@@ -38,9 +40,11 @@
 %%WWWDIR%%/styles/style.css
 %%WWWDIR%%/templates/fileviewer.phtml
 %%WWWDIR%%/templates/index.phtml
-@dirrm %%WWWDIR%%/templates
-@dirrm %%WWWDIR%%/styles
-@dirrm %%WWWDIR%%/library
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/img
-@dirrm %%WWWDIR%%
+@dir %%WWWDIR%%/templates
+@dir %%WWWDIR%%/styles
+@dir %%WWWDIR%%/library
+@dir %%WWWDIR%%/js
+@dir %%WWWDIR%%/img
+@dir %%WWWDIR%%
+@owner
+@group

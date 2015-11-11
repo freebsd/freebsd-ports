@@ -1,0 +1,20 @@
+xen: free domain's vcpu array
+
+This was overlooked in fb442e2171 ("x86_64: allow more vCPU-s per
+guest").
+
+This is XSA-149.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Ian Campbell <ian.campbell@citrix.com>
+
+--- a/xen/common/domain.c
++++ b/xen/common/domain.c
+@@ -841,6 +841,7 @@ static void complete_domain_destroy(stru
+ 
+     xsm_free_security_domain(d);
+     free_cpumask_var(d->domain_dirty_cpumask);
++    xfree(d->vcpu);
+     free_domain_struct(d);
+ 
+     send_global_virq(VIRQ_DOM_EXC);

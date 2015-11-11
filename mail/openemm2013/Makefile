@@ -3,6 +3,7 @@
 
 PORTNAME=	openemm2013
 PORTVERSION=	R2
+PORTREVISION=	1
 CATEGORIES=	mail java www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT/} \
 		http://central.maven.org/maven2/%SUBDIR%/:MAVEN2
@@ -48,12 +49,14 @@ PID_FILE=	${VAR_DIR}/run/${PORTNAME}.pid
 
 AGN_BACKEND_FILES=	lib tools xmlback bav
 
+SUB_FILES=	pkg-message
 SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		LOG_DIR=${LOG_DIR} \
 		USER=${USER} \
 		GROUP=${GROUP} \
 		PID_FILE=${PID_FILE} \
-		APP_HOME=${PREFIX}/${PORTNAME}
+		APP_HOME=${PREFIX}/${PORTNAME} \
+		PREFIX=${PREFIX}
 PLIST_SUB=	APP_HOME=${PORTNAME}
 
 TOMCAT_CONFIG_FILES=	context.xml logging.properties server.xml
@@ -94,9 +97,33 @@ post-patch:
 	${REINPLACE_CMD} -e 's|\/home\/openemm|${PREFIX}\/${PORTNAME}|g' ${WRKSRC}/src/script/data/bav.rc
 	${REINPLACE_CMD} -e 's|\/home\/openemm|${PREFIX}\/${PORTNAME}|g' ${WRKSRC}/tomcat/conf/server.xml
 
-	${REINPLACE_CMD} -e "s|base = os.environ\['HOME'\]| base = '${PREFIX}\/${PORTNAME}'|g" -e "s|lockpath = os.environ\['LOCK_HOME'\]|lockpath = '/var/run/openemm'|g" ${WRKSRC}/src/script/lib/agn.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' -e "s|base = os.environ\['HOME'\]| base = '${PREFIX}\/${PORTNAME}'|g" -e "s|lockpath = os.environ\['LOCK_HOME'\]|lockpath = '/var/run/openemm'|g" ${WRKSRC}/src/script/lib/agn.py
 
-	${REINPLACE_CMD} -e 's|$$HOME|\${PREFIX}\/\${PORTNAME}|g' ${WRKSRC}/src/script/lib/config.sh
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/script/process/slrtscn.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/script/process/semu.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/script/process/softbounce.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/script/process/pickdist.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/script/process/smenable.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/script/process/bavd.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/script/process/bav-update.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/script/process/bav-trigger.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/script/process/upgrade.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/script/process/update.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/script/process/recovery.py
+
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|g' ${WRKSRC}/src/script/lib/aps.readme
+
+	${REINPLACE_CMD} -e 's|$$HOME|\${PREFIX}\/\${PORTNAME}|g' -e 's|python -c|${PYTHON_CMD} -c|g' ${WRKSRC}/src/script/lib/config.sh
+
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/jsp/fckeditor-2.6.6/editor/filemanager/connectors/py/fckcommands.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/jsp/fckeditor-2.6.6/editor/filemanager/connectors/py/zope.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/jsp/fckeditor-2.6.6/editor/filemanager/connectors/py/fckoutput.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/jsp/fckeditor-2.6.6/editor/filemanager/connectors/py/connector.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/jsp/fckeditor-2.6.6/editor/filemanager/connectors/py/upload.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/jsp/fckeditor-2.6.6/editor/filemanager/connectors/py/fckutil.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/jsp/fckeditor-2.6.6/editor/filemanager/connectors/py/fckconnector.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/jsp/fckeditor-2.6.6/editor/filemanager/connectors/py/config.py
+	${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${PYTHON_CMD}|' ${WRKSRC}/src/jsp/fckeditor-2.6.6/editor/filemanager/connectors/py/wsgi.py
 
 	${REINPLACE_CMD} -e 's|$$HOME|\${PREFIX}\/\${PORTNAME}|g' -e 's|-L INFO|-L INFO -s /var/run/openemm/bav.sock|' ${WRKSRC}/src/script/control/bounce.sh
 	${REINPLACE_CMD} -e 's|$$HOME|\${PREFIX}\/\${PORTNAME}|g' ${WRKSRC}/src/script/control/bav-update.sh
@@ -212,5 +239,13 @@ post-install:
 	# update also /usr/local/share with the docs
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/USR_SHARE/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+	# create log files
+	${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
+	${TOUCH} ${STAGEDIR}/var/log/${PORTNAME}/openemm_core.log
+	${TOUCH} ${STAGEDIR}/var/log/${PORTNAME}/userlogs.log
+	${TOUCH} ${STAGEDIR}/var/log/${PORTNAME}/openemm_axis.log
+	${TOUCH} ${STAGEDIR}/var/log/${PORTNAME}/daily.log
+	${CHOWN} -R ${USER}:${GROUP} ${STAGEDIR}/var/log/${PORTNAME}
 
 .include <bsd.port.mk>

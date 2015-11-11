@@ -3,8 +3,7 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	6.0.27
-PORTREVISION=	1
+DISTVERSION=	6.1.57
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 
@@ -23,7 +22,7 @@ SHEBANG_FILES=	go/vendor/tcpdf/tools/tcpdf_addfont.php \
 		groupofficecli.php \
 		install/autoinstall.php \
 		modules/postfixadmin/scripts/vacation.pl \
-		modules/sync/z-push21/install.sh \
+		modules/sync/z-push/install.sh \
 		vendor/fkooman/php-oauth-client/bin/php-oauth-client-create-tables
 NO_ARCH=	yes
 

@@ -2,19 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	picocom
-PORTVERSION=	1.7
+PORTVERSION=	2.1
 CATEGORIES=	comms
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dumb Terminal Emulator
 
-ALL_TARGET=	picocom
-USES=		gmake
+LICENSE=	GPLv2
 
-PLIST_FILES=	bin/picocom man/man8/picocom.8.gz
+USE_GITHUB=	yes
+GH_ACCOUNT=	npat-efault
+
+PLIST_FILES=	bin/picocom man/man1/picocom.1.gz
+
+OPTIONS_DEFINE=	DEBUG
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+
 .include <bsd.port.mk>

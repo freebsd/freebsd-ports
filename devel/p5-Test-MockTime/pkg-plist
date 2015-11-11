@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Test/MockTime.pm
-%%SITE_PERL%%/Test/MockTime.pod
 %%PERL5_MAN3%%/Test::MockTime.3.gz

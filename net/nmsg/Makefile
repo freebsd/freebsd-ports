@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmsg
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTVERSION=	0.10.0
 CATEGORIES=	net
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -14,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
 		libxs.so:${PORTSDIR}/devel/libxs \
-		libwdns.so:${PORTSDIR}/dns/wdns
+		libwdns.so:${PORTSDIR}/dns/wdns \
+		libyajl.so:${PORTSDIR}/devel/yajl 
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -29,6 +29,8 @@ PORTDOCS=	*
 OPTIONS_DEFINE=		DOXYGEN EXAMPLES MANPAGES
 OPTIONS_DEFAULT=	DOXYGEN MANPAGES
 OPTIONS_SUB=		yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include/yajl
 
 ALL_TARGET=	all
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen

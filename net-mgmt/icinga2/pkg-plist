@@ -107,6 +107,7 @@ sbin/icinga2
 %%DATADIR%%/include/plugins-contrib
 @sample %%DATADIR%%/include/plugins-contrib.d/databases.conf.sample
 @sample %%DATADIR%%/include/plugins-contrib.d/ipmi.conf.sample
+@sample %%DATADIR%%/include/plugins-contrib.d/hardware.conf.sample
 @sample %%DATADIR%%/include/plugins-contrib.d/network-components.conf.sample
 @sample %%DATADIR%%/include/plugins-contrib.d/operating-system.conf.sample
 @sample %%DATADIR%%/include/plugins-contrib.d/virtualization.conf.sample

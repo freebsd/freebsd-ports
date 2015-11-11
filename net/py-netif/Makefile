@@ -29,6 +29,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:${PORTSDIR}/devel/py-enum34
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100036
 IGNORE=	This module requires at least FreeBSD 11
+.else
+BROKEN=	fails to compile
 .endif
 
 .include <bsd.port.post.mk>

@@ -23,7 +23,7 @@ NO_BUILD=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000000
-BROKEN=		This port works only on FreeBSD 10 and newer
+IGNORE=		This port works only on FreeBSD 10 and newer
 .endif
 
 do-install:

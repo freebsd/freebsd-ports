@@ -3,7 +3,7 @@
 
 PORTNAME=	BBBike
 PORTVERSION=	3.18
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	german
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +16,35 @@ RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
 		p5-Inline-C>=0:${PORTSDIR}/devel/p5-Inline-C \
 		p5-CDB_File>=0:${PORTSDIR}/databases/p5-CDB_File
 
-USES=		perl5
+USES=		perl5 shebangfix
+perl_OLD_CMD=	/usr/perl5.8.0/bin/perl5.8.0 perl
+SHEBANG_FILES=	ESRI/Makefile.PL \
+		ESRI/esri2bbd.pl \
+		ESRI/t/shapefile.t \
+		GIS/globe_to_bbd.pl \
+		Makefile.PL \
+		bbbikeapplet \
+		cgi/*.cgi \
+		cgi/bbbike.psgi \
+		cgi/httpi \
+		cgi/mksymlinks \
+		cgi/runbbbikecgi \
+		ext/BBBikeXS/Makefile.PL \
+		ext/BBBikeXS/t/*.t \
+		ext/Strassen-Inline/Makefile.PL \
+		ext/Strassen-Inline/t/*.t \
+		ext/Strassen-Inline/t/common.pl \
+		ext/Strassen-Inline2/Makefile.PL \
+		ext/Strassen-Inline2/t/*.t \
+		ext/Strassen-Inline2/t/common.pl \
+		ext/StrassenNetz-CNetFile/Makefile.PL \
+		ext/StrassenNetz-CNetFile/t/base.t \
+		ext/VectorUtil-Inline/Makefile.PL \
+		ext/VectorUtil-Inline/t/*.t \
+		ext/VirtArray/Makefile.PL \
+		lib/parse_wetterkarte \
+		miscsrc/*.pl \
+		tkbikepwr
 POD2MAN=	pod2man
 
 MYDESTDIR=	${STAGEDIR}${PREFIX}/BBBike

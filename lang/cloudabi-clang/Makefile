@@ -3,7 +3,7 @@
 
 PORTNAME=	cloudabi-clang
 PORTVERSION=	3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	# None
 DISTFILES=	# None
@@ -14,7 +14,8 @@ COMMENT=	Clang for CloudABI
 LICENSE=	MIT
 
 RUN_DEPENDS=	clang${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX} \
-		x86_64-unknown-cloudabi-ld:${PORTSDIR}/devel/cloudabi-binutils
+		aarch64-unknown-cloudabi-ld:${PORTSDIR}/devel/cloudabi-binutils-aarch64 \
+		x86_64-unknown-cloudabi-ld:${PORTSDIR}/devel/cloudabi-binutils-x86_64
 
 LLVM_SUFFIX=	${DISTVERSION:S/.//}
 

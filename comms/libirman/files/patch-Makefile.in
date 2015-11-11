@@ -1,11 +1,20 @@
---- Makefile.in.orig	2009-04-10 23:07:01 +0800
+--- Makefile.in.orig	2015-08-18 19:51:04 UTC
 +++ Makefile.in
-@@ -534,7 +534,7 @@ install-dist_sysconfDATA: $(dist_sysconf
- 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
- 	  echo " $(dist_sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
--	  $(dist_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
-+	  $(dist_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f.sample"; \
+@@ -399,7 +399,7 @@ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign dist-bzip2
+ ACLOCAL_AMFLAGS = -I m4
+ dist_doc_DATA = README TECHNICAL
+-pkgconfigdir = @libdir@/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ dist_pkgconfig_DATA = libirman.pc
+ EXTRA_DIST = COPYING.lib TECHNICAL libirman.pc.in
+ EXTRA_LTLIBRARIES = libirman_sw.la
+@@ -778,7 +778,7 @@ install-dist_sysconfDATA: $(dist_sysconf
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sysconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
++	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)/$$files.sample" || exit $$?; \
  	done
  
  uninstall-dist_sysconfDATA:

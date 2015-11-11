@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.41
+PORTVERSION=	2.42
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 

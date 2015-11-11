@@ -126,14 +126,14 @@ post-patch:
 	@${LN} ${WRKSRC}/scl/scl.conf ${WRKSRC}/scl/scl.conf.sample
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
-.endif
 	${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/scl/syslog-ng.conf.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/scl/scl.conf.sample ${STAGEDIR}${PREFIX}/etc
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

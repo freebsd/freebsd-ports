@@ -15,6 +15,8 @@ BUILD_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 RUN_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 ALL_TARGET=	Wordcount.dll
 
 ADDINS_DIR=	lib/tomboy/addins

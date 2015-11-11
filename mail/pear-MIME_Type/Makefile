@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MIME_Type
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.0
 CATEGORIES=	mail www pear
 
 MAINTAINER=	bofh@FreeBSD.org

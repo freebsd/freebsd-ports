@@ -1,0 +1,6 @@
+TuDu is a command line tool to manage hierarchical "todo" lists.  Each
+task has a title, a long text description, a deadline (TuDu warns you
+when the date is close), and a scheduled date.  There are categories
+and priorities.
+
+WWW: http://code.meskio.net/tudu/

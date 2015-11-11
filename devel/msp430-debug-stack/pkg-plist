@@ -1,0 +1,10 @@
+include/libmsp430/DLL430_SYMBOL.h
+include/libmsp430/MSP430.h
+include/libmsp430/MSP430_Debug.h
+include/libmsp430/MSP430_EEM.h
+include/libmsp430/MSP430_EnergyTrace.h
+include/libmsp430/MSP430_FET.h
+include/libmsp430/MSP430_HIL.h
+lib/libmsp430.so
+%%PORTDOCS%%%%DOCSDIR%%/slau320u.pdf
+%%PORTDOCS%%%%DOCSDIR%%/slau656.pdf

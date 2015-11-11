@@ -1,22 +1,26 @@
---- src/utils/task.cpp.orig	2013-11-28 01:37:27.373159000 +0100
-+++ src/utils/task.cpp	2013-12-14 19:49:02.000000000 +0100
-@@ -26,6 +26,7 @@
- #if defined HOST_LINUX || defined HOST_DARWIN
+--- src/utils/task.cpp.orig	2015-10-30 09:34:37 UTC
++++ src/utils/task.cpp
+@@ -23,9 +23,9 @@
+ #include <windows.h>
+ #else
+ #include <pthread.h>
+-#if defined HOST_LINUX
++#if defined HOST_LINUX || defined HOST_BSD
  #include <unistd.h>
- #elif defined HOST_BSD
-+#include <iostream>
+-#elif defined HOST_BSD || defined HOST_DARWIN
++#elif defined HOST_DARWIN
  #include <sys/sysctl.h>
  #endif
  #endif // HOST_WINDOWS
-@@ -41,9 +42,8 @@
+@@ -37,9 +37,9 @@ int getOnlineCores (void)
+ 	SYSTEM_INFO sysinfo;
+ 	GetSystemInfo(&sysinfo);
+ 	return sysinfo.dwNumberOfProcessors;
+-#elif defined HOST_LINUX
++#elif defined HOST_LINUX || defined HOST_BSD
  	return sysconf(_SC_NPROCESSORS_ONLN);
- #elif defined HOST_BSD
+-#elif defined HOST_BSD || defined HOST_DARWIN
++#elif defined HOST_DARWIN
  	int cores;
--	const int mib[4] = { CTL_HW, HW_NCPU, 0, 0 };
--	const size_t len = sizeof(cores);
--	sysctl(mib, 2, &cores, &len, NULL, 0);
-+	size_t len = sizeof(cores);
-+	sysctlbyname("hw.ncpu", &cores, &len, NULL, 0);
- 	return (cores < 1) ? 1 : cores;
- #else
- 	return 1;
+ 	int mib[4] = { CTL_HW, HW_NCPU, 0, 0 };
+ 	size_t len = sizeof(cores); //don't make this const, i guess sysctl can't take a const *

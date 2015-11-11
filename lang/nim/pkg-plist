@@ -20,7 +20,7 @@ lib/nim/impure/zipfiles.nim
 lib/nim/js/dom.nim
 lib/nim/nimbase.h
 lib/nim/nimrtl.nim
-lib/nim/nimrtl.nimrod.cfg
+lib/nim/nimrtl.nim.cfg
 lib/nim/packages/docutils/highlite.nim
 lib/nim/packages/docutils/rst.nim
 lib/nim/packages/docutils/rstast.nim
@@ -29,12 +29,13 @@ lib/nim/posix/epoll.nim
 lib/nim/posix/inotify.nim
 lib/nim/posix/linux.nim
 lib/nim/posix/posix.nim
+lib/nim/posix/termios.nim
 lib/nim/prelude.nim
 lib/nim/pure/actors.nim
 lib/nim/pure/actors.nim.cfg
 lib/nim/pure/algorithm.nim
 lib/nim/pure/asyncdispatch.nim
-lib/nim/pure/asyncdispatch.nimrod.cfg
+lib/nim/pure/asyncdispatch.nim.cfg
 lib/nim/pure/asyncfile.nim
 lib/nim/pure/asyncftpclient.nim
 lib/nim/pure/asynchttpserver.nim
@@ -46,6 +47,7 @@ lib/nim/pure/basic3d.nim
 lib/nim/pure/browsers.nim
 lib/nim/pure/cgi.nim
 lib/nim/pure/collections/LockFreeHash.nim
+lib/nim/pure/collections/conc_tables.nim
 lib/nim/pure/collections/critbits.nim
 lib/nim/pure/collections/intsets.nim
 lib/nim/pure/collections/lists.nim
@@ -56,6 +58,7 @@ lib/nim/pure/collections/sets.nim
 lib/nim/pure/collections/tables.nim
 lib/nim/pure/colors.nim
 lib/nim/pure/complex.nim
+lib/nim/pure/concurrency/chans.nim
 lib/nim/pure/concurrency/cpuinfo.nim
 lib/nim/pure/concurrency/cpuload.nim
 lib/nim/pure/concurrency/threadpool.nim
@@ -87,7 +90,7 @@ lib/nim/pure/mersenne.nim
 lib/nim/pure/mimetypes.nim
 lib/nim/pure/net.nim
 lib/nim/pure/nimprof.nim
-lib/nim/pure/nimprof.nimrod.cfg
+lib/nim/pure/nimprof.nim.cfg
 lib/nim/pure/numeric.nim
 lib/nim/pure/oids.nim
 lib/nim/pure/os.nim
@@ -102,15 +105,15 @@ lib/nim/pure/parseutils.nim
 lib/nim/pure/parsexml.nim
 lib/nim/pure/pegs.nim
 lib/nim/pure/poly.nim
+lib/nim/pure/rationals.nim
 lib/nim/pure/rawsockets.nim
-lib/nim/pure/rawsockets.pretty.nim
 lib/nim/pure/redis.nim
 lib/nim/pure/romans.nim
 lib/nim/pure/ropes.nim
 lib/nim/pure/scgi.nim
 lib/nim/pure/selectors.nim
 lib/nim/pure/smtp.nim
-lib/nim/pure/smtp.nimrod.cfg
+lib/nim/pure/smtp.nim.cfg
 lib/nim/pure/sockets.nim
 lib/nim/pure/streams.nim
 lib/nim/pure/strtabs.nim
@@ -127,6 +130,7 @@ lib/nim/pure/xmldom.nim
 lib/nim/pure/xmldomparser.nim
 lib/nim/pure/xmlparser.nim
 lib/nim/pure/xmltree.nim
+lib/nim/stdlib.nimble
 lib/nim/system.nim
 lib/nim/system/alloc.nim
 lib/nim/system/ansi_c.nim
@@ -203,4 +207,3 @@ lib/nim/wrappers/zip/libzip_all.c
 lib/nim/wrappers/zip/zlib.nim
 lib/nim/wrappers/zip/zzip.nim
 %%PORTDOCS%%%%DOCSDIR%%/overview.html
-

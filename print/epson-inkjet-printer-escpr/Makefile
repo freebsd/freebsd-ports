@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	epson-inkjet-printer-escpr
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.0
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/hrs

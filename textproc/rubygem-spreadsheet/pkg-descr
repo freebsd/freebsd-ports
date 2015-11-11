@@ -4,4 +4,4 @@ supported. Spreadsheet is a combination/complete rewrite of the
 Spreadsheet::Excel Library by Daniel J. Berger and the ParseExcel Library by
 Hannes Wyss. Spreadsheet can read, write and modify Spreadsheet Documents.
 
-WWW: http://rubygems.org/gems/spreadsheet/
+WWW: https://github.com/zdavatz/spreadsheet

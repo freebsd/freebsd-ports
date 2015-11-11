@@ -12,6 +12,7 @@ COMMENT=	Simple, secure, efficient FTP server
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not fetch
 BUILD_DEPENDS=	${LOCALBASE}/bin/bg-installer:${PORTSDIR}/devel/bglibs
 LIB_DEPENDS=	libcvm-v2client.so:${PORTSDIR}/security/cvm
 

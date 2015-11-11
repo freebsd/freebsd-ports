@@ -567,6 +567,7 @@ include/client.h
 @rmtry %%DATADIR%%/schema-mysql.txt
 @rmtry %%DATADIR%%/schema-pgsql.txt
 @rmtry %%DATADIR%%/schema-sqlite.txt
-@sample etc/ratbox-services.conf.sample
+@sample(ircservices,ircservices,640) etc/ratbox-services.conf.sample
 @rmtry /var/log/ratbox-services.log
 @rmtry /var/run/ratbox-services.pid
+@dir(ircservices,ircservices,750) %%DBDIR%%

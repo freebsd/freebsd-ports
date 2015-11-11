@@ -1,0 +1,11 @@
+--- idl/COS/GNUmakefile.in.orig	2005-01-06 23:11:24 UTC
++++ idl/COS/GNUmakefile.in
+@@ -4,7 +4,7 @@ BASE_OMNI_TREE=@top_srcdir@
+ VPATH=@srcdir@
+ INSTALL=@INSTALL@
+ 
+-INSTALLDIR = $(INSTALLIDLDIR)/omniORB/COS
++INSTALLDIR = $(INSTALLIDLDIR)/COS
+ 
+ FILES = CosCollection.idl						\
+         CosCompoundLifeCycle.idl CosConcurrencyControl.idl		\

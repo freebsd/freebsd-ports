@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parrot
-PORTVERSION=	7.6.0
-PORTREVISION=	1
+PORTVERSION=	7.9.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/supported/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -32,6 +31,7 @@ CONFIGURE_ARGS=	--cc=${CC} --cxx=${CXX} --link=${CXX} \
 		--yacc=${LOCALBASE}/bin/bison
 CONFIGURE_SCRIPT=	Configure.pl
 INSTALL_TARGET=	install-dev
+TEST_TARGET=	test
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USES=		bison gmake perl5 shebangfix tar:bzip2

@@ -136,6 +136,10 @@ post-patch:
 		${WRKSRC}/configure
 .endif
 
+post-configure:
+	@${REINPLACE_CMD} -e 's|#define HAVE_MACH_ABSOLUTE_TIME 1||g' \
+		${WRKSRC}/config.h
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

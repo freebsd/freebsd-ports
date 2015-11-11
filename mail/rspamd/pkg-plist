@@ -55,6 +55,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/trie.lua
 %%DATADIR%%/lua/whitelist.lua
 %%DATADIR%%/rules/html.lua
+%%DATADIR%%/rules/http_headers.lua
 %%DATADIR%%/rules/misc.lua
 %%DATADIR%%/rules/regexp/drugs.lua
 %%DATADIR%%/rules/regexp/fraud.lua

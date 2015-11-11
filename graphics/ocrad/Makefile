@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCR program implemented as filter
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}" CXX="${CXX}"
@@ -27,8 +28,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000024
-EXTRACT_DEPENDS=lzip:${PORTSDIR}/archivers/lzip
-EXTRACT_CMD=	${LOCALBASE}/bin/lzip
+EXTRACT_DEPENDS=	lzip:${PORTSDIR}/archivers/lzip
+EXTRACT_CMD=		${LOCALBASE}/bin/lzip
 EXTRACT_BEFORE_ARGS=	-cd
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 .endif
@@ -37,14 +38,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/ocrad.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/testsuite && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.mk>

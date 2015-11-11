@@ -10,7 +10,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 
 MAINTAINER=	kris@pcbsd.org
-COMMENT=	The meta-port pcbsd-meta-nvidia
+COMMENT=	The meta-port pcbsd-meta-virtualbox
 
 RUN_DEPENDS=	virtualbox-ose>=0:${PORTSDIR}/emulators/virtualbox-ose \
 		virtualbox-ose-kmod>=0:${PORTSDIR}/emulators/virtualbox-ose-kmod

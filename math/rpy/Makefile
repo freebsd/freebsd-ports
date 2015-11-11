@@ -3,7 +3,7 @@
 
 PORTNAME=	rpy
 PORTVERSION=	1.0.3
-PORTREVISION=	34
+PORTREVISION=	35
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -32,6 +32,6 @@ pre-configure:
 	exit 1; fi)
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_rpy3002.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_rpy3022.so
 
 .include <bsd.port.mk>

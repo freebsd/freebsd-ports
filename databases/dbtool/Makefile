@@ -12,6 +12,7 @@ COMMENT=	Store and retrieve data in a key/value format in a hash database
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Does not fetch
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		gmake shebangfix

@@ -3,6 +3,7 @@
 
 PORTNAME=	libdrm
 PORTVERSION=	2.4.65
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://dri.freedesktop.org/libdrm/
@@ -57,6 +58,12 @@ PLIST_SUB+=	RADEON_DRIVERS=""
 .else
 PLIST_SUB+=	INTEL_DRIVER="@comment "
 PLIST_SUB+=	RADEON_DRIVERS="@comment "
+.endif
+
+# This variable is not for users. So use a non-default name, intended for
+# people working on DRM kernel module development.
+.if !defined(LIBDRM_SKIP_RETURN_PATCH)
+EXTRA_PATCHES+=	${FILESDIR}/extra-xf86drm.c
 .endif
 
 pre-patch:

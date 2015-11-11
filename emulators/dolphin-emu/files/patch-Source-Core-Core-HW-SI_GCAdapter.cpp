@@ -6,7 +6,7 @@ Disable hotplug support for FreeBSD
  static bool s_libusb_driver_not_supported = false;
  static libusb_context* s_libusb_context = nullptr;
  static bool s_libusb_hotplug_enabled = false;
-+#if !defined(__FreeBSD__)
++#if defined(LIBUSB_API_VERSION) && LIBUSB_API_VERSION >= 0x01000102
  static libusb_hotplug_callback_handle s_hotplug_handle;
 +#endif
  
@@ -16,7 +16,7 @@ Disable hotplug support for FreeBSD
  	}
  }
  
-+#if !defined(__FreeBSD__)
++#if defined(LIBUSB_API_VERSION) && LIBUSB_API_VERSION >= 0x01000102
  static int HotplugCallback(libusb_context* ctx, libusb_device* dev, libusb_hotplug_event event, void* user_data)
  {
  	if (event == LIBUSB_HOTPLUG_EVENT_DEVICE_ARRIVED)
@@ -31,7 +31,7 @@ Disable hotplug support for FreeBSD
  	Common::SetCurrentThreadName("GC Adapter Scanning Thread");
  	NOTICE_LOG(SERIALINTERFACE, "GC Adapter scanning thread started");
  
-+#if !defined(__FreeBSD__)
++#if defined(LIBUSB_API_VERSION) && LIBUSB_API_VERSION >= 0x01000102
  	s_libusb_hotplug_enabled = libusb_has_capability(LIBUSB_CAP_HAS_HOTPLUG) != 0;
  	if (s_libusb_hotplug_enabled)
  	{
@@ -47,7 +47,7 @@ Disable hotplug support for FreeBSD
  void Shutdown()
  {
  	StopScanThread();
-+#if !defined(__FreeBSD__)
++#if defined(LIBUSB_API_VERSION) && LIBUSB_API_VERSION >= 0x01000102
  	if (s_libusb_hotplug_enabled)
  		libusb_hotplug_deregister_callback(s_libusb_context, s_hotplug_handle);
 +#endif

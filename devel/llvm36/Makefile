@@ -184,6 +184,8 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|HAVE_MACH_MACH_H|NOHAVE_MACH_MACH_H|g' \
 		${WRKSRC}/include/llvm/Config/config.h.cmake
 	@${REINPLACE_CMD} -e 's|HAVE_MACH_MACH_H|NOHAVE_MACH_MACH_H|g' \
+		${WRKSRC}/include/llvm/Config/config.h
+	@${REINPLACE_CMD} -e 's|HAVE_MACH_MACH_H|NOHAVE_MACH_MACH_H|g' \
 		${WRKSRC}/cmake/config-ix.cmake
 
 post-build:

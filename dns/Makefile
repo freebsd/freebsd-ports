@@ -163,6 +163,7 @@
     SUBDIR += py-dns3
     SUBDIR += py-dnspython
     SUBDIR += py-easyzone
+    SUBDIR += py-idna
     SUBDIR += py-idnkit2
     SUBDIR += py-ldns
     SUBDIR += py-namebench

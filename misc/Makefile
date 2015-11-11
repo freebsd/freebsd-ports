@@ -77,6 +77,7 @@
     SUBDIR += e2fsprogs-libuuid
     SUBDIR += elixir-uuid
     SUBDIR += elscreen
+    SUBDIR += erlang-mimerl
     SUBDIR += esniper
     SUBDIR += estic
     SUBDIR += excel-writer
@@ -356,6 +357,7 @@
     SUBDIR += pauker
     SUBDIR += pcbsd-base
     SUBDIR += pcbsd-i18n
+    SUBDIR += pcbsd-i18n-qt5
     SUBDIR += pcbsd-meta-awesome
     SUBDIR += pcbsd-meta-cinnamon
     SUBDIR += pcbsd-meta-fvwm
@@ -434,7 +436,6 @@
     SUBDIR += rname
     SUBDIR += rpl
     SUBDIR += rtfm
-    SUBDIR += ruby-progressbar
     SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
@@ -481,6 +482,7 @@
     SUBDIR += translate
     SUBDIR += trueos-base
     SUBDIR += ttyrec
+    SUBDIR += tudu
     SUBDIR += tvbrowser
     SUBDIR += typetrainer
     SUBDIR += uk-phone

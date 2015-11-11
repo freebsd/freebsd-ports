@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.33
+PORTVERSION=	5.34
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 

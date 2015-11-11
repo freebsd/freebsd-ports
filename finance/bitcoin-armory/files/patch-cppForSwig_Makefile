@@ -1,0 +1,19 @@
+--- cppForSwig/Makefile.orig	2015-06-10 21:49:31 UTC
++++ cppForSwig/Makefile
+@@ -1,5 +1,5 @@
+-CXX = g++
+-CC = gcc
++CXX ?= g++
++CC ?= gcc
+ 
+ ifdef DEBUG
+ CFLAGS=-g3 -Wall -pipe -fPIC
+@@ -97,7 +97,7 @@ midl.o: mdb/midl.c mdb/lmdb.h mdb/midl.h
+ 
+ 
+ CppBlockUtils_wrap.cxx: $(ALL_HEADERS) CppBlockUtils.i
+-	swig $(SWIG_OPTS) -outdir ../ -v CppBlockUtils.i 
++	swig3.0 $(SWIG_OPTS) -outdir ../ -v CppBlockUtils.i 
+ 
+ CppBlockUtils_wrap.o: $(ALL_HEADERS) CppBlockUtils_wrap.cxx
+ 	$(CXX) $(SWIG_INC) $(CXXFLAGS) $(CXXCPP) -c CppBlockUtils_wrap.cxx

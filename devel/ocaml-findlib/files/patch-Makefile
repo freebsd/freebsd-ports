@@ -1,4 +1,4 @@
---- Makefile.orig	2014-10-23 10:08:26 UTC
+--- Makefile.orig	2015-10-25 12:46:54 UTC
 +++ Makefile
 @@ -17,14 +17,14 @@ opt:
  	for p in $(PARTS); do ( cd src/$$p; $(MAKE) opt ) || exit; done

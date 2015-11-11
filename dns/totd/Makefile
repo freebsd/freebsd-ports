@@ -13,6 +13,8 @@ COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 USES=		desthack uidfix
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USE_RC_SUBR=	totd
 GNU_CONFIGURE=	yes
 

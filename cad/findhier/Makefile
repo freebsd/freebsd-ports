@@ -11,6 +11,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Hierarchy Viewer for magic/CIF/GDSII/PCSTR/GED/TeX
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/fh man/man1/fh.1.gz

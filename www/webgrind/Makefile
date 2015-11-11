@@ -21,22 +21,20 @@ SNAPSHOT=	20140207
 USE_PHP=	yes
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
-.include <bsd.port.options.mk>
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
-.if ${PORT_OPTIONS:MCALLGRAPH}
-USES+=		python
-RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
-.endif
+CALLGRAPH_USES=		python
+CALLGRAPH_RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
-post-patch:
-	${REINPLACE_CMD} -e 's,/usr/bin/python,/usr/local/bin/python,' ${WRKSRC}/config.php
+post-patch-CALLGRAPH-on:
+	@${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' ${WRKSRC}/config.php
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} "! -name *.bak")
 
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${FIND} ${STAGEDIR}${WWWDIR} -type f -exec ${CHMOD} 0444 {} \;
 	@${FIND} ${STAGEDIR}${WWWDIR} -type d -exec ${CHMOD} 0755 {} \;
 

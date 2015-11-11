@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hive
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/stable \
 		LOCAL/demon/:maven \

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gr-osmosdr
-PORTVERSION=	20140314
-PORTREVISION=	1
+PORTVERSION=	20150716
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libgnuradio-runtime.so:${PORTSDIR}/comms/gnuradio \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-USES=	pkgconfig cmake tar:tgz python
+USES=	cmake pkgconfig python tar:tgz
 USE_LDCONFIG=	yes
 
 # See lib/CMakeLists.txt to enable more components
@@ -34,9 +33,5 @@ RTLSDR_DESC=	Enable rtl-sdr (RTL2832) support
 OPTIONS_DEFAULT=	RTLSDR
 RTLSDR_LIB_DEPENDS=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr
 RTLSDR_CMAKE_ON=	-DENABLE_RTL:BOOL=ON -DENABLE_RTL_TCP:BOOL=ON
-
-post-install:
-	@${LN} -sf libgnuradio-osmosdr.so.0.0.1git \
-		${STAGEDIR}${PREFIX}/lib/libgnuradio-osmosdr.so.0
 
 .include <bsd.port.mk>

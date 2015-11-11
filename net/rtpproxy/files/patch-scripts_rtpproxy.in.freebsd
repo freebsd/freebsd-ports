@@ -1,14 +1,48 @@
 --- scripts/rtpproxy.in.freebsd.orig	2015-03-09 17:40:27 UTC
 +++ scripts/rtpproxy.in.freebsd
-@@ -22,7 +22,10 @@ load_rc_config ${name}
+@@ -1,28 +1,36 @@
+ #!/bin/sh
+-
++# $FreeBSD$
++#
+ # Add the following lines to /etc/rc.conf to enable RTPproxy:
+ #
+ # rtpproxy_enable="YES"
  
+ # PROVIDE: rtpproxy
+ # REQUIRE: DAEMON
+-# BEFORE: ser openser
++# BEFORE: kamailio opensips
+ 
+-prefix=%%PREFIX%%
+ 
+ . %%RC_SUBR%%
+ 
+ name=rtpproxy
+-rcvar=`set_rcvar`
+-
+-command="${prefix}/bin/rtpproxy"
+-pidfile="/var/run/rtpproxy.pid"
++desc="rtpproxy daemon startup script"
++rcvar=rtpproxy_enable
+ 
+ load_rc_config ${name}
+ 
++prefix=%%PREFIX%%
++command=${prefix}/bin/rtpproxy
++pidfile=/var/run/rtpproxy.pid
++
++
  rtpproxy_enable=${rtpproxy_enable:-"NO"}
  rtpproxy_laddr=${rtpproxy_laddr:-"0.0.0.0"}
++rtpproxy_ctrl_socket=${rtpproxy_ctrl_socket:-"unix:/var/run/rtpproxy.sock"}
++rtpproxy_paddr=${rtpproxy_paddr:-"0.0.0.0"}
 +rtpproxy_usr=${rtpproxy_usr:-"rtpproxy"}
 +rtpproxy_grp=${rtpproxy_grp:-"rtpproxy"}
  
 -command_args="-l ${rtpproxy_laddr} -p /var/run/rtpproxy.pid"
-+command_args="-l ${rtpproxy_laddr} -p /var/run/rtpproxy.pid \
-+  -u ${rtpproxy_usr}:${rtpproxy_grp}"
++command_args="-u ${rtpproxy_usr}:${rtpproxy_grp} -A ${rtpproxy_paddr} -F -l ${rtpproxy_laddr} \
++  -s ${rtpproxy_ctrl_socket} -d INFO -p /var/run/rtpproxy.pid"
  
- run_rc_command "${1}"
+-run_rc_command "${1}"
++run_rc_command $1

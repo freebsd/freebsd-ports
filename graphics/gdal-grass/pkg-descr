@@ -1,6 +1,0 @@
-				GDAL-GRASS
-
-Standalone GDAL drivers for GRASS raster and vector files that
-are installed as an "autoload" driver.
-
-WWW: http://www.gdal.org/

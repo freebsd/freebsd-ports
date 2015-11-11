@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	shairplay
-PORTVERSION=	0.9.0.20140422
-PORTREVISION=	1
+PORTVERSION=	0.9.0.20150921
 CATEGORIES=	audio
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	juhovh
-GH_TAGNAME=	64d59e3
+GH_TAGNAME=	498bc5b
 
 USES=		autoreconf gmake libtool pkgconfig
 GNU_CONFIGURE=	yes

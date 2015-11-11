@@ -1,4 +1,4 @@
---- SoObjects/SOGo/instance-framework.make.orig	2015-09-23 03:39:02 UTC
+--- SoObjects/SOGo/instance-framework.make.orig	2015-10-24 21:25:08 UTC
 +++ SoObjects/SOGo/instance-framework.make
 @@ -0,0 +1,821 @@
 +#   -*-makefile-*-

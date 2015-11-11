@@ -12,6 +12,8 @@ MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Graphical tool for editing Phrap assemblies
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 RUN_DEPENDS=	phred:${PORTSDIR}/biology/phred \
 		phrap:${PORTSDIR}/biology/phrap

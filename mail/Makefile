@@ -77,7 +77,6 @@
     SUBDIR += courier-pythonfilter
     SUBDIR += couriergraph
     SUBDIR += crm114
-    SUBDIR += cucipop
     SUBDIR += cvsmail
     SUBDIR += cyrus-imapd23
     SUBDIR += cyrus-imapd24
@@ -286,6 +285,7 @@
     SUBDIR += opendkim
     SUBDIR += opendmarc
     SUBDIR += openemm2013
+    SUBDIR += openemm2015
     SUBDIR += opensmtpd
     SUBDIR += opensmtpd-devel
     SUBDIR += openwebmail

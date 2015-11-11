@@ -13,6 +13,7 @@ COMMENT=	Translator for "thin" Ada bindings to C
 
 OPTIONS_DEFINE=	DOCS
 
+BROKEN=		Does not fetch
 USES=		zip
 MAKE_JOBS_UNSAFE=	yes
 

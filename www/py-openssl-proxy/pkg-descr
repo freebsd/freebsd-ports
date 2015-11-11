@@ -1,9 +1,0 @@
-OpenSSLProxy module Provides HTTPS proxy support to httplib and urllib2
-classes.
-
- * 'OpenSSLProxy' is derived from httplib.HTTPS and provides HTTPS
-   proxy support
- * 'OpenSSLProxyHandler' is dervived from urllib2.HTTPSHandler and
-   provides HTTPS proxy support
- * Support for Basic User Authentication
- * Honors environmental variable https_proxy

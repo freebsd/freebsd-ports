@@ -1,0 +1,201 @@
+x86/PoD: Eager sweep for zeroed pages
+
+Based on the contents of a guests physical address space,
+p2m_pod_emergency_sweep() could degrade into a linear memcmp() from 0 to
+max_gfn, which runs non-preemptibly.
+
+As p2m_pod_emergency_sweep() runs behind the scenes in a number of contexts,
+making it preemptible is not feasible.
+
+Instead, a different approach is taken.  Recently-populated pages are eagerly
+checked for reclaimation, which amortises the p2m_pod_emergency_sweep()
+operation across each p2m_pod_demand_populate() operation.
+
+Note that in the case that a 2M superpage can't be reclaimed as a superpage,
+it is shattered if 4K pages of zeros can be reclaimed.  This is unfortunate
+but matches the previous behaviour, and is required to avoid regressions
+(domain crash from PoD exhaustion) with VMs configured close to the limit.
+
+This is CVE-2015-7970 / XSA-150.
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: George Dunlap <george.dunlap@citrix.com>
+
+--- a/xen/arch/x86/mm/p2m-pod.c
++++ b/xen/arch/x86/mm/p2m-pod.c
+@@ -920,28 +920,6 @@ p2m_pod_zero_check(struct p2m_domain *p2
+ }
+ 
+ #define POD_SWEEP_LIMIT 1024
+-
+-/* When populating a new superpage, look at recently populated superpages
+- * hoping that they've been zeroed.  This will snap up zeroed pages as soon as 
+- * the guest OS is done with them. */
+-static void
+-p2m_pod_check_last_super(struct p2m_domain *p2m, unsigned long gfn_aligned)
+-{
+-    unsigned long check_gfn;
+-
+-    ASSERT(p2m->pod.last_populated_index < POD_HISTORY_MAX);
+-
+-    check_gfn = p2m->pod.last_populated[p2m->pod.last_populated_index];
+-
+-    p2m->pod.last_populated[p2m->pod.last_populated_index] = gfn_aligned;
+-
+-    p2m->pod.last_populated_index =
+-        ( p2m->pod.last_populated_index + 1 ) % POD_HISTORY_MAX;
+-
+-    p2m_pod_zero_check_superpage(p2m, check_gfn);
+-}
+-
+-
+ #define POD_SWEEP_STRIDE  16
+ static void
+ p2m_pod_emergency_sweep(struct p2m_domain *p2m)
+@@ -982,7 +960,7 @@ p2m_pod_emergency_sweep(struct p2m_domai
+          * NB that this is a zero-sum game; we're increasing our cache size
+          * by re-increasing our 'debt'.  Since we hold the pod lock,
+          * (entry_count - count) must remain the same. */
+-        if ( p2m->pod.count > 0 && i < limit )
++        if ( i < limit && (p2m->pod.count > 0 || hypercall_preempt_check()) )
+             break;
+     }
+ 
+@@ -994,6 +972,58 @@ p2m_pod_emergency_sweep(struct p2m_domai
+ 
+ }
+ 
++static void pod_eager_reclaim(struct p2m_domain *p2m)
++{
++    struct pod_mrp_list *mrp = &p2m->pod.mrp;
++    unsigned int i = 0;
++
++    /*
++     * Always check one page for reclaimation.
++     *
++     * If the PoD pool is empty, keep checking some space is found, or all
++     * entries have been exhaused.
++     */
++    do
++    {
++        unsigned int idx = (mrp->idx + i++) % ARRAY_SIZE(mrp->list);
++        unsigned long gfn = mrp->list[idx];
++
++        if ( gfn != INVALID_GFN )
++        {
++            if ( gfn & POD_LAST_SUPERPAGE )
++            {
++                gfn &= ~POD_LAST_SUPERPAGE;
++
++                if ( p2m_pod_zero_check_superpage(p2m, gfn) == 0 )
++                {
++                    unsigned int x;
++
++                    for ( x = 0; x < SUPERPAGE_PAGES; ++x, ++gfn )
++                        p2m_pod_zero_check(p2m, &gfn, 1);
++                }
++            }
++            else
++                p2m_pod_zero_check(p2m, &gfn, 1);
++
++            mrp->list[idx] = INVALID_GFN;
++        }
++
++    } while ( (p2m->pod.count == 0) && (i < ARRAY_SIZE(mrp->list)) );
++}
++
++static void pod_eager_record(struct p2m_domain *p2m,
++                             unsigned long gfn, unsigned int order)
++{
++    struct pod_mrp_list *mrp = &p2m->pod.mrp;
++
++    ASSERT(mrp->list[mrp->idx] == INVALID_GFN);
++    ASSERT(gfn != INVALID_GFN);
++
++    mrp->list[mrp->idx++] =
++        gfn | (order == PAGE_ORDER_2M ? POD_LAST_SUPERPAGE : 0);
++    mrp->idx %= ARRAY_SIZE(mrp->list);
++}
++
+ int
+ p2m_pod_demand_populate(struct p2m_domain *p2m, unsigned long gfn,
+                         unsigned int order,
+@@ -1034,6 +1064,8 @@ p2m_pod_demand_populate(struct p2m_domai
+         return 0;
+     }
+ 
++    pod_eager_reclaim(p2m);
++
+     /* Only sweep if we're actually out of memory.  Doing anything else
+      * causes unnecessary time and fragmentation of superpages in the p2m. */
+     if ( p2m->pod.count == 0 )
+@@ -1070,6 +1102,8 @@ p2m_pod_demand_populate(struct p2m_domai
+     p2m->pod.entry_count -= (1 << order);
+     BUG_ON(p2m->pod.entry_count < 0);
+ 
++    pod_eager_record(p2m, gfn_aligned, order);
++
+     if ( tb_init_done )
+     {
+         struct {
+@@ -1085,12 +1119,6 @@ p2m_pod_demand_populate(struct p2m_domai
+         __trace_var(TRC_MEM_POD_POPULATE, 0, sizeof(t), &t);
+     }
+ 
+-    /* Check the last guest demand-populate */
+-    if ( p2m->pod.entry_count > p2m->pod.count 
+-         && (order == PAGE_ORDER_2M)
+-         && (q & P2M_ALLOC) )
+-        p2m_pod_check_last_super(p2m, gfn_aligned);
+-
+     pod_unlock(p2m);
+     return 0;
+ out_of_memory:
+--- a/xen/arch/x86/mm/p2m.c
++++ b/xen/arch/x86/mm/p2m.c
+@@ -58,6 +58,7 @@ boolean_param("hap_2mb", opt_hap_2mb);
+ /* Init the datastructures for later use by the p2m code */
+ static int p2m_initialise(struct domain *d, struct p2m_domain *p2m)
+ {
++    unsigned int i;
+     int ret = 0;
+ 
+     mm_rwlock_init(&p2m->lock);
+@@ -73,6 +74,9 @@ static int p2m_initialise(struct domain 
+ 
+     p2m->np2m_base = P2M_BASE_EADDR;
+ 
++    for ( i = 0; i < ARRAY_SIZE(p2m->pod.mrp.list); ++i )
++        p2m->pod.mrp.list[i] = INVALID_GFN;
++
+     if ( hap_enabled(d) && cpu_has_vmx )
+         ret = ept_p2m_init(p2m);
+     else
+--- a/xen/include/asm-x86/p2m.h
++++ b/xen/include/asm-x86/p2m.h
+@@ -292,10 +292,20 @@ struct p2m_domain {
+                          entry_count;  /* # of pages in p2m marked pod      */
+         unsigned long    reclaim_single; /* Last gpfn of a scan */
+         unsigned long    max_guest;    /* gpfn of max guest demand-populate */
+-#define POD_HISTORY_MAX 128
+-        /* gpfn of last guest superpage demand-populated */
+-        unsigned long    last_populated[POD_HISTORY_MAX]; 
+-        unsigned int     last_populated_index;
++
++        /*
++         * Tracking of the most recently populated PoD pages, for eager
++         * reclamation.
++         */
++        struct pod_mrp_list {
++#define NR_POD_MRP_ENTRIES 32
++
++/* Encode ORDER_2M superpage in top bit of GFN */
++#define POD_LAST_SUPERPAGE (INVALID_GFN & ~(INVALID_GFN >> 1))
++
++            unsigned long list[NR_POD_MRP_ENTRIES];
++            unsigned int idx;
++        } mrp;
+         mm_lock_t        lock;         /* Locking of private pod structs,   *
+                                         * not relying on the p2m lock.      */
+     } pod;

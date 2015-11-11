@@ -3,14 +3,14 @@
 
 PORTNAME=	${QMAIL_PORTNAME}
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	mail
 MASTER_SITES+=	QMAIL
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 DISTFILES?=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY?=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	erdgeist@erdgeist.org
 COMMENT?=	Secure, reliable, efficient, simple, and fast MTA
 
 DIST_SUBDIR=	qmail
@@ -892,6 +892,8 @@ post-install:
 	    ${STAGEDIR}${PREFIX}/control/signatures.sample
 	@${FIND} ${WRKDIR} -type f -name run -exec ${SED} -i "" \
 	    -e 's|${STAGEDIR}|${PREFIX}|' {} +
+.else
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/rc.d
 .endif
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/man.d
 	${INSTALL_DATA} ${WRKDIR}/qmail.conf ${STAGEDIR}${LOCALBASE}/etc/man.d/qmail.conf

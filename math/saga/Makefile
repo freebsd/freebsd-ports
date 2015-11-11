@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	System for Automated Geoscientific Analyses
@@ -82,7 +81,7 @@ post-patch:
 		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile.am
 	@${REINPLACE_CMD} -e 's|\[cv\]|\[opencv_core\]|' \
 		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2600)" + "\\n"|' \
+	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2652)" + "\\n"|' \
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 .if ${ARCH} == "powerpc"
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \

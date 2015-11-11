@@ -3,7 +3,7 @@
 
 PORTNAME=	kivy
 PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	GH LOCAL/dbn/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,7 @@ MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Python NUI library for rapid application development
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
 
@@ -25,7 +26,12 @@ PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS=	--inplace
 PYDISTUTILS_EGGINFO=	Kivy-${PORTVERSION}-py${PYTHON_VER}.egg-info
 USE_PYTHON=	autoplist distutils
-SHEBANG_FILES=	kivy/lib/osc/OSC.py
+SHEBANG_FILES=	kivy/lib/osc/OSC.py \
+		kivy/tools/packaging/osx/kivy.sh \
+		examples/demo/*/*.py
+SHEBANG_LANG=	kivy
+kivy_OLD_CMD=	/usr/bin/kivy
+kivy_CMD=	${LOCALBASE}/bin/kivy
 
 OPTIONS_DEFINE=	DOCS PDF TEST
 OPTIONS_SET=	ENCHANT OPENCV PYGAME

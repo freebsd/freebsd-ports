@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gEDA's symbol checking utility
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 RUN_DEPENDS=	geda-symbols>0:${PORTSDIR}/cad/geda-symbols
 LIB_DEPENDS=	libgeda.so:${PORTSDIR}/cad/libgeda
 

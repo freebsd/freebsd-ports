@@ -13,6 +13,9 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	oklaspec@gmail.com
 COMMENT=	CPAN module authoring tool
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	git>=0:${PORTSDIR}/devel/git \
 		tree>=0:${PORTSDIR}/sysutils/tree \
 		p5-App-cpanminus>=1.6902:${PORTSDIR}/devel/p5-App-cpanminus \

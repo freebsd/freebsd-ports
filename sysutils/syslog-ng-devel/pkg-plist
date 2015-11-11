@@ -228,6 +228,10 @@ share/syslog-ng/include/scl/graphite/plugin.conf
 share/syslog-ng/include/scl/graphite/README
 share/syslog-ng/include/scl/cim/template.conf
 share/syslog-ng/include/scl/solaris/plugin.conf
+share/syslog-ng/include/scl/elasticsearch/plugin.conf
+share/syslog-ng/include/scl/hdfs/plugin.conf
+share/syslog-ng/include/scl/kafka/plugin.conf
+share/syslog-ng/include/scl/mbox/mbox.conf
 share/syslog-ng/tools/lex-rules.am
 share/syslog-ng/tools/cfg-grammar.y
 share/syslog-ng/tools/merge-grammar.pl
@@ -248,6 +252,10 @@ share/syslog-ng/xsd/patterndb-4.xsd
 @dirrm share/syslog-ng/include/scl/syslogconf
 @dirrm share/syslog-ng/include/scl/pacct
 @dirrm share/syslog-ng/include/scl/rewrite
+@dirrm share/syslog-ng/include/scl/elasticsearch
+@dirrm share/syslog-ng/include/scl/hdfs
+@dirrm share/syslog-ng/include/scl/kafka
+@dirrm share/syslog-ng/include/scl/mbox
 @dirrm share/syslog-ng/include/scl
 @dirrm share/syslog-ng/include
 @dirrm share/syslog-ng

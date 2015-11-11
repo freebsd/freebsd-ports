@@ -3,6 +3,5 @@ specifications between formatted and binary forms, arithmetic
 manipulation of unit specifications, and conversion of values
 between compatible scales of measurement.
 
-Git repository: https://github.com/Unidata/UDUNITS-2
-
 WWW: http://www.unidata.ucar.edu/software/udunits/
+WWW: https://github.com/Unidata/UDUNITS-2

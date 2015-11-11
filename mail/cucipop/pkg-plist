@@ -1,4 +1,0 @@
-@(,mail,2555) libexec/cucipop
-man/man8/cucipop.8.gz
-@dir /var/spool/cucipop/bulletins
-@dir /var/spool/cucipop

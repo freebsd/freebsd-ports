@@ -107,10 +107,12 @@ MASTER_SITE_BERLIOS+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CHEESESHOP)
+# PEP-449 Compatible MASTER_SITES
+# Removal of the PyPI Mirror Auto Discovery and Naming Scheme
+# Reference: https://www.python.org/dev/peps/pep-0449/
 MASTER_SITE_CHEESESHOP+= \
-	http://pypi.python.org/packages/%SUBDIR%/ \
-	http://pypi.crate.io/packages/%SUBDIR%/ \
-	http://pypi.python.jp/${DISTNAME:S/${DISTVERSION}//:S/-//}/
+	https://pypi.python.org/packages/%SUBDIR%/ \
+	http://pypi.python.org/packages/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)

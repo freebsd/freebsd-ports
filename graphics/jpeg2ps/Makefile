@@ -11,6 +11,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Converter for JPEG compressed images to PostScript Level 2
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
 

@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple extension to Hashie::Mash for rubyfied keys
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-hashie>=2.0.0:${PORTSDIR}/devel/rubygem-hashie
 
