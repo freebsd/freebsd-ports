@@ -12,27 +12,34 @@
 -			D_PRINTF( "SSL version = SSLv23\n" );
 -		}
 -		else if(ssl_version != NULL && strcasecmp(ssl_version, "SSLv2") == 0) {
--			if((ctx = SSL_CTX_new(SSLv2_client_method())) == NULL) {
-+#ifndef OPENSSL_NO_SSL3_METHOD
-+		if(ssl_version != NULL && strcasecmp(ssl_version, "SSLv3") == 0) {
-+			if((ctx = SSL_CTX_new(SSLv3_client_method())) == NULL) {
++#ifndef OPENSSL_NO_SSL2
++		if(ssl_version != NULL && strcasecmp(ssl_version, "SSLv2") == 0) {
+ 			if((ctx = SSL_CTX_new(SSLv2_client_method())) == NULL) {
  				ERR_print_errors_fp(stderr);
  				goto error;
  			}
--			D_PRINTF( "SSL version = SSLv2\n" );
-+			D_PRINTF( "SSL version = SSLv3\n" );
+ 			D_PRINTF( "SSL version = SSLv2\n" );
  		}
 -		else {
--			if((ctx = SSL_CTX_new(SSLv3_client_method())) == NULL) {
++		else
++#endif
++#ifndef OPENSSL_NO_SSL3_METHOD
++		if(ssl_version != NULL && strcasecmp(ssl_version, "SSLv3") == 0) {
+ 			if((ctx = SSL_CTX_new(SSLv3_client_method())) == NULL) {
+ 				ERR_print_errors_fp(stderr);
+ 				goto error;
+ 			}
+ 			D_PRINTF( "SSL version = SSLv3\n" );
+ 		}
 +		else
 +#endif
 +		{
 +			if((ctx = SSL_CTX_new(SSLv23_client_method())) == NULL) {
- 				ERR_print_errors_fp(stderr);
- 				goto error;
- 			}
--			D_PRINTF( "SSL version = SSLv3\n" );
++				ERR_print_errors_fp(stderr);
++				goto error;
++			}
 +			D_PRINTF( "SSL version = SSLv23\n" );
- 		}
++		}
  		
  		/* set preferred cipher */
+ 		if(ssl_cipher != NULL && strlen(ssl_cipher) > 0) {

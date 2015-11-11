@@ -1,5 +1,13 @@
 --- e_tpm.c.orig	2012-09-20 02:57:45.000000000 +0900
 +++ e_tpm.c	2013-07-26 00:25:21.000000000 +0900
+@@ -26,6 +26,7 @@
+ #include <openssl/sha.h>
+ #include <openssl/bn.h>
+ #include <openssl/pem.h>
++#include <openssl/rand.h>
+
+ #include <tss/platform.h>
+ #include <tss/tss_defines.h>
 @@ -35,6 +35,7 @@
  #include <tss/tspi.h>
  
