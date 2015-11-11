@@ -21,9 +21,9 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/${DISTNAME}
 
 post-extract:
-	${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}
+	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}  ${STAGEDIR}${PREFIX}/bin/${DISTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME}  ${STAGEDIR}${PREFIX}/bin/${DISTNAME}
 
 .include <bsd.port.mk>

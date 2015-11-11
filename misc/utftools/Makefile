@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/misc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UTF-aware wc, fmt, expand, and unexpand
 
+BROKEN=		unfetchable
+
 LICENSE=	UTFTOOLS
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_NAME=	utftools license

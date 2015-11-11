@@ -24,9 +24,10 @@ NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		${GZCAT}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| ${SED} '/bin\/sh/,/exit 0/!d' \
-			| (cd ${WRKDIR} && ${SH})
+			| (cd ${WRKSRC} && ${SH})
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
+MAKEFILE=	${WRKDIR}/Makefile
 SUB_FILES=	Makefile pkg-install
 SUB_LIST=	FONTSALIAS="${DATADIR}/fonts.alias.${PKGNAMESUFFIX}" \
 		SRCS="${SRCS}"
@@ -40,7 +41,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	cd ${WRKSRC} && ${CAT} ${DISTNAME}.?? | uudecode
-	${GUNZIP_CMD} ${WRKDIR}/*.Z
+	${GUNZIP_CMD} ${WRKSRC}/*.Z
 	${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${README_FILE} \
 	    | ${SED} '/bin\/sh/,/exit 0/d' \
 	    > ${WRKSRC}/README.${DISTNAME}

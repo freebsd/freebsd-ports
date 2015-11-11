@@ -12,7 +12,9 @@ MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Fast & minimal low-level HTTP client
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

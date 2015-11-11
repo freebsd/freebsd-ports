@@ -26,9 +26,8 @@ PLIST_DIRS=	%%DATADIR%%
 .include <bsd.port.pre.mk>
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
 	@${BZIP2_CMD} -dc ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > \
-		${WRKDIR}/${DISTNAME}
+		${WRKSRC}/${DISTNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

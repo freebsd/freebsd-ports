@@ -35,6 +35,8 @@ SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
 
 OPTIONS_SUB=
 
+MAKE_JOBS_UNSAFE=	yes
+
 USES=		gmake cpe
 
 CPE_VENDOR=	gnu
@@ -81,12 +83,10 @@ post-patch:
 # 		Choose sockets if you don't know what the difference is.
 # 		Choose named pipes if your environment is heterogeneous,
 #		using both screen 4.0.3 and 4.2.1.
-.if ${PORT_OPTIONS:MNAMED_PIPES}
 # Bug 191017
-post-configure:
+post-configure-NAMED_PIPES-on:
 	@${ECHO_CMD} '#define NAMEDPIPE 1' >> ${WRKSRC}/config.h
 	@${ECHO_CMD} User selected named pipes override set.
-.endif
 
 ETCDIR?=	${PREFIX}/etc
 

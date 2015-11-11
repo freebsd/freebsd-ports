@@ -23,10 +23,10 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|.exe||g' \
-		-e 's|"c:\\mail\\Inbox.*"|/home/user/Inbox|g' ${WRKDIR}/*
+		-e 's|"c:\\mail\\Inbox.*"|/home/user/Inbox|g' ${WRKSRC}/*
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.py \
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}

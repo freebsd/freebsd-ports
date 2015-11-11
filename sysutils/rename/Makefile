@@ -11,6 +11,8 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename multiple files using regular expressions
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 

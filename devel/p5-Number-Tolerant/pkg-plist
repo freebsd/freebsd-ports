@@ -1,8 +1,6 @@
-%%SITE_PERL%%/Test/Tolerant.pm
 %%SITE_PERL%%/Number/Tolerant.pm
 %%SITE_PERL%%/Number/Tolerant/Constant.pm
 %%SITE_PERL%%/Number/Tolerant/Type.pm
-%%SITE_PERL%%/Number/Tolerant/Union.pm
 %%SITE_PERL%%/Number/Tolerant/Type/constant.pm
 %%SITE_PERL%%/Number/Tolerant/Type/infinite.pm
 %%SITE_PERL%%/Number/Tolerant/Type/less_than.pm
@@ -13,6 +11,8 @@
 %%SITE_PERL%%/Number/Tolerant/Type/plus_or_minus.pm
 %%SITE_PERL%%/Number/Tolerant/Type/plus_or_minus_pct.pm
 %%SITE_PERL%%/Number/Tolerant/Type/to.pm
+%%SITE_PERL%%/Number/Tolerant/Union.pm
+%%SITE_PERL%%/Test/Tolerant.pm
 %%PERL5_MAN3%%/Number::Tolerant.3.gz
 %%PERL5_MAN3%%/Number::Tolerant::Constant.3.gz
 %%PERL5_MAN3%%/Number::Tolerant::Type.3.gz

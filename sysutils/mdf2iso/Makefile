@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alcohol 120% to ISO converter
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # (or later)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

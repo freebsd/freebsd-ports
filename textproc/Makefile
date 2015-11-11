@@ -15,6 +15,7 @@
     SUBDIR += R-cran-rmarkdown
     SUBDIR += R-cran-stringi
     SUBDIR += R-cran-stringr
+    SUBDIR += R-cran-xml2
     SUBDIR += R-cran-xtable
     SUBDIR += R-cran-yaml
     SUBDIR += ack
@@ -438,6 +439,7 @@
     SUBDIR += linux-f10-scim-gtk
     SUBDIR += linux-f10-scim-libs
     SUBDIR += linuxdoc
+    SUBDIR += linuxdoc-tools
     SUBDIR += localize
     SUBDIR += loook
     SUBDIR += lt-aspell
@@ -1230,6 +1232,7 @@
     SUBDIR += py-markdown
     SUBDIR += py-markdown2
     SUBDIR += py-mistune
+    SUBDIR += py-mwparserfromhell
     SUBDIR += py-nltk
     SUBDIR += py-openpyxl
     SUBDIR += py-openpyxl1
@@ -1397,11 +1400,13 @@
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml
     SUBDIR += rubygem-jekyll-assets
+    SUBDIR += rubygem-jekyll-feed
     SUBDIR += rubygem-jekyll-gist
     SUBDIR += rubygem-jekyll-mentions
     SUBDIR += rubygem-jekyll-paginate
     SUBDIR += rubygem-jekyll-redirect-from
     SUBDIR += rubygem-jekyll-sass-converter
+    SUBDIR += rubygem-jekyll-sitemap
     SUBDIR += rubygem-jemoji
     SUBDIR += rubygem-jsmin
     SUBDIR += rubygem-kramdown
@@ -1615,6 +1620,7 @@
     SUBDIR += words
     SUBDIR += wv
     SUBDIR += wv2
+    SUBDIR += xalan-c
     SUBDIR += xalan-j
     SUBDIR += xerces-c3
     SUBDIR += xerces-j

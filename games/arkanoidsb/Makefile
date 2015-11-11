@@ -10,10 +10,11 @@ MASTER_SITES=	http://www.wegroup.org/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arkanoid and space game
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		tar:bzip2
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	libogg sdlmixer sdlimage

@@ -19,10 +19,10 @@ COMMENT=	Crystal SVG Icons for Gnome
 RESTRICTED=	${REASON}
 
 USES=		tar:bzip2
-WRKSRC=		${WRKDIR}/CfG-Crystal-SVG-${PORTVERSION}
+NO_WRKSUBDIR=	yes
 
 post-patch:
-	@${REINPLACE_CMD} 's|\(^Directories=.*\),,|\1,|' ${WRKSRC}/index.theme
+	@${REINPLACE_CMD} 's|\(^Directories=.*\),,|\1,|' ${WRKSRC}/CfG-Crystal-SVG-${PORTVERSION}/index.theme
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strictures
-PORTVERSION=	2.000001
+PORTVERSION=	2.000002
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-bareword-filehandles>=0:${PORTSDIR}/devel/p5-bareword-filehand
 		p5-multidimensional>=0:${PORTSDIR}/devel/p5-multidimensional
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

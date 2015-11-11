@@ -26,6 +26,7 @@ MAKEFILE=	makefile
 ALL_TARGET=	${OPSYS}
 MAKE_ENV=	WRKSRC="${WRKSRC}" ARCHI=${OPSYS} ARCH=${ARCH} OSREL=${OSREL}
 NO_WRKSUBDIR=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 LIBVERSION=	${PORTVERSION}
 SOURCETARB=	${PORTNAME}.${PORTVERSION}${EXTRACT_SUFX}
@@ -45,7 +46,7 @@ PLIST_FILES+=	${MESHES:S|^|%%EXAMPLESDIR%%/|}
 . endif
 
 post-extract:
-	cd ${WRKDIR} &&	\
+	cd ${WRKSRC} &&	\
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${LIBTARBALL} ${EXTRACT_AFTER_ARGS} --exclude ${MAKEFILE}
 	${CP} ${FILESDIR}/gttime.c ${WRKSRC}/sources/
 .for l in lplib2.c lplib2.h
@@ -57,9 +58,9 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${MESHES:S|^|${WRKSRC}/INRIA.dir/|} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	polarssl
-PORTVERSION=	1.2.17
+PORTVERSION=	1.2.18
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	https://polarssl.org/download/
@@ -10,6 +10,9 @@ MAINTAINER=	jase@FreeBSD.org
 COMMENT=	Open Source embedded SSL/TLS cryptographic library
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Upstream is ending support for 1.2.x
+EXPIRATION_DATE=2015-12-31
 
 ALL_TARGET=	no_test
 

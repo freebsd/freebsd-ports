@@ -6984,7 +6984,6 @@ games/alienarena-data||2014-09-07|Useless with alienarena removed
 net/libexosip2-legacy|net/libexosip2|2014-09-07|Has expired: Superseded by net/libexosip2
 net/libosip|net/libosip2|2014-09-07|Has expired: Superseded by net/libosip2
 lang/caml-light||2014-09-07|Not staged
-sysutils/fusefs-wdfs||2014-09-07|Not staged
 devel/pybaz||2014-09-07|Obsolete, use devel/bzr instead
 devel/baz||2014-09-07|Unstaged, obsolete, distfiles don't exist. Use devel/bzr instead
 security/prelude-lml||2014-09-07|Not staged
@@ -7877,7 +7876,7 @@ japanese/kappa20|japanese/font-kappa20|2015-09-25|Renamed
 japanese/mikachan-ttfonts|japanese/font-mikachan|2015-09-25|Renamed
 japanese/monafonts-ttf|japanese/font-mona-ttf|2015-09-25|Renamed
 japanese/monafonts|japanese/font-mona|2015-09-25|Renamed
-chinese/joe|editors/joe|2015-09-26|Regular joe's editor now support chinese
+chinese/joe|editors/joe|2015-09-26|Regular joe's editor now supports Chinese
 net/linc||2015-09-27|Has expired: Last release in 2003, not used by anything anymore
 net/linc-reference||2015-09-27|Has expired: Last release in 2003, not used by anything anymore
 x11/xlogout||2015-09-27|Has expired: Useless cruft from 1989
@@ -7927,3 +7926,13 @@ science/pyteomics.biolccc|science/py-pyteomics.biolccc|2015-11-02|Renamed to com
 science/pyteomics|science/py-pyteomics|2015-11-02|Renamed to comply with Python ports policy
 graphics/cal3d-devel|graphics/cal3d|2015-11-02|Development ceased in 2006 so set last devel version as stable
 www/joomla31|www/joomla3|2015-11-03|Renamed to match upstream only supporting the latest 3.x release at a time
+devel/py-parsing|devel/py-pyparsing|2015-11-04|Renamed to match upstream naming
+devel/py-pygitup|devel/py-git-up|2015-11-07|Renamed to match upstream naming
+devel/phptags||2015-11-08|Has expired: abandoned upstream
+sysutils/torsmo|sysutils/conky|2015-11-08|Has expired: no new releases for years, consider using sysutils/conky
+databases/mysql-workbench51|databases/mysql-workbench52|2015-11-10|Has expired: EOL upstream, use databases/mysql-workbench52 instead
+databases/mysql51-client||2015-11-10|Has expired: EOL upstream, use mysql55 or mysql56 instead
+databases/mysql51-scripts||2015-11-10|Has expired: EOL upstream, use mysql55 or mysql56 instead
+databases/mysql51-server||2015-11-10|Has expired: EOL upstream, use mysql55 or mysql56 instead
+databases/p5-DBD-mysql51|databases/p5-DBD-mysql|2015-11-10|Has expired: EOL upstream, use databases/p5-DBD-mysql instead
+databases/py-MySQLdb51||2015-11-10|Has expired: EOL upstream, use databases/py-MySQLdb instead

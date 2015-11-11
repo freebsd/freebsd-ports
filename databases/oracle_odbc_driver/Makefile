@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oracle Open Source ODBC driver
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS=	--with-unixODBC=${LOCALBASE}
 

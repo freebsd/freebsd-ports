@@ -11,7 +11,8 @@ MASTER_SITES=	http://josefsson.org/gnutls/releases/opencdk/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Open Crypto Development Kit
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
@@ -22,6 +23,8 @@ CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
 
 DOCS=		AUTHORS NEWS README THANKS doc/opencdk-api.html
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^LDADD/ s/$$/ $$(LIBGCRYPT_LIBS)/' ${WRKSRC}/tests/Makefile.in
 
@@ -29,6 +32,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tests/*.c ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tests/*.gpg ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 

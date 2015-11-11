@@ -11,6 +11,8 @@ DISTNAME=	Maude-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance reflective language
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

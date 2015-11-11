@@ -10,7 +10,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG audio player/decoder decoding layer I and II MPEG audio streams
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_WRKSUBDIR=	yes
 USES=		tar:Z
@@ -22,6 +23,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/maplay ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

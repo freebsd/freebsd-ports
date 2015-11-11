@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible whois client and proxy
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN \
 		lynx:${PORTSDIR}/www/lynx \

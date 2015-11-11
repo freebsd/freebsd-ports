@@ -15,12 +15,13 @@ EXTRACT_ONLY=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The noeGNUd UI for the SLASH'EM variant of Nethack
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	noegnud-data>0:${PORTSDIR}/games/noegnud-data
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
 USES=		bison gmake tar:bzip2
 USE_GL=		yes
-WANT_SDL=	yes
 USE_SDL=	sdl image mixer
 WRKSRC=		${WRKDIR}/${DISTNAME}/variants
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
@@ -28,14 +29,10 @@ ALL_TARGET=	se006e4f8
 INSTALL_TARGET=	install_se006e4f8
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
-
 pre-everything::
-.if ${HAVE_SDL}
 	@${ECHO_MSG} "This port depends on SDL with OpenGL support."
 	@${ECHO_MSG} "If your SDL does not support OpenGL, hit ^C now and reinstall SDL"
 	@${ECHO_MSG} "with OpenGL support turned on."
-.endif
 
 post-extract:
 	@${CP} ${DISTDIR}/se006e4f8.tar.gz ${WRKSRC}/tarballs
@@ -55,4 +52,4 @@ post-patch:
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} ${NOEGNUDVERSION}-slashem-0.0.6E4F8/Makefile)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

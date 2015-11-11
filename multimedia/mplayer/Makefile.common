@@ -51,4 +51,3 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--enable-ass-internal
 
 WANT_GNOME=	yes
-WANT_SDL=	yes

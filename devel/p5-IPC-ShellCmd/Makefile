@@ -15,10 +15,11 @@ COMMENT=	Run a command with a given environment and capture output
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo \
-		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote
+BUILD_DEPENDS=	p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
+		sudo:${PORTSDIR}/security/sudo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	istgt
-PORTVERSION=	20141125
+PORTVERSION=	20150713
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
 

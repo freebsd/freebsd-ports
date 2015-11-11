@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Format-Strptime
-PORTVERSION=	1.57
+PORTVERSION=	1.60
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -16,8 +16,11 @@ LICENSE=	ART20
 BUILD_DEPENDS=	p5-DateTime>=1:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Locale>=0.45:${PORTSDIR}/devel/p5-DateTime-Locale \
 		p5-DateTime-TimeZone>=0.79:${PORTSDIR}/devel/p5-DateTime-TimeZone \
-		p5-Params-Validate>=0.64:${PORTSDIR}/devel/p5-Params-Validate
+		p5-Package-DeprecationManager>=0:${PORTSDIR}/devel/p5-Package-DeprecationManager \
+		p5-Params-Validate>=1.20:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PORTSCOUT=	skipv:1.0601,1.0700,1.0701,1.0702,1.0800,1.0900,1.0901,1.1000
 

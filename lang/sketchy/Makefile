@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.t3x.org/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpreter for purely applicative Scheme
 
+BROKEN=		unfetchable
+
 USES=		uidfix
 USE_LDCONFIG=	yes
 

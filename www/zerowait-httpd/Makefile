@@ -12,6 +12,8 @@ DISTNAME=	0W-httpd-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight and fast http server
 
+BROKEN=		unfetchable
+
 USES=		gmake
 USE_OPENSSL=	yes
 USE_RC_SUBR=	0W-httpd

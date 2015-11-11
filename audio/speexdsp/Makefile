@@ -14,4 +14,10 @@ INSTALL_TARGET=	install-strip
 USES=		libtool pathfix
 USE_LDCONFIG=	yes
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == "aarch64"
+CONFIGURE_ARGS+=--disable-neon
+.endif
+
 .include <bsd.port.mk>

@@ -13,7 +13,6 @@ bin/wesnoth
 %%TOOLS%%bin/schema_generator
 %%TOOLS%%bin/schema_validator
 %%TOOLS%%bin/wesmage
-%%TEST%%bin/wesnoth_test
 %%SERVER%%bin/wesnothd
 share/applications/wesnoth.desktop
 share/applications/wesnoth_editor.desktop

@@ -79,7 +79,7 @@ do-install:
 # jars
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${JAR_DIR}
 .for jar in ${JAR_FILES}
-	@${INSTALL_DATA} ${WRKDIR}/${jar} ${STAGEDIR}${PREFIX}/${JAR_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/${jar} ${STAGEDIR}${PREFIX}/${JAR_DIR}
 .endfor
 # default boards
 	@${MKDIR} ${STAGEDIR}${DATADIR}

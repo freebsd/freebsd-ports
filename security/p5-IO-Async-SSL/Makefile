@@ -17,9 +17,9 @@ BUILD_DEPENDS=	p5-Future>=0.33:${PORTSDIR}/devel/p5-Future \
 		p5-IO-Async>=0.66:${PORTSDIR}/devel/p5-IO-Async\
 		p5-IO-Socket-SSL>=1.968:${PORTSDIR}/security/p5-IO-Socket-SSL
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	${LOCALBASE}/bin/socat:${PORTSDIR}/net/socat \
-		p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
-		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
+TEST_DEPENDS=	p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
+		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
+		socat:${PORTSDIR}/net/socat
 
 NO_ARCH=	yes
 USE_PERL5=	configure

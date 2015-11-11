@@ -129,6 +129,7 @@ man/man1/znc.1.gz
 %%DATADIR%%/webskins/_default_/pub/_default_.css
 %%DATADIR%%/webskins/_default_/pub/favicon.ico
 %%DATADIR%%/webskins/_default_/pub/global.css
+%%DATADIR%%/webskins/_default_/pub/jquery-1.11.2.js
 %%DATADIR%%/webskins/_default_/pub/jquery-1.11.2.min.js
 %%DATADIR%%/webskins/_default_/pub/robots.txt
 %%DATADIR%%/webskins/_default_/tmpl/Banner.tmpl

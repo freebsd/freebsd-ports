@@ -10,6 +10,23 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20151105:
+AUTHOR: mat@FreeBSD.org
+
+  Change the meaning of NO_WRKSUBDIR to force a WRKDIR != WRKSRC.
+
+  Right now, NO_WRKSUBDIR means that the extraction does not produce a
+  subdirectory, and that everything goes straight into WRKDIR.  It is
+  problematic, because during the build of a port, quite a few files
+  are created in there, and then, a stage directory, where everything
+  is installed, and then a pkg directory where the package is created,
+  and those often conflict, or get in the way, of the building
+  process.
+
+  With this, NO_WRKSUBDIR will extract the distfiles directly into
+  WRKSRC instead of WRKDIR.  In this case, WRKSRC is artificial and is
+  based on PKGNAME and not DISTNAME, mitigate conflicts with rc files.
+
 20151022:
 AUTHOR: amdmi3@FreeBSD.org
 

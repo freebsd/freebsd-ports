@@ -25,8 +25,8 @@ NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/${DISTNAME}
+	@${MKDIR} ${WRKSRC}
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/${DISTNAME}
 
 pre-install:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
@@ -35,8 +35,8 @@ pre-install:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} \
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME} \
 		${STAGEDIR}${ETCDIR}/${DISTNAME}.sample
-	${INSTALL} -m 760 ${WRKDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL} -m 760 ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

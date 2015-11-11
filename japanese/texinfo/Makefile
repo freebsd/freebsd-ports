@@ -15,6 +15,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Typeset Texinfo files for printing. Uses TeX
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/tex-ptex
 
 USES=		cpe gettext gmake

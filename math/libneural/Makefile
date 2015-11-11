@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ implementation of the classic 3-layer perceptron in library form
 
+BROKEN=		unfetchable
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

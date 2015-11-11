@@ -1,6 +1,6 @@
-GSpiceUI (GNU Spice GUI) is intended to provide a graphical frontend to freely
-available circuit simulators, including gnucap and ngspice. It can use
-gnetlist to import schematics or net list files and gwave to display
-simulation results.
+gSpiceUI is intended to provide a GUI for freely available electronic
+circuit simulation engines ie. NG-Spice and GNU-Cap. The utility gnetlist is
+used to convert schematic files to netlist files, Gwave or Gaw to display
+simulation results and gschem is the preferred schematic capture tool.
 
-WWW: http://sourceforge.net/projects/gspiceui/
+WWW: http://users.tpg.com.au/micksw012/gspiceui.html

@@ -11,6 +11,8 @@ DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Miniature Macintosh emulator
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/projects/bgclx86d

@@ -26,6 +26,6 @@ NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
 
 post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>

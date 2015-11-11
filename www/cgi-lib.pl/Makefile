@@ -25,6 +25,6 @@ INSTALL_DIR=	${PREFIX}/${INSTALL_BASE}
 
 do-install:
 	-${MKDIR} ${STAGEDIR}${INSTALL_DIR}
-	${INSTALL_DATA} ${WRKDIR}/cgi-lib.pl ${STAGEDIR}${INSTALL_DIR}
+	${INSTALL_DATA} ${WRKSRC}/cgi-lib.pl ${STAGEDIR}${INSTALL_DIR}
 
 .include <bsd.port.mk>

@@ -9,6 +9,8 @@ MASTER_SITES=	http://cdn.bitbucket.org/mmottl/aifad/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Machine learning system
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir \

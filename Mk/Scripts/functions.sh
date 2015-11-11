@@ -164,7 +164,7 @@ export_ports_env() {
 
 	validate_env MAKE PORTSDIR
 
-	uses="perl5 python"
+	uses="python"
 
 	make_env="\
 		_PORTS_ENV_CHECK=1 \

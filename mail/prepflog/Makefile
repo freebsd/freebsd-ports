@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.gufonero.com/postfix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prepares logfiles in a sanitised format for pflogsumm and awstats
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 
 USES=		perl5 shebangfix tar:tgz

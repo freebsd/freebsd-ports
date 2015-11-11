@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lambda calculus interpreter
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		perl5 readline shebangfix

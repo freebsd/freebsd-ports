@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sniffer for RADIUS traffic
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/radiusniff-0.2
 
 CFLAGS+=	-DOPENBSD -DCLIENTS_FILENAME=\"${DATADIR}/clients\" \

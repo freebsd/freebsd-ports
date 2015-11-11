@@ -14,7 +14,7 @@ COMMENT=	Perl module to provide FIGlet abilities, akin to banner
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${LOCALBASE}/bin/figlet:${PORTSDIR}/misc/figlet
+RUN_DEPENDS=	figlet:${PORTSDIR}/misc/figlet
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 

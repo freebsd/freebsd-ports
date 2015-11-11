@@ -10,6 +10,8 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rate-limited autoresponder for qmail
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libbg-sysdeps.so:${PORTSDIR}/devel/bglibs
 
 USE_MYSQL=	yes

@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	sdcc
-PORTVERSION=	3.4.3.2015.05.09
+PORTVERSION=	3.5.5.2015.11.06
 CATEGORIES=	lang
 MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
 		http://tijl.fastmail.com/mirror/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-src-20150509-9230
+DISTNAME=	${PORTNAME}-src-20151106-9386
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Small Device C Compiler
@@ -65,6 +65,8 @@ post-patch:
 	@${REINPLACE_CMD} '/install:/s/:.*/:/' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/support/sdbinutils/libiberty/Makefile.in
+	@${REINPLACE_CMD} '/^SUBDIRS =/s/doc//' \
+		${WRKSRC}/support/sdbinutils/bfd/Makefile.in
 .if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
 		${WRKSRC}/Makefile.in \

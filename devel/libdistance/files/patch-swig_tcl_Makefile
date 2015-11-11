@@ -1,0 +1,29 @@
+--- swig/tcl/Makefile.orig	2014-10-10 13:11:38 UTC
++++ swig/tcl/Makefile
+@@ -1,15 +1,16 @@
+ # $Id: Makefile,v 1.2 2004/11/30 00:26:59 jose Exp $
+ 
+-all: distance.so
++LIB=		distance
++SHLIB_MAJOR=	1
+ 
+-distance_wrap.o: ../distance.i
+-	swig -tcl -namespace -module distance -o distance_wrap.c \
+-	    -v ../distance.i
+-	gcc -c -I../.. -I/usr/local/include/tcl8.4 -fpic distance_wrap.c
++SRCS=		distance_wrap.c		# swig-generated source file
++CLEANFILES+=	$(SRCS)
+ 
+-distance.so: distance_wrap.o
+-	gcc -shared  distance_wrap.o ../../libdistance.a \
+-	    -o distance.so
++CFLAGS=	-I ../.. `pkg-config --cflags tcl` -fPIC
++SWIG?=	swig
+ 
+-clean:
+-	rm -f *.o distance_wrap.c *.so *.core *_wrap.c distance.py
++distance_wrap.c: ../distance.i
++	${SWIG} -tcl -namespace -module distance -o distance_wrap.c \
++	    -v ../distance.i
++
++.include <bsd.lib.mk>

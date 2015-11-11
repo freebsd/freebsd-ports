@@ -97,6 +97,7 @@
     SUBDIR += fortune-mod-epictetus
     SUBDIR += fortune-mod-ferengi_rules_of_acquisition
     SUBDIR += fortune-mod-futurama
+    SUBDIR += fortune-mod-psalms
     SUBDIR += fortuneit
     SUBDIR += fpc-chm
     SUBDIR += freebsd-doc-all
@@ -430,6 +431,7 @@
     SUBDIR += qt5ct
     SUBDIR += quotes
     SUBDIR += raspberrypi-userland
+    SUBDIR += raspbsd-led
     SUBDIR += ree
     SUBDIR += rfc
     SUBDIR += ringtonetools

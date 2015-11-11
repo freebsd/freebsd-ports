@@ -1,0 +1,8 @@
+This is the GNU Debugger GDB, configured for the AVR microcontroller
+target.
+
+This debugger cannot really be used standalone, but is useful in
+connection with either AVaRICE (http://avarice.sourceforge.net/)
+or simulavr (http://www.freesoftware.fsf.org/simulavr/).
+
+WWW: http://www.gnu.org/software/gdb/

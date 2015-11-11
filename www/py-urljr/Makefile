@@ -13,6 +13,8 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common interface to HTTP fetchers for PycURL or urllib2
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/curl:${PORTSDIR}/ftp/py-curl
 
 USES=		python

@@ -10,6 +10,8 @@ MASTER_SITES=	http://downloads.hercules-390.eu/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System/370, ESA/390, and z/Architecture Emulator
 
+BROKEN=		unfetchable
+
 LICENSE=	QPL
 LICENSE_NAME=	Q PUBLIC LICENSE version 1.0
 LICENSE_TEXT=	Please refer to: http://www.hercules-390.org/herclic.html for details

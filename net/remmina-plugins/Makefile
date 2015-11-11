@@ -9,6 +9,8 @@ CATEGORIES=	net gnome
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Remmina plugin system
 
+BROKEN=		unfetchable
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	Remmina

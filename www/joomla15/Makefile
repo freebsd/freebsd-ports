@@ -14,6 +14,10 @@ COMMENT=	Dynamic web content management system (CMS)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.php
 
+DEPRECATED=	Joomla 1.5.x reached its End of Life in September 2012. Please update to a current version
+FORBIDDEN=	No longer supported upstream, multiple unresolved security issues
+EXPIRATION_DATE=	2015-12-18
+
 FETCH_CMD=	fetch -Rr
 USES=	tar:bzip2
 NO_BUILD=	yes

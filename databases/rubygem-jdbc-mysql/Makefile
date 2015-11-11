@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jdbc-mysql
-PORTVERSION=	5.1.36
+PORTVERSION=	5.1.37
 CATEGORIES=	databases rubygems java
 MASTER_SITES=	RG
 

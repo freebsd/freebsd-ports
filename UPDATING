@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151105:
+  AFFECTS: users of deskutils/egroupware
+  AUTHOR: danilo@FreeBSD.org
+
+  EGroupware 1.8 was deprecated and removed from sourceforge.net.
+  To upgrade to the new version (14.3), make a backup of all files and
+  database, remove all files from ${PREFIX}/www/eg:
+  
+    # pkg remove egroupware
+    # rm -rf ${PREFIX}/www/eg
+
+  Install the new egroupware:
+    # pkg install egroupware
+   or
+    # make -C /usr/ports/deskutils/egroupware install clean
+
+  Access the setup page on your browser and run the upgrade process
+  (eg: http://<server>/eg/setup).
+
 20151101:
   AFFECTS: users of www/codeigniter
   AUTHOR: junovitch@FreeBSD.org

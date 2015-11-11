@@ -11,6 +11,8 @@ DISTNAME=	stalin-freebsd-${PORTVERSION}_1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aggressive optimizing Scheme compiler
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
 
 USES=	tar:bzip2

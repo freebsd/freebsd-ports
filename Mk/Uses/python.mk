@@ -385,10 +385,13 @@ PYTHON_MAJOR_VER=	${PYTHON_VER:R}
 PYTHON_REL=		# empty
 PYTHON_ABIVER=		# empty
 PYTHON_PORTSDIR=	${_PYTHON_RELPORTDIR}${PYTHON_SUFFIX}
+# Protect partial checkouts from Mk/Scripts/functions.sh:export_ports_env().
+.if !defined(_PORTS_ENV_CHECK) || exists(${PYTHON_PORTSDIR})
 .if !defined(PYTHON_PORTVERSION)
 PYTHON_PORTVERSION!=	${MAKE} -V PORTVERSION -C ${PYTHON_PORTSDIR}
 .endif
 _EXPORTED_VARS+=	PYTHON_PORTVERSION
+.endif
 # Create a 4 integer version string, prefixing 0 to the last token if
 # it's a single character. Only use the the first 3 tokens of
 # PORTVERSION to support pre-release versions (rc3, alpha4, etc) of

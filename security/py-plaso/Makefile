@@ -3,6 +3,7 @@
 
 PORTNAME=	plaso
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/log2timeline/plaso/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -32,7 +33,7 @@ RUN_DEPENDS=	hachoir-core>=0:${PORTSDIR}/devel/hachoir-core \
 		${PYTHON_PKGNAMEPREFIX}dfvfs>=0:${PORTSDIR}/security/py-dfvfs \
 		${PYTHON_PKGNAMEPREFIX}dpkt>=0:${PORTSDIR}/net/py-dpkt \
 		${PYTHON_PKGNAMEPREFIX}ipython>=0:${PORTSDIR}/devel/ipython \
-		${PYTHON_PKGNAMEPREFIX}parsing>=0:${PORTSDIR}/devel/py-parsing \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:${PORTSDIR}/devel/py-pyparsing \
 		${PYTHON_PKGNAMEPREFIX}pefile>=0:${PORTSDIR}/devel/py-pefile \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=0:${PORTSDIR}/devel/py-protobuf \
 		${PYTHON_PKGNAMEPREFIX}psutil121>=0:${PORTSDIR}/sysutils/py-psutil121 \

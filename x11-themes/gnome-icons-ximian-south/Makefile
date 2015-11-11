@@ -16,8 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ximian-South Icons for Gnome
 
 RESTRICTED=	${REASON}
-
-WRKSRC=		"${WRKDIR}/${PORTNAME}"
+NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

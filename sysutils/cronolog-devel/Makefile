@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web log rotation utility that provides datestamp filenames
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	sbin/cronolog \
 		sbin/cronosplit \
 		man/man1/cronolog.1m.gz \

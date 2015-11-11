@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.webta.org/apachetop/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache RealTime log stats
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USES=		readline
 

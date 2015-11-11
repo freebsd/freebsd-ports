@@ -56,7 +56,7 @@ post-patch:
 		-e '/argv/s/unsigned//'
 
 do-install:
-	(cd ${WRKDIR} && ${INSTALL_PROGRAM} ${BINFILES} ${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${BINFILES} ${STAGEDIR}${PREFIX}/bin)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} ${_DISTDIR}/edicth ${STAGEDIR}${DATADIR}
 .for f in edict enamdict compdic j_places kanjidic kanjd212 geodic
@@ -74,7 +74,7 @@ do-install:
 .endfor
 	${RM} -f ${STAGEDIR}${PREFIX}/bin/xjdic
 	${LN} -s ${PREFIX}/bin/xjdic_sa ${STAGEDIR}${PREFIX}/bin/xjdic
-	(cd ${WRKDIR} && ${INSTALL_DATA} radicals.tm radkfile kanjstroke \
+	(cd ${WRKSRC} && ${INSTALL_DATA} radicals.tm radkfile kanjstroke \
 		romkana.cnv vconj ${STAGEDIR}${DATADIR})
 	#
 	# Only 9 dictionaries can be enabled

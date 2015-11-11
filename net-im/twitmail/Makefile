@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.hardakers.net/twitmail/releases/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based mail-like interface to Twitter
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBI>=1.60.4:${PORTSDIR}/databases/p5-DBI \
 		p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \

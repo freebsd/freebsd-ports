@@ -14,3 +14,4 @@ bin/fribidi.pl
 %%PERL5_MAN3%%/Text::Bidi::Array::Long.3.gz
 %%PERL5_MAN3%%/Text::Bidi::Constants.3.gz
 %%PERL5_MAN3%%/Text::Bidi::Paragraph.3.gz
+%%PERL5_MAN3%%/Text::Bidi::private.3.gz

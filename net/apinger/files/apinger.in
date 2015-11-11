@@ -9,20 +9,20 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# apinger_enable (bool):   Set to NO by default.
-#               Set it to YES to enable apinger.
+# apinger_enable (bool):	Set to NO by default.
+#				Set it to YES to enable apinger.
 #
 
 . /etc/rc.subr
 
-name="apinger"
+name=apinger
 rcvar=apinger_enable
-
-command=%%PREFIX%%/sbin/${name}
-pidfile=/var/run/${name}.pid
 
 load_rc_config $name
 
-: ${apinger_enable="NO"}
+: ${apinger_enable:=NO}
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
 
 run_rc_command "$1"

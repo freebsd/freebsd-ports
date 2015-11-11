@@ -45,3 +45,4 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/wily
 %%DATADIR%%/scripts/woody
 %%DATADIR%%/scripts/woody.buildd
+%%DATADIR%%/scripts/xenial

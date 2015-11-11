@@ -11,6 +11,8 @@ DIST_SUBDIR=	pure
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure language binding to the SQLite3 library
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 

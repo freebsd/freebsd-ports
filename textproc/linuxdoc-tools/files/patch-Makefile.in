@@ -1,0 +1,36 @@
+--- Makefile.in.orig	2013-04-08 17:11:41 UTC
++++ Makefile.in
+@@ -47,7 +47,7 @@ INCLUDE  =
+ OPTIMIZE = -O
+ DEBUG    =
+ WARN     =
+-CFLAGS   = $(DEBUG) $(INCLUDE) $(WARN) $(PROFILE) $(OPTIMIZE)
++CFLAGS  += $(DEBUG) $(INCLUDE) $(WARN) $(PROFILE)
+ LDFLAGS  = $(DEBUG) $(PROFILE)
+ 
+ all:
+@@ -113,7 +113,7 @@ ifeq ($(BUILD_ISO_ENTITIES), true)
+ endif
+ 
+ #    -- Install linuxdoc script
+-	$(INSTALL_PROGRAM) bin/linuxdoc $(bin_ddir)/linuxdoc
++	$(INSTALL) -m755 bin/linuxdoc $(bin_ddir)/linuxdoc
+ 
+ #    -- Install auxiliary programs
+ 	mkdir -p $(auxbin_ddir)
+@@ -162,6 +162,7 @@ endif
+ 	$(INSTALL_DATA) tex/* $(tex_ddir)
+ 
+ #    -- Build and install documentation
++ifeq ($(BUILD_DOCS), true)
+ 	@echo "Installing documentation in $(doc_ddir) ..."
+ 	(cd doc; \
+ 		PATH=${PATH}:$(bin_ddir) \
+@@ -177,6 +178,7 @@ endif
+ 	rm -f $(doc_ddir)/Makedoc.sh
+ 	find $(doc_ddir) -type d -print | xargs chmod 755
+ 	find $(doc_ddir) -type f -print | xargs chmod 644
++endif
+ 
+ # what dirs do the targets clean and distclean need?
+ DDIRS=

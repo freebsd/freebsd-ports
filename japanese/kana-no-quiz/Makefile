@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME:S,k,K,}-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little tool to memorize Japanese KANA (Hiragana/Katakana)
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
 
 NO_BUILD=	yes

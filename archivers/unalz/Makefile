@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.kipple.pe.kr/win/unalz/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts AlZip archives
 
+BROKEN=		unfetchable
+
 LICENSE_FILE=	${WRKSRC}/readme.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

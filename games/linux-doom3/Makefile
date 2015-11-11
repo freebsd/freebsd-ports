@@ -37,8 +37,8 @@ PLIST_SUB+=	NEW=""
 .endif
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && ${TAIL} +374 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+	@${MKDIR} ${WRKSRC}
+	@cd ${WRKSRC} && ${TAIL} +374 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} zxf -
 
 .if empty(PORT_OPTIONS:MNO_CDKEY)

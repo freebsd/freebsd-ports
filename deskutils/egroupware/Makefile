@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	1.8.007.20150218
+PORTVERSION=	14.3.20151110
 CATEGORIES=	deskutils
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}-1.8/${PORTNAME}-${PORTVERSION}
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
-		${PORTNAME}-egw-pear-${PORTVERSION}.tar.bz2
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}-14.3/${PORTNAME}-${PORTVERSION}
+DISTFILES=	${PORTNAME:tl}-epl-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Web-based GroupWare system
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 BUILD_DEPENDS=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
 		${PEARDIR}/Net/IMAP.php:${PORTSDIR}/mail/pear-Net_IMAP \
@@ -21,7 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PEARDIR=	${LOCALBASE}/share/pear
 USES=		cpe tar:bzip2
-USE_PHP=	session ctype zlib bz2 mcrypt xmlreader
+USE_PHP=	bcmath bz2 ctype json mcrypt session simplexml xmlreader zlib
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
@@ -38,7 +40,7 @@ MBSTRING_DESC=	Support multi-byte character sets
 POSTGRES_DESC=	PostgreSQL database support
 ZIP_DESC=	Install PHP zip extension
 
-MYSQL_USE=	PHP=mysql,pdo_mysql
+MYSQL_USE=	PHP=mysqli,pdo_mysql
 POSTGRES_USE=	PHP=pgsql,pdo_pgsql
 MBSTRING_USE=	PHP=mbstring
 IMAP_USE=	PHP=imap

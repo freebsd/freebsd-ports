@@ -75,14 +75,14 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing scripts in ${PREFIX}/bin..."
 .for scriptfile in saxon saxon-xquery
 	@${ECHO_MSG} -n " ${scriptfile}"
-	${INSTALL_SCRIPT} ${WRKSRC}/saxon.sh ${STAGEDIR}${PREFIX}/bin/${scriptfile}
+	${INSTALL_SCRIPT} ${WRKDIR}/saxon.sh ${STAGEDIR}${PREFIX}/bin/${scriptfile}
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${FIND} -s ${WRKSRC}/samples -not -type d | \
-		${SED} -ne 's,^${WRKSRC}/samples,${EXAMPLESDIR:S,${PREFIX}/,,},p' >> ${TMPPLIST}
+		${SED} -ne 's|^${WRKSRC}/samples|${EXAMPLESDIR:S,${PREFIX}/,,}|p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>

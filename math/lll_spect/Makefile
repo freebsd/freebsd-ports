@@ -27,18 +27,18 @@ OPTIONS_DEFINE=	EXAMPLES
 
 post-extract:
 .for _file in lll_spect lll_search
-	@${CP} ${_DISTDIR}/${_file}.C ${WRKDIR}
+	@${CP} ${_DISTDIR}/${_file}.C ${WRKSRC}
 .endfor
 
 do-build:
 .for _file in lll_spect lll_search
-	${CXX} ${CXXFLAGS} ${CPPFLAGS} -c -o ${WRKDIR}/${_file}.o ${WRKDIR}/${_file}.C
-	${CXX} ${CXXFLAGS} ${LDFLAGS} -o ${WRKDIR}/${_file} ${WRKDIR}/${_file}.o -lntl -lgmp -lm
+	${CXX} ${CXXFLAGS} ${CPPFLAGS} -c -o ${WRKSRC}/${_file}.o ${WRKSRC}/${_file}.C
+	${CXX} ${CXXFLAGS} ${LDFLAGS} -o ${WRKSRC}/${_file} ${WRKSRC}/${_file}.o -lntl -lgmp -lm
 .endfor
 
 do-install:
 .for _file in lll_spect lll_search
-	${INSTALL_PROGRAM} ${WRKDIR}/${_file} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${_file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${_DISTDIR}/examples.txt ${STAGEDIR}${EXAMPLESDIR}

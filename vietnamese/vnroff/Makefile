@@ -11,16 +11,18 @@ DISTFILES=	vnroff.c.Z vnroff.1.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts Vietnamese VIQR text into troff format
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/vnroff man/man1/vnroff.1.gz
 NO_WRKSUBDIR=	yes
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@(cd ${WRKDIR} && ${GZCAT} ${DISTDIR}/vnroff.c.Z \
+	@${RM} -rf ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
+	@(cd ${WRKSRC} && ${GZCAT} ${DISTDIR}/vnroff.c.Z \
 		| ${SED} -e '1,/-cut here-/d' \
 		> vnroff.c)
-	@(cd ${WRKDIR} && ${GZCAT} ${DISTDIR}/vnroff.1.Z \
+	@(cd ${WRKSRC} && ${GZCAT} ${DISTDIR}/vnroff.1.Z \
 		| ${SED} -e '1,/Status:/d' \
 		| ${SED} -e '1,1d' \
 		| ${TR} -d '\01' \

@@ -10,6 +10,8 @@ MASTER_SITES=	SF/kbedic/CBE%20Dictionary/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English-to-Bulgarian and Bulgarian-to-English dictionary
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${DICT_DIR}/${DICT_CHECK}:${PORTSDIR}/textproc/bedic-data

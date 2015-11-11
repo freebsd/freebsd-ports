@@ -5,9 +5,11 @@ PORTNAME=	jrosetta
 PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	http://maven.artenum.com/content/groups/public/com/artenum/${PORTNAME}/${PORTVERSION}/:source \
-		http://maven.artenum.com/content/groups/public/com/artenum/${PORTNAME}/${PORTNAME}-api/${PORTVERSION}/:api \
+MASTER_SITES=	http://maven.artenum.com/content/groups/public/com/artenum/${PORTNAME}/${PORTNAME}-api/${PORTVERSION}/:api \
 		http://maven.artenum.com/content/groups/public/com/artenum/${PORTNAME}/${PORTNAME}-engine/${PORTVERSION}/:engine
+DISTFILES=	${PORTNAME}-api-${PORTVERSION}.jar:api \
+		${PORTNAME}-engine-${PORTVERSION}.jar:engine
+EXTRACT_ONLY=	#
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	API for building a graphical console in Swing
@@ -15,48 +17,12 @@ COMMENT=	API for building a graphical console in Swing
 USES=		zip
 USE_JAVA=	yes
 JAVA_RUN=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/jrosetta-api.jar \
 		%%JAVAJARDIR%%/jrosetta-engine.jar
 
-OPTIONS_DEFINE=	COMPILE
-COMPILE_DESC=	Download and compile source instead of using provided binaries
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCOMPILE}
-DISTFILES=	${DISTNAME}-sources.jar:source
-
-BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven3
-JAVA_BUILD=	yes
-
-MANUAL_PACKAGE_BUILD=	maven fetches files during build target
-
-OUTPUT=		${WRKDIR}/m2/com/artenum/jrosetta
-.else
-DISTFILES=	${PORTNAME}-api-${PORTVERSION}.jar:api \
-		${PORTNAME}-engine-${PORTVERSION}.jar:engine
-EXTRACT_ONLY=
-
-NO_BUILD=	yes
-NO_INSTALL=	yes
-.endif
-
-post-patch-COMPILE-on:
-	${MKDIR} ${WRKDIR}/m2
-	${CP} ${FILESDIR}/settings.xml ${WRKDIR}
-	${REINPLACE_CMD} -e "s|WORK|${WRKDIR}|" ${WRKDIR}/settings.xml
-
-do-build-COMPILE-on:
-	(cd ${WRKSRC} && ${LOCALBASE}/bin/mvn -gs "${WRKDIR}/settings.xml" clean install)
-
-do-install-COMPILE-on:
-	${INSTALL_DATA} ${OUTPUT}/jrosetta-api/${PORTVERSION}/jrosetta-api-${PORTVERSION}.jar \
-		${STAGEDIR}${JAVAJARDIR}/jrosetta-api.jar
-	${INSTALL_DATA} ${OUTPUT}/jrosetta-engine/${PORTVERSION}/jrosetta-engine-${PORTVERSION}.jar \
-		${STAGEDIR}${JAVAJARDIR}/jrosetta-engine.jar
-
-do-install-COMPILE-off:
+do-install:
 	${INSTALL_DATA} ${DISTDIR}/jrosetta-api-${PORTVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/jrosetta-api.jar
 	${INSTALL_DATA} ${DISTDIR}/jrosetta-engine-${PORTVERSION}.jar \

@@ -10,6 +10,8 @@ MASTER_SITES=	http://public.perforce.com/public/perforce/utils/c4/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS-like Frontend to Perforce
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	c4
 

@@ -25,7 +25,7 @@ USES=		tar:bzip2
 NO_WRKSUBDIR=		yes
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=	-p
-EXTRACT_AFTER_ARGS=	${WRKDIR}
+EXTRACT_AFTER_ARGS=	${WRKSRC}
 PLIST_SUB+=		SKKDIR=${SKKDIR}
 .for type in ${SKK_JISYO_TYPE}
 DISTFILES+=		SKK-JISYO.${type}.${PORTVERSION}.bz2
@@ -40,7 +40,7 @@ NO_BUILD=		yes
 .endif
 
 post-extract:
-	@(cd ${WRKDIR}; ${BZIP2_CMD} -d *.bz2)
+	@(cd ${WRKSRC}; ${BZIP2_CMD} -d *.bz2)
 
 .if defined(WITH_SKKJISYO_DELCOMMENTS)
 # Strip comments in transtation candidates list.
@@ -50,7 +50,7 @@ post-extract:
 do-patch:
 .for type in ${SKK_JISYO_TYPE}
 	${REINPLACE_CMD} -e '/^[^;]/s,;[^/]*/,/,g' -e '/^>/d' \
-		${WRKDIR}/SKK-JISYO.${type}.${PORTVERSION}
+		${WRKSRC}/SKK-JISYO.${type}.${PORTVERSION}
 .endfor
 .endif
 
@@ -68,9 +68,9 @@ do-build:
 		END { \
 			print ""; \
 		}' \
-		< ${WRKDIR}/SKK-JISYO.${type}.${PORTVERSION} | \
+		< ${WRKSRC}/SKK-JISYO.${type}.${PORTVERSION} | \
 	${LOCALBASE}/bin/cdb -c -t - \
-		${WRKDIR}/SKK-JISYO.${type}.${PORTVERSION}${CDBSUFFIX}
+		${WRKSRC}/SKK-JISYO.${type}.${PORTVERSION}${CDBSUFFIX}
 .endfor
 .endif
 

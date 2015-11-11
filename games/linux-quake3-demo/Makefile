@@ -30,8 +30,7 @@ SUB_FILES=	q3demo
 OPTIONS_DEFINE=	DOCS
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && ${TAIL} +165 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+	@cd ${WRKSRC} && ${TAIL} +165 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} zxf -
 
 do-install:

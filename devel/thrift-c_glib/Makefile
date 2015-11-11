@@ -12,6 +12,8 @@ DISTNAME=	thrift-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C glib interface to Thrift
 
+BROKEN=		unfetchable
+
 PKGNAMESUFFIX=	-c_glib
 
 BUILDIR=	${WRKDIR}/${DISTNAME}/lib/c_glib

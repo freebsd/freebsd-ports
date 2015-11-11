@@ -11,6 +11,8 @@ DISTFILES=	${PORTNAME}.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Block action game
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/xdeblo_v1.0
 
 USES=		imake:noman

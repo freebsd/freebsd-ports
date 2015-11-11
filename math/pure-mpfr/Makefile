@@ -11,6 +11,8 @@ DIST_SUBDIR=	pure
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiprecision floats for Pure
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 

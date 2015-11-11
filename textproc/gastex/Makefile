@@ -13,6 +13,8 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphs and Automata Simplified in TeX
 
+BROKEN=		unfetchable
+
 USE_TEX=	latex
 NO_BUILD=	yes
 

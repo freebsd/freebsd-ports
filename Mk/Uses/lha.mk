@@ -16,7 +16,7 @@ IGNORE=	Incorrect 'USES+=lha:${lha_ARGS}' expecting 'USES+=lha'
 
 EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 EXTRACT_CMD?=		${LHA_CMD}
-EXTRACT_BEFORE_ARGS?=	xfpw=${WRKDIR}
+EXTRACT_BEFORE_ARGS?=	xfpw=${EXTRACT_WRKDIR}
 EXTRACT_AFTER_ARGS?=
 
 .endif

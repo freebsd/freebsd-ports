@@ -25,16 +25,16 @@ SCRIPTS=	jarnal.sh jarnalannotate.sh jarnal-open-file.sh
 LIBFILES=	lbouncy_license.html lib-ver.txt jarnal-readme.txt
 
 pre-configure:
-	${MV} ${WRKDIR}/lib/readme.txt ${WRKDIR}/lib/jarnal-readme.txt
+	${MV} ${WRKSRC}/lib/readme.txt ${WRKSRC}/lib/jarnal-readme.txt
 	${REINPLACE_CMD} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|'	\
-		-e 's|%%DATADIR%%|${DATADIR}|' ${SCRIPTS:S|^|${WRKDIR}/|}
+		-e 's|%%DATADIR%%|${DATADIR}|' ${SCRIPTS:S|^|${WRKSRC}/|}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/lib ${STAGEDIR}${DATADIR}/templates
-	${INSTALL_DATA} ${PORTNAME:S|^|${WRKDIR}/|:S|$|.jar|} ${STAGEDIR}${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKDIR}/lib/*.jar ${STAGEDIR}${JAVAJARDIR}/lib/
-	${INSTALL_DATA} ${LIBFILES:S|^|${WRKDIR}/lib/|} ${STAGEDIR}${JAVAJARDIR}/lib/
-	${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKDIR}/|} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKDIR}/templates/* ${STAGEDIR}${DATADIR}/templates/
+	${INSTALL_DATA} ${PORTNAME:S|^|${WRKSRC}/|:S|$|.jar|} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${STAGEDIR}${JAVAJARDIR}/lib/
+	${INSTALL_DATA} ${LIBFILES:S|^|${WRKSRC}/lib/|} ${STAGEDIR}${JAVAJARDIR}/lib/
+	${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/templates/* ${STAGEDIR}${DATADIR}/templates/
 
 .include <bsd.port.mk>

@@ -25,15 +25,15 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	sbin/storcli
 PKGMESSAGE=	${WRKDIR}/pkg-message
-BINSRC=		${WRKDIR}/storcli_all_os/FreeBSD
+BINSRC=		${WRKSRC}/storcli_all_os/FreeBSD
 FETCH_AFTER_ARGS=-v
 
 post-extract:
-	@${TAR} xf ${WRKDIR}/storcli_all_os.zip -C${WRKSRC}
+	@${TAR} xf ${WRKSRC}/storcli_all_os.zip -C${WRKSRC}
 	@${TAR} xf ${BINSRC}/storcli${ARCH:S/i386//:S/amd64/64/}.tar -C${WRKSRC}
 	@${REINPLACE_CMD} 's#\(StorCli\).*StorCli64#\1#'\
 		${BINSRC}/FreeBSD_readme.txt
-	@${FMT} 75 79 ${BINSRC}/FreeBSD_readme.txt > ${WRKDIR}/pkg-message
+	@${FMT} 75 79 ${BINSRC}/FreeBSD_readme.txt > ${WRKSRC}/pkg-message
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/storcli${ARCH:S/i386//:S/amd64/64/}\

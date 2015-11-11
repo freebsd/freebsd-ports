@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for making a GIF Animation
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/gifmerge
 

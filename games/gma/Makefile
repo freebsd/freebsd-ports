@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.student.nada.kth.se/~d92-jwa/code/gma/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go-moku game which learns playing the game from studying its opponent
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # (or later)
 
 GNU_CONFIGURE=	yes

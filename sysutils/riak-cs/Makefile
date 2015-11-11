@@ -2,19 +2,24 @@
 
 PORTNAME=	riak-cs
 PORTVERSION=	2.1.0
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/riak-cs/${PORTVERSION:R}/${PORTVERSION}/ \
-	http://downloads.basho.com.s3.amazonaws.com/riak-cs/${PORTVERSION:R}/${PORTVERSION}/
+		http://downloads.basho.com.s3.amazonaws.com/riak-cs/${PORTVERSION:R}/${PORTVERSION}/
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Open source, distributed, S3 interface to Riak KV
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/riak-erlang/bin/erlc:${PORTSDIR}/lang/erlang-riak
 
-USES=		gmake readline
-USE_RC_SUBR=	riak-cs
+USES=		gmake readline shebangfix
+SHEBANG_FILES=	deps/eper/priv/bin/dtop \
+		deps/eper/priv/bin/ntop \
+		deps/eper/priv/bin/redbug
+USE_RC_SUBR=	riak_cs
 
 USERS=		riakcs
 GROUPS=		riak
@@ -44,10 +49,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${RIAKCS_CONFDIR}
 	${MKDIR} ${STAGEDIR}${RIAKCS_DBDIR}
 	${MKDIR} ${STAGEDIR}${RIAKCS_LOGDIR}
-	${INSTALL_DATA} ${WRKSRC}/rel/riak-cs/etc/riak-cs.conf ${STAGEDIR}${RIAKCS_CONFDIR}/riak-cs.conf
-	${INSTALL_DATA} ${WRKSRC}/rel/riak-cs/etc/advanced.config ${STAGEDIR}${RIAKCS_CONFDIR}/advanced.config
-	${INSTALL_DATA} ${WRKSRC}/rel/riak-cs/etc/cert.pem ${STAGEDIR}${RIAKCS_CONFDIR}/cert.pem
-	${INSTALL_DATA} ${WRKSRC}/rel/riak-cs/etc/key.pem ${STAGEDIR}${RIAKCS_CONFDIR}/key.pem
+	${INSTALL_DATA} ${WRKSRC}/rel/riak-cs/etc/riak-cs.conf ${STAGEDIR}${RIAKCS_CONFDIR}/riak-cs.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/rel/riak-cs/etc/advanced.config ${STAGEDIR}${RIAKCS_CONFDIR}/advanced.config.sample
+	${INSTALL_DATA} ${WRKSRC}/rel/riak-cs/etc/cert.pem ${STAGEDIR}${RIAKCS_CONFDIR}/cert.pem.sample
+	${INSTALL_DATA} ${WRKSRC}/rel/riak-cs/etc/key.pem ${STAGEDIR}${RIAKCS_CONFDIR}/key.pem.sample
 	(cd ${WRKSRC}/rel/riak-cs/lib/ && ${COPYTREE_BIN} . ${STAGEDIR}${RIAKCS_LIBDIR})
 	(cd ${WRKSRC}/rel/riak-cs/bin/ && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/sbin/)
 	(cd ${WRKSRC}/rel/riak-cs/lib/basho-patches && ${COPYTREE_SHARE} . ${STAGEDIR}${RIAKCS_LIBDIR}/basho-patches)

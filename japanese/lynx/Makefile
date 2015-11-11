@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console WWW client (browser) with multi-byte encoding support
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 VERSION=	2.8.7

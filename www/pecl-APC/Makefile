@@ -16,6 +16,8 @@ COMMENT=	Alternative PHP Cache
 
 LICENSE=	PHP301
 
+DEPRECATED=	Unmaintained by upstream and not work for PHP 5.5+
+
 OPTIONS_DEFINE=	DOCS FILEHITS IPC SEMAPHORES SPINLOCKS
 FILEHITS_DESC=	Per request cache info
 IPC_DESC=	IPC shm memory support (default: mmap)

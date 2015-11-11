@@ -58,6 +58,468 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="71af4ded-8864-11e5-af1b-001999f8d30b">
+    <topic>owncloudclient -- Improper validation of certificates when using self-signed certificates</topic>
+    <affects>
+      <package>
+	<name>owncloudclient</name>
+	<range><lt>2.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>owncloud.org reports:</p>
+	<blockquote cite="https://owncloud.org/security/advisory/?id=oc-sa-2015-016">
+	  <p>The ownCloud Desktop Client was vulnerable against MITM attacks until version 2.0.0 in combination with self-signed certificates.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://owncloud.org/security/advisory/?id=oc-sa-2015-016</url>
+      <cvename>CVE-2015-7298</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-21</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c0e76d33-8821-11e5-ab94-002590263bf5">
+    <topic>xen-tools -- populate-on-demand balloon size inaccuracy can crash guests</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.4</ge><lt>4.5.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-153.html">
+	  <p>Guests configured with PoD might be unstable, especially under
+	    load. In an affected guest, an unprivileged guest user might be
+	    able to cause a guest crash, perhaps simply by applying load so
+	    as to cause heavy memory pressure within the guest.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7972</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-153.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e4848ca4-8820-11e5-ab94-002590263bf5">
+    <topic>xen-kernel -- some pmu and profiling hypercalls log without rate limiting</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>3.2</ge><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-152.html">
+	  <p>HYPERCALL_xenoprof_op and HYPERVISOR_xenpmu_op log some errors and
+	    attempts at invalid operations. These log messages are not
+	    rate-limited, even though they can be triggered by guests.</p>
+	  <p>A malicious guest could cause repeated logging to the hypervisor
+	    console, leading to a Denial of Service attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7971</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-152.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e3792855-881f-11e5-ab94-002590263bf5">
+    <topic>xen-kernel -- leak of per-domain profiling-related vcpu pointer array</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.0</ge><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-151.html">
+	  <p>A domain's xenoprofile state contains an array of per-vcpu
+	    information... This array is leaked on domain teardown. This memory
+	    leak could -- over time -- exhaust the host's memory.</p>
+	  <p>The following parties can mount a denial of service attack
+	    affecting the whole system:</p>
+	  <ul>
+	    <li>A malicious guest administrator via XENOPROF_get_buffer.</li>
+	    <li>A domain given suitable privilege over another domain via
+	       XENOPROF_set_passive (this would usually be a domain being
+	       used to profile another domain, eg with the xenoprof tool).</li>
+	  </ul>
+	  <p>The ability to also restart or create suitable domains is also
+	    required to fully exploit the issue. Without this the leak is
+	    limited to a small multiple of the maximum number of vcpus for the
+	    domain.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7969</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-151.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83350009-881e-11e5-ab94-002590263bf5">
+    <topic>xen-kernel -- Long latency populate-on-demand operation is not preemptible</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>3.4</ge><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-150.html">
+	  <p>When running an HVM domain in Populate-on-Demand mode, Xen would
+	    sometimes search the domain for memory to reclaim, in response to
+	    demands for population of other pages in the same domain. This
+	    search runs without preemption.  The guest can, by suitable
+	    arrangement of its memory contents, create a situation where this
+	    search is a time-consuming linear scan of the guest's address
+	    space.</p>
+	  <p>A malicious HVM guest administrator can cause a denial of service.
+	    Specifically, prevent use of a physical CPU for a significant
+	    period.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7970</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-150.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fc1f8795-881d-11e5-ab94-002590263bf5">
+    <topic>xen-kernel -- leak of main per-domain vcpu pointer array</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-149.html">
+	  <p>A domain's primary array of vcpu pointers can be allocated by a
+	    toolstack exactly once in the lifetime of a domain via the
+	    XEN_DOMCTL_max_vcpus hypercall. This array is leaked on domain
+	    teardown. This memory leak could -- over time -- exhaust the host's
+	    memory.</p>
+	  <p>A domain given partial management control via XEN_DOMCTL_max_vcpus
+	    can mount a denial of service attack affecting the whole system. The
+	    ability to also restart or create suitable domains is also required
+	    to fully exploit the issue.  Without this the leak is limited to a
+	    small multiple of the maximum number of vcpus for the domain. The
+	    maximum leak is 64kbytes per domain (re)boot (less on ARM).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7969</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-149.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3d9f6260-881d-11e5-ab94-002590263bf5">
+    <topic>xen-kernel -- Uncontrolled creation of large page mappings by PV guests</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>3.4</ge><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-148.html">
+	  <p>The code to validate level 2 page table entries is bypassed when
+	    certain conditions are satisfied. This means that a PV guest can
+	    create writeable mappings using super page mappings. Such writeable
+	    mappings can violate Xen intended invariants for pages which Xen is
+	    supposed to keep read-only. This is possible even if the
+	    "allowsuperpage" command line option is not used.</p>
+	  <p>Malicious PV guest administrators can escalate privilege so as to
+	    control the whole system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7835</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-148.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="301b04d7-881c-11e5-ab94-002590263bf5">
+    <topic>xen-tools -- libxl fails to honour readonly flag on disks with qemu-xen</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>4.1</ge><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-142.html">
+	  <p>Callers of libxl can specify that a disk should be read-only to the
+	    guest. However, there is no code in libxl to pass this information
+	    to qemu-xen (the upstream-based qemu); and indeed there is no way in
+	    qemu to make a disk read-only.</p>
+	  <p>The vulnerability is exploitable only via devices emulated by the
+	    device model, not the parallel PV devices for supporting PVHVM.
+	    Normally the PVHVM device unplug protocol renders the emulated
+	    devices inaccessible early in boot.</p>
+	  <p>Malicious guest administrators or (in some situations) users may be
+	    able to write to supposedly read-only disk images.</p>
+	  <p>CDROM devices (that is, devices specified to be presented to the
+	    guest as CDROMs, regardless of the nature of the backing storage on
+	    the host) are not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7311</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-142.html</url>
+    </references>
+    <dates>
+      <discovery>2015-09-22</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2f7f4db2-8819-11e5-ab94-002590263bf5">
+    <topic>p5-HTML-Scrubber -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>p5-HTML-Scrubber</name>
+	<range><lt>0.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5667">
+	  <p>Cross-site scripting (XSS) vulnerability in the HTML-Scrubber
+	    module before 0.15 for Perl, when the comment feature is enabled,
+	    allows remote attackers to inject arbitrary web script or HTML via
+	    a crafted comment.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5667</cvename>
+      <url>https://metacpan.org/release/HTML-Scrubber</url>
+      <url>http://jvndb.jvn.jp/jvndb/JVNDB-2015-000171</url>
+      <url>http://jvn.jp/en/jp/JVN53973084/index.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-10</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6ca7eddd-d436-486a-b169-b948436bcf14">
+    <topic>libvpx -- buffer overflow in vp9_init_context_buffers</topic>
+    <affects>
+      <package>
+	<name>libvpx</name>
+	<range><lt>1.4.0.488_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/security/advisories/mfsa2015-101/">
+	  <p>Security researcher Khalil Zhani reported that a
+	    maliciously crafted vp9 format video could be used to
+	    trigger a buffer overflow while parsing the file. This leads
+	    to a potentially exploitable crash due to a flaw in the
+	    libvpx library.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4506</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-101/</url>
+    </references>
+    <dates>
+      <discovery>2015-09-22</discovery>
+      <entry>2015-11-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="56665ccb-8723-11e5-9b13-14dae9d210b8">
+    <topic>powerdns -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><ge>3.4.4</ge><lt>3.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS reports:</p>
+	<blockquote cite="https://doc.powerdns.com/md/security/powerdns-advisory-2015-03/">
+	  <p>A bug was found using afl-fuzz in our packet parsing code.
+	    This bug, when exploited, causes an assertion error and consequent
+	    termination of the the pdns_server process, causing a Denial of Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://doc.powerdns.com/md/security/powerdns-advisory-2015-03/</url>
+      <cvename>CVE-2015-5311</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-03</discovery>
+      <entry>2015-11-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0cb0afd9-86b8-11e5-bf60-080027ef73ec">
+    <topic>PuTTY -- memory corruption in terminal emulator's erase character handling</topic>
+    <affects>
+      <package>
+	<name>putty</name>
+	<range><ge>0.54</ge><lt>0.66</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ben Harris reports:</p>
+	<blockquote cite="http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-ech-overflow.html">
+	  <p>Versions of PuTTY and pterm between 0.54 and 0.65 inclusive have a
+	    potentially memory-corrupting integer overflow in the handling of
+	    the ECH (erase characters) control sequence in the terminal
+	    emulator.</p>
+	  <p>To exploit a vulnerability in the terminal emulator, an attacker
+	    must be able to insert a carefully crafted escape sequence into the
+	    terminal stream. For a PuTTY SSH session, this must be before
+	    encryption, so the attacker likely needs access to the server you're
+	    connecting to. For instance, an attacker on a multi-user machine
+	    that you connect to could trick you into running cat on a file they
+	    control containing a malicious escape sequence. (Unix write(1) is
+	    not a vector for this, if implemented correctly.)</p>
+	  <p>Only PuTTY, PuTTYtel, and pterm are affected; other PuTTY tools do
+	    not include the terminal emulator, so cannot be exploited this
+	    way.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-ech-overflow.html</url>
+      <cvename>CVE-2015-5309</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-06</discovery>
+      <entry>2015-11-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="18b3c61b-83de-11e5-905b-ac9e174be3af">
+    <topic>OpenOffice 4.1.1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache-openoffice</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>apache-openoffice-devel</name>
+	<range><lt>4.2.1705368,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache OpenOffice Project reports:</p>
+	<blockquote cite="http://www.openoffice.org/security/cves/CVE-2015-4551.html">
+	  <p>A vulnerability in OpenOffice settings of OpenDocument Format
+	    files and templates allows silent access to files that are
+	    readable from an user account, over-riding the user's default
+	    configuration settings. Once these files are imported into a
+	    maliciously-crafted document, the data can be silently hidden
+	    in the document and possibly exported to an external party
+	    without being observed. </p>
+	</blockquote>
+	<p>The Apache OpenOffice Project reports:</p>
+	<blockquote cite="http://www.openoffice.org/security/cves/CVE-2015-5212.html">
+	  <p>A crafted ODF document can be used to create a buffer that is
+	    too small for the amount of data loaded into it, allowing an
+	    attacker to cause denial of service (memory corruption and
+	    application crash) and possible execution of arbitrary code.</p>
+	</blockquote>
+	<p>The Apache OpenOffice Project reports:</p>
+	<blockquote cite="http://www.openoffice.org/security/cves/CVE-2015-5213.html">
+	  <p>A crafted Microsoft Word DOC file can be used to specify a
+	    document buffer that is too small for the amount of data
+	    provided for it. Failure to detect the discrepancy allows an
+	    attacker to cause denial of service (memory corruption and
+	    application crash) and possible execution of arbitrary code.</p>
+	</blockquote>
+	<p>The Apache OpenOffice Project reports:</p>
+	<blockquote cite="http://www.openoffice.org/security/cves/CVE-2015-5214.html">
+	  <p>A crafted Microsoft Word DOC can contain invalid bookmark
+	    positions leading to memory corruption when the document is
+	    loaded or bookmarks are manipulated. The defect allows an
+	    attacker to cause denial of service (memory corruption and
+	    application crash) and possible execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4551</cvename>
+      <url>http://www.openoffice.org/security/cves/CVE-2015-4551.html</url>
+      <cvename>CVE-2015-5212</cvename>
+      <url>http://www.openoffice.org/security/cves/CVE-2015-5212.html</url>
+      <cvename>CVE-2015-5213</cvename>
+      <url>http://www.openoffice.org/security/cves/CVE-2015-5213.html</url>
+      <cvename>CVE-2015-5214</cvename>
+      <url>http://www.openoffice.org/security/cves/CVE-2015-5214.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-04</discovery>
+      <entry>2015-11-05</entry>
+      <modified>2015-11-05</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="698403a7-803d-11e5-ab94-002590263bf5">
     <topic>codeigniter -- multiple vulnerabilities</topic>
     <affects>
@@ -146,15 +608,17 @@ Notes:
     <references>
       <url>https://www.jwz.org/xscreensaver/changelog.html</url>
       <url>https://bugzilla.redhat.com/show_bug.cgi?id=1274452</url>
+      <cvename>CVE-2015-8025</cvename>
     </references>
     <dates>
       <discovery>2015-10-24</discovery>
       <entry>2015-10-27</entry>
+      <modified>2015-11-04</modified>
     </dates>
   </vuln>
 
   <vuln vid="2a4a112a-7c1b-11e5-bd77-0800275369e2">
-    <topic>lldpd -- Buffer overflow</topic>
+    <topic>lldpd -- Buffer overflow/Denial of service</topic>
     <affects>
       <package>
 	<name>lldpd</name>
@@ -168,14 +632,22 @@ Notes:
 	  <p>A buffer overflow may allow arbitrary code execution
 	    only if hardening was disabled.</p>
 	</blockquote>
+	<blockquote cite="https://github.com/vincentbernat/lldpd/commit/793526f8884455f43daecd0a2c46772388417a00">
+	  <p>Malformed packets should not make lldpd crash. Ensure we can
+	    handle them by not using assert() in this part.</p>
+	</blockquote>
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-8011</cvename>
+      <cvename>CVE-2015-8012</cvename>
       <url>https://github.com/vincentbernat/lldpd/raw/0.7.19/NEWS</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/30/2</url>
     </references>
     <dates>
       <discovery>2015-10-04</discovery>
       <entry>2015-10-26</entry>
+      <modified>2015-11-10</modified>
     </dates>
   </vuln>
 
@@ -7214,11 +7686,13 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-8041</cvename>
       <url>http://w1.fi/security/2015-5/incomplete-wps-and-p2p-nfc-ndef-record-payload-length-validation.txt</url>
     </references>
     <dates>
       <discovery>2015-07-08</discovery>
       <entry>2015-07-09</entry>
+      <modified>2015-11-10</modified>
     </dates>
   </vuln>
 

@@ -9,6 +9,8 @@ MASTER_SITES=	http://openpgp.nominet.org.uk/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenPGP SDK
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	libcunit.so:${PORTSDIR}/devel/cunit
 

@@ -14,6 +14,9 @@ DIST_SUBDIR=	python
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	High-level Python Web Framework (1.4.x LTS)
 
+DEPRECATED=	Django 1.4 extended support ended on 2015-10-01
+EXPIRATION_DATE=	2015-12-09
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

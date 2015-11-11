@@ -22,11 +22,11 @@ LANGDIR=	${WWWDIR}/template/ja
 
 do-install:
 	@-${MKDIR} ${STAGEDIR}${LANGDIR}/default
-	(cd ${WRKDIR}/default && ${COPYTREE_SHARE} . ${STAGEDIR}${LANGDIR}/default)
+	(cd ${WRKSRC}/default && ${COPYTREE_SHARE} . ${STAGEDIR}${LANGDIR}/default)
 
 # Maintainer
 plist: patch
-	@( cd ${WRKDIR}/ && ${FIND} default -type f | ${AWK} '{print "%%WWWDIR%%/template/ja/"$$1}' | ${SORT} > ${PLIST}.new )
+	@( cd ${WRKSRC}/ && ${FIND} default -type f | ${AWK} '{print "%%WWWDIR%%/template/ja/"$$1}' | ${SORT} > ${PLIST}.new )
 	@if ${DIFF} -u ${PLIST} ${PLIST}.new ; then \
 		${ECHO_MSG} no pkg-plist changes; \
 		${RM} ${PLIST}.new ; \

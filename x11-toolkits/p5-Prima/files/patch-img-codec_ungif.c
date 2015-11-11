@@ -1,5 +1,5 @@
---- img/codec_ungif.c	2011-07-25 21:52:32.000000000 +0400
-+++ img/codec_ungif.c	2012-06-08 22:18:32.767947342 +0400
+--- img/codec_ungif.c.orig	2011-07-25 17:52:32 UTC
++++ img/codec_ungif.c
 @@ -37,6 +37,10 @@
  extern "C" {
  #endif

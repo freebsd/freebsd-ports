@@ -19,8 +19,7 @@ PLIST_FILES=	%%Q2DIR%%/${PORTNAME}/game.so
 PLIST_DIRS=	%%Q2DIR%%/${PORTNAME}
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && uncompress -c ${DISTDIR}/${DISTFILES} | \
+	@cd ${WRKSRC} && uncompress -c ${DISTDIR}/${DISTFILES} | \
 		${TAIL} +454 | ${SH}
 
 post-extract:

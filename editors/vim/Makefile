@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	7.4.900
+PORTVERSION=	7.4.909
 DISTVERSIONPREFIX=	v
 CATEGORIES?=	editors
 
@@ -71,8 +71,8 @@ ATHENA_USE=		XORG=xaw
 CONSOLE_MAKE_ARGS=	CONF_OPT_GUI="--enable-gui=no --without-x"
 CONSOLE_PLIST_SUB=	GUI="@comment "
 CSCOPE_MAKE_ARGS=	CONF_OPT_CSCOPE=--enable-cscope
-CSCOPE_RUN_DEPENDS=	${LOCALBASE}/bin/cscope:${PORTSDIR}/devel/cscope
-EXUBERANT_CTAGS_RUN_DEPENDS=	${LOCALBASE}/bin/exctags:${PORTSDIR}/devel/ctags
+CSCOPE_RUN_DEPENDS=	cscope:${PORTSDIR}/devel/cscope
+EXUBERANT_CTAGS_RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 GNOME_MAKE_ARGS=	CONF_OPT_GUI=--enable-gui=gnome2 X_LIBS="$(X_LIBS) -lX11 -lXpm -lXt"
 GNOME_PLIST_SUB=	GUI=""
 GNOME_USE=		GNOME=libgnomeui XORG=glproto,xpm,xt

@@ -19,8 +19,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_check_compile_flag.m4:${PORTSDIR}/devel/autoconf-archive
 
 USES=		autoreconf gmake libtool python
-WRKSRC=		${WRKDIR}/${DISTNAME}
-NO_WRKSUBDIR=	yes
 PORTDOCS=	*
 FETCH_ENV+=	HTTP_REFERER=
 GNU_CONFIGURE=	yes

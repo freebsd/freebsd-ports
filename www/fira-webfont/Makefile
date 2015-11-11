@@ -51,7 +51,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 .for b in index.html ${PORTNAME:S|$|.css|}
 	${INSTALL_DATA} \
-		${WRKDIR}/${DISTNAME}Boilerplate${PORTVERSION:S|.||}/${b} \
+		${WRKSRC}/${DISTNAME}Boilerplate${PORTVERSION:S|.||}/${b} \
 		${STAGEDIR}${WWWDIR}
 .endfor
 .for w in eot ttf woff woff2
@@ -69,7 +69,7 @@ do-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 . for e in ${EXAMPLES_DISTFILES:R:C|:[^:]+$||}
-	(cd ${WRKDIR}/${e} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC}/${e} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 . endfor
 .endif
 

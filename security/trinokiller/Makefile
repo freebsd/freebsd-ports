@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remotely kill trino nodes
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	sbin/trinokiller
 
 do-extract:

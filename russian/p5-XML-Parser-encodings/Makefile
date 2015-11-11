@@ -32,18 +32,18 @@ post-extract:
 .endfor
 
 do-configure:
-	@${CP} ${WRKSRC}/iconv/cp866.txt ${WRKDIR}
-	@${CP} ${WRKSRC}/iconv-extra/windows-1251.txt ${WRKDIR}/cp1251.txt
-	@${CP} ${WRKSRC}/iconv-extra/mac-cyrillic.txt ${WRKDIR}
-	@${PERL} -pi -e 's/\r/\n/gm;' ${WRKDIR}/mac-cyrillic.txt
+	@${CP} ${WRKSRC}/iconv/cp866.txt ${WRKSRC}
+	@${CP} ${WRKSRC}/iconv-extra/windows-1251.txt ${WRKSRC}/cp1251.txt
+	@${CP} ${WRKSRC}/iconv-extra/mac-cyrillic.txt ${WRKSRC}
+	@${PERL} -pi -e 's/\r/\n/gm;' ${WRKSRC}/mac-cyrillic.txt
 
 do-build:
 .for ENC in ${RUSSIANENC}
-	@${LOCALBASE}/bin/make_encmap ${ENC} ${WRKDIR}/${ENC}.txt | \
+	@${LOCALBASE}/bin/make_encmap ${ENC} ${WRKSRC}/${ENC}.txt | \
 	${PERL} -pi -e "s/(?<=^<encmap name='${ENC}')()(?=>)/ expat='yes'/;" \
-		>${WRKDIR}/${ENC}.xml
+		>${WRKSRC}/${ENC}.xml
 	@${LOCALBASE}/bin/compile_encoding \
-		-o ${WRKDIR}/${ENC}.enc ${WRKDIR}/${ENC}.xml
+		-o ${WRKSRC}/${ENC}.enc ${WRKSRC}/${ENC}.xml
 .endfor
 
 do-install:

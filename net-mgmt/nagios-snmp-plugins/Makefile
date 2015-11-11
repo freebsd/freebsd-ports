@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.softwareforge.de/releases/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional SNMP plugins for Nagios
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

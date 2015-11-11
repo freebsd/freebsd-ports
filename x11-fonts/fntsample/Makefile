@@ -15,9 +15,10 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Show Unicode coverage of a font
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gawk:${PORTSDIR}/lang/gawk
-RUN_DEPENDS=	${LOCALBASE}/bin/pdfoutline:${PORTSDIR}/textproc/pdfoutline
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+RUN_DEPENDS=	pdfoutline:${PORTSDIR}/textproc/pdfoutline
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

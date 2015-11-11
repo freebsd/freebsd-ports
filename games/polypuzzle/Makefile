@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ibiblio.org/pub/Linux/games/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tessellation puzzle game
 
+BROKEN=		unfetchable
+
 USES= 		tk:84,run tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

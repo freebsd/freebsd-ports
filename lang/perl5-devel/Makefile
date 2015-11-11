@@ -29,7 +29,7 @@ TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER}
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.23.4-68-g0ad694a
+GH_TAGNAME=	v5.23.4-84-g28aaeb3
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE
@@ -66,7 +66,6 @@ PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 # For the "release" Perl ports, this should be:
 #PORTSCOUT=	limit:^${PERL_VER}.
 
-# Remember to update Mk/Uses/perl5.mk too.
 .include "version.mk"
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach

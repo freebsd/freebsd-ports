@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to inflate/deflate DateTime for DBIx::Skinny
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	\
 	p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
 	p5-DBIx-Skinny>=0.05:${PORTSDIR}/databases/p5-DBIx-Skinny \
@@ -20,6 +23,7 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-DBD-Mock>=0:${PORTSDIR}/databases/p5-DBD-Mock
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

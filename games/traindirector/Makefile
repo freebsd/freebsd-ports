@@ -29,6 +29,6 @@ PLIST_FILES=	bin/traindir3
 MAKEFILE=	Makefile.fc9
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/traindir3 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/traindir3 ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
