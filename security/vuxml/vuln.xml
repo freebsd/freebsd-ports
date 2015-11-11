@@ -58,6 +58,32 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="71af4ded-8864-11e5-af1b-001999f8d30b">
+    <topic>owncloudclient -- Improper validation of certificates when using self-signed certificates</topic>
+    <affects>
+      <package>
+	<name>owncloudclient</name>
+	<range><lt>2.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>owncloud.org reports:</p>
+	<blockquote cite="https://owncloud.org/security/advisory/?id=oc-sa-2015-016">
+	  <p>The ownCloud Desktop Client was vulnerable against MITM attacks until version 2.0.0 in combination with self-signed certificates.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://owncloud.org/security/advisory/?id=oc-sa-2015-016</url>
+      <cvename>CVE-2015-7298</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-21</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c0e76d33-8821-11e5-ab94-002590263bf5">
     <topic>xen-tools -- populate-on-demand balloon size inaccuracy can crash guests</topic>
     <affects>
