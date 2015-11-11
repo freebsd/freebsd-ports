@@ -3,7 +3,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	2.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.0//}-Release/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
@@ -22,14 +22,9 @@ LICENSE_FILE_IPL=	${WRKSRC}/builds/install/misc/IPLicense.txt
 LICENSE_PERMS_IDPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS?=	${PORTNAME}20-client-* \
-		${PORTNAME}21-client-* \
-		${PORTNAME}20-server-* \
-		${PORTNAME}21-server-*
-
 LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake libedit pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -79,7 +74,6 @@ IGNORE=		your system does not support sysvipc
 
 .if !defined(CLIENT_ONLY)
 # Server part stuff
-BUILD_DEPENDS=	${LOCALBASE}/lib/libedit.so:${PORTSDIR}/devel/libedit
 LIB_DEPENDS+=	libfbembed.so:${PORTSDIR}/databases/firebird25-client
 
 CONFIGURE_ARGS+=--enable-superserver
@@ -98,8 +92,6 @@ UDF_SQL=	src/extlib/ib_udf2.sql src/extlib/fbudf/fbudf.sql
 PKGINSTALL?=	${PKGDIR}/pkg-install-server
 .else
 # Client part stuff
-LIB_DEPENDS+=	libedit.so.0:${PORTSDIR}/devel/libedit
-
 ALL_TARGET=	firebird_basic libfbembed libfbclient embed_isql embed_gpre \
 		embed_gdef embed_qli extlib
 
@@ -211,11 +203,11 @@ do-install:
 post-install-DOCS-on:
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${FB_DOCS_DIRS:S!^!${STAGEDIR}${DOCSDIR}/!}
-	@${INSTALL_DATA} ${FB_DOCS_FILES:S!^!${WRKSRC}/doc/!} ${STAGEDIR}${DOCSDIR}
-	@${LN} -sf ${DOCSDIR}/README.user ${STAGEDIR}${DOCSDIR}/README
-	@${INSTALL_DATA} ${WRKSRC}/doc/sql.extensions/* ${STAGEDIR}${DOCSDIR}/sql.extensions
-	@${INSTALL_DATA} ${WRKSRC}/doc/license/* ${STAGEDIR}${DOCSDIR}/license
-	@${INSTALL_DATA} ${WRKSRC}/src/misc/upgrade/v2/* ${STAGEDIR}${DOCSDIR}/upgrade
+	${INSTALL_DATA} ${FB_DOCS_FILES:S!^!${WRKSRC}/doc/!} ${STAGEDIR}${DOCSDIR}
+	${LN} -sf ${DOCSDIR}/README.user ${STAGEDIR}${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/doc/sql.extensions/* ${STAGEDIR}${DOCSDIR}/sql.extensions
+	${INSTALL_DATA} ${WRKSRC}/doc/license/* ${STAGEDIR}${DOCSDIR}/license
+	${INSTALL_DATA} ${WRKSRC}/src/misc/upgrade/v2/* ${STAGEDIR}${DOCSDIR}/upgrade
 .endif
 
 .include <bsd.port.post.mk>
