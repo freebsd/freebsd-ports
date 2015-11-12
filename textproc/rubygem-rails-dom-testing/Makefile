@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Analyse and compare DOMs using Nokogiri
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activesupport4>=4.2.0:${PORTSDIR}/devel/rubygem-activesupport4 \
 		rubygem-nokogiri>=1.6:${PORTSDIR}/textproc/rubygem-nokogiri \
