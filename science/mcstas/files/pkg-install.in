@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PKG_PREFIX=${PKG_PREFIX:-/usr/local}
+PKG_PREFIX=${PKG_PREFIX:-%%PREFIX%%}
 
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
