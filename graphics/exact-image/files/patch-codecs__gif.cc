@@ -115,7 +115,19 @@
  	  return false;
  	}
        }
-@@ -166,7 +212,11 @@ bool GIFCodec::writeImage (std::ostream*
+@@ -155,7 +201,11 @@ int GIFCodec::readImage (std::istream* s
+   // convert colormap to our 16bit "TIFF"format
+   colorspace_de_palette (image, ColorMap->ColorCount, rmap, gmap, bmap);
+   
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++  EGifCloseFile(GifFile, NULL);
++#else
+   EGifCloseFile(GifFile);
++#endif
+ 
+   return true;
+ }
+@@ -166,7 +216,11 @@ bool GIFCodec::writeImage (std::ostream*
    GifFileType* GifFile;
    GifByteType* Ptr;
    
@@ -127,7 +139,7 @@
      {
        std::cerr << "Error preparing GIF file for writing." << std::endl;
        return false;
-@@ -175,7 +225,11 @@ bool GIFCodec::writeImage (std::ostream*
+@@ -175,7 +229,11 @@ bool GIFCodec::writeImage (std::ostream*
    int ColorMapSize = 256;
    
    // later use our own colormap generation
@@ -139,7 +151,7 @@
    if (!OutputColorMap)
      return false;
    
-@@ -203,7 +257,11 @@ bool GIFCodec::writeImage (std::ostream*
+@@ -203,7 +261,11 @@ bool GIFCodec::writeImage (std::ostream*
    }
     
    
@@ -151,7 +163,7 @@
  		     RedBuffer, GreenBuffer, BlueBuffer,
  		     OutputBuffer, OutputColorMap->Colors) == GIF_ERROR) {
      return false;
-@@ -215,7 +273,7 @@ bool GIFCodec::writeImage (std::ostream*
+@@ -215,7 +277,7 @@ bool GIFCodec::writeImage (std::ostream*
    if (EGifPutScreenDesc(GifFile, image.w, image.h,
  			ColorMapSize, 0, OutputColorMap) == GIF_ERROR ||
        EGifPutImageDesc(GifFile, 0, 0, image.w, image.h,
@@ -160,12 +172,18 @@
      {
        std::cerr << "Error writing GIF header." << std::endl;
        return false;
-@@ -232,7 +290,7 @@ bool GIFCodec::writeImage (std::ostream*
+@@ -232,9 +294,13 @@ bool GIFCodec::writeImage (std::ostream*
    }
    free (OutputBuffer);
  
 -  delete (RedBuffer); delete (GreenBuffer); delete (BlueBuffer);
 +  delete[] RedBuffer; delete[] GreenBuffer; delete[] BlueBuffer;
  
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++  EGifCloseFile(GifFile, NULL);
++#else
    EGifCloseFile(GifFile);
++#endif
    return true;
+ }
+ 
