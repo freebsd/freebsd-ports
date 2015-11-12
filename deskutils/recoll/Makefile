@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-PORTVERSION=	1.21.2
+PORTVERSION=	1.21.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 
@@ -40,14 +40,13 @@ OPTIONS_SUB=		yes
 ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 ASPELL_CONFIGURE_WITH=	aspell
 CHM_DESC=		CHM via CHMLIB
-CHM_RUN_DEPENDS=	pychm:${PORTSDIR}/textproc/pychm
+CHM_RUN_DEPENDS=	pychm>0:${PORTSDIR}/textproc/pychm
 DJVU_RUN_DEPENDS=	djvutxt:${PORTSDIR}/graphics/djvulibre
 IMAGE_DESC=		Store personal tags or textual descriptions in images
 IMAGE_RUN_DEPENDS=	exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool
 KONQUEROR_DESC=		Konqueror webarchive format with Python
-KONQUEROR_RUN_DEPENDS=	kwebkitpart:${PORTSDIR}/www/kwebkitpart
+KONQUEROR_RUN_DEPENDS=	kwebkitpart>0:${PORTSDIR}/www/kwebkitpart
 LATEX_USE=		tex=dvipsk:run
-#LATEX_RUN_DEPENDS=	detex:${PORTSDIR}/print/detex
 PDF_RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf
 PS_RUN_DEPENDS=		pstotext:${PORTSDIR}/print/pstotext
 PYTHON_USES=		python
@@ -75,7 +74,6 @@ PLIST_SUB+=	PYDISTUTILS_EGGINFO="${PYDISTUTILS_EGGINFO}"
 .if ${PORT_OPTIONS:MQT4}
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}"
-INSTALLS_ICONS=	yes
 .endif
 
 post-patch:
@@ -98,13 +96,13 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/recoll/librecoll.so.[0-9].*
-.if ${PORT_OPTIONS:MPYTHON}
+
+post-install-PYTHON-on:
 .for l in recoll rclextract
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/recoll/${l}.so
 .endfor
 	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
 		-d ${PYTHONPREFIX_SITELIBDIR} \
 		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
-.endif
 
 .include <bsd.port.mk>
