@@ -14,6 +14,8 @@ COMMENT=	Program to check the nesting of parenthesis in tcl scripts
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	 dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USES=		alias
+
 PLIST_FILES=	bin/tclCheck \
 		man/man1/tclCheck.1.gz
 PORTDOCS=	*
