@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Haml generator for Rails
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack4>=4.0.1:${PORTSDIR}/www/rubygem-actionpack4 \
 		rubygem-activesupport4>=4.0.1:${PORTSDIR}/devel/rubygem-activesupport4 \
