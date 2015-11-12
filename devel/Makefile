@@ -4025,6 +4025,7 @@
     SUBDIR += py-fsm
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
+    SUBDIR += py-functools32
     SUBDIR += py-fusefs
     SUBDIR += py-future
     SUBDIR += py-futures
