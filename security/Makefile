@@ -112,6 +112,7 @@
     SUBDIR += easy-rsa
     SUBDIR += easypg
     SUBDIR += elixir-comeonin
+    SUBDIR += elixir-comeonin_i18n
     SUBDIR += elixir-jose
     SUBDIR += engine_pkcs11
     SUBDIR += erlang-jose
