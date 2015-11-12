@@ -130,12 +130,12 @@ post-install:
 .else
 	@${MKDIR} ${STAGEDIR}/var/run/saslauthd
 .endif
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/saslauthd
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/saslauthd/${file} \
 		${STAGEDIR}${DOCSDIR}/saslauthd
 .endfor
-.endif
 
 .include <bsd.port.post.mk>
