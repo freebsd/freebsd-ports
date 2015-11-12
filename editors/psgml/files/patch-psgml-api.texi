@@ -1,6 +1,7 @@
---- psgml-api.texi.orig	Mon Nov 16 06:45:06 1998
-+++ psgml-api.texi	Sat Jan 23 21:11:18 1999
-@@ -8,10 +8,9 @@
+--- psgml-api.texi.orig	2005-03-05 16:23:40 UTC
++++ psgml-api.texi
+@@ -7,11 +7,10 @@
+ @c $Id: psgml-api.texi,v 1.2 1999/12/03 17:29:39 lenst Exp $
  
  @ifinfo
 -@format
