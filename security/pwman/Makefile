@@ -9,7 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console password management application based on gpg(me)
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 
@@ -27,7 +28,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin|${LOCALBASE}/bin|' ${WRKSRC}/src/options.c
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
