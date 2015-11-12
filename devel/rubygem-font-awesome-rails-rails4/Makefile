@@ -11,6 +11,7 @@ COMMENT=	Provides the Font-Awesome web fonts and stylesheets as a Rails engine
 
 LICENSE=	MIT OFL11
 LICENSE_COMB=	dual
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-railties4>=3.2:${PORTSDIR}/www/rubygem-railties4
 
