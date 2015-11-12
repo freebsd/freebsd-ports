@@ -1,17 +1,11 @@
 #!/bin/sh
 
-PKG_PREFIX=${PKG_PREFIX:-/usr/local}
+PKG_PREFIX=${PKG_PREFIX:-%%PREFIX%%}
 
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
     exit 1
 fi
-
-pname=${1%-*}
-pversion=${1##*-}
-
-#echo the extracted port name is $pname
-#echo the extracted port version is $pversion
 
 execs="mcstas mcformat"
 
@@ -19,7 +13,7 @@ case $2 in
      DEINSTALL)
 
 		if [ ! -f "${PKG_PREFIX}/bin" ]; then
-			echo "Deinstalling links to ${1} executables in ${PKG_PREFIX}/bin.";
+			echo "Deinstalling links to executables in ${PKG_PREFIX}/bin.";
                         for target in ${execs}; do
 				rm ${PKG_PREFIX}/bin/${target};
 			done                
