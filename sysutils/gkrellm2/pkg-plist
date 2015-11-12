@@ -8,23 +8,21 @@ libdata/pkgconfig/gkrellmd.pc
 %%CLIENT%%man/man1/gkrellm.1.gz
 man/man8/gkrellmd.8.gz
 sbin/gkrellmd
-@unexec if cmp -s %D/etc/gkrellmd.conf %D/%%EXAMPLESDIR%%/gkrellmd.conf; then rm -f %D/etc/gkrellmd.conf; fi
-%%EXAMPLESDIR%%/gkrellmd.conf
-@exec [ -f %D/etc/gkrellmd.conf ] || cp %B/%f %D/etc/gkrellmd.conf
-%%NLS%%share/locale/bg/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/da/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/de/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/es/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/it/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/gkrellm.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/gkrellm.mo
+@sample %%EXAMPLESDIR%%/gkrellmd.conf etc/gkrellmd.conf
+%%CLIENT%%%%NLS%%share/locale/bg/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/cs/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/da/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/de/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/es/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/fr/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/it/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/ja/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/nl/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/pl/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/pt_BR/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/ru/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/sl/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%%%NLS%%share/locale/sv/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%@dir libexec/gkrellm2/plugins
 @dir libexec/gkrellm2/plugins-gkrellmd
 %%CLIENT%%@dir %%DATADIR%%2/themes

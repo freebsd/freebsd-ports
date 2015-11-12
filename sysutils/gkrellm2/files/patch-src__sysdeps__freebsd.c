@@ -1,7 +1,5 @@
-Index: src/sysdeps/freebsd.c
-diff -u -p src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
---- src/sysdeps/freebsd.c.orig	2010-10-07 23:29:35.000000000 +0900
-+++ src/sysdeps/freebsd.c	2015-04-30 04:11:17.549088591 +0900
+--- src/sysdeps/freebsd.c.orig	2010-10-07 14:29:35 UTC
++++ src/sysdeps/freebsd.c
 @@ -1441,7 +1441,9 @@ get_data(int iodev, u_char command, int 
  		struct smbcmd cmd;
  
