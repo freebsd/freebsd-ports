@@ -75,11 +75,16 @@
      free(priv);
      return NULL;
    }
-@@ -301,7 +301,7 @@ static void demux_close_gif(demuxer_t* d
+@@ -300,8 +300,12 @@ static void demux_close_gif(demuxer_t* d
+ {
    gif_priv_t *priv = demuxer->priv;
    if (!priv) return;
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++  if (priv->gif && DGifCloseFile(priv->gif, NULL) == GIF_ERROR)
++#else
    if (priv->gif && DGifCloseFile(priv->gif) == GIF_ERROR)
 -    PrintGifError();
++#endif
 +    printf("%s\n", GifErrorString(GIF_ERROR));
    free(priv->refimg);
    free(priv);
