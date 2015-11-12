@@ -95,7 +95,19 @@
                      return(0);
                  }
              }
-@@ -178,7 +218,11 @@ write_gif(const char *filename, int widt
+@@ -154,7 +194,11 @@ read_gif(const char *filename, int *widt
+     
+     free(buffer);
+ 
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++    DGifCloseFile(infile, NULL);
++#else
+     DGifCloseFile(infile);
++#endif
+     return(1);
+ }
+ 
+@@ -178,7 +222,11 @@ write_gif(const char *filename, int widt
          return(0);
      }
  
@@ -107,7 +119,7 @@
  
      for (i = 0; i < width * height; i++)
      {
-@@ -187,10 +231,15 @@ write_gif(const char *filename, int widt
+@@ -187,10 +235,15 @@ write_gif(const char *filename, int widt
          blue[i]  = (GifByteType) rgb[3*i+2];
      }
    
@@ -124,7 +136,7 @@
          return(0);
      }
  
-@@ -198,24 +247,36 @@ write_gif(const char *filename, int widt
+@@ -198,24 +251,36 @@ write_gif(const char *filename, int widt
      free(green);
      free(blue);
  
@@ -166,7 +178,7 @@
          return(0);
      }
  
-@@ -224,7 +285,11 @@ write_gif(const char *filename, int widt
+@@ -224,7 +289,11 @@ write_gif(const char *filename, int widt
      {
          if (EGifPutLine(outfile, ptr, width) == GIF_ERROR)
          {
@@ -179,11 +191,16 @@
              return(0);
          }
          ptr += width;
-@@ -233,7 +298,7 @@ write_gif(const char *filename, int widt
+@@ -232,8 +301,12 @@ write_gif(const char *filename, int widt
+ 
      EGifSpew(outfile);
  
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++    if (EGifCloseFile(outfile, NULL) == GIF_ERROR) 
++#else
      if (EGifCloseFile(outfile) == GIF_ERROR) 
 -        PrintGifError();
++#endif
 +        fprintf(stderr, "Can't close GIF file %s\n", filename);
  
      free(buffer);
