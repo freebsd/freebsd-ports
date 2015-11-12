@@ -41,7 +41,7 @@
        EGifPutImageDesc(gifdrv_memmap_fd, 0, 0, x_size, y_size, 0, NULL) == GIF_ERROR)
    {
 +#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
-+    EGifCloseFile(gifdrv_memmap_fd);
++    EGifCloseFile(gifdrv_memmap_fd, NULL);
 +#else
      EGifCloseFile(gifdrv_memmap_fd);
 +#endif
