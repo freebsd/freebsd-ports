@@ -117,6 +117,7 @@ do-autoreconf:
 BUILD_DEPENDS+=		${${opt}_BUILD_DEPENDS_OFF}
 CONFIGURE_ENV+=		${${opt}_CONFIGURE_ENV_OFF}
 CONFIGURE_ARGS+=	${${opt}_CONFIGURE_OFF}
+_OPTIONS_patch+=	700:post-patch-${opt}-off
 . endif
 .endfor
 
