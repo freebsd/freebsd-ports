@@ -1,5 +1,5 @@
---- bsd/kernel.cc.orig	2013-08-23 13:40:35.000000000 +0400
-+++ bsd/kernel.cc	2014-10-03 00:35:05.000000000 +0400
+--- bsd/kernel.cc.orig	2015-09-23 13:28:14 UTC
++++ bsd/kernel.cc
 @@ -28,6 +28,7 @@
  #include <string.h>
  #include <err.h>
@@ -8,15 +8,15 @@
  #include <sysexits.h>
  #include <sys/types.h>
  #include <sys/queue.h>
-@@ -43,7 +44,6 @@
- #if defined(XOSVIEW_FREEBSD) || defined(XOSVIEW_DFBSD)
+@@ -44,7 +45,6 @@
  static const char ACPIDEV[] = "/dev/acpi";
  static const char APMDEV[] = "/dev/apm";
+ static int maxcpus = 1;
 -#include <net/if_var.h>
  #include <sys/ioctl.h>
+ #include <sys/resource.h>
  #include <dev/acpica/acpiio.h>
- #include <machine/apm_bios.h>
-@@ -115,56 +115,41 @@
+@@ -114,56 +114,41 @@ static struct nlist nlst[] =
  // this later on.  This keeps the indices within the nlist constant.
  #define DUMMY_SYM "dummy_sym"
  
@@ -83,7 +83,7 @@
  #endif
  { NULL }
  };
-@@ -337,7 +322,21 @@
+@@ -338,7 +323,21 @@ BSDGetPageStats(uint64_t *meminfo, uint6
  #else  /* HAVE_UVM */
  	struct vmmeter vm;
  #if defined(XOSVIEW_FREEBSD)
@@ -106,7 +106,7 @@
  #else  /* XOSVIEW_DFBSD */
  	struct vmstats vms;
  	size_t size = sizeof(vms);
-@@ -421,99 +420,37 @@
+@@ -468,99 +467,37 @@ BSDGetCPUTimes(uint64_t *timeArray, unsi
  int
  BSDNetInit() {
  	OpenKDIfNeeded();
@@ -118,7 +118,7 @@
  }
  
  void
- BSDGetNetInOut(unsigned long long *inbytes, unsigned long long *outbytes, const char *netIface, bool ignored) {
+ BSDGetNetInOut(uint64_t *inbytes, uint64_t *outbytes, const char *netIface, bool ignored) {
 -	char ifname[IFNAMSIZ];
 +	struct ifaddrs *ifap, *ifa;
  	*inbytes = 0;
@@ -129,16 +129,19 @@
 -	struct if_msghdr *ifm;
 -	struct if_data ifd;
 -	struct sockaddr_dl *sdl;
--
+ 
 -	if ( sysctl(mib_ifl, 6, NULL, &size, NULL, 0) < 0 )
 -		err(EX_OSERR, "BSDGetNetInOut(): sysctl 1 failed");
 -	if ( (buf = (char *)malloc(size)) == NULL)
 -		err(EX_OSERR, "BSDGetNetInOut(): malloc failed");
 -	if ( sysctl(mib_ifl, 6, buf, &size, NULL, 0) < 0 )
 -		err(EX_OSERR, "BSDGetNetInOut(): sysctl 2 failed");
++	if (getifaddrs(&ifap) != 0)
++		return;
  
 -	for (next = buf; next < buf + size; next += ifm->ifm_msglen) {
--		bool skipif = false;
++	for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
+ 		bool skipif = false;
 -		ifm = (struct if_msghdr *)next;
 -		if (ifm->ifm_type != RTM_IFINFO || ifm->ifm_addrs & RTAX_IFP == 0)
 -			continue;
@@ -168,14 +171,11 @@
 -#endif
 -	safe_kvm_read(nlst[IFNET_SYM_INDEX].n_value, &ifnethd, sizeof(ifnethd));
 -	ifnetp = TAILQ_FIRST(&ifnethd);
-+	if (getifaddrs(&ifap) != 0)
-+		return;
  
 -	while (ifnetp) {
-+	for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
- 		bool skipif = false;
+-		bool skipif = false;
 -		//  Now, dereference the pointer to get the ifnet struct.
--		safe_kvm_read((u_long)ifnetp, &ifnet, sizeof(ifnet));
+-		safe_kvm_read((unsigned long)ifnetp, &ifnet, sizeof(ifnet));
 -		strlcpy(ifname, ifnet.if_xname, sizeof(ifname));
 -#if defined(XOSVIEW_NETBSD)
 -		ifnetp = TAILQ_NEXT(&ifnet, if_list);
@@ -183,7 +183,6 @@
 -		ifnetp = TAILQ_NEXT(&ifnet, if_link);
 -#endif
 -		if (!(ifnet.if_flags & IFF_UP))
-+
 +		if (ifa->ifa_addr->sa_family != AF_LINK)
  			continue;
 +
@@ -201,7 +200,7 @@
 -			struct ifdata_pcpu ifdata;
 -			int ncpus = BSDCountCpus();
 -			for (int cpu = 0; cpu < ncpus; cpu++) {
--				safe_kvm_read((u_long)ifdatap + cpu * sizeof(ifdata),
+-				safe_kvm_read((unsigned long)ifdatap + cpu * sizeof(ifdata),
 -				              &ifdata, sizeof(ifdata));
 -				*inbytes  += ifdata.ifd_ibytes;
 -				*outbytes += ifdata.ifd_obytes;
