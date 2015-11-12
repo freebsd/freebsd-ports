@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	murmur
-PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTVERSION=	1.2.10
 CATEGORIES=	audio net
-MASTER_SITES=	SF/mumble/Mumble/${PORTVERSION}
 DISTNAME=	mumble-${PORTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
@@ -18,8 +16,15 @@ LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
 USERS=		murmur
 GROUPS=		murmur
-USES=		compiler qmake
+USES=		compiler qmake pkgconfig
 USE_QT4=	moc_build corelib network xml sql sql-sqlite3_run
+
+USE_OPENSSL=	YES
+WITH_OPENSSL_PORT=	YES
+
+USE_GITHUB=	YES
+GH_ACCOUNT=	mumble-voip
+GH_PROJECT=	mumble
 
 CONFIG=		no-client
 QMAKE_ARGS=	"CONFIG+=${CONFIG}"
