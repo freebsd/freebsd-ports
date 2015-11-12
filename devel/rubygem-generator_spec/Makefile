@@ -9,12 +9,12 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Test Rails generators with RSpec
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activerecord>=3.0.0:${PORTSDIR}/databases/rubygem-activerecord \
 		rubygem-railties>=3.0.0:${PORTSDIR}/www/rubygem-railties
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
