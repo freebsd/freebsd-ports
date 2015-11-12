@@ -1,7 +1,5 @@
-Index: src/sysdeps/bsd-common.c
-diff -u -p src/sysdeps/bsd-common.c.orig src/sysdeps/bsd-common.c
---- src/sysdeps/bsd-common.c.orig	2010-09-15 01:27:35.000000000 +0900
-+++ src/sysdeps/bsd-common.c	2011-05-04 02:20:07.328745551 +0900
+--- src/sysdeps/bsd-common.c.orig	2010-09-14 16:27:35 UTC
++++ src/sysdeps/bsd-common.c
 @@ -64,6 +64,10 @@ gkrellm_sys_net_read_data(void)
  			{
  			if (ifa->ifa_addr->sa_family != AF_LINK)

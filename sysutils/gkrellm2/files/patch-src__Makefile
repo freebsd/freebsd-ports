@@ -1,7 +1,5 @@
-Index: src/Makefile
-diff -u src/Makefile.orig src/Makefile
---- src/Makefile.orig	2010-10-03 01:21:01.000000000 +0900
-+++ src/Makefile	2014-06-18 01:12:52.297511351 +0900
+--- src/Makefile.orig	2010-10-02 16:21:01 UTC
++++ src/Makefile
 @@ -53,7 +53,8 @@
  	CONFIGURE_ARGS += --without-ntlm
  endif
@@ -12,7 +10,7 @@ diff -u src/Makefile.orig src/Makefile
  # pull in variables set by configure script
  include configure.mk
  
-@@ -71,7 +72,7 @@
+@@ -68,7 +69,7 @@
  PKG_INCLUDE = `$(PKG_CONFIG) --cflags gtk+-2.0 gthread-2.0`
  PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
  
