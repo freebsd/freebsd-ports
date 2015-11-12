@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	comeonin
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 PKGNAMEPREFIX=	elixir-
@@ -16,7 +16,7 @@ USES=		elixir gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixircnx
 
-MIX_BUILD_DEPS=	devel/elixir-gettext
+MIX_BUILD_DEPS=	security/elixir-comeonin_i18n
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 
 post-build:
