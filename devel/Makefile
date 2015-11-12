@@ -4286,6 +4286,7 @@
     SUBDIR += py-setuptools35
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg
+    SUBDIR += py-setuptools_scm
     SUBDIR += py-sh
     SUBDIR += py-shapely
     SUBDIR += py-simplegeneric
