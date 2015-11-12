@@ -205,9 +205,7 @@ tiarra/module/User/ServerOper.pm
 tiarra/module/User/Vanish.pm
 tiarra/run
 tiarra/run-main
-@unexec if cmp -s %D/tiarra/tiarra.conf %D/tiarra/sample.conf; then rm -f %D/tiarra/tiarra.conf; fi
-tiarra/sample.conf
-@exec [ -f %D/tiarra/tiarra.conf ] || cp %B/%f %D/tiarra/tiarra.conf
+@sample tiarra/sample.conf tiarra/tiarra.conf
 tiarra/tiarra
 tiarra/tiarra-conf.el
 tiarra/tiarra-conf.l
