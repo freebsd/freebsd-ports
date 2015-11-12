@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Exception notification for Rails apps
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionmailer4>=4.0.0:${PORTSDIR}/mail/rubygem-actionmailer4 \
 		rubygem-activesupport4>=4.0.0:${PORTSDIR}/devel/rubygem-activesupport4
