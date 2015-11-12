@@ -1,7 +1,7 @@
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Bcrypt.Base64.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Bcrypt.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Config.beam
-lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Gettext.beam
+lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Messages.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Password.Common.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Password.Tools.beam
 lib/elixir/lib/comeonin/ebin/Elixir.Comeonin.Password.beam
@@ -14,7 +14,7 @@ lib/elixir/lib/comeonin/lib/comeonin.ex
 lib/elixir/lib/comeonin/lib/comeonin/bcrypt.ex
 lib/elixir/lib/comeonin/lib/comeonin/bcrypt/base64.ex
 lib/elixir/lib/comeonin/lib/comeonin/config.ex
-lib/elixir/lib/comeonin/lib/comeonin/gettext.ex
+lib/elixir/lib/comeonin/lib/comeonin/messages.ex
 lib/elixir/lib/comeonin/lib/comeonin/password.ex
 lib/elixir/lib/comeonin/lib/comeonin/password/10k_6chars.txt
 lib/elixir/lib/comeonin/lib/comeonin/password/common.ex
@@ -23,5 +23,4 @@ lib/elixir/lib/comeonin/lib/comeonin/pbkdf2.ex
 lib/elixir/lib/comeonin/lib/comeonin/pbkdf2/base64.ex
 lib/elixir/lib/comeonin/lib/comeonin/tools.ex
 lib/elixir/lib/comeonin/priv/bcrypt_nif.so
-lib/elixir/lib/comeonin/priv/gettext/ja_JP/LC_MESSAGES/default.po
 %%PORTDOCS%%%%DOCSDIR%%/README.md
