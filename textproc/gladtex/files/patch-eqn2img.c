@@ -50,7 +50,19 @@
  
    /* EGifSetGifVersion("89a"); this causes segfault (but is really required for transparency, I think) */
    EGifPutScreenDesc(fp, width, height, 256, 255, color_map);
-@@ -715,7 +727,7 @@ int to_ps(char *basename, int verbose) {
+@@ -649,7 +661,11 @@ int gif_write(png_bytepp image, char *im
+       return -1;
+   }
+ 
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++  EGifCloseFile(fp, NULL);
++#else
+   EGifCloseFile(fp);
++#endif
+ 
+   return 0;
+ }  
+@@ -715,7 +731,7 @@ int to_ps(char *basename, int verbose) {
      fprintf(stderr, " -> ps");
  
    cmd = NEW(char, 2*strlen(basename) + 46);
