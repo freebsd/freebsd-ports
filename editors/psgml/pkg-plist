@@ -11,10 +11,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-ids.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-info.el
 %%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-info.elc
-%%NON_XEMACS%%%%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-other.el
-%%NON_XEMACS%%%%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-other.elc
-%%XEMACS%%%%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-lucid.el
-%%XEMACS%%%%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-lucid.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-other.el
+%%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-other.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-parse.el
 %%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-parse.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-sysdep.el

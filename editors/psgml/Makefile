@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	psgml
-PORTVERSION=	1.3.2
-PORTREVISION=	22
+PORTVERSION=	1.4.0
 CATEGORIES=	editors elisp
 MASTER_SITES=	SF/${PORTNAME}/ALPHA%20${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+DISTNAME=	${PORTNAME}-1.3.2
 
 PATCH_SITES=	LOCAL/hrs
 PATCHFILES=	psgml-symbol-conflict-050503.diff.gz
@@ -14,7 +14,8 @@ PATCHFILES=	psgml-symbol-conflict-050503.diff.gz
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Major mode for editing SGML and XML documents for Emacs
 
-POST_PATCHES=	${PATCHDIR}/post-patch-psgml.el
+LICENSE=	GPLv2
+
 USE_EMACS=	yes
 NOT_FOR_ARCHS=	ia64
 GNU_CONFIGURE=	YES
@@ -29,22 +30,9 @@ INFO=		psgml psgml-api
 PSGML_STARTUPEL=	psgml-startup.el
 PSGML_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/psgml
 
-.include <bsd.port.pre.mk>
-
-.if ${EMACS_PORT_NAME} == xemacs21-mule
-PLIST_SUB+=	XEMACS="" \
-		NON_XEMACS="@comment "
-.else
-PLIST_SUB+=	XEMACS="@comment " \
-		NON_XEMACS=""
-.endif
-
-post-patch:
-	cd ${WRKSRC} && ${CAT} < ${POST_PATCHES}
-
 post-install:
 	cd ${WRKSRC} && ${SETENV} DESTDIR="${STAGEDIR}" ${MAKE} install-info
 	${INSTALL_DATA} ${WRKDIR}/${PSGML_STARTUPEL} \
 	    ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
