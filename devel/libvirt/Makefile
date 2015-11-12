@@ -27,12 +27,17 @@ OPTIONS_DEFINE_amd64=	XEN
 .if exists(/usr/sbin/bhyve)
 OPTIONS_DEFINE_amd64+=	BHYVE
 OPTIONS_DEFAULT_amd64+=	BHYVE
+.else
+PLIST_SUB+=		BHYVE="@comment "
+CONFIGURE_ARGS+=	--without-bhyve
 .endif
 QEMU_DESC=	QEMU driver
 BHYVE_DESC=	bhyve driver
 XEN_DESC=	Xen support via libxl
 
 OPTIONS_SUB=	yes
+
+BHYVE_CONFIGURE_WITH=	bhyve
 
 QEMU_CONFIGURE_WITH=	qemu yajl
 QEMU_CFLAGS=	-I${LOCALBASE}/include
@@ -56,7 +61,7 @@ VARDIR=		/var
 USE_RC_SUBR=	libvirtd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-avahi \
+CONFIGURE_ARGS+=	--without-avahi \
 		--without-polkit \
 		--without-hal \
 		--without-udev \
@@ -82,24 +87,13 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 SHLIB_VER=	0.1002.${PORTVERSION:E}
-PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
+PLIST_SUB+=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 
 SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
-
-.if (exists(/usr/sbin/bhyve) && ${OSVERSION} >= 100051)
-CONFIGURE_ARGS+=	--with-bhyve
-.else
-CONFIGURE_ARGS+=	--without-bhyve
-.endif
-
-.if ${PORT_OPTIONS:MBHYVE}
-STRIP_FILES+=	lib/libvirt/connection-driver/libvirt_driver_bhyve.so
-PLIST_FILES+=	lib/libvirt/connection-driver/libvirt_driver_bhyve.so
-.endif
 
 .if !${PLIST_SUB:MXEN}
 PLIST_SUB+=     XEN="@comment "
@@ -109,7 +103,7 @@ post-patch:
 	@${MV} ${WRKSRC}/daemon/libvirtd.conf ${WRKSRC}/daemon/libvirtd.conf.sample
 	@${REINPLACE_CMD} -e 's|libvirtd\.conf|libvirtd.conf.sample|' \
 		${WRKSRC}/daemon/Makefile.in
-	
+
 	@${REINPLACE_CMD} -e 's|ln -s ../default.xml|true|' \
 			  -e 's|$$(DESTDIR)$$(confdir)/qemu/networks|${STAGEDIR}${EXAMPLESDIR}/networks|' \
 			  ${WRKSRC}/src/Makefile.in
@@ -145,12 +139,6 @@ post-install:
 .for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-
-.if ${PORT_OPTIONS:MBHYVE}
-.for strip in ${STRIP_FILES}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${strip}
-.endfor
-.endif
 
 .for dir in run/libvirt/network \
 	run/libvirt/qemu \
