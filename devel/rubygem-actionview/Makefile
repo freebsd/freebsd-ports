@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionview
-PORTVERSION=	4.2.4
+PORTVERSION=	4.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rendering framework putting the V in MVC (part of Rails)
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport4>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport4 \
 		rubygem-builder32>=3.2:${PORTSDIR}/devel/rubygem-builder32 \
