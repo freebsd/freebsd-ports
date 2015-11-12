@@ -1,6 +1,6 @@
---- plugins/qca-ossl/qca-ossl.cpp.orig	2014-11-06 09:15:45.000000000 +0100
-+++ plugins/qca-ossl/qca-ossl.cpp	2015-09-10 15:45:43.347311582 +0200
-@@ -5399,11 +5399,13 @@ public:
+--- plugins/qca-ossl/qca-ossl.cpp.orig	2015-11-12 20:19:43 UTC
++++ plugins/qca-ossl/qca-ossl.cpp
+@@ -5403,11 +5403,13 @@ public:
  			ctx = SSL_CTX_new(SSLv2_client_method());
  			break;
  #endif
@@ -15,7 +15,18 @@
  			break;
  		case TLS::DTLS_v1:
  		default:
-@@ -7297,7 +7299,7 @@ public:
+@@ -7137,8 +7139,10 @@ public:
+ 			return new opensslInfoContext(this);
+ 		else if ( type == "sha1" )
+ 			return new opensslHashContext( EVP_sha1(), this, type);
++#ifndef OPENSSL_NO_SHA0
+ 		else if ( type == "sha0" )
+ 			return new opensslHashContext( EVP_sha(), this, type);
++#endif
+ 		else if ( type == "ripemd160" )
+ 			return new opensslHashContext( EVP_ripemd160(), this, type);
+ #ifdef HAVE_OPENSSL_MD2
+@@ -7305,7 +7309,7 @@ public:
  			return new CMSContext( this );
  		else if ( type == "ca" )
  			return new MyCAContext( this );
