@@ -111,16 +111,6 @@ do-autoreconf:
 
 .include <bsd.port.options.mk>
 
-# XXX Make _EXCLUDE behave like _SLAVE by triggering _OFF helpers
-.for opt in ${OPTIONS_EXCLUDE_${OPSYS}}
-. if ! ${PORT_OPTIONS:M${opt}}
-BUILD_DEPENDS+=		${${opt}_BUILD_DEPENDS_OFF}
-CONFIGURE_ENV+=		${${opt}_CONFIGURE_ENV_OFF}
-CONFIGURE_ARGS+=	${${opt}_CONFIGURE_OFF}
-_OPTIONS_patch+=	700:post-patch-${opt}-off
-. endif
-.endfor
-
 # Extract :p7zip files with 7z(1) if libarchive cannot handle x86_64 sfx
 # or is too old to have 7zip reader
 .if defined(OVERRIDE_LINUX_BASE_PORT) || \
