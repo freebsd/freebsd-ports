@@ -15,13 +15,17 @@ PATCH_DIST_STRIP=	-p4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of Digital Video Transport System
 
+LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 CONFLICTS=	gdvrecv-[0-9]*
 
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf
+GNU_CONFIGURE=	yes
 
-pre-install:
-	@${INSTALL_MAN} ${WRKSRC}/dvts.1          ${STAGEDIR}${MANPREFIX}/man/man1/
-	@${INSTALL_MAN} ${WRKSRC}/dvsend/dvsend.1 ${STAGEDIR}${MANPREFIX}/man/man1/
-	@${INSTALL_MAN} ${WRKSRC}/dvrecv/dvrecv.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/dvts.1          ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/dvsend/dvsend.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/dvrecv/dvrecv.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 
 .include <bsd.port.mk>
