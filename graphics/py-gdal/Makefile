@@ -23,7 +23,7 @@ NUMPY_DESC=	Enable array support via NumPy
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python shebangfix tar:xz
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/swig/python
+WRKSRC_SUBDIR=	swig/python
 
 SHEBANG_FILES=	scripts/*.py
 
