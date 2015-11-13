@@ -24,11 +24,11 @@ PLIST_SUB=	MKTEXLSR=${LOCALBASE}/bin/mktexlsr
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	(cd ${WRKDIR} && ${COPYTREE_SHARE} "fonts tex" \
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "fonts tex" \
 		${STAGEDIR}${PREFIX}/${TEXMFLOCALDIR})
 
 do-install-DOCS-on:
-	(cd ${WRKDIR} && ${COPYTREE_SHARE} doc \
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} doc \
 		${STAGEDIR}${PREFIX}/${TEXMFLOCALDIR})
 
 .include <bsd.port.mk>
