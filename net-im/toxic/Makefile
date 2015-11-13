@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxic
-PORTVERSION=	0.6.1.151028
+PORTVERSION=	0.7.0.151113
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -11,15 +11,18 @@ COMMENT=	Console client for Tox
 LICENSE=	GPLv3 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
+BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox	\
+		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx		\
 		libopus.so:${PORTSDIR}/audio/opus		\
+		libcurl.so:${PORTSDIR}/ftp/curl			\
+		libv4l2.so:${PORTSDIR}/multimedia/libv4l	\
 		libconfig.so:${PORTSDIR}/devel/libconfig
 RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tox
-GH_TAGNAME=	f7e48d2
+GH_TAGNAME=	9f0feb7
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
