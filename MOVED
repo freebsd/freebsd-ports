@@ -7934,3 +7934,4 @@ databases/mysql51-scripts||2015-11-10|Has expired: EOL upstream, use mysql55 or 
 databases/mysql51-server||2015-11-10|Has expired: EOL upstream, use mysql55 or mysql56 instead
 databases/p5-DBD-mysql51|databases/p5-DBD-mysql|2015-11-10|Has expired: EOL upstream, use databases/p5-DBD-mysql instead
 databases/py-MySQLdb51||2015-11-10|Has expired: EOL upstream, use databases/py-MySQLdb instead
+deskutils/steadyflow||2015-11-13|Has expired: No new releases for years, consider using net/uget
