@@ -1,0 +1,11 @@
+LibreSSL is an open-source implementation of the Secure Sockets Layer (SSL) and
+Transport Layer Security (TLS) protocols. It was forked from the OpenSSL
+cryptographic software library in April 2014 as a response by OpenBSD
+developers to the Heartbleed security vulnerability in OpenSSL,
+with the aim of refactoring the OpenSSL code so as to provide a more secure
+implementation.
+
+LibreSSL was forked from the OpenSSL library starting with the 1.0.1g branch
+and will follow the security guidelines used elsewhere in the OpenBSD project.
+
+WWW: http://www.libressl.org/
