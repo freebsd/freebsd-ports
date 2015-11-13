@@ -92,6 +92,7 @@ find_lib()
 }
 
 anynotfound=0
+err=0
 for _line in ${dp_RAWDEPENDS} ; do
 	myifs=${IFS}
 	IFS=:
@@ -101,7 +102,8 @@ for _line in ${dp_RAWDEPENDS} ; do
 		echo "Error: bad dependency syntax in ${dp_DEPTYPE}" >&2
 		echo "expecting: pattern:origin[:target]" >&2
 		echo "got: ${_line}" >&2
-		exit 1
+		err=1
+		continue
 	fi
 	pattern=$1
 	origin=$2
@@ -109,22 +111,20 @@ for _line in ${dp_RAWDEPENDS} ; do
 
 	if [ -z "${pattern}" ]; then
 		echo "Error: there is an empty port dependency in ${dp_DEPTYPE}" >&2
-		exit 1
+		err=1
+		continue
 	fi
 
 	if [ -z "${origin}" ]; then
 		echo "Error: a dependency has an empty origin in ${dp_DEPTYPE}" >&2
-		exit 1
+		err=1
+		continue
 	fi
 
 	case "${origin}" in
 	/*) ;;
 	*) origin="${dp_PORTSDIR}/${origin}" ;;
 	esac
-	if [ ! -f "${origin}/Makefile" ]; then
-		echo "Error a dependency refers to a non existing origin: ${origin} in ${dp_DEPTYPE}" >&2
-		exit 1
-	fi
 
 	depends_args="${dp_DEPENDS_ARGS}"
 	target=${dp_DEPENDS_TARGET}
@@ -146,7 +146,9 @@ for _line in ${dp_RAWDEPENDS} ; do
 	      lib*.so*)      fct=find_lib ;;
 	      *)
 		echo "Error: pattern ${pattern} in LIB_DEPENDS is not valid"
-		exit 1 ;;
+		err=1
+		continue
+		;;
 	    esac ;;
 	  *)
 	    case ${pattern} in
@@ -161,12 +163,23 @@ for _line in ${dp_RAWDEPENDS} ; do
 	fi
 	[ ${pattern} = "/nonexistent" ] || anynotfound=1
 
+	if [ ! -f "${origin}/Makefile" ]; then
+		echo "Error a dependency refers to a non existing origin: ${origin} in ${dp_DEPTYPE}" >&2
+		err=1
+		continue
+	fi
+
 	# Now actually install the dependencies
 	install_depends "${origin}" "${target}" "${depends_args}"
 	# Recheck if the installed dependency validates the pattern except for /nonexistent
 	[ "${fct}" = "false" ] || ${fct} "${pattern}"
 	echo "===>   Returning to build of ${dp_PKGNAME}"
 done
+
+if [ $err -eq 1 ]; then
+	echo "Errors with dependencies."
+	exit 1
+fi
 
 if [ -n "${dp_STRICT_DEPENDS}" -a ${anynotfound} -eq 1 ]; then \
 	echo "===>   dp_STRICT_DEPENDS set - Not installing missing dependencies."
