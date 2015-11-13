@@ -1,4 +1,4 @@
---- spectrum-viewer/spectrum-viewer.pro.orig
+--- spectrum-viewer/spectrum-viewer.pro.orig	2013-08-09 10:54:18 UTC
 +++ spectrum-viewer/spectrum-viewer.pro
 @@ -67,32 +67,33 @@ LIBS += -lsamplerate
  #}

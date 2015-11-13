@@ -1,4 +1,4 @@
---- fmreceiver-dab/fmreceiver.pro.orig
+--- fmreceiver-dab/fmreceiver.pro.orig	2013-08-09 10:42:19 UTC
 +++ fmreceiver-dab/fmreceiver.pro
 @@ -126,38 +126,38 @@ LIBS += -lstdc++
  #}
