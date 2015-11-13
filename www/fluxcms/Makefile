@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-snapshot-20090308
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Extensible and flexible CMS based on PHP 5 and XML/XSLT
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 USES=		shebangfix tar:tgz
 SHEBANG_FILES=	div/db/dbexport.sh \
 		div/db/dbexport40.sh \

@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	php5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Full-service object persistence and query toolkit for PHP
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 USE_PHP=	yes
 PHP_DEFAULT=	5.4
 WRKSRC=		${WRKDIR}

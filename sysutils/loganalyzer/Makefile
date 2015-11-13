@@ -12,6 +12,9 @@ COMMENT=	Web based Syslog browsing and analysis
 LICENSE=	GPLv3 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 USES=		cpe
 CPE_VENDOR=	adiscon
 NO_BUILD=	yes

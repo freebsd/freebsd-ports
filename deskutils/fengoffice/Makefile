@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Open source web-based collaboration software
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 USES=		zip
 NO_BUILD=	yes
 USE_PHP=	mysql gd simplexml
