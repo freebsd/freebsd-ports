@@ -3,7 +3,7 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	6.1.57
+DISTVERSION=	6.1.61
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 
@@ -12,6 +12,7 @@ COMMENT=	Modular web application framework vor office
 
 RESTRICTED=	Free for personal use only
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	mysqli session mbstring pcre xml
 WANT_PHP_WEB=	yes
@@ -24,18 +25,22 @@ SHEBANG_FILES=	go/vendor/tcpdf/tools/tcpdf_addfont.php \
 		modules/postfixadmin/scripts/vacation.pl \
 		modules/sync/z-push/install.sh \
 		vendor/fkooman/php-oauth-client/bin/php-oauth-client-create-tables
-NO_ARCH=	yes
 
 WWWDIR?=	${PREFIX}/www/${PORTNAME}${DISTVERSION:R:R}
 
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	IMAP GD CALENDAR WBXML
-OPTIONS_DEFAULT=	IMAP GD CALENDAR
+OPTIONS_DEFAULT=IMAP GD CALENDAR
 CALENDAR_DESC=	Calendar holiday support
 IMAP_DESC=	IMAP support
 GD_DESC=	Gallery support (GD)
 WBXML_DESC=	Synchronization Support
+
+CALENDAR_USE=		PHP=calendar
+GD_USE=			PHP=gd
+IMAP_USE=		PHP=iconv imap
+WBXML_LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
 
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
@@ -46,24 +51,6 @@ post-patch:
 		${WRKSRC}/modules/serverclient/HttpClient.php \
 		${WRKSRC}/modules/serverclient/ServerclientModule.php \
 		${WRKSRC}/modules/site/index.php
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIMAP}
-USE_PHP+=	imap iconv
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-USE_PHP+=	gd
-.endif
-
-.if ${PORT_OPTIONS:MCALENDAR}
-USE_PHP+=	calendar
-.endif
-
-.if ${PORT_OPTIONS:MWBXML}
-LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
