@@ -14,6 +14,9 @@ COMMENT=	Many-Core Engine for Perl providing parallel processing capabilities
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
