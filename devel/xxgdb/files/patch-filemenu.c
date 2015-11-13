@@ -1,5 +1,5 @@
---- filemenu.c.orig	Tue Aug 30 04:38:28 1994
-+++ filemenu.c	Fri Nov 17 22:05:05 2000
+--- filemenu.c.orig	1994-08-29 19:38:28 UTC
++++ filemenu.c
 @@ -95,7 +95,7 @@
  #endif
  #endif	/* _POSIX_SOURCE */
@@ -9,7 +9,7 @@
  #include <dirent.h>
  #else
  #include <sys/dir.h>
-@@ -185,7 +185,7 @@
+@@ -185,7 +185,7 @@ char *dir;
   *    text files 
   *    executable files
   */
@@ -18,7 +18,7 @@
  static int InList(entry)
  Directory *entry;
  {
-@@ -228,7 +228,7 @@
+@@ -228,7 +228,7 @@ Directory *entry;
  static void ScanDir(dir)
  char *dir;
  {
@@ -27,7 +27,7 @@
      extern 	alphasort();
      Directory   **namelist;
  #else
-@@ -238,7 +238,7 @@
+@@ -238,7 +238,7 @@ char *dir;
  #endif
      register int		i,j;
  
@@ -36,7 +36,7 @@
      if(!(WorkingDir = opendir(dir)))
        {
  	UpdateMessageWindow("scandir: cannot open %s", dir);
-@@ -262,7 +262,7 @@
+@@ -262,7 +262,7 @@ char *dir;
      filelist = (char **) XtMalloc((nfiles+1) * sizeof(char *));
      i = 0;
      for (j=0; j<nfiles; j++) {
@@ -45,7 +45,7 @@
        WorkingDirEntry = readdir(WorkingDir);
        if(!strcmp(WorkingDirEntry->d_name, "."))
  	  strcpy(store, "./");
-@@ -305,7 +305,7 @@
+@@ -305,7 +305,7 @@ char *dir;
      }
      filelist[i++] = NULL;
  
