@@ -3,7 +3,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.067.0
+PORTVERSION=	2.069.1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -13,6 +13,7 @@ COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
 
 USES=		gmake zip
 MAKEFILE=	posix.mak
+MAKE_ARGS=	AUTO_BOOTSTRAP=1
 EXAMPLESDIR=	${PREFIX}/share/examples/dmd2
 DOCSDIR=	${PREFIX}/share/doc/dmd2
 PORTDOCS=	*.txt html/
