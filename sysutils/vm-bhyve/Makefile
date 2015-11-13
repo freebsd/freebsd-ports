@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vm-bhyve
-PORTVERSION=	0.8.12
+PORTVERSION=	0.9.13
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -16,14 +16,15 @@ EXAMPLES_DESC=	Install example guest templates
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	churchers
-GH_TAGNAME=	24b6b35
+GH_TAGNAME=	6416f62
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000000
-IGNORE=		This port works only on FreeBSD 10 and newer
+IGNORE=		this port works only on FreeBSD 10 and newer
 .endif
 
 do-install:
