@@ -1,5 +1,5 @@
---- calldbx.c.orig	1995-06-19 15:11:00.000000000 -0700
-+++ calldbx.c	2014-03-26 12:20:00.741924675 -0700
+--- calldbx.c.orig	1995-06-19 22:11:00 UTC
++++ calldbx.c
 @@ -74,8 +74,16 @@
  #include <string.h>
  #include <fcntl.h>
@@ -19,7 +19,7 @@
  #else
  #include <sgtty.h>
  #endif
-@@ -116,6 +124,7 @@
+@@ -116,6 +124,7 @@ extern char	*dbxprompt;
  char            iowintty[] = "/dev/ttyp0";
  int             iowinpid = 0;
  #endif /* CREATE_IO_WINDOW */
@@ -27,7 +27,7 @@
  /*
   *  Xdbx talks to dbx through a pseudo terminal which is a pair of master
   *  and slave devices: /dev/pty?? and /dev/tty??, where ?? goes from p0 to
-@@ -137,13 +146,17 @@
+@@ -137,13 +146,17 @@ static int open_master()
  
  #ifndef sco
  	for (c='p'; c<'t'; c++) {
@@ -46,7 +46,7 @@
  	    if ((master = open(pty, O_RDWR)) >= 0) 
  		return (master); 
  	}
-@@ -194,6 +207,7 @@
+@@ -194,6 +207,7 @@ static int open_slave(master)
      return slave;
  #endif /* SVR4 */
  }
@@ -54,7 +54,7 @@
  
  #ifdef CREATE_IO_WINDOW 
  /* use a separate io window to talk to gdb, so program output is not confused with gdb output. */
-@@ -246,8 +260,8 @@
+@@ -246,8 +260,8 @@ char *argv[];
  /*
   * (JBL)10MAY91 : use sgttyb if generic BSD
   */
@@ -65,7 +65,7 @@
  #else
      struct sgttyb Termio;
  #endif
-@@ -261,8 +275,10 @@
+@@ -261,8 +275,10 @@ char *argv[];
  
  #ifdef GDB	/* for GDB, we use XXGDB_DEBUGGER instead */
      debugger = (char *) getenv("XXGDB_DEBUGGER");	/* first looks up env var */
@@ -76,7 +76,7 @@
  #endif
  
  /* CRL mod 4 3/15/91 GWC if no env var then try app res for db_name */
-@@ -275,7 +291,8 @@
+@@ -275,7 +291,8 @@ char *argv[];
  	debugger  = XtNewString(DEBUGGER);
  
  /* CRL mod 4 3/15/91 GWC -  allow the user to specify a db_prompt */
@@ -86,7 +86,7 @@
  	strcmp(app_resources.db_prompt, "") != 0)
  	dbxprompt = XtNewString(app_resources.db_prompt);
    
-@@ -288,7 +305,15 @@
+@@ -288,7 +305,15 @@ char *argv[];
  	if (debug)
  		fprintf(stderr,"debugger=\"%s\"\nprompt=\"%s\"\n",debugger,dbxprompt);
    
@@ -102,7 +102,7 @@
  
      dbxpid = fork();
      if (dbxpid == -1) {
-@@ -305,6 +330,7 @@
+@@ -305,6 +330,7 @@ char *argv[];
  	 *	    set line buffered mode
  	 *	    register dbx input with X
  	 */
@@ -110,7 +110,7 @@
  	close(0);
  	close(1);
  
-@@ -345,7 +371,9 @@
+@@ -345,7 +371,9 @@ char *argv[];
  	}
  #endif
  
@@ -120,7 +120,7 @@
  	close(master);
  
  	/*
-@@ -355,11 +383,11 @@
+@@ -355,11 +383,11 @@ char *argv[];
  	/*
  	 * (JBL)10MAY91 : use sgttyb if OLDSUN or generic BSD
  	 */ 
