@@ -14,6 +14,7 @@ include/liblangtag/lt-lang-db.h
 include/liblangtag/lt-lang.h
 include/liblangtag/lt-list.h
 include/liblangtag/lt-macros.h
+include/liblangtag/lt-messages.h
 include/liblangtag/lt-redundant-db.h
 include/liblangtag/lt-redundant.h
 include/liblangtag/lt-region-db.h
@@ -22,8 +23,10 @@ include/liblangtag/lt-script-db.h
 include/liblangtag/lt-script.h
 include/liblangtag/lt-string.h
 include/liblangtag/lt-tag.h
+include/liblangtag/lt-utils.h
 include/liblangtag/lt-variant-db.h
 include/liblangtag/lt-variant.h
+include/liblangtag/lt-xml.h
 lib/liblangtag.so
 lib/liblangtag.so.1
 lib/liblangtag.so.1.3.1
