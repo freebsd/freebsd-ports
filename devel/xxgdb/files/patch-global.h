@@ -1,5 +1,5 @@
---- global.h.orig	Fri Apr  7 01:23:42 1995
-+++ global.h	Fri Nov 17 21:27:09 2000
+--- global.h.orig	1995-04-06 16:23:42 UTC
++++ global.h
 @@ -70,7 +70,7 @@
  #define alloca __builtin_alloca
  #endif
