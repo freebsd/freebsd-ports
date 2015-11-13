@@ -4246,6 +4246,7 @@
     SUBDIR += py-qt4-test
     SUBDIR += py-rauth
     SUBDIR += py-raven
+    SUBDIR += py-rednose
     SUBDIR += py-repl
     SUBDIR += py-repoze.lru
     SUBDIR += py-repoze.sphinx.autointerface
