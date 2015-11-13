@@ -1,5 +1,5 @@
---- src/killall.c.orig	2011-06-20 04:43:24.000000000 -0700
-+++ src/killall.c	2011-08-06 21:48:35.014330713 -0700
+--- src/killall.c.orig	2012-02-19 23:08:52 UTC
++++ src/killall.c
 @@ -36,6 +36,8 @@
  #include <dirent.h>
  #include <signal.h>
@@ -9,7 +9,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <getopt.h>
-@@ -87,40 +89,35 @@
+@@ -87,40 +89,35 @@ static int verbose = 0, exact = 0, inter
             ignore_case = 0, pidof;
  static long younger_than = 0, older_than = 0;
  
@@ -74,7 +74,7 @@
  }
  
  static double
-@@ -197,7 +194,7 @@
+@@ -197,7 +194,7 @@ match_process_uid(pid_t pid, uid_t uid)
  	
  	while (fgets(buf, sizeof buf, f))
  	{
@@ -83,7 +83,7 @@
  		{
  			re = uid==puid;
  			break;
-@@ -360,7 +357,7 @@
+@@ -360,7 +357,7 @@ kill_all (int signal, int names, char **
          }
  #endif /*WITH_SELINUX*/
        /* load process name */
@@ -92,7 +92,7 @@
  	continue;
        if (!(file = fopen (path, "r"))) 
  	{
-@@ -368,7 +365,7 @@
+@@ -368,7 +365,7 @@ kill_all (int signal, int names, char **
  	  continue;
  	}
        free (path);
@@ -101,7 +101,7 @@
        if (!okay) {
  	fclose(file);
  	continue;
-@@ -390,65 +387,6 @@
+@@ -390,65 +387,6 @@ kill_all (int signal, int names, char **
        got_long = 0;
        command = NULL;		/* make gcc happy */
        length = strlen (comm);
@@ -167,7 +167,7 @@
        /* mach by process name */
        for (j = 0; j < names; j++)
  	{
-@@ -499,7 +437,7 @@
+@@ -499,7 +437,7 @@ kill_all (int signal, int names, char **
  	        {
  		  int ok = 1;
  
@@ -176,7 +176,7 @@
  		    continue;
  
  	          if (stat (path, &st) < 0) 
-@@ -693,7 +631,7 @@
+@@ -693,7 +631,7 @@ have_proc_self_stat (void)
    struct stat isproc;
    pid_t pid = getpid();
  

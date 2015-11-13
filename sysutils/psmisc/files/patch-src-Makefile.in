@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2010-07-12 04:38:08.000000000 -0700
-+++ src/Makefile.in	2010-08-11 23:39:30.652095791 -0700
-@@ -34,8 +34,8 @@
+--- src/Makefile.in.orig	2012-02-08 23:32:11 UTC
++++ src/Makefile.in
+@@ -34,8 +34,8 @@ PRE_UNINSTALL = :
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
@@ -11,7 +11,7 @@
  	$(am__EXEEXT_3) $(am__EXEEXT_4) $(am__EXEEXT_5)
  @WANT_PEEKFD_I386_TRUE@am__append_1 = peekfd
  @WANT_PEEKFD_I386_TRUE@am__append_2 = -DI386
-@@ -91,10 +91,8 @@
+@@ -91,10 +91,8 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUD
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
@@ -24,7 +24,7 @@
  ETAGS = etags
  CTAGS = ctags
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-@@ -299,19 +297,19 @@
+@@ -303,19 +301,19 @@ clean-binPROGRAMS:
  	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
  fuser$(EXEEXT): $(fuser_OBJECTS) $(fuser_DEPENDENCIES) 
  	@rm -f fuser$(EXEEXT)
@@ -49,7 +49,7 @@
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-@@ -547,7 +545,7 @@
+@@ -556,7 +554,7 @@ uninstall-am: uninstall-binPROGRAMS
  signames.h: signames.c Makefile
  		export LC_ALL=C ; \
  		@CPP@ -dM $< |\
