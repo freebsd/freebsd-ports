@@ -21,6 +21,10 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf aclocal autoheader
 ACLOCAL_ARGS+=	-I ${WRKSRC}/infrastructure/m4
 
+.if exists(/usr/lib/libexecinfo.so)
+LDFLAGS+=	-lexecinfo
+.endif
+
 MAKE_JOBS_UNSAFE=yes
 
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
