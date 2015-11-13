@@ -13,6 +13,8 @@ COMMENT=	English to Japanese dictionary for GNUstep
 
 LICENSE=	GPLv2 # or later
 
+PORTSCOUT=	skipv:0.2
+
 USES=		gnustep
 USE_GNUSTEP=	back build
 
