@@ -5,7 +5,7 @@
  #include <alloca.h>
  #else
 -#if !defined(__APPLE__)
-+#if !defined(__APPLE__) && !defined(__FreeBSD__)
++#if !defined(__APPLE__) && !defined(__FreeBSD__) && !defined(__DragonFly__)
  #include <malloc.h>
  #endif
  #endif
