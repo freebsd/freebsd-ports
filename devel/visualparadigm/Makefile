@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	visualparadigm
-PORTVERSION=	12.2.20150902
+PORTVERSION=	12.2.20151102
 CATEGORIES=	devel
-MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce12.2/20150902/
-DISTNAME=	Visual_Paradigm_CE_12_2_20150902_Unix_InstallFree
+MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce12.2/20151102/
+DISTNAME=	Visual_Paradigm_CE_12_2_20151102_Unix_InstallFree
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Visual modeling tool for all kinds of UML diagrams
