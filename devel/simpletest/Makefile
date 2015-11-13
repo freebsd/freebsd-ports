@@ -12,6 +12,9 @@ COMMENT=	Unit testing, mock objects, and web testing framework for PHP
 
 LICENSE=	LGPL21
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 USE_PHP=	pcre
 USE_PHP_BUILD=	yes
 DEFAULT_VERSIONS+=	php=5

@@ -13,6 +13,9 @@ DISTNAME=	ojs-2.2.1
 MAINTAINER=	filiperocha@gmail.com
 COMMENT=	Journal management and publishing system
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 DIST_SUBDIR=	${PORTNAME}
 
 NO_BUILD=	yes
