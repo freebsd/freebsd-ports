@@ -15,7 +15,7 @@ RUN_DEPENDS=	syscache:${PORTSDIR}/sysutils/pcbsd-syscache \
 		warden:${PORTSDIR}/sysutils/warden \
 		nginx:${PORTSDIR}/www/nginx
 
-IGNORE_WITH_PHP=54
+IGNORE_WITH_PHP=5 54
 USE_PHP=	filter gd json session
 WRKSRC_SUBDIR=	src-webui
 USES=		pkgconfig tar:xz
