@@ -1,9 +1,9 @@
-GanttProject is a free and easy to use Gantt chart based project scheduling and
-management tool. With GanttProject you can:
+GanttProject is a free and easy to use Gantt chart based project
+scheduling and management tool. With GanttProject you can:
 
 * Create work breakdown structure, draw dependencies, define milestones.
-* Assign human resources to work on tasks, see their allocation on the Resource
-  Load chart.
+* Assign human resources to work on tasks, see their allocation on the
+  Resource Load chart.
 * Generate PERT chart from Gantt chart.
 * Save charts as PNG images, generate PDF and HTML reports.
 * Import projects from and export them to Microsoft Project formats.

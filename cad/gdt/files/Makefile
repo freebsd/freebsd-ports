@@ -24,7 +24,7 @@ OBJS.${P}=	${SRCS.${P}:N*.h:R:S,$,.o,g}
 
 SRCS.gdt2gds=	sRemoveWhiteSpace.C sRemoveTrailingZeros.C \
 		get_field.c stoupper.c sfind.C match_string.C \
-		sRemoveSpaces.C mystrncpy.C gdsStream.C gdt2gds.C	
+		sRemoveSpaces.C mystrncpy.C gdsStream.C gdt2gds.C
 
 BSD_INSTALL_PROGRAM?=	install -s -m 555
 

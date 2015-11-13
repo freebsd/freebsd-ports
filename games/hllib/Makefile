@@ -4,7 +4,7 @@
 PORTNAME=	hllib
 PORTVERSION=	2.4.4
 CATEGORIES=	games devel
-MASTER_SITES=	http://nemesis.thewavelength.net/files/files/
+MASTER_SITES=	LOCAL/danilo
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	danilo@FreeBSD.org

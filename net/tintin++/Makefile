@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client program to help playing MUDs
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
@@ -22,10 +23,8 @@ CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include \
 		--libdir=${LOCALBASE}/lib \
 		--prefix=${PREFIX}
 CONFIGURE_ENV=	ac_cv_file__dev_ptmx=no
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake
+USES=		gmake localbase
 WRKSRC=		${WRKDIR}/tt/src
 
 DOCS=		CREDITS FAQ README SCRIPTS TODO \
@@ -35,10 +34,12 @@ PORTDOCS=	${DOCS:T}
 
 SLAVEDIRS=	chinese/tintin++
 
-BIG5_CONFIGURE_ON=	--enable-big5
+BIG5_CONFIGURE_ENABLE=	big5
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${STAGEDIR}${PREFIX}/bin/
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/../ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 

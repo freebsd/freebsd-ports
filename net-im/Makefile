@@ -156,6 +156,7 @@
     SUBDIR += skype
     SUBDIR += skype-devel
     SUBDIR += skype4
+    SUBDIR += teamwords
     SUBDIR += telegram
     SUBDIR += telegram-purple
     SUBDIR += telepathy-butterfly

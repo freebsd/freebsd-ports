@@ -12,3 +12,5 @@ SHA256 (android-18-arm.tar.bz2) = 73ceb5894c4436ca1477e0a535c3a014f334acf0683ab4
 SIZE (android-18-arm.tar.bz2) = 1736810
 SHA256 (android-19-arm.tar.bz2) = 734b37fa2c3aff05540ce9d8c73d0ad92623b281f0e267a05fd2f0c3a86e08ea
 SIZE (android-19-arm.tar.bz2) = 4621476
+SHA256 (android-21-arm.tar.bz2) = 7729bcd05fdc10b930d1f99920ed756681fe8cd6c2ecddb002a56e4badcfd2a3
+SIZE (android-21-arm.tar.bz2) = 5920624

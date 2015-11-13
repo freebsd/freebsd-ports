@@ -17,10 +17,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bpf_dump.c \
 		${FILESDIR}/extra-patch-sf-gencode.h
 .endif
 
-.if ${OSVERSION} < 900039
-MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=41
-CFLAGS+=	-DHAVE_ALTQ=1
-.else
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=45
 CFLAGS+=	-DHAVE_ALTQ=1 -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cache.c \
@@ -30,7 +26,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cache.c \
 		${FILESDIR}/extra-patch-sf-gencode.c
 .if ${OSVERSION} > 1000017
 CFLAGS+=	-DHAVE_FINE_GRAINED_LOCKING=1
-.endif
 .endif
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-engine.c

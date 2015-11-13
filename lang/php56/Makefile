@@ -157,9 +157,6 @@ CONFIGURE_ARGS+=--enable-maintainer-zts
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}
-.if ${OSVERSION} < 900000
-IGNORE=		cannot be built with DTrace support on FreeBSD < 9.x
-.endif
 CONFIGURE_ARGS+=--enable-dtrace
 PLIST_SUB+=	DTRACE=""
 .else

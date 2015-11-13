@@ -99,6 +99,7 @@ FILTER_DESC=			Smart Filtering
 HEADERS_DESC=			HTTP header control
 HEARTBEAT_DESC=			Generates Heartbeats
 HEARTMONITOR_DESC=		Collects Heartbeats
+HTTP2_DESC=			HTTP/2 (RFC 7540) support (experimental)
 
 IDENT_DESC=			RFC 1413 ident lookups
 IMAGEMAP_DESC=			Server-side imagemaps

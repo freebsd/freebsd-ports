@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc-portgresql
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	science graphics
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-postgresql/
 DISTNAME=	OrthancPostgreSQL-${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	PostgreSQL plugin for Orthanc
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:${PORTSDIR}/science/orthanc
+BUILD_DEPENDS=	orthanc>=0.9.4:${PORTSDIR}/science/orthanc
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp
 

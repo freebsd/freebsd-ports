@@ -1,8 +1,9 @@
 # Created by: vanilla@
 # $FreeBSD$
 
-PORTNAME=	actor-framework
+PORTNAME=	caf
 PORTVERSION=	0.14.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	vallentin@icir.org
@@ -15,7 +16,12 @@ CXXFLAGS+=	-std=c++11 -Wextra -Wall -pedantic
 LDFLAGS+=	-pthread
 USES=		cmake:outsource compiler:c++11-lang
 USE_LDCONFIG=	yes
+TEST_TARGET=	test
+TEST_WRKSRC=	${BUILD_WRKSRC}
 USE_GITHUB=	yes
+GH_ACCOUNT=	actor-framework
+GH_PROJECT=	${GH_ACCOUNT}
+
 BROKEN_FreeBSD_8=	"undefined reference to `iswalpha_l'"
 
 OPTIONS_DEFINE=	DEBUG TEST STATIC
@@ -49,10 +55,7 @@ LOG_LEVEL_TRACE_CMAKE_ON=	-DCAF_LOG_LEVEL:STRING=4
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTEST}
-regression-test: build
-	@cd ${BUILD_WRKSRC} && ${MAKE} test
-.endif
+regression-test: test
 
 .if ${OSVERSION} < 1001000
 # require clang & libc++

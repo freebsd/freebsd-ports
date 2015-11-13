@@ -1,4 +1,4 @@
 zfs-replicate makes migrating a few filesystems and many 
 snapshots to a new zpool more easier.
 
-WWW: http://blogs.sun.com/constantin/entry/useful_zfs_snapshot_replicator_script
+WWW: https://blogs.oracle.com/constantin/entry/useful_zfs_snapshot_replicator_script

@@ -1,0 +1,10 @@
+--- pom.xml.orig	2015-10-02 13:51:13.974582000 +0000
++++ pom.xml	2015-10-02 13:51:17.416694000 +0000
+@@ -2064,6 +2064,7 @@
+         <version>2.9.1</version>
+         <configuration>
+           <maxmemory>2048m</maxmemory>
++          <additionalparam>-Xdoclint:none</additionalparam>
+         </configuration>
+         <reportSets>
+           <reportSet>

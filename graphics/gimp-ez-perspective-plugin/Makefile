@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
 DISTNAME=	${PORTNAME}.py
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP plugin to sharpen by increasing contrast in high frequency space
 
 LICENSE=	EZPERSPECTIVE
@@ -24,6 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gim
 
 USES=		python:run zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins

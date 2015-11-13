@@ -33,7 +33,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/bin
-	@${MKDIR} ${STAGEDIR}${ETCDIR} 
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	(cd ${WRKSRC} ; \
 	${COPYTREE_SHARE} "data lib transform" ${STAGEDIR}${DATADIR} \
 		"-not ( -name "*.orig" -or -name "*.bak" )" ; \

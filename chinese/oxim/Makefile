@@ -22,6 +22,8 @@ CHEWING_DESC=	 Chewing input module
 UNICODE_DESC=	 Unicode input module
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		iconv libtool pkgconfig
 USE_XORG=	x11 xft xpm xtst xext
 WANT_GNOME=	yes

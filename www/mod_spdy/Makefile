@@ -27,7 +27,7 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 ONLY_FOR_ARCHS=	amd64 i386
 USE_OPENSSL=	yes
 USE_APACHE=	22
-USES=		gmake python:2 tar:xz
+USES=		compiler execinfo gmake python:2 tar:xz
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_source_${PORTVERSION}/mod_spdy/src
@@ -46,11 +46,11 @@ SUB_FILES+=	mod_spdy.conf
 SUB_LIST+=	APACHEMODDIR=${APACHEMODDIR}
 
 OPTIONS_DEFINE=	GCC DEBUG
-GCC_DESC=	Build mod_spdy with GCC 4.6+
+GCC_DESC=	Build with current GCC
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900033 || ${PORT_OPTIONS:MGCC}
+.if ${PORT_OPTIONS:MGCC}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -60,20 +60,9 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 USE_GCC?=	yes
 GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
 .else
-.if ${OSVERSION} < 902000
-BROKEN=		Depends on deleted lang/llvm32
-#BUILD_DEPENDS+=	${LOCALBASE}/bin/clang32:${PORTSDIR}/lang/clang32
-CC=		${LOCALBASE}/bin/clang32
-CXX=		${LOCALBASE}/bin/clang++32
-.else
 CC=		clang
 CXX=		clang++
-.endif
 GYP_DEFINES+=	clang=1
-.endif
-
-.if ${OSVERSION} < 1000052
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -97,8 +86,8 @@ MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386 && ${OSVERSION} < 901000
-BROKEN=	does not link due to libtool not respecting CC
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
+CXXFLAGS+=	-Wno-unused-local-typedef
 .endif
 
 post-extract:
@@ -134,8 +123,8 @@ do-configure:
 		../../depot_tools/gclient.py runhooks
 
 pre-build:
-	cd ${WRKSRC} && CONFIGURE_ENV='${CONFIGURE_ENV}' BUILDROOT=${WRKSRC}/temp \
-		${WRKSRC}/build_modssl_with_npn.sh
+	cd ${WRKSRC} && CONFIGURE_ENV='${CONFIGURE_ENV}' \
+		BUILDROOT=${WRKSRC}/temp ${WRKSRC}/build_modssl_with_npn.sh
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${APACHEMODDIR} \

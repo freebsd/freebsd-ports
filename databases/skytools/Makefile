@@ -12,8 +12,6 @@ COMMENT=	PostgreSQL tools from Skype: walshipping, queueing, replication
 GNU_CONFIGURE=	yes
 USES=		gmake python:2 shebangfix pgsql
 
-python_OLD_CMD=	/usr/bin/env python
-python_CMD=	/usr/bin/env python2
 SHEBANG_FILES=	setup_pkgloader.py setup_skytools.py \
 		scripts/catsql.py scripts/data_maintainer.py \
 		scripts/find_sql_functions.py scripts/grantfu.py \

@@ -5,7 +5,7 @@ PORTNAME=	delay
 PORTVERSION=	1.6
 CATEGORIES=	misc
 MASTER_SITES=	http://onegeek.org/~tom/software/delay/dl/ \
-		http://utenti.gufi.org/~gmarco/files/distfiles/ 
+		http://utenti.gufi.org/~gmarco/files/distfiles/
 
 MAINTAINER=	gmarco@gufi.org
 COMMENT=	Delay program with feedback to the user

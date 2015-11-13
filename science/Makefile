@@ -9,9 +9,11 @@
     SUBDIR += R-cran-DCluster
     SUBDIR += R-cran-Epi
     SUBDIR += R-cran-bayesm
+    SUBDIR += R-cran-cmprsk
     SUBDIR += R-cran-e1071
     SUBDIR += R-cran-eco
     SUBDIR += R-cran-epicalc
+    SUBDIR += R-cran-etm
     SUBDIR += R-cran-snow
     SUBDIR += R-cran-som
     SUBDIR += afni
@@ -76,6 +78,7 @@
     SUBDIR += libquantum
     SUBDIR += libsvm
     SUBDIR += libsvm-python
+    SUBDIR += libxc
     SUBDIR += linsmith
     SUBDIR += massxpert
     SUBDIR += mbdyn
@@ -151,6 +154,8 @@
     SUBDIR += py-pydap
     SUBDIR += py-pydicom
     SUBDIR += py-pysal
+    SUBDIR += py-pyteomics
+    SUBDIR += py-pyteomics.biolccc
     SUBDIR += py-scikit-learn
     SUBDIR += py-scikit-sparse
     SUBDIR += py-scimath
@@ -159,8 +164,6 @@
     SUBDIR += pybrain
     SUBDIR += pycdf
     SUBDIR += pynn
-    SUBDIR += pyteomics
-    SUBDIR += pyteomics.biolccc
     SUBDIR += qcl
     SUBDIR += qtresistors
     SUBDIR += rubygem-ai4r

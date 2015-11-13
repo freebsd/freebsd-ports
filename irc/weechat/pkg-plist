@@ -17,6 +17,7 @@ libdata/pkgconfig/weechat.pc
 %%MANPAGES%%man/it/man1/weechat.1.gz
 %%MANPAGES%%man/ja/man1/weechat.1.gz
 %%MANPAGES%%man/pl/man1/weechat.1.gz
+%%MANPAGES%%man/ru/man1/weechat.1.gz
 %%ASPELL%%lib/weechat/plugins/aspell.so
 %%CHARSET%%lib/weechat/plugins/charset.so
 %%LUA%%lib/weechat/plugins/lua.so

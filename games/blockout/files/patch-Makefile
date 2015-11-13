@@ -1,25 +1,50 @@
---- BlockOut/Makefile.orig	2008-01-10 00:29:06.000000000 +0600
-+++ BlockOut/Makefile	2014-02-09 13:17:22.000000000 +0700
-@@ -34,17 +34,17 @@
+--- BlockOut/Makefile.orig	2014-05-06 16:47:56.000000000 +0700
++++ BlockOut/Makefile	2015-08-30 12:41:52.375668000 +0600
+@@ -41,33 +41,37 @@
  
- #---------------------------------------------------------------------
+ ADD_LIBS = ../ImageLib/src/libimagelib.a
  
--SDL_ROOT	= /users/pons/test/opengl/SDL
--IMGLIB_ROOT	= ../ImageLib
+-ifdef _linux64
+-SDL_LIBS = /usr/lib/x86_64-linux-gnu
+-else
+-SDL_LIBS = /usr/lib/i386-linux-gnu
+-endif
++#ifdef _linux64
++#SDL_LIBS = /usr/lib/x86_64-linux-gnu
++#else
++#SDL_LIBS = /usr/lib/i386-linux-gnu
++#endif
++SDL_LIBS = /usr/local/lib
++
++#CXX		= g++
+ 
+-CXX		= g++
 +SDL_ROOT	= /usr/local
 +IMGLIB_ROOT	= ../ImageLib/src
  
--CXX		= g++
-+#CXX		= g++
+ ifdef _release
+ 
+ CXXFLAGS =     -O2 -Dlinux -c \
+-               -I/usr/include/SDL -I../ImageLib/src -I.
++		-I/usr/include -I$(SDL_ROOT)/include/SDL -I$(SDL_ROOT)/include -I$(IMGLIB_ROOT) -I.
+ 
+ LFLAGS   =      -Wl,--strip-all \
+ 		$(ADD_LIBS) \
+ 		-lSDL_mixer -lSDL -lasound \
+-		-lGL -lGLU -lpthread -lm -ldl
++		-lGL -lGLU -lpthread -lm
+ 
+ else
  
  CXXFLAGS =     -g -D_DEBUG -Dlinux -c \
--               -I$(SDL_ROOT)/include/SDL -I$(IMGLIB_ROOT) -I.
-+               -I/usr/include -I$(SDL_ROOT)/include/SDL -I$(SDL_ROOT)/include -I$(IMGLIB_ROOT) -I.
+-               -I/usr/include/SDL -I../ImageLib/src -I.
++		-I/usr/include -I$(SDL_ROOT)/include/SDL -I$(SDL_ROOT)/include -I$(IMGLIB_ROOT) -I.
  
- LIBS	 =     -L$(SDL_ROOT)/lib -L$(IMGLIB_ROOT)
+ LFLAGS   =      -L $(SDL_LIBS) \
+ 		$(ADD_LIBS) \
+ 		-lSDL_mixer -lSDL -lasound \
+-		-lGL -lGLU -lpthread -lm -ldl
++		-lGL -lGLU -lpthread -lm
  
--LFLAGS   =      $(LIBS) -limagelib -lGL -lGLU -lSDL_mixer -lSDL -lpthread -lm -ldl 
-+LFLAGS   =      $(LIBS) -limagelib -lGL -lGLU -lSDL_mixer -lSDL -lpthread -lm 
- 
- #--------------------------------------------------------------------
+ endif
  

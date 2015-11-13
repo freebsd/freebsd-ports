@@ -21,7 +21,7 @@ SHEBANG_FILES=	${WRKSRC}/src/*.bash \
 		${WRKSRC}/doc/articles/wiki/*.bash \
 		${WRKSRC}/test/bench/shootout/timing.sh
 
-sh_OLD_CMD=	${SETENV} bash
+sh_OLD_CMD=	"/usr/bin/env bash"
 sh_CMD=		${SH}
 
 WRKSRC=		${WRKDIR}/go

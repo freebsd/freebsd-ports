@@ -77,13 +77,6 @@ OPENGL_CONFIGURE_ENABLE=	opengl-video
 
 SUB_FILES=	pkg-message
 
-# for too old binutils in base
-.if ${OSVERSION} < 900033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-.endif
-
 .if ${PORT_OPTIONS:MBINDINGS}
 CONFIGURE_ARGS+=	--python=${PYTHON_CMD}
 USES+=		python

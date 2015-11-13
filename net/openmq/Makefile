@@ -25,7 +25,7 @@ BOOTJARS=	javaee-api-6.0.jar:2 \
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.6 1.7
 JAVA_VENDOR=	openjdk
 
 WRKSRC=		${WRKDIR}/mq

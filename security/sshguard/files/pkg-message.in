@@ -3,16 +3,8 @@
 
 %%PKGMSG_FWBLOCK%%
 
-  If you would like to use sshguard via syslogd, add an entry to your
-  /etc/syslog.conf like the following:
-
-    auth.info;authpriv.info     |exec %%PREFIX%%/sbin/sshguard
-
-  and use "/etc/rc.d/syslogd reload" to activate it. Note, you can add
-  additional arguments to the sshguard command if you so desire.
-
-  Alternatively, you can also start sshguard as a daemon by using the
+  You can start sshguard as a daemon by using the
   rc.d script installed at %%PREFIX%%/etc/rc.d/sshguard .
   
-  See sshguard(8) and http://sshguard.sourceforge.net for additional info.
+  See sshguard(8) and http://www.sshguard.net/docs/setup for additional info.
 ##########################################################################

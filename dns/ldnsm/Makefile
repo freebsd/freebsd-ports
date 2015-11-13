@@ -9,6 +9,7 @@ MASTER_SITES=	http://vvelox.net/src/ldap/
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Manages LDAP enteries for the BIND9 SDB LDAP patch
 
+BROKEN=		Does not fetch
 USES=		perl5 tar:tgz
 NO_BUILD=	yes
 

@@ -111,7 +111,7 @@ PORTEXAMPLES=	*
 
 SUB_FILES=	pkg-message pkg-install pkg-deinstall cyrus-imapd-man.conf
 
-SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP} 
+SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP}
 
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus

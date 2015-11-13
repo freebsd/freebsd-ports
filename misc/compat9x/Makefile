@@ -22,10 +22,6 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000
-IGNORE=		is for FreeBSD 9.x and newer
-.endif
-
 .if ${ARCH} == amd64
 USE_LDCONFIG32=	${TARGET32_DIR}
 .endif

@@ -1,0 +1,13 @@
+This module provides an RPC::ExtDirect gateway implementation for Plack
+environment. It is packaged as a standard Plack middleware component suitable
+for using with Plack::Builder.
+
+Plack::Middleware::ExtDirect is recommended to be used with Perl versions 5.12
+and newer, for reasons explained below. For Perls older than 5.12,
+CGI::ExtDirect gateway may be a better choice - especially if you cannot
+install XS dependent packages.
+
+If you are not familiar with Ext.Direct, more information can be found in
+RPC::ExtDirect::Intro.
+
+WWW: http://search.cpan.org/dist/Plack-Middleware-ExtDirect/

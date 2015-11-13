@@ -9,10 +9,10 @@ MASTER_SITES=	http://registry.gimp.org/files/
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-scripts
 DISTNAME=	script-fu-jagged-border.scm
-EXTRACT_SUFX=
-EXTRACT_ONLY=
+EXTRACT_SUFX=	# empty
+EXTRACT_ONLY=	# empty
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP script to create a jagged border around an image
 
 LICENSE=	GPLv3
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gimp:${PORTSDIR}/graphics/gimp-app
 
 USES=		dos2unix
 NO_BUILD=	yes
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
 GIMP_SCRIPTS_DIR?=	share/gimp/scripts
@@ -32,6 +33,6 @@ post-extract:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${GIMP_SCRIPTS_DIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/${GIMP_SCRIPTS_DIR}/
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/${GIMP_SCRIPTS_DIR}/
 
 .include <bsd.port.mk>

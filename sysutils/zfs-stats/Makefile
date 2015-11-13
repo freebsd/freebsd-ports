@@ -18,7 +18,7 @@ GH_ACCOUNT=	mmatuska
 
 NO_BUILD=	yes
 SHEBANG_FILES=	zfs-*
-perl_OLD_CMD=	/usr/bin/env -iS perl
+perl_OLD_CMD=	"/usr/bin/env -iS perl"
 
 PLIST_FILES=	bin/zfs-stats \
 		bin/zfs-mon

@@ -1,29 +1,20 @@
 --- ./configure.orig	2012-05-12 07:05:20.000000000 +1000
 +++ ./configure	2012-05-12 07:22:49.000000000 +1000
-@@ -6594,7 +6594,7 @@
+@@ -6567,7 +6567,7 @@
  done
  
  		case "$host" in
 -		*-*-freebsd78.*)
-+		*-*-freebsd[7-9].*)
++		*-*-freebsd[7-9].* | *-*-freebsd[1-9][0-9].*)
  			# FreeBSD 7.x and later SCTP support doesn't need -lsctp.
  			;;
  		*)
-@@ -7169,7 +7169,7 @@
+@@ -7142,7 +7142,7 @@
  			enable_cpuutil="kstat - auto"
  			NETCPU_SOURCE="kstat"
  			;;
 -                     *-*-freebsd[4-8].* | *-*-netbsd[1-9].* )
-+                     *-*-freebsd[4-9].* | *-*-netbsd[1-9].* )
++                     *-*-freebsd[4-9].* | *-*-freebsd[1-9][0-9].* | *-*-netbsd[1-9].* )
  			use_cpuutil=true
  
  $as_echo "#define USE_SYSCTL /**/" >>confdefs.h
-@@ -7238,7 +7238,7 @@
- 			enable_rtlookup="rtmget - auto"
- 			NETRTLKUP_SOURCE="rtmget"
- 			;;
--                     *-*-freebsd[4-8].* | *-*-darwin*)
-+                     *-*-freebsd[4-9].* | *-*-darwin*)
- 			use_rtlookup=true
- 			enable_rtlookup="rtmget - auto"
- 			NETRTLKUP_SOURCE="rtmget"

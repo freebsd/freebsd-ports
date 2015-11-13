@@ -1,0 +1,22 @@
+Book of Psalms from the Douai Bible (1610) in fortune(6) file format
+
+In general, taking random out-of-context verses from a Bible is a
+VERY bad idea. This said, this is an experiment to generate a not
+too bad fortune-cookie database under the following principles:
+
+- Only the text from the psalms, which are usually meant for praying,
+  were taken.
+- The texts always include at least some context: you are always
+  notified where the text came from and there is always sufficient
+  text so that the phrases make sense.
+- The text was taken from the classic Douai Bible, a direct translation
+  from the latin Vulgata. The old language will not give you false
+  impressions that you are actually understanding it fully. 
+- No effort was done to remove the original comments. Non-Christians
+  may rightfully feel the translation is biased.
+
+This is meant to be a general aid for Christian meditation: it is not
+generally to be taken as my message-of-the-day from God.
+
+To use, you need UNIX fortune(6) utility and you should follow the
+instructions from the corresponding man page.

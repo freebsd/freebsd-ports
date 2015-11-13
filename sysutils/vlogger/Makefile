@@ -9,6 +9,8 @@ MASTER_SITES=	http://n0rp.chemlab.org/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logging utility for Apache servers with many virtual hosts
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI

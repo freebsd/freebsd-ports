@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Action caching for Action Pack (removed from core in Rails 4.0)
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-actionpack4>=4.0:${PORTSDIR}/www/rubygem-actionpack4
 

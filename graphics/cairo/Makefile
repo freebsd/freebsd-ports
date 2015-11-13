@@ -3,12 +3,16 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.14.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
+
+LICENSE=	LGPL21 MPL
+LICENSE_COMB=	multi
 
 USES=		tar:xz
 
@@ -57,6 +61,13 @@ XCB_CONFIGURE_ENABLE=	xcb
 PLIST_SUB+=	LIBVER=2.11400.2
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == "mips"
+BUILD_DEPENDS+=	${LOCALBASE}/include/atomic_ops.h:${PORTSDIR}/devel/libatomic_ops
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	cairo_cv_atomic_primitives="libatomic-ops"
+.endif
 
 .if ${PORT_OPTIONS:MOPENGL} && !${PORT_OPTIONS:MX11}
 BROKEN=	OpenGL option needs X11 support

@@ -5,7 +5,9 @@ share/applications/corebird.desktop
 %%DATADIR%%/sql/accounts/Create.1.sql
 %%DATADIR%%/sql/accounts/Create.2.sql
 %%DATADIR%%/sql/init/Create.1.sql
+%%DATADIR%%/sql/init/Create.2.sql
 share/dbus-1/services/org.baedert.corebird.service
+share/icons/hicolor/256x256/apps/corebird.png
 share/icons/hicolor/128x128/apps/corebird.png
 share/icons/hicolor/16x16/apps/corebird.png
 share/icons/hicolor/24x24/apps/corebird.png
@@ -16,9 +18,11 @@ share/icons/hicolor/96x96/apps/corebird.png
 share/locale/ar/LC_MESSAGES/corebird.mo
 share/locale/ast/LC_MESSAGES/corebird.mo
 share/locale/ca/LC_MESSAGES/corebird.mo
+share/locale/ca@valencia/LC_MESSAGES/corebird.mo
 share/locale/de/LC_MESSAGES/corebird.mo
 share/locale/en_AU/LC_MESSAGES/corebird.mo
 share/locale/es/LC_MESSAGES/corebird.mo
+share/locale/es_VE/LC_MESSAGES/corebird.mo
 share/locale/fa/LC_MESSAGES/corebird.mo
 share/locale/fi/LC_MESSAGES/corebird.mo
 share/locale/fr/LC_MESSAGES/corebird.mo

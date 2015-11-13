@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PadWalker
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ROBIN
@@ -16,5 +16,8 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PadWalker/PadWalker.so
 
 .include <bsd.port.mk>

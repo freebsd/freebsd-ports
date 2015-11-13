@@ -1,6 +1,6 @@
---- sublime_text.desktop.orig	2014-08-27 
-+++ sublime_text.desktop	
-@@ -4,20 +4,9 @@
+--- sublime_text.desktop.orig	2015-03-26 07:23:04 UTC
++++ sublime_text.desktop
+@@ -4,20 +4,9 @@ Type=Application
  Name=Sublime Text
  GenericName=Text Editor
  Comment=Sophisticated text editor for code, markup and prose

@@ -1,8 +1,8 @@
---- src/Makefile.orig	2014-03-22 22:50:21.000000000 -0300
-+++ src/Makefile	2014-03-22 22:50:36.000000000 -0300
+--- src/Makefile.orig	2008-12-30 10:23:34 UTC
++++ src/Makefile
 @@ -1,4 +1,4 @@
 -CFLAGS = -O3 -Wall $(shell gimptool-2.0 --cflags)
-+CFLAGS = $(shell gimptool-2.0 --cflags)
++CFLAGS = -Wall $(shell gimptool-2.0 --cflags)
  LIBS = $(shell gimptool-2.0 --libs)
  PLUGIN = wavelet-decompose
  SOURCES = plugin.c wavelet.c interface.c decompose.c

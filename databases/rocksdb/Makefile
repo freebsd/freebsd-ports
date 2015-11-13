@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	3.13.1
-DISTVERSIONPREFIX=	rocksdb-
+PORTVERSION=	4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,12 +16,11 @@ LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags \
 		libsnappy.so:${PORTSDIR}/archivers/snappy
 
 ALL_TARGET=	shared_lib all
-CFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 CPPFLAGS+=	-DOS_FREEBSD
-LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV=	CXX=${CXX}
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-USES=		compiler:c++11-lib gmake
+USES=		compiler:c++11-lib gmake localbase
 
 GH_ACCOUNT=	facebook
 USE_GITHUB=	yes

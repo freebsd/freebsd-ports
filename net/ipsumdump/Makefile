@@ -21,17 +21,12 @@ PLIST_FILES=	bin/ipaggcreate bin/ipsumdump bin/ipaggmanip \
 OPTIONS_DEFINE=	IPV6 DOCS
 OPTIONS_SUB=	yes
 
+IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_ENABLE=	ipv6
-
-.include <bsd.port.options.mk>
 
 # Try to unbreak parallel (-jX) builds
 post-patch:
 	@${ECHO_CMD} 'src: @LIBCLICK_TARGET@' >> ${WRKSRC}/Makefile.in
-
-.if ${PORT_OPTIONS:MIPV6}
-CATEGORIES+=	ipv6
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

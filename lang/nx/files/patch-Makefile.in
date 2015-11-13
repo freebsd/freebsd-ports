@@ -1,20 +1,20 @@
---- Makefile.in.orig	2013-06-07 12:07:24.000000000 +0200
-+++ Makefile.in	2013-11-11 12:17:28.000000000 +0100
-@@ -665,7 +665,7 @@
- #
- 
- genstubs:
--	$(TCLSH) $(TCL_SRC_DIR)/tools/genStubs.tcl $(src_generic_dir) \
-+	$(TCLSH) genStubs.tcl $(src_generic_dir) \
- 		$(src_generic_dir)/nsf.decls $(src_generic_dir)/nsfInt.decls
- 
- #
-@@ -752,7 +752,7 @@
+--- Makefile.in.orig	2014-12-06 13:58:42.000000000 +0000
++++ Makefile.in	2015-10-15 18:32:24.161848000 +0000
+@@ -413,7 +413,7 @@
+ 	    rm -rf $(DESTDIR)$(pkglibdir)/$$i ; \
+ 	    $(INSTALL_DATA) $(src_lib_dir)/$$i $(DESTDIR)$(pkglibdir)/$$i ; \
+ 	done;
+-	@mkdir -p $(DESTDIR)$(libdir)/tcl8/site-tcl
++	#@mkdir -p $(DESTDIR)$(libdir)/tcl8/ite-tcl
+ 	@for i in $(srcdir)/tcl8/site-tcl/*.tm ; do \
+ 	    if test -f $$i; then \
+ 	       echo "    Installing module $$i in $(DESTDIR)$(libdir)/tcl8/site-tcl" ; \
+@@ -804,7 +804,7 @@
  	    else \
  		echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
  		$(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
 -		ln -s $(DESTDIR)$(pkglibdir)/$$p $(DESTDIR)$(libdir)/$$p; \
-+		ln -s $(pkglibdir)/$$p $(DESTDIR)$(libdir)/$$p; \
++		ln -s $(PKG_DIR)/$$p $(DESTDIR)$(libdir)/$$p; \
  	    fi; \
  	    ext=`echo $$p|sed -e "s/.*\.//"`; \
  	    if test "x$$ext" = "xdll"; then \

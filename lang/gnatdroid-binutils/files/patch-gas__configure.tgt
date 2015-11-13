@@ -1,6 +1,6 @@
---- gas/configure.tgt.orig	2013-11-04 15:33:37.000000000 +0000
+--- gas/configure.tgt.orig	2015-07-21 08:20:58 UTC
 +++ gas/configure.tgt
-@@ -128,6 +128,7 @@ case ${generic_target} in
+@@ -130,6 +130,7 @@ case ${generic_target} in
  
    arc-*-elf*)				fmt=elf ;;
  

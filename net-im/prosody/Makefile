@@ -32,9 +32,7 @@ LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 .include <bsd.port.options.mk>
 
 USES=		cpe gmake lua:51 shebangfix
-SHEBANG_LANG=	lua
 SHEBANG_FILES=	prosody prosodyctl
-lua_OLD_CMD=	${SETENV} lua
 .if ${PORT_OPTIONS:MLUAJIT}
 lua_CMD=	${LOCALBASE}/bin/luajit
 .else

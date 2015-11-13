@@ -122,7 +122,7 @@ post-patch:
 .if ${LIBGDA5_SLAVE} == jdbc
 pre-configure:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/javac getsp.java
-.endif	
+.endif
 
 pre-build:
 .if ${LIBGDA5_SLAVE}==postgresql

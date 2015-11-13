@@ -1,20 +1,20 @@
---- third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp.orig	2014-10-10 09:15:55 UTC
-+++ third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp
-@@ -1052,7 +1052,7 @@
- //function AFNumber_Format(nDec, sepStyle, negStyle, currStyle, strCurrency, bCurrencyPrepend)
- FX_BOOL CJS_PublicMethods::AFNumber_Format(OBJ_METHOD_PARAMS)
- {
+--- third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp.orig	2015-10-14 18:30:46.180316000 +0200
++++ third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp	2015-10-14 18:31:44.759135000 +0200
+@@ -910,7 +910,7 @@
+                                            const CJS_Parameters& params,
+                                            CJS_Value& vRet,
+                                            CFX_WideString& sError) {
 -#if _FX_OS_ != _FX_ANDROID_
 +#if _FX_OS_ != _FX_ANDROID_ && _FX_OS_ != _FX_LINUX_DESKTOP_
- 	v8::Isolate* isolate = ::GetIsolate(cc);
- 	CJS_Context* pContext = (CJS_Context *)cc;
- 	ASSERT(pContext != NULL);
-@@ -1393,7 +1393,7 @@
- //function AFPercent_Format(nDec, sepStyle)
- FX_BOOL CJS_PublicMethods::AFPercent_Format(OBJ_METHOD_PARAMS)
- {
+   v8::Isolate* isolate = ::GetIsolate(cc);
+   CJS_Context* pContext = (CJS_Context*)cc;
+   ASSERT(pContext != NULL);
+@@ -1213,7 +1213,7 @@
+                                             const CJS_Parameters& params,
+                                             CJS_Value& vRet,
+                                             CFX_WideString& sError) {
 -#if _FX_OS_ != _FX_ANDROID_
 +#if _FX_OS_ != _FX_ANDROID_ && _FX_OS_ != _FX_LINUX_DESKTOP_
- 	CJS_Context* pContext = (CJS_Context *)cc;
- 	ASSERT(pContext != NULL);
- 	CJS_EventHandler* pEvent = pContext->GetEventHandler();
+   CJS_Context* pContext = (CJS_Context*)cc;
+   ASSERT(pContext != NULL);
+   CJS_EventHandler* pEvent = pContext->GetEventHandler();

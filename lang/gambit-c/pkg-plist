@@ -10,7 +10,7 @@ bin/scheme-r5rs
 bin/scheme-srfi-0
 bin/six
 bin/six-script
-include/gambit-c/gambit-not407009.h
+include/gambit-c/gambit-not408001.h
 include/gambit-c/gambit.h
 lib/gambit-c/_asm#.scm
 lib/gambit-c/_assert#.scm

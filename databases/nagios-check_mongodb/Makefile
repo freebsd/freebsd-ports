@@ -17,7 +17,6 @@ GH_PROJECT=	nagios-plugin-mongodb
 GH_TAGNAME=	9d17373
 USES=		python shebangfix
 SHEBANG_FILES=	${WRKSRC}/check_mongodb.py
-python_OLD_CMD=	/usr/bin/env python
 NO_BUILD=	yes
 PLIST_FILES=	libexec/nagios/check_mongodb
 

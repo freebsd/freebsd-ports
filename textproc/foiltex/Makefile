@@ -29,12 +29,12 @@ PORTEXAMPLES=	sampfoil.tex
 PLIST_FILES=	${FOIL_FILES:S,^,${FOIL_DIR}/,}
 
 do-extract:
-	${MKDIR} ${WRKDIR}
-	${CP} ${DISTDIR}/foiltex.ins ${WRKDIR}/foiltex.ins
-	${CP} ${DISTDIR}/foiltex.dtx ${WRKDIR}/foiltex.dtx
+	${MKDIR} ${WRKSRC}
+	${CP} ${DISTDIR}/foiltex.ins ${WRKSRC}/foiltex.ins
+	${CP} ${DISTDIR}/foiltex.dtx ${WRKSRC}/foiltex.dtx
 
 do-build:
-	@cd ${WRKDIR} && ${LATEX_CMD} foiltex.ins && \
+	@cd ${WRKSRC} && ${LATEX_CMD} foiltex.ins && \
 		${LATEX_CMD} foiltex.dtx && \
 		${LATEX_CMD} foiltex.dtx && \
 		${LATEX_CMD} foiltex.dtx

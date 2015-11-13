@@ -116,6 +116,8 @@ share/applications/xvile.desktop
 %%PORTDOCS%%%%DOCSDIR%%/oleauto.doc
 %%PORTDOCS%%%%DOCSDIR%%/perl.doc
 %%PORTDOCS%%%%DOCSDIR%%/visvile.doc
+share/icons/hicolor/48x48/apps/vile.png
+share/icons/hicolor/scalable/apps/vile.svg
 share/pixmaps/vile.xpm
 %%DATADIR%%/ada.keywords
 %%DATADIR%%/ant.keywords

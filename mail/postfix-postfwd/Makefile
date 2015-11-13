@@ -22,7 +22,6 @@ SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	${PORTNAME}
 USES=		perl5 shebangfix
-SHEBANG_LANG=	perl
 SHEBANG_FILES=	sbin/* tools/*.pl tools/hapolicy/*
 USE_PERL5=	run
 NO_BUILD=	yes

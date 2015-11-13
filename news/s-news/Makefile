@@ -3,7 +3,7 @@
 
 PORTNAME=	s-news
 PORTVERSION=	0.1.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news
 MASTER_SITES=	http://www.lost.org.uk/
 
@@ -20,12 +20,8 @@ CONFIGURE_ARGS+= \
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-USES=	gmake
+USES=		gmake fakeroot
 GNU_CONFIGURE=	yes
-
-MAN1=		inews.1
-MAN8=		expire.8 listactive.8 makehistory.8 newgroup.8 nntpd.8 overview.8 \
-		qnews.8 rmgroup.8 rnews.8
 
 PORTDOCS=	README README.conf README.suck TODO
 

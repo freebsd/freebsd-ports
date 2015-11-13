@@ -27,7 +27,6 @@ USE_PYTHON=	py3kplist
 INSTALLS_ICONS=	yes
 
 SHEBANG_FILES=	src/*.py
-SHEBANG_LANG=	python
 
 GLIB_SCHEMAS=	org.gnome.Lollypop.gschema.xml
 

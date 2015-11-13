@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	domain_name
-PORTVERSION=	0.5.24
+PORTVERSION=	0.5.25
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	rubygem-unf>=0.0.5:${PORTSDIR}/textproc/rubygem-unf
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -14,6 +14,7 @@ MAINTAINER?=	samm@os2.kiev.ua
 COMMENT=	Desktop Organizer Software for the Palm Pilot
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpisock.so:${PORTSDIR}/palm/pilot-link
 
@@ -24,19 +25,14 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-pilot-prefix=${LOCALBASE}
 USE_GNOME+=	gtk20 intltool
-OPTIONS_DEFINE=	DOCS NLS
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=		NLS="@comment "
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES_OFF=		gettext-tools
 
 post-build:
 	cd ${WRKSRC}/docs && ${MAKE_CMD}
@@ -53,7 +49,7 @@ post-install:
 .for ext in html png jpg
 	${INSTALL_DATA} ${WRKSRC}/docs/*.${ext} ${STAGEDIR}${DOCSDIR}
 .endfor
-.for i in AUTHORS BUGS COPYING ChangeLog INSTALL README TODO
+.for i in AUTHORS BUGS ChangeLog INSTALL README TODO
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/icons/README ${STAGEDIR}${DOCSDIR}/README.icons

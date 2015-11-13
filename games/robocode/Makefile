@@ -11,6 +11,8 @@ DIST_SUBDIR=	java
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game for learning Java[tm] programming language
 
+BROKEN=		unfetchable
+
 LICENSE=	EPL
 
 USES=		dos2unix zip
@@ -31,7 +33,7 @@ SUB_FILES=	${PORTNAME}-MeleeRumble ${PORTNAME}-RoboRumble \
 		${PORTNAME}-TwinDuel pkg-deinstall pkg-message
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-* \
+	cd ${WRKDIR} && ${INSTALL_SCRIPT} ${SUB_FILES:Mrobocode-*} \
 		${STAGEDIR}${PREFIX}/bin/
 
 .for d in battles compilers javadoc libs license roborumble robots \

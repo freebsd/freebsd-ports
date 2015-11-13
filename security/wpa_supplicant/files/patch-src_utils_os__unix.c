@@ -1,6 +1,6 @@
---- src/utils/os_unix.c.orig	2015-03-15 17:30:39 UTC
+--- src/utils/os_unix.c.orig	2015-09-27 19:02:05 UTC
 +++ src/utils/os_unix.c
-@@ -190,17 +190,42 @@ static int os_daemon(int nochdir, int no
+@@ -214,17 +214,42 @@ static int os_daemon(int nochdir, int no
  #define os_daemon daemon
  #endif /* __APPLE__ */
  
@@ -43,7 +43,7 @@
  	if (pid_file) {
  		FILE *f = fopen(pid_file, "w");
  		if (f) {
-@@ -208,6 +233,7 @@ int os_daemonize(const char *pid_file)
+@@ -232,6 +257,7 @@ int os_daemonize(const char *pid_file)
  			fclose(f);
  		}
  	}
@@ -51,7 +51,7 @@
  
  	return -0;
  #endif /* defined(__uClinux__) || defined(__sun__) */
-@@ -357,7 +383,7 @@ int os_setenv(const char *name, const ch
+@@ -384,7 +410,7 @@ int os_setenv(const char *name, const ch
  
  int os_unsetenv(const char *name)
  {
@@ -60,3 +60,14 @@
      defined(__OpenBSD__)
  	unsetenv(name);
  	return 0;
+@@ -445,7 +471,9 @@ int os_file_exists(const char *fname)
+ int os_fdatasync(FILE *stream)
+ {
+ 	if (!fflush(stream)) {
+-#ifndef __MACH__
++#ifdef FREE_DRAGON
++		return fsync(fileno(stream));
++#elif !defined __MACH__
+ 		return fdatasync(fileno(stream));
+ #else /* __MACH__ */
+ #ifdef F_FULLFSYNC

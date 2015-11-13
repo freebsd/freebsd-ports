@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 900004
+.if ${OPSYS} == FreeBSD
 IGNORE=		is now contained in the base system
 .endif
 

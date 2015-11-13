@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xboard-devel
-PORTVERSION=	4.7.3.20140909.8
+PORTVERSION=	4.8.0.20151020.3
 PORTREVISION=
 PORTEPOCH=
 MASTER_SITES=	http://freeheimdall.spdns.org/files/
@@ -14,6 +14,8 @@ MAINTAINER=	kalten@gmx.at
 
 LICENSE=	GPLv3
 
+LIB_DEPENDS?=	libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango
+
 CONFLICTS=	xboard-[0-9]*
 
 MASTERDIR=	${.CURDIR}/../xboard
@@ -21,10 +23,10 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 PATCHDIR=	${.CURDIR}/files
 PLIST=	${.CURDIR}/pkg-plist
 
-COMMIT_HASH=	e677df0
+COMMIT_HASH=	f49e7e1
 DATADIR=	${PREFIX}/share/games/xboard
 DOCSDIR=	${PREFIX}/share/doc/xboard
-XBOARDCONF=	${WRKSRC}/xboard.conf.in
+XBOARDCONF=	${WRKSRC}/xboard.conf
 
 USES=		autoreconf desktop-file-utils gettext-tools gmake shared-mime-info shebangfix
 SHEBANG_FILES=	texi2man
@@ -34,6 +36,6 @@ INSTALL_TARGET=	install-strip
 pre-configure:
 	${RM} ${WRKSRC}/m4/*.m4
 	${REINPLACE_CMD} -e "s|\(GITVERSION=\).*|\1${COMMIT_HASH}|" ${WRKSRC}/Makefile.am
-	${REINPLACE_CMD} -E "s|(AC_INIT\(\[xboard\],\[master-[^]]+)(\].+\))|\1-git:${COMMIT_HASH}\2|" ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} -E "s|(AC_INIT\(\[xboard\],\[)[^]]+(\].+\))|\1${PORTVERSION}-git:${COMMIT_HASH}\2|" ${WRKSRC}/configure.ac
 
 .include "${MASTERDIR}/Makefile"

@@ -40,7 +40,7 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking \
-		--enable-debug
+		--enable-debug --disable-linux-caps
 
 BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
@@ -120,26 +120,20 @@ PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
 CONFIGURE_ARGS+=        --disable-json
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900034
-CONFIGURE_ARGS+=        --disable-linux-caps
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' ${WRKSRC}/configure
 	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.sample
 	@${LN} ${WRKSRC}/scl/scl.conf ${WRKSRC}/scl/scl.conf.sample
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
-.endif
 	${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/scl/syslog-ng.conf.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/scl/scl.conf.sample ${STAGEDIR}${PREFIX}/etc
 
-.include <bsd.port.post.mk>
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

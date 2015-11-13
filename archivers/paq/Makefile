@@ -17,7 +17,7 @@ LICENSE_COMB=	multi
 
 USES=		dos2unix zip:infozip
 
-EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt -d ${WRKDIR}
+EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt -d ${WRKSRC}
 NO_WRKSUBDIR=	yes
 OPTIONS_DEFINE=	OPENMP DOCS
 SUB_FILES=	pkg-message

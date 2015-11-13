@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.0-20150719
+DISTVERSION=	3.0-20151003
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
 #MASTER_SITES:=	${MASTER_SITES:S|$|experimental/|}
 MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
 PKGNAMESUFFIX=	-current
-DISTNAME=	${PORTNAME}-3.0.2
+DISTNAME=	${PORTNAME}-3.0.3
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ohauer@FreeBSD.org
@@ -33,7 +33,6 @@ CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* \
 USERS=		postfix
 GROUPS=		mail maildrop postfix
 USES=		perl5 shebangfix cpe
-SHEBANG_LANG=	perl
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
 USE_RC_SUBR=	postfix
@@ -319,16 +318,16 @@ post-patch:
 	@${ECHO} '$$html_directory/$f:f:root:-:644' \
 		>> ${WRKSRC}/conf/postfix-files
 .endfor
-.if ${PORT_OPTIONS:MSPF}
-	@${ECHO} '$$readme_directory/SPF_README:f:root:-:644' \
-		>> ${WRKSRC}/conf/postfix-files
-	@${REINPLACE_CMD} -E -e '${REINPLACE}' \
-		${WRKSRC}/README_FILES/SPF_README
-.endif
 	@${ECHO} '$$manpage_directory/man1/posttls-finger.1:f:root:-:644' \
 		>> ${WRKSRC}/conf/postfix-files
 	@${ECHO} '$$command_directory/posttls-finger:f:root:-:755' \
 		>> ${WRKSRC}/conf/postfix-files
+
+post-patch-SPF-on:
+	@${ECHO} '$$readme_directory/SPF_README:f:root:-:644' \
+		>> ${WRKSRC}/conf/postfix-files
+	@${REINPLACE_CMD} -E -e '${REINPLACE}' \
+		${WRKSRC}/README_FILES/SPF_README
 
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles \
@@ -339,10 +338,8 @@ do-configure:
 	AUXLIBS="${POSTFIX_AUXLIBS}" && \
 	${ECHO} "all: default" >> Makefile)
 
-pre-install:
-.if ${PORT_OPTIONS:MINST_BASE}
+pre-install-INST_BASE-on:
 	${MKDIR} ${STAGEDIR}/etc/rc.d
-.endif
 
 do-install:
 	@(cd ${WRKSRC} && ${MAKE} non-interactive-package \
@@ -362,20 +359,20 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${STAGEDIR}${PREFIX}/bin/rmail
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${STAGEDIR}${PREFIX}/bin/qshape
 	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${STAGEDIR}${MANPREFIX}/man/man1
-.if ${PORT_OPTIONS:MTEST}
+
+do-install-TEST-on:
 	${INSTALL_PROGRAM} ${BINTEST:S|^|${WRKSRC}/bin/|} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${MANTEST:S|^|${WRKSRC}/man/man1/|} ${STAGEDIR}${MANPREFIX}/man/man1
-.endif
 
 post-stage:
 # == do not overwrite existing config
 	${MV} ${STAGEDIR}${ETCDIR}/main.cf ${STAGEDIR}${ETCDIR}/main.cf.sample
 	${MV} ${STAGEDIR}${ETCDIR}/master.cf ${STAGEDIR}${ETCDIR}/master.cf.sample
 
-# == chop dynamicmaps.cf entries into dedicated .cf files 
+# == chop dynamicmaps.cf entries into dedicated .cf files
 # for future sub-packages support
 .for f in ${DYN_EXT}
-# adjust dynamicmaps.cf 
+# adjust dynamicmaps.cf
 	${GREP} -e "^#" -e "^${f}" ${STAGEDIR}${META_DIRECTORY}/dynamicmaps.cf \
 		> ${STAGEDIR}${META_DIRECTORY}/dynamicmaps.cf.d/${f}.cf && \
 		${SED} -i '' -e '/${f}/d' ${STAGEDIR}${META_DIRECTORY}/dynamicmaps.cf
@@ -386,7 +383,7 @@ post-stage:
 		\n$$shlib_directory/postfix-${f}.so:f:root:-:755\
 		\n$$meta_directory/postfix-files.d/${f}-files:f:root:-:644\
 		\n$$meta_directory/dynamicmaps.cf.d/${f}.cf:f:root:-:644\n' \
-		> ${STAGEDIR}${META_DIRECTORY}/postfix-files.d/${f}-files 
+		> ${STAGEDIR}${META_DIRECTORY}/postfix-files.d/${f}-files
 .endfor
 
 # Fix compressed man pages and strip executables

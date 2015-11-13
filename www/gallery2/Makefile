@@ -19,6 +19,7 @@ OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL
 OPTIONS_DEFAULT=IMAGEMAGICK JHEAD MYSQL UNZIP
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
@@ -26,19 +27,19 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	pkg-message
 
-DCRAW_RUN_DEPENDS=	${LOCALBASE}/bin/dcraw:${PORTSDIR}/graphics/dcraw
+DCRAW_RUN_DEPENDS=	dcraw:${PORTSDIR}/graphics/dcraw
 FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-GD_RUN_DEPENDS=		${LOCALBASE}/bin/pngtogd:${PORTSDIR}/graphics/gd
+GD_RUN_DEPENDS=		pngtogd:${PORTSDIR}/graphics/gd
 GD_USE=			PHP=gd
-GRAPHMAGICK_RUN_DEPENDS=${LOCALBASE}/bin/gm:${PORTSDIR}/graphics/GraphicsMagick
-IMAGEMAGICK_RUN_DEPENDS=${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
-JHEAD_RUN_DEPENDS=	${LOCALBASE}/bin/jhead:${PORTSDIR}/graphics/jhead
+GRAPHMAGICK_RUN_DEPENDS=gm:${PORTSDIR}/graphics/GraphicsMagick
+IMAGEMAGICK_RUN_DEPENDS=convert:${PORTSDIR}/graphics/ImageMagick
+JHEAD_RUN_DEPENDS=	jhead:${PORTSDIR}/graphics/jhead
 MYSQL_USE=		PHP=mysql
-NETPBM_RUN_DEPENDS=	${LOCALBASE}/bin/giftopnm:${PORTSDIR}/graphics/netpbm
+NETPBM_RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 NLS_USE=		PHP=gettext
 NLS_USES=		gettext
 PGSQL_USE=		PHP=pgsql
-UNZIP_RUN_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+UNZIP_RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 do-install:
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/

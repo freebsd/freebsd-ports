@@ -32,9 +32,7 @@ ONLY_FOR_ARCHS_REASON=	uses MMX and SSE2 instructions
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if (${OSVERSION} >= 900014) && exists(${DESTDIR}/usr/bin/clang)
+.if exists(${DESTDIR}/usr/bin/clang)
 CC=		clang
 CXX=		clang++
 CPP=		clang-cpp

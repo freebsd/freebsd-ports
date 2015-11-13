@@ -19,7 +19,7 @@ THREADSAFE_DESC=	Build thread-safe client
 CONFLICTS=	mariadb5[4-9]-client-* \
 		mariadb1[0-9][0-9]-client-* \
 		mysql*-client-* \
-		percona*-client-* 
+		percona*-client-*
 
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist

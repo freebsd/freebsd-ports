@@ -40,6 +40,7 @@ include/mediastreamer2/msv4l.h
 include/mediastreamer2/msvaddtx.h
 include/mediastreamer2/msvideo.h
 include/mediastreamer2/msvideoout.h
+include/mediastreamer2/msvideopresets.h
 include/mediastreamer2/msvolume.h
 include/mediastreamer2/mswebcam.h
 include/mediastreamer2/qualityindicator.h
@@ -51,11 +52,11 @@ include/mediastreamer2/videostarter.h
 include/mediastreamer2/x11_helper.h
 include/mediastreamer2/zrtp.h
 lib/libmediastreamer_base.so
-lib/libmediastreamer_base.so.4
-lib/libmediastreamer_base.so.4.0.0
+lib/libmediastreamer_base.so.6
+lib/libmediastreamer_base.so.6.0.0
 lib/libmediastreamer_voip.so
-lib/libmediastreamer_voip.so.4
-lib/libmediastreamer_voip.so.4.0.0
+lib/libmediastreamer_voip.so.6
+lib/libmediastreamer_voip.so.6.0.0
 libdata/pkgconfig/mediastreamer.pc
 share/images/nowebcamCIF.jpg
 %%NLS%%share/locale/cs/LC_MESSAGES/mediastreamer.mo

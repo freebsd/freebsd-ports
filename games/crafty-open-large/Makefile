@@ -7,32 +7,30 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/dd/crafty
 DISTFILES=	large1.zip large2.zip large3.zip large4.zip
+DIST_SUBDIR=	crafty
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The large opening book for crafty
+COMMENT=	Large opening book for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
-DIST_SUBDIR=	crafty
 USES=		zip
 NO_WRKSUBDIR=	yes
 CONFLICTS=	crafty-open-enormous-* crafty-open-medium-* crafty-open-default-*
 
 post-extract:
+	${CAT} ${WRKSRC}/Book1.pgn ${WRKSRC}/Book2.pgn ${WRKSRC}/Book3.pgn ${WRKSRC}/Book4.pgn >${WRKSRC}/Book.pgn
+	${RM} ${WRKSRC}/Book1.pgn ${WRKSRC}/Book2.pgn ${WRKSRC}/Book3.pgn ${WRKSRC}/Book4.pgn
+
+do-build:
 	@${ECHO_MSG} '================================================================'
 	@${ECHO_MSG} 'Ignore warnings about illegal moves.  These warnings are normal.'
 	@${ECHO_MSG} '================================================================'
-	${CAT} ${WRKDIR}/Book1.pgn ${WRKDIR}/Book2.pgn ${WRKDIR}/Book3.pgn ${WRKDIR}/Book4.pgn >${WRKDIR}/Book.pgn
-	${RM} ${WRKDIR}/Book1.pgn ${WRKDIR}/Book2.pgn ${WRKDIR}/Book3.pgn ${WRKDIR}/Book4.pgn
-
-do-build:
-	(${CHOWN} nobody ${WRKDIR}; cd ${WRKDIR}; crafty <${FILESDIR}/book-building)
+	(cd ${WRKSRC} && crafty <${FILESDIR}/book-building)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/crafty
-	${INSTALL_DATA} ${WRKDIR}/book.bin ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
-	${CHOWN} nobody:nogroup ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
-	${CHMOD} 664 ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
+	${INSTALL_DATA} ${WRKSRC}/book.bin ${STAGEDIR}${PREFIX}/lib/crafty/book.bin
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- host_applications/linux/apps/hello_pi/Makefile.include.orig	2015-03-10 14:32:31 UTC
++++ host_applications/linux/apps/hello_pi/Makefile.include
+@@ -3,7 +3,7 @@ CFLAGS+=-DSTANDALONE -D__STDC_CONSTANT_M
+ 
+ LDFLAGS+=-L$(SDKSTAGE)/opt/vc/lib/ -lGLESv2 -lEGL -lopenmaxil -lbcm_host -lvcos -lvchiq_arm -lpthread -lrt -lm -L../libs/ilclient -L../libs/vgfont
+ 
+-INCLUDES+=-I$(SDKSTAGE)/opt/vc/include/ -I$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -I$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux -I./ -I../libs/ilclient -I../libs/vgfont
++INCLUDES+=-I$(SDKSTAGE)/opt/vc/include/ -I$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -I$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux -I./ -I../libs/ilclient -I../libs/vgfont -ILOCALBASE/include/freetype2/
+ 
+ all: $(BIN) $(LIB)
+ 

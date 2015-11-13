@@ -17,7 +17,6 @@ LIB_DEPENDS=	libmtbl.so:${PORTSDIR}/devel/mtbl
 USE_PYTHON=	autoplist distutils
 USES=		pkgconfig python shebangfix uniquefiles:dirs
 
-python_OLD_CMD=	/usr/bin/env python
 SHEBANG_FILES=	examples/*.py examples/*/*.py
 
 PORTEXAMPLES=	*

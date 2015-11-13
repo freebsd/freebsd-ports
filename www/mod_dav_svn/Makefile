@@ -9,7 +9,17 @@ CATEGORIES=	www
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Apache module for subversion serving.
 
+.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 16
+BROKEN=		does not build with subversion16
+MASTERDIR=	${.CURDIR}/../../devel/subversion16
+.elif defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 17
+BROKEN=		does not build with subversion17
+MASTERDIR=	${.CURDIR}/../../devel/subversion17
+.elif defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 18
+MASTERDIR=	${.CURDIR}/../../devel/subversion18
+.else
 MASTERDIR=	${.CURDIR}/../../devel/subversion
+.endif
 PKGDIR=		${.CURDIR}
 
 SVN_BUILD_ADDONS=	yes

@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.lemis.com/pub/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to set title on an xterm
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/xtset man/man1/xtset.1.gz

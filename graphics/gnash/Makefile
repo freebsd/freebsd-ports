@@ -21,7 +21,6 @@ CONFLICTS=	gnash-devel-[0-9]*
 
 USES=		cpe gmake jpeg libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-WANT_SDL=	yes
 USE_GCC=	any
 WANT_GSTREAMER=	yes
 USE_GNOME=	libxml2

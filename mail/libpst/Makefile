@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for converting Outlook .pst files to mbox and other formats
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
 
@@ -20,20 +21,18 @@ OPTIONS_SUB=	yes
 PST2DII_DESC=	Allow Summation Document Image Information output
 
 CONFIGURE_ARGS=	--disable-python --enable-libpst-shared
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 USE_LDCONFIG=	yes
 USES=		gmake iconv libtool pathfix pkgconfig
 
 PORTDOCS=	*
 
-PST2DII_BUILD_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+PST2DII_BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 PST2DII_CONFIGURE_OFF=	--enable-dii=no
 PST2DII_CONFIGURE_ON=	--enable-dii=yes
 PST2DII_LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
-PST2DII_RUN_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+PST2DII_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 post-patch:
 	@${GREP} -lr malloc.h ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g'

@@ -1,6 +1,6 @@
---- ./stty.c.orig	2011-01-05 10:31:12.000000000 +0100
-+++ ./stty.c	2011-01-05 10:33:33.000000000 +0100
-@@ -29,6 +29,37 @@
+--- stty.c.orig	2015-10-16 20:44:42 UTC
++++ stty.c
+@@ -29,6 +29,31 @@
  #define RFLG	4
  #define BFLG	5
  
@@ -27,18 +27,12 @@
 +#define VT0	0000000
 +#define VT1	0040000
 +#define VTDLY	0040000
-+#if OSVERSION < 800000
-+/* for older FreeBSD versions */
-+#define TAB0	0000000
-+#define TAB3	0014000
-+#define TABDLY	0014000
-+#endif
 +#endif
 +
  extern int errno;
  
  static struct sttyset {
-@@ -91,7 +122,7 @@
+@@ -91,7 +116,7 @@ static struct sttyset {
  	{ "inlcr",	IFLG,	INLCR,		INLCR	},
  	{ "igncr",	IFLG,	IGNCR,		IGNCR	},
  	{ "icrnl",	IFLG,	ICRNL,		ICRNL	},

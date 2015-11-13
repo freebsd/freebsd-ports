@@ -41,11 +41,8 @@ FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 .include <bsd.port.pre.mk>
 
 # Unfortunately, the code is not GCC 4.2.1 compatible (due to bugs in GCC
-# itself).  Try to use system compiler if it is Clang, otherwise fallback
-# to modern GCC (on older versions of FreeBSD).
-.if ${OSVERSION} < 900014
-USE_GCC=	yes
-.elif ${OSVERSION} < 1000024
+# itself).  Use system compiler if it is Clang.
+.if ${OSVERSION} < 1000024
 CC=		clang
 CXX=		clang++
 CPP=		clang-cpp

@@ -21,9 +21,6 @@ GH_ACCOUNT=	mascarenhas
 
 USES=		libtool lua shebangfix zip
 SHEBANG_FILES=	src/constants
-SHEBANG_LANG=	lua
-lua_OLD_CMD=	/usr/bin/env lua
-lua_CMD=	${LOCALBASE}/bin/${LUA_CMD}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--libdir=${LUA_MODLIBDIR} \

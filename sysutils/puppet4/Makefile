@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	4
@@ -10,6 +10,7 @@ MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	Configuration management framework written in Ruby
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rubygem-hiera>=2.0:${PORTSDIR}/sysutils/rubygem-hiera \
 		rubygem-json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure
@@ -20,6 +21,7 @@ RUN_DEPENDS=	rubygem-hiera>=2.0:${PORTSDIR}/sysutils/rubygem-hiera \
 USES=		cpe
 CPE_VENDOR=	puppetlabs
 CONFLICTS_INSTALL=	puppet-* puppet37-*
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv

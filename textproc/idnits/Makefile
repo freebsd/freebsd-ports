@@ -13,8 +13,9 @@ COMMENT=	Looks for problems in internet draft formatting
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		shebangfix tar:tgz
 

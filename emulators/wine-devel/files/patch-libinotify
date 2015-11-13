@@ -1,0 +1,12 @@
+diff --git a/configure b/configure
+index 2646b0b..fc55a0e 100755
+--- configure
++++ configure
+@@ -5888,7 +5888,6 @@ for ac_header in \
+ 	sys/event.h \
+ 	sys/exec_elf.h \
+ 	sys/filio.h \
+-	sys/inotify.h \
+ 	sys/ioctl.h \
+ 	sys/ipc.h \
+ 	sys/limits.h \

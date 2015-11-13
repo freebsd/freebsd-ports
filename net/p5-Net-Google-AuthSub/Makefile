@@ -8,7 +8,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Interact with sites that implement Google style AuthSub
 
 RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \

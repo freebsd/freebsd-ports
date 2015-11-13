@@ -24,7 +24,7 @@ MAKE_ENV+=	DESTDIR="${STAGEDIR}"
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/dbm \
 		${STAGEDIR}${PREFIX}/lib/ocaml/stublibs
-	
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/META \
 		${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/dbm

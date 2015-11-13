@@ -23,8 +23,10 @@ CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
 		--enable-pcre8 --enable-pcre16 --enable-pcre32
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		DOCS LIBEDIT READLINE STACK_RECURSION
+OPTIONS_DEFINE=		DOCS STACK_RECURSION
 OPTIONS_DEFAULT=	STACK_RECURSION
+OPTIONS_RADIO=	CLI
+OPTIONS_RADIO_CLI=	LIBEDIT READLINE
 
 STACK_RECURSION_DESC=	Use the stack for recursion during matching
 

@@ -1,6 +1,6 @@
---- tools/gcc.jam.orig	2008-02-14 22:50:19.000000000 +0000
-+++ tools/gcc.jam	2008-02-14 22:50:44.000000000 +0000
-@@ -155,7 +155,7 @@
+--- tools/gcc.jam.orig	2007-09-30 19:12:47 UTC
++++ tools/gcc.jam
+@@ -155,7 +155,7 @@ rule init ( version ? : command * : opti
          # will pick the right onces.
          # Note that we don't provide a clean way to build 32-bit binary
          # with 64-bit compiler, but user can always pass -m32 manually.

@@ -65,7 +65,7 @@ post-patch:
 		${WRKSRC}/lib/App/Cilly/TempFile.pm
 	@${REINPLACE_CMD} '/MACHDEPCC/ s|gcc|${CC}|' ${WRKSRC}/Makefile.in
 
-	
+
 pre-install:
 	@${STRIP_CMD} ${WRKSRC}/bin/cilly.native
 

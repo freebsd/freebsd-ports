@@ -21,17 +21,8 @@ USE_PHP=	yes
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD
-# Detect OS version for distname
-VER=	8
-.if ${OSVERSION} >= 900000
 VER=	9
-.endif
-.else
-IGNORE=	is unsupported on ${OPSYS}
-.endif
+IGNORE_DragonFly=	is unsupported on DragonFly
 
 PHP_INSTVER=	${PHP_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -42,4 +33,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ioncube_loader_fre_${PHP_INSTVER}_ts.so \
 		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/ioncube_loader_ts.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

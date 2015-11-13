@@ -3,7 +3,7 @@
 
 PORTNAME=	Workflow
 PORTVERSION=	1.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,18 +30,25 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-DBD-Mock>=0.1:${PORTSDIR}/databases/p5-DBD-Mock
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/eg && ${COPYTREE_SHARE} ticket/\* ${STAGEDIR}${EXAMPLESDIR}/)
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} struct/\* ${STAGEDIR}${DATADIR}/)
 	@${ECHO_MSG} "===> SQL data structures installed in ${DATADIR}."
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/ && ${CP} -R README Changes TODO doc ${STAGEDIR}${DOCSDIR}/)
 	@${ECHO_MSG} "===> Docs are installed in ${DOCSDIR}."
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/eg && ${COPYTREE_SHARE} ticket/\* ${STAGEDIR}${EXAMPLESDIR}/)
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 
 .include <bsd.port.mk>

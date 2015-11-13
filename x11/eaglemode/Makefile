@@ -59,7 +59,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|"-O2"|"${CFLAGS}"|' \
 		${WRKSRC}/makers/unicc/plugins/unicc_gnu.pm
 	@${FIND} ${WRKSRC} -name "*.pl" | ${XARGS} \
-		${REINPLACE_CMD} -e '1s|${perl_OLD_CMD}|${perl_CMD}|'
+		${REINPLACE_CMD} -e '1s|/usr/bin/perl|${perl_CMD}|'
 
 post-patch-XINE-off:
 	@${RM} -f ${WRKSRC}/makers/emAv.maker.pm

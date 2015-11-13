@@ -43,7 +43,7 @@ post-patch:
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|po||g' ${WRKSRC}/Makefile.in
 .endif
- 
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgoocanvas.so.*
 

@@ -16,6 +16,8 @@ COMMENT=	Compact Finite Element Analysis System
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 NO_WRKSUBDIR=	yes
 USES=		pkgconfig
 USE_GL=		glu

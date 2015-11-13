@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap
@@ -11,7 +12,7 @@ DISTFILES=	${RUST_SOURCE}:src \
 		${RUST_BOOT}:bootstrap
 EXTRACT_ONLY=	${RUST_SOURCE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Language with a focus on memory safety and concurrency
 
 LICENSE=	APACHE20 \
@@ -35,8 +36,8 @@ CONFLICTS_INSTALL=	rust-nightly
 RUST_SOURCE=	${DISTNAME}-src${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG_${ARCH}}.tar.bz2
 
-RUST_BOOT_SIG_amd64=	2015-07-26-a5c12f4-freebsd-x86_64-bc50b0f8d7f6d62f4f5ffa136f5387f5bf6524fd
-RUST_BOOT_SIG_i386=	2015-07-26-a5c12f4-freebsd-i386-2fee22adec101e2f952a5548fd1437ce1bd8d26f
+RUST_BOOT_SIG_amd64=	2015-08-11-1af31d4-freebsd-x86_64-de1f36592bac0eeb90c049a8421246652c511b9e
+RUST_BOOT_SIG_i386=	2015-08-11-1af31d4-freebsd-i386-3cd4a44fb97b3135be3d1b760bea604a381e85dc
 
 # Rust's libraries are named librustc_${component}-${RUST_VSN_HASH}.so.
 # The hash depends on Rust version and, if the channel is not "stable",
@@ -58,9 +59,9 @@ CONFIGURE_ARGS=	--disable-valgrind --disable-docs \
 		--release-channel=${RUST_CHANNEL}
 
 # Use LLVM from ports, instead of the copy shipped with rust.
-LLVM_VER=	36
-BUILD_DEPENDS+=	llvm${LLVM_VER}>=0:${PORTSDIR}/devel/llvm${LLVM_VER}
-CONFIGURE_ARGS+=--llvm-root=${LOCALBASE}/llvm${LLVM_VER}
+#LLVM_VER=	36
+#BUILD_DEPENDS+=	llvm${LLVM_VER}>=0:${PORTSDIR}/devel/llvm${LLVM_VER}
+#CONFIGURE_ARGS+=--llvm-root=${LOCALBASE}/llvm${LLVM_VER}
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 MAKE_ARGS+=	VERBOSE=1
@@ -70,6 +71,10 @@ OPTIONS_DEFINE=		LLNEXTGEN
 LLNEXTGEN_DESC=		Build with grammar verification
 
 LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:${PORTSDIR}/devel/llnextgen
+
+# Note that make test does not work when rust is already installed
+TEST_TARGET=	check
+TEST_ENV+=	ALLOW_NONZERO_RLIMIT_CORE=1
 
 .include <bsd.port.options.mk>
 

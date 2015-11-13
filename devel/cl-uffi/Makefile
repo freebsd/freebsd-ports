@@ -10,6 +10,7 @@ MASTER_SITES=	http://files.b9.com/uffi/
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Universal Foreign Function Interface for Common Lisp
 
+BROKEN=		Does not fetch
 NO_BUILD=	yes
 
 USE_ASDF=	yes

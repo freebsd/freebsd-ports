@@ -93,13 +93,15 @@ setup_plist_seds() {
 	unset PLIST_SUB_SED
 	# Used for generate_plist
 	sed_files_gen="s!^${PREFIX}/!!g; ${sed_plist_sub} \
-	    ${sed_portdocsexamples} /^share\/licenses/d;"
+	    ${sed_portdocsexamples} /^share\/licenses/d; \
+	    \#${LOCALBASE}/lib/debug#d;"
 	sed_dirs_gen="s!^${PREFIX}/!!g; ${sed_plist_sub} s,^,@dir ,; \
 	    ${sed_portdocsexamples} \
 	    /^@dir share\/licenses/d;"
 
 	# These prevent ignoring DOCS/EXAMPLES dirs with sed_portdocsexamples
-	sed_files="s!^${PREFIX}/!!g; ${sed_plist_sub} /^share\/licenses/d;"
+	sed_files="s!^${PREFIX}/!!g; ${sed_plist_sub} /^share\/licenses/d; \
+	    \#${LOCALBASE}/lib/debug#d;"
 	sed_dirs="s!^${PREFIX}/!!g; ${sed_plist_sub} s,^,@dir ,; \
 	    /^@dir share\/licenses/d;"
 

@@ -1,8 +1,8 @@
---- ./util/CMakeLists.txt.orig	2014-08-10 17:44:08.000000000 +0100
-+++ ./util/CMakeLists.txt	2014-08-10 17:44:16.000000000 +0100
+--- util/CMakeLists.txt.orig	2014-11-01 06:04:28 UTC
++++ util/CMakeLists.txt
 @@ -1,3 +1,5 @@
-+ADD_DEFINITIONS(-fPIC) 
++ADD_DEFINITIONS(-fPIC)
 +
- add_library(rrutil STATIC rrlog.cpp genericQ.cpp bmp.c)
+ add_library(vglutil STATIC GenericQ.cpp Log.cpp Mutex.cpp Thread.cpp bmp.c)
  if(UNIX)
- 	target_link_libraries(rrutil pthread)
+ 	target_link_libraries(vglutil pthread)

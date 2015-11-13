@@ -4,7 +4,14 @@
 %%SITE_PERL%%/Thrift/FramedTransport.pm
 %%SITE_PERL%%/Thrift/HttpClient.pm
 %%SITE_PERL%%/Thrift/MemoryBuffer.pm
+%%SITE_PERL%%/Thrift/MessageType.pm
+%%SITE_PERL%%/Thrift/MultiplexedProcessor.pm
+%%SITE_PERL%%/Thrift/MultiplexedProtocol.pm
 %%SITE_PERL%%/Thrift/Protocol.pm
+%%SITE_PERL%%/Thrift/ProtocolDecorator.pm
+%%SITE_PERL%%/Thrift/SSLServerSocket.pm
+%%SITE_PERL%%/Thrift/SSLSocket.pm
 %%SITE_PERL%%/Thrift/Server.pm
+%%SITE_PERL%%/Thrift/ServerSocket.pm
 %%SITE_PERL%%/Thrift/Socket.pm
 %%SITE_PERL%%/Thrift/Transport.pm

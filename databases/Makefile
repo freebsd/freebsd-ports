@@ -55,6 +55,7 @@
     SUBDIR += elixir-calecto
     SUBDIR += elixir-ecto
     SUBDIR += elixir-ecto_migrate
+    SUBDIR += elixir-exredis
     SUBDIR += elixir-geo
     SUBDIR += elixir-mariaex
     SUBDIR += elixir-mongo
@@ -92,6 +93,7 @@
     SUBDIR += gnats4
     SUBDIR += gnatsweb4
     SUBDIR += godis
+    SUBDIR += gomdb
     SUBDIR += gosqlite3
     SUBDIR += gqlplus
     SUBDIR += grass
@@ -122,6 +124,7 @@
     SUBDIR += jdbc-oracle8i
     SUBDIR += jdbc-oracle9i
     SUBDIR += jdbm2
+    SUBDIR += jlog
     SUBDIR += jrobin
     SUBDIR += jrrd
     SUBDIR += kbibtex
@@ -207,14 +210,10 @@
     SUBDIR += mysql-q4m
     SUBDIR += mysql-udf
     SUBDIR += mysql-udf-sys
-    SUBDIR += mysql-workbench51
     SUBDIR += mysql-workbench52
     SUBDIR += mysql-xql
     SUBDIR += mysql2odbc
     SUBDIR += mysql2pgsql
-    SUBDIR += mysql51-client
-    SUBDIR += mysql51-scripts
-    SUBDIR += mysql51-server
     SUBDIR += mysql55-client
     SUBDIR += mysql55-server
     SUBDIR += mysql56-client
@@ -241,6 +240,7 @@
     SUBDIR += openark-kit
     SUBDIR += openbase-jdbc
     SUBDIR += opendbx
+    SUBDIR += opentsdb
     SUBDIR += oracle7-client
     SUBDIR += oracle8-client
     SUBDIR += oracle_odbc_driver
@@ -315,7 +315,6 @@
     SUBDIR += p5-DBD-XBase
     SUBDIR += p5-DBD-cego
     SUBDIR += p5-DBD-mysql
-    SUBDIR += p5-DBD-mysql51
     SUBDIR += p5-DBI
     SUBDIR += p5-DBI-Shell
     SUBDIR += p5-DBICx-Deploy
@@ -708,7 +707,6 @@
     SUBDIR += pxtools
     SUBDIR += py-Elixir
     SUBDIR += py-MySQLdb
-    SUBDIR += py-MySQLdb51
     SUBDIR += py-MySQLdb55
     SUBDIR += py-MySQLdb56
     SUBDIR += py-PyGreSQL
@@ -737,12 +735,12 @@
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb
     SUBDIR += py-memcached
-    SUBDIR += py-mssql
     SUBDIR += py-mysql-connector-python
     SUBDIR += py-mysql-connector-python2
     SUBDIR += py-mysql2pgsql
     SUBDIR += py-odbc
     SUBDIR += py-oops
+    SUBDIR += py-oursql
     SUBDIR += py-peewee
     SUBDIR += py-pg8000
     SUBDIR += py-pg_pqueue

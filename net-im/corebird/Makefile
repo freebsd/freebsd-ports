@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	corebird
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@fbsd.es
@@ -28,22 +28,14 @@ INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		GSTREAMER
 OPTIONS_DEFAULT=	GSTREAMER
-
-GSTREAMER_DESC=	Gstreamer support
+GSTREAMER_USE=	gstreamer1=yes,bad,good,libav,x,ximagesrc
+GSTREAMER_CONFIGURE_OFF=	--disable-video
 
 GLIB_SCHEMAS=	org.baedert.corebird.gschema.xml
-
-.include <bsd.port.options.mk>
 
 post-extract:
 	cd ${WRKSRC}/data && ${MV} org.baedert.corebird.desktop.in.in \
 		corebird.desktop.in.in
-
-.if ${PORT_OPTIONS:MGSTREAMER}
-USE_GSTREAMER1=	yes bad good libav x ximagesrc
-.else
-CONFIGURE_ARGS+=	--disable-video
-.endif
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/m4

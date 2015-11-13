@@ -1,0 +1,55 @@
+--- SConstruct.orig	2015-10-06 21:52:04 UTC
++++ SConstruct
+@@ -14,7 +14,7 @@ if 'SCHROOT_CHROOT_NAME' in os.environ a
+ 
+ # Required build flags. If you want to use SSE optimization, you can turn on
+ # -msse3 or (if just building for your own computer) -march=native.
+-env.Append(CCFLAGS = ["-std=c++0x", "-O3", "-Wall"])
++env.Append(CCFLAGS = ["-std=c++0x", "-Wall"])
+ env.Append(LIBS = [
+ 	"SDL2",
+ 	"png",
+@@ -28,7 +28,7 @@ env.Append(LIBS = [
+ # Work with clang's static analyzer:
+ env["CC"] = os.getenv("CC") or env["CC"]
+ env["CXX"] = os.getenv("CXX") or env["CXX"]
+-env["ENV"].update(x for x in os.environ.items() if x[0].startswith("CCC_"))
++env["ENV"].update(x for x in os.environ.items())
+ 
+ opts = Variables()
+ opts.Add(PathVariable("PREFIX", "Directory to install under", "/usr/local", PathVariable.PathIsDirCreate))
+@@ -43,7 +43,7 @@ sky = env.Program("endless-sky", Glob("b
+ 
+ 
+ # Install the binary:
+-env.Install("$DESTDIR$PREFIX/games", sky)
++env.Install("$DESTDIR$PREFIX/bin", sky)
+ 
+ # Install the desktop file:
+ env.Install("$DESTDIR$PREFIX/share/applications", "endless-sky.desktop")
+@@ -68,7 +68,7 @@ if env.get("PREFIX").startswith("/usr/")
+ 
+ # Install the man page.
+ env.Command(
+-	"$DESTDIR$PREFIX/share/man/man6/endless-sky.6.gz",
++	"$DESTDIR$PREFIX/man/man6/endless-sky.6.gz",
+ 	"endless-sky.6",
+ 	"gzip -c $SOURCE > $TARGET")
+ 
+@@ -81,11 +81,11 @@ def RecursiveInstall(env, target, source
+ 			RecursiveInstall(env, os.path.join(target, name), node.abspath)
+ 		else:
+ 			env.Install(target, node)
+-RecursiveInstall(env, "$DESTDIR$PREFIX/share/games/endless-sky/data", "data")
+-RecursiveInstall(env, "$DESTDIR$PREFIX/share/games/endless-sky/images", "images")
+-RecursiveInstall(env, "$DESTDIR$PREFIX/share/games/endless-sky/sounds", "sounds")
+-env.Install("$DESTDIR$PREFIX/share/games/endless-sky", "credits.txt")
+-env.Install("$DESTDIR$PREFIX/share/games/endless-sky", "keys.txt")
++RecursiveInstall(env, "$DESTDIR$PREFIX/share/endless-sky/data", "data")
++RecursiveInstall(env, "$DESTDIR$PREFIX/share/endless-sky/images", "images")
++RecursiveInstall(env, "$DESTDIR$PREFIX/share/endless-sky/sounds", "sounds")
++env.Install("$DESTDIR$PREFIX/share/endless-sky", "credits.txt")
++env.Install("$DESTDIR$PREFIX/share/endless-sky", "keys.txt")
+ 
+ # Make the word "install" in the command line do an installation.
+ env.Alias("install", "$DESTDIR$PREFIX")

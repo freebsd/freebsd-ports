@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bandwidth analysis tool
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 

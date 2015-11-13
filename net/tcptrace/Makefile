@@ -9,7 +9,8 @@ MASTER_SITES=	http://www.tcptrace.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP dump file analysis tool
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	tcptrace
@@ -28,6 +29,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcptrace ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/xpl2gpl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

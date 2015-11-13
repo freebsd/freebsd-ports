@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced file copier
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
@@ -26,7 +28,7 @@ PLIST_FILES=	${DESKTOPDIR:Q}/ultracopier.desktop \
 		bin/ultracopier \
 		share/icons/hicolor/16x16/apps/ultracopier.png \
 		share/icons/hicolor/128x128/apps/ultracopier.png
-		
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|0\.2\.0\.15|0.2.0.16|; \

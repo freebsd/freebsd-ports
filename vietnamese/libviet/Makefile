@@ -27,6 +27,8 @@ do-install:
 	(cd ${WRKSRC}/../include && ${INSTALL_DATA} charset.h charseta.h \
 		charsetv.h ctype.h portable.h vncompos.h vnkeys.h vntype.h \
 		${STAGEDIR}${PREFIX}/include/viet)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../README.lib ${STAGEDIR}${DOCSDIR}
 

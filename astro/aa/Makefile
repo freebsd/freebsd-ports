@@ -11,6 +11,8 @@ MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	Self-contained ephemeris calculator
 
 BROKEN=		Checksum mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 MAKEFILE=	makefile
 USES=		dos2unix zip

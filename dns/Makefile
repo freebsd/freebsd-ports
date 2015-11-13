@@ -10,6 +10,7 @@
     SUBDIR += axfr2acl
     SUBDIR += bind-tools
     SUBDIR += bind10
+    SUBDIR += bind9-devel
     SUBDIR += bind910
     SUBDIR += bind99
     SUBDIR += bindgraph
@@ -163,6 +164,7 @@
     SUBDIR += py-dns3
     SUBDIR += py-dnspython
     SUBDIR += py-easyzone
+    SUBDIR += py-idna
     SUBDIR += py-idnkit2
     SUBDIR += py-ldns
     SUBDIR += py-namebench

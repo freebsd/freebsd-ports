@@ -28,11 +28,14 @@ bin/tsk_comparedir
 bin/tsk_gettimes
 bin/tsk_loaddb
 bin/tsk_recover
+include/tsk/auto/sqlite3.h
 include/tsk/auto/tsk_auto.h
 include/tsk/base/tsk_base.h
 include/tsk/base/tsk_os.h
+include/tsk/fs/tsk_exfatfs.h
 include/tsk/fs/tsk_ext2fs.h
 include/tsk/fs/tsk_fatfs.h
+include/tsk/fs/tsk_fatxxfs.h
 include/tsk/fs/tsk_ffs.h
 include/tsk/fs/tsk_fs.h
 include/tsk/fs/tsk_hfs.h
@@ -51,8 +54,8 @@ include/tsk/vs/tsk_sun.h
 include/tsk/vs/tsk_vs.h
 lib/libtsk.a
 lib/libtsk.so
-lib/libtsk.so.10
-lib/libtsk.so.10.2.0
+lib/libtsk.so.13
+lib/libtsk.so.13.0.0
 man/man1/blkcalc.1.gz
 man/man1/blkcat.1.gz
 man/man1/blkls.1.gz

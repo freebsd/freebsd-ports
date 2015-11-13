@@ -1,0 +1,35 @@
+--- src/Makefile.orig	2015-03-29 12:25:24 UTC
++++ src/Makefile
+@@ -38,13 +38,12 @@ DESTDIR = /usr/local/bin
+ #***************************************************************************************************
+ 
+ # Which compiler
+-CXX = g++
+ 
+ # Application name
+ PROG = gspiceui
+ 
+ # wxWidgets configuration utility
+-WXCFG = wx-config --unicode --version=$(GSPICEUI_WXLIB)
++WXCFG = $(WX_CONFIG)
+ 
+ # Dependency file
+ DEPS = Makefile.deps
+@@ -71,7 +70,7 @@ BINDIR     = $(ROOT)/bin
+ #  -Og        Optimize debugging experience but don't break debugging
+ ifeq ($(GSPICEUI_DBG),0)
+   # Options for release (not using -Wall since it's GCC specific)
+-  CXXFLAGS := -O1 -pipe $(shell $(WXCFG) --cxxflags)
++  CXXFLAGS += $(shell $(WXCFG) --cxxflags)
+ else
+   # Options for development
+   CXXFLAGS := -g -Og -Wall -Wextra -pipe $(shell $(WXCFG) --cxxflags)
+@@ -83,7 +82,7 @@ ifeq ($(GSPICEUI_WXLIB),2.8)
+ endif
+ 
+ # Includes
+-INCLUDES = -I/usr/include -I/usr/X11R6/include -I.
++INCLUDES = -I.
+ 
+ # Libraries
+ # (The pkg-config stuff was requested by a user, somehow pangox was missing)

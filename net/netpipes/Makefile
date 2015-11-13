@@ -15,6 +15,6 @@ CONFLICTS=	timelimit-[0-9]*
 NO_WRKSUBDIR=	yes
 
 do-install:
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKDIR} STAGEDIR=${STAGEDIR} install
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} STAGEDIR=${STAGEDIR} install
 
 .include <bsd.port.mk>

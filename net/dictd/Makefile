@@ -10,15 +10,14 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dict protocol (RFC 2229) server
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmaa.so:${PORTSDIR}/devel/libmaa
 
 ALL_TARGET=	dictd dictzip
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install.dictd install.dictzip
-LIBS+=		-L${LOCALBASE}/lib
-USES=		bison gmake libtool:build
+USES=		bison gmake libtool:build localbase
 
 SUB_FILES=	dictd.conf pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}

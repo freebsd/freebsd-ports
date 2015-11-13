@@ -2,6 +2,7 @@
 
 PORTNAME=	iroffer
 PORTVERSION=	3.30
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -32,7 +33,7 @@ IROFFER_DOCS=	README README.modDinoex LIESMICH.modDinoex \
 		doc/INSTALL-vhost-de.html doc/INSTALL-vhost-de.txt \
 		doc/INSTALL-vhost-en.html doc/INSTALL-vhost-en.txt \
 		doc/INSTALL-vhost-fr.html doc/INSTALL-vhost-fr.txt
-IROFFER_EXAMPLES= iroffer.cron \
+IROFFER_EXAMPLES=	iroffer.cron \
 		sample.config beispiel.config exemple.config \
 		header.html footer.html ruby-sample.rb
 IROFFER_HTDOCS=	iroffer-state.css robots.txt \
@@ -50,8 +51,6 @@ UPNP_CONFIGURE_ON=	-upnp
 GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 GEOIP_CONFIGURE_ON=	-geoip
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-de ${STAGEDIR}${PREFIX}/bin/
@@ -59,13 +58,14 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-fr ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/iroffer.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/xdcc.7 ${STAGEDIR}${PREFIX}/man/man7/
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${IROFFER_DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/htdocs
 .for i in ${IROFFER_HTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/htdocs/${i} ${STAGEDIR}${EXAMPLESDIR}/htdocs/
@@ -73,6 +73,5 @@ do-install:
 .for i in ${IROFFER_EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

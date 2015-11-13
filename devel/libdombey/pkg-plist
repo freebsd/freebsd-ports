@@ -1,7 +1,9 @@
-bin/dombeykey
 include/dombey.h
 lib/libdombey.so
 lib/libdombey.so.%%PORTVERSION%%
 lib/libdombeythreads.so
 lib/libdombeythreads.so.%%PORTVERSION%%
+lib/libdombeyevents.so
+lib/libdombeyevents.so.%%PORTVERSION%%
 man/man8/libdombey.8.gz
+man/man8/libdombeyevents.8.gz

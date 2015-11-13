@@ -505,6 +505,7 @@
 %%WWWDIR%%/inc/class_templates.php
 %%WWWDIR%%/inc/class_timers.php
 %%WWWDIR%%/inc/class_xml.php
+@sample(%%WWWOWN%%) %%WWWDIR%%/inc/config.php.sample
 %%WWWDIR%%/inc/config.default.php
 %%WWWDIR%%/inc/datahandler.php
 %%WWWDIR%%/inc/datahandlers/event.php
@@ -649,7 +650,7 @@
 %%WWWDIR%%/inc/plugins/akismet.php
 %%WWWDIR%%/inc/plugins/hello.php
 %%WWWDIR%%/inc/plugins/index.html
-%%WWWDIR%%/inc/settings.php
+@sample(%%WWWOWN%%) %%WWWDIR%%/inc/settings.php.sample
 %%WWWDIR%%/inc/tasks/backupdb.php
 %%WWWDIR%%/inc/tasks/checktables.php
 %%WWWDIR%%/inc/tasks/dailycleanup.php
@@ -789,69 +790,3 @@
 %%WWWDIR%%/usercp2.php
 %%WWWDIR%%/warnings.php
 %%WWWDIR%%/xmlhttp.php
-@exec touch %D/%%WWWDIR%%/inc/config.php;chown www %D/%%WWWDIR%%/inc/config.php
-@unexec if [ ! -s %D/%%WWWDIR%%/inc/config.php ];then rm -f %D/%%WWWDIR%%/inc/config.php;fi
-@dirrm %%WWWDIR%%/admin/backups
-@dirrm %%WWWDIR%%/admin/inc
-@dirrm %%WWWDIR%%/admin/jscripts/codepress/engines
-@dirrm %%WWWDIR%%/admin/jscripts/codepress/images
-@dirrm %%WWWDIR%%/admin/jscripts/codepress/languages
-@dirrm %%WWWDIR%%/admin/jscripts/codepress
-@dirrm %%WWWDIR%%/admin/jscripts
-@dirrm %%WWWDIR%%/admin/modules/config
-@dirrm %%WWWDIR%%/admin/modules/forum
-@dirrm %%WWWDIR%%/admin/modules/home
-@dirrm %%WWWDIR%%/admin/modules/style
-@dirrm %%WWWDIR%%/admin/modules/tools
-@dirrm %%WWWDIR%%/admin/modules/user
-@dirrm %%WWWDIR%%/admin/modules
-@dirrm %%WWWDIR%%/admin/styles/default/images/icons
-@dirrm %%WWWDIR%%/admin/styles/default/images
-@dirrm %%WWWDIR%%/admin/styles/default
-@dirrm %%WWWDIR%%/admin/styles/sharepoint/images/icons
-@dirrm %%WWWDIR%%/admin/styles/sharepoint/images
-@dirrm %%WWWDIR%%/admin/styles/sharepoint
-@dirrm %%WWWDIR%%/admin/styles
-@dirrm %%WWWDIR%%/admin
-@dirrm %%WWWDIR%%/archive
-@dirrm %%WWWDIR%%/cache/themes
-@dirrm %%WWWDIR%%/cache
-@dirrm %%WWWDIR%%/images/attachtypes
-@dirrm %%WWWDIR%%/images/avatars
-@dirrm %%WWWDIR%%/images/codebuttons
-@dirrm %%WWWDIR%%/images/english
-@dirrm %%WWWDIR%%/images/groupimages/english
-@dirrm %%WWWDIR%%/images/groupimages
-@dirrm %%WWWDIR%%/images/icons
-@dirrm %%WWWDIR%%/images/modcp
-@dirrm %%WWWDIR%%/images/smilies
-@dirrm %%WWWDIR%%/images/toplinks
-@dirrm %%WWWDIR%%/images/usercp
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/inc/3rdparty/diff/Diff/Engine
-@dirrm %%WWWDIR%%/inc/3rdparty/diff/Diff/Renderer
-@dirrm %%WWWDIR%%/inc/3rdparty/diff/Diff
-@dirrm %%WWWDIR%%/inc/3rdparty/diff
-@dirrm %%WWWDIR%%/inc/3rdparty
-@dirrm %%WWWDIR%%/inc/cachehandlers
-@dirrm %%WWWDIR%%/inc/captcha_fonts
-@dirrm %%WWWDIR%%/inc/datahandlers
-@dirrm %%WWWDIR%%/inc/languages/english/admin
-@dirrm %%WWWDIR%%/inc/languages/english
-@dirrm %%WWWDIR%%/inc/languages
-@dirrm %%WWWDIR%%/inc/mailhandlers
-@dirrm %%WWWDIR%%/inc/plugins
-@dirrm %%WWWDIR%%/inc/tasks
-@dirrm %%WWWDIR%%/inc
-@dirrm %%WWWDIR%%/install/images
-@dirrm %%WWWDIR%%/install/resources
-@dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/jscripts/editor_themes/Office_2007/images
-@dirrm %%WWWDIR%%/jscripts/editor_themes/Office_2007
-@dirrm %%WWWDIR%%/jscripts/editor_themes/default/images
-@dirrm %%WWWDIR%%/jscripts/editor_themes/default
-@dirrm %%WWWDIR%%/jscripts/editor_themes
-@dirrm %%WWWDIR%%/jscripts
-@dirrm %%WWWDIR%%/uploads/avatars
-@dirrm %%WWWDIR%%/uploads
-@dirrm %%WWWDIR%%/

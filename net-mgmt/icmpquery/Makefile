@@ -16,11 +16,11 @@ NO_WRKSUBDIR=	YES
 ALL_TARGET=	icmpquery
 
 do-extract:
-		@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
-		@${CP} ${FILESDIR}/Makefile ${WRKDIR}
+		@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
+		@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
-		@${INSTALL_PROGRAM} ${WRKDIR}/icmpquery ${STAGEDIR}${PREFIX}/bin
+		@${INSTALL_PROGRAM} ${WRKSRC}/icmpquery ${STAGEDIR}${PREFIX}/bin
 		@${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/icmpquery
 
 .include <bsd.port.mk>

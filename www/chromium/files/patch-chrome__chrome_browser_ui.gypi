@@ -1,6 +1,6 @@
---- chrome/chrome_browser_ui.gypi.orig	2015-07-15 16:29:59.000000000 -0400
-+++ chrome/chrome_browser_ui.gypi	2015-07-21 22:40:24.997217000 -0400
-@@ -2922,7 +2922,7 @@
+--- chrome/chrome_browser_ui.gypi.orig	2015-10-14 16:42:08.849931000 +0200
++++ chrome/chrome_browser_ui.gypi	2015-10-14 16:45:35.205417000 +0200
+@@ -2921,7 +2921,7 @@
              }],
            ],
          }],
@@ -9,16 +9,16 @@
            'dependencies': [
              # gtk2 is the only component that can interact with gtk2 in our new
              # world.
-@@ -2930,7 +2930,7 @@
+@@ -2929,7 +2929,7 @@
              '../build/linux/system.gyp:gio',
            ],
          }],
 -        ['OS=="win" or OS=="mac" or desktop_linux==1', {
 +        ['OS=="win" or OS=="mac" or desktop_linux==1 or os_bsd==1', {
-           'sources': [ '<@(chrome_browser_ui_desktop_sources)' ],
-         }],
-         ['use_aura==1', {
-@@ -3083,10 +3083,10 @@
+           # A temporary define to make it easier to remove CrOS dependencies on
+           # avatar button code. TODO(estade): remove.
+           'defines': [ 'FRAME_AVATAR_BUTTON=1', ],
+@@ -3095,10 +3095,10 @@
              }],
            ],
          }],

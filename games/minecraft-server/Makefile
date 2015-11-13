@@ -2,10 +2,10 @@
 
 PORTNAME=	minecraft-server
 PORTVERSION=	1.8.8
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	https://s3.amazonaws.com/Minecraft.Download/versions/${PORTVERSION}/
-DISTNAME=	minecraft_server.${PORTVERSION}.jar
-EXTRACT_SUFX=
+DISTFILES=	minecraft_server.${PORTVERSION}.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	freebsd@jonathanprice.org
@@ -39,28 +39,24 @@ CONFIG_FILES=	banned-ips.json \
 		usercache.json \
 		whitelist.json
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDAEMON}
-USE_RC_SUBR+=	minecraft
-RUN_DEPENDS+=	tmux:${PORTSDIR}/sysutils/tmux
-.endif
+DAEMON_VARS=	USE_RC_SUBR=minecraft
+DAEMON_RUN_DEPENDS=	tmux:${PORTSDIR}/sysutils/tmux
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${PREFIX}/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}/var/db/minecraft-server
 	${MKDIR} ${STAGEDIR}/var/log/minecraft-server
-.if ${PORT_OPTIONS:MSTANDALONE}
-	${INSTALL_SCRIPT} ${WRKDIR}/minecraft-server ${STAGEDIR}${PREFIX}/bin
-	${CP} ${FILESDIR}/java-args.txt ${STAGEDIR}${ETCDIR}
-.endif
 .for file in ${CONFIG_FILES}
 	${LN} -s ${ETCDIR}/${file} ${STAGEDIR}${PREFIX}/${PORTNAME}/${file}
 .endfor
 	${LN} -sf /var/log/minecraft-server ${STAGEDIR}${PREFIX}/${PORTNAME}/logs
 	${LN} -sf /var/log/minecraft-server/debug ${STAGEDIR}${PREFIX}/${PORTNAME}/debug
 	${LN} -sf /var/db/minecraft-server ${STAGEDIR}${PREFIX}/${PORTNAME}/world
+
+post-install-STANDALONE-on:
+	${INSTALL_SCRIPT} ${WRKDIR}/minecraft-server ${STAGEDIR}${PREFIX}/bin
+	${CP} ${FILESDIR}/java-args.txt ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>

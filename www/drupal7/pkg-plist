@@ -639,6 +639,11 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/batch_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/batch_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/bootstrap.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/boot.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/boot_test_1.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/boot_test_1.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/boot_test_2.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/boot_test_2.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/cache.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/common.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/common_test.css
@@ -656,6 +661,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test_class.inc
 %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test_interface.inc
+%%DRUPAL_BASE%%/modules/simpletest/tests/drupal_autoload_test/drupal_autoload_test_trait.sh
 %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_system_listing_incompatible_test/drupal_system_listing_incompatible_test.info
@@ -697,6 +703,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/menu_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/module.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/module_test.file.inc
+%%DRUPAL_BASE%%/modules/simpletest/tests/module_test.implementations.inc
 %%DRUPAL_BASE%%/modules/simpletest/tests/module_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/module_test.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/module_test.module
@@ -734,6 +741,8 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_module_version_dependencies_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_module_version_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_module_version_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_project_namespace_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_project_namespace_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/tablesort.test
@@ -949,6 +958,7 @@
 %%DRUPAL_BASE%%/profiles/minimal/minimal.install
 %%DRUPAL_BASE%%/profiles/minimal/minimal.profile
 %%DRUPAL_BASE%%/profiles/minimal/translations/README.txt
+%%DRUPAL_BASE%%/profiles/README.txt
 %%DRUPAL_BASE%%/profiles/standard/standard.info
 %%DRUPAL_BASE%%/profiles/standard/standard.install
 %%DRUPAL_BASE%%/profiles/standard/standard.profile

@@ -4,13 +4,15 @@
 PORTNAME=	cicquin
 PORTVERSION=	0.1
 CATEGORIES=	net-im
-#MASTER_SITES=	LOCAL/roam/misc/cicquin \ 
+#MASTER_SITES=	LOCAL/roam/misc/cicquin \
 MASTER_SITES=	\
 		http://devel.ringlet.net/misc/cicquin/ \
 		http://people.FreeBSD.org/~roam/misc/cicquin/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Look up users in the CenterICQ user database
+
+BROKEN=		unfetchable
 
 PLIST_FILES=	bin/${PORTNAME}
 

@@ -1,8 +1,0 @@
---- doc/CMakeLists.txt.orig	2008-10-27 14:39:31.000000000 +0300
-+++ doc/CMakeLists.txt	2008-11-10 01:56:33.000000000 +0300
-@@ -1,4 +1,4 @@
- set(manpages pcv.1)
- 
--install(FILES ${manpages} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/${MAN_DIR}/man1)
-+install(FILES ${manpages} DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
- 

@@ -3,7 +3,7 @@
 # Date created: 2015-05-28
 
 PORTNAME=	Minilla
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=CPAN:TOKUHIROM
@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	oklaspec@gmail.com
 COMMENT=	CPAN module authoring tool
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	git>=0:${PORTSDIR}/devel/git \
 		tree>=0:${PORTSDIR}/sysutils/tree \

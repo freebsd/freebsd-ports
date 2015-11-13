@@ -11,6 +11,8 @@ DIST_SUBDIR=	pure
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure language interface to the Berkeley socket functions
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 

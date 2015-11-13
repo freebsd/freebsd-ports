@@ -16,10 +16,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-CONFIGURE_ARGS=	GCRYPTINCPATH=${LOCALBASE}/include \
-		GCRYPTLIBPATH=${LOCALBASE}/lib
 USE_PERL5=	configure
-USES=		perl5
+USES=		localbase perl5
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/GCrypt/GCrypt.so

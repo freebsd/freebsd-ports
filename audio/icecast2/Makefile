@@ -18,6 +18,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Streaming mp3/ogg-vorbis audio server
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libshout.so:${PORTSDIR}/audio/libshout \
@@ -28,7 +29,6 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 OPTIONS_DEFINE=	DOCS
 
-CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}

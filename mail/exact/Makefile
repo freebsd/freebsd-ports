@@ -10,6 +10,8 @@ MASTER_SITES=	http://adju.st/dist/exact/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that implements POP Before SMTP Relay Authentication
 
+BROKEN=		unfetchable
+
 MAILUSER?=	mailnull
 MAILGROUP?=	mailnull
 MAILLOG?=	/var/log/maillog

@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.38.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -53,7 +53,7 @@ OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 POPPLER \
 		ANN GTS GTK2 GDK GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL \
 		GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL TK GUILE NVTHREADS \
 		DOCS EXAMPLES
-OPTIONS_DEFAULT=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO
+OPTIONS_DEFAULT=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO NVTHREADS
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 DIGCOLA_DESC=	neato layout engine wiwth DIGCOLA features
@@ -71,7 +71,7 @@ MING_DESC=	ming plugin
 DEVIL_DESC=	devil plugin
 GHOSTSCRIPT_DESC=ghostscript plugin (requires PANGOCAIRO)
 PERL_DESC=	Perl bindings (swig)
-PHP_DESC=	PHP bindings (swig) 
+PHP_DESC=	PHP bindings (swig)
 PYTHON_DESC=	Python bindings (swig)
 RUBY_DESC=	Ruby bindings (swig)
 LUA_DESC=	Lua bindings (swig)
@@ -97,7 +97,7 @@ PYTHON_USES=	python:2.7,build
 RUBY_USE=	RUBY=yes
 LUA_USES=	lua
 TCL_USES=	tcl:build
-TK_USES= 	tk:build
+TK_USES=	tk:build
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 ANN_LIB_DEPENDS=	libann.so:${PORTSDIR}/math/ann
 GTS_LIB_DEPENDS=	libgts.so:${PORTSDIR}/graphics/gts
@@ -260,7 +260,6 @@ SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.lua
 .if ${PORT_OPTIONS:MTCL}
 SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.tcl
 .endif
-
 
 post-patch:
 	${FIND} ${WRKSRC} -name Makefile.in | \

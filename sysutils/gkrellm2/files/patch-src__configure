@@ -1,7 +1,5 @@
-Index: src/configure
-diff -u src/configure.orig src/configure
---- src/configure.orig	2010-09-14 23:40:38.000000000 +0900
-+++ src/configure	2010-10-06 17:48:28.286565914 +0900
+--- src/configure.orig	2010-09-14 14:40:38 UTC
++++ src/configure
 @@ -46,8 +46,8 @@
  echo -n "Checking for OpenSSL... "
  echo "Checking for OpenSSL... " 1>& 5

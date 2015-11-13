@@ -13,6 +13,7 @@ COMMENT=	Voices for MBROLA voice synthesizer
 
 USES=		zip:infozip
 NO_BUILD=	yes
+NO_ARCH=	yes
 RESTRICTED=	No commercial nor military use, no sale
 WRKSRC=		${WRKDIR}/voices
 PORTDATA=	*

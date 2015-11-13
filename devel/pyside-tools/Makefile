@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for creating PySide applications
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 

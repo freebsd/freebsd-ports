@@ -3,6 +3,7 @@
 
 PORTNAME=	strongswan
 PORTVERSION=	5.3.3
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -16,7 +17,7 @@ USES=		cpe execinfo libtool:keepla pkgconfig tar:bzip2
 USE_OPENSSL=	yes
 USE_RC_SUBR=	strongswan
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/ipsec
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--enable-kernel-pfkey \
@@ -41,8 +42,10 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEv1 \
 		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL PKI SCEP SMP \
-		SQLITE TESTVECTOR UNBOUND UNITY XAUTH
-OPTIONS_DEFAULT=	IKEv1
+		SQLITE SWANCTL TESTVECTOR UNBOUND UNITY VICI XAUTH
+OPTIONS_DEFAULT=	IKEv1 BUILTIN
+OPTIONS_SINGLE=	PRINTF_HOOKS
+OPTIONS_SINGLE_PRINTF_HOOKS=	BUILTIN VSTR LIBC
 OPTIONS_SUB=	yes
 CURL_DESC=	Enable CURL to fetch CRL/OCSP
 EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
@@ -57,10 +60,15 @@ LOADTESTER_DESC=	Enable load testing plugin
 TESTVECTOR_DESC=	Enable crypto test vectors
 PKI_DESC=	Enable PKI tools
 SCEP_DESC=	Enable Simple Certificate Enrollment Protocol
-SMP_DESC=	Enable XML-based management protocol
+SMP_DESC=	Enable XML-based management protocol (DEPRECATED)
+SWANCTL_DESC=	Install swanctl
 UNBOUND_DESC=	Enable DNSSEC-enabled resolver
 UNITY_DESC=	Enable Cisco Unity extension plugin
+VICI_DESC=	Enable VICI management protocol
 XAUTH_DESC=	Enable XAuth password verification
+BUILTIN_DESC=	Use builtin printf hooks
+LIBC_DESC=	Use libc printf hooks
+VSTR_DESC=	Use devel/vstr printf hooks
 
 # Extra options
 CURL_CONFIGURE_ON=	--enable-curl
@@ -81,6 +89,7 @@ MYSQL_CONFIGURE_ON=	--enable-mysql
 MYSQL_USE=		MYSQL=yes
 SMP_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 SMP_CONFIGURE_ON=	--enable-smp
+SWANCTL_CONFIGURE_ON=	--enable-swanctl
 SQLITE_CONFIGURE_ON=	--enable-sqlite
 SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 TESTVECTOR_CONFIGURE_ON=--enable-test-vectors
@@ -89,7 +98,12 @@ SCEP_CONFIGURE_OFF=	--disable-scepclient
 UNBOUND_CONFIGURE_ON=	--enable-unbound
 UNBOUND_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
 UNITY_CONFIGURE_ON=	--enable-unity
+VICI_CONFIGURE_ON=	--enable-vici
 XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic
+BUILTIN_CONFIGURE_ON=	--with-printf-hooks=builtin
+LIBC_CONFIGURE_ON=	--with-printf-hooks=glibc
+VSTR_CONFIGURE_ON=	--with-printf-hooks=vstr
+VSTR_LIB_DEPENDS=	libvstr.so:devel/vstr
 
 .include <bsd.port.options.mk>
 
@@ -110,6 +124,16 @@ PLIST_SUB+=	SQL="@comment "
 PLIST_SUB+=	XAUTHGEN=""
 .else
 PLIST_SUB+=	XAUTHGEN="@comment "
+.endif
+
+post-install:
+.if ${PORT_OPTIONS:MVICI}
+	${INSTALL_DATA} ${WRKSRC}/src/libcharon/plugins/vici/libvici.h \
+		${STAGEDIR}${PREFIX}/include
+.endif
+.if ${PORT_OPTIONS:MSWANCTL}
+	${MV} ${STAGEDIR}${PREFIX}/etc/swanctl/swanctl.conf \
+		${STAGEDIR}${PREFIX}/etc/swanctl/swanctl.conf.sample
 .endif
 
 .include <bsd.port.mk>

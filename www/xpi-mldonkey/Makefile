@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~dyna/${PORTNAME}/xpi/ LOCA
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ed2k, magnet and sig2dat protocol handler
 
+BROKEN=		unfetchable
+
 XPI_DISTNAME=	mldonkey_protocol_handler
 XPI_ID=		{bc72206d-b3ce-4b49-88b9-d59b388a0cde}
 XPI_FILES=	chrome/mldonkey.jar components/ed2kprotocol.js defaults/preferences/defaultprefs.js \

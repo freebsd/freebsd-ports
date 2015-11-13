@@ -16,6 +16,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
+TEST_TARGET=	test_harness
+TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER}
+
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE
 # it seems perl malloc has problems with threaded perl on FreeBSD
@@ -49,7 +52,6 @@ PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 
 PORTSCOUT=	limit:^${PERL_VER}.
 
-# Remember to update Mk/Uses/perl5.mk too.
 .include "version.mk"
 PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
@@ -143,9 +145,12 @@ PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PRIV_LIB=${_PRIV_LIB} \
 		ARCH_LIB=${_ARCH_LIB}
 
+_PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
+
 # bsd.default-versions.mk needs to know LOCALBASE for Perl, so
 # bsd.port.options.mk is needed before including it.
 .include <bsd.port.options.mk>
+.sinclude "${_PERL5_DEFAULT_FILE}"
 .include "${.CURDIR}/../../Mk/bsd.default-versions.mk"
 
 # if this port is default due PERL5_DEFAULT
@@ -192,9 +197,21 @@ pre-everything::
 .endif
 
 # Put a symlink to the future libperl.so.x.yy so that -lperl works.
+# Also, save PERL5_DEFAULT in case someone is not using the default Perl
+# version whilst not having set DEFAULT_VERSIONS=perl5=blah.  While upgrading,
+# portmaster/portupgrade will remove the installed Perl version, and it will
+# remove any way to guess what the default Perl version is needed.
 post-extract:
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so
 	${LN} -s libperl.so.${PERL_VERSION} ${WRKSRC}/libperl.so.${PERL_VER}
+.if !defined(PACKAGE_BUILDING)
+	@${ECHO_CMD} "PERL5_DEFAULT=${PERL5_DEFAULT}" > ${_PERL5_DEFAULT_FILE}
+.endif
+
+.if !defined(PACKAGE_BUILDING)
+post-clean:
+	@${RM} ${_PERL5_DEFAULT_FILE}
+.endif
 
 .if !defined(MAKING_PATCHES)
 # make clean patch makepatch MAKING_PATCHES=
@@ -225,7 +242,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/machine
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/sys
 	# h2ph needs perl, but perl is not installed, it's only
-	# staged, so, use the one in WRKDIR 
+	# staged, so, use the one in WRKDIR
 	(cd /usr/include && ${SETENV} LD_LIBRARY_PATH=${WRKSRC} \
 		${WRKSRC}/perl -I ${WRKSRC}/lib ${STAGEDIR}${PREFIX}/bin/h2ph${BINSUFFIX} \
 		-d ${STAGEDIR}${SITE_ARCH} *.h machine/*.h sys/*.h >/dev/null)
@@ -237,10 +254,5 @@ post-install:
 			${CHMOD} 444 $$f; \
 		done
 	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
-
-test: build
-	(cd ${WRKSRC}; TEST_JOBS=${MAKE_JOBS_NUMBER} make test_harness)
-
-regression-test: test
 
 .include <bsd.port.mk>

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysroot
-PORTVERSION=	19
-PORTREVISION=	1
+PORTVERSION=	21
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMEPREFIX=	gnatdroid-
@@ -18,10 +17,13 @@ NO_MTREE=	yes
 
 WRKSRC=		${WRKDIR}/android-${API}-arm
 PREFIX=		${LOCALBASE}/android
+STAT_PATCH=	${FILESDIR}/extra-stat.h
+EXTRA_PATCHES=	${STAT_PATCH}
 
 OPTIONS_SINGLE=		SG1
-OPTIONS_SINGLE_SG1=	FROYO GBREAD ICS JBEAN16 JBEAN17 JBEAN18 KITKAT
-OPTIONS_DEFAULT=	JBEAN16
+OPTIONS_SINGLE_SG1=	FROYO GBREAD ICS JBEAN16 JBEAN17 JBEAN18 KITKAT \
+			LOLLIPOP
+OPTIONS_DEFAULT=	KITKAT
 
 FROYO_DESC=	Android 2.2 - API level 08 - Froyo
 GBREAD_DESC=	Android 2.3 - API level 09 - Gingerbread 1
@@ -30,6 +32,7 @@ JBEAN16_DESC=	Android 4.1 - API level 16 - Jelly Bean 1
 JBEAN17_DESC=	Android 4.2 - API level 17 - Jelly Bean 2
 JBEAN18_DESC=	Android 4.3 - API level 18 - Jelly Bean 3
 KITKAT_DESC=	Android 4.4 - API level 19 - Kitkat
+LOLLIPOP_DESC=	Android 5.0 - API level 21 - Lollipop
 
 .include <bsd.port.options.mk>
 
@@ -47,6 +50,9 @@ API=	17
 API=	18
 .elif ${PORT_OPTIONS:MKITKAT}
 API=	19
+.elif ${PORT_OPTIONS:MLOLLIPOP}
+API=	21
+STAT_PATCH=	${FILESDIR}/extra-21-stat.h
 .else
 IGNORE=	the API option is improperly selected
 .endif

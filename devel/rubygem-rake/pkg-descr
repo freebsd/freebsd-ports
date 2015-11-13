@@ -12,4 +12,4 @@ It has the following features:
   file. Projects that depend upon rake do not require that rake be installed on
   target systems.
 
-WWW: http://rubygems.org/gems/rake/
+WWW: https://github.com/ruby/rake

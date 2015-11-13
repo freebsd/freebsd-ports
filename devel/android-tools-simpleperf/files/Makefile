@@ -75,10 +75,16 @@ CPPFLAGS.${f}+=	${TEST_CPPFLAGS}
 LDADD+=		$$(${LLVM_CONFIG} --system-libs --libs --ldflags)
 TEST_LDADD+=	$$(${GTEST_CONFIG} --libs --ldflags)
 
+TEST_OBJS+=	${TEST_SRCS:R:S/$/.o/}
+CLEANFILES+=	${PROG}_test ${TEST_OBJS}
+
 LLVM_CONFIG?=	llvm-config
 GTEST_CONFIG?=	gtest-config
 
-simpleperf_unit_test: ${SRCS:R:S/$/.o/:Nmain.o} ${TEST_SRCS:R:S/$/.o/}
-	${CXX} ${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS} -o $@ $> ${LDADD} ${TEST_LDADD}
-
 .include <bsd.prog.mk>
+
+test: ${PROG}_test
+	@for f in ${.ALLSRC}; do ./$$f; done
+
+${PROG}_test: ${OBJS:Nmain.o} ${TEST_OBJS}
+	${CXX} ${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS} -o $@ $> ${LDADD} ${TEST_LDADD}

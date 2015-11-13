@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.onyxbits.de/sites/default/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email autoresponder that gets data from LDAP
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 

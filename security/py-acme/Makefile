@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	acme
-PORTVERSION=	0.0.b1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.0.0.dev20151104
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,6 +30,5 @@ WRKSRC_SUBDIR=	acme
 USE_GITHUB=	yes
 GH_ACCOUNT=	letsencrypt
 GH_PROJECT=	letsencrypt
-GH_TAGNAME=	22260a8
 
 .include <bsd.port.mk>

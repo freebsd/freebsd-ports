@@ -3,7 +3,7 @@
 
 PORTNAME=	uniutils
 PORTVERSION=	2.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
@@ -26,7 +26,7 @@ PORTDOCS=	AUTHORS NEWS README
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|TestData|${EXAMPLESDIR}|' ${WRKSRC}/README
 
 regression-test:

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.52
+DISTVERSION=	1.7.54
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -29,7 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-alsa --without-capi --without-dbus \
-		--without-gettextpo \
+		--without-gettext --without-gettextpo \
 		--without-gphoto --without-gsm --without-gstreamer \
 		--without-opencl \
 		--without-osmesa \
@@ -44,7 +44,7 @@ USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		bison compiler:c11 desktop-file-utils gmake shebangfix tar:bzip2
-SHEBANG_FILES=	tools/make_requests tools/winemaker \
+SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
 		tools/winedump/function_grep.pl
 
 SUB_FILES=	pkg-message

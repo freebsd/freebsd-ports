@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	scipy
-PORTVERSION=	0.16.0
+PORTVERSION=	0.16.1
 CATEGORIES=	science python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
+		CHEESESHOP:source \
 		SF:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
@@ -15,6 +16,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Scientific tools for Python
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
@@ -32,6 +34,9 @@ PORTDOCS=	scipy-ref-${PORTVERSION}.pdf
 
 post-extract:
 	@${CP} ${DISTDIR}/scipy-ref-${PORTVERSION}.pdf ${WRKDIR}
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/scipy/ -name '*.so' | ${XARGS} ${STRIP_CMD}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

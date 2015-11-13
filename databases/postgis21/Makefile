@@ -48,14 +48,6 @@ SFCGAL_LIB_DEPENDS=	libSFCGAL.so:${PORTSDIR}/databases/sfcgal
 SFCGAL_CONFIGURE_ON=	--with-sfcgal=${LOCALBASE}/bin/sfcgal-config
 SFCGAL_CONFIGURE_OFF=	--without-sfcgal
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRASTER}
-.if ${OSVERSION} < 900033
-BROKEN=			Raster suppport is broken on FreeBSD < 9.x
-.endif
-.endif
-
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

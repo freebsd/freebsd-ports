@@ -1,0 +1,11 @@
+--- configure.orig	2015-10-02 17:09:45.251035000 +0000
++++ configure	2015-10-02 17:07:21.796652000 +0000
+@@ -11863,7 +11863,7 @@
+             fi
+         fi
+                 ac_java_jvm_jni_lib_runtime_path="${ac_java_jvm_jni_lib_runtime_path}:$D"
+-                ac_java_jvm_jni_lib_flags="$ac_java_jvm_jni_lib_flags -L$D -ljvm"
++                ac_java_jvm_jni_lib_flags="$ac_java_jvm_jni_lib_flags -L$D -ljvm -pthread"
+                 D=$ac_java_jvm_dir/jre/lib/$machine/native_threads
+                 if test -d $D; then
+                   ac_java_jvm_jni_lib_runtime_path="${ac_java_jvm_jni_lib_runtime_path}:$D"

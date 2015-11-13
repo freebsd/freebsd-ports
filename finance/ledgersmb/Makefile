@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/ledgersmb/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Double entry accounting system
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

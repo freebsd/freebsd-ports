@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		bison compiler:nestedfct gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
-WANT_SDL=	yes
 
 CONFIGURE_ARGS+=--with-global-cfg=${PREFIX}/etc/quakeforge.conf \
 		--with-sharepath=${DATADIR} \

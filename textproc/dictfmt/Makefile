@@ -11,14 +11,13 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Formats a DICT protocol dictionary database
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmaa.so:${PORTSDIR}/devel/libmaa
 
 ALL_TARGET=	dictfmt
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install.dictfmt
-LIBS+=		-L${LOCALBASE}/lib
-USES=		gmake libtool:build
+USES=		gmake libtool:build localbase
 
 .include <bsd.port.mk>

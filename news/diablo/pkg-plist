@@ -122,5 +122,14 @@ news/samples/reader/distrib.pats
 news/samples/reader/dreader.access
 news/samples/reader/dserver.hosts
 news/samples/reader/moderators
+@dir news/spool/postq
+@dir news/spool/news
+@dir news/spool/group
+@dir news/spool/cache
+@dir news/spool
+@dir news/run
+@dir news/log
+@dir news/dqueue
+@dir news
 @owner
 @group

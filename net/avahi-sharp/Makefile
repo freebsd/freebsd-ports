@@ -27,7 +27,4 @@ post-patch:
 		${BUILD_WRKSRC}/avahi-sharp.dll.config.in
 	@${CP} ${WRKSRC}/avahi-sharp/avahi-sharp.dll.config.in ${WRKSRC}/avahi-sharp/avahi-sharp.dll.config
 
-post-install:
-	@${RMDIR} ${STAGEDIR}${PREFIX}/etc/avahi
-
 .include "${MASTERDIR}/Makefile"

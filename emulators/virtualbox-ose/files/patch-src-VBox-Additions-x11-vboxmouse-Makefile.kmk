@@ -1,6 +1,6 @@
---- src/VBox/Additions/x11/vboxmouse/Makefile.kmk.orig	2014-11-21 10:16:53.000000000 -0500
-+++ src/VBox/Additions/x11/vboxmouse/Makefile.kmk	2014-12-10 14:10:02.000000000 -0500
-@@ -236,6 +236,50 @@
+--- src/VBox/Additions/x11/vboxmouse/Makefile.kmk.orig	2015-07-10 16:27:59.000000000 +0200
++++ src/VBox/Additions/x11/vboxmouse/Makefile.kmk	2015-10-13 08:40:36.448907000 +0200
+@@ -228,6 +228,61 @@
  vboxmouse_drv_112_SOURCES = \
  	vboxmouse.c
  
@@ -48,15 +48,26 @@
 +vboxmouse_drv_116_SOURCES = \
 +	vboxmouse.c
 +
++DLLS += vboxmouse_drv_117
++vboxmouse_drv_117_TEMPLATE = VBOXGUESTR3XORGMOD
++vboxmouse_drv_117_DEFS := $(vboxmouse_drv_70_DEFS) NO_ANSIC
++## @todo replace $(VBOX_PATH_X11_ROOT)/xorg-server-1.6.0-local
++vboxmouse_drv_117_INCS := \
++    $(vboxmouse_xorg_INCS) \
++	$(VBOX_PATH_X11_ROOT)/xorg-server-1.17.1 \
++	$(PATH_SUB_CURRENT)
++vboxmouse_drv_117_SOURCES = \
++	vboxmouse.c
++
  endif # neq ($(KBUILD_TARGET),linux)
  
  
-@@ -284,7 +328,7 @@
+@@ -276,7 +331,7 @@
       $(foreach ver, _70 _71 _13 _14 _15 _16, $(eval $(def_vboxmouse_test)))
  
       ifneq ($(KBUILD_TARGET), linux)
 -      $(foreach ver, _17 _18 _19 _110 _111 _112 _113, $(eval $(def_vboxmouse_test)))
-+      $(foreach ver, _17 _18 _19 _110 _111 _112 _113 _114 _115 _116, $(eval $(def_vboxmouse_test)))
++      $(foreach ver, _17 _18 _19 _110 _111 _112 _113 _114 _115 _116 _117, $(eval $(def_vboxmouse_test)))
  
       endif # neq ($(KBUILD_TARGET),linux)
  

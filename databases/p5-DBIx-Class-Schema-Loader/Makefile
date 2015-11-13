@@ -43,6 +43,7 @@ TEST_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 OPTIONS_DEFINE=	MYSQL ORACLE PGSQL SQLITE
 ORACLE_DESC=	Enable Oracle backend (experimental)
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

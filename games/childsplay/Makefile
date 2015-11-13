@@ -21,8 +21,6 @@ NO_BUILD=	yes
 USES=		gettext shebangfix tar:tgz python:2
 USE_GNOME=	pygtk2
 
-python_OLD_CMD=	/usr/bin/env python
-python_CMD=	${SETENV} python2
 SHEBANG_FILES=	childsplay.py
 .for i in buttons funcs text dialogs gtk_widgets base
 SHEBANG_FILES+=	SPWidgets/$i.py

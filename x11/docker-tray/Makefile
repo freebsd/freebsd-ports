@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	-tray
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp with support for GNOME2 and KDE3 tray icons
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 

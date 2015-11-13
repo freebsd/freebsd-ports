@@ -23,7 +23,7 @@ lib/cmake/Qca/QcaTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qca/QcaTargets.cmake
 lib/libqca.so
 lib/libqca.so.2
-lib/libqca.so.2.1.0
+lib/libqca.so.%%SHLIB_VER%%
 %%SASL%%lib/qca/crypto/libqca-cyrus-sasl.so
 %%GNUPG%%lib/qca/crypto/libqca-gnupg.so
 %%OPENSSL%%lib/qca/crypto/libqca-ossl.so

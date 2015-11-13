@@ -9,4 +9,3 @@ share/misc/jfbterm.termcap
 share/misc/jfbterm.terminfo
 %%TERMCAP_ADD_RECORD%%
 %%TERMCAP_DEL_RECORD%%
-%%TIC%%

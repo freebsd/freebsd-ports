@@ -1,0 +1,11 @@
+--- idl/GNUmakefile.in.orig	2012-12-31 14:57:16 UTC
++++ idl/GNUmakefile.in
+@@ -4,7 +4,7 @@ BASE_OMNI_TREE=@top_srcdir@
+ VPATH=@srcdir@
+ INSTALL=@INSTALL@
+ 
+-INSTALLDIR = $(INSTALLIDLDIR)/omniORB
++INSTALLDIR = $(INSTALLIDLDIR)
+ 
+ FILES = Naming.idl bootstrap.idl corbaidl.idl echo.idl ir.idl orb.idl \
+         poa.idl poa_include.idl boxes.idl pollable.idl \

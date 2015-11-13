@@ -16,6 +16,10 @@ LICENSE=	PHP301
 USES=		tar:bzip2 cpe
 CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
+
+DEPRECATED=	PHP 5.4 is End of Life http://php.net/supported-versions.php
+EXPIRATION_DATE=2016-01-15
+
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf
 
@@ -154,9 +158,6 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 
 .if ${PORT_OPTIONS:MDTRACE}
-.if ${OSVERSION} < 900000
-IGNORE=		cannot be built with DTrace support on FreeBSD < 9.x
-.endif
 CONFIGURE_ARGS+=--enable-dtrace
 PLIST_SUB+=	DTRACE=""
 .else

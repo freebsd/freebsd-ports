@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	yar
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	johnpupu@gmail.com
@@ -14,6 +13,7 @@ COMMENT=	Yar (Yet another RPC framework) is a light, concurrent RPC framework
 
 LICENSE=	PHP301
 
+USES=		tar:tgz
 PHP_MODNAME=	yar
 USE_PHP=	json curl
 USE_PHPEXT=	yes

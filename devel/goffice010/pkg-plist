@@ -196,7 +196,7 @@ lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.so
 lib/goffice/%%VERSION%%/plugins/smoothing/types.xml
 lib/libgoffice-%%SHORT_VER%%.so
 lib/libgoffice-%%SHORT_VER%%.so.10
-lib/libgoffice-%%SHORT_VER%%.so.10.0.23
+lib/libgoffice-%%SHORT_VER%%.so.10.0.24
 libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 share/gir-1.0/GOffice-%%SHORT_VER%%.gir
 %%DATADIR%%/%%VERSION%%/mmlitex/README

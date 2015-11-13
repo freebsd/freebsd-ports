@@ -26,14 +26,14 @@ include/GL/internal/dri_interface.h
 @comment include/gbm.h
 %%I915_DRIVER%%lib/dri/i915_dri.so
 %%I965_DRIVER%%lib/dri/i965_dri.so
-lib/dri/kms_swrast_dri.so
+%%SWRAST_GDRIVER%%lib/dri/kms_swrast_dri.so
 %%R200_DRIVER%%lib/dri/r200_dri.so
-lib/dri/r300_dri.so
-lib/dri/r600_dri.so
+%%R300_GDRIVER%%lib/dri/r300_dri.so
+%%R600_GDRIVER%%lib/dri/r600_dri.so
 %%RADEON_DRIVER%%lib/dri/radeon_dri.so
-lib/dri/radeonsi_dri.so
+%%RADEONSI_GDRIVER%%lib/dri/radeonsi_dri.so
 %%SWRAST_DRIVER%%lib/dri/swrast_dri.so
-lib/dri/vmwgfx_dri.so
+%%SVGA_GDRIVER%%lib/dri/vmwgfx_dri.so
 @comment lib/gallium-pipe/pipe_r300.so
 @comment lib/gallium-pipe/pipe_r600.so
 @comment lib/gallium-pipe/pipe_radeonsi.so
@@ -54,10 +54,10 @@ lib/dri/vmwgfx_dri.so
 @comment lib/libOSMesa.so
 @comment lib/libOSMesa.so.8
 @comment lib/libOSMesa.so.8.0.0
-lib/libXvMCr600.so
-lib/libXvMCr600.so.1
-lib/libXvMCr600.so.1.0
-lib/libXvMCr600.so.1.0.0
+%%R600_GDRIVER%%lib/libXvMCr600.so
+%%R600_GDRIVER%%lib/libXvMCr600.so.1
+%%R600_GDRIVER%%lib/libXvMCr600.so.1.0
+%%R600_GDRIVER%%lib/libXvMCr600.so.1.0.0
 @comment lib/libgbm.so
 @comment lib/libgbm.so.1
 @comment lib/libgbm.so.1.0.0

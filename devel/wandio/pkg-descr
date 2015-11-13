@@ -1,0 +1,10 @@
+Libwandio is a software library written in C that provides an API for
+transparent reading and writing of files using a variety of supported
+compression methods.  Provided pthreads are available, I/O performance
+will be improved by doing any compression and/or decompression using a
+separate thread.
+
+Libwandio supports the popular compression methods (zlib, bzip2, LZMA,
+write-only LZO) and HTTP transport (read-only).
+
+WWW: http://research.wand.net.nz/software/libwandio.php

@@ -103,10 +103,6 @@ PORTDOCS=	AUTHORS \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-scripts_ZoneMinder_lib_ZoneMinder_Memory.pm.in
 .endif
 
-.if ${OSVERSION} < 900000
-BROKEN=	does not compile on 7.X and 8.X
-.endif
-
 post-configure:
 
 post-patch:

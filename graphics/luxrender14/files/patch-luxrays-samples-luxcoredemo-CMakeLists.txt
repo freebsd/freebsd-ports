@@ -1,0 +1,16 @@
+--- ../luxrays/samples/luxcoredemo/CMakeLists.txt.orig
++++ ../luxrays/samples/luxcoredemo/CMakeLists.txt
+@@ -22,10 +22,12 @@
+ #
+ ################################################################################
+ 
++find_package(Threads)
++
+ set(LUXCORELIBDEMO_SRCS
+ 	luxcoredemo.cpp
+ 	)
+ 
+ add_executable(luxcoredemo ${LUXCORELIBDEMO_SRCS})
+ 
+-TARGET_LINK_LIBRARIES(luxcoredemo luxcore smallluxgpu luxrays ${TIFF_LIBRARIES} ${OPENEXR_LIBRARIES} ${PNG_LIBRARIES} ${JPEG_LIBRARIES})
++TARGET_LINK_LIBRARIES(luxcoredemo luxcore smallluxgpu luxrays ${TIFF_LIBRARIES} ${OPENEXR_LIBRARIES} ${PNG_LIBRARIES} ${JPEG_LIBRARIES} ${PYTHON_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})

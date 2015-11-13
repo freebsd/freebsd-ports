@@ -6,10 +6,11 @@ PORTVERSION=	0.6.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@freebsd.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Recurring jobs for Sidekiq
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-celluloid>=0.14.1:${PORTSDIR}/devel/rubygem-celluloid \
 		rubygem-ice_cube>=0.11.1:${PORTSDIR}/devel/rubygem-ice_cube \

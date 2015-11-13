@@ -10,6 +10,8 @@ MASTER_SITES=	http://flyspray.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, easy-to-use web based bug tracking system
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
 
 USE_PHP=	pcre session zlib xml gd

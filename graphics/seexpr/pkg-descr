@@ -1,0 +1,13 @@
+SeExpr is simple expression language that provided artistic control and
+customization to your software.  It can be used for procedural geometry
+synthesis, image synthesis, simulation control, and much more.
+
+Major features:
+
+  * Arithmetic expression of scalar/vector types
+  * Large library of built-in functions
+  * Extensible variables and functions (including with DSOs)
+  * Simple to embed in any program
+  * High-level UI components to manipulate and visualize expressions
+
+WWW: http://www.disneyanimation.com/technology/seexpr.html

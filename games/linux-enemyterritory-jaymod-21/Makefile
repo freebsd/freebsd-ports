@@ -22,7 +22,7 @@ PLIST_SUB=	VERSTR="${VERSTR}"
 
 USES=		shebangfix
 SHEBANG_FILES=	linux/convert_shrub
-perl_OLD_CMD=	/bin/env perl
+perl_OLD_CMD=	"/bin/env perl"
 USE_LINUX=	yes
 
 PORTSCOUT=	limit:^2\.1\.7

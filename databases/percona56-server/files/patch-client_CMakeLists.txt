@@ -1,5 +1,5 @@
---- client/CMakeLists.txt.orig	2015-05-06 12:38:47.000000000 +0200
-+++ client/CMakeLists.txt	2015-06-07 18:30:20.496432000 +0200
+--- client/CMakeLists.txt	2015-11-03 12:14:08.000000000 +0100
++++ client/CMakeLists.txt.new	2015-11-06 10:28:27.753882068 +0100
 @@ -31,17 +31,20 @@
  COPY_OPENSSL_DLLS(copy_openssl_client)
  
@@ -21,10 +21,10 @@
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
  TARGET_LINK_LIBRARIES(mysqlcheck perconaserverclient)
  
-@@ -50,17 +53,21 @@
- 
+@@ -51,17 +54,21 @@
  MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
  TARGET_LINK_LIBRARIES(mysqlimport perconaserverclient)
+ SET_SOURCE_FILES_PROPERTIES(mysqlimport.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
 +ENDIF()
  
  MYSQL_ADD_EXECUTABLE(mysql_upgrade mysql_upgrade.c)
@@ -43,7 +43,7 @@
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc sql_string.cc
                       ../sql/rpl_filter.cc ../sql/sql_list.cc)
  TARGET_LINK_LIBRARIES(mysqlbinlog perconaserverclient)
-@@ -74,6 +81,7 @@
+@@ -75,6 +82,7 @@
  
  MYSQL_ADD_EXECUTABLE(mysql_config_editor mysql_config_editor.cc)
  TARGET_LINK_LIBRARIES(mysql_config_editor perconaserverclient)
@@ -51,7 +51,7 @@
  
  # "WIN32" also covers 64 bit. "echo" is used in some files below "mysql-test/".
  IF(WIN32)
-@@ -83,11 +91,6 @@
+@@ -84,11 +92,6 @@
  SET_TARGET_PROPERTIES (
    mysql_plugin 
    mysql_upgrade

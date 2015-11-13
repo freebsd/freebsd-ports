@@ -6,7 +6,9 @@ libexec/mame/ldverify
 libexec/mame/romcmp
 libexec/mame/testkeys
 libexec/mame/unidasm
-%%DATADIR%%/artwork/aperture.png
+%%DATADIR%%/artwork/adapture-grill.png
+%%DATADIR%%/artwork/shadow-mask.png
+%%DATADIR%%/artwork/slot-mask.png
 %%DATADIR%%/artwork/white.png
 %%DATADIR%%/hash/32x.xml
 %%DATADIR%%/hash/3do_m2.xml
@@ -62,9 +64,12 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/b2m.xml
 %%DATADIR%%/hash/bbca_cass.xml
 %%DATADIR%%/hash/bbcb_cass.xml
+%%DATADIR%%/hash/bbcb_de_cass.xml
+%%DATADIR%%/hash/bbcb_us_flop.xml
 %%DATADIR%%/hash/bbcbc.xml
 %%DATADIR%%/hash/bbcm_cart.xml
 %%DATADIR%%/hash/bbcm_cass.xml
+%%DATADIR%%/hash/bbcmc_flop.xml
 %%DATADIR%%/hash/bk0010.xml
 %%DATADIR%%/hash/bml3_flop.xml
 %%DATADIR%%/hash/bw12.xml
@@ -76,6 +81,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/c64_cart.xml
 %%DATADIR%%/hash/c64_cass.xml
 %%DATADIR%%/hash/c64_flop.xml
+%%DATADIR%%/hash/c65_flop.xml
 %%DATADIR%%/hash/casloopy.xml
 %%DATADIR%%/hash/cbm2_cart.xml
 %%DATADIR%%/hash/cbm2_flop.xml
@@ -125,6 +131,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/gamecom.xml
 %%DATADIR%%/hash/gamegear.xml
 %%DATADIR%%/hash/gameking.xml
+%%DATADIR%%/hash/gameking3.xml
 %%DATADIR%%/hash/gamepock.xml
 %%DATADIR%%/hash/gba.xml
 %%DATADIR%%/hash/gbcolor.xml
@@ -136,12 +143,14 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/glcolor.xml
 %%DATADIR%%/hash/gmaster.xml
 %%DATADIR%%/hash/gp32.xml
+%%DATADIR%%/hash/guab.xml
 %%DATADIR%%/hash/gx4000.xml
 %%DATADIR%%/hash/horizon.xml
 %%DATADIR%%/hash/hp9835a_rom.xml
 %%DATADIR%%/hash/hp9845a_rom.xml
 %%DATADIR%%/hash/hp9845b_rom.xml
 %%DATADIR%%/hash/ht68k.xml
+%%DATADIR%%/hash/i7000_card.xml
 %%DATADIR%%/hash/ibm5140.xml
 %%DATADIR%%/hash/ibm5150.xml
 %%DATADIR%%/hash/ibm5150_cass.xml
@@ -215,6 +224,8 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/mz800_cass.xml
 %%DATADIR%%/hash/n64.xml
 %%DATADIR%%/hash/n64dd.xml
+%%DATADIR%%/hash/nascom_flop.xml
+%%DATADIR%%/hash/nascom_socket.xml
 %%DATADIR%%/hash/neocd.xml
 %%DATADIR%%/hash/neogeo.xml
 %%DATADIR%%/hash/nes.hsi
@@ -268,6 +279,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/plus4_flop.xml
 %%DATADIR%%/hash/pmd85_cass.xml
 %%DATADIR%%/hash/pokemini.xml
+%%DATADIR%%/hash/pro128_cart.xml
 %%DATADIR%%/hash/prof180.xml
 %%DATADIR%%/hash/prof80.xml
 %%DATADIR%%/hash/psion1.xml
@@ -344,6 +356,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/ti99_cart.xml
 %%DATADIR%%/hash/tiki100.xml
 %%DATADIR%%/hash/timex_dock.xml
+%%DATADIR%%/hash/tntell.xml
 %%DATADIR%%/hash/to770_cart.xml
 %%DATADIR%%/hash/to7_cart.xml
 %%DATADIR%%/hash/trs80m2.xml

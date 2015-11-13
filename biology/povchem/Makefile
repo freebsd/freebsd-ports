@@ -18,6 +18,8 @@ COMMENT=	Simple yet powerful tool to generate POV from a PDB file
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 NO_WRKSUBDIR=	yes
 
 USES=		dos2unix

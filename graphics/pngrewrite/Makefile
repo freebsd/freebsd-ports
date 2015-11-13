@@ -15,16 +15,14 @@ LICENSE=	ZLIB
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lm -lpng -lz
-USES=		zip
+USES=		localbase zip
 
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/pngrewrite
 
 do-build:
-	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/pngrewrite ${WRKSRC}/libpngrewrite.c ${WRKSRC}/pngrewrite.c
+	${CC} ${CFLAGS} ${LDFLAGS} -lm -lpng -lz -o ${WRKSRC}/pngrewrite ${WRKSRC}/libpngrewrite.c ${WRKSRC}/pngrewrite.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngrewrite ${STAGEDIR}${PREFIX}/bin/

@@ -6,6 +6,7 @@ CATEGORIES=	chinese
 MAINTAINER=	sunpoet@FreeBSD.org
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 MASTERDIR=	${.CURDIR}/../../net/tintin++
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	cinnamon-desktop
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome3
 
@@ -22,6 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 SHEBANG_FILES=	files/usr/bin/cinnamon-desktop-migrate-mediakeys
+python_OLD_CMD=	/usr/bin/python2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am

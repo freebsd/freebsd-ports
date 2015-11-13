@@ -3,7 +3,6 @@
 PORTNAME=	capstone
 PORTVERSION=	2.1.2
 CATEGORIES=	devel
-MASTER_SITES=	http://capstone-engine.org/download/${PORTVERSION}/
 
 MAINTAINER=	oliver.pntr@gmail.com
 COMMENT=	Multi-platform, multi-architecture disassembly framework
@@ -12,6 +11,8 @@ LICENSE=	BSD3CLAUSE
 
 USES=		gmake
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	aquynh
 
 MAKE_ENV+=	INSTALL_LIB="${INSTALL_LIB}" \
 		INSTALL_DATA="${INSTALL_DATA}"

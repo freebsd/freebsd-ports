@@ -1,11 +1,11 @@
---- BlockOut/GLApp/GLSprite.cpp.orig	2009-08-06 15:17:24.000000000 +0700
-+++ BlockOut/GLApp/GLSprite.cpp	2009-08-06 15:17:46.000000000 +0700
-@@ -3,7 +3,7 @@
+--- BlockOut/GLApp/GLSprite.cpp.orig	2014-05-06 16:47:55.000000000 +0700
++++ BlockOut/GLApp/GLSprite.cpp	2015-08-17 10:37:35.000000000 +0600
+@@ -2,7 +2,7 @@
+ // 2D sprites
  // -----------------------------------------------
  #include "GLSprite.h"
- #include <CImage.h>
 -#include <malloc.h>
 +#include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
- 
+ #undef LoadImage

@@ -3,4 +3,4 @@ gcov data for multiple source files and creates HTML pages containing the
 source code annotated with coverage information.  It also adds overview pages
 for easy navigation within the file structure.
 
-WWW:	http://ltp.sourceforge.net/coverage/lcov.php
+WWW: http://ltp.sourceforge.net/coverage/lcov.php

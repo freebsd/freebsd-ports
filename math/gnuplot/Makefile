@@ -67,7 +67,6 @@ X11_USE=	XORG=x11
 # Version 3.x of WX currently cause gnuplot to crash.
 # Do not update without this without testing.
 USE_WX=			2.8
-WX_UNICODE=		yes
 WX_CONF_ARGS=		absolute
 .else
 CONFIGURE_ARGS+=	--disable-wxwidgets

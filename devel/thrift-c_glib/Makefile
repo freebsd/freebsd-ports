@@ -12,6 +12,8 @@ DISTNAME=	thrift-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C glib interface to Thrift
 
+BROKEN=		unfetchable
+
 PKGNAMESUFFIX=	-c_glib
 
 BUILDIR=	${WRKDIR}/${DISTNAME}/lib/c_glib
@@ -40,7 +42,8 @@ CONFIGURE_ARGS+=        \
 		--without-php \
 		--without-php_extension \
 		--without-python \
-		--without-ruby
+		--without-ruby \
+		--without-go
 
 post-patch:
 	@${REINPLACE_CMD} 's,^pkgconfigdir = .*,pkgconfigdir=$${prefix}/libdata/pkgconfig,' ${WRKSRC}/lib/c_glib/Makefile.am

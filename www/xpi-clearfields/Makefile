@@ -9,6 +9,8 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolbar buttons that clear input fields
 
+BROKEN=		unfetchable
+
 XPI_DISTNAME=	clear_fields
 XPI_ID=		clearfields@alex.alexander.googlepages.com
 XPI_NUM=	2408

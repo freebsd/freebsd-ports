@@ -255,7 +255,7 @@ EXCLUDE_FILES=	\*/doc/man \
 EXTRACT_AFTER_ARGS=| ${TAR} xf - ${EXCLUDE_FILES:S,^,--exclude ${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}/,}
 
 post-extract:
-	cd ${WRKDIR}/latex-base-20150101.2 && \
+	cd ${WRKSRC}/latex-base-20150101.2 && \
 	    ${SETENV} TEXMF=. ${LOCALBASE}/bin/tex -ini unpack.ins && \
 	    ${RM} README *.log *.aux *.pdf *.dtx *.ins *.txt *.ist *.fdd *.err
 
@@ -264,7 +264,7 @@ do-install:
 		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/tex/latex/base
-	cd ${WRKDIR}/latex-base-20150101.2 && ${PAX} -rw . \
+	cd ${WRKSRC}/latex-base-20150101.2 && ${PAX} -rw . \
 	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/tex/latex/base
 	${REINPLACE_CMD} -i '' 's/\\def\\magyar@sugg@ie@low#1#2#3/\\def\\magyar@sugg@ie@low\\protect #1#2#3/' ${STAGEDIR}${PREFIX}/share/texmf-dist/tex/generic/babel-hungarian/magyar.ldf
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/doc
@@ -273,11 +273,11 @@ do-install:
 	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/source/.keep_me
 
 post-install:
-	@${REINPLACE_CMD} -i '' -e '1s|${bash_OLD_CMD}|${bash_CMD}|' \
+	@${REINPLACE_CMD} -i '' -e '1s|/bin/bash|${bash_CMD}|' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/logicpuzzle/createlpsudoku \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/logicpuzzle/lpsmag \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/shipunov/biokey2html.sh
-	@${REINPLACE_CMD} -i '' -e '1s|${perl_OLD_CMD}|${perl_CMD}|' \
+	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/perl|${perl_CMD}|' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/mycv/mycv_split_contents.pl
 
 .include <bsd.port.mk>

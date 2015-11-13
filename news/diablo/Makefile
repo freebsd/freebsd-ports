@@ -20,24 +20,21 @@ PORTDOCS=	COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
 OPTIONS_DEFINE=	DES DOCS
 DES_DESC=	DES encryption support
 
-USES=	tar:tgz
-
-.include <bsd.port.options.mk>
+USES=		tar:tgz
 
 post-patch:
-	${CP} ${FILESDIR}/diablo.in ${WRKDIR}/diablo
-	${REINPLACE_CMD} -E 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g ;\
+	@${CP} ${FILESDIR}/diablo.in ${WRKDIR}/diablo
+	@${REINPLACE_CMD} -E 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g ;\
 		s|-g -O.?|${CFLAGS}| ; s|g?cc|${CC}|' \
 		${WRKSRC}/XMakefile.inc
-	${REINPLACE_CMD} -E 's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} -E 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKDIR}/diablo ${WRKSRC}/XMakefile.inst
 # Fix for GCC 4.2
-	${REINPLACE_CMD} -e 's|VServerConfig\[\]|*VServerConfig|' \
+	@${REINPLACE_CMD} -e 's|VServerConfig\[\]|*VServerConfig|' \
 		${WRKSRC}/dreaderd/main.c
 
-.if empty(PORT_OPTIONS:MDES)
-	${REINPLACE_CMD} -e 's| -ldes||g' ${WRKSRC}/XMakefile.inc
-.endif
+post-patch-DES-off:
+	@${REINPLACE_CMD} -e 's| -ldes||g' ${WRKSRC}/XMakefile.inc
 
 do-build:
 	(cd ${WRKSRC} && xmake all)
@@ -51,8 +48,11 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/news/spool/group
 	${MKDIR} ${STAGEDIR}${PREFIX}/news/spool/postq
 	(cd ${WRKSRC} && xmake install)
+	@${RM} -rf ${STAGEDIR}${PREFIX}/news/man
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/news/dbin/*
 	${INSTALL_SCRIPT} ${WRKDIR}/diablo ${STAGEDIR}${PREFIX}/etc/rc.d
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

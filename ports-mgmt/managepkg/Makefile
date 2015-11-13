@@ -14,7 +14,7 @@ COMMENT=	Script for maintaining ports
 # Any ideas for a better comment?
 
 EXTRACT_CMD=	${GZCAT}
-EXTRACT_BEFORE_ARGS=	
+EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${PORTNAME}
 WRKSRC=	${WRKDIR}
 NO_BUILD=	yes

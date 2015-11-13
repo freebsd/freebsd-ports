@@ -35,18 +35,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	LDAP
+DOCSDIR=	${PREFIX}/share/doc/gconf
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	LDAP DOCS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-openldap
-PLIST_SUB+=	LDAP=""
-.else
-CONFIGURE_ARGS+=--without-openldap
-PLIST_SUB+=	LDAP="@comment "
-.endif
+LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_WITH=	openldap
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/gconf/gconf.xml.system

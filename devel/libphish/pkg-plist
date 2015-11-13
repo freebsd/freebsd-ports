@@ -1,6 +1,0 @@
-bin/libphish-config
-include/phish.h
-lib/libphish.a
-lib/libphish.so
-lib/libphish.so.0
-lib/libphish.so.0.1.0

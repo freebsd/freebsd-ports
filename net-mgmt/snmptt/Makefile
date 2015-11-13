@@ -36,7 +36,7 @@ do-install:
 .for _SCRIPT in ${SCRIPTS}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${_SCRIPT} ${STAGEDIR}${PREFIX}/sbin
 .endfor
-	
+
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/snmp
 	${INSTALL_DATA} ${WRKSRC}/snmptt.ini ${STAGEDIR}${PREFIX}/etc/snmp/snmptt.ini.sample
 	${INSTALL_DATA} ${WRKSRC}/examples/snmptt.conf.generic ${STAGEDIR}${PREFIX}/etc/snmp/snmptt.conf.generic.sample

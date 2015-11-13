@@ -10,7 +10,6 @@ libdata/pkgconfig/opencdk.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/opencdk-api.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/basic.c
 %%EXAMPLESDIR%%/exp-key.gpg
 %%EXAMPLESDIR%%/newkey.gpg
@@ -31,4 +30,3 @@ libdata/pkgconfig/opencdk.pc
 %%EXAMPLESDIR%%/testpa.c
 %%EXAMPLESDIR%%/ts.gpg
 %%EXAMPLESDIR%%/wkold.gpg
-@dirrm %%EXAMPLESDIR%%

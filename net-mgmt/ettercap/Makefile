@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Network sniffer/interceptor/injector/logger for switched LANs
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
@@ -30,10 +31,10 @@ CMAKE_ARGS=	-DBUNDLED_LIBS=OFF \
 		-DINSTALL_SYSCONFDIR=${PREFIX}/etc \
 		-DMAN_INSTALLDIR=${PREFIX}/man
 CMAKE_VERBOSE=	yes
-LDFLAGS+=	-L${LIBDIR} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/libnet11 ${ICONV_LIB} -lnet -lpcap
+LDFLAGS+=	-L${LIBDIR} -L${LOCALBASE}/lib/libnet11 ${ICONV_LIB} -lnet -lpcap
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=		bison cmake:outsource cpe iconv pkgconfig
+USES=		bison cmake:outsource cpe iconv localbase pkgconfig
 
 DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
 		README.GIT README.PLATFORMS THANKS TODO TODO.TESTING \
@@ -74,6 +75,8 @@ UTF8_USES=		iconv
 
 post-install:
 	${INSTALL_DATA} ${STAGEDIR}${ETCDIR}/etter.conf ${STAGEDIR}${PREFIX}/etc/etter.conf.sample
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 

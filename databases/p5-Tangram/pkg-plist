@@ -89,6 +89,7 @@
 %%SITE_PERL%%/Tangram/Type/Date/DateTime.pm
 %%SITE_PERL%%/Tangram/Type/Date/Manip.pm
 %%SITE_PERL%%/Tangram/Type/Date/Raw.pm
+%%SITE_PERL%%/Tangram/Type/Date/TimeHiRes.pm
 %%SITE_PERL%%/Tangram/Type/Date/TimePiece.pm
 %%SITE_PERL%%/Tangram/Type/Dump.pm
 %%SITE_PERL%%/Tangram/Type/Dump/Any.pm
@@ -103,6 +104,8 @@
 %%SITE_PERL%%/Tangram/Type/Hash/Scalar.pm
 %%SITE_PERL%%/Tangram/Type/Hash/Scalar.pod
 %%SITE_PERL%%/Tangram/Type/Integer.pm
+%%SITE_PERL%%/Tangram/Type/Interval.pm
+%%SITE_PERL%%/Tangram/Type/Interval/HiRes.pm
 %%SITE_PERL%%/Tangram/Type/Number.pm
 %%SITE_PERL%%/Tangram/Type/Real.pm
 %%SITE_PERL%%/Tangram/Type/Ref/FromMany.pm
@@ -118,7 +121,7 @@
 %%SITE_PERL%%/Tangram/Type/Time.pm
 %%SITE_PERL%%/Tangram/Type/TimeAndDate.pm
 %%SITE_PERL%%/Tangram/Type/TimeAndDate.pod
-%%SITE_PERL%%/auto/Tangram/autosplit.ix
+%%SITE_PERL%%/Tangram/Util.pm
 %%PERL5_MAN3%%/Tangram.3.gz
 %%PERL5_MAN3%%/Tangram::Complicity.3.gz
 %%PERL5_MAN3%%/Tangram::Core.3.gz

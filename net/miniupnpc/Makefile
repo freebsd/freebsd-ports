@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	miniupnpc
-PORTVERSION=	1.9
+PORTVERSION=	1.9.20151008
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 
@@ -29,7 +29,7 @@ USE_RC_SUBR=	miniupnpc
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/upnpc \
-		${STAGEDIR}${PREFIX}/lib/libminiupnpc.so.10
+		${STAGEDIR}${PREFIX}/lib/libminiupnpc.so.15
 .endif
 
 .include <bsd.port.post.mk>

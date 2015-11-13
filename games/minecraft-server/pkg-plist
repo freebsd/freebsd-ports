@@ -1,8 +1,6 @@
 %%STANDALONE%%bin/minecraft-server
 @owner mcserver
 @group mcserver
-@dir minecraft-server
-@dir %%ETCDIR%%
 %%STANDALONE%%%%ETCDIR%%/java-args.txt
 minecraft-server/banned-ips.json
 minecraft-server/banned-players.json
@@ -15,6 +13,8 @@ minecraft-server/server.properties
 minecraft-server/usercache.json
 minecraft-server/whitelist.json
 minecraft-server/world
+@dir %%ETCDIR%%
+@dir minecraft-server
 @dir /var/db/minecraft-server
 @dir /var/log/minecraft-server
 @owner

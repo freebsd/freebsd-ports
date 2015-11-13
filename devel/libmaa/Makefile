@@ -13,13 +13,12 @@ COMMENT=	Provides a few data structures and helpful functions
 
 # The software was licensed as GPLv2. LGPL20 is for the library.
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 OPTIONS_DEFINE=	DOCS
 
 ALL_TARGET=	lib
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-LIBS+=		-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USES=		gmake libtool:build
 
@@ -33,6 +32,8 @@ PORTDOCS=	${DOCS:T}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmaa.so.3
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 

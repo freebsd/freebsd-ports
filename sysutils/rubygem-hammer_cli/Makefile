@@ -10,6 +10,7 @@ MAINTAINER=	mmoll@FreeBSD.org
 COMMENT=	Provides CLI interfaces for Ruby apps
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.14:${PORTSDIR}/devel/rubygem-apipie-bindings \
 		rubygem-awesome_print>=1.1.0:${PORTSDIR}/devel/rubygem-awesome_print \

@@ -5,7 +5,7 @@ PORTNAME=	tcl-manual
 PORTVERSION=	20131001
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/
-DISTFILES=	
+DISTFILES=
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Documentation for TCL (Tool Command Language)
@@ -30,16 +30,16 @@ post-patch:
 	    s|/usr/local/bin/wish|${PREFIX}/bin/wish${v:R}|g' \
 	    ${WRKSRC}/tcl${v}/html/UserCmd/wish.htm
 	@${REINPLACE_CMD} -e 's|tcl\.h|tcl${v:R}/tcl.h|g' \
-		${WRKDIR}/tcl${v}/html/TclLib/*
+		${WRKSRC}/tcl${v}/html/TclLib/*
 	@${REINPLACE_CMD} -e 's|tk\.h|tk${v:R}/tk.h|g' \
-		${WRKDIR}/tcl${v}/html/TkLib/*
+		${WRKSRC}/tcl${v}/html/TkLib/*
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 .endfor
 
 do-install:
 .for v in ${VERSIONS}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/tcl${v:R:S/.//}
-	${CP} -R ${WRKDIR}/tcl${v}/html/* ${STAGEDIR}${PREFIX}/share/doc/tcl${v:R:S/.//}
+	${CP} -R ${WRKSRC}/tcl${v}/html/* ${STAGEDIR}${PREFIX}/share/doc/tcl${v:R:S/.//}
 .endfor
 
 .include <bsd.port.mk>

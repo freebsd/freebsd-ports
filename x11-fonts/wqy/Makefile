@@ -46,56 +46,56 @@ PORTDOCS=	AUTHORS.bitmap ChangeLog.bitmap README.bitmap COPYING.bitmap \
 		LICENSE_Apache2.txt LICENSE_GPLv3.txt
 
 do-build:
-	${PERL} ${WRKDIR}/wqy-unibit/bdfmerge.pl 0x0--0xFFFF ${WRKDIR}/wqy-unibit/wqy-unibit.bdf > ${WRKDIR}/wqy-unibit/wqy-unibit_cjk.bdf
-	bdftopcf ${WRKDIR}/wqy-unibit/wqy-unibit_cjk.bdf > ${WRKDIR}/wqy-unibit/wqy-unibit.pcf
-	${CP} ${WRKDIR}/wqy-bitmapsong/AUTHORS ${WRKDIR}/wqy-bitmapsong/AUTHORS.bitmap
-	${CP} ${WRKDIR}/wqy-bitmapsong/ChangeLog ${WRKDIR}/wqy-bitmapsong/ChangeLog.bitmap
-	${CP} ${WRKDIR}/wqy-bitmapsong/README ${WRKDIR}/wqy-bitmapsong/README.bitmap
-	${CP} ${WRKDIR}/wqy-bitmapsong/COPYING ${WRKDIR}/wqy-bitmapsong/COPYING.bitmap
-	${CP} ${WRKDIR}/wqy-zenhei/AUTHORS ${WRKDIR}/wqy-zenhei/AUTHORS.zenhei
-	${CP} ${WRKDIR}/wqy-zenhei/ChangeLog ${WRKDIR}/wqy-zenhei/ChangeLog.zenhei
-	${CP} ${WRKDIR}/wqy-zenhei/README ${WRKDIR}/wqy-zenhei/README.zenhei
-	${CP} ${WRKDIR}/wqy-microhei-lite/AUTHORS.txt ${WRKDIR}/wqy-microhei-lite/AUTHORS.microheilite
-	${CP} ${WRKDIR}/wqy-microhei-lite/ChangeLog.txt ${WRKDIR}/wqy-microhei-lite/ChangeLog.microheilite
-	${CP} ${WRKDIR}/wqy-microhei-lite/README.txt ${WRKDIR}/wqy-microhei-lite/README.microheilite
-	${CP} ${WRKDIR}/wqy-microhei/AUTHORS.txt ${WRKDIR}/wqy-microhei/AUTHORS.microhei
-	${CP} ${WRKDIR}/wqy-microhei/ChangeLog.txt ${WRKDIR}/wqy-microhei/ChangeLog.microhei
-	${CP} ${WRKDIR}/wqy-microhei/README.txt ${WRKDIR}/wqy-microhei/README.microhei
+	${PERL} ${WRKSRC}/wqy-unibit/bdfmerge.pl 0x0--0xFFFF ${WRKSRC}/wqy-unibit/wqy-unibit.bdf > ${WRKSRC}/wqy-unibit/wqy-unibit_cjk.bdf
+	bdftopcf ${WRKSRC}/wqy-unibit/wqy-unibit_cjk.bdf > ${WRKSRC}/wqy-unibit/wqy-unibit.pcf
+	${CP} ${WRKSRC}/wqy-bitmapsong/AUTHORS ${WRKSRC}/wqy-bitmapsong/AUTHORS.bitmap
+	${CP} ${WRKSRC}/wqy-bitmapsong/ChangeLog ${WRKSRC}/wqy-bitmapsong/ChangeLog.bitmap
+	${CP} ${WRKSRC}/wqy-bitmapsong/README ${WRKSRC}/wqy-bitmapsong/README.bitmap
+	${CP} ${WRKSRC}/wqy-bitmapsong/COPYING ${WRKSRC}/wqy-bitmapsong/COPYING.bitmap
+	${CP} ${WRKSRC}/wqy-zenhei/AUTHORS ${WRKSRC}/wqy-zenhei/AUTHORS.zenhei
+	${CP} ${WRKSRC}/wqy-zenhei/ChangeLog ${WRKSRC}/wqy-zenhei/ChangeLog.zenhei
+	${CP} ${WRKSRC}/wqy-zenhei/README ${WRKSRC}/wqy-zenhei/README.zenhei
+	${CP} ${WRKSRC}/wqy-microhei-lite/AUTHORS.txt ${WRKSRC}/wqy-microhei-lite/AUTHORS.microheilite
+	${CP} ${WRKSRC}/wqy-microhei-lite/ChangeLog.txt ${WRKSRC}/wqy-microhei-lite/ChangeLog.microheilite
+	${CP} ${WRKSRC}/wqy-microhei-lite/README.txt ${WRKSRC}/wqy-microhei-lite/README.microheilite
+	${CP} ${WRKSRC}/wqy-microhei/AUTHORS.txt ${WRKSRC}/wqy-microhei/AUTHORS.microhei
+	${CP} ${WRKSRC}/wqy-microhei/ChangeLog.txt ${WRKSRC}/wqy-microhei/ChangeLog.microhei
+	${CP} ${WRKSRC}/wqy-microhei/README.txt ${WRKSRC}/wqy-microhei/README.microhei
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR} ${STAGEDIR}${PREFIX}/${CONFDDIR} ${STAGEDIR}${PREFIX}/${CONFAVAILDIR}
 # WQY Bitmap Song
-	${INSTALL_DATA} ${WRKDIR}/wqy-bitmapsong/*.pcf ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/wqy-bitmapsong/*.pcf ${STAGEDIR}${FONTSDIR}
 # WQY Bitmap Song
-	${INSTALL_DATA} ${WRKDIR}/wqy-unibit/wqy-unibit.pcf ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/wqy-unibit/wqy-unibit.pcf ${STAGEDIR}${FONTSDIR}
 # WQY TrueType Zenhei
-	${INSTALL_DATA} ${WRKDIR}/wqy-zenhei/wqy-zenhei.ttc ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/wqy-zenhei/wqy-zenhei.ttc ${STAGEDIR}${FONTSDIR}
 # WQY TrueType MicroHei Lite
-	${INSTALL_DATA} ${WRKDIR}/wqy-microhei-lite/wqy-microhei-lite.ttc ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/wqy-microhei-lite/wqy-microhei-lite.ttc ${STAGEDIR}${FONTSDIR}
 # WQY TrueType MicroHei
-	${INSTALL_DATA} ${WRKDIR}/wqy-microhei/wqy-microhei.ttc ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/wqy-microhei/wqy-microhei.ttc ${STAGEDIR}${FONTSDIR}
 
 	${INSTALL_DATA} ${FILESDIR}/85-wqy.conf ${STAGEDIR}${PREFIX}/${CONFAVAILDIR}
 	${LN} -sf ${PREFIX}/${CONFAVAILDIR}/85-wqy.conf ${STAGEDIR}${PREFIX}/${CONFDDIR}/85-wqy.conf
 
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} \
-		${WRKDIR}/wqy-bitmapsong/AUTHORS.bitmap \
-		${WRKDIR}/wqy-bitmapsong/ChangeLog.bitmap \
-		${WRKDIR}/wqy-bitmapsong/README.bitmap \
-		${WRKDIR}/wqy-bitmapsong/COPYING.bitmap \
-		${WRKDIR}/wqy-bitmapsong/LOGO.png \
-		${WRKDIR}/wqy-zenhei/AUTHORS.zenhei \
-		${WRKDIR}/wqy-zenhei/ChangeLog.zenhei \
-		${WRKDIR}/wqy-zenhei/README.zenhei \
-		${WRKDIR}/wqy-microhei-lite/AUTHORS.microheilite \
-		${WRKDIR}/wqy-microhei-lite/ChangeLog.microheilite \
-		${WRKDIR}/wqy-microhei-lite/README.microheilite \
-		${WRKDIR}/wqy-microhei/AUTHORS.microhei \
-		${WRKDIR}/wqy-microhei/ChangeLog.microhei \
-		${WRKDIR}/wqy-microhei/README.microhei \
-		${WRKDIR}/wqy-microhei/LICENSE_Apache2.txt \
-		${WRKDIR}/wqy-microhei/LICENSE_GPLv3.txt \
+		${WRKSRC}/wqy-bitmapsong/AUTHORS.bitmap \
+		${WRKSRC}/wqy-bitmapsong/ChangeLog.bitmap \
+		${WRKSRC}/wqy-bitmapsong/README.bitmap \
+		${WRKSRC}/wqy-bitmapsong/COPYING.bitmap \
+		${WRKSRC}/wqy-bitmapsong/LOGO.png \
+		${WRKSRC}/wqy-zenhei/AUTHORS.zenhei \
+		${WRKSRC}/wqy-zenhei/ChangeLog.zenhei \
+		${WRKSRC}/wqy-zenhei/README.zenhei \
+		${WRKSRC}/wqy-microhei-lite/AUTHORS.microheilite \
+		${WRKSRC}/wqy-microhei-lite/ChangeLog.microheilite \
+		${WRKSRC}/wqy-microhei-lite/README.microheilite \
+		${WRKSRC}/wqy-microhei/AUTHORS.microhei \
+		${WRKSRC}/wqy-microhei/ChangeLog.microhei \
+		${WRKSRC}/wqy-microhei/README.microhei \
+		${WRKSRC}/wqy-microhei/LICENSE_Apache2.txt \
+		${WRKSRC}/wqy-microhei/LICENSE_GPLv3.txt \
 			${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

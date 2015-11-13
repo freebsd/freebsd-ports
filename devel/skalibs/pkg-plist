@@ -1,4 +1,3 @@
-etc/leapsecs.dat
 include/skalibs/alloc.h
 include/skalibs/allreadwrite.h
 include/skalibs/avlnode.h
@@ -86,8 +85,8 @@ include/skalibs/webipc.h
 lib/libskarnet.so
 lib/libskarnet.so.2
 lib/libskarnet.so.2.3
-lib/libskarnet.so.2.3.6
-lib/libskarnet.so.2.3.6.1
+lib/libskarnet.so.2.3.8
+lib/libskarnet.so.2.3.8.0
 lib/skalibs/libskarnet.a
 lib/skalibs/sysdeps/rt.lib
 lib/skalibs/sysdeps/socket.lib

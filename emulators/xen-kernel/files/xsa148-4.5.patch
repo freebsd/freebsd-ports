@@ -1,0 +1,39 @@
+x86: guard against undue super page PTE creation
+
+When optional super page support got added (commit bd1cd81d64 "x86: PV
+support for hugepages"), two adjustments were missed: mod_l2_entry()
+needs to consider the PSE and RW bits when deciding whether to use the
+fast path, and the PSE bit must not be removed from L2_DISALLOW_MASK
+unconditionally.
+
+This is XSA-148.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Tim Deegan <tim@xen.org>
+
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -162,7 +162,10 @@ static void put_superpage(unsigned long 
+ static uint32_t base_disallow_mask;
+ /* Global bit is allowed to be set on L1 PTEs. Intended for user mappings. */
+ #define L1_DISALLOW_MASK ((base_disallow_mask | _PAGE_GNTTAB) & ~_PAGE_GLOBAL)
+-#define L2_DISALLOW_MASK (base_disallow_mask & ~_PAGE_PSE)
++
++#define L2_DISALLOW_MASK (unlikely(opt_allow_superpage) \
++                          ? base_disallow_mask & ~_PAGE_PSE \
++                          : base_disallow_mask)
+ 
+ #define l3_disallow_mask(d) (!is_pv_32on64_domain(d) ?  \
+                              base_disallow_mask :       \
+@@ -1770,7 +1773,10 @@ static int mod_l2_entry(l2_pgentry_t *pl
+         }
+ 
+         /* Fast path for identical mapping and presence. */
+-        if ( !l2e_has_changed(ol2e, nl2e, _PAGE_PRESENT) )
++        if ( !l2e_has_changed(ol2e, nl2e,
++                              unlikely(opt_allow_superpage)
++                              ? _PAGE_PSE | _PAGE_RW | _PAGE_PRESENT
++                              : _PAGE_PRESENT) )
+         {
+             adjust_guest_l2e(nl2e, d);
+             if ( UPDATE_ENTRY(l2, pl2e, ol2e, nl2e, pfn, vcpu, preserve_ad) )

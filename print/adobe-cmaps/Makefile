@@ -21,11 +21,11 @@ INSTDIRS=	ac15 ag15 ai0 aj16 aj20 ak12 rksj-cmaps
 FONTSDIR=	${PREFIX}/share/fonts/${PORTNAME}
 
 post-extract:
-	${RM} -f ${WRKDIR}/ag15/.nfsFA55
+	${RM} -f ${WRKSRC}/ag15/.nfsFA55
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${WRKDIR} && \
+	cd ${WRKSRC} && \
 		${TAR} cf - ${INSTDIRS} | \
 		(cd ${STAGEDIR}${FONTSDIR} && ${TAR} xf - )
 

@@ -18,7 +18,7 @@ INSTALL_TARGET=	install-strip
 USES=		gmake pgsql:9.2- libtool
 USE_LDCONFIG=	yes
 
-CONFLICTS=	pgpool-3.* pgpool-II-3.* pgpool-II-22-* pgpool-II-23-* 
+CONFLICTS=	pgpool-3.* pgpool-II-3.* pgpool-II-22-* pgpool-II-23-*
 USE_RC_SUBR=	pgpool
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README.euc_jp

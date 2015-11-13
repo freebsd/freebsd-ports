@@ -1,4 +1,4 @@
---- x11menu.c.orig
+--- x11menu.c.orig	2013-12-07 16:26:12 UTC
 +++ x11menu.c
 @@ -29,12 +29,21 @@
  #endif

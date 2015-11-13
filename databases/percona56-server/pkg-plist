@@ -139,6 +139,9 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/swedish/errmsg.sys
 %%DATADIR%%/tests/suite/query_response_time/basic.result
 %%DATADIR%%/tests/suite/query_response_time/basic.test
+%%DATADIR%%/tests/suite/query_response_time/bug1453277-master.opt
+%%DATADIR%%/tests/suite/query_response_time/bug1453277.result
+%%DATADIR%%/tests/suite/query_response_time/bug1453277.test
 %%DATADIR%%/tests/suite/query_response_time/query_response_time-rw-begin.inc
 %%DATADIR%%/tests/suite/query_response_time/query_response_time-rw-end.inc
 %%DATADIR%%/tests/suite/query_response_time/query_response_time-rw.result

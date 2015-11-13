@@ -47,7 +47,7 @@ all:	vnode_if.h
 #afterinstall: device
 
 device:
-	rm -f /dev/${DEVNAME} 
+	rm -f /dev/${DEVNAME}
 	mknod /dev/${DEVNAME} c ${CDEV_MAJOR} 0
 
 .include <bsd.kmod.mk>

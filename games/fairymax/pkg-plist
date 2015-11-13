@@ -1,0 +1,14 @@
+bin/fairymax
+bin/maxqi
+bin/shamax
+man/man6/fairymax.6.gz
+man/man6/maxqi.6.gz
+man/man6/shamax.6.gz
+%%DATADIR%%/fmax.ini
+%%DATADIR%%/qmax.ini
+share/games/plugins/logos/fairymax.png
+share/games/plugins/logos/maxqi.png
+share/games/plugins/logos/shamax.png
+share/games/plugins/xboard/fairymax.eng
+share/games/plugins/xboard/maxqi.eng
+share/games/plugins/xboard/shamax.eng

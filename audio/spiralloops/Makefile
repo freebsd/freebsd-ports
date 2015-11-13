@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
-MAKE_ENV=	PTHREAD_LIBS="-lpthread" 
+MAKE_ENV=	PTHREAD_LIBS="-lpthread"
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 PLIST_FILES=	bin/SpiralLoops

@@ -1,6 +1,6 @@
---- sanei/sanei_pa4s2.c.orig	2010-04-05 22:18:06.000000000 +0900
-+++ sanei/sanei_pa4s2.c	2010-05-10 22:07:48.000000000 +0900
-@@ -109,6 +109,12 @@
+--- sanei/sanei_pa4s2.c.orig	2015-09-20 11:55:39 UTC
++++ sanei/sanei_pa4s2.c
+@@ -112,6 +112,12 @@ inb (u_long port)
  
  #endif /* HAVE_LIBIEEE1284 */
  

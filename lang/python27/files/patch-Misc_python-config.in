@@ -1,0 +1,21 @@
+# pythonx.y-config --ldflags out of /usr and missing -L<install_lib_dir>
+# https://bugs.python.org/issue7352
+
+--- Misc/python-config.in.orig	2015-10-18 07:24:01 UTC
++++ Misc/python-config.in
+@@ -21,6 +21,7 @@ except getopt.error:
+ if not opts:
+     exit_with_usage()
+ 
++libdir = sysconfig.EXEC_PREFIX + '/lib'
+ pyver = sysconfig.get_config_var('VERSION')
+ getvar = sysconfig.get_config_var
+ 
+@@ -50,6 +51,7 @@ for opt in opt_flags:
+         # add the prefix/lib/pythonX.Y/config dir, but only if there is no
+         # shared library in prefix/lib/.
+         if opt == '--ldflags':
++            libs.insert(0, '-L' + libdir)
+             if not getvar('Py_ENABLE_SHARED'):
+                 libs.insert(0, '-L' + getvar('LIBPL'))
+             if not getvar('PYTHONFRAMEWORK'):

@@ -14,6 +14,8 @@ EXTRACT_ONLY=	Jmol-${PORTVERSION}-full.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java viewer for chemical structures in 3D
 
+BROKEN=		unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USE_ANT=	yes
@@ -36,7 +38,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/build && ${INSTALL_DATA} Jmol.jar JmolData.jar \
 		JmolLib.jar ${STAGEDIR}${JAVAJARDIR})
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}) 
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
 .undef MAKE_ARGS

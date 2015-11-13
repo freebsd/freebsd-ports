@@ -9,14 +9,14 @@ CATEGORIES=	math
 MAINTAINER=	dieterich@ogolem.org
 COMMENT=	Library for uniform random number generation in OpenCL
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	opencl>=0:${PORTSDIR}/devel/opencl
 LIB_DEPENDS=	libOpenCL.so:${PORTSDIR}/devel/ocl-icd
 RUN_DEPENDS=	opencl>=0:${PORTSDIR}/devel/opencl
 
-ONLY_FOR_ARCHS=	amd64
+BROKEN_FreeBSD_9=	clRNG is only supported on FreeBSD 10.1 and newer
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	clMathLibraries

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	201509
+PORTVERSION=	201510
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.librenms.org/
 

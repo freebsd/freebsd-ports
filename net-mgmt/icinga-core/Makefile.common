@@ -9,7 +9,7 @@ MAINTAINER=	lme@FreeBSD.org
 LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libltdl.so:${PORTSDIR}/devel/libltdl
-USES=		cpe gmake iconv perl5
+USES=		cpe gmake perl5
 
 GNU_CONFIGURE=	yes
 
@@ -47,6 +47,7 @@ CONFIGURE_ARGS=	--with-command-user=${ICINGAUSER} \
 		--with-httpd-conf=${EXAMPLESDIR}/apache2 \
 		--enable-event-broker \
 		--enable-nanosleep \
+		ac_cv_lib_iconv_main=no
 
 CONFIGURE_ENV=	PERL=${PERL} \
 		HOME=${WRKDIR} # prevent creation of .rnd file
@@ -67,4 +68,3 @@ SUB_FILES=	pkg-message
 # XXX: Don't remove PREFIX from SUB_LIST here.
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
-

@@ -1,0 +1,7 @@
+The distance library is used to compare pieces of data for similarity.
+Specifically, it contains a number of methods to find the "edit distance"
+between inputs, or the number of differences between them. These differences
+are calculated using various mechanisms. The inputs to these functions can be
+character strings or arbitrary data.
+
+WWW: http://monkey.org/~jose/software/libdistance

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2015-08-23 17:14:40 UTC
++++ CMakeLists.txt
+@@ -137,7 +137,7 @@ if(UNIX AND NOT APPLE)
+     install(DIRECTORY src/ DESTINATION include/gnuspeechsa FILES_MATCHING PATTERN "*.h")
+     install(DIRECTORY data DESTINATION share/gnuspeech/gnuspeechsa)
+     configure_file(gnuspeechsa.pc.pre gnuspeechsa.pc @ONLY)
+-    install(FILES ${CMAKE_BINARY_DIR}/gnuspeechsa.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig/)
++    install(FILES ${CMAKE_BINARY_DIR}/gnuspeechsa.pc DESTINATION libdata/pkgconfig/)
+ endif()
+ 
+ #add_dependencies(gnuspeech_sa gnuspeechsa)

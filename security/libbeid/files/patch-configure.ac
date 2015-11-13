@@ -1,10 +1,10 @@
---- configure.ac.orig	2015-02-19 13:59:02 UTC
+--- configure.ac.orig	2015-10-09 08:01:44 UTC
 +++ configure.ac
 @@ -1,6 +1,6 @@
  AC_PREREQ([2.61])
  AC_INIT([eid-mw],
--  m4_esyscmd_s(echo "4.1.2-"$(git describe --dirty|sed -e 's/-/./g')),
-+  [4.1.2-release],
+-  m4_esyscmd_s(echo "4.1.6-"$(git describe --dirty|sed -e 's/-/./g')),
++  [4.1.8-release],
    [servicedesk@fedict.be],,
    [http://eid.belgium.be])
  
@@ -15,12 +15,12 @@
 -AM_GNU_GETTEXT([external])
  
  ###### pcsc-lite ##########
- AC_MSG_CHECKING([custom pcsc-lite installation])
-@@ -99,7 +98,6 @@ AC_DEFINE_UNQUOTED([HAVE_JPEGLIB], $HAVE
- PKG_CHECK_MODULES(SSL, "openssl", [HAVE_OPENSSL=1], [HAVE_OPENSSL=0])
- AC_DEFINE_UNQUOTED([HAVE_OPENSSL], $HAVE_OPENSSL, [Define to 1 if you have OpenSSL installed])
+ PKG_CHECK_MODULES([PCSC],[libpcsclite >= 1.4.4],
+@@ -104,7 +103,6 @@ MAINVERSION=$(echo $PACKAGE_VERSION|sed 
+ AC_DEFINE_UNQUOTED([MAINVERSION], $MAINVERSION, [do not change this])
+ AC_SUBST(MAINVERSION)
  
--AC_CONFIG_FILES([Makefile cardcomm/pkcs11/src/Makefile tests/unit/Makefile plugins_tools/aboutmw/gtk/Makefile plugins_tools/aboutmw/gtk/about-eid-mw.desktop.sh plugins_tools/aboutmw/gtk/po/Makefile.in])
+-AC_CONFIG_FILES([Makefile cardcomm/pkcs11/src/Makefile tests/unit/Makefile plugins_tools/aboutmw/gtk/Makefile plugins_tools/aboutmw/gtk/about-eid-mw.desktop.sh plugins_tools/aboutmw/gtk/po/Makefile.in rpm/eid-mw.spec])
 -AC_CONFIG_SUBDIRS([plugins_tools/xpi])
 +AC_CONFIG_FILES([Makefile cardcomm/pkcs11/src/Makefile])
  

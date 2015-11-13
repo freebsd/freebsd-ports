@@ -1,2 +1,4 @@
-SHA256 (bl24-src-linux-i586.tar.gz) = c95766b8d6fce9820e14a23cd1bdea28591c01d8fdf5ece06cca1071f082c088
-SIZE (bl24-src-linux-i586.tar.gz) = 5017393
+SHA256 (bl25-src.tar.gz) = 3abf61c4a7bd921988596a2239d76a5800fc94d8fd84dcc82c720d4d4f84cf0f
+SIZE (bl25-src.tar.gz) = 479743
+SHA256 (bl25-linux-x86.tar.gz) = 2bf9ab1798e7d3f82a372a3fae26a5c7699d1c57263253dce66f07fa418b702b
+SIZE (bl25-linux-x86.tar.gz) = 4379299

@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-openssl
 
-CONFLICTS=	pgpool-3.* pgpool-II-22-* pgpool-II-23-* pgpool-II-23-* 
+CONFLICTS=	pgpool-3.* pgpool-II-22-* pgpool-II-23-* pgpool-II-23-*
 USE_RC_SUBR=	pgpool
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README.euc_jp

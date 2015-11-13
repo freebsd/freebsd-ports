@@ -1,3 +1,4 @@
+--- UTC
 r100678 | fanf | 2002-07-25 10:59:40 -0500 (Thu, 25 Jul 2002) | 5 lines
 
 Document the FreeBSD default for CheckHostIP, which was changed in

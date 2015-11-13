@@ -34,6 +34,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cwebmac.tex \
 		${STAGEDIR}${PREFIX}/share/texmf/tex/generic/misc
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/cwebman.tex ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/cwebman.tex ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

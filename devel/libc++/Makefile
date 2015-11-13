@@ -34,16 +34,6 @@ CXXRT_INCS=	${LOCALBASE}/include/cxxrt/
 CXXRT_LIB=	${LOCALBASE}/lib/libcxxrt.so
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-LIB_DEPENDS+=	libmissing.so:${PORTSDIR}/math/libmissing \
-		libxlocale.so:${PORTSDIR}/devel/xlocale
-EXTRA_PATCHES=	${FILESDIR}/extra-libmissing
-CXXFLAGS+=	-I${LOCALBASE}/include -D__LONG_LONG_SUPPORTED
-LDFLAGS+=	-lmissing
-EXTRALIB=	${LOCALBASE}/lib/libmissing.so.2 ${LOCALBASE}/lib/libxlocale.so.0
-.endif
-
-
 CMAKE_ARGS=	-DLIBCXX_CXX_ABI=libcxxrt -DLIBCXX_LIBCXXRT_INCLUDE_PATHS=${CXXRT_INCS}
 
 .if !defined(SVN_REV)

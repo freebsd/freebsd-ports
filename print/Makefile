@@ -193,6 +193,7 @@
     SUBDIR += psutils
     SUBDIR += py-cups
     SUBDIR += py-fonttools
+    SUBDIR += py-fpdf
     SUBDIR += py-pdf
     SUBDIR += py-pollyreports
     SUBDIR += py-preppy

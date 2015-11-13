@@ -1,5 +1,5 @@
---- conf/Makefile.in.orig	2008-05-30 08:58:57.000000000 +0900
-+++ conf/Makefile.in	2010-05-14 17:36:16.000000000 +0900
+--- conf/Makefile.in.orig	2008-05-29 23:58:57 UTC
++++ conf/Makefile.in
 @@ -407,8 +407,7 @@
 
  install-data-hook:

@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lippe@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Test::Distribution - Perform tests on all modules of a distribution
 
 BUILD_DEPENDS+=	p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule \

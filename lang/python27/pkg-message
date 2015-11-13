@@ -1,4 +1,4 @@
-=====================================================================
+===========================================================================
 
 Note that some standard Python modules are provided as separate ports
 as they require additional dependencies. They are available as:
@@ -8,4 +8,4 @@ gdbm            databases/py-gdbm
 sqlite3         databases/py-sqlite3
 tkinter         x11-toolkits/py-tkinter
 
-=====================================================================
+===========================================================================

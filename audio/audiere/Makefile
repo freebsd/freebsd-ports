@@ -26,58 +26,49 @@ PORTDOCS=	changelog.txt cvs.txt dependencies.txt faq.txt glossary.txt \
 		license.txt overview.txt readme.txt release-howto.txt \
 		tutorial.txt
 
-CONFIGURE_REPLACES='s|wx_config|no_&|'
-
 OPTIONS_DEFINE=		DUMB CDAUDIO VORBIS SPEEX DOCS
 OPTIONS_DEFAULT=	DUMB CDAUDIO VORBIS SPEEX
 
 DUMB_DESC=	DUMB support
 CDAUDIO_DESC=	libcdaudio support
 
-.include <bsd.port.options.mk>
-
-# Broken with recent FLAC
-#.if !defined(WITHOUT_FLAC)
-#LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
-#.else
-CONFIGURE_REPLACES+='/AC_CHECK_LIB/ s|FLAC|no_&|'
-#.endif
-
-.if ${PORT_OPTIONS:MDUMB}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
-.else
-CONFIGURE_REPLACES+='/AC_CHECK_LIB/ s|dumb|no_&|'
-.endif
-
-.if ${PORT_OPTIONS:MCDAUDIO}
-LIB_DEPENDS+=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
-.else
-CONFIGURE_REPLACES+='/AC_CHECK_LIB/ s|cdaudio|no_&|'
-.endif
-
 # since dumb is a static lib and it depends on ogg, we should
 # link audiere with ogg as well
-.if ${PORT_OPTIONS:MVORBIS} || ${PORT_OPTIONS:MDUMB}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libogg.so:${PORTSDIR}/audio/libogg
-.else
-CONFIGURE_REPLACES+='/AC_CHECK_HEADER/ s|vorbis|no_&|'
-.endif
+DUMB_IMPLIES=	VORBIS
 
-.if ${PORT_OPTIONS:MSPEEX}
-LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
-.else
-CONFIGURE_REPLACES+='/AC_CHECK_HEADER/ s|speex|no_&|'
-.endif
+DUMB_BUILD_DEPENDS=	${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
+CDAUDIO_LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+			libogg.so:${PORTSDIR}/audio/libogg
+SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 
 post-patch:
-	@${REINPLACE_CMD} ${CONFIGURE_REPLACES:C/.*/-e &/} \
-		-e 's|-lpthread|-pthread|' \
+# could be an option, but build is broken with recent FLAC
+	@${REINPLACE_CMD} -e '/AC_CHECK_LIB/ s|FLAC|no_&|; \
+		s|wx_config|no_&|' \
+		${WRKSRC}/configure.in
+
+post-patch-DUMB-off:
+	@${REINPLACE_CMD} -e '/AC_CHECK_LIB/ s|dumb|no_&|' \
+		${WRKSRC}/configure.in
+
+post-patch-CDAUDIO-off:
+	@${REINPLACE_CMD} -e '/AC_CHECK_LIB/ s|cdaudio|no_&|' \
+		${WRKSRC}/configure.in
+
+post-patch-VORBIS-off:
+	@${REINPLACE_CMD} -e '/AC_CHECK_HEADER/ s|vorbis|no_&|' \
+		${WRKSRC}/configure.in
+
+post-patch-SPEEX-off:
+	@${REINPLACE_CMD} -e '/AC_CHECK_HEADER/ s|speex|no_&|' \
 		${WRKSRC}/configure.in
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudiere.so
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudiere.so
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor

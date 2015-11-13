@@ -1,0 +1,11 @@
+--- etc/Makefile.in.orig	2015-10-11 14:20:10 UTC
++++ etc/Makefile.in
+@@ -371,7 +371,7 @@ uninstall-am:
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(CONFIGDIR)
+ 	for f in $(CONFS); do \
+-		$(INSTALL) $$f $(DESTDIR)$(CONFIGDIR)/$$f.default; \
++		$(INSTALL) $$f $(DESTDIR)$(CONFIGDIR)/$$f.sample; \
+ 		if test ! -f $(DESTDIR)$(CONFIGDIR)/$$f; then $(INSTALL) $$f $(DESTDIR)$(CONFIGDIR)/$$f; fi \
+ 	done
+ 	$(mkinstalldirs) $(DESTDIR)$(cicapdatadir)/templates/squidclamav/en/

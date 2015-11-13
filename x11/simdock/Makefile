@@ -11,21 +11,21 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and customizable dockbar
 
-OPTIONS_DEFINE=	DOCS
-
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils pathfix pkgconfig
 USE_GNOME=	gnomeprefix gconf2 libwnck
 USE_WX=		2.8
 USE_XORG=	x11
-WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 
 WRKSRC=		${WRKDIR}/trunk
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog README
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
@@ -37,7 +37,7 @@ post-patch:
 		-e 's|/usr/share/firefox|${PREFIX}/lib/firefox|g' \
 		${WRKSRC}/src/main.cc
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

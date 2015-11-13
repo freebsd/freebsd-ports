@@ -3,6 +3,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.21
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -12,12 +13,10 @@ COMMENT=	Clone of the terminal emulator rxvt modified to support Unicode
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	tic:${PORTSDIR}/devel/ncurses	\
-		${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig	\
-		${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=			cpe pkgconfig shebangfix tar:bzip2
+USES=			cpe pkgconfig shebangfix tar:bzip2 terminfo
 USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include

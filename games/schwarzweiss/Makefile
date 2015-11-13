@@ -25,7 +25,6 @@ GH_TAGNAME=	d95263f
 
 USES=		python:2 shebangfix
 SHEBANG_FILES=	schwarzweiss_start.py data/*.py
-python_OLD_CMD=	/usr/bin/env python
 
 PORTDOCS=	readme.txt
 OPTIONS_DEFINE=	DOCS

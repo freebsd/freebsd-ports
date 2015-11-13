@@ -21,7 +21,7 @@ MAKE_ENV=	MAKE=${GMAKE} DESTDIR=${STAGEDIR}
 
 LLVMVER=	36
 
-ALL_TARGET=	
+ALL_TARGET=
 
 BROKEN_FreeBSD_9=	missing <system_error> header
 

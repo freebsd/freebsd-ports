@@ -1,3 +1,2 @@
 Wtf is little shell script taken from NetBSD's CVS repository which
-translates acronyms.  These acronyms are kept in a file located at
-${PREFIX}/share/wtf/acronyms.
+looks up the meaning of one or more acronyms specified on command line.

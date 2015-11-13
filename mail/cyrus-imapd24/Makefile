@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.4.18
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -111,7 +111,7 @@ AUTOCREATE_PATCHFILES=	${PORTNAME}-2.4.4-autocreate-${AUTOCREATE_VERSION}.patch:
 AUTOSIEVE_VERSION=	0.6.0
 AUTOSIEVE_PATCH_SITES=	LOCAL/mm:autosieve
 AUTOSIEVE_PATCHFILES=	${PORTNAME}-2.4.12-autosieve-${AUTOSIEVE_VERSION}.patch:-p1:autosieve
-AUTOSIEVE_BROKEN=	Not buildable with autosieve patch
+AUTOSIEVE_EXTRA_PATCHES=${FILESDIR}/extra-patch-imap__lmtp_sieve.c
 
 DRAC_EXTRA_PATCHES=	${FILESDIR}/extra-patch-cmulocal::sasl2.m4
 DRAC_USE=	AUTOTOOLS=autoconf,autoheader
@@ -123,7 +123,7 @@ PORTEXAMPLES=	*
 
 SUB_FILES=	pkg-message pkg-install pkg-deinstall cyrus-imapd-man.conf
 
-SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP} 
+SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP}
 
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus

@@ -1,0 +1,28 @@
+$FreeBSD$
+------------------------------------------------------------------------
+r226925 | rnk | 2015-01-23 19:16:25 +0000 (Fri, 23 Jan 2015) | 1 line
+
+Attempt to fix ::sscanf Cygwin build break reported in PR22302
+------------------------------------------------------------------------
+Index: lib/Driver/MSVCToolChain.cpp
+===================================================================
+--- tools/clang/lib/Driver/MSVCToolChain.cpp	(revision 226924)
++++ tools/clang/lib/Driver/MSVCToolChain.cpp	(revision 226925)
+@@ -22,6 +22,8 @@
+ #include "llvm/Support/FileSystem.h"
+ #include "llvm/Support/Process.h"
+ 
++#include <cstdio>
++
+ // Include the necessary headers to interface with the Windows registry and
+ // environment.
+ #if defined(LLVM_ON_WIN32)
+@@ -212,7 +214,7 @@
+       "SOFTWARE\\Microsoft\\Microsoft SDKs\\Windows\\$VERSION",
+       "InstallationFolder", path, &sdkVersion);
+   if (!sdkVersion.empty())
+-    ::sscanf(sdkVersion.c_str(), "v%d.%d", &major, &minor);
++    std::sscanf(sdkVersion.c_str(), "v%d.%d", &major, &minor);
+   return hasSDKDir && !path.empty();
+ }
+ 

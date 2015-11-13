@@ -22,7 +22,6 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 
 USES=		perl5 shebangfix
 USE_PERL5=	run
-perl_OLD_CMD=	${SETENV} perl
 SHEBANG_FILES=	${PORTNAME} ${PORTNAME}.cgi
 NO_BUILD=	yes
 NO_ARCH=	yes

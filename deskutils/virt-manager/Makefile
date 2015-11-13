@@ -35,7 +35,7 @@ USE_GNOME=	introspection:run intltool librsvg2 pygobject3
 
 INSTALLS_ICONS=	yes
 
-python_OLD_CMD=	/usr/bin/python2 "-tt"
+python_OLD_CMD=	"/usr/bin/python2 -tt"
 SHEBANG_FILES=	virt-manager \
 		virt-install \
 		virt-clone \

@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dnsdist
-DISTVERSION=	0.0.251g6efad44
+DISTVERSION=	0.0.336gc278ffd
 CATEGORIES=	dns net
-MASTER_SITES=	http://builder.powerdns.com/files/dnsdist/dist/
+MASTER_SITES=	http://builder.powerdns.com/files/dnsdist/dist/ \
+		http://fbsd.es/~cpm/freebsd/ports/distfiles/ \
+		LOCAL/junovitch
 
 MAINTAINER=	cpm@fbsd.es
 COMMENT=	Highly DNS-, DoS- and abuse-aware loadbalancer
@@ -19,7 +21,7 @@ LIB_DEPENDS=	libboost_serialization.so:${PORTSDIR}/devel/boost-libs \
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 LDFLAGS+=	-L${LOCALBASE}/lib -latomic
 GNU_CONFIGURE=	yes
-USE_GCC=	4.8+
+USE_GCC=	yes
 USES=		bison cpe gmake libtool lua:52 pkgconfig readline tar:bz2
 CONFIGURE_ARGS=	--enable-libsodium
 INSTALL_TARGET=	install-strip

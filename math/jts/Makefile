@@ -10,8 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JTS Topology Suite
 
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom		\
-		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit		\
-		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
+	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit		\
+	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
 
 USES=		zip
 NO_BUILD=	yes
@@ -32,7 +32,7 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 
 .if defined(MAINTAINER_MODE)

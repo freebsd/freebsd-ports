@@ -25,13 +25,7 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 PLIST_FILES=	man/man8/jadm.8.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 901000
-IGNORE=		 freeBSD before 9.1 is not supported
-.endif
-
 pre-install:
-	${CP} ${WRKSRC}/man8/jadm.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man8/jadm.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

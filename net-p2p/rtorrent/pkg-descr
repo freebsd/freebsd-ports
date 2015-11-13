@@ -8,4 +8,4 @@ Main Features are :
   * Peer's download speed calculated from incoming HAVE messages
   * Peer download progress
 
-WWW: http://libtorrent.rakshasa.no/
+WWW: https://github.com/rakshasa/rtorrent

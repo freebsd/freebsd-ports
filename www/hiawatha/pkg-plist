@@ -11,12 +11,12 @@ sbin/wigwam
 lib/hiawatha/libmbedtls.so
 lib/hiawatha/libmbedcrypto.so
 lib/hiawatha/libmbedcrypto.so.0
-lib/hiawatha/libmbedcrypto.so.2.0.0
+lib/hiawatha/libmbedcrypto.so.2.1.2
 lib/hiawatha/libmbedtls.so.10
-lib/hiawatha/libmbedtls.so.2.0.0
+lib/hiawatha/libmbedtls.so.2.1.2
 lib/hiawatha/libmbedx509.so
 lib/hiawatha/libmbedx509.so.0
-lib/hiawatha/libmbedx509.so.2.0.0
+lib/hiawatha/libmbedx509.so.2.1.2
 man/man1/cgi-wrapper.1.gz
 man/man1/hiawatha.1.gz
 man/man1/ssi-cgi.1.gz

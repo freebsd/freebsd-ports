@@ -87,7 +87,7 @@ install:
 	vsftpd \
 	windows \
 	xferlog \
-	yum 
+	yum
 	install -m 640 conf/logfiles/${logfile}.conf $(DESTDIR)${ETCDIR}/defaults/logfiles/${logfile}.conf
 .endfor
 .for service in \
@@ -210,13 +210,13 @@ install:
 	onlyservice \
 	remove \
 	removeheaders \
-	removeservice 
+	removeservice
 	install -m 555 scripts/shared/${script} $(DESTDIR)${LIBEXECDIR}/defaults/shared/${script}
 .endfor
 .for logfile in autorpm cron emerge samba up2date xferlog yum
 	mkdir -p $(DESTDIR)${LIBEXECDIR}/defaults/logfiles/${logfile}
 	install -m 555 scripts/logfiles/${logfile}/applydate $(DESTDIR)${LIBEXECDIR}/defaults/logfiles/${logfile}
 .endfor
-.for logfile in samba up2date xferlog 
+.for logfile in samba up2date xferlog
 	install -m 555 scripts/logfiles/${logfile}/removeheaders $(DESTDIR)${LIBEXECDIR}/defaults/logfiles/${logfile}
 .endfor

@@ -928,6 +928,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/unorder
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/utility
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/valarray
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/vector
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/newlib-nano/newlib.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/complex.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/ctype.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/dirent.h
@@ -4063,6 +4064,22 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/ld.html/i960.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/ld.html/index.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005f_005ffsetlocking.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fclose_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fexecve_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005ffork_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005ffstat_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fgetpid_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fkill_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005flink_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005flseek_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fopen_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fread_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fsbrk_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fstat_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005ftimes_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005funlink_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fwait_005fr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fwrite_005fr.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/Arglists.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/Ctype.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/Document-Index.html
@@ -4138,6 +4155,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/funopen.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/fwide.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/fwrite.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/gcvt.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/getc.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/getc_005funlocked.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/getchar.html
@@ -4149,11 +4167,11 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/getw.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/getwchar.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/gmtime.html
-%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/gvcvt.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/index.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/isalnum.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/isalpha.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/isascii.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/isblank.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/iscntrl.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/isdigit.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/islower.html
@@ -4175,6 +4193,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/iswupper.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/iswxdigit.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/isxdigit.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/itoa.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/labs.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/ldiv.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/llabs.html
@@ -4193,6 +4212,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/memmem.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/memmove.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/mempcpy.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/memrchr.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/memset.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/mktemp.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/mktime.html
@@ -4211,6 +4231,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/raise.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/rand.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/rand48.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/rawmemchr.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/remove.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/rename.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/rewind.html
@@ -4232,6 +4253,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/strcasestr.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/strcat.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/strchr.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/strchrnul.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/strcmp.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/strcoll.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/strcpy.html
@@ -4276,6 +4298,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/unctrl.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/ungetc.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/ungetwc.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/utoa.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/va_005falist.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/va_005farg.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/va_005farg_002dtrad.html
@@ -4371,6 +4394,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/ctanh.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/erf.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/exp.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/exp10.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/exp2.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/expm1.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/fabs.html
@@ -4403,6 +4427,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/thumb/libgc
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/nearbyint.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/nextafter.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/pow.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/pow10.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/remainder.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/remquo.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libm/rint.html

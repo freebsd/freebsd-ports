@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spark
-PORTVERSION=	1.2.1
+PORTVERSION=	1.5.1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		LOCAL/demon/:maven \
@@ -16,7 +16,8 @@ COMMENT=	Fast big data processing engine
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3
+BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:${PORTSDIR}/devel/maven33 \
+		${LOCALBASE}/lib/libsnappyjava.so:${PORTSDIR}/archivers/snappy-java
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		yarn:${PORTSDIR}/devel/hadoop2
 
@@ -24,7 +25,6 @@ USES=		python:2
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 MAKE_ENV+=	MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
-NO_ARCH=	YES
 
 USERS=		spark
 GROUPS=		spark
@@ -33,8 +33,21 @@ USE_RC_SUBR=	spark_master spark_worker
 PLIST_SUB+=	SPARK_USER=spark SPARK_GROUP=spark VER=${PORTVERSION}
 SUB_LIST+=	SPARK_USER=spark SPARK_GROUP=spark
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+JAVA_ARCH = x86_64
+.elif ${ARCH} == "i386"
+JAVA_ARCH = x86
+.else
+JAVA_ARCH = ${ARCH}
+.endif
+
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn --offline -Dmaven.repo.local=${WRKDIR}/m2 clean package -Dhadoop.version=2.4.1 -Pyarn -Phadoop-2.4 -DskipTests
+	${MKDIR} ${WRKDIR}/snappy/org/xerial/snappy/native/${OPSYS}/${JAVA_ARCH}
+	${CP} ${LOCALBASE}/lib/libsnappyjava.so ${WRKDIR}/snappy/org/xerial/snappy/native/${OPSYS}/${JAVA_ARCH}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven33/bin/mvn --offline -Dmaven.repo.local=${WRKDIR}/m2 clean package -Dhadoop.version=2.7.1 -Pyarn -Phadoop-2.6 -DskipTests
+	${JAR} uvf ${WRKSRC}/assembly/target/scala*/*assembly*hadoop*.jar -C ${WRKDIR}/snappy org
 
 post-build:
 	${RM} ${WRKSRC}/bin/*.cmd ${WRKSRC}/sbin/spark-daemon.sh.orig
@@ -52,4 +65,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}/var/run/spark
 	${MKDIR} ${STAGEDIR}/var/log/spark
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adasockets
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.rfc1149.net/download/adasockets/
 

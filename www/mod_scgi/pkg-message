@@ -1,3 +1,3 @@
 ********************************************************************
-* If your mod_scgi seg fault, try disable mod_fastcgi              *
+* If your mod_scgi seg faults, try disabling mod_fastcgi           *
 ********************************************************************

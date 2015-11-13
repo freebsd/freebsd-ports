@@ -22,6 +22,8 @@ MAKE_ARGS=	GCC="${CC}" GPP="${CXX}" \
 		TUN_DEV_FILE="src/tun_dev_freebsd.c"
 PLIST_FILES=	bin/hans
 
+MAKE_JOBS_UNSAFE=	yes
+
 # Remove CRs before ask-license to fix formatting in dialog(1)
 post-extract:	dos2unix
 

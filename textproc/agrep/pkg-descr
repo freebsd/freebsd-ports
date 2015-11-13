@@ -21,23 +21,4 @@ the grep family are
     "agrep -d '^From ' 'good;pizza' mbox" outputs all mail messages
     containing both keywords.
 
-Putting these options together one can ask queries like
-
-agrep -d '$$' -2 '<CACM>;TheAuthor;Curriculum;<198[5-9]>' bib
-
-which outputs all paragraphs referencing articles in CACM between 
-1985 and 1989 by TheAuthor dealing with curriculum.  
-Two errors are allowed, but they cannot be in either CACM or the year 
-(the <> brackets forbid errors in the pattern between them).  
-
-Two technical papers describing agrep are available as:
-
-	agrep.ps.1 is a technical report from June 1991 describing the
-	design and implementation of agrep
-		ftp://ftp.cs.arizona.edu/agrep/agrep.ps.1.Z
-
-	agrep.ps.2 is a copy of the paper as appeared in the 1992 Winter
-	USENIX conference.
-		ftp://ftp.cs.arizona.edu/agrep/agrep.ps.2.Z
-
 LICENSE: no redistribution for profit

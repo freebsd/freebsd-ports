@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.1603
-PORTREVISION=	1
+PORTVERSION=	2.1604
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -38,7 +37,7 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Try-Tiny>=0.17:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.007:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
+TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
 		p5-DBM-Deep>=0:${PORTSDIR}/databases/p5-DBM-Deep \
 		p5-DateTime-Calendar-Mayan>=0:${PORTSDIR}/devel/p5-DateTime-Calendar-Mayan \
 		p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \

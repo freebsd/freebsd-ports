@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.1.18
-PORTREVISION?=	1
+DISTVERSION?=	9.1.19
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
@@ -11,10 +10,10 @@ PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 MAINTAINER?=	pgsql@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-#CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
-#		${PORTNAME}${COMPONENT}-[^${PORTVERSION:R:R}].* \
-#		${PORTNAME}9[^${PORTVERSION:R:E}]-client* \
-#		${PORTNAME}${COMPONENT}-9.[^${PORTVERSION:R:E}].*
+CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
+		${PORTNAME}${COMPONENT}-[^${PORTVERSION:R:R}].* \
+		${PORTNAME}9[^${PORTVERSION:R:E}]-client* \
+		${PORTNAME}${COMPONENT}-9.[^${PORTVERSION:R:E}].*
 
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
@@ -168,9 +167,6 @@ PATCH_DIST_STRIP=-p1
 .  if ${PORT_OPTIONS:MDTRACE}
 CONFIGURE_ARGS+=--enable-dtrace
 LDFLAGS+=-lelf
-.    if ${OSVERSION} < 900021
-IGNORE=	need userland DTrace support found in FreeBSD 9.0
-.    endif
 .  endif
 
 .if ${PORT_OPTIONS:MGSSAPI}

@@ -1,0 +1,30 @@
+--- makefile.orig	2015-07-13 15:16:24 UTC
++++ makefile
+@@ -6,12 +6,11 @@
+ # you will want to change the optimization level.  (For example change
+ # -ggdb to -O3 or -O2.
+ 
+-FC = /usr/bin/gfortran
+ std_flags=-march=native -fimplicit-none -fno-f2c -fno-backslash\
+  -funroll-loops  -ffpe-trap=zero,overflow,invalid -finit-real=NAN\
+- -ftree-vectorize -floop-interchange -floop-strip-mine -floop-block -pipe
++ -ftree-vectorize -pipe
+ 
+-FFLAGS = -ggdb $(std_flags) -Wall
++FFLAGS+= $(std_flags) -Wall
+ #
+ objm77 = $(patsubst %.f,%.o, $(wildcard *.f))
+ #
+@@ -20,10 +19,10 @@ all: libmath77.a
+ .SUFFIXES:
+ .SUFFIXES: .f .o
+ %.o: %.f
+-	$(FC) -c $(FFLAGS) $(FOPTS) -o $@ $*.f &>>compile.msg
++	$(FC) -c $(FFLAGS) $(FOPTS) -o $@ $*.f
+ 
+ libmath77.a: $(objm77)
+-	ar r $@ $(objm77) &>>compile.msg
++	ar r $@ $(objm77)
+ 
+ demo: libmath77.a makefile demo/dr$(code).f
+ 	 $(FC) $(FFLAGS) -o demo/dr$(code) demo/dr$(code).f -L. -lmath77;\

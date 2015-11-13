@@ -12,7 +12,7 @@ COMMENT=	ATSC A/52 audio encoder
 USES=		tar:bzip2 cmake:outsource
 
 OPTIONS_DEFINE=		SHARED_LIB CXX_BINDINGS DOUBLE
-OPTIONS_DEFAULT=	
+OPTIONS_DEFAULT=
 
 SHARED_LIB_DESC=	Build with shared library
 CXX_BINDINGS_DESC=	Build with C++ bindings

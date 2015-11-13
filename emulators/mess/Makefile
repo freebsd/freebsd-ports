@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mess
-MTARGET=	mess
+MTARGET=	mame
+MSUBTARGET=	mess
 COMMENT=	Multiple Emulator Super System
 
 MASTERDIR=	${.CURDIR}/../mame

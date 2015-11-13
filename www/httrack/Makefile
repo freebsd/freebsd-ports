@@ -20,13 +20,11 @@ OPTIONS_DEFINE=	DOCS ICONS
 OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --with-zlib=/usr
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/httrack
 USE_OPENSSL=	yes
-USES=		alias execinfo gmake iconv libtool shebangfix
+USES=		alias execinfo gmake iconv libtool localbase shebangfix
 
 PORTDATA=	*
 PORTDOCS=	*
@@ -39,10 +37,11 @@ ICONS_VARS=	INSTALLS_ICONS=yes
 
 .if empty(ICONV_LIB)
 CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=no
+.else
+CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/ s|-O -g3 ||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/ install-data-hook/d' ${WRKSRC}/html/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' ${WRKSRC}/html/server/div/WebHTTrack*
 

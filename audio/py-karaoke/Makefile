@@ -3,7 +3,7 @@
 
 PORTNAME=	karaoke
 PORTVERSION=	0.7.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,14 +14,14 @@ COMMENT=	Python karaoke application (Plays CD+G, MP3+G, OGG+G files)
 
 LICENSE=	LGPL21 # (or later)
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
+BUILD_DEPENDS=	${PYGAME}
 LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libaa.so:${PORTSDIR}/graphics/aalib
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game \
-		dejavu>0:${PORTSDIR}/x11-fonts/dejavu \
+RUN_DEPENDS=	dejavu>0:${PORTSDIR}/x11-fonts/dejavu \
+		${PYGAME} \
 		${PYNUMPY}
 
-USES=		desktop-file-utils iconv python:2 zip
+USES=		compiler:c++11-lib desktop-file-utils iconv python:2 zip
 USE_SDL=	sdl
 USE_XORG=	x11 xau xcb xdmcp
 USE_WX=		3.0+
@@ -31,10 +31,23 @@ USE_PYTHON=	distutils autoplist
 
 DATADIR=	${PREFIX}/share/py${PORTNAME}
 
-OPTIONS_DEFINE=	MUTAGEN
+PLIST_FILES=	${BIN_SCRIPTS:S,^,bin/,} \
+		${DATA_FONTS:S,^,%%DATADIR%%/fonts/,}
+
+OPTIONS_DEFINE=		MUTAGEN
 
 MUTAGEN_DESC=		Mutagen support
 MUTAGEN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:${PORTSDIR}/audio/py-mutagen
+
+BIN_SCRIPTS=	cdg2mpg pycdg pykar pykaraoke pykaraoke_mini pympg
+DATA_FONTS=	DejaVuSans.ttf DejaVuSansCondensed.ttf \
+		DejaVuSansCondensed-Bold.ttf
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == gcc
+MAKE_ENV+=	LD_LIBRARY_PATH="${LOCALBASE}/lib/${CC}:$$LD_LIBRARY_PATH"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -49,12 +62,35 @@ post-patch:
 		 /^Categories=/s|Application;||' ${WRKSRC}/install/${i}
 .endfor
 
+post-build:
+	@${MKDIR} ${WRKDIR}/wrappers
+.for i in ${BIN_SCRIPTS}
+	@${ECHO_CMD} -n \
+		>> ${WRKDIR}/wrappers/${i}
+	@${ECHO_CMD} '#!/bin/sh' \
+		>> ${WRKDIR}/wrappers/${i}
+.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == gcc
+	@${ECHO_CMD} 'LD_LIBRARY_PATH="${LOCALBASE}/lib/${CC}:$$LD_LIBRARY_PATH"' \
+		>> ${WRKDIR}/wrappers/${i}
+	@${ECHO_CMD} 'export LD_LIBRARY_PATH' \
+		>> ${WRKDIR}/wrappers/${i}
+	@${ECHO_CMD} \
+		>> ${WRKDIR}/wrappers/${i}
+.endif
+	@${ECHO_CMD} 'exec ${PREFIX}/libexec/${i} "$$@"' \
+		>> ${WRKDIR}/wrappers/${i}
+.endfor
+
 post-install:
+.for i in ${BIN_SCRIPTS}
+	(cd ${WRKDIR}/wrappers && ${INSTALL_SCRIPT} ${i} \
+		${STAGEDIR}${PREFIX}/bin)
+.endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}/fonts
-.for i in DejaVuSans.ttf DejaVuSansCondensed-Bold.ttf DejaVuSansCondensed.ttf
+.for i in ${DATA_FONTS}
 	@${LN} -sf ${LOCALBASE}/share/fonts/dejavu/${i} \
 		${STAGEDIR}${DATADIR}/fonts
 .endfor
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pycdgAux.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

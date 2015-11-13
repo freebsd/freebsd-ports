@@ -112,11 +112,11 @@
  		{"en",   "beID: Change PIN Code",      		"Request from Application [%s]:\n\nPlease change your eID PIN code on the secure pinpad reader:\n[%s].."},
  		{"nl",   "beID: Wijziging PINcode",        	"Verzoek van programma [%s]:\n\nGelieve uw eID PIN code op de beveiligde kaartlezer:\n[%s]\nte willen wijzigen."},
  		{"fr",   "beID: Changement de code PIN",    	"Demande de l'application [%s]:\n\nVeuillez changer votre code PIN eID sur le lecteur securise\n[%s].."},
---- cardcomm/pkcs11/src/dialogs/dialogsgtk/dlgs_gtk.cpp.orig	2015-02-19 13:59:02 UTC
+--- cardcomm/pkcs11/src/dialogs/dialogsgtk/dlgs_gtk.cpp.orig	2015-10-09 08:01:44 UTC
 +++ cardcomm/pkcs11/src/dialogs/dialogsgtk/dlgs_gtk.cpp
-@@ -55,12 +55,14 @@ extern "C"
- 
- 	
+@@ -48,12 +48,14 @@ extern "C"
+ 	void	dlg_log_error(const char* label);
+ }
  
 +static
  bool MW_PERROR(tLevel level, tModule mod, const char* comment)

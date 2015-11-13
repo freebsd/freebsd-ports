@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	fonttools
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	print python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Open source library for manipulating fonts, written in Python
 
 LICENSE=	MIT
@@ -20,7 +19,7 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/py-fonttools
+DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}-fonttools
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

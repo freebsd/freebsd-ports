@@ -2,76 +2,56 @@
 # $FreeBSD$
 
 PORTNAME=	emesene
-PORTVERSION=	1.6.3
-PORTREVISION=	4
+PORTVERSION=	2.12.9
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im python
-#MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-MASTER_SITES=	LOCAL/acm/${PORTNAME} \
-		GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	MSN Messenger client written in python
+COMMENT=	Instant messenging client written in python
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE=	GPLv3 # (or later)
 
-PROJECTHOST=	bsdistfiles
-USES=		gettext python
-USE_GNOME=	pygtk2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}dnspython>0:${PORTSDIR}/dns/py-dnspython \
+		${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}notify>0:${PORTSDIR}/devel/py-notify \
+		${PYTHON_PKGNAMEPREFIX}openssl>0:${PORTSDIR}/security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}webkitgtk>0:${PORTSDIR}/www/py-webkitgtk \
+		xprop:${PORTSDIR}/x11/xprop
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+USE_GITHUB=	yes
+
+USES=		desktop-file-utils gettext-runtime python
+USE_GNOME=	pygtk2:run
 USE_GSTREAMER=	python
 INSTALLS_ICONS=	yes
-REINPLACE_ARGS=	-i ""
-
-DESKTOP_ENTRIES="${PORTNAME}" \
-		"${COMMENT}" \
-		"${DATADIR}/themes/default/userPanel.png" \
-		"${PORTNAME}" \
-		"Network;InstantMessaging;GTK;" \
-		"false"
-
-post-extract:
-	@cd ${WRKSRC} && \
-		${RM} -fr GPL LGPL PSF README pygif pyisf docs && \
-			${MV} misc ${WRKDIR} && \
-				${MV} po ${WRKDIR}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${PORTNAME}
-
-do-build:
-	@cd ${WRKSRC} && \
-		${PYTHON_CMD} setup.py build_ext -i
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}
-
-	@${ECHO_CMD} "#!/bin/sh" >> ${WRKDIR}/run.sh
-	@${ECHO_CMD} "" >> ${WRKDIR}/run.sh
-	@${ECHO_CMD} "cd ${DATADIR} || exit 1" >> ${WRKDIR}/run.sh
-	@${ECHO_CMD} "exec ${PYTHON_CMD} ./${PORTNAME}" >> ${WRKDIR}/run.sh
-
-pre-install:
-	@${RM} -fr ${WRKSRC}/build ${WRKSRC}/libmimic
-.for DIRE in ast dv fil fo gv ku la nb_NO nds oc zh_HK
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${DIRE}/LC_MESSAGES
-.endfor
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-
-	cd ${WRKDIR}/po && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/share/locale/{}" \;
-	cd ${WRKSRC} && \
-		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
-
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/libmimic.so
-	${INSTALL_SCRIPT} ${WRKDIR}/run.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKDIR}/misc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKDIR}/misc/emesene.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKDIR}/misc/emesene.png ${WRKDIR}/misc/emesene-big.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/emesene
+	(cd ${WRKSRC}/emesene && ${INSTALL_SCRIPT} emesene \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/emesene)
+	(cd ${WRKSRC}/emesene && ${INSTALL_DATA} *.py \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/emesene)
+	(cd ${WRKSRC}/emesene && ${COPYTREE_SHARE} \
+		"e3 gui interfaces plugins po test themes" \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/emesene)
+	${LN} -sf ${PYTHONPREFIX_SITELIBDIR}/emesene/emesene \
+		${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC}/docs/man && ${INSTALL_MAN} emesene.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	(cd ${WRKSRC}/emesene/data && ${COPYTREE_SHARE} "icons pixmaps" \
+		${STAGEDIR}${PREFIX}/share)
+	(cd ${WRKSRC}/emesene/data/share/applications && ${INSTALL_DATA} \
+		emesene.desktop ${STAGEDIR}${PREFIX}/share/applications)
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
+		-d ${PYTHONPREFIX_SITELIBDIR} \
+		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O -m compileall \
+		-d ${PYTHONPREFIX_SITELIBDIR} \
+		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 
 .include <bsd.port.mk>

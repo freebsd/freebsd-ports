@@ -164,11 +164,6 @@ XSS_DESC=			3rd party xss module
 
 .include <bsd.port.options.mk>
 
-# FreeBSD 8 and earlier are unsupported
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900500
-IGNORE=	is unsupported on FreeBSD 8 and earlier
-.endif
-
 NGINX_VARDIR?=	/var
 NGINX_LOGDIR?=	${NGINX_VARDIR}/log
 NGINX_RUNDIR?=	${NGINX_VARDIR}/run

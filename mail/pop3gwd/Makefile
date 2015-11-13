@@ -9,6 +9,8 @@ MASTER_SITES=	http://fresh.t-systems-sfr.com/linux/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	App-level proxy for Mail retrieval behind Firewalls
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

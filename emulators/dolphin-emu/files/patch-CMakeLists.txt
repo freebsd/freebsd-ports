@@ -1,14 +1,28 @@
---- CMakeLists.txt.orig	2013-09-23 16:15:52.000000000 +0400
-+++ CMakeLists.txt	2014-08-20 17:37:42.000000000 +0400
-@@ -351,51 +351,81 @@
- 		message("OpenMP parallelization disabled")
- 	endif()
+Add switches to handle more options
+
+--- CMakeLists.txt.orig	2015-07-31 10:04:05.000000000 +0000
++++ CMakeLists.txt	2015-10-09 20:18:35.617017157 +0000
+@@ -8,6 +8,12 @@
+ option(TRY_X11 "Enables X11 Support" ON)
+ option(USE_SHARED_ENET "Use shared libenet if found rather than Dolphin's soon-to-compatibly-diverge version" OFF)
+ option(USE_UPNP "Enables UPnP port mapping support" ON)
++option(DISABLE_ALSA "Disable ALSA sound backend" OFF)
++option(DISABLE_AO "Disable ao sound backend" OFF)
++option(DISABLE_BLUEZ "Disable bluez (bluetooth) support" OFF)
++option(DISABLE_PULSEAUDIO "Disable PulseAudio sound backend" OFF)
++option(DISABLE_OPENAL "Disable OpenAL sound backend" OFF)
++option(DISABLE_PORTAUDIO "Disable PortAudio sound backend" OFF)
+ option(DISABLE_WX "Disable wxWidgets (use Qt or CLI interface)" OFF)
+ option(ENABLE_QT "Enable Qt (use the experimental Qt interface)" OFF)
+ option(ENABLE_PCH "Use PCH to speed up compilation" ON)
+@@ -391,51 +397,76 @@
+ 	include(FindOpenGL)
+ 	include_directories(${OPENGL_INCLUDE_DIR})
  
 -	include(FindALSA OPTIONAL)
 -	if(ALSA_FOUND)
 -		add_definitions(-DHAVE_ALSA=1)
 -		message("ALSA found, enabling ALSA sound backend")
-+	option(DISABLE_ALSA "Disable ALSA sound backend" OFF)
 +	if(NOT DISABLE_ALSA)
 +		include(FindALSA OPTIONAL)
 +		if(ALSA_FOUND)
@@ -25,13 +39,12 @@
 +		message("ALSA sound backend disabled")
 +	endif()
  
--	check_lib(AO ao QUIET)
+-	check_lib(AO ao ao QUIET)
 -	if(AO_FOUND)
 -		add_definitions(-DHAVE_AO=1)
 -		message("ao found, enabling ao sound backend")
-+	option(DISABLE_AO "Disable ao sound backend" OFF)
 +	if(NOT DISABLE_AO)
-+		check_lib(AO ao QUIET)
++		check_lib(AO ao ao QUIET)
 +		if(AO_FOUND)
 +			add_definitions(-DHAVE_AO=1)
 +			message("ao found, enabling ao sound backend")
@@ -46,13 +59,12 @@
 +		message("ao sound backend disabled")
 +	endif()
  
--	check_lib(BLUEZ bluez QUIET)
+-	check_lib(BLUEZ bluez bluez QUIET)
 -	if(BLUEZ_FOUND)
 -		add_definitions(-DHAVE_BLUEZ=1)
 -		message("bluez found, enabling bluetooth support")
-+	option(DISABLE_BLUEZ "Disable bluez (bluetooth) support" OFF)
 +	if(NOT DISABLE_BLUEZ)
-+		check_lib(BLUEZ bluez QUIET)
++		check_lib(BLUEZ bluez bluez QUIET)
 +		if(BLUEZ_FOUND)
 +			add_definitions(-DHAVE_BLUEZ=1)
 +			message("bluez found, enabling bluetooth support")
@@ -67,13 +79,12 @@
 +		message("bluez (bluetooth) support disabled")
 +	endif()
  
--	check_lib(PULSEAUDIO libpulse-simple QUIET)
+-	check_lib(PULSEAUDIO libpulse pulse QUIET)
 -	if(PULSEAUDIO_FOUND)
 -		add_definitions(-DHAVE_PULSEAUDIO=1)
 -		message("PulseAudio found, enabling PulseAudio sound backend")
-+	option(DISABLE_PULSEAUDIO "Disable PulseAudio sound backend" OFF)
 +	if(NOT DISABLE_PULSEAUDIO)
-+		check_lib(PULSEAUDIO libpulse-simple QUIET)
++		check_lib(PULSEAUDIO libpulse pulse QUIET)
 +		if(PULSEAUDIO_FOUND)
 +			add_definitions(-DHAVE_PULSEAUDIO=1)
 +			message("PulseAudio found, enabling PulseAudio sound backend")
@@ -93,7 +104,6 @@
 -		add_definitions(-DHAVE_OPENAL=1)
 -		include_directories(${OPENAL_INCLUDE_DIR})
 -		message("OpenAL found, enabling OpenAL sound backend")
-+	option(DISABLE_OPENAL "Disable OpenAL sound backend" OFF)
 +	if(NOT DISABLE_OPENAL)
 +		include(FindOpenAL OPTIONAL)
 +		if(OPENAL_FOUND)
@@ -111,22 +121,47 @@
 +		message("OpenAL sound backend disabled")
 +	endif()
  
- 	if(UNIX AND NOT APPLE)
- 		# Note: The convention is to check USE_X11 or USE_WAYLAND where needed.
-@@ -577,14 +618,14 @@
- set(SFML_FIND_VERSION_MAJOR 1)
- set(SFML_FIND_VERSION_MINOR 5)
- if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT ANDROID)
--	include(FindSFML OPTIONAL)
-+	#include(FindSFML OPTIONAL)
- endif()
- if(SFML_FOUND AND NOT SFML_VERSION_MAJOR) # SFML 1.x doesn't define SFML_VERSION_MAJOR
- 	message("Using shared SFML")
- else()
- 	message("Using static SFML ${SFML_FIND_VERSION_MAJOR}.${SFML_FIND_VERSION_MINOR} from Externals")
- 	add_subdirectory(Externals/SFML)
--	include_directories(Externals/SFML/include)
-+	include_directories(BEFORE Externals/SFML/include)
- endif()
+ 	include(FindLLVM OPTIONAL)
+ 	if (LLVM_FOUND)
+@@ -494,22 +525,28 @@
  
- if(USE_UPNP)
+ 	endif()
+ 
+-	set(CMAKE_REQUIRED_LIBRARIES portaudio)
+-	CHECK_CXX_SOURCE_RUNS(
+-		"#include <portaudio.h>
+-		int main(int argc, char **argv)
+-		{ if(Pa_GetVersion() >= 1890) return 0; else return 1; }"
+-		PORTAUDIO)
+-	unset(CMAKE_REQUIRED_LIBRARIES)
+-	if(PORTAUDIO)
+-		message("PortAudio found, enabling mic support")
+-		add_definitions(-DHAVE_PORTAUDIO=1)
+-		set(PORTAUDIO_FOUND TRUE)
++	if(NOT DISABLE_PORTAUDIO)
++		set(CMAKE_REQUIRED_LIBRARIES portaudio)
++		CHECK_CXX_SOURCE_RUNS(
++			"#include <portaudio.h>
++			int main(int argc, char **argv)
++			{ if(Pa_GetVersion() >= 1890) return 0; else return 1; }"
++			PORTAUDIO)
++		unset(CMAKE_REQUIRED_LIBRARIES)
++		if(PORTAUDIO)
++			message("PortAudio found, enabling mic support")
++			add_definitions(-DHAVE_PORTAUDIO=1)
++			set(PORTAUDIO_FOUND TRUE)
++		else()
++			message("PortAudio not found, disabling mic support")
++			add_definitions(-DHAVE_PORTAUDIO=0)
++			set(PORTAUDIO_FOUND FALSE)
++		endif(PORTAUDIO)
+ 	else()
+-		message("PortAudio not found, disabling mic support")
++		message("PortAudio disabled")
+ 		add_definitions(-DHAVE_PORTAUDIO=0)
+ 		set(PORTAUDIO_FOUND FALSE)
+-	endif(PORTAUDIO)
++	endif()
+ 
+ 	if(OPROFILING)
+ 		check_lib(OPROFILE "(no .pc for opagent)" opagent opagent.h)

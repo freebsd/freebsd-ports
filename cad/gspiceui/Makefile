@@ -2,32 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	gspiceui
-PORTVERSION=	1.0.00
-PORTREVISION=	8
+PORTVERSION=	1.1.00
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/gSpiceUI/${PORTNAME}-v${PORTVERSION}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	kevinz5000@gmail.com
-COMMENT=	GUI frontend to gnucap and ngspice circuit simulators
+COMMENT=	GUI for ngspice and gnucap circuit simulators
 
-LICENSE=	GPLv2
-
-RUN_DEPENDS=	# none if no options are set
+LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-OPTIONS_GROUP=	BACKEND
 
-OPTIONS_GROUP_BACKEND=	GNUCAP NGSPICE
-
-GNUCAP_DESC=	Depend on gnucap as a simulation backend
-NGSPICE_DESC=	Depend on ngspice as a simulation backend
-
-OPTIONS_DEFAULT=	NGSPICE
-
-USE_WX=		2.8+
+USE_WX=		2.8 3.0
 WX_UNICODE=	yes
-USES=		gmake compiler:c++11-lib
+USES=		compiler:c++11-lib gmake pkgconfig
+
+CXXFLAGS+=	-std=c++11
 
 DESKTOP_ENTRIES=	"GSpiceUI" "Circuit Simulator GUI" \
 			"${PREFIX}/share/pixmaps/gspiceui-48x48.xpm" \
@@ -38,18 +29,9 @@ PORTEXAMPLES=	*
 PLIST_FILES=	bin/gspiceui share/pixmaps/gspiceui-48x48.xpm \
 		man/man1/gspiceui.1.gz
 
-GNUCAP_RUN_DEPENDS=	gnucap:${PORTSDIR}/cad/gnucap
-NGSPICE_RUN_DEPENDS=	ngspice:${PORTSDIR}/cad/ngspice_rework
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|:= -Ofast -pipe|+= -I.|g ; \
-		 s|^INCLUDES |#INCLUDES |g ; \
-		 s|$$(WXCFG)|$$(WX_CONFIG)|g ; \
-		 s|$$(CC)|$$(CXX)|g' ${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} -e \
-		's|share/gspiceui|${DOCSDIR}|g' \
-		${WRKSRC}/src/main/HelpTasks.cpp
+	@${REINPLACE_CMD} -e 's|share/gspiceui|${DOCSDIR}|g' \
+	    ${WRKSRC}/src/main/HelpTasks.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gspiceui ${STAGEDIR}${PREFIX}/bin

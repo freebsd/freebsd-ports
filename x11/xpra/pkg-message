@@ -1,0 +1,14 @@
+==============================================================================
+x11/xpra install note:
+
+Requirements for sound forwarding:
+* a client with sound output of any kind (even virtual)
+* a server with pulseaudio installed (for going beyond the simple test step)
+* users must be "pulseaudio-enabled" - whatever that means in terms of
+      permissions and user setup (policy, user group, etc)
+
+The runtime dependency on pulseaudio has been dropped from this port since it
+is strictly optional at runtime. If you want to forward sound from the server,
+then pulseaudio must be installed and configured for use. Pulseaudio is
+supported for client side but not required for any feature to function.
+==============================================================================

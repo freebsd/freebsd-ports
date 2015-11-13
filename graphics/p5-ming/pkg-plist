@@ -67,16 +67,3 @@
 %%PERL5_MAN3%%/SWF::Text.3.gz
 %%PERL5_MAN3%%/SWF::TextField.3.gz
 %%PERL5_MAN3%%/SWF::VideoStream.3.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/action.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/alphafill.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glyph.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jpegfill.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keypress.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morph.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shape.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sound.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sprite.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textfield.cgi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video.cgi

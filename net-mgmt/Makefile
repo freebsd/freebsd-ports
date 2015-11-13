@@ -22,7 +22,6 @@
     SUBDIR += bsnmp-jails
     SUBDIR += bsnmp-regex
     SUBDIR += bsnmp-ucd
-    SUBDIR += bsnmptools
     SUBDIR += bwm-ng
     SUBDIR += cacti
     SUBDIR += cacti-spine
@@ -30,6 +29,7 @@
     SUBDIR += cdpd
     SUBDIR += cdpr
     SUBDIR += centreon-clib
+    SUBDIR += check_ipmi_sensor
     SUBDIR += check_logfiles
     SUBDIR += check_multi
     SUBDIR += check_mysql_health
@@ -39,7 +39,6 @@
     SUBDIR += ciscoconf
     SUBDIR += clog
     SUBDIR += cnagios
-    SUBDIR += collectd
     SUBDIR += collectd5
     SUBDIR += confregdecode
     SUBDIR += coovachilli
@@ -95,6 +94,7 @@
     SUBDIR += isic
     SUBDIR += jnettop
     SUBDIR += kismet
+    SUBDIR += klg
     SUBDIR += lanmap
     SUBDIR += lg
     SUBDIR += librenms

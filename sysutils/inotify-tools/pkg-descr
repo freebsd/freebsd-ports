@@ -1,0 +1,4 @@
+The set of command-line programs providing a simple interface
+to file system events to shell scripts.
+
+WWW: https://github.com/rvoicilas/inotify-tools/

@@ -3,4 +3,4 @@ and uses only Xlib at a minimum, though additional libraries are
 supported for extended functionality and features. JWM supports MWM and
 Extended Window Manager Hints (EWMH).
 
-WWW: http://joewing.net/programs/jwm/
+WWW: http://joewing.net/projects/jwm/

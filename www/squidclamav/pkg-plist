@@ -1,7 +1,6 @@
-@unexec if cmp -s %D/etc/c-icap/squidclamav.conf %D/etc/c-icap/squidclamav.conf.default; then rm -f %D/etc/c-icap/squidclamav.conf; fi
-etc/c-icap/squidclamav.conf.default
-@exec [ -f %B/squidclamav.conf ] || cp %B/%f %B/squidclamav.conf
+@sample etc/c-icap/squidclamav.conf.sample
 %%DATADIR%%/README
+share/c_icap/templates/squidclamav/en/MALWARE_FOUND
 lib/c_icap/squidclamav.a
 lib/c_icap/squidclamav.so
 libexec/squidclamav/clwarn.cgi

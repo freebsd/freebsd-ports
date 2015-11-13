@@ -32,8 +32,6 @@ PORTDOCS=	html \
 		txt/polyorb_ug.txt
 SHEBANG_FILES=	compilers/idlac/*.py testsuite/*.py testsuite/tests/*.py
 
-python_OLD_CMD=	/usr/bin/env python
-
 CONFIGURE_ARGS=	--with-appli-perso="corba dsa moma" \
 		--with-proto-perso="giop soap srp" \
 		--with-corba-services="event ir naming notification time"

@@ -58,6 +58,1857 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f0b9049f-88c4-11e5-aed7-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>46.0.2490.86</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/11/stable-channel-update.html">
+	  <p>[520422] High CVE-2015-1302: Information leak in PDF viewer.
+	    Credit to Rob Wu.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1302</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/11/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-10</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="851a0eea-88aa-11e5-90e7-b499baebfeaf">
+    <topic>MySQL - Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>mariadb-client</name>
+       <range><lt>5.3.13</lt></range>
+      </package>
+      <package>
+       <name>mariadb-server</name>
+       <range><lt>5.3.13</lt></range>
+      </package>
+      <package>
+       <name>mariadb55-client</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mariadb55-server</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mariadb100-client</name>
+       <range><lt>10.0.22</lt></range>
+      </package>
+      <package>
+       <name>mariadb100-server</name>
+       <range><lt>10.0.22</lt></range>
+      </package>
+      <package>
+       <name>mysql55-client</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mysql55-server</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mysql56-client</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+      <package>
+       <name>mysql56-server</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+      <package>
+       <name>percona55-client</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>percona55-server</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>percona56-client</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+      <package>
+       <name>percona56-server</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Oracle reports:</p>
+       <blockquote cite="http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html">
+       <p>Critical Patch Update: MySQL Server, version(s) 5.5.45 and prior, 5.6.26 and prior</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html</url>
+      <cvename>CVE-2015-4802</cvename>
+      <cvename>CVE-2015-4807</cvename>
+      <cvename>CVE-2015-4815</cvename>
+      <cvename>CVE-2015-4826</cvename>
+      <cvename>CVE-2015-4830</cvename>
+      <cvename>CVE-2015-4836</cvename>
+      <cvename>CVE-2015-4858</cvename>
+      <cvename>CVE-2015-4861</cvename>
+      <cvename>CVE-2015-4870</cvename>
+      <cvename>CVE-2015-4913</cvename>
+      <cvename>CVE-2015-4792</cvename>
+      <url>https://mariadb.com/kb/en/mariadb/mariadb-5546-release-notes/</url>
+      <url>https://mariadb.com/kb/en/mariadb/mariadb-10022-release-notes/</url>
+      <url>https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.46-37.5.html</url>
+      <url>https://www.percona.com/doc/percona-server/5.6/release-notes/Percona-Server-5.6.27-75.0.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-10</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b665668a-91db-4f13-8113-9e4b5b0e47f7">
+    <topic>jenkins -- remote code execution via unsafe deserialization</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.638</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>1.625.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Developers report:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-11-11">
+	  <p>Unsafe deserialization allows unauthenticated remote attackers to
+	    run arbitrary code on the Jenkins master.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-11-11</url>
+      <url>https://jenkins-ci.org/content/mitigating-unauthenticated-remote-code-execution-0-day-jenkins-cli</url>
+      <url>http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/#thefix</url>
+    </references>
+    <dates>
+      <discovery>2015-11-06</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="71af4ded-8864-11e5-af1b-001999f8d30b">
+    <topic>owncloudclient -- Improper validation of certificates when using self-signed certificates</topic>
+    <affects>
+      <package>
+	<name>owncloudclient</name>
+	<range><lt>2.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>owncloud.org reports:</p>
+	<blockquote cite="https://owncloud.org/security/advisory/?id=oc-sa-2015-016">
+	  <p>The ownCloud Desktop Client was vulnerable against MITM attacks until version 2.0.0 in combination with self-signed certificates.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://owncloud.org/security/advisory/?id=oc-sa-2015-016</url>
+      <cvename>CVE-2015-7298</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-21</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c0e76d33-8821-11e5-ab94-002590263bf5">
+    <topic>xen-tools -- populate-on-demand balloon size inaccuracy can crash guests</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>3.4</ge><lt>4.5.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-153.html">
+	  <p>Guests configured with PoD might be unstable, especially under
+	    load. In an affected guest, an unprivileged guest user might be
+	    able to cause a guest crash, perhaps simply by applying load so
+	    as to cause heavy memory pressure within the guest.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7972</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-153.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e4848ca4-8820-11e5-ab94-002590263bf5">
+    <topic>xen-kernel -- some pmu and profiling hypercalls log without rate limiting</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>3.2</ge><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-152.html">
+	  <p>HYPERCALL_xenoprof_op and HYPERVISOR_xenpmu_op log some errors and
+	    attempts at invalid operations. These log messages are not
+	    rate-limited, even though they can be triggered by guests.</p>
+	  <p>A malicious guest could cause repeated logging to the hypervisor
+	    console, leading to a Denial of Service attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7971</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-152.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e3792855-881f-11e5-ab94-002590263bf5">
+    <topic>xen-kernel -- leak of per-domain profiling-related vcpu pointer array</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>4.0</ge><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-151.html">
+	  <p>A domain's xenoprofile state contains an array of per-vcpu
+	    information... This array is leaked on domain teardown. This memory
+	    leak could -- over time -- exhaust the host's memory.</p>
+	  <p>The following parties can mount a denial of service attack
+	    affecting the whole system:</p>
+	  <ul>
+	    <li>A malicious guest administrator via XENOPROF_get_buffer.</li>
+	    <li>A domain given suitable privilege over another domain via
+	       XENOPROF_set_passive (this would usually be a domain being
+	       used to profile another domain, eg with the xenoprof tool).</li>
+	  </ul>
+	  <p>The ability to also restart or create suitable domains is also
+	    required to fully exploit the issue. Without this the leak is
+	    limited to a small multiple of the maximum number of vcpus for the
+	    domain.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7969</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-151.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83350009-881e-11e5-ab94-002590263bf5">
+    <topic>xen-kernel -- Long latency populate-on-demand operation is not preemptible</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>3.4</ge><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-150.html">
+	  <p>When running an HVM domain in Populate-on-Demand mode, Xen would
+	    sometimes search the domain for memory to reclaim, in response to
+	    demands for population of other pages in the same domain. This
+	    search runs without preemption.  The guest can, by suitable
+	    arrangement of its memory contents, create a situation where this
+	    search is a time-consuming linear scan of the guest's address
+	    space.</p>
+	  <p>A malicious HVM guest administrator can cause a denial of service.
+	    Specifically, prevent use of a physical CPU for a significant
+	    period.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7970</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-150.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fc1f8795-881d-11e5-ab94-002590263bf5">
+    <topic>xen-kernel -- leak of main per-domain vcpu pointer array</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-149.html">
+	  <p>A domain's primary array of vcpu pointers can be allocated by a
+	    toolstack exactly once in the lifetime of a domain via the
+	    XEN_DOMCTL_max_vcpus hypercall. This array is leaked on domain
+	    teardown. This memory leak could -- over time -- exhaust the host's
+	    memory.</p>
+	  <p>A domain given partial management control via XEN_DOMCTL_max_vcpus
+	    can mount a denial of service attack affecting the whole system. The
+	    ability to also restart or create suitable domains is also required
+	    to fully exploit the issue.  Without this the leak is limited to a
+	    small multiple of the maximum number of vcpus for the domain. The
+	    maximum leak is 64kbytes per domain (re)boot (less on ARM).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7969</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-149.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3d9f6260-881d-11e5-ab94-002590263bf5">
+    <topic>xen-kernel -- Uncontrolled creation of large page mappings by PV guests</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><ge>3.4</ge><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-148.html">
+	  <p>The code to validate level 2 page table entries is bypassed when
+	    certain conditions are satisfied. This means that a PV guest can
+	    create writeable mappings using super page mappings. Such writeable
+	    mappings can violate Xen intended invariants for pages which Xen is
+	    supposed to keep read-only. This is possible even if the
+	    "allowsuperpage" command line option is not used.</p>
+	  <p>Malicious PV guest administrators can escalate privilege so as to
+	    control the whole system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7835</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-148.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="301b04d7-881c-11e5-ab94-002590263bf5">
+    <topic>xen-tools -- libxl fails to honour readonly flag on disks with qemu-xen</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>4.1</ge><lt>4.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-142.html">
+	  <p>Callers of libxl can specify that a disk should be read-only to the
+	    guest. However, there is no code in libxl to pass this information
+	    to qemu-xen (the upstream-based qemu); and indeed there is no way in
+	    qemu to make a disk read-only.</p>
+	  <p>The vulnerability is exploitable only via devices emulated by the
+	    device model, not the parallel PV devices for supporting PVHVM.
+	    Normally the PVHVM device unplug protocol renders the emulated
+	    devices inaccessible early in boot.</p>
+	  <p>Malicious guest administrators or (in some situations) users may be
+	    able to write to supposedly read-only disk images.</p>
+	  <p>CDROM devices (that is, devices specified to be presented to the
+	    guest as CDROMs, regardless of the nature of the backing storage on
+	    the host) are not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7311</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-142.html</url>
+    </references>
+    <dates>
+      <discovery>2015-09-22</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2f7f4db2-8819-11e5-ab94-002590263bf5">
+    <topic>p5-HTML-Scrubber -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>p5-HTML-Scrubber</name>
+	<range><lt>0.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5667">
+	  <p>Cross-site scripting (XSS) vulnerability in the HTML-Scrubber
+	    module before 0.15 for Perl, when the comment feature is enabled,
+	    allows remote attackers to inject arbitrary web script or HTML via
+	    a crafted comment.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5667</cvename>
+      <url>https://metacpan.org/release/HTML-Scrubber</url>
+      <url>http://jvndb.jvn.jp/jvndb/JVNDB-2015-000171</url>
+      <url>http://jvn.jp/en/jp/JVN53973084/index.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-10</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6ca7eddd-d436-486a-b169-b948436bcf14">
+    <topic>libvpx -- buffer overflow in vp9_init_context_buffers</topic>
+    <affects>
+      <package>
+	<name>libvpx</name>
+	<range><lt>1.4.0.488_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/security/advisories/mfsa2015-101/">
+	  <p>Security researcher Khalil Zhani reported that a
+	    maliciously crafted vp9 format video could be used to
+	    trigger a buffer overflow while parsing the file. This leads
+	    to a potentially exploitable crash due to a flaw in the
+	    libvpx library.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4506</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-101/</url>
+    </references>
+    <dates>
+      <discovery>2015-09-22</discovery>
+      <entry>2015-11-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="56665ccb-8723-11e5-9b13-14dae9d210b8">
+    <topic>powerdns -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>powerdns</name>
+	<range><ge>3.4.4</ge><lt>3.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS reports:</p>
+	<blockquote cite="https://doc.powerdns.com/md/security/powerdns-advisory-2015-03/">
+	  <p>A bug was found using afl-fuzz in our packet parsing code.
+	    This bug, when exploited, causes an assertion error and consequent
+	    termination of the the pdns_server process, causing a Denial of Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://doc.powerdns.com/md/security/powerdns-advisory-2015-03/</url>
+      <cvename>CVE-2015-5311</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-03</discovery>
+      <entry>2015-11-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0cb0afd9-86b8-11e5-bf60-080027ef73ec">
+    <topic>PuTTY -- memory corruption in terminal emulator's erase character handling</topic>
+    <affects>
+      <package>
+	<name>putty</name>
+	<range><ge>0.54</ge><lt>0.66</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ben Harris reports:</p>
+	<blockquote cite="http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-ech-overflow.html">
+	  <p>Versions of PuTTY and pterm between 0.54 and 0.65 inclusive have a
+	    potentially memory-corrupting integer overflow in the handling of
+	    the ECH (erase characters) control sequence in the terminal
+	    emulator.</p>
+	  <p>To exploit a vulnerability in the terminal emulator, an attacker
+	    must be able to insert a carefully crafted escape sequence into the
+	    terminal stream. For a PuTTY SSH session, this must be before
+	    encryption, so the attacker likely needs access to the server you're
+	    connecting to. For instance, an attacker on a multi-user machine
+	    that you connect to could trick you into running cat on a file they
+	    control containing a malicious escape sequence. (Unix write(1) is
+	    not a vector for this, if implemented correctly.)</p>
+	  <p>Only PuTTY, PuTTYtel, and pterm are affected; other PuTTY tools do
+	    not include the terminal emulator, so cannot be exploited this
+	    way.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-ech-overflow.html</url>
+      <cvename>CVE-2015-5309</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-06</discovery>
+      <entry>2015-11-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="18b3c61b-83de-11e5-905b-ac9e174be3af">
+    <topic>OpenOffice 4.1.1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache-openoffice</name>
+	<range><lt>4.1.2</lt></range>
+      </package>
+      <package>
+	<name>apache-openoffice-devel</name>
+	<range><lt>4.2.1705368,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache OpenOffice Project reports:</p>
+	<blockquote cite="http://www.openoffice.org/security/cves/CVE-2015-4551.html">
+	  <p>A vulnerability in OpenOffice settings of OpenDocument Format
+	    files and templates allows silent access to files that are
+	    readable from an user account, over-riding the user's default
+	    configuration settings. Once these files are imported into a
+	    maliciously-crafted document, the data can be silently hidden
+	    in the document and possibly exported to an external party
+	    without being observed. </p>
+	</blockquote>
+	<p>The Apache OpenOffice Project reports:</p>
+	<blockquote cite="http://www.openoffice.org/security/cves/CVE-2015-5212.html">
+	  <p>A crafted ODF document can be used to create a buffer that is
+	    too small for the amount of data loaded into it, allowing an
+	    attacker to cause denial of service (memory corruption and
+	    application crash) and possible execution of arbitrary code.</p>
+	</blockquote>
+	<p>The Apache OpenOffice Project reports:</p>
+	<blockquote cite="http://www.openoffice.org/security/cves/CVE-2015-5213.html">
+	  <p>A crafted Microsoft Word DOC file can be used to specify a
+	    document buffer that is too small for the amount of data
+	    provided for it. Failure to detect the discrepancy allows an
+	    attacker to cause denial of service (memory corruption and
+	    application crash) and possible execution of arbitrary code.</p>
+	</blockquote>
+	<p>The Apache OpenOffice Project reports:</p>
+	<blockquote cite="http://www.openoffice.org/security/cves/CVE-2015-5214.html">
+	  <p>A crafted Microsoft Word DOC can contain invalid bookmark
+	    positions leading to memory corruption when the document is
+	    loaded or bookmarks are manipulated. The defect allows an
+	    attacker to cause denial of service (memory corruption and
+	    application crash) and possible execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4551</cvename>
+      <url>http://www.openoffice.org/security/cves/CVE-2015-4551.html</url>
+      <cvename>CVE-2015-5212</cvename>
+      <url>http://www.openoffice.org/security/cves/CVE-2015-5212.html</url>
+      <cvename>CVE-2015-5213</cvename>
+      <url>http://www.openoffice.org/security/cves/CVE-2015-5213.html</url>
+      <cvename>CVE-2015-5214</cvename>
+      <url>http://www.openoffice.org/security/cves/CVE-2015-5214.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-04</discovery>
+      <entry>2015-11-05</entry>
+      <modified>2015-11-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="698403a7-803d-11e5-ab94-002590263bf5">
+    <topic>codeigniter -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><lt>2.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CodeIgniter changelog reports:</p>
+	<blockquote cite="https://codeigniter.com/userguide2/changelog.html">
+	  <p>Fixed an XSS attack vector in Security Library method
+	    xss_clean().</p>
+	  <p>Changed Config Library method base_url() to fallback to
+	    ``$_SERVER['SERVER_ADDR']`` in order to avoid Host header
+	    injections.</p>
+	  <p>Changed CAPTCHA Helper to try to use the operating system's PRNG
+	    first.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203403</freebsdpr>
+      <url>https://codeigniter.com/userguide2/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-31</discovery>
+      <entry>2015-11-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="017a493f-7db6-11e5-a762-14dae9d210b8">
+    <topic>openafs -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>openafs</name>
+	<range><lt>1.6.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenAFS development team reports:</p>
+	<blockquote cite="http://openafs.org/pages/security/OPENAFS-SA-2015-007.txt">
+	  <p>When constructing an Rx acknowledgment (ACK) packet, Andrew-derived Rx
+	    implementations do not initialize three octets of data that are padding
+	    in the C language structure and were inadvertently included in the wire
+	    protocol (CVE-2015-7762).  Additionally, OpenAFS Rx in versions 1.5.75
+	    through 1.5.78, 1.6.0 through 1.6.14, and 1.7.0 through 1.7.32 include
+	    a variable-length padding at the end of the ACK packet, in an attempt to
+	    detect the path MTU, but only four octets of the additional padding are
+	    initialized (CVE-2015-7763).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://openafs.org/pages/security/OPENAFS-SA-2015-007.txt</url>
+      <cvename>CVE-2015-7762</cvename>
+      <cvename>CVE-2015-7763</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-28</discovery>
+      <entry>2015-10-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4b9393b8-7c0c-11e5-a010-080027ddead3">
+    <topic>xscreensaver - lock bypass</topic>
+    <affects>
+      <package>
+	<name>xscreensaver</name>
+	<name>xscreensaver-gnome</name>
+	<name>xscreensaver-gnome-hacks</name>
+	<range><lt>5.34</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat bugzilla reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=1274452">
+	  <p>In dual screen configurations, unplugging one screen will cause
+	    xscreensaver to crash, leaving the screen unlocked.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.jwz.org/xscreensaver/changelog.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1274452</url>
+      <cvename>CVE-2015-8025</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-24</discovery>
+      <entry>2015-10-27</entry>
+      <modified>2015-11-04</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="2a4a112a-7c1b-11e5-bd77-0800275369e2">
+    <topic>lldpd -- Buffer overflow/Denial of service</topic>
+    <affects>
+      <package>
+	<name>lldpd</name>
+	<range><ge>0.5.6</ge><lt>0.7.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The lldpd developer Vincent Bernat reports:</p>
+	<blockquote cite="https://github.com/vincentbernat/lldpd/raw/0.7.19/NEWS">
+	  <p>A buffer overflow may allow arbitrary code execution
+	    only if hardening was disabled.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/vincentbernat/lldpd/commit/793526f8884455f43daecd0a2c46772388417a00">
+	  <p>Malformed packets should not make lldpd crash. Ensure we can
+	    handle them by not using assert() in this part.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8011</cvename>
+      <cvename>CVE-2015-8012</cvename>
+      <url>https://github.com/vincentbernat/lldpd/raw/0.7.19/NEWS</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/30/2</url>
+    </references>
+    <dates>
+      <discovery>2015-10-04</discovery>
+      <entry>2015-10-26</entry>
+      <modified>2015-11-10</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="24e4d383-7b3e-11e5-a250-68b599b52a02">
+    <topic>wireshark -- Pcapng file parser crash</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+	<name>wireshark-qt5</name>
+	<name>tshark</name>
+	<name>tshark-lite</name>
+	<range><lt>1.12.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wireshark development team reports:</p>
+	<blockquote cite="https://www.wireshark.org/docs/relnotes/wireshark-1.12.8.html">
+	  <p>The following vulnerability has been fixed.</p>
+	  <ul>
+	    <li><p>wnpa-sec-2015-30</p>
+	      <p>Pcapng file parser crash. (Bug 11455)</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.wireshark.org/docs/relnotes/wireshark-1.12.8.html</url>
+      <cvename>CVE-2015-7830</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-14</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0ebc6e78-7ac6-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - SQL Injection/ACL Violation vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.2.0</ge><lt>3.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/628-20151001-core-sql-injection.html">
+	  <h2>[20151001] - Core - SQL Injection</h2>
+	  <p>Inadequate filtering of request data leads to a SQL Injection
+	    vulnerability.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security-centre/629-20151002-core-acl-violations.html">
+	  <h2>[20151002] - Core - ACL Violations</h2>
+	  <p>Inadequate ACL checks in com_contenthistory provide potential read
+	    access to data which should be access restricted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7297</cvename>
+      <cvename>CVE-2015-7857</cvename>
+      <cvename>CVE-2015-7858</cvename>
+      <cvename>CVE-2015-7859</cvename>
+      <url>http://developer.joomla.org/security-centre/628-20151001-core-sql-injection.html</url>
+      <url>http://developer.joomla.org/security-centre/629-20151002-core-acl-violations.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5634-joomla-3-4-5-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-22</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="03e54e42-7ac6-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - ACL Violation vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.0.0</ge><lt>3.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/630-20151003-core-acl-violations.html">
+	  <h2>[20151003] - Core - ACL Violations</h2>
+	  <p>Inadequate ACL checks in com_content provide potential read access
+	    to data which should be access restricted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7899</cvename>
+      <url>http://developer.joomla.org/security-centre/630-20151003-core-acl-violations.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5634-joomla-3-4-5-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-22</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f8c37915-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - XSS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.4.0</ge><lt>3.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/626-20150908-core-xss-vulnerability.html">
+	  <h2>[20150908] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate escaping leads to XSS vulnerability in login module.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6939</cvename>
+      <url>http://developer.joomla.org/security-centre/626-20150908-core-xss-vulnerability.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5628-joomla-3-4-4-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-09-08</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ec2d1cfd-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - CSRF Protection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.2.0</ge><lt>3.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/618-20150602-core-remote-code-execution.html">
+	  <h2>[20150602] - Core - CSRF Protection</h2>
+	  <p>Lack of CSRF checks potentially enabled uploading malicious code.
+	    </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5397</cvename>
+      <url>http://developer.joomla.org/security-centre/618-20150602-core-remote-code-execution.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5589-joomla-3-4-2-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-30</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="deaba148-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - Open Redirect vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.0.0</ge><lt>3.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/617-20150601-core-open-redirect.html">
+	  <h2>[20150601] - Core - Open Redirect</h2>
+	  <p>Inadequate checking of the return value allowed to redirect to an
+	    external page.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5608</cvename>
+      <url>http://developer.joomla.org/security-centre/617-20150601-core-open-redirect.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5589-joomla-3-4-2-released.html</url>
+    </references>
+    <dates>
+      <discovery>2015-06-30</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cec4d01a-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - Remote File Execution/Denial of Service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><lt>3.2.6</lt></range>
+	<range><ge>3.3.0</ge><lt>3.3.5</lt></range>
+      </package>
+      <package>
+	<name>joomla2</name>
+	<range><ge>2.5.4</ge><lt>2.5.26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/595-20140903-core-remote-file-inclusion.html">
+	  <h2>[20140903] - Core - Remote File Inclusion</h2>
+	  <p>Inadequate checking allowed the potential for remote files to be
+	    executed.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security-centre/596-20140904-core-denial-of-service.html">
+	  <h2>[20140904] - Core - Denial of Service</h2>
+	  <p>Inadequate checking allowed the potential for a denial of service
+	    attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-7228</cvename>
+      <cvename>CVE-2014-7229</cvename>
+      <url>http://developer.joomla.org/security-centre/595-20140903-core-remote-file-inclusion.html</url>
+      <url>http://developer.joomla.org/security-centre/596-20140904-core-denial-of-service.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5567-joomla-3-3-5-released.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5566-joomla-2-5-26-released.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-30</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="beb3d5fc-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - Unauthorised Login vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><lt>3.2.5</lt></range>
+	<range><ge>3.3.0</ge><lt>3.3.4</lt></range>
+      </package>
+      <package>
+	<name>joomla2</name>
+	<range><lt>2.5.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/594-20140902-core-unauthorised-logins.html">
+	  <h2>[20140902] - Core - Unauthorised Logins</h2>
+	  <p>Inadequate checking allowed unauthorised logins via LDAP
+	    authentication.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-6632</cvename>
+      <url>http://developer.joomla.org/security-centre/594-20140902-core-unauthorised-logins.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5564-joomla-3-3-4-released.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5563-joomla-2-5-25-released.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-23</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="adbb32d9-7ac5-11e5-b35a-002590263bf5">
+    <topic>Joomla! -- Core - XSS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><ge>3.2.0</ge><lt>3.2.5</lt></range>
+	<range><ge>3.3.0</ge><lt>3.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The JSST and the Joomla! Security Center report:</p>
+	<blockquote cite="http://developer.joomla.org/security-centre/593-20140901-core-xss-vulnerability.html">
+	  <h2>[20140901] - Core - XSS Vulnerability</h2>
+	  <p>Inadequate escaping leads to XSS vulnerability in com_media.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-6631</cvename>
+      <url>http://developer.joomla.org/security-centre/593-20140901-core-xss-vulnerability.html</url>
+      <url>https://www.joomla.org/announcements/release-news/5564-joomla-3-3-4-released.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-23</discovery>
+      <entry>2015-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="75f39413-7a00-11e5-a2a1-002590263bf5">
+    <topic>drupal -- open redirect vulnerability</topic>
+    <affects>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.41</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal development team reports:</p>
+	<blockquote cite="https://www.drupal.org/SA-CORE-2015-004">
+	  <p>The Overlay module in Drupal core displays administrative pages
+	    as a layer over the current page (using JavaScript), rather than
+	    replacing the page in the browser window. The Overlay module does
+	    not sufficiently validate URLs prior to displaying their contents,
+	    leading to an open redirect vulnerability.</p>
+	  <p>This vulnerability is mitigated by the fact that it can only be
+	    used against site users who have the "Access the administrative
+	    overlay" permission, and that the Overlay module must be enabled.
+	    </p>
+	  <p>An incomplete fix for this issue was released as part of
+	    SA-CORE-2015-002.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7943</cvename>
+      <url>https://www.drupal.org/SA-CORE-2015-004</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/23/6</url>
+    </references>
+    <dates>
+      <discovery>2015-10-21</discovery>
+      <entry>2015-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="08d11134-79c5-11e5-8987-6805ca0b3d42">
+    <topic>phpMyAdmin -- Content spoofing vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.4.0</ge><lt>4.4.15.1</lt></range>
+	<range><ge>4.5.0</ge><lt>4.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2015-5/">
+	  <p>This vulnerability allows an attacker to perform a
+	    content spoofing attack using the phpMyAdmin's redirection
+	    mechanism to external sites.</p>
+	  <p>We consider this vulnerability to be non critical since
+	    the spoofed content is escaped and no HTML injection is
+	    possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2015-5/</url>
+      <cvename>CVE-2015-7873</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-23</discovery>
+      <entry>2015-10-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b973a763-7936-11e5-a2a1-002590263bf5">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki123</name>
+	<range><lt>1.23.11</lt></range>
+      </package>
+      <package>
+	<name>mediawiki124</name>
+	<range><lt>1.24.4</lt></range>
+      </package>
+      <package>
+	<name>mediawiki125</name>
+	<range><lt>1.25.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MediaWiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-October/000181.html">
+	  <p>Wikipedia user RobinHood70 reported two issues in the chunked
+	    upload API. The API failed to correctly stop adding new chunks to
+	    the upload when the reported size was exceeded (T91203), allowing
+	    a malicious users to upload add an infinite number of chunks for a
+	    single file upload. Additionally, a malicious user could upload
+	    chunks of 1 byte for very large files, potentially creating a very
+	    large number of files on the server's filesystem (T91205).</p>
+	  <p>Internal review discovered that it is not possible to throttle file
+	    uploads.</p>
+	  <p>Internal review discovered a missing authorization check when
+	    removing suppression from a revision. This allowed users with the
+	    'viewsuppressed' user right but not the appropriate
+	    'suppressrevision' user right to unsuppress revisions.</p>
+	  <p>Richard Stanway from teamliquid.net reported that thumbnails of PNG
+	    files generated with ImageMagick contained the local file path in
+	    the image metadata.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-October/000181.html</url>
+      <url>https://phabricator.wikimedia.org/T91203</url>
+      <url>https://phabricator.wikimedia.org/T91205</url>
+      <url>https://phabricator.wikimedia.org/T91850</url>
+      <url>https://phabricator.wikimedia.org/T95589</url>
+      <url>https://phabricator.wikimedia.org/T108616</url>
+    </references>
+    <dates>
+      <discovery>2015-10-16</discovery>
+      <entry>2015-10-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c4a18a12-77fc-11e5-a687-206a8a720317">
+    <topic>ntp -- 13 low- and medium-severity vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.8p4</lt></range>
+      </package>
+      <package>
+	<name>ntp-devel</name>
+	<range><lt>4.3.76</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ntp.org reports:</p>
+	<blockquote cite="http://support.ntp.org/bin/view/Main/SecurityNotice#Recent_Vulnerabilities">
+	  <p>NTF's NTP Project has been notified of the following 13 low-
+	     and medium-severity vulnerabilities that are fixed in
+	     ntp-4.2.8p4, released on Wednesday, 21 October 2015:</p>
+	  <ul>
+	    <li>Bug 2941 CVE-2015-7871 NAK to the Future: Symmetric
+		association authentication bypass via crypto-NAK
+		(Cisco ASIG)</li>
+	    <li>Bug 2922 CVE-2015-7855 decodenetnum() will ASSERT botch
+		instead of returning FAIL on some bogus values (IDA)</li>
+	    <li>Bug 2921 CVE-2015-7854 Password Length Memory Corruption
+		Vulnerability. (Cisco TALOS)</li>
+	    <li>Bug 2920 CVE-2015-7853 Invalid length data provided by a
+		custom refclock driver could cause a buffer overflow.
+		(Cisco TALOS)</li>
+	    <li>Bug 2919 CVE-2015-7852 ntpq atoascii() Memory Corruption
+		Vulnerability. (Cisco TALOS)</li>
+	    <li>Bug 2918 CVE-2015-7851 saveconfig Directory Traversal
+		Vulnerability. (OpenVMS) (Cisco TALOS)</li>
+	    <li>Bug 2917 CVE-2015-7850 remote config logfile-keyfile.
+		(Cisco TALOS)</li>
+	    <li>Bug 2916 CVE-2015-7849 trusted key use-after-free.
+		(Cisco TALOS)</li>
+	    <li>Bug 2913 CVE-2015-7848 mode 7 loop counter underrun.
+		(Cisco TALOS)</li>
+	    <li>Bug 2909 CVE-2015-7701 Slow memory leak in CRYPTO_ASSOC.
+		(Tenable)</li>
+	    <li>Bug 2902 : CVE-2015-7703 configuration directives "pidfile"
+		and "driftfile" should only be allowed locally. (RedHat)</li>
+	    <li>Bug 2901 : CVE-2015-7704, CVE-2015-7705 Clients that
+		receive a KoD should validate the origin timestamp field.
+		(Boston University)</li>
+	    <li>Bug 2899 : CVE-2015-7691, CVE-2015-7692, CVE-2015-7702
+		Incomplete autokey data packet length checks. (Tenable)</li>
+	  </ul>
+	  <p>The only generally-exploitable bug in the above list is the
+	     crypto-NAK bug, which has a CVSS2 score of 6.4.</p>
+	  <p>Additionally, three bugs that have already been fixed in
+	     ntp-4.2.8 but were not fixed in ntp-4.2.6 as it was EOL'd
+	     have a security component, but are all below 1.8 CVSS score,
+	     so we're reporting them here:</p>
+	  <ul>
+	    <li>Bug 2382 : Peer precision &lt; -31 gives division by zero</li>
+	    <li>Bug 1774 : Segfaults if cryptostats enabled when built
+		without OpenSSL</li>
+	    <li>Bug 1593 : ntpd abort in free() with logconfig syntax error</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7691</cvename>
+      <cvename>CVE-2015-7692</cvename>
+      <cvename>CVE-2015-7701</cvename>
+      <cvename>CVE-2015-7702</cvename>
+      <cvename>CVE-2015-7703</cvename>
+      <cvename>CVE-2015-7704</cvename>
+      <cvename>CVE-2015-7705</cvename>
+      <cvename>CVE-2015-7848</cvename>
+      <cvename>CVE-2015-7849</cvename>
+      <cvename>CVE-2015-7850</cvename>
+      <cvename>CVE-2015-7851</cvename>
+      <cvename>CVE-2015-7852</cvename>
+      <cvename>CVE-2015-7853</cvename>
+      <cvename>CVE-2015-7854</cvename>
+      <cvename>CVE-2015-7855</cvename>
+      <cvename>CVE-2015-7871</cvename>
+      <url>http://support.ntp.org/bin/view/Main/SecurityNotice#Recent_Vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2015-10-21</discovery>
+      <entry>2015-10-21</entry>
+      <modified>2015-10-23</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="95602550-76cf-11e5-a2a1-002590263bf5">
+    <topic>codeigniter -- multiple XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><lt>2.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CodeIgniter changelog reports:</p>
+	<blockquote cite="https://codeigniter.com/userguide2/changelog.html">
+	  <p>Fixed a number of XSS attack vectors in Security Library method
+	    xss_clean (thanks to Frans Rosén from Detectify.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203403</freebsdpr>
+      <url>https://codeigniter.com/userguide2/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-08</discovery>
+      <entry>2015-10-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7f645ee5-7681-11e5-8519-005056ac623e">
+    <topic>Git -- Execute arbitrary code</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
+	<name>git-gui</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
+	<name>git-lite</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+      <package>
+	<name>git-subversion</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Git release notes:</p>
+	<blockquote cite="https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.6.1.txt">
+	  <p>Some protocols (like git-remote-ext) can execute arbitrary code
+	    found in the URL.  The URLs that submodules use may come from
+	    arbitrary sources (e.g., .gitmodules files in a remote
+	    repository), and can hurt those who blindly enable recursive
+	    fetch.  Restrict the allowed protocols to well known and safe
+	    ones.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.6.1.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-09-23</discovery>
+      <entry>2015-10-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3934cc60-f0fa-4eca-be09-c8bd7ae42871">
+    <topic>Salt -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-salt</name>
+	<range><lt>2015.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Salt release notes:</p>
+	<blockquote cite="https://docs.saltstack.com/en/latest/topics/releases/2015.8.1.html">
+	  <p>CVE-2015-6918 - Git modules leaking HTTPS auth credentials to debug log</p>
+	  <p>Updated the Git state and execution modules to no longer display HTTPS basic
+	    authentication credentials in loglevel debug output on the Salt master. These
+	    credentials are now replaced with REDACTED in the debug output. Thanks to
+	    Andreas Stieger for bringing this to our attention.</p>
+	  <p>CVE-2015-6941 - win_useradd module and salt-cloud display passwords in debug
+	    log</p>
+	  <p>Updated the win_useradd module return data to no longer include the password
+	    of the newly created user. The password is now replaced with the string
+	    XXX-REDACTED-XXX. Updated the Salt Cloud debug output to no longer display
+	    win_password and sudo_password authentication credentials. Also updated the
+	    Linode driver to no longer display authentication credentials in debug logs.
+	    These credentials are now replaced with REDACTED in the debug output.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.saltstack.com/en/latest/topics/releases/2015.8.1.html</url>
+      <cvename>CVE-2015-6918</cvename>
+      <cvename>CVE-2015-6941</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-16</discovery>
+      <entry>2015-10-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="79c68ef7-c8ae-4ade-91b4-4b8221b7c72a">
+    <topic>firefox -- Cross-origin restriction bypass using Fetch</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>41.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>41.0.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Firefox Developers report:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2015-115/">
+	  <p>Security researcher Abdulrahman Alqabandi reported that the fetch()
+	    API did not correctly implement the Cross-Origin Resource Sharing
+	    (CORS) specification, allowing a malicious page to access private
+	    data from other origins. Mozilla developer Ben Kelly independently reported the
+	    same issue.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2015-115/</url>
+      <cvename>CVE-2015-7184</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-15</discovery>
+      <entry>2015-10-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="84147b46-e876-486d-b746-339ee45a8bb9">
+    <topic>flash -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.540</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-27.html">
+	  <p>These updates resolve type confusion vulnerabilities that
+	    could lead to code execution (CVE-2015-7645, CVE-2015-7647,
+	    CVE-2015-7648).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7645</cvename>
+      <cvename>CVE-2015-7647</cvename>
+      <cvename>CVE-2015-7648</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-27.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-16</discovery>
+      <entry>2015-10-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e75a96df-73ca-11e5-9b45-b499baebfeaf">
+    <topic>LibreSSL -- Memory leak and buffer overflow</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<range><lt>2.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qualys reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/10/16/1">
+	  <p>During the code review of OpenSMTPD a memory leak and buffer overflow
+	    (an off-by-one, usually stack-based) were discovered in LibreSSL's
+	    OBJ_obj2txt() function. This function is called automatically during
+	    a TLS handshake (both client-side, unless an anonymous mode is used,
+	    and server-side, if client authentication is requested).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.info/?l=openbsd-announce&amp;m=144495690528446</url>
+      <cvename>CVE-2015-5333</cvename>
+      <cvename>CVE-2015-5334</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-15</discovery>
+      <entry>2015-10-16</entry>
+      <modified>2015-10-26</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="07a1a76c-734b-11e5-ae81-14dae9d210b8">
+    <topic>mbedTLS/PolarSSL -- DoS and possible remote code execution</topic>
+    <affects>
+      <package>
+	<name>polarssl</name>
+	<range><ge>1.2.0</ge><lt>1.2.17</lt></range>
+      </package>
+      <package>
+	<name>polarssl13</name>
+	<range><ge>1.3.0</ge><lt>1.3.14</lt></range>
+      </package>
+      <package>
+	<name>mbedtls</name>
+	<range><lt>2.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ARM Limited reports:</p>
+	<blockquote cite="https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2015-01">
+	  <p>When the client creates its ClientHello message, due to
+	    insufficient bounds checking it can overflow the heap-based buffer
+	    containing the message while writing some extensions. Two extensions in
+	    particular could be used by a remote attacker to trigger the overflow:
+	    the session ticket extension and the server name indication (SNI)
+	    extension.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://tls.mbed.org/tech-updates/security-advisories/mbedtls-security-advisory-2015-01</url>
+      <cvename>CVE-2015-5291</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-05</discovery>
+      <entry>2015-10-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ea1d2530-72ce-11e5-a2a1-002590263bf5">
+    <topic>magento -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>magento</name>
+	<range><lt>1.9.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Magento, Inc. reports:</p>
+	<blockquote cite="https://www.magentocommerce.com/download">
+	  <p>SUPEE-6482 - This patch addresses two issues related to APIs and
+	    two cross-site scripting risks.</p>
+	  <p>SUPEE-6285 - This patch provides protection against several types
+	    of security-related issues, including information leaks, request
+	    forgeries, and cross-site scripting.</p>
+	  <p>SUPEE-5994 - This patch addresses multiple security
+	    vulnerabilities in Magento Community Edition software, including
+	    issues that can put customer information at risk.</p>
+	  <p>SUPEE-5344 - Addresses a potential remote code execution
+	    exploit.</p>
+	  <p>SUPEE-1533 - Addresses two potential remote code execution
+	    exploits.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/201709</freebsdpr>
+      <url>https://www.magentocommerce.com/download</url>
+      <url>http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.2.html</url>
+      <url>http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.2.1.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-03</discovery>
+      <entry>2015-10-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="705b759c-7293-11e5-a371-14dae9d210b8">
+    <topic>pear-twig -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>pear-twig-twig</name>
+	<range><lt>1.20.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fabien Potencier reports:</p>
+	<blockquote cite="http://symfony.com/blog/security-release-twig-1-20-0">
+	  <p>End users can craft valid Twig code that allows them to
+	    execute arbitrary code (RCEs) via the _self variable, which is always
+	    available, even in sandboxed templates.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://symfony.com/blog/security-release-twig-1-20-0</url>
+      <cvename>CVE-2015-7809</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-12</discovery>
+      <entry>2015-10-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="06fefd2f-728f-11e5-a371-14dae9d210b8">
+    <topic>miniupnpc -- buffer overflow</topic>
+    <affects>
+      <package>
+	<name>miniupnpc</name>
+	<range><ge>1.9.1</ge><lt>1.9.20150917</lt></range>
+	<range><lt>1.9_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Talos reports:</p>
+	<blockquote cite="http://talosintel.com/reports/TALOS-2015-0035/">
+	  <p>An exploitable buffer overflow vulnerability exists in the
+	    XML parser functionality of the MiniUPnP library. A specially crafted
+	    XML response can lead to a buffer overflow on the stack resulting in
+	    remote code execution. An attacker can set up a server on the local
+	    network to trigger this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6031</cvename>
+      <url>http://talosintel.com/reports/TALOS-2015-0035/</url>
+      <url>https://github.com/miniupnp/miniupnp/commit/79cca974a4c2ab1199786732a67ff6d898051b78</url>
+    </references>
+    <dates>
+      <discovery>2015-09-15</discovery>
+      <entry>2015-10-14</entry>
+      <modified>2015-10-14</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="a63f2c06-726b-11e5-a12b-bcaec565249c">
+    <topic>flash -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.535</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-25.html">
+	  <p>These updates resolve a vulnerability that could be exploited
+	    to bypass the same-origin-policy and lead to information
+	    disclosure (CVE-2015-7628).</p>
+
+	  <p>These updates include a defense-in-depth feature in the Flash
+	    broker API (CVE-2015-5569).</p>
+
+	  <p>These updates resolve use-after-free vulnerabilities that
+	    could lead to code execution (CVE-2015-7629, CVE-2015-7631,
+	    CVE-2015-7643, CVE-2015-7644).</p>
+
+	  <p>These updates resolve a buffer overflow vulnerability that
+	    could lead to code execution (CVE-2015-7632).</p>
+
+	  <p>These updates resolve memory corruption vulnerabilities that
+	    could lead to code execution (CVE-2015-7625, CVE-2015-7626,
+	    CVE-2015-7627, CVE-2015-7630, CVE-2015-7633, CVE-2015-7634).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5569</cvename>
+      <cvename>CVE-2015-7625</cvename>
+      <cvename>CVE-2015-7626</cvename>
+      <cvename>CVE-2015-7627</cvename>
+      <cvename>CVE-2015-7628</cvename>
+      <cvename>CVE-2015-7629</cvename>
+      <cvename>CVE-2015-7630</cvename>
+      <cvename>CVE-2015-7631</cvename>
+      <cvename>CVE-2015-7632</cvename>
+      <cvename>CVE-2015-7633</cvename>
+      <cvename>CVE-2015-7634</cvename>
+      <cvename>CVE-2015-7643</cvename>
+      <cvename>CVE-2015-7644</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-25.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-13</discovery>
+      <entry>2015-10-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8301c04d-71df-11e5-9fcb-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>46.0.2490.71</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/10/stable-channel-update.html">
+	  <p>24 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[519558] High CVE-2015-6755: Cross-origin bypass in Blink.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[507316] High CVE-2015-6756: Use-after-free in PDFium. Credit
+	      to anonymous.</li>
+	    <li>[529520] High CVE-2015-6757: Use-after-free in ServiceWorker.
+	       Credit to Collin Payne.</li>
+	     <li>[522131] High CVE-2015-6758: Bad-cast in PDFium. Credit to Atte
+	       Kettunen of OUSPG.</li>
+	     <li>[514076] Medium CVE-2015-6759: Information leakage in
+	       LocalStorage. Credit to Muneaki Nishimura (nishimunea).</li>
+	     <li>[519642] Medium CVE-2015-6760: Improper error handling in
+	       libANGLE. Credit to lastland.net.</li>
+	     <li>[447860,532967] Medium CVE-2015-6761: Memory corruption in
+	       FFMpeg. Credit to Aki Helin of OUSPG and anonymous.</li>
+	     <li>[512678] Low CVE-2015-6762: CORS bypass via CSS fonts. Credit
+	       to Muneaki Nishimura (nishimunea).</li>
+	     <li> [542517] CVE-2015-6763: Various fixes from internal audits,
+	       fuzzing and other initiatives.</li>
+	     <li>Multiple vulnerabilities in V8 fixed at the tip of the 4.6
+	       branch (currently 4.6.85.23).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6755</cvename>
+      <cvename>CVE-2015-6756</cvename>
+      <cvename>CVE-2015-6757</cvename>
+      <cvename>CVE-2015-6758</cvename>
+      <cvename>CVE-2015-6759</cvename>
+      <cvename>CVE-2015-6760</cvename>
+      <cvename>CVE-2015-6761</cvename>
+      <cvename>CVE-2015-6762</cvename>
+      <cvename>CVE-2015-6763</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/10/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-13</discovery>
+      <entry>2015-10-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="00dadbf0-6f61-11e5-a2a1-002590263bf5">
+    <topic>p5-UI-Dialog -- shell command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>p5-UI-Dialog</name>
+	<range><lt>1.09_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthijs Kooijman reports:</p>
+	<blockquote cite="https://rt.cpan.org/Public/Bug/Display.html?id=107364">
+	  <p>It seems that the whiptail, cdialog and kdialog backends apply
+	    some improper escaping in their shell commands, causing special
+	    characters present in menu item titles to be interpreted by the
+	    shell. This includes the backtick evaluation operator, so this
+	    constitutues a security issue, allowing execution of arbitrary
+	    commands if an attacker has control over the text displayed in
+	    a menu.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-7315</cvename>
+      <freebsdpr>ports/203667</freebsdpr>
+      <url>https://rt.cpan.org/Public/Bug/Display.html?id=107364</url>
+      <url>https://bugs.debian.org/496448</url>
+      <url>https://github.com/kckrinke/UI-Dialog/commit/6adc44cc636c615d76297d86835e1a997681eb61</url>
+    </references>
+    <dates>
+      <discovery>2008-08-24</discovery>
+      <entry>2015-10-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="290351c9-6f5c-11e5-a2a1-002590263bf5">
+    <topic>devel/ipython -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ipython</name>
+	<range><lt>3.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Bussonnier reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/02/3">
+	  <p>Summary: Local folder name was used in HTML templates without
+	    escaping, allowing XSS in said pages by carefully crafting folder
+	    name and URL to access it.</p>
+	  <p>URI with issues:</p>
+	  <ul>
+	    <li>GET /tree/**</li>
+	  </ul>
+	</blockquote>
+	<p>Benjamin RK reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/16/3">
+	  <p>Vulnerability: A maliciously forged file opened for editing can
+	    execute javascript, specifically by being redirected to /files/ due
+	    to a failure to treat the file as plain text.</p>
+	  <p>URI with issues:</p>
+	  <ul>
+	    <li>GET /edit/**</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/203668</freebsdpr>
+      <cvename>CVE-2015-6938</cvename>
+      <cvename>CVE-2015-7337</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/02/3</url>
+      <url>https://github.com/ipython/ipython/commit/3ab41641cf6fce3860c73d5cf4645aa12e1e5892</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/16/3</url>
+      <url>https://github.com/ipython/ipython/commit/0a8096adf165e2465550bd5893d7e352544e5967</url>
+    </references>
+    <dates>
+      <discovery>2015-09-01</discovery>
+      <entry>2015-10-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a0182578-6e00-11e5-a90c-0026551a22dc">
+    <topic>PostgreSQL -- minor security problems.</topic>
+    <affects>
+      <package>
+	<name>postgresql90-server</name>
+	<range><ge>9.0.0</ge><lt>9.0.22</lt></range>
+      </package>
+      <package>
+	<name>postgresql91-server</name>
+	<range><ge>9.1.0</ge><lt>9.1.18</lt></range>
+      </package>
+      <package>
+	<name>postgresql92-server</name>
+	<range><ge>9.2.0</ge><lt>9.2.13</lt></range>
+      </package>
+      <package>
+	<name>postgresql93-server</name>
+	<range><ge>9.3.0</ge><lt>9.3.9</lt></range>
+      </package>
+      <package>
+	<name>postgresql94-server</name>
+	<range><ge>9.4.0</ge><lt>9.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="http://www.postgresql.org/about/news/1615/">
+	  <p>
+		Two security issues have been fixed in this release which affect
+		users of specific PostgreSQL features.
+	  </p>
+	  <ul>
+	    <li>CVE-2015-5289 json or jsonb input values constructed from
+		arbitrary user input can crash the PostgreSQL server and cause a denial of
+		service.
+	    </li>
+	    <li>CVE-2015-5288: The crypt() function included with the optional pgCrypto
+		extension could be exploited to read a few additional bytes of memory.
+		No working exploit for this issue has been developed.
+	    </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5289</cvename>
+      <cvename>CVE-2015-5288</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-08</discovery>
+      <entry>2015-10-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d3324fdb-6bf0-11e5-bc5e-00505699053e">
     <topic>ZendFramework1 -- SQL injection vulnerability</topic>
     <affects>
@@ -78,12 +1929,14 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-7695</cvename>
       <url>http://www.openwall.com/lists/oss-security/2015/09/30/6</url>
       <url>http://framework.zend.com/security/advisory/ZF2015-08</url>
     </references>
     <dates>
       <discovery>2015-09-15</discovery>
       <entry>2015-10-06</entry>
+      <modified>2015-10-12</modified>
     </dates>
   </vuln>
 
@@ -301,12 +2154,15 @@ Notes:
     </description>
     <references>
       <freebsdpr>ports/203541</freebsdpr>
+      <cvename>CVE-2015-7803</cvename>
+      <cvename>CVE-2015-7804</cvename>
       <url>http://php.net/ChangeLog-5.php#5.5.30</url>
       <url>http://php.net/ChangeLog-5.php#5.6.14</url>
     </references>
     <dates>
       <discovery>2015-10-01</discovery>
       <entry>2015-10-04</entry>
+      <modified>2015-10-12</modified>
     </dates>
   </vuln>
 
@@ -1251,10 +3107,12 @@ Notes:
     </description>
     <references>
       <url>http://seclists.org/oss-sec/2015/q3/556</url>
+      <cvename>CVE-2015-7801</cvename>
     </references>
     <dates>
       <discovery>2015-09-16</discovery>
       <entry>2015-09-17</entry>
+      <modified>2015-10-14</modified>
     </dates>
   </vuln>
 
@@ -1394,12 +3252,14 @@ Notes:
     <references>
       <cvename>CVE-2015-5714</cvename>
       <cvename>CVE-2015-5715</cvename>
+      <cvename>CVE-2015-7989</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/28/1</url>
       <url>https://wordpress.org/news/2015/09/wordpress-4-3-1/</url>
     </references>
     <dates>
       <discovery>2015-09-15</discovery>
       <entry>2015-09-15</entry>
-      <modified>2015-09-15</modified>
+      <modified>2015-10-29</modified>
     </dates>
   </vuln>
 
@@ -5980,11 +7840,13 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-8041</cvename>
       <url>http://w1.fi/security/2015-5/incomplete-wps-and-p2p-nfc-ndef-record-payload-length-validation.txt</url>
     </references>
     <dates>
       <discovery>2015-07-08</discovery>
       <entry>2015-07-09</entry>
+      <modified>2015-11-10</modified>
     </dates>
   </vuln>
 
@@ -32759,6 +34621,10 @@ executed in your Internet Explorer while displaying the email.</p>
 	<name>ZendFramework</name>
 	<range><lt>1.11.13</lt></range>
       </package>
+      <package>
+	<name>magento</name>
+	<range><lt>1.7.0.2</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -32788,10 +34654,12 @@ executed in your Internet Explorer while displaying the email.</p>
       <url>http://framework.zend.com/security/advisory/ZF2012-02</url>
       <url>http://www.openwall.com/lists/oss-security/2012/06/26/2</url>
       <url>https://secunia.com/advisories/49665/</url>
+      <url>http://www.magentocommerce.com/download/release_notes</url>
     </references>
     <dates>
       <discovery>2012-06-26</discovery>
       <entry>2012-10-16</entry>
+      <modified>2015-10-14</modified>
     </dates>
   </vuln>
 

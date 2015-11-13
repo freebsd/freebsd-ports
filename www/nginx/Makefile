@@ -318,7 +318,7 @@ USES+=	gssapi:base,flags
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_LDAP}
 # WWW: https://github.com/kvspb/nginx-auth-ldap
-GIT_HTTP_AUTH_LDAP_VERSION=	928856aa95
+GIT_HTTP_AUTH_LDAP_VERSION=	be8ff8eecb
 GH_ACCOUNT+=	kvspb:http_auth_ldap
 GH_PROJECT+=	nginx-auth-ldap:http_auth_ldap
 GH_TAGNAME+=	${GIT_HTTP_AUTH_LDAP_VERSION}:http_auth_ldap
@@ -363,7 +363,7 @@ JAVA_VERSION=	1.8
 JAVA_VENDOR=	openjdk
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
-NGINX_CLOJURE_VERSION=	0.4.2
+NGINX_CLOJURE_VERSION=	0.4.3
 GH_ACCOUNT+=	nginx-clojure:clojure
 GH_PROJECT+=	nginx-clojure:clojure
 GH_TAGNAME+=	v${NGINX_CLOJURE_VERSION}:clojure
@@ -483,10 +483,11 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-NGINX_PUSH_VERSION=	0.692
-MASTER_SITES+=	http://pushmodule.slact.net/downloads/:push
-DISTFILES+=	nginx_http_push_module-${NGINX_PUSH_VERSION}.tar.gz:push
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_http_push_module-${NGINX_PUSH_VERSION}
+GIT_PUSH_VERSION=	0.731
+GH_ACCOUNT+=	slact:push
+GH_PROJECT+=	nchan:push
+GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push
+CONFIGURE_ARGS+=--add-module=${WRKSRC_push}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH_STREAM}
@@ -550,7 +551,7 @@ CONFIGURE_ARGS+=--with-http_stub_status_module
 CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
-.if ${PORT_OPTIONS:MHTTP_UPLOAD} 	 
+.if ${PORT_OPTIONS:MHTTP_UPLOAD}
 GIT_UPLOAD_VERSION= aba1e3f34c
 GH_ACCOUNT+=	vkholodkov:upload
 GH_PROJECT+=	nginx-upload-module:upload
@@ -640,7 +641,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	0.9.16
+NGINX_LUA_VERSION=	0.9.18
 GH_ACCOUNT+=	openresty:lua
 GH_PROJECT+=	lua-nginx-module:lua
 GH_TAGNAME+=	v${NGINX_LUA_VERSION}:lua
@@ -648,7 +649,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_lua}
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
-NGINX_MEMC_VERSION=	0.15
+NGINX_MEMC_VERSION=	0.16
 GH_ACCOUNT+=	openresty:memc
 GH_PROJECT+=	memc-nginx-module:memc
 GH_TAGNAME+=	v${NGINX_MEMC_VERSION}:memc
@@ -671,10 +672,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
-NGINX_NAXSI_VERSION=	0.50
-MASTER_SITES+=	http://naxsi.googlecode.com/files/:naxsi
-DISTFILES+=	naxsi-core-${NGINX_NAXSI_VERSION}.tgz:naxsi
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-core-${NGINX_NAXSI_VERSION}/naxsi_src
+NGINX_NAXSI_VERSION=	0.54
+GH_ACCOUNT+=	nbs-system:naxsi
+GH_PROJECT+=	naxsi:naxsi
+GH_TAGNAME+=	${NGINX_NAXSI_VERSION}:naxsi
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_src
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_REWRITE} || defined(USE_HTTP_REWRITE)
@@ -687,7 +689,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.0.20
+PASSENGER_VERSION=	5.0.21
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module
@@ -700,7 +702,7 @@ CFLAGS+=	-DNDEBUG
 
 .if ${PORT_OPTIONS:MPOSTGRES}
 USES+=	pgsql
-NGINX_POSTGRES_VERSION=		1.0rc5-1-g49855a0
+NGINX_POSTGRES_VERSION=		1.0rc7
 GH_ACCOUNT+=	FRiCKLE:postgres
 GH_PROJECT+=	ngx_postgres:postgres
 GH_TAGNAME+=	${NGINX_POSTGRES_VERSION}:postgres
@@ -709,7 +711,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres-config
 .endif
 
 .if ${PORT_OPTIONS:MRDS_CSV}
-NGINX_RDS_CSV_VERSION=	0.05
+NGINX_RDS_CSV_VERSION=	0.07
 GH_ACCOUNT+=	openresty:rdscsv
 GH_PROJECT+=	rds-csv-nginx-module:rdscsv
 GH_TAGNAME+=	v${NGINX_RDS_CSV_VERSION}:rdscsv
@@ -717,7 +719,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_rdscsv}
 .endif
 
 .if ${PORT_OPTIONS:MRDS_JSON}
-NGINX_RDS_JSON_VERSION=	0.13
+NGINX_RDS_JSON_VERSION=	0.14
 GH_ACCOUNT+=	openresty:rdsjson
 GH_PROJECT+=	rds-json-nginx-module:rdsjson
 GH_TAGNAME+=	v${NGINX_RDS_JSON_VERSION}:rdsjson
@@ -725,7 +727,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_rdsjson}
 .endif
 
 .if ${PORT_OPTIONS:MREDIS2}
-NGINX_REDIS2_VERSION=	0.11
+NGINX_REDIS2_VERSION=	0.12
 GH_ACCOUNT+=	openresty:redis2
 GH_PROJECT+=	redis2-nginx-module:redis2
 GH_TAGNAME+=	v${NGINX_REDIS2_VERSION}:redis2
@@ -741,7 +743,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_rtmp}
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
-NGINX_SET_MISC_VERSION=	0.28
+NGINX_SET_MISC_VERSION=	0.29
 GH_ACCOUNT+=	openresty:setmisc
 GH_PROJECT+=	set-misc-nginx-module:setmisc
 GH_TAGNAME+=	v${NGINX_SET_MISC_VERSION}:setmisc
@@ -946,7 +948,7 @@ post-patch:
 .endif
 .if ${PORT_OPTIONS:MCLOJURE}
 	@${REINPLACE_CMD} \
-		'45,47d' \
+		'54,57d' \
 		${WRKSRC_clojure}/src/c/config
 .endif
 .if ${PORT_OPTIONS:MDRIZZLE}
@@ -1040,7 +1042,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MNAXSI}
 	${INSTALL_DATA} \
-	${WRKDIR}/naxsi-core-${NGINX_NAXSI_VERSION}/naxsi_config/naxsi_core.rules \
+	${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_config/naxsi_core.rules \
 	${STAGEDIR}${ETCDIR}
 .endif
 

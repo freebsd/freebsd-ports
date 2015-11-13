@@ -1,6 +1,6 @@
---- MF3D/mfobject.c.orig	2007-09-21 13:30:36.000000000 +0200
-+++ MF3D/mfobject.c	2007-12-17 19:48:57.000000000 +0100
-@@ -930,7 +930,7 @@
+--- MF3D/mfobject.c.orig	2015-06-23 18:03:50 UTC
++++ MF3D/mfobject.c
+@@ -930,7 +930,7 @@ MF3D_ObjTypeReader (
        ++inMetafilePtr->typeTable.nTypes;
        numTypes = inMetafilePtr->typeTable.nTypes;
  

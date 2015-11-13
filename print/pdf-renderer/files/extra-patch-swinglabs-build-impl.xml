@@ -1,0 +1,11 @@
+--- swinglabs-build-impl.xml.orig	2011-09-15 11:34:02 UTC
++++ swinglabs-build-impl.xml
+@@ -211,7 +211,7 @@ ${build.branch} ${RELEASE_DSTAMP_LONG} $
+                  version="${javadoc.version}" 	
+                  windowtitle="${javadoc.windowtitle}"
+                  private="${javadoc.private}"
+-                 additionalparam="${javadoc.additionalparam}"
++                 additionalparam="${javadoc.additionalparam} -Xdoclint:none"
+                  failonerror="true" useexternalfile="false"
+                  verbose="${javadoc.verbose}"
+                  maxmemory="1024M"

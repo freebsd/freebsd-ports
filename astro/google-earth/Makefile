@@ -35,9 +35,7 @@ NVIDIA_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-drive
 NVIDIA_USE_OFF=	LINUX_APPS=dri,libpciaccess
 
 # Fixed by the first post-patch target line?  Also, linprocfs needs to be mounted.
-#.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
 #BROKEN=	seems to crash on >= 9.x/amd64: http://www.freebsd.org/cgi/query-pr.cgi?pr=160422
-#.endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

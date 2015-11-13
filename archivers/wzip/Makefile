@@ -11,6 +11,8 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	Preprocessor for lossy data compression
 
 BROKEN=		No public distfiles
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 
 ALL_TARGET=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -2,12 +2,12 @@
 
 PORTNAME=	xen
 PKGNAMESUFFIX=	-kernel
-PORTVERSION=	4.5.0
-PORTREVISION=	5
+PORTVERSION=	4.5.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hypervisor using a microkernel design
 
 LICENSE=	GPLv2
@@ -24,20 +24,19 @@ PLIST_FILES=	/boot/xen \
 ALL_TARGET=	build
 STRIP=		#
 WRKSRC_SUBDIR=	xen
-EXTRA_PATCHES=	${FILESDIR}/iommu_share_p2m_table.patch:-p2 \
-		${FILESDIR}/0001-x86-pvh-disable-posted-interrupts.patch:-p2 \
-		${FILESDIR}/xsa117.patch:-p2 \
-		${FILESDIR}/xsa118-4.5-unstable-1.patch:-p2 \
-		${FILESDIR}/xsa118-4.5-unstable-2.patch:-p2 \
-		${FILESDIR}/xsa121.patch:-p2 \
-		${FILESDIR}/xsa122.patch:-p2 \
-		${FILESDIR}/xsa123.patch:-p2 \
-		${FILESDIR}/xsa125.patch:-p2 \
-		${FILESDIR}/xsa127-4.x.patch:-p2 \
-		${FILESDIR}/xsa132.patch:-p2 \
-		${FILESDIR}/xsa134.patch:-p2 \
-		${FILESDIR}/xsa136.patch:-p2 \
-		${FILESDIR}/0001-libelf-fix-elf_parse_bsdsyms-call.patch:-p2
+EXTRA_PATCHES=	${FILESDIR}/0001-introduce-a-helper-to-allocate-non-contiguous-memory.patch:-p2 \
+		${FILESDIR}/0002-vmap-avoid-hitting-an-ASSERT-with-vfree-NULL.patch:-p2 \
+		${FILESDIR}/0003-x86-shadow-fix-shadow_track_dirty_vram-to-work-on-hv.patch:-p2 \
+		${FILESDIR}/0004-x86-hap-make-hap_track_dirty_vram-use-non-contiguous.patch:-p2 \
+		${FILESDIR}/0005-x86-rework-paging_log_dirty_op-to-work-with-hvm-gues.patch:-p2 \
+		${FILESDIR}/0006-xen-pvh-enable-mmu_update-hypercall.patch:-p2 \
+		${FILESDIR}/0007-iommu-fix-usage-of-shared-EPT-IOMMU-page-tables-on-P.patch:-p2 \
+		${FILESDIR}/0008-xen-arm-mm-Do-not-dump-the-p2m-when-mapping-a-foreig.patch:-p2 \
+		${FILESDIR}/xsa148-4.5.patch:-p2 \
+		${FILESDIR}/xsa149.patch:-p2 \
+		${FILESDIR}/xsa150.patch:-p2 \
+		${FILESDIR}/xsa151.patch:-p2 \
+		${FILESDIR}/xsa152-4.5.patch:-p2
 
 .include <bsd.port.options.mk>
 

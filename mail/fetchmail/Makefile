@@ -22,7 +22,6 @@ GROUPS=		${USERS}
 
 USES=		cpe gmake shebangfix tar:xz
 SHEBANG_FILES=	fetchmailconf.py
-python_OLD_CMD=	/usr/bin/env python
 
 USE_RC_SUBR=	fetchmail
 SUB_FILES=	pkg-message pkg-install pkg-deinstall

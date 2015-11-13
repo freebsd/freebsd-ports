@@ -22,7 +22,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	OlafvdSpek
 GH_TAGNAME=	359a9f0
-python_OLD_CMD=	/usr/bin/env python
 INSTALL_target=	install-strip
 
 post-patch:

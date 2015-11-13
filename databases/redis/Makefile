@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	3.0.4
+DISTVERSION=	3.0.5
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 
@@ -13,14 +14,22 @@ LICENSE=	BSD3CLAUSE
 
 USES=		execinfo
 
-OPTIONS_DEFINE=	TESTS
+OPTIONS_DEFINE=	TESTS TRIB
 OPTIONS_RADIO=	EXTLUA
 OPTIONS_RADIO_EXTLUA=	LUA LUAJIT
+OPTIONS_SUB=	yes
 LUA_DESC=	Use lang/lua instead of builtin lua
 LUAJIT_DESC=	Use lang/luajit instead of builtin lua
 TESTS_DESC=	Install lang/tcl for redis unit tests
+TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTRIB}
+CATEGORIES+=	ruby
+USE_RUBY=	yes
+RUN_DEPENDS=	rubygem-redis>=2.2:${PORTSDIR}/databases/rubygem-redis
+.endif
 
 .if ${PORT_OPTIONS:MLUA}
 USES+=		lua:51
@@ -48,7 +57,7 @@ CONFLICTS?=	redis-devel-3.*
 
 USES+=		gmake
 MAKE_ENV=	"V=yo"
-USE_RC_SUBR=	redis
+USE_RC_SUBR=	redis sentinel
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \
 		redis-cli redis-sentinel redis-server
 
@@ -85,6 +94,9 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${BIN_FILES:C!^!${WRKSRC}/src/!} ${STAGEDIR}${PREFIX}/bin/
+.if ${PORT_OPTIONS:MTRIB}
+	${INSTALL_SCRIPT} ${WRKSRC}/src/redis-trib.rb ${STAGEDIR}${PREFIX}/bin/
+.endif
 	${INSTALL_DATA} ${WRKDIR}/redis.conf ${STAGEDIR}${PREFIX}/etc/redis.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/sentinel.conf ${STAGEDIR}${PREFIX}/etc/sentinel.conf.sample
 	${MKDIR} ${STAGEDIR}${REDIS_LOGDIR} \

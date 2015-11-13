@@ -1,4 +1,4 @@
-# Created by: kevlo 
+# Created by: kevlo
 # $FreeBSD$
 
 PORTNAME=	audiopreview

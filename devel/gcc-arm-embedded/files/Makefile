@@ -493,6 +493,8 @@ build-libstdcxx:
 	  done ; \
 	  ${CP} -f ${BUILD_PREFIX}/target-libs/${TARGET}/lib/$${multilib_dir}/*crt0.o  ${INTERIM_PREFIX}/${TARGET}/lib/$${multilib_dir}/ ; \
 	 done
+	@${MKDIR} ${INTERIM_PREFIX}/${TARGET}/include/newlib-nano
+	@${CP} ${BUILD_PREFIX}/target-libs/${TARGET}/include/newlib.h ${INTERIM_PREFIX}/${TARGET}/include/newlib-nano/newlib.h
 
 build-gdb:
 	@${ECHO_MSG} "====>  Build gdb"

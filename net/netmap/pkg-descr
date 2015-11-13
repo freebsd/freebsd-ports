@@ -1,4 +1,4 @@
-Netmap can be used to make a graphical representation of the surounding
+Netmap can be used to make a graphical representation of the surrounding
 network. It first uses traceroute to make a list of all routers and their
 interconnections, after which it generates a .dot file.
 

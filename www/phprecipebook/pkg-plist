@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 @sample %%WWWDIR%%/custom_inc.php.sample
 %%WWWDIR%%/.buildpath
 %%WWWDIR%%/.project
@@ -644,4 +646,5 @@
 @dir %%WWWDIR%%/modules/settings
 @dir %%WWWDIR%%/modules
 @dir %%WWWDIR%%
-@dir www
+@owner
+@group

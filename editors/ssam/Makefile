@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.westley.demon.co.uk/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stream editor that uses the UTF routines with the sam(1) command set
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ure.h:${PORTSDIR}/misc/libutf
 
 GNU_CONFIGURE=	YES

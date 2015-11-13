@@ -17,7 +17,7 @@ PLIST_FILES=	bin/raidtest
 do-fetch:
 
 do-extract:
-	${MKDIR} ${WRKDIR}
-	${LN} -sf ${FILESDIR}/${PORTNAME}.c ${FILESDIR}/Makefile ${WRKDIR}
+	${MKDIR} ${WRKSRC}
+	${LN} -sf ${FILESDIR}/${PORTNAME}.c ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>

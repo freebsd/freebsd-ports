@@ -1,7 +1,5 @@
-libserver implements a generic multi-process TCP or UNIX-domain server
-which is incapable of servicing connections on its own.  The programmer
-writes an initialization function and a function to service connections,
-then compiles and links his or her code against the library to create a
-complete server.
+Libserver provides generic multi-process, multi-threaded, and event-driven
+TCP or UNIX-domain servers.  The libraries handle network and concurrency
+tasks.  You write code to service connections.
 
-WWW: http://www.mammothcheese.ca/
+WWW: http://mammothcheese.ca/

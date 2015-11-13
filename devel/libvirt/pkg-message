@@ -1,3 +1,0 @@
-
-To enable libvirtd please add libvirtd_enable="YES" to
-/etc/rc.conf.

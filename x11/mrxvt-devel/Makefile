@@ -3,7 +3,7 @@
 
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11
 MASTER_SITES=	SF/materm/mrxvt%20source/${PORTVERSION}
 DISTNAME=	mrxvt-${PORTVERSION}
@@ -52,6 +52,10 @@ CONFIGURE_ARGS+=	--enable-xim --enable-cjk --with-encoding=eucj
 .if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
 CONFIGURE_ARGS+=	--enable-xft
+.endif
+
+.if ${PORT_OPTIONS:MXFT} && ${PORT_OPTIONS:MJAPANESE}
+USES+=		iconv
 .endif
 
 .if ${PORT_OPTIONS:M24BITS}
@@ -120,6 +124,14 @@ CONFIGURE_ARGS+=	--with-atab-extra=${EXTRA_ATAB_HEIGHT:M[0-9]*}
 CONFIGURE_ARGS+=	--with-tab-radius=${TAB_RADIUS:M[0-9]*}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no
+.else
+CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=yes
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mrxvt ${STAGEDIR}${PREFIX}/bin
 	@for pixmap in ${WRKSRC}/share/pixmaps/* ; \
@@ -137,4 +149,4 @@ do-install:
 	${CP} ${WRKSRC}/doc/*.bz2 ${STAGEDIR}${DOCSDIR}
 	${BZIP2_CMD} -d ${STAGEDIR}${DOCSDIR}/*.bz2
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

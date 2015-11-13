@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	celery
-PORTVERSION=	3.1.15
+PORTVERSION=	3.1.19
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,9 @@ COMMENT=	Asynchronous task queue/job queue
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}billiard>=3.3.0.18:${PORTSDIR}/devel/py-billiard \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}billiard>=3.3.0.21:${PORTSDIR}/devel/py-billiard \
 		${PYTHON_PKGNAMEPREFIX}pytz>=1.5:${PORTSDIR}/devel/py-pytz \
-		${PYTHON_PKGNAMEPREFIX}kombu>=3.0.23:${PORTSDIR}/net/py-kombu \
+		${PYTHON_PKGNAMEPREFIX}kombu>=3.0.29:${PORTSDIR}/net/py-kombu \
 		${PYTHON_PKGNAMEPREFIX}memcached>=0:${PORTSDIR}/databases/py-memcached
 
 USES=		python

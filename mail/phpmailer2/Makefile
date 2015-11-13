@@ -10,6 +10,8 @@ DISTNAME=	PHPMailer_v${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full Featured Email Transfer Class for PHP4
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21
 
 CONFLICTS=	phpmailer-5*

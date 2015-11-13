@@ -1,0 +1,4 @@
+Python package that provides an easy-to-use and outrageously powerful
+parser for MediaWiki wikicode. It supports Python 2 and Python 3.
+
+WWW: https://github.com/earwig/mwparserfromhell

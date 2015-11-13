@@ -78,10 +78,6 @@ RUN_DEPENDS+=	gstreamer1-libav>=1.2.4_1:${PORTSDIR}/multimedia/gstreamer1-libav
 BUILD_DEPENDS+=	gtk3>=3.14.6:${PORTSDIR}/x11-toolkits/gtk30
 .endif
 
-.if ${PORT_OPTIONS:MTEST}
-BROKEN=		stage-package fails with ValueError: no path specified
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/MOZPNG/s/=[0-9]*/=10511/' \
 		${WRKSRC}/configure.in

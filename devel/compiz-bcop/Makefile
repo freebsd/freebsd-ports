@@ -14,6 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 
 GNU_CONFIGURE=	yes
 
+BROKEN=		Does not fetch
 USES=		pkgconfig tar:bzip2
 USE_GNOME=	libxslt
 

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
 
 MAKE_ARGS=	CC="${CXX}"
 USE_PERL5=	configure
-USES=		compiler gmake perl5
+USES=		compiler gmake localbase perl5
 
 .include <bsd.port.pre.mk>
 
@@ -30,8 +30,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/build_detect_platform/d' \
 		-e 's|build_config.mk|${LOCALBASE}/share/leveldb/&|' \
 		-e '/OBJECT/ s|".*\(LevelDB\.o\).*"|"\1"|' \
-		-e '/INC/ s|-I|-I${LOCALBASE}/include &|' \
-		-e '/LIBS/ s|\[\(.*\)\]|["-L${LOCALBASE}/lib -lleveldb " . (\1)]|' \
 		-e 's|g++|${CXX}|' \
 			${WRKSRC}/Makefile.PL
 

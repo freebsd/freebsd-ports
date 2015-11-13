@@ -16,7 +16,7 @@
     SUBDIR += blackbox
     SUBDIR += bspwm
     SUBDIR += ccsm
-    SUBDIR += clementine
+    SUBDIR += clementine-wm
     SUBDIR += compiz
     SUBDIR += compiz-fusion
     SUBDIR += compiz-plugins-extra
@@ -32,7 +32,6 @@
     SUBDIR += e-module-alarm
     SUBDIR += e-module-cpu
     SUBDIR += e-module-deskshow
-    SUBDIR += e-module-diskio
     SUBDIR += e-module-everything-places
     SUBDIR += e-module-everything-websearch
     SUBDIR += e-module-forecasts
@@ -134,6 +133,7 @@
     SUBDIR += wmii
     SUBDIR += wmii-devel
     SUBDIR += wmname
+    SUBDIR += wmx
     SUBDIR += xcompmgr
     SUBDIR += xfce4
     SUBDIR += xfce4-desktop

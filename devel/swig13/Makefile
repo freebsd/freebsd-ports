@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	13
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplified Wrapper and Interface Generator
 
-USE_AUTOTOOLS=	autoconf:env
+USES=		autoreconf:build
 GNU_CONFIGURE=	yes
 
 VER=		${PORTVERSION:R}
@@ -33,18 +33,13 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	LUA DOCS EXAMPLES
 OPTIONS_DEFAULT=DOCS EXAMPLES
-LUA_DESC=	Enable Lua support
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MLUA}
-USES+=		lua:51
-CONFIGURE_ARGS+=--with-lua=${LUA_BINDIR}/lua \
-		--with-luaincl=${LUA_INCDIR} \
-		--with-lualib=${LUA_LIBDIR}
-.else
-CONFIGURE_ARGS+=--without-lua
-.endif
+LUA_DESC=	Lua support
+LUA_USES=	lua:51
+LUA_CONFIGURE_ON=	--with-lua=${LUA_BINDIR}/lua \
+			--with-luaincl=${LUA_INCDIR} \
+			--with-lualib=${LUA_LIBDIR}
+LUA_CONFIGURE_OFF=	--without-lua
 
 OCTAVE_VER_CMD=	${LOCALBASE}/bin/octave-config -v 2>/dev/null || ${TRUE}
 
@@ -68,4 +63,4 @@ post-install:
 	cd ${WRKSRC}/Doc && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DOCSDIR}/${PORTVERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -37,10 +37,10 @@ RUN_DEPENDS+=	jython:${PORTSDIR}/lang/jython
 
 pre-install:
 	@${ECHO_MSG} "===>   Creating bundles.info"
-	@PLUGINS=$$(ls -1 ${WRKDIR}/plugins); \
+	@PLUGINS=$$(ls -1 ${WRKSRC}/plugins); \
 	for d in $${PLUGINS}; do \
 	    (${ECHO_CMD} "$${d},../../${PLUGINDIR}/$${d}/,4,false" | \
-	    ${SED} -e 's/_\([0-9]\)/,\1/1' -e '/templates/d') >> ${WRKDIR}/plugins/bundles.info; \
+	    ${SED} -e 's/_\([0-9]\)/,\1/1' -e '/templates/d') >> ${WRKSRC}/plugins/bundles.info; \
 	done
 	@# ignore javashell.py file, because there is a syntax error
 	@# see http://goo.gl/E4epH

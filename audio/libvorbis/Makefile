@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS
 
@@ -25,8 +26,5 @@ post-stage:
 	cd ${STAGEDIR}${PREFIX}/share/doc && ${MV} ${DISTNAME} libvorbis
 	${LN} -s libvorbis.so.0 ${STAGEDIR}${PREFIX}/lib/libvorbis.so.4
 	${LN} -s libvorbisfile.so.3 ${STAGEDIR}${PREFIX}/lib/libvorbisfile.so.6
-
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>

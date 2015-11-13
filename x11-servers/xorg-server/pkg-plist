@@ -1,11 +1,6 @@
 bin/X
-%%SUID%%@owner root
-%%SUID%%@group wheel
-%%SUID%%@mode 4555
-bin/Xorg
-%%SUID%%@owner root
-%%SUID%%@group wheel
-%%SUID%%@mode
+%%SUID%%@(,,4555) bin/Xorg
+%%NO_SUID%%bin/Xorg
 bin/cvt
 bin/gtf
 include/xorg/BT.h
@@ -13,7 +8,6 @@ include/xorg/IBM.h
 include/xorg/TI.h
 include/xorg/XIstubs.h
 include/xorg/Xprintf.h
-include/xorg/bt829.h
 include/xorg/callback.h
 include/xorg/client.h
 include/xorg/closestr.h
@@ -39,8 +33,8 @@ include/xorg/dri.h
 include/xorg/dri2.h
 include/xorg/dristruct.h
 include/xorg/edid.h
-include/xorg/exa.h
 include/xorg/events.h
+include/xorg/exa.h
 include/xorg/exevents.h
 include/xorg/extension.h
 include/xorg/extinit.h
@@ -48,17 +42,17 @@ include/xorg/extnsionst.h
 include/xorg/fb.h
 include/xorg/fbdevhw.h
 include/xorg/fboverlay.h
-include/xorg/fbrop.h
-include/xorg/fi1236.h
 include/xorg/fbpict.h
+include/xorg/fbrop.h
 include/xorg/fourcc.h
 include/xorg/gc.h
 include/xorg/gcstruct.h
 include/xorg/geext.h
 include/xorg/geint.h
+include/xorg/glamor.h
 include/xorg/globals.h
-include/xorg/glyphstr.h
 include/xorg/glx_extinit.h
+include/xorg/glyphstr.h
 include/xorg/hotplug.h
 include/xorg/i2c_def.h
 include/xorg/input.h
@@ -67,32 +61,31 @@ include/xorg/list.h
 include/xorg/mi.h
 include/xorg/micmap.h
 include/xorg/micoord.h
-include/xorg/mifillarc.h
-include/xorg/mifpoly.h
 include/xorg/migc.h
 include/xorg/miline.h
+include/xorg/mioverlay.h
 include/xorg/mipict.h
 include/xorg/mipointer.h
 include/xorg/mipointrst.h
 include/xorg/misc.h
 include/xorg/miscstruct.h
-include/xorg/mispans.h
 include/xorg/mistruct.h
 include/xorg/misync.h
+include/xorg/misyncfd.h
+include/xorg/misyncshm.h
 include/xorg/misyncstr.h
-include/xorg/miwideline.h
 include/xorg/mizerarc.h
-include/xorg/mioverlay.h
-include/xorg/msp3430.h
 include/xorg/opaque.h
-include/xorg/os.h
 include/xorg/optionstr.h
-include/xorg/panoramiXsrv.h
+include/xorg/os.h
 include/xorg/panoramiX.h
+include/xorg/panoramiXsrv.h
 include/xorg/picture.h
 include/xorg/picturestr.h
 include/xorg/pixmap.h
 include/xorg/pixmapstr.h
+include/xorg/present.h
+include/xorg/presentext.h
 include/xorg/privates.h
 include/xorg/property.h
 include/xorg/propertyst.h
@@ -116,10 +109,6 @@ include/xorg/site.h
 include/xorg/swaprep.h
 include/xorg/swapreq.h
 include/xorg/syncsdk.h
-include/xorg/tda8425.h
-include/xorg/tda9850.h
-include/xorg/tda9885.h
-include/xorg/uda1380.h
 include/xorg/validate.h
 include/xorg/vbe.h
 include/xorg/vbeModes.h
@@ -145,14 +134,13 @@ include/xorg/xf86Pci.h
 include/xorg/xf86PciInfo.h
 include/xorg/xf86Priv.h
 include/xorg/xf86Privstr.h
-include/xorg/xf86RandR12.h
 include/xorg/xf86RamDac.h
-include/xorg/xf86Rename.h
+include/xorg/xf86RandR12.h
 %%SPARC64%%include/xorg/xf86Sbus.h
+include/xorg/xf86VGAarbiter.h
 include/xorg/xf86Xinput.h
 include/xorg/xf86_OSlib.h
 include/xorg/xf86_OSproc.h
-include/xorg/xf86VGAarbiter.h
 include/xorg/xf86cmap.h
 include/xorg/xf86fbman.h
 include/xorg/xf86i2c.h
@@ -174,23 +162,18 @@ include/xorg/xorgVersion.h
 include/xorg/xserver-properties.h
 include/xorg/xvdix.h
 include/xorg/xvmcext.h
+lib/xorg/modules/drivers/modesetting_drv.so
 lib/xorg/modules/extensions/.xorg/libglx.so
 lib/xorg/modules/libexa.so
 lib/xorg/modules/libfb.so
 lib/xorg/modules/libfbdevhw.so
+lib/xorg/modules/libglamoregl.so
 lib/xorg/modules/libint10.so
 lib/xorg/modules/libshadow.so
 lib/xorg/modules/libshadowfb.so
 lib/xorg/modules/libvbe.so
 lib/xorg/modules/libvgahw.so
 lib/xorg/modules/libwfb.so
-lib/xorg/modules/multimedia/bt829_drv.so
-lib/xorg/modules/multimedia/fi1236_drv.so
-lib/xorg/modules/multimedia/msp3430_drv.so
-lib/xorg/modules/multimedia/tda8425_drv.so
-lib/xorg/modules/multimedia/tda9850_drv.so
-lib/xorg/modules/multimedia/tda9885_drv.so
-lib/xorg/modules/multimedia/uda1380_drv.so
 lib/xorg/protocol.txt
 libdata/pkgconfig/xorg-server.pc
 man/man1/Xorg.1.gz
@@ -199,6 +182,7 @@ man/man1/cvt.1.gz
 man/man1/gtf.1.gz
 man/man4/exa.4.gz
 man/man4/fbdevhw.4.gz
+man/man4/modesetting.4.gz
 man/man5/xorg.conf.5.gz
 man/man5/xorg.conf.d.5.gz
 share/aclocal/xorg-server.m4

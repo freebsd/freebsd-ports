@@ -16,19 +16,9 @@ man/man8/mimedefang.8.gz
 man/man8/mimedefang.pl.8.gz
 man/man8/watch-mimedefang.8.gz
 man/man8/watch-multiple-mimedefangs.8.gz
-@unexec if cmp -s %D/%%ETCDIR%%/mimedefang-ip-key %D/%%ETCDIR%%/mimedefang-ip-key.example; then rm -f %D/%%ETCDIR%%/mimedefang-ip-key; fi
-%%ETCDIR%%/mimedefang-ip-key.example
-@exec [ -f %B/mimedefang-ip-key ] || cp -p %D/%F %B/mimedefang-ip-key
-@unexec if cmp -s %D/%%ETCDIR%%/mimedefang-filter %D/%%ETCDIR%%/mimedefang-filter.example; then rm -f %D/%%ETCDIR%%/mimedefang-filter; fi
-%%ETCDIR%%/mimedefang-filter.example
-@exec [ -f %B/mimedefang-filter ] || cp -p %D/%F %B/mimedefang-filter
-@unexec if cmp -s %D/%%ETCDIR%%/sa-mimedefang.cf %D/%%ETCDIR%%/sa-mimedefang.cf.example; then rm -f %D/%%ETCDIR%%/sa-mimedefang.cf; fi
-%%ETCDIR%%/sa-mimedefang.cf.example
-@exec [ -f %B/sa-mimedefang.cf ] || cp -p %D/%F %B/sa-mimedefang.cf
-@exec [ -d %%MIMEDEFANG_RUNDIR%% ] || mkdir -p %%MIMEDEFANG_RUNDIR%%
-@exec chgrp %%MAIL_USER%% %%MIMEDEFANG_RUNDIR%%
-@exec [ -d %%MIMEDEFANG_QUARANTINEDIR%% ] || mkdir -p %%MIMEDEFANG_QUARANTINEDIR%%
-@exec chgrp %%MAIL_USER%% %%MIMEDEFANG_QUARANTINEDIR%%
+@sample %%ETCDIR%%/mimedefang-ip-key.sample
+@sample %%ETCDIR%%/mimedefang-filter.sample
+@sample %%ETCDIR%%/sa-mimedefang.cf.sample
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.SPAMASSASSIN
 %%PORTDOCS%%%%DOCSDIR%%/README.SOPHIE
@@ -40,9 +30,8 @@ man/man8/watch-multiple-mimedefangs.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stream-by-domain-filter
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/suggested-minimum-filter-for-windows-clients
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%ETCDIR%%
-@cwd /var/spool
-@dirrm MIMEDefang
-@dirrm MD-Quarantine
+@dir %%PORTEXAMPLES%%%%EXAMPLESDIR%%
+@dir %%PORTDOCS%%%%DOCSDIR%%
+@dir %%ETCDIR%%
+@dir(%%USER%%,%%GROUP%%,710) %%MIMEDEFANG_RUNDIR%%
+@dir(%%USER%%,%%GROUP%%,700) %%MIMEDEFANG_QUARANTINEDIR%%

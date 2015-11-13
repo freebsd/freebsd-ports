@@ -1,0 +1,22 @@
+------------------------------------------------------------------------
+r250416 | ed | 2015-10-15 15:07:07 +0000 (Thu, 15 Oct 2015) | 5 lines
+
+Add support for CloudABI/aarch64.
+
+The core C library has already been ported over to aarch64 successfully,
+meaning there is no reason to hold this change back.
+
+------------------------------------------------------------------------
+Index: lib/Basic/Targets.cpp
+===================================================================
+--- tools/clang/lib/Basic/Targets.cpp	(revision 250415)
++++ tools/clang/lib/Basic/Targets.cpp	(revision 250416)
+@@ -7364,6 +7364,8 @@
+       return new DarwinAArch64TargetInfo(Triple);
+ 
+     switch (os) {
++    case llvm::Triple::CloudABI:
++      return new CloudABITargetInfo<AArch64leTargetInfo>(Triple);
+     case llvm::Triple::FreeBSD:
+       return new FreeBSDTargetInfo<AArch64leTargetInfo>(Triple);
+     case llvm::Triple::Linux:

@@ -1,0 +1,10 @@
+--- src/plugins/grass/CMakeLists.txt.orig	2015-10-23 12:10:38 UTC
++++ src/plugins/grass/CMakeLists.txt
+@@ -195,6 +195,7 @@ MACRO(ADD_GRASSPLUGIN GRASS_BUILD_VERSIO
+       qgis_app
+       qgis_gui
+       ${OPENPTY_LIBRARY}
++      -lulog
+     )
+ 
+     IF (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")

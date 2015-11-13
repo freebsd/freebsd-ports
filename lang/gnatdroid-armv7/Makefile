@@ -114,6 +114,8 @@ post-extract:
 .endfor
 	@(cd ${WRKSRC}/gcc/testsuite/ada/acats && \
 		${CP} run_remote.sh run_all.sh)
+	${REINPLACE_CMD} -e 's|<syscall.h>|<sys/syscall.h>|' \
+		${WRKSRC}/libstdc++-v3/libsupc++/guard.cc
 
 do-configure:
 	${MKDIR} ${BUILD_WRKSRC}

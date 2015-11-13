@@ -16,10 +16,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PYTHON=	autoplist concurrent distutils
-USES=		iconv python tar:bzip2
+USES=		iconv localbase python tar:bzip2
 
 .include <bsd.port.pre.mk>
 

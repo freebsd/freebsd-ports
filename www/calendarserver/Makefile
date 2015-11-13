@@ -2,7 +2,7 @@
 
 PORTNAME=	calendarserver
 PORTVERSION=	5.1
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	www python
 MASTER_SITES=	LOCAL/wg
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:${PORTSDIR}/security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0.13:${PORTSDIR}/security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}psutil>=1.2:${PORTSDIR}/sysutils/py-psutil \
+		${PYTHON_PKGNAMEPREFIX}psutil121>=1.2:${PORTSDIR}/sysutils/py-psutil121 \
 		${PYTHON_PKGNAMEPREFIX}PyGreSQL>=4.1:${PORTSDIR}/databases/py-PyGreSQL \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=14.0.0:${PORTSDIR}/security/py-service_identity \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7:${PORTSDIR}/databases/py-sqlite3 \
@@ -34,14 +34,13 @@ DOCS_DESC=	Install additional documentation
 OPTIONS_DEFAULT=	EXAMPLES DOCS
 .include <bsd.port.options.mk>
 
-USES=		shebangfix pgsql:9.0+ python \
+USES=		shebangfix pgsql python \
 		twisted:run,conch,mail,names,runner,web,words
 USE_PYTHON=	autoplist distutils
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	USER=${USERS}
 
-python_OLD_CMD=	/usr/bin/env python
 
 SHEBANG_FILES=	bin/calendarserver_* \
 		bin/icalendar_split \

@@ -1,11 +1,11 @@
---- objects/riinc.c.orig	2007-12-17 18:40:30.000000000 +0100
-+++ objects/riinc.c	2007-12-17 18:40:55.000000000 +0100
-@@ -165,7 +165,7 @@
+--- objects/riinc.c.orig	2015-06-23 18:03:50 UTC
++++ objects/riinc.c
+@@ -184,7 +184,7 @@ ay_riinc_setpropcb(Tcl_Interp *interp, i
   char *n1 = "RiIncAttrData";
   Tcl_Obj *to = NULL, *toa = NULL, *ton = NULL;
   ay_riinc_object *riinc = NULL;
 - char *result = NULL;
 + const char *result;
  
-   if(!o)
+   if(!interp || !o)
      return AY_ENULL;

@@ -3,12 +3,13 @@
 
 PORTNAME=	yabb
 PORTVERSION=	2.6.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.yabbforum.com/downloads/release/
 DISTNAME=	YaBB_${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	The original free open-source forum written in Perl
+COMMENT=	Original free open-source forum written in Perl
 
 LICENSE=	YABB_PUBLIC_LICENCE
 LICENSE_NAME=	YABB PUBLIC LICENCE
@@ -17,14 +18,16 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
 
-NO_PACKAGE=	complicated (de)installation paradigm
-USES=		perl5 zip
+USES=		perl5 shebangfix zip
 USE_PERL5=	run
 NO_BUILD=	yes
+NO_ARCH=	yes
 WWWDOCROOT?=	www
 YABBSUBDIR?=	yabb
 YABBDIR?=	${WWWDOCROOT}/${YABBSUBDIR}
-PLIST_SUB=	YABBDIR=${YABBDIR}
+PLIST_SUB=	YABBDIR=${YABBDIR} \
+		WWWOWN=${WWWOWN} \
+		WWWGRP=${WWWGRP}
 DIR=		${PREFIX}/${YABBDIR}
 WDIR=		${WRKSRC}/public_html/yabbfiles
 WCGI=		${WRKSRC}/cgi-bin/yabb2
@@ -40,38 +43,29 @@ ISOFILES=	Admin/NewSettings.pm \
 PERLFILES=	AdminIndex.pl BoardConvert.pl Convert.pl \
 		Convert2x.pl Setup.pl Sources/SpellChecker.pl YaBB.pl
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	@${RM} -rf ${WCGI}/Convert ${WCGI}/Modules ${WCGI}/FixFile.pl
+
+do-patch:
+.for _I in ${PERLFILES}
+	@${SED} -i '' -e '1s|/usr/bin/perl|${perl_CMD}|' ${WCGI}/${_I}
+.endfor
+
+post-patch:
 	@${CHMOD} -R a=,u+rwX ${WCGI}/*
 	@${CHMOD} a=rx ${WCGI}/AdminIndex.pl ${WCGI}/Setup.pl ${WCGI}/YaBB.pl
 	@${CHMOD} -R a-w ${WCGI}/Admin ${WCGI}/Languages ${WCGI}/Sources
 	@${CHMOD} -R a=rX ${WDIR}/*
 	@${CHMOD} -R u+w ${WDIR}/Attachments ${WDIR}/Templates
 
-do-patch:
-.for _I in ${PERLFILES}
-	@${SED} -i.tmp -e 's|/usr/bin/perl|/usr/local/bin/perl|' ${WCGI}/${_I} && \
-	${RM} -f ${_I}.tmp
-.endfor
-
 do-install:
-	@${INSTALL} -d ${STAGEDIR}${DIR}
+	${INSTALL} -d ${STAGEDIR}${DIR}
 	@cd ${WCGI} && ${COPYTREE_SHARE} . ${STAGEDIR}${DIR}/
 	@cd ${WDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${DIR}/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${DIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DIR}' \
-		>>${TMPPLIST}
 	@${CHMOD} a=rx ${STAGEDIR}${DIR}
-	@${ECHO_CMD} '@exec ${CHMOD} a=rx ${DIR}' >>${TMPPLIST}
-	@${CP} -fpR ${FILESDIR}/checksum.sha256 ${STAGEDIR}${DIR}/
-
-pre-clean:
-	@${CHMOD} -Rf +rwX ${WRKDIR}/* 2>/dev/null || true
 
 # Maintainer section
 # The result goest to ISOFILES
 #grep -l 8859 `find yabb -type f`
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

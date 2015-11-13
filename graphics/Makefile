@@ -39,6 +39,7 @@
     SUBDIR += aeskulap
     SUBDIR += agave
     SUBDIR += agg
+    SUBDIR += alembic
     SUBDIR += alpng
     SUBDIR += amide
     SUBDIR += ampasACES-container
@@ -77,7 +78,6 @@
     SUBDIR += cairo-reference
     SUBDIR += cairomm
     SUBDIR += cal3d
-    SUBDIR += cal3d-devel
     SUBDIR += camera
     SUBDIR += camerakit
     SUBDIR += cbrpager
@@ -114,6 +114,7 @@
     SUBDIR += darktable
     SUBDIR += dataplot
     SUBDIR += dc20pack
+    SUBDIR += dcp2icc
     SUBDIR += dcraw
     SUBDIR += dcraw-m
     SUBDIR += deegree-csw
@@ -132,6 +133,7 @@
     SUBDIR += digikam-kde4-l10n
     SUBDIR += ditaa
     SUBDIR += djview4
+    SUBDIR += djview4-qt4
     SUBDIR += djvulibre
     SUBDIR += dmtx-utils
     SUBDIR += dri
@@ -141,6 +143,7 @@
     SUBDIR += easypaint
     SUBDIR += edje_viewer
     SUBDIR += electrix
+    SUBDIR += embree
     SUBDIR += enblend
     SUBDIR += entangle
     SUBDIR += eog
@@ -148,7 +151,6 @@
     SUBDIR += eom
     SUBDIR += eos-movrec
     SUBDIR += epdfview
-    SUBDIR += epeg
     SUBDIR += epix
     SUBDIR += eps2png
     SUBDIR += epstool
@@ -214,7 +216,6 @@
     SUBDIR += gcolor2
     SUBDIR += gd
     SUBDIR += gdal
-    SUBDIR += gdal-grass
     SUBDIR += gdchart
     SUBDIR += gdk-pixbuf
     SUBDIR += gdk-pixbuf2
@@ -572,6 +573,7 @@
     SUBDIR += luminance
     SUBDIR += luminance-qt5
     SUBDIR += luxrender
+    SUBDIR += luxrender14
     SUBDIR += mahotas
     SUBDIR += maim
     SUBDIR += makehuman
@@ -601,6 +603,7 @@
     SUBDIR += nip2
     SUBDIR += nomacs
     SUBDIR += npretty
+    SUBDIR += nurbs++
     SUBDIR += nvidia-texture-tools
     SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
@@ -770,7 +773,6 @@
     SUBDIR += php56-gd
     SUBDIR += phplot
     SUBDIR += picpuz
-    SUBDIR += picviz
     SUBDIR += piddle
     SUBDIR += pikopixel
     SUBDIR += pinpoint
@@ -833,6 +835,7 @@
     SUBDIR += py-gimp
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
+    SUBDIR += py-gphoto2
     SUBDIR += py-graph
     SUBDIR += py-graph-core
     SUBDIR += py-graph-dot
@@ -968,6 +971,7 @@
     SUBDIR += sdump
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
+    SUBDIR += seexpr
     SUBDIR += seom
     SUBDIR += separate
     SUBDIR += seq2gif

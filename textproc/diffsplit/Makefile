@@ -19,10 +19,10 @@ USES=		shebangfix perl5
 SHEBANG_FILES=	diffsplit
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/diffsplit ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/diffsplit ${WRKSRC}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/diffsplit ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/diffsplit ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -96,7 +96,6 @@ fp-freebsd-ws-*		security/f-prot		Free for personal users on personal workstatio
 fuse-emulator-roms*	emulators/fuse-roms	No explicit permission to redistribute
 Opus-22.rom		emulators/fuse-roms	No explicit permission to redistribute
 freefonts-*		x11-fonts/freefonts	License prohibits redistribution; see individual .license files
-freqship/*		sysutils/freqsdwn	License agreement is required to download
 fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo site is allowed to distribute the music
 fvcom/sourcecode1.tar.gz	science/fvcom	Requires (free) registration
 fvcom/sourcecode1.tar.gz	science/fvcom-mpi	Requires (free) registration
@@ -171,7 +170,6 @@ nero2_linux_*		games/linux-nerogame	Freeware, but license terms are unclear
 NeroDigitalAudio.zip	audio/linux-neroaaccodec Redistribution forbidden
 nerolinux-*		sysutils/linux-nero	Must be downloaded from their website and a serial number must be bought
 NetComponents-*		java/netcomponents	No redistribution except as part of a substantially different product
-ningpo_demo*		games/linux-ningpo-demo	Redistribution is limited, see license
 nntpcache-*		news/nntpcache		Free for individuals and non-military, non-profit organisations only
 nttcp-*			benchmarks/nttcp	No commercial use
 nwresources*.tar.gz	games/nwndata		Distribution not allowed

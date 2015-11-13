@@ -49,5 +49,5 @@ CONFLICTS_INSTALL=	ucl
 
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} check
-	
+
 .include <bsd.port.mk>

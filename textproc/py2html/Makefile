@@ -13,7 +13,6 @@ COMMENT=	Python Highlighter for HTML
 USES=		python:2 shebangfix
 USE_PYTHON=	distutils autoplist
 
-python_OLD_CMD=	/usr/bin/env python
 SHEBANG_FILES=	py2html
 
 .include <bsd.port.mk>

@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-11-26
 USES=		gmake tcl tar:tgz
 USE_XORG=	x11 xinerama
 MAKE_ARGS=	PREFIX="${PREFIX}" \

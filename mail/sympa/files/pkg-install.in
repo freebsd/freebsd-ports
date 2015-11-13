@@ -2,12 +2,24 @@
 # $FreeBSD$
 #
 
-[ "$2" = "POST_INSTALL" ] || exit 0
-
-for conf in sympa.conf wwsympa.conf
-do	[ ! -f ${PKG_PREFIX}/etc/${conf} ] && \
-	 cp -p ${PKG_PREFIX}/etc/${conf}.sample ${PKG_PREFIX}/etc/${conf} && \
-	 chmod u+w ${PKG_PREFIX}/etc/${conf}
-done
+if [ "$2" = "POST_INSTALL" ]; then
+	if [ ! -f %%ETCDIR%%/sympa.conf -o ! -f %%ETCDIR%%/data_structure.version ]; then
+		cp -p %%ETCDIR%%/sympa.conf.sample %%ETCDIR%%/sympa.conf
+		chmod u+w %%ETCDIR%%/sympa.conf
+	else
+		if [ $(tail -1 %%ETCDIR%%/data_structure.version | cut -d. -f3) -lt 2 ]; then
+			echo "It seems you are upgrading from version <6.2 ($(cat %%ETCDIR%%/data_structure.version))"
+			echo "You'll have to read https://www.sympa.org/faq/upgrade-to-v6.2 and (at least) run:"
+			echo " # %%PREFIX%%/libexec/sympa/sympa.pl --upgrade_config_location"
+			echo " # %%PREFIX%%/libexec/sympa/sympa.pl --upgrade"
+			echo " # %%PREFIX%%/libexec/sympa/upgrade_bulk_spool.pl"
+			echo " # %%PREFIX%%/libexec/sympa/upgrade_send_spool.pl"
+			echo "to update your config files to the new layout"
+		else
+			echo "to upgrade, run:"
+			echo " # %%PREFIX%%/libexec/sympa/sympa.pl --upgrade"
+		fi
+	fi
+fi
 
 exit 0

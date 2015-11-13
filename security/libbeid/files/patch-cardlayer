@@ -1,21 +1,6 @@
---- cardcomm/pkcs11/src/cardlayer/cache.cpp.orig	2015-02-19 13:59:02 UTC
-+++ cardcomm/pkcs11/src/cardlayer/cache.cpp
-@@ -203,10 +203,8 @@ void CCache::DiskStoreFile(const std::st
- 		; // TODO: log
- 	else
- 	{
--		size_t tmpHeader = fwrite(&header, sizeof(tCacheHeader), 1, f);
--		tmpHeader = tmpHeader;	//avoid warning
--		size_t tmpData   = fwrite(oData.GetBytes(), 1, oData.Size(), f);
--		tmpData = tmpData;	//avoid warning
-+		(void)fwrite(&header, sizeof(tCacheHeader), 1, f);
-+		(void)fwrite(oData.GetBytes(), 1, oData.Size(), f);
- 		fclose(f);
- 	}
- }
---- cardcomm/pkcs11/src/cardlayer/card.cpp.orig	2015-02-19 13:59:02 UTC
+--- cardcomm/pkcs11/src/cardlayer/card.cpp.orig	2015-10-09 08:01:44 UTC
 +++ cardcomm/pkcs11/src/cardlayer/card.cpp
-@@ -301,7 +301,7 @@ tCacheInfo CCard::GetCacheInfo(const std
+@@ -160,7 +160,7 @@ tCacheInfo CCard::GetCacheInfo(const std
  {
  	// By default no caching, card must implement this method
  	// to allow certain files to be cached (in a certain way).

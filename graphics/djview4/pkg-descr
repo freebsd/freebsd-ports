@@ -1,4 +1,4 @@
-Standalone Djvu viewer and plugin based on the Qt4 toolkit. Uses djvulibre
+Standalone Djvu viewer and plugin based on the Qt toolkit. Uses djvulibre
 for rendering.
 
 WWW: http://djvu.sourceforge.net/

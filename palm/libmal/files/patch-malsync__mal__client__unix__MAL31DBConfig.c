@@ -5,7 +5,7 @@
  
  #include <MAL31DBConfig.h>
 -#if defined(DARWIN) || defined(__OpenBSD__)
-+#if defined(DARWIN) || defined(__OpenBSD__) || defined(__FreeBSD__)
++#if defined(DARWIN) || defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__DragonFly__)
  #include <stdlib.h>
  #else
  #include <malloc.h>

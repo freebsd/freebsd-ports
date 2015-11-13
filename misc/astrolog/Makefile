@@ -14,6 +14,8 @@ DISTFILES=	a541gsrc.tar.gz:dist ${EPHE} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astrology program for X11 and alpha-numeric terminals
 
+BROKEN=		unfetchable
+
 # Swiss Ephemeris GPLv2 licensed, see
 # http://www.astro.com/ftp/swisseph/LICENSE.TXT
 LICENSE=	GPLv2 # (or later)
@@ -46,11 +48,11 @@ MAKE_ARGS=	-DX11
 .endif
 
 post-extract:
-	${RM} ${WRKDIR}/swe[a-z]*
+	${RM} ${WRKSRC}/swe[a-z]*
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/astrolog
-	cd ${WRKDIR} && \
+	cd ${WRKSRC} && \
 		${INSTALL_DATA} fixstars.ast *.se1 ${STAGEDIR}${PREFIX}/lib/astrolog
 	cd ${WRKSRC}; \
 		${INSTALL_DATA} astrolog.dat ${STAGEDIR}${PREFIX}/lib/astrolog/astrolog.dat-dist

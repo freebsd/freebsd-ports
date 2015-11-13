@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s6
-PORTVERSION=	2.2.0.1
+PORTVERSION=	2.2.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -11,8 +11,8 @@ COMMENT=	skarnet.org supervision suite
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	skalibs>=2.3.6.1:${PORTSDIR}/devel/skalibs \
-		execline>=2.1.3.1:${PORTSDIR}/lang/execline
+BUILD_DEPENDS=	skalibs>=2.3.8.0:${PORTSDIR}/devel/skalibs \
+		execline>=2.1.4.2:${PORTSDIR}/lang/execline
 RUN_DEPENDS=	execlineb:${PORTSDIR}/lang/execline
 
 USES=		gmake

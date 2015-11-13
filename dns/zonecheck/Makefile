@@ -16,9 +16,10 @@ LICENSE_FILE=	${WRKSRC}/GPL
 
 RUN_DEPENDS=	rubygem-dnsruby>=1.47:${PORTSDIR}/dns/rubygem-dnsruby
 
-USES=	gmake tar:tgz
+USES=		gmake tar:tgz
 USE_RUBY=	yes
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -30,13 +31,9 @@ OPTIONS_SUB=
 
 CGI_DESC=	Install with CGI support
 
-.include <bsd.port.options.mk>
-
 ZONECHECK_TARGET=	common cli
 
-.if ${PORT_OPTIONS:MCGI}
-ZONECHECK_TARGET+=	cgi
-.endif
+CGI_VARS=	ZONECHECK_TARGET+=cgi
 
 do-install:
 	cd ${INSTALL_WRKSRC} && \
@@ -44,7 +41,7 @@ do-install:
 		-DETCDIST='-dist' -DRUBY="${RUBY}" -DPREFIX="${PREFIX}" \
 		-DWWWDIR="${PREFIX}/www/${PORTNAME}" -DCHROOT="${STAGEDIR}"
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 

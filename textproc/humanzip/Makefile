@@ -9,11 +9,14 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compresses text to human readable output
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTDOCS=	CHANGELOG README TODO
 PLIST_FILES=	bin/humanunzip bin/humanzip \
 		man/man1/humanunzip.1.gz man/man1/humanzip.1.gz
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -27,6 +30,8 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_MAN} humanzip.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1)
 	${LN} -sf humanzip.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/humanunzip.1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})

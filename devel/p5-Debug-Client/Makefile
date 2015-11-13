@@ -23,6 +23,7 @@ TEST_DEPENDS=	p5-File-HomeDir>=1:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-Test-Deep>=0.110:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Requires>=0.07:${PORTSDIR}/devel/p5-Test-Requires
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

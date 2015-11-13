@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP plugin to "refocus" images through FIR Wiener filtering
 
 LICENSE=	GPLv2

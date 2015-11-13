@@ -16,7 +16,7 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 USE_GNOME=	libxml2 libxslt
 USES=		pkgconfig
-CONFIGURE_ARGS=	--use-system-libraries	
+CONFIGURE_ARGS=	--use-system-libraries
 
 PLIST_FILES=	bin/nokogiri14
 

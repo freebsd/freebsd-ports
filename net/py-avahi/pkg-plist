@@ -1,6 +1,8 @@
 bin/avahi-bookmarks
 bin/avahi-discover
 lib/avahi/service-types.db
+@comment Installed by avahi-app
+@comment %%DATADIR%%/service-types
 %%PYTHON_SITELIBDIR%%/avahi/ServiceTypeDatabase.py
 %%PYTHON_SITELIBDIR%%/avahi/ServiceTypeDatabase.pyc
 %%PYTHON_SITELIBDIR%%/avahi/ServiceTypeDatabase.pyo

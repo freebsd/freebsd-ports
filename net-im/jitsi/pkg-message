@@ -1,10 +1,9 @@
 From the list of available audio codecs, deselect all except ``opus/48000''.
 From the list of available video codecs, deselect all except ``VP8''.
 
-You can make these changes via the interface of Jitsi:
-
-  -> Jitsi-Tools-Options-Audio-Encodings
-  -> Jitsi-Tools-Options-Video-Encodings
+These changes can be performed from the main menu of Jitsi:
+ * Tools > Options > Audio > Encodings
+ * Tools > Options > Video > Encodings
 
 It is recommended that all the participants of an audio/video call use the
 same codecs.

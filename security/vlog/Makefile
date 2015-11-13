@@ -10,6 +10,8 @@ MASTER_SITES=	http://inc2.com/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based real-time logfile viewer esp. useful for ipflog
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

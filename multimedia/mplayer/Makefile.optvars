@@ -1,7 +1,9 @@
-# Contains simple option variables that are used
-# before including bsd.port.options.mk
-# in Makefiles
+# $FreeBSD$
+#
+# Handling of variables using helpers
+# Include before bsd.port.(pre|options).mk
 
+# OPTIONs
 AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
 AALIB_CONFIGURE_OFF=	--disable-aa
 
@@ -44,6 +46,9 @@ GNUTLS_CONFIGURE_OFF=	--disable-gnutls
 GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
 GSM_CONFIGURE_OFF=	--disable-libgsm
 
+IPV6_CATEGORIES=	ipv6
+IPV6_CONFIGURE_OFF=	--disable-inet6
+
 JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 JACK_CONFIGURE_OFF=	--disable-jack
 
@@ -84,8 +89,15 @@ RTC_CONFIGURE_ENABLE=	rtc
 
 RTCPU_CONFIGURE_ON=	--enable-runtime-cpudetection
 
+RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
+RTMP_CONFIGURE_OFF=	--disable-librtmp
+
 SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
 SCHROEDINGER_CONFIGURE_OFF=	--disable-libschroedinger-lavc
+
+SDL_USE=		SDL=sdl
+SDL_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
+SDL_CONFIGURE_OFF=	--disable-sdl
 
 SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 SMB_CONFIGURE_OFF=	--disable-smb
@@ -98,6 +110,11 @@ THEORA_CONFIGURE_OFF=	--disable-theora
 
 TWOLAME_LIB_DEPENDS=	libtwolame.so:${PORTSDIR}/audio/twolame
 TWOLAME_CONFIGURE_OFF=	--disable-twolame
+
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+V4L_CONFIGURE_OFF=	--disable-tv-v4l1 --disable-tv-v4l2
+V4L_CONFIGURE_ON=	--enable-tv-v4l1 --enable-tv-v4l2 --extra-libs="-lv4l1 -lv4l2"
 
 VDPAU_LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=	--disable-vdpau

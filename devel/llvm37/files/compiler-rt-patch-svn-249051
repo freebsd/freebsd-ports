@@ -1,0 +1,18 @@
+------------------------------------------------------------------------
+r249051 | eugenis | 2015-10-01 18:27:28 +0000 (Thu, 01 Oct 2015) | 1 line
+
+[asan] Tweak gen_dynamic_list.py to work with both Py2 and Py3.
+------------------------------------------------------------------------
+Index: lib/sanitizer_common/scripts/gen_dynamic_list.py
+===================================================================
+--- tools/compiler-rt/lib/sanitizer_common/scripts/gen_dynamic_list.py	(revision 249050)
++++ tools/compiler-rt/lib/sanitizer_common/scripts/gen_dynamic_list.py	(revision 249051)
+@@ -100,7 +100,7 @@
+     print('global:')
+   result.sort()
+   for f in result:
+-    print('  ' + f.encode('utf-8') + ';')
++    print(u'  %s;' % f)
+   if args.version_list:
+     print('local:')
+     print('  *;')

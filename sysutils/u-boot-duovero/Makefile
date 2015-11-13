@@ -7,7 +7,7 @@ MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
 PKGNAMESUFFIX=	-duovero
 
 MAINTAINER=	ian@FreeBSD.org
-COMMENT=	Cross-build U-Boot loader for Duovero 
+COMMENT=	Cross-build U-Boot loader for Duovero
 
 LICENSE=	GPLv2
 

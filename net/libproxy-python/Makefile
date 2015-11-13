@@ -19,7 +19,7 @@ USES+=		python
 LIBPROXY_SLAVE=	python
 
 do-build:
-# empty	
+# empty
 
 post-build:
 	${PYTHON_CMD} -Qold ${PYTHON_LIBDIR}/compileall.py \

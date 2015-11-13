@@ -4,7 +4,7 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
@@ -31,7 +31,10 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--mandir=${PREFIX}/${MPIDIR}/man \
 			--program-prefix= \
 			--with-hwloc=${LOCALBASE} \
-			--with-libltdl=${LOCALBASE}
+			--with-libltdl=${LOCALBASE} \
+			--enable-mpi-fortran=usempi \
+			ompi_cv_fortran_ignore_tkr_data=0
+
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi

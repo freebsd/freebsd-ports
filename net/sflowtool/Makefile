@@ -2,15 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	sflowtool
-PORTVERSION=	3.32
+PORTVERSION=	3.37
 CATEGORIES=	net
-MASTER_SITES=	http://www.inmon.com/bin/
+MASTER_SITES=	GH
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	sFlow capture and sFlow-to-NetFlow conversion tool
 
+USES=		autoreconf
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sflow
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	08a16d3
 
 PLIST_FILES=	bin/sflowtool
 PORTDOCS=	README
@@ -21,8 +27,8 @@ PORTEXAMPLES=	README ipTopTalkers ipTrafficMatrix sflowRRDChart.cgi \
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/scripts/|} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/scripts/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

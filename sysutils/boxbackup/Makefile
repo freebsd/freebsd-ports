@@ -15,11 +15,15 @@ LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE-DUAL.txt
 
-USES=		perl5 tar:tgz
+USES=		execinfo perl5 tar:tgz
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf aclocal autoheader
 ACLOCAL_ARGS+=	-I ${WRKSRC}/infrastructure/m4
+
+.if exists(/usr/lib/libexecinfo.so)
+LDFLAGS+=	-lexecinfo
+.endif
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -38,15 +42,6 @@ SERVER_DESC=	Install the bbstored server
 OPTIONS_DEFAULT=CLIENT SERVER
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1000000
-USES+=		execinfo
-LDFLAGS+=	-lexecinfo
-.endif
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000000 && ${OSVERSION} > 900000
-USE_GCC=	yes
-.endif
 
 .if ${PORT_OPTIONS:MREADLINE}
 CONFIGURE_ARGS+=--enable-gnu-readline

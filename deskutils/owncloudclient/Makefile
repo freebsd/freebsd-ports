@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloudclient
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify \
 		libqt5keychain.so:${PORTSDIR}/security/qtkeychain-qt5
 
-USES=		cmake:outsource compiler:c++11-lib gmake pkgconfig tar:xz
+USES=		cmake:outsource compiler:c++11-lib gmake iconv pkgconfig tar:xz
 USE_QT5=	buildtools_build concurrent core dbus gui linguist_build network \
 		qmake_build webkit xml
 USE_OPENSSL=	yes
@@ -27,11 +27,13 @@ INSTALLS_ICONS=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=		DEBUG DOCS
 
 DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 DOCS_USE=		tex=dvipsk:build,latex:build
 DOCS_CMAKE_ON=		-DWITH_DOC:BOOL=ON
+
+DEBUG_CMAKE_ON=		-DCMAKE_BUILD_TYPE:STRING=Debug
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 

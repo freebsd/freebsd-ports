@@ -12,6 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Functions For Astromical Calendars
 
+LICENSE=	ART20
+
 BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set
 LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
@@ -19,10 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 USE_PERL5=	configure
-USES=		gmake perl5
-
-post-configure:
-	@${REINPLACE_CMD} -e '/^INC = / s|$$| -I${LOCALBASE}/include|' ${WRKSRC}/Makefile
+USES=		gmake localbase perl5
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DateTime/Astro/Astro.so

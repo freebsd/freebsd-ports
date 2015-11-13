@@ -18,38 +18,35 @@ USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 PKGMESSAGE=	${WRKSRC}/../license.txt
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 ANT?=		${LOCALBASE}/bin/ant
 ANT_PARAMS+=	-Dlib.dir=${STAGEDIR}${JAVAJARDIR} -Djavadoc.destdir=docs -Dversion=${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}/java
 PLIST_SUB+=	PORTNAME="${PORTNAME}" PORTVERSION="${PORTVERSION}"
 
-.include <bsd.port.options.mk>
+PORTDOCS=	*
 
-.if empty(PORT_OPTIONS:MDOCS)
-ANT_TARGET=	jar
-.else
-ANT_TARGET=	javadocs jar
-PORTDOCS+=	java
-.endif
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+DOCS_VARS=	DOCS_ANT_TARGET=javadocs
 
 do-build:
 	(cd ${WRKSRC} && \
-		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT} ${ANT_TARGET} ${ANT_PARAMS})
+		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT} jar ${DOCS_ANT_TARGET} ${ANT_PARAMS})
 
 do-install:
 	(cd ${WRKSRC} && ${ANT} install ${ANT_PARAMS})
-	${INSTALL} -d -o root -g wheel -m 0755 ${STAGEDIR}${EXAMPLESDIR}/java
+
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/java
 	${INSTALL_DATA} ${WRKSRC}/recThread.java ${STAGEDIR}${EXAMPLESDIR}/java
 	${INSTALL_DATA} ${WRKSRC}/Flooder.java ${STAGEDIR}${EXAMPLESDIR}/java
 	${INSTALL_DATA} ${WRKSRC}/User.java ${STAGEDIR}${EXAMPLESDIR}/java
-	${INSTALL} -d -o root -g wheel -m 0755 ${STAGEDIR}${DOCSDIR}/java
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/java
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}/java
-	${INSTALL} -d -o root -g wheel -m 0755 ${STAGEDIR}${DOCSDIR}/java/html
-	${INSTALL} -d -o root -g wheel -m 0755 ${STAGEDIR}${DOCSDIR}/java/html/spread
-	${INSTALL} -d -o root -g wheel -m 0755 ${STAGEDIR}${DOCSDIR}/java/html/spread/class-use
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/java/html/spread/class-use
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR}/java/html
 	${INSTALL_DATA} ${WRKSRC}/docs/stylesheet.css ${STAGEDIR}${DOCSDIR}/java/html
 	${INSTALL_DATA} ${WRKSRC}/docs/spread/*.html ${STAGEDIR}${DOCSDIR}/java/html/spread

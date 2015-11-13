@@ -1,0 +1,7 @@
+# in rc.conf:
+spawn_fcgi_enable="YES"
+spawn_fcgi_app="%%PREFIX%%/libexec/sympa/wwsympa.fcgi"
+spawn_fcgi_bindsocket="/var/run/sympa/wwsympa.socket"
+spawn_fcgi_bindsocket_mode="0777"
+spawn_fcgi_username="%%USERS%%"
+spawn_fcgi_groupname"%%GROUPS%%"

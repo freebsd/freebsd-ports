@@ -8,7 +8,7 @@ CFLAGS += -DTRANS -DMSG_STYLE -DINTERNAL_KYUREKI_TBL -D_T_SEARCH_DEFPATHS=\"${PR
 LDLIBS = -lm #-ltermcap
 
 HFILES = cdefs.h chu68k.h cmsdos.h cunix.h cwin32.h extern.h
-        
+
 OBJST1 = birthday.o config.o date.o event.o getfile.o \
   getsb.o history.o kansi.o kyureki.o \
   kyusei.o list.o machine.o main.o misc.o
@@ -34,7 +34,7 @@ install: today calendar dayinfo
 
 calendar: $(OBJS_CAL)
 	$(CC) $(OBJS_CAL) $(LDLIBS) -o $@
-       
+
 today: $(OBJS_TDY)
 	$(CC) $(OBJS_TDY) $(LDLIBS) -o $@
 

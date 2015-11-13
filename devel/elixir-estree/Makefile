@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	elixir-estree
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	JavaScript AST to JavaScript code generator in Elixir 
+COMMENT=	JavaScript AST to JavaScript code generator in Elixir
 
 LICENSE=	MIT
 

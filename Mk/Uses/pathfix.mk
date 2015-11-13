@@ -17,10 +17,11 @@ IGNORE=	USES=pathfix does not require args
 .endif
 
 PATHFIX_MAKEFILEIN?=	Makefile.in
+PATHFIX_WRKSRC?=	${WRKSRC}
 
 _USES_patch+=	190:pathfix
 pathfix:
-	@${FIND} ${WRKSRC} -name "${PATHFIX_MAKEFILEIN}" -type f | ${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} ${PATHFIX_WRKSRC} -name "${PATHFIX_MAKEFILEIN}" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/locale|(prefix)/share/locale|g ; \
 		s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[(]LIBDIR[)]/pkgconfig|(PREFIX)/libdata/pkgconfig|g ; \

@@ -70,13 +70,13 @@ post-extract:
 
 pre-install:
 .for f in ${AO_PACKS}
-	@cd ${WRKSRC} && ${SED} -e 's|%%GAMEDIR%%|${f}|' wrapper > alephone-${f}
+	@cd ${WRKDIR} && ${SED} -e 's|%%GAMEDIR%%|${f}|' wrapper > alephone-${f}
 .endfor
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in ${AO_PACKS}
-	${INSTALL_SCRIPT} ${WRKSRC}/alephone-${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/alephone-${f} ${STAGEDIR}${PREFIX}/bin
 	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 

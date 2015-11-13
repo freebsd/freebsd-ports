@@ -1,0 +1,127 @@
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/AVCHD_Handler.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/AVCHD_Handler.cpp
+@@ -7,6 +7,8 @@
+ // of the Adobe license agreement accompanying it.
+ // =================================================================================================
+ 
++#include <cstdlib>
++
+ #include "AVCHD_Handler.hpp"
+ 
+ #include "MD5.h"
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/P2_Handler.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/P2_Handler.cpp
+@@ -7,6 +7,8 @@
+ // of the Adobe license agreement accompanying it.
+ // =================================================================================================
+ 
++#include <cstdlib>
++
+ #include "P2_Handler.hpp"
+ 
+ #include "MD5.h"
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/SonyHDV_Handler.cpp	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/SonyHDV_Handler.cpp
+@@ -7,6 +7,8 @@
+ // of the Adobe license agreement accompanying it.
+ // =================================================================================================
+ 
++#include <cstdlib>
++
+ #include "SonyHDV_Handler.hpp"
+ 
+ #include "MD5.h"
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/XDCAMEX_Handler.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/XDCAMEX_Handler.cpp
+@@ -7,6 +7,8 @@
+ // of the Adobe license agreement accompanying it.
+ // =================================================================================================
+ 
++#include <cstdlib>
++
+ #include "XDCAMEX_Handler.hpp"
+ #include "XDCAM_Support.hpp"
+ #include "MD5.h"
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/XDCAM_Handler.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/XDCAM_Handler.cpp
+@@ -7,6 +7,8 @@
+ // of the Adobe license agreement accompanying it.
+ // =================================================================================================
+ 
++#include <cstdlib>
++
+ #include "XDCAM_Handler.hpp"
+ #include "XDCAM_Support.hpp"
+ #include "MD5.h"
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/IPTC_Support.hpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/IPTC_Support.hpp
+@@ -12,6 +12,7 @@
+ 
+ #include "XMP_Environment.h"	// ! This must be the first include.
+ 
++#include <cstdlib>
+ #include <map>
+ 
+ #include "XMP_Const.h"
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/PSIR_FileWriter.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/PSIR_FileWriter.cpp
+@@ -10,6 +10,7 @@
+ #include "PSIR_Support.hpp"
+ #include "EndianUtils.hpp"
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ // =================================================================================================
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/PSIR_MemoryReader.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/PSIR_MemoryReader.cpp
+@@ -10,6 +10,7 @@
+ #include "PSIR_Support.hpp"
+ #include "EndianUtils.hpp"
+ 
++#include <stdlib.h>
+ #include <string.h>
+ 
+ // =================================================================================================
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/PSIR_Support.hpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/PSIR_Support.hpp
+@@ -12,6 +12,7 @@
+ 
+ #include "XMP_Environment.h"	// ! This must be the first include.
+ 
++#include <cstdlib>
+ #include <map>
+ 
+ #include "XMP_Const.h"
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/RIFF_Support.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/RIFF_Support.cpp
+@@ -7,6 +7,8 @@
+ // of the Adobe license agreement accompanying it.
+ // =================================================================================================
+ 
++#include <cstdlib>
++
+ #include "RIFF_Support.hpp"
+ 
+ #if XMP_WinBuild
+--- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/ReconcileIPTC.cpp.orig	2008-10-06 07:18:56 UTC
++++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FormatSupport/ReconcileIPTC.cpp
+@@ -12,6 +12,7 @@
+ #include "Reconcile_Impl.hpp"
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #if XMP_WinBuild
+ 	#pragma warning ( disable : 4800 )	// forcing value to bool 'true' or 'false' (performance warning)
+--- dcp2icc.src/dcp2icc.cpp.orig	2009-02-09 19:27:41 UTC
++++ dcp2icc.src/dcp2icc.cpp
+@@ -1,7 +1,7 @@
+ #include <iostream>
+ #include <icc34.h>
+ #include <lcms.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include "dng_camera_profile.h"
+ #include "dng_file_stream.h"

@@ -1,0 +1,12 @@
+The ivykis library is a thin, portable wrapper around OS-provided
+mechanisms such as epoll(4), kqueue(2), poll(2) and select(2). It was
+mainly designed for building high-performance network applications,
+but can be used in any event-driver application that uses pollable
+file descriptors as its event sources.
+
+Programs written to the ivykis API are generally single-threaded (or
+use only a small number of threads), and never block on I/O. All
+input and output is done in a nonblocking fashion, with I/O readiness
+notification delivered via callback functions.
+
+WWW: https://github.com/buytenh/ivykis

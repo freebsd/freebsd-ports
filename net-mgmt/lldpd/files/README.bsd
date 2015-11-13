@@ -1,3 +1,25 @@
+# Permissions
+
 A normal user has to be member of the _lldpd group in order to run lldpcli.
 
--- Mathieu Simon <freebsd@simweb.ch>, Tue, 10 Dec 2014 13:40:00 +01:00
+## Notes on lldpd_flags
+
+Though lldpd_flags is not required to launch lldpd, remember that without 
+a specified "-I" option lldpd will be listening on _all_ physical interfaces.
+
+Short examples:
+
+  * Listen only on em0 and enable CDP:
+	lldpd_flags="-I em0 -c"
+  * Listen on all interfaces, except em0:
+	lldpd_flags="-I *,!em0"
+
+A whitelisted interface beats a blacklisted interface which beats a simple
+matched interface. See lldpd(8), which contains the complete documentation.
+
+## Compatibility
+
+This port should work equally well on both FreeBSD and DragonFly BSD, though
+the later might be a bit less regularly tested.
+
+-- Mathieu Simon <freebsd@simweb.ch>, Tue, 06 Oct 2015 13:20:00 +02:00

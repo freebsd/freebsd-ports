@@ -3,4 +3,4 @@ know better as the file(1) command.  The file(1) command identifies
 the type of a file using, among other tests, a test for whether the
 file begins with a certain magic number.
 
-WWW: http://rubygems.org/gems/ruby-filemagic
+WWW: https://github.com/blackwinter/ruby-filemagic

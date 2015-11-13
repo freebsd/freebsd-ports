@@ -12,6 +12,8 @@ DISTNAME=	glpi-datainjection-1.7.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This glpi plugin allows data import into GLPI using CSV files
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	glpi>=0.72:${PORTSDIR}/www/glpi
 
 WRKSRC=		${WRKDIR}/datainjection

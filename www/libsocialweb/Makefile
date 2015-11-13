@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-vala-bindings
 # review if we want all the services enabled, because of not completely
 # safe public API security wise?
-CONFIGURE_ARGS+=--enable-all-services 
+CONFIGURE_ARGS+=--enable-all-services
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

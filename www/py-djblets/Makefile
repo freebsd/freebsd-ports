@@ -11,6 +11,9 @@ DISTNAME=	Djblets-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of useful classes and functions for Django
 
+DEPRECATED=	Django 1.4 extended support ended on 2015-10-01
+EXPIRATION_DATE=	2015-12-09
+
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>=1.4.3:${PORTSDIR}/www/py-django14 \
@@ -25,7 +28,6 @@ USES=		python:2 shebangfix
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	Djblets
 
-python_OLD_CMD=	/usr/bin/env python
 SHEBANG_FILES=	contrib/internal/build-media.py
 
 .include <bsd.port.mk>

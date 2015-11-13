@@ -12,6 +12,7 @@ COMMENT=	Crossassembler for 6502, 65c02 and 65816 processors
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not fetch
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=	gmake tar:bzip2

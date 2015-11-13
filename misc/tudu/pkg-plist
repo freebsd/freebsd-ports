@@ -1,0 +1,5 @@
+bin/tudu
+@sample etc/tudurc.sample
+man/man1/tudu.1.gz
+%%DATADIR%%/tudu.dtd
+%%DATADIR%%/welcome.xml

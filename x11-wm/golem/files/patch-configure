@@ -1,10 +1,12 @@
---- configure.orig	2006-03-02 03:59:55.000000000 +0900
-+++ configure	2011-08-13 07:46:25.000000000 +0900
-@@ -5669,6 +5669,7 @@
+--- configure.orig	2006-03-01 18:59:55 UTC
++++ configure
+@@ -5669,7 +5669,8 @@ test -n "$target_alias" &&
  COMPLIB_ARCH=CONFIG_GENERIC
  case "$target" in
  i386* | i486* | i686* ) COMPLIB_ARCH=CONFIG_X86;;
+-ppc* )          COMPLIB_ARCH=CONFIG_PPC;;
 +amd64* )          COMPLIB_ARCH=CONFIG_X86_64;;
- ppc* )          COMPLIB_ARCH=CONFIG_PPC;;
++powerpc* )          COMPLIB_ARCH=CONFIG_PPC;;
  esac
+ 
  

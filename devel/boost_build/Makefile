@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME:S/_/-/g}-${PORTVERSION:S/.m/-m/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible cross-platform build tool suite
 
+LICENSE=	BSL
+
 RUN_DEPENDS=	${LOCALBASE}/bin/bjam:${PORTSDIR}/devel/boost-jam
 
 USES=		tar:bzip2
@@ -38,8 +40,12 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/doc/boost.png
 	(cd ${WRKSRC}/doc && ${RM} -rf Jamfile.v2 project-root.jam \
 		html/userman_HTML.manifest src)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} .  ${STAGEDIR}${DOCSDIR})
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 

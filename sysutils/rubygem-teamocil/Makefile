@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	teamocil
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helps you to set up window and splits layouts for tmux
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 NO_ARCH=	yes
 USE_RUBY=	yes

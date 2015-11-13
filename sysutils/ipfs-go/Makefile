@@ -24,6 +24,12 @@ USE_RC_SUBR=	${PORTNAME}
 
 STRIP=		# stripping can break go binaries
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-32bit
+.endif
+
 # Prepare for possible extra modules in future
 post-extract:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
@@ -38,4 +44,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/cmd/ipfs/ipfs ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

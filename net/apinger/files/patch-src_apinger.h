@@ -1,6 +1,6 @@
---- src/apinger.h.old	2008-07-10 22:38:08.000000000 +0200
-+++ src/apinger.h	2008-07-10 22:38:29.000000000 +0200
-@@ -119,7 +119,7 @@
+--- src/apinger.h.orig	2002-12-20 09:19:57 UTC
++++ src/apinger.h
+@@ -119,7 +119,7 @@ extern char *config_file;
  
  extern int icmp_sock;
  extern int icmp6_sock;

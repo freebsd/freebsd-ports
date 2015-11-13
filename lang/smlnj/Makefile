@@ -50,13 +50,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 # stable/N/sys/i386/include, r196045 (N=8) and r225736 (N=9).
 EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386_SIGNAL=\\\"freebsd-8-i386-signal.h\\\"
 EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386_IEEEFP=\\\"freebsd-8-i386-ieeefp.h\\\"
-.if (${OSVERSION} < 900000)
-EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386__TYPES=\\\"freebsd-8-i386-_types.h\\\"
-EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386_ENDIAN=\\\"freebsd-8-i386-endian.h\\\"
-.else
 EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386__TYPES=\\\"freebsd-9-i386-_types.h\\\"
 EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386_ENDIAN=\\\"freebsd-9-i386-endian.h\\\"
-.endif
 .else
 ONLY_FOR_ARCHS=	i386
 .endif
@@ -144,7 +139,7 @@ pre-fetch:
 # make symlinks to the dist files
 
 post-extract:
-	cd ${WRKDIR} && ${LN} -sf ${_DISTDIR}/* .
+	cd ${WRKSRC} && ${LN} -sf ${_DISTDIR}/* .
 
 # Configuring is done by uncommenting the appropriate #request
 # lines of config/targets. Dependency details are handled by
@@ -157,7 +152,7 @@ do-configure:
 .for t in ${MLTARGETS}
 	${ECHO_CMD} '/^#request[ 	]+${t}$$/s/^#//' >> "${WRKDIR}/.tmp.sed"
 .endfor
-	${SED} -i .default -E -f "${WRKDIR}/.tmp.sed" "${WRKDIR}/config/targets"
+	${SED} -i .default -E -f "${WRKDIR}/.tmp.sed" "${WRKSRC}/config/targets"
 .endif
 # Recompilation requires ml-lex and ml-yacc. All requested targets
 # will be built later using the recompiled core system after
@@ -167,7 +162,7 @@ do-configure:
 	  ${ECHO_CMD} "request	ml-lex" && \
 	  ${ECHO_CMD} "request	ml-lex-mllex-tool" && \
 	  ${ECHO_CMD} "request	src-smlnj" ) \
-	> "${WRKDIR}/config/targets.customized"
+	> "${WRKSRC}/config/targets.customized"
 .endif
 
 # The build target patches, builds, and installs the system within WRKDIR.
@@ -208,7 +203,7 @@ MLSOURCEPATCHES_CMD=	${TRUE}
 .endif
 
 do-build:
-	cd ${WRKDIR} && unset PWD && \
+	cd ${WRKSRC} && unset PWD && \
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
 	MLNORUNTIMECLEAN=yes \
 	MLRUNTIMEPATCHES=`${MLRUNTIMEPATCHES_CMD}` \
@@ -218,26 +213,26 @@ do-build:
 	CFLAGS='${CFLAGS}' AS='${AS}' EXTRA_DEFS='${EXTRA_DEFS}' \
 	./config/install.sh
 .if defined(ML_RECOMPILE)
-	-${RM} ${WRKDIR}/config/targets.customized
+	-${RM} ${WRKSRC}/config/targets.customized
 	@${ECHO} '(* Recompiling the core system: *)'
-	cd ${WRKDIR}/${RECOMPILEDIR} && ( \
+	cd ${WRKSRC}/${RECOMPILEDIR} && ( \
 	${ECHO_CMD} 'CM.autoload "$$smlnj/cmb.cm";' ; \
 	${ECHO_CMD} ${CMB_COMMAND} ; \
 	${ECHO_CMD} 'CMB.make ();' ) | \
 	../../bin/sml
 	@${ECHO} '(* Building the recompiled heap: *)'
-	cd ${WRKDIR}/${RECOMPILEDIR} && \
+	cd ${WRKSRC}/${RECOMPILEDIR} && \
 	./makeml
 	@${ECHO} '(* Removing old libs and heaps: *)'
-	cd ${WRKDIR}/${RECOMPILEDIR} && \
+	cd ${WRKSRC}/${RECOMPILEDIR} && \
 	${RM} -rf ../../lib && ${MKDIR} ../../lib && \
 	${FIND} ../../bin/.heap -name '*.${MLARCH}-bsd' \
 	\! -name 'sml.${MLARCH}-bsd' -delete -print
 	@${ECHO} '(* Installing the recompiled libs and heap: *)'
-	cd ${WRKDIR}/${RECOMPILEDIR} && \
+	cd ${WRKSRC}/${RECOMPILEDIR} && \
 	./installml
 	@${ECHO} '(* Building requested targets: *)'
-	cd ${WRKDIR} && unset PWD && \
+	cd ${WRKSRC} && unset PWD && \
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
 	MLNORUNTIMECLEAN=yes RECOMPILEDIR="${RECOMPILEDIR}" \
 	CFLAGS='${CFLAGS}' AS='${AS}' EXTRA_DEFS='${EXTRA_DEFS}' \
@@ -248,14 +243,14 @@ do-build:
 # then we have to remove them at several points during the
 # installation process. This is no longer necessary with FreeBSD 10
 # as it uses libarchive 3.x (via bsdtar), but earlier versions
-# don't ignore such resource files and hence WRKDIR and STAGEDIR
+# don't ignore such resource files and hence WRKSRC and STAGEDIR
 # are full of them. Once FreeBSD 9 will be out of service, all
 # lines in this Makefile can be removed which contain a pattern
 # for the prefix "._" of the resource files. Background information:
 # <https://github.com/libarchive/libarchive/wiki/TarExtendedAttributes#Apple_tar>
 
 post-build:
-	${FIND} ${WRKDIR} -type f -name '\._*' -delete
+	${FIND} ${WRKSRC} -type f -name '\._*' -delete
 
 # Nowadays PLIST has to be computed before installation. We do it in
 # "pre-install" because source extraction happens during "build".
@@ -278,7 +273,7 @@ MLPATCHPATHREGEX=	-E -e 's%(^|[^_])_([^_]|$$)%\1/\2%g' \
 pre-install:
 .if defined(ML_EVERYTHING)
 	@${ECHO} -n '(* Computing package list ...'
-	@${TAR} -tzf ${WRKDIR}/runtime.tgz | \
+	@${TAR} -tzf ${WRKSRC}/runtime.tgz | \
 	${GREP} -E -v '(^|/)\._.*' | \
 	${SED} -E -n -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/base/\1%p' \
 	> ${MLRUNTIMEPLIST}
@@ -293,7 +288,7 @@ pre-install:
 	${SED} ${MLPATCHPATHREGEX} | \
 	${SED} -E -e 's%^(do|extra)-patch-(base/.*)%${MLROOTRELATIVE}/\2.orig%' \
 	>> ${MLRUNTIMEPLIST}
-	@cd "${WRKDIR}" && ( \
+	@cd "${WRKSRC}" && ( \
 	( ${FIND} -s -d ${MLSRCDIRS} \! -type d | \
 	${AWK} '{ print "${MLROOTRELATIVE}/" $$0 }' ) ; \
 	( ${FIND} -s -d ${MLSRCDIRS} -type d -empty | \
@@ -338,7 +333,7 @@ MLSRCEXCLUDES+=	--exclude "${excl}"
 do-install:
 	${MKDIR} "${STAGEDIR}${MLROOT}"
 .if ! defined(ML_RECOMPILE)
-	cd ${WRKDIR} && unset PWD && \
+	cd ${WRKSRC} && unset PWD && \
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
 	STAGEDIR="${STAGEDIR}" MLLIB="${MLLIB}" \
 	INSTALLDIR="${STAGEDIR}${MLROOT}" \
@@ -346,16 +341,16 @@ do-install:
 	./config/install.sh
 .else
 	@${ECHO} '(* Rebuilding the recompiled libs: *)'
-	cd ${WRKDIR}/${RECOMPILEDIR} && ( \
+	cd ${WRKSRC}/${RECOMPILEDIR} && ( \
 	${ECHO_CMD} 'CM.autoload "$$smlnj/cmb.cm";' ; \
 	${ECHO_CMD} ${CMB_COMMAND} ; \
 	${ECHO_CMD} 'CMB.make ();' ) | \
 	../../bin/sml
 	@${ECHO} '(* Rebuilding the recompiled heap: *)'
-	cd ${WRKDIR}/${RECOMPILEDIR} && \
+	cd ${WRKSRC}/${RECOMPILEDIR} && \
 	./makeml
 	@${ECHO} '(* Installing into ${MLROOT}: *)'
-	cd ${WRKDIR} && unset PWD && \
+	cd ${WRKSRC} && unset PWD && \
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
 	STAGEDIR="${STAGEDIR}" MLLIB="${MLLIB}" \
 	INSTALLDIR="${STAGEDIR}${MLROOT}" RECOMPILEDIR="${RECOMPILEDIR}" \
@@ -366,8 +361,8 @@ do-install:
 	${FIND} ${STAGEDIR} -type f -name '\._*' -delete
 	@${ECHO} '(* Installing man pages. *)'
 .for mansect in 1 2 3 4 5 6 7 8 9
-	@[ ! -d ${WRKDIR}/doc/man/man${mansect} ] || \
-	{ cd ${WRKDIR}/doc/man/man${mansect} && ls *.${mansect} | \
+	@[ ! -d ${WRKSRC}/doc/man/man${mansect} ] || \
+	{ cd ${WRKSRC}/doc/man/man${mansect} && ls *.${mansect} | \
 	  ${XARGS} -J % \
 	    ${INSTALL_MAN} % ${STAGEDIR}${MANPREFIX}/man/man${mansect} ; }
 .endfor
@@ -378,9 +373,9 @@ do-install:
 	  "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}.so" )
 .if defined(ML_EVERYTHING)
 	@${ECHO} '(* Cleaning base/runtime: *)'
-	cd ${WRKDIR}/base/runtime/objs && ${MAKE_CMD} clean
+	cd ${WRKSRC}/base/runtime/objs && ${MAKE_CMD} clean
 	@${ECHO} -n '(* Installing sources into ${STAGEDIR}${MLROOT} ...'
-	@cd ${WRKDIR} && ${TAR} -cf - ${MLSRCEXCLUDES} ${MLSRCDIRS} | \
+	@cd ${WRKSRC} && ${TAR} -cf - ${MLSRCEXCLUDES} ${MLSRCDIRS} | \
 	${TAR} -xf - -C "${STAGEDIR}${MLROOT}"
 	@${ECHO} ' done. *)'
 .endif

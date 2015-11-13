@@ -7,13 +7,9 @@ bin/avahi-resolve
 bin/avahi-resolve-address
 bin/avahi-resolve-host-name
 bin/avahi-set-host-name
-@unexec if cmp -s %D/etc/avahi/avahi-daemon.conf %D/etc/avahi/avahi-daemon.conf.dist; then rm -f %D/etc/avahi/avahi-daemon.conf; fi
-etc/avahi/avahi-daemon.conf.dist
-@exec [ -f %B/avahi-daemon.conf ] || cp %B/%f %B/avahi-daemon.conf
+@sample etc/avahi/avahi-daemon.conf.sample
 etc/avahi/avahi-dnsconfd.action
-@unexec if cmp -s %D/etc/avahi/hosts %D/etc/avahi/hosts.dist; then rm -f %D/etc/avahi/hosts; fi
-etc/avahi/hosts.dist
-@exec [ -f %B/hosts ] || cp %B/%f %B/hosts
+@sample etc/avahi/hosts.sample
 etc/avahi/services/sftp-ssh.service
 etc/avahi/services/ssh.service
 etc/dbus-1/system.d/avahi-dbus.conf

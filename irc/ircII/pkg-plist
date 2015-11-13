@@ -573,6 +573,7 @@ man/man1/ircII.1.gz
 %%DATADIR%%/script/newaway
 %%DATADIR%%/script/newformat
 %%DATADIR%%/script/nicks
+%%DATADIR%%/script/nicksearch
 %%DATADIR%%/script/nocolour
 %%DATADIR%%/script/oldping
 %%DATADIR%%/script/oper

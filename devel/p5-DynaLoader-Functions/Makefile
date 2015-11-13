@@ -17,6 +17,7 @@ LICENSE_COMB=	dual
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
+NO_ARCH=	yes
 USE_PERL5=	modbuild
 USES=		perl5
 

@@ -1,0 +1,20 @@
+The YubiKey Personalization Tool is a Qt based Cross-Platform utility designed
+to facilitate re-configuration of YubiKeys on Windows, Linux and Mac platforms.
+The tool provides a same simple step-by-step approach to make configuration of
+YubiKeys easy to follow and understand, while still being powerful enough to
+exploit all functionality both of the YubiKey 1 and YubiKey 2 generation of
+keys. The tool provides the same functionality and user interface on Windows,
+Linux and Mac platforms.
+
+The Cross-Platform YubiKey Personalization Tool provides the following main
+functions:
+  - Programming the YubiKey in "Yubico OTP" mode;
+  - Programming the YubiKey in "OATH-HOTP" mode;
+  - Programming the YubiKey in "Static Password" mode;
+  - Programming the YubiKey in "Challenge-Response" mode;
+  - Programming the NDEF feature of the YubiKey NEO;
+  - Testing the challenge-response functionality of a YubiKey;
+  - Deleting the configuration of a YubiKey;
+  - Checking type and firmware version of the YubiKey.
+
+WWW: https://github.com/Yubico/yubikey-personalization-gui

@@ -20,10 +20,8 @@ man/man1/makeivs-ng.1.gz
 man/man1/packetforge-ng.1.gz
 man/man1/wpaclean.1.gz
 man/man8/airbase-ng.8.gz
-man/man8/airdriver-ng.8.gz
 man/man8/aireplay-ng.8.gz
 man/man8/airmon-ng.8.gz
-man/man8/airmon-zc.8.gz
 man/man8/airodump-ng-oui-update.8.gz
 man/man8/airodump-ng.8.gz
 man/man8/airserv-ng.8.gz

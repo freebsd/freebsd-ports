@@ -1,11 +1,11 @@
---- BlockOut/GLApp/GLFont.cpp.orig	2009-08-06 15:16:50.000000000 +0700
-+++ BlockOut/GLApp/GLFont.cpp	2009-08-06 15:16:58.000000000 +0700
-@@ -3,7 +3,7 @@
+--- BlockOut/GLApp/GLFont.cpp.orig	2014-05-06 16:47:55.000000000 +0700
++++ BlockOut/GLApp/GLFont.cpp	2015-08-17 10:31:54.000000000 +0600
+@@ -2,7 +2,7 @@
+ // Simple 2D font
  // -----------------------------------------------
  #include "GLFont.h"
- #include <CImage.h>
 -#include <malloc.h>
 +#include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
- 
+ #undef LoadImage

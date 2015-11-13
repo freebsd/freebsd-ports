@@ -26,6 +26,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Kwalitee>=0:${PORTSDIR}/devel/p5-Test-Kwalitee \
 		p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

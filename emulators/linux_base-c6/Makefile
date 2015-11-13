@@ -6,9 +6,8 @@ PORTVERSION=	6.6
 PORTREVISION=	6
 CATEGORIES=	emulators linux
 MASTER_SITES=	CENTOS_LINUX CENTOS_LINUX_UPDATES
-MASTER_SITE_SUBDIR=	centos/${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/\
-			centos/${LINUX_DIST_VER}/updates/${LINUX_REPO_ARCH}/Packages/ \
-			${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/
+MASTER_SITE_SUBDIR=	${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/\
+			${LINUX_DIST_VER}/updates/${LINUX_REPO_ARCH}/Packages/
 
 PKGNAMEPREFIX=	linux_base-
 DISTFILES=	${PRE_BIN_DISTFILES} ${BIN_DISTFILES} ${SRC_DISTFILES}
@@ -181,17 +180,17 @@ ARCH=			i386
 
 pre-extract:
 	@for file in ${PRE_BIN_DISTFILES}; do \
-	    if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+	    if ! (cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
 	    then \
 	        exit 1; \
 	    fi; \
 	done
 	# now fix up broken permissions
 .	if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_BASE_PORT} == "c6_64"
-	@${CHMOD} -R u+rwX ${WRKDIR}/lib64 ${WRKDIR}/usr/lib64
+	@${CHMOD} -R u+rwX ${WRKSRC}/lib64 ${WRKSRC}/usr/lib64
 .	endif
-	@${CHMOD} -R u+rwX ${WRKDIR}/bin ${WRKDIR}/lib ${WRKDIR}/sbin ${WRKDIR}/usr/bin ${WRKDIR}/usr/lib ${WRKDIR}/usr/sbin
-	@${CHMOD} 400 ${WRKDIR}/etc/*shadow
+	@${CHMOD} -R u+rwX ${WRKSRC}/bin ${WRKSRC}/lib ${WRKSRC}/sbin ${WRKSRC}/usr/bin ${WRKSRC}/usr/lib ${WRKSRC}/usr/sbin
+	@${CHMOD} 400 ${WRKSRC}/etc/*shadow
 
 do-build:
 	@for D in ${REMOVE_DIRS}; do \
@@ -243,8 +242,8 @@ do-install:
 #
 # Do install without using linux rpm system
 #
-	@cd ${WRKSRC} && ${FIND} * ! -path "stage*" -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/{}" \;
-	@cd ${WRKSRC} && ${FIND} * ! -path "stage/*" ! -type d \
+	@cd ${WRKSRC} && ${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/{}" \;
+	@cd ${WRKSRC} && ${FIND} * ! -type d \
 		| ${CPIO} -pm -R root:wheel ${STAGEDIR}${PREFIX}
 
 	@${LN} -sf /var/tmp ${STAGEDIR}${PREFIX}/usr/tmp

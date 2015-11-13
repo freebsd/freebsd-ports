@@ -1,9 +1,2755 @@
 bin/stepmania
-lib/stepmania/GtkModule.so
-lib/stepmania/Packages/GameData.smzip
+lib/stepmania/Announcers/instructions.txt
+lib/stepmania/BGAnimations/flash/default.lua
+lib/stepmania/BGAnimations/instructions.txt
+lib/stepmania/BGAnimations/white flash/default.lua
+lib/stepmania/BGAnimations/white reverse flash/default.lua
+lib/stepmania/BGAnimations/yellow flash/default.lua
+lib/stepmania/BackgroundEffects/Centered.lua
+lib/stepmania/BackgroundEffects/Checkerboard1File2x2.lua
+lib/stepmania/BackgroundEffects/Checkerboard2File2x2.lua
+lib/stepmania/BackgroundEffects/Checkerboard2x2.lua
+lib/stepmania/BackgroundEffects/File1FlashOverlay.lua
+lib/stepmania/BackgroundEffects/File2Flash.lua
+lib/stepmania/BackgroundEffects/File2Normal.lua
+lib/stepmania/BackgroundEffects/Kaleidoscope2x2.lua
+lib/stepmania/BackgroundEffects/OverlayAdd.lua
+lib/stepmania/BackgroundEffects/SongBgWithMovieViz.lua
+lib/stepmania/BackgroundEffects/StretchNoLoop.lua
+lib/stepmania/BackgroundEffects/StretchNormal.lua
+lib/stepmania/BackgroundEffects/StretchNormalAlignLeft.lua
+lib/stepmania/BackgroundEffects/StretchNormalBlue.lua
+lib/stepmania/BackgroundEffects/StretchNormalGreen.lua
+lib/stepmania/BackgroundEffects/StretchNormalRed.lua
+lib/stepmania/BackgroundEffects/StretchPaused.lua
+lib/stepmania/BackgroundEffects/StretchRewind.lua
+lib/stepmania/BackgroundEffects/UpperLeft.lua
+lib/stepmania/BackgroundEffects/Visualization2File.lua
+lib/stepmania/BackgroundEffects/Visualization2FileFlash.lua
+lib/stepmania/BackgroundTransitions/CrossFade.xml
+lib/stepmania/BackgroundTransitions/CrossFade_Faster.xml
+lib/stepmania/BackgroundTransitions/CrossFade_Fastest.xml
+lib/stepmania/BackgroundTransitions/FadeCenterHorizontal.xml
+lib/stepmania/BackgroundTransitions/FadeCenterVertical.xml
+lib/stepmania/BackgroundTransitions/FadeDown.xml
+lib/stepmania/BackgroundTransitions/FadeLeft.xml
+lib/stepmania/BackgroundTransitions/FadeRight.xml
+lib/stepmania/BackgroundTransitions/FadeUp.xml
+lib/stepmania/BackgroundTransitions/SlideDown.xml
+lib/stepmania/BackgroundTransitions/SlideLeft.xml
+lib/stepmania/BackgroundTransitions/SlideRight.xml
+lib/stepmania/BackgroundTransitions/SlideUp.xml
+lib/stepmania/Characters/Instructions.txt
+lib/stepmania/Characters/default/character.ini
+lib/stepmania/Characters/shader.png
+lib/stepmania/Courses/Default/ChallengingRandom5-bg.png
+lib/stepmania/Courses/Default/ChallengingRandom5.crs
+lib/stepmania/Courses/Default/ChallengingRandom5.png
+lib/stepmania/Courses/Default/Jupiter.crs
+lib/stepmania/Courses/Default/Jupiter.png
+lib/stepmania/Courses/Default/MostPlayed_01-04.crs
+lib/stepmania/Courses/Default/MostPlayed_01-04.png
+lib/stepmania/Courses/Default/MostPlayed_05-08.crs
+lib/stepmania/Courses/Default/MostPlayed_05-08.png
+lib/stepmania/Courses/Default/MostPlayed_09-12.crs
+lib/stepmania/Courses/Default/MostPlayed_09-12.png
+lib/stepmania/Courses/Default/MostPlayed_13-16.crs
+lib/stepmania/Courses/Default/MostPlayed_13-16.png
+lib/stepmania/Courses/instructions.txt
+lib/stepmania/Data/AI.ini
+lib/stepmania/Data/AutoMappings/GamePad Pro USB.ini
+lib/stepmania/Data/NamesBlacklist.txt
+lib/stepmania/Data/RandomAttacks.txt
+lib/stepmania/Data/Shaders/GLSL/Cel.frag
+lib/stepmania/Data/Shaders/GLSL/Cel.vert
+lib/stepmania/Data/Shaders/GLSL/Color burn.frag
+lib/stepmania/Data/Shaders/GLSL/Color dodge.frag
+lib/stepmania/Data/Shaders/GLSL/Hard mix.frag
+lib/stepmania/Data/Shaders/GLSL/Overlay.frag
+lib/stepmania/Data/Shaders/GLSL/Screen.frag
+lib/stepmania/Data/Shaders/GLSL/Shell.frag
+lib/stepmania/Data/Shaders/GLSL/Shell.vert
+lib/stepmania/Data/Shaders/GLSL/Texture matrix scaling.vert
+lib/stepmania/Data/Shaders/GLSL/Unpremultiply.frag
+lib/stepmania/Data/Shaders/GLSL/Vivid light.frag
+lib/stepmania/Data/Shaders/GLSL/YUYV422.frag
+lib/stepmania/Data/Translations.xml
+lib/stepmania/Data/splash.png
+%%GTK2%%lib/stepmania/GtkModule.so
+lib/stepmania/NoteSkins/Para/default/Down Go Receptor.png
+lib/stepmania/NoteSkins/Para/default/Down Hold Body active.png
+lib/stepmania/NoteSkins/Para/default/Down Hold Body inactive.png
+lib/stepmania/NoteSkins/Para/default/Down Hold BottomCap active.png
+lib/stepmania/NoteSkins/Para/default/Down Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/Para/default/Down Hold Explosion 2x1.png
+lib/stepmania/NoteSkins/Para/default/Down Hold Head Active.png
+lib/stepmania/NoteSkins/Para/default/Down Hold Head Inactive.png
+lib/stepmania/NoteSkins/Para/default/Down KeypressBlock.png
+lib/stepmania/NoteSkins/Para/default/Down Receptor.lua
+lib/stepmania/NoteSkins/Para/default/Down Roll Body active.png
+lib/stepmania/NoteSkins/Para/default/Down Roll Body inactive.png
+lib/stepmania/NoteSkins/Para/default/Down Roll BottomCap active.png
+lib/stepmania/NoteSkins/Para/default/Down Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/Para/default/Down Tap Explosion Dim 4x1.png
+lib/stepmania/NoteSkins/Para/default/Down Tap Note.lua
+lib/stepmania/NoteSkins/Para/default/NoteSkin.lua
+lib/stepmania/NoteSkins/Para/default/_Down Tap Explosion Bright 2x2.png
+lib/stepmania/NoteSkins/Para/default/_down tap note 4x2.png
+lib/stepmania/NoteSkins/Para/default/metrics.ini
+lib/stepmania/NoteSkins/beat/default/Blue Go Receptor.png
+lib/stepmania/NoteSkins/beat/default/Blue Hold Body active.png
+lib/stepmania/NoteSkins/beat/default/Blue Hold Body inactive.png
+lib/stepmania/NoteSkins/beat/default/Blue Hold BottomCap active.png
+lib/stepmania/NoteSkins/beat/default/Blue Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/beat/default/Blue Tap Explosion Bright 9x1.png
+lib/stepmania/NoteSkins/beat/default/Blue Tap Explosion Dim 9x1.png
+lib/stepmania/NoteSkins/beat/default/Blue Tap Mine 1x1.png
+lib/stepmania/NoteSkins/beat/default/Blue Tap Note 1x1.png
+lib/stepmania/NoteSkins/beat/default/Common Tap Explosion Bright.redir
+lib/stepmania/NoteSkins/beat/default/Fallback Explosion.lua
+lib/stepmania/NoteSkins/beat/default/NoteSkin.lua
+lib/stepmania/NoteSkins/beat/default/Red Go Receptor.png
+lib/stepmania/NoteSkins/beat/default/Red Tap Explosion Bright 9x1.png
+lib/stepmania/NoteSkins/beat/default/Red Tap Explosion Dim 9x1.png
+lib/stepmania/NoteSkins/beat/default/Red Tap Mine 1x1.png
+lib/stepmania/NoteSkins/beat/default/Red Tap Note 1x1.png
+lib/stepmania/NoteSkins/beat/default/White Go Receptor.png
+lib/stepmania/NoteSkins/beat/default/White Hold Body active.png
+lib/stepmania/NoteSkins/beat/default/White Hold Body inactive.png
+lib/stepmania/NoteSkins/beat/default/White Hold BottomCap active.png
+lib/stepmania/NoteSkins/beat/default/White Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/beat/default/White Tap Explosion Bright 9x1.png
+lib/stepmania/NoteSkins/beat/default/White Tap Explosion Dim 9x1.png
+lib/stepmania/NoteSkins/beat/default/White Tap Mine 1x1.png
+lib/stepmania/NoteSkins/beat/default/White Tap Note 1x1.png
+lib/stepmania/NoteSkins/beat/default/_Blue Tap Explosion Bright.redir
+lib/stepmania/NoteSkins/beat/default/_Blue Tap Explosion Dim.png
+lib/stepmania/NoteSkins/beat/default/_Red Tap Explosion Bright.redir
+lib/stepmania/NoteSkins/beat/default/_Red Tap Explosion Dim.png
+lib/stepmania/NoteSkins/beat/default/_Tap Lead-in Receptor.lua
+lib/stepmania/NoteSkins/beat/default/_Tap Receptor.lua
+lib/stepmania/NoteSkins/beat/default/_White Tap Explosion Bright.redir
+lib/stepmania/NoteSkins/beat/default/_White Tap Explosion Dim.png
+lib/stepmania/NoteSkins/beat/default/metrics.ini
+lib/stepmania/NoteSkins/common/_Editor/Center Hold Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Hold Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Hold BottomCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Hold BottomCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Hold Explosion.lua
+lib/stepmania/NoteSkins/common/_Editor/Center Hold TopCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Hold TopCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Roll Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Roll Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Roll BottomCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Roll BottomCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Roll TopCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Roll TopCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Center Tap Explosion Bright.lua
+lib/stepmania/NoteSkins/common/_Editor/CenterP1 Hold Head Active.lua
+lib/stepmania/NoteSkins/common/_Editor/CenterP1 Hold Head Inactive.lua
+lib/stepmania/NoteSkins/common/_Editor/CenterP1 Receptor.lua
+lib/stepmania/NoteSkins/common/_Editor/CenterP1 Tap Fake.lua
+lib/stepmania/NoteSkins/common/_Editor/CenterP1 Tap Lift.lua
+lib/stepmania/NoteSkins/common/_Editor/CenterP1 Tap Note.lua
+lib/stepmania/NoteSkins/common/_Editor/Down Hold Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Down Hold Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Down Hold BottomCap active (res 64x64).png
+lib/stepmania/NoteSkins/common/_Editor/Down Hold BottomCap inactive (res 64x64).png
+lib/stepmania/NoteSkins/common/_Editor/Down Hold Explosion.lua
+lib/stepmania/NoteSkins/common/_Editor/Down Hold Head Active.lua
+lib/stepmania/NoteSkins/common/_Editor/Down Hold Head Inactive.lua
+lib/stepmania/NoteSkins/common/_Editor/Down Hold TopCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Down Hold TopCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Down Receptor.lua
+lib/stepmania/NoteSkins/common/_Editor/Down Roll Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Down Roll Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Down Roll BottomCap active (res 64x64).png
+lib/stepmania/NoteSkins/common/_Editor/Down Roll BottomCap inactive (res 64x64).png
+lib/stepmania/NoteSkins/common/_Editor/Down Roll TopCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Down Roll TopCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Down Tap Explosion Bright.lua
+lib/stepmania/NoteSkins/common/_Editor/Down Tap Explosion Dim.lua
+lib/stepmania/NoteSkins/common/_Editor/Down Tap Fake.lua
+lib/stepmania/NoteSkins/common/_Editor/Down Tap Lift.lua
+lib/stepmania/NoteSkins/common/_Editor/Down Tap Mine.lua
+lib/stepmania/NoteSkins/common/_Editor/Down Tap Note.lua
+lib/stepmania/NoteSkins/common/_Editor/DownLeftP1 Hold Head Active.lua
+lib/stepmania/NoteSkins/common/_Editor/DownLeftP1 Hold Head Inactive.lua
+lib/stepmania/NoteSkins/common/_Editor/DownLeftP1 Receptor.lua
+lib/stepmania/NoteSkins/common/_Editor/DownLeftP1 Tap Fake.lua
+lib/stepmania/NoteSkins/common/_Editor/DownLeftP1 Tap Lift.lua
+lib/stepmania/NoteSkins/common/_Editor/DownLeftP1 Tap Note.lua
+lib/stepmania/NoteSkins/common/_Editor/Left Hold Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Left Hold Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Left Hold BottomCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Left Hold BottomCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Left Hold TopCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Left Hold TopCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Left Roll Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Left Roll Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Left Roll BottomCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Left Roll BottomCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Left Roll TopCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Left Roll TopCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/NoteSkin.lua
+lib/stepmania/NoteSkins/common/_Editor/Right Hold Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Right Hold Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Right Hold BottomCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Right Hold BottomCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Right Hold TopCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Right Hold TopCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Right Roll Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Right Roll Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Right Roll BottomCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Right Roll BottomCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Right Roll TopCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Right Roll TopCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Hold Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Hold Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Hold BottomCap Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Hold BottomCap Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Hold Head Active.lua
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Hold Head Inactive.lua
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Hold TopCap Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Hold TopCap Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Roll Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Roll Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Roll BottomCap Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Roll BottomCap Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Roll TopCap Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpLeft Roll TopCap Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Hold Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Hold Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Hold BottomCap Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Hold BottomCap Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Hold Head Active.lua
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Hold Head Inactive.lua
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Hold TopCap Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Hold TopCap Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Roll Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Roll Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Roll BottomCap Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Roll BottomCap Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Roll TopCap Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/SoloUpRight Roll TopCap Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Up Hold Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Up Hold Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Up Hold BottomCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Up Hold BottomCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Up Hold TopCap active (res 64x64).png
+lib/stepmania/NoteSkins/common/_Editor/Up Hold TopCap inactive (res 64x64).png
+lib/stepmania/NoteSkins/common/_Editor/Up Roll Body Active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Up Roll Body Inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Up Roll BottomCap active (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Up Roll BottomCap inactive (res 64x32).png
+lib/stepmania/NoteSkins/common/_Editor/Up Roll TopCap active (res 64x64).png
+lib/stepmania/NoteSkins/common/_Editor/Up Roll TopCap inactive (res 64x64).png
+lib/stepmania/NoteSkins/common/_Editor/_Center Explosion (res 128x128).png
+lib/stepmania/NoteSkins/common/_Editor/_CenterP1 Tap Fake 6x9 (res 384x576).png
+lib/stepmania/NoteSkins/common/_Editor/_CenterP1 Tap Lift 6x9 (res 384x576).png
+lib/stepmania/NoteSkins/common/_Editor/_CenterP1 Tap Note 12x9 (res 768x576).png
+lib/stepmania/NoteSkins/common/_Editor/_Down Explosion 2x1 (res 128x64).png
+lib/stepmania/NoteSkins/common/_Editor/_Down Tap Fake 4x9 (res 256x576).png
+lib/stepmania/NoteSkins/common/_Editor/_Down Tap Lift 4x9 (res 256x576).png
+lib/stepmania/NoteSkins/common/_Editor/_Down Tap Mine Base2 1x9 (res 64x576).png
+lib/stepmania/NoteSkins/common/_Editor/_Down Tap Mine Overlay 1x9 (res 64x576).png
+lib/stepmania/NoteSkins/common/_Editor/_Down Tap Mine Underlay 1x9 (res 64x576).png
+lib/stepmania/NoteSkins/common/_Editor/_Down Tap Note 8x9 (res 512x576).png
+lib/stepmania/NoteSkins/common/_Editor/_DownLeftP1 Tap Fake 6x9 (res 384x576).png
+lib/stepmania/NoteSkins/common/_Editor/_DownLeftP1 Tap Lift 6x9 (res 384x576).png
+lib/stepmania/NoteSkins/common/_Editor/_DownLeftP1 Tap Note 12x9 (res 768x576).png
+lib/stepmania/NoteSkins/common/_Editor/_upleftsolo underlay 1x9 (res 64x576).png
+lib/stepmania/NoteSkins/common/_Editor/metrics.ini
+lib/stepmania/NoteSkins/common/common/Fallback Explosion.lua
+lib/stepmania/NoteSkins/common/common/Fallback Go Receptor.redir
+lib/stepmania/NoteSkins/common/common/Fallback HitMine Explosion.png
+lib/stepmania/NoteSkins/common/common/Fallback Hold Body active.png
+lib/stepmania/NoteSkins/common/common/Fallback Hold Body inactive.png
+lib/stepmania/NoteSkins/common/common/Fallback Hold BottomCap active.png
+lib/stepmania/NoteSkins/common/common/Fallback Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/common/common/Fallback Hold Explosion 2x1.png
+lib/stepmania/NoteSkins/common/common/Fallback Hold Head Active.redir
+lib/stepmania/NoteSkins/common/common/Fallback Hold Head Inactive.redir
+lib/stepmania/NoteSkins/common/common/Fallback Hold Tail Active.redir
+lib/stepmania/NoteSkins/common/common/Fallback Hold Tail Inactive.redir
+lib/stepmania/NoteSkins/common/common/Fallback Hold TopCap Active.redir
+lib/stepmania/NoteSkins/common/common/Fallback Hold TopCap Inactive.redir
+lib/stepmania/NoteSkins/common/common/Fallback Ready Receptor 3x1.png
+lib/stepmania/NoteSkins/common/common/Fallback Receptor.lua
+lib/stepmania/NoteSkins/common/common/Fallback Roll Body active.png
+lib/stepmania/NoteSkins/common/common/Fallback Roll Body inactive.png
+lib/stepmania/NoteSkins/common/common/Fallback Roll BottomCap active.png
+lib/stepmania/NoteSkins/common/common/Fallback Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/common/common/Fallback Roll Explosion.redir
+lib/stepmania/NoteSkins/common/common/Fallback Roll Head Active.redir
+lib/stepmania/NoteSkins/common/common/Fallback Roll Head Inactive.redir
+lib/stepmania/NoteSkins/common/common/Fallback Roll Tail Active.redir
+lib/stepmania/NoteSkins/common/common/Fallback Roll Tail Inactive.redir
+lib/stepmania/NoteSkins/common/common/Fallback Roll TopCap Active.redir
+lib/stepmania/NoteSkins/common/common/Fallback Roll TopCap Inactive.redir
+lib/stepmania/NoteSkins/common/common/Fallback Tap Explosion Bright.png
+lib/stepmania/NoteSkins/common/common/Fallback Tap Explosion Dim.png
+lib/stepmania/NoteSkins/common/common/Fallback Tap Fake 4x1.png
+lib/stepmania/NoteSkins/common/common/Fallback Tap Lift 4x1.png
+lib/stepmania/NoteSkins/common/common/Fallback Tap Mine 4x2.png
+lib/stepmania/NoteSkins/common/common/Fallback Tap Note 4x1.png
+lib/stepmania/NoteSkins/common/common/NoteSkin.lua
+lib/stepmania/NoteSkins/common/common/_Tap Lead-in Receptor.lua
+lib/stepmania/NoteSkins/common/common/_Tap Press.lua
+lib/stepmania/NoteSkins/common/common/_Tap Receptor.lua
+lib/stepmania/NoteSkins/common/common/_blank.png
+lib/stepmania/NoteSkins/common/common/metrics.ini
+lib/stepmania/NoteSkins/dance/Delta/Down Hold Body Active.png
+lib/stepmania/NoteSkins/dance/Delta/Down Hold Body Inactive.png
+lib/stepmania/NoteSkins/dance/Delta/Down Hold BottomCap active.png
+lib/stepmania/NoteSkins/dance/Delta/Down Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/dance/Delta/Down Hold Explosion.lua
+lib/stepmania/NoteSkins/dance/Delta/Down Receptor.lua
+lib/stepmania/NoteSkins/dance/Delta/Down Roll Body Active.png
+lib/stepmania/NoteSkins/dance/Delta/Down Roll Body Inactive.png
+lib/stepmania/NoteSkins/dance/Delta/Down Roll BottomCap active.png
+lib/stepmania/NoteSkins/dance/Delta/Down Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/dance/Delta/Down Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/Delta/Down Tap Explosion Dim.redir
+lib/stepmania/NoteSkins/dance/Delta/Down Tap Mine 4x2.png
+lib/stepmania/NoteSkins/dance/Delta/Down Tap Note.lua
+lib/stepmania/NoteSkins/dance/Delta/Hold Explosion.png
+lib/stepmania/NoteSkins/dance/Delta/Hold Head active.png
+lib/stepmania/NoteSkins/dance/Delta/Hold Head inactive.png
+lib/stepmania/NoteSkins/dance/Delta/NoteSkin.lua
+lib/stepmania/NoteSkins/dance/Delta/Receptor 4x1.png
+lib/stepmania/NoteSkins/dance/Delta/Roll Explosion.png
+lib/stepmania/NoteSkins/dance/Delta/_down tap note 12x8.png
+lib/stepmania/NoteSkins/dance/Delta/metrics.ini
+lib/stepmania/NoteSkins/dance/Delta/readme.txt
+lib/stepmania/NoteSkins/dance/default/Down Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Hold TopCap Active (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Hold TopCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Receptor.lua
+lib/stepmania/NoteSkins/dance/default/Down Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Roll TopCap Active (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Roll TopCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/default/Down Tap Explosion Bright.redir
+lib/stepmania/NoteSkins/dance/default/Down Tap Explosion Dim.redir
+lib/stepmania/NoteSkins/dance/default/Down Tap Lift.lua
+lib/stepmania/NoteSkins/dance/default/Down Tap Note.lua
+lib/stepmania/NoteSkins/dance/default/NoteSkin.lua
+lib/stepmania/NoteSkins/dance/default/_arrow 1x8 (doubleres).png
+lib/stepmania/NoteSkins/dance/default/_circle (doubleres).png
+lib/stepmania/NoteSkins/dance/default/_glow (doubleres).png
+lib/stepmania/NoteSkins/dance/default/_receptor (doubleres).png
+lib/stepmania/NoteSkins/dance/default/_rflash (doubleres).png
+lib/stepmania/NoteSkins/dance/default/metrics.ini
+lib/stepmania/NoteSkins/dance/easyV2/Center Hold Body Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Hold Body Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Hold Bottomcap Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Hold Bottomcap Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Hold Topcap Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Hold Topcap Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Receptor.lua
+lib/stepmania/NoteSkins/dance/easyV2/Center Roll Body Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Roll Body Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Roll Bottomcap Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Roll Bottomcap Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Roll Topcap Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Roll Topcap Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/easyV2/Center Tap Note.lua
+lib/stepmania/NoteSkins/dance/easyV2/Down Hold Body Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Hold Body Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Hold Bottomcap Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Hold Bottomcap Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Hold Topcap Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Hold Topcap Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Receptor.lua
+lib/stepmania/NoteSkins/dance/easyV2/Down Roll Body Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Roll Body Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Roll Bottomcap Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Roll Bottomcap Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Roll Topcap Active.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Roll Topcap Inactive.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Tap Mine.png
+lib/stepmania/NoteSkins/dance/easyV2/Down Tap Note.lua
+lib/stepmania/NoteSkins/dance/easyV2/DownLeft Receptor.lua
+lib/stepmania/NoteSkins/dance/easyV2/DownLeft Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/easyV2/DownLeft Tap Note.lua
+lib/stepmania/NoteSkins/dance/easyV2/NoteSkin.lua
+lib/stepmania/NoteSkins/dance/easyV2/_Center Go Receptor.png
+lib/stepmania/NoteSkins/dance/easyV2/_Center Tap Note 2x8.png
+lib/stepmania/NoteSkins/dance/easyV2/_Down Go Receptor.png
+lib/stepmania/NoteSkins/dance/easyV2/_Down Tap Note 2x8.png
+lib/stepmania/NoteSkins/dance/easyV2/_DownLeft Go Receptor.png
+lib/stepmania/NoteSkins/dance/easyV2/_DownLeft Tap Note 2x8.png
+lib/stepmania/NoteSkins/dance/easyV2/metrics.ini
+lib/stepmania/NoteSkins/dance/exactV2/Center Hold Body Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Hold Body Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Hold Bottomcap Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Hold Bottomcap Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Hold Topcap Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Hold Topcap Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Receptor.lua
+lib/stepmania/NoteSkins/dance/exactV2/Center Roll Body Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Roll Body Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Roll Bottomcap Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Roll Bottomcap Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Roll Topcap Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Roll Topcap Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/exactV2/Center Tap Note.lua
+lib/stepmania/NoteSkins/dance/exactV2/Down Hold Body Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Hold Body Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Hold Bottomcap Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Hold Bottomcap Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Hold Topcap Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Hold Topcap Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Receptor.lua
+lib/stepmania/NoteSkins/dance/exactV2/Down Roll Body Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Roll Body Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Roll Bottomcap Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Roll Bottomcap Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Roll Topcap Active.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Roll Topcap Inactive.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Tap Mine.png
+lib/stepmania/NoteSkins/dance/exactV2/Down Tap Note.lua
+lib/stepmania/NoteSkins/dance/exactV2/DownLeft Receptor.lua
+lib/stepmania/NoteSkins/dance/exactV2/DownLeft Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/exactV2/DownLeft Tap Note.lua
+lib/stepmania/NoteSkins/dance/exactV2/NoteSkin.lua
+lib/stepmania/NoteSkins/dance/exactV2/_Center Go Receptor.png
+lib/stepmania/NoteSkins/dance/exactV2/_Center Tap Note 2x8.png
+lib/stepmania/NoteSkins/dance/exactV2/_Down Go Receptor.png
+lib/stepmania/NoteSkins/dance/exactV2/_Down Tap Note 2x8.png
+lib/stepmania/NoteSkins/dance/exactV2/_DownLeft Go Receptor.png
+lib/stepmania/NoteSkins/dance/exactV2/_DownLeft Tap Note 2x8.png
+lib/stepmania/NoteSkins/dance/exactV2/metrics.ini
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Hold Explosion.redir
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Hold Head Active.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Hold Head Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Receptor.lua
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Roll BottomCap.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Roll Explosion.redir
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Roll Head Active.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Roll Head Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Tap Explosion Dim.redir
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Tap Fake (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Tap Lift.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Tap Mine.lua
+lib/stepmania/NoteSkins/dance/midi-note-3d/Down Tap Note.lua
+lib/stepmania/NoteSkins/dance/midi-note-3d/Left Hold BottomCap Active.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Left Hold BottomCap Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note-3d/Left Roll BottomCap Active.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Left Roll BottomCap Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note-3d/NoteSkin.lua
+lib/stepmania/NoteSkins/dance/midi-note-3d/Up Hold BottomCap Active.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Up Hold BottomCap Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note-3d/Up Roll BottomCap Active.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/Up Roll BottomCap Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note-3d/_Down Tap Flash.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/_Down Tap Mine.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/_Down Tap Note.txt
+lib/stepmania/NoteSkins/dance/midi-note-3d/_Down Tap Receptor (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note-3d/metrics.ini
+lib/stepmania/NoteSkins/dance/midi-note-3d/tex/black.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/tex/inside.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/tex/outside.ini
+lib/stepmania/NoteSkins/dance/midi-note-3d/tex/outside.png
+lib/stepmania/NoteSkins/dance/midi-note-3d/tex/overlay.ini
+lib/stepmania/NoteSkins/dance/midi-note-3d/tex/overlay.png
+lib/stepmania/NoteSkins/dance/midi-note/Down Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note/Down Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note/Down Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note/Down Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note/Down Hold Explosion.redir
+lib/stepmania/NoteSkins/dance/midi-note/Down Hold Head Active.png
+lib/stepmania/NoteSkins/dance/midi-note/Down Hold Head Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note/Down Receptor.lua
+lib/stepmania/NoteSkins/dance/midi-note/Down Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note/Down Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note/Down Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note/Down Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note/Down Roll BottomCap.png
+lib/stepmania/NoteSkins/dance/midi-note/Down Roll Explosion.redir
+lib/stepmania/NoteSkins/dance/midi-note/Down Roll Head Active.png
+lib/stepmania/NoteSkins/dance/midi-note/Down Roll Head Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note/Down Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/midi-note/Down Tap Explosion Dim.png
+lib/stepmania/NoteSkins/dance/midi-note/Down Tap Fake (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note/Down Tap Lift.png
+lib/stepmania/NoteSkins/dance/midi-note/Down Tap Mine.lua
+lib/stepmania/NoteSkins/dance/midi-note/Down Tap Note.lua
+lib/stepmania/NoteSkins/dance/midi-note/Left Hold BottomCap Active.png
+lib/stepmania/NoteSkins/dance/midi-note/Left Hold BottomCap Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note/Left Roll BottomCap Active.png
+lib/stepmania/NoteSkins/dance/midi-note/Left Roll BottomCap Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note/NoteSkin.lua
+lib/stepmania/NoteSkins/dance/midi-note/Up Hold BottomCap Active.png
+lib/stepmania/NoteSkins/dance/midi-note/Up Hold BottomCap Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note/Up Roll BottomCap Active.png
+lib/stepmania/NoteSkins/dance/midi-note/Up Roll BottomCap Inactive.lua
+lib/stepmania/NoteSkins/dance/midi-note/_Down Tap Flash.png
+lib/stepmania/NoteSkins/dance/midi-note/_Down Tap Mine.png
+lib/stepmania/NoteSkins/dance/midi-note/_Down Tap Note 8x8 (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note/_Down Tap Receptor (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-note/metrics.ini
+lib/stepmania/NoteSkins/dance/midi-routine-p1/Down Tap Note 8x1.png
+lib/stepmania/NoteSkins/dance/midi-routine-p1/metrics.ini
+lib/stepmania/NoteSkins/dance/midi-routine-p2/Down Tap Note 8x1.png
+lib/stepmania/NoteSkins/dance/midi-routine-p2/metrics.ini
+lib/stepmania/NoteSkins/dance/midi-solo/Down Hold Explosion.redir
+lib/stepmania/NoteSkins/dance/midi-solo/Down Receptor.lua
+lib/stepmania/NoteSkins/dance/midi-solo/Down Roll Explosion.redir
+lib/stepmania/NoteSkins/dance/midi-solo/Down Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/midi-solo/Down Tap Explosion Dim.redir
+lib/stepmania/NoteSkins/dance/midi-solo/Down Tap Fake.png
+lib/stepmania/NoteSkins/dance/midi-solo/Down Tap Lift.png
+lib/stepmania/NoteSkins/dance/midi-solo/Down Tap Mine.lua
+lib/stepmania/NoteSkins/dance/midi-solo/Down Tap Note.lua
+lib/stepmania/NoteSkins/dance/midi-solo/_Down Tap Flash.png
+lib/stepmania/NoteSkins/dance/midi-solo/_Down Tap Mine.png
+lib/stepmania/NoteSkins/dance/midi-solo/_Down Tap Note 8x8.png
+lib/stepmania/NoteSkins/dance/midi-solo/_Down Tap Receptor.png
+lib/stepmania/NoteSkins/dance/midi-solo/metrics.ini
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/Down Hold Head Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/Down Hold Head Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/Down Roll Head Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/Down Roll Head Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/Down Tap Note.lua
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/_Down Tap Note.txt
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/metrics.ini
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/tex/black.png
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/tex/inside.ini
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/tex/inside.png
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/tex/outside.ini
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/tex/outside.png
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/tex/overlay.ini
+lib/stepmania/NoteSkins/dance/midi-vivid-3d/tex/overlay.png
+lib/stepmania/NoteSkins/dance/midi-vivid/Down Hold Head Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-vivid/Down Hold Head Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-vivid/Down Roll Head Active (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-vivid/Down Roll Head Inactive (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-vivid/Down Tap Addition 4x4 (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-vivid/Down Tap Note 4x4 (doubleres).png
+lib/stepmania/NoteSkins/dance/midi-vivid/metrics.ini
+lib/stepmania/NoteSkins/dance/retro/Down Hold Body active.png
+lib/stepmania/NoteSkins/dance/retro/Down Hold Body inactive.png
+lib/stepmania/NoteSkins/dance/retro/Down Hold BottomCap active.png
+lib/stepmania/NoteSkins/dance/retro/Down Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/dance/retro/Down Hold Explosion.lua
+lib/stepmania/NoteSkins/dance/retro/Down Hold Head active.png
+lib/stepmania/NoteSkins/dance/retro/Down Hold Head inactive.png
+lib/stepmania/NoteSkins/dance/retro/Down Receptor.lua
+lib/stepmania/NoteSkins/dance/retro/Down Roll Body active.png
+lib/stepmania/NoteSkins/dance/retro/Down Roll Body inactive.png
+lib/stepmania/NoteSkins/dance/retro/Down Roll BottomCap active.png
+lib/stepmania/NoteSkins/dance/retro/Down Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/dance/retro/Down Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/retro/Down Tap Explosion dim.png
+lib/stepmania/NoteSkins/dance/retro/Down Tap Fake 1x8.png
+lib/stepmania/NoteSkins/dance/retro/Down Tap Mine 5x1.png
+lib/stepmania/NoteSkins/dance/retro/Down Tap Note.lua
+lib/stepmania/NoteSkins/dance/retro/NoteSkin.lua
+lib/stepmania/NoteSkins/dance/retro/UpLeft Go Receptor.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Hold Body active.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Hold Body inactive.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Hold BottomCap active.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Hold Explosion.lua
+lib/stepmania/NoteSkins/dance/retro/UpLeft Receptor.lua
+lib/stepmania/NoteSkins/dance/retro/UpLeft Roll Body active.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Roll Body inactive.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Roll BottomCap active.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Tap Explosion Bright.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Tap Explosion dim.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Tap Fake 1x8.png
+lib/stepmania/NoteSkins/dance/retro/UpLeft Tap Mine.redir
+lib/stepmania/NoteSkins/dance/retro/UpLeft Tap Note.lua
+lib/stepmania/NoteSkins/dance/retro/_UpLeft Tap Note 8x8.png
+lib/stepmania/NoteSkins/dance/retro/_down receptor base.png
+lib/stepmania/NoteSkins/dance/retro/_down receptor tap.png
+lib/stepmania/NoteSkins/dance/retro/_down receptor.png
+lib/stepmania/NoteSkins/dance/retro/_down tap note 8x8.png
+lib/stepmania/NoteSkins/dance/retro/_receptor tap.png
+lib/stepmania/NoteSkins/dance/retro/_upleft receptor base.png
+lib/stepmania/NoteSkins/dance/retro/_upleft receptor tap.png
+lib/stepmania/NoteSkins/dance/retro/metrics.ini
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Hold Body active.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Hold Body inactive.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Hold BottomCap active.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Hold TopCap active.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Hold TopCap inactive.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Roll Body Inactive.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Roll Body active.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Roll BottomCap active.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Roll BottomCap inactive.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Roll TopCap active.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Roll TopCap inactive.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue Tap Note.lua
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue hold explosion.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue receptor.lua
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue roll explosion.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue tap explosion bright.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue tap explosion dim.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue tap fake.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Blue tap mine.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/Noteskin.lua
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Hold Body active.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Hold Body inactive.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Hold BottomCap active.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Hold TopCap active.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Hold TopCap inactive.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Roll Body Inactive.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Roll Body active.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Roll BottomCap active.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Roll BottomCap inactive.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Roll TopCap active.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Roll TopCap inactive.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White Tap Note.lua
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White hold explosion.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White receptor.lua
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White roll explosion.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White tap explosion bright.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White tap explosion dim.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White tap fake.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/White tap mine.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Blue tap note 4x2.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Hold Explosion.lua
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Receptor.lua
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Roll Body active.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Roll Body inactive.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Roll BottomCap active.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Roll Explosion.lua
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Roll TopCap active.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Roll TopCap inactive.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Tap Lift 4x1.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Tap Mine.lua
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Tap explosion bright.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Tap explosion dim.redir
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_White tap note 4x2.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_Yellow tap note 4x2.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_bar hold explosion bright.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_bar hold explosion dim.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_bar mine 4x1.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_bar receptor tap.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_blue receptor base.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/_white receptor base.png
+lib/stepmania/NoteSkins/dance/retrobar-splithand_whiteblue/metrics.ini
+lib/stepmania/NoteSkins/dance/retrobar/Bar Hold Body active.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Hold Body inactive.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Hold BottomCap active.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Hold Explosion.lua
+lib/stepmania/NoteSkins/dance/retrobar/Bar Hold Head active.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Hold Head inactive.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Hold TopCap active.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Hold TopCap inactive.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Receptor.lua
+lib/stepmania/NoteSkins/dance/retrobar/Bar Roll Body active.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Roll Body inactive.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Roll BottomCap active.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Roll Explosion.lua
+lib/stepmania/NoteSkins/dance/retrobar/Bar Roll Head active.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Roll Head inactive.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Roll TopCap active.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Roll TopCap inactive.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Tap Lift 4x1.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Tap Mine.lua
+lib/stepmania/NoteSkins/dance/retrobar/Bar Tap Note.lua
+lib/stepmania/NoteSkins/dance/retrobar/Bar Tap explosion bright.png
+lib/stepmania/NoteSkins/dance/retrobar/Bar Tap explosion dim.redir
+lib/stepmania/NoteSkins/dance/retrobar/Noteskin.lua
+lib/stepmania/NoteSkins/dance/retrobar/_bar hold explosion bright.png
+lib/stepmania/NoteSkins/dance/retrobar/_bar hold explosion dim.png
+lib/stepmania/NoteSkins/dance/retrobar/_bar mine 4x1.png
+lib/stepmania/NoteSkins/dance/retrobar/_bar receptor base.png
+lib/stepmania/NoteSkins/dance/retrobar/_bar receptor tap.png
+lib/stepmania/NoteSkins/dance/retrobar/_bar tap base.png
+lib/stepmania/NoteSkins/dance/retrobar/_bar tap fake 1x8.png
+lib/stepmania/NoteSkins/dance/retrobar/_bar tap note 8x8.png
+lib/stepmania/NoteSkins/dance/retrobar/metrics.ini
+lib/stepmania/NoteSkins/instructions.txt
+lib/stepmania/NoteSkins/kb7/default/Key Go Receptor.png
+lib/stepmania/NoteSkins/kb7/default/Key Hold Body active.png
+lib/stepmania/NoteSkins/kb7/default/Key Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/default/Key Hold BottomCap Inactive.png
+lib/stepmania/NoteSkins/kb7/default/Key Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/default/Key Hold Explosion 2x1.png
+lib/stepmania/NoteSkins/kb7/default/Key Receptor.lua
+lib/stepmania/NoteSkins/kb7/default/Key Roll Body active.png
+lib/stepmania/NoteSkins/kb7/default/Key Roll Body inactive.png
+lib/stepmania/NoteSkins/kb7/default/Key Roll BottomCap active.png
+lib/stepmania/NoteSkins/kb7/default/Key Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/default/Key Tap Explosion Bright.png
+lib/stepmania/NoteSkins/kb7/default/Key Tap Explosion Dim.png
+lib/stepmania/NoteSkins/kb7/default/Key Tap Note.lua
+lib/stepmania/NoteSkins/kb7/default/NoteSkin.lua
+lib/stepmania/NoteSkins/kb7/default/Space Hold Body active.png
+lib/stepmania/NoteSkins/kb7/default/Space Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/default/Space Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/default/Space Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/default/Space Hold Explosion 2x1.png
+lib/stepmania/NoteSkins/kb7/default/Space Receptor.lua
+lib/stepmania/NoteSkins/kb7/default/Space Roll Body active.png
+lib/stepmania/NoteSkins/kb7/default/Space Roll Body inactive.png
+lib/stepmania/NoteSkins/kb7/default/Space Roll BottomCap active.png
+lib/stepmania/NoteSkins/kb7/default/Space Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/default/Space Tap Explosion Bright.png
+lib/stepmania/NoteSkins/kb7/default/Space Tap Explosion Dim.png
+lib/stepmania/NoteSkins/kb7/default/Space Tap Note.lua
+lib/stepmania/NoteSkins/kb7/default/_key tap note 4x8.png
+lib/stepmania/NoteSkins/kb7/default/_space tap note 1x8.png
+lib/stepmania/NoteSkins/kb7/default/metrics.ini
+lib/stepmania/NoteSkins/kb7/orbital/Bar Go Receptor.png
+lib/stepmania/NoteSkins/kb7/orbital/Bar Receptor.lua
+lib/stepmania/NoteSkins/kb7/orbital/Noteskin.lua
+lib/stepmania/NoteSkins/kb7/orbital/Red Hold Body active.png
+lib/stepmania/NoteSkins/kb7/orbital/Red Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/orbital/Red Hold BottomCap Inactive.png
+lib/stepmania/NoteSkins/kb7/orbital/Red Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/orbital/Red Hold Explosion 2x1.png
+lib/stepmania/NoteSkins/kb7/orbital/Red Hold Head active.redir
+lib/stepmania/NoteSkins/kb7/orbital/Red Hold Head inactive.redir
+lib/stepmania/NoteSkins/kb7/orbital/Red Receptor.redir
+lib/stepmania/NoteSkins/kb7/orbital/Red Roll Body active.png
+lib/stepmania/NoteSkins/kb7/orbital/Red Roll Body inactive.png
+lib/stepmania/NoteSkins/kb7/orbital/Red Roll BottomCap active.png
+lib/stepmania/NoteSkins/kb7/orbital/Red Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/orbital/Red Roll Explosion.redir
+lib/stepmania/NoteSkins/kb7/orbital/Red Roll Head active.redir
+lib/stepmania/NoteSkins/kb7/orbital/Red Roll Head inactive.redir
+lib/stepmania/NoteSkins/kb7/orbital/Red Tap Explosion Bright.png
+lib/stepmania/NoteSkins/kb7/orbital/Red Tap Explosion Dim.png
+lib/stepmania/NoteSkins/kb7/orbital/Red Tap Note.lua
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Go Receptor.png
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Hold Body active.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Hold Body inactive.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Hold BottomCap active.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Hold BottomCap inactive.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Hold Explosion.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Hold Head active.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Hold Head inactive.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Receptor.lua
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Roll Body active.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Roll Body inactive.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Roll BottomCap active.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Roll BottomCap inactive.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Roll Explosion.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Roll Head active.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Roll Head inactive.redir
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Tap Explosion Bright.png
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Tap Explosion Dim.png
+lib/stepmania/NoteSkins/kb7/orbital/Yellow Tap Note.lua
+lib/stepmania/NoteSkins/kb7/orbital/_blank.png
+lib/stepmania/NoteSkins/kb7/orbital/_blue tap note 4x1.png
+lib/stepmania/NoteSkins/kb7/orbital/_red tap note 4x1.png
+lib/stepmania/NoteSkins/kb7/orbital/_yellow tap note 4x1.png
+lib/stepmania/NoteSkins/kb7/orbital/metrics.ini
+lib/stepmania/NoteSkins/kb7/orbital/model/_grey (no mipmaps).png
+lib/stepmania/NoteSkins/kb7/orbital/model/_yellow (no mipmaps).png
+lib/stepmania/NoteSkins/kb7/orbital/model/grey.txt
+lib/stepmania/NoteSkins/kb7/orbital/model/note-wide.txt
+lib/stepmania/NoteSkins/kb7/orbital/model/note.txt
+lib/stepmania/NoteSkins/kb7/orbital/model/scroller.ini
+lib/stepmania/NoteSkins/kb7/orbital/model/scroller.png
+lib/stepmania/NoteSkins/kb7/orbital/model/yellow.txt
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Hold Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Hold TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Hold TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Roll Body Inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Roll Body active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Roll BottomCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Roll BottomCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Roll TopCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Roll TopCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue Tap Note.lua
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue hold explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue receptor.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue roll explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue tap explosion bright.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Blue tap fake.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/Noteskin.lua
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Hold Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Hold TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Hold TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Roll Body Inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Roll Body active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Roll BottomCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Roll BottomCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Roll TopCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Roll TopCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White Tap Note.lua
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White hold explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White receptor.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White roll explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White tap explosion bright.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/White tap fake.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Blue tap note 4x2.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Hold Explosion.lua
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Receptor.lua
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Roll Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Roll Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Roll BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Roll Explosion.lua
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Roll TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Roll TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Tap Lift 4x1.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Tap Mine.lua
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Tap explosion bright.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_White tap note 4x2.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_Yellow tap note 4x2.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_bar hold explosion bright.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_bar hold explosion dim.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_bar mine 4x1.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_bar receptor base.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/_bar receptor tap.png
+lib/stepmania/NoteSkins/kb7/retrobar-iidx/metrics.ini
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Hold Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Hold TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Hold TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Roll Body Inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Roll Body active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Roll BottomCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Roll BottomCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Roll TopCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Roll TopCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue Tap Note.lua
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue hold explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue receptor.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue roll explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue tap explosion bright.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Blue tap fake.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Noteskin.lua
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Hold Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Hold TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Hold TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Roll Body Inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Roll Body active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Roll BottomCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Roll BottomCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Roll TopCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Roll TopCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White Tap Note.lua
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White hold explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White receptor.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White roll explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White tap explosion bright.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/White tap fake.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Hold Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Hold TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Hold TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Roll Body Inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Roll Body active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Roll BottomCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Roll BottomCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Roll TopCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Roll TopCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow Tap Note.lua
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow hold explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow receptor.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow roll explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow tap explosion bright.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/Yellow tap fake.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Blue tap note 4x2.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Hold Explosion.lua
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Receptor.lua
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Roll Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Roll Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Roll BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Roll Explosion.lua
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Roll TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Roll TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Tap Lift 4x1.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Tap Mine.lua
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Tap explosion bright.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_White tap note 4x2.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_Yellow tap note 4x2.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_bar hold explosion bright.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_bar hold explosion dim.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_bar mine 4x1.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_bar receptor base.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/_bar receptor tap.png
+lib/stepmania/NoteSkins/kb7/retrobar-o2jam/metrics.ini
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Hold Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Hold Explosion.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Hold Head active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Hold Head inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Hold TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Hold TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Receptor.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Roll Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Roll Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Roll BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Roll Explosion.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Roll Head active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Roll Head inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Roll TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Roll TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Tap Explosion bright.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Tap Lift.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Tap Mine.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Tap Note.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Bar Tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor/Noteskin.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor/_bar hold explosion bright.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/_bar hold explosion dim.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/_bar mine 4x1.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/_bar receptor base.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/_bar receptor tap.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/_bar tap fake.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/_bar tap note 2x8.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor/noteskin.ini
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Hold Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Hold TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Hold TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Roll Body Inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Roll Body active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Roll BottomCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Roll BottomCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Roll TopCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Roll TopCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue Tap Note.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue hold explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue receptor.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue roll explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue tap explosion bright.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Blue tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Noteskin.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Hold Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Hold TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Hold TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Roll Body Inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Roll Body active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Roll BottomCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Roll BottomCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Roll TopCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Roll TopCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White Tap Note.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White hold explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White receptor.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White roll explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White tap explosion bright.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/White tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Hold Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Hold TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Hold TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Roll Body Inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Roll Body active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Roll BottomCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Roll BottomCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Roll TopCap active.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Roll TopCap inactive.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow Tap Note.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow hold explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow receptor.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow roll explosion.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow tap explosion bright.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/Yellow tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Blue tap note 2x1.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Hold Explosion.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Receptor.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Roll Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Roll Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Roll BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Roll Explosion.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Roll TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Roll TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Tap Explosion bright.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Tap Lift 3x1.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Tap Mine.lua
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_White tap note 2x1.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_Yellow tap note 2x1.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_bar hold explosion bright.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_bar hold explosion dim.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_bar mine 4x1.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_bar receptor base.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_bar receptor tap.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/_bar tap fake.png
+lib/stepmania/NoteSkins/kb7/retrobar-razor_o2/metrics.ini
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Hold Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Hold Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Hold BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Hold BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Hold Explosion.lua
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Hold Head active.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Hold Head inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Hold TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Hold TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Receptor.lua
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Roll Body active.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Roll Body inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Roll BottomCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Roll BottomCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Roll Explosion.lua
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Roll Head active.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Roll Head inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Roll TopCap active.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Roll TopCap inactive.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Tap Lift 4x1.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Tap Mine.lua
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Tap Note.lua
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Tap explosion bright.png
+lib/stepmania/NoteSkins/kb7/retrobar/Bar Tap explosion dim.redir
+lib/stepmania/NoteSkins/kb7/retrobar/Noteskin.lua
+lib/stepmania/NoteSkins/kb7/retrobar/_bar hold explosion bright.png
+lib/stepmania/NoteSkins/kb7/retrobar/_bar hold explosion dim.png
+lib/stepmania/NoteSkins/kb7/retrobar/_bar mine 4x1.png
+lib/stepmania/NoteSkins/kb7/retrobar/_bar receptor base.png
+lib/stepmania/NoteSkins/kb7/retrobar/_bar receptor tap.png
+lib/stepmania/NoteSkins/kb7/retrobar/_bar tap base.png
+lib/stepmania/NoteSkins/kb7/retrobar/_bar tap fake 1x8.png
+lib/stepmania/NoteSkins/kb7/retrobar/_bar tap note 8x8.png
+lib/stepmania/NoteSkins/kb7/retrobar/metrics.ini
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Explosion.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Hold Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Hold Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Receptor.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Roll Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist Tap Lift.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFist tap note.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Explosion.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Hold Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Hold Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Receptor.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Roll Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot Tap Lift.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyLeftFoot tap note.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Explosion.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist HitMine Explosion.redir
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Hold Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Hold Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Receptor.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Roll Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist Tap Lift.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFist tap Note (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Explosion.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot HitMine Explosion.redir
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Hold Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Hold Head Inactive.redir
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Receptor.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Roll Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot Tap Lift.lua
+lib/stepmania/NoteSkins/kickbox/default/AnyRightFoot tap note (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Hold Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Hold Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Roll Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFist tap note.lua
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Hold Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Hold Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Roll Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/DownLeftFoot tap note.lua
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Hold Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Hold Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Roll Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/DownRightFist Tap Note (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Hold Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Hold Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Roll Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/DownRightFoot tap note (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/Fallback HitMine Explosion.png
+lib/stepmania/NoteSkins/kickbox/default/NoteSkin.lua
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Hold Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Hold Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Roll Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFist tap note.lua
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Hold Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Hold Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Roll Head Active.lua
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/UpLeftFoot tap note.lua
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Hold Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Hold Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Roll Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/UpRightFist Tap Note (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Hold Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Hold Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Hold BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Hold BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Hold Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Hold Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Roll Body Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Roll Body Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Roll BottomCap Active (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Roll BottomCap Inactive (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Roll Head Active.redir
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot Roll Head Inactive.lua
+lib/stepmania/NoteSkins/kickbox/default/UpRightFoot tap note (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFist Hold Explosion.redir
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFist Roll Explosion.redir
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFist Tap Explosion Dim (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFist Tap Lift (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFist receptor frame (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFist receptor underlay (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFoot Hold Explosion.redir
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFoot Roll Explosion.redir
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFoot Tap Explosion Dim (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFoot Tap Lift (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFoot receptor frame (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/_AnyRightFoot receptor underlay (doubleres).png
+lib/stepmania/NoteSkins/kickbox/default/metrics.ini
+lib/stepmania/NoteSkins/lights/default/metrics.ini
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/Center Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/Center Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/Center Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/Center Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/DownLeft Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/DownLeft Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/DownLeft Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/DownLeft Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/DownRight Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/DownRight Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/DownRight Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/DownRight Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/NoteSkin.lua
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/UpLeft Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/UpLeft Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/UpLeft Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/UpLeft Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/UpRight Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/UpRight Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/UpRight Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/UpRight Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p1/metrics.ini
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/Center Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/Center Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/Center Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/Center Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/DownLeft Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/DownLeft Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/DownLeft Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/DownLeft Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/DownRight Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/DownRight Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/DownRight Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/DownRight Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/NoteSkin.lua
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/UpLeft Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/UpLeft Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/UpLeft Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/UpLeft Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/UpRight Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/UpRight Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/UpRight Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/UpRight Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd-routine-p2/metrics.ini
+lib/stepmania/NoteSkins/pump/cmd/Center Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd/Center Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd/Center Outline Receptor (doubleres).png
+lib/stepmania/NoteSkins/pump/cmd/Center Ready Receptor (doubleres) 1x3.png
+lib/stepmania/NoteSkins/pump/cmd/Center Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd/Center Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd/DownLeft Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd/DownLeft Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd/DownLeft Ready Receptor (doubleres) 1x3.png
+lib/stepmania/NoteSkins/pump/cmd/DownLeft Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd/DownLeft Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd/DownRight Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd/DownRight Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd/DownRight Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd/UpLeft Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd/UpLeft Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd/UpLeft Ready Receptor (doubleres) 1x3.png
+lib/stepmania/NoteSkins/pump/cmd/UpLeft Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd/UpLeft Tap Note (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd/UpRight Hold Body active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd/UpRight Hold BottomCap active (doubleres) 6x1.png
+lib/stepmania/NoteSkins/pump/cmd/UpRight Roll Head Active (doubleres) 3x2.png
+lib/stepmania/NoteSkins/pump/cmd/metrics.ini
+lib/stepmania/NoteSkins/pump/complex/Center Hold Body active (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/Center Hold BottomCap active (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/Center Outline Receptor.redir
+lib/stepmania/NoteSkins/pump/complex/Center Ready Receptor 3x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/Center Tap Note 5x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/DownLeft Hold Body active (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/DownLeft Hold BottomCap active (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/DownLeft Ready Receptor 3x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/DownLeft Tap Note 6x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/DownRight Hold Body active (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/DownRight Hold BottomCap active (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/UpLeft Hold Body active (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/UpLeft Hold BottomCap active (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/UpLeft Ready Receptor 3x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/UpLeft Tap Note 6x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/UpRight Hold Body active (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/UpRight Hold BottomCap active (doubleres).png
+lib/stepmania/NoteSkins/pump/complex/metrics.ini
+lib/stepmania/NoteSkins/pump/default/Center Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/default/Center Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/default/Center Outline Receptor.png
+lib/stepmania/NoteSkins/pump/default/Center Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/default/Center Tap Lift.lua
+lib/stepmania/NoteSkins/pump/default/Center Tap Note 3x2.png
+lib/stepmania/NoteSkins/pump/default/DownLeft Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/default/DownLeft Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/default/DownLeft Outline Receptor.redir
+lib/stepmania/NoteSkins/pump/default/DownLeft Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/default/DownLeft Tap Lift.lua
+lib/stepmania/NoteSkins/pump/default/DownLeft Tap Note 3x2.png
+lib/stepmania/NoteSkins/pump/default/DownRight Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/default/DownRight Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/default/DownRight Ready Receptor.lua
+lib/stepmania/NoteSkins/pump/default/DownRight Tap Lift.lua
+lib/stepmania/NoteSkins/pump/default/DownRight Tap Note.lua
+lib/stepmania/NoteSkins/pump/default/NoteSkin.lua
+lib/stepmania/NoteSkins/pump/default/UpLeft Explosion.lua
+lib/stepmania/NoteSkins/pump/default/UpLeft Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/default/UpLeft Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/default/UpLeft Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/default/UpLeft Receptor.lua
+lib/stepmania/NoteSkins/pump/default/UpLeft Tap Lift.lua
+lib/stepmania/NoteSkins/pump/default/UpLeft Tap Note 3x2.png
+lib/stepmania/NoteSkins/pump/default/UpRight Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/default/UpRight Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/default/UpRight Ready Receptor.lua
+lib/stepmania/NoteSkins/pump/default/UpRight Tap Lift.lua
+lib/stepmania/NoteSkins/pump/default/UpRight Tap Note.lua
+lib/stepmania/NoteSkins/pump/default/_flash (doubleres).png
+lib/stepmania/NoteSkins/pump/default/metrics.ini
+lib/stepmania/NoteSkins/pump/delta-note/Center Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-note/Center Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-note/Center NoteHit.lua
+lib/stepmania/NoteSkins/pump/delta-note/Center Ready Receptor 3x1.png
+lib/stepmania/NoteSkins/pump/delta-note/Center Tap Note.lua
+lib/stepmania/NoteSkins/pump/delta-note/Center_feet.png
+lib/stepmania/NoteSkins/pump/delta-note/DownLeft Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-note/DownLeft Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-note/DownLeft NoteHit.lua
+lib/stepmania/NoteSkins/pump/delta-note/DownLeft Ready Receptor 3x1.png
+lib/stepmania/NoteSkins/pump/delta-note/DownLeft Tap Note.lua
+lib/stepmania/NoteSkins/pump/delta-note/DownRight Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-note/DownRight Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-note/DownRight NoteHit.lua
+lib/stepmania/NoteSkins/pump/delta-note/DownRight Ready Receptor.lua
+lib/stepmania/NoteSkins/pump/delta-note/DownRight Tap Note.lua
+lib/stepmania/NoteSkins/pump/delta-note/DownRight border.redir
+lib/stepmania/NoteSkins/pump/delta-note/Mine_Base.png
+lib/stepmania/NoteSkins/pump/delta-note/Mine_Border.png
+lib/stepmania/NoteSkins/pump/delta-note/Mine_Fill.png
+lib/stepmania/NoteSkins/pump/delta-note/Mine_Light.png
+lib/stepmania/NoteSkins/pump/delta-note/Mine_Overlay.png
+lib/stepmania/NoteSkins/pump/delta-note/UpLeft Explosion.lua
+lib/stepmania/NoteSkins/pump/delta-note/UpLeft Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-note/UpLeft Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-note/UpLeft NoteHit.lua
+lib/stepmania/NoteSkins/pump/delta-note/UpLeft Ready Receptor 3x1.png
+lib/stepmania/NoteSkins/pump/delta-note/UpLeft Receptor.lua
+lib/stepmania/NoteSkins/pump/delta-note/UpLeft Tap Mine.lua
+lib/stepmania/NoteSkins/pump/delta-note/UpLeft Tap Note.lua
+lib/stepmania/NoteSkins/pump/delta-note/UpRight Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-note/UpRight Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-note/UpRight NoteHit.lua
+lib/stepmania/NoteSkins/pump/delta-note/UpRight Ready Receptor.lua
+lib/stepmania/NoteSkins/pump/delta-note/UpRight Tap Note.lua
+lib/stepmania/NoteSkins/pump/delta-note/UpRight border.redir
+lib/stepmania/NoteSkins/pump/delta-note/_Center Tap Note 6x8.png
+lib/stepmania/NoteSkins/pump/delta-note/_CenterHit 3x1.png
+lib/stepmania/NoteSkins/pump/delta-note/_DownLeft Tap Note 6x8.png
+lib/stepmania/NoteSkins/pump/delta-note/_DownLeftHit 3x1.png
+lib/stepmania/NoteSkins/pump/delta-note/_UpLeft Tap Note 6x8.png
+lib/stepmania/NoteSkins/pump/delta-note/_blank.png
+lib/stepmania/NoteSkins/pump/delta-note/metrics.ini
+lib/stepmania/NoteSkins/pump/delta-note/reminder.txt
+lib/stepmania/NoteSkins/pump/delta-routine-p1/Center Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/Center Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/Center Tap Note 6x1.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/DownLeft Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/DownLeft Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/DownLeft Tap Note 6x1.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/DownRight Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/DownRight Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/NoteSkin.lua
+lib/stepmania/NoteSkins/pump/delta-routine-p1/UpLeft Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/UpLeft Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/UpLeft Tap Note 6x1.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/UpRight Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/UpRight Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p1/metrics.ini
+lib/stepmania/NoteSkins/pump/delta-routine-p2/Center Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/Center Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/Center Tap Note 6x1.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/DownLeft Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/DownLeft Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/DownLeft Tap Note 6x1.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/DownRight Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/DownRight Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/NoteSkin.lua
+lib/stepmania/NoteSkins/pump/delta-routine-p2/UpLeft Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/UpLeft Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/UpLeft Tap Note 6x1.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/UpRight Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/UpRight Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta-routine-p2/metrics.ini
+lib/stepmania/NoteSkins/pump/delta/Center Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta/Center Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta/Center Hold Head.lua
+lib/stepmania/NoteSkins/pump/delta/Center NoteHit.lua
+lib/stepmania/NoteSkins/pump/delta/Center Ready Receptor 3x1.png
+lib/stepmania/NoteSkins/pump/delta/Center Tap Note.lua
+lib/stepmania/NoteSkins/pump/delta/Center border.png
+lib/stepmania/NoteSkins/pump/delta/Center_blend.png
+lib/stepmania/NoteSkins/pump/delta/Center_feet.png
+lib/stepmania/NoteSkins/pump/delta/Center_fill.png
+lib/stepmania/NoteSkins/pump/delta/DownLeft Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta/DownLeft Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta/DownLeft Hold Head.lua
+lib/stepmania/NoteSkins/pump/delta/DownLeft NoteHit.lua
+lib/stepmania/NoteSkins/pump/delta/DownLeft Ready Receptor 3x1.png
+lib/stepmania/NoteSkins/pump/delta/DownLeft Tap Note.lua
+lib/stepmania/NoteSkins/pump/delta/DownLeft border.png
+lib/stepmania/NoteSkins/pump/delta/DownLeft_blend.png
+lib/stepmania/NoteSkins/pump/delta/DownLeft_fill.png
+lib/stepmania/NoteSkins/pump/delta/DownRight Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta/DownRight Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta/DownRight Hold Head.lua
+lib/stepmania/NoteSkins/pump/delta/DownRight NoteHit.lua
+lib/stepmania/NoteSkins/pump/delta/DownRight Ready Receptor.lua
+lib/stepmania/NoteSkins/pump/delta/DownRight Tap Note.lua
+lib/stepmania/NoteSkins/pump/delta/DownRight border.redir
+lib/stepmania/NoteSkins/pump/delta/Mine_Base.png
+lib/stepmania/NoteSkins/pump/delta/Mine_Border.png
+lib/stepmania/NoteSkins/pump/delta/Mine_Fill.png
+lib/stepmania/NoteSkins/pump/delta/Mine_Light.png
+lib/stepmania/NoteSkins/pump/delta/Mine_Overlay.png
+lib/stepmania/NoteSkins/pump/delta/NoteSkin.lua
+lib/stepmania/NoteSkins/pump/delta/UpLeft Explosion.lua
+lib/stepmania/NoteSkins/pump/delta/UpLeft Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta/UpLeft Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta/UpLeft Hold Head.lua
+lib/stepmania/NoteSkins/pump/delta/UpLeft NoteHit.lua
+lib/stepmania/NoteSkins/pump/delta/UpLeft Ready Receptor 3x1.png
+lib/stepmania/NoteSkins/pump/delta/UpLeft Receptor.lua
+lib/stepmania/NoteSkins/pump/delta/UpLeft Tap Mine.lua
+lib/stepmania/NoteSkins/pump/delta/UpLeft Tap Note.lua
+lib/stepmania/NoteSkins/pump/delta/UpLeft border.png
+lib/stepmania/NoteSkins/pump/delta/UpLeft_blend.png
+lib/stepmania/NoteSkins/pump/delta/UpLeft_fill.png
+lib/stepmania/NoteSkins/pump/delta/UpRight Hold Body Active.png
+lib/stepmania/NoteSkins/pump/delta/UpRight Hold BottomCap Active.png
+lib/stepmania/NoteSkins/pump/delta/UpRight Hold Head.lua
+lib/stepmania/NoteSkins/pump/delta/UpRight NoteHit.lua
+lib/stepmania/NoteSkins/pump/delta/UpRight Ready Receptor.lua
+lib/stepmania/NoteSkins/pump/delta/UpRight Tap Note.lua
+lib/stepmania/NoteSkins/pump/delta/UpRight border.redir
+lib/stepmania/NoteSkins/pump/delta/_CenterHit 3x1.png
+lib/stepmania/NoteSkins/pump/delta/_DownLeftHit 3x1.png
+lib/stepmania/NoteSkins/pump/delta/_blank.png
+lib/stepmania/NoteSkins/pump/delta/metrics.ini
+lib/stepmania/NoteSkins/pump/frame5p/Center Hold Body active (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/Center Hold BottomCap active (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/Center Outline Receptor.redir
+lib/stepmania/NoteSkins/pump/frame5p/Center Ready Receptor 3x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/Center Tap Note 8x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/DownLeft Hold Body active (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/DownLeft Hold BottomCap active (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/DownLeft Hold TopCap Active (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/DownLeft Ready Receptor 3x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/DownLeft Tap Note 8x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/DownRight Hold Body active (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/DownRight Hold BottomCap active (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/DownRight Hold TopCap Active(doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/UpLeft Hold Body active (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/UpLeft Hold BottomCap active (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/UpLeft Hold TopCap (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/UpLeft Ready Receptor 3x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/UpLeft Tap Note 8x1 (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/UpRight Hold Body active (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/UpRight Hold BottomCap active (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/UpRight Hold TopCap (doubleres).png
+lib/stepmania/NoteSkins/pump/frame5p/metrics.ini
+lib/stepmania/NoteSkins/pump/newextra/Center Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/newextra/Center Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/newextra/Center Outline Receptor.png
+lib/stepmania/NoteSkins/pump/newextra/Center Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/newextra/Center Tap Note 3x2.png
+lib/stepmania/NoteSkins/pump/newextra/DownLeft Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/newextra/DownLeft Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/newextra/DownLeft Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/newextra/DownLeft Tap Note 3x2.png
+lib/stepmania/NoteSkins/pump/newextra/DownRight Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/newextra/DownRight Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/newextra/UpLeft Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/newextra/UpLeft Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/newextra/UpLeft Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/newextra/UpLeft Tap Note 3x2.png
+lib/stepmania/NoteSkins/pump/newextra/UpRight Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/newextra/UpRight Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/pad/Center Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/pad/Center Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/pad/Center Outline Receptor.png
+lib/stepmania/NoteSkins/pump/pad/Center Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/pad/Center Roll Head Active 3x2.png
+lib/stepmania/NoteSkins/pump/pad/Center Tap Note 3x2.png
+lib/stepmania/NoteSkins/pump/pad/DownLeft Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/pad/DownLeft Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/pad/DownLeft Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/pad/DownLeft Roll Head Active 3x2.png
+lib/stepmania/NoteSkins/pump/pad/DownLeft Tap Note 3x2.png
+lib/stepmania/NoteSkins/pump/pad/DownRight Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/pad/DownRight Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/pad/DownRight Roll Head Active 3x2.png
+lib/stepmania/NoteSkins/pump/pad/UpLeft Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/pad/UpLeft Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/pad/UpLeft Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/pad/UpLeft Roll Head Active 3x2.png
+lib/stepmania/NoteSkins/pump/pad/UpLeft Tap Note 3x2.png
+lib/stepmania/NoteSkins/pump/pad/UpRight Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/pad/UpRight Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/pad/UpRight Roll Head Active 3x2.png
+lib/stepmania/NoteSkins/pump/rhythm/Center Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/rhythm/Center Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/rhythm/Center Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/rhythm/Center Tap Note.lua
+lib/stepmania/NoteSkins/pump/rhythm/DownLeft Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/rhythm/DownLeft Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/rhythm/DownLeft Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/rhythm/DownLeft Tap Note.lua
+lib/stepmania/NoteSkins/pump/rhythm/DownRight Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/rhythm/DownRight Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/rhythm/UpLeft Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/rhythm/UpLeft Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/rhythm/UpLeft Ready Receptor 1x3.png
+lib/stepmania/NoteSkins/pump/rhythm/UpLeft Tap Note.lua
+lib/stepmania/NoteSkins/pump/rhythm/UpRight Hold Body Active 6x1.png
+lib/stepmania/NoteSkins/pump/rhythm/UpRight Hold BottomCap Active 6x1.png
+lib/stepmania/NoteSkins/pump/rhythm/_Center Tap Note 6x8.png
+lib/stepmania/NoteSkins/pump/rhythm/_DownLeft Tap Note 6x8.png
+lib/stepmania/NoteSkins/pump/rhythm/_UpLeft Tap Note 6x8.png
+lib/stepmania/NoteSkins/pump/rhythm/metrics.ini
+lib/stepmania/NoteSkins/pump/simple/Center Hold Body active.png
+lib/stepmania/NoteSkins/pump/simple/Center Hold BottomCap active.png
+lib/stepmania/NoteSkins/pump/simple/Center Outline Receptor.redir
+lib/stepmania/NoteSkins/pump/simple/Center Ready Receptor 3x1.png
+lib/stepmania/NoteSkins/pump/simple/Center Tap Note 8x1.png
+lib/stepmania/NoteSkins/pump/simple/DownLeft Hold Body active.png
+lib/stepmania/NoteSkins/pump/simple/DownLeft Hold BottomCap active.png
+lib/stepmania/NoteSkins/pump/simple/DownLeft Ready Receptor 3x1.png
+lib/stepmania/NoteSkins/pump/simple/DownLeft Tap Note 8x1.png
+lib/stepmania/NoteSkins/pump/simple/DownRight Hold Body active.png
+lib/stepmania/NoteSkins/pump/simple/DownRight Hold BottomCap active.png
+lib/stepmania/NoteSkins/pump/simple/UpLeft Hold Body active.png
+lib/stepmania/NoteSkins/pump/simple/UpLeft Hold BottomCap active.png
+lib/stepmania/NoteSkins/pump/simple/UpLeft Ready Receptor 3x1.png
+lib/stepmania/NoteSkins/pump/simple/UpLeft Tap Note 8x1.png
+lib/stepmania/NoteSkins/pump/simple/UpRight Hold Body active.png
+lib/stepmania/NoteSkins/pump/simple/UpRight Hold BottomCap active.png
+lib/stepmania/NoteSkins/pump/simple/metrics.ini
+lib/stepmania/NoteSkins/techno/default/metrics.ini
+lib/stepmania/Scripts/32log.lua
+lib/stepmania/Scripts/extend_table.lua
+lib/stepmania/Scripts/unavailable_functions.lua
+lib/stepmania/Themes/_Installer/Languages/de.ini
+lib/stepmania/Themes/_Installer/Languages/en.ini
+lib/stepmania/Themes/_Installer/Languages/es.ini
+lib/stepmania/Themes/_Installer/Languages/fr.ini
+lib/stepmania/Themes/_Installer/Languages/it.ini
+lib/stepmania/Themes/_Installer/Languages/pl.ini
+lib/stepmania/Themes/_Installer/readme.txt
+lib/stepmania/Themes/_fallback/BGAnimations/Screen background.redir
+lib/stepmania/Themes/_fallback/BGAnimations/Screen cancel.redir
+lib/stepmania/Themes/_fallback/BGAnimations/Screen decorations.redir
+lib/stepmania/Themes/_fallback/BGAnimations/Screen in.redir
+lib/stepmania/Themes/_fallback/BGAnimations/Screen out.redir
+lib/stepmania/Themes/_fallback/BGAnimations/Screen overlay.redir
+lib/stepmania/Themes/_fallback/BGAnimations/Screen underlay.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenConsoleOverlay overlay.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenCredits overlay.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenGameplay background.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenGameplay cleared.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenGameplay failed.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenGameplay go.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenGameplay next course song.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenGameplay ready.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenGameplay toasty.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenInit background/default.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenInit background/ssc (doubleres).png
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenInitialScreenIsInvalid overlay.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenNameEntryTraditional underlay/default.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenNameEntryTraditional underlay/keyboard.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenNoise background/default.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenNoise background/noise.png
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenOptionsCustomizeProfile overlay.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenOverscanConfig overlay.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenProfileLoad decorations.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenProfileLoad overlay.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenProfileSave overlay.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenSelectProfile overlay.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenSetBGFit overlay.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenSongOptions option in.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenSystemLayer aux.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenSystemLayer error.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenSystemLayer overlay/default.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenTestInput underlay.lua
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenWithMenuElements background.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenWithMenuElements decorations.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenWithMenuElements overlay.redir
+lib/stepmania/Themes/_fallback/BGAnimations/ScreenWithMenuElements underlay.redir
+lib/stepmania/Themes/_fallback/BGAnimations/_blank.lua
+lib/stepmania/Themes/_fallback/BGAnimations/_frame 3x1/default.lua
+lib/stepmania/Themes/_fallback/BGAnimations/_frame 3x3/default.lua
+lib/stepmania/Themes/_fallback/BGAnimations/_frame files 3x1/headers 3x1.png
+lib/stepmania/Themes/_fallback/BGAnimations/_frame files 3x3/rounded black 3x3.png
+lib/stepmania/Themes/_fallback/BGAnimations/_missing.lua
+lib/stepmania/Themes/_fallback/BGAnimations/_wait.lua
+lib/stepmania/Themes/_fallback/Fonts/BPMDisplay bpm.redir
+lib/stepmania/Themes/_fallback/Fonts/Combo numbers.redir
+lib/stepmania/Themes/_fallback/Fonts/Common Bold.redir
+lib/stepmania/Themes/_fallback/Fonts/Common Editor.redir
+lib/stepmania/Themes/_fallback/Fonts/Common Error.redir
+lib/stepmania/Themes/_fallback/Fonts/Common Large.redir
+lib/stepmania/Themes/_fallback/Fonts/Common Normal.redir
+lib/stepmania/Themes/_fallback/Fonts/Common Semibold.redir
+lib/stepmania/Themes/_fallback/Fonts/Common default 2x1.png
+lib/stepmania/Themes/_fallback/Fonts/Common default.ini
+lib/stepmania/Themes/_fallback/Fonts/CourseEntryDisplay difficulty.redir
+lib/stepmania/Themes/_fallback/Fonts/CourseEntryDisplay number.redir
+lib/stepmania/Themes/_fallback/Fonts/EditMenu title.redir
+lib/stepmania/Themes/_fallback/Fonts/EditMenu value.redir
+lib/stepmania/Themes/_fallback/Fonts/HelpDisplay text.redir
+lib/stepmania/Themes/_fallback/Fonts/LifeMeterBattery Percent text.redir
+lib/stepmania/Themes/_fallback/Fonts/LifeMeterBattery lives.redir
+lib/stepmania/Themes/_fallback/Fonts/LyricDisplay text.redir
+lib/stepmania/Themes/_fallback/Fonts/MenuTimer numbers.redir
+lib/stepmania/Themes/_fallback/Fonts/ModIcon text.redir
+lib/stepmania/Themes/_fallback/Fonts/MusicWheelItem Course.redir
+lib/stepmania/Themes/_fallback/Fonts/MusicWheelItem Custom.redir
+lib/stepmania/Themes/_fallback/Fonts/MusicWheelItem Mode.redir
+lib/stepmania/Themes/_fallback/Fonts/MusicWheelItem Portal.redir
+lib/stepmania/Themes/_fallback/Fonts/MusicWheelItem Random.redir
+lib/stepmania/Themes/_fallback/Fonts/MusicWheelItem Roulette.redir
+lib/stepmania/Themes/_fallback/Fonts/MusicWheelItem SectionCollapsed.redir
+lib/stepmania/Themes/_fallback/Fonts/MusicWheelItem SectionCount.redir
+lib/stepmania/Themes/_fallback/Fonts/MusicWheelItem SectionExpanded.redir
+lib/stepmania/Themes/_fallback/Fonts/MusicWheelItem Sort.redir
+lib/stepmania/Themes/_fallback/Fonts/NoteField MeasureNumber.redir
+lib/stepmania/Themes/_fallback/Fonts/OptionRow item.redir
+lib/stepmania/Themes/_fallback/Fonts/OptionRow title.redir
+lib/stepmania/Themes/_fallback/Fonts/OptionsList normal.redir
+lib/stepmania/Themes/_fallback/Fonts/RoomInfoDisplay text.redir
+lib/stepmania/Themes/_fallback/Fonts/RoomWheel text.redir
+lib/stepmania/Themes/_fallback/Fonts/RoomWheelItem text.redir
+lib/stepmania/Themes/_fallback/Fonts/ScoreDisplayLifeTime DeltaSeconds.redir
+lib/stepmania/Themes/_fallback/Fonts/ScoreDisplayLifeTime TimeRemaining.redir
+lib/stepmania/Themes/_fallback/Fonts/ScoreDisplayNormal Text.redir
+lib/stepmania/Themes/_fallback/Fonts/ScoreDisplayOni numbers.redir
+lib/stepmania/Themes/_fallback/Fonts/ScoreDisplayPercentage percent text.redir
+lib/stepmania/Themes/_fallback/Fonts/ScoreDisplayRave level.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenConsoleOverlay Credits.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenConsoleOverlay SystemMessage.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenDebugOverlay header.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenDebugOverlay line.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenDebugOverlay page.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEdit EditHelp.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEdit Info.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEdit PlayRecordHelp.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEditMenu NumStepsLoadedFromProfile.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEditMenu explanation.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEvaluation JudgmentLineNumber.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEvaluation Percent remainder.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEvaluation Percent text.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEvaluation PlayerOptions.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEvaluation ScoreNumber.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEvaluation SongOptions.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenEvaluation SurvivedNumber.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenGameplay DeltaSeconds.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenGameplay RemainingTime.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenGameplay SongNum.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenGameplay activeattacklist.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenGameplay debug.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenGameplay player options.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenGameplay scoreboard.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenGameplay song options.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenGameplay stepsdescription.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenGameplay survive time.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenGameplaySyncMachine SyncInfo.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenHighScores Name.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenHighScores Score.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenHighScores Text.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenInstallOverlay status.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenMapControllers devices.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenMapControllers entry.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenMapControllers title.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenNetEvaluation names.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenNetSelectBase chat.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenNetSelectBase users.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenOptions explanation.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenPrompt answer.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenPrompt question.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenRanking StepsType.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenReloadSongs LoadingText.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenSMOnlineSelectMusic chat.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenSelectMusic score.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenStatsOverlay stats.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenSyncOverlay adjustments.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenSyncOverlay status.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenSystemLayer Credits.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenTextEntry answer.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenTextEntry question.redir
+lib/stepmania/Themes/_fallback/Fonts/ScreenWithMenuElements StageDisplay.redir
+lib/stepmania/Themes/_fallback/Fonts/StepsDisplay StepsType.redir
+lib/stepmania/Themes/_fallback/Fonts/StepsDisplay description.redir
+lib/stepmania/Themes/_fallback/Fonts/StepsDisplay meter.redir
+lib/stepmania/Themes/_fallback/Fonts/StepsDisplayListRow description.redir
+lib/stepmania/Themes/_fallback/Fonts/StepsDisplayListRow meter.redir
+lib/stepmania/Themes/_fallback/Fonts/TextBanner text.redir
+lib/stepmania/Themes/_fallback/Fonts/_16px fonts.ini
+lib/stepmania/Themes/_fallback/Fonts/_20px fonts.ini
+lib/stepmania/Themes/_fallback/Fonts/_Thai 16px [PhayanChana-stroke] 16x4.png
+lib/stepmania/Themes/_fallback/Fonts/_Thai 16px [PhayanChana] 16x4.png
+lib/stepmania/Themes/_fallback/Fonts/_Thai 16px [Sara1-stroke] 8x2.png
+lib/stepmania/Themes/_fallback/Fonts/_Thai 16px [Sara1] 8x2.png
+lib/stepmania/Themes/_fallback/Fonts/_Thai 16px [Sara2-stroke] 8x2.png
+lib/stepmania/Themes/_fallback/Fonts/_Thai 16px [Sara2] 8x2.png
+lib/stepmania/Themes/_fallback/Fonts/_Thai 16px.ini
+lib/stepmania/Themes/_fallback/Fonts/_game chars 16px 4x2.png
+lib/stepmania/Themes/_fallback/Fonts/_game chars 16px.ini
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 1-stroke] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 10-stroke] 2x1.png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 10] 2x1 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 1] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 2-stroke] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 2] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 3-stroke] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 3] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 4-stroke] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 4] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 5-stroke] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 5] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 6-stroke] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 6] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 7-stroke] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 7] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 8-stroke] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 8] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 9-stroke] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 9] 8x8 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-jis1-stroke] 32x32 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-jis1] 32x32 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-jis2-stroke] 32x106 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-jis2] 32x106 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-regular-stroke] 32x61 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-regular] 32x61 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [main-stroke] 16x16 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [main] 16x16 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [symbol-stroke] 26x3 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [symbol] 26x3 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px.ini
+lib/stepmania/Themes/_fallback/Fonts/_korean 24px [jamo 1-stroke] 8x8.png
+lib/stepmania/Themes/_fallback/Fonts/_korean 24px [jamo 1] 8x8.png
+lib/stepmania/Themes/_fallback/Fonts/_korean 24px [jamo 2-stroke] 8x8.png
+lib/stepmania/Themes/_fallback/Fonts/_korean 24px [jamo 2] 8x8.png
+lib/stepmania/Themes/_fallback/Fonts/_korean 24px [jamo 3-stroke] 8x8.png
+lib/stepmania/Themes/_fallback/Fonts/_korean 24px [jamo 3] 8x8.png
+lib/stepmania/Themes/_fallback/Fonts/_korean 24px [jamo 4-stroke] 8x8.png
+lib/stepmania/Themes/_fallback/Fonts/_korean 24px [jamo 4] 8x8.png
+lib/stepmania/Themes/_fallback/Fonts/_korean 24px.ini
+lib/stepmania/Themes/_fallback/Fonts/_misc 16px [main-stroke] 8x4.png
+lib/stepmania/Themes/_fallback/Fonts/_misc 16px [main] 8x4.png
+lib/stepmania/Themes/_fallback/Fonts/_misc 16px.ini
+lib/stepmania/Themes/_fallback/Fonts/_missing.redir
+lib/stepmania/Themes/_fallback/Fonts/_open sans semibold 24px [alt-stroke] 10x10.png
+lib/stepmania/Themes/_fallback/Fonts/_open sans semibold 24px [alt] 10x10.png
+lib/stepmania/Themes/_fallback/Fonts/_open sans semibold 24px [main-stroke] 15x15.png
+lib/stepmania/Themes/_fallback/Fonts/_open sans semibold 24px [main] 15x15.png
+lib/stepmania/Themes/_fallback/Fonts/_open sans semibold 24px.ini
+lib/stepmania/Themes/_fallback/Fonts/_roboto black Bold 24px [alt-stroke] 10x10.png
+lib/stepmania/Themes/_fallback/Fonts/_roboto black Bold 24px [alt] 10x10.png
+lib/stepmania/Themes/_fallback/Fonts/_roboto black Bold 24px [main-stroke] 15x15.png
+lib/stepmania/Themes/_fallback/Fonts/_roboto black Bold 24px [main] 15x15.png
+lib/stepmania/Themes/_fallback/Fonts/_roboto black Bold 24px.ini
+lib/stepmania/Themes/_fallback/Fonts/_ui chars 16px [main-stroke] 1x1.png
+lib/stepmania/Themes/_fallback/Fonts/_ui chars 16px [main] 1x1.png
+lib/stepmania/Themes/_fallback/Fonts/_ui chars 16px.ini
+lib/stepmania/Themes/_fallback/Fonts/frutiger 24px [alt-stroke] 12x11.png
+lib/stepmania/Themes/_fallback/Fonts/frutiger 24px [alt] 12x11.png
+lib/stepmania/Themes/_fallback/Fonts/frutiger 24px [main-stroke] 16x16.png
+lib/stepmania/Themes/_fallback/Fonts/frutiger 24px [main] 16x16.png
+lib/stepmania/Themes/_fallback/Fonts/frutiger 24px [polish-stroke] 8x2.png
+lib/stepmania/Themes/_fallback/Fonts/frutiger 24px [polish] 8x2.png
+lib/stepmania/Themes/_fallback/Fonts/frutiger 24px.ini
+lib/stepmania/Themes/_fallback/Graphics/Banner Artist.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner BPM.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner ChallengeMeter.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner DoubleChallengeMeter.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner DoubleEasyMeter.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner DoubleHardMeter.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner DoubleMediumMeter.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner EasyMeter.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner Endless.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner Genre.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner HardMeter.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner Length.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner MediumMeter.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner Title.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner TopGrades.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner abc.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner all music.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner course fallback.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner group fallback.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner mode.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner random.redir
+lib/stepmania/Themes/_fallback/Graphics/Banner roulette.redir
+lib/stepmania/Themes/_fallback/Graphics/BeginnerHelper background.redir
+lib/stepmania/Themes/_fallback/Graphics/BeginnerHelper flash.redir
+lib/stepmania/Themes/_fallback/Graphics/BeginnerHelper stepcircle.redir
+lib/stepmania/Themes/_fallback/Graphics/CombinedLifeMeterTug frame.redir
+lib/stepmania/Themes/_fallback/Graphics/CombinedLifeMeterTug separator.lua
+lib/stepmania/Themes/_fallback/Graphics/CombinedLifeMeterTug stream p1.png
+lib/stepmania/Themes/_fallback/Graphics/CombinedLifeMeterTug stream p2.png
+lib/stepmania/Themes/_fallback/Graphics/CombinedLifeMeterTug tip p1.redir
+lib/stepmania/Themes/_fallback/Graphics/CombinedLifeMeterTug tip p2.redir
+lib/stepmania/Themes/_fallback/Graphics/Common fallback banner.redir
+lib/stepmania/Themes/_fallback/Graphics/Common splash.png
+lib/stepmania/Themes/_fallback/Graphics/Common window icon.png
+lib/stepmania/Themes/_fallback/Graphics/CourseEntryDisplay bar.redir
+lib/stepmania/Themes/_fallback/Graphics/CreditsLogo kyzentun.png
+lib/stepmania/Themes/_fallback/Graphics/EditMenu left.lua
+lib/stepmania/Themes/_fallback/Graphics/EditMenu right.lua
+lib/stepmania/Themes/_fallback/Graphics/HoldJudgment label 1x2.redir
+lib/stepmania/Themes/_fallback/Graphics/Judgment Normal 1x6.png
+lib/stepmania/Themes/_fallback/Graphics/LifeMeterBar danger.redir
+lib/stepmania/Themes/_fallback/Graphics/LifeMeterBar extra danger.redir
+lib/stepmania/Themes/_fallback/Graphics/LifeMeterBar extra over.redir
+lib/stepmania/Themes/_fallback/Graphics/LifeMeterBar extra under.redir
+lib/stepmania/Themes/_fallback/Graphics/LifeMeterBar frame.redir
+lib/stepmania/Themes/_fallback/Graphics/LifeMeterBar over.redir
+lib/stepmania/Themes/_fallback/Graphics/LifeMeterBar under.redir
+lib/stepmania/Themes/_fallback/Graphics/LifeMeterBattery frame.redir
+lib/stepmania/Themes/_fallback/Graphics/LifeMeterBattery lives.redir
+lib/stepmania/Themes/_fallback/Graphics/LifeMeterTime background.redir
+lib/stepmania/Themes/_fallback/Graphics/LifeMeterTime frame.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay checking p1.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay checking p2.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay error p1.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay error p2.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay late p1.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay late p2.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay none p1.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay none p2.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay ready p1.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay ready p2.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay removed p1.redir
+lib/stepmania/Themes/_fallback/Graphics/MemoryCardDisplay removed p2.redir
+lib/stepmania/Themes/_fallback/Graphics/MenuTimer frame.redir
+lib/stepmania/Themes/_fallback/Graphics/ModIcon Empty.redir
+lib/stepmania/Themes/_fallback/Graphics/ModIcon Filled.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheel highlight.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Course ColorPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Course NormalPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Course OverPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Custom ColorPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Custom NormalPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Custom OverPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Mode ColorPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Mode NormalPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Mode OverPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Portal ColorPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Portal NormalPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Portal OverPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Random ColorPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Random NormalPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Random OverPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Roulette ColorPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Roulette NormalPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Roulette OverPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem SectionCollapsed ColorPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem SectionCollapsed NormalPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem SectionCollapsed OverPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem SectionExpanded ColorPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem SectionExpanded NormalPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem SectionExpanded OverPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Song ColorPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Song NormalPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Song OverPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Sort ColorPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Sort NormalPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem Sort OverPart.redir
+lib/stepmania/Themes/_fallback/Graphics/MusicWheelItem grades.redir
+lib/stepmania/Themes/_fallback/Graphics/NoteField bars 1x4.png
+lib/stepmania/Themes/_fallback/Graphics/NoteField board.redir
+lib/stepmania/Themes/_fallback/Graphics/OptionRow frame.redir
+lib/stepmania/Themes/_fallback/Graphics/OptionsCursorP1 CanGoLeft.redir
+lib/stepmania/Themes/_fallback/Graphics/OptionsCursorP1 CanGoRight.redir
+lib/stepmania/Themes/_fallback/Graphics/OptionsCursorP1 Left (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/OptionsCursorP1 Middle (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/OptionsCursorP1 Right (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/OptionsCursorP2 CanGoLeft.redir
+lib/stepmania/Themes/_fallback/Graphics/OptionsCursorP2 CanGoRight.redir
+lib/stepmania/Themes/_fallback/Graphics/OptionsCursorP2 Left (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/OptionsCursorP2 Middle (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/OptionsCursorP2 Right (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/OptionsList cursor.redir
+lib/stepmania/Themes/_fallback/Graphics/OptionsList underline.redir
+lib/stepmania/Themes/_fallback/Graphics/OptionsUnderlineP1 Left (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/OptionsUnderlineP1 Middle (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/OptionsUnderlineP1 Right (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/OptionsUnderlineP2 Left (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/OptionsUnderlineP2 Middle (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/OptionsUnderlineP2 Right (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/Player combo/default.lua
+lib/stepmania/Themes/_fallback/Graphics/Player judgment/default.lua
+lib/stepmania/Themes/_fallback/Graphics/Progressbar Indeterminate.png
+lib/stepmania/Themes/_fallback/Graphics/RoomInfoDisplay background.redir
+lib/stepmania/Themes/_fallback/Graphics/RoomWheelItem ColorPart.redir
+lib/stepmania/Themes/_fallback/Graphics/RoomWheelItem NormalPart.redir
+lib/stepmania/Themes/_fallback/Graphics/RoomWheelItem OverPart.redir
+lib/stepmania/Themes/_fallback/Graphics/ScoreDisplayLifeTime frame.redir
+lib/stepmania/Themes/_fallback/Graphics/ScoreDisplayNormal frame.redir
+lib/stepmania/Themes/_fallback/Graphics/ScoreDisplayOni frame.redir
+lib/stepmania/Themes/_fallback/Graphics/ScoreDisplayRave frame base p1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScoreDisplayRave frame base p2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScoreDisplayRave frame overlay p1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScoreDisplayRave frame overlay p2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScoreDisplayRave stream level1.png
+lib/stepmania/Themes/_fallback/Graphics/ScoreDisplayRave stream level2.png
+lib/stepmania/Themes/_fallback/Graphics/ScoreDisplayRave stream level3.png
+lib/stepmania/Themes/_fallback/Graphics/ScreenEnding remove card p1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEnding remove card p2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation BannerFrame.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation Disqualified.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation GradeFrame p1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation GradeFrame p2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation JudgmentLabel Held.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation JudgmentLabel MaxCombo.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation JudgmentLabel Miss.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation JudgmentLabel W1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation JudgmentLabel W2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation JudgmentLabel W3.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation JudgmentLabel W4.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation JudgmentLabel W5.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation PercentFrame P1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation PercentFrame P2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation ScoreLabel.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation SurvivedFrame p1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation SurvivedFrame p2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation Win p1 1x3.png
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation Win p2 1x3.png
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation win frame p1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenEvaluation win frame p2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenGameplay oni gameover.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenHighScores ScrollerItem/default.lua
+lib/stepmania/Themes/_fallback/Graphics/ScreenHighScores ScrollerItem/empty (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/ScreenHighScores ScrollerItem/filled (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/ScreenHighScores ScrollerItem/frame (doubleres).png
+lib/stepmania/Themes/_fallback/Graphics/ScreenMapControllers action.lua
+lib/stepmania/Themes/_fallback/Graphics/ScreenMapControllers nosetlistprompt.lua
+lib/stepmania/Themes/_fallback/Graphics/ScreenMapControllers sanitymessage.lua
+lib/stepmania/Themes/_fallback/Graphics/ScreenMapControllers warning.lua
+lib/stepmania/Themes/_fallback/Graphics/ScreenMiniMenuContext header.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenNetSelectBase ChatInputBox.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenNetSelectBase ChatOutputBox.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenOptions LineHighlight P1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenOptions LineHighlight P2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenOptions disqualify.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenOptions more.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenOptions page.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenPrompt cursor.lua
+lib/stepmania/Themes/_fallback/Graphics/ScreenSMOnlineSelectMusic ChatInputBox.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenSMOnlineSelectMusic ChatOutputBox.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenSMOnlineSelectMusic DiffBG.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenSelectMaster explanation page1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenSelectMaster explanation page2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenSelectMaster more page1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenSelectMaster more page2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenSelectMaster scroll.lua
+lib/stepmania/Themes/_fallback/Graphics/ScreenSelectMusic ScoreFrame P1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenSelectMusic ScoreFrame P2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenSelectMusic fallback cdtitle.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenSelectProfile CardBackground.png
+lib/stepmania/Themes/_fallback/Graphics/ScreenSelectProfile CardFrame.png
+lib/stepmania/Themes/_fallback/Graphics/ScreenSetBGFit 16_10_example.png
+lib/stepmania/Themes/_fallback/Graphics/ScreenSetBGFit 16_12_example.png
+lib/stepmania/Themes/_fallback/Graphics/ScreenSetBGFit 16_9_example.png
+lib/stepmania/Themes/_fallback/Graphics/ScreenTitleMenu explanation page1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenTitleMenu explanation page2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenTitleMenu logo.png
+lib/stepmania/Themes/_fallback/Graphics/ScreenTitleMenu more page1.redir
+lib/stepmania/Themes/_fallback/Graphics/ScreenTitleMenu more page2.redir
+lib/stepmania/Themes/_fallback/Graphics/ScrollBar StretchThumb.redir
+lib/stepmania/Themes/_fallback/Graphics/ScrollBar TickThumb.lua
+lib/stepmania/Themes/_fallback/Graphics/ScrollBar bottom.redir
+lib/stepmania/Themes/_fallback/Graphics/ScrollBar middle.redir
+lib/stepmania/Themes/_fallback/Graphics/ScrollBar top.redir
+lib/stepmania/Themes/_fallback/Graphics/SnapDisplay icon 9x1.png
+lib/stepmania/Themes/_fallback/Graphics/StepsDisplay autogen.redir
+lib/stepmania/Themes/_fallback/Graphics/StepsDisplay frame.redir
+lib/stepmania/Themes/_fallback/Graphics/StreamDisplay danger.redir
+lib/stepmania/Themes/_fallback/Graphics/StreamDisplay hot.png
+lib/stepmania/Themes/_fallback/Graphics/StreamDisplay normal.png
+lib/stepmania/Themes/_fallback/Graphics/StreamDisplay passing.redir
+lib/stepmania/Themes/_fallback/Graphics/WheelNotifyIcon icons 4x2.redir
+lib/stepmania/Themes/_fallback/Graphics/_blank.png
+lib/stepmania/Themes/_fallback/Graphics/_frame 1d.lua
+lib/stepmania/Themes/_fallback/Graphics/_frame 3x1/default.lua
+lib/stepmania/Themes/_fallback/Graphics/_frame 3x3/default.lua
+lib/stepmania/Themes/_fallback/Graphics/_missing.png
+lib/stepmania/Themes/_fallback/Graphics/_white.png
+lib/stepmania/Themes/_fallback/Languages/de.ini
+lib/stepmania/Themes/_fallback/Languages/en.ini
+lib/stepmania/Themes/_fallback/Languages/es.ini
+lib/stepmania/Themes/_fallback/Languages/fr.ini
+lib/stepmania/Themes/_fallback/Languages/ja.ini
+lib/stepmania/Themes/_fallback/Languages/nl.ini
+lib/stepmania/Themes/_fallback/Languages/pl.ini
+lib/stepmania/Themes/_fallback/Other/Profile Common.xsl
+lib/stepmania/Themes/_fallback/Other/Profile Stats.xsl
+lib/stepmania/Themes/_fallback/Other/ScreenGameplaySyncMachine music.ssc
+lib/stepmania/Themes/_fallback/Other/ScreenHowToPlay steps.ssc
+lib/stepmania/Themes/_fallback/Other/SongManager PreferredCourses.txt
+lib/stepmania/Themes/_fallback/Other/SongManager PreferredSongs.txt
+lib/stepmania/Themes/_fallback/Other/SongManager PreferredSort.txt
+lib/stepmania/Themes/_fallback/Other/_blank.png
+lib/stepmania/Themes/_fallback/Other/_missing.png
+lib/stepmania/Themes/_fallback/Other/_sync music.ogg
+lib/stepmania/Themes/_fallback/Scripts/00 init.lua
+lib/stepmania/Themes/_fallback/Scripts/01 IniFile.lua
+lib/stepmania/Themes/_fallback/Scripts/01 alias.lua
+lib/stepmania/Themes/_fallback/Scripts/01 base.lua
+lib/stepmania/Themes/_fallback/Scripts/02 Actor.lua
+lib/stepmania/Themes/_fallback/Scripts/02 ActorDef.lua
+lib/stepmania/Themes/_fallback/Scripts/02 Branches.lua
+lib/stepmania/Themes/_fallback/Scripts/02 Colors.lua
+lib/stepmania/Themes/_fallback/Scripts/02 Debug.lua
+lib/stepmania/Themes/_fallback/Scripts/02 Enum.lua
+lib/stepmania/Themes/_fallback/Scripts/02 OptionsMenu.lua
+lib/stepmania/Themes/_fallback/Scripts/02 Other.lua
+lib/stepmania/Themes/_fallback/Scripts/02 Serialize.lua
+lib/stepmania/Themes/_fallback/Scripts/02 Sprite.lua
+lib/stepmania/Themes/_fallback/Scripts/02 StageMods.lua
+lib/stepmania/Themes/_fallback/Scripts/02 ThemePrefs.lua
+lib/stepmania/Themes/_fallback/Scripts/02 ThemePrefsRows.lua
+lib/stepmania/Themes/_fallback/Scripts/02 Utilities.lua
+lib/stepmania/Themes/_fallback/Scripts/03 CustomSpeedMods.lua
+lib/stepmania/Themes/_fallback/Scripts/03 GamePreferences.lua
+lib/stepmania/Themes/_fallback/Scripts/03 Gameplay.lua
+lib/stepmania/Themes/_fallback/Scripts/03 ThemeAndGamePrefs.lua
+lib/stepmania/Themes/_fallback/Scripts/03 ThemeLibrary.lua
+lib/stepmania/Themes/_fallback/Scripts/03 UserPreferences2.lua
+lib/stepmania/Themes/_fallback/Scripts/04 CreditsHelpers.lua
+lib/stepmania/Themes/_fallback/Scripts/04 LogDisplay.lua
+lib/stepmania/Themes/_fallback/Scripts/04 NumPadEntry.lua
+lib/stepmania/Themes/_fallback/Scripts/04 SetBGFitHelpers.lua
+lib/stepmania/Themes/_fallback/Scripts/find_missing_lang_strings.lua
+lib/stepmania/Themes/_fallback/Scripts/hierarchy.txt
+lib/stepmania/Themes/_fallback/Sounds/Common Cancel.ogg
+lib/stepmania/Themes/_fallback/Sounds/Common Coin.ogg
+lib/stepmania/Themes/_fallback/Sounds/Common Start.ogg
+lib/stepmania/Themes/_fallback/Sounds/Common invalid.ogg
+lib/stepmania/Themes/_fallback/Sounds/Common screenshot.ogg
+lib/stepmania/Themes/_fallback/Sounds/Common value.ogg
+lib/stepmania/Themes/_fallback/Sounds/EditMenu row.redir
+lib/stepmania/Themes/_fallback/Sounds/EditMenu value.redir
+lib/stepmania/Themes/_fallback/Sounds/GameplayAssist clap.ogg
+lib/stepmania/Themes/_fallback/Sounds/GameplayAssist metronome beat.redir
+lib/stepmania/Themes/_fallback/Sounds/GameplayAssist metronome measure.redir
+lib/stepmania/Themes/_fallback/Sounds/LifeMeterBattery gain.ogg
+lib/stepmania/Themes/_fallback/Sounds/LifeMeterBattery lose.ogg
+lib/stepmania/Themes/_fallback/Sounds/LifeMeterTime GainLife.ogg
+lib/stepmania/Themes/_fallback/Sounds/MemoryCardManager disconnect.ogg
+lib/stepmania/Themes/_fallback/Sounds/MemoryCardManager error.redir
+lib/stepmania/Themes/_fallback/Sounds/MemoryCardManager ready.ogg
+lib/stepmania/Themes/_fallback/Sounds/MemoryCardManager too late.redir
+lib/stepmania/Themes/_fallback/Sounds/MenuTimer tick.ogg
+lib/stepmania/Themes/_fallback/Sounds/MusicWheel change.ogg
+lib/stepmania/Themes/_fallback/Sounds/MusicWheel collapse.redir
+lib/stepmania/Themes/_fallback/Sounds/MusicWheel expand.redir
+lib/stepmania/Themes/_fallback/Sounds/MusicWheel locked.ogg
+lib/stepmania/Themes/_fallback/Sounds/MusicWheel sort.ogg
+lib/stepmania/Themes/_fallback/Sounds/Player battle attack ending.ogg
+lib/stepmania/Themes/_fallback/Sounds/Player battle attack launch.ogg
+lib/stepmania/Themes/_fallback/Sounds/Player course attack ending.ogg
+lib/stepmania/Themes/_fallback/Sounds/Player course attack launch.ogg
+lib/stepmania/Themes/_fallback/Sounds/Player mine.ogg
+lib/stepmania/Themes/_fallback/Sounds/Screen cancel.redir
+lib/stepmania/Themes/_fallback/Sounds/Screen music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenDemonstration music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit AddNote.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit RemoveNote.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit line.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit marker.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit save.ogg
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit snap.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit switch player.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit switch steps.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit switch timing.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit value decrease.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEdit value increase.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEditCourseSubmenu difficulty changed.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEvaluation start.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenEvaluation try Extra1.ogg
+lib/stepmania/Themes/_fallback/Sounds/ScreenEvaluation try Extra2.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenGameplay battle trick level1.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenGameplay battle trick level2.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenGameplay battle trick level3.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenGameplay music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenGameplay oni die.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenGameplayNormal music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenHowToPlay music (loop).ogg
+lib/stepmania/Themes/_fallback/Sounds/ScreenInit music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenMapControllers delete.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenNetSelectBase change opt.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenNetSelectBase change sel.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenNetSelectMusic random music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenNetSelectMusic roulette music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenNetSelectMusic section music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenOptions change.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenOptions next.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenOptions prev.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenOptions start.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenOptions toggle off.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenOptions toggle on.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenOptionsCourseOverview save.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenOptionsService music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenOptionsServiceChild music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenPrompt change.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSMOnlineSelectMusic change sel.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMaster change.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMaster start.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMusic Options.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMusic course music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMusic difficulty easier.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMusic difficulty harder.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMusic locked.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMusic loop music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMusic random music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMusic roulette music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMusic section music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMusic sort music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenSelectMusic start.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenTextEntry backspace.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenTextEntry type.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenTitle music.redir
+lib/stepmania/Themes/_fallback/Sounds/ScreenTitleMenu cancel.ogg
+lib/stepmania/Themes/_fallback/Sounds/_LifeMeterBattery lose.ogg
+lib/stepmania/Themes/_fallback/Sounds/_MemoryCardManager disconnect.ogg
+lib/stepmania/Themes/_fallback/Sounds/_Screen cancel.ogg
+lib/stepmania/Themes/_fallback/Sounds/_common row.ogg
+lib/stepmania/Themes/_fallback/Sounds/_dtrucks funk.ogg
+lib/stepmania/Themes/_fallback/Sounds/_missing.ogg
+lib/stepmania/Themes/_fallback/Sounds/_silent.redir
+lib/stepmania/Themes/_fallback/Sounds/_switch down.ogg
+lib/stepmania/Themes/_fallback/Sounds/_switch up.ogg
+lib/stepmania/Themes/_fallback/Sounds/new_missing.ogg
+lib/stepmania/Themes/_fallback/base._ini
+lib/stepmania/Themes/_fallback/metrics.ini
+lib/stepmania/Themes/default/BGAnimations/Screen cancel/default.lua
+lib/stepmania/Themes/default/BGAnimations/Screen in/default.lua
+lib/stepmania/Themes/default/BGAnimations/Screen out/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenCaution overlay/_exclamation.png
+lib/stepmania/Themes/default/BGAnimations/ScreenCaution overlay/_warning bg.png
+lib/stepmania/Themes/default/BGAnimations/ScreenCaution overlay/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenContinue underlay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenCredits background/_grid.png
+lib/stepmania/Themes/default/BGAnimations/ScreenCredits background/_space.png
+lib/stepmania/Themes/default/BGAnimations/ScreenCredits background/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenCredits overlay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenDemonstration decorations.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenDemonstration out.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenDemonstration overlay/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenEdit background.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenEvaluation background/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenEvaluation decorations/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenEvaluation overlay/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenEvaluation overlay/kyuze.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenEvaluation overlay/original.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenEvaluationSummary background.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenEvaluationSummary decorations/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameInformation underlay/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameOver underlay/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay background.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay danger all/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay danger p1/BGAnimation.ini
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay danger p2/BGAnimation.ini
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay dead p1/BGAnimation.ini
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay dead p2/BGAnimation.ini
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay decorations/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay failed/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay go/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay go/go.png
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay in/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay next course song/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay out.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay overlay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay ready/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay ready/ready.png
+lib/stepmania/Themes/default/BGAnimations/ScreenGameplay toasty/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenHeartEntry overlay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenHighScores decorations/_difficulty frame.png
+lib/stepmania/Themes/default/BGAnimations/ScreenHighScores decorations/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToInstallSongs background.redir
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToInstallSongs overlay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay background/bg.png
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay background/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay decorations.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/_howtoplay feet.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/_howtoplay jump.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/_howtoplay miss.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/_howtoplay tap.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/feet.png
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/healthhilight.png
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/jumpmessage.png
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/missmessage.png
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/tapglow.png
+lib/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/tapmessage.png
+lib/stepmania/Themes/default/BGAnimations/ScreenInit decorations.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenJukebox in.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenJukebox out.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenLogo decorations.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenMiniMenu cancel.redir
+lib/stepmania/Themes/default/BGAnimations/ScreenMiniMenu in.redir
+lib/stepmania/Themes/default/BGAnimations/ScreenMiniMenu out.redir
+lib/stepmania/Themes/default/BGAnimations/ScreenMiniMenu underlay/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenNetSelectMusic decorations.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenOptionsCustomizeProfile overlay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenOptionsService in.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenPlayerOptions background.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenPlayerOptions decorations.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenPlayerOptions out.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenPrompt underlay.redir
+lib/stepmania/Themes/default/BGAnimations/ScreenQuickSetupOverview decorations/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenReloadSongs background.redir
+lib/stepmania/Themes/default/BGAnimations/ScreenSelectMusic decorations/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenSelectMusic underlay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenSelectPlayMode underlay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenSelectProfile overlay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenSongOptions background.redir
+lib/stepmania/Themes/default/BGAnimations/ScreenStageInformation out.redir
+lib/stepmania/Themes/default/BGAnimations/ScreenStageInformation underlay/CourseDisplay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenStageInformation underlay/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenSystemLayer aux.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenTextEntry underlay.redir
+lib/stepmania/Themes/default/BGAnimations/ScreenTitleJoin decorations.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenTitleJoin overlay.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenTitleMenu decorations.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenTitleMenu underlay/_bg.png
+lib/stepmania/Themes/default/BGAnimations/ScreenTitleMenu underlay/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements aux.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements background/_bg top.png
+lib/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements background/_checkerboard (stretch).png
+lib/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements background/_grid.png
+lib/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements background/_particle normal.png
+lib/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements background/_particleLoader.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements background/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements decorations/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements in/default.lua
+lib/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements out/default.lua
+lib/stepmania/Themes/default/BGAnimations/_Arcade decorations/default.lua
+lib/stepmania/Themes/default/BGAnimations/_ScreenTitleMenu out/default.lua
+lib/stepmania/Themes/default/BGAnimations/_frame 3x1/default.lua
+lib/stepmania/Themes/default/BGAnimations/_frame 3x3/default.lua
+lib/stepmania/Themes/default/BGAnimations/_frame cursors/rounded fill.png
+lib/stepmania/Themes/default/BGAnimations/_frame cursors/rounded gloss.png
+lib/stepmania/Themes/default/BGAnimations/_frame cursors/rounded white.png
+lib/stepmania/Themes/default/BGAnimations/_frame files 3x1/rounded fill 3x1.png
+lib/stepmania/Themes/default/BGAnimations/_frame files 3x1/rounded gloss 3x1.png
+lib/stepmania/Themes/default/BGAnimations/old ScreenWithMenuElements background/default.lua
+lib/stepmania/Themes/default/Fonts/Combo Numbers.redir
+lib/stepmania/Themes/default/Fonts/Common Large.redir
+lib/stepmania/Themes/default/Fonts/MenuTimerContinue numbers.redir
+lib/stepmania/Themes/default/Fonts/ScreenDebugOverlay header.redir
+lib/stepmania/Themes/default/Fonts/ScreenDebugOverlay line.redir
+lib/stepmania/Themes/default/Fonts/ScreenDebugOverlay page.redir
+lib/stepmania/Themes/default/Fonts/ScreenGameplay SongTitle.redir
+lib/stepmania/Themes/default/Fonts/ScreenGameplay survive time.redir
+lib/stepmania/Themes/default/Fonts/_open sans semibold 48px [alt-stroke] 10x10.png
+lib/stepmania/Themes/default/Fonts/_open sans semibold 48px [alt] 10x10.png
+lib/stepmania/Themes/default/Fonts/_open sans semibold 48px [main-stroke] 15x15.png
+lib/stepmania/Themes/default/Fonts/_open sans semibold 48px [main] 15x15.png
+lib/stepmania/Themes/default/Fonts/_open sans semibold 48px.ini
+lib/stepmania/Themes/default/Fonts/_roboto Bold 54px [numbers-stroke] 4x5 (doubleres).png
+lib/stepmania/Themes/default/Fonts/_roboto Bold 54px [numbers] 4x5 (doubleres).png
+lib/stepmania/Themes/default/Fonts/_roboto Bold 54px.ini
+lib/stepmania/Themes/default/Fonts/_roboto Bold 80px [numbers-stroke] 4x4.png
+lib/stepmania/Themes/default/Fonts/_roboto Bold 80px [numbers] 4x4.png
+lib/stepmania/Themes/default/Fonts/_roboto Bold 80px.ini
+lib/stepmania/Themes/default/Graphics/Banner all music.png
+lib/stepmania/Themes/default/Graphics/Banner mode.png
+lib/stepmania/Themes/default/Graphics/Banner random.png
+lib/stepmania/Themes/default/Graphics/Banner roulette.png
+lib/stepmania/Themes/default/Graphics/CDTitle Con.png
+lib/stepmania/Themes/default/Graphics/CombinedLifeMeterTug frame.lua
+lib/stepmania/Themes/default/Graphics/CombinedLifeMeterTug separator.redir
+lib/stepmania/Themes/default/Graphics/CombinedLifeMeterTug stream p1.png
+lib/stepmania/Themes/default/Graphics/CombinedLifeMeterTug stream p2.png
+lib/stepmania/Themes/default/Graphics/CombinedLifeMeterTug tip p1.redir
+lib/stepmania/Themes/default/Graphics/CombinedLifeMeterTug tip p2.redir
+lib/stepmania/Themes/default/Graphics/Combo 1000milestone/default.lua
+lib/stepmania/Themes/default/Graphics/Combo 1000milestone/shot.png
+lib/stepmania/Themes/default/Graphics/Combo 100milestone/default.lua
+lib/stepmania/Themes/default/Graphics/Combo 100milestone/explosion.png
+lib/stepmania/Themes/default/Graphics/ComboGraph Backing (doubleres).png
+lib/stepmania/Themes/default/Graphics/ComboGraph ComboNumber.lua
+lib/stepmania/Themes/default/Graphics/ComboGraph MaxCombo (doubleres).png
+lib/stepmania/Themes/default/Graphics/ComboGraph NormalCombo (doubleres).png
+lib/stepmania/Themes/default/Graphics/Common fallback background.png
+lib/stepmania/Themes/default/Graphics/Common fallback banner.png
+lib/stepmania/Themes/default/Graphics/Common splash.png
+lib/stepmania/Themes/default/Graphics/Common window icon.png
+lib/stepmania/Themes/default/Graphics/CourseEntryDisplay bar.png
+lib/stepmania/Themes/default/Graphics/DualScrollBar thumb p1.png
+lib/stepmania/Themes/default/Graphics/DualScrollBar thumb p2.png
+lib/stepmania/Themes/default/Graphics/EditMenu Left 1x8.png
+lib/stepmania/Themes/default/Graphics/EditMenu Right.lua
+lib/stepmania/Themes/default/Graphics/GradeDisplayEval Failed.png
+lib/stepmania/Themes/default/Graphics/GradeDisplayEval Tier01.png
+lib/stepmania/Themes/default/Graphics/GradeDisplayEval Tier02.png
+lib/stepmania/Themes/default/Graphics/GradeDisplayEval Tier03.png
+lib/stepmania/Themes/default/Graphics/GradeDisplayEval Tier04.png
+lib/stepmania/Themes/default/Graphics/GradeDisplayEval Tier05.png
+lib/stepmania/Themes/default/Graphics/GradeDisplayEval Tier06.png
+lib/stepmania/Themes/default/Graphics/GradeDisplayEval Tier07.png
+lib/stepmania/Themes/default/Graphics/GraphDisplay SongBoundary.redir
+lib/stepmania/Themes/default/Graphics/GraphDisplay backing.png
+lib/stepmania/Themes/default/Graphics/GraphDisplay barely.redir
+lib/stepmania/Themes/default/Graphics/GraphDisplay body.png
+lib/stepmania/Themes/default/Graphics/HoldJudgment label 1x2.png
+lib/stepmania/Themes/default/Graphics/Judgment Normal 1x6.png
+lib/stepmania/Themes/default/Graphics/LifeMeterBar danger.redir
+lib/stepmania/Themes/default/Graphics/LifeMeterBar over.png
+lib/stepmania/Themes/default/Graphics/LifeMeterBar under.png
+lib/stepmania/Themes/default/Graphics/LifeMeterBattery frame.png
+lib/stepmania/Themes/default/Graphics/LifeMeterBattery lives/_lives 1x10.png
+lib/stepmania/Themes/default/Graphics/LifeMeterBattery lives/default.lua
+lib/stepmania/Themes/default/Graphics/LifeMeterTime background.redir
+lib/stepmania/Themes/default/Graphics/LifeMeterTime frame.redir
+lib/stepmania/Themes/default/Graphics/LifeMeterTime over.redir
+lib/stepmania/Themes/default/Graphics/MusicWheel highlight.png
+lib/stepmania/Themes/default/Graphics/MusicWheelItem Course ColorPart.png
+lib/stepmania/Themes/default/Graphics/MusicWheelItem Course NormalPart (dither).png
+lib/stepmania/Themes/default/Graphics/MusicWheelItem Mode ColorPart.png
+lib/stepmania/Themes/default/Graphics/MusicWheelItem Mode NormalPart.png
+lib/stepmania/Themes/default/Graphics/MusicWheelItem Roulette ColorPart.redir
+lib/stepmania/Themes/default/Graphics/MusicWheelItem Roulette NormalPart.lua
+lib/stepmania/Themes/default/Graphics/MusicWheelItem Roulette OverPart.redir
+lib/stepmania/Themes/default/Graphics/MusicWheelItem SectionCollapsed ColorPart (dither).png
+lib/stepmania/Themes/default/Graphics/MusicWheelItem SectionCollapsed NormalPart (dither).png
+lib/stepmania/Themes/default/Graphics/MusicWheelItem SectionExpanded ColorPart (dither).png
+lib/stepmania/Themes/default/Graphics/MusicWheelItem SectionExpanded NormalPart.redir
+lib/stepmania/Themes/default/Graphics/MusicWheelItem Song ColorPart.png
+lib/stepmania/Themes/default/Graphics/MusicWheelItem Song NormalPart (dither).png
+lib/stepmania/Themes/default/Graphics/MusicWheelItem Sort ColorPart.redir
+lib/stepmania/Themes/default/Graphics/MusicWheelItem Sort NormalPart.redir
+lib/stepmania/Themes/default/Graphics/MusicWheelItem grades/default.lua
+lib/stepmania/Themes/default/Graphics/NoteField bars 1x4.png
+lib/stepmania/Themes/default/Graphics/NoteField board/board.png
+lib/stepmania/Themes/default/Graphics/NoteField board/default.lua
+lib/stepmania/Themes/default/Graphics/OptionRow frame.redir
+lib/stepmania/Themes/default/Graphics/OptionRowExit frame.png
+lib/stepmania/Themes/default/Graphics/OptionsCursorP1 CanGoLeft.redir
+lib/stepmania/Themes/default/Graphics/OptionsCursorP1 CanGoRight.redir
+lib/stepmania/Themes/default/Graphics/OptionsCursorP1 Left (doubleres).png
+lib/stepmania/Themes/default/Graphics/OptionsCursorP1 Middle (doubleres).png
+lib/stepmania/Themes/default/Graphics/OptionsCursorP1 Right (doubleres).png
+lib/stepmania/Themes/default/Graphics/OptionsCursorP2 CanGoLeft.redir
+lib/stepmania/Themes/default/Graphics/OptionsCursorP2 CanGoRight.redir
+lib/stepmania/Themes/default/Graphics/OptionsCursorP2 Left.redir
+lib/stepmania/Themes/default/Graphics/OptionsCursorP2 Middle.redir
+lib/stepmania/Themes/default/Graphics/OptionsCursorP2 Right.redir
+lib/stepmania/Themes/default/Graphics/OptionsUnderlineP1 Left (doubleres).png
+lib/stepmania/Themes/default/Graphics/OptionsUnderlineP1 Middle (doubleres).png
+lib/stepmania/Themes/default/Graphics/OptionsUnderlineP1 Right (doubleres).png
+lib/stepmania/Themes/default/Graphics/OptionsUnderlineP2 Left.redir
+lib/stepmania/Themes/default/Graphics/OptionsUnderlineP2 Middle.redir
+lib/stepmania/Themes/default/Graphics/OptionsUnderlineP2 Right.redir
+lib/stepmania/Themes/default/Graphics/PaneDisplay text.lua
+lib/stepmania/Themes/default/Graphics/Player Badge FullCombo.png
+lib/stepmania/Themes/default/Graphics/Player combo/_combo.png
+lib/stepmania/Themes/default/Graphics/Player combo/_misses.png
+lib/stepmania/Themes/default/Graphics/Player combo/default.lua
+lib/stepmania/Themes/default/Graphics/Player judgment/default.lua
+lib/stepmania/Themes/default/Graphics/Player toasty/default.lua
+lib/stepmania/Themes/default/Graphics/RoomWheelItem ColorPart.redir
+lib/stepmania/Themes/default/Graphics/RoomWheelItem NormalPart.redir
+lib/stepmania/Themes/default/Graphics/ScoreDisplayLifeTime frame.redir
+lib/stepmania/Themes/default/Graphics/ScoreDisplayNormal frame.redir
+lib/stepmania/Themes/default/Graphics/ScoreDisplayRave frame base p1.redir
+lib/stepmania/Themes/default/Graphics/ScoreDisplayRave frame base p2.redir
+lib/stepmania/Themes/default/Graphics/ScoreDisplayRave stream level1.png
+lib/stepmania/Themes/default/Graphics/ScoreDisplayRave stream level2.png
+lib/stepmania/Themes/default/Graphics/ScoreDisplayRave stream level3.png
+lib/stepmania/Themes/default/Graphics/ScreenDemonstration StageDisplay.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation BannerFrame.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation GameType.lua
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation GradeFrame p1.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation GradeFrame p2.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation JudgmentLabel Held.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation JudgmentLabel MaxCombo.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation JudgmentLabel Miss.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation JudgmentLabel W1.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation JudgmentLabel W2.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation JudgmentLabel W3.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation JudgmentLabel W4.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation JudgmentLabel W5.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation LifeDifficulty.lua
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation MachineRecord.lua
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation PeakComboAward.lua
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation PersonalRecord.lua
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation ScoreLabel.redir
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation SongInformation.lua
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation StageAward.lua
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation TimingDifficulty.lua
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation Win p1 1x3.png
+lib/stepmania/Themes/default/Graphics/ScreenEvaluation Win p2 1x3.png
+lib/stepmania/Themes/default/Graphics/ScreenEvaluationSummary BannerList.lua
+lib/stepmania/Themes/default/Graphics/ScreenGameOver gameover.png
+lib/stepmania/Themes/default/Graphics/ScreenGameplay BPMDisplay.lua
+lib/stepmania/Themes/default/Graphics/ScreenGameplay DeltaSeconds.lua
+lib/stepmania/Themes/default/Graphics/ScreenGameplay RemainingTime.lua
+lib/stepmania/Themes/default/Graphics/ScreenGameplay ScoreFrame.png
+lib/stepmania/Themes/default/Graphics/ScreenGameplay SongTitle.lua
+lib/stepmania/Themes/default/Graphics/ScreenGameplay StageDisplay.lua
+lib/stepmania/Themes/default/Graphics/ScreenGameplay oni gameover.redir
+lib/stepmania/Themes/default/Graphics/ScreenHighScores ScrollerItem/default.lua
+lib/stepmania/Themes/default/Graphics/ScreenHighScores ScrollerItem/empty (doubleres).png
+lib/stepmania/Themes/default/Graphics/ScreenHighScores ScrollerItem/filled (doubleres).png
+lib/stepmania/Themes/default/Graphics/ScreenHighScores ScrollerItem/frame (doubleres).png
+lib/stepmania/Themes/default/Graphics/ScreenHowToInstallSongs Icon.lua
+lib/stepmania/Themes/default/Graphics/ScreenHowToInstallSongs scroll.lua
+lib/stepmania/Themes/default/Graphics/ScreenLogo Logo.redir
+lib/stepmania/Themes/default/Graphics/ScreenMapControllers exit.lua
+lib/stepmania/Themes/default/Graphics/ScreenMiniMenu page.redir
+lib/stepmania/Themes/default/Graphics/ScreenNetSelectBase ChatInputBox.lua
+lib/stepmania/Themes/default/Graphics/ScreenNetSelectBase ChatOutputBox.lua
+lib/stepmania/Themes/default/Graphics/ScreenNetSelectMusic BPMDisplay.redir
+lib/stepmania/Themes/default/Graphics/ScreenNetSelectMusic BPMLabel.redir
+lib/stepmania/Themes/default/Graphics/ScreenNetSelectMusic DifficultyDisplay.redir
+lib/stepmania/Themes/default/Graphics/ScreenOptions LineHighlight P1.lua
+lib/stepmania/Themes/default/Graphics/ScreenOptions LineHighlight P2.redir
+lib/stepmania/Themes/default/Graphics/ScreenOptions disqualify.lua
+lib/stepmania/Themes/default/Graphics/ScreenOptions line highlight.png
+lib/stepmania/Themes/default/Graphics/ScreenOptions more.redir
+lib/stepmania/Themes/default/Graphics/ScreenOptions page.png
+lib/stepmania/Themes/default/Graphics/ScreenPlayerOptions PlayerNameplate.lua
+lib/stepmania/Themes/default/Graphics/ScreenQuickSetupOverview icon/_base.png
+lib/stepmania/Themes/default/Graphics/ScreenQuickSetupOverview icon/default.lua
+lib/stepmania/Themes/default/Graphics/ScreenRanking CourseDifficulty easy.redir
+lib/stepmania/Themes/default/Graphics/ScreenRanking CourseDifficulty hard.redir
+lib/stepmania/Themes/default/Graphics/ScreenRanking CourseDifficulty medium.redir
+lib/stepmania/Themes/default/Graphics/ScreenRanking Difficulty challenge.redir
+lib/stepmania/Themes/default/Graphics/ScreenRanking Difficulty easy.redir
+lib/stepmania/Themes/default/Graphics/ScreenRanking Difficulty hard.redir
+lib/stepmania/Themes/default/Graphics/ScreenRanking Difficulty medium.redir
+lib/stepmania/Themes/default/Graphics/ScreenRanking banner frame.redir
+lib/stepmania/Themes/default/Graphics/ScreenRanking bullets 1x5.png
+lib/stepmania/Themes/default/Graphics/ScreenRanking course frame.redir
+lib/stepmania/Themes/default/Graphics/ScreenRanking song frame.redir
+lib/stepmania/Themes/default/Graphics/ScreenRanking type dance-double.png
+lib/stepmania/Themes/default/Graphics/ScreenRanking type dance-single.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic AlternateHelpDisplay.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic BPMDisplay.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic BPMLabel.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic BannerFrame.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic CourseContentsList.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic CourseType.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic DifficultyDisplay/_background.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic DifficultyDisplay/_barpeice Beginner.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic DifficultyDisplay/_barpeice Challenge.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic DifficultyDisplay/_barpeice Easy.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic DifficultyDisplay/_barpeice Edit.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic DifficultyDisplay/_barpeice Hard.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic DifficultyDisplay/_barpeice Medium.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic DifficultyDisplay/default.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic DifficultyList.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic NewSong.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic NumCourseSongs.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic PaneDisplayFrame.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic PaneDisplayTextP1.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic PaneDisplayTextP2.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic SegmentDisplay/_timingicons 4x2 (doubleres).png
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic SegmentDisplay/default.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic SongOptions.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic SongOptionsFrame.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic SongOptionsText.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic SongTime.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic SortOrderFrame.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic SortOrderText.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectMusic fallback cdtitle.redir
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode BackgroundFrame.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode Icon/_background base (dither).png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode Icon/_background effect.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode Icon/_cutout.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode Icon/_gloss.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode Icon/_stroke.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode Icon/default.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode scroller/Easy.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode scroller/Endless (dither).png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode scroller/Hard.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode scroller/Nonstop (dither).png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode scroller/Normal.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode scroller/Oni (dither).png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode scroller/Rave.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode scroller/_HighlightFrame (dither).png
+lib/stepmania/Themes/default/Graphics/ScreenSelectPlayMode scroller/default.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectProfile CardBackground.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectProfile CardFrame.png
+lib/stepmania/Themes/default/Graphics/ScreenSelectStyle Icon.lua
+lib/stepmania/Themes/default/Graphics/ScreenSelectmusic score frame p1.redir
+lib/stepmania/Themes/default/Graphics/ScreenSelectmusic score frame p2.redir
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage 1st.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage 2nd.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage 3rd.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage 4th.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage 5th.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage 6th.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage endless.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage event.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage extra1.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage extra2.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage final.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage nonstop.png
+lib/stepmania/Themes/default/Graphics/ScreenStageInformation stage oni.png
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu CurrentGametype.lua
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu LifeDifficulty.lua
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu NetworkStatus.lua
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu NumAdditionalSongs.lua
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu NumSongs.lua
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu PreferenceFrame.png
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu SystemDirection/default.lua
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu TimingDifficulty.lua
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu VersionInfo.lua
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu cursor.lua
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu logo/_arrow (dither).png
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu logo/_text (dither).png
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu logo/default.lua
+lib/stepmania/Themes/default/Graphics/ScreenTitleMenu scroll.lua
+lib/stepmania/Themes/default/Graphics/ScreenWithMenuElements Footer.lua
+lib/stepmania/Themes/default/Graphics/ScreenWithMenuElements Help.lua
+lib/stepmania/Themes/default/Graphics/ScreenWithMenuElements StageDisplay.lua
+lib/stepmania/Themes/default/Graphics/ScreenWithMenuElements header/Header.png
+lib/stepmania/Themes/default/Graphics/ScreenWithMenuElements header/_texture stripe (stretch).png
+lib/stepmania/Themes/default/Graphics/ScreenWithMenuElements header/default.lua
+lib/stepmania/Themes/default/Graphics/ScreenWithMenuElements header/old _texture stripe.png
+lib/stepmania/Themes/default/Graphics/ScrollBar StretchThumb.redir
+lib/stepmania/Themes/default/Graphics/ScrollBar TickThumb.lua
+lib/stepmania/Themes/default/Graphics/ScrollBar bottom.redir
+lib/stepmania/Themes/default/Graphics/ScrollBar middle.redir
+lib/stepmania/Themes/default/Graphics/ScrollBar top.redir
+lib/stepmania/Themes/default/Graphics/SongMeterDisplay frame p1.png
+lib/stepmania/Themes/default/Graphics/SongMeterDisplay frame p2.redir
+lib/stepmania/Themes/default/Graphics/SongMeterDisplay stream p1.png
+lib/stepmania/Themes/default/Graphics/SongMeterDisplay stream p2.redir
+lib/stepmania/Themes/default/Graphics/SongMeterDisplay tip p1.png
+lib/stepmania/Themes/default/Graphics/SongMeterDisplay tip p2.redir
+lib/stepmania/Themes/default/Graphics/StepsDisplay StepsType.lua
+lib/stepmania/Themes/default/Graphics/StepsDisplay autogen/_badge.png
+lib/stepmania/Themes/default/Graphics/StepsDisplay autogen/default.lua
+lib/stepmania/Themes/default/Graphics/StepsDisplay frame.png
+lib/stepmania/Themes/default/Graphics/StepsDisplayGameplay frame.png
+lib/stepmania/Themes/default/Graphics/StepsDisplayListRow StepsType.lua
+lib/stepmania/Themes/default/Graphics/StepsDisplayListRow autogen.png
+lib/stepmania/Themes/default/Graphics/StepsDisplayListRow frame.png
+lib/stepmania/Themes/default/Graphics/StreamDisplay hot.png
+lib/stepmania/Themes/default/Graphics/StreamDisplay normal.png
+lib/stepmania/Themes/default/Graphics/StreamDisplay passing.redir
+lib/stepmania/Themes/default/Graphics/TestStep.png
+lib/stepmania/Themes/default/Graphics/WheelNotifyIcon icons 4x2 (doubleres).png
+lib/stepmania/Themes/default/Graphics/_CombinedLifeMeterTug separator.png
+lib/stepmania/Themes/default/Graphics/_GraphDisplay overlay.png
+lib/stepmania/Themes/default/Graphics/_JudgmentLineLabel/_frame.png
+lib/stepmania/Themes/default/Graphics/_JudgmentLineLabel/default.lua
+lib/stepmania/Themes/default/Graphics/_MusicWheelItem Roulette NormalPart.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon 10Keys.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon 14Keys.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon 5Keys.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon 7Keys.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Couple.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Double.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Easy.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Endless.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Extended.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon HalfDouble.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Hard.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon KB7.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Normal.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Oni.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Rave.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Routine.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Single.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Solo.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Survival.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon Versus.png
+lib/stepmania/Themes/default/Graphics/_SelectIcon.png
+lib/stepmania/Themes/default/Graphics/_StepsDisplayListRow Cursor.png
+lib/stepmania/Themes/default/Graphics/_StepsDisplayListRow arrow.png
+lib/stepmania/Themes/default/Graphics/_StepsType Icon dance-single.png
+lib/stepmania/Themes/default/Graphics/_StepsType/Dance_Double.png
+lib/stepmania/Themes/default/Graphics/_StepsType/Dance_Single.png
+lib/stepmania/Themes/default/Graphics/_StepsType/Dance_Solo.png
+lib/stepmania/Themes/default/Graphics/_StepsType/Pump_Double.png
+lib/stepmania/Themes/default/Graphics/_StepsType/Pump_HalfDouble.png
+lib/stepmania/Themes/default/Graphics/_StepsType/Pump_Single.png
+lib/stepmania/Themes/default/Graphics/_StepsType/Techno_Double4.png
+lib/stepmania/Themes/default/Graphics/_StepsType/Techno_Double5.png
+lib/stepmania/Themes/default/Graphics/_StepsType/Techno_Single4.png
+lib/stepmania/Themes/default/Graphics/_StepsType/Techno_Single5.png
+lib/stepmania/Themes/default/Graphics/_StepsType/Techno_Single8.png
+lib/stepmania/Themes/default/Graphics/_StepsType/kb7.png
+lib/stepmania/Themes/default/Graphics/_combined life frame.png
+lib/stepmania/Themes/default/Graphics/_howto find.png
+lib/stepmania/Themes/default/Graphics/_howto install.png
+lib/stepmania/Themes/default/Graphics/_icon Health.png
+lib/stepmania/Themes/default/Graphics/_icon Sort.png
+lib/stepmania/Themes/default/Graphics/_icon Timing.png
+lib/stepmania/Themes/default/Graphics/_rave meter base.png
+lib/stepmania/Themes/default/Graphics/_rave result P1.png
+lib/stepmania/Themes/default/Graphics/_rave result P2.png
+lib/stepmania/Themes/default/Graphics/_rave result draw.png
+lib/stepmania/Themes/default/Languages/de.ini
+lib/stepmania/Themes/default/Languages/en.ini
+lib/stepmania/Themes/default/Languages/es.ini
+lib/stepmania/Themes/default/Languages/fr.ini
+lib/stepmania/Themes/default/Languages/ja.ini
+lib/stepmania/Themes/default/Languages/nl.ini
+lib/stepmania/Themes/default/Languages/pl.ini
+lib/stepmania/Themes/default/Other/Profile Catalog.xsl
+lib/stepmania/Themes/default/Other/Profile Common.xsl
+lib/stepmania/Themes/default/Other/Profile Stats.xsl
+lib/stepmania/Themes/default/Other/ScreenGameplaySyncMachine music.sm
+lib/stepmania/Themes/default/Other/ScreenHowToPlay steps.sm
+lib/stepmania/Themes/default/Other/SongManager PreferredCourses.txt
+lib/stepmania/Themes/default/Other/SongManager PreferredSongs.txt
+lib/stepmania/Themes/default/Other/SongManager PreferredSort.txt
+lib/stepmania/Themes/default/Other/_blank.png
+lib/stepmania/Themes/default/Other/_gameplay sync music.ogg
+lib/stepmania/Themes/default/Other/_missing.png
+lib/stepmania/Themes/default/Scripts/00 ThemeInfo.lua
+lib/stepmania/Themes/default/Scripts/02 Colors.lua
+lib/stepmania/Themes/default/Scripts/02 Lyrics.lua
+lib/stepmania/Themes/default/Scripts/02 TextBanner.lua
+lib/stepmania/Themes/default/Scripts/02 ThemePrefs.lua
+lib/stepmania/Themes/default/Scripts/03 Gameplay.lua
+lib/stepmania/Themes/default/Scripts/04 Other.lua
+lib/stepmania/Themes/default/Sounds/Common Start.redir
+lib/stepmania/Themes/default/Sounds/Common invalid.redir
+lib/stepmania/Themes/default/Sounds/Common value.redir
+lib/stepmania/Themes/default/Sounds/MenuTimer tick.redir
+lib/stepmania/Themes/default/Sounds/MusicWheel change.redir
+lib/stepmania/Themes/default/Sounds/ScreenCredits music.redir
+lib/stepmania/Themes/default/Sounds/ScreenEdit freeze.ogg
+lib/stepmania/Themes/default/Sounds/ScreenEdit line.redir
+lib/stepmania/Themes/default/Sounds/ScreenEdit marker.ogg
+lib/stepmania/Themes/default/Sounds/ScreenEdit save.ogg
+lib/stepmania/Themes/default/Sounds/ScreenEdit snap.ogg
+lib/stepmania/Themes/default/Sounds/ScreenEdit switch player.ogg
+lib/stepmania/Themes/default/Sounds/ScreenEdit switch timing.redir
+lib/stepmania/Themes/default/Sounds/ScreenEdit value decrease.redir
+lib/stepmania/Themes/default/Sounds/ScreenEdit value increase.ogg
+lib/stepmania/Themes/default/Sounds/ScreenGameInformation music.redir
+lib/stepmania/Themes/default/Sounds/ScreenGameplay failed.redir
+lib/stepmania/Themes/default/Sounds/ScreenGameplayAlternate failed.mp3
+lib/stepmania/Themes/default/Sounds/ScreenOptionsService music.redir
+lib/stepmania/Themes/default/Sounds/ScreenProfileLoad music.redir
+lib/stepmania/Themes/default/Sounds/ScreenSelectMusic course music.redir
+lib/stepmania/Themes/default/Sounds/ScreenSelectMusic loop music.redir
+lib/stepmania/Themes/default/Sounds/ScreenSelectMusic random music.redir
+lib/stepmania/Themes/default/Sounds/ScreenSelectMusic roulette music.redir
+lib/stepmania/Themes/default/Sounds/ScreenSelectMusic section music.redir
+lib/stepmania/Themes/default/Sounds/ScreenSelectMusic sort music.redir
+lib/stepmania/Themes/default/Sounds/ScreenSelectPlayMode music.redir
+lib/stepmania/Themes/default/Sounds/ScreenSelectPlayStyle music.redir
+lib/stepmania/Themes/default/Sounds/ScreenSelectProfile music.redir
+lib/stepmania/Themes/default/Sounds/ScreenSelectStyle music.redir
+lib/stepmania/Themes/default/Sounds/ScreenTitleJoin music.redir
+lib/stepmania/Themes/default/Sounds/ScreenTitleMenu music.redir
+lib/stepmania/Themes/default/Sounds/_Music credits.redir
+lib/stepmania/Themes/default/Sounds/_Music menu.redir
+lib/stepmania/Themes/default/Sounds/_Music title (loop).redir
+lib/stepmania/Themes/default/Sounds/_Music title (loop).sm
+lib/stepmania/Themes/default/Sounds/_Screen cancel.redir
+lib/stepmania/Themes/default/Sounds/_common row.redir
+lib/stepmania/Themes/default/Sounds/_switch down.redir
+lib/stepmania/Themes/default/Sounds/_switch up.redir
+lib/stepmania/Themes/default/Sounds/default/Common Start.ogg
+lib/stepmania/Themes/default/Sounds/default/Common invalid.ogg
+lib/stepmania/Themes/default/Sounds/default/Common value.ogg
+lib/stepmania/Themes/default/Sounds/default/MenuTimer tick.ogg
+lib/stepmania/Themes/default/Sounds/default/MusicWheel change.ogg
+lib/stepmania/Themes/default/Sounds/default/ScreenGameplay failed.ogg
+lib/stepmania/Themes/default/Sounds/default/_Music credits (loop).ogg
+lib/stepmania/Themes/default/Sounds/default/_Music title (loop).ogg
+lib/stepmania/Themes/default/Sounds/default/_Screen cancel.ogg
+lib/stepmania/Themes/default/Sounds/default/_common row.ogg
+lib/stepmania/Themes/default/Sounds/default/_switch down.ogg
+lib/stepmania/Themes/default/Sounds/default/_switch up.ogg
+lib/stepmania/Themes/default/Sounds/kommisar/Common Start.ogg
+lib/stepmania/Themes/default/Sounds/kommisar/Common invalid.ogg
+lib/stepmania/Themes/default/Sounds/kommisar/Common value.ogg
+lib/stepmania/Themes/default/Sounds/kommisar/MenuTimer tick.ogg
+lib/stepmania/Themes/default/Sounds/kommisar/MusicWheel change.ogg
+lib/stepmania/Themes/default/Sounds/kommisar/ScreenGameplay failed.ogg
+lib/stepmania/Themes/default/Sounds/kommisar/_Music credits (loop).ogg
+lib/stepmania/Themes/default/Sounds/kommisar/_Music title (loop).ogg
+lib/stepmania/Themes/default/Sounds/kommisar/_Screen cancel.ogg
+lib/stepmania/Themes/default/Sounds/kommisar/_common row.ogg
+lib/stepmania/Themes/default/Sounds/kommisar/_switch down.ogg
+lib/stepmania/Themes/default/Sounds/kommisar/_switch up.ogg
+lib/stepmania/Themes/default/ThemeInfo.ini
+lib/stepmania/Themes/default/metrics.ini
+lib/stepmania/Themes/home/ThemeInfo.ini
+lib/stepmania/Themes/home/metrics.ini
 lib/stepmania/stepmania
 share/applications/stepmania.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Changelog_SSCformat.txt
+%%PORTDOCS%%%%DOCSDIR%%/Changelog_language.txt
 %%PORTDOCS%%%%DOCSDIR%%/Changelog_sm-ssc.txt
 %%PORTDOCS%%%%DOCSDIR%%/Changelog_sm5.txt
 %%PORTDOCS%%%%DOCSDIR%%/CommandLineArgs.txt
@@ -18,6 +2764,8 @@ share/applications/stepmania.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Devdocs/SMLanProtocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/Devdocs/SMO_protocol-aj.txt
 %%PORTDOCS%%%%DOCSDIR%%/Devdocs/SMXML.txt
+%%PORTDOCS%%%%DOCSDIR%%/Devdocs/Sound Drivers.txt
+%%PORTDOCS%%%%DOCSDIR%%/Devdocs/SplitTiming.txt
 %%PORTDOCS%%%%DOCSDIR%%/Devdocs/TextEntry.txt
 %%PORTDOCS%%%%DOCSDIR%%/Devdocs/WarpNotes.txt
 %%PORTDOCS%%%%DOCSDIR%%/Devdocs/ezsockets.txt
@@ -41,6 +2789,7 @@ share/applications/stepmania.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Luadoc/closed.gif
 %%PORTDOCS%%%%DOCSDIR%%/Luadoc/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/Luadoc/open.gif
+%%PORTDOCS%%%%DOCSDIR%%/Mapping_keys_for_edit_mode.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-GUIDELINES
 %%PORTDOCS%%%%DOCSDIR%%/SimfileFormats/BMS/BM98Data_format_specification.html
 %%PORTDOCS%%%%DOCSDIR%%/SimfileFormats/BMS/BM98FinalSecret.html
@@ -65,21 +2814,44 @@ share/applications/stepmania.desktop
 %%PORTDOCS%%%%DOCSDIR%%/SimfileFormats/new format draft.txt
 %%PORTDOCS%%%%DOCSDIR%%/SimfileFormats/ssc_msd5.txt
 %%PORTDOCS%%%%DOCSDIR%%/Stats.xml
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Actors/ActorFrame.lua
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Actors/ActorFrameTexture.lua
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Actors/ActorScroller.lua
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Actors/BitmapText.lua
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Actors/Quad.lua
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Actors/RollingNumbers.lua
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Actors/Toasty.lua
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Screens/ScreenHeartEntry.lua
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Screens/ScreenMapControllers.lua
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Screens/ScreenOptionsExample.ini
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Themes/One_Screen_Example_Theme/BGAnimations/ScreenSimpleExample overlay.lua
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Themes/One_Screen_Example_Theme/ThemeInfo.ini
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Themes/One_Screen_Example_Theme/metrics.ini
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/Example_Themes/One_Screen_Example_Theme/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/OptionRowHandlerLua.lua
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Examples/anatomy_of_an_actor.lua
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/Noteskin elements Reference.txt
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/ScreenAMVTest overlay.lua
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/ScreenMessages.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/ScreenTextEntry.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/ThemePrefs.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/ThemePrefsRows.txt
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/XmlToLua.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/actordef.txt
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/announcer_files.txt
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/calories.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/conditional_music.txt
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/effect_colors.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/fontini.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/gamecommands.txt
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/haste.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/included_scripts.txt
+%%PORTDOCS%%%%DOCSDIR%%/Themerdocs/modslevel.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/moremsg.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/recommended_practices.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/sm-ssc_themeguide.txt
+%%PORTDOCS%%%%DOCSDIR%%/Userdocs/bgchanges_format.txt
 %%PORTDOCS%%%%DOCSDIR%%/Userdocs/sm5_beginner.txt
-%%PORTDOCS%%%%DOCSDIR%%/WindowsNotes.txt
 %%PORTDOCS%%%%DOCSDIR%%/credits.txt
 %%PORTDOCS%%%%DOCSDIR%%/docpack.zip
 %%PORTDOCS%%%%DOCSDIR%%/license-ext/Scoring-jp.txt
@@ -111,3 +2883,4 @@ share/icons/hicolor/64x64/apps/stepmania-ssc.png
 share/icons/hicolor/72x72/apps/stepmania-ssc.png
 share/icons/hicolor/96x96/apps/stepmania-ssc.png
 share/icons/hicolor/scalable/apps/stepmania-ssc.svg
+@dir lib/stepmania/Songs

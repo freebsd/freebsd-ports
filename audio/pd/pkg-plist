@@ -375,7 +375,7 @@ man/man1/pdsend.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/delay-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/delread~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/delwrite~-help.pd
-%%PORTDOCS%%%%DOCSDIR%%/5.reference/drawnumber-help.pd
+%%PORTDOCS%%%%DOCSDIR%%/5.reference/drawtext-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/drawpolygon-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/element-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/env~-help.pd

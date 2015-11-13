@@ -18,8 +18,6 @@ USES=		cmake pkgconfig
 USE_GNOME=	pango
 USE_XORG=	x11 xext
 
-LDFLAGS+=	-L${LOCALBASE}/lib		# XXX should not be needed
-
 OPTIONS_DEFINE=	OPACITY TEMPERATURE
 OPACITY_DESC=		Opacity setting with compositing window managers
 TEMPERATURE_DESC=	Build with temperature widget (for CPU, etc.)

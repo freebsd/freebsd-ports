@@ -5,4 +5,34 @@ share/h2o/kill-on-close
 share/h2o/start_server
 %%DATADIR%%/setuidgid
 @dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%H2O_LOGDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/assets/8mbps100msec-nginx195-h2o150.png
+%%PORTDOCS%%%%DOCSDIR%%/assets/firstpaintbench.png
+%%PORTDOCS%%%%DOCSDIR%%/assets/remotebench.png
+%%PORTDOCS%%%%DOCSDIR%%/assets/searchstyle.css
+%%PORTDOCS%%%%DOCSDIR%%/assets/style.css
+%%PORTDOCS%%%%DOCSDIR%%/benchmarks.html
+%%PORTDOCS%%%%DOCSDIR%%/configure.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/access_log_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/base_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/command_options.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/expires_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/fastcgi_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/file_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/gzip_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/headers_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/http1_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/http2_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/mruby_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/proxy_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/quick_start.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/redirect_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/reproxy_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/syntax_and_structure.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/search/jquery-1.9.1.min.js
+%%PORTDOCS%%%%DOCSDIR%%/search/oktavia-english-search.js
+%%PORTDOCS%%%%DOCSDIR%%/search/oktavia-jquery-ui.js
+%%PORTDOCS%%%%DOCSDIR%%/search/searchindex.js
 @sample %%ETCDIR%%/h2o.conf.sample

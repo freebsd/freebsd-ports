@@ -1,11 +1,9 @@
-WordGrinder is a simple, Unicode-aware word processor that runs on the
-console. It's designed to get the hell out of your way and let you write;
-it does very little, but what it does it does well.
+WordGrinder is an ultra-clean and uncluttered word processor
+that runs in a terminal or an X11 window.
 
-It supports basic paragraph styles, basic character styles, basic screen
-markup, a menu interface that means you don't have to remember complex
-key sequences, HTML import and export, and some other useful features.
+The author made WordGrinder to have something to write novels
+on. It supports just enough character and paragraph style support
+to let you get the job done, while not enough to let you waste
+time configuring them.
 
-WordGrinder does not require X. It runs in a terminal. 
-
-WWW: http://wordgrinder.sf.net
+WWW: http://cowlark.com/wordgrinder/

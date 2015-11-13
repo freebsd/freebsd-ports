@@ -79,12 +79,6 @@ USE_EMACS=	yes
 MAKE_ARGS+=	emacs_prefix=${PREFIX}
 .endif
 
-.if ${OSVERSION} < 900014
-SUB_LIST+=	NOCLANG=""
-.else
-SUB_LIST+=	NOCLANG="@comment "
-.endif
-
 # automatically disable readline support if editline support is available
 .if exists(/usr/include/edit/readline/readline.h)
 CONFIGURE_ARGS+=	--without-readline

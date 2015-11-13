@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=TeamWords
+GenericName=Slack Client
+Comment=A simple Qt5 based Slack Client
+Exec=%%PREFIX%%/bin/teamwords
+Icon=%%PREFIX%%/share/icons/teamwords.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;Network;

@@ -1,0 +1,12 @@
+Non-Uniform Rational B-Splines (NURBS) are parametric functions which can
+represent any type of curves or surfaces.  This C++ library hides the basic
+mathematics of NURBS, allowing the user to focus on the more challenging
+parts of their projects.
+
+The NURBS++ package includes a matrix library, an image manipulation
+library, a numerical library and a NURBS library.
+
+This library is copyrighted under the terms of the LGPL by its author,
+Phillipe Lavoie <lavoie@zeus.genie.uottawa.ca>.
+
+WWW: http://libnurbs.sourceforge.net/

@@ -90,10 +90,12 @@
     SUBDIR += pyephem
     SUBDIR += pyweather
     SUBDIR += qlandkartegt
+    SUBDIR += qmapshack
     SUBDIR += readosm
     SUBDIR += rmap
     SUBDIR += roadmap
     SUBDIR += roadnav
+    SUBDIR += routino
     SUBDIR += saoimage
     SUBDIR += sextractor
     SUBDIR += sky2000

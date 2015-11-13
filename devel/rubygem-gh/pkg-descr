@@ -1,3 +1,8 @@
-Multi-layer client for the github api v3
+GH - Layered GitHub API client
 
-WWW: http://rubygems.org/gems/gh/
+This is a highly flexible, layered, low-level GitHub client library, trying to
+get out of your way and let you get to the GitHub data as simple as possible.
+Unless you add layers, you will end up with Hashes and Arrays. The approach and
+API should be familiar from projects like Rack or Faraday.
+
+WWW: https://github.com/travis-ci/gh

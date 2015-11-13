@@ -22,7 +22,6 @@
     SUBDIR += charis-compact
     SUBDIR += clearsans
     SUBDIR += code2000
-    SUBDIR += code2001
     SUBDIR += comfortaa-ttf
     SUBDIR += comic-neue
     SUBDIR += consolamono-ttf

@@ -1,4 +1,4 @@
 This extension provides WBXML (Wireless Binary XML) conversion capabilities
 using the libwbxml library, which can be found at https://libwbxml.opensync.org/
 
-WWW:	http://pecl.php.net/package/WBXML/
+WWW: http://pecl.php.net/package/WBXML/

@@ -11,6 +11,8 @@ DISTFILES=	${DISTNAME}_data-tileset-absurd${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addons (tilesets and sound themes) for noeGNUd
 
+BROKEN=		unfetchable
+
 USES=		tar:bzip2
 NO_BUILD=	yes
 NO_ARCH=	yes

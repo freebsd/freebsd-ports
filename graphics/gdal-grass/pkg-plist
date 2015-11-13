@@ -1,8 +1,0 @@
-lib/gdalplugins/gdal_GRASS.so
-lib/gdalplugins/ogr_GRASS.so
-share/gdal/grass/etc/datum.table
-share/gdal/grass/etc/ellipse.table
-share/gdal/grass/etc/datumtransform.table
-share/gdal/grass/driver/db/dbf
-share/gdal/grass/driver/db/ogr
-share/gdal/grass/driver/db/pg

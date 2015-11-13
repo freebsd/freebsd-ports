@@ -1,2 +1,1 @@
-lib/crafty/book.bin
-@dirrmtry lib/crafty
+@(nobody,nogroup,664) lib/crafty/book.bin

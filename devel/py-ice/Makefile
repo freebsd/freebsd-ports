@@ -20,8 +20,6 @@ PLIST=		${.CURDIR}/pkg-plist
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
 
-SHEBANG_LANG=	python
-python_OLD_CMD=	/usr/bin/env python
 SHEBANG_FILES=	${BUILD_WRKSRC}/config/s2py.py
 
 MAKE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION}

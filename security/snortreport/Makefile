@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.symmetrixtech.com/ids/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add-on module for snort to generate real-time web reports
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=		BARNYARD JPGRAPH MYSQL PGSQL DOCS

@@ -1,6 +1,7 @@
 lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.AsyncChunk.beam
 lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.AsyncEnd.beam
 lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.AsyncHeaders.beam
+lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.AsyncRedirect.beam
 lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.AsyncResponse.beam
 lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.AsyncStatus.beam
 lib/elixir/lib/httpoison/ebin/Elixir.HTTPoison.Base.beam

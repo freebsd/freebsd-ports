@@ -3,7 +3,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	3.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.samba.org/pub/rsync/ \
@@ -62,7 +62,8 @@ ATIMES_EXTRA_PATCHES=		${WRKSRC}/patches/atimes.diff
 FLAGS_EXTRA_PATCHES=		${WRKSRC}/patches/fileflags.diff \
 				${FILESDIR}/extrapatch-main.c
 RENAMED_EXTRA_PATCHES=		${WRKSRC}/patches/detect-renamed.diff
-ACL_EXTRA_PATCHES=		${WRKSRC}/patches/acls.diff
+ACL_EXTRA_PATCHES=		${WRKSRC}/patches/acls.diff \
+				${FILESDIR}/extrapatch-acl
 
 ICONV_USES=	iconv
 ICONV_CPPFLAGS=	-I${LOCALBASE}/include

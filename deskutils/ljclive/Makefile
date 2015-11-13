@@ -13,12 +13,10 @@ COMMENT=	Command line client for posting LiveJournal entries
 
 USES=		iconv
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	ac_cv_search_iconv=${ICONV_LIB}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 CONFLICTS=	*clive-[1-9]*
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} 's/iconv "iconv/"iconv/' ${WRKSRC}/configure
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

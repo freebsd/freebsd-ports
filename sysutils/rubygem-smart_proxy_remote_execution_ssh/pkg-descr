@@ -1,0 +1,3 @@
+Plugin for foreman-proxy allowing using SSH for remote execution.
+
+WWW: https://github.com/theforeman/smart_proxy_remote_execution_ssh

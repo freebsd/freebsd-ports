@@ -16,6 +16,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexen II source port extras (demos, mods, etc)
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	uhexen2>0:${PORTSDIR}/games/uhexen2
 
 NO_BUILD=	yes

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netperf
-PORTVERSION=	2.6.0
-PORTREVISION=	3
+PORTVERSION=	2.7.0
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
 		http://fossies.org/unix/misc/
@@ -11,14 +10,14 @@ MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Network performance benchmarking package
 
-OPTIONS_DEFINE=		OMNI SCTP SOCKETS HISTOGRAM EXS
+OPTIONS_DEFINE=		EXAMPLES EXS HISTOGRAM OMNI SCTP SOCKETS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
+EXS_DESC=	Enable ICSC async socket support
+HISTOGRAM_DESC=	Enable optional histogram output
 OMNI_DESC=	Enable OMNI tests
 SCTP_DESC=	Enable SCTP support
 SOCKETS_DESC=	Enable Unix Domain socket support
-HISTOGRAM_DESC=	Enable optional histogram output
-EXS_DESC=	Enable ICSC async socket support
 
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
@@ -28,19 +27,20 @@ CONFIGURE_ARGS=	--program-prefix="" --program-suffix="" --enable-dirty \
 
 INFO=		netperf
 
+HISTOGRAM_CONFIGURE_ENABLE=	histogram
+EXS_CONFIGURE_ENABLE=		exs
+OMNI_CONFIGURE_ENABLE=		omni
 SOCKETS_CONFIGURE_ENABLE=	unixdomain
 SCTP_CONFIGURE_ENABLE=		sctp
-EXS_CONFIGURE_ENABLE=		exs
-HISTOGRAM_CONFIGURE_ENABLE=	histogram
-OMNI_CONFIGURE_ENABLE=		omni
 
-SCRIPTS=	arr_script packet_byte_script sctp_stream_script snapshot_script \
-		tcp_range_script tcp_rr_script tcp_stream_script udp_rr_script \
-		udp_stream_script
+SCRIPTS=	arr_script bloat.sh packet_byte_script runemomni.sh \
+		runemomniagg2.sh runemomniaggdemo.sh sctp_stream_script \
+		snapshot_script tcp_range_script tcp_rr_script \
+		tcp_stream_script udp_rr_script udp_stream_script
 
 post-patch:
 .for i in ${SCRIPTS}
-	@${REINPLACE_CMD} -e 's^%%PREFIX%%^${PREFIX}^' ${WRKSRC}/doc/examples/$i
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/doc/examples/$i
 .endfor
 
 post-install:

@@ -30,7 +30,6 @@ EXCLUDE=	BoostParts Xerces hunspell minizip pcre utf8-cpp zlib
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude src/,}
 DOS2UNIX_FILES=	src/FlightCrew/CMakeLists.txt
 SHEBANG_FILES=	src/Sigil/Resource_Files/plugin_launchers/python/*.py
-python_OLD_CMD=	/usr/bin/env python
 
 OPTIONS_DEFINE=	DEBUG
 DEBUG_CFLAGS_OFF=	-DNDEBUG # tidyLib

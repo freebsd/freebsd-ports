@@ -1,0 +1,394 @@
+--- ../luxrays/include/luxrays/core/geometry/frame.h.orig
++++ ../luxrays/include/luxrays/core/geometry/frame.h
+@@ -46,11 +46,11 @@ public:
+ 		SetFromZ(z);
+ 	}
+ 
+-	Frame(const Normal &z) {
++	Frame(const luxrays::Normal &z) {
+ 		SetFromZ(Vector(z));
+ 	}
+ 
+-	void SetFromZ(const Normal &z) {
++	void SetFromZ(const luxrays::Normal &z) {
+ 		SetFromZ(Vector(z)); 
+ 	}
+ 
+--- textures/bilerp.h.orig
++++ textures/bilerp.h
+@@ -39,7 +39,7 @@ public:
+ 	// BilerpTexture Public Methods
+ 	BilerpFloatTexture(TextureMapping2D *m,
+ 		float t00, float t01, float t10, float t11) :
+-		Texture("BilerpFloatTexture-" + boost::lexical_cast<string>(this)) {
++		lux::Texture<float>::Texture("BilerpFloatTexture-" + boost::lexical_cast<string>(this)) {
+ 		mapping = m;
+ 		v00 = t00;
+ 		v01 = t01;
+@@ -87,7 +87,7 @@ public:
+ 	BilerpSpectrumTexture(TextureMapping2D *m,
+ 		const RGBColor &t00, const RGBColor &t01,
+ 		const RGBColor &t10, const RGBColor &t11) :
+-		Texture("BilerpSpectrumTexture-" + boost::lexical_cast<string>(this)) {
++		lux::Texture<lux::SWCSpectrum>::Texture("BilerpSpectrumTexture-" + boost::lexical_cast<string>(this)) {
+ 		mapping = m;
+ 		v00 = t00;
+ 		v01 = t01;
+@@ -145,7 +145,7 @@ public:
+ 		const boost::shared_ptr<Texture<FresnelGeneral> > &t01,
+ 		const boost::shared_ptr<Texture<FresnelGeneral> > &t10,
+ 		const boost::shared_ptr<Texture<FresnelGeneral> > &t11) :
+-		Texture("BilerpFresnelTexture-" + boost::lexical_cast<string>(this)) {
++		lux::Texture<lux::FresnelGeneral>::Texture("BilerpFresnelTexture-" + boost::lexical_cast<string>(this)) {
+ 		mapping = m;
+ 		v00 = t00;
+ 		v01 = t01;
+--- textures/blackbody.h.orig
++++ textures/blackbody.h
+@@ -34,7 +34,7 @@ namespace lux
+ class BlackBodyTexture : public Texture<SWCSpectrum> {
+ public:
+ 	// BlackBodyTexture Public Methods
+-	BlackBodyTexture(float t) : Texture("BlackBodyTexture-" + boost::lexical_cast<string>(this)),
++	BlackBodyTexture(float t) : lux::Texture<lux::SWCSpectrum>::Texture("BlackBodyTexture-" + boost::lexical_cast<string>(this)),
+ 			BBSPD(t) { }
+ 	virtual ~BlackBodyTexture() { }
+ 	virtual SWCSpectrum Evaluate(const SpectrumWavelengths &sw,
+--- textures/blender_base.h.orig
++++ textures/blender_base.h
+@@ -34,7 +34,7 @@ public:
+ 	virtual ~BlenderTexture3D() { }
+ 
+ 	BlenderTexture3D(const std::string &name, const Transform &tex2world, const ParamSet &tp,
+-		short type) : Texture(name) {
++		short type) : lux::Texture<float>::Texture(name) {
+ 		// Read mapping coordinates
+ 		mapping = TextureMapping3D::Create(tex2world, tp);
+ 		tex1 = tp.GetFloatTexture("tex1", 0.f);
+--- textures/cauchytexture.h.orig
++++ textures/cauchytexture.h
+@@ -35,7 +35,7 @@ class CauchyTexture : public Texture<Fre
+ public:
+ 	// ConstantTexture Public Methods
+ 	CauchyTexture(float cauchya, float cauchyb) :
+-		Texture("CauchyTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<lux::FresnelGeneral>::Texture("CauchyTexture-" + boost::lexical_cast<string>(this)),
+ 		fresnel(cauchya, cauchyb, 0.f), index(cauchya + cauchyb * 1e6f /
+ 		(WAVELENGTH_END * WAVELENGTH_START)) { }
+ 	virtual ~CauchyTexture() { }
+--- textures/checkerboard.h.orig
++++ textures/checkerboard.h
+@@ -42,7 +42,7 @@ public:
+ 	Checkerboard2D(TextureMapping2D *m,
+ 		boost::shared_ptr<Texture<float> > &c1,
+ 		boost::shared_ptr<Texture<float> > &c2, const string &aa) :
+-		Texture("Checkerboard2D-" + boost::lexical_cast<string>(this)),
++		lux::Texture<float>::Texture("Checkerboard2D-" + boost::lexical_cast<string>(this)),
+ 		tex1(c1), tex2(c2), mapping(m) {
+ 		// Select anti-aliasing method for _Checkerboard2D_
+ 		if (aa == "none")
+@@ -226,7 +226,7 @@ public:
+ 	Checkerboard3D(TextureMapping3D *m,
+ 		boost::shared_ptr<Texture<float> > &c1,
+ 		boost::shared_ptr<Texture<float> > &c2) :
+-		Texture("Checkerboard3D-" + boost::lexical_cast<string>(this)),
++		lux::Texture<float>::Texture("Checkerboard3D-" + boost::lexical_cast<string>(this)),
+ 		tex1(c1), tex2(c2), mapping(m) { }
+ 	virtual ~Checkerboard3D() { delete mapping; }
+ 	virtual float Evaluate(const SpectrumWavelengths &sw,
+--- textures/cloud.h.orig
++++ textures/cloud.h
+@@ -47,7 +47,7 @@ public:
+ 		const u_int octaves, const float o, const float offset,
+ 		const u_int numspheres, const float spheresize,
+ 		TextureMapping3D *map) :
+-		Texture("CloudTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<float>::Texture("CloudTexture-" + boost::lexical_cast<string>(this)),
+ 		radius(r), numSpheres(numspheres), sphereSize(spheresize),
+ 		sharpness(sharp), baseFlatness(baseflatness), variability(v),
+ 		omega(o), firstNoiseScale(noiseScale), noiseOffset(offset),
+--- textures/colordepth.h.orig
++++ textures/colordepth.h
+@@ -34,7 +34,7 @@ class ColorDepthTexture : public Texture
+ public:
+ 	// ColorDepthTexture Public Methods
+ 	ColorDepthTexture(float t, boost::shared_ptr<Texture<SWCSpectrum> > &c) :
+-		Texture("ColorDepthTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<lux::SWCSpectrum>::Texture("ColorDepthTexture-" + boost::lexical_cast<string>(this)),
+ 		d(-max(1e-3f, t)), color(c) { }
+ 	virtual ~ColorDepthTexture() { }
+ 	virtual SWCSpectrum Evaluate(const SpectrumWavelengths &sw,
+--- textures/constant.h.orig
++++ textures/constant.h
+@@ -36,7 +36,7 @@ class ConstantFloatTexture : public Text
+ public:
+ 	// ConstantTexture Public Methods
+ 	ConstantFloatTexture(float v) :
+-		Texture("ConstantFloatTexture-" + boost::lexical_cast<string>(this)), value(v) {
++		lux::Texture<float>::Texture("ConstantFloatTexture-" + boost::lexical_cast<string>(this)), value(v) {
+ 			AddFloatAttribute(*this, "value", "ConstantFloatTexture value", &ConstantFloatTexture::value);
+ 		}
+ 	virtual ~ConstantFloatTexture() { }
+@@ -60,7 +60,7 @@ class ConstantRGBColorTexture : public T
+ public:
+ 	// ConstantTexture Public Methods
+ 	ConstantRGBColorTexture(const RGBColor &s) :
+-		Texture("ConstantRGBColorTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<lux::SWCSpectrum>::Texture("ConstantRGBColorTexture-" + boost::lexical_cast<string>(this)),
+ 		color(s) {
+ 		RGBSPD = new RGBReflSPD(color);
+ 
+@@ -99,7 +99,7 @@ class ConstantFresnelTexture : public Te
+ public:
+ 	// ConstantTexture Public Methods
+ 	ConstantFresnelTexture(float v) :
+-		Texture("ConstantFresnelTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<lux::FresnelGeneral>::Texture("ConstantFresnelTexture-" + boost::lexical_cast<string>(this)),
+ 		value(DIELECTRIC_FRESNEL, SWCSpectrum(v), 0.f), val(v) {
+ 		AddFloatAttribute(*this, "value", "ConstantFresnelTexture value", &ConstantFresnelTexture::val);
+ 	}
+--- textures/densitygrid.h.orig
++++ textures/densitygrid.h
+@@ -39,7 +39,7 @@ public:
+ 	// DensityGridTexture Public Methods
+ 	DensityGridTexture(int x, int y, int z, const float *d,
+ 		enum WrapMode w, TextureMapping3D *map) :
+-		Texture("DensityGridTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<float>::Texture("DensityGridTexture-" + boost::lexical_cast<string>(this)),
+ 		nx(x), ny(y), nz(z), wrapMode(w), mapping(map) {
+ 		density.assign(d, d + nx * ny * nz);
+ 		dMin = *std::min_element(density.begin(), density.end());
+--- textures/dots.h.orig
++++ textures/dots.h
+@@ -37,7 +37,7 @@ public:
+ 	// DotsTexture Public Methods
+ 	DotsTexture(TextureMapping2D *m, boost::shared_ptr<Texture<float> > &c1,
+ 		boost::shared_ptr<Texture<float> > &c2) :
+-		Texture("DotsTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<float>::Texture("DotsTexture-" + boost::lexical_cast<string>(this)),
+ 		outsideDot(c1), insideDot(c2), mapping(m) { }
+ 	virtual ~DotsTexture() { delete mapping; }
+ 	virtual float Evaluate(const SpectrumWavelengths &sw,
+--- textures/equalenergy.h.orig
++++ textures/equalenergy.h
+@@ -35,7 +35,7 @@ class EqualEnergyTexture : public Textur
+ public:
+ 	// EqualEnergyTexture Public Methods
+ 	EqualEnergyTexture(float t) :
+-		Texture("EqualEnergyTexture-" + boost::lexical_cast<string>(this)), e(t) { }
++		lux::Texture<lux::SWCSpectrum>::Texture("EqualEnergyTexture-" + boost::lexical_cast<string>(this)), e(t) { }
+ 	virtual ~EqualEnergyTexture() { }
+ 	virtual SWCSpectrum Evaluate(const SpectrumWavelengths &sw,
+ 		const DifferentialGeometry &) const {
+--- textures/exponential.h.orig
++++ textures/exponential.h
+@@ -36,7 +36,7 @@ public:
+ 	// ExponentialTexture Public Methods
+ 	ExponentialTexture(const Point &o, const Vector &up, float d,
+ 		TextureMapping3D *map) :
+-		Texture("ExponentialTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<float>::Texture("ExponentialTexture-" + boost::lexical_cast<string>(this)),
+ 		origin(o), upDir(up), decay(d), mapping(map) { }
+ 	virtual ~ExponentialTexture() { delete mapping; }
+ 	virtual float Evaluate(const SpectrumWavelengths &sw,
+--- textures/fbm.h.orig
++++ textures/fbm.h
+@@ -37,7 +37,7 @@ class FBmTexture : public Texture<float>
+ public:
+ 	// FBmTexture Public Methods
+ 	FBmTexture(int oct, float roughness, TextureMapping3D *map) :
+-		Texture("FBmTexture-" + boost::lexical_cast<string>(this)) {
++		lux::Texture<float>::Texture("FBmTexture-" + boost::lexical_cast<string>(this)) {
+ 		omega = roughness;
+ 		octaves = oct;
+ 		mapping = map;
+--- textures/frequencytexture.h.orig
++++ textures/frequencytexture.h
+@@ -35,7 +35,7 @@ class FrequencyTexture : public Texture<
+ public:
+ 	// FrequencyTexture Public Methods
+ 	FrequencyTexture(float w, float p, float r)
+-		: Texture("FrequencyTexture-" + boost::lexical_cast<string>(this)),
++		: lux::Texture<lux::SWCSpectrum>::Texture("FrequencyTexture-" + boost::lexical_cast<string>(this)),
+ 		FSPD(w, p, r) { }
+ 	virtual ~FrequencyTexture() { }
+ 	virtual SWCSpectrum Evaluate(const SpectrumWavelengths &sw,
+--- textures/fresnelcolor.h.orig
++++ textures/fresnelcolor.h
+@@ -34,7 +34,7 @@ class FresnelColorTexture : public Textu
+ public:
+ 	// FresnelColorTexture Public Methods
+ 	FresnelColorTexture(const boost::shared_ptr<Texture<SWCSpectrum> > &c) :
+-		Texture("FresnelColorTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<lux::FresnelGeneral>::Texture("FresnelColorTexture-" + boost::lexical_cast<string>(this)),
+ 		color(c) { }
+ 	virtual ~FresnelColorTexture() { }
+ 	virtual FresnelGeneral Evaluate(const SpectrumWavelengths &sw,
+--- textures/gaussiantexture.h.orig
++++ textures/gaussiantexture.h
+@@ -35,7 +35,7 @@ class GaussianTexture : public Texture<S
+ public:
+ 	// GaussianTexture Public Methods
+ 	GaussianTexture(float m, float w, float r) :
+-		Texture("GaussianTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<lux::SWCSpectrum>::Texture("GaussianTexture-" + boost::lexical_cast<string>(this)),
+ 		GSPD(m, w, r) { }
+ 	virtual ~GaussianTexture() { }
+ 	virtual SWCSpectrum Evaluate(const SpectrumWavelengths &sw,
+--- textures/harlequin.h.orig
++++ textures/harlequin.h
+@@ -40,7 +40,7 @@ namespace lux
+ class HarlequinTexture : public Texture<SWCSpectrum> {
+ public:
+ 	// Harlequin Public Methods
+-	HarlequinTexture() : Texture("HarlequinTexture-" + boost::lexical_cast<string>(this)) {
++	HarlequinTexture() : lux::Texture<lux::SWCSpectrum>::Texture("HarlequinTexture-" + boost::lexical_cast<string>(this)) {
+ 		float c[3];
+ 		for (int i = 0; i < HARLEQUIN_TEXTURE_PALETTE_SIZE; i++) {
+ 			c[0] = RadicalInverse(i * COLOR_SAMPLES + 1, 2);
+--- textures/hitpointcolor.h.orig
++++ textures/hitpointcolor.h
+@@ -34,7 +34,7 @@ namespace lux
+ class HitPointAlphaTexture : public Texture<float> {
+ public:
+ 	HitPointAlphaTexture() :
+-		Texture("HitPointAlphaTexture-" + boost::lexical_cast<string>(this)) { }
++		lux::Texture<float>::Texture("HitPointAlphaTexture-" + boost::lexical_cast<string>(this)) { }
+ 	virtual ~HitPointAlphaTexture() { }
+ 	virtual float Evaluate(const SpectrumWavelengths &sw,
+ 		const DifferentialGeometry &dgs) const {
+@@ -58,7 +58,7 @@ public:
+ class HitPointRGBColorTexture : public Texture<SWCSpectrum> {
+ public:
+ 	HitPointRGBColorTexture() :
+-		Texture("HitPointRGBColorTexture-" + boost::lexical_cast<string>(this)) { }
++		lux::Texture<lux::SWCSpectrum>::Texture("HitPointRGBColorTexture-" + boost::lexical_cast<string>(this)) { }
+ 	virtual ~HitPointRGBColorTexture() { }
+ 	virtual SWCSpectrum Evaluate(const SpectrumWavelengths &sw,
+ 		const DifferentialGeometry &dgs) const {
+@@ -83,7 +83,7 @@ public:
+ class HitPointGreyTexture : public Texture<float> {
+ public:
+ 	HitPointGreyTexture(const u_int ch) :
+-		Texture("HitPointGreyTexture-" + boost::lexical_cast<string>(this)), channel(ch) { }
++		lux::Texture<float>::Texture("HitPointGreyTexture-" + boost::lexical_cast<string>(this)), channel(ch) { }
+ 	virtual ~HitPointGreyTexture() { }
+ 	virtual float Evaluate(const SpectrumWavelengths &sw,
+ 		const DifferentialGeometry &dgs) const {
+--- textures/imagemap.h.orig
++++ textures/imagemap.h
+@@ -112,7 +112,7 @@ class ImageFloatTexture : public Texture
+ public:
+ 	// ImageFloatTexture Public Methods
+ 	ImageFloatTexture(const TexInfo &texInfo, TextureMapping2D *m, Channel ch) :
+-		Texture("ImageFloatTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<float>::Texture("ImageFloatTexture-" + boost::lexical_cast<string>(this)),
+ 		ImageTexture(texInfo, m) { channel = ch; }
+ 
+ 	virtual ~ImageFloatTexture() { }
+@@ -152,7 +152,7 @@ class ImageSpectrumTexture : public Text
+ public:
+ 	// ImageSpectrumTexture Public Methods
+ 	ImageSpectrumTexture(const TexInfo &texInfo, TextureMapping2D *m) :
+-		Texture("ImageSpectrumTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<lux::SWCSpectrum>::Texture("ImageSpectrumTexture-" + boost::lexical_cast<string>(this)),
+ 		ImageTexture(texInfo, m), isIlluminant(false) { }
+ 
+ 	virtual ~ImageSpectrumTexture() { }
+@@ -200,7 +200,7 @@ class NormalMapTexture : public Texture<
+ public:
+ 	// NormalMapTexture Public Methods
+ 	NormalMapTexture(const TexInfo &texInfo, TextureMapping2D *m) :
+-		Texture("NormalMapTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<float>::Texture("NormalMapTexture-" + boost::lexical_cast<string>(this)),
+ 		ImageTexture(texInfo, m) { }
+ 
+ 	virtual ~NormalMapTexture() { }
+--- textures/irregulardata.h.orig
++++ textures/irregulardata.h
+@@ -36,7 +36,7 @@ public:
+ 	// IrregularDataSpectrumTexture Public Methods
+ 	IrregularDataTexture(u_int n, const float *wl, const float *data,
+ 		float resolution = 5.f) :
+-		Texture("IrregularDataTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<lux::SWCSpectrum>::Texture("IrregularDataTexture-" + boost::lexical_cast<string>(this)),
+ 		SPD(wl, data, n, resolution) { }
+ 	virtual ~IrregularDataTexture() { }
+ 	virtual SWCSpectrum Evaluate(const SpectrumWavelengths &sw,
+--- textures/marble.h.orig
++++ textures/marble.h
+@@ -39,7 +39,7 @@ public:
+ 	// MarbleTexture Public Methods
+ 	virtual ~MarbleTexture() { delete mapping; }
+ 	MarbleTexture(int oct, float roughness, float sc, float var,
+-		TextureMapping3D *map) : Texture("MarbleTexture-" + boost::lexical_cast<string>(this)) {
++		TextureMapping3D *map) : lux::Texture<lux::SWCSpectrum>::Texture("MarbleTexture-" + boost::lexical_cast<string>(this)) {
+ 		omega = roughness;
+ 		octaves = oct;
+ 		mapping = map;
+--- textures/regulardata.h.orig
++++ textures/regulardata.h
+@@ -35,7 +35,7 @@ class RegularDataTexture : public Textur
+ public:
+ 	// RegularDataSpectrumTexture Public Methods
+ 	RegularDataTexture(float s, float e, u_int n, const float *data)
+-		: Texture("RegularDataTexture-" + boost::lexical_cast<string>(this)),
++		: lux::Texture<lux::SWCSpectrum>::Texture("RegularDataTexture-" + boost::lexical_cast<string>(this)),
+ 		SPD(data, s, e, n) { }
+ 	virtual ~RegularDataTexture() { }
+ 	virtual SWCSpectrum Evaluate(const SpectrumWavelengths &sw,
+--- textures/sellmeiertexture.h.orig
++++ textures/sellmeiertexture.h
+@@ -36,7 +36,7 @@ class SellmeierTexture : public Texture<
+ public:
+ 	// SellmeierTexture Public Methods
+ 	SellmeierTexture(float a_, u_int n, const float *b_, const float *c_) :
+-		Texture("SellmeierTexture-" + boost::lexical_cast<string>(this)),
++		lux::Texture<lux::FresnelGeneral>::Texture("SellmeierTexture-" + boost::lexical_cast<string>(this)),
+ 		b(b_, b_ + n), c(c_, c_ + n), a(a_) {
+ 		// Sellmeier expects wavelength in µm but we have it in nm
+ 		for (u_int i = 0; i < n; ++i)
+--- textures/tabulatedfresnel.h.orig
++++ textures/tabulatedfresnel.h
+@@ -37,7 +37,7 @@ public:
+ 	// TabulatedFresnel Public Methods
+ 	TabulatedFresnel(const vector<float> &wl, const vector<float> &n,
+ 		const vector<float> &k) :
+-		Texture("TabulatedFresnel-" + boost::lexical_cast<string>(this)),
++		lux::Texture<lux::FresnelGeneral>::Texture("TabulatedFresnel-" + boost::lexical_cast<string>(this)),
+ 		N(&wl[0], &n[0], wl.size()), K(&wl[0], &k[0], wl.size()),
+ 		index(N.Filter()) { }
+ 	virtual ~TabulatedFresnel() { }
+--- textures/uv.h.orig
++++ textures/uv.h
+@@ -36,7 +36,7 @@ namespace lux
+ class UVTexture : public Texture<SWCSpectrum> {
+ public:
+ 	// UVTexture Public Methods
+-	UVTexture(TextureMapping2D *m) : Texture("UVTexture-" + boost::lexical_cast<string>(this)) {
++	UVTexture(TextureMapping2D *m) : lux::Texture<lux::SWCSpectrum>::Texture("UVTexture-" + boost::lexical_cast<string>(this)) {
+ 		mapping = m;
+ 	}
+ 	virtual ~UVTexture() {
+--- textures/windy.h.orig
++++ textures/windy.h
+@@ -37,7 +37,7 @@ class WindyTexture : public Texture<floa
+ public:
+ 	// WindyTexture Public Methods
+ 	WindyTexture(TextureMapping3D *map) :
+-		Texture("WindyTexture-" + boost::lexical_cast<string>(this)) { mapping = map; }
++		lux::Texture<float>::Texture("WindyTexture-" + boost::lexical_cast<string>(this)) { mapping = map; }
+ 	virtual ~WindyTexture() { delete mapping; }
+ 	virtual float Evaluate(const SpectrumWavelengths &sw,
+ 		const DifferentialGeometry &dg) const {
+--- textures/wrinkled.h.orig
++++ textures/wrinkled.h
+@@ -37,7 +37,7 @@ class WrinkledTexture : public Texture<f
+ public:
+ 	// WrinkledTexture Public Methods
+ 	WrinkledTexture(int oct, float roughness, TextureMapping3D *map) :
+-		Texture("WrinkledTexture-" + boost::lexical_cast<string>(this)) {
++		lux::Texture<float>::Texture("WrinkledTexture-" + boost::lexical_cast<string>(this)) {
+ 		omega = roughness;
+ 		octaves = oct;
+ 		mapping = map;

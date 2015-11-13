@@ -34,7 +34,6 @@ PORTDATA=	*
 DATADIR=	${PREFIX}/share/gimp
 
 SHEBANG_FILES=	tools/xml2po.py
-python_OLD_CMD=	/usr/bin/env python
 
 post-patch:
 # Install to the same directory as when configuring --with-gimp

@@ -3,9 +3,9 @@ When you first run minecraft-server, it will populate the file
 
 It is required to read the EULA, and then set eula=true
 
-- Configuration files can be found at %%ETCDIR%%
-- Log and debug output files can be found at /var/log/minecraft-server/
-- World files can be found at /var/db/minecraft-server
+- Configuration files can be found in %%ETCDIR%%/
+- Log and debug output files can be found in /var/log/minecraft-server/
+- World files can be found in /var/db/minecraft-server/
 
 Without daemon option:
 - To run the server, run %%PREFIX%%/bin/minecraft-server
@@ -13,8 +13,9 @@ Without daemon option:
 
 With daemon option:
 - The service has been installed with the name 'minecraft'
-- To adjust memory usage, use MINECRAFT_MEM= in /etc/rc.conf
-- To add other java parameters, use MINECRAFT_ARGS= in /etc/rc.conf
+- To adjust maximum memory usage (-Xmx), use minecraft_memx= in /etc/rc.conf
+- To adjust initial memory usage (-Xms), use minecraft_mems= in /etc/rc.conf
+- To add other java parameters, use minecraft_args= in /etc/rc.conf
 - To see the interactive console, type service minecraft console
 
 Users upgrading from version < 1.8 are advised to run the server to

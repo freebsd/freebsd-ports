@@ -37,8 +37,7 @@ extra_commands=status
 
 sympadir=%%PREFIX%%/libexec/sympa
 
-sympaconf=%%PREFIX%%/etc/sympa.conf
-wwsympaconf=%%PREFIX%%/etc/wwsympa.conf
+sympaconf=%%ETCDIR%%/sympa.conf
 
 sub_status()
 {
@@ -155,7 +154,6 @@ sympa_check_config()
 	# Check config files
 	[ -d $sympadir ] || exit 0
 	[ -f $sympaconf ] || exit 0
-	[ -f $wwsympaconf ] || exit 0
 }
 
 sympa_start()
@@ -163,7 +161,7 @@ sympa_start()
 	sympa_check_config
 	if [ ! -f /var/spool/lock/sympa ]; then
 		echo "Starting Sympa subsystem: "
-		sub_start sympa
+		sub_start sympa_msg
 		sub_start bulk
 		sub_start archived
 		sub_start bounced
@@ -183,7 +181,7 @@ sympa_stop()
 	sub_stop bounced
 	sub_stop archived
 	sub_stop bulk
-	sub_stop sympa
+	sub_stop sympa_msg
 	if [ -f /var/run/sympa/sympa-creation.pid ]; then
 		sub_stop sympa-creation
 	fi
@@ -201,7 +199,7 @@ sympa_status()
 	else
 		echo "Status file for subsystem NOT found."
 	fi
-	sub_status sympa
+	sub_status sympa_msg
 	sub_status bulk
 	sub_status archived
 	sub_status bounced

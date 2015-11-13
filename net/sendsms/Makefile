@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple perl command-line utility to send SMS via from on provider site
 
 EXTRACT_CMD=	${GZCAT}
-EXTRACT_BEFORE_ARGS=	
+EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${PORTNAME}
 
 PLIST_FILES=	bin/sendsms

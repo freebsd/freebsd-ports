@@ -1,6 +1,6 @@
---- togl/togl.c.orig	2007-12-17 19:12:44.000000000 +0100
-+++ togl/togl.c	2007-12-17 19:14:18.000000000 +0100
-@@ -709,7 +709,7 @@
+--- togl/togl.c.orig	2015-06-23 18:03:50 UTC
++++ togl/togl.c
+@@ -709,7 +709,7 @@ int Togl_Init(Tcl_Interp *interp)
     }
  #endif
  
@@ -9,7 +9,7 @@
                       (ClientData) Tk_MainWindow(interp), NULL);
     Tcl_InitHashTable(&CommandTable, TCL_STRING_KEYS);
  
-@@ -941,7 +941,7 @@
+@@ -941,7 +941,7 @@ int Togl_Configure(Tcl_Interp *interp, s
     int oldAuxNumber   = togl->AuxNumber;
  
     if (Tk_ConfigureWidget(interp, togl->TkWin, configSpecs,
@@ -18,7 +18,7 @@
        return(TCL_ERROR);
     }
     /*fprintf(stderr,"hier %d %d %d\n", togl->TkWin, togl->Width, togl->Height);*/
-@@ -1154,7 +1154,7 @@
+@@ -1154,7 +1154,7 @@ static int Togl_Cmd(ClientData clientDat
  
     /* Create command event handler */
     togl->widgetCmd = Tcl_CreateCommand(interp, Tk_PathName(tkwin),

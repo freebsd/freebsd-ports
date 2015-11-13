@@ -29,7 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	APVER="${PORTVERSION:R}"
 
 post-patch:
-	
+
 	@${REINPLACE_CMD} -e 's/pcre_info/pcre_fullinfo/g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

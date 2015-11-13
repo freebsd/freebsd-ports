@@ -60,10 +60,6 @@ EXTRA_PATCHES+=	${.CURDIR}/files/extra-patch-atomic-amd64
 EXTRA_PATCHES+=	${.CURDIR}/files/extra-patch-atomic-i386
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-BUILD_DEPENDS+=	clang33:${PORTSDIR}/lang/clang33
-.endif
-
 DEFAULT_GROUP_INCLUDE=	standard standard-dep
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -125,9 +121,6 @@ post-patch:
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's#install-doc install-man#install-man#'	\
 		${WRKSRC}/Makefile
-.endif
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
-	${REINPLACE_CMD} -e 's/clang/clang33/g' ${WRKSRC}/Makefile.defs
 .endif
 
 pre-build:

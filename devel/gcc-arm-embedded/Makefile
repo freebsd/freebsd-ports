@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-PORTVERSION=	4.9.20150609
+PORTVERSION=	4.9.20150921
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q2-update/+download/
+MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update/+download/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -19,7 +19,6 @@ PURE_DESC=	Use all libraries from bundle, do not depend on anything
 HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
 PYGDB_DESC=	Build and install pyhon-enabled gdb in addition to standard one
-
 
 PURE_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-gcc-isl-0.15-compatibility
 PURE_LIB_DEPENDS_OFF=	\
@@ -36,6 +35,10 @@ PDF_BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 OPTIONS_SUB=		yes
 PYGDB_USES=		python:2
 
+NOT_FOR_ARCHS=		aarch64 arm armeb armv6 armv6hf \
+			mips mips64 mips64el mipsel mipsn32
+NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
+
 USES=			bison compiler cpe gmake iconv makeinfo tar:bzip2
 
 GNU_CONFIGURE=	yes
@@ -45,7 +48,7 @@ PATCH_WRKSRC=		${WRKDIR}/${ORIGINAL_PACKAGE_NAME}
 BUILD_WRKSRC=	${WRKDIR}
 
 GCC_VERSION=		4.9.3
-FULL_VERSION=		4_9-2015q2-20150609
+FULL_VERSION=		4_9-2015q3-20150921
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 
@@ -80,7 +83,6 @@ BUNDLED_VERSION_MPFR=		2.4.2
 BUNDLED_VERSION_MPC=		0.8.1
 BUNDLED_VERSION_ISL=		0.11.1
 BUNDLED_VERSION_CLOOG=		0.18.0
-
 
 VAR_TO_SUBMAKE=	BUILD_DIR CC CFLAGS CHOSEN_COMPILER_TYPE CONFIG_SITE \
 		CONFIGURE_MAX_CMD_LEN CONFIGURE_SHELL CP CPP CPPFLAGS CXX \

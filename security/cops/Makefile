@@ -28,7 +28,7 @@ C_SRC=		home.chk.c user.chk.c is_able.c is_something.c \
 		crc.c crc_check.c
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|${perl_OLD_CMD}|${perl_CMD}|' \
+	@${REINPLACE_CMD} -i '' -e 's|/usr/bin/perl|${perl_CMD}|' \
 		${WRKSRC}/perl/cops
 
 pre-build:

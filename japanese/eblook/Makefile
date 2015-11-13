@@ -16,10 +16,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libeb.so:${PORTSDIR}/japanese/eb
 
 USES=		iconv
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-eb-conf=${PREFIX}/etc/eb.conf
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-eb-conf=${PREFIX}/etc/eb.conf
 CPPFLAGS+=	-I${ICONV_PREFIX}/include
-LDFLAGS+=	-L${ICONV_PREFIX}/lib ${ICONV_LIB}
+LIBS+=		-L${ICONV_PREFIX}/lib ${ICONV_LIB}
 
 INFO=		eblook
 PLIST_FILES=	bin/eblook
@@ -27,10 +27,14 @@ PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if !empty(ICONV_LIB)
+CONFIGURE_ARGS+=ac_cv_func_iconv=yes
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

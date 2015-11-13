@@ -11,6 +11,8 @@ DISTNAME=	WMPop3-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp to check email via POP3 protocol
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USE_CSTD=	gnu89

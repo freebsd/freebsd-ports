@@ -175,6 +175,7 @@ ldap:*:389:
 tiarra:*:398:
 uhub:*:411:
 drweb:*:426:
+varnish:*:429:
 quasselcore:*:442:
 callweaver:*:444:
 ecartis:*:450:
@@ -242,6 +243,8 @@ sogod:*:846:
 fossy:*:901:www
 scanlogd:*:902:
 _ocserv:*:903:
+artifactory:*:905:
+opentsdb:*:906:
 influxd:*:907:
 riemann:*:908:
 proxy65:*:909:

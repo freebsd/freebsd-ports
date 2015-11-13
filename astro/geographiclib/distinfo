@@ -1,5 +1,5 @@
-SHA256 (GeographicLib/GeographicLib-1.44.tar.gz) = f0423318fb30959632f403935827e06856737cf4621695ecc27fa9c251db9d37
-SIZE (GeographicLib/GeographicLib-1.44.tar.gz) = 2089179
+SHA256 (GeographicLib/GeographicLib-1.45.tar.gz) = fbcd9fc9b10de0830f5cb57665dc675ae61f81b370873bb4b95540d569410dae
+SIZE (GeographicLib/GeographicLib-1.45.tar.gz) = 2158951
 SHA256 (GeographicLib/geoids-distrib/egm84-30.tar.bz2) = 18bc3e2b55c4f9f2f9ba8d14380dc47cc5c0d00dc2363b723d2305f30a91498e
 SIZE (GeographicLib/geoids-distrib/egm84-30.tar.bz2) = 416481
 SHA256 (GeographicLib/geoids-distrib/egm84-15.tar.bz2) = 579e3dad2f33b54f1fed16edb3ed9d4ae8cdad6ea064f7375af30d678eb2e51c

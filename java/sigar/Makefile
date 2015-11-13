@@ -3,7 +3,7 @@
 
 PORTNAME=	sigar
 PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 PKGNAMEPREFIX=	java-
 
@@ -34,16 +34,14 @@ ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
 .if ${OPSYS} == FreeBSD
 .  if ${OSVERSION} >= 1000000
 PLATFORM_VER=	1
-.  elif ${OSVERSION} >= 900000
-PLATFORM_VER=	9
 .  else
-PLATFORM_VER=	8
+PLATFORM_VER=	9
 .  endif
 .else
 BROKEN=		${OPSYS} platform is not supported
 .endif
 
-LIBNAME=	libsigar-${ARCH:S,i386,x86,}-freebsd-${PLATFORM_VER}.so
+LIBNAME=	libsigar-${ARCH:S,i386,x86,}-${OPSYS:tl}-${PLATFORM_VER}.so
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/${LIBNAME}

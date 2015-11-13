@@ -27,8 +27,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL}," ${WRKSRC}/${PORTNAME}
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${PORTNAME}	${WRKDIR}/
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${PORTNAME}	${WRKSRC}/
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios

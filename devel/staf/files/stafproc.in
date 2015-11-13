@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: stafproc
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=stafproc
+rcvar=stafproc_enable
+
+load_rc_config $name
+
+: ${stafproc_enable:="NO"}
+: ${stafproc_config:="%%PREFIX%%/etc/STAF.cfg"}
+: ${stafproc_user:="root"}
+: ${stafproc_group:="wheel"}
+: ${stafproc_log:="/var/log/stafproc.log"}
+
+required_files="${stafproc_config}"
+pidfile="/var/run/${name}/${name}.pid"
+start_precmd="stafproc_precmd"
+procname="%%PREFIX%%/bin/STAFProc"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} env PATH=$PATH:%%PREFIX%%/bin ${procname} ${stafproc_config} >> ${stafproc_log} 2>&1"
+
+stafproc_precmd()
+{
+	if [ ! -d $(dirname ${pidfile}) ]; then
+		mkdir $(dirname ${pidfile})
+		chown ${stafproc_user}:${stafproc_group} $(dirname ${pidfile})
+	fi
+
+	if [ ! -d %%STAF_VAR_DIR%% ]; then
+		mkdir -p %%STAF_VAR_DIR%%
+		chown ${stafproc_user}:${stafproc_group} %%STAF_VAR_DIR%%
+	fi
+
+	if [ ! -f ${stafproc_log} ]; then
+		install -o ${stafproc_user} -g ${stafproc_group} -m 640 /dev/null ${stafproc_log}
+	fi
+
+	rc_flags=""
+}
+
+run_rc_command "$1"

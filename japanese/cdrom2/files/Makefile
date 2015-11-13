@@ -6,7 +6,7 @@ PREFIX?=/usr/local
 BINDIR=${PREFIX}/bin
 LIBDIR=${PREFIX}/lib/cdrom2
 PROGRAMS=cdrom2 cdgaiji
-TBL_FILES=kojien3.tbl ruigo.tbl 
+TBL_FILES=kojien3.tbl ruigo.tbl
 
 all: ${PROGRAMS}
 
@@ -23,7 +23,7 @@ install:
 	/bin/mkdir -p ${DESTDIR}${LIBDIR}
 	for f in ${TBL_FILES} ; do \
 	  ${BSD_INSTALL_DATA} $$f ${DESTDIR}${LIBDIR} ;\
-	done	
+	done
 
 clean:
 	rm -f ${PROGRAMS}

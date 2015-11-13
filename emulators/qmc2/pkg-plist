@@ -1,5 +1,6 @@
+bin/qchdman
+bin/qmc2-arcade
 bin/qmc2-sdlmame
-bin/qmc2-sdlmess
 %%ETCDIR%%/qmc2.ini
 %%PORTDOCS%%%%DOCSDIR%%/html/de/credits.html
 %%PORTDOCS%%%%DOCSDIR%%/html/de/index.html
@@ -8,8 +9,6 @@ bin/qmc2-sdlmess
 %%PORTDOCS%%%%DOCSDIR%%/html/images/gradient1.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/gradient2.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qmc2_logo.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/qmc2_mess_logo.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/qmc2_ume_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/rene.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/robert.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/sammy.png
@@ -127,6 +126,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/effect.png
 %%DATADIR%%/img/circles/embed.png
 %%DATADIR%%/img/circles/embed_multiple.png
+%%DATADIR%%/img/circles/embed_multiple_recordmovie.png
+%%DATADIR%%/img/circles/embed_recordmovie.png
 %%DATADIR%%/img/circles/exit.png
 %%DATADIR%%/img/circles/exit_small.png
 %%DATADIR%%/img/circles/export_rom_status.png
@@ -145,6 +146,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/find_negate.png
 %%DATADIR%%/img/circles/find_softlist.png
 %%DATADIR%%/img/circles/flat.png
+%%DATADIR%%/img/circles/flat_filtered.png
 %%DATADIR%%/img/circles/flip.png
 %%DATADIR%%/img/circles/folders-first.png
 %%DATADIR%%/img/circles/folders-off.png
@@ -164,6 +166,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/hint.png
 %%DATADIR%%/img/circles/hint_small.png
 %%DATADIR%%/img/circles/home.png
+%%DATADIR%%/img/circles/homepage.png
 %%DATADIR%%/img/circles/html.png
 %%DATADIR%%/img/circles/icon.png
 %%DATADIR%%/img/circles/info.png
@@ -179,6 +182,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/kill.png
 %%DATADIR%%/img/circles/launch.png
 %%DATADIR%%/img/circles/launch_multiple.png
+%%DATADIR%%/img/circles/launch_multiple_recordmovie.png
+%%DATADIR%%/img/circles/launch_recordmovie.png
 %%DATADIR%%/img/circles/led_off.png
 %%DATADIR%%/img/circles/led_on.png
 %%DATADIR%%/img/circles/left_action.png
@@ -191,7 +196,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/mame.png
 %%DATADIR%%/img/circles/mantis.png
 %%DATADIR%%/img/circles/marquee.png
-%%DATADIR%%/img/circles/maws.png
 %%DATADIR%%/img/circles/maximize.png
 %%DATADIR%%/img/circles/media_back.png
 %%DATADIR%%/img/circles/media_fastbackward.png
@@ -206,9 +210,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/merge_nok.png
 %%DATADIR%%/img/circles/merge_ok.png
 %%DATADIR%%/img/circles/merge_unknown.png
-%%DATADIR%%/img/circles/mess.icns
-%%DATADIR%%/img/circles/mess.ico
-%%DATADIR%%/img/circles/mess.png
+%%DATADIR%%/img/circles/midi-in.png
+%%DATADIR%%/img/circles/midi-out.png
 %%DATADIR%%/img/circles/minimize.png
 %%DATADIR%%/img/circles/minus.png
 %%DATADIR%%/img/circles/minus_all.png
@@ -245,12 +248,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/qmc2_logo_big.png
 %%DATADIR%%/img/circles/qmc2_logo_small.png
 %%DATADIR%%/img/circles/qmc2_mame_splash.png
-%%DATADIR%%/img/circles/qmc2_mess_logo_big.png
-%%DATADIR%%/img/circles/qmc2_mess_logo_small.png
-%%DATADIR%%/img/circles/qmc2_mess_splash.png
-%%DATADIR%%/img/circles/qmc2_ume_logo_big.png
-%%DATADIR%%/img/circles/qmc2_ume_logo_small.png
-%%DATADIR%%/img/circles/qmc2_ume_splash.png
 %%DATADIR%%/img/circles/qt-logo.png
 %%DATADIR%%/img/circles/rank.png
 %%DATADIR%%/img/circles/rank_bg.png
@@ -319,9 +316,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/trafficlight_off.png
 %%DATADIR%%/img/circles/trafficlight_red.png
 %%DATADIR%%/img/circles/trafficlight_yellow.png
-%%DATADIR%%/img/circles/ume.icns
-%%DATADIR%%/img/circles/ume.ico
-%%DATADIR%%/img/circles/ume.png
 %%DATADIR%%/img/circles/undo.png
 %%DATADIR%%/img/circles/unknown.png
 %%DATADIR%%/img/circles/unlock.png
@@ -433,6 +427,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/effect.png
 %%DATADIR%%/img/classic/embed.png
 %%DATADIR%%/img/classic/embed_multiple.png
+%%DATADIR%%/img/classic/embed_multiple_recordmovie.png
+%%DATADIR%%/img/classic/embed_recordmovie.png
 %%DATADIR%%/img/classic/exit.png
 %%DATADIR%%/img/classic/exit_small.png
 %%DATADIR%%/img/classic/export_rom_status.png
@@ -451,6 +447,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/find_negate.png
 %%DATADIR%%/img/classic/find_softlist.png
 %%DATADIR%%/img/classic/flat.png
+%%DATADIR%%/img/classic/flat_filtered.png
 %%DATADIR%%/img/classic/flip.png
 %%DATADIR%%/img/classic/folders-first.png
 %%DATADIR%%/img/classic/folders-off.png
@@ -470,6 +467,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/hint.png
 %%DATADIR%%/img/classic/hint_small.png
 %%DATADIR%%/img/classic/home.png
+%%DATADIR%%/img/classic/homepage.png
 %%DATADIR%%/img/classic/html.png
 %%DATADIR%%/img/classic/icon.png
 %%DATADIR%%/img/classic/info.png
@@ -485,6 +483,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/kill.png
 %%DATADIR%%/img/classic/launch.png
 %%DATADIR%%/img/classic/launch_multiple.png
+%%DATADIR%%/img/classic/launch_multiple_recordmovie.png
+%%DATADIR%%/img/classic/launch_recordmovie.png
 %%DATADIR%%/img/classic/led_off.png
 %%DATADIR%%/img/classic/led_on.png
 %%DATADIR%%/img/classic/left_action.png
@@ -497,7 +497,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/mame.png
 %%DATADIR%%/img/classic/mantis.png
 %%DATADIR%%/img/classic/marquee.png
-%%DATADIR%%/img/classic/maws.png
 %%DATADIR%%/img/classic/maximize.png
 %%DATADIR%%/img/classic/media_back.png
 %%DATADIR%%/img/classic/media_fastbackward.png
@@ -512,9 +511,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/merge_nok.png
 %%DATADIR%%/img/classic/merge_ok.png
 %%DATADIR%%/img/classic/merge_unknown.png
-%%DATADIR%%/img/classic/mess.icns
-%%DATADIR%%/img/classic/mess.ico
-%%DATADIR%%/img/classic/mess.png
+%%DATADIR%%/img/classic/midi-in.png
+%%DATADIR%%/img/classic/midi-out.png
 %%DATADIR%%/img/classic/minimize.png
 %%DATADIR%%/img/classic/minus.png
 %%DATADIR%%/img/classic/minus_all.png
@@ -551,12 +549,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/qmc2_logo_big.png
 %%DATADIR%%/img/classic/qmc2_logo_small.png
 %%DATADIR%%/img/classic/qmc2_mame_splash.png
-%%DATADIR%%/img/classic/qmc2_mess_logo_big.png
-%%DATADIR%%/img/classic/qmc2_mess_logo_small.png
-%%DATADIR%%/img/classic/qmc2_mess_splash.png
-%%DATADIR%%/img/classic/qmc2_ume_logo_big.png
-%%DATADIR%%/img/classic/qmc2_ume_logo_small.png
-%%DATADIR%%/img/classic/qmc2_ume_splash.png
 %%DATADIR%%/img/classic/qt-logo.png
 %%DATADIR%%/img/classic/rank.png
 %%DATADIR%%/img/classic/rank_bg.png
@@ -625,9 +617,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/trafficlight_off.png
 %%DATADIR%%/img/classic/trafficlight_red.png
 %%DATADIR%%/img/classic/trafficlight_yellow.png
-%%DATADIR%%/img/classic/ume.icns
-%%DATADIR%%/img/classic/ume.ico
-%%DATADIR%%/img/classic/ume.png
 %%DATADIR%%/img/classic/undo.png
 %%DATADIR%%/img/classic/unknown.png
 %%DATADIR%%/img/classic/unlock.png
@@ -758,6 +747,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/effect.png
 %%DATADIR%%/img/crazy-black/embed.png
 %%DATADIR%%/img/crazy-black/embed_multiple.png
+%%DATADIR%%/img/crazy-black/embed_multiple_recordmovie.png
+%%DATADIR%%/img/crazy-black/embed_recordmovie.png
 %%DATADIR%%/img/crazy-black/exit.png
 %%DATADIR%%/img/crazy-black/exit_small.png
 %%DATADIR%%/img/crazy-black/export_rom_status.png
@@ -776,6 +767,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/find_negate.png
 %%DATADIR%%/img/crazy-black/find_softlist.png
 %%DATADIR%%/img/crazy-black/flat.png
+%%DATADIR%%/img/crazy-black/flat_filtered.png
 %%DATADIR%%/img/crazy-black/flip.png
 %%DATADIR%%/img/crazy-black/folders-first.png
 %%DATADIR%%/img/crazy-black/folders-off.png
@@ -795,6 +787,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/hint.png
 %%DATADIR%%/img/crazy-black/hint_small.png
 %%DATADIR%%/img/crazy-black/home.png
+%%DATADIR%%/img/crazy-black/homepage.png
 %%DATADIR%%/img/crazy-black/html.png
 %%DATADIR%%/img/crazy-black/icon.png
 %%DATADIR%%/img/crazy-black/info.png
@@ -810,6 +803,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/kill.png
 %%DATADIR%%/img/crazy-black/launch.png
 %%DATADIR%%/img/crazy-black/launch_multiple.png
+%%DATADIR%%/img/crazy-black/launch_multiple_recordmovie.png
+%%DATADIR%%/img/crazy-black/launch_recordmovie.png
 %%DATADIR%%/img/crazy-black/led_off.png
 %%DATADIR%%/img/crazy-black/led_on.png
 %%DATADIR%%/img/crazy-black/left_action.png
@@ -822,7 +817,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/mame.png
 %%DATADIR%%/img/crazy-black/mantis.png
 %%DATADIR%%/img/crazy-black/marquee.png
-%%DATADIR%%/img/crazy-black/maws.png
 %%DATADIR%%/img/crazy-black/maximize.png
 %%DATADIR%%/img/crazy-black/media_back.png
 %%DATADIR%%/img/crazy-black/media_fastbackward.png
@@ -837,9 +831,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/merge_nok.png
 %%DATADIR%%/img/crazy-black/merge_ok.png
 %%DATADIR%%/img/crazy-black/merge_unknown.png
-%%DATADIR%%/img/crazy-black/mess.icns
-%%DATADIR%%/img/crazy-black/mess.ico
-%%DATADIR%%/img/crazy-black/mess.png
+%%DATADIR%%/img/crazy-black/midi-in.png
+%%DATADIR%%/img/crazy-black/midi-out.png
 %%DATADIR%%/img/crazy-black/minimize.png
 %%DATADIR%%/img/crazy-black/minus.png
 %%DATADIR%%/img/crazy-black/minus_all.png
@@ -876,12 +869,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/qmc2_logo_big.png
 %%DATADIR%%/img/crazy-black/qmc2_logo_small.png
 %%DATADIR%%/img/crazy-black/qmc2_mame_splash.png
-%%DATADIR%%/img/crazy-black/qmc2_mess_logo_big.png
-%%DATADIR%%/img/crazy-black/qmc2_mess_logo_small.png
-%%DATADIR%%/img/crazy-black/qmc2_mess_splash.png
-%%DATADIR%%/img/crazy-black/qmc2_ume_logo_big.png
-%%DATADIR%%/img/crazy-black/qmc2_ume_logo_small.png
-%%DATADIR%%/img/crazy-black/qmc2_ume_splash.png
 %%DATADIR%%/img/crazy-black/qt-logo.png
 %%DATADIR%%/img/crazy-black/rank.png
 %%DATADIR%%/img/crazy-black/rank_bg.png
@@ -950,9 +937,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/trafficlight_off.png
 %%DATADIR%%/img/crazy-black/trafficlight_red.png
 %%DATADIR%%/img/crazy-black/trafficlight_yellow.png
-%%DATADIR%%/img/crazy-black/ume.icns
-%%DATADIR%%/img/crazy-black/ume.ico
-%%DATADIR%%/img/crazy-black/ume.png
 %%DATADIR%%/img/crazy-black/undo.png
 %%DATADIR%%/img/crazy-black/unknown.png
 %%DATADIR%%/img/crazy-black/unlock.png
@@ -1063,6 +1047,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/effect.png
 %%DATADIR%%/img/crazy/embed.png
 %%DATADIR%%/img/crazy/embed_multiple.png
+%%DATADIR%%/img/crazy/embed_multiple_recordmovie.png
+%%DATADIR%%/img/crazy/embed_recordmovie.png
 %%DATADIR%%/img/crazy/exit.png
 %%DATADIR%%/img/crazy/exit_small.png
 %%DATADIR%%/img/crazy/export_rom_status.png
@@ -1081,6 +1067,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/find_negate.png
 %%DATADIR%%/img/crazy/find_softlist.png
 %%DATADIR%%/img/crazy/flat.png
+%%DATADIR%%/img/crazy/flat_filtered.png
 %%DATADIR%%/img/crazy/flip.png
 %%DATADIR%%/img/crazy/folders-first.png
 %%DATADIR%%/img/crazy/folders-off.png
@@ -1100,6 +1087,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/hint.png
 %%DATADIR%%/img/crazy/hint_small.png
 %%DATADIR%%/img/crazy/home.png
+%%DATADIR%%/img/crazy/homepage.png
 %%DATADIR%%/img/crazy/html.png
 %%DATADIR%%/img/crazy/icon.png
 %%DATADIR%%/img/crazy/info.png
@@ -1115,6 +1103,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/kill.png
 %%DATADIR%%/img/crazy/launch.png
 %%DATADIR%%/img/crazy/launch_multiple.png
+%%DATADIR%%/img/crazy/launch_multiple_recordmovie.png
+%%DATADIR%%/img/crazy/launch_recordmovie.png
 %%DATADIR%%/img/crazy/led_off.png
 %%DATADIR%%/img/crazy/led_on.png
 %%DATADIR%%/img/crazy/left_action.png
@@ -1127,7 +1117,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/mame.png
 %%DATADIR%%/img/crazy/mantis.png
 %%DATADIR%%/img/crazy/marquee.png
-%%DATADIR%%/img/crazy/maws.png
 %%DATADIR%%/img/crazy/maximize.png
 %%DATADIR%%/img/crazy/media_back.png
 %%DATADIR%%/img/crazy/media_fastbackward.png
@@ -1142,9 +1131,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/merge_nok.png
 %%DATADIR%%/img/crazy/merge_ok.png
 %%DATADIR%%/img/crazy/merge_unknown.png
-%%DATADIR%%/img/crazy/mess.icns
-%%DATADIR%%/img/crazy/mess.ico
-%%DATADIR%%/img/crazy/mess.png
+%%DATADIR%%/img/crazy/midi-in.png
+%%DATADIR%%/img/crazy/midi-out.png
 %%DATADIR%%/img/crazy/minimize.png
 %%DATADIR%%/img/crazy/minus.png
 %%DATADIR%%/img/crazy/minus_all.png
@@ -1181,12 +1169,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/qmc2_logo_big.png
 %%DATADIR%%/img/crazy/qmc2_logo_small.png
 %%DATADIR%%/img/crazy/qmc2_mame_splash.png
-%%DATADIR%%/img/crazy/qmc2_mess_logo_big.png
-%%DATADIR%%/img/crazy/qmc2_mess_logo_small.png
-%%DATADIR%%/img/crazy/qmc2_mess_splash.png
-%%DATADIR%%/img/crazy/qmc2_ume_logo_big.png
-%%DATADIR%%/img/crazy/qmc2_ume_logo_small.png
-%%DATADIR%%/img/crazy/qmc2_ume_splash.png
 %%DATADIR%%/img/crazy/qt-logo.png
 %%DATADIR%%/img/crazy/rank.png
 %%DATADIR%%/img/crazy/rank_bg.png
@@ -1255,9 +1237,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/trafficlight_off.png
 %%DATADIR%%/img/crazy/trafficlight_red.png
 %%DATADIR%%/img/crazy/trafficlight_yellow.png
-%%DATADIR%%/img/crazy/ume.icns
-%%DATADIR%%/img/crazy/ume.ico
-%%DATADIR%%/img/crazy/ume.png
 %%DATADIR%%/img/crazy/undo.png
 %%DATADIR%%/img/crazy/unknown.png
 %%DATADIR%%/img/crazy/unlock.png
@@ -1368,6 +1347,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/effect.png
 %%DATADIR%%/img/cubes/embed.png
 %%DATADIR%%/img/cubes/embed_multiple.png
+%%DATADIR%%/img/cubes/embed_multiple_recordmovie.png
+%%DATADIR%%/img/cubes/embed_recordmovie.png
 %%DATADIR%%/img/cubes/exit.png
 %%DATADIR%%/img/cubes/exit_small.png
 %%DATADIR%%/img/cubes/export_rom_status.png
@@ -1386,6 +1367,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/find_negate.png
 %%DATADIR%%/img/cubes/find_softlist.png
 %%DATADIR%%/img/cubes/flat.png
+%%DATADIR%%/img/cubes/flat_filtered.png
 %%DATADIR%%/img/cubes/flip.png
 %%DATADIR%%/img/cubes/folders-first.png
 %%DATADIR%%/img/cubes/folders-off.png
@@ -1405,6 +1387,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/hint.png
 %%DATADIR%%/img/cubes/hint_small.png
 %%DATADIR%%/img/cubes/home.png
+%%DATADIR%%/img/cubes/homepage.png
 %%DATADIR%%/img/cubes/html.png
 %%DATADIR%%/img/cubes/icon.png
 %%DATADIR%%/img/cubes/info.png
@@ -1420,6 +1403,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/kill.png
 %%DATADIR%%/img/cubes/launch.png
 %%DATADIR%%/img/cubes/launch_multiple.png
+%%DATADIR%%/img/cubes/launch_multiple_recordmovie.png
+%%DATADIR%%/img/cubes/launch_recordmovie.png
 %%DATADIR%%/img/cubes/led_off.png
 %%DATADIR%%/img/cubes/led_on.png
 %%DATADIR%%/img/cubes/left_action.png
@@ -1432,7 +1417,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/mame.png
 %%DATADIR%%/img/cubes/mantis.png
 %%DATADIR%%/img/cubes/marquee.png
-%%DATADIR%%/img/cubes/maws.png
 %%DATADIR%%/img/cubes/maximize.png
 %%DATADIR%%/img/cubes/media_back.png
 %%DATADIR%%/img/cubes/media_fastbackward.png
@@ -1447,9 +1431,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/merge_nok.png
 %%DATADIR%%/img/cubes/merge_ok.png
 %%DATADIR%%/img/cubes/merge_unknown.png
-%%DATADIR%%/img/cubes/mess.icns
-%%DATADIR%%/img/cubes/mess.ico
-%%DATADIR%%/img/cubes/mess.png
+%%DATADIR%%/img/cubes/midi-in.png
+%%DATADIR%%/img/cubes/midi-out.png
 %%DATADIR%%/img/cubes/minimize.png
 %%DATADIR%%/img/cubes/minus.png
 %%DATADIR%%/img/cubes/minus_all.png
@@ -1486,12 +1469,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/qmc2_logo_big.png
 %%DATADIR%%/img/cubes/qmc2_logo_small.png
 %%DATADIR%%/img/cubes/qmc2_mame_splash.png
-%%DATADIR%%/img/cubes/qmc2_mess_logo_big.png
-%%DATADIR%%/img/cubes/qmc2_mess_logo_small.png
-%%DATADIR%%/img/cubes/qmc2_mess_splash.png
-%%DATADIR%%/img/cubes/qmc2_ume_logo_big.png
-%%DATADIR%%/img/cubes/qmc2_ume_logo_small.png
-%%DATADIR%%/img/cubes/qmc2_ume_splash.png
 %%DATADIR%%/img/cubes/qt-logo.png
 %%DATADIR%%/img/cubes/rank.png
 %%DATADIR%%/img/cubes/rank_bg.png
@@ -1560,9 +1537,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/trafficlight_off.png
 %%DATADIR%%/img/cubes/trafficlight_red.png
 %%DATADIR%%/img/cubes/trafficlight_yellow.png
-%%DATADIR%%/img/cubes/ume.icns
-%%DATADIR%%/img/cubes/ume.ico
-%%DATADIR%%/img/cubes/ume.png
 %%DATADIR%%/img/cubes/undo.png
 %%DATADIR%%/img/cubes/unknown.png
 %%DATADIR%%/img/cubes/unlock.png
@@ -1631,6 +1605,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/effect.png
 %%DATADIR%%/img/embed.png
 %%DATADIR%%/img/embed_multiple.png
+%%DATADIR%%/img/embed_multiple_recordmovie.png
+%%DATADIR%%/img/embed_recordmovie.png
 %%DATADIR%%/img/exit.png
 %%DATADIR%%/img/exit_small.png
 %%DATADIR%%/img/export_rom_status.png
@@ -1649,6 +1625,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/find_negate.png
 %%DATADIR%%/img/find_softlist.png
 %%DATADIR%%/img/flat.png
+%%DATADIR%%/img/flat_filtered.png
 %%DATADIR%%/img/flip.png
 %%DATADIR%%/img/folders-first.png
 %%DATADIR%%/img/folders-off.png
@@ -1668,6 +1645,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/hint.png
 %%DATADIR%%/img/hint_small.png
 %%DATADIR%%/img/home.png
+%%DATADIR%%/img/homepage.png
 %%DATADIR%%/img/html.png
 %%DATADIR%%/img/icon.png
 %%DATADIR%%/img/info.png
@@ -1683,6 +1661,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/kill.png
 %%DATADIR%%/img/launch.png
 %%DATADIR%%/img/launch_multiple.png
+%%DATADIR%%/img/launch_multiple_recordmovie.png
+%%DATADIR%%/img/launch_recordmovie.png
 %%DATADIR%%/img/led_off.png
 %%DATADIR%%/img/led_on.png
 %%DATADIR%%/img/left_action.png
@@ -1695,7 +1675,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/mame.png
 %%DATADIR%%/img/mantis.png
 %%DATADIR%%/img/marquee.png
-%%DATADIR%%/img/maws.png
 %%DATADIR%%/img/maximize.png
 %%DATADIR%%/img/media_back.png
 %%DATADIR%%/img/media_fastbackward.png
@@ -1710,9 +1689,8 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/merge_nok.png
 %%DATADIR%%/img/merge_ok.png
 %%DATADIR%%/img/merge_unknown.png
-%%DATADIR%%/img/mess.icns
-%%DATADIR%%/img/mess.ico
-%%DATADIR%%/img/mess.png
+%%DATADIR%%/img/midi-in.png
+%%DATADIR%%/img/midi-out.png
 %%DATADIR%%/img/minimize.png
 %%DATADIR%%/img/minus.png
 %%DATADIR%%/img/minus_all.png
@@ -1749,12 +1727,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/qmc2_logo_big.png
 %%DATADIR%%/img/qmc2_logo_small.png
 %%DATADIR%%/img/qmc2_mame_splash.png
-%%DATADIR%%/img/qmc2_mess_logo_big.png
-%%DATADIR%%/img/qmc2_mess_logo_small.png
-%%DATADIR%%/img/qmc2_mess_splash.png
-%%DATADIR%%/img/qmc2_ume_logo_big.png
-%%DATADIR%%/img/qmc2_ume_logo_small.png
-%%DATADIR%%/img/qmc2_ume_splash.png
 %%DATADIR%%/img/qt-logo.png
 %%DATADIR%%/img/rank.png
 %%DATADIR%%/img/rank_bg.png
@@ -1823,9 +1795,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/trafficlight_off.png
 %%DATADIR%%/img/trafficlight_red.png
 %%DATADIR%%/img/trafficlight_yellow.png
-%%DATADIR%%/img/ume.icns
-%%DATADIR%%/img/ume.ico
-%%DATADIR%%/img/ume.png
 %%DATADIR%%/img/undo.png
 %%DATADIR%%/img/unknown.png
 %%DATADIR%%/img/unlock.png
@@ -1868,12 +1837,5 @@ bin/qmc2-sdlmess
 %%DATADIR%%/lng/qmc2_sv.qm
 %%DATADIR%%/lng/qmc2_us.qm
 %%DATADIR%%/opt/MAME/template.xml
-%%DATADIR%%/opt/MESS/template.xml
 %%DATADIR%%/opt/SDLMAME/template-SDL2.xml
 %%DATADIR%%/opt/SDLMAME/template.xml
-%%DATADIR%%/opt/SDLMESS/template-SDL2.xml
-%%DATADIR%%/opt/SDLMESS/template.xml
-%%DATADIR%%/opt/SDLUME/template-SDL2.xml
-%%DATADIR%%/opt/SDLUME/template.xml
-%%DATADIR%%/opt/UME/template.xml
-%%DATADIR%%/opt/template.xml

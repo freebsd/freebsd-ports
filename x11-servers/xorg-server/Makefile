@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	xorg-server
-PORTVERSION=	1.14.7
-PORTREVISION?=	6
+PORTVERSION=	1.17.4
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -14,8 +14,9 @@ COMMENT?=	X.Org X server and related programs
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
-RUN_DEPENDS=	xkeyboard-config>=2.5:${PORTSDIR}/x11/xkeyboard-config \
+LIB_DEPENDS+=	libdrm.so:${PORTSDIR}/graphics/libdrm \
+		libepoxy.so:${PORTSDIR}/graphics/libepoxy
+RUN_DEPENDS+=	xkeyboard-config>=2.5:${PORTSDIR}/x11/xkeyboard-config \
 		xkbcomp:${PORTSDIR}/x11/xkbcomp
 
 XORG_CAT=	xserver
@@ -36,20 +37,21 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 
 USES=		gmake libtool perl5 tar:bzip2
 USE_PERL5=	build
-USE_GL=		gl
+USE_GL=		gbm egl gl
 USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		xmu xt xpm xext randrproto renderproto fixesproto damageproto \
-		dri2proto xcmiscproto xextproto xproto xtrans xf86miscproto \
-		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
-		resourceproto fontsproto inputproto xf86dgaproto \
-		videoproto compositeproto trapproto recordproto xineramaproto \
-		xinerama evieproto xfont fontenc xkbui pixman pciaccess
-
+		dri2proto xcmiscproto xextproto xproto xtrans \
+		xf86miscproto xf86vidmodeproto xf86bigfontproto scrnsaverproto \
+		bigreqsproto resourceproto fontsproto inputproto xf86dgaproto \
+		videoproto compositeproto trapproto presentproto recordproto \
+		xineramaproto xinerama evieproto xfont fontenc xkbui pixman \
+		pciaccess xshmfence
 USE_OPENSSL=	yes
 CONFIGURE_ARGS?=--disable-dmx --disable-xvfb --disable-xnest \
 		--without-xmlto --disable-docs --disable-devel-docs \
 		--localstatedir=/var --without-dtrace --disable-xephyr \
-		--enable-record=yes
+		--enable-record=yes --disable-dri3 --disable-xwayland \
+		--enable-glamor
 INSTALL_TARGET=	install-strip
 
 .if ${SLAVE_PORT} == "no"
@@ -78,11 +80,6 @@ CONFIGURE_ARGS+=	--enable-config-hal=no
 
 # We handle Xorg setuid in the plist. This allows to build xorg-server as a user.
 CONFIGURE_ARGS+=--disable-install-setuid
-
-.if ${ARCH} == armv6
-EXTRA_PATCHES+=	${FILESDIR}/extra-arm-patch-hw__xfree86__os-support__bsd__Makefile.in
-EXTRA_PATCHES+=	${FILESDIR}/extra-arm-patch-include__servermd.h
-.endif
 
 .if ${ARCH} == i386
 EXTRA_PATCHES+=	${FILESDIR}/extra-arch-i386

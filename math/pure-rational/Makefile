@@ -11,6 +11,8 @@ DIST_SUBDIR=	pure
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rational number library for the Pure language
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 USES=		pure

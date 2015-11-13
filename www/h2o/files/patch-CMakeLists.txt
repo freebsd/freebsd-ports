@@ -1,14 +1,6 @@
---- CMakeLists.txt.orig	2015-09-01 19:56:02 UTC
+--- CMakeLists.txt.orig	2015-10-20 06:50:39 UTC
 +++ CMakeLists.txt
-@@ -285,7 +285,6 @@ IF (OPENSSL_FOUND)
-     ELSE (LIBUV_FOUND)
-         SET_TARGET_PROPERTIES(libh2o PROPERTIES EXCLUDE_FROM_ALL 1)
-     ENDIF (LIBUV_FOUND)
--    INSTALL(TARGETS libh2o-evloop DESTINATION lib)
- ELSE (OPENSSL_FOUND)
-     SET_TARGET_PROPERTIES(libh2o PROPERTIES EXCLUDE_FROM_ALL 1)
-     SET_TARGET_PROPERTIES(libh2o-evloop PROPERTIES EXCLUDE_FROM_ALL 1)
-@@ -353,16 +352,15 @@ ENDIF (WITH_BUNDLED_SSL)
+@@ -357,11 +357,11 @@ ENDIF (WITH_MRUBY)
  TARGET_LINK_LIBRARIES(h2o ${EXTRA_LIBRARIES})
  
  INSTALL(TARGETS h2o
@@ -16,15 +8,10 @@
 -    LIBRARY DESTINATION lib)
 +    RUNTIME DESTINATION bin)
  
- ADD_EXECUTABLE(setuidgid src/setuidgid.c)
- INSTALL(TARGETS setuidgid RUNTIME DESTINATION share/h2o)
+ IF (NOT WITHOUT_LIBS)
+-    INSTALL(DIRECTORY include/ DESTINATION include FILES_MATCHING PATTERN "*.h")
++    INSTALL(DIRECTORY include/ DESTINATION include FILES_MATCHING PATTERN "*.h"
++        EXCLUDE PATTERN "h2o" EXCLUDE PATTERN "h2o/socket")
+ ENDIF ()
  
--INSTALL(DIRECTORY include/ DESTINATION include FILES_MATCHING PATTERN "*.h")
-+INSTALL(DIRECTORY include/ DESTINATION include FILES_MATCHING PATTERN "*.h"
-+    EXCLUDE PATTERN "h2o" EXCLUDE PATTERN "h2o/socket")
- 
- INSTALL(PROGRAMS share/h2o/annotate-backtrace-symbols share/h2o/fetch-ocsp-response share/h2o/kill-on-close share/h2o/start_server DESTINATION share/h2o)
--INSTALL(DIRECTORY doc/ DESTINATION share/doc/h2o PATTERN "Makefile" EXCLUDE PATTERN "README.md" EXCLUDE)
- 
- # tests
- ADD_EXECUTABLE(t-00unit-evloop.t ${UNIT_TEST_SOURCE_FILES})
+ INSTALL(PROGRAMS share/h2o/annotate-backtrace-symbols share/h2o/fetch-ocsp-response share/h2o/kill-on-close share/h2o/setuidgid share/h2o/start_server DESTINATION share/h2o)

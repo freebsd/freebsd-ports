@@ -1,4 +1,4 @@
---- ld/configure.tgt.orig	2013-11-26 11:37:33.000000000 +0000
+--- ld/configure.tgt.orig	2014-10-14 07:32:04 UTC
 +++ ld/configure.tgt
 @@ -72,6 +72,10 @@ alpha*-*-*vms*)		targ_emul=alphavms
  			;;

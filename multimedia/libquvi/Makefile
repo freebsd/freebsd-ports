@@ -12,6 +12,7 @@ COMMENT=	Cross-platform library for parsing flash media stream URLs
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	libquvi-scripts>=0.4.0:${PORTSDIR}/multimedia/libquvi-scripts
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
@@ -22,7 +23,6 @@ LUAJIT_DESC=	Use LuaJIT instead of Lua
 
 PORTSCOUT=	limit:0.4.[0-9]*
 
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		iconv libtool pathfix pkgconfig tar:xz

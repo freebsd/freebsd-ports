@@ -67,10 +67,6 @@ CONFIGURE_ARGS+=--disable-dbus
 CONFIGURE_ARGS+=--enable-dbus
 .endif
 
-.if ${OSVERSION} < 900000
-BROKEN=		Fails to build
-.endif
-
 .if ${PORT_OPTIONS:MDVI} || ${PORT_OPTIONS:MT1LIB}
 USE_TEX=	latex
 

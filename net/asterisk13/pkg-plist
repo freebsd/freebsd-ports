@@ -326,6 +326,7 @@ sbin/astdb2bdb
 sbin/astdb2sqlite3
 sbin/asterisk
 sbin/astgenkey
+%%ASTVERSION%%sbin/astversion
 sbin/autosupport
 sbin/rasterisk
 sbin/safe_asterisk

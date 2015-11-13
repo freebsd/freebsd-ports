@@ -12,6 +12,8 @@ DISTFILES=	${PORTNAME}-0.9.3.2.tar.gz:src \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete and powerful blogging tool
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

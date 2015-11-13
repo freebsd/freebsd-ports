@@ -30,7 +30,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--without-gnome-vfs
 
-python_OLD_CMD?=/usr/bin/env python
 python_CMD?=	${LOCALBASE}/bin/python2
 SHEBANG_FILES=	cxxtest/cxxtestgen.pl share/extensions/*.p[lm] \
 		share/extensions/*.py share/extensions/genpofiles.sh

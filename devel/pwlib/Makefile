@@ -23,7 +23,6 @@ USES=		bison gmake
 USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
 WANT_GNOME=	yes
-WANT_SDL=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes

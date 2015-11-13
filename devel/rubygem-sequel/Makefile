@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sequel
-PORTVERSION=	4.27.0
+PORTVERSION=	4.28.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

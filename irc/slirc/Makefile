@@ -11,6 +11,8 @@ MASTER_SITES=	http://members.core.com/~stabro/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLang-based IRC client
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	${LIB_DEPENDS_LIBSLANG}
 
 USES=		gmake tar:tgz

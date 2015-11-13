@@ -2,7 +2,7 @@
 
 PORTNAME=	ifmail
 PORTVERSION=	2.15
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	news comms
 MASTER_SITES=	SUNSITE/system/fido
 
@@ -10,6 +10,13 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FidoNet(tm) support package for UN*X platform
 
 USES=		shebangfix
+USERS=		ifmail
+CFLAGS+=	-DHAS_STDARG_H -Wall
+GID!=		id -g
+MAKE_ARGS=	OWNER=${UID} CC="${CC}" GROUP=${GID} CFLAGS="${CFLAGS}"
+
+LMAN3=		parsedate.3
+LMAN8=		ifmail.8 iftoss.8
 SHEBANG_FILES=	misc/contrib/a2dbm \
 		misc/contrib/abbs2nf/abbs2nf.pl \
 		misc/contrib/areafix-0.5.07/areafix.pl \
@@ -34,17 +41,8 @@ SHEBANG_FILES=	misc/contrib/a2dbm \
 		misc/contrib/u-tic/u-attach.pl \
 		misc/contrib/u-tic/u-fix.pl \
 		misc/contrib/u-tic/u-tic.pl
-USERS=		ifmail
-CFLAGS+=	-DHAS_STDARG_H -Wall
-GID!=		id -g
-MAKE_ARGS=	OWNER=${UID} CC="${CC}" GROUP=${GID} CFLAGS="${CFLAGS}"
-
-LMAN3=		parsedate.3
-LMAN8=		ifmail.8 iftoss.8
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/ifmail
@@ -57,16 +55,16 @@ post-install:
 .for i in ${LMAN3}
 	${INSTALL_MAN} ${WRKSRC}/iflib/${i} ${STAGEDIR}${PREFIX}/man/man3/
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 .for i in ifcico ifgate iflib
 	${INSTALL_DATA} ${WRKSRC}/${i}/README ${STAGEDIR}${DOCSDIR}/README.${i}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/misc -cf - . | ${TAR} -C ${STAGEDIR}${EXAMPLESDIR} -xf -
-.endif
 
 .include <bsd.port.mk>

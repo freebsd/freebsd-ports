@@ -7,7 +7,8 @@
 #
 # rc.conf variables:
 # minecraft_enable (Default: NO)
-# minecraft_mem (Default: 1024M)
+# minecraft_mems (Default: 1024M)
+# minecraft_memx (Default: 1024M)
 # minecraft_args (Default: "")
 . /etc/rc.subr
 
@@ -17,7 +18,8 @@ desc="Dedicated server for the game Minecraft"
 
 load_rc_config $name
 
-minecraft_mem=${minecraft_mem:-"1024M"}
+minecraft_mems=${minecraft_mems:-"1024M"}
+minecraft_memx=${minecraft_memx:-"1024M"}
 minecraft_args=${minecraft_args:-""}
 
 extra_commands="console status kill"
@@ -37,10 +39,17 @@ minecraft_start()
 {
 	if is_running; then
 		echo "${name} is already running."
+	elif [ ${minecraft_mems%?} -gt ${minecraft_memx%?} ]; then
+		echo "ERROR: minecraft_mems is set greater than minecraft_memx."
+		echo "ERROR: Set minecraft_memx to be equal or greater than minecraft_mems in rc.conf."
 	else
+		if [ -n "${minecraft_mem}" ]; then
+			echo "WARNING: minecraft_mem is deprecated. Please change this to minecraft_memx."
+			minecraft_memx=${minecraft_mem}
+		fi
 		echo "Starting ${name}."
 		cd %%PREFIX%%/minecraft-server
-		su mcserver -c "%%LOCALBASE%%/bin/tmux new-session -s minecraft -d '%%LOCALBASE%%/bin/java -Xmx${minecraft_mem} -Xms${minecraft_mem} ${minecraft_args} -jar %%PREFIX%%/minecraft-server/minecraft_server.%%VERSION%%.jar nogui'"
+		su mcserver -c "%%LOCALBASE%%/bin/tmux new-session -s minecraft -d '%%LOCALBASE%%/bin/java -Xmx${minecraft_memx} -Xms${minecraft_mems} ${minecraft_args} -jar %%PREFIX%%/minecraft-server/minecraft_server.%%VERSION%%.jar nogui'"
 	fi
 }
 
@@ -62,7 +71,7 @@ minecraft_stop()
 		done
 		echo "WARN: ${name} could not be stopped or is taking longer than expected."
 		echo "WARN: To view the console, type 'service ${name} console'"
-		echo "WARN: To kill $[name}, type 'service ${name} kill'"
+		echo "WARN: To kill ${name}, type 'service ${name} kill'"
 	else
 		echo "${name} is not running."
 	fi

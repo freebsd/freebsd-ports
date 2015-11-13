@@ -1,6 +1,6 @@
---- command.c.orig	Fri Sep  6 22:46:19 2002
-+++ command.c	Fri Sep  6 22:49:30 2002
-@@ -383,7 +383,7 @@
+--- command.c.orig	1994-11-23 00:27:05 UTC
++++ command.c
+@@ -383,7 +383,7 @@ void Quit(w, client_data, call_data)
      XtPointer client_data;
      XtPointer call_data;
  {
@@ -9,7 +9,7 @@
      int status;
  #else
      union wait status;
-@@ -392,7 +392,7 @@
+@@ -392,7 +392,7 @@ void Quit(w, client_data, call_data)
      write_dbx("quit\n");
      XtDestroyApplicationContext(app_context);
      kill(dbxpid, SIGKILL);

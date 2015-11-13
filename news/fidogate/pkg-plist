@@ -69,7 +69,6 @@ libexec/fidogate/rununpack
 libexec/fidogate/send-ffx
 libexec/fidogate/send-fidogate
 libexec/fidogate/sumcrc
-@dirrm libexec/fidogate
 %%PORTDOCS%%%%DOCSDIR%%/dirs.html
 %%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0018.txt
 %%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0028.txt
@@ -149,14 +148,6 @@ libexec/fidogate/sumcrc
 %%PORTDOCS%%%%DOCSDIR%%/rfc/son-of-1036.html
 %%PORTDOCS%%%%DOCSDIR%%/template.html
 %%PORTDOCS%%%%DOCSDIR%%/texinfo.tex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/info
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fido
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/howto
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/gatebau
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/aliases
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/areas
@@ -209,9 +200,3 @@ libexec/fidogate/sumcrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/passwd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/routing
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/test-win32
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/morannon
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/orodruin
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/point
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rpm
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/win32
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

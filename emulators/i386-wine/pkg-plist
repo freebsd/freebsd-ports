@@ -793,7 +793,6 @@ lib32/libXrender.so.1
 lib32/libXxf86vm.so.1
 %%OSREL10%%lib32/libdevq.so.0
 %%OSREL11%%lib32/libdevq.so.0
-%%OSREL8%%lib32/libdricore9.1.7.so.1
 %%OSREL9%%lib32/libdricore9.1.7.so.1
 lib32/libdrm.so.2
 lib32/libdrm_intel.so.1
@@ -802,12 +801,9 @@ lib32/libexpat.so.1
 lib32/libfontconfig.so.1
 lib32/libfreetype.so.6
 lib32/libglapi.so.0
-%%OSREL8%%lib32/libglapi.so.0
-%%OSREL8%%lib32/libiconv.so.2
 %%OSREL9%%lib32/libiconv.so.2
 lib32/libjpeg.so.8
 lib32/liblcms2.so.2
-%%OSREL8%%lib32/libllvmradeon9.1.7.so
 %%OSREL9%%lib32/libllvmradeon9.1.7.so
 lib32/libpciaccess.so.0
 lib32/libpng16.so.16
@@ -2129,4 +2125,3 @@ share/wine/generic.ppd
 share/wine/l_intl.nls
 share/wine/patch-nvidia.sh
 share/wine/wine.inf
-%%OSREL8%%share/wine/wine.inf

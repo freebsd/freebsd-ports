@@ -12,6 +12,8 @@ COMMENT=	Varnish Module (vmod) for manipulation of duplicated headers
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	varnish4>=4.0.2:${PORTSDIR}/www/varnish4 \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 

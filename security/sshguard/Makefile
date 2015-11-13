@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sshguard
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
@@ -26,17 +26,19 @@ CONFIGURE_ARGS+=--with-firewall=${SSHGUARDFW}
 SUB_LIST+=	PKGMSG_FWBLOCK=${PKGMSG_FWBLOCK}
 SUB_FILES=	pkg-message
 
-# backend type in { hosts, ipfw, pf }
+# backend type in { hosts, ipfw, null, pf }
 SSHGUARDFW?=	hosts
 
 .if ${SSHGUARDFW} == pf
 PKGMSG_FWBLOCK="  To activate or configure PF see http://sshguard.sf.net/doc/setup/blockingpf.html"
 .elif ${SSHGUARDFW} == ipfw
-PKGMSG_FWBLOCK="  Verify that IPFW is active with \"ipfw show\"."
+PKGMSG_FWBLOCK="  IPFW support has been rewritten. Sshguard will now add entries to table 22."
 .elif ${SSHGUARDFW} == hosts
 PKGMSG_FWBLOCK="  Sshguard is going to use /etc/hosts.allow. Please remember to touch /etc/hosts.allow\!"
 .elif ${SSHGUARDFW} == ipfilter
 PKGMSG_FWBLOCK="  Sshguard will use /etc/ipf.rules as ruleset."
+.elif ${SSHGUARDFW} == null
+PKGMSG_FWBLOCK="  Sshguard null backend requires you provide your own script with the \"-e\" argument."
 .endif
 
 .include <bsd.port.mk>

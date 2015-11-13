@@ -57,7 +57,7 @@ do-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README.html RELEASE-NOTES.txt \
-		${STAGEDIR}${DOCSDIR})	
+		${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/build/docs && ${COPYTREE_SHARE} api \
 		${STAGEDIR}${DOCSDIR}/docs)

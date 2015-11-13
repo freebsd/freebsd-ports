@@ -10,4 +10,4 @@ ruby-prof is a fast code profiler for Ruby. Its features include:
 * Reports - can generate both text and cross-referenced html reports
 * Output - can output to standard out or to a file
 
-WWW: http://rubygems.org/gems/ruby-prof/
+WWW: https://github.com/ruby-prof/ruby-prof

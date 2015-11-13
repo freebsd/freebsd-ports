@@ -21,7 +21,4 @@ AVAHI_PKGCONFIG=avahi-compat-libdns_sd.pc
 
 CONFLICTS=	mDNSResponder-[0-9]*
 
-post-install:
-	@${RMDIR} ${STAGEDIR}${PREFIX}/etc/avahi
-
 .include "${MASTERDIR}/Makefile"

@@ -33,7 +33,6 @@ ETCDIR=		${PREFIX}/etc/cloud
 USES=		python:2.7 shebangfix
 SHEBANG_FILES=	tools/validate-yaml.py tools/read-dependencies \
 		tools/read-version tools/hacking.py
-python_OLD_CMD=	/usr/bin/env python
 USE_PYTHON=	autoplist distutils
 
 PYDISTUTILS_INSTALLARGS+=	"--init-system=sysvinit_freebsd"

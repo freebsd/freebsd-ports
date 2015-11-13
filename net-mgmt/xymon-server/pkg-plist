@@ -94,6 +94,7 @@ man/man8/xymonproxy.8
 %%WWWDIR%%/cgi-bin/topchanges.sh
 %%WWWDIR%%/cgi-secure/ackinfo.sh
 %%WWWDIR%%/cgi-secure/acknowledge.sh
+%%WWWDIR%%/cgi-secure/chpasswd.sh
 %%WWWDIR%%/cgi-secure/criticaleditor.sh
 %%WWWDIR%%/cgi-secure/enadis.sh
 %%WWWDIR%%/cgi-secure/useradm.sh
@@ -109,6 +110,7 @@ man/man8/xymonproxy.8
 %%WWWDIR%%/server/bin/beastat
 %%WWWDIR%%/server/bin/boilerplate.cgi
 %%WWWDIR%%/server/bin/cgiwrap
+%%WWWDIR%%/server/bin/chpasswd.cgi
 %%WWWDIR%%/server/bin/combostatus
 %%WWWDIR%%/server/bin/confreport.cgi
 %%WWWDIR%%/server/bin/convertnk
@@ -191,6 +193,9 @@ man/man8/xymonproxy.8
 %%WWWDIR%%/server/web/acknowledgements_footer
 %%WWWDIR%%/server/web/acknowledgements_form
 %%WWWDIR%%/server/web/acknowledgements_header
+%%WWWDIR%%/server/web/chpasswd_footer
+%%WWWDIR%%/server/web/chpasswd_form
+%%WWWDIR%%/server/web/chpasswd_header
 %%WWWDIR%%/server/web/columndoc_footer
 %%WWWDIR%%/server/web/columndoc_header
 %%WWWDIR%%/server/web/confreport_back

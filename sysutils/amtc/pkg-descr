@@ -1,0 +1,13 @@
+Intel's Active Management Technology is a simple embedded subsystem
+that helps you manage remote servers.  In particular you can power off
+or reset a remote system, regardless of the state of the operating
+system.
+
+amtc is a tool to efficiently monitor, power-control on a scheduled
+basis and interactively manage a bigger bunch of PCs equipped with
+Intel vPro technology, distributed over several rooms. Having a
+practical tool for this purpose massively eases system management
+procedures, from scheduled, unattended OS-re-installs to individual,
+interactive remote power management needs.
+
+WWW: https://github.com/schnoddelbotz/amtc

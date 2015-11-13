@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-csharp --disable-java --with-included-gettext \
 		ac_cv_lib_rt_sched_yield=no
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USES=		charsetfix cpe iconv libtool tar:xz
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	gettext-runtime
@@ -30,7 +31,7 @@ CPE_VENDOR=	gnu
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} < 900506)
+.if ${OPSYS} == DragonFly
 CONFIGURE_ARGS+=--disable-threads
 .endif
 
@@ -47,8 +48,5 @@ post-patch:
 
 post-install:
 	${LN} -s libintl.so.8 ${STAGEDIR}${PREFIX}/lib/libintl.so.9
-
-regression-test: build
-	@(cd ${WRKSRC} && ${MAKE_CMD} check)
 
 .include <bsd.port.mk>

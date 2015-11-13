@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Exception/Class/TryCatch.pm
-%%SITE_PERL%%/Exception/Class/TryCatch.pod
 %%PERL5_MAN3%%/Exception::Class::TryCatch.3.gz

@@ -1,0 +1,16 @@
+--- ../luxrays/samples/luxcoreimplserializationdemo/CMakeLists.txt.orig	2015-08-29 17:04:08 UTC
++++ ../luxrays/samples/luxcoreimplserializationdemo/CMakeLists.txt
+@@ -22,10 +22,12 @@
+ #
+ ################################################################################
+ 
++find_package(Threads)
++
+ set(LUXCOREIMPL_SERIALIZATIONDEMO_SRCS
+ 	luxcoreimplserializationdemo.cpp
+ 	)
+ 
+ add_executable(luxcoreimplserializationdemo ${LUXCOREIMPL_SERIALIZATIONDEMO_SRCS})
+ 
+-TARGET_LINK_LIBRARIES(luxcoreimplserializationdemo luxcore smallluxgpu luxrays ${EMBREE_LIBRARY} ${TIFF_LIBRARIES} ${OPENEXR_LIBRARIES} ${PNG_LIBRARIES} ${JPEG_LIBRARIES})
++TARGET_LINK_LIBRARIES(luxcoreimplserializationdemo luxcore smallluxgpu luxrays ${EMBREE_LIBRARY} ${TIFF_LIBRARIES} ${OPENEXR_LIBRARIES} ${PNG_LIBRARIES} ${JPEG_LIBRARIES} ${PYTHON_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})

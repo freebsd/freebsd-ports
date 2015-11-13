@@ -564,6 +564,10 @@ GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
 GNUstep/Local/Library/OCSTypeModels/contact-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/contact.ocs
+%%ACTIVESYNC%%GNUstep/Local/Library/SOGo/ActiveSync.SOGo/ActiveSync
+%%ACTIVESYNC%%GNUstep/Local/Library/SOGo/ActiveSync.SOGo/Resources/Info-gnustep.plist
+%%ACTIVESYNC%%GNUstep/Local/Library/SOGo/ActiveSync.SOGo/Resources/product.plist
+%%ACTIVESYNC%%GNUstep/Local/Library/SOGo/ActiveSync.SOGo/stamp.make
 GNUstep/Local/Library/SOGo/AdministrationUI.SOGo/AdministrationUI
 GNUstep/Local/Library/SOGo/AdministrationUI.SOGo/Resources/Arabic.lproj/Localizable.strings
 GNUstep/Local/Library/SOGo/AdministrationUI.SOGo/Resources/Basque.lproj/Localizable.strings

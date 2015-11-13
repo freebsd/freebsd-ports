@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Geo/ShapeFile.pm
 %%SITE_PERL%%/Geo/ShapeFile/Point.pm
 %%SITE_PERL%%/Geo/ShapeFile/Shape.pm
+%%SITE_PERL%%/Geo/ShapeFile/Shape/Index.pm
 %%PERL5_MAN3%%/Geo::ShapeFile.3.gz
 %%PERL5_MAN3%%/Geo::ShapeFile::Point.3.gz
 %%PERL5_MAN3%%/Geo::ShapeFile::Shape.3.gz
+%%PERL5_MAN3%%/Geo::ShapeFile::Shape::Index.3.gz

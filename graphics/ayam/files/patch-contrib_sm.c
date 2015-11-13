@@ -1,6 +1,6 @@
---- contrib/sm.c.orig	2007-09-21 13:30:37.000000000 +0200
-+++ contrib/sm.c	2007-12-17 19:01:46.000000000 +0100
-@@ -473,7 +473,7 @@
+--- contrib/sm.c.orig	2015-06-23 18:03:50 UTC
++++ contrib/sm.c
+@@ -474,7 +474,7 @@ ay_sm_wriballsm(char *file, char *objfil
   static int countsm = 0;
   char arrname[] = "ayprefs";
   char ffvarname[] = "SMFileFormat", ftvarname[] = "SMFileType";
@@ -9,7 +9,7 @@
  
    if(!o)
      return;
-@@ -498,10 +498,10 @@
+@@ -499,10 +499,10 @@ ay_sm_wriballsm(char *file, char *objfil
        return;
      }
  

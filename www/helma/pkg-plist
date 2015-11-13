@@ -2,14 +2,6 @@
 @sample %%ETCDIR%%/db.properties.sample
 @sample %%ETCDIR%%/helma.conf.sample
 @sample %%ETCDIR%%/server.properties.sample
-@unexec rm -rf "%%LOGDIR%%" 2> /dev/null || true
-@exec mkdir -p "%%LOGDIR%%" || true
-@exec chown -R %%HELMA_USER%%:%%HELMA_GROUP%% "%%LOGDIR%%"
-@unexec rm -rf "%%DBDIR%%" 2> /dev/null || true
-@exec mkdir -p "%%DBDIR%%" || true
-@exec chown -R %%HELMA_USER%%:%%HELMA_GROUP%% "%%DBDIR%%"
-@exec mkdir -p "%D/%%DATADIR%%/lib/ext" || true
-%%MYSQL%%@exec ln -sf %D/%%JAVAJARDIR%%/mysql-connector-java.jar %D/%%DATADIR%%/lib/ext/mysql-connector-java.jar
 %%MYSQL%%%%DATADIR%%/lib/ext/mysql-connector-java.jar
 bin/helma
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
@@ -147,6 +139,8 @@ bin/helma
 %%DATADIR%%/lib/servlet.jar
 %%DATADIR%%/lib/tagsoup.jar
 %%DATADIR%%/lib/xmlrpc.jar
+@owner %%HELMA_USER%%
+@group %%HELMA_USER%%
 %%WWWDIR%%/apps/manage/app.properties
 %%WWWDIR%%/apps/manage/class.properties
 %%WWWDIR%%/apps/manage/manage.zip
@@ -364,58 +358,54 @@ bin/helma
 %%WWWDIR%%/modules/test/tests/Skin.js
 %%WWWDIR%%/modules/test/tests/helma.Http.js
 %%WWWDIR%%/modules/test/tests/helma.Search.js
-@dirrm %%WWWDIR%%/modules/test/tests
-@dirrm %%WWWDIR%%/modules/test/code/SomeMountpoint
-@dirrm %%WWWDIR%%/modules/test/code/Root
-@dirrm %%WWWDIR%%/modules/test/code/Person
-@dirrm %%WWWDIR%%/modules/test/code/Organisation
-@dirrm %%WWWDIR%%/modules/test/code/Global
-@dirrm %%WWWDIR%%/modules/test/code/Country
-@dirrm %%WWWDIR%%/modules/test/code
-@dirrm %%WWWDIR%%/modules/test
-@dirrm %%WWWDIR%%/modules/jala/util/XmlRpcClient/Root
-@dirrm %%WWWDIR%%/modules/jala/util/XmlRpcClient/Global
-@dirrm %%WWWDIR%%/modules/jala/util/XmlRpcClient
-@dirrm %%WWWDIR%%/modules/jala/util/Test/tests
-@dirrm %%WWWDIR%%/modules/jala/util/Test/docs
-@dirrm %%WWWDIR%%/modules/jala/util/Test/code/Global
-@dirrm %%WWWDIR%%/modules/jala/util/Test/code
-@dirrm %%WWWDIR%%/modules/jala/util/Test
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/scripts
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/lib
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JavaScript/Syntax
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JavaScript
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit/JSDoc
-@dirrm %%WWWDIR%%/modules/jala/util/HopKit
-@dirrm %%WWWDIR%%/modules/jala/util
-@dirrm %%WWWDIR%%/modules/jala/tests
-@dirrm %%WWWDIR%%/modules/jala/licenses
-@dirrmtry %%WWWDIR%%/modules/jala/lib
-@dirrm %%WWWDIR%%/modules/jala/docs
-@dirrm %%WWWDIR%%/modules/jala/code
-@dirrmtry %%WWWDIR%%/modules/jala
-@dirrm %%WWWDIR%%/modules/helma
-@dirrm %%WWWDIR%%/modules/core
-@dirrmtry %%WWWDIR%%/modules
-@dirrm %%WWWDIR%%/apps/welcome/static/guide
-@dirrm %%WWWDIR%%/apps/welcome/static
-@dirrm %%WWWDIR%%/apps/welcome/code/Root
-@dirrm %%WWWDIR%%/apps/welcome/code/HopObject
-@dirrm %%WWWDIR%%/apps/welcome/code/Guide
-@dirrm %%WWWDIR%%/apps/welcome/code/Global
-@dirrm %%WWWDIR%%/apps/welcome/code
-@dirrm %%WWWDIR%%/apps/welcome
-@dirrm %%WWWDIR%%/apps/manage
-@dirrmtry %%WWWDIR%%/apps
-@dirrmtry %%WWWDIR%%
-@dirrmtry %%DATADIR%%/lib/ext
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%
-@dirrmtry %%ETCDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/jala
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dir %%WWWDIR%%/modules/test/tests
+@dir %%WWWDIR%%/modules/test/code/SomeMountpoint
+@dir %%WWWDIR%%/modules/test/code/Root
+@dir %%WWWDIR%%/modules/test/code/Person
+@dir %%WWWDIR%%/modules/test/code/Organisation
+@dir %%WWWDIR%%/modules/test/code/Global
+@dir %%WWWDIR%%/modules/test/code/Country
+@dir %%WWWDIR%%/modules/test/code
+@dir %%WWWDIR%%/modules/test
+@dir %%WWWDIR%%/modules/jala/util/XmlRpcClient/Root
+@dir %%WWWDIR%%/modules/jala/util/XmlRpcClient/Global
+@dir %%WWWDIR%%/modules/jala/util/XmlRpcClient
+@dir %%WWWDIR%%/modules/jala/util/Test/tests
+@dir %%WWWDIR%%/modules/jala/util/Test/docs
+@dir %%WWWDIR%%/modules/jala/util/Test/code/Global
+@dir %%WWWDIR%%/modules/jala/util/Test/code
+@dir %%WWWDIR%%/modules/jala/util/Test
+@dir %%WWWDIR%%/modules/jala/util/HopKit/scripts
+@dir %%WWWDIR%%/modules/jala/util/HopKit/lib
+@dir %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/templates
+@dir %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JavaScript/Syntax
+@dir %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JavaScript
+@dir %%WWWDIR%%/modules/jala/util/HopKit/JSDoc/JSDoc
+@dir %%WWWDIR%%/modules/jala/util/HopKit/JSDoc
+@dir %%WWWDIR%%/modules/jala/util/HopKit
+@dir %%WWWDIR%%/modules/jala/util
+@dir %%WWWDIR%%/modules/jala/tests
+@dir %%WWWDIR%%/modules/jala/licenses
+@dir %%WWWDIR%%/modules/jala/lib
+@dir %%WWWDIR%%/modules/jala/docs
+@dir %%WWWDIR%%/modules/jala/code
+@dir %%WWWDIR%%/modules/jala
+@dir %%WWWDIR%%/modules/helma
+@dir %%WWWDIR%%/modules/core
+@dir %%WWWDIR%%/modules
+@dir %%WWWDIR%%/apps/welcome/static/guide
+@dir %%WWWDIR%%/apps/welcome/static
+@dir %%WWWDIR%%/apps/welcome/code/Root
+@dir %%WWWDIR%%/apps/welcome/code/HopObject
+@dir %%WWWDIR%%/apps/welcome/code/Guide
+@dir %%WWWDIR%%/apps/welcome/code/Global
+@dir %%WWWDIR%%/apps/welcome/code
+@dir %%WWWDIR%%/apps/welcome
+@dir %%WWWDIR%%/apps/manage
+@dir %%WWWDIR%%/apps
+@dir %%WWWDIR%%
+@dir %%LOGDIR%%
+@dir %%DBDIR%%
+@owner
+@group
+@dir %%DATADIR%%/lib/ext

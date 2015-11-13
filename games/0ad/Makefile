@@ -2,7 +2,7 @@
 
 PORTNAME=	0ad
 PORTVERSION=	0.0.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/zero-ad/releases
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
@@ -46,8 +46,8 @@ PORTDATA=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900044
-BROKEN=	Fails to build on FreeBSD 8.x
+.if ${OSVERSION} < 1000024
+BROKEN=		segfaults during build
 .endif
 
 post-patch:

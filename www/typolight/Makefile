@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/TYPOlight/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful web content management system
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	xsl mysql iconv gd

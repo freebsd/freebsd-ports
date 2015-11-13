@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	0
 PKGNAMESUFFIX?=	${DISTV:S/.//}-docs
 DISTV=	${DISTVERSION:R}
 
@@ -41,6 +40,6 @@ post-install:
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${PGDOCSREL} -type f) >> ${TMPPLIST}
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${PGDOCSREL} -type d) | ${SORT} -r | \
 	     ${SED} 's,.*,@unexec rmdir %D/& 2>/dev/null || true,' >>${TMPPLIST}
-	
+
 
 .include "${MASTERDIR}/Makefile"

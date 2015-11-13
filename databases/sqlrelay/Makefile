@@ -60,6 +60,7 @@ TOSTRIP=	bin/sqlr-start \
 		libexec/sqlrelay/sqlrauth_database.so \
 		libexec/sqlrelay/sqlrauth_sqlrelay.so \
 		libexec/sqlrelay/sqlrauth_userlist.so \
+		libexec/sqlrelay/sqlrconfig_xml.so \
 		libexec/sqlrelay/sqlrconnection_router.so \
 		libexec/sqlrelay/sqlrfilter_patterns.so \
 		libexec/sqlrelay/sqlrfilter_regex.so \
@@ -153,5 +154,7 @@ post-stage:
 .for f in ${TOSTRIP}
 	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
 .endfor
+	${RM} ${STAGEDIR}${PREFIX}/lib/SQLRClient.dll
+	${RM} ${STAGEDIR}${PREFIX}/lib/SQLRClient.dll.config
 
 .include <bsd.port.mk>

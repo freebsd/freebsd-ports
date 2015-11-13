@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/
 
-MAINTAINER=	serio.jeffrey@riseup.net
+MAINTAINER=	serio.jeffrey@gmail.com
 COMMENT=	General-purpose multi-platform x86 and amd64 assembler
 
 LICENSE=	BSD2CLAUSE

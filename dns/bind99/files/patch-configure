@@ -1,6 +1,6 @@
---- configure.orig	2015-09-09 11:23:50.000000000 +0900
-+++ configure	2015-09-13 10:08:38.000000000 +0900
-@@ -14284,27 +14284,9 @@
+--- configure.orig	2015-09-09 02:23:50 UTC
++++ configure
+@@ -14284,27 +14284,9 @@ done
  		# problems start to show up.
  		saved_libs="$LIBS"
  		for TRY_LIBS in \
@@ -30,10 +30,10 @@
  		    { $as_echo "$as_me:${as_lineno-$LINENO}: checking linking as $TRY_LIBS" >&5
  $as_echo_n "checking linking as $TRY_LIBS... " >&6; }
  		    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-@@ -14347,47 +14329,7 @@
+@@ -14347,47 +14329,7 @@ $as_echo "no" >&6; } ;;
  		no) as_fn_error $? "could not determine proper GSSAPI linkage" "$LINENO" 5 ;;
  		esac
-
+ 
 -		#
 -		# XXXDCL Major kludge.  Tries to cope with KTH in /usr/lib
 -		# but MIT in /usr/local/lib and trying to build with KTH.
@@ -77,5 +77,14 @@
 -		DST_GSSAPI_INC="-I$use_gssapi/include"
 +		DST_GSSAPI_INC="$($KRB5CONFIG gssapi --cflags)"
  		DNS_GSSAPI_LIBS="$LIBS"
-
+ 
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: using GSSAPI from $use_gssapi/lib and $use_gssapi/include" >&5
+@@ -20337,7 +20279,7 @@ $as_echo "" >&6; }
+ 			# Check other locations for includes.
+ 			# Order is important (sigh).
+ 
+-			bdb_incdirs="/db53 /db51 /db48 /db47 /db46 /db45 /db44 /db43 /db42 /db41 /db4 /db"
++			bdb_incdirs="/db6 /db5 /db48"
+ 			# include a blank element first
+ 			for d in "" $bdb_incdirs
+ 			do

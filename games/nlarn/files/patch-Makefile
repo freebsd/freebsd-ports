@@ -1,6 +1,6 @@
---- Makefile.orig	2012-07-06 20:29:35.000000000 +0300
-+++ Makefile	2013-03-09 11:15:05.000000000 +0200
-@@ -102,13 +102,13 @@
+--- Makefile.orig	2012-07-06 17:29:35 UTC
++++ Makefile
+@@ -102,13 +102,13 @@ else
    LDFLAGS += $(shell pkg-config --libs glib-2.0)
  
    # Configuration for ncurses
@@ -16,7 +16,7 @@
        LDFLAGS += -lncurses -lpanel
      endif
    endif
-@@ -117,6 +117,8 @@
+@@ -117,6 +117,8 @@ else
    # Debian and derivates use lua5.1, the rest of the world lua
    ifneq ($(wildcard /etc/debian_version),)
      lua = lua5.1

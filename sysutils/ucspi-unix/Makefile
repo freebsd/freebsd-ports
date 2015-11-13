@@ -10,6 +10,8 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix-domain socket client-server command-line tools
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${BGLIBS_LIB}/libbg.a:${PORTSDIR}/devel/bglibs

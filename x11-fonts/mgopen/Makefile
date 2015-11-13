@@ -11,6 +11,8 @@ DISTNAME=	MgOpen
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MgOpen greek fonts collection
 
+BROKEN=		unfetchable
+
 USES=		fonts
 
 NO_BUILD=	yes

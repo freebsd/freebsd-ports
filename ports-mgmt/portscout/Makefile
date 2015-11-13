@@ -3,44 +3,52 @@
 
 PORTNAME=	portscout
 PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
-		http://www.atarininja.org/~wxs/distfiles/		\
+MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
+		http://www.atarininja.org/~wxs/distfiles/ \
 		http://www.inerd.com/software/${PORTNAME}/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Tool to scan for new versions of FreeBSD ports
 
-OPTIONS_DEFINE=	SQLITE3 DOCS
-SQLITE3_DESC=	Use SQLite backend instead of PostgreSQL
+LICENSE=	BSD2CLAUSE
 
+RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Proc-Queue>=0:${PORTSDIR}/devel/p5-Proc-Queue \
+		p5-Net>=0:${PORTSDIR}/net/p5-Net \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath \
+		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-JSON>0:${PORTSDIR}/converters/p5-JSON
+
+OPTIONS_DEFINE=		DOCS HTTPS
+OPTIONS_DEFAULT=	HTTPS PGSQL
+
+OPTIONS_MULTI=		DATABASE
+OPTIONS_MULTI_DATABASE=	SQLITE PGSQL
+
+DATABASE_DESC=	Database Backends
 USES=		perl5 shebangfix
+
 NO_BUILD=	yes
 SHEBANG_FILES=	${WRKSRC}/portscout.pl
 
 PORTDOCS=	UPDATING portscout-portconfig.txt xml-datasrc-example.xml
 
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI	\
-		p5-Proc-Queue>=0:${PORTSDIR}/devel/p5-Proc-Queue	\
-		p5-Net>=0:${PORTSDIR}/net/p5-Net			\
-		p5-URI>=0:${PORTSDIR}/net/p5-URI			\
-		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath	\
-		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite		\
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+HTTPS_RUN_DEPENDS=	p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https
+
+SQLITE_USE=		SQLITE=3
+SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
+
+PGSQL_USES=		pgsql
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSQLITE3}
-#USE_SQLITE=	3
-#RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
-.elif !defined(WITHOUT_PGSQL)
-#USES+=		pgsql
-#RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
-.endif
-
 pre-everything::
-.if ${PORT_OPTIONS:MSQLITE3}
+.if ${PORT_OPTIONS:MSQLITE}
 	@${ECHO_MSG} "+-------------------------------------------------------------+"
 	@${ECHO_MSG} "| Warning! although SQLite is supported, portscout will only  |"
 	@${ECHO_MSG} "| operate in non-forking mode with this database backend. It  |"
@@ -48,8 +56,12 @@ pre-everything::
 	@${ECHO_MSG} "+-------------------------------------------------------------+"
 .endif
 
+post-extract:
+	@${CP} ${FILESDIR}/files-Portscout-SiteHandler-GitHub.pm ${WRKSRC}/Portscout/SiteHandler/GitHub.pm
+	@${CP} ${FILESDIR}/files-Portscout-SiteHandler-PyPI.pm ${WRKSRC}/Portscout/SiteHandler/PyPI.pm
+
 post-patch:
-.if ${PORT_OPTIONS:MSQLITE3}
+.if ${PORT_OPTIONS:MSQLITE}
 	@${REINPLACE_CMD} 's/^\([^#]*DBI:Pg.*\)$$/#\1/g' ${WRKSRC}/portscout.conf
 	@${REINPLACE_CMD} 's/^#\(.*DBI:SQLite.*\)$$/\1/g' ${WRKSRC}/portscout.conf
 .endif
@@ -96,7 +108,7 @@ do-install:
 test:
 	${PERL} ${WRKSRC}/t/00-use.t
 	${PERL} ${WRKSRC}/t/01-vercompare.t
-.if ${PORT_OPTIONS:MSQLITE3}
+.if ${PORT_OPTIONS:MSQLITE}
 	${PERL} ${WRKSRC}/t/10-sqlite.t
 #.else
 #	${PERL} ${WRKSRC}/10-postgresql.t

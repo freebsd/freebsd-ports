@@ -10,6 +10,8 @@ MASTER_SITES=	http://jon.oberheide.org/pidgin-rhythmbox/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin to update your status with info from Rhythmbox
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \

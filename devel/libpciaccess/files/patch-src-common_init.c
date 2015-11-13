@@ -1,6 +1,6 @@
---- src/common_init.c.orig	2008-10-11 18:31:00.000000000 +0000
-+++ src/common_init.c	2009-03-29 20:10:52.000000000 +0000
-@@ -70,7 +70,9 @@
+--- src/common_init.c.orig	2015-02-03 23:59:14 UTC
++++ src/common_init.c
+@@ -72,7 +72,9 @@ pci_system_init( void )
  void
  pci_system_init_dev_mem(int fd)
  {

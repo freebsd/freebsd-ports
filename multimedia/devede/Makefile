@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.rastersoft.com/descargas/ \
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Create video DVDs, VCDs, sVCDs, or CVDs from any number of video files
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		spumux:${PORTSDIR}/multimedia/dvdauthor \
