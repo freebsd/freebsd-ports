@@ -9945,6 +9945,7 @@
 %%WWWDIR%%/themes/example/core/img/logo.svg
 %%WWWDIR%%/themes/example/defaults.php
 %%WWWDIR%%/version.php
+@dir %%WWWDIR%%/apps/gallery/documentation/wiki
 @dir(%%OWNCLOUD_USERNAME%%,%%OWNCLOUD_GROUPNAME%%,) %%WWWDIR%%/apps
 @dir(%%OWNCLOUD_USERNAME%%,%%OWNCLOUD_GROUPNAME%%,) %%WWWDIR%%/config
 @dir(%%OWNCLOUD_USERNAME%%,%%OWNCLOUD_GROUPNAME%%,) %%WWWDIR%%/data
