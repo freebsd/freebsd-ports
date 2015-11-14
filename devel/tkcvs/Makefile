@@ -11,10 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk frontends to CVS and Subversion
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USES=		tk
 
 OPTIONS_DEFINE=	DOCS
@@ -32,6 +34,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/tkcvs/bitmaps
 	${INSTALL_DATA} ${WRKSRC}/tkcvs/bitmaps/*.gif ${STAGEDIR}${PREFIX}/lib/tkcvs/bitmaps
 	${INSTALL_DATA} ${WRKSRC}/tkcvs/bitmaps/*.xbm ${STAGEDIR}${PREFIX}/lib/tkcvs/bitmaps
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in CHANGELOG.txt FAQ.txt INSTALL
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
