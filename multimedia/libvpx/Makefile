@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DEBUG MULTIRES POSTPROC RUNTIME SHARED SIZE_LIMIT THREADS
 OPTIONS_DEFAULT=MULTIRES POSTPROC RUNTIME SHARED SIZE_LIMIT THREADS
+OPTIONS_EXCLUDE_aarch64=RUNTIME
 OPTIONS_EXCLUDE_armv6=	RUNTIME
 MULTIRES_DESC=	Enable multi-resolution encoding
 POSTPROC_DESC=	Enable postprocessing
@@ -75,6 +76,8 @@ CONFIGURE_ARGS+=	--target=ppc64-linux-gcc
 .elif ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--target=sparc64-linux-gcc
 USES:=			${USES:Ncompiler*} compiler:c++11-lib
+.elif ${ARCH} == "aarch64"
+CONFIGURE_ARGS+=	--target=arm64-linux-gcc
 .elif ${ARCH} == "armv6"
 CONFIGURE_ARGS+=	--target=armv6-linux-gcc --cpu=armv6
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-build_make_Makefile
