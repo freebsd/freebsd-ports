@@ -88,4 +88,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 
+post-clean:
+	@${RM} -r /tmp/.host_dmd-2.067.1
+
 .include <bsd.port.post.mk>
