@@ -3,6 +3,7 @@
 
 PORTNAME=	toxic
 PORTVERSION=	0.7.0.151113
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -17,6 +18,7 @@ LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx		\
 		libopus.so:${PORTSDIR}/audio/opus		\
 		libcurl.so:${PORTSDIR}/ftp/curl			\
 		libv4l2.so:${PORTSDIR}/multimedia/libv4l	\
+		libqrencode.so:${PORTSDIR}/graphics/libqrencode	\
 		libconfig.so:${PORTSDIR}/devel/libconfig
 RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 
