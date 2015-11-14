@@ -58,6 +58,61 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="547fbd98-8b1f-11e5-b48b-bcaec565249c">
+    <topic>flash -- multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.548</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-28.html">
+	  <p>These updates resolve a type confusion vulnerability that
+	    could lead to code execution (CVE-2015-7659).</p>
+
+	  <p>These updates resolve a security bypass vulnerability that
+	    could be exploited to write arbitrary data to the file
+	    system under user permissions (CVE-2015-7662).</p>
+
+	  <p>These updates resolve use-after-free vulnerabilities that
+	    could lead to code execution (CVE-2015-7651, CVE-2015-7652,
+	    CVE-2015-7653, CVE-2015-7654, CVE-2015-7655, CVE-2015-7656,
+	    CVE-2015-7657, CVE-2015-7658, CVE-2015-7660, CVE-2015-7661,
+	    CVE-2015-7663, CVE-2015-8042, CVE-2015-8043, CVE-2015-8044,
+	    CVE-2015-8046).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-28.html</url>
+      <cvename>CVE-2015-7651</cvename>
+      <cvename>CVE-2015-7652</cvename>
+      <cvename>CVE-2015-7653</cvename>
+      <cvename>CVE-2015-7654</cvename>
+      <cvename>CVE-2015-7655</cvename>
+      <cvename>CVE-2015-7656</cvename>
+      <cvename>CVE-2015-7657</cvename>
+      <cvename>CVE-2015-7658</cvename>
+      <cvename>CVE-2015-7659</cvename>
+      <cvename>CVE-2015-7660</cvename>
+      <cvename>CVE-2015-7661</cvename>
+      <cvename>CVE-2015-7662</cvename>
+      <cvename>CVE-2015-7663</cvename>
+      <cvename>CVE-2015-8043</cvename>
+      <cvename>CVE-2015-8044</cvename>
+      <cvename>CVE-2015-8046</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-10</discovery>
+      <entry>2015-11-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f0b9049f-88c4-11e5-aed7-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
