@@ -51,6 +51,7 @@ MAKE_ARGS+=	DEBUG_FLAGS=-g\ -DDEBUG=1\ -DUNITTEST
 MODULEDIR=	${PREFIX}/include/d/phobos2
 
 post-patch:
+	@${RM} -r /tmp/.host_dmd-2.067.1
 	@${REINPLACE_CMD} -e "s|g++|${CXX}|" ${WRKSRC}/posix.mak
 	@${REINPLACE_CMD} -e "s|cc|${CC}|" ${WRKSRC}/../phobos/posix.mak
 	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|"	\
