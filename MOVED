@@ -7936,3 +7936,4 @@ databases/p5-DBD-mysql51|databases/p5-DBD-mysql|2015-11-10|Has expired: EOL upst
 databases/py-MySQLdb51||2015-11-10|Has expired: EOL upstream, use databases/py-MySQLdb instead
 deskutils/steadyflow||2015-11-13|Has expired: No new releases for years, consider using net/uget
 net/py-smb|net/py-pysmb|2015-11-14|Renamed to match upstream naming
+devel/py-asn1-modules|devel/py-pyasn1-modules|2015-11-14|Renamed to match upstream naming
