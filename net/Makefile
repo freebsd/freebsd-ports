@@ -962,6 +962,7 @@
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
+    SUBDIR += py-pysmb
     SUBDIR += py-pysocks
     SUBDIR += py-pysphere
     SUBDIR += py-python-bitcoinrpc
@@ -972,7 +973,6 @@
     SUBDIR += py-raet
     SUBDIR += py-s3cmd
     SUBDIR += py-simplesoap
-    SUBDIR += py-smb
     SUBDIR += py-smbpasswd
     SUBDIR += py-soappy
     SUBDIR += py-speedtest-cli
