@@ -4,6 +4,7 @@
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
 PORTVERSION=	2.069.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -14,6 +15,7 @@ COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
 USES=		gmake zip
 MAKEFILE=	posix.mak
 MAKE_ARGS=	AUTO_BOOTSTRAP=1
+MAKE_ENV+=	WRKDIR=${WRKDIR}
 EXAMPLESDIR=	${PREFIX}/share/examples/dmd2
 DOCSDIR=	${PREFIX}/share/doc/dmd2
 PORTDOCS=	*.txt html/
@@ -51,7 +53,6 @@ MAKE_ARGS+=	DEBUG_FLAGS=-g\ -DDEBUG=1\ -DUNITTEST
 MODULEDIR=	${PREFIX}/include/d/phobos2
 
 post-patch:
-	@${RM} -r /tmp/.host_dmd-2.067.1
 	@${REINPLACE_CMD} -e "s|g++|${CXX}|" ${WRKSRC}/posix.mak
 	@${REINPLACE_CMD} -e "s|cc|${CC}|" ${WRKSRC}/../phobos/posix.mak
 	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|"	\
@@ -87,8 +88,5 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
-
-post-clean:
-	@${RM} -r /tmp/.host_dmd-2.067.1
 
 .include <bsd.port.post.mk>
