@@ -11,9 +11,6 @@ DISTNAME=	${PORTNAME}-dvd-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVD authoring program
 
-DEPRECATED=	depends on expiring audio/dvda-author
-EXPIRATION_DATE=	2015-11-26
-
 BUILD_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick
 LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \
@@ -22,7 +19,6 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick \
-		dvda-author:${PORTSDIR}/audio/dvda-author \
 		enca:${PORTSDIR}/converters/enca \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		toolame:${PORTSDIR}/audio/toolame
