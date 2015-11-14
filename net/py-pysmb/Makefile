@@ -1,13 +1,12 @@
 # Created by: ijliao
 # $FreeBSD$
 
-PORTNAME=	smb
+PORTNAME=	pysmb
 PORTVERSION=	1.1.16
 CATEGORIES=	net python
-MASTER_SITES=	http://miketeo.net/files/Projects/py${PORTNAME}/ \
+MASTER_SITES=	http://miketeo.net/files/Projects/${PORTNAME}/ \
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pysmb-${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	SMB/CIFS library written in Python
