@@ -3,8 +3,9 @@
 
 PORTNAME=	lynis
 PORTVERSION=	1.6.4
+DISTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://cisofy.com/files/
+MASTER_SITES=	https://cisofy.com/files/
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Security and system auditing tool
