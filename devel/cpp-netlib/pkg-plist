@@ -221,6 +221,12 @@ lib/cmake/cppnetlib/cppnetlibConfig.cmake
 lib/cmake/cppnetlib/cppnetlibConfigVersion.cmake
 lib/cmake/cppnetlib/cppnetlibTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cppnetlib/cppnetlibTargets.cmake
-lib/libcppnetlib-client-connections.a
-lib/libcppnetlib-server-parsers.a
-lib/libcppnetlib-uri.a
+lib/libcppnetlib-client-connections.so
+lib/libcppnetlib-client-connections.so.0
+lib/libcppnetlib-client-connections.so.0.11.1
+lib/libcppnetlib-server-parsers.so
+lib/libcppnetlib-server-parsers.so.0
+lib/libcppnetlib-server-parsers.so.0.11.1
+lib/libcppnetlib-uri.so
+lib/libcppnetlib-uri.so.0
+lib/libcppnetlib-uri.so.0.11.1
