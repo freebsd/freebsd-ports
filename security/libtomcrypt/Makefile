@@ -5,7 +5,7 @@ PORTNAME=	libtomcrypt
 PORTVERSION=	1.17
 PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	http://libtom.org/files/
+MASTER_SITES=	http://libtom.net/files/
 DISTNAME=	crypt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,49 +26,41 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gmake libtool:build tar:bzip2
 
 OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	LIBTOMMATH
 OPTIONS_MULTI=		MATH
 OPTIONS_MULTI_MATH=	LIBTOMMATH TOMSFASTMATH GMP
+OPTIONS_DEFAULT=	LIBTOMMATH
+
 LIBTOMMATH_DESC=	Use LibTomMath
 TOMSFASTMATH_DESC=	Use TomsFastMath
 
-.include <bsd.port.options.mk>
+LIBTOMMATH_BUILD_DEPENDS=	${LOCALBASE}/include/tommath.h:${PORTSDIR}/math/libtommath
+LIBTOMMATH_CFLAGS=		-DLTM_DESC
+LIBTOMMATH_VARS=		EXTRALIBS+=-ltommath
 
-.if ${PORT_OPTIONS:MLIBTOMMATH}
-BUILD_DEPENDS+=	${LOCALBASE}/include/tommath.h:${PORTSDIR}/math/libtommath
-CFLAGS+=	-DLTM_DESC
-EXTRALIBS+=	-ltommath
-.endif
+LIBTOMSFASTMATH_BUILD_DEPENDS=	${LOCALBASE}/include/tfm.h:${PORTSDIR}/math/tomsfastmath
+LIBTOMSFASTMATH_CFLAGS=		-DTFM_DESC
+LIBTOMSFASTMATH_VARS=		EXTRALIBS+=-ltfm
 
-.if ${PORT_OPTIONS:MTOMSFASTMATH}
-BUILD_DEPENDS+=	${LOCALBASE}/include/tfm.h:${PORTSDIR}/math/tomsfastmath
-CFLAGS+=	-DTFM_DESC
-EXTRALIBS+=	-ltfm
-.endif
+GMP_LIB_DEPENDS=		libgmp.so:${PORTSDIR}/math/gmp
+GMP_CFLAGS=			-DGMP_DESC
+GMP_VARS=			EXTRALIBS+=-lgmp
 
-.if ${PORT_OPTIONS:MGMP}
-LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
-CFLAGS+=	-DGMP_DESC
-EXTRALIBS+=	-lgmp
-.endif
-
-.if ! ${PORT_OPTIONS:MDOCS}
-MAKE_ARGS+=	NODOCS=yes
-.endif
+DOCS_MAKE_ARGS_OFF=		NODOCS=yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's| make | $$(MAKE) |' \
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's| make | $$(MAKE) |' \
 		-e 's|-g $$(GROUP)||' -e 's|-o $$(USER)||' \
 		${WRKSRC}/makefile.shared ${WRKSRC}/testprof/makefile.shared
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/pdf
-	${INSTALL_DATA} ${WRKSRC}/doc/crypt.pdf ${STAGEDIR}${DOCSDIR}/pdf
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtomcrypt_prof.so.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtomcrypt.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtomcrypt_prof.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtomcrypt.so.0
 
-.if defined(MAINTAINER_MODE)
-test:	build
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pdf
+	${INSTALL_DATA} ${WRKSRC}/doc/crypt.pdf ${STAGEDIR}${DOCSDIR}/pdf
+
+do-test:
 	@${ECHO_MSG} "Testing with -DUSE_TFM..."
 	(cd ${WRKSRC} && CFLAGS="${CFLAGS} -DUSE_TFM" EXTRALIBS="-L${PREFIX}/lib -ltfm" ${MAKE_CMD} test && ${WRKSRC}/test)
 
@@ -85,6 +77,5 @@ test:	build
 
 	@${ECHO_MSG} "Testing with -DUSE_GMP..."
 	(cd ${WRKSRC} && CFLAGS="${CFLAGS} -DUSE_GMP" EXTRALIBS="-L${PREFIX}/lib -lgmp" ${MAKE_CMD} test && ${WRKSRC}/test)
-.endif
 
 .include <bsd.port.mk>
