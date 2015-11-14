@@ -1,9 +1,9 @@
 --- configure.orig
 +++ configure
-@@ -148,6 +148,10 @@ all_platforms="${all_platforms} x86_64-w
- all_platforms="${all_platforms} x86_64-win64-vs10"
+@@ -153,6 +153,10 @@ all_platforms="${all_platforms} x86_64-w
  all_platforms="${all_platforms} x86_64-win64-vs11"
  all_platforms="${all_platforms} x86_64-win64-vs12"
+ all_platforms="${all_platforms} x86_64-win64-vs14"
 +all_platforms="${all_platforms} ia64-linux-gcc"
 +all_platforms="${all_platforms} ppc32-linux-gcc"
 +all_platforms="${all_platforms} ppc64-linux-gcc"
