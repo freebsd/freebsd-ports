@@ -1,11 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	asn1-modules
+PORTNAME=	pyasn1-modules
 PORTVERSION=	0.0.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Collection of ASN.1 data structures for py-asn1
@@ -20,7 +19,6 @@ USES=		python shebangfix
 SHEBANG_FILES=	tools/*.py
 USE_PYTHON=	autoplist distutils
 
-DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	CHANGES.txt README.txt
 TOOLS=		cmpdump.py crldump.py crmfdump.py ocspclient.py ocspreqdump.py \
 		ocsprspdump.py pkcs10dump.py pkcs1dump.py pkcs7dump.py \
