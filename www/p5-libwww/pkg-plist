@@ -30,6 +30,13 @@ bin/lwp-request
 %%SITE_PERL%%/LWP/UserAgent.pm
 %%SITE_PERL%%/lwpcook.pod
 %%SITE_PERL%%/lwptut.pod
+%%PERL5_MAN1%%/GET.1.gz
+%%PERL5_MAN1%%/HEAD.1.gz
+%%PERL5_MAN1%%/POST.1.gz
+%%PERL5_MAN1%%/lwp-download.1.gz
+%%PERL5_MAN1%%/lwp-dump.1.gz
+%%PERL5_MAN1%%/lwp-mirror.1.gz
+%%PERL5_MAN1%%/lwp-request.1.gz
 %%PERL5_MAN3%%/LWP.3.gz
 %%PERL5_MAN3%%/LWP::Authen::Ntlm.3.gz
 %%PERL5_MAN3%%/LWP::ConnCache.3.gz
@@ -41,10 +48,3 @@ bin/lwp-request
 %%PERL5_MAN3%%/LWP::UserAgent.3.gz
 %%PERL5_MAN3%%/lwpcook.3.gz
 %%PERL5_MAN3%%/lwptut.3.gz
-%%PERL5_MAN1%%/GET.1.gz
-%%PERL5_MAN1%%/HEAD.1.gz
-%%PERL5_MAN1%%/POST.1.gz
-%%PERL5_MAN1%%/lwp-download.1.gz
-%%PERL5_MAN1%%/lwp-dump.1.gz
-%%PERL5_MAN1%%/lwp-mirror.1.gz
-%%PERL5_MAN1%%/lwp-request.1.gz
