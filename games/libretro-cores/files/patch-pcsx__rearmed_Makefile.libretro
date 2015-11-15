@@ -1,0 +1,10 @@
+--- pcsx_rearmed/Makefile.libretro.orig	2015-11-01 09:25:51 UTC
++++ pcsx_rearmed/Makefile.libretro
+@@ -23,7 +23,6 @@ TARGET_NAME := pcsx_rearmed
+ LIBM := -lm
+ LIBZ := -lz
+ LIBPTHREAD := -lpthread
+-LIBDL := -ldl
+ MMAP_WIN32=0
+ EXTRA_LDFLAGS =
+ 

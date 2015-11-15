@@ -1,0 +1,11 @@
+--- bsnes-libretro/Makefile.orig	2015-10-22 07:40:14 UTC
++++ bsnes-libretro/Makefile
+@@ -29,7 +29,7 @@ target  := libretro
+ ifneq ($(debug),)
+   flags := -I. -Ilibco -O0 -g
+ else
+-  flags := -I. -Ilibco -O3 -fomit-frame-pointer
++  flags := -I. -Ilibco
+ endif
+ 
+ cflags := -std=gnu99 -xc
