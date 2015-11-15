@@ -152,22 +152,25 @@ test: build
 	-@make check -C ${WRKSRC}
 .endif
 
-post-build:
-.if ${PORT_OPTIONS:MTOOLS}
+post-build-TOOLS-on:
 	@${MAKE} -C ${WRKSRC} tools ${MAKE_ARGS}
-.endif
 
 post-install:	${MKREPOS_TARGET}
-.if ${PORT_OPTIONS:MTOOLS}
-	@${MAKE} -C ${WRKSRC} install-tools ${MAKE_ARGS}
-.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
+post-install-STATIC-off:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+
 post-install-SVNSERVE_WRAPPER-on:
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve.sample
+
+post-install-TOOLS-on:
+	@${MAKE} -C ${WRKSRC} install-tools ${MAKE_ARGS}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 # ===============================================================================
 repository:	_mkrepos
