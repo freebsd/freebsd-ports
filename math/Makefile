@@ -34,6 +34,7 @@
     SUBDIR += R-cran-memisc
     SUBDIR += R-cran-minqa
     SUBDIR += R-cran-mvtnorm
+    SUBDIR += R-cran-nloptr
     SUBDIR += R-cran-nnls
     SUBDIR += R-cran-outliers
     SUBDIR += R-cran-psych
