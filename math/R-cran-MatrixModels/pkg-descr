@@ -1,0 +1,4 @@
+Modelling with sparse and dense 'Matrix' matrices, using modular
+prediction and response module classes.
+
+WWW: https://cran.r-project.org/web/packages/MatrixModels/
