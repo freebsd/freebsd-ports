@@ -1,6 +1,6 @@
---- src/mpdpp.cpp.orig	2015-07-05 02:18:34 UTC
+--- src/mpdpp.cpp.orig	2015-11-09 12:52:27 UTC
 +++ src/mpdpp.cpp
-@@ -38,6 +38,8 @@ Connection::Connection() : m_connection(
+@@ -95,6 +95,8 @@ Connection::Connection() : m_connection(
  				m_port(6600),
  				m_timeout(15)
  {
@@ -8,17 +8,17 @@
 +	m_gen.seed(rd());
  }
  
- Connection::~Connection()
-@@ -504,7 +506,7 @@ bool Connection::AddRandomTag(mpd_tag_ty
- 	}
- 	else
+ void Connection::Connect()
+@@ -560,7 +562,7 @@ bool Connection::AddRandomTag(mpd_tag_ty
+ 	if (number > tags.size())
+ 		return false;
+ 
+-	std::random_shuffle(tags.begin(), tags.end());
++	std::shuffle(tags.begin(), tags.end(), m_gen);
+ 	auto it = tags.begin();
+ 	for (size_t i = 0; i < number && it != tags.end(); ++i)
  	{
--		std::random_shuffle(tags.begin(), tags.end());
-+		std::shuffle(tags.begin(), tags.end(), m_gen);
- 		auto it = tags.begin();
- 		for (size_t i = 0; i < number && it != tags.end(); ++i)
- 		{
-@@ -544,7 +546,7 @@ bool Connection::AddRandomSongs(size_t n
+@@ -599,7 +601,7 @@ bool Connection::AddRandomSongs(size_t n
  	}
  	else
  	{
