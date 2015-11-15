@@ -2,6 +2,6 @@ bin/json_xs
 %%SITE_ARCH%%/JSON/XS.pm
 %%SITE_ARCH%%/JSON/XS/Boolean.pm
 %%SITE_ARCH%%/auto/JSON/XS/XS.so
+%%PERL5_MAN1%%/json_xs.1.gz
 %%PERL5_MAN3%%/JSON::XS.3.gz
 %%PERL5_MAN3%%/JSON::XS::Boolean.3.gz
-%%PERL5_MAN1%%/json_xs.1.gz
