@@ -21,6 +21,7 @@ RUN_DEPENDS=	rubygem-activerecord>=3.2.13:${PORTSDIR}/databases/rubygem-activere
 		rubygem-railties>=3.0.0:${PORTSDIR}/www/rubygem-railties \
 		rubygem-recog>=1.0:${PORTSDIR}/security/rubygem-recog
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
