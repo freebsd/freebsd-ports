@@ -5,10 +5,10 @@ bin/mech-dump
 %%SITE_PERL%%/WWW/Mechanize/FAQ.pod
 %%SITE_PERL%%/WWW/Mechanize/Image.pm
 %%SITE_PERL%%/WWW/Mechanize/Link.pm
+%%PERL5_MAN1%%/mech-dump.1.gz
 %%PERL5_MAN3%%/WWW::Mechanize.3.gz
 %%PERL5_MAN3%%/WWW::Mechanize::Cookbook.3.gz
 %%PERL5_MAN3%%/WWW::Mechanize::Examples.3.gz
 %%PERL5_MAN3%%/WWW::Mechanize::FAQ.3.gz
 %%PERL5_MAN3%%/WWW::Mechanize::Image.3.gz
 %%PERL5_MAN3%%/WWW::Mechanize::Link.3.gz
-%%PERL5_MAN1%%/mech-dump.1.gz
