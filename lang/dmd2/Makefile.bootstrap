@@ -3,33 +3,22 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.069.1
-PORTREVISION=	2
+PORTVERSION=	2.067.1
 CATEGORIES=	lang
-MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		dmd.2.067.1${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	cy@FreeBSD.org
-COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
+COMMENT=	D 2.0 compiler bootstrap
 
+WRKDIR=		${BOOTDIR}/.host_dmd-2.067.1
+PATCHDIR=	${MASTERDIR}/bootstrap
 USES=		gmake zip
 MAKEFILE=	posix.mak
-MAKE_ARGS=	AUTO_BOOTSTRAP=1
-MAKE_ENV+=	WRKDIR=${WRKDIR}
 EXAMPLESDIR=	${PREFIX}/share/examples/dmd2
 DOCSDIR=	${PREFIX}/share/doc/dmd2
 PORTDOCS=	*.txt html/
 WRKSRC=		${WRKDIR}/dmd2/src/${PORTNAME}
-LICENSE_COMB=	multi
-LICENSE=	ART10 DMD BSL
-LICENSE_NAME_DMD=	Digital Mars license
-LICENSE_FILE_DMD=	${WRKSRC}/backendlicense.txt
-LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
-
-OPTIONS_DEFINE=	DOCS
+.undef		DEVELOPER
 
 .include <bsd.port.pre.mk>
 
@@ -48,11 +37,6 @@ MAKE_ARGS+=	MODEL=32
 MODEL=		32
 .endif
 
-.if defined(WITH_DEBUG)
-BUILD=		debug
-MAKE_ARGS+=	DEBUG_FLAGS=-g\ -DDEBUG=1\ -DUNITTEST
-.endif
-
 MODULEDIR=	${PREFIX}/include/d/phobos2
 
 post-patch:
@@ -63,10 +47,11 @@ post-patch:
 			  -e "s|\\\BR|.BR|"		\
 		${WRKDIR}/dmd2/man/man1/dmd.1		\
 		${WRKDIR}/dmd2/man/man5/dmd.conf.5
-	@${REINPLACE_CMD} -e '/^SYSCONFDIR=/s|/etc/|${PREFIX}/etc/|' ${WRKSRC}/posix.mak
-	@${REINPLACE_CMD} -e "s|%@P%/../../src/phobos|${MODULEDIR}|"	\
-			  -e "s|%@P%/../lib|${PREFIX}/lib|"		\
-			  -e "s|%@P%/../../src/druntime|${PREFIX}/include/d/druntime|"	\
+	@${REINPLACE_CMD} -e '/^SYSCONFDIR=/s|/etc/|${STAGEDIR}${PREFIX}/etc/|' ${WRKSRC}/posix.mak
+	@${REINPLACE_CMD} -e "s|%@P%/../../src/phobos|${STAGEDIR}${MODULEDIR}|"	\
+			  -e "s|%@P%/../lib32|${STAGEDIR}${PREFIX}/lib|"		\
+			  -e "s|%@P%/../lib64|${STAGEDIR}${PREFIX}/lib|"		\
+			  -e "s|%@P%/../../src/druntime|${STAGEDIR}${PREFIX}/include/d/druntime|"	\
 			  ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd.conf
 	@${ECHO_CMD} >> ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd.conf
 
@@ -92,9 +77,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 
-.if !exists(${LOCALBASE}/bin/dmd)
-pre-configure:
-	${MAKE} -f Makefile.bootstrap BOOTDIR=${WRKDIR}
-.endif
+post-stage:
+	${LN} -sf ${STAGEDIR}/${PREFIX}/bin/dmd ${WRKDIR}/dmd2/freebsd/bin${MODEL}/dmd
 
 .include <bsd.port.post.mk>
