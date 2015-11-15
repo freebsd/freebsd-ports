@@ -31,8 +31,10 @@ PLIST_FILES=	${U_BOOT_DIR}/u-boot.img \
 		${U_BOOT_DIR}/config.txt \
 		${U_BOOT_DIR}/fixup.dat \
 		${U_BOOT_DIR}/fixup_cd.dat \
+		${U_BOOT_DIR}/fixup_x.dat \
 		${U_BOOT_DIR}/start.elf \
-		${U_BOOT_DIR}/start_cd.elf
+		${U_BOOT_DIR}/start_cd.elf \
+		${U_BOOT_DIR}/start_x.elf
 
 MAKE_ARGS+=	ARCH=arm \
 		CROSS_COMPILE=arm-none-eabi-
