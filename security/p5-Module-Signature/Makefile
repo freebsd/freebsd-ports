@@ -10,11 +10,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module signature file manipulation
 
+LICENSE=	CC0-1.0
+
 BUILD_DEPENDS=	p5-PAR-Dist>=0:${PORTSDIR}/devel/p5-PAR-Dist
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
 
 CONFIGURE_ENV=	PERL_MM_USE_DEFAULT="yes"
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
