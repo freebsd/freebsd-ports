@@ -14,7 +14,9 @@ lib/elixir/lib/coverex/lib/coverex/templates/js/jquery.js
 lib/elixir/lib/coverex/lib/coverex/templates/js/jquery.metadata.js
 lib/elixir/lib/coverex/lib/coverex/templates/js/jquery.tablesorter.js
 lib/elixir/lib/coverex/lib/coverex/templates/overview_entry_template.eex
+lib/elixir/lib/coverex/lib/coverex/templates/overview_entry_text_template.eex
 lib/elixir/lib/coverex/lib/coverex/templates/overview_template.eex
+lib/elixir/lib/coverex/lib/coverex/templates/overview_text_template.eex
 lib/elixir/lib/coverex/lib/coverex/templates/source_line_template.eex
 lib/elixir/lib/coverex/lib/coverex/templates/source_template.eex
 %%PORTDOCS%%%%DOCSDIR%%/README.md
