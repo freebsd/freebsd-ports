@@ -9,10 +9,9 @@ MASTER_SITES=	APACHE/subversion
 DIST_SUBDIR=	subversion19
 
 GNU_CONFIGURE=	yes
-USES+=		cpe libtool pkgconfig shebangfix tar:bzip2
+USES+=		cpe libtool pathfix pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	tools/server-side/svnpubsub/rc.d/svnpubsub.solaris \
 		tools/server-side/svnpubsub/rc.d/svnwcsub.solaris
-bash_OLD_CMD=	/usr/bin/bash
 
 LICENSE=	APACHE20
 
@@ -40,7 +39,6 @@ OPTIONS_SUB=			yes
 BDB_CONFIGURE_OFF=		--without-berkeley-db
 BDB_USE=			BDB=42+
 
-MAINTAINER_DEBUG_CFLAGS=	-g
 MAINTAINER_DEBUG_CONFIGURE_ON=	--enable-maintainer-mode --enable-debug
 
 NLS_CONFIGURE_OFF=		--disable-nls
@@ -58,6 +56,10 @@ STATIC_CONFIGURE_ON=		--enable-all-static PKG_CONFIG="${LOCALBASE}/bin/pkg-confi
 
 # ===============================================================
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMAINTAINER_DEBUG}
+WITH_DEBUG=	yes
+.endif
 
 APR_CONFIG=	${LOCALBASE}/bin/apr-1-config
 APU_CONFIG=	${LOCALBASE}/bin/apu-1-config

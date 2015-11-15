@@ -31,4 +31,7 @@ CONFIGURE_ARGS+=	--with-gnome-keyring
 ALL_TARGET=	gnome-keyring-lib
 INSTALL_TARGET=	install-gnome-keyring-lib
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+
 .include <bsd.port.post.mk>
