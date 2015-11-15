@@ -105,6 +105,7 @@ bin/smolder_smoke_signal
 %%SITE_ARCH%%/auto/Math/GSL/Version/Version.so
 %%SITE_ARCH%%/auto/Math/GSL/Wavelet/Wavelet.so
 %%SITE_ARCH%%/auto/Math/GSL/Wavelet2D/Wavelet2D.so
+%%PERL5_MAN1%%/smolder_smoke_signal.1.gz
 %%PERL5_MAN3%%/Math::GSL.3.gz
 %%PERL5_MAN3%%/Math::GSL::BLAS.3.gz
 %%PERL5_MAN3%%/Math::GSL::BSpline.3.gz
@@ -157,4 +158,3 @@ bin/smolder_smoke_signal
 %%PERL5_MAN3%%/Math::GSL::VectorComplex.3.gz
 %%PERL5_MAN3%%/Math::GSL::Wavelet.3.gz
 %%PERL5_MAN3%%/Math::GSL::Wavelet2D.3.gz
-%%PERL5_MAN1%%/smolder_smoke_signal.1.gz
