@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Flask-OAuthlib
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>0:${PORTSDIR}/www/py-flask \
 		${PYTHON_PKGNAMEPREFIX}oauthlib>0:${PORTSDIR}/security/py-oauthlib \
 		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>0:${PORTSDIR}/www/py-requests-oauthlib
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
 
