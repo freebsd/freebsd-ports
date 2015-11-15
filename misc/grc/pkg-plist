@@ -5,6 +5,7 @@ man/man1/grc.1.gz
 man/man1/grcat.1.gz
 %%DATADIR%%/conf.configure
 %%DATADIR%%/conf.cvs
+%%DATADIR%%/conf.df
 %%DATADIR%%/conf.diff
 %%DATADIR%%/conf.dig
 %%DATADIR%%/conf.esperanto
@@ -12,12 +13,13 @@ man/man1/grcat.1.gz
 %%DATADIR%%/conf.ifconfig
 %%DATADIR%%/conf.irclog
 %%DATADIR%%/conf.ldap
-%%DATADIR%%/conf.ls
 %%DATADIR%%/conf.log
+%%DATADIR%%/conf.ls
 %%DATADIR%%/conf.mount
 %%DATADIR%%/conf.mount2
 %%DATADIR%%/conf.mtr
 %%DATADIR%%/conf.netstat
+%%DATADIR%%/conf.php
 %%DATADIR%%/conf.ping
 %%DATADIR%%/conf.proftpd
 %%DATADIR%%/conf.ps
