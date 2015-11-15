@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	capstone
-PORTVERSION=	2.1
+PORTVERSION=	3.0.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +12,11 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python bindings for the Capstone Disassembly Engine
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 LIB_DEPENDS=	libcapstone.so:${PORTSDIR}/devel/capstone
 
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
