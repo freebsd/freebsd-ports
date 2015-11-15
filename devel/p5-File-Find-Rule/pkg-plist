@@ -1,8 +1,8 @@
 bin/findrule
-%%PERL5_MAN3%%/File::Find::Rule.3.gz
-%%PERL5_MAN3%%/File::Find::Rule::Extending.3.gz
-%%PERL5_MAN3%%/File::Find::Rule::Procedural.3.gz
 %%SITE_PERL%%/File/Find/Rule.pm
 %%SITE_PERL%%/File/Find/Rule/Extending.pod
 %%SITE_PERL%%/File/Find/Rule/Procedural.pod
 %%PERL5_MAN1%%/findrule.1.gz
+%%PERL5_MAN3%%/File::Find::Rule.3.gz
+%%PERL5_MAN3%%/File::Find::Rule::Extending.3.gz
+%%PERL5_MAN3%%/File::Find::Rule::Procedural.3.gz
