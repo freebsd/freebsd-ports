@@ -1,0 +1,5 @@
+--- nestopia/Makefile.freebsd.orig	2015-11-10 19:32:17 UTC
++++ nestopia/Makefile.freebsd
+@@ -0,0 +1,2 @@
++all:
++	cd libretro && ${MAKE}

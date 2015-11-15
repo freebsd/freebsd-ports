@@ -1,0 +1,11 @@
+--- bsnes-libretro/target-libretro/Makefile.orig	2015-10-22 07:40:14 UTC
++++ bsnes-libretro/target-libretro/Makefile
+@@ -36,7 +36,7 @@ obj/libretro-$(profile).o: $(ui)/libretr
+ #targets
+ build: $(objects)
+ ifeq ($(platform),linux)
+-	$(compiler) -o out/bsnes_$(profile)_libretro.so -shared $(objects) -ldl -Wl,--no-undefined -Wl,--version-script=$(ui)/link.T
++	$(compiler) -o out/bsnes_$(profile)_libretro.so -shared $(objects) -Wl,--no-undefined -Wl,--version-script=$(ui)/link.T
+ else ifneq (,$(findstring ios,$(platform)))
+ 	$(compiler) -o out/bsnes_$(profile)_libretro_ios.dylib -dynamiclib $(objects) -isysroot $(IOSSDK) -arch armv7
+ else ifeq ($(platform),macosx)
