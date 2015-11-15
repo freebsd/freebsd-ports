@@ -22,7 +22,7 @@ GH_TAGNAME=	22634a4
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tests
-USES=		autoreconf libtool pathfix pkgconfig
+USES=		autoreconf compiler:c11 libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=		install-strip
