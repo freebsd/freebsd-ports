@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-fastimage>=1.6.3:${PORTSDIR}/graphics/rubygem-fastimage \
 		rubygem-multi_json>=1.10.1:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
 
