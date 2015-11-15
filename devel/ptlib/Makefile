@@ -16,8 +16,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	pwlib-1.*
 
-USES=		bison gmake pkgconfig tar:xz
-USE_AUTOTOOLS=	autoconf:env automake:env
+USES=		autoreconf:build bison gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
@@ -162,7 +161,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/RTF_WASCLONED/0x20000/' ${WRKSRC}/src/ptlib/unix/socket.cxx
 
 pre-configure:
-	cd ${WRKSRC}/plugins/ && autoreconf -fi
+	(cd ${WRKSRC}/plugins/ && ${AUTORECONF} -fi)
 
 post-install:
 	${LN} -sf libpt.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt.so.${PVERSION_MAJOR}
