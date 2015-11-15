@@ -1114,44 +1114,12 @@ STRIPBIN=	${STRIP_CMD}
 
 .else
 
-# Look for files named "*.orig" under ${PATCH_WRKSRC} and (re-)generate
-# ${PATCHDIR}/patch-* files from them.  By popular demand, we currently
-# use '_' (underscore) to replace path separators in patch file names.
-#
-# If a file name happens to contain character which is also a separator
-# replacement character, it will be doubled in the resulting patch name.
-#
-# To minimize gratuitous patch renames, newly generated patches will be
-# written under existing file names when they use any of the previously
-# common path separators ([-+_]) or legacy double underscore (__).
-
 .if !target(makepatch)
-PATCH_PATH_SEPARATOR=	_
 makepatch:
-	@${MKDIR} ${PATCHDIR}
-	@(cd ${PATCH_WRKSRC}; \
-		for f in `${FIND} -s . -type f -name '*.orig'`; do \
-			ORIG=$${f#./}; \
-			NEW=$${ORIG%.orig}; \
-			cmp -s $${ORIG} $${NEW} && continue; \
-			! for _lps in `${ECHO} _ - + | ${SED} -e \
-				's|${PATCH_PATH_SEPARATOR}|__|'`; do \
-					PATCH=`${ECHO} $${NEW} | ${SED} -e "s|/|$${_lps}|g"`; \
-					test -f "${PATCHDIR}/patch-$${PATCH}" && break; \
-			done || ${ECHO} $${_SEEN} | ${GREP} -q /$${PATCH} && { \
-				PATCH=`${ECHO} $${NEW} | ${SED} -e \
-					's|${PATCH_PATH_SEPARATOR}|&&|g' -e \
-					's|/|${PATCH_PATH_SEPARATOR}|g'`; \
-				_SEEN=$${_SEEN}/$${PATCH}; \
-			}; \
-			OUT=${PATCHDIR}/patch-$${PATCH}; \
-			${ECHO} ${DIFF} -udp $${ORIG} $${NEW} '>' $${OUT}; \
-			TZ=UTC ${DIFF} -udp $${ORIG} $${NEW} | ${SED} -e \
-				'/^---/s|\.[0-9]* +0000$$| UTC|' -e \
-				'/^+++/s|\([[:blank:]][-0-9:.+]*\)*$$||' \
-					> $${OUT} || ${TRUE}; \
-		done \
-	)
+	@${SETENV} WRKDIR=${WRKDIR} PATCHDIR=${PATCHDIR} \
+		PATCH_WRKSRC=${PATCH_WRKSRC} \
+		STRIP_COMPONENTS="${PATCH_STRIP:S/-p//}" \
+		${SH} ${SCRIPTSDIR}/smart_makepatch.sh
 .endif
 
 
