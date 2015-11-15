@@ -2,22 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	mspdebug
-PORTVERSION=	0.22
+PORTVERSION=	0.23.20151024
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	peterjeremy@acm.org
 COMMENT=	Debugger for use with MSP 430 MCUs
 
 LICENSE=	GPLv2
 
-USES=		gmake readline
+USE_GITHUB=	yes
+GH_ACCOUNT=	dlbeer
+GH_TAGNAME=	38ea614
 
-PLIST_FILES=	bin/mspdebug man/man1/mspdebug.1.gz
+OPTIONS_DEFINE=		READLINE LIBMSP430
+OPTIONS_DEFAULT=	READLINE LIBMSP430
+LIBMSP430_DESC=		Use TI libmsp430 USB driver
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mspdebug ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mspdebug.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/mspdebug.1
+READLINE_USES=		readline
+READLINE_MAKE_ARGS_OFF=	WITHOUT_READLINE=1
+
+LIBMSP430_LIB_DEPENDS=	libmsp430.so:${PORTSDIR}/devel/msp430-debug-stack
+
+USES=		gmake
+
+PLIST_FILES=	bin/mspdebug \
+		man/man1/mspdebug.1.gz \
+		share/mspdebug/ti_3410.fw.ihex \
+		share/mspdebug/ti_3410.fw.txt \
+		share/doc/mspdebug/EmbeddedMode.txt \
+		share/doc/mspdebug/README
 
 .include <bsd.port.mk>
