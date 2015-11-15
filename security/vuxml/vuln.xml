@@ -58,6 +58,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1886e195-8b87-11e5-90e7-b499baebfeaf">
+    <topic>libpng buffer overflow in png_set_PLTE</topic>
+    <affects>
+      <package>
+       <name>png</name>
+       <range><lt>1.6.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>libpng reports:</p>
+      <blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/12/2">
+       <p>CVE for a vulnerability in libpng, all versions, in the
+       png_set_PLTE/png_get_PLTE functions.  These functions failed to check for
+       an out-of-range palette when reading or writing PNG files with a bit_depth
+       less than 8.  Some applications might read the bit depth from the IHDR
+       chunk and allocate memory for a 2^N entry palette, while libpng can return
+       a palette with up to 256 entries even when the bit depth is less than 8.</p>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/12/2</url>
+      <cvename>CVE-2015-8126</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-15</discovery>
+      <entry>2015-11-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="547fbd98-8b1f-11e5-b48b-bcaec565249c">
     <topic>flash -- multiple vulnabilities</topic>
     <affects>
