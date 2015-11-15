@@ -3,10 +3,10 @@
 
 PORTNAME=	libwww
 PORTVERSION=	6.13
+DISTVERSIONPREFIX=	perl-
 CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN/LWP
 PKGNAMEPREFIX=	p5-
-DISTNAME=	libwww-perl-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl5 library for WWW access
