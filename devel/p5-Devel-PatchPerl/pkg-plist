@@ -2,7 +2,7 @@ bin/patchperl
 %%SITE_PERL%%/Devel/PatchPerl.pm
 %%SITE_PERL%%/Devel/PatchPerl/Hints.pm
 %%SITE_PERL%%/Devel/PatchPerl/Plugin.pm
+%%PERL5_MAN1%%/patchperl.1.gz
 %%PERL5_MAN3%%/Devel::PatchPerl.3.gz
 %%PERL5_MAN3%%/Devel::PatchPerl::Hints.3.gz
 %%PERL5_MAN3%%/Devel::PatchPerl::Plugin.3.gz
-%%PERL5_MAN1%%/patchperl.1.gz
