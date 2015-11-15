@@ -39,6 +39,7 @@
     SUBDIR += R-cran-nloptr
     SUBDIR += R-cran-nnls
     SUBDIR += R-cran-outliers
+    SUBDIR += R-cran-pbkrtest
     SUBDIR += R-cran-psych
     SUBDIR += R-cran-quadprog
     SUBDIR += R-cran-sandwich
