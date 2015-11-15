@@ -1,0 +1,5 @@
+--- meteor-libretro/Makefile.freebsd.orig	2015-11-10 19:32:17 UTC
++++ meteor-libretro/Makefile.freebsd
+@@ -0,0 +1,2 @@
++all:
++	cd libretro && ${MAKE}
