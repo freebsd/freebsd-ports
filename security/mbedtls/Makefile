@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mbedtls
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 DISTVERSIONSUFFIX=	-apache
 CATEGORIES=	security devel
 MASTER_SITES=	https://tls.mbed.org/download/
@@ -26,6 +26,7 @@ post-patch:
 		-e 's/PREFIX/NAMEPREFIX/' \
 		-e 's/$$(DESTDIR)/&$$(PREFIX)/' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's/-fpic//' ${WRKSRC}/library/Makefile
 
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/lib -type f | \
