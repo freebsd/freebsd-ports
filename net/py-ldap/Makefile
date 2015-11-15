@@ -19,7 +19,6 @@ USES=		python:2
 USE_PYTHON=	autoplist distutils
 USE_OPENLDAP=		yes
 WANT_OPENLDAP_VER=	24
-
 OPTIONS_DEFINE=	SASL
 
 .include <bsd.port.options.mk>
@@ -30,6 +29,7 @@ CONFLICTS+=		openldap24-client-2.*
 .endif
 
 do-configure:
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' ${WRKSRC}/setup.cfg
 .if ! ${PORT_OPTIONS:MSASL}
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q setopt -c _ldap -s HAVE_TLS -o defines
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q saveopts
