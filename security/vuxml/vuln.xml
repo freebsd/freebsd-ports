@@ -79,7 +79,7 @@ Notes:
     </description>
     <references>
       <cvename>CVE-2015-8023</cvename>
-      <url>ihttps://github.com/strongswan/strongswan/commit/453e204ac40dfff2e0978e8f84a5f8ff0cbc45e2</url>
+      <url>https://github.com/strongswan/strongswan/commit/453e204ac40dfff2e0978e8f84a5f8ff0cbc45e2</url>
     </references>
     <dates>
       <discovery>2015-11-16</discovery>
