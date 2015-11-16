@@ -98,7 +98,7 @@ XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic
 BUILTIN_CONFIGURE_ON=	--with-printf-hooks=builtin
 LIBC_CONFIGURE_ON=	--with-printf-hooks=glibc
 VSTR_CONFIGURE_ON=	--with-printf-hooks=vstr
-VSTR_LIB_DEPENDS=	libvstr.so:devel/vstr
+VSTR_LIB_DEPENDS=	libvstr.so:${PORTSDIR}/devel/vstr
 
 .include <bsd.port.options.mk>
 
