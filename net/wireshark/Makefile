@@ -3,6 +3,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	1.12.8
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -12,33 +13,28 @@ MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
 		ftp://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
 		http://wireshark.zing.org/download/src/
-DISTNAME=	${DATADIR_NAME}-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	Powerful network analyzer/capture tool
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-DATADIR_NAME=	wireshark
-
-USE_PERL5=	build
-USES=		alias cpe gettext gmake iconv libtool perl5 pkgconfig \
-		python:build tar:bzip2
-WANT_GNOME=	yes
-USE_OPENSSL=	yes
 CONFLICTS?=	wireshark-qt5-[0-9]*
 
+GNU_CONFIGURE=	yes
+USES=		alias cpe gmake libtool perl5 pkgconfig python:build tar:bzip2
+USE_PERL5=	build
+USE_GNOME=	glib20
+USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--program-transform-name="" \
-			--with-ssl=${OPENSSLBASE} \
-			--with-qt=no
+			--with-ssl=${OPENSSLBASE}
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-DATADIR=	${PREFIX}/share/${DATADIR_NAME}
+
 CFLAGS+=	-funit-at-a-time
 LIBS+=		-L${LOCALBASE}/lib
-
-DESKTOP_ENTRIES=	"Wireshark" "Network Protocol Analyzer" \
-			"${DATADIR}/hi48-app-wireshark.png" \
-			"wireshark" "System;Monitor;GTK;" true
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
     reordercap captype
@@ -52,154 +48,100 @@ PLIST_SUB+=		${x:tu}=bin/$x \
 .endif
 .endfor
 
-.if !defined(LITE)
-OPTIONS_DEFINE=		RTP SNMP ADNS PCRE IPV6 GEOIP LUA CARES GSSAPI X11 \
-			GNUTLS GCRYPT THREADS
+OPTIONS_DEFINE=		RTP SNMP IPV6 GEOIP LUA GCRYPT GNUTLS
 
-OPTIONS_RADIO=		GUI
-OPTIONS_RADIO_GUI=	GTK3 QT5
+OPTIONS_RADIO=		ASYNCDNS GUI
+OPTIONS_SINGLE=		KERBEROS
 
-OPTIONS_DEFAULT?=	SNMP ADNS PCRE IPV6 GEOIP GSSAPI X11 GTK3
+OPTIONS_RADIO_ASYNCDNS=	ADNS CARES
+OPTIONS_RADIO_GUI=	GTK2 GTK3 QT5
+OPTIONS_SINGLE_KERBEROS=KRB_BASE KRB_HEIMDAL KRB_MIT KRB_NONE
+
+OPTIONS_DEFAULT?=	SNMP ADNS IPV6 GEOIP KRB_BASE GTK3
 
 RTP_DESC=		Enable support for playing back RTP streams
-ADNS_DESC=		Enable asynchronous DNS lookup support
-.endif
+GCRYPT_DESC=		IPsec decryption support
+GNUTLS_DESC=		SSL decryption support
+ASYNCDNS_DESC=		Asynchronous DNS lookup support
+ADNS_DESC=		Asynchronous DNS resolution via GNU adns
+KERBEROS_DESC=		Kerberos dissection support
+KRB_BASE_DESC=		Kerberos support via base system
+KRB_HEIMDAL_DESC=	Kerberos support via security/heimdal
+KRB_MIT_DESC=		Kerberos support via security/krb5
+KRB_NONE_DESC=		Disable Kerberos support
+
+GTK2_USE=	GNOME=gtk20
+GTK3_USE=	GNOME=gtk30
+QT5_USE=	QT5=core,gui,widgets,printsupport,buildtools_build
+
+LUA_USES=		lua:5[1-2]
+KRB_BASE_USES=		gssapi
+KRB_HEIMDAL_USES=	gssapi:heimdal
+KRB_MIT_USES=		gssapi:mit
+
+RTP_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+SNMP_LIB_DEPENDS=	libsmi.so:${PORTSDIR}/net-mgmt/libsmi
+ADNS_LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
+CARES_LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
+GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+
+IPV6_CONFIGURE_ENABLE=	ipv6
+
+KRB_NONE_CONFIGURE_ON=	--without-krb5
+KRB_NONE_CONFIGURE_OFF=	--with-krb5
+KRB_NONE_CONFIGURE_ENV_OFF=	KRB5_CONFIG=${KRB5CONFIG}
+
+GTK2_CONFIGURE_WITH=	gtk2
+GTK3_CONFIGURE_WITH=	gtk3
+QT5_CONFIGURE_WITH=	qt
+LUA_CONFIGURE_WITH=	lua
+RTP_CONFIGURE_WITH=	portaudio
+SNMP_CONFIGURE_WITH=	libsmi
+ADNS_CONFIGURE_WITH=	adns
+CARES_CONFIGURE_WITH=	c-ares
+GEOIP_CONFIGURE_WITH=	geoip
+GCRYPT_CONFIGURE_WITH=	gcrypt
+GNUTLS_CONFIGURE_WITH=	gnutls
+
+LUA_CPPFLAGS=		-I${LUA_INCDIR}
+
+QT5_MAKE_ENV=		PATH="${PATH}:${QT_BINDIR}"
+QT5_VARS=		PKGNAMESUFFIX=-qt5
+
+OPTIONS_SUB=		LUA
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=		x11
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-PLIST_SUB+=	WIRESHARK=bin/wireshark WIRESHARK_MAN=""
+.if empty(PORT_OPTIONS:MGTK2) && empty(PORT_OPTIONS:MGTK3) && \
+    empty(PORT_OPTIONS:MQT5)
+CONFIGURE_ARGS+=	--disable-wireshark
+PLIST_SUB+=		GUI="@comment "
 .else
-PLIST_SUB+=	WIRESHARK="@comment wireshark not built" \
-		WIRESHARK_MAN="@comment wireshark not built "
-USE_GNOME+=	glib20
-CONFIGURE_ARGS+=	--enable-wireshark=no \
-			--disable-gtktest
+USES+=			desktop-file-utils shared-mime-info
+INSTALLS_ICONS=		yes
+INSTALL_TARGET+=	install_desktop_files
+PLIST_SUB+=		GUI=""
 .endif
 
-.if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=		gtk30
-CONFIGURE_ARGS+=	--with-gtk2=no \
-			--with-gtk3=yes \
-			--with-qt=no
+.if empty(PORT_OPTIONS:MGTK2) && empty(PORT_OPTIONS:MGTK3) && \
+	${PORT_OPTIONS:MRTP}
+IGNORE=			the RTP support requires GTK+ frontend
 .endif
-
-.if ${PORT_OPTIONS:MQT5}
-CONFIGURE_ARGS+=	--with-gtk2=no \
-			--with-gtk3=no \
-			--with-qt=yes
-USE_QT5+=		core widgets printsupport buildtools_build
-PKGNAMESUFFIX+=		-qt5
-MAKE_ENV+=		PATH="${PATH}:${LOCALBASE}/lib/qt5/bin"
-CONFIGURE_ENV+=		PATH="${PATH}:${LOCALBASE}/lib/qt5/bin"
-.endif
-
-GNU_CONFIGURE=	yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6=yes
-.else
-CONFIGURE_ARGS+=	--enable-ipv6=no
-.endif
-
-# XXX - untested
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=	--enable-threads
-.endif
-
-.if ${PORT_OPTIONS:MPCRE} && !defined(LITE)
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--with-pcre=no
-.endif
-
-.if ${PORT_OPTIONS:MLUA} && !defined(LITE)
-USES+=		lua:51
-CONFIGURE_ARGS+=--with-lua=${PREFIX}
-CFLAGS+=	-I${LUA_INCDIR}
-CPPFLAGS+=	-I${LUA_INCDIR}
-PLIST_SUB+=	LUA=""
-.else
-CONFIGURE_ARGS+=--without-lua
-PLIST_SUB+=	LUA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MRTP} && !defined(LITE)
-LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
-CONFIGURE_ARGS+=--with-portaudio=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-portaudio
-.endif
-
-.if ${PORT_OPTIONS:MSNMP} && !defined(LITE)
-LIB_DEPENDS+=		libsmi.so:${PORTSDIR}/net-mgmt/libsmi
-CONFIGURE_ARGS+=	--with-libsmi=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--with-libsmi=no
-.endif
-
-.if ${PORT_OPTIONS:MADNS} && !defined(LITE)
-LIB_DEPENDS+=		libadns.so:${PORTSDIR}/dns/adns
-CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--with-adns=no
-.endif
-
-.if ${PORT_OPTIONS:MCARES} && !defined(LITE)
-LIB_DEPENDS+=		libcares.so:${PORTSDIR}/dns/c-ares
-CONFIGURE_ARGS+=	--with-c-ares=${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--with-c-ares=no
-.endif
-
-.if ${PORT_OPTIONS:MGEOIP} && !defined(LITE)
-LIB_DEPENDS+=		libGeoIP.so:${PORTSDIR}/net/GeoIP
-CONFIGURE_ARGS+=	--with-geoip=${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--with-geoip=no
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
-CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE} \
-		--with-gnutls=yes
-.else
-CONFIGURE_ARGS+=--with-gnutls=no
-.endif
-
-.if ${PORT_OPTIONS:MGCRYPT}
-LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
-CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
-.endif
-
-.if ! ${PORT_OPTIONS:MGSSAPI}
-CONFIGURE_ARGS+=--with-krb5=no
-.else
-KRB5_CONFIG?=	${LOCALBASE}/bin/krb5-config
-CONFIGURE_ENV+=	KRB5_CONFIG=${KRB5_CONFIG}
-LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
-.endif
-
-PKG_MESSAGE=	${FILESDIR}/pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|llua|llua-${LUA_VER}|g ; \
-		s|-DGDK_PIXBUF_DISABLE_DEPRECATED||g ; \
-		s|-Wl,--as-needed|| ' \
+		s|-DQT_GUI_LIB|-DQT_GUI_LIB $$CPPFLAGS| ' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/share/applications|${DESKTOPDIR}|g ; \
+		s|/usr/share|${LOCALBASE}/share|g ; \
+		s|{mime/packages,applications}|mime/packages| ; \
+		s|{apps,mimetypes}|apps $$(DESTDIR)${LOCALBASE}/share/icons/hicolor/$$$${size}x$$$${size}/mimetypes|' \
+		${WRKSRC}/Makefile.in
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/image/hi48-app-wireshark.png \
-		${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MQT5}
-		${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-qt ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.endif
+post-install-QT5-on:
+	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-qt \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
