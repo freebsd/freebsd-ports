@@ -1,6 +1,6 @@
---- etc/CMakeLists.txt.orig	2015-07-08 10:17:44.000000000 +0200
-+++ etc/CMakeLists.txt	2015-07-13 22:06:31.230363000 +0200
-@@ -26,43 +26,43 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux"
+--- etc/CMakeLists.txt.orig	2015-11-16 10:57:03.000000000 +0100
++++ etc/CMakeLists.txt	2015-11-16 15:20:49.216643000 +0100
+@@ -26,44 +26,44 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux"
    configure_file(logrotate.d/icinga2.cmake ${CMAKE_CURRENT_BINARY_DIR}/logrotate.d/icinga2 @ONLY)
  endif()
  
@@ -18,10 +18,12 @@
  endif()
  
 -install_if_not_exists(icinga2/zones.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
+-install_if_not_exists(icinga2/conf.d/app.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 -install_if_not_exists(icinga2/conf.d/commands.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 -install_if_not_exists(icinga2/conf.d/downtimes.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 -install_if_not_exists(icinga2/conf.d/groups.conf ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 +install_if_not_exists(icinga2/zones.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2)
++install_if_not_exists(icinga2/conf.d/app.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 +install_if_not_exists(icinga2/conf.d/commands.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 +install_if_not_exists(icinga2/conf.d/downtimes.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
 +install_if_not_exists(icinga2/conf.d/groups.conf.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/conf.d)
@@ -60,8 +62,8 @@
  endif()
 -install_if_not_exists(icinga2/scripts/mail-host-notification.sh ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/scripts)
 -install_if_not_exists(icinga2/scripts/mail-service-notification.sh ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/scripts)
-+ install_if_not_exists(icinga2/scripts/mail-host-notification.sh.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/scripts)
-+ install_if_not_exists(icinga2/scripts/mail-service-notification.sh.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/scripts)
++install_if_not_exists(icinga2/scripts/mail-host-notification.sh.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/scripts)
++install_if_not_exists(icinga2/scripts/mail-service-notification.sh.sample ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/scripts)
  install_if_not_exists(icinga2/zones.d/README ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/zones.d)
  install_if_not_exists(icinga2/repository.d/README ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/repository.d)
  

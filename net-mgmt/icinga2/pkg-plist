@@ -1,4 +1,5 @@
 etc/bash_completion.d/icinga2
+@sample %%ETCDIR%%/conf.d/app.conf.sample
 @sample %%ETCDIR%%/conf.d/commands.conf.sample
 @sample %%ETCDIR%%/conf.d/downtimes.conf.sample
 @sample %%ETCDIR%%/conf.d/groups.conf.sample
@@ -37,6 +38,7 @@ etc/bash_completion.d/icinga2
 @sample %%ETCDIR%%/scripts/mail-service-notification.sh.sample
 @sample %%ETCDIR%%/zones.conf.sample
 %%ETCDIR%%/zones.d/README
+lib/icinga2/sbin/icinga2
 lib/icinga2/libbase.so
 lib/icinga2/libchecker.so
 lib/icinga2/libcli.so
@@ -63,40 +65,44 @@ sbin/icinga2
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/1-about.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/10-icinga2-client.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/11-agent-based-checks.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/12-distributed-monitoring-ha.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/13-addons-plugins.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/14-alternative-frontends.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/15-livestatus.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/10-monitoring-remote-systems.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/11-%%ICINGA2USER%%2-client.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/12-agent-based-checks.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/13-distributed-monitoring-ha.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/14-addons-plugins.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/15-features.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/16-troubleshooting.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/17-upgrading-icinga-2.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/18-migrating-from-icinga-1x.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/19-language-reference.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/17-upgrading-%%ICINGA2USER%%-2.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/18-language-reference.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/19-library-reference.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/2-getting-started.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/20-library-reference.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/21-debug.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/22-appendix.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/20-script-debugger.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/21-development.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/22-migrating-from-%%ICINGA2USER%%-1x.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/23-appendix.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/3-monitoring-basics.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/4-configuring-icinga-2.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/4-configuring-%%ICINGA2USER%%-2.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/5-advanced-topics.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/6-object-types.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/7-icinga-template-library.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/7-%%ICINGA2USER%%-template-library.md
 %%PORTDOCS%%%%DOCSDIR%%/markdown/8-cli-commands.md
-%%PORTDOCS%%%%DOCSDIR%%/markdown/9-monitoring-remote-systems.md
+%%PORTDOCS%%%%DOCSDIR%%/markdown/9-icinga2-api.md
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/mysql.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.0.2.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.1.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.2.0.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.3.0.sql
+%%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.4.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/pgsql.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.0.2.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.1.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.2.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.3.0.sql
+%%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.4.0.sql
 @sample %%DATADIR%%/include/command-icinga.conf.sample
 @sample %%DATADIR%%/include/command-nscp-local.conf.sample
 @sample %%DATADIR%%/include/command-plugins-manubulon.conf.sample
+@sample %%DATADIR%%/include/command-plugins-windows.conf.sample
 @sample %%DATADIR%%/include/command-plugins.conf.sample
 @sample %%DATADIR%%/include/command.conf.sample
 %%DATADIR%%/include/hangman
@@ -114,7 +120,6 @@ sbin/icinga2
 @sample %%DATADIR%%/include/plugins-contrib.d/vmware.conf.sample
 @sample %%DATADIR%%/include/plugins-contrib.d/web.conf.sample
 @sample %%DATADIR%%/include/timeperiod.conf.sample
-@sample %%DATADIR%%/include/command-plugins-windows.conf.sample
 %%DATADIR%%/include/windows-plugins
 @dir %%ETCDIR%%/pki
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/cache/icinga2
