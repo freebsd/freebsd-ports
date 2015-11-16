@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bhyve-rc
-PORTVERSION=	2
+PORTVERSION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none
