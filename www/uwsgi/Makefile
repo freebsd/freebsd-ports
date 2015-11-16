@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_PYTHON=	concurrent distutils
+USE_PYTHON=	distutils
 USE_RC_SUBR=	uwsgi
 
 OPTIONS_DEFINE=	DEBUG
