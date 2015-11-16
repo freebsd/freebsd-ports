@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	putty
-PORTVERSION=	0.65
+PORTVERSION=	0.66
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -45,9 +45,7 @@ MAKE_ARGS+=	GTK_CONFIG=:
 
 .if ${PORT_OPTIONS:MGSSAPI}
 _COMPAT=		-DSTATIC_GSSAPI
-.if ${OSVERSION} >= 900000
-LIB_DEPENDS+=		libkrb5support.so:${PORTSDIR}/security/krb5
-.endif
+USES+=		gssapi:mit
 .else
 _COMPAT=		-DNO_GSSAPI
 .endif
