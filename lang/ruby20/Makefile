@@ -40,6 +40,9 @@ USE_OPENSSL=	yes
 USES=		cpe execinfo tar:bzip2
 WRKSRC=		${RUBY_WRKSRC}
 
+NOT_FOR_ARCHS=	ia64
+NOT_FOR_ARCHS_REASON_ia64=	does not build
+
 RUBY_VER=		2.0
 USE_RUBY=		yes
 RUBY_NO_BUILD_DEPENDS=	yes
