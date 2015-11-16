@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gl2ps
-PORTVERSION=	1.3.8
-PORTREVISION=	1
+PORTVERSION=	1.3.9
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.geuz.org/gl2ps/src/
 EXTRACT_SUFX=	.tgz
