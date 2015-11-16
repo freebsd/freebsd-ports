@@ -1,4 +1,6 @@
 bin/compton
 bin/compton-trans
-etc/xdg/compton.sample.conf
+@sample etc/xdg/compton.conf.sample
 share/applications/compton.desktop
+share/icons/hicolor/48x48/apps/compton.png
+share/icons/hicolor/scalable/apps/compton.svg
