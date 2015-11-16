@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3eb0ccc2-8c6a-11e5-8519-005056ac623e">
+    <topic>strongswan -- authentication bypass vulnerability in the eap-mschapv2 plugin</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><lt>5.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Strongswan Release Notes reports:</p>
+	<blockquote cite="https://github.com/strongswan/strongswan/blob/master/NEWS">
+	  <p>Fixed an authentication bypass vulnerability in the eap-mschapv2 plugin that
+	    was caused by insufficient verification of the internal state when handling
+	    MSCHAPv2 Success messages received by the client.
+	    This vulnerability has been registered as CVE-2015-8023.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8023</cvename>
+      <url>ihttps://github.com/strongswan/strongswan/commit/453e204ac40dfff2e0978e8f84a5f8ff0cbc45e2</url>
+    </references>
+    <dates>
+      <discovery>2015-11-16</discovery>
+      <entry>2015-11-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="82b3ca2a-8c07-11e5-bd18-002590263bf5">
     <topic>moodle -- multiple vulnerabilities</topic>
     <affects>
