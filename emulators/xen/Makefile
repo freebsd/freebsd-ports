@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	xen
-PORTVERSION=	4.5.0
+PORTVERSION=	4.5.2
 CATEGORIES=	emulators
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Xen Hyvervisor meta port
 
 LICENSE=	GPLv2
