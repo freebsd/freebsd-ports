@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2cabfbab-8bfb-11e5-bd18-002590263bf5">
+    <topic>xen-kernel -- CPU lockup during exception delivery</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-156.html">
+	  <p>A malicious HVM guest administrator can cause a denial of service.
+	    Specifically, prevent use of a physical CPU for a significant,
+	    perhaps indefinite period.  If a host watchdog (Xen or dom0) is in
+	    use, this can lead to a watchdog timeout and consequently a reboot
+	    of the host.  If another, innocent, guest, is configured with a
+	    watchdog, this issue can lead to a reboot of such a guest.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5307</cvename>
+      <cvename>CVE-2015-8104</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-156.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-10</discovery>
+      <entry>2015-11-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1886e195-8b87-11e5-90e7-b499baebfeaf">
     <topic>libpng buffer overflow in png_set_PLTE</topic>
     <affects>
