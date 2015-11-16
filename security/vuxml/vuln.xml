@@ -58,6 +58,44 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="82b3ca2a-8c07-11e5-bd18-002590263bf5">
+    <topic>moodle -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>moodle27</name>
+	<range><lt>2.7.11</lt></range>
+      </package>
+      <package>
+	<name>moodle28</name>
+	<range><lt>2.8.9</lt></range>
+      </package>
+      <package>
+	<name>moodle29</name>
+	<range><lt>2.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Moodle Release Notes report:</p>
+	<blockquote cite="https://docs.moodle.org/dev/Moodle_2.8.9_release_notes">
+	  <p>A number of security related issues were resolved.  Details of
+	    these issues will be released after a period of approximately one
+	    week to allow system administrators to safely update to the latest
+	    version.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.moodle.org/dev/Moodle_2.7.11_release_notes</url>
+      <url>https://docs.moodle.org/dev/Moodle_2.8.9_release_notes</url>
+      <url>https://docs.moodle.org/dev/Moodle_2.9.3_release_notes</url>
+    </references>
+    <dates>
+      <discovery>2015-11-09</discovery>
+      <entry>2015-11-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2cabfbab-8bfb-11e5-bd18-002590263bf5">
     <topic>xen-kernel -- CPU lockup during exception delivery</topic>
     <affects>
