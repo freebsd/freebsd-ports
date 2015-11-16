@@ -3,7 +3,7 @@
 
 PORTNAME=	pftop
 PORTVERSION=	0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
@@ -36,6 +36,11 @@ MAKE_ENV+=	__MAKE_CONF=/dev/null
 PLIST_FILES=	sbin/pftop man/man8/pftop.8.gz
 
 post-patch:
+.if ${OSVERSION} >= 1100000
+	@${ECHO_MSG} "===> Applying FairQ/Codel patches to ${PORTNAME}."
+	@${CAT} ${FILESDIR}/extra-patch-fairq_codel.diff | \
+		${PATCH} ${PATCH_ARGS}
+.endif
 	@${REINPLACE_CMD} -e 's|<sys/queue.h>|"${FILESDIR}/queue.h"|g' \
 	    ${WRKSRC}/engine.c
 	@${REINPLACE_CMD} -e 's|__dead|__dead2|g' ${WRKSRC}/sf-gencode.h
