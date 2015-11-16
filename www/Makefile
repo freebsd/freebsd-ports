@@ -538,6 +538,7 @@
     SUBDIR += mongrel2
     SUBDIR += moodle28
     SUBDIR += moodle29
+    SUBDIR += moodle30
     SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += multiwatch
