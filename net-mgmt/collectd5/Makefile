@@ -156,7 +156,7 @@ MODBUS_LIB_DEPENDS=		libmodbus.so:${PORTSDIR}/comms/libmodbus
 MODBUS_CONFIGURE_ENABLE=	modbus
 MODBUS_CONFIGURE_WITH=		libmodbus=${LOCALBASE}
 
-MONGODB_LIB_DEPENDS=		libmongoc.so:${PORTSDIR}/devel/mongo-c-driver
+MONGODB_LIB_DEPENDS=		libmongoc-1.0.so:${PORTSDIR}/devel/mongo-c-driver
 MONGODB_CONFIGURE_ENABLE=	write_mongodb
 MONGODB_CONFIGURE_WITH=		libmongoc=${LOCALBASE}
 
