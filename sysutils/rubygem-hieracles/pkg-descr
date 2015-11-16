@@ -1,0 +1,6 @@
+Hieracles is a command-line tool for analysis and deep examination 
+of Hiera paramaters in a Puppet setup. It's used internally at 
+Gandi.net and its first incarnation is strongly tied to Gandi 
+puppet architecture.
+
+WWW: https://github.com/Gandi/hieracles
