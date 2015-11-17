@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 LITE=		yes
-PKGNAMESUFFIX=	-lite
 
 MASTERDIR=	${.CURDIR}/../tshark
 COMMENT=	Powerful network analyzer/capture tool (lite package)
