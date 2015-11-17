@@ -99,27 +99,27 @@ sbin/icinga2
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.2.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.3.0.sql
 %%PGSQL%%%%DATADIR%%-ido-pgsql/schema/upgrade/2.4.0.sql
-@sample %%DATADIR%%/include/command-icinga.conf.sample
-@sample %%DATADIR%%/include/command-nscp-local.conf.sample
-@sample %%DATADIR%%/include/command-plugins-manubulon.conf.sample
-@sample %%DATADIR%%/include/command-plugins-windows.conf.sample
-@sample %%DATADIR%%/include/command-plugins.conf.sample
-@sample %%DATADIR%%/include/command.conf.sample
+%%DATADIR%%/include/command-icinga.conf
+%%DATADIR%%/include/command-nscp-local.conf
+%%DATADIR%%/include/command-plugins-manubulon.conf
+%%DATADIR%%/include/command-plugins-windows.conf
+%%DATADIR%%/include/command-plugins.conf
+%%DATADIR%%/include/command.conf
 %%DATADIR%%/include/hangman
 %%DATADIR%%/include/itl
 %%DATADIR%%/include/manubulon
 %%DATADIR%%/include/nscp
 %%DATADIR%%/include/plugins
 %%DATADIR%%/include/plugins-contrib
-@sample %%DATADIR%%/include/plugins-contrib.d/databases.conf.sample
-@sample %%DATADIR%%/include/plugins-contrib.d/ipmi.conf.sample
-@sample %%DATADIR%%/include/plugins-contrib.d/hardware.conf.sample
-@sample %%DATADIR%%/include/plugins-contrib.d/network-components.conf.sample
-@sample %%DATADIR%%/include/plugins-contrib.d/operating-system.conf.sample
-@sample %%DATADIR%%/include/plugins-contrib.d/virtualization.conf.sample
-@sample %%DATADIR%%/include/plugins-contrib.d/vmware.conf.sample
-@sample %%DATADIR%%/include/plugins-contrib.d/web.conf.sample
-@sample %%DATADIR%%/include/timeperiod.conf.sample
+%%DATADIR%%/include/plugins-contrib.d/databases.conf
+%%DATADIR%%/include/plugins-contrib.d/ipmi.conf
+%%DATADIR%%/include/plugins-contrib.d/hardware.conf
+%%DATADIR%%/include/plugins-contrib.d/network-components.conf
+%%DATADIR%%/include/plugins-contrib.d/operating-system.conf
+%%DATADIR%%/include/plugins-contrib.d/virtualization.conf
+%%DATADIR%%/include/plugins-contrib.d/vmware.conf
+%%DATADIR%%/include/plugins-contrib.d/web.conf
+%%DATADIR%%/include/timeperiod.conf
 %%DATADIR%%/include/windows-plugins
 @dir %%ETCDIR%%/pki
 @dir(%%ICINGA2USER%%,%%ICINGA2GROUP%%) /var/cache/icinga2
