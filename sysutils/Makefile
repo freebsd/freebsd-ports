@@ -832,6 +832,7 @@
     SUBDIR += reed
     SUBDIR += rej
     SUBDIR += relaxconf
+    SUBDIR += relaunchd
     SUBDIR += rename
     SUBDIR += renameutils
     SUBDIR += reoback

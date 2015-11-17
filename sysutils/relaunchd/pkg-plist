@@ -1,0 +1,10 @@
+etc/rc.d/launchd
+bin/launchctl
+sbin/launchd
+@dir /.launchd
+@dir etc/launchd
+@dir etc/launchd/agents
+@dir etc/launchd/daemons
+@dir share/launchd
+@dir share/launchd/agents
+@dir share/launchd/daemons
