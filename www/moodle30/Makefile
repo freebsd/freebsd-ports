@@ -3,6 +3,7 @@
 
 PORTNAME=	moodle
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable30/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
@@ -18,8 +19,8 @@ RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-in
 CONFLICTS=	moodle28-2.8.[0-9]* moodle29-2.9.[0-9]*
 
 USES=		tar:tgz
-USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
-		soap openssl simplexml spl dom json zip zlib hash opcache
+USE_PHP=	ctype curl dom gd hash iconv json mbstring opcache openssl pcre \
+		session simplexml soap spl tokenizer xml xmlrpc zip zlib
 WRKSRC=		${WRKDIR}/moodle
 
 OPTIONS_SINGLE=		BACKEND
@@ -28,27 +29,11 @@ OPTIONS_DEFINE=		LDAP MIMETEX
 OPTIONS_DEFAULT=	MYSQL
 MIMETEX_DESC=		mimeTeX filter functionality support
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysqli
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.endif
-
-.if ${PORT_OPTIONS:MMSSQL}
-USE_PHP+=	mssql
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
-
-.if ${PORT_OPTIONS:MMIMETEX}
-RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
-.endif
+MYSQL_USE=	mysql=client php=mysql
+PGSQL_USE=	php=pgsql
+MSSQL_USE=	php=mssql
+LDAP_USE=	php=ldap
+MIMETEX_RUN_DEPENDS=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
@@ -76,9 +61,9 @@ pre-install:
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${MOODLEDIR}
 	@${INSTALL} -d ${STAGEDIR}${PREFIX}/${MOODLEDATADIR}
-.if ${PORT_OPTIONS:MMIMETEX}
+
+do-install-MIMETEX-on:
 	${LN} -sf ${PREFIX}/www/mimetex/cgi-bin/mimetex.cgi \
 		${STAGEDIR}${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
-.endif
 
 .include <bsd.port.mk>
