@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	groonga
-PORTVERSION=	5.0.5
+PORTVERSION=	5.0.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -58,7 +58,7 @@ post-patch:
 		'/NGX_PID_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
-		${WRKSRC}/vendor/nginx-1.8.0/auto/install
+		${WRKSRC}/vendor/nginx-1.9.6/auto/install
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/groonga-httpd

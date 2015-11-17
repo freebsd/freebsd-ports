@@ -24,7 +24,9 @@ bin/groonga-benchmark
 %%ETCDIR%%/synonyms.tsv
 include/groonga/groonga.h
 include/groonga/groonga/command.h
+include/groonga/groonga/conf.h
 include/groonga/groonga/expr.h
+include/groonga/groonga/geo.h
 include/groonga/groonga/groonga.h
 include/groonga/groonga/ii.h
 include/groonga/groonga/nfkc.h
@@ -35,10 +37,13 @@ include/groonga/groonga/plugin.h
 include/groonga/groonga/portability.h
 include/groonga/groonga/request_canceler.h
 include/groonga/groonga/scorer.h
+include/groonga/groonga/thread.h
 include/groonga/groonga/token.h
 include/groonga/groonga/token_filter.h
 include/groonga/groonga/tokenizer.h
 include/groonga/groonga/util.h
+include/groonga/groonga/windows.h
+include/groonga/groonga/windows_event_logger.h
 lib/groonga/plugins/functions/vector.a
 lib/groonga/plugins/functions/vector.so
 lib/groonga/plugins/query_expanders/tsv.a
