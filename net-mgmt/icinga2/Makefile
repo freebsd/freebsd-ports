@@ -3,7 +3,7 @@
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	lme@FreeBSD.org
@@ -94,7 +94,6 @@ post-patch:
 
 pre-install:
 	${FIND} ${WRKSRC}/etc -type f -name "*.conf" -exec ${MV} {} {}.sample \;
-	${FIND} ${WRKSRC}/itl -type f -name "*.conf" -exec ${MV} {} {}.sample \;
 	${FIND} ${WRKSRC}/etc/icinga2/scripts -type f -name "*.sh" \
 		-exec ${MV} {} {}.sample \;
 
