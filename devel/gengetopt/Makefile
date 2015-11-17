@@ -10,9 +10,8 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for generating a C function which parses command line arguments
 
-LICENSE=	GPLv3
-
-INSTALL_WRKSRC=	${WRKSRC}/src
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 GNU_CONFIGURE=	yes
@@ -20,23 +19,16 @@ MAKE_JOBS_UNSAFE=yes
 
 CFLAGS+=	-D_GL_SYSTEM_GETOPT
 
+INSTALL_WRKSRC=	${WRKSRC}/src
+
 PORTDOCS=	*
 PORTEXAMPLES=	*
 INFO=		gengetopt
-
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS ChangeLog NEWS README THANKS TODO
-
-DOCSRCDIR2=	${WRKSRC}/doc
-DOCSDIR2=	${DOCSDIR}/doc
-DOC_FILES2=	index.html gengetopt.html
 
 DOC_EXAMPLES=	README.example cmdline1.c cmdline1.h cmdline2.c cmdline2.h \
 		main1.cc main2.c multiple_example.c sample1.ggo sample2.ggo
 TESTS_EXAMPLES=	test_manual_help.c test_manual_help_cmd.c \
 		test_manual_help_cmd.ggo test_manual_help_cmd.h
-
-.include <bsd.port.options.mk>
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
@@ -45,11 +37,13 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.info \
 		${STAGEDIR}${PREFIX}/${INFO_PATH}
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog NEWS \
+		README THANKS TODO doc/index.html doc/gengetopt.html \
+		${STAGEDIR}${DOCSDIR}
 
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for e in ${DOC_EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${e} ${STAGEDIR}${EXAMPLESDIR}
