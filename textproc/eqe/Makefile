@@ -10,6 +10,9 @@ MASTER_SITES=	http://rlehy.free.fr/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX equation editor
 
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/GPL.txt
+
 BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
@@ -18,6 +21,7 @@ BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 USES=		perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	src/eqe src/eqedit
 USE_TEX=	tex
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -34,6 +38,8 @@ post-install:
 	@pod2man ${WRKSRC}/doc/eqedit.pod ${WRKSRC}/doc/eqedit.1
 	${INSTALL_MAN} ${WRKSRC}/doc/eqe.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/eqedit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
