@@ -7,7 +7,7 @@ MASTER_SITES=	LOCAL/des
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	des@FreeBSD.org
 COMMENT=	Convenience package to install the compat8x libraries
 
 USES=		tar:xz
