@@ -3,7 +3,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	1.12.8
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
 		ftp://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
 		http://wireshark.zing.org/download/src/
+DISTNAME=	${DATADIR_NAME}-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	Powerful network analyzer/capture tool
@@ -21,6 +22,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS?=	wireshark-qt5-[0-9]*
+
+DATADIR_NAME=	wireshark
+DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 
 GNU_CONFIGURE=	yes
 USES=		alias cpe gmake libtool perl5 pkgconfig python:build tar:bzip2
@@ -39,9 +43,11 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
     reordercap captype
 .if defined(LITE)
+PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
     			${x:tu}_MAN="@comment $x not installed "
 CONFIGURE_ARGS+=	--enable-$x=no
+OPTIONS_EXCLUDE+=	RTP SNMP GEOIP LUA ADNS CARES
 .else
 PLIST_SUB+=		${x:tu}=bin/$x \
     			${x:tu}_MAN=""
