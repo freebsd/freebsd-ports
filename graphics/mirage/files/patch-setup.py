@@ -1,6 +1,6 @@
---- setup.py.orig	2008-03-27 13:05:28.000000000 +0900
-+++ setup.py	2009-07-24 05:13:46.000000000 +0900
-@@ -56,9 +56,9 @@
+--- setup.py.orig	2011-02-13 22:40:05 UTC
++++ setup.py
+@@ -58,9 +58,9 @@ setup(name='Mirage',
  			],
  		py_modules = ['mirage'],
  		ext_modules = [Extension(name='imgfuncs', sources=['imgfuncs.c']), 
