@@ -58,6 +58,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="68847b20-8ddc-11e5-b69c-c86000169601">
+    <topic>gdm -- lock screen bypass when holding escape key</topic>
+    <affects>
+      <package>
+	<name>gdm</name>
+	<range><lt>3.16.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ray Strode reports:</p>
+	<blockquote cite="https://mail.gnome.org/archives/ftp-release-list/2015-November/msg00074.html">
+	  <p>CVE-2015-7496 - lock screen bypass when holding escape key.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7496</cvename>
+      <url>https://mail.gnome.org/archives/ftp-release-list/2015-November/msg00074.html</url>
+      <url>https://bugzilla.gnome.org/show_bug.cgi?id=758032</url>
+    </references>
+    <dates>
+      <discovery>2015-11-12</discovery>
+      <entry>2015-11-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3eb0ccc2-8c6a-11e5-8519-005056ac623e">
     <topic>strongswan -- authentication bypass vulnerability in the eap-mschapv2 plugin</topic>
     <affects>
