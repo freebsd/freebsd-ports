@@ -1,6 +1,6 @@
---- configure.orig	Mon Aug 20 04:22:22 2001
-+++ configure	Thu Oct 23 12:10:52 2003
-@@ -1258,15 +1258,15 @@
+--- configure.orig	2008-06-15 10:23:18 UTC
++++ configure
+@@ -1258,15 +1258,15 @@ int main (int argc, char *argv[])
      }
    else
      {
