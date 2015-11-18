@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	8.3.0
+PORTVERSION=	8.5.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		LOCAL/ehaupt
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
 		libmatroska.so:${PORTSDIR}/multimedia/libmatroska
 
-USES=		compiler:c++11-lib gettext iconv pkgconfig tar:xz
+USES=		compiler:c++11-lib iconv pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
@@ -31,38 +31,33 @@ CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
 		--with-boost-system=boost_system \
 		--with-boost-regex=boost_regex
 
-OPTIONS_DEFINE=	WXGTK FLAC QT5
-OPTIONS_DEFAULT=WXGTK FLAC
+BROKEN_sparc64=	does not install
 
-BROKEN_sparc64=	Does not install on sparc64
-
+OPTIONS_DEFINE=	CURL FLAC NLS QT5
+OPTIONS_DEFAULT=	FLAC QT5
 OPTIONS_SUB=	yes
-WXGTK_USES=	desktop-file-utils shared-mime-info
-WXGTK_USE=	wx=3.0
-WXGTK_CONFIGURE_ENABLE=	gui
-WX_UNICODE=	yes
-WX_CONF_ARGS=	absolute
+
+CURL_DESC=	Online update checks using curl
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_WITH=	curl
 
 FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
 FLAC_CONFIGURE_WITH=	flac
 
-.if defined(BATCH)
+NLS_USES=	gettext
+NLS_CONFIGURE_WITH=	gettext
+
+QT5_DESC=	Build and install GUI application (Qt 5)
+QT5_USES=	desktop-file-utils shared-mime-info
+QT5_USE=	QT5=buildtools_build,core,quick,widgets
+QT5_CONFIGURE_ON=	--enable-qt
+QT5_CONFIGURE_OFF=	--disable-qt
+
+.if defined(PACKAGE_BUILDING)
 MAKE_ENV+=	V=1
 .endif
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWXGTK}
-INSTALLS_ICONS=	yes
-.endif
-
-.if ${PORT_OPTIONS:MQT5}
-USE_QT5=	buildtools core widgets quick
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--enable-qt --with-curl
-.else
-CONFIGURE_ARGS+=	--disable-qt --without-curl
-.endif
 
 .if ${OSVERSION} < 1000000
 post-patch:
@@ -80,13 +75,20 @@ post-patch:
 		${WRKSRC}/src/merge/cluster_helper.h \
 		${WRKSRC}/src/merge/generic_packetizer.cpp \
 		${WRKSRC}/src/merge/output_control.cpp \
-		${WRKSRC}/src/merge/timecode_factory.h \
+		${WRKSRC}/src/merge/timestamp_factory.h \
 		${WRKSRC}/src/output/p_dirac.cpp \
 		${WRKSRC}/src/output/p_hevc.cpp \
 		${WRKSRC}/src/output/p_mpeg4_p10.cpp \
 		${WRKSRC}/src/output/p_tta.cpp \
 		${WRKSRC}/src/output/p_wavpack.cpp
 .endif
+
+post-configure-NLS-off:
+# https://github.com/mbunkus/mkvtoolnix/issues/1501
+# Fixed in 8.6.0
+	@${REINPLACE_CMD} -e 's|LIBINTL_LIBS =|#LIBINTL_LIBS =|g' ${WRKSRC}/build-config
+	@${REINPLACE_CMD} -e 's|#define HAVE_LIBINTL_H|//#define HAVE_LIBINTL_H|g' ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e 's|S["LIBINTL_LIBS"]=|#S["LIBINTL_LIBS"]=|g' ${WRKSRC}/config.status
 
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV:NPREFIX=*} ./drake ${_MAKE_JOBS})
