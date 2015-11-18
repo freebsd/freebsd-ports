@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hieracles
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ MAINTAINER=	mose@gandi.net
 COMMENT=	CLI tool for Hiera parameters visualisation and analysis
 
 LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-deep_merge>=1.0.1:${PORTSDIR}/devel/rubygem-deep_merge
 
 NO_ARCH=	yes
 USE_RUBY=	yes
