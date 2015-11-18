@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediastreamer
-PORTVERSION=	2.12.0
-PORTREVISION=	1
+PORTVERSION=	2.12.1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/mediastreamer
 
