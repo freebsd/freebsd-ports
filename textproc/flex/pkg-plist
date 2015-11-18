@@ -9,7 +9,6 @@ man/man1/flex.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/ONEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/flex.pdf
 %%NLS%%share/locale/ca/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/da/LC_MESSAGES/flex.mo
