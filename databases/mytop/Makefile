@@ -19,7 +19,6 @@ GH_ACCOUNT=	jzawodn
 GH_TAGNAME=	437f2ef
 
 NO_ARCH=	yes
-CONFLICTS=	mariadb-scripts-[0-9]*
 
 USES+=		perl5
 USE_PERL5=	configure
