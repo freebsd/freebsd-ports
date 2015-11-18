@@ -1,5 +1,5 @@
---- ksmp3play.h.orig	Sun Nov  4 20:25:57 2001
-+++ ksmp3play.h	Sun Nov  4 20:26:42 2001
+--- ksmp3play.h.orig	2008-04-14 00:22:27 UTC
++++ ksmp3play.h
 @@ -29,8 +29,9 @@
  #include <errno.h>
  #include <time.h>
@@ -11,7 +11,7 @@
  #else
  struct option
  {
-@@ -43,6 +44,7 @@
+@@ -43,6 +44,7 @@ struct option
  # define required_argument 1
  # define optional_argument 2
  #endif
