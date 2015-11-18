@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fs
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.4
 CATEGORIES=	devel python
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	pyfilesystem
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	douglas@douglasthrift.net
@@ -13,7 +12,8 @@ COMMENT=	Python filesystem abstraction
 
 LICENSE=	ISCL
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
