@@ -22,6 +22,7 @@ DOS2UNIX_FILES=	CMake/FindFFmpeg.cmake \
 		CorsixTH/CMakeLists.txt \
 		CorsixTH/Src/iso_fs.cpp
 CMAKE_ARGS=	-DWITH_LUAJIT=OFF
+CFLAGS+=	-I${ICONV_PREFIX}/include
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CorsixTH
