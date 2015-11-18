@@ -3906,7 +3906,6 @@
     SUBDIR += py-argh
     SUBDIR += py-argparse
     SUBDIR += py-args
-    SUBDIR += py-asn1
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
     SUBDIR += py-astroid
@@ -4185,6 +4184,7 @@
     SUBDIR += py-pudb
     SUBDIR += py-px
     SUBDIR += py-py
+    SUBDIR += py-pyasn1
     SUBDIR += py-pyasn1-modules
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
