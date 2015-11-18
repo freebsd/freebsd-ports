@@ -113,8 +113,12 @@ COMMANDS+=	clang \
 		clang++ \
 		clang-check \
 		clang-cpp \
-		clang-format
-MAN1SRCS+=	clang.1
+		clang-format \
+		scan-build \
+		scan-view
+MAN1SRCS+=	clang.1 \
+		scan-build.1
+CLANG_PATTERN=	(clang|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|six.py|-analyzer)
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
@@ -130,8 +134,8 @@ PORTDOCS+=	lld
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
-COMMANDS+=	argdumper \
-		lldb \
+COMMANDS+=	lldb \
+		lldb-argdumper \
 		lldb-mi \
 		lldb-server
 _USES_PYTHON=	python
@@ -160,6 +164,10 @@ NOT_FOR_ARCH=	ia64
 .if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
 # Evil hack around gcc48 not providing a usable c++11 environment on 9.x
 PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLLDB} && ${PYTHON_REL} >= 3000
+BROKEN=	LLDB does not build with Python 3
 .endif
 
 post-extract-CLANG-on:
@@ -257,9 +265,9 @@ build-plist:
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	awk '{ \
-	    if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
-	    if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} \
+	    if ($$0 ~ /(lldb)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print} \
