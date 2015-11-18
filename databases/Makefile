@@ -180,9 +180,6 @@
     SUBDIR += luasql-postgres
     SUBDIR += luasql-sqlite3
     SUBDIR += mantis
-    SUBDIR += mariadb-client
-    SUBDIR += mariadb-scripts
-    SUBDIR += mariadb-server
     SUBDIR += mariadb100-client
     SUBDIR += mariadb100-server
     SUBDIR += mariadb55-client
