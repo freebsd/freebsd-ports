@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	4.0.1
 CATEGORIES=	databases
-MASTER_SITES=	http://cdn.bitbucket.org/mmottl/sqlite3-ocaml/downloads/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PORTNAME}-ocaml-${PORTVERSION}
 
@@ -23,6 +21,10 @@ USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
 USE_OCAMLFIND_PLIST=	yes
+USE_GITHUB=		yes
+GH_ACCOUNT=		mmottl
+GH_PROJECT=		sqlite3-ocaml
+GH_TAGNAME=		8638339
 HAS_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS=		--destdir "${STAGEDIR}" \
