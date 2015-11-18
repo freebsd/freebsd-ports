@@ -776,6 +776,7 @@
     SUBDIR += py-execnet
     SUBDIR += py-ezjailremote
     SUBDIR += py-filelike
+    SUBDIR += py-freenas.cli
     SUBDIR += py-glances
     SUBDIR += py-halite
     SUBDIR += py-honcho
