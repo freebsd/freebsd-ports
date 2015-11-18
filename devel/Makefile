@@ -4020,6 +4020,7 @@
     SUBDIR += py-foolscap
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
+    SUBDIR += py-freenas.utils
     SUBDIR += py-freezegun
     SUBDIR += py-fs
     SUBDIR += py-fsm
