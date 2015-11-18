@@ -7941,3 +7941,4 @@ devel/py-experimental.cssselect||2015-11-15|The only consumer of this port switc
 databases/mariadb-client||2015-11-18|Vulnerable, no updates expected, use mariadb55 or mariadb100 instead
 databases/mariadb-server||2015-11-18|Vulnerable, no updates expected, use mariadb55 or mariadb100 instead
 databases/mariadb-scripts||2015-11-18|Vulnerable, no updates expected, use mariadb55 or mariadb100 instead
+devel/py-asn1|devel/py-pyasn1|2015-11-18|Renamed to match upstream naming

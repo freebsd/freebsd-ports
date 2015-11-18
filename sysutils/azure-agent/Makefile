@@ -2,6 +2,7 @@
 
 PORTNAME=	azure-agent
 PORTVERSION=	${GH_TAGNAME}.11
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	gjb@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		sudo:${PORTSDIR}/security/sudo \
 		bash:${PORTSDIR}/shells/bash \
-		${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1
+		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:${PORTSDIR}/devel/py-pyasn1
 
 NO_BUILD=	yes
 USES=		python:2
