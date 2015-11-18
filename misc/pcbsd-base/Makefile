@@ -22,8 +22,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		git:${PORTSDIR}/devel/git \
 		beadm:${PORTSDIR}/sysutils/beadm \
 		samba41>=0:${PORTSDIR}/net/samba41 \
-		foomatic-db>=0:${PORTSDIR}/print/foomatic-db \
-		foomatic-db-engine>=0:${PORTSDIR}/print/foomatic-db-engine \
 		xorg>=0:${PORTSDIR}/x11/xorg \
 		xf86-input-synaptics>=0:${PORTSDIR}/x11-drivers/xf86-input-synaptics \
 		xf86-video-intel>=0:${PORTSDIR}/x11-drivers/xf86-video-intel \
@@ -61,9 +59,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		cursor-jimmac-theme>=0:${PORTSDIR}/x11-themes/cursor-jimmac-theme \
 		cuse4bsd-kmod>=0:${PORTSDIR}/multimedia/cuse4bsd-kmod \
 		webcamd>=0:${PORTSDIR}/multimedia/webcamd \
-		gutenprint>=0:${PORTSDIR}/print/gutenprint \
-		gutenprint-cups>=0:${PORTSDIR}/print/gutenprint-cups \
-		gutenprint-foomatic>=0:${PORTSDIR}/print/gutenprint-foomatic \
 		system-config-printer:${PORTSDIR}/print/system-config-printer \
 		numlockx:${PORTSDIR}/x11/numlockx \
 		pciutils>=0:${PORTSDIR}/sysutils/pciutils \
