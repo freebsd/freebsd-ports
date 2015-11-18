@@ -565,7 +565,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR} "! -name *\.bak"
 #
 #				  Installs all directories and files from ${WRKSRC}/doc
-#				  to ${DOCSDIR} except sed backup files.
+#				  to ${DOCSDIR} except sed(1) backup files.
 #
 # MANPREFIX		- The directory prefix for ${MAN<sect>} and ${MLINKS}.
 #				  Default: ${PREFIX}
@@ -898,7 +898,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # PLIST_SUB		- List of "variable=value" pair for substitution in ${PLIST}
 #				  Default: see below
 #
-# SUB_FILES		- Files that should be passed through sed and redirected to
+# SUB_FILES		- Files that should be passed through sed(1) and redirected to
 #				  ${WRKDIR}.
 #				- For each file specified in SUB_FILES, there must be a
 #				  corresponding file in ${FILESDIR} whose suffix is ".in". For
@@ -2815,7 +2815,7 @@ clean:
 .if defined(IGNORE_SILENT)
 IGNORECMD=	${DO_NADA}
 .else
-IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}.;exit 1
+IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}. | ${FMT} 75 79 ; exit 1
 .endif
 
 _TARGETS=	check-sanity fetch checksum extract patch configure all build \
