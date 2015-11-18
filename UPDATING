@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151118:
+  AFFECTS: users of mail/rmilter
+  AUTHOR: vsevolod@FreeBSD.org
+
+  Rmilter now has switched from user postfix to user _rmilter for security
+  and sanity purposes. You might want to fix the ownership of
+  /var/run/rmilter to user _rmilter and group mail.
+
 20151105:
   AFFECTS: users of deskutils/egroupware
   AUTHOR: danilo@FreeBSD.org
