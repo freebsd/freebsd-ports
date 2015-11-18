@@ -74,6 +74,13 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${PYTHON_REL} < 3500
+PYOEXTENSION=	pyo
+.else
+PYOEXTENSION=	opt-1.pyc
+.endif
+PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION}
+
 UNAME_R!=	${UNAME} -r
 UNAME_M!=	${UNAME} -m
 
