@@ -50,7 +50,7 @@
 +
 +	pagesize = sysconf(_SC_PAGESIZE);
 +	numpages = sysconf(_SC_PHYS_PAGES);
-+	if (sysctlbyname("vm.swap_total", &swap, &len, 0x0, 0) == -1)
++	if (sysctlbyname("vm.swap_total", &swap, &len, NULL, 0) == -1)
 +		swap = 0;
 +
 +	ud.ram = pagesize / 1024 * numpages;
