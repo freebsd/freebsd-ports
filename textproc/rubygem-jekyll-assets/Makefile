@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-assets
-PORTVERSION=	1.0.0
+PORTVERSION=	2.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,13 +12,10 @@ COMMENT=	Create javascript/CSS assets for Jekyll sites
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-fastimage>=1.6:${PORTSDIR}/graphics/rubygem-fastimage \
-		rubygem-jekyll2>=2:${PORTSDIR}/www/rubygem-jekyll2 \
-		rubygem-mini_magick>=4.1:${PORTSDIR}/graphics/rubygem-mini_magick \
-		rubygem-sass>=3.2:${PORTSDIR}/textproc/rubygem-sass \
-		rubygem-sprockets>=2.10:${PORTSDIR}/devel/rubygem-sprockets \
-		rubygem-sprockets-helpers>=0:${PORTSDIR}/devel/rubygem-sprockets-helpers \
-		rubygem-sprockets-sass>=0:${PORTSDIR}/devel/rubygem-sprockets-sass
+RUN_DEPENDS=	rubygem-fastimage>=1.8:${PORTSDIR}/graphics/rubygem-fastimage \
+		rubygem-jekyll>=3.0.0:${PORTSDIR}/www/rubygem-jekyll \
+		rubygem-sprockets3>=3.3:${PORTSDIR}/devel/rubygem-sprockets3 \
+		rubygem-sprockets-helpers>=1.2:${PORTSDIR}/devel/rubygem-sprockets-helpers
 
 NO_ARCH=	yes
 USE_RUBY=	yes
