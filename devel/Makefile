@@ -653,6 +653,7 @@
     SUBDIR += git-cola
     SUBDIR += git-extras
     SUBDIR += git-gui
+    SUBDIR += git-lfs
     SUBDIR += git-lite
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
