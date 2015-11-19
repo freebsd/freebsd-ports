@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python API documentation generation tool
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
 USE_PYTHON=	distutils
@@ -33,6 +34,8 @@ post-patch:
 post-install:
 	(cd ${WRKSRC}/man && ${INSTALL_MAN} epydoc.1 epydocgui.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1)
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
