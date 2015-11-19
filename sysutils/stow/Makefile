@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stow
-PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTVERSION=	2.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -25,8 +24,9 @@ OPTIONS_DEFINE=	DOCS
 
 INFO=		stow
 PORTDOCS=	*
+NO_ARCH=	yes
 
-post-install:
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
