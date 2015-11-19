@@ -1,6 +1,6 @@
---- setup.py.orig	2015-06-06 09:03:01 UTC
+--- setup.py.orig	2015-11-15 23:06:39 UTC
 +++ setup.py
-@@ -58,26 +58,7 @@ packages=["networkx",
+@@ -59,27 +59,6 @@ packages=["networkx",
            "networkx.testing",
            "networkx.utils"]
  
@@ -24,7 +24,15 @@
 -    data.append((dd, glob(os.path.join(pp ,"*.gz"))))
 -    data.append((dd, glob(os.path.join(pp ,"*.mbox"))))
 -    data.append((dd, glob(os.path.join(pp ,"*.edgelist"))))
-+data = [ ]
- 
+-
  # add the tests
  package_data     = {
+     'networkx': ['tests/*.py'],
+@@ -131,7 +110,6 @@ if __name__ == "__main__":
+         download_url     = release.download_url,
+         classifiers      = release.classifiers,
+         packages         = packages,
+-        data_files       = data,
+         package_data     = package_data,
+         install_requires = install_requires,
+         test_suite       = 'nose.collector',
