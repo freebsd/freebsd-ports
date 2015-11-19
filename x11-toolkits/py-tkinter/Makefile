@@ -3,14 +3,14 @@
 
 PORTNAME=	tkinter
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Python-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Python bindings to the Tk widget set
+COMMENT=	Python bindings to the Tk widget set (Python ${PYTHON_VER})
 
 LICENSE=	PSFL
 
