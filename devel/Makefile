@@ -4228,7 +4228,6 @@
     SUBDIR += py-pytools
     SUBDIR += py-pytrie
     SUBDIR += py-pytz
-    SUBDIR += py-pytz3
     SUBDIR += py-pyutil
     SUBDIR += py-pyvisa
     SUBDIR += py-pyvisa-py
@@ -4475,6 +4474,7 @@
     SUBDIR += py3-dbus
     SUBDIR += py3-gobject3
     SUBDIR += py3-libpeas
+    SUBDIR += py3-pytz
     SUBDIR += py3-xdg
     SUBDIR += py_static_check
     SUBDIR += pybugz

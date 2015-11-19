@@ -1,0 +1,6 @@
+pytz brings the Olson tz database into Python. This library allows accurate and
+cross platform timezone calculations. It also solves the issue of ambiguous
+times at the end of daylight savings, which you can read more about in the
+Python Library Reference (datetime.tzinfo).
+
+WWW: http://pytz.sourceforge.net
