@@ -1,6 +1,15 @@
---- setup.py.orig	2015-06-12 20:31:00 UTC
+--- setup.py.orig	2015-09-10 14:42:44 UTC
 +++ setup.py
-@@ -1552,12 +1552,12 @@ if WIN32:
+@@ -147,7 +147,7 @@ nvenc4_ENABLED          = pkg_config_ok(
+ nvenc5_ENABLED          = pkg_config_ok("--exists", "nvenc5")
+ #elif os.path.exists("C:\\nvenc_3.0_windows_sdk")
+ #...
+-csc_opencl_ENABLED      = pkg_config_ok("--exists", "OpenCL") and check_pyopencl_AMD()
++csc_opencl_ENABLED      = pkg_config_ok("--exists", "OpenCL")
+ memoryview_ENABLED      = PYTHON3
+ 
+ warn_ENABLED            = True
+@@ -1560,12 +1560,12 @@ if WIN32:
  else:
      #OSX and *nix:
      scripts += ["scripts/xpra", "scripts/xpra_launcher"]
@@ -15,7 +24,7 @@
      add_data_files("share/appdata",       ["xdg/xpra.appdata.xml"])
      html5_dir = "share/xpra/www"
  
-@@ -1680,7 +1680,7 @@ if html5_ENABLED:
+@@ -1688,7 +1688,7 @@ if html5_ENABLED:
  
  if printing_ENABLED and os.name=="posix":
      #"/usr/lib/cups/backend":
