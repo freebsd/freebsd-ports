@@ -7942,3 +7942,4 @@ databases/mariadb-client||2015-11-18|Vulnerable, no updates expected, use mariad
 databases/mariadb-server||2015-11-18|Vulnerable, no updates expected, use mariadb55 or mariadb100 instead
 databases/mariadb-scripts||2015-11-18|Vulnerable, no updates expected, use mariadb55 or mariadb100 instead
 devel/py-asn1|devel/py-pyasn1|2015-11-18|Renamed to match upstream naming
+devel/py-pytz3|devel/py3-pytz|2015-11-19|Port Renamed

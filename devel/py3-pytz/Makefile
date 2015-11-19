@@ -1,4 +1,4 @@
-# Created by: Khairil Yusof <kaeru@inigo-tech.com>
+# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pytz
@@ -8,13 +8,14 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	World Timezone Definitions for Python
 
 LICENSE=	MIT
 
-USES=		python tar:bzip2
+USES=		python:3 tar:bzip2
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|=True|=False|' ${WRKSRC}/${PYSETUP}
