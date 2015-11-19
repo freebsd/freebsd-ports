@@ -4472,6 +4472,7 @@
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
     SUBDIR += py-zope.viewlet
+    SUBDIR += py3-Jinja2
     SUBDIR += py3-babel
     SUBDIR += py3-dbus
     SUBDIR += py3-gobject3
