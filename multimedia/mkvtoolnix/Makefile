@@ -59,8 +59,8 @@ MAKE_ENV+=	V=1
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000000
 post-patch:
+.if ${OSVERSION} < 1000000
 	@${REINPLACE_CMD} -e 's|std::llround|llround|g' \
 		${WRKSRC}/src/common/hevc.cpp \
 		${WRKSRC}/src/common/mpeg4_p10.cpp \
@@ -82,6 +82,8 @@ post-patch:
 		${WRKSRC}/src/output/p_tta.cpp \
 		${WRKSRC}/src/output/p_wavpack.cpp
 .endif
+	${REINPLACE_CMD} -e '/LIBS="-lintl/s,-liconv,$$ICONV_LIBS,' \
+		${WRKSRC}/configure
 
 post-configure-NLS-off:
 # https://github.com/mbunkus/mkvtoolnix/issues/1501
