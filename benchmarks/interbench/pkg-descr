@@ -6,6 +6,4 @@ design or system configuration changes such as CPU, I/O scheduler and file
 system changes and options.  With careful benchmarking, different hardware
 can be compared.
 
-Requires linprocfs(5) to be mounted under /compat/linux/proc to run.
-
 WWW: http://users.on.net/~ckolivas/interbench/
