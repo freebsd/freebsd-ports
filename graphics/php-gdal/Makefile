@@ -26,7 +26,7 @@ USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USES=		gmake localbase tar:xz
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/swig/php
+WRKSRC_SUBDIR=	swig/php
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SWIG = swig/ s|$$|3.0|' ${WRKSRC}/../SWIGmake.base

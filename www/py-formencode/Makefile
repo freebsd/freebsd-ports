@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	formencode
-PORTVERSION=	1.2.6
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ LICENSE=	PSFL
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gettext-runtime:run python:2 zip
+USES=		gettext-runtime:run python zip
 USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

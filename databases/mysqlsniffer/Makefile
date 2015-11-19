@@ -4,15 +4,18 @@
 PORTNAME=	mysqlsniffer
 PORTVERSION=	1.2
 CATEGORIES=	databases
-MASTER_SITES=	http://hackmysql.com/code/
-DISTNAME=	mysqlsniffer
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	frederic.hardy@mageekbox.net
 COMMENT=	Tcpdump clone specifically for MySQL
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/${PORTNAME}
+
 PLIST_FILES=	bin/mysqlsniffer
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	daniel-nichter
+GH_PROJECT=	hackmysql.com
+GH_TAGNAME=	ddb6f92
 
 do-build:
 	${CC} ${CFLAGS} -lpcap -o ${WRKSRC}/${PORTNAME} \

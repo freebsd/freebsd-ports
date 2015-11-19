@@ -95,7 +95,9 @@
     SUBDIR += darkice
     SUBDIR += dcd
     SUBDIR += deadbeef
+    SUBDIR += deadbeef-jack-plugin
     SUBDIR += deadbeef-mpris-plugin
+    SUBDIR += deadbeef-mpris2-plugin
     SUBDIR += decibel-audio-player
     SUBDIR += deforaos-mixer
     SUBDIR += dekagen

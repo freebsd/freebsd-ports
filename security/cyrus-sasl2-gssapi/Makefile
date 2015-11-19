@@ -56,6 +56,10 @@ HEIMDAL_DESC=		Use Heimdal from ports
 HEIMDAL_USES=		gssapi:heimdal,flags
 HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
 			--with-gss_impl=heimdal
+HEIMDAL_PLIST_FILES=	lib/sasl2/libgs2.a \
+			lib/sasl2/libgs2.so \
+			lib/sasl2/libgs2.so.3 \
+			lib/sasl2/libgs2.so.3.0.0
 MIT_DESC=		Use MIT Kerberos V5
 MIT_USES=		gssapi:mit
 MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
@@ -67,13 +71,6 @@ PLIST_FILES=	lib/sasl2/libgssapiv2.a \
 		lib/sasl2/libgssapiv2.so.3.0.0
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MHEIMDAL}
-PLIST_FILES+=	lib/sasl2/libgs2.a \
-		lib/sasl2/libgs2.so \
-		lib/sasl2/libgs2.so.3 \
-		lib/sasl2/libgs2.so.3.0.0
-.endif
 
 .if ${OPENSSLBASE} == /usr
 CONFIGURE_ARGS+=--with-openssl=yes

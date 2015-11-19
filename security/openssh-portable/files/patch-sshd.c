@@ -1,3 +1,4 @@
+--- UTC
 r109683 | des | 2003-01-22 08:12:59 -0600 (Wed, 22 Jan 2003) | 7 lines
 Changed paths:
    M /head/crypto/openssh/sshd.c

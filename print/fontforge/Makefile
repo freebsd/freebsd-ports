@@ -77,6 +77,6 @@ pre-configure:
 		${SH} -c '. ./bootstrap.conf ; \
 		${LOCALBASE}/bin/libtoolize -i -c -q ; \
 		${LOCALBASE}/bin/gnulib-tool --aux-dir=config --m4-base=m4 --libtool --symlink --import $${gnulib_modules}' ; \
-		export LIBTOOLIZE=true ; ${LOCALBASE}/bin/autoreconf -s -i)
+		export LIBTOOLIZE=true ; ${AUTORECONF} -f -i)
 
 .include <bsd.port.mk>

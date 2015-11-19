@@ -14,6 +14,7 @@ COMMENT=	Pure-Perl Core-Only replacement for pkg-config
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 

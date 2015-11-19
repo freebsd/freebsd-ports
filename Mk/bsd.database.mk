@@ -101,7 +101,6 @@ WARNING+=	"DEFAULT_MYSQL_VER is defined, consider using DEFAULT_VERSIONS=mysql=$
 DEFAULT_MYSQL_VER?=	${MYSQL_DEFAULT:S/.//}
 # MySQL client version currently supported.
 MYSQL51_LIBVER=		16
-MYSQL53m_LIBVER=	16
 MYSQL55_LIBVER=		18
 MYSQL55m_LIBVER=	18
 MYSQL55p_LIBVER=	18
@@ -145,25 +144,16 @@ IGNORE=		cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is i
 .endif
 .endif
 
-.if (${MYSQL_VER} == "53m")
-_MYSQL_CLIENT=	databases/mariadb-client
-_MYSQL_SERVER=	databases/mariadb-server
-.elif (${MYSQL_VER} == "55m")
-_MYSQL_CLIENT=	databases/mariadb55-client
-_MYSQL_SERVER=	databases/mariadb55-server
-.elif (${MYSQL_VER} == "100m")
-_MYSQL_CLIENT=  databases/mariadb100-client
-_MYSQL_SERVER=  databases/mariadb100-server
-.elif (${MYSQL_VER} == "55p")
-_MYSQL_CLIENT=	databases/percona55-client
-_MYSQL_SERVER=	databases/percona55-server
-.elif (${MYSQL_VER} == "56p")
-_MYSQL_CLIENT=	databases/percona56-client
-_MYSQL_SERVER=	databases/percona56-server
+.if (${MYSQL_VER:C/[0-9]*//} == "m")
+_MYSQL_FLAVOUR=	mariadb
+.elif (${MYSQL_VER:C/[0-9]*//} == "p")
+_MYSQL_FLAVOUR=	percona
 .else
-_MYSQL_CLIENT=	databases/mysql${MYSQL_VER}-client
-_MYSQL_SERVER=	databases/mysql${MYSQL_VER}-server
+_MYSQL_FLAVOUR=	mysql
 .endif
+
+_MYSQL_CLIENT=	databases/${_MYSQL_FLAVOUR}${MYSQL_VER:C/[mp]//}-client
+_MYSQL_SERVER=	databases/${_MYSQL_FLAVOUR}${MYSQL_VER:C/[mp]//}-server
 
 # And now we are checking if we can use it
 .if defined(MYSQL${MYSQL_VER}_LIBVER)

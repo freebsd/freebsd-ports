@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sys-proctable
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 DISTVERSIONSUFFIX=	-universal-freebsd
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG

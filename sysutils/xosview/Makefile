@@ -2,28 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	xosview
-PORTVERSION=	1.16
-PORTREVISION=	2
+PORTVERSION=	1.17
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.pogo.org.uk/~mark/xosview/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical performance meter
 
+LICENSE=	BSD4CLAUSE GPLv2
+LICENSE_COMB=	multi
+
 ONLY_FOR_ARCHS=	amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	used i386-specific hardware resources
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	hills
+
 USE_XORG=	xpm
 USES=		gmake
-MAKE_ENV+=	PLATFORM=bsd MANDIR=${LOCALBASE}/man
-ALL_TARGET=	# empty
+MAKE_ENV=	OPTFLAGS="" PLATFORM=bsd MANDIR=${MANPREFIX}/man
+ALL_TARGET=	xosview
+
+DESKTOP_ENTRIES="XOsview" "" "" "xosview" "" ""
 
 do-configure:
-	@${CP} ${WRKSRC}/targets/freebsd-9.0 ${WRKSRC}/.config
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/.config
+	@${SED} -e '/CXX/s|^|#|' -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/targets/freebsd > ${WRKSRC}/.config
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${CP} ${WRKSRC}/Xdefaults ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XOsview
 
 .include <bsd.port.mk>

@@ -10,6 +10,10 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular IRC client with many features
 
+BROKEN=		size and checksum mismatch
+DEPRECATED=	Older than irc/irssi
+EXPIRATION_DATE=	2015-12-13
+
 LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20
 
 CONFLICTS=	irssi-0.8*

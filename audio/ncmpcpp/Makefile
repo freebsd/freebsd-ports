@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.6.7
+PORTVERSION=	0.7.0b1
 CATEGORIES=	audio
 MASTER_SITES=	http://ncmpcpp.rybczak.net/stable/
+DISTNAME=	ncmpcpp-0.7_beta1
 
 MAINTAINER=	yamagi@yamagi.org
 COMMENT=	ncurses mpd client, clone of ncmpc with some new features
@@ -15,7 +16,9 @@ LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
-USES=		compiler:c++11-lib iconv libtool ncurses pkgconfig tar:bzip2
+WRKSRC=	${WRKDIR}/ncmpcpp-0.7_beta1
+
+USES=		compiler:c++11-lib iconv libtool ncurses:port pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -50,11 +53,6 @@ VISUALIZER_BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 VISUALIZER_CONFIGURE_ENABLE=	visualizer
 
 .include <bsd.port.pre.mk>
-
-.if ${NCURSESBASE} == /usr
-# no need to use ncurses-config if we use ncurses from the base system
-CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
-.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${STAGEDIR}${PREFIX}/bin/

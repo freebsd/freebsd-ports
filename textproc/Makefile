@@ -1400,6 +1400,7 @@
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml
     SUBDIR += rubygem-jekyll-assets
+    SUBDIR += rubygem-jekyll-assets1
     SUBDIR += rubygem-jekyll-feed
     SUBDIR += rubygem-jekyll-gist
     SUBDIR += rubygem-jekyll-mentions
@@ -1435,6 +1436,7 @@
     SUBDIR += rubygem-rdiscount
     SUBDIR += rubygem-rdtool
     SUBDIR += rubygem-redcarpet
+    SUBDIR += rubygem-reverse_markdown
     SUBDIR += rubygem-ri_cal
     SUBDIR += rubygem-rich
     SUBDIR += rubygem-rmmseg-cpp

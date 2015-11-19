@@ -25,6 +25,8 @@ RASTER_USES=	ghostscript:run
 RASTER_USE=	TEX=latex,dvipsk
 RASTER_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
+MAKE_JOBS_UNSAFE=	yes
+
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/texvc ${STAGEDIR}${PREFIX}/bin
 

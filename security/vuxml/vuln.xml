@@ -58,6 +58,372 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="68847b20-8ddc-11e5-b69c-c86000169601">
+    <topic>gdm -- lock screen bypass when holding escape key</topic>
+    <affects>
+      <package>
+	<name>gdm</name>
+	<range><lt>3.16.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ray Strode reports:</p>
+	<blockquote cite="https://mail.gnome.org/archives/ftp-release-list/2015-November/msg00074.html">
+	  <p>CVE-2015-7496 - lock screen bypass when holding escape key.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7496</cvename>
+      <url>https://mail.gnome.org/archives/ftp-release-list/2015-November/msg00074.html</url>
+      <url>https://bugzilla.gnome.org/show_bug.cgi?id=758032</url>
+    </references>
+    <dates>
+      <discovery>2015-11-12</discovery>
+      <entry>2015-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3eb0ccc2-8c6a-11e5-8519-005056ac623e">
+    <topic>strongswan -- authentication bypass vulnerability in the eap-mschapv2 plugin</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><lt>5.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Strongswan Release Notes reports:</p>
+	<blockquote cite="https://github.com/strongswan/strongswan/blob/master/NEWS">
+	  <p>Fixed an authentication bypass vulnerability in the eap-mschapv2 plugin that
+	    was caused by insufficient verification of the internal state when handling
+	    MSCHAPv2 Success messages received by the client.
+	    This vulnerability has been registered as CVE-2015-8023.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8023</cvename>
+      <url>https://github.com/strongswan/strongswan/commit/453e204ac40dfff2e0978e8f84a5f8ff0cbc45e2</url>
+    </references>
+    <dates>
+      <discovery>2015-11-16</discovery>
+      <entry>2015-11-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="82b3ca2a-8c07-11e5-bd18-002590263bf5">
+    <topic>moodle -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>moodle27</name>
+	<range><lt>2.7.11</lt></range>
+      </package>
+      <package>
+	<name>moodle28</name>
+	<range><lt>2.8.9</lt></range>
+      </package>
+      <package>
+	<name>moodle29</name>
+	<range><lt>2.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Moodle Release Notes report:</p>
+	<blockquote cite="https://docs.moodle.org/dev/Moodle_2.8.9_release_notes">
+	  <p>A number of security related issues were resolved.  Details of
+	    these issues will be released after a period of approximately one
+	    week to allow system administrators to safely update to the latest
+	    version.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.moodle.org/dev/Moodle_2.7.11_release_notes</url>
+      <url>https://docs.moodle.org/dev/Moodle_2.8.9_release_notes</url>
+      <url>https://docs.moodle.org/dev/Moodle_2.9.3_release_notes</url>
+    </references>
+    <dates>
+      <discovery>2015-11-09</discovery>
+      <entry>2015-11-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2cabfbab-8bfb-11e5-bd18-002590263bf5">
+    <topic>xen-kernel -- CPU lockup during exception delivery</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-156.html">
+	  <p>A malicious HVM guest administrator can cause a denial of service.
+	    Specifically, prevent use of a physical CPU for a significant,
+	    perhaps indefinite period.  If a host watchdog (Xen or dom0) is in
+	    use, this can lead to a watchdog timeout and consequently a reboot
+	    of the host.  If another, innocent, guest, is configured with a
+	    watchdog, this issue can lead to a reboot of such a guest.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5307</cvename>
+      <cvename>CVE-2015-8104</cvename>
+      <url>http://xenbits.xen.org/xsa/advisory-156.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-10</discovery>
+      <entry>2015-11-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1886e195-8b87-11e5-90e7-b499baebfeaf">
+    <topic>libpng buffer overflow in png_set_PLTE</topic>
+    <affects>
+      <package>
+       <name>png</name>
+       <range><lt>1.6.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>libpng reports:</p>
+      <blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/12/2">
+       <p>CVE for a vulnerability in libpng, all versions, in the
+       png_set_PLTE/png_get_PLTE functions.  These functions failed to check for
+       an out-of-range palette when reading or writing PNG files with a bit_depth
+       less than 8.  Some applications might read the bit depth from the IHDR
+       chunk and allocate memory for a 2^N entry palette, while libpng can return
+       a palette with up to 256 entries even when the bit depth is less than 8.</p>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/12/2</url>
+      <cvename>CVE-2015-8126</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-15</discovery>
+      <entry>2015-11-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="547fbd98-8b1f-11e5-b48b-bcaec565249c">
+    <topic>flash -- multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.548</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb15-28.html">
+	  <p>These updates resolve a type confusion vulnerability that
+	    could lead to code execution (CVE-2015-7659).</p>
+
+	  <p>These updates resolve a security bypass vulnerability that
+	    could be exploited to write arbitrary data to the file
+	    system under user permissions (CVE-2015-7662).</p>
+
+	  <p>These updates resolve use-after-free vulnerabilities that
+	    could lead to code execution (CVE-2015-7651, CVE-2015-7652,
+	    CVE-2015-7653, CVE-2015-7654, CVE-2015-7655, CVE-2015-7656,
+	    CVE-2015-7657, CVE-2015-7658, CVE-2015-7660, CVE-2015-7661,
+	    CVE-2015-7663, CVE-2015-8042, CVE-2015-8043, CVE-2015-8044,
+	    CVE-2015-8046).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb15-28.html</url>
+      <cvename>CVE-2015-7651</cvename>
+      <cvename>CVE-2015-7652</cvename>
+      <cvename>CVE-2015-7653</cvename>
+      <cvename>CVE-2015-7654</cvename>
+      <cvename>CVE-2015-7655</cvename>
+      <cvename>CVE-2015-7656</cvename>
+      <cvename>CVE-2015-7657</cvename>
+      <cvename>CVE-2015-7658</cvename>
+      <cvename>CVE-2015-7659</cvename>
+      <cvename>CVE-2015-7660</cvename>
+      <cvename>CVE-2015-7661</cvename>
+      <cvename>CVE-2015-7662</cvename>
+      <cvename>CVE-2015-7663</cvename>
+      <cvename>CVE-2015-8043</cvename>
+      <cvename>CVE-2015-8044</cvename>
+      <cvename>CVE-2015-8046</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-10</discovery>
+      <entry>2015-11-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f0b9049f-88c4-11e5-aed7-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>46.0.2490.86</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/11/stable-channel-update.html">
+	  <p>[520422] High CVE-2015-1302: Information leak in PDF viewer.
+	    Credit to Rob Wu.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1302</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/11/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-10</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="851a0eea-88aa-11e5-90e7-b499baebfeaf">
+    <topic>MySQL - Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>mariadb-client</name>
+       <range><lt>5.3.13</lt></range>
+      </package>
+      <package>
+       <name>mariadb-server</name>
+       <range><lt>5.3.13</lt></range>
+      </package>
+      <package>
+       <name>mariadb55-client</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mariadb55-server</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mariadb100-client</name>
+       <range><lt>10.0.22</lt></range>
+      </package>
+      <package>
+       <name>mariadb100-server</name>
+       <range><lt>10.0.22</lt></range>
+      </package>
+      <package>
+       <name>mysql55-client</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mysql55-server</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>mysql56-client</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+      <package>
+       <name>mysql56-server</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+      <package>
+       <name>percona55-client</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>percona55-server</name>
+       <range><lt>5.5.46</lt></range>
+      </package>
+      <package>
+       <name>percona56-client</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+      <package>
+       <name>percona56-server</name>
+       <range><lt>5.6.27</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Oracle reports:</p>
+       <blockquote cite="http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html">
+       <p>Critical Patch Update: MySQL Server, version(s) 5.5.45 and prior, 5.6.26 and prior</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html</url>
+      <cvename>CVE-2015-4802</cvename>
+      <cvename>CVE-2015-4807</cvename>
+      <cvename>CVE-2015-4815</cvename>
+      <cvename>CVE-2015-4826</cvename>
+      <cvename>CVE-2015-4830</cvename>
+      <cvename>CVE-2015-4836</cvename>
+      <cvename>CVE-2015-4858</cvename>
+      <cvename>CVE-2015-4861</cvename>
+      <cvename>CVE-2015-4870</cvename>
+      <cvename>CVE-2015-4913</cvename>
+      <cvename>CVE-2015-4792</cvename>
+      <url>https://mariadb.com/kb/en/mariadb/mariadb-5546-release-notes/</url>
+      <url>https://mariadb.com/kb/en/mariadb/mariadb-10022-release-notes/</url>
+      <url>https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.46-37.5.html</url>
+      <url>https://www.percona.com/doc/percona-server/5.6/release-notes/Percona-Server-5.6.27-75.0.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-10</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b665668a-91db-4f13-8113-9e4b5b0e47f7">
+    <topic>jenkins -- remote code execution via unsafe deserialization</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.638</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>1.625.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Developers report:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-11-11">
+	  <p>Unsafe deserialization allows unauthenticated remote attackers to
+	    run arbitrary code on the Jenkins master.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-11-11</url>
+      <url>https://jenkins-ci.org/content/mitigating-unauthenticated-remote-code-execution-0-day-jenkins-cli</url>
+      <url>http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/#thefix</url>
+    </references>
+    <dates>
+      <discovery>2015-11-06</discovery>
+      <entry>2015-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="71af4ded-8864-11e5-af1b-001999f8d30b">
     <topic>owncloudclient -- Improper validation of certificates when using self-signed certificates</topic>
     <affects>

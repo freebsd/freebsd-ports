@@ -193,6 +193,10 @@
     SUBDIR += py-qt4-gui
     SUBDIR += py-sexy
     SUBDIR += py-tkinter
+    SUBDIR += py32-tkinter
+    SUBDIR += py33-tkinter
+    SUBDIR += py34-tkinter
+    SUBDIR += py35-tkinter
     SUBDIR += py-tktreectrl
     SUBDIR += py-traitsbackendwx
     SUBDIR += py-traitsgui

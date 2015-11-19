@@ -32,4 +32,7 @@ CONFIGURE_ARGS+=	--with-kwallet=${KDE4_PREFIX}
 ALL_TARGET=	kwallet-lib
 INSTALL_TARGET=	install-kwallet-lib
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+
 .include <bsd.port.post.mk>

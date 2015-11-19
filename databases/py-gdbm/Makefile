@@ -3,14 +3,14 @@
 
 PORTNAME=	gdbm
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases python
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Python-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Python bindings to the GNU dbm library
+COMMENT=	Python bindings to the GNU dbm library (Python ${PYTHON_VER})
 
 LICENSE=	PSFL
 

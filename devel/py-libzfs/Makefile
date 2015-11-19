@@ -34,8 +34,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:${PORTSDIR}/devel/py-enum34
 IGNORE=	requires kernel source files in ${SRC_BASE}
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1000000
-IGNORE=	This module requires at least FreeBSD 10
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000
+IGNORE=	This module requires at least FreeBSD 10.2
 .endif
 
 .include <bsd.port.post.mk>

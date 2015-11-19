@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twiki
-PORTVERSION=	5.1.4
-PORTREVISION=	1
+PORTVERSION=	6.0.1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TWiki%20for%20all%20Platforms/${DISTNAME} \
@@ -44,7 +43,7 @@ post-extract:
 post-patch:
 	${SED} -i "" -e "s|/home/httpd/twiki|${WWWDIR}|g" \
 		${WRKSRC}/lib/TWiki.spec \
-		${WRKSRC}/twiki_httpd_conf.txt
+		${WRKSRC}/misc/twiki_httpd_conf.txt
 	${FIND} ${WRKSRC} -name \*.orig -delete
 
 .include "${.CURDIR}/bsd.twiki.mk"

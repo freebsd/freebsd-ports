@@ -7,4 +7,4 @@ to work with local files. Differences in path formats between platforms are
 abstracted away, and you can write code that sand-boxes any changes to a given
 directory.
 
-WWW: http://code.google.com/p/pyfilesystem/
+WWW: http://pyfilesystem.org/

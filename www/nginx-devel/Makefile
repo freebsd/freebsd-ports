@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.9.6
+PORTVERSION=	1.9.7
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -325,7 +325,7 @@ USES+=	gssapi:base,flags
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_LDAP}
 # WWW: https://github.com/kvspb/nginx-auth-ldap
-GIT_HTTP_AUTH_LDAP_VERSION=	928856aa95
+GIT_HTTP_AUTH_LDAP_VERSION=	be8ff8eecb
 GH_ACCOUNT+=	kvspb:http_auth_ldap
 GH_PROJECT+=	nginx-auth-ldap:http_auth_ldap
 GH_TAGNAME+=	${GIT_HTTP_AUTH_LDAP_VERSION}:http_auth_ldap

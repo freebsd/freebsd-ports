@@ -1,34 +1,14 @@
---- psgml.el.orig	2012-08-04 11:43:47.000000000 +0900
-+++ psgml.el	2012-08-04 11:43:51.000000000 +0900
-@@ -381,7 +381,7 @@
- (put 'sgml-system-path 'sgml-type 'file-list)
+--- psgml.el.orig	2015-11-12 14:12:58.516938000 +0900
++++ psgml.el	2015-11-12 14:13:03.188835000 +0900
+@@ -52,7 +52,7 @@
+ 
+ ;;; Code:
  
- (defvar sgml-public-map (or (sgml-parse-colon-path (getenv "SGML_PATH"))
--			    '("%S" "@prefix@/share/sgml/%o/%c/%d" ))
-+			    '("%S" "/usr/local/share/sgml/%o/%c/%d" ))
-   "*Mapping from public identifiers to file names.
- This is a list of possible file names.  To find the file for a public
- identifier the elements of the list are used one at the time from the
-@@ -407,15 +407,15 @@
- (defvar sgml-catalog-files (or (delete nil
- 				       (sgml-parse-colon-path
- 					(getenv "SGML_CATALOG_FILES")))
--			       '("catalog" "@prefix@/share/sgml/catalog"
--			         "@prefix@/share/xml/catalog"))
-+			       '("catalog" "/usr/local/share/sgml/catalog"
-+			         "/usr/local/share/xml/catalog"))
-   "*List of catalog entry files.
- The files are in the format defined in the SGML Open Draft Technical
- Resolution on Entity Management.")
- (put 'sgml-catalog-files 'sgml-type 'file-list)
+-(defconst psgml-version "1.3.2"
++(defconst psgml-version "1.4.0"
+   "Version of psgml package.")
  
--(defvar sgml-ecat-files '("ECAT" "~/sgml/ECAT" "@prefix@/share/sgml/ECAT"
--			  "@prefix@/share/xml/ECAT")
-+(defvar sgml-ecat-files '("ECAT" "~/sgml/ECAT" "/usr/local/share/sgml/ECAT"
-+			  "/usr/local/share/xml/ECAT")
-   "*List of catalog files for PSGML.")
- (put 'sgml-ecat-files 'sgml-type 'file-list)
- 
+ (defconst psgml-maintainer-address "lenst@lysator.liu.se")
 @@ -724,9 +724,9 @@
  
  (defun sgml-markup (entry text)

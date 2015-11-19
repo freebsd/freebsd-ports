@@ -1,7 +1,7 @@
 Sample configuration files for Apache and NGinx have been installed in:
 %%EXAMPLESDIR%%
 
-Be sure to enable PHP and rewrite support in your browser.
+Be sure to enable PHP and rewrite support in your web server.
 
 Now create a configuration token:
 cd %%WWWDIR%% && ./bin/icingacli setup token create --config=%%ETCDIR%%

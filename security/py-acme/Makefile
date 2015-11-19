@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	acme
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.0.dev20151104
 CATEGORIES=	security python
@@ -12,7 +13,7 @@ COMMENT=	ACME implementation
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>0:${PORTSDIR}/devel/py-asn1 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>0:${PORTSDIR}/devel/py-pyasn1 \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=0.8:${PORTSDIR}/security/py-cryptography \
 		${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:${PORTSDIR}/devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}ndg_httpsclient>=0.4.0:${PORTSDIR}/net/py-ndg_httpsclient \

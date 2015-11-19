@@ -180,9 +180,6 @@
     SUBDIR += luasql-postgres
     SUBDIR += luasql-sqlite3
     SUBDIR += mantis
-    SUBDIR += mariadb-client
-    SUBDIR += mariadb-scripts
-    SUBDIR += mariadb-server
     SUBDIR += mariadb100-client
     SUBDIR += mariadb100-server
     SUBDIR += mariadb55-client
@@ -726,6 +723,10 @@
     SUBDIR += py-flask-sqlalchemy
     SUBDIR += py-forgetsql
     SUBDIR += py-gdbm
+    SUBDIR += py32-gdbm
+    SUBDIR += py33-gdbm
+    SUBDIR += py34-gdbm
+    SUBDIR += py35-gdbm
     SUBDIR += py-geoalchemy
     SUBDIR += py-geoalchemy2
     SUBDIR += py-hiredis
@@ -769,6 +770,10 @@
     SUBDIR += py-sqlalchemy-migrate
     SUBDIR += py-sqlalchemy06
     SUBDIR += py-sqlite3
+    SUBDIR += py32-sqlite3
+    SUBDIR += py33-sqlite3
+    SUBDIR += py34-sqlite3
+    SUBDIR += py35-sqlite3
     SUBDIR += py-sqlite3dbm
     SUBDIR += py-sqlkit
     SUBDIR += py-sqlobject

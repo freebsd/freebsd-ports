@@ -6893,7 +6893,6 @@ textproc/sgmltools-lite||2014-09-01|Not staged
 textproc/sml-fxp||2014-09-01|Not staged
 textproc/tei-guidelines-p3||2014-09-01|Not staged
 textproc/tei-p3||2014-09-01|Not staged
-textproc/xalan-c||2014-09-01|Not staged
 vietnamese/vntex||2014-09-01|Not staged
 vietnamese/vnxfonts||2014-09-01|Not staged
 vietnamese/xvnkb||2014-09-01|Not staged
@@ -7936,3 +7935,12 @@ databases/mysql51-scripts||2015-11-10|Has expired: EOL upstream, use mysql55 or 
 databases/mysql51-server||2015-11-10|Has expired: EOL upstream, use mysql55 or mysql56 instead
 databases/p5-DBD-mysql51|databases/p5-DBD-mysql|2015-11-10|Has expired: EOL upstream, use databases/p5-DBD-mysql instead
 databases/py-MySQLdb51||2015-11-10|Has expired: EOL upstream, use databases/py-MySQLdb instead
+deskutils/steadyflow||2015-11-13|Has expired: No new releases for years, consider using net/uget
+net/py-smb|net/py-pysmb|2015-11-14|Renamed to match upstream naming
+devel/py-asn1-modules|devel/py-pyasn1-modules|2015-11-14|Renamed to match upstream naming
+devel/py-experimental.cssselect||2015-11-15|The only consumer of this port switched to www/py-cssselect
+databases/mariadb-client||2015-11-18|Vulnerable, no updates expected, use mariadb55 or mariadb100 instead
+databases/mariadb-server||2015-11-18|Vulnerable, no updates expected, use mariadb55 or mariadb100 instead
+databases/mariadb-scripts||2015-11-18|Vulnerable, no updates expected, use mariadb55 or mariadb100 instead
+devel/py-asn1|devel/py-pyasn1|2015-11-18|Renamed to match upstream naming
+devel/py-pytz3|devel/py3-pytz|2015-11-19|Port Renamed

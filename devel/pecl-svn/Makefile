@@ -16,6 +16,9 @@ LICENSE=	PHP301
 
 LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion17
 
+DEPRECATED=	Depends on deprecated subversion17
+EXPIRATION_DATE=2015-12-29
+
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes

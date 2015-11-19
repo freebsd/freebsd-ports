@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pip
-PORTVERSION=	7.0.3
+PORTVERSION=	7.1.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Tool for installing and managing Python packages
 
 LICENSE=	MIT
@@ -27,7 +27,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest \
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-DOCS_MAKE_ENV=		HOME=${WRKDIR}
+DOCS_PORTDOCS=	*
+DOCS_VARS=	PYDISTUTILS_BUILD_TARGET=build_sphinx \
+		PYDISTUTILS_BUILDARGS="-n --all-files --fresh-env"
 
 USES=		python shebangfix
 USE_GITHUB=	yes
@@ -37,22 +39,12 @@ SHEBANG_FILES=	pip/__init__.py
 
 GH_ACCOUNT=	pypa
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-PYDISTUTILS_BUILD_TARGET+=	build_sphinx -n --all-files --fresh-env
-.endif
-
-post-install:
-#	${RM} ${STAGEDIR}${PREFIX}/bin/pip2
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/build/sphinx/html && \
 	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -name objects.inv")
-.endif
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+do-test:
+	cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

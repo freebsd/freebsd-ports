@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycerberus
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,8 @@ COMMENT=	Highly flexible, no magic input validation library
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

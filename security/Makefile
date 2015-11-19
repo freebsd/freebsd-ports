@@ -112,6 +112,7 @@
     SUBDIR += easy-rsa
     SUBDIR += easypg
     SUBDIR += elixir-comeonin
+    SUBDIR += elixir-comeonin_i18n
     SUBDIR += elixir-jose
     SUBDIR += engine_pkcs11
     SUBDIR += erlang-jose
@@ -122,6 +123,8 @@
     SUBDIR += fakebo
     SUBDIR += fakeident
     SUBDIR += fakeroot
+    SUBDIR += fastd
+    SUBDIR += fastd-devel
     SUBDIR += fbopenssl
     SUBDIR += fcheck
     SUBDIR += fcrackzip
@@ -310,6 +313,7 @@
     SUBDIR += libssh2
     SUBDIR += libtasn1
     SUBDIR += libtomcrypt
+    SUBDIR += libuecc
     SUBDIR += libwhisker
     SUBDIR += libyubikey
     SUBDIR += libzrtpcppcore

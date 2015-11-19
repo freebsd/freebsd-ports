@@ -12,6 +12,7 @@ COMMENT=	Perl interface to Amazon EC2 services
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-AnyEvent-CacheDNS>=0.08:${PORTSDIR}/dns/p5-AnyEvent-CacheDNS \
 		p5-AnyEvent-HTTP>=2.15:${PORTSDIR}/www/p5-AnyEvent-HTTP \

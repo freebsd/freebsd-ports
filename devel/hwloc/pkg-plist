@@ -33,7 +33,7 @@ include/hwloc/rename.h
 lib/libhwloc.a
 lib/libhwloc.so
 lib/libhwloc.so.5
-lib/libhwloc.so.5.5.0
+lib/libhwloc.so.5.6.7
 libdata/pkgconfig/hwloc.pc
 man/man1/hwloc-annotate.1.gz
 man/man1/hwloc-assembler-remote.1.gz
@@ -45,9 +45,11 @@ man/man1/hwloc-diff.1.gz
 man/man1/hwloc-distances.1.gz
 man/man1/hwloc-distrib.1.gz
 man/man1/hwloc-info.1.gz
+man/man1/hwloc-ls.1.gz
 man/man1/hwloc-patch.1.gz
 man/man1/hwloc-ps.1.gz
 man/man1/lstopo.1.gz
+man/man1/lstopo-no-graphics.1.gz
 man/man3/HWLOC_API_VERSION.3.gz
 man/man3/HWLOC_CPUBIND_NOMEMBIND.3.gz
 man/man3/HWLOC_CPUBIND_PROCESS.3.gz
@@ -77,7 +79,7 @@ man/man3/HWLOC_OBJ_CORE.3.gz
 man/man3/HWLOC_OBJ_GROUP.3.gz
 man/man3/HWLOC_OBJ_MACHINE.3.gz
 man/man3/HWLOC_OBJ_MISC.3.gz
-man/man3/HWLOC_OBJ_NODE.3.gz
+man/man3/HWLOC_OBJ_NUMANODE.3.gz
 man/man3/HWLOC_OBJ_OSDEV_BLOCK.3.gz
 man/man3/HWLOC_OBJ_OSDEV_COPROC.3.gz
 man/man3/HWLOC_OBJ_OSDEV_DMA.3.gz
@@ -85,9 +87,9 @@ man/man3/HWLOC_OBJ_OSDEV_GPU.3.gz
 man/man3/HWLOC_OBJ_OSDEV_NETWORK.3.gz
 man/man3/HWLOC_OBJ_OSDEV_OPENFABRICS.3.gz
 man/man3/HWLOC_OBJ_OS_DEVICE.3.gz
+man/man3/HWLOC_OBJ_PACKAGE.3.gz
 man/man3/HWLOC_OBJ_PCI_DEVICE.3.gz
 man/man3/HWLOC_OBJ_PU.3.gz
-man/man3/HWLOC_OBJ_SOCKET.3.gz
 man/man3/HWLOC_OBJ_SYSTEM.3.gz
 man/man3/HWLOC_OBJ_TYPE_MAX.3.gz
 man/man3/HWLOC_RESTRICT_FLAG_ADAPT_DISTANCES.3.gz
@@ -339,6 +341,7 @@ man/man3/hwloc_topology_diff_type_e.3.gz
 man/man3/hwloc_topology_diff_u.3.gz
 man/man3/hwloc_topology_discovery_support.3.gz
 man/man3/hwloc_topology_dup.3.gz
+man/man3/hwloc_topology_export_synthetic.3.gz
 man/man3/hwloc_topology_export_xml.3.gz
 man/man3/hwloc_topology_export_xmlbuffer.3.gz
 man/man3/hwloc_topology_flags_e.3.gz
@@ -349,9 +352,9 @@ man/man3/hwloc_topology_get_complete_nodeset.3.gz
 man/man3/hwloc_topology_get_depth.3.gz
 man/man3/hwloc_topology_get_flags.3.gz
 man/man3/hwloc_topology_get_online_cpuset.3.gz
-man/man3/hwloc_topology_get_support.3.gz
 man/man3/hwloc_topology_get_topology_cpuset.3.gz
 man/man3/hwloc_topology_get_topology_nodeset.3.gz
+man/man3/hwloc_topology_get_userdata.3.gz
 man/man3/hwloc_topology_ignore_all_keep_structure.3.gz
 man/man3/hwloc_topology_ignore_type.3.gz
 man/man3/hwloc_topology_ignore_type_keep_structure.3.gz
@@ -368,6 +371,7 @@ man/man3/hwloc_topology_set_flags.3.gz
 man/man3/hwloc_topology_set_fsroot.3.gz
 man/man3/hwloc_topology_set_pid.3.gz
 man/man3/hwloc_topology_set_synthetic.3.gz
+man/man3/hwloc_topology_set_userdata.3.gz
 man/man3/hwloc_topology_set_userdata_export_callback.3.gz
 man/man3/hwloc_topology_set_userdata_import_callback.3.gz
 man/man3/hwloc_topology_set_xml.3.gz
@@ -409,8 +413,10 @@ man/man3/hwlocality_object_types.3.gz
 man/man3/hwlocality_objects.3.gz
 man/man3/hwlocality_opencl.3.gz
 man/man3/hwlocality_openfabrics.3.gz
+man/man3/hwlocality_syntheticexport.3.gz
 man/man3/hwlocality_tinker.3.gz
 man/man3/hwlocality_xmlexport.3.gz
 man/man7/hwloc.7.gz
+%%CAIRO%%share/applications/lstopo.desktop
 share/hwloc/hwloc-valgrind.supp
 share/hwloc/hwloc.dtd

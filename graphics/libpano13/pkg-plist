@@ -21,8 +21,8 @@ include/pano13/ptutils.h
 include/pano13/queryfeature.h
 include/pano13/version.h
 lib/libpano13.so
-lib/libpano13.so.2
-lib/libpano13.so.2.0.0
+lib/libpano13.so.3
+lib/libpano13.so.3.0.0
 libdata/pkgconfig/libpano13.pc
 man/man1/PTAInterpolate.1.gz
 man/man1/PTblender.1.gz

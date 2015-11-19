@@ -6,9 +6,8 @@ DISTVERSION=	14.09
 PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cjr@cruwe.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	R support for Emacsen
 
 LICENSE=	GPLv2
@@ -16,7 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	R:${PORTSDIR}/math/R
 
 USE_EMACS=	yes
-USES=		gmake
+USES=		gmake tar:tgz
 
 OPTIONS_DEFINE=	DOCS
 

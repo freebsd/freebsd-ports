@@ -10,7 +10,8 @@ MASTER_SITES=	http://www.pleyades.net/pawm/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Puto Amo Window Manager
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/GPL
 
 USE_XORG=	x11 xft xrandr xrender xpm
 USES=		cmake pkgconfig ninja tar:bzip2
@@ -21,14 +22,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lXext -lXrender
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		'/"\/etc"/s|^|#| ; \
 		 /"-O2"/s|^|#| ; \
 		 /LINK_DIRECTORIES/s|\.|| ; \
 		 /INSTALL/s| /etc| etc|' ${WRKSRC}/CMakeLists.txt
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ii in AUTHORS Changelog.old INSTALL README TODO
 	${INSTALL_DATA} ${WRKSRC}/${ii} ${STAGEDIR}${DOCSDIR}
 .endfor

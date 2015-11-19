@@ -2,82 +2,57 @@
 # $FreeBSD$
 
 PORTNAME=	audacious
-PORTVERSION=	3.6.2
+PORTVERSION=	3.7
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Media player based on BMP and XMMS
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libmcs.so:${PORTSDIR}/devel/libmcs \
-		libmowgli.so:${PORTSDIR}/devel/libmowgli
-
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake tar:bzip2 desktop-file-utils gettext-tools compiler:c++11-lib
+USES=		compiler:c++11-lib desktop-file-utils gettext-tools gmake \
+	pkgconfig tar:bzip2
 USE_XORG=	x11 sm
-USE_GNOME=	gtk30 libxml2
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALLS_ICONS=	yes
 
-CONFIGURE_ARGS=	--disable-chardet --with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
-OPTIONS_DEFINE=	DBUS ICONV NLS EXECINFO SSE2
-OPTIONS_DEFAULT=DBUS ICONV NLS EXECINFO SSE2
+OPTIONS_MULTI=	TOOLKITS
+OPTIONS_MULTI_TOOLKITS=	GTK2 QT5
+OPTIONS_DEFINE=	DBUS ICONV NLS EXECINFO
+OPTIONS_DEFAULT=DBUS GTK2 ICONV NLS EXECINFO
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+ICONV_USES=	iconv
+GTK2_USE=	gnome=gtk20
+GTK2_IMPLIES=	DBUS
+GTK2_CONFIGURE_ENABLE=	gtk
+QT5_USE=	qt5=core,gui,widgets
+QT5_CONFIGURE_ENABLE=	qt
+QT5_IMPLIES=	DBUS
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_OFF=	--disable-nls
+NLS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile
+EXECINFO_USES=	execinfo
+OPTIONS_SUB=	yes
 EXECINFO_DESC=	Build with libexecinfo support
-SSE2_DESC=	Build with SSE2 instruction set
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-CONFIGURE_ARGS+=--enable-dbus
-PLIST_SUB+=	WITH_DBUS=""
-.else
-CONFIGURE_ARGS+=--disable-dbus
-PLIST_SUB+=	WITH_DBUS="@comment "
-.endif
-
-.if  ${PORT_OPTIONS:MEXECINFO} || exists(${LOCALBASE}/lib/libexecinfo.so)
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
-
-.if  ${PORT_OPTIONS:MICONV} || exists(${LOCALBASE}/lib/libiconv.so)
-USES+=		iconv
-.endif
-
-.if  ${PORT_OPTIONS:MNLS}
-USES+=		gettext-runtime
-CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if  empty(PORT_OPTIONS:MSSE2)
-CONFIGURE_ARGS+=--disable-sse2
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile
 .if  ${PORT_OPTIONS:MEXECINFO} || exists(${LOCALBASE}/lib/libexecinfo.so)
-	@${REINPLACE_CMD} 's|$${REGEX_LIBS}|& -L${LOCALBASE}/lib -lexecinfo|' \
+	@${REINPLACE_CMD} 's|-lm |-lm -L${LOCALBASE}/lib -lexecinfo |' \
 		${WRKSRC}/src/audacious/Makefile
 	@${REINPLACE_CMD} 's|-laudcore|-laudcore -L${LOCALBASE}/lib -lexecinfo|' \
 		${WRKSRC}/audacious.pc.in
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/audacious
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudcore.so.3.0.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudgui.so.3.0.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudtag.so.2.0.0
-.if ${PORT_OPTIONS:MDBUS}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/audtool
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/aud*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*
 
 .include <bsd.port.mk>

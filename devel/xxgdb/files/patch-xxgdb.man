@@ -1,6 +1,6 @@
---- xxgdb.man.orig	1994-12-02 17:40:19.000000000 -0800
-+++ xxgdb.man	2014-03-26 12:27:51.559896216 -0700
-@@ -29,7 +29,8 @@
+--- xxgdb.man.orig	1994-12-03 01:40:19 UTC
++++ xxgdb.man
+@@ -29,7 +29,8 @@ state of the program when the core dump
  .LP
  The name of the debugger invoked by \fIxxgdb\fP is, by default, gdb, but
  it can be overridden with the environment variable XXGDB_DEBUGGER or with

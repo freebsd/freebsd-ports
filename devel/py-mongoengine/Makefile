@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongoengine
-PORTVERSION=	0.8.7
+PORTVERSION=	0.10.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,9 @@ COMMENT=	Object-Document-Mapper for working with MongoDB
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=2.5:${PORTSDIR}/databases/pymongo
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}rednose>0:${PORTSDIR}/devel/py-rednose
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=2.7:${PORTSDIR}/databases/pymongo
 
 USES=		python
 USE_PYTHON=	autoplist distutils

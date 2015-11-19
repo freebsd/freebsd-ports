@@ -13,6 +13,8 @@ COMMENT=	PDO driver for Apache Cassandra
 LICENSE=	APACHE20
 
 BROKEN=		fails to compile
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
 
 LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 

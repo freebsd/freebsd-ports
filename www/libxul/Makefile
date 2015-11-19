@@ -3,6 +3,7 @@
 
 PORTNAME=	libxul
 DISTVERSION=	38.3.0
+PORTREVISION=	1
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build2/source
@@ -76,10 +77,6 @@ RUN_DEPENDS+=	gstreamer1-libav>=1.2.4_1:${PORTSDIR}/multimedia/gstreamer1-libav
 
 .if ${PORT_OPTIONS:MGTK3}
 BUILD_DEPENDS+=	gtk3>=3.14.6:${PORTSDIR}/x11-toolkits/gtk30
-.endif
-
-.if ${PORT_OPTIONS:MTEST}
-BROKEN=		stage-package fails with ValueError: no path specified
 .endif
 
 post-patch:

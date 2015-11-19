@@ -1,0 +1,17 @@
+--- psgml-api.texi.orig	2005-03-05 16:23:40 UTC
++++ psgml-api.texi
+@@ -7,11 +7,10 @@
+ @c $Id: psgml-api.texi,v 1.2 1999/12/03 17:29:39 lenst Exp $
+ 
+ @ifinfo
+-@format
+-START-INFO-DIR-ENTRY
++@dircategory The Emacs editor and associated tools
++@direntry
+ * PSGML-API: (psgml-api).  PSGML, the API documentation.
+-END-INFO-DIR-ENTRY
+-@end format
++@end direntry
+ @end ifinfo
+ 
+ @ifinfo

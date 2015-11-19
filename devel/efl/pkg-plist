@@ -246,6 +246,7 @@ include/eina-1/eina/eina_accessor.h
 include/eina-1/eina/eina_alloca.h
 include/eina-1/eina/eina_array.h
 include/eina-1/eina/eina_benchmark.h
+include/eina-1/eina/eina_bezier.h
 include/eina-1/eina/eina_binbuf.h
 include/eina-1/eina/eina_binshare.h
 include/eina-1/eina/eina_clist.h
@@ -268,6 +269,7 @@ include/eina-1/eina/eina_inline_crc.x
 include/eina-1/eina/eina_inline_f16p16.x
 include/eina-1/eina/eina_inline_f32p32.x
 include/eina-1/eina/eina_inline_f8p24.x
+include/eina-1/eina/eina_inline_file.x
 include/eina-1/eina/eina_inline_fp.x
 include/eina-1/eina/eina_inline_hash.x
 include/eina-1/eina/eina_inline_inlist.x
@@ -1075,5 +1077,6 @@ share/evas/filters/lua/color.lua
 %%NLS%%share/locale/sl/LC_MESSAGES/efl.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/efl.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/efl.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/efl.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/efl.mo
 share/mime/packages/edje.xml

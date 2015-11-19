@@ -430,6 +430,7 @@
     SUBDIR += elixir-calendar
     SUBDIR += elixir-combine
     SUBDIR += elixir-conform
+    SUBDIR += elixir-connection
     SUBDIR += elixir-coverex
     SUBDIR += elixir-csv
     SUBDIR += elixir-decimal
@@ -652,6 +653,7 @@
     SUBDIR += git-cola
     SUBDIR += git-extras
     SUBDIR += git-gui
+    SUBDIR += git-lfs
     SUBDIR += git-lite
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
@@ -3905,8 +3907,6 @@
     SUBDIR += py-argh
     SUBDIR += py-argparse
     SUBDIR += py-args
-    SUBDIR += py-asn1
-    SUBDIR += py-asn1-modules
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
     SUBDIR += py-astroid
@@ -3996,11 +3996,11 @@
     SUBDIR += py-efl
     SUBDIR += py-eggtestinfo
     SUBDIR += py-enum34
+    SUBDIR += py-envisage
     SUBDIR += py-epdb
     SUBDIR += py-epsilon
     SUBDIR += py-evdev
     SUBDIR += py-event
-    SUBDIR += py-experimental.cssselect
     SUBDIR += py-extras
     SUBDIR += py-extremes
     SUBDIR += py-ezpyinline
@@ -4020,11 +4020,14 @@
     SUBDIR += py-foolscap
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
+    SUBDIR += py-freenas.dispatcher
+    SUBDIR += py-freenas.utils
     SUBDIR += py-freezegun
     SUBDIR += py-fs
     SUBDIR += py-fsm
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
+    SUBDIR += py-functools32
     SUBDIR += py-fusefs
     SUBDIR += py-future
     SUBDIR += py-futures
@@ -4182,6 +4185,8 @@
     SUBDIR += py-pudb
     SUBDIR += py-px
     SUBDIR += py-py
+    SUBDIR += py-pyasn1
+    SUBDIR += py-pyasn1-modules
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
     SUBDIR += py-pycerberus
@@ -4245,6 +4250,7 @@
     SUBDIR += py-qt4-test
     SUBDIR += py-rauth
     SUBDIR += py-raven
+    SUBDIR += py-rednose
     SUBDIR += py-repl
     SUBDIR += py-repoze.lru
     SUBDIR += py-repoze.sphinx.autointerface
@@ -4286,6 +4292,7 @@
     SUBDIR += py-setuptools35
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg
+    SUBDIR += py-setuptools_scm
     SUBDIR += py-sh
     SUBDIR += py-shapely
     SUBDIR += py-simplegeneric
@@ -4319,6 +4326,7 @@
     SUBDIR += py-tconfpy
     SUBDIR += py-tempstorage
     SUBDIR += py-termcolor
+    SUBDIR += py-termstyle
     SUBDIR += py-testgears
     SUBDIR += py-testoob
     SUBDIR += py-testtools
@@ -4355,6 +4363,7 @@
     SUBDIR += py-user_agents
     SUBDIR += py-utils
     SUBDIR += py-validictory
+    SUBDIR += py-vcversioner
     SUBDIR += py-venusian
     SUBDIR += py-versiontools
     SUBDIR += py-virtualenv
@@ -4463,9 +4472,11 @@
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
     SUBDIR += py-zope.viewlet
+    SUBDIR += py3-babel
     SUBDIR += py3-dbus
     SUBDIR += py3-gobject3
     SUBDIR += py3-libpeas
+    SUBDIR += py3-pytz
     SUBDIR += py3-xdg
     SUBDIR += py_static_check
     SUBDIR += pybugz
@@ -4682,6 +4693,7 @@
     SUBDIR += rubygem-classifier-reborn
     SUBDIR += rubygem-climate_control
     SUBDIR += rubygem-clio
+    SUBDIR += rubygem-cliprompt
     SUBDIR += rubygem-cloudfiles
     SUBDIR += rubygem-cocaine
     SUBDIR += rubygem-coercible
@@ -4696,6 +4708,7 @@
     SUBDIR += rubygem-concurrent-ruby
     SUBDIR += rubygem-concurrent-ruby-edge
     SUBDIR += rubygem-configatron
+    SUBDIR += rubygem-configstruct
     SUBDIR += rubygem-configuration
     SUBDIR += rubygem-cool.io
     SUBDIR += rubygem-crack

@@ -11,7 +11,7 @@ COMMENT=	Emulates a Cisco style command-line interface
 
 LICENSE=	LGPL21
 
-USES=		gmake
+USES=		alias gmake
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	dparrish

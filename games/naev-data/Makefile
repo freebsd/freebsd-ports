@@ -1,14 +1,12 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	data
-PORTVERSION=	0.6.0
+PORTNAME=	naev
+PORTVERSION=	0.6.1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PROJECTHOST}/${PKGNAMEPREFIX}${PORTVERSION}/
-PKGNAMEPREFIX=	naev-
-DISTNAME=	${PORTNAME:S/^/n/}-${PORTVERSION}
-EXTRACT_SUFX=	.zip
-DIST_SUBDIR=	${PROJECTHOST}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
+PKGNAMESUFFIX=	-data
+DISTNAME=	ndata-${PORTVERSION}
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	acm@FreeBSD.org
@@ -29,15 +27,14 @@ LICENSE_PERMS_CCBYv3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_CCBYSAv3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_PD=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-PROJECTHOST=	${PKGNAMEPREFIX:S/-//}
+USES=		zip
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-DATADIR=	${PREFIX}/share/${PROJECTHOST}
 PORTDATA=	*
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${_DISTDIR}/${DISTFILES} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

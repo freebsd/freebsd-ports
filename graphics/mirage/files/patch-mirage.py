@@ -1,6 +1,6 @@
---- mirage.py.orig	2011-02-13 23:40:05.000000000 +0100
-+++ mirage.py	2013-05-22 17:56:33.000000000 +0200
-@@ -71,7 +71,7 @@
+--- mirage.py.orig	2011-02-13 22:40:05 UTC
++++ mirage.py
+@@ -71,7 +71,7 @@ class Base:
  
  	def __init__(self):
  		
@@ -9,7 +9,7 @@
  		
  		# FIX THIS! Does not work on windows and what happens if mo-files exists
  		# in both dirs?
-@@ -841,9 +841,7 @@
+@@ -841,9 +841,7 @@ class Base:
  			self.thumbpane_bottom_coord_loaded = bottom_coord
  		# update images:
  		if not self.thumbpane_updating:
@@ -20,7 +20,7 @@
  
  	def thumbpane_create_dir(self):
  		if not os.path.exists(os.path.expanduser('~/.thumbnails/')):
-@@ -4579,6 +4577,6 @@
+@@ -4579,6 +4577,6 @@ class Base:
  
  if __name__ == "__main__":
  	base = Base()

@@ -10,7 +10,8 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager construction kit
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>0:${PORTSDIR}/x11-toolkits/py-xlib
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>0:${PORTSDIR}/x11-toolkits/py-xlib
@@ -31,10 +32,12 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$Id|coding: utf-8 |g' ${WRKSRC}/plwm/mw_apm.py
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.pdf \
 		${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.examplewm *.py \
 		${STAGEDIR}${EXAMPLESDIR})

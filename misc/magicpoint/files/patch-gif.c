@@ -120,11 +120,16 @@
  					exit(-1);
  				}
  			}
-@@ -180,7 +229,11 @@ gifLoad(fullname, name, verbose)
+@@ -179,8 +228,16 @@ gifLoad(fullname, name, verbose)
+ 			pixline[x] = GifRow[x];
  	}
  
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++	if (DGifCloseFile(GifFile, NULL) == GIF_ERROR) {
++#else
  	if (DGifCloseFile(GifFile) == GIF_ERROR) {
 -		PrintGifError();
++#endif
 +#if GIFLIB_MAJOR >= 5
 +		localPrintGifError(GifFile->Error);
 +#else
@@ -133,7 +138,7 @@
  		exit(-1);
  	}
  
-@@ -196,7 +249,11 @@ gifIdent(fullname, name)
+@@ -196,11 +253,19 @@ gifIdent(fullname, name)
  	GifFileType *gifp;
  	int ret;
  
@@ -145,3 +150,11 @@
  	if (gifp == NULL)
  		ret = 0;
  	else {
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++		DGifCloseFile(gifp, NULL);
++#else
+ 		DGifCloseFile(gifp);
++#endif
+ 		tellAboutImage(name);
+ 		ret = 1;
+ 	}

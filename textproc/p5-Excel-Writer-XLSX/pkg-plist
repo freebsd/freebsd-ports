@@ -30,6 +30,7 @@ bin/extract_vba
 %%SITE_PERL%%/Excel/Writer/XLSX/Utility.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Workbook.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Worksheet.pm
+%%PERL5_MAN1%%/extract_vba.1.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Chart.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Chart::Area.3.gz
@@ -61,4 +62,3 @@ bin/extract_vba
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Utility.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Workbook.3.gz
 %%PERL5_MAN3%%/Excel::Writer::XLSX::Worksheet.3.gz
-%%PERL5_MAN1%%/extract_vba.1.gz

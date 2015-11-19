@@ -12,7 +12,9 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module to manipulate filenames containing music metadata
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

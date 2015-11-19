@@ -1,5 +1,5 @@
---- pypanelrc.orig	2005-06-26 19:27:37.000000000 -0400
-+++ pypanelrc	2008-12-08 00:06:54.000000000 -0500
+--- pypanelrc.orig	2005-06-26 23:27:37 UTC
++++ pypanelrc
 @@ -9,6 +9,12 @@
  VERSION         = 2.4           # Config file version
  

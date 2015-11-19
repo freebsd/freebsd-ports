@@ -3,7 +3,7 @@
 
 PORTNAME=	a2pdf
 PORTVERSION=	1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JONALLEN
@@ -14,6 +14,7 @@ COMMENT=	Text to PDF converter
 LICENSE=	ART20
 
 BUILD_DEPENDS=	p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2 \
+		p5-Switch>=0:lang/p5-Switch \
 		perltidy:${PORTSDIR}/devel/p5-Perl-Tidy \
 		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
 		p5-File-Type>=0:${PORTSDIR}/devel/p5-File-Type

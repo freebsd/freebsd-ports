@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Easy upload management for ActiveRecord
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel4>=3.2.0:${PORTSDIR}/databases/rubygem-activemodel4 \
 		rubygem-activesupport4>=3.2.0:${PORTSDIR}/devel/rubygem-activesupport4 \

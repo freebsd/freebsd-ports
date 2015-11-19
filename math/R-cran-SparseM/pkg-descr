@@ -1,0 +1,5 @@
+Some basic linear algebra functionality for sparse matrices is
+provided: including Cholesky decomposition and backsolving as well
+as standard R subsetting and Kronecker products.
+
+WWW: https://cran.r-project.org/web/packages/SparseM/

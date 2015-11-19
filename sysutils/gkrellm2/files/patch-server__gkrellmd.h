@@ -1,8 +1,6 @@
-Index: server/gkrellmd.h
-diff -u server/gkrellmd.h.orig server/gkrellmd.h
---- server/gkrellmd.h.orig	2008-10-04 06:52:48.000000000 +0900
-+++ server/gkrellmd.h	2008-10-04 19:55:03.000000000 +0900
-@@ -118,8 +118,12 @@
+--- server/gkrellmd.h.orig	2010-09-14 16:34:34 UTC
++++ server/gkrellmd.h
+@@ -131,8 +131,12 @@
  	#if !defined(GKRELLMD_SYSTEM_PLUGINS_DIR)
  		#define GKRELLMD_SYSTEM_PLUGINS_DIR	"/usr/lib/gkrellm2/plugins-gkrellmd"
  	#endif

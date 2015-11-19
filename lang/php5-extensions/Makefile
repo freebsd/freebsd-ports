@@ -12,6 +12,9 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	"meta-port" to install PHP extensions
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 USE_PHP=	yes
 PHP_DEFAULT=	5.4
 IGNORE_WITH_PHP=53 55
