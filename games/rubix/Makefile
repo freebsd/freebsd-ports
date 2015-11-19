@@ -10,29 +10,30 @@ MASTER_SITES=	http://sed.free.fr/rubix/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Rubik's cube game with a rather interesting interface
 
-USES=		gmake tar:bzip2
+USES=		compiler:nestedfct gmake tar:bzip2
 USE_XORG=	x11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DENGLISH" \
 		XINC="-I${LOCALBASE}/include" XLIB="-L${LOCALBASE}/lib -lX11"
 ALL_TARGET=	${PORTNAME}
-USE_GCC=	any
 
-PORTDOCS=	${DOCFILES}
+PORTDOCS=	AUTHORS BUGS INSTALL README TODO
 PLIST_FILES=	bin/rubix
-
-DOCFILES=	AUTHORS BUGS INSTALL README TODO
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == mips || ${ARCH} == mips64) && ${COMPILER_TYPE} == gcc
+CFLAGS+=	-fnested-functions
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rubix ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${DOCFILES}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
