@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	libpano13
-PORTVERSION=	2.9.18
-PORTREVISION=	4
+PORTVERSION=	2.9.19
+PORTREVISION=	1
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	vd@FreeBSD.org
+MAINTAINER=	grog@FreeBSD.org
 COMMENT=	Cross-platform library behind Panorama Tools and other photo stitchers
 
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng16.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 USE_GNOME=	gtk20 glib20 pango atk
