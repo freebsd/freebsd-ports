@@ -11,24 +11,28 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight Java library to write JSON
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
+
 USES=		zip
-OPTIONS_DEFINE=	DOCS
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-PORTDOCS=	LICENSE-2.0.txt docs
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.jar \
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/docs/
-	@cd ${WRKDIR}/docs \
-	  && ${INSTALL_DATA} example_object_model.jpg ${STAGEDIR}${DOCSDIR}/docs/. \
-	  && ${INSTALL_DATA} index.html ${STAGEDIR}${DOCSDIR}/docs/.
-	@${INSTALL_DATA} ${WRKDIR}/LICENSE-2.0.txt ${STAGEDIR}${DOCSDIR}/
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
