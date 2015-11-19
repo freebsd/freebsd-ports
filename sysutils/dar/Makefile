@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dar
-PORTVERSION=	2.4.17
+PORTVERSION=	2.5.1
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -11,7 +11,7 @@ COMMENT=	Command-line backup tool, aimed for disks
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		libtool shebangfix
+USES=		compiler:c++11-lang libtool shebangfix
 SHEBANG_FILES=	doc/samples/dar_backup doc/samples/*.bash doc/samples/*.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --disable-build-html \
