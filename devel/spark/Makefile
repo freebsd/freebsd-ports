@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spark
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		LOCAL/demon/:maven \
@@ -23,8 +23,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 USES=		python:2
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
-MAKE_ENV+=	MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
+JAVA_VERSION=	1.7
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
 
 USERS=		spark
 GROUPS=		spark
