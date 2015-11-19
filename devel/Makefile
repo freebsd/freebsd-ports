@@ -4228,6 +4228,7 @@
     SUBDIR += py-pytools
     SUBDIR += py-pytrie
     SUBDIR += py-pytz
+    SUBDIR += py-pytz3
     SUBDIR += py-pyutil
     SUBDIR += py-pyvisa
     SUBDIR += py-pyvisa-py

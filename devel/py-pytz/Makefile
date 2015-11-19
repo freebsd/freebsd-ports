@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER?=	lwhsu@FreeBSD.org
 COMMENT=	World Timezone Definitions for Python
 
 LICENSE=	MIT
