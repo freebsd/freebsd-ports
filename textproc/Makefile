@@ -1435,6 +1435,7 @@
     SUBDIR += rubygem-rdiscount
     SUBDIR += rubygem-rdtool
     SUBDIR += rubygem-redcarpet
+    SUBDIR += rubygem-reverse_markdown
     SUBDIR += rubygem-ri_cal
     SUBDIR += rubygem-rich
     SUBDIR += rubygem-rmmseg-cpp
