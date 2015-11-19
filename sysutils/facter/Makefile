@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	facter
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/facter/
 
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 USE_LDCONFIG=	yes
 USE_RUBY=	yes
