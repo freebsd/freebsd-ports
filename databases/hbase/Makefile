@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	hbase
-PORTVERSION=	0.98.9
+PORTVERSION=	1.1.2
 CATEGORIES=	databases java
-MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
-		LOCAL/demon/:maven \
-		http://people.freebsd.org/~demon/:maven
+MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION} \
+		LOCAL/demon/:maven
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} FreeBSD-hbase-${PORTVERSION}-maven-repository.tar.gz:maven
 DIST_SUBDIR=	hadoop
 
@@ -24,7 +23,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 USES=		cpe
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
+JAVA_VERSION=	1.7
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} MAVEN_OPTS="-XX:MaxPermSize=256m"
 
 OPTIONS_DEFINE=	DOCS
 
@@ -55,8 +55,8 @@ PLIST_SUB=	HBASE_USER=${HBASE_USER} \
 .include <bsd.port.pre.mk>
 
 .if ${JAVA_PORT_VERSION:M1.8.*}
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-PoolMap.java \
-		${FILESDIR}/extra-patch-pom.xml
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-hbase-annotations-pom.xml
+MVN_JDK18=	-DcompileSource=1.8
 .endif
 
 post-patch:
@@ -64,9 +64,8 @@ post-patch:
 	${RM} ${WRKSRC}/conf/hbase-env.sh.bak ${WRKSRC}/conf/hbase-env.sh.orig
 
 do-build:
-	cd ${WRKSRC} && bash dev-support/generate-hadoopX-poms.sh ${PORTVERSION}-RELEASE ${PORTVERSION}-hadoop2-RELEASE
-	cd ${WRKSRC} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean install -Prelease,native -DskipTests
-	cd ${WRKSRC} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline install -DskipTests site assembly:single -Prelease,native
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean install -Prelease,native -DskipTests ${MVN_JDK18}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline install -DskipTests site assembly:single -Prelease,native ${MVN_JDK18}
 
 post-build:
 	cd ${WRKSRC}/hbase-assembly/target && ${TAR} xf ${PORTNAME}-${PORTVERSION}-bin.tar.gz
@@ -83,5 +82,8 @@ do-install:
 	cd ${HBASE_DIST} && ${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX}/hbase/ "! -name hadoop-*.jar"
 	${MKDIR} ${STAGEDIR}${HBASE_LOGDIR}
 	${MKDIR} ${STAGEDIR}${HBASE_RUNDIR}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/hbase/lib/native/libmlockall_agent.so
 
 .include <bsd.port.post.mk>
