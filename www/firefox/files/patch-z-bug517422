@@ -71,23 +71,27 @@ diff --git config/system-headers config/system-headers
 index bef567c..9807c29 100644
 --- config/system-headers
 +++ config/system-headers
-@@ -1263,7 +1263,6 @@ X11/Xlocale.h
+@@ -1257,8 +1257,10 @@ X11/Xlocale.h
  X11/Xos.h
  X11/Xutil.h
  zmouse.h
--soundtouch/SoundTouch.h
- #if MOZ_NATIVE_PNG==1
- png.h
++#if MOZ_NATIVE_SOUNDTOUCH==1
+ soundtouch/SoundTouch.h
+ soundtouch/SoundTouchFactory.h
++#endif
+ #if MOZ_LIBAV_FFT==1
+ libavcodec/avfft.h
  #endif
-@@ -1325,6 +1324,7 @@ vorbis/codec.h
- theora/theoradec.h
- tremor/ivorbiscodec.h
- speex/speex_resampler.h
+@@ -1313,6 +1315,8 @@ vpx/vp8dx.h
+ vpx_mem/vpx_mem.h
+ #endif
+ #ifdef GKMEDIAS_SHARED_LIBRARY
 +soundtouch/SoundTouch.h
- ogg/ogg.h
- ogg/os_types.h
- nestegg/nestegg.h
-@@ -1365,3 +1365,35 @@ graphite2/Segment.h
++soundtouch/SoundTouchFactory.h
+ vpx/vpx_codec.h
+ vpx/vpx_decoder.h
+ vpx/vpx_encoder.h
+@@ -1364,3 +1363,32 @@ graphite2/Segment.h
  harfbuzz/hb-ot.h
  harfbuzz/hb.h
  #endif
@@ -119,9 +123,6 @@ index bef567c..9807c29 100644
 +#endif
 +#if MOZ_NATIVE_SPEEX==1
 +speex/speex_resampler.h
-+#endif
-+#if MOZ_NATIVE_SOUNDTOUCH==1
-+soundtouch/SoundTouch.h
 +#endif
 diff --git configure.in configure.in
 index 87db361..7947626 100644
@@ -285,19 +286,6 @@ index 87db361..7947626 100644
  dnl = Disable VP8 decoder support
  dnl ========================================================
  MOZ_ARG_DISABLE_BOOL(webm,
-diff --git dom/media/AudioStream.h dom/media/AudioStream.h
-index 085676d..00c54fb 100644
---- dom/media/AudioStream.h
-+++ dom/media/AudioStream.h
-@@ -17,7 +17,7 @@
- #include "CubebUtils.h"
- 
- namespace soundtouch {
--class SoundTouch;
-+class MOZ_IMPORT_API SoundTouch;
- }
- 
- namespace mozilla {
 diff --git dom/media/moz.build dom/media/moz.build
 index 7526cff..e0a0ca0 100644
 --- dom/media/moz.build

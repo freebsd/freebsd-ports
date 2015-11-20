@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxul
-DISTVERSION=	38.3.0
-PORTREVISION=	1
+DISTVERSION=	38.4.0
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build2/source
@@ -12,8 +11,8 @@ DISTNAME=	firefox-${DISTVERSION}esr.source
 MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
-BUILD_DEPENDS=	nspr>=4.10.8:${PORTSDIR}/devel/nspr \
-		nss>=3.19.2:${PORTSDIR}/security/nss \
+BUILD_DEPENDS=	nspr>=4.10.10:${PORTSDIR}/devel/nspr \
+		nss>=3.19.2.1:${PORTSDIR}/security/nss \
 		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
 		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
 		harfbuzz>=0.9.34:${PORTSDIR}/print/harfbuzz \

@@ -1,0 +1,84 @@
+# Partially revert bug 1176300 to unbreak build with system libsoundtouch
+
+diff --git dom/media/AudioStream.cpp dom/media/AudioStream.cpp
+--- mozilla/dom/media/AudioStream.cpp
++++ mozilla/dom/media/AudioStream.cpp
+@@ -129,7 +129,6 @@
+   , mOutChannels(0)
+   , mWritten(0)
+   , mAudioClock(this)
+-  , mTimeStretcher(nullptr)
+   , mLatencyRequest(HighLatency)
+   , mReadPoint(0)
+   , mDumpFile(nullptr)
+@@ -152,9 +151,6 @@
+   if (mDumpFile) {
+     fclose(mDumpFile);
+   }
+-  if (mTimeStretcher) {
+-    soundtouch::destroySoundTouchObj(mTimeStretcher);
+-  }
+ }
+ 
+ size_t
+@@ -177,7 +173,7 @@
+ {
+   mMonitor.AssertCurrentThreadOwns();
+   if (!mTimeStretcher) {
+-    mTimeStretcher = soundtouch::createSoundTouchObj();
++    mTimeStretcher = new soundtouch::SoundTouch();
+     mTimeStretcher->setSampleRate(mInRate);
+     mTimeStretcher->setChannels(mOutChannels);
+     mTimeStretcher->setPitch(1.0);
+diff --git dom/media/AudioStream.h dom/media/AudioStream.h
+--- mozilla/dom/media/AudioStream.h
++++ mozilla/dom/media/AudioStream.h
+@@ -15,7 +15,7 @@
+ #include "mozilla/RefPtr.h"
+ #include "mozilla/UniquePtr.h"
+ #include "CubebUtils.h"
+-#include "soundtouch/SoundTouchFactory.h"
++#include "soundtouch/SoundTouch.h"
+ 
+ namespace mozilla {
+ 
+@@ -329,7 +329,7 @@
+   // Number of frames written to the buffers.
+   int64_t mWritten;
+   AudioClock mAudioClock;
+-  soundtouch::SoundTouch* mTimeStretcher;
++  nsAutoPtr<soundtouch::SoundTouch> mTimeStretcher;
+   nsRefPtr<AsyncLatencyLogger> mLatencyLog;
+ 
+   // copy of Latency logger's starting time for offset calculations
+diff --git media/libsoundtouch/src/moz.build media/libsoundtouch/src/moz.build
+--- mozilla/media/libsoundtouch/src/moz.build
++++ mozilla/media/libsoundtouch/src/moz.build
+@@ -8,7 +8,6 @@
+     'FIFOSamplePipe.h',
+     'SoundTouch.h',
+     'soundtouch_config.h',
+-    'SoundTouchFactory.h',
+     'STTypes.h',
+ ]
+ 
+@@ -22,7 +21,6 @@
+     'InterpolateShannon.cpp',
+     'RateTransposer.cpp',
+     'SoundTouch.cpp',
+-    'SoundTouchFactory.cpp',
+     'TDStretch.cpp',
+ ]
+ 
+diff --git media/libsoundtouch/src/soundtouch_perms.h media/libsoundtouch/src/soundtouch_perms.h
+--- mozilla/media/libsoundtouch/src/soundtouch_perms.h
++++ mozilla/media/libsoundtouch/src/soundtouch_perms.h
+@@ -12,7 +12,6 @@
+ 
+ #pragma GCC visibility push(default)
+ #include "SoundTouch.h"
+-#include "SoundTouchFactory.h"
+ #pragma GCC visibility pop
+ 
+ #endif // MOZILLA_SOUNDTOUCH_PERMS_H
+
