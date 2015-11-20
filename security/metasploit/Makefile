@@ -9,6 +9,9 @@ CATEGORIES=	security
 MAINTAINER=	tanawts@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		nmap:${PORTSDIR}/security/nmap \
 		rubygem-activesupport>=3.0.0:${PORTSDIR}/devel/rubygem-activesupport \
