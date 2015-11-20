@@ -3,7 +3,7 @@
 
 PORTNAME=	why3
 PORTVERSION=	0.83
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://gforge.inria.fr/frs/download.php/33490/ \
 		http://pkgs.fedoraproject.org/repo/pkgs/why3/${FEDORA}/
@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deductive program verification platform
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICT_INSTALL= why3-gpl-*
 
@@ -59,6 +60,7 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/why3* \
+		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/why3/*.o \
 		${STAGEDIR}${PREFIX}/lib/why3/plugins/*.cmxs \
 		${STAGEDIR}${PREFIX}/lib/why3/why3-cpulimit
 
