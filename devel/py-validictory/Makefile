@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	validictory
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,7 @@ COMMENT=	General purpose Python data validator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
 
