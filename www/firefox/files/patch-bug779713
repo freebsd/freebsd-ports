@@ -2,14 +2,7 @@ diff --git mfbt/Alignment.h mfbt/Alignment.h
 index e0843ca..353ec36 100644
 --- mfbt/Alignment.h
 +++ mfbt/Alignment.h
-@@ -9,11 +9,20 @@
- #ifndef mozilla_Alignment_h
- #define mozilla_Alignment_h
- 
-+#include "mozilla/Attributes.h"
-+
- #include <stddef.h>
- #include <stdint.h>
+@@ -15,6 +15,13 @@
  
  namespace mozilla {
  
