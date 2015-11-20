@@ -1561,7 +1561,7 @@
     SUBDIR += ocaml-sdl
     SUBDIR += ocaml-sem
     SUBDIR += ocaml-sexplib
-    SUBDIR += ocaml-typeconv
+    SUBDIR += ocaml-type_conv
     SUBDIR += ocaml-ulex
     SUBDIR += ocaml-uutf
     SUBDIR += ocaml-xstr
