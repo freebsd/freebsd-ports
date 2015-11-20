@@ -4,7 +4,7 @@ diff --git config/Makefile.in config/Makefile.in
 index 5383399..0410004 100644
 --- mozilla/config/Makefile.in
 +++ mozilla/config/Makefile.in
-@@ -77,6 +77,13 @@ export:: $(export-preqs)
+@@ -77,6 +77,14 @@ export:: $(export-preqs)
  		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
  		-DMOZ_NATIVE_GRAPHITE2=$(MOZ_NATIVE_GRAPHITE2) \
  		-DMOZ_NATIVE_HARFBUZZ=$(MOZ_NATIVE_HARFBUZZ) \
@@ -12,6 +12,7 @@ index 5383399..0410004 100644
 +		-DMOZ_NATIVE_THEORA=$(MOZ_NATIVE_THEORA) \
 +		-DMOZ_NATIVE_VORBIS=$(MOZ_NATIVE_VORBIS) \
 +		-DMOZ_NATIVE_TREMOR=$(MOZ_NATIVE_TREMOR) \
++		-DMOZ_NATIVE_CELT=$(MOZ_NATIVE_CELT) \
 +		-DMOZ_NATIVE_OPUS=$(MOZ_NATIVE_OPUS) \
 +		-DMOZ_NATIVE_SPEEX=$(MOZ_NATIVE_SPEEX) \
 +		-DMOZ_NATIVE_SOUNDTOUCH=$(MOZ_NATIVE_SOUNDTOUCH) \
@@ -22,13 +23,16 @@ diff --git config/external/moz.build config/external/moz.build
 index f67c5c7..eb909ce 100644
 --- mozilla/config/external/moz.build
 +++ mozilla/config/external/moz.build
-@@ -16,13 +16,19 @@ if CONFIG['MOZ_UPDATER']:
-     if not CONFIG['MOZ_NATIVE_BZ2']:
-         external_dirs += ['modules/libbz2']
+@@ -19,10 +19,19 @@ if CONFIG['MOZ_UPDATER']:
+ # There's no "native brotli" yet, but probably in the future...
+ external_dirs += ['modules/brotli']
  
 -if CONFIG['MOZ_VORBIS']:
 +if not CONFIG['MOZ_NATIVE_OGG']:
 +    external_dirs += ['media/libogg']
++
++if not CONFIG['MOZ_NATIVE_CELT'] or not CONFIG['MOZ_NATIVE_OPUS']:
++    external_dirs += ['media/libopus']
 +
 +if not CONFIG['MOZ_NATIVE_THEORA']:
 +    external_dirs += ['media/libtheora']
@@ -40,12 +44,8 @@ index f67c5c7..eb909ce 100644
 +if CONFIG['MOZ_TREMOR'] and not CONFIG['MOZ_NATIVE_TREMOR']:
      external_dirs += ['media/libtremor']
  
--if CONFIG['MOZ_OPUS']:
-+if CONFIG['MOZ_OPUS'] and not CONFIG['MOZ_NATIVE_OPUS']:
-     external_dirs += ['media/libopus']
- 
  if CONFIG['MOZ_WEBM']:
-@@ -37,14 +43,16 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ_NATIVE_LIBVPX']:
+@@ -37,15 +46,16 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ
  if not CONFIG['MOZ_NATIVE_PNG']:
      external_dirs += ['media/libpng']
  
@@ -59,6 +59,7 @@ index f67c5c7..eb909ce 100644
      'media/kiss_fft',
      'media/libcubeb',
 -    'media/libogg',
+-    'media/libopus',
 -    'media/libtheora',
 -    'media/libspeex_resampler',
      'media/libstagefright',
@@ -70,23 +71,27 @@ diff --git config/system-headers config/system-headers
 index bef567c..9807c29 100644
 --- mozilla/config/system-headers
 +++ mozilla/config/system-headers
-@@ -1263,7 +1263,6 @@ X11/Xlocale.h
+@@ -1257,8 +1257,10 @@ X11/Xlocale.h
  X11/Xos.h
  X11/Xutil.h
  zmouse.h
--soundtouch/SoundTouch.h
- #if MOZ_NATIVE_PNG==1
- png.h
++#if MOZ_NATIVE_SOUNDTOUCH==1
+ soundtouch/SoundTouch.h
+ soundtouch/SoundTouchFactory.h
++#endif
+ #if MOZ_LIBAV_FFT==1
+ libavcodec/avfft.h
  #endif
-@@ -1325,6 +1324,7 @@ vorbis/codec.h
- theora/theoradec.h
- tremor/ivorbiscodec.h
- speex/speex_resampler.h
+@@ -1313,6 +1315,8 @@ vpx/vp8dx.h
+ vpx_mem/vpx_mem.h
+ #endif
+ #ifdef GKMEDIAS_SHARED_LIBRARY
 +soundtouch/SoundTouch.h
- ogg/ogg.h
- ogg/os_types.h
- nestegg/nestegg.h
-@@ -1365,3 +1365,29 @@ graphite2/Segment.h
++soundtouch/SoundTouchFactory.h
+ vpx/vpx_codec.h
+ vpx/vpx_decoder.h
+ vpx/vpx_encoder.h
+@@ -1364,3 +1363,32 @@ graphite2/Segment.h
  harfbuzz/hb-ot.h
  harfbuzz/hb.h
  #endif
@@ -104,6 +109,12 @@ index bef567c..9807c29 100644
 +#if MOZ_NATIVE_TREMOR==1
 +tremor/ivorbiscodec.h
 +#endif
++#if MOZ_NATIVE_CELT==1
++celt.h
++celt_header.h
++celt/celt.h
++celt/celt_header.h
++#endif
 +#if MOZ_NATIVE_OPUS==1
 +opus.h
 +opus_multistream.h
@@ -113,14 +124,11 @@ index bef567c..9807c29 100644
 +#if MOZ_NATIVE_SPEEX==1
 +speex/speex_resampler.h
 +#endif
-+#if MOZ_NATIVE_SOUNDTOUCH==1
-+soundtouch/SoundTouch.h
-+#endif
 diff --git configure.in configure.in
 index 87db361..7947626 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -5056,6 +5056,57 @@ if test "${ac_cv_c_attribute_aligned}" != "0"; then
+@@ -5223,6 +5223,157 @@ if test "${ac_cv_c_attribute_aligned}" !
  fi
  
  dnl ========================================================
@@ -175,13 +183,23 @@ index 87db361..7947626 100644
 +AC_SUBST(MOZ_NATIVE_TREMOR)
 +
 +dnl ========================================================
- dnl = Disable Opus audio codec support
- dnl ========================================================
- MOZ_ARG_DISABLE_BOOL(opus,
-@@ -5064,6 +5115,89 @@ MOZ_ARG_DISABLE_BOOL(opus,
-     MOZ_OPUS=1)
- 
- dnl ========================================================
++dnl Check for libcelt
++dnl ========================================================
++
++MOZ_ARG_WITH_BOOL(system-celt,
++[  --with-system-celt      Use system libcelt (located with pkgconfig)],
++MOZ_NATIVE_CELT=1,
++MOZ_NATIVE_CELT=)
++
++if test -n "$MOZ_NATIVE_CELT"; then
++    PKG_CHECK_MODULES(MOZ_CELT, celt)
++else
++    MOZ_CELT_CFLAGS='-I$(topsrcdir)/media/libopus'
++fi
++
++AC_SUBST(MOZ_NATIVE_CELT)
++
++dnl ========================================================
 +dnl Check for libopus
 +dnl ========================================================
 +
@@ -268,19 +286,6 @@ index 87db361..7947626 100644
  dnl = Disable VP8 decoder support
  dnl ========================================================
  MOZ_ARG_DISABLE_BOOL(webm,
-diff --git dom/media/AudioStream.h dom/media/AudioStream.h
-index 085676d..00c54fb 100644
---- mozilla/dom/media/AudioStream.h
-+++ mozilla/dom/media/AudioStream.h
-@@ -17,7 +17,7 @@
- #include "CubebUtils.h"
- 
- namespace soundtouch {
--class SoundTouch;
-+class MOZ_IMPORT_API SoundTouch;
- }
- 
- namespace mozilla {
 diff --git dom/media/moz.build dom/media/moz.build
 index 7526cff..e0a0ca0 100644
 --- mozilla/dom/media/moz.build
@@ -382,12 +387,16 @@ diff --git media/libtheora/moz.build media/libtheora/moz.build
 index 14265b1..3069e99 100644
 --- mozilla/media/libtheora/moz.build
 +++ mozilla/media/libtheora/moz.build
-@@ -93,3 +93,5 @@ if CONFIG['GNU_AS']:
-         if CONFIG['OS_TARGET'] == 'Android':
-             DEFINES['__linux__'] = True
+@@ -21,6 +21,9 @@ if CONFIG['GKMEDIAS_SHARED_LIBRARY']:
+ # The encoder is currently not included.
+ DEFINES['THEORA_DISABLE_ENCODE'] = True
  
 +if CONFIG['MOZ_NATIVE_OGG']:
 +    CFLAGS += CONFIG['MOZ_OGG_CFLAGS']
++
+ # Suppress warnings in third-party code.
+ if CONFIG['GNU_CC']:
+     CFLAGS += ['-Wno-type-limits']
 diff --git media/libtremor/README_MOZILLA media/libtremor/README_MOZILLA
 index ee67b53..3f34a09 100644
 --- mozilla/media/libtremor/README_MOZILLA
@@ -431,11 +440,11 @@ index 919b99e..cc776f7 100644
 +
 +if CONFIG['MOZ_NATIVE_OGG']:
 +    CFLAGS += CONFIG['MOZ_OGG_CFLAGS']
-diff --git media/webrtc/signaling/test/moz.build media/webrtc/signaling/test/moz.build
+diff --git media/webrtc/signaling/test/common.build media/webrtc/signaling/test/common.build
 index bbc971c..6ed7e41 100644
---- mozilla/media/webrtc/signaling/test/moz.build
-+++ mozilla/media/webrtc/signaling/test/moz.build
-@@ -127,6 +127,9 @@ if CONFIG['MOZ_ALSA']:
+--- mozilla/media/webrtc/signaling/test/common.build
++++ mozilla/media/webrtc/signaling/test/common.build
+@@ -108,6 +109,9 @@ if CONFIG['MOZ_OSS']:
  if CONFIG['MOZ_NATIVE_JPEG']:
      OS_LIBS += CONFIG['MOZ_JPEG_LIBS']
  
@@ -449,24 +458,62 @@ diff --git media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi 
 index 00e77e7..55f48ab 100644
 --- mozilla/media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi
 +++ mozilla/media/webrtc/trunk/webrtc/modules/audio_coding/codecs/opus/opus.gypi
-@@ -17,9 +17,9 @@
+@@ -17,18 +17,11 @@
        'conditions': [
          ['build_with_mozilla==1', {
            # Mozilla provides its own build of the opus library.
 -          'include_dirs': [
 -            '/media/libopus/include',
--           ]
+-            '/media/libopus/src',
+-            '/media/libopus/celt',
 +          'cflags_mozilla': [
++            '$(filter -I%, $(MOZ_CELT_CFLAGS))/celt',
 +            '$(MOZ_OPUS_CFLAGS)',
-+          ],
++            '$(filter -I%, $(MOZ_OPUS_CFLAGS))/../src',
+           ],
+-          'direct_dependent_settings': {
+-            'include_dirs': [
+-              '/media/libopus/include',
+-              '/media/libopus/src',
+-              '/media/libopus/celt',
+-            ],
+-          },
          }, {
            'dependencies': [
              '<(DEPTH)/third_party/opus/opus.gyp:opus'
+diff --git media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi
+index 00e77e7..55f48ab 100644
+--- mozilla/media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi
++++ mozilla/media/webrtc/trunk/webrtc/modules/audio_coding/neteq/neteq.gypi
+@@ -84,19 +84,11 @@
+           ],
+ 	}],
+         ['build_with_mozilla==1', {
+-          'include_dirs': [
+-            # Need Opus header files for the audio classifier.
+-            '<(DEPTH)/../../../media/opus/celt',
+-#            '<(DEPTH)/third_party/opus/src/src',
++          'cflags_mozilla': [
++            '$(filter -I%, $(MOZ_CELT_CFLAGS))/celt',
++            '$(MOZ_OPUS_CFLAGS)',
++            '$(filter -I%, $(MOZ_OPUS_CFLAGS))/../src',
+           ],
+-          'direct_dependent_settings': {
+-            'include_dirs': [
+-              '../../../../../../media/opus/celt',
+-              # Need Opus header files for the audio classifier.
+-              '<(DEPTH)/../../../media/opus/celt',
+-#              '<(DEPTH)/third_party/opus/src/src',
+-            ],
+-          },
+         }],
+       ],
+       'sources': [
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index d42137a..695e75a8 100644
 --- mozilla/toolkit/library/moz.build
 +++ mozilla/toolkit/library/moz.build
-@@ -178,6 +178,27 @@ if CONFIG['MOZ_NATIVE_PNG']:
+@@ -178,6 +178,30 @@ if CONFIG['MOZ_NATIVE_PNG']:
  if CONFIG['MOZ_NATIVE_HUNSPELL']:
      OS_LIBS += CONFIG['MOZ_HUNSPELL_LIBS']
  
@@ -481,6 +528,9 @@ index d42137a..695e75a8 100644
 +
 +if CONFIG['MOZ_NATIVE_TREMOR']:
 +    OS_LIBS += CONFIG['MOZ_TREMOR_LIBS']
++
++if CONFIG['MOZ_NATIVE_CELT']:
++    OS_LIBS += CONFIG['MOZ_CELT_LIBS']
 +
 +if CONFIG['MOZ_NATIVE_OPUS']:
 +    OS_LIBS += CONFIG['MOZ_OPUS_LIBS']
