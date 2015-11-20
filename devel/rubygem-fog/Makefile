@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog
-PORTVERSION=	1.35.0
+PORTVERSION=	1.36.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Ruby cloud services library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-fog-aliyun>=0:${PORTSDIR}/net/rubygem-fog-aliyun \
+RUN_DEPENDS=	rubygem-fog-aliyun>=0.1.0:${PORTSDIR}/net/rubygem-fog-aliyun \
 		rubygem-fog-atmos>=0:${PORTSDIR}/net/rubygem-fog-atmos \
 		rubygem-fog-aws>=0.6.0:${PORTSDIR}/net/rubygem-fog-aws \
 		rubygem-fog-brightbox>=0.4:${PORTSDIR}/net/rubygem-fog-brightbox \
@@ -36,7 +36,7 @@ RUN_DEPENDS=	rubygem-fog-aliyun>=0:${PORTSDIR}/net/rubygem-fog-aliyun \
 		rubygem-fog-xenserver>=0:${PORTSDIR}/net/rubygem-fog-xenserver \
 		rubygem-fog-xml>=0.1.1:${PORTSDIR}/textproc/rubygem-fog-xml \
 		rubygem-ipaddress>=0.5:${PORTSDIR}/net/rubygem-ipaddress \
-		rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri
+		rubygem-nokogiri>=1.5.11:${PORTSDIR}/textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
 USE_RUBY=	yes
