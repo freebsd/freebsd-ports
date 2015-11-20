@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extraction of the JSON parsing tools between providers
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-fog-core>=1.0:${PORTSDIR}/devel/rubygem-fog-core \
 		rubygem-multi_json>=1.10:${PORTSDIR}/devel/rubygem-multi_json
