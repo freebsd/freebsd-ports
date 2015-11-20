@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paperclip
-PORTVERSION=	4.3.1
+PORTVERSION=	4.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
