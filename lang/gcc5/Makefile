@@ -43,7 +43,7 @@ SSP_UNSAFE=	yes
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
-OPTIONS_DEFINE=		BOOTSTRAP
+OPTIONS_DEFINE=		BOOTSTRAP GRAPHITE
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
 OPTIONS_DEFAULT=	BOOTSTRAP
@@ -51,6 +51,7 @@ OPTIONS_DEFAULT_i386=	JAVA
 OPTIONS_DEFAULT_amd64=	JAVA
 OPTIONS_EXCLUDE_DragonFly=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
+GRAPHITE_DESC=		Support for Graphite loop optimizations
 
 .include <bsd.port.pre.mk>
 
@@ -117,6 +118,11 @@ INFO+=		gcc${SUFFIX}/libquadmath \
 #.endif
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}
+
+.if ${PORT_OPTIONS:MGRAPHITE}
+LIB_DEPENDS+=	libisl.so:${PORTSDIR}/devel/isl
+CONFIGURE_ARGS+=--with-isl=${LOCALBASE}
+.endif
 
 .if ${PORT_OPTIONS:MJAVA}
 ECJ_JAR=	${LOCALBASE}/share/java/ecj-4.5.jar
