@@ -10,6 +10,7 @@ MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Library for SOAP communications
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-builder>=2.1.2:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-nori>=1.0.3:${PORTSDIR}/devel/rubygem-nori \
@@ -19,6 +20,7 @@ RUN_DEPENDS=	rubygem-builder>=2.1.2:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-gyoku>=0.4.6:${PORTSDIR}/devel/rubygem-gyoku \
 		rubygem-nokogiri>=1.6.1:${PORTSDIR}/textproc/rubygem-nokogiri
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
