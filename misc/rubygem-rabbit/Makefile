@@ -11,6 +11,7 @@ COMMENT=	RD-document-based presentation application
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/GPL
 
 RUN_DEPENDS=	rubygem-coderay>=1.0.0:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-faraday>0:${PORTSDIR}/www/rubygem-faraday \
