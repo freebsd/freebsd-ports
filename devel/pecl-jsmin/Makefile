@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsmin
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
