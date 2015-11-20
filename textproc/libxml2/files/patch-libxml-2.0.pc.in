@@ -1,9 +1,9 @@
---- libxml-2.0.pc.in.orig	2010-05-14 11:26:41.000000000 -0400
-+++ libxml-2.0.pc.in	2013-04-09 15:35:53.000000000 -0400
+--- libxml-2.0.pc.in.orig	2014-10-03 11:00:53.000000000 +0200
++++ libxml-2.0.pc.in	2015-07-31 13:26:13.647320000 +0200
 @@ -9,5 +9,5 @@
  Description: libXML library version2.
  Requires:
  Libs: -L${libdir} -lxml2
--Libs.private: @THREAD_LIBS@ @Z_LIBS@ @ICONV_LIBS@ @M_LIBS@ @WIN32_EXTRA_LIBADD@ @LIBS@
+-Libs.private: @ICU_LIBS@ @THREAD_LIBS@ @Z_LIBS@ @LZMA_LIBS@ @ICONV_LIBS@ @M_LIBS@ @WIN32_EXTRA_LIBADD@ @LIBS@
 +Libs.private: @THREAD_LIBS@ @Z_LIBS@ @LZMA_LIBS@ @ICONV_LIBS@ @M_LIBS@ @WIN32_EXTRA_LIBADD@ @LIBS@
  Cflags: @XML_INCLUDEDIR@ @XML_CFLAGS@
