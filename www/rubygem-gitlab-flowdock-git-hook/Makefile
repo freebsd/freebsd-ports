@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	GitLab-patched Git Post-Receive hook for Flowdock
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-flowdock>=0.7:${PORTSDIR}/www/rubygem-flowdock \
 		rubygem-gitlab-grit>=2.4.1:${PORTSDIR}/textproc/rubygem-gitlab-grit \
