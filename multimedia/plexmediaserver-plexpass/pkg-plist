@@ -1323,8 +1323,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.bbvms/URL/Blue Billywig/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.bing/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.bing/URL/Bing/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.blip/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.blip/URL/Blip/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.bodybuilding/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.bodybuilding/URL/Bodybuilding.com/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.breakcom/ServiceInfo.plist
@@ -1338,7 +1336,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.catspawimages/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.catspawimages/URL/Cats Paw Images/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cbcnewsnetwork/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cbcnewsnetwork/URL/CBC Sports/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cbcnewsnetwork/URL/CBC/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cbs/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.cbs/URL/CBS/ServiceCode.pys
@@ -1494,7 +1491,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/faststream.in/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/gorillavid.in/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/letwatch.us/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/nosvideo.com/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/royalvids.eu/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/vidzi.tv/ServiceCode.pys
