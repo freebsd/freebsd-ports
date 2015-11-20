@@ -11,6 +11,7 @@ MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Vagrant Virtual Machine Manager
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rubygem-builder32>=2.1.2:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-bundler>=1.5.3:${PORTSDIR}/sysutils/rubygem-bundler \
