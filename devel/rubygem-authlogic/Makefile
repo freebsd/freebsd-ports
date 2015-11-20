@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Clean, simple, and unobtrusive Ruby authentication solution
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport>=3.2:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-activerecord>=3.2:${PORTSDIR}/databases/rubygem-activerecord \
