@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing-gtk
-PORTVERSION=	0.7.6
+PORTVERSION=	0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils python
 
