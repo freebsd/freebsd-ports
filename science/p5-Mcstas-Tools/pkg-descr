@@ -1,0 +1,20 @@
+McStas perl tools to aid in running neutron ray tracing simulations.
+
+McStas is a tool for simulating neutron instrumentation and experiments using 
+a ray-tracing formalism. Currently the main use of McStas is in the field of
+instrumentation design.
+
+This port contains a few perl-based helper tools (including a GUI) to aid the
+user in setting up and running simulations. The tools are:
+mcgui: A Tk/Perl based GUI.
+mcrun: A Script that makes it easy to run sims and perform
+  point scans and simple optimizations.
+mcdoc: Script for viewing inline component documentation.
+mcplot: Tool for plotting McXtrace-generated results.
+mcdisplay: Visual ray-tracing displaying neutron trajectories.
+mcformatgui: Front-end to mxformat to help reformat data-files (obsolescent).
+mcdaemon: Deamon to dynamically monitor and plot results (obsolescent).
+mcstas2vitess: Tool to transfer a McStas simulation to ViTESS.
+mcresplot: Script to help plotting resolution functions.
+
+WWW: http://www.mcstas.org
