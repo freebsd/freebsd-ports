@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmap
-DISTVERSION=	6.49BETA6
+DISTVERSION=	7.00
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer

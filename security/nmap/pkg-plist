@@ -238,6 +238,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/broadcast-pppoe-discover.nse
 %%DATADIR%%/scripts/broadcast-rip-discover.nse
 %%DATADIR%%/scripts/broadcast-ripng-discover.nse
+%%DATADIR%%/scripts/broadcast-sonicwall-discover.nse
 %%DATADIR%%/scripts/broadcast-sybase-asa-discover.nse
 %%DATADIR%%/scripts/broadcast-tellstick-discover.nse
 %%DATADIR%%/scripts/broadcast-upnp-info.nse
@@ -432,6 +433,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-vuln-cve2014-2127.nse
 %%DATADIR%%/scripts/http-vuln-cve2014-2128.nse
 %%DATADIR%%/scripts/http-vuln-cve2014-2129.nse
+%%DATADIR%%/scripts/http-vuln-cve2014-8877.nse
 %%DATADIR%%/scripts/http-vuln-cve2015-1427.nse
 %%DATADIR%%/scripts/http-vuln-cve2015-1635.nse
 %%DATADIR%%/scripts/http-vuln-misfortune-cookie.nse
@@ -457,6 +459,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/ip-geolocation-geoplugin.nse
 %%DATADIR%%/scripts/ip-geolocation-ipinfodb.nse
 %%DATADIR%%/scripts/ip-geolocation-maxmind.nse
+%%DATADIR%%/scripts/ip-https-discover.nse
 %%DATADIR%%/scripts/ipidseq.nse
 %%DATADIR%%/scripts/ipv6-node-info.nse
 %%DATADIR%%/scripts/ipv6-ra-flood.nse
@@ -539,6 +542,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/nfs-ls.nse
 %%DATADIR%%/scripts/nfs-showmount.nse
 %%DATADIR%%/scripts/nfs-statfs.nse
+%%DATADIR%%/scripts/nje-node-brute.nse
 %%DATADIR%%/scripts/nping-brute.nse
 %%DATADIR%%/scripts/nrpe-enum.nse
 %%DATADIR%%/scripts/ntp-info.nse
@@ -651,6 +655,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/ssl-ccs-injection.nse
 %%DATADIR%%/scripts/ssl-cert.nse
 %%DATADIR%%/scripts/ssl-date.nse
+%%DATADIR%%/scripts/ssl-dh-params.nse
 %%DATADIR%%/scripts/ssl-enum-ciphers.nse
 %%DATADIR%%/scripts/ssl-google-cert-catalog.nse
 %%DATADIR%%/scripts/ssl-heartbleed.nse
@@ -672,6 +677,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/targets-ipv6-wordlist.nse
 %%DATADIR%%/scripts/targets-sniffer.nse
 %%DATADIR%%/scripts/targets-traceroute.nse
+%%DATADIR%%/scripts/targets-xml.nse
 %%DATADIR%%/scripts/teamspeak2-version.nse
 %%DATADIR%%/scripts/telnet-brute.nse
 %%DATADIR%%/scripts/telnet-encryption.nse
