@@ -1300,6 +1300,7 @@
     SUBDIR += py-zope.tal
     SUBDIR += py-zpt
     SUBDIR += py2html
+    SUBDIR += py3-chardet
     SUBDIR += py3-libxml2
     SUBDIR += py3-MarkupSafe
     SUBDIR += pychm
