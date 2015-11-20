@@ -4477,6 +4477,7 @@
     SUBDIR += py3-babel
     SUBDIR += py3-dbus
     SUBDIR += py3-gobject3
+    SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
     SUBDIR += py3-pytz
     SUBDIR += py3-vcversioner
