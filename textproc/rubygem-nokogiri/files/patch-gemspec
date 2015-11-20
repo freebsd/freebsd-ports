@@ -1,5 +1,5 @@
---- nokogiri.gemspec.orig	2015-03-29 12:13:17.677851000 +0000
-+++ nokogiri.gemspec	2015-03-29 13:06:46.232040000 +0000
+--- nokogiri.gemspec.orig	2015-03-29 12:13:18 UTC
++++ nokogiri.gemspec
 @@ -28,7 +28,6 @@
      s.specification_version = 4
  
