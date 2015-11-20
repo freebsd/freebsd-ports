@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	crypto
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.1
 CATEGORIES=	security
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	gasol.wu@gmail.com
@@ -14,6 +13,7 @@ COMMENT=	Objective wrapper for OpenSSL Crypto Library
 
 LICENSE=	PHP301
 
+USES=		tar:tgz
 CONFIGURE_ARGS=	--with-crypto
 USE_OPENSSL=	yes
 USE_PHP=	yes
