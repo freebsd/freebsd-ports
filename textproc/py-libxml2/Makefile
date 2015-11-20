@@ -1,6 +1,5 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/textproc/py-libxml2/Makefile 18999 2014-02-04 18:55:27Z kwm $
 
 PORTREVISION=	0
 CATEGORIES=	textproc gnome python
