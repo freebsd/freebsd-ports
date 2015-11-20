@@ -1,5 +1,5 @@
---- Rakefile.orig	2014-05-24 16:10:23.067290451 +0000
-+++ Rakefile	2014-05-24 16:10:54.151390933 +0000
+--- Rakefile.orig	2014-05-24 16:10:23 UTC
++++ Rakefile
 @@ -130,16 +130,6 @@
      # GENERATED_TOKENIZER
    ]
