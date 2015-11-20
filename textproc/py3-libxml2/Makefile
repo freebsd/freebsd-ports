@@ -1,8 +1,7 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/textproc/py3-libxml2/Makefile 19293 2014-03-24 20:46:10Z kwm $
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
