@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	FFmpeg shared extension for php
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
