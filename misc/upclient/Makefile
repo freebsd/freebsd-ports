@@ -12,7 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Uptimes project client
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext
 USE_RC_SUBR=	upclient
@@ -27,6 +28,8 @@ REINPLACE_SUB=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 DOC_FILES=	AUTHORS COPYING FAQ HISTORY INSTALL README TODO
 DOC_FILES+=	doc/UptimesProtocol5
 DOC_FILES+=	HISTORY-BETA
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${MV} ${WRKSRC}/doc/"Uptimes Protocol 5" ${WRKSRC}/doc/UptimesProtocol5
@@ -48,6 +51,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/upchk ${WRKSRC}/scripts/clientchk \
 		${STAGEDIR}${PREFIX}/sbin
 	@(cd ${WRKSRC}/src; ${MAKE_CMD} destdir=${STAGEDIR} install-locales)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
