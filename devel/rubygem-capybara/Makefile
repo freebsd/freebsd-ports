@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Integration testing tool for rack based web applications
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/License.txt
 
 RUN_DEPENDS=	rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-nokogiri>=1.3.3:${PORTSDIR}/textproc/rubygem-nokogiri \
