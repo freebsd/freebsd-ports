@@ -4478,6 +4478,7 @@
     SUBDIR += py3-gobject3
     SUBDIR += py3-libpeas
     SUBDIR += py3-pytz
+    SUBDIR += py3-vcversioner
     SUBDIR += py3-xdg
     SUBDIR += py_static_check
     SUBDIR += pybugz
