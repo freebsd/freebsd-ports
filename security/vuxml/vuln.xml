@@ -58,6 +58,143 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9d04936c-75f1-4a2c-9ade-4c1708be5df9">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>nspr</name>
+	<range><lt>4.10.10</lt></range>
+      </package>
+      <package>
+	<name>nss</name>
+	<range><ge>3.20</ge><lt>3.20.1</lt></range>
+	<range><ge>3.19.3</ge><lt>3.19.4</lt></range>
+	<range><lt>3.19.2.1</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>42.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>42.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.39</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.39</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>38.4.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>38.4.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>38.4.0</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>38.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA 2015-133 NSS and NSPR memory corruption issues</p>
+	  <p>MFSA 2015-132 Mixed content WebSocket policy bypass
+	    through workers</p>
+	  <p>MFSA 2015-131 Vulnerabilities found through code
+	    inspection</p>
+	  <p>MFSA 2015-130 JavaScript garbage collection crash with
+	    Java applet</p>
+	  <p>MFSA 2015-129 Certain escaped characters in host of
+	    Location-header are being treated as non-escaped</p>
+	  <p>MFSA 2015-128 Memory corruption in libjar through zip
+	    files</p>
+	  <p>MFSA 2015-127 CORS preflight is bypassed when
+	    non-standard Content-Type headers are received</p>
+	  <p>MFSA 2015-126 Crash when accessing HTML tables with
+	    accessibility tools on OS X</p>
+	  <p>MFSA 2015-125 XSS attack through intents on Firefox for
+	    Android</p>
+	  <p>MFSA 2015-124 Android intents can be used on Firefox for
+	    Android to open privileged files</p>
+	  <p>MFSA 2015-123 Buffer overflow during image interactions
+	    in canvas</p>
+	  <p>MFSA 2015-122 Trailing whitespace in IP address hostnames
+	    can bypass same-origin policy</p>
+	  <p>MFSA 2015-121 Disabling scripts in Add-on SDK panels has
+	    no effect</p>
+	  <p>MFSA 2015-120 Reading sensitive profile files through
+	    local HTML file on Android</p>
+	  <p>MFSA 2015-119 Firefox for Android addressbar can be
+	    removed after fullscreen mode</p>
+	  <p>MFSA 2015-118 CSP bypass due to permissive Reader mode
+	    whitelist</p>
+	  <p>MFSA 2015-117 Information disclosure through NTLM
+	    authentication</p>
+	  <p>MFSA 2015-116 Miscellaneous memory safety hazards
+	    (rv:42.0 / rv:38.4)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4513</cvename>
+      <cvename>CVE-2015-4514</cvename>
+      <cvename>CVE-2015-4515</cvename>
+      <cvename>CVE-2015-4518</cvename>
+      <cvename>CVE-2015-7181</cvename>
+      <cvename>CVE-2015-7182</cvename>
+      <cvename>CVE-2015-7183</cvename>
+      <cvename>CVE-2015-7185</cvename>
+      <cvename>CVE-2015-7186</cvename>
+      <cvename>CVE-2015-7187</cvename>
+      <cvename>CVE-2015-7188</cvename>
+      <cvename>CVE-2015-7189</cvename>
+      <cvename>CVE-2015-7190</cvename>
+      <cvename>CVE-2015-7191</cvename>
+      <cvename>CVE-2015-7192</cvename>
+      <cvename>CVE-2015-7193</cvename>
+      <cvename>CVE-2015-7194</cvename>
+      <cvename>CVE-2015-7195</cvename>
+      <cvename>CVE-2015-7196</cvename>
+      <cvename>CVE-2015-7197</cvename>
+      <cvename>CVE-2015-7198</cvename>
+      <cvename>CVE-2015-7199</cvename>
+      <cvename>CVE-2015-7200</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-116/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-117/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-118/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-119/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-120/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-121/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-122/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-123/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-124/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-125/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-126/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-127/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-128/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-129/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-130/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-131/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-132/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-133/</url>
+    </references>
+    <dates>
+      <discovery>2015-11-03</discovery>
+      <entry>2015-11-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68847b20-8ddc-11e5-b69c-c86000169601">
     <topic>gdm -- lock screen bypass when holding escape key</topic>
     <affects>
