@@ -1,7 +1,7 @@
 $NetBSD: patch-lib_sqlite3_stubs.c,v 1.1 2012/09/16 11:34:46 jaapb Exp $
 
 Correct system-dependent defines
---- lib/sqlite3_stubs.c.orig	2012-07-20 15:39:49.000000000 +0000
+--- lib/sqlite3_stubs.c.orig	2012-07-20 15:39:49 UTC
 +++ lib/sqlite3_stubs.c
 @@ -40,7 +40,7 @@
  
