@@ -3,6 +3,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.23
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -18,8 +19,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-OPTIONS_DEFINE=	DOCS DPS FPX OPENMP Q8BIT SSE TEST WEBP X11
-OPTIONS_DEFAULT=OPENMP WEBP X11
+OPTIONS_DEFINE=	DOCS DPS FPX OPENMP Q8BIT SSE TEST WEBP WMF X11 XML
+OPTIONS_DEFAULT=OPENMP WEBP WMF X11 XML
 DPS_DESC=	Display Ghostscript support
 Q8BIT_DESC=	Use 8-bit pixels (speed) instead of 16-bit (quality)
 TEST_DESC=	Run bundled self-tests after build
@@ -30,10 +31,8 @@ CONFIGURE_ARGS=	--enable-shared --enable-static \
 CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-#USES=		ghostscript iconv jpeg libtool localbase tar:bzip2
-USES=		ghostscript iconv jpeg libtool tar:bzip2
+USES=		jpeg libtool tar:bzip2
 
 PORTDATA=	*
 PORTDOCS=	*
@@ -62,10 +61,11 @@ TEST_BUILD_DEPENDS=	webfonts>=0:${PORTSDIR}/x11-fonts/webfonts
 TEST_RUN_DEPENDS=	webfonts>=0:${PORTSDIR}/x11-fonts/webfonts
 WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+WMF_CONFIGURE_WITH=	wmf
 X11_CONFIGURE_WITH=	x
-X11_LIB_DEPENDS=	libwmflite.so:${PORTSDIR}/graphics/libwmf
-X11_LIB_DEPENDS_OFF=	libwmflite.so:${PORTSDIR}/graphics/libwmf-nox11
 X11_USE=		XORG=xext
+XML_CONFIGURE_WITH=	xml
+XML_USE=		GNOME=libxml2
 
 .include <bsd.port.options.mk>
 
@@ -78,6 +78,14 @@ CFLAGS+=	-msse2
 .endif
 .if ${MACHINE_CPU:Msse3}
 CFLAGS+=	-msse3
+.endif
+.endif
+
+.if ${PORT_OPTIONS:MWMF}
+.if ${PORT_OPTIONS:MX11}
+LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf
+.else
+LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf-nox11
 .endif
 .endif
 
