@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libxml2
-PORTVERSION=	2.9.2
-PORTREVISION?=	3
+PORTVERSION=	2.9.3
+PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
 		http://xmlsoft.org/sources/ \
@@ -22,6 +22,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-iconv=${ICONV_PREFIX} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
+		--without-icu \
 		--with-lzma=/usr \
 		--without-python
 INSTALL_TARGET=	install-strip
