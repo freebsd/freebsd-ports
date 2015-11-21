@@ -4,7 +4,9 @@
 PORTNAME=	PCSC-Card
 PORTVERSION=	1.4.14
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
+MASTER_SITES=	CPAN \
+		http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
+MASTER_SITE_SUBDIR=	CPAN:WHOM
 PKGNAMEPREFIX=	p5-
 DISTNAME=	pcsc-perl-${PORTVERSION}
 
