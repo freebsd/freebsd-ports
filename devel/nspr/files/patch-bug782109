@@ -1,6 +1,6 @@
---- ../pr/include/md/_freebsd.h~
-+++ ../pr/include/md/_freebsd.h
-@@ -47,6 +47,14 @@
+--- pr/include/md/_freebsd.h.orig	2015-10-16 13:22:19 UTC
++++ pr/include/md/_freebsd.h
+@@ -57,6 +57,14 @@
  #define _PR_HAVE_LARGE_OFF_T
  
  #if defined(_PR_PTHREADS)
@@ -15,8 +15,8 @@
  #if __FreeBSD_version >= 400008
  /*
   * libc_r before this version of FreeBSD doesn't have poll().
---- ../pr/src/misc/prnetdb.c
-+++ ../pr/src/misc/prnetdb.c
+--- pr/src/misc/prnetdb.c.orig	2015-10-16 13:22:19 UTC
++++ pr/src/misc/prnetdb.c
 @@ -78,11 +78,6 @@ PRLock *_pr_dnsLock = NULL;
  #define _PR_HAVE_GETPROTO_R_INT
  #endif

@@ -1,7 +1,7 @@
---- ../configure.orig	2012-02-14 20:06:00.000000000 +0100
-+++ ../configure	2012-02-17 17:14:27.862323726 +0100
-@@ -4035,11 +4035,8 @@ EOF
- EOF
+--- configure.orig	2015-10-16 13:22:19 UTC
++++ configure
+@@ -6674,11 +6674,8 @@ tools are selected during the Xcode/Deve
+     $as_echo "#define HAVE_SOCKLEN_T 1" >>confdefs.h
  
      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
 -    MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
@@ -14,9 +14,7 @@
      fi
      MKSHLIB='$(CC) $(DSO_LDOPTS) -o $@'
      DSO_CFLAGS=-fPIC
-@@ -6271,11 +6271,9 @@
- #define _THREAD_SAFE 1
- EOF
+@@ -8332,8 +8329,6 @@ $as_echo "$ac_cv_have_dash_pthreads" >&6
  
  	    	    if test "$ac_cv_have_dash_pthread" = "yes"; then
  	        _PTHREAD_LDFLAGS="-pthread"
@@ -25,5 +23,3 @@
  	    fi
  	    ;;
      *-netbsd*)
- 	    if test "$ac_cv_have_dash_pthread" = "yes"; then
-
