@@ -990,6 +990,7 @@
     SUBDIR += py-xmlrpc
     SUBDIR += py-zope.proxy
     SUBDIR += py-zsi
+    SUBDIR += py3-netifaces
     SUBDIR += pygopherd
     SUBDIR += pynids
     SUBDIR += pyrad
