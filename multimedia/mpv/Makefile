@@ -4,6 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.12.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -126,7 +127,7 @@ XINERAMA_USE=			XORG=xinerama,xineramaproto
 XINERAMA_CONFIGURE_OFF=		--disable-xinerama
 XINERAMA_IMPLIES=		X11
 
-YTDL_BUILD_DEPENDS=		${LOCALBASE}/bin/youtube-dl:${PORTSDIR}/www/youtube_dl
+YTDL_RUN_DEPENDS=		youtube-dl:${PORTSDIR}/www/youtube_dl
 
 ZSH_USES=			perl5
 ZSH_USE=			PERL5=build
