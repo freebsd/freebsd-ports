@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitebrowser
-PORTVERSION=	3.6.0
-PORTREVISION=	1
+PORTVERSION=	3.7.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER=	coder@tuxfamily.org
@@ -13,8 +13,6 @@ LICENSE=	MPL GPLv3
 LICENSE_COMB=	dual
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	sqlitebrowser
-GH_TAGNAME=	e703344
 
 USES=		cmake desktop-file-utils
 USE_QT4=	corelib network gui qmake_build linguisttools_build \
@@ -29,9 +27,5 @@ post-patch:
 		${WRKSRC}/src/PreferencesDialog.cpp
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
 		${WRKSRC}/src/Application.cpp
-
-post-install:
-	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/${PORTNAME}/translations
-	(cd ${WRKSRC}/translations && ${COPYTREE_SHARE} . ${STAGEDIR}${LOCALBASE}/share/${PORTNAME}/translations)
 
 .include <bsd.port.mk>
