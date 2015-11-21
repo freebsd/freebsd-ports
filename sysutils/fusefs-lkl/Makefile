@@ -37,4 +37,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lklfuse ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/liblkl.a ${STAGEDIR}${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1100000
+IGNORE=		requires FreeBSD CURRENT
+.endif
+
+.include <bsd.port.post.mk>
