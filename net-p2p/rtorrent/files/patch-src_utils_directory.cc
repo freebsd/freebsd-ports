@@ -1,4 +1,4 @@
---- src/utils/directory.cc.orig	2012-03-29 13:06:11.000000000 +0000
+--- src/utils/directory.cc.orig	2014-04-21 13:34:45 UTC
 +++ src/utils/directory.cc
 @@ -88,6 +88,10 @@ Directory::update(int flags) {
      itr->d_fileno = entry->d_ino;
