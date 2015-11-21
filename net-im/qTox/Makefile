@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qTox
-PORTVERSION=	0.150614
-PORTREVISION=	2
+PORTVERSION=	0.151116
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@rawbw.com
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libtoxcore.so:${PORTSDIR}/net-im/tox \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tux3
-GH_TAGNAME=	ce2c830
+GH_TAGNAME=	db52ef6
 
 USES=		compiler:c++11-lib desktop-file-utils openal:soft qmake gmake
 USE_GNOME=	glib20 gtk20 cairo gdkpixbuf2
