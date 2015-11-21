@@ -3,6 +3,7 @@
 
 PORTNAME=	dar
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -25,9 +26,16 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		DOCS GCRYPT LZO NLS
+OPTIONS_DEFINE=		GCRYPT GPGME LZO ZLIB BZIP2 LZMA DOCS NLS
 OPTIONS_SUB=		yes
 
+ZLIB_CONFIGURE_OFF=	--disable-libz-linking
+BZIP2_CONFIGURE_OFF=	--disable-libbz2-linking
+LZMA_CONFIGURE_OFF=	--disable-libxz-linking
+GPGME_DESC=		gpgme for asymetric crypto algorithms
+GPGME_CONFIGURE_OFF=	--disable-gpgme-linking
+GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_IMPLIES=		GCRYPT
 GCRYPT_CONFIGURE_OFF=	--disable-libgcrypt-linking
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 LZO_DESC=		Support lzo compression via liblzo2
