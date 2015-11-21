@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	SF
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ping-like program that uses TCP and/or HTTP
 
 LICENSE=	GPLv2
