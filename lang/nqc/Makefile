@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://bricxcc.sourceforge.net/nqc/release/ \
 		ftp://ftp2.za.freebsd.org/pub/nqc/
 
-MAINTAINER=	jhay@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for writing programs for the Lego RCX
 
 USES=		gmake dos2unix tar:tgz
