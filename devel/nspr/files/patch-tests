@@ -584,6 +584,17 @@
 +	    clientThreadFunc, (void *)(uintptr_t)listenPort3,
  	    PR_PRIORITY_NORMAL, PR_GLOBAL_BOUND_THREAD,
  	    PR_UNJOINABLE_THREAD, 0);
+--- ../pr/tests/prfz.c.orig	2015-10-16 13:22:19 UTC
++++ ../pr/tests/prfz.c
+@@ -7,7 +7,7 @@
+  */
+ 
+ #include "prprf.h"
+-#include <sys/types.h>
++#include <stdint.h>
+ #include <limits.h>
+ #include <string.h>
+ 
 --- ../pr/tests/ranfile.c	Sun Apr 25 11:01:02 2004
 +++ ../pr/tests/ranfile.c	Mon Jul 25 21:13:44 2005
 @@ -169,5 +169,5 @@
