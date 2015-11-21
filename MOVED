@@ -7904,7 +7904,6 @@ graphics/gdal-grass||2015-10-31|Has expired: Superseded by gdal-2.0.0
 graphics/picviz||2015-10-31|Has expired: Broken for more than 6 months
 irc/weechat-devel|irc/weechat|2015-10-31|Has expired: far behind stable irc/weechat (use it instead)
 mail/cucipop||2015-10-31|Has expired: Broken for more than 6 months
-math/rkward-kde4||2015-10-31|Has expired: Depends on deprecated math/R-cran-car
 multimedia/streamanalyze||2015-10-31|Has expired: Broken for more than 6 months
 net-mgmt/collectd|net-mgmt/collectd5|2015-10-31|Has expired: Please move to collectd5 - collect4 is not developed/patched
 sysutils/sdd||2015-10-31|Has expired: Broken for more than 6 months
