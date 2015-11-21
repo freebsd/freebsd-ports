@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.olsr.org/releases/0.6/ \
 		http://ftp2.za.freebsd.org/pub/mesh/pc/protocols/olsr/
 
-MAINTAINER=	jhay@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OLSR routing daemon
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
