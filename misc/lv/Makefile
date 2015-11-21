@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.ff.iij4u.or.jp/~nrt/freeware/
 DISTNAME=	lv451
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful Multilingual File Viewer
 
 LICENSE=	GPLv2
