@@ -3,7 +3,7 @@
 PORTREVISION=	3
 PKGNAMESUFFIX=	+ipv6
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 
 CONFLICTS_INSTALL=	cvs-[12]* cvs-devel-[12]*

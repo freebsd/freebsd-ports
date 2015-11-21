@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	SF/raop-play/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music file player for Apple Airport Express
 
 LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
