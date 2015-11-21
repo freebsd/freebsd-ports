@@ -6,6 +6,8 @@ bin/ipaccess-find
 bin/ipaccess-config
 bin/ipaccess-proxy
 bin/osmo-gbproxy
+%%BSC%%bin/osmo-bsc
+%%NAT%%bin/osmo-bsc_nat
 %%SQLITE%%bin/osmo-meas-udp2db
 include/openbsc/gsm_04_08.h
 include/openbsc/meas_rep.h
@@ -16,6 +18,7 @@ share/doc/openbsc/examples/osmo-bsc_mgcp/mgcp.cfg
 share/doc/openbsc/examples/osmo-bsc_nat/black-list.cfg
 share/doc/openbsc/examples/osmo-bsc_nat/osmo-bsc_nat.cfg
 share/doc/openbsc/examples/osmo-gbproxy/osmo-gbproxy.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/osmo-gbproxy/osmo-gbproxy-legacy.cfg
 share/doc/openbsc/examples/osmo-nitb/bs11/openbsc-1bts-2trx-hopping.cfg
 share/doc/openbsc/examples/osmo-nitb/bs11/openbsc-1bts-2trx.cfg
 share/doc/openbsc/examples/osmo-nitb/bs11/openbsc-2bts-2trx.cfg
