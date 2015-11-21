@@ -8,7 +8,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Perl interface to the Twitter API
 
 LICENSE=	ART10 GPLv1
