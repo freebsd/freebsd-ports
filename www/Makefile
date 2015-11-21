@@ -1777,6 +1777,7 @@
     SUBDIR += py-wsgiauth
     SUBDIR += py-wsgidav
     SUBDIR += py-zope.app.wsgi
+    SUBDIR += py3-aiohttp
     SUBDIR += pyblosxom
     SUBDIR += pycarddav
     SUBDIR += pydio
