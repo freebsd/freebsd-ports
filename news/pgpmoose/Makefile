@@ -8,13 +8,12 @@ CATEGORIES=	news security
 # MASTER_SITES=	http://people.qualcomm.com/ggr/
 MASTER_SITES=	LOCAL/dinoex
 DISTNAME=	PGPMoose
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	PGP Moose - signatures for moderated newsgroups
 
+USES=		tar:Z shebangfix
 NO_WRKSUBDIR=	yes
-USES=		shebangfix
 SHEBANG_FILES=	pmcancel pmdaemon
 BIN1=		pmapp pmcanon pmcheck pmnewsgroups \
 		pmdaemon pmcancel
