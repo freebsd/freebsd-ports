@@ -922,6 +922,7 @@
     SUBDIR += sqliteman
     SUBDIR += sqlitemanager
     SUBDIR += sqliteodbc
+    SUBDIR += sqlitestudio
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += squirrel-sql
