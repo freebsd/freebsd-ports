@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libshout
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	audio net
 MASTER_SITES=	http://downloads.xiph.org/releases/${PORTNAME}/ \
 		LOCAL/sunpoet
