@@ -2598,6 +2598,7 @@
     SUBDIR += p5-Module-CPANTS-Analyse
     SUBDIR += p5-Module-CPANfile
     SUBDIR += p5-Module-CheckDeps
+    SUBDIR += p5-Module-CheckVersion
     SUBDIR += p5-Module-Collect
     SUBDIR += p5-Module-Compile
     SUBDIR += p5-Module-CoreList
