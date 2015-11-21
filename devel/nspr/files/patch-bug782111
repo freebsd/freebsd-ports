@@ -1,5 +1,5 @@
---- ../pr/src/pthreads/ptthread.c
-+++ ../pr/src/pthreads/ptthread.c
+--- pr/src/pthreads/ptthread.c.orig	2015-11-20 22:19:14 UTC
++++ pr/src/pthreads/ptthread.c
 @@ -21,6 +21,10 @@
  #include <signal.h>
  #include <dlfcn.h>
@@ -11,7 +11,7 @@
  #ifdef SYMBIAN
  /* In Open C sched_get_priority_min/max do not work properly, so we undefine
   * _POSIX_THREAD_PRIORITY_SCHEDULING here.
-@@ -1619,7 +1623,7 @@ PR_IMPLEMENT(PRStatus) PR_SetCurrentThreadName(const char *name)
+@@ -1733,7 +1737,7 @@ PR_IMPLEMENT(PRStatus) PR_SetCurrentThre
  {
      PRThread *thread;
      size_t nameLen;
@@ -20,7 +20,7 @@
  
      if (!name) {
          PR_SetError(PR_INVALID_ARGUMENT_ERROR, 0);
-@@ -1637,8 +1641,10 @@ PR_IMPLEMENT(PRStatus) PR_SetCurrentThreadName(const char *name)
+@@ -1751,8 +1755,10 @@ PR_IMPLEMENT(PRStatus) PR_SetCurrentThre
          return PR_FAILURE;
      memcpy(thread->name, name, nameLen + 1);
  

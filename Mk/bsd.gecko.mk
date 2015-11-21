@@ -533,7 +533,7 @@ gecko-post-patch:
 .if ${USE_MOZILLA:M-nspr}
 	@${ECHO_MSG} "===>  Applying NSPR patches"
 	@for i in ${.CURDIR}/../../devel/nspr/files/patch-*; do \
-		${PATCH} ${PATCH_ARGS} -d ${MOZSRC}/nsprpub/build < $$i; \
+		${PATCH} ${PATCH_ARGS} -d ${MOZSRC}/nsprpub < $$i; \
 	done
 .endif
 .if ${USE_MOZILLA:M-nss}

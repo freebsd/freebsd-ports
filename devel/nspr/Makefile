@@ -3,78 +3,49 @@
 
 PORTNAME=	nspr
 DISTVERSION=	4.10.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/v${PORTVERSION}/src
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Platform-neutral API for system level and libc like functions
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/nspr/build
-
-USES=		cpe gmake
+USES=		cpe gmake pathfix
 CPE_VENDOR=	mozilla
 CPE_PRODUCT=	netscape_portable_runtime
-USE_LDCONFIG=	yes
+WRKSRC_SUBDIR=	nspr
 GNU_CONFIGURE=	yes
-CONFIGURE_SCRIPT=../configure
-CONFIGURE_ARGS=	--srcdir=${WRKSRC:H}
+USE_LDCONFIG=	yes
 
-MAKE_ENV=	DIST=${WRKSRC}/dist
-
-LIBRARIES=	libnspr4.so.1 libplc4.so.1 libplds4.so.1
-
-OPTIONS_DEFINE=	DEBUG
+OPTIONS_DEFINE=	DEBUG TEST
 
 DEBUG_CONFIGURE_ENABLE=debug
 
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/nspr
-	${TAR} -C ${WRKSRC}/dist/include --dereference -cf - . | \
-	    	${TAR} -C ${STAGEDIR}${PREFIX}/include -xof -
-	${FIND} ${STAGEDIR}${PREFIX}/include/nspr -type d | \
-	    	${XARGS} ${CHMOD} 0755
-	${FIND} ${STAGEDIR}${PREFIX}/include/nspr -type f | \
-	    	${XARGS} ${CHMOD} ${SHAREMODE}
-	${TAR} -C ${WRKSRC}/dist/lib --dereference -cf - . | \
-	    	${TAR} -C ${STAGEDIR}${PREFIX}/lib -xof -
-	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/config/nspr.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-.for lib in ${LIBRARIES}
-.if defined(STRIP) && ${STRIP} != ""
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${lib}
-.endif
-	${CHMOD} ${LIBMODE} ${STAGEDIR}${PREFIX}/lib/${lib}
-	${LN} -sf ${lib} ${STAGEDIR}${PREFIX}/lib/${lib:R}
-.endfor
+post-patch:
+# Do not install tools to build itself
+	@${REINPLACE_CMD} -e '/RELEASE_BINS/d' \
+		${WRKSRC}/pr/src/misc/Makefile.in
 
-prtests:
-	${DO_MAKE_BUILD} -C ${WRKSRC}/pr/tests
-	${LN} -sf libmy.so.1 ${WRKSRC}/pr/tests/dll/libmy.so
-	cd ${WRKSRC}/pr/tests && ../../../pr/tests/runtests.sh
+post-build-TEST-on:
+	@${DO_MAKE_BUILD} -C ${BUILD_WRKSRC}/lib/tests
+	@${DO_MAKE_BUILD} -C ${BUILD_WRKSRC}/pr/tests
+	@${LN} -fs libmy.so.1 ${BUILD_WRKSRC}/pr/tests/dll/libmy.so
 
-libtests:
-	${DO_MAKE_BUILD} -C ${WRKSRC}/lib/tests
-	${WRKSRC}/lib/tests/string
-	${WRKSRC}/lib/tests/base64t
+post-install:
+	@for file in ${STAGEDIR}${PREFIX}/lib/*.so*; do \
+		${STRIP_CMD} $$file; \
+		${CHMOD} ${LIBMODE} $$file; \
+		${LN} -fs $${file##*/} $${file%.*}; \
+	done
+
+do-test-TEST-on:
+	${TEST_WRKSRC}/lib/tests/string
+	${TEST_WRKSRC}/lib/tests/base64t
+	cd ${TEST_WRKSRC}/pr/tests && ${WRKSRC}/pr/tests/runtests.sh
 	# The test below is commented out, because arena requires
 	# command-line arguments. If you can provide reasonable values
 	# for it, please contact ${MAINTAINER}. Thank you.
-	#	${WRKSRC}/lib/tests/arena
+	#	${TEST_WRKSRC}/lib/tests/arena
 	#
-
-test: libtests prtests
-
-#regression-test: test
-
-#.if defined(PACKAGE_BUILDING)
-#post-build: test
-#.else
-post-build:
-	#
-	# Please, consider running ``make test'' to find any
-	# possible build problems.
-	#
-#.endif
 
 .include <bsd.port.mk>
