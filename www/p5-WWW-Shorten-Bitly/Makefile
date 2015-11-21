@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	max@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Abstract interface to bit.ly, one of URL shortening sites
 
 BUILD_DEPENDS=	p5-JSON-Any>=1.18:${PORTSDIR}/converters/p5-JSON-Any \
