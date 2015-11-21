@@ -19,12 +19,12 @@ LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		gmake jpeg pkgconfig
+USES=		gmake pkgconfig jpeg
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_zzip_zzip_file_open=no
 
-MAN1=		as3compile.1 font2swf.1 gif2swf.1 jpeg2swf.1 pdf2swf.1 \
+LMAN1=		as3compile.1 font2swf.1 gif2swf.1 jpeg2swf.1 pdf2swf.1 \
 		png2swf.1 swfbbox.1 swfc.1 swfcombine.1 swfdump.1 \
 		swfextract.1 swfrender.1 swfstrings.1 wav2swf.1
 
@@ -47,7 +47,7 @@ CONFIGURE_ENV+=	ac_cv_lib_mp3lame_lame_init=no
 .endif
 
 .if ${PORT_OPTIONS:MPDF}
-MAN1+=		pdf2pdf.1
+LMAN1+=		pdf2pdf.1
 BINFILES+=	pdf2pdf
 .else
 CONFIGURE_ENV+=	ac_cv_lib_pdf_PDF_open_file=no
@@ -65,7 +65,7 @@ do-install:
 .for i in ${BINFILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${i} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-.for i in ${MAN1}
+.for i in ${LMAN1}
 	${INSTALL_DATA} ${WRKSRC}/src/${i} ${STAGEDIR}${PREFIX}/man/man1/
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}/swfs
