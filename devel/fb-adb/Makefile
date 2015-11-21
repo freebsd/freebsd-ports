@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	fb-adb
-DISTVERSION=	1.4.4-109
-DISTVERSIONSUFFIX=	-g930ba5f
-PORTREVISION=	1
+DISTVERSION=	1.4.4-113
+DISTVERSIONSUFFIX=	-gd447d38
 CATEGORIES=	devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -25,7 +24,7 @@ USE_PERL5=	build # pod2man
 BASH_CMD?=	bash # can be zsh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON3="${PYTHON_CMD}"
-# XXX --mandir as SET_LATE_CONFIGURE_ARGS doesn't respect CONFIGURE_CMD
+# XXX D4158: --mandir as SET_LATE_CONFIGURE_ARGS doesn't respect CONFIGURE_CMD
 CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man"
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/${PORTNAME} \
@@ -90,7 +89,7 @@ post-patch-NDK-off:
 	@${REINPLACE_CMD} -i '.aux.bak' -e 's/linux-androideabi/aux-&/' \
 		${WRKSRC}/stub-*/configure
 
-# XXX Similar to USES=qmake:outsource, merge into Mk/Uses/autoreconf.mk
+# XXX D4157: Similar to USES=qmake:outsource, merge into Mk/Uses/autoreconf.mk
 .if defined(USES) && ${USES:Mautoreconf\:outsource}
 USES:=			autoreconf:build ${USES:Nautoreconf*}
 CONFIGURE_CMD=		${AUTORECONF_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -111,8 +110,8 @@ do-autoreconf:
 
 .include <bsd.port.options.mk>
 
-# Extract :p7zip files with 7z(1) if libarchive cannot handle x86_64 sfx
-# or is too old to have 7zip reader
+# XXX D4190: Extract :p7zip files with 7z(1) if libarchive cannot handle
+# x86_64 self-extracting archive or is too old to have 7zip reader
 .if defined(OVERRIDE_LINUX_BASE_PORT) || \
 	(${OPSYS} == FreeBSD && ${OSVERSION} < 1000009)
 EXTRACT_ONLY+=	${DISTFILES:N*\:*p7zip*:C/:.*//}
@@ -132,7 +131,7 @@ do-p7zip-extract:
 
 .include <bsd.port.mk>
 
-# XXX Teach USE_LINUX about build-only deps
+# XXX Bug 204615: Teach USE_LINUX about build-only deps
 .if defined(.PARSEDIR)
 RUN_DEPENDS:=	${RUN_DEPENDS:N${LINUX_BASE_PORT}}
 .else
