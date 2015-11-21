@@ -269,6 +269,7 @@
     SUBDIR += kqoauth
     SUBDIR += krb5
     SUBDIR += krb5-112
+    SUBDIR += krb5-113
     SUBDIR += krb5-appl
     SUBDIR += kripp
     SUBDIR += kstart

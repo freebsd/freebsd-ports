@@ -77,12 +77,12 @@ lib/libk5crypto.so.3
 lib/libk5crypto.so.3.1
 lib/libkadm5clnt.so
 lib/libkadm5clnt_mit.so
-lib/libkadm5clnt_mit.so.10
-lib/libkadm5clnt_mit.so.10.0
+lib/libkadm5clnt_mit.so.9
+lib/libkadm5clnt_mit.so.9.0
 lib/libkadm5srv.so
 lib/libkadm5srv_mit.so
-lib/libkadm5srv_mit.so.10
-lib/libkadm5srv_mit.so.10.0
+lib/libkadm5srv_mit.so.9
+lib/libkadm5srv_mit.so.9.0
 lib/libkdb5.so
 lib/libkdb5.so.8
 lib/libkdb5.so.8.0
@@ -97,7 +97,6 @@ lib/krb5/plugins/tls/k5tls.so
 %%LDAP%%lib/krb5/plugins/kdb/kldap.so
 lib/krb5/plugins/preauth/otp.so
 lib/krb5/plugins/preauth/pkinit.so
-lib/krb5/plugins/preauth/test.so
 %%LDAP%%lib/libkdb_ldap.so
 %%LDAP%%lib/libkdb_ldap.so.1
 %%LDAP%%lib/libkdb_ldap.so.1.0
