@@ -24,12 +24,6 @@ WRKSRC=		${WRKDIR}/c-nocem
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 PLIST_FILES=	%%NEWSBIN%%/fastcancel %%NEWSBIN%%/c-nocem
 
-CNEWS_PORT?=	news/cnews
-#CNEWSWRK?=	${WRKDIRPREFIX}${PORTSDIR}/${CNEWS_PORT}/work
-# ${.CURDIR}/../.. can be diffrent from ${PORTSDIR}
-CNEWSWRK!=	${MAKE} -C ${.CURDIR}/../../${CNEWS_PORT} -V WRKSRC
-NEWSBIN?=	${PREFIX}/libexec/cnews
-
 post-patch:
 	${REINPLACE_CMD} -e 's|@newsbin@|${STAGEDIR}@newsbin@|' \
 		${WRKSRC}/Makefile.in
@@ -37,4 +31,12 @@ post-patch:
 pre-install:
 	${MKDIR} ${STAGEDIR}${NEWSBIN}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# CNEWS_PORT can be set in Makefile.local
+CNEWS_PORT?=	news/cnews
+# ${.CURDIR}/../.. can be diffrent from ${PORTSDIR}
+CNEWSWRK!=	${MAKE} -C ${.CURDIR}/../../${CNEWS_PORT} -V WRKSRC
+NEWSBIN?=	${PREFIX}/libexec/cnews
+
+.include <bsd.port.post.mk>
