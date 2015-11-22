@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151122:
+  AFFECTS: users of audio/audacity
+  AUTHOR: riggs@FreeBSD.org
+
+  Audacity has been upgraded to version 2.1.1. Changes in its settings
+  processing may prevent it from starting. If this happens, removing its
+  user-specific configuration directory ~/.audacity-data resolves this.
+
 20151118:
   AFFECTS: users of mail/rmilter
   AUTHOR: vsevolod@FreeBSD.org
