@@ -3,6 +3,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 
@@ -52,7 +53,7 @@ OPENMP_CONFIGURE_ENABLE=	openmp
 OPENMP_LDFLAGS=		-pthread
 PGSQL_CONFIGURE_OFF=	--with-postgresql=no
 PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config
-PGSQL_LIB_DEPENDS=	libpq.so:${PORTSDIR}/databases/postgresql93-client
+PGSQL_USES=		pgsql
 VIGRA_BUILD_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:${PORTSDIR}/graphics/vigra
 VIGRA_RUN_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:${PORTSDIR}/graphics/vigra
 
