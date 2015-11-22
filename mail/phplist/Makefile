@@ -10,7 +10,7 @@ MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Full-featured open-source newsletter manager
 
 LICENSE=	GPLv3
-LICENSE_FILe=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
