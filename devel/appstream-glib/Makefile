@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	appstream-glib
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.4
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freedesktop.org/~hughsient/appstream-glib/releases/
 DIST_SUBDIR=	gnome3
@@ -21,7 +21,8 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	gcab:${PORTSDIR}/archivers/gcab
 
-USES=		gettext gperf gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gperf gmake libarchive libtool pathfix \
+		pkgconfig tar:xz
 USE_GNOME=	gdkpixbuf2 glib20 gtk30 intlhack introspection:build \
 		libxml2:build pango
 USE_LDCONFIG=	yes
@@ -43,10 +44,6 @@ MANPAGE_BUILD_DEPENDS=	docbook-xml>=0:${PORTSDIR}/textproc/docbook-xml \
 MANPAGES_USE=	GNOME=libxslt:build
 
 .include <bsd.port.options.mk>
-
-.if !exists(/usr/libdata/pkgconfig/libarchive.pc)
-LIB_DEPENDS+=	libarchive.so.13:${PORTSDIR}/archivers/libarchive
-.endif
 
 .if ${OSVERSION} < 1000000 && ${OPSYS} == FreeBSD
 post-patch:
