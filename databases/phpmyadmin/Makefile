@@ -68,9 +68,6 @@ USE_PHP+=	${opt:tl}
 
 .SILENT:
 
-# When creating a package, empty directories will not be generated
-# from the pkg tarball.	 Therefore make sure no directories are empty.
-
 post-patch:
 	cd ${WRKSRC} ; \
 	${CP} ${FILESDIR}/${CFG_FILE}.sample ${WRKSRC}/${CFG_FILE}.sample ; \
