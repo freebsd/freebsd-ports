@@ -58,6 +58,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fb2475c2-9125-11e5-bd18-002590263bf5">
+    <topic>kibana4 -- CSRF vulnerability</topic>
+    <affects>
+      <package>
+	<name>kibana4</name>
+	<name>kibana41</name>
+	<range><ge>4.0.0</ge><lt>4.1.3</lt></range>
+      </package>
+      <package>
+	<name>kibana42</name>
+	<range><ge>4.2.0</ge><lt>4.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security/">
+	  <p>Vulnerability Summary: Kibana versions prior to 4.1.3 and 4.2.1
+	    are vulnerable to a CSRF attack.</p>
+	  <p>Remediation Summary: Users should upgrade to 4.1.3 or 4.2.1.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8131</cvename>
+      <url>https://www.elastic.co/community/security/</url>
+    </references>
+    <dates>
+      <discovery>2015-11-17</discovery>
+      <entry>2015-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e359051d-90bd-11e5-bd18-002590263bf5">
     <topic>a2ps -- format string vulnerability</topic>
     <affects>
