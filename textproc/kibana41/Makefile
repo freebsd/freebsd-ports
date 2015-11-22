@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	kibana
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 DISTVERSIONSUFFIX=	-linux-x86
 CATEGORIES=	textproc www
 MASTER_SITES=	http://download.elastic.co/kibana/kibana/
-PKGNAMESUFFIX=	4
+PKGNAMESUFFIX=	41
 
 MAINTAINER=	kozlov.sergey.404@gmail.com
 COMMENT=	Browser based analytics and search interface to ElasticSearch

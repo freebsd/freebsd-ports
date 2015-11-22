@@ -18,6 +18,7 @@
 %%WWWDIR%%/lib/upgradeConfig.js
 %%WWWDIR%%/lib/validateRequest.js
 %%WWWDIR%%/lib/waitForEs.js
+%%WWWDIR%%/lib/xsrf.js
 %%WWWDIR%%/node_modules/ansicolors/LICENSE
 %%WWWDIR%%/node_modules/ansicolors/README.md
 %%WWWDIR%%/node_modules/ansicolors/ansicolors.js
