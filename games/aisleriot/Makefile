@@ -11,7 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of patience games written in guile scheme
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		appdata-validate:${PORTSDIR}/devel/appstream-glib \
+		appstream-builder:${PORTSDIR}/devel/appstream-glib \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
