@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libraw
-PORTVERSION=	0.16.2
-PORTREVISION=	1
+PORTVERSION=	0.17.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.org/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -21,6 +20,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-examples --disable-jasper
 CFLAGS+=	-fPIC
 INSTALL_TARGET=	install-strip
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DEMOSAIC_PACK_GPL2 DEMOSAIC_PACK_GPL3 DOCS EXAMPLES LCMS2 \
 		OPTIMIZED_CFLAGS OPENMP
@@ -60,23 +62,17 @@ LICENSE=	GPLv3
 LICENSE_COMB=	single
 .endif
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
+post-patch:
+	@${REINPLACE_CMD} -e "s/-lstdc++//g" ${WRKSRC}/configure
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s/-lstdc++//g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
