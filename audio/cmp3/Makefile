@@ -11,12 +11,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based frontend to mpg123
 
-OPTIONS_DEFINE=	DOCS VORBIS
-OPTIONS_DEFAULT=	VORBIS
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-
-LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-kenrevs
 
@@ -27,9 +25,12 @@ MAKE_ARGS=	install_directory=${STAGEDIR}${PREFIX}/bin
 PORTDOCS=	README sample.cmp3rc
 PLIST_FILES=	bin/cmp3 bin/rnmp3
 
+OPTIONS_DEFINE=	DOCS VORBIS
+OPTIONS_DEFAULT=	VORBIS
+
 VORBIS_RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
