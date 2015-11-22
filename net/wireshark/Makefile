@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	1.12.8
-PORTREVISION?=	1
+PORTVERSION=	2.0.0
+PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -41,7 +41,7 @@ LIBS+=		-L${LOCALBASE}/lib
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
-    reordercap captype
+    reordercap captype androiddump
 .if defined(LITE)
 PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
@@ -115,6 +115,10 @@ LUA_CPPFLAGS=		-I${LUA_INCDIR}
 
 QT5_MAKE_ENV=		PATH="${PATH}:${QT_BINDIR}"
 QT5_VARS=		PKGNAMESUFFIX=-qt5
+QT5_PLIST_SUB=		GUI_GTK="@comment "
+
+GTK2_PLIST_SUB=		GUI_GTK=""
+GTK3_PLIST_SUB=		GUI_GTK=""
 
 OPTIONS_SUB=		LUA
 
@@ -127,8 +131,12 @@ PLIST_SUB+=		GUI="@comment "
 .else
 USES+=			desktop-file-utils shared-mime-info
 INSTALLS_ICONS=		yes
-INSTALL_TARGET+=	install_desktop_files
 PLIST_SUB+=		GUI=""
+.endif
+
+.if ${PORT_OPTIONS:MKRB_BASE} && exists(${LOCALBASE}/include/krb5.h)
+IGNORE=			cannot build with base Kerberos if krb5 port is installed. \
+			Use ``make config'' to choose a different option
 .endif
 
 .if empty(PORT_OPTIONS:MGTK2) && empty(PORT_OPTIONS:MGTK3) && \
@@ -146,8 +154,8 @@ post-patch:
 		s|{apps,mimetypes}|apps $$(DESTDIR)${LOCALBASE}/share/icons/hicolor/$$$${size}x$$$${size}/mimetypes|' \
 		${WRKSRC}/Makefile.in
 
-post-install-QT5-on:
-	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-qt \
+post-install-QT5-off:
+	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-gtk \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
