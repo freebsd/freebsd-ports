@@ -2,25 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	wcalc
-PORTVERSION=	2.4
-PORTREVISION=	4
+PORTVERSION=	2.5
 CATEGORIES=	math
 MASTER_SITES=	SF/w-calc/Wcalc/${PORTVERSION}
-DISTNAME=	wcalc-${PORTVERSION}
 
 MAINTAINER=	amarendra.godbole@gmail.com
 COMMENT=	Natural-expression command-line calculator
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr
 
-USES=		readline
+USES=		localbase readline
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/wcalc \
 		man/man1/wcalc.1.gz
