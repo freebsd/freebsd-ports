@@ -1,6 +1,6 @@
---- choose_authen.c.orig	2012-04-17 01:42:55.000000000 +0400
-+++ choose_authen.c	2013-04-13 13:55:20.000000000 +0400
-@@ -130,12 +130,29 @@
+--- choose_authen.c.orig	2012-04-16 21:42:55 UTC
++++ choose_authen.c
+@@ -130,12 +130,29 @@ choose_login(struct authen_data *data, s
  #else /* SKEY */
  	    report(LOG_ERR,
  		   "%s %s: user %s s/key support has not been compiled in",

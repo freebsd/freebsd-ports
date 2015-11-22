@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	tac_plus
-PORTVERSION=	F4.0.4.27a
+PORTVERSION=	F4.0.4.28
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.shrubbery.net/pub/tac_plus/
-DISTNAME=	tacacs+-F4.0.4.27a
+MASTER_SITES=	ftp://ftp.shrubbery.net/pub/${PORTNAME}/
+DISTNAME=	tacacs-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	The Cisco remote authentication/authorization/accounting server
+COMMENT=	Cisco remote authentication/authorization/accounting server
 
 GNU_CONFIGURE=	yes
 USES=		bison perl5 libtool

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-04-17 02:56:54.000000000 +0400
-+++ Makefile.in	2013-04-13 13:43:18.000000000 +0400
-@@ -98,7 +98,7 @@
+--- Makefile.in.orig	2012-04-16 22:56:21 UTC
++++ Makefile.in
+@@ -162,7 +162,7 @@ am__tac_plus_SOURCES_DIST = acct.c authe
  	config.c default_fn.c default_v0_fn.c do_acct.c do_author.c \
  	dump.c enable.c encrypt.c expire.c hash.c maxsessint.c parse.c \
  	programs.c pw.c pwlib.c report.c sendauth.c sendpass.c \
@@ -9,7 +9,7 @@
  @TACSKEY_TRUE@am__objects_1 = skey_fn.$(OBJEXT)
  @TACACECLNT_TRUE@am__objects_2 = aceclnt_fn.$(OBJEXT)
  am_tac_plus_OBJECTS = acct.$(OBJEXT) authen.$(OBJEXT) author.$(OBJEXT) \
-@@ -109,7 +109,7 @@
+@@ -173,7 +173,7 @@ am_tac_plus_OBJECTS = acct.$(OBJEXT) aut
  	parse.$(OBJEXT) programs.$(OBJEXT) pw.$(OBJEXT) \
  	pwlib.$(OBJEXT) report.$(OBJEXT) sendauth.$(OBJEXT) \
  	sendpass.$(OBJEXT) tac_plus.$(OBJEXT) utils.$(OBJEXT) \
@@ -18,7 +18,7 @@
  tac_plus_OBJECTS = $(am_tac_plus_OBJECTS)
  am__DEPENDENCIES_1 =
  tac_plus_DEPENDENCIES = $(am__DEPENDENCIES_1)
-@@ -592,6 +592,7 @@
+@@ -770,6 +770,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendauth.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendpass.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/skey_fn.Po@am__quote@
@@ -26,7 +26,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_plus.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_pwd.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utils.Po@am__quote@
-@@ -1049,8 +1050,7 @@
+@@ -1256,8 +1257,7 @@ info: info-am
  
  info-am:
  
