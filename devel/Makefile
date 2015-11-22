@@ -50,6 +50,7 @@
     SUBDIR += ace+tao-doc
     SUBDIR += acme
     SUBDIR += activitymail
+    SUBDIR += ada-util
     SUBDIR += adabooch
     SUBDIR += adacurses
     SUBDIR += adime
