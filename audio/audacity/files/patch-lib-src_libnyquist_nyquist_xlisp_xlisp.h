@@ -1,9 +1,9 @@
---- lib-src/libnyquist/nyquist/xlisp/xlisp.h    2009-07-15 20:27:36.000000000 -0700
-+++ lib-src/libnyquist/nyquist/xlisp/xlisp.h    2009-07-19 00:24:11.000000000 -0700
-@@ -152,6 +152,15 @@
+--- lib-src/libnyquist/nyquist/xlisp/xlisp.h.orig	2015-07-11 10:02:22 UTC
++++ lib-src/libnyquist/nyquist/xlisp/xlisp.h
+@@ -153,6 +153,15 @@ extern long ptrtoabs();
  #endif
  #endif
-
+ 
 +/* FreeBSD */
 +#ifdef __FreeBSD__
 +#if __BYTE_ORDER == __LITTLE_ENDIAN
