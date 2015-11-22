@@ -42,7 +42,8 @@ OPTIONS_GROUP=	LICENSE
 OPTIONS_GROUP_LICENSE=	GPL3 NONFREE
 
 OPTIONS_DEFINE_amd64=	MMX SSE
-OPTIONS_DEFINE_armv6=	VFP
+OPTIONS_DEFINE_armv6=	VFP NEON
+OPTIONS_DEFINE_armv6hf=	VFP NEON
 OPTIONS_DEFINE_i386=	MMX SSE
 OPTIONS_DEFAULT_amd64=	MMX SSE
 OPTIONS_DEFAULT_i386=	${MACHINE_CPU:tu:MMMX} ${MACHINE_CPU:tu:MSSE}
@@ -59,6 +60,7 @@ GPL3_DESC=	Allow (L)GPL version 3 code(cs)
 ILBC_DESC=	Internet Low Bit Rate codec
 LIBV4L_DESC=	Video for Linux support
 LICENSE_DESC=	Licensing options
+NEON_DESC=	Enable Media Processing Engine instructions
 NONFREE_DESC=	Allow use of nonfree code
 OPENCL_DESC=	Heterogeneous computing via OpenCL
 OPENH264_DESC=	H.264 video codec support via OpenH264
@@ -312,7 +314,10 @@ VAAPI_CONFIGURE_ENABLE=	vaapi
 VDPAU_BUILD_DEPENDS=	${LOCALBASE}/include/vdpau/vdpau.h:${PORTSDIR}/multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
 
+# armv6
 VFP_CONFIGURE_ENABLE=	vfp
+NEON_CONFIGURE_ENABLE=	neon
+NEON_CONFIGURE_ON=	--cpu=armv7-a
 
 # vo-aacenc
 VO_AACENC_LIB_DEPENDS=	libvo-aacenc.so:${PORTSDIR}/audio/vo-aacenc
