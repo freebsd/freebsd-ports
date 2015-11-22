@@ -1,18 +1,12 @@
 ======================================================================
 
-tuptime requires linprocfs(5) mounted under /compat/linux/proc.
+tuptime requires the following be added to /etc/crontab:
 
-If you have not done it yet, please do the following:
+	*/5 * * * * root %%PREFIX%%/bin/tuptime -x > /dev/null
 
-	mkdir -p /usr/compat/linux/proc; ln -sf usr/compat /compat
-	mount -t linprocfs linprocfs /compat/linux/proc
+If you are upgrading from an older version you need to run the following scripts:
 
-To make it permanent, you need the following lines in /etc/fstab:
-
-	linproc	/compat/linux/proc	linprocfs	rw,late		0	0
-
-tuptime also requires the following be added to /etc/crontab:
-
-	*/5 * * * * root test -x %%PREFIX%%/bin/tuptime && %%PREFIX%%/bin/tuptime -x > /dev/null
+	%%EXAMPLESDIR%%/db-tuptime-migrate.sh
+	%%EXAMPLESDIR%%/db-tuptime-migrate-3.0-to-3.1.sh
 
 ======================================================================
