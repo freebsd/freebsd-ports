@@ -58,6 +58,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e359051d-90bd-11e5-bd18-002590263bf5">
+    <topic>a2ps -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>a2ps</name>
+	<range><lt>4.13b_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jong-Gwon Kim reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/16/4">
+	  <p>When user runs a2ps with malicious crafted pro(a2ps prologue) file,
+	    an attacker can execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8107</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/16/4</url>
+    </references>
+    <dates>
+      <discovery>2015-11-16</discovery>
+      <entry>2015-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ecc268f2-8fc2-11e5-918c-bcaec565249c">
     <topic>libxslt -- DoS vulnability due to type confusing error</topic>
     <affects>
