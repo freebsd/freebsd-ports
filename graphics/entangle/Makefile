@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	entangle
-DISTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.7.0
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://entangle-photo.org/download/sources/
 
