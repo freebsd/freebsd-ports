@@ -1,6 +1,6 @@
 bin/Magick++-config
-bin/MagickWand-config
 bin/MagickCore-config
+bin/MagickWand-config
 bin/animate
 bin/compare
 bin/composite
@@ -467,7 +467,9 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%-7/images/ImageMagick.ico
 %%PORTDOCS%%%%DOCSDIR%%-7/images/affine.png
+%%PORTDOCS%%%%DOCSDIR%%-7/images/annotate.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/arc.png
+%%PORTDOCS%%%%DOCSDIR%%-7/images/atop.gif
 %%PORTDOCS%%%%DOCSDIR%%-7/images/background.jpg
 %%PORTDOCS%%%%DOCSDIR%%-7/images/black.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/bluebells_clipped.jpg
@@ -496,6 +498,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/images/objects.gif
 %%PORTDOCS%%%%DOCSDIR%%-7/images/objects.jpg
 %%PORTDOCS%%%%DOCSDIR%%-7/images/objects.png
+%%PORTDOCS%%%%DOCSDIR%%-7/images/over.gif
 %%PORTDOCS%%%%DOCSDIR%%-7/images/patterns/bricks.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/patterns/checkerboard.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/patterns/circles.png
@@ -1474,6 +1477,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%-7/www/formats.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/fx.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/gradient.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/high-dynamic-range.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/history.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/identify.html
@@ -1490,7 +1494,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/magick-core.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/magick-vector-graphics.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/magick-wand.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/magick.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/miff.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/mogrify.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/montage.html
