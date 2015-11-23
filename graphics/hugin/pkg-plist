@@ -671,3 +671,6 @@ share/locale/zh_TW/LC_MESSAGES/hugin.mo
 share/mime/packages/hugin.xml
 share/pixmaps/hugin.png
 share/pixmaps/ptbatcher.png
+share/appdata/PTBatcherGUI.appdata.xml
+share/appdata/calibrate_lens_gui.appdata.xml
+share/appdata/hugin.appdata.xml

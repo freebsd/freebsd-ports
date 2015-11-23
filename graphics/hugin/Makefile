@@ -3,7 +3,7 @@
 
 PORTNAME=	hugin
 PORTVERSION=	2015.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
 		liblensfun.so:${PORTSDIR}/graphics/lensfun \
 		libpano13.so:${PORTSDIR}/graphics/libpano13 \
+		libvigraimpex.so:${PORTSDIR}/graphics/vigra \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20 \
