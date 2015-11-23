@@ -10,9 +10,11 @@ MASTER_SITES=	http://linuxmafia.com/pub/palmos/other-os/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Palm Pilot Image Viewer to PGM Converter
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
 
 GNU_CONFIGURE=	yes
-CONFIGUR_ARGS=	--libdir=${PREFIX}
 
 .include <bsd.port.mk>
