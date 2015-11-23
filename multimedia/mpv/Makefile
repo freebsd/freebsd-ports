@@ -3,6 +3,7 @@
 
 PORTNAME=	mpv
 PORTVERSION=	0.13.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
@@ -24,7 +25,6 @@ WAF_CMD=	${WRKSRC_waf}/waf-light
 
 USES=		compiler:c11 desktop-file-utils iconv pkgconfig python:build waf
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I.. -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -127,7 +127,7 @@ XINERAMA_USE=			XORG=xinerama,xineramaproto
 XINERAMA_CONFIGURE_OFF=		--disable-xinerama
 XINERAMA_IMPLIES=		X11
 
-YTDL_BUILD_DEPENDS=		${LOCALBASE}/bin/youtube-dl:${PORTSDIR}/www/youtube_dl
+YTDL_RUN_DEPENDS=		youtube-dl:${PORTSDIR}/www/youtube_dl
 
 ZSH_USES=			perl5
 ZSH_USE=			PERL5=build
