@@ -1,0 +1,16 @@
+bin/devilspie
+man/man1/devilspie.1.gz
+share/locale/ca/LC_MESSAGES/devilspie.mo
+share/locale/cs/LC_MESSAGES/devilspie.mo
+share/locale/da/LC_MESSAGES/devilspie.mo
+share/locale/de/LC_MESSAGES/devilspie.mo
+share/locale/en_GB/LC_MESSAGES/devilspie.mo
+share/locale/es/LC_MESSAGES/devilspie.mo
+share/locale/fr/LC_MESSAGES/devilspie.mo
+share/locale/nb/LC_MESSAGES/devilspie.mo
+share/locale/oc/LC_MESSAGES/devilspie.mo
+share/locale/pt_BR/LC_MESSAGES/devilspie.mo
+share/locale/ro/LC_MESSAGES/devilspie.mo
+share/locale/sl/LC_MESSAGES/devilspie.mo
+share/locale/sv/LC_MESSAGES/devilspie.mo
+share/locale/zh_CN/LC_MESSAGES/devilspie.mo
