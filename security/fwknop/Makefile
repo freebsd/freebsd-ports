@@ -13,9 +13,16 @@ LICENSE=	GPLv2
 
 CPE_VENDOR=	cipherdyne
 
-OPTIONS_DEFINE=		GPGME
-OPTIONS_DEFAULT=	GPGME
+OPTIONS_DEFINE=	GPGME
 
+OPTIONS_SINGLE=	FW
+OPTIONS_SINGLE_FW=	IPFW PF
+
+OPTIONS_DEFAULT=	GPGME IPFW
+
+FW_DESC=	Firewall Backend
+IPFW_DESC=	Use the IPFW firewall
+PF_DESC=	Use the PF firewall.
 GPGME_DESC=	Build support for gpgme
 
 USES=		cpe libtool
@@ -26,6 +33,10 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 INFO=		libfko
+
+IPFW_CONFIGURE_WITH=	ipfw=/sbin/ipfw
+
+PF_CONFIGURE_WITH=	pf=/sbin/pfctl
 
 GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 GPGME_CONFIGURE_WITH=	gpgme
