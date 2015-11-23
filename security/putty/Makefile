@@ -2,7 +2,7 @@
 
 PORTNAME=	putty
 PORTVERSION=	0.66
-PORTREVISION	1
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
