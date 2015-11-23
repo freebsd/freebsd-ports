@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uliweb
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,6 @@ COMMENT=	Easy python web framework
 LICENSE=	BSD2CLAUSE
 
 USES=		dos2unix python:2
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
