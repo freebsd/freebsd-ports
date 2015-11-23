@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.69
+PORTVERSION=	1.70
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Static analysis of C/C++ code
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtinyxml2.so:${PORTSDIR}/textproc/tinyxml2
@@ -17,8 +17,12 @@ LIB_DEPENDS=	libtinyxml2.so:${PORTSDIR}/textproc/tinyxml2
 USES=		compiler:c++11-lib execinfo gmake tar:bzip2
 
 ALL_TARGET=	cppcheck
+TEST_TARGET=	test
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
-MAKE_ENV+=	TINYXML=-ltinyxml2
+MAKE_ENV+=	TINYXML=-ltinyxml2 CFGDIR="${DATADIR}/cfg"
+
+PLIST_FILES=	bin/cppcheck bin/cppcheck-htmlreport
+PORTDATA=	*
 
 OPTIONS_DEFINE=		MATCHCOMPILER RULES MANPAGES
 OPTIONS_DEFAULT=	MATCHCOMPILER RULES MANPAGES
@@ -26,63 +30,46 @@ OPTIONS_DEFAULT=	MATCHCOMPILER RULES MANPAGES
 MATCHCOMPILER_DESC=	Build-time optimizations via Python
 RULES_DESC=		User-defined rule support (requires PCRE)
 
-PLIST_FILES=	bin/cppcheck bin/cppcheck-htmlreport
+MANPAGES_ALL_TARGET=	man
+MANPAGES_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
+			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+MANPAGES_MAKE_ENV=	DB2MAN="${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl"
+MANPAGES_PLIST_FILES=	man/man1/cppcheck.1.gz
 
-.include <bsd.port.options.mk>
+MATCHCOMPILER_MAKE_ENV=	SRCDIR=build
+MATCHCOMPILER_USES=	python:2,build
 
-MAKE_ENV+=	CFGDIR="${DATADIR}/cfg"
-PORTDATA=	*
-
-.if ${PORT_OPTIONS:MMANPAGES}
-ALL_TARGET+=	man
-BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
-MAKE_ENV+=	DB2MAN="${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl"
-
-PLIST_FILES+=	man/man1/cppcheck.1.gz
-
-post-install:
-	@${INSTALL_MAN} ${WRKSRC}/cppcheck.1 ${STAGEDIR}${PREFIX}/man/man1
-.endif
-
-.if ${PORT_OPTIONS:MMATCHCOMPILER}
-MAKE_ENV+=	SRCDIR=build
-USES+=		python:2,build
-.endif
-
-.if ${PORT_OPTIONS:MRULES}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
-MAKE_ENV+=	HAVE_RULES=yes
-.endif
+RULES_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+RULES_MAKE_ENV=		HAVE_RULES=yes
 
 post-patch:
 	@${REINPLACE_CMD} \
 	-e 's|-Iexternals/tinyxml|-I${LOCALBASE}/include|' \
 		${WRKSRC}/Makefile
-.if ${PORT_OPTIONS:MMANPAGES}
+
+post-patch-MANPAGES-on:
 	@${REINPLACE_CMD} -e '\|DB2MAN=|d' \
 		${WRKSRC}/Makefile
-.endif
-.if ${PORT_OPTIONS:MMATCHCOMPILER}
+
+post-patch-MATCHCOMPILER-on:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' \
 		${WRKSRC}/Makefile
-.endif
-.if ${PORT_OPTIONS:MRULES}
+
+post-patch-RULES-on:
 	@${REINPLACE_CMD} \
 	-e '\|CXXFLAGS +=| \
 	s| -DTIXML_USE_STL $$(shell pcre-config --cflags)||' \
 	-e '\|$$(SRCDIR)/cppcheck.cpp| \
 	s|$${INCLUDE_FOR_LIB}|& $$(shell pcre-config --cflags)|' \
 			${WRKSRC}/Makefile
-.endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/htmlreport/cppcheck-htmlreport ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/htmlreport/cppcheck-htmlreport ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}/cfg
 	@cd ${WRKSRC}/cfg; ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/cfg/
 
-check regression-test test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+do-install-MANPAGES-on:
+	${INSTALL_MAN} ${WRKSRC}/cppcheck.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
