@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PAR-Packer
-PORTVERSION=	1.027
+PORTVERSION=	1.028
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,5 +24,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAKE_JOBS_UNSAFE=	yes
 USE_PERL5=	configure
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/parl ${STAGEDIR}${PREFIX}/bin/parldyn
 
 .include <bsd.port.mk>
