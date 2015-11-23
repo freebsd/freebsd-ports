@@ -3,6 +3,7 @@
 
 PORTNAME=	ada-util
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	marino@FreeBSD.org
@@ -36,6 +37,20 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/Content_Type/d' \
 		${WRKSRC}/src/http/util-http-rest.adb
+
+	# Loggers are hardcoded for several packages at the INFO level
+	# which is quite useless for things like spawning commands.
+	# Set the loggers to filter out everything up less than ERROR
+
+	@${REINPLACE_CMD} -e '/Loggers.Create/s|);|, Util.Log.ERROR_LEVEL);|'\
+		${WRKSRC}/src/http/aws/util-http-clients-web.adb \
+		${WRKSRC}/src/http/curl/util-http-clients-curl.adb \
+		${WRKSRC}/src/http/util-http-clients.adb \
+		${WRKSRC}/src/http/util-http-parts.adb \
+		${WRKSRC}/src/util-beans-factory.adb \
+		${WRKSRC}/src/util-processes.adb \
+		${WRKSRC}/src/util-properties-bundles.adb \
+		${WRKSRC}/src/xml/util-serialize-io-xml.adb
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/gnat/manifests
