@@ -11,6 +11,7 @@ MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	High-level MVC web framework written in Perl
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-EV>=4:${PORTSDIR}/devel/p5-EV
 RUN_DEPENDS:=	${BUILD_DEPENDS}
