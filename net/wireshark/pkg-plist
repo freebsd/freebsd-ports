@@ -52,7 +52,7 @@ man/man1/tshark.1.gz
 man/man4/wireshark-filter.4.gz
 %%GUI%%share/appdata/wireshark.appdata.xml
 %%GUI%%share/applications/wireshark.desktop
-%%GUI_GTK%%share/applications/wireshark-gtk.desktop
+%%GUI%%%%GUI_GTK%%share/applications/wireshark-gtk.desktop
 %%GUI%%share/icons/hicolor/128x128/apps/wireshark.png
 %%GUI%%share/icons/hicolor/128x128/mimetypes/application-wireshark-doc.png
 %%GUI%%share/icons/hicolor/16x16/apps/wireshark.png
