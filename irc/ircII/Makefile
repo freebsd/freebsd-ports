@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ircii
-PORTVERSION=	20150903
+PORTVERSION=	20151120
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ircii.warped.com/
 
