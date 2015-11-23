@@ -1,4 +1,4 @@
-# Created by: Torsten Zühlsdorff <ports@toco-domains.de>
+# Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
 # $FreeBSD$
 
 PKGNAMESUFFIX=	4-rails41
