@@ -3,7 +3,6 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.d${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -103,7 +102,8 @@ COMMANDS=	bugpoint \
 		llvm-symbolizer \
 		llvm-tblgen \
 		macho-dump \
-		opt
+		opt \
+		sancov
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
 STRIP_LIBS=	BugpointPasses.so \
@@ -116,7 +116,8 @@ EXTRAS_COMMANDS= \
 		clang-modernize \
 		clang-query \
 		clang-rename \
-		clang-tidy
+		clang-tidy \
+		modularize
 EXTRAS_LIBS=	\
 		libclangApplyReplacements \
 		libclangQuery \
@@ -133,7 +134,8 @@ EXTRAS_PATTERN= ${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLANG}
-COMMANDS+=	clang \
+COMMANDS+=	c-index-test \
+		clang \
 		clang++ \
 		clang-check \
 		clang-cpp \
@@ -142,7 +144,7 @@ COMMANDS+=	clang \
 		scan-view
 MAN1SRCS+=	clang.1 \
 		scan-build.1
-CLANG_PATTERN=	(clang|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|six.py|-analyzer)
+CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer)
 .endif
 
 .if ${PORT_OPTIONS:MEXTRAS}
@@ -191,6 +193,7 @@ NOT_FOR_ARCH=	ia64
 
 .if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
 # Evil hack around gcc48 not providing a usable c++11 environment on 9.x
+PLIST_SUB:=	${PLIST_SUB:NEXTRAS=*} EXTRAS="@comment "
 PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
 .endif
 
@@ -202,7 +205,9 @@ post-extract-CLANG-on:
 	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
 
 post-extract-EXTRAS-on:
+.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_extras} ${PATCH_WRKSRC}/tools/clang/tools/extra
+.endif
 
 post-extract-LLD-on:
 	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
@@ -241,11 +246,6 @@ post-install-DOCS-on:
 .endif
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
-
-post-install-LLDB-on:
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
-	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
-.endif
 
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
@@ -299,7 +299,7 @@ build-plist:
 	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /omp.h|${EXTRAS_PATTERN}/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
-	    if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} \
+	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print} \
