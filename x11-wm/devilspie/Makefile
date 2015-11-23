@@ -2,26 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	devilspie
-PORTVERSION=	0.22
-PORTREVISION=	6
+PORTVERSION=	0.23
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.burtonini.com/computing/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	w.schwarzenfeld@utanet.at
 COMMENT=	Window manipulation tool
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libwnck-3.so:${PORTSDIR}/x11-toolkits/libwnck3
+
+USES=		gettext gmake pkgconfig tar:xz
 USE_GNOME=	libwnck intltool
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gettext gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11
 
 PORTDOCS=	AUTHORS NEWS README TODO
-PLIST_FILES=	bin/devilspie \
-		man/man1/devilspie.1.gz \
-		share/locale/de/LC_MESSAGES/devilspie.mo
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||' \
