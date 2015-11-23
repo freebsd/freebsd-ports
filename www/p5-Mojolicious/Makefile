@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious
-PORTVERSION=	6.32
+PORTVERSION=	6.33
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
-COMMENT=	High level MVC web framework written in Perl
+MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	High-level MVC web framework written in Perl
 
 LICENSE=	ART20
 
@@ -23,8 +23,8 @@ USE_PERL5=	configure
 USES=		perl5
 
 IPV6_CATEGORIES=	ipv6
-IPV6_BUILD_DEPENDS=	p5-IO-Socket-IP>=0.26:${PORTSDIR}/net/p5-IO-Socket-IP
-IPV6_RUN_DEPENDS=	p5-IO-Socket-IP>=0.26:${PORTSDIR}/net/p5-IO-Socket-IP
+IPV6_BUILD_DEPENDS=	p5-IO-Socket-IP>=0.37:${PORTSDIR}/net/p5-IO-Socket-IP
+IPV6_RUN_DEPENDS=	p5-IO-Socket-IP>=0.37:${PORTSDIR}/net/p5-IO-Socket-IP
 TLS_BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.75:${PORTSDIR}/security/p5-IO-Socket-SSL
 TLS_RUN_DEPENDS=	p5-IO-Socket-SSL>=1.75:${PORTSDIR}/security/p5-IO-Socket-SSL
 
