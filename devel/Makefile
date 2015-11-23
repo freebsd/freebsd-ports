@@ -4893,6 +4893,7 @@
     SUBDIR += rubygem-nprogress-rails
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-omniauth_crowd
+    SUBDIR += rubygem-omniauth_crowd-rails41
     SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-orm_adapter
