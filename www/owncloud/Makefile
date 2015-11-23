@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	8.2.0
+PORTVERSION=	8.2.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -58,6 +58,5 @@ do-install:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
-	${CHMOD} +x ${STAGEDIR}${WWWDIR}/occ
 
 .include <bsd.port.mk>
