@@ -3,7 +3,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.23
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -32,14 +32,10 @@ CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		jpeg libtool tar:bzip2
+USES=		jpeg libtool localbase tar:bzip2
 
 PORTDATA=	*
 PORTDOCS=	*
-
-# The OPENMP option may select gcc as compiler but on architectures
-# that have switched to libc++ clang should be used for C++ code.
-#CXX=		c++
 
 # Use fonts installed by x11-fonts/webfonts by default
 WINDOWS_FONT_DIR?=	${LOCALBASE}/share/fonts/webfonts
@@ -96,3 +92,7 @@ post-install-Q8BIT-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/GraphicsMagick/modules-Q8/coders ${STAGEDIR}${PREFIX}/lib/GraphicsMagick/modules-Q8/filters
 
 .include <bsd.port.mk>
+
+# The OPENMP option may select gcc as compiler but on architectures
+# that have switched to libc++ clang should be used for C++ code.
+CXX=		c++
