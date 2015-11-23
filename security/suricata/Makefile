@@ -4,8 +4,7 @@
 PORTNAME=	suricata
 PORTVERSION=	2.0.9
 CATEGORIES=	security
-MASTER_SITES=	http://www.openinfosecfoundation.org/download/ \
-		http://mirrors.rit.edu/zi/
+MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	High Performance Network IDS, IPS and Security Monitoring engine
