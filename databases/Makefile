@@ -841,6 +841,7 @@
     SUBDIR += rubygem-activerecord4
     SUBDIR += rubygem-activerecord41
     SUBDIR += rubygem-after_commit_queue
+    SUBDIR += rubygem-after_commit_queue-rails41
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-arel-helpers
