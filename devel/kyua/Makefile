@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kyua
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.12
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTVERSION}/ \
