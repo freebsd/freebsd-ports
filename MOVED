@@ -7945,3 +7945,4 @@ devel/py-pytz3|devel/py3-pytz|2015-11-19|Port Renamed
 devel/ocaml-typeconv|devel/ocaml-type_conv|2015-11-20|Renamed to match upstream naming
 www/py3-aiohttp|www/py-aiohttp|2015-11-21|Duplicate port
 textproc/kibana4|textproc/kibana41|2015-11-22|Distinguish from incompatible kibana42
+devel/qsvn||2015-11-23|Has expired: Development discontinued since 2009
