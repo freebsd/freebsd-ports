@@ -154,8 +154,10 @@ post-patch:
 		s|{apps,mimetypes}|apps $$(DESTDIR)${LOCALBASE}/share/icons/hicolor/$$$${size}x$$$${size}/mimetypes|' \
 		${WRKSRC}/Makefile.in
 
-post-install-QT5-off:
+.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}
+post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-gtk \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+.endif
 
 .include <bsd.port.mk>
