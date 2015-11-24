@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	luxrender
-DISTVERSION?=	1.5
+DISTVERSION?=	1.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/luxrender/lux/get/ \
 		https://bitbucket.org/luxrender/luxrays/get/:lr
-DISTFILES=	v${DISTVERSION:C/[.-]//g}${EXTRACT_SUFX} \
+DISTFILES?=	${PORTNAME}_v${DISTVERSION}.tar.gz \
 		${PORTNAME}_v${DISTVERSION:S/-//}${EXTRACT_SUFX}:lr
 DIST_SUBDIR=	${PORTNAME}
 
@@ -19,14 +19,14 @@ LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfreeimage.so:${PORTSDIR}/graphics/freeimage \
 		libOpenImageIO.so:${PORTSDIR}/graphics/openimageio
-.if ${DISTVERSION} > 1.4
+.if ${DISTVERSION} != 1.4
 LIB_DEPENDS+=	libembree.so:${PORTSDIR}/graphics/embree
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions
 
-USES=		bison cmake execinfo python:version tar:bzip2
+USES=		bison cmake execinfo python:build tar:bzip2
 USE_GL=		glut glew
 WRKSRC=		${WRKDIR}/${PORTNAME}-lux-${LUX_REV}
 LUXRAYS_WRKSRC=	${WRKDIR}/${PORTNAME}-luxrays-${LUXRAYS_REV}
@@ -39,8 +39,8 @@ CMAKE_ARGS=	-DLUXCORE_INCLUDE_DIRS:PATH="${LUXRAYS_WRKSRC}/include" \
 		-DSLG_LIBRARY:PATH="${LUXRAYS_WRKSRC}/lib/libsmallluxgpu.a" \
 		-DLUXRAYS_DISABLE_OPENCL:BOOL=ON
 
-LUX_REV?=	216e294b59e3
-LUXRAYS_REV?=	3674460aa1da
+LUX_REV?=	8dabcd6b7016
+LUXRAYS_REV?=	8577ff287efb
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=	X11
@@ -66,6 +66,7 @@ post-patch:
 		${WRKSRC}/cmake/pylux.cmake
 
 pre-configure:
+	-${PYTHON_CMD} ${WRKSRC}/makeBuildNumber.py ${WRKSRC}/core/version.h
 	cd ${LUXRAYS_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} \
 		${CMAKE_ARGS} .
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
