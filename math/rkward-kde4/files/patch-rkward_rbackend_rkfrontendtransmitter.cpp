@@ -1,6 +1,6 @@
---- rkward/rbackend/rkfrontendtransmitter.cpp.orig	2014-10-13 21:22:11.000000000 +0200
-+++ rkward/rbackend/rkfrontendtransmitter.cpp	2014-10-31 22:13:56.000000000 +0100
-@@ -41,7 +41,7 @@
+--- rkward/rbackend/rkfrontendtransmitter.cpp.orig	2015-01-15 13:37:21 UTC
++++ rkward/rbackend/rkfrontendtransmitter.cpp
+@@ -41,7 +41,7 @@ QString findBackendAtPath (const QString
  #ifdef Q_WS_WIN
  	QString ret = dir.filePath ("rkward.rbackend.exe");
  #else
