@@ -91,6 +91,9 @@ post-patch:
 .for f in ${LINUX_CONFIG}
 	${REINPLACE_CMD} 's,[Ll]inux,FreeBSD,g' ${WRKSRC}/etc/icinga2/conf.d/${f}
 .endfor
+.if ${OSVERSION} < 1000000
+	${REINPLACE_CMD} 's|,--no-export-dynamic||' ${WRKSRC}/CMakeLists.txt
+.endif
 
 pre-install:
 	${FIND} ${WRKSRC}/etc -type f -name "*.conf" -exec ${MV} {} {}.sample \;
