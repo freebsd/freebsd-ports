@@ -1,17 +1,10 @@
---- xymonnet/httpresult.c.orig	2015-11-23 19:40:49 UTC
+--- xymonnet/httpresult.c.orig	2015-11-24 15:59:24 UTC
 +++ xymonnet/httpresult.c
-@@ -64,10 +64,10 @@ static int statuscolor(testedhost_t *h, 
- 		break;
- 	  default:
- 		/* Unknown or custom status */
--		result = (result < 100) ? (h->dialup ? COL_CLEAR : COL_RED) :
--			 (result < 200) ? COL_YELLOW :
--			 (result < 300) ? COL_GREEN  :
--			 (result < 400) ? COL_YELLOW :
-+		result = (status < 100) ? (h->dialup ? COL_CLEAR : COL_RED) :
-+			 (status < 200) ? COL_YELLOW :
-+			 (status < 300) ? COL_GREEN  :
-+			 (status < 400) ? COL_YELLOW :
- 			 COL_RED;
- 		break;
- 	}
+@@ -44,6 +44,7 @@ static int statuscolor(testedhost_t *h, 
+ 
+ 	switch(status) {
+ 	  case 200: /* OK - most common case */
++	  case 301: /* Permanent Redirect */
+ 	  case 302: /* Temp Redirect */
+ 	  case 303: /* See Other */
+ 	  case 307: /* Temp Redirect (HTTP 1.1) */
