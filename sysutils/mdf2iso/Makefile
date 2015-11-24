@@ -3,21 +3,23 @@
 
 PORTNAME=	mdf2iso
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	BERLIOS
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/mdf2iso/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Alcohol 120% to ISO converter
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2 # (or later)
+
+USES=		tar:xz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/mdf2iso
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
