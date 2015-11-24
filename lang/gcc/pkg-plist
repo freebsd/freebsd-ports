@@ -8,12 +8,15 @@ bin/%%GNU_HOST%%-gcc-ranlib%%SUFFIX%%
 bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 bin/c++%%SUFFIX%%
 bin/cpp%%SUFFIX%%
+bin/g++
 bin/g++%%SUFFIX%%
+bin/gcc
 bin/gcc%%SUFFIX%%
 bin/gcc-ar%%SUFFIX%%
 bin/gcc-nm%%SUFFIX%%
 bin/gcc-ranlib%%SUFFIX%%
 bin/gcov%%SUFFIX%%
+bin/gfortran
 bin/gfortran%%SUFFIX%%
 @comment info/gcc%%SUFFIX%%/dir
 man/man1/cpp%%SUFFIX%%.1.gz
