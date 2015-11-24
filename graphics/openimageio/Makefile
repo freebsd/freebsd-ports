@@ -4,7 +4,7 @@
 PORTNAME=	openimageio
 PORTVERSION=	1.5.20
 DISTVERSIONPREFIX=	Release-
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -52,6 +52,10 @@ GIF_CMAKE_ON=		-DUSE_GIF:BOOL=ON
 GIF_CMAKE_OFF=		-DUSE_GIF:BOOL=OFF
 GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
 
+IMAGEVIEWER_CMAKE_ON=	-DUSE_QT:BOOL=ON -DUSE_OPENGL:BOOL=ON
+IMAGEVIEWER_CMAKE_OFF=	-DUSE_OPENGL:BOOL=OFF -DUSE_QT:BOOL=OFF
+IMAGEVIEWER_USE=	GL=glew QT4=corelib,gui,opengl,qmake_build,moc_build,rcc_build,uic_build
+
 OCIO_CMAKE_ON=		-DUSE_OCIO:BOOL=ON
 OCIO_CMAKE_OFF=		-DUSE_OCIO:BOOL=OFF
 OCIO_LIB_DEPENDS=	libOpenColorIO.so:${PORTSDIR}/graphics/opencolorio
@@ -91,14 +95,6 @@ PLIST=		${PKGDIR}/pkg-plist-pybind
 USES+=		python:2
 CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=ON -DUSE_PYTHON3:BOOL=OFF \
 		-DOIIO_BUILD_TOOLS:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MIMAGEVIEWER}
-USE_GL=		glew
-USE_QT4=	corelib gui opengl qmake_build moc_build rcc_build uic_build
-CMAKE_ARGS+=	-DUSE_QT:BOOL=ON -DUSE_OPENGL:BOOL=ON
-.else
-CMAKE_ARGS+=	-DUSE_OPENGL:BOOL=OFF -DUSE_QT:BOOL=OFF
 .endif
 
 post-patch:
