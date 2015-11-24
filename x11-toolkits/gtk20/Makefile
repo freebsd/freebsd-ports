@@ -47,8 +47,6 @@ CUPS_CONFIGURE_ON=	--enable-cups=auto
 CUPS_CONFIGURE_OFF=	--disable-cups
 DEBUG_CONFIGURE_ON=	--enable-debug=yes
 
-.include <bsd.port.options.mk>
-
 PLIST_SUB+=	LIBGAILVER=18.0.1 LIBGVER=0.2400.28
 
 post-patch:
@@ -58,10 +56,11 @@ post-patch:
 		${WRKSRC}/gtk/Makefile.in
 
 pre-configure:
-.if !exists(${LOCALBASE}/libdata/pkgconfig/cairo-xlib.pc)
-	@${ECHO_CMD} "${PKGNAME}: Needs cairo with X11 support enabled."
-	@${FALSE}
-.endif
+# .if !exists() evaluates too early before cairo has a chance to be installed
+	@if ! pkg-config --exists cairo-xlib; then \
+		${ECHO_MSG} "${PKGNAME}: Needs cairo with X11 support enabled."; \
+		${FALSE}; \
+	fi
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/modules
