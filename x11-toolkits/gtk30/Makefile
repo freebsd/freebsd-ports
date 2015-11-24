@@ -79,7 +79,6 @@ DEBUG_CONFIGURE_ENABLE=debug
 # GTK+ 3.17 has a beter way
 TYPEAHEAD_DESC=		Re-enable type-a-head functionality in file chooser
 
-# needed for the exists() check, booo
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTYPEAHEAD}
@@ -94,10 +93,11 @@ post-patch:
 		${WRKSRC}/gtk/Makefile.in
 
 pre-configure:
-.if !exists(${LOCALBASE}/libdata/pkgconfig/cairo-xlib.pc)
-	@${ECHO_CMD} "${PKGNAME}: Needs cairo with X11 support enabled."
-	@${FALSE}
-.endif
+# .if !exists() evaluates too early before cairo has a chance to be installed
+	@if ! pkg-config --exists cairo-xlib; then \
+		${ECHO_MSG} "${PKGNAME}: Needs cairo with X11 support enabled."; \
+		${FALSE}; \
+	fi
 
 pre-build:
 	@${RM} -rf ${WRKSRC}/docs/gtk.info*
