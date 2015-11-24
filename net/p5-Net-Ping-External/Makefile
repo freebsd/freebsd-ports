@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Ping-External
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +13,8 @@ COMMENT=	Perl cross-platform interface to ICMP "ping" utilities
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-USES=		perl5 zip
+USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
