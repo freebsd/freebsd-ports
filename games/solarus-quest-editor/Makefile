@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	solarus-quest-editor
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
