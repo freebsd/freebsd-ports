@@ -3,7 +3,7 @@
 @@ -21,6 +21,13 @@ Scott McMurray
  #include "constants.hpp"
  #include <cstring>
- 
+
 +#ifdef __FreeBSD__
 +# include <osreldate.h>
 +# if __FreeBSD_version < 900506
@@ -13,4 +13,4 @@
 +
  namespace boost {
    namespace detail {
-   	//This only works on unsigned data types
+        //This only works on unsigned data types
