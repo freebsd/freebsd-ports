@@ -50,6 +50,7 @@ bin/mono-service2
 bin/mono-sgen
 bin/mono-sgen-gdb.py
 bin/mono-shlib-cop
+bin/mono-symbolicate
 bin/mono-test-install
 bin/mono-xmltool
 bin/monodis
@@ -147,10 +148,6 @@ lib/libmono-profiler-aot.a
 lib/libmono-profiler-aot.so
 lib/libmono-profiler-aot.so.0
 lib/libmono-profiler-aot.so.0.0.0
-lib/libmono-profiler-cov.a
-lib/libmono-profiler-cov.so
-lib/libmono-profiler-cov.so.0
-lib/libmono-profiler-cov.so.0.0.0
 lib/libmono-profiler-iomap.a
 lib/libmono-profiler-iomap.so
 lib/libmono-profiler-iomap.so.0
@@ -457,6 +454,7 @@ lib/mono/4.5/PEAPI.dll
 lib/mono/4.5/RabbitMQ.Client.Apigen.exe
 lib/mono/4.5/RabbitMQ.Client.Apigen.exe.mdb
 lib/mono/4.5/RabbitMQ.Client.dll
+lib/mono/4.5/SMDiagnostics.dll
 lib/mono/4.5/System.ComponentModel.Composition.dll
 lib/mono/4.5/System.ComponentModel.DataAnnotations.dll
 lib/mono/4.5/System.Configuration.Install.dll
@@ -508,6 +506,7 @@ lib/mono/4.5/System.Runtime.Serialization.dll
 lib/mono/4.5/System.Security.dll
 lib/mono/4.5/System.ServiceModel.Activation.dll
 lib/mono/4.5/System.ServiceModel.Discovery.dll
+lib/mono/4.5/System.ServiceModel.Internals.dll
 lib/mono/4.5/System.ServiceModel.Routing.dll
 lib/mono/4.5/System.ServiceModel.Web.dll
 lib/mono/4.5/System.ServiceModel.dll
@@ -613,6 +612,8 @@ lib/mono/4.5/mono-service.exe.mdb
 lib/mono/4.5/mono-shlib-cop.exe
 lib/mono/4.5/mono-shlib-cop.exe.config
 lib/mono/4.5/mono-shlib-cop.exe.mdb
+lib/mono/4.5/mono-symbolicate.exe
+lib/mono/4.5/mono-symbolicate.exe.mdb
 lib/mono/4.5/mono-xmltool.exe
 lib/mono/4.5/mono-xmltool.exe.mdb
 lib/mono/4.5/monolinker.exe
@@ -659,8 +660,6 @@ lib/mono/4.5/sqlsharp.exe
 lib/mono/4.5/sqlsharp.exe.mdb
 lib/mono/4.5/svcutil.exe
 lib/mono/4.5/svcutil.exe.mdb
-lib/mono/4.5/symbolicate.exe
-lib/mono/4.5/symbolicate.exe.mdb
 lib/mono/4.5/wsdl.exe
 lib/mono/4.5/wsdl.exe.mdb
 lib/mono/4.5/xbuild.exe
@@ -779,6 +778,8 @@ lib/mono/gac/PEAPI/4.0.0.0__0738eb9f132ed756/PEAPI.dll
 lib/mono/gac/PEAPI/4.0.0.0__0738eb9f132ed756/PEAPI.dll.mdb
 lib/mono/gac/RabbitMQ.Client/4.0.0.0__b03f5f7f11d50a3a/RabbitMQ.Client.dll
 lib/mono/gac/RabbitMQ.Client/4.0.0.0__b03f5f7f11d50a3a/RabbitMQ.Client.dll.mdb
+lib/mono/gac/SMDiagnostics/0.0.0.0__b77a5c561934e089/SMDiagnostics.dll
+lib/mono/gac/SMDiagnostics/0.0.0.0__b77a5c561934e089/SMDiagnostics.dll.mdb
 lib/mono/gac/System.ComponentModel.Composition/4.0.0.0__b77a5c561934e089/System.ComponentModel.Composition.dll
 lib/mono/gac/System.ComponentModel.Composition/4.0.0.0__b77a5c561934e089/System.ComponentModel.Composition.dll.mdb
 lib/mono/gac/System.ComponentModel.DataAnnotations/4.0.0.0__31bf3856ad364e35/System.ComponentModel.DataAnnotations.dll
@@ -881,6 +882,8 @@ lib/mono/gac/System.ServiceModel.Activation/4.0.0.0__31bf3856ad364e35/System.Ser
 lib/mono/gac/System.ServiceModel.Activation/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Activation.dll.mdb
 lib/mono/gac/System.ServiceModel.Discovery/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Discovery.dll
 lib/mono/gac/System.ServiceModel.Discovery/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Discovery.dll.mdb
+lib/mono/gac/System.ServiceModel.Internals/0.0.0.0__b77a5c561934e089/System.ServiceModel.Internals.dll
+lib/mono/gac/System.ServiceModel.Internals/0.0.0.0__b77a5c561934e089/System.ServiceModel.Internals.dll.mdb
 lib/mono/gac/System.ServiceModel.Routing/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Routing.dll
 lib/mono/gac/System.ServiceModel.Routing/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Routing.dll.mdb
 lib/mono/gac/System.ServiceModel.Web/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Web.dll
@@ -1102,6 +1105,7 @@ man/man1/mono-cil-strip.1.gz
 man/man1/mono-configuration-crypto.1.gz
 man/man1/mono-service.1.gz
 man/man1/mono-shlib-cop.1.gz
+man/man1/mono-symbolicate.1.gz
 man/man1/mono-xmltool.1.gz
 man/man1/mono.1.gz
 man/man1/monodis.1.gz
@@ -1164,3 +1168,4 @@ share/locale/es/LC_MESSAGES/mcs.mo
 share/locale/ja/LC_MESSAGES/mcs.mo
 share/locale/pt_BR/LC_MESSAGES/mcs.mo
 %%DATADIR%%-2.0/mono/cil/cil-opcodes.xml
+%%DATADIR%%-2.0/mono/profiler/mono-profiler-log.suppression
