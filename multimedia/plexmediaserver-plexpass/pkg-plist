@@ -1359,6 +1359,8 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.disney/URL/Disney/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dolectures/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dolectures/URL/DoLectures/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dplay/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dplay/URL/Dplay/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.drdk/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.drdk/URL/drdk/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.dumpert/ServiceInfo.plist
@@ -1427,8 +1429,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.internetarchive/URL/Internet Archive/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.iplayer/URL/BBC iPlayer/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kanal5play/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kanal5play/URL/Kanal 5 Play/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kelbytv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kelbytv/URL/Kelby TV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy/ServiceInfo.plist
@@ -1697,107 +1697,75 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Info.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/Frameworks/EKSpinner/Resources/small_black_7.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.e3a96f41583f2039b47d266c61c8f208.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon-mask.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon.ico
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/glyphicons-regular.eot
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/glyphicons-regular.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/glyphicons-regular.ttf
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/glyphicons-regular.woff
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/glyphicons-social-regular.eot
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/glyphicons-social-regular.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/glyphicons-social-regular.ttf
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/glyphicons-social-regular.woff
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.eot
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.ttf
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.woff
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/opensans-bold-webfont.woff2
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.eot
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.ttf
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.woff
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.woff2
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/plex-icons.eot
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/plex-icons.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/plex-icons.ttf
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/fonts/plex-icons.woff
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/plex-logo.96faf245690b14fdd33eccd3294ac57f.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/plex-pass.e73cc397459c4930e842b86b27d05eb9.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/pms-logo.70f6a544befb024685e4a294f6e5505e.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/posters/square.f5415a2d8a1fccd963e88194af15ddc0.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/blank.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/android.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/android@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/atv.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/atv@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/chrome.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/chrome@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/cloudsync.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/cloudsync@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/dlna.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/dlna@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/firefox.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/firefox@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/gtv.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/gtv@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/ie.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/ie@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/ios.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/ios@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/linux.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/linux@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/nas.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/nas@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/opera.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/opera@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/osx.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/osx@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/pht.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/pht@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/pms.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/pms@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/roku.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/roku@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/safari.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/safari@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/samsung.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/samsung@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/wiiu.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/wiiu@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/win8.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/win8@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/wp.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/wp@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/xbox.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/devices/xbox@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/ios/icon-ipad.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/ios/icon-ipad@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/ios/icon-iphone.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/ios/icon-iphone@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/ios/startup-ipad-landscape.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/ios/startup-ipad-landscape@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/ios/startup-ipad-portrait.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/ios/startup-ipad-portrait@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/ios/startup-iphone-portrait.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/ios/startup-iphone-portrait@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/ios/startup-iphone5-portrait@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/plex-icon-server.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/plex-logo.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/plex-pass.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/plex-pass.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/plex-pass@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/plex-server.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/plex-server@2x.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/posters/folder.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/posters/friend.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/posters/square.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/posters/standard.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/posters/widescreen.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/queue/bookmarklet-steps-ie.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/queue/bookmarklet-steps.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/queue/email-links.png
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/vendor-logos/gracenote.svg
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/vendor-logos/vevo.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/android.e8cc6aa3327ad31f2637c2817cb8bf71.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/android@2x.70b26158a20f05a3fdf9d749dc1fb7c2.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/atv.8631ab962b2b860e88c662ece6c85927.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/atv@2x.9f5cd33ba69cb7d0b4fba13237da32ab.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/chrome.03ae3221ff4d9e9ff4983fdef45a55cd.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/chrome@2x.3507d26b60d01c219d2744953fef8214.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/cloudsync.5ee8629e73edab1b578b271e0abbd29b.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/cloudsync@2x.d89cf863a8c26a5b9949244fc0451554.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/dlna.ad0521e6745c01a6e1643e74d715889a.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/dlna@2x.478a4af0dd13b0b8959163b3435ecd4b.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/firefox.6df3b5be4d4063e0eecbe17bcaa42e5c.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/firefox@2x.e03aaeea379d671815efd456ef086b7f.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/gtv.3622f7c8280242ed5f8804a5a7ae1942.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/gtv@2x.f8485dbb82997f1c19aa4b29cb26bc01.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/ie.c7a470baad314d525d37e05361376a5c.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/ie@2x.9f314aa98e87dc90950fa479c359e51e.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/ios.ebcfb157195c3692a7074b53454a58d5.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/ios@2x.65bd422f31dd4361b029a4067ed5b6f1.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/linux.e95ee61935497d68537d1211dcfa7822.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/linux@2x.361af14637ca1ed12653a49e4f3493ea.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/opera.2eeb995b95400caffbc87529eb1fc82b.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/opera@2x.40ad0451a8552f5dfe6e4e0028af5270.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/osx.029c084cb47a3080503b62a22b31b3f2.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/osx@2x.a8d0a4eee0f63d10b3dbc8f3387a67c2.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/pht.9bf72c20ac751c14bb3aa75b2658d333.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/pht@2x.8ba823e5ead29dce5b2c10d0b493a887.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/pms.aaa4a56146360ca3f461b456263c142a.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/pms@2x.52728f8ab4bd6a0fa26bc46e1de0de10.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/roku.2e46abe5755feafee90b38da5dbd4708.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/roku@2x.4f898a7f0c0e702fcc1f28a991f3864c.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/safari.9d63715a8f5ee166a0fc40b56cc5d510.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/safari@2x.ad0ba404af00f2f8e3143e026687153d.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/samsung.89a7c77ba88562235b7f80bdc151ccc3.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/samsung@2x.8ba461c3d89e1a469e53f0466367e88e.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/wiiu.ed7bc3b04ceeeda7a735ed4e613691cb.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/wiiu@2x.1f7a48bdb80fc35c79cd1707934f6906.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/win8.a0dd0d74f1f987cf00670bbdf1f74a43.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/win8@2x.503422ba4582b97ad16a8ec4391920ae.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/wp.e18f1783f69b5885c6e065281454628c.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/wp@2x.35b507c47301ac7666d38af890237424.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/xbox.f93edaaef7e5abf52bd2c6c38dade1ee.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/devices/xbox@2x.a676ae13ac32ef8aba1d0f4ee1557313.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/icon-ipad.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/icon-ipad@2x.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/icon-iphone.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/icon-iphone@2x.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-ipad-landscape.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-ipad-landscape@2x.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-ipad-portrait.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-ipad-portrait@2x.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone-portrait.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone-portrait@2x.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone5-portrait@2x.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/queue/bookmarklet-steps-ie.3cbda4e75b0dd0e186e0c24999ab0d1d.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/queue/bookmarklet-steps.abc5147d9257f0ec59f7b2257db9cb8f.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/queue/email-links.f1b12dd82ea85b39a4c0fa07dd6df095.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/gracenote.18089cb7063ad397523859fa93f2d54c.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/vevo.0aa36b37d6a9aedfe67df4c5ff2ae8e0.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/plex.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.e5b46b322a1fa927f0d8.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.aaa3cece45802063c0c8.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/plex.xml
