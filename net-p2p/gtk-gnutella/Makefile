@@ -35,7 +35,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
@@ -44,7 +44,7 @@ COMMENT=	GTK based Gnutella client
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		iconv pkgconfig tar:bzip2
+USES=		iconv localbase pkgconfig tar:bzip2
 USE_GNOME=	glib20 libxml2
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
@@ -58,9 +58,6 @@ CONFIGURE_ARGS=	-O -Dyacc='byacc' \
 		-Dusemymalloc='n'
 MAKE_ARGS=	INSTALL_PREFIX="${STAGEDIR}"
 INSTALL_TARGET=	install install.man
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	ARCH="${ARCH}" OPSYS="${OPSYS:tl}"
 
