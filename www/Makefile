@@ -2040,6 +2040,7 @@
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += sogo
+    SUBDIR += sogo-activesync
     SUBDIR += spawn-fcgi
     SUBDIR += spdylay
     SUBDIR += speedtest-mini
