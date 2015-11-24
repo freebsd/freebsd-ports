@@ -78,13 +78,8 @@ DEBUG_CONFIGURE_ENABLE=debug
 
 # GTK+ 3.17 has a beter way
 TYPEAHEAD_DESC=		Re-enable type-a-head functionality in file chooser
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTYPEAHEAD}
-EXTRA_PATCHES+=	${FILESDIR}/extra-gtk_gtkfilechooserwidget.c \
+TYPEAHEAD_EXTRA_PATCHES=${FILESDIR}/extra-gtk_gtkfilechooserwidget.c \
 		${FILESDIR}/extra-gtk_ui_gtkfilechooserwidget.ui
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \
