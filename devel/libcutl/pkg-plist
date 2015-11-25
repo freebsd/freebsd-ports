@@ -54,7 +54,7 @@ include/cutl/xml/serializer.hxx
 include/cutl/xml/serializer.ixx
 include/cutl/xml/value-traits.hxx
 include/cutl/xml/value-traits.txx
-lib/libcutl-1.9.so
+lib/libcutl-1.10.so
 lib/libcutl.so
 libdata/pkgconfig/libcutl.pc
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
