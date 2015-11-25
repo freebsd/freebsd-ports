@@ -66,8 +66,8 @@ BZR_SRC_REV!=	bzr revno lp:kicad
 .if defined(BOOTSTRAP)
 
 # Updating to new rev:
-# make do-fetch BOOTSTRAP=YES
-# make makesum && make && make makeplist && make generate-plist && make check-plist
+# make do-fetch BOOTSTRAP=YES && make makesum && make clean
+# make && make makeplist && make generate-plist && make check-plist
 # < Check PLIST_FILE_LIST below >
 
 FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
