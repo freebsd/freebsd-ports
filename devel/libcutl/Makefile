@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcutl
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codesynthesis.com/download/${PORTNAME}/${PORTVERSION:R}/
 
