@@ -628,7 +628,6 @@ _GITHUB_REV=	0
 .  if ${MASTER_SITES:MGH}
 DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
 .  endif
-.endif
 _GITHUB_EXTRACT_SUFX=	.tar.gz
 # If there are non default groups
 .if !empty(_GITHUB_GROUPS:NDEFAULT)
@@ -651,6 +650,7 @@ DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
 MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITE_GITHUB:S@%SUBDIR%@${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}/tar.gz/${GH_TAGNAME_${_group}}?dummy=/:${_group}@}
 WRKSRC_${_group}:=	${WRKDIR}/${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_EXTRACT}
 .  endfor
+.endif
 .endif
 .endif
 
