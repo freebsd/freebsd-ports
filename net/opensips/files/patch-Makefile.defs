@@ -1,4 +1,4 @@
---- Makefile.defs.orig	2015-05-07 16:45:43 UTC
+--- Makefile.defs.orig	2015-08-27 15:06:47 UTC
 +++ Makefile.defs
 @@ -118,6 +118,14 @@ ifeq ($(OS),solaris)
  		ISSMP ?= yes
