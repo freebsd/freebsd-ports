@@ -542,66 +542,66 @@ GH_TAGNAME_DEFAULT=	${DISTVERSIONFULL}
 GH_TAGNAME?=	${GH_TAGNAME_DEFAULT}
 # Iterate over GH_ACCOUNT, GH_PROJECT and GH_TAGNAME to extract groups
 _GITHUB_GROUPS= DEFAULT
-.for _A in ${GH_ACCOUNT}
+.  for _A in ${GH_ACCOUNT}
 _S_TEMP=	${_A:S/^${_A:C@:[^/:]+$@@}//:S/^://}
-.  if !empty(_S_TEMP)
-.    for _group in ${_S_TEMP:S/,/ /g}
+.    if !empty(_S_TEMP)
+.      for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}
-.      if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+.        if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
 check-makevars::
 		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
 		@${ECHO_MSG} "used in group definitions. Please fix your GH_ACCOUNT"
 		@${FALSE}
-.      endif
-.      if !${_GITHUB_GROUPS:M${_group}}
+.        endif
+.        if !${_GITHUB_GROUPS:M${_group}}
 _GITHUB_GROUPS+=	${_group}
-.       endif
+.         endif
 GH_ACCOUNT_${_group}=	${_A:C@^(.*):[^/:]+$@\1@}
-.    endfor
-.  else
+.      endfor
+.    else
 GH_ACCOUNT_DEFAULT=	${_A:C@^(.*):[^/:]+$@\1@}
-.  endif
-.endfor
-.for _P in ${GH_PROJECT}
+.    endif
+.  endfor
+.  for _P in ${GH_PROJECT}
 _S_TEMP=	${_P:S/^${_P:C@:[^/:]+$@@}//:S/^://}
-.  if !empty(_S_TEMP)
-.    for _group in ${_S_TEMP:S/,/ /g}
+.    if !empty(_S_TEMP)
+.      for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}
-.      if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+.        if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
 check-makevars::
 		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
 		@${ECHO_MSG} "used in group definitions. Please fix your GH_PROJECT"
 		@${FALSE}
-.      endif
-.      if !${_GITHUB_GROUPS:M${_group}}
+.        endif
+.        if !${_GITHUB_GROUPS:M${_group}}
 _GITHUB_GROUPS+=	${_group}
-.       endif
+.         endif
 GH_PROJECT_${_group}=	${_P:C@^(.*):[^/:]+$@\1@}
-.    endfor
-.  else
+.      endfor
+.    else
 GH_PROJECT_DEFAULT=	${_P:C@^(.*):[^/:]+$@\1@}
-.  endif
-.endfor
-.for _T in ${GH_TAGNAME}
+.    endif
+.  endfor
+.  for _T in ${GH_TAGNAME}
 _S_TEMP=	${_T:S/^${_T:C@:[^/:]+$@@}//:S/^://}
-.  if !empty(_S_TEMP)
-.    for _group in ${_S_TEMP:S/,/ /g}
+.    if !empty(_S_TEMP)
+.      for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}
-.      if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
+.        if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
 check-makevars::
 		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
 		@${ECHO_MSG} "used in group definitions. Please fix your GH_TAGNAME"
 		@${FALSE}
-.      endif
-.      if !${_GITHUB_GROUPS:M${_group}}
+.        endif
+.        if !${_GITHUB_GROUPS:M${_group}}
 _GITHUB_GROUPS+=	${_group}
-.       endif
+.         endif
 GH_TAGNAME_${_group}=	${_T:C@^(.*):[^/:]+$@\1@}
-.    endfor
-.  else
+.      endfor
+.    else
 GH_TAGNAME_DEFAULT=	${_T:C@^(.*):[^/:]+$@\1@}
-.  endif
-.endfor
+.    endif
+.  endfor
 # Put the default values back into the variables so that the *default* behavior
 # is not changed.
 GH_ACCOUNT:=	${GH_ACCOUNT_DEFAULT}
@@ -630,15 +630,15 @@ DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
 .  endif
 _GITHUB_EXTRACT_SUFX=	.tar.gz
 # If there are non default groups
-.if !empty(_GITHUB_GROUPS:NDEFAULT)
+.  if !empty(_GITHUB_GROUPS:NDEFAULT)
 # Put the DEFAULT distfile first
-.if !${USE_GITHUB:Mnodefault}
+.    if !${USE_GITHUB:Mnodefault}
 DISTFILES+=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
-.endif
+.    endif
 # Then for each of the remaining groups, add DISTFILES and MASTER_SITES
 # entries with the correct group and create {WRKSRC,DISTNAME,DISTFILES}_group
 # helper variables.
-.  for _group in ${_GITHUB_GROUPS:NDEFAULT}
+.    for _group in ${_GITHUB_GROUPS:NDEFAULT}
 GH_ACCOUNT_${_group}?=	${GH_ACCOUNT_DEFAULT}
 GH_PROJECT_${_group}?=	${GH_PROJECT_DEFAULT}
 GH_TAGNAME_${_group}?=	${GH_TAGNAME_DEFAULT}
@@ -649,10 +649,10 @@ DISTFILE_${_group}:=	${DISTNAME_${_group}}_GH${_GITHUB_REV}${_GITHUB_EXTRACT_SUF
 DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
 MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITE_GITHUB:S@%SUBDIR%@${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}/tar.gz/${GH_TAGNAME_${_group}}?dummy=/:${_group}@}
 WRKSRC_${_group}:=	${WRKDIR}/${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_EXTRACT}
-.  endfor
-.endif
-.endif
-.endif
+.    endfor
+.  endif
+.endif # defined(USE_GITHUB)
+.endif # !defined(IGNORE_MASTER_SITE_GITHUB)
 
 .if !defined(IGNORE_MASTER_SITE_GNOME)
 MASTER_SITE_GNOME+= \
