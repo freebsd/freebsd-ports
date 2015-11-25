@@ -287,6 +287,7 @@ include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 include/eigen3/signature_of_eigen3_matrix_library
 include/eigen3/unsupported/Eigen/AdolcForward
 include/eigen3/unsupported/Eigen/AlignedVector3
+include/eigen3/unsupported/Eigen/ArpackSupport
 include/eigen3/unsupported/Eigen/AutoDiff
 include/eigen3/unsupported/Eigen/BVH
 include/eigen3/unsupported/Eigen/FFT
@@ -308,6 +309,7 @@ include/eigen3/unsupported/Eigen/src/AutoDiff/AutoDiffScalar.h
 include/eigen3/unsupported/Eigen/src/AutoDiff/AutoDiffVector.h
 include/eigen3/unsupported/Eigen/src/BVH/BVAlgorithms.h
 include/eigen3/unsupported/Eigen/src/BVH/KdBVH.h
+include/eigen3/unsupported/Eigen/src/Eigenvalues/ArpackSelfAdjointEigenSolver.h
 include/eigen3/unsupported/Eigen/src/FFT/ei_fftw_impl.h
 include/eigen3/unsupported/Eigen/src/FFT/ei_kissfft_impl.h
 include/eigen3/unsupported/Eigen/src/IterativeSolvers/ConstrainedConjGrad.h
@@ -319,6 +321,11 @@ include/eigen3/unsupported/Eigen/src/IterativeSolvers/IterationController.h
 include/eigen3/unsupported/Eigen/src/IterativeSolvers/MINRES.h
 include/eigen3/unsupported/Eigen/src/IterativeSolvers/Scaling.h
 include/eigen3/unsupported/Eigen/src/KroneckerProduct/KroneckerTensorProduct.h
+include/eigen3/unsupported/Eigen/src/LevenbergMarquardt/LMcovar.h
+include/eigen3/unsupported/Eigen/src/LevenbergMarquardt/LMonestep.h
+include/eigen3/unsupported/Eigen/src/LevenbergMarquardt/LMpar.h
+include/eigen3/unsupported/Eigen/src/LevenbergMarquardt/LMqrsolv.h
+include/eigen3/unsupported/Eigen/src/LevenbergMarquardt/LevenbergMarquardt.h
 include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixExponential.h
 include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixFunction.h
 include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixFunctionAtomic.h
