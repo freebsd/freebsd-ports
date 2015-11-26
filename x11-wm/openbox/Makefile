@@ -3,6 +3,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/
 
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 libxml2
-USE_XORG=	xext xft
+USE_XORG=	xcursor xext xft xinerama xrandr xau
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
