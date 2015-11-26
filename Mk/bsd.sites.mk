@@ -244,6 +244,7 @@ MASTER_SITE_CENTOS_LINUX+= \
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX_UPDATES+= \
 	http://mirror.centos.org/centos/${LINUX_DIST_VER}/updates/${LINUX_REPO_ARCH}/Packages/ \
+	http://vault.centos.org/${LINUX_DIST_VER}/updates/${LINUX_REPO_ARCH}/Packages/ \
 	http://vault.centos.org/${LINUX_DIST_VER}/updates/Source/SPackages/:SOURCE
 .endif
 
