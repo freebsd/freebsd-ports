@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suricata
-PORTVERSION=	2.0.9
+DISTVERSION=	3.0RC1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 
@@ -26,10 +26,12 @@ CPE_VENDOR=	openinfosecfoundation
 INSTALL_TARGET=		install-strip
 PATHFIX_MAKEFILEIN=	Makefile.am
 
-OPTIONS_DEFINE=		GEOIP HTP_PORT IPFW JSON NSS PORTS_PCAP PRELUDE SC TESTS
-OPTIONS_DEFAULT=	HTP_PORT IPFW JSON PRELUDE
+OPTIONS_DEFINE=		GEOIP HTP_PORT IPFW JSON NETMAP NSS PORTS_PCAP PRELUDE SC TESTS
+OPTIONS_DEFAULT=	HTP_PORT IPFW JSON NETMAP PRELUDE
+
 OPTIONS_RADIO=		SCRIPTS
 OPTIONS_RADIO_SCRIPTS=	LUA LUAJIT
+
 OPTIONS_SUB=		yes
 
 SCRIPTS_DESC=		Scripting
@@ -40,6 +42,7 @@ IPFW_DESC=		IPFW and IP Divert support for inline IDP
 JSON_DESC=		JSON output support
 LUA_DESC=		LUA scripting support
 LUAJIT_DESC=		LuaJIT scripting support
+NETMAP_DESC=		Netmap support for inline IDP
 NSS_DESC=		File checksums and SSL/TLS fingerprinting
 PORTS_PCAP_DESC=	Use libpcap from ports
 PRELUDE_DESC=		Prelude support for NIDS alerts
@@ -56,16 +59,6 @@ HTP_PORT_CONFLICTS_INSTALL_OFF=	libhtp-[0-9]* libhtp-suricata
 HTP_PORT_USES_OFF=		iconv:translit
 
 IPFW_CONFIGURE_ON=		--enable-ipfw
-
-PORTS_PCAP_LIB_DEPENDS=		libpcap.so:${PORTSDIR}/net/libpcap
-PORTS_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
-				--with-libpcap-libraries=${LOCALBASE}/lib
-PORTS_PCAP_CONFIGURE_OFF=	--with-libpcap-includes=/usr/include \
-				--with-libpcap-libraries=/usr/lib
-
-PRELUDE_LIB_DEPENDS=		libprelude.so:${PORTSDIR}/security/libprelude
-PRELUDE_CONFIGURE_ENABLE=	prelude
-PRELUDE_CONFIGURE_ON=		--with-libprelude-prefix=${LOCALBASE}
 
 JSON_LIB_DEPENDS=		libjansson.so:${PORTSDIR}/devel/jansson
 JSON_CONFIGURE_ON=		--with-libjansson-includes=${LOCALBASE}/include \
@@ -86,6 +79,18 @@ NSS_CONFIGURE_ON=		--with-libnss-includes=${LOCALBASE}/include/nss/nss \
 				--with-libnspr-libraries=${LOCALBASE}/lib \
 				--with-libnspr-includes=${LOCALBASE}/include/nspr
 
+NETMAP_CONFIGURE_ENABLE=	netmap
+
+PORTS_PCAP_LIB_DEPENDS=		libpcap.so:${PORTSDIR}/net/libpcap
+PORTS_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
+				--with-libpcap-libraries=${LOCALBASE}/lib
+PORTS_PCAP_CONFIGURE_OFF=	--with-libpcap-includes=/usr/include \
+				--with-libpcap-libraries=/usr/lib
+
+PRELUDE_LIB_DEPENDS=		libprelude.so:${PORTSDIR}/security/libprelude
+PRELUDE_CONFIGURE_ENABLE=	prelude
+PRELUDE_CONFIGURE_ON=		--with-libprelude-prefix=${LOCALBASE}
+
 SC_USES=			python
 SC_CONFIGURE_ENV=		ac_cv_path_HAVE_PYTHON_CONFIG=yes
 SC_CONFIGURE_ENV_OFF=		ac_cv_path_HAVE_PYTHON_CONFIG=no
@@ -95,6 +100,7 @@ TESTS_CONFIGURE_ENABLE=		unittests
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=--enable-gccprotect \
+		--disable-silent-rules \
 		--with-libpcre-includes=${LOCALBASE}/include \
 		--with-libpcre-libraries=${LOCALBASE}/lib \
 		--with-libyaml-includes=${LOCALBASE}/include \
@@ -137,13 +143,6 @@ post-install:
 	-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 .endif
 
-TMPDIR?=	/tmp
-TESTDIR=	${TMPDIR}/${PORTNAME}
-
-regression-test: build
-	${RM} -rf ${TESTDIR}
-	${MKDIR} ${TESTDIR}
-	cd ${WRKSRC}/src && ./suricata -u -l ${TESTDIR}
-	${RM} -rf ${TESTDIR}
+TEST_TARGET=	check
 
 .include <bsd.port.post.mk>
