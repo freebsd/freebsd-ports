@@ -5,7 +5,7 @@ PORTNAME=	LiveUser
 PORTVERSION=	0.16.14
 CATEGORIES=	security www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR user authentication and permission management framework
 
 BUILD_DEPENDS=	${PEARDIR}/Event/Dispatcher.php:${PORTSDIR}/devel/pear-Event_Dispatcher

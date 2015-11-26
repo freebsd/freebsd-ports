@@ -5,7 +5,7 @@ PORTNAME=	Structures_DataGrid_Renderer_Pager
 PORTVERSION=	0.1.3
 CATEGORIES=	www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Pager Renderer for pear-Structures_DataGrid
 
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:${PORTSDIR}/devel/pear-Structures_DataGrid \
