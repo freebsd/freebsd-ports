@@ -156,7 +156,6 @@ lib/milter-manager/libmilter.so
 lib/milter-manager/libmilter.so.1
 lib/milter-manager/libmilter.so.1.0.1
 lib/milter-manager/module/configuration/milter-manager-ruby-configuration.so
-libdata/pkgconfig/libmilter.pc
 libdata/pkgconfig/milter-client.pc
 libdata/pkgconfig/milter-core.pc
 libdata/pkgconfig/milter-manager.pc
