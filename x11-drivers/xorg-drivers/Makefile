@@ -19,7 +19,6 @@ INPUT_DRIVERS=		mouse \
 			elographics \
 			hyperpen \
 			joystick \
-			magictouch \
 			mutouch \
 			penmount \
 			synaptics \
@@ -34,7 +33,6 @@ VIDEO_DRIVERS=		mach64 \
 			apm \
 			ark \
 			chips \
-			cyrix \
 			dummy \
 			fbdev \
 			glint \
