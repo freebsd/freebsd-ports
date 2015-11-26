@@ -26,7 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_QT5=	gui buildtools qmake_build widgets multimedia concurrent serialport
 USE_GL=		yes
 USE_GCC=	yes
-USES=		cmake compiler:c++11-lib dos2unix fortran
+USES=		cmake compiler:c++11-lib dos2unix fortran pkgconfig
 #CMAKE_ARGS+=	 --debug-output --trace
 CMAKE_ARGS+=	-DPORT_BUILDING::STRING="ON" \
 		-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib
