@@ -3,6 +3,7 @@
 
 PORTNAME=	Cpanel-JSON-XS
 PORTVERSION=	3.0115
+PORTREVISION=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RURBAN
@@ -21,5 +22,8 @@ TEST_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 
 USE_PERL5=	configure
 USES=		perl5
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Cpanel/JSON/XS/XS.so
 
 .include <bsd.port.mk>

@@ -13,6 +13,7 @@ COMMENT=	Perl module to patch Perl source
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-File-pushd>=1:${PORTSDIR}/devel/p5-File-pushd
 RUN_DEPENDS:=	${BUILD_DEPENDS}

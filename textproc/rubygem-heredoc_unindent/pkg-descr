@@ -3,4 +3,4 @@ by indented heredocs.  In other words, it strips out leading whitespace chars
 at the beggining of each line, but only as much as the line with the 
 smallest margin. 
 
-WWW: http://rubygems.org/gems/heredoc_unindent
+WWW: https://github.com/adrianomitre/heredoc_unindent

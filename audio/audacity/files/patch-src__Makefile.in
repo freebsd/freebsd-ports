@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2014-09-22 20:38:13 UTC
+--- src/Makefile.in.orig	2015-07-11 10:02:22 UTC
 +++ src/Makefile.in
-@@ -1055,8 +1055,7 @@
+@@ -1118,8 +1118,7 @@ audacity_CPPFLAGS = -D__STDC_CONSTANT_MA
  #  /usr/local/include/wx-2.8/wx/buffer.h:289:9: note: in expansion of macro 'wxCHECK_RET'
  #           wxCHECK_RET( m_bufdata->m_data, wxT("invalid wxMemoryBuffer") );
  #           ^

@@ -11,7 +11,6 @@ lib/compat/libkadm5srv.so.10
 lib/compat/libkafs5.so.10
 lib/compat/libkrb5.so.10
 lib/compat/libkvm.so.5
-lib/compat/liblwres.so.80
 lib/compat/libmd.so.5
 lib/compat/libncp.so.4
 lib/compat/libodialog.so.7

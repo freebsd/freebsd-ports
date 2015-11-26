@@ -31,6 +31,7 @@
     SUBDIR += R-cran-rtiff
     SUBDIR += R-cran-scales
     SUBDIR += R-cran-shape
+    SUBDIR += R-cran-visNetwork
     SUBDIR += SciPlot
     SUBDIR += a2png
     SUBDIR += aalib

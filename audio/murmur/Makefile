@@ -3,6 +3,7 @@
 
 PORTNAME=	murmur
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	audio net
 DISTNAME=	mumble-${PORTVERSION}
 
@@ -16,11 +17,10 @@ LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
 USERS=		murmur
 GROUPS=		murmur
-USES=		compiler qmake pkgconfig
+USES=		compiler:c++11-lang qmake pkgconfig
 USE_QT4=	moc_build corelib network xml sql sql-sqlite3_run
 
 USE_OPENSSL=	YES
-WITH_OPENSSL_PORT=	YES
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	mumble-voip
@@ -61,6 +61,10 @@ CONFIG+=	no-bonjour
 # PCH is broken on GCC
 .if ${COMPILER_TYPE} == gcc
 CONFIG+=	no-pch
+.endif
+
+.if ${OSVERSION} < 1000510
+EXTRA_PATCHES=	${FILESDIR}/FreeBSD9-patch-src_SSL.cpp
 .endif
 
 post-patch:

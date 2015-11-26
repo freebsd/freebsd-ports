@@ -3,6 +3,7 @@
 
 PORTNAME=	raspberrypi-userland
 PORTVERSION=	20151105
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	mikael.urankar@gmail.com

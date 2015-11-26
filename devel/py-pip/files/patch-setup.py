@@ -1,6 +1,6 @@
---- setup.py.orig	2015-06-19 02:39:23 UTC
+--- setup.py.orig	2015-11-14 14:08:36 UTC
 +++ setup.py
-@@ -98,8 +98,6 @@ setup(
+@@ -78,8 +78,6 @@ setup(
      entry_points={
          "console_scripts": [
              "pip=pip:main",

@@ -20,11 +20,13 @@ sys_bsd_sectorsize(int fd)
 			return d;
 	}
 #endif
+#ifdef DIOCGDINFO
 	;{
 		struct disklabel dl;
 		if (ioctl(fd, DIOCGDINFO, &dl) == 0)
 			return dl.d_secsize;
 	}
+#endif
 #ifdef DIOCGSLICEINFO
 	;{
 		struct diskslices dss;
@@ -75,11 +77,13 @@ sys_bsd_getsectors(int fd, unsigned long *s)
 		}
 	}
 #endif
+#ifdef DIOCGDINFO
 	/* Fallback method. */
 	if (ioctl(fd, DIOCGDINFO, &dl) == 0) {
 		*s = (unsigned long) dl.d_secperunit;
 		return 0;
 	}
+#endif
 	return -1;
 }
 
@@ -103,7 +107,9 @@ sys_bsd_getgeometry(int fd, struct hd_geometry *g)
 {
 	/* XXX */
 	struct disklabel dl;
+#ifdef DIOCGDINFO
 	if (ioctl(fd, DIOCGDINFO, &dl) < 0)
+#endif
 		return -1;
 	g->cylinders = dl.d_ncylinders;
 	g->heads = dl.d_ntracks;

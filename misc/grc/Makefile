@@ -2,19 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	grc
-PORTVERSION=	1.5
+PORTVERSION=	1.9
+DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
-MASTER_SITES=	http://kassiopeia.juls.savba.sk/~garabik/software/grc/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	walter@lifeforms.nl
 COMMENT=	Generic Colouriser
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	garabik
+
 NO_BUILD=	yes
 
 USES=		python:run shebangfix

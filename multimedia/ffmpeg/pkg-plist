@@ -75,6 +75,7 @@ include/libavutil/mem.h
 include/libavutil/motion_vector.h
 include/libavutil/murmur3.h
 include/libavutil/old_pix_fmts.h
+%%OPENCL%%include/libavutil/opencl.h
 include/libavutil/opt.h
 include/libavutil/parseutils.h
 include/libavutil/pixdesc.h

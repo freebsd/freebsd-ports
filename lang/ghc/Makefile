@@ -51,7 +51,6 @@ OPTIONS_DEFAULT=	PROFILE DYNAMIC DOCS GCC
 
 BOOT_DESC=		Use installed GHC for bootstrapping
 BOOTH_DESC=		Use installed HsColour for bootstrapping
-GCC_DESC=		Build with GCC (from ports)
 PCLANG_DESC=		Build with Clang from ports
 BCLANG_DESC=		Build with Clang from base
 PROFILE_DESC=		Add support for performance profiling

@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	naev
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	2D action/RPG space game
@@ -21,7 +19,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libcsparse.so:${PORTSDIR}/math/suitesparse
 RUN_DEPENDS=	${DATADIR}/ndata-${PORTVERSION}.zip:${PORTSDIR}/games/naev-data
 
-USES=		autoreconf:build gmake pkgconfig tar:bzip2
+USES=		autoreconf:build compiler:features gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GL=		glu
 USE_GNOME=	libxml2
@@ -51,7 +49,11 @@ SDL2_CONFIGURE_WITH=	sdl2
 SDL2_USE=	SDL=sdl2
 SDL2_USE_OFF=	SDL=sdl
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == "gcc"
+USE_GCC=	yes
+.endif
 
 .if ${PORT_OPTIONS:MSDL_MIXER}
 .	if ${PORT_OPTIONS:MSDL2}
@@ -61,4 +63,4 @@ USE_SDL+=	mixer
 .	endif
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomcat-native
-PORTVERSION=	1.1.32
+PORTVERSION=	1.2.2
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/tomcat/tomcat-connectors/native/${PORTVERSION}/source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -14,10 +14,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/jni/native
-
-OPTIONS_DEFINE=	OCSP
-OCSP_DESC=	Enable OCSP verification support
+WRKSRC=		${WRKDIR}/${DISTNAME}/native
 
 USES=		libtool
 USE_OPENSSL=	yes
@@ -32,12 +29,6 @@ CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 PLIST_FILES=	lib/libtcnative-1.a \
 		lib/libtcnative-1.so \
 		lib/libtcnative-1.so.0 \
-		lib/libtcnative-1.so.0.1.32
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOCSP}
-CONFIGURE_ARGS+=--enable-ocsp
-.endif
+		lib/libtcnative-1.so.0.2.2
 
 .include <bsd.port.mk>

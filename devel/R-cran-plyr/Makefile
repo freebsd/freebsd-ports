@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plyr
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.8.3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,9 +15,7 @@ LICENSE_NAME_HW=	Hadley Wickham COPYRIGHT
 LICENSE_FILE_HW=	${WRKSRC}/LICENSE
 LICENSE_PERMS_HW=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	R-cran-Rcpp>=0.11.0:${PORTSDIR}/devel/R-cran-Rcpp \
-		R-cran-itertools>0:${PORTSDIR}/devel/R-cran-itertools \
-		R-cran-iterators>0:${PORTSDIR}/devel/R-cran-iterators
+RUN_DEPENDS=	R-cran-Rcpp>=0.11.0:${PORTSDIR}/devel/R-cran-Rcpp
 
 USES=	cran:auto-plist
 

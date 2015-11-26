@@ -2,30 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	pgpool
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.4.3
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1446/
+MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
+DISTNAME=	${PORTNAME}-II-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@toco-domains.de
 COMMENT=	Connection pool server for PostgreSQL
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		gmake libtool pgsql:9.3+
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+
+DATADIR=	${PREFIX}/share/${PORTNAME}-II
 
 USE_RC_SUBR=	pgpool
 CONFLICTS=	pgpool-II-*
 
-PORTDOCS=	README AUTHORS COPYING ChangeLog INSTALL NEWS TODO README.euc_jp
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
+	@${MKDIR} ${STAGEDIR}/var/run/pgpool
+	${INSTALL_LIB} ${WRKSRC}/src/libs/pcp/.libs/libpcp.so.0.0.0 ${STAGEDIR}${PREFIX}/lib
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR} "-not -name Makefile.\*"
+.for f in AUTHORS ChangeLog NEWS TODO
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

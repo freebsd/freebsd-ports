@@ -12,7 +12,7 @@ COMMENT=	Small build tool that can be used as a replacement for make(1)
 OPTIONS_DEFINE=	DOCS
 
 USES=		dos2unix gmake tar:bzip2
-DOS2UNIX_GLOB=	*.c
+DOS2UNIX_GLOB=	*.c jam.h
 
 PORTDOCS=	Jam.html \
 		Jambase.html \

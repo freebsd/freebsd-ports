@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	keyring
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	5.6
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +12,12 @@ COMMENT=	Store and access your passwords safely
 
 LICENSE=	PSFL
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:${PORTSDIR}/devel/py-pytest-runner
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:${PORTSDIR}/devel/py-pytest-runner \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:${PORTSDIR}/devel/py-setuptools_scm
 
-USES=		python zip
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=		CRYPT_FILE GNOME_KEYRING KDE_KWALLET KEYCZAR PYFS \
 			SECRET_SERVICE
@@ -30,7 +31,7 @@ CRYPT_FILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:${PORTSDIR}/securit
 GNOME_KEYRING_USE=	GNOME=pygobject3
 KDE_KWALLET_USE=	KDE4=pykde4
 KEYCZAR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyczar>=0.71c:${PORTSDIR}/security/py-keyczar
-PYFS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fs>=0.4.0:${PORTSDIR}/devel/py-fs
+PYFS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fs>=0.5:${PORTSDIR}/devel/py-fs
 SECRET_SERVICE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}SecretStorage>=1.0.0:${PORTSDIR}/security/py-SecretStorage
 
 .include <bsd.port.mk>

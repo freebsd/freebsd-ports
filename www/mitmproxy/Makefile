@@ -3,6 +3,7 @@
 
 PORTNAME=	mitmproxy
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://mitmproxy.org/download/
 
@@ -11,7 +12,7 @@ COMMENT=	SSL-capable man-in-the-middle proxy
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>0:${PORTSDIR}/devel/py-asn1 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>0:${PORTSDIR}/devel/py-pyasn1 \
 		${PYTHON_PKGNAMEPREFIX}Flask>0:${PORTSDIR}/www/py-flask \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}netlib>0:${PORTSDIR}/net/py-netlib \

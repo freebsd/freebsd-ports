@@ -1,17 +1,49 @@
---- Makefile.orig	2012-11-26 10:27:48.000000000 +1100
-+++ Makefile	2012-12-16 15:13:34.359453238 +1100
-@@ -45,8 +45,14 @@
+--- Makefile.orig	2015-10-16 19:45:43 UTC
++++ Makefile
+@@ -22,8 +22,9 @@ PREFIX ?= /usr/local
+ LDFLAGS ?= -s
+ 
+ BINDIR = ${PREFIX}/bin/
+-MANDIR = ${PREFIX}/share/man/man1
+-LIBDIR = ${PREFIX}/lib/
++MANDIR = ${PREFIX}/man/man1
++DATDIR = ${PREFIX}/share
++DOCDIR = ${PREFIX}/share/doc/mspdebug
+ 
+ ifdef WITHOUT_READLINE
+ 	READLINE_CFLAGS =
+@@ -70,6 +71,9 @@ else
+     else ifneq ($(filter $(UNAME_S),OpenBSD NetBSD DragonFly),)
  	PORTS_CFLAGS := $(shell pkg-config --cflags libusb)
  	PORTS_LDFLAGS := $(shell pkg-config --libs libusb) -ltermcap -pthread
-   else
-+    ifeq ($(UNAME_S),FreeBSD) # FreeBSD Ports stuff
-+# This is only needed prior to FreeBSD 8.x to find libusb
-+	PORTS_CFLAGS := -I${LOCALBASE}/include
-+	PORTS_LDFLAGS := -L${LOCALBASE}/lib
-+    else
++    else ifeq ($(UNAME_S),FreeBSD)
++	PORTS_CFLAGS := -I${PREFIX}/include
++	PORTS_LDFLAGS := -L${PREFIX}/lib
+     else
  	PORTS_CFLAGS :=
  	PORTS_LDFLAGS :=
-+    endif
-   endif
- endif
+@@ -78,7 +82,7 @@ endif
+ 
+ INCLUDES = -I. -Isimio -Iformats -Itransport -Idrivers -Iutil -Iui
+ GCC_CFLAGS = -O1 -Wall -Wno-char-subscripts -ggdb
+-CONFIG_CFLAGS = -DLIB_DIR=\"$(LIBDIR)\"
++CONFIG_CFLAGS = -DLIB_DIR=\"$(DATDIR)\"
+ 
+ MSPDEBUG_LDFLAGS = $(LDFLAGS) $(PORTS_LDFLAGS)
+ MSPDEBUG_LIBS = -lusb $(READLINE_LIBS) $(OS_LIBS)
+@@ -108,9 +112,12 @@ install: $(BINARY) mspdebug.man
+ 	$(INSTALL) -m 0755 $(BINARY) $(DESTDIR)$(BINDIR)
+ 	mkdir -p $(DESTDIR)$(MANDIR)
+ 	$(INSTALL) -m 0644 mspdebug.man $(DESTDIR)$(MANDIR)/mspdebug.1
+-	mkdir -p $(DESTDIR)$(LIBDIR)/mspdebug
+-	$(INSTALL) -m 0644 ti_3410.fw.ihex \
+-		$(DESTDIR)$(LIBDIR)/mspdebug/ti_3410.fw.ihex
++	mkdir -p $(DESTDIR)$(DATDIR)/mspdebug
++	$(INSTALL) -m 0644 ti_3410.fw.ihex ti_3410.fw.txt \
++		$(DESTDIR)$(DATDIR)/mspdebug/
++	mkdir -p $(DESTDIR)$(DOCDIR)
++	$(INSTALL) -m 0644 README EmbeddedMode.txt \
++		$(DESTDIR)$(DOCDIR)/
+ 
+ .SUFFIXES: .c .o
  

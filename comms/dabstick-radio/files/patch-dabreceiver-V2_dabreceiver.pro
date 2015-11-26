@@ -1,4 +1,4 @@
---- dabreceiver-V2/dabreceiver.pro.orig
+--- dabreceiver-V2/dabreceiver.pro.orig	2013-08-09 19:23:40 UTC
 +++ dabreceiver-V2/dabreceiver.pro
 @@ -156,36 +156,10 @@ LIBS += -lsndfile
  #}

@@ -46,7 +46,6 @@ SUB_FILES+=	mod_spdy.conf
 SUB_LIST+=	APACHEMODDIR=${APACHEMODDIR}
 
 OPTIONS_DEFINE=	GCC DEBUG
-GCC_DESC=	Build with current GCC
 
 .include <bsd.port.options.mk>
 

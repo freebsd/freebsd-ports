@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	chunky_png
-PORTVERSION=	1.2.9
+PORTVERSION=	1.3.5
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	pphillips@experts-exchange.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library to read and write PNG images
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_RAKE=	yes
 NO_ARCH=	yes
 
 USE_RUBY=	yes

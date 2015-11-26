@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	solarus
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.solarus-games.org/downloads/solarus/
 DISTNAME=	solarus-${PORTVERSION}-src

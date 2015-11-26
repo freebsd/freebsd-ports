@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	4.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
-MASTER_SITES=	http://cdn.bitbucket.org/mmottl/sqlite3-ocaml/downloads/
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	${PORTNAME}-ocaml-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml bindings to sqlite3 library
@@ -27,6 +25,10 @@ HAS_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS=		--destdir "${STAGEDIR}" \
 			--prefix "${PREFIX}"
+
+GH_ACCOUNT=	mmottl
+GH_PROJECT=	${PORTNAME}-ocaml
+USE_GITHUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"install" :: findlib_name,"install" :: "-destdir ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib" :: "-ldconf /var/null" :: findlib_name,' \

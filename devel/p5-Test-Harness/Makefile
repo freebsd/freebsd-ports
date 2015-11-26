@@ -16,12 +16,8 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-pre-patch:
-	@${MV} ${WRKSRC}/bin/prove ${WRKSRC}/bin/p5prove
-	@${REINPLACE_CMD} "s,^bin/prove$$,bin/p5prove," ${WRKSRC}/MANIFEST
-	@${REINPLACE_CMD} "s,'bin/prove','bin/p5prove'," ${WRKSRC}/Makefile.PL
-
 post-patch:
-	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${MV} ${WRKSRC}/bin/prove ${WRKSRC}/bin/p5prove
+	@${REINPLACE_CMD} 's|bin/prove|bin/p5prove|' ${WRKSRC}/MANIFEST ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

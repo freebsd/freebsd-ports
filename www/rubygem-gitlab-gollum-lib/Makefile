@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple, Git-powered wiki with a sweet API and local frontend
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-github-markdown>=0.5.3:${PORTSDIR}/textproc/rubygem-github-markdown \
 		rubygem-github-markup>=0.7.5:${PORTSDIR}/textproc/rubygem-github-markup \

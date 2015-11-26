@@ -1,6 +1,6 @@
---- plwm/outline.py.orig	2001-11-26 14:48:21.000000000 +0100
-+++ plwm/outline.py	2009-06-06 17:47:13.000000000 +0200
-@@ -63,7 +63,7 @@
+--- plwm/outline.py.orig	2001-11-26 13:48:21 UTC
++++ plwm/outline.py
+@@ -63,7 +63,7 @@ class XorOutlineClient:
  
  	if name:
  	    self.outline_gc.set_clip_rectangles(0, 0, [coords], X.YXSorted)
@@ -9,7 +9,7 @@
  	    self.screen.root.draw_text(self.outline_gc, sx, sy, name)
  	    self.outline_name = (sx, sy, name)
  	else:
-@@ -138,8 +138,8 @@
+@@ -138,8 +138,8 @@ class WindowOutlineClient:
  			height = s[3] - s[1] + 1)
  
  	if name:
@@ -20,7 +20,7 @@
  					       width = sw, height = sh)
  	    
  	if not self.outline_mapped:
-@@ -155,7 +155,7 @@
+@@ -155,7 +155,7 @@ class WindowOutlineClient:
  	# disappear otherwise...
  	if name:
  	    self.outline_name_window.image_text(self.outline_name_gc,
@@ -29,7 +29,7 @@
  	    
      def outline_hide(self):
  	if self.outline_mapped:
-@@ -246,8 +246,8 @@
+@@ -246,8 +246,8 @@ def calculate_parts(client, x, y, w, h, 
  
  	sw = min(r.overall_width, w)
  	sh = min(r.overall_ascent + r.overall_descent, h)

@@ -2,7 +2,8 @@
 
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.11
+DISTVERSION=	2.4.0
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	lme@FreeBSD.org
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
 
-USES=		alias bison cmake
+USES=		alias bison cmake libedit
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	${PORTNAME}
@@ -90,10 +91,12 @@ post-patch:
 .for f in ${LINUX_CONFIG}
 	${REINPLACE_CMD} 's,[Ll]inux,FreeBSD,g' ${WRKSRC}/etc/icinga2/conf.d/${f}
 .endfor
+.if ${OSVERSION} < 1000000
+	${REINPLACE_CMD} 's|,--no-export-dynamic||' ${WRKSRC}/CMakeLists.txt
+.endif
 
 pre-install:
 	${FIND} ${WRKSRC}/etc -type f -name "*.conf" -exec ${MV} {} {}.sample \;
-	${FIND} ${WRKSRC}/itl -type f -name "*.conf" -exec ${MV} {} {}.sample \;
 	${FIND} ${WRKSRC}/etc/icinga2/scripts -type f -name "*.sh" \
 		-exec ${MV} {} {}.sample \;
 

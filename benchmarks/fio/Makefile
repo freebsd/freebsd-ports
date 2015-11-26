@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	fio
-PORTVERSION=	2.1.9
+PORTVERSION=	2.2.11
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
-MAINTAINER=	skreuzer@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	FIO - flexible IO tester
 
 LICENSE=	GPLv2

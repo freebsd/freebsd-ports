@@ -6,6 +6,7 @@ lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Response.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Strategy.AuthCode.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Strategy.ClientCredentials.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Strategy.Password.beam
+lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Strategy.Refresh.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Strategy.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Util.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.beam
@@ -20,5 +21,6 @@ lib/elixir/lib/oauth2/lib/oauth2/strategy.ex
 lib/elixir/lib/oauth2/lib/oauth2/strategy/auth_code.ex
 lib/elixir/lib/oauth2/lib/oauth2/strategy/client_credentials.ex
 lib/elixir/lib/oauth2/lib/oauth2/strategy/password.ex
+lib/elixir/lib/oauth2/lib/oauth2/strategy/refresh.ex
 lib/elixir/lib/oauth2/lib/oauth2/util.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md

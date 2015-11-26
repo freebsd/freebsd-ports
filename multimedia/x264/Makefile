@@ -50,7 +50,6 @@ HAS_CONFIGURE=	yes
 OPTIONS_DEFINE?=	ASM DEBUG GCC GPAC LAVF PGO
 OPTIONS_DEFAULT?=	ASM GPAC
 
-GCC_DESC=		Use current GCC
 GPAC_DESC=		MPEG-4 output support
 LAVF_DESC=		libav* format input/output support (requires FFmpeg)
 

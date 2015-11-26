@@ -35,8 +35,6 @@ SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
 
 OPTIONS_SUB=
 
-MAKE_JOBS_UNSAFE=	yes
-
 USES=		gmake cpe
 
 CPE_VENDOR=	gnu

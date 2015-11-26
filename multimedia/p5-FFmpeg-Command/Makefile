@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIZZY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrapper class for ffmpeg command line utility
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \

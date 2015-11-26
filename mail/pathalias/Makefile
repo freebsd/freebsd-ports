@@ -4,10 +4,11 @@ PORTNAME=	pathalias
 PORTVERSION=	9.16
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/approved/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Mail routing tools
+
+USES=		tar:Z
 
 ALL_TARGET=	pathalias
 

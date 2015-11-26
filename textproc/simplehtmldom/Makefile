@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP Simple HTML DOM Parser
 
 BROKEN=		unfetchable
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
 
 USES=		zip
 NO_BUILD=	yes

@@ -22,19 +22,18 @@ BUILD_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-mast
 RUN_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-masterNugget \
 		wine:${PORTSDIR}/emulators/wine
 
-USES=		pkgconfig libtool
+USES=		autoreconf libtool pkgconfig
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	only supported under i386 due to wine requirements
 
-OPTIONS_DEFINE=	DEBUG ASSERT
-ASSERT_DESC=	Enable Asserts
-
 RB_LIBDIR?=	${PREFIX}/lib/razorback
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	${RB_LIBDIR}
 INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	DEBUG ASSERT
+ASSERT_DESC=	Enable Asserts
 
 DEBUG_CONFIGURE_ENABLE=	debug
 ASSERT_CONFIGURE_ENABLE=assert

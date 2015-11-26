@@ -12,6 +12,10 @@ COMMENT=	MPRIS plugin for DeaDBeeF music player
 
 LICENSE=	GPLv3
 
+BROKEN=		does not work with recent versions of glib and/or DeaDBeeF
+DEPRECATED=	Abandonware; use `audio/deadbeef-mpris2-plugin' instead
+EXPIRATION_DATE=	2016-05-16
+
 BUILD_DEPENDS=	${LOCALBASE}/include/deadbeef/deadbeef.h:${PORTSDIR}/audio/deadbeef
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

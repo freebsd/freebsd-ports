@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jonpy
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.12
 CATEGORIES=	www python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,7 @@ COMMENT=	Python FastCGI interface library
 LICENSE=	MIT
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 PORTDOCS=	*
@@ -22,9 +21,11 @@ PORTEXAMPLES=	* .htaccess
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 

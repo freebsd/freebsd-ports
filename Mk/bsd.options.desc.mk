@@ -102,6 +102,7 @@ FRIBIDI_DESC?=		Bidirectional text support via GNU FriBidi
 FTP_DESC?=		FTP protocol support
 FTPS_DESC?=		FTP with SSL/TLS support
 FUSE_DESC?=		FUSE (Filesystem in Userspace) support
+GCC_DESC?=		Build with modern GCC (from ports)
 GCONF_DESC?=		GConf configuration backend support
 GCRYPT_DESC?=		Use GNU crypt library instead of OpenSSL
 GD_DESC?=		GD graphics library support

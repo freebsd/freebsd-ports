@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trans
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,6 @@ COMMENT=	Module for performing transliteration
 LICENSE=	BSD
 
 USES=		python tar:bzip2
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -1,7 +1,6 @@
-
---- cplay.orig	2003-12-05 09:20:56.000000000 +0100
-+++ cplay	2008-03-27 00:36:13.000000000 +0100
-@@ -63,7 +63,7 @@
+--- cplay.orig	2003-12-05 08:20:56 UTC
++++ cplay
+@@ -63,7 +63,7 @@ except:
  
  # ------------------------------------------
  XTERM = re.search("rxvt|xterm", os.environ["TERM"])
@@ -10,7 +9,7 @@
  
  # ------------------------------------------
  def which(program):
-@@ -906,11 +906,20 @@
+@@ -906,11 +906,20 @@ class PlaylistWindow(TagListWindow):
  
      def command_change_viewpoint(self, klass=PlaylistEntry):
          if not globals().get("ID3"):
@@ -34,7 +33,7 @@
          TagListWindow.command_change_viewpoint(self, klass)
  
      def get_title(self):
-@@ -962,9 +971,11 @@
+@@ -962,9 +971,11 @@ class PlaylistWindow(TagListWindow):
          try:
              if os.path.isdir(pathname):
                  app.status(_("Working..."))
@@ -47,7 +46,7 @@
              else:
                  pathname = self.fix_url(pathname)
                  self.append(PlaylistEntry(pathname))
-@@ -1301,6 +1312,17 @@
+@@ -1301,6 +1312,17 @@ class TimeOffsetPlayer(Player):
              self.set_position(head, head+tail, [head, tail])
  
  # ------------------------------------------
@@ -65,7 +64,7 @@
  class NoOffsetPlayer(Player):
  
      def parse_buf(self):
-@@ -1334,8 +1356,6 @@
+@@ -1334,8 +1356,6 @@ class Timeout:
  # ------------------------------------------
  class FIFOControl:
      def __init__(self):
@@ -74,7 +73,7 @@
          self.commands = {"pause" : app.toggle_pause,
                           "next" : app.next_song,
                           "prev" : app.prev_song,
-@@ -1346,6 +1366,15 @@
+@@ -1346,6 +1366,15 @@ class FIFOControl:
                           "volup" : app.inc_volume,
                           "voldown" : app.dec_volume,
                           "quit" : app.quit}
@@ -90,7 +89,7 @@
  
      def handle_command(self):
          command = string.strip(self.fd.readline())
-@@ -1419,6 +1448,11 @@
+@@ -1419,6 +1448,11 @@ class Application:
          XTERM and sys.stderr.write("\033]0;%s\a" % "xterm")
          tty and tty.tcsetattr(sys.stdin.fileno(), tty.TCSADRAIN, self.tcattr)
          print
@@ -102,7 +101,7 @@
  
      def run(self):
          while 1:
-@@ -1615,7 +1649,7 @@
+@@ -1615,7 +1649,7 @@ def main():
              if opt == "-v": app.mixer("toggle")
          if args or playlist:
              for i in args or playlist:
@@ -111,7 +110,7 @@
              app.win_tab.change_window()
          app.run()
      except SystemExit:
-@@ -1627,15 +1661,17 @@
+@@ -1627,15 +1661,17 @@ def main():
  
  # ------------------------------------------
  PLAYERS = [
@@ -131,5 +130,3 @@
      ]
  
  def VALID_SONG(name):
-
-

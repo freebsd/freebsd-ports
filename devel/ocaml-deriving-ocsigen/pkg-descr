@@ -3,4 +3,4 @@ derivers for pretty-printing, type-safe marshalling with structure-sharing,
 dynamic typing, equality, and more. This is a version of the deriving library
 adapted for use with Ocsigen.
 
-WWW: http://github.com/hnrgrgr/deriving
+WWW: https://github.com/ocsigen/deriving

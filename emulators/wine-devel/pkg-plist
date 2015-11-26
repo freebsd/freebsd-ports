@@ -203,6 +203,7 @@ include/wine/windows/d3drmobj.h
 include/wine/windows/d3drmwin.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
+include/wine/windows/d3dx10.h
 %%STAGING%%include/wine/windows/d3dx10core.h
 %%STAGING%%include/wine/windows/d3dx10core.idl
 include/wine/windows/d3dx9.h
@@ -964,7 +965,9 @@ lib/wine/avifil32.dll.so
 %%WINE32%%lib/wine/avifile.dll16.so
 lib/wine/avrt.dll.so
 lib/wine/bcrypt.dll.so
+lib/wine/bluetoothapis.dll.so
 lib/wine/browseui.dll.so
+lib/wine/bthprops.cpl.so
 lib/wine/cabarc.exe.so
 lib/wine/cabinet.dll.so
 lib/wine/cacls.exe.so
@@ -1222,7 +1225,9 @@ lib/wine/fakedlls/avifil32.dll
 %%WINE32%%lib/wine/fakedlls/avifile.dll16
 lib/wine/fakedlls/avrt.dll
 lib/wine/fakedlls/bcrypt.dll
+lib/wine/fakedlls/bluetoothapis.dll
 lib/wine/fakedlls/browseui.dll
+lib/wine/fakedlls/bthprops.cpl
 lib/wine/fakedlls/cabarc.exe
 lib/wine/fakedlls/cabinet.dll
 lib/wine/fakedlls/cacls.exe
@@ -1753,6 +1758,7 @@ lib/wine/fakedlls/wmi.dll
 lib/wine/fakedlls/wmic.exe
 lib/wine/fakedlls/wmiutils.dll
 lib/wine/fakedlls/wmp.dll
+lib/wine/fakedlls/wmplayer.exe
 lib/wine/fakedlls/wmvcore.dll
 lib/wine/fakedlls/wnaspi32.dll
 lib/wine/fakedlls/wordpad.exe
@@ -2371,6 +2377,7 @@ lib/wine/wmi.dll.so
 lib/wine/wmic.exe.so
 lib/wine/wmiutils.dll.so
 lib/wine/wmp.dll.so
+lib/wine/wmplayer.exe.so
 lib/wine/wmvcore.dll.so
 lib/wine/wnaspi32.dll.so
 lib/wine/wordpad.exe.so

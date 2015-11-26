@@ -64,6 +64,9 @@ bin/dbiproxy
 %%SITE_ARCH%%/auto/DBI/dbivport.h
 %%SITE_ARCH%%/auto/DBI/dbixs_rev.h
 %%SITE_ARCH%%/dbixs_rev.pl
+%%PERL5_MAN1%%/dbilogstrip.1.gz
+%%PERL5_MAN1%%/dbiprof.1.gz
+%%PERL5_MAN1%%/dbiproxy.1.gz
 %%PERL5_MAN3%%/Bundle::DBI.3.gz
 %%PERL5_MAN3%%/DBD::DBM.3.gz
 %%PERL5_MAN3%%/DBD::File.3.gz
@@ -113,6 +116,3 @@ bin/dbiproxy
 %%PERL5_MAN3%%/DBI::Util::CacheMemory.3.gz
 %%PERL5_MAN3%%/DBI::W32ODBC.3.gz
 %%PERL5_MAN3%%/Win32::DBIODBC.3.gz
-%%PERL5_MAN1%%/dbilogstrip.1.gz
-%%PERL5_MAN1%%/dbiprof.1.gz
-%%PERL5_MAN1%%/dbiproxy.1.gz

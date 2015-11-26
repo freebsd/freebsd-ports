@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	iorate
-PORTVERSION=	3.05
+DISTVERSION=	3-05
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://sites.google.com/site/vwiorate/downloads/3-05/
-DISTNAME=	iorate-${PORTVERSION}-src
+MASTER_SITES=	http://sites.google.com/site/vwiorate/downloads/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	blttll@gmail.com
@@ -23,7 +23,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,^CFLAGS ,&+,' ${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iorate ${WRKSRC}/ior_rand ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/iorate ${WRKSRC}/ior_rand \
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/cycle ${WRKSRC}/gen_* ${WRKSRC}/run_* \

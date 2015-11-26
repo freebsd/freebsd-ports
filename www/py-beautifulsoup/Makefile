@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beautifulsoup
-PORTVERSION=	4.3.2
+PORTVERSION=	4.4.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,6 +10,8 @@ DISTNAME=	beautifulsoup4-${PORTVERSION}
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	HTML/XML Parser for Python
+
+LICENSE=	MIT
 
 USES=		python
 USE_PYTHON=	autoplist distutils

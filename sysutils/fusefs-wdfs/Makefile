@@ -3,9 +3,9 @@
 
 PORTNAME=	wdfs
 PORTVERSION=	1.4.2
-PORTREVISION=	5
+DISTVERSIONPREFIX=v
+PORTREVISION=	6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://noedler.de/projekte/wdfs/
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	silverless@gmx.com
@@ -17,6 +17,9 @@ LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 
 GNU_CONFIGURE=	yes
 USES=		fuse pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	jmesmon
+GH_TAGNAME=	3fa7035
 USE_GNOME=	glib20
 
 do-install:

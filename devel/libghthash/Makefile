@@ -10,7 +10,8 @@ MASTER_SITES=	http://www.ipd.bth.se/ska/sim_home/filer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Hash Table
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
@@ -35,9 +36,13 @@ PLIST_FILES=	include/ght_hash_table.h \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-post-install:
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \*.c ${STAGEDIR}${EXAMPLESDIR})
 

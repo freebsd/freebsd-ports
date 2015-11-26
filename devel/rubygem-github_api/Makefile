@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	github_api
-PORTVERSION=	0.12.4
+PORTVERSION=	0.13.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

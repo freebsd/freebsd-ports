@@ -13,13 +13,13 @@ COMMENT=	Feature rich persistent database generator
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	DOCS
-
 HAS_CONFIGURE=	yes
 USES=		gmake
 ALL_TARGET=	# empty
 PORTDOCS=	*
 CONFIGURE_ARGS=	--prefix=\$${DESTDIR}${PREFIX}
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
@@ -27,11 +27,13 @@ CONFIGURE_ARGS=	--prefix=\$${DESTDIR}${PREFIX}
 USES+=		bison
 .else
 post-patch:
-	${REINPLACE_CMD} -e "s/bison/byacc/g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s/bison/byacc/g" ${WRKSRC}/configure
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -R ${WRKSRC}/www/* ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/manual.pdf ${STAGEDIR}${DOCSDIR}

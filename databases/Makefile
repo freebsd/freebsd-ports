@@ -180,9 +180,6 @@
     SUBDIR += luasql-postgres
     SUBDIR += luasql-sqlite3
     SUBDIR += mantis
-    SUBDIR += mariadb-client
-    SUBDIR += mariadb-scripts
-    SUBDIR += mariadb-server
     SUBDIR += mariadb100-client
     SUBDIR += mariadb100-server
     SUBDIR += mariadb55-client
@@ -726,6 +723,10 @@
     SUBDIR += py-flask-sqlalchemy
     SUBDIR += py-forgetsql
     SUBDIR += py-gdbm
+    SUBDIR += py32-gdbm
+    SUBDIR += py33-gdbm
+    SUBDIR += py34-gdbm
+    SUBDIR += py35-gdbm
     SUBDIR += py-geoalchemy
     SUBDIR += py-geoalchemy2
     SUBDIR += py-hiredis
@@ -744,6 +745,7 @@
     SUBDIR += py-peewee
     SUBDIR += py-pg8000
     SUBDIR += py-pg_pqueue
+    SUBDIR += py-pgspecial
     SUBDIR += py-pgxnclient
     SUBDIR += py-pickledb
     SUBDIR += py-postgresql
@@ -769,6 +771,10 @@
     SUBDIR += py-sqlalchemy-migrate
     SUBDIR += py-sqlalchemy06
     SUBDIR += py-sqlite3
+    SUBDIR += py32-sqlite3
+    SUBDIR += py33-sqlite3
+    SUBDIR += py34-sqlite3
+    SUBDIR += py35-sqlite3
     SUBDIR += py-sqlite3dbm
     SUBDIR += py-sqlkit
     SUBDIR += py-sqlobject
@@ -835,6 +841,8 @@
     SUBDIR += rubygem-activerecord-mysql-adapter
     SUBDIR += rubygem-activerecord4
     SUBDIR += rubygem-activerecord41
+    SUBDIR += rubygem-after_commit_queue
+    SUBDIR += rubygem-after_commit_queue-rails41
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-arel-helpers
@@ -884,6 +892,8 @@
     SUBDIR += rubygem-mysql
     SUBDIR += rubygem-mysql2
     SUBDIR += rubygem-openid-redis-store
+    SUBDIR += rubygem-paranoia
+    SUBDIR += rubygem-paranoia-rails41
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis
@@ -917,6 +927,7 @@
     SUBDIR += sqliteman
     SUBDIR += sqlitemanager
     SUBDIR += sqliteodbc
+    SUBDIR += sqlitestudio
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += squirrel-sql

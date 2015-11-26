@@ -1,4 +1,4 @@
---- tools/fileclient.cpp.orig
+--- tools/fileclient.cpp.orig	2003-02-01 14:29:23 UTC
 +++ tools/fileclient.cpp
 @@ -20,6 +20,8 @@
  

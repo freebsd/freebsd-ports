@@ -4,15 +4,12 @@
 PORTNAME=	gkermit
 PORTVERSION=	1.0
 CATEGORIES=	comms
-MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
+MASTER_SITES=	ftp://ftp.kermitproject.org/kermit/archives/
 DISTNAME=	gku100
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File transfer utility using the kermit protocol
 
-BROKEN=		Unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2015-11-26
 NO_WRKSUBDIR=	yes
 
 ALL_TARGET=	posix

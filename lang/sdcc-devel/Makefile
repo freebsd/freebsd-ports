@@ -2,6 +2,7 @@
 
 PORTNAME=	sdcc
 PORTVERSION=	3.5.5.2015.11.06
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
 		http://tijl.fastmail.com/mirror/
@@ -34,7 +35,7 @@ Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000, Toshiba TLCS-90
 
 CONFIGURE_ARGS=	--disable-avr --disable-install-libbfd --disable-werror \
 		--disable-st7 docdir=${DOCSDIR} sdcc_cv_c_fms_extensions=no
-CONFIGURE_ENV=	ARCH=""
+NOPRECIOUSMAKEVARS=	yes
 PORTDATA=	*
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/sdcc

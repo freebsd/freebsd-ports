@@ -96,7 +96,6 @@ BACKTRACE_DESC= Stack backtrace support via (lib)execinfo
 BASE_DESC=	Use base compiler (experimental)
 DAHDI_DESC=	DAHDI support
 EXCHANGE_DESC=	Exchange calendar support
-GCC_DESC=	Use GCC from ports
 MP3PLAYER_DESC=	Install MP3 Player for Music-On-Hold (mpg123)
 NEWG711_DESC=	New G711 codec
 OOH323_DESC=	ooh323 support

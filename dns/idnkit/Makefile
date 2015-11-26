@@ -26,10 +26,12 @@ post-patch:
 		's|mode=link $$(LD)|mode=link $$(CC)|'
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
 	(cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog NEWS README \
 		${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${WRKSRC}/README.ja ${STAGEDIR}${DOCSDIR}/ja
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>

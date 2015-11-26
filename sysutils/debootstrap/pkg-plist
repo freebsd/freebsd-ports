@@ -1,8 +1,12 @@
 @(,,0755) sbin/debootstrap
 man/man8/debootstrap.8.gz
 %%DATADIR%%/functions
+%%DATADIR%%/scripts/aequorea
+%%DATADIR%%/scripts/bartholomea
 %%DATADIR%%/scripts/breezy
+%%DATADIR%%/scripts/chromodoris
 %%DATADIR%%/scripts/dapper
+%%DATADIR%%/scripts/dasyatis
 %%DATADIR%%/scripts/edgy
 %%DATADIR%%/scripts/etch
 %%DATADIR%%/scripts/etch-m68k

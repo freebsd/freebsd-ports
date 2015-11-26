@@ -25,7 +25,7 @@ MAKEFILE=	GNUmakefile
 USE_RUBY=	yes
 USES=		gmake tar:xz
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/swig/ruby
+WRKSRC_SUBDIR=	swig/ruby
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SWIG = swig/ s|$$|3.0|' ${WRKSRC}/../SWIGmake.base

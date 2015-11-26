@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.jawstats.com/src/
 MAINTAINER=	Alan@Wave2.org
 COMMENT=	JAWStats is a Free Web Site Statistics tool
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 RUN_DEPENDS=	awstats>=6.8:${PORTSDIR}/www/awstats
 
 NO_WRKSUBDIR=	yes

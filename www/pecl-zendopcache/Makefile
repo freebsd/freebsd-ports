@@ -13,6 +13,9 @@ COMMENT=	Opcode cacher and optimizer for PHP
 
 LICENSE=	PHP301
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 OPTIONS_DEFINE=	DOCS
 
 USES=		tar:tgz

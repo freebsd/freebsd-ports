@@ -12,27 +12,22 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	\
-	autorespond:${PORTSDIR}/mail/autorespond \
-	${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
-RUN_DEPENDS=	\
-	autorespond:${PORTSDIR}/mail/autorespond \
-	${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+BUILD_DEPENDS=	autorespond:${PORTSDIR}/mail/autorespond \
+		${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+RUN_DEPENDS=	autorespond:${PORTSDIR}/mail/autorespond \
+		${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 
-USES=		qmail:vars gmake
+USES=		autoreconf gmake qmail:vars
 
 PATCH_SITES+=	http://qmail.jms1.net/vpopmail/:onchange \
-  		LOCAL/bdrewery/${PORTNAME}/:onchange
+		LOCAL/bdrewery/${PORTNAME}/:onchange
 PATCHFILES+=	qmailadmin-1.2.12-onchange.3.patch:onchange
 PATCH_DIST_STRIP+=	-p1
 
 PORTSCOUT=	ignore:1
-
-USE_AUTOTOOLS=	automake aclocal autoconf
-AUTOMAKE_ARGS+=	--add-missing
 
 OPTIONS_DEFINE=	IPAUTH USER_INDEX MODIFY_QUOTA DOMAIN_AUTOFILL \
 		IDX IDX_SQL HELP SPAM_DETECTION SPAM_NEEDS_EMAIL \

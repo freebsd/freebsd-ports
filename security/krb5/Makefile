@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.13.2
-PORTREVISION=		5
+PORTVERSION=		1.14
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
-DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
-EXTRACT_SUFX=		.tar
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -19,7 +16,7 @@ LICENSE=		MIT
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
-CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-maint-11[0-9]-[0-9]*
+CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[0-9]-*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_PERL5=		build
@@ -108,10 +105,6 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/html
 PDF_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/pdf
-
-post-extract:
-	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz --no-same-owner --no-same-permissions
-	@${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz.asc
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/krb5

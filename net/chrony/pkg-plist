@@ -6,6 +6,6 @@ man/man1/chrony.1.gz
 man/man1/chronyc.1.gz
 man/man5/chrony.conf.5.gz
 man/man8/chronyd.8.gz
-@(,,4755) sbin/chronyd
+sbin/chronyd
 @dir /var/lib/chrony
 @dir /var/lib

@@ -13,6 +13,7 @@ COMMENT=	Add pleasant whitespace to a DOM tree
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Exporter-Tiny>=0:${PORTSDIR}/devel/p5-Exporter-Tiny \
 		p5-XML-LibXML>=1.62:${PORTSDIR}/textproc/p5-XML-LibXML

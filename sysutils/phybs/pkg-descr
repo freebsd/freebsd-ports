@@ -1,0 +1,3 @@
+The phybs utility attempts to measure disk performance for various I/O
+block sizes and alignments.  It can be used to deduce the physical block
+size of a hard disk drive or the stripe size of an array.

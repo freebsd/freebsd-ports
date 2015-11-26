@@ -30,6 +30,7 @@
 @dir %%T%%/conf
 @owner
 @group
+@dir %%T%%/endorsed
 %%T%%/lib/annotations-api.jar
 %%T%%/lib/catalina-ant.jar
 %%T%%/lib/catalina-ha.jar
@@ -54,9 +55,10 @@
 %%T%%/lib/tomcat-util.jar
 %%T%%/lib/tomcat-websocket.jar
 %%T%%/lib/websocket-api.jar
-%%T%%/temp/safeToDelete.tmp
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
+@dir %%T%%/logs
+%%T%%/temp/safeToDelete.tmp
 @dir %%T%%/temp
 %%T%%/webapps/ROOT/RELEASE-NOTES.txt
 %%T%%/webapps/ROOT/WEB-INF/web.xml
@@ -641,8 +643,6 @@
 %%T%%/webapps/manager/xform.xsl
 @dir %%T%%/webapps
 @dir %%T%%/work
-@dir %%T%%/logs
 @owner
 @group
-@dir %%T%%/endorsed
 @unexec [ ! -d %D/%%T%% ] || echo If permanently deleting this package, %D/%%T%% must be removed manually

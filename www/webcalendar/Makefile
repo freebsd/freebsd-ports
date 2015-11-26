@@ -10,6 +10,9 @@ COMMENT=	Web-based calendar application
 
 LICENSE=	GPLv2
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 PORTSCOUT=	limit:^1\.2\. skipb:1
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes

@@ -1,4 +1,5 @@
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.BinaryUtils.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.CIDR.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Connection.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Date.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Error.beam
@@ -7,7 +8,9 @@ lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extension.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Binary.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.JSON.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Text.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.INET.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Interval.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.MACADDR.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Messages.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Protocol.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Range.beam

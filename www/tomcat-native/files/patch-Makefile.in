@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-02-28 15:08:20.000000000 +0100
-+++ Makefile.in	2008-02-28 15:08:52.000000000 +0100
-@@ -67,12 +67,7 @@
+--- Makefile.in.orig	2007-08-05 03:43:38 UTC
++++ Makefile.in
+@@ -67,12 +67,7 @@ top_blddir=@abs_builddir@
  
  
  install: $(TARGET_LIB)

@@ -1,0 +1,3 @@
+Plugin for running methods on ActiveRecord models after record is committed
+
+WWW: https://github.com/shellycloud/after_commit_queue
