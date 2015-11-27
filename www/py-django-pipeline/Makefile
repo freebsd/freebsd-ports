@@ -18,4 +18,7 @@ NO_ARCH=	yes
 USES=		python:2
 USE_PYTHON=	autoplist distutils
 
+CONFLICTS=	py[23][0-9]-django-pipeline12-[0-9]* \
+		py[23][0-9]-django-pipeline14-[0-9]*
+
 .include <bsd.port.mk>
