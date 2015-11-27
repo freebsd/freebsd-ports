@@ -1661,6 +1661,7 @@ lib/wine/fakedlls/taskkill.exe
 lib/wine/fakedlls/tasklist.exe
 lib/wine/fakedlls/taskmgr.exe
 lib/wine/fakedlls/taskschd.dll
+%%STAGING%%lib/wine/fakedlls/tdi.sys
 lib/wine/fakedlls/termsv.exe
 %%WINE32%%lib/wine/fakedlls/toolhelp.dll16
 lib/wine/fakedlls/traffic.dll
@@ -2280,6 +2281,7 @@ lib/wine/taskkill.exe.so
 lib/wine/tasklist.exe.so
 lib/wine/taskmgr.exe.so
 lib/wine/taskschd.dll.so
+%%STAGING%%lib/wine/tdi.sys.so
 lib/wine/termsv.exe.so
 %%WINE32%%lib/wine/toolhelp.dll16.so
 lib/wine/traffic.dll.so
