@@ -7,19 +7,19 @@
 -		mkdir -p $(SBINDIR)
 -		install -m 755 $(EXENAME) $(SBINDIR)
 -		$(STRIP) $(SBINDIR)/$(EXENAME)
-+		mkdir -p ${STAGEDIR}$(SBINDIR)
-+		install -m 755 $(EXENAME) ${STAGEDIR}$(SBINDIR)
-+		$(STRIP) ${STAGEDIR}$(SBINDIR)/$(EXENAME)
++		mkdir -p ${DESTDIR}$(SBINDIR)
++		install -m 755 $(EXENAME) ${DESTDIR}$(SBINDIR)
++		$(STRIP) ${DESTDIR}$(SBINDIR)/$(EXENAME)
  ifeq ($(SGW_SUPPORT),1)
 -		$(MAKECMDPREFIX)if [ -e $(SBINDIR)/$(SGW_POLICY_SCRIPT) ]; then \
 -			cp -f files/$(SGW_POLICY_SCRIPT) $(SBINDIR)/$(SGW_POLICY_SCRIPT).new; \
 -			echo "Policy routing script was saved as $(SBINDIR)/$(SGW_POLICY_SCRIPT).new"; \
-+		$(MAKECMDPREFIX)if [ -e ${STAGEDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT) ]; then \
-+			cp -f files/$(SGW_POLICY_SCRIPT) ${STAGEDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT).new; \
-+			echo "Policy routing script was saved as ${STAGEDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT).new"; \
++		$(MAKECMDPREFIX)if [ -e ${DESTDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT) ]; then \
++			cp -f files/$(SGW_POLICY_SCRIPT) ${DESTDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT).new; \
++			echo "Policy routing script was saved as ${DESTDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT).new"; \
  		else \
 -			cp -f files/$(SGW_POLICY_SCRIPT) $(SBINDIR)/$(SGW_POLICY_SCRIPT); \
-+			cp -f files/$(SGW_POLICY_SCRIPT) ${STAGEDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT); \
++			cp -f files/$(SGW_POLICY_SCRIPT) ${DESTDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT); \
  		fi
  endif
  
@@ -46,11 +46,11 @@
 -		else \
 -			cp -f files/olsrd.conf.default.lq $(CFGFILE); \
 -		fi
-+		mkdir -p ${STAGEDIR}$(ETCDIR)
-+		-cp files/olsrd.conf.default.full ${STAGEDIR}$(CFGFILE).default.full
-+		-cp files/olsrd.conf.default.rfc ${STAGEDIR}$(CFGFILE).default.rfc
-+		-cp files/olsrd.conf.default.lq ${STAGEDIR}$(CFGFILE).default.lq
-+		-cp files/olsrd.conf.default.lq-fisheye ${STAGEDIR}$(CFGFILE).default.lq-fisheye
++		mkdir -p ${DESTDIR}$(ETCDIR)
++		-cp files/olsrd.conf.default.full ${DESTDIR}$(CFGFILE).default.full
++		-cp files/olsrd.conf.default.rfc ${DESTDIR}$(CFGFILE).default.rfc
++		-cp files/olsrd.conf.default.lq ${DESTDIR}$(CFGFILE).default.lq
++		-cp files/olsrd.conf.default.lq-fisheye ${DESTDIR}$(CFGFILE).default.lq-fisheye
  		@echo -------------------------------------------
  		@echo Edit $(CFGFILE) before running olsrd!!
  		@echo -------------------------------------------
@@ -60,10 +60,10 @@
 -		cp files/olsrd.8.gz $(MANDIR)/man8/$(EXENAME).8.gz
 -		mkdir -p $(MANDIR)/man5/
 -		cp files/olsrd.conf.5.gz $(MANDIR)/man5/$(CFGNAME).5.gz
-+		mkdir -p ${STAGEDIR}$(MANDIR)/man8/
-+		cp files/olsrd.8.gz ${STAGEDIR}$(MANDIR)/man8/$(EXENAME).8.gz
-+		mkdir -p ${STAGEDIR}$(MANDIR)/man5/
-+		cp files/olsrd.conf.5.gz ${STAGEDIR}$(MANDIR)/man5/$(CFGNAME).5.gz
++		mkdir -p ${DESTDIR}$(MANDIR)/man8/
++		cp files/olsrd.8.gz ${DESTDIR}$(MANDIR)/man8/$(EXENAME).8.gz
++		mkdir -p ${DESTDIR}$(MANDIR)/man5/
++		cp files/olsrd.conf.5.gz ${DESTDIR}$(MANDIR)/man5/$(CFGNAME).5.gz
  endif
  
  uninstall_olsrd:	uninstall_bin
@@ -72,7 +72,7 @@
  
  libs_install install_libs:
 -		$(MAKECMDPREFIX)set -e;for dir in $(SUBDIRS);do $(MAKECMD) -C lib/$$dir LIBDIR=$(LIBDIR) install;done
-+		$(MAKECMDPREFIX)set -e;for dir in $(SUBDIRS);do $(MAKECMD) -C lib/$$dir LIBDIR=${STAGEDIR}$(LIBDIR) install;done
++		$(MAKECMDPREFIX)set -e;for dir in $(SUBDIRS);do $(MAKECMD) -C lib/$$dir LIBDIR=${DESTDIR}$(LIBDIR) install;done
  
  libs_uninstall uninstall_libs:
  		$(MAKECMDPREFIX)set -e;for dir in $(SUBDIRS);do $(MAKECMD) -C lib/$$dir LIBDIR=$(LIBDIR) uninstall;done
