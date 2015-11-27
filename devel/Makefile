@@ -1233,6 +1233,7 @@
     SUBDIR += libmatheval
     SUBDIR += libmba
     SUBDIR += libmcs
+    SUBDIR += libmill
     SUBDIR += libmimedir
     SUBDIR += libmonetra
     SUBDIR += libmowgli
