@@ -58,6 +58,290 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fb2475c2-9125-11e5-bd18-002590263bf5">
+    <topic>kibana4 -- CSRF vulnerability</topic>
+    <affects>
+      <package>
+	<name>kibana4</name>
+	<name>kibana41</name>
+	<range><ge>4.0.0</ge><lt>4.1.3</lt></range>
+      </package>
+      <package>
+	<name>kibana42</name>
+	<range><ge>4.2.0</ge><lt>4.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security/">
+	  <p>Vulnerability Summary: Kibana versions prior to 4.1.3 and 4.2.1
+	    are vulnerable to a CSRF attack.</p>
+	  <p>Remediation Summary: Users should upgrade to 4.1.3 or 4.2.1.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8131</cvename>
+      <url>https://www.elastic.co/community/security/</url>
+    </references>
+    <dates>
+      <discovery>2015-11-17</discovery>
+      <entry>2015-11-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e359051d-90bd-11e5-bd18-002590263bf5">
+    <topic>a2ps -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>a2ps</name>
+	<range><lt>4.13b_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jong-Gwon Kim reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/16/4">
+	  <p>When user runs a2ps with malicious crafted pro(a2ps prologue) file,
+	    an attacker can execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8107</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/16/4</url>
+    </references>
+    <dates>
+      <discovery>2015-11-16</discovery>
+      <entry>2015-11-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ecc268f2-8fc2-11e5-918c-bcaec565249c">
+    <topic>libxslt -- DoS vulnability due to type confusing error</topic>
+    <affects>
+      <package>
+	<name>libsxlt</name>
+	<range><lt>1.1.28_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>libxslt maintainer reports:</p>
+	<blockquote cite="https://git.gnome.org/browse/libxslt/commit/?id=7ca19df892ca22d9314e95d59ce2abdeff46b617">
+	  <p>CVE-2015-7995:
+	    http://www.openwall.com/lists/oss-security/2015/10/27/10
+	    We need to check that the parent node is an element before
+	    dereferencing its namespace.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7995</cvename>
+      <url>https://git.gnome.org/browse/libxslt/commit/?id=7ca19df892ca22d9314e95d59ce2abdeff46b617</url>
+    </references>
+    <dates>
+      <discovery>2015-10-29</discovery>
+      <entry>2015-11-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e5423caf-8fb8-11e5-918c-bcaec565249c">
+    <topic>libxml2 -- multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>reports:</p>
+	<blockquote cite="http://xmlsoft.org/news.html">
+	  <p>CVE-2015-5312 Another entity expansion issue (David Drysdale).</p>
+	  <p>CVE-2015-7497 Avoid an heap buffer overflow in
+	    xmlDictComputeFastQKey (David Drysdale).</p>
+	  <p>CVE-2015-7498 Avoid processing entities after encoding
+	    conversion failures (Daniel Veillard).</p>
+	  <p>CVE-2015-7499 (1) Add xmlHaltParser() to stop the parser
+	    (Daniel Veillard).</p>
+	  <p>CVE-2015-7499 (2) Detect incoherency on GROW (Daniel
+	    Veillard).</p>
+	  <p>CVE-2015-7500 Fix memory access error due to incorrect
+	    entities boundaries (Daniel Veillard).</p>
+	  <p>CVE-2015-7941 (1) Stop parsing on entities boundaries
+	    errors (Daniel Veillard).</p>
+	  <p>CVE-2015-7941 (2) Cleanup conditional section error
+	    handling (Daniel Veillard).</p>
+	  <p>CVE-2015-7942 Another variation of overflow in
+	    Conditional sections (Daniel Veillard).</p>
+	  <p>CVE-2015-7942 (2) Fix an error in previous Conditional
+	    section patch (Daniel Veillard).</p>
+	  <p>CVE-2015-8035 Fix XZ compression support loop
+	    (Daniel Veillard).</p>
+	  <p>CVE-2015-8242 Buffer overead with HTML parser in push
+	    mode (Hugh Davenport)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5312</cvename>
+      <cvename>CVE-2015-7497</cvename>
+      <cvename>CVE-2015-7498</cvename>
+      <cvename>CVE-2015-7499</cvename>
+      <cvename>CVE-2015-7500</cvename>
+      <cvename>CVE-2015-7941</cvename>
+      <cvename>CVE-2015-7942</cvename>
+      <cvename>CVE-2015-8035</cvename>
+      <cvename>CVE-2015-8241</cvename>
+      <cvename>CVE-2015-8242</cvename>
+      <url>http://xmlsoft.org/news.html</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/18/23</url>
+    </references>
+    <dates>
+      <discovery>2015-11-20</discovery>
+      <entry>2015-11-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9d04936c-75f1-4a2c-9ade-4c1708be5df9">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>nspr</name>
+	<range><lt>4.10.10</lt></range>
+      </package>
+      <package>
+	<name>nss</name>
+	<range><ge>3.20</ge><lt>3.20.1</lt></range>
+	<range><ge>3.19.3</ge><lt>3.19.4</lt></range>
+	<range><lt>3.19.2.1</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>42.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>42.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.39</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.39</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>38.4.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>38.4.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>38.4.0</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>38.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA 2015-133 NSS and NSPR memory corruption issues</p>
+	  <p>MFSA 2015-132 Mixed content WebSocket policy bypass
+	    through workers</p>
+	  <p>MFSA 2015-131 Vulnerabilities found through code
+	    inspection</p>
+	  <p>MFSA 2015-130 JavaScript garbage collection crash with
+	    Java applet</p>
+	  <p>MFSA 2015-129 Certain escaped characters in host of
+	    Location-header are being treated as non-escaped</p>
+	  <p>MFSA 2015-128 Memory corruption in libjar through zip
+	    files</p>
+	  <p>MFSA 2015-127 CORS preflight is bypassed when
+	    non-standard Content-Type headers are received</p>
+	  <p>MFSA 2015-126 Crash when accessing HTML tables with
+	    accessibility tools on OS X</p>
+	  <p>MFSA 2015-125 XSS attack through intents on Firefox for
+	    Android</p>
+	  <p>MFSA 2015-124 Android intents can be used on Firefox for
+	    Android to open privileged files</p>
+	  <p>MFSA 2015-123 Buffer overflow during image interactions
+	    in canvas</p>
+	  <p>MFSA 2015-122 Trailing whitespace in IP address hostnames
+	    can bypass same-origin policy</p>
+	  <p>MFSA 2015-121 Disabling scripts in Add-on SDK panels has
+	    no effect</p>
+	  <p>MFSA 2015-120 Reading sensitive profile files through
+	    local HTML file on Android</p>
+	  <p>MFSA 2015-119 Firefox for Android addressbar can be
+	    removed after fullscreen mode</p>
+	  <p>MFSA 2015-118 CSP bypass due to permissive Reader mode
+	    whitelist</p>
+	  <p>MFSA 2015-117 Information disclosure through NTLM
+	    authentication</p>
+	  <p>MFSA 2015-116 Miscellaneous memory safety hazards
+	    (rv:42.0 / rv:38.4)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-4513</cvename>
+      <cvename>CVE-2015-4514</cvename>
+      <cvename>CVE-2015-4515</cvename>
+      <cvename>CVE-2015-4518</cvename>
+      <cvename>CVE-2015-7181</cvename>
+      <cvename>CVE-2015-7182</cvename>
+      <cvename>CVE-2015-7183</cvename>
+      <cvename>CVE-2015-7185</cvename>
+      <cvename>CVE-2015-7186</cvename>
+      <cvename>CVE-2015-7187</cvename>
+      <cvename>CVE-2015-7188</cvename>
+      <cvename>CVE-2015-7189</cvename>
+      <cvename>CVE-2015-7190</cvename>
+      <cvename>CVE-2015-7191</cvename>
+      <cvename>CVE-2015-7192</cvename>
+      <cvename>CVE-2015-7193</cvename>
+      <cvename>CVE-2015-7194</cvename>
+      <cvename>CVE-2015-7195</cvename>
+      <cvename>CVE-2015-7196</cvename>
+      <cvename>CVE-2015-7197</cvename>
+      <cvename>CVE-2015-7198</cvename>
+      <cvename>CVE-2015-7199</cvename>
+      <cvename>CVE-2015-7200</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-116/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-117/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-118/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-119/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-120/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-121/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-122/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-123/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-124/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-125/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-126/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-127/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-128/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-129/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-130/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-131/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-132/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-133/</url>
+    </references>
+    <dates>
+      <discovery>2015-11-03</discovery>
+      <entry>2015-11-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68847b20-8ddc-11e5-b69c-c86000169601">
     <topic>gdm -- lock screen bypass when holding escape key</topic>
     <affects>

@@ -1,5 +1,4 @@
 %%WWWDIR%%/.htaccess
-%%WWWDIR%%/.mailmap
 %%WWWDIR%%/.tag
 %%WWWDIR%%/.user.ini
 %%WWWDIR%%/3rdparty/LICENSE INFO
@@ -2364,7 +2363,7 @@
 %%WWWDIR%%/3rdparty/sabre/dav/lib/DAVACL/Property/CurrentUserPrivilegeSet.php
 %%WWWDIR%%/3rdparty/sabre/dav/lib/DAVACL/Property/Principal.php
 %%WWWDIR%%/3rdparty/sabre/dav/lib/DAVACL/Property/SupportedPrivilegeSet.php
-%%WWWDIR%%/3rdparty/sabre/event/ChangeLog.md
+%%WWWDIR%%/3rdparty/sabre/event/CHANGELOG.md
 %%WWWDIR%%/3rdparty/sabre/event/LICENSE
 %%WWWDIR%%/3rdparty/sabre/event/composer.json
 %%WWWDIR%%/3rdparty/sabre/event/lib/EventEmitter.php
@@ -4661,17 +4660,6 @@
 %%WWWDIR%%/apps/files_external/tests/service/userglobalstoragesservicetest.php
 %%WWWDIR%%/apps/files_external/tests/service/userstoragesservicetest.php
 %%WWWDIR%%/apps/files_external/tests/storageconfigtest.php
-%%WWWDIR%%/apps/files_locking/CONTRIBUTING.md
-%%WWWDIR%%/apps/files_locking/appinfo/app.php
-%%WWWDIR%%/apps/files_locking/appinfo/info.xml
-%%WWWDIR%%/apps/files_locking/img/app.svg
-%%WWWDIR%%/apps/files_locking/lib/lock.php
-%%WWWDIR%%/apps/files_locking/lib/lockingwrapper.php
-%%WWWDIR%%/apps/files_locking/tests/LockTest.php
-%%WWWDIR%%/apps/files_locking/tests/LockingWrapperTest.php
-%%WWWDIR%%/apps/files_locking/tests/bootstrap.php
-%%WWWDIR%%/apps/files_locking/tests/data/test.txt
-%%WWWDIR%%/apps/files_locking/tests/phpunit.xml
 %%WWWDIR%%/apps/files_pdfviewer/CONTRIBUTING.md
 %%WWWDIR%%/apps/files_pdfviewer/appinfo/app.php
 %%WWWDIR%%/apps/files_pdfviewer/appinfo/info.xml
@@ -7497,6 +7485,9 @@
 %%WWWDIR%%/apps/user_ldap/tests/integration/exceptionOnLostConnection.php
 %%WWWDIR%%/apps/user_ldap/tests/integration/fakemanager.php
 %%WWWDIR%%/apps/user_ldap/tests/integration/lib/IntegrationTestAccessGroupsMatchFilter.php
+%%WWWDIR%%/apps/user_ldap/tests/integration/lib/integrationtestbackupserver.php
+%%WWWDIR%%/apps/user_ldap/tests/integration/lib/integrationtestcountusersbyloginname.php
+%%WWWDIR%%/apps/user_ldap/tests/integration/lib/integrationtestfetchusersbyloginname.php
 %%WWWDIR%%/apps/user_ldap/tests/integration/lib/integrationtestpaging.php
 %%WWWDIR%%/apps/user_ldap/tests/integration/lib/integrationtestuserhome.php
 %%WWWDIR%%/apps/user_ldap/tests/integration/lib/user/IntegrationTestUserAvatar.php
@@ -7735,9 +7726,10 @@
 %%WWWDIR%%/core/doc/admin/_images/google-drive5.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive6.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive8.png
-%%WWWDIR%%/core/doc/admin/_images/install-wizard-2.png
-%%WWWDIR%%/core/doc/admin/_images/install-wizard-3.png
-%%WWWDIR%%/core/doc/admin/_images/install-wizard.png
+%%WWWDIR%%/core/doc/admin/_images/install-wizard-a.png
+%%WWWDIR%%/core/doc/admin/_images/install-wizard-a1.png
+%%WWWDIR%%/core/doc/admin/_images/install-wizard-a2.png
+%%WWWDIR%%/core/doc/admin/_images/install-wizard-a4.png
 %%WWWDIR%%/core/doc/admin/_images/ios-p12-2.png
 %%WWWDIR%%/core/doc/admin/_images/ios-p12-3.png
 %%WWWDIR%%/core/doc/admin/_images/ios-p12-4.png
@@ -7844,14 +7836,11 @@
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-php-sendmail.png
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-smtp.png
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-wizard.png
-%%WWWDIR%%/core/doc/admin/_images/transactional-locking-1.png
-%%WWWDIR%%/core/doc/admin/_images/transactional-locking-2.png
 %%WWWDIR%%/core/doc/admin/_images/ucs-app-center-install.png
 %%WWWDIR%%/core/doc/admin/_images/ucs-app-center-module.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint1.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint2.png
-%%WWWDIR%%/core/doc/admin/_images/untrusted-domain.png
 %%WWWDIR%%/core/doc/admin/_images/updater-1.png
 %%WWWDIR%%/core/doc/admin/_images/updater-10.png
 %%WWWDIR%%/core/doc/admin/_images/updater-11.png
@@ -7860,6 +7849,8 @@
 %%WWWDIR%%/core/doc/admin/_images/updater-7.png
 %%WWWDIR%%/core/doc/admin/_images/updater-8.png
 %%WWWDIR%%/core/doc/admin/_images/updater-9.png
+%%WWWDIR%%/core/doc/admin/_images/upgrade-1.png
+%%WWWDIR%%/core/doc/admin/_images/upgrade-2.png
 %%WWWDIR%%/core/doc/admin/_images/user_mounts.png
 %%WWWDIR%%/core/doc/admin/_images/users-config-1.png
 %%WWWDIR%%/core/doc/admin/_images/users-config-2.png
@@ -8202,6 +8193,14 @@
 %%WWWDIR%%/core/doc/user/_images/files-drop-5.png
 %%WWWDIR%%/core/doc/user/_images/files-drop-6.png
 %%WWWDIR%%/core/doc/user/_images/files-drop-7.png
+%%WWWDIR%%/core/doc/user/_images/files_page-1.png
+%%WWWDIR%%/core/doc/user/_images/files_page-2.png
+%%WWWDIR%%/core/doc/user/_images/files_page-3.png
+%%WWWDIR%%/core/doc/user/_images/files_page-4.png
+%%WWWDIR%%/core/doc/user/_images/files_page-5.png
+%%WWWDIR%%/core/doc/user/_images/files_page-6.png
+%%WWWDIR%%/core/doc/user/_images/files_page.png
+%%WWWDIR%%/core/doc/user/_images/files_page1.png
 %%WWWDIR%%/core/doc/user/_images/files_versioning.png
 %%WWWDIR%%/core/doc/user/_images/full_name.png
 %%WWWDIR%%/core/doc/user/_images/gear.png
@@ -8221,9 +8220,6 @@
 %%WWWDIR%%/core/doc/user/_images/oc_documents_col_edit.png
 %%WWWDIR%%/core/doc/user/_images/oc_documents_edit.png
 %%WWWDIR%%/core/doc/user/_images/oc_documents_share.png
-%%WWWDIR%%/core/doc/user/_images/oc_filesweb_navigate.png
-%%WWWDIR%%/core/doc/user/_images/oc_filesweb_new.png
-%%WWWDIR%%/core/doc/user/_images/oc_main_web_labelled.png
 %%WWWDIR%%/core/doc/user/_images/oc_personal_settings_dropdown.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav1.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav2.png
@@ -8233,13 +8229,8 @@
 %%WWWDIR%%/core/doc/user/_images/quota1.png
 %%WWWDIR%%/core/doc/user/_images/sharepoint-drive-config-user.png
 %%WWWDIR%%/core/doc/user/_images/usage_indicator.png
-%%WWWDIR%%/core/doc/user/_images/users-files.png
 %%WWWDIR%%/core/doc/user/_images/users-overlays-sharepoint.png
 %%WWWDIR%%/core/doc/user/_images/users-overlays-win-net-drive.png
-%%WWWDIR%%/core/doc/user/_images/users-overlays.png
-%%WWWDIR%%/core/doc/user/_images/users-share-local.png
-%%WWWDIR%%/core/doc/user/_images/users-share-local2.png
-%%WWWDIR%%/core/doc/user/_images/users-share-public.png
 %%WWWDIR%%/core/doc/user/_images/webdav_dolphin.png
 %%WWWDIR%%/core/doc/user/_images/webdav_gnome3_nautilus.png
 %%WWWDIR%%/core/doc/user/_sources/bookmarks.txt
@@ -8341,6 +8332,7 @@
 %%WWWDIR%%/core/fonts/LICENSE.txt
 %%WWWDIR%%/core/fonts/OpenSans-Light.woff
 %%WWWDIR%%/core/fonts/OpenSans-Regular.ttf
+%%WWWDIR%%/core/fonts/OpenSans-Regular.woff
 %%WWWDIR%%/core/fonts/OpenSans-Semibold.woff
 %%WWWDIR%%/core/img/actions/add.png
 %%WWWDIR%%/core/img/actions/add.svg
@@ -9674,6 +9666,7 @@
 %%WWWDIR%%/lib/repair/dropoldtables.php
 %%WWWDIR%%/lib/repair/filletags.php
 %%WWWDIR%%/lib/repair/innodb.php
+%%WWWDIR%%/lib/repair/oldgroupmembershipshares.php
 %%WWWDIR%%/lib/repair/preview.php
 %%WWWDIR%%/lib/repair/removegetetagentries.php
 %%WWWDIR%%/lib/repair/repairconfig.php
@@ -9684,7 +9677,6 @@
 %%WWWDIR%%/lib/repair/sqliteautoincrement.php
 %%WWWDIR%%/lib/repair/updatecertificatestore.php
 %%WWWDIR%%/lib/repair/updateoutdatedocsids.php
-%%WWWDIR%%/occ
 %%WWWDIR%%/ocs-provider/index.php
 %%WWWDIR%%/ocs-provider/provider.php
 %%WWWDIR%%/ocs/providers.php
@@ -9701,7 +9693,6 @@
 %%WWWDIR%%/settings/ajax/changedisplayname.php
 %%WWWDIR%%/settings/ajax/disableapp.php
 %%WWWDIR%%/settings/ajax/enableapp.php
-%%WWWDIR%%/settings/ajax/geteveryonecount.php
 %%WWWDIR%%/settings/ajax/installapp.php
 %%WWWDIR%%/settings/ajax/navigationdetect.php
 %%WWWDIR%%/settings/ajax/setlanguage.php
@@ -9945,6 +9936,7 @@
 %%WWWDIR%%/themes/example/core/img/logo.svg
 %%WWWDIR%%/themes/example/defaults.php
 %%WWWDIR%%/version.php
+@(%%OWNCLOUD_USERNAME%%,%%OWNCLOUD_GROUPNAME%%,750) %%WWWDIR%%/occ
 @dir %%WWWDIR%%/apps/gallery/documentation/wiki
 @dir(%%OWNCLOUD_USERNAME%%,%%OWNCLOUD_GROUPNAME%%,) %%WWWDIR%%/apps
 @dir(%%OWNCLOUD_USERNAME%%,%%OWNCLOUD_GROUPNAME%%,) %%WWWDIR%%/config

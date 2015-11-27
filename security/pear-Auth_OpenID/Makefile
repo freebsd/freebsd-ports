@@ -7,7 +7,7 @@ CATEGORIES=	security www pear
 MASTER_SITES=	http://openidenabled.com/files/php-openid/packages/
 DISTNAME=	php-openid-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP OpenID library v2 for PEAR
 
 BROKEN=		unfetchable

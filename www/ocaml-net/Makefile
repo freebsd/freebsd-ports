@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	net
-PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTVERSION=	4.0.4
 CATEGORIES=	www
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-

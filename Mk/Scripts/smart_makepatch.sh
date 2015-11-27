@@ -58,8 +58,10 @@ strip_path() {
 }
 
 std_patch_filename() {
-	local sans_cwd=$(echo $1 | sed 's|^\.\/||')
-	local raw_name=$(strip_path ${sans_cwd})
+	local sans_cwd
+	local raw_name
+	sans_cwd=$(echo $1 | sed 's|^\.\/||')
+	raw_name=$(strip_path ${sans_cwd})
 	echo patch-$(echo ${raw_name} | sed -e 's|_|&&|g; s|/|_|g')
 }
 
@@ -74,10 +76,11 @@ patchdir_files_list() {
 
 valid_name() {
 	local current_patch_name=$1
-	local first_target=$(echo $2 | sed 's|^\.\/||')
 	local result=$3
+	local first_target
 	local testres
 	local lps
+	first_target=$(echo $2 | sed 's|^\.\/||')
 	for lps in __ - + ; do
 		testres=patch-$(echo ${first_target} | sed -e "s|/|${lps}|g")
 		if [ "${testres}" = "${current_patch_name}" ]; then
@@ -122,10 +125,11 @@ map_existing_patches() {
 
 extract_comment_from_patch() {
 	local existing_patch=${PATCHDIR}/$1
-	local contains=$(grep "^+++ " ${existing_patch} | awk '{x++; print x}')
+	local contains
 	local rawname
 	local fname
 	local num
+	contains=$(grep "^+++ " ${existing_patch} | awk '{x++; print x}')
 	for num in ${contains}; do
 		rawname=$(grep "^+++ " ${existing_patch} | \
 			awk -v num=${num} '{x++; if (x==num) print $2}')
@@ -135,13 +139,17 @@ extract_comment_from_patch() {
 		{ \
 		    if (!done) { \
 		        if ($1 == "@@") { \
-		            split ($3,a,","); \
-		            hc = a[2]; \
+		            split ($2,a,","); \
+		            split ($3,b,","); \
+		            hca = a[2];
+		            hcb = a[3];
 		            hunk = 1;
 		        } else if (hunk) { \
 		            first=substr($1,1,1); \
-		            if (first == "-") { hc++ } else { hc-- } \
-		            if (hc == 0) {hunk = 0} \
+		            if (first == "-") { hca-- } \
+		            else if (first == "+") { hcb-- } \
+		            else {hca--; hcb--} \
+		            if (hca == 0 && hcb == 0) {hunk = 0} \
 		        } \
 			if ($1 == "---") { \
 			   x++; \
@@ -175,7 +183,7 @@ regenerate_patches() {
 	local NEW
 	local OUT
 	local ORIG
-	local new_list=
+	local new_list
 	new_list=$(cd ${PATCH_WRKSRC} && \
 		find -s * -type f -name '*.orig' 2>/dev/null)
 	(cd ${PATCH_WRKSRC} && for F in ${new_list}; do
@@ -206,7 +214,8 @@ stage_patches() {
 	rm -f ${DESTDIR}/*
 	local P
 	local name
-	local patch_list=$(cd ${REGENNED} && find * -name "patch-*" 2>/dev/null)
+	local patch_list
+	patch_list=$(cd ${REGENNED} && find * -name "patch-*" 2>/dev/null)
 	for P in ${patch_list}; do
 		name=$(get_patch_name ${P})
 		[ -e ${COMMENTS}/${P} ] && cat ${COMMENTS}/${P} \

@@ -128,9 +128,9 @@ post-install:
 	cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN3} ${STAGEDIR}${PREFIX}/man/man3/
 	cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN5} ${STAGEDIR}${PREFIX}/man/man5/
 .endif
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/USERDOC ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.post.mk>

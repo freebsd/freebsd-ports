@@ -1,6 +1,6 @@
---- src/main.cpp.orig	2015-06-12 10:53:59 UTC
+--- src/main.cpp.orig	2015-11-14 22:51:30 UTC
 +++ src/main.cpp
-@@ -280,3 +280,10 @@ int main(int argc, char *argv[])
+@@ -269,3 +269,10 @@ int main(int argc, char *argv[])
      qDebug() << "Clean exit with status"<<errorcode;
      return errorcode;
  }

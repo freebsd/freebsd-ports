@@ -5,16 +5,13 @@ PORTNAME=	totd
 PORTVERSION=	1.5.1
 PORTREVISION=	1
 CATEGORIES=	dns ipv6
-MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
+MASTER_SITES=	http://BSDforge.com/projects/source/dns/totd/
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 
 USES=		desthack uidfix
 
-BROKEN=		Unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2015-11-26
 USE_RC_SUBR=	totd
 GNU_CONFIGURE=	yes
 

@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Opinionated WYSIWYG editor for Rails based on CKEditor
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-jquery-rails>=0:${PORTSDIR}/www/rubygem-jquery-rails \
 		rubygem-kaminari>=0:${PORTSDIR}/www/rubygem-kaminari \

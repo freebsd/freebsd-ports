@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pluggable RSS/Atom feed aggregator written in Perl
 
 LICENSE=	ART10 GPLv1

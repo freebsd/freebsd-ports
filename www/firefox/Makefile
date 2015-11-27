@@ -2,19 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	41.0.2
+DISTVERSION=	42.0
 DISTVERSIONSUFFIX=.source
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.10.8:${PORTSDIR}/devel/nspr \
-		nss>=3.19.2:${PORTSDIR}/security/nss \
+BUILD_DEPENDS=	nspr>=4.10.10:${PORTSDIR}/devel/nspr \
+		nss>=3.19.4:${PORTSDIR}/security/nss \
 		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
 		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
 		harfbuzz>=0.9.34:${PORTSDIR}/print/harfbuzz \
@@ -25,6 +24,7 @@ BUILD_DEPENDS=	nspr>=4.10.8:${PORTSDIR}/devel/nspr \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
+		yasm:${PORTSDIR}/devel/yasm \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 #		opus>=1.1:${PORTSDIR}/audio/opus \
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	nspr>=4.10.8:${PORTSDIR}/devel/nspr \
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 USE_GECKO=	gecko
-CONFLICTS_INSTALL=	firefox-esr-31.* firefox-esr-24.* firefox-esr-17.*
+CONFLICTS_INSTALL=	firefox-esr-45.* firefox-esr-3[18].* firefox-esr-24.*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-opus
 MOZILLA_NAME=	Firefox
@@ -58,7 +58,7 @@ OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 
-WRKSRC:=	${WRKDIR}/mozilla-release
+WRKSRC:=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 .if ${PORT_OPTIONS:MALSA}
 RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib

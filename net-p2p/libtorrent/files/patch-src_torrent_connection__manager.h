@@ -1,4 +1,4 @@
---- src/torrent/connection_manager.h
+--- src/torrent/connection_manager.h.orig	2012-04-20 06:42:32 UTC
 +++ src/torrent/connection_manager.h
 @@ -42,6 +42,7 @@
  

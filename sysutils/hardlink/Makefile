@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hardlink
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jak-linux.org/projects/hardlink/ \
 		DEBIAN
@@ -13,25 +13,19 @@ COMMENT=	Replace file copies using hardlinks
 
 LICENSE=	MIT
 
-USES=		pkgconfig
+USES=		pkgconfig tar:xz
 
 PLIST_FILES=	bin/hardlink \
 		man/man1/hardlink.1.gz
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
-OPTIONS_DEFINE=	PCRE
-
-OPTIONS_DEFAULT=PCRE
-
 PORTSCOUT=	limit:(?<!~rc[0-9])$$
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	PCRE
+OPTIONS_DEFAULT=PCRE
 
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcreposix.so:${PORTSDIR}/devel/pcre
-.else
-MAKE_ENV+=	ENABLE=
-.endif
+PCRE_LIB_DEPENDS=	libpcreposix.so:${PORTSDIR}/devel/pcre
+PCRE_MAKE_ENV_OFF=	ENABLE=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hardlink ${STAGEDIR}${PREFIX}/bin/hardlink

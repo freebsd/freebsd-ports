@@ -1,0 +1,15 @@
+Make the port build with CMake 3.4.0.
+
+Stop relying on an implicit inclusion of the CheckIncludesFile module.
+Not upstreamable, the latest upstream version does not use that module
+anymore.
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -3,6 +3,7 @@ project(kgamma)
+ find_package(KDE4 REQUIRED)
+ include(KDE4Defaults)
+ include(MacroLibrary)
++include(CheckIncludeFiles)
+ 
+ find_package(X11 REQUIRED)
+ 

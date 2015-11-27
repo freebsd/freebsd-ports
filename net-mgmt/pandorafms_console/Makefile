@@ -62,7 +62,7 @@ post-install:
 			include/languages/extract_newlines.sh.bak \
 			*.sql.bak COPYING ${PORTDOCS} DEBIAN/ \
 			attachment/collections/.empty attachment/downloads/.gitignore
-	@cd ${STAGEDIR}${WWWDIR} && ${MV} install.php install.done
+	@cd ${STAGEDIR}${WWWDIR} && ${MV} install.php install_old.php
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in ${PORTDOCS}

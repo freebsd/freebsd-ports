@@ -1,0 +1,26 @@
+--- service.lfm	2015-11-01 19:40:02.000000000 +0300
++++ service.lfm	2015-11-07 18:49:08.262167000 +0300
+@@ -1688,6 +1688,7 @@ object ServiceForm: TServiceForm
+         Caption = 'Назначить'
+         OnClick = SetKeyBtnClick
+         TabOrder = 1
++        Anchors = [akLeft, akBottom]
+       end
+       object DelKeyBtn: TButton
+         Left = 144
+@@ -1697,6 +1698,7 @@ object ServiceForm: TServiceForm
+         Caption = 'Удалить'
+         OnClick = DelKeyBtnClick
+         TabOrder = 2
++        Anchors = [akLeft, akBottom]
+       end
+       object DefaultKeysBtn: TButton
+         Left = 416
+@@ -1706,6 +1708,7 @@ object ServiceForm: TServiceForm
+         Caption = 'По умолчанию'
+         OnClick = DefaultKeysBtnClick
+         TabOrder = 3
++        Anchors = [akRight, akBottom]
+       end
+       object SetKeyPanel: TPanel
+         Left = 166

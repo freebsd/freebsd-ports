@@ -2,7 +2,6 @@ Spamilter is a Sendmail milter written entierly in C, and therefore
 is faster and less cpu intensive than other interperative based solutions.
 
 It blocks spam using the following methods;
-
     * Configurable Realtime DNS Blacklists
     * Sender Address verification
     * Configurable Black and White lists
@@ -10,9 +9,6 @@ It blocks spam using the following methods;
     * Basic Virus/Worm file attachment rejection for files ending
       in .pif, .scr, etc.. via MsExtChk filter
     * SPF via libspf
-
-Also;
-
     * Realtime firewall blocking of MTA hosts with invalid host names via
       MtaHostIpfw filter
     * Realtime rate limited connection blocking via firewall rule injection

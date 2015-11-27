@@ -6,7 +6,7 @@ PORTVERSION=	1.3.0
 PORTREVSION=	1
 CATEGORIES=	devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR simple HTML form package
 
 USES=	pear

@@ -106,6 +106,7 @@
     SUBDIR += dimes
     SUBDIR += dosdetector
     SUBDIR += dpdk
+    SUBDIR += dpinger
     SUBDIR += drawterm
     SUBDIR += dropbox-api-command
     SUBDIR += dropbox-uploader
@@ -990,6 +991,7 @@
     SUBDIR += py-xmlrpc
     SUBDIR += py-zope.proxy
     SUBDIR += py-zsi
+    SUBDIR += py3-netifaces
     SUBDIR += pygopherd
     SUBDIR += pynids
     SUBDIR += pyrad

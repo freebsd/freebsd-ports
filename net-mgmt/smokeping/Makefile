@@ -31,6 +31,7 @@ BUILD_DEPENDS=	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PERL=${PERL} PERL5LIB=${PREFIX}/smokeping/lib
@@ -62,31 +63,12 @@ DNS_DESC=	Support for AnotherDNS probes
 OPTIONS_DEFINE=	ECHOPING CURL RADIUS TELNET DNS FPING
 OPTIONS_DEFAULT=	FPING
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFPING}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
-.endif
-
-.if ${PORT_OPTIONS:MECHOPING}
-RUN_DEPENDS+=	${LOCALBASE}/bin/echoping:${PORTSDIR}/net/echoping
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-RUN_DEPENDS+=	${LOCALBASE}/bin/curl:${PORTSDIR}/ftp/curl
-.endif
-
-.if ${PORT_OPTIONS:MRADIUS}
-RUN_DEPENDS+=	p5-Authen-Radius>=0:${PORTSDIR}/security/p5-Authen-Radius
-.endif
-
-.if ${PORT_OPTIONS:MTELNET}
-RUN_DEPENDS+=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet
-.endif
-
-.if ${PORT_OPTIONS:MDNS}
-RUN_DEPENDS+=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
-.endif
+FPING_RUN_DEPENDS=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
+ECHOPING_RUN_DEPENDS=	${LOCALBASE}/bin/echoping:${PORTSDIR}/net/echoping
+CURL_RUN_DEPENDS=	${LOCALBASE}/bin/curl:${PORTSDIR}/ftp/curl
+RADIUS_RUN_DEPENDS=	p5-Authen-Radius>=0:${PORTSDIR}/security/p5-Authen-Radius
+TELNET_RUN_DEPENDS=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet
+DNS_RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 
 .include <bsd.port.pre.mk>
 

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2015-11-26 11:17:18.206724000 +0000
++++ Makefile.in	2015-11-26 11:17:47.089805000 +0000
+@@ -513,7 +513,7 @@
+ 
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = milter-core.pc milter-client.pc milter-server.pc \
+-	milter-manager.pc libmilter.pc $(am__append_1)
++	milter-manager.pc $(am__append_1)
+ EXTRA_DIST = \
+ 	autogen.sh				\
+ 	README					\

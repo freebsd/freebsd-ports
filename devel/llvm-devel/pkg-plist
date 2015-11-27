@@ -26,6 +26,8 @@ bin/llvm-symbolizer-devel
 bin/llvm-tblgen-devel
 bin/macho-dump-devel
 bin/opt-devel
+bin/sancov-devel
+%%CLANG%%bin/c-index-test-devel
 %%CLANG%%bin/clang-devel
 %%CLANG%%bin/clang++-devel
 %%CLANG%%bin/clang-check-devel
@@ -38,6 +40,7 @@ bin/opt-devel
 %%EXTRAS%%bin/clang-query-devel
 %%EXTRAS%%bin/clang-rename-devel
 %%EXTRAS%%bin/clang-tidy-devel
+%%EXTRAS%%bin/modularize-devel
 %%LLD%%bin/lld-devel
 %%LLD%%bin/lld-link-devel
 %%LLDB%%bin/lldb-devel
@@ -50,9 +53,8 @@ bin/opt-devel
 %%LIT%%llvm-devel/bin/llvm-lit
 %%LIT%%bin/FileCheck-devel
 %%LIT%%llvm-devel/bin/FileCheck
-%%CLANG%%llvm-devel/bin/Reporter.py
-%%CLANG%%llvm-devel/bin/ScanView.py
 llvm-devel/bin/bugpoint
+%%CLANG%%llvm-devel/bin/c-index-test
 %%CLANG%%llvm-devel/bin/clang
 %%CLANG%%llvm-devel/bin/clang++
 %%CLANG%%llvm-devel/bin/clang-3.8
@@ -66,7 +68,7 @@ llvm-devel/bin/bugpoint
 %%EXTRAS%%llvm-devel/bin/clang-rename
 %%EXTRAS%%llvm-devel/bin/clang-tidy
 %%CLANG%%llvm-devel/bin/git-clang-format
-%%LLD%%llvm-devel/bin/ld.lld2
+%%LLD%%llvm-devel/bin/ld.lld
 llvm-devel/bin/llc
 %%LLD%%llvm-devel/bin/lld
 %%LLD%%llvm-devel/bin/lld-link
@@ -107,13 +109,12 @@ llvm-devel/bin/llvm-split
 llvm-devel/bin/llvm-stress
 llvm-devel/bin/llvm-symbolizer
 llvm-devel/bin/llvm-tblgen
+%%EXTRAS%%llvm-devel/bin/modularize
 llvm-devel/bin/obj2yaml
 llvm-devel/bin/opt
+llvm-devel/bin/sancov
 %%CLANG%%llvm-devel/bin/scan-build
 %%CLANG%%llvm-devel/bin/scan-view
-%%CLANG%%llvm-devel/bin/scanview.css
-%%CLANG%%llvm-devel/bin/sorttable.js
-%%CLANG%%llvm-devel/bin/startfile.py
 llvm-devel/bin/verify-uselistorder
 llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang-c/BuildSystem.h
@@ -1348,6 +1349,7 @@ llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDebugFrame.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDebugInfoEntry.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDebugLine.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDebugLoc.h
+llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDebugMacro.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFDebugRangeList.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFFormValue.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFRelocMap.h
@@ -1444,6 +1446,8 @@ llvm-devel/include/llvm/ExecutionEngine/SectionMemoryManager.h
 llvm-devel/include/llvm/IR/Argument.h
 llvm-devel/include/llvm/IR/AssemblyAnnotationWriter.h
 llvm-devel/include/llvm/IR/Attributes.h
+llvm-devel/include/llvm/IR/Attributes.inc
+llvm-devel/include/llvm/IR/Attributes.td
 llvm-devel/include/llvm/IR/AutoUpgrade.h
 llvm-devel/include/llvm/IR/BasicBlock.h
 llvm-devel/include/llvm/IR/CFG.h
@@ -1865,6 +1869,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/bmiintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/cpuid.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/cuda_builtin_vars.h
+%%CLANG%%llvm-devel/lib/clang/3.8.0/include/cuda_runtime.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/emmintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/f16cintrin.h
 %%CLANG%%llvm-devel/lib/clang/3.8.0/include/float.h
@@ -2175,7 +2180,7 @@ llvm-devel/lib/libLTO.so
 %%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/runtime/__init__.py
 %%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/utils/__init__.py
 %%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/utils/symbolication.py
-%%CLANG%%llvm-devel/lib/python2.7/site-packages/six.py
+%%LLDB%%llvm-devel/lib/python2.7/site-packages/six.py
 %%CLANG%%llvm-devel/libexec/c++-analyzer
 %%CLANG%%llvm-devel/libexec/ccc-analyzer
 %%CLANG%%llvm-devel/share/clang/clang-format-bbedit.applescript
@@ -2209,9 +2214,14 @@ llvm-devel/share/llvm/cmake/LLVMExternalProjectUtils.cmake
 llvm-devel/share/llvm/cmake/LLVMInstallSymlink.cmake
 llvm-devel/share/llvm/cmake/LLVMProcessSources.cmake
 llvm-devel/share/llvm/cmake/TableGen.cmake
+%%CLANG%%llvm-devel/share/scan-build/scanview.css
+%%CLANG%%llvm-devel/share/scan-build/sorttable.js
 %%CLANG%%llvm-devel/share/scan-view/FileRadar.scpt
 %%CLANG%%llvm-devel/share/scan-view/GetRadarVersion.scpt
+%%CLANG%%llvm-devel/share/scan-view/Reporter.py
+%%CLANG%%llvm-devel/share/scan-view/ScanView.py
 %%CLANG%%llvm-devel/share/scan-view/bugcatcher.ico
+%%CLANG%%llvm-devel/share/scan-view/startfile.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/LitConfig.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/LitTestCase.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/ProgressBar.py

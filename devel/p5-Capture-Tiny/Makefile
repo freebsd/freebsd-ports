@@ -12,6 +12,7 @@ MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Capture STDOUT and STDERR from Perl, XS, or external programs
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Inline>=0.50:${PORTSDIR}/devel/p5-Inline
 

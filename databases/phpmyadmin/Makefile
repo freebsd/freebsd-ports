@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	4.5.1
-PORTREVISION=	1
+DISTVERSION=	4.5.2
 CATEGORIES=	databases www
 MASTER_SITES=	https://files.phpmyadmin.net/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -67,9 +66,6 @@ USE_PHP+=	${opt:tl}
 .endif
 
 .SILENT:
-
-# When creating a package, empty directories will not be generated
-# from the pkg tarball.	 Therefore make sure no directories are empty.
 
 post-patch:
 	cd ${WRKSRC} ; \

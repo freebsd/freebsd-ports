@@ -4,6 +4,7 @@ bin/poudriere
 %%ETCDIR%%/hooks/pkgbuild.sh.sample
 @sample etc/poudriered.conf.sample
 etc/rc.d/poudriered
+libexec/poudriere/cached
 libexec/poudriere/clock_monotonic
 libexec/poudriere/cpdup
 libexec/poudriere/dirempty
@@ -67,6 +68,7 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/html/index.html
 %%DATADIR%%/html/jail.html
 %%DATADIR%%/html/robots.txt
+%%DATADIR%%/image.sh
 %%DATADIR%%/include/common.sh.dragonfly
 %%DATADIR%%/include/common.sh.freebsd
 %%DATADIR%%/include/colors.pre.sh

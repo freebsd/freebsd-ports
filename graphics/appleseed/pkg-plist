@@ -24,22 +24,22 @@ docs/seexpr/Se_voronoi_5.png
 docs/seexpr/userdoc.html
 lib/libappleseed.shared.so
 lib/libappleseed.so
-samples/cpp/basic/CMakeLists.txt
-samples/cpp/basic/basic.cpp
-samples/cpp/basic/data/scene.obj
-samples/cpp/basic/output/preserve.txt
-samples/cpp/basic/reference output/scene.obj
-samples/cpp/basic/reference output/test.appleseed
-samples/cpp/basic/reference output/test.png
-samples/cpp/heightfield/CMakeLists.txt
-samples/cpp/heightfield/data/cube.obj
-samples/cpp/heightfield/data/heightfield.png
-samples/cpp/heightfield/data/smoothcube.obj
-samples/cpp/heightfield/heightfield.cpp
-samples/cpp/heightfield/output/preserve.txt
-samples/python/basic/basic.py
-samples/python/basic/data/scene.obj
-samples/python/basic/output/preserve.txt
+%%PORTEXAMPLES%%samples/cpp/basic/CMakeLists.txt
+%%PORTEXAMPLES%%samples/cpp/basic/basic.cpp
+%%PORTEXAMPLES%%samples/cpp/basic/data/scene.obj
+%%PORTEXAMPLES%%samples/cpp/basic/output/preserve.txt
+%%PORTEXAMPLES%%samples/cpp/basic/reference output/scene.obj
+%%PORTEXAMPLES%%samples/cpp/basic/reference output/test.appleseed
+%%PORTEXAMPLES%%samples/cpp/basic/reference output/test.png
+%%PORTEXAMPLES%%samples/cpp/heightfield/CMakeLists.txt
+%%PORTEXAMPLES%%samples/cpp/heightfield/data/cube.obj
+%%PORTEXAMPLES%%samples/cpp/heightfield/data/heightfield.png
+%%PORTEXAMPLES%%samples/cpp/heightfield/data/smoothcube.obj
+%%PORTEXAMPLES%%samples/cpp/heightfield/heightfield.cpp
+%%PORTEXAMPLES%%samples/cpp/heightfield/output/preserve.txt
+%%PORTEXAMPLES%%samples/python/basic/basic.py
+%%PORTEXAMPLES%%samples/python/basic/data/scene.obj
+%%PORTEXAMPLES%%samples/python/basic/output/preserve.txt
 schemas/project.xsd
 schemas/settings.xsd
 seexpr/clouds/blue_clouds.se

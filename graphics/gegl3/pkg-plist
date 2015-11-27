@@ -1,14 +1,18 @@
 %%PORTEXAMPLES%%bin/2geglbuffer
+bin/frame-counter
 bin/gegl3
 %%PORTEXAMPLES%%bin/gegl-convert
 bin/gegl-imgcmp
 %%PORTEXAMPLES%%bin/gegl-slicer
 bin/gegl-tester
+%%GEXIV2%%bin/gegl-video
 %%PORTEXAMPLES%%bin/geglbuffer-add-image
 %%PORTEXAMPLES%%bin/geglbuffer-clock
 %%PORTEXAMPLES%%bin/hello-world
 %%SDL%%bin/sdl-draw
+bin/video-invert
 include/gegl-%%GEGL_VER%%/gegl-apply.h
+include/gegl-%%GEGL_VER%%/gegl-audio-fragment.h
 include/gegl-%%GEGL_VER%%/gegl-buffer-backend.h
 include/gegl-%%GEGL_VER%%/gegl-buffer-cl-iterator.h
 include/gegl-%%GEGL_VER%%/gegl-buffer-iterator.h
@@ -115,6 +119,7 @@ lib/gegl-%%GEGL_VER%%/copy-buffer.so
 lib/gegl-%%GEGL_VER%%/crop.so
 lib/gegl-%%GEGL_VER%%/cubism.so
 lib/gegl-%%GEGL_VER%%/darken.so
+%%RAW%%lib/gegl-%%GEGL_VER%%/dcraw-load.so
 lib/gegl-%%GEGL_VER%%/deinterlace.so
 lib/gegl-%%GEGL_VER%%/difference-of-gaussians.so
 lib/gegl-%%GEGL_VER%%/difference.so
@@ -141,6 +146,7 @@ lib/gegl-%%GEGL_VER%%/exposure.so
 %%OPENEXR%%lib/gegl-%%GEGL_VER%%/exr-save.so
 lib/gegl-%%GEGL_VER%%/fattal02.so
 %%FFMPEG%%lib/gegl-%%GEGL_VER%%/ff-load.so
+%%FFMPEG%%lib/gegl-%%GEGL_VER%%/ff-save.so
 lib/gegl-%%GEGL_VER%%/fractal-explorer.so
 lib/gegl-%%GEGL_VER%%/fractal-trace.so
 lib/gegl-%%GEGL_VER%%/gamma.so
@@ -176,6 +182,7 @@ lib/gegl-%%GEGL_VER%%/mantiuk06.so
 lib/gegl-%%GEGL_VER%%/map-absolute.so
 lib/gegl-%%GEGL_VER%%/map-relative.so
 lib/gegl-%%GEGL_VER%%/matting-global.so
+lib/gegl-%%GEGL_VER%%/maze.so
 lib/gegl-%%GEGL_VER%%/mblur.so
 lib/gegl-%%GEGL_VER%%/mirrors.so
 lib/gegl-%%GEGL_VER%%/mono-mixer.so
@@ -202,7 +209,6 @@ lib/gegl-%%GEGL_VER%%/npy-save.so
 lib/gegl-%%GEGL_VER%%/oilify.so
 lib/gegl-%%GEGL_VER%%/opacity.so
 lib/gegl-%%GEGL_VER%%/open-buffer.so
-%%OPENRAW%%lib/gegl-%%GEGL_VER%%/openraw.so
 lib/gegl-%%GEGL_VER%%/over.so
 lib/gegl-%%GEGL_VER%%/overlay.so
 lib/gegl-%%GEGL_VER%%/panorama-projection.so
@@ -233,6 +239,7 @@ lib/gegl-%%GEGL_VER%%/screen.so
 %%SDL%%lib/gegl-%%GEGL_VER%%/sdl-display.so
 lib/gegl-%%GEGL_VER%%/seamless-clone-compose.so
 lib/gegl-%%GEGL_VER%%/seamless-clone.so
+lib/gegl-%%GEGL_VER%%/sepia.so
 lib/gegl-%%GEGL_VER%%/shift.so
 lib/gegl-%%GEGL_VER%%/sinus.so
 lib/gegl-%%GEGL_VER%%/snn-mean.so
@@ -256,6 +263,8 @@ lib/gegl-%%GEGL_VER%%/svg-saturate.so
 %%PANGOCAIRO%%lib/gegl-%%GEGL_VER%%/text.so
 lib/gegl-%%GEGL_VER%%/texturize-canvas.so
 lib/gegl-%%GEGL_VER%%/threshold.so
+%%TIFF%%lib/gegl-%%GEGL_VER%%/tiff-load.so
+%%TIFF%%lib/gegl-%%GEGL_VER%%/tiff-save.so
 lib/gegl-%%GEGL_VER%%/tile-glass.so
 lib/gegl-%%GEGL_VER%%/tile-paper.so
 lib/gegl-%%GEGL_VER%%/tile-seamless.so
@@ -281,7 +290,7 @@ lib/gegl-%%GEGL_VER%%/xor.so
 lib/girepository-1.0/Gegl-%%GEGL_VER%%.typelib
 lib/libgegl-%%GEGL_VER%%.so
 lib/libgegl-%%GEGL_VER%%.so.0
-lib/libgegl-%%GEGL_VER%%.so.0.%%GEGL_MINOR%%.1
+lib/libgegl-%%GEGL_VER%%.so.0.%%GEGL_MINOR%%.0
 lib/libgegl-npd-%%GEGL_VER%%.so
 lib/libgegl-sc-%%GEGL_VER%%.so
 libdata/pkgconfig/gegl-%%GEGL_VER%%.pc
@@ -312,6 +321,7 @@ share/locale/lv/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/oc/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pt_BR/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
+share/locale/pt/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ru/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/sl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/sv/LC_MESSAGES/gegl-%%GEGL_VER%%.mo

@@ -103,8 +103,8 @@ share/applications/mc.desktop
 %%NLS%%share/locale/eu/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/mc.mo
-%%NLS%%share/locale/fi_FI/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/fr_CA/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/mc.mo
@@ -129,9 +129,9 @@ share/applications/mc.desktop
 %%NLS%%share/locale/sl/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/mc.mo
-%%NLS%%share/locale/sv_SE/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/szl/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/te/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/mc.mo
@@ -153,6 +153,7 @@ share/applications/mc.desktop
 %%NLS%%%%DATADIR%%/help/mc.hlp.ru
 %%NLS%%%%DATADIR%%/help/mc.hlp.sr
 %%DATADIR%%/hints/mc.hint
+%%NLS%%%%DATADIR%%/hints/mc.hint.ar
 %%NLS%%%%DATADIR%%/hints/mc.hint.az
 %%NLS%%%%DATADIR%%/hints/mc.hint.be
 %%NLS%%%%DATADIR%%/hints/mc.hint.bg

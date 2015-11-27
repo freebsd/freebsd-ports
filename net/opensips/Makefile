@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=		opensips
-PORTVERSION=		2.1.0
+PORTVERSION=		2.1.1
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/src/
-# DISTNAME=		opensips-${PORTVERSION}
 
 MAINTAINER=		euan@potensol.com
 COMMENT=		Open SIP Server
@@ -31,9 +30,6 @@ RUN_DEPENDS=		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 			${LOCALBASE}/bin/python2:${PORTSDIR}/lang/python2 \
 			${LOCALBASE}/bin/grep:${PORTSDIR}/textproc/gnugrep
 
-#CFLAGS+=		-I${LOCALBASE}/include/json-c
-#CPPFLAGS+=		-I${LOCALBASE}/include/json-c
-
 GINSTALL=		ginstall
 
 WRKSRC=			${WRKDIR}/opensips-${PORTVERSION}
@@ -43,6 +39,8 @@ USE_RC_SUBR=		opensips
 
 USES=			gmake perl5 pkgconfig shebangfix
 USE_GCC=		yes
+
+NOPRECIOUSMAKEVARS=	yes
 
 OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES GEOIP HTTP LDAP MEMCACHED MYSQL PGSQL RADIUS TESTS TLS UNIXODBC
 OPTIONS_DEFAULT=	DOCS EXAMPLES GEOIP HTTP LDAP MEMCACHED PGSQL RADIUS TLS
@@ -134,7 +132,6 @@ EXTRA_MODULES+=		db_mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-#USES+=			pgsql
 EXTRA_MODULES+=		db_postgres
 .endif
 
@@ -146,10 +143,14 @@ EXTRA_MODULES+=		aaa_radius
 EXTRA_MODULES+=		db_unixodbc
 .endif
 
+.if ${PORT_OPTIONS:MTLS}
+EXTRA_MODULES+=		proto_tls
+.endif
+
 OPENSIPS_MAKE_ENV=	CC="${CC}" CXX="${CXX}" CPP="${CPP}" _GCC_RUNTIME="${_GCC_RUNTIME}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
 
 do-configure:
-	(cp files/Makefile.conf ${WRKSRC})
+	@(cp files/Makefile.conf ${WRKSRC})
 
 	@${REINPLACE_CMD} -e "s|_PREFIX_|${PREFIX}|" ${WRKSRC}/Makefile.conf
 	@${REINPLACE_CMD} -e "s|_STAGE_DIR_|${STAGEDIR}|" ${WRKSRC}/Makefile.conf
@@ -158,14 +159,8 @@ do-configure:
 	@${REINPLACE_CMD} -e "s/\(^include_modules=.*\)/\1 ${i}/" ${WRKSRC}/Makefile.conf
 .endfor
 
-.if ${PORT_OPTIONS:MTLS}
-	@${REINPLACE_CMD} -e "s/^#DEFS+= -DUSE_TLS/DEFS+= -DUSE_TLS/" ${WRKSRC}/Makefile.conf
-	@${ECHO_CMD} "TLS=1" >> ${WRKSRC}/Makefile.conf
-.endif
-
-.if ! ${PORT_OPTIONS:MDEBUG}
+do-configure-DEBUG-off:
 	@${REINPLACE_CMD} -e "s/^#DEFS+= -DNO_DEBUG/DEFS+= -DNO_DEBUG/" ${WRKSRC}/Makefile.conf
-.endif
 
 do-build:
 	cd ${WRKSRC} && ${OPENSIPS_MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} ${ALL_TARGET}
@@ -173,13 +168,11 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${OPENSIPS_MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}
 
-.if ${PORT_OPTIONS:MTESTS}
+do-install-TESTS-on:
 	(cp -r ${WRKSRC}/test ${STAGEDIR}${PREFIX}/tests/opensips)
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
+do-install-EXAMPLES-on:
 	(cp -r ${WRKSRC}/examples ${STAGEDIR}${PREFIX}/share/examples/opensips)
-.endif
 
 post-stage:
 	@${REINPLACE_CMD} -e "s|^# MD5=.*|MD5=\"md5\"|" ${STAGEDIR}${PREFIX}/etc/opensips/opensipsctlrc.sample
@@ -187,6 +180,9 @@ post-stage:
 	@${REINPLACE_CMD} -e "s|^# MD5=.*|MD5=\"md5\"|" ${STAGEDIR}${PREFIX}/etc/opensips/osipsconsolerc.sample
 	@${REINPLACE_CMD} -e "s|^# GREP=.*|GREP=\"${LOCALBASE}/bin/egrep\"|" ${STAGEDIR}${PREFIX}/etc/opensips/osipsconsolerc.sample
 	(cp ${FILESDIR}/opensips.cfg.sample ${STAGEDIR}${ETCDIR}/opensips.cfg.sample)
+
+post-stage-RADIUS-on:
+	(mv ${STAGEDIR}${ETCDIR}/dictionary.opensips ${STAGEDIR}${ETCDIR}/dictionary.opensips.sample)
 
 # Strip binaries in sbin
 	@${ECHO_CMD} "Stripping binaries in ${STAGEDIR}${PREFIX}/sbin/"
@@ -219,7 +215,7 @@ post-stage:
 		sms.so speeddial.so sst.so statistics.so stun.so textops.so tlsops.so tm.so uac.so \
 		uac_auth.so uac_redirect.so uac_registrant.so uri.so userblacklist.so usrloc.so \
 		xcap.so xcap_client.so xmpp.so topology_hiding.so fraud_detection.so rtpengine.so \
-		proto_ws.so
+		proto_ws.so proto_tls.so cachedb_redis.so
 		@if [ -e ${STAGEDIR}${PREFIX}/lib/opensips/modules/${i} ]; then \
 			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opensips/modules/${i}; \
 		fi

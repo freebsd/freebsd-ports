@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	0ad
-PORTVERSION=	0.0.18
-PORTREVISION=	2
+PORTVERSION=	0.0.19
 CATEGORIES=	games
 MASTER_SITES=	SF/zero-ad/releases
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
@@ -19,7 +18,6 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libcurl.so:${PORTSDIR}/ftp/curl \
-		libgamin-1.so:${PORTSDIR}/devel/gamin \
 		libgloox.so:${PORTSDIR}/net-im/gloox \
 		libminiupnpc.so:${PORTSDIR}/net/miniupnpc \
 		libnspr4.so:${PORTSDIR}/devel/nspr \
@@ -30,7 +28,6 @@ BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release
 USES=		compiler:c++11-lib dos2unix gmake iconv openal:al \
 		pkgconfig tar:xz
-USE_SDL=	sdl
 USE_GNOME=	libxml2 gtk20
 USE_GL=		gl
 BUNDLE_LIBS=	yes
@@ -39,6 +36,18 @@ DOS2UNIX_REGEX=	.*\.([ch]p{0,2}|make)
 USE_WX=		2.8+
 WX_COMPS=	wx:lib
 MAKE_ENV+=	JOBS=${_MAKE_JOBS}
+
+OPTIONS_SINGLE=		SDL_VERSION
+OPTIONS_SINGLE_SDL_VERSION=	SDL SDL2
+OPTIONS_DEFAULT=	SDL2
+
+SDL_VERSION_DESC=	SDL version
+SDL_DESC=		Use SDL 1.2 (deprecated)
+SDL2_DESC=		Use SDL 2.0
+
+SDL_USE=		SDL=sdl
+SDL_VARS=		0ADSDLARG=--sdl1
+SDL2_USE=		SDL=sdl2
 
 MANUAL_PACKAGE_BUILD=	huge
 
@@ -65,7 +74,7 @@ post-patch:
 		${WRKSRC}/build/resources/0ad.sh
 
 pre-build:
-	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh --with-system-miniupnpc ${SMOPT} --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh ${0ADSDLARG} --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/pyrogenesis ${STAGEDIR}${PREFIX}/bin

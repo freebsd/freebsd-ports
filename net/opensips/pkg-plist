@@ -1,7 +1,7 @@
-@sample etc/opensips/opensips.cfg.sample
-@sample etc/opensips/opensipsctlrc.sample
-@sample etc/opensips/osipsconsolerc.sample
-%%RADIUS%%@sample etc/opensips/dictionary.opensips.sample
+@sample %%ETCDIR%%/opensips.cfg.sample
+@sample %%ETCDIR%%/opensipsctlrc.sample
+@sample %%ETCDIR%%/osipsconsolerc.sample
+%%RADIUS%%@sample %%ETCDIR%%/dictionary.opensips.sample
 lib/opensips/modules/acc.so
 lib/opensips/modules/alias_db.so
 lib/opensips/modules/auth.so
@@ -14,6 +14,7 @@ lib/opensips/modules/b2b_sca.so
 lib/opensips/modules/benchmark.so
 lib/opensips/modules/cachedb_local.so
 lib/opensips/modules/cachedb_sql.so
+lib/opensips/modules/cachedb_redis.so
 lib/opensips/modules/call_center.so
 lib/opensips/modules/call_control.so
 lib/opensips/modules/carrierroute.so
@@ -126,6 +127,7 @@ lib/opensips/modules/xmpp.so
 %%PGSQL%%lib/opensips/opensipsctl/opensipsdbctl.pgsql
 %%RADIUS%%lib/opensips/modules/aaa_radius.so
 %%UNIXODBC%%lib/opensips/modules/db_unixodbc.so
+%%TLS%%lib/opensips/modules/proto_tls.so
 lib/opensips/opensipsctl/dbtextdb/dbtextdb.py
 lib/opensips/opensipsctl/opensipsctl.base
 lib/opensips/opensipsctl/opensipsctl.ctlbase
@@ -182,6 +184,7 @@ sbin/osipsconsole
 %%PORTDOCS%%%%DOCSDIR%%/README.benchmark
 %%PORTDOCS%%%%DOCSDIR%%/README.cachedb_local
 %%PORTDOCS%%%%DOCSDIR%%/README.cachedb_sql
+%%PORTDOCS%%%%DOCSDIR%%/README.cachedb_redis
 %%PORTDOCS%%%%DOCSDIR%%/README.call_center
 %%PORTDOCS%%%%DOCSDIR%%/README.call_control
 %%PORTDOCS%%%%DOCSDIR%%/README.carrierroute
@@ -281,15 +284,16 @@ sbin/osipsconsole
 %%PORTDOCS%%%%DOCSDIR%%/README.xcap
 %%PORTDOCS%%%%DOCSDIR%%/README.xcap_client
 %%PORTDOCS%%%%DOCSDIR%%/README.xmpp
-%%PORTDOCS%%%%GEOIP%%%%DOCSDIR%%/README.mmgeoip
-%%PORTDOCS%%%%HTTP%%%%DOCSDIR%%/README.httpd
-%%PORTDOCS%%%%LDAP%%%%DOCSDIR%%/README.h350
-%%PORTDOCS%%%%LDAP%%%%DOCSDIR%%/README.ldap
-%%PORTDOCS%%%%MEMCACHED%%%%DOCSDIR%%/README.cachedb_memcached
-%%PORTDOCS%%%%MYSQL%%%%DOCSDIR%%/README.db_mysql
-%%PORTDOCS%%%%PGSQL%%%%DOCSDIR%%/README.db_postgres
-%%PORTDOCS%%%%RADIUS%%%%DOCSDIR%%/README.aaa_radius
-%%PORTDOCS%%%%UNIXODBC%%%%DOCSDIR%%/README.db_unixodbc
+%%GEOIP%%%%PORTDOCS%%%%DOCSDIR%%/README.mmgeoip
+%%HTTP%%%%PORTDOCS%%%%DOCSDIR%%/README.httpd
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/README.h350
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/README.ldap
+%%MEMCACHED%%%%PORTDOCS%%%%DOCSDIR%%/README.cachedb_memcached
+%%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/README.db_mysql
+%%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/README.db_postgres
+%%RADIUS%%%%PORTDOCS%%%%DOCSDIR%%/README.aaa_radius
+%%UNIXODBC%%%%PORTDOCS%%%%%DOCSDIR%%/README.db_unixodbc
+%%TLS%%%%PORTDOCS%%%%DOCSDIR%%/README.proto_tls
 %%DATADIR%%/dbtext/opensips/acc
 %%DATADIR%%/dbtext/opensips/active_watchers
 %%DATADIR%%/dbtext/opensips/address
@@ -427,6 +431,7 @@ sbin/osipsconsole
 %%DATADIR%%/pi_http/userblacklist-table
 %%DATADIR%%/pi_http/usrloc-mod
 %%DATADIR%%/pi_http/usrloc-table
+%%MYSQL%%%%DATADIR%%/mysql/emergency-create.sql
 %%MYSQL%%share/opensips/mysql/acc-create.sql
 %%MYSQL%%share/opensips/mysql/alias_db-create.sql
 %%MYSQL%%share/opensips/mysql/auth_db-create.sql
@@ -589,10 +594,25 @@ sbin/osipsconsole
 %%EXAMPLES%%share/examples/opensips/web_im/send_im.php
 %%DATADIR%%/dbtext/opensips/dr_partitions
 %%DATADIR%%/dbtext/opensips/fraud_detection
+%%DATADIR%%/dbtext/opensips/emergency_report
+%%DATADIR%%/dbtext/opensips/emergency_routing
 %%DATADIR%%/pi_http/fraud_detection-mod
 %%DATADIR%%/pi_http/fraud_detection-table
+%%DATADIR%%/pi_http/emergency-mod
+%%DATADIR%%/pi_http/emergency-table
 %%PGSQL%%%%DATADIR%%/postgres/fraud_detection-create.sql
+%%PGSQL%%%%DATADIR%%/postgres/emergency-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/fraud_detection-create.sql
-@dir %%ETCDIR%%/tls/rootCA/certs
-@dir %%ETCDIR%%/tls/rootCA/private
-@dir %%ETCDIR%%/tls/user
+%%TLS%%%%ETCDIR%%/tls/README
+%%TLS%%%%ETCDIR%%/tls/ca.conf
+%%TLS%%%%ETCDIR%%/tls/request.conf
+%%TLS%%%%ETCDIR%%/tls/rootCA/cacert.pem
+%%TLS%%%%ETCDIR%%/tls/rootCA/certs/01.pem
+%%TLS%%%%ETCDIR%%/tls/rootCA/index.txt
+%%TLS%%%%ETCDIR%%/tls/rootCA/private/cakey.pem
+%%TLS%%%%ETCDIR%%/tls/rootCA/serial
+%%TLS%%%%ETCDIR%%/tls/user.conf
+%%TLS%%%%ETCDIR%%/tls/user/user-calist.pem
+%%TLS%%%%ETCDIR%%/tls/user/user-cert.pem
+%%TLS%%%%ETCDIR%%/tls/user/user-cert_req.pem
+%%TLS%%%%ETCDIR%%/tls/user/user-privkey.pem

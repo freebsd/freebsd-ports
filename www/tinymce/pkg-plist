@@ -12,6 +12,8 @@
 %%WWWDIR%%/js/tinymce/plugins/bbcode/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/charmap/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/code/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/codesample/css/prism.css
+%%WWWDIR%%/js/tinymce/plugins/codesample/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/colorpicker/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/contextmenu/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/directionality/plugin.min.js

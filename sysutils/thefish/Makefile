@@ -2,22 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	thefish
-PORTVERSION=	0.6.6
-PORTREVISION=	6
+PORTVERSION=	0.6.7
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/thefish/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Gtk+/ncurses rc.conf editor/management tool
 
-BROKEN=		unfetchable
+LICENSE=	BSD2CLAUSE
 
-USES=		pkgconfig
+USES=		pkgconfig tar:xz
 WANT_GNOME=	yes
 
-#OPTIONS_SINGLE=		X11
-#OPTIONS_SINGLE_X11=	GTK2
-#OPTIONS_DEFAULT=	GTK2
+OPTIONS_SINGLE=		X11
+OPTIONS_SINGLE_X11=	GTK2
+OPTIONS_DEFAULT=	GTK2
 
 .include <bsd.port.options.mk>
 
@@ -29,7 +28,7 @@ MAKE_ENV+=	WITH_GTK=yes
 PLIST_FILES=	bin/thefish man/man1/thefish.1.gz
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/thefish ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/thefish.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/thefish ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/thefish.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

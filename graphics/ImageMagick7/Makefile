@@ -36,7 +36,7 @@ COMMENT=	Image processing tools (unstable version)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DATE=		20151006
+DATE=		20151120
 WRKSRC=		${WRKDIR}/${PORTNAME}-7.0.0-0
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
@@ -426,15 +426,15 @@ pre-configure:
 	@${ECHO_CMD} NOTICE: SVG format support disabled, requires X11
 .endif
 
-post-install: test
+post-install:
 .for i in ${SAMPLE_FILES}
 	@${MV} ${STAGEDIR}${PREFIX}/etc/ImageMagick-7/${i} \
 		${STAGEDIR}${PREFIX}/etc/ImageMagick-7/${i}.sample
 .endfor
 
-test check:
-.if ${PORT_OPTIONS:MTESTS}
+post-install-TESTS-on: test
+
+do-test:
 	-cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} limits -m 20m ${MAKE} ${_MAKE_JOBS} check
-.endif
 
 .include <bsd.port.mk>

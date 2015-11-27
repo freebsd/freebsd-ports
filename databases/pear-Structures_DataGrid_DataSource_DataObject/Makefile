@@ -5,7 +5,7 @@ PORTNAME=	Structures_DataGrid_DataSource_DataObject
 PORTVERSION=	0.2.1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	DataSource driver using PEAR::DB_DataObject
 
 BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:${PORTSDIR}/devel/pear-Structures_DataGrid \

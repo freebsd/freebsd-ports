@@ -1,7 +1,7 @@
-%%PERL5_MAN3%%/Chipcard::PCSC.3.gz
-%%PERL5_MAN3%%/Chipcard::PCSC::Card.3.gz
 %%SITE_ARCH%%/Chipcard/PCSC.pm
 %%SITE_ARCH%%/Chipcard/PCSC.pod
 %%SITE_ARCH%%/Chipcard/PCSC/Card.pm
 %%SITE_ARCH%%/Chipcard/PCSC/Card.pod
 %%SITE_ARCH%%/auto/Chipcard/PCSC/PCSC.so
+%%PERL5_MAN3%%/Chipcard::PCSC.3.gz
+%%PERL5_MAN3%%/Chipcard::PCSC::Card.3.gz

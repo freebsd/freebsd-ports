@@ -1,5 +1,5 @@
---- src/net/socket_set.h.orig	2012-01-19 11:19:26.000000000 +0100
-+++ src/net/socket_set.h	2014-02-02 19:05:15.000000000 +0100
+--- src/net/socket_set.h.orig	2012-01-19 10:19:26 UTC
++++ src/net/socket_set.h
 @@ -53,12 +53,12 @@
  
  // Propably should rename to EventSet...

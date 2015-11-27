@@ -1838,4 +1838,3 @@ bin/qmc2-sdlmame
 %%DATADIR%%/lng/qmc2_us.qm
 %%DATADIR%%/opt/MAME/template.xml
 %%DATADIR%%/opt/SDLMAME/template-SDL2.xml
-%%DATADIR%%/opt/SDLMAME/template.xml

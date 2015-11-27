@@ -26,6 +26,7 @@
 %%WWWDIR%%/application/languages/en.csv
 %%WWWDIR%%/application/languages/it.csv
 %%WWWDIR%%/application/languages/pl.csv
+%%WWWDIR%%/application/languages/ru.csv
 %%WWWDIR%%/application/layouts/scripts/application-failure.phtml
 %%WWWDIR%%/application/layouts/scripts/clean.phtml
 %%WWWDIR%%/application/layouts/scripts/layout.phtml
@@ -41,6 +42,7 @@
 %%WWWDIR%%/application/views/helpers/Breadcrumbs.php
 %%WWWDIR%%/application/views/helpers/CanWriteToVolume.php
 %%WWWDIR%%/application/views/helpers/CutString.php
+%%WWWDIR%%/application/views/helpers/DateFormat.php
 %%WWWDIR%%/application/views/helpers/DemoMode.php
 %%WWWDIR%%/application/views/helpers/FileSizeFormat.php
 %%WWWDIR%%/application/views/helpers/FlashMessages.php
@@ -48,9 +50,12 @@
 %%WWWDIR%%/application/views/helpers/HasRevisionsSupport.php
 %%WWWDIR%%/application/views/helpers/JavascriptTranslation.php
 %%WWWDIR%%/application/views/helpers/MimeTypeIcon.php
+%%WWWDIR%%/application/views/helpers/PrettifyVolumeAccessRights.php
 %%WWWDIR%%/application/views/helpers/PutMessage.php
 %%WWWDIR%%/application/views/helpers/SlashPath.php
 %%WWWDIR%%/application/views/helpers/SxUrlEncode.php
+%%WWWDIR%%/application/views/helpers/VolumeIsEncrypted.php
+%%WWWDIR%%/application/views/scripts/ajax/managevolume.phtml
 %%WWWDIR%%/application/views/scripts/ajax/rename.phtml
 %%WWWDIR%%/application/views/scripts/ajax/share-dialog.phtml
 %%WWWDIR%%/application/views/scripts/ajax/share.phtml
@@ -69,6 +74,7 @@
 %%WWWDIR%%/application/views/scripts/index/no-volumes.phtml
 %%WWWDIR%%/application/views/scripts/index/reset.phtml
 %%WWWDIR%%/application/views/scripts/index/resetpassword.phtml
+%%WWWDIR%%/application/views/scripts/index/set-volume-password.phtml
 %%WWWDIR%%/application/views/scripts/index/welcome.phtml
 %%WWWDIR%%/application/views/scripts/mail.phtml
 %%WWWDIR%%/application/views/scripts/revisions/index.phtml
@@ -78,6 +84,9 @@
 %%WWWDIR%%/application/views/scripts/settings/index.phtml
 %%WWWDIR%%/application/views/scripts/settings/preferences.phtml
 %%WWWDIR%%/application/views/scripts/settings/sxdrive.phtml
+%%WWWDIR%%/application/views/scripts/settings/volume.phtml
+%%WWWDIR%%/application/views/scripts/settings/volume_acl_table.phtml
+%%WWWDIR%%/application/views/scripts/settings/volumes.phtml
 %%WWWDIR%%/application/views/scripts/sidebar.phtml
 %%WWWDIR%%/application/views/scripts/sidebar_tools.phtml
 %%WWWDIR%%/installer/controllers/IndexController.php
@@ -110,6 +119,7 @@
 %%WWWDIR%%/library/My/Utils.php
 %%WWWDIR%%/library/My/ValidateActivationHash.php
 %%WWWDIR%%/library/My/ValidateDirName.php
+%%WWWDIR%%/library/My/ValidateFilelistPageSize.php
 %%WWWDIR%%/library/My/ValidateFilename.php
 %%WWWDIR%%/library/My/ValidatePath.php
 %%WWWDIR%%/library/My/ValidateResetPasswordHash.php
@@ -124,11 +134,18 @@
 %%WWWDIR%%/library/My/ValidateUserPassword.php
 %%WWWDIR%%/library/My/ValidateVolumePassword.php
 %%WWWDIR%%/library/Pimple.php
+%%WWWDIR%%/library/Skylable/AccessSx.php
 %%WWWDIR%%/library/Skylable/AccessSxException.php
 %%WWWDIR%%/library/Skylable/AccessSxNG.php
-%%WWWDIR%%/library/Skylable/AccessSxNew.php
+%%WWWDIR%%/library/Skylable/ConnectionFailedException.php
+%%WWWDIR%%/library/Skylable/FailedToModifyVolumeACLException.php
 %%WWWDIR%%/library/Skylable/InvalidCredentialsException.php
 %%WWWDIR%%/library/Skylable/InvalidPasswordException.php
+%%WWWDIR%%/library/Skylable/NotEnoughSpaceLeftOnVolumeException.php
+%%WWWDIR%%/library/Skylable/RevisionException.php
+%%WWWDIR%%/library/Skylable/UploadFailedException.php
+%%WWWDIR%%/library/Skylable/UserNotFoundException.php
+%%WWWDIR%%/library/Skylable/VolumeNotFoundException.php
 %%WWWDIR%%/library/UploadHandler.php
 %%WWWDIR%%/library/Zend/CONTRIBUTING.md
 %%WWWDIR%%/library/Zend/DEVELOPMENT_README.md
@@ -3698,16 +3715,12 @@
 %%WWWDIR%%/public/google-code-prettify/prettify.js
 %%WWWDIR%%/public/google-code-prettify/run_prettify.js
 %%WWWDIR%%/public/img/logo.png
+%%WWWDIR%%/public/img/logo_small.png
 %%WWWDIR%%/public/img/spinner-2x.gif
 %%WWWDIR%%/public/img/spinner.gif
 %%WWWDIR%%/public/img/sxdrive_android_logo.png
 %%WWWDIR%%/public/index.php
 %%WWWDIR%%/public/install.php
-%%WWWDIR%%/public/js/ZeroClipboard.Core.min.js
-%%WWWDIR%%/public/js/ZeroClipboard.Core.min.map
-%%WWWDIR%%/public/js/ZeroClipboard.min.js
-%%WWWDIR%%/public/js/ZeroClipboard.min.map
-%%WWWDIR%%/public/js/ZeroClipboard.swf
 %%WWWDIR%%/public/js/bootstrap.min.js
 %%WWWDIR%%/public/js/jquery.min.js
 %%WWWDIR%%/public/js/jquery.slimscroll.min.js
@@ -3718,6 +3731,7 @@
 %%WWWDIR%%/public/layouts/skylable/css/_jqueryuistructure.css
 %%WWWDIR%%/public/layouts/skylable/css/arrows.png
 %%WWWDIR%%/public/layouts/skylable/css/css.css
+%%WWWDIR%%/public/layouts/skylable/css/download_preview.css
 %%WWWDIR%%/public/layouts/skylable/css/drag-drop-bottom.gif
 %%WWWDIR%%/public/layouts/skylable/css/drag-drop-left.gif
 %%WWWDIR%%/public/layouts/skylable/css/drag-drop-right.gif
@@ -3763,6 +3777,7 @@
 %%WWWDIR%%/public/layouts/skylable/js/lang/lang.en.js
 %%WWWDIR%%/public/layouts/skylable/js/lang/lang.it.js
 %%WWWDIR%%/public/layouts/skylable/js/lang/lang.pl.js
+%%WWWDIR%%/public/layouts/skylable/js/lang/lang.ru.js
 %%WWWDIR%%/public/layouts/skylable/js/modernizr.js
 %%WWWDIR%%/public/layouts/skylable/js/placeholder.js
 %%WWWDIR%%/public/layouts/skylable/js/revisions.js
@@ -3944,6 +3959,7 @@
 %%WWWDIR%%/public/pdfjs/web/cmaps/V.bcmap
 %%WWWDIR%%/public/pdfjs/web/cmaps/WP-Symbol.bcmap
 %%WWWDIR%%/public/pdfjs/web/compatibility.js
+%%WWWDIR%%/public/pdfjs/web/compressed.tracemonkey-pldi-09.pdf
 %%WWWDIR%%/public/pdfjs/web/debugger.js
 %%WWWDIR%%/public/pdfjs/web/images/annotation-check.svg
 %%WWWDIR%%/public/pdfjs/web/images/annotation-comment.svg

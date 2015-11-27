@@ -98,6 +98,7 @@ CONFIGURE_ARGS+=	--disable-dtrace
 
 .if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
 CONFIGURE_ARGS+=	--with-setjmp-type=_setjmp
+CONFIGURE_ENV+=	ac_cv_func__setjmp=yes
 .endif
 
 .if ${PORT_OPTIONS:MCAPIDOCS}

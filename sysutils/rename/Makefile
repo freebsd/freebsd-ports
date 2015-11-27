@@ -5,20 +5,14 @@ PORTNAME=	rename
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://mirror2.unixfreunde.de/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://rename.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename multiple files using regular expressions
-
-BROKEN=		unfetchable
 
 GNU_CONFIGURE=	yes
 USES=		gmake
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
-
-post-extract:
-	@${RM} -f ${WRKSRC}/config.cache
 
 .include <bsd.port.mk>

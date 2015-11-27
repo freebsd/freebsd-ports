@@ -851,6 +851,7 @@
     SUBDIR += rt2-demo
     SUBDIR += rtb
     SUBDIR += rubix
+    SUBDIR += rubygem-fortune_gem
     SUBDIR += sampsvr
     SUBDIR += sarien
     SUBDIR += sauerbraten

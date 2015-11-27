@@ -47,6 +47,7 @@ BAD_GST_ALL_PLUGINS+= \
 		schro \
 		soundtouch \
 		spandsp \
+		vdpau \
 		webp \
 		x265 \
 		zbar \
@@ -415,6 +416,10 @@ gst_vorbis_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 gst_vpx_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
 gst_vpx_PLIST_FILES=	${GST_LIB_DIR}/libgstvpx.so \
 			share/gstreamer-${VERSION}/presets/GstVP8Enc.prs
+
+# vdpau
+gst_vdpau_LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+gst_vdpau_GST_PLUGIN_DIR=	sys/vdpau
 
 # webp
 gst_webp_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp

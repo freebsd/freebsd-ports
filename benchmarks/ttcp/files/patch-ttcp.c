@@ -1,6 +1,6 @@
---- ttcp.c.orig	Thu Oct 18 12:26:35 2001
-+++ ttcp.c	Thu Oct 18 12:31:00 2001
-@@ -55,6 +55,9 @@
+--- ttcp.c.orig	2015-11-23 14:04:04 UTC
++++ ttcp.c
+@@ -55,6 +55,9 @@ static char RCSid[] = "ttcp.c $Revision:
  #include <arpa/inet.h>
  #include <netdb.h>
  #include <sys/time.h>		/* struct timeval */
@@ -10,7 +10,7 @@
  
  #if defined(SYSV)
  #include <sys/times.h>
-@@ -133,7 +136,7 @@
+@@ -133,7 +136,7 @@ double cput, realt;		/* user, real time 
  
  void err();
  void mes();
@@ -19,7 +19,7 @@
  void prep_timer();
  double read_timer();
  int Nread();
-@@ -147,6 +150,7 @@
+@@ -147,6 +150,7 @@ sigpipe()
  {
  }
  
@@ -27,7 +27,7 @@
  main(argc,argv)
  int argc;
  char **argv;
-@@ -249,6 +253,7 @@
+@@ -249,6 +253,7 @@ char **argv;
  #endif /* cray */
  		}
  		sinhim.sin_port = htons(port);
@@ -35,7 +35,7 @@
  		sinme.sin_port = 0;		/* free choice */
  	} else {
  		/* rcvr */
-@@ -263,29 +268,31 @@
+@@ -263,29 +268,31 @@ char **argv;
  	if ( (buf = (char *)malloc(buflen+bufalign)) == (char *)NULL)
  		err("malloc");
  	if (bufalign != 0)
@@ -75,7 +75,7 @@
  		err("bind");
  
  #if defined(SO_SNDBUF) || defined(SO_RCVBUF)
-@@ -326,7 +333,7 @@
+@@ -326,7 +333,7 @@ char **argv;
  			mes("nodelay");
  		}
  #endif
@@ -84,7 +84,7 @@
  			err("connect");
  		mes("connect");
  	    } else {
-@@ -348,11 +355,11 @@
+@@ -348,11 +355,11 @@ char **argv;
  		}
  		fromlen = sizeof(frominet);
  		domain = AF_INET;
@@ -98,7 +98,7 @@
  				&peerlen) < 0) {
  			err("getpeername");
  		  }
-@@ -412,25 +419,25 @@
+@@ -412,25 +419,25 @@ char **argv;
  	}
  	if( cput <= 0.0 )  cput = 0.001;
  	if( realt <= 0.0 )  realt = 0.001;
@@ -129,7 +129,7 @@
  		"ttcp%s: buffer address %#x\n",
  		trans?"-t":"-r",
  		buf);
-@@ -459,6 +466,7 @@
+@@ -459,6 +466,7 @@ char *s;
  	fprintf(stderr,"ttcp%s: %s\n", trans?"-t":"-r", s);
  }
  
@@ -137,7 +137,7 @@
  pattern( cp, cnt )
  register char *cp;
  register int cnt;
-@@ -614,13 +622,13 @@
+@@ -614,13 +622,13 @@ prusage(r0, r1, e, b, outp)
  
  		case 'U':
  			tvsub(&tdiff, &r1->ru_utime, &r0->ru_utime);
@@ -153,7 +153,7 @@
  			END(outp);
  			break;
  
-@@ -642,49 +650,49 @@
+@@ -642,49 +650,49 @@ prusage(r0, r1, e, b, outp)
  			break;
  
  		case 'X':
@@ -212,7 +212,7 @@
  				r1->ru_nivcsw-r0->ru_nivcsw );
  			END(outp);
  			break;
-@@ -743,6 +751,7 @@
+@@ -743,6 +751,7 @@ register char *cp;
  /*
   *			N R E A D
   */
@@ -220,7 +220,7 @@
  Nread( fd, buf, count )
  int fd;
  void *buf;
-@@ -752,7 +761,7 @@
+@@ -752,7 +761,7 @@ int count;
  	int len = sizeof(from);
  	register int cnt;
  	if( udp )  {
@@ -229,7 +229,7 @@
  		numCalls++;
  	} else {
  		if( b_flag )
-@@ -774,6 +783,7 @@
+@@ -774,6 +783,7 @@ int count;
  /*
   *			N W R I T E
   */
@@ -237,7 +237,7 @@
  Nwrite( fd, buf, count )
  int fd;
  void *buf;
-@@ -782,7 +792,7 @@
+@@ -782,7 +792,7 @@ int count;
  	register int cnt;
  	if( udp )  {
  again:
@@ -246,7 +246,7 @@
  		numCalls++;
  		if( cnt<0 && errno == ENOBUFS )  {
  			delay(18000);
-@@ -803,7 +813,7 @@
+@@ -803,7 +813,7 @@ delay(us)
  
  	tv.tv_sec = 0;
  	tv.tv_usec = us;

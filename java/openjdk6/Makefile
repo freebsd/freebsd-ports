@@ -6,12 +6,11 @@ PORTVERSION=	b37
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/ant/binaries/:ant \
-		http://download.java.net/openjdk/jtreg/promoted/4.1/b05/:jtreg \
-		https://java.net/downloads/openjdk6/ \
-		LOCAL/jkim
+		https://java.net/downloads/openjdk6/:jdk \
+		LOCAL/jkim:jdk,jtreg
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 DISTFILES=	${ANTFILE}:ant \
-		${DISTNAME}${EXTRACT_SUFX}
+		${DISTNAME}${EXTRACT_SUFX}:jdk
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}
 
 MAINTAINER=	java@FreeBSD.org

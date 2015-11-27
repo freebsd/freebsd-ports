@@ -1,5 +1,5 @@
---- opie_fn.c.orig	Sun Dec  8 15:26:20 2002
-+++ opie_fn.c	Sun Dec  8 15:27:01 2002
+--- opie_fn.c.orig	2002-12-08 11:26:20 UTC
++++ opie_fn.c
 @@ -0,0 +1,239 @@
 +/* 
 +   Copyright (c) 1995-2000 by Cisco systems, Inc.

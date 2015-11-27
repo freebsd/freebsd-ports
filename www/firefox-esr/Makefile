@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	38.3.0
+DISTVERSION=	38.4.0
 DISTVERSIONSUFFIX=esr.source
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
@@ -14,8 +13,8 @@ PKGNAMESUFFIX=	-esr
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.10.8:${PORTSDIR}/devel/nspr \
-		nss>=3.19.2:${PORTSDIR}/security/nss \
+BUILD_DEPENDS=	nspr>=4.10.10:${PORTSDIR}/devel/nspr \
+		nss>=3.19.2.1:${PORTSDIR}/security/nss \
 		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
 		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
 		harfbuzz>=0.9.34:${PORTSDIR}/print/harfbuzz \
@@ -34,7 +33,7 @@ LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 USE_GECKO=	gecko
 CPE_PRODUCT=	${PORTNAME}_esr
-CONFLICTS_INSTALL=	firefox-4[0-4].* firefox-3[02-9].* firefox-2[0-35-9].*
+CONFLICTS_INSTALL=	firefox-4[0-46-9].* firefox-3[02-9].* firefox-2[0-35-9].*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-opus
 MOZILLA_NAME=	Firefox

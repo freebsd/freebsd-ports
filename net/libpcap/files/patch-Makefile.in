@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-01-06 19:12:16.000000000 +0100
-+++ Makefile.in	2015-01-06 19:16:34.000000000 +0100
-@@ -565,51 +565,19 @@
+--- Makefile.in.orig	2015-06-28 01:03:37 UTC
++++ Makefile.in
+@@ -569,51 +569,19 @@ install: install-shared install-archive 
  		    $(DESTDIR)$(includedir)/$$i; done
  	[ -d $(DESTDIR)$(bindir) ] || \
  	    (mkdir -p $(DESTDIR)$(bindir); chmod 755 $(DESTDIR)$(bindir))

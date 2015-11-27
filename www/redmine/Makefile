@@ -11,6 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Flexible project management web application
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-bundler>=0:${PORTSDIR}/sysutils/rubygem-bundler \
