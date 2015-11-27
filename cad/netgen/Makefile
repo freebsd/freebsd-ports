@@ -13,6 +13,8 @@ COMMENT=	Automatic 3D tetrahedral mesh generator
 LIB_DEPENDS=	libTix8.4.3.so:${PORTSDIR}/x11-toolkits/tix \
 		libtogl.so:${PORTSDIR}/graphics/togl
 
+BROKEN=		Does not compile because of issues with cad/opencascade
+
 USE_LDCONFIG=	yes
 USES=		gmake jpeg libtool tk
 USE_GL=		yes
