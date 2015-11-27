@@ -3,6 +3,7 @@
 
 PORTNAME=	seexpr
 DISTVERSION=	1.0.1.2015.08.29
+PORTREVISION=	1
 CATEGORIES=	graphics math
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -23,6 +24,10 @@ WRKSRC=		${WRKDIR}/SeExpr-${GH_TAGNAME_EXTRACT}
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 
+.if ${MACHINE_CPU:Msse41}
+CMAKE_ARGS+=	-DUSE_SSE41:BOOL=ON
+.endif
+
 .include <bsd.port.pre.mk>
 
 # base flex(1) v2.5.4 is not sufficient
@@ -33,7 +38,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 post-patch:
 	@${REINPLACE_CMD} -e '/<alloca\.h>/d' ${WRKSRC}/src/SeExpr/SePlatform.h
 	@${REINPLACE_CMD} -e 's, "dl",,' ${WRKSRC}/src/SeExpr/CMakeLists.txt
-	@${REINPLACE_CMD} -e '/tests/d' ${WRKSRC}/CMakeLists.txt
 .if ${OSVERSION} < 1000033
 	@${REINPLACE_CMD} -e '/COMMAND/s,flex,${LOCALBASE}/bin/&,' \
 		${WRKSRC}/src/build/macros.cmake
