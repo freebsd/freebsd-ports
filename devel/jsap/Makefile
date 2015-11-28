@@ -14,6 +14,7 @@ COMMENT=	Java package to parse command-line arguments
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 PORTDOCS=	*
@@ -23,6 +24,8 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/${DISTNAME}.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+
+do-install-DOCS-on:
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
