@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qcad
-PORTVERSION=	3.7.5.0
+PORTVERSION=	3.12.3.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=	4
 CATEGORIES=	cad
@@ -54,10 +54,10 @@ pre-configure:
 
 # Temporary hack for Qt 4.8.7 support while upstream does not add proper
 # bindings.
-	(cd ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-4.8.5 && \
-		${COPYTREE_SHARE} . ../qt-labs-qtscriptgenerator-4.8.7)
-	(cd ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-4.8.7 && \
-		mv qt-labs-qtscriptgenerator-4.8.5.pro qt-labs-qtscriptgenerator-4.8.7.pro)
+#	(cd ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-4.8.5 && \
+#		${COPYTREE_SHARE} . ../qt-labs-qtscriptgenerator-4.8.7)
+#	(cd ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-4.8.7 && \
+#		mv qt-labs-qtscriptgenerator-4.8.5.pro qt-labs-qtscriptgenerator-4.8.7.pro)
 
 do-install:
 	${INSTALL_PROGRAM} ${RESDIR}/qcad-bin ${STAGEDIR}${PREFIX}/bin/
