@@ -3915,7 +3915,6 @@
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
     SUBDIR += py-astroid
-    SUBDIR += py-async
     SUBDIR += py-asyncio
     SUBDIR += py-atomicwrites
     SUBDIR += py-avro

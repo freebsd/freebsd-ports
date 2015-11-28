@@ -50,8 +50,6 @@
     SUBDIR += muscle
     SUBDIR += ncbi-blast+
     SUBDIR += ncbi-toolkit
-    SUBDIR += njplot
-    SUBDIR += ortep3
     SUBDIR += p5-AcePerl
     SUBDIR += p5-Bio-ASN1-EntrezGene
     SUBDIR += p5-Bio-Das
@@ -73,7 +71,6 @@
     SUBDIR += platon
     SUBDIR += plink
     SUBDIR += plinkseq
-    SUBDIR += povchem
     SUBDIR += primer3
     SUBDIR += protomol
     SUBDIR += psi88

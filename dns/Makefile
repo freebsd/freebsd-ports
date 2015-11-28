@@ -62,7 +62,6 @@
     SUBDIR += fpdns
     SUBDIR += gdnsd
     SUBDIR += gdnsd2
-    SUBDIR += geta
     SUBDIR += getdns
     SUBDIR += ghtool
     SUBDIR += hesiod
@@ -130,7 +129,6 @@
     SUBDIR += p5-Net-DNS-TestNS
     SUBDIR += p5-Net-DNS-ToolKit
     SUBDIR += p5-Net-DNS-Zone-Parser
-    SUBDIR += p5-Net-DNS-ZoneCheck
     SUBDIR += p5-Net-DNS-ZoneFile-Fast
     SUBDIR += p5-Net-DNSBL-MultiDaemon
     SUBDIR += p5-Net-DNSBL-Statistics

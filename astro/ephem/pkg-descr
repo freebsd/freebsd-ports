@@ -1,6 +1,0 @@
-Ephem is a program that displays ephemerides for all the planets plus any
-two additional objects.  The additional objects may be fixed or specified
-via heliocentric elliptical, hyperbolic or parabolic orbital elements to
-accommodate solar system objects such as asteroids or comets.
-
-Unlike xephem, ephem works on a plain ascii terminal.

@@ -1,4 +1,0 @@
-bin/qcread
-@unexec if cmp -s %D/etc/qcam.conf %D/etc/qcam.conf.dist; then rm -f %D/etc/qcam.conf; fi
-etc/qcam.conf.dist
-@exec [ -f %B/qcam.conf ] || cp %B/%f %B/qcam.conf

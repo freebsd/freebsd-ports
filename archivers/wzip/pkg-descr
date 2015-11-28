@@ -1,7 +1,0 @@
-The program wzip is a preprocessor for lossy data compression. A sequence of
-ASCII floating-point numbers is transformed into a sequence of small integers
-ready for effective compression with e.g. gzip.  The program can also be used
-for effective but time consuming denoising of measurement data.  Wzip was
-originally written for the processing of EDX-linescans.
-
-WWW: http://packages.qa.debian.org/w/wzip.html
