@@ -13,7 +13,6 @@
     SUBDIR += auto-tw-l10n
     SUBDIR += autoconvert
     SUBDIR += bg5pdf
-    SUBDIR += bg5ps
     SUBDIR += big5width
     SUBDIR += bitchx
     SUBDIR += brise
@@ -22,13 +21,11 @@
     SUBDIR += c2t
     SUBDIR += calligra-l10n-zh_CN
     SUBDIR += calligra-l10n-zh_TW
-    SUBDIR += cce
     SUBDIR += cconv
     SUBDIR += celvis
     SUBDIR += chiconv
     SUBDIR += cless
     SUBDIR += cnprint
-    SUBDIR += cwtexttf
     SUBDIR += dictd-database
     SUBDIR += docproj
     SUBDIR += enscript
@@ -53,7 +50,6 @@
     SUBDIR += gb2ps
     SUBDIR += gcin
     SUBDIR += gimp-help-zh_CN
-    SUBDIR += gugod-clean
     SUBDIR += hc
     SUBDIR += ibus-chewing
     SUBDIR += ibus-libpinyin
@@ -64,7 +60,6 @@
     SUBDIR += kcfonts
     SUBDIR += kde4-l10n-zh_CN
     SUBDIR += kde4-l10n-zh_TW
-    SUBDIR += kon2
     SUBDIR += libchewing
     SUBDIR += libgooglepinyin
     SUBDIR += libpinyin
@@ -80,14 +75,12 @@
     SUBDIR += opencc
     SUBDIR += opendesktop-fonts
     SUBDIR += oto
-    SUBDIR += oxim
     SUBDIR += p5-Date-Chinese
     SUBDIR += p5-Encode-CNMap
     SUBDIR += p5-Encode-HanConvert
     SUBDIR += p5-Encode-HanExtra
     SUBDIR += p5-Lingua-Han-PinYin
     SUBDIR += p5-Lingua-Han-Utils
-    SUBDIR += p5-Lingua-ZH-BPMFConvert
     SUBDIR += p5-Lingua-ZH-HanDetect
     SUBDIR += p5-Lingua-ZH-Keywords
     SUBDIR += p5-Lingua-ZH-Numbers
