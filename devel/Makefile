@@ -3251,6 +3251,7 @@
     SUBDIR += p5-Test-Singleton
     SUBDIR += p5-Test-Spec
     SUBDIR += p5-Test-Spelling
+    SUBDIR += p5-Test-Stream
     SUBDIR += p5-Test-Strict
     SUBDIR += p5-Test-SubCalls
     SUBDIR += p5-Test-Synopsis
