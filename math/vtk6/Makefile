@@ -82,16 +82,12 @@ CMAKE_ARGS+=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 SHARED_CMAKE_ON=	-DBUILD_SHARED_LIBS:BOOL=ON
 SHARED_CMAKE_OFF=	-DBUILD_SHARED_LIBS:BOOL=OFF
 
-# Mangling so that port will build when science/netcdf is installed.
+# Mangling so that it will build when science/netcdf is installed.
 post-patch:
 	${MV} ${WRKSRC}/ThirdParty/netcdf/vtknetcdf/include/netcdf.h \
 		${WRKSRC}/ThirdParty/netcdf/vtknetcdf/include/xxxnetcdf.h
 	${FIND} ${WRKSRC}/ThirdParty/netcdf -type f | ${XARGS} ${REINPLACE_CMD} \
 		-E 's/[[:<:]]netcdf\.h[[:>:]]/xxxnetcdf.h/'
-#	${FIND} ${WRKSRC}/ThirdParty/netcdf -type f | ${XARGS} ${REINPLACE_CMD} \
-#		-E 's/[[:<:]]libnetcdf[[:>:]]/libxxxnetcdf/'
-#	${FIND} ${WRKSRC}/ThirdParty/netcdf -type f | ${XARGS} ${REINPLACE_CMD} \
-#		-E 's/[[:<:]]-lnetcdf[[:>:]]/-lxxxnetcdf/'
 
 .include <bsd.port.options.mk>
 
