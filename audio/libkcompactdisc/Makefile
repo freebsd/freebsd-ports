@@ -19,6 +19,12 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	ALSA
 
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
-ALSA_EXTRA_PATCHES_OFF=	${FILESDIR}/extrapatch-no_alsa
+
+post-patch-ALSA-off:
+	${REINPLACE_CMD} -e '/find_package(Alsa)/d' \
+		-e '/alsa_configure_file/d' ${WRKSRC}/CMakeLists.txt
+
+post-configure-ALSA-off:
+	${TOUCH} ${CONFIGURE_WRKSRC}/config-alsa.h
 
 .include <bsd.port.mk>
