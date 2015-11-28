@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pygit2
-PORTVERSION=	0.23.0
+PORTVERSION=	0.23.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,6 @@ regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pygit2.so ${STAGEDIR}${PYTHON_SITELIBDIR}/pygit2/_libgit2.so
 
 .include <bsd.port.mk>
