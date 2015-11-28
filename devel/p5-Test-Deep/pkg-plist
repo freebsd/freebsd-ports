@@ -24,6 +24,7 @@
 %%SITE_PERL%%/Test/Deep/MM.pm
 %%SITE_PERL%%/Test/Deep/Methods.pm
 %%SITE_PERL%%/Test/Deep/NoTest.pm
+%%SITE_PERL%%/Test/Deep/None.pm
 %%SITE_PERL%%/Test/Deep/Number.pm
 %%SITE_PERL%%/Test/Deep/Obj.pm
 %%SITE_PERL%%/Test/Deep/Ref.pm
