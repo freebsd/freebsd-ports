@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-Random-MT
-PORTVERSION=	1.16
-PORTREVISION=	1
+PORTVERSION=	1.17
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +16,8 @@ TEST_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Random/MT/MT.so
 
 .include <bsd.port.mk>
