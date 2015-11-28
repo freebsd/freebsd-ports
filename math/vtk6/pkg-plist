@@ -4306,7 +4306,7 @@ include/vtk-%%VER2%%/vtkmetaio/metaTypes.h
 include/vtk-%%VER2%%/vtkmetaio/metaUtils.h
 include/vtk-%%VER2%%/vtkmetaio/metaVesselTube.h
 include/vtk-%%VER2%%/vtknetcdf/include/ncvalues.h
-include/vtk-%%VER2%%/vtknetcdf/include/netcdf.h
+include/vtk-%%VER2%%/vtknetcdf/include/xxxnetcdf.h
 include/vtk-%%VER2%%/vtknetcdf/include/netcdf.hh
 include/vtk-%%VER2%%/vtknetcdf/include/netcdfcpp.h
 include/vtk-%%VER2%%/vtknetcdf/include/vtk_netcdf_config.h
