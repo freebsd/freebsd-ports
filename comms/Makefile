@@ -10,7 +10,6 @@
     SUBDIR += aprsd
     SUBDIR += atslog
     SUBDIR += bfhist
-    SUBDIR += bforce
     SUBDIR += bforce-kst
     SUBDIR += birda
     SUBDIR += bluegps
@@ -55,7 +54,6 @@
     SUBDIR += gnokii
     SUBDIR += gnuradio
     SUBDIR += gpredict
-    SUBDIR += gpsk31
     SUBDIR += gqrx
     SUBDIR += gr-osmosdr
     SUBDIR += grig
@@ -137,7 +135,6 @@
     SUBDIR += py-serial
     SUBDIR += pyla
     SUBDIR += qico
-    SUBDIR += qpage
     SUBDIR += qrq
     SUBDIR += qsstv
     SUBDIR += qt5-serialport
@@ -194,7 +191,6 @@
     SUBDIR += yagiuda
     SUBDIR += yaps
     SUBDIR += yfklog
-    SUBDIR += zmtx-zmrx
     SUBDIR += zssh
 
 .include <bsd.port.subdir.mk>

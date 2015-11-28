@@ -214,7 +214,6 @@
     SUBDIR += unzip
     SUBDIR += unzoo
     SUBDIR += upx
-    SUBDIR += wzip
     SUBDIR += xar
     SUBDIR += xarchive
     SUBDIR += xarchiver

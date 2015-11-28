@@ -76,7 +76,6 @@
     SUBDIR += bareos-client-static
     SUBDIR += bareos-docs
     SUBDIR += bareos-server
-    SUBDIR += bashburn
     SUBDIR += batmon
     SUBDIR += battfink
     SUBDIR += battmond

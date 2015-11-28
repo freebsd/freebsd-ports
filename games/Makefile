@@ -545,7 +545,6 @@
     SUBDIR += linux-quake4
     SUBDIR += linux-quake4-demo
     SUBDIR += linux-rtcw
-    SUBDIR += linux-skulltag
     SUBDIR += linux-ssamtfe
     SUBDIR += linux-ssamtse
     SUBDIR += linux-unrealgold
