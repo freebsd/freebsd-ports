@@ -7,31 +7,34 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert DocBook documents into UNIX man page and GNU Texinfo formats
 
-BUILD_DEPENDS=	p5-XML-NamespaceSupport>=0:${PORTSDIR}/textproc/p5-XML-NamespaceSupport \
-		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-XML-SAX-Expat>=0:${PORTSDIR}/textproc/p5-XML-SAX-Expat \
-		libxslt>=0:${PORTSDIR}/textproc/libxslt \
-		sdocbook-xml>=0:${PORTSDIR}/textproc/sdocbook-xml \
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	OpenSP>=0:${PORTSDIR}/textproc/opensp \
 		dsssl-docbook-modular>=0:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		OpenSP>=0:${PORTSDIR}/textproc/opensp
+		p5-XML-NamespaceSupport>=0:${PORTSDIR}/textproc/p5-XML-NamespaceSupport \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
+		p5-XML-SAX-Expat>=0:${PORTSDIR}/textproc/p5-XML-SAX-Expat \
+		sdocbook-xml>=0:${PORTSDIR}/textproc/sdocbook-xml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS=	docbook-utils-*
-
-GNU_CONFIGURE=	yes
-USES=		iconv gmake perl5
-CONFIGURE_ENV=	PERL=${PERL}
+CONFLICTS_INSTALL=	docbook-utils-*
 
 OPTIONS_DEFINE=	DOCS
+
+CONFIGURE_ENV=	PERL=${PERL}
+GNU_CONFIGURE=	yes
+USE_GNOME=	libxslt
+USES=		gmake iconv perl5
+WANT_GNOME=	yes
 
 INFO=		docbook2X docbook2man-xslt docbook2texi-xslt
 
 post-patch:
-	@${REINPLACE_CMD} "s|\$${prefix}|${PREFIX}|" \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|$${prefix}|${PREFIX}|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
