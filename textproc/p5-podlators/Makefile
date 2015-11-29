@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	podlators
-PORTVERSION=	2.5.3
-PORTREVISION=	2
+PORTVERSION=	4.00
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN/Pod
 PKGNAMEPREFIX=	p5-
@@ -18,6 +17,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	@${REINPLACE_CMD} -e "/man1pod (/d; /EXE_FILES/d" ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e "/man1pod(/d; /EXE_FILES/d" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
