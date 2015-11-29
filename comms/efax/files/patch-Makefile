@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jun 28 19:01:22 2000
-+++ Makefile	Sun Oct 20 03:06:13 2002
+--- Makefile.orig	2000-06-29 02:01:22 UTC
++++ Makefile
 @@ -3,20 +3,17 @@
  # Change the following to the name of your ANSI C compiler
  # (normally gcc).
@@ -24,7 +24,7 @@
  
  .c.o:
  	$(CC) $(CFLAGS) -c $<
-@@ -32,11 +29,9 @@
+@@ -32,11 +29,9 @@ efix:	efix.o efaxlib.o efaxmsg.o
  	strip efix
  
  install:

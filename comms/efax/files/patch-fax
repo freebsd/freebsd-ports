@@ -1,6 +1,6 @@
---- fax.orig	Sat May 11 12:39:37 2002
-+++ fax	Sat May 11 13:42:33 2002
-@@ -24,7 +24,7 @@
+--- fax.orig	2002-02-02 13:14:08 UTC
++++ fax
+@@ -24,7 +24,7 @@ echo "fax: version 0.9001114a7 (30 Jan 2
  #  - do not put spaces before or after the equal (=) signs.
  #
  #  - variables can also be set on the command line, for example:
@@ -9,7 +9,7 @@
  #    or in a configuration file (see CONFIGFILES below)
  #
  
-@@ -36,16 +36,16 @@
+@@ -36,16 +36,16 @@ EFAX=efax
  EFIX=efix
  
  # The device to which the fax modem is connected (e.g. ttya for
@@ -30,7 +30,7 @@
  
  # Your fax number in international format, 20 characters maximum.
  # Use only digits, spaces, and the "+" character.
-@@ -98,7 +98,8 @@
+@@ -98,7 +98,8 @@ DIALSUFFIX=""
  # conventions. Protect with single quotes for delayed evaluation.
  # Add a leading '#' to the file name to use binary format.
  
@@ -40,7 +40,7 @@
  # LOCK='-x /usr/spool/uucp/LCK..$DEV'		# older systems
  # LOCK='-x /var/lock/LCK..$DEV -x /var/spool/uucp/LCK..$DEV' # both
  # LOCK='-x #/usr/spool/uucp/LCK..$DEV'		# binary format
-@@ -124,7 +125,7 @@
+@@ -124,7 +125,7 @@ LOCK='-x /var/lock/LCK..$DEV' 			# moder
  # out if you don't need to use config files. Warning: any type of
  # shell command in these files will be executed.
  
@@ -49,7 +49,7 @@
  
  # A command that will generate unique names for logs and received
  # files.  'date +%m%d%H%M%S' works on most systems.  Protect with
-@@ -421,9 +422,9 @@
+@@ -421,9 +422,9 @@ VCMD="exec $FONE %d"
  # efax even if a previous process (e.g. login) has changed it.
  # Comment out if you don't need to reset device ownership.
  
@@ -62,7 +62,7 @@
  
  # Regular expression for efax exit codes in log files that will
  # *not* be saved.  For example, use [145] to ignore exits due to
-@@ -1101,7 +1102,7 @@
+@@ -1101,7 +1102,7 @@ cat 1>&2 <<EOF
  
   if given no arguments, answers the phone and receives a fax.
  
