@@ -1,5 +1,5 @@
-The Fish provides a graphical tool (with GTK+, Qt and ncurses frotends) to 
-manage and edit system variables stored in /etc/defaults/rc.conf and 
-/etc/rc.conf. 
+The Fish provides a graphical UI (with GTK+, Qt and ncurses frontends)
+to manage and edit system variables stored in /etc/defaults/rc.conf
+and /etc/rc.conf.
 
-WWW: http://thefish.berlios.de
+WWW: http://BSDforge.com/projects/sysutils/thefish

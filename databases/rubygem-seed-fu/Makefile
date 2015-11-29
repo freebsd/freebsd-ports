@@ -9,6 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library to maintain seed datas
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activerecord4>=3.1:${PORTSDIR}/databases/rubygem-activerecord4 \
 		rubygem-activesupport4>=3.1:${PORTSDIR}/devel/rubygem-activesupport4

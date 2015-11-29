@@ -1,5 +1,5 @@
---- ./lib/mysqlsla.pm.orig	2014-09-19 23:35:02.701375256 +0400
-+++ ./lib/mysqlsla.pm	2014-09-19 23:35:46.694100925 +0400
+--- lib/mysqlsla.pm.orig	2014-09-19 19:35:03 UTC
++++ lib/mysqlsla.pm
 @@ -6,6 +6,8 @@
  
  __END__

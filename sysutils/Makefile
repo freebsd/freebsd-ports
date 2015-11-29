@@ -313,6 +313,7 @@
     SUBDIR += fusefs-ifuse
     SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
+    SUBDIR += fusefs-lkl
     SUBDIR += fusefs-mhddfs
     SUBDIR += fusefs-mp3fs
     SUBDIR += fusefs-ntfs
@@ -730,6 +731,7 @@
     SUBDIR += php55-posix
     SUBDIR += php56-fileinfo
     SUBDIR += php56-posix
+    SUBDIR += phybs
     SUBDIR += pick
     SUBDIR += pidof
     SUBDIR += pipemeter
@@ -775,11 +777,13 @@
     SUBDIR += py-croniter
     SUBDIR += py-crontab
     SUBDIR += py-danzfs
+    SUBDIR += py-dlipower
     SUBDIR += py-drmaa
     SUBDIR += py-execnet
     SUBDIR += py-ezjailremote
     SUBDIR += py-fnutils
     SUBDIR += py-filelike
+    SUBDIR += py-freenas.cli
     SUBDIR += py-glances
     SUBDIR += py-halite
     SUBDIR += py-honcho
@@ -832,6 +836,7 @@
     SUBDIR += reed
     SUBDIR += rej
     SUBDIR += relaxconf
+    SUBDIR += relaunchd
     SUBDIR += rename
     SUBDIR += renameutils
     SUBDIR += reoback
@@ -884,6 +889,7 @@
     SUBDIR += rubygem-hammer_cli_foreman_salt
     SUBDIR += rubygem-hammer_cli_foreman_ssh
     SUBDIR += rubygem-hiera
+    SUBDIR += rubygem-hieracles
     SUBDIR += rubygem-hiera-file
     SUBDIR += rubygem-hiera1
     SUBDIR += rubygem-librarian-puppet

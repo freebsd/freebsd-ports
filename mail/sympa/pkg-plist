@@ -50,6 +50,7 @@ libexec/sympa/Sympa/Message/Plugin.pm
 libexec/sympa/Sympa/Message/Plugin/FixEncoding.pm
 libexec/sympa/Sympa/ModDef.pm
 libexec/sympa/Sympa/Regexps.pm
+libexec/sympa/Sympa/Request.pm
 libexec/sympa/Sympa/Report.pm
 libexec/sympa/Sympa/Robot.pm
 libexec/sympa/Sympa/SOAP.pm
@@ -57,6 +58,12 @@ libexec/sympa/Sympa/SOAP/Transport.pm
 libexec/sympa/Sympa/Scenario.pm
 libexec/sympa/Sympa/Session.pm
 libexec/sympa/Sympa/SharedDocument.pm
+libexec/sympa/Sympa/Spindle.pm
+libexec/sympa/Sympa/Spindle/ProcessAutomatic.pm
+libexec/sympa/Sympa/Spindle/ProcessBounce.pm
+libexec/sympa/Sympa/Spindle/SendDigest.pm
+libexec/sympa/Sympa/Spindle/StoreArchive.pm
+libexec/sympa/Sympa/Spool/Request.pm
 libexec/sympa/Sympa/Spool.pm
 libexec/sympa/Sympa/Spool/Automatic.pm
 libexec/sympa/Sympa/Spool/Archive.pm
@@ -77,6 +84,7 @@ libexec/sympa/Sympa/Tools/SMIME.pm
 libexec/sympa/Sympa/Tools/Text.pm
 libexec/sympa/Sympa/Tools/Time.pm
 libexec/sympa/Sympa/Tools/WWW.pm
+libexec/sympa/Sympa/Topic.pm
 libexec/sympa/Sympa/Tracking.pm
 libexec/sympa/Sympa/Upgrade.pm
 libexec/sympa/Sympa/User.pm
@@ -157,6 +165,12 @@ man/man3/Sympa::Message::Plugin.3Sympa.gz
 man/man3/Sympa::Message::Plugin::FixEncoding.3Sympa.gz
 man/man3/Sympa::ModDef.3Sympa.gz
 man/man3/Sympa::Regexps.3Sympa.gz
+man/man3/Sympa::Request.3Sympa.gz
+man/man3/Sympa::Spindle.3Sympa.gz
+man/man3/Sympa::Spindle::ProcessAutomatic.3Sympa.gz
+man/man3/Sympa::Spindle::ProcessBounce.3Sympa.gz
+man/man3/Sympa::Spindle::SendDigest.3Sympa.gz
+man/man3/Sympa::Spindle::StoreArchive.3Sympa.gz
 man/man3/Sympa::Spool.3Sympa.gz
 man/man3/Sympa::Spool::Automatic.3Sympa.gz
 man/man3/Sympa::Spool::Archive.3Sympa.gz
@@ -166,10 +180,13 @@ man/man3/Sympa::Spool::Digest::Collection.3Sympa.gz
 man/man3/Sympa::Spool::Held.3Sympa.gz
 man/man3/Sympa::Spool::Incoming.3Sympa.gz
 man/man3/Sympa::Spool::Moderation.3Sympa.gz
+man/man3/Sympa::Spool::Request.3Sympa.gz
 man/man3/Sympa::Template.3Sympa.gz
 man/man3/Sympa::Tools::Daemon.3Sympa.gz
 man/man3/Sympa::Tools::File.3Sympa.gz
 man/man3/Sympa::Tools::Text.3Sympa.gz
+man/man3/Sympa::Tools::Time.3Sympa.gz
+man/man3/Sympa::Topic.3Sympa.gz
 man/man3/Sympa::Tracking.3Sympa.gz
 man/man3/Sympa::User.3Sympa.gz
 man/man5/charset.conf.5.gz

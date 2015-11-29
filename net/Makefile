@@ -106,6 +106,7 @@
     SUBDIR += dimes
     SUBDIR += dosdetector
     SUBDIR += dpdk
+    SUBDIR += dpinger
     SUBDIR += drawterm
     SUBDIR += dropbox-api-command
     SUBDIR += dropbox-uploader
@@ -962,6 +963,7 @@
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
+    SUBDIR += py-pysmb
     SUBDIR += py-pysocks
     SUBDIR += py-pysphere
     SUBDIR += py-python-bitcoinrpc
@@ -972,7 +974,6 @@
     SUBDIR += py-raet
     SUBDIR += py-s3cmd
     SUBDIR += py-simplesoap
-    SUBDIR += py-smb
     SUBDIR += py-smbpasswd
     SUBDIR += py-soappy
     SUBDIR += py-speedtest-cli
@@ -990,6 +991,7 @@
     SUBDIR += py-xmlrpc
     SUBDIR += py-zope.proxy
     SUBDIR += py-zsi
+    SUBDIR += py3-netifaces
     SUBDIR += pygopherd
     SUBDIR += pynids
     SUBDIR += pyrad

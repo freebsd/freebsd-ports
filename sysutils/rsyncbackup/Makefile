@@ -33,6 +33,8 @@ do-install:
 	${INSTALL_DATA} ${CONFIGSRC}/${configfile} \
 		${STAGEDIR}${ETCDIR}/${configfile}.example
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 

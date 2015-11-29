@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.urbanophile.com/arenn/hacking/getopt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java version of GNU getopt family functions
 
-LICENSE=	GPLv2
+LICENSE=	LGPL20
 
 OPTIONS_DEFINE=	DOCS
 

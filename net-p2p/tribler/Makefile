@@ -3,7 +3,7 @@
 
 PORTNAME=	tribler
 PORTVERSION=	6.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Tribler/tribler/releases/download/${PORTVERSION:S/^/v/}/
 DISTFILES=	${PORTNAME}_${PORTVERSION}_all.deb
@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apsw>0:${PORTSDIR}/databases/py-apsw \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}asn1>=0.1.7:${PORTSDIR}/devel/py-asn1 \
+		${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.7:${PORTSDIR}/devel/py-pyasn1 \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}gmpy>0:${PORTSDIR}/math/py-gmpy \
 		${PYTHON_PKGNAMEPREFIX}netifaces>0:${PORTSDIR}/net/py-netifaces \

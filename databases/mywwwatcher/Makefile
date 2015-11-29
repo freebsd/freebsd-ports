@@ -11,6 +11,9 @@ DISTNAME=	mywwwatcher-${PORTVERSION}
 MAINTAINER=	pm@kostax.cz
 COMMENT=	Simple web-based MySQL client + tools (dump, import, scheme, ...)
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 WRKSRC=		${WRKDIR}/mywwwatcher
 
 WANT_PHP_WEB=		yes

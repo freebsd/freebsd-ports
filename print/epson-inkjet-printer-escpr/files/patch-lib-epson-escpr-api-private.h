@@ -1,4 +1,4 @@
---- lib/epson-escpr-api-private.h.orig	2015-10-01 04:30:19 UTC
+--- lib/epson-escpr-api-private.h.orig	1970-01-01 00:00:00 UTC
 +++ lib/epson-escpr-api-private.h
 @@ -0,0 +1,3 @@
 +EPS_ERR_CODE SetupJobAttrib(const EPS_JOB_ATTRIB*);

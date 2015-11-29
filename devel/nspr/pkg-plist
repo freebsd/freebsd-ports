@@ -90,3 +90,4 @@ lib/libplds4.a
 lib/libplds4.so
 lib/libplds4.so.1
 libdata/pkgconfig/nspr.pc
+share/aclocal/nspr.m4

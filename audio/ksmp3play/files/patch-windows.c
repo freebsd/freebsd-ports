@@ -1,6 +1,6 @@
---- windows.c.orig	Mon Aug 20 02:43:24 2001
-+++ windows.c	Sun Dec 29 12:45:25 2002
-@@ -22,7 +22,7 @@
+--- windows.c.orig	2008-06-17 05:57:56 UTC
++++ windows.c
+@@ -30,7 +30,7 @@
  #include "ksmp3play.h"
  
  #include <sys/types.h>

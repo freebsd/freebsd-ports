@@ -1,7 +1,5 @@
-Index: server/Makefile
-diff -u server/Makefile.orig server/Makefile
---- server/Makefile.orig	2010-10-03 01:21:01.000000000 +0900
-+++ server/Makefile	2014-06-18 01:15:19.903510437 +0900
+--- server/Makefile.orig	2010-10-02 16:21:01 UTC
++++ server/Makefile
 @@ -26,6 +26,7 @@
  MANMODE ?= 644
  MANDIRMODE ?= 755

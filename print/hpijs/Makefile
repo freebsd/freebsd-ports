@@ -12,14 +12,16 @@ COMMENT=	Drivers and support resources for HP Inkjet Printers
 CONFLICTS=	hplip-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=		--disable-dependency-tracking
+CONFIGURE_ARGS=	--disable-dependency-tracking
 USES=		ghostscript:run jpeg
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	CUPS DOCS FOOMATIC
-OPTIONS_DEFAULT=	CUPS FOOMATIC
+OPTIONS_DEFAULT=CUPS FOOMATIC
+OPTIONS_SUB=	yes
+
 FOOMATIC_DESC=	Install foomatic-rip and PPD files
 INSTALL_TARGET=	install-exec install-foomatic
 
@@ -29,21 +31,17 @@ INSTALL_TARGET=	install-exec install-foomatic
 CONFLICTS+=		foomatic-filters-*
 USES+=			perl5 shebangfix
 CONFIGURE_ARGS+=	--enable-foomatic-install
-PLIST_SUB+=		FOOMATIC=""
 SHEBANG_FILES=		foomatic-rip
 .else
 CONFIGURE_ARGS+=	--disable-foomatic-install
-PLIST_SUB+=		FOOMATIC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCUPS}
 BUILD_DEPENDS+=		cups-base>0:${PORTSDIR}/print/cups-base
 RUN_DEPENDS+=		cups-base>0:${PORTSDIR}/print/cups-base
 CONFIGURE_ARGS+=	--enable-cups-install
-PLIST_SUB+=		CUPS=""
 .else
 CONFIGURE_ARGS+=	--disable-cups-install
-PLIST_SUB+=		CUPS="@comment "
 .endif
 
 .include <bsd.port.options.mk>
@@ -58,9 +56,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hpijs ${STAGEDIR}${PREFIX}/bin
 .endif
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/gs_hpijs.png ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/hpijs_readme.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/gs_hpijs.png ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/hpijs_readme.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unicorn
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -20,11 +20,10 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 USES=		shebangfix
-SHEBANG_FILES=	test/aggregate.rb
 
 PLIST_FILES=	bin/unicorn bin/unicorn_rails
 
-post-patch:
-	@${REINPLACE_CMD} -e '1s|#!/.*ruby|#!${ruby_CMD}|' ${WRKSRC}/bin/unicorn*
+SHEBANG_FILES=	bin/unicorn* test/aggregate.rb
+ruby_OLD_CMD=	.*ruby
 
 .include <bsd.port.mk>

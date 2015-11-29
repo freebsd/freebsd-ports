@@ -1,6 +1,6 @@
---- src/effects/VST/VSTEffect.cpp	2015-03-31 23:03:30.000000000 -0700
-+++ src/effects/VST/VSTEffect.cpp	2015-03-01 17:06:58.000000000 -0800
-@@ -2609,7 +2609,7 @@
+--- src/effects/VST/VSTEffect.cpp.orig	2015-07-11 10:02:22 UTC
++++ src/effects/VST/VSTEffect.cpp
+@@ -2576,7 +2576,7 @@ bool VSTEffect::Load()
     // symbols.
     //
     // Once we define a proper external API, the flags can be removed.

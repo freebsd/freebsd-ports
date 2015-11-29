@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvdstyler
-PORTVERSION=	2.9.3
+PORTVERSION=	2.9.4
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
@@ -33,9 +33,8 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 USES=		autoreconf compiler:c++11-lib gettext gmake pkgconfig tar:bzip2
 USE_CXXSTD=	gnu++11
 USE_WX=		3.0
-GNU_CONFIGURE=	yes
-WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_AVCONV_PATH="" OBJCXX="${CXX}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include

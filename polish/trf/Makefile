@@ -9,9 +9,11 @@ MASTER_SITES=	http://korzen.org/soft/trf/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Billing software for traffic counting working with most Polish ISPs
 
+LICENSE=	GPLv2 # or later
+
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README CHANGELOG
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}

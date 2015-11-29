@@ -397,6 +397,7 @@ share/applications/tortoisehg.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tortoisehg.mo
+%%NLS%%share/locale/th/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/tortoisehg.mo

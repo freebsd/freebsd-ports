@@ -10,6 +10,9 @@ MASTER_SITES=	SFJP/ochusha/16560
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI BBS browser for 2ch.net
 
+DEPRECATED=	Development ceased in 2008, other options available
+EXPIRATION_DATE=	2015-12-25
+
 USES=		libtool pkgconfig tar:bzip2
 USE_GNOME=	glib20 gtk20 libxml2
 GNU_CONFIGURE=	yes

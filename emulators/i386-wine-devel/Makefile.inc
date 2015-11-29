@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.7.53
+PORTVERSION=	1.7.55
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -52,9 +52,13 @@ MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.6.msi:${PORTSDIR}/emulators/wine
 .if ${OSREL:C/\..*//} == ${osrel}
 PLIST_SUB+=	OSREL${osrel}=""
 .if ${PKGNAMESUFFIX} == -devel
+PLIST_SUB+=	DEVEL=""
+PLIST_SUB+=	STAGING="@comment "
 PLIST_SUB+=	OSREL${osrel}-DEVEL=""
 PLIST_SUB+=	OSREL${osrel}-STAGING="@comment "
 .else
+PLIST_SUB+=	DEVEL="@comment "
+PLIST_SUB+=	STAGING=""
 PLIST_SUB+=	OSREL${osrel}-DEVEL="@comment "
 PLIST_SUB+=	OSREL${osrel}-STAGING=""
 .endif
@@ -65,9 +69,13 @@ PLIST_SUB+=	OSREL${osrel}-STAGING="@comment "
 .endif
 .endfor
 
-.if ${OPSYS} != FreeBSD || (!(${OSVERSION} < 1000000) && !(${OSVERSION} >= 1001000 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1100077 && ${OSVERSION} < 1200000))
+.if ${OPSYS} != FreeBSD || (!(${OSVERSION} < 1000000) && !(${OSVERSION} >= 1001000 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1100085 && ${OSVERSION} < 1200000))
 IGNORE=		binaries compiled for FreeBSD 9.3+, 10.1+ and -current only
 DISTFILES=
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100085
+BROKEN=		unable to build binaries due to packaging issues with gnutls and git.
 .endif
 
 do-extract:

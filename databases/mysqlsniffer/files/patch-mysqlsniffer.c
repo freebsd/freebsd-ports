@@ -1,5 +1,5 @@
---- mysqlsniffer.c.ori	2006-08-18 16:52:52.000000000 +0200
-+++ mysqlsniffer.c	2010-05-26 14:01:24.000000000 +0200
+--- mysqlsniffer.c.orig	2006-08-18 14:52:52 UTC
++++ mysqlsniffer.c
 @@ -31,6 +31,7 @@
  #include <getopt.h>
  #include <signal.h>

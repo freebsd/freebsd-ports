@@ -2,39 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	mcstas
-PORTVERSION=	2.1
+PORTVERSION=	2.2a
 CATEGORIES=	science
-MASTER_SITES=	http://download.mcstas.org/${PORTNAME}-${PORTVERSION}/unix/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-DISTFILES=	McStas-${PORTVERSION}-UNIX-src.tar.gz
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://download.mcstas.org/${PORTNAME}-${PORTVERSION}/unix/McStas-${PORTVERSION}-UNIX-src/
+DISTNAME=	mcstas-${PORTVERSION}-src
 
 MAINTAINER=	erkn@fysik.dtu.dk
 COMMENT=	Monte Carlo neutron ray tracing package
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
-
-USES=		cmake gmake bison:build
-#should perhaps use the toolchain file - but remember the arch
+USES=		bison:build cmake gmake
 CMAKE_ARGS=	"-Denable_mcstas=1"
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-# this is necessary since mcxtrace and mcstas are packaged in a
-# single tarball in which the kernel, component library, manual,
-# and tool tarballs reside
-post-fetch:
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-	cd ${DISTDIR}/${DIST_SUBDIR};\
-	${TAR} --strip-components 1 -xzf ${DISTFILES} McStas-2.1-UNIX-src/${DISTNAME}.tar.gz;
-.endif
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+SUB_FILES=	pkg-deinstall pkg-install
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/2.1/bin/mcstas
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/2.1/bin/mcformat
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/bin/mcformat
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/bin/mcstas
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

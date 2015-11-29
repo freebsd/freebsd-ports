@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librtmp
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0:${PORTSDIR}/devel/py-cffi
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}singledispatch>=0:${PORTSDIR}/devel/py-singledispatch
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0:${PORTSDIR}/devel/py-cffi
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -23,4 +23,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3400
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>=0:${PORTSDIR}/devel/py-singledispatch
+.endif
+
+.include <bsd.port.post.mk>

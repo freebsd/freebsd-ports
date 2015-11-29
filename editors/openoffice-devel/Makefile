@@ -139,7 +139,8 @@ JAVA_VERSION=	1.6+
 USE_PERL5=	build
 USE_XORG=	ice x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
 		xrandr xrender xt
-USES=		autoreconf:autoconf bison compiler cpe desktop-file-utils \
+USES=		autoreconf:autoconf bison compiler:c++11-lib cpe \
+		desktop-file-utils \
 		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
 		tar:${TARTYPE}
 INSTALLS_ICONS=	yes
@@ -184,8 +185,6 @@ WIKI_PUBLISHER_CONFIGURE_ENABLE=	wiki-publisher
 
 .if ${COMPILER_TYPE} == clang
 CPPFLAGS+=		-I${LOCALBASE}/include
-.else
-USE_GCC=		yes
 .endif
 
 .if ${ARCH} == amd64

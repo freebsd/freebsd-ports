@@ -30,6 +30,8 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/lib/libglui.so \
 		${STAGEDIR}${PREFIX}/lib/libglui.so.0
 	${LN} -s libglui.so.0 ${STAGEDIR}${PREFIX}/lib/libglui.so
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/glui_manual.pdf ${STAGEDIR}${DOCSDIR}
 

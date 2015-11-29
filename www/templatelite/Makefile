@@ -14,6 +14,7 @@ LICENSE=	LGPL21 # pr later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_PHP=	pcre
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/template_lite
@@ -21,14 +22,12 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/src && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

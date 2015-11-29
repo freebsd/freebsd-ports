@@ -1,3 +1,4 @@
+--- UTC
 r110506 | des | 2003-02-07 09:48:27 -0600 (Fri, 07 Feb 2003) | 4 lines
 
 Set the ruid to the euid at startup as a workaround for a bug in pam_ssh.

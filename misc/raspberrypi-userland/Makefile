@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	raspberrypi-userland
-PORTVERSION=	20150501
+PORTVERSION=	20151105
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	mikael.urankar@gmail.com
@@ -17,7 +18,7 @@ CONFLICTS_INSTALL=	libglesv2 libEGL
 USE_GITHUB=	yes
 GH_ACCOUNT=	gonzoua
 GH_PROJECT=	userland
-GH_TAGNAME=	11ffc75
+GH_TAGNAME=	fcbf8a3
 
 USE_LDCONFIG=	yes
 

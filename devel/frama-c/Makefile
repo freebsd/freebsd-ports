@@ -4,14 +4,13 @@
 PORTNAME=	frama-c
 DISTVERSIONPREFIX=	Sodium-
 DISTVERSION=	20150201
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://frama-c.com/download/
+DIST_SUBDIR=	framac-01
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible platform for source-code analysis of C
-
-BROKEN=		unfetchable
 
 LICENSE=	LGPL21
 

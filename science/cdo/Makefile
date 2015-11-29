@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--disable-cgribex \
 		--disable-extra \
 		--disable-grib \
 		--disable-ieg \
+		--disable-openmp \
 		--disable-service \
 		--enable-cdi-lib \
 		--program-transform-name="" \

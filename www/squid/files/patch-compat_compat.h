@@ -1,4 +1,4 @@
---- compat/compat.h.orig	2015-08-01 06:08:17 UTC
+--- compat/compat.h.orig	2015-11-01 10:44:25 UTC
 +++ compat/compat.h
 @@ -42,17 +42,6 @@
  #endif

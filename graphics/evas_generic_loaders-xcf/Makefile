@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcf
-PORTVERSION=	1.15.0
+PORTVERSION=	1.16.0
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PKGNAMEPREFIX:S/-//}/
 PKGNAMEPREFIX=	evas_generic_loaders-

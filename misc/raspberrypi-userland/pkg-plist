@@ -12,10 +12,12 @@ bin/containers_uri_pipe
 bin/mmal_vc_diag
 bin/raspistill
 bin/raspivid
+bin/raspividyuv
 bin/raspiyuv
 bin/tvservice
 bin/vcgencmd
 bin/vchiq_test
+bin/vcmailbox
 bin/vcsmem
 include/EGL/egl.h
 include/EGL/eglext.h
@@ -52,6 +54,7 @@ include/interface/mmal/core/mmal_buffer_private.h
 include/interface/mmal/core/mmal_clock_private.h
 include/interface/mmal/core/mmal_component_private.h
 include/interface/mmal/core/mmal_core_private.h
+include/interface/mmal/core/mmal_events_private.h
 include/interface/mmal/core/mmal_port_private.h
 include/interface/mmal/mmal.h
 include/interface/mmal/mmal_buffer.h
@@ -284,6 +287,7 @@ sbin/vcfiled
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hello_fft.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hello_fft_2d.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hello_fft_2d_bitmap.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_4096k.hex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_1024k.hex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_128k.hex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_16k.hex
@@ -303,6 +307,7 @@ sbin/vcfiled
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/mailbox.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft.qinc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_4096k.qasm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_1024k.qasm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_128k.qasm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_16k.qasm

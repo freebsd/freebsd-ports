@@ -1,6 +1,6 @@
---- signals.c.orig	Fri Sep  6 22:52:25 2002
-+++ signals.c	Fri Sep  6 22:52:56 2002
-@@ -93,7 +93,7 @@
+--- signals.c.orig	1995-04-06 16:25:04 UTC
++++ signals.c
+@@ -93,7 +93,7 @@ kill_handler(sig)
  static void quit_handler(int sig)
  {
  	int pid;
@@ -9,7 +9,7 @@
      int status;
  #else
      union wait status;
-@@ -102,7 +102,7 @@
+@@ -102,7 +102,7 @@ static void quit_handler(int sig)
      /*  wait for the child to report its status; if the child has died, 
       *  exit gracefully.
       */

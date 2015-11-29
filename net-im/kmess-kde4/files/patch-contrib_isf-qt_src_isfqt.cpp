@@ -72,10 +72,15 @@
        {
          qWarning() << "EGifPutExtensionLast (0) failed!";
          goto writeError;
-@@ -624,12 +648,16 @@ QByteArray Stream::writerGif( const Draw
+@@ -623,13 +647,21 @@ QByteArray Stream::writerGif( const Draw
+ 
  writeError:
    // Clean up the GIF converter etc
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++  EGifCloseFile( gifImage, NULL );
++#else
    EGifCloseFile( gifImage );
++#endif
 +#if GIFLIB_MAJOR >= 5
 +  GifFreeMapObject( cmap );
 +#else

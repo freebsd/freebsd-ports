@@ -22,8 +22,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		git:${PORTSDIR}/devel/git \
 		beadm:${PORTSDIR}/sysutils/beadm \
 		samba41>=0:${PORTSDIR}/net/samba41 \
-		foomatic-db>=0:${PORTSDIR}/print/foomatic-db \
-		foomatic-db-engine>=0:${PORTSDIR}/print/foomatic-db-engine \
 		xorg>=0:${PORTSDIR}/x11/xorg \
 		xf86-input-synaptics>=0:${PORTSDIR}/x11-drivers/xf86-input-synaptics \
 		xf86-video-intel>=0:${PORTSDIR}/x11-drivers/xf86-video-intel \
@@ -37,12 +35,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		qt4-style-qtcurve>=0:${PORTSDIR}/x11-themes/qtcurve-qt4 \
 		gtk-theme-switch>=0:${PORTSDIR}/x11/gtk-theme-switch2 \
 		alsa-lib>=0:${PORTSDIR}/audio/alsa-lib \
-		nspluginwrapper:${PORTSDIR}/www/nspluginwrapper \
-		linux_base-c6>=0:${PORTSDIR}/emulators/linux_base-c6 \
-		linux-c6-flashplugin>=0:${PORTSDIR}/www/linux-c6-flashplugin11 \
-		linux-c6-alsa-lib>=0:${PORTSDIR}/audio/linux-c6-alsa-lib \
-		linux-c6-alsa-plugins-oss>=0:${PORTSDIR}/audio/linux-c6-alsa-plugins-oss \
-		linux-c6-openssl-compat>=0:${PORTSDIR}/security/linux-c6-openssl-compat \
 		fluxbox:${PORTSDIR}/x11-wm/fluxbox \
 		fluxbox-tenr-styles-pack>=0:${PORTSDIR}/x11-themes/fluxbox-tenr-styles-pack \
 		${LOCALBASE}/etc/rc.d/fail2ban:${PORTSDIR}/security/py-fail2ban \
@@ -53,7 +45,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		ssh-askpass:${PORTSDIR}/security/openssh-askpass \
-		vim:${PORTSDIR}/editors/vim \
 		cups-pdf>=0:${PORTSDIR}/print/cups-pdf \
 		cups-filters>=0:${PORTSDIR}/print/cups-filters \
 		cups-bjnp>=0:${PORTSDIR}/print/cups-bjnp \
@@ -65,13 +56,9 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		mtools>=0:${PORTSDIR}/emulators/mtools \
 		nss_mdns>=0:${PORTSDIR}/dns/nss_mdns \
 		rar:${PORTSDIR}/archivers/rar \
-		netatalk>=0:${PORTSDIR}/net/netatalk \
 		cursor-jimmac-theme>=0:${PORTSDIR}/x11-themes/cursor-jimmac-theme \
 		cuse4bsd-kmod>=0:${PORTSDIR}/multimedia/cuse4bsd-kmod \
 		webcamd>=0:${PORTSDIR}/multimedia/webcamd \
-		gutenprint>=0:${PORTSDIR}/print/gutenprint \
-		gutenprint-cups>=0:${PORTSDIR}/print/gutenprint-cups \
-		gutenprint-foomatic>=0:${PORTSDIR}/print/gutenprint-foomatic \
 		system-config-printer:${PORTSDIR}/print/system-config-printer \
 		numlockx:${PORTSDIR}/x11/numlockx \
 		pciutils>=0:${PORTSDIR}/sysutils/pciutils \

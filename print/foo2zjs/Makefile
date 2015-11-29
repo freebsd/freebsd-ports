@@ -12,6 +12,9 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for printers that use the ZjStream wire protocol
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:${PORTSDIR}/print/foomatic-db \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
@@ -24,7 +27,7 @@ SUB_FILES=	pkg-message ${DEVDCONF_FILE}
 EXTRAFILES=	msexpand getweb
 DEVDCONF_FILE=	${PORTNAME}.conf
 
-MAKE_JOBS_UNSAFE=	YES
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -38,6 +41,8 @@ post-install:
 	cd ${WRKDIR} && \
 		${INSTALL_SCRIPT} ${DEVDCONF_FILE} ${STAGEDIR}${PREFIX}/etc/devd
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/foo2zjs-icc2ps
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ChangeLog INSTALL README manual.pdf
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}

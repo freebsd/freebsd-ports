@@ -13,6 +13,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Object-oriented implementation of Sender Policy Framework
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error \
 		p5-Net-DNS>=0.62:${PORTSDIR}/dns/p5-Net-DNS \

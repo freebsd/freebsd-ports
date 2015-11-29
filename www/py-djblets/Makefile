@@ -1,31 +1,28 @@
 # $FreeBSD$
 
 PORTNAME=	djblets
-PORTVERSION=	0.7.28
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	www python
-MASTER_SITES=	http://downloads.reviewboard.org/releases/Djblets/${PORTVERSION:R}/
+MASTER_SITES=	http://downloads.reviewboard.org/releases/Djblets/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Djblets-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of useful classes and functions for Django
 
-DEPRECATED=	Django 1.4 extended support ended on 2015-10-01
-EXPIRATION_DATE=	2015-12-09
-
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>=1.4.3:${PORTSDIR}/www/py-django14 \
-		${PYTHON_PKGNAMEPREFIX}django-pipeline12>=1.2.24:${PORTSDIR}/www/py-django-pipeline12
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>=1.4.3:${PORTSDIR}/www/py-django14 \
-		${PYTHON_PKGNAMEPREFIX}django-pipeline12>=1.2.24:${PORTSDIR}/www/py-django-pipeline12 \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:${PORTSDIR}/www/py-django16 \
+		${PYTHON_PKGNAMEPREFIX}django-pipeline14>=1.4.7:${PORTSDIR}/www/py-django-pipeline14 \
+		uglifyjs:${PORTSDIR}/www/uglifyjs
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:${PORTSDIR}/www/py-django16 \
+		${PYTHON_PKGNAMEPREFIX}django-pipeline14>=1.4.7:${PORTSDIR}/www/py-django-pipeline14 \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.2:${PORTSDIR}/textproc/py-feedparser \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 
 USES=		python:2 shebangfix
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils autoplist
 PYDISTUTILS_PKGNAME=	Djblets
 
 SHEBANG_FILES=	contrib/internal/build-media.py

@@ -5,7 +5,7 @@ PORTNAME=	Net_IPv6
 DISTVERSION=	1.2.1
 CATEGORIES=	net pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Check and validate IPv6 addresses
 
 USES=	pear

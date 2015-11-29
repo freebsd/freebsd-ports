@@ -1,6 +1,6 @@
---- tty-keys.c.orig	2015-05-05 20:21:51 UTC
+--- tty-keys.c.orig	2015-09-27 09:42:08 UTC
 +++ tty-keys.c
-@@ -556,8 +556,6 @@ first_key:
+@@ -545,8 +545,6 @@ first_key:
  	 * used. termios should have a better idea.
  	 */
  	bspace = tty->tio.c_cc[VERASE];

@@ -4,4 +4,4 @@ running the read/write communication asynchronously. Memory copies
 and transformations are kept to a minimum to provide high
 performance operation.
 
-WWW: http://code.google.com/p/serf/
+WWW: http://serf.apache.org/

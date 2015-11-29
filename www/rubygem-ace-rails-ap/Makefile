@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ace-rails-ap
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ajax.org Cloud9 Editor (Ace) for the Rails 3.1 asset pipeline
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes

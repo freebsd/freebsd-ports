@@ -1,5 +1,5 @@
---- psgml-dtd.el.orig	2005-03-06 01:23:40.000000000 +0900
-+++ psgml-dtd.el	2012-08-04 11:56:25.000000000 +0900
+--- psgml-dtd.el.orig	2005-03-05 16:23:40 UTC
++++ psgml-dtd.el
 @@ -93,12 +93,12 @@
  (defmacro sgml-for-all-final-states (s dfa &rest forms)
    "For all final states S in DFA do FORMS.
@@ -18,7 +18,7 @@
  
  (put 'sgml-for-all-final-states 'lisp-indent-hook 2)
  (put 'sgml-for-all-final-states 'edebug-form-hook '(symbolp &rest form))
-@@ -217,7 +217,7 @@
+@@ -217,7 +217,7 @@ Syntax: var dfa-expr &body forms"
  (defun sgml-make-pcdata ()
    (sgml-make-* (sgml-make-primitive-content-token sgml-pcdata-token)))
  
@@ -27,7 +27,7 @@
    (while (cdr l)
      (setcar (cdr l)
  	    (sgml-make-conc (car l) (cadr l)))
-@@ -279,7 +279,7 @@
+@@ -279,7 +279,7 @@ Syntax: var dfa-expr &body forms"
  	  (sgml-parse-delim "CRO" (digit nmstart))
  	(sgml-parse-delim "CRO" (digit)))
        (prog1 (if (sgml-is-delim "NULL" digit)
@@ -36,7 +36,7 @@
  	       (let ((spec (sgml-check-name)))
  		 (or (cdr (assoc spec '(("RE" . 10)
  					("RS" . 1)
-@@ -336,7 +336,7 @@
+@@ -336,7 +336,7 @@ Syntax: var dfa-expr &body forms"
  (defsubst sgml-parse-connector ()
    (sgml-skip-ps)
    (cond ((sgml-parse-delim "SEQ")
@@ -45,7 +45,7 @@
  	((sgml-parse-delim "OR")
  	 (function sgml-reduce-|))
  	((sgml-parse-delim "AND")
-@@ -884,10 +884,10 @@
+@@ -884,10 +884,10 @@ Syntax: (var seq) &body forms
  FORMS should produce the binary coding of element in VAR."
    (let ((var (car loop-c))
  	(seq (cadr loop-c)))

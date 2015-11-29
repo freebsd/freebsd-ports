@@ -27,7 +27,8 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CPPFLAGS+=		-DPLUGIN_LIBDIR=\\\"${PREFIX}/lib/openvpn/plugins\\\"
 
-OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME
+OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME \
+			TUNNELBLICK
 OPTIONS_DEFAULT=	EASYRSA OPENSSL
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL POLARSSL
@@ -35,7 +36,8 @@ PW_SAVE_DESC=		Interactive passwords may be read from a file
 PKCS11_DESC=		Use security/pkcs11-helper
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 POLARSSL_DESC=		SSL/TLS support via PolarSSL 1.2
-X509ALTUSERNAME_DESC=	Enable --x509-username-field (only with OpenSSL)
+TUNNELBLICK_DESC=	Tunnelblick XOR scramble patch (READ HELP!)
+X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:${PORTSDIR}/security/easy-rsa
 
@@ -43,6 +45,8 @@ PKCS11_LIB_DEPENDS=	libpkcs11-helper.so:${PORTSDIR}/security/pkcs11-helper
 PKCS11_CONFIGURE_ENABLE=	pkcs11
 
 PW_SAVE_CONFIGURE_ENABLE=	password-save
+
+TUNNELBLICK_EXTRA_PATCHES=	${FILESDIR}/extra-tunnelblick-openvpn_xorpatch
 
 X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
 

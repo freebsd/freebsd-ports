@@ -12,3 +12,27 @@
      if (!I->us) {
          I->err = IE_HDRFORMAT;
          return 0;
+@@ -36,7 +40,11 @@ int gif_load_hdr(img I) {
+  * Abort loading a GIF file after the header is done.
+  */
+ int gif_abort_load(img I) {
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++    DGifCloseFile((GifFileType*)I->us, NULL);
++#else
+     DGifCloseFile((GifFileType*)I->us);
++#endif
+     return 1;
+ }
+ 
+@@ -114,7 +122,11 @@ int gif_load_img(img I) {
+     ret = 1;
+ fail:
+ 
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++    DGifCloseFile(g, NULL);
++#else
+     DGifCloseFile(g);
++#endif
+     
+     return ret;
+ }

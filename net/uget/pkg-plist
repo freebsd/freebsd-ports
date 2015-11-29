@@ -43,6 +43,7 @@ share/icons/hicolor/scalable/apps/uget-icon.svg
 %%NLS%%share/locale/it/LC_MESSAGES/uget.mo
 %%NLS%%share/locale/ka_GE/LC_MESSAGES/uget.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/uget.mo
 %%NLS%%share/locale/or_IN/LC_MESSAGES/uget.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/uget.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/uget.mo

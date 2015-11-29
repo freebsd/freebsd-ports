@@ -10,6 +10,8 @@ COMMENT=	Illumos name-value pair library
 
 LICENSE=	CDDL
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 GH_ACCOUNT=	jrmarino
 USE_GITHUB=	yes
 

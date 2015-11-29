@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	networkx
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	math python
 MASTER_SITES=	http://networkx.lanl.gov/download/networkx/ \
 		CHEESESHOP
@@ -19,31 +18,34 @@ RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}decorator>=3.4.0:${PORTSDIR}/devel/py-decor
 #		${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.3:${PORTSDIR}/textproc/py-sphinx \
 #		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:${PORTSDIR}/textproc/py-docutils
 
-USES=		python shebangfix
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python:2 shebangfix
+USE_PYTHON=	autoplist concurrent distutils
 
 PLIST_SUB+=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER}
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES YAML
 OPTIONS_GROUP=	MATRIX RENDER
 OPTIONS_GROUP_MATRIX=	NUMPY SCIPY
 OPTIONS_GROUP_RENDER=	MPL GRAPHVIZ
-OPTIONS_DEFAULT=	NUMPY SCIPY MPL GRAPHVIZ
+OPTIONS_DEFAULT=	NUMPY SCIPY MPL GRAPHVIZ YAML
 
-NUMPY_DESC=	Support matrix representation of graphs
+NUMPY_DESC=	Matrix representation of graphs
 NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.2:${PORTSDIR}/math/py-numpy
 
-SCIPY_DESC=	Support sparse matrix representation of graphs
+SCIPY_DESC=	Sparse matrix representation of graphs
 SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.15.1:${PORTSDIR}/science/py-scipy \
 			${PYTHON_PKGNAMEPREFIX}scikit-sparse>=0.2:${PORTSDIR}/science/py-scikit-sparse
 
-MPL_DESC=	Support flexible graph rendering
+MPL_DESC=	Flexible graph rendering
 MPL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.0:${PORTSDIR}/math/py-matplotlib
 
-GRAPHVIZ_DESC=	Support additional graph layout and rendering algorithms
+GRAPHVIZ_DESC=	Additional graph layout and rendering algorithms
 GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>=1.2:${PORTSDIR}/graphics/py-graphviz
 
-EXAMPLESDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
+YAML_DESC=	Reading and writing YAML files
+YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml
+
 PORTEXAMPLES=	*
 
 post-install:

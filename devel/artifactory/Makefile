@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	artifactory
-PORTVERSION=	4.2.2
+PORTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://bintray.com/artifact/download/jfrog/artifactory/
 DISTNAME=	jfrog-${PORTNAME}-oss-${PORTVERSION}
@@ -11,7 +12,9 @@ COMMENT=	Universal Artifact Repository Manager
 
 LICENSE=	GPLv3 LGPL3 APACHE20
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING ${WRKSRC}/tomcat/LICENSE
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LESSER
+LICENSE_FILE_APACHE20=	${WRKSRC}/tomcat/LICENSE
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
@@ -24,7 +27,6 @@ SHEBANG_FILES=	bin/artifactory.sh
 NO_BUILD=	yes
 JAVA_VERSION=	1.8+
 JAVA_VENDOR=	openjdk
-ONLY_FOR_ARCHS=	i386 amd64
 USE_RC_SUBR=	${PORTNAME}
 
 APP_NAME=	${PORTNAME}
@@ -68,7 +70,7 @@ do-install:
 	${LN} -sf ${VARDIR}/tomcat/${d} ${STAGEDIR}${PREFIX}/${APP_HOME}/tomcat/${d}
 .endfor
 
-.for d in data backup
+.for d in data backup support
 	${MKDIR} ${STAGEDIR}/${VARDIR}/${d}
 	${LN} -sf ${VARDIR}/${d} ${STAGEDIR}${PREFIX}/${APP_HOME}/${d}
 .endfor

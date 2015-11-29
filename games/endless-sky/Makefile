@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	endless-sky
-PORTVERSION=	0.8.4
-DISTVERSIONPREFIX=	v
+PORTVERSION=	0.8.7
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE=	GPLv3 # or later
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-BROKEN_FreeBSD_9=	does not build
+BROKEN_FreeBSD_9=	does not build # revisit when ports gcc is switched to 4.9
 
 USE_GITHUB=	yes
 

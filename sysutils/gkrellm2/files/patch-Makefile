@@ -1,7 +1,5 @@
-Index: Makefile
-diff -u Makefile.orig Makefile
---- Makefile.orig	2010-10-03 01:21:01.000000000 +0900
-+++ Makefile	2014-06-18 01:31:33.764515607 +0900
+--- Makefile.orig	2010-10-02 16:21:01 UTC
++++ Makefile
 @@ -3,7 +3,9 @@
  #	make
  # For FreeBSD 2.X:

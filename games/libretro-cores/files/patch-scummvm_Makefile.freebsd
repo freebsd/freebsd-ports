@@ -1,0 +1,5 @@
+--- scummvm/Makefile.freebsd.orig	2015-11-10 19:32:17 UTC
++++ scummvm/Makefile.freebsd
+@@ -0,0 +1,2 @@
++all:
++	cd backends/platform/libretro/build && ${MAKE}

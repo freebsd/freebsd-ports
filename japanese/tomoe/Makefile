@@ -39,6 +39,7 @@ PYTHON_USE=		GNOME=pygtk2
 PYTHON_USES=		python
 PYTHON_CONFIGURE_OFF=	--with-python=no
 RUBY_DESC=		Enable Ruby module
+RUBY_BROKEN=		Does not build
 RUBY_USE=		RUBY=yes
 RUBY_CONFIGURE_OFF=	--with-ruby=no
 RUBY_BUILD_DEPENDS=	rubygem-glib2>0:${PORTSDIR}/devel/rubygem-glib2
@@ -46,29 +47,19 @@ RUBY_RUN_DEPENDS=	rubygem-glib2>0:${PORTSDIR}/devel/rubygem-glib2
 RUBY_CFLAGS=		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
 			-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 UNIHAN_DESC=		Enable Unihan database dictionary module
-UNIHAN_CONFIGURE_ENABLE=	unihan
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRUBY}
-BROKEN=		Broken with gem version of glib2
-.endif
-
-.if ${PORT_OPTIONS:MUNIHAN}
-BROKEN=		Broken with Unihan with gcc 4.2
-MASTER_SITES+=	ftp://ftp.unicode.org/Public/UNIDATA/:unihan
-DISTFILES+=	Unihan.zip:unihan
-EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS+=	\
+UNIHAN_BROKEN=		Does not build
+UNIHAN_MASTER_SITES=	ftp://ftp.unicode.org/Public/UNIDATA/:unihan
+UNIHAN_DISTFILES=	Unihan.zip:unihan
+UNIHAN_EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+UNIHAN_BUILD_DEPENDS=	\
 	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv \
 	${RUBY_SITELIBDIR}/suikyo/suikyo.rb:${PORTSDIR}/japanese/suikyo
-.endif
+UNIHAN_USE=		RUBY=yes
+UNIHAN_CONFIGURE_ENABLE=unihan
 
-.if ${PORT_OPTIONS:MUNIHAN}
-post-extract:
+post-extract-UNIHAN-on:
 	cd ${WRKSRC}/module/dict && \
 		${UNZIP_CMD} -qo ${DISTDIR}/Unihan.zip -d ${WRKSRC}/module/dict
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/ge.*\.h>|glib.h>|g' \

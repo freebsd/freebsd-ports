@@ -155,8 +155,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} -wpi.bak \
 		-e 's/\$$\*\.Tpo/$$&.$$./g'
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
@@ -170,6 +169,5 @@ post-install:
 .endfor
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README \
 		${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>

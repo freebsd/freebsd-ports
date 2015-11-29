@@ -295,6 +295,7 @@ share/gtk-doc/html/libvirt/up.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/zu/LC_MESSAGES/libvirt.mo
+%%BHYVE%%lib/libvirt/connection-driver/libvirt_driver_bhyve.so
 %%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.so
 lib/libvirt/connection-driver/libvirt_driver_network.so
 lib/libvirt/connection-driver/libvirt_driver_secret.so

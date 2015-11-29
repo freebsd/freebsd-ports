@@ -10,12 +10,19 @@ MASTER_SITES=	CHEESESHOP/source/y/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pronounceable word generator
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+
 PORTDOCS=	NEWS.txt README.txt
 
-post-install:
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
-	@cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

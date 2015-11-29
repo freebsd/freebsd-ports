@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mc
-PORTVERSION=	4.8.14
-PORTREVISION=	1
+PORTVERSION=	4.8.15
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		http://ftp.osuosl.org/pub/midnightcommander/ \
@@ -48,18 +47,24 @@ EDITOR_CONFIGURE_WITH=	internal-edit
 ICONV_USES=		iconv
 ICONV_CONFIGURE_ENABLE=	charset
 
+NCURSES_CONFIGURE_ON=	--with-screen=ncurses
+
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+NLS_CPPFLAGS=		-I${LOCALBASE}/include
+NLS_LDFLAGS=		-L${LOCALBASE}/lib
 
 SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_CONFIGURE_ON=	--with-screen=slang --with-slang-includes=${LOCALBASE}/include
 
 SMB_CONFIGURE_ENABLE=	vfs-smb
-SMB_CONFIGURE_ON=	--with-smb-configdir=${LOCALBASE}/etc \
-			--with-smb-codepagedir=${LOCALBASE}/etc/codepages
+SMB_CONFIGURE_WITH=	smb-configdir=${LOCALBASE}/etc \
+			smb-codepagedir=${LOCALBASE}/etc/codepages
 
-SUBSHELL_CONFIGURE_WITH=	subshell
+SUBSHELL_CONFIGURE_WITH=subshell
 
 X11_CONFIGURE_ENABLE=	x
+X11_USE=		xorg=x11,xext
 
 PORTDOCS=	*
 
@@ -69,25 +74,6 @@ DOC_FILES1=	AUTHORS NEWS README
 DOCSRCDIR2=	${WRKSRC}/doc
 DOCSDIR2=	${DOCSDIR}/doc
 DOC_FILES2=	FAQ HACKING MAINTAINERS *.txt
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
-.if${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xext
-.endif
-
-.if ${PORT_OPTIONS:MSLANG}
-CONFIGURE_ARGS+=--with-screen=slang --with-slang-includes=${LOCALBASE}/include
-.endif
-
-.if ${PORT_OPTIONS:MNCURSES}
-CONFIGURE_ARGS+=--with-screen=ncurses
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|missing-parameter-type|unused-variable|; \

@@ -13,12 +13,13 @@ COMMENT=	Online presence and instant messaging server
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libgsasl.so:${PORTSDIR}/security/gsasl \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libudns.so:${PORTSDIR}/dns/udns
 
 OPTIONS_DEFINE=	MYSQL PGSQL LDAP BDB SQLITE PAM PIPE ANON FS DEBUG REQUIRES \
-		DOCS SUPERSEDED EXPERIMENTAL GSASL
-OPTIONS_DEFAULT=MYSQL DEBUG GSASL
+		DOCS SUPERSEDED EXPERIMENTAL
+OPTIONS_DEFAULT=MYSQL DEBUG
 OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
@@ -32,6 +33,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir=${PREFIX}/etc/jabberd \
 		--enable-ssl --enable-mio=kqueue \
 		--disable-tests \
+		--with-sasl=gsasl \
 		--with-extra-include-path="${LOCALBASE}/include ${EIP}" \
 		--with-extra-library-path="${LOCALBASE}/lib ${ELP}"
 
@@ -91,14 +93,6 @@ PIPE_DESC=		Enable pipe (auth/reg)
 
 ANON_CONFIGURE_ENABLE=	anon
 ANON_DESC=		Enable anonymous (auth/reg)
-
-#CYRUS_CONFIGURE_ON=	--with-sasl=cyrus
-#CYRUS_DESC=		Use Cyrus SASL backend (not supported)
-#CYRUS_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-
-GSASL_CONFIGURE_ON=	--with-sasl=gsasl
-GSASL_DESC=		Use GSASL backend
-GSASL_LIB_DEPENDS=	libgsasl.so:${PORTSDIR}/security/gsasl
 
 SUPERSEDED_CONFIGURE_ENABLE=	superseded
 SUPERSEDED_DESC=	Enable superseded features (ns_TIME)

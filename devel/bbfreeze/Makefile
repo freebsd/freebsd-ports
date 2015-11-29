@@ -23,7 +23,7 @@ PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e '/altgraph/s,==,>=,' ${WRKSRC}/${PYSETUP}
-	@${REINPLACE_CMD} -e '/from altgraph.compat import/d' \
+	@${REINPLACE_CMD} -e '/from altgraph\.compat import/d' \
 		${WRKSRC}/bbfreeze/modulegraph/modulegraph.py
 
 post-install:

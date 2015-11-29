@@ -9,12 +9,12 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	PostgreSQL driver for DBI-for-Ruby
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-dbi>=0.4.0:${PORTSDIR}/databases/rubygem-dbi \
 		rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

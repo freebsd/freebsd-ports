@@ -2,6 +2,7 @@
 
 PORTNAME=	riak2
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/riak/${PORTVERSION:R}/${PORTVERSION}/ \
 	http://downloads.basho.com.s3.amazonaws.com/riak/${PORTVERSION:R}/${PORTVERSION}/ \
@@ -21,12 +22,13 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/riak-erlang/bin/erlc:${PORTSDIR}/lang/erlang-riak
 
-USES=		gmake readline
+USES=		gmake readline shebangfix
+SHEBANG_FILES=	deps/eper/priv/bin/* \
+		../solr-4.7.0-yz-1/example/etc/create-solrtest.keystore.sh
 USE_RC_SUBR=	riak
 USE_GCC=	yes
 
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	Does not build on i386
+BROKEN_i386=	does not build
 
 USERS=		riak
 GROUPS=		riak

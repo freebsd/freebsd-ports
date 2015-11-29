@@ -3,14 +3,15 @@
 
 PORTNAME=	kmess
 PORTVERSION=	2.0.6.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-im kde
 MASTER_SITES=	SF/${PORTNAME}/Latest%20versions/${PORTVERSION}/
 
 MAINTAINER=	syncer@gmail.com
 COMMENT=	MSN Messenger client for KDE
 
-LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca
+LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca \
+		libgif.so:${PORTSDIR}/graphics/giflib
 
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdeprefix kdelibs libkonq automoc4

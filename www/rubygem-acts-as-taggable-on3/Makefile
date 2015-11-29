@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tag a single model on several contexts
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-activerecord4>=4.1.6:${PORTSDIR}/databases/rubygem-activerecord4
 

@@ -1,5 +1,5 @@
---- pg_rdbc1.rb.orig	Fri May 26 03:24:12 2000
-+++ pg_rdbc1.rb	Mon Mar 19 17:44:34 2001
+--- pg_rdbc1.rb.orig	2000-05-26 03:24:12 UTC
++++ pg_rdbc1.rb
 @@ -11,7 +11,7 @@
  require "rdbc1.rb"
  

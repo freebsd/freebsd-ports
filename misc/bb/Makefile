@@ -10,6 +10,9 @@ MASTER_SITES=	SF/aa-project/${PORTNAME}/${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High quality audio-visual demonstration for text terminal
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib \
 		libmikmod.so:${PORTSDIR}/audio/libmikmod
 
@@ -25,8 +28,8 @@ pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -E -e "s@#include +<malloc.h>@#include <stdlib.h>@g" \
 		-e 's, REGISTERS \(3\),,g'
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

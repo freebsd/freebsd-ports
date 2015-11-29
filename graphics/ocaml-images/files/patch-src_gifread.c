@@ -12,7 +12,19 @@
      failwith("DGifOpenFileName");
    }
  
-@@ -200,7 +204,6 @@ value dGifGetLine( value hdl )
+@@ -161,7 +165,11 @@ value dGifCloseFile( value hdl )
+      segmentation faults */
+   ((GifFileType *)hdl)->Image.ColorMap = NULL; 
+ 
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++  DGifCloseFile( (GifFileType *) hdl, NULL );
++#else
+   DGifCloseFile( (GifFileType *) hdl );
++#endif
+   CAMLreturn(Val_unit);
+ }
+ 
+@@ -200,7 +208,6 @@ value dGifGetLine( value hdl )
  
    if( DGifGetLine(GifFile, String_val(buf), GifFile->Image.Width ) 
        == GIF_ERROR ){

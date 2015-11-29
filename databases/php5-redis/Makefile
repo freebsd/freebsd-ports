@@ -11,6 +11,9 @@ COMMENT=	PHP5-Extension for Redis
 
 LICENSE=	PHP301
 
+DEPRECATED=	PHP 5.4 EOL reached, use databases/php55-redis or databases/php56-redis instead
+EXPIRATION_DATE=	2016-01-15
+
 USE_PHP=	session
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes

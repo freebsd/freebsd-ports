@@ -1,12 +1,12 @@
---- src/image/picinfo.h.orig	Sat Jan 31 16:49:01 2004
-+++ src/image/picinfo.h	Sat Jan 31 16:49:59 2004
+--- src/image/picinfo.h.orig	2003-01-04 11:37:22 UTC
++++ src/image/picinfo.h
 @@ -11,8 +11,7 @@
  #include <string.h>
  #include <sys/param.h>
  #include <sys/types.h>
 -#ifndef __FreeBSD__                                                            
 -#elif ! defined __OpenBSD__
-+#if ! defined __OpenBSD__ && ! defined __FreeBSD__
++#if ! defined __OpenBSD__ && ! defined __FreeBSD__ && ! defined __DragonFly__
  #include <malloc.h>
  #endif
  #include <fcntl.h>

@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2010-07-12 19:38:08.000000000 +0800
-+++ doc/Makefile.in	2010-07-31 18:52:50.000000000 +0800
-@@ -189,7 +189,7 @@
+--- doc/Makefile.in.orig	2012-02-08 23:32:11 UTC
++++ doc/Makefile.in
+@@ -197,7 +197,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@

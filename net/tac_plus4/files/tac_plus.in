@@ -23,7 +23,7 @@
 name=tac_plus
 rcvar=tac_plus_enable
 
-command="%%PREFIX%%/bin/tac_plus"
+command="%%PREFIX%%/sbin/tac_plus"
 pidfile="/var/run/${name}.pid"
 tac_plus_enable=${tac_plus_enable:-"NO"}
 tac_plus_flags=${tac_plus_flags:-}

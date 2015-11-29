@@ -5,7 +5,7 @@ PORTNAME=	Validate_Finance_CreditCard
 PORTVERSION=	0.5.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR CreditCard Validation class
 
 USES=	pear

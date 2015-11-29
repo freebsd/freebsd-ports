@@ -1,0 +1,9 @@
+--- emux/Makefile.freebsd.orig	2015-11-10 19:32:17 UTC
++++ emux/Makefile.freebsd
+@@ -0,0 +1,6 @@
++all:
++	cd libretro && \
++		${MAKE} -f Makefile.bsd MACHINE=chip8 && \
++		${MAKE} -f Makefile.bsd MACHINE=gb && \
++		${MAKE} -f Makefile.bsd MACHINE=nes && \
++		${MAKE} -f Makefile.bsd MACHINE=sms

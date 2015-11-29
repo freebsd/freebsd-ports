@@ -6,24 +6,23 @@ DISTVERSION=	14.09
 PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cjr@cruwe.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	R support for Emacsen
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	R:${PORTSDIR}/math/R
 
 USE_EMACS=	yes
-USES=		gmake
+USES=		gmake tar:tgz
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 DOCS_USES=	makeinfo
 DOCS_INFO=	ess
-
-.include <bsd.port.options.mk>
 
 #attention, dirty hack: because 'ETCDIR =' is typed _with_ trailing
 #space in Makefile, $STAGEDIR append fails without the additional
@@ -43,16 +42,12 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e "s|\$$(INSTALL)|${INSTALL_SCRIPT}|g" \
 		${WRKSRC}/lisp/Makefile
 
-post-build:
-.if ${PORT_OPTIONS:MDOCS}
+post-build-DOCS-on:
 	@(cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} \
 		${MAKE_ARGS} info)
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@(cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} \
 		${MAKE_ARGS} install-info)
-.endif
 
 .include <bsd.port.mk>

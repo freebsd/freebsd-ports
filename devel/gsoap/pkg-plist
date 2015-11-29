@@ -74,6 +74,8 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/extras/ckdbtest.c
 %%DATADIR%%/extras/ckdbtest.h
 %%DATADIR%%/extras/fault.cpp
+%%DATADIR%%/custom/float128.c
+%%DATADIR%%/custom/float128.h
 %%DATADIR%%/extras/logging.cpp
 %%DATADIR%%/extras/soapdefs.h
 %%DATADIR%%/import/README.txt

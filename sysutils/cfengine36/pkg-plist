@@ -223,6 +223,7 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/package_windows_feature.cf
 %%DOCSDIR%%/examples/package_yum.cf
 %%DOCSDIR%%/examples/package_zypper.cf
+%%DOCSDIR%%/examples/packagesmatching.cf
 %%DOCSDIR%%/examples/parallel_exec.cf
 %%DOCSDIR%%/examples/parseintrealstringarray.cf
 %%DOCSDIR%%/examples/parsestringarray.cf

@@ -9,33 +9,36 @@ MASTER_SITES=	GHC
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool for mass tagging/renaming of audio files
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	VORBIS ID3 MP4 FLAC DOCS
-OPTIONS_DEFAULT=	VORBIS ID3 MP4 FLAC
-
-NO_BUILD=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	Daenyth
 
 USES=		tar:bzip2 shebangfix perl5
 USE_PERL5=	run
-USE_GITHUB=	yes
-GH_ACCOUNT=	Daenyth
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_BUILD=	yes
+NO_ARCH=	yes
+
 SHEBANG_FILES=	audiotag
+
+PORTDOCS=	COPYING ChangeLog README
+PLIST_FILES=	bin/audiotag
+
+OPTIONS_DEFINE=	VORBIS ID3 MP4 FLAC DOCS
+OPTIONS_DEFAULT=	VORBIS ID3 MP4 FLAC
 
 VORBIS_RUN_DEPENDS=	vorbiscomment:${PORTSDIR}/audio/vorbis-tools
 FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
 ID3_RUN_DEPENDS=	id3tag:${PORTSDIR}/audio/id3lib
 MP4_RUN_DEPENDS=	AtomicParsley:${PORTSDIR}/multimedia/atomicparsley
 
-PORTDOCS=	COPYING ChangeLog README
-PLIST_FILES=	bin/audiotag
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/audiotag ${STAGEDIR}${PREFIX}/bin
 
-post-install:
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

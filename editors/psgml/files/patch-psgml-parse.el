@@ -1,6 +1,6 @@
---- psgml-parse.el.orig	2012-08-04 11:37:03.000000000 +0900
-+++ psgml-parse.el	2012-08-04 11:37:19.000000000 +0900
-@@ -329,28 +329,28 @@
+--- psgml-parse.el.orig	2015-11-12 06:36:57 UTC
++++ psgml-parse.el
+@@ -329,28 +329,28 @@ Applicable to XML.")
  ;;(progn (set-syntax-table xml-parser-syntax) (describe-syntax))
  
  (defmacro sgml-with-parser-syntax (&rest body)
@@ -35,7 +35,7 @@
  
  (defun sgml-set-buffer-multibyte (flag)
    (cond ((featurep 'xemacs)
-@@ -361,7 +361,7 @@
+@@ -361,7 +361,7 @@ Applicable to XML.")
                default-enable-multibyte-characters
              flag)))
  	((boundp 'MULE)
@@ -44,7 +44,7 @@
          (t
           flag)))
  ;; Probably better.  -- fx
-@@ -428,21 +428,21 @@
+@@ -428,21 +428,21 @@ Applicable to XML.")
  ;;move: (token . node)
  
  (defmacro sgml-make-move (token node)
@@ -71,7 +71,7 @@
  
  ;; normal-state: ('normal-state opts . reqs)
  
-@@ -450,16 +450,16 @@
+@@ -450,16 +450,16 @@ Applicable to XML.")
    (cons 'normal-state (cons nil nil)))
  
  (defmacro sgml-normal-state-p (s)
@@ -92,7 +92,7 @@
  
  ;; adding moves
  ;; *** Should these functions check for ambiguity?
-@@ -507,10 +507,10 @@
+@@ -507,10 +507,10 @@ Applicable to XML.")
    (cons next dfas))
  
  (defmacro sgml-and-node-next (n)
@@ -105,7 +105,7 @@
  
  
  ;;; Using states
-@@ -903,8 +903,8 @@
+@@ -903,8 +903,8 @@ If ATTSPEC is nil, nil is returned."
    (cons
     'progn
     (loop for n in names collect
@@ -116,7 +116,7 @@
  
  (sgml-prop-fields
   ;;flags			; optional tags and mixed
-@@ -919,7 +919,7 @@
+@@ -919,7 +919,7 @@ If ATTSPEC is nil, nil is returned."
   )
  
  (defmacro sgml-eltype-flags (et)
@@ -125,7 +125,7 @@
  
  (defun sgml-eltype-model (et)
    (if (fboundp et)
-@@ -966,7 +966,7 @@
+@@ -966,7 +966,7 @@ If ATTSPEC is nil, nil is returned."
    "Get application data from element type ET with name PROP.
  PROP should be a symbol, reserved names are: flags, model, attlist,
  includes, excludes, conref-regexp, mixed, stag-optional, etag-optional."
@@ -134,7 +134,7 @@
  
  (defun sgml-eltype-all-miscdata (et)
    (loop for p on (symbol-plist et) by (function cddr)
-@@ -1059,7 +1059,7 @@
+@@ -1059,7 +1059,7 @@ a default for the element type name."
  ;;; Wing addition
  (defmacro sgml-char-int (ch)
    (if (fboundp 'char-int)
@@ -143,7 +143,7 @@
      ch))
  
  (defsubst sgml-read-octet ()
-@@ -1434,51 +1434,51 @@
+@@ -1434,51 +1434,51 @@ list -- any of the contextual constraint
  	   (setq context '(t)))
  	  ((not (listp context))
  	   (setq context (list context))))
@@ -216,7 +216,7 @@
  
  (defmacro sgml-skip-upto (delim)
    "Skip until the delimiter or first char of one of the delimiters.
-@@ -1502,8 +1502,8 @@
+@@ -1502,8 +1502,8 @@ in any of them."
      (let ((ds (sgml-get-delim-string (upcase (format "%s" delim)))))
        (if (= 1 (length ds))
  	  (list 'skip-chars-forward (concat "^" ds))
@@ -227,7 +227,7 @@
  
  
  ;;(macroexpand '(sgml-is-delim mdo))
-@@ -1520,22 +1520,22 @@
+@@ -1520,22 +1520,22 @@ in any of them."
  ;;;                aproporiate value.
  
  (defmacro sgml-parse-char (char)
@@ -259,7 +259,7 @@
  
  (defun sgml-check-char (char)
    (cond ((not (sgml-parse-char char))
-@@ -1546,7 +1546,7 @@
+@@ -1546,7 +1546,7 @@ in any of them."
        (sgml-parse-char ?\r)))
  
  (defmacro sgml-startnm-char (c)
@@ -268,7 +268,7 @@
  
  (defsubst sgml-startnm-char-next ()
    (and (not (eobp))
-@@ -1693,11 +1693,11 @@
+@@ -1693,11 +1693,11 @@ in any of them."
  (define-compiler-macro sgml-parse-name (&whole form &optional entity-name)
    (cond
     ((memq entity-name '(nil t))
@@ -283,7 +283,7 @@
     (t
      form)))
  
-@@ -1827,8 +1827,8 @@
+@@ -1827,8 +1827,8 @@ Return true if not at the end of the buf
  With optional NAME, RNI must be followed by NAME."
    (cond
     (name
@@ -294,7 +294,7 @@
     (t '(sgml-parse-delim "RNI"))))
  
  (defun sgml-check-token (name)
-@@ -2733,11 +2733,11 @@
+@@ -2733,11 +2733,11 @@ overrides the entity type in entity look
    (let ((macs nil))
      (while fields
        (push
@@ -310,7 +310,7 @@
         macs)
        (setq fields (cdr fields)))
      (cons 'progn macs)))
-@@ -2775,7 +2775,7 @@
+@@ -2775,7 +2775,7 @@ overrides the entity type in entity look
  
  (defmacro sgml-element-stag-optional (element)
    "True if start-tag of ELEMENT is omissible."
@@ -319,7 +319,7 @@
  
  (defsubst sgml-element-etag-optional (element)
    "True if end-tag of ELEMENT is omissible."
-@@ -2929,8 +2929,10 @@
+@@ -2929,8 +2929,10 @@ overrides the entity type in entity look
  
  (defun sgml-set-initial-state (dtd)
    "Set initial state of parsing."
@@ -332,7 +332,7 @@
    (add-hook 'before-change-functions 'sgml-note-change-at nil 'local)
    (add-hook 'after-change-functions 'sgml-set-face-after-change nil 'local)
    (sgml-set-active-dtd-indicator (sgml-dtd-doctype dtd))
-@@ -3504,7 +3506,7 @@
+@@ -3504,7 +3506,7 @@ Where PAIRS is a list of (delim . ename)
  Also move point.  Return nil, either if no shortref or undefined."
  
    (macrolet

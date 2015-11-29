@@ -33,7 +33,19 @@
      failwith("EGifOpenFileName");
    }
    /* gcc -fwritable-strings is required to compile libungif */
-@@ -133,7 +141,6 @@ value eGifPutLine( value oc, value buf )
+@@ -88,7 +96,11 @@ value eGifCloseFile( value hdl )
+      segmentation faults */
+   ((GifFileType *)hdl)->Image.ColorMap = NULL; 
+ 
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++  EGifCloseFile( (GifFileType *) hdl, NULL );
++#else
+   EGifCloseFile( (GifFileType *) hdl );
++#endif
+   CAMLreturn(Val_unit);
+ }
+ 
+@@ -133,7 +145,6 @@ value eGifPutLine( value oc, value buf )
  
    if ( EGifPutLine(GifFileOut, String_val(buf), GifFileOut->Image.Width) 
         == GIF_ERROR ){

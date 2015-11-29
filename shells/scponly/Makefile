@@ -3,13 +3,15 @@
 
 PORTNAME=	scponly
 PORTVERSION=	4.8.20110526
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-snapshots
 DISTNAME=	${PORTNAME}-20110526
 
-MAINTAINER=	gjb@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Tiny shell that only permits scp and sftp
+
+LICENSE=	BSD2CLAUSE
 
 PORTDOCS=	BUILDING-JAILS.TXT INSTALL README SECURITY
 
@@ -31,20 +33,22 @@ WINSCP_DESC=	WinSCP support
 
 OPTIONS_SUB=	yes
 
-BUILD_DEPENDS=	sftp:${PORTSDIR}/security/openssh-portable
+.if !exists(/usr/bin/sftp)
+BUILD_DEPENDS=	${LOCALBASE}/bin/sftp:security/openssh-portable
+.endif
 DEFAULT_CHDIR_CONFIGURE_ON=	--with-default-chdir=${SCPONLY_DEFAULT_CHDIR}
 WILDCARDS_CONFIGURE_ENABLE=	wildcards
 GFTP_CONFIGURE_ENABLE=		gftp-compat
 CHROOT_CONFIGURE_ENABLE=	chrooted-binary
 CHROOT_USE=			RC_SUBR=scponlyc
-RSYNC_BUILD_DEPENDS=		rsync:${PORTSDIR}/net/rsync
+RSYNC_BUILD_DEPENDS=		rsync:net/rsync
 RSYNC_CONFIGURE_ENABLE=		rsync-compat
 SCP_CONFIGURE_ENABLE=		scp-compat
 SVN_CONFIGURE_ENABLE=		svn-compat
-SVN_BUILD_DEPENDS=		svn:${PORTSDIR}/devel/subversion
-SVNSERVE_BUILD_DEPENDS=		svn:${PORTSDIR}/devel/subversion
+SVN_BUILD_DEPENDS=		svn:devel/subversion
+SVNSERVE_BUILD_DEPENDS=		svn:devel/subversion
 SVNSERVE_CONFIGURE_ENABLE=	svnserv-compat
-UNISON_BUILD_DEPENDS=		unison:${PORTSDIR}/net/unison
+UNISON_BUILD_DEPENDS=		unison:net/unison
 UNISON_CONFIGURE_ENABLE=	unison-compat
 WINSCP_CONFIGURE_ENABLE=	winscp-compat
 
@@ -62,7 +66,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/config.h ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

@@ -131,6 +131,7 @@ lib/armory/pytest/testPyBtcAddress.py
 lib/armory/pytest/testPyBtcWallet.py
 lib/armory/pytest/testPyBtcWalletRecovery.py
 lib/armory/pytest/testPyTX.py
+lib/armory/pytest/testSigning.py
 lib/armory/pytest/testSplitSecret.py
 lib/armory/pytest/testUserAddress.py
 lib/armory/pytest/testUtility.py

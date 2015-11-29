@@ -1,7 +1,6 @@
-diff -urNad dialog.c dialog.c
---- dialog.c	1995-06-20 00:15:13.000000000 +0200
-+++ dialog.c	2008-05-16 17:31:45.000000000 +0200
-@@ -130,8 +130,8 @@
+--- dialog.c.orig	1995-06-19 22:15:13 UTC
++++ dialog.c
+@@ -130,8 +130,8 @@ void DeleteWord(w, event, params, num_pa
      Cardinal	 	i;
  
      textblock.firstPos = 0;
@@ -12,7 +11,7 @@ diff -urNad dialog.c dialog.c
  
      pos = XawTextGetInsertionPoint(w); 
      if (pos <= StartPos)
-@@ -142,6 +142,30 @@
+@@ -142,6 +142,30 @@ void DeleteWord(w, event, params, num_pa
      XawTextSetInsertionPoint(w, i);
  }
  
@@ -43,7 +42,7 @@ diff -urNad dialog.c dialog.c
  
  /*  Deletes the entire current input line.
   *  simulates the action of the KILL character (ctrl-U).
-@@ -159,8 +183,8 @@
+@@ -159,8 +183,8 @@ void DeleteLine(w, event, params, num_pa
      char		*s;
  
      textblock.firstPos = 0;
@@ -54,7 +53,7 @@ diff -urNad dialog.c dialog.c
  
      pos = XawTextGetInsertionPoint(w); 
      if (w == dialogWindow) {
-@@ -307,6 +331,7 @@
+@@ -307,6 +331,7 @@ Widget parent;
  	{"SigQuit", 	(XtActionProc) SigQuit},
  	{"InsertSpace", (XtActionProc) InsertSpace},
  	{"Dispatch", 	(XtActionProc) Dispatch},
@@ -62,7 +61,7 @@ diff -urNad dialog.c dialog.c
          {NULL, NULL}
      };
  
-@@ -316,10 +341,10 @@
+@@ -316,10 +341,10 @@ Widget parent;
   	Ctrl<Key>|:	SigQuit()\n\
   	Ctrl<Key>W:	DeleteWord()\n\
   	Ctrl<Key>U:	DeleteLine()\n\

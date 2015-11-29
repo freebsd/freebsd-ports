@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab_git
-PORTVERSION=	7.2.19
+PORTVERSION=	7.2.20
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,9 @@ COMMENT=	GitLab wrapper around git objects
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-activesupport4>=4.0:${PORTSDIR}/devel/rubygem-activesupport4 \
-		rubygem-charlock_holmes>=0.6:${PORTSDIR}/textproc/rubygem-charlock_holmes \
-		rubygem-gitlab-linguist>=3.0:${PORTSDIR}/textproc/rubygem-gitlab-linguist \
-		rubygem-rugged>=0.22.2:${PORTSDIR}/devel/rubygem-rugged
+		rubygem-charlock_holmes>=0.7.3:${PORTSDIR}/textproc/rubygem-charlock_holmes \
+		rubygem-github-linguist>=4.7.0:${PORTSDIR}/textproc/rubygem-github-linguist \
+		rubygem-rugged>=0.23.3:${PORTSDIR}/devel/rubygem-rugged
 
 NO_ARCH=	yes
 USE_RUBY=	yes

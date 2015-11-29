@@ -3,9 +3,11 @@
 
 PORTNAME=	adacontrol
 PORTVERSION=	1.17r3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/adacontrol
 DISTNAME=	adactl-${PORTVERSION}-src
+DIST_SUBDIR=	adacontrol-01
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Tool for detecting use or non-use of specific Ada constructs

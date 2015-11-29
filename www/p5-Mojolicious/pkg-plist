@@ -133,6 +133,9 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/perldoc.html.ep
 %%SITE_PERL%%/Test/Mojo.pm
 %%SITE_PERL%%/ojo.pm
+%%PERL5_MAN1%%/hypnotoad.1.gz
+%%PERL5_MAN1%%/mojo.1.gz
+%%PERL5_MAN1%%/morbo.1.gz
 %%PERL5_MAN3%%/Mojo.3.gz
 %%PERL5_MAN3%%/Mojo::Asset.3.gz
 %%PERL5_MAN3%%/Mojo::Asset::File.3.gz
@@ -245,6 +248,3 @@ bin/morbo
 %%PERL5_MAN3%%/Mojolicious::Validator::Validation.3.gz
 %%PERL5_MAN3%%/Test::Mojo.3.gz
 %%PERL5_MAN3%%/ojo.3.gz
-%%PERL5_MAN1%%/hypnotoad.1.gz
-%%PERL5_MAN1%%/mojo.1.gz
-%%PERL5_MAN1%%/morbo.1.gz

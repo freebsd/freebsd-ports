@@ -27,7 +27,7 @@ PLIST_FILES=	bin/nvidia-settings \
 		man/man1/nvidia-settings.1.gz \
 		lib/libnvidia-gtk2.so.${PORTVERSION}
 
-LDFLAGS+=	-Wl
+LDFLAGS+=	-pthread
 MAKE_ENV=	NV_USE_BUNDLED_LIBJANSSON=0 \
 		NV_VERBOSE= \
 		STRIP_CMD=${TRUE} \

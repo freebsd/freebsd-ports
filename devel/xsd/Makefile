@@ -3,6 +3,7 @@
 PORTNAME=	xsd
 PORTVERSION=	4.0.0
 DISTVERSIONSUFFIX=	+dep
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codesynthesis.com/download/${PORTNAME}/${PORTVERSION:R}/
 

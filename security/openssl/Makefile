@@ -67,7 +67,7 @@ CPE_VERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
 .include <bsd.port.pre.mk>
 
 .if ${PREFIX} == /usr
-IGNORE=	OpenSSL can not be installed over the base version.
+IGNORE=	the OpenSSL port can not be installed over the base version
 .endif
 
 OPENSSLDIR?=	${PREFIX}/openssl
@@ -155,7 +155,7 @@ PATCHFILES+=	1001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:pad
 
 .if ${PORT_OPTIONS:MGMP}
 EXTRACONFIGURE+=	enable-gmp -I${LOCALBASE}/include
-IGNORE=	GMP is LGPLv3 and can not be linked.
+IGNORE=	can not be linked because GMP is LGPLv3
 .else
 EXTRACONFIGURE+=	no-gmp
 .endif
@@ -224,15 +224,14 @@ post-install:
 	${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib/$i.so
 .endfor
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${STAGEDIR}${DOCSDIR}/
-.endif
 .if empty(PORT_OPTIONS:MMAN3)
 	${RM} -rf ${STAGEDIR}/${PREFIX}/man/man3
 	${REINPLACE_CMD} -e 's|^man/man3/.*||' ${TMPPLIST}
 .endif
-	${SED} -e 's|/usr/local|${PREFIX}|g' ${PKGMESSAGE}
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${STAGEDIR}${DOCSDIR}/
 
 test: build
 	cd ${WRKSRC} && ${MAKE} test

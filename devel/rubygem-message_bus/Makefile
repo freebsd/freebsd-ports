@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Message bus for rack
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-rack16>=1.1.3:${PORTSDIR}/www/rubygem-rack16 \
 		rubygem-redis>=0:${PORTSDIR}/databases/rubygem-redis

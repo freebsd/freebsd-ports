@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2014-11-04 07:49:52.000000000 +0000
-+++ CMakeLists.txt	2014-12-03 09:20:45.966491617 +0000
-@@ -387,32 +387,11 @@
+--- CMakeLists.txt.orig	2015-06-25 13:44:36.000000000 +0000
++++ CMakeLists.txt	2015-09-19 07:48:14.145882685 +0000
+@@ -390,33 +390,11 @@
  ENDIF()
  
  ADD_SUBDIRECTORY(extra)
@@ -29,6 +29,7 @@
 -  ENDIF()
 -  ADD_SUBDIRECTORY(packaging/rpm-oel)
 -  ADD_SUBDIRECTORY(packaging/rpm-sles)
+-  ADD_SUBDIRECTORY(packaging/rpm-docker)
 -ENDIF()
 +ADD_SUBDIRECTORY(client)
 +ADD_SUBDIRECTORY(libservices)
@@ -38,7 +39,7 @@
  
  INCLUDE(cmake/abi_check.cmake)
  INCLUDE(cmake/tags.cmake)
-@@ -448,19 +427,21 @@
+@@ -453,19 +431,21 @@
  ELSE()
    SET(CPACK_GENERATOR "TGZ")
  ENDIF() 
@@ -61,7 +62,7 @@
  IF(NOT INSTALL_LAYOUT MATCHES "RPM")
    INSTALL(FILES COPYING LICENSE.mysql 
    DESTINATION ${INSTALL_DOCREADMEDIR} 
-@@ -486,6 +467,7 @@
+@@ -491,6 +471,7 @@
      PATTERN "sp-imp-spec.txt" EXCLUDE
    )
  ENDIF()

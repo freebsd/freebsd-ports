@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	epson-inkjet-printer-escpr
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/hrs
@@ -15,11 +15,12 @@ BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-client
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client\
 		libcupsimage.so:${PORTSDIR}/print/cups-image
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf dos2unix gmake libtool
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+SUB_FILES=	pkg-message
 PORTDOCS=	AUTHORS COPYING NEWS README README.ja
 
 OPTIONS_DEFINE=	DOCS

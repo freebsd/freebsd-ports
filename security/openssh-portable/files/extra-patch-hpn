@@ -481,19 +481,6 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		debug("kex: %s %s %s %s",
  		    ctos ? "client->server" : "server->client",
  		    newkeys->enc.name,
---- work.clean/openssh-6.8p1/myproposal.h	2015-03-17 00:49:20.000000000 -0500
-+++ work/openssh-6.8p1/myproposal.h	2015-04-03 16:43:33.747402000 -0500
-@@ -171,6 +171,10 @@
- #define	KEX_DEFAULT_COMP	"none,zlib@openssh.com,zlib"
- #define	KEX_DEFAULT_LANG	""
- 
-+#ifdef NONE_CIPHER_ENABLED
-+#define KEX_ENCRYPT_INCLUDE_NONE KEX_SERVER_ENCRYPT ",none"
-+#endif
-+
- #define KEX_CLIENT \
- 	KEX_CLIENT_KEX, \
- 	KEX_DEFAULT_PK_ALG, \
 --- work.clean/openssh-6.8p1/packet.c	2015-03-17 00:49:20.000000000 -0500
 +++ work/openssh-6.8p1/packet.c	2015-04-03 16:10:57.002066000 -0500
 @@ -2199,6 +2199,24 @@
@@ -1199,9 +1186,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	debug("Authentication succeeded (%s).", authctxt.method->name);
  }
  
---- work.clean/openssh-6.8p1/sshd.c.orig	2015-08-17 17:01:06.925269000 -0700
-+++ work.clean/openssh-6.8p1/sshd.c	2015-08-17 17:05:40.008253000 -0700
-@@ -438,8 +438,13 @@ sshd_exchange_identification(int sock_in
+--- work.clean/openssh-7.1p1/sshd.c.orig	2015-08-20 21:49:03.000000000 -0700
++++ work.clean/openssh-7.1p1/sshd.c	2015-11-11 12:45:48.202186000 -0800
+@@ -431,8 +431,13 @@ sshd_exchange_identification(int sock_in
  		minor = PROTOCOL_MINOR_1;
  	}
  
@@ -1216,7 +1203,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	    *options.version_addendum == '\0' ? "" : " ",
  	    options.version_addendum, newline);
  
-@@ -1162,6 +1167,10 @@ server_listen(void)
+@@ -1155,6 +1160,10 @@ server_listen(void)
  	int ret, listen_sock, on = 1;
  	struct addrinfo *ai;
  	char ntop[NI_MAXHOST], strport[NI_MAXSERV];
@@ -1227,7 +1214,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  	for (ai = options.listen_addrs; ai; ai = ai->ai_next) {
  		if (ai->ai_family != AF_INET && ai->ai_family != AF_INET6)
-@@ -1202,6 +1211,13 @@ server_listen(void)
+@@ -1195,6 +1204,13 @@ server_listen(void)
  
  		debug("Bind to port %s on %s.", strport, ntop);
  
@@ -1241,7 +1228,23 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		/* Bind the socket to the desired port. */
  		if (bind(listen_sock, ai->ai_addr, ai->ai_addrlen) < 0) {
  			error("Bind to port %s on %s failed: %.200s.",
-@@ -2130,6 +2146,11 @@ main(int ac, char **av)
+@@ -1693,6 +1709,15 @@ main(int ac, char **av)
+ 	/* Fill in default values for those options not explicitly set. */
+ 	fill_default_server_options(&options);
+ 
++#ifdef NONE_CIPHER_ENABLED
++	if (options.none_enabled == 1) {
++		char *old_ciphers = options.ciphers;
++
++		xasprintf(&options.ciphers, "%s,none", old_ciphers);
++		free(old_ciphers);
++	}
++#endif
++
+ 	/* challenge-response is implemented via keyboard interactive */
+ 	if (options.challenge_response_authentication)
+ 		options.kbd_interactive_authentication = 1;
+@@ -2123,6 +2148,11 @@ main(int ac, char **av)
  		cleanup_exit(255);
  	}
  
@@ -1253,16 +1256,13 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/*
  	 * We use get_canonical_hostname with usedns = 0 instead of
  	 * get_remote_ipaddr here so IP options will be checked.
-@@ -2564,6 +2585,14 @@ do_ssh2_kex(void)
+@@ -2539,6 +2569,11 @@ do_ssh2_kex(void)
  	struct kex *kex;
  	int r;
  
 +#ifdef NONE_CIPHER_ENABLED
-+        if (options.none_enabled == 1) {
++        if (options.none_enabled == 1)
 +                debug ("WARNING: None cipher enabled");
-+                myproposal[PROPOSAL_ENC_ALGS_CTOS] =
-+                myproposal[PROPOSAL_ENC_ALGS_STOC] = KEX_ENCRYPT_INCLUDE_NONE;
-+	}
 +#endif
 +
  	myproposal[PROPOSAL_KEX_ALGS] = compat_kex_proposal(

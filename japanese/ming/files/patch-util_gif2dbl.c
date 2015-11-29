@@ -1,5 +1,5 @@
---- ../util/gif2dbl.c.orig	2002-06-24 12:21:54.000000000 +0000
-+++ ../util/gif2dbl.c	2014-12-26 17:29:52.000000000 +0000
+--- ../util/gif2dbl.c.orig	2002-06-24 12:21:54 UTC
++++ ../util/gif2dbl.c
 @@ -16,7 +16,6 @@
  void error(char *msg)
  {
@@ -20,3 +20,15 @@
      error("Error opening file");
  
    if(DGifSlurp(file) != GIF_OK)
+@@ -181,7 +184,11 @@ unsigned char *readGif(char *fileName, i
+   }
+ 
+ 	/* Done! */
++#if GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1 || GIFLIB_MAJOR > 5
++  DGifCloseFile(file, NULL);
++#else
+   DGifCloseFile(file);
++#endif
+ 
+   *length = size;
+   return data;

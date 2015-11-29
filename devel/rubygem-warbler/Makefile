@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Constructor of .war files of Rails applications
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
 		rubygem-jruby-jars>=1.5.6:${PORTSDIR}/devel/rubygem-jruby-jars \
@@ -19,7 +20,6 @@ RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 

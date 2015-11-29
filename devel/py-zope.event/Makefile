@@ -13,8 +13,10 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Very basic event publishing system
 
 LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

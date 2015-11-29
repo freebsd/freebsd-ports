@@ -19,6 +19,7 @@ RUN_DEPENDS=	rubygem-metasploit-concern>=0.4.0:${PORTSDIR}/security/rubygem-meta
 		rubygem-rubyntlm>=0:${PORTSDIR}/net/rubygem-rubyntlm \
 		rubygem-rubyzip>=1.1:${PORTSDIR}/archivers/rubygem-rubyzip
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

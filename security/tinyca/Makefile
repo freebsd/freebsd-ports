@@ -9,7 +9,7 @@ MASTER_SITES=	http://opsec.eu/src/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple graphical interface to manage a small Certification Authority
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 
 RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
@@ -20,6 +20,7 @@ USES=		perl5 tar:xz shebangfix
 USE_OPENSSL=	yes
 SHEBANG_FILES=	tinyca2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 DOC_FILES=	INSTALL
 LIB_FILES=	CA.pm CERT.pm GUI.pm HELPERS.pm KEY.pm OpenSSL.pm REQ.pm TCONFIG.pm
@@ -37,6 +38,8 @@ do-install:
 		-e "s:%%OPENSSLBASE%%:${OPENSSLBASE}:g" \
 		${WRKSRC}/tinyca2 >${WRKSRC}/tinyca.new
 	${INSTALL_SCRIPT} ${WRKSRC}/tinyca.new ${STAGEDIR}${PREFIX}/bin/tinyca
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

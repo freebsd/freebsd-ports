@@ -13,6 +13,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extensible system to provide bash completion
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Module-Load>=0.22:${PORTSDIR}/devel/p5-Module-Load

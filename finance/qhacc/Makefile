@@ -11,24 +11,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Qt-based financial manager
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
 		libqwt6.so:${PORTSDIR}/x11-toolkits/qwt6
 
-OPTIONS_DEFINE=	DOCS
-
-USES=		qmake:norecursive tar:tgz
+USES=		compiler:c++11-lib qmake:norecursive tar:tgz
 USE_QT4=	corelib gui sql moc_build rcc_build uic_build
-USE_CXXSTD=	c++0x
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 DESKTOP_ENTRIES="QHacc" "" "" "${PORTNAME}" "" ""
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000054
-USE_GCC=	yes
-.endif
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -58,6 +53,8 @@ do-install:
 	@${LN} -sf libengine.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libengine.so.1.0
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/qm && ${INSTALL_DATA} *.qm ${STAGEDIR}${DATADIR})
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog README THANKS TODO UPGRADE
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})

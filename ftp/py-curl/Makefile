@@ -3,6 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.19.5.3
+PORTREVISION=	1
 CATEGORIES=	ftp python
 MASTER_SITES=	CHEESESHOP \
 		http://pycurl.sourceforge.net/download/ \
@@ -18,12 +19,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
-
-DATADIR=	${PREFIX}/share/py-curl
-DOCSDIR=	${PREFIX}/share/doc/py-curl
-EXAMPLESDIR=	${PREFIX}/share/examples/py-curl
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pycurl.so

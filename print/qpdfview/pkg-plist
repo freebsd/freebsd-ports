@@ -1,6 +1,7 @@
 bin/qpdfview
 %%DJVU%%lib/qpdfview/libqpdfview_djvu.so
-%%PDF%%lib/qpdfview/libqpdfview_pdf.so
+lib/qpdfview/libqpdfview_image.so
+lib/qpdfview/libqpdfview_pdf.so
 %%PS%%lib/qpdfview/libqpdfview_ps.so
 man/man1/qpdfview.1.gz
 share/appdata/qpdfview.appdata.xml
@@ -25,6 +26,7 @@ share/icons/hicolor/scalable/apps/qpdfview.svg
 %%DATADIR%%/help_pt_BR.html
 %%DATADIR%%/help_ru.html
 %%DATADIR%%/help_sk.html
+%%DATADIR%%/help_sv.html
 %%DATADIR%%/help_uk.html
 %%DATADIR%%/help_vi.html
 %%DATADIR%%/help_zh_CN.html
@@ -47,6 +49,7 @@ share/icons/hicolor/scalable/apps/qpdfview.svg
 %%DATADIR%%/qpdfview_gl.qm
 %%DATADIR%%/qpdfview_he.qm
 %%DATADIR%%/qpdfview_hr.qm
+%%DATADIR%%/qpdfview_hu.qm
 %%DATADIR%%/qpdfview_id.qm
 %%DATADIR%%/qpdfview_it.qm
 %%DATADIR%%/qpdfview_kk.qm

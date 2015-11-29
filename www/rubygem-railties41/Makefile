@@ -1,8 +1,8 @@
-# Created by: Torsten Zühlsdorff
+# Created by: Torsten Zuhlsdorff
 # $FreeBSD$
 
 PORTNAME=	railties
-PORTVERSION=	4.1.13
+PORTVERSION=	4.1.14
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	41

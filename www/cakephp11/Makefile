@@ -13,6 +13,9 @@ DISTNAME=	cake_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 USES=		tar:bzip2
 USE_APACHE_RUN=	22+
 

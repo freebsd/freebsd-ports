@@ -54,14 +54,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/$f ${STAGEDIR}${FNTDIR}/
 	${GZIP_CMD} ${STAGEDIR}${FNTDIR}/$f
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/docs/,} ${STAGEDIR}${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${DATA:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .if !exists(${DISTDIR}/${TOSIMG})
 IGNORE=	please get a ROM dump from your AtariST and save it as\

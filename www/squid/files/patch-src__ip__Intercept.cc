@@ -1,6 +1,6 @@
---- src/ip/Intercept.cc.orig	2015-09-01 12:52:00.000000000 -0700
-+++ src/ip/Intercept.cc	2015-09-17 21:52:44.892553613 -0700
-@@ -202,10 +202,10 @@
+--- src/ip/Intercept.cc.orig	2015-11-01 10:44:25 UTC
++++ src/ip/Intercept.cc
+@@ -202,10 +202,10 @@ Ip::Intercept::IpfInterception(const Com
      // for NAT lookup set local and remote IP:port's
      if (newConn->remote.isIPv6()) {
  #if IPFILTER_VERSION < 5000003

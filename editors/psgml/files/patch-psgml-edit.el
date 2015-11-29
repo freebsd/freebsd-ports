@@ -1,6 +1,6 @@
---- psgml-edit.el.orig	2013-06-03 13:44:59.000000000 +0900
-+++ psgml-edit.el	2013-06-03 14:13:25.000000000 +0900
-@@ -185,7 +185,9 @@
+--- psgml-edit.el.orig	2015-11-12 06:36:57 UTC
++++ psgml-edit.el
+@@ -185,7 +185,9 @@ possible."
      (goto-char (sgml-element-start element))
      (delete-char (sgml-element-stag-len element))
      (insert (sgml-delim "STAGO")
@@ -11,7 +11,7 @@
              tagc)
      (let* ((newel (sgml-find-context-of (point)))
  	   (newattlist (sgml-element-attlist newel))
-@@ -1870,24 +1872,28 @@
+@@ -1870,24 +1872,28 @@ characters in the current coding system.
     (invert
      (or (looking-at "&#\\([0-9]+\\)[;\n]?")
  	(error "No character reference after point"))

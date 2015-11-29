@@ -5,7 +5,7 @@ PORTNAME=	serf
 PORTVERSION=	1.3.8
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://serf.googlecode.com/svn/src_releases/
+MASTER_SITES=	APACHE/serf
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Serf HTTP client library

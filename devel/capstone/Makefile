@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	capstone
-PORTVERSION=	2.1.2
+PORTVERSION=	3.0.4
 CATEGORIES=	devel
 
 MAINTAINER=	oliver.pntr@gmail.com
 COMMENT=	Multi-platform, multi-architecture disassembly framework
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 USES=		gmake
 USE_LDCONFIG=	yes
@@ -17,8 +18,7 @@ GH_ACCOUNT=	aquynh
 MAKE_ENV+=	INSTALL_LIB="${INSTALL_LIB}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
-post-build:
-	# The pkgconfig file is generated and points to stagedir
-	${REINPLACE_CMD} -e '/libdir/s|\(libdir=\)\(.*\)\(devel/capstone/work/stage\)|\1|g' ${WRKSRC}/capstone.pc
+TEST_ENV=	${MAKE_ENV} LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

@@ -330,6 +330,7 @@ rcynic:*:994:
 rpkirtr:*:995:
 tarantool:*:996:
 bareos:*:997:
+_rmilter:*:998:
 ebnetd:*:999:
 nogroup:*:65533:
 nobody:*:65534:

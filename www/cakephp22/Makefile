@@ -11,6 +11,9 @@ COMMENT=	Framework for developing PHP web applications
 
 LICENSE=	MIT
 
+DEPRECATED=	PHP 5.4 EOL reached
+EXPIRATION_DATE=	2016-01-15
+
 USE_GITHUB=	yes
 
 PORTDOCS=	README.md

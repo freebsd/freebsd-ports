@@ -56,7 +56,6 @@ reload_cmd=squid_reload
 start_precmd=squid_prestart
 start_postcmd=squid_getpid
 stop_precmd=squid_prestop
-stop_postcmd=squid_poststop
 configtest_cmd=squid_configtest
 reload_precmd=squid_configtest
 restart_precmd=squid_configtest
@@ -80,15 +79,10 @@ squid_load_rc_config()
 	command_args="${required_args} ${squid_flags}"
 	procname="?squid-*"
 	pidfile=$squid_pidfile
-	state_dir=/var/run/squid
 }
 
 squid_prestart()
 {
-	# prepare the state directory:
-	[ -d ${state_dir} ] && rm -rf ${state_dir}
-	install -d -o ${squid_user} -m 0755 ${state_dir}
-
 	# setup KRB5_KTNAME:
 	squid_krb5_ktname=${squid_krb5_ktname:-"NONE"}
 	if [ "${squid_krb5_ktname}" != "NONE" ]; then
@@ -149,11 +143,6 @@ squid_prestop()
 {
 	command_args="$command_args -k shutdown"
 	$command $required_args $squid_flags -k check 2>/dev/null
-}
-
-squid_poststop()
-{
-	rm -rf ${state_dir}
 }
 
 load_rc_config $name

@@ -1,6 +1,6 @@
---- src/pashut.c.orig	Sat Feb 25 00:55:09 2006
-+++ src/pashut.c	Sun Feb 26 03:15:23 2006
-@@ -24,6 +24,7 @@
+--- src/pashut.c.orig	2010-05-03 02:36:18 UTC
++++ src/pashut.c
+@@ -23,6 +23,7 @@
  #include "pabar.h"
  #include "pafont.h"
  #include "pashut.h"

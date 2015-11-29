@@ -1,4 +1,4 @@
---- src/ipc/mem/Segment.cc.orig	2015-08-01 06:08:17 UTC
+--- src/ipc/mem/Segment.cc.orig	2015-11-01 10:44:25 UTC
 +++ src/ipc/mem/Segment.cc
 @@ -150,7 +150,7 @@ Ipc::Mem::Segment::attach()
      assert(theSize == static_cast<off_t>(static_cast<size_t>(theSize)));

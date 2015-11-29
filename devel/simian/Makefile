@@ -79,18 +79,16 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xsl/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/simian.xsl ${STAGEDIR}${PREFIX}/share/xsl/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/simian/bin
-.if ${PORT_OPTIONS:MJAVA}
+	${INSTALL_SCRIPT} ${WRKDIR}/simian ${STAGEDIR}${PREFIX}/bin/simian
+
+do-install-JAVA-on:
 	${INSTALL_DATA} ${WRKSRC}/bin/simian-${PORTVERSION}.jar ${STAGEDIR}${PREFIX}/simian/bin
-.endif
-.if ${PORT_OPTIONS:MMONO}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/*.dll ${STAGEDIR}${PREFIX}/simian/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/simian-${PORTVERSION}.exe ${STAGEDIR}${PREFIX}/simian/bin
-.endif
-	${INSTALL_SCRIPT} ${WRKSRC}/simian ${STAGEDIR}${PREFIX}/bin/simian
-.if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC} \
-		&& ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; \
-		&& ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${DOCSDIR}/\{} \;
-.endif
+
+do-install-MONO-on:
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.dll ${STAGEDIR}${PREFIX}/simian/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/simian-${PORTVERSION}.exe ${STAGEDIR}${PREFIX}/simian/bin
+
+do-install-DOCS-on:
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

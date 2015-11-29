@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	DOCS
 PLIST_FILES=	bin/wmsmixer
 PORTDOCS=	README
 
-USES=		imake
+USES=		alias imake
 USE_XORG=	xpm
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}"
 

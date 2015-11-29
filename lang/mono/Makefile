@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mono
-PORTVERSION=	4.0.3.20
+PORTVERSION=	4.2.1.102
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
@@ -21,7 +21,7 @@ USE_GNOME=	glib20
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/mono-4.0.3
+WRKSRC=		${WRKDIR}/mono-${PORTVERSION:R}
 
 MAKE_JOBS_UNSAFE=yes
 

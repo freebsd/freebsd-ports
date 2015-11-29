@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	croscorefonts
-PORTVERSION=	1.23.0
-PORTREVISION=	2
+PORTVERSION=	1.31.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://gsdview.appspot.com/chromeos-localmirror/distfiles/ \
 		LOCAL/sunpoet
@@ -11,18 +10,16 @@ MASTER_SITES=	http://gsdview.appspot.com/chromeos-localmirror/distfiles/ \
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Fonts created from by Google for ChromeOS to replace MS TTF
 
-#LICENSE=	OFL
-#LICENSE_NAME=	SIL OPEN FONT LICENSE Version 1.1
-#LICENSE_FILE=	${WRKSRC}/LICENSE
-#LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	APACHE20
 
-USES=		fonts
+NO_ARCH=	yes
+NO_BUILD=	yes
+USES=		fonts tar:bzip2
 USE_XORG=	x11
 
 SUB_FILES=	pkg-message
 
 FONTNAME=	ChromeOS
-NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}

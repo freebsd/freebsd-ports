@@ -15,6 +15,10 @@ bin/tkpp
 %%SITE_PERL%%/PAR/StrippedPARL/Dynamic.pm
 %%SITE_PERL%%/PAR/StrippedPARL/Static.pm
 %%SITE_PERL%%/pp.pm
+%%PERL5_MAN1%%/par.pl.1.gz
+%%PERL5_MAN1%%/parl.1.gz
+%%PERL5_MAN1%%/pp.1.gz
+%%PERL5_MAN1%%/tkpp.1.gz
 %%PERL5_MAN3%%/App::Packer::PAR.3.gz
 %%PERL5_MAN3%%/Dynamic.3.gz
 %%PERL5_MAN3%%/PAR::Filter.3.gz
@@ -27,7 +31,3 @@ bin/tkpp
 %%PERL5_MAN3%%/PAR::StrippedPARL::Base.3.gz
 %%PERL5_MAN3%%/Static.3.gz
 %%PERL5_MAN3%%/pp.3.gz
-%%PERL5_MAN1%%/par.pl.1.gz
-%%PERL5_MAN1%%/parl.1.gz
-%%PERL5_MAN1%%/pp.1.gz
-%%PERL5_MAN1%%/tkpp.1.gz

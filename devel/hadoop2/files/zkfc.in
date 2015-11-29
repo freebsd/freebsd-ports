@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: zkfc
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# zkfc_enable (bool):            Set to NO by default.
+#                                Set it to YES to enable zkfc.
+
+. /etc/rc.subr
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+name=zkfc
+rcvar=zkfc_enable
+
+load_rc_config "${name}"
+
+: ${zkfc_enable:=NO}
+: ${zkfc_user:=%%HDFS_USER%%}
+
+command="%%PREFIX%%/sbin/hadoop-daemon.sh"
+command_args='--config %%ETCDIR%% start zkfc'
+
+stop_cmd=zkfc_stop
+
+zkfc_stop () {
+  su -m ${zkfc_user} -c "${command} --config %%ETCDIR%% stop zkfc"
+}
+
+run_rc_command "$1"

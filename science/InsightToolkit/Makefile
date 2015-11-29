@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	InsightToolkit
-PORTVERSION=	4.8.1
+PORTVERSION=	4.8.2
 CATEGORIES=	science biology
 MASTER_SITES=	SF/itk/itk/4.8
 

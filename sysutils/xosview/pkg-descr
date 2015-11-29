@@ -1,6 +1,7 @@
-XOsview is an application originally developed by Mike Romberg for 
-Linux.  It can be summarized as a graphical performance meter, and 
-it looks similar in appearance to the zoomy performance meters to 
-be found on various other platforms.  
+xosview is a monitor which displays the status of several system
+parameters. These include CPU usage, load average, memory, swap space,
+network usage and more. Each resource is displayed as a horizontal bar
+which is separated into color coded regions showing how much of the
+resource is being put to a particular use.
 
-WWW: http://xosview.sourceforge.net
+WWW: http://www.pogo.org.uk/~mark/xosview/

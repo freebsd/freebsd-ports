@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	interbench
-DISTVERSION=	0.31
+PORTVERSION=	0.31
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://ck.kolivas.org/apps/${PORTNAME}/
 
@@ -11,7 +12,7 @@ COMMENT=	Interactivity benchmark for Unix-like systems
 
 LICENSE=	GPLv2
 
-USES=		tar:bzip2 gmake
+USES=		gmake tar:bzip2
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 
@@ -33,6 +34,8 @@ pre-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

@@ -1,3 +1,4 @@
+--- UTC
 r100838 | fanf | 2002-07-28 19:36:24 -0500 (Sun, 28 Jul 2002) | 7 lines
 Changed paths:
    M /head/crypto/openssh/auth.c

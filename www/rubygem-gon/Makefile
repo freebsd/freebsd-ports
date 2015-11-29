@@ -9,6 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Framework to pass data to JS easily
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack>=3.0:${PORTSDIR}/www/rubygem-actionpack \
 		rubygem-json>=0:${PORTSDIR}/devel/rubygem-json \

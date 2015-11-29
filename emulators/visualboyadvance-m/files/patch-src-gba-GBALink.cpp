@@ -8,7 +8,7 @@
  
  // malloc.h does not seem to exist on Mac OS 10.7
 -#ifdef __APPLE__
-+#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__DragonFly__)
  #include <stdlib.h>
  #else
  #include <malloc.h>

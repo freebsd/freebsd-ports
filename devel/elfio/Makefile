@@ -11,31 +11,24 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for reading and generating files in the ELF binary format
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		autoreconf libtool
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	EXAMPLES DOCS
-
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_SUB+=	EXAMPLES=""
-.else
-PLIST_SUB+=	EXAMPLES="@comment "
-.endif
+OPTIONS_DEFINE=	EXAMPLES DOCS
+OPTIONS_SUB=	yes
 
 post-patch:
 	@(${FIND} ${WRKSRC}/ -name Makefile.am | \
 		${XARGS} ${REINPLACE_CMD} -E -e 's,(libELFIO)\.a,\1.la,g')
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
@@ -43,11 +36,10 @@ post-install:
 .for f in elf11g.zip tutorial.docbook tutorial.pdf
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${FIND} ${WRKSRC}/Examples/ -name "*.cpp" -exec ${INSTALL_DATA} {} \
 		${STAGEDIR}${EXAMPLESDIR}/ \;
-.endif
 
 .include <bsd.port.mk>

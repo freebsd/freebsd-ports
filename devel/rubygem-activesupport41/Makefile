@@ -1,8 +1,8 @@
-# Created by: Torsten Zühlsdorff <ports@toco-domains.de>
+# Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
 # $FreeBSD$
 
 PORTNAME=	activesupport
-PORTVERSION=	4.1.13
+PORTVERSION=	4.1.14
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	41

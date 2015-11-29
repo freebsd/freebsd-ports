@@ -3,7 +3,7 @@
 
 PORTNAME=	meshlab
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/MeshLab%20v${PORTVERSION}/
 DISTNAME=	MeshLabSrc_AllInc_v${PORTVERSION:C|\.||g}
@@ -26,9 +26,11 @@ USE_LDCONFIG=	yes
 DOS2UNIX_FILES=	external/structuresynth/ssynth/SyntopiaCore/GLEngine/Object3D.h \
 		external/structuresynth/ssynth/SyntopiaCore/GLEngine/Raytracer/VoxelStepper.cpp \
 		meshlabplugins/edit_arc3D/fillImage.cpp \
-		meshlabplugins/filter_csg/intercept.h
+		meshlabplugins/filter_csg/intercept.h \
+		meshlabplugins/filter_photosynth/downloader.cpp
 
 EXTRACT_CMD=	gtar
+QMAKE_SOURCE_PATH=	${WRKSRC}/meshlab_full.pro
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 pre-configure:
@@ -43,14 +45,6 @@ pre-configure:
 	${FIND} ${WRKSRC}/../../ -name "*.pro" | ${XARGS} \
 	    ${REINPLACE_CMD} -e '/^CONFIG +=/s|$$| debug|'
 .endif
-
-do-configure:
-	cd ${WRKSRC}/external && ${QMAKE} ${QMAKE_ARGS} -recursive external.pro
-	cd ${WRKSRC} && ${QMAKE} -spec ${QMAKESPEC} -recursive meshlab_full.pro
-
-do-build:
-	cd ${WRKSRC}/external && ${MAKE}
-	cd ${WRKSRC} && ${MAKE}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/meshlab/plugins

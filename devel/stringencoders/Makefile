@@ -9,11 +9,12 @@ CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	skreuzer@FreeBSD.org
-COMMENT=	Collection of high performance c-string transformations
+COMMENT=	Collection of high performance C-string transformations
 
 USES=		libtool perl5
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
 CFLAGS+=	-fsigned-char	# chars are unsigned on PowerPC and ARM
 
 .include <bsd.port.mk>

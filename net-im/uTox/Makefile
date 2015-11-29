@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uTox
-DISTVERSION=	0.3.2.20150613
+DISTVERSION=	0.4.4.20151120
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	fidaj@ukr.net
@@ -20,9 +20,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	notsecure
-#GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	5a5132f
+GH_ACCOUNT=	GrayHatter
+GH_TAGNAME=	8eaef84
 
 USES=		compiler:c11 desktop-file-utils gmake openal:al pkgconfig
 USE_XORG=	x11 xext xrender
@@ -33,6 +32,10 @@ OPTIONS_DEFAULT=	DBUS
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 DBUS_MAKE_ARGS_OFF=	DBUS=0
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|$$(GIT_V)|${DISTVERSION}-${GH_TAGNAME}|'	\
+		${WRKSRC}/${MAKEFILE}
 
 post-install:
 	${MV} ${WRKSRC}/utox.1 ${STAGEDIR}${MAN1PREFIX}/man/man1

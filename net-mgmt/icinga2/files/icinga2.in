@@ -29,6 +29,7 @@ load_rc_config "${name}"
 : ${icinga2_configfile="%%PREFIX%%/etc/${name}/${name}.conf"}
 
 command="%%PREFIX%%/sbin/${name}"
+procname="/usr/local/lib/icinga2/sbin/icinga2"
 extra_commands="reload checkconfig configtest"
 icinga2_user="%%ICINGA2USER%%"
 icinga2_group="%%ICINGA2GROUP%%"

@@ -3,7 +3,7 @@
 
 PORTNAME=	mhash
 PORTVERSION=	0.9.9.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -13,18 +13,20 @@ COMMENT=	Easy-to-use library for strong hashes such as MD5 and SHA1
 LICENSE=	LGPL20 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2 libtool
+USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-static --with-gnu-ld
+TEST_TARGET=	check
+
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	example.c skid2-authentication
 
-test:	build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmhash.so
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysvn
-PORTVERSION=	1.7.8
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	devel
 MASTER_SITES=	http://pysvn.barrys-emacs.org/source_kits/
 
@@ -11,8 +10,6 @@ MAINTAINER=	bra@fsn.hu
 COMMENT=	Python binding for Subversion
 
 LICENSE=	APACHE20
-
-BROKEN=		fails to build
 
 LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion \
 		libneon.so:${PORTSDIR}/www/neon
@@ -45,5 +42,6 @@ do-install:
 		${WRKSRC}/${PORTNAME}/*.py \
 		${WRKSRC}/${PORTNAME}/*.so \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/*.so
 
 .include <bsd.port.mk>

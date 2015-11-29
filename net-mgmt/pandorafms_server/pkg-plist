@@ -31,6 +31,7 @@ man/man1/tentacle_server.1.gz
 %%DATADIR%%/util/change_remoteconfig.pl
 %%DATADIR%%/util/compaq_chassis_trap_manager.pl
 %%DATADIR%%/util/compaq_chassis_trap_manager2.pl
+%%DATADIR%%/util/compare_schemas.pl
 %%DATADIR%%/util/esx_trap_manager.pl
 %%DATADIR%%/util/gis.README
 %%DATADIR%%/util/gpx2pandora_agent_data.pl
