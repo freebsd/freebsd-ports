@@ -357,6 +357,7 @@
     SUBDIR += kenlm
     SUBDIR += kibana3
     SUBDIR += kibana41
+    SUBDIR += kibana42
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
     SUBDIR += kmfl-sil-ezra
