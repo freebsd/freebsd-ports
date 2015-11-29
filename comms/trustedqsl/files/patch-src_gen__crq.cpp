@@ -1,6 +1,6 @@
---- src/gen_crq.cpp.orig	2014-07-17 03:33:28.000000000 -0700
-+++ src/gen_crq.cpp	2014-07-17 03:34:02.000000000 -0700
-@@ -99,9 +99,9 @@
+--- src/gen_crq.cpp.orig	2015-10-21 17:26:38 UTC
++++ src/gen_crq.cpp
+@@ -99,9 +99,9 @@ main(int argc, char *argv[]) {
  				throw tqslexc();
  			if (tqsl_getCertificateDXCCEntity(sign_cert, &cdxcc))
  				throw tqslexc();
@@ -13,7 +13,7 @@
  			if (tqsl_beginSigning(sign_cert, const_cast<char *>(""), 0, 0))
  				throw tqslexc();
  		}
-@@ -124,7 +124,7 @@
+@@ -124,13 +124,13 @@ main(int argc, char *argv[]) {
  					*cp = '_';
  			}
  			string filename = string(argv[optind]) + ".tq5";
@@ -22,3 +22,10 @@
  			if (tqsl_createCertRequest(filename.c_str(), &crq, 0, 0))
  				throw tqslexc();
  		}
+ 		return EXIT_SUCCESS;
+ 	} catch(exception& x) {
+-		cerr << "Aborting: " << x.what() << endl;
++		std::cerr << "Aborting: " << x.what() << endl;
+ 		return EXIT_FAILURE;
+ 	}
+ 	return EXIT_SUCCESS;
