@@ -12,6 +12,8 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Efficient XML centric functional programming language
 
 BROKEN=		Fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-12-30
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=	${SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex \
