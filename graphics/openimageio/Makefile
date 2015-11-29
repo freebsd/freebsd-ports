@@ -79,6 +79,10 @@ PLIST_SUB+=		LIBVERS=${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == powerpc
+USE_GCC=	yes
+.endif
+
 .if ${SLAVE_PORT} == no
 LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
