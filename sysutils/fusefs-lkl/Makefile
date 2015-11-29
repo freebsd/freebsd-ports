@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS+=	gnubc>0:${PORTSDIR}/math/gnubc
 LIB_DEPENDS+=	libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
 
-USES=		fuse gmake
+USES=		fuse gmake python
 USE_BINUTILS=	yes
 USE_GCC=	yes
 USE_GITHUB=	yes
