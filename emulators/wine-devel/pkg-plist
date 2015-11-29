@@ -204,6 +204,7 @@ include/wine/windows/d3drmwin.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx10.h
+include/wine/windows/d3dx10async.h
 %%STAGING%%include/wine/windows/d3dx10core.h
 %%STAGING%%include/wine/windows/d3dx10core.idl
 include/wine/windows/d3dx9.h
