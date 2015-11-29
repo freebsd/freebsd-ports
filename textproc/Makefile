@@ -1429,6 +1429,7 @@
     SUBDIR += rubygem-nokogiri-diff
     SUBDIR += rubygem-nokogiri14
     SUBDIR += rubygem-nokogumbo
+    SUBDIR += rubygem-octopress-escape-code
     SUBDIR += rubygem-opml
     SUBDIR += rubygem-org-ruby
     SUBDIR += rubygem-parslet
