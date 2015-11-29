@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GeoIP2
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net python geography
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,13 +13,14 @@ COMMENT=	MaxMind GeoIP2 Python API
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}maxminddb>0:${PORTSDIR}/net/py-maxminddb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maxminddb>=1.1.0:${PORTSDIR}/net/py-maxminddb \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.4:${PORTSDIR}/www/py-requests
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	GeoIP2-python
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
 
