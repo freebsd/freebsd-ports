@@ -13,6 +13,8 @@ COMMENT=	Tcl/Tk IRC client for the X Window System
 OPTIONS_DEFINE=	DOCS
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-12-30
 USES=		tk
 USE_XORG=	xt
 

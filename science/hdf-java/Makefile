@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java interface to HDF5
 
 BROKEN=		Fails to configure, HDF5 library needs SZIP, SZIP not defined
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-12-30
 
 LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
 
