@@ -1,4 +1,4 @@
---- apps/CMakeLists.txt.orig	2015-11-29 00:14:00 UTC
+--- apps/CMakeLists.txt.orig	2015-10-21 17:26:38 UTC
 +++ apps/CMakeLists.txt
 @@ -148,7 +148,11 @@ if(NOT APPLE AND NOT WIN32)
  	add_definitions("-DCONFDIR=\"${CMAKE_INSTALL_PREFIX}/share/TrustedQSL/\"")
