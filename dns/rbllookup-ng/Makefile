@@ -3,7 +3,7 @@
 
 PORTNAME=	rbllookup-ng
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns mail
 MASTER_SITES=	http://www.mavetju.org/download/
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 NO_BUILD=	yes
 USES=		perl5 shebangfix
 
-PLIST_FILES=	bin/rbllookup bin/getmoensted etc/rbllookup.conf-sample
+PLIST_FILES=	bin/rbllookup bin/getmoensted "@sample etc/rbllookup.conf.sample"
 PORTDOCS=	CHANGELOG INSTALL NOTES README TODO gpg.asc
 SHEBANG_FILES=	rbllookup.pl getmoensted.pl
 
@@ -34,7 +34,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/getmoensted.pl \
 		${STAGEDIR}${PREFIX}/bin/getmoensted
 	${INSTALL_DATA} ${WRKSRC}/rbllookup.conf \
-		${STAGEDIR}${PREFIX}/etc/rbllookup.conf-sample
+		${STAGEDIR}${PREFIX}/etc/rbllookup.conf.sample
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
