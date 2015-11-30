@@ -3,6 +3,7 @@
 
 PORTNAME=	rbllookup-ng
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	dns mail
 MASTER_SITES=	http://www.mavetju.org/download/
 
@@ -23,6 +24,10 @@ CONFLICTS=	rbllookup-0.*
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		${WRKSRC}/rbllookup.pl
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rbllookup.pl \
 		${STAGEDIR}${PREFIX}/bin/rbllookup
@@ -30,6 +35,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/getmoensted
 	${INSTALL_DATA} ${WRKSRC}/rbllookup.conf \
 		${STAGEDIR}${PREFIX}/etc/rbllookup.conf-sample
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
