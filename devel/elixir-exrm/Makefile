@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	exrm
-PORTVERSION=	0.19.9
+PORTVERSION=	1.0.0rc6
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
@@ -13,6 +13,7 @@ LICENSE=	MIT
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitwalker
+GH_TAGNAME=	1.0.0-rc6
 
 MIX_BUILD_DEPS=	devel/relx \
 		devel/elixir-conform
