@@ -58,6 +58,53 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="11c52bc6-97aa-11e5-b8df-14dae9d210b8">
+    <topic>django -- information leak vulnerability</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<name>py32-django</name>
+	<name>py33-django</name>
+	<name>py34-django</name>
+	<range><lt>1.8.7</lt></range>
+      </package>
+      <package>
+	<name>py27-django17</name>
+	<name>py32-django17</name>
+	<name>py33-django17</name>
+	<name>py34-django17</name>
+	<range><lt>1.7.11</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<name>py32-django-devel</name>
+	<name>py33-django-devel</name>
+	<name>py34-django-devel</name>
+	<range><le>20150709,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Graham reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/nov/24/security-releases-issued/">
+	  <p>If an application allows users to specify an unvalidated
+	    format for dates and passes this format to the date filter, e.g. {{
+	    last_updated|date:user_date_format }}, then a malicious user could
+	    obtain any secret in the application's settings by specifying a settings
+	    key instead of a date format. e.g. "SECRET_KEY" instead of "j/m/Y".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/nov/24/security-releases-issued/</url>
+      <cvename>CVE-2015-8213</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-24</discovery>
+      <entry>2015-11-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb2475c2-9125-11e5-bd18-002590263bf5">
     <topic>kibana4 -- CSRF vulnerability</topic>
     <affects>
