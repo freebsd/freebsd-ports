@@ -4,17 +4,18 @@
 PORTNAME=	fuse-roms
 PORTVERSION=	0.9.0
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://mirror.switch.ch/pool/4/mirror/rpmfusion/nonfree/fedora/releases/19/Everything/x86_64/os/:1 \
-		ftp://ftp.ntua.gr/pub/linux/rpmfusion/nonfree/fedora/releases/19/Everything/x86_64/os/:1 \
-		ftp://ftp.pbone.net/mirror/rpmfusion.org/nonfree/fedora/releases/19/Everything/x86_64/os/:1 \
-		ftp://ftp.icm.edu.pl/vol/rzm2/linux-rpmfusion/nonfree/fedora/releases/19/Everything/x86_64/os/:1 \
+MASTER_SITES=	ftp://mirror.switch.ch/pool/4/mirror/rpmfusion/nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/:1 \
+		ftp://ftp.ntua.gr/pub/linux/rpmfusion/nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/:1 \
+		ftp://ftp.pbone.net/mirror/rpmfusion.org/nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/:1 \
+		ftp://ftp.icm.edu.pl/vol/rzm2/linux-rpmfusion/nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/:1 \
 		http://zxspectrum.it.omegahg.com/rom/:2
-DISTFILES=	fuse-emulator-roms-0.9.0-5.fc19.noarch.rpm:1 Opus-22.rom:2
-EXTRACT_ONLY=	fuse-emulator-roms-0.9.0-5.fc19.noarch.rpm
+DISTFILES=	fuse-emulator-roms-0.9.0-6.fc${FCVER}.noarch.rpm:1 Opus-22.rom:2
+EXTRACT_ONLY=	fuse-emulator-roms-0.9.0-6.fc${FCVER}.noarch.rpm
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Spectrum ROM files, for use with the Fuse emulator
 
+FCVER=		22
 PORTSCOUT=	ignore:1
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/fuse
