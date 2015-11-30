@@ -107,8 +107,6 @@ include/kbibtex/value.h
 include/kbibtex/valuelistmodel.h
 include/kbibtex/xsltransform.h
 lib/kde4/kbibtexpart.so
-lib/kde4/kbibtexpart.so.0.6
-lib/kde4/kbibtexpart.so.0.6.0
 lib/libkbibtexconfig.so
 lib/libkbibtexconfig.so.0.6
 lib/libkbibtexconfig.so.0.6.0
