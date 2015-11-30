@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+
+20151130:
+  AFFECTS: users of net/samba43
+  AUTHOR: timur@FreeBSD.org
+
+  A new version of Samba server that has better integration with Windows 10.
+  This is still experimental and there were reports that rolling upgrade from
+  previous version of Samba fails to work.
+
+  Please, backup all relevant files from /var/db/samba4/ directory, as well
+  as configuration files.
+
+  Follow https://wiki.samba.org/index.php/Updating_Samba for the upgrade path.
+
 20151130:
   AFFECTS: users of net/samba4, net/samba41, net/samba42
   AUTHOR: timur@FreeBSD.org

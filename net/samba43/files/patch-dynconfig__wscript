@@ -1,0 +1,32 @@
+--- ./dynconfig/wscript.orig	2012-11-13 08:03:38.000000000 +0000
++++ ./dynconfig/wscript	2013-01-29 19:43:57.489880918 +0000
+@@ -127,6 +127,8 @@
+     'PKGCONFIGDIR' : {
+          'STD-PATH':  '${LIBDIR}/pkgconfig',
+          'FHS-PATH':  '${LIBDIR}/pkgconfig',
++         'OPTION':    '--with-pkgconfigdir',
++         'HELPTEXT':  'Where to put .pc files',
+     },
+     'SWATDIR' : {
+          'STD-PATH':  '${DATADIR}/swat',
+@@ -236,8 +238,8 @@
+          'DELAY':     True,
+     },
+     'CONFIGFILE' : {
+-         'STD-PATH':  '${CONFIGDIR}/smb.conf',
+-         'FHS-PATH':  '${CONFIGDIR}/smb.conf',
++         'STD-PATH':  '${CONFIGDIR}/%%SAMBA4_CONFIG%%',
++         'FHS-PATH':  '${CONFIGDIR}/%%SAMBA4_CONFIG%%',
+          'DELAY':     True,
+     },
+     'LMHOSTSFILE' : {
+@@ -294,9 +296,6 @@
+         flavor = 'FHS-PATH'
+     else:
+         flavor = 'STD-PATH'
+-        if conf.env.PREFIX == '/usr' or conf.env.PREFIX == '/usr/local':
+-           Logs.error("Don't install directly under /usr or /usr/local without using the FHS option (--enable-fhs)")
+-           raise Utils.WafError("ERROR: invalid --prefix=%s value" % (conf.env.PREFIX))
+ 
+     explicit_set ={}
+ 
