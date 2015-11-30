@@ -1,6 +1,14 @@
 --- src/xml.h.orig	2015-10-21 17:26:38 UTC
 +++ src/xml.h
-@@ -28,7 +28,7 @@ namespace tqsllib {
+@@ -13,6 +13,7 @@
+ 
+ #include <string>
+ #include <map>
++#include <memory>
+ #include <vector>
+ #include <utility>
+ #include <expat.h>
+@@ -28,7 +29,7 @@ namespace tqsllib {
  
  class XMLElement;
  
@@ -9,7 +17,7 @@
  typedef map<string, string> XMLElementAttributeList;
  
  /** Encapsulates an XML element
-@@ -62,7 +62,7 @@ class XMLElement {
+@@ -62,7 +63,7 @@ class XMLElement {
        */
  	pair<string, bool> getAttribute(const string& key);
  	/// Add an element to the list of contained subelements
@@ -18,7 +26,7 @@
  	XMLElementAttributeList& getAttributeList() { return _attributes; }
  	XMLElementList& getElementList() { return _elements; }
  	/// Parse an XML file and add its element tree to this element
-@@ -134,8 +134,8 @@ XMLElement::setAttribute(const string& k
+@@ -134,8 +135,8 @@ XMLElement::setAttribute(const string& k
  }
  
  inline XMLElementList::iterator
@@ -29,7 +37,7 @@
  	return it;
  }
  
-@@ -158,9 +158,9 @@ inline bool
+@@ -158,9 +159,9 @@ inline bool
  XMLElement::getNextElement(XMLElement& element) {
  	if (_iter == _elements.end())
  		return false;
