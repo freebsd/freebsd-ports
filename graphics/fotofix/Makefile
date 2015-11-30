@@ -2,30 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	fotofix
-PORTVERSION=	0.01.1.79
-PORTREVISION=	2
+PORTVERSION=	0.01.1.88
 CATEGORIES=	graphics
-MASTER_SITES=	http://mirror.mcx2.org/ \
-		http://prima.eu.org/cgi-bin/cvsweb.cgi/apps/fotofix/fotofix/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer
 
-BROKEN=		No public distfiles
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2015-11-26
+RUN_DEPENDS=	IPA>=1.03:${PORTSDIR}/graphics/IPA \
+		p5-Prima>=1.22:${PORTSDIR}/x11-toolkits/p5-Prima
 
-RUN_DEPENDS=	p5-Prima>=1.21:${PORTSDIR}/x11-toolkits/p5-Prima \
-		IPA>=1.03:${PORTSDIR}/graphics/IPA
+NO_ARCH=	yes
 
-USES=		perl5 shebangfix tar:bzip2
-USE_PERL5=	run
-NO_BUILD=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	dk
+GH_TAGNAME=	2a4706c
 
+USES=		perl5 shebangfix
 SHEBANG_FILES=	fotofix
-PLIST_FILES=	bin/${PORTNAME}
+
+PLIST_FILES=	bin/fotofix man/man1/fotofix.1.gz
+
+DESKTOP_ENTRIES="FotoFix" "" "" "fotofox" "" ""
+
+do-build:
+	(cd ${WRKSRC} && pod2man fotofix fotofix.1)
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} fotofix \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} fotofix.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>
