@@ -1,13 +1,12 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	liblzma
+PORTNAME=	pyliblzma
 PORTVERSION=	0.5.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Python binding for the LZMA compression library
