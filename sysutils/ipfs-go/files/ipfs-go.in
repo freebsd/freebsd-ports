@@ -16,7 +16,7 @@
 . /etc/rc.subr
 
 : ${ipfs_go_enable:="NO"}
-: ${ipfs_go_path:="/var/db/ipfs"}
+: ${ipfs_go_path:="/root/.ipfs"}
 
 name=ipfs_go
 rcvar=ipfs_go_enable
