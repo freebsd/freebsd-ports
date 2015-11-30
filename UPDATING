@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151130:
+  AFFECTS: users of net/samba4, net/samba41, net/samba42
+  AUTHOR: timur@FreeBSD.org
+
+  Recent versions of devel/talloc, devel/tevent, database/tdb, database/ldb
+  contained infinit recursive call to the strtol* set of replacement functions,
+  which lead to coredumps. Unofficial patch was added menwhile, but now official
+  version of the fixed libs were released. If your version of net/samba4 works
+  fine you don't need to recompile it. Other ports were also upgraded and some
+  bugs were fixed in upstream.
+
 20151122:
   AFFECTS: users of audio/audacity
   AUTHOR: riggs@FreeBSD.org
