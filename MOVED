@@ -8036,3 +8036,4 @@ databases/java-mybatis||2015-11-28|Has expired: Broken for more than 6 months
 databases/openbase-jdbc||2015-11-28|Has expired: Broken for more than 6 months
 www/mediawiki119|www/mediawiki125|2015-11-28|Has expired: Please upgrade to mediawiki-1.25
 www/R-cran-Rpad||2015-11-28|Has expired: Unmaintained upstream
+archivers/py-liblzma|py-pyliblzma|2015-11-30|Rename to match upstream (PyPI) naming
