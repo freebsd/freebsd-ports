@@ -8,6 +8,7 @@
 %%WWWDIR%%/app/Action/CommentCreation.php
 %%WWWDIR%%/app/Action/TaskAssignCategoryColor.php
 %%WWWDIR%%/app/Action/TaskAssignCategoryLabel.php
+%%WWWDIR%%/app/Action/TaskAssignCategoryLink.php
 %%WWWDIR%%/app/Action/TaskAssignColorCategory.php
 %%WWWDIR%%/app/Action/TaskAssignColorColumn.php
 %%WWWDIR%%/app/Action/TaskAssignColorLink.php
@@ -107,7 +108,10 @@
 %%WWWDIR%%/app/Core/Csv.php
 %%WWWDIR%%/app/Core/DateParser.php
 %%WWWDIR%%/app/Core/Helper.php
-%%WWWDIR%%/app/Core/HttpClient.php
+%%WWWDIR%%/app/Core/Http/Client.php
+%%WWWDIR%%/app/Core/Http/Request.php
+%%WWWDIR%%/app/Core/Http/Response.php
+%%WWWDIR%%/app/Core/Http/Router.php
 %%WWWDIR%%/app/Core/Lexer.php
 %%WWWDIR%%/app/Core/Mail/Client.php
 %%WWWDIR%%/app/Core/Mail/ClientInterface.php
@@ -123,11 +127,10 @@
 %%WWWDIR%%/app/Core/Plugin/Base.php
 %%WWWDIR%%/app/Core/Plugin/Hook.php
 %%WWWDIR%%/app/Core/Plugin/Loader.php
-%%WWWDIR%%/app/Core/Request.php
-%%WWWDIR%%/app/Core/Response.php
-%%WWWDIR%%/app/Core/Router.php
-%%WWWDIR%%/app/Core/Security.php
-%%WWWDIR%%/app/Core/Session.php
+%%WWWDIR%%/app/Core/Security/Token.php
+%%WWWDIR%%/app/Core/Session/FlashMessage.php
+%%WWWDIR%%/app/Core/Session/SessionManager.php
+%%WWWDIR%%/app/Core/Session/SessionStorage.php
 %%WWWDIR%%/app/Core/Template.php
 %%WWWDIR%%/app/Core/Tool.php
 %%WWWDIR%%/app/Core/Translator.php
@@ -161,6 +164,7 @@
 %%WWWDIR%%/app/Integration/GithubWebhook.php
 %%WWWDIR%%/app/Integration/GitlabWebhook.php
 %%WWWDIR%%/app/Library/password.php
+%%WWWDIR%%/app/Locale/bs_BA/translations.php
 %%WWWDIR%%/app/Locale/cs_CZ/translations.php
 %%WWWDIR%%/app/Locale/da_DK/translations.php
 %%WWWDIR%%/app/Locale/de_DE/translations.php
@@ -253,6 +257,7 @@
 %%WWWDIR%%/app/ServiceProvider/DatabaseProvider.php
 %%WWWDIR%%/app/ServiceProvider/EventDispatcherProvider.php
 %%WWWDIR%%/app/ServiceProvider/LoggingProvider.php
+%%WWWDIR%%/app/ServiceProvider/SessionProvider.php
 %%WWWDIR%%/app/Subscriber/AuthSubscriber.php
 %%WWWDIR%%/app/Subscriber/BootstrapSubscriber.php
 %%WWWDIR%%/app/Subscriber/NotificationSubscriber.php
@@ -337,6 +342,7 @@
 %%WWWDIR%%/app/Template/event/comment_create.php
 %%WWWDIR%%/app/Template/event/comment_update.php
 %%WWWDIR%%/app/Template/event/events.php
+%%WWWDIR%%/app/Template/event/file_create.php
 %%WWWDIR%%/app/Template/event/subtask_create.php
 %%WWWDIR%%/app/Template/event/subtask_update.php
 %%WWWDIR%%/app/Template/event/task_assignee_change.php
@@ -1412,3 +1418,5 @@
 %%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/GenericEventTest.php
 %%WWWDIR%%/vendor/symfony/event-dispatcher/Tests/ImmutableEventDispatcherTest.php
 %%WWWDIR%%/vendor/symfony/event-dispatcher/phpunit.xml.dist
+@owner
+@group
