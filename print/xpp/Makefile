@@ -20,6 +20,8 @@ CFLAGS+=	-D_IPP_PRIVATE_STRUCTURES
 
 PLIST_FILES=	bin/xpp share/doc/xpp/README
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|$$(all_includes)|-I ${PREFIX}/include|' \
 	    ${WRKSRC}/Makefile
