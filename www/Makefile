@@ -421,6 +421,7 @@
     SUBDIR += mediawiki123
     SUBDIR += mediawiki124
     SUBDIR += mediawiki125
+    SUBDIR += mediawiki126
     SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
