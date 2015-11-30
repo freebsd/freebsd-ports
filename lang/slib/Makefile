@@ -6,7 +6,6 @@ PORTVERSION=	3b4
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
-DISTFILES=	slib-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable scheme library
@@ -14,6 +13,7 @@ COMMENT=	Portable scheme library
 USES=		gmake makeinfo
 ALL_TARGET=	slib.info
 INFO=		slib
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -25,10 +25,12 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${WRKSRC}/*.init ${WRKSRC}/*.txt \
 		${WRKSRC}/*.xyz ${WRKSRC}/*.ps ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/slib.info ${STAGEDIR}${MANPREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/slib.info ${STAGEDIR}${PREFIX}/info
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ANNOUNCE ChangeLog FAQ README
-	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
