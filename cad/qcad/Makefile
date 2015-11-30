@@ -40,7 +40,8 @@ RESDIR=		${WRKSRC}/release
 .endif
 
 SHRLIBS=	qcadcore qcadecmaapi qcadentity qcadgrid qcadgui qcadoperations	\
-		qcadsnap qcadspatialindex qcadstemmer spatialindexnavel
+		qcadsnap qcadspatialindex qcadstemmer spatialindexnavel qcadzip \
+		quazip
 STALIBS=	dxflib stemmer
 SHRDIR=		fonts libraries patterns plugins scripts ts
 #QSCRIPTS should not be installed to avoid conflicts with texlive-base
