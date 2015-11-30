@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	mpop
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.3
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Small and fast POP3 client
 
 LICENSE=	GPLv3 # (or later)
 
-USES=		gmake pkgconfig tar:xz
+USES=		cpe gmake pkgconfig tar:xz
+CPE_VENDOR=	martin_lambers
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules
+CONFIGURE_ARGS=	--disable-silent-rules --with-tls=no
 
 INFO=		mpop
 
@@ -25,9 +26,9 @@ OPTIONS_SUB=		yes
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GNUTLS_CONFIGURE_ON=	--with-tls=gnutls
-GSASL_DESC=		SASL authentication support via GNU SASL
+GSASL_DESC=		${SASL_DESC} via GNU SASL
 GSASL_LIB_DEPENDS=	libgsasl.so:${PORTSDIR}/security/gsasl
-GSASL_CONFIGURE_OFF=	--without-libgsasl
+GSASL_CONFIGURE_WITH=	libgsasl
 IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 IDN_CONFIGURE_WITH=	libidn
 LIBSECRET_DESC=		GNOME password management
@@ -36,14 +37,15 @@ LIBSECRET_CONFIGURE_WITH=	libsecret
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 OPENSSL_USE=		openssl=yes
-OPENSSL_CONFIGURE_ON=	--with-tls=openssl \
-			libssl_CFLAGS=-I${OPENSSLINC} \
-			libssl_LIBS="-lssl -lcrypto"
+OPENSSL_CONFIGURE_ENV=	${OPENSSLINC:M/usr/include:C,.+,libssl_CFLAGS=" ",} \
+			${OPENSSLLIB:M/usr/lib:C,.+,libssl_LIBS="-lssl -lcrypto",}
+OPENSSL_CONFIGURE_ON=	--with-tls=openssl
 
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MGNUTLS) && empty(PORT_OPTIONS:MOPENSSL)
-CONFIGURE_ARGS+=	--with-tls=no
-.endif
+post-patch:
+	@${REINPLACE_CMD} -Ee 's/Debian/${OPSYS}/' \
+		-e 's,/etc/ssl/certs,${LOCALBASE}/share/certs,' \
+		-e '/crt/s/ca(\\?)-certificates/ca\1-root\1-nss/' \
+		-e 's/ca\\?-certificates/ca_root_nss/' \
+		${WRKSRC}/doc/mpop*
 
 .include <bsd.port.mk>
