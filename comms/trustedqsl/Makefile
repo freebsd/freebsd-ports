@@ -21,10 +21,9 @@ USE_BDB=	5+
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USES=		cmake compiler:features pkgconfig tar:tgz
+USES=		cmake compiler:c++11-lib pkgconfig tar:tgz
 CMAKE_ARGS=	-DBDB_PREFIX=${LOCALBASE}
 USE_WX=		2.8+
-WX_UNICODE=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
