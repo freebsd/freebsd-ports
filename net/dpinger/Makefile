@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpinger
-PORTVERSION=	0.0.1.20151125
+PORTVERSION=	0.0.1.20151129
 CATEGORIES=	net
 
 MAINTAINER=	garga@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	dennypage
 GH_PROJECT=	dpinger
-GH_TAGNAME=	21942bac3a
+GH_TAGNAME=	c0adc9e57f
 
 PLIST_FILES=	bin/dpinger
 
