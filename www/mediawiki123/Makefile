@@ -12,7 +12,7 @@ COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki119-[0-9]* mediawiki12[45]-[0-9]*
+CONFLICTS=	mediawiki12[456]-[0-9]*
 
 USES=		shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
