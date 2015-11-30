@@ -817,6 +817,7 @@
     SUBDIR += racktables
     SUBDIR += radeontool
     SUBDIR += radmind
+    SUBDIR += rainbarf
     SUBDIR += raincoat
     SUBDIR += rcadm
     SUBDIR += rclean
