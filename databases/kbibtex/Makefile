@@ -3,6 +3,7 @@
 
 PORTNAME=	kbibtex
 DISTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	databases kde
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C,(^[[:digit:]]\.[[:digit:]]).*,\1,}/
 
