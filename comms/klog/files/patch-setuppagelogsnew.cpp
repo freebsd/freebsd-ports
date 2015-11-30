@@ -1,6 +1,6 @@
---- setuppagelogsnew.cpp.orig	2015-04-27 23:19:32.000000000 -0700
-+++ setuppagelogsnew.cpp	2015-04-27 23:19:49.000000000 -0700
-@@ -724,6 +724,7 @@
+--- setuppagelogsnew.cpp.orig	2015-09-15 18:40:58 UTC
++++ setuppagelogsnew.cpp
+@@ -735,6 +735,7 @@ bool SetupPageLogsNew::isThereAnyNotMana
          //qDebug() << "SetupPageLogsNew::isThereAnyNotManagedLog tras el while" << endl;
      }
      //qDebug() << "SetupPageLogsNew::isThereAnyNotManagedLog END" << endl;
