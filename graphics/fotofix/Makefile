@@ -3,6 +3,7 @@
 
 PORTNAME=	fotofix
 PORTVERSION=	0.01.1.88
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,7 +23,7 @@ SHEBANG_FILES=	fotofix
 
 PLIST_FILES=	bin/fotofix man/man1/fotofix.1.gz
 
-DESKTOP_ENTRIES="FotoFix" "" "" "fotofox" "" ""
+DESKTOP_ENTRIES="FotoFix" "" "" "fotofix" "" ""
 
 do-build:
 	(cd ${WRKSRC} && pod2man fotofix fotofix.1)
