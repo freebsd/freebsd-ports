@@ -9,6 +9,7 @@ bin/pidl
 %%SITE_PERL%%/Parse/Pidl/ODL.pm
 %%SITE_PERL%%/Parse/Pidl/Samba3/ClientNDR.pm
 %%SITE_PERL%%/Parse/Pidl/Samba3/ServerNDR.pm
+%%SITE_PERL%%/Parse/Pidl/Samba3/Template.pm
 %%SITE_PERL%%/Parse/Pidl/Samba4.pm
 %%SITE_PERL%%/Parse/Pidl/Samba4/COM/Header.pm
 %%SITE_PERL%%/Parse/Pidl/Samba4/COM/Proxy.pm
