@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Clone>=0.09:${PORTSDIR}/devel/p5-Clone
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
