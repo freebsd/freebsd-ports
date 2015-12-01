@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prompt_toolkit
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.54
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,12 +10,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Library for building powerful interactive command lines in Python
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>=0.6.2:${PORTSDIR}/devel/py-docopt \
-		${PYTHON_PKGNAMEPREFIX}six>=1.7.3:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}pygments>=1.6:${PORTSDIR}/textproc/py-pygments \
-		${PYTHON_PKGNAMEPREFIX}jedi>=0.8.1:${PORTSDIR}/devel/py-jedi
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	python:2
-USE_PYTHON=	distutils autoplist
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:${PORTSDIR}/textproc/py-pygments \
+		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:${PORTSDIR}/devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}wcwidth>=0:${PORTSDIR}/devel/py-wcwidth
+
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
