@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	blobwars
-PORTVERSION=	1.19
-PORTREVISION=	3
+PORTVERSION=	2.00
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Mission and Objective based 2D Platform Game
 
 LICENSE=	GPLv2 CCbyNCSA3 # GPLv2 or later
@@ -18,13 +17,12 @@ LICENSE_TEXT_CCbyNCSA3=CC-BY 3.0
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
 USES=		gmake
-USE_SDL=	image mixer net sdl ttf
+USE_SDL=	image2 mixer2 net2 sdl2 ttf2
 WITH_ZLIB=	yes
-MAKEFILE=	makefile
 
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	*.gif *.png *.html changes hacking porting readme samples
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -35,27 +33,27 @@ NLS_USES=	gettext
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|mkdir -p $$(DESTDIR)$$(DOCDIR)|| ; \
-		s|cp -p $$(DOCS) $$(DESTDIR)$$(DOCDIR)|| ; \
-		s|USEPAK ?= 0|USEPAK ?= 1| ; \
-		s|/usr|${LOCALBASE}| ; \
-		s|$$(PREFIX)/games/|$$(PREFIX)/bin/| ; \
-		s|/share/games/blobwars/|/share/blobwars/| ; \
-		s| -Werror||' \
-		-e '/LIBS =/s/-lz/-lz -lintl/' \
-			${WRKSRC}/makefile
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+			${WRKSRC}/Makefile
+
+# Correct Permissions
+	${CHMOD} 664 ${WRKSRC}/icons/*
+
+.if ! ${PORT_OPTIONS:MDOCS}
+	@${REINPLACE_CMD} \
+	-e 's|mkdir -p $$(DESTDIR)$$(DOCDIR)|| ; \
+	s|cp -p $$(DOCS) $$(DESTDIR)$$(DOCDIR)||' \
+		${WRKSRC}/Makefile
+.endif
 
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -i '' -e '/LOCALE_MO =/d' \
-		${WRKSRC}/makefile
+		${WRKSRC}/Makefile
 .endif
 
 post-install:
-	${LN} -sf ${PREFIX}/share/icons/hicolor/64x64/apps/${PORTNAME}.png \
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
