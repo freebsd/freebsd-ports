@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Entities-Interpolate
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,8 @@ COMMENT=	Call HTML::Entities::encode_entities, via a hash, within a string
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Tie-Function>=0:${PORTSDIR}/devel/p5-Tie-Function
+BUILD_DEPENDS=	p5-HTML-Parser>=3.69:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Tie-Function>=0.02:${PORTSDIR}/devel/p5-Tie-Function
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Slurper>=0.008:${PORTSDIR}/devel/p5-File-Slurper \
 		p5-Test-Stream>=1.302026:${PORTSDIR}/devel/p5-Test-Stream
