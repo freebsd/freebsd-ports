@@ -12,6 +12,7 @@ COMMENT=	Set of Perl modules that allows you to enhance logging capabilities
 
 LICENSE=	ART20
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
