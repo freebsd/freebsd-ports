@@ -84,7 +84,7 @@ man/man8/rnews.8cn.gz
 %%NEWSBIN%%/input/cunbatch
 %%NEWSBIN%%/input/newsrun
 %%NEWSBIN%%/input/newsrunning
-%%NEWSBIN%%/input/newsspool
+@(news,news,6555) %%NEWSBIN%%/input/newsspool
 %%NEWSBIN%%/input/recenews
 %%NEWSBIN%%/input/recpnews
 %%NEWSBIN%%/input/rnews
@@ -138,46 +138,40 @@ man/man8/rnews.8cn.gz
 %%NEWSBIN%%/unlock
 %%NEWSBIN%%/pgpverify
 %%NEWSBIN%%/config
-@exec chown news:news %D/%%NEWSBIN%%/input/newsspool
-@exec chmod 6555  %D/%%NEWSBIN%%/input/newsspool
 @owner news
 @group news
-@exec mkdir -p %%VARBASE%%/%%NEWSCTL%%
-@exec chown news:news %%VARBASE%%/%%NEWSCTL%%
-%%PORTEXAMPLES%%@unexec for i in %%NEWSCTL_FILES%%; do if cmp -s %%VARBASE%%/%%NEWSCTL%%/$i %D/%%EXAMPLESDIR%%/newsctl/$i; then rm -f %%VARBASE%%/%%NEWSCTL%%/$i; else echo "Preserving %%VARBASE%%/%%NEWSCTL%%/$i"; fi; done
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/active
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/active.times
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/batchparms
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/controlperm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/explist
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/history
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/history.dir
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/history.pag
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/inews
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/mailname
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/mailpaths
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/organization
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/postdefltgroup
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/readnews.ctl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/readnews.help
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/report.ctl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/sys
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/versionname
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/whoami
-%%PORTEXAMPLES%%@exec for i in %%NEWSCTL_FILES%%; do if test ! -f %%VARBASE%%/%%NEWSCTL%%/$i; then cp -p %D/%%EXAMPLESDIR%%/newsctl/$i %%VARBASE%%/%%NEWSCTL%%/$i; else echo "preservering %%VARBASE%%/%%NEWSCTL%%/$i"; fi; done
-@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/control
-@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/junk
-@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/news/announce/newusers
-@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/in.coming/bad
-@exec chmod g+w %%VARBASE%%/%%NEWSARTS%%/in.coming
-@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/out.going
-@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/out.master
-@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/out.nntp
-@exec chown news:news %%VARBASE%%/%%NEWSARTS%%
-@exec chown news:news %%VARBASE%%/%%NEWSARTS%%/*
-@exec chown news:news %%VARBASE%%/%%NEWSARTS%%/news/announce
-@exec chown news:news %%VARBASE%%/%%NEWSARTS%%/news/announce/newusers
-@exec mkdir -p %%VARBASE%%/%%NEWSOV%%
-@exec chown news:news %%VARBASE%%/%%NEWSOV%%
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/active %%VARBASE%%/%%NEWSCTL%%/active
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/active.times %%VARBASE%%/%%NEWSCTL%%/active.times
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/batchparms %%VARBASE%%/%%NEWSCTL%%/batchparms
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/controlperm %%VARBASE%%/%%NEWSCTL%%/controlperm
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/explist %%VARBASE%%/%%NEWSCTL%%/explist
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/history %%VARBASE%%/%%NEWSCTL%%/history
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/history.dir %%VARBASE%%/%%NEWSCTL%%/history.dir
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/history.pag %%VARBASE%%/%%NEWSCTL%%/history.pag
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/inews %%VARBASE%%/%%NEWSCTL%%/inews
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/mailname %%VARBASE%%/%%NEWSCTL%%/mailname
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/mailpaths %%VARBASE%%/%%NEWSCTL%%/mailpaths
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/organization %%VARBASE%%/%%NEWSCTL%%/organization
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/postdefltgroup %%VARBASE%%/%%NEWSCTL%%/postdefltgroup
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/readnews.ctl %%VARBASE%%/%%NEWSCTL%%/readnews.ctl
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/readnews.help %%VARBASE%%/%%NEWSCTL%%/readnews.help
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/report.ctl %%VARBASE%%/%%NEWSCTL%%/report.ctl
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/sys %%VARBASE%%/%%NEWSCTL%%/sys
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/versionname %%VARBASE%%/%%NEWSCTL%%/versionname
+%%PORTEXAMPLES%%@sample %%EXAMPLESDIR%%/newsctl/whoami %%VARBASE%%/%%NEWSCTL%%/whoami
+@dir %%VARBASE%%/%%NEWSARTS%%/out.nntp
+@dir %%VARBASE%%/%%NEWSARTS%%/out.master
+@dir %%VARBASE%%/%%NEWSARTS%%/out.going
+@dir %%VARBASE%%/%%NEWSARTS%%/news/announce/newusers
+@dir %%VARBASE%%/%%NEWSARTS%%/news/announce
+@dir %%VARBASE%%/%%NEWSARTS%%/news
+@dir %%VARBASE%%/%%NEWSARTS%%/junk
+@dir %%VARBASE%%/%%NEWSARTS%%/in.coming/bad
+@dir(,,775) %%VARBASE%%/%%NEWSARTS%%/in.coming
+@dir %%VARBASE%%/%%NEWSARTS%%/control
+@dir %%VARBASE%%/%%NEWSARTS%%
+@dir %%VARBASE%%/%%NEWSOV%%
+@dir %%VARBASE%%/%%NEWSCTL%%
 @owner
 @group
+@dir %%VARBASE%%/%%NEWSCTLBASE%%
