@@ -134,6 +134,12 @@
     SUBDIR += festlex-oald
     SUBDIR += festlex-ogi
     SUBDIR += festlex-poslex
+    SUBDIR += festvox-cmu_us_awb_arctic
+    SUBDIR += festvox-cmu_us_bdl_arctic
+    SUBDIR += festvox-cmu_us_clb_arctic
+    SUBDIR += festvox-cmu_us_jmk_arctic
+    SUBDIR += festvox-cmu_us_rms_arctic
+    SUBDIR += festvox-cmu_us_slt_arctic
     SUBDIR += festvox-czech
     SUBDIR += festvox-don
     SUBDIR += festvox-el11
