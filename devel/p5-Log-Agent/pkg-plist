@@ -21,7 +21,6 @@
 %%PERL5_MAN3%%/Log::Agent::Tag::Priority.3.gz
 %%PERL5_MAN3%%/Log::Agent::Tag::String.3.gz
 %%PERL5_MAN3%%/Log::Agent::Tag_List.3.gz
-%%PERL5_MAN3%%/Log::changes.3.gz
 %%SITE_PERL%%/Log/Agent.pm
 %%SITE_PERL%%/Log/Agent/Channel.pm
 %%SITE_PERL%%/Log/Agent/Channel/File.pm
@@ -48,7 +47,6 @@
 %%SITE_PERL%%/Log/Agent/Tag/Priority.pm
 %%SITE_PERL%%/Log/Agent/Tag/String.pm
 %%SITE_PERL%%/Log/Agent/Tag_List.pm
-%%SITE_PERL%%/Log/changes.pod
 %%SITE_PERL%%/auto/Log/Agent/DATUM_is_here.al
 %%SITE_PERL%%/auto/Log/Agent/Priorities/autosplit.ix
 %%SITE_PERL%%/auto/Log/Agent/Priorities/level_from_prio.al
