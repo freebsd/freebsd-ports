@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp-sop.inria.fr/marelle/tralics/src/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	LaTeX to XML translator
 
+BROKEN=		fetch fails, checksum mismatch
+
 LICENSE=	CeCILLv21
 LICENSE_NAME=	Ce(A)C(nrs)I(NRIA)L(ogiciel)L(ibre) version 2.1
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/Licence_CeCILL_V2-en.txt
