@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	exredis
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.3
 CATEGORIES=	databases
 PKGNAMEPREFIX=	elixir-
 
