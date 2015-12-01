@@ -38,6 +38,7 @@
     SUBDIR += R-cran-lme4
     SUBDIR += R-cran-memisc
     SUBDIR += R-cran-minqa
+    SUBDIR += R-cran-miscTools
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-nloptr
     SUBDIR += R-cran-nnls
