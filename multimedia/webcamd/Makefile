@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webcamd
-PORTVERSION=	3.18.0.1
+PORTVERSION=	4.2.0.8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org:8192/distfiles/
@@ -16,81 +16,61 @@ BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
 
 USES=		pkgconfig tar:bzip2 uidfix
+MAKE_ARGS=	LIBDIR="${LOCALBASE}/lib"
 USE_RC_SUBR=	webcamd
+SUB_FILES=	webcamd.conf
 USE_LDCONFIG=	yes
-
-LIBDIR=		${PREFIX}/lib
 
 OPTIONS_DEFINE=	CUSE DEBUG HAL VT_CLIENT VT_SERVER DVB INPUT RADIO WEBCAM
 OPTIONS_DEFAULT=DVB HAL INPUT RADIO WEBCAM
-CUSE_DESC=	Use CUSE and not CUSE4BSD (FreeBSD-11+ only)
+
+.if exists(/usr/lib/libcuse.so)
+OPTIONS_DEFAULT+=	CUSE
+.else
+OPTIONS_EXCLUDE+=	CUSE
+.endif
+
+CUSE_DESC=	Use cuse(3) over multimedia/cuse4bsd-kmod
+CUSE_MAKE_ARGS=		HAVE_CUSE="YES"
+CUSE_SUB_LIST=		LIBCUSE=""
+CUSE_BUILD_DEPENDS_OFF=	cuse4bsd-kmod>=0.1.24:${PORTSDIR}/multimedia/cuse4bsd-kmod
+CUSE_LIB_DEPENDS_OFF=	libcuse4bsd.so:${PORTSDIR}/multimedia/cuse4bsd-kmod
+CUSE_SUB_LIST_OFF=	LIBCUSE="${LOCALBASE}/lib/libcuse4bsd.so"
+
 HAL_DESC=	Build with HAL and DBUS support
+HAL_LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
+HAL_LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
+HAL_MAKE_ARGS=		HAVE_HAL="YES"
+HAL_SUB_LIST=		LIBHAL="${LOCALBASE}/lib/libhal.so:${LOCALBASE}/lib/libdbus-1.so:"
+HAL_SUB_LIST_OFF=	LIBHAL=""
+
 DEBUG_DESC=	Build with debugging support
+DEBUG_MAKE_ARGS=	HAVE_DEBUG="YES"
+
 VT_CLIENT_DESC=	Build with vTuner client support
+VT_CLIENT_MAKE_ARGS=	HAVE_VTUNER_CLIENT="YES"
+
 VT_SERVER_DESC=	Build with vTuner server support
+VT_SERVER_MAKE_ARGS=	HAVE_VTUNER_SERVER="YES"
 
 DVB_DESC=	Build with USB DVB support (DVB-X, analog TV, ...)
+DVB_MAKE_ARGS=		HAVE_DVB_DRV="YES"
+
 INPUT_DESC=	Build with USB input support (tablet, joystick, HID, IR, ...)
+INPUT_MAKE_ARGS=	HAVE_INPUT_DRV="YES"
+
 RADIO_DESC=	Build with USB radio support
+RADIO_MAKE_ARGS=	HAVE_RADIO_DRV="YES"
+
 WEBCAM_DESC=	Build with USB webcam support (UVC, gspca, ...)
+WEBCAM_MAKE_ARGS=	HAVE_WEBCAM_DRV="YES"
 
 USERS=		webcamd
 GROUPS=		webcamd
 
-.include <bsd.port.pre.mk>
-
 MAKE_ARGS+=	HAVE_MAN="YES"
 MAKE_ARGS+=	PTHREAD_LIBS="-lpthread"
 
-.if ${PORT_OPTIONS:MCUSE}
-MAKE_ARGS+=	HAVE_CUSE="YES"
-LIBCUSE=	/usr/lib/libcuse.so
-.else
-BUILD_DEPENDS+=	cuse4bsd-kmod>=0.1.31:${PORTSDIR}/multimedia/cuse4bsd-kmod
-LIB_DEPENDS+=	libcuse4bsd.so:${PORTSDIR}/multimedia/cuse4bsd-kmod
-LIBCUSE=	${LIBDIR}/libcuse4bsd.so
-.endif
-
-.if ${PORT_OPTIONS:MDVB}
-MAKE_ARGS+=	HAVE_DVB_DRV="YES"
-.endif
-
-.if ${PORT_OPTIONS:MINPUT}
-MAKE_ARGS+=	HAVE_INPUT_DRV="YES"
-.endif
-
-.if ${PORT_OPTIONS:MRADIO}
-MAKE_ARGS+=	HAVE_RADIO_DRV="YES"
-.endif
-
-.if ${PORT_OPTIONS:MWEBCAM}
-MAKE_ARGS+=	HAVE_WEBCAM_DRV="YES"
-.endif
-
-.if ${PORT_OPTIONS:MHAL}
-MAKE_ARGS+=	HAVE_HAL="YES"
-LIBHAL=		${LIBDIR}/libhal.so:${LIBDIR}/libdbus-1.so:
-LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
-LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
-.else
-LIBHAL=
-.endif
-
-.if ${PORT_OPTIONS:MVT_CLIENT}
-MAKE_ARGS+=	HAVE_VTUNER_CLIENT="YES"
-.endif
-
-.if ${PORT_OPTIONS:MVT_SERVER}
-MAKE_ARGS+=	HAVE_VTUNER_SERVER="YES"
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-MAKE_ARGS+=	HAVE_DEBUG="YES"
-.endif
-
-#
-# This step is optional
-#
 do-configure:
 	${MAKE} -C${WRKSRC}/tools/linux_make
 	${MAKE} ${MAKE_ARGS} configure -C${WRKSRC}
@@ -98,17 +78,8 @@ do-configure:
 post-patch:
 	@(cd ${WRKSRC}/patches && ${SH} ./do_patch.sh)
 
-pre-install:
-	${SED} -i .orig \
-		-e "s|%%PREFIX%%|${PREFIX}|g" \
-		-e "s|%%LIBHAL%%|${LIBHAL}|g" \
-		-e "s|%%LIBCUSE%%|${LIBCUSE}|g" \
-		${WRKDIR}/webcamd
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd
-	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
-		< ${FILESDIR}/webcamd.conf.in > ${WRKDIR}/webcamd.conf
 	${INSTALL_DATA} "${WRKDIR}/webcamd.conf" ${STAGEDIR}${PREFIX}/etc/devd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
