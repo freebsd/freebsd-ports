@@ -3,7 +3,7 @@
 
 PORTNAME=	gdcm
 PORTVERSION=	${GDCM_MAJOR}.${GDCM_MINOR}.${GDCM_PATCH}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/gdcm/gdcm%202.x/GDCM%20${PORTVERSION}
 
@@ -37,7 +37,7 @@ GDCM_PATCH=	4
 
 # Change this whenever VTK is updated
 VTK5_VERSION=	5.10
-VTK6_VERSION=	6.1
+VTK6_VERSION=	6.2
 
 USES=		alias cmake:outsource tar:bzip2
 USE_OPENSSL=	yes
