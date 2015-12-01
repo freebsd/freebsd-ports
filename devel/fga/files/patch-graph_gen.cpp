@@ -1,6 +1,6 @@
---- graph_gen.cpp.orig	Sat Nov 25 20:51:17 2006
-+++ graph_gen.cpp	Wed Jan 10 22:31:44 2007
-@@ -5,6 +5,7 @@
+--- graph_gen.cpp.orig	2007-05-25 11:44:29 UTC
++++ graph_gen.cpp
+@@ -2,6 +2,7 @@
  
  #include <fstream>
  #include <iostream>
