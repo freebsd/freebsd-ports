@@ -58,6 +58,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d62ec98e-97d8-11e5-8c0e-080027b00c2e">
+    <topic>cyrus-imapd -- integer overflow in the start_octet addition</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd25</name>
+	<range><ge>2.5.0</ge><lt>2.5.7</lt></range>
+      </package>
+      <package>
+	<name>cyrus-imapd24</name>
+	<range><ge>2.4.0</ge><lt>2.4.18_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cyrus IMAP 2.5.7 Release Note states:</p>
+	<blockquote cite="https://docs.cyrus.foundation/imap/release-notes/2.5/x/2.5.7.html">
+	  <p>CVE-2015-8077, CVE-2015-8078: protect against integer overflow in urlfetch range checks</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8078</cvename>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8078</url>
+      <url>http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-8078.html</url>
+      <url>https://security-tracker.debian.org/tracker/CVE-2015-8078</url>
+      <cvename>CVE-2015-8077</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8077</url>
+      <url>http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-8077.html</url>
+      <url>https://security-tracker.debian.org/tracker/CVE-2015-8077</url>
+    </references>
+    <dates>
+      <discovery>2015-11-04</discovery>
+      <entry>2015-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="11c52bc6-97aa-11e5-b8df-14dae9d210b8">
     <topic>django -- information leak vulnerability</topic>
     <affects>
