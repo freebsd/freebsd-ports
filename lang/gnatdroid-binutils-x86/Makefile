@@ -15,4 +15,6 @@ MASTERDIR=	${.CURDIR}/../../lang/gnatdroid-binutils
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 
+PLIST_SUB=	AMD64=${ARCH:S/i386/"@comment "/:S/${ARCH}/""/}
+
 .include "${MASTERDIR}/Makefile"
