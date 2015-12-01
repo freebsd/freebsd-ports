@@ -2,24 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	mygui
-PORTVERSION=	3.2.1.svn20140422
-PORTREVISION=	1
+PORTVERSION=	3.2.2
+DISTVERSIONPREFIX=	MyGUI
 CATEGORIES=	x11-toolkits graphics devel
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
-#		SF/my-gui/MyGUI/MyGUI_${PORTVERSION}
-DISTNAME=	MyGUI_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Fast, simple and flexible GUI system for Ogre engine
+COMMENT=	Fast, simple and flexible GUI system for games and 3D applications
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING.MIT
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libOgreMain.so:${PORTSDIR}/graphics/ogre3d \
 		libOIS.so:${PORTSDIR}/devel/ois
 
-USES=		cmake pkgconfig zip dos2unix compiler:c++11-lib
-CMAKE_ARGS=	-DMYGUI_BUILD_DEMOS=OFF -DMYGUI_BUILD_DOCS=OFF
+USE_GITHUB=	yes
+GH_ACCOUNT=	MyGUI
+
+USES=		cmake:outsource compiler:c++11-lib ninja pkgconfig
+CMAKE_ARGS+=	-DMYGUI_BUILD_DEMOS=FALSE \
+		-DMYGUI_BUILD_TOOLS=FALSE \
+		-DMYGUI_BUILD_DOCS=FALSE \
+		-DMYGUI_RENDERSYSTEM=1 # Dummy
 USE_LDCONFIG=	yes
-DOS2UNIX_GLOB=	*.cpp *.h *.cmake
 
 USE_CXXSTD=	c++11
 CXXFLAGS+=	-fPIC
