@@ -756,6 +756,7 @@
     SUBDIR += pgplot
     SUBDIR += pho
     SUBDIR += photopc
+    SUBDIR += phototonic
     SUBDIR += php-facedetect
     SUBDIR += php-gdal
     SUBDIR += php-libpuzzle
