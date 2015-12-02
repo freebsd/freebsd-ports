@@ -3,6 +3,7 @@
 
     COMMENT = Monetary, financial, and related applications
 
+    SUBDIR += R-cran-AER
     SUBDIR += R-cran-PerformanceAnalytics
     SUBDIR += R-cran-RFinanceYJ
     SUBDIR += R-cran-TTR
