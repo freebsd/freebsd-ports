@@ -61,6 +61,7 @@ OPTIONS_DEFINE=	\
 	AJP \
 	CACHE_PURGE \
 	CLOJURE \
+	CT \
 	ECHO \
 	HEADERS_MORE \
 	HTTP_ACCEPT_LANGUAGE \
@@ -157,6 +158,7 @@ WWW_DESC=			Enable html sample files
 AJP_DESC=			3rd party ajp module
 CACHE_PURGE_DESC=		3rd party cache_purge module
 CLOJURE_DESC=			3rd party clojure module
+CT_DESC=			3rd party cert_transparency module (SSL req.)
 ECHO_DESC=			3rd party echo module
 HEADERS_MORE_DESC=		3rd party headers_more module
 HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
@@ -377,6 +379,17 @@ GH_PROJECT+=	nginx-clojure:clojure
 GH_TAGNAME+=	v${NGINX_CLOJURE_VERSION}:clojure
 CONFIGURE_ENV+=	"JNI_INCS=-I${LOCALBASE}/openjdk8/include -I${LOCALBASE}/openjdk8/include/freebsd"
 CONFIGURE_ARGS+=--add-module=${WRKSRC_clojure}/src/c
+.endif
+
+.if ${PORT_OPTIONS:MCT}
+GIT_CT_VERSION=	1790ac0
+GH_ACCOUNT+=	grahamedgecombe:ct
+GH_PROJECT+=	nginx-ct:ct
+GH_TAGNAME+=	${GIT_CT_VERSION}:ct
+CONFIGURE_ARGS+=--add-module=${WRKSRC_ct}
+NGINX_OPENSSL=	yes
+USE_HTTP_SSL=	yes
+USE_OPENSSL_PORT=	yes
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
