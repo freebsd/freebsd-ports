@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eclipse
-PORTVERSION=	4.4.2
+PORTVERSION=	4.5.1
 CATEGORIES=	java devel
 MASTER_SITES=	https://googledrive.com/host/0B2kYpXHnC5LpSk01bU1ud0N5bXc/
 DISTFILES=	eclipse.platform.releng.aggregator-${PORTVERSION}.xz \
@@ -10,15 +10,13 @@ DISTFILES=	eclipse.platform.releng.aggregator-${PORTVERSION}.xz \
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ljboiler@gmail.com
-COMMENT=	Eclipse Luna SR-2
+COMMENT=	Eclipse Mars.1
 
 LICENSE=	EPL
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/maven31/bin/mvn:${PORTSDIR}/devel/maven31
+BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:${PORTSDIR}/devel/maven33
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
-
-BROKEN_FreeBSD_9_i386=	does not build
 
 ONLY_FOR_ARCHS=	i386 amd64
 CONFLICTS_INSTALL=	eclipse
@@ -55,18 +53,22 @@ PATCH_STRIP=	-p1
 USE_GNOME+=	gtk30
 LIB_DEPENDS+=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
 MVN_SETTINGS+=	-Dmachine_gtk3=1
+SWTGTK3OPT=
+.else
+SWTGTK3OPT=	SWT_GTK3=0
 .endif
 
 WRKSRC=${WRKDIR}/eclipse.platform.releng.aggregator-${PORTVERSION}
 GITCLONE=${DISTDIR}/eclipse/eclipse-gitclone/eclipse.platform.releng.aggregator
 
 MVN_LOCAL_REPO=	-Dmaven.repo.local=${WRKDIR}/eclipse-maven-repo-${PORTVERSION}/repository
-MVN_TEST_FLAG=	-Dmaven.test.skip=true
-MVN_SETTINGS+=	--offline
+MVN_TEST_FLAG=	-Dmaven.test.skip=true -DskipTests=true
+#MVN_SETTINGS+=	--offline
+MVN_OPTS?=	MAVEN_OPTS='-Xms1024m -Xmx1792m'
 ECLIPSE_WS=	gtk
 ECLIPSE_ARCH=	x86${ARCH:C/^i.86//:C/^amd/_/}
 E_SHORTARCH=	${ARCH:C/^i.86//:C/^amd//}
-ECLIPSE_BUILDID=M20150204-1700
+ECLIPSE_BUILDID=I20150603-2000
 SCRIPTS_ENV+=	ECLIPSE_ARCH=${ECLIPSE_ARCH} \
 		E_SHORTARCH=${E_SHORTARCH}
 PORTDESTDIR=	${PREFIX}/lib/eclipse
@@ -95,7 +97,7 @@ post-patch:
 	done)
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} JAVA_HOME=${JAVA_HOME} M2_HOME=${LOCALBASE}/share/java/maven31 ${MVN_OPTS} \
+	@(cd ${WRKSRC}; ${SETENV} JAVA_HOME=${JAVA_HOME} M2_HOME=${LOCALBASE}/share/java/maven33 ${MVN_OPTS} \
 		mvn ${MVN_SETTINGS} ${MVN_TEST_FLAG} ${MVN_LOCAL_REPO} clean verify -Dnative=${ECLIPSE_WS}.freebsd.${ECLIPSE_ARCH} \
 		-DbuildId=${ECLIPSE_BUILDID})
 
@@ -110,6 +112,7 @@ do-install:
 	  -e "s+%%JAVA_OS%%+${JAVA_OS}+g" \
 	  -e "s+%%JAVA_VERSION%%+${JAVA_VERSION}+g" \
 	  -e "s+%%LOCALBASE%%+${LOCALBASE}+g" \
+	  -e "s+%%SWTGTK3OPT%%+${SWTGTK3OPT}+g" \
 	  ${FILESDIR}/eclipse.in > ${BUILD_WRKSRC}/eclipse.tmp
 .if defined(JAVA_VENDOR)
 	@${REINPLACE_CMD} -e "s+%%JAVA_VENDOR_SPECIFICATION%%+JAVA_VENDOR=\"${JAVA_VENDOR}\"+g" \
@@ -124,7 +127,7 @@ do-install:
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s -d lib/eclipse -type d -empty) | ${SED} -ne "s,^,@dir ,p" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec echo '-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=%D/share/eclipse/dropins' >> %D/lib/eclipse/eclipse.ini" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${SED} -i '' '/^-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=/d' %D/lib/eclipse/eclipse.ini" >> ${TMPPLIST}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/eclipse/dropins
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/eclipse/dropins
 	@${ECHO_CMD} "@dir share/eclipse/dropins" >> ${TMPPLIST}
 
 distclean:
