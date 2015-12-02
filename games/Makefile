@@ -683,6 +683,7 @@
     SUBDIR += openlierox
     SUBDIR += openmortal
     SUBDIR += openmsx
+    SUBDIR += openmw
     SUBDIR += openpref
     SUBDIR += openra
     SUBDIR += opensfx

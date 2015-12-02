@@ -1,0 +1,10 @@
+--- files/gamecontrollerdb.txt.orig	2015-11-24 02:42:35 UTC
++++ files/gamecontrollerdb.txt
+@@ -99,3 +99,7 @@ ff113133000000000000504944564944,SVEN X-
+ 05000000362800000100000002010000,OUYA Game Controller,a:b0,b:b3,dpdown:b9,dpleft:b10,dpright:b11,dpup:b8,guide:b14,leftshoulder:b4,leftstick:b6,lefttrigger:a2,leftx:a0,lefty:a1,platform:Linux,rightshoulder:b5,rightstick:b7,righttrigger:a5,rightx:a3,righty:a4,x:b1,y:b2,
+ 05000000362800000100000003010000,OUYA Game Controller,a:b0,b:b3,dpdown:b9,dpleft:b10,dpright:b11,dpup:b8,guide:b14,leftshoulder:b4,leftstick:b6,lefttrigger:a2,leftx:a0,lefty:a1,platform:Linux,rightshoulder:b5,rightstick:b7,righttrigger:a5,rightx:a3,righty:a4,x:b1,y:b2,
+ 030000008916000001fd000024010000,Razer Onza Classic Edition,platform:Linux,x:b2,a:b0,b:b1,y:b3,back:b6,guide:b8tart:b7,dpleft:b11,dpdown:b14,dpright:b12,dpup:b13,leftshoulder:b4,lefttrigger:a2,rightshoulder:b5,righttrigger:a5,leftstick:b9,rightstick:b10,leftx:a0,lefty:a1,rightx:a3,righty:a4,
++
++# FreeBSD
++30783030303520283229000000000000,X360 Controller,platform:FreeBSD,x:b13,a:b11,b:b12,y:b14,back:b5,guide:b4,guide:b10,start:b4,dpleft:b2,dpdown:b1,dpright:b3,dpup:b0,leftshoulder:b8,lefttrigger:b9,lefttrigger:a2,rightshoulder:b9,righttrigger:a5,leftstick:b6,rightstick:b7,leftx:a0,lefty:a1,rightx:a3,righty:a4,
++30783030303520283029000000000000,X360 Controller,platform:FreeBSD,x:b13,a:b11,b:b12,y:b14,back:b5,guide:b4,guide:b10,start:b4,dpleft:b2,dpdown:b1,dpright:b3,dpup:b0,leftshoulder:b8,lefttrigger:b9,lefttrigger:a2,rightshoulder:b9,righttrigger:a5,leftstick:b6,rightstick:b7,leftx:a0,lefty:a1,rightx:a3,righty:a4,
