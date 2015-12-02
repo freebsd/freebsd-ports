@@ -1,11 +1,18 @@
---- libev/ev.c.orig	2015-11-29 14:37:29 UTC
-+++ libev/ev.c
-@@ -1010,7 +1010,7 @@ ecb_inline uint64_t ecb_rotr64 (uint64_t
+--- libev/ev.c.orig	2014-12-08 18:18:51.000000000 +0100
++++ libev/ev.c	2015-03-01 22:43:14.480908000 +0100
+@@ -1006,12 +1006,12 @@
+   }
+ #endif
+ 
+-#if ECB_GCC_VERSION(4,5)
++#if ECB_GCC_VERSION(4,5) || defined __clang__
    #define ecb_unreachable() __builtin_unreachable ()
  #else
    /* this seems to work fine, but gcc always emits a warning for it :/ */
 -  ecb_inline void ecb_unreachable (void) ecb_noreturn;
-+  ecb_noreturn ecb_inline void ecb_unreachable (void);
-   ecb_inline void ecb_unreachable (void) { }
+-  ecb_inline void ecb_unreachable (void) { }
++  ecb_inline ecb_noreturn void ecb_unreachable (void);
++  ecb_inline ecb_noreturn void ecb_unreachable (void) { }
  #endif
  
+ /* try to tell the compiler that some condition is definitely true */
