@@ -1,4 +1,13 @@
-English male voice for festival.
+US English Scottish male voice by the Language Technologies Institute
+at Carnegie Mellon University constructed from phonetically balanced,
+US English single speaker database designed for unit selection
+speech synthesis research.
+
+The speaker is very experienced in building synthetic voices and
+matched prompted US English, though his vowels are very different
+from US English vowels. Scottish English speakers will probably
+find synthesizers based on this voice strange.
+
 (voice_cmu_us_awb_arctic_clunits)
 
-WWW: http://www.speech.cs.cmu.edu/
+WWW: http://festvox.org/cmu_arctic/dbs_awb.html

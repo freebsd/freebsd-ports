@@ -1,5 +1,0 @@
-===============================================================================
-For correct operation, please add cmu_us_clb_arctic_clunits
-after "(defvar default-voice-priority-list"
-in ${PREFIX}/share/festival/lib/voices.scm
-===============================================================================

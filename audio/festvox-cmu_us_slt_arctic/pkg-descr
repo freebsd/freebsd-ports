@@ -1,4 +1,8 @@
-English female voice for festival.
+US English female voice by the Language Technologies Institute at
+Carnegie Mellon University constructed from phonetically balanced,
+US English single speaker database designed for unit selection
+speech synthesis research.
+
 (voice_cmu_us_slt_arctic_clunits)
 
-WWW: http://www.speech.cs.cmu.edu/
+WWW: http://festvox.org/cmu_arctic/dbs_slt.html
