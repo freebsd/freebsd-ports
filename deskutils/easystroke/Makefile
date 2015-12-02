@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	tobias.kortkamp@gmail.com
+MAINTAINER=	t@tobik.me
 COMMENT=	Easystroke is a gesture-recognition application for X11
 
 LICENSE=	ISCL
