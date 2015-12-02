@@ -1,0 +1,5 @@
+==========================================================================
+For correct operation, please add %%VOICE%%_clunits
+after "(defvar default-voice-priority-list"
+in %%PREFIX%%/share/festival/lib/voices.scm
+==========================================================================

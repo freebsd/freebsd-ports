@@ -138,6 +138,7 @@
     SUBDIR += festvox-cmu_us_bdl_arctic
     SUBDIR += festvox-cmu_us_clb_arctic
     SUBDIR += festvox-cmu_us_jmk_arctic
+    SUBDIR += festvox-cmu_us_ksp_arctic
     SUBDIR += festvox-cmu_us_rms_arctic
     SUBDIR += festvox-cmu_us_slt_arctic
     SUBDIR += festvox-czech

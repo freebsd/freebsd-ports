@@ -1,18 +1,14 @@
-# Created by: ?
 # $FreeBSD$
 
 VOICE=	cmu_us_clb_arctic
-PORTREVISION=	0
 
-COMMENT=	English female voice for festival
+COMMENT=	CMU US English female voice for festival
 
 MASTERDIR=	${.CURDIR}/../festvox-cmu_us_slt_arctic
-DESCR=	${.CURDIR}/pkg-descr
-DISTINFO_FILE=	${.CURDIR}/distinfo
-PLIST=	${.CURDIR}/pkg-plist
-PKGMESSAGE=	${.CURDIR}/pkg-message
 
-NODIRS= cep dic emu/lab_hlb emu/pm_hlb emu f0 \
+PORTDATA=       *
+
+NODIRS=	cep dic emu/lab_hlb emu/pm_hlb emu f0 \
 	festival/accents festival/coeffs festival/disttabs \
 	festival/dur/bin festival/dur/data festival/dur/feats \
 	festival/dur/tree \
@@ -25,4 +21,4 @@ NODIRS= cep dic emu/lab_hlb emu/pm_hlb emu f0 \
 	group lar lpc pm_lab pm_unfilled prompt-cep prompt-lab prompt-utt \
 	prompt-wav recording scratch/lab scratch/wav scratch versions wrd
 
-.include "${MASTERDIR}/Makefile.common"
+.include "${MASTERDIR}/Makefile"
