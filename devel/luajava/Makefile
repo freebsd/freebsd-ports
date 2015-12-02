@@ -11,7 +11,6 @@ MAINTAINER=	sunghyuk@gmail.com
 COMMENT=	Lua scripting tool for Java
 
 USES=		gmake dos2unix lua:51
-LUA_COMPS=	lua
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -43,7 +42,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/luajava-1.1.jar ${STAGEDIR}${JAVAJARDIR}
 
-post-install:
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
