@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	relaunchd
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	mark@heily.com

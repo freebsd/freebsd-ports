@@ -1,6 +1,9 @@
 etc/rc.d/launchd
 bin/launchctl
 sbin/launchd
+man/man1/launchctl.1.gz
+man/man8/launchd.8.gz
+man/man5/launchd.plist.5.gz
 @dir /.launchd
 @dir etc/launchd
 @dir etc/launchd/agents
