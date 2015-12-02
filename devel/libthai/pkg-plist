@@ -18,7 +18,7 @@ include/thai/wtt.h
 lib/libthai.a
 lib/libthai.so
 lib/libthai.so.0
-lib/libthai.so.0.2.2
+lib/libthai.so.0.2.3
 libdata/pkgconfig/libthai.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/annotated.html
 %%DOXYGEN%%%%DOCSDIR%%/html/arrowdown.png

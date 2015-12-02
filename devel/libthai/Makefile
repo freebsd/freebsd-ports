@@ -2,22 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	libthai
-PORTVERSION=	0.1.22
-PORTREVISION=	1
+PORTVERSION=	0.1.23
 CATEGORIES=	devel
 MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thai language support library
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdatrie.so:${PORTSDIR}/devel/libdatrie
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOXYGEN
 OPTIONS_SUB=	yes
