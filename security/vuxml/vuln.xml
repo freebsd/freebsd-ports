@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="11351c82-9909-11e5-a9c8-14dae9d5a9d2">
+    <topic>piwik -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>piwik</name>
+	<range><lt>2.15.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Piwik changelog reports:</p>
+	<blockquote cite="http://piwik.org/changelog/piwik-2-15-0/">
+	  <p>This release is rated critical.
+
+	   We are grateful for Security researchers who disclosed
+	   security issues privately to the Piwik Security Response
+	   team: Elamaran Venkatraman, Egidio Romano and Dmitriy
+	   Shcherbatov. The following vulnerabilities were fixed:
+	   XSS, CSRF, possible file inclusion in older PHP versions
+	   (low impact), possible Object Injection Vulnerability
+	   (low impact).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7815</cvename>
+      <cvename>CVE-2015-7816</cvename>
+      <url>http://piwik.org/changelog/piwik-2-15-0/</url>
+    </references>
+    <dates>
+      <discovery>2015-11-17</discovery>
+      <entry>2015-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d62ec98e-97d8-11e5-8c0e-080027b00c2e">
     <topic>cyrus-imapd -- integer overflow in the start_octet addition</topic>
     <affects>
