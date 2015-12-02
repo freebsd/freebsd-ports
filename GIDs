@@ -179,7 +179,6 @@ varnish:*:429:
 quasselcore:*:442:
 callweaver:*:444:
 ecartis:*:450:
-dqcache:*:453:
 courier:*:465:
 condor:*:466:
 netmon:*:467:
