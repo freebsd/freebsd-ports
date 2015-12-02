@@ -38,12 +38,6 @@ WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == DragonFly
-LIB_DEPENDS+=	libssl.so:${PORTSDIR}/security/openssl
-.endif
-
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} '/^NSFB_LINUX_AVAILABLE/ s|yes|no| ; s| -g||' \
 		${WRKSRC}/src/libnsfb-${NSFB_VERSION}/Makefile
