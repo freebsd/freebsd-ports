@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.1//EN" "http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd">
 <!--
 Copyright 2003-2014 Jacques Vidrine and contributors
@@ -58,6 +57,109 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="548f74bd-993c-11e5-956b-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>47.0.2526.73</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update.html">
+	  <p>41 security fixes in this release, inclduding:</p>
+	  <ul>
+	    <li>[558589] Critical CVE-2015-6765: Use-after-free in AppCache.
+	      Credit to anonymous.</li>
+	    <li>[551044] High CVE-2015-6766: Use-after-free in AppCache.
+	      Credit to anonymous.</li>
+	    <li>[554908] High CVE-2015-6767: Use-after-free in AppCache.
+	      Credit to anonymous.</li>
+	    <li>[556724] High CVE-2015-6768: Cross-origin bypass in DOM.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[534923] High CVE-2015-6769: Cross-origin bypass in core.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[541206] High CVE-2015-6770: Cross-origin bypass in DOM.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[544991] High CVE-2015-6771: Out of bounds access in v8.
+	      Credit to anonymous.</li>
+	    <li>[546545] High CVE-2015-6772: Cross-origin bypass in DOM.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[554946] High CVE-2015-6764: Out of bounds access in v8.
+	      Credit to Guang Gong of Qihoo 360 via pwn2own.</li>
+	    <li>[491660] High CVE-2015-6773: Out of bounds access in Skia.
+	      Credit to cloudfuzzer.</li>
+	    <li>[549251] High CVE-2015-6774: Use-after-free in Extensions.
+	      Credit to anonymous.</li>
+	    <li>[529012] High CVE-2015-6775: Type confusion in PDFium.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[457480] High CVE-2015-6776: Out of bounds access in PDFium.
+	      Credit to Hanno Böck.</li>
+	    <li>[544020] High CVE-2015-6777: Use-after-free in DOM.
+	      Credit to Long Liu of Qihoo 360Vulcan Team.</li>
+	    <li>[514891] Medium CVE-2015-6778: Out of bounds access in PDFium.
+	      Credit to Karl Skomski.</li>
+	    <li>[528505] Medium CVE-2015-6779: Scheme bypass in PDFium.
+	      Credit to Til Jasper Ullrich.</li>
+	    <li>[490492] Medium CVE-2015-6780: Use-after-free in Infobars.
+	      Credit to Khalil Zhani.</li>
+	    <li>[497302] Medium CVE-2015-6781: Integer overflow in Sfntly.
+	      Credit to miaubiz.</li>
+	    <li>[536652] Medium CVE-2015-6782: Content spoofing in Omnibox.
+	      Credit to Luan Herrera.</li>
+	    <li>[537205] Medium CVE-2015-6783: Signature validation issue in
+	      Android Crazy Linker. Credit to Michal Bednarski.</li>
+	    <li>[503217] Low CVE-2015-6784: Escaping issue in saved pages.
+	      Credit to Inti De Ceukelaire.</li>
+	    <li>[534542] Low CVE-2015-6785: Wildcard matching issue in CSP.
+	      Credit to Michael Ficarra / Shape Security.</li>
+	    <li>[534570] Low CVE-2015-6786: Scheme bypass in CSP. Credit to
+	      Michael Ficarra / Shape Security.</li>
+	    <li>[563930] CVE-2015-6787: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>  Multiple vulnerabilities in V8 fixed at the tip of the 4.7
+	      branch (currently 4.7.80.23).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6765</cvename>
+      <cvename>CVE-2015-6766</cvename>
+      <cvename>CVE-2015-6767</cvename>
+      <cvename>CVE-2015-6768</cvename>
+      <cvename>CVE-2015-6769</cvename>
+      <cvename>CVE-2015-6770</cvename>
+      <cvename>CVE-2015-6771</cvename>
+      <cvename>CVE-2015-6772</cvename>
+      <cvename>CVE-2015-6773</cvename>
+      <cvename>CVE-2015-6774</cvename>
+      <cvename>CVE-2015-6775</cvename>
+      <cvename>CVE-2015-6776</cvename>
+      <cvename>CVE-2015-6777</cvename>
+      <cvename>CVE-2015-6778</cvename>
+      <cvename>CVE-2015-6779</cvename>
+      <cvename>CVE-2015-6780</cvename>
+      <cvename>CVE-2015-6781</cvename>
+      <cvename>CVE-2015-6782</cvename>
+      <cvename>CVE-2015-6783</cvename>
+      <cvename>CVE-2015-6784</cvename>
+      <cvename>CVE-2015-6785</cvename>
+      <cvename>CVE-2015-6786</cvename>
+      <cvename>CVE-2015-6787</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-01</discovery>
+      <entry>2015-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="11351c82-9909-11e5-a9c8-14dae9d5a9d2">
     <topic>piwik -- multiple vulnerabilities</topic>
     <affects>
