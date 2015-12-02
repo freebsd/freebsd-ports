@@ -12,11 +12,10 @@ COMMENT=	Full-featured Linux BTRFS, Ext4, XFS as a FUSE module
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS+=	gnubc>0:${PORTSDIR}/math/gnubc
-BUILD_DEPENDS+=	python>0:${PORTSDIR}/lang/python
-LIB_DEPENDS+=	libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
+BUILD_DEPENDS=	gnubc>0:${PORTSDIR}/math/gnubc
 
-USES=		fuse gmake
+USES=		fuse gmake python:build shebangfix
+SHEBANG_FILES=	../../arch/lkl/scripts/headers_install.py
 USE_BINUTILS=	yes
 USE_GCC=	yes
 USE_GITHUB=	yes
