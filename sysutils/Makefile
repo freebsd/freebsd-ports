@@ -830,6 +830,7 @@
     SUBDIR += recoverdm
     SUBDIR += reed
     SUBDIR += rej
+    SUBDIR += relaunchd
     SUBDIR += relaxconf
     SUBDIR += rename
     SUBDIR += renameutils
