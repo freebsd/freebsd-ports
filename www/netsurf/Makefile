@@ -73,4 +73,4 @@ do-configure:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/netsurf
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
