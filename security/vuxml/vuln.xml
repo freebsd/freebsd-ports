@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.1//EN" "http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd">
 <!--
 Copyright 2003-2014 Jacques Vidrine and contributors
@@ -57,6 +58,176 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b0da85af-21a3-4c15-a137-fe9e4bc86002">
+    <topic>ffmpeg -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>gstreamer-ffmpeg</name>
+	<!-- gst-ffmpeg-0.10.13 has libav-0.7.2 (0.7.7 in freebsd port) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>handbrake</name>
+	<!-- handbrake-0.10.2 has libav-10.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ffmpeg</name>
+	<range><lt>2.8.3,1</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg26</name>
+	<range><lt>2.6.5</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg-devel</name>
+	<name>ffmpeg25</name>
+	<name>ffmpeg24</name>
+	<name>ffmpeg23</name>
+	<name>ffmpeg2</name>
+	<name>ffmpeg1</name>
+	<name>ffmpeg-011</name>
+	<name>ffmpeg0</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>avidemux</name>
+	<name>avidemux2</name>
+	<name>avidemux26</name>
+	<!-- avidemux-2.6.10 has ffmpeg-2.6.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>kodi</name>
+	<!-- kodi-15.2 has ffmpeg-2.6.4 -->
+	<range><lt>16.0</lt></range>
+      </package>
+      <package>
+	<name>mplayer</name>
+	<name>mencoder</name>
+	<!-- mplayer-1.1.r20150822_6 has ffmpeg-2.8.2 -->
+	<range><lt>1.1.r20150822_7</lt></range>
+      </package>
+      <package>
+	<name>mythtv</name>
+	<name>mythtv-frontend</name>
+	<!-- mythtv-0.27.0.20140121 has ffmpeg-1.2.2+ (snapshot, f9c8726) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>plexhometheater</name>
+	<!-- plexhometheater-1.4.1 has ffmpeg-0.10.2 fork -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6761">
+	  <p>The update_dimensions function in libavcodec/vp8.c in
+	    FFmpeg through 2.8.1, as used in Google Chrome before
+	    46.0.2490.71 and other products, relies on a
+	    coefficient-partition count during multi-threaded operation,
+	    which allows remote attackers to cause a denial of service
+	    (race condition and memory corruption) or possibly have
+	    unspecified other impact via a crafted WebM file.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8216">
+	  <p>The ljpeg_decode_yuv_scan function in
+	    libavcodec/mjpegdec.c in FFmpeg before 2.8.2 omits certain
+	    width and height checks, which allows remote attackers to
+	    cause a denial of service (out-of-bounds array access) or
+	    possibly have unspecified other impact via crafted MJPEG
+	    data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8217">
+	  <p>The ff_hevc_parse_sps function in libavcodec/hevc_ps.c in
+	    FFmpeg before 2.8.2 does not validate the Chroma Format
+	    Indicator, which allows remote attackers to cause a denial
+	    of service (out-of-bounds array access) or possibly have
+	    unspecified other impact via crafted High Efficiency Video
+	    Coding (HEVC) data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8218">
+	  <p>The decode_uncompressed function in libavcodec/faxcompr.c
+	    in FFmpeg before 2.8.2 does not validate uncompressed runs,
+	    which allows remote attackers to cause a denial of service
+	    (out-of-bounds array access) or possibly have unspecified
+	    other impact via crafted CCITT FAX data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8219">
+	  <p>The init_tile function in libavcodec/jpeg2000dec.c in
+	    FFmpeg before 2.8.2 does not enforce minimum-value and
+	    maximum-value constraints on tile coordinates, which allows
+	    remote attackers to cause a denial of service (out-of-bounds
+	    array access) or possibly have unspecified other impact via
+	    crafted JPEG 2000 data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8363">
+	  <p>The jpeg2000_read_main_headers function in
+	    libavcodec/jpeg2000dec.c in FFmpeg before 2.6.5, 2.7.x
+	    before 2.7.3, and 2.8.x through 2.8.2 does not enforce
+	    uniqueness of the SIZ marker in a JPEG 2000 image, which
+	    allows remote attackers to cause a denial of service
+	    (out-of-bounds heap-memory access) or possibly have
+	    unspecified other impact via a crafted image with two or
+	    more of these markers.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8364">
+	  <p>Integer overflow in the ff_ivi_init_planes function in
+	    libavcodec/ivi.c in FFmpeg before 2.6.5, 2.7.x before 2.7.3,
+	    and 2.8.x through 2.8.2 allows remote attackers to cause a
+	    denial of service (out-of-bounds heap-memory access) or
+	    possibly have unspecified other impact via crafted image
+	    dimensions in Indeo Video Interactive data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8365">
+	  <p>The smka_decode_frame function in libavcodec/smacker.c in
+	    FFmpeg before 2.6.5, 2.7.x before 2.7.3, and 2.8.x through
+	    2.8.2 does not verify that the data size is consistent with
+	    the number of channels, which allows remote attackers to
+	    cause a denial of service (out-of-bounds array access) or
+	    possibly have unspecified other impact via crafted Smacker
+	    data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6761</cvename>
+      <cvename>CVE-2015-8216</cvename>
+      <cvename>CVE-2015-8217</cvename>
+      <cvename>CVE-2015-8218</cvename>
+      <cvename>CVE-2015-8219</cvename>
+      <cvename>CVE-2015-8363</cvename>
+      <cvename>CVE-2015-8364</cvename>
+      <cvename>CVE-2015-8365</cvename>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=dabea74d0e82ea80cd344f630497cafcb3ef872c</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=d24888ef19ba38b787b11d1ee091a3d94920c76a</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=93f30f825c08477fe8f76be00539e96014cc83c8</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=d4a731b84a08f0f3839eaaaf82e97d8d9c67da46</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=43492ff3ab68a343c1264801baa1d5a02de10167</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=44a7f17d0b20e6f8d836b2957e3e357b639f19a2</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=df91aa034b82b77a3c4e01791f4a2b2ff6c82066</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=4a9af07a49295e014b059c1ab624c40345af5892</url>
+      <url>https://ffmpeg.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-27</discovery>
+      <entry>2015-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="548f74bd-993c-11e5-956b-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
