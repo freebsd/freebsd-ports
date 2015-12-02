@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: titus
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add some of the following variables to /etc/rc.conf to configure titus:
+# titus_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable titus.
+# titus_config (str):		Default "%%ETCDIR%%/titus.conf"
+#
+
+. /etc/rc.subr
+
+name="titus"
+rcvar=titus_enable
+
+load_rc_config $name
+
+: ${titus_enable="NO"}
+: ${titus_config="%%PREFIX%%/etc/${name}.conf"}
+
+pidfile=/var/run/titus.pid
+command="%%PREFIX%%/bin/titus"
+command_args="--daemon yes --pid-file ${pidfile} --config ${titus_config}"
+
+required_files="${titus_config}"
+
+run_rc_command "$1"

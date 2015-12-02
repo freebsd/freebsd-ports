@@ -186,6 +186,7 @@ varnishlog:*:430:429::0:0:Varnish Log User:/nonexistent:/usr/sbin/nologin
 quasselcore:*:442:442::0:0:Quassel IRC User:/nonexistent:/usr/sbin/nologin
 callweaver:*:444:444::0:0:Callweaver account:/var/lib/callweaver:/usr/sbin/nologin
 ecartis:*:450:450::0:0:Ecartis Listserver:/usr/local/ecartis:/usr/sbin/nologin
+dqcache:*:453:453::0:0:Dqcache Resolver:/nonexistent:/usr/sbin/nologin
 courier:*:465:465::0:0:Courier Mail Server:/nonexistent:/usr/sbin/nologin
 condor:*:466:466::0:0:& user:/home/condor:/usr/sbin/nologin
 netmon:*:467:467::0:0:Network monitor account:/var/netmon:/usr/sbin/nologin
@@ -241,6 +242,8 @@ jenkins:*:818:818::0:0:Jenkins CI:/usr/local/jenkins:/bin/sh
 rundeck:*:819:819::0:0:Rundeck:/usr/local/rundeck:/bin/sh
 openacs:*:820:820::0:0:OpenACS Daemon User:/nonexistent:/usr/sbin/nologin
 dotlrn:*:821:821::0:0:.LRN Daemon User:/nonexistent:/usr/sbin/nologin
+titus:*:822:65533::0:0:Titus Daemon User:/nonexistent:/usr/sbin/nologin
+titus-keys:*:823:65533::0:0:Titus Keyserver User:/nonexistent:/usr/sbin/nologin
 polw:*:825:825::0:0:Policyd-weight Cache Owner:/nonexistent:/sbin/nologin
 statsd:*:826:826::0:0:Statsd Daemon:/nonexistent:/sbin/nologin
 netdisco:*:840:840::0:0:netdisco daemon:/nonexistent:/usr/sbin/nologin
