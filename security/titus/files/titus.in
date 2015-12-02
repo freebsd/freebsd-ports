@@ -12,7 +12,7 @@
 # Add some of the following variables to /etc/rc.conf to configure titus:
 # titus_enable (bool):	Set to "NO" by default.
 #				Set it to "YES" to enable titus.
-# titus_config (str):		Default "%%ETCDIR%%/titus.conf"
+# titus_config (str):		Default "%%PREFIX%%/etc/titus.conf"
 #
 
 . /etc/rc.subr
