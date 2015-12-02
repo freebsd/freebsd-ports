@@ -1,0 +1,10 @@
+OpenMW requires a set of Morrowind data files.  If you don't own a
+copy of Morrowind, you can buy and download one on e.g. Steam or GOG.
+Steam can be installed on FreeBSD/amd64 via emulators/i386-wine or on
+FreeBSD/i386 via emulators/wine.  GOG is completely accessible via your
+web browser and you can simply download your purchase (making this the
+easiest of the two options).
+
+Once you have a set of Morrowind data files run openmw-launcher next.
+Answer YES to the question if you want to run the installation wizard.
+Follow the wizard's instruction to select your Morrowind data files.
