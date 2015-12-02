@@ -11,7 +11,7 @@ COMMENT=	Small and fast POP3 client
 
 LICENSE=	GPLv3 # (or later)
 
-USES=		cpe gmake pkgconfig tar:xz
+USES=		cpe gmake makeinfo pkgconfig tar:xz
 CPE_VENDOR=	martin_lambers
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --with-tls=no
