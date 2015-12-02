@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/ephe/archive_gzip/:ephe \
 		ftp://ftp.astro.com/pub/swisseph/:libswe \
 		http://astrolog.offline.ee/astrolog/changed/:dist
 DISTFILES=	a541gsrc.tar.gz:dist ${EPHE} \
-		swe_unix_src_2.02.01.tar.gz:libswe
+		swe_unix_src_2.04.tar.gz:libswe
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astrology program for X11 and alpha-numeric terminals
