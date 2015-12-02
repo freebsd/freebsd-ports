@@ -1,9 +1,9 @@
-etc/rc.d/launchd
 bin/launchctl
-sbin/launchd
+etc/rc.d/launchd
 man/man1/launchctl.1.gz
-man/man8/launchd.8.gz
 man/man5/launchd.plist.5.gz
+man/man8/launchd.8.gz
+sbin/launchd
 @dir /.launchd
 @dir etc/launchd
 @dir etc/launchd/agents

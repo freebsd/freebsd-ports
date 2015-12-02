@@ -2,6 +2,7 @@
 
 PORTNAME=	relaunchd
 PORTVERSION=	0.2.1
+DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
 MAINTAINER=	mark@heily.com
@@ -11,7 +12,5 @@ LICENSE=	ISCL
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	mheily
-GH_PROJECT=	relaunchd
-GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.mk>
