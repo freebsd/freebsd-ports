@@ -5,11 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151203:
+  AFFECTS: users of x11-toolkits/qt4-gui
+  AUTHOR: kde@FreeBSD.org
+
+  Back in mid-2012, pkg-message was added to the port suggesting changes to the
+  default shared memory limits in loader.conf(5). Since then, the default
+  limits have been changed and the values suggested by the port are no longer
+  sensible. If you have changed the following values in loader.conf(5) due to
+  qt4-gui's pkg-message, please considering removing them and using the default
+  settings:
+  * kern.ipc.shmall
+  * kern.ipc.shmni
+  * kern.ipc.shmseg
+  See base r209037 and ports PR 202927 for more context.
 
 20151203:
   AFFECTS: users of sysutils/logstash
   AUTHOR: junovitch@FreeBSD.org
-  
+
   Logstash has been updated to the 2.1.0 release. The embedded ElasticSearch
   instance is no longer supported. If in use, end users must update
   logstash.conf to point to the URL of an ElasticSearch instance.
