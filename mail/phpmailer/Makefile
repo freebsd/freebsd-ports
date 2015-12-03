@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	phpmailer
-PORTVERSION=	5.2.13
+PORTVERSION=	5.2.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@toco-domains.de
 COMMENT=	Full Featured Email Transfer Class for PHP
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	Synchro
+GH_ACCOUNT=	PHPMailer
 GH_PROJECT=	PHPMailer
 
 NO_BUILD=	yes
