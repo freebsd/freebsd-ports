@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20151203:
+  AFFECTS: users of sysutils/logstash
+  AUTHOR: junovitch@FreeBSD.org
+  
+  Logstash has been updated to the 2.1.0 release. The embedded ElasticSearch
+  instance is no longer supported. If in use, end users must update
+  logstash.conf to point to the URL of an ElasticSearch instance.
+
 20151130:
   AFFECTS: users of net/samba43
   AUTHOR: timur@FreeBSD.org
