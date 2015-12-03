@@ -3,14 +3,14 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang devel
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and C++ compiler (use devel/llvm${LLVM_SUFFIX})
 
-RUN_DEPENDS+=	clang${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
+RUN_DEPENDS+=	${PREFIX}/bin/clang${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
 
 LLVM_SUFFIX=	37
 
