@@ -93,6 +93,7 @@
     SUBDIR += php-tclink
     SUBDIR += prestashop
     SUBDIR += py-bitcoin
+    SUBDIR += py-python-obelisk
     SUBDIR += py-stripe
     SUBDIR += py-vatnumber
     SUBDIR += py-ystockquote
