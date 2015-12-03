@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8a90dc87-89f9-11e5-a408-00248c0c745d">
+    <topic>PHPmailer -- SMTP injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmailer</name>
+	<range><lt>5.2.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHPMailer changelog reports:</p>
+	<blockquote cite="https://github.com/PHPMailer/PHPMailer/blob/v5.2.14/changelog.md">
+	  <p>Fix vulnerability that allowed email addresses with
+	    line breaks (valid in RFC5322) to pass to SMTP, permitting
+	    message injection at the SMTP level. Mitigated in both
+	    the address validator and in the lower-level SMTP class.
+	    Thanks to Takeshi Terada.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/PHPMailer/PHPMailer/blob/v5.2.14/changelog.md</url>
+    </references>
+    <dates>
+      <discovery>2015-11-05</discovery>
+      <entry>2015-12-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b0da85af-21a3-4c15-a137-fe9e4bc86002">
     <topic>ffmpeg -- multiple vulnerabilities</topic>
     <affects>
