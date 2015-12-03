@@ -966,6 +966,7 @@
     SUBDIR += py-pysmb
     SUBDIR += py-pysocks
     SUBDIR += py-pysphere
+    SUBDIR += py-pystun
     SUBDIR += py-python-bitcoinrpc
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
