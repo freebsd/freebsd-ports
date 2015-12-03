@@ -48,8 +48,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/general.cf-dist ${STAGEDIR}${PREFIX}/etc/ncftpd
 	${INSTALL_DATA} ${WRKSRC}/conf/domain.cf-dist ${STAGEDIR}${PREFIX}/etc/ncftpd
 
-post-install:
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.post.mk>
