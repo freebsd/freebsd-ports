@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	\
 		--without-php_extension \
 		--without-python \
 		--without-ruby \
-                --without-go
+		--without-go
 
 .include <bsd.port.pre.mk>
 
