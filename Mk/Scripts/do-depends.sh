@@ -11,7 +11,7 @@ validate_env dp_RAWDEPENDS dp_DEPTYPE dp_DEPENDS_TARGET dp_DEPENDS_PRECLEAN \
 	dp_DEPENDS_CLEAN dp_DEPENDS_ARGS dp_USE_PACKAGE_DEPENDS \
 	dp_USE_PACKAGE_DEPENDS_ONLY dp_PKG_ADD dp_PKG_INFO dp_WRKDIR \
 	dp_PKGNAME dp_STRICT_DEPENDS dp_LOCALBASE dp_LIB_DIRS dp_SH \
-	dp_SCRIPTSDIR dp_PORTSDIR dp_MAKE
+	dp_SCRIPTSDIR PORTSDIR dp_MAKE
 
 set -u
 
@@ -123,7 +123,7 @@ for _line in ${dp_RAWDEPENDS} ; do
 
 	case "${origin}" in
 	/*) ;;
-	*) origin="${dp_PORTSDIR}/${origin}" ;;
+	*) origin="${PORTSDIR}/${origin}" ;;
 	esac
 
 	depends_args="${dp_DEPENDS_ARGS}"
