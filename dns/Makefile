@@ -156,6 +156,7 @@
     SUBDIR += pear-Net_DNS2
     SUBDIR += powerdns
     SUBDIR += powerdns-recursor
+    SUBDIR += public_suffix_list
     SUBDIR += py-adns
     SUBDIR += py-bonjour
     SUBDIR += py-dns
