@@ -6,7 +6,7 @@ PORTVERSION=	0.7.2
 PORTREVISION=	1
 CATEGORIES=	lang
 
-MAINTAINER=	tobias.kortkamp@gmail.com
+MAINTAINER=	t@tobik.me
 COMMENT=	Minimal Scheme implementation for use as a C extension language
 
 LICENSE=	BSD3CLAUSE

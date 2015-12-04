@@ -1,0 +1,9 @@
+bin/usbhid-dump
+include/uhd/dev.h
+include/uhd/dev_list.h
+include/uhd/iface.h
+include/uhd/iface_list.h
+include/uhd/libusb.h
+include/uhd/misc.h
+lib/libuhd.a
+man/man8/usbhid-dump.8.gz

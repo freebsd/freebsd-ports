@@ -31,7 +31,6 @@
     SUBDIR += ftpsesame
     SUBDIR += ftpsync
     SUBDIR += gftp
-    SUBDIR += gnusget
     SUBDIR += gnustep-ftp
     SUBDIR += gstreamer1-plugins-curl
     SUBDIR += gwget
@@ -86,7 +85,6 @@
     SUBDIR += rubygem-curb
     SUBDIR += scythia
     SUBDIR += smbftpd
-    SUBDIR += spegla
     SUBDIR += tftp-hpa
     SUBDIR += tnftp
     SUBDIR += tnftpd

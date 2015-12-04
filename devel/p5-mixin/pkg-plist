@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/mixin.3.gz
-%%PERL5_MAN3%%/mixin::with.3.gz
 %%SITE_PERL%%/mixin.pm
 %%SITE_PERL%%/mixin/with.pm
+%%PERL5_MAN3%%/mixin.3.gz
+%%PERL5_MAN3%%/mixin::with.3.gz

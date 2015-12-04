@@ -91,7 +91,6 @@
     SUBDIR += cimg
     SUBDIR += cinepaint
     SUBDIR += clutter
-    SUBDIR += clutter-box2d
     SUBDIR += clutter-gtk
     SUBDIR += clutter-gtk3
     SUBDIR += cluttermm
@@ -349,7 +348,6 @@
     SUBDIR += icc-profiles-openicc
     SUBDIR += iccexamin
     SUBDIR += iccxml
-    SUBDIR += icoconvert
     SUBDIR += icon-slicer
     SUBDIR += icontact
     SUBDIR += icoutils
@@ -387,7 +385,6 @@
     SUBDIR += jpatch
     SUBDIR += jpeg
     SUBDIR += jpeg-turbo
-    SUBDIR += jpeg2ps
     SUBDIR += jpeginfo
     SUBDIR += jpegoptim
     SUBDIR += jpg2pdf
@@ -543,7 +540,6 @@
     SUBDIR += libwpg03
     SUBDIR += lightzone
     SUBDIR += linplasma
-    SUBDIR += linux-XnViewMP
     SUBDIR += linux-adobesvg
     SUBDIR += linux-c6-cairo
     SUBDIR += linux-c6-dri
@@ -760,6 +756,7 @@
     SUBDIR += pgplot
     SUBDIR += pho
     SUBDIR += photopc
+    SUBDIR += phototonic
     SUBDIR += php-facedetect
     SUBDIR += php-gdal
     SUBDIR += php-libpuzzle
@@ -816,7 +813,6 @@
     SUBDIR += projectm-libvisual
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
-    SUBDIR += pure-gl
     SUBDIR += py-PyX
     SUBDIR += py-PyX12
     SUBDIR += py-aafigure
@@ -880,10 +876,8 @@
     SUBDIR += py3-cairo
     SUBDIR += pygts
     SUBDIR += pymorph
-    SUBDIR += pyro
     SUBDIR += pysvg
     SUBDIR += qcomicbook
-    SUBDIR += qcread
     SUBDIR += qgis
     SUBDIR += qiv
     SUBDIR += qiviewer
@@ -951,7 +945,6 @@
     SUBDIR += rubygem-rsvg2
     SUBDIR += rubygem-ruby-graphviz
     SUBDIR += rubygem-scruffy
-    SUBDIR += rubyphoto
     SUBDIR += s10sh
     SUBDIR += sage
     SUBDIR += sam2p
@@ -986,7 +979,6 @@
     SUBDIR += simpleviewer
     SUBDIR += sk1libs
     SUBDIR += skanlite
-    SUBDIR += sketch
     SUBDIR += smillaenlarger
     SUBDIR += springgraph
     SUBDIR += squish

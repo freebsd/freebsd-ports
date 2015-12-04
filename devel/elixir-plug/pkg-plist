@@ -12,7 +12,7 @@ lib/elixir/lib/plug/ebin/Elixir.Plug.CSRFProtection.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.Adapter.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.AlreadySentError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.Cookies.beam
-lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.InvalidHeaderKeyFormatError.beam
+lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.InvalidHeaderError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.NotSentError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.Query.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.Status.beam

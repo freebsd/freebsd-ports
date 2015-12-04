@@ -38,9 +38,6 @@ lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.NotFound.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.Prepare.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.Router.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Plugs.Version.beam
-lib/elixir/lib/maru/ebin/Elixir.Maru.Response.Any.beam
-lib/elixir/lib/maru/ebin/Elixir.Maru.Response.BitString.beam
-lib/elixir/lib/maru/ebin/Elixir.Maru.Response.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Router.Endpoint.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Router.Param.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Router.Path.beam
@@ -82,7 +79,6 @@ lib/elixir/lib/maru/lib/maru/plugs/notfound.ex
 lib/elixir/lib/maru/lib/maru/plugs/prepare.ex
 lib/elixir/lib/maru/lib/maru/plugs/router.ex
 lib/elixir/lib/maru/lib/maru/plugs/version.ex
-lib/elixir/lib/maru/lib/maru/response.ex
 lib/elixir/lib/maru/lib/maru/router.ex
 lib/elixir/lib/maru/lib/maru/router/endpoint.ex
 lib/elixir/lib/maru/lib/maru/router/path.ex

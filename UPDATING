@@ -5,6 +5,53 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151203:
+  AFFECTS: users of x11-toolkits/qt4-gui or x11-toolkits/qt5-gui
+  AUTHOR: kde@FreeBSD.org
+
+  Back in mid-2012, pkg-message was added to the port suggesting changes to the
+  default shared memory limits in loader.conf(5). Since then, the default
+  limits have been changed and the values suggested by the port are no longer
+  sensible. If you have changed the following values in loader.conf(5) due to
+  qt4-gui's or qt5-gui's pkg-message, please considering removing them and
+  using the default settings:
+  * kern.ipc.shmall
+  * kern.ipc.shmmni
+  * kern.ipc.shmseg
+  See base r209037 and ports PR 202927 for more context.
+
+20151203:
+  AFFECTS: users of sysutils/logstash
+  AUTHOR: junovitch@FreeBSD.org
+
+  Logstash has been updated to the 2.1.0 release. The embedded ElasticSearch
+  instance is no longer supported. If in use, end users must update
+  logstash.conf to point to the URL of an ElasticSearch instance.
+
+20151130:
+  AFFECTS: users of net/samba43
+  AUTHOR: timur@FreeBSD.org
+
+  A new version of Samba server that has better integration with Windows 10.
+  This is still experimental and there were reports that rolling upgrade from
+  previous version of Samba fails to work.
+
+  Please, backup all relevant files from /var/db/samba4/ directory, as well
+  as configuration files.
+
+  Follow https://wiki.samba.org/index.php/Updating_Samba for the upgrade path.
+
+20151130:
+  AFFECTS: users of net/samba4, net/samba41, net/samba42
+  AUTHOR: timur@FreeBSD.org
+
+  Recent versions of devel/talloc, devel/tevent, database/tdb, database/ldb
+  contained infinit recursive call to the strtol* set of replacement functions,
+  which lead to coredumps. Unofficial patch was added menwhile, but now official
+  version of the fixed libs were released. If your version of net/samba4 works
+  fine you don't need to recompile it. Other ports were also upgraded and some
+  bugs were fixed in upstream.
+
 20151122:
   AFFECTS: users of audio/audacity
   AUTHOR: riggs@FreeBSD.org

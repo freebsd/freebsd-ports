@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:${PORTSDIR}/www/py-django16
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 
-USES=		python:2 shebangfix
+USES=		gettext-tools python:2 shebangfix
 USE_PYTHON=	distutils autoplist
 PYDISTUTILS_PKGNAME=	Djblets
 

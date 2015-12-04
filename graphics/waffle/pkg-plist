@@ -9,7 +9,7 @@ lib/cmake/Waffle/WaffleConfig.cmake
 lib/cmake/Waffle/WaffleConfigVersion.cmake
 lib/libwaffle-1.so
 lib/libwaffle-1.so.0
-lib/libwaffle-1.so.0.5.1
+lib/libwaffle-1.so.0.5.2
 libdata/pkgconfig/waffle-1.pc
 share/cmake/Modules/FindWaffle.cmake
 %%PORTDOCS%%%%DOCSDIR%%/HACKING.txt
@@ -38,4 +38,5 @@ share/cmake/Modules/FindWaffle.cmake
 %%PORTDOCS%%%%DOCSDIR%%/release-notes/waffle-1.4.3.txt
 %%PORTDOCS%%%%DOCSDIR%%/release-notes/waffle-1.4.4.txt
 %%PORTDOCS%%%%DOCSDIR%%/release-notes/waffle-1.5.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/waffle-1.5.1.txt
 %%PORTDOCS%%%%DOCSDIR%%/release-notes/waffle-%%PORTVERSION%%.txt

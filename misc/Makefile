@@ -327,6 +327,7 @@
     SUBDIR += p5-Geo-Coder-Ovi
     SUBDIR += p5-Geo-Coder-PlaceFinder
     SUBDIR += p5-Geo-Coder-TomTom
+    SUBDIR += p5-Geo-GeoNames
     SUBDIR += p5-Geo-Postcodes
     SUBDIR += p5-Geo-Postcodes-DK
     SUBDIR += p5-Geo-Postcodes-NO
@@ -441,6 +442,7 @@
     SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
+    SUBDIR += rubygem-mime-types-data
     SUBDIR += rubygem-mime-types1
     SUBDIR += rubygem-mimemagic
     SUBDIR += rubygem-rabbit

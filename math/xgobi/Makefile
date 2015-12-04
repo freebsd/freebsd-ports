@@ -14,6 +14,8 @@ COMMENT=	Graphical data visualisation tool
 
 NO_CDROM=	Restrictive copyright (do not sell for profit)
 
+BROKEN=		fails to fetch (no route to host)
+
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}/src
 CONFIGURE_WRKSRC=	${PATCH_WRKSRC}
 BUILD_WRKSRC=	${PATCH_WRKSRC}

@@ -14,6 +14,9 @@ LICENSE_NAME=	Lesser GPL 2.1 with a special OpenSSL exception clause
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Depends on broken and expiring www/ocsigen
+EXPIRATION_DATE=	2015-12-30
+
 BUILD_DEPENDS=	${PORTREQS}
 RUN_DEPENDS=	${PORTREQS}
 

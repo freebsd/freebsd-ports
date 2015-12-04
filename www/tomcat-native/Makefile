@@ -31,4 +31,10 @@ PLIST_FILES=	lib/libtcnative-1.a \
 		lib/libtcnative-1.so.0 \
 		lib/libtcnative-1.so.0.2.2
 
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000028
+WITH_OPENSSL_PORT=	yes
+.endif
+
 .include <bsd.port.mk>

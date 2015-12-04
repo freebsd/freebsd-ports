@@ -28,6 +28,7 @@
 %%SITE_PERL%%/Data/Object/Role/Number.pm
 %%SITE_PERL%%/Data/Object/Role/Numeric.pm
 %%SITE_PERL%%/Data/Object/Role/Output.pm
+%%SITE_PERL%%/Data/Object/Role/Proxyable.pm
 %%SITE_PERL%%/Data/Object/Role/Ref.pm
 %%SITE_PERL%%/Data/Object/Role/Regexp.pm
 %%SITE_PERL%%/Data/Object/Role/Scalar.pm
@@ -75,6 +76,7 @@
 %%PERL5_MAN3%%/Data::Object::Role::Number.3.gz
 %%PERL5_MAN3%%/Data::Object::Role::Numeric.3.gz
 %%PERL5_MAN3%%/Data::Object::Role::Output.3.gz
+%%PERL5_MAN3%%/Data::Object::Role::Proxyable.3.gz
 %%PERL5_MAN3%%/Data::Object::Role::Ref.3.gz
 %%PERL5_MAN3%%/Data::Object::Role::Regexp.3.gz
 %%PERL5_MAN3%%/Data::Object::Role::Scalar.3.gz

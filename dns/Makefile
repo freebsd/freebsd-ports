@@ -62,7 +62,6 @@
     SUBDIR += fpdns
     SUBDIR += gdnsd
     SUBDIR += gdnsd2
-    SUBDIR += geta
     SUBDIR += getdns
     SUBDIR += ghtool
     SUBDIR += hesiod
@@ -85,6 +84,8 @@
     SUBDIR += libbind
     SUBDIR += libdjbdns
     SUBDIR += libidn
+    SUBDIR += libidn2
+    SUBDIR += libpsl
     SUBDIR += linux-c6-libasyncns
     SUBDIR += linux-f10-libasyncns
     SUBDIR += mDNSResponder_nss
@@ -130,7 +131,6 @@
     SUBDIR += p5-Net-DNS-TestNS
     SUBDIR += p5-Net-DNS-ToolKit
     SUBDIR += p5-Net-DNS-Zone-Parser
-    SUBDIR += p5-Net-DNS-ZoneCheck
     SUBDIR += p5-Net-DNS-ZoneFile-Fast
     SUBDIR += p5-Net-DNSBL-MultiDaemon
     SUBDIR += p5-Net-DNSBL-Statistics
@@ -158,10 +158,12 @@
     SUBDIR += pear-Net_DNS2
     SUBDIR += powerdns
     SUBDIR += powerdns-recursor
+    SUBDIR += public_suffix_list
     SUBDIR += py-adns
     SUBDIR += py-bonjour
     SUBDIR += py-dns
     SUBDIR += py-dns3
+    SUBDIR += py-dnschain
     SUBDIR += py-dnspython
     SUBDIR += py-easyzone
     SUBDIR += py-idna

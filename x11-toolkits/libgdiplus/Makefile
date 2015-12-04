@@ -3,6 +3,7 @@
 
 PORTNAME=	libgdiplus
 PORTVERSION=	3.12
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 

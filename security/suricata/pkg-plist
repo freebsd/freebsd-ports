@@ -60,15 +60,17 @@ bin/suricata
 @sample %%ETCDIR%%/classification.config.sample
 @sample %%ETCDIR%%/reference.config.sample
 @sample %%ETCDIR%%/threshold.config.sample
+%%ETCDIR%%/rules/app-layer-events.rules
 %%ETCDIR%%/rules/decoder-events.rules
 %%ETCDIR%%/rules/dns-events.rules
 %%ETCDIR%%/rules/files.rules
 %%ETCDIR%%/rules/http-events.rules
+%%ETCDIR%%/rules/modbus-events.rules
 %%ETCDIR%%/rules/smtp-events.rules
 %%ETCDIR%%/rules/stream-events.rules
 %%ETCDIR%%/rules/tls-events.rules
 @dir etc/suricata/rules
 @dir etc/suricata
 @dir(root,wheel,0700) /var/log/suricata
-@unexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/suricata`` to remove any configuration files left."; fi
+@unexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, run ``rm -rf ${PKG_PREFIX}/etc/suricata`` to remove configuration files."; fi
 @dir %%DOCSDIR%%

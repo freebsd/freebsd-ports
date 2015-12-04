@@ -62,6 +62,9 @@ CONFIGURE_SHELL?=${LOCALBASE}/bin/bash
 
 DEBUG_CONFIGURE_WITH=	debug
 
+DOCS_BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man \
+			docbook2man:${PORTSDIR}/textproc/docbook-utils
+
 FLAC_CONFIGURE_WITH=	libflac
 FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
 

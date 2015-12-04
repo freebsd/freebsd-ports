@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	App-perlbrew
-PORTVERSION=	0.73
+PORTVERSION=	0.74
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GUGOD
@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl Environment manager
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-CPAN-Perl-Releases>=1.94:${PORTSDIR}/devel/p5-CPAN-Perl-Releases \
 		p5-Capture-Tiny>=0.25:${PORTSDIR}/devel/p5-Capture-Tiny \

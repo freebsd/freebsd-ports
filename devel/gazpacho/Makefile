@@ -10,25 +10,29 @@ MASTER_SITES=	GNOME/sources/gazpacho/0.7
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI builder for the GTK+ toolkit
 
+LICENSE=	LGPL21 # or later (source mentions LGPL20+)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	${LOCALBASE}/bin/kiwi-i18n:${PORTSDIR}/x11-toolkits/py-kiwi
 BUILD_DEPENDS=	${LOCALBASE}/bin/kiwi-i18n:${PORTSDIR}/x11-toolkits/py-kiwi
 
-NO_BUILD=	yes
-NO_ARCH=	yes
+USES=		desktop-file-utils gettext python
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
-USES=		desktop-file-utils gettext python
-DOCS=		AUTHORS ChangeLog CONTRIBUTORS COPYING README NEWS
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+PORTDOCS=	AUTHORS ChangeLog CONTRIBUTORS COPYING README NEWS
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/doc/gazpacho/examples|${EXAMPLESDIR}|g' ${WRKSRC}/setup.py
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-. endfor
+.endfor
 
 .include <bsd.port.mk>

@@ -113,7 +113,6 @@
     SUBDIR += p5-Sereal-Encoder
     SUBDIR += p5-Storable-AMF
     SUBDIR += p5-String-Multibyte
-    SUBDIR += p5-String-SetUTF8
     SUBDIR += p5-Text-Bidi
     SUBDIR += p5-Text-Iconv
     SUBDIR += p5-Text-Unidecode

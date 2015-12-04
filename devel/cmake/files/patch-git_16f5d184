@@ -1,0 +1,22 @@
+Fixes the build with recent GCCs (at least 4.8+).
+
+commit 16f5d1843b3720729f50376f522550fcfa787a3c
+Author: Kylie McClain <somasissounds@gmail.com>
+Date:   Wed Nov 25 18:12:06 2015 -0500
+
+    Include `sys/types.h` header to get `mode_t`
+
+    Do not depend on it being included by other system headers.
+    It is not included by others on musl-libc, for example.
+
+--- Source/cmStandardIncludes.h
++++ Source/cmStandardIncludes.h
+@@ -54,6 +54,8 @@
+ 
+ #if defined( _MSC_VER )
+ typedef unsigned short mode_t;
++#else
++# include <sys/types.h>
+ #endif
+ 
+ // use this class to shrink the size of symbols in .o files

@@ -12,6 +12,8 @@ COMMENT=	Simple Gtk\# Paint Program
 LICENSE=	MIT
 
 BROKEN=		Fails to build with mono 4
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-12-30
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:${PORTSDIR}/devel/mono-addins
 RUN_DEPENDS:=	${BUILD_DEPENDS}

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Cream/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gvim extension with many features
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
 
@@ -39,8 +39,10 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/applications)
 	(cd ${WRKSRC} && ${INSTALL_DATA} cream.png cream.svg \
 		${STAGEDIR}${PREFIX}/share/pixmaps)
-.for f in docs docs-html
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in docs docs-html
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} \
 		${STAGEDIR}${DOCSDIR})
 .endfor

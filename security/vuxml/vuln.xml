@@ -58,6 +58,426 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8a90dc87-89f9-11e5-a408-00248c0c745d">
+    <topic>PHPmailer -- SMTP injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmailer</name>
+	<range><lt>5.2.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHPMailer changelog reports:</p>
+	<blockquote cite="https://github.com/PHPMailer/PHPMailer/blob/v5.2.14/changelog.md">
+	  <p>Fix vulnerability that allowed email addresses with
+	    line breaks (valid in RFC5322) to pass to SMTP, permitting
+	    message injection at the SMTP level. Mitigated in both
+	    the address validator and in the lower-level SMTP class.
+	    Thanks to Takeshi Terada.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/PHPMailer/PHPMailer/blob/v5.2.14/changelog.md</url>
+    </references>
+    <dates>
+      <discovery>2015-11-05</discovery>
+      <entry>2015-12-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b0da85af-21a3-4c15-a137-fe9e4bc86002">
+    <topic>ffmpeg -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>gstreamer-ffmpeg</name>
+	<!-- gst-ffmpeg-0.10.13 has libav-0.7.2 (0.7.7 in freebsd port) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>handbrake</name>
+	<!-- handbrake-0.10.2 has libav-10.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ffmpeg</name>
+	<range><lt>2.8.3,1</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg26</name>
+	<range><lt>2.6.5</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg-devel</name>
+	<name>ffmpeg25</name>
+	<name>ffmpeg24</name>
+	<name>ffmpeg23</name>
+	<name>ffmpeg2</name>
+	<name>ffmpeg1</name>
+	<name>ffmpeg-011</name>
+	<name>ffmpeg0</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>avidemux</name>
+	<name>avidemux2</name>
+	<name>avidemux26</name>
+	<!-- avidemux-2.6.10 has ffmpeg-2.6.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>kodi</name>
+	<!-- kodi-15.2 has ffmpeg-2.6.4 -->
+	<range><lt>16.0</lt></range>
+      </package>
+      <package>
+	<name>mplayer</name>
+	<name>mencoder</name>
+	<!-- mplayer-1.1.r20150822_6 has ffmpeg-2.8.2 -->
+	<range><lt>1.1.r20150822_7</lt></range>
+      </package>
+      <package>
+	<name>mythtv</name>
+	<name>mythtv-frontend</name>
+	<!-- mythtv-0.27.0.20140121 has ffmpeg-1.2.2+ (snapshot, f9c8726) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>plexhometheater</name>
+	<!-- plexhometheater-1.4.1 has ffmpeg-0.10.2 fork -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6761">
+	  <p>The update_dimensions function in libavcodec/vp8.c in
+	    FFmpeg through 2.8.1, as used in Google Chrome before
+	    46.0.2490.71 and other products, relies on a
+	    coefficient-partition count during multi-threaded operation,
+	    which allows remote attackers to cause a denial of service
+	    (race condition and memory corruption) or possibly have
+	    unspecified other impact via a crafted WebM file.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8216">
+	  <p>The ljpeg_decode_yuv_scan function in
+	    libavcodec/mjpegdec.c in FFmpeg before 2.8.2 omits certain
+	    width and height checks, which allows remote attackers to
+	    cause a denial of service (out-of-bounds array access) or
+	    possibly have unspecified other impact via crafted MJPEG
+	    data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8217">
+	  <p>The ff_hevc_parse_sps function in libavcodec/hevc_ps.c in
+	    FFmpeg before 2.8.2 does not validate the Chroma Format
+	    Indicator, which allows remote attackers to cause a denial
+	    of service (out-of-bounds array access) or possibly have
+	    unspecified other impact via crafted High Efficiency Video
+	    Coding (HEVC) data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8218">
+	  <p>The decode_uncompressed function in libavcodec/faxcompr.c
+	    in FFmpeg before 2.8.2 does not validate uncompressed runs,
+	    which allows remote attackers to cause a denial of service
+	    (out-of-bounds array access) or possibly have unspecified
+	    other impact via crafted CCITT FAX data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8219">
+	  <p>The init_tile function in libavcodec/jpeg2000dec.c in
+	    FFmpeg before 2.8.2 does not enforce minimum-value and
+	    maximum-value constraints on tile coordinates, which allows
+	    remote attackers to cause a denial of service (out-of-bounds
+	    array access) or possibly have unspecified other impact via
+	    crafted JPEG 2000 data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8363">
+	  <p>The jpeg2000_read_main_headers function in
+	    libavcodec/jpeg2000dec.c in FFmpeg before 2.6.5, 2.7.x
+	    before 2.7.3, and 2.8.x through 2.8.2 does not enforce
+	    uniqueness of the SIZ marker in a JPEG 2000 image, which
+	    allows remote attackers to cause a denial of service
+	    (out-of-bounds heap-memory access) or possibly have
+	    unspecified other impact via a crafted image with two or
+	    more of these markers.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8364">
+	  <p>Integer overflow in the ff_ivi_init_planes function in
+	    libavcodec/ivi.c in FFmpeg before 2.6.5, 2.7.x before 2.7.3,
+	    and 2.8.x through 2.8.2 allows remote attackers to cause a
+	    denial of service (out-of-bounds heap-memory access) or
+	    possibly have unspecified other impact via crafted image
+	    dimensions in Indeo Video Interactive data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8365">
+	  <p>The smka_decode_frame function in libavcodec/smacker.c in
+	    FFmpeg before 2.6.5, 2.7.x before 2.7.3, and 2.8.x through
+	    2.8.2 does not verify that the data size is consistent with
+	    the number of channels, which allows remote attackers to
+	    cause a denial of service (out-of-bounds array access) or
+	    possibly have unspecified other impact via crafted Smacker
+	    data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6761</cvename>
+      <cvename>CVE-2015-8216</cvename>
+      <cvename>CVE-2015-8217</cvename>
+      <cvename>CVE-2015-8218</cvename>
+      <cvename>CVE-2015-8219</cvename>
+      <cvename>CVE-2015-8363</cvename>
+      <cvename>CVE-2015-8364</cvename>
+      <cvename>CVE-2015-8365</cvename>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=dabea74d0e82ea80cd344f630497cafcb3ef872c</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=d24888ef19ba38b787b11d1ee091a3d94920c76a</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=93f30f825c08477fe8f76be00539e96014cc83c8</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=d4a731b84a08f0f3839eaaaf82e97d8d9c67da46</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=43492ff3ab68a343c1264801baa1d5a02de10167</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=44a7f17d0b20e6f8d836b2957e3e357b639f19a2</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=df91aa034b82b77a3c4e01791f4a2b2ff6c82066</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=4a9af07a49295e014b059c1ab624c40345af5892</url>
+      <url>https://ffmpeg.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-27</discovery>
+      <entry>2015-12-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="548f74bd-993c-11e5-956b-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>47.0.2526.73</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update.html">
+	  <p>41 security fixes in this release, inclduding:</p>
+	  <ul>
+	    <li>[558589] Critical CVE-2015-6765: Use-after-free in AppCache.
+	      Credit to anonymous.</li>
+	    <li>[551044] High CVE-2015-6766: Use-after-free in AppCache.
+	      Credit to anonymous.</li>
+	    <li>[554908] High CVE-2015-6767: Use-after-free in AppCache.
+	      Credit to anonymous.</li>
+	    <li>[556724] High CVE-2015-6768: Cross-origin bypass in DOM.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[534923] High CVE-2015-6769: Cross-origin bypass in core.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[541206] High CVE-2015-6770: Cross-origin bypass in DOM.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[544991] High CVE-2015-6771: Out of bounds access in v8.
+	      Credit to anonymous.</li>
+	    <li>[546545] High CVE-2015-6772: Cross-origin bypass in DOM.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[554946] High CVE-2015-6764: Out of bounds access in v8.
+	      Credit to Guang Gong of Qihoo 360 via pwn2own.</li>
+	    <li>[491660] High CVE-2015-6773: Out of bounds access in Skia.
+	      Credit to cloudfuzzer.</li>
+	    <li>[549251] High CVE-2015-6774: Use-after-free in Extensions.
+	      Credit to anonymous.</li>
+	    <li>[529012] High CVE-2015-6775: Type confusion in PDFium.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[457480] High CVE-2015-6776: Out of bounds access in PDFium.
+	      Credit to Hanno Böck.</li>
+	    <li>[544020] High CVE-2015-6777: Use-after-free in DOM.
+	      Credit to Long Liu of Qihoo 360Vulcan Team.</li>
+	    <li>[514891] Medium CVE-2015-6778: Out of bounds access in PDFium.
+	      Credit to Karl Skomski.</li>
+	    <li>[528505] Medium CVE-2015-6779: Scheme bypass in PDFium.
+	      Credit to Til Jasper Ullrich.</li>
+	    <li>[490492] Medium CVE-2015-6780: Use-after-free in Infobars.
+	      Credit to Khalil Zhani.</li>
+	    <li>[497302] Medium CVE-2015-6781: Integer overflow in Sfntly.
+	      Credit to miaubiz.</li>
+	    <li>[536652] Medium CVE-2015-6782: Content spoofing in Omnibox.
+	      Credit to Luan Herrera.</li>
+	    <li>[537205] Medium CVE-2015-6783: Signature validation issue in
+	      Android Crazy Linker. Credit to Michal Bednarski.</li>
+	    <li>[503217] Low CVE-2015-6784: Escaping issue in saved pages.
+	      Credit to Inti De Ceukelaire.</li>
+	    <li>[534542] Low CVE-2015-6785: Wildcard matching issue in CSP.
+	      Credit to Michael Ficarra / Shape Security.</li>
+	    <li>[534570] Low CVE-2015-6786: Scheme bypass in CSP. Credit to
+	      Michael Ficarra / Shape Security.</li>
+	    <li>[563930] CVE-2015-6787: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>  Multiple vulnerabilities in V8 fixed at the tip of the 4.7
+	      branch (currently 4.7.80.23).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6765</cvename>
+      <cvename>CVE-2015-6766</cvename>
+      <cvename>CVE-2015-6767</cvename>
+      <cvename>CVE-2015-6768</cvename>
+      <cvename>CVE-2015-6769</cvename>
+      <cvename>CVE-2015-6770</cvename>
+      <cvename>CVE-2015-6771</cvename>
+      <cvename>CVE-2015-6772</cvename>
+      <cvename>CVE-2015-6773</cvename>
+      <cvename>CVE-2015-6774</cvename>
+      <cvename>CVE-2015-6775</cvename>
+      <cvename>CVE-2015-6776</cvename>
+      <cvename>CVE-2015-6777</cvename>
+      <cvename>CVE-2015-6778</cvename>
+      <cvename>CVE-2015-6779</cvename>
+      <cvename>CVE-2015-6780</cvename>
+      <cvename>CVE-2015-6781</cvename>
+      <cvename>CVE-2015-6782</cvename>
+      <cvename>CVE-2015-6783</cvename>
+      <cvename>CVE-2015-6784</cvename>
+      <cvename>CVE-2015-6785</cvename>
+      <cvename>CVE-2015-6786</cvename>
+      <cvename>CVE-2015-6787</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-01</discovery>
+      <entry>2015-12-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="11351c82-9909-11e5-a9c8-14dae9d5a9d2">
+    <topic>piwik -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>piwik</name>
+	<range><lt>2.15.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Piwik changelog reports:</p>
+	<blockquote cite="http://piwik.org/changelog/piwik-2-15-0/">
+	  <p>This release is rated critical.
+
+	   We are grateful for Security researchers who disclosed
+	   security issues privately to the Piwik Security Response
+	   team: Elamaran Venkatraman, Egidio Romano and Dmitriy
+	   Shcherbatov. The following vulnerabilities were fixed:
+	   XSS, CSRF, possible file inclusion in older PHP versions
+	   (low impact), possible Object Injection Vulnerability
+	   (low impact).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7815</cvename>
+      <cvename>CVE-2015-7816</cvename>
+      <url>http://piwik.org/changelog/piwik-2-15-0/</url>
+    </references>
+    <dates>
+      <discovery>2015-11-17</discovery>
+      <entry>2015-12-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d62ec98e-97d8-11e5-8c0e-080027b00c2e">
+    <topic>cyrus-imapd -- integer overflow in the start_octet addition</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd25</name>
+	<range><ge>2.5.0</ge><lt>2.5.7</lt></range>
+      </package>
+      <package>
+	<name>cyrus-imapd24</name>
+	<range><ge>2.4.0</ge><lt>2.4.18_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cyrus IMAP 2.5.7 Release Note states:</p>
+	<blockquote cite="https://docs.cyrus.foundation/imap/release-notes/2.5/x/2.5.7.html">
+	  <p>CVE-2015-8077, CVE-2015-8078: protect against integer overflow in urlfetch range checks</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8078</cvename>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8078</url>
+      <url>http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-8078.html</url>
+      <url>https://security-tracker.debian.org/tracker/CVE-2015-8078</url>
+      <cvename>CVE-2015-8077</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8077</url>
+      <url>http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-8077.html</url>
+      <url>https://security-tracker.debian.org/tracker/CVE-2015-8077</url>
+    </references>
+    <dates>
+      <discovery>2015-11-04</discovery>
+      <entry>2015-12-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="11c52bc6-97aa-11e5-b8df-14dae9d210b8">
+    <topic>django -- information leak vulnerability</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<name>py32-django</name>
+	<name>py33-django</name>
+	<name>py34-django</name>
+	<range><lt>1.8.7</lt></range>
+      </package>
+      <package>
+	<name>py27-django17</name>
+	<name>py32-django17</name>
+	<name>py33-django17</name>
+	<name>py34-django17</name>
+	<range><lt>1.7.11</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<name>py32-django-devel</name>
+	<name>py33-django-devel</name>
+	<name>py34-django-devel</name>
+	<range><le>20150709,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Graham reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/nov/24/security-releases-issued/">
+	  <p>If an application allows users to specify an unvalidated
+	    format for dates and passes this format to the date filter, e.g. {{
+	    last_updated|date:user_date_format }}, then a malicious user could
+	    obtain any secret in the application's settings by specifying a settings
+	    key instead of a date format. e.g. "SECRET_KEY" instead of "j/m/Y".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/nov/24/security-releases-issued/</url>
+      <cvename>CVE-2015-8213</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-24</discovery>
+      <entry>2015-11-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb2475c2-9125-11e5-bd18-002590263bf5">
     <topic>kibana4 -- CSRF vulnerability</topic>
     <affects>
@@ -473,7 +893,7 @@ Notes:
     <affects>
       <package>
        <name>png</name>
-       <range><lt>1.6.19</lt></range>
+       <range><lt>1.6.20</lt></range>
       </package>
     </affects>
     <description>
@@ -491,11 +911,13 @@ Notes:
     </description>
     <references>
       <url>http://www.openwall.com/lists/oss-security/2015/11/12/2</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/03/6</url>
       <cvename>CVE-2015-8126</cvename>
     </references>
     <dates>
       <discovery>2015-11-15</discovery>
       <entry>2015-11-15</entry>
+      <modified>2015-12-03</modified>
     </dates>
   </vuln>
 

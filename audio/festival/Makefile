@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	festival
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	audio accessibility
 MASTER_SITES=	FESTIVAL
 DISTFILES=	${DISTNAME}-release.tar.gz 	\
@@ -41,19 +40,8 @@ MAKE_ARGS+=	CC="${CC}" GCC="${CC}" \
 		EST_HOME=${SPEECHTOOLS}
 WRKSRC=		${WRKDIR}
 
-SPT_PATCHES=	base__class_EST__TVector.cc	\
-		base__class_inst__tmpl_vector__dmatrix__t.cc	\
-		base__class_inst__tmpl_vector__dvector__t.cc	\
-		base__class_inst__tmpl_vector__fmatrix__t.cc	\
-		config_compilers_gcc__defaults.mak	\
-		include_EST__Ngrammar.h	\
-		include_EST__SCFG.h	\
-		include_EST__String.h	\
-		include_EST__error.h	\
-		include_ling__class_EST__FeatureFunctionPackage.h	\
-		include_unix_EST__socket__unix.h	\
-		stats_dynamic__program.cc	\
-		utils_EST__ServiceTable.cc
+SPT_PATCHES=	include_ling__class_EST__FeatureFunctionPackage.h	\
+		include_unix_EST__socket__unix.h
 
 do-build:
 .for d in speech_tools festival

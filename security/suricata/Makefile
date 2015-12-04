@@ -116,7 +116,9 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 CONFIG_DIR?=	${ETCDIR}
 CONFIG_FILES=	suricata.yaml classification.config reference.config threshold.config
 RULES_DIR=	${CONFIG_DIR}/rules
-RULES_FILES=	decoder-events.rules dns-events.rules files.rules http-events.rules smtp-events.rules stream-events.rules tls-events.rules
+RULES_FILES=	app-layer-events.rules decoder-events.rules dns-events.rules files.rules \
+		http-events.rules modbus-events.rules smtp-events.rules stream-events.rules \
+		tls-events.rules
 LOGS_DIR?=	/var/log/${PORTNAME}
 
 .include <bsd.port.pre.mk>

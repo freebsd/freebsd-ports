@@ -1,6 +1,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt

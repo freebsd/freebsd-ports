@@ -6,7 +6,7 @@ PORTVERSION=	3.2.3
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	net-p2p ipv6
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@rawbw.com
 COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
 LICENSE=	GPLv2

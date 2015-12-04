@@ -3,12 +3,15 @@
 
 PORTNAME=	efax-0.9a
 PORTVERSION=	001114a7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms
 MASTER_SITES=	http://shino.pos.to/linux/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fax send/receive program
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=xloadimage:${PORTSDIR}/x11/xloadimage
 

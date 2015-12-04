@@ -240,12 +240,6 @@ bin/gazpacho
 %%PYTHON_SITELIBDIR%%/gazpacho/workspace.pyc
 %%PYTHON_SITELIBDIR%%/gazpacho/workspace.pyo
 share/applications/gazpacho.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld.glade
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uimanager.glade

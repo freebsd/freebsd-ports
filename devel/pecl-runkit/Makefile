@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	runkit
-PORTVERSION=	0.9
+PORTVERSION=	1.0.4
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,7 +17,6 @@ USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	runkit
-IGNORE_WITH_PHP=	5 54 55 56
 
 CONFIGURE_ARGS=	--enable-runkit=classkit
 

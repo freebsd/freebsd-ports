@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese kana (Hiragana and Katakana) simple flashcard tool
 
 BROKEN=		runtime segfault (PR 196452)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-12-30
 
 USES=		gettext gmake pkgconfig desktop-file-utils
 USE_GNOME=	gtk20 libxml2

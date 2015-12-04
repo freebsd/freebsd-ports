@@ -12,6 +12,9 @@ COMMENT=	Useful tools library in Ruby
 
 LICENSE=	MIT
 
+DEPRECATED=	not used by other ports anymore
+EXPIRATION_DATE=	2015-12-17
+
 NO_ARCH=	yes
 
 USE_RUBY=	yes
