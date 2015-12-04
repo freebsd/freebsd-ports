@@ -17,6 +17,8 @@
 #				Default: ${PREFIX}/etc/suricata/suricata.yaml
 # suricata_divertport (int):	Port to create divert socket (Inline Mode)
 #				Default: 8000
+# suricata_netmap (str):	Set to YES to enable netmap (Inline Mode)
+#				Default: NO
 
 
 . /etc/rc.subr
@@ -32,11 +34,20 @@ load_rc_config $name
 [ -z "$suricata_conf" ]		&& suricata_conf="%%PREFIX%%/etc/suricata/suricata.yaml"
 [ -z "$suricata_flags" ]	&& suricata_flags="-D"
 [ -z "$suricata_divertport" ]	&& suricata_divertport="8000"
+[ -z "$suricata_netmap" ]	&& suricata_netmap="NO"
 
-[ -n "$suricata_interface" ]	&& suricata_flags="$suricata_flags -i $suricata_interface --pidfile /var/run/suricata_${suricata_interface}.pid" \
-				&& pidfile="/var/run/suricata_${suricata_interface}.pid"
-[ -z "$suricata_interface" ]	&& suricata_flags="$suricata_flags -d $suricata_divertport --pidfile /var/run/suricata_inline.pid" \
-				&& pidfile="/var/run/suricata_inline.pid" && info "Inline Mode on divert port $suricata_divertport (suricata_interface not defined)"
-[ -n "$suricata_conf" ]		&& suricata_flags="$suricata_flags -c $suricata_conf"
+if [ -n "$suricata_interface" ]; then
+	suricata_flags="$suricata_flags -i $suricata_interface"
+elif [ "$suricata_netmap" != "NO" ]; then
+	suricata_flags="$suricata_flags --netmap"
+else
+	suricata_flags="$suricata_flags -d $suricata_divertport"
+	info "Inline Mode on divert port $suricata_divertport (suricata_interface not defined)"
+fi
+
+pidfile="/var/run/suricata.pid"
+suricata_flags="$suricata_flags --pidfile $pidfile"
+
+[ -n "$suricata_conf" ]	&& suricata_flags="$suricata_flags -c $suricata_conf"
 
 run_rc_command "$1"
