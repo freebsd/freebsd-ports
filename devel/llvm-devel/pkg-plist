@@ -9,6 +9,7 @@ bin/llvm-cov-devel
 bin/llvm-diff-devel
 bin/llvm-dis-devel
 bin/llvm-dwarfdump-devel
+bin/llvm-dwp-devel
 bin/llvm-extract-devel
 bin/llvm-link-devel
 bin/llvm-mc-devel
@@ -91,6 +92,7 @@ llvm-devel/bin/llvm-diff
 llvm-devel/bin/llvm-dis
 llvm-devel/bin/llvm-dsymutil
 llvm-devel/bin/llvm-dwarfdump
+llvm-devel/bin/llvm-dwp
 llvm-devel/bin/llvm-extract
 llvm-devel/bin/llvm-lib
 llvm-devel/bin/llvm-link
@@ -164,7 +166,6 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/AST/CommentParser.h
 %%CLANG%%llvm-devel/include/clang/AST/CommentSema.h
 %%CLANG%%llvm-devel/include/clang/AST/CommentVisitor.h
-%%CLANG%%llvm-devel/include/clang/AST/DataRecursiveASTVisitor.h
 %%CLANG%%llvm-devel/include/clang/AST/Decl.h
 %%CLANG%%llvm-devel/include/clang/AST/DeclAccessPair.h
 %%CLANG%%llvm-devel/include/clang/AST/DeclBase.h
@@ -1174,6 +1175,7 @@ llvm-devel/include/llvm/Analysis/DivergenceAnalysis.h
 llvm-devel/include/llvm/Analysis/DomPrinter.h
 llvm-devel/include/llvm/Analysis/DominanceFrontier.h
 llvm-devel/include/llvm/Analysis/DominanceFrontierImpl.h
+llvm-devel/include/llvm/Analysis/EHPersonalities.h
 llvm-devel/include/llvm/Analysis/GlobalsModRef.h
 llvm-devel/include/llvm/Analysis/IVUsers.h
 llvm-devel/include/llvm/Analysis/InlineCost.h
@@ -1184,7 +1186,6 @@ llvm-devel/include/llvm/Analysis/IntervalPartition.h
 llvm-devel/include/llvm/Analysis/IteratedDominanceFrontier.h
 llvm-devel/include/llvm/Analysis/LazyCallGraph.h
 llvm-devel/include/llvm/Analysis/LazyValueInfo.h
-llvm-devel/include/llvm/Analysis/LibCallSemantics.h
 llvm-devel/include/llvm/Analysis/Lint.h
 llvm-devel/include/llvm/Analysis/Loads.h
 llvm-devel/include/llvm/Analysis/LoopAccessAnalysis.h
@@ -1733,6 +1734,7 @@ llvm-devel/include/llvm/Support/Path.h
 llvm-devel/include/llvm/Support/PluginLoader.h
 llvm-devel/include/llvm/Support/PointerLikeTypeTraits.h
 llvm-devel/include/llvm/Support/PrettyStackTrace.h
+llvm-devel/include/llvm/Support/Printable.h
 llvm-devel/include/llvm/Support/Process.h
 llvm-devel/include/llvm/Support/Program.h
 llvm-devel/include/llvm/Support/RWMutex.h
@@ -1804,6 +1806,7 @@ llvm-devel/include/llvm/Target/TargetSelectionDAG.td
 llvm-devel/include/llvm/Target/TargetSelectionDAGInfo.h
 llvm-devel/include/llvm/Target/TargetSubtargetInfo.h
 llvm-devel/include/llvm/Transforms/IPO.h
+llvm-devel/include/llvm/Transforms/IPO/FunctionImport.h
 llvm-devel/include/llvm/Transforms/IPO/InlinerPass.h
 llvm-devel/include/llvm/Transforms/IPO/LowerBitSets.h
 llvm-devel/include/llvm/Transforms/IPO/PassManagerBuilder.h
