@@ -997,11 +997,6 @@ post-patch:
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKSRC_drizzle}/config
 .endif
-.if ${PORT_OPTIONS:MDYNAMIC_UPSTREAM}
-	@${REINPLACE_CMD} \
-		's!ngx_ngx_slab_alloc!ngx_slab_alloc!g' \
-		${WRKSRC_dyn_upstream}/src/ngx_inet_slab.c
-.endif
 # Respect CFLAGS by remove needless --std=c99 flag
 .if ${PORT_OPTIONS:MGRIDFS}
 	@${REINPLACE_CMD} \
