@@ -36,7 +36,7 @@ OPTIONS_DEFINE=	GSTREAMER WEBP
 GSTREAMER_USE=		GSTREAMER=yes
 WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} '/^NSFB_LINUX_AVAILABLE/ s|yes|no| ; s| -g||' \
@@ -73,4 +73,4 @@ do-configure:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/netsurf
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
