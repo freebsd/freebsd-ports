@@ -1,3 +1,0 @@
-@unexec if cmp -s %%EASYINSTALL_PTH%% %%EASYINSTALL_PTH%%.dist; then rm -f %%EASYINSTALL_PTH%%; fi
-%%PYTHON_SITELIBDIR%%/easy-install.pth.dist
-@exec if [ ! -f "%%EASYINSTALL_PTH%%" ]; then cp -p %%EASYINSTALL_PTH%%.dist %%EASYINSTALL_PTH%%; fi
