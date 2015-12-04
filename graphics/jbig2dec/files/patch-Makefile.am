@@ -1,0 +1,27 @@
+--- Makefile.am.orig	2014-10-31 21:30:04.000000000 +0800
++++ Makefile.am	2015-12-04 15:46:33.248995991 +0800
+@@ -26,10 +26,10 @@
+ bin_PROGRAMS = jbig2dec
+ noinst_PROGRAMS = test_sha1 test_huffman test_arith
+ 
+-jbig2dec_SOURCES = jbig2dec.c sha1.c sha1.h \
+-	jbig2.h jbig2_image.h getopt.h \
++jbig2dec_SOURCES = jbig2dec.c \
++	jbig2.h jbig2_image.h \
+ 	os_types.h config_types.h config_win32.h
+-jbig2dec_LDADD = libjbig2dec.la @LIBOBJS@ $(PNG_LIBS)
++jbig2dec_LDADD = libjbig2dec.la @LIBOBJS@ $(PNG_LIBS) -lmd
+ 
+ dist_man_MANS = jbig2dec.1
+ 
+@@ -39,8 +39,9 @@
+ 
+ TESTS = test_sha1 test_jbig2dec.py test_huffman test_arith
+ 
+-test_sha1_SOURCES = sha1.c sha1.h
++test_sha1_SOURCES = sha1.c
+ test_sha1_CFLAGS = -DTEST
++test_sha1_LDADD = -lmd
+ 
+ test_arith_SOURCES = jbig2_arith.c
+ test_arith_CFLAGS = -DTEST
