@@ -403,6 +403,7 @@
     SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
+    SUBDIR += rubygem-mime-types-data
     SUBDIR += rubygem-mime-types1
     SUBDIR += rubygem-mimemagic
     SUBDIR += rubygem-rabbit
