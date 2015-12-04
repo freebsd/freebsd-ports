@@ -848,6 +848,7 @@
     SUBDIR += py-pycrypto
     SUBDIR += py-pycryptopp
     SUBDIR += py-pydeep
+    SUBDIR += py-pyelliptic
     SUBDIR += py-pylibacl
     SUBDIR += py-pyme
     SUBDIR += py-pyptlib
