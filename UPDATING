@@ -16,7 +16,7 @@ you update your ports collection, before attempting any port upgrades.
   qt4-gui's or qt5-gui's pkg-message, please considering removing them and
   using the default settings:
   * kern.ipc.shmall
-  * kern.ipc.shmni
+  * kern.ipc.shmmni
   * kern.ipc.shmseg
   See base r209037 and ports PR 202927 for more context.
 
