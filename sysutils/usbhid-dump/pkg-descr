@@ -1,0 +1,5 @@
+Usbhid-dump is a USB HID dumping utility based on libusb 1.0. It dumps USB HID
+device report descriptors and reports themselves as they are being sent, for all
+or specific device interfaces.
+
+WWW: https://github.com/DIGImend/usbhid-dump
