@@ -84,6 +84,7 @@
     SUBDIR += libbind
     SUBDIR += libdjbdns
     SUBDIR += libidn
+    SUBDIR += libidn2
     SUBDIR += linux-c6-libasyncns
     SUBDIR += linux-f10-libasyncns
     SUBDIR += mDNSResponder_nss
