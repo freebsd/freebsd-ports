@@ -163,6 +163,7 @@
     SUBDIR += py-bonjour
     SUBDIR += py-dns
     SUBDIR += py-dns3
+    SUBDIR += py-dnschain
     SUBDIR += py-dnspython
     SUBDIR += py-easyzone
     SUBDIR += py-idna
