@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pipelight
-DISTVERSION=	0.2.8.1
+PORTVERSION=	0.2.8.2
 CATEGORIES=	emulators
 MASTER_SITES=	https://bitbucket.org/mmueller2012/pipelight/get/ \
 		http://repos.fds-team.de/pluginloader/v${DISTVERSION}/:plg
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/flock:${PORTSDIR}/sysutils/flock \
 		${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg
 
-WRKSRC=		${WRKDIR}/mmueller2012-pipelight-8a1bdc6c254f
+WRKSRC=		${WRKDIR}/mmueller2012-pipelight-792e7a4885a6
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -66,6 +66,6 @@ post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pipelight/libpipelight.so
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/pipelight-mkufs ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/pipelight-mkufs ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
