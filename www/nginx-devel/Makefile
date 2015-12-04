@@ -1032,11 +1032,6 @@ post-patch:
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}/ngx_http_sflow_config.h
 .endif
-.if ${PORT_OPTIONS:MLUA}
-	@${REINPLACE_CMD} 's!ngx_http_set_connection_log!ngx_set_connection_log!g' \
-		${WRKSRC_lua}/src/ngx_http_lua_initworkerby.c \
-		${WRKSRC_lua}/src/ngx_http_lua_timer.c
-.endif
 .if ${PORT_OPTIONS:MICONV}
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
