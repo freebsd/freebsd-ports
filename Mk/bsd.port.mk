@@ -4350,7 +4350,7 @@ ${deptype:tl}-depends:
 		dp_LIB_DIRS="${LIB_DIRS}" \
 		dp_SH="${SH}" \
 		dp_SCRIPTSDIR="${SCRIPTSDIR}" \
-		dp_PORTSDIR="${PORTSDIR}" \
+		PORTSDIR="${PORTSDIR}" \
 		dp_MAKE="${MAKE}" \
 		${SH} ${SCRIPTSDIR}/do-depends.sh
 .endif
@@ -4370,7 +4370,7 @@ all-depends-list:
 # usage.
 DEPENDS-LIST= \
 	${SETENV} \
-			dp_PORTSDIR="${PORTSDIR}" \
+			PORTSDIR="${PORTSDIR}" \
 			dp_MAKE="${MAKE}" \
 			dp_PKGNAME="${PKGNAME}" \
 			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
