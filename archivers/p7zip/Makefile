@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p7zip
-PORTVERSION=	9.38.1
-PORTREVISION?=	2
+PORTVERSION=	15.09
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
@@ -28,6 +27,8 @@ CFLAGS_sparc64=	-fPIC
 
 OPTIONS_DEFINE=	DOCS
 
+PORTDOCS=	*
+
 post-patch:
 	${SED} -e 's!g\+\+!${CXX}!' \
 	       -e 's!gcc!${CC}!' \
@@ -51,10 +52,12 @@ do-install:
 	${LN} -sf 7z ${STAGEDIR}${PREFIX}/bin/7za
 	${LN} -sf 7z ${STAGEDIR}${PREFIX}/bin/7zr
 
-	(cd ${WRKSRC}/DOC && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/man1 && \
 		${INSTALL_MAN} 7z*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1)
+
+do-install-DOCS-on:
+	(cd ${WRKSRC}/DOC && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
