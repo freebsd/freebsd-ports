@@ -8,4 +8,4 @@ sbin/launchd
 @dir etc/launchd/daemons
 @dir share/launchd/agents
 @dir share/launchd/daemons
-@dir /.launchd
+@dir /var/db/launchd
