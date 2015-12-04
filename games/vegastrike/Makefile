@@ -38,7 +38,8 @@ CONFIGURE_ARGS=	--disable-cegui --disable-ffmpeg \
 		--with-boost=system \
 		--enable-flags="${CXXFLAGS}"
 
-PLIST_FILES=	bin/vegastrike bin/vssetup bin/vegaserver
+BIN_FILES=	bin/vegastrike bin/vssetup bin/vegaserver
+FLIST_FILES=	${BIN_FILES}
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	MESHER
@@ -53,7 +54,7 @@ post-patch:
 		${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${PLIST_FILES:S|bin|${WRKSRC}|} \
+	${INSTALL_PROGRAM} ${BIN_FILES:S|bin|${WRKSRC}|} \
 		${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
