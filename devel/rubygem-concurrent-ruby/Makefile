@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	concurrent-ruby
-PORTVERSION=	0.9.1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
