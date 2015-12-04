@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--disable-cegui --disable-ffmpeg \
 		--enable-flags="${CXXFLAGS}"
 
 BIN_FILES=	bin/vegastrike bin/vssetup bin/vegaserver
-FLIST_FILES=	${BIN_FILES}
+PLIST_FILES=	${BIN_FILES}
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	MESHER
