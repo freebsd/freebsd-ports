@@ -265,6 +265,9 @@ man/man3/CURLOPT_SSL_VERIFYHOST.3.gz
 man/man3/CURLOPT_SSL_VERIFYPEER.3.gz
 man/man3/CURLOPT_SSL_VERIFYSTATUS.3.gz
 man/man3/CURLOPT_STDERR.3.gz
+man/man3/CURLOPT_STREAM_DEPENDS.3.gz
+man/man3/CURLOPT_STREAM_DEPENDS_E.3.gz
+man/man3/CURLOPT_STREAM_WEIGHT.3.gz
 man/man3/CURLOPT_TCP_KEEPALIVE.3.gz
 man/man3/CURLOPT_TCP_KEEPIDLE.3.gz
 man/man3/CURLOPT_TCP_KEEPINTVL.3.gz
@@ -352,3 +355,4 @@ man/man3/libcurl-thread.3.gz
 man/man3/libcurl-tutorial.3.gz
 man/man3/libcurl.3.gz
 share/aclocal/libcurl.m4
+share/zsh/site-functions/_curl
