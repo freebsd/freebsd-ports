@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Computer algebra system
 
+BROKEN=		bootsys goes in an infinite loop during build
+
 BUILD_DEPENDS=	sbcl:${PORTSDIR}/lang/sbcl \
 		noweb:${PORTSDIR}/devel/noweb
 
