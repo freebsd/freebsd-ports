@@ -12,7 +12,7 @@ you update your ports collection, before attempting any port upgrades.
   ncurses has been updated to 6.0.
   If you are using binary pkg, 'pkg upgrade' will do the right thing.
   Users of portmaster/portupgrade must rebuild all ports which depend
-  on ffmpeg.
+  on ncurses.
 
   Portmaster users:
       portmaster -w -r ncurses
