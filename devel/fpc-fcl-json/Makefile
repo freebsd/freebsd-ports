@@ -1,14 +1,13 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-json
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
-COMMENT=	JSON (JavaScript Object Notation) implementation in FreePascal
+COMMENT=	Free Pascal JavaScript Object Notation implemenation (FCL)
 
-USE_FPC=	fcl-base
+USE_FPC=	fcl-base rtl-objpas fcl-res
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

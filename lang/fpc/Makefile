@@ -2,32 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	fpc
-PORTVERSION=	2.6.4
+PORTVERSION=	3.0.0
 PORTREVISION?=	0
 CATEGORIES?=	lang
-MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
-		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
-		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/${PORTVERSION}/source/:source \
-		ftp://freepascal.stack.nl/pub/fpc/dist/${PORTVERSION}/source/:source \
-		ftp://ftp.no.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
-		ftp://ftp.us.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
-		http://leaf.dragonflybsd.org/~marino/dports-src/:DragonFlybootstrap \
-		SF/freepascal/Source/${PORTVERSION}:source \
+MASTER_SITES=	http://leaf.dragonflybsd.org/~marino/dports-src/:DragonFlybootstrap \
 		LOCAL/acm/freepascal/:bootstrap \
-		LOCAL/acm/freepascal/:man
-DISTFILES=	${DISTNAME}.source.tar.gz:source
+		LOCAL/marino:man
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	freebsd-fpc@FreeBSD.org
 COMMENT?=	Free Pascal compiler with Turbo and Delphi
 
-PROJECTHOST=	bsdistfiles
 USES=		gmake iconv
 ONLY_FOR_ARCHS=	i386 amd64
 BOOTVER=	2.6.4
+MANVER=		3.0.0
 
-OPT?=-CX
-FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	fpc-svn
+GH_PROJECT=	fpc
+GH_TAGNAME=	release_${DISTVERSION:S/./_/g}
+FPCSRCDIR=	${GH_PROJECT}-${GH_TAGNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -56,12 +52,16 @@ BUILDNAME=	${FPC_ARCH}-${OPSYS:tl}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		BUILDNAME=${BUILDNAME}
 DISTFILES+=	${BOOTDIR}.tar.gz:${OPSYS:MDragonFly}bootstrap \
-		${DISTNAME}.man.tar.gz:man
-MAKE_ARGS+=	FPCMAKE=${WRKDIR}/${FPCSRCDIR}/utils/fpcm/fpcmake \
+		fpc-${MANVER}.man.tar.gz:man
+NEWFPCMAKE=	${WRKDIR}/${FPCSRCDIR}/utils/fpcm/bin/${BUILDNAME}/fpcmake
+MAKE_ARGS+=	FPCMAKE=${NEWFPCMAKE} \
 		FPCTARGET=${BUILDNAME} \
 		ARCH=${FPC_ARCH} \
 		OPT="${OPT}" \
 		BSDHIER=1 \
+		INSTALL="${INSTALL_DATA}" \
+		INSTALLEXE="${INSTALL_PROGRAM}" \
+		INSTALLSCR="${INSTALL_SCRIPT}" \
 		INSTALL_PREFIX=${STAGEDIR}${PREFIX}
 NEWPPC=		PP=${WRKSRC}/compiler/${PPNAME}
 NEWFPC=		FPC=${WRKSRC}/compiler/${PPNAME}
@@ -74,83 +74,105 @@ do-extract:
 	@${TAR} -xzf ${_DISTDIR}/${BOOTDIR}.tar.gz \
 		--directory ${WRKDIR} && ${CHMOD} +x ${WRKDIR}/${BOOTDIR}
 # unpack man files
-	@${TAR} -xzf ${_DISTDIR}/${DISTNAME}.man.tar.gz --directory ${WRKDIR}
+	@${TAR} -xzf ${_DISTDIR}/fpc-${MANVER}.man.tar.gz --directory ${WRKDIR}
 # unpack source distribution
-	@(cd ${WRKDIR} && \
-		${GZIP_CMD} -dc ${_DISTDIR}/${DISTNAME}.source.tar.gz | \
+	@(cd ${WRKDIR} && ${GZIP_CMD} -dc \
+		${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} -xf - \
 		${FPCSRCDIR}/compiler \
 		${FPCSRCDIR}/rtl \
 		${FPCSRCDIR}/utils/fpcmkcfg \
 		${FPCSRCDIR}/packages/fcl-base \
 		${FPCSRCDIR}/packages/fcl-process \
+		${FPCSRCDIR}/packages/fcl-res \
+		${FPCSRCDIR}/packages/fpmkunit \
+		${FPCSRCDIR}/packages/hash \
+		${FPCSRCDIR}/packages/libtar \
+		${FPCSRCDIR}/packages/paszlib \
+		${FPCSRCDIR}/packages/rtl-objpas \
 		${FPCSRCDIR}/utils/fpcm)
 
 post-patch:
-.if ${ARCH} == "i386"
-	@${REINPLACE_CMD} -i "" -e 's|504000|${OSVERSION}|g' \
-		${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${FPC_ARCH}/cprt0.as
-.elif ${ARCH} == "amd64"
-.  if ${OPSYS} == FreeBSD
-	@${REINPLACE_CMD} -i "" -e 's|700055|${OSVERSION}|g' \
-		${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${FPC_ARCH}/cprt0.as
-	@${REINPLACE_CMD} -i "" -e 's|502110|${OSVERSION}|g' \
-		${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${FPC_ARCH}/gprt0.as
-	@${REINPLACE_CMD} -i "" -e 's|700055|${OSVERSION}|g' \
-		${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${FPC_ARCH}/prt0.as
-.  else
+.if ${OPSYS} == FreeBSD
+	@${REINPLACE_CMD} -i "" -e 's|900044|${OSVERSION}|g' \
+		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.as
+.else
 	@${REINPLACE_CMD} -i "" -e 's|400000|${DFLYVERSION}|g' \
-		${WRKSRC}/${FPCSRCDIR}/rtl/dragonfly/${FPC_ARCH}/*.as
-.  endif
+		${WRKSRC}/rtl/dragonfly/${FPC_ARCH}/*.as
 .endif
 .if empty(ICONV_LIB)
-	@${REINPLACE_CMD} -e "s|if (s<>'c') or reorder then|if ((s<>'c') and (s<>'iconv')) or reorder then|" \
+	@${REINPLACE_CMD} -e "s|s<>'c'|(s<>'c') and (s<>'iconv')|" \
 		${WRKDIR}/${FPCSRCDIR}/compiler/systems/t_bsd.pas
 	@${REINPLACE_CMD} -e 's|defined(bsd) and not ||' \
 		${WRKDIR}/${FPCSRCDIR}/rtl/unix/cwstring.pp
 .endif
+	@${REINPLACE_CMD} -e '/samplecfg/ {s/INSTALLEXE/INSTALLSCR/;}' \
+		${WRKDIR}/${FPCSRCDIR}/compiler/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+		${WRKDIR}/${FPCSRCDIR}/packages/fpmkunit/src/fpmkunit.pp
 
 do-build:
 # build fpc compiler
+	@${ECHO_MSG} "##### STARTING COMPILER #####"
 	(cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} cycle ${MAKE_ARGS} ${BOOTPPC})
+	@${ECHO_MSG} "##### COMPLETE COMPILER #####"
+
 # build fpcmkcfg
-	(cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${SETENV} ${MAKE_ENV} \
-		${MAKE_CMD} ${MAKE_ARGS} ${NEWPPC})
-	(cd ${WRKDIR}/${FPCSRCDIR}/packages/fcl-base && ${SETENV} ${MAKE_ENV} \
-		${MAKE_CMD} ${MAKE_ARGS} ${NEWPPC})
-	(cd ${WRKDIR}/${FPCSRCDIR}/packages/fcl-process && \
+	@${ECHO_MSG} "##### STARTING BOOTSTRAP FPMKUNIT #####"
+	(cd ${WRKDIR}/${FPCSRCDIR}/packages/fpmkunit && ${SETENV} \
+		${MAKE_ENV} ${MAKE_CMD} bootstrap ${MAKE_ARGS} ${NEWPPC})
+	@${ECHO_MSG} "##### COMPLETE BOOTSTRAP FPMKUNIT #####"
+.for component in fcl-res rtl-objpas fcl-base
+	@${ECHO_MSG} "##### STARTING ${component:tu} #####"
+	(cd ${WRKDIR}/${FPCSRCDIR}/packages/${component} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${NEWPPC})
-	(cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcmkcfg && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${NEWPPC})
+	@${ECHO_MSG} "##### COMPLETE ${component:tu} #####"
+.endfor
+	@${ECHO_MSG} "##### STARTING FPMAKE #####"
+	(cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${SETENV} \
+		${MAKE_ENV} ${MAKE_CMD} release ${MAKE_ARGS} ${NEWPPC})
+	@${ECHO_MSG} "##### COMPLETE FPMAKE #####"
+.for component in hash paszlib libtar fcl-process fpmkunit
+	@${ECHO_MSG} "##### STARTING ${component:tu} #####"
+	(cd ${WRKDIR}/${FPCSRCDIR}/packages/${component} && ${SETENV} \
+		${MAKE_ENV} ${MAKE_CMD} release ${MAKE_ARGS} ${NEWPPC})
+	@${ECHO_MSG} "##### COMPLETE ${component:tu} #####"
+.endfor
+	@${ECHO_MSG} "##### STARTING FPCMKCFG #####"
+	(cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcmkcfg && ${SETENV} \
+		${MAKE_ENV} ${MAKE_CMD} release ${MAKE_ARGS} ${NEWPPC})
+	@${ECHO_MSG} "##### COMPLETE FPCMKCFG #####"
 
 do-install:
-# 	Installing fpc compiler
+	# Installing fpc compiler
 	(cd ${WRKDIR}/${FPCSRCDIR}/rtl && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} install ${MAKE_ARGS} ${NEWFPC})
-# 	Installing fpc runtime
+	# Installing fpc runtime
 	(cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} install ${MAKE_ARGS} ${NEWFPC})
-# 	Installng fpcmkcfg
-	(cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcmkcfg && ${SETENV} ${MAKE_ENV} \
-		${MAKE_CMD} install ${MAKE_ARGS} ${NEWFPC})
-# 	Installng fpcmake
-	${INSTALL_PROGRAM} ${WRKDIR}/${FPCSRCDIR}/utils/fpcm/fpcmake \
+	# Installing fpmkunit and its dependencies
+.for component in hash paszlib libtar fcl-process fpmkunit
+	(cd ${WRKDIR}/${FPCSRCDIR}/packages/${component} && ${SETENV} \
+		${MAKE_ENV} ${MAKE_CMD} install ${MAKE_ARGS} ${NEWPPC})
+.endfor
+	# Installing fpcmkcfg
+	${INSTALL_PROGRAM} ${WRKDIR}/${FPCSRCDIR}/utils/fpcmkcfg/bin/${BUILDNAME}/fpcmkcfg \
 		${STAGEDIR}${PREFIX}/bin
-# 	Installing manpages
+	# Installing fpcmake
+	${INSTALL_PROGRAM} ${NEWFPCMAKE} ${STAGEDIR}${PREFIX}/bin
+	# Installing manpages
 	${INSTALL_MAN} ${WRKDIR}/man/man1/* ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKDIR}/man/man5/* ${STAGEDIR}${MAN1PREFIX}/man/man5
-
-post-install:
-	if [ -e "${STAGEDIR}${PREFIX}/bin/${PPNAME}" ]; then ${RM} -f "${STAGEDIR}${PREFIX}/bin/${PPNAME}"; fi
-	${LN} -sf "${PREFIX}/lib/fpc/${PORTVERSION}/${PPNAME}" "${STAGEDIR}${PREFIX}/bin"
-	${SH} "${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}/samplecfg" "${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}" "${STAGEDIR}${PREFIX}/etc"
+	# symlinking compiler
+	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s ../lib/fpc/${PORTVERSION}/${PPNAME})
+	# creating sample configuration file
+	${SH} "${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}/samplecfg" \
+		"${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}" \
+		"${STAGEDIR}${PREFIX}/etc"
 	@${REINPLACE_CMD} -i "" -e 's|${STAGEDIR}||' \
-		-e 's|^-Fl/usr/local/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt4|g' ${STAGEDIR}${PREFIX}/etc/fpc.cfg.sample
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fpc*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mk*ins
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ppu*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}/ppc*
+		-e 's|^-Fl/usr/local/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt4|g' \
+		${STAGEDIR}${PREFIX}/etc/fpc.cfg.sample
 
 .else
 .include "${MASTERDIR}/Makefile.units"

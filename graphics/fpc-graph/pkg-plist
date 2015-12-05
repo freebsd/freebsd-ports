@@ -1,10 +1,7 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.ppu
-%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.o
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/graph.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.ppu
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/libpgraph.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/libpggigraph.a
-%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/libpsdlgraph.a
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.ppu

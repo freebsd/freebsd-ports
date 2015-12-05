@@ -1,4 +1,3 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fastcgi.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fastcgi/fastcgi.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fastcgi/fastcgi.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fastcgi/fpunits.cfg
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fastcgi/libpfastcgi.a

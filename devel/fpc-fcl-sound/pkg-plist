@@ -1,0 +1,7 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-sound.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-sound/fpwavformat.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-sound/fpwavformat.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-sound/fpwavreader.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-sound/fpwavreader.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-sound/fpwavwriter.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-sound/fpwavwriter.ppu

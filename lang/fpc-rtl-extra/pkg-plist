@@ -1,0 +1,15 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/rtl-extra.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/clocale.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/clocale.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/ipc.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/ipc.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/matrix.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/matrix.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/objects.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/objects.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/printer.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/printer.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/sockets.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/sockets.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/ucomplex.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/ucomplex.ppu

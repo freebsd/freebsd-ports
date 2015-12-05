@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4/proj.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/proj4.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4/proj.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4/libpproj.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4/proj.ppu

@@ -1,7 +1,5 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/fpasync.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-async.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/fpasync.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libasync.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/fpasync.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libasync.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libpfpasync.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libplibasync.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-async/libasync.ppu

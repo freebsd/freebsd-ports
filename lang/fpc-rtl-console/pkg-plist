@@ -1,0 +1,9 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/rtl-console.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-console/crt.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-console/crt.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-console/keyboard.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-console/keyboard.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-console/mouse.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-console/mouse.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-console/video.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-console/video.ppu

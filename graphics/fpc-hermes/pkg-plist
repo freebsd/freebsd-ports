@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/hermes.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/hermes.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/hermes.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/libphermes.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/hermes.ppu

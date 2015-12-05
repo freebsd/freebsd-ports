@@ -1,18 +1,16 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-net
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
-COMMENT=	Free Pascal Component Library
+COMMENT=	Free Pascal network interfaces (FCL)
 
-USE_FPC=	fcl-async fcl-base fcl-xml fcl-passrc hash paszlib pthreads
+USE_FPC=	fcl-base openssl fcl-xml fcl-passrc fcl-async rtl-extra
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR=	${WRKUNITDIR}
-OPT=		-Fu${WRKDIR}/${WRKUNITDIR}/*
 
 .include "${MASTERDIR}/Makefile"

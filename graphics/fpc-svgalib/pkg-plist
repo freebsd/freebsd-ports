@@ -1,7 +1,5 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/Package.fpc
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/svgalib.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/svgalib.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/vgamouse.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/svgalib.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/vgamouse.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/libpsvgalib.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/libpvgamouse.a
