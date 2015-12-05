@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ncurses
-DISTVERSION=	${RELEASE}-20150214
-PORTREVISION=	2
+PORTVERSION=	6.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/current/
+MASTER_SITES=	http://invisible-mirror.net/archives/${PORTNAME}/ \
+		ftp://invisible-island.net/${PORTNAME}/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -14,8 +14,6 @@ COMMENT=	Library for terminal-independent, full-screen output
 CONFLICTS=	ncurses-devel-*
 
 LICENSE=	MIT
-
-RELEASE=	5.9
 
 BROKEN_sparc64=	cannot build: coredump: illegal instruction
 
@@ -41,7 +39,7 @@ TRACE_DESC=	Add trace() function to all models of ncurses
 CONFIGURE_ENV=	gnat_exists="no"
 
 USE_LDCONFIG=	yes
-USES=		shebangfix tar:tgz terminfo
+USES=		shebangfix terminfo
 SHEBANG_FILES=	test/tracemunch
 
 WIDEC_WRKSRC=	${WRKSRC}/build.widec
@@ -54,8 +52,8 @@ CONFIGURE_WRKSRC=	${NOWIDEC_WRKSRC}
 BUILD_WRKSRC=	${NOWIDEC_WRKSRC}
 INSTALL_WRKSRC=	${NOWIDEC_WRKSRC}
 
-PLIST_SUB+=	ABI_VER=${RELEASE:R} \
-		REL_VER=${RELEASE} \
+PLIST_SUB+=	ABI_VER=${PORTVERSION:R} \
+		REL_VER=${PORTVERSION} \
 		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${PREFIX}/,,} \
 		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${PREFIX}/,,}
 
@@ -129,7 +127,7 @@ post-install:
 	${ECHO} "INPUT(libncurses.so.${RELEASE:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
 	${ECHO} "INPUT(libncursesw.so.${RELEASE:R} AS_NEEDED(-ltinfow))" > ${STAGEDIR}${PREFIX}/lib/libncursesw.so
 
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.5.9
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.${PORTVERSION}
 
 	${MV} ${STAGEDIR}${PREFIX}/share/misc/terminfo.db \
 		${STAGEDIR}${PREFIX}/share/misc/terminfo.db.default

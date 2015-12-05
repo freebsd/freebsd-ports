@@ -111,8 +111,8 @@ man/man1/captoinfo.1m.gz
 man/man1/clear.1.gz
 man/man1/infocmp.1m.gz
 man/man1/infotocap.1m.gz
-man/man1/ncurses5-config.1.gz
-man/man1/ncursesw5-config.1.gz
+man/man1/ncurses%%ABI_VER%%-config.1.gz
+man/man1/ncursesw%%ABI_VER%%-config.1.gz
 man/man1/reset.1.gz
 man/man1/tabs.1.gz
 man/man1/tic.1m.gz
@@ -330,6 +330,7 @@ man/man3/form.3x.gz
 man/man3/form_cursor.3x.gz
 man/man3/form_data.3x.gz
 man/man3/form_driver.3x.gz
+man/man3/form_driver_w.3x.gz
 man/man3/form_field.3x.gz
 man/man3/form_field_attributes.3x.gz
 man/man3/form_field_buffer.3x.gz
