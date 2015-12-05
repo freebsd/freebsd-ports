@@ -13,12 +13,14 @@ MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Lightweight PDF viewer and toolkit
 
 LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
 		libopenjp2.so:${PORTSDIR}/graphics/openjpeg
 
+CFLAGS+=	-I${WRKSRC}/include/mupdf
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes
 USES=		cpe compiler:c++11-lang gmake jpeg pkgconfig
