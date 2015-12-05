@@ -20,12 +20,12 @@ GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot
 
 .include <bsd.port.options.mk>
 
-if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000013
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000013
 USES+=		bison
 MAKE_ARGS+=	YACC=${LOCALBASE}/bin/bison
 .endif
 
-if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	flex>0:${PORTSDIR}/textproc/flex
 MAKE_ARGS+=	LEX=${LOCALBASE}/bin/flex
 .endif
