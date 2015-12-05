@@ -21,6 +21,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yaps ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/yaps.rc ${STAGEDIR}${PREFIX}/etc/yaps.rc.sample
 	${INSTALL_MAN} ${WRKSRC}/yaps.1 ${STAGEDIR}${PREFIX}/man/man1/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/yaps.doc ${WRKSRC}/yaps.html ${STAGEDIR}${DOCSDIR}
 
