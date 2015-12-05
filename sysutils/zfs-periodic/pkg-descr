@@ -1,4 +1,4 @@
 Scripts that uses the periodic system to create and manage zfs
 snapshots. Easily configured via /etc/periodic.conf
 
-WWW: http://www.neces.com/blog/technology/integrating-freebsd-zfs-and-periodic-snapshots-and-scrubs
+WWW: https://github.com/ross/zfs-periodic
