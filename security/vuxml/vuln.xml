@@ -58,6 +58,54 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4c8d1d72-9b38-11e5-aece-d050996490d0">
+    <topic>openssl -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.0.2_5</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.2e</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-openssl</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20151203.txt">
+	  <ol>
+	    <li>BN_mod_exp may produce incorrect results on x86_64
+	      (CVE-2015-3193)</li>
+	    <li>Certificate verify crash with missing PSS parameter
+	      (CVE-2015-3194)</li>
+	    <li>X509_ATTRIBUTE memory leak (CVE-2015-3195)</li>
+	    <li>Race condition handling PSK identify hint
+	      (CVE-2015-3196)</li>
+	    <li>Anon DH ServerKeyExchange with 0 p parameter
+	      (CVE-2015-1794)</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1794</cvename>
+      <cvename>CVE-2015-3193</cvename>
+      <cvename>CVE-2015-3194</cvename>
+      <cvename>CVE-2015-3195</cvename>
+      <cvename>CVE-2015-3196</cvename>
+      <url>https://www.openssl.org/news/secadv/20151203.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-12-03</discovery>
+      <entry>2015-12-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8a90dc87-89f9-11e5-a408-00248c0c745d">
     <topic>PHPmailer -- SMTP injection vulnerability</topic>
     <affects>
