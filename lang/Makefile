@@ -80,6 +80,10 @@
     SUBDIR += fpc-docs
     SUBDIR += fpc-lua
     SUBDIR += fpc-rexx
+    SUBDIR += fpc-rtl-console
+    SUBDIR += fpc-rtl-extra
+    SUBDIR += fpc-rtl-objpas
+    SUBDIR += fpc-rtl-unicode
     SUBDIR += fpc-tcl
     SUBDIR += fpc-units
     SUBDIR += fpc-utils

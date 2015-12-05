@@ -133,7 +133,6 @@
     SUBDIR += firewalk
     SUBDIR += fl0p
     SUBDIR += flawfinder
-    SUBDIR += fpc-hash
     SUBDIR += fpc-openssl
     SUBDIR += fpm2
     SUBDIR += fprint_demo

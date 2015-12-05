@@ -1,7 +1,5 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/odbcsql.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/odbcsqldyn.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/odbc.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/odbcsql.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/odbcsql.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/odbcsqldyn.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/libpodbcsql.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/libpodbcsqldyn.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odbc/odbcsqldyn.ppu

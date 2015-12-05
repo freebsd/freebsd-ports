@@ -1,14 +1,13 @@
 # Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
 
-PORTREVISION=	2
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-ldap
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to OpenLDAP
 
-USE_FPC=	hash
+USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

@@ -1,8 +1,4 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/libpoci.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/libpocidyn.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/libporaoci.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/libporatypes.a
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/oracle.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oci.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oci.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/ocidyn.o

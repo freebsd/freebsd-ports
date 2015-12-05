@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	base
-PORTVERSION=	2.6.4
-PORTREVISION=	2
+PORTVERSION=	3.0.0
 CATEGORIES=	lang
 PKGNAMEPREFIX=	fpc-
 
@@ -16,6 +15,7 @@ WANT_FPC_BASE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_RUN_DEPENDS=	${LOCALBASE}/share/doc/fpdocs-${PORTVERSION}/user.pdf:${PORTSDIR}/lang/fpc-docs
+# docs not available yet, disable temporarily
+#DOCS_RUN_DEPENDS=	${LOCALBASE}/share/doc/fpdocs-${PORTVERSION}/user.pdf:${PORTSDIR}/lang/fpc-docs
 
 .include <bsd.port.mk>

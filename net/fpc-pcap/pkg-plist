@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pcap/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pcap/pcap.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/pcap.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pcap/pcap.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pcap/libppcap.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pcap/pcap.ppu

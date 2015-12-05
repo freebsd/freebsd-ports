@@ -1,7 +1,5 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/Package.fpc
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/httpd24.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/apr24.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/apr24.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/httpd24.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/httpd24.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/libpapr24.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd24/libphttpd24.a
