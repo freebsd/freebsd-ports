@@ -1,0 +1,5 @@
+This module provides a way to set a timeout on read / write operations
+on an IO::Socket instance, or any IO::Socket::* modules, like
+IO::Socket::INET.
+
+WWW: http://search.cpan.org/dist/IO-Socket-Timeout/
