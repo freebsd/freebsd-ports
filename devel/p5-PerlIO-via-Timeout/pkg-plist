@@ -1,0 +1,4 @@
+%%SITE_PERL%%/PerlIO/via/README.pod
+%%SITE_PERL%%/PerlIO/via/Timeout.pm
+%%PERL5_MAN3%%/PerlIO::via::README.3.gz
+%%PERL5_MAN3%%/PerlIO::via::Timeout.3.gz
