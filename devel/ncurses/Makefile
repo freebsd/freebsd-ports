@@ -39,7 +39,7 @@ TRACE_DESC=	Add trace() function to all models of ncurses
 CONFIGURE_ENV=	gnat_exists="no"
 
 USE_LDCONFIG=	yes
-USES=		shebangfix terminfo
+USES=		pkgconfig shebangfix terminfo
 SHEBANG_FILES=	test/tracemunch
 
 WIDEC_WRKSRC=	${WRKSRC}/build.widec
