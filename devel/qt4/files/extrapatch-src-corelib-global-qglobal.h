@@ -14,7 +14,7 @@ least need to include a non-lightweight header such as cstdio to have access to
 __GLIBCXX__) and not worth the effort.
 --- src/corelib/global/qglobal.h
 +++ src/corelib/global/qglobal.h
-@@ -854,7 +855,16 @@ namespace QT_NAMESPACE {}
+@@ -854,7 +855,18 @@ namespace QT_NAMESPACE {}
  #      define Q_COMPILER_DEFAULT_DELETE_MEMBERS
  #    endif
  #    if __has_feature(cxx_generalized_initializers)
@@ -25,9 +25,11 @@ __GLIBCXX__) and not worth the effort.
 + * lists). Since detecting libstdc++'s version is not trivial, only enable the
 + * macro with libc++.
 + */
-+#      include <ciso646>
-+#      if defined(_LIBCPP_VER)
-+#        define Q_COMPILER_INITIALIZER_LISTS
++#      if defined(__cplusplus)  /* Only C++ has ciso646. */
++#        include <ciso646>
++#        if defined(_LIBCPP_VER)
++#          define Q_COMPILER_INITIALIZER_LISTS
++#        endif
 +#      endif
  #    endif
  #    if __has_feature(cxx_lambdas)

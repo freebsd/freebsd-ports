@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgit2
-PORTVERSION=	0.23.1
+PORTVERSION=	0.23.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -17,27 +17,25 @@ USES=		cmake pkgconfig python:build
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
-PLIST_SUB=	SHLIB_VER=${PORTVERSION:R:E}
+PLIST_SUB=	PORTVERSION=${PORTVERSION} SHLIB_VER=${PORTVERSION:R:E}
 
 OPTIONS_DEFINE=	SSH THREADS CURL
 OPTIONS_DEFAULT=SSH THREADS CURL
 SSH_DESC=	Enable SSH support through libssh2
-CURL_DESC= Enable HTTP support through cURL
+CURL_DESC=	Enable HTTP support through cURL
 
 SSH_LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 SSH_CMAKE_ON=		-DUSE_SSH=ON
 SSH_CMAKE_OFF=		-DUSE_SSH=OFF
 THREADS_CMAKE_ON=	-DTHREADSAFE=ON
 THREADS_CMAKE_OFF=	-DTHREADSAFE=OFF
-CURL_LIB_DEPENDS= libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 CURL_CMAKE_ON=		-DCURL=ON
 CURL_CMAKE_OFF=		-DCURL=OFF
 
-.include <bsd.port.pre.mk>
+BROKEN_sparc64=	does not install: thread-local storage not supported
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64: thread-local storage not supported
-.endif
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/pkgconfig|/../libdata/pkgconfig|; \

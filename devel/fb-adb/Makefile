@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	fb-adb
-DISTVERSION=	1.4.4-113
-DISTVERSIONSUFFIX=	-gd447d38
+DISTVERSION=	1.4.4-115
+DISTVERSIONSUFFIX=	-ga682c99
 CATEGORIES=	devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -68,8 +68,13 @@ NDK_SHELL=		${SETENV} UNAME_s=Linux UNAME_m=${LINUX_RPM_ARCH} ${SH}
 NDK_CONFIGURE_ENV=	ANDROID_NDK="${WRKSRC_ndk}" \
 			ANDROID_NDK_SHELL="${NDK_SHELL}" \
 			NDK_TMPDIR="${WRKDIR}"
-NDK_BUILD_DEPENDS_OFF=	${LOCALBASE}/android/ARMv7/bin/arm-aux-linux-androideabi-gcc:${PORTSDIR}/lang/gnatdroid-armv7
-NDK_CONFIGURE_ENV_OFF=	PATH="${NDK_BUILD_DEPENDS_OFF:C/:.*//:H}:$$PATH"
+NDK_BUILD_DEPENDS_OFF=	${LOCALBASE}/android/ARMv7/bin/arm-aux-linux-androideabi-gcc:${PORTSDIR}/lang/gnatdroid-armv7 \
+			${LOCALBASE}/android-x86/x86_32/bin/i686-aux-linux-android-gcc:${PORTSDIR}/lang/gnatdroid-x86
+.if defined(.PARSEDIR)
+NDK_CONFIGURE_ENV_OFF=	PATH="${NDK_BUILD_DEPENDS_OFF:C/:.*//:H:ts:}:$$PATH"
+.else
+NDK_CONFIGURE_ENV_OFF=	PATH="${LOCALBASE}/android/ARMv7/bin:${LOCALBASE}/android-x86/x86_32/bin:$$PATH"
+.endif
 NDK_CONFIGURE_OFF=	--with-android-ndk=system
 
 post-extract:
@@ -83,10 +88,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/CPPFLAGS.*-Werror/d' ${WRKSRC}/configure.ac
 
 post-patch-NDK-off:
-# XXX lang/gnatdroid-x86 doesn't exist yet
-	@${REINPLACE_CMD} -i '.x86-off.bak' -e 's/stub-x86[^,]*, //g' \
-		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -i '.aux.bak' -e 's/linux-androideabi/aux-&/' \
+	@${REINPLACE_CMD} -i '.aux.bak' -e 's/linux-android/aux-&/' \
 		${WRKSRC}/stub-*/configure
 
 # XXX D4157: Similar to USES=qmake:outsource, merge into Mk/Uses/autoreconf.mk

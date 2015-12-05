@@ -3,6 +3,7 @@
 
 PORTNAME=	ev
 PORTVERSION=	0.2.15
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

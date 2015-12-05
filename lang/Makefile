@@ -105,7 +105,10 @@
     SUBDIR += gnat_util
     SUBDIR += gnatdroid-armv7
     SUBDIR += gnatdroid-binutils
+    SUBDIR += gnatdroid-binutils-x86
     SUBDIR += gnatdroid-sysroot
+    SUBDIR += gnatdroid-sysroot-x86
+    SUBDIR += gnatdroid-x86
     SUBDIR += gnu-cobol
     SUBDIR += gnustep-base
     SUBDIR += go

@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	33
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
+#		skreuzer@FreeBSD.org is also committer for this port
 COMMENT=	Systems administration tool for networks
 CPE_VENDOR=	gnu
 

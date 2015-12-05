@@ -11,8 +11,10 @@ MAINTAINER=	d.pryadko@rambler-co.ru
 COMMENT=	Get public suffix of domain name from Public Suffix List
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

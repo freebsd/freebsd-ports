@@ -1,6 +1,6 @@
---- bosh_cli.gemspec.orig	2015-10-10 09:54:54 UTC
+--- bosh_cli.gemspec.orig	2015-12-02 17:01:32 UTC
 +++ bosh_cli.gemspec
-@@ -27,14 +27,14 @@ Gem::Specification.new do |s|
+@@ -27,17 +27,17 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<bosh-template>, ["~> 1.3098.0"])
        s.add_runtime_dependency(%q<cf-uaa-lib>, ["~> 3.2.1"])
        s.add_runtime_dependency(%q<json_pure>, ["~> 1.7"])
@@ -18,4 +18,8 @@
 +      s.add_runtime_dependency(%q<net-scp>, [">= 1.1.0"])
        s.add_runtime_dependency(%q<netaddr>, ["~> 1.5.0"])
        s.add_runtime_dependency(%q<minitar>, ["~> 0.5.4"])
-       s.add_runtime_dependency(%q<sshkey>, ["~> 1.7.0"])
+-      s.add_runtime_dependency(%q<sshkey>, ["~> 1.7.0"])
++      s.add_runtime_dependency(%q<sshkey>, [">= 1.7.0"])
+       s.add_development_dependency(%q<rspec>, ["~> 3.0"])
+       s.add_development_dependency(%q<rspec-its>, [">= 0"])
+       s.add_development_dependency(%q<rspec-instafail>, [">= 0"])

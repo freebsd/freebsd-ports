@@ -22,6 +22,8 @@ ALL_TARGET=	errnos.h ${CANNED_MANPAGES:R}
 USES=		perl5 shebangfix
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+MAKE_JOBS_UNSAFE=	yes
+
 CANNED_MANPAGES=errno.1 \
 		ifdata.1 \
 		ifne.1 \

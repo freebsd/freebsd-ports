@@ -5,7 +5,7 @@ PORTNAME=	elsamuko
 DISTVERSION=	0.24
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	https://sites.google.com/site/${PORTNAME}/gimp/
+MASTER_SITES=	https://github.com/site/${PORTNAME}/gimp-${PORTNAME}/archive/
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-script
 DISTNAME=	${PORTNAME}
@@ -14,10 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gimp scripts by elsamuko
 
 LICENSE=	GPLv3
-
-BROKEN=		No public distfiles
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2015-11-26
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gimp:${PORTSDIR}/graphics/gimp-app
 

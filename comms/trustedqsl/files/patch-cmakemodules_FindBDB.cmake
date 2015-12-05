@@ -1,22 +1,37 @@
---- cmakemodules/FindBDB.cmake.orig	2014-05-08 17:59:25.000000000 -0700
-+++ cmakemodules/FindBDB.cmake	2014-05-24 01:29:11.000000000 -0700
-@@ -6,6 +6,7 @@
+--- cmakemodules/FindBDB.cmake.orig	2015-10-21 17:26:38 UTC
++++ cmakemodules/FindBDB.cmake
+@@ -1,10 +1,12 @@
+ # Find Berkeley DB
+ 
+ # Look for the header file.
+-if(APPLE) #exclude obsolete default OSX db
++if(APPLE OR CMAKE_HOST_SYSTEM_NAME STREQUAL "FreeBSD") #exclude obsolete default OSX db
+ FIND_PATH(BDB_INCLUDE_DIR db.h NO_DEFAULT_PATH PATHS
    "/usr/local/BerkeleyDB.6.0/include"
    "/usr/local/BerkeleyDB.5.3/include"
-   "${BDB_PREFIX}/include"
++  "/usr/local/include/db5"
 +  "${BDB_PREFIX}/include/db5"
+   "${BDB_PREFIX}/include"
  ) 
  else()
- FIND_PATH(BDB_INCLUDE_DIR db.h
-@@ -29,6 +30,7 @@
+@@ -15,6 +17,8 @@ FIND_PATH(BDB_INCLUDE_DIR db.h
+   "C:\\db-6.0.20\\build_windows"
+   "C:\\db-6.0.20\\build_windows"
+   "C:\\db-5.3.21\\build_windows"
++  #*nix dirs
++  "${BDB_PREFIX}/include"
+ )
+ endif()
+ MARK_AS_ADVANCED(BDB_INCLUDE_DIR)
+@@ -31,6 +35,7 @@ FIND_LIBRARY(BDB_LIBRARY NAMES 
+   libdb6-0.3
+   libdb6-0.so
+   libdb_small53s
++  libdb5
    libdb53s
    libdb5-5.3
    libdb5-5.so
-+  libdb5
-   PATHS
-   "C:\\db-6.0.20\\build_windows\\Win32\\Static Release\\"
-   "C:\\db-6.0.20\\build_windows\\Win32\\Static_Release\\" #vc08 adds underscore
-@@ -38,6 +40,7 @@
+@@ -45,6 +50,7 @@ FIND_LIBRARY(BDB_LIBRARY NAMES 
    "/usr/local/BerkeleyDB.6.0/lib"
    "/usr/local/BerkeleyDB.5.3/lib"
    "${BDB_PREFIX}/lib"

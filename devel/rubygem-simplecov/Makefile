@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplecov
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

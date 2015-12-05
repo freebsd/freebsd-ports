@@ -357,6 +357,8 @@
     SUBDIR += kenlm
     SUBDIR += kibana3
     SUBDIR += kibana41
+    SUBDIR += kibana42
+    SUBDIR += kibana43
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
     SUBDIR += kmfl-sil-ezra
@@ -1429,6 +1431,7 @@
     SUBDIR += rubygem-nokogiri-diff
     SUBDIR += rubygem-nokogiri14
     SUBDIR += rubygem-nokogumbo
+    SUBDIR += rubygem-octopress-escape-code
     SUBDIR += rubygem-opml
     SUBDIR += rubygem-org-ruby
     SUBDIR += rubygem-parslet

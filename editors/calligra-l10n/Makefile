@@ -4,15 +4,11 @@ PORTNAME=	calligra-l10n
 PORTVERSION=	${CALLIGRA_VERSION}
 PORTREVISION=	3
 CATEGORIES=	editors kde
-MASTER_SITES=	# none
-DISTFILES=	# none
-EXTRACT_ONLY=	# none
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for Calligra
 
-NO_ARCH=	yes
-NO_BUILD=	yes
+USES=		metaport
 USE_KDE4=	kdeprefix
 
 CALLIGRA_LANG_ALL=	bs ca ca@valencia cs da de el en_GB es et fi fr \
@@ -52,8 +48,5 @@ ${${lang}_OPT}_DESC=	${${lang}_NAME} localization
 ${${lang}_OPT}_RUN_DEPENDS=${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 ALL_RUN_DEPENDS+=	${${${lang}_OPT}_RUN_DEPENDS}
 .endfor
-
-do-install:
-	@${DO_NADA}
 
 .include <bsd.port.mk>

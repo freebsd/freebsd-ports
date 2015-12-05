@@ -1478,7 +1478,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/source/wand.c
 %%PORTDOCS%%%%DOCSDIR%%-6/www/sponsors.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/stream.html
-%%PORTDOCS%%%%DOCSDIR%%-6/www/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/support.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/wand.png
 %%PORTDOCS%%%%DOCSDIR%%-6/www/webp.html

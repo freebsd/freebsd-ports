@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	entrans
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Entrans is an online, collaborative translation tool
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PHP=	mysql
 NO_BUILD=	yes

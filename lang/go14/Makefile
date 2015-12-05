@@ -22,7 +22,7 @@ sh_OLD_CMD=	"/usr/bin/env bash"
 sh_CMD=		${SH}
 
 WRKSRC=		${WRKDIR}/go
-ONLY_FOR_ARCHS=	i386 amd64 armv6
+ONLY_FOR_ARCHS=	i386 amd64 armv6 armv6hf
 
 .include <bsd.port.pre.mk>
 
@@ -37,7 +37,7 @@ GOOBJ=8
 .elif ${ARCH} == "amd64"
 GOARCH=amd64
 GOOBJ=6
-.elif ${ARCH} == "armv6"
+.elif ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
 GOARCH=arm
 GOOBJ=5
 .else

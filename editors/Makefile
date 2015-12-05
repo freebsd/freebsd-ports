@@ -15,7 +15,6 @@
     SUBDIR += bitedit
     SUBDIR += bless
     SUBDIR += boiling-egg
-    SUBDIR += bpatch
     SUBDIR += bvi
     SUBDIR += calligra
     SUBDIR += calligra-l10n
@@ -51,7 +50,6 @@
     SUBDIR += dkns
     SUBDIR += drjava
     SUBDIR += e3
-    SUBDIR += e93
     SUBDIR += edith
     SUBDIR += editorconfig-core-c
     SUBDIR += emacs
@@ -231,7 +229,6 @@
     SUBDIR += semi
     SUBDIR += shed
     SUBDIR += slime
-    SUBDIR += spe
     SUBDIR += ssam
     SUBDIR += ssed
     SUBDIR += sted
@@ -265,7 +262,6 @@
     SUBDIR += xed
     SUBDIR += xmlcopyeditor
     SUBDIR += xvile
-    SUBDIR += yasnippet
     SUBDIR += yudit
     SUBDIR += yui
     SUBDIR += yzis

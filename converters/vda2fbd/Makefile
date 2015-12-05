@@ -9,19 +9,25 @@ MASTER_SITES=	http://www.dhondt.de/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add-on converter for CalculiX
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" YACC="${YACC}"
+WRKSRC_SUBDIR=	src
 
 PORTDOCS=	model.ps.gz
 PLIST_FILES=	bin/vda2fbd
+
+OPTIONS_DEFINE=	DOCS
 
 post-build:
 	cd ${WRKSRC}/../doc && ${GZIP_CMD} -c model.ps > model.ps.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vda2fbd ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/model.ps.gz ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

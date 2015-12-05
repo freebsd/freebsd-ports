@@ -36,12 +36,6 @@ OPTIONS_DEFINE=	GSTREAMER WEBP
 GSTREAMER_USE=		GSTREAMER=yes
 WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == DragonFly
-LIB_DEPENDS+=	libssl.so:${PORTSDIR}/security/openssl
-.endif
-
 .include <bsd.port.pre.mk>
 
 post-patch:

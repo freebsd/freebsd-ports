@@ -1,4 +1,2 @@
-SHA256 (cronolog-1.6.2.tar.gz) = 65e91607643e5aa5b336f17636fa474eb6669acc89288e72feb2f54a27edb88e
-SIZE (cronolog-1.6.2.tar.gz) = 133591
-SHA256 (cronolog-setugid-patch.txt) = ca0061a34aa1291ac61cac07d7718bc2a09421fb931943fa45f33cf7d5a0759b
-SIZE (cronolog-setugid-patch.txt) = 13321
+SHA256 (fordmason-cronolog-1.6.2-8ea64c0_GH0.tar.gz) = 1270ab6b55d5ff10eaa9b29e4c8afd127748f7a6797290ff89febb5eaa7a9030
+SIZE (fordmason-cronolog-1.6.2-8ea64c0_GH0.tar.gz) = 131271

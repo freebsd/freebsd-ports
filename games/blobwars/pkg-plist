@@ -3,6 +3,7 @@ share/applications/blobwars.desktop
 %%DATADIR%%/blobwars.pak
 share/icons/hicolor/16x16/apps/blobwars.png
 share/icons/hicolor/32x32/apps/blobwars.png
+share/icons/hicolor/48x48/apps/blobwars.png
 share/icons/hicolor/64x64/apps/blobwars.png
 %%NLS%%share/locale/ca/LC_MESSAGES/blobwars.mo
 %%NLS%%share/locale/da/LC_MESSAGES/blobwars.mo

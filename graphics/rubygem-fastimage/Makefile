@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fastimage
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 

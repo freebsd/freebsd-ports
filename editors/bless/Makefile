@@ -11,6 +11,8 @@ MAINTAINER=	mono@FreeBSD.org
 COMMENT=	High quality, full featured hex editor
 
 BROKEN=		Fails to build with mono 4
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-12-30
 
 USES=		gmake mono pathfix pkgconfig
 USE_GNOME=	gnomeprefix gnomedocutils gtksharp20

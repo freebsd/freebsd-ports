@@ -3,7 +3,7 @@
 
 PORTNAME=	libgpod
 PORTVERSION=	0.8.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -16,15 +16,13 @@ LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
 		libtag.so:${PORTSDIR}/audio/taglib \
 		libsgutils2.so:${PORTSDIR}/sysutils/sg3_utils
 
-USE_GNOME=	gdkpixbuf2 gtk20 intltool
-USE_SQLITE=	3
-USES=		tar:bzip2 gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool localbase pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-udev --without-hal \
+CONFIGURE_ARGS=	--disable-silent-rules --disable-udev --without-hal \
 		--with-html-dir="${DOCSDIR:H}"
 USE_CSTD=	gnu89
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_GNOME=	gdkpixbuf2 gtk20 intltool
+USE_SQLITE=	3
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
@@ -60,15 +58,14 @@ PORTDOCS=	ChangeLog NEWS README*
 COMMENT:=	${COMMENT:S,iPod,&/iPhone,}
 .endif
 
-post-patch:
-# Allow to build tools without HAL
-	@${REINPLACE_CMD} -e '/noinst_PROGRAMS =/ s,^,@HAVE_HAL_TRUE@,' \
-		${WRKSRC}/tools/Makefile.in
-
 post-install:
-.if ! ${PORT_OPTIONS:MMONO}
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/ipod-time-sync \
+		${STAGEDIR}${PREFIX}/bin
+
+post-install-MONO-off:
 	@${RM} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libgpod-sharp.pc
-.endif
+
+post-install-DOCS-on:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

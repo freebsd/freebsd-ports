@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	file-tail
-PORTVERSION=	1.0.12
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Ruby library that allows Ruby to 'tail' files
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	rubygem-tins0>=0.5.0:${PORTSDIR}/devel/rubygem-tins0
+RUN_DEPENDS=	rubygem-tins>=1.0:${PORTSDIR}/devel/rubygem-tins
 
 NO_ARCH=	yes
 

@@ -75,6 +75,10 @@ PORTDATA=	scanview.css \
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == powerpc
+USE_GCC=	yes
+.endif
+
 # keep in sync with /usr/src/lib/clang/clang.build.mk
 CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${OSREL}
 

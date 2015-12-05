@@ -34,11 +34,7 @@ MAKE_ARGS=	DVDREAD_INCLUDE=${LOCALBASE}/include \
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
 		CC="${CC}" CXX="${CXX}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-BROKEN=		does not build on 10.x+
-.endif
+BROKEN=		does not build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/SConstruct
@@ -47,4 +43,4 @@ post-install:
 	cd ${WRKSRC}/docs/man/man1 && ${INSTALL_MAN} bombono-dvd.1 \
 		mpeg2demux.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

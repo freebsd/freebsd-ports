@@ -215,7 +215,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-inline-glossary.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backup-basics.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/backup-strategies.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backups-tapebackups.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics-daemons.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics-devices.html
@@ -231,7 +230,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bibliography-security.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bibliography-userguides.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bibliography.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/binary-formats.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/book-preface.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-blocks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-init.html
@@ -276,7 +274,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-browsers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-finance.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-productivity.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-summary.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-viewers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/device-hints.html
@@ -286,6 +283,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disk-organization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-adding.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-encrypting.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-growing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-hast.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-naming.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-virtual.html
@@ -385,7 +383,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/make-delete-old.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/makeworld.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-bittorrent.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-ftp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-rsync.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors.html
@@ -403,7 +400,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ftp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-inetd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ipv6.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-isdn.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-ldap.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-nis.html
@@ -421,8 +417,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/outgoing-only.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/packages-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/permissions.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-core.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys-developers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pgpkeys.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/pkgng-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-broken.html
@@ -496,6 +490,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-understanding.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-understanding.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/zfs-advanced.html

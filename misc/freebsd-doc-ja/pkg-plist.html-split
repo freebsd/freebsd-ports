@@ -151,7 +151,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/editors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-email.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-news.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-shell.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-web.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls.html
@@ -210,6 +209,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-routing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-wireless.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/nutshell.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/one-time-passwords.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/openssh.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/openssl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/permissions.html
@@ -244,7 +244,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/serialcomms.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/serialconsole-setup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/shells.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/skey.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/slip.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/small-lan.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/snapshots.html

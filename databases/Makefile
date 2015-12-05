@@ -64,7 +64,6 @@
     SUBDIR += emma
     SUBDIR += erlang-epgsql
     SUBDIR += erlang-eredis
-    SUBDIR += erlang-mysql
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
     SUBDIR += firebird25-client
@@ -117,7 +116,6 @@
     SUBDIR += isql-viewer
     SUBDIR += jakarta-commons-dbutils
     SUBDIR += jasperreports
-    SUBDIR += java-mybatis
     SUBDIR += jdb
     SUBDIR += jdbc-oracle10g
     SUBDIR += jdbc-oracle11g
@@ -235,7 +233,6 @@
     SUBDIR += ocaml-mysql
     SUBDIR += ocaml-sqlite3
     SUBDIR += openark-kit
-    SUBDIR += openbase-jdbc
     SUBDIR += opendbx
     SUBDIR += opentsdb
     SUBDIR += oracle7-client
@@ -531,7 +528,6 @@
     SUBDIR += pecl-chdb
     SUBDIR += pecl-dbase
     SUBDIR += pecl-drizzle
-    SUBDIR += pecl-handlersocket
     SUBDIR += pecl-leveldb
     SUBDIR += pecl-mdbtools
     SUBDIR += pecl-memcache
@@ -736,6 +732,7 @@
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb
     SUBDIR += py-memcached
+    SUBDIR += py-mycli
     SUBDIR += py-mysql-connector-python
     SUBDIR += py-mysql-connector-python2
     SUBDIR += py-mysql2pgsql
@@ -745,6 +742,7 @@
     SUBDIR += py-peewee
     SUBDIR += py-pg8000
     SUBDIR += py-pg_pqueue
+    SUBDIR += py-pgcli
     SUBDIR += py-pgspecial
     SUBDIR += py-pgxnclient
     SUBDIR += py-pickledb
@@ -776,7 +774,6 @@
     SUBDIR += py34-sqlite3
     SUBDIR += py35-sqlite3
     SUBDIR += py-sqlite3dbm
-    SUBDIR += py-sqlkit
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlparse
     SUBDIR += py-sqlrelay
@@ -919,7 +916,6 @@
     SUBDIR += sqlclient
     SUBDIR += sqldeveloper
     SUBDIR += sqlite-ext-miscfuncs
-    SUBDIR += sqlite-ext-mobigroup
     SUBDIR += sqlite-ext-pcre
     SUBDIR += sqlite2
     SUBDIR += sqlite3
@@ -931,7 +927,6 @@
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += squirrel-sql
-    SUBDIR += sybtcl
     SUBDIR += tablelog
     SUBDIR += tarantool
     SUBDIR += tarantool-c
@@ -947,7 +942,6 @@
     SUBDIR += twemproxy
     SUBDIR += unixODBC
     SUBDIR += useracc
-    SUBDIR += usogres
     SUBDIR += vfront
     SUBDIR += virtualpg
     SUBDIR += virtuoso

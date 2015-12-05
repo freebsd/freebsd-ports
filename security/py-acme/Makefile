@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	acme
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.0.dev20151114
+DISTVERSION=	0.0.0.dev20151123
 CATEGORIES=	security python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cpm@fbsd.es
@@ -24,12 +24,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>0:${PORTSDIR}/devel/py-pyasn1 \
 
 USES=		gmake python
 USE_PYTHON=	autoplist distutils
-
-WRKSRC_SUBDIR=	acme
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	letsencrypt
-GH_PROJECT=	letsencrypt
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

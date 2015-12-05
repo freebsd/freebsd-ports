@@ -1,6 +1,17 @@
---- cunix.h.orig	2011-04-16 21:25:44.000000000 +0900
-+++ cunix.h	2011-04-16 21:27:40.000000000 +0900
-@@ -40,7 +40,9 @@
+--- cunix.h.orig	2015-11-23 17:47:06.000000000 +0900
++++ cunix.h	2015-11-23 17:49:27.000000000 +0900
+@@ -29,6 +29,10 @@
+ #include <termcap.h>
+ #endif
+ 
++#if defined(__FreeBSD__)
++#include <sys/endian.h>
++#endif
++
+ #define _T_EUC	/* EUC 漢字コード */
+ 
+ #define _T_MAXROWS			24				/* 画面行数 */
+@@ -40,7 +44,9 @@
  #define _T_TMPENV			"TEMP"			/* temporary 環境変数名 */
  #define _T_TMPENV2			"TMPDIR"		/* temporary 環境変数名 */
  #define _T_TMPDIR			"/tmp"			/* temporary directory */
@@ -10,7 +21,27 @@
  											/* default search path list */
  #define _T_HOMEENV			"HOME"			/* home 環境変数 */
  #define _T_PATHENV			"PATH"			/* path 環境変数名 */
-@@ -60,7 +62,7 @@
+@@ -50,6 +56,15 @@
+ 											/* path name of executed command */
+ #define _T_EXECCMDPATH		"ExecCmdPath"	/* $ExecCmdPath => search_cmdpath */
+ #define _T_OPENFLAG			(O_RDONLY)
++#if defined(__FreeBSD__)
++#if _BYTE_ORDER == _LITTLE_ENDIAN
++#define _T_LITTLE_ENDIAN
++#define _T_LITTLE_ENDIAN_BITFIELD
++#else
++#define _T_BIG_ENDIAN
++#define _T_BIG_ENDIAN_BITFIELD
++#endif
++#else
+ #if defined(i386)
+ #define _T_LITTLE_ENDIAN
+ #define _T_LITTLE_ENDIAN_BITFIELD
+@@ -57,10 +72,11 @@
+ #define _T_BIG_ENDIAN
+ #define _T_BIG_ENDIAN_BITFIELD
+ #endif
++#endif
  #define _T_OUTFILE_DEFAULT	"%c%y%m%d.today"
  #define _T_OUTFILE_TMPNAME	"%p.today"
  

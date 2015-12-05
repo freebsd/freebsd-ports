@@ -1,4 +1,5 @@
 bin/ipod-read-sysinfo-extended
+bin/ipod-time-sync
 include/gpod-1.0/gpod/itdb.h
 lib/libgpod.a
 lib/libgpod.so
