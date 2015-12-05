@@ -55,6 +55,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/garching/garching-ground3.png
 %%DATADIR%%/landscapes/garching/landscape.ini
 %%DATADIR%%/landscapes/geneva/description.ar.utf8
+%%DATADIR%%/landscapes/geneva/description.be.utf8
 %%DATADIR%%/landscapes/geneva/description.de.utf8
 %%DATADIR%%/landscapes/geneva/description.en.utf8
 %%DATADIR%%/landscapes/geneva/description.fr.utf8
@@ -65,6 +66,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/geneva/horizon_Geneve.txt
 %%DATADIR%%/landscapes/geneva/landscape.ini
 %%DATADIR%%/landscapes/grossmugl/description.ar.utf8
+%%DATADIR%%/landscapes/grossmugl/description.be.utf8
 %%DATADIR%%/landscapes/grossmugl/description.de.utf8
 %%DATADIR%%/landscapes/grossmugl/description.en.utf8
 %%DATADIR%%/landscapes/grossmugl/description.fr.utf8
@@ -232,6 +234,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/uranus/landscape.ini
 %%DATADIR%%/landscapes/uranus/uranus-256.png
 %%DATADIR%%/landscapes/zero/description.ar.utf8
+%%DATADIR%%/landscapes/zero/description.be.utf8
 %%DATADIR%%/landscapes/zero/description.de.utf8
 %%DATADIR%%/landscapes/zero/description.en.utf8
 %%DATADIR%%/landscapes/zero/description.fr.utf8
@@ -646,6 +649,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/boorong/constellationship.fab
 %%DATADIR%%/skycultures/boorong/cwar.png
 %%DATADIR%%/skycultures/boorong/cwarepil.png
+%%DATADIR%%/skycultures/boorong/description.be.utf8
 %%DATADIR%%/skycultures/boorong/description.de.utf8
 %%DATADIR%%/skycultures/boorong/description.en.utf8
 %%DATADIR%%/skycultures/boorong/description.hu.utf8
@@ -936,6 +940,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/romanian/crapii.png
 %%DATADIR%%/skycultures/romanian/crucea-mare.png
 %%DATADIR%%/skycultures/romanian/crucea-mica.png
+%%DATADIR%%/skycultures/romanian/description.be.utf8
 %%DATADIR%%/skycultures/romanian/description.en.utf8
 %%DATADIR%%/skycultures/romanian/description.pt_BR.utf8
 %%DATADIR%%/skycultures/romanian/description.ro.utf8
@@ -978,6 +983,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/siberian/constellation_names.eng.fab
 %%DATADIR%%/skycultures/siberian/constellations_boundaries.dat
 %%DATADIR%%/skycultures/siberian/constellationship.fab
+%%DATADIR%%/skycultures/siberian/description.be.utf8
 %%DATADIR%%/skycultures/siberian/description.en.utf8
 %%DATADIR%%/skycultures/siberian/description.hu.utf8
 %%DATADIR%%/skycultures/siberian/description.pt_BR.utf8
@@ -1006,6 +1012,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/tukano/constellations_boundaries.dat
 %%DATADIR%%/skycultures/tukano/constellationsart.fab
 %%DATADIR%%/skycultures/tukano/constellationship.fab
+%%DATADIR%%/skycultures/tukano/description.be.utf8
 %%DATADIR%%/skycultures/tukano/description.en.utf8
 %%DATADIR%%/skycultures/tukano/description.uk.utf8
 %%DATADIR%%/skycultures/tukano/info.ini
@@ -1130,6 +1137,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/western_rey/Rey_cover.png
 %%DATADIR%%/skycultures/western_rey/constellation_names.eng.fab
 %%DATADIR%%/skycultures/western_rey/constellationship.fab
+%%DATADIR%%/skycultures/western_rey/description.be.utf8
 %%DATADIR%%/skycultures/western_rey/description.de.utf8
 %%DATADIR%%/skycultures/western_rey/description.en.utf8
 %%DATADIR%%/skycultures/western_rey/description.ru.utf8
