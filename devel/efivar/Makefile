@@ -16,7 +16,7 @@ USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	rhinstaller
 
-USES=		gmake pkgconfig
+USES=		gmake localbase pkgconfig
 USE_LDCONFIG=	yes
 
 NOT_FOR_ARCHS=	powerpc powerpc64 sparc64
