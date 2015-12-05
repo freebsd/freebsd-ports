@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Business-OnlinePayment
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:IVAN
@@ -20,6 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
