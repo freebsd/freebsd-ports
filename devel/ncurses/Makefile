@@ -3,6 +3,7 @@
 
 PORTNAME=	ncurses
 PORTVERSION=	6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://invisible-mirror.net/archives/${PORTNAME}/ \
 		ftp://invisible-island.net/${PORTNAME}/
@@ -124,8 +125,8 @@ post-install:
 
 	${RM} -f ${STAGEDIR}${PREFIX}/lib/libncurses.so \
 		${STAGEDIR}${PREFIX}/lib/libncursesw.so
-	${ECHO} "INPUT(libncurses.so.${RELEASE:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
-	${ECHO} "INPUT(libncursesw.so.${RELEASE:R} AS_NEEDED(-ltinfow))" > ${STAGEDIR}${PREFIX}/lib/libncursesw.so
+	${ECHO} "INPUT(libncurses.so.${PORTVERSION:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
+	${ECHO} "INPUT(libncursesw.so.${PORTVERSION:R} AS_NEEDED(-ltinfow))" > ${STAGEDIR}${PREFIX}/lib/libncursesw.so
 
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.${PORTVERSION}
 
