@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/doc/license
 LICENSE_TEXT_CCbyNCSA3=CC-BY 3.0
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
-USES=		gmake
+USES=		gmake pkgconfig
 USE_SDL=	image2 mixer2 net2 sdl2 ttf2
 WITH_ZLIB=	yes
 
