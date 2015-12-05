@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v3.4/
 PKGNAMESUFFIX=	-gui
@@ -10,6 +10,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt-based GUI for CMake
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
 BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
