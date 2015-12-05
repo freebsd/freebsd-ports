@@ -2887,6 +2887,7 @@
     SUBDIR += p5-Perl-Tidy
     SUBDIR += p5-Perl-Unsafe-Signals
     SUBDIR += p5-Perl-Version
+    SUBDIR += p5-Perl-osnames
     SUBDIR += p5-Perl4-CoreLibs
     SUBDIR += p5-Perl6-Builtins
     SUBDIR += p5-Perl6-Export
