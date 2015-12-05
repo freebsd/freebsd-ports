@@ -1,10 +1,5 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/buildim.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/magick_wand.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/imagemagick.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/buildim.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/magick_wand.o
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/imagemagick.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/imagemagick.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/libpbuildim.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/libpmagick_wand.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/libpimagemagick.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/imagemagick.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/magick_wand.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imagemagick/magick_wand.ppu

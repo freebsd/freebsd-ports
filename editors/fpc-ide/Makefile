@@ -1,20 +1,16 @@
 # Created by: John Merryweather Cooper et al
 # $FreeBSD$
 
-PORTREVISION=	3
 CATEGORIES=	editors lang
 PKGNAMESUFFIX=	-ide
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal integrated IDE/compiler
 
-USE_FPC=	chm fcl-async fcl-base fcl-xml fv gdbint graph ibase hash mysql \
-		odbc oracle pasjpeg paszlib pthreads postgres regexpr sqlite
+USE_FPC=	chm fv gdbint regexpr rtl-extra rtl-console fcl-xml
 
-FPCDIR=		# none
-UNITPREFIX=	# none
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR=	${WRKUNITDIR} ${FPCSRCDIR}/compiler ${FPCSRCDIR}/rtl ${FPCSRCDIR}/packages/fv
+EXTRACTUNITDIR=	${WRKUNITDIR} ${FPCSRCDIR}/rtl ${FPCSRCDIR}/compiler
 
 .include "${MASTERDIR}/Makefile"

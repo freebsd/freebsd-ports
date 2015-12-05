@@ -1,14 +1,13 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface to the GTK2 libraries
 
-USE_FPC=	cairo fcl-base fcl-image hash pasjpeg paszlib x11
+USE_FPC=	cairo fcl-base fcl-image fcl-res pasjpeg rtl-objpas x11
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

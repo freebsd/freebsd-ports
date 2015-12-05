@@ -1,0 +1,17 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/rtl-objpas.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/convutils.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/convutils.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/dateutils.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/dateutils.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fmtbcd.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fmtbcd.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/stdconvs.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/stdconvs.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/stdconvs.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/strutils.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/strutils.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/variants.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/variants.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/variants.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/varutils.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/varutils.ppu

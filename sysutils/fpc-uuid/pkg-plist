@@ -1,6 +1,4 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/uuid/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/uuid/libplibuuid.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/uuid/libpmacuuid.a
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/uuid.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/uuid/libuuid.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/uuid/libuuid.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/uuid/macuuid.o

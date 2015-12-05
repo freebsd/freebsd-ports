@@ -8036,4 +8036,10 @@ databases/java-mybatis||2015-11-28|Has expired: Broken for more than 6 months
 databases/openbase-jdbc||2015-11-28|Has expired: Broken for more than 6 months
 www/mediawiki119|www/mediawiki125|2015-11-28|Has expired: Please upgrade to mediawiki-1.25
 www/R-cran-Rpad||2015-11-28|Has expired: Unmaintained upstream
-archivers/py-liblzma|py-pyliblzma|2015-11-30|Rename to match upstream (PyPI) naming
+archivers/py-liblzma|archivers/py-pyliblzma|2015-11-30|Rename to match upstream (PyPI) naming
+archivers/fpc-paszlib||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+audio/fpc-sndfile||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+devel/fpc-fcl-process||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+devel/fpc-fpmkunit||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+multimedia/fpc-matroska||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+security/fpc-hash||2015-12-05|Eliminated during FPC upgrade to 3.0.0

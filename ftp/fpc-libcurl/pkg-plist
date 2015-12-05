@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/libcurl.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/libcurl.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/libcurl.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/libplibcurl.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcurl/libcurl.ppu

@@ -1,14 +1,13 @@
 # Created by: Christopher Key <cjk32@cam.ac.uk>
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-res
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
-COMMENT=	Free Pascal Component Library
+COMMENT=	Free Pascal resource handlers (FCL)
 
-USE_FPC=	fcl-base
+USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
