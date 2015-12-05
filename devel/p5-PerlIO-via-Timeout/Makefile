@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
-COMMENT=	PerlIO layer to add read & write timeouts to a handle
+COMMENT=	PerlIO layer to add read and write timeouts to a handle
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
