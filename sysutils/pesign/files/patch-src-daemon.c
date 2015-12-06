@@ -8,6 +8,15 @@
  #include <sys/types.h>
  #include <sys/socket.h>
  #include <sys/stat.h>
+@@ -839,7 +838,7 @@ shutdown:
+ 			do_shutdown(ctx, nsockets, pollfds);
+ 			return 0;
+ 		}
+-		rc = ppoll(pollfds, nsockets, NULL, NULL);
++		rc = poll(pollfds, nsockets, INFTIM);
+ 		if (should_exit != 0)
+ 			goto shutdown;
+ 		if (rc < 0) {
 @@ -864,8 +863,8 @@ shutdown:
  
  			struct sockaddr_un remote;
