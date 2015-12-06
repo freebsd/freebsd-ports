@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing files in FITS data format
 
-LICENSE=	MIT
-
 LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c
 
 OPTIONS_DEFINE=	DOCS
@@ -36,7 +34,7 @@ PLIST_SUB=	SHLIB_MAJOR_VER=${SHLIB_MAJOR_VER} \
 PORTDOCS=	*
 
 SHLIB_MAJOR_VER=2
-SHLIB_MINOR_VER=${PORTVERSION:S/0$//}
+SHLIB_MINOR_VER=${PORTVERSION:S|0$||}
 
 do-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} drvrsmem.h fitsio.h fitsio2.h longnam.h ${STAGEDIR}${PREFIX}/include/
@@ -45,6 +43,8 @@ do-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} cfitsio.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 	${LN} -fs libcfitsio.so.${SHLIB_MAJOR_VER}.${SHLIB_MINOR_VER} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so.${SHLIB_MAJOR_VER}
 	${LN} -fs libcfitsio.so.${SHLIB_MAJOR_VER} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/docs/*.doc ${STAGEDIR}${DOCSDIR}/
 
