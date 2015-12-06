@@ -5,9 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151206:
+  AFFECTS: users of mail/postfixadmin
+  AUTHOR: riggs@FreeBSD.org
+
+  Caveat when updating to version 2.93: If you have an existing
+  configuration and are NOT using the recommended practice of putting your
+  settings changes in config.local.php:
+
+  Copy config.inc.php to config.local.php prior to upgrading, then revise
+  config.local.php for the current version afterward.
+
+  Postfixadmin will not function correctly unless correct and complete
+  data structures are placed in config.inc.php. Therefore the file must be
+  upgraded as part of the package and any changes to config.inc.php will
+  be overwritten.
+
+  Detailed information regarding this procedure is provided in step 3 of
+  the installation instructions in ${DATADIR}/INSTALL.TXT (by default
+  /usr/local/share/postfixadmin/INSTALL.TXT).
+
 20151205:
   AFFECTS: users of shells/zsh
-  AUTHOR: bapt@FreeBSD.or
+  AUTHOR: bapt@FreeBSD.org
 
   Since version 5.2 zsh is now respecting prefix to look up for its default
   configurations: zshrc/zprofile. Users having those files in /etc should
