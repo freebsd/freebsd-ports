@@ -3,6 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.46.0
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -52,7 +53,7 @@ INSTALL_TARGET=	install-strip
 TEST_ENV=	${MAKE_ENV} LC_ALL=C
 TEST_TARGET=	test
 USE_PERL5=	build
-USES=		libtool pathfix perl5 tar:lzma
+USES=		gmake libtool pathfix perl5 tar:lzma
 
 .if !defined(BUILDING_HIPHOP)
 USE_LDCONFIG=	yes
