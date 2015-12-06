@@ -10,6 +10,7 @@ MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
 #		skreuzer@FreeBSD.org is also committer for this port
 COMMENT=	Systems administration tool for networks
+IGNORE=		CFEngine bug #2649: corrupts its own binary
 
 LICENSE=	GPLv3
 
