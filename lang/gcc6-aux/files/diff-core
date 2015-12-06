@@ -1,3 +1,14 @@
+--- gcc/config/dragonfly.h.orig
++++ gcc/config/dragonfly.h
+@@ -84,7 +84,7 @@
+    } \
+    %{static:-Bstatic} \
+   } \
+-  %{!static:--hash-style=gnu} \
++  %{!static:--hash-style=gnu -rpath @PREFIX@/@GCCAUX@/lib} \
+   %{symbolic:-Bsymbolic}"
+ 
+ #undef  LINK_SPEC
 --- gcc/config/i386/freebsd.h.orig
 +++ gcc/config/i386/freebsd.h
 @@ -77,6 +77,12 @@
