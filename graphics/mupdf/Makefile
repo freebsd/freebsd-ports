@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -57,7 +57,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/build/pic/libmupdf.a \
 		${STAGEDIR}${PREFIX}/lib/libmupdf_pic.a
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 ${STAGEDIR}${PREFIX}/bin/mupdf
-.for binary in mudraw mutool mujstest mupdf mupdf-x11-curl
+.for binary in mutool mujstest mupdf mupdf-x11-curl
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${binary}
 .endfor
 
