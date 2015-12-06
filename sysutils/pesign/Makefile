@@ -23,11 +23,8 @@ GH_ACCOUNT=	rhinstaller
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001505
-BROKEN=		This port requires ppoll(2) system call
-.endif
+EXTRA_PATCHES=	${EXTRA_PATCHES_${OPSYS}_${OSREL:R}}
+EXTRA_PATCHES_FreeBSD_9=	${FILESDIR}/extra-patch-src_client.c
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/Make.defaults
@@ -43,4 +40,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/pesign-client.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/src/pesign.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
