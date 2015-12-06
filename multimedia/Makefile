@@ -267,6 +267,7 @@
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
     SUBDIR += ogmtools
+    SUBDIR += omxplayer
     SUBDIR += opencinematools
     SUBDIR += openh264
     SUBDIR += openquicktime

@@ -1,0 +1,5 @@
+OMXPlayer is a commandline OMX player for the Raspberry Pi. It was developed
+as a testbed for the XBMC Raspberry PI implementation and is quite handy to
+use standalone.
+
+WWW: https://github.com/popcornmix/omxplayer
