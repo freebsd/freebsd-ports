@@ -18,4 +18,4 @@ the NetWorkSpaces server must be running.  SOCK clusters are the
 easiest approach for using snow on a single multi-core computer as
 they require no additional software.
 
-WWW: http://cran.r-project.org/web/packages/snow/
+WWW: https://cran.r-project.org/web/packages/snow/
