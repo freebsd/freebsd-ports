@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	d3_rails
-PORTVERSION=	3.5.8
+PORTVERSION=	3.5.9
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
