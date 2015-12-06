@@ -1,5 +1,5 @@
---- Makefile.orig	2013-09-04 23:07:45.000000000 +0200
-+++ Makefile	2013-09-04 23:09:52.000000000 +0200
+--- Makefile.orig	2010-10-11 14:08:16 UTC
++++ Makefile
 @@ -12,30 +12,29 @@
  #   (at your option) any later version.
  #
