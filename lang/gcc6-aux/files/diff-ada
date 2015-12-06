@@ -1,0 +1,1101 @@
+--- gcc/ada/adaint.c.orig
++++ gcc/ada/adaint.c
+@@ -1157,6 +1157,47 @@
+     free (pname);
+   }
+ 
++#elif defined (__ANDROID__)
++
++  /*
++   * ext2 /ext3/ext4/fat16/fat32 have no path limits
++   * /data/local/tmp normally requires rooted devices, if it even exists
++   * /sdcard is the standard location for external storage.  Nativeactivity
++   * manifest needs to authorize its use, otherwise it might not have the
++   * proper permissions.
++   */
++
++  int testfd;
++  char *datadir = getenv ("ANDROID_DATA");
++
++  if (datadir == NULL)
++    strncpy (tmp_filename, "/data/local/tmp/gnat-XXXXXX", L_tmpnam);
++  else
++    snprintf (tmp_filename, L_tmpnam, "%s/local/tmp/gnat-XXXXXX", datadir);
++
++  testfd = mkstemp (tmp_filename);
++  if (testfd != -1)
++    {
++      close (testfd);
++      return;
++    }
++
++  char *sdcard = getenv ("EXTERNAL_STORAGE");
++
++  if (sdcard == NULL)
++    strncpy (tmp_filename, "/sdcard/gnat-XXXXXX", L_tmpnam);
++  else
++    snprintf (tmp_filename, L_tmpnam, "%s/gnat-XXXXXX", sdcard);
++
++  testfd = mkstemp (tmp_filename);
++  if (testfd != -1)
++    {
++      close (testfd);
++      return;
++    }
++
++  tmpnam (tmp_filename);
++
+ #elif defined (__linux__) || defined (__FreeBSD__) || defined (__NetBSD__) \
+   || defined (__OpenBSD__) || defined (__GLIBC__) || defined (__ANDROID__) \
+   || defined (__DragonFly__)
+--- gcc/ada/cio.c.orig
++++ gcc/ada/cio.c
+@@ -49,7 +49,7 @@
+ 
+ /* Don't use macros on GNU/Linux since they cause incompatible changes between
+    glibc 2.0 and 2.1 */
+-#ifdef __linux__
++#if defined __linux__ && !defined __ANDROID__
+ #undef putchar
+ #undef getchar
+ #undef fputc
+--- gcc/ada/cstreams.c.orig
++++ gcc/ada/cstreams.c
+@@ -69,7 +69,7 @@
+ #include <unixlib.h>
+ #endif
+ 
+-#ifdef __linux__
++#if defined __linux__ && !defined __ANDROID__
+ /* Don't use macros on GNU/Linux since they cause incompatible changes between
+    glibc 2.0 and 2.1 */
+ 
+--- /dev/null
++++ gcc/ada/g-socthi-bsd.adb
+@@ -0,0 +1,356 @@
++------------------------------------------------------------------------------
++--                                                                          --
++--                         GNAT COMPILER COMPONENTS                         --
++--                                                                          --
++--                    G N A T . S O C K E T S . T H I N                     --
++--                                                                          --
++--                                 B o d y                                  --
++--                                                                          --
++--                     Copyright (C) 2001-2013, AdaCore                     --
++--                                                                          --
++-- GNAT is free software;  you can  redistribute it  and/or modify it under --
++-- terms of the  GNU General Public License as published  by the Free Soft- --
++-- ware  Foundation;  either version 3,  or (at your option) any later ver- --
++-- sion.  GNAT is distributed in the hope that it will be useful, but WITH- --
++-- OUT ANY WARRANTY;  without even the  implied warranty of MERCHANTABILITY --
++-- or FITNESS FOR A PARTICULAR PURPOSE.                                     --
++--                                                                          --
++-- As a special exception under Section 7 of GPL version 3, you are granted --
++-- additional permissions described in the GCC Runtime Library Exception,   --
++-- version 3.1, as published by the Free Software Foundation.               --
++--                                                                          --
++-- You should have received a copy of the GNU General Public License and    --
++-- a copy of the GCC Runtime Library Exception along with this program;     --
++-- see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see    --
++-- <http://www.gnu.org/licenses/>.                                          --
++--                                                                          --
++-- GNAT was originally developed  by the GNAT team at  New York University. --
++-- Extensive contributions were provided by Ada Core Technologies Inc.      --
++--                                                                          --
++------------------------------------------------------------------------------
++
++--  This package provides a target dependent thin interface to the sockets
++--  layer for use by the GNAT.Sockets package (g-socket.ads). This package
++--  should not be directly with'ed by an applications program.
++
++--  This is the *BSD version which uses fcntl rather than ioctl
++--  The constant SCON.Thread_Blocking_IO is always true (for all platforms, not
++--  just *BSD), so this binding is significantly simpler than the standard
++--  one it replaces.
++
++with GNAT.OS_Lib; use GNAT.OS_Lib;
++
++with Interfaces.C; use Interfaces.C;
++
++package body GNAT.Sockets.Thin is
++
++   function Syscall_Accept
++     (S       : C.int;
++      Addr    : System.Address;
++      Addrlen : not null access C.int) return C.int;
++   pragma Import (C, Syscall_Accept, "accept");
++   --  The accept() function accepts a connection on a socket.  An incoming
++   --  connection is acknowledged and associated with an immediately created
++   --  socket.  The original socket is returned to the listening state.
++
++   function Syscall_Connect
++     (S       : C.int;
++      Name    : System.Address;
++      Namelen : C.int) return C.int;
++   pragma Import (C, Syscall_Connect, "connect");
++   --  The connect() system call initiates a connection on a socket.  If the
++   --  parameter S is of type SOCK_DGRAM then connect() permanently specifies
++   --  the peer to which datagrams are to be sent.  If S is type SOCK_STREAM
++   --  then connect() attempts to make a connection with another socket, which
++   --  is identified by the parameter Name.
++
++   function Syscall_Recv
++     (S     : C.int;
++      Msg   : System.Address;
++      Len   : C.int;
++      Flags : C.int) return C.int;
++   pragma Import (C, Syscall_Recv, "recv");
++   --  The recv() function receives a message from a socket.  The call can be
++   --  used on a connection mode socket or a bound, connectionless socket.  If
++   --  no messages are available at the socket, the recv() call waits for a
++   --  message to arrive unless the socket is non-blocking.  If a socket is
++   --  non-blocking, the call returns a -1 and ERRNO is set to EWOULDBLOCK.
++
++   function Syscall_Recvfrom
++     (S       : C.int;
++      Msg     : System.Address;
++      Len     : C.int;
++      Flags   : C.int;
++      From    : System.Address;
++      Fromlen : not null access C.int) return C.int;
++   pragma Import (C, Syscall_Recvfrom, "recvfrom");
++   --  The recvfrom() system call receives a message from a socket and captures
++   --  the address from which the data was sent.  It can be used to receive
++   --  data on an unconnected socket as well.  If no messages are available,
++   --  the call waits for a message to arrive on blocking sockets.  For
++   --  non-blocking sockets without messages, -1 is returned and ERRNO is set
++   --  to EAGAIN or EWOULDBLOCK.
++
++   function Syscall_Recvmsg
++     (S     : C.int;
++      Msg   : System.Address;
++      Flags : C.int) return System.CRTL.ssize_t;
++   pragma Import (C, Syscall_Recvmsg, "recvmsg");
++   --  The recvmsg call receives a message from a socket, and can be used to
++   --  receive data on an unconnected socket as well.  If no messages are
++   --  available, the call waits for a message to arrive on blocking sockets.
++   --  For non-blocking sockets without messages, -1 is returned and ERRNO is
++   --  set to EAGAIN or EWOULDBLOCK.
++
++   function Syscall_Sendmsg
++     (S     : C.int;
++      Msg   : System.Address;
++      Flags : C.int) return System.CRTL.ssize_t;
++   pragma Import (C, Syscall_Sendmsg, "sendmsg");
++   --  The sendmsg() function sends a message to a socket, and can be used with
++   --  unconnected sockets as well (the msg is ignored in this case).  The
++   --  function returns the number of bytes sent when successful, otherwise it
++   --  returns -1 and ERRNO is set (many possible values).
++
++   function Syscall_Sendto
++     (S     : C.int;
++      Msg   : System.Address;
++      Len   : C.int;
++      Flags : C.int;
++      To    : System.Address;
++      Tolen : C.int) return C.int;
++   pragma Import (C, Syscall_Sendto, "sendto");
++   --  The sendto() function only works for connected sockets and it initiates
++   --  the transmission of a message.  A successful call returns the numbers of
++   --  bytes sent, and a failure returns a -1 and ERRNO is set.
++
++   function Syscall_Socket
++     (Domain   : C.int;
++      Typ      : C.int;
++      Protocol : C.int) return C.int;
++   pragma Import (C, Syscall_Socket, "socket");
++   --  The socket() function is used to create an unbound socket and returns a
++   --  file descriptor that can be used with other socket functions.  Upon
++   --  failure, a -1 is returned and ERRNO is set.
++
++   procedure Disable_SIGPIPE (S : C.int);
++   pragma Import (C, Disable_SIGPIPE, "__gnat_disable_sigpipe");
++
++   procedure Disable_All_SIGPIPEs;
++   pragma Import (C, Disable_All_SIGPIPEs, "__gnat_disable_all_sigpipes");
++   --  Sets the process to ignore all SIGPIPE signals on platforms that
++   --  don't support Disable_SIGPIPE for particular streams.
++
++   function C_Fcntl
++     (Fd  : C.int;
++      Cmd : C.int;
++      Val : C.int) return C.int;
++   pragma Import (C, C_Fcntl, "fcntl");
++   --  The ioctl of 64-bit DragonFlyBSD, OpenBSD, and NetBSD does not support
++   --  setting a socket in non-blocking mode.  fcntl must be used instead.
++
++   --------------
++   -- C_Accept --
++   --------------
++
++   function C_Accept
++     (S       : C.int;
++      Addr    : System.Address;
++      Addrlen : not null access C.int) return C.int
++   is
++      R : constant C.int := Syscall_Accept (S, Addr, Addrlen);
++   begin
++
++      Disable_SIGPIPE (R);
++      return R;
++   end C_Accept;
++
++   ---------------
++   -- C_Connect --
++   ---------------
++
++   function C_Connect
++     (S       : C.int;
++      Name    : System.Address;
++      Namelen : C.int) return C.int
++   is
++   begin
++      return Syscall_Connect (S, Name, Namelen);
++   end C_Connect;
++
++   ------------------
++   -- Socket_Ioctl --
++   ------------------
++
++   function Socket_Ioctl
++     (S   : C.int;
++      Req : SOSC.IOCTL_Req_T;
++      Arg : access C.int) return C.int
++   is
++   begin
++      if Req = SOSC.FIONBIO then
++         declare
++            use Interfaces;
++            flags    : constant Unsigned_32 :=
++                                Unsigned_32 (C_Fcntl (S, SOSC.F_GETFL, 0));
++            nonblock : constant Unsigned_32 := Unsigned_32 (SOSC.O_NDELAY);
++            enabled  : constant Boolean := Arg.all = 1;
++            newval   : C.int := C.int (flags);
++         begin
++            if enabled then
++               newval := C.int (flags or nonblock);
++            elsif (flags and nonblock) > 0 then
++               newval := C.int (flags - nonblock);
++            end if;
++            return C_Fcntl (Fd => S, Cmd => SOSC.F_SETFL, Val => newval);
++         end;
++      end if;
++
++      return C_Ioctl (S, Req, Arg);
++   end Socket_Ioctl;
++
++   ------------
++   -- C_Recv --
++   ------------
++
++   function C_Recv
++     (S     : C.int;
++      Msg   : System.Address;
++      Len   : C.int;
++      Flags : C.int) return C.int
++   is
++   begin
++      return Syscall_Recv (S, Msg, Len, Flags);
++   end C_Recv;
++
++   ----------------
++   -- C_Recvfrom --
++   ----------------
++
++   function C_Recvfrom
++     (S       : C.int;
++      Msg     : System.Address;
++      Len     : C.int;
++      Flags   : C.int;
++      From    : System.Address;
++      Fromlen : not null access C.int) return C.int
++   is
++   begin
++      return Syscall_Recvfrom (S, Msg, Len, Flags, From, Fromlen);
++   end C_Recvfrom;
++
++   ---------------
++   -- C_Recvmsg --
++   ---------------
++
++   function C_Recvmsg
++     (S     : C.int;
++      Msg   : System.Address;
++      Flags : C.int) return System.CRTL.ssize_t
++   is
++   begin
++      return  Syscall_Recvmsg (S, Msg, Flags);
++   end C_Recvmsg;
++
++   ---------------
++   -- C_Sendmsg --
++   ---------------
++
++   function C_Sendmsg
++     (S     : C.int;
++      Msg   : System.Address;
++      Flags : C.int) return System.CRTL.ssize_t
++   is
++   begin
++      return Syscall_Sendmsg (S, Msg, Flags);
++   end C_Sendmsg;
++
++   --------------
++   -- C_Sendto --
++   --------------
++
++   function C_Sendto
++     (S     : C.int;
++      Msg   : System.Address;
++      Len   : C.int;
++      Flags : C.int;
++      To    : System.Address;
++      Tolen : C.int) return C.int
++   is
++   begin
++      return Syscall_Sendto (S, Msg, Len, Flags, To, Tolen);
++   end C_Sendto;
++
++   --------------
++   -- C_Socket --
++   --------------
++
++   function C_Socket
++     (Domain   : C.int;
++      Typ      : C.int;
++      Protocol : C.int) return C.int
++   is
++      R : constant C.int := Syscall_Socket (Domain, Typ, Protocol);
++   begin
++      Disable_SIGPIPE (R);
++      return R;
++   end C_Socket;
++
++   --------------
++   -- Finalize --
++   --------------
++
++   procedure Finalize is
++   begin
++      null;
++   end Finalize;
++
++   -------------------------
++   -- Host_Error_Messages --
++   -------------------------
++
++   package body Host_Error_Messages is separate;
++
++   ----------------
++   -- Initialize --
++   ----------------
++
++   procedure Initialize is
++   begin
++      Disable_All_SIGPIPEs;
++   end Initialize;
++
++   --------------------
++   -- Signalling_Fds --
++   --------------------
++
++   package body Signalling_Fds is
++
++      --  In this default implementation, we use a C version of these
++      --  subprograms provided by socket.c.
++
++      function C_Create (Fds : not null access Fd_Pair) return C.int;
++      function C_Read (Rsig : C.int) return C.int;
++      function C_Write (Wsig : C.int) return C.int;
++      procedure C_Close (Sig : C.int);
++
++      pragma Import (C, C_Create, "__gnat_create_signalling_fds");
++      pragma Import (C, C_Read,   "__gnat_read_signalling_fd");
++      pragma Import (C, C_Write,  "__gnat_write_signalling_fd");
++      pragma Import (C, C_Close,  "__gnat_close_signalling_fd");
++
++      function Create
++        (Fds : not null access Fd_Pair) return C.int renames C_Create;
++      function Read (Rsig : C.int) return C.int renames C_Read;
++      function Write (Wsig : C.int) return C.int renames C_Write;
++      procedure Close (Sig : C.int) renames C_Close;
++
++   end Signalling_Fds;
++
++   --------------------------
++   -- Socket_Error_Message --
++   --------------------------
++
++   function Socket_Error_Message (Errno : Integer) return String is separate;
++
++end GNAT.Sockets.Thin;
+--- gcc/ada/gnatchop.adb.orig
++++ gcc/ada/gnatchop.adb
+@@ -44,7 +44,7 @@
+    Config_File_Name : constant String_Access := new String'("gnat.adc");
+    --  The name of the file holding the GNAT configuration pragmas
+ 
+-   Gcc : String_Access := new String'("gcc");
++   Gcc : String_Access := new String'("ada");
+    --  May be modified by switch --GCC=
+ 
+    Gcc_Set : Boolean := False;
+--- gcc/ada/gnatlink.adb.orig
++++ gcc/ada/gnatlink.adb
+@@ -136,7 +136,7 @@
+    --  This table collects the arguments to be passed to compile the binder
+    --  generated file.
+ 
+-   Gcc : String_Access := Program_Name ("gcc", "gnatlink");
++   Gcc : String_Access := Program_Name ("ada", "gnatlink");
+ 
+    Read_Mode : constant String := "r" & ASCII.NUL;
+ 
+--- gcc/ada/make.adb.orig
++++ gcc/ada/make.adb
+@@ -667,7 +667,7 @@
+    -- Compiler, Binder & Linker Data and Subprograms --
+    ----------------------------------------------------
+ 
+-   Gcc      : String_Access := Program_Name ("gcc", "gnatmake");
++   Gcc      : String_Access := Program_Name ("ada", "gnatmake");
+    Gnatbind : String_Access := Program_Name ("gnatbind", "gnatmake");
+    Gnatlink : String_Access := Program_Name ("gnatlink", "gnatmake");
+    --  Default compiler, binder, linker programs
+--- gcc/ada/mlib-prj.adb.orig
++++ gcc/ada/mlib-prj.adb
+@@ -335,6 +335,11 @@
+ 
+       Foreign_Sources : Boolean;
+ 
++      Rpath_Disabled : Boolean := False;
++      --  If -R is passed through the library options for the linker, it will
++      --  prevent the implemented libraries portion of the rpath switch from
++      --  being built, even if the linker is capable of supporting rpath.
++
+       Rpath : String_Access := null;
+       --  Allocated only if Path Option is supported
+ 
+@@ -768,7 +773,7 @@
+             Opts.Table (Opts.Last) :=
+               new String'("-L" & Name_Buffer (1 .. Name_Len));
+ 
+-            if Path_Option /= null then
++            if not Rpath_Disabled and then Path_Option /= null then
+                Add_Rpath (Name_Buffer (1 .. Name_Len));
+             end if;
+ 
+@@ -1299,9 +1304,13 @@
+                   Get_Name_String (Element.Value);
+ 
+                   if Name_Len /= 0 then
+-                     Opts.Increment_Last;
+-                     Opts.Table (Opts.Last) :=
+-                       new String'(Name_Buffer (1 .. Name_Len));
++                     if Name_Buffer (1 .. Name_Len) = "-R" then
++                        Rpath_Disabled := True;
++                     else
++                        Opts.Increment_Last;
++                        Opts.Table (Opts.Last) :=
++                          new String'(Name_Buffer (1 .. Name_Len));
++                     end if;
+                   end if;
+ 
+                   Current := Element.Next;
+--- gcc/ada/mlib-utl.adb.orig
++++ gcc/ada/mlib-utl.adb
+@@ -446,7 +446,7 @@
+       if Driver_Name = No_Name then
+          if Gcc_Exec = null then
+             if Gcc_Name = null then
+-               Gcc_Name := Osint.Program_Name ("gcc", "gnatmake");
++               Gcc_Name := Osint.Program_Name ("ada", "gnatmake");
+             end if;
+ 
+             Gcc_Exec := Locate_Exec_On_Path (Gcc_Name.all);
+--- gcc/ada/prj-makr.adb.orig
++++ gcc/ada/prj-makr.adb
+@@ -115,7 +115,7 @@
+ 
+    procedure Dup2 (Old_Fd, New_Fd : File_Descriptor);
+ 
+-   Gcc      : constant String := "gcc";
++   Gcc      : constant String := "ada";
+    Gcc_Path : String_Access := null;
+ 
+    Non_Empty_Node : constant Project_Node_Id := 1;
+--- /dev/null
++++ gcc/ada/s-trasym-bsd.adb
+@@ -0,0 +1,151 @@
++------------------------------------------------------------------------------
++--                                                                          --
++--                         GNAT RUN-TIME COMPONENTS                         --
++--                                                                          --
++--           S Y S T E M . T R A C E B A C K . S Y M B O L I C              --
++--                                                                          --
++--                                 B o d y                                  --
++--                                                                          --
++--                     Copyright (C) 1999-2009, AdaCore                     --
++--                                                                          --
++-- GNAT is free software;  you can  redistribute it  and/or modify it under --
++-- terms of the  GNU General Public License as published  by the Free Soft- --
++-- ware  Foundation;  either version 2,  or (at your option) any later ver- --
++-- sion.  GNAT is distributed in the hope that it will be useful, but WITH- --
++-- OUT ANY WARRANTY;  without even the  implied warranty of MERCHANTABILITY --
++-- or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License --
++-- for  more details.  You should have  received  a copy of the GNU General --
++-- Public License  distributed with GNAT;  see file COPYING.  If not, write --
++-- to  the  Free Software Foundation,  51  Franklin  Street,  Fifth  Floor, --
++-- Boston, MA 02110-1301, USA.                                              --
++--                                                                          --
++-- As a special exception,  if other files  instantiate  generics from this --
++-- unit, or you link  this unit with other files  to produce an executable, --
++-- this  unit  does not  by itself cause  the resulting  executable  to  be --
++-- covered  by the  GNU  General  Public  License.  This exception does not --
++-- however invalidate  any other reasons why  the executable file  might be --
++-- covered by the  GNU Public License.                                      --
++--                                                                          --
++-- GNAT was originally developed  by the GNAT team at  New York University. --
++-- Extensive contributions were provided by Ada Core Technologies Inc.      --
++--                                                                          --
++------------------------------------------------------------------------------
++
++--  Run-time symbolic traceback support
++--  This file is based on the work by Juergen Pfiefer which is still used
++--  today to provide symbolic traceback support for gnu/kFreeBSD.
++--  Incorporated in GNAT-AUX by John Marino <http://www.dragonlace.net>
++
++with System.Soft_Links;
++with Ada.Exceptions.Traceback; use Ada.Exceptions.Traceback;
++
++package body System.Traceback.Symbolic is
++
++   package TSL renames System.Soft_Links;
++
++   --  To perform the raw addresses to symbolic form translation we rely on a
++   --  libaddr2line symbolizer which examines debug info from a provided
++   --  executable file name, and an absolute path is needed to ensure the file
++   --  is always found. This is "__gnat_locate_exec_on_path (gnat_argv [0])"
++   --  for our executable file, a fairly heavy operation so we cache the
++   --  result.
++
++   Exename : System.Address;
++   --  Pointer to the name of the executable file to be used on all
++   --  invocations of the libaddr2line symbolization service.
++
++   Exename_Resolved : Boolean := False;
++   --  Flag to indicate whether we have performed the executable file name
++   --  resolution already. Relying on a not null Exename for this purpose
++   --  would be potentially inefficient as this is what we will get if the
++   --  resolution attempt fails.
++
++   ------------------------
++   -- Symbolic_Traceback --
++   ------------------------
++
++   function Symbolic_Traceback (Traceback : Tracebacks_Array) return String is
++
++      procedure convert_addresses
++        (filename : System.Address;
++         addrs    : System.Address;
++         n_addrs  : Integer;
++         buf      : System.Address;
++         len      : System.Address);
++      pragma Import (C, convert_addresses, "convert_addresses");
++      --  This is the procedure version of the Ada-aware addr2line. It places
++      --  in BUF a string representing the symbolic translation of the N_ADDRS
++      --  raw addresses provided in ADDRS, looked up in debug information from
++      --  FILENAME. LEN points to an integer which contains the size of the
++      --  BUF buffer at input and the result length at output.
++      --
++      --  Note that this procedure is *not* thread-safe.
++
++      type Argv_Array is array (0 .. 0) of System.Address;
++      gnat_argv : access Argv_Array;
++      pragma Import (C, gnat_argv, "gnat_argv");
++
++      function locate_exec_on_path
++        (c_exename : System.Address) return System.Address;
++      pragma Import (C, locate_exec_on_path, "__gnat_locate_exec_on_path");
++
++      B_Size : constant Integer := 256 * Traceback'Length;
++      Len    : Integer := B_Size;
++      Res    : String (1 .. B_Size);
++
++      use type System.Address;
++
++   begin
++      --  The symbolic translation of an empty set of addresses is an empty
++      --  string.
++
++      if Traceback'Length = 0 then
++         return "";
++      end if;
++
++      --  If our input set of raw addresses is not empty, resort to the
++      --  libaddr2line service to symbolize it all.
++
++      --  Compute, cache and provide the absolute path to our executable file
++      --  name as the binary file where the relevant debug information is to be
++      --  found. If the executable file name resolution fails, we have no
++      --  sensible basis to invoke the symbolizer at all.
++
++      --  Protect all this against concurrent accesses explicitly, as the
++      --  underlying services are potentially thread unsafe.
++
++      TSL.Lock_Task.all;
++
++      if not Exename_Resolved then
++         Exename := locate_exec_on_path (gnat_argv (0));
++         Exename_Resolved := True;
++      end if;
++
++      if Exename /= System.Null_Address then
++         Len := Res'Length;
++         convert_addresses
++           (Exename, Traceback'Address, Traceback'Length,
++            Res (1)'Address, Len'Address);
++      end if;
++
++      TSL.Unlock_Task.all;
++
++      --  Return what the addr2line symbolizer has produced if we have called
++      --  it (the executable name resolution succeeded), or an empty string
++      --  otherwise.
++
++      if Exename /= System.Null_Address then
++         return Res (1 .. Len);
++      else
++         return "";
++      end if;
++
++   end Symbolic_Traceback;
++
++   function Symbolic_Traceback
++     (E : Ada.Exceptions.Exception_Occurrence) return String is
++   begin
++      return Symbolic_Traceback (Tracebacks (E));
++   end Symbolic_Traceback;
++
++end System.Traceback.Symbolic;
+--- gcc/ada/terminals.c.orig
++++ gcc/ada/terminals.c
+@@ -32,7 +32,7 @@
+ /* First all usupported platforms. Add stubs for exported routines. */
+ 
+ #if defined (VMS) || defined (__vxworks) || defined (__Lynx__) \
+-  || defined (__ANDROID__) || defined (__PikeOS__)
++  || defined (__PikeOS__)
+ 
+ #define ATTRIBUTE_UNUSED __attribute__((unused))
+ 
+@@ -1059,7 +1059,7 @@
+  || defined (__OpenBSD__) \
+  || defined (__NetBSD__)  \
+  || defined (__DragonFly__)
+-#   define BSD
++#   define FREEBSD
+ #endif
+ 
+ /* Include every system header we need */
+@@ -1070,8 +1070,8 @@
+ 
+ /* On some system termio is either absent or including it will disable termios
+    (HP-UX) */
+-#if !defined (__hpux__) && !defined (BSD) && !defined (__APPLE__) \
+-  && !defined (__rtems__)
++#if ! defined (__hpux__) && ! defined (FREEBSD) && \
++    ! defined (__APPLE__) && ! defined(__rtems__)
+ #   include <termio.h>
+ #endif
+ 
+@@ -1083,10 +1083,10 @@
+ #include <sys/types.h>
+ #include <sys/wait.h>
+ #include <unistd.h>
+-#if defined (__sun__)
++#if defined (sun)
+ #   include <sys/stropts.h>
+ #endif
+-#if defined (BSD) || defined (__sun__)
++#if defined (FREEBSD) || defined (sun)
+ #   include <sys/signal.h>
+ #endif
+ #if defined (__hpux__)
+@@ -1094,11 +1094,15 @@
+ #   include <sys/stropts.h>
+ #endif
+ 
++#ifdef __ANDROID__
++#define CDISABLE _PC_VDISABLE
++#else
+ #define CDISABLE _POSIX_VDISABLE
++#endif
+ 
+ /* On HP-UX and Sun system, there is a bzero function but with a different
+    signature. Use memset instead */
+-#if defined (__hpux__) || defined (__sun__) || defined (_AIX)
++#if defined (__hpux__) || defined (sun) || defined (_AIX)
+ #   define bzero(s,n) memset (s,0,n)
+ #endif
+ 
+@@ -1116,11 +1120,11 @@
+ */
+ 
+ /* Configurable part */
+-#if defined (__APPLE__) || defined (BSD)
++#if defined (__APPLE__) || defined (FREEBSD)
+ #define USE_OPENPTY
+-#elif defined (__linux__)
++#elif defined (linux)
+ #define USE_GETPT
+-#elif defined (__sun__)
++#elif defined (sun)
+ #define USE_CLONE_DEVICE "/dev/ptmx"
+ #elif defined (_AIX)
+ #define USE_CLONE_DEVICE "/dev/ptc"
+@@ -1406,7 +1410,7 @@
+     desc->slave_fd = open (desc->slave_name, O_RDWR, 0);
+ #endif
+ 
+-#if defined (__sun__) || defined (__hpux__)
++#if defined (sun) || defined (__hpux__)
+   /* On systems such as Solaris we are using stream. We need to push the right
+      "modules" in order to get the expected terminal behaviors. Otherwise
+      functionalities such as termios are not available.  */
+--- /dev/null
++++ gcc/ada/traceback_symbolic.c
+@@ -0,0 +1,201 @@
++/*
++  Copyright (C) 1999 by Juergen Pfeifer <juergen.pfeifer@gmx.net>
++  Ada for Linux Team (ALT)
++  Heavily modified by John Marino <http://www.dragonlace.net>
++
++  Permission is hereby granted, free of charge, to any person obtaining a
++  copy of this software and associated documentation files (the
++  "Software"), to deal in the Software without restriction, including
++  without limitation the rights to use, copy, modify, merge, publish,
++  distribute, distribute with modifications, sublicense, and/or sell
++  copies of the Software, and to permit persons to whom the Software is
++  furnished to do so, subject to the following conditions:
++
++  The above copyright notice and this permission notice shall be included
++  in all copies or substantial portions of the Software.
++
++  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
++  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
++  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
++  IN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
++  DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
++  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
++  THE USE OR OTHER DEALINGS IN THE SOFTWARE.
++
++  Except as contained in this notice, the name(s) of the above copyright
++  holders shall not be used in advertising or otherwise to promote the
++  sale, use or other dealings in this Software without prior written
++  authorization.
++*/
++
++#ifdef IS_CROSS
++
++
++/*
++ * Running addr2line doesn't make sense for cross-compiled objects.
++ * Create a dummy function to satisfy g-trasym.o
++ */
++
++void
++convert_addresses (const char *file_name ATTRIBUTE_UNUSED,
++                   void *addrs ATTRIBUTE_UNUSED,
++                   int n_addr ATTRIBUTE_UNUSED,
++                   void *buf ATTRIBUTE_UNUSED,
++                   int *len ATTRIBUTE_UNUSED)
++{
++  *len = 0;
++}
++
++#else
++
++
++/*
++ * use the external program /usr/bin/addr2line to convert addresses
++ * into file names and line numbers
++ */
++
++#include <sys/types.h>
++#include <stdlib.h>
++#include <unistd.h>
++#include <string.h>
++#include <signal.h>
++
++#define CLOSE_SENDPIPE close(sendpipe[0]); close(sendpipe[1])
++#define CLOSE_READPIPE close(readpipe[0]); close(readpipe[1])
++#define DUP2CLOSE(oldfd, newfd) dup2(oldfd, newfd); close(oldfd);
++#define RESTSIG sigaction(SIGPIPE,&oact,NULL)
++
++#define MAX_LINE     1024
++#define PARENT_READ  readpipe[0]
++#define CHILD_WRITE  readpipe[1]
++#define CHILD_READ   sendpipe[0]
++#define PARENT_WRITE sendpipe[1]
++
++#if defined (__sun__)
++#define ADDR2LINE_PROG        "/usr/gnu/bin/addr2line"
++#else
++#define ADDR2LINE_PROG        "/usr/bin/addr2line"
++#endif
++
++void
++convert_addresses (const char *file_name,
++                   void *addrs,
++                   int   n_addr,
++                   void *buf,
++                   int  *len)
++{
++  int max_len = *len;
++  pid_t childpid;
++
++  struct sigaction act, oact;
++
++  int sendpipe[2] = {-1,-1},        /* parent -> child */
++      readpipe[2] = {-1,-1};        /* parent <- child */
++
++  *len = 0;
++  act.sa_handler = SIG_IGN;
++  sigemptyset(&act.sa_mask);
++  act.sa_flags = 0;
++  if (sigaction(SIGPIPE,&act,&oact) < 0)
++    return;
++
++  if (pipe(sendpipe) < 0) { RESTSIG; return; }
++  if (pipe(readpipe) < 0) { CLOSE_SENDPIPE; RESTSIG; return; }
++  if ((childpid = fork()) < 0) {
++    CLOSE_READPIPE;
++    CLOSE_SENDPIPE;
++    RESTSIG;
++    return;
++  }
++
++  if (childpid == 0) {    /* child process */
++    close(PARENT_WRITE);
++    close(PARENT_READ);
++    if ((CHILD_READ != STDIN_FILENO) && (CHILD_WRITE != STDOUT_FILENO)) {
++      if ((CHILD_READ == STDOUT_FILENO) && (CHILD_WRITE == STDIN_FILENO)) {
++        const int temp_fd = dup(CHILD_WRITE);
++        close (CHILD_WRITE);
++        DUP2CLOSE (CHILD_READ, STDIN_FILENO);
++        DUP2CLOSE (temp_fd,    STDOUT_FILENO);
++      }
++      else if ((CHILD_READ == STDIN_FILENO) && (CHILD_WRITE > 1)) {
++        DUP2CLOSE (CHILD_WRITE, STDOUT_FILENO);
++      }
++      else if ((CHILD_READ > 1) && (CHILD_WRITE == STDOUT_FILENO)) {
++        DUP2CLOSE (CHILD_READ, STDIN_FILENO);
++      }
++      else if ((CHILD_READ > 1) && (CHILD_WRITE == STDIN_FILENO)) {
++        DUP2CLOSE (CHILD_WRITE, STDOUT_FILENO);
++        DUP2CLOSE (CHILD_READ,  STDIN_FILENO);
++      }
++      else {
++        /* CHILD_READ >= 1 and CHILD_WRITE > 1 */
++        DUP2CLOSE (CHILD_READ,  STDIN_FILENO);
++        DUP2CLOSE (CHILD_WRITE, STDOUT_FILENO);
++      }
++    }
++    /* As pointed out by Florian Weimer to JP, it is a security threat to call
++       the script with a user defined environment and using the path. That
++       would be Trojans pleasure.  Therefore the absolute path to addr2line
++       and an empty environment is used. That should be safe.
++    */
++    char *const argv[] = { "addr2line",
++                           "-e", file_name,
++                           "--demangle=gnat",
++                           "--functions",
++                           "--basenames",
++                           NULL };
++    char *const envp[] = { NULL };
++    if (execve(ADDR2LINE_PROG, argv, envp) < 0) {
++      close (CHILD_WRITE);
++      close (CHILD_READ);
++      RESTSIG;
++      exit (1);
++    }
++  }
++
++  /* Below this line is parent process */
++  int i, n;
++  char hex[16];
++  char line[MAX_LINE + 1];
++  char *p;
++  char *s = buf;
++  long *trace_address = addrs;
++
++  close(CHILD_WRITE);
++  close(CHILD_READ);
++
++  for(i=0; i < n_addr; i++) {
++    snprintf(hex,sizeof(hex),"%#lx\n",*trace_address);
++    write(PARENT_WRITE,hex,strlen(hex));
++    n = read(PARENT_READ,line,MAX_LINE);
++    if (n<=0)
++      break;
++
++    line[n]=0;
++    /* We have approx. 16 additional chars for "%#lx in " clause.
++       We use this info to prevent a buffer overrun. */
++    if (n + 16 + (*len) > max_len)
++      break;
++
++    p = strchr(line,'\n');
++    if (p) {
++      if (*(p+1)) {
++        *p = 0;
++        *len += snprintf(s, (max_len - (*len)), "%#lx in %s at %s",
++                         *trace_address, line, p+1);
++      }
++      else {
++        *len += snprintf(s, (max_len - (*len)), "%#lx at %s",
++                         *trace_address, line);
++      }
++      s = buf + (*len);
++    }
++    trace_address += 1;
++  }
++  close (PARENT_WRITE);
++  close (PARENT_READ);
++  RESTSIG;
++}
++
++#endif
+--- gcc/ada/gcc-interface/Makefile.in.orig
++++ gcc/ada/gcc-interface/Makefile.in
+@@ -1186,6 +1186,7 @@
+ ifeq ($(strip $(filter-out arm% linux-androideabi,$(target_cpu) $(target_os))),)
+   LIBGNAT_TARGET_PAIRS = \
+   a-intnam.ads<a-intnam-linux.ads \
++  g-socthi.adb<g-socthi-bsd.adb \
+   s-inmaop.adb<s-inmaop-posix.adb \
+   s-intman.adb<s-intman-android.adb \
+   s-linux.ads<s-linux-android.ads \
+@@ -1293,6 +1294,7 @@
+   a-intnam.ads<a-intnam-solaris.ads \
+   s-inmaop.adb<s-inmaop-posix.adb \
+   s-intman.adb<s-intman-solaris.adb \
++  s-trasym.adb<s-trasym-bsd.adb \
+   s-mudido.adb<s-mudido-affinity.adb \
+   s-osinte.adb<s-osinte-solaris.adb \
+   s-osinte.ads<s-osinte-solaris.ads \
+@@ -1336,6 +1338,8 @@
+   EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
+ 
+   EH_MECHANISM=-gcc
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
+   THREADSLIB = -lposix4 -lthread
+   MISCLIB = -lposix4 -lnsl -lsocket
+   SO_OPTS = -Wl,-h,
+@@ -1406,6 +1410,39 @@
+   LIBRARY_VERSION := $(LIB_VERSION)
+ endif
+ 
++# x86 android
++ifeq ($(strip $(filter-out %86 linux-android,$(target_cpu) $(target_os))),)
++  LIBGNAT_TARGET_PAIRS = \
++  a-intnam.ads<a-intnam-linux.ads \
++  g-socthi.adb<g-socthi-bsd.adb \
++  s-inmaop.adb<s-inmaop-posix.adb \
++  s-intman.adb<s-intman-posix.adb \
++  s-linux.ads<s-linux-android.ads \
++  s-osinte.adb<s-osinte-android.adb \
++  s-osinte.ads<s-osinte-android.ads \
++  s-osprim.adb<s-osprim-posix.adb \
++  s-taprop.adb<s-taprop-posix.adb \
++  s-taspri.ads<s-taspri-posix.ads \
++  s-tpopsp.adb<s-tpopsp-posix-foreign.adb \
++  $(ATOMICS_TARGET_PAIRS) \
++  $(X86_TARGET_PAIRS) \
++  system.ads<system-linux-x86.ads
++
++  TOOLS_TARGET_PAIRS =  \
++    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
++    indepsw.adb<indepsw-gnu.adb
++
++  EXTRA_LIBGNAT_OBJS=
++  EXTRA_GNATRTL_TASKING_OBJS=s-linux.o
++  EXTRA_GNATRTL_NONTASKING_OBJS=
++  EH_MECHANISM=-gcc
++  THREADSLIB=
++  MISCLIB=
++  GMEM_LIB=
++  GNATLIB_SHARED = gnatlib-shared-dual
++  LIBRARY_VERSION := $(LIB_VERSION)
++endif
++
+ # x86 kfreebsd
+ ifeq ($(strip $(filter-out %86 kfreebsd%,$(target_cpu) $(target_os))),)
+   LIBGNAT_TARGET_PAIRS = \
+@@ -1470,6 +1507,8 @@
+ ifeq ($(strip $(filter-out %86 freebsd%,$(target_cpu) $(target_os))),)
+   LIBGNAT_TARGET_PAIRS = \
+   a-intnam.ads<a-intnam-freebsd.ads \
++  g-socthi.adb<g-socthi-bsd.adb \
++  s-trasym.adb<s-trasym-bsd.adb \
+   s-inmaop.adb<s-inmaop-posix.adb \
+   s-intman.adb<s-intman-posix.adb \
+   s-mudido.adb<s-mudido-affinity.adb \
+@@ -1487,6 +1526,8 @@
+   mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
+   GNATLIB_SHARED = gnatlib-shared-dual
+ 
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
+   EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
+ 
+   EH_MECHANISM=-gcc
+@@ -1500,6 +1541,8 @@
+ ifeq ($(strip $(filter-out %86_64 freebsd%,$(target_cpu) $(target_os))),)
+   LIBGNAT_TARGET_PAIRS = \
+   a-intnam.ads<a-intnam-freebsd.ads \
++  g-socthi.adb<g-socthi-bsd.adb \
++  s-trasym.adb<s-trasym-bsd.adb \
+   s-inmaop.adb<s-inmaop-posix.adb \
+   s-intman.adb<s-intman-posix.adb \
+   s-mudido.adb<s-mudido-affinity.adb \
+@@ -1517,6 +1560,8 @@
+   mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
+   GNATLIB_SHARED = gnatlib-shared-dual
+ 
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
+   EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
+ 
+   EH_MECHANISM=-gcc
+@@ -1530,6 +1575,8 @@
+ ifeq ($(strip $(filter-out %86_64 dragonfly%,$(target_cpu) $(target_os))),)
+   LIBGNAT_TARGET_PAIRS = \
+   a-intnam.ads<a-intnam-dragonfly.ads \
++  g-socthi.adb<g-socthi-bsd.adb \
++  s-trasym.adb<s-trasym-bsd.adb \
+   s-inmaop.adb<s-inmaop-posix.adb \
+   s-intman.adb<s-intman-posix.adb \
+   s-mudido.adb<s-mudido-affinity.adb \
+@@ -1547,6 +1594,8 @@
+   mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
+   GNATLIB_SHARED = gnatlib-shared-dual
+ 
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
+   EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
+ 
+   EH_MECHANISM=-gcc
+--- gcc/ada/gcc-interface/Make-lang.in.orig
++++ gcc/ada/gcc-interface/Make-lang.in
+@@ -589,7 +589,7 @@
+  ada/widechar.o
+ 
+ # Language-independent object files.
+-ADA_BACKEND = $(BACKEND) attribs.o
++ADA_BACKEND = $(BACKEND2) attribs.o
+ 
+ # List of target dependent sources, overridden below as necessary
+ TARGET_ADA_SRCS =

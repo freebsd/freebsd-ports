@@ -1,0 +1,12 @@
+--- libstdc++-v3/configure.host.orig
++++ libstdc++-v3/configure.host
+@@ -262,6 +262,9 @@
+   freebsd*)
+     os_include_dir="os/bsd/freebsd"
+     ;;
++  linux-android*)
++    os_include_dir="os/bionic"
++    ;;
+   linux-musl*)
+     os_include_dir="os/generic"
+     ;;
