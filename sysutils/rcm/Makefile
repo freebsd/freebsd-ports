@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rcm
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://thoughtbot.github.io/rcm/dist/
 
