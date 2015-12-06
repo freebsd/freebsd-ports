@@ -1,6 +1,8 @@
---- Makefile.orig	Wed Jan  9 11:31:34 2002
-+++ Makefile	Tue Jan 15 17:40:12 2002
-@@ -1,8 +1,6 @@
+--- Makefile.orig	2015-12-06 02:51:22 UTC
++++ Makefile
+@@ -1,10 +1,8 @@
+ # Makefile for wmJupiter
+ # 
 -CC     = gcc
 -CFLAGS = -O2 -Wall
 -INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
@@ -11,7 +13,7 @@
  # for linux
  LIBS   = -lXpm -lX11 -lXext -lm
  # for Solaris
-@@ -12,7 +10,7 @@
+@@ -14,7 +12,7 @@ OBJS   = wmJupiter.o \
  
  
  .c.o:
