@@ -3,13 +3,19 @@
 
 PORTNAME=	jetty
 PORTVERSION=	8.1.15
-
 CATEGORIES=	www java
 MASTER_SITES=	ECLIPSE/jetty/${PORTVERSION}.${JDVDATE}/dist
 DISTNAME=	jetty-distribution-${PORTVERSION}.${JDVDATE}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Full-featured web server implemented entirely in Java
+
+LICENSE=	APACHE20 EPL
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+CONFLICTS=	jetty-9.*
 
 JDVDATE=	v20140411
 USE_RC_SUBR=	${PORTNAME}
