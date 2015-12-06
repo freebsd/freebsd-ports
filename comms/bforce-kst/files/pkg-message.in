@@ -1,7 +1,7 @@
 **************************************************************
 
 Please don't forget to copy and edit configuration files found
-in %%PREFIX%%/%%CONFIGDIR%%.
+in %%PREFIX%%/etc/fido/bforce.
 
 If you using u-srif, please install lang/python
 
