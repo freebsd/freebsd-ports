@@ -3,6 +3,7 @@
 
 PORTNAME=	demo
 PORTVERSION=	${PYQT4_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -21,7 +22,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
 .include "${.CURDIR}/../../devel/py-qt4/bsd.pyqt.mk"
 
 .for component in ${PYQT4_COMPONENTS:Ndemo}
-PYQT4_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-${component}>=0:${PORTSDIR}/${${component}_PORT}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-${component}>=0:${PORTSDIR}/${${component}_PORT}
 .endfor
 
 do-build:
