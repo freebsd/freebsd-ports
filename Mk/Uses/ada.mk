@@ -6,24 +6,25 @@
 #
 # Feature:      ada
 # Usage:        USES=ada
-# Valid ARGS:   49, 5, run
+# Valid ARGS:   49, 5, 6, run
 #
 # MAINTAINER: marino@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_ADA_MK)
 _INCLUDE_USES_ADA_MK=    yes
 
-CC= ada
+CC=	ada
+ADAXX=	gcc5	# framework default
 
 . if ${ada_ARGS:M49}
 ADAXX=	gcc
-. elif ${ada_ARGS:M5}
-ADAXX=	gcc5
-. else
-.  if defined(ADA_DEFAULT) && ${ADA_DEFAULT} == 49
+. elif ${ada_ARGS:M6}
+ADAXX=	gcc6
+. elif defined(ADA_DEFAULT)
+.  if ${ADA_DEFAULT} == 49
 ADAXX=	gcc
-.  else
-ADAXX=	gcc5
+.  elif ${ADA_DEFAULT} == 6
+ADAXX=	gcc6
 .  endif
 . endif
 
