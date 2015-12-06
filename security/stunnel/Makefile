@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stunnel
-PORTVERSION=	5.26
+PORTVERSION=	5.27
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
