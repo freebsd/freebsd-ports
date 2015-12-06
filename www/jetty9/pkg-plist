@@ -1,0 +1,256 @@
+@sample %%ETCDIR%%/%%APP_NAME%%.sample
+sbin/%%APP_NAME%%.sh
+%%APP_HOME%%/README.TXT
+%%APP_HOME%%/VERSION.txt
+@(www,www,755) %%APP_HOME%%/bin/jetty.sh
+%%APP_HOME%%/etc/README.spnego
+%%APP_HOME%%/etc/example-quickstart.xml
+%%APP_HOME%%/etc/hawtio.xml
+%%APP_HOME%%/etc/home-base-warning.xml
+%%APP_HOME%%/etc/jamon.xml
+%%APP_HOME%%/etc/jdbcRealm.properties
+%%APP_HOME%%/%%ETCDIR%%-alpn.xml
+%%APP_HOME%%/%%ETCDIR%%-annotations.xml
+%%APP_HOME%%/%%ETCDIR%%-cdi.xml
+%%APP_HOME%%/%%ETCDIR%%-debug.xml
+%%APP_HOME%%/%%ETCDIR%%-debuglog.xml
+%%APP_HOME%%/%%ETCDIR%%-deploy.xml
+%%APP_HOME%%/%%ETCDIR%%-gcloud-sessions.xml
+%%APP_HOME%%/%%ETCDIR%%-gzip.xml
+%%APP_HOME%%/%%ETCDIR%%-http.xml
+%%APP_HOME%%/%%ETCDIR%%-http2.xml
+%%APP_HOME%%/%%ETCDIR%%-http2c.xml
+%%APP_HOME%%/%%ETCDIR%%-https.xml
+%%APP_HOME%%/%%ETCDIR%%-infinispan.xml
+%%APP_HOME%%/%%ETCDIR%%-ipaccess.xml
+%%APP_HOME%%/%%ETCDIR%%-jaas.xml
+%%APP_HOME%%/%%ETCDIR%%-jdbc-sessions.xml
+%%APP_HOME%%/%%ETCDIR%%-jmx-remote.xml
+%%APP_HOME%%/%%ETCDIR%%-jmx.xml
+%%APP_HOME%%/%%ETCDIR%%-logging.xml
+%%APP_HOME%%/%%ETCDIR%%-lowresources.xml
+%%APP_HOME%%/%%ETCDIR%%-monitor.xml
+%%APP_HOME%%/%%ETCDIR%%-nosql.xml
+%%APP_HOME%%/%%ETCDIR%%-plus.xml
+%%APP_HOME%%/%%ETCDIR%%-proxy-protocol-ssl.xml
+%%APP_HOME%%/%%ETCDIR%%-proxy-protocol.xml
+%%APP_HOME%%/%%ETCDIR%%-proxy.xml
+%%APP_HOME%%/%%ETCDIR%%-requestlog.xml
+%%APP_HOME%%/%%ETCDIR%%-rewrite.xml
+%%APP_HOME%%/%%ETCDIR%%-setuid.xml
+%%APP_HOME%%/%%ETCDIR%%-spring.xml
+%%APP_HOME%%/%%ETCDIR%%-ssl-context.xml
+%%APP_HOME%%/%%ETCDIR%%-ssl.xml
+%%APP_HOME%%/%%ETCDIR%%-started.xml
+%%APP_HOME%%/%%ETCDIR%%-stats.xml
+%%APP_HOME%%/%%ETCDIR%%.conf
+%%APP_HOME%%/%%ETCDIR%%.xml
+%%APP_HOME%%/etc/jminix.xml
+%%APP_HOME%%/etc/jolokia.xml
+%%APP_HOME%%/etc/krb5.ini
+%%APP_HOME%%/etc/spnego.conf
+%%APP_HOME%%/etc/spnego.properties
+%%APP_HOME%%/etc/webdefault.xml
+%%APP_HOME%%/lib/annotations/asm-5.0.1.jar
+%%APP_HOME%%/lib/annotations/asm-commons-5.0.1.jar
+%%APP_HOME%%/lib/annotations/javax.annotation-api-1.2.jar
+%%APP_HOME%%/lib/apache-jsp/org.eclipse.jdt.core.compiler.ecj-4.4.2.jar
+%%APP_HOME%%/lib/apache-jsp/org.eclipse.jetty.apache-jsp-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/apache-jsp/org.mortbay.jasper.apache-el-8.0.27.jar
+%%APP_HOME%%/lib/apache-jsp/org.mortbay.jasper.apache-jsp-8.0.27.jar
+%%APP_HOME%%/lib/apache-jstl/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar
+%%APP_HOME%%/lib/apache-jstl/org.apache.taglibs.taglibs-standard-spec-1.2.5.jar
+%%APP_HOME%%/lib/cdi-core-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/cdi-servlet-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/cdi-websocket-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/ext/.donotdelete
+%%APP_HOME%%/lib/fcgi/fcgi-client-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/fcgi/fcgi-server-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/gcloud-session-manager-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/http2/http2-common-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/http2/http2-hpack-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/http2/http2-server-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jaspi/javax.security.auth.message-1.0.0.v201108011116.jar
+%%APP_HOME%%/lib/jetty-alpn-server-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-annotations-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-client-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-continuation-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-deploy-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-http-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-infinispan-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-io-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-jaas-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-jaspi-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-jmx-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-jndi-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-nosql-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-plus-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-proxy-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-quickstart-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-rewrite-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-schemas-3.1.jar
+%%APP_HOME%%/lib/jetty-security-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-server-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-servlet-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-servlets-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-util-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-webapp-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jetty-xml-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/jndi/javax.mail.glassfish-1.4.1.v201005082020.jar
+%%APP_HOME%%/lib/jndi/javax.transaction-api-1.2.jar
+%%APP_HOME%%/lib/monitor/jetty-monitor-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/servlet-api-3.1.jar
+%%APP_HOME%%/lib/setuid/jetty-setuid-java-1.0.3.jar
+%%APP_HOME%%/lib/spring/jetty-spring-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/websocket/javax-websocket-client-impl-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/websocket/javax-websocket-server-impl-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/websocket/javax.websocket-api-1.0.jar
+%%APP_HOME%%/lib/websocket/websocket-api-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/websocket/websocket-client-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/websocket/websocket-common-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/websocket/websocket-server-9.3.6.v20151106.jar
+%%APP_HOME%%/lib/websocket/websocket-servlet-9.3.6.v20151106.jar
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_65.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_66.mod
+%%APP_HOME%%/license-eplv10-aslv20.html
+%%APP_HOME%%/logs/.donotdelete
+%%APP_HOME%%/modules/.donotdelete
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_05.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_11.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_20.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_25.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_31.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_40.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_45.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_51.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_60.mod
+%%APP_HOME%%/modules/alpn.mod
+%%APP_HOME%%/modules/annotations.mod
+%%APP_HOME%%/modules/apache-jsp.mod
+%%APP_HOME%%/modules/apache-jstl.mod
+%%APP_HOME%%/modules/cdi.mod
+%%APP_HOME%%/modules/client.mod
+%%APP_HOME%%/modules/continuation.mod
+%%APP_HOME%%/modules/debug.mod
+%%APP_HOME%%/modules/debuglog.mod
+%%APP_HOME%%/modules/deploy.mod
+%%APP_HOME%%/modules/ext.mod
+%%APP_HOME%%/modules/fcgi.mod
+%%APP_HOME%%/modules/gcloud-sessions.mod
+%%APP_HOME%%/modules/gzip.mod
+%%APP_HOME%%/modules/hawtio.mod
+%%APP_HOME%%/modules/home-base-warning.mod
+%%APP_HOME%%/modules/http.mod
+%%APP_HOME%%/modules/http2.mod
+%%APP_HOME%%/modules/http2c.mod
+%%APP_HOME%%/modules/https.mod
+%%APP_HOME%%/modules/infinispan.mod
+%%APP_HOME%%/modules/ipaccess.mod
+%%APP_HOME%%/modules/jaas.mod
+%%APP_HOME%%/modules/jamon.mod
+%%APP_HOME%%/modules/jaspi.mod
+%%APP_HOME%%/modules/jdbc-sessions.mod
+%%APP_HOME%%/modules/jminix.mod
+%%APP_HOME%%/modules/jmx-remote.mod
+%%APP_HOME%%/modules/jmx.mod
+%%APP_HOME%%/modules/jndi.mod
+%%APP_HOME%%/modules/jolokia.mod
+%%APP_HOME%%/modules/jsp.mod
+%%APP_HOME%%/modules/jstl.mod
+%%APP_HOME%%/modules/jvm.mod
+%%APP_HOME%%/modules/logging.mod
+%%APP_HOME%%/modules/lowresources.mod
+%%APP_HOME%%/modules/monitor.mod
+%%APP_HOME%%/modules/nosql.mod
+%%APP_HOME%%/modules/plus.mod
+%%APP_HOME%%/modules/proxy-protocol-ssl.mod
+%%APP_HOME%%/modules/proxy-protocol.mod
+%%APP_HOME%%/modules/proxy.mod
+%%APP_HOME%%/modules/quickstart.mod
+%%APP_HOME%%/modules/requestlog.mod
+%%APP_HOME%%/modules/resources.mod
+%%APP_HOME%%/modules/rewrite.mod
+%%APP_HOME%%/modules/security.mod
+%%APP_HOME%%/modules/server.mod
+%%APP_HOME%%/modules/servlet.mod
+%%APP_HOME%%/modules/servlets.mod
+%%APP_HOME%%/modules/setuid.mod
+%%APP_HOME%%/modules/spring.mod
+%%APP_HOME%%/modules/ssl.mod
+%%APP_HOME%%/modules/stats.mod
+%%APP_HOME%%/modules/webapp.mod
+%%APP_HOME%%/modules/websocket.mod
+%%APP_HOME%%/notice.html
+%%APP_HOME%%/resources/log4j.properties
+%%APP_HOME%%/start.ini
+%%APP_HOME%%/start.jar
+%%APP_HOME%%/webapps/README.TXT
+@dir %%APP_HOME%%
+@dir %%APP_HOME%%/bin
+@dir %%APP_HOME%%/etc
+@dir %%APP_HOME%%/lib
+@dir %%APP_HOME%%/lib/annotations
+@dir %%APP_HOME%%/lib/apache-jsp
+@dir %%APP_HOME%%/lib/apache-jstl
+@dir %%APP_HOME%%/lib/ext
+@dir %%APP_HOME%%/lib/fcgi
+@dir %%APP_HOME%%/lib/http2
+@dir %%APP_HOME%%/lib/jaspi
+@dir %%APP_HOME%%/lib/jndi
+@dir %%APP_HOME%%/lib/monitor
+@dir %%APP_HOME%%/lib/setuid
+@dir %%APP_HOME%%/lib/spring
+@dir %%APP_HOME%%/lib/websocket
+@dir %%APP_HOME%%/logs
+@dir %%APP_HOME%%/modules
+@dir %%APP_HOME%%/modules/alpn-impl
+@dir %%APP_HOME%%/resources
+@dir %%APP_HOME%%/webapps
+@dir(www,www,755) %%WWWDIR%%
+@dir(www,www,755) %%WWWDIR%%/demo-base
+@dir(www,www,755) %%WWWDIR%%/demo-base/etc
+@dir(www,www,755) %%WWWDIR%%/demo-base/lib
+@dir(www,www,755) %%WWWDIR%%/demo-base/lib/ext
+@dir(www,www,755) %%WWWDIR%%/demo-base/logs
+@dir(www,www,755) %%WWWDIR%%/demo-base/start.d
+@dir(www,www,755) %%WWWDIR%%/demo-base/webapps
+@dir(www,www,755) %%WWWDIR%%/demo-base/webapps/ROOT
+@dir(www,www,755) %%WWWDIR%%/demo-base/webapps/ROOT/images
+@dir(www,www,755) %%WWWDIR%%/demo-base/webapps/test.d
+@dir(www,www,755) %%WWWDIR%%/demo-base/resources
+@owner www
+@group www
+%%WWWDIR%%/demo-base/etc/demo-rewrite-rules.xml
+%%WWWDIR%%/demo-base/etc/keystore
+%%WWWDIR%%/demo-base/etc/login.conf
+%%WWWDIR%%/demo-base/etc/login.properties
+%%WWWDIR%%/demo-base/etc/realm.properties
+%%WWWDIR%%/demo-base/etc/test-realm.xml
+%%WWWDIR%%/demo-base/lib/ext/javax.mail.glassfish-1.4.1.v201005082020.jar
+%%WWWDIR%%/demo-base/lib/ext/test-mock-resources-9.3.6.v20151106.jar
+%%WWWDIR%%/demo-base/start.d/http.ini
+%%WWWDIR%%/demo-base/start.d/https.ini
+%%WWWDIR%%/demo-base/start.d/jsp.ini
+%%WWWDIR%%/demo-base/start.d/jstl.ini
+%%WWWDIR%%/demo-base/start.d/ssl.ini
+%%WWWDIR%%/demo-base/start.ini
+%%WWWDIR%%/demo-base/webapps/README.TXT
+%%WWWDIR%%/demo-base/webapps/ROOT/images/%%APP_NAME%%-header.jpg
+%%WWWDIR%%/demo-base/webapps/ROOT/images/webtide_logo.jpg
+%%WWWDIR%%/demo-base/webapps/ROOT/index.html
+%%WWWDIR%%/demo-base/webapps/ROOT/%%APP_NAME%%.css
+%%WWWDIR%%/demo-base/webapps/async-rest.war
+%%WWWDIR%%/demo-base/webapps/example-moved.xml
+%%WWWDIR%%/demo-base/webapps/test-jaas.war
+%%WWWDIR%%/demo-base/webapps/test-jaas.xml
+%%WWWDIR%%/demo-base/webapps/test-jndi.war
+%%WWWDIR%%/demo-base/webapps/test-jndi.xml
+%%WWWDIR%%/demo-base/webapps/test-spec.war
+%%WWWDIR%%/demo-base/webapps/test-spec.xml
+%%WWWDIR%%/demo-base/webapps/test.d/override-web.xml
+%%WWWDIR%%/demo-base/webapps/test.war
+%%WWWDIR%%/demo-base/webapps/test.xml
+%%WWWDIR%%/demo-base/webapps/xref-proxy.war
+@group
+@owner
