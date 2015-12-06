@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	subvertpy
-PORTVERSION=	0.8.10
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/90814723/ \
-		http://www.c-s.li/ports/
+MASTER_SITES=	https://jelmer.uk/subvertpy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
@@ -20,5 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		python
 USE_PYTHON=	distutils autoplist
 MAKE_ENV=	HOME=/dev/null
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
