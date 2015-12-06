@@ -8043,3 +8043,4 @@ devel/fpc-fcl-process||2015-12-05|Eliminated during FPC upgrade to 3.0.0
 devel/fpc-fpmkunit||2015-12-05|Eliminated during FPC upgrade to 3.0.0
 multimedia/fpc-matroska||2015-12-05|Eliminated during FPC upgrade to 3.0.0
 security/fpc-hash||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+www/jetty|www/jetty8|2015-12-06|Rename to prepare for jetty9
