@@ -16,6 +16,7 @@ GH_ACCOUNT=	koue
 
 CONFLICTS=	isc-dhcp4[1-3]-server*
 
+USES=		uidfix
 USE_OPENSSL=	yes
 USE_RC_SUBR=	dhcpd
 
@@ -26,10 +27,8 @@ MAKE_ARGS+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 USERS=		dhcpd
 GROUPS=		dhcpd
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/dhcpd.conf \
 		${STAGEDIR}${PREFIX}/etc/dhcpd.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
