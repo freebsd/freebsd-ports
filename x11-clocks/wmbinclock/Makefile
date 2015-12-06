@@ -2,13 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	wmbinclock
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.51
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	http://www.inxsoft.net/wmbinclock/
 
 MAINTAINER=	logix@foobar.franken.de
 COMMENT=	Binary clock in a windowmaker applet
+
+LICENSE=	GPLv2 BSD3CLAUSE
+LICENSE_COMB=	dual
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	engerim42
+GH_PROJECT=	${PORTNME}
 
 PLIST_FILES=	bin/wmBinClock
 USES=		gmake
