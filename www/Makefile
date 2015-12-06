@@ -334,7 +334,6 @@
     SUBDIR += httpasyncclient
     SUBDIR += httpclient
     SUBDIR += httpcore
-    SUBDIR += httpd
     SUBDIR += httpie
     SUBDIR += httpsqs
     SUBDIR += httptunnel
@@ -570,6 +569,7 @@
     SUBDIR += npm
     SUBDIR += npm012
     SUBDIR += nspluginwrapper
+    SUBDIR += obhttpd
     SUBDIR += ocaml-net
     SUBDIR += ocsigen
     SUBDIR += offline-npm
