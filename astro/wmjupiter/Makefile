@@ -2,16 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	wmjupiter
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	1.21
 CATEGORIES=	astro windowmaker
-MASTER_SITES=	http://www.inxsoft.net/wmjupiter/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tkuiper@inxsoft.net
 COMMENT=	Dockapp that displays information on Jupiter
 
+LICENSE=	GPLv2 BSD3CLAUSE
+LICENSE_COMB=	dual
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	engerim42
+GH_PROJECT=	${PORTNAME}
+
 PLIST_FILES=	bin/wmJupiter
-WRKSRC=		${WRKDIR}/wmJupiter
 USE_XORG=	x11 xext xpm
 USES=		gmake
 
@@ -20,6 +24,6 @@ pre-patch:
 		${WRKSRC}/wmJupiter.c
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmJupiter ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/wmJupiter ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
