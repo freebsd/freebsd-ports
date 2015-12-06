@@ -1,3 +1,6 @@
-R-cran-igraph is a R extension package for igraph.
+Routines for simple graphs and network analysis. It can handle large
+graphs very well and provides functions for generating random and
+regular graphs, graph visualization, centrality methods and much
+more.
 
-WWW: http://cran.r-project.org/web/packages/igraph/
+WWW: https://cran.r-project.org/web/packages/igraph/
