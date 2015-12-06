@@ -95,6 +95,7 @@
     SUBDIR += dgd-lpmud
     SUBDIR += dhcp6
     SUBDIR += dhcpcd
+    SUBDIR += dhcpd
     SUBDIR += dhcpd-pools
     SUBDIR += dhcpdump
     SUBDIR += dhcperf
