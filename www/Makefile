@@ -334,6 +334,7 @@
     SUBDIR += httpasyncclient
     SUBDIR += httpclient
     SUBDIR += httpcore
+    SUBDIR += httpd
     SUBDIR += httpie
     SUBDIR += httpsqs
     SUBDIR += httptunnel
