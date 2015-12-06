@@ -10,11 +10,18 @@ DISTNAME=	gb2ps.2.02
 DISTFILES=	${DISTNAME}.tar.gz:sw  \
 		csong24.ccf.gz:font ckai24.ccf.gz:font cfang24.ccf.gz:font \
 		chei24.ccf.gz:font cfan24.ccf.gz:font
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts Chinese GB (simple) encoded text to PostScript
 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+LICENSE=	UNKNOWN
+LICENSE_NAME=	unknown
+LICENSE_TEXT=	This program is NOT in public domain.\
+		It can be freely distributed for non-commercial purposes only,\
+		and THERE IS NO WARRANTY FOR THIS PROGRAM.
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+
 WRKSRC=		${WRKDIR}/GB2PS
 
 OPTIONS_DEFINE=	DOCS
@@ -26,6 +33,8 @@ do-install:
 .for font in csong24.ccf ckai24.ccf cfang24.ccf chei24.ccf cfan24.ccf
 	${GUNZIP_CMD} -c ${DISTDIR}/${font}.gz > ${STAGEDIR}${PREFIX}/share/chinese/gb/${font}
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/gb2ps.help ${STAGEDIR}${DOCSDIR}
 
