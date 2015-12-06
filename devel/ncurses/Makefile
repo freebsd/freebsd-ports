@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--without-curses-h --with-termlib --program-prefix= \
 		--enable-rpath --disable-root-environ \
 		--with-manpage-format=gzip --srcdir=../ \
+		--without-manpage-renames \
 		--mandir=${MANPREFIX}/man \
 		--with-hashed-db \
 		--with-pkg-config-libdir=${PREFIX}/libdata/pkgconfig
