@@ -3,7 +3,7 @@
 
 PORTNAME=	dmidecode
 PORTVERSION=	2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SAVANNAH
 
@@ -28,6 +28,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/dmidecode \
 		${STAGEDIR}${PREFIX}/etc/periodic/daily
+	${RM} ${STAGEDIR}${PREFIX}/etc/rc.d/dmidecode
 
 .include <bsd.port.pre.mk>
 
