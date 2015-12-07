@@ -103,8 +103,12 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>ChenQin reports:</p>
 	<blockquote cite="http://seclists.org/fulldisclosure/2015/Nov/108">
-	  <p>The LibRaw raw image decoder has multiple vulnerabilities that can cause memory errors which may lead to code execution or other problems.</p>
-	  <p>In CVE-2015-8367, LibRaw's phase_one_correct function does not handle memory initialization correctly, which may cause other problems.</p>
+	  <p>The LibRaw raw image decoder has multiple vulnerabilities that can
+	    cause memory errors which may lead to code execution or other
+	    problems.</p>
+	  <p>In CVE-2015-8367, LibRaw's phase_one_correct function does not
+	    handle memory initialization correctly, which may cause other
+	    problems.</p>
 	</blockquote>
       </body>
     </description>
@@ -132,8 +136,11 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>ChenQin reports:</p>
 	<blockquote cite="http://seclists.org/fulldisclosure/2015/Nov/108">
-	  <p>The LibRaw raw image decoder has multiple vulnerabilities that can cause memory errors which may lead to code execution or other problems.</p>
-	  <p>In CVE-2015-8366, LibRaw's smal_decode_segment function does not handle indexes carefully, which can cause an index overflow.</p>
+	  <p>The LibRaw raw image decoder has multiple vulnerabilities that can
+	    cause memory errors which may lead to code execution or other
+	    problems.</p>
+	  <p>In CVE-2015-8366, LibRaw's smal_decode_segment function does not
+	    handle indexes carefully, which can cause an index overflow.</p>
 	</blockquote>
       </body>
     </description>
