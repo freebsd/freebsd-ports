@@ -25,7 +25,7 @@ SHEBANG_FILES=	filters/html-converters/resources/markdown.pl
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_ARGS+=	CGIT_SCRIPT_PATH=${WWWDIR} CGIT_CONFIG=${PREFIX}/etc/cgitrc \
-		prefix=${PREFIX} NO_GETTEXT=1 NO_LUA=1
+		prefix=${PREFIX} NO_GETTEXT=1 NO_LUA=1 NO_R_TO_GCC_LINKER=1
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME}
