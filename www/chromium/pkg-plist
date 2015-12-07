@@ -150,6 +150,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/devices_module.js
 %%DATADIR%%/resources/inspector/devtools.js
 %%DATADIR%%/resources/inspector/devtools_extension_api.js
+%%DATADIR%%/resources/inspector/diff_module.js
 %%DATADIR%%/resources/inspector/elements_module.js
 %%DATADIR%%/resources/inspector/emulated_devices_module.js
 %%DATADIR%%/resources/inspector/emulated_devices/google-nexus-5-horizontal-default-1x.png
