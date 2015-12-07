@@ -1,2 +1,2 @@
-SHA256 (llvm-mirror-compiler-rt-3.8.d20151120-1e8208e85963252f79cc1663c46dfe38d5ef6e82_GH0.tar.gz) = e63aa9b0842c8396f1ea7b78cd876f76186b2c5f958a8823febec5a29b80fdc3
-SIZE (llvm-mirror-compiler-rt-3.8.d20151120-1e8208e85963252f79cc1663c46dfe38d5ef6e82_GH0.tar.gz) = 2189924
+SHA256 (llvm-mirror-compiler-rt-3.8.d20151207-bf6d403d5555eaca5939734f490b10e5cc075639_GH0.tar.gz) = de798ccbc3ba684ead1620a61f828bffe700eba60ccbf2203373264fbe050aca
+SIZE (llvm-mirror-compiler-rt-3.8.d20151207-bf6d403d5555eaca5939734f490b10e5cc075639_GH0.tar.gz) = 2203729
