@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmpp-client
-PORTVERSION=	20150822
+PORTVERSION=	20151108
 CATEGORIES=	net-im
 MASTER_SITES=	http://c-s.li/ports/
 
