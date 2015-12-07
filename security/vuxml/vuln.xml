@@ -58,6 +58,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e6b974ab-9d35-11e5-8f5c-002590263bf5">
+    <topic>Salt -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>py27-salt</name>
+	<range><lt>2015.8.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Salt release notes report:</p>
+	<blockquote cite="https://docs.saltstack.com/en/latest/topics/releases/2015.8.3.html">
+	  <p>CVE-2015-8034: Saving state.sls cache data to disk with insecure
+	    permissions</p>
+	  <p>This affects users of the state.sls function. The state run cache
+	    on the minion was being created with incorrect permissions. This
+	    file could potentially contain sensitive data that was inserted via
+	    jinja into the state SLS files. The permissions for this file are
+	    now being set correctly. Thanks to @zmalone for bringing this issue
+	    to our attention.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8034</cvename>
+      <url>https://docs.saltstack.com/en/latest/topics/releases/2015.8.3.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-25</discovery>
+      <entry>2015-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6bc6eed2-9cca-11e5-8c2b-c335fa8985d7">
     <topic>libraw -- memory objects not properly initialized</topic>
     <affects>
