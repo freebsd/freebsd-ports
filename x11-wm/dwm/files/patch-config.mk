@@ -1,22 +1,6 @@
 --- config.mk.orig	2015-11-08 22:39:37 UTC
 +++ config.mk
-@@ -4,11 +4,11 @@ VERSION = 6.1
- # Customize below to fit your system
- 
- # paths
--PREFIX = /usr/local
--MANPREFIX = ${PREFIX}/share/man
-+PREFIX = %%PREFIX%% 
-+MANPREFIX = %%MANPREFIX%%
- 
--X11INC = /usr/X11R6/include
--X11LIB = /usr/X11R6/lib
-+X11INC = %%LOCALBASE%%/include
-+X11LIB = %%LOCALBASE%%/lib
- 
- # Xinerama, comment if you don't want it
- XINERAMALIBS  = -lXinerama
-@@ -25,14 +25,14 @@ INCS = -I${X11INC} -I${FREETYPEINC}
+@@ -25,10 +25,10 @@ INCS = -I${X11INC} -I${FREETYPEINC}
  LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
  
  # flags
@@ -31,8 +15,3 @@
  
  # Solaris
  #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
- #LDFLAGS = ${LIBS}
- 
- # compiler and linker
--CC = cc
-+CC?= cc
