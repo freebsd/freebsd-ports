@@ -19,17 +19,13 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 OPTIONS_DEFINE=	XINERAMA DOCS
 OPTIONS_DEFAULT=XINERAMA
 
+XINERAMA_USE=	XORG=xinerama
+
 USE_XORG=	x11 xft
 
 PLIST_FILES=	bin/dwm \
 		man/man1/dwm.1.gz
 PORTDOCS=	README
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXINERAMA}
-USE_XORG+=	xinerama
-.endif
 
 pre-everything::
 	@${ECHO_MSG} "You can build dwm with your own config.h using the DWM_CONF knob:"
@@ -37,20 +33,20 @@ pre-everything::
 	@${ECHO_MSG} "Note: Pre-${PORTVERSION} config.h-files may not work."
 
 post-extract:
-.if defined(DWM_CONF)
-	@${ECHO_MSG} "creating config.h from ${DWM_CONF}"
-	@${CP} ${DWM_CONF} ${WRKSRC}/config.h
-.endif
+	@if [ -e "${DWM_CONF}" ]; then \
+		${ECHO_MSG} "creating config.h from ${DWM_CONF}"; \
+		${CP} "${DWM_CONF}" ${WRKSRC}/config.h; \
+	fi
 
 post-patch:
 	@${GREP} -Rl '%%[[:alpha:]]\+%%' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} \
 	         -e "s,%%PREFIX%%,${PREFIX},g" \
 	         -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 	         -e "s,%%MANPREFIX%%,${MANPREFIX},g"
-.if empty(PORT_OPTIONS:MXINERAMA)
+
+post-patch-XINERAMA-off:
 	@${REINPLACE_CMD} -e 's,$${XINERAMALIBS},,g' \
 	         -e 's,$${XINERAMAFLAGS},,g' ${WRKSRC}/config.mk
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
