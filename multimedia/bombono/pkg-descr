@@ -1,11 +1,10 @@
-Bombono DVD is a DVD authoring program.
-It is made easy to use and has nice and clean GUI (Gtk).
+Bombono DVD is a DVD authoring program.  It is made easy to use and has a
+nice and clean GUI (GTK+ based).  The main features of Bombono DVD are:
 
-The main features of Bombono DVD are:
-	+excellent MPEG viewer: Timeline and Monitor
-	+real WYSIWYG Menu Editor with live thumbnails
-	+comfortable Drag-n-Drop support
-	+you can author to folder, make ISO-image or burn directly to DVD
-	+reauthoring: you can import video from DVD discs. 
+  - Excellent MPEG viewer, with timeline and monitor
+  - Real WYSIWYG menu editor with live thumbnails
+  - Comfortable drag-n-drop support
+  - Can author to a folder, make ISO image, or burn directly to DVD
+  - Reauthoring: can import video from DVD discs
 
-WWW: http://www.bombono.org
+WWW: http://www.bombono.org/
