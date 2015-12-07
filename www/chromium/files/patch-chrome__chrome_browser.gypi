@@ -1,6 +1,6 @@
---- chrome/chrome_browser.gypi.orig	2015-07-21 22:00:15.902799000 -0400
-+++ chrome/chrome_browser.gypi	2015-07-21 22:08:53.180707000 -0400
-@@ -3277,6 +3277,13 @@
+--- chrome/chrome_browser.gypi.orig	2015-10-21 18:00:37.000000000 -0400
++++ chrome/chrome_browser.gypi	2015-10-23 12:31:48.047090000 -0400
+@@ -3365,6 +3365,13 @@
              'browser/download/download_dir_policy_handler.h',
            ],
          }],
@@ -14,7 +14,7 @@
          ['OS=="mac"', {
            'dependencies': [
              'app_shim',
-@@ -3416,7 +3423,7 @@
+@@ -3518,7 +3525,7 @@
              '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
            ],
          }],
@@ -23,7 +23,7 @@
            'dependencies': [
              '../build/linux/system.gyp:libspeechd',
            ],
-@@ -3472,7 +3479,7 @@
+@@ -3572,7 +3579,7 @@
          ['use_x11==1', {
            'sources': [ '<@(chrome_browser_x11_sources)' ],
          }],
@@ -32,12 +32,12 @@
            'sources': [
              'app/chrome_crash_reporter_client.cc',
              'app/chrome_crash_reporter_client.h',
-@@ -3667,7 +3674,7 @@
+@@ -3813,7 +3820,7 @@
              }],
            ],
          }],
 -        ['OS=="linux"', {
 +        ['OS=="linux" or os_bsd==1', {
-           'sources': [ '<@(chrome_browser_linux_sources)' ],
            'conditions': [
              ['use_aura==1', {
+               'dependencies': [

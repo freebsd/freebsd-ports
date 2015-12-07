@@ -1,5 +1,5 @@
---- base/process/process_posix.cc.orig	2015-08-22 15:01:51.000000000 -0400
-+++ base/process/process_posix.cc	2015-09-05 09:44:45.526291000 -0400
+--- base/process/process_posix.cc.orig	2015-10-14 03:01:18.000000000 -0400
++++ base/process/process_posix.cc	2015-10-23 11:23:26.411838000 -0400
 @@ -17,8 +17,18 @@
  #include <sys/event.h>
  #endif
@@ -37,29 +37,21 @@
      // On Mac we can wait on non child processes.
      return WaitForSingleNonChildProcess(handle, timeout);
  #else
-@@ -255,13 +265,6 @@
-   return Process(handle);
- }
- 
--#if !defined(OS_LINUX) && !defined(OS_MACOSX)
--// static
--bool Process::CanBackgroundProcesses() {
--  return false;
--}
--#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX)
--
- bool Process::IsValid() const {
-   return process_ != kNullProcessHandle;
- }
-@@ -357,18 +360,27 @@
- }
- 
- #if !defined(OS_LINUX) && !defined(OS_MACOSX)
-+// static
-+bool Process::CanBackgroundProcesses() {
+@@ -258,7 +268,11 @@
+ #if !defined(OS_LINUX)
+ // static
+ bool Process::CanBackgroundProcesses() {
++#if defined(OS_BSD)
 +  return true;
-+}
-+
++#else
+   return false;
++#endif 
+ }
+ #endif  // !defined(OS_LINUX)
+ 
+@@ -358,17 +372,21 @@
+ 
+ #if !defined(OS_LINUX)
  bool Process::IsProcessBackgrounded() const {
 -  // See SetProcessBackgrounded().
    DCHECK(IsValid());
@@ -68,9 +60,9 @@
  }
  
  bool Process::SetProcessBackgrounded(bool value) {
--  // Not implemented for POSIX systems other than Mac and Linux. With POSIX, if
--  // we were to lower the process priority we wouldn't be able to raise it back
--  // to its initial priority.
+-  // Not implemented for POSIX systems other than Linux. With POSIX, if we were
+-  // to lower the process priority we wouldn't be able to raise it back to its
+-  // initial priority.
 -  NOTIMPLEMENTED();
 -  return false;
 +  DCHECK(IsValid());
@@ -84,5 +76,5 @@
 +  DPCHECK(result == 0);
 +  return result == 0;
  }
- #endif  // !defined(OS_LINUX) && !defined(OS_MACOSX)
+ #endif  // !defined(OS_LINUX)
  
