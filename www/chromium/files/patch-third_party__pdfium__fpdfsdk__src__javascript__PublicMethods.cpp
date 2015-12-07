@@ -1,5 +1,5 @@
---- third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp.orig	2015-10-14 18:30:46.180316000 +0200
-+++ third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp	2015-10-14 18:31:44.759135000 +0200
+--- third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp.orig	2015-10-13 15:04:43.000000000 -0400
++++ third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp	2015-10-14 11:50:05.723446000 -0400
 @@ -910,7 +910,7 @@
                                             const CJS_Parameters& params,
                                             CJS_Value& vRet,
