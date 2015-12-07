@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nettoe
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		SF
