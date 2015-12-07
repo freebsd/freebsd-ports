@@ -4,6 +4,7 @@
 PORTNAME=	smu
 PORTVERSION=	1.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -18,11 +19,11 @@ GH_PROJECT=	smu
 
 PLIST_FILES=	bin/smu man/man1/smu.1.gz
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|cc|${CC}|g' ${WRKSRC}/config.mk
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/smu ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/smu.1 ${STAGEDIR}${MANPREFIX}/man/man1
+USES=		uidfix
+MAKEFILE=	/usr/share/mk/bsd.prog.mk
+MAKE_ENV=	PROG="${PORTNAME}" \
+		BINDIR="${PREFIX}/bin" \
+		MANDIR="${MANPREFIX}/man/man"
+CFLAGS+=	-DVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
