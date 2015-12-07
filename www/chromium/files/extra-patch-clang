@@ -164,8 +164,8 @@
  
    char *      check_twosfx_morph(const char * word, int len, int optflags,
                   PfxEntry* ppfx, const FLAG needflag = FLAG_NULL);
---- third_party/sfntly/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-15 00:31:48.000000000 +0200
-+++ third_party/sfntly/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-18 22:05:41.000000000 +0200
+--- third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-15 00:31:48.000000000 +0200
++++ third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-18 22:05:41.000000000 +0200
 @@ -439,7 +439,7 @@
  }
  
@@ -224,7 +224,7 @@
  
 --- third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc.orig  2015-09-03 09:31:11.815462000 -0400
 +++ third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc   2015-09-03 09:31:50.974163000 -0400
-@@ -1028,7 +1028,7 @@
+@@ -844,7 +844,7 @@
  
  const AudioEncoder* AudioCodingImpl::GetSenderInfo() const {
    FATAL() << "Not implemented yet.";
@@ -233,7 +233,7 @@
  }
  
  const CodecInst* AudioCodingImpl::GetSenderCodecInst() {
-@@ -1048,7 +1048,7 @@
+@@ -864,7 +864,7 @@
  
  const ReceiverInfo* AudioCodingImpl::GetReceiverInfo() const {
    FATAL() << "Not implemented yet.";
@@ -242,14 +242,3 @@
  }
  
  bool AudioCodingImpl::RegisterReceiveCodec(AudioDecoder* receive_codec) { 
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig	2015-10-14 22:17:57.580250000 +0200
-+++ third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp	2015-10-14 22:18:13.766229000 +0200
-@@ -358,7 +358,7 @@
- {
-     RefPtr<SharedBuffer> buffer;
- 
--    SkFontTableTag tag = WTF::bswap32(table);
-+    SkFontTableTag tag = bswap32(table);
-     const size_t tableSize = m_typeface->getTableSize(tag);
-     if (tableSize) {
-         Vector<char> tableBuffer(tableSize);
