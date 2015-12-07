@@ -58,6 +58,53 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="84fdd1bb-9d37-11e5-8f5c-002590263bf5">
+    <topic>passenger -- client controlled header overwriting</topic>
+    <affects>
+      <package>
+	<name>rubygem-passenger</name>
+	<range><ge>5.0.0</ge><lt>5.0.22</lt></range>
+	<range><lt>4.0.60</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Daniel Knoppel reports:</p>
+	<blockquote cite="https://blog.phusion.nl/2015/12/07/cve-2015-7519/">
+	  <p>It was discovered by the SUSE security team that it was possible,
+	    in some cases, for clients to overwrite headers set by the server,
+	    resulting in a medium level security issue. CVE-2015-7519 has been
+	    assigned to this issue.</p>
+	  <p>Affected use-cases:</p>
+	  <p>Header overwriting may occur if all of the following conditions are met:</p>
+	  <ul>
+	    <li>Apache integration mode, or standalone+builtin engine without
+	      a filtering proxy</li>
+	    <li>Ruby or Python applications only (Passenger 5); or any
+	      application (Passenger 4)</li>
+	    <li>The app depends on a request header containing a dash (-)</li>
+	    <li>The header is supposed to be trusted (set by the server)</li>
+	    <li>The client correctly guesses the header name</li>
+	  </ul>
+	  <p>This vulnerability has been fixed by filtering out client headers
+	    that do not consist of alphanumeric/dash characters (Nginx already
+	    did this, so Passenger+Nginx was not affected). If your application
+	    depends on headers that don't conform to this, you can add a
+	    workaround in Apache specifically for those to convert them to a
+	    dash-based format.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7519</cvename>
+      <url>https://blog.phusion.nl/2015/12/07/cve-2015-7519/</url>
+    </references>
+    <dates>
+      <discovery>2015-12-07</discovery>
+      <entry>2015-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e6b974ab-9d35-11e5-8f5c-002590263bf5">
     <topic>Salt -- information disclosure</topic>
     <affects>
