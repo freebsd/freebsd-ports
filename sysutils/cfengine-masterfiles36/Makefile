@@ -19,7 +19,7 @@ CPE_VENDOR=	gnu
 PKGNAMESUFFIX=	36
 .endif
 
-RUN_DEPENDS=	cfengine:${PORTSDIR}/sysutils/cfengine${PKGNAMESUFFIX}
+RUN_DEPENDS=	cf-agent:${PORTSDIR}/sysutils/cfengine${PKGNAMESUFFIX}
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
