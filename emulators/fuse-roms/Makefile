@@ -3,6 +3,7 @@
 
 PORTNAME=	fuse-roms
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://mirror.switch.ch/pool/4/mirror/rpmfusion/nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/:1 \
 		ftp://ftp.ntua.gr/pub/linux/rpmfusion/nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/:1 \
@@ -17,6 +18,7 @@ COMMENT=	Spectrum ROM files, for use with the Fuse emulator
 
 FCVER=		22
 PORTSCOUT=	ignore:1
+NO_ARCH=	yes
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/fuse
 
@@ -26,6 +28,10 @@ PLIST_FILES=	${ROMS:S|^|%%DATADIR%%/|}
 
 RESTRICTED=	No explicit permission to redistribute
 
+OPTIONS_DEFINE=	DOCS
+
+DOCS_PLIST_FILES=%%DOCSDIR%%/rom-distribution.txt
+
 post-extract:
 	${CP} ${DISTDIR}/Opus-22.rom ${WRKDIR}/usr/share/fuse/opus.rom
 
@@ -33,5 +39,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKDIR}/usr/share/fuse && \
 		${INSTALL_DATA} ${ROMS} ${STAGEDIR}${DATADIR})
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKDIR}/usr/share/doc/fuse-emulator-roms && \
+		${INSTALL_DATA} rom-distribution.txt ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
