@@ -37,8 +37,8 @@ pre-everything::
 
 post-extract:
 	@if [ -e "${DWM_CONF}" ]; then \
-		${ECHO_MSG} "creating config.h from ${DWM_CONF}"; \
-		${CP} "${DWM_CONF}" ${WRKSRC}/config.h; \
+		${ECHO_MSG} "Creating symlink: config.h -> ${DWM_CONF}"; \
+		${LN} -fs "${DWM_CONF}" ${WRKSRC}/config.h; \
 	fi
 
 post-install:
