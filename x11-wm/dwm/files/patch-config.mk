@@ -1,6 +1,6 @@
---- config.mk.orig	2011-12-19 15:02:46.000000000 +0000
-+++ config.mk	2012-08-18 00:38:31.000000000 +0000
-@@ -4,30 +4,34 @@
+--- config.mk.orig	2015-11-08 22:39:37 UTC
++++ config.mk
+@@ -4,11 +4,11 @@ VERSION = 6.1
  # Customize below to fit your system
  
  # paths
@@ -14,28 +14,19 @@
 +X11INC = %%LOCALBASE%%/include
 +X11LIB = %%LOCALBASE%%/lib
  
- # Xinerama
- XINERAMALIBS = -L${X11LIB} -lXinerama
- XINERAMAFLAGS = -DXINERAMA
- 
-+# Xft
-+XFTINCS = -I${X11INC}/freetype2
-+XFTLIBS = -L${X11LIB} -lXft
-+
- # includes and libs
--INCS = -I. -I/usr/include -I${X11INC}
--LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS}
-+INCS = -I. -I/usr/include -I${X11INC} ${XFTINCS}
-+LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS} ${XFTLIBS}
+ # Xinerama, comment if you don't want it
+ XINERAMALIBS  = -lXinerama
+@@ -25,14 +25,14 @@ INCS = -I${X11INC} -I${FREETYPEINC}
+ LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
  
  # flags
--CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+-CPPFLAGS = -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+-#CFLAGS   = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
+-CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS} ${CPPFLAGS}
+-LDFLAGS  = -s ${LIBS}
 +CPPFLAGS+= -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
- #CFLAGS = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
--CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
-+CFLAGS+= -std=c99 ${INCS} ${CPPFLAGS}
- #LDFLAGS = -g ${LIBS}
--LDFLAGS = -s ${LIBS}
++#CFLAGS = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
++CFLAGS+= -std=c99 -Wno-deprecated-declarations ${INCS} ${CPPFLAGS}
 +LDFLAGS+= ${LIBS}
  
  # Solaris
