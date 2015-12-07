@@ -1,5 +1,5 @@
---- media/capture/video/video_capture_device.h.orig	2015-10-14 18:04:30.325845000 +0200
-+++ media/capture/video/video_capture_device.h	2015-10-14 18:06:41.271627000 +0200
+--- media/capture/video/video_capture_device.h.orig	2015-10-14 11:35:25.088073000 -0400
++++ media/capture/video/video_capture_device.h	2015-10-14 11:37:56.457208000 -0400
 @@ -43,7 +43,7 @@
      Name();
      Name(const std::string& name, const std::string& id);
