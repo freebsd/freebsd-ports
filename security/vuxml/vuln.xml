@@ -58,6 +58,64 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6bc6eed2-9cca-11e5-8c2b-c335fa8985d7">
+    <topic>libraw -- memory objects not properly initialized</topic>
+    <affects>
+      <package>
+	<name>libraw</name>
+	<range><lt>0.17.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ChenQin reports:</p>
+	<blockquote cite="http://seclists.org/fulldisclosure/2015/Nov/108">
+	  <p>The LibRaw raw image decoder has multiple vulnerabilities that can cause memory errors which may lead to code execution or other problems.</p>
+	  <p>In CVE-2015-8367, LibRaw's phase_one_correct function does not handle memory initialization correctly, which may cause other problems.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.libraw.org/news/libraw-0-17-1</url>
+      <url>https://github.com/LibRaw/LibRaw/commit/490ef94d1796f730180039e80997efe5c58db780</url>
+      <mlist>http://seclists.org/fulldisclosure/2015/Nov/108</mlist>
+      <cvename>CVE-2015-8367</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-30</discovery>
+      <entry>2015-12-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="db04bf07-9cc8-11e5-8c2b-c335fa8985d7">
+    <topic>libraw -- index overflow in smal_decode_segment</topic>
+    <affects>
+      <package>
+	<name>libraw</name>
+	<range><lt>0.17.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ChenQin reports:</p>
+	<blockquote cite="http://seclists.org/fulldisclosure/2015/Nov/108">
+	  <p>The LibRaw raw image decoder has multiple vulnerabilities that can cause memory errors which may lead to code execution or other problems.</p>
+	  <p>In CVE-2015-8366, LibRaw's smal_decode_segment function does not handle indexes carefully, which can cause an index overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.libraw.org/news/libraw-0-17-1</url>
+      <url>https://github.com/LibRaw/LibRaw/commit/89d065424f09b788f443734d44857289489ca9e2</url>
+      <mlist>http://seclists.org/fulldisclosure/2015/Nov/108</mlist>
+      <cvename>CVE-2015-8366</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-30</discovery>
+      <entry>2015-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4c8d1d72-9b38-11e5-aece-d050996490d0">
     <topic>openssl -- multiple vulnerabilities</topic>
     <affects>
