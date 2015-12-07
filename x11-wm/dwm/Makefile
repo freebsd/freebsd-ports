@@ -20,8 +20,11 @@ OPTIONS_DEFINE=	XINERAMA DOCS
 OPTIONS_DEFAULT=XINERAMA
 
 XINERAMA_USE=	XORG=xinerama
+XINERAMA_MAKE_ARGS_OFF=	XINERAMAFLAGS= XINERAMALIBS=
 
 USE_XORG=	x11 xft
+MAKE_ARGS=	CC="${CC}" PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}/man" \
+		X11INC="${LOCALBASE}/include" X11LIB="${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/dwm \
 		man/man1/dwm.1.gz
@@ -37,16 +40,6 @@ post-extract:
 		${ECHO_MSG} "creating config.h from ${DWM_CONF}"; \
 		${CP} "${DWM_CONF}" ${WRKSRC}/config.h; \
 	fi
-
-post-patch:
-	@${GREP} -Rl '%%[[:alpha:]]\+%%' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} \
-	         -e "s,%%PREFIX%%,${PREFIX},g" \
-	         -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
-	         -e "s,%%MANPREFIX%%,${MANPREFIX},g"
-
-post-patch-XINERAMA-off:
-	@${REINPLACE_CMD} -e 's,$${XINERAMALIBS},,g' \
-	         -e 's,$${XINERAMAFLAGS},,g' ${WRKSRC}/config.mk
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
