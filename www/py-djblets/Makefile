@@ -2,6 +2,7 @@
 
 PORTNAME=	djblets
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://downloads.reviewboard.org/releases/Djblets/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +14,10 @@ COMMENT=	Collection of useful classes and functions for Django
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:${PORTSDIR}/www/py-django16 \
-		${PYTHON_PKGNAMEPREFIX}django-pipeline14>=1.4.7:${PORTSDIR}/www/py-django-pipeline14 \
+		${PYTHON_PKGNAMEPREFIX}django-pipeline13>=1.3.27:${PORTSDIR}/www/py-django-pipeline13 \
 		uglifyjs:${PORTSDIR}/www/uglifyjs
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:${PORTSDIR}/www/py-django16 \
-		${PYTHON_PKGNAMEPREFIX}django-pipeline14>=1.4.7:${PORTSDIR}/www/py-django-pipeline14 \
+		${PYTHON_PKGNAMEPREFIX}django-pipeline13>=1.3.27:${PORTSDIR}/www/py-django-pipeline13 \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.2:${PORTSDIR}/textproc/py-feedparser \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
