@@ -3,6 +3,7 @@
 
 PORTNAME=	libressl
 PORTVERSION=	2.3.1
+PORTREVISIION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 PKGNAMESUFFIX=	-devel
@@ -30,9 +31,7 @@ USE_LDCONFIG=	yes
 OPTIONS_SUB=	yes
 
 INSTALL_TARGET=	install-strip
-
-regression-test: build
-	cd ${WRKSRC} && ${MAKE} check
+TEST_TARGET=	check
 
 post-stage-NC-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/apps/nc/.libs/nc ${STAGEDIR}/${PREFIX}/bin/nc
