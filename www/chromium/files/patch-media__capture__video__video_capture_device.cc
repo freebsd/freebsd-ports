@@ -1,6 +1,6 @@
---- media/capture/video/video_capture_device.cc.orig	2015-10-14 17:57:48.996214000 +0200
-+++ media/capture/video/video_capture_device.cc	2015-10-14 18:00:26.654041000 +0200
-@@ -9,6 +9,10 @@
+--- media/capture/video/video_capture_device.cc.orig	2015-10-21 18:00:38.000000000 -0400
++++ media/capture/video/video_capture_device.cc	2015-10-23 12:51:56.086998000 -0400
+@@ -11,6 +11,10 @@
  
  namespace media {
  
@@ -8,10 +8,10 @@
 +  return "";
 +}
 +
+ // TODO(msu.koo): http://crbug.com/532272, remove checking the switch in favour
+ // of deferring GetModel() call to the actual VideoCaptureDevice object.
  const std::string VideoCaptureDevice::Name::GetNameAndModel() const {
-   const std::string model_id = GetModel();
-   if (model_id.empty())
-@@ -26,7 +30,7 @@
+@@ -33,7 +37,7 @@
      : device_name_(name), unique_id_(id) {
  }
  
@@ -20,7 +20,7 @@
  VideoCaptureDevice::Name::Name(const std::string& name,
                                 const std::string& id,
                                 const CaptureApiType api_type)
-@@ -73,7 +77,7 @@
+@@ -80,7 +84,7 @@
  VideoCaptureDevice::Name::~Name() {
  }
  

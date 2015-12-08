@@ -1,15 +1,24 @@
---- chrome/app/chrome_main_delegate.cc.orig	2014-10-10 09:15:29 UTC
-+++ chrome/app/chrome_main_delegate.cc
-@@ -97,7 +97,7 @@
+--- chrome/app/chrome_main_delegate.cc.orig	2015-10-21 18:00:37.000000000 -0400
++++ chrome/app/chrome_main_delegate.cc	2015-10-23 12:25:02.965569000 -0400
+@@ -103,7 +103,7 @@
  #include "ui/base/x/x11_util.h"
  #endif
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
- #include "components/crash/app/breakpad_linux.h"
+ #include "components/crash/content/app/breakpad_linux.h"
  #endif
  
-@@ -449,7 +449,7 @@
+@@ -405,7 +405,7 @@
+ }  // namespace
+ 
+ ChromeMainDelegate::ChromeMainDelegate() {
+-#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+   // Record the startup process creation time on supported platforms.
+   startup_metric_utils::RecordStartupProcessCreationTime(
+       base::CurrentProcessInfo::CreationTime());
+@@ -508,7 +508,7 @@
        std::string format_str =
            command_line.GetSwitchValueASCII(switches::kDiagnosticsFormat);
        if (format_str == "machine") {
@@ -18,7 +27,7 @@
        } else if (format_str == "log") {
          format = diagnostics::DiagnosticsWriter::LOG;
        } else {
-@@ -500,7 +500,7 @@
+@@ -558,7 +558,7 @@
        std::string format_str =
            command_line.GetSwitchValueASCII(switches::kDiagnosticsFormat);
        if (format_str == "machine") {
@@ -27,7 +36,7 @@
        } else if (format_str == "human") {
          format = diagnostics::DiagnosticsWriter::HUMAN;
        } else {
-@@ -640,7 +640,7 @@
+@@ -641,7 +641,7 @@
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -36,16 +45,16 @@
    crash_reporter::SetCrashReporterClient(g_chrome_crash_client.Pointer());
  #endif
  
-@@ -767,7 +767,7 @@
+@@ -762,7 +762,7 @@
+   chrome::InitializePDF();
  #endif
-   }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -779,7 +779,7 @@
+@@ -776,7 +776,7 @@
      breakpad::InitCrashReporter(process_type);
  #endif  // defined(OS_ANDROID)
    }
@@ -54,7 +63,7 @@
  
    // After all the platform Breakpads have been initialized, store the command
    // line for crash reporting.
-@@ -875,7 +875,7 @@
+@@ -886,7 +886,7 @@
  #endif
    return process_type == switches::kRelauncherProcess;
  }

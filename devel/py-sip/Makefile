@@ -3,6 +3,7 @@
 
 PORTNAME=	sip
 PORTVERSION=	${SIP_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_SIP}
@@ -13,10 +14,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
 
 USES=		python
-USE_PYTHON=	py3kplist
+USE_PYTHON=	concurrent py3kplist
 
-DATADIR=	${PREFIX}/share/py-${PORTNAME}
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 CONFIGURE_ARGS=	-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
 		-e ${PYTHONPREFIX_INCLUDEDIR} -v ${DATADIR} \
 		CC="${CC}" CXX="${CXX}" LINK="${CXX}" LINK_SHLIB="${CXX}" \
@@ -36,11 +35,11 @@ do-configure:
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && cd ${WRKSRC}/doc/html && \
 		${COPYTREE_SHARE} \. ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${DATADIR} &&\
-		cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} &&\
-		${PYTHON_CMD} -c "import sipconfig" &&\
-		${PYTHON_CMD} -O -c "import sipconfig" &&\
-		${PYTHON_CMD} -c "import sipdistutils" &&\
-		${PYTHON_CMD} -O -c "import sipdistutils"
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-f -d ${PYTHONPREFIX_SITELIBDIR} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-f -d ${PYTHONPREFIX_SITELIBDIR} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>

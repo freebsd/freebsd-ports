@@ -9,3 +9,4 @@ sbin/launchd
 @dir share/launchd/agents
 @dir share/launchd/daemons
 @dir /var/db/launchd
+@dir /var/cache/launchd

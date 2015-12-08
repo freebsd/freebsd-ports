@@ -1,5 +1,5 @@
---- chrome/chrome_browser_ui.gypi.orig	2015-10-14 16:42:08.849931000 +0200
-+++ chrome/chrome_browser_ui.gypi	2015-10-14 16:45:35.205417000 +0200
+--- chrome/chrome_browser_ui.gypi.orig	2015-10-13 15:04:32.000000000 -0400
++++ chrome/chrome_browser_ui.gypi	2015-10-14 08:19:30.748417000 -0400
 @@ -2921,7 +2921,7 @@
              }],
            ],

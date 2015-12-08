@@ -15,11 +15,11 @@ COMMENT=	Intelligent Chinese encoding converter
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-OPTIONS_DEFINE=	DOCS
-
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAG|CFLAGS|' -e 's|make|$$(MAKE)|' \
@@ -28,7 +28,7 @@ post-patch:
 		-e 's|CFLAGS=|&${CPPFLAGS} ${CFLAGS} |' \
 		${WRKSRC}/Makefile ${WRKSRC}/hzconvert/Makefile
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ChangeLog Readme TODO Thanks Version ${STAGEDIR}${DOCSDIR}/
 

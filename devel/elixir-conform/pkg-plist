@@ -37,7 +37,6 @@ lib/elixir/lib/conform/lib/conform/types/enum.ex
 lib/elixir/lib/conform/lib/conform/utils/code.ex
 lib/elixir/lib/conform/lib/conform/utils/utils.ex
 lib/elixir/lib/conform/lib/conform/validators/range_validator.ex
-lib/elixir/lib/conform/lib/mix/plugins/exrm_conform.ex
 lib/elixir/lib/conform/lib/mix/tasks/conform.archive.ex
 lib/elixir/lib/conform/lib/mix/tasks/conform.configure.ex
 lib/elixir/lib/conform/lib/mix/tasks/conform.effective.ex

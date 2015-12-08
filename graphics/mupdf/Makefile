@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -13,12 +13,14 @@ MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Lightweight PDF viewer and toolkit
 
 LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
 		libopenjp2.so:${PORTSDIR}/graphics/openjpeg
 
+CFLAGS+=	-I${WRKSRC}/include/mupdf
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes
 USES=		cpe compiler:c++11-lang gmake jpeg pkgconfig
@@ -55,7 +57,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/build/pic/libmupdf.a \
 		${STAGEDIR}${PREFIX}/lib/libmupdf_pic.a
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 ${STAGEDIR}${PREFIX}/bin/mupdf
-.for binary in mudraw mutool mujstest mupdf mupdf-x11-curl
+.for binary in mutool mujstest mupdf mupdf-x11-curl
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${binary}
 .endfor
 

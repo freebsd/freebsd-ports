@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ghdl
-PORTVERSION=	0.32
-PORTREVISION=	2
+PORTVERSION=	0.33
+DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -19,9 +19,8 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 
 USES=		ada gmake
 USE_GITHUB=	yes
-GH_ACCOUNT=	hanzer
-GH_PROJECT=	gVHDL
-GH_TAGNAME=	5adb2f6
+GH_ACCOUNT=	tgingold
+GH_PROJECT=	ghdl
 
 GNU_CONFIGURE=	yes
 GCCVER=		4.9.2
@@ -31,7 +30,7 @@ BUILDDIR=	${WRKDIR}/build
 GCCSRCDIR=	${WRKDIR}/gcc-${GCCVER}
 CFG_SCRIPT=	${GCCSRCDIR}/configure
 PKG_PREFIX=	${PREFIX}/ghdl
-LINKER_COMMAND=	${LOCALBASE}/gcc-aux/bin/gcc
+LINKER_COMMAND=	${LOCALBASE}/${ADAXX}-aux/bin/gcc
 
 GHDL_ARGS=	--enable-languages="c,vhdl" \
 		--build=${BLD_TARGET} \
@@ -68,9 +67,6 @@ PLIST_SUB=		DRAGONFLY="@comment " FREEBSD=""
 
 .if ${OPSYS} == FreeBSD
 MODERN_BINUTILS=	yes
-.  if ${OSREL:R} == 8 && ${ARCH} == i386
-BROKEN=		get_pc_thunk.cx errors
-.  endif
 .endif
 
 .if ${ARCH:S/amd64/x86_64/} == x86_64
@@ -100,7 +96,7 @@ PLIST_SUB+=	GLEX=ghdl/libexec/gcc/${BLD_TARGET}/${GCCVER} \
 		GLIB=ghdl/lib/gcc/${BLD_TARGET}/${GCCVER} \
 		TARGET=${BLD_TARGET}
 .  if ${OPSYS} == DragonFly
-IGNORE=		Not supported by GCC backend
+IGNORE=		not supported by GCC backend
 .  endif
 .endif
 

@@ -10,5 +10,5 @@ include/amqp_tcp_socket.h
 lib/librabbitmq.a
 lib/librabbitmq.so
 lib/librabbitmq.so.4
-lib/librabbitmq.so.4.1.1
+lib/librabbitmq.so.4.1.3
 libdata/pkgconfig/librabbitmq.pc

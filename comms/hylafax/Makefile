@@ -10,6 +10,9 @@ MASTER_SITES=	ftp://ftp.hylafax.org/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fax software
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit
@@ -90,7 +93,7 @@ pre-install:
 		${STAGEDIR}${HYLAFAX_SPOOL}/info \
 		${STAGEDIR}${HYLAFAX_SPOOL}/log
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 

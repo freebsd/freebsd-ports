@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsndfile
-PORTVERSION=	1.0.25
-PORTREVISION=	5
+PORTVERSION=	1.0.26
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/files/
 
@@ -12,19 +11,16 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
 LICENSE=	LGPL21
 
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gcc-pipe \
 		--disable-sqlite \
 		--disable-alsa \
-		--disable-octave
-CPPFLAGS+=	-isystem /usr/include -isystem ${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+		--disable-octave \
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
-
-PORTDOCS=	AUTHORS ChangeLog NEWS README libsndfile.css \
-		new_file_type.HOWTO libsndfile.jpg *.html
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	CPU_CLIP EXTERNAL DOCS
 OPTIONS_DEFAULT=	EXTERNAL
@@ -41,7 +37,7 @@ EXTERNAL_CONFIGURE_OFF=	--disable-external-libs
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc / /g' ${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/doc --exclude "*Makefile*" --exclude "*.in" \
 		-cf - . | ${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -

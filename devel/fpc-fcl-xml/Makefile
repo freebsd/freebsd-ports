@@ -1,14 +1,13 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-xml
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
-COMMENT=	Free Pascal Component Library
+COMMENT=	Free Pascal XML and DOM library (FCL)
 
-USE_FPC=	fcl-async fcl-base hash iconvenc paszlib pthreads
+USE_FPC=	fcl-base fcl-res rtl-objpas iconvenc
 USE_FPC_RUN=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

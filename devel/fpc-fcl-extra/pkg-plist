@@ -1,4 +1,4 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/Package.fpc
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-extra.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/daemonapp.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/daemonapp.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/libpdaemonapp.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/daemonapp.rsj

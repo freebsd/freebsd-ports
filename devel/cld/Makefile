@@ -16,4 +16,7 @@ USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+ONLY_FOR_ARCHS=	i386 amd64 armv6 powerpc
+ONLY_FOR_ARCHS_REASON=	hardcoded set of supported archs
+
 .include <bsd.port.mk>

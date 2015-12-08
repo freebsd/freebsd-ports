@@ -24,6 +24,8 @@ MAKE_ENV=	MAKEOBJDIR=${WRKSRC}/obj
 
 .if defined(ADA_DEFAULT) && ${ADA_DEFAULT} == 49
 .include "${.CURDIR}/../gcc-aux/Makefile.version"
+.elif defined(ADA_DEFAULT) && ${ADA_DEFAULT} == 6
+.include "${.CURDIR}/../gcc6-aux/Makefile.version"
 .else
 .include "${.CURDIR}/../gcc5-aux/Makefile.version"
 .endif

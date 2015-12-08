@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/a52/Package.fpc
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/a52.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/a52/a52.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/a52/a52.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/a52/libpa52.a

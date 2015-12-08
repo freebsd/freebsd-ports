@@ -4,14 +4,14 @@
 PORTNAME=	lazarus
 PORTVERSION=	1.4.2
 DISTVERSIONSUFFIX=	-0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION:S/.0//} \
 		LOCAL/acm/freepascal
 DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	freebsd-fpc@FreeBSD.org
-COMMENT?=	A portable Delphi-like IDE for the FreePascal compiler
+COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler
 
 BUILD_DEPENDS?=	#
 RUN_DEPENDS?=	#
@@ -20,9 +20,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		gmake
 USE_GNOME=	#
-USE_FPC?=	cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-process \
-		fcl-registry fcl-res fcl-xml gtk2 ibase iconvenc mysql numlib odbc oracle \
-		pasjpeg postgres sqlite x11
+USE_FPC?=	cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json \
+		fcl-registry fcl-res fcl-xml gtk2 ibase iconvenc rtl-extra \
+		mysql numlib odbc oracle pasjpeg postgres sqlite x11
 OPT?=		"-Sgic "
 
 MAKE_ENV=	OPT=${OPT}

@@ -11,6 +11,7 @@ MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 JavaScript for client and server
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	DOCS
 

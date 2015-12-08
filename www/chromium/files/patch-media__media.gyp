@@ -1,20 +1,20 @@
---- media/media.gyp.orig	2014-10-10 09:15:31 UTC
-+++ media/media.gyp
-@@ -760,6 +760,12 @@
+--- media/media.gyp.orig	2015-10-21 18:00:38.000000000 -0400
++++ media/media.gyp	2015-10-23 12:57:14.545450000 -0400
+@@ -780,13 +780,19 @@
              ['exclude', '_alsa\\.(h|cc)$'],
            ],
          }],
+-        ['OS=="openbsd"', {
 +        ['OS=="freebsd"', {
 +          'sources!': [
-+            'video/capture/linux/v4l2_capture_delegate.cc',
-+            'video/capture/linux/video_capture_device_factory_linux.cc',
-+          ]
++            'capture/video/linux/v4l2_capture_delegate.cc',
++            'capture/video/linux/video_capture_device_factory_linux.cc',
++          ],
 +        }],
-         ['OS!="openbsd"', {
++        ['OS=="openbsd" or OS=="freebsd"', {
            'sources!': [
-             'audio/openbsd/audio_manager_openbsd.cc',
-@@ -771,7 +777,7 @@
-             'video/capture/linux/v4l2_capture_delegate_multi_plane.h',
+             'capture/video/linux/v4l2_capture_delegate_multi_plane.cc',
+             'capture/video/linux/v4l2_capture_delegate_multi_plane.h',
            ],
          }],
 -        ['OS=="linux"', {
@@ -22,8 +22,8 @@
            'conditions': [
              ['use_x11==1', {
                'dependencies': [
-@@ -1085,7 +1091,7 @@
-             'base/simd/convert_yuv_to_rgb_x86.cc',
+@@ -1122,7 +1128,7 @@
+             'base/simd/filter_yuv_sse2.cc',
            ],
          }],
 -        ['OS!="linux" and OS!="win"', {

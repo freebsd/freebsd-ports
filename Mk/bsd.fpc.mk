@@ -36,7 +36,7 @@ _FPCMKINCLUDED=	yes
 WARNING+=	"DEFAULT_FPC_VER is defined, consider using DEFAULT_VERSIONS=fpc=${DEFAULT_FPC_VER} instead"
 .endif
 
-FPC_Include_MAINTAINER=	acm@FreeBSD.org
+FPC_Include_MAINTAINER=	freebsd-fpc@FreeBSD.org
 FPC_Pre_Include=	bsd.fpc.mk
 
 DEFAULT_FPC_VER=	${FPC_DEFAULT}
@@ -64,22 +64,24 @@ BUILD_DEPENDS+=		${PPNAME}:${PORTSDIR}/lang/fpc
 
 BUILDNAME=		${FPC_ARCH}-freebsd
 UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
+MKINSTDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/fpmkinst/${BUILDNAME}
 
-_FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi fcl-async fcl-base \
-		fcl-db fcl-extra fcl-fpcunit fcl-image fcl-js fcl-json fcl-net fcl-passrc \
-		fcl-process fcl-registry fcl-res fcl-web fcl-xml fftw fpindexer \
-		fpmkunit fppkg fv gdbint gdbm gmp graph gtk2 hash \
-		hermes httpd22 httpd24 ibase iconvenc imagemagick ldap libcurl libgd \
-		libpng libvlc libxml2 lua mad matroska modplug mysql ncurses newt numlib \
-		odbc oggvorbis openal opengl openssl oracle pasjpeg paszlib pcap \
-		postgres proj4 pthreads pxlib regexpr rexx rsvg sdl sndfile sqlite \
-		svgalib symbolic syslog tcl unzip users utmp uuid x11 xforms zlib
-
-_FPC_CFG_UNITS=	fastcgi fcl-web
+_FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi \
+		fcl-async fcl-base fcl-db fcl-extra fcl-fpcunit fcl-image \
+		fcl-js fcl-json fcl-net fcl-passrc fcl-registry fcl-res \
+		fcl-sdo fcl-sound fcl-stl fcl-web fcl-xml fftw \
+		fpindexer fppkg fv gdbint gdbm gmp graph gtk2 hermes \
+		httpd22 httpd24 ibase iconvenc imagemagick ldap libcurl \
+		libgd libpng libvlc libxml2 lua mad modplug mysql \
+		ncurses newt numlib odbc oggvorbis openal opengl openssl \
+		oracle pasjpeg pcap postgres proj4 pthreads pxlib regexpr \
+		rexx rsvg rtl-console rtl-extra rtl-objpas rtl-unicode sdl \
+		sqlite svgalib symbolic syslog tcl unzip users utmp \
+		uuid x11 xforms zlib
 
 .if defined(WANT_FPC_BASE)
 .       if ${WANT_FPC_BASE:tl} == "yes"
-USE_FPC=	gdbint graph hash httpd22 httpd24 ibase mysql odbc oracle pasjpeg paszlib \
+USE_FPC=	gdbint graph httpd22 httpd24 ibase mysql odbc oracle pasjpeg \
 		postgres pthreads regexpr sqlite
 .       else
 IGNORE= unknown value, please use "yes" instead of
@@ -105,7 +107,6 @@ IGNORE= cannot install: unknown FPC unit ${UNITS}
 # Base units
 gdbint_UNIT=	devel/fpc-gdbint
 graph_UNIT=	graphics/fpc-graph
-hash_UNIT=	security/fpc-hash
 httpd22_UNIT=	www/fpc-httpd22
 httpd24_UNIT=	www/fpc-httpd24
 ibase_UNIT=	databases/fpc-ibase
@@ -113,7 +114,6 @@ mysql_UNIT=	databases/fpc-mysql
 odbc_UNIT=	databases/fpc-odbc
 oracle_UNIT=	databases/fpc-oracle
 pasjpeg_UNIT=	graphics/fpc-pasjpeg
-paszlib_UNIT=	archivers/fpc-paszlib
 postgres_UNIT=	databases/fpc-postgres
 pthreads_UNIT=	devel/fpc-pthreads
 regexpr_UNIT=	devel/fpc-regexpr
@@ -140,14 +140,15 @@ fcl_js_UNIT=	devel/fpc-fcl-js
 fcl_json_UNIT=	devel/fpc-fcl-json
 fcl_net_UNIT=	devel/fpc-fcl-net
 fcl_passrc_UNIT=	devel/fpc-fcl-passrc
-fcl_process_UNIT=	devel/fpc-fcl-process
 fcl_registry_UNIT=	devel/fpc-fcl-registry
 fcl_res_UNIT=	devel/fpc-fcl-res
+fcl_sdo_UNIT=	devel/fpc-fcl-sdo
+fcl_sound_UNIT=	devel/fpc-fcl-sound
+fcl_stl_UNIT=	devel/fpc-fcl-stl
 fcl_web_UNIT=	devel/fpc-fcl-web
 fcl_xml_UNIT=	devel/fpc-fcl-xml
 fftw_UNIT=	math/fpc-fftw
 fpindexer_UNIT=	databases/fpc-fpindexer
-fpmkunit_UNIT=	devel/fpc-fpmkunit
 fppkg_UNIT=	devel/fpc-fppkg
 fpvectorial_UNIT=	graphics/fpc-fpvectorial
 fv_UNIT=	devel/fpc-fv
@@ -165,7 +166,6 @@ libvlc_UNIT=	multimedia/fpc-libvlc
 libxml2_UNIT=	textproc/fpc-libxml2
 lua_UNIT=	lang/fpc-lua
 mad_UNIT=	audio/fpc-mad
-matroska_UNIT=	multimedia/fpc-matroska
 modplug_UNIT=	audio/fpc-modplug
 newt_UNIT=	devel/fpc-newt
 ncurses_UNIT=	graphics/fpc-ncurses
@@ -179,8 +179,11 @@ proj4_UNIT=	graphics/fpc-proj4
 pxlib_UNIT=	databases/fpc-pxlib
 rexx_UNIT=	lang/fpc-rexx
 rsvg_UNIT=	graphics/fpc-rsvg
+rtl_console_UNIT=	lang/fpc-rtl-console
+rtl_extra_UNIT=		lang/fpc-rtl-extra
+rtl_objpas_UNIT=	lang/fpc-rtl-objpas
+rtl_unicode_UNIT=	lang/fpc-rtl-unicode
 sdl_UNIT=	devel/fpc-sdl
-sndfile_UNIT=	audio/fpc-sndfile
 svgalib_UNIT=	graphics/fpc-svgalib
 symbolic_UNIT=	devel/fpc-symbolic
 syslog_UNIT=	sysutils/fpc-syslog
@@ -196,18 +199,11 @@ zlib_UNIT=	devel/fpc-zlib
 .endif
 
 .if defined(_POSTMKINCLUDED) && defined(USE_FPC)
-.	for UNITS in ${USE_FPC}
-.		if ${_FPC_ALL_UNITS:M${UNITS}}!=""
-.			if ${_FPC_CFG_UNITS:M${UNITS}}!=""
-BUILD_DEPENDS+= ${UNITSDIR}/${UNITS}/fpunits.cfg:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
-.				if defined(USE_FPC_RUN)
-RUN_DEPENDS+=   ${UNITSDIR}/${UNITS}/fpunits.cfg:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
-.				endif
-.			else
-BUILD_DEPENDS+= ${UNITSDIR}/${UNITS}/Package.fpc:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
-.				if defined(USE_FPC_RUN)
-RUN_DEPENDS+=   ${UNITSDIR}/${UNITS}/Package.fpc:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
-.				endif
+.	for UNIT in ${USE_FPC}
+.		if ${_FPC_ALL_UNITS:M${UNIT}} != ""
+BUILD_DEPENDS+= ${MKINSTDIR}/${UNIT}.fpm:${PORTSDIR}/${${UNIT:S/-/_/}_UNIT}
+.			if defined(USE_FPC_RUN)
+RUN_DEPENDS+=   ${MKINSTDIR}/${UNIT}.fpm:${PORTSDIR}/${${UNIT:S/-/_/}_UNIT}
 .			endif
 
 security-check: fpc-check-install
