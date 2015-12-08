@@ -11,7 +11,8 @@ DISTNAME=	${QSCI2_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4 port of the Scintilla C++ editor class
 
-USES=		qmake
+USES=		qmake pyqt:4
+USE_PYQT=	#
 USE_QT4=	moc_build gui xml designer
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
@@ -25,7 +26,6 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 
-.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
 post-patch:

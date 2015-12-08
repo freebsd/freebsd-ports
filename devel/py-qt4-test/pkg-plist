@@ -1,7 +1,7 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtTest.so
-share/py-sip/QtTest/QtTestmod.sip
-share/py-sip/QtTest/qtestcase.sip
-share/py-sip/QtTest/qtestkeyboard.sip
-share/py-sip/QtTest/qtestmouse.sip
-share/py-sip/QtTest/qtestsystem.sip
+%%PYQT_SIPDIR%%/QtTest/QtTestmod.sip
+%%PYQT_SIPDIR%%/QtTest/qtestcase.sip
+%%PYQT_SIPDIR%%/QtTest/qtestkeyboard.sip
+%%PYQT_SIPDIR%%/QtTest/qtestmouse.sip
+%%PYQT_SIPDIR%%/QtTest/qtestsystem.sip
 %%API%%share/qt4/qsci/api/python/QtTest.api

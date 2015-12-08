@@ -14,16 +14,14 @@ COMMENT=	Qt4 Designer plugin for QScintilla2
 
 LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 
-DISTINFO_FILE=	${QSCI2_DISTINFO_FILE}
-USES=		qmake
+DISTINFO_FILE=	${.CURDIR:H}/qscintilla2/distinfo
+USES=		qmake pyqt:4
 USE_QT4=	qmake_build moc_build gui xml designer
 HAS_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/designer-Qt4Qt5
 
 PLIST_FILES=	%%QT_PLUGINDIR%%/designer/libqscintillaplugin.so
-
-.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 
 pre-configure:
 	${REINPLACE_CMD} -e \

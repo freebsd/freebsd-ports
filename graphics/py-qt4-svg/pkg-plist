@@ -1,7 +1,7 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtSvg.so
-share/py-sip/QtSvg/QtSvgmod.sip
-share/py-sip/QtSvg/qgraphicssvgitem.sip
-share/py-sip/QtSvg/qsvggenerator.sip
-share/py-sip/QtSvg/qsvgrenderer.sip
-share/py-sip/QtSvg/qsvgwidget.sip
+%%PYQT_SIPDIR%%/QtSvg/QtSvgmod.sip
+%%PYQT_SIPDIR%%/QtSvg/qgraphicssvgitem.sip
+%%PYQT_SIPDIR%%/QtSvg/qsvggenerator.sip
+%%PYQT_SIPDIR%%/QtSvg/qsvgrenderer.sip
+%%PYQT_SIPDIR%%/QtSvg/qsvgwidget.sip
 %%API%%share/qt4/qsci/api/python/QtSvg.api
