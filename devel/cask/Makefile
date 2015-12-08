@@ -5,7 +5,6 @@ PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	devel elisp
-DISTNAME=	cask-v${PORTVERSION}
 
 MAINTAINER=	rpaulo@FreeBSD.org
 COMMENT=	Project management tool for Emacs

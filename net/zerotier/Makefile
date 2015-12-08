@@ -5,7 +5,6 @@ PORTNAME=	zerotier
 DISTVERSION=	1.1.0
 CATEGORIES=	net
 MASTER_SITES=	GH
-DISTNAME=	ZeroTierOne
 
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	Network virtualization everywhere

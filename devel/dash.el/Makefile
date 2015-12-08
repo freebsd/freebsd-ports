@@ -3,7 +3,6 @@
 PORTNAME=	dash.el
 PORTVERSION=	2.11.0
 CATEGORIES=	devel elisp
-DISTNAME=	dash-${PORTVERSION}
 
 MAINTAINER=	rpaulo@FreeBSD.org
 COMMENT=	Modern list library for Emacs

@@ -4,7 +4,6 @@
 PORTNAME?=	svxlink
 PORTVERSION=	14.08
 CATEGORIES=	comms hamradio
-DISTNAME=	svxlink-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT?=	General purpose ham radio voice services
