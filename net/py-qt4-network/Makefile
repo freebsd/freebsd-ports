@@ -8,11 +8,11 @@ CATEGORIES=	net devel python
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt4 toolkit, QtNetwork module
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
-RUN_DEPENDS=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core
-
 CONFIGURE_ARGS=	--enable QtNetwork
-PYQT4_DIST=	yes
+PYQT_DIST=	yes
+
+USES=		python pyqt:4
+USE_PYQT=	sip_build core_run
 USE_QT4=	moc_build network qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
@@ -25,5 +25,4 @@ API_CONFIGURE_OFF=	--no-qsci-api
 API_LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 DEBUG_CONFIGURE_ON=	--debug --trace
 
-.include "${.CURDIR}/../../devel/py-qt4/bsd.pyqt.mk"
 .include <bsd.port.mk>
