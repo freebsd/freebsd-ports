@@ -3,6 +3,7 @@
 
 PORTNAME=	zsh
 DISTVERSION=	5.2
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	\
 		http://www.zsh.org/pub/:doc \
@@ -11,7 +12,7 @@ MASTER_SITES=	\
 		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Z shell
 
 LICENSE=	ZSH
@@ -42,8 +43,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no
 CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-function-subdirs --enable-multibyte \
-		--sysconfdir=${PREFIX}/etc \
-		--enable-etcdir=${PREFIX}/etc
+		--sysconfdir=${PREFIX}/etc
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 #EXTRA_COMPLETION_FILES=	_sockstat
