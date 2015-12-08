@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	zogftw
-PORTVERSION=	0.0.2014.12.12
+PORTVERSION=	0.0.2015.11.21
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.fabiankeil.de/sourcecode/zogftw/
-DISTNAME=	${PORTNAME}-2014-12-12-71f792b
+MASTER_SITES=	https://www.fabiankeil.de/sourcecode/zogftw/
+DISTNAME=	${PORTNAME}-2015-11-21-0a21288
 
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Creates redundant backups on encrypted ZFS pools
