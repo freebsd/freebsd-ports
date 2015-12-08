@@ -31,10 +31,8 @@ OPTIONS_DEFAULT=	ZFS_FACTS
 RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
 .endif
 
-post-patch:
-.if empty(PORT_OPTIONS:MZFS_FACTS)
+post-patch-ZFS_FACTS-off:
 	@${REINPLACE_CMD} -e 's/\,\ \"lib\/facter\/zfs_version.rb\"//' ${WRKSRC}/${PORTNAME}.gemspec
 	@${REINPLACE_CMD} -e 's/\,\ \"lib\/facter\/zpool_version.rb\"//' ${WRKSRC}/${PORTNAME}.gemspec
-.endif
 
 .include <bsd.port.post.mk>
