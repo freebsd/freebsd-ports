@@ -698,6 +698,7 @@
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools
+    SUBDIR += py-django-transaction-hooks
     SUBDIR += py-Elixir
     SUBDIR += py-MySQLdb
     SUBDIR += py-MySQLdb55
