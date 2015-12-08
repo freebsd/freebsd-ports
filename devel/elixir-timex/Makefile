@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	timex
-PORTVERSION=	1.0.0rc3
+DISTVERSION=	1.0.0-rc3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
@@ -13,7 +13,6 @@ LICENSE=	MIT
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitwalker
-GH_TAGNAME=	1.0.0-rc3
 
 MIX_BUILD_DEPS= devel/elixir-combine \
 		devel/elixir-tzdata \

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ming
-PORTVERSION=	0.4.7
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	0_4_7
 CATEGORIES=	graphics perl5
 PKGNAMEPREFIX=	p5-
 
@@ -33,7 +34,6 @@ WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/perl_ext
 USE_GITHUB=	yes
 GH_ACCOUNT=	lib${PORTNAME}
 GH_PROJECT=	lib${PORTNAME}
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/ming_is_compiled()/ s|^|#|; /LIBS/d' ${WRKSRC}/Makefile.PL
