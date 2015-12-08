@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-haystack
-PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	www databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,7 @@ COMMENT=	Pluggable search for Django
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:${PORTSDIR}/www/py-django16
 
 USES=		python
 USE_PYTHON=	distutils autoplist
