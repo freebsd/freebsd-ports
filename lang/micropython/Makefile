@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	micropython
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	lang python
 
 MAINTAINER=	mva@FreeBSD.org
@@ -14,9 +15,6 @@ LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 USES=		gmake pkgconfig python:3,build readline shebangfix
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	micropython
-GH_PROJECT=	micropython
-GH_TAGNAME=	v1.4
 
 PLIST_FILES=	bin/micropython
 

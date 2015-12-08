@@ -16,7 +16,6 @@ LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NVIDIA
-GH_TAGNAME=	${PORTVERSION}
 
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig

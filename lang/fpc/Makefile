@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fpc
-PORTVERSION=	3.0.0
+DISTVERSIONPREFIX=	release_
+DISTVERSION=	3_0_0
 PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	http://leaf.dragonflybsd.org/~marino/dports-src/:DragonFlybootstrap \
@@ -22,7 +23,6 @@ MANVER=		3.0.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	fpc-svn
 GH_PROJECT=	fpc
-GH_TAGNAME=	release_${DISTVERSION:S/./_/g}
 FPCSRCDIR=	${GH_PROJECT}-${GH_TAGNAME}
 
 .include <bsd.port.pre.mk>
