@@ -1552,6 +1552,7 @@
     SUBDIR += py-django-picklefield
     SUBDIR += py-django-pipeline
     SUBDIR += py-django-pipeline12
+    SUBDIR += py-django-pipeline13
     SUBDIR += py-django-pipeline14
     SUBDIR += py-django-piston
     SUBDIR += py-django-profiles
