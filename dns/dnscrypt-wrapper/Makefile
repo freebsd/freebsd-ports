@@ -2,6 +2,7 @@
 
 PORTNAME=	dnscrypt-wrapper
 PORTVERSION=	0.2
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	dns
 
@@ -16,7 +17,6 @@ LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cofyc
-GH_TAGNAME=	v${PORTVERSION}
 
 USERS=		_dnscrypt-wrapper
 ETCDNSCRYPTWRAPPER=	${PREFIX}/etc/${PORTNAME}

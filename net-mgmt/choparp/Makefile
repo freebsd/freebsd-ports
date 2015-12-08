@@ -3,6 +3,7 @@
 
 PORTNAME=	choparp
 PORTVERSION=	20150613
+DISTVERSIONPREFIX=	release/
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	garga@FreeBSD.org
@@ -12,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	quinot
-GH_TAGNAME=	release/${PORTVERSION}
 USE_RC_SUBR=	choparp
 LDFLAGS+=	-lpcap
 
