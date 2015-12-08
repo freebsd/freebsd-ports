@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="215e740e-9c56-11e5-90e7-b499baebfeaf">
+    <topic>libressl -- NULL pointer dereference</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<range><lt>2.2.5</lt></range>
+	<range><ge>2.3.0</ge><lt>2.3.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenBSD project reports:</p>
+	<blockquote cite="https://marc.info/?l=openbsd-announce&amp;t=144920914600002">
+	  <p>A NULL pointer deference could be triggered by a crafted
+	    certificate sent to services configured to verify client
+	    certificates on TLS/SSL connections.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://marc.info/?l=openbsd-announce&amp;t=144920914600002</url>
+      <cvename>CVE-2015-3194</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-03</discovery>
+      <entry>2015-12-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="918a5d1f-9d40-11e5-8f5c-002590263bf5">
     <topic>KeePassX -- information disclosure</topic>
     <affects>
