@@ -42,16 +42,11 @@ SA_DIR=			${PREFIX}/${OCAML_SITELIBDIR}
 
 OPTIONS_DEFINE=		DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-docs --docdir ${STAGEDIR}${DOCSDIR}
+DOCS_CONFIGURE_ENABLE=	docs
+DOCS_CONFIGURE_ON=	--docdir ${STAGEDIR}${DOCSDIR}
 # For some reason, ocaml-text is needed when building documentation
-BUILD_DEPENDS+=		${SA_DIR}/text/text.a:${PORTSDIR}/textproc/ocaml-text
-RUN_DEPENDS+=		${SA_DIR}/text/text.a:${PORTSDIR}/textproc/ocaml-text
-.else
-CONFIGURE_ARGS+=	--disable-docs
-.endif
+DOCS_BUILD_DEPENDS=	${SA_DIR}/text/text.a:${PORTSDIR}/textproc/ocaml-text
+DOCS_RUN_DEPENDS=	${SA_DIR}/text/text.a:${PORTSDIR}/textproc/ocaml-text
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"install" :: findlib_name,"install" :: "-destdir ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib" :: "-ldconf /dev/null" :: findlib_name,' \
