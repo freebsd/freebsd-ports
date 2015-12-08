@@ -1,0 +1,47 @@
+--- Makefile.include.orig	2015-10-24 12:09:14 UTC
++++ Makefile.include
+@@ -1,40 +1,7 @@
+-USE_BUILDROOT=0
+-FLOAT=hard
+-
+-ifeq ($(USE_BUILDROOT), 1)
+-BUILDROOT	:=/opt/xbmc-bcm/buildroot
+-SDKSTAGE	:=$(BUILDROOT)/output/staging
+-TARGETFS	:=$(BUILDROOT)/output/target
+-TOOLCHAIN	:=$(BUILDROOT)/output/host/usr/
+-HOST			:=arm-unknown-linux-gnueabi
+-SYSROOT		:=$(BUILDROOT)/output/host/usr/arm-unknown-linux-gnueabi/sysroot
+-else
+-BUILDROOT	:=/opt/bcm-rootfs
+-SDKSTAGE	:=/opt/bcm-rootfs
+-TARGETFS	:=/opt/bcm-rootfs
+-TOOLCHAIN	:=/home/dc4/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/
+-HOST		:=arm-linux-gnueabihf
+-#SYSROOT		:=$(TOOLCHAIN)/arm-bcm2708hardfp-linux-gnueabi/sysroot
+-SYSROOT		:=/opt/bcm-rootfs
+-endif
+-
+-JOBS=7
+-
+-CFLAGS			:= -isystem$(PREFIX)/include
+-CXXFLAGS		:= $(CFLAGS)
+-CPPFLAGS		:= $(CFLAGS)
+-LDFLAGS			:= -L$(BUILDROOT)/lib
+-LD					:= $(TOOLCHAIN)/bin/$(HOST)-ld --sysroot=$(SYSROOT)
+-CC					:= $(TOOLCHAIN)/bin/$(HOST)-gcc --sysroot=$(SYSROOT)
+-CXX         := $(TOOLCHAIN)/bin/$(HOST)-g++ --sysroot=$(SYSROOT)
+-OBJDUMP			:= $(TOOLCHAIN)/bin/$(HOST)-objdump
+-RANLIB			:= $(TOOLCHAIN)/bin/$(HOST)-ranlib
+-STRIP				:= $(TOOLCHAIN)/bin/$(HOST)-strip
+-AR 					:= $(TOOLCHAIN)/bin/$(HOST)-ar
++LDFLAGS			:= -L$(LOCALBASE)/lib -L$(LOCALBASE)/lib/ffmpeg
+ CXXCP 			:= $(CXX) -E
+-PATH 				:= $(PREFIX)/bin:$(BUILDROOT)/output/host/usr/bin:$(PATH)
++STRIP			:= strip
++FLOAT			:= softfp
+ 
+ CFLAGS			+= -pipe -mfloat-abi=$(FLOAT) -mcpu=arm1176jzf-s -fomit-frame-pointer -mabi=aapcs-linux -mtune=arm1176jzf-s -mfpu=vfp -Wno-psabi -mno-apcs-stack-check -g -mstructure-size-boundary=32 -mno-sched-prolog
+-LDFLAGS			+= -L$(SDKSTAGE)/lib -L$(SDKSTAGE)/usr/lib -L$(SDKSTAGE)/opt/vc/lib/ -Lpcre/build
+-#INCLUDES		+= -isystem$(SDKSTAGE)/usr/include -isystem$(SDKSTAGE)/opt/vc/include -isystem$(SYSROOT)/usr/include -isystem$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -isystem$(SDKSTAGE)/usr/include/freetype2
+-INCLUDES		+= -isystem$(SDKSTAGE)/opt/vc/include -isystem$(SYSROOT)/usr/include -isystem$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -Ipcre/build -Iboost-trunk -Ifreetype2/include
++INCLUDES		+= -I$(LOCALBASE)/include -I$(LOCALBASE)/include/interface/vcos/pthreads -I$(LOCALBASE)/include/interface/vmcs_host/linux -I$(LOCALBASE)/lib/dbus-1.0/include

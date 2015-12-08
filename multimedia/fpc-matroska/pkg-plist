@@ -1,4 +1,0 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/matroska/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/matroska/matroska.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/matroska/matroska.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/matroska/libpmatroska.a

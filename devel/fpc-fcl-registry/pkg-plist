@@ -1,7 +1,6 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/xmlreg.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/registry.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/xmlreg.o
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-registry.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/registry.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/libpxmlreg.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/libpregistry.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/registry.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/registry.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/xmlreg.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-registry/xmlreg.ppu

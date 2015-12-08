@@ -58,6 +58,228 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="918a5d1f-9d40-11e5-8f5c-002590263bf5">
+    <topic>KeePassX -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>KeePassX</name>
+	<range><lt>0.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yves-Alexis Perez reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/30/4">
+	  <p>Starting an export (using File / Export to / KeepassX XML file) and
+	    cancelling it leads to KeepassX saving a cleartext XML file in
+	    ~/.xml without any warning.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8378</cvename>
+      <freebsdpr>ports/205105</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/30/4</url>
+    </references>
+    <dates>
+      <discovery>2015-07-08</discovery>
+      <entry>2015-12-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="84fdd1bb-9d37-11e5-8f5c-002590263bf5">
+    <topic>passenger -- client controlled header overwriting</topic>
+    <affects>
+      <package>
+	<name>rubygem-passenger</name>
+	<range><ge>5.0.0</ge><lt>5.0.22</lt></range>
+	<range><lt>4.0.60</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Daniel Knoppel reports:</p>
+	<blockquote cite="https://blog.phusion.nl/2015/12/07/cve-2015-7519/">
+	  <p>It was discovered by the SUSE security team that it was possible,
+	    in some cases, for clients to overwrite headers set by the server,
+	    resulting in a medium level security issue. CVE-2015-7519 has been
+	    assigned to this issue.</p>
+	  <p>Affected use-cases:</p>
+	  <p>Header overwriting may occur if all of the following conditions are met:</p>
+	  <ul>
+	    <li>Apache integration mode, or standalone+builtin engine without
+	      a filtering proxy</li>
+	    <li>Ruby or Python applications only (Passenger 5); or any
+	      application (Passenger 4)</li>
+	    <li>The app depends on a request header containing a dash (-)</li>
+	    <li>The header is supposed to be trusted (set by the server)</li>
+	    <li>The client correctly guesses the header name</li>
+	  </ul>
+	  <p>This vulnerability has been fixed by filtering out client headers
+	    that do not consist of alphanumeric/dash characters (Nginx already
+	    did this, so Passenger+Nginx was not affected). If your application
+	    depends on headers that don't conform to this, you can add a
+	    workaround in Apache specifically for those to convert them to a
+	    dash-based format.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7519</cvename>
+      <url>https://blog.phusion.nl/2015/12/07/cve-2015-7519/</url>
+    </references>
+    <dates>
+      <discovery>2015-12-07</discovery>
+      <entry>2015-12-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e6b974ab-9d35-11e5-8f5c-002590263bf5">
+    <topic>Salt -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>py27-salt</name>
+	<range><lt>2015.8.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Salt release notes report:</p>
+	<blockquote cite="https://docs.saltstack.com/en/latest/topics/releases/2015.8.3.html">
+	  <p>CVE-2015-8034: Saving state.sls cache data to disk with insecure
+	    permissions</p>
+	  <p>This affects users of the state.sls function. The state run cache
+	    on the minion was being created with incorrect permissions. This
+	    file could potentially contain sensitive data that was inserted via
+	    jinja into the state SLS files. The permissions for this file are
+	    now being set correctly. Thanks to @zmalone for bringing this issue
+	    to our attention.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8034</cvename>
+      <url>https://docs.saltstack.com/en/latest/topics/releases/2015.8.3.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-25</discovery>
+      <entry>2015-12-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6bc6eed2-9cca-11e5-8c2b-c335fa8985d7">
+    <topic>libraw -- memory objects not properly initialized</topic>
+    <affects>
+      <package>
+	<name>libraw</name>
+	<range><lt>0.17.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ChenQin reports:</p>
+	<blockquote cite="http://seclists.org/fulldisclosure/2015/Nov/108">
+	  <p>The LibRaw raw image decoder has multiple vulnerabilities that can
+	    cause memory errors which may lead to code execution or other
+	    problems.</p>
+	  <p>In CVE-2015-8367, LibRaw's phase_one_correct function does not
+	    handle memory initialization correctly, which may cause other
+	    problems.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.libraw.org/news/libraw-0-17-1</url>
+      <url>https://github.com/LibRaw/LibRaw/commit/490ef94d1796f730180039e80997efe5c58db780</url>
+      <mlist>http://seclists.org/fulldisclosure/2015/Nov/108</mlist>
+      <cvename>CVE-2015-8367</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-30</discovery>
+      <entry>2015-12-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="db04bf07-9cc8-11e5-8c2b-c335fa8985d7">
+    <topic>libraw -- index overflow in smal_decode_segment</topic>
+    <affects>
+      <package>
+	<name>libraw</name>
+	<range><lt>0.17.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ChenQin reports:</p>
+	<blockquote cite="http://seclists.org/fulldisclosure/2015/Nov/108">
+	  <p>The LibRaw raw image decoder has multiple vulnerabilities that can
+	    cause memory errors which may lead to code execution or other
+	    problems.</p>
+	  <p>In CVE-2015-8366, LibRaw's smal_decode_segment function does not
+	    handle indexes carefully, which can cause an index overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.libraw.org/news/libraw-0-17-1</url>
+      <url>https://github.com/LibRaw/LibRaw/commit/89d065424f09b788f443734d44857289489ca9e2</url>
+      <mlist>http://seclists.org/fulldisclosure/2015/Nov/108</mlist>
+      <cvename>CVE-2015-8366</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-30</discovery>
+      <entry>2015-12-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4c8d1d72-9b38-11e5-aece-d050996490d0">
+    <topic>openssl -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.0.2_5</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.2e</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-openssl</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20151203.txt">
+	  <ol>
+	    <li>BN_mod_exp may produce incorrect results on x86_64
+	      (CVE-2015-3193)</li>
+	    <li>Certificate verify crash with missing PSS parameter
+	      (CVE-2015-3194)</li>
+	    <li>X509_ATTRIBUTE memory leak (CVE-2015-3195)</li>
+	    <li>Race condition handling PSK identify hint
+	      (CVE-2015-3196)</li>
+	    <li>Anon DH ServerKeyExchange with 0 p parameter
+	      (CVE-2015-1794)</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1794</cvename>
+      <cvename>CVE-2015-3193</cvename>
+      <cvename>CVE-2015-3194</cvename>
+      <cvename>CVE-2015-3195</cvename>
+      <cvename>CVE-2015-3196</cvename>
+      <url>https://www.openssl.org/news/secadv/20151203.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-12-03</discovery>
+      <entry>2015-12-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8a90dc87-89f9-11e5-a408-00248c0c745d">
     <topic>PHPmailer -- SMTP injection vulnerability</topic>
     <affects>
@@ -913,11 +1135,12 @@ Notes:
       <url>http://www.openwall.com/lists/oss-security/2015/11/12/2</url>
       <url>http://www.openwall.com/lists/oss-security/2015/12/03/6</url>
       <cvename>CVE-2015-8126</cvename>
+      <cvename>CVE-2015-8472</cvename>
     </references>
     <dates>
       <discovery>2015-11-15</discovery>
       <entry>2015-11-15</entry>
-      <modified>2015-12-03</modified>
+      <modified>2015-12-08</modified>
     </dates>
   </vuln>
 

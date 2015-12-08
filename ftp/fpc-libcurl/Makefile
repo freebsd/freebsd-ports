@@ -1,7 +1,6 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	ftp lang
 PKGNAMESUFFIX=	-libcurl
 

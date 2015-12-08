@@ -10,11 +10,11 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library that allows Ruby to 'tail' files
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-tins>=1.0:${PORTSDIR}/devel/rubygem-tins
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

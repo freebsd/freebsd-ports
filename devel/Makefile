@@ -431,6 +431,7 @@
     SUBDIR += elixir-calendar
     SUBDIR += elixir-combine
     SUBDIR += elixir-conform
+    SUBDIR += elixir-conform_exrm
     SUBDIR += elixir-connection
     SUBDIR += elixir-coverex
     SUBDIR += elixir-csv
@@ -544,12 +545,13 @@
     SUBDIR += fpc-fcl-json
     SUBDIR += fpc-fcl-net
     SUBDIR += fpc-fcl-passrc
-    SUBDIR += fpc-fcl-process
     SUBDIR += fpc-fcl-registry
     SUBDIR += fpc-fcl-res
+    SUBDIR += fpc-fcl-sdo
+    SUBDIR += fpc-fcl-sound
+    SUBDIR += fpc-fcl-stl
     SUBDIR += fpc-fcl-web
     SUBDIR += fpc-fcl-xml
-    SUBDIR += fpc-fpmkunit
     SUBDIR += fpc-fppkg
     SUBDIR += fpc-fv
     SUBDIR += fpc-gdbint
@@ -2903,6 +2905,7 @@
     SUBDIR += p5-PerlIO-locale
     SUBDIR += p5-PerlIO-utf8_strict
     SUBDIR += p5-PerlIO-via-MD5
+    SUBDIR += p5-PerlIO-via-Timeout
     SUBDIR += p5-PerlIO-via-dynamic
     SUBDIR += p5-PerlIO-via-symlink
     SUBDIR += p5-PerlX-Maybe

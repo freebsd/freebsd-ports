@@ -67,7 +67,7 @@ post-patch:
 		${WRKSRC}/linuxx86/linuxx86.cor/nls/*/module.ini
 
 do-install:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' ${WRKDIR}/linuxx86/hinst
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' ${WRKSRC}/linuxx86/hinst
 	@if (test -d "${CDIR}") ; \
 	then \
 		${ECHO} "-----------------------------------------------------------" ; \
@@ -84,8 +84,8 @@ do-install:
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 	${MKDIR} ${STAGEDIR}${CDIR}
 	${MKDIR} ${STAGEDIR}${CDIR}/config
-	cd ${WRKDIR}/linuxx86/linuxx86.cor/ && ${COPYTREE_SHARE} . ${STAGEDIR}${CDIR}
-	${CP} ${WRKDIR}/setupwfc ${STAGEDIR}${CDIR}
+	cd ${WRKSRC}/linuxx86/linuxx86.cor/ && ${COPYTREE_SHARE} . ${STAGEDIR}${CDIR}
+	${CP} ${WRKSRC}/setupwfc ${STAGEDIR}${CDIR}
 
 .if defined(ICA_CERTS)
 	${MKDIR} ${STAGEDIR}${CERTDIR}

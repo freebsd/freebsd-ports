@@ -1,0 +1,13 @@
+This package implements a PerlIO layer, that adds read / write
+timeout. This can be useful to avoid blocking while accessing a
+handle (file, socket, ...), and fail after some time.
+
+The timeout is implemented by using <select> on the handle before
+reading/writing.
+
+WARNING the handle won't timeout if you use sysread or syswrite on
+it, because these functions works at a lower level. However if
+you're trying to implement a timeout for a socket, see IO::Socket::Timeout
+that implements exactly that.
+
+WWW: http://search.cpan.org/dist/PerlIO-via-Timeout

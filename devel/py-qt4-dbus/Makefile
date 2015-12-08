@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	dbus
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt4 toolkit, QtDBus module
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus \
-		${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
+RUN_DEPENDS=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core
 
 CONFIGURE_ARGS=	--enable QtDBus
 PYQT4_DIST=	yes

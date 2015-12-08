@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x265
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://bitbucket.org/multicoreware/${PORTNAME}/get/
 DISTNAME=	${PORTVERSION}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 USES=		cmake tar:bz2
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/multicoreware-${PORTNAME}-8425278def1e/source
+WRKSRC=		${WRKDIR}/multicoreware-${PORTNAME}-e27327f5da35/source
 
 post-patch:
 	@${REINPLACE_CMD} -e \

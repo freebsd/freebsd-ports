@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dhcpd
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable dhcpd:
+# dhcpd_enable="YES"
+# dhcpd_flags="<set as needed>"
+
+. /etc/rc.subr
+
+name=dhcpd
+rcvar=dhcpd_enable
+
+command="%%PREFIX%%/sbin/dhcpd"
+
+dhcpd_enable=${dhcpd_enable:-"NO"}
+dhcpd_flags=${dhcpd_flags:-"-c %%PREFIX%%/etc/dhcpd.conf"}
+
+load_rc_config $name
+run_rc_command "$1"

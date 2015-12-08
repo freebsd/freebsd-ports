@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libpng/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libpng/png.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/libpng.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libpng/png.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libpng/libppng.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libpng/png.ppu

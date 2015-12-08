@@ -1,5 +1,5 @@
---- media/capture/video/fake_video_capture_device_factory.cc.orig	2015-10-14 17:33:35.934406000 +0200
-+++ media/capture/video/fake_video_capture_device_factory.cc	2015-10-14 17:34:01.687650000 +0200
+--- media/capture/video/fake_video_capture_device_factory.cc.orig	2015-10-14 11:08:16.489018000 -0400
++++ media/capture/video/fake_video_capture_device_factory.cc	2015-10-14 11:09:19.850751000 -0400
 @@ -51,7 +51,7 @@
    for (int n = 0; n < number_of_devices_; ++n) {
      VideoCaptureDevice::Name name(base::StringPrintf("fake_device_%d", n),

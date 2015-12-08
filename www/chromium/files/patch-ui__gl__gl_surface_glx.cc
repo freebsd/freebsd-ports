@@ -1,5 +1,5 @@
---- ui/gl/gl_surface_glx.cc.orig	2015-10-14 19:05:53.638848000 +0200
-+++ ui/gl/gl_surface_glx.cc	2015-10-14 19:06:56.014680000 +0200
+--- ui/gl/gl_surface_glx.cc.orig	2015-10-06 22:42:29.000000000 -0400
++++ ui/gl/gl_surface_glx.cc	2015-10-14 12:11:35.193730000 -0400
 @@ -48,7 +48,7 @@
  bool g_glx_sgi_video_sync_supported = false;
  
