@@ -2,6 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	15.2
+PORTREVISION=	1
 CATEGORIES=	multimedia java
 MASTER_SITES=	https://codeload.github.com/xbmc/xbmc/tar.gz/${KODI_COMMIT}?dummy=/ \
 		GH:ffmpeg
@@ -82,7 +83,7 @@ PLIST_SUB=	ARCH=${KODI_ARCH_${ARCH}}
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	AIRPLAY AIRTUNES AVAHI CEC DOCS \
-		LIBBLURAY LIRC MYSQL NFS NONFREE RTMP \
+		LIBBLURAY LIRC MYSQL NFS NONFREE PULSEAUDIO RTMP \
 		SFTP SMB VAAPI VDPAU WEBSERVER
 AIRPLAY_DESC=	AirPlay support via libplist
 AIRTUNES_DESC=	AirTunes support via libshairplay
@@ -91,7 +92,7 @@ NONFREE_DESC=	Enable non-free components (rar, ccx, ffmpeg)
 SFTP_DESC=	SSH SFTP support via libssh
 
 OPTIONS_DEFAULT=	AIRPLAY AIRTUNES AVAHI LIBBLURAY LIRC MYSQL \
-			NFS RTMP SFTP SMB VAAPI VDPAU WEBSERVER
+			NFS PULSEAUDIO RTMP SFTP SMB VAAPI VDPAU WEBSERVER
 
 AIRPLAY_LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist
 AIRPLAY_CONFIGURE_ENABLE=	airplay
@@ -122,6 +123,9 @@ NONFREE_CONFIGURE_ENABLE=	non-free
 NONFREE_VARS=		NO_CDROM="Restricted binary distribution" \
 			NO_PACKAGE="Restricted binary distribution"
 
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=	pulse
+
 RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 RTMP_CONFIGURE_ENABLE=	rtmp
 
@@ -142,7 +146,7 @@ SFTP_BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 SFTP_RUN_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 SFTP_CONFIGURE_ENABLE=	ssh
 
-CONFIGURE_ARGS+=	--disable-debug --disable-alsa --disable-pulse
+CONFIGURE_ARGS+=	--disable-debug --disable-alsa
 
 post-extract:
 	${MKDIR} ${WRKSRC}/tools/depends/target/ffmpeg/${GH_PROJECT}-${GH_TAGNAME}
