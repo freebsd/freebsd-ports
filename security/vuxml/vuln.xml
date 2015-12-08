@@ -1135,11 +1135,12 @@ Notes:
       <url>http://www.openwall.com/lists/oss-security/2015/11/12/2</url>
       <url>http://www.openwall.com/lists/oss-security/2015/12/03/6</url>
       <cvename>CVE-2015-8126</cvename>
+      <cvename>CVE-2015-8472</cvename>
     </references>
     <dates>
       <discovery>2015-11-15</discovery>
       <entry>2015-11-15</entry>
-      <modified>2015-12-03</modified>
+      <modified>2015-12-08</modified>
     </dates>
   </vuln>
 
