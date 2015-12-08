@@ -3,26 +3,38 @@
 
 PORTNAME=	wmfishtime
 PORTVERSION=	1.24
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
-		http://atreides.freenix.no/~anders/
+		http://www.sourcefiles.org/Toys/Clocks/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time/date applet for WindowMaker with fishes swimming around
 
-USE_GNOME=	gtk12
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		does not fetch
-GTK_LIBS?=	`${GTK_CONFIG} --libs`
-GTK_CFLAGS?=	`${GTK_CONFIG} --cflags`
+USES=		pkgconfig
+
 MAKE_ARGS+=	CFLAGS="${CPPFLAGS} ${CFLAGS} -Wall ${GTK_CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		GTK_LIBS="${GTK_LIBS}"
-PLIST_FILES=	bin/wmfishtime man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/wmfishtime man/man1/wmfishtime.1.gz
+
+OPTIONS_SINGLE=		TOOLKIT
+OPTIONS_SINGLE_TOOLKIT=	GTK1 GTK2
+OPTIONS_DEFAULT=	GTK2
+
+GTK1_USE=		gnome=gtk12
+GTK1_CPPFLAGS=		$$(pkg-config --cflags gdk)
+GTK1_LDFLAGS=		$$(pkg-config --libs gdk)
+GTK2_USE=		gnome=gtk20
+GTK2_CPPFLAGS=		$$(pkg-config --cflags gdk-x11-2.0 x11)
+GTK2_LDFLAGS=		$$(pkg-config --libs gdk-x11-2.0 x11) -lm
+TOOLKIT_DESC=		GTK Toolkit
 
 post-patch:
-	${REINPLACE_CMD} -E -e "s@1\.23@1\.24@g" ${WRKSRC}/fishmon.c ${WRKSRC}/wmfishtime.1
+	${REINPLACE_CMD} -E -e 's|1\.23|${PORTVERSION}|g' ${WRKSRC}/fishmon.c ${WRKSRC}/wmfishtime.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmfishtime ${STAGEDIR}${PREFIX}/bin
