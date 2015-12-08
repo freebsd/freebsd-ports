@@ -5,7 +5,6 @@ PORTNAME=	murmur
 PORTVERSION=	1.2.10
 PORTREVISION=	1
 CATEGORIES=	audio net
-DISTNAME=	mumble-${PORTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Murmur is the server component of Mumble
