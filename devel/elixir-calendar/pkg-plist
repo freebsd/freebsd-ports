@@ -1,5 +1,4 @@
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.AmbiguousDateTime.beam
-lib/elixir/lib/calendar/ebin/Elixir.Calendar.CalendarTranslations.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDate.Calendar.Date.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDate.Calendar.DateTime.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsDate.Calendar.NaiveDateTime.beam
