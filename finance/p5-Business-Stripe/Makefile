@@ -15,7 +15,11 @@ RUN_DEPENDS=	p5-HTTP-Message>=0.0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-libwww>0.0:${PORTSDIR}/www/p5-libwww \
 		p5-MIME-Base64>=0.0:${PORTSDIR}/converters/p5-MIME-Base64
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
