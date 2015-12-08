@@ -1,3 +1,31 @@
+bin/jmeter
+%%DATADIR%%/bin/ApacheJMeter.jar
+%%DATADIR%%/bin/BeanShellAssertion.bshrc
+%%DATADIR%%/bin/BeanShellFunction.bshrc
+%%DATADIR%%/bin/BeanShellListeners.bshrc
+%%DATADIR%%/bin/BeanShellSampler.bshrc
+%%DATADIR%%/bin/examples/CSVSample.jmx
+%%DATADIR%%/bin/examples/CSVSample_actions.csv
+%%DATADIR%%/bin/examples/CSVSample_user.csv
+%%DATADIR%%/bin/examples/PerformanceTestPlanMemoryThread.jmx
+%%DATADIR%%/bin/examples/jsp/memory.jsp
+%%DATADIR%%/bin/hc.parameters
+%%DATADIR%%/bin/heapdump.sh
+%%DATADIR%%/bin/httpclient.parameters
+%%DATADIR%%/bin/jaas.conf
+%%DATADIR%%/bin/jmeter
+%%DATADIR%%/bin/jmeter-report
+%%DATADIR%%/bin/jmeter-server
+%%DATADIR%%/bin/jmeter.properties
+%%DATADIR%%/bin/jmeter.sh
+%%DATADIR%%/bin/krb5.conf
+%%DATADIR%%/bin/log4j.conf
+%%DATADIR%%/bin/logkit.xml
+%%DATADIR%%/bin/mirror-server.sh
+%%DATADIR%%/bin/saveservice.properties
+%%DATADIR%%/bin/shutdown.sh
+%%DATADIR%%/bin/stoptest.sh
+%%DATADIR%%/bin/system.properties
 %%DATADIR%%/bin/templates/BeanShellSampler.jmx
 %%DATADIR%%/bin/templates/build-adv-web-test-plan.jmx
 %%DATADIR%%/bin/templates/build-ftp-test-plan.jmx
@@ -10,32 +38,6 @@
 %%DATADIR%%/bin/templates/recording.jmx
 %%DATADIR%%/bin/templates/templates.dtd
 %%DATADIR%%/bin/templates/templates.xml
-@dirrm %%DATADIR%%/bin/templates
-%%DATADIR%%/bin/ApacheJMeter.jar
-%%DATADIR%%/bin/BeanShellAssertion.bshrc
-%%DATADIR%%/bin/BeanShellFunction.bshrc
-%%DATADIR%%/bin/BeanShellListeners.bshrc
-%%DATADIR%%/bin/BeanShellSampler.bshrc
-%%DATADIR%%/bin/examples/CSVSample.jmx
-%%DATADIR%%/bin/examples/CSVSample_actions.csv
-%%DATADIR%%/bin/examples/CSVSample_user.csv
-%%DATADIR%%/bin/hc.parameters
-%%DATADIR%%/bin/httpclient.parameters
-%%DATADIR%%/bin/heapdump.sh
-%%DATADIR%%/bin/jmeter
-%%DATADIR%%/bin/jmeter-report
-%%DATADIR%%/bin/jmeter-server
-%%DATADIR%%/bin/jmeter.properties
-%%DATADIR%%/bin/jmeter.sh
-%%DATADIR%%/bin/jaas.conf
-%%DATADIR%%/bin/krb5.conf
-%%DATADIR%%/bin/log4j.conf
-%%DATADIR%%/bin/logkit.xml
-%%DATADIR%%/bin/mirror-server.sh
-%%DATADIR%%/bin/saveservice.properties
-%%DATADIR%%/bin/shutdown.sh
-%%DATADIR%%/bin/stoptest.sh
-%%DATADIR%%/bin/system.properties
 %%DATADIR%%/bin/upgrade.properties
 %%DATADIR%%/bin/user.properties
 %%DATADIR%%/extras/ConvertHTTPSampler.txt
@@ -64,11 +66,9 @@
 %%DATADIR%%/lib/bsh-2.0b5.jar
 %%DATADIR%%/lib/bshclient.jar
 %%DATADIR%%/lib/commons-io.jar
-%%DATADIR%%/lib/commons-lang3-3.1.jar
 %%DATADIR%%/lib/commons-jexl-1.1.jar
 %%DATADIR%%/lib/commons-jexl-2.1.1.jar
-%%DATADIR%%/lib/mongo-java-driver-2.11.3.jar
-%%DATADIR%%/lib/rsyntaxtextarea-2.5.1.jar
+%%DATADIR%%/lib/commons-lang3-3.1.jar
 @comment %%DATADIR%%/lib/commons-net-3.0.1.jar
 %%DATADIR%%/lib/excalibur-datasource-1.1.1.jar
 %%DATADIR%%/lib/excalibur-instrument-1.0.jar
@@ -94,27 +94,18 @@
 %%DATADIR%%/lib/htmllexer-2.1.jar
 %%DATADIR%%/lib/htmlparser-2.1.jar
 %%DATADIR%%/lib/jcharts-0.7.5.jar
+%%DATADIR%%/lib/jodd-core-3.4.10.jar
+%%DATADIR%%/lib/jodd-lagarto-3.4.10.jar
 %%DATADIR%%/lib/jorphan.jar
+%%DATADIR%%/lib/jsoup-1.7.3.jar
 %%DATADIR%%/lib/jtidy-r938.jar
 %%DATADIR%%/lib/junit/test.jar
 %%DATADIR%%/lib/logkit-2.0.jar
+%%DATADIR%%/lib/mongo-java-driver-2.11.3.jar
+%%DATADIR%%/lib/rsyntaxtextarea-2.5.1.jar
 %%DATADIR%%/lib/soap-2.3.1.jar
+%%DATADIR%%/lib/tika-core-1.4.jar
+%%DATADIR%%/lib/tika-parsers-1.4.jar
 %%DATADIR%%/lib/xmlpull-1.1.3.1.jar
 %%DATADIR%%/lib/xpp3_min-1.1.4c.jar
 %%DATADIR%%/lib/xstream.jar
-bin/jmeter
-%%DATADIR%%/bin/examples/PerformanceTestPlanMemoryThread.jmx
-%%DATADIR%%/bin/examples/jsp/memory.jsp
-%%DATADIR%%/lib/jodd-core-3.4.10.jar
-%%DATADIR%%/lib/jodd-lagarto-3.4.10.jar
-%%DATADIR%%/lib/jsoup-1.7.3.jar
-%%DATADIR%%/lib/tika-core-1.4.jar
-%%DATADIR%%/lib/tika-parsers-1.4.jar
-@dirrmtry %%DATADIR%%/bin/examples/jsp
-@dirrm %%DATADIR%%/bin/examples
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/extras
-@dirrm %%DATADIR%%/lib/ext
-@dirrm %%DATADIR%%/lib/junit
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%

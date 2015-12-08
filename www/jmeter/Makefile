@@ -5,7 +5,6 @@ PORTNAME=	apache-jmeter
 PORTVERSION=	2.11
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	APACHE/jmeter/binaries
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Functional behaviour load and performance test application
@@ -41,6 +40,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/activation.jar:${PORTSDIR}/java/jaf	\
 		${JAVAJARDIR}/xstream.jar:${PORTSDIR}/textproc/xstream	\
 		${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
 
+USES=		tar:tgz
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
