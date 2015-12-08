@@ -21,6 +21,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>0:${PORTSDIR}/www/py-django14
 
 CONFLICTS=	py[23][0-9]-django-pipeline-[0-9]* \
+		py[23][0-9]-django-pipeline13-[0-9]* \
 		py[23][0-9]-django-pipeline14-[0-9]*
 
 USES=		python:2
