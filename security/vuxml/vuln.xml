@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="918a5d1f-9d40-11e5-8f5c-002590263bf5">
+    <topic>KeePassX -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>KeePassX</name>
+	<range><lt>0.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yves-Alexis Perez reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/30/4">
+	  <p>Starting an export (using File / Export to / KeepassX XML file) and
+	    cancelling it leads to KeepassX saving a cleartext XML file in
+	    ~/.xml without any warning.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8378</cvename>
+      <freebsdpr>ports/205105</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/30/4</url>
+    </references>
+    <dates>
+      <discovery>2015-07-08</discovery>
+      <entry>2015-12-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84fdd1bb-9d37-11e5-8f5c-002590263bf5">
     <topic>passenger -- client controlled header overwriting</topic>
     <affects>
