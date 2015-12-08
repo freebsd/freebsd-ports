@@ -4,4 +4,4 @@ adapter is written completely in C code against the Apache C runtime and
 for hosting WSGI applications within Apache has a lower overhead than using
 existing WSGI adapters for mod_python or CGI.
 
-WWW: https://github.com/GrahamDumpleton/mod_wsgi/
+WWW: http://www.modwsgi.org/
