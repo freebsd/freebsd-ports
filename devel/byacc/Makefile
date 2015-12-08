@@ -5,7 +5,7 @@ PORTVERSION=	20150711
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Best yacc variant available
 
 USES=		tar:tgz

@@ -4,7 +4,7 @@ PORTNAME=	jimtcl
 PORTVERSION=	0.76
 CATEGORIES=	lang tcl
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small footprint implementation of the Tcl programming language
 
 LICENSE=	BSD2CLAUSE
