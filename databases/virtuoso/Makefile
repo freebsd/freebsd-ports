@@ -25,7 +25,8 @@ USES=		gmake libtool readline uidfix
 USE_AUTOTOOLS=	autoheader aclocal
 USE_OPENSSL=	yes
 
-NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=	i386 mips armv6
+NOT_FOR_ARCHS_REASON=	can only be built on 64bit platforms
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline\
