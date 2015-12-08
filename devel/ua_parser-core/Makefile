@@ -5,7 +5,6 @@ PORTNAME=	ua_parser
 PORTVERSION=	0.5.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-core
-DISTNAME=	${PORTNAME:S/_/-/}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Regex file for building language ports of Browserscope's UA parser

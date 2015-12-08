@@ -4,7 +4,6 @@ PORTNAME=	pkg-info.el
 PORTVERSION=	0.5
 PORTREVISION=	2
 CATEGORIES=	devel elisp
-DISTNAME=	pkg-info-${PORTVERSION}
 
 MAINTAINER=	rpaulo@FreeBSD.org
 COMMENT=	Provide information about Emacs packages
