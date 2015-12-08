@@ -30,15 +30,14 @@ PNGTEST_DESC=Enable Regression Test (recommended)
 PATCHFILES=	${DISTNAME}-apng.patch.gz
 .endif
 
+# Do not fail until https://sourceforge.net/p/libpng/bugs/243/ is fixed
 .if ${PORT_OPTIONS:MPNGTEST}
 post-build:
 	(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} test; then \
-        if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
-            ${ECHO_MSG} "===> Compilation failed unexpectedly."; \
-            (${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
-            fi; \
-        ${FALSE}; \
-        fi)
+	if [ -f ${WRKSRC}/test-suite.log ]; then \
+	${CAT} ${WRKSRC}/test-suite.log ; \
+	fi; \
+	fi)
 .endif
 
 .include <bsd.port.mk>
