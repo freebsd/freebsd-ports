@@ -35,15 +35,13 @@ NO_WRKSUBDIR=	yes
 
 PORTDOCS=	helpfile.540 readme.541 changes.txt
 
+SUB_FILES=	pkg-message
+
 OPTIONS_DEFINE=	X11 DOCS
 OPTIONS_DEFAULT=X11
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11
-MAKE_ARGS=	-DX11
-.endif
+X11_USE=	XORG=x11
+X11_MAKE_ARGS=	-DX11
 
 post-extract:
 	${RM} ${WRKSRC}/swe[a-z]*
@@ -55,12 +53,9 @@ do-install:
 	cd ${WRKSRC}; \
 		${INSTALL_DATA} astrolog.dat ${STAGEDIR}${PREFIX}/lib/astrolog/astrolog.dat-dist
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} astrolog ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.endif
-	@${ECHO_MSG}
-	@${ECHO_MSG} "See the file ${PREFIX}/share/doc/astrolog/helpfile.540 for help"
-	@${ECHO_MSG} "and tune ${PREFIX}/lib/astrolog/astrolog.dat"
 
 .include <bsd.port.mk>
