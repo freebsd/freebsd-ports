@@ -5,7 +5,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.NetBSD.org/pub/NetBSD/misc/dholland/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traditional (K&R-style) C preprocessor
 
 LICENSE=	BSD2CLAUSE

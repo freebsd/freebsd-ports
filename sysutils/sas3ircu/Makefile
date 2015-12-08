@@ -8,7 +8,7 @@ DISTNAME=	SAS3IRCU_P10
 
 LSI_SITES=	http://docs.avagotech.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_12g_p10/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SAS-3 Integrated RAID Configuration Utility
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
