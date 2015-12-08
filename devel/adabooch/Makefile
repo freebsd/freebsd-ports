@@ -24,13 +24,9 @@ ALL_TARGET=	libs
 # In other words, adabooch demos requires a separate port to do correctly
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/* ${STAGEDIR}${DOCSDIR}/
 	${RM} ${STAGEDIR}${DOCSDIR}/Makefile
-.endif
 
 .include <bsd.port.mk>
