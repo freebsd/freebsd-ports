@@ -26,14 +26,6 @@ you update your ports collection, before attempting any port upgrades.
   /usr/local/share/postfixadmin/INSTALL.TXT).
 
 20151205:
-  AFFECTS: users of shells/zsh
-  AUTHOR: bapt@FreeBSD.org
-
-  Since version 5.2 zsh is now respecting prefix to look up for its default
-  configurations: zshrc/zprofile. Users having those files in /etc should
-  move them to PREFIX/etc (by default /usr/local/etc)
-
-20151205:
   AFFECTS: users of devel/ncurses
   AUTHOR: bapt@FreeBSD.org
 
