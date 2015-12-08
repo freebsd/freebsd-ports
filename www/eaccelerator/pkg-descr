@@ -4,4 +4,4 @@ that the overhead of compiling is almost completely eliminated. It also
 optimizes scripts to speed up their execution. eAccelerator typically reduces
 server load and increases the speed of your PHP code by 1-10 times.
 
-WWW:	http://eaccelerator.net/
+WWW: http://eaccelerator.net/
