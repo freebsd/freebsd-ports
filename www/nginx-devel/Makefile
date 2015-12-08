@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.9.7
-PORTREVISION=	1
+PORTVERSION=	1.9.8
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -43,6 +42,7 @@ OPTIONS_DEFINE=	\
 	HTTP_REALIP \
 	HTTP_REWRITE \
 	HTTP_SECURE_LINK \
+	HTTP_SLICE \
 	HTTP_SSL \
 	HTTP_STATUS \
 	HTTP_SUB \
@@ -140,6 +140,7 @@ HTTP_RANDOM_INDEX_DESC=		Enable http_random_index module
 HTTP_REALIP_DESC=		Enable http_realip module
 HTTP_REWRITE_DESC=		Enable http_rewrite module
 HTTP_SECURE_LINK_DESC=		Enable http_secure_link module
+HTTP_SLICE_DESC=		Enable http_slice module
 HTTP_SSL_DESC=			Enable http_ssl module
 HTTP_STATUS_DESC=		Enable http_stub_status module
 HTTP_SUB_DESC=			Enable http_sub module
@@ -562,6 +563,10 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
 
 .if ${PORT_OPTIONS:MHTTP_SECURE_LINK}
 CONFIGURE_ARGS+=--with-http_secure_link_module
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_SLICE}
+CONFIGURE_ARGS+=--with-http_slice_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_STATUS}

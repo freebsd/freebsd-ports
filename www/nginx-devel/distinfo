@@ -1,5 +1,5 @@
-SHA256 (nginx-1.9.7.tar.gz) = 794bd217affdfce1c6263d9199c3961f387a2df9d57dcb42876faaf41c1748d5
-SIZE (nginx-1.9.7.tar.gz) = 885562
+SHA256 (nginx-1.9.8.tar.gz) = 36b1ec716c5735e7d37f60a421549f100c3494438f0ae173e8e869e04d408d3d
+SIZE (nginx-1.9.8.tar.gz) = 887800
 SHA256 (nginx-accesskey-2.0.3.tar.gz) = d9e94321e78a02de16c57f3e048fd31059fd8116ed03d6de7180f435c52502b1
 SIZE (nginx-accesskey-2.0.3.tar.gz) = 2632
 SHA256 (ngx_http_auth_pam_module-1.2.tar.gz) = 5a85970ba61a99f55a26d2536a11d512b39bbd622f5737d25a9a8c10db81efa9
