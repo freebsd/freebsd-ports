@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	urwid
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,31 +11,22 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Curses-based user interface library for Python
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	EXAMPLES
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
-PORTEXAMPLES=	bigtext.py \
-		browse.py \
-		calc.py \
-		dialog.py \
-		edit.py \
-		fib.py \
-		graph.py \
-		input_test.py \
-		lcd_cf635.py \
-		palette_test.py \
-		pop_up.py \
-		subproc.py \
-		tour.py \
-		treesample.py
+PORTEXAMPLES=	*
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/urwid/str_util.so
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	(cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/)
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR}/)
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m urwid.tests
