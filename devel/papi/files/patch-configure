@@ -1,6 +1,6 @@
---- configure.orig	2015-07-23 08:38:09 UTC
+--- configure.orig	2015-12-03 22:41:27 UTC
 +++ configure
-@@ -6944,7 +6944,7 @@ echo "$as_me: error: PAPI requires FreeB
+@@ -6946,7 +6946,7 @@ echo "$as_me: error: PAPI requires FreeB
     { (exit 1); exit 1; }; }
      fi
      # Determine if HWPMC module is on the kernel
