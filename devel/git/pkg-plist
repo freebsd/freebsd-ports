@@ -847,6 +847,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/technical/protocol-common.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/racy-git.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/racy-git.txt
+%%HTMLDOCS%%%%DOCSDIR%%/technical/repository-version.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/send-pack-pipeline.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/send-pack-pipeline.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/shallow.html
@@ -1254,6 +1255,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.6.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.6.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.6.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.6.4.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
