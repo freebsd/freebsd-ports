@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-PORTVERSION=	2.6.1
+PORTVERSION=	4.0.1	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 DISTNAME=	release-${DISTVERSION}
@@ -35,7 +35,7 @@ BUILD_WRKSRC=	${WRKDIR}/build/usession-release-${DISTVERSION}-0/testing_1
 MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE}
 USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
 USES=		gettext-runtime tar:bzip2
-WRKSRC=		${WRKDIR}/pypy-pypy-f3ad1e1e1d62
+WRKSRC=		${WRKDIR}/pypy-pypy-5f8302b8bf9f
 
 .include ".${CURDIR}/bsd.pypy.mk"
 .include <bsd.port.options.mk>
@@ -47,13 +47,6 @@ PYTHON_CMD?=	${SETENV} PYPY_GC_MAX_DELTA=200MB ${LOCALBASE}/bin/pypy --jit loop_
 .else # if ${PORT_OPTIONS:MPYTHON}
 USES+=		python:2,build
 .endif
-
-.if ${ARCH} == "i386" || ${ARCH} == "armv6"
-PYPY_BITS=	32
-.elif ${ARCH} == "amd64"
-PYPY_BITS=	64
-.endif
-PLIST_SUB+=	PYPY_BITS="${PYPY_BITS}"
 
 pre-build:
 	if [ ! -f ${BUILD_WRKSRC}/Makefile ]; then \
@@ -93,8 +86,7 @@ regression-test: build
 pkg-plist: build
 	${TAR} -tf ${WRKDIR}/build/${PYPY_DIR}.tar.bz2 > ${WRKDIR}/.plist-files-gen
 	${REINPLACE_CMD} -e 's|^${PYPY_DIR}|%%PYPY_DIR%%|g' \
-		-e 's|-${PYPY_VER}|-%%PYPY_VER%%|g' \
-		-e 's|_${PYPY_BITS}_|_%%PYPY_BITS%%_|g' \
+		-e 's|-${PYPY_CFFI_VER}|-%%PYPY_CFFI_VER%%|g' \
 		-e '/\/$$/d' \
 			${WRKDIR}/.plist-files-gen
 	${ECHO} bin/pypy > ${WRKDIR}/pkg-plist
