@@ -3,7 +3,7 @@
 
 PORTNAME=	ncurses
 PORTVERSION=	6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://invisible-mirror.net/archives/${PORTNAME}/ \
 		ftp://invisible-island.net/${PORTNAME}/
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--with-pkg-config=yes --enable-pc-files \
 		--includedir=${PREFIX}/include/ncurses \
 		--with-shared \
-		--without-curses-h --with-termlib --program-prefix= \
+		--with-termlib --program-prefix= \
 		--enable-rpath --disable-root-environ \
 		--with-manpage-format=gzip --srcdir=../ \
 		--without-manpage-renames \
@@ -94,6 +94,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,$$(INSTALL_PROG) ncurses-config,@INSTALL_SCRIPT@ ncurses-config,' ${WRKSRC}/misc/Makefile.in
+	@${REINPLACE_CMD} -e 's,/usr/include,${PREFIX}/include,g' ${WRKSRC}/misc/ncurses-config.in
 
 post-configure:
 	cd ${.CURDIR} && \
