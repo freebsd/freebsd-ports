@@ -1,18 +1,20 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	PyInstaller
+PORTNAME=	pyinstaller
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	PyInstaller-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Program to create standalone executables from Python scripts
 
 LICENSE=	GPLv2
 
+EXTRACT_AFTER_ARGS=	--exclude doc/source --no-same-owner --no-same-permissions
 USES=		python
 USE_PYTHON=	autoplist distutils
 
@@ -31,10 +33,8 @@ post-patch:
 pre-build:
 	cd ${WRKSRC}/bootloader && ${PYTHON_CMD} waf configure build install
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
-
-EXTRACT_AFTER_ARGS+=	--exclude doc/source
