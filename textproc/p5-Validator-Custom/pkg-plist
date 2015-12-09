@@ -1,11 +1,8 @@
 %%SITE_PERL%%/Validator/Custom.pm
 %%SITE_PERL%%/Validator/Custom/Constraint.pm
-%%SITE_PERL%%/Validator/Custom/Guide.pod
-%%SITE_PERL%%/Validator/Custom/Guide/Ja.pod
+%%SITE_PERL%%/Validator/Custom/Constraints.pm
 %%SITE_PERL%%/Validator/Custom/Result.pm
 %%SITE_PERL%%/Validator/Custom/Rule.pm
 %%PERL5_MAN3%%/Validator::Custom.3.gz
-%%PERL5_MAN3%%/Validator::Custom::Guide.3.gz
-%%PERL5_MAN3%%/Validator::Custom::Guide::Ja.3.gz
 %%PERL5_MAN3%%/Validator::Custom::Result.3.gz
 %%PERL5_MAN3%%/Validator::Custom::Rule.3.gz
