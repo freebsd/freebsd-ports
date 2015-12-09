@@ -10,6 +10,7 @@ bin/infotocap
 bin/captoinfo
 bin/ncurses%%ABI_VER%%-config
 bin/ncursesw%%ABI_VER%%-config
+include/ncurses/curses.h
 include/ncurses/cursesapp.h
 include/ncurses/cursesf.h
 include/ncurses/cursesm.h
