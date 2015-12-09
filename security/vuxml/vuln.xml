@@ -58,6 +58,54 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="23af0425-9eac-11e5-b937-00e0814cab4e">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><le>1.641</le></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><le>1.625.3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-12-09">
+	  <h1>Description</h1>
+	  <h5>SECURITY-95 / CVE-2015-7536 (Stored XSS vulnerability through workspace files and archived artifacts)</h5>
+	  <p>In certain configurations, low privilege users were able to
+	    create e.g. HTML files in workspaces and archived artifacts that
+	    could result in XSS when accessed by other users. Jenkins now sends
+	    Content-Security-Policy headers that enables sandboxing and
+	    prohibits script execution by default.</p>
+	  <h5>SECURITY-225 / CVE-2015-7537 (CSRF vulnerability in some administrative actions)</h5>
+	  <p>Several administration/configuration related URLs could be
+	    accessed using GET, which allowed attackers to circumvent CSRF
+	    protection.</p>
+	  <h5>SECURITY-233 / CVE-2015-7538 (CSRF protection ineffective)</h5>
+	  <p>Malicious users were able to circumvent CSRF protection on any
+	    URL by sending specially crafted POST requests.</p>
+	  <h5>SECURITY-234 / CVE-2015-7539 (Jenkins plugin manager vulnerable to MITM attacks)</h5>
+	  <p>While the Jenkins update site data is digitally signed, and the
+	    signature verified by Jenkins, Jenkins did not verify the provided
+	    SHA-1 checksums for the plugin files referenced in the update site
+	    data. This enabled MITM attacks on the plugin manager, resulting
+	    in installation of attacker-provided plugins.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-12-09</url>
+    </references>
+    <dates>
+      <discovery>2015-12-09</discovery>
+      <entry>2015-12-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c8842a84-9ddd-11e5-8c2f-c485083ca99c">
     <topic>flash -- multiple vulnabilities</topic>
     <affects>
