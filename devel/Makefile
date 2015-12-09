@@ -3905,6 +3905,7 @@
     SUBDIR += py-anonfunc
     SUBDIR += py-anyconfig
     SUBDIR += py-anyjson
+    SUBDIR += py-apache_conf_parser
     SUBDIR += py-apipkg
     SUBDIR += py-appdirs
     SUBDIR += py-application
