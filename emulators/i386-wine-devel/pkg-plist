@@ -227,6 +227,7 @@ include/wine/windows/d3drmwin.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx10.h
+include/wine/windows/d3dx10async.h
 %%STAGING%%include/wine/windows/d3dx10core.h
 %%STAGING%%include/wine/windows/d3dx10core.idl
 include/wine/windows/d3dx9.h
@@ -899,6 +900,7 @@ lib32/libXrender.so.1
 lib32/libXxf86vm.so.1
 lib32/libdevq.so.0
 lib32/libdrm.so.2
+lib32/libdrm_amdgpu.so.1
 lib32/libdrm_intel.so.1
 lib32/libdrm_radeon.so.1
 lib32/libedit.so.0
