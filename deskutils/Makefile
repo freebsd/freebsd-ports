@@ -213,6 +213,7 @@
     SUBDIR += rolo
     SUBDIR += rox-memo
     SUBDIR += rubrica
+    SUBDIR += rubygem-shellplay
     SUBDIR += rubygem-taskjuggler
     SUBDIR += semantik
     SUBDIR += shutter
