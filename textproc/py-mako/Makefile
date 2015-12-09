@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mako
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	textproc www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beaker>=1.1:${PORTSDIR}/www/py-beaker \
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
