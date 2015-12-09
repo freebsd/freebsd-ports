@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pytools
-PORTVERSION=	2015.1.3
+PORTVERSION=	2015.1.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,11 @@ COMMENT=	Collection of tools for Python
 
 LICENSE=	MIT
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:${PORTSDIR}/devel/py-appdirs \
+		${PYTHON_PKGNAMEPREFIX}decorator>=3.2.0:${PORTSDIR}/devel/py-decorator \
+		${PYTHON_PKGNAMEPREFIX}six>=1.8.0:${PORTSDIR}/devel/py-six
+
+NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
 USES=		python
 
