@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	configargparse
-PORTVERSION=	0.9.3
+PORTVERSION=	0.10.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Drop-in replacement for argparse
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
