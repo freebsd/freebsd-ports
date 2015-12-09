@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.8.r1
+PORTVERSION=	1.8.r2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -75,7 +75,7 @@ DISTFILES=
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100085
-BROKEN=		unable to build binaries due to packaging issues with gnutls and git.
+BROKEN=		unable to build binaries due to packaging issues with gnutls
 .endif
 
 do-extract:
