@@ -13,7 +13,7 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.19
+PORTVERSION=	2.2.20
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -42,7 +42,7 @@ INSTALL_TARGET=	install-strip
 USERS=		dovecot dovenull
 GROUPS=		${USERS}
 
-OPTIONS_DEFINE=	GC KQUEUE LIBWRAP LZ4 SSL VPOPMAIL DOCS EXAMPLES
+OPTIONS_DEFINE=	KQUEUE LIBWRAP LZ4 SSL VPOPMAIL DOCS EXAMPLES
 OPTIONS_DEFAULT=KQUEUE SSL GSSAPI_NONE
 OPTIONS_SUB=	yes
 
@@ -53,7 +53,6 @@ OPTIONS_GROUP_FTS=	ICU LUCENE SOLR TEXTCAT
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 
-GC_DESC=	Garbage collection with boehm-gc
 KQUEUE_DESC=	kqueue(2) support
 LZ4_DESC=	LZ4 compression support
 VPOPMAIL_DESC=	vpopmail support
@@ -74,9 +73,6 @@ GSSAPI_MIT_DESC=	Use MIT GSSAPI from security/krb5
 
 CDB_CONFIGURE_WITH=	cdb
 CDB_LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
-
-GC_CONFIGURE_WITH=	gc
-GC_LIB_DEPENDS=		libgc.so:${PORTSDIR}/devel/boehm-gc
 
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 GSSAPI_BASE_USES=		gssapi
