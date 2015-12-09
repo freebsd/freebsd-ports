@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	glm
-PORTVERSION=	0.9.6.3
+PORTVERSION=	0.9.7.1
 PORTEPOCH=	1
 CATEGORIES=	math graphics
-MASTER_SITES=	SF/ogl-math/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	C++ mathematics library for software based on the OpenGL GLSL
@@ -13,10 +12,13 @@ COMMENT=	C++ mathematics library for software based on the OpenGL GLSL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
-USES=		zip dos2unix
+USE_GITHUB=	yes
+GH_ACCOUNT=	g-truc
+
+USES=		dos2unix
+DOS2UNIX_FILES=	glm/detail/dummy.cpp
 NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${PORTNAME} \
