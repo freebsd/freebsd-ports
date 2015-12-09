@@ -79,6 +79,8 @@
 %%TWDIR%%/data/Main/WebSearch.txt,v
 %%TWDIR%%/data/Main/WebSearchAdvanced.txt
 %%TWDIR%%/data/Main/WebSearchAdvanced.txt,v
+%%TWDIR%%/data/Main/WebSearchAttachments.txt
+%%TWDIR%%/data/Main/WebSearchAttachments.txt,v
 %%TWDIR%%/data/Main/WebStatistics.txt
 %%TWDIR%%/data/Main/WebStatistics.txt,v
 %%TWDIR%%/data/Main/WebTopMenu.txt
@@ -109,6 +111,8 @@
 %%TWDIR%%/data/Sandbox/WebSearch.txt,v
 %%TWDIR%%/data/Sandbox/WebSearchAdvanced.txt
 %%TWDIR%%/data/Sandbox/WebSearchAdvanced.txt,v
+%%TWDIR%%/data/Sandbox/WebSearchAttachments.txt
+%%TWDIR%%/data/Sandbox/WebSearchAttachments.txt,v
 %%TWDIR%%/data/Sandbox/WebStatistics.txt
 %%TWDIR%%/data/Sandbox/WebStatistics.txt,v
 %%TWDIR%%/data/Sandbox/WebTopMenu.txt
@@ -151,6 +155,8 @@
 %%TWDIR%%/data/TWiki/BumpyWord.txt,v
 %%TWDIR%%/data/TWiki/CategoryCategory.txt
 %%TWDIR%%/data/TWiki/CategoryCategory.txt,v
+%%TWDIR%%/data/TWiki/CgiContrib.txt
+%%TWDIR%%/data/TWiki/CgiContrib.txt,v
 %%TWDIR%%/data/TWiki/ChartingAndDrawingVariables.txt
 %%TWDIR%%/data/TWiki/ChartingAndDrawingVariables.txt,v
 %%TWDIR%%/data/TWiki/ClassMethod.txt
@@ -683,6 +689,8 @@
 %%TWDIR%%/data/TWiki/VarCALCULATE.txt,v
 %%TWDIR%%/data/TWiki/VarCARET.txt
 %%TWDIR%%/data/TWiki/VarCARET.txt,v
+%%TWDIR%%/data/TWiki/VarCHILDREN.txt
+%%TWDIR%%/data/TWiki/VarCHILDREN.txt,v
 %%TWDIR%%/data/TWiki/VarCOLORPICKER.txt
 %%TWDIR%%/data/TWiki/VarCOLORPICKER.txt,v
 %%TWDIR%%/data/TWiki/VarCONTENTMODE.txt
@@ -709,6 +717,8 @@
 %%TWDIR%%/data/TWiki/VarENDBG.txt,v
 %%TWDIR%%/data/TWiki/VarENDCOLOR.txt
 %%TWDIR%%/data/TWiki/VarENDCOLOR.txt,v
+%%TWDIR%%/data/TWiki/VarENDCOLUMNS.txt
+%%TWDIR%%/data/TWiki/VarENDCOLUMNS.txt,v
 %%TWDIR%%/data/TWiki/VarENDSECTION.txt
 %%TWDIR%%/data/TWiki/VarENDSECTION.txt,v
 %%TWDIR%%/data/TWiki/VarENTITY.txt
@@ -721,6 +731,8 @@
 %%TWDIR%%/data/TWiki/VarFAILEDPLUGINS.txt,v
 %%TWDIR%%/data/TWiki/VarFORMFIELD.txt
 %%TWDIR%%/data/TWiki/VarFORMFIELD.txt,v
+%%TWDIR%%/data/TWiki/VarFOURCOLUMNS.txt
+%%TWDIR%%/data/TWiki/VarFOURCOLUMNS.txt,v
 %%TWDIR%%/data/TWiki/VarGET.txt
 %%TWDIR%%/data/TWiki/VarGET.txt,v
 %%TWDIR%%/data/TWiki/VarGMTIME.txt
@@ -915,6 +927,8 @@
 %%TWDIR%%/data/TWiki/VarT.txt,v
 %%TWDIR%%/data/TWiki/VarTEAL.txt
 %%TWDIR%%/data/TWiki/VarTEAL.txt,v
+%%TWDIR%%/data/TWiki/VarTHREECOLUMNS.txt
+%%TWDIR%%/data/TWiki/VarTHREECOLUMNS.txt,v
 %%TWDIR%%/data/TWiki/VarTM.txt
 %%TWDIR%%/data/TWiki/VarTM.txt,v
 %%TWDIR%%/data/TWiki/VarTOC.txt
@@ -933,6 +947,8 @@
 %%TWDIR%%/data/TWiki/VarTWIKIWEB.txt,v
 %%TWDIR%%/data/TWiki/VarTWISTY.txt
 %%TWDIR%%/data/TWiki/VarTWISTY.txt,v
+%%TWDIR%%/data/TWiki/VarTWOCOLUMNS.txt
+%%TWDIR%%/data/TWiki/VarTWOCOLUMNS.txt,v
 %%TWDIR%%/data/TWiki/VarU.txt
 %%TWDIR%%/data/TWiki/VarU.txt,v
 %%TWDIR%%/data/TWiki/VarURLPARAM.txt
@@ -1027,6 +1043,10 @@
 %%TWDIR%%/data/TWiki/WebSearch.txt,v
 %%TWDIR%%/data/TWiki/WebSearchAdvanced.txt
 %%TWDIR%%/data/TWiki/WebSearchAdvanced.txt,v
+%%TWDIR%%/data/TWiki/WebSearchAttachments.txt
+%%TWDIR%%/data/TWiki/WebSearchAttachments.txt,v
+%%TWDIR%%/data/Trash/WebSearchAttachments.txt
+%%TWDIR%%/data/Trash/WebSearchAttachments.txt,v
 %%TWDIR%%/data/TWiki/WebSiteTools.txt
 %%TWDIR%%/data/TWiki/WebSiteTools.txt,v
 %%TWDIR%%/data/TWiki/WebStatistics.txt
@@ -1117,6 +1137,8 @@
 %%TWDIR%%/data/_default/WebSearch.txt,v
 %%TWDIR%%/data/_default/WebSearchAdvanced.txt
 %%TWDIR%%/data/_default/WebSearchAdvanced.txt,v
+%%TWDIR%%/data/_default/WebSearchAttachments.txt
+%%TWDIR%%/data/_default/WebSearchAttachments.txt,v
 %%TWDIR%%/data/_default/WebStatistics.txt
 %%TWDIR%%/data/_default/WebStatistics.txt,v
 %%TWDIR%%/data/_default/WebTopMenu.txt
@@ -1128,6 +1150,12 @@
 %%TWDIR%%/data/mime.types
 %%TWDIR%%/index.html
 %%TWDIR%%/lib/Assert.pm
+%%TWDIR%%/lib/CGI.pm
+%%TWDIR%%/lib/CGI/Carp.pm
+%%TWDIR%%/lib/CGI/Cookie.pm
+%%TWDIR%%/lib/CGI/Pretty.pm
+%%TWDIR%%/lib/CGI/Push.pm
+%%TWDIR%%/lib/CGI/Util.pm
 %%TWDIR%%/lib/DEPENDENCIES
 %%TWDIR%%/lib/MANIFEST
 %%TWDIR%%/lib/Monitor.pm
@@ -1255,6 +1283,7 @@
 %%TWDIR%%/lib/TWiki/Configure/UIs/Value.pm
 %%TWDIR%%/lib/TWiki/Configure/Value.pm
 %%TWDIR%%/lib/TWiki/Configure/Valuer.pm
+%%TWDIR%%/lib/TWiki/Contrib/CgiContrib.pm
 %%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib/Config.spec
 %%TWDIR%%/lib/TWiki/Contrib/MovedSkin.pm
 %%TWDIR%%/lib/TWiki/Contrib/ScrollBoxAddOn.pm
@@ -1322,6 +1351,8 @@
 %%TWDIR%%/lib/TWiki/Plugins/JQueryPlugin/Core.pm
 %%TWDIR%%/lib/TWiki/Plugins/SetGetPlugin.pm
 %%TWDIR%%/lib/TWiki/Plugins/SetGetPlugin/Core.pm
+%%TWDIR%%/lib/TWiki/Plugins/SetGetPlugin/Config.spec
+%%TWDIR%%/lib/TWiki/Plugins/TagMePlugin/Config.spec
 %%TWDIR%%/lib/TWiki/Plugins/TWikiNetSkinPlugin.pm
 %%TWDIR%%/lib/TWiki/Plugins/WatchlistPlugin.pm
 %%TWDIR%%/lib/TWiki/Plugins/WatchlistPlugin/Config.spec
@@ -2080,6 +2111,7 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/fax.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/feed.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/filter.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/first-class.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/fla.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/flag-gray-small.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/flag-gray.gif
@@ -2104,6 +2136,8 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/h.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/hand.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/heart.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/help-close.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/help-open.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/help-video.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/help.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/hlp.gif
@@ -2253,6 +2287,7 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/reload-green.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/reload.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/remove.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/request.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/requirements.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/rfc.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/right.gif
@@ -2265,6 +2300,7 @@
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/searchpackage.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/searchtag.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/searchtopic.gif
+%%TWDIR%%/pub/TWiki/TWikiDocGraphics/see-also.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/sh.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/shipping.gif
 %%TWDIR%%/pub/TWiki/TWikiDocGraphics/sitemap.gif
