@@ -1,4 +1,4 @@
---- x86_cpuid_info.c.orig	2015-03-02 20:30:42 UTC
+--- x86_cpuid_info.c.orig	2015-12-03 22:41:35 UTC
 +++ x86_cpuid_info.c
 @@ -1274,11 +1274,14 @@ cpuid2 ( unsigned int* eax, unsigned int
                      unsigned int* ecx, unsigned int* edx, 
