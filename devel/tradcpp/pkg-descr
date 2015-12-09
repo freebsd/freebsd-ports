@@ -1,4 +1,4 @@
 tradcpp is a traditional (K&R-style) preprocessor.
 
-It has the particular property that it doesn't (for the most part)
-trash whitespace, so it can be used on makefiles.
+It has the particular property that it doesn't (for the most part) trash
+whitespace, so it can be used on makefiles.
