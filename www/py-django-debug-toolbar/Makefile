@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-debug-toolbar
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4.2:${PORTSDIR}/www/py-django \
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
