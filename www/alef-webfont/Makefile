@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 
 USES=		zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 FONTSDIR=	${PREFIX}/lib/x11/fonts/${PORTNAME}${PKGNAMESUFFIX}
 INSTDAT=	fonts.dir fonts.scale
 
