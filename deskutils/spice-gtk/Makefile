@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spice-gtk
-PORTVERSION=	0.26
-PORTREVISION=	1
+PORTVERSION=	0.30
 CATEGORIES?=	deskutils gnome
 MASTER_SITES=	http://www.spice-space.org/download/gtk/
 
@@ -17,11 +16,14 @@ USE_GNOME=	gnomeprefix gtk20 gtk30 intltool introspection:build
 USES=		cpe gmake jpeg libtool pkgconfig tar:bzip2 pathfix
 CPE_VENDOR=	redhat
 
+BUILD_DEPENDS=	spice-protocol>=0.12.10:${PORTSDIR}/devel/spice-protocol \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:${PORTSDIR}/devel/py-pyparsing
+
 .if defined(SPICE_SLAVE)
 CATEGORIES+=	python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:${PORTSDIR}/x11-toolkits/py-gtk2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:${PORTSDIR}/x11-toolkits/py-gtk2
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:${PORTSDIR}/x11-toolkits/py-gtk2
 CONFIGURE_ARGS+=	--with-python
 PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/SpiceClientGtk.a \
 		%%PYTHON_SITELIBDIR%%/SpiceClientGtk.so
@@ -53,7 +55,7 @@ OPTIONS_SINGLE_AUDIO=	GSTREAMER PULSEAUDIO NOAUDIO
 NOAUDIO_DESC=		Disable audio backend
 
 GSTREAMER_CONFIGURE_ON=	--with-audio=gstreamer
-GSTREAMER_USE=	gstreamer=yes
+GSTREAMER_USE=	GSTREAMER1=yes
 PULSEAUDIO_CONFIGURE_ON=	--with-audio=pulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
