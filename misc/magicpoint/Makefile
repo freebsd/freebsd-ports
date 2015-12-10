@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	X11-based presentation tool
 
+BROKEN=		Doesn't build with freetype2 2.6.1 or higher
+
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \

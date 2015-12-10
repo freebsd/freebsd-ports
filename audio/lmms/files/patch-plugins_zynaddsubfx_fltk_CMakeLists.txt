@@ -1,11 +1,11 @@
---- plugins/zynaddsubfx/fltk/CMakeLists.txt.orig	2013-12-24 21:48:53.000000000 +0200
-+++ plugins/zynaddsubfx/fltk/CMakeLists.txt	2013-12-24 21:49:16.000000000 +0200
-@@ -165,7 +165,7 @@
- mark_as_advanced(HAVE_SYS_STDTYPES_H HAVE_XDBE_H)
- 
- # where to find freetype headers
--find_path(FREETYPE_PATH freetype/config/ftheader.h PATH_SUFFIXES freetype2)
-+find_path(FREETYPE_PATH config/ftheader.h PATH_SUFFIXES freetype2)
- if(FREETYPE_PATH)
-    include_directories(${FREETYPE_PATH})
- endif(FREETYPE_PATH)
+--- plugins/zynaddsubfx/fltk/CMakeLists.txt.orig	2013-06-11 17:46:42.000000000 +0200
++++ plugins/zynaddsubfx/fltk/CMakeLists.txt	2015-10-21 10:24:19.901416000 +0200
+@@ -139,7 +139,7 @@
+ find_file(HAVE_ALSA_ASOUNDLIB_H alsa/asoundlib.h)
+ find_file(HAVE_DIRENT_H dirent.h)
+ find_file(HAVE_DLFCN_H dlfcn.h)
+-find_file(HAVE_FREETYPE_H freetype.h PATH_SUFFIXES freetype2)
++find_file(HAVE_FREETYPE_H ft2build.h PATH_SUFFIXES freetype2)
+ find_file(HAVE_GL_GL_H GL/gl.h)
+ find_file(HAVE_GL_GLU_H GL/glu.h)
+ find_file(HAVE_LIBPNG_PNG_H libpng/png.h)
