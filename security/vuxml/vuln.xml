@@ -58,6 +58,256 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="21bc4d71-9ed8-11e5-8f5c-002590263bf5">
+    <topic>redmine -- information leak vulnerability</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><lt>2.6.9</lt></range>
+	<range><ge>3.0.0</ge><lt>3.0.7</lt></range>
+	<range><ge>3.1.0</ge><lt>3.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redmine reports:</p>
+	<blockquote cite="http://www.redmine.org/projects/redmine/wiki/Security_Advisories">
+	  <p>Data disclosure in atom feed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.redmine.org/projects/redmine/wiki/Security_Advisories</url>
+    </references>
+    <dates>
+      <discovery>2015-12-05</discovery>
+      <entry>2015-12-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="be63533c-9ed7-11e5-8f5c-002590263bf5">
+    <topic>redmine -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><lt>2.6.8</lt></range>
+	<range><ge>3.0.0</ge><lt>3.0.6</lt></range>
+	<range><ge>3.1.0</ge><lt>3.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redmine reports:</p>
+	<blockquote cite="http://www.redmine.org/projects/redmine/wiki/Security_Advisories">
+	  <p>Potential changeset message disclosure in issues API.</p>
+	  <p>Data disclosure on the time logging form</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8346</cvename>
+      <cvename>CVE-2015-8473</cvename>
+      <url>http://www.redmine.org/projects/redmine/wiki/Security_Advisories</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/25/12</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/03/7</url>
+    </references>
+    <dates>
+      <discovery>2015-11-14</discovery>
+      <entry>2015-12-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3ec2e0bc-9ed7-11e5-8f5c-002590263bf5">
+    <topic>redmine -- open redirect vulnerability</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><ge>2.5.1</ge><lt>2.6.7</lt></range>
+	<range><ge>3.0.0</ge><lt>3.0.5</lt></range>
+	<range><eq>3.1.0</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redmine reports:</p>
+	<blockquote cite="http://www.redmine.org/projects/redmine/wiki/Security_Advisories">
+	  <p>Open Redirect vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8474</cvename>
+      <url>http://www.redmine.org/projects/redmine/wiki/Security_Advisories</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/04/1</url>
+    </references>
+    <dates>
+      <discovery>2015-09-20</discovery>
+      <entry>2015-12-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="939a7086-9ed6-11e5-8f5c-002590263bf5">
+    <topic>redmine -- potential XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><lt>2.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redmine reports:</p>
+	<blockquote cite="http://www.redmine.org/projects/redmine/wiki/Security_Advisories">
+	  <p>Potential XSS vulnerability when rendering some flash messages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8477</cvename>
+      <url>http://www.redmine.org/projects/redmine/wiki/Security_Advisories</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/05/6</url>
+    </references>
+    <dates>
+      <discovery>2015-02-19</discovery>
+      <entry>2015-12-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="49def4b7-9ed6-11e5-8f5c-002590263bf5">
+    <topic>redmine -- information leak vulnerability</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><lt>2.4.6</lt></range>
+	<range><ge>2.5.0</ge><lt>2.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redmine reports:</p>
+	<blockquote cite="http://www.redmine.org/projects/redmine/wiki/Security_Advisories">
+	  <p>Potential data leak (project names) in the invalid form
+	    authenticity token error screen.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.redmine.org/projects/redmine/wiki/Security_Advisories</url>
+    </references>
+    <dates>
+      <discovery>2014-07-06</discovery>
+      <entry>2015-12-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c2efcd46-9ed5-11e5-8f5c-002590263bf5">
+    <topic>redmine -- open redirect vulnerability</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><lt>2.4.5</lt></range>
+	<range><eq>2.5.0</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redmine reports:</p>
+	<blockquote cite="http://www.redmine.org/projects/redmine/wiki/Security_Advisories">
+	  <p>Open Redirect vulnerability</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1985</cvename>
+      <url>http://www.redmine.org/projects/redmine/wiki/Security_Advisories</url>
+      <url>https://jvn.jp/en/jp/JVN93004610/index.html</url>
+    </references>
+    <dates>
+      <discovery>2014-03-29</discovery>
+      <entry>2015-12-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="66ba5931-9ed5-11e5-8f5c-002590263bf5">
+    <topic>redmine -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><ge>2.1.0</ge><lt>2.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redmine reports:</p>
+	<blockquote cite="http://www.redmine.org/projects/redmine/wiki/Security_Advisories">
+	  <p>XSS vulnerability</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.redmine.org/projects/redmine/wiki/Security_Advisories</url>
+    </references>
+    <dates>
+      <discovery>2012-09-30</discovery>
+      <entry>2015-12-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0e0385d1-9ed5-11e5-8f5c-002590263bf5">
+    <topic>redmine -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><lt>1.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redmine reports:</p>
+	<blockquote cite="http://www.redmine.org/projects/redmine/wiki/Security_Advisories">
+	  <p>Mass-assignemnt vulnerability that would allow an attacker to
+	    bypass part of the security checks.</p>
+	  <p>Persistent XSS vulnerability</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0327</cvename>
+      <url>http://www.redmine.org/projects/redmine/wiki/Security_Advisories</url>
+      <url>http://jvn.jp/en/jp/JVN93406632/</url>
+    </references>
+    <dates>
+      <discovery>2012-03-11</discovery>
+      <entry>2015-12-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ae377aeb-9ed4-11e5-8f5c-002590263bf5">
+    <topic>redmine -- CSRF protection bypass</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><lt>1.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redmine reports:</p>
+	<blockquote cite="http://www.redmine.org/projects/redmine/wiki/Security_Advisories">
+	  <p>Vulnerability that would allow an attacker to bypass the CSRF
+	    protection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.redmine.org/projects/redmine/wiki/Security_Advisories</url>
+    </references>
+    <dates>
+      <discovery>2011-12-10</discovery>
+      <entry>2015-12-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="23af0425-9eac-11e5-b937-00e0814cab4e">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
