@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-livesettings
-DISTVERSION=	1.4-14
+DISTVERSION=	1.4-16
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP/source/d/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +17,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist
-
-post-patch:
-	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
 
 .include <bsd.port.mk>
