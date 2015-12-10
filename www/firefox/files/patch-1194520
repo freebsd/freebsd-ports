@@ -1,0 +1,35 @@
+From bb146548c7846ba5d14f070f4be985797d83d5ca Mon Sep 17 00:00:00 2001
+From: Mike Hommey <mh+mozilla@glandium.org>
+Date: Fri, 14 Aug 2015 08:50:38 +0900
+Subject: [PATCH] Bug 1194520 - Add a system header wrapper for
+ <freetype/ftfntfmt.h>
+
+---
+ config/system-headers | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/config/system-headers b/config/system-headers
+index bee35da..ad1f88d 100644
+--- config/system-headers
++++ config/system-headers
+@@ -450,16 +450,17 @@ foundation/base64.h
+ foundation/hexdump.h
+ #endif
+ fp.h
+ fpieee.h
+ frame/log.h
+ frame/req.h
+ freetype/freetype.h
+ freetype/ftcache.h
++freetype/ftfntfmt.h
+ freetype/ftglyph.h
+ freetype/ftsynth.h
+ freetype/ftoutln.h
+ freetype/ttnameid.h
+ freetype/tttables.h
+ freetype/t1tables.h
+ freetype/ftlcdfil.h
+ freetype/ftsizes.h
+-- 
+2.5.0.3.ge81d485
+
