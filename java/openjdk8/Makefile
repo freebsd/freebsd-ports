@@ -270,6 +270,12 @@ AUTOCONF_ARGS=	-I . -o generated-configure.sh generated-configure.ac
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH:Marmv6*} || ${ARCH} == "i386"
+# XXX We must limit max heap size for 32-bit targets.
+CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs="-Xmx768m"
+MAKE_ENV+=	JAVADOC_CMD_MEM="-Xmx768m"
+.endif
+
 .if ${ARCH} == "armv6"
 # From NetBSD http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/lang/openjdk7/hacks.mk
 # Workaround incorrect constant folding of subnormals in javac when the FPU
