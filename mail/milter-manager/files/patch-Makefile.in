@@ -4,8 +4,8 @@
  
  pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = milter-core.pc milter-client.pc milter-server.pc \
--	milter-manager.pc libmilter.pc $(am__append_1)
-+	milter-manager.pc $(am__append_1)
+-	milter-manager.pc libmilter.pc $(am__append_2)
++	milter-manager.pc $(am__append_2)
  EXTRA_DIST = \
  	autogen.sh				\
  	README					\
