@@ -115,6 +115,7 @@ lib/milter-manager/binding/lib/milter/client/configuration.rb
 lib/milter-manager/binding/lib/milter/client/context-state.rb
 lib/milter-manager/binding/lib/milter/client/envelope-address.rb
 lib/milter-manager/binding/lib/milter/client/fallback-session.rb
+lib/milter-manager/binding/lib/milter/client/mail-transaction-shelf.rb
 lib/milter-manager/binding/lib/milter/client/session-context.rb
 lib/milter-manager/binding/lib/milter/client/session.rb
 lib/milter-manager/binding/lib/milter/client/testing.rb
@@ -136,6 +137,7 @@ lib/milter-manager/binding/lib/milter/manager/debian-init-detector.rb
 lib/milter-manager/binding/lib/milter/manager/detector.rb
 lib/milter-manager/binding/lib/milter/manager/enma-socket-detector.rb
 lib/milter-manager/binding/lib/milter/manager/exception.rb
+lib/milter-manager/binding/lib/milter/manager/file-reader.rb
 lib/milter-manager/binding/lib/milter/manager/freebsd-rc-detector.rb
 lib/milter-manager/binding/lib/milter/manager/init-detector.rb
 lib/milter-manager/binding/lib/milter/manager/milter-greylist-config-parser.rb

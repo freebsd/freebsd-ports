@@ -1,6 +1,6 @@
---- libev-4.15/ev.c.orig	2014-05-20 06:54:23.272151000 +0200
-+++ libev-4.15/ev.c	2015-03-02 21:52:59.621578000 +0100
-@@ -963,12 +963,12 @@
+--- libev-4.19/ev.c.orig	2015-12-10 10:12:15.511854000 +0800
++++ libev-4.19/ev.c	2015-12-10 10:13:19.665492000 +0800
+@@ -1022,12 +1022,12 @@ ecb_inline uint64_t ecb_rotr64 (uint64_t
    }
  #endif
  
@@ -11,8 +11,8 @@
    /* this seems to work fine, but gcc always emits a warning for it :/ */
 -  ecb_inline void ecb_unreachable (void) ecb_noreturn;
 -  ecb_inline void ecb_unreachable (void) { }
-+  ecb_inline ecb_noreturn void ecb_unreachable (void);
-+  ecb_inline ecb_noreturn void ecb_unreachable (void) { }
++  ecb_inline ecb_noreturn ecb_unreachable (void);
++  ecb_inline ecb_noreturn ecb_unreachable (void) { }
  #endif
  
  /* try to tell the compiler that some condition is definitely true */
