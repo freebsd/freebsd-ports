@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151210:
+  AFFECTS: users of comms/gammu
+  AUTHOR: vanilla@FreeBSD.org
+
+  The python binding of comms/gammu were split from the main port. To get them you
+  need to install comms/py-gammu.
+
 20151206:
   AFFECTS: users of mail/postfixadmin
   AUTHOR: riggs@FreeBSD.org
