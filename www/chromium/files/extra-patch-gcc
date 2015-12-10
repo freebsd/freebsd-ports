@@ -135,3 +135,25 @@
                              const char* suffix, const char* mode);
  
  struct AsDOT {
+--- v8/src/log-utils.h.orig	2015-10-13 21:04:45.000000000 +0200
++++ v8/src/log-utils.h	2015-10-17 10:17:35.535561000 +0200
+@@ -5,6 +5,9 @@
+ #ifndef V8_LOG_UTILS_H_
+ #define V8_LOG_UTILS_H_
+ 
++#include <cstdarg>
++#include <cstdio>
++
+ #include "src/allocation.h"
+ #include "src/base/platform/mutex.h"
+ #include "src/flags.h"
+--- third_party/webrtc/modules/remote_bitrate_estimator/overuse_detector.cc.orig	2015-10-22 21:00:59.000000000 +0200
++++ third_party/webrtc/modules/remote_bitrate_estimator/overuse_detector.cc	2015-11-01 11:32:36.293750000 +0100
+@@ -11,6 +11,7 @@
+ #include "webrtc/modules/remote_bitrate_estimator/overuse_detector.h"
+ 
+ #include <algorithm>
++#include <cstdio>
+ #include <sstream>
+ #include <math.h>
+ #include <stdlib.h>
