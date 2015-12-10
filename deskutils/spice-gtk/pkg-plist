@@ -6,6 +6,7 @@ share/doc/spice-gtk/up.png
 share/doc/spice-gtk/up-insensitive.png
 share/doc/spice-gtk/style.css
 share/doc/spice-gtk/spice-gtk.devhelp2
+share/doc/spice-gtk/spice-gtk-spice-version.html
 share/doc/spice-gtk/spice-gtk-Utilities.html
 share/doc/spice-gtk/spice-gtk-SpiceURI.html
 share/doc/spice-gtk/right.png
@@ -49,15 +50,12 @@ libdata/pkgconfig/spice-client-glib-2.0.pc
 lib/libspice-controller.so.0.0.0
 lib/libspice-controller.so.0
 lib/libspice-controller.so
-lib/libspice-controller.a
 lib/libspice-client-gtk-3.0.so.4.0.0
 lib/libspice-client-gtk-3.0.so.4
 lib/libspice-client-gtk-3.0.so
-lib/libspice-client-gtk-3.0.a
 lib/libspice-client-glib-2.0.so.8.5.0
 lib/libspice-client-glib-2.0.so.8
 lib/libspice-client-glib-2.0.so
-lib/libspice-client-glib-2.0.a
 lib/girepository-1.0/SpiceClientGtk-3.0.typelib
 lib/girepository-1.0/SpiceClientGLib-2.0.typelib
 include/spice-controller/spice-controller.h
