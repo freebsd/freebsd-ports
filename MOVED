@@ -484,7 +484,6 @@ x11/libxfce4mcs||2009-03-02|Got obsolete by Xfce 4.6 update
 sysutils/xfce4-mcs-manager||2009-03-02|Got obsolete by Xfce 4.6 update
 sysutils/xfce4-mcs-plugins||2009-03-02|Got obsolete by Xfce 4.6 update
 x11-themes/xfce4-icon-theme||2009-03-02|Got obsolete by Xfce 4.6 update
-comms/py-gammu||2009-03-04|Incorporated into comms/gammu
 x11-toolkits/scx||2009-03-06|Abandoned upstream
 x11-toolkits/xg||2009-03-06|Abandoned upstream
 audio/quelcom||2009-03-07|Abandoned upstream, requires obsolete version of GCC
