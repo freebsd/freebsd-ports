@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyganim
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,5 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python zip
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
