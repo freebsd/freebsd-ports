@@ -688,7 +688,7 @@
     SUBDIR += wcalc
     SUBDIR += wfmath
     SUBDIR += why3
-    SUBDIR += why3-gpl
+    SUBDIR += why3-spark
     SUBDIR += wingz3
     SUBDIR += wxMaxima
     SUBDIR += x12arima
