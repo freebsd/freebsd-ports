@@ -6,7 +6,7 @@ PORTVERSION=	2015
 CATEGORIES=	math
 MASTER_SITES=	http://downloads.dragonlace.net/src/ \
 		LOCAL/marino
-PKGNAMESUFFIX=	-gpl
+PKGNAMESUFFIX=	-spark
 DISTNAME=	why3-for-spark-gpl-${PORTVERSION}-src
 
 MAINTAINER=	marino@FreeBSD.org
