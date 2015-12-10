@@ -1,5 +1,5 @@
---- libgammu/service/gsmmisc.c.orig	2010-07-12 15:51:05.000000000 +0400
-+++ libgammu/service/gsmmisc.c	2011-01-28 13:21:17.940543932 +0300
+--- libgammu/service/gsmmisc.c.orig	2015-12-08 10:38:12 UTC
++++ libgammu/service/gsmmisc.c
 @@ -5,6 +5,7 @@
  #include <string.h>
  #include <stdlib.h>

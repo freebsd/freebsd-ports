@@ -1,5 +1,5 @@
---- libgammu/device/devfunc.c.orig	2010-07-12 15:51:05.000000000 +0400
-+++ libgammu/device/devfunc.c	2011-01-28 13:21:17.938543134 +0300
+--- libgammu/device/devfunc.c.orig	2015-12-08 10:38:12 UTC
++++ libgammu/device/devfunc.c
 @@ -15,6 +15,8 @@
  #include <string.h>
  #include <fcntl.h>
