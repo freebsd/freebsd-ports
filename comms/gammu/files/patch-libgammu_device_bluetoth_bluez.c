@@ -1,5 +1,5 @@
---- libgammu/device/bluetoth/bluez.c.orig	2011-12-21 17:25:37.000000000 +0400
-+++ libgammu/device/bluetoth/bluez.c	2011-12-23 15:05:14.498122134 +0400
+--- libgammu/device/bluetoth/bluez.c.orig	2015-12-08 10:38:12 UTC
++++ libgammu/device/bluetoth/bluez.c
 @@ -23,6 +23,8 @@
  #ifdef GSM_ENABLE_BLUETOOTHDEVICE
  #ifdef BLUEZ_FOUND
