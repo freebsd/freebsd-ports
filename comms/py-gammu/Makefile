@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libGammu.so:${PORTSDIR}/comms/gammu
 
-USES=		pkgconfig python:2
+USES=		pkgconfig python:-2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
