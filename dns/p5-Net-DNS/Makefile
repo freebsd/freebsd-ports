@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-DNS
-PORTVERSION=	1.02
+PORTVERSION=	1.04
 PORTEPOCH=	1
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
@@ -31,9 +31,14 @@ GOST_BUILD_DEPENDS=	p5-Digest-GOST>=0.06:${PORTSDIR}/security/p5-Digest-GOST
 GOST_RUN_DEPENDS=	p5-Digest-GOST>=0.06:${PORTSDIR}/security/p5-Digest-GOST
 IDN_BUILD_DEPENDS=	p5-Net-LibIDN>=0.12:${PORTSDIR}/dns/p5-Net-LibIDN
 IDN_RUN_DEPENDS=	p5-Net-LibIDN>=0.12:${PORTSDIR}/dns/p5-Net-LibIDN
-IPV6_BUILD_DEPENDS=	p5-IO-Socket-INET6>=2.01:${PORTSDIR}/net/p5-IO-Socket-INET6
-IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=2.01:${PORTSDIR}/net/p5-IO-Socket-INET6
 SSHFP_BUILD_DEPENDS=	p5-Digest-BubbleBabble>=0.01:${PORTSDIR}/security/p5-Digest-BubbleBabble
 SSHFP_RUN_DEPENDS=	p5-Digest-BubbleBabble>=0.01:${PORTSDIR}/security/p5-Digest-BubbleBabble
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MIPV6} && ${PERL_LEVEL} < 502000
+BUILD_DEPENDS=	p5-IO-Socket-IP>=0.29:${PORTSDIR}/net/p5-IO-Socket-IP
+RUN_DEPENDS=	p5-IO-Socket-IP>=0.29:${PORTSDIR}/net/p5-IO-Socket-IP
+.endif
+
+.include <bsd.port.post.mk>
