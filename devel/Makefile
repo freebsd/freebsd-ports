@@ -1054,7 +1054,6 @@
     SUBDIR += jech-dht
     SUBDIR += jenkins
     SUBDIR += jenkins-lts
-    SUBDIR += jep
     SUBDIR += jgoodies-common
     SUBDIR += jiic
     SUBDIR += jline
@@ -4092,6 +4091,7 @@
     SUBDIR += py-jdcal
     SUBDIR += py-jedi
     SUBDIR += py-jellyfish
+    SUBDIR += py-jep
     SUBDIR += py-jira
     SUBDIR += py-jmespath
     SUBDIR += py-joblib
