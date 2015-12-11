@@ -5,10 +5,9 @@ PORTNAME=	cutecom
 PORTVERSION=	0.20.0
 PORTREVISION=	2
 CATEGORIES=	comms
-MASTER_SITES=	http://cutecom.sourceforge.net/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://cutecom.sourceforge.net/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Graphical serial terminal
 
 RUN_DEPENDS=	lsz:${PORTSDIR}/comms/lrzsz
