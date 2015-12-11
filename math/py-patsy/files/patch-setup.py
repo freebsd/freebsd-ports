@@ -1,10 +1,10 @@
---- ./setup.py.orig	2013-08-20 18:59:30.000000000 +0300
-+++ ./setup.py	2013-11-11 16:18:52.782247350 +0200
-@@ -27,7 +27,6 @@
+--- setup.py.orig	2015-12-08 02:16:42 UTC
++++ setup.py
+@@ -21,7 +21,6 @@ setup(
      license="2-clause BSD",
      packages=["patsy"],
      url="https://github.com/pydata/patsy",
--    install_requires=["numpy"],
+-    install_requires=["six", "numpy"],
      classifiers =
        [ "Development Status :: 4 - Beta",
          "Intended Audience :: Developers",
