@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SOURCEFORGE_JP/${PORTNAME}/20457
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	sarumaru@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FeliCa read/write library for Sony RC-S320 USB FeliCa R/W(PaSoRi)
 
 USES=		tar:bzip2 uidfix
