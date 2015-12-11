@@ -70,7 +70,8 @@ PERL_CONFIGURE_WITH=	perl
 PERL_USES=		perl5
 
 PYTHON_CONFIGURE_WITH=	python
-PYTHON_USES=		python
+PYTHON_USES=		python shebangfix
+SHEBANG_FILES=		contrib/python/notify-bubble.py
 
 SQLITE_CONFIGURE_WITH=	sqlite3
 SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
@@ -80,20 +81,13 @@ UNICODE_CONFIGURE_ENABLE=	unicode
 XOSD_CONFIGURE_WITH=	libxosd
 XOSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
 
-.include <bsd.port.options.mk>
-
 post-patch:
 # needs newer headers for O_NOFOLLOW flag
 	@${REINPLACE_CMD} '/_XOPEN_SOURCE/ s|600|700|' \
 		${WRKSRC}/plugins/xmsg/xmsg.c
-.if ${PORT_OPTIONS:MPYTHON}
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' \
-		${WRKSRC}/contrib/python/notify-bubble.py
-.endif
 
-.if ${PORT_OPTIONS:MUNICODE}
+post-patch-UNICODE-on:
 	@${REINPLACE_CMD} -e 's|ncursesw/||' ${WRKSRC}/configure \
 		${WRKSRC}/plugins/ncurses/ecurses.h
-.endif
 
 .include <bsd.port.mk>
