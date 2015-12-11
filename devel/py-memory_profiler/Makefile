@@ -1,12 +1,11 @@
 # Created by: Johannes Meixner <xmj@chaot.net>
 # $FreeBSD$
 
-PORTNAME=	memoryprofiler
-PORTVERSION=	0.31
+PORTNAME=	memory_profiler
+PORTVERSION=	0.39
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	memory_profiler-${PORTVERSION}
 
 MAINTAINER=	xmj@chaot.net
 COMMENT=	Line-by-line and process memory consumption analysis
@@ -19,5 +18,6 @@ PSUTIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>1.0.0:${PORTSDIR}/sysutils/py-
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
