@@ -246,6 +246,7 @@
     SUBDIR += goose
     SUBDIR += gpx2map
     SUBDIR += grafana
+    SUBDIR += grafana2
     SUBDIR += grails
     SUBDIR += gregarius
     SUBDIR += groupoffice
