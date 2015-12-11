@@ -1,0 +1,5 @@
+Official command-line client for RIPE Atlas.  RIPE Atlas is a global network
+of probes that measure Internet connectivity and reachability, providing
+an unprecedented understanding of the state of the Internet in real time.
+
+WWW: https://github.com/RIPE-NCC/ripe-atlas-tools

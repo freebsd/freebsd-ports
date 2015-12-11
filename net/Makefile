@@ -977,6 +977,7 @@
     SUBDIR += py-raet
     SUBDIR += py-ripe.atlas.cousteau
     SUBDIR += py-ripe.atlas.sagan
+    SUBDIR += py-ripe.atlas.tools
     SUBDIR += py-s3cmd
     SUBDIR += py-simplesoap
     SUBDIR += py-smbpasswd
