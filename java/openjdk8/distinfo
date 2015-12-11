@@ -1,5 +1,7 @@
 SHA256 (openjdk-8-src-b132-03_mar_2014.zip) = ba651f9aa68fdc823b2ef55510710a013ab9f78fff291d5dc1c4d166f3e1e589
 SIZE (openjdk-8-src-b132-03_mar_2014.zip) = 124099402
+SHA256 (jtreg4.1-b08.tar.gz) = a9fbfac903313c12687e60978c4688c20189cdf873560125917d6ad53d55b30c
+SIZE (jtreg4.1-b08.tar.gz) = 6834252
 SHA256 (patch-8u05-b13.xz) = 0fd6dfa17769a92d94a710e330d411fcbd49a8142d4cb8826b96b42d3c007a63
 SIZE (patch-8u05-b13.xz) = 88636
 SHA256 (patch-8u11-b13.xz) = 68ead09e1841fc43a4fec2c386acc70e3edab99e116923befa0d83960c4a1f85
