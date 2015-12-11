@@ -82,8 +82,8 @@
     SUBDIR += py-RO
     SUBDIR += py-aipy
     SUBDIR += py-astLib
-    SUBDIR += py-metar
     SUBDIR += py-pyfits
+    SUBDIR += py-pymetar
     SUBDIR += pyephem
     SUBDIR += pyweather
     SUBDIR += qlandkartegt
