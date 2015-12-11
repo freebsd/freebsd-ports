@@ -1932,6 +1932,10 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 USE_SUBMAKE=	yes
 .endif
 
+.if exists(${.CURDIR}/Makefile.notes)
+.include "${.CURDIR}/Makefile.notes"
+.endif
+
 # Loading features
 .for f in ${_USES_POST}
 _f:=		${f:C/\:.*//}
