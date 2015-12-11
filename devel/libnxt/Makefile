@@ -4,10 +4,9 @@
 PORTNAME=	libnxt
 PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Lego NXT library
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons

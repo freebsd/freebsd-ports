@@ -8,7 +8,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://selab.janelia.org/pub/software/hmmer3/3.0/ \
 		http://selab.janelia.org/software/hmmer3/3.0/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Profile hidden Markov models for biological sequence analysis
 
 LICENSE=	GPLv3

@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://research-pub.gene.com/gmap/src/
 DISTNAME=	${PORTNAME}-gsnap-${PORTVERSION:C|\.|-|g}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Genomic Mapping and Alignment Program for mRNA and EST Sequences
 
 LICENSE=	GMAP

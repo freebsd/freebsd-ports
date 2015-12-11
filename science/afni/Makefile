@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <jwbacon@tds.net>
+# Created by: Jason W. Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 ############################################################################
@@ -13,14 +13,13 @@ PORTNAME=	afni
 PORTVERSION=	2012.04.17.2129
 PORTREVISION=	12
 CATEGORIES=	science biology graphics
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
-		http://www.acadix.biz/Ports/distfiles/AFNI/${PORTVERSION}/
+MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/AFNI/${PORTVERSION}/
 DISTFILES=	afni_src.tgz afni.1 3dClustBust.c \
 		TTatlas+tlrc.BRIK.gz TTatlas+tlrc.HEAD CA_EZ_v1.5-July3107.tgz
 DIST_SUBDIR=	AFNI-${PORTVERSION}
 EXTRACT_ONLY=	afni_src.tgz CA_EZ_v1.5-July3107.tgz
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2

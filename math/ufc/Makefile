@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	ufc
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/${MMVERSION}.x/${PORTVERSION}/+download/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Unified framework for finite element assembly
 
 BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20
