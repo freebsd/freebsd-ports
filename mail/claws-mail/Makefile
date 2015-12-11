@@ -65,8 +65,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 post-install:
-	(cd ${WRKSRC} && ${INSTALL_DATA} NEWS README TODO ${STAGEDIR}${DOCSDIR})
-	${INSTALL_DATA} ${WRKSRC}/tools/README ${STAGEDIR}${DOCSDIR}/README.tools
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/tools && \
 		${INSTALL_SCRIPT} OOo2claws-mail.pl acroread2claws-mail.pl \
@@ -79,5 +77,9 @@ post-install:
 		tbird2claws.py textviewer.pl textviewer.sh \
 		thunderbird-filters-convertor.pl uudec uuooffice vcard2xml.py \
 		${STAGEDIR}${DATADIR})
+
+post-install-DOCS-on:
+	(cd ${WRKSRC} && ${INSTALL_DATA} NEWS README TODO ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/tools/README ${STAGEDIR}${DOCSDIR}/README.tools
 
 .include <bsd.port.mk>
