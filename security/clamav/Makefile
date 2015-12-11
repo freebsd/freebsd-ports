@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	0.98.7
+PORTVERSION=	0.99
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
 OPTIONS_DEFINE=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS MILTER LDAP ICONV STDERR \
-		EXPERIMENTAL DOCS IPV6 DMG_XAR
+		EXPERIMENTAL DOCS IPV6 DMG_XAR JSON PCRE
 
 ARC_DESC=		Enable arch archives support
 ARJ_DESC=		Enable arj archives support
@@ -29,15 +29,20 @@ STDERR_DESC=		Print logs to stderr instead of stdout
 EXPERIMENTAL_DESC=	Build experimental code
 DMG_XAR_DESC=		Enable DMG and XAR archives support
 
-OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DOCS IPV6 DMG_XAR
+OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DOCS IPV6 DMG_XAR \
+			JSON PCRE
 
 ARC_RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc
 ARJ_RUN_DEPENDS=	arj:${PORTSDIR}/archivers/arj
 LHA_RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 UNZOO_RUN_DEPENDS=	unzoo:${PORTSDIR}/archivers/unzoo
+JSON_LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 UNRAR_CONFIGURE_ENABLE=	unrar
 MILTER_CONFIGURE_ENABLE=milter
 TESTS_CONFIGURE_ENABLE=	check
+JSON_CONFIGURE_WITH=	libjson
+PCRE_CONFIGURE_WITH=	pcre
 TESTS_BUILD_DEPENDS=	${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
 ICONV_CONFIGURE_ON=	--with-iconv
 ICONV_CONFIGURE_OFF=	--without-iconv
