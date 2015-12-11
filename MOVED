@@ -7334,7 +7334,7 @@ x11-fm/pbi-thumbnailer||2014-12-27|Has expired: Broken for more than 6 months
 games/secretmaryochronicles||2014-12-27|Has expired: does not run, cegui 0.8 support still in development
 multimedia/ffmpeg24|multimedia/ffmpeg25|2014-12-27|ffmpeg upstream now points to 2.5.x series
 x11-wm/enlightenment-docs|x11-wm/e16-docs|2014-12-28|Renamed for better naming
-devel/py-checkmanifest|devel/py-check-manifest|2014-12-29|Use correct upstream PyPi name
+devel/py-checkmanifest|devel/py-check-manifest|2014-12-29|Use correct upstream PyPI name
 deskutils/xpad-current|deskutils/xpad|2014-12-30|deskutils/xpad-current is ready for prime time
 biology/ncbi-blast|biology/ncbi-blast+|2014-12-30|Clarify that this is blast+ and not the blast, allow for a future ncbi-blast port
 lang/perl5.14||2014-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl
@@ -7416,7 +7416,7 @@ japanese/xlockmore|x11/xlockmore|2015-02-02|Merged into x11/xlockmore
 deskutils/currtime|sysutils/currtime|2015-02-03|Move to sysutils category
 sysutils/pcbsd-utils-qt4|sysutils/pcbsd-utils-qt5|2015-02-03|Renamed to pcbsd-utils-qt5
 devel/ntopng-zmq||2015-02-05|Has expired: No longer required after net/ntopng 1.1
-devel/py-pylib|devel/py-py|2015-02-11|Rename to match upstream (PyPi) name
+devel/py-pylib|devel/py-py|2015-02-11|Rename to match upstream (PyPI) name
 sysutils/brebis|sysutils/backupchecker|2015-02-12|Renamed to backupchecker
 sysutils/rsyslog7-devel|sysutils/rsyslog7|2015-02-13|Has expired: EoL, use sysutils/rsyslog7
 sysutils/rsyslog8-devel|sysutils/rsyslog8|2015-02-13|Has expired: EoL, use sysutils/rsyslog8
@@ -7800,7 +7800,7 @@ french/trytond_account_fr||2015-08-05|No more supported upstream, use tryton 2.8
 german/trytond_account_de_skr03||2015-08-05|No more supported upstream, use tryton 2.8 instead
 www/trytond_google_maps||2015-08-05|No more supported upstream, use tryton 2.8 instead
 devel/appdata-tools|devel/appstream-glib|2015-08-05|Replaced by appstream-glib
-textproc/pystemmer|textproc/py-pystemmer|2015-08-06|Rename to match upstream (PyPi) name
+textproc/pystemmer|textproc/py-pystemmer|2015-08-06|Rename to match upstream (PyPI) name
 dns/knot|dns/knot1|2015-08-07|Rename to knot1 now knot 2.0 is out
 net/py-xmlrpclib||2015-08-07|Has expired: This is part of standard library since python 2.2
 net-p2p/py-kenosis||2015-08-07|Has expired: Fails to run with modern python
