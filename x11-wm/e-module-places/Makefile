@@ -17,6 +17,8 @@ GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig tar:xz
 INSTALL_TARGET=	install-strip
 
+BROKEN=		Not compatible with Enlightenment 0.20
+
 .include "../enlightenment/Makefile.plist"
 
 OPTIONS_DEFINE=	NLS

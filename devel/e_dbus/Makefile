@@ -26,4 +26,7 @@ CONFIGURE_ARGS=	--enable-ehal --disable-enotify --disable-eukit \
 		--disable-edbus-test --disable-edbus-test-client \
 		--disable-edbus-async-test --disable-static
 
+DEPRECATED=	Not used anymore by x11-wm/enlightenment
+EXPIRATION_DATE=2016-01-15
+
 .include <bsd.port.mk>
