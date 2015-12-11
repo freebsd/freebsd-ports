@@ -253,6 +253,7 @@ sogod:*:846:846::0:0:SOGo groupware:/nonexistent:/usr/sbin/nologin
 fossy:*:901:901::0:0:FOSSology user:/usr/local/share/fossology:/usr/local/bin/bash
 scanlogd:*:902:902::0:0:scanlogd user:/nonexistent:/usr/sbin/nologin
 _ocserv:*:903:903::0:0:ocserv user:/nonexistent:/usr/sbin/nologin
+grafana:*:904:904::0:0:Grafana2:/nonexistent:/usr/bin/nologin
 artifactory:*:905:905::0:0:artifactory user:/nonexistent:/usr/sbin/nologin
 opentsdb:*:906:906::0:0:OpenTSDB Daemon:/var/empty:/usr/sbin/nologin
 influxd:*:907:907::0:0:InfluxDB Daemon:/var/empty:/usr/sbin/nologin
