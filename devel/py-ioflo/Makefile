@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ioflo
-PORTVERSION=	1.2.4
+PORTVERSION=	1.4.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Automated Reasoning Engine and Flow Based Programming Framework
 LICENSE=	APACHE20
 
 USES=		python:2 shebangfix
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 SHEBANG_FILES=	scripts/ioflo

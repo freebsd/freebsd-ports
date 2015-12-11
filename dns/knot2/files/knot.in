@@ -10,7 +10,7 @@
 #
 # knot_enable="YES":	Set to NO by default.
 #			Set it to YES to enable knot.
-# knot_config="":	Set to /usr/local/etc/knot/knot.conf
+# knot_config="":	Set to %%PREFIX%%/etc/knot/knot.conf
 #			by default.
 
 . /etc/rc.subr

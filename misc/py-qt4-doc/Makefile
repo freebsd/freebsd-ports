@@ -15,7 +15,8 @@ COMMENT=	Python bindings for the Qt4 toolkit, documentation
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 NO_BUILD=	yes
 
-USES=		python
+USES=		python pyqt:4
+USE_PYQT=	#
 
 DOCSDIR=	${PREFIX}/share/doc/py-qt4
 
@@ -29,5 +30,4 @@ do-install:
 			${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 
-.include "../../devel/py-qt4/bsd.pyqt.mk"
 .include <bsd.port.mk>

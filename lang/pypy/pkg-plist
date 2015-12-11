@@ -2041,7 +2041,7 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/zipfile.py
 %%PYPY_DIR%%/lib_pypy/__init__.py
 %%PYPY_DIR%%/lib_pypy/_audioop_build.py
-%%PYPY_DIR%%/lib_pypy/_audioop_cffi.pypy-%%PYPY_VER%%.so
+%%PYPY_DIR%%/lib_pypy/_audioop_cffi.pypy-%%PYPY_CFFI_VER%%.so
 %%PYPY_DIR%%/lib_pypy/_codecs_cn.py
 %%PYPY_DIR%%/lib_pypy/_codecs_hk.py
 %%PYPY_DIR%%/lib_pypy/_codecs_iso2022.py
@@ -2066,7 +2066,7 @@ bin/pypy
 %%PYPY_DIR%%/lib_pypy/_ctypes_test.py
 %%PYPY_DIR%%/lib_pypy/_curses.py
 %%PYPY_DIR%%/lib_pypy/_curses_build.py
-%%PYPY_DIR%%/lib_pypy/_curses_cffi.pypy-%%PYPY_VER%%.so
+%%PYPY_DIR%%/lib_pypy/_curses_cffi.pypy-%%PYPY_CFFI_VER%%.so
 %%PYPY_DIR%%/lib_pypy/_curses_panel.py
 %%PYPY_DIR%%/lib_pypy/_elementtree.py
 %%PYPY_DIR%%/lib_pypy/_ffi.py
@@ -2075,7 +2075,7 @@ bin/pypy
 %%PYPY_DIR%%/lib_pypy/_marshal.py
 %%PYPY_DIR%%/lib_pypy/_md5.py
 %%PYPY_DIR%%/lib_pypy/_pwdgrp_build.py
-%%PYPY_DIR%%/lib_pypy/_pwdgrp_cffi.pypy-%%PYPY_VER%%.so
+%%PYPY_DIR%%/lib_pypy/_pwdgrp_cffi.pypy-%%PYPY_CFFI_VER%%.so
 %%PYPY_DIR%%/lib_pypy/_pypy_interact.py
 %%PYPY_DIR%%/lib_pypy/_pypy_irc_topic.py
 %%PYPY_DIR%%/lib_pypy/_pypy_testcapi.py
@@ -2089,7 +2089,7 @@ bin/pypy
 %%PYPY_DIR%%/lib_pypy/_structseq.py
 %%PYPY_DIR%%/lib_pypy/_subprocess.py
 %%PYPY_DIR%%/lib_pypy/_syslog_build.py
-%%PYPY_DIR%%/lib_pypy/_syslog_cffi.pypy-%%PYPY_VER%%.so
+%%PYPY_DIR%%/lib_pypy/_syslog_cffi.pypy-%%PYPY_CFFI_VER%%.so
 %%PYPY_DIR%%/lib_pypy/_testcapi.py
 %%PYPY_DIR%%/lib_pypy/_testcapimodule.c
 %%PYPY_DIR%%/lib_pypy/_tkinter/__init__.py
@@ -2145,9 +2145,9 @@ bin/pypy
 %%PYPY_DIR%%/lib_pypy/cffi/vengine_gen.py
 %%PYPY_DIR%%/lib_pypy/cffi/verifier.py
 %%PYPY_DIR%%/lib_pypy/ctypes_config_cache/__init__.py
-%%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_locale_%%PYPY_BITS%%_.py
+%%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_locale_64_.py
 %%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_locale_cache.py
-%%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_resource_%%PYPY_BITS%%_.py
+%%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_resource_64_.py
 %%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_resource_cache.py
 %%PYPY_DIR%%/lib_pypy/ctypes_config_cache/dumpcache.py
 %%PYPY_DIR%%/lib_pypy/ctypes_config_cache/locale.ctc.py

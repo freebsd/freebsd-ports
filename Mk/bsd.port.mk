@@ -1615,6 +1615,9 @@ INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
 
 # XXX PIE support to be added here
 MAKE_ENV+=	NO_PIE=yes
+# We will control debug files.  Don't let builds that use /usr/share/mk
+# split out debug symbols since the plist won't know to expect it.
+MAKE_ENV+=	NO_DEBUG_FILES=yes
 
 .if defined(NOPORTDOCS)
 PLIST_SUB+=		PORTDOCS="@comment "

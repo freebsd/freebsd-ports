@@ -1,6 +1,6 @@
---- mg_m_init.c.orig	Sat Nov 26 17:47:44 2005
-+++ mg_m_init.c	Sat Dec 17 12:24:51 2005
-@@ -269,7 +269,7 @@
+--- mg_m_init.c.orig	2006-01-03 10:15:37 UTC
++++ mg_m_init.c
+@@ -284,7 +284,7 @@ int mg_open_device _P2 ( (devname, block
      if (fd > 0)
      {
  	(void) close(0);
@@ -9,7 +9,7 @@
  	{
  	    lprintf( L_FATAL, "mod: cannot make %s stdin", devname );
  	    return ERROR;
-@@ -281,11 +281,11 @@
+@@ -296,11 +296,11 @@ int mg_open_device _P2 ( (devname, block
      (void) close(1);
      (void) close(2);
      

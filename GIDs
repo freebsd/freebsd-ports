@@ -243,6 +243,7 @@ sogod:*:846:
 fossy:*:901:www
 scanlogd:*:902:
 _ocserv:*:903:
+grafana:*:904:
 artifactory:*:905:
 opentsdb:*:906:
 influxd:*:907:

@@ -700,26 +700,18 @@ MASTER_SITE_GNU+= \
 
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
 MASTER_SITE_GNUPG+= \
-	http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
-	ftp://ftp.surfnet.nl/pub/security/gnupg/%SUBDIR%/ \
-	http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.bit.nl/mirror/gnupg/%SUBDIR%/ \
-	ftp://mirror.switch.ch/mirror/gnupg/%SUBDIR%/ \
 	http://artfiles.org/gnupg.org/%SUBDIR%/ \
+	http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/security/gnupg/%SUBDIR%/ \
+	ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://mirror.switch.ch/mirror/gnupg/%SUBDIR%/ \
+	http://gd.tuwien.ac.at/privacy/gnupg/%SUBDIR%/ \
+	http://mirrors.dotsrc.org/gcrypt/%SUBDIR%/ \
 	ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	ftp://ftp.crysys.hu/pub/gnupg/%SUBDIR%/ \
-	http://gd.tuwien.ac.at/privacy/gnupg/%SUBDIR%/ \
-	ftp://mirror.cict.fr/gnupg/%SUBDIR%/ \
-	http://mirrors.dotsrc.org/%SUBDIR%/ \
-	ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/security/gnupg/%SUBDIR%/ \
-	ftp://ftp.hi.is/pub/mirrors/gnupg/%SUBDIR%/ \
-	ftp://ftp.jyu.fi/pub/crypt/gcrypt/%SUBDIR%/ \
-	http://dist.gnupg.pt/%SUBDIR%/ \
-	http://gnupg.org.favoritelinks.net/%SUBDIR%/
+	http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GNUSTEP)

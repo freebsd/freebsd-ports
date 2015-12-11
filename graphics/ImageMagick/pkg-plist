@@ -1412,7 +1412,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/contact.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/convert.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/css/README.txt
-%%PORTDOCS%%%%DOCSDIR%%-6/www/css/bootstrap.css
 %%PORTDOCS%%%%DOCSDIR%%-6/www/css/magick.css
 %%PORTDOCS%%%%DOCSDIR%%-6/www/display.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/distribute-pixel-cache.html
@@ -1433,7 +1432,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/install-source.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/jp2.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/js/README.txt
-%%PORTDOCS%%%%DOCSDIR%%-6/www/js/bootstrap.js
 %%PORTDOCS%%%%DOCSDIR%%-6/www/js/magick.js
 %%PORTDOCS%%%%DOCSDIR%%-6/www/license.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/links.html

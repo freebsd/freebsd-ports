@@ -5,4 +5,4 @@ such a way that they're discoverable.
 Also solves problems with coordinating the use of PKCS#11 by
 different components or libraries living in the same process.
 
-WWW:	http://p11-glue.freedesktop.org/p11-kit.html
+WWW: http://p11-glue.freedesktop.org/p11-kit.html

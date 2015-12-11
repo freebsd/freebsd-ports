@@ -3,7 +3,7 @@
 
 PORTNAME=	dovecot2-antispam-plugin
 PORTVERSION=	20130429
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	mail
 MASTER_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni

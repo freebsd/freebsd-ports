@@ -18,7 +18,7 @@ LICENSE=	GPLv3
 BROKEN=		brutally fails test suite - with ICE
 
 BUILD_DEPENDS=	gnatcoll>=2014:${PORTSDIR}/devel/gnatcoll
-RUN_DEPENDS=	gnatwhy3:${PORTSDIR}/math/why3-gpl \
+RUN_DEPENDS=	gnatwhy3:${PORTSDIR}/math/why3-spark \
 		alt-ergo:${PORTSDIR}/math/alt-ergo
 
 USES=		ada gmake

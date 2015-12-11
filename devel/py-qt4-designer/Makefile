@@ -8,13 +8,11 @@ CATEGORIES=	devel python
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt4 toolkit, QtDesigner module
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
-RUN_DEPENDS=	${PKGNAMEPREFIX}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PKGNAMEPREFIX}xml>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xml \
-		${PKGNAMEPREFIX}script>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-script
-
 CONFIGURE_ARGS=	--enable QtDesigner --no-designer-plugin
-PYQT4_DIST=	yes
+PYQT_DIST=	yes
+
+USES=		python pyqt:4
+USE_PYQT=	sip_build gui_run script_run xml_run
 USE_QT4=	gui xml designer moc_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
@@ -27,5 +25,4 @@ API_CONFIGURE_OFF=	--no-qsci-api
 API_LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 DEBUG_CONFIGURE_ON=	--debug --trace
 
-.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.mk>

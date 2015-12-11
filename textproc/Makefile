@@ -655,6 +655,7 @@
     SUBDIR += p5-ODF-lpOD
     SUBDIR += p5-OpenOffice-OODoc
     SUBDIR += p5-PDF-API2
+    SUBDIR += p5-PDF-API2-Simple
     SUBDIR += p5-PDF-API3
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-PDF-FromHTML
@@ -1463,6 +1464,7 @@
     SUBDIR += rubygem-sass32
     SUBDIR += rubygem-sax-machine
     SUBDIR += rubygem-scss_lint
+    SUBDIR += rubygem-shell2html
     SUBDIR += rubygem-simplecov-html
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-stamp

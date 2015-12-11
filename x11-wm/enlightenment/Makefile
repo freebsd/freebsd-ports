@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.19.13
+PORTVERSION=	0.20.0
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
@@ -14,7 +14,6 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
 		libelementary.so:${PORTSDIR}/x11-toolkits/elementary \
-		libedbus.so:${PORTSDIR}/devel/e_dbus \
 		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
 RUN_DEPENDS=	${LOCALBASE}/lib/evas/utils/evas_image_loader.svg:${PORTSDIR}/graphics/evas_generic_loaders-svg
 
@@ -29,8 +28,6 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS=	--with-profile=MEDIUM_PC \
 		--disable-connman --disable-bluez4 \
 		--disable-device-udev --disable-mount-udisks
-
-CPPFLAGS+=	-I${LOCALBASE}/include/e_dbus-1
 
 .include "Makefile.plist"
 

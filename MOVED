@@ -484,7 +484,6 @@ x11/libxfce4mcs||2009-03-02|Got obsolete by Xfce 4.6 update
 sysutils/xfce4-mcs-manager||2009-03-02|Got obsolete by Xfce 4.6 update
 sysutils/xfce4-mcs-plugins||2009-03-02|Got obsolete by Xfce 4.6 update
 x11-themes/xfce4-icon-theme||2009-03-02|Got obsolete by Xfce 4.6 update
-comms/py-gammu||2009-03-04|Incorporated into comms/gammu
 x11-toolkits/scx||2009-03-06|Abandoned upstream
 x11-toolkits/xg||2009-03-06|Abandoned upstream
 audio/quelcom||2009-03-07|Abandoned upstream, requires obsolete version of GCC
@@ -7335,7 +7334,7 @@ x11-fm/pbi-thumbnailer||2014-12-27|Has expired: Broken for more than 6 months
 games/secretmaryochronicles||2014-12-27|Has expired: does not run, cegui 0.8 support still in development
 multimedia/ffmpeg24|multimedia/ffmpeg25|2014-12-27|ffmpeg upstream now points to 2.5.x series
 x11-wm/enlightenment-docs|x11-wm/e16-docs|2014-12-28|Renamed for better naming
-devel/py-checkmanifest|devel/py-check-manifest|2014-12-29|Use correct upstream PyPi name
+devel/py-checkmanifest|devel/py-check-manifest|2014-12-29|Use correct upstream PyPI name
 deskutils/xpad-current|deskutils/xpad|2014-12-30|deskutils/xpad-current is ready for prime time
 biology/ncbi-blast|biology/ncbi-blast+|2014-12-30|Clarify that this is blast+ and not the blast, allow for a future ncbi-blast port
 lang/perl5.14||2014-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl
@@ -7417,7 +7416,7 @@ japanese/xlockmore|x11/xlockmore|2015-02-02|Merged into x11/xlockmore
 deskutils/currtime|sysutils/currtime|2015-02-03|Move to sysutils category
 sysutils/pcbsd-utils-qt4|sysutils/pcbsd-utils-qt5|2015-02-03|Renamed to pcbsd-utils-qt5
 devel/ntopng-zmq||2015-02-05|Has expired: No longer required after net/ntopng 1.1
-devel/py-pylib|devel/py-py|2015-02-11|Rename to match upstream (PyPi) name
+devel/py-pylib|devel/py-py|2015-02-11|Rename to match upstream (PyPI) name
 sysutils/brebis|sysutils/backupchecker|2015-02-12|Renamed to backupchecker
 sysutils/rsyslog7-devel|sysutils/rsyslog7|2015-02-13|Has expired: EoL, use sysutils/rsyslog7
 sysutils/rsyslog8-devel|sysutils/rsyslog8|2015-02-13|Has expired: EoL, use sysutils/rsyslog8
@@ -7802,7 +7801,7 @@ french/trytond_account_fr||2015-08-05|No more supported upstream, use tryton 2.8
 german/trytond_account_de_skr03||2015-08-05|No more supported upstream, use tryton 2.8 instead
 www/trytond_google_maps||2015-08-05|No more supported upstream, use tryton 2.8 instead
 devel/appdata-tools|devel/appstream-glib|2015-08-05|Replaced by appstream-glib
-textproc/pystemmer|textproc/py-pystemmer|2015-08-06|Rename to match upstream (PyPi) name
+textproc/pystemmer|textproc/py-pystemmer|2015-08-06|Rename to match upstream (PyPI) name
 dns/knot|dns/knot1|2015-08-07|Rename to knot1 now knot 2.0 is out
 net/py-xmlrpclib||2015-08-07|Has expired: This is part of standard library since python 2.2
 net-p2p/py-kenosis||2015-08-07|Has expired: Fails to run with modern python
@@ -8045,3 +8044,9 @@ devel/fpc-fpmkunit||2015-12-05|Eliminated during FPC upgrade to 3.0.0
 multimedia/fpc-matroska||2015-12-05|Eliminated during FPC upgrade to 3.0.0
 security/fpc-hash||2015-12-05|Eliminated during FPC upgrade to 3.0.0
 www/jetty|www/jetty8|2015-12-06|Rename to prepare for jetty9
+devel/pyinstaller|devel/py-pyinstaller|2015-12-09|Add py- prefix to directory name
+math/why3-gpl|math/why3-spark|2015-12-10|Change why3 suffix (upstream request and for consistency)
+devel/py-memoryprofiler|devel/py-memory_profiler|2015-12-11|Rename to consistency with other Python ports
+print/py-cups|print/py-pycups|2015-12-11|Renamed to match upstream naming
+astro/py-metar|astro/py-pymetar|2015-12-11|Renamed to match upstream naming
+devel/jep|devel/py-jep|2015-12-11|Renamed to match upstream naming

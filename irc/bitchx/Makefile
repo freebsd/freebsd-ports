@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES+=	irc
 MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	dan.mashal@gmail.com
+MAINTAINER=	freebsd@bitchx.org
 COMMENT=	Feature-rich scriptable IRC client
 
 LICENSE=	BSD3CLAUSE

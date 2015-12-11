@@ -1,4 +1,4 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtAssistant.so
-share/py-sip/QtAssistant/QtAssistantmod.sip
-share/py-sip/QtAssistant/qassistantclient.sip
+%%PYQT_SIPDIR%%/QtAssistant/QtAssistantmod.sip
+%%PYQT_SIPDIR%%/QtAssistant/qassistantclient.sip
 %%API%%share/qt4/qsci/api/python/QtAssistant.api

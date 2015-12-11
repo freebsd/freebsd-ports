@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	markdown2
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,6 @@ COMMENT=	Fast and complete Python implementation of Markdown
 LICENSE=	MIT
 
 USES=		python zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

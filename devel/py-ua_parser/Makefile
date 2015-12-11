@@ -5,13 +5,13 @@ PORTNAME=	ua_parser
 PORTVERSION=	0.5.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:S/_/-/}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Python port of Browserscope's user agent parser
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
 RUN_DEPENDS=	${LOCALBASE}/share/ua_parser/regexes.yaml:${PORTSDIR}/devel/ua_parser-core \
 		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
 

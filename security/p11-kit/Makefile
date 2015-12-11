@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.23.1
-PORTREVISION=	1
+PORTVERSION=	0.23.2
 CATEGORIES=	security devel
 MASTER_SITES=	http://p11-glue.freedesktop.org/releases/
 

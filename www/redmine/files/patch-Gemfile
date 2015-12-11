@@ -1,21 +1,23 @@
---- Gemfile.orig	2015-05-25 16:10:44 UTC
+--- Gemfile.orig	2015-12-09 20:52:29 UTC
 +++ Gemfile
-@@ -1,24 +1,24 @@
+@@ -1,25 +1,25 @@
  source 'https://rubygems.org'
  
--gem "rails", "3.2.21"
+-gem "rails", "3.2.22"
 +gem "rails", "~> 3.2"
- gem "jquery-rails", "~> 3.1.1"
+ gem "rack-cache", "1.2" if RUBY_VERSION < "1.9.3"
+ gem "jquery-rails", "~> 3.1.4"
  gem "coderay", "~> 1.1.0"
  gem "fastercsv", "~> 1.5.0", :platforms => [:mri_18, :mingw_18, :jruby]
  gem "builder", ">= 3.0.4"
 -gem "request_store", "1.0.5"
 +gem "request_store", ">= 1.0.5"
  gem "mime-types"
- gem "rbpdf", "~> 1.18.5"
+-gem "rbpdf", "~> 1.18.7"
++gem "rbpdf", ">= 1.18.7"
  
 -gem "i18n", "~> 0.6.11"
-+gem "i18n", "~> 0.7.0"
++gem "i18n", ">= 0.6.11"
  
  # Optional gem for LDAP authentication
  group :ldap do
@@ -26,20 +28,11 @@
  # Optional gem for OpenID authentication
  group :openid do
 -  gem "ruby-openid", "~> 2.3.0", :require => "openid"
-+  gem "ruby-openid", "~> 2.7", :require => "openid"
++  gem "ruby-openid", ">= 2.3.0", :require => "openid"
    gem "rack-openid"
  end
  
-@@ -34,7 +34,7 @@ platforms :mri, :mingw do
-   # Optional Markdown support, not for JRuby
-   group :markdown do
-     # TODO: upgrade to redcarpet 3.x when ruby1.8 support is dropped
--    gem "redcarpet", "~> 2.3.0"
-+    gem "redcarpet", "~> 3.0"
-   end
- end
- 
-@@ -81,23 +81,6 @@ else
+@@ -82,23 +82,6 @@ else
    warn("Please configure your config/database.yml first")
  end
  
@@ -49,14 +42,14 @@
 -end
 -
 -group :test do
+-  gem "minitest"
+-  gem "test-unit", "~> 3.0"
 -  gem "shoulda", "~> 3.3.2"
 -  gem "shoulda-matchers", "1.4.1"
 -  gem "mocha", "~> 1.0.0", :require => 'mocha/api'
 -  if RUBY_VERSION >= '1.9.3'
 -    gem "capybara"
 -    gem "selenium-webdriver"
--    # building ffi 1.9.7 fails in Ubuntu: https://github.com/ffi/ffi/issues/414
--    gem "ffi", "1.9.6"
 -  end
 -end
 -

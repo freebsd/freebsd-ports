@@ -41,26 +41,20 @@ DOXYGEN_CONFIGURE_ENABLE=	full-doc
 MEMDEBUG_DESC=			Enable memory debugger statistic
 MEMDEBUG_CONFIGURE_ENABLE=	memtrace
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e 's|aq_endian\" ==|aq_endian\" =|g' \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|find chipcard|find libchipcard5|' \
 		${WRKSRC}/Makefile.in
 
-post-build:
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-build-DOXYGEN-on:
 	@cd ${WRKSRC} && ${MAKE_CMD} srcdoc
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/apidoc
 	cd ${WRKSRC}/apidoc && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/apidoc
 	@${FIND} -P ${STAGEDIR}${DOCSDIR} -type f 2>/dev/null | \
 		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.mk>

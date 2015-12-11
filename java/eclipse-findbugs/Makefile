@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	findbugs
-DISTVERSION=	3.0.0.20140706-2cfb468
+DISTVERSION=	3.0.1.20150306-5afe4d1
 CATEGORIES=	java devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20eclipse%20plugin/3.0.0
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20eclipse%20plugin/3.0.1
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	edu.umd.cs.findbugs.plugin.eclipse_${DISTVERSION}
 DIST_SUBDIR=	eclipse

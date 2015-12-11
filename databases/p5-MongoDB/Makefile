@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MongoDB
-PORTVERSION=	1.0.4
+PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -32,8 +32,6 @@ TEST_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Test-Deep>=0.111:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
-
-PORTSCOUT=	skipv:0.999.998.5
 
 CFLAGS+=	-DBSON_COMPILATION -DMONGO_USE_64_BIT_INT
 MAKE_JOBS_UNSAFE=	yes

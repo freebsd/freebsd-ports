@@ -1,14 +1,13 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
-# $FreeBSD: head/math/matlab-installer/Makefile 363395 2014-07-29 21:25:30Z adamw $
+# Created by: Jason Bacon <bacon4000@gmail.com>
+# $FreeBSD$
 
 PORTNAME=	matlab-installer
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	math science java
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Easy installation of Linux Matlab(r) on FreeBSD
 
 LICENSE=	BSD3CLAUSE

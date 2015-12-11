@@ -3,6 +3,7 @@
 
 PORTNAME=	solarus-quest-editor
 PORTVERSION=	1.4.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -21,7 +22,6 @@ LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 USE_GITHUB=	yes
 GH_ACCOUNT=	christopho
 GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
 
 CMAKE_ARGS+=	-DSOLARUS_USE_LUAJIT=OFF
 USE_SDL=	sdl2 ttf2 image2

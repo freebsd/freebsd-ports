@@ -3,6 +3,7 @@
 
 PORTNAME=	texworks
 PORTVERSION=	0.4.6
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	editors
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -16,7 +17,6 @@ LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
 USES=		pkgconfig qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	TeXworks
-GH_TAGNAME=	release-${PORTVERSION}
 USE_QT4=	gui corelib rcc_build moc_build uic_build \
 		dbus xml scripttools designer_build
 QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} \

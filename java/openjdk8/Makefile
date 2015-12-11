@@ -2,7 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -269,6 +269,12 @@ JDK_BUILD_TYPE=		release
 AUTOCONF_ARGS=	-I . -o generated-configure.sh generated-configure.ac
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv6*} || ${ARCH} == "i386"
+# XXX We must limit max heap size for 32-bit targets.
+CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs="-Xmx768m"
+MAKE_ENV+=	JAVADOC_CMD_MEM="-Xmx768m"
+.endif
 
 .if ${ARCH} == "armv6"
 # From NetBSD http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/lang/openjdk7/hacks.mk

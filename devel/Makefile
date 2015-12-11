@@ -2001,6 +2001,7 @@
     SUBDIR += p5-Data-SExpression
     SUBDIR += p5-Data-Section
     SUBDIR += p5-Data-Section-Simple
+    SUBDIR += p5-Data-Serializable
     SUBDIR += p5-Data-Serializer
     SUBDIR += p5-Data-Serializer-Sereal
     SUBDIR += p5-Data-ShowTable
@@ -2558,6 +2559,7 @@
     SUBDIR += p5-Log-Handler
     SUBDIR += p5-Log-Log4perl
     SUBDIR += p5-Log-Log4perl-Appender-RabbitMQ
+    SUBDIR += p5-Log-Log4perl-Appender-Socket-UNIX
     SUBDIR += p5-Log-Log4perl-Tiny
     SUBDIR += p5-Log-Message
     SUBDIR += p5-Log-Message-Simple
@@ -3905,6 +3907,7 @@
     SUBDIR += py-anonfunc
     SUBDIR += py-anyconfig
     SUBDIR += py-anyjson
+    SUBDIR += py-apache_conf_parser
     SUBDIR += py-apipkg
     SUBDIR += py-appdirs
     SUBDIR += py-application
@@ -4125,7 +4128,7 @@
     SUBDIR += py-manuel
     SUBDIR += py-mccabe
     SUBDIR += py-meliae
-    SUBDIR += py-memoryprofiler
+    SUBDIR += py-memory_profiler
     SUBDIR += py-mercurialserver
     SUBDIR += py-mez_xml
     SUBDIR += py-mimeparse
@@ -4175,6 +4178,7 @@
     SUBDIR += py-phpserialize
     SUBDIR += py-pika
     SUBDIR += py-pip
+    SUBDIR += py-pkgconfig
     SUBDIR += py-plan
     SUBDIR += py-plex
     SUBDIR += py-pluggy
@@ -4210,6 +4214,7 @@
     SUBDIR += py-pygit2
     SUBDIR += py-pygithub
     SUBDIR += py-pygpx
+    SUBDIR += py-pyinstaller
     SUBDIR += py-pykde4
     SUBDIR += py-pykdeuic4
     SUBDIR += py-pyke
@@ -4368,6 +4373,7 @@
     SUBDIR += py-unittestplus
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
+    SUBDIR += py-urwidtrees
     SUBDIR += py-usb
     SUBDIR += py-user_agents
     SUBDIR += py-utils
@@ -4496,7 +4502,6 @@
     SUBDIR += pycount
     SUBDIR += pydbus-common
     SUBDIR += pygobject3-common
-    SUBDIR += pyinstaller
     SUBDIR += pylint
     SUBDIR += pymacs
     SUBDIR += pyobfuscate

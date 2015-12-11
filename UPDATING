@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151210:
+  AFFECTS: users of comms/gammu
+  AUTHOR: vanilla@FreeBSD.org
+
+  The python binding of comms/gammu were split from the main port. To get them you
+  need to install comms/py-gammu.
+
 20151206:
   AFFECTS: users of mail/postfixadmin
   AUTHOR: riggs@FreeBSD.org
@@ -24,14 +31,6 @@ you update your ports collection, before attempting any port upgrades.
   Detailed information regarding this procedure is provided in step 3 of
   the installation instructions in ${DATADIR}/INSTALL.TXT (by default
   /usr/local/share/postfixadmin/INSTALL.TXT).
-
-20151205:
-  AFFECTS: users of shells/zsh
-  AUTHOR: bapt@FreeBSD.org
-
-  Since version 5.2 zsh is now respecting prefix to look up for its default
-  configurations: zshrc/zprofile. Users having those files in /etc should
-  move them to PREFIX/etc (by default /usr/local/etc)
 
 20151205:
   AFFECTS: users of devel/ncurses
@@ -638,7 +637,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20150615:
   AFFECTS: users of security/libressl
-  AUTHOR: brnrd@FreeBSD.org 
+  AUTHOR: brnrd@FreeBSD.org
 
   After upgrading libressl, manually update all packages that depend on
   this library since its version has changed. Normally, you can obtain the
@@ -1346,7 +1345,7 @@ AUTHOR: ohauer@FreeBSD.org
 
 20141215:
   AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
-  AUTHOR: sbruno@freebsd.org
+  AUTHOR: sbruno@FreeBSD.org
 
   The CentOS ports are now the default for stable/10 (after revision 275807).
   See UPDATING entry 20141209 for details on migration of systems.
@@ -1370,7 +1369,7 @@ AUTHOR: ohauer@FreeBSD.org
 
 20141209:
   AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
-  AUTHOR: xmj@freebsd.org
+  AUTHOR: xmj@FreeBSD.org
 
   The CentOS ports infrastructure has replaced Fedora 10 as default.
 
@@ -2700,7 +2699,7 @@ AUTHOR: ohauer@FreeBSD.org
 
     1) distribute-0.6.35-py2.7.egg
     2) setuptools-0.6c11-py2.7.egg
-    3) *Any* version of setuptools directly from PyPi via pip or easy_install
+    3) *Any* version of setuptools directly from PyPI via pip or easy_install
 
   More information is available here:
 
@@ -7098,7 +7097,7 @@ AUTHOR: ohauer@FreeBSD.org
 
 20110928:
   AFFECTS: users of www/nginx-devel
-  AUTHOR: osa@FreeBSD.ORG
+  AUTHOR: osa@FreeBSD.org
 
   Note: 1.1.4 release introduces several API changes which may affect
   third-party modules.

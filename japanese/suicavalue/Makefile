@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.c
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=
 
-MAINTAINER=	sarumaru@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to print a statement of Suica
 
 LIB_DEPENDS=	libpasori.so:${PORTSDIR}/devel/libpasori

@@ -1,3 +1,4 @@
+lib/elixir/lib/joken/ebin/Elixir.Joken.AlgorithmError.beam
 lib/elixir/lib/joken/ebin/Elixir.Joken.Claims.Any.beam
 lib/elixir/lib/joken/ebin/Elixir.Joken.Claims.Map.beam
 lib/elixir/lib/joken/ebin/Elixir.Joken.Claims.beam
@@ -7,6 +8,7 @@ lib/elixir/lib/joken/ebin/Elixir.Joken.Token.beam
 lib/elixir/lib/joken/ebin/Elixir.Joken.beam
 lib/elixir/lib/joken/ebin/joken.app
 lib/elixir/lib/joken/lib/joken.ex
+lib/elixir/lib/joken/lib/joken/algorithm_error.ex
 lib/elixir/lib/joken/lib/joken/claims.ex
 lib/elixir/lib/joken/lib/joken/plug.ex
 lib/elixir/lib/joken/lib/joken/signer.ex

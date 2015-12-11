@@ -13,8 +13,9 @@ DISTNAME=	${SIP_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
 
-USES=		python
+USES=		python pyqt:sip
 USE_PYTHON=	concurrent py3kplist
+USE_PYQT=	#
 
 CONFIGURE_ARGS=	-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
 		-e ${PYTHONPREFIX_INCLUDEDIR} -v ${DATADIR} \
@@ -26,8 +27,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS DEBUG
 DEBUG_CONFIGURE_ON=	--debug
-
-.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 
 do-configure:
 	cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${CONFIGURE_ARGS}

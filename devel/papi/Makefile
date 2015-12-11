@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	papi
-PORTVERSION=	5.4.1
+PORTVERSION=	5.4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
@@ -19,16 +19,18 @@ NO_PACKAGE=	Needs to be compiled for specific CPU
 
 STRIP=		# empty
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 WRKMAN=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/man
 INSTALL_TARGET=	install-all
+CONFIGURE_ARGS+=	--with-tests=ctests
 
 OPTIONS_DEFINE=	CORETEMP DEBUGINFO
 CORETEMP_DESC=	Add Intel Core thermal sensor (need coretemp.ko)
 DEBUGINFO_DESC=	Add debug information (increased verbosity)
 
+CORETEMP_CONFIGURE_ON=	--with-components=coretemp_freebsd
 DEBUGINFO_CONFIGURE_WITH=	debug
 
 .include <bsd.port.options.mk>
@@ -38,12 +40,6 @@ HAS_HWPMC!=	${SYSCTL} kern.hwpmc.nsamples >/dev/null 2>&1 && echo yes || ${ECHO_
 .if ${HAS_HWPMC} != yes
 IGNORE=		needs hwpmc module loaded or compiled into the kernel. \
 		Please consult hwpmc(4) on how to do it (or cat pkg-message)
-.endif
-
-CONFIGURE_ARGS+=	--with-tests=ctests
-
-.if ${PORT_OPTIONS:MCORETEMP}
-CONFIGURE_ARGS+=	--with-components=coretemp_freebsd
 .endif
 
 post-patch:

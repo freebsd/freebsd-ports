@@ -509,6 +509,7 @@
     SUBDIR += py-dkimpy
     SUBDIR += py-libgmail
     SUBDIR += py-milter
+    SUBDIR += py-notmuch
     SUBDIR += py-ppolicy
     SUBDIR += py-spambayes
     SUBDIR += py-spf

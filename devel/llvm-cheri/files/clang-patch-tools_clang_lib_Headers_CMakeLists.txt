@@ -1,14 +1,14 @@
---- tools/clang/lib/Headers/CMakeLists.txt.orig	2015-07-21 15:57:35 UTC
-+++ tools/clang/lib/Headers/CMakeLists.txt
-@@ -30,7 +30,6 @@ set(files
+--- tools/clang/lib/Headers/CMakeLists.txt.orig	2015-12-02 16:47:45.000000000 +0000
++++ tools/clang/lib/Headers/CMakeLists.txt	2015-12-04 10:15:34.524729263 +0000
+@@ -30,7 +30,6 @@
    Intrin.h
    inttypes.h
    iso646.h
 -  limits.h
    lzcntintrin.h
+   memcap.h
    mm3dnow.h
-   mmintrin.h
-@@ -45,20 +44,12 @@ set(files
+@@ -46,20 +45,12 @@
    s390intrin.h
    shaintrin.h
    smmintrin.h
@@ -26,6 +26,6 @@
    unwind.h
    vadefs.h
 -  varargs.h
+   vecintrin.h
    __wmmintrin_aes.h
    wmmintrin.h
-   __wmmintrin_pclmul.h

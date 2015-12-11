@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	watchman
-PORTVERSION=	3.0.0
+PORTVERSION=	4.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -11,26 +11,42 @@ COMMENT=	File alteration monitoring service
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 
 USES=		autoreconf gmake pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_prog_HAVE_ARC=false
-CONFIGURE_ARGS=	--with-pcre
+CONFIGURE_ENV=	ac_cv_prog_HAVE_ARC=false ac_cv_header_sys_inotify_h=no
+CONFIGURE_ARGS=	--without-python --without-ruby # in separate ports
+TEST_TARGET=	check
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--disable-silent-rules
 .endif
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-
-PLIST_FILES=	bin/watchman
+PLIST_FILES=	bin/${PORTNAME} \
+		"@dir(,,777) /var/run/${PORTNAME}"
 PORTDOCS=	README.markdown
 
+OPTIONS_DEFINE=	BACKTRACE PCRE
+OPTIONS_DEFAULT=BACKTRACE PCRE
+
+BACKTRACE_DESC=		Stack backtrace support via (lib)execinfo
+BACKTRACE_USES=		execinfo
+BACKTRACE_CPPFLAGS=	${EXECINFO_CPPFLAGS}
+BACKTRACE_LDFLAGS=	${EXECINFO_LDFLAGS}
+BACKTRACE_LIBS=		-lexecinfo
+
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_CONFIGURE_WITH=	pcre
+
 post-patch:
-	@${REINPLACE_CMD} -e '/^docdir = /d' ${WRKSRC}/Makefile.am
+# https://www.gnu.org/prep/standards/html_node/Directory-Variables.html
+	@${REINPLACE_CMD} -e 's,xprefix/var,localstatedir,' \
+		-e '\,/etc, { s//$$sysconfdir/; /=/s/^/eval /; }' \
+		${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e '/^docdir = /d' \
+		-e '/not-empty/d' \
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

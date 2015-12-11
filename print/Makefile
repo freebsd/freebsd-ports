@@ -191,12 +191,12 @@
     SUBDIR += pslib
     SUBDIR += pstotext
     SUBDIR += psutils
-    SUBDIR += py-cups
     SUBDIR += py-fonttools
     SUBDIR += py-fpdf
     SUBDIR += py-pdf
     SUBDIR += py-pollyreports
     SUBDIR += py-preppy
+    SUBDIR += py-pycups
     SUBDIR += py-pyscript
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab

@@ -24,8 +24,6 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} 's/1.9-SNAPSHOT/1.10/' ${WRKSRC}/default.properties
 
@@ -34,7 +32,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/dist/docs && ${FIND} api \
@@ -42,6 +41,5 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/dist/RELEASE-NOTES.txt \
 		${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [DONE]"
-.endif
 
 .include <bsd.port.mk>

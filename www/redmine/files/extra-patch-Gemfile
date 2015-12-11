@@ -9,9 +9,9 @@
 -    # RMagick 2 supports ruby 1.9
 -    # RMagick 1 would be fine for ruby 1.8 but Bundler does not support
 -    # different requirements for the same gem on different platforms
--    gem "rmagick", (RUBY_VERSION < "1.9" ? "2.13.3" : ">= 2.0.0")
+-    gem "rmagick", (RUBY_VERSION < "1.9" ? "2.13.3" : "~> 2.13.4")
 -  end
 -
    # Optional Markdown support, not for JRuby
    group :markdown do
-     # TODO: upgrade to redcarpet 3.x when ruby1.8 support is dropped
+     gem "redcarpet", (RUBY_VERSION < "1.9" ? "~> 2.3.0" : "~> 3.3.2")
