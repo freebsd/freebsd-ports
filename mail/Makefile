@@ -592,6 +592,7 @@
     SUBDIR += rubygem-pony
     SUBDIR += rubygem-rmail
     SUBDIR += rubygem-roadie
+    SUBDIR += rubygem-roadie-rails
     SUBDIR += rubygem-ruby-qmail
     SUBDIR += rubygem-tmail
     SUBDIR += rubygem-vmail
