@@ -4373,6 +4373,7 @@
     SUBDIR += py-unittestplus
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
+    SUBDIR += py-urwidtrees
     SUBDIR += py-usb
     SUBDIR += py-user_agents
     SUBDIR += py-utils
