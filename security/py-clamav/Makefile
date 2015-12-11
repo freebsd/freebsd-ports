@@ -3,7 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.4.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security python
 MASTER_SITES=	http://xael.org/norman/python/pyclamav/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
