@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	praat
@@ -8,7 +8,7 @@ CATEGORIES=	audio science
 MASTER_SITES=	http://www.fon.hum.uva.nl/praat/
 DISTNAME=	praat5408_sources
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Phonetics by Computer
 
 LICENSE=	GPLv2
