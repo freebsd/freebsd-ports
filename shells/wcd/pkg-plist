@@ -27,3 +27,4 @@ man/uk/man1/wcd.1.gz
 %%NLS%%share/locale/nl/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/wcd.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/wcd.mo
