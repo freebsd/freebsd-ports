@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-pdf-mupdf
-PORTVERSION=	0.2.7
-PORTREVISION=	4
+PORTVERSION=	0.2.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura-pdf-mupdf/download/
 
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura \
-		mupdf>=1.7,1:${PORTSDIR}/graphics/mupdf
+		mupdf>=1.8,1:${PORTSDIR}/graphics/mupdf
 RUN_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
 LIB_DEPENDS=	libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
 		libopenjp2.so:${PORTSDIR}/graphics/openjpeg
@@ -32,6 +31,6 @@ USE_OPENSSL=	yes
 CONFLICTS_INSTALL=	zathura-pdf-poppler-[0-9]*
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/zathura/pdf.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/zathura/pdf.so
 
 .include <bsd.port.mk>
