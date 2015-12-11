@@ -1,6 +1,6 @@
---- g3/Makefile.orig
+--- g3/Makefile.orig	2006-02-22 17:25:34 UTC
 +++ g3/Makefile
-@@ -40,13 +40,13 @@
+@@ -37,13 +37,13 @@ install: all
  # install programs
  #
  	for f in $(G3_PROGRAMS) ; do \

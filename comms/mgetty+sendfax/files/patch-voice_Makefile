@@ -1,15 +1,15 @@
---- voice/Makefile.orig
+--- voice/Makefile.orig	2006-09-26 15:38:17 UTC
 +++ voice/Makefile
-@@ -13,6 +13,8 @@
+@@ -13,6 +13,8 @@ CC=gcc
  LN=ln
  MV=mv
  RM=rm
 +INSTALL=install -c
 +INSTALL_PROGRAM=install -s -c
  
- MGETTYLIB=../../getdisk.o ../../goodies.o ../../io.o \
+ MGETTYLIB=../../getdisk.o ../../goodies.o ../../io.o ../../g3file.o \
  	../../locks.o ../../tio.o ../../modem.o \
-@@ -83,16 +85,16 @@
+@@ -83,16 +85,16 @@ vgetty-install: vgetty-all
  	@echo "  Installing the voice extensions"
  	@echo "  -------------------------------"
  	@echo ""
