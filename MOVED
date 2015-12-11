@@ -8047,3 +8047,4 @@ devel/pyinstaller|devel/py-pyinstaller|2015-12-09|Add py- prefix to directory na
 math/why3-gpl|math/why3-spark|2015-12-10|Change why3 suffix (upstream request and for consistency)
 devel/py-memoryprofiler|devel/py-memory_profiler|2015-12-11|Rename to consistency with other Python ports
 print/py-cups|print/py-pycups|2015-12-11|Renamed to match upstream naming
+astro/py-metar|astro/py-pymetar|2015-12-11|Renamed to match upstream naming
