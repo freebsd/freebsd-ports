@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CGI-Lite
-PORTVERSION=	3.00
-PORTREVISION=	1
+PORTVERSION=	3.01
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,17 +18,12 @@ SHEBANG_FILES=	examples/*
 USE_PERL5=	configure
 NO_ARCH=	yes
 
-DOCS=		CHANGES README TODO
-EXAMPLES=	cookies get_post print upload file post reference
+PORTEXAMPLES=	cookies file get_post post print reference upload
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_SCRIPT} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${INSTALL_SCRIPT} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
