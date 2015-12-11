@@ -3,7 +3,7 @@
 
 PORTNAME=	clamassassin
 PORTVERSION=	1.2.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	http://jameslick.com/clamassassin/
 
