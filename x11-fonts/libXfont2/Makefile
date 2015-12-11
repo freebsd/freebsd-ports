@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libXfont2
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
@@ -18,9 +18,5 @@ INSTALL_TARGET=	install-strip
 #CPE_VENDOR=	x
 
 CONFIGURE_ARGS=--without-xmlto --disable-devel-docs --without-fop
-
-# will be removed in the next release
-post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/include/X11/fonts/fontconf.h
 
 .include <bsd.port.mk>
