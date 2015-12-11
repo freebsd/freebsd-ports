@@ -1150,6 +1150,7 @@
     SUBDIR += p5-Plack-Middleware-JSConcat
     SUBDIR += p5-Plack-Middleware-MemoryUsage
     SUBDIR += p5-Plack-Middleware-MethodOverride
+    SUBDIR += p5-Plack-Middleware-NoMultipleSlashes
     SUBDIR += p5-Plack-Middleware-Precompressed
     SUBDIR += p5-Plack-Middleware-RemoveRedundantBody
     SUBDIR += p5-Plack-Middleware-Reproxy
