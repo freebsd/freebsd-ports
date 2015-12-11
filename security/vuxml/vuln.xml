@@ -77,11 +77,13 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-8537</cvename>
       <url>http://www.redmine.org/projects/redmine/wiki/Security_Advisories</url>
     </references>
     <dates>
       <discovery>2015-12-05</discovery>
       <entry>2015-12-10</entry>
+      <modified>2015-12-11</modified>
     </dates>
   </vuln>
 
