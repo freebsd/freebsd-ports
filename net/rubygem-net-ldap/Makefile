@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	net-ldap
-PORTVERSION=	0.11
+PORTVERSION=	0.12.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
