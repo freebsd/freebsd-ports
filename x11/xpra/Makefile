@@ -3,7 +3,7 @@
 
 PORTNAME=	xpra
 PORTVERSION=	0.15.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	py${PYTHON_SUFFIX}-lz4>=0.7.0_1:${PORTSDIR}/archivers/py-lz4 \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_SITELIBDIR}/avahi/__init__.py:${PORTSDIR}/net/py-avahi \
 		${PYTHON_SITELIBDIR}/netifaces.so:${PORTSDIR}/net/py-netifaces \
-		${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-cups \
+		${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-pycups \
 		ssh-askpass:${PORTSDIR}/security/openssh-askpass \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap \
 		xauth:${PORTSDIR}/x11/xauth \
