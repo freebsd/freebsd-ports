@@ -1,0 +1,6 @@
+A Moose-based role that enables the consumer to easily serialize/deserialize
+data structures. The default serializer is Storable, but any serializer in the
+Data::Serializer hierarchy can be used automatically. You can even install your
+own custom serializer if the pre-defined ones are not useful for you.
+
+WWW: http://search.cpan.org/dist/Data-Serializable/

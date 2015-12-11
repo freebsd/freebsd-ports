@@ -2001,6 +2001,7 @@
     SUBDIR += p5-Data-SExpression
     SUBDIR += p5-Data-Section
     SUBDIR += p5-Data-Section-Simple
+    SUBDIR += p5-Data-Serializable
     SUBDIR += p5-Data-Serializer
     SUBDIR += p5-Data-Serializer-Sereal
     SUBDIR += p5-Data-ShowTable
