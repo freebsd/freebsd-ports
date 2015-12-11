@@ -3,7 +3,7 @@
 
 PORTNAME=	pyinstaller
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,8 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Program to create standalone executables from Python scripts
 
 LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	DOCS
 
 EXTRACT_AFTER_ARGS=	--exclude doc/source --no-same-owner --no-same-permissions
 USES=		python
