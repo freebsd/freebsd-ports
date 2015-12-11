@@ -26,6 +26,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/lookat.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/lookat.conf.default \
 		${STAGEDIR}${PREFIX}/etc/lookat.conf.sample
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
