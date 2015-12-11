@@ -642,6 +642,7 @@
     SUBDIR += p5-OpenCA-PKCS7
     SUBDIR += p5-OpenCA-REQ
     SUBDIR += p5-OpenCA-X509
+    SUBDIR += p5-Parse-Snort
     SUBDIR += p5-PBKDF2-Tiny
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
