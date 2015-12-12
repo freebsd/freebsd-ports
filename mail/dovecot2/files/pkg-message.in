@@ -14,4 +14,9 @@
 
  	dovecot_enable="YES"
 
+
+ If you want to be able to search within attachments using the
+ decode2text plugin, you'll need to install textproc/catdoc, and
+ one of graphics/xpdf or graphics/poppler-utils.
+
 ---------------------------------------------------------------------
