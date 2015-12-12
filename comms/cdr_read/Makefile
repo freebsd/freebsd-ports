@@ -10,6 +10,8 @@ DISTNAME=	cdrr${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for reading of the call detail records from PBX
 
+BROKEN=		unfetchable
+
 LICENSE=	UNKNOWN
 LICENSE_NAME=	unknown
 LICENSE_TEXT=	This program can be freely distributed and used for\
