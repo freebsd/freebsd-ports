@@ -10,6 +10,7 @@ DISTNAME=	Electrum-${PORTVERSION}
 MAINTAINER=	kyuupichan@gmail.com
 COMMENT=	Easy to use Bitcoin client
 
+BROKEN=		unfetchable
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
