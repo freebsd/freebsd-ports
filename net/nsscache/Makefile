@@ -3,7 +3,7 @@
 
 PORTNAME=	nsscache
 PORTVERSION=	0.30
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	net python
 
@@ -13,7 +13,7 @@ COMMENT=	Python utility to create a local cache of directory services
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-pycurl \
 		${PYTHON_PKGNAMEPREFIX}ldap>0:${PORTSDIR}/net/py-ldap
 
 USES=		python:2
