@@ -4,7 +4,7 @@
 
 PORTNAME=	pan
 PORTVERSION=	0.139
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -22,7 +22,8 @@ USE_GNOME=	intlhack
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnuregex ${ICONV_LIB}
+LDFLAGS+=	-static-libgcc -static-libstdc++ -L${LOCALBASE}/lib \
+		-lgnuregex ${ICONV_LIB}
 
 OPTIONS_DEFINE=	GTKSPELL GTK3
 OPTIONS_DEFAULT=GTKSPELL
