@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.mangler.org/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ventrilo VOIP compatible client
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libcelt0.so:${PORTSDIR}/audio/celt \
 		libspeex.so:${PORTSDIR}/audio/speex \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
