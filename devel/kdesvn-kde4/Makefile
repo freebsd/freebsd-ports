@@ -10,6 +10,8 @@ MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
 
 LICENSE=	GPLv2

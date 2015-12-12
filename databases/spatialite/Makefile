@@ -10,6 +10,8 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Spatial Extensions for SQLite
 
+BROKEN=		unfetchable
+
 LICENSE=	MPL LGPL20 GPLv2
 LICENSE_COMB=	dual
 

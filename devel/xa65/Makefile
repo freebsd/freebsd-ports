@@ -12,6 +12,7 @@ COMMENT=	Two-pass cross-assembler for MOS 6502 and compatible CPUs
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
 

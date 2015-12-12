@@ -11,6 +11,7 @@ EXTRACT_SUFX=	${PORTVERSION}.tar.gz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Pure TCL code for command line options parsing
 
+BROKEN=		unfetchable
 USES=		shebangfix
 NO_BUILD=	yes
 

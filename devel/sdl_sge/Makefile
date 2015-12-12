@@ -12,6 +12,7 @@ DISTNAME=	sge030809
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic library for the Simple DirectMedia Layer (SDL)
 
+BROKEN=		unfetchable
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 

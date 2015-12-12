@@ -10,6 +10,7 @@ MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GIO bindings not available in gtk-sharp
 
+BROKEN=		unfetchable
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_CSC=${LOCALBASE}/bin/mcs
 USES=		gmake pathfix pkgconfig tar:bzip2

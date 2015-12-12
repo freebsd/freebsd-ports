@@ -13,6 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple Ruby module that provides setlocale(3)
 
+BROKEN=		unfetchable
 CONFLICTS=	${PKGNAMEPREFIX}locale2-[0-9]*
 
 #USE_BZIP2=	yes	# only saves 500 bytes..
