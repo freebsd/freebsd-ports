@@ -5,8 +5,7 @@ PORTNAME=	rpm
 PORTVERSION=	4.12.0.1
 PORTREVISION=	2
 CATEGORIES=	archivers
-MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R:R}.x/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
+MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R:R}.x/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	johans@FreeBSD.org
