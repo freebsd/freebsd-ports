@@ -2995,11 +2995,14 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-7545</cvename>
       <url>https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.6.1.txt</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/11/7</url>
     </references>
     <dates>
       <discovery>2015-09-23</discovery>
       <entry>2015-10-19</entry>
+      <modified>2015-12-12</modified>
     </dates>
   </vuln>
 
