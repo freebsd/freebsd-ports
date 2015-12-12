@@ -1,3 +1,4 @@
+include/libgit2-glib-1.0/libgit2-glib/ggit-annotated-commit.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-blame-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-blame.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-blob-output-stream.h
@@ -15,8 +16,8 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-cred-plaintext.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cred-ssh-interactive.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cred-ssh-key-from-agent.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cred.h
-include/libgit2-glib-1.0/libgit2-glib/ggit-diff-binary.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-binary-file.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-diff-binary.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-delta.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-file.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-find-options.h
@@ -43,6 +44,9 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-object.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-oid.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-patch.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-push-options.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-rebase-operation.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-rebase-options.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-rebase.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-ref-spec.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-ref.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-reflog-entry.h
