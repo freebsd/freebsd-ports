@@ -8049,3 +8049,4 @@ devel/py-memoryprofiler|devel/py-memory_profiler|2015-12-11|Rename to consistenc
 print/py-cups|print/py-pycups|2015-12-11|Renamed to match upstream naming
 astro/py-metar|astro/py-pymetar|2015-12-11|Renamed to match upstream naming
 devel/jep|devel/py-jep|2015-12-11|Renamed to match upstream naming
+ftp/py-curl|ftp/py-pycurl|2015-12-13|Renamed to match upstream naming
