@@ -10,6 +10,7 @@ DISTNAME=	common-${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Common subroutines for UCL mbone applications
 
+BROKEN=		unfetchable
 OPTIONS_DEFINE=	IPV6
 
 WRKSRC=		${WRKDIR}/common

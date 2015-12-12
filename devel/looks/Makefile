@@ -10,6 +10,8 @@ DISTNAME=	jgoodies-${PORTNAME}-${DISTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Improved appearance for Java Swing applications
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 USES=		zip

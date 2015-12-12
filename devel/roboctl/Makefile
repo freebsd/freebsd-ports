@@ -9,6 +9,7 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	API and tools for communicating with Lego and Vex robots
 
+BROKEN=		unfetchable
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:${PORTSDIR}/devel/libgamepad

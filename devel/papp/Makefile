@@ -9,6 +9,8 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Assembly Preprocessor
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 .include <bsd.port.mk>

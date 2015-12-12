@@ -13,6 +13,7 @@ COMMENT=	GPL implementation of the Bayesian Noise Reduction algorithm
 
 OPTIONS_DEFINE=	DOCS DEBUG
 
+BROKEN=		unfetchable
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

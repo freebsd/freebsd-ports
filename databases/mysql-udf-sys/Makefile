@@ -10,6 +10,8 @@ DISTNAME=	lib_mysqludf_sys_${PORTVERSION}
 MAINTAINER=	dave@dogwood.com
 COMMENT=	System access UDFs
 
+BROKEN=		unfetchable
+
 USE_MYSQL=	yes
 USE_LDCONFIG=	yes
 

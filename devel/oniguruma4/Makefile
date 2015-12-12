@@ -12,6 +12,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 

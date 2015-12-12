@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.linuxnet.com/drivers/readers/files/
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	IFD Test Suite for PC/SC Lite
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 
 USES=		gmake
