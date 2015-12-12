@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wildfly90
-PORTVERSION=	9.0.1
+PORTVERSION=	9.0.2
 CATEGORIES=	java www
 MASTER_SITES=	http://download.jboss.org/wildfly/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
@@ -65,7 +65,6 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION})
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}/bin/*.sh
 	${RMDIR} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}/.installation
 .for FILE in ${CONFIG_FILES}
 	${MV} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}/${FILE} \
