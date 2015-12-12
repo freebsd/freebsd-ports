@@ -11,6 +11,7 @@ MASTER_SITES=	http://bsdftpd.org/files/bsdftpd-ssl/archive/1.1/src/ \
 MAINTAINER=	skynick@mail.sc.ru
 COMMENT=	Secure FTP client/server with TLS/SSL support
 
+BROKEN=		unfetchable
 USE_OPENSSL=	yes
 MAKE_ENV+=	OBJFORMAT=elf
 MAKE_JOBS_UNSAFE=	yes
