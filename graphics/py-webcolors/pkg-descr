@@ -1,19 +1,14 @@
-This module provides utility functions for working with the color names
-and color value formats defined by the HTML and CSS specifications for
-use in documents on the Web.
+webcolors is a simple Python (2.6, 2.7, 3.3+) module for working
+with HTML/CSS color definitions.
 
-Support is included for the following formats (RGB colorspace only;
-conversion to/from HSL can be handled by the ``colorsys`` module in
-the Python standard library):
+Support is included for normalizing and converting between the
+following formats (RGB colorspace only; conversion to/from HSL can
+be handled by the colorsys module in the Python standard library):
 
 * Specification-defined color names
-
 * Six-digit hexadecimal
-
 * Three-digit hexadecimal
-
 * Integer rgb() triplet
-
 * Percentage rgb() triplet
 
-WWW: https://bitbucket.org/ubernostrum/webcolors/overview/
+WWW: https://github.com/ubernostrum/webcolors
