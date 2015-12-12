@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	timex
-DISTVERSION=	1.0.0-rc3
+DISTVERSION=	1.0.0-rc4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
