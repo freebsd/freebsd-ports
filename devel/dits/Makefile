@@ -9,6 +9,7 @@ MASTER_SITES=	http://codeconcepts.com/
 MAINTAINER=	greg@codeconcepts.com
 COMMENT=	Data integrity verifying disk exercising test tool
 
+BROKEN=		unfetchable
 GNU_CONFIGURE=	yes
 USES=		gmake tar:bzip2
 

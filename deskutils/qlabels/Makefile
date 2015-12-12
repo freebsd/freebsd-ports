@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Labels and business cards creating
 
+BROKEN=		unfetchable
+
 USES=		qmake tar:bzip2
 USE_QT4=	xml gui corelib uic_build moc_build rcc_build
 WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}

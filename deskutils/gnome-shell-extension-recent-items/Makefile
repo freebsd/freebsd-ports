@@ -11,6 +11,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Recent items extensions for the GNOME3 shell
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/RecentItems@bananenfisch.net
 
 USE_GNOME=	glib20

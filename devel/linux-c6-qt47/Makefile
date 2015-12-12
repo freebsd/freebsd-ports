@@ -11,6 +11,7 @@ DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/atrpms/6
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of QT4 (Linux CentOS 6)
 
+BROKEN=		unfetchable
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
 USE_LINUX_APPS=	fontconfig png dbuslibs sqlite3 hicontheme

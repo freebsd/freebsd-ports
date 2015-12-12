@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha-0
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	DB-API 2.0 interface for SQLite 3.x with Spatialite
 
+BROKEN=		unfetchable
+
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

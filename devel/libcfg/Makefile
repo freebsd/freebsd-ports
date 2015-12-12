@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}+-${DISTVERSION}
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library for command line and configuration file parsing
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

@@ -13,6 +13,7 @@ COMMENT=	Freedesktop synchronization framework
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
+BROKEN=		unfetchable
 SWIG_LANGUAGES=	python
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig python tar:bzip2

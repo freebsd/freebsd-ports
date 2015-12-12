@@ -10,6 +10,7 @@ DISTNAME=	liblas-src-${PORTVERSION}
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Library For Reading And Writing LAS-Format Data
 
+BROKEN=		unfetchable
 LICENSE=	BSD2CLAUSE
 
 CONFLICTS=	liblas-1.7*

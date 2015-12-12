@@ -11,6 +11,8 @@ DISTNAME=	OCFPCSC1-${PORTVERSION}
 MAINTAINER=	saper@saper.info
 COMMENT=	Open Card Framework to PC/SC bridge
 
+BROKEN=		unfetchable
+
 LICENSE=	IBMOCF
 LICENSE_NAME=	IBM OpenCard Framework
 LICENSE_FILE=	${FILESDIR}/IBMOCF

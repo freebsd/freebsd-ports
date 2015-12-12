@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://ftp.feep.net/pub/software/libtar/
 MAINTAINER=	manuelj.munoz@gmail.com
 COMMENT=	library for manipulating POSIX and GNU tar files
 
+BROKEN=		unfetchable
 USES=		cpe gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
