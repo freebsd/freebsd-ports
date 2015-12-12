@@ -18,6 +18,8 @@ BUILD_DEPENDS=	noweb:${PORTSDIR}/devel/noweb \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+BROKEN=		Does not compile with sbcl-1.3.1
+
 USE_XORG=	x11 ice sm xpm
 USES=		gettext iconv gmake tar:bzip2
 GNU_CONFIGURE=	yes
