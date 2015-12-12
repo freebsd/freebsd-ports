@@ -88,10 +88,10 @@ you update your ports collection, before attempting any port upgrades.
 
   Recent versions of devel/talloc, devel/tevent, database/tdb, database/ldb
   contained infinit recursive call to the strtol* set of replacement functions,
-  which lead to coredumps. Unofficial patch was added menwhile, but now official
-  version of the fixed libs were released. If your version of net/samba4 works
-  fine you don't need to recompile it. Other ports were also upgraded and some
-  bugs were fixed in upstream.
+  which lead to coredumps. Unofficial patch was added meanwhile, but now
+  official version of the fixed libs were released. If your version of
+  net/samba4 works fine you don't need to recompile it. Other ports were also
+  upgraded and some bugs were fixed in upstream.
 
 20151122:
   AFFECTS: users of audio/audacity
