@@ -32,6 +32,7 @@ lib/rustlib/components
 lib/rustlib/etc/debugger_pretty_printers_common.py
 lib/rustlib/etc/gdb_load_rust_pretty_printers.py
 lib/rustlib/etc/gdb_rust_pretty_printing.py
+lib/rustlib/manifest-rust-std-%%RUST_TARGET%%
 lib/rustlib/manifest-rustc
 lib/rustlib/rust-installer-version
 lib/rustlib/uninstall.sh
