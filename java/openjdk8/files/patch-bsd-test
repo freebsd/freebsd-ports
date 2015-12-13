@@ -1,5 +1,5 @@
---- ./hotspot/test/compiler/5091921/Test7005594.sh	Wed Jul 01 21:52:18 2015 -0700
-+++ ./hotspot/test/compiler/5091921/Test7005594.sh	Sat Sep 05 06:33:34 2015 -0700
+--- ./hotspot/test/compiler/5091921/Test7005594.sh	2014-03-03 18:52:39.000000000 -0800
++++ ./hotspot/test/compiler/5091921/Test7005594.sh	2015-10-24 06:21:09.000000000 -0700
 @@ -60,6 +60,15 @@
    # Windows/MKS
    MEM=`"$ROOTDIR/mksnt/sysinf" memory -v | grep "Total Physical Memory: " | sed 's/Total Physical Memory: *//g'`
@@ -16,8 +16,8 @@
  else
    echo "Unable to determine amount of physical memory on the machine"
  fi
---- ./hotspot/test/compiler/6894807/Test6894807.sh	Wed Jul 01 21:52:18 2015 -0700
-+++ ./hotspot/test/compiler/6894807/Test6894807.sh	Sat Sep 05 06:33:34 2015 -0700
+--- ./hotspot/test/compiler/6894807/Test6894807.sh	2014-03-03 18:52:40.000000000 -0800
++++ ./hotspot/test/compiler/6894807/Test6894807.sh	2015-10-24 06:21:09.000000000 -0700
 @@ -21,7 +21,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -27,8 +27,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./hotspot/test/runtime/7110720/Test7110720.sh	Wed Jul 01 21:52:18 2015 -0700
-+++ ./hotspot/test/runtime/7110720/Test7110720.sh	Sat Sep 05 06:33:34 2015 -0700
+--- ./hotspot/test/runtime/7110720/Test7110720.sh	2014-03-03 18:52:45.000000000 -0800
++++ ./hotspot/test/runtime/7110720/Test7110720.sh	2015-10-24 06:21:09.000000000 -0700
 @@ -28,7 +28,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -38,8 +38,8 @@
      FS="/"
      RM=/bin/rm
      CP=/bin/cp
---- ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	Wed Jul 01 21:52:18 2015 -0700
-+++ ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	Sat Sep 05 06:33:34 2015 -0700
+--- ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	2014-03-03 18:52:46.000000000 -0800
++++ ./hotspot/test/runtime/XCheckJniJsig/XCheckJSig.java	2015-10-24 06:21:09.000000000 -0700
 @@ -37,8 +37,8 @@
      public static void main(String args[]) throws Throwable {
  
@@ -51,8 +51,8 @@
              return;
          }
  
---- ./hotspot/test/test_env.sh	Wed Jul 01 21:52:18 2015 -0700
-+++ ./hotspot/test/test_env.sh	Sat Sep 05 06:33:34 2015 -0700
+--- ./hotspot/test/test_env.sh	2015-12-12 10:53:29.526985000 -0800
++++ ./hotspot/test/test_env.sh	2015-10-24 06:21:09.000000000 -0700
 @@ -53,7 +53,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -62,8 +62,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	2015-12-12 10:53:30.090391000 -0800
++++ ./jdk/test/com/sun/corba/5036554/TestCorbaBug.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -48,7 +48,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -73,8 +73,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/com/sun/corba/cachedSocket/7056731.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/com/sun/corba/cachedSocket/7056731.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/com/sun/corba/cachedSocket/7056731.sh	2015-12-12 10:53:30.090638000 -0800
++++ ./jdk/test/com/sun/corba/cachedSocket/7056731.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -31,7 +31,7 @@
  
  OS=`uname -s`
@@ -84,8 +84,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	2015-12-12 10:53:22.388848000 -0800
++++ ./jdk/test/com/sun/jdi/ImmutableResourceTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -56,7 +56,7 @@
  
  OS=`uname -s`
@@ -95,8 +95,8 @@
        PATHSEP=":"
        ;;
  
---- ./jdk/test/com/sun/jdi/JITDebug.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/com/sun/jdi/JITDebug.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/com/sun/jdi/JITDebug.sh	2015-12-12 10:53:22.389099000 -0800
++++ ./jdk/test/com/sun/jdi/JITDebug.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -63,7 +63,7 @@
  OS=`uname -s`
  export TRANSPORT_METHOD
@@ -106,8 +106,8 @@
        PATHSEP=":"
        TRANSPORT_METHOD=dt_socket
        ;;
---- ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	2015-12-12 10:53:22.389387000 -0800
++++ ./jdk/test/com/sun/jdi/PrivateTransportTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -106,7 +106,7 @@
      xx=`find ${jreloc}/lib -name libdt_socket.so`
      libloc=`dirname ${xx}`
@@ -117,8 +117,8 @@
      libloc=${jreloc}/lib
      ;;
    Windows*)
---- ./jdk/test/com/sun/jdi/ShellScaffold.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/com/sun/jdi/ShellScaffold.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/com/sun/jdi/ShellScaffold.sh	2015-12-12 10:53:22.389886000 -0800
++++ ./jdk/test/com/sun/jdi/ShellScaffold.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -295,7 +295,7 @@
           psCmd=ps
           jstack=jstack.exe
@@ -128,8 +128,8 @@
           transport=dt_socket
           address=
           devnull=/dev/null
---- ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	2015-12-12 10:53:22.390155000 -0800
++++ ./jdk/test/com/sun/jdi/connect/spi/JdiLoadedByCustomLoader.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -45,7 +45,7 @@
  
  OS=`uname -s`
@@ -139,8 +139,8 @@
      PS=":"
      ;;
    Windows* | CYGWIN*)
---- ./jdk/test/java/awt/JAWT/JAWT.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/awt/JAWT/JAWT.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/awt/JAWT/JAWT.sh	2014-03-03 19:00:24.000000000 -0800
++++ ./jdk/test/java/awt/JAWT/JAWT.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -62,6 +62,23 @@
  	MAKE="make"
  	LD_LIBRARY_PATH="."
@@ -174,8 +174,8 @@
      exit 0;
      ;;
    * )
---- ./jdk/test/java/awt/Toolkit/AutoShutdown/ShowExitTest/ShowExitTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/awt/Toolkit/AutoShutdown/ShowExitTest/ShowExitTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/awt/Toolkit/AutoShutdown/ShowExitTest/ShowExitTest.sh	2015-12-12 10:53:22.414055000 -0800
++++ ./jdk/test/java/awt/Toolkit/AutoShutdown/ShowExitTest/ShowExitTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -86,6 +86,14 @@
        TMP="/tmp"
        ;;
@@ -191,8 +191,8 @@
     Windows* )
        VAR="A different value for Win32"
        DEFAULT_JDK="C:/Program Files/Java/jdk1.8.0"
---- ./jdk/test/java/awt/Toolkit/Headless/WrappedToolkitTest/WrappedToolkitTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/awt/Toolkit/Headless/WrappedToolkitTest/WrappedToolkitTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/awt/Toolkit/Headless/WrappedToolkitTest/WrappedToolkitTest.sh	2015-12-12 10:53:22.414355000 -0800
++++ ./jdk/test/java/awt/Toolkit/Headless/WrappedToolkitTest/WrappedToolkitTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -59,7 +59,7 @@
  # Checking for proper OS
  OS=`uname -s`
@@ -202,8 +202,8 @@
        FILESEP="/"
        ;;
      
---- ./jdk/test/java/awt/appletviewer/IOExceptionIfEncodedURLTest/IOExceptionIfEncodedURLTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/awt/appletviewer/IOExceptionIfEncodedURLTest/IOExceptionIfEncodedURLTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/awt/appletviewer/IOExceptionIfEncodedURLTest/IOExceptionIfEncodedURLTest.sh	2015-12-12 10:53:22.420145000 -0800
++++ ./jdk/test/java/awt/appletviewer/IOExceptionIfEncodedURLTest/IOExceptionIfEncodedURLTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -119,6 +119,14 @@
        TMP="/tmp"
        ;;
@@ -219,8 +219,8 @@
     Windows* )
        VAR="A different value for Win32"
        DEFAULT_JDK="C:/Program Files/Java/jdk1.8.0"
---- ./jdk/test/java/io/File/GetXSpace.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/io/File/GetXSpace.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/io/File/GetXSpace.java	2014-03-03 19:00:42.000000000 -0800
++++ ./jdk/test/java/io/File/GetXSpace.java	2015-10-24 06:21:21.000000000 -0700
 @@ -51,7 +51,7 @@
      private static final String dfFormat;
      static {
@@ -230,8 +230,8 @@
              // FileSystem Total Used Available Use% MountedOn
              dfFormat = "([^\\s]+)\\s+(\\d+)\\s+\\d+\\s+(\\d+)\\s+\\d+%\\s+([^\\s]+)";
          } else if (name.startsWith("Windows")) {
---- ./jdk/test/java/io/File/GetXSpace.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/io/File/GetXSpace.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/io/File/GetXSpace.sh	2014-03-03 19:00:42.000000000 -0800
++++ ./jdk/test/java/io/File/GetXSpace.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -26,7 +26,7 @@
  # set platform-dependent variable
  OS=`uname -s`
@@ -241,8 +241,8 @@
    Windows_98 )    return    ;;
    Windows* )      SID=`sid`; TMP="c:/temp"  ;;
    * )
---- ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	2015-12-12 10:53:22.450535000 -0800
++++ ./jdk/test/java/io/Serializable/evolution/RenamePackage/run.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -45,7 +45,7 @@
  # Need to determine the classpath separator and filepath separator based on the
  # operating system.
@@ -252,8 +252,8 @@
    PS=":"  ;;
  Windows* | CYGWIN* )
    PS=";"  ;;
---- ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	2015-12-12 10:53:22.450789000 -0800
++++ ./jdk/test/java/io/Serializable/serialver/classpath/run.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -263,8 +263,8 @@
      PS=":"    ;;
    Windows* | CYGWIN* )
      PS=";"    ;;
---- ./jdk/test/java/io/Serializable/serialver/nested/run.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/io/Serializable/serialver/nested/run.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/io/Serializable/serialver/nested/run.sh	2015-12-12 10:53:22.451017000 -0800
++++ ./jdk/test/java/io/Serializable/serialver/nested/run.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -274,8 +274,8 @@
      PS=":"    ;;
    Windows* | CYGWIN* )
      PS=";"    ;;
---- ./jdk/test/java/lang/ClassLoader/Assert.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/lang/ClassLoader/Assert.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/lang/ClassLoader/Assert.sh	2015-12-12 10:53:22.451979000 -0800
++++ ./jdk/test/java/lang/ClassLoader/Assert.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -25,7 +25,7 @@
  
  OS=`uname -s`
@@ -285,8 +285,8 @@
      FS="/"
      CHMOD="${FS}bin${FS}chmod"
      ;;
---- ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	2015-12-12 10:53:22.452192000 -0800
++++ ./jdk/test/java/lang/ClassLoader/deadlock/TestCrossDelegate.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -55,7 +55,7 @@
    Linux )
      FS="/"
@@ -296,8 +296,8 @@
      FS="/"
      ;;
    AIX )
---- ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	2015-12-12 10:53:22.452434000 -0800
++++ ./jdk/test/java/lang/ClassLoader/deadlock/TestOneWayDelegate.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -60,7 +60,7 @@
    Linux )
      FS="/"
@@ -307,8 +307,8 @@
      FS="/"
      ;;
    AIX )
---- ./jdk/test/java/lang/ProcessBuilder/DestroyTest.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/lang/ProcessBuilder/DestroyTest.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/lang/ProcessBuilder/DestroyTest.java	2015-12-12 10:53:22.454950000 -0800
++++ ./jdk/test/java/lang/ProcessBuilder/DestroyTest.java	2015-10-24 06:21:21.000000000 -0700
 @@ -148,6 +148,9 @@
          } else if (osName.startsWith("Linux") == true) {
              return new UnixTest(
@@ -319,8 +319,8 @@
          } else if (osName.startsWith("Mac OS")) {
              return new MacTest(
                  File.createTempFile("ProcessTrap-", ".sh",null));
---- ./jdk/test/java/lang/ProcessBuilder/Zombies.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/lang/ProcessBuilder/Zombies.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/lang/ProcessBuilder/Zombies.java	2014-03-03 19:00:59.000000000 -0800
++++ ./jdk/test/java/lang/ProcessBuilder/Zombies.java	2015-10-24 06:21:21.000000000 -0700
 @@ -34,7 +34,7 @@
  
      static final String os = System.getProperty("os.name");
@@ -330,8 +330,8 @@
          "/usr/bin/true" : "/bin/true";
  
      public static void main(String[] args) throws Throwable {
---- ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	2015-12-12 10:53:22.455757000 -0800
++++ ./jdk/test/java/lang/StringCoding/CheckEncodings.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -30,7 +30,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -341,8 +341,8 @@
    Windows* | CYGWIN* )
      echo "Passed"; exit 0 ;;
    * ) echo "Unrecognized system!" ;  exit 1 ;;
---- ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	2015-12-12 10:53:22.456885000 -0800
++++ ./jdk/test/java/lang/annotation/loaderLeak/LoaderLeak.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -48,7 +48,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -352,8 +352,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/java/lang/instrument/MakeJAR2.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/lang/instrument/MakeJAR2.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/lang/instrument/MakeJAR2.sh	2014-03-03 19:01:05.000000000 -0800
++++ ./jdk/test/java/lang/instrument/MakeJAR2.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -55,7 +55,7 @@
  
  OS=`uname -s`
@@ -363,8 +363,8 @@
        PATHSEP=":"
        ;;
  
---- ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	2015-12-12 10:53:22.461498000 -0800
++++ ./jdk/test/java/lang/instrument/appendToClassLoaderSearch/CommonSetup.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -43,7 +43,7 @@
      PS=":"
      FS="/"
@@ -374,8 +374,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java	2014-03-03 19:01:08.000000000 -0800
++++ ./jdk/test/java/lang/management/OperatingSystemMXBean/GetSystemLoadAverage.java	2015-10-24 06:21:21.000000000 -0700
 @@ -79,8 +79,10 @@
          System.out.println("Test passed.");
      }
@@ -397,8 +397,8 @@
                  ? output.split(" ")
                  : output.split(",");
          double expected = Double.parseDouble(lavg[0]);
---- ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	2015-12-12 10:53:22.471355000 -0800
++++ ./jdk/test/java/lang/management/OperatingSystemMXBean/TestSystemLoadAvg.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -61,7 +61,7 @@
  while true; do
    echo "Run $i: TestSystemLoadAvg"
@@ -408,8 +408,8 @@
           runOne GetSystemLoadAverage
           ;;
        * )
---- ./jdk/test/java/net/Authenticator/B4933582.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/net/Authenticator/B4933582.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/net/Authenticator/B4933582.sh	2015-12-12 10:53:22.477427000 -0800
++++ ./jdk/test/java/net/Authenticator/B4933582.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -26,7 +26,7 @@
  
  OS=`uname -s`
@@ -419,8 +419,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/DatagramSocket/Send12k.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/net/DatagramSocket/Send12k.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/net/DatagramSocket/Send12k.java	2015-12-12 10:53:22.478901000 -0800
++++ ./jdk/test/java/net/DatagramSocket/Send12k.java	2015-10-24 06:21:21.000000000 -0700
 @@ -36,9 +36,10 @@
  
      public static void main(String args[]) throws Exception {
@@ -434,8 +434,8 @@
               SEND_SIZE = 16 * 576;
           } else {
               SEND_SIZE = 16 * 1024;
---- ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	2014-03-03 19:01:17.000000000 -0800
++++ ./jdk/test/java/net/DatagramSocket/SendDatagramToBadAddress.java	2015-10-24 06:21:21.000000000 -0700
 @@ -45,6 +45,8 @@
              return (true);
          if (p.getProperty ("os.name").equals ("Linux"))
@@ -445,8 +445,8 @@
          if (p.getProperty ("os.name").startsWith ("Mac OS"))
              return (true);
          // Check for specific Solaris version from here
---- ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	2015-12-12 10:53:22.479117000 -0800
++++ ./jdk/test/java/net/DatagramSocket/SetDatagramSocketImplFactory/ADatagramSocket.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -27,11 +27,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -460,8 +460,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/net/Socket/OldSocketImpl.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/net/Socket/OldSocketImpl.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/net/Socket/OldSocketImpl.sh	2015-12-12 10:53:22.481561000 -0800
++++ ./jdk/test/java/net/Socket/OldSocketImpl.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -28,7 +28,7 @@
  
  OS=`uname -s`
@@ -471,8 +471,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/URL/B5086147.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/net/URL/B5086147.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/net/URL/B5086147.sh	2015-12-12 10:53:22.481780000 -0800
++++ ./jdk/test/java/net/URL/B5086147.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -26,7 +26,7 @@
  
  OS=`uname -s`
@@ -482,8 +482,8 @@
      exit 0
      ;;
    CYGWIN* )
---- ./jdk/test/java/net/URLClassLoader/B5077773.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/net/URLClassLoader/B5077773.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/net/URLClassLoader/B5077773.sh	2015-12-12 10:53:22.481969000 -0800
++++ ./jdk/test/java/net/URLClassLoader/B5077773.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -34,11 +34,7 @@
  
  OS=`uname -s`
@@ -497,8 +497,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	2015-12-12 10:53:22.482686000 -0800
++++ ./jdk/test/java/net/URLClassLoader/sealing/checksealed.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -27,11 +27,7 @@
  
  OS=`uname -s`
@@ -512,8 +512,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/net/URLConnection/6212146/test.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/net/URLConnection/6212146/test.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/net/URLConnection/6212146/test.sh	2015-12-12 10:53:22.482899000 -0800
++++ ./jdk/test/java/net/URLConnection/6212146/test.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -33,11 +33,7 @@
  
  OS=`uname -s`
@@ -527,8 +527,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/nio/channels/FileChannel/Transfer.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/nio/channels/FileChannel/Transfer.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/nio/channels/FileChannel/Transfer.java	2014-03-03 19:01:23.000000000 -0800
++++ ./jdk/test/java/nio/channels/FileChannel/Transfer.java	2015-10-24 06:21:21.000000000 -0700
 @@ -228,7 +228,7 @@
          // Windows and Linux can't handle the really large file sizes for a
          // truncate or a positional write required by the test for 4563125
@@ -538,8 +538,8 @@
              return;
          File source = File.createTempFile("blah", null);
          source.deleteOnExit();
---- ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Launcher.c	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Launcher.c	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Launcher.c	2014-03-03 19:01:25.000000000 -0800
++++ ./jdk/test/java/nio/channels/spi/SelectorProvider/inheritedChannel/Launcher.c	2015-10-24 06:21:21.000000000 -0700
 @@ -17,6 +17,12 @@
  
  #include "Launcher.h"
@@ -562,8 +562,8 @@
          _exit(-1);
      }
  
---- ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	2015-12-12 10:53:22.483391000 -0800
++++ ./jdk/test/java/nio/charset/coders/CheckSJISMappingProp.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -34,7 +34,7 @@
  
  OS=`uname -s`
@@ -573,8 +573,8 @@
    # Skip locale test for Windows
    Windows* | CYGWIN* )
      echo "Passed"; exit 0 ;;
---- ./jdk/test/java/nio/charset/spi/basic.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/nio/charset/spi/basic.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/nio/charset/spi/basic.sh	2015-12-12 10:53:22.483637000 -0800
++++ ./jdk/test/java/nio/charset/spi/basic.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -48,7 +48,7 @@
  
  DIR=`pwd`
@@ -584,8 +584,8 @@
    Windows* )      CPS=';' ;;
    CYGWIN*  )
      DIR=`/usr/bin/cygpath -a -s -m $DIR`
---- ./jdk/test/java/nio/file/FileSystem/Basic.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/nio/file/FileSystem/Basic.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/nio/file/FileSystem/Basic.java	2014-03-03 19:01:26.000000000 -0800
++++ ./jdk/test/java/nio/file/FileSystem/Basic.java	2015-10-24 06:21:21.000000000 -0700
 @@ -76,7 +76,7 @@
              checkSupported(fs, "posix", "unix", "owner", "acl", "user");
          if (os.equals("Linux"))
@@ -595,8 +595,8 @@
              checkSupported(fs, "posix", "unix", "owner");
          if (os.equals("Windows"))
              checkSupported(fs, "owner", "dos", "acl", "user");
---- ./jdk/test/java/nio/file/Files/CopyAndMove.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/nio/file/Files/CopyAndMove.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/nio/file/Files/CopyAndMove.java	2014-03-03 19:01:26.000000000 -0800
++++ ./jdk/test/java/nio/file/Files/CopyAndMove.java	2015-10-24 06:21:21.000000000 -0700
 @@ -651,7 +651,7 @@
  
                  // check POSIX attributes are copied
@@ -615,8 +615,8 @@
          boolean isDirectory = isDirectory(file, NOFOLLOW_LINKS);
  
          if (isUnix) {
---- ./jdk/test/java/rmi/activation/Activatable/extLoadedImpl/ext.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/rmi/activation/Activatable/extLoadedImpl/ext.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/rmi/activation/Activatable/extLoadedImpl/ext.sh	2015-12-12 10:53:22.485144000 -0800
++++ ./jdk/test/java/rmi/activation/Activatable/extLoadedImpl/ext.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -33,7 +33,7 @@
  
  OS=`uname -s`
@@ -626,8 +626,8 @@
      PS=":"
      ;;
    Windows* | CYGWIN* )
---- ./jdk/test/java/rmi/registry/readTest/readTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/rmi/registry/readTest/readTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/rmi/registry/readTest/readTest.sh	2015-12-12 10:53:22.485393000 -0800
++++ ./jdk/test/java/rmi/registry/readTest/readTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -34,7 +34,7 @@
  REGARGS=""
  
@@ -637,8 +637,8 @@
      PS=":"
      FS="/"
      CHMOD="${FS}bin${FS}chmod"
---- ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	2015-12-12 10:53:22.485604000 -0800
++++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/ClassLoaderDeadlock.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -58,7 +58,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -648,8 +648,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	2015-12-12 10:53:22.485811000 -0800
++++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -42,7 +42,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -659,8 +659,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	2015-12-12 10:53:22.486036000 -0800
++++ ./jdk/test/java/security/Security/ClassLoaderDeadlock/Deadlock2.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -66,7 +66,7 @@
      PATHSEP=";"
      FILESEP="/"
@@ -670,8 +670,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/signedfirst/Dyn.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/security/Security/signedfirst/Dyn.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/security/Security/signedfirst/Dyn.sh	2015-12-12 10:53:22.486242000 -0800
++++ ./jdk/test/java/security/Security/signedfirst/Dyn.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -58,7 +58,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -681,8 +681,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/security/Security/signedfirst/Static.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/security/Security/signedfirst/Static.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/security/Security/signedfirst/Static.sh	2015-12-12 10:53:22.486466000 -0800
++++ ./jdk/test/java/security/Security/signedfirst/Static.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -58,7 +58,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -692,8 +692,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/util/Currency/PropertiesTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/util/Currency/PropertiesTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/util/Currency/PropertiesTest.sh	2015-12-12 10:53:30.197211000 -0800
++++ ./jdk/test/java/util/Currency/PropertiesTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -52,7 +52,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -703,8 +703,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/util/PluggableLocale/ExecTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/util/PluggableLocale/ExecTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/util/PluggableLocale/ExecTest.sh	2015-12-12 10:53:22.499744000 -0800
++++ ./jdk/test/java/util/PluggableLocale/ExecTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -62,7 +62,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -714,8 +714,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	2015-12-12 10:53:22.499941000 -0800
++++ ./jdk/test/java/util/ResourceBundle/Bug6299235Test.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -31,7 +31,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -725,8 +725,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/java/util/ServiceLoader/basic.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/util/ServiceLoader/basic.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/util/ServiceLoader/basic.sh	2015-12-12 10:53:22.500159000 -0800
++++ ./jdk/test/java/util/ServiceLoader/basic.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -43,9 +43,7 @@
  
  OS=`uname -s`
@@ -738,8 +738,8 @@
        SEP=':' ;;
      * )
        SEP='\;' ;;
---- ./jdk/test/java/util/prefs/CheckUserPrefsStorage.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/java/util/prefs/CheckUserPrefsStorage.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/java/util/prefs/CheckUserPrefsStorage.sh	2015-12-12 10:53:22.506216000 -0800
++++ ./jdk/test/java/util/prefs/CheckUserPrefsStorage.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -31,7 +31,7 @@
  
  OS=`uname -s`
@@ -749,8 +749,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	2015-12-12 10:53:22.507911000 -0800
++++ ./jdk/test/javax/crypto/SecretKeyFactory/FailOverTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -56,7 +56,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -760,8 +760,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatTest.sh	2015-12-12 10:53:22.508176000 -0800
++++ ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -89,7 +89,7 @@
        FILESEP="/"
        ;;
@@ -771,8 +771,8 @@
        VAR="A different value for Linux"
        DEFAULT_JDK=/none
        #DEFAULT_JDK=/usr/local/java/jdk1.4/linux-i386
---- ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatThreadTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatThreadTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatThreadTest.sh	2015-12-12 10:53:22.508457000 -0800
++++ ./jdk/test/javax/imageio/metadata/IIOMetadataFormat/runMetadataFormatThreadTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -90,7 +90,7 @@
        FILESEP="/"
        ;;
@@ -782,8 +782,8 @@
        VAR="A different value for Linux"
        DEFAULT_JDK=/none
        #DEFAULT_JDK=/usr/local/java/jdk1.4/linux-i386
---- ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	2015-12-12 10:53:22.508726000 -0800
++++ ./jdk/test/javax/imageio/stream/StreamCloserLeak/run_test.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -108,6 +108,14 @@
        TMP="/tmp"
        ;;
@@ -799,8 +799,8 @@
     Windows* )
        VAR="A different value for Win32"
        DEFAULT_JDK="C:/Program Files/Java/jdk1.8.0"
---- ./jdk/test/javax/script/CommonSetup.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/javax/script/CommonSetup.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/javax/script/CommonSetup.sh	2015-12-12 10:53:22.510678000 -0800
++++ ./jdk/test/javax/script/CommonSetup.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -36,7 +36,7 @@
  
  OS=`uname -s`
@@ -810,8 +810,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	2015-12-12 10:53:22.510908000 -0800
++++ ./jdk/test/javax/security/auth/Subject/doAs/Test.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -43,7 +43,7 @@
      FS="/"
      RM="/bin/rm -f"
@@ -821,8 +821,8 @@
      PS=":"
      FS="/"
      RM="/bin/rm -f"
---- ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	2015-12-12 10:53:22.545913000 -0800
++++ ./jdk/test/lib/security/java.policy/Ext_AllPolicy.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -53,7 +53,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -832,38 +832,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/lib/testlibrary/AssertsTest.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/lib/testlibrary/AssertsTest.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -25,7 +25,6 @@
- 
- /* @test
-  * @summary Tests the different assertions in the Assert class
-- * @library /testlibrary
-  */
- public class AssertsTest {
-     private static class Foo implements Comparable<Foo> {
---- ./jdk/test/lib/testlibrary/OutputAnalyzerReportingTest.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/lib/testlibrary/OutputAnalyzerReportingTest.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -27,7 +27,6 @@
-  * @summary Test the OutputAnalyzer reporting functionality,
-  *     such as printing additional diagnostic info
-  *     (exit code, stdout, stderr, command line, etc.)
-- * @library /testlibrary
-  */
- 
- import java.io.ByteArrayOutputStream;
---- ./jdk/test/lib/testlibrary/OutputAnalyzerTest.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/lib/testlibrary/OutputAnalyzerTest.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -24,7 +24,6 @@
- /*
-  * @test
-  * @summary Test the OutputAnalyzer utility class
-- * @library /testlibrary
-  */
- 
- import jdk.testlibrary.OutputAnalyzer;
---- ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	2014-03-03 19:02:35.000000000 -0800
++++ ./jdk/test/lib/testlibrary/jdk/testlibrary/Platform.java	2015-10-24 06:21:21.000000000 -0700
 @@ -53,8 +53,13 @@
          return isOs("linux");
      }
@@ -879,8 +849,8 @@
      }
  
      public static String getOsName() {
---- ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	2015-12-12 10:53:27.749973000 -0800
++++ ./jdk/test/sun/awt/dnd/8024061/bug8024061.java	2015-10-24 06:21:21.000000000 -0700
 @@ -107,8 +107,8 @@
  
      public static void main(String[] args) throws AWTException, InvocationTargetException, InterruptedException {
@@ -892,8 +862,8 @@
                                 "skipping!");
              return;
          }
---- ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	2015-12-12 10:53:22.554693000 -0800
++++ ./jdk/test/sun/management/jmxremote/bootstrap/GeneratePropertyPassword.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -42,7 +42,7 @@
  fi
  
@@ -903,93 +873,8 @@
      PATHSEP=":"
      FILESEP="/"
      DFILESEP=$FILESEP
---- ./jdk/test/sun/management/jmxremote/bootstrap/RmiBootstrapTest.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/management/jmxremote/bootstrap/RmiBootstrapTest.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -1,5 +1,5 @@
- /*
-- * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright (c) 2003, 2015, Oracle and/or its affiliates. All rights reserved.
-  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-  *
-  * This code is free software; you can redistribute it and/or modify it
-@@ -43,6 +43,8 @@
- 
- import sun.management.AgentConfigurationError;
- 
-+import java.security.Security;
-+
- import util.TestLogger;
- 
- /**
-@@ -133,6 +135,8 @@
-             "com.sun.management.jmxremote.ssl.enabled.protocols";
-         public static final String SSL_NEED_CLIENT_AUTH =
-             "com.sun.management.jmxremote.ssl.need.client.auth";
-+        public static final String SSL_CLIENT_ENABLED_CIPHER_SUITES =
-+            "javax.rmi.ssl.client.enabledCipherSuites";
-     }
- 
-     /**
-@@ -434,7 +438,7 @@
-     }
- 
- 
--    private void setSslProperties() {
-+    private void setSslProperties(String clientEnabledCipherSuites) {
-         final String defaultKeyStore =
-             getDefaultStoreName(DefaultValues.KEYSTORE);
-         final String defaultTrustStore =
-@@ -465,6 +469,13 @@
-         System.setProperty(PropertyNames.TRUSTSTORE_PASSWD,trustword);
-         log.trace("setSslProperties",
-                   PropertyNames.TRUSTSTORE_PASSWD+"="+trustword);
-+
-+        if (clientEnabledCipherSuites != null) {
-+            System.setProperty("javax.rmi.ssl.client.enabledCipherSuites",
-+                    clientEnabledCipherSuites);
-+        } else {
-+            System.clearProperty("javax.rmi.ssl.client.enabledCipherSuites");
-+        }
-     }
- 
-     private void checkSslConfiguration() {
-@@ -517,7 +528,10 @@
-                       PropertyNames.SSL_ENABLED_PROTOCOLS + "=" +
-                       sslProtocols);
- 
--            if (useSsl) setSslProperties();
-+            if (useSsl) {
-+                setSslProperties(props.getProperty(
-+                        PropertyNames.SSL_CLIENT_ENABLED_CIPHER_SUITES));
-+            }
-         } catch (Exception x) {
-             System.out.println("Failed to setup SSL configuration: " + x);
-             log.debug("checkSslConfiguration",x);
-@@ -871,6 +885,8 @@
-      * exit(1) if the test fails.
-      **/
-     public static void main(String args[]) throws Exception {
-+        Security.setProperty("jdk.tls.disabledAlgorithms", "");
-+
-         setupBasePort();
-         RmiBootstrapTest manager = new RmiBootstrapTest();
-         try {
---- ./jdk/test/sun/management/jmxremote/bootstrap/management_ssltest07_ok.properties.in	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/management/jmxremote/bootstrap/management_ssltest07_ok.properties.in	Sat Sep 05 06:34:07 2015 -0700
-@@ -2,3 +2,4 @@
- com.sun.management.jmxremote.ssl.enabled.protocols=SSLv2Hello,SSLv3,TLSv1
- com.sun.management.jmxremote.ssl.need.client.auth=true
- com.sun.management.jmxremote.authenticate=false
-+javax.rmi.ssl.client.enabledCipherSuites=SSL_RSA_WITH_RC4_128_SHA,SSL_RSA_WITH_RC4_128_MD5
---- ./jdk/test/sun/management/jmxremote/bootstrap/management_ssltest11_ok.properties.in	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/management/jmxremote/bootstrap/management_ssltest11_ok.properties.in	Sat Sep 05 06:34:07 2015 -0700
-@@ -3,3 +3,4 @@
- com.sun.management.jmxremote.ssl.need.client.auth=true
- com.sun.management.jmxremote.ssl.config.file=@TEST-SRC@/jmxremote_ssltest11_ok.ssl
- com.sun.management.jmxremote.authenticate=false
-+javax.rmi.ssl.client.enabledCipherSuites=SSL_RSA_WITH_RC4_128_SHA,SSL_RSA_WITH_RC4_128_MD5
---- ./jdk/test/sun/net/ftp/MarkResetTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/net/ftp/MarkResetTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/net/ftp/MarkResetTest.sh	2015-12-12 10:53:22.556402000 -0800
++++ ./jdk/test/sun/net/ftp/MarkResetTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -28,7 +28,7 @@
  
  OS=`uname -s`
@@ -999,8 +884,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	2015-12-12 10:53:22.558980000 -0800
++++ ./jdk/test/sun/net/www/http/HttpClient/RetryPost.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -28,7 +28,7 @@
  
  OS=`uname -s`
@@ -1010,8 +895,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	2015-12-12 10:53:22.559186000 -0800
++++ ./jdk/test/sun/net/www/protocol/jar/B5105410.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -31,7 +31,7 @@
  
  OS=`uname -s`
@@ -1021,8 +906,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	2015-12-12 10:53:22.559427000 -0800
++++ ./jdk/test/sun/net/www/protocol/jar/jarbug/run.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -31,7 +31,7 @@
  
  OS=`uname -s`
@@ -1032,8 +917,8 @@
      PS=":"
      FS="/"
      CHMOD="${FS}bin${FS}chmod"
---- ./jdk/test/sun/nio/ch/SelProvider.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/nio/ch/SelProvider.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/nio/ch/SelProvider.java	2014-03-03 19:02:43.000000000 -0800
++++ ./jdk/test/sun/nio/ch/SelProvider.java	2015-10-24 06:21:21.000000000 -0700
 @@ -39,7 +39,7 @@
                  expected = "sun.nio.ch.DevPollSelectorProvider";
              } else if ("Linux".equals(osname)) {
@@ -1043,40 +928,8 @@
                  expected = "sun.nio.ch.KQueueSelectorProvider";
              } else {
                  return;
---- ./jdk/test/sun/security/ec/TestEC.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ec/TestEC.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -1,5 +1,5 @@
- /*
-- * Copyright (c) 2009, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright (c) 2009, 2015, Oracle and/or its affiliates. All rights reserved.
-  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-  *
-  * This code is free software; you can redistribute it and/or modify it
-@@ -59,6 +59,11 @@
- public class TestEC {
- 
-     public static void main(String[] args) throws Exception {
-+        // reset security properties to make sure that the algorithms
-+        // and keys used in this test are not disabled.
-+        Security.setProperty("jdk.tls.disabledAlgorithms", "");
-+        Security.setProperty("jdk.certpath.disabledAlgorithms", "");
-+
-         ProvidersSnapshot snapshot = ProvidersSnapshot.create();
-         try {
-             main0(args);
-@@ -68,10 +73,6 @@
-     }
- 
-     public static void main0(String[] args) throws Exception {
--        // reset the security property to make sure that the algorithms
--        // and keys used in this test are not disabled.
--        Security.setProperty("jdk.tls.disabledAlgorithms", "");
--
-         Provider p = Security.getProvider("SunEC");
- 
-         if (p == null) {
---- ./jdk/test/sun/security/krb5/runNameEquals.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/krb5/runNameEquals.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/krb5/runNameEquals.sh	2015-12-12 10:53:22.564782000 -0800
++++ ./jdk/test/sun/security/krb5/runNameEquals.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -52,7 +52,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1086,8 +939,8 @@
      PATHSEP=":"
      FILESEP="/"
      NATIVE=true
---- ./jdk/test/sun/security/mscapi/ShortRSAKey1024.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/mscapi/ShortRSAKey1024.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/mscapi/ShortRSAKey1024.sh	2014-03-03 19:02:53.000000000 -0800
++++ ./jdk/test/sun/security/mscapi/ShortRSAKey1024.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -49,7 +49,7 @@
  
  OS=`uname -s`
@@ -1097,8 +950,8 @@
      FS="/"
      ;;
    Windows_* )
---- ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	2015-12-12 10:53:22.565675000 -0800
++++ ./jdk/test/sun/security/pkcs11/Provider/ConfigQuotedString.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -66,7 +66,7 @@
      CP="${FS}bin${FS}cp"
      CHMOD="${FS}bin${FS}chmod"
@@ -1108,8 +961,8 @@
      FS="/"
      PS=":"
      CP="${FS}bin${FS}cp"
---- ./jdk/test/sun/security/pkcs11/Provider/Login.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/pkcs11/Provider/Login.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/pkcs11/Provider/Login.sh	2015-12-12 10:53:22.565893000 -0800
++++ ./jdk/test/sun/security/pkcs11/Provider/Login.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -67,7 +67,7 @@
      CP="${FS}bin${FS}cp"
      CHMOD="${FS}bin${FS}chmod"
@@ -1119,29 +972,8 @@
      FS="/"
      PS=":"
      CP="${FS}bin${FS}cp"
---- ./jdk/test/sun/security/pkcs11/sslecc/ClientJSSEServerJSSE.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/pkcs11/sslecc/ClientJSSEServerJSSE.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -1,5 +1,5 @@
- /*
-- * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright (c) 2002, 2015, Oracle and/or its affiliates. All rights reserved.
-  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-  *
-  * This code is free software; you can redistribute it and/or modify it
-@@ -43,9 +43,10 @@
-     private static String[] cmdArgs;
- 
-     public static void main(String[] args) throws Exception {
--        // reset the security property to make sure that the algorithms
-+        // reset security properties to make sure that the algorithms
-         // and keys used in this test are not disabled.
-         Security.setProperty("jdk.tls.disabledAlgorithms", "");
-+        Security.setProperty("jdk.certpath.disabledAlgorithms", "");
- 
-         cmdArgs = args;
-         main(new ClientJSSEServerJSSE());
---- ./jdk/test/sun/security/provider/KeyStore/DKSTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/provider/KeyStore/DKSTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/provider/KeyStore/DKSTest.sh	2015-12-12 10:53:22.567575000 -0800
++++ ./jdk/test/sun/security/provider/KeyStore/DKSTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -50,7 +50,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1151,8 +983,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	2014-03-03 19:02:58.000000000 -0800
++++ ./jdk/test/sun/security/provider/PolicyFile/GrantAllPermToExtWhenNoPolicy.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -52,7 +52,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -1162,8 +994,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	2015-12-12 10:53:22.567788000 -0800
++++ ./jdk/test/sun/security/provider/PolicyFile/getinstance/getinstance.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -59,7 +59,7 @@
      PS=":"
      FS="/"
@@ -1173,30 +1005,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/DHKeyExchange/DHEKeySizing.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/DHKeyExchange/DHEKeySizing.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -100,6 +100,7 @@
- import javax.net.ssl.SSLEngineResult.*;
- import java.io.*;
- import java.nio.*;
-+import java.security.Security;
- import java.security.KeyStore;
- import java.security.KeyFactory;
- import java.security.Security;
-@@ -377,9 +378,10 @@
-     }
- 
-     public static void main(String args[]) throws Exception {
--        // reset the security property to make sure that the algorithms
-+        // reset security properties to make sure that the algorithms
-         // and keys used in this test are not disabled.
-         Security.setProperty("jdk.tls.disabledAlgorithms", "");
-+        Security.setProperty("jdk.certpath.disabledAlgorithms", "");
- 
-         if (args.length != 4) {
-             System.out.println(
---- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	2015-12-12 10:53:22.569052000 -0800
++++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/EngineArgs/DebugReportsOneExtraByte.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -33,7 +33,7 @@
  
  OS=`uname -s`
@@ -1206,8 +1016,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	2015-12-12 10:53:22.569658000 -0800
++++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/SSLSocketImpl/NotifyHandshakeTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -46,7 +46,7 @@
  
  OS=`uname -s`
@@ -1217,156 +1027,8 @@
          FILESEP="/"
          PATHSEP=":"
          ;;
---- ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/ServerHandshaker/AnonCipherWithWantClientAuth.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/com/sun/net/ssl/internal/ssl/ServerHandshaker/AnonCipherWithWantClientAuth.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -1,5 +1,5 @@
- /*
-- * Copyright (c) 2001, 2011, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright (c) 2001, 2015, Oracle and/or its affiliates. All rights reserved.
-  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-  *
-  * This code is free software; you can redistribute it and/or modify it
-@@ -21,6 +21,11 @@
-  * questions.
-  */
- 
-+//
-+// SunJSSE does not support dynamic system properties, no way to re-use
-+// system properties in samevm/agentvm mode.
-+//
-+
- /*
-  * @test
-  * @bug 4392475
-@@ -34,6 +39,7 @@
- import java.io.*;
- import java.net.*;
- import javax.net.ssl.*;
-+import java.security.Security;
- 
- public class AnonCipherWithWantClientAuth {
- 
-@@ -156,6 +162,11 @@
-     volatile Exception clientException = null;
- 
-     public static void main(String[] args) throws Exception {
-+        // reset security properties to make sure that the algorithms
-+        // and keys used in this test are not disabled.
-+        Security.setProperty("jdk.tls.disabledAlgorithms", "");
-+        Security.setProperty("jdk.certpath.disabledAlgorithms", "");
-+
-         String keyFilename =
-             System.getProperty("test.src", "./") + "/" + pathToStores +
-                 "/" + keyStoreFile;
---- ./jdk/test/sun/security/ssl/javax/net/ssl/NewAPIs/SSLEngine/ConnectionTest.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/javax/net/ssl/NewAPIs/SSLEngine/ConnectionTest.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -81,6 +81,9 @@
-         ssle1.setEnabledCipherSuites(new String [] {
-             "SSL_RSA_WITH_RC4_128_MD5"});
- 
-+        ssle2.setEnabledCipherSuites(new String [] {
-+            "SSL_RSA_WITH_RC4_128_MD5"});
-+
-         createBuffers();
-     }
- 
---- ./jdk/test/sun/security/ssl/javax/net/ssl/NewAPIs/SSLEngine/LargeBufs.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/javax/net/ssl/NewAPIs/SSLEngine/LargeBufs.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -92,6 +92,7 @@
-         createSSLEngines();
- 
-         System.out.println("Using " + cipher);
-+        ssle1.setEnabledCipherSuites(new String [] { cipher });
-         ssle2.setEnabledCipherSuites(new String [] { cipher });
- 
-         createBuffers();
---- ./jdk/test/sun/security/ssl/javax/net/ssl/SSLParameters/UseCipherSuitesOrder.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/javax/net/ssl/SSLParameters/UseCipherSuitesOrder.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -31,7 +31,7 @@
-  * @bug 7188657
-  * @summary There should be a way to reorder the JSSE ciphers
-  * @run main/othervm UseCipherSuitesOrder
-- *     TLS_RSA_WITH_AES_128_CBC_SHA,SSL_RSA_WITH_RC4_128_SHA
-+ *     TLS_RSA_WITH_AES_128_CBC_SHA,SSL_RSA_WITH_3DES_EDE_CBC_SHA
-  */
- 
- import java.io.*;
---- ./jdk/test/sun/security/ssl/javax/net/ssl/TLSv11/GenericStreamCipher.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/javax/net/ssl/TLSv11/GenericStreamCipher.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -93,6 +93,10 @@
-         SSLServerSocket sslServerSocket =
-             (SSLServerSocket) sslssf.createServerSocket(serverPort);
- 
-+        // enable a stream cipher
-+        sslServerSocket.setEnabledCipherSuites(
-+            new String[] {"SSL_RSA_WITH_RC4_128_MD5"});
-+
-         serverPort = sslServerSocket.getLocalPort();
- 
-         /*
---- ./jdk/test/sun/security/ssl/sanity/ciphersuites/CipherSuitesInOrder.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/sanity/ciphersuites/CipherSuitesInOrder.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -1,5 +1,5 @@
- /*
-- * Copyright (c) 2012, 2013, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright (c) 2012, 2015, Oracle and/or its affiliates. All rights reserved.
-  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-  *
-  * This code is free software; you can redistribute it and/or modify it
-@@ -93,13 +93,6 @@
-         "SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA",
-         "SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA",
- 
--        "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA",
--        "TLS_ECDHE_RSA_WITH_RC4_128_SHA",
--        "SSL_RSA_WITH_RC4_128_SHA",
--        "TLS_ECDH_ECDSA_WITH_RC4_128_SHA",
--        "TLS_ECDH_RSA_WITH_RC4_128_SHA",
--        "SSL_RSA_WITH_RC4_128_MD5",
--
-         "TLS_EMPTY_RENEGOTIATION_INFO_SCSV",
- 
-         "TLS_DH_anon_WITH_AES_256_GCM_SHA384",
-@@ -113,8 +106,16 @@
-         "TLS_DH_anon_WITH_AES_128_CBC_SHA",
-         "TLS_ECDH_anon_WITH_3DES_EDE_CBC_SHA",
-         "SSL_DH_anon_WITH_3DES_EDE_CBC_SHA",
-+
-+        "TLS_ECDHE_ECDSA_WITH_RC4_128_SHA",
-+        "TLS_ECDHE_RSA_WITH_RC4_128_SHA",
-+        "SSL_RSA_WITH_RC4_128_SHA",
-+        "TLS_ECDH_ECDSA_WITH_RC4_128_SHA",
-+        "TLS_ECDH_RSA_WITH_RC4_128_SHA",
-+        "SSL_RSA_WITH_RC4_128_MD5",
-         "TLS_ECDH_anon_WITH_RC4_128_SHA",
-         "SSL_DH_anon_WITH_RC4_128_MD5",
-+
-         "SSL_RSA_WITH_DES_CBC_SHA",
-         "SSL_DHE_RSA_WITH_DES_CBC_SHA",
-         "SSL_DHE_DSS_WITH_DES_CBC_SHA",
---- ./jdk/test/sun/security/ssl/sanity/interop/ClientJSSEServerJSSE.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/sanity/interop/ClientJSSEServerJSSE.java	Sat Sep 05 06:34:07 2015 -0700
-@@ -1,5 +1,5 @@
- /*
-- * Copyright (c) 2002, 2011, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright (c) 2002, 2015, Oracle and/or its affiliates. All rights reserved.
-  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-  *
-  * This code is free software; you can redistribute it and/or modify it
-@@ -34,9 +34,10 @@
- public class ClientJSSEServerJSSE {
- 
-     public static void main(String[] args) throws Exception {
--        // reset the security property to make sure that the algorithms
-+        // reset security properties to make sure that the algorithms
-         // and keys used in this test are not disabled.
-         Security.setProperty("jdk.tls.disabledAlgorithms", "");
-+        Security.setProperty("jdk.certpath.disabledAlgorithms", "");
- 
-         CipherTest.main(new JSSEFactory(), args);
-     }
---- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	2015-12-12 10:53:22.569895000 -0800
++++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -32,7 +32,7 @@
  HOSTNAME=`uname -n`
  OS=`uname -s`
@@ -1376,8 +1038,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	2015-12-12 10:53:22.570134000 -0800
++++ ./jdk/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxyWithAuth.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -32,7 +32,7 @@
  HOSTNAME=`uname -n`
  OS=`uname -s`
@@ -1387,8 +1049,8 @@
      PS=":"
      FS="/"
      ;;
---- ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	2015-12-12 10:53:22.570379000 -0800
++++ ./jdk/test/sun/security/tools/jarsigner/AlgOptions.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1398,8 +1060,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	2015-12-12 10:53:22.570595000 -0800
++++ ./jdk/test/sun/security/tools/jarsigner/PercentSign.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1409,8 +1071,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/jarsigner/diffend.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/jarsigner/diffend.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/diffend.sh	2015-12-12 10:53:22.571436000 -0800
++++ ./jdk/test/sun/security/tools/jarsigner/diffend.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -47,6 +47,13 @@
      FS="/"
      CP="${FS}bin${FS}cp -f"
@@ -1425,8 +1087,8 @@
    CYGWIN* )
      NULL=/dev/null
      PS=";"
---- ./jdk/test/sun/security/tools/jarsigner/emptymanifest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/jarsigner/emptymanifest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/emptymanifest.sh	2014-03-03 19:03:04.000000000 -0800
++++ ./jdk/test/sun/security/tools/jarsigner/emptymanifest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -39,6 +39,11 @@
    Windows_* )
      FS="\\"
@@ -1439,8 +1101,8 @@
    * )
      FS="/"
      ;;
---- ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	2015-12-12 10:53:22.571643000 -0800
++++ ./jdk/test/sun/security/tools/jarsigner/oldsig.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -42,7 +42,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1450,8 +1112,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	2015-12-12 10:53:22.571851000 -0800
++++ ./jdk/test/sun/security/tools/keytool/AltProviderPath.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1461,8 +1123,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	2015-12-12 10:53:22.572052000 -0800
++++ ./jdk/test/sun/security/tools/keytool/CloneKeyAskPassword.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -55,7 +55,7 @@
      PATHSEP=":"
      FILESEP="/"
@@ -1472,8 +1134,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	2015-12-12 10:53:22.572261000 -0800
++++ ./jdk/test/sun/security/tools/keytool/NoExtNPE.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -48,7 +48,7 @@
    Linux )
      FILESEP="/"
@@ -1483,8 +1145,8 @@
      FILESEP="/"
      ;;
    AIX )
---- ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	2015-12-12 10:53:22.572464000 -0800
++++ ./jdk/test/sun/security/tools/keytool/SecretKeyKS.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -45,7 +45,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1494,8 +1156,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	2015-12-12 10:53:22.572670000 -0800
++++ ./jdk/test/sun/security/tools/keytool/StandardAlgName.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1505,8 +1167,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/StorePasswordsByShell.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/keytool/StorePasswordsByShell.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/keytool/StorePasswordsByShell.sh	2015-12-12 10:53:22.572890000 -0800
++++ ./jdk/test/sun/security/tools/keytool/StorePasswordsByShell.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1516,8 +1178,8 @@
      PATHSEP=":"
      FILESEP="/"
      ;;
---- ./jdk/test/sun/security/tools/keytool/i18n.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/keytool/i18n.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/keytool/i18n.sh	2014-03-03 19:03:04.000000000 -0800
++++ ./jdk/test/sun/security/tools/keytool/i18n.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1527,8 +1189,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/keytool/printssl.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/keytool/printssl.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/keytool/printssl.sh	2015-12-12 10:53:22.573306000 -0800
++++ ./jdk/test/sun/security/tools/keytool/printssl.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -40,7 +40,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1538,8 +1200,8 @@
      FS="/"
      ;;
    CYGWIN* )
---- ./jdk/test/sun/security/tools/keytool/resource.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/keytool/resource.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/keytool/resource.sh	2015-12-12 10:53:22.573517000 -0800
++++ ./jdk/test/sun/security/tools/keytool/resource.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -43,7 +43,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1549,8 +1211,8 @@
      NULL=/dev/null
      FS="/"
      ;;
---- ./jdk/test/sun/security/tools/keytool/standard.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/keytool/standard.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/keytool/standard.sh	2015-12-12 10:53:22.573715000 -0800
++++ ./jdk/test/sun/security/tools/keytool/standard.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -45,7 +45,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1560,8 +1222,8 @@
      FS="/"
      ;;
    Windows_* )
---- ./jdk/test/sun/security/tools/policytool/Alias.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/policytool/Alias.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/policytool/Alias.sh	2015-12-12 10:53:22.573914000 -0800
++++ ./jdk/test/sun/security/tools/policytool/Alias.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1571,8 +1233,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	2015-12-12 10:53:22.574124000 -0800
++++ ./jdk/test/sun/security/tools/policytool/ChangeUI.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1582,8 +1244,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	2015-12-12 10:53:22.574318000 -0800
++++ ./jdk/test/sun/security/tools/policytool/OpenPolicy.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1593,8 +1255,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/SaveAs.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/policytool/SaveAs.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/policytool/SaveAs.sh	2015-12-12 10:53:22.574517000 -0800
++++ ./jdk/test/sun/security/tools/policytool/SaveAs.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1604,8 +1266,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	2015-12-12 10:53:22.574731000 -0800
++++ ./jdk/test/sun/security/tools/policytool/UpdatePermissions.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -47,7 +47,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1615,8 +1277,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	2015-12-12 10:53:22.574927000 -0800
++++ ./jdk/test/sun/security/tools/policytool/UsePolicy.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -46,7 +46,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1626,8 +1288,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/security/tools/policytool/i18n.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/security/tools/policytool/i18n.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/security/tools/policytool/i18n.sh	2015-12-12 10:53:22.575135000 -0800
++++ ./jdk/test/sun/security/tools/policytool/i18n.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -49,7 +49,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1637,8 +1299,8 @@
      NULL=/dev/null
      PS=":"
      FS="/"
---- ./jdk/test/sun/tools/common/CommonSetup.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/tools/common/CommonSetup.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/tools/common/CommonSetup.sh	2015-12-12 10:53:22.709729000 -0800
++++ ./jdk/test/sun/tools/common/CommonSetup.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -47,6 +47,7 @@
  #   isLinux   - true if OS is Linux
  #   isSolaris - true if OS is Solaris
@@ -1666,8 +1328,8 @@
    Darwin )
      OS="Mac OS X"
      isMacos=true
---- ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	2015-12-12 10:53:22.709942000 -0800
++++ ./jdk/test/sun/tools/jconsole/ResourceCheckTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -54,7 +54,7 @@
  
  OS=`uname -s`
@@ -1677,8 +1339,8 @@
        PATHSEP=":"
        ;;
  
---- ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	2015-12-12 10:53:22.711964000 -0800
++++ ./jdk/test/sun/tools/native2ascii/resources/ImmutableResourceTest.sh	2015-10-24 06:21:21.000000000 -0700
 @@ -56,7 +56,7 @@
  
  OS=`uname -s`
@@ -1688,8 +1350,8 @@
        PATHSEP=":"
        ;;
  
---- ./jdk/test/tools/launcher/ExecutionEnvironment.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/tools/launcher/ExecutionEnvironment.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/tools/launcher/ExecutionEnvironment.java	2015-12-12 10:53:22.730360000 -0800
++++ ./jdk/test/tools/launcher/ExecutionEnvironment.java	2015-10-24 06:21:21.000000000 -0700
 @@ -194,7 +194,7 @@
  
          Map<String, String> env = new HashMap<>();
@@ -1699,8 +1361,8 @@
              for (String x : LD_PATH_STRINGS) {
                  String pairs[] = x.split("=");
                  env.put(pairs[0], pairs[1]);
---- ./jdk/test/tools/launcher/RunpathTest.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/tools/launcher/RunpathTest.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/tools/launcher/RunpathTest.java	2014-03-03 19:03:12.000000000 -0800
++++ ./jdk/test/tools/launcher/RunpathTest.java	2015-10-24 06:21:21.000000000 -0700
 @@ -69,7 +69,7 @@
      }
  
@@ -1710,8 +1372,8 @@
              RunpathTest rp = new RunpathTest();
              rp.testRpath();
          }
---- ./jdk/test/tools/launcher/Test7029048.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/tools/launcher/Test7029048.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/tools/launcher/Test7029048.java	2014-03-03 19:03:12.000000000 -0800
++++ ./jdk/test/tools/launcher/Test7029048.java	2015-10-24 06:21:21.000000000 -0700
 @@ -223,7 +223,7 @@
          } else if (isSolaris && passes < 9) {
              throw new Exception("Test7029048: FAIL: " +
@@ -1721,8 +1383,8 @@
               throw new Exception("Test7029048: FAIL: " +
                      "all tests did not run, expected " + 6 + " got " + passes);
          } else {
---- ./jdk/test/tools/launcher/TestHelper.java	Wed Jul 01 21:53:30 2015 -0700
-+++ ./jdk/test/tools/launcher/TestHelper.java	Sat Sep 05 06:34:07 2015 -0700
+--- ./jdk/test/tools/launcher/TestHelper.java	2015-12-12 10:53:22.730904000 -0800
++++ ./jdk/test/tools/launcher/TestHelper.java	2015-10-24 06:21:21.000000000 -0700
 @@ -94,6 +94,8 @@
              System.getProperty("os.name", "unknown").startsWith("Linux");
      static final boolean isAIX =
@@ -1732,8 +1394,8 @@
      static final String LIBJVM = isWindows
                          ? "jvm.dll"
                          : "libjvm" + (isMacOSX ? ".dylib" : ".so");
---- ./langtools/test/Makefile	Wed Jul 01 21:54:20 2015 -0700
-+++ ./langtools/test/Makefile	Sat Aug 29 06:20:27 2015 -0700
+--- ./langtools/test/Makefile	2015-12-12 10:53:30.585701000 -0800
++++ ./langtools/test/Makefile	2015-10-24 06:21:02.000000000 -0700
 @@ -34,6 +34,14 @@
      ARCH=i586
    endif
@@ -1749,8 +1411,8 @@
  ifeq ($(OSNAME), Darwin)
    PLATFORM = bsd
    ARCH = $(shell uname -m)
---- ./langtools/test/tools/javah/ReadOldClass.sh	Wed Jul 01 21:54:20 2015 -0700
-+++ ./langtools/test/tools/javah/ReadOldClass.sh	Sat Aug 29 06:20:27 2015 -0700
+--- ./langtools/test/tools/javah/ReadOldClass.sh	2014-03-03 18:53:04.000000000 -0800
++++ ./langtools/test/tools/javah/ReadOldClass.sh	2015-10-24 06:21:02.000000000 -0700
 @@ -43,7 +43,7 @@
  # set platform-dependent variables
  OS=`uname -s`
@@ -1760,8 +1422,8 @@
      PS=":"
      FS="/"
      ;;
---- ./nashorn/test/script/jfx.js	Wed Jul 01 21:54:30 2015 -0700
-+++ ./nashorn/test/script/jfx.js	Sat Aug 29 06:20:30 2015 -0700
+--- ./nashorn/test/script/jfx.js	2015-12-12 10:53:19.839811000 -0800
++++ ./nashorn/test/script/jfx.js	2015-10-24 06:21:05.000000000 -0700
 @@ -93,6 +93,8 @@
          f2 = new File(sb.append(fsep + "linux.png").toString());
      } else if (OSInfo.getOSType() == OSType.MACOSX) {
