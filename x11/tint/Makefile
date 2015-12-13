@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tint2
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.3
 CATEGORIES=	x11
 MASTER_SITES=	http://leigh123linux.fedorapeople.org/pub/${PORTNAME}/source/
 
