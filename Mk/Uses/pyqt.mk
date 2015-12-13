@@ -59,9 +59,9 @@ MASTER_SITES_PYQT4=	SF/pyqt/PyQt4/PyQt-${PORTVERSION} \
 MASTER_SITES_QSCI2=	SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
 			GENTOO
 
-SIP_VERSION=		4.16.5
-QSCI2_VERSION=		2.8.4
-PYQT4_VERSION=		4.11.3
+SIP_VERSION=		4.17
+QSCI2_VERSION=		2.9.1
+PYQT4_VERSION=		4.11.4
 
 SIP_DISTNAME=		sip-${SIP_VERSION}
 PYQT4_DISTNAME=		PyQt-x11-gpl-${PYQT4_VERSION}
@@ -164,7 +164,7 @@ py-webkit_DESC=		Python bindings for QtWebKit module
 py-xml_DESC=		Python bindings for QtXml module
 py-xmlpatterns_DESC=	Python bindings for QtXmlPatterns module
 
-SIPDIR_REL=	share/py-sip
+SIPDIR_REL=	share/py-sip/PyQt${_PYQT_VERSION}
 SIPDIR=		${PREFIX}/${SIPDIR_REL}
 PLIST_SUB+=	PYQT_SIPDIR=${SIPDIR_REL}
 

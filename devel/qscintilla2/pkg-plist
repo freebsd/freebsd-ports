@@ -49,9 +49,9 @@
 %%QT_INCDIR%%/Qsci/qscistyle.h
 %%QT_INCDIR%%/Qsci/qscistyledtext.h
 %%QT_LIBDIR%%/libqscintilla2.so
-%%QT_LIBDIR%%/libqscintilla2.so.11
-%%QT_LIBDIR%%/libqscintilla2.so.11.3
-%%QT_LIBDIR%%/libqscintilla2.so.11.3.0
+%%QT_LIBDIR%%/libqscintilla2.so.12
+%%QT_LIBDIR%%/libqscintilla2.so.12.0
+%%QT_LIBDIR%%/libqscintilla2.so.12.0.1
 %%QT_MKSPECDIR%%/features/qscintilla2.prf
 share/qt4/qsci/api/python/Python-2.4.api
 share/qt4/qsci/api/python/Python-2.5.api
@@ -61,6 +61,7 @@ share/qt4/qsci/api/python/Python-3.1.api
 share/qt4/qsci/api/python/Python-3.2.api
 share/qt4/qsci/api/python/Python-3.3.api
 share/qt4/qsci/api/python/Python-3.4.api
+share/qt4/qsci/api/python/Python-3.5.api
 %%NLS%%share/qt4/translations/qscintilla_cs.qm
 %%NLS%%share/qt4/translations/qscintilla_de.qm
 %%NLS%%share/qt4/translations/qscintilla_es.qm
