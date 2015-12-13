@@ -14,6 +14,8 @@ COMMENT=	GUI editor for digital audio waveforms
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_powerpc64=	Does not build
+
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 BUILD_DEPENDS+=	autogen:${PORTSDIR}/devel/autogen \

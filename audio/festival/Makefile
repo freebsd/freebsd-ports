@@ -43,6 +43,8 @@ WRKSRC=		${WRKDIR}
 SPT_PATCHES=	include_ling__class_EST__FeatureFunctionPackage.h	\
 		include_unix_EST__socket__unix.h
 
+BROKEN_powerpc64=	Does not build
+
 do-build:
 .for d in speech_tools festival
 	${MAKE_CMD} -C ${WRKDIR}/$d ${MAKE_FLAGS} Makefile ${MAKE_ARGS}
