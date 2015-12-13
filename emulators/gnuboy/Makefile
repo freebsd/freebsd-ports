@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.sourcefiles.org/Emulators/Videogames/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy emulator
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
