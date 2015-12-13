@@ -58,6 +58,50 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="72c145df-a1e0-11e5-8ad0-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>47.0.2526.80</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update_8.html">
+	  <p>7 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[548273] High CVE-2015-6788: Type confusion in extensions.
+	      Credit to anonymous.</li>
+	    <li>[557981] High CVE-2015-6789: Use-after-free in Blink. Credit to
+	      cloudfuzzer.</li>
+	    <li>[542054] Medium CVE-2015-6790: Escaping issue in saved pages.
+	      Credit to Inti De Ceukelaire.</li>
+	    <li>[567513] CVE-2015-6791: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>Multiple vulnerabilities in V8 fixed at the tip of the 4.7
+	      branch (currently 4.7.80.23).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6788</cvename>
+      <cvename>CVE-2015-6789</cvename>
+      <cvename>CVE-2015-6790</cvename>
+      <cvename>CVE-2015-6791</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update_8.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-08</discovery>
+      <entry>2015-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="33459061-a1d6-11e5-8794-bcaec565249c">
     <topic>freeimage -- multiple integer overflows</topic>
     <affects>
