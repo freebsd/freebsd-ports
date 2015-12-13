@@ -4262,6 +4262,14 @@
     SUBDIR += py-qt4-script
     SUBDIR += py-qt4-scripttools
     SUBDIR += py-qt4-test
+    SUBDIR += py-qt5
+    SUBDIR += py-qt5-core
+    SUBDIR += py-qt5-dbus
+    SUBDIR += py-qt5-dbussupport
+    SUBDIR += py-qt5-designer
+    SUBDIR += py-qt5-designerplugin
+    SUBDIR += py-qt5-qscintilla2
+    SUBDIR += py-qt5-test
     SUBDIR += py-rauth
     SUBDIR += py-raven
     SUBDIR += py-rednose
@@ -4528,6 +4536,8 @@
     SUBDIR += qross
     SUBDIR += qscintilla2
     SUBDIR += qscintilla2-designerplugin
+    SUBDIR += qscintilla2-qt5
+    SUBDIR += qscintilla2-designerplugin-qt5
     SUBDIR += qt4
     SUBDIR += qt4-assistant
     SUBDIR += qt4-assistant-adp

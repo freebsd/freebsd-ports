@@ -1,0 +1,5 @@
+%%PYTHON_SITELIBDIR%%/PyQt5/QtSerialPort.so
+%%PYQT_SIPDIR%%/QtSerialPort/QtSerialPortmod.sip
+%%PYQT_SIPDIR%%/QtSerialPort/qserialport.sip
+%%PYQT_SIPDIR%%/QtSerialPort/qserialportinfo.sip
+%%API%%share/qt5/qsci/api/python/QtSerialPort.api

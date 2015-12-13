@@ -1,0 +1,8 @@
+%%PYTHON_SITELIBDIR%%/PyQt5/QtWebKitWidgets.so
+%%PYQT_SIPDIR%%/QtWebKitWidgets/QtWebKitWidgetsmod.sip
+%%PYQT_SIPDIR%%/QtWebKitWidgets/qgraphicswebview.sip
+%%PYQT_SIPDIR%%/QtWebKitWidgets/qwebframe.sip
+%%PYQT_SIPDIR%%/QtWebKitWidgets/qwebinspector.sip
+%%PYQT_SIPDIR%%/QtWebKitWidgets/qwebpage.sip
+%%PYQT_SIPDIR%%/QtWebKitWidgets/qwebview.sip
+%%API%%share/qt5/qsci/api/python/QtWebKitWidgets.api

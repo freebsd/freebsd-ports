@@ -1,0 +1,7 @@
+bin/pylupdate5
+bin/pyrcc5
+%%PYTHON_SITELIBDIR%%/PyQt5/QtXml.so
+%%PYQT_SIPDIR%%/QtXml/QtXmlmod.sip
+%%PYQT_SIPDIR%%/QtXml/qdom.sip
+%%PYQT_SIPDIR%%/QtXml/qxml.sip
+%%API%%share/qt5/qsci/api/python/QtXml.api

@@ -1,0 +1,11 @@
+%%PYTHON_SITELIBDIR%%/PyQt5/QtWebKit.so
+%%PYQT_SIPDIR%%/QtWebKit/QtWebKitmod.sip
+%%PYQT_SIPDIR%%/QtWebKit/qwebdatabase.sip
+%%PYQT_SIPDIR%%/QtWebKit/qwebelement.sip
+%%PYQT_SIPDIR%%/QtWebKit/qwebhistory.sip
+%%PYQT_SIPDIR%%/QtWebKit/qwebhistoryinterface.sip
+%%PYQT_SIPDIR%%/QtWebKit/qwebkitglobal.sip
+%%PYQT_SIPDIR%%/QtWebKit/qwebpluginfactory.sip
+%%PYQT_SIPDIR%%/QtWebKit/qwebsecurityorigin.sip
+%%PYQT_SIPDIR%%/QtWebKit/qwebsettings.sip
+%%API%%share/qt5/qsci/api/python/QtWebKit.api

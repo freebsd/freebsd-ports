@@ -261,6 +261,7 @@
     SUBDIR += py-clojure
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
+    SUBDIR += py-qt5-qml
     SUBDIR += pypy
     SUBDIR += pypy3-devel
     SUBDIR += python

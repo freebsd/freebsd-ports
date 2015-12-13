@@ -4,12 +4,12 @@
 #
 # Feature:	pyqt
 # Usage:	USES=pyqt:ARGS
-# Valid ARGS:	4
+# Valid ARGS:	4,5
 #
 # MAINTAINER:	kde@FreeBSD.org
 #
 # Internal Port variables for PyQt ports:
-# PYQT_DIST	- This port is part of PyQt4 itself. Variables and
+# PYQT_DIST	- This port is part of PyQt4/5 itself. Variables and
 #		targets are then set assuming a certain tarball and
 #		port layout.
 # USE_PYQT	- List of PyQt components to depend on
@@ -25,15 +25,15 @@
 .if !defined(_INCLUDE_USES_PYQT_MK)
 _INCLUDE_USES_PYQT_MK=	yes
 
-# At the moment we support PyQt bindings versions 4, sip
+# At the moment we support PyQt bindings versions 4 and 5, sip
 # option is for internal use by the py-sip ports.
-_PYQT_SUPPORTED=        4 sip
+_PYQT_SUPPORTED=        4 5 sip
 
 .if empty(pyqt_ARGS)
 IGNORE=	pyqt needs a qt-version (${_PYQT_SUPPORTED})
 .endif
 
-# At the moment we support PyQt bindings version 4
+# At the moment we support PyQt bindings versions 4 and 5
 .for ver in ${_PYQT_SUPPORTED:O:u}
 .  if ${pyqt_ARGS:M${ver}}
 .    if empty(_PYQT_VERSION)
@@ -56,26 +56,33 @@ MASTER_SITES_SIP=	SF/pyqt/sip/sip-${PORTVERSION} \
 			GENTOO
 MASTER_SITES_PYQT4=	SF/pyqt/PyQt4/PyQt-${PORTVERSION} \
 			GENTOO
+MASTER_SITES_PYQT5=	SF/pyqt/PyQt5/PyQt-${PORTVERSION} \
+			GENTOO
 MASTER_SITES_QSCI2=	SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
 			GENTOO
 
 SIP_VERSION=		4.17
 QSCI2_VERSION=		2.9.1
 PYQT4_VERSION=		4.11.4
+PYQT5_VERSION=		5.5.1
 
 SIP_DISTNAME=		sip-${SIP_VERSION}
 PYQT4_DISTNAME=		PyQt-x11-gpl-${PYQT4_VERSION}
 PYQT4_DISTINFO_FILE=	${.CURDIR}/../../devel/${PYQT_RELNAME}/distinfo
+PYQT5_DISTNAME=		PyQt-gpl-${PYQT5_VERSION}
+PYQT5_DISTINFO_FILE=	${.CURDIR}/../../devel/py-qt5/distinfo
 QSCI2_DISTNAME=		QScintilla-gpl-${QSCI2_VERSION}
 
-# PyQt components split up into pyqt4/pyqt5 (upcoming)/...
-_USE_PYQT_ALL=		core dbus demo designer doc gui \
+# PyQt components split up into pyqt4/pyqt5/...
+_USE_PYQT_ALL=		core dbus demo designer designerplugin doc gui \
 			multimedia network opengl qscintilla2 \
 			sql svg test webkit xml xmlpatterns sip
 # List of components only in pyqt4
 _USE_PYQT4_ONLY=	assistant declarative dbussupport \
-			designerplugin help phonon script \
-			scripttools
+			help phonon script scripttools
+# List of components only in pyqt5
+_USE_PYQT5_ONLY=	multimediawidgets printsupport qml serialport \
+			webkitwidgets widgets
 
 # Unversioned variables for the rest of the file
 PYQT_VERSION=		${PYQT${_PYQT_VERSION}_VERSION}
@@ -112,6 +119,13 @@ py-webkit_PATH=		${PYQT_PY_RELNAME}-webkit>=${PYQT_VERSION}
 py-xml_PATH=		${PYQT_PY_RELNAME}-xml>=${PYQT_VERSION}
 py-xmlpatterns_PATH=	${PYQT_PY_RELNAME}-xmlpatterns>=${PYQT_VERSION}
 
+py-multimediawidgets_PATH=	${PYQT_PY_RELNAME}-multimediawidgets>=${PYQT_VERSION}
+py-qml_PATH=			${PYQT_PY_RELNAME}-qml>=${PYQT_VERSION}
+py-printsupport_PATH=		${PYQT_PY_RELNAME}-printsupport>=${PYQT_VERSION}
+py-serialport_PATH=		${PYQT_PY_RELNAME}-serialport>=${PYQT_VERSION}
+py-webkitwidgets_PATH= 		${PYQT_PY_RELNAME}-webkitwidgets>=${PYQT_VERSION}
+py-widgets_PATH=		${PYQT_PY_RELNAME}-widgets>=${PYQT_VERSION}
+
 py-sip_PORT=		devel/py-sip
 
 py-assistant_PORT=	devel/${PYQT_RELNAME}-assistant
@@ -139,6 +153,13 @@ py-webkit_PORT=		www/${PYQT_RELNAME}-webkit
 py-xml_PORT=		textproc/${PYQT_RELNAME}-xml
 py-xmlpatterns_PORT=	textproc/${PYQT_RELNAME}-xmlpatterns
 
+py-multimediawidgets_PORT=	multimedia/py-qt5-multimediawidgets
+py-qml_PORT=			lang/py-qt5-qml
+py-printsupport_PORT=		print/py-qt5-printsupport
+py-serialport_PORT=		comms/py-qt5-serialport
+py-webkitwidgets_PORT= 		www/py-qt5-webkitwidgets
+py-widgets_PORT=		x11-toolkits/py-qt5-widgets
+
 py-assistant_DESC=	Python bindings for QtAssistant module
 py-core_DESC=		Python bindings for QtCore module
 py-dbus_DESC=		Python bindings for QtDBus module
@@ -164,6 +185,13 @@ py-webkit_DESC=		Python bindings for QtWebKit module
 py-xml_DESC=		Python bindings for QtXml module
 py-xmlpatterns_DESC=	Python bindings for QtXmlPatterns module
 
+py-multimediawidgets_DESC=	Python bindings for QtMultimediaWidgets module
+py-qml_DESC=			Python bindings for Qml module
+py-printsupport_DESC=		Python bindings for Printsupport module
+py-serialport_DESC=		Python bindings for QtSerialPort
+py-webkitwidgets_DESC= 		Python bindings for QtWebKitWidgets module
+py-widgets_DESC=		Python bindings for QTWidgets module
+
 SIPDIR_REL=	share/py-sip/PyQt${_PYQT_VERSION}
 SIPDIR=		${PREFIX}/${SIPDIR_REL}
 PLIST_SUB+=	PYQT_SIPDIR=${SIPDIR_REL}
@@ -176,6 +204,12 @@ DISTNAME=	${PYQT_DISTNAME}
 DISTINFO_FILE=	${PYQT_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
+
+.if ${_PYQT_VERSION} > 4
+# PyQt5's configure.py generates .pro files and calls qmake to generate the
+# Makefiles. qmake's Makefiles use INSTALL_ROOT instead of DESTDIR.
+DESTDIRNAME=	INSTALL_ROOT
+.endif
 
 PATCHDIR=	${.CURDIR}/../../devel/${PYQT_RELNAME}-core/files
 QSCIDIR=	${PREFIX}/share/qt${_PYQT_VERSION}/qsci
