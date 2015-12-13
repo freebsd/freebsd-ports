@@ -10,6 +10,7 @@ MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility library that includes a wrapper for imlib2
 
+BROKEN=		unfetchable
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 

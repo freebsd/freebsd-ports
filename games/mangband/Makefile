@@ -12,6 +12,7 @@ COMMENT=	Free online multiplayer real-time roguelike game
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
 ALL_TARGET=	mangclient mangband
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes

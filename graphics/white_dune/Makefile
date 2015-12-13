@@ -12,6 +12,7 @@ MASTER_SITES=	http://vrml.cip.ica.uni-stuttgart.de/dune/
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Graphical VRML97 editor and animation tool
 
+BROKEN=		unfetchable
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv2

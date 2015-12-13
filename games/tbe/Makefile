@@ -9,6 +9,7 @@ DISTNAME=	TheButterflyEffect-M${PORTVERSION}.src
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The Butterfly Effect
 
+BROKEN=		unfetchable
 BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 

@@ -9,6 +9,7 @@ DISTNAME=	trigger-rally-${PORTVERSION}-data
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data files for trigger-rally
 
+BROKEN=		unfetchable
 USES=		tar:bzip2
 
 DATADIR=	${PREFIX}/share/trigger-rally

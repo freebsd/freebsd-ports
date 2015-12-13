@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.fifthplanet.net/files/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Implementation of the Sudoku game
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
 
 USES=		tar:bzip2 gmake

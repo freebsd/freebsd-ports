@@ -10,6 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Python package for creating encapsulated PostScript figures
 
+BROKEN=		unfetchable
 LICENSE=	GPLv2
 
 USES=		python:3

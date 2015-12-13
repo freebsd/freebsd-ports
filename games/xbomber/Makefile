@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Game based on "Super Bomberman" for the Super Nintendo
 
+BROKEN=		unfetchable
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XORG=	x11
 

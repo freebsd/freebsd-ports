@@ -11,6 +11,7 @@ DISTNAME=	lib${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GObject-based wrapper around Exiv2 library
 
+BROKEN=		unfetchable
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
