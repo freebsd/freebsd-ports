@@ -3,7 +3,7 @@
 
 PORTNAME=		crits
 PORTVERSION=		3.1.0
-PORTREVISION=		2
+PORTREVISION=		3
 DISTVERSIONPREFIX=	v
 CATEGORIES=		security
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -31,7 +31,7 @@ RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip     \
 		upx:${PORTSDIR}/archivers/upx	   \
 		zip:${PORTSDIR}/archivers/zip	   \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson  \
-		${PYTHON_PKGNAMEPREFIX}curl>0:${PORTSDIR}/ftp/py-curl                 \
+		${PYTHON_PKGNAMEPREFIX}pycurl>0:${PORTSDIR}/ftp/py-pycurl             \
 		${PYTHON_PKGNAMEPREFIX}pydot>=0:${PORTSDIR}/graphics/py-pydot         \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml               \
 		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:${PORTSDIR}/devel/py-setuptools${PYTHON_SUFFIX} \
