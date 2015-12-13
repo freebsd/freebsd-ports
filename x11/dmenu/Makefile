@@ -3,6 +3,7 @@
 
 PORTNAME=	dmenu
 PORTVERSION=	4.5
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -33,6 +34,8 @@ post-patch:
 	         -e "s,%%PREFIX%%,${PREFIX},g" \
 	         -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 	         -e "s,%%MANPREFIX%%,${MANPREFIX},g"
+
+post-patch-XINERAMA-off:
 	@${REINPLACE_CMD} -e 's,$${XINERAMALIBS},,g' \
 	         -e 's,$${XINERAMAFLAGS},,g' ${WRKSRC}/config.mk
 
