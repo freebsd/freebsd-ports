@@ -6,7 +6,7 @@ CATEGORIES=	graphics
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt 4-compatible OpenGL support module
+COMMENT=	Qt 5-compatible OpenGL support module
 
 USE_GL=		gl
 USE_QT5=	core gui widgets qmake_build buildtools_build
