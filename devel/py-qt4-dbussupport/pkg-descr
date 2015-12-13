@@ -1,4 +1,4 @@
 PyQt4 is a set of Python bindings for Digia's Qt4 application framework.
-This package provides the D-BUS module.
+This package provides Qt event loop support for dbus-python.
 
 WWW: http://www.riverbankcomputing.co.uk/software/pyqt/
