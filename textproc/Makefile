@@ -1261,6 +1261,8 @@
     SUBDIR += py-qrcode
     SUBDIR += py-qt4-xml
     SUBDIR += py-qt4-xmlpatterns
+    SUBDIR += py-qt5-xml
+    SUBDIR += py-qt5-xmlpatterns
     SUBDIR += py-rdflib
     SUBDIR += py-regex
     SUBDIR += py-reverend

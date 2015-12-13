@@ -380,6 +380,8 @@
     SUBDIR += py-progressbar231
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
+    SUBDIR += py-qt5-demo
+    SUBDIR += py-qt5-doc
     SUBDIR += py-yolk
     SUBDIR += pylize
     SUBDIR += pypanda
