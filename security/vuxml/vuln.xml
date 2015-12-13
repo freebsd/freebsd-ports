@@ -58,6 +58,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="33459061-a1d6-11e5-8794-bcaec565249c">
+    <topic>freeimage -- multiple integer overflows</topic>
+    <affects>
+      <package>
+	<name>freeimage</name>
+	<range><lt>3.16.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pcheng pcheng reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/08/28/1">
+	  <p>An integer overflow issue in the FreeImage project was
+	    reported and fixed recently.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0852</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/08/28/1</url>
+    </references>
+    <dates>
+      <discovery>2015-08-28</discovery>
+      <entry>2015-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="21bc4d71-9ed8-11e5-8f5c-002590263bf5">
     <topic>redmine -- information leak vulnerability</topic>
     <affects>
@@ -13246,8 +13273,7 @@ Notes:
       </package>
       <package>
 	<name>freeimage</name>
-	<!-- no known fixed version -->
-	<range><ge>3.13.0</ge></range>
+	<range><ge>3.13.0</ge><lt>3.16.0_1</lt></range>
       </package>
       <package>
 	<name>kodi</name>
@@ -13304,7 +13330,7 @@ Notes:
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-09-18</modified>
+      <modified>2015-12-13</modified>
     </dates>
   </vuln>
 
