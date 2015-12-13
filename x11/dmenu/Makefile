@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dmenu
-PORTVERSION=	4.5
-PORTREVISION=	1
+PORTVERSION=	4.6
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -16,18 +15,19 @@ MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	X11 menu application designed for the dwm window manager
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	XINERAMA XFT
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+
+OPTIONS_DEFINE=	XINERAMA
 OPTIONS_DEFAULT=	XINERAMA
 
-USE_XORG=	x11
+USE_XORG=	x11 xft
 
-PLIST_FILES=	bin/dmenu bin/dmenu_run bin/stest \
+PLIST_FILES=	bin/dmenu bin/dmenu_path bin/dmenu_run bin/stest \
 		man/man1/dmenu.1.gz man/man1/stest.1.gz
 
 XINERAMA_USE=	XORG=xinerama
-XFT_USE=	XORG=xft
-XFT_PATCHFILES=	${PORTNAME}-${PORTVERSION}-xft.diff
 
 post-patch:
 	@${GREP} -Rl '%%[[:alpha:]]\+%%' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} \
