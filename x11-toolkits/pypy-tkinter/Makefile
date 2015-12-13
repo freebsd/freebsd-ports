@@ -5,7 +5,7 @@ PORTNAME=	tkinter
 PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	x11-toolkits python
 
-MAINTAINER=	dbn@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	PyPy bindings to the Tk widget set
 
 USES=		tk
