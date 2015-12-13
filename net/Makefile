@@ -974,6 +974,7 @@
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
     SUBDIR += py-qt4-network
+    SUBDIR += py-qt5-network
     SUBDIR += py-radix
     SUBDIR += py-raet
     SUBDIR += py-ripe.atlas.cousteau
