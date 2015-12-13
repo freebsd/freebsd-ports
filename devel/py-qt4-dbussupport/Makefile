@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbussupport
+PORTREVISION=	1
 CATEGORIES=	devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ CONFIGURE_ARGS=	--enable QtCore
 PYQT_DIST=	yes
 
 USES=		pkgconfig python pyqt:4
-USE_PYQT=	sip_build core_run
+USE_PYQT=	sip_build
 USE_QT4=	corelib qmake_build moc_build
 
 OPTIONS_DEFINE=		DEBUG
