@@ -23,21 +23,14 @@ OPTIONS_DEFINE=	XINERAMA
 OPTIONS_DEFAULT=	XINERAMA
 
 USE_XORG=	x11 xft
+MAKE_ARGS=	CC="${CC}" PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}/man" \
+		X11INC="${LOCALBASE}/include" X11LIB="${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/dmenu bin/dmenu_path bin/dmenu_run bin/stest \
 		man/man1/dmenu.1.gz man/man1/stest.1.gz
 
 XINERAMA_USE=	XORG=xinerama
-
-post-patch:
-	@${GREP} -Rl '%%[[:alpha:]]\+%%' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} \
-	         -e "s,%%PREFIX%%,${PREFIX},g" \
-	         -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
-	         -e "s,%%MANPREFIX%%,${MANPREFIX},g"
-
-post-patch-XINERAMA-off:
-	@${REINPLACE_CMD} -e 's,$${XINERAMALIBS},,g' \
-	         -e 's,$${XINERAMAFLAGS},,g' ${WRKSRC}/config.mk
+XINERAMA_MAKE_ARGS_OFF=	XINERAMAFLAGS= XINERAMALIBS=
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dmenu \
