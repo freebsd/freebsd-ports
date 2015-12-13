@@ -78,7 +78,6 @@ share/doc/gdk2/heart.png
 share/doc/gdk2/home.png
 share/doc/gdk2/icon.png
 share/doc/gdk2/index.html
-share/doc/gdk2/index.sgml
 share/doc/gdk2/iron_cross.png
 share/doc/gdk2/left-insensitive.png
 share/doc/gdk2/left.png
@@ -529,7 +528,6 @@ share/doc/gtk2/icon-view.png
 share/doc/gtk2/image-missing.png
 share/doc/gtk2/image.png
 share/doc/gtk2/index.html
-share/doc/gtk2/index.sgml
 share/doc/gtk2/label.png
 share/doc/gtk2/layout-btlr.png
 share/doc/gtk2/layout-btrl.png
