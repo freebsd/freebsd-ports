@@ -7,7 +7,7 @@ SLAVE_PORT=	i386-wine-devel
 
 CONFLICTS_INSTALL=	i386-wine-[0-9]* wine-[0-9]* wine-staging-[0-9]* i386-wine-devel-[0-9]* wine-devel-[0-9]*
 
-OPTIONS_SET=	LIBXSLT GNUTLS HAL STAGING X11
+OPTIONS_SET=	LIBXSLT HAL STAGING X11
 
 SLAVEDIR=	${.CURDIR}/../i386-wine-devel
 PLIST=		${MASTERDIR}/pkg-plist
