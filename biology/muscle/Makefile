@@ -21,6 +21,8 @@ ALL_TARGET=	muscle
 
 PLIST_FILES=	bin/muscle
 
+BROKEN_powerpc64=	Does not build on powerpc64
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/muscle ${STAGEDIR}${PREFIX}/bin
 

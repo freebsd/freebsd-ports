@@ -33,6 +33,8 @@ PLIST_SUB=	DISTVERSION=${DISTVERSION}
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS VST
 VST_DESC=	VST plugins support
 
+BROKEN_powerpc64=	Does not build
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVST}

@@ -32,6 +32,8 @@ ICONS=		carton.ico carton.png
 
 OPTIONS_DEFINE=	DOCS
 
+BROKEN_powerpc64=	Does not build on powerpc64
+
 post-install:
 .for f in ${ICONS}
 	${INSTALL_DATA} ${WRKSRC}/resources/pictures/${f} \

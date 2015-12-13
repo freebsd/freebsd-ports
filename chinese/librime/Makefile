@@ -27,6 +27,8 @@ GH_ACCOUNT=	rime
 
 PLIST_SUB=	VER=${PORTVERSION}.0
 
+BROKEN_powerpc64=	Does not build on powerpc64
+
 .include <bsd.port.options.mk>
 
 post-patch:     .SILENT

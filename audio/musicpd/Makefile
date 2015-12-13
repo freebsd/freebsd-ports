@@ -24,6 +24,8 @@ CFLAGS+=	-I${PREFIX}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/sidplay/builders
 
+BROKEN_powerpc64=	Does not build on powerpc64
+
 PORTDOCS=	AUTHORS README COPYING NEWS
 
 SUB_FILES=	pkg-message
