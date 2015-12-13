@@ -10,7 +10,6 @@ DISTNAME=	pccts${PORTVERSION:R:S/.//}mr${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Purdue Compiler Construction Tool Set
 
-BROKEN=		unfetchable
 CONFLICTS=	antlr*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
