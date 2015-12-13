@@ -14,6 +14,8 @@ COMMENT=	Neverwinter Nights Linux Dedicated Server
 
 OPTIONS_DEFINE=	DOCS
 
+BROKEN=		unfetchable
+
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}

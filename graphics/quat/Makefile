@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.sourcefiles.org/Graphics/Fractals/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three-dimensional fractal creator (command line only)
 
+BROKEN=		unfetchable
 LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS

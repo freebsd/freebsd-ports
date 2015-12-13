@@ -12,6 +12,7 @@ DISTNAME=	hugin-2013.0.0_beta1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for Panorama Tools, to stitch panoramic images
 
+BROKEN=		unfetchable
 LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libImath.so:${PORTSDIR}/graphics/ilmbase \

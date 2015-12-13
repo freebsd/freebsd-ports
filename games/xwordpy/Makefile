@@ -11,6 +11,7 @@ DISTNAME=	xword-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Application for solving crossword puzzles in the Across Lite format
 
+BROKEN=		unfetchable
 USE_GNOME=	pygtk2
 USES=		python
 NO_BUILD=	yes

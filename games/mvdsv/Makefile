@@ -11,6 +11,7 @@ DISTNAME=	mvdsv_${PORTVERSION}-sources
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT?=	Enhanced QuakeWorld server with multi-view demos capability
 
+BROKEN=		unfetchable
 LICENSE=	GPLv2
 
 USES=		zip

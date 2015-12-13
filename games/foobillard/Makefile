@@ -10,6 +10,8 @@ MASTER_SITES=	http://foobillard.sunsite.dk/dnl/
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Free OpenGL billiards game
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 

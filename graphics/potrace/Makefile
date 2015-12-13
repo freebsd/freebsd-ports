@@ -10,6 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	Transforms bitmaps into vector graphics
 
+BROKEN=		unfetchable
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/potrace bin/mkbitmap \

@@ -13,6 +13,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	The free demo of Railroad Tycoon II
 
+BROKEN=		unfetchable
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes

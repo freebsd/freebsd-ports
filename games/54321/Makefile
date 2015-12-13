@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Five games in four-, three-, or two-dimensions for one player
 
+BROKEN=		unfetchable
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 USES=		gmake tar:tgz

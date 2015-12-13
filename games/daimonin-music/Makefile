@@ -12,6 +12,7 @@ DIST_SUBDIR=	daimonin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music for daimonin client
 
+BROKEN=		unfetchable
 NO_BUILD=	yes
 USES=		zip
 NO_ARCH=	yes
