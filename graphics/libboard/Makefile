@@ -10,6 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Vector graphics C++ library
 
+BROKEN=		unfetchable
 LICENSE=	LGPL3
 
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen

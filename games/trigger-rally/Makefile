@@ -10,6 +10,7 @@ DISTVERSIONSUFFIX=	-src
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Rally car racing game
 
+BROKEN=		unfetchable
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
 RUN_DEPENDS=	${DATADIR}/trigger.config.defs:${PORTSDIR}/games/trigger-data

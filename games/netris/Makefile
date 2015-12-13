@@ -13,6 +13,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=		gavin@FreeBSD.org
 COMMENT=		Network head to head version of T*tris
 
+BROKEN=			unfetchable
 LICENSE=		GPLv2 # (or later)
 
 HAS_CONFIGURE=		yes

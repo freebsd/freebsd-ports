@@ -9,6 +9,7 @@ MASTER_SITES=	http://symmetrica.net/cuneiform-linux/
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Graphical interface for an OCR program (cuneiform and tesseract)
 
+BROKEN=		unfetchable
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell

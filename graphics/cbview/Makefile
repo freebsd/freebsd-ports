@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.sourcefiles.org/Toys/Humor/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer/converter for CBR/CBZ comic book archives
 
+BROKEN=		unfetchable
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \

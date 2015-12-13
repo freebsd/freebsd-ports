@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X version of the `blockade' Macintosh game
 
+BROKEN=		unfetchable
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	x11

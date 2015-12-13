@@ -11,6 +11,8 @@ DISTNAME=	KnightCap-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Chess program with 3D interface for X Window System
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/Export
 
 USE_XORG=	xmu xt xext x11 xi

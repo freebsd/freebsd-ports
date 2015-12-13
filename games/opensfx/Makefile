@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Free alternative sounds for OpenTTD game engine
 
+BROKEN=		unfetchable
 LICENSE=	CCPL
 LICENSE_NAME=	Creative Commons Public License
 LICENSE_FILE=	${WRKDIR}/opensfx-${PORTVERSION}/license.txt

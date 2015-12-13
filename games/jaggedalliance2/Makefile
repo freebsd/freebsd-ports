@@ -11,6 +11,8 @@ MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Port of "Jagged Alliance 2" using SDL
 
+BROKEN=		unfetchable
+
 DISTVERSIONSUFFIX=	-source
 
 # Ignore this if you feel adventurous
