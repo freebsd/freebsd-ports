@@ -146,6 +146,8 @@ CXXLIB=		c++
 CXXLIB=		# empty
 .endif
 
+BROKEN_powerpc64=	Does not build
+
 post-patch:
 	@${SED} -e "s|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|" \

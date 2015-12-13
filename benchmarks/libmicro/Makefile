@@ -18,6 +18,8 @@ STRIP=		 # Do not strip binaries
 PLIST_SUB=	ARCH="${ARCH}"
 PKGLIBDIR=	${PREFIX}/lib/${PORTNAME}
 
+BROKEN_powerpc64=	Does not build on powerpc64
+
 post-build:
 	${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/libmicro-bench
 	${ECHO_CMD} '(cd ${PKGLIBDIR} && ./bench $$1)' \

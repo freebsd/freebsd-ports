@@ -22,6 +22,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 LIBBINDIR=	${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-${OPSYS}_${OSREL:R:R}-${ARCH}
 
+BROKEN_powerpc64=	Does not build on powerpc64
+
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
 

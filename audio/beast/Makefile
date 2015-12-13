@@ -47,6 +47,8 @@ OPTIONS_DEFAULT_amd64=	SSE
 DEBUG_CONFIGURE_ENABLE=	debug
 SSE_VARS=	SSE_FLAGS="-mmmx -msse"
 
+BROKEN_powerpc64=	Does not build
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^[[:space:]].*FLAGS -[Ofgp].*"/s|^|#| ; \
