@@ -1,0 +1,8 @@
+bin/jq
+include/jq.h
+include/jv.h
+lib/libjq.a
+lib/libjq.so
+lib/libjq.so.1
+lib/libjq.so.1.0.4
+man/man1/jq.1.gz
