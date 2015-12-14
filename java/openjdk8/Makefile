@@ -342,7 +342,7 @@ MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
 .endif
 MAKE_ENV+=	USE_CLANG=true
 .if ${COMPILER_FEATURES:Mlibc++}
-CONFIGURE_ENV=	LIBCXX="-lc++"
+CONFIGURE_ENV+=	LIBCXX="-lc++"
 .endif
 .endif
 
