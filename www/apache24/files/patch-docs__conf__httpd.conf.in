@@ -1,4 +1,4 @@
---- docs/conf/httpd.conf.in.orig	2012-11-08 03:05:38 UTC
+--- docs/conf/httpd.conf.in.orig	2015-11-03 11:58:58 UTC
 +++ docs/conf/httpd.conf.in
 @@ -65,6 +65,9 @@ Listen @@Port@@
  #
@@ -46,9 +46,9 @@
  </IfModule>
  
  <IfModule alias_module>
-@@ -418,3 +421,5 @@ SSLRandomSeed connect builtin
- #RequestHeader unset DNT env=bad_DNT
- #</IfModule>
+@@ -407,3 +410,5 @@ SSLRandomSeed startup builtin
+ SSLRandomSeed connect builtin
+ </IfModule>
  
 +Include @rel_sysconfdir@/Includes/*.conf
 +
