@@ -410,11 +410,11 @@ pre-configure:
 
 post-build:
 .if !defined(BUILD_JRE)
-	@${JDK_IMAGEDIR}/bin/jar cfe \
+	@${BOOTSTRAPJDKDIR}/bin/jar cfe \
 	    ${JRE_IMAGEDIR}/lib/compilefontconfig.jar \
 	    build.tools.compilefontconfig.CompileFontConfig \
 	    -C ${JDK_BUILDDIR}/jdk/btclasses build/tools/compilefontconfig
-	@${JDK_IMAGEDIR}/bin/jar cfe \
+	@${BOOTSTRAPJDKDIR}/bin/jar cfe \
 	    ${JRE_IMAGEDIR}/lib/javazic.jar \
 	    build.tools.tzdb.TzdbZoneRulesCompiler \
 	    -C ${JDK_BUILDDIR}/jdk/btclasses build/tools/tzdb
