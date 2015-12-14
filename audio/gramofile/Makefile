@@ -11,7 +11,7 @@ PATCH_SITES=	LOCAL/nox/
 PATCHFILES=	${PORTNAME}_1.6-7.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio recording and tick/scratch reduction for e.g. vinyl records
 
 LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw

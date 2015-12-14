@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/p.*/pre/}-0-g${GITHASH}
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - extended EPG plugin
 
 GITHASH=	e7383ed

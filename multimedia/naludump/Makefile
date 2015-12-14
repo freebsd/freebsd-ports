@@ -6,7 +6,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.udo-richter.de/vdr/files/
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Delete NALU fill data from h.264 TS files
 
 LICENSE=	GPLv2

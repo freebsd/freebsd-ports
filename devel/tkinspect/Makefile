@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel tcl tk
 MASTER_SITES=   SF/tkcon/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk program browser
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
