@@ -152,6 +152,7 @@
     SUBDIR += ekhtml
     SUBDIR += el-aspell
     SUBDIR += el-hyphen
+    SUBDIR += curator
     SUBDIR += elasticsearch
     SUBDIR += elasticsearch-plugin-head
     SUBDIR += elasticsearch-plugin-hq
@@ -1209,6 +1210,7 @@
     SUBDIR += py-chardet
     SUBDIR += py-cloud_sptheme
     SUBDIR += py-creole
+    SUBDIR += py-curator
     SUBDIR += py-diff-match-patch
     SUBDIR += py-docutils
     SUBDIR += py-dsv
