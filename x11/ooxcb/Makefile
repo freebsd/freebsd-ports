@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	ooxcb
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	x11
-MASTER_SITES=	http://samurai-x.org/downloads/
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python binding to the X server using xcb
 
-BROKEN=		unfetchable
+LICENSE=	BSD3CLAUSE
 
-USE_XORG=	xcb
+NO_ARCH=	yes
+
 USES=		python
 USE_PYTHON=	distutils autoplist
+USE_XORG=	xcb
 
 .include <bsd.port.mk>
