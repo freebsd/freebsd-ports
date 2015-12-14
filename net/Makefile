@@ -440,6 +440,7 @@
     SUBDIR += nocatsplash
     SUBDIR += nos-ttb
     SUBDIR += nph
+    SUBDIR += ns3
     SUBDIR += nss-pam-ldapd
     SUBDIR += nss-pam-ldapd-sasl
     SUBDIR += nss_ldap
