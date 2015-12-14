@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://andreas.vdr-developer.org/vdradmin-am/download/
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - webinterface
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \

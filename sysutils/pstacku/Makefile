@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://kib.kiev.ua/kib/${PORTNAME}/ \
 		http://kib.kiev.ua/kib/${PORTNAME}/
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Retrieve process stack traces
 
 LICENSE=	BSD2CLAUSE

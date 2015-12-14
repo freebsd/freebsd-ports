@@ -6,7 +6,7 @@ PORTVERSION=	4.2.0
 CATEGORIES=	print perl5
 MASTER_SITES=	http://www.aczoom.com/pub/tools/
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate postscript for frontcards and traycards for CDs
 
 USES=		perl5 tar:tgz

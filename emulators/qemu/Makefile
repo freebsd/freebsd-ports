@@ -9,7 +9,7 @@ MASTER_SITES=	SAVANNAH \
 		http://bellard.org/qemu/
 DIST_SUBDIR=	qemu
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QEMU CPU Emulator
 
 LICENSE=	GPLv2 # or later
