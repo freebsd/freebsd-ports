@@ -5,12 +5,12 @@ PORTNAME=	giblib
 PORTVERSION=	1.2.4
 PORTREVISION=	13
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://linuxbrit.co.uk/downloads/
+MASTER_SITES=	http://linuxbrit.co.uk/downloads/ \
+		http://mirror.amdmi3.ru/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Utility library that includes a wrapper for imlib2
 
-BROKEN=		unfetchable
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
