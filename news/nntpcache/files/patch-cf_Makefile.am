@@ -1,0 +1,16 @@
+--- cf/Makefile.am.orig	2004-04-11 11:43:52 UTC
++++ cf/Makefile.am
+@@ -22,13 +22,5 @@ VERSION:
+ 	echo @VERSION@ >$@
+ 
+ 
+-install-data-hook:
+-	for f in $(distf); do { cd $(sysconfdir) && (orig=`basename $$f -dist`; test -e $$orig || cp $$f $$orig) ;} done
+-
+ nntpcache.config-dist : nnconf.cf
+ 	sed -e 's/^ *[a-zA-Z_][a-zA-Z_]* //;s/"//g' <nnconf.cf >$@
+-
+-# this is ugly, but more flexible than merely redefining INSTALL_DATA
+-install-data-local:
+-	cd $(sysconfdir) && chmod 700 . && chown @nntpcacheUID@ . && chgrp @nntpcacheUID@ . && chmod 600 $(sysconf_DATA) && chown @nntpcacheUID@ $(sysconf_DATA) && chgrp @nntpcacheGID@ $(sysconf_DATA)
+-	cd $(localstatedir) && chmod 700 . && chown @nntpcacheUID@ . && chgrp @nntpcacheUID@ . && chmod 600 $(localstate_DATA) && chown @nntpcacheUID@ $(localstate_DATA) && chgrp @nntpcacheGID@ $(localstate_DATA)

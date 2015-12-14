@@ -1,0 +1,13 @@
+--- pgp/Makefile.am.orig	2004-04-11 11:43:57 UTC
++++ pgp/Makefile.am
+@@ -8,10 +8,3 @@ sysconf_DATA = \
+ EXTRA_DIST = \
+ 	$(sysconf_DATA)
+ 
+-# the trailing slash is to force symlink transversal
+-install-data-local:
+-	cd $(sysconfdir) && chmod 700 . && chown @nntpcacheUID@ . && chgrp @nntpcacheUID@ . && chmod 600 $(sysconf_DATA) && chown @nntpcacheUID@ $(sysconf_DATA) && chgrp @nntpcacheGID@ $(sysconf_DATA)
+-
+-install-data-hook:
+-	for f in $(sysconf_DATA); do { cd $(sysconfdir) && (orig=`basename $$f -dist`; test -e $$orig || cp $$f $$orig) ;} done
+-
