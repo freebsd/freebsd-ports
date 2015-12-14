@@ -1,6 +1,6 @@
---- docs/conf/extra/httpd-ssl.conf.in.orig	2015-05-27 13:59:59.000000000 -0500
-+++ docs/conf/extra/httpd-ssl.conf.in	2015-07-15 09:50:31.369623000 -0500
-@@ -124,8 +124,8 @@
+--- docs/conf/extra/httpd-ssl.conf.in.orig	2015-05-27 18:59:59 UTC
++++ docs/conf/extra/httpd-ssl.conf.in
+@@ -124,8 +124,8 @@ SSLSessionCacheTimeout  300
  DocumentRoot "@exp_htdocsdir@"
  ServerName www.example.com:@@SSLPort@@
  ServerAdmin you@example.com
@@ -11,7 +11,7 @@
  
  #   SSL Engine Switch:
  #   Enable/Disable SSL for this virtual host.
-@@ -284,7 +284,7 @@
+@@ -284,7 +284,7 @@ BrowserMatch "MSIE [2-5]" \
  #   Per-Server Logging:
  #   The home of a custom SSL log file. Use this when you want a
  #   compact non-error SSL logfile on a virtual host basis.
