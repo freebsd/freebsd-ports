@@ -5,13 +5,12 @@ PORTNAME=	knightcap
 PORTVERSION=	3.6
 PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.samba.org/pub/KnightCap/
+MASTER_SITES=	http://ftp.samba.org/pub/KnightCap/ \
+		ftp://ftp.samba.org/pub/KnightCap/
 DISTNAME=	KnightCap-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Chess program with 3D interface for X Window System
-
-BROKEN=		unfetchable
 
 WRKSRC=		${WRKDIR}/Export
 
