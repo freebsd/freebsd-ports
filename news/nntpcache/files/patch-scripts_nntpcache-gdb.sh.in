@@ -1,0 +1,10 @@
+--- scripts/nntpcache-gdb.sh.in.orig	2004-04-11 11:43:50 UTC
++++ scripts/nntpcache-gdb.sh.in
+@@ -61,6 +61,7 @@ for n in $libexec/nntpcached.debug $prog
+ 	break
+     fi
+ done
++exit
+ 
+ (
+ echo === uname -a

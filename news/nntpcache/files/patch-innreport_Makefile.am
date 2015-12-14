@@ -1,0 +1,11 @@
+--- innreport/Makefile.am.orig	2004-04-11 11:43:57 UTC
++++ innreport/Makefile.am
+@@ -15,7 +15,4 @@ EXTRA_DIST = \
+ 
+ # the trailing slash is to force symlink transversal
+ install-data-local:
+-	cd $(sysconfdir) && chmod 700 . && chown @nntpcacheUID@ . && chgrp @nntpcacheUID@ . && chmod 600 $(sysconf_DATA) && chown @nntpcacheUID@ $(sysconf_DATA) && chgrp @nntpcacheGID@ $(sysconf_DATA)
+-	-mkdir $(sysconfdir)/http $(sysconfdir)/http/innreport $(sysconfdir)/http/innreport/pics
+-	chown @nntpcacheUID@ $(sysconfdir)/http $(sysconfdir)/http/innreport $(sysconfdir)/http/innreport/pics
+-	chgrp @nntpcacheGID@ $(sysconfdir)/http $(sysconfdir)/http/innreport $(sysconfdir)/http/innreport/pics
++	-mkdir $(DESTDIR)$(sysconfdir)/http $(DESTDIR)$(sysconfdir)/http/innreport $(DESTDIR)$(sysconfdir)/http/innreport/pics
