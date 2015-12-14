@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hammer_cli
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.14:${PORTSDIR}/devel/rubygem-apipie-bi
 		rubygem-clamp>=1.0.0:${PORTSDIR}/devel/rubygem-clamp \
 		rubygem-fast_gettext>=0.8.1:${PORTSDIR}/devel/rubygem-fast_gettext \
 		rubygem-highline>=1.6.20:${PORTSDIR}/devel/rubygem-highline \
-		rubygem-json>=1.8.1:${PORTSDIR}/devel/rubygem-json \
 		rubygem-locale>=2.0.6:${PORTSDIR}/devel/rubygem-locale \
 		rubygem-logging>=1.8.1:${PORTSDIR}/devel/rubygem-logging \
 		rubygem-table_print>=1.5.1:${PORTSDIR}/devel/rubygem-table_print
