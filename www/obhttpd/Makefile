@@ -17,6 +17,7 @@ GH_PROJECT=	httpd
 
 USE_OPENSSL=	yes
 USE_RC_SUBR=	obhttpd
+USES=		uidfix
 
 WITH_OPENSSL_PORT=yes
 OPENSSL_PORT=	security/libressl
