@@ -4,4 +4,4 @@ The board library allows simple drawings in:
     * XFig files (FIG);
     * Scalable Vector Graphics files (SVG).
 
-WWW: http://libboard.sourceforge.net/
+WWW: https://github.com/c-koi/libboard
