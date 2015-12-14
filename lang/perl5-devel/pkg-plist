@@ -1446,6 +1446,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%PRIV_LIB%%/pod/perl5202delta.pod
 %%PRIV_LIB%%/pod/perl5203delta.pod
 %%PRIV_LIB%%/pod/perl5220delta.pod
+%%PRIV_LIB%%/pod/perl5221delta.pod
 %%PRIV_LIB%%/pod/perl5230delta.pod
 %%PRIV_LIB%%/pod/perl5231delta.pod
 %%PRIV_LIB%%/pod/perl5232delta.pod
@@ -2117,6 +2118,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%MAN1%%/perl5202delta.1.gz
 %%MAN1%%/perl5203delta.1.gz
 %%MAN1%%/perl5220delta.1.gz
+%%MAN1%%/perl5221delta.1.gz
 %%MAN1%%/perl5230delta.1.gz
 %%MAN1%%/perl5231delta.1.gz
 %%MAN1%%/perl5232delta.1.gz
