@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.70
+PORTVERSION=	1.71
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Static analysis of C/C++ code
 
 LICENSE=	GPLv3 # or later
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libtinyxml2.so:${PORTSDIR}/textproc/tinyxml2
 
 USES=		compiler:c++11-lib execinfo gmake tar:bzip2
+USE_CXXSTD=	c++11
 
 ALL_TARGET=	cppcheck
 TEST_TARGET=	test
