@@ -11,6 +11,8 @@ MASTER_SITES=	http://ftp.mirrorservice.org/pub/i-scream/libstatgrab/ \
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Provides a useful interface to system statistics
 
+LICENSE=	LGPL21
+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig libtool
@@ -21,17 +23,12 @@ OPTIONS_DEFINE=	TOOLS DOCS
 OPTIONS_DEFAULT=	TOOLS
 
 TOOLS_DESC=	Build and install statgrab and saidar
+TOOLS_CONFIGURE_ENABLE=	statgrab saidar
+TOOLS_USES=	shebangfix perl5
+TOOLS_VARS=	SHEBANG_FILES+="src/statgrab/statgrab-make-mrtg-config.in \
+				src/statgrab/statgrab-make-mrtg-index.in" \
+		LICENSE+=GPLv2 LICENSE_COMB=multi
 
 OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTOOLS}
-USES+=		shebangfix perl5
-SHEBANG_FILES=	src/statgrab/statgrab-make-mrtg-config.in \
-		src/statgrab/statgrab-make-mrtg-index.in
-.else
-CONFIGURE_ARGS+=	--disable-statgrab --disable-saidar
-.endif
 
 .include <bsd.port.mk>
