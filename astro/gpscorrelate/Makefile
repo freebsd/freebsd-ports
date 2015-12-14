@@ -9,7 +9,8 @@ CATEGORIES=	astro geography
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Correlate digital camera photos with GPS data in GPX format
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2 \
 		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
@@ -46,6 +47,8 @@ do-install:
 		${STAGEDIR}${MANPREFIX}/man/man1
 	${LN} -sf gpscorrelate.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1/gpscorrelate-gui.1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/RELEASES ${STAGEDIR}${DOCSDIR}
