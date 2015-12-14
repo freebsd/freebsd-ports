@@ -268,6 +268,18 @@ JDK_BUILD_TYPE=		release
 
 AUTOCONF_ARGS=	-I . -o generated-configure.sh generated-configure.ac
 
+# XXX configure script rejects CC/CPP/CXX with absolute paths.
+.for t in CC CPP CXX
+.if defined(${t}) && ${${t}:[#]} == 1 && ${${t}:M/*}
+BUILD_${t}=	${${t}:C|.*/||g}
+CONFIGURE_ENV+=	${t}="${BUILD_${t}}"
+TOOLS_DIR+=	${${t}:S|/${BUILD_${t}}$||}
+.endif
+.endfor
+.if defined(TOOLS_DIR)
+CONFIGURE_ARGS+=	--with-tools-dir="${TOOLS_DIR:u:S/ /:/g}"
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH:Marmv6*} || ${ARCH} == "i386"
