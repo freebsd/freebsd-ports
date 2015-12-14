@@ -11,12 +11,15 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANSI C library for parsing GNU style command line arguments
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+LICENSE=	LGPL20 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g ; \
@@ -24,11 +27,15 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/argtable2.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.gif ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/*.c ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/*.h ${STAGEDIR}${EXAMPLESDIR}
