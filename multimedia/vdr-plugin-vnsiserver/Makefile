@@ -5,7 +5,7 @@ PORTNAME=	vdr-plugin-vnsiserver
 PORTVERSION=	14.0.20150330
 CATEGORIES=	multimedia
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - VNSI server plugin
 
 USE_GITHUB=	yes

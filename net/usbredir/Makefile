@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://spice-space.org/download/usbredir/
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	protocol for redirection of USB traffic
 
 USES=		gmake libtool pathfix pkgconfig tar:bzip2

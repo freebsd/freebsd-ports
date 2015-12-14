@@ -11,7 +11,7 @@ MASTER_SITES=	http://bellard.org/qemu/ \
 PKGNAMESUFFIX=	-kmod-devel
 DIST_SUBDIR=	kqemu
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kernel Accelerator for QEMU CPU Emulator (development version)
 
 LICENSE=	GPLv2

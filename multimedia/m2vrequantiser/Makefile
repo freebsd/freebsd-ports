@@ -7,7 +7,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://launchpadlibrarian.net/52366061/
 DISTNAME=	M2VRequantiser-v${PORTVERSION}
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Requantize MPEG-2 streams without recompressing
 
 PATCH_STRIP=	-p1
