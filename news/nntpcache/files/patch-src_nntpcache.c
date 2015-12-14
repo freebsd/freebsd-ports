@@ -1,6 +1,6 @@
---- src/nntpcache.c.orig	Fri Mar 17 07:53:45 2006
-+++ src/nntpcache.c	Fri Mar 17 07:53:51 2006
-@@ -810,7 +810,7 @@
+--- src/nntpcache.c.orig	2004-04-11 11:43:56 UTC
++++ src/nntpcache.c
+@@ -810,7 +810,7 @@ static bool load_servers(char *file)
  				loge (("missing password in %s:%d: %s", file, n, buf));
  				continue;
  			}

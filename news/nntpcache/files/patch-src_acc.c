@@ -1,6 +1,6 @@
---- src/acc.c.orig	Sat Feb 19 12:16:21 2000
-+++ src/acc.c	Tue Sep 13 23:00:32 2005
-@@ -147,6 +147,7 @@
+--- src/acc.c.orig	2004-04-11 11:43:55 UTC
++++ src/acc.c
+@@ -147,6 +147,7 @@ static struct filter_chain *filterReadCo
  			if (strEq(fli->name, fi))
  			{
  				fc->filter = fli->filter;
@@ -8,7 +8,7 @@
  				goto cont;
  			}
  		}
-@@ -195,7 +195,7 @@
+@@ -195,7 +196,7 @@ static struct filter_chain *filterReadCo
  					loge (("bad filter header/scope %s in file %s: %s", scope, fi, buf));
  					Exit(1);
  				}

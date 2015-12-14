@@ -1,7 +1,7 @@
---- src/Makefile.in.orig	2014-03-29 14:09:54.000000000 -0400
-+++ src/Makefile.in	2014-03-29 14:10:16.000000000 -0400
-@@ -454,7 +454,7 @@
- 
+--- src/Makefile.am.orig	2006-03-05 21:42:38 UTC
++++ src/Makefile.am
+@@ -61,7 +61,7 @@ nntpcached_LDADD = \
+ 	../libradius/libradius.a
  
  install-exec-hook:
 -	cp nntpcached $(libexecdir)/nntpcached.debug && chmod a+x $(libexecdir)/nntpcached.debug

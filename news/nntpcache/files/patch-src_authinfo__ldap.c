@@ -1,6 +1,6 @@
---- src/authinfo_ldap.c.orig	Sat Dec 18 12:08:30 1999
-+++ src/authinfo_ldap.c	Wed Sep 26 10:55:27 2001
-@@ -78,7 +78,16 @@
+--- src/authinfo_ldap.c.orig	2004-04-11 11:43:55 UTC
++++ src/authinfo_ldap.c
+@@ -78,7 +78,16 @@ EXPORT int ldap_got_pass(char *pass)
  	
  	lderr = ldap_bind_s(ld, dnbuf, pass, LDAP_AUTH_SIMPLE);
  	if (lderr != LDAP_SUCCESS && lderr != LDAP_INVALID_CREDENTIALS && lderr != LDAP_INAPPROPRIATE_AUTH)
