@@ -2,31 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	jq
-PORTVERSION=	1.4
+PORTVERSION=	1.5
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
-MASTER_SITES=	http://stedolan.github.io/jq/download/source/ \
-		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	Lightweight and flexible command-line JSON processor
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	stedolan
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-docs --docdir="${DOCSDIR}"
+CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
+		--disable-maintainer-mode
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
-USES=		libtool
+USES=		gmake libtool
+INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/${PORTNAME} \
-		include/jq.h include/jv.h \
-		lib/libjq.a lib/libjq.so lib/libjq.so.1 lib/libjq.so.1.0.4 \
-		man/man1/${PORTNAME}.1.gz
 PORTDOCS=	*
 
-DOCS_MAKE_ARGS_OFF=	docdir=
+OPTIONS_DEFINE=	DOCS ONIGURUMA
+OPTIONS_DEFAULT=ONIGURUMA
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjq.so.1.0.4
+DOCS_MAKE_ARGS_OFF=	docdir=
+DOCS_CONFIGURE_ENABLE=	docs
+
+ONIGURUMA_DESC=		With oniguruma BSDL regular expression library
+ONIGURUMA_LIB_DEPENDS=	libonig.so:${PORTSDIR}/devel/oniguruma5
+#ONIGURUMA_CONFIGURE_WITH=oniguruma=${LOCALBASE} # pending resolution of https://github.com/stedolan/jq/issues/1021, next line is the workaround
+ONIGURUMA_CONFIGURE_ON=	--with-oniguruma=${LOCALBASE}
 
 .include <bsd.port.mk>
