@@ -3,6 +3,7 @@
 
 PORTNAME=	watchman
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -25,7 +26,7 @@ CONFIGURE_ARGS+=	--disable-silent-rules
 .endif
 
 PLIST_FILES=	bin/${PORTNAME} \
-		"@dir(,,777) /var/run/${PORTNAME}"
+		"@dir(,,2777) /var/run/${PORTNAME}"
 PORTDOCS=	README.markdown
 
 OPTIONS_DEFINE=	BACKTRACE PCRE
@@ -46,7 +47,7 @@ post-patch:
 		-e '\,/etc, { s//$$sysconfdir/; /=/s/^/eval /; }' \
 		${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e '/^docdir = /d' \
-		-e '/not-empty/d' \
+		-e '/not-empty/d; /chmod g+s/d;' \
 		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
