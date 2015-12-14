@@ -1,6 +1,6 @@
---- lib/ivis_opengl/screen.cpp.orig	2013-12-12 06:20:34.000000000 +0400
-+++ lib/ivis_opengl/screen.cpp	2014-08-18 16:11:06.000000000 +0400
-@@ -261,7 +261,7 @@
+--- lib/ivis_opengl/screen.cpp.orig	2013-12-12 02:20:34 UTC
++++ lib/ivis_opengl/screen.cpp
+@@ -261,7 +261,7 @@ void screen_EnableMissingFunctions()
  		__glewUseProgram = __glewUseProgramObjectARB;
  		__glewGetShaderiv = __glewGetObjectParameterivARB;
  		__glewLinkProgram = __glewLinkProgramARB;
