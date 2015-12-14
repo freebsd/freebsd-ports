@@ -305,11 +305,10 @@ JDK_BUILD_JVM=	zero
 LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
 .endif
 
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8 \
+		${LOCALBASE}/openjdk7
 .if ${ARCH:Marmv6*}
-BOOTSTRAP_JDKS+= ${LOCALBASE}/bootstrap-openjdk
-.else
-BOOTSTRAP_JDKS+= ${LOCALBASE}/openjdk7
+BOOTSTRAP_JDKS+=	${LOCALBASE}/bootstrap-openjdk
 .endif
 
 # do we have valid native jdk installed?
