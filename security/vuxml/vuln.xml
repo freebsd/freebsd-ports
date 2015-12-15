@@ -42,8 +42,8 @@ QUICK GUIDE TO ADDING A NEW ENTRY
 6. profit!
 
 Additional tests can be done this way:
- $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py26-django-1.6
- $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py27-django-1.6.1
+ $ pkg audit -f /usr/ports/security/vuxml py26-django-1.6
+ $ pkg audit -f /usr/ports/security/vuxml py27-django-1.6.1
 
 Extensive documentation of the format and help with writing and verifying
 a new entry is available in The Porter's Handbook at:
@@ -58,6 +58,52 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="daadef86-a366-11e5-8b40-20cf30e32f6d">
+    <topic>subversion -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>subversion17</name>
+	<range><ge>1.7.0</ge><lt>1.7.22_1</lt></range>
+      </package>
+      <package>
+	<name>subversion18</name>
+	<range><ge>1.8.0</ge><lt>1.8.15</lt></range>
+      </package>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.9.0</ge><lt>1.9.3</lt></range>
+      </package>
+      <package>
+	<name>mod_dav_svn</name>
+	<range><ge>1.7.0</ge><lt>1.7.22_1</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.15</lt></range>
+	<range><ge>1.9.0</ge><lt>1.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/">
+	  <p>Remotely triggerable heap overflow and out-of-bounds read caused
+	    by integer overflow in the svn:// protocol parser.</p>
+	  <p>Remotely triggerable heap overflow and out-of-bounds read in
+	    mod_dav_svn caused by integer overflow when parsing skel-encoded
+	    request bodies.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5343</cvename>
+      <url>http://subversion.apache.org/security/CVE-2015-5343-advisory.txt</url>
+      <cvename>CVE-2015-5259</cvename>
+      <url>http://subversion.apache.org/security/CVE-2015-5259-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-11-14</discovery>
+      <entry>2015-12-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72c145df-a1e0-11e5-8ad0-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
