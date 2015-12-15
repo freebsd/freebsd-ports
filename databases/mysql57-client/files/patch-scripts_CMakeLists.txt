@@ -1,0 +1,88 @@
+--- scripts/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
++++ scripts/CMakeLists.txt
+@@ -43,6 +43,7 @@ ELSE()
+   MESSAGE(FATAL_ERROR "Cannot concatenate files")
+ ENDIF()
+ 
++IF(FALSE)
+ # Build mysql_fix_privilege_tables.c
+ ADD_CUSTOM_COMMAND(
+   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/mysql_fix_privilege_tables_sql.c
+@@ -63,6 +64,7 @@ ADD_CUSTOM_TARGET(GenFixPrivs
+   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/mysql_fix_privilege_tables_sql.c
+   ${CMAKE_CURRENT_BINARY_DIR}/sql_commands_sys_schema.h
+ )
++ENDIF()
+ 
+ # If we do not have performance schema compiled in then sys will not work,
+ # so only create an empty sys database with an auto-generated file,
+@@ -143,6 +145,7 @@ IF(NOT WITHOUT_SERVER)
+   )
+ ENDIF()
+ 
++IF(FALSE)
+ IF(UNIX)
+  FILE(WRITE ${CMAKE_CURRENT_BINARY_DIR}/make_binary_distribution 
+    "cd ${CMAKE_BINARY_DIR} && '${CMAKE_CPACK_COMMAND}' -G TGZ --config CPackConfig.cmake\n" )
+@@ -152,6 +155,7 @@ IF(UNIX)
+ ENDIF()
+ 
+ IF(NOT WITHOUT_SERVER)
++IF(FALSE)
+   INSTALL(FILES
+     ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables.sql
+     ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables_data.sql
+@@ -282,6 +286,7 @@ SET(HOSTNAME "hostname")
+ SET(MYSQLD_USER "mysql")
+ 
+ ENDIF(UNIX)
++ENDIF()
+ 
+ SET(bindir ${prefix}/${INSTALL_BINDIR})
+ SET(sbindir ${prefix}/${INSTALL_SBINDIR})
+@@ -347,6 +352,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
+           GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
+           STRING(REGEX REPLACE "^lib" "" lib "${lib}")
+           SET(${var} "${${var}}-l${lib} " ) 
++        ELSEIF(lib STREQUAL "-pthread")
++          SET(${var} "${${var}}-pthread " ) 
+         ELSE()
+           SET(${var} "${${var}}-l${lib} " ) 
+         ENDIF()
+@@ -433,14 +440,10 @@ ELSE()
+   IF(WITH_SYSTEMD)
+     SET(BIN_SCRIPTS
+       mysql_config
+-      mysqldumpslow
+       )
+   ELSE()
+     SET(BIN_SCRIPTS
+       mysql_config
+-      mysqldumpslow
+-      mysqld_multi
+-      mysqld_safe
+       )
+   ENDIF()
+ 
+@@ -510,11 +513,13 @@ ELSE()
+     CONFIGURE_FILE(systemd/mysqld.tmpfiles.d.in
+       ${CMAKE_CURRENT_BINARY_DIR}/mysql.conf ESCAPE_QUOTES @ONLY)
+ 
++IF(FALSE)
+     INSTALL_SCRIPT(
+       ${CMAKE_CURRENT_BINARY_DIR}/mysqld_pre_systemd
+       DESTINATION ${INSTALL_BINDIR}
+       COMPONENT Server
+     )
++ENDIF()
+ 
+     IF(INSTALL_LAYOUT MATCHES "STANDALONE")
+       SET(SYSTEMD_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}/")
+@@ -532,6 +537,7 @@ ELSE()
+     )
+   ENDIF()
+ ENDIF()
++ENDIF()
+ 
+ # Install libgcc as  mylibgcc.a
+ IF(CMAKE_COMPILER_IS_GNUCXX AND CMAKE_CXX_FLAGS MATCHES "-static")
