@@ -57,6 +57,11 @@
 ##
 ##<IfModule dav_svn_module>
 ##<Location /svn/>
+##	<ifModule mime_module>
+##		RemoveEncoding  .gz .tgz .Z
+##		RemoveType      .gz .tgz .Z
+##	</ifModule>
+##
 ##	# Enable Subversion
 ##	DAV svn
 ##
