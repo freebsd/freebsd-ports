@@ -74,6 +74,7 @@
     SUBDIR += cmp3
     SUBDIR += cmt
     SUBDIR += cmus
+    SUBDIR += codec2
     SUBDIR += cpige
     SUBDIR += cplay
     SUBDIR += cpp-xmms2
