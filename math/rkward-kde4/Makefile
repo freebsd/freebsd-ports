@@ -3,6 +3,7 @@
 
 PORTNAME=	rkward
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-kde4
@@ -49,7 +50,8 @@ RUN_DEPENDS+=	${LR_MOD_DIR}/R2HTML/INDEX:${PORTSDIR}/textproc/R-cran-R2HTML	\
 		${LR_MOD_DIR}/XML/INDEX:${PORTSDIR}/textproc/R-cran-XML		\
 		${LR_MOD_DIR}/mvtnorm/INDEX:${PORTSDIR}/math/R-cran-mvtnorm	\
 		${LR_MOD_DIR}/outliers/INDEX:${PORTSDIR}/math/R-cran-outliers	\
-		${LR_MOD_DIR}/tseries/INDEX:${PORTSDIR}/finance/R-cran-tseries
+		${LR_MOD_DIR}/tseries/INDEX:${PORTSDIR}/finance/R-cran-tseries	\
+		${LR_MOD_DIR}/car/INDEX:${PORTSDIR}/math/R-cran-car
 .endif
 
 pre-configure:
