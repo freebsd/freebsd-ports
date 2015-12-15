@@ -8,6 +8,7 @@ bin/sievec
 include/dovecot-2.2-pigeonhole/sieve/edit-mail.h
 include/dovecot-2.2-pigeonhole/sieve/pigeonhole-config.h
 include/dovecot-2.2-pigeonhole/sieve/pigeonhole-version.h
+include/dovecot-2.2-pigeonhole/sieve/sieve-ext-imap4flags.h
 include/dovecot-2.2-pigeonhole/sieve/program-client-private.h
 include/dovecot-2.2-pigeonhole/sieve/program-client.h
 include/dovecot-2.2-pigeonhole/sieve/realpath.h
@@ -82,3 +83,4 @@ man/man1/sieve-test.1.gz
 man/man1/sievec.1.gz
 man/man1/sieved.1.gz
 man/man7/pigeonhole.7.gz
+share/aclocal/dovecot-pigeonhole.m4
