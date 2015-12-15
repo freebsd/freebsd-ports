@@ -625,6 +625,7 @@
     SUBDIR += openjpeg15
     SUBDIR += openjump
     SUBDIR += opennurbs
+    SUBDIR += opensubdiv
     SUBDIR += openrm
     SUBDIR += openshadinglanguage
     SUBDIR += optar
