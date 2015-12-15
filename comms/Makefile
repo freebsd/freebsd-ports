@@ -45,6 +45,7 @@
     SUBDIR += fllog
     SUBDIR += flrig
     SUBDIR += flwrap
+    SUBDIR += freedv
     SUBDIR += gammu
     SUBDIR += ge-x2212
     SUBDIR += geoid

@@ -1,0 +1,9 @@
+FreeDV is a Digital Voice mode for HF radio. FreeDV allows any SSB radio
+to be used for low bit rate digital voice. Speech is compressed down to
+700-1600 bit/s then modulated onto a 1.25 kHz wide signal comprised of
+16 QPSK carriers which is sent to the Mic input of a SSB radio. The signal
+is received by an SSB radio, then demodulated and decoded by FreeDV. FreeDV
+700(B) rivals SSB in it's low SNR performance. At high SNRs FreeDV 1600
+sounds like FM, with no annoying analog HF radio noise.
+
+WWW: http://freedv.org/tiki-index.php
