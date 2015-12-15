@@ -5,7 +5,7 @@ PORTNAME=	untar
 PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/elvis/
+MASTER_SITES=	http://www.the-little-red-haired-girl.org/pub/elvis/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.c
 EXTRACT_ONLY=
@@ -13,7 +13,6 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lists/Extracts files from a "*.tgz" or "*.gz" archive
 
-BROKEN=		Does not fetch
 MAKEFILE=	/usr/share/mk/bsd.prog.mk
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/untar
