@@ -8,8 +8,11 @@ CATEGORIES=	www python
 MASTER_SITES=	http://www.caomhin.org/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@caomhin.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Shopping cart application for Django
+
+DEPRECATED=	Project development unmaintained
+EXPIRATION_DATE=	2016-04-01
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
