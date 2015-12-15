@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151214:
+  AFFECTS: All users of www/node
+  AUTHOR: koobs
+
+  www/node has been updated to the latest 5.x stable release, and a new port
+  www/node4 has been created for the 4.x LTS branch.
+
+  Should users want to continue to use version 4.x, replace www/node with
+  www/node4 as follows:
+
+  Using packages:
+
+    # pkg delete node
+    # pkg install node4
+
+  Using ports:
+
+    # portupgrade -o www/node4 www/node
+
+  OR
+
+    # portmaster -o www/node4 www/node
+
 20151210:
   AFFECTS: users of comms/gammu
   AUTHOR: vanilla@FreeBSD.org
