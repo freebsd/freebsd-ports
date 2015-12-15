@@ -1,0 +1,18 @@
+--- include/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
++++ include/CMakeLists.txt
+@@ -37,6 +37,7 @@ SET(HEADERS_ABI 
+ 
+ SET(HEADERS 
+   ${HEADERS_ABI} 
++  hash.h
+   my_dbug.h 
+   m_string.h
+   my_sys.h 
+@@ -68,7 +69,6 @@ SET(HEADERS 
+   ${HEADERS_GEN_CONFIGURE}
+ )
+ 
+-INSTALL(FILES ../libbinlogevents/export/binary_log_types.h DESTINATION ${INSTALL_INCLUDEDIR})
+ INSTALL(FILES ${HEADERS} DESTINATION ${INSTALL_INCLUDEDIR} COMPONENT Development)
+ INSTALL(DIRECTORY mysql/ DESTINATION ${INSTALL_INCLUDEDIR}/mysql COMPONENT Development 
+  PATTERN "*.h"
