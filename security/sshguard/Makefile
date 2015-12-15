@@ -30,7 +30,7 @@ SUB_FILES=	pkg-message
 SSHGUARDFW?=	hosts
 
 .if ${SSHGUARDFW} == pf
-PKGMSG_FWBLOCK="  To activate or configure PF see http://sshguard.sf.net/doc/setup/blockingpf.html"
+PKGMSG_FWBLOCK="  To activate or configure PF see http://www.sshguard.net/docs/setup/firewall/pf/"
 .elif ${SSHGUARDFW} == ipfw
 PKGMSG_FWBLOCK="  IPFW support has been rewritten. Sshguard will now add entries to table 22."
 .elif ${SSHGUARDFW} == hosts
