@@ -3,10 +3,11 @@
 
 PORTNAME=	dkimproxy
 PORTVERSION=	1.4.1
-CATEGORIES=	mail
+PORTREVISION=	1
+CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrey@bsdnir.info
 COMMENT=	DKIM filter for Postfix
 
 LICENSE=	GPLv2
@@ -16,6 +17,8 @@ BUILD_DEPENDS=	p5-Mail-DKIM>=0:${PORTSDIR}/mail/p5-Mail-DKIM \
 		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
 		p5-Error>=0:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+OPTIONS_DEFINE=	IPV6
 
 GNU_CONFIGURE=	yes
 USES=		perl5
@@ -28,6 +31,13 @@ GROUPS=		${DKIMPROXYUSER}
 
 SUB_LIST+=	PERL=${PERL} \
 		DKIMPROXYUSER=${DKIMPROXYUSER}
+
+IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
+
+IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-lib-MSDW-SMTP-Server.pm
+IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-scripts-dkimproxy.out
+IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-scripts-dkimproxy_in.conf.example
+IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-scripts-dkimproxy_out.conf.example
 
 post-patch:
 	@${GREP} -Ril 'perl' ${WRKDIR} | ${XARGS} ${REINPLACE_CMD} -i '' \
