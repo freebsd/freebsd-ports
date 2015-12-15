@@ -1,0 +1,10 @@
+--- scripts/dkimproxy_in.conf.example	2014-11-05 08:47:46.842715313 +0300
++++ scripts/dkimproxy_in.conf.example	2014-11-05 08:48:19.031713000 +0300
+@@ -1,5 +1,5 @@
+ # specify what address/port DKIMproxy should listen on
+-listen    127.0.0.1:10025
++listen    host.name:10025
+ 
+ # specify what address/port DKIMproxy forwards mail to
+-relay     127.0.0.1:10026
++relay     host.name:10026

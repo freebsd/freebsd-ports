@@ -1,0 +1,21 @@
+--- scripts/dkimproxy.out	2014-11-05 08:30:40.674785725 +0300
++++ scripts/dkimproxy.out	2014-11-05 08:36:43.063761657 +0300
+@@ -314,17 +314,11 @@
+ {
+ 	my $self = shift;
+ 
+-	# try to determine peer's address
+-	use Socket;
+-	my $peersockaddr = getpeername(STDOUT);
+-	my ($port, $iaddr) = sockaddr_in($peersockaddr);
+-	$ENV{REMOTE_ADDR} = inet_ntoa($iaddr);
+-
+ 	# initialize syslog
+ 	eval
+ 	{
+ 		openlog("dkimproxy.out", "perror,pid,ndelay", "mail");
+-		syslog("debug", '%s', "connect from $ENV{REMOTE_ADDR}");
++		syslog("debug", '%s', "connect from $self->{server}->{peeraddr}");
+ 	};
+ 	if (my $E = $@)
+ 	{
