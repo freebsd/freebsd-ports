@@ -14,7 +14,7 @@
           for icons in multiple paths.
        -->
      <IconPath>
--        /usr/share/icons/wm-icons/32x32-gant
+-        /usr/share/icons/wm-icons/32x32-aquafusion
 +        $HOME/.icons
 +        %%PREFIX%%/share/icons
 +        %%PREFIX%%/share/pixmaps
