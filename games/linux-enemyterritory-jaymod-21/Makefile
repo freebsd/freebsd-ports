@@ -5,16 +5,11 @@ PORTNAME=	jaymod
 PORTVERSION=	2.1.7
 PORTREVISION=	4
 CATEGORIES=	games linux
-MASTER_SITES=	http://etmod.googlecode.com/files/ \
-		http://www.zenenterprises.biz/bud/jaymod/ \
-		http://bud.zenenterprises.biz/jaymod/ \
-		http://et.lsdfunweb.fr/et/jaymod/
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v1/code.google.com/etmod/
 PKGNAMEPREFIX=	linux-enemyterritory-
 
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Jaymod - An Enemy Territory Modification
-
-BROKEN=		unfetchable
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
