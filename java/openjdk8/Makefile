@@ -270,7 +270,7 @@ AUTOCONF_ARGS=	-I . -o generated-configure.sh generated-configure.ac
 
 # XXX configure script rejects CC/CPP/CXX with absolute paths.
 .for t in CC CPP CXX
-.if defined(${t}) && ${${t}:[#]} == 1 && ${${t}:M/*}
+.if defined(${t}) && ${${t}:M/*}
 BUILD_${t}=	${${t}:C|.*/||g}
 CONFIGURE_ENV+=	${t}="${BUILD_${t}}"
 TOOLS_DIR+=	${${t}:S|/${BUILD_${t}}$||}
