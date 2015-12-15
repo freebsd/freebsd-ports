@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2015-09-24 19:30:57 UTC
++++ CMakeLists.txt
+@@ -72,7 +72,7 @@ endif()
+ 
+ 
+ # Set default build flags.
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11")
+ 
+ #
+ # Setup cmake options
+@@ -339,6 +339,12 @@ if(NOT USE_STATIC_SOX)
+     if(LIBSOX_LIBRARY AND LIBSOX_INCLUDE_DIR)
+         list(APPEND FREEDV_LINK_LIBS ${LIBSOX_LIBRARY})
+         include_directories(${LIBSOX_INCLUDE_DIR})
++        message(STATUS "Looking for static sox...")
++        find_library(STATIC_LIBSOX_LIBRARY libsox.a)
++        message(STATUS "  static sox library: ${STATIC_LIBSOX_LIBRARY}")
++        if(STATIC_LIBSOX_LIBRARY)
++            list(APPEND FREEDV_LINK_LIBS ${STATIC_LIBSOX_LIBRARY})
++        endif(STATIC_LIBSOX_LIBRARY)
+     else(LIBSOX_LIBRARY AND LIBSOX_INCLUDE_DIR)
+         message(FATAL_ERROR "sox library not found.
+ On Linux systems try installing:
