@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -143,7 +143,8 @@ COMMANDS+=	clang \
 		clang++ \
 		clang-check \
 		clang-cpp \
-		clang-format
+		clang-format \
+		clang-tblgen
 MAN1SRCS+=	clang.1
 .endif
 
@@ -309,6 +310,8 @@ post-install-LLDB-on:
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
 	   ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
+	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/clang-tblgen \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/
 
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/utils/lit/lit.py \
