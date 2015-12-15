@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.75
+PORTVERSION=	2.76b
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -30,7 +30,7 @@ SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 		release/scripts/modules/bl_i18n_utils/utils_rtl.py \
 		release/scripts/modules/blend_render_info.py
 
-BL_VERSION=	2.75
+BL_VERSION=	2.76
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OUTDIR=		${INSTALL_WRKSRC}/bin/${BL_VERSION}
 
@@ -123,6 +123,9 @@ OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 # OPENMP_CMAKE_OFF=		-DWITH_OPENMP:BOOL=OFF
 # OPENMP_USES=			compiler:openmp
 # OPENMP_USES_OFF=		compiler:features
+OPENSUBDIV_CMAKE_ON=		-DWITH_OPENSUBDIV:BOOL=ON
+OPENSUBDIV_CMAKE_OFF=		-DWITH_OPENSUBDIV:BOOL=OFF
+OPENSUBDIV_LIB_DEPENDS=		libosdCPU.so:${PORTSDIR}/graphics/opensubdiv
 PLAYER_CMAKE_ON=		-DWITH_PLAYER:BOOL=ON
 PLAYER_CMAKE_OFF=		-DWITH_PLAYER:BOOL=OFF
 RAYOPTIMIZATION_CMAKE_ON=	-DWITH_RAYOPTIMIZATION:BOOL=ON
