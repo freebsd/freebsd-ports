@@ -152,7 +152,6 @@
     SUBDIR += ekhtml
     SUBDIR += el-aspell
     SUBDIR += el-hyphen
-    SUBDIR += curator
     SUBDIR += elasticsearch
     SUBDIR += elasticsearch-plugin-head
     SUBDIR += elasticsearch-plugin-hq
