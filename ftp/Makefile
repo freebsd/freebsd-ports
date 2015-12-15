@@ -23,7 +23,6 @@
     SUBDIR += fpc-libcurl
     SUBDIR += frox
     SUBDIR += ftpcopy
-    SUBDIR += ftpcube
     SUBDIR += ftpfind
     SUBDIR += ftplib
     SUBDIR += ftpmirror
