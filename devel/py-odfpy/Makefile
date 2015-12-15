@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	odfpy
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://opendocumentfellowship.com/files/
@@ -12,7 +11,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python API and Tools to Manipulate OpenDocument Files
 
+LICENSE=	APACHE20 GPLv2
+LICENSE_COMB=	dual
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
