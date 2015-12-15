@@ -8,6 +8,8 @@ DISTNAME=	lighttpd-${PORTVERSION}
 
 COMMENT=	GeoIP module for lighttpd
 
+BROKEN=		incompatibility with new Lighttpd API
+
 LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
