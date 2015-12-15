@@ -74,11 +74,11 @@ PYQT5_DISTINFO_FILE=	${.CURDIR}/../../devel/py-qt5/distinfo
 QSCI2_DISTNAME=		QScintilla-gpl-${QSCI2_VERSION}
 
 # PyQt components split up into pyqt4/pyqt5/...
-_USE_PYQT_ALL=		core dbus demo designer designerplugin doc gui \
-			multimedia network opengl qscintilla2 \
+_USE_PYQT_ALL=		core dbus dbussupport demo designer designerplugin \
+			doc gui multimedia network opengl qscintilla2 \
 			sql svg test webkit xml xmlpatterns sip
 # List of components only in pyqt4
-_USE_PYQT4_ONLY=	assistant declarative dbussupport \
+_USE_PYQT4_ONLY=	assistant declarative \
 			help phonon script scripttools
 # List of components only in pyqt5
 _USE_PYQT5_ONLY=	multimediawidgets printsupport qml serialport \
