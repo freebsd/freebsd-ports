@@ -1,4 +1,4 @@
-==================================================================
+=================================================================
 - Universal server building block (OpenXPKI) for arbitrary PKI: installed. 
 - SCEP prerequisite binary and i18n tools for UI: installed.
 - Enable utf8 locale (e.g. en_US.utf8) for the translation staff to operate
@@ -8,18 +8,35 @@
 - Install perl interface for your favorite database, 
   e.g. databases/p5-DBD-mysql
 - Install your favorite web server.
-  This port has created user:group as openxpki:openxpki
-  Add a line: "User openxpki" to configuration of your OpenXPKI-related 
-  web server. Choose from two versions of the handler: based on CGI or FastCGI
+  Choose from two versions of the handler: based on CGI or FastCGI
   perl core modules.
-- Perform deployment procedure (define a role of the server inside the PKI
-  infrastructure) for OpenXPKI server in a regular way, 
-  without this procedure OpenXPKI server would not start.
-  E.g. if you want your server to act as the simplest CA, 
-  then copy sample configuration for this case with 
-    cp -R %%EXAMPLESDIR%%/openxpki/* %%PREFIX%%/etc/openxpki/
+  Copy CGI or FastCGI scripts from %%EXAMPLESDIR%%/cgi-bin to the location
+  where your web server can use them. Set executable permissions for them. 
+  Copy htdocs files from %%EXAMPLESDIR%%/htdocs to the location 
+  where your web server can use them.
+  You can see some samples in %%EXAMPLESDIR%%/config/apache.
+- If you want your server to act just as the simplest CA, 
+  then the basic deployment procedure is all you need:
+  copy sample configuration for this case with 
+    cp -R %%EXAMPLESDIR%%/config/openxpki/* %%PREFIX%%/etc/openxpki/
   and follow advice at:
   https://openxpki.readthedocs.org/en/latest/quickstart.html
+  Without this deployment procedure OpenXPKI server would not start.
+- If you want more complex role for your server inside the PKI infrastructure,
+  then you need to perform further deployment procedure for your server atop 
+  the basic deployment. 
+- This port has created user:group as openxpki:openxpki, which owns 
+  the OpenXPKI server.
+- After first fresh installation, create empty log files as follows
+  (assuming your web server is owned by user www):
+
+install -m 660 -o openxpki -g openxpki /dev/null /var/log/openxpki/openxpki.log
+install -m 660 -o www -g www /dev/null /var/log/openxpki/webui.log
+install -m 660 -o www -g www /dev/null /var/log/openxpki/scep.log
+install -m 660 -o www -g www /dev/null /var/log/openxpki/soap.log
+
+- It is essential that www and openpki are two different users in your system.
+
 - Start daemons in this order:
     database server,
     OpenXPKI server (%%PREFIX%%/etc/rc.d/openxpki start),
