@@ -81,6 +81,7 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank/allegro.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank/backend.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank/ccl.lisp
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank/clasp.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank/clisp.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank/cmucl.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank/corman.lisp
@@ -99,19 +100,16 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/sbcl-pprint-patch.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime-autoloads.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime-tests.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime-tests.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/start-swank.lisp
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-loader.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank.asd
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-loader.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/xref.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib/cl-lib.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib/ert-x.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib/ert.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/lib/hyperspec.el
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/swank/clasp.lisp
 @dir %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/test
 @dir %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib
 @dir %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank
