@@ -10,8 +10,6 @@ MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	X11-based presentation tool
 
-BROKEN=		Doesn't build with freetype2 2.6.1 or higher
-
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
@@ -46,13 +44,15 @@ EMACS_LISPS_MGP=COPYING README mgp.el mgp.sty sample.tex
 SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 
 OPTIONS_DEFINE=	FREETYPE XFT GIF DOCS
-OPTIONS_DEFAULT=FREETYPE XFT GIF
+OPTIONS_DEFAULT=XFT GIF
 NO_OPTIONS_SORT=yes
 
+FREETYPE_PREVENTS=	XFT
 FREETYPE_CONFIGURE_ENABLE=	freetype
+FREETYPE_LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
+XFT_PREVENTS=	FREETYPE
 XFT_USES=	iconv
 XFT_USE=	XORG=xft
-XFT_LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 XFT_CONFIGURE_ENABLE=	xft2
 XFT_CONFIGURE_ON=	--enable-freetype-charset16
 GIF_CONFIGURE_ENABLE=	gif
