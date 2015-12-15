@@ -1556,7 +1556,6 @@
     SUBDIR += py-django-photologue
     SUBDIR += py-django-picklefield
     SUBDIR += py-django-pipeline
-    SUBDIR += py-django-pipeline12
     SUBDIR += py-django-pipeline13
     SUBDIR += py-django-pipeline14
     SUBDIR += py-django-piston
@@ -1578,7 +1577,6 @@
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django-tinymce
     SUBDIR += py-django-voting
-    SUBDIR += py-django14
     SUBDIR += py-django16
     SUBDIR += py-django16-tastypie
     SUBDIR += py-django17
