@@ -2,16 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	psychopy
-PORTVERSION=	1.82.02
-PORTREVISION=	1
+PORTVERSION=	1.83.01
 CATEGORIES=	science python
-MASTER_SITES=	SF/psychpy/PsychoPy
-DISTNAME=	PsychoPy-${PORTVERSION}
+MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Psychophysics toolkit for Python
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv3 # (or later)
 
@@ -26,11 +22,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 
 NO_ARCH=	yes
 
-USES=		fortran python zip
+USE_GITHUB=	yes
+USES=		fortran python
 USE_PYTHON=	autoplist distutils
 USE_WX=		2.8
 WX_COMPS=	python
-WX_UNICODE=	yes
 
 PLIST_FILES=	bin/psychopy
 
@@ -42,6 +38,11 @@ DESKTOP_ENTRIES="PsychoPy" \
 		""
 
 .include <bsd.port.options.mk>
+post-patch:
+# https://github.com/psychopy/psychopy/issues/982
+	@${REINPLACE_CMD} -e \
+		's|str(,id_dict)|str(id.dict)|' \
+		${WRKSRC}/psychopy/demos/coder/iohub/elotouchscreen/run.py
 
 post-build:
 	@${ECHO_CMD} -n > ${WRKDIR}/psychopy
@@ -55,7 +56,7 @@ post-build:
 .endif
 	@${ECHO_CMD} \
 		>> ${WRKDIR}/psychopy
-	@${ECHO_CMD} "${PYTHON_CMD} ${LOCALBASE}/bin/psychopyApp.py" \
+	@${ECHO_CMD} "${PYTHON_CMD} ${PREFIX}/bin/psychopyApp.py" \
 		>> ${WRKDIR}/psychopy
 
 post-install:
