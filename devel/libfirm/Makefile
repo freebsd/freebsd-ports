@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	SF
 
-MAINTAINER=	sperber@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph-based SSA intermediate representation library for compilers
 
 LICENSE=	GPLv2 LGPL21
