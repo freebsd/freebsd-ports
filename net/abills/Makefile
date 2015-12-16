@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	abills
-PORTVERSION=	0.55
-PORTREVISION=	1
+PORTVERSION=	0.58
 CATEGORIES=	net
 MASTER_SITES=	SF
 DIST_SUBDIR=	${PORTNAME}
@@ -21,6 +20,7 @@ RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius2 \
 		p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 USES=		perl5 tar:tgz
