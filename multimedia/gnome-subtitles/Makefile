@@ -6,7 +6,7 @@ PORTVERSION=	1.3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	sperber@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor with video preview
 
 LICENSE=	GPLv2
