@@ -9,6 +9,7 @@ pulledpork is a Perl script which helps to update your Snort 2.9+ rules.
  * Capability to include your local.rules in sid-msg.map file
  * Capability to pull rules tarballs from custom urls
  * Complete Shared Object support
+ * Complete IP Reputation List support
  * Capability to download multiple disparate rulesets at once
  * Maintains accurate changelog
  * Capability to HUP processes after rules download
