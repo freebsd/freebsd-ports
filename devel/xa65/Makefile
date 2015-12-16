@@ -4,7 +4,7 @@
 PORTNAME=	xa65
 PORTVERSION=	2.3.6
 CATEGORIES=	devel
-MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/
+MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/unsupported/
 DISTNAME=	xa-${PORTVERSION}
 
 MAINTAINER=	uffe@uffe.org
@@ -12,7 +12,6 @@ COMMENT=	Two-pass cross-assembler for MOS 6502 and compatible CPUs
 
 LICENSE=	GPLv2
 
-BROKEN=		unfetchable
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
 
