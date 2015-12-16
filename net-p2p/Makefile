@@ -77,6 +77,7 @@
     SUBDIR += rtgui
     SUBDIR += rtorrent
     SUBDIR += shx
+    SUBDIR += sonarr
     SUBDIR += squall
     SUBDIR += torrentsniff
     SUBDIR += transmission
