@@ -20,7 +20,7 @@ USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	rhinstaller
 
-USES=		gmake pkgconfig
+USES=		gmake localbase pkgconfig
 USE_LDCONFIG=	yes
 
 EXTRA_PATCHES=	${EXTRA_PATCHES_${OPSYS}_${OSREL:R}}
