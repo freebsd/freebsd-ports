@@ -7,7 +7,7 @@ CATEGORIES=	graphics audio
 MASTER_SITES=	SF/${PORTNAME:tl:S/lib//}/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/lib//}-${DISTVERSION}-Source
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Awesome music visualiser
 
 LICENSE=	LGPL21
@@ -19,6 +19,12 @@ USES=		cmake
 USE_GL=		glew
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} >= 1100000
+BROKEN=		requires -lomp which cannot be found
+.endif
 
 post-patch:
 # Install config.inp.sample instead of overwriting user's file.
