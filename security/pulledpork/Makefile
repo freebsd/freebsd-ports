@@ -3,10 +3,9 @@
 
 PORTNAME=	pulledpork
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE \
-		LOCAL/ohauer
+MASTER_SITES=	GHL
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Script to update snort-2.8+ rules
@@ -21,15 +20,21 @@ RUN_DEPENDS=	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
 NO_BUILD=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	run
-SHEBANG_FILES= 	${WRKSRC}/pulledpork.pl ${WRKSRC}/contrib/oink-conv.pl
+SHEBANG_FILES=	${WRKSRC}/pulledpork.pl ${WRKSRC}/contrib/oink-conv.pl
 
 SUB_FILES=	pkg-message
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	shirkdog
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	8b9441a
 
 OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|snort/enablesid.conf|pulledpork/enablesid.conf|g' \
+	@${REINPLACE_CMD} -e 's|^distro=FreeBSD-8.1|distro=FreeBSD-10-0|' \
+		-e 's|snort/enablesid.conf|pulledpork/enablesid.conf|g' \
 		-e 's|snort/dropsid.conf|pulledpork/dropsid.conf|g' \
 		-e 's|snort/disablesid.conf|pulledpork/disablesid.conf|g' \
 		-e 's|snort/modifysid.conf|pulledpork/modifysid.conf|g' \
@@ -51,7 +56,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/README
 	${INSTALL_DATA} ${WRKSRC}/doc/README.CATEGORIES ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/README.CHANGES ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/README.RULESET ${STAGEDIR}${DOCSDIR}
