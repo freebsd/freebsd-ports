@@ -128,7 +128,7 @@ diff --git configure.in configure.in
 index 87db361..7947626 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -5223,6 +5223,157 @@ if test "${ac_cv_c_attribute_aligned}" !
+@@ -5223,6 +5223,160 @@ if test "${ac_cv_c_attribute_aligned}" !
  fi
  
  dnl ========================================================
@@ -247,11 +247,11 @@ index 87db361..7947626 100644
 +AC_SUBST(MOZ_NATIVE_SPEEX)
 +
 +dnl ========================================================
-+dnl Check for libsoundtouch
++dnl Check for libSoundTouch
 +dnl ========================================================
 +
 +MOZ_ARG_WITH_BOOL(system-soundtouch,
-+[  --with-system-soundtouch Use system libsoundtouch (located with pkgconfig)],
++[  --with-system-soundtouch Use system libSoundTouch (located with pkgconfig)],
 +MOZ_NATIVE_SOUNDTOUCH=1,
 +MOZ_NATIVE_SOUNDTOUCH=)
 +
@@ -280,12 +280,81 @@ index 87db361..7947626 100644
 +    fi
 +fi
 +
++if test -n "$MOZ_NATIVE_SOUNDTOUCH"; then
++    AC_DEFINE(MOZ_NATIVE_SOUNDTOUCH)
++fi
 +AC_SUBST(MOZ_NATIVE_SOUNDTOUCH)
 +
 +dnl ========================================================
  dnl = Disable VP8 decoder support
  dnl ========================================================
  MOZ_ARG_DISABLE_BOOL(webm,
+diff --git dom/media/AudioStream.cpp dom/media/AudioStream.cpp
+index 2127256..1ec09fe 100644
+--- mozilla/dom/media/AudioStream.cpp
++++ mozilla/dom/media/AudioStream.cpp
+@@ -129,7 +129,9 @@ AudioStream::AudioStream()
+   , mOutChannels(0)
+   , mWritten(0)
+   , mAudioClock(this)
++#ifndef MOZ_NATIVE_SOUNDTOUCH
+   , mTimeStretcher(nullptr)
++#endif
+   , mLatencyRequest(HighLatency)
+   , mReadPoint(0)
+   , mDumpFile(nullptr)
+@@ -152,9 +154,11 @@ AudioStream::~AudioStream()
+   if (mDumpFile) {
+     fclose(mDumpFile);
+   }
++#ifndef MOZ_NATIVE_SOUNDTOUCH
+   if (mTimeStretcher) {
+     soundtouch::destroySoundTouchObj(mTimeStretcher);
+   }
++#endif
+ }
+ 
+ size_t
+@@ -177,7 +181,11 @@ nsresult AudioStream::EnsureTimeStretcherInitializedUnlocked()
+ {
+   mMonitor.AssertCurrentThreadOwns();
+   if (!mTimeStretcher) {
++#ifdef MOZ_NATIVE_SOUNDTOUCH
++    mTimeStretcher = new soundtouch::SoundTouch();
++#else
+     mTimeStretcher = soundtouch::createSoundTouchObj();
++#endif
+     mTimeStretcher->setSampleRate(mInRate);
+     mTimeStretcher->setChannels(mOutChannels);
+     mTimeStretcher->setPitch(1.0);
+diff --git dom/media/AudioStream.h dom/media/AudioStream.h
+index a552e3e..02b80b1 100644
+--- mozilla/dom/media/AudioStream.h
++++ mozilla/dom/media/AudioStream.h
+@@ -15,7 +15,11 @@
+ #include "mozilla/RefPtr.h"
+ #include "mozilla/UniquePtr.h"
+ #include "CubebUtils.h"
++#ifdef MOZ_NATIVE_SOUNDTOUCH
++#include "soundtouch/SoundTouch.h"
++#else
+ #include "soundtouch/SoundTouchFactory.h"
++#endif
+ 
+ namespace mozilla {
+ 
+@@ -329,7 +333,11 @@ private:
+   // Number of frames written to the buffers.
+   int64_t mWritten;
+   AudioClock mAudioClock;
++#ifdef MOZ_NATIVE_SOUNDTOUCH
++  nsAutoPtr<soundtouch::SoundTouch> mTimeStretcher;
++#else
+   soundtouch::SoundTouch* mTimeStretcher;
++#endif
+   nsRefPtr<AsyncLatencyLogger> mLatencyLog;
+ 
+   // copy of Latency logger's starting time for offset calculations
 diff --git dom/media/moz.build dom/media/moz.build
 index 7526cff..e0a0ca0 100644
 --- mozilla/dom/media/moz.build
@@ -361,6 +430,20 @@ index bfd4b1a..15b158d 100644
  
 +The in-tree copy may be omitted during build by --with-system-soundtouch.
 +Keep version in configure.in in sync on updates.
+diff --git media/libsoundtouch/src/soundtouch_perms.h media/libsoundtouch/src/soundtouch_perms.h
+index 0af2fe6..d80c145 100644
+--- mozilla/media/libsoundtouch/src/soundtouch_perms.h
++++ mozilla/media/libsoundtouch/src/soundtouch_perms.h
+@@ -12,7 +12,9 @@
+ 
+ #pragma GCC visibility push(default)
+ #include "SoundTouch.h"
++#ifndef MOZ_NATIVE_SOUNDTOUCH
+ #include "SoundTouchFactory.h"
++#endif
+ #pragma GCC visibility pop
+ 
+ #endif // MOZILLA_SOUNDTOUCH_PERMS_H
 diff --git media/libspeex_resampler/README_MOZILLA media/libspeex_resampler/README_MOZILLA
 index 7f6b1bb..e830300 100644
 --- mozilla/media/libspeex_resampler/README_MOZILLA
