@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		dtc-v1.4.0${EXTRACT_SUFX}:dtc
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
-MAINTAINER=	qemu@FreeBSD.org
+MAINTAINER=	sbruno@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 
 USE_GITHUB=	yes
