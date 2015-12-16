@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	usbredir
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	net devel
 MASTER_SITES=	http://spice-space.org/download/usbredir/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	protocol for redirection of USB traffic
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	Protocol for redirection of USB traffic
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	dual
 
 USES=		gmake libtool pathfix pkgconfig tar:bzip2
-PATCH_STRIP=	-p1
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ENV=	LIBUSB_CFLAGS=-DLIBUSB_CALL= LIBUSB_LIBS=-lusb
