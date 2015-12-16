@@ -1,5 +1,6 @@
-Index: qemu/qemu-doc.texi
-@@ -985,7 +985,8 @@
+--- qemu-doc.texi.orig	2015-11-03 20:01:35 UTC
++++ qemu-doc.texi
+@@ -355,7 +355,8 @@ Send Ctrl-a
  
  @c man begin SEEALSO
  The HTML documentation of QEMU for more precise information and Linux
