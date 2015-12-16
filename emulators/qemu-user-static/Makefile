@@ -1,7 +1,7 @@
 # Created by: nox@FreeBSD.org
 # $FreeBSD$
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	QEMU CPU Emulator github bsd-user branch - static user targets
 PKGNAMESUFFIX=	-user-static
 
