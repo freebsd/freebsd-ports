@@ -1,6 +1,7 @@
-Index: qemu/slirp/slirp_config.h
-@@ -86,7 +86,7 @@
- #undef BAD_SPRINTF
+--- slirp/slirp_config.h.orig	2015-11-03 20:01:35 UTC
++++ slirp/slirp_config.h
+@@ -83,7 +83,7 @@
+ //#undef HOST_WORDS_BIGENDIAN
  
  /* Define if you have readv */
 -#undef HAVE_READV
@@ -8,17 +9,17 @@ Index: qemu/slirp/slirp_config.h
  
  /* Define if iovec needs to be declared */
  #undef DECLARE_IOVEC
-@@ -95,7 +95,7 @@
- #undef DECLARE_SPRINTF
+@@ -92,7 +92,7 @@
+ #endif
  
  /* Define if you have a POSIX.1 sys/wait.h */
 -#undef HAVE_SYS_WAIT_H
 +#define HAVE_SYS_WAIT_H
  
  /* Define if you have sys/select.h */
- #define HAVE_SYS_SELECT_H
-@@ -107,7 +107,7 @@
- #define HAVE_ARPA_INET_H
+ #undef HAVE_SYS_SELECT_H
+@@ -110,7 +110,7 @@
+ #endif
  
  /* Define if you have sys/signal.h */
 -#undef HAVE_SYS_SIGNAL_H
@@ -26,7 +27,7 @@ Index: qemu/slirp/slirp_config.h
  
  /* Define if you have sys/stropts.h */
  #undef HAVE_SYS_STROPTS_H
-@@ -180,7 +180,7 @@
+@@ -179,7 +179,7 @@
  #undef HAVE_GRANTPT
  
  /* Define if you have fchmod */

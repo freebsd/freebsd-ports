@@ -2,107 +2,133 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	0.11.1
-PORTREVISION=	20
+PORTVERSION=	2.4.1
 CATEGORIES=	emulators
-MASTER_SITES=	SAVANNAH \
-		http://bellard.org/qemu/
-DIST_SUBDIR=	qemu
+MASTER_SITES=	http://wiki.qemu.org/download/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	qemu/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	QEMU CPU Emulator
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT?=	QEMU CPU Emulator
 
-LICENSE=	GPLv2 # or later
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2
 
 HAS_CONFIGURE=	yes
-USES=		compiler:features cpe gmake perl5
+USES=		cpe gmake pkgconfig bison perl5 python:2,build tar:bzip2
 USE_PERL5=	build
-PATCH_STRIP=	-p1
+USE_XORG=	pixman
+USE_GNOME+=	glib20
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
-ONLY_FOR_ARCHS=	amd64 i386
-CONFLICTS=	qemu-devel-[0-9]* qemu-sbruno-[0-9]*
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
 
-OPTIONS_DEFINE=	KQEMU RTL8139_TIMER SAMBA SDL GNUTLS CURL PCAP GNS3 \
-		CDROM_DMA ADD_AUDIO ALL_TARGETS DOCS
-KQEMU_DESC=		Build with (alpha!) accelerator module
-RTL8139_TIMER_DESC=	allow use of re(4) nic with FreeBSD guests
+OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
+		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS \
+		STATIC_LINK DOCS BSD_USER
 SAMBA_DESC=		samba dependency (for -smb)
-SDL_DESC=		SDL/X dependency (graphical output)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
-CURL_DESC=		libcurl dependency (remote images)
-PCAP_DESC=		pcap dependency (networking with bpf)
-GNS3_DESC=		gns3 patches (udp, promiscuous multicast)
+SASL_DESC=		cyrus-sasl dependency (vnc encryption)
+JPEG_DESC=		jpeg dependency (vnc lossy compression)
+PNG_DESC=		png dependency (vnc compression)
 CDROM_DMA_DESC=		IDE CDROM DMA
-ADD_AUDIO_DESC=		Emulate more audio hardware (experimental!)
-ALL_TARGETS_DESC=	Also build non-x86 targets
-OPTIONS_DEFAULT=	SDL GNUTLS CURL PCAP GNS3 CDROM_DMA
+PCAP_DESC=		pcap dependency (networking with bpf)
+USBREDIR_DESC=		usb device network redirection (experimental!)
+GNS3_DESC=		gns3 patches (promiscuous multicast)
+X86_TARGETS_DESC=	Don't build non-x86 system targets
+BSD_USER_DESC=		Also build bsd-user targets (for testing)
+STATIC_LINK_DESC=	Statically link the executables
+OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP GNS3
+OPTIONS_SUB=	yes
+X11_USE=	SDL=sdl
+X11_CONFIGURE_ON=	--enable-sdl
+X11_CONFIGURE_OFF=	--disable-sdl
+GTK2_USE=	GNOME=gtk20,vte
+GTK2_USES=	gettext
+GTK2_CONFIGURE_OFF=	--disable-gtk --disable-vte
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_OFF=	--disable-vnc-tls
+SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_CONFIGURE_OFF=	--disable-vnc-sasl
+JPEG_USES=		jpeg
+JPEG_CONFIGURE_OFF=	--disable-vnc-jpeg
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_OFF=	--disable-vnc-png
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_OFF=	--disable-curl
+OPENGL_USE=	GL=yes
+OPENGL_CONFIGURE_OFF=	--disable-opengl
+USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:${PORTSDIR}/net/usbredir
+USBREDIR_RUN_DEPENDS=	usbredir>=0.6:${PORTSDIR}/net/usbredir
+USBREDIR_CONFIGURE_OFF=	--disable-usb-redir
+PCAP_CONFIGURE_ON=	--enable-pcap
+STATIC_LINK_CONFIGURE_ON=	--static
+SAMBA_RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba36
+DOCS_BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
+DOCS_USES=		makeinfo
+DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386" && ${COMPILER_TYPE} == "clang"
-# gcc49 breaks target-i386 on i386, and gcc48 breaks ALL_TARGETS on i386:
-#	https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=196855
-USE_GCC=	4.7
-.else
-USE_GCC=	any
+.if !defined(QEMU_USER_STATIC)
+CONFLICTS_INSTALL=	qemu--devel-[0-9]* qemu-sbruno-[0-9]*
 .endif
 
-.if empty(PORT_OPTIONS:MALL_TARGETS)
-CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
-PLIST_SUB+=	ALLTARGETS="@comment "
-.else
-PLIST_SUB+=	ALLTARGETS=""
-.endif
+PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
+CONFIGURE_ARGS+=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
+		--disable-smartcard-nss --disable-libssh2 --enable-debug \
+		--prefix=${PREFIX} --cc=${CC} --enable-docs --disable-kvm \
+		--disable-linux-user --disable-linux-aio --disable-xen \
+		--smbd=${LOCALBASE}/sbin/smbd --enable-debug-info --python=${PYTHON_CMD} \
+		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
-.if empty(PORT_OPTIONS:MSDL)
-CONFIGURE_ARGS+=	--disable-sdl
+.include <bsd.port.options.mk>
+
+.if defined(QEMU_USER_STATIC)
+.if ${ARCH} != "amd64"
+CONFIGURE_ARGS+=	--target-list=i386-bsd-user,sparc-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user
 .else
-USE_SDL=	sdl
+CONFIGURE_ARGS+=	--target-list=i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user,mips64-bsd-user,mips64el-bsd-user
 .endif
-
-.if empty(PORT_OPTIONS:MGNUTLS)
-CONFIGURE_ARGS+=	--disable-vnc-tls
 .else
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
-.endif
-
-.if empty(PORT_OPTIONS:MCURL)
-CONFIGURE_ARGS+=	--disable-curl
+.if ${PORT_OPTIONS:MX86_TARGETS}
+.if ${PORT_OPTIONS:MBSD_USER}
+.if ${ARCH} != "amd64"
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,i386-bsd-user,sparc-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user
 .else
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user,mips64-bsd-user,mips64el-bsd-user
 .endif
-
-.if ${PORT_OPTIONS:MPCAP}
-CONFIGURE_ARGS+=	--enable-pcap
+.else
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
 .endif
-
-.if ${PORT_OPTIONS:MADD_AUDIO}
-CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus
-.endif
-
-# XXX
+.else
+.if empty(PORT_OPTIONS:MBSD_USER)
 CONFIGURE_ARGS+=	--disable-bsd-user
-
-.if ${PORT_OPTIONS:MSAMBA}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba36
+.else
+.if ${ARCH} != "amd64"
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,aarch64-softmmu,alpha-softmmu,arm-softmmu,cris-softmmu,lm32-softmmu,m68k-softmmu,microblaze-softmmu,microblazeel-softmmu,mips-softmmu,mipsel-softmmu,mips64-softmmu,mips64el-softmmu,or32-softmmu,ppc-softmmu,ppcemb-softmmu,ppc64-softmmu,sh4-softmmu,sh4eb-softmmu,sparc-softmmu,sparc64-softmmu,s390x-softmmu,xtensa-softmmu,xtensaeb-softmmu,unicore32-softmmu,moxie-softmmu,i386-bsd-user,sparc-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user
+.endif
+.endif
+.endif
 .endif
 
-.if ${PORT_OPTIONS:MKQEMU}
-BUILD_DEPENDS+=	kqemu-kmod-devel>=1.4.0pre1:${PORTSDIR}/emulators/kqemu-kmod-devel
-RUN_DEPENDS+=	kqemu-kmod-devel>=1.4.0pre1:${PORTSDIR}/emulators/kqemu-kmod-devel
-.else
-CONFIGURE_ARGS+=	--disable-kqemu
+.if ${PORT_OPTIONS:MBSD_USER} && ${ARCH} == "sparc64"
+IGNORE=	bsd-user targets not tested on sparc64
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+.if empty(PORT_OPTIONS:MBSD_USER) || ${ARCH} != "amd64"
+PLIST_SUB+=     BSD_USER64="@comment "
 .else
-MAKE_ARGS+=	NOPORTDOCS=1
+PLIST_SUB+=     BSD_USER64=""
+.endif
+
+.if defined(QEMU_USER_STATIC)
+PLIST_SUB+=	SOFTMMU="@comment " STATIC="-static"
+.else
+PLIST_SUB+=	SOFTMMU="" STATIC=""
+.endif
+
+.if ${PORT_OPTIONS:MSTATIC_LINK} && (${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MX11})
+IGNORE=		X11 ui cannot be built static
 .endif
 
 .if !defined(STRIP) || ${STRIP} == ""
@@ -113,29 +139,24 @@ CONFIGURE_ARGS+=--disable-strip
 MAKE_ARGS+=	ARCH=x86_64
 .endif
 
-post-extract:
-	@${MKDIR} ${WRKSRC}/kqemu
-	@${TOUCH} ${WRKSRC}/kqemu/Makefile
-	@${ECHO} all: > ${WRKSRC}/kqemu/Makefile.freebsd
+.if ${ARCH} == "powerpc"
+MAKE_ARGS+=	ARCH=ppc
+.endif
 
-pre-patch:
-	@for A in ${ONLY_FOR_ARCHS}; do \
-		${MKDIR} ${WRKSRC}/bsd/$$A; \
-	done
+.if ${ARCH} == "powerpc64"
+MAKE_ARGS+=	ARCH=ppc64
+.endif
 
+.if ${ARCH} == "sparc64"
+CONFIGURE_ARGS+=	--sparc_cpu=v9
+.endif
+
+# -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
+# but it shouldn't matter much
 post-patch:
-.if ${PORT_OPTIONS:MRTL8139_TIMER}
-	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/rtl8139-re-patch
-.endif
-.if ${PORT_OPTIONS:MPCAP}
-	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
-.endif
-.if ${PORT_OPTIONS:MGNS3}
-	@cd ${WRKSRC} && ${PATCH} -p1 --quiet < ${FILESDIR}/gns3-patch
-.endif
-.if empty(PORT_OPTIONS:MCDROM_DMA)
-	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
-.endif
+	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat|-lprocstat -lelf|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E \
 		-e "/^by Tibor .TS. S/s|Sch.*z.$$|Schuetz.|" \
 		${WRKSRC}/qemu-doc.texi
@@ -149,7 +170,17 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -E \
 		-e "1s|^(#! )/usr/bin/perl|\1${PERL}|" \
-		${WRKSRC}/texi2pod.pl
+		${WRKSRC}/scripts/texi2pod.pl
+
+post-patch-CDROM_DMA-off:
+	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/hw/ide/internal.h
+
+post-patch-GNS3-on:
+	@${REINPLACE_CMD} -e 's|(buf\[0\] & 1) && (rctl & E1000_RCTL_MPE)|buf[0] \& 1|' \
+		${WRKSRC}/hw/net/e1000.c
+
+post-patch-PCAP-on:
+	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
 
 # XXX need to disable usb host code on head while it's not ported to the
 # new usb stack yet
@@ -158,8 +189,14 @@ post-configure:
 		-e "s|^(HOST_USB=)bsd|\1stub|" \
 		${WRKSRC}/config-host.mak
 
+.if !target(post-install)
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 
-.include <bsd.port.post.mk>
+post-install-DOCS-on:
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/)
+.endif
+
+.include <bsd.port.mk>
