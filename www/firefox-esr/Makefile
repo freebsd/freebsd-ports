@@ -41,8 +41,7 @@ MOZILLA_NAME=	Firefox
 USE_QT5=	# empty
 QT_NONSTANDARD=	yes
 USE_GL=		gl
-USES=		dos2unix tar:bzip2
-DOS2UNIX_FILES=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
+USES=		tar:bzip2
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
