@@ -1,33 +1,73 @@
-Index: qemu/configure
-@@ -1154,8 +1154,9 @@
- #include <curl/curl.h>
- int main(void) { return curl_easy_init(); }
- EOF
-+  curl_cflags=`curl-config --cflags 2>/dev/null`
-   curl_libs=`curl-config --libs 2>/dev/null`
-- if $cc $ARCH_CFLAGS $curl_libs -o $TMPE $TMPC > /dev/null 2> /dev/null ; then
-+ if $cc $ARCH_CFLAGS $curl_cflags $curl_libs -o $TMPE $TMPC > /dev/null 2> /dev/null ; then
-     curl=yes
-   fi
- fi # test "$curl"
-@@ -1395,9 +1395,9 @@
+--- configure.orig	2015-11-03 20:01:31 UTC
++++ configure
+@@ -273,7 +273,7 @@ DSOSUF=".so"
+ LDFLAGS_SHARED="-shared"
+ modules="no"
+ prefix="/usr/local"
+-mandir="\${prefix}/share/man"
++mandir="\${prefix}/man"
+ datadir="\${prefix}/share"
+ qemu_docdir="\${prefix}/share/doc/qemu"
+ bindir="\${prefix}/bin"
+@@ -2102,7 +2102,7 @@ if test "$gtk" != "no"; then
+             gtk_cflags="$gtk_cflags $x11_cflags"
+             gtk_libs="$gtk_libs $x11_libs"
+         fi
+-        libs_softmmu="$gtk_libs $libs_softmmu"
++        libs_softmmu="$gtk_libs -lintl $libs_softmmu"
+         gtk="yes"
+     elif test "$gtk" = "yes"; then
+         feature_not_found "gtk" "Install gtk2 or gtk3 devel"
+@@ -3643,15 +3643,18 @@ if compile_prog "" "" ; then
  fi
  
  # Check if tools are available to build documentation.
--if test "$build_docs" = "yes" -a \( ! -x "`which texi2html 2>/dev/null`" -o ! -x "`which pod2man 2>/dev/null`" \) ; then
--  build_docs="no"
--fi
-+#if test "$build_docs" = "yes" -a \( ! -x "`which texi2html 2>/dev/null`" -o ! -x "`which pod2man 2>/dev/null`" \) ; then
-+#  build_docs="no"
++#if test "$docs" != "no" ; then
++#  if has makeinfo && has pod2man; then
++#    docs=yes
++#  else
++#    if test "$docs" = "yes" ; then
++#      feature_not_found "docs" "Install texinfo and Perl/perl-podlators"
++#    fi
++#    docs=no
++#  fi
 +#fi
- 
- ##########################################
- # Do we need librt
-@@ -1760,6 +1761,7 @@
-   echo "CONFIG_CURL=y" >> $config_host_mak
-   echo "CURL_LIBS=$curl_libs" >> $config_host_mak
-   echo "#define CONFIG_CURL 1" >> $config_host_h
-+  echo "CURL_CFLAGS=$curl_cflags" >> $config_host_mak
+ if test "$docs" != "no" ; then
+-  if has makeinfo && has pod2man; then
+-    docs=yes
+-  else
+-    if test "$docs" = "yes" ; then
+-      feature_not_found "docs" "Install texinfo and Perl/perl-podlators"
+-    fi
+-    docs=no
+-  fi
++  docs=yes
  fi
- if test "$brlapi" = "yes" ; then
-   echo "CONFIG_BRLAPI=y" >> $config_host_mak
+ 
+ # Search for bswap_32 function
+@@ -3793,6 +3796,17 @@ fi
+ 
+ # check for libusb
+ if test "$libusb" != "no" ; then
++    cat > $TMPC << EOF
++#include <libusb.h>
++
++int main(void) { return libusb_get_port_path(NULL, NULL, NULL, 0); }
++EOF
++    if compile_prog "-Werror" "-lusb -pthread" ; then
++        libusb="yes"
++        libusb_cflags=""
++        libusb_libs=-lusb
++        libs_softmmu="$libs_softmmu $libusb_libs"
++    else
+     if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
+         libusb="yes"
+         libusb_cflags=$($pkg_config --cflags libusb-1.0)
+@@ -3805,6 +3819,7 @@ if test "$libusb" != "no" ; then
+         fi
+         libusb="no"
+     fi
++    fi
+ fi
+ 
+ # check for usbredirparser for usb network redirection support
