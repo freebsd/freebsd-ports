@@ -1,5 +1,5 @@
-SHA256 (ocaml-4.02.1.tar.xz) = 68c4b01be54c23bc20fc0a8beaa5c7433b8483f8950490129cfe7662e0c6f4dc
-SIZE (ocaml-4.02.1.tar.xz) = 2031244
+SHA256 (ocaml-4.02.3.tar.xz) = 83c6697e135b599a196fd7936eaf8a53dd6b8f3155a796d18407b56f91df9ce3
+SIZE (ocaml-4.02.3.tar.xz) = 2058552
 SHA256 (ocaml-4.02-refman-html.tar.gz) = 1d3b7e5494c075d86c760f6320acba086d686e7409cb75f8267bccfb6ad5f3a8
 SIZE (ocaml-4.02-refman-html.tar.gz) = 612839
 SHA256 (ocaml-4.02-refman.ps.gz) = b14b5aec1e4e1aded2d36e78ceeedfc3c19c3369b257ab507f6a0755651e8f4a

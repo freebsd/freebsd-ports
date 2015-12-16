@@ -3,7 +3,7 @@
 # for committer: bump PORTREVISION for math/facile whenever ocaml gets updated
 
 PORTNAME=	ocaml
-PORTVERSION=	4.02.1
+PORTVERSION=	4.02.3
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ GENTOO \
 		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
@@ -23,6 +23,7 @@ BROKEN_mips64=	No ASM support
 BROKEN_mips=	No ASM support
 
 USES=		cpe gmake tar:xz
+USE_LDCONFIG=	yes
 CPE_VENDOR=	inria
 REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
