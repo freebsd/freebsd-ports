@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lucene
-PORTVERSION=	5.1.0
+PORTVERSION=	5.4.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE/${PORTNAME}/java/${PORTVERSION}
 
@@ -45,6 +45,7 @@ CONTRIBS=	backward-codecs \
 		replicator \
 		sandbox \
 		spatial \
+		spatial3d \
 		suggest
 
 EXTRA_CONTRIBS_DIRS=	common \
