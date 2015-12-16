@@ -58,6 +58,123 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2c2d1c39-1396-459a-91f5-ca03ee7c64c6">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>43.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>43.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.40</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.40</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>38.5.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>38.5.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>38.5.0</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>38.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA 2015-134 Miscellaneous memory safety hazards
+	    (rv:43.0 / rv:38.5)</p>
+	  <p>MFSA 2015-135 Crash with JavaScript variable assignment
+	    with unboxed objects</p>
+	  <p>MFSA 2015-136 Same-origin policy violation using
+	    perfomance.getEntries and history navigation</p>
+	  <p>MFSA 2015-137 Firefox allows for control characters to be
+	    set in cookies</p>
+	  <p>MFSA 2015-138 Use-after-free in WebRTC when datachannel
+	    is used after being destroyed</p>
+	  <p>MFSA 2015-139 Integer overflow allocating extremely large
+	    textures</p>
+	  <p>MFSA 2015-140 Cross-origin information leak through web
+	    workers error events</p>
+	  <p>MFSA 2015-141 Hash in data URI is incorrectly parsed</p>
+	  <p>MFSA 2015-142 DOS due to malformed frames in HTTP/2</p>
+	  <p>MFSA 2015-143 Linux file chooser crashes on malformed
+	    images due to flaws in Jasper library</p>
+	  <p>MFSA 2015-144 Buffer overflows found through code
+	    inspection</p>
+	  <p>MFSA 2015-145 Underflow through code inspection</p>
+	  <p>MFSA 2015-146 Integer overflow in MP4 playback in 64-bit
+	    versions</p>
+	  <p>MFSA 2015-147 Integer underflow and buffer overflow
+	    processing MP4 metadata in libstagefright</p>
+	  <p>MFSA 2015-148 Privilege escalation vulnerabilities in
+	    WebExtension APIs</p>
+	  <p>MFSA 2015-149 Cross-site reading attack through data and
+	    view-source URIs</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7201</cvename>
+      <cvename>CVE-2015-7202</cvename>
+      <cvename>CVE-2015-7203</cvename>
+      <cvename>CVE-2015-7204</cvename>
+      <cvename>CVE-2015-7205</cvename>
+      <cvename>CVE-2015-7207</cvename>
+      <cvename>CVE-2015-7208</cvename>
+      <cvename>CVE-2015-7210</cvename>
+      <cvename>CVE-2015-7211</cvename>
+      <cvename>CVE-2015-7212</cvename>
+      <cvename>CVE-2015-7213</cvename>
+      <cvename>CVE-2015-7214</cvename>
+      <cvename>CVE-2015-7215</cvename>
+      <cvename>CVE-2015-7216</cvename>
+      <cvename>CVE-2015-7217</cvename>
+      <cvename>CVE-2015-7218</cvename>
+      <cvename>CVE-2015-7219</cvename>
+      <cvename>CVE-2015-7220</cvename>
+      <cvename>CVE-2015-7221</cvename>
+      <cvename>CVE-2015-7222</cvename>
+      <cvename>CVE-2015-7223</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-134/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-135/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-136/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-137/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-138/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-139/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-140/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-141/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-142/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-143/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-144/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-145/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-146/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-147/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-148/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-149/</url>
+    </references>
+    <dates>
+      <discovery>2015-12-15</discovery>
+      <entry>2015-12-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a5934ba8-a376-11e5-85e9-14dae9d210b8">
     <topic>java -- multiple vulnerabilities</topic>
     <affects>
