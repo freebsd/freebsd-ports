@@ -58,6 +58,51 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a8ec4db7-a398-11e5-85e9-14dae9d210b8">
+    <topic>bind -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.8P2</lt></range>
+      </package>
+      <package>
+	<name>bind910</name>
+	<range><lt>9.10.3P2</lt></range>
+      </package>
+      <package>
+	<name>bind9-devel</name>
+	<range><lt>9.11.0.a20151215</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01328/0/BIND-9.10.3-P2-Release-Notes.html">
+	  <p>Named is potentially vulnerable to the OpenSSL vulnerabilty described in CVE-2015-3193.</p>
+	  <p>Incorrect reference counting could result in an INSIST
+	    failure if a socket error occurred while performing a lookup. This flaw
+	    is disclosed in CVE-2015-8461. [RT#40945]</p>
+	  <p>Insufficient testing when parsing a message allowed records
+	    with an incorrect class to be be accepted, triggering a REQUIRE failure
+	    when those records were subsequently cached. This flaw is disclosed in
+	    CVE-2015-8000. [RT #40987]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://kb.isc.org/article/AA-01328/0/BIND-9.10.3-P2-Release-Notes.html</url>
+      <url>https://kb.isc.org/article/AA-01317/0/CVE-2015-8000%3A-Responses-with-a-malformed-class-attribute-can-trigger-an-assertion-failure-in-db.c.html</url>
+      <url>https://kb.isc.org/article/AA-01319/0/CVE-2015-8461%3A-A-race-condition-when-handling-socket-errors-can-lead-to-an-assertion-failure-in-resolver.c.html</url>
+      <cvename>CVE-2015-3193</cvename>
+      <cvename>CVE-2015-8000</cvename>
+      <cvename>CVE-2015-8461</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-24</discovery>
+      <entry>2015-12-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2c2d1c39-1396-459a-91f5-ca03ee7c64c6">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
