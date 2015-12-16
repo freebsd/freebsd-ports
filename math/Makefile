@@ -6,6 +6,7 @@
     SUBDIR += GiNaC
     SUBDIR += PDL
     SUBDIR += R
+    SUBDIR += R-cran-Amelia
     SUBDIR += R-cran-ChangeAnomalyDetection
     SUBDIR += R-cran-Formula
     SUBDIR += R-cran-KFAS
