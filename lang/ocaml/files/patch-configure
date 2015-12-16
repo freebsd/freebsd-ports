@@ -1,75 +1,80 @@
---- configure.orig	2014-10-03 19:25:46 UTC
+--- configure.orig	2015-05-12 14:46:37 UTC
 +++ configure
-@@ -85,10 +85,6 @@ exec 3>&1
+@@ -446,7 +446,7 @@ esac
  
- # Parse command-line arguments
+ # Configure compiler to use in further tests
  
--if echo "$configure_options" | grep -q -e '--\?[a-zA-Z0-9-]\+='; then
--  err "Arguments to this script look like '-prefix /foo/bar', not '-prefix=/foo/bar' (note the '=')."
--fi
--
- while : ; do
-   case "$1" in
-     "") break;;
-@@ -659,7 +659,8 @@ if test $with_sharedlibs = "yes"; then
-       mksharedlib="$flexlink"
-       mkmaindll="$flexlink -maindll"
+-cc="$bytecc -O $bytecclinkopts"
++cc="$bytecc $bytecclinkopts"
+ export cc cclibs verbose
+ 
+ # Check C compiler
+@@ -690,7 +690,7 @@ if test $with_sharedlibs = "yes"; then
        shared_libraries_supported=true;;
--    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*|*-*-haiku*)
-+    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*| \
-+    *-*-dragonfly*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*|*-*-haiku*)
+     *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*|*-*-haiku*)
        sharedcccompopts="-fPIC"
-       mksharedlib="$bytecc -shared"
+-      mksharedlib="$bytecc -shared"
++      mksharedlib="$bytecc $bytecclinkopts $bytecclinkopts -shared"
        bytecclinkopts="$bytecclinkopts -Wl,-E"
-@@ -761,11 +758,13 @@ if test $with_sharedlibs = "yes"; then
-       fi;;
-     x86_64-*-darwin*)             natdynlink=true;;
-     powerpc*-*-linux*)            natdynlink=true;;
-+    powerpc*-*-freebsd*)          natdynlink=true;;
-     sparc*-*-linux*)              natdynlink=true;;
-     i686-*-kfreebsd*)             natdynlink=true;;
-     x86_64-*-kfreebsd*)           natdynlink=true;;
-     i[3456]86-*-freebsd*)         natdynlink=true;;
-     x86_64-*-freebsd*)            natdynlink=true;;
-+    x86_64-*-dragonfly*)          natdynlink=true;;
-     i[3456]86-*-openbsd*)         natdynlink=true;;
-     x86_64-*-openbsd*)            natdynlink=true;;
-     i[3456]86-*-netbsd*)          natdynlink=true;;
-@@ -815,6 +814,7 @@ case "$target" in
-   i[3456]86-*-gnu*)             arch=i386; system=gnu;;
-   i[3456]86-*-mingw*)           arch=i386; system=mingw;;
-   powerpc*-*-linux*)            arch=power; model=ppc; system=elf;;
-+  powerpc-*-freebsd*)           arch=power; model=ppc; system=bsd_elf;;
-   powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
-   powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd_elf;;
-   powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
-@@ -833,6 +833,7 @@ case "$target" in
-   zaurus*-*-openbsd*)           arch=arm; system=bsd;;
-   x86_64-*-linux*)              arch=amd64; system=linux;;
-   x86_64-*-gnu*)                arch=amd64; system=gnu;;
-+  x86_64-*-dragonfly*)          arch=amd64; system=dragonfly;;
-   x86_64-*-freebsd*)            arch=amd64; system=freebsd;;
-   x86_64-*-netbsd*)             arch=amd64; system=netbsd;;
-   x86_64-*-openbsd*)            arch=amd64; system=openbsd;;
-@@ -905,6 +908,8 @@ case "$arch,$system" in
-                   aspp="${TOOLPREF}cc -c";;
-   *,freebsd)      as="${TOOLPREF}as"
-                   aspp="${TOOLPREF}cc -c";;
-+  *,dragonfly)    as="as"
-+                  aspp="cc -c";;
-   amd64,*|arm,*|arm64,*|i386,*|power,bsd*|sparc,*)
-                   as="${TOOLPREF}as"
-                   aspp="${TOOLPREF}gcc -c";;
-@@ -1390,7 +1395,7 @@ if test "$pthread_wanted" = "yes"; then
-     bytecccompopts="$bytecccompopts -D_REENTRANT"
-     nativecccompopts="$nativecccompopts -D_REENTRANT"
-     case "$target" in
--      *-*-freebsd*)
-+      *-*-freebsd*|*-*-dragonfly*)
-           bytecccompopts="$bytecccompopts -D_THREAD_SAFE"
-           nativecccompopts="$nativecccompopts -D_THREAD_SAFE";;
-       *-*-openbsd*)
-@@ -1560,6 +1565,7 @@ if test "$x11_include" = "not found"; th
+       byteccrpath="-Wl,-rpath,"
+       mksharedlibrpath="-Wl,-rpath,"
+@@ -700,7 +700,7 @@ if test $with_sharedlibs = "yes"; then
+       case "$bytecc" in
+         *gcc*)
+           sharedcccompopts="-fPIC"
+-          mksharedlib="$bytecc -shared"
++          mksharedlib="$bytecc $bytecclinkopts $bytecclinkopts -shared"
+           byteccrpath="-Wl,-rpath,"
+           mksharedlibrpath="-Wl,-rpath,"
+           shared_libraries_supported=true;;
+@@ -716,11 +716,11 @@ if test $with_sharedlibs = "yes"; then
+         *gcc*)
+           sharedcccompopts="-fPIC"
+           if sh ./solaris-ld; then
+-            mksharedlib="$bytecc -shared"
++            mksharedlib="$bytecc $bytecclinkopts $bytecclinkopts -shared"
+             byteccrpath="-R"
+             mksharedlibrpath="-R"
+           else
+-            mksharedlib="$bytecc -shared"
++            mksharedlib="$bytecc $bytecclinkopts $bytecclinkopts -shared"
+             bytecclinkopts="$bytecclinkopts -Wl,-E"
+             natdynlinkopts="-Wl,-E"
+             byteccrpath="-Wl,-rpath,"
+@@ -744,12 +744,12 @@ if test $with_sharedlibs = "yes"; then
+       mksharedlibrpath="-rpath "
+       shared_libraries_supported=true;;
+     i[3456]86-*-darwin[89].*)
+-      mksharedlib="$bytecc -bundle -flat_namespace -undefined suppress -read_only_relocs suppress"
++      mksharedlib="$bytecc $bytecclinkopts $bytecclinkopts -bundle -flat_namespace -undefined suppress -read_only_relocs suppress"
+       bytecccompopts="$dl_defs $bytecccompopts"
+       dl_needs_underscore=false
+       shared_libraries_supported=true;;
+     *-apple-darwin*)
+-      mksharedlib="$bytecc -bundle -flat_namespace -undefined suppress -Wl,-no_compact_unwind"
++      mksharedlib="$bytecc $bytecclinkopts $bytecclinkopts -bundle -flat_namespace -undefined suppress -Wl,-no_compact_unwind"
+       bytecccompopts="$dl_defs $bytecccompopts"
+       dl_needs_underscore=false
+       shared_libraries_supported=true;;
+@@ -759,7 +759,7 @@ if test $with_sharedlibs = "yes"; then
+       shared_libraries_supported=false;;
+     *-*-openbsd*)
+       sharedcccompopts="-fPIC"
+-      mksharedlib="$bytecc -shared"
++      mksharedlib="$bytecc $bytecclinkopts $bytecclinkopts -shared"
+       bytecclinkopts="$bytecclinkopts -Wl,-E"
+       natdynlinkopts="-Wl,-E"
+       byteccrpath="-Wl,-rpath,"
+@@ -889,7 +889,7 @@ else
+ fi
+ 
+ nativecccompopts=''
+-nativecclinkopts=''
++nativecclinkopts=""
+ # FIXME the naming of nativecclinkopts is broken: these are options for
+ # ld (for shared libs), not for cc
+ nativeccrpath="$byteccrpath"
+@@ -1601,6 +1601,7 @@ if test "$x11_include" = "not found"; th
        else
          x11_libs="-L$dir"
          case "$target" in
@@ -77,3 +82,29 @@
            *-kfreebsd*-gnu) x11_link="-L$dir -lX11";;
            *-*-*bsd*) x11_link="-R$dir -L$dir -lX11";;
            *) x11_link="-L$dir -lX11";;
+@@ -1644,10 +1645,10 @@ echo "X11_LINK=$x11_link" >> Makefile
+ # Look for BFD library
+ 
+ if sh ./hasgot -DPACKAGE=ocaml -i bfd.h && \
+-   sh ./hasgot -DPACKAGE=ocaml -lbfd -ldl -liberty -lz bfd_openr; then
++   sh ./hasgot -DPACKAGE=ocaml -lbfd $dllib -liberty -lz bfd_openr; then
+   inf "BFD library found."
+   echo "#define HAS_LIBBFD" >> s.h
+-  echo "LIBBFD_LINK=-lbfd -ldl -liberty -lz" >> Makefile
++  echo "LIBBFD_LINK=-lbfd $dllib -liberty -lz" >> Makefile
+ else
+   wrn "BFD library not found, 'objinfo' will be unable to display info on .cmxs files."
+   echo "LIBBFD_LINK=" >> Makefile
+@@ -1686,12 +1687,6 @@ if $no_naked_pointers; then
+   echo "#define NO_NAKED_POINTERS" >> m.h
+ fi
+ 
+-# Add Unix-style optimization flag
+-bytecccompopts="-O $bytecccompopts"
+-dllcccompopts="-O $dllcccompopts"
+-nativecccompopts="-O $nativecccompopts"
+-sharedcccompopts="-O $sharedcccompopts"
+-
+ # Final twiddling of compiler options to work around known bugs
+ 
+ nativeccprofopts="$nativecccompopts"
