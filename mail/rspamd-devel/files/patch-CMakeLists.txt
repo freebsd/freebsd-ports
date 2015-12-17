@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2015-12-17 14:52:24.000000000 +0000
++++ CMakeLists.txt	2015-12-17 16:21:31.231703000 +0000
+@@ -1103,6 +1103,19 @@
+ ENDIF(WANT_SYSTEMD_UNITS MATCHES "ON")
+ IF(BUILD_PORT)
+ 	INSTALL_IF_NOT_EXISTS(${MAIN_CONF} ${CONFDIR} "rspamd.conf" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/common.conf" ${CONFDIR} "common.conf" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/logging.inc" ${CONFDIR} "logging.inc" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/options.inc" ${CONFDIR} "options.inc" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/worker-controller.inc" ${CONFDIR} "worker-controller.inc" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/worker-normal.inc" ${CONFDIR} "worker-normal.inc" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/2tld.inc" ${CONFDIR} "2tld.inc" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/composites.conf" ${CONFDIR} "composites.conf" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/metrics.conf" ${CONFDIR} "metrics.conf" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/modules.conf" ${CONFDIR} "modules.conf" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/statistic.conf" ${CONFDIR} "statistic.conf" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/surbl-whitelist.inc" ${CONFDIR} "surbl-whitelist.inc" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/dmarc_whitelist.inc" ${CONFDIR} "dmarc_whitelist.inc" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/spf_dkim_whitelist.inc" ${CONFDIR} "spf_dkim_whitelist.inc" ".sample")
+ ELSE(BUILD_PORT)
+ 	INSTALL_IF_NOT_EXISTS(${MAIN_CONF} ${CONFDIR} "rspamd.conf" "")
+ ENDIF(BUILD_PORT)

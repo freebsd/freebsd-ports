@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: rspamd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable rspamd:
+#
+# rspamd_enable (bool):		Set to "NO" by default.
+#							Set it to "YES" to enable rspamd.
+#
+# rspamd_user (str):		Default to "nobody".
+#
+# rspamd_group (str):		Default to "nobody".
+#
+# rspamd_flags (str):		Default to "-c %%PREFIX%%/etc/rspamd.xml".
+
+. /etc/rc.subr
+
+name=rspamd
+rcvar=rspamd_enable
+
+load_rc_config $name
+
+: ${rspamd_enable:="NO"}
+: ${rspamd_user="nobody"}
+: ${rspamd_group="nobody"}
+: ${rspamd_flags="-c %%PREFIX%%/etc/rspamd/rspamd.conf"}
+
+pidfile=${rspamd_pidfile:-"/var/run/rspamd/rspamd.pid"}
+
+command=%%PREFIX%%/bin/rspamd
+command_adm=%%PREFIX%%/bin/rspamadm
+restart_precmd="rspamd_checkconfig"
+reload_precmd="rspamd_checkconfig"
+configtest_cmd="rspamd_checkconfig"
+reopenlog_cmd="reopenlog_cmd"
+
+required_files=%%PREFIX%%/etc/rspamd/rspamd.conf
+command_args="-u ${rspamd_user} -g ${rspamd_group}"
+sig_reload="HUP"
+extra_commands="reload configtest reopenlog"
+stop_postcmd="rm -f $pidfile"
+
+rspamd_checkconfig()
+{
+	echo "Performing sanity check on rspamd configuration:"
+	eval ${command_adm} configtest ${rspamd_flags}
+}
+
+reopenlog_cmd()
+{
+	pkill -USR1 -F $pidfile
+}
+
+run_rc_command "$1"
