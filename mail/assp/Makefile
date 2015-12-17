@@ -15,7 +15,8 @@ RUN_DEPENDS=	p5-Net-DNS>=0.68:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-libwww>=6.04:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-Parser>=3.69:${PORTSDIR}/www/p5-HTML-Parser
 
-USES=		perl5 zip:infozip
+USES=		perl5 zip:infozip shebangfix
+SHEBANG_FILES=	*.pl
 NO_BUILD=	yes
 USE_PERL5=	run
 
@@ -121,9 +122,6 @@ RUN_DEPENDS+=	p5-IO-Socket-INET6>=2.69:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
 EXTRACT_AFTER_ARGS=	-d ${PORTNAME}-${PORTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/*.pl
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/images \

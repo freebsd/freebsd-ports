@@ -66,8 +66,8 @@ post-patch:
 	@${RM} ${WRKSRC}/tmp/.keep_me
 
 do-build:
-	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} all install
-	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} clean
+	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL} all install
+	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL} clean
 	${FIND} ${WRKSRC}/lib -name "*.so" | ${XARGS} ${CHMOD} u+w
 	${FIND} ${WRKSRC}/lib -name "*.so" | ${XARGS} ${STRIP_CMD}
 	${FIND} ${WRKSRC}/lib -name "*.so" | ${XARGS} ${CHMOD} u-w

@@ -13,7 +13,8 @@ COMMENT=	Convert .rpm files for extraction with /usr/bin/cpio, needs just perl
 
 NO_WRKSUBDIR=	yes
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 REINPLACE_ARGS=
@@ -22,7 +23,7 @@ PLIST_FILES=	bin/rpm2cpio.pl
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|' ${FILESDIR}/${PORTNAME} >${WRKDIR}/${PORTNAME}
+	@${CP} ${FILESDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}.pl

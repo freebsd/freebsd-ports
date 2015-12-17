@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.17
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -23,9 +23,10 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 
 PORTSCOUT=	limit:^0\.7.*
 
-USES=		cpe gmake perl5 pkgconfig tar:bzip2
+USES=		cpe gmake perl5 pkgconfig tar:bzip2 shebangfix
 USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
 USE_PERL5=	build
+SHEBANG_FILES=	doc/texi2pod.pl
 
 FFMPEG_SUFFIX=	0
 HAS_CONFIGURE=	yes
@@ -323,8 +324,6 @@ post-patch:
 		-e 's|opencv opencv/cxcore.h|opencv-core opencv2/core/core_c.h|g' \
 		-e 's|check_ldflags -Wl,--as-needed||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL5}|g' \
-		${WRKSRC}/doc/texi2pod.pl
 .if ${PORT_OPTIONS:MSDL}
 	@${REINPLACE_CMD} -E \
 		-e 's|sdl-config|${SDL_CONFIG}|g' \

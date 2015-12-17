@@ -14,11 +14,12 @@ BROKEN=		unfetchable
 
 RUN_DEPENDS=	p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS
 
-EXTRACT_CMD=	$(SED)
-EXTRACT_BEFORE_ARGS=	's=^\#!/usr/bin/perl =\#!${PERL} =' <
-EXTRACT_AFTER_ARGS=	| ${TR} -d '\r' > ${WRKSRC}/sarep
+EXTRACT_CMD=	${CP}
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	${WRKSRC}/sarep
 
-USES=		perl5
+USES=		perl5 dos2unix shebangfix
+SHEBANG_FILES=	sarep
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/sarep

@@ -19,16 +19,13 @@ RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	Changes README TODO
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl -w|${PERL}|' \
-		${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

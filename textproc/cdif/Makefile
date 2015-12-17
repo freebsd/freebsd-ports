@@ -10,7 +10,8 @@ EXTRACT_SUFX=		# empty
 MAINTAINER=		sanpei@FreeBSD.org
 COMMENT=		Word context diff
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${DISTNAME}
 
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
@@ -18,12 +19,7 @@ NO_BUILD=		yes
 PLIST_FILES=	bin/cdif
 
 do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/${DISTNAME}.dist
-
-do-patch:
-	${SED} -e '1s@/usr/local/bin/perl@${PERL}@' \
-		< ${WRKSRC}/${DISTNAME}.dist > ${WRKSRC}/${DISTNAME}
+	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/${DISTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/cdif

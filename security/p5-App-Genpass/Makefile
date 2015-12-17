@@ -28,9 +28,5 @@ TEST_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
-REINPLACE_ARGS=	-i ''
-
-post-patch:
-	@${REINPLACE_CMD} -e '1 s|.*|#!${PERL}|' ${WRKSRC}/bin/genpass
 
 .include <bsd.port.mk>

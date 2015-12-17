@@ -3,7 +3,7 @@
 
 PORTNAME=	man2html
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://hydra.nac.uci.edu/indiv/ehood/tar/ \
 		ftp://ftp.cpan.org/pub/CPAN/modules/by-authors/Earl_Hood/ \
@@ -19,10 +19,6 @@ NO_BUILD=	yes
 CGIDIR=		${PREFIX}/www/cgi-bin
 
 PLIST_FILES=	bin/man2html man/man1/man2html.1.gz www/cgi-bin/man.cgi
-
-post-patch:
-	${REINPLACE_CMD} -e "s#/usr/local/bin/perl#${PERL5}#" ${WRKSRC}/man2html
-	${REINPLACE_CMD} -e "s#/usr/bin/perl5.00503#${PERL5}#" ${WRKSRC}/man.cgi
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/man2html ${STAGEDIR}/${PREFIX}/bin

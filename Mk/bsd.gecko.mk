@@ -448,14 +448,14 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 		-e 's|@LDFLAGS@|${LDFLAGS}|g'		\
 		-e 's|@LIBS@|${LIBS}|g'			\
 		-e 's|@LOCALBASE@|${LOCALBASE}|g'	\
-		-e 's|@PERL@|${PERL5}|g'			\
+		-e 's|@PERL@|${PERL}|g'			\
 		-e 's|@MOZDIR@|${PREFIX}/lib/${MOZILLA}|g'	\
 		-e 's|%%PREFIX%%|${PREFIX}|g'		\
 		-e 's|%%CFLAGS%%|${CFLAGS}|g'		\
 		-e 's|%%LDFLAGS%%|${LDFLAGS}|g'		\
 		-e 's|%%LIBS%%|${LIBS}|g'		\
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g'	\
-		-e 's|%%PERL%%|${PERL5}|g'		\
+		-e 's|%%PERL%%|${PERL}|g'		\
 		-e 's|%%MOZILLA%%|${MOZILLA}|g'		\
 		-e 's|%%MOZILLA_BIN%%|${MOZILLA_BIN}|g'	\
 		-e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g'

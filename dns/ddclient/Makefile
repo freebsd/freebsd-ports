@@ -36,9 +36,7 @@ PLIST_FILES=	etc/ddclient.conf.sample etc/periodic/daily/ddclient_force \
 post-patch:
 	@${GREP} -lR '/usr' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr|${PREFIX}|g'
-	@${REINPLACE_CMD} -e \
-		's|%%PERL%%|${PERL}| ; \
-		 s|%%ETCDIR%%|${PREFIX}/etc| ; \
+	@${REINPLACE_CMD} -e 's|%%ETCDIR%%|${PREFIX}/etc| ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/ddclient
 
 do-install:

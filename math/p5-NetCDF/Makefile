@@ -3,7 +3,7 @@
 
 PORTNAME=	NetCDF
 PORTVERSION=	1.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math perl5
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf-perl/
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ USES=		perl5 fakeroot
 WRKSRC_SUBDIR=		src
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPP_NETCDF=-I${LOCALBASE}/include LD_NETCDF=-lnetcdf \
-		PERL_MANDIR=${STAGEDIR}${SITE_PERL}/man PERL=${PERL5}
+		PERL_MANDIR=${STAGEDIR}${SITE_PERL}/man PERL=${PERL}
 
 pre-install:
 	@${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' ${WRKSRC}/perl/Makefile

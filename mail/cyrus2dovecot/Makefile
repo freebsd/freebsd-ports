@@ -16,14 +16,12 @@ LICENSE_COMB=	dual
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${DISTNAME}
 NO_WRKSUBDIR=	yes
 
 post-extract:
 	@${CP} -v ${DISTDIR}/${DISTNAME} ${WRKSRC}
-
-post-patch:
-	@${REINPLACE_CMD} -e '1s,^#!.*,#!${PERL},' ${WRKSRC}/${DISTNAME}
 
 do-build:
 	pod2man --section=1 --release=${PORTVERSION} \

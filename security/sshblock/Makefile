@@ -25,10 +25,6 @@ EXTRACT_AFTER_ARGS=	${WRKSRC}
 SUB_FILES+=	pkg-message
 SHEBANG_FILES=	${WRKSRC}/sshblock-${PORTVERSION}.pl
 
-do-patch:
-	@${REINPLACE_CMD} -e "s@/usr/bin/perl@${PERL}@" \
-		${WRKSRC}/sshblock-${PORTVERSION}.pl
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sshblock-${PORTVERSION}.pl \
 		${STAGEDIR}${PREFIX}/sbin/sshblock
