@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	CloneCD to ISO converter
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 PLIST_FILES=	bin/ccd2iso
 
 GNU_CONFIGURE=	yes
