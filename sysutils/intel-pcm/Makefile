@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	intel-pcm
-PORTVERSION=	2.8
+PORTVERSION=	2.10
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/imp
-DISTNAME=	intelperformancecountermonitorv${PORTVERSION}
+DISTNAME=	IntelPerformanceCounterMonitor-PCM-V${PORTVERSION}
 
 MAINTAINER=	imp@FreeBSD.org
 COMMENT=	Intel PCM toolkit
@@ -16,7 +16,7 @@ USES=		gmake compiler:c++11-lang zip
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-WRKSRC=		${WRKDIR}/IntelPerformanceCounterMonitorV${PORTVERSION}
+WRKSRC=		${WRKDIR}/IntelPerformanceCounterMonitor-PCM-V${PORTVERSION}
 MAKE_ARGS=	CXX="${CXX}" LIB=-lpthread
 
 do-install:
