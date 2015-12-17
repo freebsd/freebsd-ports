@@ -73,6 +73,8 @@
 %%DATADIR%%/Prowlin.dll
 %%DATADIR%%/RestSharp.dll
 %%DATADIR%%/System.Data.SQLite.dll
+%%DATADIR%%/UI.Phantom/vendor.js
+%%DATADIR%%/UI.Phantom/vendor.map
 %%DATADIR%%/UI/Content/FontAwesome/FontAwesome.otf
 %%DATADIR%%/UI/Content/FontAwesome/fontawesome-webfont.eot
 %%DATADIR%%/UI/Content/FontAwesome/fontawesome-webfont.svg
@@ -146,6 +148,4 @@
 %%DATADIR%%/UI/templates.js
 %%DATADIR%%/UI/vendor.js
 %%DATADIR%%/UI/vendor.map
-%%DATADIR%%/libsqlite3.0.dylib
-%%DATADIR%%/libsqlite3.dylib
 @dir(sonarr,wheel,755) sonarr
