@@ -17,7 +17,9 @@ include/udm_common.h
 include/udm_conf.h
 include/udm_config.h
 include/udm_contentencoding.h
+include/udm_coords.h
 include/udm_crc32.h
+include/udm_ctype.h
 include/udm_db.h
 include/udm_db_int.h
 include/udm_dirent.h
@@ -34,6 +36,7 @@ include/udm_http.h
 include/udm_id3.h
 include/udm_indexcache.h
 include/udm_indexer.h
+include/udm_lex.h
 include/udm_log.h
 include/udm_match.h
 include/udm_mutex.h
@@ -41,7 +44,9 @@ include/udm_parsedate.h
 include/udm_parsehtml.h
 include/udm_parser.h
 include/udm_parsexml.h
+include/udm_prog.h
 include/udm_proto.h
+include/udm_query.h
 include/udm_regex.h
 include/udm_result.h
 include/udm_robots.h
