@@ -10,18 +10,15 @@ DISTFILES=	# none
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Fake biblical curse generator
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	biblical-curse
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/src
 
 SRC=		${.CURDIR}/src
 
-pre-patch:
-	@${CP} -R ${SRC} ${WRKDIR}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/biblical-curse
+do-extract:
+	@${CP} -R ${SRC}/ ${WRKSRC}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/biblical-curse ${STAGEDIR}${PREFIX}/bin/biblical-curse

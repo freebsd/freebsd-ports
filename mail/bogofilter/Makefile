@@ -23,8 +23,8 @@ UNICODE_DESC=		Normalize tokens to Unicode (UTF-8) (recommended)
 CONFLICTS_INSTALL?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-tc-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
 USES=		cpe perl5 shebangfix tar:bzip2
-SHEBANG_FILES=	contrib/randomtrain.sh \
-		contrib/scramble.sh
+SHEBANG_FILES=	contrib/randomtrain.sh contrib/scramble.sh \
+		src/tests/unsort.pl contrib/*.pl
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 
@@ -55,9 +55,6 @@ CONFIGURE_ENV+=	PERL="${PERL}"
 INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${MANPREFIX}/man
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^#!.*perl|#! ${PERL}|' \
-		${WRKSRC}/src/tests/unsort.pl \
-		${WRKSRC}/contrib/*.pl
 	${REINPLACE_CMD} -e 's/INTEGRITY_TESTS = t.lock1 t.lock3 t.valgrind/INTEGRITY_TESTS = t.lock1/' \
 		-e 's/ENVIRON_TESTS = t.abort/ENVIRON_TESTS =/' \
 		${WRKSRC}/src/tests/Makefile.am

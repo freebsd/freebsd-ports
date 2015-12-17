@@ -16,14 +16,15 @@ RUN_DEPENDS=	p5-Parse-Win32Registry>=0:${PORTSDIR}/devel/p5-Parse-Win32Registry
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USES=		dos2unix perl5 zip
+USES=		dos2unix perl5 zip shebangfix
+SHEBANG_FILES=	rip.pl
+perl_OLD_CMD=	c:\\\\perl\\\\bin\\\\perl.exe
 USE_PERL5=	run
 
 PLIST_FILES=	bin/rip.pl
 
 post-patch:
-	${REINPLACE_CMD} -e 's|#! c:\\perl\\bin\\perl.exe|#!${PERL}| ; \
-		s|plugindir = $$str|plugindir = "${DATADIR}"| ; \
+	${REINPLACE_CMD} -e 's|plugindir = $$str|plugindir = "${DATADIR}"| ; \
 		s|require "plugins/|require "${DATADIR}plugins/|' ${WRKSRC}/rip.pl
 
 do-install:

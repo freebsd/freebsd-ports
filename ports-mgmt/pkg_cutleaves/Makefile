@@ -13,9 +13,9 @@ COMMENT=	Interactive script for deinstalling 'leaf' packages
 LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
-USES=		perl5
-
-WRKSRC=		${WRKDIR}
+USES=		perl5 shebangfix
+SHEBANG_FILES=	pkg_cutleaves
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	sbin/pkg_cutleaves man/man1/pkg_cutleaves.1.gz
 
@@ -31,7 +31,6 @@ post-patch:
 	  -e 's,/usr/local/etc/pkg_leaves.exclude,${PREFIX}/etc/pkg_leaves.exclude,' \
 	  -e 's,/usr/local/sbin/pkg delete -y,${PKG_DELETE},' \
 	  -e 's,/usr/local/sbin/pkg query,${PKG_QUERY},' \
-	  -e 's,/usr/bin/perl,${PERL},' \
 	  ${WRKSRC}/pkg_cutleaves
 
 do-install:

@@ -18,28 +18,16 @@ PERL_NET_DNS_DESC=	Add MX lookup support
 PERL_NET_SSLEAY_DESC=	Add TLS support
 PERL_AUTHEN_NTLM_DESC=	Add support for AUTH NTLM
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${PORTNAME}
 USE_PERL5=	run
+NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MPERL_NET_DNS}
-RUN_DEPENDS+=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
-.endif
-
-.if ${PORT_OPTIONS:MPERL_NET_SSLEAY}
-RUN_DEPENDS+=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
-.endif
-
-.if ${PORT_OPTIONS:MPERL_AUTHEN_NTLM}
-RUN_DEPENDS+=	p5-Authen-NTLM>=0:${PORTSDIR}/security/p5-Authen-NTLM
-.endif
-
-do-build:
-	@${SED} -e '1s|/usr/bin/perl|${PERL}|' \
-		${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.pl
+PERL_NET_DNS_RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+PERL_NET_SSLEAY_RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
+PERL_AUTHEN_NTLM_RUN_DEPENDS=	p5-Authen-NTLM>=0:${PORTSDIR}/security/p5-Authen-NTLM
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

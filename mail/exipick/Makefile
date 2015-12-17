@@ -13,21 +13,22 @@ COMMENT=	Display messages from Exim queue based on a variety of criteria
 
 PLIST_FILES=	bin/${PORTNAME}
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${DISTNAME}
 USE_PERL5=	run
+NO_BUILD=	yes
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}
 
-do-build:
-	@${SED} -e '1s|/usr/bin/perl|${PERL}|' \
-		-e 's;\/local\/exim\/spool;\/var\/spool\/exim;g' \
-		${WRKSRC}/${DISTNAME} > ${WRKSRC}/${PORTNAME}.pl
+post-patch:
+	@${REINPLACE_CMD} -e 's;\/local\/exim\/spool;\/var\/spool\/exim;g' \
+		${WRKSRC}/${DISTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

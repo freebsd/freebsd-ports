@@ -21,7 +21,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 OPTIONS_DEFINE=	IPV6
 
 GNU_CONFIGURE=	yes
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=  scripts/*
 NO_ARCH=	yes
 USE_RC_SUBR=	dkimproxy_in dkimproxy_out
 
@@ -38,9 +39,5 @@ IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-lib-MSDW-SMTP-Server.pm
 IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-scripts-dkimproxy.out
 IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-scripts-dkimproxy_in.conf.example
 IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-scripts-dkimproxy_out.conf.example
-
-post-patch:
-	@${GREP} -Ril 'perl' ${WRKDIR} | ${XARGS} ${REINPLACE_CMD} -i '' \
-		-e 's|/usr/bin/perl|${PERL}|' -e 's|@PERL@|${PERL}|'
 
 .include <bsd.port.mk>

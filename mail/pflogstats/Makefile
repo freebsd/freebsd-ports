@@ -22,12 +22,12 @@ RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-XML-Dumper>=0:${PORTSDIR}/textproc/p5-XML-Dumper
 
 NO_BUILD=	yes
-USES=		perl5
-SITE_PERL_INST=	${SITE_PERL:S/${LOCALBASE}/${PREFIX}/}
+USES=		perl5 shebangfix
+SHEBANG_FILES=	*.pl
+SITE_PERL_INST=	${PREFIX}/${SITE_PERL_REL}
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|/usr/bin/perl.*|${PERL}|' \
 		-e 's|/usr/local/lib/pflogstats|${SITE_PERL_INST}/Pflogstats|' \
 			${WRKSRC}/apachelogiostats.pl \
 			${WRKSRC}/pflogstats.pl \

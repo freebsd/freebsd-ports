@@ -35,7 +35,4 @@ PLIST_SUB=	GUI="@comment "
 MAKE_ARGS+=	INSTALL_SCRIPT=:
 .endif
 
-post-build:
-	@${REINPLACE_CMD} "s%#!/usr/bin/perl%#!${PERL}%" ${WRKSRC}/xkbset-gui
-
 .include <bsd.port.mk>

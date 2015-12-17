@@ -28,10 +28,8 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-do-configure:
-	@${REINPLACE_CMD} -e \
-		's|/usr/local/stow/perl-5.8.x/bin/perl|${PERL}|; \
-		s|$$Bin/help|${DATADIR}/help|' \
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$Bin/help|${DATADIR}/help|' \
 		${WRKSRC}/cadubi
 
 do-install:
