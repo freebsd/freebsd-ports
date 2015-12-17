@@ -58,6 +58,68 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7329938b-a4e6-11e5-b864-14dae9d210b8">
+    <topic>cups-filters -- code execution</topic>
+    <affects>
+      <package>
+	<name>cups-filters</name>
+	<range><lt>1.4.0</lt></range>
+      </package>
+      <package>
+	<name>foomatic-filters</name>
+	<range><lt>4.0.17_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Till Kamppeter reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/14/13">
+	  <p>Cups Filters/Foomatic Filters does not consider semicolon
+	    as an illegal escape character.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/14/13</url>
+      <cvename>CVE-2015-8560</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-12</discovery>
+      <entry>2015-12-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6dbae1a8-a4e6-11e5-b864-14dae9d210b8">
+    <topic>cups-filters -- code execution</topic>
+    <affects>
+      <package>
+	<name>cups-filters</name>
+	<range><lt>1.2.0</lt></range>
+      </package>
+      <package>
+	<name>foomatic-filters</name>
+	<range><lt>4.0.17_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Salvatore Bonaccorso reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/13/2">
+	  <p>Cups Filters/Foomatic Filters does not consider backtick
+	    as an illegal escape character.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/13/2</url>
+      <cvename>CVE-2015-8327</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-30</discovery>
+      <entry>2015-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1fbd6db1-a4e4-11e5-b864-14dae9d210b8">
     <topic>py-amf -- input sanitization errors</topic>
     <affects>
