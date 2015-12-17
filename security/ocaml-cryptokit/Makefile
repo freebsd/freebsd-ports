@@ -24,11 +24,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	doc
-.endif
+DOCS_ALL_TARGET=	doc
 
 post-patch:
 	${REINPLACE_CMD} 's,"install","install" :: "-ldconf ignore",' \
