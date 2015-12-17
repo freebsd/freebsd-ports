@@ -3,12 +3,12 @@
 
 PORTNAME=	rpm2cpio
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Convert .rpm files for extraction with /usr/bin/cpio, needs just perl
 
 NO_WRKSUBDIR=	yes
