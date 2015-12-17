@@ -14,7 +14,8 @@ COMMENT=	Receive, filter, read, compose, and send mail at the text console
 CONFLICTS=	elmo-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		iconv perl5
+USES=		iconv perl5 shebangfix
+SHEBANG_FILES=	src/elmoconf.pl
 USE_OPENSSL=	yes
 USE_PERL5=	run
 
@@ -48,8 +49,6 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/bin/env perl|${PERL} -w|" \
-		${WRKSRC}/src/elmoconf.pl
 	@${REINPLACE_CMD} -e 's|gpgme4|gpgme|g' -e 's|== "|= "|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gpgme4|gpgme|g' ${WRKSRC}/src/pgp.c
 

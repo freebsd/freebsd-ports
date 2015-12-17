@@ -26,10 +26,6 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/usr/local/bin/perl|${PERL}|' ${WRKSRC}/script/dbs_view
-
 pre-build:
 	cd ${WRKSRC}/src; ${MAKE} dir
 

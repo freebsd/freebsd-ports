@@ -17,19 +17,15 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	oinkmaster.pl
 
 PLIST_FILES=	bin/oinkmaster \
 		etc/oinkmaster.conf.sample \
 		man/man1/oinkmaster.1.gz
 
 PORTDOCS=	README
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},g' \
-		-e 's,"tPf","tf",' \
-		${WRKSRC}/oinkmaster.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/oinkmaster.pl ${STAGEDIR}${PREFIX}/bin/oinkmaster

@@ -22,8 +22,9 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	${PORTVERSION}.txt
 
 OPTIONS_DEFINE=	READLINE RLTTYTTER
 OPTIONS_DEFAULT=READLINE
@@ -46,9 +47,6 @@ do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTVERSION}.txt ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/license.txt ${WRKSRC}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^\#!/usr/bin/perl|\#!${PERL}|' ${WRKSRC}/${PORTVERSION}.txt
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTVERSION}.txt ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

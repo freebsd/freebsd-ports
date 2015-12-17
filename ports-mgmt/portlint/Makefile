@@ -17,7 +17,8 @@ LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/src
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	*.pl
 USE_PERL5=	run
 
 SRC=		${.CURDIR}/src
@@ -29,13 +30,8 @@ PORTEXAMPLES=	portlintgrep
 
 OPTIONS_DEFINE=	EXAMPLES
 
-pre-patch:
-	@${CP} -R ${SRC} ${WRKDIR}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
-		${WRKSRC}/portlint.pl \
-		${WRKSRC}/portlintgrep.pl
+do-extract:
+	@${CP} -R ${SRC}/ ${WRKSRC}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/portlint.pl \

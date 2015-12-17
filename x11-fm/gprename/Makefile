@@ -21,15 +21,14 @@ RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 WRKSRC=		${WRKDIR}/${PORTNAME}/trunk
 
 USE_PERL5=	run
-USES=		gettext perl5 tar:bzip2
+USES=		gettext perl5 tar:bzip2 shebangfix
+SHEBANG_FILES=	bin/gprename
 NO_BUILD=	yes
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/build
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^#!/s|/.*|${PERL}|' ${WRKSRC}/bin/gprename
 	@${REINPLACE_CMD} -e \
 		's|/usr/local|${PREFIX}| ; \
 		 s|(DESTDIR)|(DESTDIR)${PREFIX}| ; \

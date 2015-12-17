@@ -12,7 +12,8 @@ COMMENT=	Tool to view and manage a qmail queue
 
 LICENSE=	GPLv2
 
-USES=		qmail:run perl5 tar:bzip2
+USES=		qmail:run perl5 tar:bzip2 shebangfix
+SHEBANG_FILES=	qmHandle
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -22,8 +23,7 @@ PORTDOCS=	HISTORY README
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,^#!/usr/bin/perl,#!${PERL},g' \
-			  -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 			  -e '/^##* *USER *CONFIGURATION *BEGIN *##*$$/,/^##* *USER *CONFIGURATION *END *##*$$/s/^\(#*\)my/\1our/g' \
 		${WRKSRC}/qmHandle
 	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${FILESDIR}/qmHandle.conf.in > \

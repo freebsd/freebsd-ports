@@ -1,11 +1,5 @@
 --- man.cgi.orig	Wed Aug 13 01:19:18 1997
 +++ man.cgi	Sat Sep 30 00:46:55 2000
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/perl5.00503
- ##---------------------------------------------------------------------------##
- ##  File:
- ##      @(#) man.cgi 1.2 97/08/12 12:58:26 @(#)
 @@ -59,8 +59,8 @@
  ##  systems.  If using Tom Christiansen's Perl man program, than
  ##  define use "".

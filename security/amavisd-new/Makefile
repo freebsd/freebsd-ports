@@ -25,7 +25,8 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 
 USES=		perl5 shebangfix tar:xz
 USE_PERL5=	run
-SHEBANG_FILES=	amavisd-agent amavisd-nanny amavisd-release p0f-analyzer.pl
+SHEBANG_FILES=	amavisd-agent amavisd-nanny amavisd-release p0f-analyzer.pl \
+		amavisd-snmp-subagent amavisd
 
 NO_BUILD=	yes
 
@@ -234,11 +235,10 @@ post-patch:
 	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-agent
 	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-nanny
 	@${REINPLACE_CMD} -e "s|/var/amavis/db|${AMAVISDIR}/db|" \
-			-e "s|/usr/bin/perl|${PERL}|" ${WRKSRC}/amavisd-snmp-subagent
+			 ${WRKSRC}/amavisd-snmp-subagent
 	@${REINPLACE_CMD} "s|/var/amavis/amavisd.sock|${AMAVISDIR}/amavisd.sock|" \
 			${WRKSRC}/amavisd-release
 	@${REINPLACE_CMD} -e "s|/etc/amavisd.conf|${PREFIX}/etc/amavisd.conf|" \
-				-e "s|/usr/bin/perl|${PERL}|" \
 				-e "s|/var/amavis|${AMAVISDIR}|g" \
 				-e 's|$$localhost_name = .localhost.;|$$localhost_name = $$myhostname;|' \
 			${WRKSRC}/amavisd
