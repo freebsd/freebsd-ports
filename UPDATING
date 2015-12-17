@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151217:
+  AFFECTS: users of security/tor, security/tor-devel
+  AUTHOR: amdmi3
+
+  Tor rc.d script no longer overrides or forces logfile configuration,
+  you now need to setup logging by hand. To preserve old behavior, add
+  the following line to /usr/local/etc/tor/torrc:
+
+    Log notice file /var/log/tor
+
 20151215:
   AFFECTS: All users of www/node
   AUTHOR: koobs
