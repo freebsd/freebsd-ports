@@ -12,8 +12,6 @@ COMMENT=	Tools to access CP/M disks and disk images
 
 LICENSE=	GPLv3
 
-BROKEN=		unfetchable
-
 USES=	desthack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--bindir=${STAGEDIR}${PREFIX}/sbin \
