@@ -1,6 +1,5 @@
 bin/qlabels
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%DATADIR%%/templates/avery-iso-templates.xml
 %%DATADIR%%/templates/avery-other-templates.xml
 %%DATADIR%%/templates/avery-us-templates.xml
