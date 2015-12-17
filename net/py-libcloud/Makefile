@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcloud
-PORTVERSION=	0.19.0
+PORTVERSION=	0.20.0
 CATEGORIES=	net python
 MASTER_SITES=	APACHE/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,8 @@ COMMENT=	Standard client library for many popular cloud providers
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NO_ARCH=	yes
 
 USES=		cpe python tar:bzip2
 USE_PYTHON=	distutils autoplist
