@@ -123,10 +123,4 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
 
-.if ${OPSYS} == DragonFly
-	${CP} ${WRKSRC}/cmake/os/FreeBSD.cmake \
-		${WRKSRC}/cmake/os/DragonFly.cmake
-	${MV} ${WRKSRC}/storage/tokudb ${WRKSRC}/skip-tokudb
-.endif
-
 .include <bsd.port.post.mk>
