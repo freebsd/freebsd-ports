@@ -2,19 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	rpm2cpio
-PORTVERSION=	1.3
-PORTREVISION=	3
+PORTVERSION=	1.4
 CATEGORIES=	archivers
 MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	ak@FreeBSD.org
-COMMENT=	Convert .rpm files for extraction with /usr/bin/cpio, needs just perl
+COMMENT=	Convert .rpm files to cpio format
 
 NO_WRKSUBDIR=	yes
 
-USES=		perl5 shebangfix
-SHEBANG_FILES=	${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 
@@ -25,6 +22,7 @@ do-extract:
 	@${CP} ${FILESDIR}/${PORTNAME} ${WRKSRC}/${PORTNAME}
 
 do-install:
+# Installed as rpm2cpio.pl to not break existing scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}.pl
 
 .include <bsd.port.mk>
