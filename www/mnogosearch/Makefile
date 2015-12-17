@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mnogosearch
-PORTVERSION=	3.4.0
-PORTREVISION=	4
+PORTVERSION=	3.4.1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
