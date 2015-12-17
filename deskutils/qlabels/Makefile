@@ -12,18 +12,21 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Labels and business cards creating
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BROKEN=		unfetchable
 
 USES=		qmake tar:bzip2
 USE_QT4=	xml gui corelib uic_build moc_build rcc_build
 WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
 
-DESKTOP_ENTRIES=	"qLabels" \
-			"${COMMENT}" \
-			"" \
-			"qlabels" \
-			"Office;Qt;" \
-			"true"
+DESKTOP_ENTRIES="qLabels" \
+		"" \
+		"" \
+		"qlabels" \
+		"Office;Qt;" \
+		true
 
 OPTIONS_DEFINE=	DOCS
 
@@ -33,9 +36,8 @@ post-patch:
 		${WRKSRC}/lib/templates.cpp \
 		${WRKSRC}/lib/papers.cpp
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Changelog ${WRKSRC}/LICENSE \
-		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changelog ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
