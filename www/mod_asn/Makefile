@@ -17,8 +17,6 @@ USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 MANUAL_PACKAGE_BUILD=	devel/apr1 with pgsql option required
 
-.include <bsd.port.pre.mk>
-
 pre-build:
 	@[ -r ${LOCALBASE}/lib/apr-util-1/apr_dbd_pgsql.so ] || (${ECHO_MSG} "APR util with PostgreSQL required."; ${FALSE})
 
@@ -29,4 +27,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/asn.sql ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/mod_asn.conf ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
