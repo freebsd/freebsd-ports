@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1fbd6db1-a4e4-11e5-b864-14dae9d210b8">
+    <topic>py-amf -- input sanitization errors</topic>
+    <affects>
+      <package>
+	<name>py27-amf</name>
+	<name>py32-amf</name>
+	<name>py33-amf</name>
+	<name>py34-amf</name>
+	<range><lt>0.8.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2015-011.html">
+	  <p>A specially crafted AMF payload, containing malicious
+	    references to XML external entities, can be used to trigger Denial of
+	    Service (DoS) conditions or arbitrarily return the contents of files
+	    that are accessible with the running application privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ocert.org/advisories/ocert-2015-011.html</url>
+      <cvename>CVE-2015-8549</cvename>
+    </references>
+    <dates>
+     <discovery>2015-12-01</discovery>
+     <entry>2015-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a9f60ce8-a4e0-11e5-b864-14dae9d210b8">
     <topic>joomla -- multiple vulnerabilities</topic>
     <affects>
