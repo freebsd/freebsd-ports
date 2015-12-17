@@ -65,6 +65,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Template/Tiny.pm
 %%SITE_PERL%%/Dancer2/Test.pm
 %%SITE_PERL%%/Dancer2/Tutorial.pod
+%%SITE_PERL%%/auto/share/dist/Dancer2/skel/.dancer
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/MANIFEST.SKIP
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/Makefile.PL
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/bin/+app.psgi
