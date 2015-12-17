@@ -5,12 +5,11 @@ PORTNAME=	potrace
 PORTVERSION=	1.11
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	http://sourceforge.net/projects/potrace/files/${PORTVERSION}/
 
 MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	Transforms bitmaps into vector graphics
 
-BROKEN=		unfetchable
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/potrace bin/mkbitmap \
