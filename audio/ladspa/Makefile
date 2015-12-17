@@ -3,6 +3,7 @@
 
 PORTNAME=	ladspa
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ladspa.org/download/
 DISTNAME=	ladspa_sdk_${PORTVERSION}
@@ -29,13 +30,13 @@ post-patch:
 		${WRKSRC}/src/makefile
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/src/ladspa.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/src/ladspa.h ${STAGEDIR}${PREFIX}/include
 .for file in ${PROGRAM_FILES}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	@${MKDIR} ${PLUGIN_DIR}
 .for file in ${PLUGIN_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/plugins/${file} ${PLUGIN_DIR}
+	${INSTALL_LIB} ${WRKSRC}/plugins/${file} ${PLUGIN_DIR}
 .endfor
 
 .include <bsd.port.mk>
