@@ -4,6 +4,7 @@ PORTNAME=	rspamd
 PORTVERSION=	1.1.0.a.17122015
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system dev version
