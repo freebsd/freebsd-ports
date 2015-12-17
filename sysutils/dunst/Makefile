@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
 		libpango-1.0.so:${PORTSDIR}/x11-toolkits/pango \
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	knopwob
-USES=		gmake pkgconfig:build perl5
+USES=		execinfo gmake pkgconfig:build perl5
 USE_GNOME=	glib20
 USE_XORG=	xext xft xinerama xscrnsaver
 MAKE_ARGS+=	MANPREFIX="${PREFIX}/man"
