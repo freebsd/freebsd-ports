@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a9f60ce8-a4e0-11e5-b864-14dae9d210b8">
+    <topic>joomla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><lt>3.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Joomla! reports:</p>
+	<blockquote cite="https://www.joomla.org/announcements/release-news/5641-joomla-3-4-6-released.html">
+	  <p>Joomla! 3.4.6 is now available. This is a security release
+	    for the 3.x series of Joomla which addresses a critical security
+	    vulnerability and 4 low level security vulnerabilities. We strongly
+	    recommend that you update your sites immediately.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.joomla.org/announcements/release-news/5641-joomla-3-4-6-released.html</url>
+      <cvename>CVE-2015-8562</cvename>
+      <cvename>CVE-2015-8563</cvename>
+      <cvename>CVE-2015-8564</cvename>
+      <cvename>CVE-2015-8565</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-14</discovery>
+      <entry>2015-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8ec4db7-a398-11e5-85e9-14dae9d210b8">
     <topic>bind -- multiple vulnerabilities</topic>
     <affects>
