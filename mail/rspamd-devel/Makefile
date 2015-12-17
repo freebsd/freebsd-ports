@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.0.10
-PORTREVISION=	1
+PORTVERSION=	1.1.0.a.17122015
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
 MAINTAINER=	vsevolod@FreeBSD.org
-COMMENT=	Fast spam filtering system
+COMMENT=	Fast spam filtering system dev version
 
 LICENSE=	BSD2CLAUSE
 
@@ -17,7 +16,9 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
 		libhiredis.so:${PORTSDIR}/databases/hiredis
 
+RSPAMD_VERSION=	1.1.0
 CONFLICTS_INSTALL=	rspamd
+WRKSRC=		${WRKDIR}/${PORTNAME}-${RSPAMD_VERSION}
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR
 GPERF_DESC=		google perf-tools profiling
@@ -26,7 +27,7 @@ REDIRECTOR_DESC=	Install HTTP redirector
 USE_RC_SUBR=	rspamd
 
 PLIST_SUB+=	ETCDIR=etc/rspamd \
-		RSPAMDVERSION=${PORTVERSION}
+		RSPAMDVERSION=${RSPAMD_VERSION}
 CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DLOGDIR=/var/log/rspamd \
 		-DDBDIR=/var/db/rspamd \

@@ -1,0 +1,100 @@
+bin/rspamd-%%RSPAMDVERSION%%
+bin/rspamd
+bin/rspamadm-%%RSPAMDVERSION%%
+bin/rspamadm
+bin/rspamc-%%RSPAMDVERSION%%
+bin/rspamc
+%%REDIRECTOR%%bin/rspamd-redirector
+@sample %%ETCDIR%%/2tld.inc.sample
+@sample %%ETCDIR%%/common.conf.sample
+@sample %%ETCDIR%%/composites.conf.sample
+@sample %%ETCDIR%%/dmarc_whitelist.inc.sample
+@sample %%ETCDIR%%/logging.inc.sample
+@sample %%ETCDIR%%/metrics.conf.sample
+@sample %%ETCDIR%%/modules.conf.sample
+%%ETCDIR%%/modules.d/chartable.conf
+%%ETCDIR%%/modules.d/dkim.conf
+%%ETCDIR%%/modules.d/dmarc.conf
+%%ETCDIR%%/modules.d/emails.conf
+%%ETCDIR%%/modules.d/forged_recipients.conf
+%%ETCDIR%%/modules.d/fuzzy_check.conf
+%%ETCDIR%%/modules.d/hfilter.conf
+%%ETCDIR%%/modules.d/ip_score.conf
+%%ETCDIR%%/modules.d/maillist.conf
+%%ETCDIR%%/modules.d/multimap.conf
+%%ETCDIR%%/modules.d/once_received.conf
+%%ETCDIR%%/modules.d/phishing.conf
+%%ETCDIR%%/modules.d/ratelimit.conf
+%%ETCDIR%%/modules.d/regexp.conf
+%%ETCDIR%%/modules.d/spf.conf
+%%ETCDIR%%/modules.d/surbl.conf
+%%ETCDIR%%/modules.d/whitelist.conf
+@sample %%ETCDIR%%/options.inc.sample
+@sample %%ETCDIR%%/rspamd.conf.sample
+@sample %%ETCDIR%%/spf_dkim_whitelist.inc.sample
+@sample %%ETCDIR%%/statistic.conf.sample
+@sample %%ETCDIR%%/surbl-whitelist.inc.sample
+@sample %%ETCDIR%%/worker-controller.inc.sample
+@sample %%ETCDIR%%/worker-normal.inc.sample
+lib/rspamd/librspamd-actrie.so
+%%DATADIR%%/effective_tld_names.dat
+%%DATADIR%%/lua/dmarc.lua
+%%DATADIR%%/lua/emails.lua
+%%DATADIR%%/lua/forged_recipients.lua
+%%DATADIR%%/lua/fun.lua
+%%DATADIR%%/lua/hfilter.lua
+%%DATADIR%%/lua/ip_score.lua
+%%DATADIR%%/lua/maillist.lua
+%%DATADIR%%/lua/multimap.lua
+%%DATADIR%%/lua/once_received.lua
+%%DATADIR%%/lua/phishing.lua
+%%DATADIR%%/lua/ratelimit.lua
+%%DATADIR%%/lua/rbl.lua
+%%DATADIR%%/lua/settings.lua
+%%DATADIR%%/lua/spamassassin.lua
+%%DATADIR%%/lua/trie.lua
+%%DATADIR%%/lua/whitelist.lua
+%%DATADIR%%/rules/html.lua
+%%DATADIR%%/rules/http_headers.lua
+%%DATADIR%%/rules/misc.lua
+%%DATADIR%%/rules/regexp/drugs.lua
+%%DATADIR%%/rules/regexp/fraud.lua
+%%DATADIR%%/rules/regexp/headers.lua
+%%DATADIR%%/rules/regexp/lotto.lua
+%%DATADIR%%/rules/rspamd.classifiers.lua
+%%DATADIR%%/rules/rspamd.lua
+%%DATADIR%%/www/README.md
+%%DATADIR%%/www/css/datatables.min.css
+%%DATADIR%%/www/css/glyphicons-halflings-regular.woff
+%%DATADIR%%/www/css/glyphicons-halflings-regular.woff2
+%%DATADIR%%/www/css/rspamd.css
+%%DATADIR%%/www/favicon.ico
+%%DATADIR%%/www/img/asc.png
+%%DATADIR%%/www/img/desc.png
+%%DATADIR%%/www/img/spinner.gif
+%%DATADIR%%/www/img/spinner.png
+%%DATADIR%%/www/index.html
+%%DATADIR%%/www/js/d3pie.min.js
+%%DATADIR%%/www/js/datatables.min.js
+%%DATADIR%%/www/js/rspamd.js
+%%DATADIR%%/www/plugins.txt
+%%DATADIR%%/www/react-index.html
+%%DATADIR%%/www/src/Gruntfile.js
+%%DATADIR%%/www/src/common.js
+%%DATADIR%%/www/src/components/app.jsx
+%%DATADIR%%/www/src/components/dashboard.jsx
+%%DATADIR%%/www/src/components/login.jsx
+%%DATADIR%%/www/src/components/piechart.jsx
+%%DATADIR%%/www/src/components/rrdgraph.jsx
+%%DATADIR%%/www/src/package.json
+man/man1/rspamadm.1.gz
+man/man1/rspamc.1.gz
+man/man8/rspamd.8.gz
+@dir %%EXAMPLESDIR%%
+@owner nobody
+@group nobody
+@dir /var/db/rspamd
+@dir /var/log/rspamd
+@dir /var/run/rspamd
+@owner
+@group
