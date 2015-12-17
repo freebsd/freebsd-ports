@@ -55,7 +55,9 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--without-x \
 		--disable-gtk \
 		--with-drivers=""
-CPPFLAGS+=	-DUPD_SIGNAL=0 -I. \
+CPPFLAGS+=	-DUPD_SIGNAL=0 \
+		-DJBIG_NO_MEMENTO \
+		-I. \
 		-I${WRKSRC}/jasper/src/libjasper/include \
 		-I${LOCALBASE}/include/freetype2 \
 		-I${LOCALBASE}/include
