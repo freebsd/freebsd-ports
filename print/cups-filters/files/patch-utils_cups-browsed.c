@@ -1,4 +1,4 @@
---- utils/cups-browsed.c.orig	2014-11-27 12:00:47 UTC
+--- utils/cups-browsed.c.orig	2015-10-27 15:04:51 UTC
 +++ utils/cups-browsed.c
 @@ -23,16 +23,16 @@
  
@@ -16,6 +16,6 @@
  #include <stdio.h>
  #include <sys/stat.h>
 +#include <ifaddrs.h>
- #include <assert.h>
  #include <stdlib.h>
  #include <time.h>
+ #include <signal.h>
