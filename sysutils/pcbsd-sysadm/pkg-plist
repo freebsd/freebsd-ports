@@ -1,0 +1,10 @@
+bin/sysadm
+bin/sysadm-server
+include/sysadm-general.h
+include/sysadm-global.h
+include/sysadm-lifepreserver.h
+include/sysadm-network.h
+%%QT_LIBDIR%%/%%QT_LIBDIR%%sysadm.so
+%%QT_LIBDIR%%/%%QT_LIBDIR%%sysadm.so.1
+%%QT_LIBDIR%%/%%QT_LIBDIR%%sysadm.so.1.0
+%%QT_LIBDIR%%/%%QT_LIBDIR%%sysadm.so.1.0.0
