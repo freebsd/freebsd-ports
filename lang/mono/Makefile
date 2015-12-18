@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	mono
-PORTVERSION=	4.2.1.102
+PORTVERSION=	4.2.1.124
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
-PATCHFILES=	#
+PATCHFILES=	932359f3d627da13408350b1172ceb63c30f6327.diff
 PATCH_SITES=	https://github.com/mono/mono/commit/
 PATCH_DIST_STRIP=-p1
 
