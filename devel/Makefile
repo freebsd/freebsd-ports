@@ -5064,7 +5064,6 @@
     SUBDIR += rubygem-tilt1
     SUBDIR += rubygem-timers
     SUBDIR += rubygem-tins
-    SUBDIR += rubygem-tins0
     SUBDIR += rubygem-titlecase
     SUBDIR += rubygem-toml
     SUBDIR += rubygem-transaction-simple
