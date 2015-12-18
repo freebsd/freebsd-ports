@@ -95,7 +95,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/sbin/nsd-checkzone \
 		${STAGEDIR}${PREFIX}/sbin/nsd-control
 
-post-install-MUNIN_PLUGINS-on:
+post-install-MUNIN_PLUGIN-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/munin/plugins
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/nsd_munin_ \
 		${STAGEDIR}${PREFIX}/share/munin/plugins
