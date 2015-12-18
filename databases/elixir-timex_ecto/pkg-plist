@@ -1,3 +1,4 @@
+lib/elixir/lib/timex_ecto/ebin/Elixir.Ecto.DataType.Timex.DateTime.beam
 lib/elixir/lib/timex_ecto/ebin/Elixir.Timex.Ecto.Date.beam
 lib/elixir/lib/timex_ecto/ebin/Elixir.Timex.Ecto.DateTime.beam
 lib/elixir/lib/timex_ecto/ebin/Elixir.Timex.Ecto.DateTimeWithTimezone.beam
@@ -5,6 +6,7 @@ lib/elixir/lib/timex_ecto/ebin/Elixir.Timex.Ecto.Time.beam
 lib/elixir/lib/timex_ecto/ebin/Elixir.Timex.Ecto.Timestamps.beam
 lib/elixir/lib/timex_ecto/ebin/Elixir.Timex.Ecto.beam
 lib/elixir/lib/timex_ecto/ebin/timex_ecto.app
+lib/elixir/lib/timex_ecto/lib/datatype.ex
 lib/elixir/lib/timex_ecto/lib/model.ex
 lib/elixir/lib/timex_ecto/lib/timex_ecto.ex
 lib/elixir/lib/timex_ecto/lib/types/date.ex
