@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bb7d4791-a5bf-11e5-a0e5-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>47.0.2526.106</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update_15.html">
+	  <p>2 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[569486] CVE-2015-6792: Fixes from internal audits and
+	      fuzzing.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6792</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update_15.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-16</discovery>
+      <entry>2015-12-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7329938b-a4e6-11e5-b864-14dae9d210b8">
     <topic>cups-filters -- code execution</topic>
     <affects>
