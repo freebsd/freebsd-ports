@@ -20,7 +20,7 @@ USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_SDL=	sdl mixer net
 USE_XORG=	x11
-USES=		pkgconfig python:build qmake:outsource
+USES=		execinfo pkgconfig python:build qmake:outsource
 USE_QT4=	corelib network opengl moc_build
 QMAKE_SOURCE_PATH=	${WRKSRC}/doomsday
 QMAKE_ARGS+=	QMAKE_LFLAGS+="-Wl,--export-dynamic" \
@@ -38,11 +38,6 @@ OPENAL_QMAKE_OFF=	CONFIG+=deng_noopenal
 
 PORTSCOUT=	limit:^\d+\.\d+\.\d+$$
 
-.include <bsd.port.pre.mk>
-.if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} < 1000052)
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's,share/man,man,' \
 		${PATCH_WRKSRC}/doomsday/client/client.pro \
@@ -53,4 +48,4 @@ post-patch:
 	# Removing three non ascii bytes
 	@${REINPLACE_CMD} '1s,^...,,' ${WRKSRC}/doomsday/client/src/client/cl_sound.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
