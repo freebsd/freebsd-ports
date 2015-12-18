@@ -32,6 +32,7 @@
     SUBDIR += R-cran-dplyr
     SUBDIR += R-cran-forecast
     SUBDIR += R-cran-fracdiff
+    SUBDIR += R-cran-geepack
     SUBDIR += R-cran-gpclib
     SUBDIR += R-cran-gss
     SUBDIR += R-cran-gtable
