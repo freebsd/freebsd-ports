@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	skrooge
-PORTVERSION=	1.10.0
+PORTVERSION=	1.12.5
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx \
 		libgrantlee_gui.so:${PORTSDIR}/devel/grantlee \
 		libkactivities.so:${PORTSDIR}/x11/kactivities
 
-USES=		cmake:outsource gettext shared-mime-info tar:bzip2
+USES=		cmake:outsource gettext shared-mime-info tar:xz
 USE_SQLITE=	yes
 USE_QT4=	qmake_build moc_build uic_build rcc_build designer_build \
 		corelib dbus gui script sql webkit xml sql-sqlite3_run
