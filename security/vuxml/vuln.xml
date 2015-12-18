@@ -8465,6 +8465,10 @@ Notes:
     <topic>php-phar -- multiple vulnerabilities</topic>
     <affects>
       <package>
+	<name>php56-phar</name>
+	<range><lt>5.6.11</lt></range>
+      </package>
+      <package>
 	<name>php55-phar</name>
 	<range><lt>5.5.27</lt></range>
       </package>
@@ -8494,6 +8498,7 @@ Notes:
     <dates>
       <discovery>2015-06-24</discovery>
       <entry>2015-07-18</entry>
+      <modified>2015-12-18</modified>
     </dates>
   </vuln>
 
