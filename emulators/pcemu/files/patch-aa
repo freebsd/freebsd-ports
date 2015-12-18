@@ -30,7 +30,7 @@
   # faults. So far I have only needed to do this when compiling under Linux
 ***************
 *** 86,88 ****
---- 91,118 ----
+--- 91,117 ----
   
   clean:
   	rm $(PROGNAME) *.o
@@ -45,7 +45,7 @@
 + 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/font \
 + 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/C \
 + 		${STAGEDIR}/${LOCALPREFIX}/bin
-+ 	install -c -s -o bin -g bin pcemu ${STAGEDIR}/${LOCALPREFIX}/bin/
++ 	install -c -s pcemu ${STAGEDIR}/${LOCALPREFIX}/bin/
 + 	install -c -m 666 bootstrap/display.bin \
 + 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/DriveA
 + 	install -c -m 644 BUGS CHANGES README TODO  bootstrap/README.FreeBSD \
@@ -55,7 +55,6 @@
 + 	gzip --best < report.ps > ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/doc/report.ps.gz
 + 	rm -f ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/font/vga.pcf.Z
 + 	bdftopcf vga.bdf | compress > ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/font/vga.pcf.Z
-+ 	mkfontdir ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/font
 + 	install -c -m 644 programs/vga50.com programs/config.sys \
 + 		programs/dumpdisk.exe programs/lredir.exe programs/emufs.sys \
 + 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/C
