@@ -8056,3 +8056,6 @@ net/py-pysphere|net/py-pyvmomi|2015-12-15|Has expired: No longer maintained, ple
 ftp/ftpcube||2015-12-15|Has expired: No releases for 8+ years, no supporting newer wxWidget
 astro/libroadnav||2015-12-15|Has expired: No releases for 8+ years, no supporting newer wxWidget
 astro/roadnav||2015-12-15|Has expired: No releases for 8+ years, no supporting newer wxWidget
+www/joomla15||2015-12-18|Has expired: Joomla 1.5.x reached its End of Life in September 2012. Please update to a current version
+www/joomla25||2015-12-18|Has expired: Joomla 2.5.x reached its End of Life in December 2014. Please update to a current version
+devel/rubygem-tins0||2015-12-18|Has expired: not used by other ports anymore
