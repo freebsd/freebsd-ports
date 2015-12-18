@@ -29,6 +29,7 @@
     SUBDIR += R-cran-coda
     SUBDIR += R-cran-deldir
     SUBDIR += R-cran-dlmodeler
+    SUBDIR += R-cran-dplyr
     SUBDIR += R-cran-forecast
     SUBDIR += R-cran-fracdiff
     SUBDIR += R-cran-gpclib
