@@ -73,6 +73,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_command_assembler.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_connection_helper_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_connection_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_control_main.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_ctl_misc.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_ctl_usage.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_dead_letter.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_diagnostics.beam
