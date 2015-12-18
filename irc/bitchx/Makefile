@@ -3,6 +3,7 @@
 
 PORTNAME=	bitchx
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES+=	irc
 MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
@@ -35,7 +36,7 @@ OPTIONS_DEFINE=	DOCS HEBREW IPV6 LATIN PLUGINS SSL TOGGLES
 LATIN_DESC=	Recommended for ISO-8859-1 display
 PLUGINS_DESC=	Build a handful of BitchX plugins
 HEBREW_DESC=	Add support for hebrew language
-TOGGLES_DESC=	Disable away,kick_ops,auto_rejoin
+TOGGLES_DESC=	Disable annoyance toggles
 OPTIONS_DEFAULT=	PLUGINS SSL
 
 IPV6_CONFIGURE_ENABLE=	ipv6
@@ -45,7 +46,7 @@ SSL_USE=	openssl=yes
 
 PLUGINS_CONFIGURE_WITH=		plugins="${PLUGIN_LIST:C/\$$/,/g}"
 
-PLUGIN_LIST=	abot acro aim arcfour autocycle blowfish cavlink cdrom encrypt \
+PLUGIN_LIST=	abot acro arcfour autocycle blowfish cavlink cdrom encrypt \
 		europa fserv hint nap nicklist pkga possum qbx qmail wavplay
 .include <bsd.port.options.mk>
 
