@@ -18,7 +18,7 @@ BUILD_DEPENDS=	nspr>=4.10.10:${PORTSDIR}/devel/nspr \
 		nss>=3.19.4:${PORTSDIR}/security/nss \
 		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
 		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
-		harfbuzz>=0.9.34:${PORTSDIR}/print/harfbuzz \
+		harfbuzz>=0.9.42:${PORTSDIR}/print/harfbuzz \
 		graphite2>=1.2.4:${PORTSDIR}/graphics/graphite2 \
 		libvorbis>=1.3.5,3:${PORTSDIR}/audio/libvorbis \
 		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
