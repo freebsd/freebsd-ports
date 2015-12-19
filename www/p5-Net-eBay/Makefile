@@ -36,7 +36,7 @@ SHEBANG_FILES=	examples/*.pl
 
 PORTEXAMPLES=	*
 
-post-patch:
+post-extract:
 	@${MKDIR} ${WRKSRC}/examples/
 	@${MV} ${WRKSRC}/*.pl ${WRKSRC}/examples/
 
