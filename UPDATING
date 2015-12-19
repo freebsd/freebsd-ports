@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151219:
+  AFFECTS: users of net/samba4, net/samba41
+  AUTHOR: timur@FreeBSD.org
+
+  Given version of Samba were marked as deprecated. Please, consider to upgrade.
+
+  Samba4 was giving wrong builds with recent version of p5-Parse-Pidl. It was
+  converted to use bundled version instead and to conflict with the given package.
+  If you still intend to build net/samba4 - remove p5-Parse-Pidle first.
+
 20151217:
   AFFECTS: users of security/tor, security/tor-devel
   AUTHOR: amdmi3
