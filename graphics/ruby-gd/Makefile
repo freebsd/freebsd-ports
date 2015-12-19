@@ -5,7 +5,8 @@ PORTNAME=	gd
 PORTVERSION=	0.8.0
 PORTREVISION=	5
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://www.daifukuya.com/archive/kagemai/lib/
+MASTER_SITES=	ftp://ftp.jp.vim.org/pub/distfiles/ruby/ \
+		http://www.mmnt.net/db/0/8/ftp.jp.vim.org/pub/distfiles/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	${PKGNAMESUFFIX_XPM}
 DISTNAME=	ruby-GD-0.7.4
@@ -14,7 +15,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ruby extension library to use Thomas Boutell's gd library
 
-BROKEN=		unfetchable
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgd.so:${PORTSDIR}/graphics/gd
 
