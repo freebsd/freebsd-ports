@@ -10,19 +10,19 @@ MASTER_SITES=	http://www.lcdf.org/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reminds you to take wrist breaks
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # only
 
 GNU_CONFIGURE=	yes
-
 USE_XORG=	ice sm x11 xau xdmcp xext xinerama
 
 PLIST_FILES=	bin/xwrits \
 		man/man1/xwrits.1.gz
 
 PORTDOCS=	GESTURES NEWS README TODO
+
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
