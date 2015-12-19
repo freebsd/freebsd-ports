@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}4
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		2
+PORTREVISION?=		3
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
@@ -13,7 +13,10 @@ COMMENT?=		Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=		GPLv3
 
-CONFLICTS?=		*samba3[2-6]-3.* samba4[1-3]-4.[1-3].*
+CONFLICTS?=		*samba3[2-6]-3.* samba4[1-3]-4.[1-3].* p5-Parse-Pidl-[0-9]*
+
+DEPRECATED=		not supported by the upstream
+EXPIRATION_DATE=	2016-03-01
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
@@ -82,8 +85,6 @@ LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
 # NFS4 ACL glue
 LIB_DEPENDS+=		libsunacl.so:${PORTSDIR}/sysutils/libsunacl
 # External Samba dependencies
-# IDL compiler
-BUILD_DEPENDS+=		p5-Parse-Pidl>=4.0.0:${PORTSDIR}/devel/p5-Parse-Pidl
 #
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:${PORTSDIR}/dns/py-dnspython
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:${PORTSDIR}/dns/py-dnspython
@@ -448,8 +449,8 @@ PORTDOCS=		README.FreeBSD
 
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
-post-extract:
-			@${RM} -rf ${WRKSRC}/pidl
+#post-extract:
+#			@${RM} -rf ${WRKSRC}/pidl
 
 post-patch:
 			@${REINPLACE_CMD} -e 's|$${PKGCONFIGDIR}|${PKGCONFIGDIR}|g' \
@@ -493,11 +494,11 @@ pre-build:
 			source4/utils/man/ntlm_auth4.1 \
 			source4/utils/man/oLschema2ldif.1
 			-@${MKDIR} `dirname ${BUILD_WRKSRC}/bin/default/${man}`
-			@${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
+			${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
 .	endfor
 			-@${MKDIR} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
 .	for man in ${SAMBA_MAN1} ${SAMBA_MAN5} ${SAMBA_MAN7} ${SAMBA_MAN8}
-			-@${INSTALL_MAN} ${BUILD_WRKSRC}/docs/manpages/${man} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
+			-${INSTALL_MAN} ${BUILD_WRKSRC}/docs/manpages/${man} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
 .	endfor
 .endif
 
@@ -506,7 +507,7 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 			@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for doc in ${PORTDOCS}
-			@${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
+			${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
 .	endfor
 .endif
 # Run post-install script
