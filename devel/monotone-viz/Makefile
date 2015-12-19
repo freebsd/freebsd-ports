@@ -13,6 +13,8 @@ COMMENT=	Visual interface for Monotone VCS with revision graphs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
 		mtn:${PORTSDIR}/devel/monotone \
