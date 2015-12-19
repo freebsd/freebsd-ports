@@ -11,9 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but powerful tool for parsing
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-OPTIONS_DEFINE=	BOEHM DOCS
-BOEHM_DESC=	Boehm garbage collector support
+BROKEN_ia64=	does not build on ia64
 
 WRKSRC=		${WRKDIR}/d
 
@@ -26,20 +26,14 @@ PLIST_FILES=	bin/make_dparser include/dparse.h include/dparse_tables.h \
 		include/dparse_tree.h include/dsymtab.h lib/${LIBDPARSE} \
 		man/man1/make_dparser.1.gz
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	BOEHM DOCS
+BOEHM_DESC=	Boehm garbage collector support
 
-.if ${PORT_OPTIONS:MBOEHM}
-LIB_DEPENDS+=	libgc.so:${PORTSDIR}/devel/boehm-gc
-MAKE_ARGS+=	D_USE_GC=1 \
-		GC_CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
-LIBDPARSE=	libdparse_gc.a
-.else
-LIBDPARSE=	libdparse.a
-.endif
-
-.if ${ARCH} == "ia64"
-BROKEN=		Does not build on ia64
-.endif
+BOEHM_LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
+BOEHM_MAKE_ARGS=	D_USE_GC=1 \
+			GC_CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
+BOEHM_VARS=		LIBDPARSE=libdparse_gc.a
+BOEHM_VARS_OFF=		LIBDPARSE=libdparse.a
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/make_dparser ${STAGEDIR}${PREFIX}/bin
@@ -49,6 +43,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dparse_tree.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/dsymtab.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/${LIBDPARSE} ${STAGEDIR}${PREFIX}/lib
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
 
