@@ -15,9 +15,11 @@ LICENSE=		GPLv3
 
 CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba42-4.2.*
 
+EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
+
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.3.1
+SAMBA4_VERSION=		4.3.3
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -86,7 +88,7 @@ RUN_DEPENDS+=		libarchive>=3.1.2:${PORTSDIR}/archivers/libarchive
 # External Samba dependencies
 # IDL compiler
 BUILD_DEPENDS+=		p5-Parse-Pidl>=4.3.1:${PORTSDIR}/devel/p5-Parse-Pidl
-# 
+#
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:${PORTSDIR}/dns/py-dnspython
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:${PORTSDIR}/dns/py-dnspython
 PLIST_SUB+=		PY_DNSPYTHON="@comment "
@@ -103,8 +105,8 @@ BUILD_DEPENDS+=		tdb>=1.3.8:${PORTSDIR}/databases/tdb
 RUN_DEPENDS+=		tdb>=1.3.8:${PORTSDIR}/databases/tdb
 SAMBA4_BUNDLED_LIBS+=	!tdb
 # ldb
-BUILD_DEPENDS+=		ldb>=1.1.23:${PORTSDIR}/databases/ldb
-RUN_DEPENDS+=		ldb>=1.1.23:${PORTSDIR}/databases/ldb
+BUILD_DEPENDS+=		ldb>=1.1.24:${PORTSDIR}/databases/ldb
+RUN_DEPENDS+=		ldb>=1.1.24:${PORTSDIR}/databases/ldb
 SAMBA4_BUNDLED_LIBS+=	!ldb
 # Don't use external libcom_err
 SAMBA4_BUNDLED_LIBS+=	com_err
@@ -170,6 +172,8 @@ SUB_LIST+=		NSUPDATE="@comment "
 .elif ${PORT_OPTIONS:MNSUPDATE}
 RUN_DEPENDS+=		samba-nsupdate:${PORTSDIR}/dns/samba-nsupdate
 SUB_LIST+=		NSUPDATE=""
+.else
+SUB_LIST+=		NSUPDATE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -235,8 +239,10 @@ CONFIGURE_ARGS+=	--without-acl-support
 .if ! ${PORT_OPTIONS:MAD_DC}
 CONFIGURE_ARGS+=	--without-ad-dc
 PLIST_SUB+=		AD_DC="@comment "
+SUB_LIST+=		AD_DC="@comment "
 .else
 PLIST_SUB+=		AD_DC=""
+SUB_LIST+=		AD_DC=""
 .endif
 
 .if ${PORT_OPTIONS:MADS}
@@ -278,16 +284,16 @@ CONFIGURE_ARGS+=	--disable-cups --disable-iprint
 .if ${PORT_OPTIONS:MDNSUPDATE}
 SAMBA_WANT_ADS=		yes
 CONFIGURE_ARGS+=	--with-dnsupdate
+PLIST_SUB+=		DNSUPDATE=""
 .else
 CONFIGURE_ARGS+=	--without-dnsupdate
+PLIST_SUB+=		DNSUPDATE="@comment "
 .endif
 
 # https://bugzilla.samba.org/show_bug.cgi?id=9545
 .if ${PORT_OPTIONS:MFAM}
 USES+=			fam
 CONFIGURE_ARGS+=	--with-fam
-WANT_EXP_MODULES+=	vfs_notify_fam
-SAMBA4_MODULES+=	vfs_notify_fam
 .else
 CONFIGURE_ARGS+=	--without-fam
 .endif
@@ -368,7 +374,7 @@ CONFIGURE_ARGS+=	--with-shared-modules="${SAMBA4_MODULES:Q:C|(\\\\ )+|,|g:S|\\||
 		gpext_security idmap_ad idmap_ldap idmap_nss idmap_passdb idmap_tdb \
 		nss_info_template pdb_ldap pdb_samba_dsdb pdb_smbpasswd pdb_tdbsam \
 		pdb_test pdb_wbc_sam perfcount_test vfs_aio_posix vfs_aio_pthread \
-		vfs_cacheprime vfs_dfs_samba4 vfs_fake_acls vfs_notify_fam \
+		vfs_cacheprime vfs_dfs_samba4 vfs_fake_acls \
 		vfs_shadow_copy_test vfs_skel_opaque vfs_skel_transparent
 .	if !empty(SAMBA4_MODULES) && ${SAMBA4_MODULES:M${module}}
 PLIST_SUB+=		MODULE_${module:tu}=""
@@ -399,7 +405,6 @@ USE_RC_SUBR=		samba_server
 SUB_FILES=		pkg-message README.FreeBSD
 # Make sure that the right version of Python is used by the tools
 # https://bugzilla.samba.org/show_bug.cgi?id=7305
-python_OLD_CMD=		/usr/bin/env python
 SHEBANG_FILES=		${PATCH_WRKSRC}/source4/scripting/bin/*
 # No fancy color error messages
 .if ${COMPILER_TYPE} == "clang"
@@ -432,7 +437,7 @@ SAMBA_MAN8+=		eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
 			vfs_commit.8 vfs_crossrename.8 vfs_default_quota.8 \
 			vfs_dirsort.8 vfs_extd_audit.8 vfs_fake_perms.8 vfs_fileid.8 \
 			vfs_fruit.8 vfs_full_audit.8 vfs_glusterfs.8 vfs_gpfs.8 vfs_media_harmony.8 \
-			vfs_netatalk.8 vfs_notify_fam.8 vfs_prealloc.8 \
+			vfs_netatalk.8 vfs_prealloc.8 \
 			vfs_preopen.8 vfs_readahead.8 vfs_readonly.8 \
 			vfs_recycle.8 vfs_scannedonly.8 vfs_shadow_copy.8 \
 			vfs_shadow_copy2.8 vfs_snapper.8 vfs_smb_traffic_analyzer.8 \
@@ -489,11 +494,11 @@ pre-build:
 			source4/utils/man/ntlm_auth4.1 \
 			source4/utils/man/oLschema2ldif.1
 			-@${MKDIR} `dirname ${BUILD_WRKSRC}/bin/default/${man}`
-			@${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
+			${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
 .	endfor
 			-@${MKDIR} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
 .	for man in ${SAMBA_MAN1} ${SAMBA_MAN5} ${SAMBA_MAN7} ${SAMBA_MAN8}
-			-@${INSTALL_MAN} ${BUILD_WRKSRC}/docs/manpages/${man} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
+			-${INSTALL_MAN} ${BUILD_WRKSRC}/docs/manpages/${man} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
 .	endfor
 .endif
 
@@ -502,7 +507,7 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 			@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for doc in ${PORTDOCS}
-			@${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
+			${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
 .	endfor
 .endif
 # Run post-install script
