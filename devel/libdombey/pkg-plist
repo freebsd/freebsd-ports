@@ -1,4 +1,5 @@
 include/dombey.h
+include/dombeyevents.h
 lib/libdombey.so
 lib/libdombey.so.%%PORTVERSION%%
 lib/libdombeythreads.so
