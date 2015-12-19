@@ -58,6 +58,74 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ef434839-a6a4-11e5-8275-000c292e4fd8">
+    <topic>samba -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>samba36</name>
+	<range><ge>3.6.0</ge><le>3.6.25</le></range>
+      </package>
+      <package>
+	<name>samba4</name>
+	<range><ge>4.0.0</ge><le>4.0.26</le></range>
+      </package>
+      <package>
+	<name>samba41</name>
+	<range><ge>4.1.0</ge><lt>4.1.22</lt></range>
+      </package>
+      <package>
+	<name>samba42</name>
+	<range><ge>4.2.0</ge><lt>4.2.7</lt></range>
+      </package>
+      <package>
+	<name>samba43</name>
+	<range><ge>4.3.0</ge><lt>4.3.3</lt></range>
+      </package>
+      <package>
+	<name>ldb</name>
+	<range><ge>1.0.0</ge><lt>1.1.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba team reports:</p>
+	<blockquote cite="https://www.samba.org/samba/latest_news.html#4.3.3">
+	  <p>[CVE-2015-3223] Malicious request can cause Samba LDAP server to hang, spinning using CPU.</p>
+	  <p>[CVE-2015-5330] Malicious request can cause Samba LDAP server
+	     to return uninitialized memory that should not be part of the reply.</p>
+	  <p>[CVE-2015-5296] Requesting encryption should also request
+	     signing when setting up the connection to protect against man-in-the-middle attacks.</p>
+	  <p>[CVE-2015-5299] A missing access control check in the VFS
+	     shadow_copy2 module could allow unauthorized users to access snapshots.</p>
+	  <p>[CVE-2015-7540] Malicious request can cause Samba LDAP server to return crash.</p>
+	  <p>[CVE-2015-8467] Samba can expose Windows DCs to MS15-096
+	     Denial of service via the creation of multiple machine accounts(The Microsoft issue is CVE-2015-2535).</p>
+	  <p>[CVE-2015-5252] Insufficient symlink verification could allow data access outside share path.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3223</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2015-3223.html</url>
+      <cvename>CVE-2015-5252</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2015-5252.html</url>
+      <cvename>CVE-2015-5296</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2015-5296.html</url>
+      <cvename>CVE-2015-5299</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2015-5299.html</url>
+      <cvename>CVE-2015-5330</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2015-5330.html</url>
+      <cvename>CVE-2015-7540</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2015-7540.html</url>
+      <cvename>CVE-2015-8467</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2015-8467.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-16</discovery>
+      <entry>2015-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bb7d4791-a5bf-11e5-a0e5-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
