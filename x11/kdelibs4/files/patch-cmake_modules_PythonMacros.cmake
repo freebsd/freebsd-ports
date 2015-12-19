@@ -1,6 +1,13 @@
---- cmake/modules/PythonMacros.cmake.orig	2013-01-23 22:44:16.000000000 +0100
-+++ cmake/modules/PythonMacros.cmake	2013-02-27 13:39:48.000000000 +0100
-@@ -43,9 +43,11 @@
+The pyo-related changes are (at least for now) FreeBSD-specific and are present
+in order to install .pyo files in addition to .pyc files when installing Python
+modules.
+
+The "--destination-dir" changes are required to fix PR 200018 and come from a
+change landed upstream, 94f1d2f ("PythonMacros: specify destination directory
+in byte-compiled files"). See patch-git_94f1d2f for more information.
+--- cmake/modules/PythonMacros.cmake
++++ cmake/modules/PythonMacros.cmake
+@@ -41,16 +41,18 @@ macro(PYTHON_INSTALL SOURCE_FILE DESTINATION_DIR)
      if(PYTHON_VERSION_STRING VERSION_GREATER 3.1)
        # To get the right version for suffix
        set(_bin_pyc "${CMAKE_CURRENT_BINARY_DIR}/${_basepath}/__pycache__/${_filenamebase}.cpython-${PYTHON_VERSION_MAJOR}${PYTHON_VERSION_MINOR}.pyc")
@@ -12,25 +19,37 @@
        set(_py_install_dir "${DESTINATION_DIR}")
      endif()
  
-@@ -60,6 +62,7 @@
-         TARGET compile_python_files
+     file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${_basepath})
+ 
+     # Setting because it will be displayed later, in compile_python_files
+-    set(_message "Byte-compiling ${_bin_py} to ${_bin_pyc}")
++    set(_message "Byte-compiling ${_bin_py} to ${_bin_pyc} and ${_bin_pyo}")
+ 
+     string(REPLACE "/" "_" _rule_name "${_basepath}/${_bin_pyc}")
+     add_custom_target("${_rule_name}" ALL)
+@@ -60,7 +62,8 @@ macro(PYTHON_INSTALL SOURCE_FILE DESTINATION_DIR)
+       add_custom_command(
+         TARGET "${_rule_name}"
          COMMAND "${CMAKE_COMMAND}" -E echo "${_message}"
-         COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "${_bin_py}"
-+        COMMAND "${PYTHON_EXECUTABLE}" -O "${_python_compile_py}" "${_bin_py}"
+-        COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "${_bin_py}"
++        COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "--destination-dir" "${DESTINATION_DIR}" "${_bin_py}"
++        COMMAND "${PYTHON_EXECUTABLE}" -O "${_python_compile_py}" "--destination-dir" "${DESTINATION_DIR}" "${_bin_py}"
          DEPENDS "${_absfilename}"
        )
      else()
-@@ -68,11 +71,13 @@
+@@ -68,12 +71,13 @@ macro(PYTHON_INSTALL SOURCE_FILE DESTINATION_DIR)
+         TARGET "${_rule_name}"
          COMMAND "${CMAKE_COMMAND}" -E echo "${_message}"
          COMMAND "${CMAKE_COMMAND}" -E copy "${_absfilename}" "${_bin_py}"
-         COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "${_bin_py}"
-+        COMMAND "${PYTHON_EXECUTABLE}" -O "${_python_compile_py}" "${_bin_py}"
+-        COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "${_bin_py}"
++        COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "--destination-dir" "${DESTINATION_DIR}" "${_bin_py}"
++        COMMAND "${PYTHON_EXECUTABLE}" -O "${_python_compile_py}" "--destination-dir" "${DESTINATION_DIR}" "${_bin_py}"
          DEPENDS "${_absfilename}"
        )
      endif()
  
-     install(FILES ${_bin_pyc} DESTINATION "${_py_install_dir}")
-+    install(FILES ${_bin_pyo} DESTINATION "${_py_install_dir}")
+-    install(FILES ${_bin_pyc} DESTINATION "${_py_install_dir}")
++    install(FILES ${_bin_pyc} ${_bin_pyo} DESTINATION "${_py_install_dir}")
      unset(_py_install_dir)
      unset(_message)
  
