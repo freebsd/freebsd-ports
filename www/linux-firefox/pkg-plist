@@ -19,7 +19,6 @@ lib/%%APP_NAME%%/browser/omni.ja
 lib/%%APP_NAME%%/browser/plugins
 lib/%%APP_NAME%%/chrome.manifest
 lib/%%APP_NAME%%/components/components.manifest
-lib/%%APP_NAME%%/components/libdbusservice.so
 lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/crashreporter
 lib/%%APP_NAME%%/crashreporter.ini

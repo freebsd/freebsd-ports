@@ -53,16 +53,3 @@ index 48b0988..bc914cf 100644
  
      def visitParam(self, p):
          self.visitDecl(p)
-diff --git ipc/ipdl/ipdl/lower.py ipc/ipdl/ipdl/lower.py
-index e97a34c..9360f3c 100644
---- ipc/ipdl/ipdl/lower.py
-+++ ipc/ipdl/ipdl/lower.py
-@@ -768,7 +768,7 @@ IPDL union type."""
-         if self.recursive:
-             return self.ptrToType()
-         else:
--            return TypeArray(Type('char'), ExprSizeof(self.internalType()))
-+            return TypeArray(Type('char'), ExprSizeof(self.internalType()), self.internalType())
- 
-     def unionValue(self):
-         # NB: knows that Union's storage C union is named |mValue|
