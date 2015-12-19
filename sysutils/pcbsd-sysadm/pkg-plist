@@ -1,5 +1,6 @@
 bin/sysadm
 bin/sysadm-server
+etc/rc.d/sysadm
 include/sysadm-general.h
 include/sysadm-global.h
 include/sysadm-lifepreserver.h
