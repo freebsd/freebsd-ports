@@ -715,6 +715,46 @@ libdata/pkgconfig/wbclient.pc
 @dirrm %%PYTHON_SITELIBDIR%%/samba/external
 @dirrm %%PYTHON_SITELIBDIR%%/samba/dcerpc
 @dirrm %%PYTHON_SITELIBDIR%%/samba
+bin/pidl
+man/man1/pidl.1.gz
+man/man3/Parse::Pidl::Dump.3.gz
+man/man3/Parse::Pidl::NDR.3.gz
+man/man3/Parse::Pidl::Util.3.gz
+man/man3/Parse::Pidl::Wireshark::Conformance.3.gz
+man/man3/Parse::Pidl::Wireshark::NDR.3.gz
+%%DATADIR%%/perl5/Parse/Pidl.pm
+%%DATADIR%%/perl5/Parse/Pidl/CUtil.pm
+%%DATADIR%%/perl5/Parse/Pidl/Compat.pm
+%%DATADIR%%/perl5/Parse/Pidl/Dump.pm
+%%DATADIR%%/perl5/Parse/Pidl/Expr.pm
+%%DATADIR%%/perl5/Parse/Pidl/IDL.pm
+%%DATADIR%%/perl5/Parse/Pidl/NDR.pm
+%%DATADIR%%/perl5/Parse/Pidl/ODL.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba3/ClientNDR.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba3/ServerNDR.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Header.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Proxy.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Stub.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/Header.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Client.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Parser.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Server.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/Python.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/TDR.pm
+%%DATADIR%%/perl5/Parse/Pidl/Samba4/Template.pm
+%%DATADIR%%/perl5/Parse/Pidl/Typelist.pm
+%%DATADIR%%/perl5/Parse/Pidl/Util.pm
+%%DATADIR%%/perl5/Parse/Pidl/Wireshark/Conformance.pm
+%%DATADIR%%/perl5/Parse/Pidl/Wireshark/NDR.pm
+@dirrm %%DATADIR%%/perl5/Parse/Pidl/Wireshark
+@dirrm %%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR
+@dirrm %%DATADIR%%/perl5/Parse/Pidl/Samba4/COM
+@dirrm %%DATADIR%%/perl5/Parse/Pidl/Samba4
+@dirrm %%DATADIR%%/perl5/Parse/Pidl/Samba3
+@dirrm %%DATADIR%%/perl5/Parse/Pidl
+@dirrm %%DATADIR%%/perl5/Parse
+@dirrm %%DATADIR%%/perl5
 %%DATADIR%%/codepages/de.msg
 %%DATADIR%%/codepages/en.msg
 %%DATADIR%%/codepages/fi.msg
