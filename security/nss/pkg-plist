@@ -66,6 +66,7 @@ include/nss/nss/nssckt.h
 include/nss/nss/nssilckt.h
 include/nss/nss/nssilock.h
 include/nss/nss/nsslocks.h
+include/nss/nss/nsslowhash.h
 include/nss/nss/nssrwlk.h
 include/nss/nss/nssrwlkt.h
 include/nss/nss/nssutil.h
