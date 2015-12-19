@@ -1,9 +1,9 @@
---- js/src/moz.build.orig	2015-10-29 22:17:54 UTC
-+++ js/src/moz.build
-@@ -613,7 +613,3 @@ CXXFLAGS += CONFIG['MOZ_ICU_CFLAGS']
+--- js/src/moz.build.orig	2015-12-16 12:32:04.574425000 +0100
++++ js/src/moz.build	2015-12-16 12:32:09.032032000 +0100
+@@ -637,7 +637,3 @@
  
- if CONFIG['GNU_CXX']:
-     FAIL_ON_WARNINGS = True
+ if not CONFIG['GNU_CXX']:
+     ALLOW_COMPILER_WARNINGS = True
 -
 -NO_EXPAND_LIBS = True
 -
