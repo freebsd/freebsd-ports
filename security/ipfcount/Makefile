@@ -13,15 +13,13 @@ COMMENT=	Summarise ipf logs by counting and sorting the fields
 
 PLIST_FILES=	bin/ipfcount man/man1/ipfcount.1.gz
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	ipfcount
 
 OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	100.ipfcount
 SUB_FILES=	pkg-message
-
-post-patch:
-	@${REINPLACE_CMD} -e '1s,^#![^ ]*,#!${PERL},' ${WRKSRC}/ipfcount
 
 do-build:
 	cd ${WRKSRC} && pod2man ipfcount > ipfcount.1

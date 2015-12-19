@@ -9,6 +9,7 @@ MASTER_SITES=	http://games.moria.org.uk/doom/bsp/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Node builder for Doom
 
+BROKEN=		unfetchable
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

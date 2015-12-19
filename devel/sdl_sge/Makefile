@@ -5,8 +5,7 @@ PORTNAME=	sdl_sge
 PORTVERSION=	0.030809
 PORTREVISION=	15
 CATEGORIES=	devel graphics
-MASTER_SITES=	http://www.digitalfanatics.org/cal/sge/files/ \
-		http://www.sourcefiles.org/Programming/Libraries/Graphics/
+MASTER_SITES=	http://ports-space.haiku-files.org/source/
 DISTNAME=	sge030809
 
 MAINTAINER=	ports@FreeBSD.org

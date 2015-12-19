@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Commodore 64 "Crossroads"-like video game for X Window System
 
+BROKEN=		unfetchable
 USE_XORG=	x11 xpm xext
 
 OPTIONS_DEFINE=	DOCS

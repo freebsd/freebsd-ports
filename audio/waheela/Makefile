@@ -12,6 +12,8 @@ COMMENT=	Fullscreen mode for Amarok 2.x
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	amarok>=2:${PORTSDIR}/audio/amarok-kde4
 
 USES=		cmake

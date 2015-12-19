@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/PyQt5/QtMultimediaWidgets.so
+%%PYQT_SIPDIR%%/QtMultimediaWidgets/QtMultimediaWidgetsmod.sip
+%%PYQT_SIPDIR%%/QtMultimediaWidgets/qcameraviewfinder.sip
+%%PYQT_SIPDIR%%/QtMultimediaWidgets/qgraphicsvideoitem.sip
+%%PYQT_SIPDIR%%/QtMultimediaWidgets/qvideowidget.sip
+%%API%%share/qt5/qsci/api/python/QtMultimediaWidgets.api

@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.12.4
-PORTREVISION=		3
+PORTVERSION=		1.12.5
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
+.if !defined(MASTERDIR)
 PKGNAMESUFFIX=		-112
-DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
-EXTRACT_SUFX=		.tar
+.endif
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -112,10 +111,6 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/html
 PDF_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/pdf
-
-post-extract:
-	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz --no-same-owner --no-same-permissions
-	@${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz.asc
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/krb5

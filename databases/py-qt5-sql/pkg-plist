@@ -1,0 +1,16 @@
+%%PYTHON_SITELIBDIR%%/PyQt5/QtSql.so
+%%PYQT_SIPDIR%%/QtSql/QtSqlmod.sip
+%%PYQT_SIPDIR%%/QtSql/qsql.sip
+%%PYQT_SIPDIR%%/QtSql/qsqldatabase.sip
+%%PYQT_SIPDIR%%/QtSql/qsqldriver.sip
+%%PYQT_SIPDIR%%/QtSql/qsqlerror.sip
+%%PYQT_SIPDIR%%/QtSql/qsqlfield.sip
+%%PYQT_SIPDIR%%/QtSql/qsqlindex.sip
+%%PYQT_SIPDIR%%/QtSql/qsqlquery.sip
+%%PYQT_SIPDIR%%/QtSql/qsqlquerymodel.sip
+%%PYQT_SIPDIR%%/QtSql/qsqlrecord.sip
+%%PYQT_SIPDIR%%/QtSql/qsqlrelationaldelegate.sip
+%%PYQT_SIPDIR%%/QtSql/qsqlrelationaltablemodel.sip
+%%PYQT_SIPDIR%%/QtSql/qsqlresult.sip
+%%PYQT_SIPDIR%%/QtSql/qsqltablemodel.sip
+%%API%%share/qt5/qsci/api/python/QtSql.api

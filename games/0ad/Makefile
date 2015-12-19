@@ -13,7 +13,6 @@ COMMENT=	Real-time strategy (RTS) game of ancient warfare
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release
-USES=		compiler:c++11-lib dos2unix gmake iconv openal:al \
+USES=		compiler:c++11-lib dos2unix execinfo gmake iconv openal:al \
 		pkgconfig tar:xz
 USE_GNOME=	libxml2 gtk20
 USE_GL=		gl

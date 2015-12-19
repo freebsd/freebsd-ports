@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.sourcefiles.org/Home_and_Education/Health/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Medical image viewer
 
+BROKEN=		unfetchable
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

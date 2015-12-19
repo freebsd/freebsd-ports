@@ -62,7 +62,7 @@
 ##		RemoveType      .gz .tgz .Z
 ##	</ifModule>
 ##
-####	# Enable Subversion
+##	# Enable Subversion
 ##	DAV svn
 ##
 ##	# Directory containing all repository for this path

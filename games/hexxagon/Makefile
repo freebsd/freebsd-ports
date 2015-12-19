@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.nesqi.se/hexxagon/hexxagon/download/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Strategy hexagon game
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USES=		gmake pkgconfig tar:bzip2

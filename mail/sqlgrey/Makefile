@@ -57,7 +57,7 @@ RUN_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's-#!/usr/bin/perl-#!${PERL}-' -e 's!/etc/sqlgrey!${PREFIX}/${ETCDIR}!g' ${WRKSRC}/sqlgrey
+	@${REINPLACE_CMD} -e 's!/etc/sqlgrey!${PREFIX}/${ETCDIR}!g' ${WRKSRC}/sqlgrey
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey-logstats.pl ${STAGEDIR}/${PREFIX}/bin

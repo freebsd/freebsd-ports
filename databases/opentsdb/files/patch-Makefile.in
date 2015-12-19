@@ -1,15 +1,19 @@
 --- Makefile.in.orig	2015-09-12 19:49:17 UTC
 +++ Makefile.in
-@@ -1415,7 +1415,7 @@ printdeps:
+@@ -1415,9 +1415,11 @@ printdeps:
  # This is kind of a hack, but I couldn't find a better way to adjust the paths
  # in the script before it gets installed...
  install-exec-hook:
 -	script=tsdb; pkgdatadir='$(pkgdatadir)'; configdir='$(pkgdatadir)/etc/opentsdb'; \
 +	script=tsdb; pkgdatadir='$(pkgdatadir)'; configdir='$(sysconfdir)/etc/opentsdb'; \
            abs_srcdir=''; abs_builddir=''; $(edit_tsdb_script)
++	chmod u+w "$(DESTDIR)$(bindir)/tsdb"
  	cat tsdb.tmp >"$(DESTDIR)$(bindir)/tsdb"
++	chmod u-w "$(DESTDIR)$(bindir)/tsdb"
  	rm -f tsdb.tmp
-@@ -1442,7 +1442,7 @@ gwtc: .gwtc-stamp
+ 
+ $(builddata_SRC): .git/HEAD $(tsdb_SRC) $(top_srcdir)/build-aux/gen_build_data.sh
+@@ -1442,7 +1444,7 @@ gwtc: .gwtc-stamp
  	@$(mkdir_p) gwt
  	{ cd $(srcdir) && cat $(httpui_SRC); } | $(MD5) >"$@-t"
  	cmp -s "$@" "$@-t" && exit 0; \
@@ -18,7 +22,7 @@
              $(GWTC_ARGS) -war gwt tsd.QueryUi
  	@mv "$@-t" "$@"
  gwtdev: .gwtc-stamp
-@@ -1468,7 +1468,7 @@ gwttsd: staticroot
+@@ -1468,7 +1470,7 @@ gwttsd: staticroot
  # how to tell it to install a bunch of files recursively for which I don't
  # know ahead of time what the file names are.
  install-data-local: staticroot install-data-lib install-data-tools \

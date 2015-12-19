@@ -1,5 +1,5 @@
---- policyd-weight.orig	2015-09-27 11:41:56 UTC
-+++ policyd-weight
+--- policyd-weight.orig	2015-12-11 21:05:56.398519000 +0100
++++ policyd-weight	2015-12-11 21:12:51.190810000 +0100
 @@ -320,7 +320,7 @@ $SIG{__DIE__} = sub {
  
  my $DEBUG        = 0;               # 1 or 0 - don't comment
@@ -134,16 +134,17 @@
      {
          mylog(warning=>"cache: couldn't change GID to user $GROUP: $!");
      }
-@@ -3588,7 +3586,7 @@ sub rbl_lookup
+@@ -3588,7 +3586,8 @@ sub rbl_lookup
              my    ($id, $bf, $qc, $anc, $nsc, $arc, $qb) = 
              unpack('n   n    n    n     n     n     a*', $buf);
  
 -            my ($dn, $offset) = dn_expand(\$qb, 0);
-+            my ($dn, $offset) = decode Net::DNS::DomainName(\$qb, 0);
++            my ($decoded, $offset) = decode Net::DNS::DomainName(\$qb);
++            my $dn = $decoded->name;
  
              if(($id && $anc) && ($id == $oid) && ($query eq $dn))
              {
-@@ -3842,7 +3840,7 @@ sub squared_helo
+@@ -3842,7 +3841,7 @@ sub squared_helo
      my $helo = shift;
      my $ip   = shift;
  

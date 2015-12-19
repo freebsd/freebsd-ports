@@ -3,14 +3,15 @@
 
 PORTNAME=	pkg_tree
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Get a 'graphical' tree-overview of installed packages
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	pkg_tree
 
 NO_ARCH=	yes
 
@@ -20,7 +21,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|__PREFIX__|${STAGEDIR}${PREFIX}|g ; \
 		s|__INSTALL_MAN__|${INSTALL_MAN}|g ; \
 		s|__INSTALL_SCRIPT__|${INSTALL_SCRIPT}|g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|#!/usr/bin/perl -w|#!${PERL5} -w|' \
-		${WRKSRC}/pkg_tree
 
 .include <bsd.port.mk>

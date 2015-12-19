@@ -11,6 +11,8 @@ MASTER_SITES=	http://jan.kneschke.de/assets/projects/pxtools/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools to work with Paradox databases
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		gettext

@@ -12,6 +12,8 @@ DISTNAME=	android-${API}-x86
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Android sysroots for C/Ada Android cross-compiler (x86)
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 USES=		tar:bzip2
 NO_BUILD=	yes
 NO_MTREE=	yes

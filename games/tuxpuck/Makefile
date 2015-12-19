@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.sourcefiles.org/Games/Sports/Miscellaneous/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shufflepuck Cafe Clone
 
+BROKEN=		unfetchable
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \

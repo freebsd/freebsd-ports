@@ -1,47 +1,25 @@
-Index: qemu/Makefile
-@@ -25,7 +25,11 @@
- LDFLAGS += -static
- endif
+--- Makefile.orig	2015-11-03 20:01:30 UTC
++++ Makefile
+@@ -88,7 +88,11 @@ LIBS+=-lz $(LIBS_TOOLS)
+ HELPERS-$(CONFIG_LINUX) = qemu-bridge-helper$(EXESUF)
+ 
  ifdef BUILD_DOCS
 +ifdef NOPORTDOCS
 +DOCS=qemu.1 qemu-img.1 qemu-nbd.8
 +else
- DOCS=qemu-doc.html qemu-tech.html qemu.1 qemu-img.1 qemu-nbd.8
+ DOCS=qemu-doc.html qemu-tech.html qemu.1 qemu-img.1 qemu-nbd.8 qmp-commands.txt
 +endif
- else
- DOCS=
+ ifdef CONFIG_LINUX
+ DOCS+=kvm_stat.1
  endif
-@@ -190,6 +190,8 @@
- obj-$(CONFIG_XEN) += xen_backend.o xen_devconfig.o
- obj-$(CONFIG_XEN) += xen_console.o xenfb.o xen_disk.o xen_nic.o
- 
-+QEMU_CFLAGS+=$(CURL_CFLAGS)
-+
- LIBS+=$(CURL_LIBS)
- 
- cocoa.o: cocoa.m
-@@ -260,13 +264,13 @@
- endif
+@@ -390,8 +394,10 @@ endif
  
  install-doc: $(DOCS)
+ 	$(INSTALL_DIR) "$(DESTDIR)$(qemu_docdir)"
 +ifndef NOPORTDOCS
- 	$(INSTALL_DIR) "$(DESTDIR)$(docdir)"
- 	$(INSTALL_DATA) qemu-doc.html  qemu-tech.html "$(DESTDIR)$(docdir)"
+ 	$(INSTALL_DATA) qemu-doc.html  qemu-tech.html "$(DESTDIR)$(qemu_docdir)"
+ 	$(INSTALL_DATA) qmp-commands.txt "$(DESTDIR)$(qemu_docdir)"
 +endif
- ifndef CONFIG_WIN32
+ ifdef CONFIG_POSIX
  	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"
- 	$(INSTALL_DATA) qemu.1 qemu-img.1 "$(DESTDIR)$(mandir)/man1"
--	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man8"
--	$(INSTALL_DATA) qemu-nbd.8 "$(DESTDIR)$(mandir)/man8"
- endif
- 
- install: all $(if $(BUILD_DOCS),install-doc)
-@@ -321,7 +321,7 @@ cscope:
- 
- # documentation
- %.html: %.texi
--	$(call quiet-command,texi2html -I=. -monolithic -number $<,"  GEN   $@")
-+	$(call quiet-command,texi2html -I=. -monolithic --number-sections $<,"  GEN   $@")
- 
- %.info: %.texi
- 	$(call quiet-command,makeinfo -I . $< -o $@,"  GEN   $@")
+ 	$(INSTALL_DATA) qemu.1 "$(DESTDIR)$(mandir)/man1"

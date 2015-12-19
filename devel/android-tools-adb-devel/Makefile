@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 # Hint: git describe --abbrev=12 --match android-m-preview
-DISTVERSION=	m-preview-5498
-DISTVERSIONSUFFIX=	-g0bb1ce06ea46
+DISTVERSION=	m-preview-5956
+DISTVERSIONSUFFIX=	-g461a29540c01
 PORTREVISION=	0
 PKGNAMESUFFIX=	-devel
 
@@ -17,18 +17,14 @@ OPTIONS_DEFINE=	TEST_PYTHON
 
 TEST_PYTHON_DESC=	${TEST_DESC:S/tests/python &/}
 TEST_PYTHON_GH_PROJECT=	platform_development:development
-TEST_PYTHON_GH_TAGNAME=	${DISTVERSIONFULL:C/-[0-9].*//}-2403-g084d084:development
+TEST_PYTHON_GH_TAGNAME=	${DISTVERSIONFULL:C/-[0-9].*//}-2510-g72f24a0:development
 TEST_PYTHON_BUILD_DEPENDS=${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 TEST_PYTHON_USES=	python:2.7,build
 
 pre-install-TEST_PYTHON-on:
 # XXX python tests may leave behind running adb server
-# test_adb.py remains in core repository for some reason
 	${SETENV} PATH=${BUILD_WRKSRC}:${PATH} \
 		PYTHONPATH=${WRKSRC_development}/python-packages \
-		${PYTHON_CMD} ${BUILD_WRKSRC}/test_adb.py
-	${SETENV} PATH=${BUILD_WRKSRC}:${PATH} \
-		PYTHONPATH=${WRKSRC_development}/python-packages \
-		${PYTHON_CMD} ${WRKSRC_development}/python-packages/adb/test_device.py
+		${PYTHON_CMD} -m unittest discover -vs ${BUILD_WRKSRC}
 
 .include "${MASTERDIR}/Makefile"

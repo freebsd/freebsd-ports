@@ -2,7 +2,7 @@
 
 PORTNAME=	libapreq2
 PORTVERSION=	2.13
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	APACHE_HTTPD/libapreq
 DISTFILE=	libapreq2-${PORTVERSION}
@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} \
 			--with-expat=${LOCALBASE} \
-			--enable-perl-glue --with-perl=${PERL5}
+			--enable-perl-glue --with-perl=${PERL}
 
 MAKE_ENV+=     MAKE=${GMAKE} ## MakeMaker blows it without this
 

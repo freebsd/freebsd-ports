@@ -1,0 +1,10 @@
+A small command line utility for parsing PKCS#10 certificate signing
+requests to perl data structure and provides accessor methods to
+supported elements.
+
+It is based on the generic ASN.1 module by Graham Barr and on the
+x509decode example by Norbert Klasen. It is also based upon the
+works of Duncan Segrests Crypt-X509-CRL module. The module parses
+common fields and extensions. Some fields might be missing.
+
+WWW: http://search.cpan.org/dist/Crypt-PKCS10/

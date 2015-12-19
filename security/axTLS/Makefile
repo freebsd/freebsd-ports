@@ -86,7 +86,7 @@ CONFIG_SUB+=	TEST_PERF="\# " \
 _CONFIG_SUB_TEMP=	${CONFIG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
 
 post-patch:
-	${REINPLACE_CMD} -e '/^CC/s/gcc/${CC}/; /^HOSTCC/s/gcc/${CC}/' \
+	${REINPLACE_CMD} -e '/^CC/s|gcc|${CC}|; /^HOSTCC/s|gcc|${CC}|' \
 		${WRKSRC}/config/Rules.mak
 
 do-configure:

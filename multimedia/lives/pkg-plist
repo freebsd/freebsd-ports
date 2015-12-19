@@ -195,7 +195,6 @@ lib/lives/plugins/encoders/multi_encoder3
 lib/lives/plugins/encoders/pdf_encoder
 lib/lives/plugins/encoders/qtutils_encoder
 lib/lives/plugins/encoders/sswf_encoder
-lib/lives/plugins/encoders/transcode_encoder
 lib/lives/plugins/encoders/x264_encoder
 lib/lives/plugins/playback/audiostream/audiostreamer.pl
 lib/lives/plugins/playback/video/SDL.so

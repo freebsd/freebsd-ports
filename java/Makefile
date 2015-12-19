@@ -120,6 +120,7 @@
     SUBDIR += wildfly81
     SUBDIR += wildfly82
     SUBDIR += wildfly90
+    SUBDIR += wildfly100
     SUBDIR += xdoclet
 
 .include <bsd.port.subdir.mk>

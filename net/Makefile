@@ -27,6 +27,7 @@
     SUBDIR += asio
     SUBDIR += aslookup
     SUBDIR += asterisk
+    SUBDIR += asterisk-chan_sccp
     SUBDIR += asterisk-g72x
     SUBDIR += asterisk11
     SUBDIR += asterisk13
@@ -439,6 +440,7 @@
     SUBDIR += nocatsplash
     SUBDIR += nos-ttb
     SUBDIR += nph
+    SUBDIR += ns3
     SUBDIR += nss-pam-ldapd
     SUBDIR += nss-pam-ldapd-sasl
     SUBDIR += nss_ldap
@@ -967,12 +969,12 @@
     SUBDIR += py-pysendfile
     SUBDIR += py-pysmb
     SUBDIR += py-pysocks
-    SUBDIR += py-pysphere
     SUBDIR += py-pystun
     SUBDIR += py-python-bitcoinrpc
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
     SUBDIR += py-qt4-network
+    SUBDIR += py-qt5-network
     SUBDIR += py-radix
     SUBDIR += py-raet
     SUBDIR += py-ripe.atlas.cousteau

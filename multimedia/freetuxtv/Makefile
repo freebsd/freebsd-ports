@@ -33,6 +33,7 @@ OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
+NLS_USES_OFF=	gettext-tools
 NLS_BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 SUB_FILES=	pkg-message

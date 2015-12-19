@@ -1209,6 +1209,7 @@
     SUBDIR += py-chardet
     SUBDIR += py-cloud_sptheme
     SUBDIR += py-creole
+    SUBDIR += py-curator
     SUBDIR += py-diff-match-patch
     SUBDIR += py-docutils
     SUBDIR += py-dsv
@@ -1261,6 +1262,8 @@
     SUBDIR += py-qrcode
     SUBDIR += py-qt4-xml
     SUBDIR += py-qt4-xmlpatterns
+    SUBDIR += py-qt5-xml
+    SUBDIR += py-qt5-xmlpatterns
     SUBDIR += py-rdflib
     SUBDIR += py-regex
     SUBDIR += py-reverend

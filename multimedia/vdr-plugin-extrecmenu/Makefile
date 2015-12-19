@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/936/
 DISTNAME=	vdr-${PLUGIN}-${PORTVERSION}
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - extended recordings menu
 
 USES=		tar:tgz

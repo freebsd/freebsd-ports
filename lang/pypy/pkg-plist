@@ -2145,9 +2145,9 @@ bin/pypy
 %%PYPY_DIR%%/lib_pypy/cffi/vengine_gen.py
 %%PYPY_DIR%%/lib_pypy/cffi/verifier.py
 %%PYPY_DIR%%/lib_pypy/ctypes_config_cache/__init__.py
-%%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_locale_64_.py
+%%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_locale_%%PYPY_BITS%%_.py
 %%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_locale_cache.py
-%%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_resource_64_.py
+%%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_resource_%%PYPY_BITS%%_.py
 %%PYPY_DIR%%/lib_pypy/ctypes_config_cache/_resource_cache.py
 %%PYPY_DIR%%/lib_pypy/ctypes_config_cache/dumpcache.py
 %%PYPY_DIR%%/lib_pypy/ctypes_config_cache/locale.ctc.py

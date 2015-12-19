@@ -319,6 +319,8 @@
     SUBDIR += py-periscope
     SUBDIR += py-qt4-multimedia
     SUBDIR += py-qt4-phonon
+    SUBDIR += py-qt5-multimedia
+    SUBDIR += py-qt5-multimediawidgets
     SUBDIR += py-soco
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer

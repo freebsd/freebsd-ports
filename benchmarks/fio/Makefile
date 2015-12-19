@@ -30,6 +30,8 @@ BUILD_DEPENDS+=	flex>0:${PORTSDIR}/textproc/flex
 MAKE_ARGS+=	LEX=${LOCALBASE}/bin/flex
 .endif
 
+BROKEN_powerpc64=	Does not build on powerpc64
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fio ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/fio_generate_plots ${STAGEDIR}${PREFIX}/bin

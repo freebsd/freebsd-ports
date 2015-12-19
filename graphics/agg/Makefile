@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.antigrain.com/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Quality Rendering Engine for C++
 
+BROKEN=		unfetchable
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/copying
 

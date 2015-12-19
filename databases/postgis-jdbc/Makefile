@@ -10,6 +10,8 @@ DISTFILES=	postgis_${PORTVERSION}.jar
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	PostGIS spatial data structures for JDBC
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
 
 USE_JAVA=	yes

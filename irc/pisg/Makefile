@@ -10,7 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl IRC Statistics Generator
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	pisg
 NO_BUILD=	YES
 
 OPTIONS_DEFINE=	LOGCHARSET DOCS
@@ -28,7 +29,6 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's|lang.txt|${PREFIX}/share/pisg/lang.txt|; \
 		s|layout/|${PREFIX}/share/pisg/layout/|' \
 		${WRKSRC}/modules/Pisg.pm
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/pisg
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pisg

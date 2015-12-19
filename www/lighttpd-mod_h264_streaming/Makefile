@@ -8,6 +8,8 @@ DISTNAME=	lighttpd-${PORTVERSION}
 
 COMMENT=	H264 streaming module for lighttpd
 
+BROKEN=		incompatibility with new Lighttpd API
+
 BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 

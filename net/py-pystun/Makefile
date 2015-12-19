@@ -3,6 +3,7 @@
 
 PORTNAME=	pystun
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,5 +16,8 @@ LICENSE=	MIT
 USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+
+post-extract:
+	@${RM} -rf ${WRKSRC}/tests
 
 .include <bsd.port.mk>

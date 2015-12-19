@@ -8,6 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small footprint implementation of the Tcl programming language
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	msteveb
@@ -19,7 +20,7 @@ CONFIGURE_ARGS=	--full \
 		--disable-docs
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jimsh \
-		${STAGEDIR}${PREFIX}/lib/libjim.so.0.76
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jimsh \
+		${STAGEDIR}${PREFIX}/lib/libjim.so.*
 
 .include <bsd.port.mk>

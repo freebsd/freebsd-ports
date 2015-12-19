@@ -6,7 +6,7 @@ PORTVERSION=	1.7.29
 PORTREVISION=	3
 CATEGORIES=	multimedia
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - plugin metaport
 
 RUN_DEPENDS+=	vdr:${PORTSDIR}/multimedia/vdr

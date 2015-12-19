@@ -11,6 +11,7 @@ DISTNAME=	libPropList-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Property library for gnome and Window Maker
 
+BROKEN=		unfetchable
 GNU_CONFIGURE=	yes
 USES=		libtool
 USE_LDCONFIG=	yes

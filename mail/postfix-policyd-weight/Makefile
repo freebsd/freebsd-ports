@@ -3,7 +3,7 @@
 
 PORTNAME=	policyd-weight
 PORTVERSION=	0.1.15.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.policyd-weight.org/releases/ \
 		LOCAL/ohauer

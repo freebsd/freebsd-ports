@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	micropython
-PORTVERSION=	1.4
+PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang python
 
@@ -18,10 +18,9 @@ USE_GITHUB=	yes
 
 PLIST_FILES=	bin/micropython
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.4/unix
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/unix
 
-SHEBANG_FILES=	../py/py-version.sh
-bash_CMD?=	/bin/sh
+SHEBANG_FILES=	../tools/make-frozen.py
 MAKE_ARGS+=	V=1
 MAKE_ENV+=	PYTHON=${PYTHON_CMD} CFLAGS_EXTRA="${CPPFLAGS} ${CFLAGS}"
 
@@ -35,7 +34,10 @@ USE_GCC=	yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||;/^COPT =/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-Werror||;/^COPT =/d; \
+		s|ls -1 -v|ls -1|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|re_exec|mp_re_exec|' \
+		${WRKSRC}/../extmod/modure.c
 	@${REINPLACE_CMD} -e 's|AS =|AS ?=|;s|LD =|LD ?=|; \
 		s|CC =|CC ?=|;s|PYTHON =|PYTHON ?=|' \
 		${WRKSRC}/../py/mkenv.mk

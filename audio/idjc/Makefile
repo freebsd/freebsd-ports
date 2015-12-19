@@ -40,6 +40,8 @@ GNU_CONFIGURE=		yes
 USE_PYTHON=		pythonprefix
 USE_GNOME=		glib20 pygtk2
 
+BROKEN_powerpc64=	Does not build
+
 PLIST_SUB+=		PORTVERSION="${PORTVERSION}"
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}

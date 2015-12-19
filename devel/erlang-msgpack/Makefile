@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	msgpack
-PORTVERSION=	0.3.5
+PORTVERSION=	0.4.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 

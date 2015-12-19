@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-documents
-PORTVERSION=	3.16.3
+PORTVERSION=	3.16.5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

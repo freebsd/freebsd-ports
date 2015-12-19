@@ -3,7 +3,10 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.6.6
-PORTEPOCH=	2
+.if !defined(MASTERDIR)
+PKGNAMESUFFIX=	36
+PORTEPOCH?=	2
+.endif
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-2.tar.gz
@@ -16,10 +19,6 @@ COMMENT=	Systems administration tool for networks
 LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
-
-.if !defined(MASTERDIR)
-PKGNAMESUFFIX=	36
-.endif
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 

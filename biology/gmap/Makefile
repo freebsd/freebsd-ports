@@ -24,6 +24,8 @@ OPTIONS_DEFINE=	SIMD
 
 SIMD_CONFIGURE_OFF=	--disable-builtin-popcount --disable-simd
 
+BROKEN_powerpc64=	Does not build on powerpc64
+
 # shebang_fix operates during patch.
 # These scripts are created during configure.
 post-configure:

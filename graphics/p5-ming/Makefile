@@ -24,7 +24,8 @@ OPTIONS_DEFINE=	EXAMPLES
 
 CONFIGURE_ARGS=	--enable-perl
 GNU_CONFIGURE=	yes
-USES=		autoreconf bison gmake libtool localbase perl5
+USES=		autoreconf bison gmake libtool localbase perl5 shebangfix
+SHEBANG_FILES=	examples/*.cgi
 
 PORTEXAMPLES=	*
 
@@ -39,7 +40,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/ming_is_compiled()/ s|^|#|; /LIBS/d' ${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e 's|\.3pm|.3|g' ${WRKSRC}/Makefile.PL ${WRKSRC}/mkdoc
 	@${REINPLACE_CMD} -e 's|GvCV(\(.*\)) = \(.*\);|GvCV_set(\1, \2);|' ${WRKSRC}/Exports.c
-	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/examples/*.cgi
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/SWF/SWF.so

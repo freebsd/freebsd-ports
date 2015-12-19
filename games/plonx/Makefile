@@ -9,6 +9,7 @@ MASTER_SITES=	http://bilious.homelinux.org/~paxed/${PORTNAME}/
 MAINTAINER=	clive@darkarts.co.za
 COMMENT=	Small ASCII puzzle game
 
+BROKEN=		unfetchable
 PLIST_FILES=	bin/plonx
 PORTDOCS=	README
 

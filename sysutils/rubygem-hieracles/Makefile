@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hieracles
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

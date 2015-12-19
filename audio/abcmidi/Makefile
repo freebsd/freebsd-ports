@@ -35,7 +35,7 @@ post-patch:
 		 s|$$(INSTALL) -m 644|$$(INSTALL_DATA)|' \
 		${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/programming
 	(cd ${WRKSRC}/doc/programming && ${INSTALL_DATA} *.abc *.txt \
 		${STAGEDIR}${DOCSDIR}/programming)

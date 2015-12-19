@@ -6,7 +6,7 @@ PORTVERSION=	0.9.14
 CATEGORIES=	lang devel
 MASTER_SITES=	SF
 
-MAINTAINER=	sperber@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C99 compiler using libFIRM as backend
 
 LICENSE=	GPLv2

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${SHORTPORTVERSION}
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Remake of the classic spectrum game Head over Heels
 
+BROKEN=		unfetchable
 WRKSRC=		${WRKDIR}/hoh-install-${PORTVERSION}/
 
 USES=	tar:bzip2

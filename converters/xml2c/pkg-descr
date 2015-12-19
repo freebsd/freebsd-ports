@@ -1,0 +1,4 @@
+xml2c reads in an XML file and produces equivalent C source code,
+suitable for #including in your program.
+
+WWW: http://www.acme.com/software/xml2c/

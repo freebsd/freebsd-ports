@@ -3,6 +3,7 @@
 
 PORTNAME=	qb
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -13,7 +14,6 @@ COMMENT=	PHP Accelerator designed mainly for graphic work
 
 LICENSE=	PHP301
 
-CONFIGURE_ARGS=	--with-cpu=native
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USES=		tar:tgz

@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/652/
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - sleep timer plugin
 
 USES=		tar:tgz

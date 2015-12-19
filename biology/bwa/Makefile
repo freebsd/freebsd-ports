@@ -20,6 +20,8 @@ PLIST_FILES=	bin/bwa bin/qualfa2fq.pl bin/xa2multi.pl man/man1/bwa.1.gz
 # Avoid #error in emmintrin.h
 CFLAGS+=	-msse2
 
+BROKEN_powerpc64=	Does not build on powerpc64
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bwa ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${STAGEDIR}${PREFIX}/bin

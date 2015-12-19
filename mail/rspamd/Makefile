@@ -2,6 +2,7 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	1.0.10
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -15,6 +16,8 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libevent.so:${PORTSDIR}/devel/libevent2 \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
 		libhiredis.so:${PORTSDIR}/databases/hiredis
+
+CONFLICTS_INSTALL=	rspamd
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR
 GPERF_DESC=		google perf-tools profiling

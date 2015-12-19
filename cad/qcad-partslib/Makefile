@@ -12,6 +12,8 @@ EXTRACT_ONLY=
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Professional CAD system
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/partlibrary-${PORTVERSION:S/.1$/-1/}
 DATADIR=	share/qcad/library
 

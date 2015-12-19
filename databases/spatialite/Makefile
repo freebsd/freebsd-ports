@@ -4,7 +4,7 @@
 PORTNAME=	spatialite
 PORTVERSION=	4.3.0
 CATEGORIES=	databases geography
-MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
+MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/libspatialite-sources/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	coder@tuxfamily.org

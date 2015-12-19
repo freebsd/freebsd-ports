@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 DISTFILES=	# none
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux compatibility layer - DVB ioctl handler
 
 ONLY_FOR_ARCHS=	i386 amd64

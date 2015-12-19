@@ -4,6 +4,7 @@
 PORTNAME=	seamonkey
 DISTVERSION=	2.39
 MOZILLA_VER=	42 # above + 3
+PORTREVISION=	1
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	nspr>=4.10.10:${PORTSDIR}/devel/nspr \
 		nss>=3.19.4:${PORTSDIR}/security/nss \
 		libevent2>=2.0.21_2:${PORTSDIR}/devel/libevent2 \
 		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
-		harfbuzz>=0.9.34:${PORTSDIR}/print/harfbuzz \
+		harfbuzz>=0.9.42:${PORTSDIR}/print/harfbuzz \
 		graphite2>=1.2.4:${PORTSDIR}/graphics/graphite2 \
 		libvorbis>=1.3.5,3:${PORTSDIR}/audio/libvorbis \
 		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
@@ -40,8 +41,7 @@ USE_GECKO=	gecko
 USE_QT5=	# empty
 QT_NONSTANDARD=	yes
 USE_GL=		gl
-USES=		dos2unix tar:xz
-DOS2UNIX_FILES=	mozilla/media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
+USES=		tar:xz
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 
 MOZ_EXTENSIONS=	default

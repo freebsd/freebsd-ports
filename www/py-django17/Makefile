@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.7.10
+PORTVERSION=	1.7.11
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION}/
@@ -16,6 +16,9 @@ COMMENT=	High-level Python Web Framework (1.7.x)
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=		End of extended support: December 1, 2015
+EXPIRATION_DATE=	2016-01-31
 
 USES=		cpe python
 USE_PYTHON=	autoplist distutils

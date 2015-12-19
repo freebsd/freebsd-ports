@@ -10,6 +10,7 @@ DISTNAME=	Visual_Paradigm_CE_12_2_20151102_Unix_InstallFree
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Visual modeling tool for all kinds of UML diagrams
 
+BROKEN=		unfetchable
 RUN_DEPENDS=	${LOCALBASE}/lib/libsqlitejdbc.so:${PORTSDIR}/java/sqlitejdbc
 
 USE_JAVA=	yes

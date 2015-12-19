@@ -11,6 +11,8 @@ DISTNAME=	praat5408_sources
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Phonetics by Computer
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 DOS2UNIX_REGEX=	.*Makefile

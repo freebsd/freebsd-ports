@@ -5,7 +5,7 @@ PORTNAME=	sqlite3
 PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	databases python
 
-MAINTAINER=	dbn@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Standard PyPy binding to the SQLite3 library
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3

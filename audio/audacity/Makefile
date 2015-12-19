@@ -3,6 +3,7 @@
 
 PORTNAME=	audacity
 PORTVERSION=	2.1.1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/audacity/audacity/archive/
 DISTNAME=	Audacity-${PORTVERSION}
@@ -12,6 +13,8 @@ COMMENT=	GUI editor for digital audio waveforms
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
@@ -31,6 +34,7 @@ WX_COMPS=	wx
 INSTALLS_ICONS=	yes
 PORTDOCS=	README.txt
 INSTALL_TARGET=	install-strip
+DOS2UNIX_GLOB=	Makefile.* *.c* *.h
 
 OPTIONS_DEFINE=	NLS DEBUG DOCS FLAC ID3TAG LADSPA LAME MAD MIDI \
 		SBSMS SOUNDTOUCH TWOLAME VAMP VORBIS VST

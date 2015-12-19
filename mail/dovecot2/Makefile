@@ -13,7 +13,7 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.20
+PORTVERSION=	2.2.21
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -149,6 +149,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^exampledir =/s|\$$(docdir)|${ETCDIR}|' \
 		${WRKSRC}/doc/example-config/Makefile.in \
 		${WRKSRC}/doc/example-config/conf.d/Makefile.in
+	@${REINPLACE_CMD} -e '/^[^#]/s|/usr|${LOCALBASE}|' \
+		${WRKSRC}/src/plugins/fts/decode2text.sh
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DOCSDIR}

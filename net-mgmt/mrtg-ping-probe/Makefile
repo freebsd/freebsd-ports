@@ -3,7 +3,7 @@
 
 PORTNAME=	mrtg-ping-probe
 PORTVERSION=	2.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.pwo.de/pub/pwo/mrtg/${PORTNAME}/
 
@@ -14,11 +14,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 FETCH_BEFORE_ARGS=	-p      # MASTER_SITE needs PASSIVE FTP.
 
-USES=		perl5
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PERL%%|${PERL5}|' ${WRKSRC}/${PORTNAME}
-	@${CHMOD} +x ${WRKSRC}/${PORTNAME}
+USES=		perl5 shebangfix
+SHEBANG_FILES=	mrtg-ping-probe
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

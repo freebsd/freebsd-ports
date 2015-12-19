@@ -21,7 +21,6 @@ bin/clearspd
 bin/convolutions
 bin/copypix
 bin/copytex
-bin/corender
 bin/createwin
 bin/cubemap
 bin/cuberender
@@ -245,6 +244,7 @@ bin/tri-stipple
 bin/tri-tex
 bin/tri-tex-1d
 bin/tri-tex-3d
+bin/tri-tex-stipple
 bin/tri-tri
 bin/tri-unfilled
 bin/tri-unfilled-clip

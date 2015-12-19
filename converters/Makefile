@@ -168,6 +168,7 @@
     SUBDIR += vda2fbd
     SUBDIR += wkhtmltopdf
     SUBDIR += xdeview
+    SUBDIR += xml2c
     SUBDIR += ytnef
     SUBDIR += zbase32
 

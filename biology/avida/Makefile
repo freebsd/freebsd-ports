@@ -13,6 +13,7 @@ COMMENT=	Auto-adaptive genetic system designed for ALife research
 LICENSE=	GPLv3
 
 BROKEN_sparc64=	missing atomics implementation
+BROKEN_powerpc64=	Does not build on powerpc64
 
 USES=		cmake:outsource ncurses
 CMAKE_ARGS=	-DAPTO_UNIT_TESTS:BOOL=OFF -DAVD_UNIT_TESTS:BOOL=OFF

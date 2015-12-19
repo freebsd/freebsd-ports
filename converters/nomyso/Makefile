@@ -10,18 +10,13 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert MASM/TASM files to NASM compatible sources
 
-USES=		perl5 zip
+USES=		perl5 zip dos2unix shebangfix
+SHEBANG_FILES=	nomyso.pl
 USE_PERL5=	run
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}.pl
-
-post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's|[[:cntrl:]]$$||' \
-		-e 's|/usr/bin/perl|${PERL}|' \
-		${WRKSRC}/${PORTNAME}.pl
 
 do-install:
 	@${INSTALL_SCRIPT} \

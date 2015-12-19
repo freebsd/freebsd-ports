@@ -22,6 +22,8 @@ MAKEFILE=	GccUnix.mak
 PORTDOCS=	*
 PLIST_FILES=	bin/jwasm
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^extra_c_flags/s|-O2|$$(CFLAGS)| ; \

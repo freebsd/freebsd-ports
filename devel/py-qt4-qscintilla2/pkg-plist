@@ -43,14 +43,12 @@
 %%PYQT_SIPDIR%%/Qsci/qscilexerxml.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexeryaml.sip
 %%PYQT_SIPDIR%%/Qsci/qscimacro.sip
-%%PYQT_SIPDIR%%/Qsci/qscimod3.sip
 %%PYQT_SIPDIR%%/Qsci/qscimod4.sip
 %%PYQT_SIPDIR%%/Qsci/qscimod5.sip
 %%PYQT_SIPDIR%%/Qsci/qscimodcommon.sip
 %%PYQT_SIPDIR%%/Qsci/qsciprinter.sip
 %%PYQT_SIPDIR%%/Qsci/qsciscintilla.sip
-%%PYQT_SIPDIR%%/Qsci/qsciscintillabase3.sip
-%%PYQT_SIPDIR%%/Qsci/qsciscintillabase4.sip
+%%PYQT_SIPDIR%%/Qsci/qsciscintillabase.sip
 %%PYQT_SIPDIR%%/Qsci/qscistyle.sip
 %%PYQT_SIPDIR%%/Qsci/qscistyledtext.sip
 share/qt4/qsci/api/python/QScintilla2.api

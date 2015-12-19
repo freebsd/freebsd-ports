@@ -12,6 +12,8 @@ EXTRACT_ONLY=	${DIST_SOURCES}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Three-Dimensional Structural Finite Element Program
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack	\

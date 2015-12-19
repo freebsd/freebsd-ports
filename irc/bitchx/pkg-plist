@@ -10,7 +10,6 @@ man/man1/BitchX.1.gz
 @dir %%DATADIR%%/plugins
 %%PLUGINS%%%%DATADIR%%/plugins/BitchX.hints
 %%PLUGINS%%%%DATADIR%%/plugins/acro.so
-%%PLUGINS%%%%DATADIR%%/plugins/aim.so
 %%PLUGINS%%%%DATADIR%%/plugins/autobot.so
 %%PLUGINS%%%%DATADIR%%/plugins/blowfish.so
 %%PLUGINS%%%%DATADIR%%/plugins/cavlink.so

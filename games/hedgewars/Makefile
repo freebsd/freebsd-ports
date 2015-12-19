@@ -14,6 +14,8 @@ COMMENT=	Free Worms-like turn based strategy game
 LICENSE=	GPLv2 GFDL
 LICENSE_COMB=	multi
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
 
 ONLY_FOR_ARCHS=	i386 amd64

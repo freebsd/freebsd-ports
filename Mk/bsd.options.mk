@@ -68,6 +68,13 @@
 # WITHOUT			- Unset options from the command line
 #
 #
+# These variables are strictly informational (read-only).  They indicate the
+# current state of the selected options; they are space-delimited lists.
+#
+# SELECTED_OPTIONS		- list of options set "on"
+# DESELECTED_OPTIONS		- list of options set "off"
+#
+#
 # The following knobs are there to simplify the handling of OPTIONS in simple
 # cases :
 #
@@ -571,6 +578,27 @@ _type=		${target:C/.*://}
 _OPTIONS_${_target}:=	${_OPTIONS_${_target}} ${_prio}:${_type}-${_target}-${opt}-off
 .    endfor
 .  endif
+.endfor
+
+.undef (SELECTED_OPTIONS)
+.undef (DESELECTED_OPTIONS)
+.for opt in ${ALL_OPTIONS}
+.  if ${PORT_OPTIONS:M${opt}}
+SELECTED_OPTIONS:=	${opt} ${SELECTED_OPTIONS}
+.  else
+DESELECTED_OPTIONS:=	${opt} ${DESELECTED_OPTIONS}
+.  endif
+.endfor
+.for otype in MULTI GROUP SINGLE RADIO
+.  for m in ${OPTIONS_${otype}}
+.    for opt in ${OPTIONS_${otype}_${m}}
+.      if ${PORT_OPTIONS:M${opt}}
+SELECTED_OPTIONS:=	${opt} ${SELECTED_OPTIONS}
+.      else
+DESELECTED_OPTIONS:=	${opt} ${DESELECTED_OPTIONS}
+.      endif
+.    endfor
+.  endfor
 .endfor
 
 .endif

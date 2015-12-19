@@ -13,6 +13,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II Zaero Mission Pack
 
+BROKEN=		unfetchable
 USES=		dos2unix zip
 DOS2UNIX_FILES=	*.[ch]
 NO_WRKSUBDIR=	yes

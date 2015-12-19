@@ -17,6 +17,7 @@ SRCS+= adb_trace.cpp
 SRCS+= adb_utils.cpp
 SRCS+= commandline.cpp
 SRCS+= console.cpp
+SRCS+= diagnose_usb.cpp
 SRCS+= fdevent.cpp
 SRCS+= file_sync_client.cpp
 SRCS+= line_printer.cpp

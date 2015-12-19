@@ -72,7 +72,7 @@ IGNORE=		Sound is not supported with ncurses UI.
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '/^ *CXX *=/d ; /^ *LD *=/s/g++/$$(CXX)/ ; \
+	@${REINPLACE_CMD} -e '/^ *CXX *=/d ; /^ *LD *=/s/g++/$$(CXX)/ ; \
 		/^ *CXXFLAGS *+*=/s/-O[s0-3]//; /^ *LOCALIZE *=/d ; \
 		s/\(-lncurses\)\(w*\)/\1\2 -ltinfo\2/ ; \
 		s/=$$(PREFIX)\//=$$(DESTDIR)$$(PREFIX)\// ; \
@@ -80,17 +80,17 @@ post-patch:
 		/cp -R/s/--no-preserve=ownership// ; \
 		/^ *LUA_BINARY *=/s/lua/${LUA_CMD}/' ${WRKSRC}/Makefile
 .if ! ${PORT_OPTIONS:MNLS}
-	${REINPLACE_CMD} -e '/LOCALE_DIR/s/^/#/' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/LOCALE_DIR/s/^/#/' ${WRKSRC}/Makefile
 .endif
 .if ${PORT_OPTIONS:MNCURSES} && ${NCURSESBASE} == /usr
-	${REINPLACE_CMD} -e 's/$$(shell ncursesw5-config --libs)/-lncursesw/ ; \
+	@${REINPLACE_CMD} -e 's/$$(shell ncursesw5-config --libs)/-lncursesw/ ; \
 		/$$(shell ncursesw5-config --cflags)/d' ${WRKSRC}/Makefile
 .endif
 .if ${PORT_OPTIONS:MSDL}
-	${REINPLACE_CMD} -e '/"file":/s|gfx|${DATADIR}/&|' \
+	@${REINPLACE_CMD} -e '/"file":/s|gfx|${DATADIR}/&|' \
 		${WRKSRC}/gfx/*/tile_config.json
 	# replace bundled windows version of terminus font with X-compatible one
-	${CAT} `cd ${PORTSDIR}/x11-fonts/terminus-font; make -V WRKSRC`/ter-u14n.bdf \
+	@${CAT} `cd ${PORTSDIR}/x11-fonts/terminus-font; make -V WRKSRC`/ter-u14n.bdf \
 		| bdftopcf | ${GZIP_CMD} > ${WRKSRC}/data/font/terminus.fon
 .endif
 

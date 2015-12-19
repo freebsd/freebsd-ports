@@ -12,6 +12,8 @@ COMMENT=	Adjust brain waves with sound
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=	DOCS
 
 USES=		shebangfix perl5 pkgconfig

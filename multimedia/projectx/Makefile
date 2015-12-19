@@ -8,7 +8,7 @@ MASTER_SITES=	SF/project-x/project-x/ProjectX_${PORTVERSION}.00
 DISTNAME=	ProjectX_${PORTVERSION}
 DISTFILES=	ProjectX_${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVB (mpeg) cutting/demux tool
 
 USES=		zip:infozip

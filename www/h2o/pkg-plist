@@ -15,6 +15,7 @@ share/h2o/start_server
 %%PORTDOCS%%%%DOCSDIR%%/configure/access_log_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/base_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/command_options.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/errordoc_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/expires_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/fastcgi_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/file_directives.html

@@ -35,7 +35,6 @@ share/gnome-shell/search-providers/nautilus-search-provider.ini
 share/gtk-doc/html/libnautilus-extension/ch01.html
 share/gtk-doc/html/libnautilus-extension/home.png
 share/gtk-doc/html/libnautilus-extension/index.html
-share/gtk-doc/html/libnautilus-extension/index.sgml
 share/gtk-doc/html/libnautilus-extension/ix01.html
 share/gtk-doc/html/libnautilus-extension/left-insensitive.png
 share/gtk-doc/html/libnautilus-extension/left.png

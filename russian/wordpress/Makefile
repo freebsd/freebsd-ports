@@ -3,6 +3,7 @@
 
 PORTNAME=	wordpress
 PORTVERSION=	4.4
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-ru_RU
 CATEGORIES=	russian www
 MASTER_SITES=	http://ru.wordpress.org/

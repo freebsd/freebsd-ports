@@ -25,6 +25,8 @@ CONFIGURE_ARGS+=	--disable-alsa --enable-oss \
 			--enable-jack-default-midi \
 			--disable-version-check
 
+BROKEN_powerpc64=	Does not build
+
 PORTDATA=	*
 
 .include <bsd.port.mk>

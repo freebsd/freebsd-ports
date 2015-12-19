@@ -192,40 +192,6 @@
  	/* Is it cover art for another file? */
  	if( is_image(path) )
  		update_if_album_art(path);
-@@ -314,25 +359,25 @@
- 	{
- 		case ALL_MEDIA:
- 			if( !is_image(path) &&
--			    !is_audio(path) &&
--			    !is_video(path) &&
--			    !is_playlist(path) )
-+					!is_audio(path) &&
-+					!is_video(path) &&
-+					!is_playlist(path) )
- 				return -1;
- 			break;
- 		case TYPE_AUDIO:
- 			if( !is_audio(path) &&
--			    !is_playlist(path) )
-+					!is_playlist(path) )
- 				return -1;
- 			break;
- 		case TYPE_AUDIO|TYPE_VIDEO:
- 			if( !is_audio(path) &&
--			    !is_video(path) &&
--			    !is_playlist(path) )
-+					!is_video(path) &&
-+					!is_playlist(path) )
- 			break;
- 		case TYPE_AUDIO|TYPE_IMAGES:
- 			if( !is_image(path) &&
--			    !is_audio(path) &&
--			    !is_playlist(path) )
-+					!is_audio(path) &&
-+					!is_playlist(path) )
- 				return -1;
- 			break;
- 		case TYPE_VIDEO:
 @@ -341,14 +386,14 @@
  			break;
  		case TYPE_VIDEO|TYPE_IMAGES:

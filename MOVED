@@ -8050,3 +8050,13 @@ devel/py-memoryprofiler|devel/py-memory_profiler|2015-12-11|Rename to consistenc
 print/py-cups|print/py-pycups|2015-12-11|Renamed to match upstream naming
 astro/py-metar|astro/py-pymetar|2015-12-11|Renamed to match upstream naming
 devel/jep|devel/py-jep|2015-12-11|Renamed to match upstream naming
+ftp/py-curl|ftp/py-pycurl|2015-12-13|Renamed to match upstream naming
+www/py-django-pipeline12||2015-12-15|Has expired: Django 1.4 extended support ended on 2015-10-01
+www/py-django14||2015-12-15|Has expired: Django 1.4 extended support ended on 2015-10-01
+net/py-pysphere|net/py-pyvmomi|2015-12-15|Has expired: No longer maintained, please use net/py-pyvmomi by VMware
+ftp/ftpcube||2015-12-15|Has expired: No releases for 8+ years, no supporting newer wxWidget
+astro/libroadnav||2015-12-15|Has expired: No releases for 8+ years, no supporting newer wxWidget
+astro/roadnav||2015-12-15|Has expired: No releases for 8+ years, no supporting newer wxWidget
+www/joomla15||2015-12-18|Has expired: Joomla 1.5.x reached its End of Life in September 2012. Please update to a current version
+www/joomla25||2015-12-18|Has expired: Joomla 2.5.x reached its End of Life in December 2014. Please update to a current version
+devel/rubygem-tins0||2015-12-18|Has expired: not used by other ports anymore

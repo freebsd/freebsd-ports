@@ -16,6 +16,6 @@ LICENSE_COMB=	dual
 
 NO_ARCH=	yes
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

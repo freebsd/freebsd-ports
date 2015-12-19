@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.tntnet.org/download/
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webapplicationserver for C++
 
 LIB_DEPENDS=	libcxxtools.so:${PORTSDIR}/devel/cxxtools

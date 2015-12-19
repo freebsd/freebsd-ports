@@ -25,15 +25,13 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} '/^DATADIR/s|/share||' ${WRKSRC}/Makefile
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} '/-C po/d' ${WRKSRC}/Makefile
-.endif
 
-post-install:
+post-patch-NLS-off:
+	@${REINPLACE_CMD} '/-C po/d' ${WRKSRC}/Makefile
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|g} ${STAGEDIR}${DOCSDIR}
 

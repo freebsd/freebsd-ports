@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read information about mp3s and oggs bitstream
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	VORBIS DOCS

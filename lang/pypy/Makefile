@@ -8,13 +8,13 @@ MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 DISTNAME=	release-${DISTVERSION}
 DIST_SUBDIR=	pypy
 
-MAINTAINER=	dbn@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libffi.so:${PORTSDIR}/devel/libffi
 
-ONLY_FOR_ARCHS=	i386 amd64 armv6
+ONLY_FOR_ARCHS=	i386 amd64 armv6 powerpc64
 ONLY_FOR_ARCHS_REASON=	PyPy JIT only supported on these architectures
 
 PYTHON_DESC=	Use Python-2.7 to translate (slowest)
@@ -47,6 +47,13 @@ PYTHON_CMD?=	${SETENV} PYPY_GC_MAX_DELTA=200MB ${LOCALBASE}/bin/pypy --jit loop_
 .else # if ${PORT_OPTIONS:MPYTHON}
 USES+=		python:2,build
 .endif
+
+.if ${ARCH} == "i386" || ${ARCH} == "armv6"
+PYPY_BITS=	32
+.elif ${ARCH} == "amd64" || ${ARCH} == "powerpc64"
+PYPY_BITS=	64
+.endif
+PLIST_SUB+=	PYPY_BITS="${PYPY_BITS}"
 
 pre-build:
 	if [ ! -f ${BUILD_WRKSRC}/Makefile ]; then \
@@ -86,6 +93,7 @@ regression-test: build
 pkg-plist: build
 	${TAR} -tf ${WRKDIR}/build/${PYPY_DIR}.tar.bz2 > ${WRKDIR}/.plist-files-gen
 	${REINPLACE_CMD} -e 's|^${PYPY_DIR}|%%PYPY_DIR%%|g' \
+		-e 's|_${PYPY_BITS}_|_%%PYPY_BITS%%_|g' \
 		-e 's|-${PYPY_CFFI_VER}|-%%PYPY_CFFI_VER%%|g' \
 		-e '/\/$$/d' \
 			${WRKDIR}/.plist-files-gen

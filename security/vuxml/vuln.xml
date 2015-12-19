@@ -42,8 +42,8 @@ QUICK GUIDE TO ADDING A NEW ENTRY
 6. profit!
 
 Additional tests can be done this way:
- $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py26-django-1.6
- $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py27-django-1.6.1
+ $ pkg audit -f ./vuln.xml py26-django-1.6
+ $ pkg audit -f ./vuln.xml py27-django-1.6.1
 
 Extensive documentation of the format and help with writing and verifying
 a new entry is available in The Porter's Handbook at:
@@ -58,6 +58,497 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bb7d4791-a5bf-11e5-a0e5-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>47.0.2526.106</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update_15.html">
+	  <p>2 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[569486] CVE-2015-6792: Fixes from internal audits and
+	      fuzzing.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6792</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update_15.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-16</discovery>
+      <entry>2015-12-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7329938b-a4e6-11e5-b864-14dae9d210b8">
+    <topic>cups-filters -- code execution</topic>
+    <affects>
+      <package>
+	<name>cups-filters</name>
+	<range><lt>1.4.0</lt></range>
+      </package>
+      <package>
+	<name>foomatic-filters</name>
+	<range><lt>4.0.17_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Till Kamppeter reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/14/13">
+	  <p>Cups Filters/Foomatic Filters does not consider semicolon
+	    as an illegal escape character.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/14/13</url>
+      <cvename>CVE-2015-8560</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-12</discovery>
+      <entry>2015-12-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6dbae1a8-a4e6-11e5-b864-14dae9d210b8">
+    <topic>cups-filters -- code execution</topic>
+    <affects>
+      <package>
+	<name>cups-filters</name>
+	<range><lt>1.2.0</lt></range>
+      </package>
+      <package>
+	<name>foomatic-filters</name>
+	<range><lt>4.0.17_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Salvatore Bonaccorso reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/13/2">
+	  <p>Cups Filters/Foomatic Filters does not consider backtick
+	    as an illegal escape character.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/13/2</url>
+      <cvename>CVE-2015-8327</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-30</discovery>
+      <entry>2015-12-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1fbd6db1-a4e4-11e5-b864-14dae9d210b8">
+    <topic>py-amf -- input sanitization errors</topic>
+    <affects>
+      <package>
+	<name>py27-amf</name>
+	<name>py32-amf</name>
+	<name>py33-amf</name>
+	<name>py34-amf</name>
+	<range><lt>0.8.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2015-011.html">
+	  <p>A specially crafted AMF payload, containing malicious
+	    references to XML external entities, can be used to trigger Denial of
+	    Service (DoS) conditions or arbitrarily return the contents of files
+	    that are accessible with the running application privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ocert.org/advisories/ocert-2015-011.html</url>
+      <cvename>CVE-2015-8549</cvename>
+    </references>
+    <dates>
+     <discovery>2015-12-01</discovery>
+     <entry>2015-12-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a9f60ce8-a4e0-11e5-b864-14dae9d210b8">
+    <topic>joomla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla3</name>
+	<range><lt>3.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Joomla! reports:</p>
+	<blockquote cite="https://www.joomla.org/announcements/release-news/5641-joomla-3-4-6-released.html">
+	  <p>Joomla! 3.4.6 is now available. This is a security release
+	    for the 3.x series of Joomla which addresses a critical security
+	    vulnerability and 4 low level security vulnerabilities. We strongly
+	    recommend that you update your sites immediately.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.joomla.org/announcements/release-news/5641-joomla-3-4-6-released.html</url>
+      <cvename>CVE-2015-8562</cvename>
+      <cvename>CVE-2015-8563</cvename>
+      <cvename>CVE-2015-8564</cvename>
+      <cvename>CVE-2015-8565</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-14</discovery>
+      <entry>2015-12-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a8ec4db7-a398-11e5-85e9-14dae9d210b8">
+    <topic>bind -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.8P2</lt></range>
+      </package>
+      <package>
+	<name>bind910</name>
+	<range><lt>9.10.3P2</lt></range>
+      </package>
+      <package>
+	<name>bind9-devel</name>
+	<range><lt>9.11.0.a20151215</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01328/0/BIND-9.10.3-P2-Release-Notes.html">
+	  <p>Named is potentially vulnerable to the OpenSSL vulnerabilty described in CVE-2015-3193.</p>
+	  <p>Incorrect reference counting could result in an INSIST
+	    failure if a socket error occurred while performing a lookup. This flaw
+	    is disclosed in CVE-2015-8461. [RT#40945]</p>
+	  <p>Insufficient testing when parsing a message allowed records
+	    with an incorrect class to be be accepted, triggering a REQUIRE failure
+	    when those records were subsequently cached. This flaw is disclosed in
+	    CVE-2015-8000. [RT #40987]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://kb.isc.org/article/AA-01328/0/BIND-9.10.3-P2-Release-Notes.html</url>
+      <url>https://kb.isc.org/article/AA-01317/0/CVE-2015-8000%3A-Responses-with-a-malformed-class-attribute-can-trigger-an-assertion-failure-in-db.c.html</url>
+      <url>https://kb.isc.org/article/AA-01319/0/CVE-2015-8461%3A-A-race-condition-when-handling-socket-errors-can-lead-to-an-assertion-failure-in-resolver.c.html</url>
+      <cvename>CVE-2015-3193</cvename>
+      <cvename>CVE-2015-8000</cvename>
+      <cvename>CVE-2015-8461</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-24</discovery>
+      <entry>2015-12-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2c2d1c39-1396-459a-91f5-ca03ee7c64c6">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>43.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>43.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.40</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.40</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>38.5.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>38.5.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>38.5.0</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>38.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/">
+	  <p>MFSA 2015-134 Miscellaneous memory safety hazards
+	    (rv:43.0 / rv:38.5)</p>
+	  <p>MFSA 2015-135 Crash with JavaScript variable assignment
+	    with unboxed objects</p>
+	  <p>MFSA 2015-136 Same-origin policy violation using
+	    perfomance.getEntries and history navigation</p>
+	  <p>MFSA 2015-137 Firefox allows for control characters to be
+	    set in cookies</p>
+	  <p>MFSA 2015-138 Use-after-free in WebRTC when datachannel
+	    is used after being destroyed</p>
+	  <p>MFSA 2015-139 Integer overflow allocating extremely large
+	    textures</p>
+	  <p>MFSA 2015-140 Cross-origin information leak through web
+	    workers error events</p>
+	  <p>MFSA 2015-141 Hash in data URI is incorrectly parsed</p>
+	  <p>MFSA 2015-142 DOS due to malformed frames in HTTP/2</p>
+	  <p>MFSA 2015-143 Linux file chooser crashes on malformed
+	    images due to flaws in Jasper library</p>
+	  <p>MFSA 2015-144 Buffer overflows found through code
+	    inspection</p>
+	  <p>MFSA 2015-145 Underflow through code inspection</p>
+	  <p>MFSA 2015-146 Integer overflow in MP4 playback in 64-bit
+	    versions</p>
+	  <p>MFSA 2015-147 Integer underflow and buffer overflow
+	    processing MP4 metadata in libstagefright</p>
+	  <p>MFSA 2015-148 Privilege escalation vulnerabilities in
+	    WebExtension APIs</p>
+	  <p>MFSA 2015-149 Cross-site reading attack through data and
+	    view-source URIs</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7201</cvename>
+      <cvename>CVE-2015-7202</cvename>
+      <cvename>CVE-2015-7203</cvename>
+      <cvename>CVE-2015-7204</cvename>
+      <cvename>CVE-2015-7205</cvename>
+      <cvename>CVE-2015-7207</cvename>
+      <cvename>CVE-2015-7208</cvename>
+      <cvename>CVE-2015-7210</cvename>
+      <cvename>CVE-2015-7211</cvename>
+      <cvename>CVE-2015-7212</cvename>
+      <cvename>CVE-2015-7213</cvename>
+      <cvename>CVE-2015-7214</cvename>
+      <cvename>CVE-2015-7215</cvename>
+      <cvename>CVE-2015-7216</cvename>
+      <cvename>CVE-2015-7217</cvename>
+      <cvename>CVE-2015-7218</cvename>
+      <cvename>CVE-2015-7219</cvename>
+      <cvename>CVE-2015-7220</cvename>
+      <cvename>CVE-2015-7221</cvename>
+      <cvename>CVE-2015-7222</cvename>
+      <cvename>CVE-2015-7223</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-134/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-135/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-136/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-137/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-138/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-139/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-140/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-141/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-142/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-143/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-144/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-145/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-146/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-147/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-148/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-149/</url>
+    </references>
+    <dates>
+      <discovery>2015-12-15</discovery>
+      <entry>2015-12-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a5934ba8-a376-11e5-85e9-14dae9d210b8">
+    <topic>java -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openjdk8</name>
+	<name>openjdk8-jre</name>
+	<range><lt>8.66.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html#AppendixJAVA">
+	  <p>This Critical Patch Update contains 25 new security fixes
+	    for Oracle Java SE.  24 of these vulnerabilities may be remotely
+	    exploitable without authentication, i.e., may be exploited over a
+	    network without the need for a username and password.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html#AppendixJAVA</url>
+      <cvename>CVE-2015-4835</cvename>
+      <cvename>CVE-2015-4881</cvename>
+      <cvename>CVE-2015-4843</cvename>
+      <cvename>CVE-2015-4883</cvename>
+      <cvename>CVE-2015-4860</cvename>
+      <cvename>CVE-2015-4805</cvename>
+      <cvename>CVE-2015-4844</cvename>
+      <cvename>CVE-2015-4901</cvename>
+      <cvename>CVE-2015-4868</cvename>
+      <cvename>CVE-2015-4810</cvename>
+      <cvename>CVE-2015-4806</cvename>
+      <cvename>CVE-2015-4871</cvename>
+      <cvename>CVE-2015-4902</cvename>
+      <cvename>CVE-2015-4840</cvename>
+      <cvename>CVE-2015-4882</cvename>
+      <cvename>CVE-2015-4842</cvename>
+      <cvename>CVE-2015-4734</cvename>
+      <cvename>CVE-2015-4903</cvename>
+      <cvename>CVE-2015-4803</cvename>
+      <cvename>CVE-2015-4893</cvename>
+      <cvename>CVE-2015-4911</cvename>
+      <cvename>CVE-2015-4872</cvename>
+      <cvename>CVE-2015-4906</cvename>
+      <cvename>CVE-2015-4916</cvename>
+      <cvename>CVE-2015-4908</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-20</discovery>
+      <entry>2015-12-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="daadef86-a366-11e5-8b40-20cf30e32f6d">
+    <topic>subversion -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>subversion17</name>
+	<range><ge>1.7.0</ge><lt>1.7.22_1</lt></range>
+      </package>
+      <package>
+	<name>subversion18</name>
+	<range><ge>1.8.0</ge><lt>1.8.15</lt></range>
+      </package>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.9.0</ge><lt>1.9.3</lt></range>
+      </package>
+      <package>
+	<name>mod_dav_svn</name>
+	<range><ge>1.7.0</ge><lt>1.7.22_1</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.15</lt></range>
+	<range><ge>1.9.0</ge><lt>1.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/">
+	  <p>Remotely triggerable heap overflow and out-of-bounds read caused
+	    by integer overflow in the svn:// protocol parser.</p>
+	  <p>Remotely triggerable heap overflow and out-of-bounds read in
+	    mod_dav_svn caused by integer overflow when parsing skel-encoded
+	    request bodies.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5343</cvename>
+      <url>http://subversion.apache.org/security/CVE-2015-5343-advisory.txt</url>
+      <cvename>CVE-2015-5259</cvename>
+      <url>http://subversion.apache.org/security/CVE-2015-5259-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-11-14</discovery>
+      <entry>2015-12-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="72c145df-a1e0-11e5-8ad0-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>47.0.2526.80</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update_8.html">
+	  <p>7 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[548273] High CVE-2015-6788: Type confusion in extensions.
+	      Credit to anonymous.</li>
+	    <li>[557981] High CVE-2015-6789: Use-after-free in Blink. Credit to
+	      cloudfuzzer.</li>
+	    <li>[542054] Medium CVE-2015-6790: Escaping issue in saved pages.
+	      Credit to Inti De Ceukelaire.</li>
+	    <li>[567513] CVE-2015-6791: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>Multiple vulnerabilities in V8 fixed at the tip of the 4.7
+	      branch (currently 4.7.80.23).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6788</cvename>
+      <cvename>CVE-2015-6789</cvename>
+      <cvename>CVE-2015-6790</cvename>
+      <cvename>CVE-2015-6791</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update_8.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-08</discovery>
+      <entry>2015-12-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="33459061-a1d6-11e5-8794-bcaec565249c">
+    <topic>freeimage -- multiple integer overflows</topic>
+    <affects>
+      <package>
+	<name>freeimage</name>
+	<range><lt>3.16.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pcheng pcheng reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/08/28/1">
+	  <p>An integer overflow issue in the FreeImage project was
+	    reported and fixed recently.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0852</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/08/28/1</url>
+    </references>
+    <dates>
+      <discovery>2015-08-28</discovery>
+      <entry>2015-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="21bc4d71-9ed8-11e5-8f5c-002590263bf5">
     <topic>redmine -- information leak vulnerability</topic>
     <affects>
@@ -2995,11 +3486,14 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-7545</cvename>
       <url>https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.6.1.txt</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/11/7</url>
     </references>
     <dates>
       <discovery>2015-09-23</discovery>
       <entry>2015-10-19</entry>
+      <modified>2015-12-12</modified>
     </dates>
   </vuln>
 
@@ -8003,6 +8497,10 @@ Notes:
     <topic>php-phar -- multiple vulnerabilities</topic>
     <affects>
       <package>
+	<name>php56-phar</name>
+	<range><lt>5.6.11</lt></range>
+      </package>
+      <package>
 	<name>php55-phar</name>
 	<range><lt>5.5.27</lt></range>
       </package>
@@ -8032,6 +8530,7 @@ Notes:
     <dates>
       <discovery>2015-06-24</discovery>
       <entry>2015-07-18</entry>
+      <modified>2015-12-18</modified>
     </dates>
   </vuln>
 
@@ -13243,8 +13742,7 @@ Notes:
       </package>
       <package>
 	<name>freeimage</name>
-	<!-- no known fixed version -->
-	<range><ge>3.13.0</ge></range>
+	<range><ge>3.13.0</ge><lt>3.16.0_1</lt></range>
       </package>
       <package>
 	<name>kodi</name>
@@ -13301,7 +13799,7 @@ Notes:
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-09-18</modified>
+      <modified>2015-12-13</modified>
     </dates>
   </vuln>
 

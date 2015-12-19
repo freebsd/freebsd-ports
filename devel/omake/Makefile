@@ -10,6 +10,8 @@ MASTER_SITES=	http://main.metaprl.org/download/omake/
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Flexible build system
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C|-.*||}
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes

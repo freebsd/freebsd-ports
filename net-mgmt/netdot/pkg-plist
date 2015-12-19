@@ -328,7 +328,7 @@
 @dir %%WWWDIR%%/htdocs/css
 @dir %%WWWDIR%%/htdocs/generic
 @dir %%WWWDIR%%/htdocs/help
-@dir %%WWWDIR%%/htdocs/img/graphs
+@dir(www,www,750) %%WWWDIR%%/htdocs/img/graphs
 @dir %%WWWDIR%%/htdocs/img
 @dir %%WWWDIR%%/htdocs/java_script
 @dir %%WWWDIR%%/htdocs/management
@@ -363,15 +363,15 @@
 @dir %%WWWDIR%%/export/dhcpd
 @dir %%WWWDIR%%/export/smokeping
 @dir %%WWWDIR%%/export
-@dir %%WWWDIR%%/htdocs/masondata/obj
+@dir(www,www,) %%WWWDIR%%/htdocs/masondata/obj
 @unexec rm -rf %D/%%WWWDIR%%/htdocs/masondata/obj 2> /dev/null || true
-@dir %%WWWDIR%%/htdocs/masondata/cache
-@dir %%WWWDIR%%/htdocs/masondata
+@dir(www,www,) %%WWWDIR%%/htdocs/masondata/cache
+@dir(www,www,) %%WWWDIR%%/htdocs/masondata
 @dir %%WWWDIR%%/htdocs
-@dir %%WWWDIR%%/tmp/sessions/locks
-@dir %%WWWDIR%%/tmp/sessions
+@dir(www,www,) %%WWWDIR%%/tmp/sessions/locks
+@dir(www,www,) %%WWWDIR%%/tmp/sessions
 @unexec rm -rf %D/%%WWWDIR%%/tmp/sessions 2> /dev/null || true
-@dir %%WWWDIR%%/tmp
+@dir(www,www,750) %%WWWDIR%%/tmp
 @dir %%WWWDIR%%/upgrade
 @dir %%WWWDIR%%/var
 @dir %%WWWDIR%%

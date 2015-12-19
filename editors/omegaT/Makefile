@@ -14,6 +14,8 @@ COMMENT=	Powerful translation memory application written in Java
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 USES=		shebangfix zip
 SHEBANG_FILES=	release/linux-specific/OmegaT \
 		release/linux-specific/OmegaT-JRE \

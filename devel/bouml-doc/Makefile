@@ -10,6 +10,8 @@ DISTNAME=	doc${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Reference manual of BOUML
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/doc
 DOCSDIR=	${PREFIX}/share/doc/bouml

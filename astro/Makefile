@@ -35,7 +35,6 @@
     SUBDIR += libkgeomap
     SUBDIR += libnova
     SUBDIR += libosmpbf
-    SUBDIR += libroadnav
     SUBDIR += luna
     SUBDIR += marble
     SUBDIR += match
@@ -91,7 +90,6 @@
     SUBDIR += readosm
     SUBDIR += rmap
     SUBDIR += roadmap
-    SUBDIR += roadnav
     SUBDIR += routino
     SUBDIR += saoimage
     SUBDIR += sextractor

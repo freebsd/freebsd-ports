@@ -21,16 +21,12 @@ PORTDOCS=	NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 # Setting ALL_TARGET to "all check" is racy and breaks parallel builds
 post-build:
 	${MAKE} -C ${BUILD_WRKSRC} check
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

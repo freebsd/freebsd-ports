@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://wirbel.htpc-forum.de/wirbelscan/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - wirbelscan plugin
 
 USES=		tar:tgz

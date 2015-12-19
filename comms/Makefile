@@ -45,6 +45,7 @@
     SUBDIR += fllog
     SUBDIR += flrig
     SUBDIR += flwrap
+    SUBDIR += freedv
     SUBDIR += gammu
     SUBDIR += ge-x2212
     SUBDIR += geoid
@@ -133,6 +134,7 @@
     SUBDIR += py-libconcord
     SUBDIR += py-libimobiledevice
     SUBDIR += py-lirc
+    SUBDIR += py-qt5-serialport
     SUBDIR += py-serial
     SUBDIR += pyla
     SUBDIR += qico

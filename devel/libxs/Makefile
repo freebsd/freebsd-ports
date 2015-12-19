@@ -10,6 +10,8 @@ MASTER_SITES=	http://download.crossroads.io/
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Open source lightweight messaging layer
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes

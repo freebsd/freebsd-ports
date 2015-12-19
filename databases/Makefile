@@ -213,6 +213,8 @@
     SUBDIR += mysql55-server
     SUBDIR += mysql56-client
     SUBDIR += mysql56-server
+    SUBDIR += mysql57-client
+    SUBDIR += mysql57-server
     SUBDIR += mysqlbackup
     SUBDIR += mysqlbigram
     SUBDIR += mysqldumper
@@ -761,6 +763,8 @@
     SUBDIR += py-python-rrdtool
     SUBDIR += py-python-sql
     SUBDIR += py-qt4-sql
+    SUBDIR += py-qt5-sql
+    SUBDIR += py-queries
     SUBDIR += py-redis
     SUBDIR += py-riak
     SUBDIR += py-rrdtool_lgpl

@@ -41,12 +41,8 @@ OPTIONS_DEFAULT=OPENSSL
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_USE=		OPENSSL=yes
 
-.include <bsd.port.pre.mk>
-
-pre-install:
+pre-install-OPENSSL-on:
 # OpenSSL from base system lacks .pc file for pkgconfig
-.if ${PORT_OPTIONS:MOPENSSL}
 	@${REINPLACE_CMD} -e 's|openssl| |g' ${WRKSRC}/pkgconfig/libgadu.pc
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

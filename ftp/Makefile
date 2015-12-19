@@ -23,7 +23,6 @@
     SUBDIR += fpc-libcurl
     SUBDIR += frox
     SUBDIR += ftpcopy
-    SUBDIR += ftpcube
     SUBDIR += ftpfind
     SUBDIR += ftplib
     SUBDIR += ftpmirror
@@ -77,8 +76,8 @@
     SUBDIR += puf
     SUBDIR += pure-ftpd
     SUBDIR += pureadmin
-    SUBDIR += py-curl
     SUBDIR += py-ftputil
+    SUBDIR += py-pycurl
     SUBDIR += py-pyftpdlib
     SUBDIR += py-tftpy
     SUBDIR += quftp

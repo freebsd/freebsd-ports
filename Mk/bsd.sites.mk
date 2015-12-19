@@ -868,10 +868,8 @@ MASTER_SITE_MOZDEV+= \
 
 .if !defined(IGNORE_MASTER_SITE_MOZILLA)
 MASTER_SITE_MOZILLA+= \
-	http://releases.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	https://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/
+	http://download.cdn.mozilla.net/pub/%SUBDIR%/ \
+	https://archive.mozilla.org/pub/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_MOZILLA_ADDONS)

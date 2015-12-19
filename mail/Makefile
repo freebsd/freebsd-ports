@@ -574,6 +574,7 @@
     SUBDIR += roundcube-umich
     SUBDIR += roundcube-veximaccountadmin
     SUBDIR += rspamd
+    SUBDIR += rspamd-devel
     SUBDIR += rss2email2
     SUBDIR += rss2email3
     SUBDIR += ruby-rfilter
@@ -591,6 +592,8 @@
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-pony
     SUBDIR += rubygem-rmail
+    SUBDIR += rubygem-roadie
+    SUBDIR += rubygem-roadie-rails
     SUBDIR += rubygem-ruby-qmail
     SUBDIR += rubygem-tmail
     SUBDIR += rubygem-vmail

@@ -10,6 +10,7 @@ DISTNAME=	gpc${PORTVERSION:S/.//}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Generic Polygon Clipper
 
+BROKEN=		unfetchable
 USES=		dos2unix uidfix zip
 PLIST_FILES=	lib/libgpc.so.2	\
 		lib/libgpc.so	lib/libgpc.a	\

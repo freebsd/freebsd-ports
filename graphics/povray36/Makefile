@@ -7,7 +7,7 @@ PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/
-MASTER_SITE_SUBDIR=	Official/Unix
+MASTER_SITE_SUBDIR=	Old-Versions/Official-3.62/Unix
 PKGNAMESUFFIX=	36
 DIST_SUBDIR=	povray36
 

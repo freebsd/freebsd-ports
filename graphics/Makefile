@@ -625,6 +625,7 @@
     SUBDIR += openjpeg15
     SUBDIR += openjump
     SUBDIR += opennurbs
+    SUBDIR += opensubdiv
     SUBDIR += openrm
     SUBDIR += openshadinglanguage
     SUBDIR += optar
@@ -864,6 +865,7 @@
     SUBDIR += py-pygooglechart
     SUBDIR += py-pyproj
     SUBDIR += py-qt4-svg
+    SUBDIR += py-qt5-svg
     SUBDIR += py-rabbyt
     SUBDIR += py-sane
     SUBDIR += py-seqdiag

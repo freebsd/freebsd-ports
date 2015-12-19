@@ -3,7 +3,7 @@
 #   $MCom: ports/branches/GNOME_3_12/devel/gitg/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	gitg
-PORTVERSION=	3.17.1
+PORTVERSION=	3.18.0
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -12,6 +12,8 @@ COMMENT=	GTK-based git repository viewer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build
 
 LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libgee-0.8.so:${PORTSDIR}/devel/libgee \

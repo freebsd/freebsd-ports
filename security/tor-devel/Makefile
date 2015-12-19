@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.6.7
+PORTVERSION=	0.2.7.6
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
@@ -47,6 +47,10 @@ CONFLICTS=	tor-[0-9]*
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 1000000
+WITH_OPENSSL_PORT=	yes
+.endif
+
 .if !defined(USE_GCC) && empty(CC:T:M*gcc4*) && \
 empty(PORT_OPTIONS:MSTATIC_TOR) && empty(ARCH:Mia64)
 CONFIGURE_ARGS+=	--enable-gcc-hardening
@@ -86,7 +90,7 @@ TOR_LIBEVENT_LIBS:=	-levent_openssl ${TOR_LIBEVENT_LIBS}
 .if ${PORT_OPTIONS:MTCMALLOC}
 CONFIGURE_ARGS+=	--with-tcmalloc
 .if ${PORT_OPTIONS:MSTATIC_TOR}
-BUILD_DEPENDS +=	${LOCALBASE}/lib/libtcmalloc.so:${PORTSDIR}/devel/google-perftools
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libtcmalloc.a:${PORTSDIR}/devel/google-perftools
 .else
 LIB_DEPENDS+=		libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 .endif
@@ -103,8 +107,15 @@ CONFIGURE_ARGS+=	--disable-transparent
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -e "s@-ltcmalloc@${LOCALBASE}/lib/libtcmalloc.so@" \
-		-e "s@(-z) (relro|now)@-Wl,\1,\2@g" \
+	@${REINPLACE_CMD} -E -e "s@(-z) (relro|now)@-Wl,\1,\2@g" \
+		${WRKSRC}/configure
+
+post-patch-STATIC_TOR-off:
+	@${REINPLACE_CMD} -e "s@-ltcmalloc@${LOCALBASE}/lib/libtcmalloc.so@" \
+		${WRKSRC}/configure
+
+post-patch-STATIC_TOR-on:
+	@${REINPLACE_CMD} -e "s@-ltcmalloc@${LOCALBASE}/lib/libtcmalloc.a@" \
 		${WRKSRC}/configure
 
 post-configure:

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.163000
+PORTVERSION=	0.164000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Moo>=2.000000:${PORTSDIR}/devel/p5-Moo \
 		p5-MooX-Types-MooseLike>=0:${PORTSDIR}/devel/p5-MooX-Types-MooseLike \
-		p5-Plack>=1.0029:${PORTSDIR}/www/p5-Plack \
+		p5-Plack>=1.0035:${PORTSDIR}/www/p5-Plack \
 		p5-Plack-Middleware-FixMissingBodyInRedirect>=0:${PORTSDIR}/www/p5-Plack-Middleware-FixMissingBodyInRedirect \
 		p5-Plack-Middleware-RemoveRedundantBody>=0:${PORTSDIR}/www/p5-Plack-Middleware-RemoveRedundantBody \
 		p5-Return-MultiLevel>=0:${PORTSDIR}/devel/p5-Return-MultiLevel \

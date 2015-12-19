@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asset (css/js) packaging library for Django
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>0:${PORTSDIR}/www/py-django16
 
@@ -21,6 +22,6 @@ USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py[23][0-9]-django-pipeline-[0-9]* \
 		py[23][0-9]-django-pipeline12-[0-9]* \
-		py[23][0-9]-django-pipeline13-[0-9]*
+		py[23][0-9]-django-pipeline14-[0-9]*
 
 .include <bsd.port.mk>

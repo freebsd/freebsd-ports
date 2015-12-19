@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.escape-edv.de/endriss/vdr/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - remote control plugin
 
 USES=		tar:tgz

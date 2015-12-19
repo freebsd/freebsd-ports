@@ -12,6 +12,8 @@ DISTNAME=	gl${PORTNAME}-${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Unix source-port of the famous Heretic game by id Software
 
+BROKEN=		unfetchable
+
 USES=		gmake
 USE_XORG=	x11 xi xpm xau
 

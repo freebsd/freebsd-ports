@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	0.15.8
-PORTREVISION=	2
+PORTVERSION=	0.15.9
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -20,9 +19,7 @@ RUN_DEPENDS=	py${PYTHON_SUFFIX}-lz4>=0.7.0_1:${PORTSDIR}/archivers/py-lz4 \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl \
 		${PYTHON_SITELIBDIR}/OpenGL_accelerate/__init__.py:${PORTSDIR}/graphics/py-opengl-accelerate \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_SITELIBDIR}/avahi/__init__.py:${PORTSDIR}/net/py-avahi \
 		${PYTHON_SITELIBDIR}/netifaces.so:${PORTSDIR}/net/py-netifaces \
-		${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-pycups \
 		ssh-askpass:${PORTSDIR}/security/openssh-askpass \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap \
 		xauth:${PORTSDIR}/x11/xauth \
@@ -33,12 +30,13 @@ RUN_DEPENDS=	py${PYTHON_SUFFIX}-lz4>=0.7.0_1:${PORTSDIR}/archivers/py-lz4 \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gtkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
 
 USES=		desktop-file-utils pkgconfig python shared-mime-info tar:xz
+USE_GSTREAMER=	good python
 USE_PYTHON=	distutils
 USE_XORG=	x11 xcomposite xdamage xfixes xkbfile xrandr xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHON_VER=${PYTHON_VER}
 
-OPTIONS_DEFINE=		AVCODEC OPENCL SWSCALE VPX WEBP X264 X265
-OPTIONS_DEFAULT=	AVCODEC SWSCALE VPX WEBP X264 X265
+OPTIONS_DEFINE=		AVAHI AVCODEC CUPS OPENCL SWSCALE VPX WEBP X264 X265
+OPTIONS_DEFAULT=	AVAHI AVCODEC CUPS SWSCALE VPX WEBP X264 X265
 OPTIONS_SUB=		yes
 
 AVCODEC_DESC=	Enable avcodec2 decoder
@@ -49,7 +47,9 @@ WEBP_DESC=	Enable WebP encoder
 X264_DESC=	Enable X264 encoder
 X265_DESC=	Enable X265 encoder
 
+AVAHI_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/avahi/__init__.py:${PORTSDIR}/net/py-avahi
 AVCODEC_VARS=		XPRA_OPTIONS+=dec_avcodec2
+CUPS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-pycups
 OPENCL_LIB_DEPENDS=	libOpenCL.so:${PORTSDIR}/devel/ocl-icd
 OPENCL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyopencl/__init__.py:${PORTSDIR}/devel/py-pyopencl
 OPENCL_VARS=		XPRA_OPTIONS+=csc_opencl

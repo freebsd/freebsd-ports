@@ -19,11 +19,13 @@ share/locale/pl/LC_MESSAGES/manaplus.mo
 share/locale/pt/LC_MESSAGES/manaplus.mo
 share/locale/pt_BR/LC_MESSAGES/manaplus.mo
 share/locale/ru/LC_MESSAGES/manaplus.mo
+share/locale/sr/LC_MESSAGES/manaplus.mo
 share/locale/sv/LC_MESSAGES/manaplus.mo
 share/locale/sv_SE/LC_MESSAGES/manaplus.mo
 share/locale/tr/LC_MESSAGES/manaplus.mo
 share/locale/uk/LC_MESSAGES/manaplus.mo
 share/locale/zh_CN/LC_MESSAGES/manaplus.mo
+share/locale/zh_HK/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/fonts/dejavusans-bold.ttf
 %%DATADIR%%/data/fonts/dejavusans.ttf
 %%DATADIR%%/data/fonts/dejavusansmono-bold.ttf
@@ -37,6 +39,21 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/fonts/mplus-1p-bold.ttf
 %%DATADIR%%/data/fonts/mplus-1p-regular.ttf
 %%DATADIR%%/data/fonts/wqy-microhei.ttf
+%%DATADIR%%/data/graphics/badges/away.png
+%%DATADIR%%/data/graphics/badges/away.xml
+%%DATADIR%%/data/graphics/badges/gm.png
+%%DATADIR%%/data/graphics/badges/gm.xml
+%%DATADIR%%/data/graphics/badges/inactive.png
+%%DATADIR%%/data/graphics/badges/inactive.xml
+%%DATADIR%%/data/graphics/badges/shop.png
+%%DATADIR%%/data/graphics/badges/shop.xml
+%%DATADIR%%/data/graphics/badges/team1.png
+%%DATADIR%%/data/graphics/badges/team1.xml
+%%DATADIR%%/data/graphics/badges/team2.png
+%%DATADIR%%/data/graphics/badges/team2.xml
+%%DATADIR%%/data/graphics/badges/team3.png
+%%DATADIR%%/data/graphics/badges/team3.xml
+%%DATADIR%%/data/graphics/flags/ca.png
 %%DATADIR%%/data/graphics/flags/cn.png
 %%DATADIR%%/data/graphics/flags/cz.png
 %%DATADIR%%/data/graphics/flags/de.png
@@ -44,6 +61,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/graphics/flags/es.png
 %%DATADIR%%/data/graphics/flags/fi.png
 %%DATADIR%%/data/graphics/flags/fr.png
+%%DATADIR%%/data/graphics/flags/hk.png
 %%DATADIR%%/data/graphics/flags/id.png
 %%DATADIR%%/data/graphics/flags/it.png
 %%DATADIR%%/data/graphics/flags/jp.png
@@ -54,6 +72,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/graphics/flags/ru.png
 %%DATADIR%%/data/graphics/flags/se.png
 %%DATADIR%%/data/graphics/flags/tr.png
+%%DATADIR%%/data/graphics/flags/ua.png
 %%DATADIR%%/data/graphics/gui/browserbox.xml
 %%DATADIR%%/data/graphics/gui/bubble.png
 %%DATADIR%%/data/graphics/gui/bubble.xml
@@ -87,6 +106,8 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/graphics/gui/incomplete_icon.xml
 %%DATADIR%%/data/graphics/gui/info.xml
 %%DATADIR%%/data/graphics/gui/inventory.xml
+%%DATADIR%%/data/graphics/gui/inventory_cell.xml
+%%DATADIR%%/data/graphics/gui/inventory_cell2.xml
 %%DATADIR%%/data/graphics/gui/item_selection.xml
 %%DATADIR%%/data/graphics/gui/item_shortcut_background.xml
 %%DATADIR%%/data/graphics/gui/itemcontainer.xml
@@ -274,6 +295,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/golden-delicious/button_highlighted.xml
 %%DATADIR%%/data/themes/golden-delicious/button_pressed.xml
 %%DATADIR%%/data/themes/golden-delicious/buy.xml
+%%DATADIR%%/data/themes/golden-delicious/charcreate.xml
 %%DATADIR%%/data/themes/golden-delicious/chat.xml
 %%DATADIR%%/data/themes/golden-delicious/checkbox.xml
 %%DATADIR%%/data/themes/golden-delicious/circle-off.xml
@@ -303,6 +325,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/golden-delicious/incomplete_icon.xml
 %%DATADIR%%/data/themes/golden-delicious/info.xml
 %%DATADIR%%/data/themes/golden-delicious/inventory.xml
+%%DATADIR%%/data/themes/golden-delicious/inventory_cell2.xml
 %%DATADIR%%/data/themes/golden-delicious/item_selection.xml
 %%DATADIR%%/data/themes/golden-delicious/itemcontainer.xml
 %%DATADIR%%/data/themes/golden-delicious/itempopup.xml
@@ -385,6 +408,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/jewelry/button_highlighted.xml
 %%DATADIR%%/data/themes/jewelry/button_pressed.xml
 %%DATADIR%%/data/themes/jewelry/buy.xml
+%%DATADIR%%/data/themes/jewelry/charcreate.xml
 %%DATADIR%%/data/themes/jewelry/chat.xml
 %%DATADIR%%/data/themes/jewelry/checkbox.xml
 %%DATADIR%%/data/themes/jewelry/circle-off.xml
@@ -413,6 +437,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/themes/jewelry/incomplete_icon.xml
 %%DATADIR%%/data/themes/jewelry/info.xml
 %%DATADIR%%/data/themes/jewelry/inventory.xml
+%%DATADIR%%/data/themes/jewelry/inventory_cell2.xml
 %%DATADIR%%/data/themes/jewelry/item_selection.xml
 %%DATADIR%%/data/themes/jewelry/itemcontainer.xml
 %%DATADIR%%/data/themes/jewelry/itempopup.xml

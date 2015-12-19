@@ -2,8 +2,6 @@
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
 %%WWWDIR%%/Gemfile
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
 %%WWWDIR%%/Gemfile.lock
 @owner
 @group
@@ -592,8 +590,6 @@
 %%WWWDIR%%/config/locales/zh.yml
 %%WWWDIR%%/config/preinitializer.rb
 %%WWWDIR%%/config/routes.rb
-%%WWWDIR%%/config/settings.yml
-%%WWWDIR%%/config/settings.yml-dist
 %%WWWDIR%%/db/migrate/001_setup.rb
 %%WWWDIR%%/db/migrate/002_issue_move.rb
 %%WWWDIR%%/db/migrate/003_issue_add_note.rb
@@ -1842,6 +1838,9 @@
 %%WWWDIR%%/test/unit/wiki_test.rb
 %%WWWDIR%%/test/unit/workflow_test.rb
 %%WWWDIR%%/test/unit/workflow_transition_test.rb
+%%RMAGIC%%%%WWWDIR%%/bundler.d/rmagic.rb
+%%THIN%%%%WWWDIR%%/bundler.d/thin.rb
+@sample %%WWWDIR%%/config/settings.yml.sample
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/pdf/empty
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/test/empty
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/thumbnails/empty

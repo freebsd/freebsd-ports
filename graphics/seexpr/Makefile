@@ -11,13 +11,12 @@ COMMENT=	Embeddable expression evaluation language
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/share/py-sip/QtGui/QtGuimod.sip:${PORTSDIR}/x11-toolkits/py-qt4-gui
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	wdas
 GH_TAGNAME=	36ffb818b8
 
-USES=		bison cmake compiler:c++0x python
+USES=		bison cmake compiler:c++0x pyqt:4 python
+USE_PYQT=	gui_build
 USE_QT4=	moc_build qmake_build rcc_build uic_build gui opengl
 
 WRKSRC=		${WRKDIR}/SeExpr-${GH_TAGNAME_EXTRACT}

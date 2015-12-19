@@ -1,6 +1,6 @@
---- Gemfile.orig	2015-12-09 20:52:29 UTC
+--- Gemfile.orig	2015-12-09 23:40:39 UTC
 +++ Gemfile
-@@ -1,25 +1,25 @@
+@@ -1,37 +1,29 @@
  source 'https://rubygems.org'
  
 -gem "rails", "3.2.22"
@@ -32,7 +32,19 @@
    gem "rack-openid"
  end
  
-@@ -82,23 +82,6 @@ else
+ platforms :mri, :mingw do
+-  # Optional gem for exporting the gantt to a PNG file, not supported with jruby
+-  group :rmagick do
+-    # RMagick 2 supports ruby 1.9
+-    # RMagick 1 would be fine for ruby 1.8 but Bundler does not support
+-    # different requirements for the same gem on different platforms
+-    gem "rmagick", (RUBY_VERSION < "1.9" ? "2.13.3" : "~> 2.13.4")
+-  end
+-
+   # Optional Markdown support, not for JRuby
+   group :markdown do
+     gem "redcarpet", (RUBY_VERSION < "1.9" ? "~> 2.3.0" : "~> 3.3.2")
+@@ -82,23 +74,6 @@ else
    warn("Please configure your config/database.yml first")
  end
  
@@ -56,3 +68,11 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    puts "Loading Gemfile.local ..." if $DEBUG # `ruby -d` or `bundle -v`
+@@ -111,3 +86,7 @@ Dir.glob File.expand_path("../plugins/*/
+   #TODO: switch to "eval_gemfile file" when bundler >= 1.2.0 will be required (rails 4)
+   instance_eval File.read(file), file
+ end
++
++Dir["#{File.dirname(__FILE__)}/bundler.d/*.rb"].each do |bundle|
++  self.instance_eval(Bundler.read_file(bundle))
++end

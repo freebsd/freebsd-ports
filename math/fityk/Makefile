@@ -9,7 +9,7 @@ MASTER_SITES=	GHC SF/xylib:xylib
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${XYLIB_DISTNAME}${EXTRACT_SUFX}:xylib
 
-MAINTAINER=	sperber@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free peak fitting software
 
 LICENSE=	GPLv2 LGPL21
