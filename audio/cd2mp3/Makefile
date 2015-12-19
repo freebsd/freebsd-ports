@@ -8,6 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://mark.foster.cc/pub/freebsd/ports/distfiles/ \
 		http://BSDforge.com/projects/source/audio/cd2mp3/ \
+		http://bsd6.BSDforge.com/projects/source/audio/cd2mp3/ \
 		LOCAL/feld
 
 MAINTAINER=	portmaster@BSDforge.com
