@@ -1,3 +1,4 @@
+bin/async_connect_send_test
 bin/cifsdd
 bin/dbwrap_tool
 bin/eventlogadm
@@ -252,8 +253,8 @@ lib/samba/libdb-glue-samba4.so
 lib/samba/libdbwrap-samba4.so
 lib/samba/libdcerpc-samba-samba4.so
 lib/samba/libdcerpc-samba4.so
-lib/samba/libdfs-server-ad-samba4.so
-lib/samba/libdnsserver-common-samba4.so
+%%AD_DC%%lib/samba/libdfs-server-ad-samba4.so
+%%AD_DC%%lib/samba/libdnsserver-common-samba4.so
 lib/samba/libdsdb-module-samba4.so
 lib/samba/liberrors-samba4.so
 lib/samba/libevents-samba4.so
@@ -311,7 +312,7 @@ lib/samba/libsmb-transport-samba4.so
 lib/samba/libsmbd-base-samba4.so
 lib/samba/libsmbd-conn-samba4.so
 lib/samba/libsmbd-shim-samba4.so
-lib/samba/libsmbldaphelper-samba4.so
+%%LDAP%%lib/samba/libsmbldaphelper-samba4.so
 lib/samba/libsmbpasswdparser-samba4.so
 lib/samba/libsmbregistry-samba4.so
 lib/samba/libsocket-blocking-samba4.so
@@ -428,10 +429,10 @@ lib/shared-modules/idmap/hash.so
 lib/shared-modules/idmap/rid.so
 lib/shared-modules/idmap/script.so
 lib/shared-modules/idmap/tdb2.so
-lib/shared-modules/ldb/dns_notify.so
+%%AD_DC%%lib/shared-modules/ldb/dns_notify.so
 lib/shared-modules/ldb/ildap.so
 lib/shared-modules/ldb/ldbsamba_extensions.so
-lib/shared-modules/ldb/tombstone_reanimate.so
+%%AD_DC%%lib/shared-modules/ldb/tombstone_reanimate.so
 lib/shared-modules/nss_info/hash.so
 lib/shared-modules/vfs/acl_tdb.so
 lib/shared-modules/vfs/acl_xattr.so
@@ -781,7 +782,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%AD_DC%%@dir %%DATADIR%%/setup/display-specifiers
 %%AD_DC%%@dir %%DATADIR%%/setup/ad-schema
 %%AD_DC%%@dir %%DATADIR%%/setup
-@dir %%DATADIR%%
+%%AD_DC%%@dir %%DATADIR%%
 man/man1/dbwrap_tool.1.gz
 man/man1/findsmb.1.gz
 man/man1/gentest.1.gz
