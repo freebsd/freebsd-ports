@@ -28,7 +28,7 @@ SHEBANG_FILES=	nikto.pl
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e \
-		 s|/etc/nikto.conf|${PREFIX}/etc/nikto.conf|' ${WRKSRC}/nikto.pl
+		's|/etc/nikto.conf|${PREFIX}/etc/nikto.conf|' ${WRKSRC}/nikto.pl
 	${REINPLACE_CMD} -Ee \
 		's|# (EXECDIR=).*/nikto|\1${DATADIR}| ; \
 		 s|# (DBDIR=).*/databases|\1${DATADIR}/databases| ; \
