@@ -3,13 +3,14 @@
 
 PORTNAME=	oniguruma
 PORTVERSION=	5.9.6
+PORTREVISION=	1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel textproc
-MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/
 PKGNAMESUFFIX=	5
 DISTNAME=	onig-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rob@theseusnetworking.com
 COMMENT=	BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
 LICENSE=	BSD2CLAUSE
@@ -19,7 +20,11 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 CONFLICTS=	oniguruma-2.*
 
-USES=		libtool pathfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	kkos
+
+USES=		pathfix autoreconf libtool
+PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
@@ -29,7 +34,7 @@ USE_LDCONFIG=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^INCLUDES/s|$$(includedir)|| ; \
-		 s|$$(<)|$$(@).in|' ${WRKSRC}/Makefile.in
+		 s|$$(<)|$$(@).in|' ${WRKSRC}/Makefile.am
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
