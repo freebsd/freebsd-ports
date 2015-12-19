@@ -1,6 +1,6 @@
---- capplet/Makefile.in.orig	Thu Apr  4 23:37:06 2002
-+++ capplet/Makefile.in	Thu Apr  4 23:39:17 2002
-@@ -103,7 +103,8 @@
+--- capplet/Makefile.in.orig	2002-01-29 17:44:25 UTC
++++ capplet/Makefile.in
+@@ -103,7 +103,8 @@ ZVT_LIBS = @ZVT_LIBS@
  
  INCLUDES = \
  	-DDATADIR=\"$(datadir)\" -DSYSCONFDIR=\"$(sysconfdir)\" \
@@ -10,4 +10,3 @@
  
  
  LDADD = \
-
