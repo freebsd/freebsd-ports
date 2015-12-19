@@ -12,6 +12,8 @@ COMMENT=	GTK-based git repository viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libgee-0.8.so:${PORTSDIR}/devel/libgee \
 		libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
