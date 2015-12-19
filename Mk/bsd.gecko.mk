@@ -129,8 +129,8 @@ CPPFLAGS+=		-isystem${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZILLA}
 
 .if ${OPSYS} != DragonFly # XXX xpcshell crash during install
-# use jemalloc 3.0.0 API for stats/tuning
-MOZ_EXPORT+=	MOZ_JEMALLOC3=1
+# use jemalloc 3.0.0 (4.0 for firefox 43+) API for stats/tuning
+MOZ_EXPORT+=	MOZ_JEMALLOC3=1 MOZ_JEMALLOC4=1
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100079
 . if ${MOZILLA_VER:R:R} < 43
 # system jemalloc 4.0.0 vs. bundled jemalloc 3.6.0-204-gb4acf73
@@ -574,7 +574,7 @@ gecko-post-patch:
 		${MOZSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${MOZSRC}/toolkit/xre/nsXREDirProvider.cpp
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${MOZSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp
+		${MOZSRC}/extensions/spellcheck/hunspell/*/mozHunspell.cpp
 
 # handles mozilla pis scripts.
 gecko-moz-pis-patch:
