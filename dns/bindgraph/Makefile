@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	bindgraph
-PORTVERSION=	0.2
-PORTREVISION=	7
+PORTVERSION=	0.3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.linux.it/~md/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RRDtool frontend for BIND statistics
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
 		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
@@ -48,8 +50,8 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${CGIDIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.pl ${STAGEDIR}${PREFIX}/sbin/
-	@${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.cgi ${STAGEDIR}${CGIDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.pl ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.cgi ${STAGEDIR}${CGIDIR}/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	for f in ${DOCS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${STAGEDIR}${DOCSDIR}/; \
