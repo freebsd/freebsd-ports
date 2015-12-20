@@ -1,5 +1,5 @@
---- ui/events/keycodes/dom/keycode_converter.cc.orig	2015-10-14 03:01:24.000000000 -0400
-+++ ui/events/keycodes/dom/keycode_converter.cc	2015-10-23 14:17:55.716373000 -0400
+--- ui/events/keycodes/dom/keycode_converter.cc.orig	2015-12-05 19:58:49.948228000 +0100
++++ ui/events/keycodes/dom/keycode_converter.cc	2015-12-05 19:59:00.416726000 +0100
 @@ -17,7 +17,7 @@
  // and DOM Level 3 |code| strings.
  #if defined(OS_WIN)

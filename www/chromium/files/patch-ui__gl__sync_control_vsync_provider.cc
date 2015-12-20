@@ -1,5 +1,5 @@
---- ui/gl/sync_control_vsync_provider.cc.orig	2015-10-06 22:42:29.000000000 -0400
-+++ ui/gl/sync_control_vsync_provider.cc	2015-10-14 12:13:21.879502000 -0400
+--- ui/gl/sync_control_vsync_provider.cc.orig	2015-10-14 19:12:40.408387000 +0200
++++ ui/gl/sync_control_vsync_provider.cc	2015-10-14 19:13:44.335913000 +0200
 @@ -10,7 +10,7 @@
  #include "base/time/time.h"
  #include "base/trace_event/trace_event.h"

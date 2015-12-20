@@ -1,5 +1,5 @@
---- third_party/pdfium/fpdfsdk/src/javascript/JS_Value.cpp.orig	2015-10-23 14:13:04.962770000 -0400
-+++ third_party/pdfium/fpdfsdk/src/javascript/JS_Value.cpp	2015-10-23 14:14:08.152830000 -0400
+--- ./third_party/pdfium/fpdfsdk/src/javascript/JS_Value.cpp.orig	2015-12-04 23:43:52.716604000 +0100
++++ ./third_party/pdfium/fpdfsdk/src/javascript/JS_Value.cpp	2015-12-04 23:45:17.502470000 +0100
 @@ -586,11 +586,12 @@
  }
  

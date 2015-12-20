@@ -1,5 +1,5 @@
---- ui/views/controls/button/label_button.cc.orig	2015-10-06 22:42:29.000000000 -0400
-+++ ui/views/controls/button/label_button.cc	2015-10-14 12:19:09.857087000 -0400
+--- ui/views/controls/button/label_button.cc.orig	2015-10-14 19:31:24.349106000 +0200
++++ ui/views/controls/button/label_button.cc	2015-10-14 19:35:30.925886000 +0200
 @@ -23,7 +23,7 @@
  // The default spacing between the icon and text.
  const int kSpacing = 5;
