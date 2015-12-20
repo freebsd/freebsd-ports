@@ -15,24 +15,24 @@ COMMENT=	Read information about mp3s and oggs bitstream
 BROKEN=		unfetchable
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	VORBIS DOCS
-OPTIONS_DEFAULT=	VORBIS
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USES=		dos2unix gmake pkgconfig
+USES=		dos2unix gmake localbase pkgconfig
 DOS2UNIX_FILES=	ui/console/cli.cpp
 USE_GNOME=	gtk20
 
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--rpath,${LOCALBASE}/lib
+LDFLAGS+=	-Wl,--rpath,${LOCALBASE}/lib
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	README
 PLIST_FILES=	bin/mp3stat \
 		lib/mp3stat/input_mp3.so \
 		lib/mp3stat/ui_gtk2.so \
 		lib/mp3stat/ui_console.so
+
+OPTIONS_DEFINE=		VORBIS DOCS
+OPTIONS_DEFAULT=	VORBIS
 
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_PLIST_FILES=	lib/mp3stat/input_vorb.so
@@ -48,18 +48,18 @@ post-patch:
 		 s|^CXX|#CXX|g'
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} mp3stat ${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/mp3stat ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mp3stat
-	(cd ${WRKSRC}/ui/gtk && ${INSTALL_LIB} ui_gtk2.so \
-		${STAGEDIR}${PREFIX}/lib/mp3stat)
-	(cd ${WRKSRC}/ui/console && ${INSTALL_LIB} ui_console.so \
-		${STAGEDIR}${PREFIX}/lib/mp3stat)
-	(cd ${WRKSRC}/input/mp3 && ${INSTALL_LIB} input_mp3.so \
-		${STAGEDIR}${PREFIX}/lib/mp3stat)
+	${INSTALL_LIB} ${WRKSRC}/ui/gtk/ui_gtk2.so ${STAGEDIR}${PREFIX}/lib/mp3stat
+	${INSTALL_LIB} ${WRKSRC}/ui/console/ui_console.so ${STAGEDIR}${PREFIX}/lib/mp3stat
+	${INSTALL_LIB} ${WRKSRC}/input/mp3/input_mp3.so ${STAGEDIR}${PREFIX}/lib/mp3stat
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
 do-install-VORBIS-on:
-	(cd ${WRKSRC}/input/vorbis && ${INSTALL_LIB} input_vorb.so \
-		${STAGEDIR}${PREFIX}/lib/mp3stat)
+	${INSTALL_LIB} ${WRKSRC}/input/vorbis/input_vorb.so \
+		${STAGEDIR}${PREFIX}/lib/mp3stat
 
 .include <bsd.port.mk>
