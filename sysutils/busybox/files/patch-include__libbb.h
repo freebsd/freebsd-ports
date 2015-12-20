@@ -1,5 +1,5 @@
---- ./include/libbb.h.orig	2012-07-02 14:08:25.000000000 +0000
-+++ ./include/libbb.h	2012-07-17 02:08:37.000000000 +0000
+--- include/libbb.h.orig	2015-10-24 00:24:35 UTC
++++ include/libbb.h
 @@ -51,6 +51,9 @@
  #include <termios.h>
  #include <time.h>
@@ -10,7 +10,7 @@
  #include <pwd.h>
  #include <grp.h>
  #if ENABLE_FEATURE_SHADOWPASSWDS
-@@ -129,9 +132,6 @@
+@@ -152,9 +155,6 @@
  #ifndef HAVE_FDATASYNC
  # define fdatasync fsync
  #endif
