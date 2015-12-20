@@ -376,6 +376,7 @@
     SUBDIR += py-YABT
     SUBDIR += py-osd
     SUBDIR += py-pexpect
+    SUBDIR += py-powerline-status
     SUBDIR += py-progressbar
     SUBDIR += py-progressbar231
     SUBDIR += py-qt4-demo
