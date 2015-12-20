@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlto
-PORTVERSION=	0.0.26
-PORTREVISION=	2
+PORTVERSION=	0.0.28
 CATEGORIES=	textproc
 MASTER_SITES=	https://fedorahosted.org/releases/x/m/xmlto/:xmlto \
 		LOCAL/mandree/:xmlto \
