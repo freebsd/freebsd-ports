@@ -1,5 +1,5 @@
---- base/process/memory_unittest.cc.orig	2015-10-14 03:01:18.000000000 -0400
-+++ base/process/memory_unittest.cc	2015-10-23 11:11:40.281381000 -0400
+--- base/process/memory_unittest.cc.orig	2015-12-04 20:12:12.356919000 +0100
++++ base/process/memory_unittest.cc	2015-12-04 20:14:11.966272000 +0100
 @@ -137,11 +137,11 @@
  #endif  // defined(OS_MACOSX)
  
@@ -19,5 +19,5 @@
  }
  #endif  // !defined(MEMORY_TOOL_REPLACES_ALLOCATOR)
 -#endif  // !defined(OS_ANDROID) && !defined(OS_OPENBSD) && !(defined(OS_WIN) &&
-+#endif  // !defined(OS_ANDROID) && !defined(OS_BSD) && !defined(OS_WIN)
++#endif  // !defined(OS_ANDROID) && !defined(OS_BSD) && !(defined(OS_WIN) &&
          // !defined(ALLOCATOR_SHIM)) && !defined(MEMORY_TOOL_REPLACES_ALLOCATOR)
