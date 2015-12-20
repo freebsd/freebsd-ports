@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libqcow
-DISTVERSION=	alpha-20150105
+DISTVERSION=	alpha-20151219
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libqcow/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -13,20 +13,19 @@ COMMENT=	Library and tooling to access the QEMU Copy-On-Write image format
 LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} ${ICONV_CONFIGURE_ARG}
-USES=		fuse gettext iconv libtool pathfix pkgconfig python
+CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE}
+USES=		fuse gettext libtool pathfix pkgconfig python
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
+LIBS+=		-L${OPENSSLLIB}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
 
 PORTDOCS=	AUTHORS ChangeLog
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
