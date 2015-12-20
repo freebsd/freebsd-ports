@@ -11,8 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL server status displaying dockapp
 
 LICENSE=	GPLv2 # (or later)
-
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 USE_MYSQL=	yes
@@ -20,11 +19,16 @@ USE_XORG=	xpm
 ALL_TARGET=	clean all
 MAKE_JOBS_UNSAFE=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+BUILD_WRKSRC=	${WRKSRC}/src
+
 CPPFLAGS+=	-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql -L${LOCALBASE}/lib
 
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 .for i in Makefile jDockApp/Makefile xutils/Makefile
@@ -34,17 +38,19 @@ post-patch:
 		 /^CC/d ; \
 		 /^CFLAGS/d ; \
 		 s| make | $$(MAKE) | ; \
-		 s|-D$$(shell echo `uname -s`)||' ${WRKSRC}/${i}
+		 s|-D$$(shell echo `uname -s`)||' ${BUILD_WRKSRC}/${i}
 .endfor
 .for i in wmjsql.jet ../README
 	@${REINPLACE_CMD} -E 's|\.wmjsql([^r])|\.wmjsqlrc\1|' \
-		${WRKSRC}/${i}
+		${BUILD_WRKSRC}/${i}
 .endfor
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/.. && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
