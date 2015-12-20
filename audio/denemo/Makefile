@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	denemo
-PORTVERSION=	1.2.4
+PORTVERSION=	2.0.0
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
@@ -36,23 +36,6 @@ CONFIGURE_ARGS=	--enable-jack \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
-PORTDATA=	*
-PLIST_FILES=	bin/cairo_svg2path \
-		bin/denemo \
-		bin/denemo_file_update \
-		bin/generate_source \
-		share/appdata/denemo.appdata.xml \
-		share/applications/denemo.desktop \
-		share/fonts/truetype/denemo/Denemo.ttf \
-		share/fonts/truetype/denemo/emmentaler.ttf \
-		share/fonts/truetype/denemo/feta.ttf \
-		share/pixmaps/denemo.png
-.for i in cs de en_GB es fr it ja pl sv
-PLIST_FILES+=	share/locale/${i}/LC_MESSAGES/denemo.mo
-.endfor
-
 OPTIONS_DEFINE=		DOCS EXAMPLES LILYPOND PDF
 OPTIONS_SINGLE=		TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
@@ -80,7 +63,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|-pthread| ; \
 		 /^CFLAGS=/s|_LIBS|_CFLAGS| ; \
-		 s|evince-view-2.32 >= 2.|atril-view-1.5.|' ${WRKSRC}/configure
+		 s|evince-view-2.30 >= 2.|atril-view-1.5.|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		'/ docs /d ; \
 		 /) install-data-hook/s|^|#|' ${WRKSRC}/Makefile.in
@@ -101,6 +84,8 @@ post-install:
 	@${FIND} ${STAGEDIR}${DATADIR}/${i} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} ${SHAREMODE}
 .endfor
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog NEWS
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
@@ -114,6 +99,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/manual/images
 	(cd ${WRKSRC}/docs/images && ${INSTALL_DATA} *.png \
 		${STAGEDIR}${DOCSDIR}/manual/images)
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.denemo \
 		${STAGEDIR}${EXAMPLESDIR})
