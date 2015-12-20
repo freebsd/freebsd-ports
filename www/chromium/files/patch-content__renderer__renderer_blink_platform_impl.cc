@@ -1,5 +1,5 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2015-11-04 18:00:50.000000000 -0500
-+++ content/renderer/renderer_blink_platform_impl.cc	2015-11-06 16:14:45.473476000 -0500
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2015-11-24 21:00:55.000000000 +0100
++++ content/renderer/renderer_blink_platform_impl.cc	2015-12-06 14:27:00.785767410 +0100
 @@ -104,7 +104,7 @@
  
  #if defined(OS_POSIX)
