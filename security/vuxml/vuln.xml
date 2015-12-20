@@ -58,6 +58,54 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f714b4c9-a6c1-11e5-88d7-047d7b492d07">
+    <topic>libvirt -- ACL bypass using ../ to access beyond storage pool</topic>
+    <affects>
+      <package>
+	<name>libvirt</name>
+	<range><ge>1.1.0</ge><lt>1.2.19_2</lt></range>
+	<range><ge>1.2.20</ge><lt>1.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Libvit development team reports:</p>
+	<blockquote cite="http://security.libvirt.org/2015/0004.html">
+	  <p>Various virStorageVol* API operate on user-supplied volume names by
+	    concatenating the volume name to the pool location. Note that the
+	    virStoragePoolListVolumes API, when used on a storage pool backed by
+	    a directory in a file system, will only list volumes immediately in
+	    that directory (there is no traversal into subdirectories). However,
+	    other APIs such as virStorageVolCreateXML were not checking if a
+	    potential volume name represented one of the volumes that could be
+	    returned by virStoragePoolListVolumes; because they were not rejecting
+	    the use of '/' in a volume name.</p>
+	  <p>Because no checking was done on volume names, a user could supply
+	    a potential volume name of something like '../../../etc/passwd' to
+	    attempt to access a file not belonging to the storage pool. When
+	    fine-grained Access Control Lists (ACL) are in effect, a user with
+	    storage_vol:create ACL permission but lacking domain:write permssion
+	    could thus abuse virStorageVolCreateXML and similar APIs to gain
+	    access to files not normally permitted to that user. Fortunately, it
+	    appears that the only APIs that could leak information or corrupt
+	    files require read-write connection to libvirtd; and when ACLs are not
+	    in use (the default without any further configuration), a user with
+	    read-write access can already be considered to have full access to the
+	    machine, and without an escalation of privilege there is no security
+	    problem.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5313</cvename>
+      <url>http://security.libvirt.org/2015/0004.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-30</discovery>
+      <entry>2015-12-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ef434839-a6a4-11e5-8275-000c292e4fd8">
     <topic>samba -- multiple vulnerabilities</topic>
     <affects>
