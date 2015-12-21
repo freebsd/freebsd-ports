@@ -62,7 +62,7 @@ ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
 
 BUILD_DEPENDS+=		${PPNAME}:${PORTSDIR}/lang/fpc
 
-BUILDNAME=		${FPC_ARCH}-freebsd
+BUILDNAME=		${FPC_ARCH}-${OPSYS:tl}
 UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
 MKINSTDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/fpmkinst/${BUILDNAME}
 
