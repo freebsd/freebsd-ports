@@ -36,6 +36,9 @@ GROUP?=		www
 GID?=		80
 LOG_FILE?=	${APP_HOME}/${APP_NAME}.log
 
+NO_BUILD=	yes
+NO_ARCH=	yes
+
 SUB_LIST=	\
 		APP_HOME=${APP_HOME} \
 		APP_NAME=${APP_NAME} \
@@ -56,8 +59,6 @@ SUB_FILES=	\
 		${APP_NAME} \
 		message \
 		message-advanced
-
-do-build:
 
 pre-install:
 	@${FMT} -w80 ${WRKDIR}/message > ${PKGMESSAGE}
