@@ -3,7 +3,7 @@
 
 PORTNAME=	WinFF
 PORTVERSION=	1.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	${_PORTNAME}
@@ -18,8 +18,7 @@ BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus
 LIB_DEPENDS=	libavutil.so:${PORTSDIR}/multimedia/ffmpeg
 
 NO_WRKSUBDIR=	yes
-USE_FPC=	cairo fcl-base fcl-image fcl-json fcl-process fcl-xml hash \
-		pasjpeg paszlib x11
+USE_FPC=	cairo fcl-base fcl-image fcl-json fcl-xml pasjpeg x11
 USE_GNOME=	#
 _PORTNAME=	${PORTNAME:tl}
 DATADIR=	${PREFIX}/share/${_PORTNAME}
