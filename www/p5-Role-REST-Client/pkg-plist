@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Role/REST/Client.pm
+%%SITE_PERL%%/Role/REST/Client/Response.pm
+%%SITE_PERL%%/Role/REST/Client/Serializer.pm
+%%PERL5_MAN3%%/Role::REST::Client.3.gz
+%%PERL5_MAN3%%/Role::REST::Client::Response.3.gz
+%%PERL5_MAN3%%/Role::REST::Client::Serializer.3.gz
