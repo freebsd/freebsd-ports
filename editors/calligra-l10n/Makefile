@@ -2,7 +2,6 @@
 
 PORTNAME=	calligra-l10n
 PORTVERSION=	${CALLIGRA_VERSION}
-PORTREVISION=	3
 CATEGORIES=	editors kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +11,7 @@ USES=		metaport
 USE_KDE4=	kdeprefix
 
 CALLIGRA_LANG_ALL=	bs ca ca@valencia cs da de el en_GB es et fi fr \
-			gl hu ia it ja kk nb nds nl pl pt pt_BR ru sk sl \
+			gl hu it ja kk nb nl pl pt pt_BR ru sk \
 			sv tr uk zh_CN zh_TW
 
 de_PORT=	german/calligra-l10n
