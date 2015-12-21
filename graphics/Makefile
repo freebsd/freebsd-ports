@@ -728,6 +728,7 @@
     SUBDIR += p5-URI-GoogleChart
     SUBDIR += p5-VCG
     SUBDIR += p5-Visio
+    SUBDIR += p5-Data-Google-Visualization-DataSource
     SUBDIR += p5-Data-Google-Visualization-DataTable
     SUBDIR += p5-feedgnuplot
     SUBDIR += p5-ming
