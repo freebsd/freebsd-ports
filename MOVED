@@ -8060,3 +8060,6 @@ www/joomla15||2015-12-18|Has expired: Joomla 1.5.x reached its End of Life in Se
 www/joomla25||2015-12-18|Has expired: Joomla 2.5.x reached its End of Life in December 2014. Please update to a current version
 devel/rubygem-tins0||2015-12-18|Has expired: not used by other ports anymore
 sysutils/busybox-unstable|sysutils/busybox|2015-12-20|Stable version is more current
+editors/calligra-l10n-ia||2015-12-21|Not shipped by Calligra 2.9.10
+editors/calligra-l10n-nds||2015-12-21|Not shipped by Calligra 2.9.10
+editors/calligra-l10n-sl||2015-12-21|Not shipped by Calligra 2.9.10
