@@ -1,7 +1,4 @@
-@unexec if cmp -s %D/etc/dbmail.conf-dist %D/etc/dbmail.conf; then rm -f %D/etc/dbmail.conf; fi
-etc/dbmail.conf-dist
-@exec if [ ! -f %D/etc/dbmail.conf ] ; then cp -p %D/%F %B/dbmail.conf; fi
-@exec mkdir -p %D/lib/dbmail
+@sample etc/dbmail.conf-dist etc/dbmail.conf
 %%LDAP%%lib/dbmail/libauth_ldap.so
 %%LDAP%%lib/dbmail/libauth_ldap.so.0
 %%LDAP%%lib/dbmail/libauth_ldap.so.0.0.0
@@ -23,7 +20,6 @@ lib/dbmail/libdbmail.so.0.0.0
 %%SQLITE%%lib/dbmail/libsqlite.so
 %%SQLITE%%lib/dbmail/libsqlite.so.0
 %%SQLITE%%lib/dbmail/libsqlite.so.0.0.0
-@dirrm lib/dbmail
 man/man1/dbmail-smtp.1.gz
 man/man1/dbmail.1.gz
 man/man5/dbmail.conf.5.gz
