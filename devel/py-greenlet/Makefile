@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Light-weight microthreads for Python
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DO_MAKE_TEST=	${PYTHON_CMD}
 ONLY_FOR_ARCHS=	amd64 i386
