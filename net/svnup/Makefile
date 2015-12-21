@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://jcm.dsl.visi.com/freebsd/svnup/ \
 		LOCAL/jgh/net/${PORTNAME}/
 
-MAINTAINER=	jcm@visi.com
+MAINTAINER=	jmehr@umn.edu
 COMMENT=	Lightweight program to pull source from an Apache Subversion server
 
 LICENSE=	BSD2CLAUSE
