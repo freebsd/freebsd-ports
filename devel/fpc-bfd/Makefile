@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	LIBBFD
 LIBBFD_DESC=	Install Universal BFD library from GNU binutils
 OPTIONS_DEFAULT=	LIBBFD
 
-LIBBFD_RUN_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd
+LIBBFD_RUN_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/binutils
 
 .include "${MASTERDIR}/Makefile"
