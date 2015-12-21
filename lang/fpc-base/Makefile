@@ -3,6 +3,7 @@
 
 PORTNAME=	base
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	lang
 PKGNAMEPREFIX=	fpc-
 
@@ -15,7 +16,6 @@ WANT_FPC_BASE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-# docs not available yet, disable temporarily
-#DOCS_RUN_DEPENDS=	${LOCALBASE}/share/doc/fpdocs-${PORTVERSION}/user.pdf:${PORTSDIR}/lang/fpc-docs
+DOCS_RUN_DEPENDS=	${LOCALBASE}/share/doc/fpdocs-${PORTVERSION}/user.pdf:${PORTSDIR}/lang/fpc-docs
 
 .include <bsd.port.mk>
