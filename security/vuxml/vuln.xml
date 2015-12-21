@@ -58,6 +58,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9e7306b9-a5c3-11e5-b864-14dae9d210b8">
+    <topic>quassel -- remote denial of service</topic>
+    <affects>
+      <package>
+       <name>quassel</name>
+       <range><lt>0.12.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Pierre Schweitzer reports:</p>
+       <blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/12/1">
+	 <p>Any client sending the command "/op *" in a query will
+	   cause the Quassel core to crash.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/12/1</url>
+      <cvename>CVE-2015-8547</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-22</discovery>
+      <entry>2015-12-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f714b4c9-a6c1-11e5-88d7-047d7b492d07">
     <topic>libvirt -- ACL bypass using ../ to access beyond storage pool</topic>
     <affects>
