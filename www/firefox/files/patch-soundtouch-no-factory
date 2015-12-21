@@ -8,9 +8,9 @@ diff --git dom/media/AudioStream.cpp dom/media/AudioStream.cpp
    , mWritten(0)
    , mAudioClock(this)
 -  , mTimeStretcher(nullptr)
-   , mLatencyRequest(HighLatency)
-   , mReadPoint(0)
    , mDumpFile(nullptr)
+   , mBytesPerFrame(0)
+   , mState(INITIALIZED)
 @@ -152,9 +151,6 @@
    if (mDumpFile) {
      fclose(mDumpFile);
@@ -48,9 +48,9 @@ diff --git dom/media/AudioStream.h dom/media/AudioStream.h
    AudioClock mAudioClock;
 -  soundtouch::SoundTouch* mTimeStretcher;
 +  nsAutoPtr<soundtouch::SoundTouch> mTimeStretcher;
-   nsRefPtr<AsyncLatencyLogger> mLatencyLog;
  
-   // copy of Latency logger's starting time for offset calculations
+   // Stream start time for stream open delay telemetry.
+   TimeStamp mStartTime;
 diff --git media/libsoundtouch/src/moz.build media/libsoundtouch/src/moz.build
 --- media/libsoundtouch/src/moz.build
 +++ media/libsoundtouch/src/moz.build
