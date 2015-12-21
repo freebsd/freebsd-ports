@@ -1080,6 +1080,8 @@
     SUBDIR += p5-ModPerl-VersionUtil
     SUBDIR += p5-Mojo-Server-FastCGI
     SUBDIR += p5-MojoMojo
+    SUBDIR += p5-MojoX-Log-Dispatch-Simple
+    SUBDIR += p5-MojoX-Renderer-Xslate
     SUBDIR += p5-Mojolicious
     SUBDIR += p5-Mojolicious-Plugin-Authentication
     SUBDIR += p5-Mojolicious-Plugin-Database
@@ -1087,8 +1089,6 @@
     SUBDIR += p5-Mojolicious-Plugin-SetUserGroup
     SUBDIR += p5-Mojolicious-Plugin-TtRenderer
     SUBDIR += p5-Mojolicious-Plugin-YamlConfig
-    SUBDIR += p5-MojoX-Log-Dispatch-Simple
-    SUBDIR += p5-MojoX-Renderer-Xslate
     SUBDIR += p5-Monoceros
     SUBDIR += p5-Mozilla-CA
     SUBDIR += p5-Net-Akismet
