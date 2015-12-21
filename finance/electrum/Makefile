@@ -4,7 +4,8 @@
 PORTNAME=	electrum
 PORTVERSION=	2.3.2
 CATEGORIES=	finance python
-MASTER_SITES=	https://download.electrum.org/ http://download.electrum.org/
+MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
+		http://download.electrum.org/${PORTVERSION}/
 DISTNAME=	Electrum-${PORTVERSION}
 
 MAINTAINER=	kyuupichan@gmail.com
