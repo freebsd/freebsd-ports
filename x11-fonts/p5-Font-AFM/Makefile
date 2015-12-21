@@ -11,6 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to Adobe font metrics files
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
