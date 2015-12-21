@@ -2148,11 +2148,21 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Moodle Release Notes report:</p>
-	<blockquote cite="https://docs.moodle.org/dev/Moodle_2.8.9_release_notes">
-	  <p>A number of security related issues were resolved.  Details of
-	    these issues will be released after a period of approximately one
-	    week to allow system administrators to safely update to the latest
-	    version.</p>
+	<blockquote cite="https://docs.moodle.org/dev/Moodle_2.9.3_release_notes">
+	  <p>MSA-15-0037 Possible to send a message to a user who blocked
+	    messages from non contacts</p>
+	  <p>MSA-15-0038 DDoS possibility in Atto</p>
+	  <p>MSA-15-0039 CSRF in site registration form</p>
+	  <p>MSA-15-0040 Student XSS in survey</p>
+	  <p>MSA-15-0041 XSS in flash video player</p>
+	  <p>MSA-15-0042 CSRF in lesson login form</p>
+	  <p>MSA-15-0043 Web service core_enrol_get_enrolled_users does not
+	    respect course group mode</p>
+	  <p>MSA-15-0044 Capability to view available badges is not
+	    respected</p>
+	  <p>MSA-15-0045 SCORM module allows to bypass access restrictions based
+	    on date</p>
+	  <p>MSA-15-0046 Choice module closing date can be bypassed</p>
 	</blockquote>
       </body>
     </description>
@@ -2164,6 +2174,7 @@ Notes:
     <dates>
       <discovery>2015-11-09</discovery>
       <entry>2015-11-16</entry>
+      <modified>2015-12-21</modified>
     </dates>
   </vuln>
 
