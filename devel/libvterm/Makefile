@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvterm
-PORTVERSION=	git20150527
+PORTVERSION=	git20150828
 CATEGORIES=	devel
 
 MAINTAINER=	antont@inbox.lv
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	neovim
-GH_TAGNAME=	1b745d2
+GH_TAGNAME=	342e61e
 
 USES=		gmake libtool:build perl5
 USE_LDCONFIG=	yes
