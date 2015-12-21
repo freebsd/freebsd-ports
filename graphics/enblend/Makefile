@@ -3,7 +3,7 @@
 
 PORTNAME=	enblend
 PORTVERSION=	4.1.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/enblend/enblend-enfuse/enblend-enfuse-${PORTVERSION:R}
 DISTNAME=	enblend-enfuse-${PORTVERSION}
@@ -14,7 +14,6 @@ COMMENT=	Tool for image blending with multiresolution splines
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo \
 		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libxmi.so:${PORTSDIR}/graphics/plotutils \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 		libvigraimpex.so:${PORTSDIR}/graphics/vigra \
