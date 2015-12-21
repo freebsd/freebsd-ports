@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	editors kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Turkish Bokmaal messages and documentation for Calligra
+COMMENT=	Turkish messages and documentation for Calligra
 
 CALLIGRA_L10N=	tr
 
