@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	python32
-PORTVERSION=	3.2.5
-PORTREVISION=	15
+PORTVERSION=	3.2.6
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -125,7 +124,7 @@ post-install:
 	for i in ${STAGEDIR}${PREFIX}/lib/python3.2/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${MAKE} TESTOPTS=-j${MAKE_JOBS_NUMBER} buildbottest
 
 .include <bsd.port.mk>
