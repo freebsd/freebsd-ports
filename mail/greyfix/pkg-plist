@@ -1,9 +1,3 @@
 man/man8/greyfix.8.gz
 sbin/greyfix
-@owner nobody
-@group mail
-@mode 770
-@dirrmtry /var/db/greyfix
-@mode
-@group
-@owner
+@dir(nobody,mail,770) /var/db/greyfix
