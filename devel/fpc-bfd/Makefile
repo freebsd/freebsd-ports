@@ -3,6 +3,7 @@
 
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-bfd
+PORTREVISION=	1
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface for the GNU Binary Format description
