@@ -115,7 +115,7 @@ do-build:
 # build fpc compiler
 	@${ECHO_MSG} "##### STARTING COMPILER #####"
 	(cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${SETENV} ${MAKE_ENV} \
-		${MAKE_CMD} cycle ${MAKE_ARGS} ${BOOTPPC})
+		LDVER=ld.bfd ${MAKE_CMD} cycle ${MAKE_ARGS} ${BOOTPPC})
 	@${ECHO_MSG} "##### COMPLETE COMPILER #####"
 
 # build fpcmkcfg
