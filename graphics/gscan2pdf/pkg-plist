@@ -10,6 +10,7 @@ bin/scanimage-perl
 %%SITE_PERL%%/Gscan2pdf/Dialog/Scan/CLI.pm
 %%SITE_PERL%%/Gscan2pdf/Dialog/Scan/Sane.pm
 %%SITE_PERL%%/Gscan2pdf/Document.pm
+%%SITE_PERL%%/Gscan2pdf/EntryCompletion.pm
 %%SITE_PERL%%/Gscan2pdf/Frontend/CLI.pm
 %%SITE_PERL%%/Gscan2pdf/Frontend/Sane.pm
 %%SITE_PERL%%/Gscan2pdf/NetPBM.pm
