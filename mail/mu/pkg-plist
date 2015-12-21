@@ -20,8 +20,8 @@ man/man1/mu-view.1.gz
 man/man1/mu.1.gz
 man/man1/mug.1.gz
 man/man5/mu-bookmarks.5.gz
-%%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-about.el
-%%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-about.elc
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.org
+%%PORTDOCS%%%%MU4E%%%%DOCSDIR%%/mu4e-about.org
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-actions.el
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-actions.elc
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-compose.el
