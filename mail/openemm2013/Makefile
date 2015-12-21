@@ -246,6 +246,5 @@ post-install:
 	${TOUCH} ${STAGEDIR}/var/log/${PORTNAME}/userlogs.log
 	${TOUCH} ${STAGEDIR}/var/log/${PORTNAME}/openemm_axis.log
 	${TOUCH} ${STAGEDIR}/var/log/${PORTNAME}/daily.log
-	${CHOWN} -R ${USER}:${GROUP} ${STAGEDIR}/var/log/${PORTNAME}
 
 .include <bsd.port.mk>
