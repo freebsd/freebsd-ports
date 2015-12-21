@@ -521,12 +521,12 @@
     SUBDIR += p5-Crypt-OpenSSL-X509
     SUBDIR += p5-Crypt-PBKDF2
     SUBDIR += p5-Crypt-PGPSimple
+    SUBDIR += p5-Crypt-PKCS10
     SUBDIR += p5-Crypt-PWSafe3
     SUBDIR += p5-Crypt-PassGen
     SUBDIR += p5-Crypt-Passwd-XS
     SUBDIR += p5-Crypt-PasswdMD5
     SUBDIR += p5-Crypt-Password-Util
-    SUBDIR += p5-Crypt-PKCS10
     SUBDIR += p5-Crypt-Primes
     SUBDIR += p5-Crypt-RC4
     SUBDIR += p5-Crypt-RC5
@@ -644,12 +644,12 @@
     SUBDIR += p5-OpenCA-PKCS7
     SUBDIR += p5-OpenCA-REQ
     SUBDIR += p5-OpenCA-X509
-    SUBDIR += p5-Parse-Snort
     SUBDIR += p5-PBKDF2-Tiny
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
     SUBDIR += p5-POE-Component-SSLify
     SUBDIR += p5-POE-Filter-SSL
+    SUBDIR += p5-Parse-Snort
     SUBDIR += p5-PerlCryptLib
     SUBDIR += p5-SAVI-Perl
     SUBDIR += p5-SHA
