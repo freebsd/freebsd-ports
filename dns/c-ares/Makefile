@@ -3,7 +3,7 @@
 
 PORTNAME=	c-ares
 PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/download/ \
 		http://obsd.isc.org/pub/OpenBSD/distfiles/ \
@@ -34,30 +34,10 @@ CONFLICTS=		ares-1.*
 
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCONFIG_INFO}
-EXTRA_PATCHES+=	${FILESDIR}/ares-config-info.patch
-PKGNAMESUFFIX=	-config
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.else
-CONFIGURE_ARGS+=--disable-debug
-.endif
-
-.if ${PORT_OPTIONS:MHIDE_SYMBOLS}
-CONFIGURE_ARGS+=--enable-symbol-hiding
-.else
-CONFIGURE_ARGS+=--disable-symbol-hiding
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CONFIGURE_ARGS+=--enable-optimize
-.else
-CONFIGURE_ARGS+=--disable-optimize
-.endif
+CONFIG_INFO_EXTRA_PATCHES=	${FILESDIR}/ares-config-info.patch
+DEBUG_CONFIGURE_ENABLE=	debug
+HIDE_SYMBOLS_CONFIGURE_ENABLE=	symbol-hiding
+OPTIMIZED_CFLAGS_CONFIGURE_ENABLE=	optimize
 
 post-install:
 	${INSTALL_PROGRAM} ${PROGRAMS:S@^@${WRKSRC}/.libs/@} ${STAGEDIR}${PREFIX}/bin/
