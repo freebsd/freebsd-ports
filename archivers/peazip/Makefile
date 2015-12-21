@@ -10,11 +10,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free archiver and file compressor
 
+BROKEN=		fails with FPC 3.0.0
+
 BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
 		fpcres:${PORTSDIR}/lang/fpc-utils
 
 USES=		dos2unix zip
-USE_FPC=	cairo fcl-base fcl-image fcl-process hash pasjpeg paszlib x11
+USE_FPC=	cairo fcl-base fcl-image pasjpeg rtl-objpas x11
 USE_GNOME=	#
 
 SUB_FILES=	pea pealauncher peazip
