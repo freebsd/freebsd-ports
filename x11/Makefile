@@ -126,6 +126,7 @@
     SUBDIR += kgamma
     SUBDIR += konsole
     SUBDIR += leechcraft
+    SUBDIR += lemonbar
     SUBDIR += libICE
     SUBDIR += libSM
     SUBDIR += libX11
