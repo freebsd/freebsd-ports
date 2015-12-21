@@ -1,14 +1,17 @@
---- Makefile.orig	2010-10-11 14:08:16 UTC
+--- Makefile.orig	2015-09-03 06:03:19 UTC
 +++ Makefile
-@@ -12,30 +12,29 @@
+@@ -12,8 +12,8 @@
  #   (at your option) any later version.
  #
  
 -CC      = gcc
 -CFLAGS  = -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
++#CC      = gcc
 +CFLAGS+= -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
            -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef
- #CFLAGS += -DBIGENDIAN
+ 
+ # Let lseek and mmap support 64-bit wide offsets
+@@ -23,23 +23,23 @@ CFLAGS += -D_FILE_OFFSET_BITS=64
  #CFLAGS += -DALIGNMENT_WORKAROUND
  
  # When debugging, disable -O2 and enable -g.
