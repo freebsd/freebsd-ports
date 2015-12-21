@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	0.15.9
+PORTVERSION=	0.15.10
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
-MAINTAINER=	jkim@FreeBSD.org
+MAINTAINER=	matthew@reztek.cz
 COMMENT=	Xpra gives you persistent remote applications for X
 
 LICENSE=	GPLv2
