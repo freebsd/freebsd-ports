@@ -1,5 +1,5 @@
---- chrome/common/variations/fieldtrial_testing_config.gyp.orig	2015-10-15 09:32:40.670879000 -0400
-+++ chrome/common/variations/fieldtrial_testing_config.gyp	2015-10-15 09:27:09.909117000 -0400
+--- chrome/common/variations/fieldtrial_testing_config.gyp.orig	2015-12-16 21:13:34.948159764 +0100
++++ chrome/common/variations/fieldtrial_testing_config.gyp	2015-12-16 21:14:00.477158698 +0100
 @@ -19,7 +19,7 @@
        'conditions': [
          ['OS!="android"', {'sources/': [['exclude', '_android\\.json$']]}],

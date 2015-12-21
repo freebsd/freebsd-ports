@@ -1,3 +1,4 @@
+sbin/pcm-core.x
 sbin/pcm-memory.x
 sbin/pcm-msr.x
 sbin/pcm-numa.x

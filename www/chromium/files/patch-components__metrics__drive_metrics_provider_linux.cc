@@ -1,5 +1,5 @@
---- components/metrics/drive_metrics_provider_linux.cc.orig	2015-10-14 08:11:50.411251000 -0400
-+++ components/metrics/drive_metrics_provider_linux.cc	2015-10-14 08:12:35.355093000 -0400
+--- components/metrics/drive_metrics_provider_linux.cc.orig	2015-10-14 16:34:04.903957000 +0200
++++ components/metrics/drive_metrics_provider_linux.cc	2015-10-14 16:34:35.113096000 +0200
 @@ -4,7 +4,13 @@
  
  #include "components/metrics/drive_metrics_provider.h"

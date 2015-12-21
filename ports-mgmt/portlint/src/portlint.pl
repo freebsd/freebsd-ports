@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.375 2015/10/25 17:25:28 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.380 2015/12/19 21:08:11 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 16;
-my $micro = 7;
+my $micro = 8;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -617,6 +617,13 @@ sub checkplist {
 				"see HANDLE_RC_SCRIPTS in pkg.conf(5).");
 		}
 
+		if (m'^\@(un)?exec') {
+			&perror("WARN", $file, $., "@[un]exec is deprecated in ".
+				"favor of \@<pre|post>[un]exec as the latter specifies ".
+				"the exact part of the pkg lifecycle the commands need ".
+				"to run");
+		}
+
 		$seen_special++ if /[\%\@]/;
 		if ($_ =~ /^\@/) {
 			if ($_ =~ /^\@(cwd|cd)[ \t]+(\S+)/) {
@@ -640,7 +647,7 @@ sub checkplist {
 					"instead of \"\@unexec rmdir\".");
 			} elsif ($_ =~ /^\@unexec[ \t]+install-info[ \t]+--delete\s+(.+)\s+(.+)$/) {
 				&perror("WARN", $file, $., "\@unexec install-info is deprecated in favor of adding info files into the Makefile using the INFO macro.");
-			} elsif ($_ =~ /^\@(exec|unexec)/) {
+			} elsif ($_ =~ /^\@(pre|post)?(exec|unexec|)/) {
 				if (/ldconfig/) {
 					&perror("WARN", $file, $., "possible ".
 						"direct use of ldconfig ".
@@ -670,9 +677,10 @@ sub checkplist {
 					&perror("WARN", $file, $., "Invalid use of \@(...). ".
 						"Arguments should be owner,group,perms[,fflags]");
 				}
-		  	} elsif ($_ =~ /^\@sample\s+(\S*)/) {
+		  	} elsif ($_ =~ /^\@sample\s+(.+)/) {
 				my $sl = $.;
-				if ($1 !~ /\.sample$/) {
+				my @sampleparts = split(/\s+/, $1);
+				if (scalar @sampleparts == 1 && $sampleparts[0] !~ /\.sample$/) {
 					&perror("WARN", $file, $sl, "\@sample directive references".
 						" file that does not end in ``.sample''.  Sample".
 						" files must end in ``.sample''.");
@@ -756,9 +764,18 @@ sub checkplist {
 				"for more details)");
 		}
 
-		if ($_ =~ m|\.mo$| && $makevar{USES} !~ /\bgettext\b/) {
-			&perror("WARN", $file, $., "installing gettext translation files, ".
-				"please define USES[+]=gettext as appropriate");
+		if ($_ =~ m|^(%%([^%]+)%%)?.*\.mo$| && $makevar{USES} !~ /\bgettext\b/) {
+			my $show_nls_warn = 1;
+			if ($2) {
+				my $mv = get_makevar($2."_USES");
+				if ($mv =~ /\bgettext\b/) {
+					$show_nls_warn = 0;
+				}
+			}
+			if ($show_nls_warn) {
+					&perror("WARN", $file, $., "installing gettext translation files, ".
+						"please define USES[+]=gettext as appropriate");
+			}
 		}
 
 		if ($_ =~ m|\.core$| && $_ !~ /^\@/) {
@@ -1209,6 +1226,11 @@ sub checkmakefile {
 	my $optused = 0;
 	my $desktop_entries = '';
 
+	my $masterdir = $makevar{MASTERDIR};
+	if ($masterdir ne '' && $masterdir ne $makevar{'.CURDIR'}) {
+		$slaveport = 1;
+	}
+
 	open(IN, "< $file") || return 0;
 	$rawwhole = '';
 	$tmp = 0;
@@ -1562,8 +1584,15 @@ sub checkmakefile {
 		next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11' or $i eq 'DEBUG');
 		if (!grep(/^$i$/, (@mopt, @popt))) {
 			if ($whole !~ /\n${i}_($m)(.)?=[^\n]+/) {
-				&perror("WARN", $file, -1, "$i is listed in ".
+				if (!$slaveport) {
+					&perror("WARN", $file, -1, "$i is listed in ".
 						"OPTIONS_DEFINE, but no PORT_OPTIONS:M$i appears.");
+				} else {
+					&perror("WARN", $file, -1, "$i is listed in ".
+						"OPTIONS_DEFINE, but no PORT_OPTIONS:M$i appears ".
+						"in this slave Makefile.  Make sure it appears in ".
+						"the master's Makefile.");
+				}
 			}
 		}
 	}
@@ -2279,9 +2308,7 @@ xargs xmkmf
 	#
 	# slave port check
 	#
-	my $masterdir = $makevar{MASTERDIR};
-	if ($masterdir ne '' && $masterdir ne $makevar{'.CURDIR'}) {
-		$slaveport = 1;
+	if ($slaveport) {
 		print "OK: slave port detected, checking for inclusion of $masterdir/Makefile.\n"
 			if ($verbose);
 		if ($whole =~ /^\.\s*include\s*[<"]bsd\.port(?:\.post)?\.mk[">]/m) {

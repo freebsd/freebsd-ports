@@ -18,11 +18,11 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla fortran perl5 pkgconfig python
+USES=		execinfo libtool:keepla localbase fortran perl5 \
+		pkgconfig python
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
@@ -46,8 +46,6 @@ CONFIGURE_ENV=	FCFLAGS="${FFLAGS}" \
 		PACKAGE="${PORTNAME}" \
 		PTHREAD_LIBS="-lpthread"
 
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
 .if ${FFLAGS} == "-O"
 FFLAGS=		-O2
 .endif

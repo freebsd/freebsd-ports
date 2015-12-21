@@ -1,0 +1,5 @@
+Powerline is a statusline plugin for vim, and provides statuslines and prompts
+for several other applications, including zsh, bash, tmux, IPython, Awesome, i3
+and Qtile.
+
+WWW: https://github.com/powerline/powerline

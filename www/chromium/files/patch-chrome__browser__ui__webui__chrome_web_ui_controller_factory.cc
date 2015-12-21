@@ -1,5 +1,5 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2015-10-13 15:04:32.000000000 -0400
-+++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc	2015-10-14 08:16:21.359565000 -0400
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2015-10-14 16:37:51.456856000 +0200
++++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc	2015-10-14 16:38:21.306588000 +0200
 @@ -273,7 +273,7 @@
  #if !defined(OS_ANDROID)
            || url.host() == chrome::kChromeUITermsHost

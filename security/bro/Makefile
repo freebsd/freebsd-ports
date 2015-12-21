@@ -68,15 +68,6 @@ OPTIONS_EXCLUDE=NLS DOCS
 
 .include <bsd.port.pre.mk>
 
-# Bro 2.2 requires libmagic >= 5.04
-# Cannot use LIB_DEPENDS since misc/compat5x also installs a libmagic.so.1
-.if ${OSVERSION} < 901000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmagic.so:${PORTSDIR}/sysutils/file
-RUN_DEPENDS+=	${LOCALBASE}/lib/libmagic.so:${PORTSDIR}/sysutils/file
-.endif
-
-.include <bsd.port.options.mk>
-
 .if ${PORT_OPTIONS:MBROCCOLI}
 LIB_DEPENDS+=	libbroccoli.so:${PORTSDIR}/security/broccoli
 .endif
@@ -154,17 +145,13 @@ BUILD_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
 RUN_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
 .endif
 
-.if ${PORT_OPTIONS:MBROCTL}
-post-install:
+post-install-BROCTL-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/logs
-.if ${PORT_OPTIONS:MBROCTL}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/tmp
-.endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/auto
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/site
 .for F in broctl.cfg networks.cfg node.cfg
 	@${MV} ${STAGEDIR}${PREFIX}/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
 .endfor
-.endif
 
 .include <bsd.port.post.mk>

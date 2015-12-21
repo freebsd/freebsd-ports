@@ -3,7 +3,7 @@
 
 PORTNAME=	fdmf
 DISTVERSION=	0.0.9s
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	http://w140.com/audio/
 
@@ -14,12 +14,12 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libplot.so:${PORTSDIR}/graphics/plotutils \
 		libfftw3.so:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
-		p5-GDBM>=0:${PORTSDIR}/databases/p5-GDBM
+		p5-GDBM>=0:${PORTSDIR}/databases/p5-GDBM \
+		spline:${PORTSDIR}/graphics/plotutils
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${SCRS}

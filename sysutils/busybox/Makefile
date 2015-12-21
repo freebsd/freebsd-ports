@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	busybox
-PORTVERSION=	1.23.2
+PORTVERSION=	1.24.1
 CATEGORIES=	sysutils misc shells
-MASTER_SITES=	http://www.busybox.net/downloads/
+MASTER_SITES=	http://www.busybox.net/downloads/ LOCAL/mandree
 
 PATCH_SITES=	http://www.busybox.net/downloads/fixes-${PORTVERSION}/
 PATCH_DIST_STRIP=	-p1
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 CONFLICTS_INSTALL=	busybox-unstable-*
 
-PORTSCOUT=	skipv:1.24.0
+PORTSCOUT=	skipv:1.25.0
 
 CFLAGS+=	-fno-builtin-mempcpy	# avoid -Wshadow warnings
 MAKE_ARGS+=	SKIP_STRIP=y CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}"

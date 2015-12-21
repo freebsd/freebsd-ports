@@ -50,6 +50,7 @@
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxControlWithItems.html
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxCursor.html
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxDC.html
+%%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxDCOverlay.html
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxDataObject.html
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxDateEvent.html
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxDatePickerCtrl.html
@@ -146,6 +147,7 @@
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxNotebook.html
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxNotebookEvent.html
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxNotifyEvent.html
+%%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxOverlay.html
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxPageSetupDialog.html
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxPageSetupDialogData.html
 %%PORTDOCS%%lib/erlang/lib/wx-%%APP_VERSION%%/doc/html/wxPaintDC.html
@@ -290,6 +292,7 @@ lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxControl.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxControlWithItems.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxCursor.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxDC.beam
+lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxDCOverlay.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxDataObject.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxDateEvent.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxDatePickerCtrl.beam
@@ -387,6 +390,7 @@ lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxNavigationKeyEvent.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxNotebook.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxNotebookEvent.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxNotifyEvent.beam
+lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxOverlay.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxPageSetupDialog.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxPageSetupDialogData.beam
 lib/erlang/lib/wx-%%APP_VERSION%%/ebin/wxPaintDC.beam
@@ -528,6 +532,7 @@ lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxControl.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxControlWithItems.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxCursor.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxDC.erl
+lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxDCOverlay.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxDataObject.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxDateEvent.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxDatePickerCtrl.erl
@@ -625,6 +630,7 @@ lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxNavigationKeyEvent.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxNotebook.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxNotebookEvent.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxNotifyEvent.erl
+lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxOverlay.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxPageSetupDialog.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxPageSetupDialogData.erl
 lib/erlang/lib/wx-%%APP_VERSION%%/src/gen/wxPaintDC.erl

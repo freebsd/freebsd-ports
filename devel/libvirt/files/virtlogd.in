@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: virlogd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable virtlogd.
+#
+# virtlogd_enable (bool):       Set to 'YES' to enable
+#                               Default: NO
+#
+
+. /etc/rc.subr
+
+name=virtlogd
+rcvar=virtlogd_enable
+
+load_rc_config $name
+
+command=%%PREFIX%%/sbin/virtlogd
+pidfile=/var/run/${name}.pid
+
+command_args="--daemon --pid-file=${pidfile}"
+
+: ${virtlogd_enable:="NO"}
+
+PATH="${PATH}:/usr/local/sbin:/usr/local/bin"
+
+run_rc_command "$1"

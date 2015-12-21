@@ -2,23 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	boxes
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
-MASTER_SITES=	http://boxes.thomasjensen.com/download/ \
-		http://fossies.org/unix/privat/
-#		SUNSITE/utils/text
-EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Draws ASCII-art configurable boxes around text or code
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	ascii-boxes
+
 USES=		bison gmake
-ALL_TARGET=	boxes
+ALL_TARGET=	build
 MAKE_ARGS=	CC="${CC}" GLOBALCONF=${GLOBALCONF} CFLAGS="${CFLAGS} -ansi -I. -Iregexp"
 
 GLOBALCONF=	${DATADIR}/boxes-config
@@ -27,7 +24,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 		${DATADIR_REL}/${PORTNAME}-config \
 		man/man1/${PORTNAME}.1.gz
 
-PORTDOCS=	README
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${RM} ${WRKSRC}/src/${PORTNAME}.h ${WRKSRC}/doc/${PORTNAME}.1
@@ -39,6 +38,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
 
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

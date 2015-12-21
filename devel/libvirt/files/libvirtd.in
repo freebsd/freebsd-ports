@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: libvirtd
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN virtlogd
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf[.local] to enable libvirtd.
