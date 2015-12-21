@@ -187,6 +187,7 @@ share/m17n/af.lnm
 share/m17n/am-sera.mim
 share/m17n/am.lnm
 share/m17n/ar-kbd.mim
+share/m17n/ar-translit.mim
 share/m17n/ar.lnm
 share/m17n/as-inscript.mim
 share/m17n/as-itrans.mim
@@ -430,10 +431,12 @@ share/m17n/kw.lnm
 share/m17n/ky.lnm
 share/m17n/latn-post.mim
 share/m17n/latn-pre.mim
+share/m17n/latn1-pre.mim
 share/m17n/ln.lnm
 share/m17n/lo-kbd.mim
 share/m17n/lo-lrt.mim
 share/m17n/lo.lnm
+share/m17n/lsymbol.mim
 share/m17n/lt.lnm
 share/m17n/lv.lnm
 share/m17n/mai-inscript.mim
@@ -504,6 +507,7 @@ share/m17n/sq.lnm
 share/m17n/sr-kbd.mim
 share/m17n/sr.lnm
 share/m17n/sr_Latn.lnm
+share/m17n/ssymbol.mim
 share/m17n/sv-post.mim
 share/m17n/sv.lnm
 share/m17n/sw.lnm
