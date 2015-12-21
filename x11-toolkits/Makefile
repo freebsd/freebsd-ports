@@ -195,10 +195,6 @@
     SUBDIR += py-qt5-widgets
     SUBDIR += py-sexy
     SUBDIR += py-tkinter
-    SUBDIR += py32-tkinter
-    SUBDIR += py33-tkinter
-    SUBDIR += py34-tkinter
-    SUBDIR += py35-tkinter
     SUBDIR += py-tktreectrl
     SUBDIR += py-traitsbackendwx
     SUBDIR += py-traitsgui
@@ -209,6 +205,10 @@
     SUBDIR += py-wxPython28-common
     SUBDIR += py-wxPython30
     SUBDIR += py-xlib
+    SUBDIR += py32-tkinter
+    SUBDIR += py33-tkinter
+    SUBDIR += py34-tkinter
+    SUBDIR += py35-tkinter
     SUBDIR += pypy-tkinter
     SUBDIR += qt4-declarative
     SUBDIR += qt4-gui
