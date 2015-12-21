@@ -6,7 +6,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/}
 PORTREVISION=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	LOCAL/mat/bind
-MASTER_SITES=	https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=snapshot;h=${HASH};sf=tgz;f=
+#MASTER_SITES=	https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=snapshot;h=${HASH};sf=tgz;f=
 PKGNAMESUFFIX=	9-devel
 DISTNAME=	${PORTNAME}9-${HASH}
 
