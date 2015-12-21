@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mol2ps
-PORTVERSION=	0.4a
-PORTREVISION=	2
+PORTVERSION=	0.4b
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/${PORTNAME}/
 DISTNAME=	${PORTNAME}
@@ -13,8 +12,6 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read molecular structure files and generate Postscript output
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2 # (or later)
 
 NO_WRKSUBDIR=	yes
@@ -23,16 +20,17 @@ EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	#
 EXTRACT_AFTER_ARGS=	${WRKSRC}
 
-USE_FPC=	yes
+USE_FPC=	rtl-objpas
 
-PLIST_FILES=	bin/${PORTNAME} bin/mol2svg %%DATADIR%%/color.conf
+PLIST_FILES=	bin/mol2eps bin/mol2ps bin/mol2svg %%DATADIR%%/color.conf
 
 do-build:
-	(cd ${WRKSRC} && ${LOCALBASE}/bin/fpc ${EXTRACT_ONLY} -S2 -O3)
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/fpc mol2ps -S2 -O3)
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin)
-	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} ${PORTNAME} mol2svg)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} mol2ps ${STAGEDIR}${PREFIX}/bin)
+	(cd ${STAGEDIR}${PREFIX}/bin && \
+		${LN} mol2ps mol2eps && ${LN} mol2ps mol2svg)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${FILESDIR} && ${INSTALL_DATA} color.conf ${STAGEDIR}${DATADIR})
 
