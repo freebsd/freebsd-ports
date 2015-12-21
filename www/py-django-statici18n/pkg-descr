@@ -1,0 +1,11 @@
+When dealing with internationalization in JavaScript code, Django provides
+the javascript_catalog view which sends out a JavaScript code library with
+functions that mimic the gettext interface, plus an array of translation
+strings.
+
+At first glance, it works well and everything is fine. But, because
+javascript_catalog view is generating JavaScript catalog dynamically
+on each request, it's adding an overhead that can be an issue with site
+growth.
+
+WWW: https://github.com/zyegfryed/django-statici18n
