@@ -849,6 +849,7 @@
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-arel-helpers
     SUBDIR += rubygem-arel3
+    SUBDIR += rubygem-arel5
     SUBDIR += rubygem-arel6
     SUBDIR += rubygem-awesome_nested_set
     SUBDIR += rubygem-bdb1
