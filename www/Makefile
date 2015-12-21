@@ -1033,6 +1033,7 @@
     SUBDIR += p5-HTTP-Session2
     SUBDIR += p5-HTTP-SimpleLinkChecker
     SUBDIR += p5-HTTP-Size
+    SUBDIR += p5-HTTP-Thin
     SUBDIR += p5-HTTP-Tiny
     SUBDIR += p5-HTTP-Tiny-SPDY
     SUBDIR += p5-HTTP-WebTest
