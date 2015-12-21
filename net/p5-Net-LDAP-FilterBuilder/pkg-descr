@@ -1,0 +1,4 @@
+Perl convenience module which simplifies the construction of LDAP query filter
+statments as described in RFC-4515.
+
+WWW: http://search.cpan.org/dist/Net-LDAP-FilterBuilder/

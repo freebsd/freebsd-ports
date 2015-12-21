@@ -624,6 +624,7 @@
     SUBDIR += p5-Net-LDAP-AutoDNs
     SUBDIR += p5-Net-LDAP-AutoServer
     SUBDIR += p5-Net-LDAP-Express
+    SUBDIR += p5-Net-LDAP-FilterBuilder
     SUBDIR += p5-Net-LDAP-LDAPhash
     SUBDIR += p5-Net-LDAP-Makepath
     SUBDIR += p5-Net-LDAP-Server
