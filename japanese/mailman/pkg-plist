@@ -321,11 +321,14 @@
 %%MMDIR%%/bin/clone_member
 %%MMDIR%%/bin/config_list
 %%MMDIR%%/bin/convert.py
+%%MMDIR%%/bin/convert.pyc
 %%MMDIR%%/bin/discard
 %%MMDIR%%/bin/dumpdb
 %%MMDIR%%/bin/export.py
+%%MMDIR%%/bin/export.pyc
 %%MMDIR%%/bin/find_member
 %%MMDIR%%/bin/fix_url.py
+%%MMDIR%%/bin/fix_url.pyc
 %%MMDIR%%/bin/genaliases
 %%MMDIR%%/bin/inject
 %%MMDIR%%/bin/list_admins
@@ -335,6 +338,7 @@
 %%MMDIR%%/bin/mailmanctl
 %%MMDIR%%/bin/mmsitepass
 %%MMDIR%%/bin/msgfmt.py
+%%MMDIR%%/bin/msgfmt.pyc
 %%MMDIR%%/bin/newlist
 %%MMDIR%%/bin/paths.py
 %%MMDIR%%/bin/paths.pyc
@@ -342,6 +346,7 @@
 %%MMDIR%%/bin/rb-archfix
 %%MMDIR%%/bin/remove_members
 %%MMDIR%%/bin/reset_pw.py
+%%MMDIR%%/bin/reset_pw.pyc
 %%MMDIR%%/bin/rmlist
 %%MMDIR%%/bin/show_qfiles
 %%MMDIR%%/bin/sync_members
