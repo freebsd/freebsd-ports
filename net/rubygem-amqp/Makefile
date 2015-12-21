@@ -15,6 +15,8 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	rubygem-amq-protocol>=1.9:${PORTSDIR}/net/rubygem-amq-protocol \
 		rubygem-eventmachine>=0:${PORTSDIR}/devel/rubygem-eventmachine
 
+DEPRECATED=	Upstream prefers net/rubygem-bunny
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
