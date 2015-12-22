@@ -3,6 +3,7 @@
 
 PORTNAME=	dhewm3
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -45,13 +46,13 @@ post-patch-OPTIMIZED_CFLAGS-off:
 	@${REINPLACE_CMD} -e 's|-O3 -ffast-math -fno-unsafe-math-optimizations -fomit-frame-pointer||' ${WRKSRC}/CMakeLists.txt
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/base
-	${MKDIR} ${STAGEDIR}${DATADIR}/d3xp
+	@${MKDIR} ${STAGEDIR}${DATADIR}/base
+	@${MKDIR} ${STAGEDIR}${DATADIR}/d3xp
 	${INSTALL_DATA} ${WRKSRC}/sys/linux/setup/image/doom3.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../README.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
