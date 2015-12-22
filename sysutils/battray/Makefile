@@ -2,20 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	battray
-PORTVERSION=	1.5
+PORTVERSION=	2.1
 CATEGORIES=	sysutils python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://code.arp242.net/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
+DISTNAME=	${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
-MAINTAINER=	martin@arp242.net
+MAINTAINER=	ports@toco-domains.de
 COMMENT=	Display notebook battery status in tray
 
-LICENSE=	CCS+
-LICENSE_NAME=	Creative Commons Sampling Plus
-LICENSE_TEXT=	http://creativecommons.org/licenses/sampling+/1.0/
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE=	MIT
 
-USE_GNOME=	pygtk2
-USES=		python
-USE_PYTHON=	distutils
+USE_GNOME=	py3gobject3
+USES=		python:3.2+
+USE_PYTHON=	autoplist distutils
+
+
+BB_ACCOUNT=	Carpetsmoker
+BB_PROJECT=	${PORTNAME}
+BB_COMMIT=	011402fbc2a3
 
 .include <bsd.port.mk>
