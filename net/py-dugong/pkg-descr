@@ -1,0 +1,24 @@
+The Python Dugong module provides an API for communicating with HTTP 1.1
+servers. It is an alternative to the standard library's http.client (formerly
+httplib) module. In contrast to http.client, Dugong:
+
+* allows you to send multiple requests right after each other without having to
+  read the responses first.
+* supports waiting for 100-continue before sending the request body.
+* raises an exception instead of silently delivering partial data if the
+  connection is closed before all data has been received.
+* raises one specific exception (ConnectionClosed) if the connection has been
+  closed (while http.client connection may raise any of BrokenPipeError,
+  BadStatusLine, ConnectionAbortedError, ConnectionResetError, IncompleteRead
+  or simply return '' on read)
+* supports non-blocking, asynchronous operation and is compatible with the
+  asyncio module.
+* can in most cases distinguish between an unavailable DNS server and an
+  unresolvable hostname.
+* is not compatible with old HTTP 0.9 or 1.0 servers.
+
+All request and response headers are represented as str, but must be encodable
+in latin1. Request and response body must be bytes-like objects or binary
+streams.
+
+WWW: https://bitbucket.org/nikratio/python-dugong/
