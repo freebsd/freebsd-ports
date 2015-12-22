@@ -2,31 +2,31 @@ diff --git a/main.c b/main.c
 index 4613c96..3d47f3a 100644
 --- a/main.c
 +++ b/main.c
-@@ -81,6 +81,7 @@
+@@ -76,6 +76,7 @@ extern size_t bwlimit_writemax;
  extern unsigned int module_dirlen;
  extern BOOL flist_receiving_enabled;
  extern BOOL shutting_down;
 +extern BOOL want_progress_now;
+ extern int backup_dir_len;
  extern int basis_dir_cnt;
  extern struct stats stats;
- extern char *stdout_format;
-@@ -1447,6 +1448,15 @@
+@@ -1439,6 +1440,15 @@ static void sigusr2_handler(UNUSED(int val))
  	_exit(0);
  }
  
 +#ifdef SIGINFO
-+static RETSIGTYPE siginfo_handler(UNUSED(int val))
++static void siginfo_handler(UNUSED(int val))
 +{
 +
-+        if (!am_server)
-+                want_progress_now = True;
++	if (!am_server)
++		want_progress_now = True;
 +}
 +#endif
 +
- RETSIGTYPE remember_children(UNUSED(int val))
+ void remember_children(UNUSED(int val))
  {
  #ifdef WNOHANG
-@@ -1546,6 +1556,9 @@
+@@ -1538,6 +1548,9 @@ int main(int argc,char *argv[])
  	SIGACTMASK(SIGABRT, rsync_panic_handler);
  	SIGACTMASK(SIGBUS, rsync_panic_handler);
  #endif
@@ -36,6 +36,7 @@ index 4613c96..3d47f3a 100644
  
  	starttime = time(NULL);
  	our_uid = MY_UID();
+diff --git a/receiver.c b/receiver.c
 index 4ea4c09..1c255ef 100644
 --- a/receiver.c
 +++ b/receiver.c
