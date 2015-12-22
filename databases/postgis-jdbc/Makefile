@@ -7,7 +7,7 @@ CATEGORIES=	databases java geography
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTFILES=	postgis_${PORTVERSION}.jar
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostGIS spatial data structures for JDBC
 
 BROKEN=		unfetchable

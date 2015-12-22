@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free BitTorrent Implementation
 
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
