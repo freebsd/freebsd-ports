@@ -264,16 +264,9 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/win_emergency.cf
 %%DOCSDIR%%/examples/win_registry.cf
 %%DOCSDIR%%/examples/win_schedule.cf
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%/example_config
-@dirrm %%DOCSDIR%%
-@dirrm share/cfengine/CoreBase
-@dirrm share/cfengine
-@dirrm libexec/cfengine
 @unexec rmdir "/var/cfengine/inputs" >/dev/null 2>&1 || :
 @unexec rmdir "/var/cfengine/masterfiles" >/dev/null 2>&1 || :
 @unexec rmdir "/var/cfengine/modules" >/dev/null 2>&1 || :
 @unexec rmdir "/var/cfengine/outputs" >/dev/null 2>&1 || :
 @unexec rmdir "/var/cfengine/ppkeys" >/dev/null 2>&1 || :
 @unexec rmdir "/var/cfengine" >/dev/null 2>&1 || :
-
