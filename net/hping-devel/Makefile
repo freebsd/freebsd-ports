@@ -2,6 +2,7 @@
 
 PORTNAME=	hping
 PORTVERSION=	3.0.20051105
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://www.hping.org/ \
 		http://200ok.org/distfiles/hping/
