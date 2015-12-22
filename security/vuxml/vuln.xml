@@ -58,6 +58,65 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d6c51737-a84b-11e5-8f5c-002590263bf5">
+    <topic>librsvg2 -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>librsvg2</name>
+	<range><lt>2.40.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adam Maris, Red Hat Product Security, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/21/5">
+	  <p>CVE-2015-7558: Stack exhaustion due to cyclic dependency causing to
+	    crash an application was found in librsvg2 while parsing SVG file.
+	    It has been fixed in 2.40.12 by many commits that has rewritten the
+	    checks for cyclic references.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7558</cvename>
+      <freebsdpr>ports/205502</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/21/5</url>
+      <url>https://bugzilla.redhat.com/1268243</url>
+    </references>
+    <dates>
+      <discovery>2015-10-02</discovery>
+      <entry>2015-12-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="da634091-a84a-11e5-8f5c-002590263bf5">
+    <topic>librsvg2 -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>librsvg2</name>
+	<range><lt>2.40.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adam Maris, Red Hat Product Security, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/21/5">
+	  <p>CVE-2015-7557: Out-of-bounds heap read in librsvg2 was found when
+	    parsing SVG file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7557</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/21/5</url>
+      <url>https://git.gnome.org/browse/librsvg/commit/rsvg-shapes.c?id=40af93e6eb1c94b90c3b9a0b87e0840e126bb8df</url>
+    </references>
+    <dates>
+      <discovery>2015-02-06</discovery>
+      <entry>2015-12-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9e7306b9-a5c3-11e5-b864-14dae9d210b8">
     <topic>quassel -- remote denial of service</topic>
     <affects>
