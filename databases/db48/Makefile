@@ -35,7 +35,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "armv6"
+.if ${ARCH} == "aarch64" || ${ARCH} == "armv6"
 # db48 uses a deprecated instruction for mutexes on ARM, fbsd bug#197227
 CONFIGURE_ARGS+=	--enable-posixmutexes
 .endif
