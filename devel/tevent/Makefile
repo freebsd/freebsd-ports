@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		tevent
-PORTVERSION=		0.9.25
+PORTVERSION=		0.9.26
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 OPTIONS_DEFINE=		MANPAGES
 MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
-BUILD_DEPENDS+=		talloc>=2.1.1:${PORTSDIR}/devel/talloc
+BUILD_DEPENDS+=		talloc>=2.1.5:${PORTSDIR}/devel/talloc
 RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 .include <bsd.port.options.mk>
