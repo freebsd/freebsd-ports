@@ -100,7 +100,7 @@ for category in ${CATEGORIES}; do
         $opt_verbose && echo "==> ${category}/${port}"
 
         cd "${PORTSDIR}/${category}/${port}"
-        PKGORIGIN=`/usr/bin/make -VPKGORIGIN 2>/dev/null || true"`
+        PKGORIGIN=`/usr/bin/make -VPKGORIGIN 2>/dev/null || true`
 
         if [ "${PKGORIGIN}" != "${category}/${port}" ]; then
             echo "port \"${category}/${port}\" has the wrong PKGORIGIN \"${PKGORIGIN}\""
