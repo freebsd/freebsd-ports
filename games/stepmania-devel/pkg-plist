@@ -1594,6 +1594,21 @@ lib/stepmania/NoteSkins/techno/default/metrics.ini
 lib/stepmania/Scripts/32log.lua
 lib/stepmania/Scripts/extend_table.lua
 lib/stepmania/Scripts/unavailable_functions.lua
+lib/stepmania/Songs/StepMania 5/Goin' Under/Goin' Under.ogg
+lib/stepmania/Songs/StepMania 5/Goin' Under/Goin' Under.sm
+lib/stepmania/Songs/StepMania 5/Goin' Under/Goin' Under.ssc
+lib/stepmania/Songs/StepMania 5/Goin' Under/bg.png
+lib/stepmania/Songs/StepMania 5/Goin' Under/bn.png
+lib/stepmania/Songs/StepMania 5/MechaTribe Assault/Mecha-Tribe Assault.ogg
+lib/stepmania/Songs/StepMania 5/MechaTribe Assault/Mecha-Tribe Assault.ssc
+lib/stepmania/Songs/StepMania 5/MechaTribe Assault/mechatribeassaultbg.png
+lib/stepmania/Songs/StepMania 5/MechaTribe Assault/mechatribeassaultbn.png
+lib/stepmania/Songs/StepMania 5/MechaTribe Assault/wyde cd-tital.png
+lib/stepmania/Songs/StepMania 5/Springtime/Kommisar - Springtime.mp3
+lib/stepmania/Songs/StepMania 5/Springtime/Springtime.ssc
+lib/stepmania/Songs/StepMania 5/Springtime/spring.png
+lib/stepmania/Songs/StepMania 5/Springtime/springbn.png
+lib/stepmania/Songs/instructions.txt
 lib/stepmania/Themes/_Installer/Languages/de.ini
 lib/stepmania/Themes/_Installer/Languages/en.ini
 lib/stepmania/Themes/_Installer/Languages/es.ini
@@ -1781,10 +1796,10 @@ lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 9-stroke] 8x8 (double
 lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji 9] 8x8 (doubleres).png
 lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-jis1-stroke] 32x32 (doubleres).png
 lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-jis1] 32x32 (doubleres).png
-lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-jis2-stroke] 32x106 (doubleres).png
-lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-jis2] 32x106 (doubleres).png
-lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-regular-stroke] 32x61 (doubleres).png
-lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-regular] 32x61 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-jis2-stroke] 63x54 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-jis2] 63x54 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-regular-stroke] 48x41 (doubleres).png
+lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [kanji-regular] 48x41 (doubleres).png
 lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [main-stroke] 16x16 (doubleres).png
 lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [main] 16x16 (doubleres).png
 lib/stepmania/Themes/_fallback/Fonts/_japanese 24px [symbol-stroke] 26x3 (doubleres).png
@@ -2850,6 +2865,7 @@ share/applications/stepmania.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/moremsg.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/recommended_practices.txt
 %%PORTDOCS%%%%DOCSDIR%%/Themerdocs/sm-ssc_themeguide.txt
+%%PORTDOCS%%%%DOCSDIR%%/Userdocs/Keymaps_ini_format.md
 %%PORTDOCS%%%%DOCSDIR%%/Userdocs/bgchanges_format.txt
 %%PORTDOCS%%%%DOCSDIR%%/Userdocs/sm5_beginner.txt
 %%PORTDOCS%%%%DOCSDIR%%/credits.txt
@@ -2883,4 +2899,3 @@ share/icons/hicolor/64x64/apps/stepmania-ssc.png
 share/icons/hicolor/72x72/apps/stepmania-ssc.png
 share/icons/hicolor/96x96/apps/stepmania-ssc.png
 share/icons/hicolor/scalable/apps/stepmania-ssc.svg
-@dir lib/stepmania/Songs
