@@ -929,6 +929,7 @@
     SUBDIR += py-beanstalkc
     SUBDIR += py-cloudfiles
     SUBDIR += py-dpkt
+    SUBDIR += py-dugong
     SUBDIR += py-ec2-cli-tools
     SUBDIR += py-eventlet
     SUBDIR += py-gntp
