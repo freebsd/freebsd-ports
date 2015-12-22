@@ -1,4 +1,4 @@
---- build.xml.orig	2015-05-21 23:38:04 UTC
+--- build.xml.orig	2015-12-21 10:36:44 UTC
 +++ build.xml
 @@ -221,13 +221,6 @@
          <include name="j3dutils.jar"/>
