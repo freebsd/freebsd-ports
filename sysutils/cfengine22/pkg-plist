@@ -53,5 +53,3 @@ man/man8/cfshow.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%@dir %%DOCSDIR%%/html
-%%PORTDOCS%%@dir %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
