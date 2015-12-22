@@ -10,8 +10,10 @@ include/vamp-hostsdk/PluginLoader.h
 include/vamp-hostsdk/PluginSummarisingAdapter.h
 include/vamp-hostsdk/PluginWrapper.h
 include/vamp-hostsdk/RealTime.h
+include/vamp-hostsdk/host-c.h
 include/vamp-hostsdk/hostguard.h
 include/vamp-hostsdk/vamp-hostsdk.h
+include/vamp-sdk/FFT.h
 include/vamp-sdk/Plugin.h
 include/vamp-sdk/PluginAdapter.h
 include/vamp-sdk/PluginBase.h
@@ -22,11 +24,11 @@ include/vamp/vamp.h
 lib/libvamp-hostsdk.a
 lib/libvamp-hostsdk.so
 lib/libvamp-hostsdk.so.3
-lib/libvamp-hostsdk.so.3.3.0
+lib/libvamp-hostsdk.so.3.6.0
 lib/libvamp-sdk.a
 lib/libvamp-sdk.so
 lib/libvamp-sdk.so.2
-lib/libvamp-sdk.so.2.3.0
+lib/libvamp-sdk.so.2.6.0
 lib/vamp/vamp-example-plugins.cat
 lib/vamp/vamp-example-plugins.n3
 lib/vamp/vamp-example-plugins.so
