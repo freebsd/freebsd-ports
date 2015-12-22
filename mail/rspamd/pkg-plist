@@ -36,6 +36,8 @@ bin/rspamc
 @sample %%ETCDIR%%/surbl-whitelist.inc.sample
 @sample %%ETCDIR%%/worker-controller.inc.sample
 @sample %%ETCDIR%%/worker-normal.inc.sample
+@sample %%ETCDIR%%/rspamd.newsyslog.conf.sample
+/usr/local/etc/newsyslog.conf.d/rspamd.newsyslog.conf
 lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/effective_tld_names.dat
 %%DATADIR%%/lua/dmarc.lua
