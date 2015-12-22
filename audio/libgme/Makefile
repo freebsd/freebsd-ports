@@ -3,9 +3,8 @@
 PORTNAME=	libgme
 PORTVERSION=	0.6.0
 CATEGORIES=	audio
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	game-music-emu
-DISTNAME=	${PROJECTHOST}-${PORTVERSION}
+MASTER_SITES=	https://bitbucket.org/mpyne/game-music-emu/downloads/
+DISTNAME=	game-music-emu-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of video game music emulators
