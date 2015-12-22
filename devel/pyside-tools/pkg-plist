@@ -12,7 +12,6 @@ bin/pyside-uic
 %%PYTHON_SITELIBDIR%%/pysideuic/driver.py
 %%PYTHON_SITELIBDIR%%/pysideuic/exceptions.py
 %%PYTHON_SITELIBDIR%%/pysideuic/icon_cache.py
-%%PYTHON_SITELIBDIR%%/pysideuic/icon_cache.py.bak
 %%PYTHON_SITELIBDIR%%/pysideuic/objcreator.py
 %%PYTHON_SITELIBDIR%%/pysideuic/port_v2/__init__.py
 %%PYTHON_SITELIBDIR%%/pysideuic/port_v2/as_string.py
@@ -21,8 +20,14 @@ bin/pyside-uic
 %%PYTHON_SITELIBDIR%%/pysideuic/port_v2/load_plugin.py
 %%PYTHON_SITELIBDIR%%/pysideuic/port_v2/proxy_base.py
 %%PYTHON_SITELIBDIR%%/pysideuic/port_v2/string_io.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v3/__init__.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v3/as_string.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v3/ascii_upper.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v3/invoke.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v3/load_plugin.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v3/proxy_base.py
+%%PYTHON_SITELIBDIR%%/pysideuic/port_v3/string_io.py
 %%PYTHON_SITELIBDIR%%/pysideuic/properties.py
-%%PYTHON_SITELIBDIR%%/pysideuic/pyside-uic.1
 %%PYTHON_SITELIBDIR%%/pysideuic/uiparser.py
 %%PYTHON_SITELIBDIR%%/pysideuic/widget-plugins/phonon.py
 %%PYTHON_SITELIBDIR%%/pysideuic/widget-plugins/qtdeclarative.py
