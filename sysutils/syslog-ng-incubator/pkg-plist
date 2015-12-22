@@ -16,8 +16,3 @@ lib/syslog-ng/libtrigger-source.a
 lib/syslog-ng/libtrigger-source.so
 share/syslog-ng/include/scl/elasticsearch/es-bridge
 share/syslog-ng/include/scl/elasticsearch/plugin.conf
-@dirrm share/syslog-ng/include/scl/elasticsearch
-@dirrmtry share/syslog-ng/include/scl
-@dirrmtry share/syslog-ng/include
-@dirrmtry share/syslog-ng
-@dirrmtry lib/syslog-ng
