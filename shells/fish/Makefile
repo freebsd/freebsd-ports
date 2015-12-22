@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fish
-PORTVERSION=	2.1.1
-PORTREVISION=	4
+PORTVERSION=	2.2.0
 CATEGORIES=	shells
 MASTER_SITES=	http://fishshell.com/files/${PORTVERSION}/
 
@@ -12,7 +11,7 @@ COMMENT=	User friendly command line shell
 
 LICENSE=	GPLv2
 
-USES=		autoreconf cpe gmake iconv
+USES=		autoreconf cpe gmake iconv pkgconfig pathfix
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	fishshell
@@ -46,7 +45,7 @@ post-patch:
 		 s|ncurses.h||' ${WRKSRC}/configure.ac
 
 post-install:
-.for i in fish fish_indent fish_pager fishd mimedb
+.for i in fish fish_indent mimedb
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
 
