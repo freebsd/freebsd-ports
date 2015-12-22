@@ -3,31 +3,25 @@
 
 PORTNAME=	quirc
 PORTVERSION=	0.9.84
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	irc tk
-MASTER_SITES=	LOCAL:local # This ends up being empty.
+MASTER_SITES=	http://BSDforge.com/projects/source/irc/quirc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Tcl/Tk IRC client for the X Window System
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS
 
-BROKEN=		Unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2015-12-30
 USES=		tk
 USE_XORG=	xt
 
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	DESTDIR=${STAGEDIR}
 
-MYPORTDOCS=	AUTHORS ChangeLog FAQ NEWS README doc/color.txt \
-		doc/dccresum.txt doc/links.txt doc/nickcomp.txt \
-		doc/quedit.txt doc/rfc1459.txt doc/tdcc.txt
-PORTDOCS=	*
-
-
-.include <bsd.port.options.mk>
+PORTDOCS=	AUTHORS ChangeLog FAQ NEWS README doc/*.txt
 
 CONFIGURE_ARGS=	--with-wish=${WISH} \
 		--with-tcl-include-dir=${TCL_INCLUDEDIR} \
@@ -43,9 +37,9 @@ post-install:
 	${LN} -sf ../install.tcl ${STAGEDIR}${DATADIR}/common
 	@${MKDIR} ${STAGEDIR}${DATADIR}/themes
 	${LN} -sf ../default.tcl ${STAGEDIR}${DATADIR}/themes
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${MYPORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
