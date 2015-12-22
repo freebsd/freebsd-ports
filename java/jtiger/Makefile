@@ -6,7 +6,7 @@ PORTVERSION=	2.1.0376
 CATEGORIES=	java devel
 MASTER_SITES=	http://kaiwitte.org/jtiger/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit Test Framework and Tools for the Java2 Platform
 
 USE_JAVA=	1.6
