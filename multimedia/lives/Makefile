@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.4.5
+PORTVERSION=	2.4.6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -39,10 +39,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:${PORTSDIR}/audio/ladspa \
 		x264:${PORTSDIR}/multimedia/x264 \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
-WRKSRC=		${WRKDIR}/${DISTNAME:tl}
-
-USES=		ghostscript:run libtool pathfix perl5 pkgconfig python \
-		shebangfix tar:bzip2
+USES=		ghostscript:run libtool localbase pathfix perl5 pkgconfig \
+		python shebangfix tar:bzip2
 SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi \
 		smogrify tools/autolives.pl lives-plugins/plugins/encoders/*_encoder \
 		lives-plugins/plugins/playback/audiostream/audiostreamer.pl
@@ -54,8 +52,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-ldvgrab
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+CPPFLAGS+=	-fPIC
 
 DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 		OMC/lives-OMC.txt RFX/LiVES-Perl.odt RFX/rfxbuilder.odt \
@@ -78,8 +75,6 @@ NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${perl_CMD}|' \
-		${WRKSRC}/build-lives-rfx-plugin
 	@${REINPLACE_CMD} -e 's| install-docDATA||g; s|-$$(VERSION)||g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|: install-data-local |: |g; s|-ldl||' \
@@ -93,10 +88,7 @@ post-patch:
 	@${REINPLACE_CMD} '/selectRandom/d' \
 		${WRKSRC}/lives-plugins/weed-plugins/projectM.cpp
 
-pre-build-NLS-on:
-	@cd ${WRKSRC}/po && ${DO_MAKE_BUILD} update-po
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
