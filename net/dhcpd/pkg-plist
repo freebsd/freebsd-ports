@@ -1,0 +1,6 @@
+@sample etc/dhcpd.conf.sample
+man/man5/dhcp-options.5.gz
+man/man5/dhcpd.conf.5.gz
+man/man5/dhcpd.leases.5.gz
+man/man8/dhcpd.8.gz
+sbin/dhcpd

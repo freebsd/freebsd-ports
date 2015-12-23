@@ -1,6 +1,6 @@
---- voice/libvoice/signal.c.orig	Sat Oct 23 23:58:01 1999
-+++ voice/libvoice/signal.c	Fri Jan 24 22:03:15 2003
-@@ -34,23 +34,16 @@
+--- voice/libvoice/signal.c.orig	1999-10-23 21:58:01 UTC
++++ voice/libvoice/signal.c
+@@ -34,23 +34,16 @@ static void signal_sigalrm(int sig)
  
  static void signal_sigchld(int sig)
       {
@@ -28,3 +28,4 @@
 +     lprintf(L_JUNK, "%s: Got child status change signal", program_name);
       queue_event(create_event(SIGNAL_SIGCHLD));
       }
+ 

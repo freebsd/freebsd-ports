@@ -5,15 +5,12 @@ PORTNAME=	lynx
 DISTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
 PORTREVISION=	2
 CATEGORIES=	japanese www ipv6
-MASTER_SITES=	http://lynx.isc.org/current/ \
-		http://ftp2.uk.freebsd.org/sites/lynx.isc.org/current/
+MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/
 DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
 PKGNAMESUFFIX=	-current
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Terminal WWW client with multi-byte modification (development version)
-
-BROKEN=		unfetchable
 
 VERSION=	2.8.8
 MINOR_VERSION=	dev.3

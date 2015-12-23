@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	db6
-PORTVERSION=	6.1.19
+PORTVERSION=	6.1.26
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -40,8 +40,9 @@ SQL_DESC=	Enable SQL API (EXPERIMENTAL)
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "aarch64" || ${ARCH} == "armv6"
+.if ${ARCH} == "aarch64" || ${ARCH:Marmv6*}
 # db6 uses a deprecated instruction for mutexes on ARM, fbsd bug#197227
+# and also bug #205001
 CONFIGURE_ARGS+=	--enable-posixmutexes
 .endif
 

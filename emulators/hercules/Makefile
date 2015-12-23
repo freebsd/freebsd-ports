@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hercules
-PORTVERSION=	3.11
-PORTREVISION=	1
+PORTVERSION=	3.12
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.hercules-390.eu/
 

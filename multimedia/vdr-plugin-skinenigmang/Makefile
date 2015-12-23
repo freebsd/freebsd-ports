@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 DISTFILES=	${DISTNAME}.tar.bz2:snapshot \
 		skinenigmang-logos-xpm-hi-20070702.tgz:release
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - Enigma-NG skin plugin
 
 PATCH_STRIP=	-p1

@@ -8,6 +8,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Template language whose goal is reduce the syntax to essential parts
 
+BROKEN=		unfetchable
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-temple>=0.7.3:${PORTSDIR}/devel/rubygem-temple \

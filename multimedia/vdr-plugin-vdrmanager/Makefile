@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/828/
 DISTNAME=	${PORTNAME:S/-plugin//}-${PORTVERSION}
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - VDR-Manager server plugin
 
 PATCH_STRIP=	-p1

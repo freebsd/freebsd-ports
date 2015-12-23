@@ -9,15 +9,16 @@ MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Better pager utility (and it speaks Chinese)
 
+LICENSE=	BSD2CLAUSE
+
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
 CPP=		#
 
 OPTIONS_DEFINE=	DOCS
 
-
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.CLESS ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

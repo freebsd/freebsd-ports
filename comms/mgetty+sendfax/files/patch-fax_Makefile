@@ -1,6 +1,14 @@
---- fax/Makefile.orig
+--- fax/Makefile.orig	2006-02-22 17:25:30 UTC
 +++ fax/Makefile
-@@ -56,20 +56,16 @@
+@@ -6,6 +6,7 @@
+ 
+ CC=gcc
+ CFLAGS=-O2 -I.. -Wall
++INSTALL_PROGRAM=install -s -c
+ 
+ FAX_SCRIPTS=faxspool faxrunq faxq faxrm 
+ 
+@@ -53,20 +54,16 @@ install: all
  # programs / scripts
  #
  	-for i in $(FAX_SCRIPTS); do \
@@ -13,7 +21,7 @@
 -	chown $(FAX_OUT_USER) $(LIBDIR)/faxq-helper
 -	chmod 4711 $(LIBDIR)/faxq-helper
 +	$(INSTALL) -m 755 faxrunqd $(STAGEDIR)$(SBINDIR)
-+	$(INSTALL) faxq-helper $(STAGEDIR)$(LIBDIR)
++	$(INSTALL_PROGRAM) faxq-helper $(STAGEDIR)$(LIBDIR)
  #
  # data files
  #
@@ -27,7 +35,7 @@
  #
  # /etc/magic
  #
-@@ -82,4 +78,4 @@
+@@ -79,4 +76,4 @@ install: all
  #
  # faxspool.rules sample file
  #

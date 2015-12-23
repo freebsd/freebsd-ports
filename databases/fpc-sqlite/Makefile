@@ -1,7 +1,6 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.rog>
 # $FreeBSD$
 
-PORTREVISION=	2
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-sqlite
 

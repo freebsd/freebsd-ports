@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable30/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-in
 
 CONFLICTS=	moodle28-2.8.[0-9]* moodle29-2.9.[0-9]*
 
-USES=		tar:tgz
+USES=		cpe tar:tgz
 USE_PHP=	ctype curl dom gd hash iconv json mbstring opcache openssl pcre \
 		session simplexml soap spl tokenizer xml xmlrpc zip zlib
 WRKSRC=		${WRKDIR}/moodle

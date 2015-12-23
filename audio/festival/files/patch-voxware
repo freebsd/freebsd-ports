@@ -29,18 +29,11 @@
  #include <fcntl.h>
 -int linux16_supported = TRUE;
 -int freebsd16_supported = FALSE;
--static char *aud_sys_name = "Linux";
+-static const char *aud_sys_name = "Linux";
 +
  static int stereo_only = 0;
  
-@@ -152,5 +156,5 @@
-     int audio,actual_fmt;
-     int i,r,n;
--    char *audiodevice;
-+    const char *audiodevice;
- 
-     if (al.present("-audiodevice"))
-@@ -279,5 +283,5 @@
+@@ -764,5 +768,5 @@
      int audio=-1,actual_fmt;
      int i,r,n;
 -    char *audiodevice;

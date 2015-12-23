@@ -19,7 +19,7 @@ ${_l:tu}_DEFAULT=	${lang:C/.*=//g}
 .endfor
 
 APACHE_DEFAULT?=	2.4
-FPC_DEFAULT?=		2.6.4
+FPC_DEFAULT?=		3.0.0
 GCC_DEFAULT?=		4.8
 LUA_DEFAULT?=		5.2
 MYSQL_DEFAULT?=		5.6

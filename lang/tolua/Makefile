@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	tolua
-PORTVERSION=	5.2.0
+PORTVERSION=	5.2.4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.tecgraf.puc-rio.br/~celes/tolua/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/users/celes/tolua/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	toLua: accessing C/C++ code from Lua
+COMMENT=	Tool to integrate C/C++ code with Lua
 
 USES=		gmake lua
 

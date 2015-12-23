@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	m17n-db
-PORTVERSION=	1.6.5
+PORTVERSION=	1.7.0
 CATEGORIES=	devel textproc
 MASTER_SITES=	SAVANNAH/m17n:m17n \
 		GNU/glibc:glibc
@@ -18,6 +18,7 @@ OPTIONS_DEFINE=	NLS
 USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-charmaps=${CHARMAPSDIR}
+NO_ARCH=	yes
 
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
@@ -38,9 +39,5 @@ post-patch:
 		's|$${datadir}/pkgconfig|$${prefix}/libdata/pkgconfig|g'
 	@${REINPLACE_CMD} -E 's|(m17n_scriptdir = ).*|\1${PREFIX}/bin|' \
 		${WRKSRC}/Makefile.in
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${M17N_DATADIR}/icons
-	@${MV} ${STAGEDIR}${M17N_DATADIR}/*.png ${STAGEDIR}${M17N_DATADIR}/icons/
 
 .include <bsd.port.mk>

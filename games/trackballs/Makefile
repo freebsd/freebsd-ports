@@ -35,16 +35,14 @@ MUSIC_DESC=	Install additional music
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|install -D|$$(INSTALL)|' \
 		${WRKSRC}/share/Makefile.in
 
-post-install:
-.if ${PORT_OPTIONS:MMUSIC}
+post-install-MUSIC-on:
 	${INSTALL_DATA} ${WRKDIR}/trackballs-music/*.ogg ${STAGEDIR}${DATADIR}/music/
-.endif
+
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/share/icons/${PORTNAME}-48x48.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>

@@ -1,7 +1,5 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ldap/Package.fpc
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/ldap.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ldap/lber.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ldap/ldap.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ldap/lber.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ldap/ldap.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ldap/libplber.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ldap/libpldap.a

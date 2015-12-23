@@ -6,15 +6,6 @@
  # -*- coding: utf-8 -*-
  
  # Copyright (c) 2004 - 2015 Detlev Offenbach <detlev@die-offenbachs.de>
-@@ -16,7 +16,7 @@
- import shutil
- import glob
- 
--from PyQt5.QtCore import QDir
-+from PyQt4.QtCore import QDir
- 
- try:
-     from eric6config import getConfig
 @@ -45,6 +45,7 @@
  # Define the globals.
  progName = None

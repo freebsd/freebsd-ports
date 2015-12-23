@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Portable software library for volume rendering
 
+BROKEN=		unfetchable
 LICENSE=	MIT
 
 GNU_CONFIGURE=	yes

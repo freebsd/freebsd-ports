@@ -16,6 +16,8 @@ MAINTAINER=	ninjin@kth.se
 COMMENT=	Python bindings for the PortAudio multi-platform audio library
 
 BROKEN=		Does not work with portaudio v19
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-12-30
 
 BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \

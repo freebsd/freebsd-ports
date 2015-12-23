@@ -7,4 +7,4 @@ capabilities in the basic distribution of R, nor in widely used packages. Where
 relevant, the functions in car are consistent with na.action = na.omit or
 na.exclude.
 
-WWW:	http://cran.r-project.org/web/packages/car/index.html
+WWW: https://cran.r-project.org/web/packages/car/

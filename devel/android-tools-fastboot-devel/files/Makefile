@@ -17,10 +17,15 @@ SRCS+=	util.cpp
 SRCS+=	usb_freebsd.cpp
 SRCS+=	util_freebsd.cpp
 
-# required by fastboot and libziparchive
+# required by fastboot
+.PATH: ${.CURDIR}/../adb
+SRCS+=	diagnose_usb.cpp
+
+# required by fastboot, diagnose_usb and libziparchive
 .PATH: ${.CURDIR}/../base
 SRCS+=	file.cpp
 SRCS+=	strings.cpp
+SRCS+=	stringprintf.cpp
 
 # required by fastboot
 .PATH: ${.CURDIR}/../ext4_utils
@@ -81,6 +86,7 @@ CPPFLAGS+=	-Dmmap64=mmap
 CPPFLAGS+=	-Dpread64=pread
 CPPFLAGS+=	-I${.CURDIR}
 CPPFLAGS+=	-I${.CURDIR}/../include
+CPPFLAGS+=	-I${.CURDIR}/../adb
 CPPFLAGS+=	-I${.CURDIR}/../mkbootimg
 CPPFLAGS+=	-I${.CURDIR}/../base/include
 CPPFLAGS+=	-I${.CURDIR}/../ext4_utils

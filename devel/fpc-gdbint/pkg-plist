@@ -1,6 +1,5 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbint.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/gdbint.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbcon.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbcon.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbint.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbcon.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/libpgdbcon.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbint.ppu

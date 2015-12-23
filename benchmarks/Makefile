@@ -19,7 +19,6 @@
     SUBDIR += flops
     SUBDIR += flowgrind
     SUBDIR += forkbomb
-    SUBDIR += geekbench
     SUBDIR += gtkperf
     SUBDIR += himenobench
     SUBDIR += hpl

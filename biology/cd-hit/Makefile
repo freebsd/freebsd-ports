@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	cd-hit
@@ -6,7 +6,7 @@ PORTVERSION=	4.6.4
 DISTVERSIONPREFIX=	V
 CATEGORIES=	biology
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Clustering and comparing protein or nucleotide sequences
 
 LICENSE=	GPLv2

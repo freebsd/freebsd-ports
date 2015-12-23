@@ -11,6 +11,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Template-toolkit renderer for Mojolicious
 
 LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Mojolicious>=6.33:${PORTSDIR}/www/p5-Mojolicious \
 		p5-Template-Toolkit>=2.18:${PORTSDIR}/www/p5-Template-Toolkit

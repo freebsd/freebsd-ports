@@ -3,7 +3,7 @@
 
 PORTNAME=	eukleides
 PORTVERSION=	1.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.eukleides.org/files/
 
@@ -14,7 +14,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libreadline.so:${PORTSDIR}/devel/readline
-RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit
+RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit \
+		getopt>=0:${PORTSDIR}/misc/getopt
 
 USE_TEX=	latex
 USES=		bison gettext iconv gmake tar:bzip2

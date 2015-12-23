@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pylibmc
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,19 +16,17 @@ LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 TEST_DEPENDS=	memcached:${PORTSDIR}/databases/memcached \
 		nosetests:${PORTSDIR}/devel/py-nose
 
-OPTIONS_DEFINE=		TESTS
-TESTS_DESC=		Install test suite dependencies
-TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
-
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 MAKE_ENV+=	LIBMEMCACHED="${LOCALBASE}"
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pylibmc.so
 
-regression-test: build
+# Note: memcached needs to be running first for this to work
+
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

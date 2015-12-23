@@ -1,0 +1,37 @@
+--- Makefile.orig	2015-11-21 23:18:19.000000000 +0100
++++ Makefile	2015-12-01 18:02:56.589310006 +0100
+@@ -6,11 +6,11 @@
+ 
+ VERSION = 2.00
+ RELEASE ?= 0
+-USEPAK ?= 0
++USEPAK ?= 1
+ 
+-PREFIX ?= /usr
+-BINDIR ?= $(PREFIX)/games/
+-DATADIR ?= $(PREFIX)/share/games/blobwars/
++PREFIX ?= %%LOCALBASE%%
++BINDIR ?= $(PREFIX)/bin/
++DATADIR ?= $(PREFIX)/share/blobwars/
+ DOCDIR ?= $(PREFIX)/share/doc/$(PROG)/
+ ICONDIR ?= $(PREFIX)/share/icons/hicolor/
+ DESKTOPDIR ?= $(PREFIX)/share/applications/
+@@ -21,8 +21,8 @@
+ CXXFLAGS += `pkg-config --cflags sdl2 SDL2_mixer SDL2_image SDL2_ttf SDL2_net` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK)
+ CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DUNIX -DGAMEPLAYMANUAL=\"$(DOCDIR)index.html\" -Wall
+ CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\" -DMEDAL_SERVER_HOST=\"$(MEDAL_SERVER_HOST)\" -DMEDAL_SERVER_PORT=$(MEDAL_SERVER_PORT)
+-CXXFLAGS += $(CFLAGS) -Werror
+-LIBS = `pkg-config --libs sdl2 SDL2_mixer SDL2_image SDL2_ttf SDL2_net` -lz
++CXXFLAGS += $(CFLAGS)
++LIBS = `pkg-config --libs sdl2 SDL2_mixer SDL2_image SDL2_ttf SDL2_net` -lz -lintl
+ PAKLIBS = -lz
+ 
+ OBJS += CAudio.o
+@@ -141,6 +141,7 @@
+ 	$(RM) $(ICONDIR)$(ICONS)$(PROG).png
+ 	$(RM) $(ICONDIR)16x16/apps/$(PROG).png
+ 	$(RM) $(ICONDIR)32x32/apps/$(PROG).png
++	$(RM) $(ICONDIR)48x48/apps/$(PROG).png
+ 	$(RM) $(ICONDIR)64x64/apps/$(PROG).png
+ 	$(RM) $(DESKTOPDIR)$(PROG).desktop
+ 

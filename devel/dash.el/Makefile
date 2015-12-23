@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	dash.el
-PORTVERSION=	2.11.0
+PORTVERSION=	2.12.1
 CATEGORIES=	devel elisp
-DISTNAME=	dash-${PORTVERSION}
 
 MAINTAINER=	rpaulo@FreeBSD.org
 COMMENT=	Modern list library for Emacs
@@ -14,7 +13,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	magnars
 
 USE_EMACS=	yes
-
 NO_BUILD=	yes
 
 do-install:

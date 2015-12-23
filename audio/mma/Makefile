@@ -13,6 +13,8 @@ COMMENT=	Musical MIDI Accompaniment generator
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	aplaymidi:${PORTSDIR}/audio/alsa-utils \
 		timidity:${PORTSDIR}/audio/timidity++
 

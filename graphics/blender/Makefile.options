@@ -34,6 +34,7 @@ OPTIONS_DEFINE=		\
 	OPENIMAGEIO	\
 	OPENEXR 	\
 	OPENJPEG 	\
+	OPENSUBDIV	\
 	PLAYER 		\
 	RAYOPTIMIZATION	\
 	REDCODE		\
@@ -67,6 +68,7 @@ OPTIONS_DEFAULT=	\
 	OPENIMAGEIO	\
 	OPENEXR		\
 	OPENJPEG	\
+	OPENSUBDIV	\
 	PLAYER		\
 	SDL		\
 	TIFF		\
@@ -100,6 +102,7 @@ MOD_REMESH_DESC=	Remesh modifier support
 MOD_SMOKE_DESC=		Smoke simulation support
 OPENCOLORIO_DESC=	OpenColorIO-based color management support
 OPENIMAGEIO_DESC=	OpenImageIO image processing support
+OPENSUBDIV_DESC=	Use the OpenSubDiv library for surface subdivision
 PLAYER_DESC=		Enable blender player
 RAYOPTIMIZATION_DESC=	Enable SSE optimizatons for raytracing
 REDCODE_DESC=		RedCode graphics format support

@@ -6,7 +6,6 @@
     SUBDIR += BBBike
     SUBDIR += alt-aspell
     SUBDIR += aspell
-    SUBDIR += bsdpaste
     SUBDIR += bugzilla44
     SUBDIR += calligra-l10n
     SUBDIR += dict

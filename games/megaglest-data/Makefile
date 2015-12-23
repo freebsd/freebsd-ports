@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	MegaGlest data files
 
+BROKEN=		unfetchable
 USES=		dos2unix tar:xz
 DOS2UNIX_GLOB=	*.log *.ini *.html *.txt *.lng
 NO_BUILD=	yes

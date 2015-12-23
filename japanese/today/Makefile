@@ -3,16 +3,15 @@
 
 PORTNAME=	today
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	japanese games
-MASTER_SITES=	http://ftp.vector.co.jp/pack/dos/personal/calendar/today/
+MASTER_SITES=	http://ftp.vector.co.jp/29/42/476/
 DISTNAME=	ja-${PORTNAME}-${PORTVERSION}
 DISTFILES=	td${PORTVERSION:S/.//}s.lzh \
 		td${PORTVERSION:S/.//}m.lzh
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Tells you what day today is
-
-BROKEN=		unfetchable
 
 EXTRACT_DEPENDS=nkf:${PORTSDIR}/japanese/nkf
 

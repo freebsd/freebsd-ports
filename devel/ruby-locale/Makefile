@@ -5,7 +5,8 @@ PORTNAME=	locale
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	ftp://ftp.jp.vim.org/pub/distfiles/ruby/ \
+		http://www.mmnt.net/db/0/8/ftp.jp.vim.org/pub/distfiles/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -15,7 +16,6 @@ COMMENT=	Simple Ruby module that provides setlocale(3)
 
 CONFLICTS=	${PKGNAMEPREFIX}locale2-[0-9]*
 
-#USE_BZIP2=	yes	# only saves 500 bytes..
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Net-OAuth-Simple
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Simple wrapper around the OAuth protocol
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-libwww>=5.825:${PORTSDIR}/www/p5-libwww \

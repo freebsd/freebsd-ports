@@ -6,7 +6,7 @@ PORTVERSION=	0.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	tobias.kortkamp@gmail.com
+MAINTAINER=	t@tobik.me
 COMMENT=	Acer Aspire One fan control
 
 LICENSE=	GPLv2

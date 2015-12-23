@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	texttable
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP \
 		http://foutaise.org/code/texttable/

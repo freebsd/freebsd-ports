@@ -4,7 +4,6 @@
     COMMENT = Things that used to be on the desktop before computers were invented
 
     SUBDIR += affiche
-    SUBDIR += akamaru
     SUBDIR += alacarte
     SUBDIR += anamnesis
     SUBDIR += appwrapper
@@ -137,8 +136,6 @@
     SUBDIR += ladon
     SUBDIR += launchy
     SUBDIR += libgcal
-    SUBDIR += libopensync-plugin-file
-    SUBDIR += libopensync-plugin-sunbird
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += libstreamanalyzer
     SUBDIR += libstreams
@@ -153,7 +150,6 @@
     SUBDIR += menumaker
     SUBDIR += moregroupware
     SUBDIR += mozo
-    SUBDIR += mrundlg
     SUBDIR += multisync
     SUBDIR += multisync-backup
     SUBDIR += multisync-syncml
@@ -217,6 +213,7 @@
     SUBDIR += rolo
     SUBDIR += rox-memo
     SUBDIR += rubrica
+    SUBDIR += rubygem-shellplay
     SUBDIR += rubygem-taskjuggler
     SUBDIR += semantik
     SUBDIR += shutter
@@ -249,7 +246,6 @@
     SUBDIR += tomboy-plugin-latex
     SUBDIR += tomboy-plugin-reminder
     SUBDIR += tomboy-plugin-todo
-    SUBDIR += tomboy-plugin-wordcount
     SUBDIR += toolboxkit
     SUBDIR += tpb
     SUBDIR += treeline
@@ -264,7 +260,6 @@
     SUBDIR += when
     SUBDIR += wmpinboard
     SUBDIR += wyrd
-    SUBDIR += x-tile
     SUBDIR += x026
     SUBDIR += xcalendar
     SUBDIR += xchm

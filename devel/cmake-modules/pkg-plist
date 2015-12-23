@@ -26,7 +26,6 @@
 %%DATADIR%%/Modules/CMakeCXXCompilerABI.cpp
 %%DATADIR%%/Modules/CMakeCXXCompilerId.cpp.in
 %%DATADIR%%/Modules/CMakeCXXInformation.cmake
-%%DATADIR%%/Modules/CMakeClDeps.cmake
 %%DATADIR%%/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
 %%DATADIR%%/Modules/CMakeCommonLanguageInclude.cmake
 %%DATADIR%%/Modules/CMakeCompilerABI.h
@@ -39,13 +38,14 @@
 %%DATADIR%%/Modules/CMakeDetermineASM_NASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCXXCompiler.cmake
+%%DATADIR%%/Modules/CMakeDetermineCompileFeatures.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompilerABI.cmake
-%%DATADIR%%/Modules/CMakeDetermineCompileFeatures.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompilerId.cmake
 %%DATADIR%%/Modules/CMakeDetermineFortranCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineJavaCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineRCCompiler.cmake
+%%DATADIR%%/Modules/CMakeDetermineSwiftCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineSystem.cmake
 %%DATADIR%%/Modules/CMakeDetermineVSServicePack.cmake
 %%DATADIR%%/Modules/CMakeExpandImportedTargets.cmake
@@ -86,6 +86,8 @@
 %%DATADIR%%/Modules/CMakePushCheckState.cmake
 %%DATADIR%%/Modules/CMakeRCCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeRCInformation.cmake
+%%DATADIR%%/Modules/CMakeSwiftCompiler.cmake.in
+%%DATADIR%%/Modules/CMakeSwiftInformation.cmake
 %%DATADIR%%/Modules/CMakeSystem.cmake.in
 %%DATADIR%%/Modules/CMakeSystemSpecificInformation.cmake
 %%DATADIR%%/Modules/CMakeSystemSpecificInitialize.cmake
@@ -100,6 +102,7 @@
 %%DATADIR%%/Modules/CMakeTestGNU.c
 %%DATADIR%%/Modules/CMakeTestJavaCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestRCCompiler.cmake
+%%DATADIR%%/Modules/CMakeTestSwiftCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestWatcomVersion.c
 %%DATADIR%%/Modules/CMakeUnixFindMake.cmake
 %%DATADIR%%/Modules/CMakeVS6BackwardCompatibility.cmake
@@ -168,12 +171,13 @@
 %%DATADIR%%/Modules/Compiler/ADSP-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Absoft-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/AppleClang-ASM.cmake
-%%DATADIR%%/Modules/Compiler/AppleClang-C.cmake
 %%DATADIR%%/Modules/Compiler/AppleClang-C-FeatureTests.cmake
-%%DATADIR%%/Modules/Compiler/AppleClang-CXX.cmake
+%%DATADIR%%/Modules/Compiler/AppleClang-C.cmake
 %%DATADIR%%/Modules/Compiler/AppleClang-CXX-FeatureTests.cmake
+%%DATADIR%%/Modules/Compiler/AppleClang-CXX.cmake
 %%DATADIR%%/Modules/Compiler/AppleClang-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Borland-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/CCur-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/Clang-ASM.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C.cmake
@@ -226,8 +230,8 @@
 %%DATADIR%%/Modules/Compiler/MIPSpro-CXX.cmake
 %%DATADIR%%/Modules/Compiler/MIPSpro-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/MIPSpro-Fortran.cmake
-%%DATADIR%%/Modules/Compiler/MSVC-CXX.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-CXX-FeatureTests.cmake
+%%DATADIR%%/Modules/Compiler/MSVC-CXX.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/NAG-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake
@@ -285,6 +289,7 @@
 %%DATADIR%%/Modules/CompilerId/Xcode-1.pbxproj.in
 %%DATADIR%%/Modules/CompilerId/Xcode-2.pbxproj.in
 %%DATADIR%%/Modules/CompilerId/Xcode-3.pbxproj.in
+%%DATADIR%%/Modules/CompilerId/main.swift.in
 %%DATADIR%%/Modules/Dart.cmake
 %%DATADIR%%/Modules/DartConfiguration.tcl.in
 %%DATADIR%%/Modules/DeployQt4.cmake
@@ -492,6 +497,8 @@
 %%DATADIR%%/Modules/Platform/AIX-XL-Fortran.cmake
 %%DATADIR%%/Modules/Platform/AIX-XL.cmake
 %%DATADIR%%/Modules/Platform/AIX.cmake
+%%DATADIR%%/Modules/Platform/ARTOS-GNU-C.cmake
+%%DATADIR%%/Modules/Platform/ARTOS.cmake
 %%DATADIR%%/Modules/Platform/Android.cmake
 %%DATADIR%%/Modules/Platform/BSDOS.cmake
 %%DATADIR%%/Modules/Platform/BeOS.cmake
@@ -557,6 +564,7 @@
 %%DATADIR%%/Modules/Platform/Darwin-XL-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin.cmake
 %%DATADIR%%/Modules/Platform/DragonFly.cmake
+%%DATADIR%%/Modules/Platform/Euros.cmake
 %%DATADIR%%/Modules/Platform/FreeBSD.cmake
 %%DATADIR%%/Modules/Platform/GHS-MULTI-Initialize.cmake
 %%DATADIR%%/Modules/Platform/GHS-MULTI.cmake
@@ -569,6 +577,7 @@
 %%DATADIR%%/Modules/Platform/Generic-ADSP-Common.cmake
 %%DATADIR%%/Modules/Platform/Generic-SDCC-C.cmake
 %%DATADIR%%/Modules/Platform/Generic.cmake
+%%DATADIR%%/Modules/Platform/HP-UX-GNU-ASM.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-GNU-Fortran.cmake
@@ -577,13 +586,13 @@
 %%DATADIR%%/Modules/Platform/HP-UX-HP-C.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-HP-CXX.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-HP-Fortran.cmake
-%%DATADIR%%/Modules/Platform/HP-UX-GNU-ASM.cmake
 %%DATADIR%%/Modules/Platform/HP-UX-HP.cmake
 %%DATADIR%%/Modules/Platform/HP-UX.cmake
 %%DATADIR%%/Modules/Platform/Haiku.cmake
 %%DATADIR%%/Modules/Platform/IRIX.cmake
 %%DATADIR%%/Modules/Platform/IRIX64.cmake
 %%DATADIR%%/Modules/Platform/Linux-Absoft-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Linux-CCur-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-Clang-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-Clang-CXX.cmake
@@ -709,9 +718,6 @@
 %%DATADIR%%/Modules/UsePkgConfig.cmake
 %%DATADIR%%/Modules/UseQt4.cmake
 %%DATADIR%%/Modules/UseSWIG.cmake
-%%DATADIR%%/Modules/UseVTK40.cmake
-%%DATADIR%%/Modules/UseVTKBuildSettings40.cmake
-%%DATADIR%%/Modules/UseVTKConfig40.cmake
 %%DATADIR%%/Modules/Use_wxWindows.cmake
 %%DATADIR%%/Modules/UsewxWidgets.cmake
 %%DATADIR%%/Modules/VTKCompatibility.cmake
@@ -743,6 +749,7 @@
 %%DATADIR%%/Templates/Windows/ApplicationIcon.png
 %%DATADIR%%/Templates/Windows/Logo.png
 %%DATADIR%%/Templates/Windows/SmallLogo.png
+%%DATADIR%%/Templates/Windows/SmallLogo44x44.png
 %%DATADIR%%/Templates/Windows/SplashScreen.png
 %%DATADIR%%/Templates/Windows/StoreLogo.png
 %%DATADIR%%/Templates/Windows/Windows_TemporaryKey.pfx

@@ -133,7 +133,6 @@
     SUBDIR += firewalk
     SUBDIR += fl0p
     SUBDIR += flawfinder
-    SUBDIR += fpc-hash
     SUBDIR += fpc-openssl
     SUBDIR += fpm2
     SUBDIR += fprint_demo
@@ -270,6 +269,7 @@
     SUBDIR += krb5
     SUBDIR += krb5-112
     SUBDIR += krb5-113
+    SUBDIR += krb5-114
     SUBDIR += krb5-appl
     SUBDIR += kripp
     SUBDIR += kstart
@@ -521,6 +521,7 @@
     SUBDIR += p5-Crypt-OpenSSL-X509
     SUBDIR += p5-Crypt-PBKDF2
     SUBDIR += p5-Crypt-PGPSimple
+    SUBDIR += p5-Crypt-PKCS10
     SUBDIR += p5-Crypt-PWSafe3
     SUBDIR += p5-Crypt-PassGen
     SUBDIR += p5-Crypt-Passwd-XS
@@ -648,6 +649,7 @@
     SUBDIR += p5-PGP-Sign
     SUBDIR += p5-POE-Component-SSLify
     SUBDIR += p5-POE-Filter-SSL
+    SUBDIR += p5-Parse-Snort
     SUBDIR += p5-PerlCryptLib
     SUBDIR += p5-SAVI-Perl
     SUBDIR += p5-SHA
@@ -761,6 +763,7 @@
     SUBDIR += pinentry-gtk2
     SUBDIR += pinentry-qt4
     SUBDIR += pinentry-tty
+    SUBDIR += pixiewps
     SUBDIR += pkcrack
     SUBDIR += pkcs11-dump
     SUBDIR += pkcs11-gateway
@@ -847,6 +850,7 @@
     SUBDIR += py-pycrypto
     SUBDIR += py-pycryptopp
     SUBDIR += py-pydeep
+    SUBDIR += py-pyelliptic
     SUBDIR += py-pylibacl
     SUBDIR += py-pyme
     SUBDIR += py-pyptlib
@@ -1061,6 +1065,7 @@
     SUBDIR += tcpcrypt
     SUBDIR += tinc
     SUBDIR += tinyca
+    SUBDIR += titus
     SUBDIR += tlswrap
     SUBDIR += tmux-cssh
     SUBDIR += tor

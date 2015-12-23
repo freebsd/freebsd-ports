@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sbcl
-PORTVERSION=	1.2.9
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/sbcl/sbcl/${PORTVERSION} LOCAL/marino:binaries
@@ -12,6 +11,11 @@ DISTFILES=	sbcl-${PORTVERSION}-source${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common Lisp development system derived from the CMU CL system
 
+LICENSE=	sbcl
+LICENSE_NAME=	public domain | FreeBSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept dist-sell pkg-sell
+
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 USES=		gmake tar:bzip2
@@ -19,12 +23,14 @@ USES=		gmake tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64
 SBCL_HOME=	${PREFIX}/lib/sbcl
 MANUALS=	asdf.html sbcl.html
-MODULESDOCS=	asdf/README 			\
+MODULESDOCS=	asdf/README.md 			\
 		asdf/README.SBCL		\
 		sb-aclrepl/README		\
 		sb-bsd-sockets/FAQ 		\
 		sb-bsd-sockets/NEWS 		\
+		sb-gmp/README.md 		\
 		sb-md5/README			\
+		sb-mpfr/README.md		\
 		sb-posix/README			\
 		sb-rotate-byte/README		\
 		sb-simple-streams/README
@@ -63,7 +69,7 @@ CORE=	sbcl_core
 BOOT_DISTNAME=	sbcl-${BOOT_ARCH_OS_LIST:M${PATTERN}}
 . endif
 
-.if make(makesum)
+.if make(makesum) || defined(FETCH_ALL)
 . for BOOT_ARCH_OS in ${BOOT_ARCH_OS_LIST}
 DISTFILES:=	${DISTFILES} sbcl-${BOOT_ARCH_OS}-binary.tar.bz2:binaries
 . endfor

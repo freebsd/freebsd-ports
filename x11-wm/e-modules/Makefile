@@ -3,7 +3,7 @@
 
 PORTNAME=	e17-modules
 PORTVERSION=	20130510
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	# Empty
 DISTFILES=	# Empty
@@ -14,8 +14,7 @@ COMMENT=	Meta-port for Enlightenment modules
 NO_BUILD=	yes
 
 MODULES=	alarm cpu deskshow everything-places \
-		everything-websearch forecasts mem mpdule net penguins \
-		places rmb tclock wlan
+		everything-websearch mem rmb wlan
 
 .include "../enlightenment/Makefile.plist"
 

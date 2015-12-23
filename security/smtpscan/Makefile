@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	src/smtpscan
 
 PLIST_FILES=	bin/smtpscan \
 		man/man1/smtpscan.1.gz \
@@ -28,8 +29,7 @@ PLIST_FILES=	bin/smtpscan \
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^#!.*|#!${PERL}| ; \
-		 s|/usr/local/share|${PREFIX}/share| ; \
+		's|/usr/local/share|${PREFIX}/share| ; \
 		 s|@VERSION@|${PORTVERSION}|' ${WRKSRC}/src/smtpscan
 	@${REINPLACE_CMD} -e \
 		's|@VERSION@|${PORTVERSION}| ; \

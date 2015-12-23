@@ -1,7 +1,0 @@
-bin/gpsk31
-man/man1/gpsk31.1.gz
-%%DATADIR%%/gpsk.conf
-%%DATADIR%%/psk31.cod
-%%DATADIR%%/README
-share/applications/gpsk31.desktop
-share/pixmaps/gpsk31.png

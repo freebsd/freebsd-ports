@@ -26,12 +26,12 @@ man/man1/festival_client.1.gz
 %%DATADIR%%/examples/intro.text
 %%DATADIR%%/examples/latest
 %%DATADIR%%/examples/latest.sh
-%%DATADIR%%/examples/run-festival-script
-%%DATADIR%%/examples/run-festival-script.sh
 %%DATADIR%%/examples/make_utts
 %%DATADIR%%/examples/make_utts.sh
 %%DATADIR%%/examples/powmeanstd
 %%DATADIR%%/examples/powmeanstd.sh
+%%DATADIR%%/examples/run-festival-script
+%%DATADIR%%/examples/run-festival-script.sh
 %%DATADIR%%/examples/saytime
 %%DATADIR%%/examples/saytime.sh
 %%DATADIR%%/examples/scfg_parse_text
@@ -52,6 +52,8 @@ man/man1/festival_client.1.gz
 %%DATADIR%%/examples/spintro.text
 %%DATADIR%%/examples/text2pos
 %%DATADIR%%/examples/text2pos.sh
+%%DATADIR%%/examples/text2utt
+%%DATADIR%%/examples/text2utt.sh
 %%DATADIR%%/examples/text2wave
 %%DATADIR%%/examples/text2wave.sh
 %%DATADIR%%/examples/th-mode.scm

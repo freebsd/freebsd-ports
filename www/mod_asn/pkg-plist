@@ -3,5 +3,3 @@ bin/asn_get_routeviews
 %%APACHEMODDIR%%/%%AP_MODULE%%
 %%EXAMPLESDIR%%/mod_asn.conf
 %%DATADIR%%/asn.sql
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%

@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Open source 3D real-time strategy game
 
+BROKEN=		unfetchable
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \

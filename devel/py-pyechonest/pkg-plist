@@ -16,9 +16,6 @@
 %%PYTHON_SITELIBDIR%%/pyechonest/proxies.py
 %%PYTHON_SITELIBDIR%%/pyechonest/proxies.pyc
 %%PYTHON_SITELIBDIR%%/pyechonest/proxies.pyo
-%%PYTHON_SITELIBDIR%%/pyechonest/results.py
-%%PYTHON_SITELIBDIR%%/pyechonest/results.pyc
-%%PYTHON_SITELIBDIR%%/pyechonest/results.pyo
 %%PYTHON_SITELIBDIR%%/pyechonest/sandbox.py
 %%PYTHON_SITELIBDIR%%/pyechonest/sandbox.pyc
 %%PYTHON_SITELIBDIR%%/pyechonest/sandbox.pyo

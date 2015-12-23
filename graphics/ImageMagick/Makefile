@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.2-6
+DISTVERSION=	6.9.2-10
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -106,7 +106,7 @@ _IMAGEMAGICK_THREADS_IGNORE_MSG=. Define WITH_THREADS
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-CONFIGURE_ARGS+=	--with-perl=${PERL5} \
+CONFIGURE_ARGS+=	--with-perl=${PERL} \
 			--with-perl-options="MAKE=${MAKE_CMD}"
 PLIST_SUB+=		WITH_PERL=''
 # PerlMagick does not work with threads, if perl is not threaded, and vice versa

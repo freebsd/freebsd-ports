@@ -3,7 +3,7 @@
 
 PORTNAME=	db5
 PORTVERSION=	5.3.28
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -39,8 +39,9 @@ SQL_DESC=	Enable SQL API (EXPERIMENTAL)
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "aarch64" || ${ARCH} == "armv6"
+.if ${ARCH} == "aarch64" || ${ARCH:Marmv6*}
 # db5 uses a deprecated instruction for mutexes on ARM, fbsd bug#197227
+# also bug#205001
 CONFIGURE_ARGS+=	--enable-posixmutexes
 .endif
 

@@ -149,7 +149,9 @@ include/dovecot/fts-filter.h
 include/dovecot/fts-icu.h
 include/dovecot/fts-indexer.h
 include/dovecot/fts-language.h
+include/dovecot/fts-library.h
 include/dovecot/fts-parser.h
+include/dovecot/fts-storage.h
 include/dovecot/fts-tokenizer-generic-private.h
 include/dovecot/fts-tokenizer-private.h
 include/dovecot/fts-tokenizer.h
@@ -302,6 +304,7 @@ include/dovecot/login-proxy-state.h
 include/dovecot/login-proxy.h
 include/dovecot/login-settings.h
 include/dovecot/macros.h
+include/dovecot/mail-autoexpunge.h
 include/dovecot/mail-cache-private.h
 include/dovecot/mail-cache.h
 include/dovecot/mail-copy.h
@@ -712,6 +715,8 @@ share/aclocal/dovecot.m4
 %%DATADIR%%/stopwords/stopwords_en.txt
 %%DATADIR%%/stopwords/stopwords_fi.txt
 %%DATADIR%%/stopwords/stopwords_fr.txt
+%%DATADIR%%/stopwords/stopwords_no.txt
+%%DATADIR%%/stopwords/stopwords_sv.txt
 %%LIBWRAP%%libexec/dovecot/tcpwrap
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.a
 %%LUCENE%%lib/dovecot/doveadm/lib20_doveadm_fts_lucene_plugin.so

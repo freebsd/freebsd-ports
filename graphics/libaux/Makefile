@@ -11,6 +11,7 @@ DISTFILES=	libaux${EXTRACT_SUFX} libtk${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nano window toolkit and auxiliary library for OpenGL
 
+BROKEN=		unfetchable
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		imake

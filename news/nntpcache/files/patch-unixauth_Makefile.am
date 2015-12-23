@@ -1,0 +1,12 @@
+--- unixauth/Makefile.am.orig	2004-04-11 11:43:57 UTC
++++ unixauth/Makefile.am
+@@ -8,9 +8,4 @@ INCLUDES = \
+ 	-I../cf \
+ 	-I../common
+ 
+-install-exec-hook:
+-	chown root $(libexecdir)/unixauth
+-	chgrp @nntpcacheGID@ $(libexecdir)/unixauth
+-	chmod u+s,g+x,o-x $(libexecdir)/unixauth 
+-
+ include ../mk/rules.mk

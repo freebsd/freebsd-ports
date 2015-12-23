@@ -4,10 +4,9 @@
 PORTNAME=	mcweject
 PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Removable media eject
 
 LICENSE=	BSD3CLAUSE

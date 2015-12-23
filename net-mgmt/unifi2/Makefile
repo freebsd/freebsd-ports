@@ -38,6 +38,9 @@ WRKSRC=	${WRKDIR}/UniFi
 RESTRICTED=	Redistribution of bundled firmware images is not permitted
 CONFLICTS=	unifi3-* unifi4-*
 
+DEPRECATED=	Unifi 2.x is EoL. Please upgrade to net-mgmt/unifi3
+EXPIRATION_DATE=	2016-01-01
+
 post-extract:
 	${MKDIR} ${WRKSRC}/webapps/ROOT
 	@${TAR} xf ${WRKSRC}/webapps/ROOT.war -C ${WRKSRC}/webapps/ROOT

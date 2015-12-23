@@ -8,15 +8,15 @@ CATEGORIES=	devel python
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt4 toolkit, QtDesigner plugin
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
-RUN_DEPENDS=	${PKGNAMEPREFIX}designer>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designer
-
 BUILD_WRKSRC=	${WRKSRC}/designer
 INSTALL_WRKSRC=	${WRKSRC}/designer
+DESTDIRNAME=	INSTALL_ROOT
 
 CONFIGURE_ARGS=	--enable QtDesigner
-DESTDIRNAME=	INSTALL_ROOT
-PYQT4_DIST=	yes
+PYQT_DIST=	yes
+
+USES=		python pyqt:4
+USE_PYQT=	sip_build designer_run
 USE_QT4=	gui xml designer moc_build qmake_build
 
 OPTIONS_DEFINE=		DEBUG
@@ -24,5 +24,4 @@ DEBUG_CONFIGURE_ON=	--debug --trace
 
 PLIST_FILES=	%%QT_PLUGINDIR%%/designer/libpyqt4.so
 
-.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.mk>

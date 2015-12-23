@@ -2,13 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	libquantum
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	science
 MASTER_SITES=	http://www.libquantum.de/files/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for quantum computing and quantum simulation
+
+LICENSE=	GPLv3
+
+PLIST_FILES=	include/quantum.h \
+		lib/libquantum.a \
+		lib/libquantum.so \
+		lib/libquantum.so.8 \
+		lib/libquantum.so.8.0.0
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gammu
-PORTVERSION=	1.33.0
-PORTREVISION=	1
+PORTVERSION=	1.36.8
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
@@ -26,6 +25,7 @@ SHEBANG_FILES=	utils/jadmaker utils/gammu-config
 bash_CMD=	/bin/sh
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+PLIST_SUB+=	VERSION=${PORTVERSION}
 
 PORTDOCS=	*
 

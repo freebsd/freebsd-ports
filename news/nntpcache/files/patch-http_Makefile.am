@@ -1,0 +1,12 @@
+--- http/Makefile.am.orig	2004-04-11 11:43:56 UTC
++++ http/Makefile.am
+@@ -12,7 +12,5 @@ EXTRA_DIST = \
+ ch = . $(httpdata)
+ 
+ install-data-local:
+-	-mkdir $(sysconfdir)/http
+-	cp $(httpdata) $(sysconfdir)/http
+-	cd $(sysconfdir)/http && chown @nntpcacheUID@ $(ch)
+-	cd $(sysconfdir)/http && chgrp @nntpcacheUID@ $(ch)
++	-mkdir $(DESTDIR)$(sysconfdir)/http
++	cp $(httpdata) $(DESTDIR)$(sysconfdir)/http

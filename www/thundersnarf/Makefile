@@ -20,6 +20,7 @@ PGSQL_DESC=	Install PostgreSQL (report data storing)
 USES=		tar:bzip2
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_SUB=	OWNER=${WWWOWN} GROUP=${WWWGRP}
 
@@ -55,9 +56,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/protected/data/bin/thundersnarf* \
 		${STAGEDIR}${PREFIX}/bin/
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README.pt_BR
-.endif
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README.pt_BR
 
 .include <bsd.port.mk>

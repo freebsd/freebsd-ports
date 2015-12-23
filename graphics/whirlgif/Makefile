@@ -10,6 +10,7 @@ DISTNAME=	whirlgif_3.04.orig
 MAINTAINER=	hans@nordhaug.priv.no
 COMMENT=	Tool for making GIF animations
 
+BROKEN=		unfetchable
 WRKSRC=		${WRKDIR}/whirlgif-3.04.orig
 
 PLIST_FILES=	bin/whirlgif man/man1/whirlgif.1.gz

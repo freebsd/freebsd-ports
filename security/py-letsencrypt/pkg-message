@@ -1,23 +1,13 @@
 ===========================================================================
 
-This software is a DEVELOPER PREVIEW intended for developers, testers and
-early-adopters only. Support requests and bug reports should be sent directly
-and only to the upstream project: https://github.com/letsencrypt/letsencrypt
-
-letsencrypt is currently in Closed Beta (invite only). In order to
-acquire certificates, you must have applied for and received an invitation,
-and have your domains whitelisted FIRST.
+The Let's Encrypt Client is BETA SOFTWARE. It contains plenty of bugs and
+rough edges, and should be tested thoroughly in staging environments before
+use on production systems.
 
 This port installs the "standalone" Python client only, which does not use and
 is not the letsencrypt-auto bootstrap/wrapper script.
 
-By default, the client will authenticate and obtain certificates using, and
-signed by a TEST(Staging) Certificate Authority (CA). These certificates will
-NOT be trusted publicly.
-
-To obtain certificates, use the --server argument pointing to the correct
-server URL as documented in your invitation email, and use the 'certonly'
-command as follows:
+To obtain certificates, use use the 'certonly' command as follows:
 
  # sudo letsencrypt --server <server-URL> certonly
 

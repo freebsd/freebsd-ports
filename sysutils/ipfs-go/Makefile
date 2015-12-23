@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipfs-go
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -33,9 +33,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-32bit
 # Prepare for possible extra modules in future
 post-extract:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
-.for src in CHANGELOG.md Dockerfile Godeps LICENSE Makefile README.md assets bin blocks blockservice circle.yml cmd commands core dev dev.md diagnostics doc.go docs exchange fuse importer ipnsfs jenkins merkledag metrics misc namesys notifications p2p path pin repo routing test thirdparty tour unixfs updates util
+.for src in CHANGELOG.md Dockerfile Godeps LICENSE Makefile README.md assets bin blocks blockservice circle.yml cmd commands core dev dev.md diagnostics doc.go docs exchange fuse importer ipnsfs merkledag metrics misc namesys notifications p2p path pin repo routing tar test thirdparty tour unixfs updates util vendor
 	${MV} ${WRKSRC}/${src} \
-		${WRKSRC}/src/github.com/ipfs/${GH_PROJECT}
+		${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
 .endfor
 
 do-build:

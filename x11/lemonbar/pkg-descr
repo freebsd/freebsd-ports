@@ -1,0 +1,5 @@
+bar is a lightweight bar entirely based on XCB. Provides full UTF-8 support,
+basic formatting, RandR and Xinerama support and EWMH compliance without
+wasting your precious memory.
+
+WWW: https://github.com/LemonBoy/bar

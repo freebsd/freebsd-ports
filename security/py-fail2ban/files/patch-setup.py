@@ -1,6 +1,6 @@
---- setup.py.orig	2014-11-08 10:14:31.000000000 +0100
-+++ setup.py	2014-11-08 10:17:37.000000000 +0100
-@@ -96,26 +96,13 @@
+--- setup.py.orig	2015-08-01 01:32:13 UTC
++++ setup.py
+@@ -104,26 +104,13 @@ setup(
  		'bin/fail2ban-client',
  		'bin/fail2ban-server',
  		'bin/fail2ban-regex',
@@ -27,7 +27,7 @@
  	},
  	data_files = [
  		('/etc/fail2ban',
-@@ -136,10 +123,6 @@
+@@ -147,10 +134,6 @@ setup(
  		),
  		('/var/lib/fail2ban',
  			''
@@ -36,5 +36,5 @@
 -			['README.md', 'README.Solaris', 'DEVELOP', 'FILTERS',
 -			 'doc/run-rootless.txt']
  		)
- 	],
+ 	] + data_files_extra,
  	**setup_extra

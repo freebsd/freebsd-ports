@@ -107,8 +107,6 @@ etc/xdg/autostart/orca-autostart.desktop
 %%PYTHON_SITELIBDIR%%/orca/__pycache__/settings.cpython-%%PYVER%%.%%PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/orca/__pycache__/settings_manager.cpython-%%PYVER%%.pyc
 %%PYTHON_SITELIBDIR%%/orca/__pycache__/settings_manager.cpython-%%PYVER%%.%%PYOEXTENSION%%
-%%PYTHON_SITELIBDIR%%/orca/__pycache__/sound.cpython-%%PYVER%%.pyc
-%%PYTHON_SITELIBDIR%%/orca/__pycache__/sound.cpython-%%PYVER%%.%%PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/orca/__pycache__/speech.cpython-%%PYVER%%.pyc
 %%PYTHON_SITELIBDIR%%/orca/__pycache__/speech.cpython-%%PYVER%%.%%PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/orca/__pycache__/speech_generator.cpython-%%PYVER%%.pyc
@@ -590,7 +588,6 @@ etc/xdg/autostart/orca-autostart.desktop
 %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/gtk/script_utilities.py
 %%PYTHON_SITELIBDIR%%/orca/settings.py
 %%PYTHON_SITELIBDIR%%/orca/settings_manager.py
-%%PYTHON_SITELIBDIR%%/orca/sound.py
 %%PYTHON_SITELIBDIR%%/orca/speech.py
 %%PYTHON_SITELIBDIR%%/orca/speech_generator.py
 %%PYTHON_SITELIBDIR%%/orca/speechdispatcherfactory.py
@@ -1147,8 +1144,8 @@ share/icons/hicolor/22x22/apps/orca.png
 share/icons/hicolor/24x24/apps/orca.png
 share/icons/hicolor/32x32/apps/orca.png
 share/icons/hicolor/48x48/apps/orca.png
-share/icons/hicolor/symbolic/apps/orca-symbolic.svg
 share/icons/hicolor/scalable/apps/orca.svg
+share/icons/hicolor/symbolic/apps/orca-symbolic.svg
 share/locale/an/LC_MESSAGES/orca.mo
 share/locale/ar/LC_MESSAGES/orca.mo
 share/locale/ast/LC_MESSAGES/orca.mo

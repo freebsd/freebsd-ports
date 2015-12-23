@@ -1,4 +1,4 @@
---- mg_utmp.h.orig
+--- mg_utmp.h.orig	1997-01-12 14:53:42 UTC
 +++ mg_utmp.h
 @@ -1,4 +1,4 @@
 -#ident "$Id: mg_utmp.h,v 4.1 1997/01/12 14:53:42 gert Exp $ Copyright (c) Gert Doering"
@@ -6,7 +6,7 @@
  
  /* definitions for utmp reading / writing routines,
   * highly SysV / BSD dependent
-@@ -31,6 +31,25 @@
+@@ -31,6 +31,25 @@ void setutent();
  
  #else						 /* SunOS or generic BSD */
  
@@ -32,7 +32,7 @@
  #include <sys/types.h>
  #include <utmp.h>
  
-@@ -41,6 +60,8 @@
+@@ -41,6 +60,8 @@ void setutent();
  #define UT_LOGIN	1
  #define UT_USER		2
  

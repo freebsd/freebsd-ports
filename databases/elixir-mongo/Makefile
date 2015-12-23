@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	elixir-mongo
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 CATEGORIES=	databases
 
 MAINTAINER=	vanilla@FreeBSD.org

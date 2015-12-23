@@ -7,6 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://distfiles.cse.tw/
 PKGNAMEPREFIX=	trac-
+# Should not be setting DISTNAME, USE_GITHUB already sets a very nice and unique distname.
 DISTNAME=	itota-trac-subtickets-plugin-a0fc153
 
 MAINTAINER=	gaod@hychen.org

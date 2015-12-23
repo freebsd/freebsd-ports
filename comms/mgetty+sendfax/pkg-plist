@@ -46,13 +46,21 @@ lib/mgetty+sendfax/cour25.pbm
 lib/mgetty+sendfax/cour25n.pbm
 @mode 4711
 lib/mgetty+sendfax/faxq-helper
-@mode
-lib/mgetty+sendfax/samples/answer_fax.sh
-lib/mgetty+sendfax/samples/coverpg-pl.ps
+@mode 0755
 lib/mgetty+sendfax/samples/coverpg.pbm
 lib/mgetty+sendfax/samples/coverpg.ps
 lib/mgetty+sendfax/samples/fax
 lib/mgetty+sendfax/samples/faxmemo
+lib/mgetty+sendfax/samples/new_fax.all/new_fax
+lib/mgetty+sendfax/samples/new_fax.hpa
+lib/mgetty+sendfax/samples/new_fax.lj
+lib/mgetty+sendfax/samples/new_fax.mail
+lib/mgetty+sendfax/samples/new_fax.mime1
+lib/mgetty+sendfax/samples/new_fax.pbm
+lib/mgetty+sendfax/samples/printfax
+@mode
+lib/mgetty+sendfax/samples/answer_fax.sh
+lib/mgetty+sendfax/samples/coverpg-pl.ps
 lib/mgetty+sendfax/samples/faxview.th
 lib/mgetty+sendfax/samples/new_fax.NeXT
 lib/mgetty+sendfax/samples/new_fax.all/INSTALL
@@ -64,21 +72,14 @@ lib/mgetty+sendfax/samples/new_fax.all/faxlist
 lib/mgetty+sendfax/samples/new_fax.all/faxlist.dist
 lib/mgetty+sendfax/samples/new_fax.all/list.module
 lib/mgetty+sendfax/samples/new_fax.all/mail.module
-lib/mgetty+sendfax/samples/new_fax.all/new_fax
 lib/mgetty+sendfax/samples/new_fax.all/notify.module
 lib/mgetty+sendfax/samples/new_fax.all/print.module
 lib/mgetty+sendfax/samples/new_fax.all/write.module
-lib/mgetty+sendfax/samples/new_fax.hpa
-lib/mgetty+sendfax/samples/new_fax.lj
-lib/mgetty+sendfax/samples/new_fax.mail
-lib/mgetty+sendfax/samples/new_fax.mime1
 lib/mgetty+sendfax/samples/new_fax.mime3
 lib/mgetty+sendfax/samples/new_fax.mime4
-lib/mgetty+sendfax/samples/new_fax.pbm
 lib/mgetty+sendfax/samples/new_fax.th
 lib/mgetty+sendfax/samples/new_fax.tiff
 lib/mgetty+sendfax/samples/new_fax.vacation
-lib/mgetty+sendfax/samples/printfax
 lib/mgetty+sendfax/samples/printfax.ps
 man/man1/autopvf.1.gz
 man/man1/basictopvf.1.gz

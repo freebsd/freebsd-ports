@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	XML-RSS-LibXML
-PORTVERSION=	0.31.03
-PORTREVISION=	2
+PORTVERSION=	0.3105
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML::RSS with XML::LibXML
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DateTime-Format-Mail>=0:${PORTSDIR}/devel/p5-DateTime-Format-Mail \
@@ -35,7 +34,7 @@ NO_ARCH=	yes
 
 PORTEXAMPLES=	benchmark.pl
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/benchmark.pl ${STAGEDIR}${EXAMPLESDIR}/
 

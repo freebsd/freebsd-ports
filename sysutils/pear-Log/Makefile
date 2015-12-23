@@ -5,7 +5,7 @@ PORTNAME=	Log
 PORTVERSION=	1.12.9
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR logging utilities
 
 LICENSE=	MIT

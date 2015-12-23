@@ -1,0 +1,165 @@
+--- map-fix/__tree.orig	2015-11-10 21:58:57.802092405 -0800
++++ map-fix/__tree	2015-11-10 21:59:00.724090284 -0800
+@@ -622,8 +622,6 @@
+ {
+     typedef _NodePtr                                              __node_pointer;
+     typedef typename pointer_traits<__node_pointer>::element_type __node;
+-    typedef typename __node::base                                 __node_base;
+-    typedef typename __node_base::pointer                         __node_base_pointer;
+ 
+     __node_pointer __ptr_;
+ 
+@@ -652,17 +650,21 @@
+         {return pointer_traits<pointer>::pointer_to(__ptr_->__value_);}
+ 
+     _LIBCPP_INLINE_VISIBILITY
+-    __tree_iterator& operator++()
+-        {__ptr_ = static_cast<__node_pointer>(__tree_next(static_cast<__node_base_pointer>(__ptr_)));
+-         return *this;}
++    __tree_iterator& operator++() {
++      __ptr_ = static_cast<__node_pointer>(
++          __tree_next(static_cast<typename __node::base::pointer>(__ptr_)));
++      return *this;
++    }
+     _LIBCPP_INLINE_VISIBILITY
+     __tree_iterator operator++(int)
+         {__tree_iterator __t(*this); ++(*this); return __t;}
+ 
+     _LIBCPP_INLINE_VISIBILITY
+-    __tree_iterator& operator--()
+-        {__ptr_ = static_cast<__node_pointer>(__tree_prev(static_cast<__node_base_pointer>(__ptr_)));
+-         return *this;}
++    __tree_iterator& operator--() {
++      __ptr_ = static_cast<__node_pointer>(
++          __tree_prev(static_cast<typename __node::base::pointer>(__ptr_)));
++      return *this;
++    }
+     _LIBCPP_INLINE_VISIBILITY
+     __tree_iterator operator--(int)
+         {__tree_iterator __t(*this); --(*this); return __t;}
+@@ -691,14 +693,6 @@
+ {
+     typedef _ConstNodePtr                                         __node_pointer;
+     typedef typename pointer_traits<__node_pointer>::element_type __node;
+-    typedef typename __node::base                                 __node_base;
+-    typedef typename pointer_traits<__node_pointer>::template
+-#ifndef _LIBCPP_HAS_NO_TEMPLATE_ALIASES
+-            rebind<__node_base>
+-#else
+-            rebind<__node_base>::other
+-#endif
+-                                                                  __node_base_pointer;
+ 
+     __node_pointer __ptr_;
+ 
+@@ -743,17 +737,39 @@
+         {return pointer_traits<pointer>::pointer_to(__ptr_->__value_);}
+ 
+     _LIBCPP_INLINE_VISIBILITY
+-    __tree_const_iterator& operator++()
+-        {__ptr_ = static_cast<__node_pointer>(__tree_next(static_cast<__node_base_pointer>(__ptr_)));
+-         return *this;}
++    __tree_const_iterator& operator++() {
++      typedef typename pointer_traits<__node_pointer>::template
++#ifndef _LIBCPP_HAS_NO_TEMPLATE_ALIASES
++          rebind<typename __node::base>
++#else
++          rebind<typename __node::base>::other
++#endif
++              __node_base_pointer;
++
++      __ptr_ = static_cast<__node_pointer>(
++          __tree_next(static_cast<__node_base_pointer>(__ptr_)));
++      return *this;
++    }
++
+     _LIBCPP_INLINE_VISIBILITY
+     __tree_const_iterator operator++(int)
+         {__tree_const_iterator __t(*this); ++(*this); return __t;}
+ 
+     _LIBCPP_INLINE_VISIBILITY
+-    __tree_const_iterator& operator--()
+-        {__ptr_ = static_cast<__node_pointer>(__tree_prev(static_cast<__node_base_pointer>(__ptr_)));
+-         return *this;}
++    __tree_const_iterator& operator--() {
++      typedef typename pointer_traits<__node_pointer>::template
++#ifndef _LIBCPP_HAS_NO_TEMPLATE_ALIASES
++          rebind<typename __node::base>
++#else
++          rebind<typename __node::base>::other
++#endif
++              __node_base_pointer;
++
++      __ptr_ = static_cast<__node_pointer>(
++          __tree_prev(static_cast<__node_base_pointer>(__ptr_)));
++      return *this;
++    }
++
+     _LIBCPP_INLINE_VISIBILITY
+     __tree_const_iterator operator--(int)
+         {__tree_const_iterator __t(*this); --(*this); return __t;}
+--- map-fix/map.orig	2015-11-10 21:24:49.362267208 -0800
++++ map-fix/map	2015-11-10 21:25:09.501230487 -0800
+@@ -644,14 +644,25 @@
+ 
+ #endif
+ 
++template <class _Tp>
++struct __extract_key_value_types;
++
++template <class _Key, class _Tp>
++struct __extract_key_value_types<__value_type<_Key, _Tp> >
++{
++  typedef _Key const __key_type;
++  typedef _Tp        __mapped_type;
++};
++
+ template <class _TreeIterator>
+ class _LIBCPP_TYPE_VIS_ONLY __map_iterator
+ {
+     _TreeIterator __i_;
+ 
+     typedef typename _TreeIterator::__pointer_traits             __pointer_traits;
+-    typedef const typename _TreeIterator::value_type::value_type::first_type __key_type;
+-    typedef typename _TreeIterator::value_type::value_type::second_type      __mapped_type;
++    typedef typename _TreeIterator::value_type __value_type;
++    typedef typename __extract_key_value_types<__value_type>::__key_type    __key_type;
++    typedef typename __extract_key_value_types<__value_type>::__mapped_type __mapped_type;
+ public:
+     typedef bidirectional_iterator_tag                           iterator_category;
+     typedef pair<__key_type, __mapped_type>                      value_type;
+@@ -715,8 +726,9 @@
+     _TreeIterator __i_;
+ 
+     typedef typename _TreeIterator::__pointer_traits             __pointer_traits;
+-    typedef const typename _TreeIterator::value_type::value_type::first_type __key_type;
+-    typedef typename _TreeIterator::value_type::value_type::second_type      __mapped_type;
++    typedef typename _TreeIterator::value_type __value_type;
++    typedef typename __extract_key_value_types<__value_type>::__key_type    __key_type;
++    typedef typename __extract_key_value_types<__value_type>::__mapped_type __mapped_type;
+ public:
+     typedef bidirectional_iterator_tag                           iterator_category;
+     typedef pair<__key_type, __mapped_type>                      value_type;
+@@ -736,10 +748,9 @@
+     _LIBCPP_INLINE_VISIBILITY
+     __map_const_iterator(_TreeIterator __i) _NOEXCEPT : __i_(__i) {}
+     _LIBCPP_INLINE_VISIBILITY
+-    __map_const_iterator(
+-            __map_iterator<typename _TreeIterator::__non_const_iterator> __i)
+-                _NOEXCEPT
+-                : __i_(__i.__i_) {}
++    __map_const_iterator(__map_iterator<
++        typename _TreeIterator::__non_const_iterator> __i) _NOEXCEPT
++        : __i_(__i.__i_) {}
+ 
+     _LIBCPP_INLINE_VISIBILITY
+     reference operator*() const {return __i_->__cc;}
+@@ -829,7 +840,7 @@
+     typedef typename __alloc_traits::const_pointer         const_pointer;
+     typedef typename __alloc_traits::size_type             size_type;
+     typedef typename __alloc_traits::difference_type       difference_type;
+-    typedef __map_iterator<typename __base::iterator>      iterator;
++    typedef __map_iterator<typename __base::iterator>             iterator;
+     typedef __map_const_iterator<typename __base::const_iterator> const_iterator;
+     typedef _VSTD::reverse_iterator<iterator>               reverse_iterator;
+     typedef _VSTD::reverse_iterator<const_iterator>         const_reverse_iterator;

@@ -1,3 +1,4 @@
+lib/elixir/lib/timex/ebin/Elixir.Enumerable.Timex.Interval.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Date.Convert.Timex.DateTime.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Date.Convert.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Date.beam
@@ -10,6 +11,8 @@ lib/elixir/lib/timex/ebin/Elixir.Timex.Format.FormatError.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Format.Time.Formatter.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Format.Time.Formatters.Default.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Format.Time.Formatters.Humanized.beam
+lib/elixir/lib/timex/ebin/Elixir.Timex.Interval.FormatError.beam
+lib/elixir/lib/timex/ebin/Elixir.Timex.Interval.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Helpers.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Parser.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Parsers.beam
@@ -35,6 +38,7 @@ lib/elixir/lib/timex/lib/date/date.ex
 lib/elixir/lib/timex/lib/date/date_convert.ex
 lib/elixir/lib/timex/lib/date/date_format.ex
 lib/elixir/lib/timex/lib/date/datetime.ex
+lib/elixir/lib/timex/lib/date/interval.ex
 lib/elixir/lib/timex/lib/format/datetime/formatter.ex
 lib/elixir/lib/timex/lib/format/datetime/formatters/default.ex
 lib/elixir/lib/timex/lib/format/datetime/formatters/strftime.ex

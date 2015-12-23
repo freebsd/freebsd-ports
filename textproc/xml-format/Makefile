@@ -1,11 +1,10 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	xml-format
 PORTVERSION=	0.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	XML beautifier

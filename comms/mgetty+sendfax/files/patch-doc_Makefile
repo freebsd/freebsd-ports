@@ -1,15 +1,15 @@
---- doc/Makefile.orig	Fri Nov 28 04:33:26 1997
-+++ doc/Makefile	Tue Dec  1 00:49:56 1998
-@@ -26,7 +26,7 @@
+--- doc/Makefile.orig	2009-02-18 08:15:59 UTC
++++ doc/Makefile
+@@ -26,7 +26,7 @@ MAN_FMT_PRG=$(NROFF) -man
  
- all:
+ all: manpages fmt-manpages mgetty.texi
  
 -doc-all: mgetty.asc mgetty.info mgetty.dvi mgetty.ps fmt-manpages $(MANSRC) 
 +doc-all: mgetty.asc mgetty.info fmt-manpages $(MANSRC) 
  
  manpages: $(MANSRC)
  
-@@ -43,7 +43,7 @@
+@@ -43,7 +43,7 @@ mgetty.html: mgetty.texi
  	-texi2html -verbose mgetty.texi
  
  mgetty.info: mgetty.texi

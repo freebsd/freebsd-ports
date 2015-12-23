@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: obhttpd
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable obhttpd:
+# obhttpd_enable="YES"
+# obhttpd_flags="<set as needed>"
+
+. /etc/rc.subr
+
+name=obhttpd
+rcvar=obhttpd_enable
+
+command="%%PREFIX%%/sbin/obhttpd"
+
+obhttpd_enable=${obhttpd_enable:-"NO"}
+obhttpd_flags=${obhttpd_flags:-"-f %%PREFIX%%/etc/obhttpd.conf"}
+
+load_rc_config $name
+run_rc_command "$1"

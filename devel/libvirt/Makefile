@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.2.21
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -58,7 +58,7 @@ XEN_LIB_DEPENDS=	libxenlight.so:${PORTSDIR}/sysutils/xen-tools
 
 VARDIR=		/var
 
-USE_RC_SUBR=	libvirtd
+USE_RC_SUBR=	libvirtd virtlogd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-avahi \
@@ -86,7 +86,7 @@ CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-SHLIB_VER=	0.1002.${PORTVERSION:E}
+SHLIB_VER=	0.1003.${PORTVERSION:E}
 PLIST_SUB+=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
@@ -99,35 +99,19 @@ SUB_FILES=	pkg-message
 PLIST_SUB+=     XEN="@comment "
 .endif
 
-post-patch:
-	@${MV} ${WRKSRC}/daemon/libvirtd.conf ${WRKSRC}/daemon/libvirtd.conf.sample
-	@${REINPLACE_CMD} -e 's|libvirtd\.conf|libvirtd.conf.sample|' \
-		${WRKSRC}/daemon/Makefile.in
+CONF_FILES=	\
+		libvirt-admin.conf \
+		libvirt.conf \
+		libvirtd.conf \
+		libxl.conf \
+		qemu.conf \
+		virtlockd.conf \
+	   	virtlogd.conf
 
+post-patch:
 	@${REINPLACE_CMD} -e 's|ln -s ../default.xml|true|' \
 			  -e 's|$$(DESTDIR)$$(confdir)/qemu/networks|${STAGEDIR}${EXAMPLESDIR}/networks|' \
 			  ${WRKSRC}/src/Makefile.in
-
-	@${MV} ${WRKSRC}/src/libvirt.conf ${WRKSRC}/src/libvirt.conf.sample
-	@${REINPLACE_CMD} -e 's|conf_DATA = libvirt.conf|conf_DATA = libvirt.conf.sample|' \
-		${WRKSRC}/src/Makefile.in
-
-	@${MV} ${WRKSRC}/src/locking/virtlockd.conf ${WRKSRC}/src/locking/virtlockd.conf.sample
-	@${REINPLACE_CMD} -e 's|virtlockd.conf |virtlockd.conf.sample |' \
-			  -e 's|virtlockd.conf$$|virtlockd.conf.sample|' \
-		${WRKSRC}/src/Makefile.in
-
-	@${MV} ${WRKSRC}/src/qemu/qemu.conf ${WRKSRC}/src/qemu/qemu.conf.sample
-	@${REINPLACE_CMD} -e 's|qemu.conf |qemu.conf.sample |' \
-		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|qemu.conf$$|qemu.conf.sample|' \
-		${WRKSRC}/src/Makefile.in
-
-	@${MV} ${WRKSRC}/src/libxl/libxl.conf ${WRKSRC}/src/libxl/libxl.conf.sample
-	@${REINPLACE_CMD} -e 's|libxl.conf |libxl.conf.sample |' \
-		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|libxl.conf$$|libxl.conf.sample|' \
-		${WRKSRC}/src/Makefile.in
 
 	@${REINPLACE_CMD} -e 's|cp $$(DESTDIR)|cp -f $$(DESTDIR)|' \
 		${WRKSRC}/src/Makefile.in
@@ -155,6 +139,12 @@ post-install:
 	lib/libvirt/qemu/channel/target \
 	cache/libvirt/qemu
 	@${MKDIR} "${STAGEDIR}/${VARDIR}/${dir}"
+.endfor
+
+.for file in ${CONF_FILES}
+	@if test -f ${STAGEDIR}${ETCDIR}/${file}; then \
+		${MV} ${STAGEDIR}${ETCDIR}/${file} \
+		${STAGEDIR}${ETCDIR}/${file}.sample; fi
 .endfor
 
 regression-test: build

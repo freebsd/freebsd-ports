@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to maintain PEAR packages
 
 LICENSE=	BSD2CLAUSE

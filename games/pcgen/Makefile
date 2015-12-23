@@ -27,15 +27,13 @@ PLIST_DIRS=	%%DATADIR%%/characters
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "batch-convert.jar characters data filepaths.ini lib \
 		logging.properties outputsheets pcgen.jar plugins preview system" ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/pcgen.sh ${STAGEDIR}${PREFIX}/bin/pcgen
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	cd "${WRKSRC}/docs" && ${COPYTREE_SHARE} . "${STAGEDIR}${DOCSDIR}"
 	${INSTALL_DATA} "${WRKSRC}"/*.html "${STAGEDIR}${DOCSDIR}"
-.endif
 
 .include <bsd.port.mk>

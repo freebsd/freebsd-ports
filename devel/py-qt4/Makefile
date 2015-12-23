@@ -9,17 +9,18 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt 4 toolkit (meta port)
 
-USES=		metaport python
+USES=		metaport python pyqt:4
 
-OPTIONS_DEFINE=	ALL ${PYQT4_COMPONENTS}
-OPTIONS_DEFAULT=	ALL
-ALL_DESC=	All PyQt4 components
+OPTIONS_DEFINE=		assistant core dbus dbussupport declarative \
+			demo designer designerplugin doc gui help \
+			multimedia network opengl phonon qscintilla2 \
+			script scripttools sql svg test webkit xml \
+			xmlpatterns
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-.include "${.CURDIR}/bsd.pyqt.mk"
-
-.for component in ${PYQT4_COMPONENTS}
-${component}_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-${component}>=0:${PORTSDIR}/${${component}_PORT}
-ALL_RUN_DEPENDS+=		${${component}_RUN_DEPENDS}
+.for opt in ${OPTIONS_DEFINE}
+${opt}_USE=	PYQT=${opt}_run
+${opt}_DESC=	${py-${opt}_DESC}
 .endfor
 
 .include <bsd.port.mk>

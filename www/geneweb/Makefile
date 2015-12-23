@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	geneweb
-PORTVERSION=	6.08
+DISTVERSIONPREFIX=	distrib-
+DISTVERSION=	6-08
 CATEGORIES=	www
 
 MAINTAINER=	alex@stangl.us
@@ -15,7 +16,6 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	geneanet
-GH_TAGNAME=	distrib-6-08
 
 HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mad/Package.fpc
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/mad.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mad/mad.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mad/mad.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mad/libpmad.a

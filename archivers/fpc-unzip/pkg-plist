@@ -1,7 +1,5 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/ziptypes.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/unzip.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/unzip51g.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/unzip51g.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/ziptypes.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/unzip51g.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/libpziptypes.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/libpunzip51g.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/ziptypes.ppu

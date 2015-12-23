@@ -1,9 +1,9 @@
---- mix.exs.orig	2015-10-13 18:25:07 UTC
+--- mix.exs.orig	2015-11-29 16:14:08 UTC
 +++ mix.exs
 @@ -4,7 +4,6 @@ defmodule Geo.Mixfile do
    def project do
      [ app: :geo,
-       version: "0.17.0",
+       version: "1.0.0",
 -      elixir: "~> 1.0",
        deps: deps,
        description: description,

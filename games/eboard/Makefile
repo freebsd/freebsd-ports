@@ -80,6 +80,5 @@ post-install:
 	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} ${MAKE_ENV} ${MAKE} install DATADIR=${STAGEDIR}${DATADIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/icon-eboard.xpm ${STAGEDIR}${PREFIX}/share/pixmaps/eboard.xpm
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-2.5-011109
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptation of the Berkeley Spice3f4 with superconductivity
 
+BROKEN=		unfetchable
+
 CONFLICTS=	spice-[0-9]*
 
 OPTIONS_DEFINE=	X11 EXAMPLES

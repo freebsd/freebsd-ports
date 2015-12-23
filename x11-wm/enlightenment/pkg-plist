@@ -1,3 +1,4 @@
+bin/emixer
 bin/enlightenment
 bin/enlightenment_filemanager
 bin/enlightenment_imc
@@ -16,18 +17,16 @@ include/enlightenment/e_auth.h
 include/enlightenment/e_backlight.h
 include/enlightenment/e_bg.h
 include/enlightenment/e_bindings.h
-include/enlightenment/e_box.h
-include/enlightenment/e_canvas.h
 include/enlightenment/e_client.h
 include/enlightenment/e_client.x
 include/enlightenment/e_color.h
-include/enlightenment/e_color_class.h
 include/enlightenment/e_color_dialog.h
 include/enlightenment/e_comp.h
 include/enlightenment/e_comp_canvas.h
 include/enlightenment/e_comp_cfdata.h
 include/enlightenment/e_comp_object.h
 include/enlightenment/e_comp_x.h
+include/enlightenment/e_comp_x_randr.h
 include/enlightenment/e_config.h
 include/enlightenment/e_config_data.h
 include/enlightenment/e_config_dialog.h
@@ -43,7 +42,6 @@ include/enlightenment/e_desktop_editor.h
 include/enlightenment/e_dialog.h
 include/enlightenment/e_dnd.h
 include/enlightenment/e_dpms.h
-include/enlightenment/e_entry.h
 include/enlightenment/e_entry_dialog.h
 include/enlightenment/e_env.h
 include/enlightenment/e_error.h
@@ -90,7 +88,6 @@ include/enlightenment/e_ipc_codec.h
 include/enlightenment/e_layout.h
 include/enlightenment/e_livethumb.h
 include/enlightenment/e_log.h
-include/enlightenment/e_manager.h
 include/enlightenment/e_maximize.h
 include/enlightenment/e_menu.h
 include/enlightenment/e_mmx.h
@@ -110,7 +107,7 @@ include/enlightenment/e_place.h
 include/enlightenment/e_pointer.h
 include/enlightenment/e_powersave.h
 include/enlightenment/e_prefix.h
-include/enlightenment/e_randr.h
+include/enlightenment/e_randr2.h
 include/enlightenment/e_remember.h
 include/enlightenment/e_resist.h
 include/enlightenment/e_scale.h
@@ -125,7 +122,6 @@ include/enlightenment/e_slidesel.h
 include/enlightenment/e_spectrum.h
 include/enlightenment/e_startup.h
 include/enlightenment/e_sys.h
-include/enlightenment/e_table.h
 include/enlightenment/e_test.h
 include/enlightenment/e_theme.h
 include/enlightenment/e_theme_about.h
@@ -141,8 +137,6 @@ include/enlightenment/e_widget_button.h
 include/enlightenment/e_widget_check.h
 include/enlightenment/e_widget_color_well.h
 include/enlightenment/e_widget_config_list.h
-include/enlightenment/e_widget_csel.h
-include/enlightenment/e_widget_cslider.h
 include/enlightenment/e_widget_entry.h
 include/enlightenment/e_widget_filepreview.h
 include/enlightenment/e_widget_flist.h
@@ -243,6 +237,9 @@ lib/enlightenment/modules/fileman_opinfo/module.desktop
 lib/enlightenment/modules/gadman/e-module-gadman.edj
 lib/enlightenment/modules/gadman/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/gadman/module.desktop
+lib/enlightenment/modules/geolocation/e-module-geolocation.edj
+lib/enlightenment/modules/geolocation/%%ENLIGHTENMENT_ARCH%%/module.so
+lib/enlightenment/modules/geolocation/module.desktop
 lib/enlightenment/modules/ibar/e-module-ibar.edj
 lib/enlightenment/modules/ibar/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/ibar/module.desktop
@@ -333,6 +330,8 @@ lib/enlightenment/modules/xkbswitch/e-module-xkbswitch.edj
 lib/enlightenment/modules/xkbswitch/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/xkbswitch/module.desktop
 lib/enlightenment/utils/enlightenment_alert
+lib/enlightenment/utils/enlightenment_backlight
+lib/enlightenment/utils/enlightenment_ckpasswd
 lib/enlightenment/utils/enlightenment_fm
 lib/enlightenment/utils/enlightenment_fm_op
 lib/enlightenment/utils/enlightenment_static_grabber
@@ -340,7 +339,9 @@ lib/enlightenment/utils/enlightenment_sys
 lib/enlightenment/utils/enlightenment_thumb
 libdata/pkgconfig/enlightenment.pc
 libdata/pkgconfig/everything.pc
+share/applications/emixer.desktop
 share/applications/enlightenment_filemanager.desktop
+share/pixmaps/emixer.png
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
 %%DATADIR%%/data/backgrounds/Brown_Rock_Hi.edj

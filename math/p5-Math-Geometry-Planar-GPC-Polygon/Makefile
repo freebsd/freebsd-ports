@@ -21,6 +21,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 BROKEN=		module is not usable: "The extension 'Math::Geometry::Planar::GPC::Polygon'\
 		is not properly installed in path: 'blib/arch'". You may try\
 		math/Math-Geometry-Planar-GPC-PolygonXS instead
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-12-30
 
 USES=		perl5
 USE_PERL5=	configure

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nano
-PORTVERSION=	2.3.6
+PORTVERSION=	2.5.0
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
 		GNU
@@ -22,7 +22,7 @@ MAKE_ARGS+=	install_htmlmanDATA=install-htmlmanDATA
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=		gettext

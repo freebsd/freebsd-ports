@@ -1,0 +1,6 @@
+et_xmlfile is a low memory library for creating large XML files.
+It is based upon the xmlfile module from lxml with the aim of allowing code to
+be developed that will work with both libraries. It was developed initially for
+the openpyxl project but is now a standalone module.
+
+WWW: https://bitbucket.org/openpyxl/et_xmlfile

@@ -8,12 +8,11 @@ CATEGORIES=	devel python
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt4 toolkit, QtAssistant module
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
-RUN_DEPENDS=	${PKGNAMEPREFIX}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PKGNAMEPREFIX}network>=${PYQT4_VERSION}:${PORTSDIR}/net/py-qt4-network
-
 CONFIGURE_ARGS=	--enable QtAssistant
-PYQT4_DIST=	yes
+PYQT_DIST=	yes
+
+USES=		python pyqt:4
+USE_PYQT=	sip_build gui_run network_run
 USE_QT4=	assistantclient moc_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
@@ -26,5 +25,4 @@ API_CONFIGURE_OFF=	--no-qsci-api
 API_LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 DEBUG_CONFIGURE_ON=	--debug --trace
 
-.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	openjpeg
 PORTVERSION=	1.5.2
+DISTVERSIONPREFIX=	version.
 PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	15
@@ -26,7 +27,6 @@ USES=		cmake cpe dos2unix
 PORTDOCS=	CHANGES LICENSE
 
 GH_ACCOUNT=	uclouvain
-GH_TAGNAME=	version.${PORTVERSION}
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>

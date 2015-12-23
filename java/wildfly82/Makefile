@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wildfly82
-PORTVERSION=	8.2.0
-PORTREVISION=	2
+PORTVERSION=	8.2.1
 CATEGORIES=	java www
 MASTER_SITES=	http://download.jboss.org/wildfly/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
@@ -21,7 +20,7 @@ GROUP=		www
 VAR_DIR?=	/var
 LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
 PID_FILE=	${VAR_DIR}/run/${PORTNAME}.pid
-WILDFLY_VERSION=8.2.0.Final
+WILDFLY_VERSION=8.2.1.Final
 SUB_FILES=	pkg-message
 
 SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
@@ -65,7 +64,6 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION})
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}/bin/*.sh
 	${RMDIR} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}/.installation
 .for FILE in ${CONFIG_FILES}
 	${MV} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}/${FILE} \

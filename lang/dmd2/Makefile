@@ -3,8 +3,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.069.1
-PORTREVISION=	2
+PORTVERSION=	2.069.2
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -92,9 +91,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 
-.if !exists(${LOCALBASE}/bin/dmd)
 pre-configure:
 	${MAKE} -f Makefile.bootstrap BOOTDIR=${WRKDIR}
-.endif
 
 .include <bsd.port.post.mk>

@@ -3,18 +3,18 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.25.1
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES=	lang
 MASTER_SITES=	SOURCEWARE/binutils/releases
 PKGNAMEPREFIX=	gnatdroid-
 
-MAINTAINER=	marino@FreeBSD.org
-COMMENT=	Infrastructure for C/Ada Android cross-compiler
+MAINTAINER?=	marino@FreeBSD.org
+COMMENT?=	Infrastructure for C/Ada Android cross-compiler (ARMv7)
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gnatdroid-sysroot>=19:${PORTSDIR}/lang/gnatdroid-sysroot \
+BUILD_DEPENDS=	${SYSROOT}>=19:${PORTSDIR}/lang/${SYSROOT} \
 		${LOCALBASE}/lib/libgmp.so:${PORTSDIR}/math/gmp \
 		${LOCALBASE}/lib/libmpfr.so:${PORTSDIR}/math/mpfr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -26,14 +26,15 @@ NO_MTREE=	yes
 NO_LICENSES_INSTALL= yes
 
 WRKSRC=			${WRKDIR}/binutils-${PORTVERSION}
-PREFIX=			${LOCALBASE}/android
-BRANCH2=		ARMv7
+PREFIX?=		${LOCALBASE}/android
+BRANCH2?=		ARMv7
 BR2_PREFIX=		${PREFIX}/${BRANCH2}
-ARMTARGET=		arm-aux-linux-androideabi
-PLIST_SUB+=		TARGET="${ARMTARGET}"
+XCCTARGET?=		arm-aux-linux-androideabi
+SYSROOT?=		gnatdroid-sysroot
+PLIST_SUB+=		TARGET="${XCCTARGET}"
 PLIST_SUB+=		BRANCH2="${BRANCH2}"
 
-CONFIGURE_ARGS+=	--target=${ARMTARGET}
+CONFIGURE_ARGS+=	--target=${XCCTARGET}
 CONFIGURE_ARGS+=	--prefix=${BR2_PREFIX}
 CONFIGURE_ARGS+=	--with-sysroot=${PREFIX}
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}

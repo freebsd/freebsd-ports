@@ -3,7 +3,7 @@
 
 PORTNAME=	rfc
 PORTVERSION=	3.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dewn.com/rfc/
 
@@ -13,6 +13,9 @@ COMMENT=	Perl script to search for RFC's
 RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m
 
 NO_BUILD=	yes
+USES=	perl5 shebangfix
+USE_PERL5=	run
+SHEBANG_FILES=	${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/rfc man/man1/rfc.1.gz
 
@@ -21,8 +24,8 @@ do-configure:
 		s|/usr/local/etc/nmap|${PREFIX}/share/misc/nmap| ; \
 		s|400k|1024k| ; \
 		s|http://ftp.isi.edu/in-notes|http://www.ietf.org/rfc| ; \
-		s|http://www.iana|ftp://ftp.iana| ; \
-		s|/usr/bin/perl|${PERL}|' ${WRKSRC}/${PORTNAME}-${PORTVERSION}
+		s|http://www.iana|ftp://ftp.iana|' \
+		${WRKSRC}/${PORTNAME}-${PORTVERSION}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-${PORTVERSION} \

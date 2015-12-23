@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mesa-demos
-PORTVERSION=	8.2.0
-PORTREVISION=	2
+PORTVERSION=	8.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/demos/${PORTVERSION}/
 
@@ -20,6 +19,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=--disable-egl --disable-gbm --disable-gles2 \
 		--disable-osmesa --disable-vg --disable-wayland \
-		--with-system-data-files
+		--with-system-data-files --disable-freetype2
 
 .include <bsd.port.mk>

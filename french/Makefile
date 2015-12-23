@@ -3,12 +3,9 @@
 
     COMMENT = French support
 
-    SUBDIR += alphabet_sounds_fr
     SUBDIR += aspell
     SUBDIR += aster
-    SUBDIR += belote
     SUBDIR += calligra-l10n
-    SUBDIR += dico
     SUBDIR += eficas
     SUBDIR += eric4
     SUBDIR += eric6

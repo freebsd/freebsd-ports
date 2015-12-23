@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Parallel-ForkManager
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,8 @@ COMMENT=	Simple parallel processing fork manager
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 NO_ARCH=	yes
 USES=		perl5

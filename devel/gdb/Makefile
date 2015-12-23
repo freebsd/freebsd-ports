@@ -62,7 +62,8 @@ GUILE_CONFIGURE_WITH=	guile
 GUILE_USES=		pkgconfig
 GUILE_LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2
 PORT_READLINE_USES=	readline:port
-PYTHON_CONFIGURE_WITH=	python=${PYTHON_CMD}
+PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
+PYTHON_CONFIGURE_OFF=	--without-python
 PYTHON_USES=		python:2
 TUI_CONFIGURE_ENABLE=	tui
 

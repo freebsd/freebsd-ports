@@ -1,6 +1,6 @@
---- fax/faxspool.in~	Sat Jul  9 14:25:15 2005
-+++ fax/faxspool.in	Sat Jul  9 14:30:44 2005
-@@ -401,11 +401,11 @@
+--- fax/faxspool.in.orig	2010-06-04 13:01:49 UTC
++++ fax/faxspool.in
+@@ -417,11 +417,11 @@ fs_cvt_pdf()
  
  # user name (for fax header only! auth is done by faxq-helper via getuid())
  ##########

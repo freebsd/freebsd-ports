@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	keepassx
-DISTVERSION=	2.0-beta2
-PORTEPOCH=	1
+DISTVERSION=	2.0
+PORTEPOCH=	2
 CATEGORIES=	security
-MASTER_SITES=	https://www.keepassx.org/dev/attachments/download/115/
+MASTER_SITES=	https://www.keepassx.org/releases/2.0/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	eric@camachat.org

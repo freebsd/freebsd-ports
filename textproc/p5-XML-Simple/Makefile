@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Simple
-PORTVERSION=	2.20
-PORTREVISION=	1
+PORTVERSION=	2.22
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +12,7 @@ COMMENT=	Trivial API for reading and writing XML (esp config files)
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-SAX>=0.15:${PORTSDIR}/textproc/p5-XML-SAX \
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

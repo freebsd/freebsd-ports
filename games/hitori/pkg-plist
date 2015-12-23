@@ -97,6 +97,8 @@ share/icons/hicolor/22x22/apps/hitori.png
 share/icons/hicolor/32x32/apps/hitori.png
 share/icons/hicolor/48x48/apps/hitori.png
 share/icons/hicolor/symbolic/apps/hitori-symbolic.svg
+share/locale/an/LC_MESSAGES/hitori.mo
+share/locale/ar/LC_MESSAGES/hitori.mo
 share/locale/as/LC_MESSAGES/hitori.mo
 share/locale/bs/LC_MESSAGES/hitori.mo
 share/locale/ca/LC_MESSAGES/hitori.mo
@@ -122,6 +124,7 @@ share/locale/lt/LC_MESSAGES/hitori.mo
 share/locale/lv/LC_MESSAGES/hitori.mo
 share/locale/nb/LC_MESSAGES/hitori.mo
 share/locale/ne/LC_MESSAGES/hitori.mo
+share/locale/oc/LC_MESSAGES/hitori.mo
 share/locale/pa/LC_MESSAGES/hitori.mo
 share/locale/pl/LC_MESSAGES/hitori.mo
 share/locale/pt_BR/LC_MESSAGES/hitori.mo

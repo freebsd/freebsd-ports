@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vtk
-PORTVERSION=	6.1.0
-PORTREVISION=	8
+PORTVERSION=	6.2.0
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	6
@@ -82,6 +82,12 @@ CMAKE_ARGS+=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 SHARED_CMAKE_ON=	-DBUILD_SHARED_LIBS:BOOL=ON
 SHARED_CMAKE_OFF=	-DBUILD_SHARED_LIBS:BOOL=OFF
 
+# Mangling so that it will build when science/netcdf is installed.
+post-patch:
+	${MV} ${WRKSRC}/ThirdParty/netcdf/vtknetcdf/include/netcdf.h \
+		${WRKSRC}/ThirdParty/netcdf/vtknetcdf/include/xxxnetcdf.h
+	${FIND} ${WRKSRC}/ThirdParty/netcdf -type f | ${XARGS} ${REINPLACE_CMD} \
+		-E 's/[[:<:]]netcdf\.h[[:>:]]/xxxnetcdf.h/'
 
 .include <bsd.port.options.mk>
 

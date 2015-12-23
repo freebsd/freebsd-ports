@@ -8,12 +8,12 @@ CATEGORIES=	devel python
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt4 toolkit, QtCore module
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 CONFIGURE_ARGS=		--enable QtCore
-PYQT4_DIST=		yes
-USE_PYTHON+=		py3kplist
+PYQT_DIST=		yes
+
+USES=			python pyqt:4
+USE_PYTHON=		py3kplist
+USE_PYQT=		sip
 USE_QT4=		corelib qmake_build moc_build
 
 OPTIONS_DEFINE=	API DEBUG
@@ -26,7 +26,6 @@ API_CONFIGURE_OFF=	--no-qsci-api
 API_LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 DEBUG_CONFIGURE_ON=	--debug --trace
 
-.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
 # Bug 180467: We need to remove the port_v${VERSION} directory that does not

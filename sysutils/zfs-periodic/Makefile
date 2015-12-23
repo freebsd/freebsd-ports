@@ -12,6 +12,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ross
 GH_TAGNAME=	9ffa662
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PERIODIC_DIRS=	etc/periodic/hourly etc/periodic/daily \

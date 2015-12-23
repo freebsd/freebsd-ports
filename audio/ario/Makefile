@@ -10,7 +10,8 @@ MASTER_SITES=	SF/ario-player/ario-player/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ario is a GTK2 client for MPD
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
@@ -39,6 +40,7 @@ AVAHI_CONFIGURE_ENABLE=	avahi
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
+NLS_USES_OFF=		gettext-tools
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gslist.h|glib.h|g ; \

@@ -1,6 +1,6 @@
---- cvsgraph.c.orig	Wed Jun 15 05:36:59 2005
-+++ cvsgraph.c	Wed Sep 21 11:06:22 2005
-@@ -191,8 +191,8 @@
+--- cvsgraph.c.orig	2008-05-21 12:21:32 UTC
++++ cvsgraph.c
+@@ -190,8 +190,8 @@ static void dump_dtext(char *p, dtext_t 
  {
  	printf("%sdtext.rev  : ", p);
  	dump_rev("", d->rev);

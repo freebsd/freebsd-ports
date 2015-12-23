@@ -86,6 +86,7 @@ COMMANDS=	bugpoint \
 		llvm-diff \
 		llvm-dis \
 		llvm-dwarfdump \
+		llvm-dwp \
 		llvm-extract \
 		llvm-link \
 		llvm-mc \

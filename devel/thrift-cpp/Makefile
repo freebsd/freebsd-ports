@@ -42,7 +42,11 @@ CONFIGURE_ARGS+=	\
 		--without-php_extension \
 		--without-python \
 		--without-ruby \
-                --without-go
+		--without-go
+
+# src/thrift/transport/TSSLSocket.cpp:147: error: 'TLSv1_1_method' was not declared in this scope
+# src/thrift/transport/TSSLSocket.cpp:149: error: 'TLSv1_2_method' was not declared in this scope
+BROKEN_FreeBSD_9=	does not build with 9.x base OpenSSL
 
 .include <bsd.port.pre.mk>
 

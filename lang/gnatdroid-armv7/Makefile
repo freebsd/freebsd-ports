@@ -1,22 +1,22 @@
 # Created by: John Marino <marino@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	armv7
+PORTNAME?=	armv7
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	${ARMV7_PR}
+PORTREVISION?=	${ARMV7_PR}
 CATEGORIES=	lang
 MASTER_SITES=	GCC/releases/gcc-${GCC_VERSION}
 PKGNAMEPREFIX=	gnatdroid-
 DISTFILES=	${IDENTIFICATION}.tar.bz2
 
-MAINTAINER=	marino@FreeBSD.org
-COMMENT=	C/Ada cross-compiler, target: Android ARMv7
+MAINTAINER?=	marino@FreeBSD.org
+COMMENT?=	C/Ada cross-compiler, target: Android ARMv7
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gnatdroid-sysroot>=19:${PORTSDIR}/lang/gnatdroid-sysroot \
-		gnatdroid-binutils>=2.21:${PORTSDIR}/lang/gnatdroid-binutils
+BUILD_DEPENDS=	${SYSROOT}>=19:${PORTSDIR}/lang/${SYSROOT} \
+		${GDBINUTILS}>=2.21:${PORTSDIR}/lang/${GDBINUTILS}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_LICENSES_INSTALL= yes
@@ -34,21 +34,24 @@ OPTIONS_SUB=		yes
 FORT_DESC=		Also build Fortran language
 OBJC_DESC=		Also build Objective-C language
 
-DROID_TARGET=		arm-aux-linux-androideabi
-DROID_ARCH=		armv7-a
-ARMVERSION=		ARMv7
-FPU=			neon
+DROID_TARGET?=		arm-aux-linux-androideabi
+CPUVERSION?=		ARMv7
+ARG_ARCH?=		--with-arch=armv7-a
+ARG_FPU?=		--with-fpu=neon
+ARG_FLOATSOFT?=		--with-float=soft
 ALL_TARGET=		all
 GARCH=			${ARCH:S/amd64/x86_64/}
 BITS=			${GARCH:S/x86_64/64/:S/i386/32/}
-OS_LABEL4VERS=		[${OPSYS}${BITS} x Android ${ARMVERSION}]
+OS_LABEL4VERS=		[${OPSYS}${BITS} x Android ${CPUVERSION}]
 WRKSRC=			${WRKDIR}/${IDENTIFICATION}
 BUILD_WRKSRC=		${WRKDIR}/build
 PATCHDIR=		${.CURDIR}/../gcc-aux/files
 CFG_SCRIPT=		${WRKSRC}/configure
 REVFILE=		${WRKSRC}/gcc/REVISION
-SRPREFIX=		${LOCALBASE}/android
-PREFIX=			${SRPREFIX}/${ARMVERSION}
+SRPREFIX?=		${LOCALBASE}/android
+PREFIX=			${SRPREFIX}/${CPUVERSION}
+SYSROOT?=		gnatdroid-sysroot
+GDBINUTILS?=		gnatdroid-binutils
 PLIST_SUB+=		TARGET="${DROID_TARGET}"
 PLIST_SUB+=		GCCVERS="${GCC_VERSION}"
 SUB_FILES=		pkg-message
@@ -59,10 +62,6 @@ CROSS=			gnat gnatbind gnatchop gnatclean gnatfind gnatkr \
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSREL:R:M8}
-BROKEN=	multiple definition of __x86.get_pc_thunk.cx on FreeBSD 8
-.endif
-
 .if ${PORT_OPTIONS:MFORT}
 LANGS+=		fortran
 APPLY_DIFFS+=	fortran
@@ -72,21 +71,21 @@ APPLY_DIFFS+=	fortran
 LANGS+=		objc
 .endif
 
-INSTALL_ENV=	${MAKE_ENV:C/^PATH=/&${SRPREFIX}\/${ARMVERSION}\/bin:/}
+INSTALL_ENV=	${MAKE_ENV:C/^PATH=/&${SRPREFIX}\/${CPUVERSION}\/bin:/}
 
 ADA_CONFIG_ARGS=	--enable-languages=${LANGS:Q}
 ADA_CONFIG_ARGS+=	--target=${DROID_TARGET}
 ADA_CONFIG_ARGS+=	--program-prefix=${DROID_TARGET}-
 ADA_CONFIG_ARGS+=	--prefix=${PREFIX}
-ADA_CONFIG_ARGS+=	--with-arch=${DROID_ARCH}
+ADA_CONFIG_ARGS+=	${ARG_ARCH}
 ADA_CONFIG_ARGS+=	--with-system-zlib
 ADA_CONFIG_ARGS+=	--with-gmp=${LOCALBASE}
 ADA_CONFIG_ARGS+=	--with-mpfr=${LOCALBASE}
 ADA_CONFIG_ARGS+=	--with-mpc=${LOCALBASE}
 ADA_CONFIG_ARGS+=	${ICONV_CONFIGURE_ARG}
 ADA_CONFIG_ARGS+=	--with-sysroot=${SRPREFIX}
-ADA_CONFIG_ARGS+=	--with-float=soft
-ADA_CONFIG_ARGS+=	--with-fpu=${FPU}
+ADA_CONFIG_ARGS+=	${ARG_FLOATSOFT}
+ADA_CONFIG_ARGS+=	${ARG_FPU}
 ADA_CONFIG_ARGS+=	--enable-target-optspace
 ADA_CONFIG_ARGS+=	--enable-threads=posix
 ADA_CONFIG_ARGS+=	--enable-cxx-flags=-frtti
@@ -114,6 +113,8 @@ post-extract:
 .endfor
 	@(cd ${WRKSRC}/gcc/testsuite/ada/acats && \
 		${CP} run_remote.sh run_all.sh)
+	${REINPLACE_CMD} -e 's|@REMOTE_TARGET@|${DROID_TARGET}|' \
+		${WRKSRC}/gcc/testsuite/ada/acats/run_all.sh
 	${REINPLACE_CMD} -e 's|<syscall.h>|<sys/syscall.h>|' \
 		${WRKSRC}/libstdc++-v3/libsupc++/guard.cc
 

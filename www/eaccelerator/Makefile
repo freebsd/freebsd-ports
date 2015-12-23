@@ -9,6 +9,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Free open-source PHP accelerator & optimizer
 
 LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	DOCCOMM DOCS EXAMPLES
 DOCCOMM_DESC=	Retain doc-comments in internal php structures
 
@@ -31,21 +32,19 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 	${INSTALL_DATA} ${WRKSRC}/modules/${PORTNAME}.so \
 	       ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/control.php ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/dasm.php ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

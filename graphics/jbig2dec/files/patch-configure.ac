@@ -1,0 +1,11 @@
+--- configure.ac.orig	2014-10-31 21:30:04.000000000 +0800
++++ configure.ac	2015-12-04 15:15:55.027124992 +0800
+@@ -140,8 +140,6 @@
+ 	AC_DEFINE(HAVE_GETOPT_LONG,,
+ 	  [Define if the local libc includes getopt_long()]
+ 	),[
+-	AC_LIBOBJ([getopt])
+-	AC_LIBOBJ([getopt1])
+ ])
+ 
+ # generate output

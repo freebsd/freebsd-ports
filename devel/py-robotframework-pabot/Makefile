@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	robotframework-pabot
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}robotframework>=2.7.5:${PORTSDIR}/devel/py-r
 		${PYTHON_PKGNAMEPREFIX}robotremoteserver>=1.0.1:${PORTSDIR}/devel/py-robotremoteserver
 
 NO_ARCH=	yes
-USES=		python:2
+USES=		python:-2.7
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

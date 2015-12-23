@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ncurses
-DISTVERSION=	${RELEASE}-20150214
+PORTVERSION=	6.0
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/current/
+MASTER_SITES=	http://invisible-mirror.net/archives/${PORTNAME}/ \
+		ftp://invisible-island.net/${PORTNAME}/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -14,8 +15,6 @@ COMMENT=	Library for terminal-independent, full-screen output
 CONFLICTS=	ncurses-devel-*
 
 LICENSE=	MIT
-
-RELEASE=	5.9
 
 BROKEN_sparc64=	cannot build: coredump: illegal instruction
 
@@ -27,9 +26,10 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--with-pkg-config=yes --enable-pc-files \
 		--includedir=${PREFIX}/include/ncurses \
 		--with-shared \
-		--without-curses-h --with-termlib --program-prefix= \
+		--with-termlib --program-prefix= \
 		--enable-rpath --disable-root-environ \
 		--with-manpage-format=gzip --srcdir=../ \
+		--without-manpage-renames \
 		--mandir=${MANPREFIX}/man \
 		--with-hashed-db \
 		--with-pkg-config-libdir=${PREFIX}/libdata/pkgconfig
@@ -41,7 +41,7 @@ TRACE_DESC=	Add trace() function to all models of ncurses
 CONFIGURE_ENV=	gnat_exists="no"
 
 USE_LDCONFIG=	yes
-USES=		shebangfix tar:tgz terminfo
+USES=		pkgconfig shebangfix terminfo
 SHEBANG_FILES=	test/tracemunch
 
 WIDEC_WRKSRC=	${WRKSRC}/build.widec
@@ -54,8 +54,8 @@ CONFIGURE_WRKSRC=	${NOWIDEC_WRKSRC}
 BUILD_WRKSRC=	${NOWIDEC_WRKSRC}
 INSTALL_WRKSRC=	${NOWIDEC_WRKSRC}
 
-PLIST_SUB+=	ABI_VER=${RELEASE:R} \
-		REL_VER=${RELEASE} \
+PLIST_SUB+=	ABI_VER=${PORTVERSION:R} \
+		REL_VER=${PORTVERSION} \
 		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${PREFIX}/,,} \
 		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${PREFIX}/,,}
 
@@ -94,6 +94,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,$$(INSTALL_PROG) ncurses-config,@INSTALL_SCRIPT@ ncurses-config,' ${WRKSRC}/misc/Makefile.in
+	@${REINPLACE_CMD} -e 's,/usr/include,${PREFIX}/include,g' ${WRKSRC}/misc/ncurses-config.in
 
 post-configure:
 	cd ${.CURDIR} && \
@@ -126,10 +127,10 @@ post-install:
 
 	${RM} -f ${STAGEDIR}${PREFIX}/lib/libncurses.so \
 		${STAGEDIR}${PREFIX}/lib/libncursesw.so
-	${ECHO} "INPUT(libncurses.so.${RELEASE:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
-	${ECHO} "INPUT(libncursesw.so.${RELEASE:R} AS_NEEDED(-ltinfow))" > ${STAGEDIR}${PREFIX}/lib/libncursesw.so
+	${ECHO} "INPUT(libncurses.so.${PORTVERSION:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
+	${ECHO} "INPUT(libncursesw.so.${PORTVERSION:R} AS_NEEDED(-ltinfow))" > ${STAGEDIR}${PREFIX}/lib/libncursesw.so
 
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.5.9
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.${PORTVERSION}
 
 	${MV} ${STAGEDIR}${PREFIX}/share/misc/terminfo.db \
 		${STAGEDIR}${PREFIX}/share/misc/terminfo.db.default

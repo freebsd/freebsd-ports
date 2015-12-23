@@ -3,7 +3,7 @@
 
 PORTNAME=	urlgrabber
 PORTVERSION=	3.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	http://urlgrabber.baseurl.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,8 @@ COMMENT=	High-level cross-protocol url-grabber
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}curl>=7.19.0_1:${PORTSDIR}/ftp/py-curl
-RUN_DEPENDS=	${PKGNAMEPREFIX}curl>=7.19.0_1:${PORTSDIR}/ftp/py-curl
+BUILD_DEPENDS=	${PKGNAMEPREFIX}pycurl>=7.19.0_1:${PORTSDIR}/ftp/py-pycurl
+RUN_DEPENDS=	${PKGNAMEPREFIX}pycurl>=7.19.0_1:${PORTSDIR}/ftp/py-pycurl
 
 USES=		python
 USE_PYTHON=	distutils

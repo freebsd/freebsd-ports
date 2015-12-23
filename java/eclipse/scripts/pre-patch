@@ -18,8 +18,7 @@ for d in \
 	${WRKSRC}/eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/linux \
 	${WRKSRC}/rt.equinox.binaries/org.eclipse.equinox.launcher.gtk.linux.x* \
 	${WRKSRC}/rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/x* \
-	${WRKSRC}/rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.linux.x* \
-	${WRKSRC}/rt.equinox.framework/features/org.eclipse.equinox.executable.feature/bin/gtk/linux/x*
+	${WRKSRC}/rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.linux.x*
 do
   mkdir -p `echo $d | sed -e 's/linux/freebsd/'`
   [ -d $d ] && ( cd $d; tar cf - . ) | ( cd `echo $d | sed -e 's/linux/freebsd/'`; tar xf - )

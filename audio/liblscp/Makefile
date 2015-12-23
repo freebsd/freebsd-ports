@@ -10,6 +10,8 @@ MASTER_SITES=	SF/qsampler/${PORTNAME}/${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper around the LSCP network protocol
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 

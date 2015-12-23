@@ -15,6 +15,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for caching objects based on the LRU algorithm
 
+BROKEN=		unfetchable
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 

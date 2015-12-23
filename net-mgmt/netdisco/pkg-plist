@@ -116,6 +116,8 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/DevicePoeStatus.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/DuplexMismatch.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/GenericReport.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/NodeIp4.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/NodeIp6.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/NodeMonitor.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/NodeWithAge.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/NodesDiscovered.pm
@@ -435,6 +437,8 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/search/vlan_csv.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/generic_report.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/nodesdiscovered.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/report/portmultinodes.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/users_csv.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/statistics.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/device.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/index.tt

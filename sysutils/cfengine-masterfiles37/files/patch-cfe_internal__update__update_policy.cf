@@ -1,0 +1,36 @@
+Index: update_policy.cf
+===================================================================
+--- cfe_internal/update/update_policy.cf.orig
++++ cfe_internal/update/update_policy.cf
+@@ -239,6 +239,19 @@
+       depth_search => u_recurse_basedir("inf"),
+       action => u_immediate;
+ 
++      "/usr/local/sbin/$(agents).cfsaved"
++      comment => "Remove all .cfsaved file extension",
++      handle => canonify("cfe_internal_update_policy_files_remove_$(agent)_cfsaved"),
++      delete => u_tidy;
++
++    freebsd::
++      "$(sys.workdir)/bin/$(agents)"
++      comment => "Create symlinks of CFE binaries in /usr/local/sbin",
++      handle => canonify("cfe_internal_update_policy_files_sbin_$(agents)"),
++      move_obstructions => "true",
++      link_from => u_ln_s("/usr/local/sbin/$(agents)");
++
++    !freebsd::
+       "/usr/local/sbin/$(agents)"
+       comment => "Create symlinks of CFE binaries in /usr/local/sbin",
+       handle => canonify("cfe_internal_update_policy_files_sbin_$(agents)"),
+@@ -245,11 +258,6 @@
+       move_obstructions => "true",
+       link_from => u_ln_s("$(sys.workdir)/bin/$(agents)");
+ 
+-      "/usr/local/sbin/$(agents).cfsaved"
+-      comment => "Remove all .cfsaved file extension",
+-      handle => canonify("cfe_internal_update_policy_files_remove_$(agent)_cfsaved"),
+-      delete => u_tidy;
+-
+     am_policy_hub::
+ 
+       "$(master_location)/."

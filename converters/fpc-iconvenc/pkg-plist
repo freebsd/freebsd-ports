@@ -1,7 +1,5 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc_dyn.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/iconvenc.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc_dyn.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/libpiconvenc.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/libpiconvenc_dyn.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/iconvenc/iconvenc_dyn.ppu

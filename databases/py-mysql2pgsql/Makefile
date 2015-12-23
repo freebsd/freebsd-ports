@@ -6,7 +6,6 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	c.kworr@gmail.com
 COMMENT=	Tool for migrating/converting from MySQL to PostgreSQL

@@ -552,6 +552,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-creating.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-quick-start.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-submitting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-tips.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations-translating.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/po-translations.html
@@ -1031,6 +1032,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-shebangfix.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-tar.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-tcl.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-terminfo.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-tk.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-twisted.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-uidfix.html

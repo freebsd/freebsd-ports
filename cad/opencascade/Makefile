@@ -3,6 +3,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	6.9.1
+PORTREVISION=	1
 CATEGORIES=	cad science
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
@@ -29,7 +30,7 @@ SHEBANG_FILES=	adm/templates/env.sh.in adm/templates/draw.sh		\
 		adm/templates/custom.sh.in adm/templates/custom.sh.main	\
 		adm/start.tcl draw.sh xcode.sh env.sh custom.sh.in	\
 		gendoc codeblocks.sh
-VTKVER=		6.1
+VTKVER=		6.2
 
 OPTIONS_DEFINE=	VIS DOCS
 VIS_DESC=	Build Visualizazion module (requires OpenGL, freetype, ftgl and gl2ps)
@@ -96,6 +97,10 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|' ${WRKSRC}/gendoc
 .for mod in TKDraw TKViewerTest
 	${REINPLACE_CMD} -e 's|tcl8.6|tcl${TCL_VER:C|\.||}|;s|tk8.6|tk${TK_VER:C|\.||}|'	\
+		${WRKSRC}/adm/cmake/${mod}/CMakeLists.txt
+.endfor
+.for mod in TKIVtk TKIVtkDraw
+	${REINPLACE_CMD} -E 's/(vtk[[:alnum:]]+)\-6.1/\1\-${VTKVER}/'	\
 		${WRKSRC}/adm/cmake/${mod}/CMakeLists.txt
 .endfor
 .for es in env.sh adm/templates/env.sh.in

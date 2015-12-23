@@ -2,7 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pidgin-skypeweb
-PORTVERSION=	08222015
+PORTVERSION=	1.0
+DISTVERSIONPREFIX=	v
+PORTEPOCH=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	sepulkarium45@yahoo.com
@@ -18,25 +20,27 @@ LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
 GH_PROJECT=	skype4pidgin
-GH_TAGNAME=	08cbc21
 
-USES=		gmake pkgconfig
+USES=		cmake dos2unix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+DOS2UNIX_FILES=	gpl3.txt \
+		libskypeweb.c \
+		skypeweb_connection.c \
+		skypeweb_contacts.c \
+		skypeweb_login.c \
+		skypeweb_messages.c \
+		skypeweb_util.c \
+		skypeweb_util.h \
+		theme
 
 CONFLICTS_INSTALL=	pidgin-skype-*
 WRKSRC_SUBDIR=	skypeweb
 
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/purple-2
-	${INSTALL_PROGRAM} ${WRKSRC}/libskypeweb.so ${STAGEDIR}${PREFIX}/lib/purple-2
+post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps/pidgin/emotes/skype
 	${INSTALL_DATA} ${WRKSRC}/theme ${STAGEDIR}${PREFIX}/share/pixmaps/pidgin/emotes/skype
-.for i in 16 22 48
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps/pidgin/protocols/${i}
-	${INSTALL_DATA} ${WRKSRC}/icons/${i}/skypeout.png \
-		${WRKSRC}/icons/${i}/skype.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/pidgin/protocols/${i}/
-.endfor
 
 .include <bsd.port.mk>

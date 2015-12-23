@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	redmine
-PORTVERSION=	2.6.3
-PORTREVISION=	4
+PORTVERSION=	2.6.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.redmine.org/releases/
 
@@ -16,14 +16,16 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 RUN_DEPENDS=	rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-bundler>=0:${PORTSDIR}/sysutils/rubygem-bundler \
 		rubygem-coderay>=1.0.9:${PORTSDIR}/textproc/rubygem-coderay \
-		rubygem-fastercsv>=1.5.0:${PORTSDIR}/devel/rubygem-fastercsv \
 		rubygem-i18n>=0.7.0:${PORTSDIR}/devel/rubygem-i18n \
+		rubygem-jquery-rails>=3.1.4:${PORTSDIR}/www/rubygem-jquery-rails \
+		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-net-ldap>=0.3.1:${PORTSDIR}/net/rubygem-net-ldap \
 		rubygem-rack-openid>=0:${PORTSDIR}/www/rubygem-rack-openid \
-		rubygem-rails>=3.2.16:${PORTSDIR}/www/rubygem-rails \
+		rubygem-ruby-openid>=2.3.0:${PORTSDIR}/net/rubygem-ruby-openid \
+		rubygem-rails>=3.2.22:${PORTSDIR}/www/rubygem-rails \
 		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-rbpdf>=0:${PORTSDIR}/print/rubygem-rbpdf \
-		rubygem-redcarpet>=3.0:${PORTSDIR}/textproc/rubygem-redcarpet \
+		rubygem-redcarpet>=3.3.2:${PORTSDIR}/textproc/rubygem-redcarpet \
 		rubygem-request_store>=1.1.0:${PORTSDIR}/devel/rubygem-request_store \
 		rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree
 
@@ -41,6 +43,7 @@ OPTIONS_DEFINE=	MYSQL MYSQL2 POSTGRESQL RMAGIC
 OPTIONS_DEFAULT=MYSQL2 RMAGIC THIN
 OPTIONS_SINGLE=	WWWSERVER
 OPTIONS_SINGLE_WWWSERVER=	THIN PASSENGER
+OPTIONS_SUB=	yes
 POSTGRESQL_DESC=Enable PostgreSQL support
 RMAGIC_DESC=	Enable Gantt charts support
 THIN_DESC=	Use Thin WEB server
@@ -52,16 +55,14 @@ MYSQL_RUN_DEPENDS=	rubygem-mysql>=2.8.1:${PORTSDIR}/databases/rubygem-mysql
 MYSQL2_RUN_DEPENDS=	rubygem-mysql2>=0:${PORTSDIR}/databases/rubygem-mysql2
 PASSENGER_RUN_DEPENDS=	passenger-config:${PORTSDIR}/www/rubygem-passenger
 POSTGRESQL_RUN_DEPENDS=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
-RMAGIC_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Gemfile
-RMAGIC_RUN_DEPENDS=	rubygem-rmagick>=2.0.0:${PORTSDIR}/graphics/rubygem-rmagick
-THIN_EXTRA_PATCHES=	${FILESDIR}/extra-patch-thin-Gemfile
+RMAGIC_RUN_DEPENDS=	rubygem-rmagick>=2.13.4:${PORTSDIR}/graphics/rubygem-rmagick
 THIN_RUN_DEPENDS=	thin:${PORTSDIR}/www/rubygem-thin
 THIN_SUB_LIST=		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 THIN_VARS=		USE_RC_SUBR=redmine
 
 post-extract:
 	@${RM} ${WRKSRC}/.hgignore ${WRKSRC}/.travis.yml
-	@${MV} ${WRKSRC}/config/settings.yml ${WRKSRC}/config/settings.yml-dist
+	@${MV} ${WRKSRC}/config/settings.yml ${WRKSRC}/config/settings.yml.sample
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.bak' -o -name '*.orig' -delete
@@ -72,13 +73,16 @@ pre-install:
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/pids
+	${MKDIR} ${STAGEDIR}${WWWDIR}/bundler.d
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+
+do-install-RMAGIC-on:
+	${CP} ${FILESDIR}/rmagic.rb ${STAGEDIR}${WWWDIR}/bundler.d
+
+do-install-THIN-on:
+	${CP} ${FILESDIR}/thin.rb ${STAGEDIR}${WWWDIR}/bundler.d
 
 post-install:
 	${TOUCH} ${STAGEDIR}${WWWDIR}/Gemfile.lock
-	if ! [ -r ${STAGEDIR}${WWWDIR}/config/settings.yml ]; then		\
-		${INSTALL_DATA} ${STAGEDIR}${WWWDIR}/config/settings.yml-dist	\
-			${STAGEDIR}${WWWDIR}/config/settings.yml;		\
-	fi
 
 .include <bsd.port.mk>

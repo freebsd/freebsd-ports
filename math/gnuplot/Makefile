@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuplot
-PORTVERSION=	4.6.6
-PORTREVISION=	2
+PORTVERSION=	5.0.1
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -14,20 +13,22 @@ USE_TEX=	kpathsea
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ENV=	LUA_VER="${LUA_VER}"
-CONFIGURE_ARGS+=--with-lasergnu \
-		--with-readline=gnu \
+CONFIGURE_ARGS+=--with-readline=gnu \
 		--with-kpsexpand \
 		--without-linux-vga \
 		--without-lisp-files \
 		--without-tutorial \
 		--with-bitmap-terminals \
 		--with-latex \
+		--with-qt=no \
 		ac_cv_prog_KPSEXPAND=${LOCALBASE}/bin/kpsexpand \
 		ac_cv_prog_PLAINTEX=${LOCALBASE}/bin/tex \
 		ac_cv_prog_LATEX=${LOCALBASE}/bin/latex \
 		ac_cv_prog_PDFLATEX=${LOCALBASE}/bin/pdflatex
 PORTDOCS=	*
 PORTEXAMPLES=	*
+
+# MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	CAIRO DOCS EXAMPLES GD GRIDBOX PDF PLOT THINSPLINES WX X11
 GRIDBOX_DESC=		Use the gridbox optimization for hidden3d
@@ -86,7 +87,6 @@ post-build:
 .endif
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/src/lasergnu ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 .if ${PORT_OPTIONS:MDOCS}

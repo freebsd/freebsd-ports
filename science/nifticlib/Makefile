@@ -1,4 +1,4 @@
-# Created by: Jason W. Bacon <jwbacon@tds.net>
+# Created by: Jason W. Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	nifticlib
@@ -6,7 +6,7 @@ PORTVERSION=	2.0.0
 CATEGORIES=	science graphics
 MASTER_SITES=	SF/niftilib/nifticlib/nifticlib_2_0_0
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Neuroimaging Informatics Technology Initiative data format
 
 # LICENSE=	public domain

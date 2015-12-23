@@ -3,6 +3,7 @@
 
 PORTNAME=	demo
 PORTVERSION=	${PYQT4_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -14,22 +15,28 @@ COMMENT=	Python bindings for the Qt4 toolkit, Qt demo and examples
 
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 
-USES=		python
+NO_BUILD=	yes
+USES=		python pyqt:4
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
 
-.include "${.CURDIR}/../../devel/py-qt4/bsd.pyqt.mk"
-
-.for component in ${PYQT4_COMPONENTS:Ndemo}
-PYQT4_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-${component}>=0:${PORTSDIR}/${${component}_PORT}
-.endfor
-
-do-build:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/examples
+USE_PYQT=	assistant_run core_run dbus_run dbussupport_run declarative_run \
+		designer_run designerplugin_run doc_run gui_run help_run \
+		multimedia_run network_run opengl_run phonon_run qscintilla2_run \
+		script_run scripttools_run sql_run svg_run test_run webkit_run xml_run \
+		xmlpatterns_run sip_run qscintilla2_run
 
 do-install:
 	${RM} -f ${WRKSRC}/examples/designer/plugins/plugins.py.orig
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
+
+post-install:
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-f -d ${PYTHONPREFIX_SITELIBDIR} \
+		${STAGEDIR}${EXAMPLESDIR}
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-f -d ${PYTHONPREFIX_SITELIBDIR} \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

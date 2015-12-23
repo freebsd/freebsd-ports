@@ -5,6 +5,7 @@ PORTNAME=	snort
 PORTVERSION=	2.9.7.6
 CATEGORIES=	security
 MASTER_SITES=	https://snort.org/downloads/snort/ \
+		http://www.talosintel.com/downloads/ \
 		http://mirrors.rit.edu/zi/
 
 PATCH_DIST_STRIP=	-p1

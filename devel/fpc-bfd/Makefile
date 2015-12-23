@@ -1,8 +1,8 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	devel lang
+PORTREVISION=	2
 PKGNAMESUFFIX=	-bfd
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
@@ -14,10 +14,6 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR=	${WRKUNITDIR}
 
-OPTIONS_DEFINE=	LIBBFD
-LIBBFD_DESC=	Install Universal BFD library from GNU binutils
-OPTIONS_DEFAULT=	LIBBFD
-
-LIBBFD_RUN_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd
+RUN_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/binutils
 
 .include "${MASTERDIR}/Makefile"

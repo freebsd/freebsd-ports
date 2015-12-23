@@ -1,6 +1,6 @@
---- src/converter.cpp.orig	2014-07-17 03:34:36.000000000 -0700
-+++ src/converter.cpp	2014-07-17 03:36:07.000000000 -0700
-@@ -88,7 +88,7 @@
+--- src/converter.cpp.orig	2015-10-21 17:26:38 UTC
++++ src/converter.cpp
+@@ -88,7 +88,7 @@ main(int argc, char *argv[]) {
  		optind++;
  		const char *ofile = (optind < argc) ? argv[optind] : "converted.tq7";
  		ofstream out;

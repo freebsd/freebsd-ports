@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.nog.net/~tony/warez/
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Configurable talking characters in ASCII art
 
+BROKEN=		unfetchable
 USES=		perl5
 
 NO_BUILD=	# defined

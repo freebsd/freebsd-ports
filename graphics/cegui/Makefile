@@ -3,6 +3,7 @@
 
 PORTNAME=	cegui
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.8
 
@@ -11,14 +12,12 @@ COMMENT=	Library providing windowing and widgets for graphics APIs
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S/2b/2/}
 CONFIGURE_ENV+=	TOLUA_INC="${LUA_INCDIR}"
 CMAKE_ARGS=	-DCEGUI_SAMPLES_ENABLED:BOOL=OFF \
 		-DCEGUI_BUILD_TESTS=OFF
 USE_LDCONFIG=	yes
-USES=		compiler:c++11-lib cmake pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lib cmake execinfo pathfix pkgconfig tar:bzip2
 
 PORTDOCS=	*
 

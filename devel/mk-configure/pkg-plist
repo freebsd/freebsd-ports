@@ -34,6 +34,9 @@ man/man7/mk-configure.7.gz
 %%DATADIR%%/builtins/prog_gawk
 %%DATADIR%%/builtins/prog_gm4
 %%DATADIR%%/builtins/prog_gmake
+%%DATADIR%%/features/_mkcfake.c
+%%DATADIR%%/features/err/err.c
+%%DATADIR%%/features/fgetln/fgetln.c
 %%DATADIR%%/features/getline/getline.c
 %%DATADIR%%/features/mkc_CIRCLEQ.h
 %%DATADIR%%/features/mkc_LIST.h
@@ -43,15 +46,21 @@ man/man7/mk-configure.7.gz
 %%DATADIR%%/features/mkc_SPLAY.h
 %%DATADIR%%/features/mkc_STAILQ.h
 %%DATADIR%%/features/mkc_TAILQ.h
+%%DATADIR%%/features/mkc_err.h
+%%DATADIR%%/features/mkc_fgetln.h
 %%DATADIR%%/features/mkc_getline.h
 %%DATADIR%%/features/mkc_libdl.h
 %%DATADIR%%/features/mkc_libm.h
+%%DATADIR%%/features/mkc_progname.h
 %%DATADIR%%/features/mkc_strlcat.h
 %%DATADIR%%/features/mkc_strlcpy.h
+%%DATADIR%%/features/mkc_warn.h
 %%DATADIR%%/features/netbsd_sys_queue.h
 %%DATADIR%%/features/netbsd_sys_tree.h
+%%DATADIR%%/features/progname/progname.c
 %%DATADIR%%/features/strlcat/strlcat.c
 %%DATADIR%%/features/strlcpy/strlcpy.c
+%%DATADIR%%/features/warn/warn.c
 share/mkc-mk/mkc.configure.mk
 share/mkc-mk/mkc.files.mk
 share/mkc-mk/mkc.init.mk
@@ -79,11 +88,15 @@ share/mkc-mk/mkc_imp.f_SLIST.mk
 share/mkc-mk/mkc_imp.f_SPLAY.mk
 share/mkc-mk/mkc_imp.f_STAILQ.mk
 share/mkc-mk/mkc_imp.f_TAILQ.mk
+share/mkc-mk/mkc_imp.f_err.mk
+share/mkc-mk/mkc_imp.f_fgetln.mk
 share/mkc-mk/mkc_imp.f_getline.mk
 share/mkc-mk/mkc_imp.f_libdl.mk
 share/mkc-mk/mkc_imp.f_libm.mk
+share/mkc-mk/mkc_imp.f_progname.mk
 share/mkc-mk/mkc_imp.f_strlcat.mk
 share/mkc-mk/mkc_imp.f_strlcpy.mk
+share/mkc-mk/mkc_imp.f_warn.mk
 share/mkc-mk/mkc_imp.files.mk
 share/mkc-mk/mkc_imp.final.mk
 share/mkc-mk/mkc_imp.inc.mk
@@ -106,11 +119,3 @@ share/mkc-mk/mkc_imp.scripts.mk
 share/mkc-mk/mkc_imp.subprj.mk
 share/mkc-mk/mkc_imp.vars.mk
 share/mkc-mk/sys.mk
-%%PORTDOCS%%@dir %%DOCSDIR%%
-@dir %%DATADIR%%/builtins
-@dir %%DATADIR%%/features/getline
-@dir %%DATADIR%%/features/strlcat
-@dir %%DATADIR%%/features/strlcpy
-@dir %%DATADIR%%/features
-@dir %%DATADIR%%
-@dir share/mkc-mk

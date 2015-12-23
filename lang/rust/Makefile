@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap
@@ -50,7 +49,8 @@ PLIST_SUB+=	RUST_VSN_HASH=${RUST_VSN_HASH}
 # Rust's target arch string is different from *BSD arch strings
 RUST_ARCH_amd64=	x86_64
 RUST_ARCH_i386=		i686
-PLIST_SUB+=	RUST_TARGET=${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
+RUST_TARGET=		${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
+PLIST_SUB+=	RUST_TARGET=${RUST_TARGET}
 
 USES=		gmake libedit python:2,build
 HAS_CONFIGURE=	yes
@@ -67,9 +67,11 @@ CONFIGURE_ARGS=	--disable-valgrind --disable-docs \
 MAKE_ARGS+=	VERBOSE=1
 .endif
 
-OPTIONS_DEFINE=		LLNEXTGEN
+OPTIONS_DEFINE=		GDB LLNEXTGEN
+GDB_DESC=		Install ports gdb (necessary for debugging rust programs)
 LLNEXTGEN_DESC=		Build with grammar verification
 
+GDB_RUN_DEPENDS=		${LOCALBASE}/bin/gdb:${PORTSDIR}/devel/gdb
 LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:${PORTSDIR}/devel/llnextgen
 
 # Note that make test does not work when rust is already installed
@@ -114,28 +116,35 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/mk/main.mk
+	@${REINPLACE_CMD} -e 's|gdb|${LOCALBASE}/bin/gdb|' \
+		${WRKSRC}/src/etc/rust-gdb
 
 # In case the previous "make stage" failed, this ensures rust's
 # install.sh won't backup previously staged files before reinstalling
 # new ones. Otherwise, the staging directory is polluted with unneeded
 # files.
 pre-install:
-	@if test -f ${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rustc; then \
+.for f in manifest-rustc manifest-rust-std-${RUST_TARGET}
+	@if test -f ${STAGEDIR}${PREFIX}/lib/rustlib/${f}; then \
 		${SED} -E -e 's,^(dir|file:),${STAGEDIR},' \
-		< ${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rustc \
+		< ${STAGEDIR}${PREFIX}/lib/rustlib/${f} \
 		| ${XARGS} ${RM}; \
 	fi
+.endfor
 	@${RM} \
 		${STAGEDIR}${PREFIX}/lib/rustlib/components \
 		${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rustc \
+		${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rust-std-${RUST_TARGET} \
 		${STAGEDIR}${PREFIX}/lib/rustlib/rust-installer-version \
 		${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
 
 post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/install.log
+.for f in manifest-rustc manifest-rust-std-${RUST_TARGET}
 	@${REINPLACE_CMD} -e 's|${STAGEDIR}||' \
-		${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rustc
-	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rustc.bak
+		${STAGEDIR}${PREFIX}/lib/rustlib/${f}
+	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/${f}.bak
+.endfor
+	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/install.log
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/bin/rustc \
 		${STAGEDIR}${PREFIX}/bin/rustdoc \

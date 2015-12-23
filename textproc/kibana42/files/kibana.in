@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: kibana
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=kibana
+rcvar=kibana_enable
+
+load_rc_config $name
+
+: ${kibana_enable:="NO"}
+: ${kibana_config:="%%PREFIX%%/etc/kibana.yml"}
+: ${kibana_user:="www"}
+: ${kibana_group:="www"}
+: ${kibana_log:="/var/log/kibana.log"}
+
+required_files="${kibana_config}"
+pidfile="/var/run/${name}/${name}.pid"
+start_precmd="kibana_precmd"
+procname="%%LOCALBASE%%/bin/node"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} env BABEL_DISABLE_CACHE=1 ${procname} %%WWWDIR%%/src/cli serve --config ${kibana_config} --log-file ${kibana_log}"
+
+kibana_precmd()
+{
+	if [ ! -d $(dirname ${pidfile}) ]; then
+		mkdir $(dirname ${pidfile})
+		chown ${kibana_user}:${kibana_group} $(dirname ${pidfile})
+	fi
+
+	if [ ! -f ${kibana_log} ]; then
+		install -o ${kibana_user} -g ${kibana_group} -m 640 /dev/null ${kibana_log}
+	fi
+}
+
+run_rc_command "$1"

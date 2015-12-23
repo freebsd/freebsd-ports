@@ -39,7 +39,7 @@ OPTIONS_DEFINE=		DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 1000024
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024
 LDFLAGS+=	-lc++
 .endif
 

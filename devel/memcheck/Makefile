@@ -10,6 +10,7 @@ MASTER_SITES=	http://hald.dnsalias.net/projects/memcheck/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Memory Allocation Checker
 
+BROKEN=		unfetchable
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

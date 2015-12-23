@@ -1,14 +1,13 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	3
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-image
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
-COMMENT=	Free Pascal Component Library
+COMMENT=	Free Pascal image loading and conversion libraries (FCL)
 
-USE_FPC=	fcl-async fcl-base hash pasjpeg paszlib pthreads libpng
+USE_FPC=	fcl-base fcl-res pasjpeg rtl-objpas
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

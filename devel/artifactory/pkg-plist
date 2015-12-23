@@ -15,6 +15,7 @@
 %%APP_HOME%%/data
 %%APP_HOME%%/etc
 %%APP_HOME%%/logs
+%%APP_HOME%%/support
 %%APP_HOME%%/misc/db/createdb/createdb_mssql.sql
 %%APP_HOME%%/misc/db/createdb/createdb_mssqlBlob.sql
 %%APP_HOME%%/misc/db/createdb/createdb_mssqlRecreateBlob.sql
@@ -88,10 +89,11 @@
 @dir %%VARDIR%%/tomcat/logs/catalina
 @dir %%VARDIR%%/tomcat/logs
 @dir %%VARDIR%%/tomcat
-@dir %%VARDIR%%/logs
-@dir %%VARDIR%%/etc
-@dir %%VARDIR%%/data
 @dir %%VARDIR%%/backup
+@dir %%VARDIR%%/data
+@dir %%VARDIR%%/etc
+@dir %%VARDIR%%/logs
+@dir %%VARDIR%%/support
 @dir %%VARDIR%%
 @owner
 @group

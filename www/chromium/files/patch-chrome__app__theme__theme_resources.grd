@@ -1,0 +1,11 @@
+--- chrome/app/theme/theme_resources.grd.orig	2015-11-18 08:18:51.872583000 -0500
++++ chrome/app/theme/theme_resources.grd	2015-11-18 08:19:44.804018000 -0500
+@@ -481,7 +481,7 @@
+         <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_PERIPHERAL_BATTERY_LOW" file="cros/notification_peripheral_battery_low.png" />
+         <structure type="chrome_scaled_image" name="IDR_PORTAL_DETECTION_ALERT" file="cros/captive_portal_icon.png" />
+       </if>
+-      <if expr="is_win or desktop_linux">
++      <if expr="is_win or desktop_linux or is_posix">
+         <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_TRAY_DO_NOT_DISTURB_ATTENTION" file="common/notification_tray_do_not_disturb_attention.png" />
+         <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_TRAY_DO_NOT_DISTURB_EMPTY" file="common/notification_tray_do_not_disturb_empty.png" />
+         <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_TRAY_ATTENTION" file="common/notification_tray_attention.png" />

@@ -1,11 +1,7 @@
---- mix.exs.orig	2015-09-18 11:03:06 UTC
+--- mix.exs.orig	2015-12-01 21:16:44 UTC
 +++ mix.exs
-@@ -5,10 +5,9 @@ defmodule Mongo.Mixfile do
-     [ app: :mongo,
-       name: "mongo",
-       version: "0.5.1",
--      elixir: "~> 1.0.0",
-+      elixir: ">= 1.0.0",
+@@ -8,7 +8,6 @@ defmodule Mongo.Mixfile do
+       elixir: "~> 1.0 or ~> 1.1",
        source_url: "https://github.com/checkiz/elixir-mongo",
        description: "MongoDB driver for Elixir",
 -      deps: deps(Mix.env),

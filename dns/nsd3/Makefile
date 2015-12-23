@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	3.2.19
-PORTREVISION=	1
+PORTVERSION=	3.2.20
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -74,26 +73,21 @@ NSEC3PREHASH_CONFIGURE_ENABLE=	full-prehash
 MMAP_CONFIGURE_ENABLE=		mmap
 MAXIPS_CONFIGURE_ON=		--with-max-ips=${NSDMAX_IPS}
 RRL_CONFIGURE_ENABLE=		ratelimit
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MZONE_STATS}
-.	if !${PORT_OPTIONS:MBIND8_STATS}
-CONFIGURE_ARGS+=	--enable-bind8-stats
-.	endif
-CONFIGURE_ARGS+=	--enable-zone-stats
-.endif
+ZONE_STATS_CONFIGURE_ENABLE=	zone-stats
+ZONE_STATS_IMPLIES=		BIND8_STATS
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/nsd/nsd.conf.sample
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/nsd \
 		${STAGEDIR}${PREFIX}/sbin/nsd-checkconf \
 		${STAGEDIR}${PREFIX}/sbin/nsd-notify \
 		${STAGEDIR}${PREFIX}/sbin/nsd-patch \
 		${STAGEDIR}${PREFIX}/sbin/nsd-xfer \
 		${STAGEDIR}${PREFIX}/sbin/zonec
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

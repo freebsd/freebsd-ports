@@ -11,6 +11,7 @@ DISTNAME=	dlint${PORTVERSION}
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)
 
+BROKEN=		unfetchable
 USES=		shebangfix
 NO_BUILD=	yes
 

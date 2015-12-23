@@ -12,6 +12,7 @@ include/rocksdb/compaction_job_stats.h
 include/rocksdb/comparator.h
 include/rocksdb/convenience.h
 include/rocksdb/db.h
+include/rocksdb/db_dump_tool.h
 include/rocksdb/delete_scheduler.h
 include/rocksdb/env.h
 include/rocksdb/experimental.h
@@ -33,6 +34,7 @@ include/rocksdb/slice.h
 include/rocksdb/slice_transform.h
 include/rocksdb/snapshot.h
 include/rocksdb/sst_dump_tool.h
+include/rocksdb/sst_file_writer.h
 include/rocksdb/statistics.h
 include/rocksdb/status.h
 include/rocksdb/table.h

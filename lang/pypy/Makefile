@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-PORTVERSION=	2.6.1
+PORTVERSION=	4.0.1	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/ LOCAL/dbn/pypy
 DISTNAME=	release-${DISTVERSION}
 DIST_SUBDIR=	pypy
 
-MAINTAINER=	dbn@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libffi.so:${PORTSDIR}/devel/libffi
 
-ONLY_FOR_ARCHS=	i386 amd64 armv6
+ONLY_FOR_ARCHS=	i386 amd64 armv6 powerpc64
 ONLY_FOR_ARCHS_REASON=	PyPy JIT only supported on these architectures
 
 PYTHON_DESC=	Use Python-2.7 to translate (slowest)
@@ -35,7 +35,7 @@ BUILD_WRKSRC=	${WRKDIR}/build/usession-release-${DISTVERSION}-0/testing_1
 MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE}
 USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
 USES=		gettext-runtime tar:bzip2
-WRKSRC=		${WRKDIR}/pypy-pypy-f3ad1e1e1d62
+WRKSRC=		${WRKDIR}/pypy-pypy-5f8302b8bf9f
 
 .include ".${CURDIR}/bsd.pypy.mk"
 .include <bsd.port.options.mk>
@@ -50,7 +50,7 @@ USES+=		python:2,build
 
 .if ${ARCH} == "i386" || ${ARCH} == "armv6"
 PYPY_BITS=	32
-.elif ${ARCH} == "amd64"
+.elif ${ARCH} == "amd64" || ${ARCH} == "powerpc64"
 PYPY_BITS=	64
 .endif
 PLIST_SUB+=	PYPY_BITS="${PYPY_BITS}"
@@ -93,8 +93,8 @@ regression-test: build
 pkg-plist: build
 	${TAR} -tf ${WRKDIR}/build/${PYPY_DIR}.tar.bz2 > ${WRKDIR}/.plist-files-gen
 	${REINPLACE_CMD} -e 's|^${PYPY_DIR}|%%PYPY_DIR%%|g' \
-		-e 's|-${PYPY_VER}|-%%PYPY_VER%%|g' \
 		-e 's|_${PYPY_BITS}_|_%%PYPY_BITS%%_|g' \
+		-e 's|-${PYPY_CFFI_VER}|-%%PYPY_CFFI_VER%%|g' \
 		-e '/\/$$/d' \
 			${WRKDIR}/.plist-files-gen
 	${ECHO} bin/pypy > ${WRKDIR}/pkg-plist

@@ -10,7 +10,6 @@
     SUBDIR += aprsd
     SUBDIR += atslog
     SUBDIR += bfhist
-    SUBDIR += bforce
     SUBDIR += bforce-kst
     SUBDIR += birda
     SUBDIR += bluegps
@@ -46,6 +45,7 @@
     SUBDIR += fllog
     SUBDIR += flrig
     SUBDIR += flwrap
+    SUBDIR += freedv
     SUBDIR += gammu
     SUBDIR += ge-x2212
     SUBDIR += geoid
@@ -55,7 +55,6 @@
     SUBDIR += gnokii
     SUBDIR += gnuradio
     SUBDIR += gpredict
-    SUBDIR += gpsk31
     SUBDIR += gqrx
     SUBDIR += gr-osmosdr
     SUBDIR += grig
@@ -131,13 +130,14 @@
     SUBDIR += pr
     SUBDIR += predict
     SUBDIR += py-bulksms
+    SUBDIR += py-gammu
     SUBDIR += py-libconcord
     SUBDIR += py-libimobiledevice
     SUBDIR += py-lirc
+    SUBDIR += py-qt5-serialport
     SUBDIR += py-serial
     SUBDIR += pyla
     SUBDIR += qico
-    SUBDIR += qpage
     SUBDIR += qrq
     SUBDIR += qsstv
     SUBDIR += qt5-serialport
@@ -194,7 +194,6 @@
     SUBDIR += yagiuda
     SUBDIR += yaps
     SUBDIR += yfklog
-    SUBDIR += zmtx-zmrx
     SUBDIR += zssh
 
 .include <bsd.port.subdir.mk>

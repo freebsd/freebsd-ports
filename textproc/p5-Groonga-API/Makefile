@@ -11,6 +11,8 @@ COMMENT=	Perl extension for raw interface to Groonga
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BROKEN=		fails to build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	charsbar
 GH_PROJECT=	${PORTNAME:tl}

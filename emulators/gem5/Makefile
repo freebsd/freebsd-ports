@@ -9,6 +9,8 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	gem5 Simulator System
 
 BROKEN=		Uses removed MAP_NORESERVE
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-12-30
 
 BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20 \
 		scons:${PORTSDIR}/devel/scons

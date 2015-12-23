@@ -1,4 +1,3 @@
-bin/gif2raw
 bin/gif2rgb
 bin/gifbuild
 bin/gifclrmp
@@ -10,9 +9,8 @@ bin/giftool
 include/gif_lib.h
 lib/libgif.a
 lib/libgif.so
-lib/libgif.so.6
-lib/libgif.so.6.0.1
-man/man1/gif2raw.1.gz
+lib/libgif.so.7
+lib/libgif.so.7.0.0
 man/man1/gif2rgb.1.gz
 man/man1/gifbg.1.gz
 man/man1/gifbuild.1.gz
@@ -26,7 +24,6 @@ man/man1/giflib.1.gz
 man/man1/giftext.1.gz
 man/man1/giftool.1.gz
 man/man1/gifwedge.1.gz
-%%DOCBOOK%%%%PORTDOCS%%%%DOCSDIR%%/gif2raw.html
 %%DOCBOOK%%%%PORTDOCS%%%%DOCSDIR%%/gif2rgb.html
 %%DOCBOOK%%%%PORTDOCS%%%%DOCSDIR%%/gif87.txt
 %%DOCBOOK%%%%PORTDOCS%%%%DOCSDIR%%/gif89.txt

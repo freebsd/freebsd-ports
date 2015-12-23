@@ -210,13 +210,6 @@ post-extract:
 	${REINPLACE_CMD} -e 's/^GCC_LINK_FLAGS=.*/GCC_LINK_FLAGS=-static/' \
 		${WRKSRC}/gcc/ada/gcc-interface/Makefile.in
 .endif
-.if ${PORT_OPTIONS:MBOOTSTRAP} && ${OPSYS} == FreeBSD
-	# FreeBSD 8 linker doesn't understand --hash-style, so do not
-	# allow the bootstrap to use it.
-	${REINPLACE_CMD} -e 's|" ELF_HASH_STYLE "||' \
-		${WRKSRC}/gcc/config/i386/freebsd64.h \
-		${WRKSRC}/gcc/config/i386/freebsd.h
-.endif
 	# Update LINK_SPEC to add gcc-aux lib runpath in every binary
 	@${ECHO} "Configuring LINK_SPEC runpath"
 	@${REINPLACE_CMD} -e 's;\@PREFIX\@;${PREFIX};' \

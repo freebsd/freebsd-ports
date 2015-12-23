@@ -7,4 +7,4 @@ functions with extra features proided with modern C++ such as:
 * C++11 move semantics support, which allow you to store SDL objects
   in containers and pass/return them by value with no overhead
 
-WWW: https://github.com/AMDmi3/libSDL2pp
+WWW: https://github.com/libSDL2pp/libSDL2pp

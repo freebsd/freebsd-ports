@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	conform
-PORTVERSION=	0.17.0
+DISTVERSION=	1.0.0-rc8
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
@@ -17,6 +17,5 @@ GH_ACCOUNT=	bitwalker
 
 MIX_BUILD_DEPS=	devel/erlang-neotoma
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
-MIX_REWRITE=	yes
 
 .include <bsd.port.mk>

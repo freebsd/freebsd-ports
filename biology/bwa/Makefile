@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	bwa
@@ -6,7 +6,7 @@ PORTVERSION=	0.7.9a
 CATEGORIES=	biology
 MASTER_SITES=	SF/bio-bwa/
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Burrows-Wheeler sequence aligner
 
 LICENSE=	GPLv3
@@ -19,6 +19,8 @@ PLIST_FILES=	bin/bwa bin/qualfa2fq.pl bin/xa2multi.pl man/man1/bwa.1.gz
 
 # Avoid #error in emmintrin.h
 CFLAGS+=	-msse2
+
+BROKEN_powerpc64=	Does not build on powerpc64
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bwa ${STAGEDIR}${PREFIX}/bin

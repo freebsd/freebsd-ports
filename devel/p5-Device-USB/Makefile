@@ -1,12 +1,11 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	Device-USB
 PORTVERSION=	0.35
 PORTREVISION=	2
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN \
-		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	josh.carroll@gmail.com

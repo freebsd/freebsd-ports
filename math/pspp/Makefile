@@ -3,6 +3,7 @@
 
 PORTNAME=	pspp
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -12,8 +13,7 @@ COMMENT=	Program for statistical analysis of sampled data
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	texinfo>0:${PORTSDIR}/print/texinfo
-LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils \
-		libgslcblas.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libgslcblas.so:${PORTSDIR}/math/gsl
 
 USES=		charsetfix gmake iconv libtool perl5 pkgconfig readline
 USE_GNOME=	libxml2

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmltodict
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose:${PORTSDIR}/devel/py-nose
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-regression-test: build
-	@cd ${WRKSRC} && nosetests
+do-test:
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests-${PYTHON_VER}
 
 .include <bsd.port.mk>

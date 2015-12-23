@@ -8,6 +8,7 @@ Date:   Mon Feb 2 22:10:55 2015 +0200
     the image base to be displaced from the requested 0x7b800000.  Forcing a
     smaller page size ensures FreeBSD can place the image startin at 0x7b800000.
 
+--- UTC
 diff --git a/dlls/kernel32/Makefile.in b/dlls/kernel32/Makefile.in
 index c09771d..a006c2c 100644
 --- dlls/kernel32/Makefile.in

@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-doc-all
-PORTVERSION=	47441
+PORTVERSION=	47846
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	misc docs
-MASTER_SITES=	#empty
-DISTFILES=	#empty
-EXTRACT_ONLY=	#empty
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Documentation from the FreeBSD Documentation Project
@@ -34,8 +30,7 @@ RUN_DEPENDS+=	bn-freebsd-doc>=${PORTVERSION}:${PORTSDIR}/misc/freebsd-doc-bn		\
 		zh_tw-freebsd-doc>=${PORTVERSION}:${PORTSDIR}/misc/freebsd-doc-zh_tw
 
 NO_BUILD=	yes
-
-do-install:	# empty
+USES=		metaport
 
 .if make(package)
 DEPENDS_TARGET="package"

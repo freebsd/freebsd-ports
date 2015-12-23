@@ -2,8 +2,6 @@
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
 %%WWWDIR%%/Gemfile
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
 %%WWWDIR%%/Gemfile.lock
 @owner
 @group
@@ -592,8 +590,6 @@
 %%WWWDIR%%/config/locales/zh.yml
 %%WWWDIR%%/config/preinitializer.rb
 %%WWWDIR%%/config/routes.rb
-%%WWWDIR%%/config/settings.yml
-%%WWWDIR%%/config/settings.yml-dist
 %%WWWDIR%%/db/migrate/001_setup.rb
 %%WWWDIR%%/db/migrate/002_issue_move.rb
 %%WWWDIR%%/db/migrate/003_issue_add_note.rb
@@ -1370,7 +1366,7 @@
 %%WWWDIR%%/public/javascripts/i18n/datepicker-vi.js
 %%WWWDIR%%/public/javascripts/i18n/datepicker-zh-CN.js
 %%WWWDIR%%/public/javascripts/i18n/datepicker-zh-TW.js
-%%WWWDIR%%/public/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.1.js
+%%WWWDIR%%/public/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js
 %%WWWDIR%%/public/javascripts/jstoolbar/jstoolbar-textile.min.js
 %%WWWDIR%%/public/javascripts/jstoolbar/jstoolbar.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-ar.js
@@ -1842,6 +1838,9 @@
 %%WWWDIR%%/test/unit/wiki_test.rb
 %%WWWDIR%%/test/unit/workflow_test.rb
 %%WWWDIR%%/test/unit/workflow_transition_test.rb
+%%RMAGIC%%%%WWWDIR%%/bundler.d/rmagic.rb
+%%THIN%%%%WWWDIR%%/bundler.d/thin.rb
+@sample %%WWWDIR%%/config/settings.yml.sample
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/pdf/empty
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/test/empty
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/thumbnails/empty

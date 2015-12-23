@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERS
 PATCH_SITES=	http://projects.vdr-developer.org/attachments/download/893/
 PATCHFILES=	osdpip-vdr-1.7.26.diff
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - picture-in-picture plugin
 
 LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg

@@ -3,7 +3,7 @@
 
 PORTNAME=	ubh
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news graphics
 MASTER_SITES=	http://ubh.sourceforge.net/download/
 
@@ -18,14 +18,10 @@ RUN_DEPENDS=	\
 	p5-String-CRC32>=0:${PORTSDIR}/devel/p5-String-CRC32
 
 NO_BUILD=	YES
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	ubh
 
 OPTIONS_DEFINE=	DOCS
-
-pre-patch:
-	@${MV} ${WRKSRC}/ubh ${WRKSRC}/ubh.old
-	@${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \
-		${WRKSRC}/ubh.old > ${WRKSRC}/ubh
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ubh ${STAGEDIR}${PREFIX}/bin

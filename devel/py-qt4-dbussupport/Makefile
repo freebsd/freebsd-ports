@@ -1,21 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	dbussupport
+PORTREVISION=	1
 CATEGORIES=	devel python
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Python bindings for the Qt4 toolkit, D-BUS module
+COMMENT=	Qt event loop support for dbus-python
 
-CONFLICTS_INSTALL=	py*-qt4-dbus-4.9.1*
-
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus \
-		${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core
+BUILD_DEPENDS=	${PYDBUS}
+RUN_DEPENDS=	${PYDBUS}
 
 CONFIGURE_ARGS=	--enable QtCore
-PYQT4_DIST=	yes
-USES=		pkgconfig
+PYQT_DIST=	yes
+
+USES=		pkgconfig python pyqt:4
+USE_PYQT=	sip_build
 USE_QT4=	corelib qmake_build moc_build
 
 OPTIONS_DEFINE=		DEBUG
@@ -26,5 +25,12 @@ INSTALL_WRKSRC=	${WRKSRC}/dbus
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dbus/mainloop/qt.so
 
-.include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_MAJOR_VER} == 2
+PYDBUS=		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus
+.elif ${PYTHON_MAJOR_VER} == 3
+PYDBUS=		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py3-dbus
+.endif
+
+.include <bsd.port.post.mk>

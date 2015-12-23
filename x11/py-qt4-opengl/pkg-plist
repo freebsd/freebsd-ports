@@ -1,9 +1,9 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtOpenGL.so
-share/py-sip/QtOpenGL/QtOpenGLmod.sip
-share/py-sip/QtOpenGL/qgl.sip
-share/py-sip/QtOpenGL/qglbuffer.sip
-share/py-sip/QtOpenGL/qglcolormap.sip
-share/py-sip/QtOpenGL/qglframebufferobject.sip
-share/py-sip/QtOpenGL/qglpixelbuffer.sip
-share/py-sip/QtOpenGL/qglshaderprogram.sip
+%%PYQT_SIPDIR%%/QtOpenGL/QtOpenGLmod.sip
+%%PYQT_SIPDIR%%/QtOpenGL/qgl.sip
+%%PYQT_SIPDIR%%/QtOpenGL/qglbuffer.sip
+%%PYQT_SIPDIR%%/QtOpenGL/qglcolormap.sip
+%%PYQT_SIPDIR%%/QtOpenGL/qglframebufferobject.sip
+%%PYQT_SIPDIR%%/QtOpenGL/qglpixelbuffer.sip
+%%PYQT_SIPDIR%%/QtOpenGL/qglshaderprogram.sip
 %%API%%share/qt4/qsci/api/python/QtOpenGL.api

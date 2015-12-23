@@ -1,16 +1,6 @@
-%%PORTEXAMPLES%%bin/2geglbuffer
-bin/frame-counter
 bin/gegl3
-%%PORTEXAMPLES%%bin/gegl-convert
 bin/gegl-imgcmp
-%%PORTEXAMPLES%%bin/gegl-slicer
 bin/gegl-tester
-%%GEXIV2%%bin/gegl-video
-%%PORTEXAMPLES%%bin/geglbuffer-add-image
-%%PORTEXAMPLES%%bin/geglbuffer-clock
-%%PORTEXAMPLES%%bin/hello-world
-%%SDL%%bin/sdl-draw
-bin/video-invert
 include/gegl-%%GEGL_VER%%/gegl-apply.h
 include/gegl-%%GEGL_VER%%/gegl-audio-fragment.h
 include/gegl-%%GEGL_VER%%/gegl-buffer-backend.h
@@ -225,7 +215,7 @@ lib/gegl-%%GEGL_VER%%/posterize.so
 lib/gegl-%%GEGL_VER%%/ppm-load.so
 lib/gegl-%%GEGL_VER%%/ppm-save.so
 lib/gegl-%%GEGL_VER%%/radial-gradient.so
-lib/gegl-%%GEGL_VER%%/raw-load.so
+%%RAW%%lib/gegl-%%GEGL_VER%%/raw-load.so
 lib/gegl-%%GEGL_VER%%/rectangle.so
 lib/gegl-%%GEGL_VER%%/red-eye-removal.so
 lib/gegl-%%GEGL_VER%%/reinhard05.so

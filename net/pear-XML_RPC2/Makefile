@@ -5,7 +5,7 @@ PORTNAME=	XML_RPC2
 PORTVERSION=	1.1.2
 CATEGORIES=	net devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	XML-RPC client/server library
 
 LICENSE=	PHP301

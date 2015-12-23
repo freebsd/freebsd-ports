@@ -10,6 +10,7 @@ MASTER_SITES=	http://crazney.net/programs/itunes/files/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	C lib used to connect to iTunes(R) music shares
 
+BROKEN=		unfetchable
 USES=		libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

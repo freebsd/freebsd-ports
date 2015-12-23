@@ -1,62 +1,43 @@
---- src/xml.h.orig	2014-07-12 13:18:13.000000000 -0700
-+++ src/xml.h	2014-07-18 05:43:47.000000000 -0700
-@@ -16,6 +16,14 @@
+--- src/xml.h.orig	2015-10-21 17:26:38 UTC
++++ src/xml.h
+@@ -13,6 +13,7 @@
+ 
+ #include <string>
+ #include <map>
++#include <memory>
  #include <vector>
  #include <utility>
  #include <expat.h>
-+#if defined(__GNUC__) && !defined(__clang__)
-+#define USE_TR1
-+#endif
-+#ifdef USE_TR1
-+#include <tr1/memory>
-+#else
-+#include <memory>
-+#endif
- 
- using std::pair;
- using std::string;
-@@ -23,12 +31,19 @@
- using std::map;
- using std::multimap;
- using std::vector;
-+#ifdef USE_TR1
-+using std::tr1::shared_ptr;
-+#else
-+using std::shared_ptr;
-+using std::make_shared;
-+#endif
-+
- 
- namespace tqsllib {
+@@ -28,7 +29,7 @@ namespace tqsllib {
  
  class XMLElement;
  
 -typedef multimap<string, XMLElement> XMLElementList;
-+typedef multimap<string, shared_ptr<XMLElement> > XMLElementList;
++typedef multimap<string, std::shared_ptr<XMLElement> > XMLElementList;
  typedef map<string, string> XMLElementAttributeList;
  
  /** Encapsulates an XML element
-@@ -62,7 +77,7 @@
+@@ -62,7 +63,7 @@ class XMLElement {
        */
  	pair<string, bool> getAttribute(const string& key);
  	/// Add an element to the list of contained subelements
 -	XMLElementList::iterator addElement(const XMLElement& element);
-+	XMLElementList::iterator addElement(shared_ptr<XMLElement>& element);
++	XMLElementList::iterator addElement(std::shared_ptr<XMLElement> element);
  	XMLElementAttributeList& getAttributeList() { return _attributes; }
  	XMLElementList& getElementList() { return _elements; }
  	/// Parse an XML file and add its element tree to this element
-@@ -134,8 +149,8 @@
+@@ -134,8 +135,8 @@ XMLElement::setAttribute(const string& k
  }
  
  inline XMLElementList::iterator
 -XMLElement::addElement(const XMLElement& element) {
 -	XMLElementList::iterator it = _elements.insert(make_pair(element.getElementName(), element));
-+XMLElement::addElement(shared_ptr<XMLElement>& element) {
++XMLElement::addElement(std::shared_ptr<XMLElement> element) {
 +	XMLElementList::iterator it = _elements.insert(make_pair(element->getElementName(), element));
  	return it;
  }
  
-@@ -158,9 +173,9 @@
+@@ -158,9 +159,9 @@ inline bool
  XMLElement::getNextElement(XMLElement& element) {
  	if (_iter == _elements.end())
  		return false;

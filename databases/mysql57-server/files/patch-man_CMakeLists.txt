@@ -1,0 +1,11 @@
+--- man/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
++++ man/CMakeLists.txt
+@@ -15,8 +15,6 @@
+ 
+ # Copy man pages
+ FILE(GLOB MAN1_FILES *.1)
+-FILE(GLOB MAN1_EXCLUDE make_win_bin_dist.1)
+-FILE(GLOB MAN1_NDB ndb*.1)
+ FILE(GLOB MAN8_FILES *.8)
+ FILE(GLOB MAN8_NDB ndb*.8)
+ IF(MAN1_FILES)

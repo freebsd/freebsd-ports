@@ -3,6 +3,7 @@
 
 PORTNAME=	base64
 PORTVERSION=	2.0.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	converters
 PKGNAMEPREFIX=	ocaml-
 
@@ -12,7 +13,6 @@ COMMENT=	Base64 encoding and decoding in OCaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	mirage
 GH_PROJECT=	ocaml-base64
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=			gmake
 HAS_CONFIGURE=		yes

@@ -58,6 +58,7 @@ OPTIONS_DEFINE=	\
 	AJP \
 	CACHE_PURGE \
 	CLOJURE \
+	CT \
 	ECHO \
 	HEADERS_MORE \
 	HTTP_ACCEPT_LANGUAGE \
@@ -150,6 +151,7 @@ WWW_DESC=			Enable html sample files
 AJP_DESC=			3rd party ajp module
 CACHE_PURGE_DESC=		3rd party cache_purge module
 CLOJURE_DESC=			3rd party clojure module
+CT_DESC=			3rd party cert_transparency module (SSL req.)
 ECHO_DESC=			3rd party echo module
 HEADERS_MORE_DESC=		3rd party headers_more module
 HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
@@ -371,6 +373,17 @@ CONFIGURE_ENV+=	"JNI_INCS=-I${LOCALBASE}/openjdk8/include -I${LOCALBASE}/openjdk
 CONFIGURE_ARGS+=--add-module=${WRKSRC_clojure}/src/c
 .endif
 
+.if ${PORT_OPTIONS:MCT}
+GIT_CT_VERSION=	1790ac0
+GH_ACCOUNT+=	grahamedgecombe:ct
+GH_PROJECT+=	nginx-ct:ct
+GH_TAGNAME+=	${GIT_CT_VERSION}:ct
+CONFIGURE_ARGS+=--add-module=${WRKSRC_ct}
+NGINX_OPENSSL=	yes
+USE_HTTP_SSL=	yes
+USE_OPENSSL_PORT=	yes
+.endif
+
 .if ${PORT_OPTIONS:MECHO}
 NGINX_ECHO_VERSION=	0.57
 GH_ACCOUNT+=	openresty:echo
@@ -491,7 +504,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_push}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH_STREAM}
-NGINX_PUSH_STREAM_VERSION=	0.3.5
+NGINX_PUSH_STREAM_VERSION=	0.5.1
 GH_ACCOUNT+=	wandenberg:pushstream
 GH_PROJECT+=	nginx-push-stream-module:pushstream
 GH_TAGNAME+=	${NGINX_PUSH_STREAM_VERSION}:pushstream
@@ -596,7 +609,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 
 .if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
-NGINX_DRIZZLE_VERSION=	0.1.8
+NGINX_DRIZZLE_VERSION=	0.1.9
 GH_ACCOUNT+=	openresty:drizzle
 GH_PROJECT+=	drizzle-nginx-module:drizzle
 GH_TAGNAME+=	v${NGINX_DRIZZLE_VERSION}:drizzle
@@ -689,7 +702,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.0.21
+PASSENGER_VERSION=	5.0.22
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module
@@ -788,7 +801,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_small_light}
 .endif
 
 .if ${PORT_OPTIONS:MSRCACHE}
-NGINX_SRCACHE_VERSION=	0.29
+NGINX_SRCACHE_VERSION=	0.30
 GH_ACCOUNT+=	openresty:srcache
 GH_PROJECT+=	srcache-nginx-module:srcache
 GH_TAGNAME+=	v${NGINX_SRCACHE_VERSION}:srcache

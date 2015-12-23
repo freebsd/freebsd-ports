@@ -8,6 +8,8 @@ CATEGORIES=	comms
 MAINTAINER=	rpaulo@FreeBSD.org
 COMMENT=	FlightAware's Mode S decoder for RTLSDR devices
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr

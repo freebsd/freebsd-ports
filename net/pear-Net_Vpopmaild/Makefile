@@ -5,7 +5,7 @@ PORTNAME=	Net_Vpopmaild
 PORTVERSION=	0.3.2
 CATEGORIES=	net mail pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR Class for accessing Vpopmail's vpopmaild daemon
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \

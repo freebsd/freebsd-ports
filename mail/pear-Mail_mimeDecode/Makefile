@@ -5,7 +5,7 @@ PORTNAME=	Mail_mimeDecode
 PORTVERSION=	1.5.5
 CATEGORIES=	mail www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Provides a class to decode mime messages
 
 LICENSE=	BSD3CLAUSE

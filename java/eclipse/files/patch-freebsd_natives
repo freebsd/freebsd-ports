@@ -47,7 +47,7 @@
 @@ -15,10 +15,10 @@
      <artifactId>eclipse.platform.resources</artifactId>
      <groupId>eclipse.platform.resources</groupId>
-     <version>4.4.0-SNAPSHOT</version>
+     <version>4.5.1-SNAPSHOT</version>
 -    <relativePath>../../</relativePath>
 +    <relativePath>../../../../</relativePath>
    </parent>
@@ -133,7 +133,7 @@
 @@ -15,10 +15,10 @@
      <artifactId>eclipse.platform.resources</artifactId>
      <groupId>eclipse.platform.resources</groupId>
-     <version>4.4.0-SNAPSHOT</version>
+     <version>4.5.1-SNAPSHOT</version>
 -    <relativePath>../../</relativePath>
 +    <relativePath>../../../../</relativePath>
    </parent>
@@ -209,7 +209,7 @@
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.swt.gtk.linux.x86; singleton:=true
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86; singleton:=true
- Bundle-Version: 3.103.2.qualifier
+ Bundle-Version: 3.104.1.qualifier
  Bundle-ManifestVersion: 2
  Bundle-Localization: fragment
 @@ -30,7 +30,7 @@
@@ -230,7 +230,7 @@
    <groupId>org.eclipse.swt</groupId>
 -  <artifactId>org.eclipse.swt.gtk.linux.x86</artifactId>
 +  <artifactId>org.eclipse.swt.gtk.freebsd.x86</artifactId>
-   <version>3.103.2-SNAPSHOT</version>
+   <version>3.104.1-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>
@@ -252,11 +252,11 @@
                  <phase>process-resources</phase>
                  <configuration>
                    <target>
--                    <property name="machine_gtk3" value="1" />
-+                    <!-- property name="machine_gtk3" value="1" / -->
+-                    <property name="machine_gtk3" value="1"/>
++                    <!-- property name="machine_gtk3" value="1"/ -->
+                     <property name="targets" value="install" />
                      <ant antfile="build.xml" target="build_libraries"/>
                    </target>
-                 </configuration>
 --- ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/build.xml.orig	2014-04-15 21:26:16.000000000 -0500
 +++ ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/build.xml	2014-04-16 07:31:05.000000000 -0500
 @@ -1,10 +1,10 @@
@@ -268,11 +268,11 @@
 -	<property name="swt.os" value="linux" />
 +	<property name="swt.os" value="freebsd" />
  	<property name="swt.arch" value="x86" />
--	<property name="targets" value="make_mozilla make_xulrunner make_xulrunner24 make_xpcominit install"/>
+-	<property name="targets" value="make_mozilla make_xulrunner make_xpcominit install"/>
 +	<property name="targets" value="install"/>
  	
  	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
- 	<property name="version.suffix" value="3.103.0" />
+ 	<property name="version.suffix" value="3.104.0" />
 --- ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/.project.orig	2014-04-15 21:26:16.000000000 -0500
 +++ ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86/.project	2014-04-16 07:31:14.000000000 -0500
 @@ -1,6 +1,6 @@
@@ -291,7 +291,7 @@
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.swt.gtk.linux.x86_64; singleton:=true
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86_64; singleton:=true
- Bundle-Version: 3.103.2.qualifier
+ Bundle-Version: 3.104.1.qualifier
  Bundle-ManifestVersion: 2
  Bundle-Localization: fragment
 @@ -30,7 +30,7 @@
@@ -315,11 +315,11 @@
 -	<property name="swt.os" value="linux" />
 +	<property name="swt.os" value="freebsd" />
  	<property name="swt.arch" value="x86_64" />
--	<property name="targets" value="make_mozilla make_xulrunner make_xulrunner24 make_xpcominit install"/>
+-	<property name="targets" value="make_mozilla make_xulrunner make_xpcominit install"/>
 +	<property name="targets" value="install"/>
  	
  	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
- 	<property name="version.suffix" value="3.103.0" />
+ 	<property name="version.suffix" value="3.104.0" />
 --- ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86_64/pom.xml.orig	2014-04-15 21:26:16.000000000 -0500
 +++ ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86_64/pom.xml	2014-04-16 07:36:13.000000000 -0500
 @@ -20,12 +20,12 @@
@@ -328,7 +328,7 @@
    <groupId>org.eclipse.swt</groupId>
 -  <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
 +  <artifactId>org.eclipse.swt.gtk.freebsd.x86_64</artifactId>
-   <version>3.103.2-SNAPSHOT</version>
+   <version>3.104.1-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>
@@ -350,11 +350,11 @@
                  <phase>process-resources</phase>
                  <configuration>
                    <target>
--                    <property name="machine_gtk3" value="1" />
-+                    <!-- property name="machine_gtk3" value="1" / -->
+-                    <property name="machine_gtk3" value="1"/>
++                    <!-- property name="machine_gtk3" value="1"/ -->
+                     <property name="targets" value="install" />
                      <ant antfile="build.xml" target="build_libraries"/>
                    </target>
-                 </configuration>
 --- ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86_64/.project.orig	2014-04-15 21:26:16.000000000 -0500
 +++ ./eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.x86_64/.project	2014-04-16 07:36:05.000000000 -0500
 @@ -1,6 +1,6 @@
@@ -564,7 +564,7 @@
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.x86;singleton:=true
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86;singleton:=true
- Bundle-Version: 1.1.200.qualifier
+ Bundle-Version: 1.1.300.qualifier
  Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.4.0)"
 -Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=x86))
 -Bundle-Localization: launcher.gtk.linux.x86
@@ -579,7 +579,7 @@
    <groupId>org.eclipse.equinox</groupId>
 -  <artifactId>org.eclipse.equinox.launcher.gtk.linux.x86</artifactId>
 +  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.x86</artifactId>
-   <version>1.1.200-SNAPSHOT</version>
+   <version>1.1.300-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>
@@ -626,7 +626,7 @@
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.x86_64;singleton:=true
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86_64;singleton:=true
- Bundle-Version: 1.1.200.qualifier
+ Bundle-Version: 1.1.300.qualifier
  Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.4.0)"
 -Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=x86_64))
 -Bundle-Localization: launcher.gtk.linux.x86_64
@@ -641,7 +641,7 @@
    <groupId>org.eclipse.equinox</groupId>
 -  <artifactId>org.eclipse.equinox.launcher.gtk.linux.x86_64</artifactId>
 +  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.x86_64</artifactId>
-   <version>1.1.200-SNAPSHOT</version>
+   <version>1.1.300-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>

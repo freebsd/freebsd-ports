@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/modplug/Package.fpc
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/modplug.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/modplug/modplug.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/modplug/modplug.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/modplug/libpmodplug.a

@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox/
 DISTNAME=	pipelka-${PORTNAME}-xvdr-${PORTVERSION}-0-g${GITHASH}
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - XVDR server plugin
 
 LICENSE=	GPLv2 # or later

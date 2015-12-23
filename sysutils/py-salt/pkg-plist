@@ -319,6 +319,8 @@
 %%PYTHON_SITELIBDIR%%/salt/grains/mdadm.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/opts.py
 %%PYTHON_SITELIBDIR%%/salt/grains/opts.pyc
+%%PYTHON_SITELIBDIR%%/salt/grains/philips_hue.py
+%%PYTHON_SITELIBDIR%%/salt/grains/philips_hue.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/rest_sample.py
 %%PYTHON_SITELIBDIR%%/salt/grains/rest_sample.pyc
 %%PYTHON_SITELIBDIR%%/salt/key.py
@@ -737,6 +739,8 @@
 %%PYTHON_SITELIBDIR%%/salt/modules/parted.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/pecl.py
 %%PYTHON_SITELIBDIR%%/salt/modules/pecl.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/philips_hue.py
+%%PYTHON_SITELIBDIR%%/salt/modules/philips_hue.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/pillar.py
 %%PYTHON_SITELIBDIR%%/salt/modules/pillar.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/pip.py
@@ -1143,6 +1147,8 @@
 %%PYTHON_SITELIBDIR%%/salt/proxy/junos.pyc
 %%PYTHON_SITELIBDIR%%/salt/proxy/marathon.py
 %%PYTHON_SITELIBDIR%%/salt/proxy/marathon.pyc
+%%PYTHON_SITELIBDIR%%/salt/proxy/philips_hue.py
+%%PYTHON_SITELIBDIR%%/salt/proxy/philips_hue.pyc
 %%PYTHON_SITELIBDIR%%/salt/proxy/rest_sample.py
 %%PYTHON_SITELIBDIR%%/salt/proxy/rest_sample.pyc
 %%PYTHON_SITELIBDIR%%/salt/proxy/ssh_sample.py

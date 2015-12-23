@@ -1,0 +1,5 @@
+titus is a TLS/SSL proxy server (like stunnel or stud) that protects you
+from vulnerabilities in the TLS implementation such as Heartbleed (or
+worse).
+
+WWW: https://opsmate.com/titus/

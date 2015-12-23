@@ -1,4 +1,4 @@
---- configure.in.orig	2015-01-22 17:33:07 UTC
+--- configure.in.orig	2015-09-05 17:02:03 UTC
 +++ configure.in
 @@ -111,7 +111,7 @@ fi
  

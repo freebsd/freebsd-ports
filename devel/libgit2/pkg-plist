@@ -74,6 +74,6 @@ include/git2/tree.h
 include/git2/types.h
 include/git2/version.h
 lib/libgit2.so
-lib/libgit2.so.0.%%SHLIB_VER%%.1
+lib/libgit2.so.%%PORTVERSION%%
 lib/libgit2.so.%%SHLIB_VER%%
 libdata/pkgconfig/libgit2.pc

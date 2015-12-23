@@ -16,8 +16,6 @@ EXTRACT_ONLY=	fMSX${PORTVERSION:C/\.//}.zip
 MAINTAINER=	dk@farm.org
 COMMENT=	Portable MSX/MSX2/MSX2+ Emulator
 
-BROKEN=		unfetchable
-
 USE_XORG=	x11 xext
 USES=		dos2unix gmake zip
 DOS2UNIX_FILES=	EMULib/Unix/LibUnix.c EMULib/Unix/NetUnix.c EMULib/Rules.gcc \
@@ -41,7 +39,7 @@ BPP24_CFLAGS=	-DBPP24
 BPP32_CFLAGS=	-DBPP32
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/fmsx ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/fmsx ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/fMSX/Unix/fmsx ${STAGEDIR}${PREFIX}/libexec/fmsx
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/ROMs/*.FNT ${STAGEDIR}${DATADIR}

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File-Find-Rule
-PORTVERSION=	0.33
-PORTREVISION=	1
+PORTVERSION=	0.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +17,7 @@ RUN_DEPENDS=	p5-Number-Compare>=0:${PORTSDIR}/math/p5-Number-Compare \
 		p5-Text-Glob>=0.07:${PORTSDIR}/textproc/p5-Text-Glob
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

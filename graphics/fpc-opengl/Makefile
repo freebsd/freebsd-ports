@@ -1,7 +1,6 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	3
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-opengl
 

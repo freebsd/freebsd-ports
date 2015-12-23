@@ -3,7 +3,7 @@
 
 PORTNAME=	pktstat
 PORTVERSION=	1.8.5
-DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	freebsd@sosend.de
@@ -16,14 +16,11 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dleonard0
+GH_TAGNAME=	46935839b
 
 USES=		autoreconf
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
-
-post-patch:
-	@${REINPLACE_CMD} '/struct arphdr/d' ${WRKSRC}/ether.c
-	@${REINPLACE_CMD} -e 's/IPPORT_USERRESERVED/IPPORT_RESERVED/' ${WRKSRC}/tcp.c
 
 .include <bsd.port.mk>

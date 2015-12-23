@@ -3,4 +3,4 @@ servers, CCs, BCCs, HTML messages, and word wrap, and more. It can
 send email via sendmail, PHP mail(), or with SMTP. Methods are based
 on the popular AspEmail active server component. 
 
-WWW: http://sourceforge.net/projects/phpmailer
+WWW: https://github.com/PHPMailer/PHPMailer

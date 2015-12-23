@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sxweb
-PORTVERSION=	0.4.1
+PORTVERSION=	0.9.0
 CATEGORIES=	www
 MASTER_SITES=	http://cdn.skylable.com/source/
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tlf
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.hs-mittweida.de/tb/ \
 		LOCAL/db

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	5.5.44
+PORTVERSION=	5.5.46
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
@@ -16,6 +16,8 @@ PKGNAMESUFFIX?=	55-server
 
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT?=	Multithreaded SQL database (server)
+
+LICENSE=	GPLv2
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -58,10 +60,10 @@ BROKEN_armv6=		Does not compile on arm
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	55m
 
-CONFLICTS_INSTALL=	mysql*-server-* \
-			mariadb1[0-9][0-9]-server-* \
-			mariadb5[0-46-9]-server-* \
-			percona*-server-*
+CONFLICTS_INSTALL=	mariadb5[0-46-9]-server-* \
+			mariadb1*-server-* \
+			mysql[0-9]*-server-* \
+			percona[0-9]*-server-*
 
 USE_RC_SUBR=	mysql-server
 

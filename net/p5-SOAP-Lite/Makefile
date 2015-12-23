@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SOAP-Lite
-PORTVERSION=	1.14
+PORTVERSION=	1.19
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Client and server side SOAP implementation
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-IO-SessionData>=1.03:${PORTSDIR}/devel/p5-IO-SessionData \
@@ -27,7 +28,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-Test-XML>=0:${PORTSDIR}/devel/p5-Test-XML
 
-CONFLICTS=	p5-SOAP-Lite-0.60* p5-SOAP-[0-9]*
+CONFLICTS_INSTALL=	p5-SOAP-Lite-0.60* p5-SOAP-[0-9]*
 
 CONFIGURE_ARGS=	--noprompt
 INSTALL_TARGET=	pure_install

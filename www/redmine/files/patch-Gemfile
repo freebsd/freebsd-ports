@@ -1,21 +1,23 @@
---- Gemfile.orig	2015-05-25 16:10:44 UTC
+--- Gemfile.orig	2015-12-09 23:40:39 UTC
 +++ Gemfile
-@@ -1,24 +1,24 @@
+@@ -1,37 +1,29 @@
  source 'https://rubygems.org'
  
--gem "rails", "3.2.21"
+-gem "rails", "3.2.22"
 +gem "rails", "~> 3.2"
- gem "jquery-rails", "~> 3.1.1"
+ gem "rack-cache", "1.2" if RUBY_VERSION < "1.9.3"
+ gem "jquery-rails", "~> 3.1.4"
  gem "coderay", "~> 1.1.0"
  gem "fastercsv", "~> 1.5.0", :platforms => [:mri_18, :mingw_18, :jruby]
  gem "builder", ">= 3.0.4"
 -gem "request_store", "1.0.5"
 +gem "request_store", ">= 1.0.5"
  gem "mime-types"
- gem "rbpdf", "~> 1.18.5"
+-gem "rbpdf", "~> 1.18.7"
++gem "rbpdf", ">= 1.18.7"
  
 -gem "i18n", "~> 0.6.11"
-+gem "i18n", "~> 0.7.0"
++gem "i18n", ">= 0.6.11"
  
  # Optional gem for LDAP authentication
  group :ldap do
@@ -26,20 +28,23 @@
  # Optional gem for OpenID authentication
  group :openid do
 -  gem "ruby-openid", "~> 2.3.0", :require => "openid"
-+  gem "ruby-openid", "~> 2.7", :require => "openid"
++  gem "ruby-openid", ">= 2.3.0", :require => "openid"
    gem "rack-openid"
  end
  
-@@ -34,7 +34,7 @@ platforms :mri, :mingw do
+ platforms :mri, :mingw do
+-  # Optional gem for exporting the gantt to a PNG file, not supported with jruby
+-  group :rmagick do
+-    # RMagick 2 supports ruby 1.9
+-    # RMagick 1 would be fine for ruby 1.8 but Bundler does not support
+-    # different requirements for the same gem on different platforms
+-    gem "rmagick", (RUBY_VERSION < "1.9" ? "2.13.3" : "~> 2.13.4")
+-  end
+-
    # Optional Markdown support, not for JRuby
    group :markdown do
-     # TODO: upgrade to redcarpet 3.x when ruby1.8 support is dropped
--    gem "redcarpet", "~> 2.3.0"
-+    gem "redcarpet", "~> 3.0"
-   end
- end
- 
-@@ -81,23 +81,6 @@ else
+     gem "redcarpet", (RUBY_VERSION < "1.9" ? "~> 2.3.0" : "~> 3.3.2")
+@@ -82,23 +74,6 @@ else
    warn("Please configure your config/database.yml first")
  end
  
@@ -49,17 +54,25 @@
 -end
 -
 -group :test do
+-  gem "minitest"
+-  gem "test-unit", "~> 3.0"
 -  gem "shoulda", "~> 3.3.2"
 -  gem "shoulda-matchers", "1.4.1"
 -  gem "mocha", "~> 1.0.0", :require => 'mocha/api'
 -  if RUBY_VERSION >= '1.9.3'
 -    gem "capybara"
 -    gem "selenium-webdriver"
--    # building ffi 1.9.7 fails in Ubuntu: https://github.com/ffi/ffi/issues/414
--    gem "ffi", "1.9.6"
 -  end
 -end
 -
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    puts "Loading Gemfile.local ..." if $DEBUG # `ruby -d` or `bundle -v`
+@@ -111,3 +86,7 @@ Dir.glob File.expand_path("../plugins/*/
+   #TODO: switch to "eval_gemfile file" when bundler >= 1.2.0 will be required (rails 4)
+   instance_eval File.read(file), file
+ end
++
++Dir["#{File.dirname(__FILE__)}/bundler.d/*.rb"].each do |bundle|
++  self.instance_eval(Bundler.read_file(bundle))
++end

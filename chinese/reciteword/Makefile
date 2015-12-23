@@ -14,6 +14,9 @@ DISTFILES=	${DISTNAME}.tar.bz2 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Education software to help people to study English
 
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libespeak.so:${PORTSDIR}/audio/espeak
 
 GNU_CONFIGURE=	yes
@@ -22,7 +25,9 @@ USE_GNOME=	gtk20 intltool esound
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO readme.txt
+PORTDOCS=	AUTHORS ChangeLog INSTALL README readme.txt
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|' ${WRKSRC}/src/readword.cpp
@@ -30,6 +35,8 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKDIR} && ${COPYTREE_SHARE} "books dicts" ${STAGEDIR}${DATADIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

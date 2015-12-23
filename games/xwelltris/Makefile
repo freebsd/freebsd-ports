@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	3D Tetris-like game
 
+BROKEN=		unfetchable
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/xwelltris \
 		share/xwelltris/board2.gif \

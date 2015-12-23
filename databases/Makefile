@@ -64,7 +64,6 @@
     SUBDIR += emma
     SUBDIR += erlang-epgsql
     SUBDIR += erlang-eredis
-    SUBDIR += erlang-mysql
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
     SUBDIR += firebird25-client
@@ -117,7 +116,6 @@
     SUBDIR += isql-viewer
     SUBDIR += jakarta-commons-dbutils
     SUBDIR += jasperreports
-    SUBDIR += java-mybatis
     SUBDIR += jdb
     SUBDIR += jdbc-oracle10g
     SUBDIR += jdbc-oracle11g
@@ -215,6 +213,8 @@
     SUBDIR += mysql55-server
     SUBDIR += mysql56-client
     SUBDIR += mysql56-server
+    SUBDIR += mysql57-client
+    SUBDIR += mysql57-server
     SUBDIR += mysqlbackup
     SUBDIR += mysqlbigram
     SUBDIR += mysqldumper
@@ -235,7 +235,6 @@
     SUBDIR += ocaml-mysql
     SUBDIR += ocaml-sqlite3
     SUBDIR += openark-kit
-    SUBDIR += openbase-jdbc
     SUBDIR += opendbx
     SUBDIR += opentsdb
     SUBDIR += oracle7-client
@@ -531,7 +530,6 @@
     SUBDIR += pecl-chdb
     SUBDIR += pecl-dbase
     SUBDIR += pecl-drizzle
-    SUBDIR += pecl-handlersocket
     SUBDIR += pecl-leveldb
     SUBDIR += pecl-mdbtools
     SUBDIR += pecl-memcache
@@ -718,15 +716,12 @@
     SUBDIR += py-cql
     SUBDIR += py-dbf
     SUBDIR += py-dbutils
+    SUBDIR += py-django-transaction-hooks
     SUBDIR += py-fdb
     SUBDIR += py-firebirdsql
     SUBDIR += py-flask-sqlalchemy
     SUBDIR += py-forgetsql
     SUBDIR += py-gdbm
-    SUBDIR += py32-gdbm
-    SUBDIR += py33-gdbm
-    SUBDIR += py34-gdbm
-    SUBDIR += py35-gdbm
     SUBDIR += py-geoalchemy
     SUBDIR += py-geoalchemy2
     SUBDIR += py-hiredis
@@ -736,6 +731,7 @@
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb
     SUBDIR += py-memcached
+    SUBDIR += py-mycli
     SUBDIR += py-mysql-connector-python
     SUBDIR += py-mysql-connector-python2
     SUBDIR += py-mysql2pgsql
@@ -745,6 +741,7 @@
     SUBDIR += py-peewee
     SUBDIR += py-pg8000
     SUBDIR += py-pg_pqueue
+    SUBDIR += py-pgcli
     SUBDIR += py-pgspecial
     SUBDIR += py-pgxnclient
     SUBDIR += py-pickledb
@@ -762,6 +759,8 @@
     SUBDIR += py-python-rrdtool
     SUBDIR += py-python-sql
     SUBDIR += py-qt4-sql
+    SUBDIR += py-qt5-sql
+    SUBDIR += py-queries
     SUBDIR += py-redis
     SUBDIR += py-riak
     SUBDIR += py-rrdtool_lgpl
@@ -771,12 +770,7 @@
     SUBDIR += py-sqlalchemy-migrate
     SUBDIR += py-sqlalchemy06
     SUBDIR += py-sqlite3
-    SUBDIR += py32-sqlite3
-    SUBDIR += py33-sqlite3
-    SUBDIR += py34-sqlite3
-    SUBDIR += py35-sqlite3
     SUBDIR += py-sqlite3dbm
-    SUBDIR += py-sqlkit
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlparse
     SUBDIR += py-sqlrelay
@@ -786,6 +780,14 @@
     SUBDIR += py-tarantool
     SUBDIR += py-umemcache
     SUBDIR += py-whisper
+    SUBDIR += py32-gdbm
+    SUBDIR += py32-sqlite3
+    SUBDIR += py33-gdbm
+    SUBDIR += py33-sqlite3
+    SUBDIR += py34-gdbm
+    SUBDIR += py34-sqlite3
+    SUBDIR += py35-gdbm
+    SUBDIR += py35-sqlite3
     SUBDIR += pydbx
     SUBDIR += pymongo
     SUBDIR += pypy-gdbm
@@ -847,6 +849,7 @@
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-arel-helpers
     SUBDIR += rubygem-arel3
+    SUBDIR += rubygem-arel5
     SUBDIR += rubygem-arel6
     SUBDIR += rubygem-awesome_nested_set
     SUBDIR += rubygem-bdb1
@@ -919,7 +922,6 @@
     SUBDIR += sqlclient
     SUBDIR += sqldeveloper
     SUBDIR += sqlite-ext-miscfuncs
-    SUBDIR += sqlite-ext-mobigroup
     SUBDIR += sqlite-ext-pcre
     SUBDIR += sqlite2
     SUBDIR += sqlite3
@@ -931,7 +933,6 @@
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += squirrel-sql
-    SUBDIR += sybtcl
     SUBDIR += tablelog
     SUBDIR += tarantool
     SUBDIR += tarantool-c
@@ -947,7 +948,6 @@
     SUBDIR += twemproxy
     SUBDIR += unixODBC
     SUBDIR += useracc
-    SUBDIR += usogres
     SUBDIR += vfront
     SUBDIR += virtualpg
     SUBDIR += virtuoso

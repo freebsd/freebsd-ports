@@ -4,7 +4,7 @@
 PORTNAME=	openimageio
 PORTVERSION=	1.5.20
 DISTVERSIONPREFIX=	Release-
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -78,6 +78,10 @@ TEST_CMAKE_OFF=		-DOIIO_BUILD_TESTS:BOOL=OFF
 PLIST_SUB+=		LIBVERS=${PORTVERSION}
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_GCC=	yes
+.endif
 
 .if ${SLAVE_PORT} == no
 LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \

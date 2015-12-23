@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/pthreads.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/pthreads.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/pthreads.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/libppthreads.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/pthreads.ppu

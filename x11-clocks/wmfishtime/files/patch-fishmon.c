@@ -1,6 +1,39 @@
---- fishmon.c.orig	Sun May 27 05:53:09 2001
-+++ fishmon.c	Mon Jul  7 04:01:52 2003
-@@ -1018,26 +1018,28 @@
+--- fishmon.c.orig	2004-05-12 23:55:59 UTC
++++ fishmon.c
+@@ -152,6 +152,10 @@ static char month[12][4] = { "JAN", "FEB
+ 
+ int main(int argc, char **argv)
+ {
++#if (GTK_MAJOR_VERSION >= 2)
++    /* This is needed to proper dockapp work on >=GTK+=2.18 */
++    setenv("GDK_NATIVE_WINDOWS", "1", 0);
++#endif
+     int ch;
+     GdkEvent *event;
+ #ifdef PRO
+@@ -648,6 +652,9 @@ static void make_new_fishmon_dockapp(voi
+ 
+     /* make a copy for the iconwin - parameters are the same */
+     memcpy(&attri, &attr, sizeof(GdkWindowAttr));
++#if (GTK_MAJOR_VERSION >= 2)
++    attri.window_type = GTK_WINDOW_CHILD;
++#endif
+ 
+     sizehints.flags = USSize;
+     sizehints.width = 64;
+@@ -679,7 +686,11 @@ static void make_new_fishmon_dockapp(voi
+     wmhints.window_group = win;
+     wmhints.flags =
+ 	StateHint | IconWindowHint | IconPositionHint | WindowGroupHint;
++#if (GTK_MAJOR_VERSION >= 2)
++    gdk_window_show(bm.iconwin);
++#else
+     XSetWMHints(GDK_WINDOW_XDISPLAY(bm.win), win, &wmhints);
++#endif
+ 
+     bm.gc = gdk_gc_new(bm.win);
+ 
+@@ -1020,27 +1031,29 @@ static void parse_options(int argc, char
  {
      static int ch = 0;
      static struct option long_opts[] = {
@@ -31,12 +64,13 @@
 +	    case 'v':
  		do_version();
  		exit(0);
-+		break;
+ 		break;
 +	    case 'c':
 +		enable_check_mail = 1;
 +		break;
 +	    case 'b':
 +		broken_wm = 1;
- 		break;
++		break;
  	}
      }
+ }

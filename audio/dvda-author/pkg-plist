@@ -1,8 +1,0 @@
-bin/dvda-author
-share/applications/dvda-author.conf
-share/applications/dvda-author.desktop
-share/pixmaps/dvda-author.png
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/dvda-author-09.05.html
-man/man1/dvda-author.1.gz

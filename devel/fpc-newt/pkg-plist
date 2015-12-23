@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt/newt.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/newt.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt/newt.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt/libpnewt.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/newt/newt.ppu

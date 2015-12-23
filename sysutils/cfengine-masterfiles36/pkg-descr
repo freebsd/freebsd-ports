@@ -1,0 +1,5 @@
+Cfengine is an automated suite of programs for configuring and 
+maintaining Unix-like computers. Cfengine-masterfiles contains sample
+cfengine policies for installations and upgrades.
+
+WWW: http://www.cfengine.org/

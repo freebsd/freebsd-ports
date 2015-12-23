@@ -15,19 +15,19 @@ COMMENT=	Python bindings for the Qt4 toolkit, documentation
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 NO_BUILD=	yes
 
-USES=		python
+USES=		python pyqt:4
+USE_PYQT=	#
 
 DOCSDIR=	${PREFIX}/share/doc/py-qt4
 
 do-install:
 	cd ${WRKSRC} &&\
 		${MKDIR} ${STAGEDIR}${DOCSDIR} &&\
-		${INSTALL_DATA} GPL_EXCEPTION.TXT\
-				GPL_EXCEPTION_ADDENDUM.TXT NEWS\
-				LICENSE.GPL2 LICENSE.GPL3\
-				OPENSOURCE-NOTICE.TXT README THANKS\
+		${INSTALL_DATA} LICENSE \
+				NEWS \
+				README \
+				THANKS\
 			${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 
-.include "../../devel/py-qt4/bsd.pyqt.mk"
 .include <bsd.port.mk>

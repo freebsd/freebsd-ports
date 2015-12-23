@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	log4e
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	java
 MASTER_SITES=	http://log4e.jayefem.de/download/eclipse3/
 PKGNAMEPREFIX=	eclipse-

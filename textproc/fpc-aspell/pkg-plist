@@ -1,10 +1,7 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspell.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspelldyn.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/spellcheck.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/aspell.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspell.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspell.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspelldyn.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspelldyn.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/spellcheck.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/libpaspell.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/libpaspelldyn.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/libpspellcheck.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/spellcheck.ppu

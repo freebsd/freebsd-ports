@@ -1,6 +1,6 @@
---- compiler/utils/samplecfg	2011-12-10 07:59:24.000000000 -0500
-+++ compiler/utils/samplecfg	2012-02-23 15:47:13.000000000 -0500
-@@ -37,8 +37,8 @@
+--- compiler/utils/samplecfg.orig	2015-08-06 19:47:53 UTC
++++ compiler/utils/samplecfg
+@@ -38,8 +38,8 @@ sysfpdir=$sysfpdirbase2/text
  # Detect if we have write permission in sysdir.
  if [ -w "$sysdir" ] ; then
    echo Write permission in $sysdir.

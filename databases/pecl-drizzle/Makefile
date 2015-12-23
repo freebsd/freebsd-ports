@@ -8,7 +8,7 @@ MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP wrapper for the libdrizzle library
 
 LICENSE=	PHP301
@@ -18,7 +18,6 @@ LIB_DEPENDS=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=5 56
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

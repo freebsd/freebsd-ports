@@ -112,6 +112,7 @@ lib/sbcl/sb-posix/sb-posix.asd
 lib/sbcl/sb-queue/package.lisp
 lib/sbcl/sb-queue/sb-queue.asd
 lib/sbcl/sb-rotate-byte/arm-vm.lisp
+lib/sbcl/sb-rotate-byte/arm64-vm.lisp
 lib/sbcl/sb-rotate-byte/compiler.lisp
 lib/sbcl/sb-rotate-byte/package.lisp
 lib/sbcl/sb-rotate-byte/ppc-vm.lisp
@@ -149,12 +150,14 @@ man/man1/sbcl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/TLA
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/asdf.html
-%%PORTDOCS%%%%DOCSDIR%%/asdf/README
 %%PORTDOCS%%%%DOCSDIR%%/asdf/README.SBCL
+%%PORTDOCS%%%%DOCSDIR%%/asdf/README.md
 %%PORTDOCS%%%%DOCSDIR%%/sb-aclrepl/README
 %%PORTDOCS%%%%DOCSDIR%%/sb-bsd-sockets/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/sb-bsd-sockets/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/sb-gmp/README.md
 %%PORTDOCS%%%%DOCSDIR%%/sb-md5/README
+%%PORTDOCS%%%%DOCSDIR%%/sb-mpfr/README.md
 %%PORTDOCS%%%%DOCSDIR%%/sb-posix/README
 %%PORTDOCS%%%%DOCSDIR%%/sb-rotate-byte/README
 %%PORTDOCS%%%%DOCSDIR%%/sb-simple-streams/README

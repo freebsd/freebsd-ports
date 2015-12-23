@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	exrm
-PORTVERSION=	0.19.9
+DISTVERSION=	1.0.0-rc7
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
@@ -14,8 +14,7 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitwalker
 
-MIX_BUILD_DEPS=	devel/relx \
-		devel/elixir-conform
+MIX_BUILD_DEPS=	devel/relx
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 
 .include <bsd.port.mk>

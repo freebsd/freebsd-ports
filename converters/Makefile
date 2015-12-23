@@ -113,7 +113,6 @@
     SUBDIR += p5-Sereal-Encoder
     SUBDIR += p5-Storable-AMF
     SUBDIR += p5-String-Multibyte
-    SUBDIR += p5-String-SetUTF8
     SUBDIR += p5-Text-Bidi
     SUBDIR += p5-Text-Iconv
     SUBDIR += p5-Text-Unidecode
@@ -169,6 +168,7 @@
     SUBDIR += vda2fbd
     SUBDIR += wkhtmltopdf
     SUBDIR += xdeview
+    SUBDIR += xml2c
     SUBDIR += ytnef
     SUBDIR += zbase32
 

@@ -5,7 +5,7 @@ PORTNAME=	Pager
 PORTVERSION=	2.4.9
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR data paging class
 
 USES=	pear

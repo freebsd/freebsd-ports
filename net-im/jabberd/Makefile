@@ -137,8 +137,6 @@ post-patch:
 	router.xml s2s.xml sm.xml templates/roster.xml
 	@${MV} ${WRKSRC}/etc/${FILE}.dist.in ${WRKSRC}/etc/${FILE}.sample.in
 .endfor
-	@${REINPLACE_CMD} -e 's|%%PERL%%|${PERL}|g' \
-		${WRKSRC}/tools/jabberd.in
 #.if ${PORT_OPTIONS:MCYRUS}
 #	@${REINPLACE_CMD} -e '/^#error /d' \
 #		${WRKSRC}/sx/sasl_cyrus.c

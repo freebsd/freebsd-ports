@@ -1,9 +1,3 @@
-Since FreeBSD has new USB stack, freeglut normally doesn't build on FreeBSD 8
-(yet). To workaround this a small patch adds one include file and comments out
-content of one function (only leaves return NULL).
+Joystick support is untested and it is unknown if it works.
 
-This might cause side effects.  Joysticks do not work, and there might be ports
-that do not compile or applications that crash because of this.
-
-Do not hesitate to contact x11@FreeBSD.org if there are any issues and side
-effects because of this.
+Do not hesitate to contact x11@FreeBSD.org if this causes issues.

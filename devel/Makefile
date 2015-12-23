@@ -431,6 +431,7 @@
     SUBDIR += elixir-calendar
     SUBDIR += elixir-combine
     SUBDIR += elixir-conform
+    SUBDIR += elixir-conform_exrm
     SUBDIR += elixir-connection
     SUBDIR += elixir-coverex
     SUBDIR += elixir-csv
@@ -544,12 +545,13 @@
     SUBDIR += fpc-fcl-json
     SUBDIR += fpc-fcl-net
     SUBDIR += fpc-fcl-passrc
-    SUBDIR += fpc-fcl-process
     SUBDIR += fpc-fcl-registry
     SUBDIR += fpc-fcl-res
+    SUBDIR += fpc-fcl-sdo
+    SUBDIR += fpc-fcl-sound
+    SUBDIR += fpc-fcl-stl
     SUBDIR += fpc-fcl-web
     SUBDIR += fpc-fcl-xml
-    SUBDIR += fpc-fpmkunit
     SUBDIR += fpc-fppkg
     SUBDIR += fpc-fv
     SUBDIR += fpc-gdbint
@@ -1052,7 +1054,6 @@
     SUBDIR += jech-dht
     SUBDIR += jenkins
     SUBDIR += jenkins-lts
-    SUBDIR += jep
     SUBDIR += jgoodies-common
     SUBDIR += jiic
     SUBDIR += jline
@@ -1233,6 +1234,7 @@
     SUBDIR += libmatheval
     SUBDIR += libmba
     SUBDIR += libmcs
+    SUBDIR += libmill
     SUBDIR += libmimedir
     SUBDIR += libmonetra
     SUBDIR += libmowgli
@@ -1998,6 +2000,7 @@
     SUBDIR += p5-Data-SExpression
     SUBDIR += p5-Data-Section
     SUBDIR += p5-Data-Section-Simple
+    SUBDIR += p5-Data-Serializable
     SUBDIR += p5-Data-Serializer
     SUBDIR += p5-Data-Serializer-Sereal
     SUBDIR += p5-Data-ShowTable
@@ -2555,6 +2558,7 @@
     SUBDIR += p5-Log-Handler
     SUBDIR += p5-Log-Log4perl
     SUBDIR += p5-Log-Log4perl-Appender-RabbitMQ
+    SUBDIR += p5-Log-Log4perl-Appender-Socket-UNIX
     SUBDIR += p5-Log-Log4perl-Tiny
     SUBDIR += p5-Log-Message
     SUBDIR += p5-Log-Message-Simple
@@ -2902,9 +2906,11 @@
     SUBDIR += p5-PerlIO-locale
     SUBDIR += p5-PerlIO-utf8_strict
     SUBDIR += p5-PerlIO-via-MD5
+    SUBDIR += p5-PerlIO-via-Timeout
     SUBDIR += p5-PerlIO-via-dynamic
     SUBDIR += p5-PerlIO-via-symlink
     SUBDIR += p5-PerlX-Maybe
+    SUBDIR += p5-PerlX-Maybe-XS
     SUBDIR += p5-Pid-File-Flock
     SUBDIR += p5-Pipeline
     SUBDIR += p5-Pithub
@@ -3250,6 +3256,7 @@
     SUBDIR += p5-Test-Singleton
     SUBDIR += p5-Test-Spec
     SUBDIR += p5-Test-Spelling
+    SUBDIR += p5-Test-Stream
     SUBDIR += p5-Test-Strict
     SUBDIR += p5-Test-SubCalls
     SUBDIR += p5-Test-Synopsis
@@ -3899,6 +3906,7 @@
     SUBDIR += py-anonfunc
     SUBDIR += py-anyconfig
     SUBDIR += py-anyjson
+    SUBDIR += py-apache_conf_parser
     SUBDIR += py-apipkg
     SUBDIR += py-appdirs
     SUBDIR += py-application
@@ -3913,7 +3921,6 @@
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
     SUBDIR += py-astroid
-    SUBDIR += py-async
     SUBDIR += py-asyncio
     SUBDIR += py-atomicwrites
     SUBDIR += py-avro
@@ -4084,6 +4091,7 @@
     SUBDIR += py-jdcal
     SUBDIR += py-jedi
     SUBDIR += py-jellyfish
+    SUBDIR += py-jep
     SUBDIR += py-jira
     SUBDIR += py-jmespath
     SUBDIR += py-joblib
@@ -4120,7 +4128,7 @@
     SUBDIR += py-manuel
     SUBDIR += py-mccabe
     SUBDIR += py-meliae
-    SUBDIR += py-memoryprofiler
+    SUBDIR += py-memory_profiler
     SUBDIR += py-mercurialserver
     SUBDIR += py-mez_xml
     SUBDIR += py-mimeparse
@@ -4170,6 +4178,7 @@
     SUBDIR += py-phpserialize
     SUBDIR += py-pika
     SUBDIR += py-pip
+    SUBDIR += py-pkgconfig
     SUBDIR += py-plan
     SUBDIR += py-plex
     SUBDIR += py-pluggy
@@ -4205,6 +4214,7 @@
     SUBDIR += py-pygit2
     SUBDIR += py-pygithub
     SUBDIR += py-pygpx
+    SUBDIR += py-pyinstaller
     SUBDIR += py-pykde4
     SUBDIR += py-pykdeuic4
     SUBDIR += py-pyke
@@ -4252,6 +4262,14 @@
     SUBDIR += py-qt4-script
     SUBDIR += py-qt4-scripttools
     SUBDIR += py-qt4-test
+    SUBDIR += py-qt5
+    SUBDIR += py-qt5-core
+    SUBDIR += py-qt5-dbus
+    SUBDIR += py-qt5-dbussupport
+    SUBDIR += py-qt5-designer
+    SUBDIR += py-qt5-designerplugin
+    SUBDIR += py-qt5-qscintilla2
+    SUBDIR += py-qt5-test
     SUBDIR += py-rauth
     SUBDIR += py-raven
     SUBDIR += py-rednose
@@ -4363,6 +4381,7 @@
     SUBDIR += py-unittestplus
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
+    SUBDIR += py-urwidtrees
     SUBDIR += py-usb
     SUBDIR += py-user_agents
     SUBDIR += py-utils
@@ -4491,7 +4510,6 @@
     SUBDIR += pycount
     SUBDIR += pydbus-common
     SUBDIR += pygobject3-common
-    SUBDIR += pyinstaller
     SUBDIR += pylint
     SUBDIR += pymacs
     SUBDIR += pyobfuscate
@@ -4518,6 +4536,8 @@
     SUBDIR += qross
     SUBDIR += qscintilla2
     SUBDIR += qscintilla2-designerplugin
+    SUBDIR += qscintilla2-designerplugin-qt5
+    SUBDIR += qscintilla2-qt5
     SUBDIR += qt4
     SUBDIR += qt4-assistant
     SUBDIR += qt4-assistant-adp
@@ -4808,6 +4828,7 @@
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-guess_html_encoding
     SUBDIR += rubygem-gyoku
+    SUBDIR += rubygem-hashdiff
     SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-hashie2
@@ -4892,6 +4913,7 @@
     SUBDIR += rubygem-notiffany
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-nprogress-rails
+    SUBDIR += rubygem-octopress-hooks
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-omniauth_crowd
     SUBDIR += rubygem-omniauth_crowd-rails41
@@ -5042,7 +5064,7 @@
     SUBDIR += rubygem-tilt1
     SUBDIR += rubygem-timers
     SUBDIR += rubygem-tins
-    SUBDIR += rubygem-tins0
+    SUBDIR += rubygem-titlecase
     SUBDIR += rubygem-toml
     SUBDIR += rubygem-transaction-simple
     SUBDIR += rubygem-travis

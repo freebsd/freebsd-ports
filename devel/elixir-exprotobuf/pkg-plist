@@ -9,6 +9,7 @@ lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Field.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.OneOfField.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Parser.ParserError.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Parser.beam
+lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Serializable.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.Utils.beam
 lib/elixir/lib/exprotobuf/ebin/Elixir.Protobuf.beam
 lib/elixir/lib/exprotobuf/ebin/exprotobuf.app
@@ -23,4 +24,5 @@ lib/elixir/lib/exprotobuf/lib/exprotobuf/field.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/one_of_field.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/parser.ex
 lib/elixir/lib/exprotobuf/lib/exprotobuf/utils.ex
+lib/elixir/lib/exprotobuf/lib/serializable.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md

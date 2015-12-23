@@ -17,8 +17,6 @@ include/glm/detail/func_integer.hpp
 include/glm/detail/func_integer.inl
 include/glm/detail/func_matrix.hpp
 include/glm/detail/func_matrix.inl
-include/glm/detail/func_noise.hpp
-include/glm/detail/func_noise.inl
 include/glm/detail/func_packing.hpp
 include/glm/detail/func_packing.inl
 include/glm/detail/func_trigonometric.hpp
@@ -88,6 +86,8 @@ include/glm/geometric.hpp
 include/glm/glm.hpp
 include/glm/gtc/bitfield.hpp
 include/glm/gtc/bitfield.inl
+include/glm/gtc/color_space.hpp
+include/glm/gtc/color_space.inl
 include/glm/gtc/constants.hpp
 include/glm/gtc/constants.inl
 include/glm/gtc/epsilon.hpp
@@ -155,6 +155,8 @@ include/glm/gtx/gradient_paint.hpp
 include/glm/gtx/gradient_paint.inl
 include/glm/gtx/handed_coordinate_space.hpp
 include/glm/gtx/handed_coordinate_space.inl
+include/glm/gtx/hash.hpp
+include/glm/gtx/hash.inl
 include/glm/gtx/integer.hpp
 include/glm/gtx/integer.inl
 include/glm/gtx/intersect.hpp
@@ -179,8 +181,6 @@ include/glm/gtx/matrix_transform_2d.hpp
 include/glm/gtx/matrix_transform_2d.inl
 include/glm/gtx/mixed_product.hpp
 include/glm/gtx/mixed_product.inl
-include/glm/gtx/multiple.hpp
-include/glm/gtx/multiple.inl
 include/glm/gtx/norm.hpp
 include/glm/gtx/norm.inl
 include/glm/gtx/normal.hpp

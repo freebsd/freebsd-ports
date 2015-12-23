@@ -76,7 +76,6 @@
     SUBDIR += bareos-client-static
     SUBDIR += bareos-docs
     SUBDIR += bareos-server
-    SUBDIR += bashburn
     SUBDIR += batmon
     SUBDIR += battfink
     SUBDIR += battmond
@@ -106,7 +105,6 @@
     SUBDIR += btsixad
     SUBDIR += bulk_extractor
     SUBDIR += busybox
-    SUBDIR += busybox-unstable
     SUBDIR += byobu
     SUBDIR += cbsd
     SUBDIR += ccd2iso
@@ -124,6 +122,9 @@
     SUBDIR += cdrtools
     SUBDIR += cdrtools-devel
     SUBDIR += cfengine
+    SUBDIR += cfengine-masterfiles
+    SUBDIR += cfengine-masterfiles36
+    SUBDIR += cfengine-masterfiles37
     SUBDIR += cfengine22
     SUBDIR += cfengine32
     SUBDIR += cfengine33
@@ -796,6 +797,7 @@
     SUBDIR += py-psutil121
     SUBDIR += py-ptyprocess
     SUBDIR += py-pytsk
+    SUBDIR += py-pywatchman
     SUBDIR += py-queuelib
     SUBDIR += py-ranger
     SUBDIR += py-salt
@@ -818,6 +820,7 @@
     SUBDIR += racktables
     SUBDIR += radeontool
     SUBDIR += radmind
+    SUBDIR += rainbarf
     SUBDIR += raincoat
     SUBDIR += rcadm
     SUBDIR += rclean
@@ -830,6 +833,7 @@
     SUBDIR += recoverdm
     SUBDIR += reed
     SUBDIR += rej
+    SUBDIR += relaunchd
     SUBDIR += relaxconf
     SUBDIR += rename
     SUBDIR += renameutils
@@ -883,9 +887,9 @@
     SUBDIR += rubygem-hammer_cli_foreman_salt
     SUBDIR += rubygem-hammer_cli_foreman_ssh
     SUBDIR += rubygem-hiera
-    SUBDIR += rubygem-hieracles
     SUBDIR += rubygem-hiera-file
     SUBDIR += rubygem-hiera1
+    SUBDIR += rubygem-hieracles
     SUBDIR += rubygem-librarian-puppet
     SUBDIR += rubygem-log4r
     SUBDIR += rubygem-logify
@@ -1065,6 +1069,7 @@
     SUBDIR += upsdaemon
     SUBDIR += uptimed
     SUBDIR += usb_modeswitch
+    SUBDIR += usbhid-dump
     SUBDIR += usbhotkey
     SUBDIR += usbutils
     SUBDIR += uschedule

@@ -1,0 +1,39 @@
+# Created by: Choe, Cheng-Dae
+# $FreeBSD$
+
+PORTNAME=	jep
+PORTVERSION=	3.4.2
+CATEGORIES=	devel java python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Java Embedded Python
+
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
+MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
+USE_JAVA=	yes
+JAVA_VERSION=	1.6+
+USE_LDCONFIG=	yes
+USES=		python
+USE_PYTHON=	distutils
+PLIST_SUB+=	VERSION=${PORTVERSION}
+
+# Necessary, since the configure script does the LIBS and
+# LDFLAGS detection wrong
+CFLAGS+=	-I${JAVA_HOME}/include/freebsd
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=	NUMPY
+OPTIONS_DEFAULT=	NUMPY
+NUMPY_BUILD_DEPENDS=	${PYNUMPY}
+NUMPY_RUN_DEPENDS=	${PYNUMPY}
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/build/java/jep-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/jep.jar
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jep/jep.so
+
+.include <bsd.port.mk>

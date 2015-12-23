@@ -32,16 +32,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 MAKE_ARGS=	DVDREAD_INCLUDE=${LOCALBASE}/include \
 		DVDREAD_LIBPATH=${LOCALBASE}/lib \
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
-		CC="${CC}" CXX="${CXX}"
+		CC="${CC}" CXX="${CXX}" USE_EXT_BOOST=true
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000023
 BROKEN=		does not build on 10.x+
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/SConstruct
 
 post-install:
 	cd ${WRKSRC}/docs/man/man1 && ${INSTALL_MAN} bombono-dvd.1 \

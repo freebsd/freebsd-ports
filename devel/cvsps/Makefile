@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.cobite.com/cvsps/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create patchset information from CVS
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 CONFLICTS=	cvsps-devel-[0-9]*
 
 PLIST_FILES=	bin/${PORTNAME} \
@@ -17,12 +20,13 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

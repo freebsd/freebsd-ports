@@ -1,4 +1,0 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sndfile/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sndfile/sndfile.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sndfile/sndfile.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sndfile/libpsndfile.a

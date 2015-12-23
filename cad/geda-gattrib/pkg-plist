@@ -1,9 +1,0 @@
-bin/gattrib
-%%NLS%%lib/locale/de_DE/LC_MESSAGES/geda-gattrib.mo
-%%NLS%%lib/locale/es_ES/LC_MESSAGES/geda-gattrib.mo
-%%NLS%%lib/locale/nl_NL/LC_MESSAGES/geda-gattrib.mo
-share/applications/geda-gattrib.desktop
-%%DATADIR%%/gattrib-menus.xml
-%%DATADIR%%/system-gattribrc
-share/icons/hicolor/48x48/apps/geda-gattrib-48.png
-share/icons/hicolor/scalable/apps/geda-gattrib.svg

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpfr
-PORTVERSION=	3.1.2
-PORTREVISION=	2
+PORTVERSION=	3.1.3
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.mpfr.org/mpfr-current/
 DIST_SUBDIR=	${DISTNAME}

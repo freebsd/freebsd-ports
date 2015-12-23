@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# Author: Mark Felder <feld@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+# PROVIDE: sonarr
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable sonarr:
+# sonarr_enable="YES"
+
+. /etc/rc.subr
+
+name="sonarr"
+rcvar=sonarr_enable
+
+load_rc_config $name
+
+: ${sonarr_enable="NO"}
+
+pidfile=/var/run/sonarr.pid
+procname="%%PREFIX%%/bin/mono"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} -u sonarr %%PREFIX%%/bin/mono %%DATADIR%%/NzbDrone.exe --nobrowser --data=%%PREFIX%%/sonarr"
+
+run_rc_command "$1"

@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-${CLUSTER}
 .endif
 DISTNAME=	ganglia-${PORTVERSION}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Ganglia cluster monitor, monitoring daemon
 
 LICENSE=	BSD3CLAUSE

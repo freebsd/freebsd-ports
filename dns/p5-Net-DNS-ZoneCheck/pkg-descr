@@ -1,3 +1,0 @@
-This module validates DNS zones composed of Net::DNS::RR records.
-
-WWW: http://search.cpan.org/dist/Net-DNS-ZoneCheck/

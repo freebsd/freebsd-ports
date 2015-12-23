@@ -17,16 +17,11 @@ USES=		gmake motif libtool	# parallel builds are broken with bmake(1)
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi --with-motif
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		libxmi plotutils
-
-test: build
-	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} ${_MAKE_JOBS} \
-		${MAKE_ARGS} check
-
-regression-test: test
 
 .include <bsd.port.mk>

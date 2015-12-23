@@ -6,7 +6,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	devel www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION}beta
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR base class for XHTML page generation
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common

@@ -28,6 +28,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libfcrc.so.1 ${STAGEDIR}${PREFIX}/lib
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfcrc.so.1
 	${LN} -fs libfcrc.so.1 ${STAGEDIR}${PREFIX}/lib/libfcrc.so
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/index.html ${STAGEDIR}${DOCSDIR}
 

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/xineliboutput/files/xineliboutput/vdr-xineliboutput-${PORTVERSI
 		LOCAL/nox:snapshot
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - xineliboutput plugin/viewer
 
 LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine \

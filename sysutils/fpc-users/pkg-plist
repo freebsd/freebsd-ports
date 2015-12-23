@@ -1,10 +1,8 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/grp.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/pwd.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/users.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/users.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/grp.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/grp.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/pwd.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/pwd.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/users.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/libpgrp.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/libppwd.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/libpusers.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/users.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/users.rsj

@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bfd/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bfd/bfd.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/bfd.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bfd/bfd.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bfd/libpbfd.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bfd/bfd.ppu

@@ -35,6 +35,7 @@ PLIST_FILES=	bin/mhwaveedit \
 		share/pixmaps/mhwaveedit.xpm
 
 BROKEN_sparc64=	Does not compile on sparc64
+BROKEN_powerpc64=	Does not build on powerpc64
 
 OPTIONS_DEFINE=		DOUBLE_SAMPLES ESOUND JACK LADSPA OSS PORTAUDIO \
 			PULSEAUDIO SAMPLERATE SDL SNDFILE

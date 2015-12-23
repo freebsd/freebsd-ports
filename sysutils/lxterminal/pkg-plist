@@ -1,6 +1,7 @@
 bin/lxterminal
 man/man1/lxterminal.1.gz
 share/applications/lxterminal.desktop
+share/icons/hicolor/128x128/apps/lxterminal.png
 %%NLS%%share/locale/af/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/be/LC_MESSAGES/lxterminal.mo
@@ -13,6 +14,7 @@ share/applications/lxterminal.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/el/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/lxterminal.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/es/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/es_VE/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/et/LC_MESSAGES/lxterminal.mo
@@ -27,8 +29,10 @@ share/applications/lxterminal.desktop
 %%NLS%%share/locale/hr/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/id/LC_MESSAGES/lxterminal.mo
+%%NLS%%share/locale/is/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/it/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/lxterminal.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/lg/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/lxterminal.mo
@@ -37,6 +41,7 @@ share/applications/lxterminal.desktop
 %%NLS%%share/locale/nb/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/lxterminal.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/ps/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/lxterminal.mo
@@ -52,6 +57,7 @@ share/applications/lxterminal.desktop
 %%NLS%%share/locale/th/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/tt_RU/LC_MESSAGES/lxterminal.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/lxterminal.mo
@@ -60,4 +66,4 @@ share/applications/lxterminal.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lxterminal.mo
 %%DATADIR%%/lxterminal-preferences.ui
 %%DATADIR%%/lxterminal.conf
-share/pixmaps/lxterminal.png
+%%DATADIR%%/menu.ui

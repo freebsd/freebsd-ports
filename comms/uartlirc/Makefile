@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/nox \
 DISTNAME=	${PORTNAME}-preliminary-003
 EXTRACT_SUFX=	.shar
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for "homebrew" serial LIRC receivers
 
 USES=		kmod

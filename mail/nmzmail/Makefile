@@ -22,17 +22,17 @@ OPTIONS_DEFINE=	DOCS
 
 pre-extract:
 .if !defined(MAX_MAIL_DIRS)
-	@ ${ECHO_MSG} "You can define MAX_MAIL_DIRS=n."
-	@ ${ECHO_MSG} "nmzmail will only process this many mailboxes, the default is 32."
+	@${ECHO_MSG} "You can define MAX_MAIL_DIRS=n."
+	@${ECHO_MSG} "nmzmail will only process this many mailboxes, the default is 32."
 .endif
 
 post-extract:
 .if defined(MAX_MAIL_DIRS)
-	@ ${SED} -i.bak -e 's/MAX_MAIL_DIRS 32/MAX_MAIL_DIRS ${MAX_MAIL_DIRS}/' \
-	${WRKSRC}/src/nmzmail.c
+	@${REINPLACE_CMD} -e 's/MAX_MAIL_DIRS 32/MAX_MAIL_DIRS ${MAX_MAIL_DIRS}/' \
+		${WRKSRC}/src/nmzmail.c
 .endif
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

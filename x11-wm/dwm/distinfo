@@ -1,4 +1,2 @@
-SHA256 (dwm-6.0.tar.gz) = b2b9483de69259eeea56844899bb2385158d3e79a42d82b10c142099fc8eeb56
-SIZE (dwm-6.0.tar.gz) = 20810
-SHA256 (dwm-6.0-xft.diff) = badd329b1ec8d2d1b99816d3ca4eafa9fe784a93cfac29b96abca3821b441a4d
-SIZE (dwm-6.0-xft.diff) = 6731
+SHA256 (dwm-6.1.tar.gz) = c2f6c56167f0acdbe3dc37cca9c1a19260c040f2d4800e3529a21ad7cce275fe
+SIZE (dwm-6.1.tar.gz) = 25887

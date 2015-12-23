@@ -13,6 +13,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get public suffix of domain name via Mozilla Public Suffix List
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}

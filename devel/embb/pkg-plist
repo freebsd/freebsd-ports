@@ -119,7 +119,6 @@ include/embb/dataflow/internal/sink.h
 include/embb/dataflow/internal/sink_executor.h
 include/embb/dataflow/internal/source.h
 include/embb/dataflow/internal/source_executor.h
-include/embb/dataflow/internal/spinlock.h
 include/embb/dataflow/internal/switch.h
 include/embb/dataflow/internal/tuple.h
 include/embb/dataflow/internal/typelist.h

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Reply
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
@@ -12,6 +12,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight, extensible REPL for Perl
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Config-INI-Reader-Ordered>=0:${PORTSDIR}/devel/p5-Config-INI-Reader-Ordered \
 		p5-Devel-LexAlias>=0:${PORTSDIR}/devel/p5-Devel-LexAlias \
@@ -23,6 +24,7 @@ BUILD_DEPENDS=	p5-Config-INI-Reader-Ordered>=0:${PORTSDIR}/devel/p5-Config-INI-R
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

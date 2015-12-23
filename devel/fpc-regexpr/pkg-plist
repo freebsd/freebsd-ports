@@ -1,10 +1,8 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/oldregexpr.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/regexpr.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/oldregexpr.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regex.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/oldregexpr.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regex.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regexpr.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regex.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regex.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regexpr.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/libpoldregexpr.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/libpregex.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/libpregexpr.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/regexpr/regexpr.ppu

@@ -9,7 +9,8 @@ MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libuu.so:${PORTSDIR}/converters/uulib
 
@@ -42,6 +43,8 @@ post-configure:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uudeview
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uuenview
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/HISTORY ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/porting.notes ${STAGEDIR}${DOCSDIR}

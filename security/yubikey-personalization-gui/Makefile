@@ -2,6 +2,7 @@
 
 PORTNAME=	yubikey-personalization-gui
 PORTVERSION=	3.1.23
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	security
 
 MAINTAINER=	romain@FreeBSD.org
@@ -13,7 +14,6 @@ LIB_DEPENDS=	libykpers-1.so:${PORTSDIR}/security/ykpers
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yubico
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 USES=		pkgconfig qmake
 USE_QT4=	corelib gui moc_build rcc_build testlib_build uic_build

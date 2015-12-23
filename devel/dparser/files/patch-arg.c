@@ -1,6 +1,6 @@
---- arg.c.orig	Fri Nov  7 03:03:52 2003
-+++ arg.c	Mon Feb  2 18:35:43 2004
-@@ -40,7 +40,7 @@
+--- arg.c.orig	2013-01-23 02:14:58 UTC
++++ arg.c
+@@ -40,7 +40,7 @@ process_arg(ArgumentState *arg_state, in
            *(double *)desc[i].location = atof(arg);
            break;
          case 'L':

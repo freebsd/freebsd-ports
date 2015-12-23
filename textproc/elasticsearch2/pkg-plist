@@ -15,10 +15,10 @@ lib/elasticsearch/lib/elasticsearch-%%PORTVERSION%%.jar
 lib/elasticsearch/lib/groovy-all-2.4.4-indy.jar
 lib/elasticsearch/lib/guava-18.0.jar
 lib/elasticsearch/lib/hppc-0.7.1.jar
-lib/elasticsearch/lib/jackson-core-2.5.3.jar
-lib/elasticsearch/lib/jackson-dataformat-cbor-2.5.3.jar
-lib/elasticsearch/lib/jackson-dataformat-smile-2.5.3.jar
-lib/elasticsearch/lib/jackson-dataformat-yaml-2.5.3.jar
+lib/elasticsearch/lib/jackson-core-2.6.2.jar
+lib/elasticsearch/lib/jackson-dataformat-cbor-2.6.2.jar
+lib/elasticsearch/lib/jackson-dataformat-smile-2.6.2.jar
+lib/elasticsearch/lib/jackson-dataformat-yaml-2.6.2.jar
 lib/elasticsearch/lib/jna-4.1.0.jar
 lib/elasticsearch/lib/joda-convert-1.2.jar
 lib/elasticsearch/lib/joda-time-2.8.2.jar
@@ -38,10 +38,11 @@ lib/elasticsearch/lib/lucene-queries-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/lucene-queryparser-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/lucene-sandbox-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/lucene-spatial-%%LUCENEVER%%.jar
+lib/elasticsearch/lib/lucene-spatial3d-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/lucene-suggest-%%LUCENEVER%%.jar
 lib/elasticsearch/lib/netty-3.10.5.Final.jar
-lib/elasticsearch/lib/snakeyaml-1.12.jar
-lib/elasticsearch/lib/spatial4j-0.4.1.jar
+lib/elasticsearch/lib/snakeyaml-1.15.jar
+lib/elasticsearch/lib/spatial4j-0.5.jar
 lib/elasticsearch/lib/t-digest-3.0.jar
 lib/elasticsearch/bin/elasticsearch.in.sh
 lib/elasticsearch/bin/elasticsearch
@@ -54,3 +55,7 @@ lib/elasticsearch/bin/plugin
 @dir lib/elasticsearch/plugins
 @dir lib/elasticsearch
 @dir libexec/elasticsearch
+@dir(%%SEARCHUSER%%,%%SEARCHGROUP%%,750) %%ELASTIC_LOGDIR%%
+@dir(%%SEARCHUSER%%,%%SEARCHGROUP%%,750) %%ELASTIC_DBDIR%%
+@postunexec if [ -d %%ELASTIC_LOGDIR%% ]; then echo "You should remove %%ELASTIC_LOGDIR%% if you don't need it any more."; fi
+@postunexec if [ -d %%ELASTIC_DBDIR%% ]; then echo "You should remove %%ELASTIC_DBDIR%% if you don't need it any more."; fi

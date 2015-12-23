@@ -1,0 +1,4 @@
+Roadie tries to make sending HTML emails less painful by inlining
+stylesheets and rewriting relative URLs in mails.
+
+WWW: https://github.com/Mange/roadie

@@ -1,22 +1,17 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	3
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-db
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
-COMMENT=	Free Pascal Component Library
+COMMENT=	Free Pascal Database Library (FCL)
 
-USE_FPC=	dblib fcl-async fcl-base fcl-json fcl-xml hash ibase mysql odbc oracle paszlib postgres \
-		pthreads pxlib sqlite
+USE_FPC=	fcl-base fcl-xml rtl-objpas rtl-extra ibase mysql odbc \
+		oracle postgres sqlite dblib pxlib fcl-json
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR=	${WRKUNITDIR}
 
-OPT=		-Fu../base/units/* -Fu../../base/units/* -Fu../dbase -Fu../../dbase -Fu../ \
-		-Fu../sqldb -Fu../sqldb/interbase -Fu../sqldb/mysql -Fu../sqldb/odbc \
-		-Fu../sqldb/postgres -Fu../sqldb/oracle -Fu../sqldb/sqlite \
-		-Fu../datadict -Ur -CX
 .include "${MASTERDIR}/Makefile"

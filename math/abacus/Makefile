@@ -3,7 +3,7 @@
 
 PORTNAME=	abacus
 DISTVERSION=	3.2betaU1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	http://www.informatik.uni-koeln.de/abacus/
 
@@ -20,7 +20,7 @@ USES=		gmake perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 ALL_TARGET=	abacus
-MAKE_ARGS=	CCC="${CXX}" PERL="${PERL5}" STRIP="${STRIP_CMD} -x" \
+MAKE_ARGS=	CCC="${CXX}" PERL="${PERL}" STRIP="${STRIP_CMD} -x" \
 		ARCHIVE="${AR} ${ARFLAGS}" CCFLAG_DEBOPT="${CXXFLAGS}" \
 		OSI_INCLUDE="${LOCALBASE}/include/coin"
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	biber
 PORTVERSION=	2.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	print perl5
 PKGNAMEPREFIX=	latex-
@@ -50,6 +51,5 @@ USE_PERL5=	modbuild
 USE_TEX=	texmf
 USE_GITHUB=	yes
 GH_ACCOUNT=	plk
-GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.mk>

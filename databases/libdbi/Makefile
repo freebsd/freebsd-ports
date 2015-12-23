@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database Independent Abstraction Layer for C
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool pathfix
@@ -24,7 +24,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|-O20|${CFLAGS}|g" -e "s|-std=gnu99||g" \
 		 ${WRKSRC}/configure
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/driver-guide
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/programmers-guide
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}

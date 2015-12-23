@@ -5,7 +5,7 @@ PORTNAME=	Net_Socket
 PORTVERSION=	1.0.14
 CATEGORIES=	net www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR Network Socket Interface
 
 USES=	pear

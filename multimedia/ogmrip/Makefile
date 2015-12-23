@@ -3,14 +3,12 @@
 
 PORTNAME=	ogmrip
 PORTVERSION=	1.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

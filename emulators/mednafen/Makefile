@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/Mednafen/${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable multi-system emulator
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 

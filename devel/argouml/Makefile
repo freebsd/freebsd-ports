@@ -32,8 +32,6 @@ PORTDOCS=	manual-${PORTVERSION}.pdf quickguide-${PORTVERSION}.pdf
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 DESKTOP_ENTRIES=	"ArgoUML" \
 			"Create advanced UML diagrams" \
 			"${DATADIR}/icon/ArgoIcon128x128.png" \
@@ -51,10 +49,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/icon
 	${INSTALL_DATA} ${WRKSRC}/icon/*.png ${STAGEDIR}${DATADIR}/icon
 	${INSTALL_DATA} ${WRKSRC}/icon/*.svg ${STAGEDIR}${DATADIR}/icon
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/quickguide-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

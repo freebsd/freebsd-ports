@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dts/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dts/dts.o
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/dts.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dts/dts.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dts/libpdts.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dts/dts.o

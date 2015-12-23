@@ -1,16 +1,5 @@
 --- configure.orig	2015-11-01 10:46:19 UTC
 +++ configure
-@@ -23624,7 +23624,9 @@ fi
- 
- if test $ac_with_krb5_count -gt 1 ; then
-   as_fn_error $? "Please choose only one Kerberos library." "$LINENO" 5
--elif test $ac_with_krb5_count -eq 0 ; then
-+# XXX: On FreeBSD we don't need to involve krb5-config.
-+# This change makes GSSAPI_NONE work properly.
-+elif test $ac_with_krb5_count -eq 100 ; then
-   # find installed libs via pkg-config or krb5-config
-   if test -n "$PKG_CONFIG" && \
-     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gssapi-krb5 krb5\""; } >&5
 @@ -32038,7 +32040,7 @@ done
  ##
  

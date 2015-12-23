@@ -26,7 +26,11 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+do-install-DOCS-on:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "*html images" ${STAGEDIR}${DOCSDIR}/
+
+do-install-EXAMPLES-on:
 	cd ${WRKSRC}/contrib && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

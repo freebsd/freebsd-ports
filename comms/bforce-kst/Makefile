@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-0.22.8.kst7
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/../COPYING
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 
@@ -38,6 +41,8 @@ FIXME=		include/bforce.h include/util.h include/logger.h \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
+SUB_FILES=	pkg-message
+
 DOCS=		CHANGES CHANGES.kst COPYING README README.kst
 
 OPTIONS_DEFINE=	DOCS
@@ -51,8 +56,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,log(,bf_log(,g' ${WRKSRC}/${i}
 .endfor
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/fido/bforce
 	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.conf ${STAGEDIR}${PREFIX}/etc/fido/bforce/bforce.conf.sample
@@ -65,12 +68,13 @@ do-install:
 .for i in ${CONTRIBS}
 	${INSTALL_DATA} ${WRKSRC}/../contrib/${i} ${STAGEDIR}${DATADIR}/${i}
 .endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/../,} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bforce ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfindex ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfstat ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nlookup ${STAGEDIR}${PREFIX}/bin
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' -e 's|%%CONFIGDIR%%|etc/fido/bforce|' ${PKGMESSAGE}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/../,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

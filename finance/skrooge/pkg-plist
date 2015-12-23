@@ -25,6 +25,7 @@ lib/kde4/skrooge_import_backend.so
 lib/kde4/skrooge_import_csv.so
 lib/kde4/skrooge_import_gnc.so
 lib/kde4/skrooge_import_gsb.so
+lib/kde4/skrooge_import_iif.so
 lib/kde4/skrooge_import_json.so
 lib/kde4/skrooge_import_kmy.so
 lib/kde4/skrooge_import_mmb.so
@@ -57,6 +58,7 @@ lib/libskgbasemodeler.so.1
 lib/libskgbasemodeler.so.%%VERSION%%
 share/akonadi/agents/skroogeakonadiresource.desktop
 share/applications/kde4/skrooge.desktop
+share/appdata/skrooge.appdata.xml
 share/apps/skg/skgmainpanel.rc
 share/apps/skg_advice/skg_advice.rc
 share/apps/skg_bookmark/skg_bookmark.rc
@@ -143,6 +145,7 @@ share/apps/skrooge/images/logo/hellobank.png
 share/apps/skrooge/images/logo/home_credit_bank.png
 share/apps/skrooge/images/logo/hsbc.png
 share/apps/skrooge/images/logo/ing_direct__14559.png
+share/apps/skrooge/images/logo/ing_direct__30438.png
 share/apps/skrooge/images/logo/investec__580105.png
 share/apps/skrooge/images/logo/jeju_bank.png
 share/apps/skrooge/images/logo/kookmin_bank.png
@@ -304,6 +307,7 @@ share/doc/HTML/en/skrooge/incomes_expenses.png
 share/doc/HTML/en/skrooge/index.cache.bz2
 share/doc/HTML/en/skrooge/index.docbook
 share/doc/HTML/en/skrooge/line_graph.png
+share/doc/HTML/en/skrooge/messages.png
 share/doc/HTML/en/skrooge/menu_edit.png
 share/doc/HTML/en/skrooge/menu_file.png
 share/doc/HTML/en/skrooge/menu_go1.png
@@ -622,6 +626,7 @@ share/kde4/services/skrooge-import-backend.desktop
 share/kde4/services/skrooge-import-csv.desktop
 share/kde4/services/skrooge-import-gnc.desktop
 share/kde4/services/skrooge-import-gsb.desktop
+share/kde4/services/skrooge-import-iif.desktop
 share/kde4/services/skrooge-import-json.desktop
 share/kde4/services/skrooge-import-kmy.desktop
 share/kde4/services/skrooge-import-mmb.desktop
@@ -646,6 +651,7 @@ share/kde4/services/skrooge-plugin-tracker.desktop
 share/kde4/services/skrooge-plugin-unit.desktop
 share/kde4/servicetypes/skg-plugin.desktop
 share/kde4/servicetypes/skrooge-import-plugin.desktop
+share/locale/ast/LC_MESSAGES/skrooge.mo
 share/locale/bg/LC_MESSAGES/skrooge.mo
 share/locale/bs/LC_MESSAGES/skrooge.mo
 share/locale/ca/LC_MESSAGES/skrooge.mo

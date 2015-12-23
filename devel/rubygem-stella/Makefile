@@ -29,9 +29,10 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 USES=		shebangfix
-SHEBANG_FILES=	bin/stella \
-		support/sample_webapp/app.rb
 
 PLIST_FILES=	bin/stella
+
+SHEBANG_FILES=	bin/stella \
+		support/sample_webapp/app.rb
 
 .include <bsd.port.mk>

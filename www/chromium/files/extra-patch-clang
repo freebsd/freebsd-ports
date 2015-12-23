@@ -164,8 +164,8 @@
  
    char *      check_twosfx_morph(const char * word, int len, int optflags,
                   PfxEntry* ppfx, const FLAG needflag = FLAG_NULL);
---- third_party/sfntly/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-15 00:31:48.000000000 +0200
-+++ third_party/sfntly/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-18 22:05:41.000000000 +0200
+--- third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-15 00:31:48.000000000 +0200
++++ third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-18 22:05:41.000000000 +0200
 @@ -439,7 +439,7 @@
  }
  

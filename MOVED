@@ -484,7 +484,6 @@ x11/libxfce4mcs||2009-03-02|Got obsolete by Xfce 4.6 update
 sysutils/xfce4-mcs-manager||2009-03-02|Got obsolete by Xfce 4.6 update
 sysutils/xfce4-mcs-plugins||2009-03-02|Got obsolete by Xfce 4.6 update
 x11-themes/xfce4-icon-theme||2009-03-02|Got obsolete by Xfce 4.6 update
-comms/py-gammu||2009-03-04|Incorporated into comms/gammu
 x11-toolkits/scx||2009-03-06|Abandoned upstream
 x11-toolkits/xg||2009-03-06|Abandoned upstream
 audio/quelcom||2009-03-07|Abandoned upstream, requires obsolete version of GCC
@@ -7335,7 +7334,7 @@ x11-fm/pbi-thumbnailer||2014-12-27|Has expired: Broken for more than 6 months
 games/secretmaryochronicles||2014-12-27|Has expired: does not run, cegui 0.8 support still in development
 multimedia/ffmpeg24|multimedia/ffmpeg25|2014-12-27|ffmpeg upstream now points to 2.5.x series
 x11-wm/enlightenment-docs|x11-wm/e16-docs|2014-12-28|Renamed for better naming
-devel/py-checkmanifest|devel/py-check-manifest|2014-12-29|Use correct upstream PyPi name
+devel/py-checkmanifest|devel/py-check-manifest|2014-12-29|Use correct upstream PyPI name
 deskutils/xpad-current|deskutils/xpad|2014-12-30|deskutils/xpad-current is ready for prime time
 biology/ncbi-blast|biology/ncbi-blast+|2014-12-30|Clarify that this is blast+ and not the blast, allow for a future ncbi-blast port
 lang/perl5.14||2014-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl
@@ -7417,7 +7416,7 @@ japanese/xlockmore|x11/xlockmore|2015-02-02|Merged into x11/xlockmore
 deskutils/currtime|sysutils/currtime|2015-02-03|Move to sysutils category
 sysutils/pcbsd-utils-qt4|sysutils/pcbsd-utils-qt5|2015-02-03|Renamed to pcbsd-utils-qt5
 devel/ntopng-zmq||2015-02-05|Has expired: No longer required after net/ntopng 1.1
-devel/py-pylib|devel/py-py|2015-02-11|Rename to match upstream (PyPi) name
+devel/py-pylib|devel/py-py|2015-02-11|Rename to match upstream (PyPI) name
 sysutils/brebis|sysutils/backupchecker|2015-02-12|Renamed to backupchecker
 sysutils/rsyslog7-devel|sysutils/rsyslog7|2015-02-13|Has expired: EoL, use sysutils/rsyslog7
 sysutils/rsyslog8-devel|sysutils/rsyslog8|2015-02-13|Has expired: EoL, use sysutils/rsyslog8
@@ -7801,7 +7800,7 @@ french/trytond_account_fr||2015-08-05|No more supported upstream, use tryton 2.8
 german/trytond_account_de_skr03||2015-08-05|No more supported upstream, use tryton 2.8 instead
 www/trytond_google_maps||2015-08-05|No more supported upstream, use tryton 2.8 instead
 devel/appdata-tools|devel/appstream-glib|2015-08-05|Replaced by appstream-glib
-textproc/pystemmer|textproc/py-pystemmer|2015-08-06|Rename to match upstream (PyPi) name
+textproc/pystemmer|textproc/py-pystemmer|2015-08-06|Rename to match upstream (PyPI) name
 dns/knot|dns/knot1|2015-08-07|Rename to knot1 now knot 2.0 is out
 net/py-xmlrpclib||2015-08-07|Has expired: This is part of standard library since python 2.2
 net-p2p/py-kenosis||2015-08-07|Has expired: Fails to run with modern python
@@ -7946,3 +7945,121 @@ devel/ocaml-typeconv|devel/ocaml-type_conv|2015-11-20|Renamed to match upstream 
 www/py3-aiohttp|www/py-aiohttp|2015-11-21|Duplicate port
 textproc/kibana4|textproc/kibana41|2015-11-22|Distinguish from incompatible kibana42
 devel/qsvn||2015-11-23|Has expired: Development discontinued since 2009
+audio/pecl-id3||2015-11-28|Has expired: Broken for more than 6 months
+dns/geta||2015-11-28|Has expired: Broken for more than 6 months
+finance/openerp-web||2015-11-28|Has expired: Broken for more than 6 months
+devel/py-async||2015-11-28|Has expired: Further using of this module is not encouraged by upstream
+chinese/kon2||2015-11-28|Has expired: Depends on expiring chinese/cce
+games/linux-skulltag||2015-11-28|Has expired: Depends on expiring audio/linux-fmodapi
+archivers/wzip||2015-11-28|Has expired: Broken for more than 6 months
+databases/sybtcl||2015-11-28|Has expired: Broken for more than 6 months
+biology/povchem||2015-11-28|Has expired: Broken for more than 6 months
+audio/btc||2015-11-28|Has expired: Broken for more than 6 months
+astro/wmglobe||2015-11-28|Has expired: Broken for more than 6 months
+graphics/pyro||2015-11-28|Has expired: Broken for more than 6 months
+graphics/jpeg2ps||2015-11-28|Has expired: Broken for more than 6 months
+chinese/gugod-clean||2015-11-28|Has expired: Broken for more than 6 months
+comms/bforce||2015-11-28|Has expired: Broken for more than 6 months
+cad/geda-docs||2015-11-28|Has expired: Broken for more than 6 months
+chinese/cwtexttf||2015-11-28|Has expired: Broken for more than 6 months
+comms/zmtx-zmrx||2015-11-28|Has expired: Broken for more than 6 months
+astro/sky2000||2015-11-28|Has expired: Broken for more than 6 months
+deskutils/libopensync-plugin-file||2015-11-28|Has expired: Broken for more than 6 months
+databases/sqlite-ext-mobigroup||2015-11-28|Has expired: Broken for more than 6 months
+chinese/bg5ps||2015-11-28|Has expired: Broken for more than 6 months
+deskutils/x-tile||2015-11-28|Has expired: Broken for more than 6 months
+graphics/pure-gl||2015-11-28|Has expired: Broken for more than 6 months
+audio/dvda-author||2015-11-28|Has expired: Broken for more than 6 months
+chinese/oxim||2015-11-28|Has expired: Broken for more than 6 months
+editors/spe||2015-11-28|Has expired: Broken for more than 6 months
+audio/mpdscribble||2015-11-28|Has expired: Broken for more than 6 months
+cad/geda-symcheck||2015-11-28|Has expired: Broken for more than 6 months
+audio/linux-fmodapi||2015-11-28|Has expired: Broken for more than 6 months
+audio/pure-audio||2015-11-28|Has expired: Broken for more than 6 months
+editors/bpatch||2015-11-28|Has expired: Broken for more than 6 months
+benchmarks/geekbench||2015-11-28|Has expired: Broken for more than 6 months
+graphics/icoconvert||2015-11-28|Has expired: Broken for more than 6 months
+cad/geda-utils||2015-11-28|Has expired: Broken for more than 6 months
+deskutils/tomboy-plugin-wordcount||2015-11-28|Has expired: Broken for more than 6 months
+graphics/sketch||2015-11-28|Has expired: Broken for more than 6 months
+ftp/spegla||2015-11-28|Has expired: Broken for more than 6 months
+graphics/clutter-box2d||2015-11-28|Has expired: Broken for more than 6 months
+audio/scmpc||2015-11-28|Has expired: Broken for more than 6 months
+ftp/gnusget||2015-11-28|Has expired: Broken for more than 6 months
+comms/gpsk31||2015-11-28|Has expired: Broken for more than 6 months
+cad/geda-gschem||2015-11-28|Has expired: Broken for more than 6 months
+audio/ampache||2015-11-28|Has expired: Broken for more than 6 months
+cad/slffea||2015-11-28|Has expired: Broken for more than 6 months
+audio/cripple||2015-11-28|Has expired: Broken for more than 6 months
+cad/geda-gattrib||2015-11-28|Has expired: Broken for more than 6 months
+cad/findhier||2015-11-28|Has expired: Broken for more than 6 months
+biology/njplot||2015-11-28|Has expired: Broken for more than 6 months
+audio/wmmp||2015-11-28|Has expired: Broken for more than 6 months
+x11/avant-window-navigator||2015-11-28|Has expired: Broken for more than 6 months
+cad/geda-netlist||2015-11-28|Has expired: Broken for more than 6 months
+deskutils/libopensync-plugin-sunbird||2015-11-28|Has expired: Broken for more than 6 months
+biology/ortep3||2015-11-28|Has expired: Broken for more than 6 months
+astro/aa||2015-11-28|Has expired: Broken for more than 6 months
+french/belote||2015-11-28|Has expired: Broken for more than 6 months
+converters/p5-String-SetUTF8||2015-11-28|Has expired: Broken for more than 6 months
+cad/geda-examples||2015-11-28|Has expired: Broken for more than 6 months
+editors/yasnippet||2015-11-28|Has expired: Broken for more than 6 months
+audio/musica||2015-11-28|Has expired: Broken for more than 6 months
+graphics/rubyphoto||2015-11-28|Has expired: Broken for more than 6 months
+german/bsdpaste||2015-11-28|Has expired: Broken for more than 6 months
+audio/amrcoder||2015-11-28|Has expired: Broken for more than 6 months
+sysutils/bashburn||2015-11-28|Has expired: Broken for more than 6 months
+editors/e93||2015-11-28|Has expired: Broken for more than 6 months
+audio/tepsonic||2015-11-28|Has expired: Broken for more than 6 months
+astro/ephem||2015-11-28|Has expired: Broken for more than 6 months
+chinese/cce||2015-11-28|Has expired: Broken for more than 6 months
+graphics/qcread||2015-11-28|Has expired: Broken for more than 6 months
+databases/py-sqlkit||2015-11-28|Has expired: Broken for more than 6 months
+databases/usogres||2015-11-28|Has expired: Broken for more than 6 months
+cad/libgeda||2015-11-28|Has expired: Broken for more than 6 months
+chinese/p5-Lingua-ZH-BPMFConvert||2015-11-28|Has expired: Broken for more than 6 months
+french/alphabet_sounds_fr||2015-11-28|Has expired: Broken for more than 6 months
+deskutils/mrundlg||2015-11-28|Has expired: Broken for more than 6 months
+databases/erlang-mysql||2015-11-28|Has expired: Broken for more than 6 months
+graphics/linux-XnViewMP||2015-11-28|Has expired: Broken for more than 6 months
+deskutils/akamaru||2015-11-28|Has expired: Broken for more than 6 months
+dns/p5-Net-DNS-ZoneCheck||2015-11-28|Has expired: Broken for more than 6 months
+astro/dgpsip||2015-11-28|Has expired: Broken for more than 6 months
+databases/pecl-handlersocket||2015-11-28|Has expired: Broken for more than 6 months
+audio/cymbaline||2015-11-28|Has expired: Broken for more than 6 months
+french/dico||2015-11-28|Has expired: Broken for more than 6 months
+comms/qpage||2015-11-28|Has expired: Broken for more than 6 months
+audio/sonice||2015-11-28|Has expired: Broken for more than 6 months
+cad/geda-symbols||2015-11-28|Has expired: Broken for more than 6 months
+databases/java-mybatis||2015-11-28|Has expired: Broken for more than 6 months
+databases/openbase-jdbc||2015-11-28|Has expired: Broken for more than 6 months
+www/mediawiki119|www/mediawiki125|2015-11-28|Has expired: Please upgrade to mediawiki-1.25
+www/R-cran-Rpad||2015-11-28|Has expired: Unmaintained upstream
+archivers/py-liblzma|archivers/py-pyliblzma|2015-11-30|Rename to match upstream (PyPI) naming
+archivers/fpc-paszlib||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+audio/fpc-sndfile||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+devel/fpc-fcl-process||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+devel/fpc-fpmkunit||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+multimedia/fpc-matroska||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+security/fpc-hash||2015-12-05|Eliminated during FPC upgrade to 3.0.0
+www/jetty|www/jetty8|2015-12-06|Rename to prepare for jetty9
+devel/pyinstaller|devel/py-pyinstaller|2015-12-09|Add py- prefix to directory name
+math/why3-gpl|math/why3-spark|2015-12-10|Change why3 suffix (upstream request and for consistency)
+devel/py-memoryprofiler|devel/py-memory_profiler|2015-12-11|Rename to consistency with other Python ports
+print/py-cups|print/py-pycups|2015-12-11|Renamed to match upstream naming
+astro/py-metar|astro/py-pymetar|2015-12-11|Renamed to match upstream naming
+devel/jep|devel/py-jep|2015-12-11|Renamed to match upstream naming
+ftp/py-curl|ftp/py-pycurl|2015-12-13|Renamed to match upstream naming
+www/py-django-pipeline12||2015-12-15|Has expired: Django 1.4 extended support ended on 2015-10-01
+www/py-django14||2015-12-15|Has expired: Django 1.4 extended support ended on 2015-10-01
+net/py-pysphere|net/py-pyvmomi|2015-12-15|Has expired: No longer maintained, please use net/py-pyvmomi by VMware
+ftp/ftpcube||2015-12-15|Has expired: No releases for 8+ years, no supporting newer wxWidget
+astro/libroadnav||2015-12-15|Has expired: No releases for 8+ years, no supporting newer wxWidget
+astro/roadnav||2015-12-15|Has expired: No releases for 8+ years, no supporting newer wxWidget
+www/joomla15||2015-12-18|Has expired: Joomla 1.5.x reached its End of Life in September 2012. Please update to a current version
+www/joomla25||2015-12-18|Has expired: Joomla 2.5.x reached its End of Life in December 2014. Please update to a current version
+devel/rubygem-tins0||2015-12-18|Has expired: not used by other ports anymore
+sysutils/busybox-unstable|sysutils/busybox|2015-12-20|Stable version is more current
+editors/calligra-l10n-ia||2015-12-21|Not shipped by Calligra 2.9.10
+editors/calligra-l10n-nds||2015-12-21|Not shipped by Calligra 2.9.10
+editors/calligra-l10n-sl||2015-12-21|Not shipped by Calligra 2.9.10

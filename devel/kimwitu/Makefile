@@ -10,6 +10,8 @@ DISTNAME=	kc-distr.V${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for processing trees (i.e. terms)
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=
 MAKE_JOBS_UNSAFE=	yes

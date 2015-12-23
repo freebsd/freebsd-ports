@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Mojolicious/Plugin/Mail.pm
+%%PERL5_MAN3%%/Mojolicious::Plugin::Mail.3.gz
+%%DOCSDIR%%/Changes
+%%EXAMPLESDIR%%/test.pl

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	love
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTVERSION=	0.9.2
 CATEGORIES=	devel games
 MASTER_SITES=	https://bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -23,15 +22,12 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=           gmake openal libtool pkgconfig compiler:c++11-lib \
-		desktop-file-utils shared-mime-info
+		desktop-file-utils shared-mime-info localbase
 USE_SDL=	sdl2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/love-${PORTVERSION}
 INSTALL_TARGET=	install-strip
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 
@@ -52,7 +48,7 @@ post-patch-LUAJIT-off:
 		${WRKSRC}/configure
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in changes.txt readme.md
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor

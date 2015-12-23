@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	python-nexus
-PORTVERSION=	0.87
-PORTREVISION=	1
+PORTVERSION=	1.32
 CATEGORIES=	biology python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generic nexus file format reader for python
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

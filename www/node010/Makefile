@@ -12,6 +12,7 @@ MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 JavaScript for client and server
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler execinfo gmake python:2
 HAS_CONFIGURE=	yes

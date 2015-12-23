@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gd
-PORTVERSION=	0.58
-PORTREVISION=	2
+PORTVERSION=	0.59
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 USES=		python
 USE_PYTHON=	distutils autoplist pythonprefix
-PYSETUP=	Setup.py
+PYSETUP=	setup.py
 
 post-patch:
 	@${REINPLACE_CMD} -e \

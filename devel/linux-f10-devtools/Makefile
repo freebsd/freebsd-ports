@@ -1,4 +1,4 @@
-# Created by: Jason Bacon <jwbacon@tds.net>
+# Created by: Jason Bacon <bacon4000@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	devtools
@@ -18,7 +18,7 @@ DISTFILES=	binutils-2.18.50.0.9-8.fc10.${LINUX_RPM_ARCH}.rpm:bin \
 		gcc-c++-4.3.2-7.${LINUX_RPM_ARCH}.rpm:bin \
 		gcc-gfortran-4.3.2-7.${LINUX_RPM_ARCH}.rpm:bin
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Linux compilers and base libraries
 
 .if defined(PACKAGE_BUILDING)

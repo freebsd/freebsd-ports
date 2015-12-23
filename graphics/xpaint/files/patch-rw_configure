@@ -1,0 +1,11 @@
+--- rw/configure.orig	2015-12-03 20:56:32.251228000 +0100
++++ rw/configure	2015-12-03 20:56:55.905547000 +0100
+@@ -11691,7 +11691,7 @@
+ $as_echo_n "checking location of freetype2 headers... " >&6; }
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+-#include <freetype2/config/ftheader.h>
++#include <freetype2/freetype/config/ftheader.h>
+ int
+ main ()
+ {

@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	simutrans
-DISTVERSION=	120-0-1
-PORTREVISION=	2
+DISTVERSION=	120-1-1
 CATEGORIES=	games
 MASTER_SITES=	SF/simutrans/simutrans/${DISTVERSION} \
 		SF/simutrans/pak64/${PAK64_SUBDIR}:pak64 \
 		SF/simutrans/pak128/pak128%20for%20${PAK128_SUBDIR}:pak128
 DISTFILES=	simutrans-src-${DISTVERSION}.zip \
-		simulinux-x64-${DISTVERSION}.zip
+		simulinux-x86-${DISTVERSION}.zip
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Transport Simulator
@@ -16,11 +15,11 @@ COMMENT=	Transport Simulator
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/simutrans/license.txt
 
-PAK64_DISTVERSION=	${DISTVERSION}
+PAK64_DISTVERSION=	120-0-1
 PAK64_SUBDIR=		120-0
 PAK128_DISTVERSION=	2.5.3--ST120
 PAK128_SUBDIR=		ST%20120%20%282.5.3%2C%20minor%20changes%29
-SIMUTRANS_REVISION=	7373
+SIMUTRANS_REVISION=	7640
 
 OPTIONS_DEFINE= 	DOCS
 OPTIONS_MULTI=		PAK
@@ -38,7 +37,8 @@ MAKE_ARGS=	BACKEND=mixer_sdl \
 		FLAGS="-DUSE_C -DREVISION=${SIMUTRANS_REVISION}" \
 		VERBOSE=1
 NO_WRKSUBDIR=	yes
-USES=		gmake zip
+USES=		dos2unix gmake zip
+DOS2UNIX_FILES=	gui/loadsave_frame.h
 USE_SDL=	sdl mixer
 
 DESKTOP_ENTRIES=Simutrans "" "" simutrans "Game;Simulation;" false

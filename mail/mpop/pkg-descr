@@ -1,7 +1,14 @@
-mpop is a small, fast, and portable POP3 client. Its features include
-header-based email filtering (filter junk mail before downloading it),
-delivery to mbox files, maildir folders, or a mail delivery agent,
-a very fast POP3 implementation, many authentication methods,
-and good support for TLS/SSL.
+mpop is a POP3 client: it retrieves mail from POP3 mailboxes.
+
+Features include:
+
+  * Support for multiple accounts
+  * Header based mail filtering: filter junk mail before downloading it
+  * Delivery to mbox files, maildir folders, or a mail delivery agent (MDA)
+  * TLS/SSL support including client certificates
+  * Many authentication methods
+  * Support for Internationalized Domain Names (IDN)
+  * Fast POP3 implementation using command pipelining
+  * SOCKS proxy support
 
 WWW: http://mpop.sourceforge.net

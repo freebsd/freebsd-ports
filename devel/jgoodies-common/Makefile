@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 BROKEN=		does not build: "Test com.jgoodies.common.base.ObjectsTest failed"
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-12-30
 
 USES=		dos2unix zip
 USE_JAVA=	yes

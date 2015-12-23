@@ -327,6 +327,7 @@
     SUBDIR += p5-Geo-Coder-Ovi
     SUBDIR += p5-Geo-Coder-PlaceFinder
     SUBDIR += p5-Geo-Coder-TomTom
+    SUBDIR += p5-Geo-GeoNames
     SUBDIR += p5-Geo-Postcodes
     SUBDIR += p5-Geo-Postcodes-DK
     SUBDIR += p5-Geo-Postcodes-NO
@@ -375,10 +376,13 @@
     SUBDIR += py-YABT
     SUBDIR += py-osd
     SUBDIR += py-pexpect
+    SUBDIR += py-powerline-status
     SUBDIR += py-progressbar
     SUBDIR += py-progressbar231
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
+    SUBDIR += py-qt5-demo
+    SUBDIR += py-qt5-doc
     SUBDIR += py-yolk
     SUBDIR += pylize
     SUBDIR += pypanda
@@ -402,6 +406,7 @@
     SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
+    SUBDIR += rubygem-mime-types-data
     SUBDIR += rubygem-mime-types1
     SUBDIR += rubygem-mimemagic
     SUBDIR += rubygem-rabbit

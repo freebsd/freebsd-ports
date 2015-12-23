@@ -10,17 +10,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows to access serial ports over IP
 
 LICENSE=	GPLv2 # (or later)
-
-OPTIONS_DEFINE=	DOCS
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_RC_SUBR=	${PORTNAME}
 
 USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
+PORTDOCS=	AUTHORS ChangeLog NEWS README
 PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample \
 		man/man8/${PORTNAME}.8.gz
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 .for i in ${PORTNAME}.c ${PORTNAME}.8
@@ -33,12 +34,14 @@ post-patch:
 .endfor
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
-		${STAGEDIR}${PREFIX}/sbin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${PORTNAME}.8 \
-		${STAGEDIR}${MAN8PREFIX}/man/man8)
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTNAME}.conf \
-		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample)
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 \
+		${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf \
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})

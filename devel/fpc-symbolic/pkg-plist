@@ -1,4 +1,6 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/symbolic/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/symbolic/symbolic.ppu
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/symbolic/optimization.txt
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/symbolic/symbolic.txt
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/symbolic.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/symbolic/symbolic.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/symbolic/libpsymbolic.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/symbolic/symbolic.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/symbolic/symbolic.rsj

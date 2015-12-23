@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - development version
 
 LICENSE=	GPLv2 # or later

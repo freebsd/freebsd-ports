@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.sourcefiles.org/Games/Arcade/Block_Based/Tetris/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atris: Alizarin Tetris
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

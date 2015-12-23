@@ -33,6 +33,8 @@ MAKEFILE=	GNUmakefile
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+MAKE_JOBS_UNSAFE=	yes
+
 pre-configure:
 	cd ${WRKSRC}; ${SH} autogen.sh
 

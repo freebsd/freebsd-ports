@@ -2,18 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	igraph
-DISTVERSION=	0.7.1
-PORTREVISION=	1
+DISTVERSION=	1.0.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	R extension package for igraph
+COMMENT=	Network Analysis and Visualization
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+RUN_DEPENDS=	R-cran-magrittr>0:${PORTSDIR}/devel/R-cran-magrittr \
+		R-cran-NMF>0:${PORTSDIR}/math/R-cran-NMF \
+		R-cran-irlba>0:${PORTSDIR}/math/R-cran-irlba
+
 USES=	cran:auto-plist
+USE_GNOME=	libxml2
 
 .include <bsd.port.pre.mk>
 

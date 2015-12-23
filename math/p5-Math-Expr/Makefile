@@ -13,7 +13,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for parsing mathematical expressions into a tree structure
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

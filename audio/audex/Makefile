@@ -10,6 +10,8 @@ COMMENT=	KDE4 audio CD ripping utility
 
 LICENSE=	GPLv3
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia
 
 USES=		tar:xz cmake

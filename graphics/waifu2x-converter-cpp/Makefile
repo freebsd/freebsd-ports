@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	waifu2x-converter-cpp
-DISTVERSION=	1.0.0-377
-DISTVERSIONSUFFIX=	-g007e7b1
+DISTVERSION=	1.0.0-400
+DISTVERSIONSUFFIX=	-g6dbdc24
 CATEGORIES=	graphics
 MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/:manpage
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -52,11 +52,10 @@ post-extract:
 		>${WRKDIR}/${PORTNAME}.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-O2,,; /SYMBOL/s,-s,,' \
+	@${REINPLACE_CMD} -e '/Darwin/,/FLAGS_RELEASE/d' \
+		-e 's,".*\(-m[^[:space:]]*\).*","\1",' \
+		-e 's/$${TS}/${DISTVERSIONFULL}/' \
 		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} \
-		-e '/CmdLine/s,[^"]*"),${DISTVERSIONFULL}"),' \
-		${WRKSRC}/src/main.cpp
 # Undo AUR rename and use version from |git describe --tags|
 	@${REINPLACE_CMD} -e '/AUTHORS/,$$! { /\.B mai/! \
 			s,${PORTNAME:C/-.*//},${PORTNAME},; }' \

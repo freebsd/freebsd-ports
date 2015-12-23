@@ -1,0 +1,8 @@
+bin/psl
+bin/psl2c
+include/libpsl.h
+lib/libpsl.a
+lib/libpsl.so
+lib/libpsl.so.0
+lib/libpsl.so.0.4.0
+libdata/pkgconfig/libpsl.pc

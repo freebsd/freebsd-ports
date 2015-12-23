@@ -3,7 +3,7 @@
 
 PORTNAME=	jspacker
 DISTVERSION=	1.00b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
 		http://deanedwards.googlecode.com/svn/trunk/download/
@@ -25,7 +25,7 @@ perl_OLD_CMD=	perl
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	JSPACKER=${JSPACKER} \
-		PERL5=${PERL5}
+		PERL5=${PERL}
 
 OPTIONS_DEFINE=	EXAMPLES
 

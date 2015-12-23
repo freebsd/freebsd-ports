@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.7.0
-PORTREVISION=	1
+PORTVERSION=	3.7.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
-DISTNAME=	cfengine-3.7.0-2
-WRKSRC=		${WRKDIR}/cfengine-3.7.0
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
+#		skreuzer@FreeBSD.org is also committer for this port
 COMMENT=	Systems administration tool for networks
 
 LICENSE=	GPLv3

@@ -7,7 +7,6 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	audio
 PKGNAMEPREFIX=	mythplugin-
-DISTNAME=	mythtv-${PORTVERSION}
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Music playing plugin for MythTV

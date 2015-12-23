@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	soundkonverter
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.90
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio kde
-MASTER_SITES=	GH LOCAL/dbn/${PORTNAME}
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Frontend to various audio converters (transcoder)
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 		libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia
@@ -100,7 +99,7 @@ SPEEX_RUN_DEPENDS=	speexenc:${PORTSDIR}/audio/speex
 TIMIDITY_DESC=		MIDI audio decoder
 TIMIDITY_RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
-TTA_RUN_DEPENDS=	ttaenv:${PORTSDIR}/audio/tta
+TTA_RUN_DEPENDS=	ttaenc:${PORTSDIR}/audio/tta
 
 TWOLAME_RUN_DEPENDS=	twolame:${PORTSDIR}/audio/twolame
 

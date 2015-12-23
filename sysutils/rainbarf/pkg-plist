@@ -1,0 +1,4 @@
+bin/rainbarf
+%%SITE_PERL%%/App/rainbarf.pm
+%%PERL5_MAN1%%/rainbarf.1.gz
+%%PERL5_MAN3%%/App::rainbarf.3.gz

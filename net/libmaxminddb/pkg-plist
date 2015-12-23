@@ -1,5 +1,4 @@
 bin/mmdblookup
-include/maxminddb-compat-util.h
 include/maxminddb.h
 include/maxminddb_config.h
 lib/libmaxminddb.a

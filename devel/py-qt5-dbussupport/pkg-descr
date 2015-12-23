@@ -1,0 +1,4 @@
+PyQt5 is a set of Python bindings for Digia's Qt5 application framework.
+This package provides Qt event loop support for dbus-python.
+
+WWW: http://www.riverbankcomputing.co.uk/software/pyqt/

@@ -4,6 +4,7 @@
 PORTNAME=	maxminddb
 PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net python geography
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,16 +14,22 @@ COMMENT=	Python module for reading MaxMind DB file
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddr>0:${PORTSDIR}/devel/py-ipaddr
 LIB_DEPENDS=	libmaxminddb.so:${PORTSDIR}/net/libmaxminddb
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	MaxMind-DB-Reader-python
 
-USES=		python
+USES=		localbase python
 USE_PYTHON=	autoplist distutils
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PYTHON_REL} < 3300
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipaddr>=0:${PORTSDIR}/devel/py-ipaddr
+.endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/maxminddb/extension.so
+
+.include <bsd.port.post.mk>

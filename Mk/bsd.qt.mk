@@ -208,16 +208,6 @@ PLIST_SUB+=		SHORTVER=${_QT_VERSION:R} \
 				FULLVER=${_QT_VERSION:C/-.*//}
 .endif # defined(QT_DIST)
 
-.if !defined(QT_NONSTANDARD)
-CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}" \
-				MOC="${MOC}" RCC="${RCC}" UIC="${UIC}" \
-				QMAKESPEC="${QMAKESPEC}"
-CONFIGURE_ARGS+=--with-qt-includes=${QT_INCDIR} \
-				--with-qt-libraries=${QT_LIBDIR} \
-				--with-extra-includes=${LOCALBASE}/include \
-				--with-extra-libs=${LOCALBASE}/lib
-.endif # !defined(QT_NONSTANDARD)
-
 .if ${_QT_VERSION:M4*}
 QT_BINDIR_REL?=	bin
 QT_LIBDIR_REL?=	lib/${_QT_RELNAME}
@@ -286,6 +276,16 @@ PLIST_SUB+=		QT_${dir}DIR="${QT_${dir}DIR_REL}"
 .if defined(_POSTMKINCLUDED) && !defined(Qt_Post_Include)
 
 Qt_Post_Include=	bsd.qt.mk
+
+.if !defined(QT_NONSTANDARD)
+CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}" \
+				MOC="${MOC}" RCC="${RCC}" UIC="${UIC}" \
+				QMAKESPEC="${QMAKESPEC}"
+CONFIGURE_ARGS+=--with-qt-includes=${QT_INCDIR} \
+				--with-qt-libraries=${QT_LIBDIR} \
+				--with-extra-includes=${LOCALBASE}/include \
+				--with-extra-libs=${LOCALBASE}/lib
+.endif # !defined(QT_NONSTANDARD)
 
 _USE_QT_ALL=	assistant clucene dbus declarative designer gui help \
 				imageformats linguist linguisttools multimedia network opengl pixeltool \

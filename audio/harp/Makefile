@@ -11,7 +11,6 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	heckendorfc
-GH_TAGNAME=	${PORTVERSION}
 
 USES=		cmake
 

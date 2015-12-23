@@ -1,7 +1,5 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/Package.fpc
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/oggvorbis.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/ogg.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/vorbis.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/ogg.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/vorbis.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/vorbis.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/libpogg.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/libpvorbis.a

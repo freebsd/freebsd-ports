@@ -6,7 +6,7 @@ PORTVERSION=	5.7
 PORTREVISION=	1
 CATEGORIES=	devel linux
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Terminfo database required by Linux ncurses programs
 
 USE_LINUX=	c6

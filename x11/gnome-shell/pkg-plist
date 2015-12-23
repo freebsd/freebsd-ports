@@ -56,7 +56,6 @@ share/gtk-doc/html/shell/gdbus-org.gnome.Shell.SearchProvider.html
 share/gtk-doc/html/shell/gdbus-org.gnome.Shell.SearchProvider2.html
 share/gtk-doc/html/shell/home.png
 share/gtk-doc/html/shell/index.html
-share/gtk-doc/html/shell/index.sgml
 share/gtk-doc/html/shell/left-insensitive.png
 share/gtk-doc/html/shell/left.png
 share/gtk-doc/html/shell/object-tree.html
@@ -91,7 +90,6 @@ share/gtk-doc/html/st/containers.html
 share/gtk-doc/html/st/deprecated-api-index.html
 share/gtk-doc/html/st/home.png
 share/gtk-doc/html/st/index.html
-share/gtk-doc/html/st/index.sgml
 share/gtk-doc/html/st/left-insensitive.png
 share/gtk-doc/html/st/left.png
 share/gtk-doc/html/st/object-tree.html

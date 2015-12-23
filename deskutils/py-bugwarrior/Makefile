@@ -3,6 +3,7 @@
 
 PORTNAME=	bugwarrior
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twiggy>0:${PORTSDIR}/devel/py-twiggy \
 		${PYTHON_PKGNAMEPREFIX}keyring>0:${PORTSDIR}/security/py-keyring \
 		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7.2:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}curl>0:${PORTSDIR}/ftp/py-curl \
+		${PYTHON_PKGNAMEPREFIX}pycurl>0:${PORTSDIR}/ftp/py-pycurl \
 		${PYTHON_PKGNAMEPREFIX}dogpile.cache>=0.5.3:${PORTSDIR}/devel/py-dogpile.cache \
 		${PYTHON_PKGNAMEPREFIX}lockfile>=0.9.1:${PORTSDIR}/devel/py-lockfile \
 		${PYTHON_PKGNAMEPREFIX}click>0:${PORTSDIR}/devel/py-click \

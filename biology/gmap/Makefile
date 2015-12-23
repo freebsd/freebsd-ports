@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://research-pub.gene.com/gmap/src/
 DISTNAME=	${PORTNAME}-gsnap-${PORTVERSION:C|\.|-|g}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Genomic Mapping and Alignment Program for mRNA and EST Sequences
 
 LICENSE=	GMAP
@@ -23,6 +23,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C|\.|-|g}
 OPTIONS_DEFINE=	SIMD
 
 SIMD_CONFIGURE_OFF=	--disable-builtin-popcount --disable-simd
+
+BROKEN_powerpc64=	Does not build on powerpc64
 
 # shebang_fix operates during patch.
 # These scripts are created during configure.

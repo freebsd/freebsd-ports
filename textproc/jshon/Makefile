@@ -1,29 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	jshon
-PORTVERSION=	20121210
-PORTREVISION=	3
+PORTVERSION=	20131105
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	json parser for the shell
+COMMENT=	JSON parser for the shell
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
 
-USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	keenerd
-GH_TAGNAME=	b21bc98
 
-CFLAGS+=	-I${LOCALBASE}/include
+USES=		gmake
 
-PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,-ljansson,-L${LOCALBASE}/lib -ljansson,g' ${WRKSRC}/Makefile
+PLIST_FILES=	bin/jshon man/man1/jshon.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

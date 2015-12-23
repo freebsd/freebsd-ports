@@ -30,6 +30,7 @@ bin/opt37
 %%CLANG%%bin/clang-check37
 %%CLANG%%bin/clang-cpp37
 %%CLANG%%bin/clang-format37
+%%CLANG%%bin/clang-tblgen37
 %%EXTRAS%%bin/clang-apply-replacements37
 %%EXTRAS%%bin/clang-modernize37
 %%EXTRAS%%bin/clang-rename37
@@ -57,6 +58,7 @@ llvm37/bin/bugpoint
 %%CLANG%%llvm37/bin/clang-format
 %%EXTRAS%%llvm37/bin/clang-modernize
 %%EXTRAS%%llvm37/bin/clang-rename
+%%CLANG%%llvm37/bin/clang-tblgen
 %%EXTRAS%%llvm37/bin/clang-tidy
 %%CLANG%%llvm37/bin/git-clang-format
 llvm37/bin/llc

@@ -9,6 +9,7 @@ MASTER_SITES=	http://download.copperspice.com/copperspice/source/
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Modern cross-platform C++ GUI library (derived from Qt 4.8)
 
+BROKEN=		unfetchable
 LICENSE=	LGPL21
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

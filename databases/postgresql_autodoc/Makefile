@@ -10,6 +10,8 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Automatic documentation generator for postgresql databases
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg

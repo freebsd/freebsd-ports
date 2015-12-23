@@ -1,0 +1,4 @@
+lib/elixir/lib/conform_exrm/ebin/Elixir.ReleaseManager.Plugin.Conform.beam
+lib/elixir/lib/conform_exrm/ebin/conform_exrm.app
+lib/elixir/lib/conform_exrm/lib/conform_exrm.ex
+%%PORTDOCS%%%%DOCSDIR%%/README.md

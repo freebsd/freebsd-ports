@@ -25,22 +25,22 @@ CONFIGURE_ARGS=	--prefix ${PREFIX} \
 		--man-prefix ${MANPREFIX}/man \
 		--xdg-config-dir ${PREFIX}/etc/xdg
 
-CFLAGS+=	-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/freetype2
-
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		XRANDR XINERAMA IMLIB
 OPTIONS_DEFAULT=	XRANDR XINERAMA IMLIB
 
 XRANDR_USE=		XORG=xrandr
-XRANDR_CONFIGURE_WITH=	xrandr
+XRANDR_CONFIGURE_OFF=	--without-xrandr
 XINERAMA_USE=		XORG=xinerama
-XINERAMA_CONFIGURE_WITH=	xinerama
+XINERAMA_CONFIGURE_OFF=	--without-xinerama
 IMLIB_LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
-IMLIB_CONFIGURE_WITH=	imlib2
+IMLIB_CONFIGURE_OFF=	--without-imlib2
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

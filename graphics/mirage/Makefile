@@ -29,9 +29,11 @@ post-patch:
 		's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	(cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${STRIP_CMD} \
 		imgfuncs.so xmouse.so)
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

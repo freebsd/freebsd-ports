@@ -26,12 +26,12 @@ while getopts "rw" FLAG; do
 done
 shift $((OPTIND-1))
 
-validate_env dp_PORTSDIR dp_PKGNAME
+validate_env PORTSDIR dp_PKGNAME
 if [ ${recursive} -eq 1 -o ${requires_wrkdir} -eq 1 ]; then
 	validate_env dp_MAKE
 	# Cache command executions to avoid looking them up again in every
 	# sub-make.
-	MAKE="${dp_MAKE}" PORTSDIR="${dp_PORTSDIR}" export_ports_env >/dev/null
+	MAKE="${dp_MAKE}" export_ports_env >/dev/null
 fi
 
 set -u
@@ -47,7 +47,7 @@ check_dep() {
 
 		case "${2}" in
 			/*) d=${2} ;;
-			*) d=${dp_PORTSDIR}/${2} ;;
+			*) d=${PORTSDIR}/${2} ;;
 		esac
 
 		case " ${checked} " in

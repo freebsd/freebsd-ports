@@ -1,4 +1,3 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/dbus.ppu
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/dbus.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/dbus.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/libpdbus.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dbus/dbus.ppu

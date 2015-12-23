@@ -9,7 +9,8 @@ MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DSSI softsynth that models the sound generation of a Yamaha DX7
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
 		liblo.so:${PORTSDIR}/audio/liblo \
@@ -21,14 +22,16 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 
 PORTDOCS=	AUTHORS ChangeLog README
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-finline-limit=5000||' ${WRKSRC}/configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dssi/hexter.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dssi/hexter.so
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

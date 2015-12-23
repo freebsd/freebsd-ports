@@ -15,7 +15,7 @@ share/pixmaps/trackballs.png
 %%DATADIR%%/customizing.html
 %%DATADIR%%/examples.html
 %%DATADIR%%/fonts/menuFont.ttf
-%%DATADIR%%/highScores
+@(,games,664) %%DATADIR%%/highScores
 %%DATADIR%%/images/acid.png
 %%DATADIR%%/images/difficulty0.png
 %%DATADIR%%/images/difficulty0High.png

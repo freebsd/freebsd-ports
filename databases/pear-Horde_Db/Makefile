@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Db
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.0
 CATEGORIES=	databases www pear
 PKGNAMEPREFIX=	pear-
 

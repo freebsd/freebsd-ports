@@ -21,3 +21,10 @@ bin/quirc
 %%DATADIR%%/themes/default.tcl
 %%DATADIR%%/variables.tcl
 %%DATADIR%%/winpopup.tcl
+%%PORTDOCS%%%%DOCSDIR%%/color.txt
+%%PORTDOCS%%%%DOCSDIR%%/dccresum.txt
+%%PORTDOCS%%%%DOCSDIR%%/links.txt
+%%PORTDOCS%%%%DOCSDIR%%/nickcomp.txt
+%%PORTDOCS%%%%DOCSDIR%%/quedit.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc1459.txt
+%%PORTDOCS%%%%DOCSDIR%%/tdcc.txt

@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.1
 PORTREVISION?=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cmake.org/files/v3.3/
+MASTER_SITES=	https://www.cmake.org/files/v3.4/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT?=	Cross-platform Makefile generator
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
 USE_KDE4=	# env
 CONFIGURE_ENV=	MAKE=make

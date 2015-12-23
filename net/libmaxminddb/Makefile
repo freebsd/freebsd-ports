@@ -1,20 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	libmaxminddb
-DISTVERSION=	1.0.4
+PORTVERSION=	1.1.1
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/maxmind/libmaxminddb/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://github.com/maxmind/libmaxminddb/releases/download/${PORTVERSION}/
 
-MAINTAINER=	fullermd@over-yonder.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for the MaxMind DB file format used for GeoIP2
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool
-
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmaxminddb.so.0.0.7
 
 .include <bsd.port.mk>

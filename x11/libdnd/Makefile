@@ -14,6 +14,8 @@ COMMENT=	Drag and drop library
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/../COPYING.LIB
 
+BROKEN=		unfetchable
+
 USES=		tar:tgz
 USE_XORG=	x11 xmu ice xaw
 USE_LDCONFIG=	yes

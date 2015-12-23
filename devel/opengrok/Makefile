@@ -19,13 +19,15 @@ JAVA_VERSION=	1.6+
 SHAREOWN=	www
 SHAREGRP=	www
 NO_BUILD=	yes
-PORTDOCS=	${DOCS}
+NO_ARCH=	yes
+PORTDOCS=	CHANGES.txt EXAMPLE.txt LICENSE.txt
 SUB_FILES=	opengrok
 SUB_LIST+=	LIBFILES="${LIBFILES:S,^,${DATADIR}/lib/,}" \
 		JARFILE="${JARFILE}"
 PLIST_SUB=	T=${WEBAPP_HOME:S|^${LOCALBASE}/||} \
 		OWNER=${SHAREOWN} GROUP=${SHAREGRP}
 
+OPTIONS_DEFINE=		DOCS
 OPTIONS_SINGLE=		AS
 OPTIONS_SINGLE_AS=	TOMCAT7 TOMCAT6 RESIN3
 OPTIONS_DEFAULT=	TOMCAT6
@@ -38,7 +40,6 @@ RESIN3_BUILD_DEPENDS=	${WEBAPP_HOME}/lib/resin.jar:${PORTSDIR}/www/resin3
 RESIN3_RUN_DEPENDS=	${WEBAPP_HOME}/lib/resin.jar:${PORTSDIR}/www/resin3
 
 JARFILE=	${DATADIR}/opengrok.jar
-DOCS=		CHANGES.txt EXAMPLE.txt LICENSE.txt
 LIBFILES=	ant.jar \
 		bcel-5.2.jar \
 		jrcs.jar \
@@ -69,7 +70,7 @@ post-extract:
 	@${TAR} -xf ${WRKSRC}/lib/source.war -C ${WRKSRC}/lib/opengrok
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/lib ${STAGEDIR}${DOCSDIR} \
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib \
 		${STAGEDIR}${PREFIX}/${WEBAPPS_DIR}/${PORTNAME}
 	(cd ${WRKSRC}/lib/opengrok && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${PREFIX}/${WEBAPPS_DIR}/${PORTNAME})
@@ -78,7 +79,10 @@ do-install:
 	${INSTALL_DATA} ${LIBFILES:S,^,${WRKSRC}/lib/lib/,} \
 		${STAGEDIR}${DATADIR}/lib/
 	${INSTALL_DATA} ${WRKSRC}/lib/opengrok.jar ${STAGEDIR}${DATADIR}/
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/opengrok ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

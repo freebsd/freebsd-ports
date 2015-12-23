@@ -37,8 +37,12 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/html/pcal.pl ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/doc/pcal.man \
 		${STAGEDIR}${MANPREFIX}/man/man1/pcal.1
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/ReadMe.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/pcal.html ${STAGEDIR}${DOCSDIR}

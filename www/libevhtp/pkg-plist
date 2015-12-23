@@ -1,0 +1,9 @@
+include/evhtp.h
+include/evhtp-config.h
+include/htparse.h
+libdata/pkgconfig/evhtp.pc
+%%NO_STATIC%%lib/libevhtp.so
+%%NO_STATIC%%lib/libevhtp.so.%%PORTVERSION%%
+%%REGEX%%include/onigposix.h
+%%THREADS%%include/evthr.h
+%%STATIC%%lib/libevhtp.a

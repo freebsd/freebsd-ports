@@ -20,6 +20,6 @@ OPTIONS_EXCLUDE=	DOCS
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/p7zip/Codecs
-	${INSTALL_LIB} ${WRKSRC}/bin/Codecs/Rar29.so ${STAGEDIR}${PREFIX}/libexec/p7zip/Codecs
+	${INSTALL_LIB} ${WRKSRC}/bin/Codecs/Rar.so ${STAGEDIR}${PREFIX}/libexec/p7zip/Codecs
 
 .include "${MASTERDIR}/Makefile"

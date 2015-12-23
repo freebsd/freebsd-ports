@@ -3,6 +3,7 @@
 
     COMMENT = Monetary, financial, and related applications
 
+    SUBDIR += R-cran-AER
     SUBDIR += R-cran-PerformanceAnalytics
     SUBDIR += R-cran-RFinanceYJ
     SUBDIR += R-cran-TTR
@@ -44,7 +45,6 @@
     SUBDIR += moneymanagerex
     SUBDIR += mybudget
     SUBDIR += myphpmoney
-    SUBDIR += openerp-web
     SUBDIR += openhbci
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-MaxMind-CreditCardFraudDetection
@@ -92,6 +92,8 @@
     SUBDIR += pear_Payment_DTA
     SUBDIR += php-tclink
     SUBDIR += prestashop
+    SUBDIR += py-bitcoin
+    SUBDIR += py-python-obelisk
     SUBDIR += py-stripe
     SUBDIR += py-vatnumber
     SUBDIR += py-ystockquote

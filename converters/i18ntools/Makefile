@@ -11,10 +11,10 @@ MASTER_SITES=	ftp://ftp.whizkidtech.redprince.net/unix/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for the conversion to and from UTF-8 Unicode encoding
 
+LICENSE=	BSD2CLAUSE
+
 LIB_DEPENDS=	libutf-8.so:${PORTSDIR}/converters/libutf-8
 RUN_DEPENDS=	tuc:${PORTSDIR}/converters/tuc
-
-OPTIONS_DEFINE=	DOCS
 
 DATADIR=	${PREFIX}/share/i18n
 DOCSDIR=	${PREFIX}/share/doc/i18n
@@ -53,6 +53,8 @@ DOCFILES=	fgetu8.html fputu8.html index.html libutf-8.html rfc1641.txt \
 		rfc2277.txt rfc2279.txt sgetu8.html sputu8.html utrans.html
 MAN1FILES=	hutrans.1 ptrans.1 utrans.1 uhtrans.1
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${PREFIX}/include|$${LOCALBASE}/include| ; \
@@ -61,16 +63,18 @@ post-patch:
 
 do-install:
 .for f in ${BINARIES}
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${f} ${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for f in ${MAN1FILES}
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${f} ${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}/charmaps/binary
 .for f in ${CHARMAPS}
-	(cd ${WRKSRC}/charmaps && ${INSTALL_DATA} ${f} \
-		${STAGEDIR}${DATADIR}/charmaps/binary)
+	${INSTALL_DATA} ${WRKSRC}/charmaps/${f} \
+		${STAGEDIR}${DATADIR}/charmaps/binary
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tools
 .for f in ${DOCFILES}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${f} ${STAGEDIR}${DOCSDIR}/tools)

@@ -1,14 +1,15 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fppkg
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
-COMMENT=	Free Pascal package unit
+COMMENT=	Free Pascal package manager unit
 
-USE_FPC=	fcl-base fcl-net fcl-passrc fcl-process fcl-web fcl-xml fpmkunit
+USE_FPC=	dblib fastcgi fcl-async fcl-base fcl-db fcl-json fcl-net \
+		fcl-passrc fcl-web fcl-xml httpd22 httpd24 ibase mysql odbc \
+		openssl oracle postgres pxlib rtl-extra sqlite
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

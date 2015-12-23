@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ming
-PORTVERSION=	0.4.7
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	0_4_7
 CATEGORIES=	graphics perl5
 PKGNAMEPREFIX=	p5-
 
@@ -23,7 +24,8 @@ OPTIONS_DEFINE=	EXAMPLES
 
 CONFIGURE_ARGS=	--enable-perl
 GNU_CONFIGURE=	yes
-USES=		autoreconf bison gmake libtool localbase perl5
+USES=		autoreconf bison gmake libtool localbase perl5 shebangfix
+SHEBANG_FILES=	examples/*.cgi
 
 PORTEXAMPLES=	*
 
@@ -33,13 +35,11 @@ WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/perl_ext
 USE_GITHUB=	yes
 GH_ACCOUNT=	lib${PORTNAME}
 GH_PROJECT=	lib${PORTNAME}
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/ming_is_compiled()/ s|^|#|; /LIBS/d' ${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e 's|\.3pm|.3|g' ${WRKSRC}/Makefile.PL ${WRKSRC}/mkdoc
 	@${REINPLACE_CMD} -e 's|GvCV(\(.*\)) = \(.*\);|GvCV_set(\1, \2);|' ${WRKSRC}/Exports.c
-	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/examples/*.cgi
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/SWF/SWF.so

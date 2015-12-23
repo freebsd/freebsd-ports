@@ -6,7 +6,6 @@ PORTVERSION=	1.4.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
-DISTNAME=	plv8-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	PL/v8js procedural language for PostgreSQL database

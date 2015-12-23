@@ -1,0 +1,9 @@
+Replacement for the SCCP channel driver in Asterisk.
+Extended features include:
+ - Shared Lines
+ - Presence / BLF
+ - Customizable Feature Buttons
+ - Custom Device State
+ - Conference with Phone-UI
+
+WWW: https://sourceforge.net/projects/chan-sccp-b

@@ -1,6 +1,6 @@
---- src/readcalls.c.orig	2014-05-15 21:02:23 UTC
+--- src/readcalls.c.orig	2015-11-03 16:15:23 UTC
 +++ src/readcalls.c
-@@ -492,7 +492,7 @@ int synclog(char *synclogfile)
+@@ -641,7 +641,7 @@ int synclog(char *synclogfile)
  
      showmsg("Merging logfiles...\n");
      sleep(1);

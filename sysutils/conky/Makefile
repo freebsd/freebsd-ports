@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=	--disable-lua
 .endif
 
 .if ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2}
-LUA_COMPS=		toluaxx
+LIB_DEPENDS+=		libtolua++-5.1.so:${PORTSDIR}/lang/tolua++
 .endif
 
 post-patch:

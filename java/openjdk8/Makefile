@@ -2,6 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -19,7 +20,8 @@ PATCHFILES=	patch-8u05-b13.xz \
 		patch-8u40-b25.xz \
 		patch-8u45-b14.xz \
 		patch-8u51-b16.xz \
-		patch-8u60-b23.xz
+		patch-8u60-b23.xz \
+		patch-8u66-b17.xz
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
@@ -197,8 +199,8 @@ NO_CCACHE=		yes
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	60
-JDK_BUILD_NUMBER=	24
+JDK_UPDATE_VERSION=	66
+JDK_BUILD_NUMBER=	17
 DIST_BUILD_NUMBER=	132
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08
@@ -267,7 +269,25 @@ JDK_BUILD_TYPE=		release
 
 AUTOCONF_ARGS=	-I . -o generated-configure.sh generated-configure.ac
 
+# XXX configure script rejects CC/CPP/CXX with absolute paths.
+.for t in CC CPP CXX
+.if defined(${t}) && ${${t}:M/*}
+BUILD_${t}=	${${t}:C|.*/||g}
+CONFIGURE_ENV+=	${t}="${BUILD_${t}}"
+TOOLS_DIR+=	${${t}:S|/${BUILD_${t}}$||}
+.endif
+.endfor
+.if defined(TOOLS_DIR)
+CONFIGURE_ARGS+=	--with-tools-dir="${TOOLS_DIR:u:S/ /:/g}"
+.endif
+
 .include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv6*} || ${ARCH} == "i386"
+# XXX We must limit max heap size for 32-bit targets.
+CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs="-Xmx768m"
+MAKE_ENV+=	JAVADOC_CMD_MEM="-Xmx768m"
+.endif
 
 .if ${ARCH} == "armv6"
 # From NetBSD http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/lang/openjdk7/hacks.mk
@@ -286,11 +306,10 @@ JDK_BUILD_JVM=	zero
 LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
 .endif
 
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8 \
+		${LOCALBASE}/openjdk7
 .if ${ARCH:Marmv6*}
-BOOTSTRAP_JDKS+= ${LOCALBASE}/bootstrap-openjdk
-.else
-BOOTSTRAP_JDKS+= ${LOCALBASE}/openjdk7
+BOOTSTRAP_JDKS+=	${LOCALBASE}/bootstrap-openjdk
 .endif
 
 # do we have valid native jdk installed?
@@ -312,6 +331,10 @@ BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/openjdk7
 .  endif
 .endif
 
+.if ${BOOTSTRAPJDKDIR} == ${LOCALBASE}/openjdk8
+CONFIGURE_ARGS+=	--enable-sjavac
+.endif
+
 # PR193009: work around the rtld bug
 .if ${OSVERSION} < 1001511
 CONFIGURE_ARGS+=	--enable-static-libjli
@@ -323,7 +346,7 @@ MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
 .endif
 MAKE_ENV+=	USE_CLANG=true
 .if ${COMPILER_FEATURES:Mlibc++}
-CONFIGURE_ENV=	LIBCXX="-lc++"
+CONFIGURE_ENV+=	LIBCXX="-lc++"
 .endif
 .endif
 
@@ -388,11 +411,11 @@ pre-configure:
 
 post-build:
 .if !defined(BUILD_JRE)
-	@${JDK_IMAGEDIR}/bin/jar cfe \
+	@${BOOTSTRAPJDKDIR}/bin/jar cfe \
 	    ${JRE_IMAGEDIR}/lib/compilefontconfig.jar \
 	    build.tools.compilefontconfig.CompileFontConfig \
 	    -C ${JDK_BUILDDIR}/jdk/btclasses build/tools/compilefontconfig
-	@${JDK_IMAGEDIR}/bin/jar cfe \
+	@${BOOTSTRAPJDKDIR}/bin/jar cfe \
 	    ${JRE_IMAGEDIR}/lib/javazic.jar \
 	    build.tools.tzdb.TzdbZoneRulesCompiler \
 	    -C ${JDK_BUILDDIR}/jdk/btclasses build/tools/tzdb

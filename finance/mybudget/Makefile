@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+-2 finance manager
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -43,6 +44,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	(cd ${WRKSRC} && ${INSTALL_DATA} *.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 

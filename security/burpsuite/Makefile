@@ -19,6 +19,8 @@ JAVA_VENDOR=	openjdk
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 BROKEN=	is interactive
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2015-12-30
 
 PLIST_FILES=	bin/${PORTNAME} \
 		%%JAVAJARDIR%%/${DISTNAME}.jar

@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 # TODO: add devd(8) rule.
 	@${REINPLACE_CMD} \
-		-e '/*cygwin*/ s,),|*bsd*),' \
+		-e '/*cygwin*/ s,),|dragonfly*|*bsd*),' \
 		${WRKSRC}/configure.ac
 
 post-install:

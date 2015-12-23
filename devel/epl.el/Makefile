@@ -4,7 +4,6 @@ PORTNAME=	epl.el
 PORTVERSION=	0.7
 PORTREVISION=	2
 CATEGORIES=	devel elisp
-DISTNAME=	epl-${PORTVERSION}
 
 MAINTAINER=	rpaulo@FreeBSD.org
 COMMENT=	Emacs Package Library

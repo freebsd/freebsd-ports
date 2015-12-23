@@ -5,14 +5,12 @@ PORTNAME=	ack
 PORTVERSION=	1.39
 PORTREVISION=	1
 CATEGORIES=	japanese converters
-MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/util/text/conv/code/
+MASTER_SITES=	http://ftp.vector.co.jp/06/43/1369/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Kanji code converter
-
-BROKEN=		unfetchable
 
 CONFLICTS_INSTALL=	p5-ack-[0-9]* ack-[0-9]*
 

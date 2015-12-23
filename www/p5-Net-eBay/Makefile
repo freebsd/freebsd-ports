@@ -31,16 +31,17 @@ OPTIONS_DEFINE=	EXAMPLES
 
 NO_ARCH=	yes
 USE_PERL5=	configure
-USES=		perl5
+USES=		perl5 shebangfix
 
 PORTEXAMPLES=	*
 
-post-patch:
+SHEBANG_FILES=	examples/*.pl
+
+post-extract:
 	@${MKDIR} ${WRKSRC}/examples/
 	@${MV} ${WRKSRC}/*.pl ${WRKSRC}/examples/
-	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/examples/*.pl
 
-post-install:
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${STAGEDIR}${EXAMPLESDIR}/
 
