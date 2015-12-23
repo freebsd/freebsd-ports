@@ -3,6 +3,7 @@
 
 PORTNAME=	keepass
 PORTVERSION=	2.30
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/KeePass%202.x/${PORTVERSION}
 DISTNAME=	KeePass-${PORTVERSION}-Source
@@ -39,7 +40,7 @@ XSEL_DESC=	Use the xsel utility for clipboard copying
 OPTIONS_DEFAULT=	XDOTOOL XSEL
 
 XDOTOOL_RUN_DEPENDS=	xdotool:${PORTSDIR}/x11/xdotool
-XSEL_RUN_DEPENDS=	xsel:${PORTSDIR}/x11/xsel
+XSEL_RUN_DEPENDS=	xsel:${PORTSDIR}/x11/xsel-conrad
 
 do-build:
 	# Extract icons
