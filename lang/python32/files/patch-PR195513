@@ -1,72 +1,5 @@
---- Modules/_ssl.c.orig	2013-05-15 18:33:53.000000000 +0200
-+++ Modules/_ssl.c	2015-09-26 15:42:27.597032577 +0200
-@@ -66,7 +66,9 @@ enum py_ssl_version {
- #ifndef OPENSSL_NO_SSL2
-     PY_SSL_VERSION_SSL2,
- #endif
--    PY_SSL_VERSION_SSL3=1,
-+#ifndef OPENSSL_NO_SSL3
-+    PY_SSL_VERSION_SSL3,
-+#endif
-     PY_SSL_VERSION_SSL23,
-     PY_SSL_VERSION_TLS1
- };
-@@ -1458,8 +1460,10 @@ context_new(PyTypeObject *type, PyObject
-     PySSL_BEGIN_ALLOW_THREADS
-     if (proto_version == PY_SSL_VERSION_TLS1)
-         ctx = SSL_CTX_new(TLSv1_method());
-+#ifndef OPENSSL_NO_SSL3
-     else if (proto_version == PY_SSL_VERSION_SSL3)
-         ctx = SSL_CTX_new(SSLv3_method());
-+#endif
- #ifndef OPENSSL_NO_SSL2
-     else if (proto_version == PY_SSL_VERSION_SSL2)
-         ctx = SSL_CTX_new(SSLv2_method());
-@@ -1911,6 +1915,9 @@ Returns 1 if the OpenSSL PRNG has been s
- It is necessary to seed the PRNG with RAND_add() on some platforms before\n\
- using the ssl() function.");
- 
-+/* ### Fix build with LibreSSL (does not have RAND_egd)
-+   ### PR195513, http://bugs.python.org/issue21356 */
-+#ifndef OPENSSL_NO_EGD
- static PyObject *
- PySSL_RAND_egd(PyObject *self, PyObject *args)
- {
-@@ -1938,6 +1945,8 @@ PyDoc_STRVAR(PySSL_RAND_egd_doc,
- Queries the entropy gather daemon (EGD) on the socket named by 'path'.\n\
- Returns number of bytes read.  Raises SSLError if connection to EGD\n\
- fails or if it does provide enough data to seed PRNG.");
-+#endif /* OPENSSL_NO_EGD */
-+/* ### End PR195513  */
- 
- #endif
- 
-@@ -1951,8 +1960,12 @@ static PyMethodDef PySSL_methods[] = {
- #ifdef HAVE_OPENSSL_RAND
-     {"RAND_add",            PySSL_RAND_add, METH_VARARGS,
-      PySSL_RAND_add_doc},
-+/* ### Fix build with LibreSSL (does not have RAND_egd)
-+   ### PR195513, http://bugs.python.org/issue21356 */
-+#ifndef OPENSSL_NO_EGD
-     {"RAND_egd",            PySSL_RAND_egd, METH_VARARGS,
-      PySSL_RAND_egd_doc},
-+#endif /* OPENSSL_NO_EGD */
-     {"RAND_status",         (PyCFunction)PySSL_RAND_status, METH_NOARGS,
-      PySSL_RAND_status_doc},
- #endif
-@@ -2145,8 +2158,10 @@ PyInit__ssl(void)
-     PyModule_AddIntConstant(m, "PROTOCOL_SSLv2",
-                             PY_SSL_VERSION_SSL2);
- #endif
-+#ifndef OPENSSL_NO_SSL3
-     PyModule_AddIntConstant(m, "PROTOCOL_SSLv3",
-                             PY_SSL_VERSION_SSL3);
-+#endif
-     PyModule_AddIntConstant(m, "PROTOCOL_SSLv23",
-                             PY_SSL_VERSION_SSL23);
-     PyModule_AddIntConstant(m, "PROTOCOL_TLSv1",
---- Lib/ssl.py.orig	2013-05-15 18:33:46.000000000 +0200
-+++ Lib/ssl.py	2015-09-26 15:47:13.900016262 +0200
+--- Lib/ssl.py.orig	2014-10-12 08:52:02.000000000 +0200
++++ Lib/ssl.py	2015-12-23 11:29:24.243085919 +0100
 @@ -63,7 +63,16 @@ from _ssl import OPENSSL_VERSION_NUMBER,
  from _ssl import _SSLContext, SSLError
  from _ssl import CERT_NONE, CERT_OPTIONAL, CERT_REQUIRED
@@ -114,7 +47,7 @@
  
  from socket import getnameinfo as _getnameinfo
  from socket import error as socket_error
-@@ -550,7 +565,7 @@ def PEM_cert_to_DER_cert(pem_cert_string
+@@ -557,7 +572,7 @@ def PEM_cert_to_DER_cert(pem_cert_string
      d = pem_cert_string.strip()[len(PEM_HEADER):-len(PEM_FOOTER)]
      return base64.decodebytes(d.encode('ASCII', 'strict'))
  
@@ -123,9 +56,9 @@
      """Retrieve the certificate from the server at the specified address,
      and return it as a PEM-encoded string.
      If 'ca_certs' is specified, validate the server cert against it.
---- Lib/test/test_ssl.py.orig	2013-05-15 18:33:50.000000000 +0200
-+++ Lib/test/test_ssl.py	2015-09-26 15:17:05.931135723 +0200
-@@ -21,11 +21,12 @@
+--- Lib/test/test_ssl.py.orig	2014-10-12 08:52:03.000000000 +0200
++++ Lib/test/test_ssl.py	2015-12-23 11:29:24.245086385 +0100
+@@ -21,11 +21,12 @@ import functools
  ssl = support.import_module("ssl")
  
  PROTOCOLS = [
@@ -139,7 +72,7 @@
  
  HOST = support.HOST
  
-@@ -103,8 +104,12 @@
+@@ -104,8 +105,12 @@ class BasicSocketTests(unittest.TestCase
              sys.stdout.write("\n RAND_status is %d (%s)\n"
                               % (v, (v and "sufficient randomness") or
                                  "insufficient randomness"))
@@ -154,7 +87,7 @@
          ssl.RAND_add("this is a random string", 75.0)
  
      def test_parse_cert(self):
-@@ -340,7 +345,8 @@
+@@ -380,7 +385,8 @@ class ContextTests(unittest.TestCase):
          if hasattr(ssl, 'PROTOCOL_SSLv2'):
              ctx = ssl.SSLContext(ssl.PROTOCOL_SSLv2)
          ctx = ssl.SSLContext(ssl.PROTOCOL_SSLv23)
@@ -164,7 +97,7 @@
          ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
          self.assertRaises(TypeError, ssl.SSLContext)
          self.assertRaises(ValueError, ssl.SSLContext, -1)
-@@ -1327,6 +1333,7 @@
+@@ -1372,6 +1378,7 @@ else:
  
  
          @skip_if_broken_ubuntu_ssl
@@ -172,3 +105,70 @@
          def test_protocol_sslv3(self):
              """Connecting to an SSLv3 server with various client options"""
              if support.verbose:
+--- Modules/_ssl.c.orig	2014-10-12 08:52:03.000000000 +0200
++++ Modules/_ssl.c	2015-12-23 11:29:24.242085898 +0100
+@@ -66,7 +66,9 @@ enum py_ssl_version {
+ #ifndef OPENSSL_NO_SSL2
+     PY_SSL_VERSION_SSL2,
+ #endif
+-    PY_SSL_VERSION_SSL3=1,
++#ifndef OPENSSL_NO_SSL3
++    PY_SSL_VERSION_SSL3,
++#endif
+     PY_SSL_VERSION_SSL23,
+     PY_SSL_VERSION_TLS1
+ };
+@@ -1512,8 +1514,10 @@ context_new(PyTypeObject *type, PyObject
+     PySSL_BEGIN_ALLOW_THREADS
+     if (proto_version == PY_SSL_VERSION_TLS1)
+         ctx = SSL_CTX_new(TLSv1_method());
++#ifndef OPENSSL_NO_SSL3
+     else if (proto_version == PY_SSL_VERSION_SSL3)
+         ctx = SSL_CTX_new(SSLv3_method());
++#endif
+ #ifndef OPENSSL_NO_SSL2
+     else if (proto_version == PY_SSL_VERSION_SSL2)
+         ctx = SSL_CTX_new(SSLv2_method());
+@@ -1965,6 +1969,9 @@ Returns 1 if the OpenSSL PRNG has been s
+ It is necessary to seed the PRNG with RAND_add() on some platforms before\n\
+ using the ssl() function.");
+ 
++/* ### Fix build with LibreSSL (does not have RAND_egd)
++   ### PR195513, http://bugs.python.org/issue21356 */
++#ifndef OPENSSL_NO_EGD
+ static PyObject *
+ PySSL_RAND_egd(PyObject *self, PyObject *args)
+ {
+@@ -1992,6 +1999,8 @@ PyDoc_STRVAR(PySSL_RAND_egd_doc,
+ Queries the entropy gather daemon (EGD) on the socket named by 'path'.\n\
+ Returns number of bytes read.  Raises SSLError if connection to EGD\n\
+ fails or if it does provide enough data to seed PRNG.");
++#endif /* OPENSSL_NO_EGD */
++/* ### End PR195513  */
+ 
+ #endif
+ 
+@@ -2005,8 +2014,12 @@ static PyMethodDef PySSL_methods[] = {
+ #ifdef HAVE_OPENSSL_RAND
+     {"RAND_add",            PySSL_RAND_add, METH_VARARGS,
+      PySSL_RAND_add_doc},
++/* ### Fix build with LibreSSL (does not have RAND_egd)
++   ### PR195513, http://bugs.python.org/issue21356 */
++#ifndef OPENSSL_NO_EGD
+     {"RAND_egd",            PySSL_RAND_egd, METH_VARARGS,
+      PySSL_RAND_egd_doc},
++#endif /* OPENSSL_NO_EGD */
+     {"RAND_status",         (PyCFunction)PySSL_RAND_status, METH_NOARGS,
+      PySSL_RAND_status_doc},
+ #endif
+@@ -2199,8 +2212,10 @@ PyInit__ssl(void)
+     PyModule_AddIntConstant(m, "PROTOCOL_SSLv2",
+                             PY_SSL_VERSION_SSL2);
+ #endif
++#ifndef OPENSSL_NO_SSL3
+     PyModule_AddIntConstant(m, "PROTOCOL_SSLv3",
+                             PY_SSL_VERSION_SSL3);
++#endif
+     PyModule_AddIntConstant(m, "PROTOCOL_SSLv23",
+                             PY_SSL_VERSION_SSL23);
+     PyModule_AddIntConstant(m, "PROTOCOL_TLSv1",
