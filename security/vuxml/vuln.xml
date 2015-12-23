@@ -58,6 +58,50 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="54075861-a95a-11e5-8b40-20cf30e32f6d">
+    <topic>Bugzilla security issues</topic>
+    <affects>
+      <package>
+	<name>bugzilla44</name>
+	<range><lt>4.4.11</lt></range>
+      </package>
+      <package>
+	<name>bugzilla50</name>
+	<range><lt>5.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bugzilla Security Advisory</p>
+	<blockquote cite="https://www.bugzilla.org/security/4.2.15/">
+	  <p>During the generation of a dependency graph, the code for
+	    the HTML image map is generated locally if a local dot
+	    installation is used. With escaped HTML characters in a bug
+	    summary, it is possible to inject unfiltered HTML code in
+	    the map file which the CreateImagemap function generates.
+	    This could be used for a cross-site scripting attack.</p>
+	  <p>If an external HTML page contains a &lt;script&gt; element with
+	    its src attribute pointing to a buglist in CSV format, some
+	    web browsers incorrectly try to parse the CSV file as valid
+	    JavaScript code. As the buglist is generated based on the
+	    privileges of the user logged into Bugzilla, the external
+	    page could collect confidential data contained in the CSV
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8508</cvename>
+      <cvename>CVE-2015-8509</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1221518</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1232785</url>
+    </references>
+    <dates>
+      <discovery>2015-12-22</discovery>
+      <entry>2015-12-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d6c51737-a84b-11e5-8f5c-002590263bf5">
     <topic>librsvg2 -- denial of service vulnerability</topic>
     <affects>
