@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	activemq
-PORTVERSION=	5.10.1
+PORTVERSION=	5.13.0
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
@@ -24,9 +24,9 @@ MQUSER?=	activemq
 MQGROUP?=	${MQUSER}
 USERS=		${MQUSER}
 GROUPS=		${MQGROUP}
-CAMELVERSION=	2.13.1
-SPRINGVERSION=	3.2.8
-JETTYVERSION=	7.6.9.v20130131
+CAMELVERSION=	2.16.1
+SPRINGVERSION=	4.1.8
+JETTYVERSION=	9.2.13.v20150730
 LVDBVERSION=	0.6
 LVDBJNIVERSION=	1.8
 
@@ -78,30 +78,30 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 .endfor
 
-.for f in ${PORTNAME} ${PORTNAME}-admin diag
-	@cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${f} ${STAGEDIR}${MQDATA}/bin
+.for f in ${PORTNAME} ${PORTNAME}-diag
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${MQDATA}/bin
 .endfor
 
-	@cd ${WRKSRC}/bin && ${INSTALL_DATA} activemq.jar ${STAGEDIR}${MQDATA}/bin
-	@cd ${WRKSRC}/bin && ${INSTALL_DATA} wrapper.jar ${STAGEDIR}${MQDATA}/bin
+	${INSTALL_DATA} ${WRKSRC}/bin/activemq.jar ${STAGEDIR}${MQDATA}/bin
+	${INSTALL_DATA} ${WRKSRC}/bin/wrapper.jar ${STAGEDIR}${MQDATA}/bin
 
 .for f in webapps webapps-demo lib
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${MQDATA}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${STAGEDIR}${MQDATA})
 .endfor
 
 	@${LN} -sf ${MQDB} ${STAGEDIR}${MQDATA}/data
 	@${LN} -sf ${ETCDIR} ${STAGEDIR}${MQDATA}/conf
-	@${LN} -sf ${EXAMPLESDIR} ${STAGEDIR}${MQDATA}/examples
-	@${LN} -sf ${DOCSDIR} ${STAGEDIR}${MQDATA}/docs
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/)
 .for f in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
+	@${LN} -sf ${DOCSDIR} ${STAGEDIR}${MQDATA}/docs
 
 do-install-EXAMPLES-on:
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	@${LN} -sf ${EXAMPLESDIR} ${STAGEDIR}${MQDATA}/examples
 
 .include <bsd.port.mk>
