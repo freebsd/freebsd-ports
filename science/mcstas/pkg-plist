@@ -58,15 +58,3 @@ mcstas/%%PORTVERSION%%/share/ref-lib.c
 mcstas/%%PORTVERSION%%/share/ref-lib.h
 mcstas/%%PORTVERSION%%/share/vitess-lib.c
 mcstas/%%PORTVERSION%%/share/vitess-lib.h
-@dir mcstas/%%PORTVERSION%%/bin
-@dir mcstas/%%PORTVERSION%%/data
-@dir mcstas/%%PORTVERSION%%/doc/man/man1
-@dir mcstas/%%PORTVERSION%%/doc/man
-@dir mcstas/%%PORTVERSION%%/doc
-@dir mcstas/%%PORTVERSION%%/share/interpolation/natural
-@dir mcstas/%%PORTVERSION%%/share/interpolation/nearest
-@dir mcstas/%%PORTVERSION%%/share/interpolation
-@dir mcstas/%%PORTVERSION%%/share/nxslib
-@dir mcstas/%%PORTVERSION%%/share
-@dir mcstas/%%PORTVERSION%%
-@dir mcstas
