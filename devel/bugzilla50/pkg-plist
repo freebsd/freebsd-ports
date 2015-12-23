@@ -86,6 +86,7 @@
 %%WWWDIR%%/Bugzilla/JobQueue.pm
 %%WWWDIR%%/Bugzilla/JobQueue/Runner.pm
 %%WWWDIR%%/Bugzilla/Keyword.pm
+%%WWWDIR%%/Bugzilla/MIME.pm
 %%WWWDIR%%/Bugzilla/Mailer.pm
 %%WWWDIR%%/Bugzilla/Memcached.pm
 %%WWWDIR%%/Bugzilla/Migrate.pm
@@ -687,9 +688,9 @@
 %%WWWDIR%%/template/en/default/search/type-select.html.tmpl
 %%WWWDIR%%/template/en/default/setup/strings.txt.pl
 %%WWWDIR%%/template/en/default/welcome-admin.html.tmpl
+%%WWWDIR%%/template/en/default/whine/header.txt.tmpl
 %%WWWDIR%%/template/en/default/whine/mail.html.tmpl
 %%WWWDIR%%/template/en/default/whine/mail.txt.tmpl
-%%WWWDIR%%/template/en/default/whine/multipart-mime.txt.tmpl
 %%WWWDIR%%/template/en/default/whine/schedule.html.tmpl
 %%WWWDIR%%/testagent.cgi
 %%WWWDIR%%/testserver.pl
