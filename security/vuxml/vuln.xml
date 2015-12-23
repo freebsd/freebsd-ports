@@ -58,6 +58,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3b50881d-1860-4721-aab1-503290e23f6c">
+    <topic>Ruby -- unsafe tainted string vulnerability</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><lt>2.0.0.648,1</lt></range>
+	<range><lt>2.1.8,1</lt></range>
+	<range><lt>2.2.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby developer reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2015/12/16/unsafe-tainted-string-usage-in-fiddle-and-dl-cve-2015-7551/">
+	  <p>There is an unsafe tainted string vulnerability in Fiddle and DL.
+	    This issue was originally reported and fixed with CVE-2009-5147 in
+		DL, but reappeared after DL was reimplemented using Fiddle and
+		libffi.</p>
+	  <p>And, about DL, CVE-2009-5147 was fixed at Ruby 1.9.1, but not
+	    fixed at other branches, then rubies which bundled DL except Ruby
+		1.9.1 are still vulnerable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	  <url>https://www.ruby-lang.org/en/news/2015/12/16/unsafe-tainted-string-usage-in-fiddle-and-dl-cve-2015-7551/</url>
+	  <cvename>CVE-2015-7551</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-16</discovery>
+      <entry>2015-12-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="54075861-a95a-11e5-8b40-20cf30e32f6d">
     <topic>Bugzilla security issues</topic>
     <affects>
