@@ -27,6 +27,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MANUAL_PACKAGE_BUILD=	requires www/tomcat6 with HTTP_PORT=8080
 
+BROKEN=		fails to extract: tar: Error opening archive: Failed to open 'bbb-default.tar.gz'
+
 USES=		dos2unix
 DOS2UNIX_REGEX=	.+\.(conf|jsp|properties|xml)$
 
