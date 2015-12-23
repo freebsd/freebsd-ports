@@ -17,7 +17,6 @@ OPTIONS_DEFINE=	MNG_OPTIMIZE
 MNG_OPTIMIZE_DESC=	Use vendor's new optimization flags
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-#USE_BZIP2=	yes	# Please, uncomment on next upgrade
 
 USES=		jpeg uidfix
 USE_LDCONFIG=	yes

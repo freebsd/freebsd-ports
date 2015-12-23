@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	geteltorito
-PORTVERSION=	1.0
+PORTVERSION=	0.6
+PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/
 DISTFILES=	${PORTNAME}.pl

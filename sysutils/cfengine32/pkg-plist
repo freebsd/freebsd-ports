@@ -258,8 +258,3 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/win_registry.cf
 %%DOCSDIR%%/examples/win_schedule.cf
 %%DOCSDIR%%/examples/win_services.cf
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%/example_config
-@dirrm %%DOCSDIR%%
-@dirrm share/cfengine/masterfiles
-@dirrm share/cfengine

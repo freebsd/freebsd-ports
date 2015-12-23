@@ -3,6 +3,7 @@
 
 PORTNAME=	activerecord
 PORTVERSION=	4.1.14
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	41
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel41>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel41 \
 		rubygem-activesupport41>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport41 \
-		rubygem-arel>=5.0.0:${PORTSDIR}/databases/rubygem-arel
+		rubygem-arel5>=5.0.0:${PORTSDIR}/databases/rubygem-arel5
 
 NO_ARCH=	yes
 USE_RUBY=	yes

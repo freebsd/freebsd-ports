@@ -10,6 +10,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML to text formatting using external programs
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-IPC-Run>0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-URI>=0.08:${PORTSDIR}/net/p5-URI \

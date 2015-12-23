@@ -4,6 +4,7 @@
     COMMENT = X11 fonts and font utilities
 
     SUBDIR += alef
+    SUBDIR += alegreya
     SUBDIR += alegreya-sans
     SUBDIR += alfont
     SUBDIR += andika

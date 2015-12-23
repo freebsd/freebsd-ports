@@ -39,57 +39,30 @@ pre-install::
 	@${ECHO_MSG} "Hit Control-C now"
 	@${ECHO_MSG} "======================================================================"
 
-.include <bsd.port.options.mk>
-
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-USE_PHP+=	curl
-.endif
-
-.if ${PORT_OPTIONS:MMEMCACHE}
-USE_PHP+=	memcache
-.endif
+MYSQL_USE=	php=mysql
+PGSQL_USE=	php=pgsql
+LDAP_USE=	php=ldap
+CURL_USE=	php=curl
+MEMCACHE_USE=	php=memcache
 
 NONDOCS=	cache/fc-locale-list.php classes config.inc.php \
 		dbscripts help includes index.php js lib locale pages \
 		plugins public registry rt styles templates tools
-.if ${PORT_OPTIONS:MDOCS}
 DOCS=		docs
-.endif
 
 PLIST_SUB+=	ECHO_MSG=${ECHO_MSG}
 SUB_FILES=	pkg-deinstall
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${NONDOCS}" ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${CP} config.inc.php ${STAGEDIR}${WWWDIR}/config.inc.php.sample
-	${RM} ${STAGEDIR}${WWWDIR}/config.inc.php
-	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/_db
-	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/t_cache
-	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/t_compile
-	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/t_config
-	@${INSTALL} -d ${STAGEDIR}${WWWDIR}/locale/en_US/images
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${NONDOCS}" ${STAGEDIR}${WWWDIR}
+	${MV} ${STAGEDIR}${WWWDIR}/config.inc.php ${STAGEDIR}${WWWDIR}/config.inc.php.sample
+	${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/_db
+	${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/t_cache
+	${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/t_compile
+	${INSTALL} -d ${STAGEDIR}${WWWDIR}/cache/t_config
+	${INSTALL} -d ${STAGEDIR}${WWWDIR}/locale/en_US/images
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}/${DOCS} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 

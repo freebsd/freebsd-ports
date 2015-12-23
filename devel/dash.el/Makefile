@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dash.el
-PORTVERSION=	2.11.0
+PORTVERSION=	2.12.1
 CATEGORIES=	devel elisp
 
 MAINTAINER=	rpaulo@FreeBSD.org
@@ -13,7 +13,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	magnars
 
 USE_EMACS=	yes
-
 NO_BUILD=	yes
 
 do-install:

@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/define.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/shapetpl.swf
@@ -5,5 +7,6 @@
 %%WWWDIR%%/swfimagelist.php
 %%WWWDIR%%/swfimagereplace.php
 %%WWWDIR%%/swfshape.php
-@dirrm %%WWWDIR%%
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%
+@dir %%WWWDIR%%
+@owner
+@group

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 CATEGORIES=	devel lang
+PORTREVISION=	2
 PKGNAMESUFFIX=	-bfd
-PORTREVISION=	1
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
 COMMENT=	Free Pascal interface for the GNU Binary Format description
@@ -14,10 +14,6 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR=	${WRKUNITDIR}
 
-OPTIONS_DEFINE=	LIBBFD
-LIBBFD_DESC=	Install Universal BFD library from GNU binutils
-OPTIONS_DEFAULT=	LIBBFD
-
-LIBBFD_RUN_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/binutils
+RUN_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/binutils
 
 .include "${MASTERDIR}/Makefile"

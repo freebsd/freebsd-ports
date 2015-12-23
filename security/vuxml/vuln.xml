@@ -58,6 +58,136 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="54075861-a95a-11e5-8b40-20cf30e32f6d">
+    <topic>Bugzilla security issues</topic>
+    <affects>
+      <package>
+	<name>bugzilla44</name>
+	<range><lt>4.4.11</lt></range>
+      </package>
+      <package>
+	<name>bugzilla50</name>
+	<range><lt>5.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bugzilla Security Advisory</p>
+	<blockquote cite="https://www.bugzilla.org/security/4.2.15/">
+	  <p>During the generation of a dependency graph, the code for
+	    the HTML image map is generated locally if a local dot
+	    installation is used. With escaped HTML characters in a bug
+	    summary, it is possible to inject unfiltered HTML code in
+	    the map file which the CreateImagemap function generates.
+	    This could be used for a cross-site scripting attack.</p>
+	  <p>If an external HTML page contains a &lt;script&gt; element with
+	    its src attribute pointing to a buglist in CSV format, some
+	    web browsers incorrectly try to parse the CSV file as valid
+	    JavaScript code. As the buglist is generated based on the
+	    privileges of the user logged into Bugzilla, the external
+	    page could collect confidential data contained in the CSV
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8508</cvename>
+      <cvename>CVE-2015-8509</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1221518</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1232785</url>
+    </references>
+    <dates>
+      <discovery>2015-12-22</discovery>
+      <entry>2015-12-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d6c51737-a84b-11e5-8f5c-002590263bf5">
+    <topic>librsvg2 -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>librsvg2</name>
+	<range><lt>2.40.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adam Maris, Red Hat Product Security, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/21/5">
+	  <p>CVE-2015-7558: Stack exhaustion due to cyclic dependency causing to
+	    crash an application was found in librsvg2 while parsing SVG file.
+	    It has been fixed in 2.40.12 by many commits that has rewritten the
+	    checks for cyclic references.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7558</cvename>
+      <freebsdpr>ports/205502</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/21/5</url>
+      <url>https://bugzilla.redhat.com/1268243</url>
+    </references>
+    <dates>
+      <discovery>2015-10-02</discovery>
+      <entry>2015-12-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="da634091-a84a-11e5-8f5c-002590263bf5">
+    <topic>librsvg2 -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>librsvg2</name>
+	<range><lt>2.40.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adam Maris, Red Hat Product Security, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/21/5">
+	  <p>CVE-2015-7557: Out-of-bounds heap read in librsvg2 was found when
+	    parsing SVG file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7557</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/21/5</url>
+      <url>https://git.gnome.org/browse/librsvg/commit/rsvg-shapes.c?id=40af93e6eb1c94b90c3b9a0b87e0840e126bb8df</url>
+    </references>
+    <dates>
+      <discovery>2015-02-06</discovery>
+      <entry>2015-12-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9e7306b9-a5c3-11e5-b864-14dae9d210b8">
+    <topic>quassel -- remote denial of service</topic>
+    <affects>
+      <package>
+       <name>quassel</name>
+       <range><lt>0.12.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Pierre Schweitzer reports:</p>
+       <blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/12/1">
+	 <p>Any client sending the command "/op *" in a query will
+	   cause the Quassel core to crash.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/12/1</url>
+      <cvename>CVE-2015-8547</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-22</discovery>
+      <entry>2015-12-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f714b4c9-a6c1-11e5-88d7-047d7b492d07">
     <topic>libvirt -- ACL bypass using ../ to access beyond storage pool</topic>
     <affects>

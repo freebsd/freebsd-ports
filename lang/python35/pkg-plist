@@ -2368,6 +2368,9 @@ lib/python%%XYDOT%%/idlelib/__pycache__/configSectionNameDialog.cpython-%%XY%%.p
 lib/python%%XYDOT%%/idlelib/__pycache__/dynOptionMenuWidget.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/dynOptionMenuWidget.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/dynOptionMenuWidget.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/help.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/help.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/help.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/idle.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/idle.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/idle.cpython-%%XY%%.pyc
@@ -2403,6 +2406,8 @@ lib/python%%XYDOT%%/idlelib/configHelpSourceEdit.py
 lib/python%%XYDOT%%/idlelib/configSectionNameDialog.py
 lib/python%%XYDOT%%/idlelib/dynOptionMenuWidget.py
 lib/python%%XYDOT%%/idlelib/extend.txt
+lib/python%%XYDOT%%/idlelib/help.html
+lib/python%%XYDOT%%/idlelib/help.py
 lib/python%%XYDOT%%/idlelib/help.txt
 lib/python%%XYDOT%%/idlelib/idle.bat
 lib/python%%XYDOT%%/idlelib/idle.py
@@ -2626,10 +2631,10 @@ lib/python%%XYDOT%%/lib-dynload/termios.so
 lib/python%%XYDOT%%/lib-dynload/unicodedata.so
 %%NO_DEBUG%%lib/python%%XYDOT%%/lib-dynload/xxlimited.so
 lib/python%%XYDOT%%/lib-dynload/zlib.so
-lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.final.0.pickle
 lib/python%%XYDOT%%/lib2to3/Grammar.txt
-lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.final.0.pickle
+lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.final.0.pickle
 lib/python%%XYDOT%%/lib2to3/PatternGrammar.txt
+lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.final.0.pickle
 lib/python%%XYDOT%%/lib2to3/__init__.py
 lib/python%%XYDOT%%/lib2to3/__main__.py
 lib/python%%XYDOT%%/lib2to3/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc

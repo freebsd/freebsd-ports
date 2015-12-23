@@ -99,7 +99,6 @@ bin/qpsmtpd-prefork
 %%PERL5_MAN3%%/UPGRADING.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.plugins
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/IP
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/badhelo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/badmailfrom
@@ -122,8 +121,6 @@ bin/qpsmtpd-prefork
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smtpauth-checkpassword
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tls_before_auth
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tls_ciphers
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/dkim
 %%SITE_PERL%%/Apache/Qpsmtpd.pm
 %%SITE_PERL%%/Danga/Client.pm
 %%SITE_PERL%%/Danga/TimeoutSocket.pm

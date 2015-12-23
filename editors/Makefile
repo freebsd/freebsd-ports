@@ -29,14 +29,11 @@
     SUBDIR += calligra-l10n-et
     SUBDIR += calligra-l10n-fi
     SUBDIR += calligra-l10n-gl
-    SUBDIR += calligra-l10n-ia
     SUBDIR += calligra-l10n-it
     SUBDIR += calligra-l10n-kk
     SUBDIR += calligra-l10n-nb
-    SUBDIR += calligra-l10n-nds
     SUBDIR += calligra-l10n-nl
     SUBDIR += calligra-l10n-sk
-    SUBDIR += calligra-l10n-sl
     SUBDIR += calligra-l10n-sv
     SUBDIR += calligra-l10n-tr
     SUBDIR += chexedit

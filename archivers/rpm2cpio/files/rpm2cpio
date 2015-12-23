@@ -4,7 +4,7 @@
 
 PATH=/bin:/usr/bin
 
-if [ $# -eq 0 ]; then
+if [ $# -eq 0 -a ! -t 0 ]; then
 	f=/dev/stdin
 elif [ $# -eq 1 ]; then
 	f=$1

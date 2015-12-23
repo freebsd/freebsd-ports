@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	alegreya-sans
-PORTVERSION=	1.002
-PORTREVISION=	1
+PORTVERSION=	1.002.20150827
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 
@@ -14,9 +13,9 @@ LICENSE=	OFL11
 USES=		fonts
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	juandelperal
+GH_ACCOUNT=	huertatipografica
 GH_PROJECT=	Alegreya-Sans
-GH_TAGNAME=	2d2a4b0
+GH_TAGNAME=	4b5282d
 
 NO_BUILD=	yes
 
