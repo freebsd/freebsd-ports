@@ -24,6 +24,3 @@
 %%PERL5_MAN3%%/Promises::Deferred::EV.3.gz
 %%PERL5_MAN3%%/Promises::Deferred::Mojo.3.gz
 %%PERL5_MAN3%%/Promises::Promise.3.gz
-@dir %%SITE_PERL%%/Promises/Deferred
-@dir %%SITE_PERL%%/Promises/Cookbook
-@dir %%SITE_PERL%%/Promises
