@@ -1,8 +1,7 @@
-# $FreeBSD$
+# $FreeBSD: head/lang/python33/Makefile 401909 2015-11-19 01:28:38Z lwhsu $
 
 PORTNAME=	python33
-PORTVERSION=	3.3.5
-PORTREVISION=	8
+PORTVERSION=	3.3.6
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -113,7 +112,7 @@ post-install:
 	for i in ${STAGEDIR}${PREFIX}/lib/python3.3/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done								# Strip shared extensions
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${MAKE} TESTOPTS=-j${MAKE_JOBS_NUMBER} buildbottest
 
 .include <bsd.port.mk>
