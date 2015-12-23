@@ -7,7 +7,6 @@ PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/ \
 		http://fossies.org/unix/privat/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Easy-to-use greylist milter for sendmail and postfix
@@ -18,6 +17,8 @@ CONFLICTS=	milter-greylist-devel-[1-9]*.*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAKE_JOBS_UNSAFE=	yes
+
+USES=		tar:tgz
 
 ##
 # Use the following quirks to choose which sendmail to use (ports or system):
@@ -30,44 +31,34 @@ MAKE_JOBS_UNSAFE=	yes
 # installed port preference over it.
 ##
 
-OPTIONS_DEFINE=		SPF GEOIP CURL LDAP P0F POSTFIX DOCS EXAMPLES
+OPTIONS_DEFINE=		SPF GEOIP CURL DKIM LDAP P0F POSTFIX DOCS EXAMPLES
 SPF_DESC=		SPF support
+DKIM_DESC=		DKIM support
 CURL_DESC=		curl support
 P0F_DESC=		P0F support
 POSTFIX_DESC=		Use Postfix instead of Sendmail
 
-P0F_RUN_DEPENDS+=	p0f:${PORTSDIR}/net-mgmt/p0f
-SPF_LIB_DEPENDS+=	libspf2.so:${PORTSDIR}/mail/libspf2
-CURL_LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
-GEOIP_LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+P0F_RUN_DEPENDS=	p0f:${PORTSDIR}/net-mgmt/p0f
+SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+DKIM_LIB_DEPENDS=	libdkim.so:${PORTSDIR}/mail/libdkim
 
 POSTFIX_CONFIGURE_ENABLE=	postfix
+POSTFIX_LDFLAGS_OFF=		${SENDMAIL_LDFLAGS}
+POSTFIX_LIBS_OFF=		${SENDMAIL_LDADD}
+
 P0F_CONFIGURE_ENABLE=		p0f306
 
+DKIM_CONFIGURE_WITH=		--with-libdkim=${LOCALBASE}
+SPF_CONFIGURE_WITH=		--with-libspf2=${LOCALBASE}
+GEOIP__CONFIGURE_WITH=		--with-libGeoIP=${LOCALBASE}
+CURL_CONFIGURE_WITH=		--with-libcurl=${LOCALBASE}
+LDAP_CONFIGURE_ON=		--with-openldap=${LOCALBASE}
+LDAP_LDFLAGS=			-L${LOCALBASE}/lib
+LDAP_USE=			OPENLDAP=yes
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSPF}
-CONFIGURE_ARGS+=	--with-libspf2=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MGEOIP}
-CONFIGURE_ARGS+=	--with-libGeoIP=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-CONFIGURE_ARGS+=	--with-libcurl=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-# We can't use LDAP_CONFIGURE_WITH because configure script is buggy
-USE_OPENLDAP=yes
-CONFIGURE_ARGS+=	--with-openldap
-.endif
-
-.if ! ${PORT_OPTIONS:MPOSTFIX}
-LDFLAGS+=	${SENDMAIL_LDFLAGS}
-LIBS+=		${SENDMAIL_LDADD}
-.endif
 
 LIBS+=		-lpthread
 
@@ -94,15 +85,14 @@ do-install:
 		${STAGEDIR}${PREFIX}/libexec/
 	${INSTALL_DATA} ${WRKSRC}/greylist.conf \
 		${STAGEDIR}${PREFIX}/etc/mail/greylist.conf.sample
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}/var/milter-greylist
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/greylist.conf ${STAGEDIR}${EXAMPLESDIR}/
-.endif
-	@${MKDIR} ${STAGEDIR}/var/milter-greylist
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
