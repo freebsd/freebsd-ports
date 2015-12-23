@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WinZip like program written in Java
 
+DEPRECATED=	Abandoned, outdated (no updates since 2003)
+EXPIRATION_DATE=	2016-01-23
+
 USES=		zip
 PLIST_FILES=	%%JAVAJARDIR%%/jzip.org.jar bin/${PORTNAME}
 USE_JAVA=	yes
