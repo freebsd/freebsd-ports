@@ -3,6 +3,7 @@
 
 PORTNAME=	intel-pcm
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/imp
 DISTNAME=	IntelPerformanceCounterMonitor-PCM-V${PORTVERSION}
