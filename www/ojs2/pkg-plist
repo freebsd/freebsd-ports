@@ -1,7 +1,39 @@
-@dir %%WWWDIR%%/cache/_db
-@dir %%WWWDIR%%/cache/t_cache
-@dir %%WWWDIR%%/cache/t_compile
-@dir %%WWWDIR%%/cache/t_config
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING_pt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FAQ_pt
+%%PORTDOCS%%%%DOCSDIR%%/IMPORTEXPORT
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL_pt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_pt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-CVS
+%%PORTDOCS%%%%DOCSDIR%%/README-CVS_pt
+%%PORTDOCS%%%%DOCSDIR%%/README-DEV
+%%PORTDOCS%%%%DOCSDIR%%/README_jp
+%%PORTDOCS%%%%DOCSDIR%%/README_pt
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE
+%%PORTDOCS%%%%DOCSDIR%%/REPORTING-BUGS
+%%PORTDOCS%%%%DOCSDIR%%/REPORTING-BUGS_pt
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE_pt
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.0.1
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.0.2
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.1
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.1.1
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.2
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.2.1
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.0.1
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.0.2
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.1.0
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.1.1
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.2.0
+%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.2.1
+@owner www
+@group www
+%%WWWDIR%%/cache/fc-locale-list.php
 %%WWWDIR%%/classes/admin/form/ImportOJS1Form.inc.php
 %%WWWDIR%%/classes/admin/form/JournalSiteSettingsForm.inc.php
 %%WWWDIR%%/classes/admin/form/SiteSettingsForm.inc.php
@@ -335,39 +367,6 @@
 %%WWWDIR%%/dbscripts/xml/upgrade/2.2.1_update.xml
 %%WWWDIR%%/dbscripts/xml/upgrade/public_issue_ids.xml
 %%WWWDIR%%/dbscripts/xml/version.xml
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/COPYING_pt
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/FAQ_pt
-%%PORTDOCS%%%%DOCSDIR%%/IMPORTEXPORT
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL_pt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_pt
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README-CVS
-%%PORTDOCS%%%%DOCSDIR%%/README-CVS_pt
-%%PORTDOCS%%%%DOCSDIR%%/README-DEV
-%%PORTDOCS%%%%DOCSDIR%%/README_jp
-%%PORTDOCS%%%%DOCSDIR%%/README_pt
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE
-%%PORTDOCS%%%%DOCSDIR%%/REPORTING-BUGS
-%%PORTDOCS%%%%DOCSDIR%%/REPORTING-BUGS_pt
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADE_pt
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.0.1
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.0.2
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.1
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.1.1
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.2
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/ChangeLog-2.2.1
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.0.1
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.0.2
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.1.0
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.1.1
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.2.0
-%%PORTDOCS%%%%DOCSDIR%%/release-notes/README-2.2.1
 %%WWWDIR%%/help/el_GR/editorial/toc/000000.xml
 %%WWWDIR%%/help/el_GR/editorial/toc/000001.xml
 %%WWWDIR%%/help/el_GR/editorial/toc/000002.xml
@@ -3202,9 +3201,14 @@
 %%WWWDIR%%/tools/rebuildSearchIndex.php
 %%WWWDIR%%/tools/runScheduledTasks.php
 %%WWWDIR%%/tools/upgrade.php
-%%WWWDIR%%/cache/fc-locale-list.php
+@dir %%WWWDIR%%/cache/_db
+@dir %%WWWDIR%%/cache/t_cache
+@dir %%WWWDIR%%/cache/t_compile
+@dir %%WWWDIR%%/cache/t_config
 @dir %%WWWDIR%%/locale/en_US/images
-@unexec /bin/rm -rf %D/%%WWWDIR%%/cache/t_config 2>/dev/null || true
-@unexec /bin/rm -rf %D/%%WWWDIR%%/cache/t_compile 2>/dev/null || true
-@unexec /bin/rm -rf %D/%%WWWDIR%%/cache/t_cache 2>/dev/null || true
-@unexec /bin/rm -rf %D/%%WWWDIR%%/cache/_db 2>/dev/null || true
+@group
+@owner
+@postunexec /bin/rm -rf %D/%%WWWDIR%%/cache/t_config 2>/dev/null || true
+@postunexec /bin/rm -rf %D/%%WWWDIR%%/cache/t_compile 2>/dev/null || true
+@postunexec /bin/rm -rf %D/%%WWWDIR%%/cache/t_cache 2>/dev/null || true
+@postunexec /bin/rm -rf %D/%%WWWDIR%%/cache/_db 2>/dev/null || true

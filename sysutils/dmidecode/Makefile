@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dmidecode
-PORTVERSION=	2.12
-PORTREVISION=	2
+PORTVERSION=	3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SAVANNAH
 
@@ -16,7 +15,7 @@ OPTIONS_DEFINE=	DOCS
 
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 MAKE_ENV=	DOCSDIR="${DOCSDIR}"
-USES=		tar:bzip2
+USES=		tar:xz
 
 PLIST_FILES=	etc/periodic/daily/dmidecode \
 		man/man8/dmidecode.8.gz \

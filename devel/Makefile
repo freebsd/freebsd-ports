@@ -4536,8 +4536,8 @@
     SUBDIR += qross
     SUBDIR += qscintilla2
     SUBDIR += qscintilla2-designerplugin
-    SUBDIR += qscintilla2-qt5
     SUBDIR += qscintilla2-designerplugin-qt5
+    SUBDIR += qscintilla2-qt5
     SUBDIR += qt4
     SUBDIR += qt4-assistant
     SUBDIR += qt4-assistant-adp

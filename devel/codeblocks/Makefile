@@ -38,6 +38,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 USE_CXXSTD=	c++11
+. if ${COMPILER_VERSION} >= 35
+CXXFLAGS+=	-Wno-undefined-bool-conversion
+. endif
 .endif
 
 .include <bsd.port.post.mk>

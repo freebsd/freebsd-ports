@@ -1,5 +1,5 @@
---- Makefile.PL.orig	2008-06-08 17:27:50.000000000 +0400
-+++ Makefile.PL	2008-06-08 17:26:56.000000000 +0400
+--- Makefile.PL.orig	2008-06-08 13:27:50 UTC
++++ Makefile.PL
 @@ -8,10 +8,6 @@ WriteMakefile(
                VERSION_FROM        => 'lib/Net/eBay.pm',
                ABSTRACT            => 'XML based communication with eBay API',

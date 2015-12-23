@@ -6,7 +6,7 @@ DISTVERSION=	6.x-1.3
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for Consistent Server Side Mime Detection
 
 USES=		drupal:6,module

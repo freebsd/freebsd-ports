@@ -2,15 +2,20 @@
 
 PORTNAME=	cronolog
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cronolog.org/patches/
+MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/cronolog-devel/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Web log rotation utility that provides datestamp filenames
 
-BROKEN=		unfetchable
+LICENSE=	APACHE10
+
+USES=		shebangfix tar:xz
+
+SHEBANG_FILES=	src/cronosplit
 
 PLIST_FILES=	sbin/cronolog \
 		sbin/cronosplit \

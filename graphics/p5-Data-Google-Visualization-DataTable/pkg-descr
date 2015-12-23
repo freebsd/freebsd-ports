@@ -1,0 +1,8 @@
+Easily create Google DataTable objects for the Google Visulization API.
+
+This module is attempts to hide the gory details of preparing your data
+before sending it to a JSON serializer - more specifically, hiding some
+of the hoops that have to be jump through for making sure your data
+serializes to the right data types.
+
+WWW: http://search.cpan.org/dist/Data-Google-Visualization-DataTable/

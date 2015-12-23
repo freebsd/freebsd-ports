@@ -16,7 +16,6 @@ COMMENT=	Simple Ruby module that provides setlocale(3)
 
 CONFLICTS=	${PKGNAMEPREFIX}locale2-[0-9]*
 
-#USE_BZIP2=	yes	# only saves 500 bytes..
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

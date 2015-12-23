@@ -1,5 +1,5 @@
---- MANIFEST.orig	2008-06-08 17:27:22.000000000 +0400
-+++ MANIFEST	2008-06-08 17:22:48.000000000 +0400
+--- MANIFEST.orig	2008-06-08 13:27:22 UTC
++++ MANIFEST
 @@ -7,22 +7,3 @@ lib/Net/eBay.pm
  t/00-load.t
  t/pod-coverage.t

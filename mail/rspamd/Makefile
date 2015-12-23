@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.0.10
-PORTREVISION=	1
+PORTVERSION=	1.0.11
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -14,17 +13,19 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
 		libevent.so:${PORTSDIR}/devel/libevent2 \
-		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
-		libhiredis.so:${PORTSDIR}/databases/hiredis
+		libluajit-5.1.so:${PORTSDIR}/lang/luajit
 
 CONFLICTS_INSTALL=	rspamd
 
-OPTIONS_DEFINE=	GPERF REDIRECTOR
-GPERF_DESC=		google perf-tools profiling
+OPTIONS_DEFINE=	GPERF REDIRECTOR HIREDIS
+GPERF_DESC=		Google perf-tools profiling
 REDIRECTOR_DESC=	Install HTTP redirector
+HIREDIS_DESC=		Redis support through hiredis
+OPTIONS_DEFAULT=	HIREDIS
 
 USE_RC_SUBR=	rspamd
 
+SUB_FILES=	pkg-message rspamd.newsyslog.conf.sample
 PLIST_SUB+=	ETCDIR=etc/rspamd \
 		RSPAMDVERSION=${PORTVERSION}
 CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
@@ -75,14 +76,25 @@ USE_SQLITE=	yes
  PLIST_SUB+=		REDIRECTOR="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MHIREDIS}
+ LIB_DEPENDS+=	libhiredis.so:${PORTSDIR}/databases/hiredis
+.else
+ CMAKE_ARGS+=	-DENABLE_HIREDIS=OFF
+.endif
+
 post-stage:
 	${INSTALL} -d \
 		${STAGEDIR}/var/log/rspamd \
 		${STAGEDIR}/var/db/rspamd \
 		${STAGEDIR}/var/run/rspamd
-		# Linux specific
-		${RM} ${STAGEDIR}/${ETCDIR}/rspamd.systemd.conf
-		# No need, since rspamd.conf.sample is a same
-		${RM} ${STAGEDIR}/${ETCDIR}/rspamd.sysvinit.conf
+	# Linux specific
+	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.systemd.conf
+	# No need, since rspamd.conf.sample is a same
+	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.sysvinit.conf
+	${INSTALL_DATA} ${WRKDIR}/rspamd.newsyslog.conf.sample ${STAGEDIR}${ETCDIR}
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${LN} -s ${ETCDIR}/rspamd.newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 
 .include <bsd.port.mk>

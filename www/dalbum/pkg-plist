@@ -83,14 +83,14 @@
 %%DALBUM_DIR%%/reindex.php
 %%DALBUM_DIR%%/showimg.php
 %%DALBUM_DIR%%/version.txt
-@dirrmtry %%DALBUM_DIR%%/pictures/Sample album
-@dirrmtry %%DALBUM_DIR%%/pictures
-@dirrm %%DALBUM_DIR%%/include/lang
-@dirrm %%DALBUM_DIR%%/include
-@dirrm %%DALBUM_DIR%%/images/folder
-@dirrm %%DALBUM_DIR%%/images
-@dirrm %%DALBUM_DIR%%/config
-@dirrmtry %%DALBUM_DIR%%/.private
-@dirrm %%DALBUM_DIR%%
-@owner root
-@group wheel
+@dir %%DALBUM_DIR%%/pictures/Sample album
+@dir %%DALBUM_DIR%%/pictures
+@dir %%DALBUM_DIR%%/include/lang
+@dir %%DALBUM_DIR%%/include
+@dir %%DALBUM_DIR%%/images/folder
+@dir %%DALBUM_DIR%%/images
+@dir %%DALBUM_DIR%%/config
+@dir %%DALBUM_DIR%%/.private
+@dir %%DALBUM_DIR%%
+@owner
+@group

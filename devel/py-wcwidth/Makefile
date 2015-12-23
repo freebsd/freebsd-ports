@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wcwidth
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,8 @@ COMMENT=	Determine the printable width of the terminal
 
 LICENSE=	MIT
 
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

@@ -25,9 +25,14 @@
 
 For upgrades:
   0. Back up your data.
-  1. Run "./checksetup.pl" inside %%WWWDIR%%.  You may need to
+
+  1. Run the command inside %%WWWDIR%%
+      find . -mindepth 2 -name .htaccess -exec rm -f {} \;
+
+  2. Run "./checksetup.pl" inside %%WWWDIR%%.  You may need to
      run it several times.
-  2. Restart your Web server, especially if you're using mod_perl: this
+
+  3. Restart your Web server, especially if you're using mod_perl: this
      will save you from a number of troubles.
 
 ==========================================================================

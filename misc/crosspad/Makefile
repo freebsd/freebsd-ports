@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_path_perl=${PERL}
 WRKSRC=		${WRKDIR}/crosspad/build
 
-DOCS=	PROTOCOL README.english README.japanese
+PORTDOCS=	PROTOCOL README.english README.japanese
 
 OPTIONS_DEFINE=	DOCS
 
@@ -25,8 +25,8 @@ post-patch:
 		-e 's,-(g|o) (bin|uucp),,g' \
 		${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/../|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/../|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

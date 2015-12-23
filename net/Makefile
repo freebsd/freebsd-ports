@@ -624,6 +624,7 @@
     SUBDIR += p5-Net-LDAP-AutoDNs
     SUBDIR += p5-Net-LDAP-AutoServer
     SUBDIR += p5-Net-LDAP-Express
+    SUBDIR += p5-Net-LDAP-FilterBuilder
     SUBDIR += p5-Net-LDAP-LDAPhash
     SUBDIR += p5-Net-LDAP-Makepath
     SUBDIR += p5-Net-LDAP-Server
@@ -928,6 +929,7 @@
     SUBDIR += py-beanstalkc
     SUBDIR += py-cloudfiles
     SUBDIR += py-dpkt
+    SUBDIR += py-dugong
     SUBDIR += py-ec2-cli-tools
     SUBDIR += py-eventlet
     SUBDIR += py-gntp

@@ -101,8 +101,6 @@ do-install:
 .else
 	@cd ${WRKSRC}/src; ${MAKE} server
 .endif
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/etc
 .for file in ${STRIP_FILES}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/ossec-hids/bin/${file}
@@ -116,9 +114,8 @@ post-install:
 	${CP} ${WRKSRC}/etc/ossec-server.conf ${STAGEDIR}${PREFIX}/${PORTNAME}/etc/ossec.conf.sample
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>

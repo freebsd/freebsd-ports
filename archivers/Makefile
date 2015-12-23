@@ -189,6 +189,7 @@
     SUBDIR += sharutils
     SUBDIR += snappy
     SUBDIR += snappy-java
+    SUBDIR += snzip
     SUBDIR += squeeze
     SUBDIR += squsq
     SUBDIR += stuffit

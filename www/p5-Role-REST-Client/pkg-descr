@@ -1,0 +1,6 @@
+Perl extension for Rest Client Role.
+
+Role::REST::Client will handle encoding and decoding when using the HTTP verbs.
+GET, PUT, POST, DELETE, OPTIONS, HEAD.
+
+WWW: http://search.cpan.org/dist/Role-REST-Client/

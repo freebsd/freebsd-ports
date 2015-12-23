@@ -13,7 +13,6 @@ COMMENT=	Qt EUC-JP/JIS codec plugins
 USE_QT4=	qmake_build corelib
 QT_DIST=	yes
 
-#USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 
 ALL_TARGET=	first

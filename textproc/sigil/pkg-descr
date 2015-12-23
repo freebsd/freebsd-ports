@@ -1,24 +1,21 @@
-Sigil is a multi-platform WYSIWYG ebook editor. It is designed to edit books
-in ePub format. 
-* Free and open source software under GPLv3
-* Multi-platform: runs on Windows, FreeBSD, Linux and Mac
-* Full Unicode support: everything you see in Sigil is in UTF-16
-* Full EPUB spec support
-* WYSIWYG editing
-* Multiple Views: Book View, Code View and Split View
-* Metadata editor with full support for all possible metadata entries
-(more than 200) with full descriptions for each
-* Table Of Contents editor
-* Multi-level TOC support
-* Book View fully supports the display of any XHTML document possible
-under the OPS spec
-* SVG support
-* Basic XPGT support
-* Advanced automatic conversion of all imported documents to Unicode
-* Currently imports TXT, HTML and EPUB files; more will be added with time
-* Embedded HTML Tidy; all imported documents are thoroughly cleaned;
-  changing views cleans the document so no matter how much you screw
-  up your code, it will fix it (usually)
-* An actually usable user interface
+Sigil is a multi-platform EPUB ebook editor with the following features:
+
+ * Free and open source software under GPLv3
+ * Multi-platform
+ * Full UTF-16 support
+ * EPUB 2 spec support with limited EPUB 3 support
+ * Multiple Views: Book View, Code View and Preview View
+ * WYSIWYG editing in Book View
+ * Complete control over directly editing EPUB syntax in Code View
+ * Table of Contents generator with multi-level heading support
+ * Metadata editor
+ * User interface translated into many languages
+ * Spell checking with default and user configurable dictionaries
+ * Full Regular Expression (PCRE) support for Find & Replace
+ * Supports import of EPUB and HTML files, images, and style sheets
+ * Documents can be validated for EPUB compliance with the integrated
+ * All imported files have their formatting corrected, and your editing
+   can be optionally cleaned
+ * Plugins!
 
 WWW: http://sigil-ebook.com/

@@ -43,13 +43,6 @@ share/librarian/manual/rar-lib.xhtml
 share/librarian/manual/rar-mdf.xhtml
 share/librarian/manual/rar-skcompat.xhtml
 share/librarian/rarian-sk-cl.xml
-@dirrm share/librarian/manual
-@dirrm share/librarian/Templates/C
-@dirrm share/librarian/Templates
-@dirrm share/librarian
-@dirrm %%DOCSDIR%%
-@dirrm include/rarian
+@dir /var/db/rarian
 @unexec rmdir /var/db/rarian/* 2>/dev/null || true
-@dirrmtry /var/db/rarian
-@exec mkdir -p /var/db/rarian
 @exec %%PREFIX%%/bin/rarian-sk-update || true
