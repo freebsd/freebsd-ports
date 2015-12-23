@@ -41,7 +41,7 @@ TEST_TARGET=	test
 CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no
-CONFIGURE_ARGS=	--with-term-lib="tinfow tinfo" --with-tcsetpgrp \
+CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-function-subdirs --enable-multibyte \
 		--sysconfdir=${PREFIX}/etc
 
@@ -84,6 +84,10 @@ DEBUG_CONFIGURE_ENABLE=	zsh-debug
 
 .if empty(ICONV_LIB)
 CONFIGURE_ENV+=	ac_cv_lib_iconv_libiconv=no
+.endif
+
+.if (${NCURSESBASE} == ${LOCALBASE}) && ${PORT_OPTIONS:MSTATIC}
+IGNORE=	cannot statically link against ncurses from ports. Either deinstall the ncurses port or turn off the STATIC option
 .endif
 
 post-patch:
@@ -132,8 +136,5 @@ post-install-EXAMPLES-on:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
-
-regression-test:
-	@(cd ${WRKSRC}; ${SETENV} -i ${MAKE} check)
 
 .include <bsd.port.post.mk>
