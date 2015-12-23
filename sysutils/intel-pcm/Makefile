@@ -12,8 +12,7 @@ COMMENT=	Intel PCM toolkit
 
 LICENSE=	BSD3CLAUSE
 
-USES=		compiler:c++11-lang dos2unix gmake
-DOS2UNIX_FILES=	cpucounters.cpp cpucounters.h
+USES=		compiler:c++11-lang gmake
 
 ONLY_FOR_ARCHS=	i386 amd64
 
