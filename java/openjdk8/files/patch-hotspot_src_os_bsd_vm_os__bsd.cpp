@@ -47,7 +47,7 @@
      return ((jlong)tinfo.user_time.seconds * 1000000000) + ((jlong)tinfo.user_time.microseconds * (jlong)1000);
    }
  #else
-+  if (Bsd::_getcpuclockid != NULL) {
++  if (user_sys_cpu_time && Bsd::_getcpuclockid != NULL) {
 +    struct timespec tp;
 +    clockid_t clockid;
 +    int ret;
