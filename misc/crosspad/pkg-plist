@@ -10,6 +10,3 @@ man/man1/crosspad2idraw.1.gz
 man/man1/crosspad2ps.1.gz
 man/man1/crosspad2tgif.1.gz
 man/man1/padload.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/PROTOCOL
-%%PORTDOCS%%%%DOCSDIR%%/README.english
-%%PORTDOCS%%%%DOCSDIR%%/README.japanese
