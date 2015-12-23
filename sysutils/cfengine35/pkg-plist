@@ -313,17 +313,6 @@ share/cfengine/CoreBase/update.cf
 %%DOCSDIR%%/examples/win_emergency.cf
 %%DOCSDIR%%/examples/win_registry.cf
 %%DOCSDIR%%/examples/win_schedule.cf
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%
-@dirrm share/cfengine/CoreBase/controls
-@dirrm share/cfengine/CoreBase/libraries
-@dirrm share/cfengine/CoreBase/services
-@dirrm share/cfengine/CoreBase/lib/3.5
-@dirrm share/cfengine/CoreBase/lib/3.6
-@dirrm share/cfengine/CoreBase/lib
-@dirrm share/cfengine/CoreBase
-@dirrm share/cfengine
-@dirrm libexec/cfengine
 @unexec rmdir "/var/cfengine/masterfiles" >/dev/null 2>&1 || :
 @unexec rmdir "/var/cfengine/inputs" >/dev/null 2>&1 || :
 @unexec rmdir "/var/cfengine/modules" >/dev/null 2>&1 || :
