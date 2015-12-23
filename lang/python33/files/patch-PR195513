@@ -17,7 +17,7 @@
  
 +/* ### Fix build with LibreSSL (does not have RAND_egd)
 +   ### PR195511, http://bugs.python.org/issue21356 */
-+#ifdef HAVE_RAND_EGD
++#ifndef OPENSSL_NO_EGD
  static PyObject *
  PySSL_RAND_egd(PyObject *self, PyObject *args)
  {
@@ -25,7 +25,7 @@
  Queries the entropy gather daemon (EGD) on the socket named by 'path'.\n\
  Returns number of bytes read.  Raises SSLError if connection to EGD\n\
  fails or if it does not provide enough data to seed PRNG.");
-+#endif /* HAVE_RAND_EGD */
++#endif /* OPENSSL_NO_EGD */
 +/* ### End PR195511  */
  
  #endif /* HAVE_OPENSSL_RAND */
@@ -36,10 +36,10 @@
       PySSL_RAND_pseudo_bytes_doc},
 +/* ### Fix build with LibreSSL (does not have RAND_egd)
 +   ### PR195511, http://bugs.python.org/issue21356 */
-+#ifdef HAVE_RAND_EGD
++#ifndef OPENSSL_NO_EGD
      {"RAND_egd",            PySSL_RAND_egd, METH_VARARGS,
       PySSL_RAND_egd_doc},
-+#endif /* HAVE_RAND_EGD */
++#endif /* OPENSSL_NO_EGD */
 +/* ### End PR195511  */
      {"RAND_status",         (PyCFunction)PySSL_RAND_status, METH_NOARGS,
       PySSL_RAND_status_doc},
