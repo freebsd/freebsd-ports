@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.7
 CATEGORIES=	www python
-MASTER_SITES=	https://www.djangoproject.com/m/releases/${PORTVERSION}/ \
-		CHEESESHOP
+MASTER_SITES=	CHEESESHOP \
+		https://www.djangoproject.com/m/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	High-level Python Web framework
+COMMENT=	High-level Python Web Framework
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -25,10 +25,12 @@ CONFLICTS=	py[23][0-9]-django-devel-[0-9]* py[23][0-9]-django-1.[0-57-9].*
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
-OPTIONS_DEFINE=	FASTCGI HTMLDOCS
-OPTIONS_DEFAULT=SQLITE
-OPTIONS_GROUP=	DATABASE
+OPTIONS_DEFINE=		FASTCGI HTMLDOCS
+OPTIONS_DEFAULT=	SQLITE
+
+OPTIONS_GROUP=		DATABASE
 OPTIONS_GROUP_DATABASE=	PGSQL MYSQL SQLITE
+
 HTMLDOCS_DESC=	Install HTML documentation (requires Sphinx)
 
 PLIST_FILES=	man/man1/django-admin.1.gz
