@@ -29,7 +29,6 @@ RUN_DEPENDS+=	bn-freebsd-doc>=${PORTVERSION}:${PORTSDIR}/misc/freebsd-doc-bn		\
 		zh_cn-freebsd-doc>=${PORTVERSION}:${PORTSDIR}/misc/freebsd-doc-zh_cn	\
 		zh_tw-freebsd-doc>=${PORTVERSION}:${PORTSDIR}/misc/freebsd-doc-zh_tw
 
-NO_BUILD=	yes
 USES=		metaport
 
 .if make(package)
