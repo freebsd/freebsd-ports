@@ -2012,6 +2012,13 @@ Notes:
 	<range><lt>1.8.7</lt></range>
       </package>
       <package>
+	<name>py27-django18</name>
+	<name>py32-django18</name>
+	<name>py33-django18</name>
+	<name>py34-django18</name>
+	<range><lt>1.8.7</lt></range>
+      </package>
+      <package>
 	<name>py27-django17</name>
 	<name>py32-django17</name>
 	<name>py33-django17</name>
@@ -2045,6 +2052,7 @@ Notes:
     <dates>
       <discovery>2015-11-24</discovery>
       <entry>2015-11-30</entry>
+      <modified>2015-12-24</modified>
     </dates>
   </vuln>
 
