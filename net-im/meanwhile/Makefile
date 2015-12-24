@@ -11,7 +11,6 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open Source implementation of the Lotus Sametime protocol
 
 USES=		gmake libtool pathfix pkgconfig
-USE_GCC=	any
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
