@@ -1,0 +1,10 @@
+======================================================================
+You installed qTox: Qt 5 based Tox client.
+
+To have video working, you need:
+1. Have multimedia/webcamd installed and running. The usual way to
+   start webcamd is to have these two lines in /etc/rc.conf:
+   webcamd_enable="YES"
+   webcamd_flags="-H"
+2. Make sure V4L option is "on" in multimedia/ffmpeg.
+======================================================================
