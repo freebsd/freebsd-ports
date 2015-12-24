@@ -4150,6 +4150,7 @@
     SUBDIR += py-natural
     SUBDIR += py-ncurses
     SUBDIR += py-nose
+    SUBDIR += py-nose-cov
     SUBDIR += py-notifier
     SUBDIR += py-notify
     SUBDIR += py-ocempgui
