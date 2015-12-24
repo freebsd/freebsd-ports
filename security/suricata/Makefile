@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suricata
-DISTVERSION=	3.0RC1
+DISTVERSION=	3.0RC3
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 
