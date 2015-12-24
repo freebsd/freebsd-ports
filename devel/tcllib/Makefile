@@ -3,10 +3,8 @@
 
 PORTNAME=	tcllib
 DISTVERSION=	1_17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel tcl
-MASTER_SITES=	http://aldan.algebra.com/~mi/port-stuff/
-DISTFILES=	tcltk-tcllib-${PORTVERSION}-tcllib_${DISTVERSION}_GH0.tar.gz
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Collection of utility modules for Tcl
@@ -19,12 +17,15 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 OPTIONS_DEFINE?=DOCS MANPAGES
 
 WRKSRC=		${WRKDIR}/tcllib-tcllib_${DISTVERSION}
+USE_GITHUB=	yes
+GH_TAGNAME=	${PORTNAME}_${DISTVERSION}
+GH_ACCOUNT=	tcltk
 USES+=		tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
 MAKE_ENV+=	LANG=C
+TEST_TARGET=	test
 PORTDOCS=	*
-REINPLACE_ARGS=	-i'""'
 
 INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 		-apps -app-path ${STAGEDIR}${PREFIX}/bin \
@@ -100,7 +101,7 @@ do-install:
 	cd ${WRKSRC} && ${TCLSH} ./installer.tcl ${INSTALL_ARGS}
 .endif
 
-test check regression-test: build
-	cd ${WRKSRC} && ${SETENV} LANG=C LC_ALL=C DISPLAY= ${MAKE} test
+test: build
+	cd ${WRKSRC} && ${SETENV} LANG=C LC_ALL=C DISPLAY= TZ=utc ${MAKE} test
 
 .include <bsd.port.mk>
