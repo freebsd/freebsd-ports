@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qTox
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im net-p2p
 
@@ -19,10 +19,13 @@ LIB_DEPENDS=	libtoxcore.so:${PORTSDIR}/net-im/tox \
 		libvpx.so:${PORTSDIR}/multimedia/libvpx \
 		libfilteraudio.so:${PORTSDIR}/audio/libfilteraudio \
 		libsodium.so:${PORTSDIR}/security/libsodium \
-		libqrencode.so:${PORTSDIR}/graphics/libqrencode
+		libqrencode.so:${PORTSDIR}/graphics/libqrencode \
+		libsqlcipher.so:${PORTSDIR}/databases/sqlcipher
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tux3
+
+SUB_FILES=	pkg-message
 
 USES=		compiler:c++11-lib desktop-file-utils openal:soft qmake gmake
 USE_GNOME=	glib20 gtk20 cairo gdkpixbuf2
