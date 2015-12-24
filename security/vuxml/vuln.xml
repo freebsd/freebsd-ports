@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e1b5318c-aa4d-11e5-8f5c-002590263bf5">
+    <topic>mantis -- information disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>mantis</name>
+	<range><lt>1.2.19_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mantis reports:</p>
+	<blockquote cite="https://mantisbt.org/bugs/view.php?id=19873">
+	  <p>CVE-2015-5059: documentation in private projects can be seen by
+	    every user</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5059</cvename>
+      <freebsdpr>ports/201106</freebsdpr>
+      <url>https://mantisbt.org/bugs/view.php?id=19873</url>
+      <url>http://openwall.com/lists/oss-security/2015/06/25/3</url>
+    </references>
+    <dates>
+      <discovery>2015-06-23</discovery>
+      <entry>2015-12-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f36bbd66-aa44-11e5-8f5c-002590263bf5">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
