@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	System for Automated Geoscientific Analyses
@@ -72,6 +72,7 @@ post-extract:
 		${WRKSRC}/src/modules/garden/garden_webservices/Makefile.am \
 		${WRKSRC}/src/modules/io/io_grid_image/Makefile.am \
 		${WRKSRC}/src/modules/io/io_shapes/Makefile.am \
+		${WRKSRC}/src/modules/io/io_virtual/Makefile.am \
 		${WRKSRC}/src/modules/pointcloud/pointcloud_tools/Makefile.am \
 		${WRKSRC}/src/modules/pointcloud/pointcloud_viewer/Makefile.am \
 		${WRKSRC}/src/modules/tin/tin_viewer/Makefile.am \
@@ -82,7 +83,7 @@ post-patch:
 		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile.am
 	@${REINPLACE_CMD} -e 's|\[cv\]|\[opencv_core\]|' \
 		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2652)" + "\\n"|' \
+	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2737)" + "\\n"|' \
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 .if ${ARCH} == "powerpc"
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
