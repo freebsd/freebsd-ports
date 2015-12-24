@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	python33
-PORTVERSION=	3.3.5
-PORTREVISION=	8
+PORTVERSION=	3.3.6
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -12,6 +11,9 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
+
+DEPRECATED=	No longer receives bug fixes, only security updates. Please update to Python 3.5
+EXPIRATION_DATE=	2017-09-01
 
 USES=		cpe ncurses pkgconfig readline tar:xz
 USE_OPENSSL=	yes
@@ -29,6 +31,9 @@ INSTALL_TARGET=		altinstall						# Don't want cloberring of unprefixed files
 MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
 MAKE_ARGS+=		LIBPC="${PREFIX}/libdata/pkgconfig"			# Until pathfix gets support for files other than Makefile.in
 MAKE_JOBS_UNSAFE=	yes							# Parser/pgen build bug. See Issue: 200622, 201974
+
+TEST_TARGET=		buildbottest
+TEST_ARGS=		TESTOPTS=-j${MAKE_JOBS_NUMBER}
 
 SUB_FILES=		pkg-message
 SUB_LIST=		PYTHON_SUFFIX=${PORTVERSION:R:S/.//g}
@@ -112,8 +117,5 @@ post-install:
 .endif
 	for i in ${STAGEDIR}${PREFIX}/lib/python3.3/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done								# Strip shared extensions
-
-regression-test: build
-	@cd ${WRKSRC} && ${MAKE} TESTOPTS=-j${MAKE_JOBS_NUMBER} buildbottest
 
 .include <bsd.port.mk>
