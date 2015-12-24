@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 USES=		autoreconf compiler:c11 gmake pkgconfig
 USE_OPENSSL=	yes
 WITH_OPENSSL_PORT=yes
-OPENSSL_PORT=	security/libressl
+OPENSSL_PORT=	security/libressl-devel
 GNU_CONFIGURE=yes
 AUTOMAKE_ARGS=	--gnu --add-missing --copy
 CONFIGURE_ARGS+=	CFLAGS="-I${LOCALBASE}/include"
