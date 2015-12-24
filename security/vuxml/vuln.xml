@@ -3678,16 +3678,27 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-8001</cvename>
+      <cvename>CVE-2015-8002</cvename>
+      <cvename>CVE-2015-8003</cvename>
+      <cvename>CVE-2015-8004</cvename>
+      <cvename>CVE-2015-8005</cvename>
+      <cvename>CVE-2015-8006</cvename>
+      <cvename>CVE-2015-8007</cvename>
+      <cvename>CVE-2015-8008</cvename>
+      <cvename>CVE-2015-8009</cvename>
       <url>https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-October/000181.html</url>
       <url>https://phabricator.wikimedia.org/T91203</url>
       <url>https://phabricator.wikimedia.org/T91205</url>
       <url>https://phabricator.wikimedia.org/T91850</url>
       <url>https://phabricator.wikimedia.org/T95589</url>
       <url>https://phabricator.wikimedia.org/T108616</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/29/14</url>
     </references>
     <dates>
       <discovery>2015-10-16</discovery>
       <entry>2015-10-23</entry>
+      <modified>2015-12-24</modified>
     </dates>
   </vuln>
 
