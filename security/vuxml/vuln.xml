@@ -7501,14 +7501,27 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-6727</cvename>
+      <cvename>CVE-2013-7444</cvename>
+      <cvename>CVE-2015-6728</cvename>
+      <cvename>CVE-2015-6729</cvename>
+      <cvename>CVE-2015-6730</cvename>
+      <cvename>CVE-2015-6731</cvename>
+      <cvename>CVE-2015-6733</cvename>
+      <cvename>CVE-2015-6734</cvename>
+      <cvename>CVE-2015-6735</cvename>
+      <cvename>CVE-2015-6736</cvename>
+      <cvename>CVE-2015-6737</cvename>
       <url>https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-August/000179.html</url>
       <url>https://phabricator.wikimedia.org/T106893</url>
       <url>https://phabricator.wikimedia.org/T94116</url>
       <url>https://phabricator.wikimedia.org/T97391</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/08/27/6</url>
     </references>
     <dates>
       <discovery>2015-08-10</discovery>
       <entry>2015-08-14</entry>
+      <modified>2015-12-24</modified>
     </dates>
   </vuln>
 
