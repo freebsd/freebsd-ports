@@ -34,6 +34,16 @@ list_cmd="${BINMISCCTL} list"
 
 %%NAME%%_start()
 {
+	# register arm interpreter styled 'arm'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}arm${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add arm --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00" \
+			--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
 	# register armv6 interpreter styled 'arm'
 	interpreter=${QEMU_DIR}/${QEMU_PREFIX}arm${QEMU_SUFFIX}
 	if [ -x "${interpreter}" ]; then

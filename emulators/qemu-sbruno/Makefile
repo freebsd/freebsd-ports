@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.4.50.g20151206
+PORTVERSION=	2.5.50.g20151224
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
-		LOCAL/nox \
 		LOCAL/nox:dtc \
-		http://people.freebsd.org/~nox/tmp/distfiles/ \
 		http://people.freebsd.org/~nox/tmp/distfiles/:dtc
 PKGNAMESUFFIX?=	-sbruno
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -20,7 +18,7 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 USE_GITHUB=	yes
 GH_ACCOUNT=	seanbruno
 GH_PROJECT=	${PORTNAME}-bsd-user
-GH_TAGNAME=	7397bda
+GH_TAGNAME=	e4ece37
 HAS_CONFIGURE=	yes
 USES=		gmake pkgconfig bison perl5 python:2,build
 USE_PERL5=	build
@@ -61,7 +59,7 @@ SUB_LIST=	NAME=qemu_user_static
 
 CONFIGURE_ARGS+=	--localstatedir=/var
 CONFIGURE_ARGS+=	--extra-ldflags=-L\"${LOCALBASE}/lib\"
-CONFIGURE_ARGS+=	--disable-smartcard-nss --disable-libssh2
+CONFIGURE_ARGS+=	--disable-libssh2
 PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 
 .if defined(QEMU_USER_STATIC)
@@ -150,9 +148,7 @@ USES+=		gettext
 PLIST_SUB+=	GTK2=""
 .endif
 
-.if empty(PORT_OPTIONS:MGNUTLS)
-CONFIGURE_ARGS+=	--disable-vnc-tls
-.else
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .endif
 
