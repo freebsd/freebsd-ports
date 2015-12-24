@@ -519,6 +519,7 @@
     SUBDIR += fib
     SUBDIR += firmware-utils
     SUBDIR += fistgen
+    SUBDIR += flatbuffers
     SUBDIR += flatzebra
     SUBDIR += flex-sdk
     SUBDIR += flex-sdk35
