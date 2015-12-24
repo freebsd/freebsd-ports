@@ -2,33 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	punjab
-PORTVERSION=	0.14
-PORTREVISION=	2
+PORTVERSION=	0.15
 CATEGORIES=	net-im python
-MASTER_SITES=	http://code.stanziq.com/punjab/releases/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP XMPP client interface
 
-BROKEN=		unfetchable
-
-USE_PYTHON=	distutils autoplist
 USES=		python twisted:words,web,conch,names
-
-PORTDOCS=	README.txt INSTALL.txt PKG-INFO
-
+USE_PYTHON=	distutils autoplist
 USE_RC_SUBR=	punjab
 
 SUB_FILES=	pkg-message punjab.tac
-SUB_LIST+=	"PYTHON_CMD=${PYTHON_CMD}"
+SUB_LIST=	PYTHON_CMD="${PYTHON_CMD}"
+
+PORTDOCS=	README.txt INSTALL.txt PKG-INFO
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
+	(cd ${WRKDIR} && ${INSTALL_DATA} punjab.tac \
+		${STAGEDIR}${PREFIX}/libexec)
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	${INSTALL} ${WRKDIR}/punjab.tac ${STAGEDIR}${PREFIX}/libexec/
+	@(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${WWWDIR})
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
