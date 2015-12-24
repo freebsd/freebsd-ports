@@ -63,9 +63,9 @@ Notes:
     <affects>
       <package>
 	<name>ruby</name>
-	<range><lt>2.0.0.648,1</lt></range>
-	<range><lt>2.1.8,1</lt></range>
-	<range><lt>2.2.4,1</lt></range>
+	<range><ge>2.0.0,1</ge><lt>2.0.0.648,1</lt></range>
+	<range><ge>2.1.0,1</ge><lt>2.1.8,1</lt></range>
+	<range><ge>2.2.0,1</ge><lt>2.2.4,1</lt></range>
       </package>
     </affects>
     <description>
