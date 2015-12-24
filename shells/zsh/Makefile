@@ -41,7 +41,7 @@ TEST_TARGET=	test
 CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no
-CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
+CONFIGURE_ARGS=	--with-tcsetpgrp \
 		--enable-function-subdirs --enable-multibyte \
 		--sysconfdir=${PREFIX}/etc
 
@@ -76,18 +76,14 @@ MEM_CONFIGURE_ENABLE=	zsh-mem
 SECURE_FREE_CONFIGURE_ENABLE=	zsh-secure-free
 MAILDIR_CONFIGURE_ENABLE=	maildir-support
 STATIC_LDFLAGS=		-static
-STATIC_CONFIGURE_ON=	--disable-dynamic
-STATIC_CONFIGURE_OFF=	--enable-dynamic
+STATIC_CONFIGURE_ON=	--disable-dynamic --with-term-lib="tinfow tinfo"
+STATIC_CONFIGURE_OFF=	--enable-dynamic  --with-term-lib="ncursesw ncurses"
 DEBUG_CONFIGURE_ENABLE=	zsh-debug
 
 .include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB)
 CONFIGURE_ENV+=	ac_cv_lib_iconv_libiconv=no
-.endif
-
-.if (${NCURSESBASE} == ${LOCALBASE}) && ${PORT_OPTIONS:MSTATIC}
-IGNORE=	cannot statically link against ncurses from ports. Either deinstall the ncurses port or turn off the STATIC option
 .endif
 
 post-patch:
