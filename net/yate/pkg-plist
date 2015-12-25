@@ -133,6 +133,7 @@ lib/yate/server/eventlogs.yate
 %%SCTP%%lib/yate/server/lksctp.yate
 %%MYSQL%%lib/yate/server/mysqldb.yate
 %%PGSQL%%lib/yate/server/pgsqldb.yate
+%%SQLITE%%lib/yate/server/sqlitedb.yate
 lib/yate/jabber/jabberserver.yate
 lib/yate/jabber/jbfeatures.yate
 lib/yate/sip/sip_cnam_lnp.yate

@@ -18,8 +18,7 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64 armv6
 
-USE_AUTOTOOLS=	autoconf
-USES=		bison gmake shebangfix
+USES=		autoreconf bison gmake shebangfix
 SHEBANG_FILES=	share/scripts/banbrutes.php \
 		share/scripts/leavemail.php \
 		share/scripts/queue_in.php \
@@ -28,6 +27,7 @@ SHEBANG_FILES=	share/scripts/banbrutes.php \
 		share/scripts/voicemail.php
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--without-fdsize \
 		--without-libqt4 \
@@ -41,7 +41,7 @@ USE_RC_SUBR=	yate
 USERS=		yate
 GROUPS=		yate
 
-OPTIONS_DEFINE=	AMRNB DOCS DAHDI H323 ILBC MYSQL PGSQL SCTP SPANDSP SSL
+OPTIONS_DEFINE=	AMRNB DOCS DAHDI H323 ILBC MYSQL PGSQL SCTP SPANDSP SQLITE SSL
 OPTIONS_DEFAULT=SCTP
 
 AMRNB_DESC=	Adaptive Multi-Rate Narrowband support
@@ -53,35 +53,38 @@ SPANDSP_DESC=	Spandsp faxing support
 
 OPTIONS_SUB=	yes
 
-AMRNB_WITH=	amrnb=${LOCALBASE}
+AMRNB_CONFIGURE_WITH=	amrnb=${LOCALBASE}
 AMRNB_LIB_DEPENDS=	libamrnb.so:${PORTSDIR}/audio/libamrnb
 
-DAHDI_ENABLE=	dahdi
+DAHDI_CONFIGURE_ENABLE=	dahdi
 DAHDI_BUILD_DEPENDS=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
 			${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
 DAHDI_LIB_DEPENDS=	libpri.so:${PORTSDIR}/misc/libpri \
 			libopenr2.so:${PORTSDIR}/misc/openr2
 
-H323_WITH=	openh323=${LOCALBASE}
+H323_CONFIGURE_WITH=	openh323=${LOCALBASE}
 H323_LIB_DEPENDS=	libopenh323.so:${PORTSDIR}/net/h323plus
 
-ILBC_ENABLE=	ilbc
+ILBC_CONFIGURE_ENABLE=	ilbc
 ILBC_LIB_DEPENDS=	libilbc.so:${PORTSDIR}/net/ilbc
 
-MYSQL_WITH=	mysql
-MYSQL_USE=	mysql=yes
+MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_USE=		mysql=yes
 
-OPENSSL_WITH=	openssl=${OPENSSLBASE}
+OPENSSL_CONFIGURE_WITH=	openssl=${OPENSSLBASE}
 
-PGSQL_WITH=	libpq=${LOCALBASE}
-PGSQL_USES=	pgsql
+PGSQL_CONFIGURE_WITH=	libpq=${LOCALBASE}
+PGSQL_USES=		pgsql
 
-SCTP_ENABLE=	sctp
+SCTP_CONFIGURE_ENABLE=	sctp
 
-SPANDSP_WITH=	spandsp
+SPANDSP_CONFIGURE_WITH=	spandsp
 SPANDSP_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
 
-MAKE_JOBS_UNSAFE=yes
+SQLITE_CONFIGURE_WITH=	sqlite
+SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+
+#MAKE_JOBS_UNSAFE=yes
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
