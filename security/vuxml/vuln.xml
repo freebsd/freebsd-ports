@@ -58,6 +58,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="876768aa-ab1e-11e5-8a30-5453ed2e2b49">
+    <topic>dpkg -- stack-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>dpkg</name>
+	<range><lt>1.16.17</lt></range>
+	<range><lt>1.17.26</lt></range>
+	<range><lt>1.18.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Salvatore Bonaccorso reports:</p>
+	<blockquote cite="https://lists.debian.org/debian-security-announce/2015/msg00312.html">
+	  <p>Hanno Boeck discovered a stack-based buffer overflow in the
+	    dpkg-deb component of dpkg, the Debian package management system.
+	    This flaw could potentially lead to arbitrary code execution if a
+	    user or an automated system were tricked into processing a specially
+	    crafted Debian binary package (.deb) in the old style Debian binary
+	    package format.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0860</cvename>
+      <url>http://openwall.com/lists/oss-security/2015/11/26/3</url>
+      <url>https://anonscm.debian.org/cgit/dpkg/dpkg.git/commit/?id=f1aac7d933819569bf6f347c3c0d5a64a90bbce0</url>
+    </references>
+    <dates>
+      <discovery>2015-11-26</discovery>
+      <entry>2015-12-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e1b5318c-aa4d-11e5-8f5c-002590263bf5">
     <topic>mantis -- information disclosure vulnerability</topic>
     <affects>
