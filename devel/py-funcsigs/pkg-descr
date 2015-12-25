@@ -1,0 +1,5 @@
+funcsigs is a backport of the PEP 362 function signature features from
+Python 3.3's inspect module. The backport is compatible with Python 2.7
+as well as 3.2 and up.
+
+WWW: http://funcsigs.readthedocs.org/
