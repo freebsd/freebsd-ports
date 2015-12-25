@@ -1,0 +1,13 @@
+`phttpget' is a Pipelined HTTP GET utility.
+
+This is different from "normal" HTTP in that it allows the HTTP
+client to have several HTTP requests "in flight" at once, and can
+dramatically increase performance when a large number of small files
+need to be downloaded. (This was the case with portsnap, where
+downloading 300 files of 200 bytes each is not unusual). 
+
+Note that phttpget is currently extremely minimalist.
+
+Please see the website listed below, for a full feature list.
+
+WWW: http://www.daemonology.net/phttpget/
