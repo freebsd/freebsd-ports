@@ -49,10 +49,10 @@ include/qmmpui/uifactory.h
 include/qmmpui/uihelper.h
 include/qmmpui/uiloader.h
 lib/libqmmp.so
-lib/libqmmp.so.0
+lib/libqmmp.so.1
 lib/libqmmp.so.%%SHLIB_VER%%
 lib/libqmmpui.so
-lib/libqmmpui.so.0
+lib/libqmmpui.so.1
 lib/libqmmpui.so.%%SHLIB_VER%%
 lib/qmmp/CommandLineOptions/libincdecvolumeoption.so
 lib/qmmp/CommandLineOptions/libplaylistoption.so
@@ -81,7 +81,6 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%STATICON%%lib/qmmp/General/libstatusicon.so
 %%SB%%lib/qmmp/General/libstreambrowser.so
 %%TRACKCHANGE%%lib/qmmp/General/libtrackchange.so
-%%UDISKS%%lib/qmmp/General/libudisks.so
 %%UDISKS2%%lib/qmmp/General/libudisks2.so
 %%FAAD%%lib/qmmp/Input/libaac.so
 %%CDDA%%lib/qmmp/Input/libcdaudio.so
