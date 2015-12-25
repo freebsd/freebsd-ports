@@ -18,8 +18,7 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64 armv6
 
-USE_AUTOTOOLS=	autoconf
-USES=		bison gmake shebangfix
+USES=		autoreconf bison gmake shebangfix
 SHEBANG_FILES=	share/scripts/banbrutes.php \
 		share/scripts/leavemail.php \
 		share/scripts/queue_in.php \
@@ -28,6 +27,7 @@ SHEBANG_FILES=	share/scripts/banbrutes.php \
 		share/scripts/voicemail.php
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--without-fdsize \
 		--without-libqt4 \
@@ -41,101 +41,48 @@ USE_RC_SUBR=	yate
 USERS=		yate
 GROUPS=		yate
 
-OPTIONS_DEFINE=	DOCS MYSQL PGSQL SCTP DAHDI ILBC AMRNB SPANDSP H323 SSL
+OPTIONS_DEFINE=	AMRNB DOCS DAHDI H323 ILBC MYSQL PGSQL SCTP SPANDSP SQLITE SSL
 OPTIONS_DEFAULT=SCTP
 
-SCTP_DESC=	Stream Control Transmission Protocol support
-DAHDI_DESC=	Dahdi support
-ILBC_DESC=	iLBC narrowband speech codec support
 AMRNB_DESC=	Adaptive Multi-Rate Narrowband support
-SPANDSP_DESC=	Spandsp faxing support
+DAHDI_DESC=	Dahdi support
 H323_DESC=	H323 software channel/protocol support
+ILBC_DESC=	iLBC narrowband speech codec support
+SCTP_DESC=	Stream Control Transmission Protocol support
+SPANDSP_DESC=	Spandsp faxing support
 
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MMYSQL}
-CONFIGURE_ARGS+=	--with-mysql
-PLIST_SUB+=		WITH_MYSQL=""
-USE_MYSQL=		yes
-.else
-CONFIGURE_ARGS+=	--without-mysql
-PLIST_SUB+=		WITH_MYSQL="@comment "
-.endif
+AMRNB_CONFIGURE_WITH=	amrnb=${LOCALBASE}
+AMRNB_LIB_DEPENDS=	libamrnb.so:${PORTSDIR}/audio/libamrnb
 
-.if ${PORT_OPTIONS:MPGSQL}
-CONFIGURE_ARGS+=	--with-libpq=${LOCALBASE}
-PLIST_SUB+=		WITH_PGSQL=""
-USES+=			pgsql
-.else
-CONFIGURE_ARGS+=	--without-libpq
-PLIST_SUB+=		WITH_PGSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSCTP}
-CONFIGURE_ARGS+=	--enable-sctp
-PLIST_SUB+=		WITH_SCTP=""
-.else
-CONFIGURE_ARGS+=	--disable-sctp
-PLIST_SUB+=		WITH_SCTP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDAHDI}
-CONFIGURE_ARGS+=	--enable-dahdi
-BUILD_DEPENDS+=		libpri>=1.4.10:${PORTSDIR}/misc/libpri \
+DAHDI_CONFIGURE_ENABLE=	dahdi
+DAHDI_BUILD_DEPENDS=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
 			${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
-LIB_DEPENDS+=		libpri.so:${PORTSDIR}/misc/libpri \
+DAHDI_LIB_DEPENDS=	libpri.so:${PORTSDIR}/misc/libpri \
 			libopenr2.so:${PORTSDIR}/misc/openr2
-PLIST_SUB+=		WITH_DAHDI=""
-.else
-CONFIGURE_ARGS+=	--disable-dahdi
-PLIST_SUB+=		WITH_DAHDI="@comment "
-.endif
 
-.if ${PORT_OPTIONS:MILBC}
-LIB_DEPENDS+=	libilbc.so:${PORTSDIR}/net/ilbc
-CONFIGURE_ARGS+=	--enable-ilbc
-PLIST_SUB+=		WITH_ILBC=""
-.else
-CONFIGURE_ARGS+=	--disable-ilbc
-PLIST_SUB+=		WITH_ILBC="@comment "
-.endif
+H323_CONFIGURE_WITH=	openh323=${LOCALBASE}
+H323_LIB_DEPENDS=	libopenh323.so:${PORTSDIR}/net/h323plus
 
-.if ${PORT_OPTIONS:MAMRNB}
-LIB_DEPENDS+=	libamrnb.so:${PORTSDIR}/audio/libamrnb
-CONFIGURE_ARGS+=	--with-amrnb=${LOCALBASE}
-PLIST_SUB+=		WITH_AMRNB=""
-.else
-CONFIGURE_ARGS+=	--without-amrnb
-PLIST_SUB+=		WITH_AMRNB="@comment "
-.endif
+ILBC_CONFIGURE_ENABLE=	ilbc
+ILBC_LIB_DEPENDS=	libilbc.so:${PORTSDIR}/net/ilbc
 
-.if ${PORT_OPTIONS:MSPANDSP}
-LIB_DEPENDS+=	libspandsp.so:${PORTSDIR}/comms/spandsp
-CONFIGURE_ARGS+=	--with-spandsp
-PLIST_SUB+=		WITH_SPANDSP=""
-.else
-CONFIGURE_ARGS+=	--without-spandsp
-PLIST_SUB+=		WITH_SPANDSP="@comment "
-.endif
+MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_USE=		mysql=yes
 
-.if ${PORT_OPTIONS:MH323}
-LIB_DEPENDS+=	libopenh323.so:${PORTSDIR}/net/h323plus
-CONFIGURE_ARGS+=	--with-openh323=${LOCALBASE}
-PLIST_SUB+=		WITH_H323=""
-.else
-CONFIGURE_ARGS+=	--without-openh323
-PLIST_SUB+=		WITH_H323="@comment "
-.endif
+OPENSSL_CONFIGURE_WITH=	openssl=${OPENSSLBASE}
 
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=	--with-openssl=/usr
-PLIST_SUB+=		WITH_SSL=""
-.else
-CONFIGURE_ARGS+=	--without-openssl
-PLIST_SUB+=		WITH_SSL="@comment "
-.endif
+PGSQL_CONFIGURE_WITH=	libpq=${LOCALBASE}
+PGSQL_USES=		pgsql
 
-MAKE_JOBS_UNSAFE=yes
+SCTP_CONFIGURE_ENABLE=	sctp
+
+SPANDSP_CONFIGURE_WITH=	spandsp
+SPANDSP_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
+
+SQLITE_CONFIGURE_WITH=	sqlite
+SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
@@ -143,7 +90,7 @@ post-extract:
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yate
 	@cd ${STAGEDIR}${PREFIX}/lib; \
-		for FILE in *.5.5.0; do \
+		for FILE in libyate*.so.5.5.0; do \
 			${STRIP_CMD} $${FILE}; \
 		done
 	@cd ${STAGEDIR}${PREFIX}/lib/yate; \
