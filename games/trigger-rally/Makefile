@@ -4,13 +4,12 @@
 PORTNAME=	trigger-rally
 PORTVERSION=	0.6.1
 CATEGORIES=	games
-MASTER_SITES=	SF/trigger-rally/trigger-rally/trigger-${PORTVERSION}
+MASTER_SITES=	SF/trigger-rally/trigger-${PORTVERSION}
 DISTVERSIONSUFFIX=	-src
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Rally car racing game
 
-BROKEN=		unfetchable
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
 RUN_DEPENDS=	${DATADIR}/trigger.config.defs:${PORTSDIR}/games/trigger-data
