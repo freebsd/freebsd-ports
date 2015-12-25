@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.buzuluk.cz/pub/alo/knutclient/stable/ \
 		http://www.ringofsaturn.com/distfiles/ \
 		http://www.vg.kernel.org/pub/mirrors/gentoo/source/distfiles/
 
-MAINTAINER=	rnejdl@ringofsaturn.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual client for UPS system NUT
 
 LIB_DEPENDS=	libqimageblitz.so:${PORTSDIR}/x11/qimageblitz
