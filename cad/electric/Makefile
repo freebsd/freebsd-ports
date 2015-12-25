@@ -13,29 +13,21 @@ COMMENT=	Sophisticated electrical CAD system
 
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	T1LIB NLS OPTIMIZED_CFLAGS
-OPTIONS_DEFAULT=	T1LIB
-T1LIB_DESC=	Use T1lib Type1 font library
-
 USES=		motif
 
+FEATURES=	MOTIF
+
+OPTIONS_DEFINE=	T1LIB NLS OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=T1LIB
+T1LIB_DESC=	Use T1lib Type1 font library
+
+T1LIB_LIB_DEPENDS+=	libt1.so:${PORTSDIR}/devel/t1lib
+T1LIB_VARS=	FEATURES+=T1LIB
+NLS_USES=	gettext
+NLS_VARS=	FEATURES+=INT
+OPTIMIZED_CFLAGS_VARS= 	FEATURES+=OPT
+
 .include <bsd.port.options.mk>
-
-FEATURES+=	MOTIF
-
-.if ${PORT_OPTIONS:MT1LIB}
-LIB_DEPENDS+=	libt1.so:${PORTSDIR}/devel/t1lib
-FEATURES+=	T1LIB
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-FEATURES+=	INT
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-FEATURES+=	OPT
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/electric/lib/|${DATADIR}/lib/|; \
