@@ -4113,6 +4113,7 @@
     SUBDIR += py-kqueue
     SUBDIR += py-krosspython
     SUBDIR += py-lazy
+    SUBDIR += py-lazy-object-proxy
     SUBDIR += py-levenshtein
     SUBDIR += py-liblarch
     SUBDIR += py-libpeas
