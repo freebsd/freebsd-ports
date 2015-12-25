@@ -35,7 +35,8 @@ OPTIONS_DEFAULT=	CRYP_OPEN
 
 CRYP_BOTAN_CONFIGURE_WITH=	crypto-backend=botan
 
-.if defined(OPENSSL_PORT) && ${OPENSSL_PORT} == security/libressl
+.if defined(OPENSSL_PORT) && \
+	( ${OPENSSL_PORT} == security/libressl || ${OPENSSL_PORT} == security/libressl-devel )
 CONFIGURE_ARGS+=	--disable-gost
 .endif
 
