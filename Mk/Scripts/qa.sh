@@ -174,7 +174,7 @@ stripped() {
 	# Split file and result into 2 lines and read separately to ensure
 	# files with spaces are kept intact.
 	# Using readelf -h ... /ELF Header:/ will match on all ELF files.
-	find ${STAGEDIR} -type f ! -name '*.a' \
+	find ${STAGEDIR} -type f ! -name '*.a' ! -name '*.o' \
 	    -exec readelf -S {} + 2>/dev/null | awk '\
 	    /File:/ {sub(/File: /, "", $0); file=$0} \
 	    /SYMTAB/ {print file}' |
