@@ -3,6 +3,7 @@
 
 PORTNAME=	oauthlib
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	security net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,6 +43,9 @@ USE_PYTHON=	distutils autoplist
 .if ${PYTHON_REL} < 3000
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2
 .endif
+
+post-extract:
+	@${CHMOD} -R a+rX ${WRKSRC}
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
