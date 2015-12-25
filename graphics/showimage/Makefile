@@ -7,7 +7,7 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	143977-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	rnejdl@ringofsaturn.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple KDE based image viewer
 
 USES=		cmake:outsource tar:bzip2

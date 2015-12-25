@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR= CPAN:JOENIO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	rnejdl@ringofsaturn.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Query the SenderBase service
 
 RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS

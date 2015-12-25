@@ -9,7 +9,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rnejdl@ringofsaturn.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APSW stands for Another Python SQLite Wrapper
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3

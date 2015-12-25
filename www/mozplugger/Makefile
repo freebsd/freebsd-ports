@@ -6,7 +6,7 @@ PORTVERSION=	2.1.4
 CATEGORIES=	www
 MASTER_SITES=	http://mozplugger.mozdev.org/files/
 
-MAINTAINER=	rnejdl@ringofsaturn.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for loading web content in external viewers
 
 GNU_CONFIGURE=	yes
