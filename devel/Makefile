@@ -4400,6 +4400,7 @@
     SUBDIR += py-wcwidth
     SUBDIR += py-weblib
     SUBDIR += py-wheel
+    SUBDIR += py-wrapt
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgitools
     SUBDIR += py-wsgiutils
