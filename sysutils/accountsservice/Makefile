@@ -32,4 +32,3 @@ post-patch:
 		${WRKSRC}/src/user.c ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
-

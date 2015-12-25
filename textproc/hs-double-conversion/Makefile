@@ -19,4 +19,3 @@ LIB_DEPENDS+=	libcxxrt.so:${PORTSDIR}/devel/libcxxrt
 .endif
 
 .include <bsd.port.mk>
-
