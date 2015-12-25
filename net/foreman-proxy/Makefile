@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.theforeman.org/foreman-proxy/
 
@@ -59,7 +59,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/config/settings.d/*.yml.example \
-		${WRKSRC}/lib/proxy/http_downloads.rb
+		${WRKSRC}/lib/proxy/http_download.rb
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d
@@ -79,7 +79,8 @@ do-install:
 	${CP} -r ${WRKSRC}/extra/migrations ${STAGEDIR}${DATADIR}/extra
 	${INSTALL_DATA} ${WRKSRC}/config/settings.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.yml.sample
-.for cfg in bmc dhcp dns facts puppet puppetca realm templates tftp
+.for cfg in bmc dhcp dns dns_dnscmd dns_nsupdate_gss dns_nsupdate dns_virsh \
+	facts puppet puppetca realm templates tftp
 	${INSTALL_DATA} ${WRKSRC}/config/settings.d/${cfg}.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/${cfg}.yml.sample
 .endfor
