@@ -20,4 +20,4 @@ Features:
     JSONField - custom field that lets you easily store JSON data in one of
 	your model fields.
 
-WWW: https://bitbucket.org/offline/django-annoying/wiki/Home
+WWW: https://github.com/skorokithakis/django-annoying
