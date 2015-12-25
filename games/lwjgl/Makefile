@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lwjgl
-DISTVERSION=	2.9.1
+DISTVERSION=	2.9.3
 CATEGORIES=	games java
 MASTER_SITES=	SF/java-game-lib/Official%20Releases/${PORTNAME:tu}%20${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -25,7 +25,7 @@ USES=		dos2unix zip
 DOS2UNIX_REGEX= .*.[^jp][^an][^rg]$
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
-JAVA_VERSION=	1.7
+JAVA_VERSION=	1.7+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_ANT=	yes
