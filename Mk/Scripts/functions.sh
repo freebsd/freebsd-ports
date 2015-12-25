@@ -184,7 +184,6 @@ export_ports_env() {
 		OPSYS \
 		OSREL \
 		OSVERSION \
-		PYTHON_PORTVERSION \
 		PYTHONBASE \
 		UID \
 		_JAVA_OS_LIST_REGEXP \
