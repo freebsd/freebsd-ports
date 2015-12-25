@@ -119,6 +119,7 @@ list_cmd="${BINMISCCTL} list"
 %%NAME%%_stop()
 {
 	${BINMISCCTL} remove mips64
+	${BINMISCCTL} remove arm
 	${BINMISCCTL} remove armv6
 	${BINMISCCTL} remove aarch64
 	${BINMISCCTL} remove mips
