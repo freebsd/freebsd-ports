@@ -20,7 +20,7 @@ USE_RC_SUBR=	obhttpd
 USES=		uidfix
 
 WITH_OPENSSL_PORT=yes
-OPENSSL_PORT=	security/libressl
+OPENSSL_PORT=	security/libressl-devel
 
 CFLAGS+=	-Wall
 
