@@ -10,6 +10,9 @@ DISTNAME=	143977-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple KDE based image viewer
 
+LICENSE=	GPLv3 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		cmake:outsource tar:bzip2
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT4=	qmake_build moc_build rcc_build uic_build
