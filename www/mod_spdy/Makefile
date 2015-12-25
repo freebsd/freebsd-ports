@@ -1,5 +1,5 @@
 # Created by: Masaki TAGAWA
-# $FreeBSD$
+# $FreeBSD: head/www/mod_spdy/Makefile 401738 2015-11-16 00:30:00Z gerald $
 
 PORTNAME=	mod_spdy
 PORTVERSION=	0.9.4.1
@@ -46,6 +46,11 @@ SUB_FILES+=	mod_spdy.conf
 SUB_LIST+=	APACHEMODDIR=${APACHEMODDIR}
 
 OPTIONS_DEFINE=	GCC DEBUG
+
+.if defined(OPENSSL_PORT) && \
+	${OPENSSL_PORT} == security/libressl || ${OPENSSL_PORT} == security/libressl-devel
+IGNORE=		mod_spdy is unsupported with LibreSSL, please use www/apache24 with mod_http2
+.endif
 
 .include <bsd.port.options.mk>
 
