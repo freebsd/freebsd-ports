@@ -49,6 +49,7 @@ include/claws-mail/common/stringtable.h
 include/claws-mail/common/tags.h
 include/claws-mail/common/template.h
 include/claws-mail/common/timing.h
+include/claws-mail/common/tlds.h
 include/claws-mail/common/utils.h
 include/claws-mail/common/uuencode.h
 include/claws-mail/common/version.h
@@ -255,7 +256,6 @@ share/applications/claws-mail.desktop
 %%DATADIR%%/filter_conv.pl
 %%DATADIR%%/filter_conv_new.pl
 %%DATADIR%%/fix_date.sh
-%%DATADIR%%/freshmeat_search.pl
 %%DATADIR%%/gif2xface.pl
 %%DATADIR%%/google_msgid.pl
 %%DATADIR%%/google_search.pl
@@ -279,10 +279,6 @@ share/applications/claws-mail.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.tools
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%MANUAL%%%%DOCSDIR%%/manual/de/claws-mail-manual.html
-%%MANUAL%%%%DOCSDIR%%/manual/de/claws-mail-manual.pdf
-%%MANUAL%%%%DOCSDIR%%/manual/de/claws-mail-manual.ps
-%%MANUAL%%%%DOCSDIR%%/manual/de/claws-mail-manual.txt
 %%MANUAL%%%%DOCSDIR%%/manual/en/claws-mail-manual.html
 %%MANUAL%%%%DOCSDIR%%/manual/en/claws-mail-manual.pdf
 %%MANUAL%%%%DOCSDIR%%/manual/en/claws-mail-manual.ps
@@ -295,19 +291,13 @@ share/applications/claws-mail.desktop
 %%MANUAL%%%%DOCSDIR%%/manual/fr/claws-mail-manual.pdf
 %%MANUAL%%%%DOCSDIR%%/manual/fr/claws-mail-manual.ps
 %%MANUAL%%%%DOCSDIR%%/manual/fr/claws-mail-manual.txt
-%%MANUAL%%%%DOCSDIR%%/manual/pl/claws-mail-manual.html
-%%MANUAL%%%%DOCSDIR%%/manual/pl/claws-mail-manual.pdf
-%%MANUAL%%%%DOCSDIR%%/manual/pl/claws-mail-manual.ps
-%%MANUAL%%%%DOCSDIR%%/manual/pl/claws-mail-manual.txt
 share/icons/hicolor/128x128/apps/claws-mail.png
 share/icons/hicolor/48x48/apps/claws-mail.png
 share/icons/hicolor/64x64/apps/claws-mail.png
-%%NLS%%share/locale/bg/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/de/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/eo/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/es/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/claws-mail.mo
@@ -318,6 +308,7 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/nb/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
