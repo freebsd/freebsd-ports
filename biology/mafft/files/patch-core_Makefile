@@ -1,0 +1,103 @@
+--- core/Makefile.orig	2015-11-26 01:42:39 UTC
++++ core/Makefile
+@@ -1,8 +1,7 @@
+-PREFIX = /usr/local
+-LIBDIR = $(PREFIX)/libexec/mafft
+-BINDIR = $(PREFIX)/bin
+-MANDIR = $(PREFIX)/share/man/man1
+-DESTDIR = 
++prefix = ${STAGEDIR}${PREFIX}
++LIBDIR = $(prefix)/libexec/mafft
++BINDIR = $(prefix)/bin
++MANDIR = $(prefix)/man/man1
+ 
+ #MNO_CYGWIN = -mno-cygwin
+ 
+@@ -10,29 +9,17 @@ ENABLE_MULTITHREAD = -Denablemultithread
+ # Comment out the above line if your compiler 
+ # does not support TLS (thread-local strage).
+ 
+-CC = gcc
+-CFLAGS = -O3
+-#CFLAGS = -O3 -fPIC
+-# add -fPIC when building .so files
+-
+-#CC = icc
+-#CFLAGS = -fast
+-# if you have icc, use this.
+-
+-#CFLAGS =  -O0  -fPIC -pedantic -Wall -std=c99 -g -pg -DMALLOC_CHECK_=3
+-#CFLAGS =  -O0  -fPIC -pedantic -Wall -std=c99 -g -pg -DMALLOC_CHECK_=3  -fprofile-arcs -ftest-coverage 
+-#CFLAGS =  -O0  -fPIC -pedantic -Wall -std=c99 -g -DMALLOC_CHECK_=3 # for shark, valgrind
+-
+-
+-MYCFLAGS = $(MNO_CYGWIN) $(ENABLE_MULTITHREAD) $(CFLAGS)
++MYCFLAGS = $(ENABLE_MULTITHREAD) $(CFLAGS)
+ 
+ ifdef ENABLE_MULTITHREAD
+-LIBS = -lm  -lpthread
++LIBS = -lm  -pthread
+ else
+ LIBS = -lm
+ endif
+ 
+-INSTALL = install
++LNFILES = linsi ginsi fftns fftnsi nwns nwnsi einsi \
++	mafft-linsi mafft-ginsi mafft-fftns mafft-fftnsi mafft-nwns \
++	mafft-nwnsi mafft-einsi mafft-xinsi mafft-qinsi
+ 
+ PROGS = dvtditr dndfast7 dndblast sextet5 mafft-distance pairlocalalign \
+ 		pair2hat3s multi2hat3s pairash addsingle \
+@@ -131,12 +118,6 @@ MANPAGES = mafft.1 mafft-homologs.1
+ 
+ 
+ all : $(PERLPROGS) $(PROGS) $(SCRIPTS)
+-	cp $(SCRIPTS) ../scripts
+-	chmod 755 ../scripts/*
+-	cp $(PERLPROGS) $(PROGS) ../binaries
+-	chmod 755 ../binaries/*
+-	cp $(MANPAGES) ../binaries
+-	@echo done.
+ 
+ sos : $(SOS)
+ dylibs : $(DYLIBS)
+@@ -524,31 +505,13 @@ clean :
+ #	rm -f ../binaries/* ../scripts/*
+ 
+ install : all
+-	mkdir -p $(DESTDIR)$(LIBDIR)
+-	chmod 755 $(DESTDIR)$(LIBDIR)
+-	mkdir -p $(DESTDIR)$(BINDIR)
+-	chmod 755 $(DESTDIR)$(BINDIR)
+-	chmod 755 $(SCRIPTS)
+-	$(INSTALL) $(SCRIPTS)  $(DESTDIR)$(BINDIR)
+-	chmod 755 $(PROGS) ||:     # in MinGW, it's ok if this fails
+-	$(INSTALL) -s $(PROGS) $(DESTDIR)$(LIBDIR)
+-	$(INSTALL) $(PERLPROGS) $(DESTDIR)$(LIBDIR)
+-	$(INSTALL) -m 644 $(MANPAGES) $(DESTDIR)$(LIBDIR)
++	$(MKDIR) $(DESTDIR)$(LIBDIR) $(DESTDIR)$(BINDIR) $(DESTDIR)$(MANDIR)
++	$(INSTALL_SCRIPT) $(SCRIPTS)  $(DESTDIR)$(BINDIR)
++	$(INSTALL_PROGRAM) $(PROGS) $(DESTDIR)$(LIBDIR)
++	$(INSTALL_SCRIPT) $(PERLPROGS) $(DESTDIR)$(LIBDIR)
++	$(INSTALL_DATA) $(MANPAGES) $(DESTDIR)$(MANDIR)
+ 
+-	( cd $(DESTDIR)$(BINDIR); \
+-rm -f linsi ginsi einsi fftns fftnsi nwns nwnsi xinsi qinsi; \
+-rm -f mafft-linsi mafft-ginsi mafft-einsi mafft-fftns mafft-fftnsi mafft-nwns mafft-nwnsi mafft-xinsi mafft-qinsi mafft-randomcore.rb ; \
+-ln -s mafft linsi; ln -s mafft ginsi; ln -s mafft fftns; \
+-ln -s mafft fftnsi; ln -s mafft nwns; ln -s mafft nwnsi; \
+-ln -s mafft einsi; \
+-ln -s mafft mafft-linsi; ln -s mafft mafft-ginsi; ln -s mafft mafft-fftns; \
+-ln -s mafft mafft-fftnsi; ln -s mafft mafft-nwns; ln -s mafft mafft-nwnsi; \
+-ln -s mafft mafft-einsi; ln -s mafft mafft-xinsi; ln -s mafft mafft-qinsi;\
+-rm -f mafft-profile mafft-profile.exe; ln -s $(LIBDIR)/mafft-profile .; \
+-rm -f mafft-distance mafft-distance.exe; ln -s $(LIBDIR)/mafft-distance . )
++	$(foreach f,$(LNFILES),$(LN) -s mafft $(DESTDIR)$(BINDIR)/$(f);)
+ 
+-	mkdir -p $(DESTDIR)$(MANDIR)
+-	chmod 755 $(DESTDIR)$(MANDIR)
+-	$(INSTALL) -m 644 $(MANPAGES) $(DESTDIR)$(MANDIR)
+-# remove incorrectly installed manpages by previous versions
+-#	rm -f /usr/local/man/man1/mafft.1 /usr/local/man/man1/mafft-homologs.1 
++	$(LN) -s ../libexec/mafft/mafft-profile $(DESTDIR)$(BINDIR)/mafft-profile
++	$(LN) -s ../libexec/mafft/mafft-distance $(DESTDIR)$(BINDIR)/mafft-distance
