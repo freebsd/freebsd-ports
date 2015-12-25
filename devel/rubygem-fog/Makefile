@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog
-PORTVERSION=	1.36.0
+PORTVERSION=	1.37.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -33,10 +33,10 @@ RUN_DEPENDS=	rubygem-fog-aliyun>=0.1.0:${PORTSDIR}/net/rubygem-fog-aliyun \
 		rubygem-fog-terremark>=0:${PORTSDIR}/net/rubygem-fog-terremark \
 		rubygem-fog-vmfusion>=0:${PORTSDIR}/net/rubygem-fog-vmfusion \
 		rubygem-fog-voxel>=0:${PORTSDIR}/net/rubygem-fog-voxel \
+		rubygem-fog-vsphere>=0.4.0:${PORTSDIR}/net/rubygem-fog-vsphere \
 		rubygem-fog-xenserver>=0:${PORTSDIR}/net/rubygem-fog-xenserver \
 		rubygem-fog-xml>=0.1.1:${PORTSDIR}/textproc/rubygem-fog-xml \
-		rubygem-ipaddress>=0.5:${PORTSDIR}/net/rubygem-ipaddress \
-		rubygem-nokogiri>=1.5.11:${PORTSDIR}/textproc/rubygem-nokogiri
+		rubygem-ipaddress>=0.5:${PORTSDIR}/net/rubygem-ipaddress
 
 NO_ARCH=	yes
 USE_RUBY=	yes
