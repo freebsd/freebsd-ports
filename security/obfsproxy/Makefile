@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	obfsproxy
-PORTVERSION=	0.2.10
+PORTVERSION=	0.2.13
 PORTEPOCH=	1
 CATEGORIES=	security net python
 MASTER_SITES=	http://www.c-s.li/ports/
