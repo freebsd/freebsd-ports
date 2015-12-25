@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Jan 11 08:42:38 2000
-+++ Makefile	Tue Jan 11 08:44:12 2000
-@@ -37,8 +37,10 @@
+--- makefile.orig	1999-12-26 20:28:38 UTC
++++ makefile
+@@ -37,8 +37,10 @@ MANEXT = l
  
  # Default compiler and flags
  
@@ -13,7 +13,7 @@
  
  # Object files
  
-@@ -70,13 +72,13 @@
+@@ -70,13 +72,13 @@ gkermit:	gproto.o gkermit.o gunixio.o gc
  		$(CC) -o gkermit $(OBJECTS)
  
  bsd:		gwart
