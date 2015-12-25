@@ -328,7 +328,9 @@
     SUBDIR += pyjama
     SUBDIR += pymp
     SUBDIR += qmmp
+    SUBDIR += qmmp-qt5
     SUBDIR += qmmp-plugin-pack
+    SUBDIR += qmmp-plugin-pack-qt5
     SUBDIR += qt-faststart
     SUBDIR += qt4-mobility
     SUBDIR += qt4-multimedia
