@@ -20,3 +20,4 @@ bin/samtools_misc/wgsim
 bin/samtools_misc/wgsim_eval.pl
 bin/samtools_misc/zoom2sam.pl
 man/man1/samtools.1.gz
+man/man1/wgsim.1.gz

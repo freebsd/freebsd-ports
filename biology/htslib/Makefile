@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htslib
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 CATEGORIES=	biology devel
 
 MAINTAINER=	cartwright@asu.edu
@@ -12,13 +12,26 @@ LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	samtools
 
-USES=		gmake
+USES=		autoreconf gmake perl5 shebangfix
+USE_PERL5=	test
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf
-GNU_CONFIGURE=yes
+GNU_CONFIGURE=	yes
+SHEBANG_FILES=	test/compare_sam.pl test/test.pl test/test_view.pl
+
+OPTIONS_DEFINE=		CURL
+OPTIONS_DEFAULT=	CURL
+
+CURL_DESC=		Use libcurl for network file access (HTTPS and S3 support).
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_ENABLE=	libcurl
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ENV=	INSTALL_LIB="${INSTALL_LIB}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
@@ -26,6 +39,8 @@ MAKE_ENV=	INSTALL_LIB="${INSTALL_LIB}" \
 		INSTALL_DIR="${MKDIR}"
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+
+TEST_TARGET=	test
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PORTVERSION@|${PORTVERSION}|g' ${WRKSRC}/configure.ac
