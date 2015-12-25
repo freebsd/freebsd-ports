@@ -14,7 +14,6 @@ BROKEN=		unfetchable
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	1.8
 
 NO_BUILD=	yes
 
