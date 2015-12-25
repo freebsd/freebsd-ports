@@ -3977,6 +3977,7 @@
     SUBDIR += py-ctags
     SUBDIR += py-curtsies
     SUBDIR += py-cxx
+    SUBDIR += py-cycler
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
     SUBDIR += py-daemons
