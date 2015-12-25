@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	visualparadigm
-PORTVERSION=	12.2.20151102
+PORTVERSION=	12.2.20151201
 CATEGORIES=	devel
-MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce12.2/20151102/
-DISTNAME=	Visual_Paradigm_CE_12_2_20151102_Unix_InstallFree
+MASTER_SITES=	http://eu6.visual-paradigm.com/visual-paradigm/vpce12.2/20151201/
+DISTNAME=	Visual_Paradigm_CE_12_2_20151201_Unix_InstallFree
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Visual modeling tool for all kinds of UML diagrams
 
-BROKEN=		unfetchable
 RUN_DEPENDS=	${LOCALBASE}/lib/libsqlitejdbc.so:${PORTSDIR}/java/sqlitejdbc
 
 USE_JAVA=	yes
