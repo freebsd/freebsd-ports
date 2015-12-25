@@ -9,6 +9,9 @@ MASTER_SITES=	LOCAL/naddy
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Batch SMTP support for sendmail, incoming and outgoing
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	${LOCALBASE}/bin/uux:${PORTSDIR}/net/freebsd-uucp
 
 CONFLICTS=	smail-3.*
@@ -18,6 +21,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--redo
 SHEBANG_FILES=	configure
+
+PRIVBIN=	${STAGEDIR}${PREFIX}/libexec/bsmtp
+PUBBIN= 	${STAGEDIR}${PREFIX}/bin
+MAILERDIR=	${STAGEDIR}${PREFIX}/share/sendmail
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${CP} ${WRKSRC}/bsmtp.m4.8.9.in ${WRKSRC}/bsmtp.m4.8.10.in
@@ -34,32 +43,30 @@ pre-configure:
 	    -e 's:%%PREFIX%%:${PREFIX}:' \
 	    -e 's:%%LOCALBASE%%:${LOCALBASE}:'
 
-privbin=	${STAGEDIR}${PREFIX}/libexec/bsmtp
-pubbin= 	${STAGEDIR}${PREFIX}/bin
-mailerdir=	${STAGEDIR}${PREFIX}/share/sendmail
-
 do-install:
-	${MKDIR} ${privbin}
-	${MKDIR} ${mailerdir}
-	${INSTALL_PROGRAM} ${WRKSRC}/batcher.new ${privbin}/batcher
-	${INSTALL_PROGRAM} ${WRKSRC}/bsmtp ${privbin}
-	${INSTALL_DATA} ${WRKSRC}/bsmtp.m4.8.14 ${mailerdir}/bsmtp.m4
-	${INSTALL_SCRIPT} ${WRKSRC}/rcsmtp ${pubbin}
+	@${MKDIR} ${PRIVBIN}
+	@${MKDIR} ${MAILERDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/batcher.new ${PRIVBIN}/batcher
+	${INSTALL_PROGRAM} ${WRKSRC}/bsmtp ${PRIVBIN}
+	${INSTALL_DATA} ${WRKSRC}/bsmtp.m4.8.14 ${MAILERDIR}/bsmtp.m4
+	${INSTALL_SCRIPT} ${WRKSRC}/rcsmtp ${PUBBIN}
 .for i in cbsmtp crsmtp rgsmtp
-	${LN} -s rcsmtp ${pubbin}/$i
+	${LN} -s rcsmtp ${PUBBIN}/$i
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/rsmtp.wrapper ${pubbin}/rsmtp
-	${INSTALL_SCRIPT} ${WRKSRC}/rsmtp ${privbin}
+	${INSTALL_PROGRAM} ${WRKSRC}/rsmtp.wrapper ${PUBBIN}/rsmtp
+	${INSTALL_SCRIPT} ${WRKSRC}/rsmtp ${PRIVBIN}
 .for i in bsmtp
-	${LN} -s rsmtp ${pubbin}/$i
+	${LN} -s rsmtp ${PUBBIN}/$i
 .endfor
 .for i in c-cbsmtp c-rcsmtp g-rcsmtp g-rgsmtp n-rsmtp
-	${INSTALL_SCRIPT} ${WRKSRC}/transmitter.$i ${privbin}
+	${INSTALL_SCRIPT} ${WRKSRC}/transmitter.$i ${PRIVBIN}
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/_bqueue ${pubbin}
-	${INSTALL_SCRIPT} ${WRKSRC}/bqueue ${pubbin}
-# post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/_bqueue ${PUBBIN}
+	${INSTALL_SCRIPT} ${WRKSRC}/bqueue ${PUBBIN}
+	${MKDIR} ${STAGEDIR}/var/spool/bsnmp
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
