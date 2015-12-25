@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rene@freebsd.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Provides Django integration for RQ (Redis Queue)
 
 LICENSE=	MIT
