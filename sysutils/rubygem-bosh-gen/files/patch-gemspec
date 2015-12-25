@@ -1,0 +1,11 @@
+--- bosh-gen.gemspec.orig	2015-12-25 06:48:24 UTC
++++ bosh-gen.gemspec
+@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<progressbar>, [">= 0"])
+       s.add_runtime_dependency(%q<cyoi>, ["~> 0.10"])
+       s.add_runtime_dependency(%q<fog>, ["~> 1.11"])
+-      s.add_runtime_dependency(%q<fog-aws>, ["= 0.1.1"])
++      s.add_runtime_dependency(%q<fog-aws>, [">= 0.7.6"])
+       s.add_runtime_dependency(%q<readwritesettings>, ["~> 3.0"])
+       s.add_runtime_dependency(%q<activesupport>, ["< 5.0", ">= 4.0"])
+       s.add_development_dependency(%q<rake>, [">= 0"])
