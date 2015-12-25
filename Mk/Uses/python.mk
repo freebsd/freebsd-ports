@@ -390,7 +390,6 @@ PYTHON_PORTSDIR=	${_PYTHON_RELPORTDIR}${PYTHON_SUFFIX}
 .if !defined(PYTHON_PORTVERSION)
 PYTHON_PORTVERSION!=	${MAKE} -V PORTVERSION -C ${PYTHON_PORTSDIR}
 .endif
-_EXPORTED_VARS+=	PYTHON_PORTVERSION
 .endif
 # Create a 4 integer version string, prefixing 0 to the last token if
 # it's a single character. Only use the the first 3 tokens of
