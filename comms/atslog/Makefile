@@ -106,6 +106,7 @@ do-install:
 		${INSTALL_DATA} "{}" "${STAGEDIR}${WWWDIR}/{}" \;
 	${MV} ${STAGEDIR}${WWWDIR}/include/config.inc.php.default ${STAGEDIR}${WWWDIR}/include/config.inc.php.sample
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
