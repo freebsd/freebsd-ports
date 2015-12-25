@@ -1,0 +1,46 @@
+--- src/client/Makefile.in.orig	2013-11-06 22:52:59.000000000 +0100
++++ src/client/Makefile.in	2015-12-25 16:58:11.703819897 +0100
+@@ -264,14 +264,14 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = -DSYSCONFDIR='"$(sysconfdir)"' \
+-	-I$(top_srcdir)/src/common -I$(top_srcdir)/lib $(EVCPPFLAGS) \
+-	$(SSLCPPFLAGS) $(am__append_1)
++	-I$(top_srcdir)/src/common -I$(top_srcdir)/lib $(SSLCPPFLAGS) \
++	$(EVCPPFLAGS) $(am__append_1)
+ AM_LDFLAGS = \
+-  $(EVLDFLAGS)                          \
+-  $(SSLLDFLAGS)
++  $(SSLLDFLAGS)                          \
++  $(EVLDFLAGS)
+ 
+-LDADD = ../common/libcommon.a ../../lib/libcompat.a $(EVLIBS) \
+-	$(SSLLIBS) $(am__append_2)
++LDADD = ../common/libcommon.a ../../lib/libcompat.a $(SSLLIBS) \
++	$(EVLIBS) $(am__append_2)
+ send_nsca_SOURCES = auth.c auth.h client.c client.h conf.c conf.h input.c \
+                     input.h parse.c parse.h send_nsca.c send_nsca.h
+ 
+--- src/server/Makefile.in.orig	2013-11-06 22:52:59.000000000 +0100
++++ src/server/Makefile.in	2015-12-25 17:00:24.063809054 +0100
+@@ -270,15 +270,15 @@ top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = -DSYSCONFDIR='"$(sysconfdir)"' \
+ 	-DLOCALSTATEDIR='"$(localstatedir)"' \
+ 	-I$(top_srcdir)/src/common -I$(top_srcdir)/lib \
+-	$(CONFUSECPPFLAGS) $(EVCPPFLAGS) $(SSLCPPFLAGS) \
++	$(SSLCPPFLAGS) $(CONFUSECPPFLAGS) $(EVCPPFLAGS) \
+ 	$(am__append_1) $(am__append_3)
+ AM_LDFLAGS = \
++  $(SSLLDFLAGS)                         \
+   $(CONFUSELDFLAGS)                     \
+-  $(EVLDFLAGS)                          \
+-  $(SSLLDFLAGS)
++  $(EVLDFLAGS)
+ 
+-LDADD = ../common/libcommon.a ../../lib/libcompat.a $(CONFUSELIBS) \
+-	$(EVLIBS) $(SSLLIBS) $(AIOLIBS) $(PIDFILELIBS) $(am__append_2) \
++LDADD = ../common/libcommon.a ../../lib/libcompat.a $(SSLLIBS) \
++        $(CONFUSELIBS) $(EVLIBS) $(AIOLIBS) $(PIDFILELIBS) $(am__append_2) \
+ 	$(am__append_4)
+ nsca_ng_SOURCES = auth.c auth.h conf.c conf.h fifo.c fifo.h hash.c hash.h \
+                   nsca-ng.c server.c server.h
