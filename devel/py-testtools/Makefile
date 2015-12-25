@@ -9,7 +9,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/164010578/ \
 		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensions to the Python library's unit testing framework
 
 LICENSE=	MIT
