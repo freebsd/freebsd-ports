@@ -2,19 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	django-evolution
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	django_evolution-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Database schema evolution tool for the Django web framework
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:${PORTSDIR}/www/py-django16
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	beanbaginc
+GH_TAGNAME=	release-${PORTVERSION}
 USES=		python
 USE_PYTHON=	distutils autoplist
 
