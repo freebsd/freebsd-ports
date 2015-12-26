@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.20.0
+PORTVERSION=	0.20.1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
+DIST_SUBDIR=    enlightenment
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Artistic X window manager
@@ -17,7 +18,6 @@ LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
 		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
 RUN_DEPENDS=	${LOCALBASE}/lib/evas/utils/evas_image_loader.svg:${PORTSDIR}/graphics/evas_generic_loaders-svg
 
-DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
 USES=		alias autoreconf desktop-file-utils execinfo gettext-tools \
 		libtool pathfix iconv gmake pkgconfig tar:xz
