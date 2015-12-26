@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="88f75070-abcf-11e5-83d3-6805ca0b3d42">
+    <topic>phpMyAdmin -- path disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2015-6/">
+	  <p>By calling some scripts that are part of phpMyAdmin in an
+	    unexpected way, it is possible to trigger phpMyAdmin to
+	    display a PHP error message which contains the full path of
+	    the directory where phpMyAdmin is installed.</p>
+	  <p>We consider these vulnerabilities to be non-critical.</p>
+	  <p>This path disclosure is possible on servers where the
+	    recommended setting of the PHP configuration directive
+	    display_errors is set to on, which is against the
+	    recommendations given in the PHP manual for a production
+	    server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2015-6/</url>
+      <cvename>CVE-2015-8669</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-25</discovery>
+      <entry>2015-12-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="876768aa-ab1e-11e5-8a30-5453ed2e2b49">
     <topic>dpkg -- stack-based buffer overflow</topic>
     <affects>
