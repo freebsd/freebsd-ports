@@ -4,8 +4,6 @@ man/man1/qmail-qfilter.1.gz
 %%EXAMPLESDIR%%/block-long-dates
 %%EXAMPLESDIR%%/deny-filetypes
 %%EXAMPLESDIR%%/rename-filetypes
-@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
