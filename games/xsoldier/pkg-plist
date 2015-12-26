@@ -1,47 +1,39 @@
-@group games
-@mode 2555
-bin/xsoldier
-@mode
-@group
+@(,games,2555) bin/xsoldier
 man/man6/xsoldier.6.gz
-share/examples/xsoldier/xsoldier.scores
-@exec cp %D/share/examples/xsoldier/xsoldier.scores %%SCOREFILE%% && chgrp games %%SCOREFILE%% && chmod 664 %%SCOREFILE%%
-@unexec rm -f %%SCOREFILE%%
-share/xsoldier/Boss1.xpm
-share/xsoldier/Boss2.xpm
-share/xsoldier/Boss3.xpm
-share/xsoldier/Boss4.xpm
-share/xsoldier/Boss5.xpm
-share/xsoldier/Boss6.xpm
-share/xsoldier/Boss7.xpm
-share/xsoldier/Enemy1.xpm
-share/xsoldier/Enemy2.xpm
-share/xsoldier/Enemy3.xpm
-share/xsoldier/Enemy4.xpm
-share/xsoldier/Enemy5.xpm
-share/xsoldier/Enemy6.xpm
-share/xsoldier/Enemy7.xpm
-share/xsoldier/EnemyBound.xpm
-share/xsoldier/EnemyLaser.xpm
-share/xsoldier/EnemyMiss.xpm
-share/xsoldier/EnemyRing.xpm
-share/xsoldier/EnemyShot.xpm
-share/xsoldier/ExpLarge.xpm
-share/xsoldier/ExpSmall.xpm
-share/xsoldier/Item.xpm
-share/xsoldier/Player.xpm
-share/xsoldier/PlayerShot1.xpm
-share/xsoldier/PlayerShot2.xpm
-share/xsoldier/PlayerShot3.xpm
-share/xsoldier/Star1.xpm
-share/xsoldier/Star2.xpm
-share/xsoldier/Title.xpm
-share/xsoldier/font.xpm
-share/xsoldier/font1.xpm
-share/xsoldier/font2.xpm
-share/xsoldier/font3.xpm
-share/xsoldier/font4.xpm
-share/xsoldier/font5.xpm
-share/xsoldier/font6.xpm
-@dirrm share/examples/xsoldier
-@dirrm share/xsoldier
+@sample(,games,664) %%EXAMPLESDIR%%/xsoldier.scores /var/games/xsoldier.scores
+%%DATADIR%%/Boss1.xpm
+%%DATADIR%%/Boss2.xpm
+%%DATADIR%%/Boss3.xpm
+%%DATADIR%%/Boss4.xpm
+%%DATADIR%%/Boss5.xpm
+%%DATADIR%%/Boss6.xpm
+%%DATADIR%%/Boss7.xpm
+%%DATADIR%%/Enemy1.xpm
+%%DATADIR%%/Enemy2.xpm
+%%DATADIR%%/Enemy3.xpm
+%%DATADIR%%/Enemy4.xpm
+%%DATADIR%%/Enemy5.xpm
+%%DATADIR%%/Enemy6.xpm
+%%DATADIR%%/Enemy7.xpm
+%%DATADIR%%/EnemyBound.xpm
+%%DATADIR%%/EnemyLaser.xpm
+%%DATADIR%%/EnemyMiss.xpm
+%%DATADIR%%/EnemyRing.xpm
+%%DATADIR%%/EnemyShot.xpm
+%%DATADIR%%/ExpLarge.xpm
+%%DATADIR%%/ExpSmall.xpm
+%%DATADIR%%/Item.xpm
+%%DATADIR%%/Player.xpm
+%%DATADIR%%/PlayerShot1.xpm
+%%DATADIR%%/PlayerShot2.xpm
+%%DATADIR%%/PlayerShot3.xpm
+%%DATADIR%%/Star1.xpm
+%%DATADIR%%/Star2.xpm
+%%DATADIR%%/Title.xpm
+%%DATADIR%%/font.xpm
+%%DATADIR%%/font1.xpm
+%%DATADIR%%/font2.xpm
+%%DATADIR%%/font3.xpm
+%%DATADIR%%/font4.xpm
+%%DATADIR%%/font5.xpm
+%%DATADIR%%/font6.xpm
