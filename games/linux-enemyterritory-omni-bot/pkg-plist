@@ -1490,9 +1490,7 @@ bin/etded-omni-bot
 %%DATADIR%%/et/scripts/weapons/weapon_sten.gm
 %%DATADIR%%/et/scripts/weapons/weapon_syringe.gm
 %%DATADIR%%/et/scripts/weapons/weapon_thompson.gm
-@unexec if cmp %D/lib/enemyterritory/omni-bot/et/user/omni-bot.cfg %D/lib/enemyterritory/omni-bot/et/user/omni-bot.cfg.sample; then rm -f %D/lib/enemyterritory/omni-bot/et/user/omni-bot.cfg; fi
-%%DATADIR%%/et/user/omni-bot.cfg.sample
-@exec if [ ! -f %D/lib/enemyterritory/omni-bot/et/user/omni-bot.cfg ] ; then cp -p %D/%F %B/omni-bot.cfg; fi
+@sample %%DATADIR%%/et/user/omni-bot.cfg.sample
 %%DATADIR%%/et/user/omni-bot.txt
 %%DATADIR%%/global_scripts/autowaypoint.gm
 %%DATADIR%%/global_scripts/commands.gm
@@ -1525,20 +1523,6 @@ bin/etded-omni-bot
 %%DATADIR%%/omnibot_et.so
 %%DATADIR%%/qagame.mp.i386.so
 %%DATADIR%%/ui.mp.i386.so
-@dirrmtry %%DATADIR%%/gui/images
-@dirrmtry %%DATADIR%%/gui
-@dirrmtry %%DATADIR%%/global_scripts/weapons
-@dirrmtry %%DATADIR%%/global_scripts/mapgoals
-@dirrmtry %%DATADIR%%/global_scripts/goals
-@dirrmtry %%DATADIR%%/global_scripts
-@dirrmtry %%DATADIR%%/et/user/download
-@dirrmtry %%DATADIR%%/et/user
-@dirrmtry %%DATADIR%%/et/scripts/weapons
-@dirrmtry %%DATADIR%%/et/scripts/mapgoals
-@dirrmtry %%DATADIR%%/et/scripts/goals
-@dirrmtry %%DATADIR%%/et/scripts
-@dirrmtry %%DATADIR%%/et/nav
-@dirrmtry %%DATADIR%%/et/gui
-@dirrmtry %%DATADIR%%/et
-@dirrmtry %%DATADIR%%
-@dirrmtry lib/enemyterritory
+@dir %%DATADIR%%/gui/images
+@dir %%DATADIR%%/et/user/download
+@dir %%DATADIR%%/et/gui
