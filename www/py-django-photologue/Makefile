@@ -2,26 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	django-photologue
-PORTVERSION=	2.6.1
-PORTREVISION=	2
+PORTVERSION=	3.3.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
-COMMENT=	Reusable gallery application for Django
+COMMENT=	Powerful image management and gallery application for Django
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:${PORTSDIR}/devel/py-pip
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django \
+		${PYTHON_PKGNAMEPREFIX}django-sortedm2m>0:${PORTSDIR}/www/py-django-sortedm2m \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	autoplist distutils
-
-OPTIONS_DEFINE=		TAGGING
-OPTIONS_DEFAULT=	TAGGING
-
-TAGGING_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tagging/models.py:${PORTSDIR}/www/py-django-tagging
 
 .include <bsd.port.mk>
