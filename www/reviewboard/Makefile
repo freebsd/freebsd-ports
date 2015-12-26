@@ -12,6 +12,8 @@ COMMENT=	Web-based code review tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		depends on conflicting versions of django
+
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:${PORTSDIR}/www/py-django16 \
 		${PYTHON_PKGNAMEPREFIX}django-evolution>=0.6.7:${PORTSDIR}/www/py-django-evolution \
