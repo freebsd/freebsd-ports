@@ -4,14 +4,13 @@
 PORTNAME=	megaglest
 PORTVERSION=	3.9.0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/archived/${PORTNAME}_${PORTVERSION}/
 PKGNAMESUFFIX=	-data
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MegaGlest data files
 
-BROKEN=		unfetchable
 USES=		dos2unix tar:xz
 DOS2UNIX_GLOB=	*.log *.ini *.html *.txt *.lng
 NO_BUILD=	yes
