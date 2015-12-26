@@ -2,49 +2,48 @@
 # $FreeBSD$
 
 PORTNAME=	freedroidrpg
-PORTVERSION=	0.15.1
-PORTREVISION=	1
+PORTVERSION=	0.16
 CATEGORIES=	games
-MASTER_SITES=	SF/freedroid/${SF_NAME}/${SF_NAME}-${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\\1/}/
+MASTER_SITES=	ftp://ftp.osuosl.org/pub/freedroid/freedroidRPG-${PORTVERSION}/ \
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${SF_NAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modification of the classical Freedroid engine into an RPG
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_sparc64=	Does not configure on sparc64
+BROKEN_sparc64=	does not configure
 
 GNU_CONFIGURE=	yes
-USES=		gmake lua:51
-USE_SDL=	sdl image mixer gfx
+USES=		jpeg gmake localbase lua:52+ python
+USE_SDL=	sdl image gfx
 CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
-USE_GCC=	any # doesn't build with clang
 
 SF_NAME=	freedroidRPG
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDATA=	*
+PORTDOCS=	*
 
-DESKTOP_ENTRIES="FreedroidRPG" "" \
-		"${PORTNAME}" "${SF_NAME}" \
-		"Game;RolePlaying;" false
+OPTIONS_DEFINE=	NLS BACKTRACE OPENGL SOUND
+OPTIONS_DEFAULT=BACKTRACE OPENGL SOUND
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	BACKTRACE OPENGL VORBIS
-OPTIONS_DEFAULT=BACKTRACE OPENGL VORBIS
 BACKTRACE_DESC=	Use backtrace() to generate nice bug reports
-
 BACKTRACE_USES=			execinfo
 BACKTRACE_CONFIGURE_ENABLE=	backtrace
-BACKTRACE_VARS=	STRIP= # empty
+BACKTRACE_VARS=			STRIP= # empty
+
 OPENGL_USE=			GL=gl
 OPENGL_CONFIGURE_ENABLE=	opengl
-VORBIS_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-				libogg.so:${PORTSDIR}/audio/libogg
-VORBIS_CONFIGURE_ENABLE=	vorbis
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/win32/w32icon2_64x64.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+SOUND_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+				libogg.so:${PORTSDIR}/audio/libogg
+SOUND_CONFIGURE_ENABLE=		sound
+SOUND_USE=			SDL=mixer
+NLS_USES=			gettext
+NLS_CONFIGURE_ENABLE=		nls
 
 .include <bsd.port.mk>
