@@ -1,12 +1,10 @@
---- mix.exs.orig	2015-07-01 10:24:04 UTC
+--- mix.exs.orig	2015-12-26 00:31:19 UTC
 +++ mix.exs
-@@ -21,8 +21,7 @@ defmodule Decimal.Mixfile do
-   end
- 
-   defp deps do
--    [{:ex_doc, only: :dev},
--     {:earmark, only: :dev}]
-+    []
-   end
- 
-   defp description do
+@@ -5,7 +5,6 @@ defmodule Decimal.Mixfile do
+     [app: :decimal,
+      version: "1.1.1",
+      elixir: "~> 1.0",
+-     deps: deps,
+      name: "Decimal",
+      source_url: "https://github.com/ericmj/decimal",
+      docs: fn ->
