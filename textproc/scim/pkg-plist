@@ -139,20 +139,5 @@ share/locale/zh_TW/LC_MESSAGES/scim.mo
 %%DATADIR%%/icons/setup.png
 %%DATADIR%%/icons/trademark.png
 %%DATADIR%%/icons/up.png
-@dirrm etc/scim
-@dirrm include/scim-1.0/x11
-@dirrm include/scim-1.0/gtk
-@dirrm include/scim-1.0
-@dirrm lib/scim-1.0/1.4.0/Config
-@dirrm lib/scim-1.0/1.4.0/Filter
-@dirrm lib/scim-1.0/1.4.0/FrontEnd
-@dirrm lib/scim-1.0/1.4.0/Helper
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%
-@dirrmtry lib/gtk-2.0/immodules
-@dirrmtry lib/scim-1.0/1.4.0/IMEngine
-@dirrmtry lib/scim-1.0/1.4.0/SetupUI
-@dirrmtry lib/scim-1.0/1.4.0
-@dirrmtry lib/scim-1.0
 @postexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
 @postunexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
