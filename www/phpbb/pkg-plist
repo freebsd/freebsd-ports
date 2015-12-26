@@ -303,30 +303,25 @@
 %%PHPBBDIR%%/viewforum.php
 %%PHPBBDIR%%/viewonline.php
 %%PHPBBDIR%%/viewtopic.php
-@unexec if cmp -s %D/%%PHPBBDIR%%/config.php %D/%%PHPBBDIR%%/config.php.example; then rm -f %D/%%PHPBBDIR%%/config.php ; fi
-%%PHPBBDIR%%/config.php.example
-@exec if [ ! -f %D/%%PHPBBDIR%%/config.php ]; then cp -p %D/%F %B/config.php; fi
-@dirrm %%PHPBBDIR%%/admin
-@dirrm %%PHPBBDIR%%/cache
-@dirrm %%PHPBBDIR%%/db
-@dirrm %%PHPBBDIR%%/images/smiles
-@dirrmtry %%PHPBBDIR%%/images/avatars/gallery
-@dirrmtry %%PHPBBDIR%%/images/avatars
-@dirrmtry %%PHPBBDIR%%/images
-@dirrm %%PHPBBDIR%%/includes
-@dirrm %%PHPBBDIR%%/install/schemas
-@dirrm %%PHPBBDIR%%/install
-@dirrm %%PHPBBDIR%%/language/lang_english/email
-@dirrm %%PHPBBDIR%%/language/lang_english
-@dirrmtry %%PHPBBDIR%%/language
-@dirrm %%PHPBBDIR%%/templates/subSilver/admin
-@dirrm %%PHPBBDIR%%/templates/subSilver/images/lang_english
-@dirrmtry %%PHPBBDIR%%/templates/subSilver/images
-@dirrmtry %%PHPBBDIR%%/templates/subSilver
-@dirrmtry %%PHPBBDIR%%/templates
-@dirrmtry %%PHPBBDIR%%
-@owner root
-@group wheel
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@sample %%PHPBBDIR%%/config.php.example %%PHPBBDIR%%/config.php
+@dir %%PHPBBDIR%%/templates/subSilver/images/lang_english
+@dir %%PHPBBDIR%%/templates/subSilver/images
+@dir %%PHPBBDIR%%/templates/subSilver/admin
+@dir %%PHPBBDIR%%/templates/subSilver
+@dir %%PHPBBDIR%%/templates
+@dir %%PHPBBDIR%%/language/lang_english/email
+@dir %%PHPBBDIR%%/language/lang_english
+@dir %%PHPBBDIR%%/language
+@dir %%PHPBBDIR%%/install/schemas
+@dir %%PHPBBDIR%%/install
+@dir %%PHPBBDIR%%/includes
+@dir %%PHPBBDIR%%/images/smiles
+@dir %%PHPBBDIR%%/images/avatars/gallery
+@dir %%PHPBBDIR%%/images/avatars
+@dir %%PHPBBDIR%%/images
+@dir %%PHPBBDIR%%/db
+@dir %%PHPBBDIR%%/cache
+@dir %%PHPBBDIR%%/admin
+@dir %%PHPBBDIR%%
+@owner
+@group
