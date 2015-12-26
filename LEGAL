@@ -51,6 +51,7 @@ bzip-*			archivers/bzip		Some algorithms used may infringe certain US patents.  
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 arcconf-v*		sysutils/arcconf	May not be redistributed in binary form
 clustalw-*		biology/clustalw	No commercial use
+consed_linux.tar.gz	biology/consed		Redistribution is not permitted in any form. You must request access permission via e-mail to get the tarball. Free for academic use.
 cos-*			java/cos		Special conditions apply for commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
 CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
