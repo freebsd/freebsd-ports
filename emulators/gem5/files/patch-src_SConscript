@@ -1,0 +1,11 @@
+--- src/SConscript.orig	2015-04-21 15:32:43 UTC
++++ src/SConscript
+@@ -165,7 +165,7 @@ class Source(SourceFile):
+         '''specify the source file, and any guards'''
+         super(Source, self).__init__(source, **guards)
+ 
+-        self.Werror = Werror
++        self.Werror = False
+         self.swig = swig
+ 
+ class PySource(SourceFile):
