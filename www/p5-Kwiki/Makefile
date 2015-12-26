@@ -20,6 +20,7 @@ USES=		shebangfix
 SHEBANG_FILES=	src/plugins/cfedde/bin/rippod
 KWIKIDIR?=	kwiki
 NO_BUILD=	yes
+NO_ARCH=	yes
 PLIST_SUB=	KWIKIDIR=${KWIKIDIR}
 
 do-install:
