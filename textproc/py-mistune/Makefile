@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mistune
-PORTVERSION=	0.5
+PORTVERSION=	0.7.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-regression-test: build
+NO_ARCH=	yes
+
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
