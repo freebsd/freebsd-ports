@@ -93,10 +93,10 @@ bin/%%HACKNAME%%
 %%DATADIR%%/history
 %%DATADIR%%/juiblex.lev
 %%DATADIR%%/knox.lev
+%%DATADIR%%/license
 @mode 664
 %%DATADIR%%/logfile
 @mode
-%%DATADIR%%/license
 %%DATADIR%%/mapbg.xpm
 %%DATADIR%%/medusa-1.lev
 %%DATADIR%%/medusa-2.lev
