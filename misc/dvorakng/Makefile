@@ -10,19 +10,24 @@ MASTER_SITES=	http://www.free.of.pl/n/nopik/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dvorak typing tutor
 
-USES=	tar:bzip2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:bzip2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-OPTIONS_DEFINE=	DOCS
-
 PLIST_FILES=	bin/dvorakng
 PORTDOCS=	README TODO
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dvorakng ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

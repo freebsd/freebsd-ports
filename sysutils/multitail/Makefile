@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multitail
-PORTVERSION=	6.4.1
+PORTVERSION=	6.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/ \
 		http://fossies.org/unix/privat/
