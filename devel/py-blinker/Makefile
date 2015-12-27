@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blinker
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,13 +11,16 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Fast, simple object-to-object and broadcast signaling
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent distutils
 
-regression-test: build
-	@cd ${WRKSRC} && nosetests
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
