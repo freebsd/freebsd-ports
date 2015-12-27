@@ -4209,6 +4209,7 @@
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
     SUBDIR += py-pycerberus
+    SUBDIR += py-pycmd
     SUBDIR += py-pycparser
     SUBDIR += py-pydasm
     SUBDIR += py-pydoop
