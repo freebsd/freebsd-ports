@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		Ice
-PORTVERSION=		3.6.0
-PORTREVISION=		1
+PORTVERSION=		3.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=		devel
 
@@ -24,15 +23,13 @@ LIB_DEPENDS+=		libIce.so.${LIB_VRS}:${PORTSDIR}/devel/ice
 PLIST_SUB+=		LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
 .endif
 
-OPTIONS_DEFINE?=	DEBUG TESTS
-OPTIONS_DEFAULT?=	TESTS
-TESTS_DESC?=		Build and run tests (requires lang/python)
+OPTIONS_DEFINE?=	DEBUG TEST
 
 .include <bsd.port.options.mk>
 
 USES+=			iconv gmake
 
-.if ${PORT_OPTIONS:MTESTS} && ${SLAVE_PORT} == "no"
+.if ${PORT_OPTIONS:MTEST} && ${SLAVE_PORT} == "no"
 USES+=			python:build
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}passlib>0:${PORTSDIR}/security/py-passlib
 .endif
@@ -62,7 +59,7 @@ BROKEN_sparc64=		Does not compile on ${ARCH}
 MAKE_ENV+=		LP64=yes
 .endif
 
-.if !${PORT_OPTIONS:MTESTS}
+.if !${PORT_OPTIONS:MTEST}
 MAKE_ENV+=		NOTESTS=yes
 .endif
 
@@ -135,13 +132,8 @@ post-patch:
 		s|%%PREFIX%%|${PREFIX}|g; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g;' ${WRKSRC}/php/config/Make.rules.php
 
-.if ${PORT_OPTIONS:MTESTS}
-TEST_CMD=		@cd ${BUILD_WRKSRC} && ${PYTHON_CMD} ./allTests.py
-check regression-test test: build
-	${TEST_CMD}
-
-pre-install: regression-test
-.endif
+do-test-TEST-on:
+	@cd ${BUILD_WRKSRC} && ${PYTHON_CMD} ./allTests.py
 
 .if ${SLAVE_PORT} == "no"
 post-install:
