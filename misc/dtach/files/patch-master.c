@@ -1,6 +1,6 @@
---- master.c.orig	2008-01-30 21:59:54.000000000 -0800
-+++ master.c	2010-01-12 10:30:56.000000000 -0800
-@@ -53,6 +53,8 @@
+--- master.c.orig	2008-01-31 05:59:54 UTC
++++ master.c
+@@ -53,6 +53,8 @@ struct client
  static struct client *clients;
  /* The pseudo-terminal created for the child process. */
  static struct pty the_pty;
@@ -9,7 +9,7 @@
  
  #ifndef HAVE_FORKPTY
  pid_t forkpty(int *amaster, char *name, struct termios *termp,
-@@ -66,6 +68,19 @@
+@@ -66,6 +68,19 @@ unlink_socket(void)
  	unlink(sockname);
  }
  
@@ -29,7 +29,7 @@
  /* Signal */
  static RETSIGTYPE 
  die(int sig)
-@@ -206,7 +221,8 @@
+@@ -206,7 +221,8 @@ create_socket(char *name)
  		return -1;
  	}
  	/* chmod it to prevent any suprises */
@@ -39,7 +39,7 @@
  	{
  		close(s);
  		return -1;
-@@ -454,6 +470,8 @@
+@@ -454,6 +470,8 @@ master_process(int s, char **argv, int w
  	/* Loop forever. */
  	while (1)
  	{
@@ -48,7 +48,7 @@
  		/* Re-initialize the file descriptor set for select. */
  		FD_ZERO(&readfds);
  		FD_SET(s, &readfds);
-@@ -480,8 +498,14 @@
+@@ -480,8 +498,14 @@ master_process(int s, char **argv, int w
  			FD_SET(p->fd, &readfds);
  			if (p->fd > highest_fd)
  				highest_fd = p->fd;
