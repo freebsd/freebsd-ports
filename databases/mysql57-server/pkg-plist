@@ -1,4 +1,6 @@
 bin/innochecksum
+bin/lz4_decompress
+bin/my_print_defaults
 bin/myisam_ftdump
 bin/myisamchk
 bin/myisamlog
@@ -12,6 +14,11 @@ bin/mysqld_multi
 bin/mysqld_safe
 bin/mysqldumpslow
 bin/mysqltest
+bin/perror
+bin/replace
+bin/resolve_stack_dump
+bin/resolveip
+bin/zlib_decompress
 include/mysql/binary_log_types.h
 lib/mysql/libmysqld.a
 lib/mysql/plugin/adt_null.so
