@@ -3970,6 +3970,7 @@
     SUBDIR += py-configobj
     SUBDIR += py-configparser
     SUBDIR += py-construct
+    SUBDIR += py-contextlib2
     SUBDIR += py-country
     SUBDIR += py-cov-core
     SUBDIR += py-coverage
