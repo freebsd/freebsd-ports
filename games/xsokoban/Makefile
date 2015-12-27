@@ -3,7 +3,7 @@
 
 PORTNAME=	xsokoban
 PORTVERSION=	3.3c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.cs.cornell.edu/andru/release/ \
 		ftp://ftp.pmg.lcs.mit.edu/pub/xsokoban/
@@ -20,14 +20,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/config.h
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/xsokoban/scores \
-		${STAGEDIR}${PREFIX}/lib/X11/xsokoban/bitmaps/defaults \
-		${STAGEDIR}${PREFIX}/lib/X11/xsokoban/saves \
-		${STAGEDIR}${PREFIX}/lib/X11/xsokoban/screens
-	@${CHMOD} 777 ${STAGEDIR}${PREFIX}/lib/X11/xsokoban/scores
-	@${CHMOD} 775 ${STAGEDIR}${PREFIX}/lib/X11/xsokoban/saves
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/xsokoban/screens
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/xsokoban/bitmaps/defaults
 	${INSTALL_DATA} ${WRKSRC}/screens/* ${STAGEDIR}${PREFIX}/lib/X11/xsokoban/screens
 	${INSTALL_DATA} ${WRKSRC}/bitmaps/defaults/* \
 		${STAGEDIR}${PREFIX}/lib/X11/xsokoban/bitmaps/defaults
+
+	@${MKDIR} ${STAGEDIR}/var/games/xsokoban/scores
+	@${MKDIR} ${STAGEDIR}/var/games/xsokoban/saves
+# may be created by xsokoban -c
+	@${PRINTF} "xs02\0\0" > ${STAGEDIR}/var/games/xsokoban/scores/scores.sample
 
 .include <bsd.port.mk>
