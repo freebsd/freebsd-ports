@@ -1,4 +1,4 @@
-bin/pinball
+@(,games,2555) bin/pinball
 bin/pinball-config
 include/pinball/AlignVisitor.h
 include/pinball/AllegroVisitor.h
@@ -122,16 +122,8 @@ lib/pinball/libemilia_pin.a
 %%DATADIR%%/tux/tiles.png
 %%DATADIR%%/tux/tiles.png.pcx
 %%DATADIR%%/tux/up.wav
-@dirrm %%DATADIR%%/tux
-@dirrm %%DATADIR%%/professor
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/pinball
-@dirrm include/pinball
-@group games
-@unexec rmdir "/var/games/pinball/tux" >/dev/null 2>&1 || :
-@unexec rmdir "/var/games/pinball/professor" >/dev/null 2>&1 || :
-@unexec rmdir "/var/games/pinball" >/dev/null 2>&1 || :
-/var/games/pinball/professor/highscores
-/var/games/pinball/tux/highscores
-@group
+@sample(,games,664) /var/games/pinball/professor/highscores.sample
+@sample(,games,664) /var/games/pinball/tux/highscores.sample
+@dir(,games,775) /var/games/pinball/tux
+@dir(,games,775) /var/games/pinball/professor
+@dir /var/games/pinball
