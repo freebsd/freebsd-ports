@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20151227:
+  AFFECTS: users of games/nethack34
+  AUTHOR: glewis@FreeBSD.org
+
+  The port name and installation location of games/nethack34 have changed
+  to allow for a port of NetHack 3.6.0.  To preserve your save and bones
+  files do the following after updating:
+
+    # sudo cp -p ${LOCALBASE}/share/nethack/save/* ${LOCALBASE}/share/nethack34/save/
+    # sudo cp -p ${LOCALBASE}/share/nethack/bon* ${LOCALBASE}/share/nethack34/
+
+  After verifying the files were copied correctly, remove the playground
+  directory (as these files are incompatible with NetHack 3.6.0).
+
+    # sudo rm -r ${LOCALBASE}/share/nethack
+
 20151219:
   AFFECTS: users of net/samba4, net/samba41
   AUTHOR: timur@FreeBSD.org
