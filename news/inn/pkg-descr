@@ -3,4 +3,4 @@ is innd, an NNTP server that multiplexes all I/O. Newsreading is handled
 by a separate server, nnrpd, that is spawned for each client.  Both innd
 and nnrpd have some slight variances from the NNTP protocol.
 
-WWW: https://www.isc.org/software/inn
+WWW: http://www.eyrie.org/~eagle/software/inn/
