@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	epm
-PORTVERSION=	4.2
+PORTVERSION=	4.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.msweet.org/files/project2/
 EXTRACT_SUFX=	-source.tar.bz2
