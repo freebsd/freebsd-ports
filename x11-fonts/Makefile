@@ -108,6 +108,7 @@
     SUBDIR += intlfonts
     SUBDIR += isabella
     SUBDIR += jmk-x11-fonts
+    SUBDIR += junction
     SUBDIR += junicode
     SUBDIR += kaputa
     SUBDIR += khmeros
