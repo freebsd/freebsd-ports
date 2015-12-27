@@ -1,0 +1,7 @@
+A robust, full-featured Python IRC bot with a clean and flexible plugin API.
+
+Equipped with a complete ACL system for specifying user permissions with as
+much as per-command granularity. Batteries are included in the form of
+numerous plugins already written.
+
+WWW: https://github.com/ProgVal/Limnoria
