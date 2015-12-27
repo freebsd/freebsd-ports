@@ -1511,6 +1511,7 @@
     SUBDIR += py-blogofile
     SUBDIR += py-bottle
     SUBDIR += py-bottle-cork
+    SUBDIR += py-cachecontrol
     SUBDIR += py-cactus
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
