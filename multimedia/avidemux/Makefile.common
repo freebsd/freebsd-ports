@@ -20,7 +20,7 @@ OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME:C/-.*//}/options
 
 USE_SQLITE=	yes
 USES=		cmake:outsource pkgconfig iconv gmake compiler:features
-USES+=		dos2unix
+USES+=		dos2unix execinfo
 DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake po/CMakeLists.txt
 CMAKE_ARGS+=	-DGNUMAKE_EXECUTABLE=gmake
 CMAKE_ARGS+=	-DAVIDEMUX_PACKAGER=none
@@ -76,8 +76,7 @@ CFLAGS+=	-fno-omit-frame-pointer
 #MAKE_ENV+=	ARCH=x86_64
 #CONFIGURE_ENV+=	ARCH=x86_64
 .endif
-.if ${OSVERSION} < 1000000
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+.if !exists(/usr/lib/libexecinfo.so)
 CMAKE_ARGS+=	-DLIBEXECINFO_INCLUDE_DIR=${LOCALBASE}/include
 CMAKE_ARGS+=	-DLIBEXECINFO_LIBRARY_DIR=${LOCALBASE}/lib/libexecinfo.so
 .else
