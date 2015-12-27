@@ -1,0 +1,23 @@
+--- examples/chrony.conf.example2.orig	2015-10-19 09:18:37 UTC
++++ examples/chrony.conf.example2
+@@ -1,9 +1,9 @@
+ # Use public servers from the pool.ntp.org project.
+ # Please consider joining the pool (http://www.pool.ntp.org/join.html).
+-pool pool.ntp.org iburst
++pool 0.freebsd.pool.ntp.org iburst
+ 
+ # Record the rate at which the system clock gains/losses time.
+-driftfile /var/lib/chrony/drift
++driftfile /var/db/chrony/drift
+ 
+ # In first three updates step the system clock instead of slew
+ # if the adjustment is larger than 1 second.
+@@ -19,7 +19,7 @@ rtcsync
+ #local stratum 10
+ 
+ # Specify file containing keys for NTP authentication.
+-#keyfile /etc/chrony.keys
++#keyfile /usr/local/etc/chrony.keys
+ 
+ # Disable logging of client accesses.
+ noclientlog
