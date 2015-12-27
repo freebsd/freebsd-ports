@@ -15,8 +15,6 @@ USES=		tar:bzip2 uidfix
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	@${MKDIR} ${WRKSRC}/lib ${WRKSRC}/lpdump ${WRKSRC}/lptest
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
@@ -24,4 +22,4 @@ post-extract:
 	@${CP} ${FILESDIR}/Makefile.lpdump ${WRKSRC}/lpdump/Makefile
 	@${CP} ${FILESDIR}/Makefile.lptest ${WRKSRC}/lptest/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
