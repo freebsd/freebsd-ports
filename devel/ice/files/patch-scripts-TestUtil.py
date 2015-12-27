@@ -26,15 +26,15 @@
  def getCppCompiler():
      compiler = ""
      if os.environ.get("CPP_COMPILER", "") != "":
-@@ -311,7 +330,7 @@
-     if(p.wait() != 0):
+@@ -324,7 +324,7 @@
          print("uname failed:\n" + p.stdout.read().strip())
          sys.exit(1)
--    if p.stdout.readline().decode('UTF-8').strip() == "x86_64" and os.environ.get("LP64", "") != "no":
-+    if p.stdout.readline().decode('UTF-8').strip() in ["x86_64", "amd64"] and os.environ.get("LP64", "") != "no":
+     line = p.stdout.readline().decode('UTF-8').strip()
+-    if line == "x86_64" and os.environ.get("LP64", "") != "no":
++    if line in ["x86_64", "amd64"] and os.environ.get("LP64", "") != "no":
          x64 = True
- 
- #
+     elif line == "armv7l":
+         armv7l = True
 @@ -1887,7 +1906,7 @@
          if lang == "java":
              addLdPath(os.path.join(getIceDir("cpp"), "bin", "x64" if x64 else ""), env) # Add bin for db53_vc100.dll

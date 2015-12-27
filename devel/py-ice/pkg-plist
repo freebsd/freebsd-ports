@@ -121,6 +121,8 @@
 %%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_PropertiesF_ice.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_Properties_ice.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_Properties_ice.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_RemoteLogger_ice.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_RemoteLogger_ice.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_RouterF_ice.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_RouterF_ice.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHON32%%%%PYTHON_SITELIBDIR%%/Ice/__pycache__/Ice_Router_ice.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -255,6 +257,8 @@
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_PropertiesF_ice.pyo
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_Properties_ice.pyc
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_Properties_ice.pyo
+%%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_RemoteLogger_ice.pyc
+%%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_RemoteLogger_ice.pyo
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_RouterF_ice.pyc
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_RouterF_ice.pyo
 %%PYTHONPRE32%%%%PYTHON_SITELIBDIR%%/Ice/Ice_Router_ice.pyc
@@ -331,6 +335,7 @@
 %%PYTHON_SITELIBDIR%%/Ice/Ice_PropertiesAdmin_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_PropertiesF_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Properties_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_RemoteLogger_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_RouterF_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Router_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_ServantLocatorF_ice.py
