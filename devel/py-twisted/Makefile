@@ -2,38 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	twisted
-PORTVERSION=	15.2.1
+PORTVERSION=	15.5.0
 CATEGORIES=	devel net python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Twisted-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Metaport of Twisted, an event-driven networking engine
+COMMENT=	Asynchronous networking framework written in Python
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedCore
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:${PORTSDIR}/devel/py-zope.interface
 
-USES=		metaport python:2
+USES=		python:2 tar:bzip2
+USE_PYTHON=	distutils
 
-OPTIONS_DEFINE=	CONCH LORE MAIL NAMES NEWS PAIR RUNNER WEB WORDS
-OPTIONS_DEFAULT=CONCH LORE MAIL NAMES NEWS PAIR RUNNER WEB WORDS
-CONCH_DESC=	SSH and SFTP protocol
-LORE_DESC=	Documentation generator
-MAIL_DESC=	SMTP, IMAP and POP protocol
-NAMES_DESC=	DNS protocol
-NEWS_DESC=	NNTP protocol
-PAIR_DESC=	Twisted Pair can do low level TCP work
-RUNNER_DESC=	Process management
-WEB_DESC=	HTTP protocol
-WORDS_DESC=	Chat and Instant Messaging
-CONCH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedConch>=${PORTVERSION}:${PORTSDIR}/security/py-twistedConch
-LORE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedLore>=${PORTVERSION}:${PORTSDIR}/textproc/py-twistedLore
-MAIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedMail>=${PORTVERSION}:${PORTSDIR}/mail/py-twistedMail
-NAMES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedNames>=${PORTVERSION}:${PORTSDIR}/dns/py-twistedNames
-NEWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedNews>=${PORTVERSION}:${PORTSDIR}/news/py-twistedNews
-PAIR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedPair>=${PORTVERSION}:${PORTSDIR}/net/py-twistedPair
-RUNNER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedRunner>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedRunner
-WEB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedWeb>=${PORTVERSION}:${PORTSDIR}/www/py-twistedWeb
-WORDS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedWords>=${PORTVERSION}:${PORTSDIR}/net-im/py-twistedWords
+post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/lib -name "*.c" -and -exec ${RM} {} \;
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/python/_sendmsg.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/test/raiser.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/runner/portmap.so
 
 .include <bsd.port.mk>
