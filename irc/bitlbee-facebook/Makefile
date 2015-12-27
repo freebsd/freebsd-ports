@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitlbee-facebook
-PORTVERSION=	20151224
+PORTVERSION=	20151227
 CATEGORIES=	irc
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 BUILD_DEPENDS=	bitlbee:irc/bitlbee
 
-USES=		autoreconf libtool
+USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
