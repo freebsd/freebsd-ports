@@ -5,7 +5,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	3.16.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	3
@@ -84,8 +84,6 @@ TYPEAHEAD_EXTRA_PATCHES=${FILESDIR}/extra-gtk_gtkfilechooserwidget.c \
 post-patch:
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|file,cups|file,cups,lpr|' \
-		${WRKSRC}/gtk/Makefile.in
 
 pre-configure:
 # .if !exists() evaluates too early before cairo has a chance to be installed
