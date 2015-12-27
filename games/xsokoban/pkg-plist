@@ -1,4 +1,4 @@
-bin/xsokoban
+@(,games,2555) bin/xsokoban
 man/man1/xsokoban.1.gz
 lib/X11/xsokoban/bitmaps/defaults/centerwall.xbm
 lib/X11/xsokoban/bitmaps/defaults/centerwall.xpm
@@ -136,10 +136,7 @@ lib/X11/xsokoban/screens/screen.88
 lib/X11/xsokoban/screens/screen.89
 lib/X11/xsokoban/screens/screen.9
 lib/X11/xsokoban/screens/screen.90
-@unexec rm -f %D/lib/X11/xsokoban/scores/scores 2>/dev/null || true
-@dirrm lib/X11/xsokoban/bitmaps/defaults
-@dirrm lib/X11/xsokoban/bitmaps
-@dirrm lib/X11/xsokoban/saves
-@dirrm lib/X11/xsokoban/scores
-@dirrm lib/X11/xsokoban/screens
-@dirrm lib/X11/xsokoban
+@sample(,games,664) /var/games/xsokoban/scores/scores.sample
+@dir(,games,775) /var/games/xsokoban/scores
+@dir(,games,775) /var/games/xsokoban/saves
+@dir /var/games/xsokoban
