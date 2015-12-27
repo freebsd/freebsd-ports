@@ -1,6 +1,6 @@
---- stegdetect.c.orig	Sat Apr 15 00:14:05 2006
-+++ stegdetect.c	Sat Apr 15 00:14:40 2006
-@@ -78,7 +78,6 @@
+--- stegdetect.c.orig	2004-09-03 04:01:35 UTC
++++ stegdetect.c
+@@ -78,7 +78,6 @@ char *progname;
  float DCThist[257];
  float scale = 1;		/* Sensitivity scaling */
  
@@ -8,7 +8,7 @@
  static int quiet = 0;
  static int ispositive = 0;	/* Current images contain stego */
  static char *transformname;	/* Current transform name */
-@@ -1227,7 +1227,7 @@
+@@ -1227,7 +1226,7 @@ detect(char *filename, int scans)
  			strlcat(outbuf, quality(tmp, stars), sizeof(outbuf));
  			flag = 1;
  		}
@@ -17,7 +17,7 @@
  	a_wasted_var = 0;
  	}
  
-@@ -1267,7 +1267,7 @@
+@@ -1267,7 +1266,7 @@ detect(char *filename, int scans)
  			strlcat(outbuf, tmp, sizeof(outbuf));
  		}
  		
@@ -26,7 +26,7 @@
  	a_wasted_var = 0;
  	}
  
-@@ -1332,7 +1332,7 @@
+@@ -1332,7 +1331,7 @@ detect(char *filename, int scans)
  		}
  
  		free(dcts);

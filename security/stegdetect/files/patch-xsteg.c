@@ -1,5 +1,5 @@
---- xsteg.c.orig	2010-02-07 02:37:05.398520068 -0800
-+++ xsteg.c	2010-02-07 02:38:33.877232865 -0800
+--- xsteg.c.orig	2004-08-31 14:58:21 UTC
++++ xsteg.c
 @@ -56,9 +56,6 @@
  #define FLAG_DOINVIS	0x0008
  #define FLAG_DOF5	0x0010
@@ -10,7 +10,7 @@
  struct event start_ev;
  struct event gtk_ev;
  int quit = 0;
-@@ -744,8 +741,7 @@
+@@ -744,8 +741,7 @@ chld_handler(int sig)
  	sigprocmask(SIG_BLOCK, &set, &oldset);
  
  	while ((pid = waitpid(-1, &status, WNOHANG)) > 0) {
@@ -20,7 +20,7 @@
  	}
  
  	signal(SIGCHLD, chld_handler);
-@@ -1106,8 +1102,7 @@
+@@ -1106,8 +1102,7 @@ main(int argc, char *argv[] )
  	gtk_widget_show(window);
  
  	event_init();

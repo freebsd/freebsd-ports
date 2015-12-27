@@ -1,6 +1,6 @@
---- break_jsteg.c.orig	Sun Aug 29 20:11:00 2004
-+++ break_jsteg.c	Sat Apr 15 00:05:52 2006
-@@ -162,7 +162,7 @@
+--- break_jsteg.c.orig	2004-08-29 23:11:00 UTC
++++ break_jsteg.c
+@@ -162,7 +162,7 @@ break_jsteg_prepare(char *filename, shor
  	jstegob->skip = bytes - sizeof(jstegob->coeff);
  
  	if (jsbits < max || off + jsbits > bits) {
