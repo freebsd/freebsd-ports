@@ -18,7 +18,6 @@ GH_TAGNAME=	v${PORTVERSION}
 DOS2UNIX_REGEX=	.*Makefile
 USES=		dos2unix iconv pkgconfig
 USE_GNOME=	gtk20
-WRKSRC=		${WRKDIR}/sources_5408
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
