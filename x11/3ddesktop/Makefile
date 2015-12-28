@@ -12,6 +12,7 @@ COMMENT=	3D Virtual Desktop Switcher
 
 LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 
+USES=		localbase
 USE_XORG=	xmu
 USE_GL=		glut
 GNU_CONFIGURE=	yes
@@ -21,10 +22,10 @@ PLIST_FILES=	bin/3ddesk bin/3ddeskd etc/3ddesktop.conf \
 		%%DATADIR%%/digits.bmp \
 		man/man1/3ddesk.1.gz man/man1/3ddeskd.1.gz
 
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT  -pthread
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+CPPFLAGS+=	-DHAVE_DECL_GETOPT -pthread
+LDFLAGS+=	-pthread
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -34,8 +35,8 @@ post-patch:
 		 s|@AUTOHEADER@|${TRUE}|g ; \
 		 s|@AUTOMAKE@|${TRUE}|g'
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README README.windowmanagers
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
