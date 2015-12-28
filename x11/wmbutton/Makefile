@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that displays 9 buttons to run apps of your choice
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XORG=	xpm
 
@@ -22,8 +23,6 @@ PLIST_FILES=	bin/wmbutton
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 do-build:
 	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} \
 		-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include \
@@ -32,13 +31,13 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmbutton ${STAGEDIR}${PREFIX}/bin/wmbutton
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/.wmbutton ${STAGEDIR}${EXAMPLESDIR}/dot.wmbutton
-.endif
 
 .include <bsd.port.mk>
