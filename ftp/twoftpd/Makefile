@@ -5,14 +5,13 @@ PORTNAME=	twoftpd
 PORTVERSION=	1.42
 PORTREVISION=	1
 CATEGORIES=	ftp
-MASTER_SITES=	http://untroubled.org/archive/${PORTNAME}/
+MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, secure, efficient FTP server
 
 LICENSE=	GPLv2
 
-BROKEN=		Does not fetch
 BUILD_DEPENDS=	${LOCALBASE}/bin/bg-installer:${PORTSDIR}/devel/bglibs
 LIB_DEPENDS=	libcvm-v2client.so:${PORTSDIR}/security/cvm
 
