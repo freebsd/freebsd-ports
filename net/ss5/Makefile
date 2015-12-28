@@ -4,7 +4,7 @@
 PORTNAME=	ss5
 PORTVERSION=	3.8.5
 DISTVERSIONSUFFIX=	-1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}${DISTVERSIONSUFFIX}
 
@@ -34,6 +34,7 @@ post-patch:
 		${WRKSRC}/include/config.h.in
 
 post-install:
+	${MKDIR} ${STAGEDIR}/var/log/ss5
 	${INSTALL_DATA} ${WRKSRC}/conf/ss5.conf \
 		${STAGEDIR}${PREFIX}/etc/ss5/ss5.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/conf/ss5.ha \
