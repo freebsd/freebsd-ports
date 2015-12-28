@@ -11,16 +11,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager that arranges windows in a tree
 
 LICENSE=	GPLv2
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake imake:env tar:bzip2
 USE_XORG=	x11 ice sm xext xmu xpm xt xxf86vm
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL PROBLEMS README README.tiling TODO
+PORTDOCS=	AUTHORS ChangeLog PROBLEMS README README.tiling TODO
 PORTEXAMPLES=	default.cfg sample.cfg
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -38,13 +37,17 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/pixmaps
 	(cd ${WRKSRC}/src/pixmaps && ${INSTALL_DATA} *.xpm \
 		${STAGEDIR}${DATADIR}/pixmaps)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for F in ${PORTDOCS}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${F} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${F} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for F in ${PORTEXAMPLES}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${F} ${STAGEDIR}${EXAMPLESDIR})
+	${INSTALL_DATA} ${WRKSRC}/${F} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
 .include <bsd.port.mk>
