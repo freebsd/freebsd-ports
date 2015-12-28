@@ -3,14 +3,13 @@
 PORTNAME=	audex
 PORTVERSION=	0.79
 CATEGORIES=	audio kde
-MASTER_SITES=	http://kde.maniatek.com/${PORTNAME}/files/
+MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
+DISTNAME=	77125-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE4 audio CD ripping utility
 
 LICENSE=	GPLv3
-
-BROKEN=		unfetchable
 
 LIB_DEPENDS=	libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia
 
