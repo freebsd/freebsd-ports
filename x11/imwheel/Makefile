@@ -11,6 +11,9 @@ MASTER_SITES=	ftp://jcatki.no-ip.org/pub/imwheel/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to translate mouse wheel actions into X keyboard events
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_XORG=	x11 xpm xtst xext xmu
 USES=		gmake
 GNU_CONFIGURE=	yes
@@ -23,7 +26,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
 .endfor
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/EMACS ${STAGEDIR}${DOCSDIR}
 
