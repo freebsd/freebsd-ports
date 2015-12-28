@@ -10,14 +10,22 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for display calibration of X11-Servers with ICC profiles
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	README README.profilers
-USE_XORG=	x11 xext sm xxf86vm
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake
+USE_XORG=	x11 xext sm xxf86vm
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+PORTDOCS=	README README.profilers
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/${PORTNAME}
 
 DEFINES=	-DXCALIB_VERSION=\"${PORTVERSION}\" -DUNIX
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lm -lX11 -lXxf86vm -lXext
 CFLAGS+=	-I./icclib -I${LOCALBASE}/include -I${LOCALBASE}/include
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
@@ -25,9 +33,13 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.icc ${STAGEDIR}${EXAMPLESDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
