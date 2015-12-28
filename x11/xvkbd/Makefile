@@ -40,8 +40,8 @@ post-patch-XTEST-on:
 	@${REINPLACE_CMD} -e \
 		'/define XTEST/s|^XCOMM |#|' ${WRKSRC}/Imakefile
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
