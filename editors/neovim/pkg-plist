@@ -1,8 +1,8 @@
 bin/nvim
 man/man1/nvim.1.gz
-share/licenses/neovim-0.1.1_1/APACHE20
-share/licenses/neovim-0.1.1_1/LICENSE
-share/licenses/neovim-0.1.1_1/catalog.mk
+share/licenses/neovim-0.1.1/APACHE20
+share/licenses/neovim-0.1.1/LICENSE
+share/licenses/neovim-0.1.1/catalog.mk
 share/locale/af/LC_MESSAGES/nvim.mo
 share/locale/ca/LC_MESSAGES/nvim.mo
 share/locale/cs.cp1250/LC_MESSAGES/nvim.mo
