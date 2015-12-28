@@ -2,6 +2,7 @@
 
 PORTNAME=	opus
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 		MOZILLA/opus
