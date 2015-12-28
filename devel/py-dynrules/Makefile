@@ -4,7 +4,7 @@ PORTNAME=	dynrules
 PORTVERSION=	0.1.0
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://cdn.bitbucket.org/marcusva/py-dynrules/downloads/
+MASTER_SITES=	http://bitbucket.org/marcusva/py-dynrules/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mva@FreeBSD.org
