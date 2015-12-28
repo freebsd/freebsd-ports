@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Types-Structured
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,4 +28,11 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502200
+BUILD_DEPENDS+=	p5-JSON-PP>=2.27300:${PORTSDIR}/converters/p5-JSON-PP
+RUN_DEPENDS+=	p5-JSON-PP>=2.27300:${PORTSDIR}/converters/p5-JSON-PP
+.endif
+
+.include <bsd.port.post.mk>
