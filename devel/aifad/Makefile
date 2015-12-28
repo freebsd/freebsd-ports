@@ -9,7 +9,7 @@ CATEGORIES=	devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Machine learning system
 
-LICENSE=	GPLv3
+LICENSE=	GPLv2 # or later (COPYING is GPLv3)
 
 BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir \
 		ocaml-cfg>0:${PORTSDIR}/devel/ocaml-cfg \
@@ -38,7 +38,7 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	
+
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR})
