@@ -100,7 +100,7 @@
 +except ImportError:
 +    _SSLv3_IF_EXISTS = None
 +else:
-+    _PROTOCOL_NAMES[PROTOCOL_SSLv2] = "SSLv3"
++    _PROTOCOL_NAMES[PROTOCOL_SSLv3] = "SSLv3"
  
  from socket import getnameinfo as _getnameinfo
  from socket import error as socket_error
