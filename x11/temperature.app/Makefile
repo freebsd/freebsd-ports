@@ -12,22 +12,22 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockable WindowMaker applet which displays the local temperature
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-
-OPTIONS_DEFINE=	DOCS
 
 USE_XORG=	x11 xpm
 
 PORTDOCS=	README
 PLIST_FILES=	bin/Temperature.app
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} Temperature.app \
-		${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/Temperature.app ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
