@@ -10,7 +10,6 @@ MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Digital clock dockapp with a similar look to wmcpuload
 
-BROKEN=		Does not fetch
 USE_XORG=	xpm
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
