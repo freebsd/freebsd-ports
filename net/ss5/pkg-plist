@@ -33,4 +33,5 @@ sbin/ss5srv
 %%DOCSDIR%%/README.ldap
 %%DOCSDIR%%/README.pam
 %%DOCSDIR%%/README.statmgr
+@dir /var/log/ss5
 @dir /var/run/ss5
