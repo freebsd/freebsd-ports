@@ -5,9 +5,6 @@ PORTNAME=	mupen64plus
 PORTVERSION=	2.5
 PORTREVISION?=	0
 CATEGORIES=	emulators
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT=	Fork of Mupen64 Nintendo 64 emulator with plugins (meta port)
@@ -29,13 +26,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-video-glide64mk2.so:${POR
 # RSP plugins
 RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-rsp-hle.so:${PORTSDIR}/emulators/mupen64plus-rsp-hle
 
-NO_MTREE=	yes
-NO_BUILD=	yes
-SUB_FILES=	pkg-message
-
-do-install:	# empty
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+USES=		metaport
 
 .include <bsd.port.mk>
