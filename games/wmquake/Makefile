@@ -11,8 +11,6 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Id Software's Quake I in a 64x64 WM dockapp window
 
-BROKEN=		Does not fetch
-
 USES=		gmake tar:bzip2
 USE_GNOME=	gtk12
 
