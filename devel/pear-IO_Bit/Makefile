@@ -16,6 +16,10 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${PEARDIR}/.channels/openpear.org.reg:${PORTSDIR}/devel/pear-channel-openpear
 RUN_DEPENDS=	${PEARDIR}/.channels/openpear.org.reg:${PORTSDIR}/devel/pear-channel-openpear
 
+BROKEN=		unfetchable
+DEPRECATED=	Unsupported upstream
+EXPIRATION_DATE=	2016-03-01
+
 USES=	pear
 USE_PHP=	yes
 PEAR_CHANNEL=	openpear
