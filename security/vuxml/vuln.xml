@@ -58,6 +58,120 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4bae544d-06a3-4352-938c-b3bcbca89298">
+    <topic>ffmpeg -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>gstreamer-ffmpeg</name>
+	<!-- gst-ffmpeg-0.10.13 has libav-0.7.2 (0.7.7 in freebsd port) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>handbrake</name>
+	<!-- handbrake-0.10.2 has libav-10.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ffmpeg</name>
+	<range><ge>2.8,1</ge><lt>2.8.4,1</lt></range>
+	<range><lt>2.7.4,1</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg26</name>
+	<range><lt>2.6.6</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg25</name>
+	<range><lt>2.5.9</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg24</name>
+	<range><lt>2.4.12</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg-devel</name>
+	<name>ffmpeg23</name>
+	<name>ffmpeg2</name>
+	<name>ffmpeg1</name>
+	<name>ffmpeg-011</name>
+	<name>ffmpeg0</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>avidemux</name>
+	<name>avidemux2</name>
+	<name>avidemux26</name>
+	<!-- avidemux-2.6.10 has ffmpeg-2.6.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>kodi</name>
+	<!-- kodi-15.2 has ffmpeg-2.6.4 -->
+	<range><lt>16.0</lt></range>
+      </package>
+      <package>
+	<name>mplayer</name>
+	<name>mencoder</name>
+	<!-- mplayer-1.2.r20151219 has ffmpeg-2.8.3 -->
+	<range><lt>1.2.r20151219_1</lt></range>
+      </package>
+      <package>
+	<name>mythtv</name>
+	<name>mythtv-frontend</name>
+	<!-- mythtv-0.27.0.20140121 has ffmpeg-1.2.2+ (snapshot, f9c8726) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>plexhometheater</name>
+	<!-- plexhometheater-1.4.1 has ffmpeg-0.10.2 fork -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8662">
+	  <p>The ff_dwt_decode function in libavcodec/jpeg2000dwt.c in
+	    FFmpeg before 2.8.4 does not validate the number of
+	    decomposition levels before proceeding with Discrete Wavelet
+	    Transform decoding, which allows remote attackers to cause a
+	    denial of service (out-of-bounds array access) or possibly
+	    have unspecified other impact via crafted JPEG 2000
+	    data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8663">
+	  <p>The ff_get_buffer function in libavcodec/utils.c in
+	    FFmpeg before 2.8.4 preserves width and height values after
+	    a failure, which allows remote attackers to cause a denial
+	    of service (out-of-bounds array access) or possibly have
+	    unspecified other impact via a crafted .mov file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8662</cvename>
+      <cvename>CVE-2015-8663</cvename>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=75422280fbcdfbe9dc56bde5525b4d8b280f1bc5</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=abee0a1c60612e8638640a8a3738fffb65e16dbf</url>
+      <url>https://ffmpeg.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-20</discovery>
+      <entry>2015-12-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="10f7bc76-0335-4a88-b391-0b05b3a8ce1c">
     <topic>NSS -- MD5 downgrade in TLS 1.2 signatures</topic>
     <affects>
@@ -1796,16 +1910,23 @@ Notes:
       </package>
       <package>
 	<name>ffmpeg</name>
-	<range><lt>2.8.3,1</lt></range>
+	<range><ge>2.8,1</ge><lt>2.8.3,1</lt></range>
+	<range><lt>2.7.3,1</lt></range>
       </package>
       <package>
 	<name>ffmpeg26</name>
 	<range><lt>2.6.5</lt></range>
       </package>
       <package>
-	<name>ffmpeg-devel</name>
 	<name>ffmpeg25</name>
+	<range><lt>2.5.9</lt></range>
+      </package>
+      <package>
 	<name>ffmpeg24</name>
+	<range><lt>2.4.12</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg-devel</name>
 	<name>ffmpeg23</name>
 	<name>ffmpeg2</name>
 	<name>ffmpeg1</name>
@@ -1941,6 +2062,7 @@ Notes:
     <dates>
       <discovery>2015-11-27</discovery>
       <entry>2015-12-02</entry>
+      <modified>2015-12-28</modified>
     </dates>
   </vuln>
 
