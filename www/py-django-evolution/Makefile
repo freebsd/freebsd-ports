@@ -3,6 +3,7 @@
 
 PORTNAME=	django-evolution
 PORTVERSION=	0.7.6
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	beanbaginc
-GH_TAGNAME=	release-${PORTVERSION}
 USES=		python
 USE_PYTHON=	distutils autoplist
 

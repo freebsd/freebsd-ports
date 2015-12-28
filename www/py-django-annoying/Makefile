@@ -3,6 +3,7 @@
 
 PORTNAME=	django-annoying
 PORTVERSION=	0.8.4
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +15,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	skorokithakis
-GH_TAGNAME=	release-${PORTVERSION}
 USES=		python
 USE_PYTHON=	autoplist distutils
 
