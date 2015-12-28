@@ -4806,6 +4806,7 @@
     SUBDIR += rubygem-fog-json
     SUBDIR += rubygem-font-awesome-rails
     SUBDIR += rubygem-font-awesome-rails-rails4
+    SUBDIR += rubygem-foreigner
     SUBDIR += rubygem-foreman
     SUBDIR += rubygem-formatador
     SUBDIR += rubygem-gdata
