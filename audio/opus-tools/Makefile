@@ -2,13 +2,17 @@
 
 PORTNAME=	opus-tools
 PORTVERSION=	0.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 		MOZILLA/opus
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Encode, inspect, and decode Opus files
+
+LICENSE=	BSD2CLAUSE GPLv2
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libogg.so:${PORTSDIR}/audio/libogg \
