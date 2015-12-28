@@ -1,0 +1,6 @@
+pytoport provides a way to quickly generate the barebones of a Python package
+by simply providing the name of the module to the command. It accesses the
+PyPI JSON API and does its best to generate a fully functional Makefile and
+distinfo where sources are found.
+
+WWW: https://github.com/freebsd/pytoport
