@@ -4,7 +4,7 @@
 PORTNAME=	firefox
 DISTVERSION=	43.0.1
 DISTVERSIONSUFFIX=.source
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
@@ -49,7 +49,7 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_EXCLUDE=	LOGGING
+OPTIONS_EXCLUDE=	GSTREAMER LOGGING
 OPTIONS_DEFAULT=	GTK2
 
 OPTIONS_SINGLE+=	TOOLKIT
