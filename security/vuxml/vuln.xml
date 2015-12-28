@@ -58,6 +58,54 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="10f7bc76-0335-4a88-b391-0b05b3a8ce1c">
+    <topic>NSS -- MD5 downgrade in TLS 1.2 signatures</topic>
+    <affects>
+      <package>
+	<name>nss</name>
+	<name>linux-c6-nss</name>
+	<range><ge>3.20</ge><lt>3.20.2</lt></range>
+	<range><lt>3.19.2.2</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>43.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>38.5.1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.40</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2015-150/">
+	  <p>Security researcher Karthikeyan Bhargavan reported an
+	    issue in Network Security Services (NSS) where MD5
+	    signatures in the server signature within the TLS 1.2
+	    ServerKeyExchange message are still accepted. This is an
+	    issue since NSS has officially disallowed the accepting MD5
+	    as a hash algorithm in signatures since 2011. This issues
+	    exposes NSS based clients such as Firefox to theoretical
+	    collision-based forgery attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7575</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-150/</url>
+      <url>https://hg.mozilla.org/projects/nss/rev/94e1157f3fbb</url>
+    </references>
+    <dates>
+      <discovery>2015-12-22</discovery>
+      <entry>2015-12-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="88f75070-abcf-11e5-83d3-6805ca0b3d42">
     <topic>phpMyAdmin -- path disclosure vulnerability</topic>
     <affects>
