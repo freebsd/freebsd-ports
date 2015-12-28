@@ -1,0 +1,3 @@
+django-simple-history stores Django model state on every create/update/delete.
+
+WWW: https://github.com/treyhunner/django-simple-history
