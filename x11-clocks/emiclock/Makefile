@@ -13,11 +13,11 @@ COMMENT=	Hyper-animated face analog clock for X11
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
-OPTIONS_DEFINE=	DOCS
-
 LANGRES=	resources/R6/EUC/EmiClock.ad
 LANGDIR=	${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults
 LANGDIR2=	${PREFIX}/lib/X11/ja_JP.EUC/app-defaults
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -36,6 +36,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${LANGDIR2}
 	${LN} -sf ../../ja_JP.eucJP/app-defaults/EmiClock \
 		${STAGEDIR}${LANGDIR2}/EmiClock
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} COPYRIGHT COPYRIGHT.en \
 		${STAGEDIR}${DOCSDIR})
