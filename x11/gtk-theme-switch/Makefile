@@ -11,13 +11,15 @@ PKGNAMESUFFIX=	1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool for switching GTK+ themes
 
+LICENSE=	GPLv2
+
 USE_GNOME=	gtk12
 USES=		gmake
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}/README
 
 .include <bsd.port.mk>
