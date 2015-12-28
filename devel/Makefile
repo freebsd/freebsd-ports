@@ -4937,6 +4937,7 @@
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
     SUBDIR += rubygem-plist
+    SUBDIR += rubygem-polyamorous
     SUBDIR += rubygem-polyglot
     SUBDIR += rubygem-popen4
     SUBDIR += rubygem-posix-spawn
