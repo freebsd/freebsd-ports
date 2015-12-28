@@ -589,6 +589,7 @@
     SUBDIR += rubygem-mail
     SUBDIR += rubygem-mail25
     SUBDIR += rubygem-mail_room
+    SUBDIR += rubygem-mailboxer
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-pony
     SUBDIR += rubygem-rmail
