@@ -6,22 +6,25 @@ PORTVERSION=	0.7.1
 PORTREVISION=	3
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.manicai.net/comp/wmfuzzy/assets/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fuzzy clock WindowMaker dockapp
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
+USES=		tar:tgz
 USE_XORG=	xpm
+WRKSRC_SUBDIR=	src
 
 PORTDOCS=	README
 PLIST_FILES=	bin/wmfuzzy
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmfuzzy ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}
 
