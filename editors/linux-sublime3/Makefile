@@ -20,7 +20,7 @@ USE_LINUX_APPS=	xorglibs gtk2
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/sublime_text_3
 
-CONFLICTS=	linux-sublime-[0-24-9]*
+CONFLICTS_INSTALL=	linux-sublime-[0-9]*
 
 NO_BUILD=
 SUB_FILES=	sublime
