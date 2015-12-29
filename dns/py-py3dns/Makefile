@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	py3dns
-PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTVERSION=	3.1.0
 CATEGORIES=	dns python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,4 +19,11 @@ NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
 USES=		python
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3300
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipaddress>=0:${PORTSDIR}/net/py-ipaddress
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipaddress>=0:${PORTSDIR}/net/py-ipaddress
+.endif
+
+.include <bsd.port.post.mk>
