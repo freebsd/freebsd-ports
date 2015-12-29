@@ -3,8 +3,7 @@
 PORTNAME=	audex
 PORTVERSION=	0.79
 CATEGORIES=	audio kde
-MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
-DISTNAME=	77125-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/src
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE4 audio CD ripping utility
