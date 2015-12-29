@@ -8065,3 +8065,4 @@ editors/calligra-l10n-nds||2015-12-21|Not shipped by Calligra 2.9.10
 editors/calligra-l10n-sl||2015-12-21|Not shipped by Calligra 2.9.10
 japanese/ochusha||2015-12-25|Has expired: Development ceased in 2008, other options available
 sysutils/phttpget||2015-12-27|Already in base system (/usr/libexec/phttpget)
+editors/sublime|editors/linux-sublime|2015-12-29|Renamed (Linux binary port)

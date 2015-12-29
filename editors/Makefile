@@ -192,6 +192,7 @@
     SUBDIR += libreoffice-xh
     SUBDIR += libreoffice-zu
     SUBDIR += libreoffice4
+    SUBDIR += linux-sublime
     SUBDIR += madedit
     SUBDIR += manedit
     SUBDIR += mg
@@ -229,7 +230,6 @@
     SUBDIR += ssam
     SUBDIR += ssed
     SUBDIR += sted
-    SUBDIR += sublime
     SUBDIR += sublime3
     SUBDIR += tamago
     SUBDIR += tea

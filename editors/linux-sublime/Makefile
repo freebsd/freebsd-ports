@@ -7,16 +7,17 @@ PORTREVISION=	3
 CATEGORIES=	editors linux
 MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
 DISTNAME=	Sublime%20Text%202.0.2
+PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	xmj@chaot.net
 COMMENT=	Sublime Text is a sophisticated text editor for code, markup and prose
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 INSTALLS_ICONS=	yes
-WRKSRC=	${WRKDIR}/"Sublime Text 2"
+WRKSRC=		${WRKDIR}/"Sublime Text 2"
 
 NO_BUILD=
-STRIP=	# don't strip linux binaries.
+STRIP=		# don't strip linux binaries.
 SUB_FILES=	sublime
 
 USE_LINUX=	c6
