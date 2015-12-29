@@ -80,10 +80,13 @@ Notes:
     <references>
       <url>http://www.inspircd.org/2015/04/16/v2019-released.html</url>
       <url>https://github.com/inspircd/inspircd/commit/6058483d9fbc1b904d5ae7cfea47bfcde5c5b559</url>
+      <url>http://comments.gmane.org/gmane.comp.security.oss.general/18464</url>
+      <cvename>CVE-2015-8702</cvename>
     </references>
     <dates>
       <discovery>2015-04-16</discovery>
       <entry>2015-12-29</entry>
+      <modified>2015-12-29</modified>
     </dates>
   </vuln>
 
