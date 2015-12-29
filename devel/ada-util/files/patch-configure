@@ -1,0 +1,84 @@
+--- configure.orig	2015-10-11 18:41:42 UTC
++++ configure
+@@ -3874,81 +3874,11 @@ UTIL_HAVE_PRJ_DIRECTORIES=${gnat_project
+ # XMLAda library
+ ##########################################
+ 
+-gnat_xml_ada=xmlada-config
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking xmlada library" >&5
+-$as_echo_n "checking xmlada library... " >&6; }
+ 
+-# Check whether --with-xmlada was given.
+-if test "${with_xmlada+set}" = set; then :
+-  withval=$with_xmlada;
+-  gnat_xml_ada=${withval}/xmlada-config
+-  WITH_XML_ADA="with \"${withval}\";";
+-  UTIL_XML_DIR='src/xml';
+-  UTIL_HAVE_XML='yes';
+-
+-else
+-
+-  WITH_XML_ADA='';
+-  UTIL_XML_DIR='src';
+-  UTIL_HAVE_XML='no';
+-
+-fi
+-
+-
+-ac_xml_version=`$gnat_xml_ada --version 2>/dev/null | sed -e 's, ,-,g'`
+-case $ac_xml_version in
+-  XmlAda-3.2*)
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_xml_version" >&5
+-$as_echo "$ac_xml_version" >&6; }
+-      WITH_XML_ADA="with \"xmlada\";";
+-      UTIL_XML_DIR='src/xml';
+-      UTIL_XML_VERSION='3';
+-      UTIL_HAVE_XML='yes';
+-      ;;
+-
+-  XmlAda-4.*|XmlAda-2013|XmlAda-2014)
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_xml_version" >&5
+-$as_echo "$ac_xml_version" >&6; }
+-      WITH_XML_ADA="with \"xmlada\";";
+-      UTIL_XML_DIR='src/xml';
+-      UTIL_XML_VERSION='4';
+-      UTIL_HAVE_XML='yes';
+-      ;;
+-
+-  *)
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-      ;;
+-
+-esac
+-
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether xmlada project exists" >&5
+-$as_echo_n "checking whether xmlada project exists... " >&6; }
+-  echo "with \"xmlada\"; project t is for Source_Dirs use (); end t;" > t.gpr
+-  $GNATMAKE -p -Pt >/dev/null 2>/dev/null
+-  if test $? -eq 0; then
+-    gnat_project_xmlada=yes
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes, using xmlada" >&5
+-$as_echo "yes, using xmlada" >&6; }
+-    gnat_project_with_xmlada="with \"xmlada\";";
+-  else
+-    gnat_project_xmlada=no
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-  fi;
+-  rm -f t.gpr
+-
+-
+-if test T$gnat_project_xmlada_sax = Tno; then
+   WITH_XML_ADA='';
+   UTIL_XML_DIR='src';
+   UTIL_XML_VERSION='none';
+   UTIL_HAVE_XML='no';
+-fi
+-
+-
+-
+-
+ 
+ 
+ ##########################################
