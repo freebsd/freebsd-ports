@@ -15,14 +15,16 @@
 # which is mirrored at ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/.
 ###########################################################################
 
---- readcd/readcd.1.orig	Mon Sep 29 14:53:05 2003
-+++ readcd/readcd.1	Mon Sep 29 15:10:06 2003
-@@ -604,8 +604,6 @@
- .SH SEE ALSO
- .BR cdrecord (1),
- .BR mkisofs (8),
--.BR scg (7),
--.BR fbk (7),
- .BR rcmd (3),
- .BR ssh (1).
+--- DEFAULTS/Defaults.freebsd.orig	2013-11-04 21:58:20.000000000 +0100
++++ DEFAULTS/Defaults.freebsd	2014-02-03 01:16:19.000000000 +0100
+@@ -29,8 +29,8 @@
+ CWARNOPTS=
  
+ DEFINCDIRS=	$(SRCROOT)/include
+-DEFOSINCDIRS=	/usr/local/include
+-LDPATH=		-L/opt/schily/lib -L/usr/local/lib
++#DEFOSINCDIRS=	/usr/local/include
++#LDPATH=		-L/opt/schily/lib -L/usr/local/lib
+ #RUNPATH=	-R$(INS_BASE)/lib -R/opt/schily/lib -R$(OLIBSDIR)	Will probably not work
+ 
+ ###########################################################################
