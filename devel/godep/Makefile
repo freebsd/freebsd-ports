@@ -11,7 +11,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tools
-GH_PROJECT=	godep
 GH_TAGNAME=	d8799f1
 
 PLIST_FILES=	bin/godep

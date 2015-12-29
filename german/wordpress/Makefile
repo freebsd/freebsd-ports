@@ -3,8 +3,8 @@
 
 PORTNAME=	wordpress
 PORTVERSION=	4.4
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-de_DE
+PORTREVISION=	1
 CATEGORIES=	german www
 MASTER_SITES=	http://de.wordpress.org/
 

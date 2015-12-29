@@ -14,7 +14,6 @@ USES=		fonts
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	theleagueof
-GH_PROJECT=	junction
 GH_TAGNAME=	fb73260
 
 NO_BUILD=	yes

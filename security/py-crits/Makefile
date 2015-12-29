@@ -15,7 +15,6 @@ LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
 USE_GITHUB=		yes
-GH_PROJECT=		crits
 
 USES=			python
 USE_PYTHON=		autoplist

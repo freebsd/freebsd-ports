@@ -12,7 +12,6 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	engerim42
-GH_PROJECT=	${PORTNAME}
 
 PLIST_FILES=	bin/wmSolar
 USE_XORG=	x11 xext xpm
