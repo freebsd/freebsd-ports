@@ -7,6 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	editors linux
 MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
 PKGNAMEPREFIX=	linux-
+PKGNAMESUFFIX=	3
 DISTNAME=	sublime_text_3_build_3083_x32
 
 MAINTAINER=	miguelmclara@gmail.com
