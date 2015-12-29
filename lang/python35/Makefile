@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	python
-DISTVERSION=	3.5.1
+DISTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	lang python ipv6
-MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	PYTHON/ftp/python/${PYTHON_PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
 DISTNAME=	Python-${DISTVERSION}
 DIST_SUBDIR=	python
@@ -24,7 +24,6 @@ CPE_PRODUCT=	${CPE_VENDOR}
 CPE_VERSION=	${DISTVERSION}
 
 # Duplicate python.mk variables. TODO: Let lang/python?? ports use python.mk bits.
-PYTHON_PORTVERSION=	${DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}
 PYTHON_VER=		${PYTHON_PORTVERSION:R}
 PYTHON_VERSION=		python${PYTHON_VER}
 PYTHON_SUFFIX=		${PYTHON_VER:S/.//g}
@@ -89,6 +88,7 @@ THREADS_LDFLAGS=	-lpthread
 
 TSC_CONFIGURE_WITH=	tsc
 
+.include "${.CURDIR}/Makefile.version"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYMALLOC}
