@@ -3,6 +3,7 @@
 
 PORTNAME=	postfix-policyd-spf-python
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	https://launchpad.net/pypolicyd-spf/${PORTVERSION:R}/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddr>0:${PORTSDIR}/devel/py-ipaddr \
-		${PYTHON_PKGNAMEPREFIX}spf>0:${PORTSDIR}/mail/py-spf \
+		${PYTHON_PKGNAMEPREFIX}pyspf>0:${PORTSDIR}/mail/py-pyspf \
 		${PYTHON_PKGNAMEPREFIX}authres>0:${PORTSDIR}/mail/py-authres
 
 USES=		python
