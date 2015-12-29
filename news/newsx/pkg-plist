@@ -4,15 +4,4 @@ man/man1/newsq.1.gz
 man/man5/in.hosts.5.gz
 man/man5/newsx.conf.5.gz
 man/man8/newsx.8.gz
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry news/spool/inhosts
-@dirrmtry news/spool
-@dirrmtry news
+@dir(news,news,) news/spool/inhosts
