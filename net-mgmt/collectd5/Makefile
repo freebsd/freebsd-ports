@@ -186,6 +186,10 @@ OPENLDAP_USE=			openldap=yes
 OPENLDAP_CONFIGURE_ENABLE=	openldap
 OPENLDAP_CONFIGURE_WITH=	libldap=${LOCALBASE}
 
+PERL_USES=			perl5
+PERL_CONFIGURE_ENABLE=		perl
+PERL_CONFIGURE_WITH=		perl=${PERL} perl-bindings
+
 PGSQL_USES=			pgsql
 PGSQL_CONFIGURE_ENABLE=		postgresql
 PGSQL_CONFIGURE_WITH=		postgresql=${LOCALBASE} libpq
@@ -196,6 +200,10 @@ PINBA_CONFIGURE_ENABLE=		pinba
 PING_LIB_DEPENDS=		liboping.so:${PORTSDIR}/net/liboping
 PING_CONFIGURE_ENABLE=		ping
 PING_CONFIGURE_WITH=		liboping=${LOCALBASE}
+
+PYTHON_USES=			python:2
+PYTHON_CONFIGURE_ENABLE=	python
+PYTHON_CONFIGURE_WITH=		python=${PYTHON_CMD}
 
 RABBITMQ_LIB_DEPENDS=		librabbitmq.so:${PORTSDIR}/net/rabbitmq-c
 RABBITMQ_CONFIGURE_ENABLE=	rabbitmq
@@ -312,26 +320,6 @@ CONFIGURE_ARGS+=--enable-aggregation \
 
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	contrib/collection.cgi
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
-CONFIGURE_ARGS+=--with-perl=${PERL} --with-perl-bindings --enable-perl
-PLIST_SUB+=	PERL=""
-.else
-CONFIGURE_ARGS+=--without-perl --without-perl-bindings --disable-perl
-PLIST_SUB+=	PERL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		python:2
-CONFIGURE_ARGS+=--with-python=${PYTHON_CMD} --enable-python
-PLIST_SUB+=	PYTHON=""
-.else
-CONFIGURE_ARGS+=--without-python --disable-python
-PLIST_SUB+=	PYTHON="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's/-Werror//' \
