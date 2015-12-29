@@ -58,6 +58,65 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="84c7ea88-bf04-4bdc-973b-36744bf540ab">
+    <topic>flash -- multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.559</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb16-01.html">
+	  <p>These updates resolve a type confusion vulnerability that
+	    could lead to code execution (CVE-2015-8644).</p>
+
+	  <p>These updates resolve an integer overflow vulnerability
+	    that could lead to code execution (CVE-2015-8651).</p>
+
+	  <p>These updates resolve use-after-free vulnerabilities that
+	    could lead to code execution (CVE-2015-8634, CVE-2015-8635,
+	    CVE-2015-8638, CVE-2015-8639, CVE-2015-8640, CVE-2015-8641,
+	    CVE-2015-8642, CVE-2015-8643, CVE-2015-8646, CVE-2015-8647,
+	    CVE-2015-8648, CVE-2015-8649, CVE-2015-8650).</p>
+
+	  <p>These updates resolve memory corruption vulnerabilities
+	    that could lead to code execution (CVE-2015-8459,
+	    CVE-2015-8460, CVE-2015-8636, CVE-2015-8645).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8459</cvename>
+      <cvename>CVE-2015-8460</cvename>
+      <cvename>CVE-2015-8634</cvename>
+      <cvename>CVE-2015-8636</cvename>
+      <cvename>CVE-2015-8638</cvename>
+      <cvename>CVE-2015-8639</cvename>
+      <cvename>CVE-2015-8640</cvename>
+      <cvename>CVE-2015-8641</cvename>
+      <cvename>CVE-2015-8642</cvename>
+      <cvename>CVE-2015-8643</cvename>
+      <cvename>CVE-2015-8644</cvename>
+      <cvename>CVE-2015-8645</cvename>
+      <cvename>CVE-2015-8646</cvename>
+      <cvename>CVE-2015-8647</cvename>
+      <cvename>CVE-2015-8648</cvename>
+      <cvename>CVE-2015-8649</cvename>
+      <cvename>CVE-2015-8650</cvename>
+      <cvename>CVE-2015-8651</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb16-01.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-28</discovery>
+      <entry>2015-12-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b808c3a8-ae30-11e5-b864-14dae9d210b8">
     <topic>inspircd -- DoS</topic>
     <affects>
