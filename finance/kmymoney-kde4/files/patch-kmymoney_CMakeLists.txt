@@ -1,4 +1,4 @@
---- kmymoney/CMakeLists.txt.orig	2014-10-31 18:02:44 UTC
+--- kmymoney/CMakeLists.txt.orig	2015-04-25 17:17:55 UTC
 +++ kmymoney/CMakeLists.txt
 @@ -109,7 +109,6 @@ install(PROGRAMS kmymoney.appdata.xml
  install(FILES x-kmymoney.xml
