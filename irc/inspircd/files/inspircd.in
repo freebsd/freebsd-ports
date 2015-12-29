@@ -38,14 +38,16 @@ load_rc_config ${name}
 : ${inspircd_data=/var/db/inspircd}
 : ${inspircd_logfile="%%INSPIRCD_LOG%%"}
 : ${inspircd_flags="${inspircd_flags} --logfile ${inspircd_logfile} --config ${inspircd_config}"}
+: ${inspircd_chdir="%%ETCDIR%%"}
 
 command=/usr/sbin/daemon
 command_args=" -f %%PREFIX%%/bin/inspircd --nofork ${inspircd_flags}"
 procname=%%PREFIX%%/bin/inspircd
 pidfile=${inspircd_pidfile}
 required_files=${inspircd_config}
+configtest_cmd=inspircd_configtest
 start_precmd=inspircd_prestart
-extra_commands=reload
+extra_commands="reload status"
 
 inspircd_prestart()
 {
