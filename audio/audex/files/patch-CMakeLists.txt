@@ -1,6 +1,6 @@
---- ./CMakeLists.txt.orig	2011-01-31 06:29:55.000000000 -0500
-+++ ./CMakeLists.txt	2011-01-31 06:30:15.000000000 -0500
-@@ -122,6 +122,6 @@
+--- CMakeLists.txt.orig	2015-02-22 08:08:05 UTC
++++ CMakeLists.txt
+@@ -136,6 +136,6 @@ install(FILES audex-rip-audiocd.desktop 
  
  add_subdirectory(icons)
  add_subdirectory(images)
