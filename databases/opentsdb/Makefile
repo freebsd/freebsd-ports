@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	opentsdb
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 CATEGORIES=	databases java
-MASTER_SITES=	https://github.com/OpenTSDB/opentsdb/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/OpenTSDB/opentsdb/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	xmj@chaot.net
 COMMENT=	OpenTSDB is the Scalable Timeseries Database
@@ -45,7 +45,7 @@ SUB_LIST=	OPENTSDB_USER="${OPENTSDB_USER}" \
 
 post-patch:
 	${REINPLACE_CMD} -i "" -e "s|python|${PYTHON_CMD}|" ${WRKSRC}/build-aux/gen_build_data.sh
-	${REINPLACE_CMD} -i "" -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/Makefile.in
+	#${REINPLACE_CMD} -i "" -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -i "" -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/src/utils/Config.java
 	${REINPLACE_CMD} -i "" -e "s|tsd.http.staticroot =|tsd.http.staticroot = ${DATADIR}/static|; s|tsd.http.cachedir =|tsd.http.cachedir = /tmp/opentsdb|; s|tsd.network.port =|tsd.network.port = 4242|;" ${WRKSRC}/src/opentsdb.conf
 
