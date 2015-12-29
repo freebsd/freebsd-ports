@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.9d6
+PORTVERSION=	2.8.9d8
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://lynx.isc.org/current/
+MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/ \
+		ftp://invisible-island.net/lynx/tarballs/
 PKGNAMESUFFIX=	-current
 DISTNAME=	${PORTNAME}${PORTVERSION:S/p/pre./:S/d/dev./}
 
@@ -15,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 CONFLICTS_INSTALL=	lynx-2.8.[0-8].* ja-lynx-[0-9]*
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/./-/g:C/[pd].*//}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 USES=		cpe iconv shebangfix tar:bzip2
 USE_OPENSSL=	yes
 SHEBANG_FILES=	samples/mailto-form.pl
