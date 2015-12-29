@@ -42,7 +42,7 @@ post-patch:
 		'/^CFLAGS/s|-g||' ${WRKSRC}/${i}
 .endfor
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README javascript.txt \
 		${STAGEDIR}${DOCSDIR})
