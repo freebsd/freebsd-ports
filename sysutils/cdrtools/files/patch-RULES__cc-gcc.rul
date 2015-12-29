@@ -17,52 +17,72 @@
 
 --- RULES/cc-gcc.rul.orig	Thu Jul  6 12:59:44 2006
 +++ RULES/cc-gcc.rul	Sat Jul 22 03:55:52 2006
-@@ -20,8 +20,9 @@
- ###########################################################################
+@@ -24,11 +24,12 @@
+ GCC_OPT=
+ GCC_OPT32=	-m32
+ GCC_OPT64=	-m64
+-GCC_OPTXX=	$(GCC_OPT$(C_ARCH:gcc%=%))
++GCC_OPTXX=
  
- CPPFLAGS=	-DSCHILY_BUILD $(CPPOPTS) $(CPPOPTX)
+ CPPFLAGS=	-DSCHILY_BUILD $(CPPOPTS) $(CPPOPTX) $(OSINCDIRS:%=-I%) $(OSDEFS) $(OSDEFSX)
 -CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
 -C++FLAGS=	$(C++OPTS) $(C++WARNOPTS) $(C++OPTOPT) $(G++OPTOPT) $(C++OPTX)
 +XCFLAGS:=	$(CFLAGS)
 +CFLAGS=		$(COPTS) $(CWARNOPTS) $(XCFLAGS) $(GCCOPTOPT) $(COPTX)
-+C++FLAGS=	$(C++OPTS) $(C++WARNOPTS) $(XCFLAGS) $(G++OPTOPT) $(C++OPTX)
++C++FLAGS=	$(C++OPTS) $(C++WARNOPTS) $(CXXFLAGS) $(G++OPTOPT) $(C++OPTX)
  
- CPPOPTS=	-I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(INCDIRSX:%=-I%) $(OSDEFS)
- COPTS=
-@@ -29,12 +30,10 @@
+ CPPOPTS=	-I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(INCDIRSX:%=-I%)
+ COPTS=		$(GCC_OPTXX)
+@@ -36,12 +37,10 @@
  CWOPTS=		-Wall -Wtraditional
  CWOPTS=		-Wall -Wno-unknown-pragmas \
  		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
 -COPTOPT=	-O
  COPTDYN=	-fpic
  COPTGPROF=	-pg
- C++OPTS=
+ C++OPTS=	$(GCC_OPTXX)
  C++WOPTS=	$(CWOPTS)
 -C++OPTOPT=	$(COPTOPT)
  C++OPTDYN=	-fpic
  C++OPTGPROF=	-pg
  
-@@ -54,15 +53,15 @@
+@@ -61,28 +60,18 @@
  
  FLOAT_OPTIONS=	
  
--CC=		@echo "	==> COMPILING \"$@\""; gcc
--CC++ =		@echo "	==> COMPILING \"$@\""; g++
--LDCC=		@echo "	==> LINKING \"$@\""; gcc
--LDCC++ =	@echo "	==> LINKING \"$@\""; g++
--DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; gcc
--DYNLDC++ =	@echo "	==> LINKING dynamic library \"$@\""; g++
+-__CC_COM=	$(_UNIQ)$(CC)
+-___CC_COM=	$(__CC_COM:$(_UNIQ)=$(CC_COM_DEF))
+-CC_COM=		$(___CC_COM:$(_UNIQ)%=%)
+-
+-__CC++_COM=	$(_UNIQ)$(CCC)
+-___CC++_COM=	$(__CC++_COM:$(_UNIQ)=$(CC++_COM_DEF))
+-CC++_COM=	$(___CC++_COM:$(_UNIQ)%=%)
+-
+-CC_COM_DEF=	gcc
+-CC++_COM_DEF=	g++
+-CC=		$(CC_COM_DEF)
+-CCC=		$(CC++_COM_DEF)
+-
+-CCCC=		@echo "	==> COMPILING \"$@\""; $(CC_COM) $(GCC_OPTXX)
+-CC++ =		@echo "	==> COMPILING \"$@\""; $(CC++_COM) $(GCC_OPTXX)
+-LDCC=		@echo "	==> LINKING \"$@\""; $(CC_COM) $(GCC_OPTXX)
+-LDCC++ =	@echo "	==> LINKING \"$@\""; $(CC++_COM) $(GCC_OPTXX)
+-DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; $(CC_COM) $(GCC_OPTXX)
+-DYNLDC++ =	@echo "	==> LINKING dynamic library \"$@\""; $(CC++_COM) $(GCC_OPTXX)
 +CC_COM=		$(CC)
-+CC++ =		$(CXX)
-+LDCC=		$(CC)
-+LDCC++ =	$(CXX)
-+DYNLD=		$(CC)
-+DYNLDC++ =	$(CXX)
++CC++_COM=	$(CXX)
++
++CCCC =		$(CC_COM)
++CC++ =		$(CC++_COM)
++LDCC=		$(CC_COM)
++LDCC++ =	$(CC++_COM)
++DYNLD=		$(CC_COM)
++DYNLDC++ =	$(CC++_COM)
  
  RMDEP=		:
--MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
-+MKDEP=		$(CC) -M
+-MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); $(CC_COM) $(GCC_OPTXX) -M
++MKDEP=		$(CC_COM) -M
  MKDEP_OUT=
--MKC++DEP=	@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); g++ -M
-+MKC++DEP=	$(CXX) -M
+-MKC++DEP=	@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); $(CC++_COM) $(GCC_OPTXX) -M
++MKC++DEP=	$(CC++_COM) -M
  MKC++DEP_OUT=
