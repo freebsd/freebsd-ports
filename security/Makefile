@@ -182,6 +182,7 @@
     SUBDIR += gwee
     SUBDIR += hackbot
     SUBDIR += hamachi
+    SUBDIR += hashcat
     SUBDIR += heimdal
     SUBDIR += hitch
     SUBDIR += hlfl
