@@ -20,6 +20,8 @@ NO_BUILD=
 STRIP=		# don't strip linux binaries.
 SUB_FILES=	sublime
 
+CONFLICTS_INSTALL=	linux-sublime3-[0-9]*
+
 USE_LINUX=	c6
 USE_LINUX_APPS=	xorglibs gtk2
 
