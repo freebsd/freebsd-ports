@@ -91,8 +91,8 @@ CDRTLSXARCH!=	${UNAME} -m
 
 .if exists(/usr/include/iconv.h) || exists(${LOCALBASE}/lib/libiconv.a) || \
 	exists(${LOCALBASE}/lib/libintl.a) || ${PORT_OPTIONS:MNLS}
-MAKE_ENV+=	DEFOSINCDIRS=${LOCALBASE}/include LDPATH=-L${LOCALBASE}/lib
-USES+=		gettext iconv
+#MAKE_ENV+=	DEFOSINCDIRS=${LOCALBASE}/include LDPATH=-L${LOCALBASE}/lib
+#USES+=		gettext iconv
 .endif
 
 post-extract:
