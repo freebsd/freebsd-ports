@@ -17,7 +17,6 @@ BUILD_DEPENDS=	roundcube>=1.0:${PORTSDIR}/mail/roundcube
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kitist
-GH_PROJECT=	html5_notifier
 
 NO_BUILD=	yes
 

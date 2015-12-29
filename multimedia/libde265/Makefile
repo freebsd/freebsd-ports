@@ -11,7 +11,6 @@ COMMENT=	Open source h.265 video codec
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	strukturag
-GH_PROJECT=	libde265
 
 USES=		autoreconf compiler:c++11-lib libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes

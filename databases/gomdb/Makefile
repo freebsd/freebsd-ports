@@ -17,7 +17,6 @@ USES=		compiler
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	szferi
-GH_PROJECT=	gomdb
 GH_TAGNAME=	6bcb5a
 
 .include <bsd.port.pre.mk>

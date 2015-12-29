@@ -14,7 +14,6 @@ USES=		imake
 USE_XORG=	x11 xext
 USE_GITHUB=	yes
 GH_ACCOUNT=	iserikov
-GH_PROJECT=	2d-rewriter
 
 OPTIONS_DEFINE=	EXAMPLES
 

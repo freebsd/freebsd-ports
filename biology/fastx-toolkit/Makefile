@@ -18,7 +18,6 @@ SHEBANG_FILES=	scripts/*.pl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	agordon
-GH_PROJECT=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
 

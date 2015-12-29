@@ -16,7 +16,6 @@ LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	miloyip
-GH_PROJECT=	rapidjson
 
 USES=		cmake gmake
 

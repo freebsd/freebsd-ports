@@ -3,6 +3,7 @@
 
 PORTNAME=	praat
 PORTVERSION=	5.4.08
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	audio science
 
@@ -12,9 +13,6 @@ COMMENT=	Phonetics by Computer
 LICENSE=	GPLv2
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	praat
-GH_PROJECT=	praat
-GH_TAGNAME=	v${PORTVERSION}
 DOS2UNIX_REGEX=	.*Makefile
 USES=		dos2unix iconv pkgconfig
 USE_GNOME=	gtk20

@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	engerim42
-GH_PROJECT=	${PORTNME}
 
 PLIST_FILES=	bin/wmBinClock
 USES=		gmake
