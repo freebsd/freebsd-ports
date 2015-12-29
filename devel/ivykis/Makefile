@@ -16,7 +16,6 @@ GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buytenh
-GH_PROJECT=	ivykis
 
 post-stage:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig

@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wfx
-GH_PROJECT=	teg
 USES=		gettext-tools gmake iconv libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 CPPFLAGS+=	-I${LOCALBASE}/include

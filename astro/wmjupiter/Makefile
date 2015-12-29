@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	engerim42
-GH_PROJECT=	${PORTNAME}
 
 PLIST_FILES=	bin/wmJupiter
 USE_XORG=	x11 xext xpm

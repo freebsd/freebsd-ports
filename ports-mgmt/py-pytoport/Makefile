@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-licensee>0:${PORTSDIR}/devel/rubygem-licensee
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_PROJECT=	pytoport
 
 USES=		python:3.2+
 USE_PYTHON=	distutils autoplist

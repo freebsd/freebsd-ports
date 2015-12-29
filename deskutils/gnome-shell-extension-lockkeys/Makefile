@@ -22,7 +22,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.shell.extensions.lockkeys.gschema.xml
 
 GH_ACCOUNT=	kazysmaster
-GH_PROJECT=	gnome-shell-extension-lockkeys
 GH_TAGNAME=	76ac557
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves

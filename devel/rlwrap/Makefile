@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hanslub42
-GH_PROJECT=	${PORTNAME}
 
 USES=		readline autoreconf
 GNU_CONFIGURE=	yes
