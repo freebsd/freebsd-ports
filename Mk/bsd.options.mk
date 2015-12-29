@@ -499,10 +499,10 @@ ${_u:tu}=		${${opt}_VARS:M${var}=*:C/[^=]*=//:C/^"(.*)"$$/\1/}
 .      endfor
 .    endif
 .    if defined(${opt}_CONFIGURE_ENABLE)
-CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ENABLE:C/^/--enable-/}
+CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ENABLE:S/^/--enable-/}
 .    endif
 .    if defined(${opt}_CONFIGURE_WITH)
-CONFIGURE_ARGS+=	${${opt}_CONFIGURE_WITH:C/^/--with-/}
+CONFIGURE_ARGS+=	${${opt}_CONFIGURE_WITH:S/^/--with-/}
 .    endif
 .    for configure in CONFIGURE CMAKE QMAKE
 .      if defined(${opt}_${configure}_ON)
@@ -546,7 +546,7 @@ ${_u:tu}=		${${opt}_VARS_OFF:M${var}=*:C/[^=]*=//:C/^"(.*)"$$/\1/}
 CONFIGURE_ARGS+=	${${opt}_CONFIGURE_ENABLE:S/^/--disable-/:C/=.*//}
 .    endif
 .    if defined(${opt}_CONFIGURE_WITH)
-CONFIGURE_ARGS+=	${${opt}_CONFIGURE_WITH:C/^/--without-/:C/=.*//}
+CONFIGURE_ARGS+=	${${opt}_CONFIGURE_WITH:S/^/--without-/:C/=.*//}
 .    endif
 .    for configure in CONFIGURE CMAKE QMAKE
 .      if defined(${opt}_${configure}_OFF)
