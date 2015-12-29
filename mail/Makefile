@@ -511,8 +511,8 @@
     SUBDIR += py-milter
     SUBDIR += py-notmuch
     SUBDIR += py-ppolicy
+    SUBDIR += py-pyspf
     SUBDIR += py-spambayes
-    SUBDIR += py-spf
     SUBDIR += py-turbomail
     SUBDIR += py-twistedMail
     SUBDIR += py-zope.sendmail
