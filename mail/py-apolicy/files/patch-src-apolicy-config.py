@@ -1,5 +1,5 @@
---- src/apolicy/config.py.orig	2008-11-24 07:53:32.000000000 +0000
-+++ src/apolicy/config.py	2008-11-24 07:53:53.000000000 +0000
+--- src/apolicy/config.py.orig	2008-11-24 07:53:32 UTC
++++ src/apolicy/config.py
 @@ -22,7 +22,7 @@
  import pwd
  from ConfigParser import ConfigParser
