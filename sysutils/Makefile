@@ -104,6 +104,7 @@
     SUBDIR += bsdstats
     SUBDIR += btsixad
     SUBDIR += bulk_extractor
+    SUBDIR += burp
     SUBDIR += busybox
     SUBDIR += byobu
     SUBDIR += cbsd
