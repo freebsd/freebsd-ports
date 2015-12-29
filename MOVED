@@ -8068,3 +8068,4 @@ sysutils/phttpget||2015-12-27|Already in base system (/usr/libexec/phttpget)
 editors/sublime|editors/linux-sublime|2015-12-29|Renamed (Linux binary port)
 dns/py-dns3|dns/py-py3dns|2015-12-29|Renamed to match upstream naming
 editors/sublime3|editors/linux-sublime3|2015-12-29|Renamed (Linux binary port)
+mail/py-spf|mail/py-pyspf|2015-12-29|Renamed to match upstream naming
