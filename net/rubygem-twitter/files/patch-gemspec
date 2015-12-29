@@ -1,11 +1,14 @@
---- twitter.gemspec.orig	2015-09-06 18:31:55 UTC
+--- twitter.gemspec.orig	2015-12-29 06:49:50 UTC
 +++ twitter.gemspec
-@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+@@ -23,9 +23,9 @@ Gem::Specification.new do |s|
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
        s.add_runtime_dependency(%q<addressable>, ["~> 2.3"])
        s.add_runtime_dependency(%q<buftok>, ["~> 0.2.0"])
 -      s.add_runtime_dependency(%q<equalizer>, ["= 0.0.10"])
 +      s.add_runtime_dependency(%q<equalizer>, [">= 0.0.10"])
        s.add_runtime_dependency(%q<faraday>, ["~> 0.9.0"])
-       s.add_runtime_dependency(%q<http>, ["< 0.10", ">= 0.4"])
+-      s.add_runtime_dependency(%q<http>, ["< 0.10", ">= 0.4"])
++      s.add_runtime_dependency(%q<http>, [">= 0.4"])
        s.add_runtime_dependency(%q<http_parser.rb>, ["~> 0.6.0"])
+       s.add_runtime_dependency(%q<json>, ["~> 1.8"])
+       s.add_runtime_dependency(%q<memoizable>, ["~> 0.4.0"])
