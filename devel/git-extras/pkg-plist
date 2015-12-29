@@ -5,6 +5,7 @@ bin/git-back
 bin/git-bug
 bin/git-changelog
 bin/git-chore
+bin/git-clear
 bin/git-commits-since
 bin/git-contrib
 bin/git-count
@@ -23,6 +24,7 @@ bin/git-gh-pages
 bin/git-graft
 bin/git-guilt
 bin/git-ignore
+bin/git-ignore-io
 bin/git-info
 bin/git-line-summary
 bin/git-local-commits
@@ -33,6 +35,7 @@ bin/git-merge-repo
 bin/git-missing
 bin/git-obliterate
 bin/git-pr
+bin/git-psykorebase
 bin/git-pull-request
 bin/git-rebase-patch
 bin/git-refactor
@@ -43,6 +46,7 @@ bin/git-reset-file
 bin/git-root
 bin/git-rscp
 bin/git-scp
+bin/git-sed
 bin/git-setup
 bin/git-show-merged-branches
 bin/git-show-tree
@@ -60,6 +64,7 @@ man/man1/git-back.1.gz
 man/man1/git-bug.1.gz
 man/man1/git-changelog.1.gz
 man/man1/git-chore.1.gz
+man/man1/git-clear.1.gz
 man/man1/git-commits-since.1.gz
 man/man1/git-contrib.1.gz
 man/man1/git-count.1.gz
@@ -77,8 +82,10 @@ man/man1/git-fresh-branch.1.gz
 man/man1/git-gh-pages.1.gz
 man/man1/git-graft.1.gz
 man/man1/git-guilt.1.gz
+man/man1/git-ignore-io.1.gz
 man/man1/git-ignore.1.gz
 man/man1/git-info.1.gz
+man/man1/git-line-summary.1.gz
 man/man1/git-local-commits.1.gz
 man/man1/git-lock.1.gz
 man/man1/git-locked.1.gz
@@ -86,6 +93,7 @@ man/man1/git-merge-into.1.gz
 man/man1/git-merge-repo.1.gz
 man/man1/git-missing.1.gz
 man/man1/git-pr.1.gz
+man/man1/git-psykorebase.1.gz
 man/man1/git-rebase-patch.1.gz
 man/man1/git-refactor.1.gz
 man/man1/git-release.1.gz
@@ -94,6 +102,7 @@ man/man1/git-repl.1.gz
 man/man1/git-reset-file.1.gz
 man/man1/git-root.1.gz
 man/man1/git-scp.1.gz
+man/man1/git-sed.1.gz
 man/man1/git-setup.1.gz
 man/man1/git-show-merged-branches.1.gz
 man/man1/git-show-tree.1.gz
