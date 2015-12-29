@@ -129,10 +129,13 @@ share/docear/docear-icon48x48.png
 %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/license.txt
 %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.core/META-INF/MANIFEST.MF
 %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/docear-pdf-inspector.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/docear-realhighlights-interface.jar
 %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/iscwt.jar
 %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/isrt.jar
 %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/jbig2.jar
 %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/jPod.jar
+%%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/jspf.core-1.0.2.jar
+@dir %%JAVASHAREDIR%%/docear/plugins/org.freeplane.plugin.script/lib/jsyntaxpane
 %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/lib/plugin.jar
 %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.pdfutilities/META-INF/MANIFEST.MF
 %%JAVASHAREDIR%%/docear/plugins/org.docear.plugin.services/lib/commons-codec-1.6.jar
@@ -205,6 +208,7 @@ share/docear/docear-icon48x48.png
 %%JAVASHAREDIR%%/docear/resources/xslt/mm2latexartcl.xsl
 %%JAVASHAREDIR%%/docear/resources/xslt/mm2latexbook.xsl
 %%JAVASHAREDIR%%/docear/resources/xslt/mm2latexinput.xsl
+%%JAVASHAREDIR%%/docear/resources/xslt/mm2latexinput_c-et-d.xsl
 %%JAVASHAREDIR%%/docear/resources/xslt/mm2msp_utf8.xsl
 %%JAVASHAREDIR%%/docear/resources/xslt/mm2msp_utf8_TEMPLATE.mm
 %%JAVASHAREDIR%%/docear/resources/xslt/mm2mwiki.xsl
