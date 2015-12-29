@@ -8067,3 +8067,4 @@ japanese/ochusha||2015-12-25|Has expired: Development ceased in 2008, other opti
 sysutils/phttpget||2015-12-27|Already in base system (/usr/libexec/phttpget)
 editors/sublime|editors/linux-sublime|2015-12-29|Renamed (Linux binary port)
 dns/py-dns3|dns/py-py3dns|2015-12-29|Renamed to match upstream naming
+editors/sublime3|editors/linux-sublime3|2015-12-29|Renamed (Linux binary port)
