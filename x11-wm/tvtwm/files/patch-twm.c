@@ -1,6 +1,6 @@
---- twm.c-orig	2009-10-10 20:22:14.000000000 +0200
-+++ twm.c	2009-10-10 20:31:33.000000000 +0200
-@@ -185,6 +185,9 @@
+--- twm.c.orig	1995-02-03 00:14:17 UTC
++++ twm.c
+@@ -185,6 +185,9 @@ static int RedirectError;	/* TRUE ==> an
  static int CatchRedirectError();	/* for settting RedirectError */
  static int TwmErrorHandler();	/* for everything else */
  static void SetRootProperties();	/* leave note on root window */
@@ -10,7 +10,7 @@
  char Info[INFO_LINES][INFO_SIZE];		/* info strings to print */
  int InfoLines;
  char *InitFile = NULL;
-@@ -248,6 +251,14 @@
+@@ -248,6 +251,14 @@ main(argc, argv, environ)
      int i, j, sync = FALSE;
      unsigned long valuemask;	/* mask for create windows */
      XSetWindowAttributes attributes;	/* attributes for create windows */
@@ -25,7 +25,7 @@
      int numManaged, firstscrn, lastscrn, scrnum;
      extern ColormapWindow *CreateColormapWindow();
      SIGNAL_T QueueRestartTwm();
-@@ -631,6 +640,67 @@
+@@ -629,6 +640,67 @@ main(argc, argv, environ)
  	    Scr->iconmgr.twm_win->isicon = TRUE;
  
  	/*
@@ -93,7 +93,7 @@
  	 * weed out icon windows
  	 */
  	for (i = 0; i < nchildren; i++) {
-@@ -786,6 +856,7 @@
+@@ -784,6 +856,7 @@ QueueRestartTwm()
  {
      XClientMessageEvent ev;
      
@@ -101,7 +101,7 @@
      ev.type = ClientMessage;
      ev.window = Scr->Root;
      ev.message_type = _XA_TWM_RESTART;
-@@ -1248,3 +1319,125 @@
+@@ -1246,3 +1319,125 @@ InternUsefulAtoms ()
      _XA_TWM_MACHINE = XInternAtom (dpy, "_TWM_MACHINE", False);
  }
  

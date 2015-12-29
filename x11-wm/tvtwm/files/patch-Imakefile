@@ -1,59 +1,33 @@
-*** Imakefile.orig	Thu Feb  2 18:25:44 1995
---- Imakefile	Sun May 30 11:42:08 1999
-***************
-*** 25,31 ****
-  XCOMM will define yylineno.  If you get an "Undefined symbol: _yylineno"
-  XCOMM when linking, adjust this to work on your system.
-  
-! #if defined(i386BsdArchitecture) || defined(LinuxArchitecture)
-  # ifdef LexCmd
-  LEX = LexCmd -l
-  # else
---- 25,31 ----
-  XCOMM will define yylineno.  If you get an "Undefined symbol: _yylineno"
-  XCOMM when linking, adjust this to work on your system.
-  
-! #if defined(FreeBSDArchitecture) || defined(LinuxArchitecture)
-  # ifdef LexCmd
-  LEX = LexCmd -l
-  # else
-***************
-*** 100,106 ****
-  SpecialObjectRule(LocPixmap.o,NullParameter,'-DBITMAPDIR="$(INCDIR)/bitmaps"')
-  SpecialObjectRule(twm.o,NullParameter,$(TWM_DEFS))
-  
-! #if defined(UltrixArchitecture) || defined(AlphaArchitecture)
-  SpecialObjectRule(menus.o,NullParameter,-Olimit 700)
-  #endif
-  
---- 100,106 ----
-  SpecialObjectRule(LocPixmap.o,NullParameter,'-DBITMAPDIR="$(INCDIR)/bitmaps"')
-  SpecialObjectRule(twm.o,NullParameter,$(TWM_DEFS))
-  
-! #if !defined(FreeBSDArchitecture) && (defined(UltrixArchitecture) || defined(AlphaArchitecture))
-  SpecialObjectRule(menus.o,NullParameter,-Olimit 700)
-  #endif
-  
-***************
-*** 120,129 ****
-  XCOMM	ln $(BINDIR)/tvtwm $(BINDIR)/twm
-  
-  #if (ProjectX < 5)
-! InstallNonExec(system.twmrc,$(TWMDIR))
-  /* InstallProgram(ssetroot,$(BINDIR)/xsetroot) */
-  #else
-! InstallNonExecFile(system.twmrc,$(TWMDIR))
-  /* InstallNamedProg(ssetroot,xsetroot,$(BINDIR)) */
-  #endif
-  
---- 120,129 ----
-  XCOMM	ln $(BINDIR)/tvtwm $(BINDIR)/twm
-  
-  #if (ProjectX < 5)
-! /* InstallNonExec(system.twmrc,$(TWMDIR))*/
-  /* InstallProgram(ssetroot,$(BINDIR)/xsetroot) */
-  #else
-! /* InstallNonExecFile(system.twmrc,$(TWMDIR)) */
-  /* InstallNamedProg(ssetroot,xsetroot,$(BINDIR)) */
-  #endif
-  
+--- Imakefile.orig	1995-02-03 00:25:44 UTC
++++ Imakefile
+@@ -25,7 +25,7 @@ XCOMM the maximum level of compatibility
+ XCOMM will define yylineno.  If you get an "Undefined symbol: _yylineno"
+ XCOMM when linking, adjust this to work on your system.
+ 
+-#if defined(i386BsdArchitecture) || defined(LinuxArchitecture)
++#if defined(FreeBSDArchitecture) || defined(LinuxArchitecture)
+ # ifdef LexCmd
+ LEX = LexCmd -l
+ # else
+@@ -100,7 +100,7 @@ SpecialObjectRule(vdt.o,NullParameter,$(
+ SpecialObjectRule(LocPixmap.o,NullParameter,'-DBITMAPDIR="$(INCDIR)/bitmaps"')
+ SpecialObjectRule(twm.o,NullParameter,$(TWM_DEFS))
+ 
+-#if defined(UltrixArchitecture) || defined(AlphaArchitecture)
++#if !defined(FreeBSDArchitecture) && (defined(UltrixArchitecture) || defined(AlphaArchitecture))
+ SpecialObjectRule(menus.o,NullParameter,-Olimit 700)
+ #endif
+ 
+@@ -120,10 +120,10 @@ XCOMM	rm -f $(BINDIR)/twm
+ XCOMM	ln $(BINDIR)/tvtwm $(BINDIR)/twm
+ 
+ #if (ProjectX < 5)
+-InstallNonExec(system.twmrc,$(TWMDIR))
++/* InstallNonExec(system.twmrc,$(TWMDIR))*/
+ /* InstallProgram(ssetroot,$(BINDIR)/xsetroot) */
+ #else
+-InstallNonExecFile(system.twmrc,$(TWMDIR))
++/* InstallNonExecFile(system.twmrc,$(TWMDIR)) */
+ /* InstallNamedProg(ssetroot,xsetroot,$(BINDIR)) */
+ #endif
+ 

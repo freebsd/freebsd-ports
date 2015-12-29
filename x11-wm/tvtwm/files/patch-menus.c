@@ -1,6 +1,6 @@
---- menus.c-orig	2009-10-10 20:22:14.000000000 +0200
-+++ menus.c	2009-10-10 20:22:13.000000000 +0200
-@@ -2674,14 +2674,20 @@
+--- menus.c.orig	1995-02-09 20:09:18 UTC
++++ menus.c
+@@ -2674,14 +2674,20 @@ ExecuteFunction(func, action, sub, w, tm
  	if (DeferExecution(context, func, action, Scr->SelectCursor))
  	    return TRUE;
  
@@ -27,7 +27,7 @@
  	}
  	break;
  
-@@ -3091,6 +3097,50 @@
+@@ -3091,6 +3097,50 @@ ExecuteFunction(func, action, sub, w, tm
  	    RelativeMove(tmp_win, action);
  	break;
  
@@ -78,7 +78,7 @@
      case F_QUIT:
  	Done();
  	break;
-@@ -3188,6 +3238,7 @@
+@@ -3188,6 +3238,7 @@ int func;
  	case F_DESTROY:
  	case F_DELETE:
  	case F_DELETEORDESTROY:

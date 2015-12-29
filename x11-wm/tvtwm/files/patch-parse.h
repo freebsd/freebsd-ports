@@ -1,6 +1,6 @@
---- parse.h-orig	2009-10-10 20:22:14.000000000 +0200
-+++ parse.h	2009-10-10 20:22:13.000000000 +0200
-@@ -102,6 +102,7 @@
+--- parse.h.orig	1993-12-01 21:01:13 UTC
++++ parse.h
+@@ -102,6 +102,7 @@ extern void TwmOutput();
  #define F_CONSTRAINEDMOVE	55
  #define F_OPAQUEMOVE		56
  #define F_DELETEORDESTROY	57
