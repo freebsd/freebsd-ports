@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	aifad
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Machine learning system
 
-LICENSE=	GPLv2 # or later (COPYING is GPLv3)
+LICENSE=	LGPL21 # or later
 
 BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir \
 		ocaml-cfg>0:${PORTSDIR}/devel/ocaml-cfg \
