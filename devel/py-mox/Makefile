@@ -3,16 +3,19 @@
 
 PORTNAME=	mox
 PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mock object framework for Python
 
-PROJECTHOST=	pymox
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+NO_ARCH=	yes
+USE_PYTHON=	autoplist distutils
 USES=		python
-USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
