@@ -13,11 +13,13 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	External policy checker for the postfix mail server
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyspf>=0:${PORTSDIR}/mail/py-pyspf
 
 OPTIONS_DEFINE=	DOCS
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		python shebangfix
 
