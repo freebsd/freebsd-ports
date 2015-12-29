@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b808c3a8-ae30-11e5-b864-14dae9d210b8">
+    <topic>inspircd -- DoS</topic>
+    <affects>
+      <package>
+	<name>inspircd</name>
+	<range><lt>2.0.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Inspircd reports:</p>
+	<blockquote cite="http://www.inspircd.org/2015/04/16/v2019-released.html">
+	  <p>This release fixes the issues discovered since 2.0.18,
+	    containing multiple important stability and correctness related
+	    improvements, including a fix for a bug which allowed malformed DNS
+	    records to cause netsplits on a network.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.inspircd.org/2015/04/16/v2019-released.html</url>
+      <url>https://github.com/inspircd/inspircd/commit/6058483d9fbc1b904d5ae7cfea47bfcde5c5b559</url>
+    </references>
+    <dates>
+      <discovery>2015-04-16</discovery>
+      <entry>2015-12-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4bae544d-06a3-4352-938c-b3bcbca89298">
     <topic>ffmpeg -- multiple vulnerabilities</topic>
     <affects>
