@@ -14,7 +14,7 @@ bin/tsdb
 %%DATADIR%%/lib/netty-3.9.4.Final.jar
 %%DATADIR%%/lib/protobuf-java-2.5.0.jar
 %%DATADIR%%/lib/slf4j-api-1.7.7.jar
-%%DATADIR%%/lib/tsdb-2.1.1.jar
+%%DATADIR%%/lib/tsdb-2.1.3.jar
 %%DATADIR%%/lib/zookeeper-3.3.6.jar
 %%DATADIR%%/static/clear.cache.gif
 %%DATADIR%%/static/favicon.ico
