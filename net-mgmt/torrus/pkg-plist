@@ -298,57 +298,21 @@ man/man7/torrus_install_plugin.7.gz
 %%SITE_PERL%%/Torrus/SQL/SrvExport.pm
 %%SITE_PERL%%/Torrus/SQL.pm
 %%SITE_PERL%%/Torrus/TimeStamp.pm
-@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/log/torrus 2>/dev/null || true
-@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/run/torrus 2>/dev/null || true
-@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus
-@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/cache
-@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/collector_rrd
-@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/db
-@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/reports
-@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/session_data 2>/dev/null || true
-@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/session_data/store 2>/dev/null || true
-@exec chown %%TORRUS_USER%%:%%TORRUS_USER%% /var/torrus/session_data/lock 2>/dev/null || true
-@exec mkdir %D/etc/torrus/templates 2>/dev/null || true
-@exec mkdir %D/%%DATADIR%%/plugins 2>/dev/null || true
-@exec mkdir %D/%%DATADIR%%/plugins/devdiscover-config 2>/dev/null || true
-@exec mkdir %D/%%DATADIR%%/plugins/torrus-config 2>/dev/null || true
-@exec mkdir %D/%%DATADIR%%/plugins/wrapper 2>/dev/null || true
-@exec mkdir %D/%%DATADIR%%/sup/webscripts 2>/dev/null || true
-@dirrm %%DATADIR%%/xmlconfig/vendor
-@dirrm %%DATADIR%%/xmlconfig/old
-@dirrm %%DATADIR%%/xmlconfig/generic
-@dirrm %%DATADIR%%/xmlconfig/examples
-@dirrm %%DATADIR%%/xmlconfig
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/sup/webscripts
-@dirrm %%DATADIR%%/sup/webplain
-@dirrm %%DATADIR%%/sup/styling
-@dirrm %%DATADIR%%/sup/mibs
-@dirrm %%DATADIR%%/sup/dtd
-@dirrm %%DATADIR%%/sup
-@dirrm %%DATADIR%%/plugins/wrapper
-@dirrm %%DATADIR%%/plugins/torrus-config
-@dirrm %%DATADIR%%/plugins/devdiscover-config
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/conf_defaults
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%/devdoc
-@dirrm %%DOCSDIR%%
-@dirrm libexec/torrus/scripts/xml
-@dirrm libexec/torrus/scripts
-@dirrm libexec/torrus
-@dirrmtry /var/torrus/session_data/store
-@dirrmtry /var/torrus/session_data/lock
-@dirrmtry /var/torrus/session_data
-@dirrmtry /var/torrus/reports
-@dirrmtry /var/torrus/db
-@dirrmtry /var/torrus/collector_rrd
-@dirrmtry /var/torrus/cache
-@dirrmtry /var/torrus/
-@dirrmtry /var/log/torrus
-@dirrmtry etc/torrus/xmlconfig
-@dirrmtry etc/torrus/templates
-@dirrmtry etc/torrus/discovery
-@dirrmtry etc/torrus/conf
-@dirrmtry etc/torrus
+@dir %%DATADIR%%/sup/webscripts
+@dir %%DATADIR%%/sup
+@dir %%DATADIR%%/plugins/wrapper
+@dir %%DATADIR%%/plugins/torrus-config
+@dir %%DATADIR%%/plugins/devdiscover-config
+@dir etc/torrus/templates
+@dir etc/torrus/discovery
+@dir etc/torrus
+@dir(%%TORRUS_USER%%,%%TORRUS_USER%%,2775) /var/torrus/session_data/store
+@dir(%%TORRUS_USER%%,%%TORRUS_USER%%,2775) /var/torrus/session_data/lock
+@dir(%%TORRUS_USER%%,%%TORRUS_USER%%,775) /var/torrus/session_data
+@dir(%%TORRUS_USER%%,%%TORRUS_USER%%,775) /var/torrus/reports
+@dir(%%TORRUS_USER%%,%%TORRUS_USER%%,2775) /var/torrus/db
+@dir(%%TORRUS_USER%%,%%TORRUS_USER%%,2775) /var/torrus/collector_rrd
+@dir(%%TORRUS_USER%%,%%TORRUS_USER%%,2775) /var/torrus/cache
+@dir(%%TORRUS_USER%%,%%TORRUS_USER%%,775) /var/torrus/
+@dir(%%TORRUS_USER%%,%%TORRUS_USER%%,2775) /var/log/torrus
+@dir(%%TORRUS_USER%%,%%TORRUS_USER%%,2775) /var/run/torrus
