@@ -1,8 +1,6 @@
 bin/inspircd
 %%ETCDIR%%/examples/aliases/anope.conf.example
 %%ETCDIR%%/examples/aliases/atheme.conf.example
-%%ETCDIR%%/examples/aliases/ircservices.conf.example
-%%ETCDIR%%/examples/aliases/neostats.conf.example
 %%ETCDIR%%/examples/censor.conf.example
 %%ETCDIR%%/examples/filter.conf.example
 %%ETCDIR%%/examples/helpop-full.conf.example
