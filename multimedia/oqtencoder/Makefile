@@ -7,17 +7,14 @@ PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/openquicktime/OpenQuicktime%20v1/1.0b
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple encoder using OpenQuicktime (TM)
 
 LIB_DEPENDS=	libopenquicktime.so:${PORTSDIR}/multimedia/openquicktime
 
+USES=		localbase tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/oqtencoder
 PORTDOCS=	*
@@ -30,6 +27,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:tl} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
