@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zope.component
-PORTVERSION=	3.12.1
+PORTVERSION=	4.2.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,11 @@ COMMENT=	Zope Component Architecture
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.8.0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.event>=0:${PORTSDIR}/devel/py-zope.event
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.event>=0:${PORTSDIR}/devel/py-zope.event \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=4.1.0:${PORTSDIR}/devel/py-zope.interface
 
-USES=		python:2 zip
+NO_ARCH=	yes
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
