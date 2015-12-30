@@ -730,7 +730,6 @@
     SUBDIR += py-htsql-pgsql
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb
-    SUBDIR += py-memcached
     SUBDIR += py-mycli
     SUBDIR += py-mysql-connector-python
     SUBDIR += py-mysql-connector-python2
@@ -756,6 +755,7 @@
     SUBDIR += py-pymysql
     SUBDIR += py-pypuppetdb
     SUBDIR += py-pytc
+    SUBDIR += py-python-memcached
     SUBDIR += py-python-rrdtool
     SUBDIR += py-python-sql
     SUBDIR += py-qt4-sql
