@@ -3,7 +3,7 @@
 
 PORTNAME=	xtet42
 PORTVERSION=	2.21
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/
 
@@ -11,25 +11,20 @@ MAINTAINER=	gmarco@gufi.org
 COMMENT=	One or two player T*tris game
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-setgid=games
+CONFIGURE_ARGS=	--localstatedir=/var/games
 USE_XORG=	x11
+ALL_TARGET=	${PORTNAME}
 
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,^hiscoredir.*,hiscoredir=${DATADIR},' \
-		${WRKSRC}/Makefile.in
-
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	@${CHMOD} 775 ${STAGEDIR}${DATADIR}
-	@${STRIP_CMD} ${WRKSRC}/xtet42
-	${INSTALL} -c -m 755 ${WRKSRC}/xtet42 ${STAGEDIR}${PREFIX}/bin
-	${INSTALL} -c -m 664 ${WRKSRC}/xtet42.hiscore ${STAGEDIR}${DATADIR}/.xtet42.hiscore
-	${INSTALL} -c -m 664 ${WRKSRC}/xtet42.hiscore.single ${STAGEDIR}${DATADIR}/.xtet42.hiscore.single
-	${INSTALL} -c -m 664 /dev/null ${STAGEDIR}${DATADIR}/.xtet42.unlock
-	${INSTALL} -c -m 664 /dev/null ${STAGEDIR}${DATADIR}/.xtet42.log
+	${INSTALL_PROGRAM} ${WRKSRC}/xtet42 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xtet42.6 ${STAGEDIR}${MANPREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}/var/games/xtet42
+	${INSTALL_DATA} ${WRKSRC}/xtet42.hiscore ${STAGEDIR}/var/games/xtet42/.xtet42.hiscore.sample
+	${INSTALL_DATA} ${WRKSRC}/xtet42.hiscore.single ${STAGEDIR}/var/games/xtet42/.xtet42.hiscore.single.sample
+	${INSTALL_DATA} /dev/null ${STAGEDIR}/var/games/xtet42/.xtet42.unlock.sample
+	${INSTALL_DATA} /dev/null ${STAGEDIR}/var/games/xtet42/.xtet42.log.sample
 
 .include <bsd.port.mk>
