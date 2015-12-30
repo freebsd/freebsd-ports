@@ -13,7 +13,7 @@ COMMENT=	Wrapper around the LSCP network protocol
 LICENSE=	LGPL21 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pathfix
+USES=		libtool pathfix tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
