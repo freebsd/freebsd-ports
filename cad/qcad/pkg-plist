@@ -21,8 +21,6 @@ lib/libqcadstemmer.so
 lib/libqcadstemmer.so.0
 lib/libqcadzip.so
 lib/libqcadzip.so.0
-lib/libquazip.so
-lib/libquazip.so.0
 lib/libspatialindexnavel.so
 lib/libspatialindexnavel.so.0
 lib/libstemmer.a
