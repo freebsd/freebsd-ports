@@ -1,6 +1,0 @@
-The subversion dav modules are no longer activated in httpd.conf!
-There is now a dedicated modules file in %%APACHEETCDIR%%/modules.d
-
-Attention:
-subversion17 is deprecated and scheduled for removal!
-Please consider updating to subversion 1.8/1.9
