@@ -36,6 +36,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/p0f${ii}fp ${STAGEDIR}${PREFIX}/etc/p0f
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/p0f.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ii in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${ii} ${STAGEDIR}${DOCSDIR}
