@@ -75,20 +75,20 @@ post-patch:
 	${REINPLACE_CMD} -e 's|install-data-local: install-docs|install-data-local:|' ${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MAKE} -C ${WRKSRC}/src install DESTDIR=${STAGEDIR}
+	${MAKE} -C ${WRKSRC}/docs install-man DESTDIR=${STAGEDIR}
+	${MKDIR} ${STAGEDIR}/var/spool/newsstar
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in ${EX_CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/sample_config/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.else
-	${MAKE} -C ${WRKSRC}/src install DESTDIR=${STAGEDIR}
-	${MAKE} -C ${WRKSRC}/docs install-man DESTDIR=${STAGEDIR}
-.endif
 
 .include <bsd.port.post.mk>
