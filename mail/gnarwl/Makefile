@@ -5,12 +5,10 @@ PORTNAME=	gnarwl
 PORTVERSION=	3.6
 PORTREVISION=	5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.onyxbits.de/sites/default/files/
+MASTER_SITES=	http://www.onyxbits.de/sites/default/files/download/15/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email autoresponder that gets data from LDAP
-
-BROKEN=		unfetchable
 
 LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
