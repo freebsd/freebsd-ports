@@ -5029,6 +5029,7 @@
     SUBDIR += rubygem-shoulda-context
     SUBDIR += rubygem-shoulda-matchers
     SUBDIR += rubygem-sidekiq
+    SUBDIR += rubygem-sidekiq-cron
     SUBDIR += rubygem-sidetiq
     SUBDIR += rubygem-sigdump
     SUBDIR += rubygem-simple_form
