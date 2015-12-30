@@ -4069,7 +4069,7 @@
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
     SUBDIR += py-gyp-devel
-    SUBDIR += py-hashring
+    SUBDIR += py-hash_ring
     SUBDIR += py-hghooks
     SUBDIR += py-hgsubversion
     SUBDIR += py-hgtools
