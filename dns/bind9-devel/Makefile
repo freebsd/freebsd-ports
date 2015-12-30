@@ -3,7 +3,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	LOCAL/mat/bind
 #MASTER_SITES=	https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=snapshot;h=${HASH};sf=tgz;f=
@@ -215,6 +215,8 @@ post-extract:
 	echo "SRCID=${HASH}" > ${WRKSRC}/srcid
 
 post-patch:
+	@${REINPLACE_CMD} -e '/RELEASETYPE=/s#$$#-${HASH}#' \
+		${WRKSRC}/version
 	@${REINPLACE_CMD} -e 's|readline/readline.h|editline/readline.h|; \
 		s|readline/history.h|histedit.h|' \
 		${WRKSRC}/bin/dig/nslookup.c ${WRKSRC}/bin/nsupdate/nsupdate.c
