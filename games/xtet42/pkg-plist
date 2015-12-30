@@ -1,12 +1,7 @@
+@(,games,2755) bin/xtet42
 man/man6/xtet42.6.gz
-@group games
-@mode 2755
-bin/xtet42
-@mode 664
-%%DATADIR%%/.xtet42.hiscore.single
-%%DATADIR%%/.xtet42.hiscore
-%%DATADIR%%/.xtet42.unlock
-%%DATADIR%%/.xtet42.log
-@mode 775
-@exec install -d -o root -g games -m 755 %D/%%DATADIR%%
-@dirrm %%DATADIR%%
+@sample(,games,664) /var/games/xtet42/.xtet42.hiscore.sample
+@sample(,games,664) /var/games/xtet42/.xtet42.hiscore.single.sample
+@sample(,games,664) /var/games/xtet42/.xtet42.log.sample
+@sample(,games,664) /var/games/xtet42/.xtet42.unlock.sample
+@dir(,games,775) /var/games/xtet42
