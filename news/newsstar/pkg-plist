@@ -31,11 +31,8 @@ libexec/newsstar/newsstar.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/master.ignore.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/master.score.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsrc.sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/newsstar
-@dirrmtry %%ETCDIR%%
-@unexec if [ -d /var/spool/newsstar ] ; then echo "==================================================" ; echo "If you are deinstalling newsstar for good" ; echo "remove the spool: type: rm -rf /var/spool/newsstar"; echo "==================================================" ; fi
-@unexec rmdir /var/spool/newsstar/lib >/dev/null 2>&1 || :
-@unexec rmdir /var/spool/newsstar/incoming >/dev/null 2>&1 || :
-@unexec rmdir /var/spool/newsstar >/dev/null 2>&1 || :
+@dir(news,news,750) /var/spool/newsstar/incoming
+@dir(news,news,750) /var/spool/newsstar/lib
+@dir /var/spool/newsstar
+@dir %%ETCDIR%%
+@postunexec if [ -d /var/spool/newsstar ] ; then echo "==================================================" ; echo "If you are deinstalling newsstar for good" ; echo "remove the spool: type: rm -rf /var/spool/newsstar"; echo "==================================================" ; fi
