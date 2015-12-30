@@ -20,6 +20,7 @@ TEST_TARGET=	test
 TEST_WRKSRC=	${BUILD_WRKSRC}
 USE_GITHUB=	yes
 GH_ACCOUNT=	actor-framework
+GH_PROJECT=	${GH_ACCOUNT}
 
 BROKEN_FreeBSD_8=	"undefined reference to `iswalpha_l'"
 
