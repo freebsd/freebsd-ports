@@ -3,6 +3,7 @@
 PORTNAME=	automx
 PORTVERSION=	0.10.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	crees@FreeBSD.org
@@ -31,7 +32,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	MEMCACHE
 MEMCACHE_DESC=	Add memcache support
-MEMCACHE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}memcached>=0:${PORTSDIR}/databases/py-memcached
+MEMCACHE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>=0:${PORTSDIR}/databases/py-python-memcached
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

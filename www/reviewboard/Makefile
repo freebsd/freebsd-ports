@@ -2,6 +2,7 @@
 
 PORTNAME=	reviewboard
 PORTVERSION=	2.5.1.1
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	http://downloads.reviewboard.org/releases/ReviewBoard/${PORTVERSION:R:R}/
 DISTNAME=	ReviewBoard-${PORTVERSION}
@@ -24,7 +25,7 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}markdown>=2.2.1:${PORTSDIR}/textproc/py-markdown \
-		${PYTHON_PKGNAMEPREFIX}memcached>0:${PORTSDIR}/databases/py-memcached \
+		${PYTHON_PKGNAMEPREFIX}python-memcached>0:${PORTSDIR}/databases/py-python-memcached \
 		${PYTHON_PKGNAMEPREFIX}mimeparse>=0.1.3:${PORTSDIR}/devel/py-mimeparse \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=1.9.0:${PORTSDIR}/security/py-paramiko \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.5:${PORTSDIR}/textproc/py-pygments \

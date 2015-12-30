@@ -1,14 +1,13 @@
 # Created by: Michael Johnson <ahze@ahze.net>
 # $FreeBSD$
 
-PORTNAME=	memcached
+PORTNAME=	python-memcached
 PORTVERSION=	1.54
 CATEGORIES=	databases python
 MASTER_SITES=	http://ftp.tummy.com/pub/python-memcached/ \
 		http://ftp.tummy.com/pub/python-memcached/old-releases/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python API for memcached, a distributed memory cache daemon
