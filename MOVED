@@ -8071,3 +8071,4 @@ editors/sublime3|editors/linux-sublime3|2015-12-29|Renamed (Linux binary port)
 mail/py-spf|mail/py-pyspf|2015-12-29|Renamed to match upstream naming
 databases/py-memcached|databases/py-python-memcached|2015-12-30|Renamed to match upstream naming
 devel/py-hashring|devel/py-hash_ring|2015-12-30|Renamed to match upstream naming
+devel/subversion17|devel/subversion|2015-12-30|Has expired: EoL, use devel/subversion
