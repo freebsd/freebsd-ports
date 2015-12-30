@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Math/Geometry/Planar/GPC/Polygon.pm
-%%SITE_PERL%%/Math/Geometry/Planar/GPC/Polygon/functions.c
-%%SITE_PERL%%/Math/Geometry/Planar/GPC/Polygon/include/gpc.c
-%%SITE_PERL%%/Math/Geometry/Planar/GPC/Polygon/include/gpc.h
-%%PERL5_MAN3%%/Math::Geometry::Planar::GPC::Polygon.3.gz

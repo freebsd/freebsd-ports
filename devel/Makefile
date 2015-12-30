@@ -1055,7 +1055,6 @@
     SUBDIR += jech-dht
     SUBDIR += jenkins
     SUBDIR += jenkins-lts
-    SUBDIR += jgoodies-common
     SUBDIR += jiic
     SUBDIR += jline
     SUBDIR += jna
@@ -1489,7 +1488,6 @@
     SUBDIR += mongo-cxx-driver
     SUBDIR += mono-addins
     SUBDIR += monodevelop
-    SUBDIR += monodevelop-database
     SUBDIR += monotone
     SUBDIR += monotone-viz
     SUBDIR += motor
