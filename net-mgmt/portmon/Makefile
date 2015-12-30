@@ -11,6 +11,9 @@ MASTER_SITES=	http://voodoo.bawue.com/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon that monitor network services
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README
@@ -29,9 +32,9 @@ do-install:
 		${STAGEDIR}${PREFIX}/man/man8
 	${INSTALL_DATA} ${WRKSRC}/extras/portmon.hosts.sample \
 		${STAGEDIR}${PREFIX}/etc
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
