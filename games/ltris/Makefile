@@ -3,7 +3,7 @@
 
 PORTNAME=	ltris
 PORTVERSION=	1.0.19
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}
@@ -13,22 +13,14 @@ COMMENT=	Tetris clone but a good one with bunch of cool features
 
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
-USES=		gmake
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--localstatedir=${DATADIR}
+USES=		gmake localbase
+CONFIGURE_ARGS=	--localstatedir=/var/games
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/\/icons/\/pixmaps/g' ${WRKSRC}/Makefile.in
@@ -36,5 +28,8 @@ post-patch:
 		 s/--mode=666//g' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's/^inline //' \
 		${WRKSRC}/src/sdl.h ${WRKSRC}/src/tools.h
+
+post-install:
+	${MV$} ${STAGEDIR}/var/games/ltris.hscr ${STAGEDIR}/var/games/ltris.hscr.sample
 
 .include <bsd.port.mk>
