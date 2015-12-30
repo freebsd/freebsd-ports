@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	github
 PLIST_FILES=	bin/git-lfs
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"
