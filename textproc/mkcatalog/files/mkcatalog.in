@@ -47,7 +47,7 @@ verbose_msg ()
     esac
 }
 
-PREFIX=@@PREFIX@@
+PREFIX=%%PREFIX%%
 TMPDIR=/tmp
 ARGV0=`sh_basename $0`
 
