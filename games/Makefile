@@ -449,7 +449,6 @@
     SUBDIR += kajaani-kombat
     SUBDIR += kajongg
     SUBDIR += kanagram
-    SUBDIR += kanatest
     SUBDIR += kapman
     SUBDIR += kardsgt
     SUBDIR += kartofel

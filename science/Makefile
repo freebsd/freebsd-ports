@@ -60,7 +60,6 @@
     SUBDIR += h5utils
     SUBDIR += harminv
     SUBDIR += hdf
-    SUBDIR += hdf-java
     SUBDIR += hdf5
     SUBDIR += hs-bio
     SUBDIR += isaac-cfd

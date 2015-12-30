@@ -13,7 +13,6 @@
     SUBDIR += beav
     SUBDIR += biew
     SUBDIR += bitedit
-    SUBDIR += bless
     SUBDIR += boiling-egg
     SUBDIR += bvi
     SUBDIR += calligra

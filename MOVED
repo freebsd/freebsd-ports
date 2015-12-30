@@ -8072,3 +8072,15 @@ mail/py-spf|mail/py-pyspf|2015-12-29|Renamed to match upstream naming
 databases/py-memcached|databases/py-python-memcached|2015-12-30|Renamed to match upstream naming
 devel/py-hashring|devel/py-hash_ring|2015-12-30|Renamed to match upstream naming
 devel/subversion17|devel/subversion|2015-12-30|Has expired: EoL, use devel/subversion
+www/ocsigen||2015-12-30|Has expired: Broken for more than 6 months
+devel/monodevelop-database||2015-12-30|Has expired: Broken for more than 6 months
+lang/cduce||2015-12-30|Has expired: Broken for more than 6 months
+science/hdf-java||2015-12-30|Has expired: Broken for more than 6 months
+math/p5-Math-Geometry-Planar-GPC-Polygon||2015-12-30|Has expired: Broken for more than 6 months
+www/eliom||2015-12-30|Has expired: Depends on broken and expiring www/ocsigen
+audio/py-fastaudio||2015-12-30|Has expired: Broken for more than 6 months
+devel/jgoodies-common||2015-12-30|Has expired: Broken for more than 6 months
+graphics/pinta||2015-12-30|Has expired: Broken for more than 6 months
+games/kanatest||2015-12-30|Has expired: Broken for more than 6 months
+editors/bless||2015-12-30|Has expired: Broken for more than 6 months
+security/burpsuite||2015-12-30|Has expired: Broken for more than 6 months
