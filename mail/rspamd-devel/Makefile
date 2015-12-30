@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.1.0.a.17122015
+PORTVERSION=	1.1.0.a1.30122015
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 PKGNAMESUFFIX=	-devel
@@ -38,7 +38,8 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DBUILD_PORT=yes \
 		-DFORCE_GMIME24=yes \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
-		-DNO_SHARED=ON
+		-DNO_SHARED=ON \
+		-DDEBUG=ON
 
 USES=		cmake:outsource gettext iconv pkgconfig tar:xz perl5 \
 		compiler:c11
@@ -48,6 +49,8 @@ USE_PERL5=	build
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
 USE_SQLITE=	yes
+DEBUG_FLAGS=	-g -O0
+WITH_DEBUG=	yes
 
 .include <bsd.port.options.mk>
 

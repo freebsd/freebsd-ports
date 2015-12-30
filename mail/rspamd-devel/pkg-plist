@@ -40,6 +40,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/effective_tld_names.dat
 %%DATADIR%%/lua/dmarc.lua
 %%DATADIR%%/lua/emails.lua
+%%DATADIR%%/lua/fann_scores.lua
 %%DATADIR%%/lua/forged_recipients.lua
 %%DATADIR%%/lua/fun.lua
 %%DATADIR%%/lua/hfilter.lua
