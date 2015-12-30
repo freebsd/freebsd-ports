@@ -20,15 +20,17 @@
 
 name="mailman"
 rcvar="mailman_enable"
+required_dirs="%%MAILMANDIR%%/lists/mailman"
 command_interpreter="%%PYTHON_CMD%%"
 command="%%MAILMANDIR%%/bin/mailmanctl"
-command_args="-s -q start"
+command_args="start"
 pidfile="%%MAILMANDIR%%/data/master-qrunner.pid"
 
 load_rc_config $name
 
-: ${mailman_enable="NO"}
-: ${mailman_fix_perms="YES"}
+: ${mailman_enable:="NO"}
+: ${mailman_fix_perms:="YES"}
+: ${mailman_flags:="-s -q"}
 
 start_precmd=${name}_prestart
 extra_commands="reload status"
@@ -36,7 +38,7 @@ extra_commands="reload status"
 mailman_prestart() {
 	if checkyesno mailman_fix_perms ; then 
 	    check_startmsgs && echo "Fixing ${name} permissions:"
-	    env LC_ALL=C %%MAILMANDIR%%/bin/check_perms -f $arg ${rc_debug:+-v}
+	    env LC_ALL=C %%MAILMANDIR%%/bin/check_perms -f ${rc_debug:+-v}
 	fi
 }
 
