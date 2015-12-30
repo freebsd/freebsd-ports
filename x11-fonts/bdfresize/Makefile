@@ -10,6 +10,9 @@ MASTER_SITES=	http://openlab.ring.gr.jp/efont/dist/tools/bdfresize/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for resizing BDF format font
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/bdfresize \
 		man/man1/bdfresize.1.gz

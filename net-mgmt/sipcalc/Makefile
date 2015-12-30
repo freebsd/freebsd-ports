@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP subnet calculator with IPv6 support
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
@@ -18,7 +19,7 @@ PLIST_FILES=	bin/sipcalc man/man1/sipcalc.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog README \
 		${STAGEDIR}${DOCSDIR})

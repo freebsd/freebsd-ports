@@ -5,19 +5,20 @@ PORTNAME=	tcpblast
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	benchmarks net ipv6
+MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Measures the throughput of a TCP connection
 
+NO_WRKSUBDIR=	yes
+
 PLIST_FILES=	bin/tcpblast
 
-USES=		uidfix
-WRKSRC=		${WRKDIR}/src
+do-build:
+	${CC} ${CFLAGS} ${FILESDIR}/${PORTNAME}.c -o ${WRKDIR}/${PORTNAME}
 
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	${CP} -RP ${.CURDIR}/src ${WRKDIR}
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

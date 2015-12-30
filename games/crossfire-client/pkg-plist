@@ -17,6 +17,3 @@ share/applications/crossfire-client.desktop
 %%DATADIR%%/ui/un-deux.ui
 %%DATADIR%%/ui/v1-redux.ui
 share/pixmaps/crossfire-client.png
-@dirrmtry %%DATADIR%%/ui
-@dirrmtry %%DATADIR%%/themes
-@dirrmtry %%DATADIR%%

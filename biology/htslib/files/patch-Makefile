@@ -1,6 +1,6 @@
---- Makefile.orig	2015-02-03 16:22:23 UTC
+--- Makefile.orig	2015-12-15 16:34:33 UTC
 +++ Makefile
-@@ -22,16 +22,9 @@
+@@ -22,16 +22,7 @@
  # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  # DEALINGS IN THE SOFTWARE.
  
@@ -8,19 +8,18 @@
 -AR     = ar
 -RANLIB = ranlib
 -
--CPPFLAGS = -I.
-+CPPFLAGS += -I.
- # TODO: probably update cram code to make it compile cleanly with -Wc++-compat
+-CPPFLAGS =
+-# TODO: probably update cram code to make it compile cleanly with -Wc++-compat
 -CFLAGS   = -g -Wall -O2
  EXTRA_CFLAGS_PIC = -fpic
 -LDFLAGS  =
--LDLIBS   =
+-LIBS     =
  
  # For now these don't work too well as samtools also needs to know to
  # add -lbz2 and -llzma if linking against the static libhts.a library.
-@@ -57,16 +50,10 @@ bindir      = $(exec_prefix)/bin
- includedir  = $(prefix)/include
+@@ -58,16 +49,10 @@ includedir  = $(prefix)/include
  libdir      = $(exec_prefix)/lib
+ libexecdir  = $(exec_prefix)/libexec
  datarootdir = $(prefix)/share
 -mandir      = $(datarootdir)/man
 +mandir      = $(prefix)/man
@@ -35,18 +34,18 @@
 -INSTALL_DIR     = $(MKDIR_P) -m 755
 +pkgconfigdir= $(exec_prefix)/libdata/pkgconfig
  
- BUILT_PROGRAMS = \
- 	bgzip \
-@@ -82,7 +69,7 @@ BUILT_TEST_PROGRAMS = \
+ # Set by config.mk if plugins are enabled
+ plugindir =
+@@ -86,7 +71,7 @@ BUILT_TEST_PROGRAMS = \
  	test/test-vcf-api \
  	test/test-vcf-sweep
  
--all: lib-static lib-shared $(BUILT_PROGRAMS) $(BUILT_TEST_PROGRAMS)
-+all: lib-static lib-shared $(BUILT_PROGRAMS)
+-all: lib-static lib-shared $(BUILT_PROGRAMS) plugins $(BUILT_TEST_PROGRAMS)
++all: lib-static lib-shared $(BUILT_PROGRAMS) plugins
  
  HTSPREFIX =
  include htslib_vars.mk
-@@ -332,7 +319,7 @@ installdirs:
+@@ -361,7 +346,7 @@ installdirs:
  # and libhts.so.NN (used by client executables at runtime).
  
  install-so: libhts.so installdirs

@@ -3,9 +3,10 @@
 
 PORTNAME=	todo
 PORTVERSION=	2.10
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	deskutils
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
 DISTNAME=	todo.txt_cli-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -27,7 +28,6 @@ PLIST_FILES=	bin/todo \
 
 GH_ACCOUNT=	ginatrapani
 GH_PROJECT=	todo.txt-cli
-GH_TAGNAME=	v${PORTVERSION}
 
 SHEBANG_FILES=	todo.sh todo_completion
 

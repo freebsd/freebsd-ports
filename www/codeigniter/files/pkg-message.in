@@ -13,7 +13,7 @@ To use CodeIgniter:
 - If you intend to use a database, copy and edit the
   %%WWWDIR%%/application/config/database.php too.
 - For more information please check 
-  http://ellislab.com/codeigniter/user-guide/installation/index.html
+  http://codeigniter.com/user_guide/installation/index.html
 
 - If you are upgrading from a prior release, please visit:
   http://codeigniter.com/user_guide/installation/upgrading.html

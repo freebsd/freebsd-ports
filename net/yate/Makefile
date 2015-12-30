@@ -84,15 +84,13 @@ SPANDSP_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp
 SQLITE_CONFIGURE_WITH=	sqlite
 SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
-#MAKE_JOBS_UNSAFE=yes
-
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yate
 	@cd ${STAGEDIR}${PREFIX}/lib; \
-		for FILE in *.5.5.0; do \
+		for FILE in libyate*.so.5.5.0; do \
 			${STRIP_CMD} $${FILE}; \
 		done
 	@cd ${STAGEDIR}${PREFIX}/lib/yate; \

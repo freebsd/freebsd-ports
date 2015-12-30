@@ -27,26 +27,26 @@
 %%APP_HOME%%/README.txt
 %%APP_HOME%%/bin/.jbossclirc
 %%APP_HOME%%/bin/add-user.properties
-%%APP_HOME%%/bin/add-user.sh
+@(www,www,555) %%APP_HOME%%/bin/add-user.sh
 %%APP_HOME%%/bin/appclient.conf
-%%APP_HOME%%/bin/appclient.sh
+@(www,www,555) %%APP_HOME%%/bin/appclient.sh
 %%APP_HOME%%/bin/client/README-CLI-JCONSOLE.txt
 %%APP_HOME%%/bin/client/README-EJB-JMS.txt
 %%APP_HOME%%/bin/client/jboss-cli-client.jar
 %%APP_HOME%%/bin/client/jboss-client.jar
 %%APP_HOME%%/bin/domain.conf
-%%APP_HOME%%/bin/domain.sh
+@(www,www,555) %%APP_HOME%%/bin/domain.sh
 %%APP_HOME%%/bin/jboss-cli-logging.properties
-%%APP_HOME%%/bin/jboss-cli.sh
+@(www,www,555) %%APP_HOME%%/bin/jboss-cli.sh
 %%APP_HOME%%/bin/jboss-cli.xml
-%%APP_HOME%%/bin/jconsole.sh
-%%APP_HOME%%/bin/jdr.sh
-%%APP_HOME%%/bin/run.sh
+@(www,www,555) %%APP_HOME%%/bin/jconsole.sh
+@(www,www,555) %%APP_HOME%%/bin/jdr.sh
+@(www,www,555) %%APP_HOME%%/bin/run.sh
 %%APP_HOME%%/bin/standalone.conf
-%%APP_HOME%%/bin/standalone.sh
-%%APP_HOME%%/bin/vault.sh
-%%APP_HOME%%/bin/wsconsume.sh
-%%APP_HOME%%/bin/wsprovide.sh
+@(www,www,555) %%APP_HOME%%/bin/standalone.sh
+@(www,www,555) %%APP_HOME%%/bin/vault.sh
+@(www,www,555) %%APP_HOME%%/bin/wsconsume.sh
+@(www,www,555) %%APP_HOME%%/bin/wsprovide.sh
 %%APP_HOME%%/copyright.txt
 %%APP_HOME%%/docs/examples/configs/standalone-ec2-full-ha.xml
 %%APP_HOME%%/docs/examples/configs/standalone-ec2-ha.xml
@@ -1826,3 +1826,5 @@
 @dir %%APP_HOME%%/bin
 @dir %%APP_HOME%%/appclient/configuration
 @dir %%APP_HOME%%/appclient
+@owner
+@group

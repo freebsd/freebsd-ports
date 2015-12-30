@@ -742,24 +742,6 @@ sbin/radwatch
 %%DATADIR%%/dictionary.zyxel
 @unexec rmdir "/var/run/radiusd" >/dev/null 2>&1 || :
 @unexec rmdir "/var/log/radacct" >/dev/null 2>&1 || :
-@dir %%DATADIR%%
-@dir %%EXAMPLESDIR%%/raddb/sql/postgresql
-@dir %%EXAMPLESDIR%%/raddb/sql/oracle
-@dir %%EXAMPLESDIR%%/raddb/sql/ndb
-@dir %%EXAMPLESDIR%%/raddb/sql/mysql
-@dir %%EXAMPLESDIR%%/raddb/sql/mssql
-@dir %%EXAMPLESDIR%%/raddb/sql
-@dir %%EXAMPLESDIR%%/raddb/sites-enabled
-@dir %%EXAMPLESDIR%%/raddb/sites-available
-@dir %%EXAMPLESDIR%%/raddb/modules
-@dir %%EXAMPLESDIR%%/raddb/certs
-@dir %%EXAMPLESDIR%%/raddb
-@dir %%EXAMPLESDIR%%
-%%PORTDOCS%%@dir %%DOCSDIR%%/rfc
-%%PORTDOCS%%@dir %%DOCSDIR%%/examples
-%%PORTDOCS%%@dir %%DOCSDIR%%
-@dir %%LIBDIR%%
-@dir include/freeradius
 @exec if ! [ -d %D/etc/raddb -o -L %D/etc/raddb ]; then cp -RP %D/%%EXAMPLESDIR%%/raddb %D/etc/raddb; echo '===> Bootstrapping default certificates, please wait...'; %D/etc/raddb/certs/bootstrap >/dev/null 2>&1; fi
 @exec chmod -R g-w,o-rwx %D/etc/raddb
 @exec if [ ! -d /var/log/radacct ]; then mkdir -p /var/log/radacct; chmod -R go= /var/log/radacct; fi

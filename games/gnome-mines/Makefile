@@ -25,4 +25,3 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.mines.gschema.xml
 
 .include <bsd.port.mk>
-

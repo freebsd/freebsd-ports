@@ -10,7 +10,8 @@ MASTER_SITES=	SF/torrus/torrus/
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	Data Series Processing Framework - think mrtg with xml configs
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
@@ -28,7 +29,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_GNOME=	libxml2
 USES=		perl5
 USE_PERL5=	run
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 
 USERS=		torrus
 GROUPS=		torrus
@@ -48,14 +50,15 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-pkgonly
 
 post-install:
-	${INSTALL} -d -m 2775 ${STAGEDIR}/var/log/torrus
-	${INSTALL} -d -m 775 ${STAGEDIR}/var/torrus
-	${INSTALL} -d -m 2775 ${STAGEDIR}/var/torrus/cache
-	${INSTALL} -d -m 2775 ${STAGEDIR}/var/torrus/collector_rrd
-	${INSTALL} -d -m 2775 ${STAGEDIR}/var/torrus/db
-	${INSTALL} -d -m 775 ${STAGEDIR}/var/torrus/reports
-	${INSTALL} -d -m 775 ${STAGEDIR}/var/torrus/session_data
-	${INSTALL} -d -m 2775 ${STAGEDIR}/var/torrus/session_data/lock
-	${INSTALL} -d -m 2775 ${STAGEDIR}/var/torrus/session_data/store
+	@${MKDIR} ${STAGEDIR}/var/torrus/session_data/store
+	@${MKDIR} ${STAGEDIR}/var/torrus/session_data/lock
+	@${MKDIR} ${STAGEDIR}/var/torrus/session_data
+	@${MKDIR} ${STAGEDIR}/var/torrus/reports
+	@${MKDIR} ${STAGEDIR}/var/torrus/db
+	@${MKDIR} ${STAGEDIR}/var/torrus/collector_rrd
+	@${MKDIR} ${STAGEDIR}/var/torrus/cache
+	@${MKDIR} ${STAGEDIR}/var/torrus
+	@${MKDIR} ${STAGEDIR}/var/run/torrus
+	@${MKDIR} ${STAGEDIR}/var/log/torrus
 
 .include <bsd.port.mk>

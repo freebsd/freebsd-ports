@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	jsmin
-PORTVERSION=	2.1.6
+PORTVERSION=	2.2.0
 CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vlad-fbsd@acheronmedia.com
 COMMENT=	JavaScript minifier written in Python
 
 LICENSE=	MIT
@@ -25,7 +25,7 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-regression-test:
+do-test:
 	@(cd ${WRKSRC}/${PORTNAME} && ${PYTHON_CMD} test.py)
 
 .include <bsd.port.mk>

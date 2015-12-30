@@ -604,15 +604,24 @@ post-configure: qmake-configure
 .  endif
 . endif # ${QT_DIST} == "base"
 
+pre-configure: qt5-pre-configure
+qt5-pre-configure:
 # Qt 5.3.2 introduced a check in mkspecs/features/create_cmake.prf that
 # requires tests/auto/cmake to be present, otherwise the configure stage will
 # fail.
 # Since we cannot extract tests/auto/cmake/ and exclude tests/ at the same
 # time, we have to disable the check in a cache file (the only way to get this
 # value through to the configure script in qtbase).
-pre-configure: qt5-pre-configure
-qt5-pre-configure:
 	${ECHO_CMD} 'CMAKE_MODULE_TESTS = -' > ${WRKSRC}/.qmake.cache
+# We piggyback on QMAKE_LIBDIR_FLAGS to make sure -L${WRKSRC}/lib is passed to
+# the linker before -L/usr/local/lib. By default, the opposite happens, which
+# is a problem when a Qt port is being upgraded, since an existing library
+# would end up being picked up instead of those built in ${WRKSRC}/lib. Since
+# qmake appends the value of QMAKE_LIBDIR to QMAKE_LIBDIR_FLAGS, we can use the
+# latter to get the linker path order right. qmake is smart enough to strip
+# occurrences of ${WRKSRC}/lib from .pc and .prl files when installing them.
+# See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
+	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${WRKSRC}/lib' >> ${WRKSRC}/.qmake.cache
 
 pre-install: qt-pre-install
 qt-pre-install:

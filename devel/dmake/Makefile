@@ -12,7 +12,6 @@ LICENSE=	GPLv1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mohawk2
-GH_PROJECT=	dmake
 GH_TAGNAME=	e5588b0
 
 USES=		autoreconf:autoconf

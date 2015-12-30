@@ -5,18 +5,18 @@ PORTNAME=	kdesvn
 DISTVERSION=	1.6.0
 PORTREVISION=	4
 CATEGORIES=	devel kde
-MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
+MASTER_SITES=	http://box.alwins-world.de/owncloud/index.php/s/3e6f4c2273b329c185ff25824277bf42/download?path=%2F1.6.0&files=kdesvn-1.6.0.tar.bz2&dummy=
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
-
-BROKEN=		unfetchable
 
 LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
 
 LICENSE=	GPLv2
 
 CONFLICTS=	qsvn-[0-9]*
+
+FETCH_ARGS=	-Fpr -o ${DISTFILES}
 
 USES=		cmake tar:bzip2
 CMAKE_ARGS+=	-DSUBVERSION_INCLUDE_DIR=${LOCALBASE}/include/subversion-1

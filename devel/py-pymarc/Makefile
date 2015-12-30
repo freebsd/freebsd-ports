@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymarc
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -19,7 +19,7 @@ NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} test.py
 
 .include <bsd.port.mk>

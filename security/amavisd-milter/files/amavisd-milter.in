@@ -37,7 +37,9 @@ start_postcmd="amavisd_milter_postcmd"
 
 amavisd_milter_postcmd()
 {
-	chmod ${amavisd_milter_socket_perm} ${amavisd_milter_socket}
+	if [ -e ${amavisd_milter_socket} ]; then
+		chmod ${amavisd_milter_socket_perm} ${amavisd_milter_socket}
+	fi
 }
 
 run_rc_command "$1"

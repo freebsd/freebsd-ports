@@ -1,0 +1,6 @@
+Burp is a backup and restore program.
+It uses librsync in order to save on the amount of space that is used
+by each backup. It also uses VSS (Volume Shadow Copy Service)
+to make snapshots when backing up Windows computers.
+
+WWW: http://burp.grke.org/

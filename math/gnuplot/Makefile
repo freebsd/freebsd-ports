@@ -2,6 +2,7 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -30,13 +31,12 @@ PORTEXAMPLES=	*
 
 # MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	CAIRO DOCS EXAMPLES GD GRIDBOX PDF PLOT THINSPLINES WX X11
+OPTIONS_DEFINE=	CAIRO DOCS EXAMPLES GD GRIDBOX PDF THINSPLINES WX X11
 GRIDBOX_DESC=		Use the gridbox optimization for hidden3d
-PLOT_DESC=		Enable plot support
 THINSPLINES_DESC=	Enable thin plate splines for grids in dgrid3d
 WX_DESC=		wxWidgets (formerly wxWindows) support
 
-OPTIONS_DEFAULT=CAIRO GD PLOT WX X11
+OPTIONS_DEFAULT=CAIRO GD WX X11
 OPTIONS_SUB=	yes
 
 CAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
@@ -52,11 +52,6 @@ GRIDBOX_CONFIGURE_OFF=	--disable-h3d-quadtree --enable-h3d-gridbox
 PDF_LIB_DEPENDS=	libpdf.so:${PORTSDIR}/print/pdflib
 PDF_CONFIGURE_ON=	--with-pdf=${LOCALBASE}
 PDF_CONFIGURE_OFF=	--without-pdf
-
-PLOT_USE=		XORG=xaw,xmu,xt,xext
-PLOT_LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils
-PLOT_CONFIGURE_ON=	--with-plot=${LOCALBASE}
-PLOT_CONFIGURE_OFF=	--without-plot
 
 THINSPLINES_CONFIGURE_ENABLE=	thin-splines
 

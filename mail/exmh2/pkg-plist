@@ -227,5 +227,3 @@ lib/exmh-%%EXMH_VERSION%%/widgets.tcl
 lib/exmh-%%EXMH_VERSION%%/xns.tcl
 lib/exmh-%%EXMH_VERSION%%/xnsgetmail.exp
 man/man1/exmh.1.gz
-@dirrm lib/exmh-%%EXMH_VERSION%%/bitmaps
-@dirrm lib/exmh-%%EXMH_VERSION%%/html

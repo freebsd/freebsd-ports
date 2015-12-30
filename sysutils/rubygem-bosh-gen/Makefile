@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bosh-gen
-PORTVERSION=	0.19.0
-PORTREVISION=	1
+PORTVERSION=	0.22.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +16,7 @@ RUN_DEPENDS=	rubygem-activesupport4>=4.0:${PORTSDIR}/devel/rubygem-activesupport
 		rubygem-bosh-template>=0:${PORTSDIR}/devel/rubygem-bosh-template \
 		rubygem-cyoi>=0.10:${PORTSDIR}/devel/rubygem-cyoi \
 		rubygem-fog>=1.11:${PORTSDIR}/devel/rubygem-fog \
-		rubygem-fog-aws>=0.1.1:${PORTSDIR}/net/rubygem-fog-aws \
+		rubygem-fog-aws>=0.7.6:${PORTSDIR}/net/rubygem-fog-aws \
 		rubygem-progressbar>=0:${PORTSDIR}/devel/rubygem-progressbar \
 		rubygem-readwritesettings>=3.0:${PORTSDIR}/devel/rubygem-readwritesettings \
 		rubygem-thor>=0:${PORTSDIR}/devel/rubygem-thor

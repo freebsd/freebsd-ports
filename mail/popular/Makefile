@@ -5,18 +5,16 @@ PORTNAME=	popular
 PORTVERSION=	1.5.5
 PORTREVISION=	7
 CATEGORIES=	mail
-MASTER_SITES=	http://www.remote.org/jochen/mail/popular/download/
+MASTER_SITES=	https://www.jochentopf.com/software/popular/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of programs for setting up large POP3 server systems
-
-BROKEN=		unfetchable
 
 BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
 
 CONFLICTS=	pserv-[0-9]* synce-librapi2-[0-9]*
 
-USES=		libtool perl5 gmake
+USES=		libtool perl5 gmake tar:bzip2
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 PDM_MODULES=	any master

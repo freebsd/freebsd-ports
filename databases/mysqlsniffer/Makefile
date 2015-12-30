@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MAINTAINER=	frederic.hardy@mageekbox.net
 COMMENT=	Tcpdump clone specifically for MySQL
 
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/${PORTNAME}
+WRKSRC_SUBDIR=	${PORTNAME}
 
 PLIST_FILES=	bin/mysqlsniffer
 

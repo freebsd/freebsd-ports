@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ccid
-PORTVERSION=	1.4.20
+PORTVERSION=	1.4.21
 CATEGORIES=	devel
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4140/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4148/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
@@ -24,14 +24,9 @@ CONFIGURE_ENV=	LIBUSB_CFLAGS="-I${LOCALBASE}/include" \
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_SUB=	VER=${PORTVERSION}
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-DISABLE_SIZE=	yes
-FETCH_CMD=	${LOCALBASE}/bin/wget -c -nc --no-check-certificate
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,use warnings;,," ${WRKSRC}/src/create_Info_plist.pl

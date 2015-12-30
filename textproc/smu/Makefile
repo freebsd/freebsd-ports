@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Gottox
-GH_PROJECT=	smu
 
 PLIST_FILES=	bin/smu man/man1/smu.1.gz
 

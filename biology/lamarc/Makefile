@@ -3,8 +3,8 @@
 
 PORTNAME=	lamarc
 PORTVERSION=	2.1.8
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://evolution.genetics.washington.edu/lamarc/download/

@@ -5,5 +5,5 @@ include/libwpg-0.3/libwpg/WPGraphics.h
 include/libwpg-0.3/libwpg/libwpg.h
 lib/libwpg-0.3.so
 lib/libwpg-0.3.so.3
-lib/libwpg-0.3.so.3.0.0
+lib/libwpg-0.3.so.3.0.1
 libdata/pkgconfig/libwpg-0.3.pc

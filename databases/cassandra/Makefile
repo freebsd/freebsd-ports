@@ -16,6 +16,9 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${JAVALIBDIR}/snappy-java.jar:${PORTSDIR}/archivers/snappy-java
 
+DEPRECATED=	1.2.x has reached EOL, upgrade to a supported version of Cassandra
+EXPIRATION_DATE=	2016-03-27
+
 JAVA_VERSION=	1.7
 JAVA_VENDOR=	openjdk
 REINPLACE_ARGS=	-i ''

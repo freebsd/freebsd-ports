@@ -14,7 +14,6 @@ LICENSE=	BSD2CLAUSE
 
 USES=			tar:bzip2 uidfix
 USE_RUBY=		yes
-USE_RUBY_FEATURES=	optparse
 
 MAKE_ARGS=	PREFIX="${PREFIX}"
 

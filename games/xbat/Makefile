@@ -3,7 +3,7 @@
 
 PORTNAME=	xbat
 PORTVERSION=	1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/hrs
 DISTNAME=	xev111
@@ -19,5 +19,6 @@ USES=		imake
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/Xev111
 ALL_TARGET=	xbat
+USE_GCC=	yes # segfaults when compiled with clang
 
 .include <bsd.port.mk>

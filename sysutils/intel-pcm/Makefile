@@ -3,6 +3,7 @@
 
 PORTNAME=	intel-pcm
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/imp
 DISTNAME=	IntelPerformanceCounterMonitor-PCM-V${PORTVERSION}
@@ -12,8 +13,7 @@ COMMENT=	Intel PCM toolkit
 
 LICENSE=	BSD3CLAUSE
 
-USES=		compiler:c++11-lang dos2unix gmake zip
-DOS2UNIX_FILES=	cpucounters.cpp cpucounters.h
+USES=		compiler:c++11-lang gmake
 
 ONLY_FOR_ARCHS=	i386 amd64
 

@@ -43,6 +43,8 @@ RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
 
 PLIST_SUB=	EXMH_VERSION=${PORTVERSION}
 
+NO_ARCH=	yes
+
 .if defined(JAPANESE_EXMH)
 do-build:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} TCLSH=${TCLSH} \
@@ -58,6 +60,5 @@ do-build:
 do-install:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${STAGEDIR}${PREFIX} \
 		WRKSRC=${WRKSRC} ${SH} ${SCRIPTDIR}/install
-
 
 .include <bsd.port.mk>

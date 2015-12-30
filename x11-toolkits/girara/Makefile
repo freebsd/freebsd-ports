@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	girara
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	http://pwmt.org/projects/girara/download/
 
@@ -20,14 +20,12 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
-.include <bsd.port.options.mk>
-
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|$${LIBDIR}/pkgconfig|${PREFIX}/libdata/pkgconfig|g'\
 		${WRKSRC}/Makefile
-.if ! ${PORT_OPTIONS:MNLS}
+
+post-patch-NLS-off: .SILENT
 	${REINPLACE_CMD} -e '/-C po/d'\
 		${WRKSRC}/Makefile
-.endif
 
 .include <bsd.port.mk>

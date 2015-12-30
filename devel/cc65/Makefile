@@ -3,8 +3,8 @@
 
 PORTNAME=	cc65
 PORTVERSION=	2.13.3
-PORTREVISION=	1
 DISTVERSIONPREFIX=	sources-
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://bj.spline.de/cc65/ \
 		http://cc65.oldos.net/ \

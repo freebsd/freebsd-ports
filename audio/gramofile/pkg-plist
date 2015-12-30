@@ -1,4 +1,4 @@
 bin/gramofile
 bin/bplay_gramo
 bin/brec_gramo
-%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README

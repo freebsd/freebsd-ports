@@ -22,8 +22,6 @@ UPNP_DESC=	Build with UPNP support
 QRCODES_DESC=	Build with QR code display
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	namecoin
-GH_PROJECT=	namecoin
 
 USES=		gmake compiler:c++11-lib
 MAKE_JOBS_UNSAFE=yes

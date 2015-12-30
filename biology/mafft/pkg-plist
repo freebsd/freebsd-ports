@@ -51,7 +51,6 @@ libexec/mafft/tbfast
 libexec/mafft/version
 man/man1/mafft-homologs.1.gz
 man/man1/mafft.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/license
 %%PORTDOCS%%%%DOCSDIR%%/readme
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.dpparttree
@@ -59,6 +58,7 @@ man/man1/mafft.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.fftnsi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.gins1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.ginsi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.ginsi.allowshift
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.lins1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.linsi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.parttree

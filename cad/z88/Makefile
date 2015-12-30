@@ -15,9 +15,6 @@ COMMENT=	Compact Finite Element Analysis System
 
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
-BROKEN=		Unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2015-11-26
 NO_WRKSUBDIR=	yes
 USES=		pkgconfig
 USE_GL=		glu
@@ -27,11 +24,14 @@ USE_GNOME=	gtk20
 BROWSER?=	firefox3
 XEDITOR?=	gedit
 
-OPTIONS_DEFINE=	DOCS
-
 Z88_BINS=	z88f z88i1 z88i2 z88com z88d z88e z88g z88h z88n z88o	\
 		z88x z88v
 Z88_DATA=	z88.fcd z88.dyn *.dxf *.txt
+
+PORTDATA=	*
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${CP} ${WRKSRC}/z88.fcd.linux ${WRKSRC}/z88.fcd
@@ -65,6 +65,8 @@ do-install:
 	${INSTALL_PROGRAM} ${Z88_BINS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${Z88_DATA:S|^|${WRKSRC}/|} ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.htm ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.gif ${STAGEDIR}${DOCSDIR}

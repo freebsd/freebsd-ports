@@ -3,21 +3,24 @@
 
 PORTNAME=	apolicy
 PORTVERSION=	0.73
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python
 MASTER_SITES=	http://download.gna.org/apolicy/%SUBDIR%/ \
 		http://www.chifeng.name/dist/apolicy/%SUBDIR%/ \
-
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ACL system for Postfix, as a policy daemon
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf \
-		${PYTHON_SITELIBDIR}/IPy.py:${PORTSDIR}/net-mgmt/py-ipy
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipy>=0:${PORTSDIR}/net-mgmt/py-ipy \
+		${PYTHON_PKGNAMEPREFIX}pyspf>=0:${PORTSDIR}/mail/py-pyspf
 
 USES=		python twisted
 USE_PYTHON=	distutils
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	apolicyd
 

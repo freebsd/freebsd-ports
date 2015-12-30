@@ -5,17 +5,18 @@ PORTNAME=	cadubi
 PORTVERSION=	1.3
 PORTREVISION=	2
 CATEGORIES=	graphics editors
-MASTER_SITES=	http://langworth.com/pub/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII drawing utility
-
-BROKEN=		unfetchable
 
 LICENSE=	ART10
 
 RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 
+GH_ACCOUNT=	statico
+GH_PROJECT=	cadubi
+GH_TAGNAME=	v1.3
+USE_GITHUB=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	cadubi
 NO_BUILD=	yes

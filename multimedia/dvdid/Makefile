@@ -15,6 +15,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
@@ -23,6 +24,7 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} dvdid.tag ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html/api

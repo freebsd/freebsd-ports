@@ -1,0 +1,6 @@
+The StateMachines ActiveModel integration is useful for both standalone usage
+and for providing the base implementation for ORMs which implement the
+ActiveModel API. This integration adds support for validation errors and dirty
+attribute tracking.
+
+WWW: https://github.com/state-machines/state_machines-activemodel

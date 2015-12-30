@@ -1,3 +1,4 @@
+%%HACKLINK%%bin/nethack
 @mode 555
 bin/%%HACKNAME%%
 @owner games
@@ -148,11 +149,11 @@ bin/%%HACKNAME%%
 @mode
 @owner
 @group
-man/man6/dgn_comp.6.gz
-man/man6/dlb.6.gz
-man/man6/lev_comp.6.gz
+man/man6/dgn_comp%%HACKEXT%%.6.gz
+man/man6/dlb%%HACKEXT%%.6.gz
+man/man6/lev_comp%%HACKEXT%%.6.gz
 man/man6/%%HACKNAME%%.6.gz
-man/man6/recover.6.gz
+man/man6/recover%%HACKEXT%%.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
 @dir(games,games,0775) %%DATADIR%%/save
 @dir(games,games,0775) %%DATADIR%%

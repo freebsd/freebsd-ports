@@ -10,6 +10,8 @@ MASTER_SITES=	LOCAL/hrs
 MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
 COMMENT=	Shisen-sho puzzle game for X11
 
+BROKEN=		fails to start
+
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sharedstatedir="${DATADIR}"

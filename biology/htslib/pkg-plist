@@ -2,10 +2,12 @@ bin/bgzip
 bin/htsfile
 bin/tabix
 include/htslib/bgzf.h
+include/htslib/cram.h
 include/htslib/faidx.h
 include/htslib/hfile.h
 include/htslib/hts.h
 include/htslib/hts_defs.h
+include/htslib/kbitset.h
 include/htslib/kfunc.h
 include/htslib/khash.h
 include/htslib/khash_str2int.h

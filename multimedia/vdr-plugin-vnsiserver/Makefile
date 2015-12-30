@@ -10,7 +10,6 @@ COMMENT=	Video Disk Recorder - VNSI server plugin
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FernetMenta
-GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	36e2b61
 
 USES=		pkgconfig

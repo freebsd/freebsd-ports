@@ -1,6 +1,6 @@
---- configure.orig	2003-05-18 19:25:34.000000000 +0200
-+++ configure	2013-11-27 17:22:07.000000000 +0100
-@@ -253,7 +253,7 @@
+--- configure.orig	2003-05-18 17:25:34 UTC
++++ configure
+@@ -253,7 +253,7 @@ exec 6>&1
  #
  # Initializations.
  #
@@ -9,7 +9,7 @@
  ac_config_libobj_dir=.
  cross_compiling=no
  subdirs=
-@@ -1712,15 +1712,15 @@
+@@ -1712,15 +1712,15 @@ PACKAGE_DATE=`date | sed 's/^[^ ]* \([^ 
  
  
  VISIT="/usr/lib/news /var/news/etc /usr/spool/news /usr/share/news \
@@ -29,13 +29,14 @@
  
  
  # Check whether --with-newshome or --without-newshome was given.
-@@ -1890,7 +1890,11 @@
+@@ -1890,7 +1890,12 @@ echo $ECHO_N "checking and found INN... 
  	    # it has been reported that some INN 2.1 had its own VERSION
  	    VERSION_save="$VERSION"
  	    VERSION=
 +            prefix_orig="${prefix}"
 +            exec_prefix_orig="${exec_prefix}"
  	    . $NEWSCONFIG
++	    unset TMPDIR
 +            prefix="${prefix_orig}"
 +            exec_prefix="${exec_prefix_orig}"
  	    INN_VERSION="$VERSION"

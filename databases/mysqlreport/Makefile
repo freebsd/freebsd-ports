@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		perl5 shebangfix
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/${PORTNAME}
+WRKSRC_SUBDIR=	${PORTNAME}
 
 PLIST_FILES=	bin/mysqlreport
 PORTDOCS=	COPYING mysqlreportguide.html mysqlreportdoc.html

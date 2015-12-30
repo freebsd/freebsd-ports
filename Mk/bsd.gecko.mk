@@ -322,6 +322,13 @@ MOZ_OPTIONS+=	--enable-startup-notification
 MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .endif
 
+.if ${PORT_OPTIONS:MFFMPEG}
+# dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
+RUN_DEPENDS+=	ffmpeg>=0.8,1:${PORTSDIR}/multimedia/ffmpeg
+.else
+MOZ_OPTIONS+=	--disable-ffmpeg
+.endif
+
 .if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER1?=good libav
 MOZ_OPTIONS+=	--enable-gstreamer=1.0

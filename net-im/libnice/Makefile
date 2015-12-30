@@ -45,4 +45,3 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
-

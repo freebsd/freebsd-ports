@@ -8,6 +8,7 @@
     SUBDIR += bip
     SUBDIR += bitchx
     SUBDIR += bitlbee
+    SUBDIR += bitlbee-facebook
     SUBDIR += bnc
     SUBDIR += bopm
     SUBDIR += cgiirc
@@ -96,6 +97,7 @@
     SUBDIR += py-fishcrypt
     SUBDIR += py-gozerbot
     SUBDIR += py-irc
+    SUBDIR += py-limnoria
     SUBDIR += py-supybot
     SUBDIR += py-supybot-plugins
     SUBDIR += quassel

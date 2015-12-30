@@ -20,7 +20,6 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 USES=		ada gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	tgingold
-GH_PROJECT=	ghdl
 
 GNU_CONFIGURE=	yes
 GCCVER=		4.9.2

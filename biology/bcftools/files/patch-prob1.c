@@ -1,15 +1,13 @@
---- prob1.c.orig	2015-04-28 01:28:23 UTC
+--- prob1.c.orig	2015-12-15 21:42:34 UTC
 +++ prob1.c
-@@ -33,6 +33,14 @@ THE SOFTWARE.  */
+@@ -33,6 +33,12 @@ THE SOFTWARE.  */
  #include <zlib.h>
  #include "prob1.h"
  
 +#include <sys/param.h>
-+#ifdef __FreeBSD__
-+#	if __FreeBSD_version < 1000034
-+#		define logl(x) log(x)
-+#		define expl(x) exp(x)
-+#	endif
++#if defined(__FreeBSD__) && (__FreeBSD_version < 1000034)
++#	define logl(x) log(x)
++#	define expl(x) exp(x)
 +#endif
 +
  // #include "kstring.h"

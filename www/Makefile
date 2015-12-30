@@ -1514,6 +1514,7 @@
     SUBDIR += py-blogofile
     SUBDIR += py-bottle
     SUBDIR += py-bottle-cork
+    SUBDIR += py-cachecontrol
     SUBDIR += py-cactus
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
@@ -1574,6 +1575,7 @@
     SUBDIR += py-django-sekizai
     SUBDIR += py-django-signals-ahoy
     SUBDIR += py-django-simple-captcha
+    SUBDIR += py-django-simple-history
     SUBDIR += py-django-sortedm2m
     SUBDIR += py-django-statici18n
     SUBDIR += py-django-storages

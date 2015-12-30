@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/tortoisehg/targz/downloads/
 #MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
@@ -12,15 +12,15 @@ COMMENT=	THg script from TortoiseHG
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.10.2:${PORTSDIR}/devel/py-qt4-core \
-		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.7.2:${PORTSDIR}/devel/py-qt4-qscintilla2 \
-		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.10.2:${PORTSDIR}/net/py-qt4-network \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.10.2:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-xml>=4.10.2:${PORTSDIR}/textproc/py-qt4-xml
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.10.2:${PORTSDIR}/devel/py-qt4-core \
-		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.7.2:${PORTSDIR}/devel/py-qt4-qscintilla2 \
-		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.10.2:${PORTSDIR}/net/py-qt4-network \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.10.2:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.11.4:${PORTSDIR}/devel/py-qt4-core \
+		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.9.1:${PORTSDIR}/devel/py-qt4-qscintilla2 \
+		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.11.4:${PORTSDIR}/net/py-qt4-network \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.11.4:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		${PYTHON_PKGNAMEPREFIX}qt4-xml>=4.11.4:${PORTSDIR}/textproc/py-qt4-xml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.11.4:${PORTSDIR}/devel/py-qt4-core \
+		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.9.1:${PORTSDIR}/devel/py-qt4-qscintilla2 \
+		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.11.4:${PORTSDIR}/net/py-qt4-network \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.11.4:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		hg:${PORTSDIR}/devel/mercurial \
 		${PYTHON_PKGNAMEPREFIX}iniparse>=0.4:${PORTSDIR}/devel/py-iniparse \
 		pygmentize:${PORTSDIR}/textproc/py-pygments

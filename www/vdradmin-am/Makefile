@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vdradmin-am
-PORTVERSION=	3.6.9
-PORTREVISION=	1
+PORTVERSION=	3.6.10
 CATEGORIES=	www
 MASTER_SITES=	http://andreas.vdr-developer.org/vdradmin-am/download/
 

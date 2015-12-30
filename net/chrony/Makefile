@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chrony
-PORTVERSION=	1.31.1
+PORTVERSION=	2.2
 CATEGORIES=	net
 MASTER_SITES=	http://download.tuxfamily.org/chrony/
 
@@ -19,11 +19,19 @@ USES=		cpe gmake makeinfo readline
 CPE_VENDOR=	tuxfamily
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--chronyvardir=/var/db/${PORTNAME} \
+		--infodir=${PREFIX}/info \
 		--sysconfdir=${PREFIX}/etc --mandir=${MANPREFIX}/man \
 		--datarootdir=${DATADIR} --docdir=${DOCSDIR}
 USE_RC_SUBR=	chronyd
 
-PORTDOCS=	COPYING README chrony.txt
+ALL_TARGET=	all docs
+INSTALL_TARGET=	install install-docs
+INFO=		chrony
+EXTRAPORTDOCS=	FAQ NEWS README
+PORTDOCS=	chrony.html chrony.txt ${EXTRAPORTDOCS}
+PORTEXAMPLES=	chrony.conf.example1 chrony.conf.example2 \
+	chrony.conf.example3 chrony.keys.example
 
 # XXX: there are also other potentially useful options worth looking into:
 #  --without-nss        Don't use NSS even if it is available
@@ -38,10 +46,12 @@ IPV6_CONFIGURE_OFF=	--disable-ipv6
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/chronyc
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/chronyd
-
-post-install:
-.for f in chrony.conf.example chrony.conf.example2 chrony.keys.example
-	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${PREFIX}/etc
-.endfor
+	cd ${WRKSRC}/${f} && \
+		${INSTALL_DATA} ${EXTRAPORTDOCS} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && \
+		${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && \
+		${INSTALL_DATA} chrony.conf.example3 ${STAGEDIR}${PREFIX}/etc/chrony.conf.sample
 
 .include <bsd.port.mk>
