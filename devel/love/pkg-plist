@@ -1,5 +1,4 @@
 bin/love
-lib/liblove.a
 lib/liblove.so
 lib/liblove.so.0
 lib/liblove.so.0.0.0

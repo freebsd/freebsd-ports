@@ -213,21 +213,3 @@
 %%INFINITY%%%%DATADIR%%/infinity/Themes/Default/tiny_button_c.bmp
 %%INFINITY%%%%DATADIR%%/infinity/Themes/Default/tiny_button_l.bmp
 %%INFINITY%%%%DATADIR%%/infinity/Themes/Default/tiny_button_r.bmp
-%%MARATHON%%@dirrm %%DATADIR%%/marathon/Tracks
-%%MARATHON%%@dirrm %%DATADIR%%/marathon/Themes/Default/CVS
-%%MARATHON%%@dirrm %%DATADIR%%/marathon/Themes/Default
-%%MARATHON%%@dirrm %%DATADIR%%/marathon/Themes
-%%MARATHON%%@dirrm %%DATADIR%%/marathon/Scripts
-%%MARATHON%%@dirrm %%DATADIR%%/marathon
-%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Themes/Default/CVS
-%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Themes/Default
-%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Themes
-%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Scripts
-%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Physics Models
-%%DURANDAL%%@dirrm %%DATADIR%%/durandal
-%%INFINITY%%@dirrm %%DATADIR%%/infinity/Themes/Default/CVS
-%%INFINITY%%@dirrm %%DATADIR%%/infinity/Themes/Default
-%%INFINITY%%@dirrm %%DATADIR%%/infinity/Themes
-%%INFINITY%%@dirrm %%DATADIR%%/infinity/Scripts
-%%INFINITY%%@dirrm %%DATADIR%%/infinity/Physics Models
-%%INFINITY%%@dirrm %%DATADIR%%/infinity

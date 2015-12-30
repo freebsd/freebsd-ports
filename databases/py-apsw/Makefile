@@ -9,17 +9,16 @@ CATEGORIES=	databases python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rnejdl@ringofsaturn.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APSW stands for Another Python SQLite Wrapper
+
+LICENSE=	ZLIB
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}_r1
 PYDISTUTILS_EGGINFO=	apsw-${PORTVERSION}.post1-py${PYTHON_VER}.egg-info
-USES=		python zip
+USES=		localbase python zip
 USE_PYTHON=	distutils
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

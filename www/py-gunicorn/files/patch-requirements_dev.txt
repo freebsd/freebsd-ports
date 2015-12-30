@@ -1,5 +1,0 @@
---- ./requirements_dev.txt.orig	2012-11-20 18:50:15.000000000 +1100
-+++ ./requirements_dev.txt	2012-11-20 18:50:21.000000000 +1100
-@@ -1,2 +1 @@
- pytest
--pytest-cov

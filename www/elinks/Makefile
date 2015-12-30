@@ -8,14 +8,14 @@ CATEGORIES=	www
 MASTER_SITES=	http://elinks.or.cz/download/
 
 MAINTAINER=	beat@FreeBSD.org
-COMMENT=	Elinks - links text WWW browser with enhancements
+COMMENT=	Links text WWW browser with enhancements
 
 GNU_CONFIGURE=	yes
-USES=		bison cpe gmake tar:bzip2
+USES=		bison cpe execinfo gmake localbase tar:bzip2
 USE_OPENSSL=	yes
+CONFIGURE_ARGS=	--without-zlib
 
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-lexecinfo
 
 SAMBA_PORT?=	net/samba36
 
@@ -24,6 +24,8 @@ OPTIONS_DEFINE=		88COLORS 256COLORS SPIDERMONKEY XBELMARKS LOCAL_CGI \
 			HIGHLIGHT IDN NOROOT FASTMEM PERL \
 			LUA GUILE ICONV MOUSE NLS
 OPTIONS_DEFAULT=	88COLORS 256COLORS FTP EXMODE HIGHLIGHT FASTMEM MOUSE
+OPTIONS_SUB=		yes
+
 88COLORS_DESC=		88 color support
 256COLORS_DESC=		256 color support
 SPIDERMONKEY_DESC=	ECMAScript support (via SpiderMonkey)
@@ -35,168 +37,70 @@ HIGHLIGHT_DESC=		HTML highlighting using DOM engine
 NOROOT_DESC=		Prevention of usage by root
 FASTMEM_DESC=		Fast memory allocation functions
 
-.include <bsd.port.options.mk>
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
-CONFIGURE_ARGS+=	--without-zlib
+GUILE_LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
+GUILE_CONFIGURE_WITH=	guile
 
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-USES+=		gettext
-.else
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=	--disable-nls
-.endif
+LUA_USES=		lua:51
+LUA_CONFIGURE_WITH=	lua
+LUA_CPPFLAGS=		-I${LUA_INCDIR}
+LUA_LDFLAGS=		-L${LUA_LIBDIR}
 
-#.if ${PORT_OPTIONS:MRUBY}
-#LIB_DEPENDS+=	ruby18:${PORTSDIR}/lang/ruby18
-#CONFIGURE_ARGS+=	--with-ruby
-#.else
-#CONFIGURE_ARGS+=	--without-ruby
-#.endif
+PERL_USES=		perl5
+PERL_CONFIGURE_WITH=	perl
 
-.if ${PORT_OPTIONS:MGUILE}
-LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile
-CONFIGURE_ARGS+=	--with-guile
-.else
-CONFIGURE_ARGS+=	--without-guile
-.endif
+FASTMEM_CONFIGURE_ON=	--enable-fastmem
 
-.if ${PORT_OPTIONS:MLUA}
-USES+=		lua:51
-CONFIGURE_ARGS+=	--with-lua
-CPPFLAGS+=	-I${LUA_INCDIR}
-LDFLAGS+=	-L${LUA_LIBDIR}
-.else
-CONFIGURE_ARGS+=	--without-lua
-.endif
+IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_CONFIGURE_WITH=	idn
 
-.if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
-CONFIGURE_ARGS+=	--with-perl
-.else
-CONFIGURE_ARGS+=	--without-perl
-.endif
+NOROOT_CONFIGURE_ON=	--enable-no-root
 
-.if ${PORT_OPTIONS:MFASTMEM}
-CONFIGURE_ARGS+=	--enable-fastmem
-.endif
+HIGHLIGHT_CONFIGURE_ON=	--enable-html-highlight
 
-.if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
-CONFIGURE_ARGS+=	--with-idn
-.else
-CONFIGURE_ARGS+=	--without-idn
-.endif
+EXMODE_CONFIGURE_ON=	--enable-exmode
 
-.if ${PORT_OPTIONS:MNOROOT}
-CONFIGURE_ARGS+=	--enable-no-root
-.endif
+SMB_RUN_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
+SMB_BUILD_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
+SMB_CONFIGURE_ENABLE=	smb
 
-.if ${PORT_OPTIONS:MHIGHLIGHT}
-CONFIGURE_ARGS+=	--enable-html-highlight
-.endif
+FSP_RUN_DEPENDS=	${LOCALBASE}/lib/libfsplib.a:${PORTSDIR}/net/fsplib
+FSP_BUILD_DEPENDS=	${LOCALBASE}/lib/libfsplib.a:${PORTSDIR}/net/fsplib
+FSP_CONFIGURE_ENABLE=	fsp
 
-.if ${PORT_OPTIONS:MEXMODE}
-CONFIGURE_ARGS+=	--enable-exmode
-.endif
+FTP_CONFIGURE_ENABLE=	ftp
 
-.if ${PORT_OPTIONS:MSMB}
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
-BUILD_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
-CONFIGURE_ARGS+=	--enable-smb
-.else
-CONFIGURE_ARGS+=	--disable-smb
-.endif
+NNTP_CONFIGURE_ENABLE=	nntp
 
-.if ${PORT_OPTIONS:MFSP}
-RUN_DEPENDS+=	${LOCALBASE}/lib/libfsplib.a:${PORTSDIR}/net/fsplib
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libfsplib.a:${PORTSDIR}/net/fsplib
-CONFIGURE_ARGS+=	--enable-fsp
-.else
-CONFIGURE_ARGS+=	--disable-fsp
-.endif
+BITTORRENT_CONFIGURE_ENABLE=	bittorrent
 
-.if ${PORT_OPTIONS:MFTP}
-CONFIGURE_ARGS+=	--enable-ftp
-.else
-CONFIGURE_ARGS+=	--disable-ftp
-.endif
+GOPHER_CONFIGURE_ENABLE=	gopher
 
-.if ${PORT_OPTIONS:MNNTP}
-CONFIGURE_ARGS+=	--enable-nntp
-.else
-CONFIGURE_ARGS+=	--disable-nntp
-.endif
+MOUSE_CONFIGURE_ENABLE=	mouse
 
-.if ${PORT_OPTIONS:MBITTORRENT}
-CONFIGURE_ARGS+=	--enable-bittorrent
-.else
-CONFIGURE_ARGS+=	--disable-bittorrent
-.endif
+FINGER_CONFIGURE_ENABLE=	finger
 
-.if ${PORT_OPTIONS:MGOPHER}
-CONFIGURE_ARGS+=	--enable-gopher
-.else
-CONFIGURE_ARGS+=	--disable-gopher
-.endif
+LOCAL_CGI_CONFIGURE_ENABLE=	cgi
 
-.if ${PORT_OPTIONS:MMOUSE}
-CONFIGURE_ARGS+=	--enable-mouse
-.else
-CONFIGURE_ARGS+=	--disable-mouse
-.endif
+XBELMARKS_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+XBELMARKS_CONFIGURE_ON=	--enable-xbel --with-expat
+XBELNARKS_CONFIGURE_OFF=--disable-xbel
 
-.if ${PORT_OPTIONS:MFINGER}
-CONFIGURE_ARGS+=	--enable-finger
-.else
-CONFIGURE_ARGS+=	--disable-finger
-.endif
+256COLORS_CONFIGURE_ON=	--enable-256-colors
 
-.if ${PORT_OPTIONS:MLOCAL_CGI}
-CONFIGURE_ARGS+=	--enable-cgi
-.else
-CONFIGURE_ARGS+=	--disable-cgi
-.endif
+88COLORS_CONFIGURE_ON=	--enable-88-colors
 
-.if ${PORT_OPTIONS:MXBELMARKS}
-LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
-CONFIGURE_ARGS+=	--enable-xbel --with-expat
-.else
-CONFIGURE_ARGS+=	--disable-xbel
-.endif
+SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey17
+SPIDERMONKEY_RUN_DEPENDS=	js:${PORTSDIR}/lang/spidermonkey17
+SPIDERMONKEY_LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr
+SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/nspr
+SPIDERMONKEY_LDFLAGS=		-lnspr4 -pthread -lpthread -lm
+SPIDERMONKEY_CONFIGURE_ON=	--enable-sm-scripting --with-spidermonkey
+SPIDERMONKEY_CONFIGURE_OFF=	--disable-sm-scripting --without-spidermonkey
 
-.if ${PORT_OPTIONS:M256COLORS}
-CONFIGURE_ARGS+=	--enable-256-colors
-.endif
-
-.if ${PORT_OPTIONS:M88COLORS}
-CONFIGURE_ARGS+=	--enable-88-colors
-.endif
-
-.if ${PORT_OPTIONS:MSPIDERMONKEY}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey17
-RUN_DEPENDS+=	js:${PORTSDIR}/lang/spidermonkey17
-LIB_DEPENDS+=	libnspr4.so:${PORTSDIR}/devel/nspr
-CFLAGS+=	-I${LOCALBASE}/include/nspr
-LDFLAGS+=	-lnspr4 -pthread -lpthread -lm
-CONFIGURE_ARGS+=	--enable-sm-scripting --with-spidermonkey
-.else
-CONFIGURE_ARGS+=	--disable-sm-scripting --without-spidermonkey
-.endif
-
-.if ${PORT_OPTIONS:MICONV}
-USES+=			iconv
-CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
-.endif
-
-#
-# Elinks will try to use it if exists
-#
-.if exists(/usr/include/execinfo.h)
-LDFLAGS+=	-lexecinfo
-.elif exists(${LOCALBASE}/include/execinfo.h)
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
-.endif
+ICONV_USES=		iconv
+ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 
 .include <bsd.port.mk>

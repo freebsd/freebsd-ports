@@ -11,7 +11,6 @@ COMMENT=	MsgPack binary serialization library in a self-contained header
 LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
-GH_PROJECT=	msgpuck
 GH_ACCOUNT=	tarantool
 
 USES=		cmake

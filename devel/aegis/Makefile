@@ -3,10 +3,10 @@
 
 PORTNAME=	aegis
 PORTVERSION=	4.25
+DISTVERSIONSUFFIX=	.D510
 PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
-DISTVERSIONSUFFIX=	.D510
 
 MAINTAINER=	aryeh.friedman@gmail.com
 COMMENT=	Transaction-based software configuration management system

@@ -3,7 +3,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -16,7 +16,6 @@ LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 USE_LDCONFIG=	yes
 USES=		gmake libtool pkgconfig tar:bzip2
-USE_GCC=	any
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oss
@@ -114,6 +113,11 @@ V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedi
 V4L_CONFIGURE_ENABLE=		v4l
 
 .include <bsd.port.pre.mk>
+
+#Disable mmx on FreeBSD 10.1 due to a transient bug in clang
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
+CONFIGURE_ARGS+=	--disable-mmx
+.endif
 
 .if empty(ICONV_LIB)
 CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no \

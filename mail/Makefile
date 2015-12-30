@@ -511,8 +511,8 @@
     SUBDIR += py-milter
     SUBDIR += py-notmuch
     SUBDIR += py-ppolicy
+    SUBDIR += py-pyspf
     SUBDIR += py-spambayes
-    SUBDIR += py-spf
     SUBDIR += py-turbomail
     SUBDIR += py-twistedMail
     SUBDIR += py-zope.sendmail
@@ -589,6 +589,7 @@
     SUBDIR += rubygem-mail
     SUBDIR += rubygem-mail25
     SUBDIR += rubygem-mail_room
+    SUBDIR += rubygem-mailboxer
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-pony
     SUBDIR += rubygem-rmail

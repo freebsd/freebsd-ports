@@ -186,7 +186,6 @@
     SUBDIR += ngraph-fonts
     SUBDIR += nhocr
     SUBDIR += nkf
-    SUBDIR += ochusha
     SUBDIR += onew
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Date-Japanese-Holiday

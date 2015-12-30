@@ -1839,9 +1839,9 @@ lib/python3.3/lib-dynload/time.so
 lib/python3.3/lib-dynload/unicodedata.so
 %%NO_DEBUG%%lib/python3.3/lib-dynload/xxlimited.so
 lib/python3.3/lib-dynload/zlib.so
-lib/python3.3/lib2to3/Grammar3.3.5.final.0.pickle
+lib/python3.3/lib2to3/Grammar3.3.6.final.0.pickle
 lib/python3.3/lib2to3/Grammar.txt
-lib/python3.3/lib2to3/PatternGrammar3.3.5.final.0.pickle
+lib/python3.3/lib2to3/PatternGrammar3.3.6.final.0.pickle
 lib/python3.3/lib2to3/PatternGrammar.txt
 lib/python3.3/lib2to3/__init__.py
 lib/python3.3/lib2to3/__main__.py

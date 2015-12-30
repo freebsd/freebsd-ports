@@ -1,0 +1,24 @@
+%%ETCDIR%%/autoupgrade/server/win32/script
+%%ETCDIR%%/autoupgrade/server/win64/script
+%%ETCDIR%%/burp-server.conf
+%%ETCDIR%%/burp.conf
+%%ETCDIR%%/clientconfdir/incexc/example
+%%ETCDIR%%/clientconfdir/testclient
+%%ETCDIR%%/notify_script
+%%ETCDIR%%/ssl_extra_checks_script
+%%ETCDIR%%/summary_script
+%%ETCDIR%%/timer_script
+%%ETCDIR%%/CA.cnf
+man/man8/bedup.8.gz
+man/man8/burp.8.gz
+man/man8/burp_ca.8.gz
+man/man8/vss_strip.8.gz
+sbin/bedup
+sbin/burp
+sbin/burp_ca
+sbin/vss_strip
+@dir %%ETCDIR%%/CA-client
+@dir %%ETCDIR%%/autoupgrade/client
+@dir %%ETCDIR%%/autoupgrade/server/win32/1.4.40
+@dir %%ETCDIR%%/autoupgrade/server/win64/1.4.40
+@dir /var/spool/burp

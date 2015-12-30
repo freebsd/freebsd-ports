@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/webtools MOZILLA/webtools/archived
 
@@ -202,9 +203,8 @@ do-install:	.SILENT
 	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
 	@${MKDIR} ${EMPTY_DIRS_LIST:S!^!${STAGEDIR}${WWWDIR}/!}
 
-.if ${PORT_OPTIONS:MCONTRIB}
+do-install-CONTRIB-on:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/contrib
 	(cd ${WRKSRC}/contrib && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/contrib)
-.endif
 
 .include <bsd.port.post.mk>

@@ -1,8 +1,4 @@
-@owner root
-@group games
-@mode 2755
-bin/xbat
-@mode 0664
+@(,games,2755) bin/xbat
 lib/X11/Xbat/Domo/domoX0201.dat
 lib/X11/Xbat/Domo/domoX0202.dat
 lib/X11/Xbat/Domo/domoX0203.dat
@@ -694,14 +690,10 @@ lib/X11/Xbat/Map/kuuchuu_map6.dat
 lib/X11/Xbat/Map/kuuchuu_map7.dat
 lib/X11/Xbat/Map/kuuchuu_map8.dat
 lib/X11/Xbat/Map/kuuchuu_map9.dat
-@mode 0755
-lib/X11/Xbat/Score/top10-0.txt
-lib/X11/Xbat/Score/top10-1.txt
-lib/X11/Xbat/Score/top10-2.txt
-lib/X11/Xbat/Score/top10-3.txt
-lib/X11/Xbat/Score/top10-4.txt
-@dirrm lib/X11/Xbat/Domo
-@dirrm lib/X11/Xbat/Image
-@dirrm lib/X11/Xbat/Map
-@dirrm lib/X11/Xbat/Score
-@dirrm lib/X11/Xbat
+@sample(,games,664) /var/games/xbat/Score/top10-0.txt.sample
+@sample(,games,664) /var/games/xbat/Score/top10-1.txt.sample
+@sample(,games,664) /var/games/xbat/Score/top10-2.txt.sample
+@sample(,games,664) /var/games/xbat/Score/top10-3.txt.sample
+@sample(,games,664) /var/games/xbat/Score/top10-4.txt.sample
+@dir(,games,775) /var/games/xbat/Score
+@dir /var/games/xbat

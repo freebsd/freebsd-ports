@@ -24,7 +24,6 @@ CPE_VENDOR=	puppetlabs
 CONFLICTS_INSTALL=	puppet-* puppet4-*
 NO_BUILD=	yes
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	iconv
 USE_RC_SUBR=	puppet puppetmaster
 PORTDOCS=	LICENSE README.md
 PORTEXAMPLES=	*

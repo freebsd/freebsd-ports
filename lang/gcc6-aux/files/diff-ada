@@ -969,7 +969,7 @@
 +#endif
 --- gcc/ada/gcc-interface/Makefile.in.orig
 +++ gcc/ada/gcc-interface/Makefile.in
-@@ -1186,6 +1186,7 @@
+@@ -1170,6 +1170,7 @@
  ifeq ($(strip $(filter-out arm% linux-androideabi,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
    a-intnam.ads<a-intnam-linux.ads \
@@ -977,7 +977,7 @@
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-android.adb \
    s-linux.ads<s-linux-android.ads \
-@@ -1293,6 +1294,7 @@
+@@ -1277,6 +1278,7 @@
    a-intnam.ads<a-intnam-solaris.ads \
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-solaris.adb \
@@ -985,7 +985,7 @@
    s-mudido.adb<s-mudido-affinity.adb \
    s-osinte.adb<s-osinte-solaris.adb \
    s-osinte.ads<s-osinte-solaris.ads \
-@@ -1336,6 +1338,8 @@
+@@ -1320,6 +1322,8 @@
    EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
  
    EH_MECHANISM=-gcc
@@ -994,7 +994,7 @@
    THREADSLIB = -lposix4 -lthread
    MISCLIB = -lposix4 -lnsl -lsocket
    SO_OPTS = -Wl,-h,
-@@ -1406,6 +1410,39 @@
+@@ -1390,6 +1394,39 @@
    LIBRARY_VERSION := $(LIB_VERSION)
  endif
  
@@ -1034,7 +1034,7 @@
  # x86 kfreebsd
  ifeq ($(strip $(filter-out %86 kfreebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
-@@ -1470,6 +1507,8 @@
+@@ -1450,6 +1487,8 @@
  ifeq ($(strip $(filter-out %86 freebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
    a-intnam.ads<a-intnam-freebsd.ads \
@@ -1043,7 +1043,7 @@
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-posix.adb \
    s-mudido.adb<s-mudido-affinity.adb \
-@@ -1487,6 +1526,8 @@
+@@ -1467,6 +1506,8 @@
    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  
@@ -1052,7 +1052,7 @@
    EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
  
    EH_MECHANISM=-gcc
-@@ -1500,6 +1541,8 @@
+@@ -1480,6 +1521,8 @@
  ifeq ($(strip $(filter-out %86_64 freebsd%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
    a-intnam.ads<a-intnam-freebsd.ads \
@@ -1061,7 +1061,7 @@
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-posix.adb \
    s-mudido.adb<s-mudido-affinity.adb \
-@@ -1517,6 +1560,8 @@
+@@ -1497,6 +1540,8 @@
    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  
@@ -1070,7 +1070,7 @@
    EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
  
    EH_MECHANISM=-gcc
-@@ -1530,6 +1575,8 @@
+@@ -1510,6 +1555,8 @@
  ifeq ($(strip $(filter-out %86_64 dragonfly%,$(target_cpu) $(target_os))),)
    LIBGNAT_TARGET_PAIRS = \
    a-intnam.ads<a-intnam-dragonfly.ads \
@@ -1079,7 +1079,7 @@
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-posix.adb \
    s-mudido.adb<s-mudido-affinity.adb \
-@@ -1547,6 +1594,8 @@
+@@ -1527,6 +1574,8 @@
    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  

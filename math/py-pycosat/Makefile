@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycosat
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,9 +24,9 @@ PYDISTUTILS_BUILDARGS=	build_ext \
 			-lpicosat
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/pycosat.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pycosat.so
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

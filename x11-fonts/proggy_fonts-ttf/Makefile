@@ -4,7 +4,7 @@ PORTNAME=	proggy_fonts-ttf
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.proggyfonts.com/download/
+MASTER_SITES=	http://upperbounds.net/download/
 DISTFILES=	ProggyClean.ttf.zip ProggySquare.ttf.zip \
 		ProggySmall.ttf.zip ProggyTiny.ttf.zip	\
 		ProggyCleanSZ.ttf.zip ProggySquareSZ.ttf.zip \
@@ -13,8 +13,6 @@ DIST_SUBDIR=	proggy_fonts-ttf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The perfect monospaced bitmap programming fonts, TTF version
-
-BROKEN=		unfetchable
 
 LICENSE=	MIT
 

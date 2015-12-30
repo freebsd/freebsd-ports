@@ -1,11 +1,10 @@
---- mix.exs.orig	2015-09-06 23:29:02 UTC
+--- mix.exs.orig	2015-12-26 20:08:46 UTC
 +++ mix.exs
-@@ -7,7 +7,7 @@ defmodule Phoenix.Mixfile do
+@@ -7,7 +7,6 @@ defmodule Phoenix.Mixfile do
      [app: :phoenix,
       version: @version,
-      elixir: "~> 1.0.2 or ~> 1.1-beta",
+      elixir: "~> 1.0.2 or ~> 1.1",
 -     deps: deps,
-+     deps: [],
       package: package,
-      docs: [source_ref: "v#{@version}", main: "Phoenix"],
-      name: "Phoenix",
+ 
+      # Because we define protocols on the fly to test

@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/CSS::Inliner.3.gz
-%%PERL5_MAN3%%/CSS::Inliner::Parser.3.gz
-%%PERL5_MAN3%%/CSS::Inliner::TreeBuilder.3.gz
 %%SITE_PERL%%/CSS/Inliner.pm
 %%SITE_PERL%%/CSS/Inliner/Parser.pm
 %%SITE_PERL%%/CSS/Inliner/TreeBuilder.pm
+%%PERL5_MAN3%%/CSS::Inliner.3.gz
+%%PERL5_MAN3%%/CSS::Inliner::Parser.3.gz
+%%PERL5_MAN3%%/CSS::Inliner::TreeBuilder.3.gz

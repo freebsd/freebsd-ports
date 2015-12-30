@@ -16,7 +16,6 @@ BUILD_DEPENDS=	autoconf-2.13:${PORTSDIR}/devel/autoconf213
 USE_GITHUB=	yes
 GH_ACCOUNT=	omniti-labs
 # cf3085fe contains c++ fixes and other additions over the 1.2.2 release
-GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	cf3085f
 
 GNU_CONFIGURE=	yes

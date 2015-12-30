@@ -1,6 +1,5 @@
-diff -ruN sys.orig/unix/Makefile.src sys/unix/Makefile.src
---- sys.orig/unix/Makefile.src	Sun Dec  7 15:39:13 2003
-+++ sys/unix/Makefile.src	Wed Jun 30 08:27:32 2004
+--- sys/unix/Makefile.src.orig	2003-12-07 15:39:13.000000000 -0800
++++ sys/unix/Makefile.src	2015-12-27 14:18:55.720804000 -0800
 @@ -146,19 +146,29 @@
  # directories.  The ones given below is the usual spot for linux systems.
  # The paths are for glibconfig.h and gnomesupport.h respectively.
@@ -62,11 +61,7 @@ diff -ruN sys.orig/unix/Makefile.src sys/unix/Makefile.src
  
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -231,23 +260,23 @@
- # WINTTYLIB = -lcurses
- # WINTTYLIB = -lcurses16
- # WINTTYLIB = -lncurses
- WINTTYLIB = -ltermlib
+@@ -235,19 +264,19 @@
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
@@ -105,6 +100,15 @@ diff -ruN sys.orig/unix/Makefile.src sys/unix/Makefile.src
  
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
+@@ -285,7 +323,7 @@
+ LIBS =
+ 
+ # make NetHack
+-GAME     = nethack
++GAME     = nethack%%HACKEXT%%
+ # GAME     = nethack.prg
+ 
+ # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
 @@ -461,13 +499,13 @@
  
  # Qt windowport meta-object-compiler output

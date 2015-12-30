@@ -1,4 +1,4 @@
---- SConstruct.orig	2015-04-21 17:46:54 UTC
+--- SConstruct.orig	2015-04-21 15:32:43 UTC
 +++ SConstruct
 @@ -534,6 +534,9 @@ Export('MakeAction')
  main['LTO_CCFLAGS'] = []
@@ -10,3 +10,19 @@
  # According to the readme, tcmalloc works best if the compiler doesn't
  # assume that we're using the builtin malloc and friends. These flags
  # are compiler-specific, so we need to set them after we detect which
+@@ -785,13 +788,8 @@ if main['GCC'] and compareVersions(gcc_v
+ swig_flags=Split('-c++ -python -modern -templatereduce $_CPPINCFLAGS')
+ main.Append(SWIGFLAGS=swig_flags)
+ 
+-# Check for 'timeout' from GNU coreutils. If present, regressions will
+-# be run with a time limit. We require version 8.13 since we rely on
+-# support for the '--foreground' option.
+-timeout_lines = readCommand(['timeout', '--version'],
+-                            exception='').splitlines()
+-# Get the first line and tokenize it
+-timeout_version = timeout_lines[0].split() if timeout_lines else []
++# It expects GNU timeout, FreeBSD one (on 11.x+) is not compatible
++timeout_version = []
+ main['TIMEOUT'] =  timeout_version and \
+     compareVersions(timeout_version[-1], '8.13') >= 0
+ 

@@ -26,10 +26,10 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} "s|^.*@chgrp .(CONQGROUP) conq.*||g; \
+	@${REINPLACE_CMD} "s|^.*@chgrp .(CONQGROUP) conq.*||g; \
 		s|^.*@chmod 2771 conq.*||g;" ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} "s/# include <termio.h>//g" ${WRKSRC}/c_defs.h
-	${REINPLACE_CMD} "s/-O2 -fPIC//g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} "s/# include <termio.h>//g" ${WRKSRC}/c_defs.h
+	@${REINPLACE_CMD} "s/-O2 -fPIC//g" ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/conqai ${STAGEDIR}${PREFIX}/sbin

@@ -36,7 +36,7 @@ PORTDOCS=	README.txt
 INSTALL_TARGET=	install-strip
 DOS2UNIX_GLOB=	Makefile.* *.c* *.h
 
-OPTIONS_DEFINE=	NLS DEBUG DOCS FLAC ID3TAG LADSPA LAME MAD MIDI \
+OPTIONS_DEFINE=	NLS DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA LAME MAD MIDI \
 		SBSMS SOUNDTOUCH TWOLAME VAMP VORBIS VST
 OPTIONS_DEFAULT=	FLAC ID3TAG LADSPA MAD MIDI \
 			SBSMS SOUNDTOUCH TWOLAME VAMP VORBIS VST
@@ -59,7 +59,7 @@ VST_DESC=	VST plug-in support
 
 CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
-CONFIGURE_ARGS+=	--with-lib-preference="local system" --without-lv2 --without-ffmpeg \
+CONFIGURE_ARGS+=	--with-lib-preference="local system" --without-lv2 \
 			--enable-portaudio --enable-unicode --with-libsoxr
 
 CONFIGURE_SHELL?=${LOCALBASE}/bin/bash
@@ -68,6 +68,9 @@ DEBUG_CONFIGURE_WITH=	debug
 
 DOCS_BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man \
 			docbook2man:${PORTSDIR}/textproc/docbook-utils
+
+FFMPEG_CONFIGURE_WITH=	ffmpeg=system
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 FLAC_CONFIGURE_WITH=	libflac
 FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac

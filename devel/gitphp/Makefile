@@ -4,12 +4,10 @@ PORTNAME=	gitphp
 PORTVERSION=	0.2.8
 PORTREVISION=	1
 CATEGORIES=	devel www
-MASTER_SITES=	http://www.gitphp.org/attachments/download/47/
+MASTER_SITES=	https://github.com/xiphux/gitphp/releases/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based git repository browser written in PHP
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 

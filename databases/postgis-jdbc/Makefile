@@ -17,6 +17,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/postgis_1.4.0.jar
 

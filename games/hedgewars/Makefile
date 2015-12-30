@@ -17,9 +17,6 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
 
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	depends on fpc which is only available for i386 and amd64
-
 USES=		cmake desktop-file-utils lua:51 tar:bzip2
 USE_SDL=	sdl mixer image ttf net
 USE_FPC=	opengl libpng rtl-objpas

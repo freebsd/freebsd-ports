@@ -1,0 +1,4 @@
+Bitlbee plugin based on the Facebook mobile client - which uses the MQTT
+protocol - that also supports group chats.
+
+WWW: https://wiki.bitlbee.org/HowtoFacebookMQTT

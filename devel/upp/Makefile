@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	upp
-PORTVERSION=	8227
+PORTVERSION=	9251
 CATEGORIES=	devel x11-toolkits
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2015.1/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2015.2/
 DISTNAME=	${PORTNAME}-x11-src-${PORTVERSION}
 
 MAINTAINER=	m.sund@arcor.de
@@ -35,6 +35,12 @@ MAKE_ARGS=	UPPOUT="../_out/" OutFile="../theide" \
 		-I${LOCALBASE}/include/pango-1.0 -I${LOCALBASE}/include/glib-2.0 \
 		-I${LOCALBASE}/lib/glib-2.0/include -I/usr/include"
 
+MAKE_JOBS_UNSAFE=	yes
+
+BROKEN_ia64=	Does not compile on ${ARCH}
+BROKEN_powerpc=	Does not compile on ${ARCH}
+BROKEN_sparc64=	Does not compile on ${ARCH}
+
 PORTDATA=	bazaar examples reference tutorial uppsrc *.bm
 
 DESKTOP_ENTRIES="TheIDE" "IDE for cross-platform C++ development" \
@@ -43,6 +49,7 @@ DESKTOP_ENTRIES="TheIDE" "IDE for cross-platform C++ development" \
 
 OPTIONS_DEFINE=	SDL OPENGL MYSQL PGSQL USEMALLOC
 USEMALLOC_DESC=	Compile without U++ heap allocator
+USEMALLOC_VARS=	MACRO_FLAGS+=-DflagUSEMALLOC
 
 PLIST_FILES=	bin/theide
 
@@ -50,16 +57,6 @@ SDL_USE=	sql
 OPENGL_USE=	gl
 MYSQL_USE=	mysql=yes
 PGSQL_USES=	pgsql
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MUSEMALLOC}
-MACRO_FLAGS+=	-DflagUSEMALLOC
-.endif
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
 
 post-patch: .SILENT
 	${MV} ${BUILD_WRKSRC}/Makefile.in ${BUILD_WRKSRC}/Makefile
@@ -70,6 +67,7 @@ post-patch: .SILENT
 
 post-build: .SILENT
 	${ECHO_CMD} "BUILDER = \"GCC\"" > ${WRKSRC}/GCC.bm
+	${ECHO_CMD} "COMMON_CPP_OPTIONS = \"-std=c++0x\";" >> ${WRKSRC}/GCC.bm
 	${ECHO_CMD} "DEBUG_INFO = \"0\";" >> ${WRKSRC}/GCC.bm
 	${ECHO_CMD} "DEBUG_BLITZ = \"1\";" >> ${WRKSRC}/GCC.bm
 	${ECHO_CMD} "DEBUG_LINKMODE = \"1\";" >> ${WRKSRC}/GCC.bm
@@ -91,6 +89,8 @@ post-build: .SILENT
 	(cd ${WRKSRC} && ${CP} GCC.bm CLANG.bm && \
 		${SED} -i '' -e '/^BUILDER/s|GCC|CLANG| ; \
 		s| -fdata-sections|| ; s| -finline-limit=20||' CLANG.bm)
+	${ECHO_CMD} "COMMON_OPTIONS = \"-Wno-logical-op-parentheses\";" >> ${WRKSRC}/CLANG.bm
+	${ECHO_CMD} "ALLOW_PRECOMPILED_HEADERS = \"0\";" >> ${WRKSRC}/CLANG.bm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/theide ${STAGEDIR}${PREFIX}/bin

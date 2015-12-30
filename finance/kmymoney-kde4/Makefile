@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kmymoney
-PORTVERSION=	4.7.1
+PORTVERSION=	4.7.2
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 

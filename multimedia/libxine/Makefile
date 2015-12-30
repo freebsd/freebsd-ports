@@ -3,7 +3,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
+
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
@@ -37,9 +40,9 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 LIB_DEPENDS+=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
-USES=		compiler cpe gmake iconv libtool:keepla pathfix perl5 \
-			pkgconfig execinfo tar:xz
-CPE_PRODUCT =	xine-lib
+USES=		compiler cpe execinfo gmake iconv libtool:keepla \
+		localbase pathfix perl5 pkgconfig tar:xz
+CPE_PRODUCT=	xine-lib
 CPE_VENDOR=	xine
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xv xinerama xext sm ice
@@ -47,8 +50,6 @@ USE_GL=		gl glu
 USE_PERL5=	build
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
 		--enable-ipv6 \
 		--with-external-libmad \
@@ -62,142 +63,57 @@ CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
 		--disable-musepack \
 		--enable-dvb
 
-OPTIONS_DEFINE=	CACA ESOUND JACK GNOMEVFS2 PULSEAUDIO XVMC SMB AALIB \
-		IMAGEMAGICK PIXBUF WAVPACK VAAPI LIBBLURAY
-
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
 # Please sync with XINE_PLUGINSDIR in multimedia/xine
 # and multimedia/vdr-plugin-xineliboutput
 PLUGINSDIR=	lib/xine/plugins/2.5
 PLIST_SUB=	PLUGINSDIR="${PLUGINSDIR}"
 
+OPTIONS_DEFINE=	NLS CACA ESOUND JACK GNOMEVFS2 PULSEAUDIO XVMC SMB AALIB \
+		IMAGEMAGICK PIXBUF WAVPACK VAAPI LIBBLURAY
+OPTIONS_SUB=	yes
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
+CACA_CONFIGURE_OFF=	--without-caca --disable-cacatest
+ESOUND_USE=		GNOME=esound
+ESOUND_CONFIGURE_OFF=	--without-esound
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_OFF=	--without-jack
+GNOMEVFS2_USE=		GNOME=gnomevfs2
+GNOMEVFS2_CONFIGURE_OFF=--disable-gnomevfs
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=--without-pulseaudio
+.if defined(WITH_NVIDIA304_GL) || exists(${LOCALBASE}/lib/libXvMCNVIDIA.so.1)
+XVMC_CONFIGURE_ON=	--with-xvmc-lib=XvMCNVIDIA
+XVMC_LIB_DEPENDS=	libXvMCNVIDIA.so:${PORTSDIR}/x11/nvidia-driver-304
+.else
+XVMC_CONFIGURE_ON=	--with-xvmc-lib=XvMCW
+XVMC_LIB_DEPENDS=	libXvMC.so:${PORTSDIR}/x11/libXvMC
+.endif
+XVMC_CONFIGURE_OFF=	--disable-xvmc
+SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_CONFIGURE_ENV=	LIBSMBCLIENT_LIBS="-L${LOCALBASE}/lib -lsmbclient" \
+			LIBSMBCLIENT_CFLAGS="-I${LOCALBASE}/include"
+SMB_CONFIGURE_ENABLE=	samba
+AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
+AALIB_CONFIGURE_OFF=	--disable-aalib --disable-aalibtest
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_CONFIGURE_OFF=	--without-imagemagick
+PIXBUF_USE=		GNOME=gdkpixbuf2
+PIXBUF_CONFIGURE_OFF=	--disable-gdkpixbuf
+WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
+WAVPACK_CONFIGURE_WITH=	wavpack
+VAAPI_LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
+VAAPI_CONFIGURE_ON=	--enable-vaapi
+LIBBLURAY_LIB_DEPENDS=	libbluray.so:${PORTSDIR}/multimedia/libbluray
+LIBBLURAY_CONFIGURE_ENABLE=	bluray
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 CFLAGS+=	-fomit-frame-pointer
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=	--disable-nls
-.endif
-
-.if ${PORT_OPTIONS:MCACA}
-LIB_DEPENDS+=	libcaca.so:${PORTSDIR}/graphics/libcaca
-PLIST_SUB+=	WITH_CACA=""
-.else
-PLIST_SUB+=	WITH_CACA="@comment "
-CONFIGURE_ARGS+=	--without-caca --disable-cacatest
-.endif
-
-.if ${PORT_OPTIONS:MESOUND}
-USE_GNOME+=	esound
-PLIST_SUB+=	WITH_ESOUND=""
-.else
-PLIST_SUB+=	WITH_ESOUND="@comment "
-CONFIGURE_ARGS+=	--without-esound
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-PLIST_SUB+=	WITH_JACK=""
-.else
-PLIST_SUB+=	WITH_JACK="@comment "
-CONFIGURE_ARGS+=	--without-jack
-.endif
-
-.if ${PORT_OPTIONS:MGNOMEVFS2}
-USE_GNOME+=	gnomevfs2
-PLIST_SUB+=	WITH_GNOMEVFS2=""
-.else
-PLIST_SUB+=	WITH_GNOMEVFS2="@comment "
-CONFIGURE_ARGS+=	--disable-gnomevfs
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-PLIST_SUB+=	WITH_PULSEAUDIO=""
-.else
-PLIST_SUB+=	WITH_PULSEAUDIO="@comment "
-CONFIGURE_ARGS+=	--without-pulseaudio
-.endif
-
-.if ${PORT_OPTIONS:MXVMC}
-.if defined(WITH_NVIDIA304_GL) || exists(${LOCALBASE}/lib/libXvMCNVIDIA.so.1)
-CONFIGURE_ARGS+=	--with-xvmc-lib=XvMCNVIDIA
-LIB_DEPENDS+=	libXvMCNVIDIA.so:${PORTSDIR}/x11/nvidia-driver-304
-.else
-CONFIGURE_ARGS+=	--with-xvmc-lib=XvMCW
-LIB_DEPENDS+=	libXvMC.so:${PORTSDIR}/x11/libXvMC
-.endif
-PLIST_SUB+=	WITH_XVMC=""
-.else
-CONFIGURE_ARGS+=	--disable-xvmc
-PLIST_SUB+=	WITH_XVMC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSMB}
-LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-PLIST_SUB+=	WITH_SMB=""
-CONFIGURE_ENV+=	LIBSMBCLIENT_LIBS="-L${LOCALBASE}/lib -lsmbclient" \
-		LIBSMBCLIENT_CFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS+=	--enable-samba
-.else
-PLIST_SUB+=	WITH_SMB="@comment "
-CONFIGURE_ARGS+=	--disable-samba
-.endif
-
-.if ${PORT_OPTIONS:MAALIB}
-LIB_DEPENDS+=	libaa.so:${PORTSDIR}/graphics/aalib
-PLIST_SUB+=	WITH_AALIB=""
-.else
-PLIST_SUB+=	WITH_AALIB="@comment "
-CONFIGURE_ARGS+=	--disable-aalib --disable-aalibtest
-.endif
-
-.if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
-PLIST_SUB+=	WITH_IMAGEMAGICK=""
-.else
-PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
-CONFIGURE_ARGS+=	--without-imagemagick
-.endif
-
-.if ${PORT_OPTIONS:MPIXBUF}
-USE_GNOME+=	gdkpixbuf2
-PLIST_SUB+=	WITH_GTK2=""
-.else
-PLIST_SUB+=	WITH_GTK2="@comment "
-CONFIGURE_ARGS+=	--disable-gdkpixbuf
-.endif
-
-.if ${PORT_OPTIONS:MWAVPACK}
-LIB_DEPENDS+=	libwavpack.so:${PORTSDIR}/audio/wavpack
-PLIST_SUB+=	WITH_WAVPACK=""
-CONFIGURE_ARGS+=	--with-wavpack
-.else
-PLIST_SUB+=	WITH_WAVPACK="@comment "
-CONFIGURE_ARGS+=	--without-wavpack
-.endif
-
-.if ${PORT_OPTIONS:MVAAPI}
-LIB_DEPENDS+=	libva.so:${PORTSDIR}/multimedia/libva
-PLIST_SUB+=	VAAPI=""
-CONFIGURE_ARGS+=	--enable-vaapi
-.else
-PLIST_SUB+=	VAAPI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLIBBLURAY}
-CONFIGURE_ARGS+=	--enable-bluray
-LIB_DEPENDS+=	libbluray.so:${PORTSDIR}/multimedia/libbluray
-PLIST_SUB+=	LIBBLURAY=""
-.else
-CONFIGURE_ARGS+=	--disable-bluray
-PLIST_SUB+=	LIBBLURAY="@comment "
 .endif
 
 .if ${CONFIGURE_ARGS:M*--without-imagemagick*} == "" || ${CONFIGURE_ARGS:M*-disable-gdkpixbuf*} == ""
@@ -220,10 +136,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-fno-rename-registers||' \
 		${WRKSRC}/src/libw32dll/wine/Makefile.in
 .endif
-.if ${PORT_OPTIONS:MVAAPI}
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/src/video_out/Makefile.in
-.endif
 	@${REINPLACE_CMD} -e "s|#define _ATOM QT_ATOM('', '', '', '')||" \
 		${WRKSRC}/src/demuxers/demux_qt.c
 	@${REINPLACE_CMD} -e \
@@ -237,5 +151,8 @@ post-install:
 		${REINPLACE_CMD} -e '/xineplug_vo_out_opengl2.so/d' \
 			${TMPPLIST}; \
 	fi
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${PLUGINSDIR}/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${PLUGINSDIR}/post/*.so
 
 .include <bsd.port.post.mk>

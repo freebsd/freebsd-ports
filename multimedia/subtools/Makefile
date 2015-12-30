@@ -9,13 +9,14 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tools for movie subtitles in SubRipper format
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
-
 USES=		python tar:bzip2
+
+WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 PLIST_FILES=	bin/srtshift bin/srtrate bin/udvd2srt.py bin/udvdshift.py
 
 PORTDOCS=	CHANGELOG.TXT README.TXT
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
@@ -35,6 +36,7 @@ do-install:
 	@(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${f} ${STAGEDIR}${PREFIX}/bin/)
 .endfor
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/../|} ${STAGEDIR}${DOCSDIR}
 

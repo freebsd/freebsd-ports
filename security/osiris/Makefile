@@ -29,20 +29,19 @@ CLI_DESC=	Management CLI
 LIB_DEPENDS+=	libreadline.so.6:${PORTSDIR}/devel/readline
 .endif
 
-post-build:
-.if ${PORT_OPTIONS:MPRINTDB}
+post-build-PRINTDB-on:
 	cd ${WRKSRC}/src/tools && ${MAKE}
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/osiris
-.if ${PORT_OPTIONS:MCLI}
+
+do-install-CLI-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cli/osiris ${STAGEDIR}${PREFIX}/sbin
-.endif
-.if ${PORT_OPTIONS:MPRINTDB}
+
+do-install-PRINTDB-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/tools/printdb ${STAGEDIR}${PREFIX}/bin
-.endif
-.if ${PORT_OPTIONS:MOSIRISD}
+
+do-install-OSIRISD-on:
 	${SED} -e 's|@INSTALLDIR@|${PREFIX}/sbin|g' \
 		-e 's|@OSIRISDIR@|${PREFIX}/osiris|g' \
 		${WRKSRC}/src/install/freebsd/osirisd.in > \
@@ -50,8 +49,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/osirisd/osirisd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/install/freebsd/osirisd.sh \
 		${STAGEDIR}${PREFIX}/etc/rc.d
-.endif
-.if ${PORT_OPTIONS:MOSIRISMD}
+
+do-install-OSIRISMD-on:
 	${SED} -e 's|@INSTALLDIR@|${PREFIX}/sbin|g' \
 		-e 's|@OSIRISDIR@|${PREFIX}/osiris|g' \
 		${WRKSRC}/src/install/freebsd/osirismd.in > \
@@ -67,6 +66,5 @@ do-install:
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/install/freebsd/osirismd.sh \
 		${STAGEDIR}${PREFIX}/etc/rc.d
-.endif
 
 .include <bsd.port.post.mk>

@@ -1,12 +1,12 @@
 # Created by: asami
 # $FreeBSD$
 
-PORTNAME=	nethack
+PORTNAME=	nethack34
 PORTVERSION=	3.4.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
+DISTNAME=	${TRUEPORTNAME}-${PORTVERSION:S/.//g}-src
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dungeon explorin', slashin', hackin' game
@@ -16,15 +16,20 @@ LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE
 LICENSE_FILE=	${WRKSRC}/dat/license
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-${PORTVERSION}
 
 USES=		gmake tar:tgz
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
-PLIST_SUB=	HACKNAME="${HACKNAME}"
+PLIST_SUB=	HACKNAME="${HACKNAME}" \
+		HACKEXT="${HACKEXT}"
+MAKE_JOBS_UNSAFE=	yes
+TRUEPORTNAME=	nethack
 
 # Configure these variables as you want them to be.
-HACKNAME?=	nethack
+HACKEXT?=	34
+HACKNAME?=	${TRUEPORTNAME}${HACKEXT}
 HACKDIR?=	share/${HACKNAME}
+HACKLINK=	${TRUEPORTNAME}
 
 DATADIR=	${PREFIX}/${HACKDIR}
 DOCSDIR=	${PREFIX}/share/doc/${HACKNAME}
@@ -70,6 +75,14 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
+.include <bsd.port.options.mk>
+
+.if !exists(${PREFIX}/bin/${HACKLINK}) && ${HACKNAME} != ${HACKLINK}
+PLIST_SUB+=	HACKLINK=""
+.else
+PLIST_SUB+=	HACKLINK="@comment "
+.endif
+
 pre-everything::
 	@if [ "${PKGBASE}" != "nethack" ]; then \
 	${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ; \
@@ -80,15 +93,23 @@ pre-everything::
 	${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ; \
 	fi
 
-.include <bsd.port.options.mk>
-
 post-patch:
-.for f in include/config.h sys/unix/Makefile.top
+	@${REINPLACE_CMD} -e \
+		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/include/config.h
+	@${REINPLACE_CMD} -e \
+		's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
+.for f in include/config.h sys/unix/Makefile.doc sys/unix/Makefile.src sys/unix/Makefile.top
 	@${REINPLACE_CMD} -e 's|%%HACKNAME%%|${HACKNAME}|g' \
 		-e 's|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' \
+		-e 's|%%HACKEXT%%|${HACKEXT}|g' \
 		${WRKSRC}/${f}
 .endfor
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/win/Qt/qt_win.cpp
+.for f in dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
+	@${REINPLACE_CMD} -e 's|%%HACKNAME%%|${HACKNAME}|g' \
+		-e 's|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' \
+		-e 's|%%HACKEXT%%|${HACKEXT}|g' \
+		${WRKSRC}/doc/${f}
+.endfor
 .if defined(WITHOUT_SHELL)
 	@${REINPLACE_CMD} -e 's|#define SHELL|/* #define SHELL|' ${WRKSRC}/include/unixconf.h
 .endif
@@ -104,6 +125,9 @@ pre-install:
 		-e 's|%%HACKDIR%%|${HACKDIR}|g' > ${PKGDEINSTALL}
 
 post-install:
+.if !exists(${PREFIX}/bin/${HACKLINK}) && ${HACKNAME} != ${HACKLINK}
+	@${LN} -s -f ${PREFIX}/bin/${HACKNAME} ${STAGEDIR}${PREFIX}/bin/${HACKLINK}
+.endif
 	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} manpages
 	@${MKDIR} ${STAGEDIR}${DATADIR}/save
 .if ${PORT_OPTIONS:MDOCS}

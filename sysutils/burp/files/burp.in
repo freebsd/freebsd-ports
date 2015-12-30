@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: burp
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# burp_enable (bool):	Set to NO by default.
+#			Set it to YES to enable burp.
+# burp_config (path):	Set to %%PREFIX%%/etc/burp/burp.cf
+#			by default.
+
+. /etc/rc.subr
+
+name=burp
+rcvar=burp_enable
+
+load_rc_config $name
+
+: ${burp_enable:="NO"}
+: ${burp_config="%%PREFIX%%/etc/burp/burp-server.conf"}
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.server.pid
+
+command_args="-c $burp_config"
+
+run_rc_command "$1"

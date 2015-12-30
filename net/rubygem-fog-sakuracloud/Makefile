@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-sakuracloud
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.5
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

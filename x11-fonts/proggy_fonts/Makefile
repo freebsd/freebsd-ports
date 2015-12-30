@@ -5,7 +5,7 @@ PORTNAME=	proggy_fonts
 PORTVERSION=	1.0
 PORTREVISION=	4
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.proggyfonts.com/download/
+MASTER_SITES=	http://upperbounds.net/download/
 DISTFILES=	ProggyClean.pcf.zip ProggySquare.pcf.zip \
 		ProggySmall.pcf.zip ProggyTiny.pcf.zip	\
 		ProggyCleanSZ.pcf.zip ProggySquareSZ.pcf.zip \
@@ -24,8 +24,6 @@ EXTRACT_ONLY=	ProggyClean.pcf.zip ProggySquare.pcf.zip \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The perfect monospaced bitmap programming fonts
-
-BROKEN=		unfetchable
 
 ALREADY_UNZIP=	${DISTDIR}/Opti.pcf.gz ${DISTDIR}/OptiSmall.pcf.gz \
 	        ${DISTDIR}/PixelCarnageMono.pcf.gz

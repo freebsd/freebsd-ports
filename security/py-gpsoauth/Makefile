@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:${PORTSDIR}/security/py-pycr
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	simon-weber
-GH_PROJECT=	gpsoauth
 GH_TAGNAME=	ea8246b
 
 USES=		python

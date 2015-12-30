@@ -5,22 +5,11 @@ PORTNAME=	eiffelstudio
 PORTVERSION=	5.7
 PORTREVISION=	7
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.cs.rit.edu/pub/mirrors/ise/download/57/ \
-		ftp://ftp.inf.ethz.ch/pub/mirror/eiffel/57/ \
-		ftp://ftp.deakin.edu.au/pub/eiffel/download/57/ \
-		ftp://ftp.gmu.edu/eiffel/ftp.eiffel.com/pub/download/57/ \
-		ftp://ftp.pucpr.br/eiffel/57/ \
-		ftp://gd.tuwien.ac.at/languages/eiffel/download/57/ \
-		http://gd.tuwien.ac.at/languages/eiffel/download/57/ \
-		ftp://ftp.informatik.uni-stuttgart.de/pub/eiffel/mirrors/ise/download/57/ \
-		ftp://ftp.eiffel.com/pub/download/57/ \
-		http://ftp.eiffel.com/pub/download/57/
+MASTER_SITES=	SF/${PORTNAME}/EiffelStudio%20${PORTVERSION}/Build%2064493/
 DISTNAME=	Eiffel${PORTVERSION:S/.//}_gpl_64493-freebsd-${EIFFEL_ARCH}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete Integrated Development Environment for Eiffel
-
-BROKEN=		unfetchable
 
 LIB_DEPENDS=	libc.so.6:${PORTSDIR}/misc/compat6x
 

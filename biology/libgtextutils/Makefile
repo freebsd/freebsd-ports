@@ -16,7 +16,6 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	agordon
-GH_PROJECT=	libgtextutils
 
 INSTALL_TARGET=	install-strip
 

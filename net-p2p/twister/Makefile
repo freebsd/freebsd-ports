@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twister-core
-PORTVERSION=	0.9.31
+PORTVERSION=	0.9.34
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
@@ -51,7 +51,7 @@ WITH_OPENSSL_PORT=	yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%PORTVERSION%%|${PORTVERSION}|'	\
+	${REINPLACE_CMD} 's|%%PORTVERSION%%|${PORTVERSION}|'	\
 		${WRKSRC}/share/genbuild.sh
 
 pre-configure:

@@ -1,5 +1,13 @@
 bin/protoc-gen-go
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/jsonpb.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/proto.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/jsonpb/jsonpb.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/jsonpb/jsonpb_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/jsonpb/jsonpb_test_proto/Makefile
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/jsonpb/jsonpb_test_proto/more_test_objects.pb.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/jsonpb/jsonpb_test_proto/more_test_objects.proto
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/jsonpb/jsonpb_test_proto/test_objects.pb.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/jsonpb/jsonpb_test_proto/test_objects.proto
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/Makefile
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/all_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/clone.go
@@ -16,6 +24,9 @@ bin/protoc-gen-go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/pointer_reflect.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/pointer_unsafe.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/properties.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/proto3_proto/proto3.pb.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/proto3_proto/proto3.proto
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/proto3_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/size2_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/size_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/testdata/Makefile

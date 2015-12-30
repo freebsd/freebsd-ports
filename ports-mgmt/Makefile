@@ -61,6 +61,7 @@
     SUBDIR += poudriere
     SUBDIR += poudriere-devel
     SUBDIR += psearch
+    SUBDIR += py-pytoport
     SUBDIR += symports
     SUBDIR += tinderbox
     SUBDIR += tinderbox-devel

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-extras
-PORTVERSION=	3.0.0
+PORTVERSION=	4.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	igor.ostapenko@gmail.com
@@ -15,9 +15,7 @@ RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
 USE_GITHUB=	yes
 GH_ACCOUNT=	tj
 
-USES=		gmake shebangfix
-SHEBANG_FILES=	bin/git-guilt \
-		bin/git-merge-into
+USES=		gmake
 
 NO_BUILD=	yes
 

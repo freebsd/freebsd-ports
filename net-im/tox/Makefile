@@ -17,7 +17,6 @@ LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx		\
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
-GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	22634a4
 
 GNU_CONFIGURE=	yes

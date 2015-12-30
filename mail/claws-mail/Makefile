@@ -69,9 +69,8 @@ post-install:
 	(cd ${WRKSRC}/tools && \
 		${INSTALL_SCRIPT} OOo2claws-mail.pl acroread2claws-mail.pl \
 		calypso_convert.pl convert_mbox.pl eud2gc.py filter_conv.pl \
-		filter_conv_new.pl fix_date.sh freshmeat_search.pl \
-		gif2xface.pl google_msgid.pl google_search.pl \
-		kmail-mailbox2claws-mail.pl kmail2claws-mail.pl \
+		filter_conv_new.pl fix_date.sh gif2xface.pl google_msgid.pl \
+		google_search.pl kmail-mailbox2claws-mail.pl kmail2claws-mail.pl \
 		kmail2claws-mail_v2.pl multiwebsearch.conf multiwebsearch.pl \
 		nautilus2claws-mail.sh outlook2claws-mail.pl tb2claws-mail \
 		tbird2claws.py textviewer.pl textviewer.sh \

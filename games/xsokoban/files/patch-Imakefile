@@ -1,19 +1,12 @@
-*** Imakefile.orig	Wed Aug 28 02:34:41 1996
---- Imakefile	Sat Jan 15 00:00:00 2000
-***************
-*** 1,7 ****
-  DEFINES=	-DNDEBUG
-! EXTRA_INCLUDES= -I/usr/local/include
-  
-! SYS_LIBRARIES=	-L/usr/local/lib -lXpm $(XLIB)
-  # -lXpm is only needed if you are using Xpm.
-  
-  SRCS=		display.c main.c resources.c play.c score.c screen.c \
---- 1,7 ----
-  DEFINES=	-DNDEBUG
-! EXTRA_INCLUDES= -I$(INCDIR)/X11
-  
-! SYS_LIBRARIES=	-lXpm $(XLIB)
-  # -lXpm is only needed if you are using Xpm.
-  
-  SRCS=		display.c main.c resources.c play.c score.c screen.c \
+--- Imakefile.orig	1996-08-27 17:34:41 UTC
++++ Imakefile
+@@ -1,7 +1,7 @@
+ DEFINES=	-DNDEBUG
+-EXTRA_INCLUDES= -I/usr/local/include
++EXTRA_INCLUDES= -I$(INCDIR)/X11
+ 
+-SYS_LIBRARIES=	-L/usr/local/lib -lXpm $(XLIB)
++SYS_LIBRARIES=	-lXpm $(XLIB)
+ # -lXpm is only needed if you are using Xpm.
+ 
+ SRCS=		display.c main.c resources.c play.c score.c screen.c \

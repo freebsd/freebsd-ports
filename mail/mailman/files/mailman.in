@@ -19,42 +19,27 @@
 . /etc/rc.subr
 
 name="mailman"
-rcvar=mailman_enable
-
+rcvar="mailman_enable"
+required_dirs="%%MAILMANDIR%%/lists/mailman"
+command_interpreter="%%PYTHON_CMD%%"
+command="%%MAILMANDIR%%/bin/mailmanctl"
+command_args="start"
 pidfile="%%MAILMANDIR%%/data/master-qrunner.pid"
 
 load_rc_config $name
 
-: ${mailman_enable="NO"}
-: ${mailman_fix_perms="YES"}
+: ${mailman_enable:="NO"}
+: ${mailman_fix_perms:="YES"}
+: ${mailman_flags:="-s -q"}
 
-start_cmd=${name}_start
-stop_cmd=${name}_stop
-status_cmd=${name}_status
+start_precmd=${name}_prestart
 extra_commands="reload status"
 
-mailman_start() {
+mailman_prestart() {
 	if checkyesno mailman_fix_perms ; then 
-	    env LC_ALL=C %%MAILMANDIR%%/bin/check_perms -f
+	    check_startmsgs && echo "Fixing ${name} permissions:"
+	    env LC_ALL=C %%MAILMANDIR%%/bin/check_perms -f ${rc_debug:+-v}
 	fi
-	%%MAILMANDIR%%/bin/mailmanctl -s -q start
-}
-
-mailman_stop() {
-	[ -f $pidfile ] \
-	  && %%MAILMANDIR%%/bin/mailmanctl -q stop \
-	  || echo ${name} not running? \(check ${pidfile}\)
-}
-
-mailman_status() {
-	local retcode=0
-	if [ -f $pidfile ] && ps -p $(cat $pidfile) > /dev/null; then
-		echo $name is running as pid $(cat $pidfile).
-	else
-		echo $name is not running.
-		retcode=1
-	fi
-	return $retcode
 }
 
 run_rc_command "$1"

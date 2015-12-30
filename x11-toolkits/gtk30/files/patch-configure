@@ -1,0 +1,12 @@
+--- configure.orig	2015-12-27 22:02:19.433821000 +0100
++++ configure	2015-12-27 22:02:39.743841000 +0100
+@@ -26046,9 +26046,7 @@
+ if test "$have_cups" = "yes"; then
+   GTK_PRINT_BACKENDS="$GTK_PRINT_BACKENDS,cups"
+ fi
+-if test "$have_papi" != "yes" -a "$have_cups" != "yes"; then
+   GTK_PRINT_BACKENDS="$GTK_PRINT_BACKENDS,lpr"
+-fi
+ if test "$have_cloudprint" = "yes"; then
+   GTK_PRINT_BACKENDS="$GTK_PRINT_BACKENDS,cloudprint"
+ fi

@@ -3,6 +3,7 @@
 
 PORTNAME=	pootle
 PORTVERSION=	2.5.1.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Pootle-${PORTVERSION}
@@ -27,6 +28,7 @@ RUN_DEPENDS=	translate-toolkit>=1.11.0:${PORTSDIR}/textproc/translate-toolkit \
 # actually diff-match-patch is a dependency of translate-toolkit,
 # but only this port uses it.
 
+NO_ARCH=	yes
 USES=		gettext python tar:bzip2
 USE_PYTHON=	autoplist distutils
 
@@ -41,7 +43,7 @@ SUB_LIST+=	PYTHON_CMD="${PYTHON_CMD}"
 
 PORTDOCS=	CREDITS INSTALL LICENSE
 
-OPTIONS_DEFINE=	LDAP MEMCACHED MYSQL PGSQL
+OPTIONS_DEFINE=	DOCS LDAP MEMCACHED MYSQL PGSQL
 OPTIONS_DEFAULT=MEMCACHED MYSQL
 
 MEMCACHED_DESC=	Use memcached to improve performance
@@ -51,7 +53,7 @@ MYSQL_USE=	MYSQL=yes
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>0:${PORTSDIR}/devel/py-ldap2
 
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
-MEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}memcached>=1.45:${PORTSDIR}/databases/py-memcached
+MEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>=1.45:${PORTSDIR}/databases/py-python-memcached
 
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:${PORTSDIR}/databases/py-MySQLdb
 
@@ -66,7 +68,7 @@ pre-configure:
 		-e "s/,<1.5//g" \
 		${WRKSRC}/requirements/base.txt
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}/${DOCSDIR}

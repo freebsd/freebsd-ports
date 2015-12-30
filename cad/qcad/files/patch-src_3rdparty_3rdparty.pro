@@ -1,14 +1,18 @@
---- ./src/3rdparty/3rdparty.pro.orig	2013-08-06 17:32:09.000000000 +0200
-+++ ./src/3rdparty/3rdparty.pro	2013-08-08 10:03:33.000000000 +0200
-@@ -4,9 +4,8 @@
+--- src/3rdparty/3rdparty.pro.orig	2015-11-24 15:13:30.000000000 +0100
++++ src/3rdparty/3rdparty.pro	2015-12-23 10:01:28.113511000 +0100
+@@ -2,12 +2,10 @@
+ TEMPLATE = subdirs
+ SUBDIRS = \
      spatialindexnavel \
-     stemmer
+-    stemmer \
+-    quazip
++    stemmer
++
++# FreeBSD: prefer quazip and opennurbs from dependent ports
  
 -!r_no_opennurbs {
 -    SUBDIRS += opennurbs
 -}
-+# FreeBSD: prefer opennurbs from a dependent port
-+
  !rs_no_dxf {
      SUBDIRS += dxflib
  }

@@ -14,7 +14,6 @@ BROKEN=		unfetchable
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	ruby18
 
 NO_BUILD=	yes
 
