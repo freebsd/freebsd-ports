@@ -10,25 +10,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console Jabber Client
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=0:${PORTSDIR}/net-im/py-pyxmpp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jajcus
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
 USES=		python:2 shebangfix
 SHEBANG_FILES=	cjc.in cjc.py cjc/main.py
+NO_ARCH=	yes
 
 PORTDOCS=	*
-
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	ChangeLog README
-
-DOCSRCDIR2=	${WRKSRC}/doc
-DOCSDIR2=	${DOCSDIR}/doc
-DOC_FILES2=	manual.html
 
 OPTIONS_DEFINE=	DOCS
 
@@ -46,9 +39,9 @@ post-install:
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
 		-d ${PREFIX} -f ${DATADIR_REL})
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README \
+		${WRKSRC}/doc/manual.html ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
