@@ -11,6 +11,9 @@ DISTNAME=	ofcp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line client to FreeNet Network
 
+LICENSE=	LGPL21 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		tar:bzip2
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
@@ -43,11 +46,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/liber
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${DATA_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ocaml
 	${INSTALL_DATA} ${LIB_FILES:S|^|${WRKSRC}/|} \
 		${STAGEDIR}${PREFIX}/lib/ocaml
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
