@@ -27,7 +27,7 @@ USE_GL+=	gl
 USE_QT5=	core dbus gui opengl network svg multimedia \
 		imageformats buildtools qmake x11extras
 CFLAGS+=	-fPIC
-LDFLAGS+=	-lsysinfo
+LDFLAGS+=	${LOCALBASE}/lib/libsysinfo.so
 USES=		cmake compiler:c11
 CMAKE_ARGS+=	-DUNIX_STRUCTURE=1 \
 		-DOBS_VERSION_OVERRIDE=${PORTVERSION}
