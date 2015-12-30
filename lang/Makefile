@@ -27,7 +27,6 @@
     SUBDIR += c
     SUBDIR += ccl
     SUBDIR += cdent
-    SUBDIR += cduce
     SUBDIR += ceylon
     SUBDIR += cfortran
     SUBDIR += chibi-scheme

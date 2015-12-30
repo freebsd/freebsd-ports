@@ -46,7 +46,6 @@
     SUBDIR += bsdsfv
     SUBDIR += bsmtrace
     SUBDIR += bugs
-    SUBDIR += burpsuite
     SUBDIR += ca_root_nss
     SUBDIR += calife
     SUBDIR += ccrypt
