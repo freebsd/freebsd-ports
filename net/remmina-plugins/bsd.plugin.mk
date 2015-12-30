@@ -48,10 +48,6 @@ post-patch:
 .if ${PKGNAMESUFFIX:S,-,,} != "gnome"
 	${REINPLACE_CMD} -e 's|add_subdirectory(remmina-plugins-gnome)||' ${WRKSRC}/CMakeLists.txt
 .endif
-.if ${PKGNAMESUFFIX:S,-,,} != "rdp"
-	${REINPLACE_CMD} -e 's|find_suggested_package(FREERDP)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|add_subdirectory(rdp)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
-.endif
 .if ${PKGNAMESUFFIX:S,-,,} != "vnc"
 	${REINPLACE_CMD} -e 's|find_suggested_package(GCRYPT)||' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e' s|find_required_package(LIBVNCSERVER)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
