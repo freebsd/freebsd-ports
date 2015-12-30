@@ -8,6 +8,7 @@ PKGNAMESUFFIX=	-frontend
 MASTERDIR=	${.CURDIR}/../zabbix22-server
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 PATCHDIR=
 PLIST=		${PKGDIR}/pkg-plist.frontend
 

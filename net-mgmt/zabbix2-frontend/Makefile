@@ -8,6 +8,7 @@ CATEGORIES=	net-mgmt
 MASTERDIR=	${.CURDIR}/../zabbix2-server
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 PATCHDIR=
 PLIST=		${PKGDIR}/pkg-plist.frontend
 
