@@ -1,0 +1,5 @@
+This is a OmniAuth 1.0 compatible port of the previously available OmniAuth CAS
+strategy that was bundled with OmniAuth 0.3. This strategy haas also been
+updated for CAS protocol version 3.0 and patched to deal with namespace issues.
+
+WWW: https://github.com/tduehr/omniauth-cas3
