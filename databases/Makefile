@@ -907,6 +907,7 @@
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
     SUBDIR += rubygem-state_machines-activemodel
+    SUBDIR += rubygem-state_machines-activerecord
     SUBDIR += rubygem-tarantool
     SUBDIR += sfcgal
     SUBDIR += sharedance
