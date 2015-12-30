@@ -28,6 +28,7 @@ RUN_DEPENDS=	translate-toolkit>=1.11.0:${PORTSDIR}/textproc/translate-toolkit \
 # actually diff-match-patch is a dependency of translate-toolkit,
 # but only this port uses it.
 
+NO_ARCH=	yes
 USES=		gettext python tar:bzip2
 USE_PYTHON=	autoplist distutils
 
@@ -42,7 +43,7 @@ SUB_LIST+=	PYTHON_CMD="${PYTHON_CMD}"
 
 PORTDOCS=	CREDITS INSTALL LICENSE
 
-OPTIONS_DEFINE=	LDAP MEMCACHED MYSQL PGSQL
+OPTIONS_DEFINE=	DOCS LDAP MEMCACHED MYSQL PGSQL
 OPTIONS_DEFAULT=MEMCACHED MYSQL
 
 MEMCACHED_DESC=	Use memcached to improve performance
@@ -67,7 +68,7 @@ pre-configure:
 		-e "s/,<1.5//g" \
 		${WRKSRC}/requirements/base.txt
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}/${DOCSDIR}
