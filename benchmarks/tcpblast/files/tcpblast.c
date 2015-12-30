@@ -17,6 +17,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <err.h>
 #include <errno.h>
 
 #define BLKSIZE 1024
@@ -26,7 +27,7 @@ struct	servent *sp;
 struct	hostent *host;
 
 long starts, startms, stops, stopms, expms;
-struct timeval ti; 
+struct timeval ti;
 struct timezone tiz;
 
 char 	greet[BLKSIZE] = "Hi!";
