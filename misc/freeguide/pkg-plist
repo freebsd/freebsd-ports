@@ -144,20 +144,3 @@ share/pixmaps/freeguide/logo-48x48.png
 share/pixmaps/freeguide/logo-32x32.png
 share/pixmaps/freeguide.png
 share/applications/freeguide.desktop
-@dir share/pixmaps/freeguide
-@dir %%JAVAJARDIR%%/freeguide/
-@dir %%DOCSDIR%%/DownloadAndInstall
-@dir %%DOCSDIR%%/uploads/FAQ
-@dir %%DOCSDIR%%/uploads/UserGuide
-@dir %%DOCSDIR%%/uploads/Main
-@dir %%DOCSDIR%%/uploads
-@dir %%DOCSDIR%%/FAQ
-@dir %%DOCSDIR%%/Main
-@dir %%DOCSDIR%%/UserGuide
-@dir %%DOCSDIR%%/Developers
-@dir %%DOCSDIR%%/Site
-@dir %%DOCSDIR%%/pub/skins/plain-freeguide
-@dir %%DOCSDIR%%/pub/skins
-@dir %%DOCSDIR%%/pub
-@dir %%DOCSDIR%%/PmWiki
-@dir %%DOCSDIR%%
