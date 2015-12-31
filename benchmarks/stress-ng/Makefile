@@ -11,8 +11,6 @@ COMMENT=	Stress test benchmarks
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		unfetchable
-
 ALL_TARGET=	# empty
 
 PLIST_FILES=	bin/stress-ng man/man1/stress-ng.1.gz
