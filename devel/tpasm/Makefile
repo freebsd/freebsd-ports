@@ -13,6 +13,7 @@ COMMENT=	Cross-assembler for variety of microprocessors and controllers
 LICENSE=	GPLv2
 
 USES=		gmake tar:tgz
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 PORTDOCS=	CONVERSION_C166.TXT MANUAL.TXT README*.TXT
 PORTEXAMPLES=	*
