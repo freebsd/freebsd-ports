@@ -3,7 +3,7 @@
 
 PORTNAME=	hping
 PORTVERSION=	2.0.0r3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://www.hping.org/ \
