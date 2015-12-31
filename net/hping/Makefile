@@ -27,6 +27,12 @@ PORTDOCS=	AS-BACKDOOR HPING2-HOWTO.txt HPING2-IS-OPEN \
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 1100030)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-sendip.c
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hping2 ${STAGEDIR}${PREFIX}/sbin/hping
 	${INSTALL_MAN} ${WRKSRC}/docs/hping2.8 \
@@ -36,4 +42,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
