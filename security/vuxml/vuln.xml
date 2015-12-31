@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4b3a7e70-afce-11e5-b864-14dae9d210b8">
+    <topic>mono -- DoS and code execution</topic>
+    <affects>
+      <package>
+	<name>mono</name>
+	<range><lt>4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NCC Group reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q4/543">
+	  <p>An attacker who can cause a carefully-chosen string to be
+	    converted to a floating-point number can cause a crash and potentially
+	    induce arbitrary code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q4/543</url>
+      <cvename>CVE-2009-0689</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-19</discovery>
+      <entry>2015-12-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84c7ea88-bf04-4bdc-973b-36744bf540ab">
     <topic>flash -- multiple vulnabilities</topic>
     <affects>
