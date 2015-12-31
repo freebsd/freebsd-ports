@@ -3,8 +3,12 @@
 
 PORTNAME=	sox
 PORTVERSION=	14.4.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
+
+PATCHFILES=	0001-Remove-pure-attribute-from-functions-with-side-effec.patch:-p1
+PATCH_SITES=	https://sourceforge.net/p/sox/patches/104/attachment/
 
 MAINTAINER=	dnelson@allantgroup.com
 COMMENT=	SOund eXchange - universal sound sample translator
