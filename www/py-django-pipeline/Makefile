@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	django-pipeline
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Asset (css/js) packaging library for Django
 
 LICENSE=	MIT
