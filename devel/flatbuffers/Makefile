@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 
-USES=		cmake
+USES=		cmake compiler:c++11-lib
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
