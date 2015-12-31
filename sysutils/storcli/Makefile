@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	storcli
-PORTVERSION=	1.16.06
+PORTVERSION=	1.17.08
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.avagotech.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/
-DISTNAME=	MR_SAS_StorCLI_${PORTVERSION:S!.!-!g}
+MASTER_SITES=	http://docs.avagotech.com/docs-and-downloads/https:/avagodocs.s3.amazonaws.com:443/docs-and-downloads/raid-controllers/raid-controllers-common-files/
+DISTNAME=	MR_SAS_StorCLI_${PORTVERSION}
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	SAS MegaRAID FreeBSD StorCLI
@@ -14,7 +14,9 @@ LICENSE_NAME=	LSI
 LICENSE_TEXT=	${RESTRICTED}
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
-RESTRICTED=	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/Pages/user/eula.aspx
+RESTRICTED=	Source recipient must acknowledge license. Reproduction or \
+		redistribution prohibited. See \
+		http://www.avagotech.com/docs/12354864
 
 USES=		zip
 
@@ -25,7 +27,7 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	sbin/storcli
 PKGMESSAGE=	${WRKDIR}/pkg-message
-BINSRC=		${WRKSRC}/storcli_all_os/FreeBSD
+BINSRC=		${WRKSRC}/FreeBSD
 FETCH_AFTER_ARGS=-v
 
 post-extract:
