@@ -610,6 +610,7 @@
     SUBDIR += py-pyfst
     SUBDIR += py-pyhull
     SUBDIR += py-pymc
+    SUBDIR += py-pyvtk
     SUBDIR += py-roman
     SUBDIR += py-scientific
     SUBDIR += py-statsmodels
