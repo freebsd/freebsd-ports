@@ -1,11 +1,12 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 # $FreeBSD$
 
-PORTNAME=	PyVTK
+PORTNAME=	pyVTK
 PORTVERSION=	0.4.85
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	PyVTK-${PORTVERSION}
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Tools for manipulating VTK files in Python
