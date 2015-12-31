@@ -10,16 +10,15 @@ MASTER_SITES=	SF/heroines/releases/081108
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced editing and manipulation of MPEG streams
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	liba52.so:${PORTSDIR}/audio/liba52
-
-OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFINE_i386=	MMX
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		alias gmake tar:bzip2
 MAKE_ARGS=	CC="${CC}" USE_CSS=0 OBJDIR="obj" \
 		CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LIBS}"
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	index.html
 PLIST_FILES=	${BIN_FILES:S|^|bin/|} ${INC_FILES:S|^|include/|} \
@@ -34,15 +33,13 @@ LIBS+=		-lm -L${LOCALBASE}/lib -la52 -pthread
 
 NASM?=		${LOCALBASE}/bin/nasm
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE_i386=	MMX
 
-.if ${PORT_OPTIONS:MMMX}
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-MAKE_ARGS+=	USE_MMX=1 NASM="${NASM}"
-CFLAGS+=	-DHAVE_MMX
-.else
-MAKE_ARGS+=	USE_MMX=0
-.endif
+MMX_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+MMX_MAKE_ARGS=		USE_MMX=1 NASM="${NASM}"
+MMX_CFLAGS=		-DHAVE_MMX
+MMX_MAKE_ARGS_OFF=	USE_MMX=0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^OBJDIR|#OBJDIR|g ; \
@@ -61,6 +58,8 @@ do-install:
 .for file in ${LIB_FILES}
 	cd ${WRKSRC}/obj && ${INSTALL_DATA} ${file} ${STAGEDIR}${PREFIX}/lib
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${file} ${STAGEDIR}${DOCSDIR}
