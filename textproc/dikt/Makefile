@@ -2,20 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	dikt
-PORTVERSION=	2l
-PORTREVISION=	3
+PORTVERSION=	2l3
 CATEGORIES=	textproc net kde
-MASTER_SITES=	GOOGLE_CODE
-EXTRACT_SUFX=	.txz
+MASTER_SITES=	https://bitbucket.org/dikt/code/downloads/
 
 MAINTAINER=	goran.tal@gmail.com
 COMMENT=	Dictionary for KDE4
 
-
 USE_KDE4=	kdelibs kdeprefix automoc4
 USE_QT4=	corelib gui network svg xml \
 		qmake_build moc_build rcc_build uic_build
-USES=		cmake tar:xz
+USES=		cmake tar:txz
 
 PLIST_FILES=	bin/dikt \
 		share/applications/kde4/dikt.desktop \
