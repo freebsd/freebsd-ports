@@ -3,7 +3,10 @@
 
     COMMENT = X11 themes
 
+    SUBDIR += adwaita-common
     SUBDIR += adwaita-icon-theme
+    SUBDIR += adwaita-qt4
+    SUBDIR += adwaita-qt5
     SUBDIR += audacious-skins
     SUBDIR += beastie
     SUBDIR += claws-mail-themes
