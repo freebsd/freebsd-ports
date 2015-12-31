@@ -8086,3 +8086,4 @@ editors/bless||2015-12-30|Has expired: Broken for more than 6 months
 security/burpsuite||2015-12-30|Has expired: Broken for more than 6 months
 net/remmina-plugin-rdp||2015-12-30|Has expired: Broken for more than 6 months
 dns/bind10|dns/bundy|2015-12-31|Has expired: Is not developed any more, use dns/bundy
+lang/perl5.16||2015-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl

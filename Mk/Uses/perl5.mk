@@ -50,9 +50,7 @@ THIS_IS_OLD_PERL=	yes
 .else
 # end of remove
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
-.if ${PERL5_DEFAULT} == 5.16
-.include "${PORTSDIR}/lang/perl5.16/version.mk"
-.elif ${PERL5_DEFAULT} == 5.18
+.if ${PERL5_DEFAULT} == 5.18
 .include "${PORTSDIR}/lang/perl5.18/version.mk"
 .elif ${PERL5_DEFAULT} == 5.20
 .include "${PORTSDIR}/lang/perl5.20/version.mk"
@@ -94,10 +92,8 @@ PERL_ARCH?=	mach
 PERL_PORT?=	perl5.22
 .elif   ${PERL_LEVEL} >= 502000
 PERL_PORT?=	perl5.20
-.elif ${PERL_LEVEL} >= 501800
+.else # ${PERL_LEVEL} < 502000
 PERL_PORT?=	perl5.18
-.else # ${PERL_LEVEL} < 501800
-PERL_PORT?=	perl5.16
 .endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl
