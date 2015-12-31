@@ -1,6 +1,6 @@
---- configure.orig	2008-08-10 05:57:49.000000000 -0300
-+++ configure	2008-08-10 05:57:55.000000000 -0300
-@@ -1905,7 +1905,7 @@
+--- configure.orig	2009-01-05 17:28:15 UTC
++++ configure
+@@ -1906,7 +1906,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/s
  do
    IFS=$as_save_IFS
    test -z "$as_dir" && as_dir=.
