@@ -4,13 +4,12 @@
 PORTNAME=	dns_balance
 PORTVERSION=	2.0
 CATEGORIES=	dns
-MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
+MASTER_SITES=	http://www.netlab.cs.tsukuba.ac.jp/~yokota/archive/
 DISTNAME=	DNS-Balance-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic load-balancing DNS server
 
-BROKEN=		Does not fetch
 USE_RUBY=	yes
 USE_RC_SUBR=	dns_balance
 
