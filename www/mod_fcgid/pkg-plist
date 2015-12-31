@@ -1,6 +1,4 @@
 %%APACHEMODDIR%%/%%AP_MODULE%%
 %%PORTDOCS%%%%DOCSDIR%%/mod_fcgid.html
 %%PORTDOCS%%%%DOCSDIR%%/mod_fcgid.html.en
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@exec install -m 700 -o www -g www -d /var/run/fcgidsock
-@unexec rmdir /var/run/fcgidsock 2>/dev/null || true
+@dir(www,www,700) /var/run/fcgidsock
