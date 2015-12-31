@@ -1,3 +1,26 @@
+bin/testPlugin
+bin/nfsend
+bin/nfsen
+bin/RebuildHierarchy.pl
+@sample etc/nfsen-dist.conf etc/nfsen.conf
+libexec/%%PORTNAME%%/plugins/smily.jpg
+libexec/%%PORTNAME%%/plugins/demoplugin.pm
+libexec/%%PORTNAME%%/RRDconvertv1.pm
+libexec/%%PORTNAME%%/Notification.pm
+libexec/%%PORTNAME%%/Nfsync.pm
+libexec/%%PORTNAME%%/Nfsources.pm
+libexec/%%PORTNAME%%/Nfcomm.pm
+libexec/%%PORTNAME%%/NfSenSim.pm
+libexec/%%PORTNAME%%/NfSenRRD.pm
+libexec/%%PORTNAME%%/NfSenRC.pm
+libexec/%%PORTNAME%%/NfSen.pm
+libexec/%%PORTNAME%%/NfProfile.pm
+libexec/%%PORTNAME%%/NfConf.pm
+libexec/%%PORTNAME%%/NfAlert.pm
+libexec/%%PORTNAME%%/Lookup.pm
+libexec/%%PORTNAME%%/Log.pm
+libexec/%%PORTNAME%%/CopyRecursive.pm
+libexec/%%PORTNAME%%/AbuseWhois.pm
 %%WWWDIR%%/rrdgraph.php
 %%WWWDIR%%/profileadmin.php
 %%WWWDIR%%/process.php
@@ -51,45 +74,13 @@
 %%WWWDIR%%/colour_picker.html
 %%WWWDIR%%/colour_palette.html
 %%WWWDIR%%/alerting.php
-libexec/%%PORTNAME%%/plugins/smily.jpg
-libexec/%%PORTNAME%%/plugins/demoplugin.pm
-libexec/%%PORTNAME%%/RRDconvertv1.pm
-libexec/%%PORTNAME%%/Notification.pm
-libexec/%%PORTNAME%%/Nfsync.pm
-libexec/%%PORTNAME%%/Nfsources.pm
-libexec/%%PORTNAME%%/Nfcomm.pm
-libexec/%%PORTNAME%%/NfSenSim.pm
-libexec/%%PORTNAME%%/NfSenRRD.pm
-libexec/%%PORTNAME%%/NfSenRC.pm
-libexec/%%PORTNAME%%/NfSen.pm
-libexec/%%PORTNAME%%/NfProfile.pm
-libexec/%%PORTNAME%%/NfConf.pm
-libexec/%%PORTNAME%%/NfAlert.pm
-libexec/%%PORTNAME%%/Lookup.pm
-libexec/%%PORTNAME%%/Log.pm
-libexec/%%PORTNAME%%/CopyRecursive.pm
-libexec/%%PORTNAME%%/AbuseWhois.pm
-etc/nfsen-dist.conf
-bin/testPlugin
-bin/nfsend
-bin/nfsen
-bin/RebuildHierarchy.pl
-@unexec if cmp -s %D/etc/nfsen.conf %D/etc/nfsen-dist.conf; then rm -f %D/etc/nfsen.conf; fi
-@exec [ -f %D/etc/nfsen.conf ] || cp %D/etc/nfsen-dist.conf %D/etc/nfsen.conf
-@dirrmtry var/%%PORTNAME%%/run
-@dirrmtry var/%%PORTNAME%%/profiles-stat/live
-@dirrmtry var/%%PORTNAME%%/profiles-stat
-@dirrmtry var/%%PORTNAME%%/profiles-data/live
-@dirrmtry var/%%PORTNAME%%/profiles-data
-@dirrmtry var/%%PORTNAME%%/profiles/live
-@dirrmtry var/%%PORTNAME%%/profiles
-@dirrmtry var/%%PORTNAME%%/filters
-@dirrmtry var/%%PORTNAME%%
-@dirrmtry var
-@dirrmtry %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/icons
-@dirrm %%WWWDIR%%/css
-@dirrmtry %%WWWDIR%%
-@dirrmtry libexec/%%PORTNAME%%/plugins
-@dirrmtry libexec/%%PORTNAME%%
+@dir var/%%PORTNAME%%/run
+@dir var/%%PORTNAME%%/profiles-stat/live
+@dir var/%%PORTNAME%%/profiles-stat
+@dir var/%%PORTNAME%%/profiles-data/live
+@dir var/%%PORTNAME%%/profiles-data
+@dir var/%%PORTNAME%%/profiles/live
+@dir var/%%PORTNAME%%/profiles
+@dir var/%%PORTNAME%%/filters
+@dir var/%%PORTNAME%%
+@dir var
