@@ -31,7 +31,7 @@ PORTEXAMPLES=	README apd.htcl apd2.htcl ciscoios.htcl ciscoios0.htcl \
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 1100030)
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100030
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-sendip.c
 .endif
 
