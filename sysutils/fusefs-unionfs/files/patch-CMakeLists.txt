@@ -1,6 +1,6 @@
---- ./CMakeLists.txt.orig	2012-09-11 00:06:32.000000000 +0200
-+++ ./CMakeLists.txt	2013-07-24 16:54:01.550064323 +0200
-@@ -9,12 +9,6 @@
+--- CMakeLists.txt.orig	2015-01-14 10:08:20 UTC
++++ CMakeLists.txt
+@@ -9,12 +9,6 @@ IF(NOT CMAKE_CONFIGURATION_TYPES AND NOT
  	SET(CMAKE_BUILD_TYPE RelWithDebInfo)
  ENDIF(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
  
@@ -10,6 +10,6 @@
 -SET(CMAKE_C_FLAGS_RELEASE "-O2")
 -SET(CMAKE_C_FLAGS_DEBUG "-O0 -g -DDEBUG")
 -
- add_definitions(-D_FILE_OFFSET_BITS=64 -DFUSE_USE_VERSION=26)
- 
- option(WITH_XATTR "Enable support for extended attributes" OFF)
+ if (UNIX AND APPLE)
+   include_directories("/usr/local/include/osxfuse/fuse")
+ endif()
