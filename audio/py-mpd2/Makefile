@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fork of the Python MPD client library
 
 LICENSE=	LGPL3
