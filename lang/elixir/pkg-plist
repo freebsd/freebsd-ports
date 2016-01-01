@@ -38,7 +38,6 @@ bin/mix
 %%SRC%%lib/elixir/lib/elixir/lib/io/stream.ex
 %%SRC%%lib/elixir/lib/elixir/lib/kernel.ex
 %%SRC%%lib/elixir/lib/elixir/lib/kernel/cli.ex
-%%SRC%%lib/elixir/lib/elixir/lib/kernel/def.ex
 %%SRC%%lib/elixir/lib/elixir/lib/kernel/error_handler.ex
 %%SRC%%lib/elixir/lib/elixir/lib/kernel/lexical_tracker.ex
 %%SRC%%lib/elixir/lib/elixir/lib/kernel/parallel_compiler.ex
@@ -196,7 +195,6 @@ lib/elixir/lib/eex/ebin/Elixir.EEx.SyntaxError.beam
 lib/elixir/lib/eex/ebin/Elixir.EEx.Tokenizer.beam
 lib/elixir/lib/eex/ebin/Elixir.EEx.beam
 lib/elixir/lib/eex/ebin/eex.app
-lib/elixir/lib/elixir/ebin/Elixir.Access.Map.beam
 lib/elixir/lib/elixir/ebin/Elixir.Access.beam
 lib/elixir/lib/elixir/ebin/Elixir.Agent.Server.beam
 lib/elixir/lib/elixir/ebin/Elixir.Agent.beam
@@ -287,13 +285,13 @@ lib/elixir/lib/elixir/ebin/Elixir.Inspect.Version.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.beam
 lib/elixir/lib/elixir/ebin/Elixir.Integer.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.CLI.beam
-lib/elixir/lib/elixir/ebin/Elixir.Kernel.Def.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.ErrorHandler.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.LexicalTracker.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.ParallelCompiler.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.ParallelRequire.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.SpecialForms.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.Typespec.beam
+lib/elixir/lib/elixir/ebin/Elixir.Kernel.Utils.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.beam
 lib/elixir/lib/elixir/ebin/Elixir.KeyError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Keyword.beam
@@ -338,6 +336,7 @@ lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Version.Requirement.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Version.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Graphemes.beam
+lib/elixir/lib/elixir/ebin/Elixir.String.Normalizer.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Unicode.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.beam
 lib/elixir/lib/elixir/ebin/Elixir.StringIO.beam
@@ -397,6 +396,8 @@ lib/elixir/lib/elixir/ebin/elixir_tokenizer.beam
 lib/elixir/lib/elixir/ebin/elixir_translator.beam
 lib/elixir/lib/elixir/ebin/elixir_try.beam
 lib/elixir/lib/elixir/ebin/elixir_utils.beam
+lib/elixir/lib/elixir/ebin/elixir_with.beam
+lib/elixir/lib/elixir/lib/kernel/utils.ex
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.AssertionError.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Assertions.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.CLIFormatter.beam
@@ -410,6 +411,7 @@ lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DocTest.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.EventManager.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Filters.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Formatter.beam
+lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.MultiError.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.OnExitHandler.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Runner.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.RunnerStats.beam
@@ -427,12 +429,26 @@ lib/elixir/lib/iex/ebin/Elixir.IEx.Evaluator.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Helpers.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.History.State.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.History.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Any.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Atom.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.BitString.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Float.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Function.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Integer.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.List.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Map.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.PID.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Port.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Reference.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Tuple.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.Info.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Introspection.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Remsh.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Server.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.State.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.beam
 lib/elixir/lib/iex/ebin/iex.app
+lib/elixir/lib/iex/lib/iex/info.ex
 lib/elixir/lib/logger/ebin/Elixir.Logger.App.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Backends.Console.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Config.beam
@@ -451,6 +467,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Config.Agent.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Config.LoadError.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Config.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Dep.Converger.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Dep.ElixirSCM.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Dep.Fetcher.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Dep.Loader.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Dep.Lock.beam
@@ -474,6 +491,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.SCM.Path.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.SCM.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.IO.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.Process.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.Quiet.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.State.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.beam
@@ -519,6 +537,8 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.TasksServer.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Utils.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.beam
 lib/elixir/lib/mix/ebin/mix.app
+lib/elixir/lib/mix/lib/mix/dep/elixir_scm.ex
+lib/elixir/lib/mix/lib/mix/shell/quiet.ex
 man/man1/elixir.1.gz
 man/man1/elixirc.1.gz
 man/man1/iex.1.gz
