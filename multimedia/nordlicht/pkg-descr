@@ -1,0 +1,6 @@
+nordlicht is a tool that converts video files into colorful barcodes.
+nordlicht is free software, supports a large number of styles, and is
+optimized for speed.  It comes with a software library written in C
+that allows for easy integration into other programs.
+
+WWW: https://nordlicht.github.io/
