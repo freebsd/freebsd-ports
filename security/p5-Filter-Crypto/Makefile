@@ -21,10 +21,4 @@ USE_PERL5=	configure
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--prefix-dir=${OPENSSLBASE} --defaults
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.66:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
