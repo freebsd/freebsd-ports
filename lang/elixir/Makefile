@@ -3,12 +3,13 @@
 
 PORTNAME=	elixir
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 MASTER_SITES+=	http://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		Docs.zip:doc
-DIST_SUBDIR=	elixir
+DIST_SUBDIR=	elixir/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional, meta-programming aware language built on top of Erlang VM
