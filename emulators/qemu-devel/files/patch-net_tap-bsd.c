@@ -1,5 +1,5 @@
---- a/net/tap-bsd.c
-+++ b/net/tap-bsd.c
+--- net/tap-bsd.c.orig	2015-11-03 20:01:34 UTC
++++ net/tap-bsd.c
 @@ -29,6 +29,7 @@
  
  #if defined(__NetBSD__) || defined(__FreeBSD__)

@@ -1,5 +1,6 @@
-Index: qemu/qemu-char.c
-@@ -1606,10 +1606,13 @@
+--- qemu-char.c.orig	2015-12-16 00:54:18 UTC
++++ qemu-char.c
+@@ -1507,10 +1507,14 @@ static void tty_serial_init(int fd, int 
      cfsetospeed(&tty, spd);
  
      tty.c_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP
@@ -12,6 +13,7 @@ Index: qemu/qemu-char.c
 +#ifdef __FreeBSD__
 +    cfmakeraw(&tty);
 +#endif
++	      
      switch(data_bits) {
      default:
      case 8:
