@@ -25,10 +25,4 @@ TEST_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.63.02:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
