@@ -5,13 +5,10 @@ PORTNAME=	orbital_eunuchs_sniper
 PORTVERSION=	1.30
 PORTREVISION=	9
 CATEGORIES=	games
-MASTER_SITES=	http://offload2.icculus.org:9090/oes/ \
-		http://offload1.icculus.org:9090/oes/
+MASTER_SITES=	https://www.icculus.org/oes/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Overhead shooting game
-
-BROKEN=		unfetchable
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING
