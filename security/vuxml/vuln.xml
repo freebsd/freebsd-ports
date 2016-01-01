@@ -58,6 +58,167 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2b3b4c27-b0c7-11e5-8d13-bc5ff45d0f28">
+    <topic>qemu -- buffer overflow vulnerability in VNC</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0.1</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20151011</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/08/21/6">
+	  <p>Qemu emulator built with the VNC display driver support is
+	    vulnerable to a buffer overflow flaw leading to a heap memory
+	    corruption issue. It could occur while refreshing the server
+	    display surface via routine vnc_refresh_server_surface().</p>
+	  <p>A privileged guest user could use this flaw to corrupt the heap
+	    memory and crash the Qemu process instance OR potentially use it
+	    to execute arbitrary code on the host.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5225</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/08/21/6</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=efec4dcd2552e85ed57f276b58f09fc385727450</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/eb8934b0418b3b1d125edddc4fc334a54334a49b</url>
+    </references>
+    <dates>
+      <discovery>2015-08-17</discovery>
+      <entry>2016-01-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="21e5abe3-b0c6-11e5-8d13-bc5ff45d0f28">
+    <topic>qemu -- buffer overflow vulnerability in virtio-serial message exchanges</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/08/06/3">
+	  <p>Qemu emulator built with the virtio-serial vmchannel support is
+	    vulnerable to a buffer overflow issue. It could occur while
+	    exchanging virtio control messages between guest and the host.</p>
+	  <p>A malicious guest could use this flaw to corrupt few bytes of Qemu
+	    memory area, potentially crashing the Qemu process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5745</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/08/06/5</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=7882080388be5088e72c425b02223c02e6cb4295</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/7882080388be5088e72c425b02223c02e6cb4295</url>
+    </references>
+    <dates>
+      <discovery>2015-08-06</discovery>
+      <entry>2016-01-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a267cd6c-b0c4-11e5-8d13-bc5ff45d0f28">
+    <topic>qemu -- stack buffer overflow while parsing SCSI commands</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://openwall.com/lists/oss-security/2015/07/23/6">
+	  <p>Qemu emulator built with the SCSI device emulation support is
+	    vulnerable to a stack buffer overflow issue. It could occur while
+	    parsing SCSI command descriptor block with an invalid operation
+	    code.</p>
+	  <p>A privileged(CAP_SYS_RAWIO) user inside guest could use this flaw
+	    to crash the Qemu instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5158</cvename>
+      <url>http://openwall.com/lists/oss-security/2015/07/23/6</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=c170aad8b057223b1139d72e5ce7acceafab4fa9</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/c170aad8b057223b1139d72e5ce7acceafab4fa9</url>
+    </references>
+    <dates>
+      <discovery>2015-07-23</discovery>
+      <entry>2016-01-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="aea8d90e-b0c1-11e5-8d13-bc5ff45d0f28">
+    <topic>qemu -- code execution on host machine</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Petr Matousek of Red Hat Inc. reports:</p>
+	<blockquote cite="http://openwall.com/lists/oss-security/2015/06/17/5">
+	  <p>Due converting PIO to the new memory read/write api we no longer
+	    provide separate I/O region lenghts for read and write operations.
+	    As a result, reading from PIT Mode/Command register will end with
+	    accessing pit-&gt;channels with invalid index and potentially cause
+	    memory corruption and/or minor information leak.</p>
+	  <p>A privileged guest user in a guest with QEMU PIT emulation enabled
+	    could potentially (tough unlikely) use this flaw to execute
+	    arbitrary code on the host with the privileges of the hosting QEMU
+	    process.</p>
+	  <p>Please note that by default QEMU/KVM guests use in-kernel (KVM) PIT
+	    emulation and are thus not vulnerable to this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3214</cvename>
+      <url>http://openwall.com/lists/oss-security/2015/06/17/5</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=d4862a87e31a51de9eb260f25c9e99a75efe3235</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/d4862a87e31a51de9eb260f25c9e99a75efe3235</url>
+    </references>
+    <dates>
+      <discovery>2015-06-17</discovery>
+      <entry>2016-01-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b3a7e70-afce-11e5-b864-14dae9d210b8">
     <topic>mono -- DoS and code execution</topic>
     <affects>
