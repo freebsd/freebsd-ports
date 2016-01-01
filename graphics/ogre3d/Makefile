@@ -3,48 +3,36 @@
 
 PORTNAME=	ogre3d
 PORTVERSION=	1.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics devel
 MASTER_SITES=   https://bitbucket.org/sinbad/ogre/get/
 DISTNAME=	v1-9-0
-WRKSRC=		${WRKDIR}/sinbad-ogre-dd30349ea667
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Scene-oriented, flexible 3D engine written in C++
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libzzip.so:${PORTSDIR}/devel/zziplib \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfreeimage.so:${PORTSDIR}/graphics/freeimage
 
-OPTIONS_DEFINE=	BOOST DOCS
+BROKEN_powerpc=	does not install
 
 USE_LDCONFIG=	yes
-USES=		tar:bzip2 cmake pkgconfig compiler:c++11-lib
+USES=		tar:bzip2 cmake:outsource pkgconfig compiler:c++11-lib
 USE_SDL=	sdl
 USE_XORG=	xaw xrandr
+WRKSRC=		${WRKDIR}/sinbad-ogre-dd30349ea667
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	BOOST DOCS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MBOOST}
-BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-PLIST_SUB+=	BOOSTTRUE=""
-PLIST_SUB+=	BOOSTFALSE="@comment "
-.else
-PLIST_SUB+=	BOOSTTRUE="@comment "
-PLIST_SUB+=	BOOSTFALSE=""
-.endif
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not install on powerpc
-.endif
+BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+BOOST_RUN_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 post-patch:
-.if ! ${PORT_OPTIONS:MBOOST}
-	@${REINPLACE_CMD} -e 's|Boost|No_Boost|g' \
-		${WRKSRC}/CMake/Dependencies.cmake
-.endif
-	# disable OIS, POCO, TBB detection
 	@${REINPLACE_CMD} -e 's|include(FindPkgMacros)|return()|g' \
 		${WRKSRC}/CMake/Packages/FindOIS.cmake \
 		${WRKSRC}/CMake/Packages/FindPOCO.cmake \
@@ -57,10 +45,14 @@ post-patch:
 		s,defined(__x86_64__),& || defined(__powerpc__) || defined(__sparc64__) || defined(__amd64__),' \
 		${WRKSRC}/OgreMain/include/OgrePlatform.h
 
-post-install:
+post-patch-BOOST-off:
+	@${REINPLACE_CMD} -e 's|Boost|No_Boost|g' \
+		${WRKSRC}/CMake/Dependencies.cmake
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in README COPYING AUTHORS
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
