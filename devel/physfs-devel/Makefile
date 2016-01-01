@@ -5,7 +5,7 @@ PORTNAME=	physfs
 PORTVERSION=	1.1.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://offload1.icculus.org/${PORTNAME}/downloads/
+MASTER_SITES=	http://icculus.org/${PORTNAME}/downloads/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	oliver@FreeBSD.org
