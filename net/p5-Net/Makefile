@@ -34,10 +34,6 @@ USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.64:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
-
 .if ${PORT_OPTIONS:MIPV6} && ${PERL_LEVEL} < 502000
 BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.20:${PORTSDIR}/net/p5-IO-Socket-IP
 RUN_DEPENDS+=	p5-IO-Socket-IP>=0.20:${PORTSDIR}/net/p5-IO-Socket-IP

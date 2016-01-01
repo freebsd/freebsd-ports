@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/Lexical::Sub.3.gz
-%%PERL5_MAN3%%/Lexical::Var.3.gz
 %%SITE_ARCH%%/Lexical/Sub.pm
 %%SITE_ARCH%%/Lexical/Var.pm
 %%SITE_ARCH%%/auto/Lexical/Var/Var.so
+%%PERL5_MAN3%%/Lexical::Sub.3.gz
+%%PERL5_MAN3%%/Lexical::Var.3.gz
