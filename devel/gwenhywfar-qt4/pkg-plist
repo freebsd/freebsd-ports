@@ -1,4 +1,6 @@
 include/gwenhywfar4/gwen-gui-qt4/qt4_gui.hpp
+lib/cmake/gwengui-qt4-4.14/gwengui-qt4-config-version.cmake
+lib/cmake/gwengui-qt4-4.14/gwengui-qt4-config.cmake
 lib/libgwengui-qt4.so
 lib/libgwengui-qt4.so.0
 lib/libgwengui-qt4.so.0.0.0
