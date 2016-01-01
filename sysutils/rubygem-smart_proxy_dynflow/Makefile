@@ -5,7 +5,7 @@ PORTVERSION=	0.0.4
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Plugin to use Dynflow in Foreman Smart Proxy
 
 LICENSE=	GPLv3

@@ -6,7 +6,7 @@ PORTVERSION=	0.0.3
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	SSH host commands for Hammer CLI
 
 LICENSE=	GPLv3
