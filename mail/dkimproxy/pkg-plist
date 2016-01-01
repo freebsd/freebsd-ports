@@ -1,4 +1,4 @@
-bin/dkim_responder.pl
+%%TEST%%bin/dkim_responder.pl
 bin/dkimproxy.in
 bin/dkimproxy.out
 etc/dkimproxy_in.conf.example
