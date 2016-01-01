@@ -5,7 +5,7 @@ PORTNAME=	syobon
 PORTVERSION=	1.0.1
 PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	http://download.zapek.com/software/${PORTNAME}/ \
+MASTER_SITES=	http://zapek.com/wp-content/uploads/2010/09/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}_${DISTVERSION}_src${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
@@ -13,8 +13,6 @@ EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}_src${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform game as Super Mario Bros
-
-BROKEN=		unfetchable
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
