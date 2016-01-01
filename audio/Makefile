@@ -335,7 +335,6 @@
     SUBDIR += kmix
     SUBDIR += kscd
     SUBDIR += ksmp3play
-    SUBDIR += kstreamripper
     SUBDIR += ladspa
     SUBDIR += lame
     SUBDIR += lash
