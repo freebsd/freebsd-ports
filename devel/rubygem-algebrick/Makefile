@@ -5,7 +5,7 @@ PORTVERSION=	0.7.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Typed structs based on algebraic type definitions
 
 LICENSE=	APACHE20

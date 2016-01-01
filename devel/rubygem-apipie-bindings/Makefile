@@ -6,7 +6,7 @@ PORTVERSION=	0.0.15
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for API calls that are documented with Apipie
 
 LICENSE=	MIT

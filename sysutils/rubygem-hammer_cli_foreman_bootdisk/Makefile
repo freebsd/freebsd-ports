@@ -6,7 +6,7 @@ PORTVERSION=	0.1.3
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Foreman bootdisk commands for Hammer CLI
 
 LICENSE=	GPLv3
