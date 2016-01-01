@@ -5,13 +5,11 @@ PORTNAME=	erwn
 PORTVERSION=	0.8
 PORTREVISION=	12
 CATEGORIES=	www editors
-MASTER_SITES=	http://lisas.de/erwin/
+MASTER_SITES=	https://lisas.de/erwin/
 DISTNAME=	erwin-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GTK+-2 HTML editor
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
