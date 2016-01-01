@@ -1,8 +1,7 @@
 bin/ceylon
 bin/ceylon-sh-setup
-man/man1/ceylon-all.1.gz
 man/man1/ceylon-bash-completion.1.gz
-man/man1/ceylon-build.1.gz
+man/man1/ceylon-browse.1.gz
 man/man1/ceylon-classpath.1.gz
 man/man1/ceylon-compile-js.1.gz
 man/man1/ceylon-compile.1.gz
@@ -14,6 +13,7 @@ man/man1/ceylon-format.1.gz
 man/man1/ceylon-help.1.gz
 man/man1/ceylon-import-jar.1.gz
 man/man1/ceylon-info.1.gz
+man/man1/ceylon-p2.1.gz
 man/man1/ceylon-plugin.1.gz
 man/man1/ceylon-run-js.1.gz
 man/man1/ceylon-run.1.gz
@@ -21,5 +21,6 @@ man/man1/ceylon-src.1.gz
 man/man1/ceylon-test-js.1.gz
 man/man1/ceylon-test.1.gz
 man/man1/ceylon-version.1.gz
+man/man1/ceylon-war.1.gz
 man/man1/ceylon.1.gz
 @dir %%DATADIR%%/samples/helloworld/modules
