@@ -1,11 +1,11 @@
---- ./configure.orig	2011-07-19 09:08:26.000000000 -0400
-+++ ./configure	2011-07-19 09:08:11.000000000 -0400
-@@ -20457,7 +20457,7 @@
- $as_echo_n "checking if symbol visibility is supported... " >&6; }
-   visibility_cflags=""
-   case `$CC --version|head -n1|cut -f1 -d " "` in
--    *gcc*)
-+    cc|*gcc*)
-                      gccversion="` ${CC} -dumpversion `"
-        case $gccversion in
-          4.*)
+--- configure.orig	2015-05-25 16:16:33 UTC
++++ configure
+@@ -20986,7 +20986,7 @@ $as_echo_n "checking for fox libraries..
+ 
+ # Check whether --with-fox-libs was given.
+ if test "${with_fox_libs+set}" = set; then :
+-  withval=$with_fox_libs; fox_libs="$withval"
++  withval=$with_fox_libs; local_fox_libs="$withval"
+ else
+ 
+       ac_ext=cpp
