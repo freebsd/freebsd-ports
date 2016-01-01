@@ -365,7 +365,6 @@
     SUBDIR += snappy
     SUBDIR += spigot
     SUBDIR += spook
-    SUBDIR += spotify-websocket-api
     SUBDIR += subtitlecomposer-kde4
     SUBDIR += subtitleeditor
     SUBDIR += subtitleoffsetmodifier
