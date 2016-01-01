@@ -14,6 +14,7 @@ COMMENT=	Documentation for the Python programming language
 
 PORTSCOUT=	ignore:1
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		python:build tar:bzip2
 
@@ -22,23 +23,19 @@ PLIST=		${WRKDIR}/pkg-plist.${DOCFORMAT}
 
 DOCFORMAT?=	html
 
-.include <bsd.port.pre.mk>
-
-.  if ${DOCFORMAT} == "html" || ${DOCFORMAT} == "text"
-WRKSRC=		${WRKDIR}/${DISTNAME}
-.  else
-WRKSRC=		${WRKDIR}/docs-pdf
-.  endif
-.  if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "pdf-a4" && ${DOCFORMAT} != "pdf-letter" && ${DOCFORMAT} != "text"
+.if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "pdf-a4" && ${DOCFORMAT} != "pdf-letter" && ${DOCFORMAT} != "text"
 IGNORE=		invalid value for DOCFORMAT: "${DOCFORMAT}", possible values are: text, html, pdf-a4, pdf-letter
-.  endif
+.endif
+
+.if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "text"
+WRKSRC=		${WRKDIR}/docs-pdf
+.endif
 
 pre-install:
-	@cd ${WRKSRC} && \
-		(${FIND} . -type f | ${SED} -e 's|^\./|%%DOCSDIR%%/|' | ${SORT}) > ${PLIST}
+	@${FIND} ${WRKSRC} -type f | ${SED} -e 's|^${WRKSRC}|%%DOCSDIR%%|' | ${SORT} > ${PLIST}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
