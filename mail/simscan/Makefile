@@ -40,61 +40,37 @@ PASSTHRU_DESC=	Pass Spam Thru, Do Not Reject (required SPAMD)
 HEADERS_DESC=	Add a Received Line With Versions of Scanners
 DSPAM_DESC=	Turn on DSPAM scanning
 
-.include <bsd.port.pre.mk>
-
 CONFIGURE_ARGS=--enable-clamavdb-path=/var/db/clamav \
 		--enable-qmaildir=${QMAIL_PREFIX} \
 	  	--enable-spamc-user=n \
 		--enable-workdir=${WORKDIR} \
 		--enable-user=nobody
 
-.if ! ${PORT_OPTIONS:MCLAMAV}
-CONFIGURE_ARGS+=	--enable-clamav=n
-.else
-BUILD_DEPENDS+=	clamdscan:${PORTSDIR}/security/clamav
-.endif
+CLAMAV_CONFIGURE_OFF=	--enable-clamav=n
+CLAMAV_BUILD_DEPENDS=	clamdscan:${PORTSDIR}/security/clamav
 
-.if ! ${PORT_OPTIONS:MRIPMIME}
-CONFIGURE_ARGS+=--disable-ripmime
-.else
-BUILD_DEPENDS+=	ripmime:${PORTSDIR}/mail/ripmime
-.endif
+RIPMIME_CONFIGURE_OFF=	--disable-ripmime
+RIPMIME_BUILD_DEPENDS=	ripmime:${PORTSDIR}/mail/ripmime
 
-.if ${PORT_OPTIONS:MSPAMD}
-BUILD_DEPENDS+=	spamassassin:${PORTSDIR}/mail/spamassassin
-CONFIGURE_ARGS+=--enable-spam=y
-CONFIGURE_ARGS+=--enable-spamassassin-path=${LOCALBASE}/bin/spamassassin
-.endif
+SPAMD_BUILD_DEPENDS=	spamassassin:${PORTSDIR}/mail/spamassassin
+SPAMD_CONFIGURE_ON=	--enable-spam=y \
+			--enable-spamassassin-path=${LOCALBASE}/bin/spamassassin
 
-.if ${PORT_OPTIONS:MUSER}
-CONFIGURE_ARGS+=--enable-spamc-user=y
-.endif
+USER_CONFIGURE_ON=	--enable-spamc-user=y
 
-.if ${PORT_OPTIONS:MDOMAIN}
-CONFIGURE_ARGS+=--enable-per-domain=y
-.endif
+DOMAIN_CONFIGURE_ON=	--enable-per-domain=y
 
-.if ${PORT_OPTIONS:MATTACH}
-CONFIGURE_ARGS+=--enable-attach=y
-.endif
+ATTACH_CONFIGURE_ON=	--enable-attach=y
 
-.if ${PORT_OPTIONS:MDROPMSG}
-CONFIGURE_ARGS+=--enable-dropmsg=y
-.endif
+DROPMSG_CONFIGURE_ON=	--enable-dropmsg=y
 
-.if ${PORT_OPTIONS:MPASSTHRU}
-CONFIGURE_ARGS+=--enable-spam-passthru=y
-.endif
+PASSTHRU_CONFIGURE_ON=	--enable-spam-passthru=y
 
-.if ${PORT_OPTIONS:MHEADERS}
-CONFIGURE_ARGS+=--enable-received=y
-CONFIGURE_ARGS+=--enable-sigtool-path=${LOCALBASE}/bin/sigtool
-.endif
+HEADERS_CONFIGURE_ON=	--enable-received=y \
+			--enable-sigtool-path=${LOCALBASE}/bin/sigtool
 
-.if ${PORT_OPTIONS:MDSPAM}
-CONFIGURE_ARGS+=--enable-dspam=y
-BUILD_DEPENDS+=	dspam:${PORTSDIR}/mail/dspam
-.endif
+DSPAM_CONFIGURE_ON=	--enable-dspam=y
+DSPAM_BUILD_DEPENDS=	dspam:${PORTSDIR}/mail/dspam
 
 .if defined(SPAM_HITS)
 CONFIGURE_ARGS+=--enable-spam-hits=${SPAM_HITS}
@@ -126,8 +102,9 @@ post-patch:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/cdb/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/cdb/conf-ld
 	@${ECHO_CMD} ${STAGEDIR}${PREFIX} > ${WRKSRC}/cdb/conf-home
-	@${REINPLACE_CMD} -e 's|@qmaildir@|$$(DESTDIR)@qmaildir@|' \
+	@${REINPLACE_CMD} -E -e 's|@qmaildir@|$$(DESTDIR)@qmaildir@|' \
 	    -e 's|@workdir@|$$(DESTDIR)@workdir@|' \
+	    -e '/ch(mod|own)/d' \
 	    ${WRKSRC}/Makefile.in
 
 pre-configure:
@@ -152,12 +129,10 @@ pre-configure:
 pre-install:
 	${MKDIR} ${STAGEDIR}${QMAIL_PREFIX}/bin
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
