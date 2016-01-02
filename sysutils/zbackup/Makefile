@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zbackup
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/zbackup/zbackup/archive/
 DISTNAME=	${PORTVERSION}
