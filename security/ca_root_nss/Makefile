@@ -6,7 +6,7 @@ CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/nss/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
 
-MAINTAINER=	gecko@FreeBSD.org
+MAINTAINER=	ports-secteam@FreeBSD.org
 COMMENT=	Root certificate bundle from the Mozilla Project
 
 LICENSE=	MPL
