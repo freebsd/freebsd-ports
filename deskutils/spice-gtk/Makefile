@@ -20,13 +20,13 @@ BUILD_DEPENDS=	spice-protocol>=0.12.10:${PORTSDIR}/devel/spice-protocol \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:${PORTSDIR}/devel/py-pyparsing
 
 .if defined(SPICE_SLAVE)
+PORTREVISION=	1
 CATEGORIES+=	python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:${PORTSDIR}/x11-toolkits/py-gtk2
 CONFIGURE_ARGS+=	--with-python
-PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/SpiceClientGtk.a \
-		%%PYTHON_SITELIBDIR%%/SpiceClientGtk.so
+PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/SpiceClientGtk.so
 USES+=	python
 .endif
 
