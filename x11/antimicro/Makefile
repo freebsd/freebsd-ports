@@ -16,7 +16,7 @@ GH_ACCOUNT=	Ryochan7
 # Upstream assumes ${LOCALBASE}/lib is part of the default linker path. Pull
 # request 268 fixes it for X11 libraries, but SDL2 is still using pkg-config
 # output (without full paths).
-LDFLAGS+=	${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_XORG=	x11 xtst
 USE_QT5=	linguisttools_build qmake_build buildtools_build widgets network
