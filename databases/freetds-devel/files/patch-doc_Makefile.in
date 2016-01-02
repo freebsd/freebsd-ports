@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2015-05-24 09:01:30 UTC
+--- doc/Makefile.in.orig	2015-10-18 19:22:12 UTC
 +++ doc/Makefile.in
-@@ -749,16 +749,7 @@ $(INSTALLDIRS) $(DOCDIR):
+@@ -729,16 +729,7 @@ $(INSTALLDIRS) $(DOCDIR):
  
  # If we built the documentation ourselves, install that, 
  # else if we have access to distributed documentation, install that.  
@@ -12,8 +12,8 @@
 -	if test -r $(DOCDIR)/reference ; then d=.; else d="$(srcdir)"; fi; \
 -	find $$d/$(DOCDIR)/reference \( -type f -o -type l \) \
 -		-exec $(INSTALL) {} $(TARGET_DOCDIR)/reference ';'
--	find $(srcdir)/images -name \*.gif \
--		-exec  $(INSTALL) {} $(TARGET_DOCDIR)/images/ ';'
+-	cd $(srcdir) && find images -name \*.gif \
+-		-exec  $(INSTALL) {} $(TARGET_DOCDIR)/{} ';'
 +install-data-local:
  
  uninstall-local:
