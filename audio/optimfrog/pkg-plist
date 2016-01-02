@@ -1,0 +1,11 @@
+bin/off
+bin/ofr
+bin/ofr_sfx
+bin/ofs
+include/OptimFROG/OptimFROG.h
+include/OptimFROG/OptimFROGDecoder.h
+include/OptimFROG/PortableTypes.h
+include/OptimFROG/SystemID.h
+lib/libOptimFROG.so
+lib/libOptimFROG.so.0
+libdata/pkgconfig/optimfrog.pc
