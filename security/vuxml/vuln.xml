@@ -58,6 +58,212 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="42cbd1e8-b152-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in virtio-net support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.1</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/18/5">
+	  <p>Qemu emulator built with the Virtual Network Device(virtio-net)
+	    support is vulnerable to a DoS issue. It could occur while receiving
+	    large packets over the tuntap/macvtap interfaces and when guest's
+	    virtio-net driver did not support big/mergeable receive buffers.</p>
+	  <p>An attacker on the local network could use this flaw to disable
+	    guest's networking by sending a large number of jumbo frames to the
+	    guest, exhausting all receive buffers and thus leading to a DoS
+	    situation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7295</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/18/5</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=696317f1895e836d53b670c7b77b7be93302ba08</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/0cf33fb6b49a19de32859e2cdc6021334f448fb3</url>
+    </references>
+    <dates>
+      <discovery>2015-09-18</discovery>
+      <entry>2016-01-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6aa3322f-b150-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerabilities in NE2000 NIC support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0.1</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/15/2">
+	  <p>Qemu emulator built with the NE2000 NIC emulation support is
+	    vulnerable to an infinite loop issue. It could occur when receiving
+	    packets over the network.</p>
+	  <p>A privileged user inside guest could use this flaw to crash the
+	    Qemu instance resulting in DoS.</p>
+	</blockquote>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/15/3">
+	  <p>Qemu emulator built with the NE2000 NIC emulation support is
+	    vulnerable to a heap buffer overflow issue. It could occur when
+	    receiving packets over the network.</p>
+	  <p>A privileged user inside guest could use this flaw to crash the
+	    Qemu instance or potentially execute arbitrary code on the host.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5278</cvename>
+      <cvename>CVE-2015-5279</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/15/2</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/15/3</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=5a1ccdfe44946e726b4c6fda8a4493b3931a68c1</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/737d2b3c41d59eb8f94ab7eb419b957938f24943</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=7aa2bcad0ca837dd6d4bf4fa38a80314b4a6b755</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/9bbdbc66e5765068dce76e9269dce4547afd8ad4</url>
+    </references>
+    <dates>
+      <discovery>2015-09-15</discovery>
+      <entry>2016-01-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bbc97005-b14e-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in IDE disk/CD/DVD-ROM emulation</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.1</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/10/1">
+	  <p>Qemu emulator built with the IDE disk and CD/DVD-ROM emulation
+	    support is vulnerable to a divide by zero issue. It could occur
+	    while executing an IDE command WIN_READ_NATIVE_MAX to determine
+	    the maximum size of a drive.</p>
+	  <p>A privileged user inside guest could use this flaw to crash the
+	    Qemu instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6855</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/10/1</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=63d761388d6fea994ca498c6e7a210851a99ad93</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/d9033e1d3aa666c5071580617a57bd853c5d794a</url>
+    </references>
+    <dates>
+      <discovery>2015-09-09</discovery>
+      <entry>2016-01-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="10bf8eed-b14d-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in e1000 NIC support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0.1</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/04/4">
+	  <p>Qemu emulator built with the e1000 NIC emulation support is
+	    vulnerable to an infinite loop issue. It could occur while
+	    processing transmit descriptor data when sending a network packet.
+	    </p>
+	  <p>A privileged user inside guest could use this flaw to crash the
+	    Qemu instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6815</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/04/4</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=3a56af1fbc17ff453f6e90fb08ce0c0e6fd0b61b</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/b947ac2bf26479e710489739c465c8af336599e7</url>
+    </references>
+    <dates>
+      <discovery>2015-09-04</discovery>
+      <entry>2016-01-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8a560bcf-b14b-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in VNC</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.1.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.2.50.g20141230</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/02/7">
+	  <p>Qemu emulator built with the VNC display driver is vulnerable to an
+	    infinite loop issue. It could occur while processing a
+	    CLIENT_CUT_TEXT message with specially crafted payload message.</p>
+	  <p>A privileged guest user could use this flaw to crash the Qemu
+	    process on the host, resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5239</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/02/7</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=f9a70e79391f6d7c2a912d785239ee8effc1922d</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/f9a70e79391f6d7c2a912d785239ee8effc1922d</url>
+    </references>
+    <dates>
+      <discovery>2014-06-30</discovery>
+      <entry>2016-01-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2b3b4c27-b0c7-11e5-8d13-bc5ff45d0f28">
     <topic>qemu -- buffer overflow vulnerability in VNC</topic>
     <affects>
