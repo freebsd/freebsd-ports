@@ -370,6 +370,7 @@
     SUBDIR += posixtestsuite
     SUBDIR += proxyper
     SUBDIR += pspresent
+    SUBDIR += py-spdx
     SUBDIR += py-YABT
     SUBDIR += py-osd
     SUBDIR += py-pexpect
