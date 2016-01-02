@@ -370,8 +370,6 @@
     SUBDIR += posixtestsuite
     SUBDIR += proxyper
     SUBDIR += pspresent
-    SUBDIR += py-spdx
-    SUBDIR += py-spdx-lookup
     SUBDIR += py-YABT
     SUBDIR += py-osd
     SUBDIR += py-pexpect
@@ -382,6 +380,8 @@
     SUBDIR += py-qt4-doc
     SUBDIR += py-qt5-demo
     SUBDIR += py-qt5-doc
+    SUBDIR += py-spdx
+    SUBDIR += py-spdx-lookup
     SUBDIR += py-yolk
     SUBDIR += pylize
     SUBDIR += pypanda
