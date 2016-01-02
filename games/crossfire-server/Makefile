@@ -5,14 +5,13 @@ PORTNAME=	crossfire
 PORTVERSION=	1.70.0
 PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-server/${PORTVERSION} \
+		SF/${PORTNAME}/${PORTNAME}-maps/${PORTVERSION}:maps
 PKGNAMESUFFIX=	-server
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.maps${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.maps${EXTRACT_SUFX}:maps
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server for multiplayer graphical arcade and adventure game
-
-BROKEN=		unfetchable
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
@@ -23,13 +22,12 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		gmake libtool perl5 python uidfix
+USES=		gmake libtool localbase perl5 python uidfix
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --with-check=no --localstatedir=/var/games
 CONFIGURE_SHELL=${LOCALBASE}/bin/bash
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+REINPLACE_ARGS=	-i ""
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
@@ -43,8 +41,6 @@ DOC_FILES2=	PlayerStats README RunTimeCommands SurvivalGuide *.doc *.ps \
 		metaserver multigod plugins spellcasters_guide_to_runes
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile.in'| ${XARGS} ${REINPLACE_CMD} -e \
@@ -65,15 +61,8 @@ post-install:
 		's|#!/usr/bin/perl|#!${LOCALBASE}/bin/perl|g' {} \;
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		${STAGEDIR}${PREFIX}/bin/crossloop.web
-	@${FIND} ${STAGEDIR}${PREFIX} -name "*.bak" -delete
 
-	@${CHMOD} 775 ${STAGEDIR}/var/games/crossfire
-	@${CHMOD} 664 ${STAGEDIR}/var/games/crossfire/*
-.for d in account datafiles maps players template-maps unique-items
-	@${CHMOD} 774 ${STAGEDIR}/var/games/crossfire/${d}
-.endfor
-
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${FIND} ${WRKSRC}/doc -name 'Makefile*' -delete
@@ -81,6 +70,5 @@ post-install:
 	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DOCSDIR2})
 .endfor
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
-.endif
 
 .include <bsd.port.mk>
