@@ -532,6 +532,7 @@
     SUBDIR += opencore-amr
     SUBDIR += openspc
     SUBDIR += optimfrog
+    SUBDIR += optimfrog-sse2
     SUBDIR += opus
     SUBDIR += opus-tools
     SUBDIR += opusfile
