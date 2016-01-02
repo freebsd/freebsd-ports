@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2013-04-14 21:18:04.000000000 +0200
-+++ ./Makefile.in	2013-04-21 20:29:39.708633804 +0200
-@@ -149,8 +149,8 @@
+--- Makefile.in.orig	2015-12-31 00:25:51 UTC
++++ Makefile.in
+@@ -146,8 +146,8 @@ install: all
  	@echo "Installing xmp.h..."
  	@$(INSTALL) -m644 include/xmp.h $(DESTDIR)$(INCLUDEDIR)
  	@echo "Installing libxmp.pc..."
@@ -9,5 +9,5 @@
 +	@mkdir -p $(DESTDIR)$(PREFIX)/libdata/pkgconfig
 +	@$(INSTALL) -m644 libxmp.pc $(DESTDIR)$(PREFIX)/libdata/pkgconfig/
  
- depend: test/all_tests.c
+ depend:
  	@echo Building dependencies...
