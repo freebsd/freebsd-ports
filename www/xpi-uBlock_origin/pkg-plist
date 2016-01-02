@@ -20,6 +20,7 @@
 %%XPI_XPIDIR%%/assets/ublock/privacy.txt
 %%XPI_XPIDIR%%/assets/ublock/redirect-resources.txt
 %%XPI_XPIDIR%%/assets/ublock/redirect.txt
+%%XPI_XPIDIR%%/assets/ublock/resources.txt
 %%XPI_XPIDIR%%/assets/ublock/unbreak.txt
 %%XPI_XPIDIR%%/background.html
 %%XPI_XPIDIR%%/bootstrap.js
@@ -105,7 +106,6 @@
 %%XPI_XPIDIR%%/js/vapi-background.js
 %%XPI_XPIDIR%%/js/vapi-client.js
 %%XPI_XPIDIR%%/js/vapi-common.js
-%%XPI_XPIDIR%%/js/vapi-popup.js
 %%XPI_XPIDIR%%/js/whitelist.js
 %%XPI_XPIDIR%%/lib/publicsuffixlist.js
 %%XPI_XPIDIR%%/lib/punycode.js
@@ -119,6 +119,7 @@
 %%XPI_XPIDIR%%/locale/de/messages.properties
 %%XPI_XPIDIR%%/locale/el/messages.properties
 %%XPI_XPIDIR%%/locale/en/messages.properties
+%%XPI_XPIDIR%%/locale/eo/messages.properties
 %%XPI_XPIDIR%%/locale/es/messages.properties
 %%XPI_XPIDIR%%/locale/et/messages.properties
 %%XPI_XPIDIR%%/locale/eu/messages.properties
