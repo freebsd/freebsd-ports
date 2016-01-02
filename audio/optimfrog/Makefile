@@ -25,7 +25,6 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE_i386=	SSE2
 OPTIONS_DEFINE?=	#
 SSE2_DESCR=	Use SSE2 instructions
-SSE2_VARS=	PKGNAMESUFFIX=-sse2
 
 .include <bsd.port.pre.mk>
 
