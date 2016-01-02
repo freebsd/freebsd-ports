@@ -3,20 +3,22 @@
 
 PORTNAME=	libxs
 PORTVERSION=	1.2.0
-PORTREVISION=	5
+DISTVERSIONPREFIX=	v
+PORTREVISION=	6
 CATEGORIES=	devel
-MASTER_SITES=	http://download.crossroads.io/
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Open source lightweight messaging layer
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-USES=		compiler:features pathfix pkgconfig libtool
+USES=		autoreconf compiler:features pathfix pkgconfig libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	crossroads-io
 USE_LDCONFIG=	yes
+
+PATHFIX_MAKEFILEIN=	Makefile.am
 
 OPTIONS_DEFINE=	DEBUG DOCS PLUGINS ZMQ
 EXTERNAL_DESC=	PGM extension from ports
@@ -26,6 +28,8 @@ ZMQ_DESC=	Compatibility with ZMQ
 OPTIONS_RADIO=		PGM
 OPTIONS_RADIO_PGM=	INTERNAL EXTERNAL
 OPTIONS_DEFAULT=PLUGINS
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
@@ -84,10 +88,10 @@ PLIST_SUB+=	ZMQ="@comment "
 pre-configure:
 # fix for clang build
 	@${REINPLACE_CMD} "/^libxs_werror=/ s|yes|no|" \
-		${WRKSRC}/configure
+		${WRKSRC}/configure.ac
 .if ${PORT_OPTIONS:MEXTERNAL}
 	${REINPLACE_CMD} "s|openpgm-5.1|openpgm-5.2|g" \
-		${WRKSRC}/configure
+		${WRKSRC}/configure.ac
 .endif
 
 .include <bsd.port.post.mk>
