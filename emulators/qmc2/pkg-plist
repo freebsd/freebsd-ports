@@ -35,8 +35,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/activity_red.png
 %%DATADIR%%/img/add_to_favorites.png
 %%DATADIR%%/img/alien.png
+%%DATADIR%%/img/animbase.png
 %%DATADIR%%/img/arcadecabinet.png
 %%DATADIR%%/img/arcademode.png
+%%DATADIR%%/img/archive.png
 %%DATADIR%%/img/back.png
 %%DATADIR%%/img/broom.png
 %%DATADIR%%/img/browser.png
@@ -56,8 +58,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/circles/activity_red.png
 %%DATADIR%%/img/circles/add_to_favorites.png
 %%DATADIR%%/img/circles/alien.png
+%%DATADIR%%/img/circles/animbase.png
 %%DATADIR%%/img/circles/arcadecabinet.png
 %%DATADIR%%/img/circles/arcademode.png
+%%DATADIR%%/img/circles/archive.png
 %%DATADIR%%/img/circles/back.png
 %%DATADIR%%/img/circles/broom.png
 %%DATADIR%%/img/circles/browser.png
@@ -357,8 +361,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/classic/activity_red.png
 %%DATADIR%%/img/classic/add_to_favorites.png
 %%DATADIR%%/img/classic/alien.png
+%%DATADIR%%/img/classic/animbase.png
 %%DATADIR%%/img/classic/arcadecabinet.png
 %%DATADIR%%/img/classic/arcademode.png
+%%DATADIR%%/img/classic/archive.png
 %%DATADIR%%/img/classic/back.png
 %%DATADIR%%/img/classic/broom.png
 %%DATADIR%%/img/classic/browser.png
@@ -677,8 +683,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy-black/activity_red.png
 %%DATADIR%%/img/crazy-black/add_to_favorites.png
 %%DATADIR%%/img/crazy-black/alien.png
+%%DATADIR%%/img/crazy-black/animbase.png
 %%DATADIR%%/img/crazy-black/arcadecabinet.png
 %%DATADIR%%/img/crazy-black/arcademode.png
+%%DATADIR%%/img/crazy-black/archive.png
 %%DATADIR%%/img/crazy-black/back.png
 %%DATADIR%%/img/crazy-black/broom.png
 %%DATADIR%%/img/crazy-black/browser.png
@@ -977,8 +985,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy/activity_red.png
 %%DATADIR%%/img/crazy/add_to_favorites.png
 %%DATADIR%%/img/crazy/alien.png
+%%DATADIR%%/img/crazy/animbase.png
 %%DATADIR%%/img/crazy/arcadecabinet.png
 %%DATADIR%%/img/crazy/arcademode.png
+%%DATADIR%%/img/crazy/archive.png
 %%DATADIR%%/img/crazy/back.png
 %%DATADIR%%/img/crazy/broom.png
 %%DATADIR%%/img/crazy/browser.png
@@ -1277,8 +1287,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/cubes/activity_red.png
 %%DATADIR%%/img/cubes/add_to_favorites.png
 %%DATADIR%%/img/cubes/alien.png
+%%DATADIR%%/img/cubes/animbase.png
 %%DATADIR%%/img/cubes/arcadecabinet.png
 %%DATADIR%%/img/cubes/arcademode.png
+%%DATADIR%%/img/cubes/archive.png
 %%DATADIR%%/img/cubes/back.png
 %%DATADIR%%/img/cubes/broom.png
 %%DATADIR%%/img/cubes/browser.png
