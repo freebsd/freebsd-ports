@@ -1,11 +1,6 @@
 @cwd %%QMAIL_PREFIX%%
-@owner simscan
-@group simscan
-bin/simscanmk
-@mode 04711
-bin/simscan
-@mode
-@owner root
-@group wheel
-@exec install -d -o simscan -g simscan -m 0750 %D/%%SIMSCAN_DIR%%
-@dirrmtry %%SIMSCAN_DIR%%
+@(simscan,simscan,) bin/simscanmk
+@(simscan,simscan,04711) bin/simscan
+@dir(simscan,simscan,0750) %%SIMSCAN_DIR%%
+@dir %%QMAIL_PREFIX%%/bin
+@dir %%QMAIL_PREFIX%%
