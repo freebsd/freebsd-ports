@@ -3,6 +3,7 @@
 
 PORTNAME=	sshpass
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/sshpass/${PORTVERSION}
 
@@ -11,6 +12,7 @@ COMMENT=	Non-interactive ssh password auth tool
 
 LICENSE=	GPLv2
 
+USES=		autoreconf:env
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/sshpass \
