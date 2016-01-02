@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-#PORTREVISION=	1
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -336,7 +336,7 @@ post-extract:
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_W3C}
 
 post-patch:
-	${REINPLACE_CMD} -e "/^ICONVERSION/s/=.*/= '-${AOOSUFFIX}'/" \
+	${REINPLACE_CMD} -e "/^ICONVERSION/s/=.*/= '${AOOVERSION1}'/" \
 		${WRKSRC}/sysui/desktop/productversion.mk
 	${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${JAVA_HOME}|" \
 		${WRKSRC}/desktop/scripts/soffice.sh
