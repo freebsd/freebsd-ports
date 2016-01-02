@@ -3,6 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
+PORTREVISION=	1
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -325,7 +326,7 @@ post-extract:
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_W3C}
 
 post-patch:
-	${REINPLACE_CMD} -e "/^ICONVERSION/s/=.*/= '-${AOOSUFFIX}'/" \
+	${REINPLACE_CMD} -e "/^ICONVERSION/s/=.*/= '${AOOVERSION1}'/" \
 		${WRKSRC}/sysui/desktop/productversion.mk
 	${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${JAVA_HOME}|" \
 		${WRKSRC}/desktop/scripts/soffice.sh
