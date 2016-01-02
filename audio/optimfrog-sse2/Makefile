@@ -1,5 +1,7 @@
 # $FreeBSD$
 
+PKGNAMESUFFIX=	-sse2
+
 MASTERDIR=	${.CURDIR}/../optimfrog
 COMMENT=	Best-ratio lossless audio codec (SSE2 required)
 
