@@ -14,7 +14,7 @@ NO_CDROM=	Possible copyright infringement
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		autoreconf gmake ncurses perl5
+USES=		autoreconf gmake localbase ncurses perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib \
@@ -22,9 +22,6 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/lib \
 MAKE_ENV=	VERBOSE=1
 MAKEFILE=	makefile
 ALL_TARGET=	default
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST=	ANGBANDBIN="${ANGBANDBIN}" ANGBANDLIB="${ANGBANDLIB}"
