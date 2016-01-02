@@ -4148,6 +4148,7 @@
     SUBDIR += py-mx-experimental
     SUBDIR += py-mygpoclient
     SUBDIR += py-nagioscheck
+    SUBDIR += py-natsort
     SUBDIR += py-natural
     SUBDIR += py-ncurses
     SUBDIR += py-nose

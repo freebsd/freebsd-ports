@@ -1,0 +1,6 @@
+Normal python sort algorithm sorts lexicographically, so you might not get the
+results that you expect. Natsort provides a function natsorted() that helps sort
+lists "naturally", either as real numbers (i.e. signed/unsigned floats or ints),
+or as versions.
+
+WWW: https://github.com/SethMMorton/natsort
