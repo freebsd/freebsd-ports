@@ -1,0 +1,11 @@
+--- gcc/config.host.orig	2014-01-02 22:23:26 UTC
++++ gcc/config.host
+@@ -99,7 +99,7 @@ case ${host} in
+ esac
+ 
+ case ${host} in
+-  arm*-*-linux*)
++  arm*-*-*)
+     case ${target} in
+       arm*-*-*)
+ 	host_extra_gcc_objs="driver-arm.o"
