@@ -58,6 +58,426 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1384f2fd-b1be-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in Rocker switch emulation</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/28/6">
+	  <p>Qemu emulator built with the Rocker switch emulation support is
+	    vulnerable to an off-by-one error. It happens while processing
+	    transmit(tx) descriptors in 'tx_consume' routine, if a descriptor
+	    was to have more than allowed (ROCKER_TX_FRAGS_MAX=16) fragments.
+	    </p>
+	  <p>A privileged user inside guest could use this flaw to cause memory
+	    leakage on the host or crash the Qemu process instance resulting in
+	    DoS issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8701</cvename>
+      <freebsdpr>ports/205813</freebsdpr>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/28/6</url>
+      <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg04629.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-28</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="152acff3-b1bd-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in Q35 chipset emulation</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.5.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/24/1">
+	  <p>Qemu emulator built with the Q35 chipset based pc system emulator
+	    is vulnerable to a heap based buffer overflow. It occurs during VM
+	    guest migration, as more(16 bytes) data is moved into allocated
+	    (8 bytes) memory area.</p>
+	  <p>A privileged guest user could use this issue to corrupt the VM
+	    guest image, potentially leading to a DoS. This issue affects q35
+	    machine types.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8666</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/24/1</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=d9a3b33d2c9f996537b7f1d0246dee2d0120cefb</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/d9a3b33d2c9f996537b7f1d0246dee2d0120cefb</url>
+    </references>
+    <dates>
+      <discovery>2015-11-19</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="62ab8707-b1bc-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in Human Monitor Interface support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/22/8">
+	  <p>Qemu emulator built with the Human Monitor Interface(HMP) support
+	    is vulnerable to an OOB write issue. It occurs while processing
+	    'sendkey' command in hmp_sendkey routine, if the command argument is
+	    longer than the 'keyname_buf' buffer size.</p>
+	  <p>A user/process could use this flaw to crash the Qemu process
+	    instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8619</cvename>
+      <freebsdpr>ports/205813</freebsdpr>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/22/8</url>
+      <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg02930.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-23</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b3f9f8ef-b1bb-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in MegaRAID SAS HBA emulation</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/21/7">
+	  <p>Qemu emulator built with the SCSI MegaRAID SAS HBA emulation
+	    support is vulnerable to a stack buffer overflow issue. It occurs
+	    while processing the SCSI controller's CTRL_GET_INFO command. A
+	    privileged guest user could use this flaw to crash the Qemu process
+	    instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8613</cvename>
+      <freebsdpr>ports/205813</freebsdpr>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/21/7</url>
+      <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg03737.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-21</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9ad8993e-b1ba-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in VMWARE VMXNET3 NIC support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/15/4">
+	  <p>Qemu emulator built with a VMWARE VMXNET3 paravirtual NIC emulator
+	    support is vulnerable to a memory leakage flaw. It occurs when a
+	    guest repeatedly tries to activate the vmxnet3 device.</p>
+	  <p>A privileged guest user could use this flaw to leak host memory,
+	    resulting in DoS on the host.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8567</cvename>
+      <cvename>CVE-2015-8568</cvename>
+      <freebsdpr>ports/205813</freebsdpr>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/15/4</url>
+      <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg02299.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-15</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="60cb2055-b1b8-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in USB EHCI emulation support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/14/9">
+	  <p>Qemu emulator built with the USB EHCI emulation support is
+	    vulnerable to an infinite loop issue. It occurs during communication
+	    between host controller interface(EHCI) and a respective device
+	    driver. These two communicate via a isochronous transfer descriptor
+	    list(iTD) and an infinite loop unfolds if there is a closed loop in
+	    this list.</p>
+	  <p>A privileges user inside guest could use this flaw to consume
+	    excessive CPU cycles &amp; resources on the host.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8558</cvename>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/14/9</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=156a2e4dbffa85997636a7a39ef12da6f1b40254</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/156a2e4dbffa85997636a7a39ef12da6f1b40254</url>
+    </references>
+    <dates>
+      <discovery>2015-12-14</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3fb06284-b1b7-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in MSI-X support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.5.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/14/2">
+	  <p>Qemu emulator built with the PCI MSI-X support is vulnerable to
+	    null pointer dereference issue. It occurs when the controller
+	    attempts to write to the pending bit array(PBA) memory region.
+	    Because the MSI-X MMIO support did not define the .write method.</p>
+	  <p>A privileges used inside guest could use this flaw to crash the
+	    Qemu process resulting in DoS issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7549</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/14/2</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=43b11a91dd861a946b231b89b7542856ade23d1b</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/43b11a91dd861a946b231b89b7542856ade23d1b</url>
+    </references>
+    <dates>
+      <discovery>2015-06-26</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="67feba97-b1b5-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in VNC</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.5.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/08/4">
+	  <p>Qemu emulator built with the VNC display driver support is
+	    vulnerable to an arithmetic exception flaw. It occurs on the VNC
+	    server side while processing the 'SetPixelFormat' messages from a
+	    client.</p>
+	  <p>A privileged remote client could use this flaw to crash the guest
+	    resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8504</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/08/4</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commitdiff;h=4c65fed8bdf96780735dbdb92a8bd0d6b6526cc3</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/4c65fed8bdf96780735dbdb92a8bd0d6b6526cc3</url>
+    </references>
+    <dates>
+      <discovery>2015-12-08</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="405446f4-b1b3-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerabilities in AMD PC-Net II NIC support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.5.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/30/2">
+	  <p>Qemu emulator built with the AMD PC-Net II Ethernet Controller
+	    support is vulnerable to a heap buffer overflow flaw. While
+	    receiving packets in the loopback mode, it appends CRC code to the
+	    receive buffer. If the data size given is same as the receive buffer
+	    size, the appended CRC code overwrites 4 bytes beyond this
+	    's-&gt;buffer' array.</p>
+	  <p>A privileged(CAP_SYS_RAWIO) user inside guest could use this flaw
+	    to crash the Qemu instance resulting in DoS or potentially execute
+	    arbitrary code with privileges of the Qemu process on the host.</p>
+	</blockquote>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/30/3">
+	  <p>The AMD PC-Net II emulator(hw/net/pcnet.c), while receiving packets
+	    from a remote host(non-loopback mode), fails to validate the
+	    received data size, thus resulting in a buffer overflow issue. It
+	    could potentially lead to arbitrary code execution on the host, with
+	    privileges of the Qemu process. It requires the guest NIC to have
+	    larger MTU limit.</p>
+	  <p>A remote user could use this flaw to crash the guest instance
+	    resulting in DoS or potentially execute arbitrary code on a remote
+	    host with privileges of the Qemu process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7504</cvename>
+      <cvename>CVE-2015-7512</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/30/2</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/30/3</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=837f21aacf5a714c23ddaadbbc5212f9b661e3f7</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=8b98a2f07175d46c3f7217639bd5e03f2ec56343</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/837f21aacf5a714c23ddaadbbc5212f9b661e3f7</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/8b98a2f07175d46c3f7217639bd5e03f2ec56343</url>
+    </references>
+    <dates>
+      <discovery>2015-11-30</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b56fe6bb-b1b1-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerabilities in eepro100 NIC support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/25/3">
+	  <p>Qemu emulator built with the i8255x (PRO100) emulation support is
+	    vulnerable to an infinite loop issue. It could occur while
+	    processing a chain of commands located in the Command Block List
+	    (CBL). Each Command Block(CB) points to the next command in the
+	    list. An infinite loop unfolds if the link to the next CB points
+	    to the same block or there is a closed loop in the chain.</p>
+	  <p>A privileged(CAP_SYS_RAWIO) user inside guest could use this flaw
+	    to crash the Qemu instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8345</cvename>
+      <freebsdpr>ports/205813</freebsdpr>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/25/3</url>
+      <url>https://lists.gnu.org/archive/html/qemu-devel/2015-10/msg03911.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-16</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="42cbd1e8-b152-11e5-9728-002590263bf5">
     <topic>qemu -- denial of service vulnerability in virtio-net support</topic>
     <affects>
