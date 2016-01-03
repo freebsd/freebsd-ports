@@ -1,5 +1,5 @@
---- storage/tokudb/ft-index/portability/memory.cc.orig	2015-06-17 14:54:13 UTC
-+++ storage/tokudb/ft-index/portability/memory.cc
+--- storage/tokudb/PerconaFT/portability/memory.cc.orig	2015-06-17 14:54:13 UTC
++++ storage/tokudb/PerconaFT/portability/memory.cc
 @@ -94,11 +94,6 @@ PATENT RIGHTS GRANT:
  #include <string.h>
  #include <stdio.h>
