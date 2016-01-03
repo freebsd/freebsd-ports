@@ -5,12 +5,10 @@ PORTNAME=	kover
 PORTVERSION=	6
 PORTREVISION=	5
 CATEGORIES=	print kde
-MASTER_SITES=	http://lisas.de/kover/
+MASTER_SITES=	https://lisas.de/kover/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG CD cover printer
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
