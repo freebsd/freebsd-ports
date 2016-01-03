@@ -11,12 +11,11 @@ MASTER_SITES=	http://kornelix.squarespace.com/storage/downloads/ \
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Jigsaw puzzle program
 
-USES=		gmake pkgconfig
+USES=		execinfo gmake pkgconfig
 USE_GNOME=	gtk20
 
 ALL_TARGET=	#
 #RUN_DEPENDS+=	xdg-desktop-menu:${PORTSDIR}/devel/xdg-utils
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 DESKTOP_ENTRIES="Picpuz" \
 		"Jigsaw Puzzle" \
 		"${PREFIX}/share/pixmaps/picpuz.png" \
