@@ -14,6 +14,7 @@ include/c_icap/c-icap-conf.h
 include/c_icap/c-icap.h
 include/c_icap/cache.h
 include/c_icap/cfg_param.h
+include/c_icap/ci_regex.h
 include/c_icap/ci_threads.h
 include/c_icap/commands.h
 include/c_icap/debug.h
@@ -43,12 +44,13 @@ include/c_icap/util.h
 lib/c_icap/dnsbl_tables.so
 %%LDAP%%lib/c_icap/ldap_module.so
 %%PERL%%lib/c_icap/perl_handler.so
+lib/c_icap/shared_cache.so
 lib/c_icap/srv_echo.so
 lib/c_icap/srv_ex206.so
 lib/c_icap/sys_logger.so
 lib/libicapapi.so
-lib/libicapapi.so.3
-lib/libicapapi.so.3.0.5
+lib/libicapapi.so.4
+lib/libicapapi.so.4.0.2
 man/man8/c-icap-client.8.gz
 man/man8/c-icap-config.8.gz
 man/man8/c-icap-libicapapi-config.8.gz
