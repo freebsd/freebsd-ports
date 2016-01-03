@@ -380,7 +380,7 @@ Notes:
   </vuln>
 
   <vuln vid="405446f4-b1b3-11e5-9728-002590263bf5">
-    <topic>qemu -- denial of service vulnerabilities in AMD PC-Net II NIC support</topic>
+    <topic>qemu and xen-tools -- denial of service vulnerabilities in AMD PC-Net II NIC support</topic>
     <affects>
       <package>
 	<name>qemu</name>
@@ -391,6 +391,10 @@ Notes:
 	<name>qemu-sbruno</name>
 	<name>qemu-user-static</name>
 	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+      <package>
+	<name>xen-tools</name>
+	<range><le>4.5.2</le></range>
       </package>
     </affects>
     <description>
@@ -429,10 +433,12 @@ Notes:
       <url>http://git.qemu.org/?p=qemu.git;a=commit;h=8b98a2f07175d46c3f7217639bd5e03f2ec56343</url>
       <url>https://github.com/seanbruno/qemu-bsd-user/commit/837f21aacf5a714c23ddaadbbc5212f9b661e3f7</url>
       <url>https://github.com/seanbruno/qemu-bsd-user/commit/8b98a2f07175d46c3f7217639bd5e03f2ec56343</url>
+      <url>http://xenbits.xen.org/xsa/advisory-162.html</url>
     </references>
     <dates>
       <discovery>2015-11-30</discovery>
       <entry>2016-01-03</entry>
+      <modified>2016-01-03</modified>
     </dates>
   </vuln>
 
