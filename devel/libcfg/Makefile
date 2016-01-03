@@ -5,13 +5,11 @@ PORTNAME=	libcfg
 PORTVERSION=	0.6.2
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://platon.sk/upload/_projects/00003/
+MASTER_SITES=	http://opensource.platon.org/projects/
 DISTNAME=	${PORTNAME}+-${DISTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library for command line and configuration file parsing
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
