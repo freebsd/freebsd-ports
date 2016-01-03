@@ -3927,6 +3927,7 @@
     SUBDIR += py-babelfish
     SUBDIR += py-backports.shutil_get_terminal_size
     SUBDIR += py-backports_abc
+    SUBDIR += py-bandit
     SUBDIR += py-bcdoc
     SUBDIR += py-billiard
     SUBDIR += py-binplist
