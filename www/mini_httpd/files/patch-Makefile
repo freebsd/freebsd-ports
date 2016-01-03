@@ -1,6 +1,6 @@
---- Makefile.orig	2014-08-11 21:13:49.000000000 +0200
-+++ Makefile	2014-08-15 13:12:30.099236617 +0200
-@@ -15,16 +15,16 @@
+--- Makefile.orig	2014-10-19 06:33:43 UTC
++++ Makefile
+@@ -15,17 +15,17 @@ CRYPT_LIB =    -lcrypt
  # tree with your OpenSSL installation - depending on how you installed it,
  # it may be in /usr/local instead of /usr/local/ssl.
  #SSL_TREE =	/usr/local/ssl
@@ -17,7 +17,9 @@
  CC =		cc
  CDEFS =		$(SSL_DEFS) $(SSL_INC)
 -CFLAGS =	-O $(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
-+CFLAGS =	$(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
- LDFLAGS =	-s
+-LDFLAGS =	-s
++CFLAGS = -O2 -pipe  -fstack-protector -fno-strict-aliasing	$(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
++LDFLAGS =  -Wl,-rpath,/usr/local/lib -fstack-protector	-s
  LDLIBS =	$(CRYPT_LIB) $(SSL_LIBS) $(SYSV_LIBS)
  
+ all:		mini_httpd htpasswd
