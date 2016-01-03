@@ -1,0 +1,21 @@
+--- src/Makefile.in.orig	2003-05-18 17:26:44 UTC
++++ src/Makefile.in
+@@ -533,7 +533,7 @@ crc.h: mkcrc.c
+ 
+ # Prepare a place for newsx in the news spool: 
+ install-exec-local:
+-	if test ! -d ${INHOSTS} ; then \
++	if test ! -d ${DESTDIR}${INHOSTS} ; then \
+ 	    if test -d ${SPOOL}/in.hosts ; then \
+ 		echo The default location has changed, so we move ;\
+ 		echo the directory ${SPOOL}/in.hosts to ${INHOSTS} ;\
+@@ -541,8 +541,7 @@ install-exec-local:
+ 	    else \
+ 		echo Creating directory ${INHOSTS} ;\
+ 		umask @INN_NEWSUMASK@ ;\
+-		mkdir ${INHOSTS} ;\
+-		chown ${NEWSUSER} ${INHOSTS} ;\
++		mkdir -p ${DESTDIR}${INHOSTS} ;\
+ 	    fi ;\
+ 	fi
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
