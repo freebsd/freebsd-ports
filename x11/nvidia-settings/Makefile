@@ -3,7 +3,7 @@
 
 PORTNAME=	nvidia-settings
 PORTVERSION=	355.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	bland@FreeBSD.org
@@ -24,7 +24,9 @@ USE_XORG=	xext xv
 
 PLIST_FILES=	bin/nvidia-settings \
 		man/man1/nvidia-settings.1.gz \
-		lib/libnvidia-gtk2.so.${PORTVERSION}
+		lib/libnvidia-gtk2.so.${PORTVERSION} \
+		share/applications/nvidia-settings.desktop \
+		share/pixmaps/nvidia-settings.png
 
 LDFLAGS+=	-pthread
 MAKE_ENV=	NV_USE_BUNDLED_LIBJANSSON=0 \
@@ -38,8 +40,15 @@ MAKE_ENV=	NV_USE_BUNDLED_LIBJANSSON=0 \
 post-patch:	.SILENT
 	${REINPLACE_CMD} \
 		 -e '/^MANDIR/s|share/||' ${WRKSRC}/utils.mk
+	${REINPLACE_CMD} -E -e 's,__(PIXMAP|UTILS)_PATH__/,,' \
+		-e '/^Categories/ s,=.*,=  Settings;HardwareSettings;,' \
+		${WRKSRC}/doc/nvidia-settings.desktop
 
 post-install:	.SILENT
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnvidia-gtk2.so.${PORTVERSION}
+	${INSTALL_DATA} ${WRKSRC}/doc/nvidia-settings.desktop \
+		${STAGEDIR}/${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/nvidia-settings.png \
+		${STAGEDIR}/${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
