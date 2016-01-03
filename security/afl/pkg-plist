@@ -72,3 +72,4 @@ lib/afl/as
 %%PORTDOCS%%%%DOCSDIR%%/sister_projects.txt
 %%PORTDOCS%%%%DOCSDIR%%/status_screen.txt
 %%PORTDOCS%%%%DOCSDIR%%/technical_details.txt
+%%PORTDOCS%%%%DOCSDIR%%/QuickStartGuide.txt
