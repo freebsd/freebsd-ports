@@ -1,0 +1,4 @@
+bin/cron_event_predict.plx
+%%SITE_PERL%%/Schedule/Cron/Events.pm
+%%PERL5_MAN1%%/cron_event_predict.plx.1.gz
+%%PERL5_MAN3%%/Schedule::Cron::Events.3.gz
