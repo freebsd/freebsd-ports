@@ -21,11 +21,6 @@ USE_PERL5=	configure
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS+=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools
-RUN_DEPENDS+=	p5-PathTools>=3.4000:${PORTSDIR}/devel/p5-PathTools
-.endif
-
 .if ${PERL_LEVEL} < 502200
 TEST_DEPENDS+=	p5-Test-Simple>=1.001.014:${PORTSDIR}/devel/p5-Test-Simple
 .endif

@@ -17,6 +17,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-7.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
 
+IGNORE=		does not work correctly
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

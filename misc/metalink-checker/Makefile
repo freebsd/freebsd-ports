@@ -11,13 +11,16 @@ DISTNAME=	checker-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python script to check metalink files and complete a basic download
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
 
 USES=		dos2unix python
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}.py
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -25,10 +28,12 @@ post-patch:
 		${WRKSRC}/${PORTNAME}.py
 
 do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

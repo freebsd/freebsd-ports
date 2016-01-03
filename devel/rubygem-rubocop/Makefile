@@ -5,7 +5,7 @@ PORTVERSION=	0.35.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby code style checking tool
 
 LICENSE=	MIT

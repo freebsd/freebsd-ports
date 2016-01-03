@@ -5,7 +5,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Modern concurrency tools for Ruby
 
 LICENSE=	MIT

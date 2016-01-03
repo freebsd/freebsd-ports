@@ -19,7 +19,7 @@ OPTIONS_DEFINE_i386=	MMX
 OPTIONS_DEFAULT=	AALIB
 ZVBI_DESC=	Enable libzvbi support
 
-USES=		gmake iconv jpeg motif perl5 tar:bzip2
+USES=		gmake iconv jpeg motif perl5 tar:bzip2 pkgconfig
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xaw
 CPPFLAGS+=	-I${WRKSRC}/common
@@ -44,10 +44,10 @@ PLIST_SUB+=	AA="@comment "
 .if ${PORT_OPTIONS:MZVBI}
 LIB_DEPENDS+=	libzvbi.so:${PORTSDIR}/devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
-PLIST_SUB+=	ZVBI="" ZVBI5=""
+PLIST_SUB+=	ZVBI=""
 .else
 CONFIGURE_ARGS+=--enable-zvbi=no
-PLIST_SUB+=	ZVBI="@comment " ZVBI5="@comment "
+PLIST_SUB+=	ZVBI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDV}
@@ -79,11 +79,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g; \
 		s|/usr/local|${LOCALBASE}|g; \
 		s|-lquicktime|-L${LOCALBASE}/lib &|g; \
-		s|LIBV4L="yes"|LIBV4L="no"|g' \
+		s|LIBV4L="yes"|LIBV4L="no"|g; \
+		s|-lunicode|-liconv &|g' \
 		${WRKSRC}/configure
 
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
 		${WRKSRC}/console/Subdir.mk \
+		${WRKSRC}/x11/Subdir.mk
+
+	@${REINPLACE_CMD} -e 's|linuxyesyes|bsdyesyes|g' \
 		${WRKSRC}/x11/Subdir.mk
 
 	@${REINPLACE_CMD} -e 's|\(@CFLAGS@.*\)\$$(LIB_FLAGS) |\$$(LIB_FLAGS) \1|g; \

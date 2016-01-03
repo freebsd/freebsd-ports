@@ -777,7 +777,6 @@
     SUBDIR += piddle
     SUBDIR += pikopixel
     SUBDIR += pinpoint
-    SUBDIR += pinta
     SUBDIR += pixelize
     SUBDIR += pixen
     SUBDIR += pixie

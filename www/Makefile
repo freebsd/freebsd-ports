@@ -165,7 +165,6 @@
     SUBDIR += efront
     SUBDIR += elgg
     SUBDIR += elinks
-    SUBDIR += eliom
     SUBDIR += elixir-html_entities
     SUBDIR += elixir-httpoison
     SUBDIR += elixir-httpotion
@@ -572,7 +571,6 @@
     SUBDIR += nspluginwrapper
     SUBDIR += obhttpd
     SUBDIR += ocaml-net
-    SUBDIR += ocsigen
     SUBDIR += offline-npm
     SUBDIR += ojs2
     SUBDIR += opencart

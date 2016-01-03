@@ -41,7 +41,7 @@ SHEBANG_FILES=	acid/transcript \
 		unix/man/fixurls
 USE_PERL5=	build
 USE_XORG=	x11 xt xi xaw
-WRKSRC=		${WRKDIR}/plan9
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST=		${WRKDIR}/.PLIST
 SUB_FILES=	pkg-message
 REINPLACE_ARGS=	-i ""		# necessary since installs via recursive copy

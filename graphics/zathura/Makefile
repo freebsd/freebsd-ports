@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	graphics print
 MASTER_SITES=	http://pwmt.org/projects/zathura/download/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 BUILD_DEPENDS+=	rst2html:${PORTSDIR}/textproc/py-docutils
 
 USE_GNOME=	glib20 gtk30
-USES=		gmake pkgconfig
+USES=		compiler:c11 gmake pkgconfig
 MAKE_ENV=	SFLAGS="${STRIP}" \
 		RSTTOMAN=${LOCALBASE}/bin/rst2man \
 		ZLIB_INC= \
@@ -33,8 +33,6 @@ SQLITE_MAKE_ENV=	WITH_SQLITE=1
 SQLITE_MAKE_ENV_OFF=	WITH_SQLITE=0
 NLS_USES=		gettext
 
-.include <bsd.port.options.mk>
-
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|man[15]|man/&|g' \
 		-e 's|$${LIBDIR}/pkgconfig|${PREFIX}/libdata/pkgconfig|g'\
@@ -43,10 +41,6 @@ post-patch:	.SILENT
 		${WRKSRC}/config.mk
 	${REINPLACE_CMD} -e '/^CC  /d'\
 		${WRKSRC}/colors.mk
-.if ! ${PORT_OPTIONS:MNLS}
-	${REINPLACE_CMD} -e '/-C po/d'\
-		${WRKSRC}/Makefile
-.endif
 	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
 		-e 's/-lc//' \
 		-e 's/DL_LIB /#&/' \
@@ -55,5 +49,9 @@ post-patch:	.SILENT
 		${WRKSRC}/zathura/config.h \
 		${WRKSRC}/doc/man/zathurarc.5.rst
 	(cd ${WRKSRC}; ${RM} -f zathura.1 zathurarc.5)
+
+post-patch-NLS-off: .SILENT
+	${REINPLACE_CMD} -e '/-C po/d'\
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

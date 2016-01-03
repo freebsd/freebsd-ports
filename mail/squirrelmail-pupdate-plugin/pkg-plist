@@ -14,7 +14,4 @@
 %%SQUIRRELDIR%%/plugins/pupdate/index.php
 %%SQUIRRELDIR%%/plugins/pupdate/config.php.sample
 %%SQUIRRELDIR%%/plugins/pupdate/setup.php
-@dirrm %%SQUIRRELDIR%%/plugins/pupdate/docs
-@dirrm %%SQUIRRELDIR%%/plugins/pupdate/udata
-@dirrm %%SQUIRRELDIR%%/plugins/pupdate
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

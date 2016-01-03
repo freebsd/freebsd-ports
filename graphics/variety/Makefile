@@ -3,7 +3,7 @@
 
 PORTNAME=	variety
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/variety/trunk/${PORTVERSION}/+download/ \
 		http://nivit.altervista.org/FreeBSD/ports/distfiles/
@@ -14,7 +14,7 @@ COMMENT=	Wallpaper changer
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distutils-extra>=2.38:${PORTSDIR}/devel/py-distutils-extra  \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>=2.38:${PORTSDIR}/devel/py-python-distutils-extra  \
 		intltool-update:${PORTSDIR}/textproc/intltool
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}cairo>=1.10.0:${PORTSDIR}/graphics/py-cairo \

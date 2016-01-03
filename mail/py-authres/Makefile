@@ -13,7 +13,7 @@ COMMENT=	Python module for RFC 5451 Authentication-Results headers
 LICENSE=	APACHE20
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 
@@ -21,7 +21,7 @@ PORTDOCS=	CHANGES README
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

@@ -7,11 +7,7 @@ CATEGORIES=	java
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Java bindings for Version control system
 
-.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 16
-MASTERDIR=	${.CURDIR}/../../devel/subversion16
-.elif defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 17
-MASTERDIR=	${.CURDIR}/../../devel/subversion17
-.elif defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 18
+.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 18
 MASTERDIR=	${.CURDIR}/../../devel/subversion18
 .else
 MASTERDIR=	${.CURDIR}/../../devel/subversion

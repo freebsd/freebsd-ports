@@ -5,13 +5,11 @@ PORTNAME=	pure-sockets
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
+MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure language interface to the Berkeley socket functions
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual

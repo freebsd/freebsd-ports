@@ -6,7 +6,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Foreman commands for Hammer CLI
 
 LICENSE=	GPLv3

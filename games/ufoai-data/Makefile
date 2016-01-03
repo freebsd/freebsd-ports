@@ -32,16 +32,16 @@ DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 PLIST=		${WRKDIR}/pkg-plist
 
 post-extract:
-	@cd ${WRKDIR}/base && \
-		${FIND} * -type f -exec ${UNZIP_CMD} "{}" -d ${WRKDIR}/base \;
-	@${RM} ${WRKDIR}/base/*.pk3
+	@cd ${WRKSRC}/base && \
+		${FIND} * -type f -exec ${UNZIP_CMD} "{}" -d ${WRKSRC}/base \;
+	@${RM} ${WRKSRC}/base/*.pk3
 
 pre-install:
 	@${RM} -f ${PLIST}
-	@cd ${WRKDIR}/base && \
+	@cd ${WRKSRC}/base && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/base/|' >> ${PLIST}
 
 do-install:
-	cd ${WRKDIR}/base && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${DATADIR}/base
+	cd ${WRKSRC}/base && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${DATADIR}/base
 
 .include <bsd.port.mk>

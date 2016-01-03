@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swig
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	30
@@ -26,7 +26,8 @@ GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 USES=		gmake lua
 
-PLIST_SUB=	MAJOR_VER=${PORTVERSION:R}
+PLIST_FILES=	bin/ccache-swig${PORTVERSION:R} \
+		bin/swig${PORTVERSION:R}
 PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -48,7 +49,11 @@ post-configure:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ccache-swig${PORTVERSION:R} ${STAGEDIR}${PREFIX}/bin/swig${PORTVERSION:R}
+
+post-install-DOCS-on:
 	cd ${WRKSRC}/Doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${PORTVERSION}
+
+post-install-EXAMPLES-on:
 	cd ${WRKSRC}/Examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}
 
 .include <bsd.port.mk>

@@ -1,0 +1,7 @@
+Bz2file is a Python library for reading and writing bzip2-compressed files.
+
+It contains a drop-in replacement for the file interface in the standard
+library's bz2 module, including features from the latest development version
+of CPython that are not available in older releases.
+
+WWW: https://github.com/nvawda/bz2file/

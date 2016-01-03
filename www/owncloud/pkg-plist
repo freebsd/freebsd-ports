@@ -4654,6 +4654,7 @@
 %%WWWDIR%%/apps/files_external/tests/js/settingsSpec.js
 %%WWWDIR%%/apps/files_external/tests/legacydependencycheckpolyfilltest.php
 %%WWWDIR%%/apps/files_external/tests/owncloudfunctions.php
+%%WWWDIR%%/apps/files_external/tests/personalmounttest.php
 %%WWWDIR%%/apps/files_external/tests/service/backendservicetest.php
 %%WWWDIR%%/apps/files_external/tests/service/globalstoragesservicetest.php
 %%WWWDIR%%/apps/files_external/tests/service/storagesservicetest.php
@@ -4667,6 +4668,7 @@
 %%WWWDIR%%/apps/files_pdfviewer/appinfo/version
 %%WWWDIR%%/apps/files_pdfviewer/controller/displaycontroller.php
 %%WWWDIR%%/apps/files_pdfviewer/css/style.css
+%%WWWDIR%%/apps/files_pdfviewer/css/viewer.css
 %%WWWDIR%%/apps/files_pdfviewer/img/app.png
 %%WWWDIR%%/apps/files_pdfviewer/img/app.svg
 %%WWWDIR%%/apps/files_pdfviewer/img/toolbarButton-secondaryToolbarClose.svg
@@ -5301,6 +5303,7 @@
 %%WWWDIR%%/apps/files_sharing/tests/external/managertest.php
 %%WWWDIR%%/apps/files_sharing/tests/external/scannertest.php
 %%WWWDIR%%/apps/files_sharing/tests/externalstorage.php
+%%WWWDIR%%/apps/files_sharing/tests/groupetagpropagation.php
 %%WWWDIR%%/apps/files_sharing/tests/grouppropagationmanager.php
 %%WWWDIR%%/apps/files_sharing/tests/helper.php
 %%WWWDIR%%/apps/files_sharing/tests/js/appSpec.js
@@ -5312,6 +5315,7 @@
 %%WWWDIR%%/apps/files_sharing/tests/middleware/sharingcheckmiddleware.php
 %%WWWDIR%%/apps/files_sharing/tests/migrationtest.php
 %%WWWDIR%%/apps/files_sharing/tests/permissions.php
+%%WWWDIR%%/apps/files_sharing/tests/propagationtestcase.php
 %%WWWDIR%%/apps/files_sharing/tests/server2server.php
 %%WWWDIR%%/apps/files_sharing/tests/share.php
 %%WWWDIR%%/apps/files_sharing/tests/sharedmount.php
@@ -6974,8 +6978,7 @@
 %%WWWDIR%%/apps/updater/css/updater.css
 %%WWWDIR%%/apps/updater/img/app.svg
 %%WWWDIR%%/apps/updater/js/3rdparty/angular.js
-%%WWWDIR%%/apps/updater/js/app.js
-%%WWWDIR%%/apps/updater/js/controllers.js
+%%WWWDIR%%/apps/updater/js/updater.js
 %%WWWDIR%%/apps/updater/l10n/ar.php
 %%WWWDIR%%/apps/updater/l10n/ast.php
 %%WWWDIR%%/apps/updater/l10n/az.js
@@ -7588,6 +7591,7 @@
 %%WWWDIR%%/core/css/share.css
 %%WWWDIR%%/core/css/styles.css
 %%WWWDIR%%/core/css/tooltip.css
+%%WWWDIR%%/core/doc/admin/_images/2-updates.png
 %%WWWDIR%%/core/doc/admin/_images/add_storage.png
 %%WWWDIR%%/core/doc/admin/_images/amazons3.png
 %%WWWDIR%%/core/doc/admin/_images/android_custom_1.png
@@ -7615,6 +7619,7 @@
 %%WWWDIR%%/core/doc/admin/_images/antivirus-app.png
 %%WWWDIR%%/core/doc/admin/_images/antivirus-config.png
 %%WWWDIR%%/core/doc/admin/_images/antivirus-daemon-socket.png
+%%WWWDIR%%/core/doc/admin/_images/antivirus-daemon.png
 %%WWWDIR%%/core/doc/admin/_images/antivirus-executable.png
 %%WWWDIR%%/core/doc/admin/_images/antivirus-logging.png
 %%WWWDIR%%/core/doc/admin/_images/app-sharepoint-enable.png
@@ -7714,18 +7719,20 @@
 %%WWWDIR%%/core/doc/admin/_images/files-drop-5.png
 %%WWWDIR%%/core/doc/admin/_images/files-drop-6.png
 %%WWWDIR%%/core/doc/admin/_images/files-drop-7.png
-%%WWWDIR%%/core/doc/admin/_images/files_locking_app.png
 %%WWWDIR%%/core/doc/admin/_images/ftp.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive1.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive10.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive11.png
+%%WWWDIR%%/core/doc/admin/_images/google-drive12.png
+%%WWWDIR%%/core/doc/admin/_images/google-drive13.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive2.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive3.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive4.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive5.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive6.png
 %%WWWDIR%%/core/doc/admin/_images/google-drive8.png
+%%WWWDIR%%/core/doc/admin/_images/google-drive9.png
 %%WWWDIR%%/core/doc/admin/_images/install-wizard-a.png
 %%WWWDIR%%/core/doc/admin/_images/install-wizard-a1.png
 %%WWWDIR%%/core/doc/admin/_images/install-wizard-a2.png
@@ -7829,6 +7836,7 @@
 %%WWWDIR%%/core/doc/admin/_images/shib-gui1.png
 %%WWWDIR%%/core/doc/admin/_images/shib-gui4.png
 %%WWWDIR%%/core/doc/admin/_images/shib-gui5.png
+%%WWWDIR%%/core/doc/admin/_images/shib-gui6.png
 %%WWWDIR%%/core/doc/admin/_images/shibboleth-personal.png
 %%WWWDIR%%/core/doc/admin/_images/skeleton-files.png
 %%WWWDIR%%/core/doc/admin/_images/skeleton-files1.png
@@ -7836,8 +7844,6 @@
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-php-sendmail.png
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-smtp.png
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-wizard.png
-%%WWWDIR%%/core/doc/admin/_images/ucs-app-center-install.png
-%%WWWDIR%%/core/doc/admin/_images/ucs-app-center-module.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint1.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint2.png
@@ -7851,6 +7857,8 @@
 %%WWWDIR%%/core/doc/admin/_images/updater-9.png
 %%WWWDIR%%/core/doc/admin/_images/upgrade-1.png
 %%WWWDIR%%/core/doc/admin/_images/upgrade-2.png
+%%WWWDIR%%/core/doc/admin/_images/upgrade-3.png
+%%WWWDIR%%/core/doc/admin/_images/upgrade-notifier.png
 %%WWWDIR%%/core/doc/admin/_images/user_mounts.png
 %%WWWDIR%%/core/doc/admin/_images/users-config-1.png
 %%WWWDIR%%/core/doc/admin/_images/users-config-2.png
@@ -7861,6 +7869,7 @@
 %%WWWDIR%%/core/doc/admin/_images/webdav.png
 %%WWWDIR%%/core/doc/admin/_images/wnd-1.png
 %%WWWDIR%%/core/doc/admin/_images/wnd-2.png
+%%WWWDIR%%/core/doc/admin/_images/wnd-3.jpg
 %%WWWDIR%%/core/doc/admin/_sources/configuration_database/db_conversion.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_database/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_database/linux_database_configuration.txt
@@ -7884,7 +7893,6 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/external_storage_configuration_gui.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/federated_cloud_sharing_configuration.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/file_sharing_configuration.txt
-%%WWWDIR%%/core/doc/admin/_sources/configuration_files/files_locking_enabling.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/files_locking_transactional.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/previews_configuration.txt
@@ -7897,6 +7905,7 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/background_jobs_configuration.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/caching_configuration.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/config_sample_php_parameters.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration_server/custom_client_repos.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/email_configuration.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/external_sites.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/harden_server.txt
@@ -7964,6 +7973,7 @@
 %%WWWDIR%%/core/doc/admin/_sources/installation/macos_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/nginx_configuration.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/php_54_installation.txt
+%%WWWDIR%%/core/doc/admin/_sources/installation/php_55_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/selinux_configuration.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/source_installation.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/system_requirements.txt
@@ -7973,7 +7983,9 @@
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/backup.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/enable_maintenance.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/index.txt
+%%WWWDIR%%/core/doc/admin/_sources/maintenance/manual_upgrade.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/migrating.txt
+%%WWWDIR%%/core/doc/admin/_sources/maintenance/package_upgrade.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/restore.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/update.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/upgrade.txt
@@ -8040,7 +8052,6 @@
 %%WWWDIR%%/core/doc/admin/configuration_files/external_storage_configuration_gui.html
 %%WWWDIR%%/core/doc/admin/configuration_files/federated_cloud_sharing_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_files/file_sharing_configuration.html
-%%WWWDIR%%/core/doc/admin/configuration_files/files_locking_enabling.html
 %%WWWDIR%%/core/doc/admin/configuration_files/files_locking_transactional.html
 %%WWWDIR%%/core/doc/admin/configuration_files/index.html
 %%WWWDIR%%/core/doc/admin/configuration_files/previews_configuration.html
@@ -8053,6 +8064,7 @@
 %%WWWDIR%%/core/doc/admin/configuration_server/background_jobs_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_server/caching_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_server/config_sample_php_parameters.html
+%%WWWDIR%%/core/doc/admin/configuration_server/custom_client_repos.html
 %%WWWDIR%%/core/doc/admin/configuration_server/email_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_server/external_sites.html
 %%WWWDIR%%/core/doc/admin/configuration_server/harden_server.html
@@ -8121,6 +8133,7 @@
 %%WWWDIR%%/core/doc/admin/installation/macos_installation.html
 %%WWWDIR%%/core/doc/admin/installation/nginx_configuration.html
 %%WWWDIR%%/core/doc/admin/installation/php_54_installation.html
+%%WWWDIR%%/core/doc/admin/installation/php_55_installation.html
 %%WWWDIR%%/core/doc/admin/installation/selinux_configuration.html
 %%WWWDIR%%/core/doc/admin/installation/source_installation.html
 %%WWWDIR%%/core/doc/admin/installation/system_requirements.html
@@ -8130,7 +8143,9 @@
 %%WWWDIR%%/core/doc/admin/maintenance/backup.html
 %%WWWDIR%%/core/doc/admin/maintenance/enable_maintenance.html
 %%WWWDIR%%/core/doc/admin/maintenance/index.html
+%%WWWDIR%%/core/doc/admin/maintenance/manual_upgrade.html
 %%WWWDIR%%/core/doc/admin/maintenance/migrating.html
+%%WWWDIR%%/core/doc/admin/maintenance/package_upgrade.html
 %%WWWDIR%%/core/doc/admin/maintenance/restore.html
 %%WWWDIR%%/core/doc/admin/maintenance/update.html
 %%WWWDIR%%/core/doc/admin/maintenance/upgrade.html
@@ -8821,6 +8836,7 @@
 %%WWWDIR%%/core/skeleton/Photos/Paris.jpg
 %%WWWDIR%%/core/skeleton/Photos/San Francisco.jpg
 %%WWWDIR%%/core/skeleton/Photos/Squirrel.jpg
+%%WWWDIR%%/core/skeleton/ownCloud_User_Manual.pdf
 %%WWWDIR%%/core/strings.php
 %%WWWDIR%%/core/tags/controller.php
 %%WWWDIR%%/core/templates/403.php
@@ -9194,6 +9210,7 @@
 %%WWWDIR%%/lib/private/connector/sabre/exception/invalidpath.php
 %%WWWDIR%%/lib/private/connector/sabre/exception/unsupportedmediatype.php
 %%WWWDIR%%/lib/private/connector/sabre/exceptionloggerplugin.php
+%%WWWDIR%%/lib/private/connector/sabre/fakelockerplugin.php
 %%WWWDIR%%/lib/private/connector/sabre/file.php
 %%WWWDIR%%/lib/private/connector/sabre/filesplugin.php
 %%WWWDIR%%/lib/private/connector/sabre/listenerplugin.php
@@ -9618,6 +9635,7 @@
 %%WWWDIR%%/lib/public/ilogger.php
 %%WWWDIR%%/lib/public/image.php
 %%WWWDIR%%/lib/public/imemcache.php
+%%WWWDIR%%/lib/public/imemcachettl.php
 %%WWWDIR%%/lib/public/inavigationmanager.php
 %%WWWDIR%%/lib/public/ipreview.php
 %%WWWDIR%%/lib/public/irequest.php

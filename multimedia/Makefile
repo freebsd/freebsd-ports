@@ -262,6 +262,7 @@
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
     SUBDIR += naludump
+    SUBDIR += nordlicht
     SUBDIR += nxtvepg
     SUBDIR += obs-studio
     SUBDIR += oggvideotools
@@ -364,7 +365,6 @@
     SUBDIR += snappy
     SUBDIR += spigot
     SUBDIR += spook
-    SUBDIR += spotify-websocket-api
     SUBDIR += subtitlecomposer-kde4
     SUBDIR += subtitleeditor
     SUBDIR += subtitleoffsetmodifier

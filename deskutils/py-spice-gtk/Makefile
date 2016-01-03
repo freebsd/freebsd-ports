@@ -6,6 +6,5 @@ MASTERDIR=	${.CURDIR}/../spice-gtk
 
 CONFLICTS=	spice-gtk-[0-9]*
 SPICE_SLAVE=	yes
-BROKEN=		fails to package
 
 .include "${MASTERDIR}/Makefile"

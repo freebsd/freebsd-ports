@@ -5,7 +5,7 @@ PORTVERSION=	0.43.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	SCSS linter
 
 LICENSE=	MIT

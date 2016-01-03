@@ -5,12 +5,10 @@ PORTNAME=	circuslinux
 PORTVERSION=	1.0.3
 PORTREVISION=	14
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/circus-linux/src/
+MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/circus-linux/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"Circus Linux!" is a clone of the Atari 2600 game "Circus Atari"
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

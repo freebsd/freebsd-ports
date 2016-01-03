@@ -14,7 +14,7 @@ LICENSE=	LGPL3
 USE_LDCONFIG=	yes
 USE_QT5=	core gui network svg linguist \
 		buildtools x11extras
-USES=		qmake tar:xz
+USES=		compiler:c++11-lang qmake tar:xz
 
 QMAKE_ARGS=	CONFIG+="configure"
 

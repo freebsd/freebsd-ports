@@ -3,7 +3,7 @@
 
 PORTNAME=	hping
 PORTVERSION=	2.0.0r3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://www.hping.org/ \
@@ -27,6 +27,12 @@ PORTDOCS=	AS-BACKDOOR HPING2-HOWTO.txt HPING2-IS-OPEN \
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100030
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-sendip.c
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hping2 ${STAGEDIR}${PREFIX}/sbin/hping
 	${INSTALL_MAN} ${WRKSRC}/docs/hping2.8 \
@@ -36,4 +42,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

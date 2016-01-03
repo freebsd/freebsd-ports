@@ -1,10 +1,10 @@
---- configure.ac.orig	2015-10-09 08:01:44 UTC
+--- configure.ac.orig	2015-11-23 13:45:55 UTC
 +++ configure.ac
 @@ -1,6 +1,6 @@
  AC_PREREQ([2.61])
  AC_INIT([eid-mw],
--  m4_esyscmd_s(echo "4.1.6-"$(git describe --dirty|sed -e 's/-/./g')),
-+  [4.1.8-release],
+-  m4_esyscmd_s(echo "4.1.9-"$(git describe --dirty|sed -e 's/-/./g')),
++  [4.1.11-release],
    [servicedesk@fedict.be],,
    [http://eid.belgium.be])
  

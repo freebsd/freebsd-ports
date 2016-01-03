@@ -1055,7 +1055,6 @@
     SUBDIR += jech-dht
     SUBDIR += jenkins
     SUBDIR += jenkins-lts
-    SUBDIR += jgoodies-common
     SUBDIR += jiic
     SUBDIR += jline
     SUBDIR += jna
@@ -1489,7 +1488,6 @@
     SUBDIR += mongo-cxx-driver
     SUBDIR += mono-addins
     SUBDIR += monodevelop
-    SUBDIR += monodevelop-database
     SUBDIR += monotone
     SUBDIR += monotone-viz
     SUBDIR += motor
@@ -3929,6 +3927,7 @@
     SUBDIR += py-babelfish
     SUBDIR += py-backports.shutil_get_terminal_size
     SUBDIR += py-backports_abc
+    SUBDIR += py-bandit
     SUBDIR += py-bcdoc
     SUBDIR += py-billiard
     SUBDIR += py-binplist
@@ -3996,7 +3995,6 @@
     SUBDIR += py-diazo
     SUBDIR += py-dirspec
     SUBDIR += py-distorm
-    SUBDIR += py-distutils-extra
     SUBDIR += py-django-rq
     SUBDIR += py-django-tastypie-mongoengine
     SUBDIR += py-django16-tastypie-mongoengine
@@ -4151,6 +4149,7 @@
     SUBDIR += py-mx-experimental
     SUBDIR += py-mygpoclient
     SUBDIR += py-nagioscheck
+    SUBDIR += py-natsort
     SUBDIR += py-natural
     SUBDIR += py-ncurses
     SUBDIR += py-nose
@@ -4241,6 +4240,7 @@
     SUBDIR += py-pytest-timeout
     SUBDIR += py-pytest-xdist
     SUBDIR += py-python-bugzilla
+    SUBDIR += py-python-distutils-extra
     SUBDIR += py-python-jenkins
     SUBDIR += py-python-pcre
     SUBDIR += py-python-statsd
@@ -5029,6 +5029,7 @@
     SUBDIR += rubygem-shoulda-context
     SUBDIR += rubygem-shoulda-matchers
     SUBDIR += rubygem-sidekiq
+    SUBDIR += rubygem-sidekiq-cron
     SUBDIR += rubygem-sidetiq
     SUBDIR += rubygem-sigdump
     SUBDIR += rubygem-simple_form
@@ -5190,7 +5191,6 @@
     SUBDIR += subversion
     SUBDIR += subversion-book
     SUBDIR += subversion-static
-    SUBDIR += subversion17
     SUBDIR += subversion18
     SUBDIR += subversive
     SUBDIR += svk

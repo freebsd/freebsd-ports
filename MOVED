@@ -8071,3 +8071,26 @@ editors/sublime3|editors/linux-sublime3|2015-12-29|Renamed (Linux binary port)
 mail/py-spf|mail/py-pyspf|2015-12-29|Renamed to match upstream naming
 databases/py-memcached|databases/py-python-memcached|2015-12-30|Renamed to match upstream naming
 devel/py-hashring|devel/py-hash_ring|2015-12-30|Renamed to match upstream naming
+devel/subversion17|devel/subversion|2015-12-30|Has expired: EoL, use devel/subversion
+www/ocsigen||2015-12-30|Has expired: Broken for more than 6 months
+devel/monodevelop-database||2015-12-30|Has expired: Broken for more than 6 months
+lang/cduce||2015-12-30|Has expired: Broken for more than 6 months
+science/hdf-java||2015-12-30|Has expired: Broken for more than 6 months
+math/p5-Math-Geometry-Planar-GPC-Polygon||2015-12-30|Has expired: Broken for more than 6 months
+www/eliom||2015-12-30|Has expired: Depends on broken and expiring www/ocsigen
+audio/py-fastaudio||2015-12-30|Has expired: Broken for more than 6 months
+devel/jgoodies-common||2015-12-30|Has expired: Broken for more than 6 months
+graphics/pinta||2015-12-30|Has expired: Broken for more than 6 months
+games/kanatest||2015-12-30|Has expired: Broken for more than 6 months
+editors/bless||2015-12-30|Has expired: Broken for more than 6 months
+security/burpsuite||2015-12-30|Has expired: Broken for more than 6 months
+net/remmina-plugin-rdp||2015-12-30|Has expired: Broken for more than 6 months
+dns/bind10|dns/bundy|2015-12-31|Has expired: Is not developed any more, use dns/bundy
+lang/perl5.16||2015-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl
+devel/py-distutils-extra|devel/py-python-distutils-extra|2015-12-31|Renamed to match upstream naming
+irc/irssi-devel||2016-01-01|Has expired: Older than irc/irssi
+multimedia/spotify-websocket-api||2016-01-01|Has expired: login fails due to protocol changes
+net-mgmt/unifi2|net-mgmt/unifi3|2016-01-01|Has expired: Unifi 2.x is EoL. Please upgrade to net-mgmt/unifi3
+misc/kde4-l10n-th||2016-01-01|Has expired: Upstream ceased maintainance of this translation
+misc/kde4-l10n-tg||2016-01-01|Has expired: Upstream ceased maintainance of this translation
+misc/kde4-l10n-si||2016-01-01|Has expired: Upstream ceased maintainance of this translation

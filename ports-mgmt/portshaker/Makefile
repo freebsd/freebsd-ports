@@ -22,10 +22,10 @@ RSYNC_DESC=	rsync support
 GIT_DESC=	git support
 HG_DESC=	mercurial support
 RSYNC_RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
-.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 17
-SVN_RUN_DEPENDS=        svn:${PORTSDIR}/devel/subversion17
+.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 18
+SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion18
 .else
-SVN_RUN_DEPENDS=        svn:${PORTSDIR}/devel/subversion
+SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 .endif
 GIT_RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 HG_RUN_DEPENDS=		hg:${PORTSDIR}/devel/mercurial

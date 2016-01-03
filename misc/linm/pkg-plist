@@ -18,9 +18,9 @@ lib/liblinmpluginsftp.so
 lib/liblinmpluginsftp.so.0
 lib/liblinmpluginsftp.so.0.0.0
 %%SMB%%lib/liblinmpluginsmb.a
-%%SMB%%lib/liblinmpluginsmb.la
 %%SMB%%lib/liblinmpluginsmb.so
 %%SMB%%lib/liblinmpluginsmb.so.0
+%%SMB%%lib/liblinmpluginsmb.so.0.0.0
 share/applications/LinM.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

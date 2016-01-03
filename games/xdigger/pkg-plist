@@ -1,19 +1,9 @@
-@mode 2755
-@group games
-bin/xdigger
-@group
-@mode
+@(,games,2755) bin/xdigger
 man/man6/xdigger.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/diamond.au
 %%DATADIR%%/step.au
 %%DATADIR%%/stone.au
-@mode 644
-@group games
-%%DATADIR%%/xdigger.hiscore
-@group
-@mode
+@(,games,644) %%DATADIR%%/xdigger.hiscore
 %%DATADIR%%/xdigger.level
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

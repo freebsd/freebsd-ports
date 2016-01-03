@@ -1,6 +1,6 @@
 bin/SpaceTrack
 %%SITE_PERL%%/Astro/SpaceTrack.pm
 %%SITE_PERL%%/Astro/SpaceTrack/BulkData.pod
+%%PERL5_MAN1%%/SpaceTrack.1.gz
 %%PERL5_MAN3%%/Astro::SpaceTrack.3.gz
 %%PERL5_MAN3%%/Astro::SpaceTrack::BulkData.3.gz
-%%PERL5_MAN1%%/SpaceTrack.1.gz

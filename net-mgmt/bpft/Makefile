@@ -6,23 +6,22 @@ PORTVERSION=	4.20040506
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}4/${PORTNAME}4/${PORTNAME}4-snapshot
 DISTNAME=	${PORTNAME}4-2004-05-06
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BPF Traffic collector
 
 LICENSE=	GPLv2 # (or later)
-
-OPTIONS_DEFINE=	DOCS
+LICENSE_FILE=	${WRKSRC}/COPYING.GNU
 
 CONFLICTS=	trafd-3.0.*
 
+USES=		tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	INSTALL_FILE="${INSTALL_DATA}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -39,10 +38,10 @@ post-patch:
 		's|<net/slip.h>|"../linux-include/net/slip.h"|' \
 		${WRKSRC}/lib/interfaces.c
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README WhatsNew
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
