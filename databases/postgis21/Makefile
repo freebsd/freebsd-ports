@@ -57,14 +57,14 @@ post-patch:
 pre-configure:
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
-post-install: .SILENT
-	${MKDIR} ${STAGEDIR}/${DATADIR}/tiger_2011
-	(cd ${WRKSRC}/extras/tiger_geocoder/tiger_2011/ && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}/tiger_2011/ "! ( -name *\.orig -o -name *\.bak )" )
-	${MKDIR} ${STAGEDIR}/${DATADIR}/utils
-	(cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}/utils/ "! ( -name *\.orig -o -name *\.bak )" )
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/shp2pgsql
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/pgsql2shp
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/liblwgeom-${PORTVERSION}.so
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/postgresql/postgis-2.1.so
+post-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}/tiger_2011
+	(cd ${WRKSRC}/extras/tiger_geocoder/tiger_2011/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/tiger_2011/ "! ( -name *\.orig -o -name *\.bak )" )
+	${MKDIR} ${STAGEDIR}${DATADIR}/utils
+	(cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/utils/ "! ( -name *\.orig -o -name *\.bak )" )
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/shp2pgsql
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pgsql2shp
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblwgeom-${PORTVERSION}.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/postgis-2.1.so
 
 .include <bsd.port.mk>
