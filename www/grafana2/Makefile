@@ -2,6 +2,7 @@
 
 PORTNAME=	grafana2
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -151,7 +152,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${GRAFANAHOMEDIR}/data/log
 	${INSTALL_DATA} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/grafana/conf/defaults.ini \
 	${STAGEDIR}${GRAFANAHOMEDIR}/conf/defaults.ini
-	${INSTALL_DATA} ${WRKDIR}/grafana2.conf ${STAGEDIR}${PREFIX}/etc/grafana2.conf
+	${INSTALL_DATA} ${WRKDIR}/grafana2.conf ${STAGEDIR}${PREFIX}/etc/grafana2.conf.sample
 
 .include <bsd.port.pre.mk>
 
