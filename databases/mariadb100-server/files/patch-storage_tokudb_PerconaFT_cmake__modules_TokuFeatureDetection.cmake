@@ -1,5 +1,5 @@
---- storage/tokudb/ft-index/cmake_modules/TokuFeatureDetection.cmake.orig	2015-06-17 14:54:13 UTC
-+++ storage/tokudb/ft-index/cmake_modules/TokuFeatureDetection.cmake
+--- storage/tokudb/PerconaFT/cmake_modules/TokuFeatureDetection.cmake.orig	2015-06-17 14:54:13 UTC
++++ storage/tokudb/PerconaFT/cmake_modules/TokuFeatureDetection.cmake
 @@ -87,13 +87,7 @@ if (NOT HAVE_DLSYM_WITHOUT_DL)
  endif ()
  check_function_exists(backtrace HAVE_BACKTRACE_WITHOUT_EXECINFO)
