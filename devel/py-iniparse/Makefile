@@ -12,13 +12,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Better INI parser for Python
 
+OPTIONS_DEFINE=	DOCS
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	Changelog README
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
