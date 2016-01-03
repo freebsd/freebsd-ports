@@ -1,3 +1,0 @@
-bin/ccache-swig%%MAJOR_VER%%
-bin/swig%%MAJOR_VER%%
-man/man1/ccache-swig%%MAJOR_VER%%.1.gz
