@@ -1,0 +1,3 @@
+A tool to generate human-readable trees of dependencies of a FreeBSD port.
+
+WWW: https://github.com/bbqsrc/skog-python
