@@ -11,9 +11,13 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-Screen-Display infrastructure using Pango text rendering
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gettext-tools gmake pathfix pkgconfig python
 USE_GNOME=	gnomeprefix intlhack pygnome2
 GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 
 GCONF_SCHEMAS=	gnome-osd.schemas
 
@@ -22,7 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS NEWS README \
 		${STAGEDIR}${DOCSDIR})
