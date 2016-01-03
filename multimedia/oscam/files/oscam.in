@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: oscam
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable oscam
+#
+# oscam_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable oscam.
+# oscam_flags (str):	Custom flags for oscam.
+
+. /etc/rc.subr
+
+name=oscam
+rcvar=oscam_enable
+load_rc_config $name
+
+: ${oscam_enable:=NO}
+
+pidfile="/var/run/${name}.pid"
+confdir="/usr/local/etc/oscam"
+logdir="/var/log/oscam"
+command="/usr/local/bin/oscam"
+
+command_args="-b -B ${pidfile} -c ${confdir}" 
+start_precmd="${name}_prestart"
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+
+oscam_prestart()
+{
+	if [ ! -f "${pidfile}" ]; then
+		/usr/bin/install -m 644 /dev/null ${pidfile}
+	fi
+	if [ ! -d "${confdir}" ]; then
+		/usr/bin/install -m 755 -d ${confdir}
+	fi
+	if [ ! -d "${logdir}" ]; then
+		/usr/bin/install -m 755 -d ${logdir}
+	fi
+}
+
+run_rc_command "$1"
