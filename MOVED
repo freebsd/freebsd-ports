@@ -8089,7 +8089,6 @@ dns/bind10|dns/bundy|2015-12-31|Has expired: Is not developed any more, use dns/
 lang/perl5.16||2015-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl
 devel/py-distutils-extra|devel/py-python-distutils-extra|2015-12-31|Renamed to match upstream naming
 irc/irssi-devel||2016-01-01|Has expired: Older than irc/irssi
-audio/kstreamripper||2016-01-01|Has expired: Broken for more than 6 months
 multimedia/spotify-websocket-api||2016-01-01|Has expired: login fails due to protocol changes
 net-mgmt/unifi2|net-mgmt/unifi3|2016-01-01|Has expired: Unifi 2.x is EoL. Please upgrade to net-mgmt/unifi3
 misc/kde4-l10n-th||2016-01-01|Has expired: Upstream ceased maintainance of this translation

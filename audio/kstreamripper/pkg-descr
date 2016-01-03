@@ -1,0 +1,6 @@
+KStreamRipper is a program for recording Internet radios and other
+streams. For streams that provide information about the song title,
+it can split the stream and create an own file for each track with
+a corresponding file name and corresponding metadata.
+
+WWW:	http://kstreamripper.sourceforge.net
