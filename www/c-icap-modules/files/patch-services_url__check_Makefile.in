@@ -1,6 +1,6 @@
---- services/url_check/Makefile.in.orig	2014-05-14 16:56:34.000000000 -0300
-+++ services/url_check/Makefile.in	2014-05-14 16:56:46.000000000 -0300
-@@ -731,7 +731,6 @@
+--- services/url_check/Makefile.in.orig	2016-01-03 23:26:26 UTC
++++ services/url_check/Makefile.in
+@@ -843,7 +843,6 @@
  
  install-data-local:
  	$(INSTALL) srv_url_check.conf $(DESTDIR)$(CONFIGDIR)/srv_url_check.conf.default
