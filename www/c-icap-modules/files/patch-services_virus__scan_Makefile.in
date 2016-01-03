@@ -1,6 +1,6 @@
---- services/virus_scan/Makefile.in.orig	2014-05-14 16:54:38.000000000 -0300
-+++ services/virus_scan/Makefile.in	2014-05-14 16:54:56.000000000 -0300
-@@ -647,7 +647,6 @@
+--- services/virus_scan/Makefile.in.orig	2016-01-03 23:26:16 UTC
++++ services/virus_scan/Makefile.in
+@@ -750,7 +750,6 @@
  install-data-local:
  	for f in $(CONFS); do \
  		$(INSTALL) $$f $(DESTDIR)$(CONFIGDIR)/$$f.default; \
