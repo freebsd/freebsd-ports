@@ -58,6 +58,56 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="59e7eb28-b309-11e5-af83-80ee73b5dcf5">
+    <topic>kea -- unexpected termination while handling a malformed packet</topic>
+    <affects>
+      <package>
+	<name>kea</name>
+	<range><ge>0.9.2</ge></range>
+	<range><lt>1.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC Support reports:</p>
+
+	<blockquote cite="https://kb.isc.org/article/AA-01318/0/CVE-2015-8373-ISC-Kea%3A-unexpected-termination-while-handling-a-malformed-packet.html">
+	  <p>ISC Kea may terminate unexpectedly (crash) while handling
+	    a malformed client packet.  Related defects in the kea-dhcp4
+	    and kea-dhcp6 servers can cause the server to crash during
+	    option processing if a client sends a malformed packet.
+	    An attacker sending a crafted malformed packet can cause
+	    an ISC Kea server providing DHCP services to IPv4 or IPv6
+	    clients to exit unexpectedly.</p>
+
+	  <ul>
+	    <li><p>The kea-dhcp4 server is vulnerable only in versions
+		  0.9.2 and 1.0.0-beta, and furthermore only when logging
+		  at debug level 40 or higher.  Servers running kea-dhcp4
+		  versions 0.9.1 or lower, and servers which are not
+		  logging or are logging at debug level 39 or below are
+		  not vulnerable.</p></li>
+
+	    <li><p>The kea-dhcp6 server is vulnerable only in versions
+		  0.9.2 and 1.0.0-beta, and furthermore only when
+		  logging at debug level 45 or higher.  Servers running
+		  kea-dhcp6 versions 0.9.1 or lower, and servers
+		  which are not logging or are logging at debug level 44
+		  or below are not vulnerable.</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8373</cvename>
+      <url>https://kb.isc.org/article/AA-01318/0/CVE-2015-8373-ISC-Kea%3A-unexpected-termination-while-handling-a-malformed-packet.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-15</discovery>
+      <entry>2016-01-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84dc49b0-b267-11e5-8a5b-00262d5ed8ee">
     <topic>mini_httpd -- buffer overflow via snprintf</topic>
     <affects>
