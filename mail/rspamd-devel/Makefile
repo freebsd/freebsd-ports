@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.1.0.a1.30122015
+PORTVERSION=	1.1.0.a2.04012016
 CATEGORIES=	mail
-MASTER_SITES=	http://rspamd.com/downloads/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -17,9 +16,13 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
 		libhiredis.so:${PORTSDIR}/databases/hiredis
 
-RSPAMD_VERSION=	1.1.0
 CONFLICTS_INSTALL=	rspamd
-WRKSRC=		${WRKDIR}/${PORTNAME}-${RSPAMD_VERSION}
+
+RSPAMD_VERSION=	1.1.0
+USE_GITHUB=	yes
+GH_ACCOUNT=	vstakhov
+GH_PROJECT=	rspamd
+GH_TAGNAME=	36f5aa8
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR
 GPERF_DESC=		google perf-tools profiling
