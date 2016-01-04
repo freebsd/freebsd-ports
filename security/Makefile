@@ -304,6 +304,7 @@
     SUBDIR += libpwquality
     SUBDIR += libpwstor
     SUBDIR += libressl
+    SUBDIR += libressl-devel
     SUBDIR += libscrypt
     SUBDIR += libsecret
     SUBDIR += libsectok

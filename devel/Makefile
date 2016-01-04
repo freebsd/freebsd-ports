@@ -303,6 +303,7 @@
     SUBDIR += cppunit
     SUBDIR += cproto
     SUBDIR += cpuflags
+    SUBDIR += creduce
     SUBDIR += critcl
     SUBDIR += cs-eric6
     SUBDIR += cscope
