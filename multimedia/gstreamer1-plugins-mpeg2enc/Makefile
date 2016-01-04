@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer mpeg encoder plugin
+COMMENT=	GStreamer mpeg encoder plugin
 
 GST_PLUGIN=	mpeg2enc
 DIST=		bad

@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer wavpack plugin
+COMMENT=	GStreamer wavpack encode/decode plugin
 
 GST_PLUGIN=	wavpack
 DIST=		good

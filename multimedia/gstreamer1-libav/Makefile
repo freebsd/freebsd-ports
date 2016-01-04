@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-libav
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-libav/
 DISTNAME=	gst-libav-${PORTVERSION}
@@ -13,8 +13,7 @@ COMMENT=	GStreamer plug-in with many audio/video decoders/encoders
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		orc>=0.4.16:${PORTSDIR}/devel/orc
+BUILD_DEPENDS=	orc>=0.4.16:${PORTSDIR}/devel/orc
 LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 

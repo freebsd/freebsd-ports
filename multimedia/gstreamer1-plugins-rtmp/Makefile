@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer rtmp plugin
+COMMENT=	GStreamer RTMP stream source and sink plugin
 
 GST_PLUGIN=	rtmp
 DIST=		bad

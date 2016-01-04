@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-COMMENT=	Gstreamer ASCII art plugin
+COMMENT=	GStreamer ASCII art videosink plugin
 
 GST_PLUGIN=	aalib
 DIST=		good

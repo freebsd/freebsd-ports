@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer flite run-time speech synthesis engine plugin
+COMMENT=	GStreamer flite run-time speech synthesis engine plugin
 
 GST_PLUGIN=	flite
 DIST=		bad

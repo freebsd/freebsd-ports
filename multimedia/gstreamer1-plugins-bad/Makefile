@@ -4,7 +4,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Bad gstreamer-plugins
+COMMENT=	GStreamer-plugins that need more quality, testing or documentation
 
 GST_PLUGIN=	bad
 GST_PLUGIN_SUFFIX=	-bad

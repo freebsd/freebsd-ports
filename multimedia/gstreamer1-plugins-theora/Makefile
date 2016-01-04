@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer theora plugin
+COMMENT=	GStreamer theora plugin
 
 GST_PLUGIN=	theora
 DIST=		base

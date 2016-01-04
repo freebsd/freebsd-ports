@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-COMMENT=	Gstreamer webp image decoder plugin
+COMMENT=	GStreamer webp image decoder plugin
 
 GST_PLUGIN=	webp
 DIST=		bad

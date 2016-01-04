@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer dvdread plugin
+COMMENT=	GStreamer DVD access plugin with libdvdread
 
 GST_PLUGIN=	dvdread
 DIST=		ugly

@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-COMMENT=	Gstreamer GL graphics plugin
+COMMENT=	GStreamer GL graphics plugin
 
 GST_PLUGIN=	gl
 DIST=		bad
