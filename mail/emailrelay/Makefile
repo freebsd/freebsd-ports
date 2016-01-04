@@ -3,6 +3,7 @@
 
 PORTNAME=	emailrelay
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.tar.gz
@@ -16,10 +17,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	e_spooldir=${PREFIX}/var/spool/emailrelay
-CONFIGURE_ARGS=	--without-pam --enable-ipv6
+CONFIGURE_ARGS=	--without-pam
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=		DOCS DOXYGEN GUI OPENSSL
+OPTIONS_DEFINE=		DOCS DOXYGEN GUI OPENSSL IPV6
 OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_SUB=		yes
 
@@ -32,6 +33,8 @@ GUI_USE=		QT4=gui,moc
 
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_USE=		OPENSSL=yes
+
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/emailrelay.auth.template \
