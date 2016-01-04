@@ -5,6 +5,7 @@ man/man1/gajim-history-manager.1.gz
 man/man1/gajim-remote.1.gz
 man/man1/gajim.1.gz
 share/applications/gajim.desktop
+share/applications/gajim-remote.desktop
 %%DATADIR%%/data/activities/default/doing_chores/buying_groceries.png
 %%DATADIR%%/data/activities/default/doing_chores/category.png
 %%DATADIR%%/data/activities/default/doing_chores/cleaning.png
