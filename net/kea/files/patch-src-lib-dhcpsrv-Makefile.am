@@ -1,4 +1,4 @@
---- src/lib/dhcpsrv/Makefile.am.orig	2015-07-23 16:45:11 UTC
+--- src/lib/dhcpsrv/Makefile.am.orig	2015-12-28 12:18:05 UTC
 +++ src/lib/dhcpsrv/Makefile.am
 @@ -2,10 +2,10 @@ AUTOMAKE_OPTIONS = subdir-objects
  
