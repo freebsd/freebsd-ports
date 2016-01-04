@@ -1,6 +1,6 @@
---- src/plugins/plugins_i18n.py.orig	2012-03-18 15:26:00.000000000 +0400
-+++ src/plugins/plugins_i18n.py	2012-03-21 08:21:52.000000000 +0400
-@@ -29,7 +29,6 @@
+--- src/plugins/plugins_i18n.py.orig	2015-12-28 12:38:51 UTC
++++ src/plugins/plugins_i18n.py
+@@ -29,7 +29,6 @@ plugins_locale_dir = os_path.join(gajim.
  
  if os.name != 'nt':
      locale.setlocale(locale.LC_ALL, '')

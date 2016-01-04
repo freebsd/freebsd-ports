@@ -1,0 +1,14 @@
+Fix desktop-file-validate warnings. This is upstream commit:
+https://trac.gajim.org/changeset/eaea5e65364b167d14dc191b00f114b4f5ccb508/
+
+--- data/gajim.desktop.in.in.orig	2015-12-28 12:38:50 UTC
++++ data/gajim.desktop.in.in
+@@ -3,7 +3,7 @@ Categories=Network;InstantMessaging;GTK;
+ _Name=Gajim
+ _GenericName=Jabber IM Client
+ _Comment=A GTK+ Jabber client
+-_Keywords=chat;messaging;im;jabber;xmpp;bonjour;voip
++_Keywords=chat;messaging;im;jabber;xmpp;bonjour;voip;
+ Version=1.0
+ Exec=gajim
+ Icon=gajim
