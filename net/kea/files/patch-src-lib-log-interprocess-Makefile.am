@@ -1,11 +1,11 @@
---- src/lib/log/interprocess/Makefile.am.orig	2015-07-23 16:45:11 UTC
+--- src/lib/log/interprocess/Makefile.am.orig	2015-12-28 12:18:05 UTC
 +++ src/lib/log/interprocess/Makefile.am
 @@ -1,7 +1,7 @@
  SUBDIRS = . tests
  
  AM_CPPFLAGS = -I$(top_srcdir)/src/lib -I$(top_builddir)/src/lib
--AM_CPPFLAGS += -DLOCKFILE_DIR=\"${localstatedir}/run/${PACKAGE_NAME}\"
-+AM_CPPFLAGS += -DLOCKFILE_DIR=\"${localstatedir}/run\"
+-AM_CPPFLAGS += -DLOCKFILE_DIR=\"$(localstatedir)/run/$(PACKAGE_NAME)\"
++AM_CPPFLAGS += -DLOCKFILE_DIR=\"$(localstatedir)/run\"
  AM_CPPFLAGS += $(BOOST_INCLUDES)
  
  AM_CXXFLAGS = $(KEA_CXXFLAGS)
