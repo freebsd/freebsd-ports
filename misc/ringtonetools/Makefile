@@ -15,8 +15,6 @@ MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS}"
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|cd src && make|make -C src|' \
 		${WRKSRC}/Makefile
@@ -27,6 +25,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${STAGEDIR}${DATADIR}
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/README ${STAGEDIR}${DOCSDIR}
 
