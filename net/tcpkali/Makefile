@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcpkali
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -19,9 +19,11 @@ USES=		autoreconf libtool gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	machinezone
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
