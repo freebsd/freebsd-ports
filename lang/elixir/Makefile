@@ -3,7 +3,7 @@
 
 PORTNAME=	elixir
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 MASTER_SITES+=	http://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
@@ -16,8 +16,8 @@ COMMENT=	Functional, meta-programming aware language built on top of Erlang VM
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	erlang>=17:${PORTSDIR}/lang/erlang
-RUN_DEPENDS=	erlang>=17:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erlang>=18:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erlang>=18:${PORTSDIR}/lang/erlang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
