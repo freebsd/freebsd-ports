@@ -1,0 +1,24 @@
+============================================================
+    WARNING: THE API OF LibreSSL-devel is volatile
+============================================================
+ This is the latest version of LibreSSL that will change
+ its API and shared library version often. This will result
+ in problems if you do not manage your ports rigorously.
+
+ This version is safe for use and provides the latest
+ libtls features.
+
+ Normally, you can obtain the list of dependent software by
+ running the following command:
+
+  # pkg info -r libressl-devel
+
+ Users using poudriere will automatically rebuild all ports
+ that require SSL. 
+
+ Portmaster users:
+     portmaster -r libressl-devel
+ Portupgrade users:
+     portupgrade -fr security/libressl-devel
+
+============================================================
