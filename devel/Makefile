@@ -4353,6 +4353,7 @@
     SUBDIR += py-tapi
     SUBDIR += py-tarantool-queue
     SUBDIR += py-tconfpy
+    SUBDIR += py-tempora
     SUBDIR += py-tempstorage
     SUBDIR += py-termcolor
     SUBDIR += py-termstyle
