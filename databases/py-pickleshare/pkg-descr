@@ -1,0 +1,8 @@
+PickleShare - a small 'shelve' like datastore with concurrency support
+
+Like shelve, a PickleShareDB object acts like a normal dictionary.
+Unlike shelve, many processes can access the database simultaneously.
+Changing a value in database is immediately visible to other processes
+accessing the same database.
+
+WWW: https://github.com/vivainio/pickleshare/
