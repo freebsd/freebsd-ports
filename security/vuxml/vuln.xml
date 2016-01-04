@@ -58,6 +58,457 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="84c7ea88-bf04-4bdc-973b-36744bf540ab">
+    <topic>flash -- multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.559</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb16-01.html">
+	  <p>These updates resolve a type confusion vulnerability that
+	    could lead to code execution (CVE-2015-8644).</p>
+
+	  <p>These updates resolve an integer overflow vulnerability
+	    that could lead to code execution (CVE-2015-8651).</p>
+
+	  <p>These updates resolve use-after-free vulnerabilities that
+	    could lead to code execution (CVE-2015-8634, CVE-2015-8635,
+	    CVE-2015-8638, CVE-2015-8639, CVE-2015-8640, CVE-2015-8641,
+	    CVE-2015-8642, CVE-2015-8643, CVE-2015-8646, CVE-2015-8647,
+	    CVE-2015-8648, CVE-2015-8649, CVE-2015-8650).</p>
+
+	  <p>These updates resolve memory corruption vulnerabilities
+	    that could lead to code execution (CVE-2015-8459,
+	    CVE-2015-8460, CVE-2015-8636, CVE-2015-8645).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8459</cvename>
+      <cvename>CVE-2015-8460</cvename>
+      <cvename>CVE-2015-8634</cvename>
+      <cvename>CVE-2015-8636</cvename>
+      <cvename>CVE-2015-8638</cvename>
+      <cvename>CVE-2015-8639</cvename>
+      <cvename>CVE-2015-8640</cvename>
+      <cvename>CVE-2015-8641</cvename>
+      <cvename>CVE-2015-8642</cvename>
+      <cvename>CVE-2015-8643</cvename>
+      <cvename>CVE-2015-8644</cvename>
+      <cvename>CVE-2015-8645</cvename>
+      <cvename>CVE-2015-8646</cvename>
+      <cvename>CVE-2015-8647</cvename>
+      <cvename>CVE-2015-8648</cvename>
+      <cvename>CVE-2015-8649</cvename>
+      <cvename>CVE-2015-8650</cvename>
+      <cvename>CVE-2015-8651</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb16-01.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-28</discovery>
+      <entry>2015-12-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b808c3a8-ae30-11e5-b864-14dae9d210b8">
+    <topic>inspircd -- DoS</topic>
+    <affects>
+      <package>
+	<name>inspircd</name>
+	<range><lt>2.0.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Inspircd reports:</p>
+	<blockquote cite="http://www.inspircd.org/2015/04/16/v2019-released.html">
+	  <p>This release fixes the issues discovered since 2.0.18,
+	    containing multiple important stability and correctness related
+	    improvements, including a fix for a bug which allowed malformed DNS
+	    records to cause netsplits on a network.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.inspircd.org/2015/04/16/v2019-released.html</url>
+      <url>https://github.com/inspircd/inspircd/commit/6058483d9fbc1b904d5ae7cfea47bfcde5c5b559</url>
+      <url>http://comments.gmane.org/gmane.comp.security.oss.general/18464</url>
+      <cvename>CVE-2015-8702</cvename>
+    </references>
+    <dates>
+      <discovery>2015-04-16</discovery>
+      <entry>2015-12-29</entry>
+      <modified>2015-12-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="4bae544d-06a3-4352-938c-b3bcbca89298">
+    <topic>ffmpeg -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libav</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>gstreamer-ffmpeg</name>
+	<!-- gst-ffmpeg-0.10.13 has libav-0.7.2 (0.7.7 in freebsd port) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>handbrake</name>
+	<!-- handbrake-0.10.2 has libav-10.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ffmpeg</name>
+	<range><ge>2.8,1</ge><lt>2.8.4,1</lt></range>
+	<range><lt>2.7.4,1</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg26</name>
+	<range><lt>2.6.6</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg25</name>
+	<range><lt>2.5.9</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg24</name>
+	<range><lt>2.4.12</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg-devel</name>
+	<name>ffmpeg23</name>
+	<name>ffmpeg2</name>
+	<name>ffmpeg1</name>
+	<name>ffmpeg-011</name>
+	<name>ffmpeg0</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>avidemux</name>
+	<name>avidemux2</name>
+	<name>avidemux26</name>
+	<!-- avidemux-2.6.10 has ffmpeg-2.6.1 -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>kodi</name>
+	<!-- kodi-15.2 has ffmpeg-2.6.4 -->
+	<range><lt>16.0</lt></range>
+      </package>
+      <package>
+	<name>mplayer</name>
+	<name>mencoder</name>
+	<!-- mplayer-1.2.r20151219 has ffmpeg-2.8.3 -->
+	<range><lt>1.2.r20151219_1</lt></range>
+      </package>
+      <package>
+	<name>mythtv</name>
+	<name>mythtv-frontend</name>
+	<!-- mythtv-0.27.0.20140121 has ffmpeg-1.2.2+ (snapshot, f9c8726) -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>plexhometheater</name>
+	<!-- plexhometheater-1.4.1 has ffmpeg-0.10.2 fork -->
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8662">
+	  <p>The ff_dwt_decode function in libavcodec/jpeg2000dwt.c in
+	    FFmpeg before 2.8.4 does not validate the number of
+	    decomposition levels before proceeding with Discrete Wavelet
+	    Transform decoding, which allows remote attackers to cause a
+	    denial of service (out-of-bounds array access) or possibly
+	    have unspecified other impact via crafted JPEG 2000
+	    data.</p>
+	</blockquote>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8663">
+	  <p>The ff_get_buffer function in libavcodec/utils.c in
+	    FFmpeg before 2.8.4 preserves width and height values after
+	    a failure, which allows remote attackers to cause a denial
+	    of service (out-of-bounds array access) or possibly have
+	    unspecified other impact via a crafted .mov file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8662</cvename>
+      <cvename>CVE-2015-8663</cvename>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=75422280fbcdfbe9dc56bde5525b4d8b280f1bc5</url>
+      <url>https://git.videolan.org/?p=ffmpeg.git;a=commitdiff;h=abee0a1c60612e8638640a8a3738fffb65e16dbf</url>
+      <url>https://ffmpeg.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-20</discovery>
+      <entry>2015-12-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="10f7bc76-0335-4a88-b391-0b05b3a8ce1c">
+    <topic>NSS -- MD5 downgrade in TLS 1.2 signatures</topic>
+    <affects>
+      <package>
+	<name>nss</name>
+	<name>linux-c6-nss</name>
+	<range><ge>3.20</ge><lt>3.20.2</lt></range>
+	<range><lt>3.19.2.2</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>43.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>38.5.1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.40</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2015-150/">
+	  <p>Security researcher Karthikeyan Bhargavan reported an
+	    issue in Network Security Services (NSS) where MD5
+	    signatures in the server signature within the TLS 1.2
+	    ServerKeyExchange message are still accepted. This is an
+	    issue since NSS has officially disallowed the accepting MD5
+	    as a hash algorithm in signatures since 2011. This issues
+	    exposes NSS based clients such as Firefox to theoretical
+	    collision-based forgery attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7575</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2015-150/</url>
+      <url>https://hg.mozilla.org/projects/nss/rev/94e1157f3fbb</url>
+    </references>
+    <dates>
+      <discovery>2015-12-22</discovery>
+      <entry>2015-12-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="88f75070-abcf-11e5-83d3-6805ca0b3d42">
+    <topic>phpMyAdmin -- path disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2015-6/">
+	  <p>By calling some scripts that are part of phpMyAdmin in an
+	    unexpected way, it is possible to trigger phpMyAdmin to
+	    display a PHP error message which contains the full path of
+	    the directory where phpMyAdmin is installed.</p>
+	  <p>We consider these vulnerabilities to be non-critical.</p>
+	  <p>This path disclosure is possible on servers where the
+	    recommended setting of the PHP configuration directive
+	    display_errors is set to on, which is against the
+	    recommendations given in the PHP manual for a production
+	    server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2015-6/</url>
+      <cvename>CVE-2015-8669</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-25</discovery>
+      <entry>2015-12-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="876768aa-ab1e-11e5-8a30-5453ed2e2b49">
+    <topic>dpkg -- stack-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>dpkg</name>
+	<range><lt>1.16.17</lt></range>
+	<range><lt>1.17.26</lt></range>
+	<range><lt>1.18.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Salvatore Bonaccorso reports:</p>
+	<blockquote cite="https://lists.debian.org/debian-security-announce/2015/msg00312.html">
+	  <p>Hanno Boeck discovered a stack-based buffer overflow in the
+	    dpkg-deb component of dpkg, the Debian package management system.
+	    This flaw could potentially lead to arbitrary code execution if a
+	    user or an automated system were tricked into processing a specially
+	    crafted Debian binary package (.deb) in the old style Debian binary
+	    package format.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0860</cvename>
+      <url>http://openwall.com/lists/oss-security/2015/11/26/3</url>
+      <url>https://anonscm.debian.org/cgit/dpkg/dpkg.git/commit/?id=f1aac7d933819569bf6f347c3c0d5a64a90bbce0</url>
+    </references>
+    <dates>
+      <discovery>2015-11-26</discovery>
+      <entry>2015-12-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e1b5318c-aa4d-11e5-8f5c-002590263bf5">
+    <topic>mantis -- information disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>mantis</name>
+	<range><lt>1.2.19_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mantis reports:</p>
+	<blockquote cite="https://mantisbt.org/bugs/view.php?id=19873">
+	  <p>CVE-2015-5059: documentation in private projects can be seen by
+	    every user</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5059</cvename>
+      <freebsdpr>ports/201106</freebsdpr>
+      <url>https://mantisbt.org/bugs/view.php?id=19873</url>
+      <url>http://openwall.com/lists/oss-security/2015/06/25/3</url>
+    </references>
+    <dates>
+      <discovery>2015-06-23</discovery>
+      <entry>2015-12-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f36bbd66-aa44-11e5-8f5c-002590263bf5">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki123</name>
+	<range><lt>1.23.12</lt></range>
+      </package>
+      <package>
+	<name>mediawiki124</name>
+	<range><lt>1.24.5</lt></range>
+      </package>
+      <package>
+	<name>mediawiki125</name>
+	<range><lt>1.25.4</lt></range>
+      </package>
+      <package>
+	<name>mediawiki126</name>
+	<range><lt>1.26.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MediaWiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-December/000186.html">
+	  <p>(T117899) SECURITY: $wgArticlePath can no longer be set to relative
+	    paths that do not begin with a slash. This enabled trivial XSS
+	    attacks. Configuration values such as "http://my.wiki.com/wiki/$1"
+	    are fine, as are "/wiki/$1". A value such as "$1" or "wiki/$1" is
+	    not and will now throw an error.</p>
+	  <p>(T119309) SECURITY: Use hash_compare() for edit token comparison.
+	    </p>
+	  <p>(T118032) SECURITY: Don't allow cURL to interpret POST parameters
+	    starting with '@' as file uploads.</p>
+	  <p>(T115522) SECURITY: Passwords generated by User::randomPassword()
+	    can no longer be shorter than $wgMinimalPasswordLength.</p>
+	  <p>(T97897) SECURITY: Improve IP parsing and trimming. Previous
+	    behavior could result in improper blocks being issued.</p>
+	  <p>(T109724) SECURITY: Special:MyPage, Special:MyTalk,
+	    Special:MyContributions and related pages no longer use HTTP
+	    redirects and are now redirected by MediaWiki.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8622</cvename>
+      <cvename>CVE-2015-8623</cvename>
+      <cvename>CVE-2015-8624</cvename>
+      <cvename>CVE-2015-8625</cvename>
+      <cvename>CVE-2015-8626</cvename>
+      <cvename>CVE-2015-8627</cvename>
+      <cvename>CVE-2015-8628</cvename>
+      <url>https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-December/000186.html</url>
+      <url>https://phabricator.wikimedia.org/T117899</url>
+      <url>https://phabricator.wikimedia.org/T119309</url>
+      <url>https://phabricator.wikimedia.org/T118032</url>
+      <url>https://phabricator.wikimedia.org/T115522</url>
+      <url>https://phabricator.wikimedia.org/T97897</url>
+      <url>https://phabricator.wikimedia.org/T109724</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/23/7</url>
+    </references>
+    <dates>
+      <discovery>2015-12-18</discovery>
+      <entry>2015-12-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3b50881d-1860-4721-aab1-503290e23f6c">
+    <topic>Ruby -- unsafe tainted string vulnerability</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>2.0.0,1</ge><lt>2.0.0.648,1</lt></range>
+	<range><ge>2.1.0,1</ge><lt>2.1.8,1</lt></range>
+	<range><ge>2.2.0,1</ge><lt>2.2.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby developer reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2015/12/16/unsafe-tainted-string-usage-in-fiddle-and-dl-cve-2015-7551/">
+	  <p>There is an unsafe tainted string vulnerability in Fiddle and DL.
+	    This issue was originally reported and fixed with CVE-2009-5147 in
+		DL, but reappeared after DL was reimplemented using Fiddle and
+		libffi.</p>
+	  <p>And, about DL, CVE-2009-5147 was fixed at Ruby 1.9.1, but not
+	    fixed at other branches, then rubies which bundled DL except Ruby
+		1.9.1 are still vulnerable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	  <url>https://www.ruby-lang.org/en/news/2015/12/16/unsafe-tainted-string-usage-in-fiddle-and-dl-cve-2015-7551/</url>
+	  <cvename>CVE-2015-7551</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-16</discovery>
+      <entry>2015-12-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="54075861-a95a-11e5-8b40-20cf30e32f6d">
     <topic>Bugzilla security issues</topic>
     <affects>
@@ -1550,16 +2001,23 @@ Notes:
       </package>
       <package>
 	<name>ffmpeg</name>
-	<range><lt>2.8.3,1</lt></range>
+	<range><ge>2.8,1</ge><lt>2.8.3,1</lt></range>
+	<range><lt>2.7.3,1</lt></range>
       </package>
       <package>
 	<name>ffmpeg26</name>
 	<range><lt>2.6.5</lt></range>
       </package>
       <package>
-	<name>ffmpeg-devel</name>
 	<name>ffmpeg25</name>
+	<range><lt>2.5.9</lt></range>
+      </package>
+      <package>
 	<name>ffmpeg24</name>
+	<range><lt>2.4.12</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg-devel</name>
 	<name>ffmpeg23</name>
 	<name>ffmpeg2</name>
 	<name>ffmpeg1</name>
@@ -1695,6 +2153,7 @@ Notes:
     <dates>
       <discovery>2015-11-27</discovery>
       <entry>2015-12-02</entry>
+      <modified>2015-12-28</modified>
     </dates>
   </vuln>
 
@@ -1883,6 +2342,13 @@ Notes:
 	<range><lt>1.8.7</lt></range>
       </package>
       <package>
+	<name>py27-django18</name>
+	<name>py32-django18</name>
+	<name>py33-django18</name>
+	<name>py34-django18</name>
+	<range><lt>1.8.7</lt></range>
+      </package>
+      <package>
 	<name>py27-django17</name>
 	<name>py32-django17</name>
 	<name>py33-django17</name>
@@ -1916,6 +2382,7 @@ Notes:
     <dates>
       <discovery>2015-11-24</discovery>
       <entry>2015-11-30</entry>
+      <modified>2015-12-24</modified>
     </dates>
   </vuln>
 
@@ -3578,16 +4045,27 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-8001</cvename>
+      <cvename>CVE-2015-8002</cvename>
+      <cvename>CVE-2015-8003</cvename>
+      <cvename>CVE-2015-8004</cvename>
+      <cvename>CVE-2015-8005</cvename>
+      <cvename>CVE-2015-8006</cvename>
+      <cvename>CVE-2015-8007</cvename>
+      <cvename>CVE-2015-8008</cvename>
+      <cvename>CVE-2015-8009</cvename>
       <url>https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-October/000181.html</url>
       <url>https://phabricator.wikimedia.org/T91203</url>
       <url>https://phabricator.wikimedia.org/T91205</url>
       <url>https://phabricator.wikimedia.org/T91850</url>
       <url>https://phabricator.wikimedia.org/T95589</url>
       <url>https://phabricator.wikimedia.org/T108616</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/10/29/14</url>
     </references>
     <dates>
       <discovery>2015-10-16</discovery>
       <entry>2015-10-23</entry>
+      <modified>2015-12-24</modified>
     </dates>
   </vuln>
 
@@ -7390,14 +7868,27 @@ Notes:
       </body>
     </description>
     <references>
+      <cvename>CVE-2015-6727</cvename>
+      <cvename>CVE-2013-7444</cvename>
+      <cvename>CVE-2015-6728</cvename>
+      <cvename>CVE-2015-6729</cvename>
+      <cvename>CVE-2015-6730</cvename>
+      <cvename>CVE-2015-6731</cvename>
+      <cvename>CVE-2015-6733</cvename>
+      <cvename>CVE-2015-6734</cvename>
+      <cvename>CVE-2015-6735</cvename>
+      <cvename>CVE-2015-6736</cvename>
+      <cvename>CVE-2015-6737</cvename>
       <url>https://lists.wikimedia.org/pipermail/mediawiki-announce/2015-August/000179.html</url>
       <url>https://phabricator.wikimedia.org/T106893</url>
       <url>https://phabricator.wikimedia.org/T94116</url>
       <url>https://phabricator.wikimedia.org/T97391</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/08/27/6</url>
     </references>
     <dates>
       <discovery>2015-08-10</discovery>
       <entry>2015-08-14</entry>
+      <modified>2015-12-24</modified>
     </dates>
   </vuln>
 

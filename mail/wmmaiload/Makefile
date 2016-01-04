@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	wmmaiload
-PORTVERSION=	2.2.1
-PORTREVISION=	5
+PORTVERSION=	2.3.0
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Incoming mail monitor dockapp with a similar look to wmcpuload
 
-OPTIONS_DEFINE=	GTK2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Does not fetch
-USES=		gmake pkgconfig
+USES=		gmake localbase pkgconfig tar:bzip2
 USE_XORG=	xpm
+USE_GNOME=	gtk20
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
@@ -22,29 +22,16 @@ MAKE_ENV=	DEBUG_CFLAGS="-I${OPENSSLINC}" \
 		DEBUG_LDFLAGS="-L${OPENSSLLIB}"
 
 CFLAGS+=	-D_GNU_SOURCE
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lcrypto
 
 PLIST_FILES=	bin/wmmaiload bin/wmmaiload-config \
 		man/man1/wmmaiload.1.gz man/man1/wmmaiload-config.1.gz
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-MAKE_ENV+=	GTK_CFLAGS="pkg-config --cflags gtk+-2.0" \
-		GTK_LIBS="pkg-config --libs gtk+-2.0"
-.else
-USE_GNOME+=	gtk12
-MAKE_ENV+=	GTK_CFLAGS="pkg-config --cflags gtk+" \
-		GTK_LIBS="pkg-config --libs gtk+"
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's| =| ?=|'
 .for i in wmmaiload/Init.make
-	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib||g' ${WRKSRC}/${i}
+	@${REINPLACE_CMD} -e "s|'-lssl'|'-lssl -lcrypto'| ; \
+		s|-L/usr/X11R6/lib||" ${WRKSRC}/${i}
 .endfor
 .for i in wmmaiload/checkthread.c
 	@${REINPLACE_CMD} -e 's|isnumber(|isnum(|g' ${WRKSRC}/${i}
@@ -52,27 +39,21 @@ post-patch:
 .for i in wmmaiload/main.h
 	@${REINPLACE_CMD} -e '/time\.h>/d' ${WRKSRC}/${i}
 .endfor
-.for i in wmmaiload-config/Init.make
-	@${REINPLACE_CMD} -e 's|gtk-config --cflags|$${GTK_CFLAGS}|g ; \
-		 s|gtk-config --libs|$${GTK_LIBS}|g' ${WRKSRC}/${i}
+.for i in wmmaiload/ssl.c
+	@${REINPLACE_CMD} -e 's|SSLv2_client_method|SSLv23_client_method|' \
+		${WRKSRC}/${i}
 .endfor
-.for i in wmmaiload-config/dialogs.c wmmaiload-config/mainwindow.c \
-	wmmaiload-config/popedit.c
-	@${REINPLACE_CMD} -e 's|_widget_draw_default|_widget_queue_draw|g ; \
-		 s|remove;|rm;|g ; \
+.for i in wmmaiload-config/mainwindow.c
+	@${REINPLACE_CMD} -e 's|remove;|rm;|g ; \
 		 s|remove,|rm,|g ; \
 		 s|remove =|rm =|g ; \
 		 s|PACKAGE"-config"|PACKAGE|g' ${WRKSRC}/${i}
 .endfor
-	@${REINPLACE_CMD} 's/SSLv2_client_method/SSLv23_client_method/' \
-		${WRKSRC}/wmmaiload/ssl.c
 
 do-install:
 .for i in wmmaiload wmmaiload-config
-	(cd ${WRKSRC}/${i} && ${INSTALL_PROGRAM} ${i} \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${i}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/${i}/${i} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${i}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
 
 .include <bsd.port.mk>

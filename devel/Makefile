@@ -519,6 +519,7 @@
     SUBDIR += fib
     SUBDIR += firmware-utils
     SUBDIR += fistgen
+    SUBDIR += flatbuffers
     SUBDIR += flatzebra
     SUBDIR += flex-sdk
     SUBDIR += flex-sdk35
@@ -3969,6 +3970,7 @@
     SUBDIR += py-configobj
     SUBDIR += py-configparser
     SUBDIR += py-construct
+    SUBDIR += py-contextlib2
     SUBDIR += py-country
     SUBDIR += py-cov-core
     SUBDIR += py-coverage
@@ -3976,6 +3978,7 @@
     SUBDIR += py-ctags
     SUBDIR += py-curtsies
     SUBDIR += py-cxx
+    SUBDIR += py-cycler
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
     SUBDIR += py-daemons
@@ -4038,6 +4041,7 @@
     SUBDIR += py-fsm
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
+    SUBDIR += py-funcsigs
     SUBDIR += py-functools32
     SUBDIR += py-fusefs
     SUBDIR += py-future
@@ -4065,7 +4069,7 @@
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
     SUBDIR += py-gyp-devel
-    SUBDIR += py-hashring
+    SUBDIR += py-hash_ring
     SUBDIR += py-hghooks
     SUBDIR += py-hgsubversion
     SUBDIR += py-hgtools
@@ -4111,6 +4115,7 @@
     SUBDIR += py-kqueue
     SUBDIR += py-krosspython
     SUBDIR += py-lazy
+    SUBDIR += py-lazy-object-proxy
     SUBDIR += py-levenshtein
     SUBDIR += py-liblarch
     SUBDIR += py-libpeas
@@ -4149,6 +4154,7 @@
     SUBDIR += py-natural
     SUBDIR += py-ncurses
     SUBDIR += py-nose
+    SUBDIR += py-nose-cov
     SUBDIR += py-notifier
     SUBDIR += py-notify
     SUBDIR += py-ocempgui
@@ -4203,6 +4209,7 @@
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
     SUBDIR += py-pycerberus
+    SUBDIR += py-pycmd
     SUBDIR += py-pycparser
     SUBDIR += py-pydasm
     SUBDIR += py-pydoop
@@ -4369,6 +4376,7 @@
     SUBDIR += py-tw.forms
     SUBDIR += py-twiggy
     SUBDIR += py-twisted
+    SUBDIR += py-twisted152
     SUBDIR += py-twistedCore
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
@@ -4396,6 +4404,7 @@
     SUBDIR += py-wcwidth
     SUBDIR += py-weblib
     SUBDIR += py-wheel
+    SUBDIR += py-wrapt
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgitools
     SUBDIR += py-wsgiutils
@@ -4797,6 +4806,7 @@
     SUBDIR += rubygem-fog-json
     SUBDIR += rubygem-font-awesome-rails
     SUBDIR += rubygem-font-awesome-rails-rails4
+    SUBDIR += rubygem-foreigner
     SUBDIR += rubygem-foreman
     SUBDIR += rubygem-formatador
     SUBDIR += rubygem-gdata
@@ -4863,6 +4873,7 @@
     SUBDIR += rubygem-librarian
     SUBDIR += rubygem-librarianp
     SUBDIR += rubygem-libyajl2
+    SUBDIR += rubygem-licensee
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little-plugger
     SUBDIR += rubygem-locale
@@ -4927,6 +4938,7 @@
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
     SUBDIR += rubygem-plist
+    SUBDIR += rubygem-polyamorous
     SUBDIR += rubygem-polyglot
     SUBDIR += rubygem-popen4
     SUBDIR += rubygem-posix-spawn
@@ -4950,6 +4962,7 @@
     SUBDIR += rubygem-rainbow
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rake-compiler
+    SUBDIR += rubygem-ransack
     SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rash
     SUBDIR += rubygem-rb-fsevent
@@ -4978,6 +4991,7 @@
     SUBDIR += rubygem-rspec-expectations
     SUBDIR += rubygem-rspec-logsplit
     SUBDIR += rubygem-rspec-mocks
+    SUBDIR += rubygem-rspec-rails
     SUBDIR += rubygem-rspec-support
     SUBDIR += rubygem-rubigen
     SUBDIR += rubygem-rubocop
@@ -5035,6 +5049,7 @@
     SUBDIR += rubygem-sprockets3
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
+    SUBDIR += rubygem-state_machines
     SUBDIR += rubygem-statsd
     SUBDIR += rubygem-stella
     SUBDIR += rubygem-stemmer

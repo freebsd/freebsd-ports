@@ -6,13 +6,11 @@ PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	APACHE/thrift/${PORTVERSION
+MASTER_SITES=	APACHE/thrift/${PORTVERSION}
 DISTNAME=	thrift-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C glib interface to Thrift
-
-BROKEN=		unfetchable
 
 PKGNAMESUFFIX=	-c_glib
 

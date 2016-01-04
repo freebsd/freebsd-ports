@@ -19,8 +19,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	3.00
-PORTREVISION=	2
+PORTVERSION=	3.01
 CATEGORIES=	sysutils audio
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -85,11 +84,15 @@ PLIST_SUB+=	RSCSI="@comment "
 
 MAKE_ENV=	CCOM=cc GMAKE_NOWARN=true INS_BASE=${LOCALBASE} \
 		INS_RBASE=${LOCALBASE}
-CDRTLSTARGET=	${ARCH:S/powerpc64/powerpc/}-${OPSYS:tl}-cc
+CDRTLSTARGET=	${ARCH}-${OPSYS:tl}-cc
+CDRTLSXARCH!=	${UNAME} -m
 
-.if exists(/usr/include/iconv.h) || exists(${LOCALBASE}/lib/libiconv.a) || \
+.if exists(/usr/include/iconv.h)
+USES+=		iconv
+.endif
+.if exists(${LOCALBASE}/lib/libiconv.a) || \
 	exists(${LOCALBASE}/lib/libintl.a) || ${PORT_OPTIONS:MNLS}
-MAKE_ENV+=	OSDEFS=-I${LOCALBASE}/include
+MAKE_ENV+=	DEFOSINCDIRS=${LOCALBASE}/include LDPATH=-L${LOCALBASE}/lib
 USES+=		gettext iconv
 .endif
 
@@ -99,9 +102,9 @@ post-extract:
 	@${CP} -fp ${PORTSDIR}/Templates/${i} ${WRKSRC}/${j}
 .endfor
 .endfor
-.if ${CDRTLSTARGET} != "i386-freebsd-cc"
+.if ${CDRTLSXARCH} != "i386"
 	@${LN} -sf ${WRKSRC}/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${CDRTLSTARGET}.rul
+		${WRKSRC}/RULES/${CDRTLSXARCH}-${OPSYS:tl}-cc.rul
 .endif
 
 post-patch:
@@ -109,14 +112,11 @@ post-patch:
 .if !${PORT_OPTIONS:MRSCSI}
 	@${RM} ${WRKSRC}/TARGETS/55rscsi
 .endif
-	@${REINPLACE_CMD} -e 's|\/opt\/schily\/bin\/|${PREFIX}\/etc\/|g' \
-		${WRKSRC}/cdda2wav/cdda2ogg.1
-.for i in DEFAULTS/Defaults.freebsd btcflash/btcflash.1 cdda2wav/cdda2mp3 \
-	cdda2wav/cdda2ogg cdda2wav/cdda2ogg.1 cdda2wav/cdda2wav.1 \
-	cdrecord/README.rscsi cdrecord/cdrecord.1 cdrecord/cdrecord.dfl \
-	include/schily/deflts.h libcdrdeflt/cdrdeflt.c librscg/scsi-remote.c \
-	readcd/readcd.1 rscsi/rscsi.1 rscsi/rscsi.c rscsi/rscsi.dfl \
-	scgcheck/scgcheck.1
+.for i in btcflash/btcflash.1 cdda2wav/cdda2mp3 cdda2wav/cdda2ogg \
+	cdda2wav/cdda2ogg.1 cdda2wav/cdda2wav.1 cdrecord/README.rscsi \
+	cdrecord/cdrecord.1 cdrecord/cdrecord.dfl include/schily/deflts.h \
+	libcdrdeflt/cdrdeflt.c librscg/scsi-remote.c readcd/readcd.1 \
+	rscsi/rscsi.1 rscsi/rscsi.c rscsi/rscsi.dfl scgcheck/scgcheck.1
 	@${REINPLACE_CMD} -e 's|\/opt\/schily|${PREFIX}|g; \
 		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
 		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g; \

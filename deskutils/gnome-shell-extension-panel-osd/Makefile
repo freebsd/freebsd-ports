@@ -23,7 +23,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.shell.extensions.panel-osd.gschema.xml
 
 GH_ACCOUNT=	jenslody
-GH_PROJECT=	gnome-shell-extension-panel-osd
 GH_TAGNAME=	f388fe7
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves

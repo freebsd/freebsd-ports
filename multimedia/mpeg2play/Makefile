@@ -19,6 +19,8 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mpeg2play ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Mpeg2play ${STAGEDIR}${PREFIX}/lib/X11/app-defaults
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

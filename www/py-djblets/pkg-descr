@@ -2,4 +2,4 @@ Djblets is a separate but closely linked project containing a number of useful
 utility functions and classes for use with Django. We make it a goal to put
 generic code written for Review Board into Djblets for other developers to use.
 
-WWW: http://www.review-board.org/wiki/Djblets
+WWW: https://github.com/djblets/djblets

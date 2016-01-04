@@ -1,10 +1,10 @@
---- Imakefile.orig	Mon Mar 17 12:32:22 1997
-+++ Imakefile	Tue Jul  1 18:37:39 1997
+--- Imakefile.orig	1997-03-17 12:32:22 UTC
++++ Imakefile
 @@ -1,24 +1,24 @@
  # TOP10 DIR : directory for socre files
  #
 -SCORE_DIR  = /usr/local/games/Xbat/Score
-+SCORE_DIR  = ${PREFIX}/lib/X11/Xbat/Score
++SCORE_DIR  = /var/games/xbat/Score
  
  # IMAGE DIR : directory for image files
 -IMAGE_DIR = /usr/local/games/Xbat/Image
@@ -32,3 +32,15 @@
  
  #######################################################################
  
+@@ -48,9 +48,8 @@ DependTarget()
+ CleanTarget()
+ 
+ install::
+-	MakeDir($(DESTDIR)$(SCORE_DIR))
+-	chmod 777 $(DESTDIR)$(SCORE_DIR);
+-	@case '${MFLAGS}' in *[i]*) set +e;; esac; for i in Score/?* ; do set -x; $(INSTALL) -c -m 0666 $$i $(DESTDIR)$(SCORE_DIR) ; \
++	MakeDir($(DESTDIR)$(SCORE_DIR))
++	@case '${MFLAGS}' in *[i]*) set +e;; esac; cd Score; for i in ?* ; do set -x; $(INSTALL) -c -m 0666 $$i $(DESTDIR)$(SCORE_DIR)/$$i.sample ; \
+ 	done;
+ 	
+ 	MakeDir($(DESTDIR)$(IMAGE_DIR))

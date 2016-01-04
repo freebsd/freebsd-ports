@@ -1,39 +1,50 @@
---- Makefile.orig	2015-02-02 15:40:17 UTC
+--- Makefile.orig	2015-12-15 21:42:34 UTC
 +++ Makefile
-@@ -29,14 +29,13 @@ TEST_PROG=  test/test-rbuf
+@@ -29,16 +29,15 @@ TEST_PROG=  test/test-rbuf
  all: $(PROG) $(TEST_PROG)
  
  # Adjust $(HTSDIR) to point to your top-level htslib directory
 -HTSDIR = ../htslib
 -include $(HTSDIR)/htslib.mk
 -HTSLIB = $(HTSDIR)/libhts.a
+-BGZIP  = $(HTSDIR)/bgzip
+-TABIX  = $(HTSDIR)/tabix
 +HTSDIR = $(prefix)/include
 +HTSLIB = -lhts
- BGZIP  = $(HTSDIR)/bgzip
- TABIX  = $(HTSDIR)/tabix
++BGZIP  = $(HTSDIR)/../bin/bgzip
++TABIX  = $(HTSDIR)/../bin/tabix
  
 -CC       = gcc
+-CPPFLAGS =
 -CFLAGS   = -g -Wall -Wc++-compat -O2
-+CC      ?= cc
-+CFLAGS  += -Wall
- DFLAGS   =
+-LDFLAGS  =
++CC       ?= cc
++CPPFLAGS +=
++CFLAGS   += -Wall
++LDFLAGS  +=
+ LIBS     =
+ 
  OBJS     = main.o vcfindex.o tabix.o \
-            vcfstats.o vcfisec.o vcfmerge.o vcfquery.o vcffilter.o filter.o vcfsom.o \
-@@ -52,22 +51,15 @@ INCLUDES = -I. -I$(HTSDIR)
+@@ -57,26 +56,20 @@ GSL_LIBS       =
  ifdef USE_GPL
-     CFLAGS += -DUSE_GPL
-     OBJS   += polysomy.o
--    LDLIBS  = -lgsl -lcblas
-+    LDLIBS += -lgsl -lgslcblas
+     EXTRA_CPPFLAGS += -DUSE_GPL
+     OBJS += polysomy.o peakfit.o
+-    GSL_LIBS = -lgsl -lcblas
++    GSL_LIBS = -lgsl -lgslcblas
  endif
  
 -prefix      = /usr/local
 +prefix      = ${STAGEDIR}${PREFIX}
  exec_prefix = $(prefix)
  bindir      = $(exec_prefix)/bin
+ libdir      = $(exec_prefix)/lib
+ libexecdir  = $(exec_prefix)/libexec
 -mandir      = $(prefix)/share/man
 +mandir      = $(prefix)/man
  man1dir     = $(mandir)/man1
+ 
+ plugindir   = $(libexecdir)/bcftools
+ pluginpath  = $(plugindir)
  
 -MKDIR_P = mkdir -p
 -INSTALL = install -p
@@ -41,44 +52,27 @@
 -INSTALL_DATA    = $(INSTALL) -m 644
 -INSTALL_DIR     = $(MKDIR_P) -m 755
 -
--
+ MISC_PROGRAMS = plot-vcfstats vcfutils.pl plugins/color-chrs.pl
+ 
  all:$(PROG) plugins
+@@ -181,7 +174,7 @@ test/test-rbuf: test/test-rbuf.o
+ 	$(CC) $(LDFLAGS) -o $@ $^ -lm $(LIBS)
  
- # See htslib/Makefile
-@@ -102,8 +94,8 @@ PLUGINC = $(foreach dir, plugins, $(wild
- PLUGINS = $(PLUGINC:.c=.so)
- PLUGINM = $(PLUGINC:.c=.mk)
- 
--%.so: %.c version.h version.c $(HTSDIR)/libhts.so
--	$(CC) $(CFLAGS) $(INCLUDES) -fPIC -shared -o $@ version.c $< -L$(HTSDIR) -lhts
-+%.so: %.c version.h version.c
-+	$(CC) $(CFLAGS) $(LDFLAGS) $(INCLUDES) -fPIC -shared -o $@ version.c $<  -lhts
- 
- -include $(PLUGINM)
- 
-@@ -156,10 +148,10 @@ version.o: version.h version.c
- test/test-rbuf.o: test/test-rbuf.c rbuf.h
- 
- test/test-rbuf: test/test-rbuf.o
--	$(CC) $(CFLAGS) -o $@ -lm -ldl $<
-+	$(CC) $(CFLAGS) -o $@ -lm $<
- 
--bcftools: $(HTSLIB) $(OBJS)
--	$(CC) $(CFLAGS) -o $@ $(OBJS) $(HTSLIB) -lpthread -lz -lm -ldl $(LDLIBS)
-+bcftools: $(OBJS)
-+	$(CC) -pthread $(CFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(HTSLIB)  -lz -lm $(LDLIBS)
+ bcftools: $(HTSLIB) $(OBJS)
+-	$(CC) -rdynamic $(LDFLAGS) -o $@ $(OBJS) $(HTSLIB) -lpthread -lz -lm -ldl $(GSL_LIBS) $(LIBS)
++	$(CC) -rdynamic $(LDFLAGS) -o $@ $(OBJS) $(HTSLIB) -pthread -lz -lm $(GSL_LIBS) $(LIBS)
  
  doc/bcftools.1: doc/bcftools.txt
  	cd doc && a2x -adate="$(DOC_DATE)" -aversion=$(DOC_VERSION) --doctype manpage --format manpage bcftools.txt
-@@ -170,8 +162,9 @@ doc/bcftools.html: doc/bcftools.txt
- docs: doc/bcftools.1 doc/bcftools.html
- 
- install: $(PROG) doc/bcftools.1
--	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(man1dir)
--	$(INSTALL_PROGRAM) $(PROG) plot-vcfstats vcfutils.pl $(DESTDIR)$(bindir)
-+	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(bindir)/samtools_misc $(DESTDIR)$(man1dir)
+@@ -198,8 +191,9 @@ docs: doc/bcftools.1 doc/bcftools.html
+ # Since there is no make dependency, bcftools.1 can be out-of-date and
+ # make docs can be run to update if asciidoc is available
+ install: $(PROG)
+-	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(man1dir) $(DESTDIR)$(plugindir)
+-	$(INSTALL_PROGRAM) $(PROG) $(MISC_PROGRAMS) $(DESTDIR)$(bindir)
++	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(bindir)/samtools_misc $(DESTDIR)$(man1dir) $(DESTDIR)$(plugindir)
 +	$(INSTALL_PROGRAM) $(PROG) $(DESTDIR)$(bindir)
-+	$(INSTALL_SCRIPT) plot-vcfstats vcfutils.pl $(DESTDIR)$(bindir)/samtools_misc
++	$(INSTALL_SCRIPT) $(MISC_PROGRAMS) $(DESTDIR)$(bindir)/samtools_misc
  	$(INSTALL_DATA) doc/bcftools.1 $(DESTDIR)$(man1dir)
+ 	$(INSTALL_PROGRAM) plugins/*.so $(DESTDIR)$(plugindir)
  
- clean: testclean clean-plugins

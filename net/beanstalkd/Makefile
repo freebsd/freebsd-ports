@@ -15,7 +15,6 @@ USE_GITHUB=	yes
 USE_RC_SUBR=	beanstalkd
 
 GH_ACCOUNT=	kr
-GH_PROJECT=	beanstalkd
 
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 

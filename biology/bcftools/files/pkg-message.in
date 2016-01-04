@@ -1,2 +1,7 @@
+The miscellaneous tools included with Bcftools have been installed to
+%%PREFIX%%/bin/samtools_misc 
 
-Add %%PREFIX%%/bin/samtools_misc to your path to use miscellaneous tools.
+Add that directory to your path if you want to use these tools.
+
+Some of these tools depend on Perl5, and it will need to be installed to
+use them.

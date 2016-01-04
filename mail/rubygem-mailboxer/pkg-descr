@@ -1,0 +1,20 @@
+This project is based on the need for a private message system for ging /
+social_stream. Instead of creating our core message system heavily dependent on
+our development, we are trying to implement a generic and potent messaging gem.
+
+After looking for a good gem to use we noticed the lack of messaging gems and
+functionality in them. Mailboxer tries to fill this void delivering a powerful
+and flexible message system. It supports the use of conversations with two or
+more participants, sending notifications to recipients (intended to be used as
+system notifications “Your picture has new comments”, “John Doe has updated his
+document”, etc.), and emailing the messageable model (if configured to do so).
+It has a complete implementation of a Mailbox object for each messageable with
+inbox, sentbox and trash.
+
+The gem is constantly growing and improving its functionality. As it is used
+with our parallel development ging / social_stream we are finding and fixing
+bugs continously. If you want some functionality not supported yet or marked as
+TODO, you can create an issue to ask for it. It will be great feedback for us,
+and we will know what you may find useful in the gem.
+
+WWW: https://github.com/mailboxer/mailboxer

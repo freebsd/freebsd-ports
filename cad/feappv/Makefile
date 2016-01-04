@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite element analysis program (personal version)
 
-USES=		fortran gmake zip
+USES=		fortran gmake localbase zip
 USE_XORG=	x11
 MAKEFILE=	makefile
 MAKE_ENV=	FEAPPVHOME3_1="${WRKSRC}"
@@ -21,15 +21,12 @@ ALL_TARGET=	install
 
 WRKSRC=		${WRKDIR}/ver${PORTVERSION:S/.//}
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lm
+LDFLAGS+=	-lX11 -lm
 
 PLIST_FILES=	bin/feappv lib/libfeappv.a
 PORTDOCS=	manual.pdf
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -45,6 +42,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main/feappv ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libfeappv.a ${STAGEDIR}${PREFIX}/lib
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${_DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

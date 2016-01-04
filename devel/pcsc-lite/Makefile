@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.8.14
+PORTVERSION=	1.8.15
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4138/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4157/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Smartcard development library
@@ -29,12 +29,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-DISABLE_SIZE=	yes
-FETCH_CMD=	${LOCALBASE}/bin/wget -c -nc --no-check-certificate
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,^datadir,#datadir,; s,^data_DATA,#data_DATA," \

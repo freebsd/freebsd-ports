@@ -13,16 +13,16 @@ COMMENT=	File transfer utility using the kermit protocol
 NO_WRKSUBDIR=	yes
 
 ALL_TARGET=	posix
+MAKEFILE=	makefile
 
 OPTIONS_DEFINE=	DOCS
 
-post-extract:
-	cd ${WRKSRC} && ${MV} makefile Makefile
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/gkermit ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/gkermit.nr ${STAGEDIR}${PREFIX}/man/man1/gkermit.1
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/gkermit.txt
 
 .include <bsd.port.mk>

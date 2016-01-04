@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pchecker
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/
 

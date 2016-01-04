@@ -1,0 +1,5 @@
+A Python wrapper to Qhull (www.qhull.org) for the computation
+of the convex hull, Delaunay triangulation and Voronoi diagram.
+
+WWW: https://github.com/materialsvirtuallab/pyhull
+WWW: https://pypi.python.org/pypi/pyhull

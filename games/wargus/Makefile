@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 USES=		cmake pkgconfig
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DSHAREDIR:STRING="${DATADIR_REL}"
-USE_X11=	x11
+USE_XORG=	x11
 USE_GNOME=	gtk20
 SUB_FILES=	pkg-message
 

@@ -91,6 +91,7 @@ lib/saga/libsim_erosion.so
 lib/saga/libsim_fire_spreading.so
 lib/saga/libsim_hydrology.so
 lib/saga/libsim_ihacres.so
+lib/saga/libsim_qm_of_esp.so
 lib/saga/libsim_rivflow.so
 lib/saga/libstatistics_grid.so
 lib/saga/libstatistics_kriging.so
@@ -123,6 +124,11 @@ share/pixmaps/saga.png
 %%DATADIR%%/saga_prj.dic
 %%DATADIR%%/saga_prj.srs
 %%DATADIR%%/saga_tip.txt
+%%DATADIR%%/scripting/helper/make_arcsaga_toolboxes.bat
+%%DATADIR%%/scripting/helper/make_saga_release.bat
+%%DATADIR%%/scripting/helper/make_saga_snapshot.bat
+%%DATADIR%%/scripting/helper/make_tools_interface.bat
+%%DATADIR%%/scripting/helper/make_translation_files.bat
 %%DATADIR%%/scripting/python/examples/00_grid_create_dummy.py
 %%DATADIR%%/scripting/python/examples/01_grid_asc_to_saga.py
 %%DATADIR%%/scripting/python/examples/02_grid_morphometry.py
@@ -134,6 +140,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/scripting/python/helpers/saga_cmd_param_interface/environment.py
 %%DATADIR%%/scripting/python/helpers/saga_cmd_param_interface/param_interface.py
 %%DATADIR%%/scripting/python/helpers/saga_cmd_param_interface/tools.py
+%%DATADIR%%/scripting/python/saga_python_api.txt
 %%DATADIR%%/scripting/python/test_data/test.mgrd
 %%DATADIR%%/scripting/python/test_data/test.sdat
 %%DATADIR%%/scripting/python/test_data/test.sgrd

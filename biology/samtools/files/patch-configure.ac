@@ -1,0 +1,19 @@
+--- configure.ac.orig	2015-12-15 21:26:20 UTC
++++ configure.ac
+@@ -23,12 +23,15 @@
+ # DEALINGS IN THE SOFTWARE.
+ 
+ dnl Process this file with autoconf to produce a configure script
+-AC_INIT([Samtools], m4_esyscmd_s([make print-version]),
++AC_INIT([Samtools], [1.3],
+         [samtools-help@lists.sourceforge.net], [], [http://www.htslib.org/])
+ AC_PREREQ([2.63])  dnl This version introduced 4-argument AC_CHECK_HEADER
+ AC_CONFIG_SRCDIR([bamtk.c])
+ AC_CONFIG_HEADERS([config.h])
+ 
++m4_include([ax_with_htslib.m4])
++m4_include([ax_with_curses.m4])
++
+ dnl Copyright notice to be copied into the generated configure script
+ AC_COPYRIGHT([Portions copyright (C) 2015 Genome Research Ltd.
+ 

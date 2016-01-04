@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.3.1
+PORTVERSION=	4.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/
 
-MAINTAINER=	ychsiao@ychsiao.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
@@ -17,7 +17,7 @@ CONFLICTS_INSTALL=	de-wordpress-[0-9].* ja-wordpress-[0-9].* ru-wordpress-[0-9].
 NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		cpe
-USE_PHP=	curl gd hash mysql pcre tokenizer xml zip zlib
+USE_PHP=	curl gd hash mysqli pcre tokenizer xml zip zlib ftp
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

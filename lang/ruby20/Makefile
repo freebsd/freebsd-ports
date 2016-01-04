@@ -15,6 +15,8 @@ COMMENT?=	Object-oriented interpreted scripting language
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
+LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
 BUILD_DEPENDS=	libffi>=0:${PORTSDIR}/devel/libffi
@@ -34,19 +36,18 @@ GNU_CONFIGURE=	yes
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
 LIBS+=		-lpthread -L${LOCALBASE}/lib
 MAKE_ENV=	LC_ALL=C
-USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USES=		cpe execinfo tar:bzip2
+USES=		autoreconf cpe execinfo tar:xz
 WRKSRC=		${RUBY_WRKSRC}
-
-NOT_FOR_ARCHS=	ia64
-NOT_FOR_ARCHS_REASON_ia64=	does not build
 
 RUBY_VER=		2.0
 USE_RUBY=		yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
+
+NOT_FOR_ARCHS=	ia64
+NOT_FOR_ARCHS_REASON_ia64=	does not build
 
 OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES RDOC
 OPTIONS_DEFAULT=	RDOC LIBEDIT
@@ -61,9 +62,8 @@ READLINE_DESC=		Use libreadline
 CAPIDOCS_BUILD_DEPENDS=	doxygen>0:${PORTSDIR}/devel/doxygen \
 			dot:${PORTSDIR}/graphics/graphviz
 CAPIDOCS_CONFIGURE_ENABLE=	install-capi
-LIBEDIT_BUILD_DEPENDS=	libedit>=0:${PORTSDIR}/devel/libedit
 LIBEDIT_CONFIGURE_ON=	--enable-libedit --with-libedit-dir=${LOCALBASE}
-LIBEDIT_RUN_DEPENDS=	libedit>=0:${PORTSDIR}/devel/libedit
+LIBEDIT_USES=		libedit
 RDOC_CONFIGURE_ENABLE=	install-rdoc
 READLINE_BUILD_DEPENDS=	readline>=0:${PORTSDIR}/devel/readline
 READLINE_CONFIGURE_ON=	--disable-libedit --with-readline-dir=${LOCALBASE}
@@ -143,20 +143,20 @@ post-patch:
 # Remove modules we don't want
 #
 .for d in win32ole
-	${RM} -rf ${BUILD_WRKSRC}/ext/${d}
+	@${RM} -rf ${BUILD_WRKSRC}/ext/${d}
 .endfor
 # We get rake from ports.
 .for d in bin/rake doc/rake lib/rake test/rake man/rake.1 lib/rake.rb
-	${RM} -rf ${BUILD_WRKSRC}/${d}
+	@${RM} -rf ${BUILD_WRKSRC}/${d}
 .endfor
 # We get the gem executable from ports.
-	${RM} ${BUILD_WRKSRC}/bin/gem
+	@${RM} ${BUILD_WRKSRC}/bin/gem
 
 #
 # Prepare modules we are wanting to build via external ports
 #
 .for d in gdbm tk
-	${MV} ${BUILD_WRKSRC}/ext/${d} ${WRKDIR}/
+	@${MV} ${BUILD_WRKSRC}/ext/${d} ${WRKDIR}/
 .endfor
 
 post-build:
@@ -171,7 +171,7 @@ post-build:
 	@${RB_SET_CONF_VAR} "INSTALL_DATA" "ENV['RB_USER_INSTALL'] ? '${INSTALL} ${COPY} -m ${SHAREMODE}' : '${INSTALL_DATA}'"
 
 post-build-CAPIDOCS-on:
-	${FIND} ${WRKSRC}/doc -type d -empty -delete
+	@${FIND} ${WRKSRC}/doc -type d -empty -delete
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}

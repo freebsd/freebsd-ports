@@ -24,10 +24,10 @@ PLIST_FILES=	bin/b25 \
 
 OPTIONS_DEFINE=	DOCS
 
-pre-su-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/ab25
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ab25
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

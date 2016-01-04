@@ -7,7 +7,5 @@
 sbin/conqstrat
 @sample %%DATADIR%%/conqnews.doc.sample
 %%DATADIR%%/conquest.doc
-@dir etc/conquest
-@dir %%DATADIR%%
 @dir(,,770) /var/games/conquest
 @group

@@ -18,7 +18,6 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/htree.rb:${PORTSDIR}/textproc/ruby-htree
 
 USES=	gmake
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	iconv
 
 RUBY_SHEBANG_FILES=	main.rb rb-link rb2rm rm2rb
 PORTDOCS=	README README.ja

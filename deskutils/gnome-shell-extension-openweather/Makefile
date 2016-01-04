@@ -24,7 +24,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.shell.extensions.openweather.gschema.xml
 
 GH_ACCOUNT=	jenslody
-GH_PROJECT=	gnome-shell-extension-openweather
 GH_TAGNAME=	0162cf7
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves

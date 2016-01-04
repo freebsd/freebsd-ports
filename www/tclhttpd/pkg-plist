@@ -48,7 +48,7 @@ lib/tclhttpd%%PORTVERSION%%/url.tcl
 lib/tclhttpd%%PORTVERSION%%/utils.tcl
 lib/tclhttpd%%PORTVERSION%%/version.tcl
 lib/tclhttpd%%PORTVERSION%%/mime.types
-@dirrm lib/tclhttpd%%PORTVERSION%%
+@dir lib/tclhttpd%%PORTVERSION%%
 @owner root
 share/tclhttpd%%PORTVERSION%%/.tml
 share/tclhttpd%%PORTVERSION%%/access/.htaccess
@@ -275,46 +275,10 @@ share/tclhttpd%%PORTVERSION%%/test.tml
 share/tclhttpd%%PORTVERSION%%/tests/add_headers.tml
 share/tclhttpd%%PORTVERSION%%/tests/refresh.tml
 share/tclhttpd%%PORTVERSION%%/version_history.tml
-@dirrm share/tclhttpd%%PORTVERSION%%/tests
-@dirrm share/tclhttpd%%PORTVERSION%%/templates
-@dirrm share/tclhttpd%%PORTVERSION%%/status
-@dirrm share/tclhttpd%%PORTVERSION%%/stats
-@dirrm share/tclhttpd%%PORTVERSION%%/snmp/test_mibTable
-@dirrm share/tclhttpd%%PORTVERSION%%/snmp/browser
-@dirrm share/tclhttpd%%PORTVERSION%%/snmp
-@dirrm share/tclhttpd%%PORTVERSION%%/sampleapp/bugdb
-@dirrm share/tclhttpd%%PORTVERSION%%/sampleapp
-@dirrm share/tclhttpd%%PORTVERSION%%/map
-@dirrm share/tclhttpd%%PORTVERSION%%/manual
-@dirrm share/tclhttpd%%PORTVERSION%%/man
-@dirrm share/tclhttpd%%PORTVERSION%%/links
-@dirrm share/tclhttpd%%PORTVERSION%%/learn
-@dirrm share/tclhttpd%%PORTVERSION%%/java
-@dirrm share/tclhttpd%%PORTVERSION%%/include
-@dirrm share/tclhttpd%%PORTVERSION%%/images
-@dirrm share/tclhttpd%%PORTVERSION%%/htaccess
-@dirrm share/tclhttpd%%PORTVERSION%%/guestbook
-@dirrm share/tclhttpd%%PORTVERSION%%/forms
-@dirrm share/tclhttpd%%PORTVERSION%%/debug
-@dirrm share/tclhttpd%%PORTVERSION%%/cgi-bin
-@dirrm share/tclhttpd%%PORTVERSION%%/book
-@dirrm share/tclhttpd%%PORTVERSION%%/admin
-@dirrm share/tclhttpd%%PORTVERSION%%/access/session
-@dirrm share/tclhttpd%%PORTVERSION%%/access/null
-@dirrm share/tclhttpd%%PORTVERSION%%/access/noawe
-@dirrm share/tclhttpd%%PORTVERSION%%/access/multiple
-@dirrm share/tclhttpd%%PORTVERSION%%/access/digest
-@dirrm share/tclhttpd%%PORTVERSION%%/access/bytcl
-@dirrm share/tclhttpd%%PORTVERSION%%/access/bydir
-@dirrm share/tclhttpd%%PORTVERSION%%/access/auth
-@dirrm share/tclhttpd%%PORTVERSION%%/access
-@dirrm share/tclhttpd%%PORTVERSION%%
 tclhttpd/custom/README
 tclhttpd/custom/dodirs.tcl
 tclhttpd/custom/faq.tcl
 tclhttpd/custom/hello.tcl
 tclhttpd/custom/mypage.tcl
-@dirrm tclhttpd/custom
 tclhttpd/README
 tclhttpd/README_custom
-@dirrm tclhttpd

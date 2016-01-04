@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/ipacctd/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP accounting using divert socket
 
+LICENSE=	BSD2CLAUSE
+
 USES=		uidfix
 USE_RC_SUBR=	ipacctd
 MAKE_ENV=	BINDIR="${PREFIX}/sbin"
@@ -22,7 +24,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} 's,{MANDIR},{DESTDIR}$$&,' ${WRKSRC}/man_ru/Makefile
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ru
 	${INSTALL_DATA} ${WRKSRC}/README.ipacctd ${STAGEDIR}${DOCSDIR}/ru
 

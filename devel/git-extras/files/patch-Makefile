@@ -1,31 +1,10 @@
---- Makefile.orig	2015-04-27 12:13:50 UTC
+--- Makefile.orig	2015-12-29 14:53:09 UTC
 +++ Makefile
-@@ -1,6 +1,7 @@
+@@ -1,6 +1,6 @@
  PREFIX ?= /usr/local
  BINPREFIX ?= "$(PREFIX)/bin"
 -MANPREFIX ?= "$(PREFIX)/share/man/man1"
 +MANPREFIX = "$(PREFIX)/man/man1"
-+ETCPREFIX ?= "$(PREFIX)/etc"
+ SYSCONFDIR ?= $(PREFIX)/etc
  BINS = $(wildcard bin/git-*)
  MANS = $(wildcard man/git-*.md)
- MAN_HTML = $(MANS:.md=.html)
-@@ -39,8 +40,8 @@ install:
- 		cp -f man/git-*.1 $(DESTDIR)$(MANPREFIX); \
- 		echo "cp -f man/git-*.1 $(DESTDIR)$(MANPREFIX)"; \
- 	fi
--	@mkdir -p $(DESTDIR)/etc/bash_completion.d
--	cp -f etc/bash_completion.sh $(DESTDIR)/etc/bash_completion.d/git-extras
-+	@mkdir -p $(DESTDIR)$(ETCPREFIX)/bash_completion.d
-+	cp -f etc/bash_completion.sh $(DESTDIR)$(ETCPREFIX)/bash_completion.d/git-extras
- 
- man/%.html: man/%.md
- 	ronn \
-@@ -64,7 +65,7 @@ uninstall:
- 		echo "... uninstalling $(DESTDIR)$(MANPREFIX)/$(notdir $(MAN))"; \
- 		rm -f $(DESTDIR)$(MANPREFIX)/$(notdir $(MAN)); \
- 	)
--	rm -f $(DESTDIR)/etc/bash_completion.d/git-extras
-+	rm -f $(DESTDIR)$(ETCPREFIX)/bash_completion.d/git-extras
- 
- clean: docclean
- 

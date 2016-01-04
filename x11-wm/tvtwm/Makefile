@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twm with a virtual desktop
 
+LICENSE=	MIT
+
 WRKSRC=		${WRKDIR}/tvtwm
 USES=		imake
 USE_XORG=	xbitmaps xpm xmu

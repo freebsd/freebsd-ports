@@ -98,32 +98,16 @@ sbin/assplog
 %%DATADIR%%/stat.pl
 %%PORTDOCS%%%%DOCSDIR%%/Legacy - ASSP Documentation.htm
 %%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 man/man8/assp.8.gz
 man/man8/assplog.8.gz
-@dirrmtry %%DATADIR%%/reports
-@dirrmtry %%DATADIR%%/logs
-@dirrmtry %%DATADIR%%/images
-@dirrmtry %%DATADIR%%/files
-@dirrmtry %%DATADIR%%
-@dirrmtry etc/periodic/daily
-@dirrmtry etc/periodic
-@exec ln -sf %D/%%DATADIR%%/files %%ASSP_HOME%%/
-@unexec rm -f %%ASSP_HOME%%/files
-@exec ln -sf %D/%%DATADIR%%/images %%ASSP_HOME%%/
-@unexec rm -f %%ASSP_HOME%%/images
-@exec ln -sf %D/%%DATADIR%%/rebuildspamdb.pl %%ASSP_HOME%%/
-@unexec rm -f %%ASSP_HOME%%/rebuildspamdb.pl
-@exec ln -sf %D/%%DATADIR%%/reports %%ASSP_HOME%%/
-@unexec rm -f %%ASSP_HOME%%/reports
-@exec ln -sf %%ASSP_LOG%% %%ASSP_HOME%%/logs
-@unexec rm -f %%ASSP_HOME%%/logs
-@cwd /
-@owner %%ASSP_USER%%
-@group %%ASSP_GROUP%%
-@mode 750
-@dirrmtry %%ASSP_LOG%%
-@dirrmtry %%ASSP_HOME%%
-@unexec if [ -d %%ASSP_HOME%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_HOME%% directory."; fi
-@unexec if [ -d %%ASSP_LOG%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_LOG%% directory."; fi
-@unexec echo "If you are deinstalling ASSP completely, delete the ASSP user and group."
+%%ASSP_HOME%%/files
+%%ASSP_HOME%%/images
+%%ASSP_HOME%%/rebuildspamdb.pl
+%%ASSP_HOME%%/reports
+%%ASSP_HOME%%/logs
+@dir %%DATADIR%%/logs
+@dir(%%ASSP_USER%%,%%ASSP_GROUP%%,750) %%ASSP_LOG%%
+@dir(%%ASSP_USER%%,%%ASSP_GROUP%%,750) %%ASSP_HOME%%
+@postunexec if [ -d %%ASSP_HOME%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_HOME%% directory."; fi
+@postunexec if [ -d %%ASSP_LOG%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_LOG%% directory."; fi
+@postunexec echo "If you are deinstalling ASSP completely, delete the ASSP user and group."

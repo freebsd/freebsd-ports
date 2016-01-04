@@ -12,8 +12,6 @@ COMMENT=	Bittorrent client consisting of a daemon and client commands
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 
@@ -23,8 +21,8 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

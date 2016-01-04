@@ -2,8 +2,11 @@ include/alkimia/alk_export.h
 include/alkimia/alkcompany.h
 include/alkimia/alkquoteitem.h
 include/alkimia/alkvalue.h
+lib/cmake/LibAlkimia/LibAlkimiaConfig.cmake
+lib/cmake/LibAlkimia/LibAlkimiaConfigVersion.cmake
+lib/cmake/LibAlkimia/LibAlkimiaTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/LibAlkimia/LibAlkimiaTargets.cmake
 lib/libalkimia.so
-lib/libalkimia.so.4
-lib/libalkimia.so.4.3.2
+lib/libalkimia.so.5
+lib/libalkimia.so.5.0.0
 libdata/pkgconfig/libalkimia.pc
-share/apps/cmake/modules/FindLibAlkimia.cmake

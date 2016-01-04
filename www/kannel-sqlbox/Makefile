@@ -18,7 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/bearerbox:${PORTSDIR}/www/kannel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dbaio
-GH_PROJECT=	${PORTNAME}
 
 USES=	gmake
 USE_GCC=	yes

@@ -16,7 +16,7 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 
 NO_ARCH=	yes
 USES=		perl5 shebangfix
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}/${PORTNAME}
+WRKSRC_SUBDIR=	${PORTNAME}
 
 PLIST_FILES=	bin/mysqlsla \
 		man/man3/mysqlsla.3.gz

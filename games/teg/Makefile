@@ -5,16 +5,15 @@ PORTNAME=	teg
 PORTVERSION=	0.11.2
 PORTREVISION=	7
 CATEGORIES=	games gnome
-MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turn-based strategy game for GNOME
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	wfx
 USES=		gettext-tools gmake iconv libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -40,6 +40,7 @@ share/pear/Ice/ProcessF.php
 share/pear/Ice/Properties.php
 share/pear/Ice/PropertiesAdmin.php
 share/pear/Ice/PropertiesF.php
+share/pear/Ice/RemoteLogger.php
 share/pear/Ice/Router.php
 share/pear/Ice/RouterF.php
 share/pear/Ice/SliceChecksumDict.php

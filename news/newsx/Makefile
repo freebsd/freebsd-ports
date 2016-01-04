@@ -34,7 +34,7 @@ CPPFLAGS+=	-I${LOCALBASE}/news/include
 CONFIGURE_ARGS+=	--without-history
 .endif
 
-DOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README TODO
+PORTDOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README TODO
 
 .include <bsd.port.options.mk>
 
@@ -52,12 +52,10 @@ post-build:
 	${STRIP_CMD} ${WRKSRC}/src/newsx
 .endif
 
-post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/news/spool/inhosts
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for FILE in ${DOCS}
+.for FILE in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO} "Documentation installed in ${DOCSDIR}."
 
 .include <bsd.port.mk>

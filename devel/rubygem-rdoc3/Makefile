@@ -11,22 +11,16 @@ COMMENT=	RDoc produces HTML and command-line documentation for Ruby projects
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
+LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.rdoc
 
-BUILD_DEPENDS=	rubygem-json>=1.4:${PORTSDIR}/devel/rubygem-json
 RUN_DEPENDS=	rubygem-json>=1.4:${PORTSDIR}/devel/rubygem-json
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-USE_RUBY_FEATURES=	iconv
 RUBYGEM_AUTOPLIST=	yes
 
-GEM_ENV+=	RUBYLIB=${PREFIX}/${GEM_LIB_DIR}/lib
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/rdoc ${STAGEDIR}${PREFIX}/bin/ri
 
-.include <bsd.port.pre.mk>
-
-pre-install:
-RUBYGEM_ARGS+=	--bindir ${WRKDIR}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

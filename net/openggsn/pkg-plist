@@ -1,10 +1,12 @@
 bin/ggsn
 bin/sgsnemu
 include/gtp.h
+include/gtpie.h
 include/pdp.h
 lib/libgtp.a
 lib/libgtp.so
 lib/libgtp.so.0
 lib/libgtp.so.0.0.0
+libdata/pkgconfig/libgtp.pc
 man/man8/ggsn.8.gz
 man/man8/sgsnemu.8.gz

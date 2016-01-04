@@ -10,20 +10,15 @@ DISTFILES=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to correct requested TCP receive segment size
 
-WRKSRC=		${WRKDIR}/src
-
-SRC=		${.CURDIR}/src
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/tcpmssd man/man8/tcpmssd.8.gz
 
-pre-patch:
-	@${CP} -R ${SRC} ${WRKDIR}
-
 do-build:
-	(cd ${WRKSRC} && ${MAKE} tcpmssd)
+	${CC} ${CFLAGS} ${FILESDIR}/${PORTNAME}.c -o ${WRKDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tcpmssd ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tcpmssd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dgoulet
-GH_PROJECT=	torsocks
 
 GNU_CONFIGURE=	yes
 USES=		alias autoreconf gmake libtool

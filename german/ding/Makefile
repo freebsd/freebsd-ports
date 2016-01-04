@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ding
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	german tk
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/ \
 		LOCAL/ehaupt

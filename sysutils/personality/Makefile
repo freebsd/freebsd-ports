@@ -4,24 +4,20 @@
 PORTNAME=	personality
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
+MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System configuration management utility to alter system personality
 
-WRKSRC=		${WRKDIR}/src
-NO_BUILD=	YES
+NO_BUILD=	yes
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	man/man8/${PORTNAME}.8.gz sbin/personality
-
-do-extract:
-	@ ${RM} -rf ${WRKDIR}
-	@ ${MKDIR} ${WRKDIR}
-	@ ${CP} -RP ${.CURDIR}/src ${WRKDIR}
+PLIST_FILES=	man/man8/${PORTNAME}.8.gz sbin/${PORTNAME}
 
 do-install:
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	@ ${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>

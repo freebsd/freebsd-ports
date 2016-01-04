@@ -19,6 +19,7 @@ NO_WRKSUBDIR=		yes
 
 FFLAGS+=	-fno-automatic
 PORTDOCS=	doc_en.pdf doc_ger.pdf install.pdf
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
@@ -44,15 +45,14 @@ post-patch:
 		-e "s!^(FC=')(.*)(')!\1${FC} ${FFLAGS}\3!" \
 				${WRKSRC}/bin/sceptre
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/install.pdf ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc ; ${INSTALL_DATA} ${PORTDOCS:Mdoc_*} ${STAGEDIR}${DOCSDIR}
 
-.if !defined(BATCH)
-check test: install
-	cd ${WRKSRC}/samples; for s in ${WRKSRC}/samples/*.d ; \
-	do ${WRKSRC}/bin/sceptre $${s%.d} ; done
-.endif
+do-test:
+	cd ${WRKSRC}/samples; for s in ${WRKSRC}/samples/*.d; do \
+		${WRKSRC}/bin/sceptre $${s%.d}; \
+	done
 
 .include <bsd.port.mk>

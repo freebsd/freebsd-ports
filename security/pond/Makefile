@@ -2,7 +2,7 @@
 
 PORTNAME=	pond
 PORTVERSION=	20140824
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://c-s.li/ports/
 DISTFILES=	pond-20140824.tar.gz \
@@ -15,7 +15,7 @@ COMMENT=	Forward secure, asynchronous messenger
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.crypto/bcrypt.a:${PORTSDIR}/security/go.crypto \
-		${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/goprotobuf/proto.a:${PORTSDIR}/devel/goprotobuf \
+		${LOCALBASE}/${GO_LIBDIR}/github.com/golang/protobuf/proto.a:${PORTSDIR}/devel/goprotobuf \
 		${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.net/dict.a:${PORTSDIR}/net/go.net
 RUN_DEPENDS=	tor:${PORTSDIR}/security/tor
 LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell \

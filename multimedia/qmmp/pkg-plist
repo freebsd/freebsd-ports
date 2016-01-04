@@ -2,6 +2,7 @@ bin/qmmp
 include/qmmp/abstractengine.h
 include/qmmp/audioparameters.h
 include/qmmp/buffer.h
+include/qmmp/channelmap.h
 include/qmmp/decoder.h
 include/qmmp/decoderfactory.h
 include/qmmp/effect.h
@@ -36,6 +37,7 @@ include/qmmpui/metadataformatter.h
 include/qmmpui/playlistdownloader.h
 include/qmmpui/playlistformat.h
 include/qmmpui/playlistgroup.h
+include/qmmpui/playlistheadermodel.h
 include/qmmpui/playlistitem.h
 include/qmmpui/playlistmanager.h
 include/qmmpui/playlistmodel.h
@@ -82,7 +84,7 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%UDISKS%%lib/qmmp/General/libudisks.so
 %%UDISKS2%%lib/qmmp/General/libudisks2.so
 %%FAAD%%lib/qmmp/Input/libaac.so
-%%CDIO%%lib/qmmp/Input/libcdaudio.so
+%%CDDA%%lib/qmmp/Input/libcdaudio.so
 %%CUE%%lib/qmmp/Input/libcue.so
 %%FFMPEG%%lib/qmmp/Input/libffmpeg.so
 %%FLAC%%lib/qmmp/Input/libflac.so
@@ -108,6 +110,7 @@ lib/qmmp/PlayListFormats/libxspfplaylistformat.so
 %%CURL%%lib/qmmp/Transports/libhttp.so
 %%MMS%%lib/qmmp/Transports/libmms.so
 %%SKINNEDUI%%lib/qmmp/Ui/libskinned.so
+%%QSUI%%lib/qmmp/Ui/libqsui.so
 %%ANALYZER%%lib/qmmp/Visual/libanalyzer.so
 %%PROJECTM%%lib/qmmp/Visual/libprojectm.so
 libdata/pkgconfig/qmmp.pc
@@ -115,7 +118,6 @@ libdata/pkgconfig/qmmpui.pc
 %%DIR_ASSOC%%share/applications/qmmp.desktop
 %%DIR_ASSOC%%share/applications/qmmp_enqueue.desktop
 %%DIR_ASSOC%%share/applications/qmmp_dir.desktop
-%%DIR_ASSOC%%%%CUE%%share/applications/qmmp_cue.desktop
 share/icons/hicolor/16x16/apps/qmmp.png
 share/icons/hicolor/32x32/apps/qmmp.png
 share/icons/hicolor/48x48/apps/qmmp.png

@@ -15,7 +15,6 @@ OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	iconv
 USES=		shebangfix
 
 PORTDOCS=	readme.html readme.en.html readme.ja.html

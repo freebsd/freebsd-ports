@@ -14,7 +14,6 @@ COMMENT=	Ruby library for generating SVG files
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	zlib
 
 NO_BUILD=	yes
 

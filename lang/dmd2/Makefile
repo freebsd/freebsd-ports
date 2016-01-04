@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dmd
-PKGNAMESUFFIX=	2
+PKGNAMESUFFIX=	3
 PORTVERSION=	2.069.2
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
@@ -55,7 +55,10 @@ MAKE_ARGS+=	DEBUG_FLAGS=-g\ -DDEBUG=1\ -DUNITTEST
 MODULEDIR=	${PREFIX}/include/d/phobos2
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|g++|${CXX}|" ${WRKSRC}/posix.mak
+	@${REINPLACE_CMD} -e "s|g++|${CXX}|" \
+			  -e "s|/etc|${PREFIX}/etc|" \
+		${WRKSRC}/posix.mak
+	@${REINPLACE_CMD} -e "s|gcc|${CC}|" ${WRKSRC}/link.d
 	@${REINPLACE_CMD} -e "s|cc|${CC}|" ${WRKSRC}/../phobos/posix.mak
 	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|"	\
 			  -e "s|\(dmd\)|\12|gI"		\

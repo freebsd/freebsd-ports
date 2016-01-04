@@ -40,13 +40,3 @@ bin/etded-omni-bot-%%VERSTR%%
 %%PORTDOCS%%%%DOCSDIR%%/docs/Omni-bot Wiki.pdf
 %%PORTDOCS%%%%DOCSDIR%%/install.de.txt
 %%PORTDOCS%%%%DOCSDIR%%/install.en.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/global_scripts/weapons
-@dirrm %%DATADIR%%/global_scripts
-@dirrm %%DATADIR%%/et/scripts/weapons
-@dirrm %%DATADIR%%/et/scripts
-@dirrm %%DATADIR%%/et/nav
-@dirrm %%DATADIR%%/et
-@dirrm %%DATADIR%%
-@dirrmtry lib/enemyterritory
