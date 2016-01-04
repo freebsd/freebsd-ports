@@ -1,12 +1,13 @@
 metaf2xml can download, parse and decode aviation routine weather
 reports (METAR, SPECI, SAO), aerodrome forecasts (TAF), synoptic
-observations (SYNOP) and observations from buoys (BUOY). The
-extracted data can be written as XML or passed to a user-defined
-function (all done in Perl).
+observations (SYNOP), observations from buoys (BUOY) and
+meteorological reports from aircrafts (AMDAR). The extracted data can
+be written as XML or passed to a user-defined function (all done in
+Perl).
 
 It also provides XSLT style sheets to convert the XML to plain
 language (text, HTML), or XML with different schemas. A web-based
 (CGI) user interface can be used to download and display up-to-date
 weather data from NOAA, Ogimet, and other sources.
 
-WWW: http://metaf2xml.sourceforge.net
+WWW: http://metaf2xml.sourceforge.net/
