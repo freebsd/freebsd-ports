@@ -25,6 +25,7 @@ bin/rspamc
 %%ETCDIR%%/modules.d/once_received.conf
 %%ETCDIR%%/modules.d/phishing.conf
 %%ETCDIR%%/modules.d/ratelimit.conf
+%%ETCDIR%%/modules.d/rbl.conf
 %%ETCDIR%%/modules.d/regexp.conf
 %%ETCDIR%%/modules.d/spf.conf
 %%ETCDIR%%/modules.d/surbl.conf
@@ -80,14 +81,6 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/www/js/rspamd.js
 %%DATADIR%%/www/plugins.txt
 %%DATADIR%%/www/react-index.html
-%%DATADIR%%/www/src/Gruntfile.js
-%%DATADIR%%/www/src/common.js
-%%DATADIR%%/www/src/components/app.jsx
-%%DATADIR%%/www/src/components/dashboard.jsx
-%%DATADIR%%/www/src/components/login.jsx
-%%DATADIR%%/www/src/components/piechart.jsx
-%%DATADIR%%/www/src/components/rrdgraph.jsx
-%%DATADIR%%/www/src/package.json
 man/man1/rspamadm.1.gz
 man/man1/rspamc.1.gz
 man/man8/rspamd.8.gz
