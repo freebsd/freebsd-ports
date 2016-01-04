@@ -7288,7 +7288,6 @@ sysutils/rubygem-hiera-puppet||2014-12-01|Has expired: Has been incorporated int
 sysutils/rubygem-hiera-json||2014-12-01|Has expired: Has been incorporated into hiera
 databases/memcachedb||2014-12-01|Has expired: Depends on deprecated Berkeley DB version, needs porting to DB_SITE
 games/djgame2||2014-12-01|Has expired: Online servers gone, game is not playable
-devel/creduce||2014-12-01|Has expired: Unmaintained and depends on ancient LLVM 3.2
 lang/clay||2014-12-01|Has expired: No development since July 2013, depends on obsolete clang-3.2
 textproc/libodfgen|textproc/libodfgen01|2014-12-02|Replaced by newer version
 graphics/libetonyek|graphics/libetonyek01|2014-12-02|Replaced by newer version
