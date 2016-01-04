@@ -4365,6 +4365,7 @@
     SUBDIR += py-tipper
     SUBDIR += py-tox
     SUBDIR += py-trace2html
+    SUBDIR += py-traitlets
     SUBDIR += py-traits
     SUBDIR += py-transaction
     SUBDIR += py-trollius
