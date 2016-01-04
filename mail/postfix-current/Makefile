@@ -3,6 +3,7 @@
 
 PORTNAME=	postfix
 DISTVERSION=	3.0-20151003
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -47,7 +48,7 @@ OPTIONS_DEFINE=	BDB CDB DOCS EAI INST_BASE LDAP LDAP_SASL LMDB MYSQL \
 OPTIONS_RADIO=		RG1 RG2
 OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
 OPTIONS_RADIO_RG2=	SASLKRB5 SASLKMIT
-OPTIONS_DEFAULT=	PCRE TLS
+OPTIONS_DEFAULT=	PCRE TLS EAI
 
 BDB_USE=		BDB=yes
 CDB_LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
@@ -129,7 +130,7 @@ META_DIRECTORY=	${DAEMONDIR}
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" \
 		DAEMONDIR="${DAEMONDIR}" META_DIRECTORY="${META_DIRECTORY}"
-SUB_FILES+=	pkg-install pkg-message
+SUB_FILES+=	pkg-install pkg-message mailer.conf.postfix
 
 POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
@@ -199,8 +200,7 @@ POSTFIX_CCARGS+=	-DNO_TLS
 .if ${PORT_OPTIONS:MSPF}
 BROKEN=			At the moment, SPF support is unavailable for ${PORTNAME}-${DISTVERSION}
 PATCH_SITES+=		LOCAL/mm
-PATCHFILES+=		postfix-2.8.0-libspf2-1.2.x-0.patch.gz
-PATCH_DIST_STRIP=	-p1
+PATCHFILES+=		postfix-2.8.0-libspf2-1.2.x-0.patch.gz:-p1
 POSTFIX_CCARGS+=	-DHAVE_NS_TYPE -DHAS_SPF -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lspf2
 .endif
@@ -368,6 +368,8 @@ post-stage:
 # == do not overwrite existing config
 	${MV} ${STAGEDIR}${ETCDIR}/main.cf ${STAGEDIR}${ETCDIR}/main.cf.sample
 	${MV} ${STAGEDIR}${ETCDIR}/master.cf ${STAGEDIR}${ETCDIR}/master.cf.sample
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/mailer.conf.postfix ${STAGEDIR}${DATADIR}
 
 # == chop dynamicmaps.cf entries into dedicated .cf files
 # for future sub-packages support
