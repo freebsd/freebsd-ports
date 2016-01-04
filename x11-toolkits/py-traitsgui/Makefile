@@ -5,15 +5,16 @@ PORTNAME=	traitsgui
 PORTVERSION=	3.1.0
 PORTREVISION=	7
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	TraitsGUI-${PORTVERSION}
 
 MAINTAINER=	jacob.frelinger@duke.edu
 COMMENT=	Gui toolkit derived from the Enthought python traits library
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traitsbackendwx>=3.1.0:${PORTSDIR}/x11-toolkits/py-traitsbackendwx
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	enthought
 
 USES=		python
 USE_PYTHON=	distutils autoplist
