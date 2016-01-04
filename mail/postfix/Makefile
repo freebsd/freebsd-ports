@@ -3,6 +3,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.11.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -122,7 +123,7 @@ DAEMONDIR=	${PREFIX}/libexec/postfix
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" \
 		DAEMONDIR="${DAEMONDIR}"
-SUB_FILES+=	pkg-install pkg-message
+SUB_FILES+=	pkg-install pkg-message mailer.conf.postfix
 
 POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
@@ -181,8 +182,7 @@ POSTFIX_CCARGS+=	-DNO_TLS
 
 .if ${PORT_OPTIONS:MSPF}
 PATCH_SITES+=		LOCAL/mm
-PATCHFILES+=		postfix-2.8.0-libspf2-1.2.x-0.patch.gz
-PATCH_DIST_STRIP=	-p1
+PATCHFILES+=		postfix-2.8.0-libspf2-1.2.x-0.patch.gz:-p1
 POSTFIX_CCARGS+=	-DHAVE_NS_TYPE -DHAS_SPF -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lspf2
 .endif
@@ -237,9 +237,8 @@ _REQUIRE+=		ypserv
 .endif
 
 .if ${PORT_OPTIONS:MVDA}
-PATCH_SITES+=		http://vda.sourceforge.net/VDA/:vda
+PATCH_SITES+=		http://vda.sourceforge.net/VDA/:-p1:vda
 PATCHFILES+=		postfix-vda-v13-${VDAVERSION}.patch:vda
-PATCH_DIST_STRIP=	-p1
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
@@ -348,6 +347,8 @@ post-stage:
 # == do not overwrite existing config
 	${MV} ${STAGEDIR}${ETCDIR}/main.cf ${STAGEDIR}${ETCDIR}/main.cf.sample
 	${MV} ${STAGEDIR}${ETCDIR}/master.cf ${STAGEDIR}${ETCDIR}/master.cf.sample
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/mailer.conf.postfix ${STAGEDIR}${DATADIR}
 
 # Fix compressed man pages and strip executables
 	${SED} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${STAGEDIR}${DAEMONDIR}/postfix-files
