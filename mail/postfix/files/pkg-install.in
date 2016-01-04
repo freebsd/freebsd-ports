@@ -7,24 +7,22 @@
 # will make the port/package use defaults which make postfix replace
 # sendmail as much as possible.
 
-PREFIX=${PKG_PREFIX:=%%PREFIX%%}
-ETCDIR=${ETCDIR:=%%ETCDIR%%}
-DAEMONDIR=${DAEMONDIR:=%%DAEMONDIR%%}
-READMEDIR=${READMEDIR:=%%READMEDIR%%}
+# allowed vars during package installation
 BATCH=${BATCH:=no}
 POSTFIX_DEFAULT_MTA=${POSTFIX_DEFAULT_MTA:=no}
-MC=/etc/mail/mailer.conf
+
+# fixed vars
+PREFIX="%%PREFIX%%"
+ETCDIR="%%ETCDIR%%"
+DAEMONDIR="%%DAEMONDIR%%"
+READMEDIR="%%READMEDIR%%"
+MCP="%%DATADIR%%/mailer.conf.postfix"
+MC="/etc/mail/mailer.conf"
 
 if [ "${POSTFIX_DEFAULT_MTA}" = "no" ]; then
       DEFAULT_REPLACE_MAILERCONF=n
 else
       DEFAULT_REPLACE_MAILERCONF=y
-fi
-
-if [ -x /usr/sbin/nologin ]; then
-      NOLOGIN=/usr/sbin/nologin
-else
-      NOLOGIN=/sbin/nologin
 fi
 
 ask() {
@@ -56,6 +54,25 @@ yesno() {
       done
 }
 
+install_mailer_conf() {
+	echo "Activate Postfix in ${MC}"
+	/bin/mv -f ${MC} ${MC}.old
+	/usr/bin/install -m 644 ${MCP} ${MC}
+}
+
+show_not_activated_msg() {
+	echo
+	echo "==============================================================="
+	echo "Postfix was *not* activated in /etc/mail/mailer.conf! "
+	echo
+	echo "To finish installation run the following commands:"
+	echo
+	echo "  mv ${MC} ${MC}.old"
+	echo "  install -m 0644 ${MCP} ${MC}"
+	echo "==============================================================="
+	echo
+}
+
 if [ "$2" = "POST-INSTALL" ]; then
 	/bin/sh ${DAEMONDIR}/post-install tempdir=/tmp \
 	 daemon_directory=${DAEMONDIR} \
@@ -71,18 +88,22 @@ if [ "$2" = "POST-INSTALL" -a -z "${PACKAGE_BUILDING}" -a -f "${MC}" ]; then
 	egrep -q "^newaliases.*${PREFIX}/sbin/sendmail"  ${MC}
 	ret=$?
 	if [ ${ret} -ne 0 ]; then
-		if yesno "Would you like to activate Postfix in ${MC}" ${DEFAULT_REPLACE_MAILERCONF}; then
-			/bin/mv -f ${MC} ${MC}.old
-			echo "#"						>	${MC}
-			echo -n "# Execute the Postfix sendmail program"	>>	${MC}
-			echo ", named ${PREFIX}/sbin/sendmail"			>>	${MC}
-			echo "#"						>>	${MC}
-			echo "sendmail	${PREFIX}/sbin/sendmail"	>>	${MC}
-			echo "send-mail	${PREFIX}/sbin/sendmail"	>>	${MC}
-			echo "mailq		${PREFIX}/sbin/sendmail"	>>	${MC}
-			echo "newaliases	${PREFIX}/sbin/sendmail"	>>	${MC}
+		# Respect POSTFIX_DEFAULT_MTA, do not ask for confirmation!
+		# (This helps tools like salt, ansible or puppet on new installations)
+		if [ "${DEFAULT_REPLACE_MAILERCONF}" = "y" ]; then
+			install_mailer_conf
+		elif [ "${DEFAULT_REPLACE_MAILERCONF}" = "n" -a -t 0 ]; then
+			if yesno "Would you like to activate Postfix in ${MC}" ${DEFAULT_REPLACE_MAILERCONF:="n"}; then
+				install_mailer_conf
+			else
+				show_not_activated_msg
+			fi
+		else
+			show_not_activated_msg
 		fi
 	else
+		echo "==============================================================="
 		echo "Postfix already activated in ${MC}"
+		echo "==============================================================="
 	fi
 fi

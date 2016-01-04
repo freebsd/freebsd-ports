@@ -137,6 +137,7 @@ sbin/postmulti
 sbin/postsuper
 sbin/posttls-finger
 sbin/sendmail
+%%DATADIR%%/mailer.conf.postfix
 @dir %%PFETC%%
 @dir(postfix,,700) /var/db/postfix
 @dir(postfix,,700) /var/spool/postfix/active
