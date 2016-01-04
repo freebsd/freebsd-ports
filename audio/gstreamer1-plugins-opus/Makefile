@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer Opus audio encoder/decoder plugin
+COMMENT=	GStreamer Opus audio encoder/decoder plugin
 
 GST_PLUGIN=	opus
 DIST=		bad

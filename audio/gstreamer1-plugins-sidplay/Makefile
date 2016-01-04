@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer Commodore SID decoder plugin
+COMMENT=	GStreamer Commodore SID audio decoder plugin
 
 GST_PLUGIN=	sidplay
 DIST=		ugly

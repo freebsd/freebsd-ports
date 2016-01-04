@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer icecast plugin
+COMMENT=	GStreamer icecast output plugin
 
 GST_PLUGIN=	shout2
 DIST=		good

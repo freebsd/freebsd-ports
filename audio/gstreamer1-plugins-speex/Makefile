@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer speex voice plugin
+COMMENT=	GStreamer speex voice encode/decode plugin
 
 GST_PLUGIN=	speex
 DIST=		good

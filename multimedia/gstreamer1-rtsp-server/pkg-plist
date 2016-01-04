@@ -20,6 +20,6 @@ include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-token.h
 lib/girepository-%%VERSION%%/GstRtspServer-%%VERSION%%.typelib
 lib/libgstrtspserver-%%VERSION%%.so
 lib/libgstrtspserver-%%VERSION%%.so.0
-lib/libgstrtspserver-%%VERSION%%.so.0.601.0
+lib/libgstrtspserver-%%VERSION%%.so.%%SOVERSION%%
 libdata/pkgconfig/gstreamer-rtsp-server-%%VERSION%%.pc
 share/gir-%%VERSION%%/GstRtspServer-%%VERSION%%.gir

@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer MPEG-2 and MPEG-4 AAC decoder plugin
+COMMENT=	GStreamer MPEG-2 and MPEG-4 AAC decoder plugin
 
 GST_PLUGIN=	faad
 DIST=		bad
