@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kombu
-PORTVERSION=	3.0.29
+PORTVERSION=	3.0.32
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,5 +34,6 @@ ZMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=13.1.0:${PORTSDIR}/net/py-pyzmq
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
