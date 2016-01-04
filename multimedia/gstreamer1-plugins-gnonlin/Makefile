@@ -8,7 +8,7 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/src/gnonlin/
 DISTNAME=	gnonlin-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	Gstreamer lib for writing non-linear audio and video
+COMMENT=	GStreamer lib for writing non-linear audio and video
 
 USES=		libtool pkgconfig python:3,build tar:xz
 GNU_CONFIGURE=	yes

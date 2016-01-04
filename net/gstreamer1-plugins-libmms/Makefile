@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	net
 
-COMMENT=	Gstreamer mms:// and mmsh:// plugin
+COMMENT=	GStreamer mms:// and mmsh:// plugin
 
 GST_PLUGIN=	libmms
 DIST=		bad

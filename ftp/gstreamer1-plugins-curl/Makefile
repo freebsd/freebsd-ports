@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	ftp
 
-COMMENT=	Gstreamer curl plugin
+COMMENT=	GStreamer curl based output plugin
 
 GST_PLUGIN=	curl
 DIST=		bad

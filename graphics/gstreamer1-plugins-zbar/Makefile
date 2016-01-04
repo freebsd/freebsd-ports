@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-COMMENT=	Gstreamer ZBar barcode detector plugin
+COMMENT=	GStreamer ZBar barcode detector plugin
 
 GST_PLUGIN=	zbar
 DIST=		bad

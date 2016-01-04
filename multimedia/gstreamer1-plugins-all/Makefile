@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	Meta-port of all gstreamer 1.x plugins with options
+COMMENT=	Meta-port of all GStreamer 1.x plugins with options
 
 USES=		metaport
 

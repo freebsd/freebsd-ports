@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	security
 
-COMMENT=	Gstreamer Datagram TLS (dtls) plugin
+COMMENT=	GStreamer Datagram TLS (dtls) plugin
 
 GST_PLUGIN=	dtls
 DIST=		bad

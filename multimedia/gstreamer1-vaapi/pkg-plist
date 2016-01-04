@@ -10,6 +10,7 @@ include/gstreamer-%%VERSION%%/gst/vaapi/gstvaapidecoder_mpeg2.h
 include/gstreamer-%%VERSION%%/gst/vaapi/gstvaapidecoder_mpeg4.h
 include/gstreamer-%%VERSION%%/gst/vaapi/gstvaapidecoder_vc1.h
 include/gstreamer-%%VERSION%%/gst/vaapi/gstvaapidecoder_vp8.h
+include/gstreamer-%%VERSION%%/gst/vaapi/gstvaapidecoder_vp9.h
 include/gstreamer-%%VERSION%%/gst/vaapi/gstvaapidisplay.h
 include/gstreamer-%%VERSION%%/gst/vaapi/gstvaapidisplay_drm.h
 include/gstreamer-%%VERSION%%/gst/vaapi/gstvaapidisplay_egl.h

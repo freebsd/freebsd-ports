@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer Ogg bitstream plugin
+COMMENT=	GStreamer Ogg bitstream plugin
 
 GST_PLUGIN=	ogg
 DIST=		base

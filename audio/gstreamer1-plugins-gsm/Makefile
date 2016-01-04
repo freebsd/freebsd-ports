@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer gsm encoding/decoding plugin
+COMMENT=	GStreamer gsm encoding/decoding plugin
 
 GST_PLUGIN=	gsm
 DIST=		bad

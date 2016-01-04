@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer dts plugin
+COMMENT=	GStreamer dts audio decode plugin
 
 GST_PLUGIN=	dts
 DIST=		bad

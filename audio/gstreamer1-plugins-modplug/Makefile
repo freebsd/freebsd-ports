@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer modplug plugin
+COMMENT=	GStreamer module decoder based on modplug egine plugin
 
 GST_PLUGIN=	modplug
 DIST=		bad

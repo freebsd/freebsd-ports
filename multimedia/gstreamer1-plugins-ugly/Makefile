@@ -4,7 +4,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Ugly gstreamer-plugins
+COMMENT=	GStreamer-plugins set of good-quality plug-ins that might have distribution problems
 
 GST_PLUGIN=	ugly
 GST_PLUGIN_SUFFIX=	-ugly

@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer low-latency audio server plugin
+COMMENT=	GStreamer low-latency audio server plugin
 
 GST_PLUGIN=	jack
 DIST=		good

@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	x11
 
-COMMENT=	Gstreamer X and Xvideo output plugins
+COMMENT=	GStreamer X and Xvideo output plugins
 
 GST_PLUGIN=	x
 DIST=		base

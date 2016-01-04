@@ -4,7 +4,7 @@ PORTREVISION=	0
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	1-plugins-schroedinger
 
-COMMENT=	Gstreamer Dirac high-speed codec plugin
+COMMENT=	GStreamer Dirac high-speed codec plugin
 
 GST_PLUGIN=	schro
 DIST=		bad
