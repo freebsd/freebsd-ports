@@ -1,0 +1,12 @@
+--- lib/clamav-wrapper.orig	2015-12-04 06:27:18 UTC
++++ lib/clamav-wrapper
+@@ -51,6 +51,9 @@
+ 
+ # You may want to check this script for bash-isms
+ 
+++PATH=$PATH:/usr/local/bin
+++export PATH
++
+ #TempDir="/tmp/clamav.$$"
+ TempDir=$(mktemp -t tmp) || { echo "$0: Cannot make name for temporary dir" >&2; exit 1; }
+ ClamUser="clamav"
