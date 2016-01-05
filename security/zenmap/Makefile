@@ -3,6 +3,7 @@
 
 PORTNAME=	zenmap
 PORTVERSION=	6.47
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		SF/nemysisfreebsdp/security/:icons
@@ -15,16 +16,18 @@ MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	GUI frontend for the Nmap scanning utility
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
+WRKSRC_SUBDIR=	${PORTNAME}
 
 USES=		dos2unix python tar:bzip2
 DOS2UNIX_GLOB=	*.xml
 USE_GNOME=	pygtk2
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -33,8 +36,6 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
 SUB_FILES=	zenmap-root
-
-.include <bsd.port.options.mk>
 
 post-extract:
 	@${RM} -f ${WRKSRC}/install_scripts/unix/su-to-zenmap.sh
@@ -65,9 +66,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 	@${FIND} ${WRKSRC}/../ndiff -name "*.bak" -delete
 
-.if ! ${PORT_OPTIONS:MNLS}
+post-patch-NLS-off:
 	@${REINPLACE_CMD} -i '' '/locale_dir, mo_find, /d' ${WRKSRC}/setup.py
-.endif
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/zenmap-root ${STAGEDIR}${PREFIX}/bin/
