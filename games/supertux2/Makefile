@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	supertux
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/SuperTux/supertux/releases/download/v${PORTVERSION}/
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Side-scroller game similar to Super Mario Brothers
@@ -17,14 +16,19 @@ LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 
 USE_SDL=	sdl2 image2
 USE_GL=		glew
-USES=		cmake:outsource compiler:c++11-lib openal:al pkgconfig tar:bzip2
+USES=		cmake:outsource compiler:c++11-lib dos2unix iconv \
+		openal:al pkgconfig tar:bzip2
 # Unhide std::to_string() to fix build with GCC (see ports/193528 for details)
 CFLAGS+=	-D_GLIBCXX_USE_C99
+CMAKE_ARGS=	-DINSTALL_SUBDIR_BIN=bin \
+		-DBUILD_SHARED_LIBS=off
+DOS2UNIX_FILES=	external/squirrel/CMakeLists.txt
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e '/^Icon=/s,supertux.png,supertux2.png,' \
+	${REINPLACE_CMD} -e '/^Icon=/s,supertux.png,supertux2,' \
 		${WRKSRC}/supertux2.desktop
 
 .include <bsd.port.mk>
