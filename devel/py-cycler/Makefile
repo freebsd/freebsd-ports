@@ -1,12 +1,12 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 # $FreeBSD$
 
-PORTNAME=	Cycler
+PORTNAME=	cycler
 PORTVERSION=	0.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
+MASTER_SITE_SUBDIR=	source/C/Cycler
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	cycler-${PORTVERSION}
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Composable style cycles
