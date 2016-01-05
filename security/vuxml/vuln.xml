@@ -59,7 +59,7 @@ Notes:
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="86c3c66e-b2f5-11e5-863a-b499baebfeaf">
-    <topic>archivers/unzip -- multiple vulnerabilities</topic>
+    <topic>unzip -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>unzip</name>
