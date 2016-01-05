@@ -5,7 +5,7 @@
  	    in6addr2str(&addr->addr, 0), addr->pltime, addr->vltime);
  
 -	if (sa->addr.vltime != 0)
-+	if (sa->addr.vltime != 0 || sacreate)
++	if (sa->addr.vltime != 0 && sacreate)
  		if (na_ifaddrconf(IFADDRCONF_ADD, sa) < 0)
  			return (-1);
  
