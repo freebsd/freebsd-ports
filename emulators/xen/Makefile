@@ -2,6 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.5.2
+PORTREVISION=   1
 CATEGORIES=	emulators
 
 MAINTAINER=	royger@FreeBSD.org
