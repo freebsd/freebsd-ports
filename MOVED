@@ -8093,3 +8093,4 @@ net-mgmt/unifi2|net-mgmt/unifi3|2016-01-01|Has expired: Unifi 2.x is EoL. Please
 misc/kde4-l10n-th||2016-01-01|Has expired: Upstream ceased maintainance of this translation
 misc/kde4-l10n-tg||2016-01-01|Has expired: Upstream ceased maintainance of this translation
 misc/kde4-l10n-si||2016-01-01|Has expired: Upstream ceased maintainance of this translation
+games/supertux-devel|games/supertux2|2016-01-05|Renamed along with update to new stable release
