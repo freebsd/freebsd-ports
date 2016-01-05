@@ -14,7 +14,6 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
-CONFLICTS_BUILD=	boost-libs-1.55*
 CONFLICTS_INSTALL=	mysql5.[0-57-9]-client-* mysql[0-46-9][0-9]-client-* mariadb[0-9][0-9]-client-* percona[0-9][0-9]-client-*
 
 CMAKE_ARGS+=	-DINSTALL_PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig \
