@@ -3,6 +3,7 @@
 
 PORTNAME=	networkx
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://networkx.lanl.gov/download/networkx/ \
 		CHEESESHOP
@@ -19,7 +20,7 @@ RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}decorator>=3.4.0:${PORTSDIR}/devel/py-decor
 #		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:${PORTSDIR}/textproc/py-docutils
 
 NO_ARCH=	yes
-USES=		python:2 shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 PLIST_SUB+=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER}
@@ -46,10 +47,16 @@ GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>=1.2:${PORTSDIR}/graphics/
 YAML_DESC=	Reading and writing YAML files
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 3000 && (${PORT_OPTIONS:MMPL} || ${PORT_OPTIONS:MGRAPHVIZ})
+BROKEN=		Neither math/py-matplotlib nor graphics/py-graphviz support Python 3.x yet. Please disable both the MPL and GRAPHVIZ options
+.endif
+
 PORTEXAMPLES=	*
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
