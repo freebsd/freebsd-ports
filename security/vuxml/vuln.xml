@@ -58,6 +58,57 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b65e4914-b3bc-11e5-8255-5453ed2e2b49">
+    <topic>tiff -- out-of-bounds read in CIE Lab image format</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<range><le>4.0.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>zzf of Alibaba discovered an out-of-bounds vulnerability in the code
+	  processing the LogLUV and CIE Lab image format files. An attacker
+	  could create a specially-crafted TIFF file that could cause libtiff
+	  to crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8683</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/12/25/2</mlist>
+    </references>
+    <dates>
+      <discovery>2015-12-25</discovery>
+      <entry>2016-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bd349f7a-b3b9-11e5-8255-5453ed2e2b49">
+    <topic>tiff -- out-of-bounds read in tif_getimage.c</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<range><le>4.0.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>LMX of Qihoo 360 Codesafe Team discovered an out-of-bounds read in
+	  tif_getimage.c. An attacker could create a specially-crafted TIFF
+	  file that could cause libtiff to crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8665</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/12/24/2</mlist>
+    </references>
+    <dates>
+      <discovery>2015-12-24</discovery>
+      <entry>2016-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="86c3c66e-b2f5-11e5-863a-b499baebfeaf">
     <topic>unzip -- multiple vulnerabilities</topic>
     <affects>
