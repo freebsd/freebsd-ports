@@ -1,5 +1,15 @@
 --- configure.orig	2015-11-01 10:46:19 UTC
 +++ configure
+@@ -27107,9 +27107,6 @@
+     if test "x$ac_cv_path_krb5_config" != "xno" ; then
+       krb5confpath="`dirname $ac_cv_path_krb5_config`"
+       ac_heimdal="`$ac_cv_path_krb5_config --version 2>/dev/null | grep -c -i heimdal`"
+-      if test "x$with_heimdal_krb5" = "xyes"; then
+-        as_fn_error $? "Could not find pkg-config or krb5-config for Heimdal Kerberos" "$LINENO" 5
+-      fi
+     else
+       if test "x$with_heimdal_krb5" = "xyes"; then
+         as_fn_error $? "Could not find krb5-config in path" "$LINENO" 5
 @@ -32038,7 +32040,7 @@ done
  ##
  
