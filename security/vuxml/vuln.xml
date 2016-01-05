@@ -133,7 +133,6 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>ISC Support reports:</p>
-
 	<blockquote cite="https://kb.isc.org/article/AA-01318/0/CVE-2015-8373-ISC-Kea%3A-unexpected-termination-while-handling-a-malformed-packet.html">
 	  <p>ISC Kea may terminate unexpectedly (crash) while handling
 	    a malformed client packet.  Related defects in the kea-dhcp4
@@ -142,7 +141,6 @@ Notes:
 	    An attacker sending a crafted malformed packet can cause
 	    an ISC Kea server providing DHCP services to IPv4 or IPv6
 	    clients to exit unexpectedly.</p>
-
 	  <ul>
 	    <li><p>The kea-dhcp4 server is vulnerable only in versions
 		  0.9.2 and 1.0.0-beta, and furthermore only when logging
@@ -150,7 +148,6 @@ Notes:
 		  versions 0.9.1 or lower, and servers which are not
 		  logging or are logging at debug level 39 or below are
 		  not vulnerable.</p></li>
-
 	    <li><p>The kea-dhcp6 server is vulnerable only in versions
 		  0.9.2 and 1.0.0-beta, and furthermore only when
 		  logging at debug level 45 or higher.  Servers running
