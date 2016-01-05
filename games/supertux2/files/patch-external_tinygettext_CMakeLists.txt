@@ -1,0 +1,16 @@
+--- external/tinygettext/CMakeLists.txt.orig	2015-12-20 14:56:35 UTC
++++ external/tinygettext/CMakeLists.txt
+@@ -203,13 +203,5 @@ set(LIB_SUBDIR "lib${LIB_SUFFIX}"
+ ## prepare tinygettext.pc
+ configure_file(tinygettext.pc.in tinygettext.pc @ONLY)
+ 
+-install(TARGETS tinygettext
+-    RUNTIME DESTINATION bin
+-	ARCHIVE DESTINATION ${LIB_SUBDIR}
+-	LIBRARY DESTINATION ${LIB_SUBDIR})
+-install(FILES ${TINYGETTEXT_HEADERS}
+-	DESTINATION include/tinygettext)
+-install(FILES ${tinygettext_BINARY_DIR}/tinygettext.pc
+-	DESTINATION ${LIB_SUBDIR}/pkgconfig)
+ 
+ # EOF #
