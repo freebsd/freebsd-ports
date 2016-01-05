@@ -3,7 +3,7 @@
 
 PORTNAME=	plan9port
 PORTVERSION=	20140306
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel plan9
 MASTER_SITES=	https://plan9port.googlecode.com/files/
 
@@ -48,12 +48,15 @@ REINPLACE_ARGS=	-i ""		# necessary since installs via recursive copy
 
 PLAN9=		${PREFIX}/plan9
 
-EMPTY_DIRS=	plan9/log \
-		plan9/bin/lpbin \
-		plan9/dist/troff \
-		plan9/mail/queue \
+EMPTY_DIRS=	plan9/mail/queue \
+		plan9/log \
 		plan9/dist/debian \
-		plan9/dist/pkg
+		plan9/dist/pkg \
+		plan9/dist/troff \
+		plan9/bin/lpbin
+
+post-extract:
+	${MV} ${WRKDIR}/plan9port ${WRKDIR}/plan9
 
 post-patch:
 	@${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
@@ -75,14 +78,15 @@ do-build:
 # Dynamic PLIST sucks, but it's over 8K lines, which sucks even more :(
 post-build:
 	${RM} -rf `${FIND} ${WRKSRC}/dist -type f ! -regex ".*\.png"`
-	${RM} -rf `${FIND} ${WRKSRC} -name .hg -o -name .cvsignore`
-	( cd ${WRKDIR} ; \
-	  ${FIND} plan9 -type f; for D in ${EMPTY_DIRS}; do \
-	    ${ECHO_CMD} "@exec ${MKDIR} ${PREFIX}/$${D}"; \
+	${RM} -rf `${FIND} ${WRKSRC} -name .hg -o -name .hgignore \
+		-o -name .hgtags -o -name .cvsignore`
+	@( cd ${WRKDIR} ; \
+	  ${FIND} plan9 -type f; \
+	  ${ECHO_CMD} "@dir(,,1777) plan9/news"; \
+	  for D in ${EMPTY_DIRS}; do \
+	    ${ECHO_CMD} "@dir $${D}"; \
 	  done; \
-	  ${FIND} plan9 -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm |'; \
-	) | ${PERL} -pe '$$_ =~ s,plan9/bin/auxstats,\@group kmem\n\@mode\
-	  2755\n$$&\n\@group\n\@mode,' > ${PLIST}
+	 ) | sed -e '/plan9\/bin\/auxstats/s|^|\@\(,kmem,2755\) |' > ${PLIST}
 
 do-install:
 	${CP} -a ${WRKSRC} ${STAGEDIR}${PREFIX}
@@ -91,7 +95,6 @@ post-install:
 	cd ${STAGEDIR}${PLAN9} && ${SETENV} PLAN9=${PLAN9} \
 		PATH=${PATH}:${STAGEDIR}${PLAN9}/bin \
 			${SH} lib/moveplan9.sh ${WRKSRC}
-	${CHMOD} 01777 ${STAGEDIR}${PLAN9}/news
 
 install-user:
 	@${MKDIR} ${HOME}/lib
