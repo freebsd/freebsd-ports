@@ -62,7 +62,7 @@ Notes:
     <topic>archivers/unzip -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>archivers/unzip</name>
+	<name>unzip</name>
 	<range><lt>6.0_7</lt></range>
       </package>
     </affects>
