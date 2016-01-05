@@ -1,5 +1,5 @@
---- extract.c.orig	2009-03-14 01:32:52 UTC
-+++ extract.c
+--- extract.c.orig	2009-03-14 02:32:52.000000000 +0100
++++ extract.c	2016-01-04 14:43:11.813488458 +0100
 @@ -1,5 +1,5 @@
  /*
 -  Copyright (c) 1990-2009 Info-ZIP.  All rights reserved.
@@ -7,7 +7,7 @@
  
    See the accompanying file LICENSE, version 2009-Jan-02 or later
    (the contents of which are also included in unzip.h) for terms of use.
-@@ -298,6 +298,8 @@ char ZCONST Far TruncNTSD[] =
+@@ -298,6 +298,8 @@
  #ifndef SFX
     static ZCONST char Far InconsistEFlength[] = "bad extra-field entry:\n \
       EF block length (%u bytes) exceeds remaining EF data (%u bytes)\n";
@@ -16,7 +16,7 @@
     static ZCONST char Far InvalidComprDataEAs[] =
       " invalid compressed data for EAs\n";
  #  if (defined(WIN32) && defined(NTSD_EAS))
-@@ -2023,7 +2025,8 @@ static int TestExtraField(__G__ ef, ef_l
+@@ -2023,7 +2025,8 @@
          ebID = makeword(ef);
          ebLen = (unsigned)makeword(ef+EB_LEN);
  
@@ -26,7 +26,7 @@
             /* Discovered some extra field inconsistency! */
              if (uO.qflag)
                  Info(slide, 1, ((char *)slide, "%-22s ",
-@@ -2032,6 +2035,16 @@ static int TestExtraField(__G__ ef, ef_l
+@@ -2032,6 +2035,16 @@
                ebLen, (ef_len - EB_HEADSIZE)));
              return PK_ERR;
          }
@@ -43,7 +43,7 @@
  
          switch (ebID) {
              case EF_OS2:
-@@ -2217,14 +2230,28 @@ static int test_compr_eb(__G__ eb, eb_si
+@@ -2217,14 +2230,28 @@
      ulg eb_ucsize;
      uch *eb_ucptr;
      int r;
@@ -75,3 +75,16 @@
  
      if (
  #ifdef INT_16BIT
+@@ -2701,6 +2728,12 @@
+     int repeated_buf_err;
+     bz_stream bstrm;
+ 
++    if (G.incnt <= 0 && G.csize <= 0L) {
++        /* avoid an infinite loop */
++        Trace((stderr, "UZbunzip2() got empty input\n"));
++        return 2;
++    }
++
+ #if (defined(DLL) && !defined(NO_SLIDE_REDIR))
+     if (G.redirect_slide)
+         wsize = G.redirect_size, redirSlide = G.redirect_buffer;
