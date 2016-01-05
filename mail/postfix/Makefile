@@ -237,8 +237,8 @@ _REQUIRE+=		ypserv
 .endif
 
 .if ${PORT_OPTIONS:MVDA}
-PATCH_SITES+=		http://vda.sourceforge.net/VDA/:-p1:vda
-PATCHFILES+=		postfix-vda-v13-${VDAVERSION}.patch:vda
+PATCH_SITES+=		http://vda.sourceforge.net/VDA/:vda
+PATCHFILES+=		postfix-vda-v13-${VDAVERSION}.patch:-p1:vda
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
