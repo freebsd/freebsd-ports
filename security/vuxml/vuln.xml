@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="86c3c66e-b2f5-11e5-863a-b499baebfeaf">
+    <topic>archivers/unzip -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>archivers/unzip</name>
+	<range><lt>6.0_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gustavo Grieco reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/07/4">
+	 <p>Two issues were found in unzip 6.0:</p>
+	 <p> * A heap overflow triggered by unzipping a file with password
+	    (e.g unzip -p -P x sigsegv.zip).</p>
+	 <p> * A denegation of service with a file that never finishes unzipping
+	    (e.g. unzip sigxcpu.zip).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/07/4</url>
+      <freebsdpr>ports/204413</freebsdpr>
+      <cvename>CVE-2015-7696</cvename>
+      <cvename>CVE-2015-7697</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-26</discovery>
+      <entry>2016-01-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bb961ff3-b3a4-11e5-8255-5453ed2e2b49">
     <topic>cacti -- SQL injection vulnerabilities</topic>
     <affects>
