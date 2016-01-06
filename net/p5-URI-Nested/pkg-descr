@@ -1,0 +1,12 @@
+This library implements a Perl interface for nested URIs -- that is, URIs that
+contain other URIs. The basic format is:
+
+{prefix}:{uri}
+
+Some examples:
+
+* `jdbc:oracle:scott/tiger@//myhost:1521/myservicename`
+* `db:postgres://db.example.com/template1`
+
+
+WWW: http://search.cpan.org/dist/URI-Nested/
