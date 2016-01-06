@@ -13,6 +13,7 @@
 %%EMACS_SITE_LISPDIR%%/alchemist-help.el
 %%EMACS_SITE_LISPDIR%%/alchemist-hooks.el
 %%EMACS_SITE_LISPDIR%%/alchemist-iex.el
+%%EMACS_SITE_LISPDIR%%/alchemist-info.el
 %%EMACS_SITE_LISPDIR%%/alchemist-interact.el
 %%EMACS_SITE_LISPDIR%%/alchemist-key.el
 %%EMACS_SITE_LISPDIR%%/alchemist-macroexpand.el
