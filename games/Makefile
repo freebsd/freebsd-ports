@@ -212,7 +212,6 @@
     SUBDIR += dsnake
     SUBDIR += duckmaze
     SUBDIR += duel
-    SUBDIR += duke3d-data
     SUBDIR += dunelegacy
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
