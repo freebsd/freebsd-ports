@@ -13,17 +13,9 @@ COMMENT=	Theme for RoundCube Web Mail
 RUN_DEPENDS=	roundcube>=0.2:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 WWWDIR?=	${PREFIX}/www/roundcube/skins/umich
-
-# This target is only meant to be used by the port maintainer.
-x-generate-plist: build
-	cd ${WRKSRC}; \
-	${FIND} . ! -type d ! -name '*.orig' | ${SORT} | \
-		${SED} -e "s,^\.,%%WWWDIR%%," >${.CURDIR}/pkg-plist.tmp ; \
-	${FIND} . -type d | ${SORT} -r | ${SED} \
-		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
-		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -name '*.orig' -delete
