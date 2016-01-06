@@ -1727,4 +1727,3 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/unique-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/unique-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/topics.txt
-%%PORTDOCS%%@dir %%DOCSDIR%%
