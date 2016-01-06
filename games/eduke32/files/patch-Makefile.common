@@ -12,9 +12,8 @@
      OPTIMIZATIONS += $(DEBUGFLAG)
  endif
  
--CONLYFLAGS=-std=gnu99 -Wimplicit -Werror-implicit-function-declaration
+ CONLYFLAGS=-std=gnu99 -Wimplicit -Werror-implicit-function-declaration
 -CPPONLYFLAGS= -fno-exceptions -fno-rtti -Wno-write-strings
-+CONLYFLAGS=-std=gnu99 -Wimplicit 
 +CPPONLYFLAGS= -fno-exceptions -fno-rtti -fpermissive -Wno-write-strings
  ASFORMAT=elf$(SYSBITS)
  ASFLAGS=-s -f $(ASFORMAT) #-g
