@@ -10,7 +10,6 @@ MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk-launcher similar to the Windows(tm) "Run..." dialog
 
-BROKEN=		Does not fetch
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-testfile
