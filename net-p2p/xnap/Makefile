@@ -22,15 +22,12 @@ NO_ARCH=	yes
 
 JAVAVM=		${LOCALBASE}/bin/java
 
-OPTIONS_DEFINE=	DOCS
+PORTDOCS=	AUTHORS COPYING COPYING.LIB NEWS README TODO
 
-DOC_FILES=	AUTHORS COPYING COPYING.LIB NEWS README \
-		TODO
-PORTDOCS=	${DOC_FILES}
-
-PLIST_FILES=	\
-		bin/${PORTNAME:tl} \
+PLIST_FILES=	bin/${PORTNAME:tl} \
 		%%JAVAJARDIR%%/${PORTNAME:tl}.jar
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${SED} -e "s|%%JAVAJARDIR%%|${JAVAJARDIR:S,^${PREFIX}/,,}|; \
@@ -40,12 +37,14 @@ post-patch:
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/xnap.jar \
+	${INSTALL_DATA} ${WRKSRC}/xnap.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME:tl}.jar
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME:tl}
+	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME:tl}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
