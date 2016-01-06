@@ -3,7 +3,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.10.12
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -146,7 +146,7 @@ CONFIGURE_ARGS+=--disable-gstreamer
 .endif
 
 .if ${PORT_OPTIONS:MVV} && ${PORT_OPTIONS:MGSTREAMER}
-LIB_DEPENDS+=	libgstfarsight-0.10.so:${PORTSDIR}/net-im/farsight2
+LIB_DEPENDS+=	libfarstream-0.2.so:${PORTSDIR}/net-im/farstream
 USE_GSTREAMER+=	v4l2
 PLIST_SUB+=	VV=""
 .else
