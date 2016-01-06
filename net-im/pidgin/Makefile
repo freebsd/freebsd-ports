@@ -29,9 +29,11 @@ CONFIGURE_ARGS=	--disable-consoleui \
 		--enable-screensaver \
 		--with-dynamic_prpls=${PRPL_MODULES:S/,$//}
 
+.if ${PORT_OPTIONS:MPERL}
 post-stage:
 	@${SED} -i '' -e 's|^${STAGEDIR}||g' \
 		${STAGEDIR}${PREFIX}/lib/pidgin/perl/auto/Pidgin/.packlist
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pidgin.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
