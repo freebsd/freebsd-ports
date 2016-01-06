@@ -778,6 +778,7 @@
     SUBDIR += p5-URI
     SUBDIR += p5-URI-FromHash
     SUBDIR += p5-URI-Match
+    SUBDIR += p5-URI-Nested
     SUBDIR += p5-URI-OpenURL
     SUBDIR += p5-URI-Query
     SUBDIR += p5-URI-SmartURI
