@@ -8,7 +8,7 @@ MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
 DISTNAME=	silk-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	torres.73a@gmail.com
 COMMENT=	Tools for large-scale network capture analysis
 
 LICENSE=	GPLR GPLv2
