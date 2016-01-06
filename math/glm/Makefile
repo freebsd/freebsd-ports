@@ -6,7 +6,7 @@ PORTVERSION=	0.9.7.1
 PORTEPOCH=	1
 CATEGORIES=	math graphics
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ mathematics library for software based on the OpenGL GLSL
 
 LICENSE=	MIT
