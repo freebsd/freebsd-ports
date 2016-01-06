@@ -1,16 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	wolfssl
-PORTVERSION=	3.4.6
+PORTVERSION=	3.8.0
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.yassl.com/
+MASTER_SITES=	http://www.wolfssl.com/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Embedded SSL C-Library
 
 LICENSE=	GPLv2
 
-USES=		zip libtool
+USES=		libtool zip
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-shared --enable-static \
