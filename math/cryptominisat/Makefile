@@ -1,21 +1,24 @@
 # $FreeBSD$
 
 PORTNAME=	cryptominisat
-PORTVERSION=	4.2.0
-PORTREVISION?=	0
-CATEGORIES?=	math
-MASTER_SITES=	http://msoos.org/largefiles/
+PORTVERSION=	4.5.3
+CATEGORIES=	math
 
 MAINTAINER=	6yearold@gmail.com
-COMMENT?=	General-purpose award-winning SAT solver
+COMMENT=	General-purpose award-winning SAT solver
 
-LICENSE?=	LGPL3
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSE-LGPL
 
-LIB_DEPENDS?=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	xxd:${PORTSDIR}/editors/vim-lite # for xxd tool
+LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
-USES?=		cmake compiler:c++11-lib tar:bzip2
-CMAKE_ARGS=	-DNOMYSQL=1 -DNOM4RI=1 -DPYTHON_EXECUTABLE=0
-WRKSRC=		${WRKDIR}/${PORTNAME}4-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	msoos
+
+USES=		cmake compiler:c++11-lib
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DNOMYSQL=1 -DNOM4RI=1 -DPYTHON_EXECUTABLE=0
 
 .include <bsd.port.mk>
