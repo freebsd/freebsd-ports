@@ -1,0 +1,29 @@
+--- setup.py.in.orig	2015-08-26 23:32:30 UTC
++++ setup.py.in
+@@ -51,15 +51,15 @@ def _init_posix(init):
+     return wrapper
+ sysconfig._init_posix = _init_posix(sysconfig._init_posix)
+ 
+-__version__ = '@PROJECT_VERSION@'
++__version__ = '4.5.3'
+ 
+ ext_kwds = dict(
+     name = "pycryptosat",
+-    sources = ["${CMAKE_CURRENT_SOURCE_DIR}/pycryptosat.cpp"],
++    sources = ["pycryptosat.cpp"],
+     define_macros = [],
+-    extra_compile_args = ['-I${PROJECT_SOURCE_DIR}', '-I${PROJECT_BINARY_DIR}/cmsat4-src'],
++    extra_compile_args = ['-I/usr/local/include', '-I..cmsat4-src'],
+     language = "c++",
+-    library_dirs=['.', '/usr/local/lib', '${PROJECT_BINARY_DIR}/lib'],
++    library_dirs=['.', '/usr/local/lib'],
+     libraries = ['cryptominisat4']
+ )
+ 
+@@ -84,5 +84,5 @@ setup(
+     ext_modules = [Extension(**ext_kwds)],
+     py_modules = ['test_pycryptosat'],
+     description = "bindings to CryptoMiniSat (a SAT solver)",
+-    long_description = open('${CMAKE_CURRENT_SOURCE_DIR}/README.rst').read(),
++    long_description = open('README.rst').read(),
+ )
