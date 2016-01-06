@@ -11,7 +11,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Python Gettext po to mo file compiler
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist
