@@ -8094,3 +8094,4 @@ misc/kde4-l10n-th||2016-01-01|Has expired: Upstream ceased maintainance of this 
 misc/kde4-l10n-tg||2016-01-01|Has expired: Upstream ceased maintainance of this translation
 misc/kde4-l10n-si||2016-01-01|Has expired: Upstream ceased maintainance of this translation
 games/supertux-devel|games/supertux2|2016-01-05|Renamed along with update to new stable release
+games/duke3d-data||2016-01-06|Incorporated into games/eduke32
