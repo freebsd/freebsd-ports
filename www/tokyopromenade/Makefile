@@ -5,12 +5,10 @@ PORTNAME=	tokyopromenade
 PORTVERSION=	0.9.22
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://fallabs.com/${PORTNAME}/
+MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Content management system
-
-BROKEN=		unfetchable
 
 BUILD_DEPENDS=	tokyocabinet>=1.4.31:${PORTSDIR}/databases/tokyocabinet \
 		fcgi-devkit>=0:${PORTSDIR}/www/fcgi
