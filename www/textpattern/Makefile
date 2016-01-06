@@ -4,13 +4,10 @@
 PORTNAME=	textpattern
 PORTVERSION=	4.2.0
 CATEGORIES=	www
-MASTER_SITES=	http://textpattern.com/file_download/57/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://textpattern.com/file_download/56/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free, flexible, elegant, easy-to-use content management system
-
-BROKEN=		unfetchable
 
 USES=		cpe
 NO_BUILD=	yes
