@@ -332,8 +332,7 @@ Notes:
     <affects>
       <package>
 	<name>kea</name>
-	<range><ge>0.9.2</ge></range>
-	<range><lt>1.0.0</lt></range>
+	<range><ge>0.9.2</ge><lt>1.0.0</lt></range>
       </package>
     </affects>
     <description>
@@ -371,6 +370,7 @@ Notes:
     <dates>
       <discovery>2015-12-15</discovery>
       <entry>2016-01-04</entry>
+      <modified>2016-01-05</modified>
     </dates>
   </vuln>
 
