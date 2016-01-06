@@ -59,7 +59,7 @@ DOCS=	AUTHORS INSTALL INSTALL.html README README.html README.postfix \
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
-OPTIONS_MULTI_AUTHLIB:=	${OPTIONS_DEFINE}
+OPTIONS_MULTI_AUTHLIB:=	${OPTIONS_DEFINE:NDOCS}
 OPTIONS_DEFINE=		AUTHLIB
 OPTIONS_MULTI=		AUTHLIB
 AUTHLIB_DESC=		Courier Auth Library support
