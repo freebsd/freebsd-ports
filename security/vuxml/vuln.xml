@@ -58,6 +58,161 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6aa2d135-b40e-11e5-9728-002590263bf5">
+    <topic>xen-kernel -- ioreq handling possibly susceptible to multiple read issue</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-166.html">
+	  <p>Single memory accesses in source code can be translated to multiple
+	    ones in machine code by the compiler, requiring special caution when
+	    accessing shared memory.  Such precaution was missing from the
+	    hypervisor code inspecting the state of I/O requests sent to the
+	    device model for assistance.</p>
+	  <p>Due to the offending field being a bitfield, it is however believed
+	    that there is no issue in practice, since compilers, at least when
+	    optimizing (which is always the case for non-debug builds), should find
+	    it more expensive to extract the bit field value twice than to keep the
+	    calculated value in a register.</p>
+	  <p>This vulnerability is exposed to malicious device models.  In
+	    conventional Xen systems this means the qemu which service an HVM
+	    domain.  On such systems this vulnerability can only be exploited if
+	    the attacker has gained control of the device model qemu via another
+	    vulnerability.</p>
+	  <p>Privilege escalation, host crash (Denial of Service), and leaked
+	    information all cannot be excluded.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/205841</freebsdpr>
+      <url>http://xenbits.xen.org/xsa/advisory-166.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-17</discovery>
+      <entry>2016-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e839ca04-b40d-11e5-9728-002590263bf5">
+    <topic>xen-kernel -- information leak in legacy x86 FPU/XMM initialization</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-165.html">
+	  <p>When XSAVE/XRSTOR are not in use by Xen to manage guest extended
+	    register state, the initial values in the FPU stack and XMM
+	    registers seen by the guest upon first use are those left there by
+	    the previous user of those registers.</p>
+	  <p>A malicious domain may be able to leverage this to obtain sensitive
+	    information such as cryptographic keys from another domain.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8555</cvename>
+      <freebsdpr>ports/205841</freebsdpr>
+      <url>http://xenbits.xen.org/xsa/advisory-165.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-17</discovery>
+      <entry>2016-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5d1d4473-b40d-11e5-9728-002590263bf5">
+    <topic>xen-tools -- libxl leak of pv kernel and initrd on error</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>4.1</ge><lt>4.5.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-160.html">
+	  <p>When constructing a guest which is configured to use a PV
+	    bootloader which runs as a userspace process in the toolstack domain
+	    (e.g. pygrub) libxl creates a mapping of the files to be used as
+	    kernel and initial ramdisk when building the guest domain.</p>
+	  <p>However if building the domain subsequently fails these mappings
+	    would not be released leading to a leak of virtual address space in
+	    the calling process, as well as preventing the recovery of the
+	    temporary disk files containing the kernel and initial ramdisk.</p>
+	  <p>For toolstacks which manage multiple domains within the same
+	    process, an attacker who is able to repeatedly start a suitable
+	    domain (or many such domains) can cause an out-of-memory condition in the
+	    toolstack process, leading to a denial of service.</p>
+	  <p>Under the same circumstances an attacker can also cause files to
+	    accumulate on the toolstack domain filesystem (usually under /var in
+	    dom0) used to temporarily store the kernel and initial ramdisk,
+	    perhaps leading to a denial of service against arbitrary other
+	    services using that filesystem.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8341</cvename>
+      <freebsdpr>ports/205841</freebsdpr>
+      <url>http://xenbits.xen.org/xsa/advisory-160.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-08</discovery>
+      <entry>2016-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bcad3faa-b40c-11e5-9728-002590263bf5">
+    <topic>xen-kernel -- XENMEM_exchange error handling issues</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-159.html">
+	  <p>Error handling in the operation may involve handing back pages to
+	    the domain. This operation may fail when in parallel the domain gets
+	    torn down. So far this failure unconditionally resulted in the host
+	    being brought down due to an internal error being assumed. This is
+	    CVE-2015-8339.</p>
+	  <p>Furthermore error handling so far wrongly included the release of a
+	    lock. That lock, however, was either not acquired or already released
+	    on all paths leading to the error handling sequence. This is
+	    CVE-2015-8340.</p>
+	  <p>A malicious guest administrator may be able to deny service by
+	    crashing the host or causing a deadlock.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8339</cvename>
+      <cvename>CVE-2015-8340</cvename>
+      <freebsdpr>ports/205841</freebsdpr>
+      <url>http://xenbits.xen.org/xsa/advisory-159.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-08</discovery>
+      <entry>2016-01-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b65e4914-b3bc-11e5-8255-5453ed2e2b49">
     <topic>tiff -- out-of-bounds read in CIE Lab image format</topic>
     <affects>
@@ -587,7 +742,7 @@ Notes:
       </package>
       <package>
 	<name>xen-tools</name>
-	<range><le>4.5.2</le></range>
+	<range><lt>4.5.2_1</lt></range>
       </package>
     </affects>
     <description>
@@ -631,7 +786,7 @@ Notes:
     <dates>
       <discovery>2015-11-30</discovery>
       <entry>2016-01-03</entry>
-      <modified>2016-01-03</modified>
+      <modified>2016-01-06</modified>
     </dates>
   </vuln>
 
