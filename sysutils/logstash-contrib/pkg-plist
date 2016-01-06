@@ -46,6 +46,7 @@ logstash/lib/logstash/outputs/gemfire.rb
 logstash/lib/logstash/outputs/google_bigquery.rb
 logstash/lib/logstash/outputs/google_cloud_storage.rb
 logstash/lib/logstash/outputs/graphtastic.rb
+logstash/lib/logstash/outputs/influxdb.rb
 logstash/lib/logstash/outputs/jira.rb
 logstash/lib/logstash/outputs/librato.rb
 logstash/lib/logstash/outputs/loggly.rb
@@ -64,4 +65,3 @@ logstash/lib/logstash/outputs/websocket/pubsub.rb
 logstash/lib/logstash/outputs/zabbix.rb
 logstash/lib/logstash/util/relp.rb
 logstash/lib/logstash/util/zenoss.rb
-
