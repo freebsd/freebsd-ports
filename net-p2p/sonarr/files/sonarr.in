@@ -27,6 +27,15 @@ pidfile="${sonarr_data_dir}/nzbdrone.pid"
 procname="%%PREFIX%%/bin/mono"
 command="/usr/sbin/daemon"
 command_args="-f ${procname} %%DATADIR%%/NzbDrone.exe --nobrowser --data=${sonarr_data_dir}"
-start_precmd="export XDG_CONFIG_HOME=${sonarr_data_dir}"
+start_precmd=sonarr_precmd
+
+sonarr_precmd()
+{
+	export XDG_CONFIG_HOME=${sonarr_data_dir}
+
+	if [ ! -d ${sonarr_data_dir} ]; then
+		install -d -o ${sonarr_user} ${sonarr_data_dir}
+	fi
+}
 
 run_rc_command "$1"
