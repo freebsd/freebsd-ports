@@ -1,4 +1,4 @@
-# Created by: Oleksii Tsai <oleksii.tsai@googlemail.com>
+# Created by: Oleksii Tsai <oleksii.tsai@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	LLnextgen
@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://os.ghalkes.nl/LLnextgen/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	oleksii.tsai@googlemail.com
+MAINTAINER=	oleksii.tsai@gmail.com
 COMMENT=	Extended LL(1) parser generator
 
 LICENSE=	GPLv3
