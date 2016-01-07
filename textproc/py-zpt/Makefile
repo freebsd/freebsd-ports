@@ -7,13 +7,13 @@ CATEGORIES=	textproc python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ZopePageTemplates-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zope-less version of Zope Page Templates
 
-USES=		python
+USES=		python tar:tgz
 USE_PYTHON=	distutils autoplist
 WRKSRC=		${WRKDIR}/ZopePageTemplates
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
