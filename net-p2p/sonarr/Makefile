@@ -2,7 +2,7 @@
 
 PORTNAME=	sonarr
 PORTVERSION=	2.0.0.3645
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.sonarr.tv/v2/master/mono/
 DISTNAME=	NzbDrone.master.${PORTVERSION}.mono
@@ -27,6 +27,5 @@ USERS=	sonarr
 do-install:
 	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}
-	${MKDIR} ${STAGEDIR}/${PREFIX}/sonarr
 
 .include <bsd.port.mk>
