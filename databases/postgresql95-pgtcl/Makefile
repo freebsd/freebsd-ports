@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-postgresql94
+PKGNAMESUFFIX=	-postgresql95
 
 CONFLICTS=	pgtcl-[0-9]* pgtcl-postgresql9[01234]-[0-9]*
 
