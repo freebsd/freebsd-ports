@@ -1,8 +1,0 @@
---- CMakeLists.txt.orig	2013-05-04 23:25:27.000000000 +0200
-+++ CMakeLists.txt	2013-12-01 00:16:33.000000000 +0100
-@@ -201,4 +201,4 @@
- set(PTHREAD_LIBS "${CMAKE_THREAD_LIBS_INIT}")
- 
- configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libical.pc.in ${CMAKE_CURRENT_BINARY_DIR}/libical.pc @ONLY)
--install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libical.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
-+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libical.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig)
