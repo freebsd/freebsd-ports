@@ -1,0 +1,13 @@
+--- test/cconst.test.orig	2015-05-28 04:45:02 UTC
++++ test/cconst.test
+@@ -23,6 +23,10 @@ support {
+ }
+ testing {
+     useLocal lib/critcl/critcl.tcl critcl
++
++    # Note: The next command does not influence the standard argument-
++    # and result-types.
++    critcl::config lines 0
+ }
+ 
+ # -------------------------------------------------------------------------
