@@ -11,7 +11,10 @@ DISTNAME=	TrustedPickle
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrustedPickle is a Python (de)Pickler with a way to verify the data
 
+LICENSE=	BSD2CLAUSE
+
 USES=		dos2unix python tar:tgz
+NO_ARCH=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/TrustedPickle.py \
 		%%PYTHON_SITELIBDIR%%/TrustedPickle.pyc \
