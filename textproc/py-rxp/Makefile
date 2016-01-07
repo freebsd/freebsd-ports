@@ -12,9 +12,12 @@ DISTNAME=	pyRXP-${PORTVERSION:S/./-/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast validating XML parser for Python
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 NO_WRKSUBDIR=	yes
 USES=		python tar:tgz
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-rxp
 EXAMPLESDIR=	${PREFIX}/share/examples/py-rxp
@@ -23,8 +26,13 @@ PORTEXAMPLES=	*
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyRXP.so
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
