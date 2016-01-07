@@ -3,7 +3,7 @@
 
 PORTNAME=	ekg
 DISTVERSION=	1.8rc2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://ekg.chmurka.net/
@@ -28,7 +28,8 @@ OPTIONS_DEFINE=		ASPELL OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
 
 ASPELL_CONFIGURE_ON=	--enable-aspell
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/polish/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_RUN_DEPENDS=	pl-aspell>0:${PORTSDIR}/polish/aspell
 
 OPENSSL_CONFIGURE_OFF=	--without-openssl
 
