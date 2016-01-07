@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 PORTDOCS=	BUGS.txt README.txt TODO.txt
 
@@ -25,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} '/data_files/d' ${WRKSRC}/setup.py
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
