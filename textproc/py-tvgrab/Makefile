@@ -12,8 +12,14 @@ DISTNAME=	pytvgrab-lib-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to write grabbers of tv scheduling collections
 
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+OPTIONS_DEFINE=	DOCS
+
 USES=		python:2 tar:bzip2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 PORTDOCS=	README
 
@@ -23,7 +29,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's,python -c,${PYTHON_CMD} -c,' ${WRKSRC}/setup.py
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
