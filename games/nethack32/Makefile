@@ -70,6 +70,7 @@ post-install:
 .endif
 	${DO_MAKE_BUILD} -C ${WRKSRC}/doc ${MAKE_ARGS} manpages
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${STAGEDIR}${DOCSDIR}
 
