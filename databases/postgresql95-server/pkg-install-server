@@ -1,0 +1,27 @@
+#! /bin/sh
+
+# $FreeBSD$
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+backupwarning() {
+cat <<EOF
+
+  =========== BACKUP YOUR DATA! =============
+  As always, backup your data before
+  upgrading. If the upgrade leads to a higher
+  minor revision (e.g. 8.3.x -> 8.4), a dump
+  and restore of all databases is
+  required. This is *NOT* done by the port!
+
+  Press ctrl-C *now* if you need to pg_dump.
+  ===========================================
+EOF
+	sleep 5
+}
+
+case $2 in
+PRE-INSTALL)
+	backupwarning
+	;;
+esac
