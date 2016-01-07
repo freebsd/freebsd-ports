@@ -22,15 +22,6 @@ NO_ARCH=	yes
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/sauserprefs
 
-# This target is only meant to be used by the port maintainer.
-x-generate-plist: build
-	cd ${WRKSRC}; \
-	${FIND} . ! -type d ! -name '*.orig' | ${SORT} | \
-		${SED} -e "s,^\.,%%WWWDIR%%," >${.CURDIR}/pkg-plist.tmp ; \
-	${FIND} . -type d | ${SORT} -r | ${SED} \
-		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
-		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
-
 do-install:
 	${MKDIR} ${STAGEDIR}/${WWWDIR}
 	cd ${WRKSRC} && ${PAX} -r -w . ${STAGEDIR}/${WWWDIR}
