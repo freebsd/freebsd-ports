@@ -62,6 +62,8 @@ PCAP_CONFIGURE_ON=	--enable-pcap
 PCAP_CONFIGURE_OFF=	--disable-pcap
 
 STATIC_LINK_CONFIGURE_ON=	--static
+STATIC_LINK_PREVENTS=		GTK2 X11
+STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
 SAMBA_RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba36
 DOCS_BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 DOCS_USES=		makeinfo
@@ -126,10 +128,6 @@ PLIST_SUB+=	BSD_USER64=""
 PLIST_SUB+=	SOFTMMU="@comment " STATIC="-static"
 .else
 PLIST_SUB+=	SOFTMMU="" STATIC=""
-.endif
-
-.if defined(PORT_OPTIONS:MSTATIC_LINK) && (defined(PORT_OPTIONS:MGTK2) || defined(PORT_OPTIONS:MX11))
-IGNORE=		X11 ui cannot be built static
 .endif
 
 .if !defined(STRIP) || ${STRIP} == ""
