@@ -1,0 +1,21 @@
+--- src/backend/utils/misc/postgresql.conf.sample.orig	2015-10-05 21:09:44.000000000 +0200
++++ src/backend/utils/misc/postgresql.conf.sample	2015-10-08 21:51:37.862060431 +0200
+@@ -318,6 +318,7 @@
+ 
+ # - Where to Log -
+ 
++log_destination = 'syslog'
+ #log_destination = 'stderr'		# Valid values are combinations of
+ 					# stderr, csvlog, syslog, and eventlog,
+ 					# depending on platform.  csvlog
+@@ -449,7 +450,9 @@
+ 
+ #cluster_name = ''			# added to process titles if nonempty
+ 					# (change requires restart)
+-#update_process_title = on
++
++# On FreeBSD, this is a performance hog, so keep it off if you need speed
++update_process_title = off
+ 
+ 
+ #------------------------------------------------------------------------------
