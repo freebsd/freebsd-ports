@@ -25,6 +25,8 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ACKS ChangeLog README RELNOTES
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
