@@ -248,12 +248,3 @@ share/examples/wanderlust/ja/dot.addresses
 share/examples/wanderlust/ja/dot.folders
 share/examples/wanderlust/ja/dot.wl
 share/wanderlust/ja.Emacs
-@dirrm %%WL_LISPDIR%%
-%%PORTDOCS%%@dirrm share/doc/ja/wanderlust
-%%PORTDOCS%%@dirrm share/doc/wanderlust
-@dirrm %%WL_ICONDIR%%
-@dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/wl
-@dirrm share/examples/wanderlust/en
-@dirrm share/examples/wanderlust/ja
-@dirrm share/examples/wanderlust
-@dirrm share/wanderlust
