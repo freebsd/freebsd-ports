@@ -1,0 +1,42 @@
+#!/bin/sh
+# $FreeBSD$
+
+zookeeper_log4jpropfile="file:%%ETCDIR%%/log4j.properties"
+zookeeper_rootlogger="WARN,CONSOLE"
+zookeeper_config=${2:-%%ETCDIR%%/zoo.cfg}
+
+JAVA=%%JAVA%%
+JAVAJARDIR=%%JAVAJARDIR%%
+
+zookeeper_datadir=$(grep '^dataDir' ${zookeeper_config} | sed -e 's/.*=//')
+
+zookeeper_pidfile=${zookeeper_datadir}/zookeeper.pid
+
+for i in zookeeper jline slf4j-api netty log4j
+do
+    CLASSPATH="${JAVAJARDIR}/$i.jar:$CLASSPATH"
+done
+CLASSPATH=/usr/local/share/slf4j/slf4j-log4j12.jar:$CLASSPATH
+
+zookeeper_main="org.apache.zookeeper.server.quorum.QuorumPeerMain"
+log4j_params="-Dzookeeper.log.dir=${zookeeper_datadir} \
+            -Dzookeeper.root.logger=${zookeeper_rootlogger} \
+            -Dlog4j.configuration=${zookeeper_log4jpropfile}"
+
+case $1 in
+    start)
+        mkdir -p ${zookeeper_datadir}
+        ${JAVA} -cp "$CLASSPATH" \
+            ${log4j_params} ${zookeeper_main} ${zookeeper_config} &
+        echo "STARTED"
+        echo $! > ${zookeeper_pidfile}
+        ;;
+    stop)
+        kill $(cat ${zookeeper_pidfile})
+        rm ${zookeeper_pidfile}
+        echo "STOPPED"
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}" >&2
+        ;;
+esac
