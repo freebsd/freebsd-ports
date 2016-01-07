@@ -128,7 +128,7 @@ PLIST_SUB+=	SOFTMMU="@comment " STATIC="-static"
 PLIST_SUB+=	SOFTMMU="" STATIC=""
 .endif
 
-.if ${PORT_OPTIONS:MSTATIC_LINK} && (${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MX11})
+.if defined(PORT_OPTIONS:MSTATIC_LINK) && (defined(PORT_OPTIONS:MGTK2) || defined(PORT_OPTIONS:MX11))
 IGNORE=		X11 ui cannot be built static
 .endif
 
