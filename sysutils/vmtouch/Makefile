@@ -12,6 +12,7 @@ COMMENT=	Virtual Memory Toucher
 USE_GITHUB=	yes
 GH_ACCOUNT=	hoytech
 
+USES=		perl5
 USE_PERL5=	build # pod2man
 
 PLIST_FILES=	bin/vmtouch \
