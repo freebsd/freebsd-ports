@@ -40,8 +40,6 @@ BROKEN_sparc64=	does not compile: invokes i386 assembler
 
 post-patch:
 	@${REINPLACE_CMD} "s+-exact Tcl 8\.5\.9+Tcl 8.5+" ${WRKSRC}/src/other/tcl/library/init.tcl
-	@${REINPLACE_CMD} -e 's|{LIB_DIR}|{prefix}/libdata|' \
-			${WRKSRC}/misc/pkgconfig/CMakeLists.txt
 
 pre-install:
 	${CP} ${FILESDIR}/mged.sh ${WRKSRC}
