@@ -78,6 +78,12 @@ CONFIGURE_ARGS?=	--without-libs \
 			--without-daemon \
 			--without-utils
 
+# BitCoin requires a bug-compatible OpenSSL
+.if defined(OPENSSL_PORT) && (${OPENSSL_PORT} == "security/libressl" \
+	|| ${OPENSSL_PORT} == "security/libressl-devel")
+WITH_OPENSSL_BASE=	yes
+.endif
+
 CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
 		SSL_CFLAGS="-I${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl"
 MAKE_ENV+=	V=1
