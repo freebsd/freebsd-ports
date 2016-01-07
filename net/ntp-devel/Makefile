@@ -3,6 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.3.88
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		http://archive.ntp.org/ntp4/ntp-dev/
@@ -12,12 +13,19 @@ DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/P/p/:S/r/-RC/:S/b/-beta/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+
 CONFLICTS=	ntp-[0-9].* ntp-rc-*
 
-GNU_CONFIGURE=	yes
-OPTIONS_SUB=	yes
 USES=		cpe pathfix shebangfix libedit libtool pkgconfig
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+
+USE_OPENSSL=	yes
+USES+=		gettext-runtime
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-silent-rules
+
+TEST_TARGET=	check
 
 SHEBANG_FILES=	scripts/ntptrace/ntptrace.in \
 		scripts/ntp-wait/ntp-wait.in \
@@ -26,24 +34,32 @@ perl_OLD_CMD=	@PATH_PERL@
 
 .include "Makefile.inc"
 
-PERL_UTILS_USES=	perl5
-
-SSL_USE=		OPENSSL=yes
-SSL_CONFIGURE_OFF=	--without-crypto
+OPTIONS_DEFINE+=	DEBUG NLS THREADS
+OPTIONS_DEFAULT+=	THREADS
+OPTIONS_SUB=		yes
 
 IPV6_CONFIGURE_ENABLE=	ipv6
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_OFF=	ac_cv_lib_intl_gettext=no
+NLS_USES=		gettext-runtime
 
 NTP_SIGND_CONFIGURE_ENABLE=	ntp-signd
 
 NTPSNMPD_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 NTPSNMPD_CONFIGURE_OFF=	--without-ntpsnmpd
 
-.include <bsd.port.pre.mk>
+PERL_UTILS_USES=	perl5
 
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
+SSL_USE=		OPENSSL=yes
+SSL_CONFIGURE_ON=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
-.endif
+SSL_CONFIGURE_OFF=	--without-crypto
+
+THREADS_CONFIGURE_ENABLE=	thread-support
+THREADS_CONFIGURE_WITH=		threads
+
+.include <bsd.port.pre.mk>
 
 .for D in ${NTP_DRIVERS}
 .if ${PORT_OPTIONS:M${D}}
@@ -53,12 +69,12 @@ CONFIGURE_ARGS+=	--enable-${D}
 
 # XXX Temporary hack. Remember to remove this next commit.
 post-extract:
-	@/usr/bin/touch ${WRKSRC}/scripts/build/checkHtmlFileDates
+	@${TOUCH} ${WRKSRC}/scripts/build/checkHtmlFileDates
 	@${CHMOD} +x ${WRKSRC}/scripts/build/checkHtmlFileDates
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${FIND} ${WRKSRC}/html -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@cd ${WRKSRC}/html && ${FIND} . -print | \
