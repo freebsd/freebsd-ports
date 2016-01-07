@@ -10,7 +10,7 @@ COMMENT=	The contrib utilities from the PostgreSQL distribution
 LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
-MASTERDIR=	${.CURDIR}/../postgresql94-server
+MASTERDIR=	${.CURDIR}/../postgresql95-server
 
 USES=		bison pgsql:9.5
 
