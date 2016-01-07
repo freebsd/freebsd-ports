@@ -81,11 +81,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/flim/sha1.elc
 %%EMACS_PACKAGESDIR%%/lisp/flim/smtp.el
 %%EMACS_PACKAGESDIR%%/lisp/flim/smtp.elc
-@dirrm %%EMACS_PACKAGESDIR%%/lisp/flim
 %%EMACS_PACKAGESDIR%%/info/mime-en.info
 %%EMACS_PACKAGESDIR%%/info/mime-ja.info
 %%EMACS_PACKAGESDIR%%/man/flim/mime-en.texi
 %%EMACS_PACKAGESDIR%%/man/flim/mime-ja.texi
-@dirrm %%EMACS_PACKAGESDIR%%/man/flim
 share/flim/%%FLIM_COOKIE%%
-@unexec rmdir %D/share/flim||(echo "===>  Please ignore above error.";true)
