@@ -13,6 +13,8 @@ COMMENT=	Fullscreen mode for Amarok 2.x
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Distfiles unavailable and no updates in 6 years
+EXPIRATION_DATE=	2016-03-06
 
 RUN_DEPENDS=	amarok>=2:${PORTSDIR}/audio/amarok-kde4
 
