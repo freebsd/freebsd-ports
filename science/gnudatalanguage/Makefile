@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9.5
-PORTREVISION=	7
+DISTVERSION=	0.9.6v2
 CATEGORIES=	science lang
-MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/gdl/${PORTVERSION:R}
 .if defined(BUILD_PYTHON_MODULE)
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 .endif
@@ -22,9 +21,8 @@ LIB_DEPENDS+=	libplplot.so:${PORTSDIR}/math/plplot	\
 		libgsl.so:${PORTSDIR}/math/gsl
 
 USE_WX=		2.8
-WX_UNICODE=	yes
 USE_XORG=	x11 sm ice xext
-USES=		cmake:outsource compiler:gcc-c++11-lib dos2unix ncurses pkgconfig readline
+USES=		cmake:outsource compiler:gcc-c++11-lib dos2unix ncurses pkgconfig readline tar:tgz
 
 # Disable ncurses and readline from ports
 # Disable ImageMagick (does'nt work with plplot because dynamic drivers
@@ -34,8 +32,9 @@ CMAKE_ARGS=	-DREADLINEDIR:STRING="/usr"		\
 		-DNCURSESDIR:STRING="/usr"		\
 		-DMPICH:BOOL=NO				\
 		-DMAGICK:BOOL=NO
-CPPFLAGS+=	${CFLAGS} -fno-inline
+CPPFLAGS+=	${CFLAGS} -fno-inline -DNPY_NO_DEPRECATED_API -DNPY_1_7_API_VERSION
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+WRKSRC=		${WRKDIR}/gdl-${PORTVERSION:R}
 
 SLAVEDIRS=	science/py-gnudatalanguage
 
@@ -52,6 +51,7 @@ FFTW_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3		\
 FFTW_CMAKE_ON=		-DFFTW:BOOL=YES
 FFTW_CMAKE_OFF=		-DFFTW:BOOL=NO
 
+GRAPHICSMAGICK_DESC=		Support GraphicsMagick
 GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagick.so:${PORTSDIR}/graphics/GraphicsMagick
 GRAPHICSMAGICK_CMAKE_ON=	-DGRAPHICSMAGICK:BOOL=YES
 GRAPHICSMAGICK_CMAKE_OFF=	-DGRAPHICSMAGICK:BOOL=NO
@@ -84,6 +84,12 @@ PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib
 PYTHON_CMAKE_ON=	-DPYTHON:BOOL=YES -DPYTHONVERSION:STRING="${PYTHON_VER}"
 PYTHON_CMAKE_OFF=	-DPYTHON:BOOL=NO
+
+# math/qhull conflicts with math/plplot
+#QHULL_DESC=		Enable Qhull support
+#QHULL_LIB_DEPENDS=	libqhull.so:${PORTSDIR}/math/qhull
+#QHULL_CMAKE_ON=		-DQHULL:BOOL=YES
+#QHULL_CMAKE_OFF=	-DQHULL:BOOL=NO
 
 UDUNITS_LIB_DEPENDS=	libudunits2.so:${PORTSDIR}/science/udunits
 UDUNITS_CMAKE_ON=	-DUDUNITS:BOOL=YES
