@@ -15750,8 +15750,7 @@ Notes:
       </package>
       <package>
 	<name>exact-image</name>
-	<!-- no known fixed version -->
-	<range><ge>0</ge></range>
+	<range><lt>0.9.1</lt></range>
       </package>
       <package>
 	<name>flphoto</name>
@@ -15817,7 +15816,7 @@ Notes:
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-12-13</modified>
+      <modified>2016-01-08</modified>
     </dates>
   </vuln>
 
