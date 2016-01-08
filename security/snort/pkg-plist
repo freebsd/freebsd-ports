@@ -58,7 +58,6 @@ include/snort/dynamic_output/stream_api.h
 %%APPID%%include/snort/dynamic_preproc/sfmemcap.h
 %%APPID%%include/snort/dynamic_preproc/sfprimetable.h
 %%APPID%%include/snort/dynamic_preproc/sfxhash.h
-include/snort/dynamic_preproc/appId.h
 include/snort/dynamic_preproc/bitop.h
 include/snort/dynamic_preproc/cpuclock.h
 include/snort/dynamic_preproc/file_api.h
@@ -69,6 +68,7 @@ include/snort/dynamic_preproc/mempool.h
 include/snort/dynamic_preproc/mpse_methods.h
 include/snort/dynamic_preproc/obfuscation.h
 include/snort/dynamic_preproc/packet_time.h
+include/snort/dynamic_preproc/perf_indicators.h
 include/snort/dynamic_preproc/preprocids.h
 include/snort/dynamic_preproc/profiler.h
 include/snort/dynamic_preproc/segment_mem.h
@@ -253,7 +253,6 @@ man/man8/snort.8.gz
 %%APPID%%src/snort_dynamicsrc/sfprimetable.h
 %%APPID%%src/snort_dynamicsrc/sfxhash.h
 src/snort_dynamicsrc/Unified2_common.h
-src/snort_dynamicsrc/appId.h
 src/snort_dynamicsrc/bitop.h
 src/snort_dynamicsrc/event.h
 src/snort_dynamicsrc/file_api.h
@@ -262,6 +261,7 @@ src/snort_dynamicsrc/idle_processing.h
 src/snort_dynamicsrc/mpse_methods.h
 src/snort_dynamicsrc/obfuscation.h
 src/snort_dynamicsrc/pcap_pkthdr32.h
+src/snort_dynamicsrc/perf_indicators.h
 src/snort_dynamicsrc/plugin_enum.h
 src/snort_dynamicsrc/preprocids.h
 src/snort_dynamicsrc/profiler.h
