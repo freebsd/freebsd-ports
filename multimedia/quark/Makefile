@@ -10,22 +10,20 @@ MASTER_SITES=	http://hsgg.github.com/quark/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio player, for geeks, by geeks
 
-LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
 
 USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomevfs2
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-OPTIONS_DEFINE=	DOCS NLS
 
 PORTDOCS=	AUTHORS COPYING INSTALL README
 GCONF_SCHEMAS=	quark.schemas strange-quark.schemas
 
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
+
 NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
@@ -34,7 +32,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED||g'
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
