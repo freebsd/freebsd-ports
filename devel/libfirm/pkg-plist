@@ -69,5 +69,6 @@ include/libfirm/typerep.h
 include/libfirm/vrp.h
 lib/libfirm.a
 lib/libfirm.so
+lib/libfirm.so.1
 lib/libfirm.so.1.0.0
 libdata/pkgconfig/libfirm.pc
