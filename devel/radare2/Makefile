@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://rada.re/get/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	torres.73a@gmail.com
 COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
 
 LICENSE=	GPLv3
