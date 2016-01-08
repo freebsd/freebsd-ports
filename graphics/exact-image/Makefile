@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	exact-image
-PORTVERSION=	0.8.9
-PORTREVISION=	10
+PORTVERSION=	0.9.1
+PORTREVISION=	0
 CATEGORIES=	graphics perl5 python
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/ LOCAL/bf
 
