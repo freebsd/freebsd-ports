@@ -1,0 +1,4 @@
+python-signedjson allows more than one entity to sign an object, can sign with
+more than one key and replace ED25519 with a different algorithm.
+
+WWW: https://github.com/matrix-org/python-signedjson
