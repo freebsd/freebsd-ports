@@ -1,0 +1,5 @@
+A JSON library for Python that provides features such as sorted keys, no
+insignificant whitespace, minimal escaping where necessary and supports
+frozendict immutable dictionaries.
+
+WWW: https://github.com/matrix-org/python-canonicaljson
