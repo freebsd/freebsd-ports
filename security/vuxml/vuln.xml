@@ -58,6 +58,54 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="631fc042-b636-11e5-83ef-14dae9d210b8">
+    <topic>polkit -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>polkit</name>
+	<range><lt>0.113</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Colin Walters reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/polkit-devel/2015-June/000425.html">
+	  <ul>
+	    <li><p>Integer overflow in the
+	    authentication_agent_new_cookie function in PolicyKit (aka polkit)
+	    before 0.113 allows local users to gain privileges by creating a large
+	    number of connections, which triggers the issuance of a duplicate cookie
+	    value.</p></li>
+	    <li><p>The authentication_agent_new function in
+	    polkitbackend/polkitbackendinteractiveauthority.c in PolicyKit (aka
+	    polkit) before 0.113 allows local users to cause a denial of service
+	    (NULL pointer dereference and polkitd daemon crash) by calling
+	    RegisterAuthenticationAgent with an invalid object path.</p></li>
+	    <li><p>The polkit_backend_action_pool_init function in
+	    polkitbackend/polkitbackendactionpool.c in PolicyKit (aka polkit) before
+	    0.113 might allow local users to gain privileges via duplicate action
+	    IDs in action descriptions.</p></li>
+	    <li><p>PolicyKit (aka polkit) before 0.113 allows local
+	    users to cause a denial of service (memory corruption and polkitd daemon
+	    crash) and possibly gain privileges via unspecified vectors, related to
+	    "javascript rule evaluation."</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.freedesktop.org/archives/polkit-devel/2015-June/000425.html</url>
+      <cvename>CVE-2015-4625</cvename>
+      <cvename>CVE-2015-3218</cvename>
+      <cvename>CVE-2015-3255</cvename>
+      <cvename>CVE-2015-3256</cvename>
+    </references>
+    <dates>
+      <discovery>2015-06-03</discovery>
+      <entry>2016-01-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b22b016b-b633-11e5-83ef-14dae9d210b8">
     <topic>librsync -- collision vulnerability</topic>
     <affects>
