@@ -3,14 +3,16 @@
 PORTNAME=	katawa-shoujo
 PORTVERSION=	1.3.1
 DISTVERSIONSUFFIX=-[linux-x86][18161880]
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://dl.katawa-shoujo.com/gold_${PORTVERSION}/:game \
+		http://dl.katawa-shoujo.com/patches/:patch \
 		GENTOO:icon
 DISTFILES=	[4ls]_${DISTNAME:S|-|_|:S|-|_|}${EXTRACT_SUFX}:game \
+		${PORTNAME:S|-|_|}_italiano_v1.0.zip:patch \
 		${PORTNAME}-48.png:icon \
 		${PORTNAME}-256.png:icon
-EXTRACT_ONLY=	[4ls]_${DISTNAME:S|-|_|:S|-|_|}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTFILES:N*\:icon:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bishoujo-style visual novel about disabled adolescents
@@ -40,6 +42,9 @@ DESKTOP_ENTRIES="Katawa Shoujo" \
 		""
 
 OPTIONS_DEFINE=	DOCS
+
+post-extract:
+	@${MV} ${WRKDIR}/*.rpy* ${WRKSRC}/game/ # :patch
 
 pre-install:
 	${PRINTF} '#! /bin/sh\nrenpy ${DATADIR} "$$@"\n' \
