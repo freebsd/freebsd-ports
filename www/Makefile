@@ -2144,6 +2144,7 @@
     SUBDIR += trac-keywords
     SUBDIR += trac-keywordsecretticket
     SUBDIR += trac-ldap
+    SUBDIR += trac-ldapauthstore
     SUBDIR += trac-mastertickets
     SUBDIR += trac-math
     SUBDIR += trac-mercurial
