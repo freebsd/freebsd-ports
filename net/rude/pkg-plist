@@ -3,11 +3,3 @@ bin/grude
 bin/rude
 man/man8/crude.8.gz
 man/man8/rude.8.gz
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.crude
-%%PORTDOCS%%%%DOCSDIR%%/README.rude
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/example.cfg
-%%PORTDOCS%%%%DOCSDIR%%/crude_jitter.pl
-%%PORTDOCS%%%%DOCSDIR%%/crude_parse.pl
-%%PORTDOCS%%%%DOCSDIR%%/dump2trace.pl
