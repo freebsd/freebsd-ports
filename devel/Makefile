@@ -4040,6 +4040,7 @@
     SUBDIR += py-freenas.dispatcher
     SUBDIR += py-freenas.utils
     SUBDIR += py-freezegun
+    SUBDIR += py-frozendict
     SUBDIR += py-fs
     SUBDIR += py-fsm
     SUBDIR += py-fudge
