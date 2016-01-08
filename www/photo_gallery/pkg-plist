@@ -1,5 +1,9 @@
-%%WWWDIR%%/index.cgi
+@owner %%WWWOWN%%
+@group %%WWWOWN%%
+@(,,755) %%WWWDIR%%/index.cgi
 %%WWWDIR%%/readme.html
 %%WWWDIR%%/.header.html
 %%WWWDIR%%/.footer.html
-@dirrm %%WWWDIR%%
+@dir %%WWWDIR%%
+@owner
+@group
