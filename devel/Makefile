@@ -3941,6 +3941,7 @@
     SUBDIR += py-bitstring
     SUBDIR += py-blessings
     SUBDIR += py-blinker
+    SUBDIR += py-blist
     SUBDIR += py-bluelet
     SUBDIR += py-boto
     SUBDIR += py-botocore
