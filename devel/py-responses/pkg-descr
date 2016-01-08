@@ -1,0 +1,3 @@
+A utility library for mocking out the requests Python library.
+
+WWW: https://github.com/getsentry/responses
