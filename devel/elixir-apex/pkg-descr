@@ -1,0 +1,5 @@
+Awesome Print is an Elixir library that pretty prints Elixir data
+structures in full color exposing their internal structure with
+proper indentation.
+
+WWW: https://github.com/BjRo/apex/
