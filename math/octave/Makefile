@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave
-PORTVERSION=	3.8.2
-PORTREVISION=	5
+PORTVERSION=	4.0.0
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -35,10 +34,11 @@ LIB_DEPENDS=	libGraphicsMagick.so:${PORTSDIR}/graphics/GraphicsMagick \
 		libgl2ps.so:${PORTSDIR}/print/gl2ps \
 		libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 
-USES=		charsetfix fortran gmake libtool perl5 pkgconfig tar:bzip2
+USES=		charsetfix fortran gmake libtool perl5 pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_TEX=	dvipsk:build
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
