@@ -2429,6 +2429,11 @@ Notes:
 	<name>openjdk8-jre</name>
 	<range><lt>8.66.17</lt></range>
       </package>
+      <package>
+	<name>openjdk7</name>
+	<name>openjdk7-jre</name>
+	<range><lt>7.91.02,1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -2472,6 +2477,7 @@ Notes:
     <dates>
       <discovery>2015-10-20</discovery>
       <entry>2015-12-15</entry>
+      <modified>2016-01-08</modified>
     </dates>
   </vuln>
 
