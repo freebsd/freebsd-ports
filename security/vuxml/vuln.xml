@@ -17591,6 +17591,10 @@ Notes:
 	<name>x86_64-pc-mingw32-binutils</name>
 	<range><lt>2.25</lt></range>
       </package>
+      <package>
+	<name>m6811-binutils</name>
+	<range><lt>2.25</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -17630,6 +17634,7 @@ Notes:
     <dates>
       <discovery>2014-12-09</discovery>
       <entry>2015-03-24</entry>
+      <modified>2016-01-08</modified>
     </dates>
   </vuln>
 
