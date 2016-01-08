@@ -5,13 +5,13 @@ PORTNAME=	agg
 PORTVERSION=	2.5
 PORTREVISION=	11
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.antigrain.com/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://distfiles.alpinelinux.org/distfiles/ \
+		http://distfiles.lesslinux.org/ \
+		http://gentoo.netnitco.net/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Quality Rendering Engine for C++
 
-BROKEN=		unfetchable
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/copying
 
