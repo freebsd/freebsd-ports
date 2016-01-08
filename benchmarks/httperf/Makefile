@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	httperf
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.0.1
 CATEGORIES=	benchmarks www
-MASTER_SITES=	GOOGLE_CODE
+#MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Tool for measuring webserver performance
@@ -13,7 +13,9 @@ LICENSE=	GPLv2
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		autoreconf gmake libtool
+USE_GITHUB=	yes
+GH_TAGNAME=	dcfb746
 MAKE_ARGS=	LIBUTIL_OBJS=ssl_writev.o \
 		exec_prefix=${PREFIX}
 
