@@ -853,6 +853,7 @@
     SUBDIR += py-pydeep
     SUBDIR += py-pyelliptic
     SUBDIR += py-pylibacl
+    SUBDIR += py-pymacaroons-pynacl
     SUBDIR += py-pyme
     SUBDIR += py-pynacl
     SUBDIR += py-pyptlib
