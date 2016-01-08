@@ -4219,6 +4219,7 @@
     SUBDIR += py-pycmd
     SUBDIR += py-pycparser
     SUBDIR += py-pydasm
+    SUBDIR += py-pydenticon
     SUBDIR += py-pydoop
     SUBDIR += py-pyechonest
     SUBDIR += py-pyee
