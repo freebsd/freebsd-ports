@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gqrx
-PORTVERSION=	2.3.2
+PORTVERSION=	2.5.1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
@@ -19,6 +19,8 @@ LIB_DEPENDS=	libgnuradio-runtime.so:${PORTSDIR}/comms/gnuradio \
 		libgnuradio-filter.so:${PORTSDIR}/comms/gnuradio \
 		libgnuradio-fft.so:${PORTSDIR}/comms/gnuradio \
 		libgnuradio-audio.so:${PORTSDIR}/comms/gnuradio \
+		libgnuradio-digital.so:${PORTSDIR}/comms/gnuradio \
+		libgnuradio-pmt.so:${PORTSDIR}/comms/gnuradio \
 		libgnuradio-osmosdr.so:${PORTSDIR}/comms/gr-osmosdr \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio \
 		libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
