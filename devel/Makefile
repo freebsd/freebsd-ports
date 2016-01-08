@@ -3944,6 +3944,7 @@
     SUBDIR += py-bluelet
     SUBDIR += py-boto
     SUBDIR += py-botocore
+    SUBDIR += py-canonicaljson
     SUBDIR += py-capstone
     SUBDIR += py-cclib
     SUBDIR += py-celery
