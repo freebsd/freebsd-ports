@@ -1499,12 +1499,7 @@
     SUBDIR += mq4cpp
     SUBDIR += msgpack
     SUBDIR += msgpuck
-    SUBDIR += msp430-binutils
     SUBDIR += msp430-debug-stack
-    SUBDIR += msp430-gcc
-    SUBDIR += msp430-gdb
-    SUBDIR += msp430-libc
-    SUBDIR += msp430mcu
     SUBDIR += mspdebug
     SUBDIR += msrc0
     SUBDIR += mtbl
