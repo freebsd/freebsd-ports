@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b22b016b-b633-11e5-83ef-14dae9d210b8">
+    <topic>librsync -- collision vulnerability</topic>
+    <affects>
+      <package>
+	<name>librsync</name>
+	<range><lt>1.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael Samuel reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/07/28/1">
+	  <p>librsync before 1.0.0 uses a truncated MD4 checksum to
+	    match blocks, which makes it easier for remote attackers to modify
+	    transmitted data via a birthday attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2014/07/28/1</url>
+      <cvename>CVE-2014-8242</cvename>
+    </references>
+    <dates>
+      <discovery>2014-07-28</discovery>
+      <entry>2016-01-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4eae4f46-b5ce-11e5-8a2b-d050996490d0">
     <topic>ntp -- denial of service vulnerability</topic>
     <affects>
