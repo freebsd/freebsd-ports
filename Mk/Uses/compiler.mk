@@ -67,7 +67,11 @@ _COMPILER_ARGS+=	features
 .endif
 
 _CCVERSION!=	${CC} --version
-COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g}
+.if defined(.PARSEDIR)
+COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:tW:C/([0-9]).([0-9]).*/\1\2/g}
+.else
+COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g:u}
+.endif
 .if ${_CCVERSION:Mclang}
 COMPILER_TYPE=	clang
 .else
