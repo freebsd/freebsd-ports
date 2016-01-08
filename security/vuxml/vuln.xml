@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4eae4f46-b5ce-11e5-8a2b-d050996490d0">
+    <topic>ntp -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.8p5</lt></range>
+      </package>
+      <package>
+	<name>ntp-devel</name>
+	<range><lt>4.3.78</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Network Time Foundation reports:</p>
+	<blockquote cite="http://support.ntp.org/bin/view/Main/SecurityNotice#January_2016_NTP_4_2_8p5_Securit">
+	  <p>NTF's NTP Project has been notified of the following
+	    1 medium-severity vulnerability that is fixed in
+	    ntp-4.2.8p5, released on Thursday, 7 January 2016:</p>
+	  <p>NtpBug2956: Small-step/Big-step CVE-2015-5300</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5300</cvename>
+      <url>https://www.cs.bu.edu/~goldbe/NTPattack.html</url>
+      <url>http://support.ntp.org/bin/view/Main/NtpBug2956</url>
+      <url>http://support.ntp.org/bin/view/Main/SecurityNotice#January_2016_NTP_4_2_8p5_Securit</url>
+    </references>
+    <dates>
+      <discovery>2015-10-21</discovery>
+      <entry>2016-01-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df587aa2-b5a5-11e5-9728-002590263bf5">
     <topic>dhcpcd -- multiple vulnerabilities</topic>
     <affects>
