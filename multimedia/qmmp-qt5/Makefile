@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 	SF/qmmp-dev/${PORTNAME}/
@@ -16,7 +16,7 @@ CONFLICTS=	${PORTNAME}-0.*
 
 USES=		cmake:outsource desktop-file-utils pkgconfig tar:bzip2
 USE_QT5=	core gui network widgets xml \
-		qmake_build buildtools_build linguisttools_build
+		buildtools_build linguisttools_build qmake_build
 USE_LDCONFIG=	yes
 
 OPTIONS_SUB=	yes
@@ -342,7 +342,7 @@ post-install-DOXYGEN-on:
 	${RM} -f ${WRKDIR}/PLIST.doc ; \
 	${FIND} ${STAGEDIR}${DOCSDIR}/html -type f | \
 		${SED} 's|${STAGEDIR}${PREFIX}/||' \
-		>> ${WRKDIR}/PLIST.doc
+		>> ${WRKDIR}/PLIST.doc ; \
 	cd ${WRKDIR} ; ${SED} -i -e '/PLIST.doc/ r PLIST.doc' ${TMPPLIST}
 
 .include <bsd.port.mk>
