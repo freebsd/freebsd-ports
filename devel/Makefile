@@ -4076,7 +4076,7 @@
     SUBDIR += py-hgsubversion
     SUBDIR += py-hgtools
     SUBDIR += py-humanize
-    SUBIDR += py-hypothesis
+    SUBDIR += py-hypothesis
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-icu
