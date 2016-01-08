@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.ibiblio.org/icpld/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet connection performance logging daemon
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README
@@ -20,13 +20,7 @@ PLIST_FILES=	bin/icpld etc/icpld.conf.sample etc/rc.d/icpld.sh.sample \
 
 OPTIONS_DEFINE=	IPV6 DOCS
 
-.include  <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
@@ -36,12 +30,8 @@ do-install:
 	@${ECHO_MSG} '===> Installing ${STAGEDIR}${PREFIX}/etc/rc.d/icpld.sh.sample'
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/icpld.sh.sample ${STAGEDIR}${PREFIX}/etc/rc.d
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
