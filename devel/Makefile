@@ -3985,6 +3985,7 @@
     SUBDIR += py-cycler
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
+    SUBDIR += py-daemonize
     SUBDIR += py-daemons
     SUBDIR += py-dal
     SUBDIR += py-darcsver

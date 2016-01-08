@@ -1,0 +1,3 @@
+daemonize is a library for writing system daemons in Python.
+
+WWW: https://github.com/thesharp/daemonize
