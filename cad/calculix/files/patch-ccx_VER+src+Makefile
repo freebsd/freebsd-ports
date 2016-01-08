@@ -1,9 +1,10 @@
---- ccx_2.8/src/Makefile.orig	2015-01-17 13:44:37.000000000 -0500
-+++ ccx_2.8/src/Makefile	2015-03-05 17:47:19.851561593 -0500
-@@ -1,9 +1,9 @@
+--- ccx_2.9/src/Makefile.orig	2015-11-19 19:28:14 UTC
++++ ccx_2.9/src/Makefile
+@@ -1,10 +1,10 @@
  
 -CFLAGS = -Wall -O3  -I ../../../SPOOLES.2.2 -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE
-+CFLAGS = -Wall -O3 -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/spooles -DARCH="FreeBSD" -DSPOOLES -DARPACK -DMATRIXSTORAGE
++CFLAGS += -Wall -O3 -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/spooles -DARCH="FreeBSD" -DSPOOLES -DARPACK -DMATRIXSTORAGE
+ #FFLAGS = -Wall -O3 -fopenmp -fmax-stack-var-size=80000
  FFLAGS = -Wall -O3 -fopenmp
  
 -CC=cc
@@ -13,7 +14,7 @@
  
  .c.o :
  	$(CC) $(CFLAGS) -c $<
-@@ -18,15 +18,10 @@
+@@ -19,15 +19,10 @@ OCCXF = $(SCCXF:.f=.o)
  OCCXC = $(SCCXC:.c=.o)
  OCCXMAIN = $(SCCXMAIN:.c=.o)
  
@@ -25,9 +26,9 @@
 -       -lpthread -lm -lc
 +LIBS = -lspooles -larpack %%BLAS_LIBS%% %%LAPACK_LIBS%% -lm
  
- ccx_2.8: $(OCCXMAIN) ccx_2.8.a  $(LIBS)
--	./date.pl; $(CC) $(CFLAGS) -c ccx_2.8.c; $(FC) -fopenmp -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.8.a $(LIBS)
-+	./date.pl; $(CC) $(CFLAGS) -c ccx_2.8.c; $(FC) -fopenmp -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.8.a -lpthread $(LIBS)
+ ccx_2.9: $(OCCXMAIN) ccx_2.9.a  $(LIBS)
+-	./date.pl; $(CC) $(CFLAGS) -c ccx_2.9.c; $(FC) -fopenmp -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.9.a $(LIBS)
++	./date.pl; $(CC) $(CFLAGS) -c ccx_2.9.c; $(FC) -fopenmp -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.9.a -lpthread $(LIBS)
  
- ccx_2.8.a: $(OCCXF) $(OCCXC)
+ ccx_2.9.a: $(OCCXF) $(OCCXC)
  	ar vr $@ $?
