@@ -856,6 +856,7 @@
     SUBDIR += py-pyme
     SUBDIR += py-pynacl
     SUBDIR += py-pyptlib
+    SUBDIR += py-pysaml2
     SUBDIR += py-pyscard
     SUBDIR += py-pysha3
     SUBDIR += py-python-gnupg
