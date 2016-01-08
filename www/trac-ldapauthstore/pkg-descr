@@ -1,0 +1,9 @@
+This plugin is a password store for the AccountManagerPlugin that
+provides authentication and group membership from an LDAP
+service. Users are authenticated by performing an LDAP bind against a
+directory using their credentials. The plugin will also pull the email
+address and username from the directory and populate the
+session_attribute table.
+
+WWW: https://trac-hacks.org/wiki/LdapAuthStorePlugin
+
