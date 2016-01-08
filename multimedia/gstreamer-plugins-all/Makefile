@@ -1,10 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins-all/Makefile,v 1.8 2006/01/25 18:54:32 ahze Exp $
 
 PORTNAME=	gstreamer-plugins-all
 PORTVERSION=	1.3.${GST_VERSION}.${GST_SHLIB_VERSION}
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -15,30 +14,30 @@ USE_GSTREAMER=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.gstreamer.mk"
 
-.for all in ${_GSTREAMER_PLUGINS}
-OPTIONS_DEFINE+=	${all:tu}
-${all:tu}_DESC=	${all} plugin
-OPTIONS_DEFAULT+=	${all:tu}
-.endfor
-
-.include <bsd.port.pre.mk>
-
+ALL_PLUGINS:=	${_GSTREAMER_PLUGINS}
 # Weed out gst-plugins that can not be packaged. or are broken.
 .if defined(PACKAGE_BUILDING)
-PORT_OPTIONS:=	${PORT_OPTIONS:NFAAC} # Mp4 Dolby license , no package
-PORT_OPTIONS:=	${PORT_OPTIONS:NLAME} # MP3 License , no package
-PORT_OPTIONS:=	${PORT_OPTIONS:NPEG2ENC} # Broken
-PORT_OPTIONS:=	${PORT_OPTIONS:NVDPAU} # Needs to be build agains running kernel
+# FAAC:    Mp4 Dolby license , no package
+# LAME:    MP3 License , no package
+# VDPAU:   Needs to be build agains running kernel
+DEF_PLUGINS:=	${_GSTREAMER_PLUGINS:Nfaac:Nlame:Nvdpau}
+.else
+DEF_PLUGINS:=	${_GSTREAMER_PLUGINS}
 .endif
 
-.if ${ARCH} != "i386"
-PORT_OPTIONS:=	${PORT_OPTIONS:NSPC} # i386 only
-.endif
-
-.for f in ${OPTIONS_DEFINE}
-.if ${PORT_OPTIONS:M${f:tu}}
-USE_GSTREAMER+=	${f:tl}
-.endif
+.for all in ${ALL_PLUGINS}
+${all:tu}_DESC=	${all} plugin
+${all:tu}_USE=	GSTREAMER=${all}
 .endfor
 
-.include <bsd.port.post.mk>
+# Pull out i386-only plugins, add back conditionally
+ALL_PLUGINS:=	${ALL_PLUGINS:Nspc}
+DEF_PLUGINS:=	${DEF_PLUGINS:Nspc}
+
+OPTIONS_DEFINE=	${ALL_PLUGINS:tu}
+OPTIONS_DEFAULT=	${DEF_PLUGINS:tu}
+
+OPTIONS_DEFAULT_i386=	SPC
+OPTIONS_DEFAULT_i386=	SPC
+
+.include <bsd.port.mk>
