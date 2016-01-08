@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 	SF/qmmp-dev/${PORTNAME}/
@@ -15,7 +15,7 @@ CONFLICTS=	${PORTNAME}-qt5-1.*
 
 USES=		cmake:outsource desktop-file-utils pkgconfig tar:bzip2
 USE_QT4=	corelib gui network xml \
-		qmake_build rcc_build uic_build moc_build linguist_build
+		linguisttools_build moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
 OPTIONS_SUB=	yes
@@ -328,7 +328,7 @@ post-patch:
 	@${GREP} -L 'libdata/pkgconfig' \
 		${WRKSRC}/src/qmmp/CMakeLists.txt \
 		${WRKSRC}/src/qmmpui/CMakeLists.txt | ${XARGS} \
-		${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_DIR}|libdata|'
+		${REINPLACE_CMD} -e '/pkgconfig/s|\$${LIB_DIR}|libdata|'
 
 pre-configure:
 	@${RM} -f ${BUILD_WRKSRC}/CMakeCache.txt
@@ -349,7 +349,7 @@ post-install-DOXYGEN-on:
 	${RM} -f ${WRKDIR}/PLIST.doc ; \
 	${FIND} ${STAGEDIR}${DOCSDIR}/html -type f | \
 		${SED} 's|${STAGEDIR}${PREFIX}/||' \
-		>> ${WRKDIR}/PLIST.doc
+		>> ${WRKDIR}/PLIST.doc ; \
 	cd ${WRKDIR} ; ${SED} -i -e '/PLIST.doc/ r PLIST.doc' ${TMPPLIST}
 
 .include <bsd.port.mk>
