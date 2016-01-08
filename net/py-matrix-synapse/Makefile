@@ -13,8 +13,6 @@ COMMENT=	Matrix protocol reference homeserver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>0:${PORTSDIR}/devel/py-virtualenv \
-		${PYTHON_PKGNAMEPREFIX}tox>0:${PORTSDIR}/devel/py-tox
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frozendict>=0.4:${PORTSDIR}/devel/py-frozendict \
 		${PYTHON_PKGNAMEPREFIX}unpaddedbase64>=1.0.1:${PORTSDIR}/devel/py-unpaddedbase64 \
 		${PYTHON_PKGNAMEPREFIX}canonicaljson>=1.0.0:${PORTSDIR}/devel/py-canonicaljson \
@@ -36,6 +34,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frozendict>=0.4:${PORTSDIR}/devel/py-frozend
 		${PYTHON_PKGNAMEPREFIX}simplejson>0:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}matrix-angular-sdk>0:${PORTSDIR}/devel/py-matrix-angular-sdk
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>0:${PORTSDIR}/devel/py-virtualenv \
+		${PYTHON_PKGNAMEPREFIX}tox>0:${PORTSDIR}/devel/py-tox
 
 USES=		python
 USE_GITHUB=	yes
