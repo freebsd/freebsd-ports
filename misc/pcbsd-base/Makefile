@@ -63,7 +63,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		numlockx:${PORTSDIR}/x11/numlockx \
 		pciutils>=0:${PORTSDIR}/sysutils/pciutils \
 		gpg:${PORTSDIR}/security/gnupg \
-		foo2zjs>=0:${PORTSDIR}/print/foo2zjs \
 		linux_dvbwrapper-kmod>=0:${PORTSDIR}/multimedia/linux_dvbwrapper-kmod \
 		xvkbd:${PORTSDIR}/x11/xvkbd \
 		volman>=0:${PORTSDIR}/sysutils/volman \
