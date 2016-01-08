@@ -58,6 +58,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="df587aa2-b5a5-11e5-9728-002590263bf5">
+    <topic>dhcpcd -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dhcpcd</name>
+	<range><lt>6.10.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nico Golde reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2016/01/07/3">
+	  <p>heap overflow via malformed dhcp responses later in print_option
+	    (via dhcp_envoption1) due to incorrect option length values.
+	    Exploitation is non-trivial, but I'd love to be proven wrong.</p>
+	  <p>invalid read/crash via malformed dhcp responses. not exploitable
+	    beyond DoS as far as I can judge.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1503</cvename>
+      <cvename>CVE-2016-1504</cvename>
+      <freebsdpr>ports/206015</freebsdpr>
+      <url>http://roy.marples.name/projects/dhcpcd/info/76a1609352263bd9def1300d7ba990679571fa30</url>
+      <url>http://roy.marples.name/projects/dhcpcd/info/595883e2a431f65d8fabf33059aa4689cca17403</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/01/07/3</url>
+    </references>
+    <dates>
+      <discovery>2016-01-04</discovery>
+      <entry>2016-01-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4084168e-b531-11e5-a98c-0011d823eebd">
     <topic>mbedTLS/PolarSSL -- SLOTH attack on TLS 1.2 server authentication</topic>
     <affects>
