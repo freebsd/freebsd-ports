@@ -1,0 +1,6 @@
+Macaroons, like cookies, are a form of bearer credential. Unlike opaque tokens,
+macaroons embed caveats that define specific authorization requirements for the
+target service, the service that issued the root macaroon and which is capable
+of verifying the integrity of macaroons it receives.
+
+WWW: https://github.com/matrix-org/pymacaroons
