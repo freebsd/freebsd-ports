@@ -4138,6 +4138,7 @@
     SUBDIR += py-lxml
     SUBDIR += py-magic
     SUBDIR += py-manuel
+    SUBDIR += py-matrix-angular-sdk
     SUBDIR += py-mccabe
     SUBDIR += py-meliae
     SUBDIR += py-memory_profiler
