@@ -20,6 +20,7 @@ include/tbb/concurrent_vector.h
 include/tbb/critical_section.h
 include/tbb/enumerable_thread_specific.h
 include/tbb/flow_graph.h
+include/tbb/flow_graph_opencl_node.h
 include/tbb/global_control.h
 include/tbb/index.html
 include/tbb/internal/_aggregator_impl.h
