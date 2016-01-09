@@ -5,9 +5,9 @@
  
  /*+ The names of the high score tables. +*/
 -static char *filenames[NTYPES]={"/var/tmp/xbomb6.hi","/var/tmp/xbomb4.hi","/var/tmp/xbomb3.hi"};
-+static char *filenames[NTYPES]={LOCALBASE"/lib/X11/xbomb/xbomb6.hi",
-+                                LOCALBASE"/lib/X11/xbomb/xbomb4.hi",
-+                                LOCALBASE"/lib/X11/xbomb/xbomb3.hi"};
++static char *filenames[NTYPES]={"/var/games/xbomb/xbomb6.hi",
++                                "/var/games/xbomb/xbomb4.hi",
++                                "/var/games/xbomb/xbomb3.hi"};
  
  /*+ The names of the positions in the high score tables. +*/
  static char pos[11][5]={"Top","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","Lost"};
