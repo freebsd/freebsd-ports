@@ -1,15 +1,7 @@
-@group games
-@mode 2755
-bin/xbomb
-@mode
-@group
+@(,games,2755) bin/xbomb
 man/man6/xbomb.6.gz
 lib/X11/app-defaults/XBomb
-@group games
-@mode 664
-lib/X11/xbomb/xbomb3.hi
-lib/X11/xbomb/xbomb4.hi
-lib/X11/xbomb/xbomb6.hi
-@mode
-@group
-@dirrmtry lib/X11/xbomb
+@sample(,games,664) /var/games/xbomb/xbomb3.hi.sample
+@sample(,games,664) /var/games/xbomb/xbomb4.hi.sample
+@sample(,games,664) /var/games/xbomb/xbomb6.hi.sample
+@dir /var/games/xbomb
