@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_scgi
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	www
 MASTER_SITES=	http://python.ca/scgi/releases/
 DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
