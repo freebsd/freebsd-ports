@@ -20,75 +20,43 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libbotan-1.10.so:${PORTSDIR}/security/botan110
 
 SUB_FILES=	pkg-message
-USES=		cpe iconv pkgconfig gmake perl5 lua:51 tar:bzip2 makeinfo
+USES=		cpe gmake iconv localbase lua:51 makeinfo perl5 \
+		pkgconfig tar:bzip2
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/mtn bin/mtn-cleanup bin/mtnopt \
-		share/monotone/hooks/authorize_remote_automate.lua \
-		share/monotone/hooks/get_passphrase_from_file.lua \
-		share/monotone/hooks/monotone-buildbot.lua \
-		share/monotone/hooks/monotone-ciabot.lua \
-		share/monotone/hooks/monotone-cluster-push.lua \
-		share/monotone/hooks/monotone-cvs-ignore.lua \
-		share/monotone/hooks/monotone-mail-notify.lua \
-		share/monotone/scripts/monotone-ciabot.py \
-		share/monotone/scripts/monotone-mail-notify \
-		etc/bash_completion.d/monotone.bash_completion \
-		share/zsh/site-functions/_mtn \
-		"@unexec [ -f %D/bin/zsh ] || ${RMDIR} %D/share/zsh/site-functions 2>/dev/null || true" \
-		"@dirrmtry share/zsh" \
-		"@dirrmtry etc/bash_completion.d" \
-		"@dirrm share/monotone/hooks" \
-		"@dirrmtry share/zsh/site-functions" \
-		"@dirrm share/monotone/scripts" \
-		"@dirrm share/monotone"
 INFO=		monotone
-PLIST_FILES+=	man/man1/mtn.1.gz \
-		man/man1/mtn-cleanup.1.gz \
-		man/man1/mtnopt.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_FILES+=	share/locale/de/LC_MESSAGES/monotone.mo \
-		share/locale/fr/LC_MESSAGES/monotone.mo \
-		share/locale/it/LC_MESSAGES/monotone.mo \
-		share/locale/pt/LC_MESSAGES/monotone.mo \
-		share/locale/sv/LC_MESSAGES/monotone.mo
-.else
-CONFIGURE_ARGS+=	--disable-nls
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
 post-extract:
 	@${RM} -f ${WRKSRC}/monotone.info*
 
 post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} -Ee '/^install-(contrib|examples)-data:/{' -e 'n' -e 'd' -e '}' ${WRKSRC}/Makefile.in
-.endif
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e "s/REBUILD_NLS=true/REBUILD_NLS=false/g" \
 		-e "s/std::tr1::/std::/g" \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e "s/std::tr1::/std::/g" \
 		${WRKSRC}/src/hash_map.hh
+
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -Ee '/^install-(contrib|examples)-data:/{' -e 'n' -e 'd' -e '}' ${WRKSRC}/Makefile.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/contrib/monotone.zsh_completion ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_mtn
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} NEWS UPGRADE ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

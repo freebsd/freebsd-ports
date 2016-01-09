@@ -11,12 +11,12 @@ COMMENT=	Live file sync daemon based on inotify, written in GNU C
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:features gmake libtool pkgconfig
+USES=		autoreconf compiler:features execinfo gmake libtool pkgconfig
 USE_GNOME=	glib20
+LDFLAGS+=	${EXECINFO_LDFLAGS}
 
 USE_RC_SUBR=	clsync
 

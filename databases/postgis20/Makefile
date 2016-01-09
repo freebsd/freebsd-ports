@@ -60,9 +60,9 @@ RASTER_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 TOPOLOGY_CONFIGURE_WITH=topology
 
 post-install:
-	${MKDIR} ${STAGEDIR}/${DATADIR}/utils/ ${STAGEDIR}/${DATADIR}/tiger_2010/
-	cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/utils/
-	cd ${WRKSRC}/extras/tiger_geocoder/tiger_2010/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/tiger_2010/
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/* ${STAGEDIR}/${PREFIX}/lib/*.so ${STAGEDIR}/${PREFIX}/lib/postgresql/*.so
+	${MKDIR} ${STAGEDIR}${DATADIR}/utils/ ${STAGEDIR}${DATADIR}/tiger_2010/
+	cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/utils/
+	cd ${WRKSRC}/extras/tiger_geocoder/tiger_2010/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/tiger_2010/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/*.so ${STAGEDIR}${PREFIX}/lib/postgresql/*.so
 
 .include <bsd.port.mk>

@@ -1,9 +1,6 @@
-plasTeX is a LaTeX document processing framework
-written entirely in Python. It currently comes
-bundled with renderers for XHTML, DocBook, man
-pages, plain text, as well as a way to simply dump
-the document to a generic form of XML. Other
-renderers can be added as well and are planned
-for future releases.
+plasTeX is a LaTeX document processing framework written entirely in Python. It
+currently comes bundled with renderers for XHTML, DocBook, man pages, plain
+text, as well as a way to simply dump the document to a generic form of XML.
+Other renderers can be added as well and are planned for future releases.
 
-WWW: http://plastex.sf.net/
+WWW: https://tiarno.github.io/plastex/

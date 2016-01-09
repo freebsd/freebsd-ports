@@ -163,6 +163,7 @@
     SUBDIR += ppunpack
     SUBDIR += pxz
     SUBDIR += py-attic
+    SUBDIR += py-bz2file
     SUBDIR += py-librtfcomp
     SUBDIR += py-lz4
     SUBDIR += py-lzma
@@ -203,6 +204,7 @@
     SUBDIR += unace
     SUBDIR += unadf
     SUBDIR += unalz
+    SUBDIR += unarchiver
     SUBDIR += unarj
     SUBDIR += undms
     SUBDIR += unfoo

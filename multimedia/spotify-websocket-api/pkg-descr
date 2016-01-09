@@ -1,7 +1,0 @@
-A library, client, and some examples written in Python to access the
-Spotify web API.  Note that this is still premature and missing some
-functions.
-
-A Premium account is required to use this port.
-
-WWW: https://github.com/Hexxeh/spotify-websocket-api/

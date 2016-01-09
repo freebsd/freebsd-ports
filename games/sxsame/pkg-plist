@@ -1,7 +1,5 @@
 @group games
-@mode 2755
-bin/sxsame
-@mode
+@(,,2755) bin/sxsame
 lib/X11/sxsame/bomb/blun.xpm
 lib/X11/sxsame/bomb/blus.xpm
 lib/X11/sxsame/bomb/cyan.xpm
@@ -28,10 +26,9 @@ lib/X11/sxsame/mono1.same
 lib/X11/sxsame/s_marble.bmp
 lib/X11/sxsame/samegame.dat
 lib/X11/sxsame/snake.bmp
-@dirrmtry lib/X11/sxsame/mono1
-@dirrmtry lib/X11/sxsame/bomb
-@dirrmtry lib/X11/sxsame
 @group
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.jp
 %%PORTDOCS%%%%DOCSDIR%%/README.jp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dir(,games,) lib/X11/sxsame/mono1
+@dir(,games,) lib/X11/sxsame/bomb
+@dir(,games,) lib/X11/sxsame

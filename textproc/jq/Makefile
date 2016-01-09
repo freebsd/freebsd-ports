@@ -6,7 +6,7 @@ PORTVERSION=	1.5
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	yuri@rawbw.com
 COMMENT=	Lightweight and flexible command-line JSON processor
 
 LICENSE=	MIT

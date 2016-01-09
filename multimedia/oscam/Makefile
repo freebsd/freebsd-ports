@@ -3,6 +3,7 @@
 
 PORTNAME=	oscam
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://el8.nl/~fbettag/oscam/
 
@@ -12,6 +13,7 @@ COMMENT=	Softcam software to decrypt digital tv channels
 LICENSE=	GPLv3
 
 USES=		gmake tar:bzip2
+USE_RC_SUBR=	oscam
 MAKE_ARGS+=	HOSTCC=clang CC=clang
 
 .if target(gen-dist)

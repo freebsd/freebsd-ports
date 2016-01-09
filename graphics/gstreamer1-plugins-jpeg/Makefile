@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-COMMENT=	Gstreamer jpeg encoder/decoder plugin
+COMMENT=	GStreamer jpeg encoder/decoder plugin
 
 GST_PLUGIN=	jpeg
 DIST=		good

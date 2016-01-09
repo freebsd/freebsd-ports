@@ -12,4 +12,4 @@ Crossroads I/O provides a native C API for applications.  Support for many
 more languages is provided by the community through language bindings which
 can be found at the Crossroads website.
 
-WWW: http://www.crossroads.io/
+WWW: https://github.com/crossroads-io/libxs

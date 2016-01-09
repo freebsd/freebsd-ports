@@ -13,6 +13,7 @@ share/desktop-directories/lxde-network.directory
 share/desktop-directories/lxde-office.directory
 share/desktop-directories/lxde-other.directory
 share/desktop-directories/lxde-personal.directory
+share/desktop-directories/lxde-science-math.directory
 share/desktop-directories/lxde-settings-system.directory
 share/desktop-directories/lxde-settings.directory
 share/desktop-directories/lxde-system-tools.directory

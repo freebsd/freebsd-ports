@@ -4,7 +4,7 @@
 PORTNAME=	qcad
 PORTVERSION=	3.12.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
 
@@ -14,8 +14,8 @@ COMMENT=	Professional CAD system
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
-		${LOCALBASE}/lib/libopenNURBS.a:${PORTSDIR}/graphics/opennurbs \
-		${LOCALBASE}/lib/libquazip.so:${PORTSDIR}/archivers/quazip
+		${LOCALBASE}/lib/libopenNURBS.a:${PORTSDIR}/graphics/opennurbs
+LIB_DEPENDS=	libquazip.so:${PORTSDIR}/archivers/quazip
 
 MAKE_JOBS_UNSAFE=yes
 

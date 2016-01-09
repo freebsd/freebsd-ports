@@ -17,7 +17,9 @@ LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-USES=		gettext gmake libtool:build readline
+CPE_PRODUCT=	${PORTNAME}
+CPE_VENDOR=	sgi
+USES=		cpe gettext gmake libtool:build readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTIMIZER=" "
 CONFIGURE_ARGS=	--disable-shared --enable-readline

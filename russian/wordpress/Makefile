@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.4
-PORTREVISION=	1
+PORTVERSION=	4.4.1
 DISTVERSIONSUFFIX=	-ru_RU
 CATEGORIES=	russian www
 MASTER_SITES=	http://ru.wordpress.org/
@@ -20,7 +19,7 @@ CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-3.* ja-wordpress-3.*
 NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		cpe
-USE_PHP=	curl gd hash mysql pcre tokenizer xml zip zlib
+USE_PHP=	curl gd hash mysqli pcre tokenizer xml zip zlib ftp
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

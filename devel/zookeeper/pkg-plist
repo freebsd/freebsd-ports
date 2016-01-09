@@ -1,22 +1,10 @@
 bin/zkCli.sh
-%%PORTNAME%%/bin/zkCleanup.sh
-%%PORTNAME%%/bin/zkCli.sh
-%%PORTNAME%%/bin/zkEnv.sh
-%%PORTNAME%%/bin/zkServer.sh
-%%PORTNAME%%/conf/configuration.xsl
-%%PORTNAME%%/conf/log4j.properties
-%%PORTNAME%%/conf/zoo_sample.cfg
-%%PORTNAME%%/lib/cobertura/README.txt
-%%PORTNAME%%/lib/jdiff/%%PORTNAME%%_3.1.1.xml
-%%PORTNAME%%/lib/jdiff/%%PORTNAME%%_3.4.6.xml
-%%PORTNAME%%/lib/jdiff/%%PORTNAME%%_%%PORTVERSION%%-SNAPSHOT.xml
-%%PORTNAME%%/lib/jline-0.9.94.LICENSE.txt
-%%PORTNAME%%/lib/jline-0.9.94.jar
-%%PORTNAME%%/lib/log4j-1.2.16.LICENSE.txt
-%%PORTNAME%%/lib/log4j-1.2.16.jar
-%%PORTNAME%%/lib/netty-3.7.0.Final.jar
-%%PORTNAME%%/lib/slf4j-api-1.6.1.jar
-%%PORTNAME%%/lib/slf4j-log4j12-1.6.1.jar
-%%PORTNAME%%/%%PORTNAME%%-%%PORTVERSION%%.jar
-@dir /var/log/%%PORTNAME%%
-@dir /var/run/%%PORTNAME%%
+bin/zkServer.sh
+%%JAVAJARDIR%%/zookeeper-%%PORTVERSION%%.jar
+%%JAVAJARDIR%%/zookeeper.jar
+%%ETCDIR%%/log4j.properties
+%%ETCDIR%%/configuration.xsl
+%%ETCDIR%%/zoo_sample.cfg
+@dirrmtry %%ETCDIR%%
+@dir(zookeeper,zookeeper,755) %%ZOOKEEPER_LOGDIR%%
+@dir(zookeeper,zookeeper,755) %%ZOOKEEPER_DBDIR%%

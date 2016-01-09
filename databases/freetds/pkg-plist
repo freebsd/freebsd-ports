@@ -30,7 +30,7 @@ lib/libsybdb.a
 lib/libsybdb.la
 lib/libsybdb.so
 lib/libsybdb.so.5
-lib/libsybdb.so.5.0.0
+lib/libsybdb.so.5.1.0
 man/man1/bsqldb.1.gz
 man/man1/bsqlodbc.1.gz
 man/man1/datacopy.1.gz

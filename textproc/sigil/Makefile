@@ -18,6 +18,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Sigil-Ebook
 GH_PROJECT=	Sigil
 
+# Upstream uses pkg-config output to pass libhunspell-1.3.so and
+# libpcre16.so to the linker. pkg-config output does not include full
+# paths, so add a workaround to keep the port linking for now.
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 USES=		cmake compiler:c++11-lib desktop-file-utils pkgconfig \
 		python:3 shebangfix
 SHEBANG_FILES=	src/Resource_Files/plugin_launchers/python/*.py \

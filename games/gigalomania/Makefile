@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gigalomania
-PORTVERSION=	0.27
-PORTREVISION=	1
+PORTVERSION=	0.28
 CATEGORIES=	games
-MASTER_SITES=	https://launchpadlibrarian.net/180606846/
+MASTER_SITES=	https://launchpad.net/gigalomania/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}src
 
 MAINTAINER=	pawel@FreeBSD.org

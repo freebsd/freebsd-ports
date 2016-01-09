@@ -212,7 +212,6 @@
     SUBDIR += dsnake
     SUBDIR += duckmaze
     SUBDIR += duel
-    SUBDIR += duke3d-data
     SUBDIR += dunelegacy
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
@@ -449,7 +448,6 @@
     SUBDIR += kajaani-kombat
     SUBDIR += kajongg
     SUBDIR += kanagram
-    SUBDIR += kanatest
     SUBDIR += kapman
     SUBDIR += kardsgt
     SUBDIR += kartofel
@@ -932,7 +930,7 @@
     SUBDIR += super_mario_bros_python
     SUBDIR += super_methane_brothers
     SUBDIR += supertux
-    SUBDIR += supertux-devel
+    SUBDIR += supertux2
     SUBDIR += supertuxkart
     SUBDIR += swell-foop
     SUBDIR += sxsame

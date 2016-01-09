@@ -12,5 +12,4 @@
 %%SQUIRRELDIR%%/plugins/qmailadmin_login/setup.php
 %%SQUIRRELDIR%%/plugins/qmailadmin_login/version
 %%SQUIRRELDIR%%/plugins/qmailadmin_login/xgetpot
-@dirrm %%SQUIRRELDIR%%/plugins/qmailadmin_login/
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin qmailadmin_login; fi

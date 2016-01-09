@@ -36,10 +36,13 @@ PLIST=		${PKGDIR}/pkg-plist.plugin
 .endif
 
 post-patch:
-	@# do not build remmina core program
+# Do not build remmina core program
 	${REINPLACE_CMD} -e 's|add_subdirectory(remmina)||' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|find_suggested_package(AVAHI)||' ${WRKSRC}/CMakeLists.txt
-	@# which plugins to build
+# Do not build broken freerdp plugin
+	${REINPLACE_CMD} -e 's|find_suggested_package(FREERDP)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|add_subdirectory(rdp)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
+# Which plugins to build
 .if ${PKGNAMESUFFIX:S,-,,} != "nx"
 	${REINPLACE_CMD} -e 's|find_suggested_package(LIBSSH)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|find_required_package(XKBFILE)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
@@ -47,10 +50,6 @@ post-patch:
 .endif
 .if ${PKGNAMESUFFIX:S,-,,} != "gnome"
 	${REINPLACE_CMD} -e 's|add_subdirectory(remmina-plugins-gnome)||' ${WRKSRC}/CMakeLists.txt
-.endif
-.if ${PKGNAMESUFFIX:S,-,,} != "rdp"
-	${REINPLACE_CMD} -e 's|find_suggested_package(FREERDP)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|add_subdirectory(rdp)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
 .endif
 .if ${PKGNAMESUFFIX:S,-,,} != "vnc"
 	${REINPLACE_CMD} -e 's|find_suggested_package(GCRYPT)||' ${WRKSRC}/CMakeLists.txt

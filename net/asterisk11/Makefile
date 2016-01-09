@@ -107,7 +107,7 @@ XMPP_DESC=	XMPP/GTALK support
 OPTIONS_SUB=		yes
 
 BACKTRACE_CONFIGURE_WITH=	execinfo
-BACKTRACE_LIB_DEPENDS=		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+BACKTRACE_USES=			execinfo
 
 CURL_CONFIGURE_ON=	--with-libcurl
 CURL_CONFIGURE_OFF=	--with-libcurl=no

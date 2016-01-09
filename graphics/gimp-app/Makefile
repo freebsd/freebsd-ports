@@ -24,8 +24,8 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 GNU_CONFIGURE=	yes
-USES+=		cpe desktop-file-utils gettext gmake jpeg libtool pathfix \
-		pkgconfig tar:bzip2
+USES+=		cpe desktop-file-utils execinfo gettext gmake jpeg libtool \
+		localbase pathfix pkgconfig tar:bzip2
 USE_XORG=	xpm xmu xext
 USE_GNOME+=	intlhack gtk20
 USE_LDCONFIG=	yes
@@ -43,8 +43,7 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--docdir=${PREFIX}/share/doc/gimp \
 		--enable-default-binary
 CONFIGURE_ENV=	GIMP_THREAD_LIBS=-lpthread
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LIBS+=		-lexecinfo
 CPE_PRODUCT=	gimp
 CPE_VENDOR=	gnu
 
@@ -56,12 +55,11 @@ OPTIONS_DEFINE?=	AA DBUS LIBEXIF GHOSTSCRIPT GVFS HELPBROWSER JASPER \
 			LIBMNG LIBRSVG2 POPPLER SIMD WMF
 OPTIONS_DEFAULT=	AA DBUS LIBEXIF GVFS HELPBROWSER LIBMNG LIBRSVG2 \
 			POPPLER WMF
+OPTIONS_SUB=		yes
 AA_DESC=		Ascii-art Plug-in
 HELPBROWSER_DESC=	Internal help browser
 
 .endif
-
-.include <bsd.port.options.mk>
 
 .if defined(GIMP_SLAVE)
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
@@ -73,112 +71,47 @@ LIB_DEPENDS+=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 
 .else
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
+DEBUG_CONFIGURE_ON=	--enable-debug
 
-.if ${PORT_OPTIONS:MAA}
-LIB_DEPENDS+=		libaa.so:${PORTSDIR}/graphics/aalib
-PLIST_SUB+=		AA=""
-.else
-CONFIGURE_ARGS+=	--without-aa
-PLIST_SUB+=		AA="@comment "
-.endif
+AA_LIB_DEPENDS=		libaa.so:${PORTSDIR}/graphics/aalib
+AA_CONFIGURE_OFF=	--without-aa
 
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-CONFIGURE_ARGS+=	--with-dbus
-.else
-CONFIGURE_ARGS+=	--without-dbus
-.endif
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+DBUS_CONFIGURE_WITH=	dbus
 
-.if ${PORT_OPTIONS:MGHOSTSCRIPT}
-USES+=			ghostscript
-CONFIGURE_ARGS+=	--with-gs
-PLIST_SUB+=		GS=""
-.else
-CONFIGURE_ARGS+=	--without-gs
-PLIST_SUB+=		GS="@comment "
-.endif
+GHOSTSCRIPT_USES=		ghostscript
+GHOSTSCRIPT_CONFIGURE_WITH=	gs
 
-.if ${PORT_OPTIONS:MGVFS}
-USE_GNOME+=		gvfs
-.else
-LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--without-gvfs
-.endif
+GVFS_USE=		GNOME=gvfs
+GVFS_LIB_DEPENDS_OFF=	libcurl.so:${PORTSDIR}/ftp/curl
+GVFS_CONFIGURE_OFF=	--without-gvfs
 
-.if ${PORT_OPTIONS:MHELPBROWSER}
-LIB_DEPENDS+=		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
-CONFIGURE_ARGS+=	--with-webkit
-PLIST_SUB+=		HELPBROWSER=""
-.else
-CONFIGURE_ARGS+=	--without-webkit
-PLIST_SUB+=		HELPBROWSER="@comment "
-.endif
+HELPBROWSER_LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+HELPBROWSER_CONFIGURE_WITH=	webkit
 
-.if ${PORT_OPTIONS:MJASPER}
-LIB_DEPENDS+=		libjasper.so:${PORTSDIR}/graphics/jasper
-CONFIGURE_ARGS+=	--with-libjasper
-PLIST_SUB+=		JASPER=""
-.else
-CONFIGURE_ARGS+=		--without-libjasper
-PLIST_SUB+=		JASPER="@comment "
-.endif
+JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
+JASPER_CONFIGURE_WITH=	libjasper
 
-.if ${PORT_OPTIONS:MLIBEXIF}
-LIB_DEPENDS+=		libexif.so:${PORTSDIR}/graphics/libexif
-PLIST_SUB+=		EXIF=""
-.else
-CONFIGURE_ARGS+=	--without-libexif
-PLIST_SUB+=		EXIF="@comment "
-.endif
+LIBEXIF_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+LIBEXIF_CONFIGURE_OFF=	--without-libexif
 
-.if ${PORT_OPTIONS:MLIBMNG}
-LIB_DEPENDS+=		libmng.so:${PORTSDIR}/graphics/libmng
-PLIST_SUB+=		MNG=""
-.else
-CONFIGURE_ARGS+=	--without-libmng
-PLIST_SUB+=		MNG="@comment "
-.endif
+LIBMNG_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
+LIBMNG_CONFIGURE_OFF=	--without-libmng
 
-.if ${PORT_OPTIONS:MLIBRSVG2}
-USE_GNOME+=		librsvg2
-CONFIGURE_ARGS+=	--with-librsvg
-PLIST_SUB+=		SVG=""
-.else
-CONFIGURE_ARGS+=	--without-librsvg
-PLIST_SUB+=		SVG="@comment "
-.endif
+LIBRSVG2_USE= 		GNOME=librsvg2
+LIBRSVG2_CONFIGURE_WITH=librsvg
 
-.if ${PORT_OPTIONS:MPOPPLER}
-LIB_DEPENDS+=		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
-PLIST_SUB+=		POPPLER=""
-.else
-CONFIGURE_ARGS+=	--without-poppler
-PLIST_SUB+=		POPPLER="@comment "
-.endif
+POPPLER_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+POPPLER_CONFIGURE_OFF=	--without-poppler
 
-.if !${PORT_OPTIONS:MSIMD}
-CONFIGURE_ARGS+=	--disable-mmx \
+SIMD_CONFIGURE_OFF=	--disable-mmx \
 			--disable-sse \
 			--disable-altivec
-.endif
 
-.if ${PORT_OPTIONS:MWMF}
-LIB_DEPENDS+=		libwmf.so:${PORTSDIR}/graphics/libwmf
-PLIST_SUB+=		WMF=""
-.else
-CONFIGURE_ARGS+=	--without-wmf
-PLIST_SUB+=		WMF="@comment "
-.endif
+WMF_LIB_DEPENDS=	libwmf.so:${PORTSDIR}/graphics/libwmf
+WMF_CONFIGURE_OFF=	--without-wmf
 
 .endif
-
-.if ${OSVERSION} < 1000052
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
-LIBS+=-lexecinfo
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%GIMP_LIBS%%|${GIMP_LIBS}|; \

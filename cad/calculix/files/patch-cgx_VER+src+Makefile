@@ -1,5 +1,5 @@
---- cgx_2.8/src/Makefile.orig	2014-04-07 12:26:41.000000000 -0500
-+++ cgx_2.8/src/Makefile	2015-03-05 17:51:21.124545473 -0500
+--- cgx_2.9/src/Makefile.orig	2015-07-30 21:38:17 UTC
++++ cgx_2.9/src/Makefile
 @@ -1,14 +1,14 @@
  CFLAGS = -O3 -Wall \
    -I./ \
@@ -19,7 +19,7 @@
    -lm -lpthread -lrt
  
  
-@@ -66,7 +66,7 @@
+@@ -66,7 +66,7 @@ OULIB = $(ULIB:.c=.o)
  OUTIL = $(SUTIL:.c=.o)
  
  cgx: $(OLIB) $(OUTIL) $(OULIB)

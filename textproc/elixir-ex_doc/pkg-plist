@@ -4,6 +4,7 @@ lib/elixir/lib/ex_doc/ebin/Elixir.ExDoc.Formatter.HTML.Autolink.beam
 lib/elixir/lib/ex_doc/ebin/Elixir.ExDoc.Formatter.HTML.Templates.beam
 lib/elixir/lib/ex_doc/ebin/Elixir.ExDoc.Formatter.HTML.beam
 lib/elixir/lib/ex_doc/ebin/Elixir.ExDoc.FunctionNode.beam
+lib/elixir/lib/ex_doc/ebin/Elixir.ExDoc.Markdown.Cmark.beam
 lib/elixir/lib/ex_doc/ebin/Elixir.ExDoc.Markdown.Earmark.beam
 lib/elixir/lib/ex_doc/ebin/Elixir.ExDoc.Markdown.Hoedown.beam
 lib/elixir/lib/ex_doc/ebin/Elixir.ExDoc.Markdown.Pandoc.beam
@@ -23,8 +24,8 @@ lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates.ex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/api_reference_entry_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/api_reference_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/detail_template.eex
-lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/dist/app-6bc9434c82.css
-lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/dist/app-c7aad77d7d.js
+lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/dist/app-6d2e071366.js
+lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/dist/app-ddd9717ad9.css
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/extra_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/fonts/icomoon.eot
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/fonts/icomoon.svg
@@ -40,6 +41,7 @@ lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/summary_item_template.
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/summary_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/formatter/html/templates/type_detail_template.eex
 lib/elixir/lib/ex_doc/lib/ex_doc/markdown.ex
+lib/elixir/lib/ex_doc/lib/ex_doc/markdown/cmark.ex
 lib/elixir/lib/ex_doc/lib/ex_doc/markdown/earmark.ex
 lib/elixir/lib/ex_doc/lib/ex_doc/markdown/hoedown.ex
 lib/elixir/lib/ex_doc/lib/ex_doc/markdown/pandoc.ex

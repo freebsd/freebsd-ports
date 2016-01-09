@@ -1,0 +1,11 @@
+PyVTK provides the following tools for manipulating Visualization
+Toolkit (VTK) files in Python:
+
+ * ascii and binary output, ascii input from VTK file
+ * DataSet formats: StructuredPoints, StructuredGrid, RectilinearGrid, PolyData,
+   UnstructuredGrid
+ * Data formats: PointData, CellData
+ * DataSetAttr formats: Scalars, ColorScalars, LookupTable, Vectors, Normals,
+   TextureCoordinates, Tensors, Field
+
+WWW: https://github.com/pearu/pyvtk/

@@ -173,11 +173,13 @@ CONFIGURE_ARGS+=-verbose
 . if ${QT_DIST} == "base" || ${_QT_VERSION:M4*}
 .  if ${_QT_VERSION:M4*}
 _EXTRA_PATCHES_QT4=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src-corelib-global-qglobal.h
+.  else
+_EXTRA_PATCHES_QT5=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src_corelib_global_qcompilerdetection.h
 .  endif
 EXTRA_PATCHES?=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-configure \
 		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-config.tests-unix-compile.test \
 		${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-libtool \
-		${_EXTRA_PATCHES_QT4}
+		${_EXTRA_PATCHES_QT4} ${_EXTRA_PATCHES_QT5}
 . endif
 
 # Override settings installed in qconfig.h and *.pri files. The flags will be

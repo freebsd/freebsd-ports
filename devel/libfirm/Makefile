@@ -3,7 +3,7 @@
 
 PORTNAME=	libfirm
 PORTVERSION=	1.21.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	SF
 
@@ -13,9 +13,11 @@ COMMENT=	Graph-based SSA intermediate representation library for compilers
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-USE_AUTOTOOLS=	autoconf
+USES=		autoreconf gmake libtool pathfix pkgconfig tar:bzip2
+PATHFIX_MAKEFILEIN=	Makefile.am
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DEBUG
 

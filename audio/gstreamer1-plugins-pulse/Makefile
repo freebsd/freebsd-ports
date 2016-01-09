@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	GStreamer plugin for pulseaudio
+COMMENT=	GStreamer pulseaudio plugin
 
 GST_PLUGIN=	pulse
 DIST=		good

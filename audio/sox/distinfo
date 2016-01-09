@@ -1,2 +1,4 @@
 SHA256 (sox-14.4.2.tar.gz) = b45f598643ffbd8e363ff24d61166ccec4836fea6d3888881b8df53e3bb55f6c
 SIZE (sox-14.4.2.tar.gz) = 1134299
+SHA256 (0001-Remove-pure-attribute-from-functions-with-side-effec.patch) = c267442c506e674b8cba800c0a3425904d91b69f25c0cf5bcb8f31445361c0a0
+SIZE (0001-Remove-pure-attribute-from-functions-with-side-effec.patch) = 1273

@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	xrender xtst
-USES=		cmake gettext pathfix pkgconfig
+USES=		cmake gettext pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig"
 CMAKE_ARGS+=	-DROOT_PREFIX:PATH=${STAGEDIR}

@@ -1,0 +1,22 @@
+--- sshpass.1.orig	2011-08-06 06:58:25 UTC
++++ sshpass.1
+@@ -1,4 +1,4 @@
+-.TH SSHPASS 1 "August 6, 2011" "Lingnu Open Source Consulting" "Sshpass User Manual"
++.TH SSHPASS 1 "April 24, 2015" "Lingnu Open Source Consulting" "Sshpass User Manual"
+ .\" Please adjust this date whenever revising the manpage.
+ .SH NAME
+ sshpass \- noninteractive ssh password provider
+@@ -37,6 +37,13 @@ password is read from the open file desc
+ .TP
+ .B \-e
+ The password is taken from the environment variable "SSHPASS".
++.TP
++.B \-P
++Set the password prompt. Sshpass searched for this prompt in the program's
++output to the TTY as an indication when to send the password. By default
++sshpass looks for the string "assword:" (which matches both "Password:" and
++"password:"). If your client's prompt does not fall under either of these,
++you can override the default with this option.
+ .SH SECURITY CONSIDERATIONS
+ .P
+ First and foremost, users of sshpass should realize that ssh's insistance on

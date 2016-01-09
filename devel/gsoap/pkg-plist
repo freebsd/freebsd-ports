@@ -58,6 +58,8 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/custom/chrono_time_point.h
 %%DATADIR%%/custom/duration.c
 %%DATADIR%%/custom/duration.h
+%%DATADIR%%/custom/int128.c
+%%DATADIR%%/custom/int128.h
 %%DATADIR%%/custom/long_double.c
 %%DATADIR%%/custom/long_double.h
 %%DATADIR%%/custom/long_time.c

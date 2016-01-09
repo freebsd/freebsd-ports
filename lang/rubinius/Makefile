@@ -18,6 +18,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:${PORTSDIR}/sysutils/rubygem-bundler \
 		${LOCALBASE}/bin/llvm-config35:${PORTSDIR}/devel/llvm35 \
 		${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
+BROKEN_FreeBSD_9=	does not build
+BROKEN_FreeBSD_11=	does not build
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-P "${PREFIX}" \
 		-I "${PREFIX}/include/rubinius" \
@@ -35,7 +38,7 @@ CONFIGURE_ARGS=	-P "${PREFIX}" \
 		--stagingdir "${STAGEDIR}${PREFIX}" --with-execinfo \
 		--system-name ${OPSYS}
 
-USES=		perl5 gmake tar:bzip2 readline compiler:c++11-lib
+USES=		perl5 gmake tar:bzip2 readline compiler:c++11-lib libedit
 USE_OPENSSL=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes

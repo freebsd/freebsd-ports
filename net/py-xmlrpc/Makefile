@@ -18,12 +18,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		python
 USE_PYTHON=	distutils autoplist
 
+OPTIONS_DEFINE=	EXAMPLES
+
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 PORTEXAMPLES=	*
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_xmlrpc.so
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 

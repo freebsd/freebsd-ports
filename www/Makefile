@@ -167,7 +167,6 @@
     SUBDIR += efront
     SUBDIR += elgg
     SUBDIR += elinks
-    SUBDIR += eliom
     SUBDIR += elixir-html_entities
     SUBDIR += elixir-httpoison
     SUBDIR += elixir-httpotion
@@ -575,7 +574,6 @@
     SUBDIR += nspluginwrapper
     SUBDIR += obhttpd
     SUBDIR += ocaml-net
-    SUBDIR += ocsigen
     SUBDIR += offline-npm
     SUBDIR += ojs2
     SUBDIR += opencart
@@ -1521,6 +1519,7 @@
     SUBDIR += py-clientform
     SUBDIR += py-collective.easytemplate
     SUBDIR += py-collective.templateengines
+    SUBDIR += py-cookies
     SUBDIR += py-cssmin
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
@@ -2147,6 +2146,8 @@
     SUBDIR += trac-iniadmin
     SUBDIR += trac-keywords
     SUBDIR += trac-keywordsecretticket
+    SUBDIR += trac-ldap
+    SUBDIR += trac-ldapauthstore
     SUBDIR += trac-mastertickets
     SUBDIR += trac-math
     SUBDIR += trac-mercurial

@@ -42,6 +42,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/share/exiftool && ${INSTALL_DATA} *.html *.txt \
 		${STAGEDIR}${DATADIR}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}
 

@@ -1,0 +1,31 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+# PROVIDE: fakeidentd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf[.local] to enable fakeident.
+#
+# fakeidentd_enable (bool):      Set to 'YES' to enable
+#                               Default: NO
+
+. /etc/rc.subr
+
+# This can be changed as desired.
+# The username does not need to exist anywhere in your system.
+
+name=fakeidentd
+rcvar=fakeidentd_enable
+
+load_rc_config $name
+
+: ${fakeidentd_enable:="NO"}
+
+command=%%PREFIX%%/sbin/identd
+pidfile=/var/run/identd.pid
+
+command_args="nobody && echo -n ' fakeidentd'"
+
+run_rc_command "$1"

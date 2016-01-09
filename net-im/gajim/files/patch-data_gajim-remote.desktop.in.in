@@ -1,0 +1,14 @@
+Fix desktop-file-validate warnings. This is upstream commit:
+https://trac.gajim.org/changeset/eaea5e65364b167d14dc191b00f114b4f5ccb508/
+
+--- data/gajim-remote.desktop.in.in.orig	2015-12-28 12:38:50 UTC
++++ data/gajim-remote.desktop.in.in
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Categories=Network;InstantMessaging;RemoteAccess;ConsoleOnly;
+ _Name=Gajim Remote
+-_Keywords=chat;messaging;im;jabber;xmpp;bonjour;voip
++_Keywords=chat;messaging;im;jabber;xmpp;bonjour;voip;
+ Version=1.0
+ Exec=gajim-remote handle_uri %u
+ TryExec=gajim-remote

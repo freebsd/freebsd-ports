@@ -12,18 +12,21 @@ DISTNAME=	Grouch-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for describing and enforcing a Python object schema
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 USES=		python:2
 USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in CHANGES README
 	${INSTALL_DATA} ${WRKSRC}/${docfile}.txt ${STAGEDIR}${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 

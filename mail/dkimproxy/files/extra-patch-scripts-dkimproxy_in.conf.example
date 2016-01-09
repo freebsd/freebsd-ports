@@ -1,5 +1,5 @@
---- scripts/dkimproxy_in.conf.example	2014-11-05 08:47:46.842715313 +0300
-+++ scripts/dkimproxy_in.conf.example	2014-11-05 08:48:19.031713000 +0300
+--- scripts/dkimproxy_in.conf.example.orig	2009-07-30 01:01:50 UTC
++++ scripts/dkimproxy_in.conf.example
 @@ -1,5 +1,5 @@
  # specify what address/port DKIMproxy should listen on
 -listen    127.0.0.1:10025

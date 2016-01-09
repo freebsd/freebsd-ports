@@ -55,6 +55,11 @@ for config in ${dovecot_config}; do
 	if [ -f ${config} ]; then
 		base_dir=$(${command} ${command_args} -a | /usr/bin/awk -F '= ' '/^base_dir =/ { print $2 }')
 		pidfile="${base_dir}/master.pid"
-		run_rc_command "$1"
+	else
+		echo "==Error=="
+		echo "Config file ${config} does not exist. If this is"
+		echo "a new installation, please create the config files as outlined in"
+		echo "	# pkg info -D dovecot2"
 	fi
+	run_rc_command "$1"
 done

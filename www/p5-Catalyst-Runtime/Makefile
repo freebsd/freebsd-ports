@@ -32,6 +32,7 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-JSON-MaybeXS>=1:${PORTSDIR}/converters/p5-JSON-MaybeXS \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
+		p5-Module-Pluggable>=4.7:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Emulate-Class-Accessor-Fast>=0.00903:${PORTSDIR}/devel/p5-MooseX-Emulate-Class-Accessor-Fast \
 		p5-MooseX-Getopt>=0.48:${PORTSDIR}/devel/p5-MooseX-Getopt \
@@ -72,17 +73,4 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501800
-BUILD_DEPENDS+=	p5-Encode>=2.49:${PORTSDIR}/converters/p5-Encode
-RUN_DEPENDS+=	p5-Encode>=2.49:${PORTSDIR}/converters/p5-Encode
-.endif
-
-# Devel::InnerPackage (in Module::Pluggable) will be removed from core since Perl 5.20
-.if ${PERL_LEVEL} >= 501800
-BUILD_DEPENDS+=	p5-Module-Pluggable>=4.7:${PORTSDIR}/devel/p5-Module-Pluggable
-RUN_DEPENDS+=	p5-Module-Pluggable>=4.7:${PORTSDIR}/devel/p5-Module-Pluggable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

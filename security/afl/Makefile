@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	1.86b
+PORTVERSION=	1.95b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
@@ -37,13 +37,8 @@ BUILD_DEPENDS +=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 RUN_DEPENDS +=		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 .endif
 
-.if ${PORT_OPTIONS:MMINIMIZE_CORPUS}
-RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
-.endif
-
-.if ${PORT_OPTIONS:MPLOT_SUPPORT}
-RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
-.endif
+MINIMIZE_CORPUS_RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+PLOT_SUPORT_RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 post-patch:
 .if ! ${PORT_OPTIONS:MTEST_INSTRUMENTATION}
@@ -60,11 +55,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's@\(  as_params\[0\] = "\)@\1${LOCALBASE}/bin/@' \
 		${WRKSRC}/afl-as.c
 .endif
-# XXX remove once 8.4-RELEASE is EOL
-# GNU as 2.15 doesn't understand lahf/sahf on amd64
-	${REINPLACE_CMD} -e 's@ifdef.*\(__OpenBSD__\)@if defined(\1) || \
-		(defined(__FreeBSD__) \&\& __FreeBSD__ < 9)@' \
-		${WRKSRC}/afl-as.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/COPYING ${STAGEDIR}${DOCSDIR}/
@@ -73,8 +63,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${afl_script} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 
-.if ${PORT_OPTIONS:MMINIMIZE_CORPUS}
+post-install-MINIMIZE_CORPUS-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/afl-cmin ${STAGEDIR}${PREFIX}/bin/
-.endif
 
 .include <bsd.port.post.mk>

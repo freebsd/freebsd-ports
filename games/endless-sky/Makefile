@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	endless-sky
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -29,6 +29,6 @@ post-build:
 		${WRKSRC}/source/Files.cpp
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -12,11 +12,9 @@ COMMENT=	C++ RTSP/RTMP/MPEG-TS Server
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=		cmake:outsource lua
+USES=		cmake:outsource execinfo lua
 CMAKE_SOURCE_PATH=	${WRKSRC}/builders/cmake
 CMAKE_ARGS=	-DCRTMPSERVER_INSTALL_PREFIX:STRING=${PREFIX} -DTEMP_FRAMEWORK_VER=${PORTVERSION}
 USE_OPENSSL=	yes

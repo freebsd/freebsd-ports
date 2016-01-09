@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	concurrencykit
-PORTVERSION=	0.4.5
+PORTVERSION=	0.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://concurrencykit.org/releases/ \
 		http://repnop.org/releases/
@@ -31,6 +31,8 @@ HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 
+TEST_TARGET=	check
+
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-extract:
@@ -39,8 +41,5 @@ post-extract:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libck.so.${PORTVERSION}
-
-regression-test: build
-	@cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.mk>

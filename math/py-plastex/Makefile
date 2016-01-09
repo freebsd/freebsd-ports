@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	plastex
-PORTVERSION=	0.9.2
+PORTVERSION=	1.0.0
 CATEGORIES=	math python
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/rel-0-9-2
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX Document Processing Framework
 
-BROKEN=		unfetchable
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_GITHUB=	yes
+GH_ACCOUNT=	tiarno
+
 USES=		python
 USE_PYTHON=	distutils autoplist
+USE_TEX=	base:run
 
 .include <bsd.port.mk>

@@ -4,16 +4,19 @@ a (modulo some small extras) full featured clone of QIV written in C
 using GTK-2 and GLIB-2.
 
 Features include:
-* Fullscreen
-* Slideshow
-* Rotate / Flip
-* (Automatic/manual) Zoom
-* Move by drag & drop in fullscreen
-* Keep preferences in a configuration file
-* Rather small executable (~36k), low ram consumtion, quick
-* Execute predefined commands, pipe images through them or display
-  their output
-* Real transparency
+* Command line image viewer
+* Directory traversing to view whole directories
+* Watch files and directories for changes
+* Natural order sorting of the images
+* A status bar showing information on the current image
+* Transparency and animation support
+* Moving, zooming, rotation, flipping
+* Slideshows
+* Highly customizable
+* Supports external image filters (e.g. convert)
+* Preloads the next image in the background
 * Fade between images
+* Optional PDF/eps/ps support (useful e.g. for scientific plots)
+* Optional video format support (e.g. for webm animations)
 
-WWW: http://www.pberndt.com/Programme/Linux/pqiv/index.html
+WWW: https://github.com/phillipberndt/pqiv

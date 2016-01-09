@@ -5,12 +5,11 @@ PORTNAME=	vym
 PORTVERSION=	2.2.4
 PORTREVISION=	3
 CATEGORIES=	deskutils
-MASTER_SITES=	SF/vym/${PORTVERSION}
+MASTER_SITES=	SF/vym/Archive/${PORTVERSION}
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	VYM is a tool to generate and manipulate mind maps
 
-BROKEN=		unfetchable
 USES=		qmake shebangfix tar:bzip2
 SHEBANG_FILES=	scripts/makedist-vym scripts/vivym
 USE_QT4=	uic_build moc_build qt3support_build \

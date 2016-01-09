@@ -29,10 +29,4 @@
 %%SQUIRRELDIR%%/plugins/login_auth/templates/default/login_auth_signout.tpl
 %%SQUIRRELDIR%%/plugins/login_auth/templates/index.php
 %%SQUIRRELDIR%%/plugins/login_auth/version
-@dirrm %%SQUIRRELDIR%%/plugins/login_auth/templates/default
-@dirrm %%SQUIRRELDIR%%/plugins/login_auth/templates
-@dirrm %%SQUIRRELDIR%%/plugins/login_auth/locale
-@dirrm %%SQUIRRELDIR%%/plugins/login_auth/docs
-@dirrm %%SQUIRRELDIR%%/plugins/login_auth/contrib
-@dirrm %%SQUIRRELDIR%%/plugins/login_auth
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin login_auth; fi

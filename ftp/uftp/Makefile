@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	uftp
-PORTVERSION=	4.7
+PORTVERSION=	4.8
 PORTEPOCH=	1
 CATEGORIES=	ftp
-MASTER_SITES=	http://uftp-multicast.sourceforge.net/downloads/
-EXTRACT_SUFX=	.tar
+MASTER_SITES=	SF/uftp-multicast/source-zip
+DISTNAME=	uftp_src-${DISTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Multicast capable FTP client and server
@@ -14,7 +14,8 @@ COMMENT=	Multicast capable FTP client and server
 LICENSE=	GPLv3
 
 MAKEFILE=	makefile
-USES=		gmake
+USES=		zip gmake
+EXTRACT_BEFORE_ARGS=	-qoa	# -a to clean up DOS line endings
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uftp ${STAGEDIR}${PREFIX}/bin/

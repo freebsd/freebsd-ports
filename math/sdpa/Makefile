@@ -5,14 +5,12 @@ PORTNAME=	sdpa
 PORTVERSION=	7.3.1
 PORTREVISION=	4
 CATEGORIES=	math
-MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
+MASTER_SITES=	SF/${PORTNAME}/archive/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}.${PORTVERSION}.src-${SRCDATE}
 DIST_SUBDIR=	sdpa
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very efficient SDP (semidefinite programming) solver
-
-BROKEN=		unfetchable
 
 USES=		fortran gmake
 

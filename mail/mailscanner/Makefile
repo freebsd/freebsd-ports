@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.84.6
+PORTVERSION=	4.85.2
 #PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
-DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
+MASTER_SITES=	https://s3.amazonaws.com/mailscanner/release/v4/tar/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${PATCHLEVEL}
 
 MAINTAINER=	kkobb@skylinecorp.com
 COMMENT=	Powerful virus/spam scanning framework for mail gateways
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	\
 	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
@@ -38,7 +40,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
-PATCHLEVEL=	1
+PATCHLEVEL=	3
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	bin/[^c]* bin/clean* \
@@ -105,7 +107,7 @@ PLIST_SUB+=	SPAMASSASSIN_SYMLINK=""
 SUB_LIST+=	WITHOUT_SPAMASSASSIN_SYMLINK=no
 .endif
 
-DOC_FILES=	INSTALL.FreeBSD README
+DOC_FILES=	README
 ETC_FILES=	MailScanner.conf filename.rules.conf \
 		archives.filename.rules.conf archives.filetype.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \

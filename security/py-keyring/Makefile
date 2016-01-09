@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	keyring
-PORTVERSION=	5.6
+PORTVERSION=	5.7.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,8 @@ COMMENT=	Store and access your passwords safely
 
 LICENSE=	PSFL
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:${PORTSDIR}/devel/py-pytest-runner \
-		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:${PORTSDIR}/devel/py-setuptools_scm
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8:${PORTSDIR}/devel/py-pytest \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.9:${PORTSDIR}/devel/py-setuptools_scm
 
 NO_ARCH=	yes
 USES=		python

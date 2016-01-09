@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mbedtls
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 DISTVERSIONSUFFIX=	-apache
 CATEGORIES=	security devel
 MASTER_SITES=	https://tls.mbed.org/download/

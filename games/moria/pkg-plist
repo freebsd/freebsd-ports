@@ -1,7 +1,6 @@
 @owner games
 @group games
-@mode 4711
-bin/moria
+@(,,4711) bin/moria
 @mode 444
 %%DATADIR%%/hours
 %%DATADIR%%/news
@@ -9,13 +8,10 @@ bin/moria
 %%DATADIR%%/owizcmds.hlp
 %%DATADIR%%/roglcmds.hlp
 %%DATADIR%%/rwizcmds.hlp
-@mode 644
-%%DATADIR%%/scores
-@mode 444
+@(,,644) %%DATADIR%%/scores
 %%DATADIR%%/version.hlp
 %%DATADIR%%/welcome.hlp
 @owner
 @group
 @mode
 man/man6/moria.6.gz
-@dirrm %%DATADIR%%

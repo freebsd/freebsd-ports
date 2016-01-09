@@ -3,7 +3,7 @@
 
 PORTNAME=	unzip
 PORTVERSION=	6.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	archivers
 MASTER_SITES=	SF/infozip/UnZip%206.x%20%28latest%29/UnZip%20${PORTVERSION}/:main \
 		SF/infozip/UnZip%205.x%20and%20earlier/5.51/:unreduce

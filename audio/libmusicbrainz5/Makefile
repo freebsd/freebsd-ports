@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
 
-USES=		cmake iconv:build
+USES=		cmake iconv:build pathfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
@@ -21,8 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
 
 post-patch:
-	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \
-		 ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|%%ICONV_PREFIX%%|${ICONV_PREFIX}|g' \
 		 ${WRKSRC}/src/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \

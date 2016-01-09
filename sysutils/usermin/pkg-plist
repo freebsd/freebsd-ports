@@ -140,11 +140,13 @@ lib/usermin/authentic-theme/authentic.pl
 lib/usermin/authentic-theme/buttons.cgi
 lib/usermin/authentic-theme/changelog.pl
 lib/usermin/authentic-theme/config
+lib/usermin/authentic-theme/images/__blank.gif
 lib/usermin/authentic-theme/images/__logo.png
 lib/usermin/authentic-theme/images/after.gif
 lib/usermin/authentic-theme/images/attach.gif
 lib/usermin/authentic-theme/images/before.gif
 lib/usermin/authentic-theme/images/blank.gif
+lib/usermin/authentic-theme/images/blank.png
 lib/usermin/authentic-theme/images/blue.gif
 lib/usermin/authentic-theme/images/bottom.gif
 lib/usermin/authentic-theme/images/bottom.png
@@ -922,7 +924,6 @@ lib/usermin/authentic-theme/images/usage-web.gif
 lib/usermin/authentic-theme/images/use.gif
 lib/usermin/authentic-theme/images/users.gif
 lib/usermin/authentic-theme/index.cgi
-lib/usermin/authentic-theme/lang/ca
 lib/usermin/authentic-theme/lang/cz
 lib/usermin/authentic-theme/lang/cz.UTF-8
 lib/usermin/authentic-theme/lang/da
@@ -994,10 +995,6 @@ lib/usermin/authentic-theme/unauthenticated/fonts/roboto/owYYXKukxFDFjr0ZO8NXh1t
 lib/usermin/authentic-theme/unauthenticated/fonts/roboto/owYYXKukxFDFjr0ZO8NXhz8E0i7KZn-EPnyo3HZu7kw.woff
 lib/usermin/authentic-theme/unauthenticated/fonts/roboto/tZdhd9Zzj0I2MwoD56osIw.woff2
 lib/usermin/authentic-theme/unauthenticated/fonts/roboto/vxNK-E6B13CyehuDCmvQvw.woff
-lib/usermin/authentic-theme/unauthenticated/fonts/wbm-webfont.eot
-lib/usermin/authentic-theme/unauthenticated/fonts/wbm-webfont.svg
-lib/usermin/authentic-theme/unauthenticated/fonts/wbm-webfont.ttf
-lib/usermin/authentic-theme/unauthenticated/fonts/wbm-webfont.woff
 lib/usermin/authentic-theme/unauthenticated/js/authentic.js
 lib/usermin/authentic-theme/unauthenticated/js/authentic.min.js
 lib/usermin/authentic-theme/unauthenticated/js/cgi.min.js
@@ -2543,6 +2540,8 @@ lib/usermin/cron/help/intro.nl.UTF-8.html
 lib/usermin/cron/help/intro.nl.html
 lib/usermin/cron/help/intro.no.UTF-8.html
 lib/usermin/cron/help/intro.no.html
+lib/usermin/cron/help/intro.pl.UTF-8.html
+lib/usermin/cron/help/intro.pl.html
 lib/usermin/cron/help/intro.sv.UTF-8.html
 lib/usermin/cron/help/intro.sv.html
 lib/usermin/cron/help/intro.zh_TW.Big5.html
@@ -3128,7 +3127,9 @@ lib/usermin/filemin/bookmark.cgi
 lib/usermin/filemin/chmod.cgi
 lib/usermin/filemin/chown.cgi
 lib/usermin/filemin/compress.cgi
+lib/usermin/filemin/config
 lib/usermin/filemin/config.cgi
+lib/usermin/filemin/config.info
 lib/usermin/filemin/copy.cgi
 lib/usermin/filemin/create_file.cgi
 lib/usermin/filemin/create_folder.cgi
@@ -3412,6 +3413,9 @@ lib/usermin/filemin/images/icons/quick/rename.png
 lib/usermin/filemin/images/icons/quick/select-all.png
 lib/usermin/filemin/images/icons/quick/upload.png
 lib/usermin/filemin/index.cgi
+lib/usermin/filemin/lang/ca
+lib/usermin/filemin/lang/ca.UTF-8
+lib/usermin/filemin/lang/de.UTF-8
 lib/usermin/filemin/lang/en
 lib/usermin/filemin/lang/en.UTF-8
 lib/usermin/filemin/lang/ru.UTF-8
@@ -5629,6 +5633,8 @@ lib/usermin/mailcap/lang/nl
 lib/usermin/mailcap/lang/nl.UTF-8
 lib/usermin/mailcap/lang/no
 lib/usermin/mailcap/lang/no.UTF-8
+lib/usermin/mailcap/lang/pl
+lib/usermin/mailcap/lang/pl.UTF-8
 lib/usermin/mailcap/log_parser.pl
 lib/usermin/mailcap/mailcap-lib.pl
 lib/usermin/mailcap/module.info
@@ -7331,10 +7337,8 @@ lib/usermin/proc/lang/zh_TW.Big5
 lib/usermin/proc/lang/zh_TW.UTF-8
 lib/usermin/proc/linux-lib.pl
 lib/usermin/proc/log_parser.pl
-lib/usermin/proc/low.skill
 lib/usermin/proc/macos-lib.pl
 lib/usermin/proc/medium.risk
-lib/usermin/proc/medium.skill
 lib/usermin/proc/module.info
 lib/usermin/proc/old-proc-lib.pl
 lib/usermin/proc/open_files.cgi
@@ -7687,12 +7691,14 @@ lib/usermin/spam/uconfig.info.ca
 lib/usermin/spam/uconfig.info.cz
 lib/usermin/spam/uconfig.info.de
 lib/usermin/spam/uconfig.info.fr
+lib/usermin/spam/uconfig.info.fr.UTF-8
 lib/usermin/spam/uconfig.info.nl
 lib/usermin/spam/uconfig.info.no
 lib/usermin/spam/uconfig.info.pl
 lib/usermin/spam/ulang/ca
 lib/usermin/spam/ulang/de
 lib/usermin/spam/ulang/en
+lib/usermin/spam/ulang/fr.UTF-8
 lib/usermin/spam/ulang/nl
 lib/usermin/spam/ulang/no
 lib/usermin/spam/ulang/pl
@@ -7961,6 +7967,8 @@ lib/usermin/updown/lang/nl
 lib/usermin/updown/lang/nl.UTF-8
 lib/usermin/updown/lang/no
 lib/usermin/updown/lang/no.UTF-8
+lib/usermin/updown/lang/pl
+lib/usermin/updown/lang/pl.UTF-8
 lib/usermin/updown/lang/ru.UTF-8
 lib/usermin/updown/lang/ru_RU
 lib/usermin/updown/lang/ru_SU

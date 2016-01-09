@@ -1,7 +1,7 @@
 diff -dPNur ./config.h.cmake ./config.h.cmake
---- ./config.h.cmake	2013-10-08 17:50:01.000000000 +0200
-+++ ./config.h.cmake	2013-11-11 13:43:48.500304915 +0100
-@@ -31,6 +31,9 @@
+--- config.h.cmake.orig	2015-11-11 21:41:59 UTC
++++ config.h.cmake
+@@ -22,6 +22,9 @@
  /* Defined if you have libz */
  #cmakedefine   HAVE_ZLIB 1
  
@@ -12,16 +12,17 @@ diff -dPNur ./config.h.cmake ./config.h.cmake
  #cmakedefine   TRACE_IN_RELEASE 1
  
 diff -dPNur ./ConfigureChecks.cmake ./ConfigureChecks.cmake
---- ./ConfigureChecks.cmake	2013-10-08 17:50:01.000000000 +0200
-+++ ./ConfigureChecks.cmake	2013-11-11 13:42:53.017126134 +0100
-@@ -216,6 +216,7 @@
-   set(HAVE_ZLIB 0)
+--- ConfigureChecks.cmake.orig	2015-11-11 21:41:59 UTC
++++ ConfigureChecks.cmake
+@@ -201,6 +201,8 @@ if(NOT ZLIB_SOURCE)
+   endif()
  endif()
  
 +SET(HAVE_LIBRCC 1)
- 
- set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
- 
++
+ if(BUILD_TESTS)
+   find_package(CppUnit)
+   if(NOT CppUnit_FOUND)
 diff -dPNur ./examples/tagreader_c.c ./examples/tagreader_c.c
 --- ./examples/tagreader_c.c	2013-10-08 17:50:01.000000000 +0200
 +++ ./examples/tagreader_c.c	2013-11-11 13:42:53.017126134 +0100
@@ -47,17 +48,17 @@ diff -dPNur ./examples/tagwriter.cpp ./examples/tagwriter.cpp
        TagLib::List<TagLib::FileRef>::Iterator it;
        for(it = fileList.begin(); it != fileList.end(); ++it) {
 diff -dPNur ./taglib/CMakeLists.txt ./taglib/CMakeLists.txt
---- ./taglib/CMakeLists.txt	2013-10-08 17:50:01.000000000 +0200
-+++ ./taglib/CMakeLists.txt	2013-11-11 13:42:53.042126665 +0100
-@@ -36,6 +36,7 @@
+--- taglib/CMakeLists.txt.orig	2015-11-11 21:41:59 UTC
++++ taglib/CMakeLists.txt
+@@ -38,6 +38,7 @@ set(tag_HDRS
    audioproperties.h
    taglib_export.h
-   ${CMAKE_BINARY_DIR}/taglib_config.h
+   ${CMAKE_CURRENT_BINARY_DIR}/../taglib_config.h
 +  toolkit/rccpatch.h
    toolkit/taglib.h
    toolkit/tstring.h
    toolkit/tlist.h
-@@ -281,6 +282,7 @@
+@@ -291,6 +292,7 @@ set(xm_SRCS
  )
  
  set(toolkit_SRCS
@@ -65,12 +66,12 @@ diff -dPNur ./taglib/CMakeLists.txt ./taglib/CMakeLists.txt
    toolkit/tstring.cpp
    toolkit/tstringlist.cpp
    toolkit/tbytevector.cpp
-@@ -310,7 +312,7 @@
+@@ -337,7 +339,7 @@ set(tag_LIB_SRCS
  add_library(tag ${tag_LIB_SRCS} ${tag_HDRS})
  
  if(ZLIB_FOUND)
--	target_link_libraries(tag ${ZLIB_LIBRARIES})
-+	target_link_libraries(tag rcc ${ZLIB_LIBRARIES})
+-  target_link_libraries(tag ${ZLIB_LIBRARIES})
++  target_link_libraries(tag rcc ${ZLIB_LIBRARIES})
  endif()
  
  set_target_properties(tag PROPERTIES
@@ -450,8 +451,8 @@ diff -dPNur ./taglib/toolkit/rccpatch.h ./taglib/toolkit/rccpatch.h
 +
 +#endif /* _RCC_PATCH_H */
 diff -dPNur ./taglib/toolkit/tstring.cpp ./taglib/toolkit/tstring.cpp
---- ./taglib/toolkit/tstring.cpp	2013-10-08 17:50:01.000000000 +0200
-+++ ./taglib/toolkit/tstring.cpp	2013-11-11 13:42:53.046126750 +0100
+--- taglib/toolkit/tstring.cpp.orig	2015-11-11 21:41:59 UTC
++++ taglib/toolkit/tstring.cpp
 @@ -29,6 +29,7 @@
  #include <config.h>
  #endif
@@ -460,21 +461,21 @@ diff -dPNur ./taglib/toolkit/tstring.cpp ./taglib/toolkit/tstring.cpp
  #include "tstring.h"
  #include "tdebug.h"
  #include "tstringlist.h"
-@@ -197,8 +198,11 @@
+@@ -167,8 +168,11 @@ String::String(const String &s)
  String::String(const std::string &s, Type t)
    : d(new StringPrivate())
  {
 -  if(t == Latin1)
--    copyFromLatin1(&s[0], s.length());
+-    copyFromLatin1(s.c_str(), s.length());
 +  if(t == Locale)
 +    t = rccTaglibPatchGetLocaleType();
 +
 +  if(t == Latin1 || t == Latin1ID3 || t == Latin1ID3V2)
-+    copyFromLatin1(&s[0], s.length(), true, t);
++    copyFromLatin1(s.c_str(), s.length(), true, t);
    else if(t == String::UTF8)
-     copyFromUTF8(&s[0], s.length());
+     copyFromUTF8(s.c_str(), s.length());
    else {
-@@ -229,8 +233,11 @@
+@@ -215,8 +219,11 @@ String::String(const wchar_t *s, Type t)
  String::String(const char *s, Type t)
    : d(new StringPrivate())
  {
@@ -488,7 +489,7 @@ diff -dPNur ./taglib/toolkit/tstring.cpp ./taglib/toolkit/tstring.cpp
    else if(t == String::UTF8)
      copyFromUTF8(s, ::strlen(s));
    else {
-@@ -251,7 +258,10 @@
+@@ -237,7 +244,10 @@ String::String(wchar_t c, Type t)
  String::String(char c, Type t)
    : d(new StringPrivate(1, static_cast<uchar>(c)))
  {
@@ -497,31 +498,30 @@ diff -dPNur ./taglib/toolkit/tstring.cpp ./taglib/toolkit/tstring.cpp
 +    t = rccTaglibPatchGetLocaleType();
 +
 +  if(t != Latin1 && t != Latin1ID3 && t != Latin1ID3V2 && t != UTF8) {
-     debug("String::String() -- A char should not contain UTF16.");
+     debug("String::String() -- char should not contain UTF16.");
    }
  }
-@@ -262,8 +272,11 @@
+@@ -248,8 +258,11 @@ String::String(const ByteVector &v, Type
    if(v.isEmpty())
      return;
  
--  if(t == Latin1) 
+-  if(t == Latin1)
 -    copyFromLatin1(v.data(), v.size());
 +  if(t == Locale)
 +    t = rccTaglibPatchGetLocaleType();
 +
 +  if(t == Latin1 || t == Latin1ID3 || t == Latin1ID3V2)
 +    copyFromLatin1(v.data(), v.size(), true, t);
-   else if(t == UTF8) 
+   else if(t == UTF8)
      copyFromUTF8(v.data(), v.size());
-   else 
-@@ -428,16 +441,46 @@
+   else
+@@ -396,8 +409,37 @@ bool String::isNull() const
  
  ByteVector String::data(Type t) const
  {
--  switch(t) 
+-  switch(t)
 -  {
 +  ByteVector v;
-+
 +  if (t == Locale) {
 +        // The source is either Unicode or real Latin1 (if rcc is bypassed)
 +    std::string s = to8Bit(true);
@@ -555,17 +555,7 @@ diff -dPNur ./taglib/toolkit/tstring.cpp ./taglib/toolkit/tstring.cpp
    case Latin1:
      {
        ByteVector v(size(), 0);
-       char *p = v.data();
--
-+ 
-       for(wstring::const_iterator it = d->data.begin(); it != d->data.end(); it++)
-         *p++ = static_cast<char>(*it);
--
-+ 
-       return v;
-     }
-   case UTF8:
-@@ -763,12 +806,29 @@
+@@ -738,12 +780,29 @@ void String::detach()
  // private members
  ////////////////////////////////////////////////////////////////////////////////
  
@@ -597,7 +587,7 @@ diff -dPNur ./taglib/toolkit/tstring.cpp ./taglib/toolkit/tstring.cpp
  }
  
  void String::copyFromUTF8(const char *s, size_t length)
-@@ -874,7 +934,33 @@
+@@ -859,7 +918,33 @@ const TagLib::String operator+(const Tag
  
  std::ostream &operator<<(std::ostream &s, const TagLib::String &str)
  {

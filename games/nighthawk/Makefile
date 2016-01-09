@@ -12,15 +12,14 @@ COMMENT=	X11 shoot-'em up which requires some lateral thinking
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake tar:bzip2
+USES=		gmake localbase tar:bzip2
 USE_GL=		glut
 MAKE_ARGS=	CC="${CC}" CPP="${CXX}" CC_FLAGS="${CXXFLAGS}" \
 		LIB_FLAGS="${LDFLAGS}" GCC="${CC}" CFLAGS="${CFLAGS}"
 
 CFLAGS+=	-DINSTALL_DIR=\\\"\${DATADIR}\\\" \
-		-DSCORES_FILE=\\\"/var/games/nighthawk.scores\\\" \
-		-I${LOCALBASE}/include
-LDFLAGS+=	-lm -L${LOCALBASE}/lib -lX11 -lGL -lGLU -lglut
+		-DSCORES_FILE=\\\"/var/games/nighthawk.scores\\\"
+LDFLAGS+=	-lm -lX11 -lGL -lGLU -lglut
 
 post-patch:
 	${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \

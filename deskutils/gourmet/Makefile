@@ -3,7 +3,7 @@
 
 PORTNAME=	gourmet
 PORTVERSION=	0.17.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 
 MAINTAINER=	rm@FreeBSD.org
@@ -12,7 +12,7 @@ COMMENT=	GNOME recipe manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distutils-extra>0:${PORTSDIR}/devel/py-distutils-extra \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:${PORTSDIR}/devel/py-python-distutils-extra \
 		${PYTHON_PKGNAMEPREFIX}elib.intl>0:${PORTSDIR}/textproc/py-elib.intl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:${PORTSDIR}/databases/py-sqlalchemy \

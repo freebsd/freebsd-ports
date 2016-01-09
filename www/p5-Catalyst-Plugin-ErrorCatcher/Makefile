@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80000:${PORTSDIR}/www/p5-Catalyst-Runtime 
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-File-Type>=0:${PORTSDIR}/devel/p5-File-Type \
 		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
+		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -41,11 +42,4 @@ TEST_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0.10010:${PORTSDIR}/www/p5-Cata
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 501800
-BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
-RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,22 @@
+From a6f3d9f2133e3656b9c63441c600a7219b54450c Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ladislav=20L=C3=A1ska?= <krakonos@krakonos.org>
+Date: Mon, 27 Jul 2015 11:01:52 +0200
+Subject: [PATCH] Fixed version info in tarballs.
+
+--- src/Config.pri.orig	2015-07-19 14:50:09 UTC
++++ src/Config.pri
+@@ -1,7 +1,12 @@
+ # see http://merkaartor.be/wiki/merkaartor/Compiling
+ 
+-REVISION = $$system(git describe --tags)
+-VERSION = $$system(git describe --tags | sed "'s/-g.*//;s/-/./g'")
++REVISION = $$system(git describe --tags 2> /dev/null)
++VERSION = $$system(git describe --tags 2> /dev/null | sed "'s/-g.*//;s/-/./g'")
++isEmpty( REVISION ) {
++	REVISION = $$system(head -n 1 ../CHANGELOG | sed "'s/^v//'")
++	VERSION = $$REVISION
++}
++
+ ARCH=""
+ BITS=""
+ win32 {

@@ -15,6 +15,8 @@ COMMENT=	FUSE Python bindings
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 USES=		fuse pkgconfig python iconv
 USE_PYTHON=	distutils autoplist
 
@@ -30,8 +32,10 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/fuseparts/_fusemodule.so
+post-install-DOCS-on:
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+post-install-EXAMPLES-on:
 	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/example/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
 

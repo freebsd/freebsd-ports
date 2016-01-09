@@ -19,17 +19,17 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/include/classic_core.hpp:${PORT
 		gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	wojdyr
+
 USES=		compiler:c++11-lib desktop-file-utils gmake libtool \
 		shared-mime-info tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LDFLAGS+=	-lbz2 -lz
-USE_GITHUB=	yes
-GH_ACCOUNT=	wojdyr
 USE_CXXSTD=	c++11
 USE_GNOME=	gtk20
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute
-WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-doc --disable-xyconvert
 USE_LDCONFIG=	yes
@@ -70,6 +70,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/fityk.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKDIR}/${XYLIB_DISTNAME}/xyconv ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${XYLIB_DISTNAME}/xyconv.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 

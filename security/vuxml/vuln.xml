@@ -58,6 +58,1385 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5f276780-b6ce-11e5-9731-5453ed2e2b49">
+    <topic>pygments -- shell injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>py27-pygments</name>
+	<name>py32-pygments</name>
+	<name>py33-pygments</name>
+	<name>py34-pygments</name>
+	<name>py35-pygments</name>
+	<range><lt>2.0.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8557">
+	  <p>The FontManager._get_nix_font_path function in formatters/img.py
+	    in Pygments 1.2.2 through 2.0.2 allows remote attackers to execute
+	    arbitrary commands via shell metacharacters in a font name.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8557</cvename>
+      <mlist>http://seclists.org/fulldisclosure/2015/Oct/4</mlist>
+      <url>https://bitbucket.org/birkenfeld/pygments-main/commits/0036ab1c99e256298094505e5e92fdacdfc5b0a8</url>
+    </references>
+    <dates>
+      <discovery>2015-09-28</discovery>
+      <entry>2016-01-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="631fc042-b636-11e5-83ef-14dae9d210b8">
+    <topic>polkit -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>polkit</name>
+	<range><lt>0.113</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Colin Walters reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/polkit-devel/2015-June/000425.html">
+	  <ul>
+	    <li><p>Integer overflow in the
+	    authentication_agent_new_cookie function in PolicyKit (aka polkit)
+	    before 0.113 allows local users to gain privileges by creating a large
+	    number of connections, which triggers the issuance of a duplicate cookie
+	    value.</p></li>
+	    <li><p>The authentication_agent_new function in
+	    polkitbackend/polkitbackendinteractiveauthority.c in PolicyKit (aka
+	    polkit) before 0.113 allows local users to cause a denial of service
+	    (NULL pointer dereference and polkitd daemon crash) by calling
+	    RegisterAuthenticationAgent with an invalid object path.</p></li>
+	    <li><p>The polkit_backend_action_pool_init function in
+	    polkitbackend/polkitbackendactionpool.c in PolicyKit (aka polkit) before
+	    0.113 might allow local users to gain privileges via duplicate action
+	    IDs in action descriptions.</p></li>
+	    <li><p>PolicyKit (aka polkit) before 0.113 allows local
+	    users to cause a denial of service (memory corruption and polkitd daemon
+	    crash) and possibly gain privileges via unspecified vectors, related to
+	    "javascript rule evaluation."</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.freedesktop.org/archives/polkit-devel/2015-June/000425.html</url>
+      <cvename>CVE-2015-4625</cvename>
+      <cvename>CVE-2015-3218</cvename>
+      <cvename>CVE-2015-3255</cvename>
+      <cvename>CVE-2015-3256</cvename>
+    </references>
+    <dates>
+      <discovery>2015-06-03</discovery>
+      <entry>2016-01-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b22b016b-b633-11e5-83ef-14dae9d210b8">
+    <topic>librsync -- collision vulnerability</topic>
+    <affects>
+      <package>
+	<name>librsync</name>
+	<range><lt>1.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael Samuel reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/07/28/1">
+	  <p>librsync before 1.0.0 uses a truncated MD4 checksum to
+	    match blocks, which makes it easier for remote attackers to modify
+	    transmitted data via a birthday attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2014/07/28/1</url>
+      <cvename>CVE-2014-8242</cvename>
+    </references>
+    <dates>
+      <discovery>2014-07-28</discovery>
+      <entry>2016-01-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4eae4f46-b5ce-11e5-8a2b-d050996490d0">
+    <topic>ntp -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.8p5</lt></range>
+      </package>
+      <package>
+	<name>ntp-devel</name>
+	<range><lt>4.3.78</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Network Time Foundation reports:</p>
+	<blockquote cite="http://support.ntp.org/bin/view/Main/SecurityNotice#January_2016_NTP_4_2_8p5_Securit">
+	  <p>NTF's NTP Project has been notified of the following
+	    1 medium-severity vulnerability that is fixed in
+	    ntp-4.2.8p5, released on Thursday, 7 January 2016:</p>
+	  <p>NtpBug2956: Small-step/Big-step CVE-2015-5300</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5300</cvename>
+      <url>https://www.cs.bu.edu/~goldbe/NTPattack.html</url>
+      <url>http://support.ntp.org/bin/view/Main/NtpBug2956</url>
+      <url>http://support.ntp.org/bin/view/Main/SecurityNotice#January_2016_NTP_4_2_8p5_Securit</url>
+    </references>
+    <dates>
+      <discovery>2015-10-21</discovery>
+      <entry>2016-01-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="df587aa2-b5a5-11e5-9728-002590263bf5">
+    <topic>dhcpcd -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dhcpcd</name>
+	<range><lt>6.10.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nico Golde reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2016/01/07/3">
+	  <p>heap overflow via malformed dhcp responses later in print_option
+	    (via dhcp_envoption1) due to incorrect option length values.
+	    Exploitation is non-trivial, but I'd love to be proven wrong.</p>
+	  <p>invalid read/crash via malformed dhcp responses. not exploitable
+	    beyond DoS as far as I can judge.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1503</cvename>
+      <cvename>CVE-2016-1504</cvename>
+      <freebsdpr>ports/206015</freebsdpr>
+      <url>http://roy.marples.name/projects/dhcpcd/info/76a1609352263bd9def1300d7ba990679571fa30</url>
+      <url>http://roy.marples.name/projects/dhcpcd/info/595883e2a431f65d8fabf33059aa4689cca17403</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/01/07/3</url>
+    </references>
+    <dates>
+      <discovery>2016-01-04</discovery>
+      <entry>2016-01-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4084168e-b531-11e5-a98c-0011d823eebd">
+    <topic>mbedTLS/PolarSSL -- SLOTH attack on TLS 1.2 server authentication</topic>
+    <affects>
+      <package>
+	<name>polarssl13</name>
+	<range><lt>1.3.16</lt></range>
+      </package>
+      <package>
+	<name>mbedtls</name>
+	<range><lt>2.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ARM Limited reports:</p>
+	<blockquote cite="https://tls.mbed.org/tech-updates/releases/mbedtls-2.2.1-2.1.4-1.3.16-and-polarssl.1.2.19-released">
+	  <p>MD5 handshake signatures in TLS 1.2 are vulnerable to the SLOTH attack
+	    on TLS 1.2 server authentication.  They have been disabled by default.
+	    Other attacks from the SLOTH paper do not apply to any version of mbed
+	    TLS or PolarSSL.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://tls.mbed.org/tech-updates/releases/mbedtls-2.2.1-2.1.4-1.3.16-and-polarssl.1.2.19-released</url>
+    </references>
+    <dates>
+      <discovery>2016-01-04</discovery>
+      <entry>2016-01-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6aa2d135-b40e-11e5-9728-002590263bf5">
+    <topic>xen-kernel -- ioreq handling possibly susceptible to multiple read issue</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-166.html">
+	  <p>Single memory accesses in source code can be translated to multiple
+	    ones in machine code by the compiler, requiring special caution when
+	    accessing shared memory.  Such precaution was missing from the
+	    hypervisor code inspecting the state of I/O requests sent to the
+	    device model for assistance.</p>
+	  <p>Due to the offending field being a bitfield, it is however believed
+	    that there is no issue in practice, since compilers, at least when
+	    optimizing (which is always the case for non-debug builds), should find
+	    it more expensive to extract the bit field value twice than to keep the
+	    calculated value in a register.</p>
+	  <p>This vulnerability is exposed to malicious device models.  In
+	    conventional Xen systems this means the qemu which service an HVM
+	    domain.  On such systems this vulnerability can only be exploited if
+	    the attacker has gained control of the device model qemu via another
+	    vulnerability.</p>
+	  <p>Privilege escalation, host crash (Denial of Service), and leaked
+	    information all cannot be excluded.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/205841</freebsdpr>
+      <url>http://xenbits.xen.org/xsa/advisory-166.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-17</discovery>
+      <entry>2016-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e839ca04-b40d-11e5-9728-002590263bf5">
+    <topic>xen-kernel -- information leak in legacy x86 FPU/XMM initialization</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-165.html">
+	  <p>When XSAVE/XRSTOR are not in use by Xen to manage guest extended
+	    register state, the initial values in the FPU stack and XMM
+	    registers seen by the guest upon first use are those left there by
+	    the previous user of those registers.</p>
+	  <p>A malicious domain may be able to leverage this to obtain sensitive
+	    information such as cryptographic keys from another domain.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8555</cvename>
+      <freebsdpr>ports/205841</freebsdpr>
+      <url>http://xenbits.xen.org/xsa/advisory-165.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-17</discovery>
+      <entry>2016-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5d1d4473-b40d-11e5-9728-002590263bf5">
+    <topic>xen-tools -- libxl leak of pv kernel and initrd on error</topic>
+    <affects>
+      <package>
+	<name>xen-tools</name>
+	<range><ge>4.1</ge><lt>4.5.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-160.html">
+	  <p>When constructing a guest which is configured to use a PV
+	    bootloader which runs as a userspace process in the toolstack domain
+	    (e.g. pygrub) libxl creates a mapping of the files to be used as
+	    kernel and initial ramdisk when building the guest domain.</p>
+	  <p>However if building the domain subsequently fails these mappings
+	    would not be released leading to a leak of virtual address space in
+	    the calling process, as well as preventing the recovery of the
+	    temporary disk files containing the kernel and initial ramdisk.</p>
+	  <p>For toolstacks which manage multiple domains within the same
+	    process, an attacker who is able to repeatedly start a suitable
+	    domain (or many such domains) can cause an out-of-memory condition in the
+	    toolstack process, leading to a denial of service.</p>
+	  <p>Under the same circumstances an attacker can also cause files to
+	    accumulate on the toolstack domain filesystem (usually under /var in
+	    dom0) used to temporarily store the kernel and initial ramdisk,
+	    perhaps leading to a denial of service against arbitrary other
+	    services using that filesystem.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8341</cvename>
+      <freebsdpr>ports/205841</freebsdpr>
+      <url>http://xenbits.xen.org/xsa/advisory-160.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-08</discovery>
+      <entry>2016-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bcad3faa-b40c-11e5-9728-002590263bf5">
+    <topic>xen-kernel -- XENMEM_exchange error handling issues</topic>
+    <affects>
+      <package>
+	<name>xen-kernel</name>
+	<range><lt>4.5.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Xen Project reports:</p>
+	<blockquote cite="http://xenbits.xen.org/xsa/advisory-159.html">
+	  <p>Error handling in the operation may involve handing back pages to
+	    the domain. This operation may fail when in parallel the domain gets
+	    torn down. So far this failure unconditionally resulted in the host
+	    being brought down due to an internal error being assumed. This is
+	    CVE-2015-8339.</p>
+	  <p>Furthermore error handling so far wrongly included the release of a
+	    lock. That lock, however, was either not acquired or already released
+	    on all paths leading to the error handling sequence. This is
+	    CVE-2015-8340.</p>
+	  <p>A malicious guest administrator may be able to deny service by
+	    crashing the host or causing a deadlock.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8339</cvename>
+      <cvename>CVE-2015-8340</cvename>
+      <freebsdpr>ports/205841</freebsdpr>
+      <url>http://xenbits.xen.org/xsa/advisory-159.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-08</discovery>
+      <entry>2016-01-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b65e4914-b3bc-11e5-8255-5453ed2e2b49">
+    <topic>tiff -- out-of-bounds read in CIE Lab image format</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<range><le>4.0.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>zzf of Alibaba discovered an out-of-bounds vulnerability in the code
+	  processing the LogLUV and CIE Lab image format files. An attacker
+	  could create a specially-crafted TIFF file that could cause libtiff
+	  to crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8683</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/12/25/2</mlist>
+    </references>
+    <dates>
+      <discovery>2015-12-25</discovery>
+      <entry>2016-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bd349f7a-b3b9-11e5-8255-5453ed2e2b49">
+    <topic>tiff -- out-of-bounds read in tif_getimage.c</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<range><le>4.0.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>LMX of Qihoo 360 Codesafe Team discovered an out-of-bounds read in
+	  tif_getimage.c. An attacker could create a specially-crafted TIFF
+	  file that could cause libtiff to crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8665</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/12/24/2</mlist>
+    </references>
+    <dates>
+      <discovery>2015-12-24</discovery>
+      <entry>2016-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="86c3c66e-b2f5-11e5-863a-b499baebfeaf">
+    <topic>unzip -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>unzip</name>
+	<range><lt>6.0_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gustavo Grieco reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/07/4">
+	 <p>Two issues were found in unzip 6.0:</p>
+	 <p> * A heap overflow triggered by unzipping a file with password
+	    (e.g unzip -p -P x sigsegv.zip).</p>
+	 <p> * A denegation of service with a file that never finishes unzipping
+	    (e.g. unzip sigxcpu.zip).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/07/4</url>
+      <freebsdpr>ports/204413</freebsdpr>
+      <cvename>CVE-2015-7696</cvename>
+      <cvename>CVE-2015-7697</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-26</discovery>
+      <entry>2016-01-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bb961ff3-b3a4-11e5-8255-5453ed2e2b49">
+    <topic>cacti -- SQL injection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><le>0.8.8f_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8369">
+	  <p>SQL injection vulnerability in include/top_graph_header.php in
+	    Cacti 0.8.8f and earlier allows remote attackers to execute arbitrary
+	    SQL commands via the rra_id parameter in a properties action to
+	    graph.php.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8369</cvename>
+      <url>http://bugs.cacti.net/view.php?id=2646</url>
+      <url>http://svn.cacti.net/viewvc?view=rev&amp;revision=7767</url>
+      <mlist>http://seclists.org/fulldisclosure/2015/Dec/8</mlist>
+    </references>
+    <dates>
+      <discovery>2015-12-05</discovery>
+      <entry>2016-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="59e7eb28-b309-11e5-af83-80ee73b5dcf5">
+    <topic>kea -- unexpected termination while handling a malformed packet</topic>
+    <affects>
+      <package>
+	<name>kea</name>
+	<range><ge>0.9.2</ge><lt>1.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC Support reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01318/0/CVE-2015-8373-ISC-Kea%3A-unexpected-termination-while-handling-a-malformed-packet.html">
+	  <p>ISC Kea may terminate unexpectedly (crash) while handling
+	    a malformed client packet.  Related defects in the kea-dhcp4
+	    and kea-dhcp6 servers can cause the server to crash during
+	    option processing if a client sends a malformed packet.
+	    An attacker sending a crafted malformed packet can cause
+	    an ISC Kea server providing DHCP services to IPv4 or IPv6
+	    clients to exit unexpectedly.</p>
+	  <ul>
+	    <li><p>The kea-dhcp4 server is vulnerable only in versions
+		  0.9.2 and 1.0.0-beta, and furthermore only when logging
+		  at debug level 40 or higher.  Servers running kea-dhcp4
+		  versions 0.9.1 or lower, and servers which are not
+		  logging or are logging at debug level 39 or below are
+		  not vulnerable.</p></li>
+	    <li><p>The kea-dhcp6 server is vulnerable only in versions
+		  0.9.2 and 1.0.0-beta, and furthermore only when
+		  logging at debug level 45 or higher.  Servers running
+		  kea-dhcp6 versions 0.9.1 or lower, and servers
+		  which are not logging or are logging at debug level 44
+		  or below are not vulnerable.</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8373</cvename>
+      <url>https://kb.isc.org/article/AA-01318/0/CVE-2015-8373-ISC-Kea%3A-unexpected-termination-while-handling-a-malformed-packet.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-15</discovery>
+      <entry>2016-01-04</entry>
+      <modified>2016-01-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="84dc49b0-b267-11e5-8a5b-00262d5ed8ee">
+    <topic>mini_httpd -- buffer overflow via snprintf</topic>
+    <affects>
+      <package>
+	<name>mini_httpd</name>
+	<range><lt>1.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ACME Updates reports:</p>
+	<blockquote cite="https://cxsecurity.com/acveshow/CVE-2015-1548">
+	  <p>mini_httpd 1.21 and earlier allows remote attackers to obtain
+	    sensitive information from process memory via an HTTP request with
+	    a long protocol string, which triggers an incorrect response size
+	    calculation and an out-of-bounds read.</p>
+	  <p>(rene) ACME, the author, claims that the vulnerability is fixed
+	    *after* version 1.22, released on 2015-12-28</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-1548</cvename>
+      <url>https://cxsecurity.com/cveshow/CVE-2015-1548</url>
+      <url>http://acme.com/updates/archive/192.html</url>
+    </references>
+    <dates>
+      <discovery>2015-02-10</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1384f2fd-b1be-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in Rocker switch emulation</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/28/6">
+	  <p>Qemu emulator built with the Rocker switch emulation support is
+	    vulnerable to an off-by-one error. It happens while processing
+	    transmit(tx) descriptors in 'tx_consume' routine, if a descriptor
+	    was to have more than allowed (ROCKER_TX_FRAGS_MAX=16) fragments.
+	    </p>
+	  <p>A privileged user inside guest could use this flaw to cause memory
+	    leakage on the host or crash the Qemu process instance resulting in
+	    DoS issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8701</cvename>
+      <freebsdpr>ports/205813</freebsdpr>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/28/6</url>
+      <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg04629.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-28</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="152acff3-b1bd-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in Q35 chipset emulation</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.5.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/24/1">
+	  <p>Qemu emulator built with the Q35 chipset based pc system emulator
+	    is vulnerable to a heap based buffer overflow. It occurs during VM
+	    guest migration, as more(16 bytes) data is moved into allocated
+	    (8 bytes) memory area.</p>
+	  <p>A privileged guest user could use this issue to corrupt the VM
+	    guest image, potentially leading to a DoS. This issue affects q35
+	    machine types.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8666</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/24/1</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=d9a3b33d2c9f996537b7f1d0246dee2d0120cefb</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/d9a3b33d2c9f996537b7f1d0246dee2d0120cefb</url>
+    </references>
+    <dates>
+      <discovery>2015-11-19</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="62ab8707-b1bc-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in Human Monitor Interface support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/22/8">
+	  <p>Qemu emulator built with the Human Monitor Interface(HMP) support
+	    is vulnerable to an OOB write issue. It occurs while processing
+	    'sendkey' command in hmp_sendkey routine, if the command argument is
+	    longer than the 'keyname_buf' buffer size.</p>
+	  <p>A user/process could use this flaw to crash the Qemu process
+	    instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8619</cvename>
+      <freebsdpr>ports/205813</freebsdpr>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/22/8</url>
+      <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg02930.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-23</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b3f9f8ef-b1bb-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in MegaRAID SAS HBA emulation</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/21/7">
+	  <p>Qemu emulator built with the SCSI MegaRAID SAS HBA emulation
+	    support is vulnerable to a stack buffer overflow issue. It occurs
+	    while processing the SCSI controller's CTRL_GET_INFO command. A
+	    privileged guest user could use this flaw to crash the Qemu process
+	    instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8613</cvename>
+      <freebsdpr>ports/205813</freebsdpr>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/21/7</url>
+      <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg03737.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-21</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9ad8993e-b1ba-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in VMWARE VMXNET3 NIC support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/15/4">
+	  <p>Qemu emulator built with a VMWARE VMXNET3 paravirtual NIC emulator
+	    support is vulnerable to a memory leakage flaw. It occurs when a
+	    guest repeatedly tries to activate the vmxnet3 device.</p>
+	  <p>A privileged guest user could use this flaw to leak host memory,
+	    resulting in DoS on the host.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8567</cvename>
+      <cvename>CVE-2015-8568</cvename>
+      <freebsdpr>ports/205813</freebsdpr>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/15/4</url>
+      <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg02299.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-15</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="60cb2055-b1b8-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in USB EHCI emulation support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/14/9">
+	  <p>Qemu emulator built with the USB EHCI emulation support is
+	    vulnerable to an infinite loop issue. It occurs during communication
+	    between host controller interface(EHCI) and a respective device
+	    driver. These two communicate via a isochronous transfer descriptor
+	    list(iTD) and an infinite loop unfolds if there is a closed loop in
+	    this list.</p>
+	  <p>A privileges user inside guest could use this flaw to consume
+	    excessive CPU cycles &amp; resources on the host.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8558</cvename>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/14/9</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=156a2e4dbffa85997636a7a39ef12da6f1b40254</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/156a2e4dbffa85997636a7a39ef12da6f1b40254</url>
+    </references>
+    <dates>
+      <discovery>2015-12-14</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3fb06284-b1b7-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in MSI-X support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.5.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/14/2">
+	  <p>Qemu emulator built with the PCI MSI-X support is vulnerable to
+	    null pointer dereference issue. It occurs when the controller
+	    attempts to write to the pending bit array(PBA) memory region.
+	    Because the MSI-X MMIO support did not define the .write method.</p>
+	  <p>A privileges used inside guest could use this flaw to crash the
+	    Qemu process resulting in DoS issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7549</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/14/2</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=43b11a91dd861a946b231b89b7542856ade23d1b</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/43b11a91dd861a946b231b89b7542856ade23d1b</url>
+    </references>
+    <dates>
+      <discovery>2015-06-26</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="67feba97-b1b5-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in VNC</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.5.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/08/4">
+	  <p>Qemu emulator built with the VNC display driver support is
+	    vulnerable to an arithmetic exception flaw. It occurs on the VNC
+	    server side while processing the 'SetPixelFormat' messages from a
+	    client.</p>
+	  <p>A privileged remote client could use this flaw to crash the guest
+	    resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8504</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/08/4</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commitdiff;h=4c65fed8bdf96780735dbdb92a8bd0d6b6526cc3</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/4c65fed8bdf96780735dbdb92a8bd0d6b6526cc3</url>
+    </references>
+    <dates>
+      <discovery>2015-12-08</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="405446f4-b1b3-11e5-9728-002590263bf5">
+    <topic>qemu and xen-tools -- denial of service vulnerabilities in AMD PC-Net II NIC support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.5.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+      <package>
+	<name>xen-tools</name>
+	<range><lt>4.5.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/30/2">
+	  <p>Qemu emulator built with the AMD PC-Net II Ethernet Controller
+	    support is vulnerable to a heap buffer overflow flaw. While
+	    receiving packets in the loopback mode, it appends CRC code to the
+	    receive buffer. If the data size given is same as the receive buffer
+	    size, the appended CRC code overwrites 4 bytes beyond this
+	    's-&gt;buffer' array.</p>
+	  <p>A privileged(CAP_SYS_RAWIO) user inside guest could use this flaw
+	    to crash the Qemu instance resulting in DoS or potentially execute
+	    arbitrary code with privileges of the Qemu process on the host.</p>
+	</blockquote>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/30/3">
+	  <p>The AMD PC-Net II emulator(hw/net/pcnet.c), while receiving packets
+	    from a remote host(non-loopback mode), fails to validate the
+	    received data size, thus resulting in a buffer overflow issue. It
+	    could potentially lead to arbitrary code execution on the host, with
+	    privileges of the Qemu process. It requires the guest NIC to have
+	    larger MTU limit.</p>
+	  <p>A remote user could use this flaw to crash the guest instance
+	    resulting in DoS or potentially execute arbitrary code on a remote
+	    host with privileges of the Qemu process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7504</cvename>
+      <cvename>CVE-2015-7512</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/30/2</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/30/3</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=837f21aacf5a714c23ddaadbbc5212f9b661e3f7</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=8b98a2f07175d46c3f7217639bd5e03f2ec56343</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/837f21aacf5a714c23ddaadbbc5212f9b661e3f7</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/8b98a2f07175d46c3f7217639bd5e03f2ec56343</url>
+      <url>http://xenbits.xen.org/xsa/advisory-162.html</url>
+    </references>
+    <dates>
+      <discovery>2015-11-30</discovery>
+      <entry>2016-01-03</entry>
+      <modified>2016-01-06</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="b56fe6bb-b1b1-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerabilities in eepro100 NIC support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/25/3">
+	  <p>Qemu emulator built with the i8255x (PRO100) emulation support is
+	    vulnerable to an infinite loop issue. It could occur while
+	    processing a chain of commands located in the Command Block List
+	    (CBL). Each Command Block(CB) points to the next command in the
+	    list. An infinite loop unfolds if the link to the next CB points
+	    to the same block or there is a closed loop in the chain.</p>
+	  <p>A privileged(CAP_SYS_RAWIO) user inside guest could use this flaw
+	    to crash the Qemu instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8345</cvename>
+      <freebsdpr>ports/205813</freebsdpr>
+      <freebsdpr>ports/205814</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/25/3</url>
+      <url>https://lists.gnu.org/archive/html/qemu-devel/2015-10/msg03911.html</url>
+    </references>
+    <dates>
+      <discovery>2015-10-16</discovery>
+      <entry>2016-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="42cbd1e8-b152-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in virtio-net support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.1</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/18/5">
+	  <p>Qemu emulator built with the Virtual Network Device(virtio-net)
+	    support is vulnerable to a DoS issue. It could occur while receiving
+	    large packets over the tuntap/macvtap interfaces and when guest's
+	    virtio-net driver did not support big/mergeable receive buffers.</p>
+	  <p>An attacker on the local network could use this flaw to disable
+	    guest's networking by sending a large number of jumbo frames to the
+	    guest, exhausting all receive buffers and thus leading to a DoS
+	    situation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7295</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/18/5</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=696317f1895e836d53b670c7b77b7be93302ba08</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/0cf33fb6b49a19de32859e2cdc6021334f448fb3</url>
+    </references>
+    <dates>
+      <discovery>2015-09-18</discovery>
+      <entry>2016-01-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6aa3322f-b150-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerabilities in NE2000 NIC support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0.1</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/15/2">
+	  <p>Qemu emulator built with the NE2000 NIC emulation support is
+	    vulnerable to an infinite loop issue. It could occur when receiving
+	    packets over the network.</p>
+	  <p>A privileged user inside guest could use this flaw to crash the
+	    Qemu instance resulting in DoS.</p>
+	</blockquote>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/15/3">
+	  <p>Qemu emulator built with the NE2000 NIC emulation support is
+	    vulnerable to a heap buffer overflow issue. It could occur when
+	    receiving packets over the network.</p>
+	  <p>A privileged user inside guest could use this flaw to crash the
+	    Qemu instance or potentially execute arbitrary code on the host.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5278</cvename>
+      <cvename>CVE-2015-5279</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/15/2</url>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/15/3</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=5a1ccdfe44946e726b4c6fda8a4493b3931a68c1</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/737d2b3c41d59eb8f94ab7eb419b957938f24943</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=7aa2bcad0ca837dd6d4bf4fa38a80314b4a6b755</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/9bbdbc66e5765068dce76e9269dce4547afd8ad4</url>
+    </references>
+    <dates>
+      <discovery>2015-09-15</discovery>
+      <entry>2016-01-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bbc97005-b14e-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in IDE disk/CD/DVD-ROM emulation</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.1</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/10/1">
+	  <p>Qemu emulator built with the IDE disk and CD/DVD-ROM emulation
+	    support is vulnerable to a divide by zero issue. It could occur
+	    while executing an IDE command WIN_READ_NATIVE_MAX to determine
+	    the maximum size of a drive.</p>
+	  <p>A privileged user inside guest could use this flaw to crash the
+	    Qemu instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6855</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/10/1</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=63d761388d6fea994ca498c6e7a210851a99ad93</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/d9033e1d3aa666c5071580617a57bd853c5d794a</url>
+    </references>
+    <dates>
+      <discovery>2015-09-09</discovery>
+      <entry>2016-01-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="10bf8eed-b14d-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in e1000 NIC support</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0.1</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.5.50.g20151224</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/04/4">
+	  <p>Qemu emulator built with the e1000 NIC emulation support is
+	    vulnerable to an infinite loop issue. It could occur while
+	    processing transmit descriptor data when sending a network packet.
+	    </p>
+	  <p>A privileged user inside guest could use this flaw to crash the
+	    Qemu instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6815</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/04/4</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=3a56af1fbc17ff453f6e90fb08ce0c0e6fd0b61b</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/b947ac2bf26479e710489739c465c8af336599e7</url>
+    </references>
+    <dates>
+      <discovery>2015-09-04</discovery>
+      <entry>2016-01-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8a560bcf-b14b-11e5-9728-002590263bf5">
+    <topic>qemu -- denial of service vulnerability in VNC</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.1.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.2.50.g20141230</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/02/7">
+	  <p>Qemu emulator built with the VNC display driver is vulnerable to an
+	    infinite loop issue. It could occur while processing a
+	    CLIENT_CUT_TEXT message with specially crafted payload message.</p>
+	  <p>A privileged guest user could use this flaw to crash the Qemu
+	    process on the host, resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5239</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/02/7</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=f9a70e79391f6d7c2a912d785239ee8effc1922d</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/f9a70e79391f6d7c2a912d785239ee8effc1922d</url>
+    </references>
+    <dates>
+      <discovery>2014-06-30</discovery>
+      <entry>2016-01-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2b3b4c27-b0c7-11e5-8d13-bc5ff45d0f28">
+    <topic>qemu -- buffer overflow vulnerability in VNC</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0.1</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20151011</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/08/21/6">
+	  <p>Qemu emulator built with the VNC display driver support is
+	    vulnerable to a buffer overflow flaw leading to a heap memory
+	    corruption issue. It could occur while refreshing the server
+	    display surface via routine vnc_refresh_server_surface().</p>
+	  <p>A privileged guest user could use this flaw to corrupt the heap
+	    memory and crash the Qemu process instance OR potentially use it
+	    to execute arbitrary code on the host.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5225</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/08/21/6</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=efec4dcd2552e85ed57f276b58f09fc385727450</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/eb8934b0418b3b1d125edddc4fc334a54334a49b</url>
+    </references>
+    <dates>
+      <discovery>2015-08-17</discovery>
+      <entry>2016-01-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="21e5abe3-b0c6-11e5-8d13-bc5ff45d0f28">
+    <topic>qemu -- buffer overflow vulnerability in virtio-serial message exchanges</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/08/06/3">
+	  <p>Qemu emulator built with the virtio-serial vmchannel support is
+	    vulnerable to a buffer overflow issue. It could occur while
+	    exchanging virtio control messages between guest and the host.</p>
+	  <p>A malicious guest could use this flaw to corrupt few bytes of Qemu
+	    memory area, potentially crashing the Qemu process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5745</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/08/06/5</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=7882080388be5088e72c425b02223c02e6cb4295</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/7882080388be5088e72c425b02223c02e6cb4295</url>
+    </references>
+    <dates>
+      <discovery>2015-08-06</discovery>
+      <entry>2016-01-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a267cd6c-b0c4-11e5-8d13-bc5ff45d0f28">
+    <topic>qemu -- stack buffer overflow while parsing SCSI commands</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prasad J Pandit, Red Hat Product Security Team, reports:</p>
+	<blockquote cite="http://openwall.com/lists/oss-security/2015/07/23/6">
+	  <p>Qemu emulator built with the SCSI device emulation support is
+	    vulnerable to a stack buffer overflow issue. It could occur while
+	    parsing SCSI command descriptor block with an invalid operation
+	    code.</p>
+	  <p>A privileged(CAP_SYS_RAWIO) user inside guest could use this flaw
+	    to crash the Qemu instance resulting in DoS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5158</cvename>
+      <url>http://openwall.com/lists/oss-security/2015/07/23/6</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=c170aad8b057223b1139d72e5ce7acceafab4fa9</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/c170aad8b057223b1139d72e5ce7acceafab4fa9</url>
+    </references>
+    <dates>
+      <discovery>2015-07-23</discovery>
+      <entry>2016-01-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="aea8d90e-b0c1-11e5-8d13-bc5ff45d0f28">
+    <topic>qemu -- code execution on host machine</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>2.4.0</lt></range>
+      </package>
+      <package>
+	<name>qemu-sbruno</name>
+	<name>qemu-user-static</name>
+	<range><lt>2.4.50.g20150814</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Petr Matousek of Red Hat Inc. reports:</p>
+	<blockquote cite="http://openwall.com/lists/oss-security/2015/06/17/5">
+	  <p>Due converting PIO to the new memory read/write api we no longer
+	    provide separate I/O region lenghts for read and write operations.
+	    As a result, reading from PIT Mode/Command register will end with
+	    accessing pit-&gt;channels with invalid index and potentially cause
+	    memory corruption and/or minor information leak.</p>
+	  <p>A privileged guest user in a guest with QEMU PIT emulation enabled
+	    could potentially (tough unlikely) use this flaw to execute
+	    arbitrary code on the host with the privileges of the hosting QEMU
+	    process.</p>
+	  <p>Please note that by default QEMU/KVM guests use in-kernel (KVM) PIT
+	    emulation and are thus not vulnerable to this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3214</cvename>
+      <url>http://openwall.com/lists/oss-security/2015/06/17/5</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=d4862a87e31a51de9eb260f25c9e99a75efe3235</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/d4862a87e31a51de9eb260f25c9e99a75efe3235</url>
+    </references>
+    <dates>
+      <discovery>2015-06-17</discovery>
+      <entry>2016-01-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4b3a7e70-afce-11e5-b864-14dae9d210b8">
+    <topic>mono -- DoS and code execution</topic>
+    <affects>
+      <package>
+	<name>mono</name>
+	<range><lt>4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NCC Group reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2015/q4/543">
+	  <p>An attacker who can cause a carefully-chosen string to be
+	    converted to a floating-point number can cause a crash and potentially
+	    induce arbitrary code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/oss-sec/2015/q4/543</url>
+      <cvename>CVE-2009-0689</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-19</discovery>
+      <entry>2015-12-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84c7ea88-bf04-4bdc-973b-36744bf540ab">
     <topic>flash -- multiple vulnabilities</topic>
     <affects>
@@ -1083,6 +2462,11 @@ Notes:
 	<name>openjdk8-jre</name>
 	<range><lt>8.66.17</lt></range>
       </package>
+      <package>
+	<name>openjdk7</name>
+	<name>openjdk7-jre</name>
+	<range><lt>7.91.02,1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -1126,6 +2510,7 @@ Notes:
     <dates>
       <discovery>2015-10-20</discovery>
       <entry>2015-12-15</entry>
+      <modified>2016-01-08</modified>
     </dates>
   </vuln>
 
@@ -14480,8 +15865,7 @@ Notes:
       </package>
       <package>
 	<name>exact-image</name>
-	<!-- no known fixed version -->
-	<range><ge>0</ge></range>
+	<range><lt>0.9.1</lt></range>
       </package>
       <package>
 	<name>flphoto</name>
@@ -14547,7 +15931,7 @@ Notes:
     <dates>
       <discovery>2015-04-24</discovery>
       <entry>2015-05-15</entry>
-      <modified>2015-12-13</modified>
+      <modified>2016-01-08</modified>
     </dates>
   </vuln>
 
@@ -16321,6 +17705,10 @@ Notes:
 	<name>x86_64-pc-mingw32-binutils</name>
 	<range><lt>2.25</lt></range>
       </package>
+      <package>
+	<name>m6811-binutils</name>
+	<range><lt>2.25</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -16360,6 +17748,7 @@ Notes:
     <dates>
       <discovery>2014-12-09</discovery>
       <entry>2015-03-24</entry>
+      <modified>2016-01-08</modified>
     </dates>
   </vuln>
 

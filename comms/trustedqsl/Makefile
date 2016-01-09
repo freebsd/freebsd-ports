@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trustedqsl
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.arrl.org/files/file/LoTW%20Instructions/ \
 		LOCAL/shurd
@@ -21,7 +21,7 @@ USE_BDB=	5+
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USES=		cmake compiler:c++11-lib pkgconfig tar:tgz
+USES=		cmake compiler:c++11-lib pkgconfig
 CMAKE_ARGS=	-DBDB_PREFIX=${LOCALBASE}
 USE_WX=		2.8+
 USE_LDCONFIG=	yes

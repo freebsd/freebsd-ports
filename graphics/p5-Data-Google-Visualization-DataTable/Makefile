@@ -2,6 +2,7 @@
 
 PORTNAME=	Data-Google-Visualization-DataTable
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,5 +18,6 @@ RUN_DEPENDS=	p5-JSON-XS>=2.0:${PORTSDIR}/converters/p5-JSON-XS
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

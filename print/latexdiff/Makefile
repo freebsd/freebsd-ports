@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	latexdiff
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	print perl5
 MASTER_SITES=	TEX_CTAN/support
 DISTNAME=	${PORTNAME}
@@ -12,6 +12,7 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Determine and mark up significant differences between latex files
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5 zip
 USE_PERL5=	run

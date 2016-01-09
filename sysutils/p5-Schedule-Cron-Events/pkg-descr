@@ -1,0 +1,14 @@
+Given a line from a crontab, tells you the time at which cron will next run the
+line, or when the last event occurred, relative to any date you choose. The
+object keeps that reference date internally, and updates it when you call
+nextEvent() or previousEvent() - such that successive calls will give you a
+sequence of events going forward, or backwards, in time.
+
+Use setCounterToNow() to reset this reference time to the current date on your
+system, or use setCounterToDate() to set the reference to any arbitrary time, or
+resetCounter() to take the object back to the date you constructed it with.
+
+This module uses Set::Crontab to understand the date specification, so we should
+be able to handle all forms of cron entries.
+
+WWW: http://search.cpan.org/dist/Schedule-Cron-Events/

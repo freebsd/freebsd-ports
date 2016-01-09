@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer ASS/SSA text renderer plugin
+COMMENT=	GStreamer ASS/SSA text renderer plugin
 
 GST_PLUGIN=	assrender
 DIST=		bad

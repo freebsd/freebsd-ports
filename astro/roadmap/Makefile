@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector-based GPS moving map
 
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -72,6 +75,8 @@ do-install:
 .for _DATA in ${DATA}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${_DATA} ${STAGEDIR}${DATADIR}/${_DATA}
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
 .for _DOC in ${DOCS}

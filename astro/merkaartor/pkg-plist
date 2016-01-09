@@ -1,10 +1,8 @@
 bin/merkaartor
-lib/merkaartor/plugins/background/libMWalkingPapersBackgroundPlugin.so
-lib/merkaartor/plugins/background/libMCadastreFranceBackgroundPlugin.so
-lib/merkaartor/plugins/background/libMMsBingMapBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMGdalBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMGeoTiffBackgroundPlugin.so
-lib/merkaartor/plugins/styles/libskulpture.so
+lib/merkaartor/plugins/background/libMMsBingMapBackgroundPlugin.so
+lib/merkaartor/plugins/background/libMWalkingPapersBackgroundPlugin.so
 share/applications/merkaartor.desktop
 share/icons/hicolor/48x48/apps/merkaartor.png
 %%DATADIR%%/BookmarksList.xml

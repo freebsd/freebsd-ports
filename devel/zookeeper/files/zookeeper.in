@@ -15,31 +15,44 @@
 name=zookeeper
 rcvar=zookeeper_enable
 
-load_rc_config $name
+load_rc_config "${name}"
 
-# set defaults
-: ${zookeeper_enable:="NO"}
-: ${zookeeper_logdir="%%ZOOKEEPER_LOGDIR%%"}
-: ${zookeeper_rundir="%%ZOOKEEPER_RUNDIR%%"}
-: ${zookeeper_jmx:="YES"}
+: ${zookeeper_enable:=NO}
+: ${zookeeper_user:=%%ZOOKEEPER_USER%%}
+: ${zookeeper_group:=%%ZOOKEEPER_GROUP%%}
+: ${zookeeper_pidfile:=/var/run/zookeeper.pid}
+: ${zookeeper_config:=%%ETCDIR%%/zoo.cfg}
+: ${zookeeper_log4jpropfile:=file:%%ETCDIR%%/log4j.properties}
+: ${zookeeper_rootlogger:="INFO,ROLLINGFILE"}
+: ${zookeeper_logdir:=%%ZOOKEEPER_LOGDIR%%}
 
-command="%%PREFIX%%/zookeeper/bin/zkServer.sh"
+JAVA=%%JAVA%%
+JAVAJARDIR=%%JAVAJARDIR%%
 
-start_cmd="zookeeper_command start"
-stop_cmd="zookeeper_command stop"
-restart_cmd="zookeeper_command restart"
-status_cmd="zookeeper_command status"
+for i in zookeeper jline slf4j-api netty log4j
+do
+    CLASSPATH="${JAVAJARDIR}/$i.jar:$CLASSPATH"
+done
+CLASSPATH=/usr/local/share/slf4j/slf4j-log4j12.jar:$CLASSPATH
 
-export ZOO_LOG_DIR=${zookeeper_logdir}
-export ZOOPIDFILE=${zookeeper_rundir}/zookeeper.pid
+zookeeper_main="-cp $CLASSPATH org.apache.zookeeper.server.quorum.QuorumPeerMain ${zookeeper_config}"
+log4j_params="-Dzookeeper.log.dir=${zookeeper_logdir} \
+            -Dlog4j.configuration=${zookeeper_log4jpropfile} \
+            -Dzookeeper.root.logger=${zookeeper_rootlogger}"
+pidfile=${zookeeper_pidfile}
+procname=${JAVA}
+required_files="${zookeeper_config}"
 
-zookeeper_command()
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} ${JAVA} ${log4j_params} ${zookeeper_main}"
+
+start_precmd="zookeeper_init"
+
+zookeeper_init()
 {
-	export JAVA_HOME=%%JAVA_HOME%%
-	if ! checkyesno zookeeper_jmx; then
-		export JMXDISABLE=yes
-	fi
-	${command} ${rc_arg}
+    touch ${pidfile}
+    chown ${zookeeper_user}:${zookeeper_group} ${pidfile}
+    install -d -m 755 -o ${zookeeper_user} -g ${zookeeper_group} ${zookeeper_logdir}
 }
 
 run_rc_command "$1"

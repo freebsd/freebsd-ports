@@ -4,9 +4,9 @@
 PORTNAME=	inform
 PORTVERSION=	6.32
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/source/ \
-		ftp://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/library/:lib \
-		ftp://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/manuals/:doc
+MASTER_SITES=	http://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/source/old/ \
+		http://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/library/old/:lib \
+		http://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/manuals/:doc
 DISTFILES=	inform${PORTVERSION:S/.//}_source.zip inform_library611.zip:lib \
 		designers_manual_4.zip:doc
 DIST_SUBDIR=	inform
@@ -14,8 +14,6 @@ EXTRACT_ONLY=	inform${PORTVERSION:S/.//}_source.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for producing text adventure games
-
-BROKEN=		unfetchable
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 

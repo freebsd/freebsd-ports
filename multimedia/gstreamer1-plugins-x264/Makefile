@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer x264 plugin
+COMMENT=	GStreamer libx264 based H264 plugin
 
 GST_PLUGIN=	x264
 DIST=		ugly

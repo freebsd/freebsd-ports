@@ -1,7 +1,7 @@
 include/menu-cache/menu-cache.h
 lib/libmenu-cache.so
 lib/libmenu-cache.so.3
-lib/libmenu-cache.so.3.1.0
+lib/libmenu-cache.so.3.1.1
 libdata/pkgconfig/libmenu-cache.pc
 libexec/menu-cache/menu-cache-gen
 libexec/menu-cache/menu-cached

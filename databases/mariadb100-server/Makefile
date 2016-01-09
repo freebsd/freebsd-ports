@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.0.22
+PORTVERSION=	10.0.23
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -64,6 +64,11 @@ DATADIR=	${PREFIX}/share/mysql
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. This leads to a circular dependency. Please undefine and try again.
 .endif
 
+CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
+			mariadb10[1-9]-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
+			mysql[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
+			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
+
 .if !defined(CLIENT_ONLY)
 # MySQL-Server options
 USE_MYSQL=		yes
@@ -89,12 +94,6 @@ WITHOUT_SSL_CMAKE_ON=	-DWITH_SSL=no
 USES+=		readline
 .else
 # MySQL-Server part
-
-CONFLICTS_INSTALL=	mariadb5*-server-* \
-			mariadb10[1-9]-server-* \
-			mysql*-server-* \
-			percona*-server-*
-
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	100m
 USE_RC_SUBR=	mysql-server
@@ -110,6 +109,9 @@ MROONGA_CMAKE_OFF=	-DWITHOUT_MROONGA=1
 OQGRAPH_CMAKE_OFF=	-DWITHOUT_OQGRAPH=1
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 			libJudy.so:${PORTSDIR}/devel/judy
+# Currently OQGraph does not build using clang.
+# See See https://mariadb.atlassian.net/browse/MDEV-8051.
+OQGRPAH_USE=		gcc
 
 post-install:
 	# Remove programs to avoid conflict with mariadb100-client
@@ -132,11 +134,6 @@ CMAKE_ARGS+=	-DWITH_JEMALLOC="no"
 # Server segfaults on i386 when built with clang >= 3.4
 .if ${ARCH} == 'i386' && ${OSVERSION} >= 1001000
 USE_GCC=	yes
-.endif
-
-.if ${PORT_OPTIONS:MOQGRPAH}
-IGNORE=	currently MariaDB doesn't build correctly with OQGraph \
-	See https://mariadb.atlassian.net/browse/MDEV-8128.
 .endif
 
 post-patch:

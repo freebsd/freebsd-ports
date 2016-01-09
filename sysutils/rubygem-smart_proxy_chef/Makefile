@@ -1,4 +1,4 @@
-# Created by: Michael Moll <mmoll@FreeBSD.org>
+# Created by: Michael Moll <ruby@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	smart_proxy_chef
@@ -6,7 +6,7 @@ PORTVERSION=	0.1.5
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Chef Plug-In for Foreman's Smart Proxy
 
 LICENSE=	GPLv3

@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Command-line utility framework for Ruby
 
 LICENSE=	MIT

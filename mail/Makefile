@@ -69,6 +69,7 @@
     SUBDIR += claws-mail-tnef
     SUBDIR += claws-mail-vcalendar
     SUBDIR += clawsker
+    SUBDIR += cleanup-maildir
     SUBDIR += cone
     SUBDIR += coolmail
     SUBDIR += courier

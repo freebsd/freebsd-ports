@@ -1,15 +1,11 @@
 @group games
 @owner games
-@mode 2555
-%%ANGBANDBIN%%
-@mode
+@(,,2555) %%ANGBANDBIN%%
 %%ANGBANDLIB%%/apex/readme.txt
 @unexec cmp -s %D/%%ANGBANDLIB%%/apex/scores.raw %D/%%ANGBANDLIB%%/apex/z_scores.raw && rm %D/%%ANGBANDLIB%%/apex/scores.raw || true
 @unexec cmp -s %D/%%ANGBANDLIB%%/apex/scores.raw /dev/null && rm %D/%%ANGBANDLIB%%/apex/scores.raw || true
 %%ANGBANDLIB%%/apex/z_scores.raw
 @exec test -f %D/%%ANGBANDLIB%%/apex/scores.raw || touch %D/%%ANGBANDLIB%%/apex/scores.raw
-@exec install -d -o games -g games %D/%%ANGBANDLIB%%/bone
-@exec install -d -o games -g games -m 775 %D/%%ANGBANDLIB%%/data
 %%ANGBANDLIB%%/edit/a_info.txt
 %%ANGBANDLIB%%/edit/e_info.txt
 %%ANGBANDLIB%%/edit/f_info.txt
@@ -81,7 +77,6 @@
 %%ANGBANDLIB%%/help/town.txt
 %%ANGBANDLIB%%/help/version.txt
 %%ANGBANDLIB%%/help/wizard.txt
-@exec install -d -o games -g games %D/%%ANGBANDLIB%%/info
 %%ANGBANDLIB%%/pref/colors.prf
 %%ANGBANDLIB%%/pref/font-ami.prf
 %%ANGBANDLIB%%/pref/font-dos.prf
@@ -268,38 +263,28 @@
 %%ANGBANDLIB%%/xtra/graf/8x13.bmp
 %%ANGBANDLIB%%/xtra/graf/8x8.bmp
 %%ANGBANDLIB%%/xtra/graf/mask.bmp
-@exec install -d -o games -g games %D/%%ANGBANDLIB%%/xtra/help
-@exec install -d -o games -g games %D/%%ANGBANDLIB%%/xtra/music
 %%ANGBANDLIB%%/xtra/sound/sound.cfg
-@dirrm %%ANGBANDLIB%%/xtra/sound
-@dirrm %%ANGBANDLIB%%/xtra/music
-@dirrm %%ANGBANDLIB%%/xtra/help
-@dirrm %%ANGBANDLIB%%/xtra/graf
-@dirrm %%ANGBANDLIB%%/xtra/font
-@dirrm %%ANGBANDLIB%%/xtra
-@mode 1777
-@dirrmtry %%ANGBANDLIB%%/user
-@mode
-@dirrm %%ANGBANDLIB%%/script/tk/library
-@dirrm %%ANGBANDLIB%%/script/tk/image
-@dirrm %%ANGBANDLIB%%/script/tk/config
-@dirrm %%ANGBANDLIB%%/script/tk
-@dirrm %%ANGBANDLIB%%/script
-@mode 1777
-@dirrmtry %%ANGBANDLIB%%/save
-@mode
-@dirrm %%ANGBANDLIB%%/pref
-@dirrm %%ANGBANDLIB%%/info
-@dirrm %%ANGBANDLIB%%/help
-@dirrm %%ANGBANDLIB%%/file
-@dirrm %%ANGBANDLIB%%/edit
-@mode 775
-@dirrmtry %%ANGBANDLIB%%/data
-@mode
-@dirrm %%ANGBANDLIB%%/bone
-@mode 775
-@dirrmtry %%ANGBANDLIB%%/apex
-@mode
-@dirrmtry %%ANGBANDLIB%%
 @owner
 @group
+@dir(games,games,) %%ANGBANDLIB%%/xtra/sound
+@dir(games,games,) %%ANGBANDLIB%%/xtra/music
+@dir(games,games,) %%ANGBANDLIB%%/xtra/help
+@dir(games,games,) %%ANGBANDLIB%%/xtra/graf
+@dir(games,games,) %%ANGBANDLIB%%/xtra/font
+@dir(games,games,) %%ANGBANDLIB%%/xtra
+@dir(games,games,1777) %%ANGBANDLIB%%/user
+@dir(games,games,) %%ANGBANDLIB%%/script/tk/library
+@dir(games,games,) %%ANGBANDLIB%%/script/tk/image
+@dir(games,games,) %%ANGBANDLIB%%/script/tk/config
+@dir(games,games,) %%ANGBANDLIB%%/script/tk
+@dir(games,games,) %%ANGBANDLIB%%/script
+@dir(games,games,1777) %%ANGBANDLIB%%/save
+@dir(games,games,) %%ANGBANDLIB%%/pref
+@dir(games,games,) %%ANGBANDLIB%%/info
+@dir(games,games,) %%ANGBANDLIB%%/help
+@dir(games,games,) %%ANGBANDLIB%%/file
+@dir(games,games,) %%ANGBANDLIB%%/edit
+@dir(games,games,775) %%ANGBANDLIB%%/data
+@dir(games,games,) %%ANGBANDLIB%%/bone
+@dir(games,games,775) %%ANGBANDLIB%%/apex
+@dir(games,games) %%ANGBANDLIB%%

@@ -5820,7 +5820,6 @@ www/vtiger||2014-03-30|Has expired: No more public distfiles
 net/linux-nx-client||2014-03-30|Has expired: No more public distfiles
 emulators/extract-xiso||2014-03-30|Has expired: No more public distfiles
 www/trac-wantedpages||2014-03-30|Has expired: No more public distfiles
-www/trac-ldap||2014-03-30|Has expired: No more public distfiles
 www/trac-codetags||2014-03-30|Has expired: No more public distfiles
 www/trac-addcomment||2014-03-30|Has expired: No more public distfiles
 www/trac-nav||2014-03-30|Has expired: No more public distfiles
@@ -7288,7 +7287,6 @@ sysutils/rubygem-hiera-puppet||2014-12-01|Has expired: Has been incorporated int
 sysutils/rubygem-hiera-json||2014-12-01|Has expired: Has been incorporated into hiera
 databases/memcachedb||2014-12-01|Has expired: Depends on deprecated Berkeley DB version, needs porting to DB_SITE
 games/djgame2||2014-12-01|Has expired: Online servers gone, game is not playable
-devel/creduce||2014-12-01|Has expired: Unmaintained and depends on ancient LLVM 3.2
 lang/clay||2014-12-01|Has expired: No development since July 2013, depends on obsolete clang-3.2
 textproc/libodfgen|textproc/libodfgen01|2014-12-02|Replaced by newer version
 graphics/libetonyek|graphics/libetonyek01|2014-12-02|Replaced by newer version
@@ -8072,3 +8070,33 @@ editors/sublime3|editors/linux-sublime3|2015-12-29|Renamed (Linux binary port)
 mail/py-spf|mail/py-pyspf|2015-12-29|Renamed to match upstream naming
 databases/py-memcached|databases/py-python-memcached|2015-12-30|Renamed to match upstream naming
 devel/py-hashring|devel/py-hash_ring|2015-12-30|Renamed to match upstream naming
+devel/subversion17|devel/subversion|2015-12-30|Has expired: EoL, use devel/subversion
+www/ocsigen||2015-12-30|Has expired: Broken for more than 6 months
+devel/monodevelop-database||2015-12-30|Has expired: Broken for more than 6 months
+lang/cduce||2015-12-30|Has expired: Broken for more than 6 months
+science/hdf-java||2015-12-30|Has expired: Broken for more than 6 months
+math/p5-Math-Geometry-Planar-GPC-Polygon||2015-12-30|Has expired: Broken for more than 6 months
+www/eliom||2015-12-30|Has expired: Depends on broken and expiring www/ocsigen
+audio/py-fastaudio||2015-12-30|Has expired: Broken for more than 6 months
+devel/jgoodies-common||2015-12-30|Has expired: Broken for more than 6 months
+graphics/pinta||2015-12-30|Has expired: Broken for more than 6 months
+games/kanatest||2015-12-30|Has expired: Broken for more than 6 months
+editors/bless||2015-12-30|Has expired: Broken for more than 6 months
+security/burpsuite||2015-12-30|Has expired: Broken for more than 6 months
+net/remmina-plugin-rdp||2015-12-30|Has expired: Broken for more than 6 months
+dns/bind10|dns/bundy|2015-12-31|Has expired: Is not developed any more, use dns/bundy
+lang/perl5.16||2015-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl
+devel/py-distutils-extra|devel/py-python-distutils-extra|2015-12-31|Renamed to match upstream naming
+irc/irssi-devel||2016-01-01|Has expired: Older than irc/irssi
+multimedia/spotify-websocket-api||2016-01-01|Has expired: login fails due to protocol changes
+net-mgmt/unifi2|net-mgmt/unifi3|2016-01-01|Has expired: Unifi 2.x is EoL. Please upgrade to net-mgmt/unifi3
+misc/kde4-l10n-th||2016-01-01|Has expired: Upstream ceased maintainance of this translation
+misc/kde4-l10n-tg||2016-01-01|Has expired: Upstream ceased maintainance of this translation
+misc/kde4-l10n-si||2016-01-01|Has expired: Upstream ceased maintainance of this translation
+games/supertux-devel|games/supertux2|2016-01-05|Renamed along with update to new stable release
+games/duke3d-data||2016-01-06|Incorporated into games/eduke32
+devel/msp430-gdb|devel/gcc-msp430-ti-toolchain|2016-01-08|Has expired: Obsolete. Please, use devel/gcc-msp430-ti-toolchain
+devel/msp430-gcc|devel/gcc-msp430-ti-toolchain|2016-01-08|Has expired: Obsolete. Please, use devel/gcc-msp430-ti-toolchain
+devel/msp430mcu|devel/gcc-msp430-ti-toolchain|2016-01-08|Has expired: Obsolete. Please, use devel/gcc-msp430-ti-toolchain
+devel/msp430-libc|devel/gcc-msp430-ti-toolchain|2016-01-08|Has expired: Obsolete. Please, use devel/gcc-msp430-ti-toolchain
+devel/msp430-binutils|devel/gcc-msp430-ti-toolchain|2016-01-08|Has expired: Obsolete. Please, use devel/gcc-msp430-ti-toolchain

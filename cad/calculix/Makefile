@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CalculiX
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -11,8 +11,6 @@ EXTRACT_ONLY=	${DIST_SOURCES}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Three-Dimensional Structural Finite Element Program
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 

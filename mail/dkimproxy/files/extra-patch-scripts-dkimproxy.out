@@ -1,6 +1,6 @@
---- scripts/dkimproxy.out	2014-11-05 08:30:40.674785725 +0300
-+++ scripts/dkimproxy.out	2014-11-05 08:36:43.063761657 +0300
-@@ -314,17 +314,11 @@
+--- scripts/dkimproxy.out.orig	2010-11-15 16:54:28 UTC
++++ scripts/dkimproxy.out
+@@ -314,17 +314,11 @@ sub process_request
  {
  	my $self = shift;
  

@@ -13,7 +13,9 @@ include/taglib/asfproperties.h
 include/taglib/asftag.h
 include/taglib/attachedpictureframe.h
 include/taglib/audioproperties.h
+include/taglib/chapterframe.h
 include/taglib/commentsframe.h
+include/taglib/eventtimingcodesframe.h
 include/taglib/fileref.h
 include/taglib/flacfile.h
 include/taglib/flacmetadatablock.h
@@ -63,6 +65,8 @@ include/taglib/s3mfile.h
 include/taglib/s3mproperties.h
 include/taglib/speexfile.h
 include/taglib/speexproperties.h
+include/taglib/synchronizedlyricsframe.h
+include/taglib/tableofcontentsframe.h
 include/taglib/tag.h
 include/taglib/tag_c.h
 include/taglib/taglib.h
@@ -102,7 +106,7 @@ include/taglib/xmfile.h
 include/taglib/xmproperties.h
 lib/libtag.so
 lib/libtag.so.1
-lib/libtag.so.1.14.0
+lib/libtag.so.1.15.1
 lib/libtag_c.so
 lib/libtag_c.so.0
 lib/libtag_c.so.0.0.0

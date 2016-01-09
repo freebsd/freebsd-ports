@@ -12,6 +12,8 @@ DISTNAME=	TraitsBackendWX-${PORTVERSION}
 MAINTAINER=	jacob.frelinger@duke.edu
 COMMENT=	Wx backend for TraitsGUI
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>=3.2.0:${PORTSDIR}/devel/py-traits
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

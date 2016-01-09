@@ -148,4 +148,3 @@
 %%DATADIR%%/UI/templates.js
 %%DATADIR%%/UI/vendor.js
 %%DATADIR%%/UI/vendor.map
-@dir(sonarr,wheel,755) sonarr

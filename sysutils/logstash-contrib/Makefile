@@ -3,12 +3,14 @@
 
 PORTNAME=	logstash-contrib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.2
-PORTREVISION=	3
+DISTVERSION=	1.4.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Standard plugins contributed to the Logstash project
+
+DEPRECATED=	Upstream now distributing plugins separately: see https://github.com/logstash-plugins
+EXPIRATION_DATE=	2016-03-06
 
 RUN_DEPENDS=	${LOCALBASE}/logstash/bin/logstash:${PORTSDIR}/sysutils/logstash
 

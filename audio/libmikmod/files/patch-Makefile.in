@@ -1,6 +1,6 @@
---- Makefile.in.orig	2013-12-30 19:37:12.000000000 +0100
-+++ Makefile.in	2014-03-01 19:49:25.164244987 +0100
-@@ -348,7 +348,7 @@
+--- Makefile.in.orig	2015-11-11 10:02:02 UTC
++++ Makefile.in
+@@ -372,7 +372,7 @@ EXTRA_DIST = libmikmod-config.in libmikm
  
  m4datadir = $(datadir)/aclocal
  m4data_DATA = libmikmod.m4

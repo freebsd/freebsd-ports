@@ -11,7 +11,7 @@ PKGNAMESUFFIX?=	-tools
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metalink generation tool
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
@@ -32,8 +32,10 @@ PLIST_FILES=	bin/${PORTNAME}
 OPTIONS_DEFINE=	DOCS
 
 do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

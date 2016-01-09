@@ -17,10 +17,9 @@ GH_PROJECT=	Remmina
 .include "${.CURDIR}/../remmina-plugins/bsd.plugin.mk"
 .else
 
-OPTIONS_DEFINE=	KEYRING RDP VNC XDMCP TELEP NX NLS
+OPTIONS_DEFINE=	KEYRING VNC XDMCP TELEP NX NLS
 OPTIONS_DEFAULT=	KEYRING VNC XDMCP TELEP NLS
 KEYRING_DESC=	GNOME Keyring plugin
-RDP_DESC=	RDP protocol plugin
 VNC_DESC=	VNC protocol plugin
 XDMCP_DESC=	XDMCP protocol plugin
 TELEP_DESC=	Telepathy protocol plugin
@@ -33,10 +32,6 @@ PATCHDIR=	# none
 
 .if ${PORT_OPTIONS:MKEYRING}
 RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugins-gnome.so:${PORTSDIR}/net/remmina-plugin-gnome
-.endif
-
-.if ${PORT_OPTIONS:MRDP}
-RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-rdp.so:${PORTSDIR}/net/remmina-plugin-rdp
 .endif
 
 .if ${PORT_OPTIONS:MVNC}

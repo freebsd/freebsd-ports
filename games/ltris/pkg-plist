@@ -24,7 +24,6 @@ share/applications/ltris.desktop
 %%DATADIR%%/gfx/logo.bmp
 %%DATADIR%%/gfx/menuback.bmp
 %%DATADIR%%/gfx/quest.bmp
-@(,games,0664) %%DATADIR%%/ltris.hscr
 %%DATADIR%%/sounds/click.wav
 %%DATADIR%%/sounds/excellent.wav
 %%DATADIR%%/sounds/explosion.wav
@@ -33,6 +32,4 @@ share/applications/ltris.desktop
 %%DATADIR%%/sounds/nextlevel.wav
 %%DATADIR%%/sounds/stop.wav
 share/pixmaps/ltris48.gif
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%
+@sample(,games,664) /var/games/ltris.hscr.sample

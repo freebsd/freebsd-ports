@@ -6,7 +6,7 @@ PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Bleeding edge features for concurrent-ruby
 
 LICENSE=	MIT

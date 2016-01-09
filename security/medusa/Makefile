@@ -3,6 +3,7 @@
 
 PORTNAME=	medusa
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.foofus.net/~jmk/tools/ \
 		http://redundancy.redundancy.org/mirror/
@@ -23,30 +24,21 @@ CONFIGURE_ARGS=	--enable-module-ncp=no --enable-module-afp=no
 OPTIONS_DEFINE=	SVN PGSQL DOCS
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+SVN_LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
+SVN_CFLAGS=		-I${LOCALBASE}/include/subversion-1 -I${LOCALBASE}/include/apr-1
+SVN_CONFIGURE_OFF=	--enable-module-svn=no
 
-.if ${PORT_OPTIONS:MSVN}
-LIB_DEPENDS+=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
-CFLAGS+=	-I${LOCALBASE}/include/subversion-1 -I${LOCALBASE}/include/apr-1
-.else
-CONFIGURE_ARGS+=	--enable-module-svn=no
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-CONFIGURE_ARGS+=	--enable-module-postgres
-.else
-CONFIGURE_ARGS+=	--enable-module-postgres=no
-.endif
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_ON=	--enable-module-postgres
+PGSQL_CONFIGURE_OFF=	--enable-module-postgres=no
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/misc/zsh/_medusa \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_medusa
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

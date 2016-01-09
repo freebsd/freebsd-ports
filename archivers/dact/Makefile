@@ -16,11 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2
 
-USES=		gmake desthack
+USES=		desthack gmake localbase
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib
-CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS=	TOBUILD="dact libdact.so dact.conf"
 
 USE_LDCONFIG=	yes
@@ -33,6 +31,8 @@ post-install:
 		${STAGEDIR}${DATADIR}/*.so
 	${MV} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Docs/dact.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}

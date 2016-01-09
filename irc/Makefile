@@ -49,7 +49,6 @@
     SUBDIR += iroffer-lamm
     SUBDIR += irssi
     SUBDIR += irssi-dcc_send_limiter
-    SUBDIR += irssi-devel
     SUBDIR += irssi-fish
     SUBDIR += irssi-otr
     SUBDIR += irssi-scripts

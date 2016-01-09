@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Parse-ErrorString-Perl
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
 

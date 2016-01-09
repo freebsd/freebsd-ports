@@ -4,12 +4,10 @@
 PORTNAME=	lambda
 PORTVERSION=	0.1.4
 CATEGORIES=	math
-MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
+MASTER_SITES=	http://uniquesoftwaredesigns.com/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lambda calculus interpreter
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 

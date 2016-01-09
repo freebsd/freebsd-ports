@@ -5,12 +5,10 @@ PORTNAME=	xmangekyou
 PORTVERSION=	2.0.1
 PORTREVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/art/anime/
+MASTER_SITES=	http://ftp.vector.co.jp/16/65/1309/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kaleidoscope on X
-
-BROKEN=		unfetchable
 
 USE_XORG=	x11 xpm xaw
 ALL_TARGET=	xmangekyou

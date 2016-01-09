@@ -11,6 +11,9 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Client for the OpenStack Nova API
 
+# Newer releases do exist in PyPI.
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0:${PORTSDIR}/devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}prettytable>=0:${PORTSDIR}/devel/py-prettytable \
 		${PKGNAMEPREFIX}httplib2>=0:${PORTSDIR}/www/py-httplib2

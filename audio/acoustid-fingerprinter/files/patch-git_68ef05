@@ -1,0 +1,41 @@
+From 681ef059e4bdb0a9b1a073d6cbb9bb54e993fef9 Mon Sep 17 00:00:00 2001
+From: Johannes Dewender <bitbucket@JonnyJD.net>
+Date: Tue, 8 Dec 2015 17:48:33 +0100
+Subject: [PATCH] fix cmake for taglib 1.10
+
+We have to use VERSION_LESS, rather than STRLESS.
+Otherwise we get this error message:
+- TagLib version too old: version searched :1.6, found 1.10
+---
+ cmake/modules/FindTaglib.cmake | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/cmake/modules/FindTaglib.cmake b/cmake/modules/FindTaglib.cmake
+index 76b83ac..5a985f9 100644
+--- cmake/modules/FindTaglib.cmake
++++ cmake/modules/FindTaglib.cmake
+@@ -29,10 +29,10 @@ if(TAGLIBCONFIG_EXECUTABLE)
+ 
+   exec_program(${TAGLIBCONFIG_EXECUTABLE} ARGS --version RETURN_VALUE _return_VALUE OUTPUT_VARIABLE TAGLIB_VERSION)
+ 
+-  if(TAGLIB_VERSION STRLESS "${TAGLIB_MIN_VERSION}")
++  if(TAGLIB_VERSION VERSION_LESS "${TAGLIB_MIN_VERSION}")
+      message(STATUS "TagLib version too old: version searched :${TAGLIB_MIN_VERSION}, found ${TAGLIB_VERSION}")
+      set(TAGLIB_FOUND FALSE)
+-  else(TAGLIB_VERSION STRLESS "${TAGLIB_MIN_VERSION}")
++  else(TAGLIB_VERSION VERSION_LESS "${TAGLIB_MIN_VERSION}")
+ 
+      exec_program(${TAGLIBCONFIG_EXECUTABLE} ARGS --libs RETURN_VALUE _return_VALUE OUTPUT_VARIABLE TAGLIB_LIBRARIES)
+ 
+@@ -42,7 +42,7 @@ if(TAGLIBCONFIG_EXECUTABLE)
+         set(TAGLIB_FOUND TRUE)
+      endif(TAGLIB_LIBRARIES AND TAGLIB_CFLAGS)
+      string(REGEX REPLACE " *-I" ";" TAGLIB_INCLUDES "${TAGLIB_CFLAGS}")
+-  endif(TAGLIB_VERSION STRLESS "${TAGLIB_MIN_VERSION}") 
++  endif(TAGLIB_VERSION VERSION_LESS "${TAGLIB_MIN_VERSION}")
+   mark_as_advanced(TAGLIB_CFLAGS TAGLIB_LIBRARIES TAGLIB_INCLUDES)
+ 
+ else(TAGLIBCONFIG_EXECUTABLE)
+-- 
+2.1.1.1.g1fb337f
+

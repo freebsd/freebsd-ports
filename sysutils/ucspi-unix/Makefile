@@ -5,12 +5,10 @@ PORTNAME=	ucspi-unix
 PORTVERSION=	0.36
 PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://untroubled.org/${PORTNAME}/
+MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix-domain socket client-server command-line tools
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 

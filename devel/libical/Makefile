@@ -14,7 +14,7 @@ LICENSE=	MPL LGPL21
 USE_GITHUB=	yes
 GH_TAGNAME=	da69aae
 
-USES=		cmake gmake pathfix perl5
+USES=		cmake pathfix perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 

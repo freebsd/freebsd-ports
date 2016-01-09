@@ -1,5 +1,5 @@
---- src/automx-test.orig	2014-01-03 08:38:38.000000000 +0000
-+++ src/automx-test	2014-04-14 22:20:41.000000000 +0100
+--- src/automx-test.orig	2014-04-26 16:16:55 UTC
++++ src/automx-test
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -31,7 +31,7 @@
  	PROFILE="$1"
  else 
  	echo "Provide the mail address for which configuration settings should be retrieved."
-@@ -44,7 +46,7 @@
+@@ -44,7 +46,7 @@ MBCRESPONSE="$(mktemp /tmp/${PROGRAM_NAM
  
  # Test Mozilla schema
  AUTOCONF="autoconfig.$DOMAIN"
@@ -40,7 +40,7 @@
  	CON="http://$AUTOCONF/mail/config-v1.1.xml?emailaddress=$PROFILE"
  	echo
  	echo "Testing Autoconfig ..."
-@@ -60,13 +62,13 @@
+@@ -60,13 +62,13 @@ fi
  
  # Test Microsoft schema
  AUTODISC="autodiscover.$DOMAIN"
@@ -48,7 +48,8 @@
 +if [ -z "$(dig +short $AUTODISC)" ]; then
  	# default domain does not exist, try to discover non-default
  	AUTODISC="$(dig +short -t srv _autodiscover._tcp.$DOMAIN)"
-   	AUTODISC="${AUTODISC//* /}"
+-  	AUTODISC="${AUTODISC//* /}"
++  	AUTODISC="${AUTODISC##* }"
    	AUTODISC="${AUTODISC%.*}"
  fi
 -if [[ $AUTODISC ]]; then
@@ -56,7 +57,7 @@
  	# Test Microsoft Outlook schema
  	CON="https://$AUTODISC/autodiscover/autodiscover.xml"
  	cat <<-REQ >$OLREQUEST
-@@ -111,13 +113,13 @@
+@@ -111,13 +113,13 @@ fi
  
  # Test mobileconfig schema
  AUTODISC="autodiscover.$DOMAIN"
@@ -64,7 +65,8 @@
 +if [ -z "$(dig +short $AUTODISC)" ]; then
  	# default domain does not exist, try to discover non-default
  	AUTODISC="$(dig +short -t srv _autodiscover._tcp.$DOMAIN)"
-   	AUTODISC="${AUTODISC//* /}"
+-  	AUTODISC="${AUTODISC//* /}"
++  	AUTODISC="${AUTODISC##* }"
    	AUTODISC="${AUTODISC%.*}"
  fi
 -if [[ $AUTODISC ]]; then

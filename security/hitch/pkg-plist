@@ -1,3 +1,6 @@
 man/man8/hitch.8.gz
-sbin/hitch-openssl
+sbin/hitch
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.rst
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/hitch.conf.ex
 @sample etc/hitch.conf.sample

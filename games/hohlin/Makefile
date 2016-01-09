@@ -5,16 +5,13 @@ PORTNAME=	hohlin
 PORTVERSION=	1.01
 PORTREVISION=	2
 CATEGORIES=	games
-#MASTER_SITES=	http://retrospec.sgn.net/download.php?id=63&path=games/hoh/bin/
-#requires post to download
-MASTER_SITES=	http://skye.ki.iif.hu/~mohacsi/downloads/
+MASTER_SITES=	http://retrospec.sgn.net/games/hoh/bin/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${SHORTPORTVERSION}
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Remake of the classic spectrum game Head over Heels
 
-BROKEN=		unfetchable
 WRKSRC=		${WRKDIR}/hoh-install-${PORTVERSION}/
 
 USES=	tar:bzip2

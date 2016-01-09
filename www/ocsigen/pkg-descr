@@ -1,5 +1,0 @@
-Ocsigen is a web programming framework for OCaml. It can be used as a web
-server, serving static pages, but it is also possible to implement entire
-web sites as OCaml modules.
-
-WWW: http://www.ocsigen.org

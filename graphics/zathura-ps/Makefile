@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-ps
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura-ps/download/
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libspectre.so:${PORTSDIR}/print/libspectre
 BUILD_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
 RUN_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
 
-USES=		desktop-file-utils gmake pkgconfig
+USES=		compiler:c11 desktop-file-utils gmake pkgconfig
 USE_GNOME=	glib20 gtk30
 USE_OPENSSL=	yes
 

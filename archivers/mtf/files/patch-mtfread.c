@@ -1,6 +1,6 @@
---- mtfread.c.orig	Wed Sep 13 23:14:33 2000
-+++ mtfread.c	Wed Jun 26 14:28:48 2002
-@@ -42,7 +42,11 @@
+--- mtfread.c.orig	2000-09-13 15:14:33 UTC
++++ mtfread.c
+@@ -42,7 +42,11 @@ See mtf.c for version history, contribut
  #include <limits.h>
  #include <sys/stat.h>
  #include <sys/fcntl.h>
@@ -12,7 +12,7 @@
  #include <utime.h>
  #include <unistd.h>
  #include <time.h>
-@@ -363,7 +367,7 @@
+@@ -363,7 +367,7 @@ INT32 readTapeBlock(void)
  	{
  		stream = (MTF_STREAM_HDR*) ((char*) tape + dbHdr->off);
  		result = skipToNextBlock();
@@ -21,7 +21,7 @@
  		{
  			fprintf(stderr, "Error traversing to end of descriptor block!\n");
  			return(-1);
-@@ -671,7 +675,8 @@
+@@ -671,7 +675,8 @@ INT32 readFileBlock(void)
  	INT32 result;
  	char *ptr, *ptr2, filePath[MAXPATHLEN + 1], fullPath[MAXPATHLEN + 1];
  	char tmpPath[MAXPATHLEN + 1];

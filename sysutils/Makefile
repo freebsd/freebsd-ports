@@ -656,6 +656,7 @@
     SUBDIR += p5-Samba-SIDhelper
     SUBDIR += p5-Schedule-At
     SUBDIR += p5-Schedule-Cron
+    SUBDIR += p5-Schedule-Cron-Events
     SUBDIR += p5-Schedule-Load
     SUBDIR += p5-Schedule-Match
     SUBDIR += p5-Shell-Command

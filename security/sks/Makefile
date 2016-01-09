@@ -4,7 +4,7 @@ PORTNAME=	sks
 PORTVERSION=	1.1.5
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://cdn.bitbucket.org/skskeyserver/sks-keyserver/downloads/
+MASTER_SITES=	http://bitbucket.org/skskeyserver/sks-keyserver/downloads/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver

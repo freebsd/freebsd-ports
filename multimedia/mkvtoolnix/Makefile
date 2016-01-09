@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	8.6.1
+PORTVERSION=	8.7.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		LOCAL/ehaupt
@@ -81,6 +81,8 @@ post-patch:
 		${WRKSRC}/src/output/p_mpeg4_p10.cpp \
 		${WRKSRC}/src/output/p_tta.cpp \
 		${WRKSRC}/src/output/p_wavpack.cpp
+	@${REINPLACE_CMD} -e 's|std::lround|lround|g' \
+		${WRKSRC}/src/propedit/tag_target.cpp
 .endif
 	${REINPLACE_CMD} -e '/LIBS="-lintl/s,-liconv,$$ICONV_LIBS,' \
 		${WRKSRC}/configure

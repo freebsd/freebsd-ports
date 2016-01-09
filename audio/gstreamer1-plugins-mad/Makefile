@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer mp3 decoder plugin
+COMMENT=	GStreamer mp3 decoder plugin
 
 GST_PLUGIN=	mad
 DIST=		ugly

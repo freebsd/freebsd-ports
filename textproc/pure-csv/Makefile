@@ -5,13 +5,11 @@ PORTNAME=	pure-csv
 PORTVERSION=	1.5
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
+MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CSV reading and writing module for the Pure language
-
-BROKEN=		unfetchable
 
 LICENSE=	BSD3CLAUSE
 

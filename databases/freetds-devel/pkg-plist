@@ -39,7 +39,7 @@ lib/libsybdb.a
 lib/libsybdb.la
 lib/libsybdb.so
 lib/libsybdb.so.5
-lib/libsybdb.so.5.0.0
+lib/libsybdb.so.5.1.0
 %%ODBC%%lib/libtdsodbc.so.0.0.0
 %%ODBC%%lib/libtdsodbc.so.0
 %%ODBC%%lib/libtdsodbc.so

@@ -1,8 +1,0 @@
-Header files for TI's msp430 MCUs cross-development
-
- This port installs msp430mcu - platform header files
- and linking scripts for msp430-gcc and msp430-binutil.
-
-MSP430 site: http://www.ti.com/msp430/
-
-WWW: http://mspgcc.sourceforge.net/

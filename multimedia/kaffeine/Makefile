@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc
 
-USES=		cmake cpe gettext gmake pkgconfig
+USES=		cmake cpe gettext pkgconfig
 USE_KDE4=	automoc4 kdelibs kdeprefix
 USE_QT4=	corelib dbus gui network phonon sql svg xml \
 		moc_build qmake_build rcc_build uic_build

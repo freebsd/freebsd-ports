@@ -49,13 +49,8 @@ do-install:
 post-install-script:
 	@${FIND} -ds ${ATS_LIBDIR}/contrib/${ATS_CTRB} -type f -print | \
 	    ${SED} -e 's|^${LOCALBASE}/||' >> ${TMPPLIST}
-	@${FIND} -ds ${ATS_LIBDIR}/contrib/${ATS_CTRB} -type d -print | \
-	    ${SED} -e 's|^${LOCALBASE}/|@dirrm |' >> ${TMPPLIST}
 .if !defined(NOPORTEXAMPLES) && defined(ATS_CTRBEXAMPLE)
 	@${FIND} -ds ${ATS_CTRBEXAMPLEDIR} -type f -print | \
 	    ${SED} -E -e 's|^${PREFIX}/?||' >> ${TMPPLIST}
-	@${FIND} -ds ${ATS_CTRBEXAMPLEDIR} -type d -print | \
-	    ${SED} -E -e 's|^${PREFIX}/?|@dirrm |' >> ${TMPPLIST}
 .endif
-	@${ECHO_CMD} '@unexec rmdir %D/${ATS_LIBDIR_REL}/contrib 2>/dev/null || true' >> ${TMPPLIST}
 .endif

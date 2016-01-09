@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer kate codec plugin
+COMMENT=	GStreamer kate codec plugin
 
 GST_PLUGIN=	kate
 DIST=		bad

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-DISTVERSION=	2.6.4
+DISTVERSION=	2.7.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -80,8 +80,8 @@ GUI_MAKE_ARGS_OFF=	NO_TCLTK=yes
 
 # While this port does not explicity honor WITH_SUBVERSION_VER knob it does
 # depend upon devel/p5-subversion, which does honor that knob. If you want
-# to have git use devel/subversion16 it will be brought in through
-# devel/p5-subversion if you set WITH_SUBVERSION_VER=16. Otherwise
+# to have git use devel/subversion18 it will be brought in through
+# devel/p5-subversion if you set WITH_SUBVERSION_VER=18. Otherwise
 # devel/subversion will be brought in.
 SVN_RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 			p5-subversion>=0:${PORTSDIR}/devel/p5-subversion

@@ -25,6 +25,7 @@ load_rc_config $name
 rabbitmq_server="%%PREFIX%%/sbin/rabbitmq-server"
 rabbitmq_ctl="%%PREFIX%%/sbin/rabbitmqctl"
 pidfile="/var/run/${name}.pid"
+daemon_pidfile="/var/run/${name}-daemon.pid"
 
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
@@ -46,35 +47,18 @@ rabbitmq_start()
 		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_HOME}
 	fi
 
-	env HOME=${RABBITMQ_HOME} daemon -c -f -u ${rabbitmq_user} -p ${pidfile} ${rabbitmq_server}
-
-	local _attempt=10
-
-	while [ ${_attempt} -gt 0 ]; do
-		debug "Running: rabbitmqctl status (${_attempt})"
-		$rabbitmq_ctl status > /dev/null 2>&1 && break
-		_attempt=$((${_attempt} - 1))
-		sleep 1
-	done
-
-	if [ ${_attempt} -gt 0 ]; then
-		debug "Running: rabbitmqctl wait ${pidfile}"
-		$rabbitmq_ctl wait ${pidfile} >/dev/null 2>&1
-	fi
+	env HOME=${RABBITMQ_HOME} daemon -c -f -u ${rabbitmq_user} -p ${pidfile} -P ${daemon_pidfile} ${rabbitmq_server}
+	debug "Running: rabbitmqctl wait ${pidfile}"
+	${rabbitmq_ctl} wait ${pidfile} >/dev/null 2>&1
 }
 
 rabbitmq_stop()
 {
 	echo "Stopping ${name}."
-
-	debug "Running: ${rabbitmq_ctl} stop"
-
-	su -m ${rabbitmq_user} -c "sh -c \"${rabbitmq_ctl} stop\"" >/dev/null 2>&1
-
-	if [ -f ${pidfile} ]; then
-		read rc_pid < ${pidfile}
-		wait_for_pids $rc_pid
-	fi
+	[ -f ${daemon_pidfile} ] && read daemon_pid < ${daemon_pidfile}
+	debug "Running: ${rabbitmq_ctl} stop ${pidfile}"
+	su -m ${rabbitmq_user} -c "sh -c \"${rabbitmq_ctl} stop ${pidfile}\"" >/dev/null 2>&1
+	[ -n "${daemon_pid}" ] && wait_for_pids ${daemon_pid}
 }
 
 run_rc_command "$1"

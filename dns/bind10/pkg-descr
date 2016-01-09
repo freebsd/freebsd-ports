@@ -1,6 +1,0 @@
-ISC BIND 10 provides a DNS library in C++ (with Python wrapper),
-an authoritative DNS server, a recursive/caching DNS server,
-and various cooperating daemons and tools for managing DNS.
-It also provides a new DHCPv6 and DHCPv4 servers and DHCP libraries.
-
-WWW: http://bind10.isc.org/

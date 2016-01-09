@@ -1,0 +1,26 @@
+--- UniversalDetector/Makefile.freebsd.orig	2015-09-23 20:24:59 UTC
++++ UniversalDetector/Makefile.freebsd
+@@ -1,10 +1,7 @@
+ # Compilers and linkers
+ 
+-OBJCC = clang
+-CC = clang
+-CXX = clang++
++OBJCC ?= $(CC)
+ LD = $(CXX)
+-AR = ar
+ 
+ # Options for compilation
+ 
+@@ -16,10 +13,9 @@ GNUSTEP_OPTS =	-DGNUSTEP \
+ 		-fobjc-exceptions \
+ 		-fconstant-string-class=NSConstantString
+ 
+-GCC_OPTS = 	-O2 \
++GCC_OPTS = 	$(CFLAGS) \
+ 		-Wno-import \
+ 		-Wno-multichar \
+-		-g \
+ 		-D_FILE_OFFSET_BITS=64 \
+ 		-isystem /usr/local/GNUstep/System/Library/Headers \
+ 		-I/usr/local/include

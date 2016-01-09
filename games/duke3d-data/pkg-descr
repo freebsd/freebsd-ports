@@ -1,6 +1,0 @@
-This port installs the data files needed to run Duke Nukem 3D. It either asks
-for the original data, or downloads a shareware version based on the selected
-options. In the first case you need to have a legitimate copy of the game in
-order to obtain the DUKE3D.GRP file.
-
-WWW: http://www.3drealms.com/duke3d/

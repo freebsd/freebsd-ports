@@ -20,10 +20,22 @@ rcvar=sonarr_enable
 load_rc_config $name
 
 : ${sonarr_enable="NO"}
+: ${sonarr_user:="sonarr"}
+: ${sonarr_data_dir:="%%PREFIX%%/sonarr"}
 
-pidfile=/var/run/sonarr.pid
+pidfile="${sonarr_data_dir}/nzbdrone.pid"
 procname="%%PREFIX%%/bin/mono"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} -u sonarr %%PREFIX%%/bin/mono %%DATADIR%%/NzbDrone.exe --nobrowser --data=%%PREFIX%%/sonarr"
+command_args="-f ${procname} %%DATADIR%%/NzbDrone.exe --nobrowser --data=${sonarr_data_dir}"
+start_precmd=sonarr_precmd
+
+sonarr_precmd()
+{
+	export XDG_CONFIG_HOME=${sonarr_data_dir}
+
+	if [ ! -d ${sonarr_data_dir} ]; then
+		install -d -o ${sonarr_user} ${sonarr_data_dir}
+	fi
+}
 
 run_rc_command "$1"

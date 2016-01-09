@@ -5,14 +5,12 @@ PORTNAME=	heretic
 PORTVERSION=	1.2
 PORTREVISION=	8
 CATEGORIES=	games
-MASTER_SITES=	http://heretic.linuxgames.com/heretic/src/:source \
-		http://heretic.linuxgames.com/wad/:wad
+MASTER_SITES=	http://files.kyle-evans.net/freebsd/:source \
+		http://files.kyle-evans.net/freebsd/:wad
 DISTNAME=	gl${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Unix source-port of the famous Heretic game by id Software
-
-BROKEN=		unfetchable
 
 USES=		gmake
 USE_XORG=	x11 xi xpm xau

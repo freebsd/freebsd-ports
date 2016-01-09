@@ -6,7 +6,7 @@ PORTVERSION=	0.8.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Wrapper for the Tumblr v2 API
 
 LICENSE=	APACHE20

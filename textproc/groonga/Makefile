@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	groonga
-PORTVERSION=	5.0.9
+PORTVERSION=	5.1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -30,8 +30,8 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		MECAB SUGGEST
-OPTIONS_DEFAULT=	MECAB SUGGEST
+OPTIONS_DEFINE=		MECAB SUGGEST RUBY
+OPTIONS_DEFAULT=	MECAB SUGGEST RUBY
 OPTIONS_SUB=		yes
 
 MECAB_DESC=		Morphological analysis support via MeCab
@@ -47,6 +47,8 @@ SUGGEST_CONFIGURE_ON=	--with-libevent=${LOCALBASE} \
 SUGGEST_CONFIGURE_OFF=	--without-libevent \
 			--without-message-pack \
 			--disable-zeromq
+RUBY_CONFIGURE_ON=	--enable-mruby
+RUBY_USE=		RUBY=yes
 
 .include <bsd.port.options.mk>
 
@@ -58,7 +60,7 @@ post-patch:
 		'/NGX_PID_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
-		${WRKSRC}/vendor/nginx-1.9.6/auto/install
+		${WRKSRC}/vendor/nginx-1.9.7/auto/install
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/groonga-httpd

@@ -9,11 +9,12 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C99 compiler using libFIRM as backend
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfirm.so:${PORTSDIR}/devel/libfirm
 
-USES=		pkgconfig gmake tar:bzip2
+USES=		gmake pkgconfig tar:bzip2
 
 PLIST_FILES=	bin/cparser \
 		man/man1/cparser.1.gz
@@ -22,15 +23,11 @@ BUILDDIR=	optimize
 
 OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.options.mk>
+DEBUG_VARS=	BUILDDIR=debug
 
-.if ${PORT_OPTIONS:MDEBUG}
-BUILDDIR=	debug
-.else
-post-patch:
+post-patch-DEBUG-off:
 	@${REINPLACE_CMD} -e 's/^variant  ?= debug/variant  ?= optimize/' \
 		${WRKSRC}/Makefile
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/${BUILDDIR}/cparser ${STAGEDIR}${PREFIX}/bin

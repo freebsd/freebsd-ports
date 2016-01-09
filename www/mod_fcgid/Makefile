@@ -34,9 +34,11 @@ DOCSDIR=	${PREFIX}/share/doc/apache${APACHE_VERSION}/mod
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/manual/mod/mod_fcgid.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/manual/mod/mod_fcgid.html.en ${STAGEDIR}${DOCSDIR}
-	${MKDIR} -m 700 ${STAGEDIR}/var/run/fcgidsock
+	@${MKDIR} ${STAGEDIR}/var/run/fcgidsock
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/manual/mod/mod_fcgid.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/manual/mod/mod_fcgid.html.en ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

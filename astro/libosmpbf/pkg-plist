@@ -1,3 +1,4 @@
+bin/osmpbf-outline
 include/osmpbf/fileformat.pb.h
 include/osmpbf/osmformat.pb.h
 include/osmpbf/osmpbf.h

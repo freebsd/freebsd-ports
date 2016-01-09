@@ -2543,6 +2543,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/lrt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/persian.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/persian.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/programmer-dvorak.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/programmer-dvorak.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/py-punct.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/py-punct.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/pypunct-b5.el.gz
@@ -2770,8 +2772,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-ldap.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-mab.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-mab.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-ph.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-ph.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eww.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eww.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/gnutls.el.gz
@@ -2953,6 +2953,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cust-print.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/erc-hecomplete.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/erc-hecomplete.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/fast-lock.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/fast-lock.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gulp.el.gz

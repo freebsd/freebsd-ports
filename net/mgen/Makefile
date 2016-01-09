@@ -18,6 +18,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		gmake tar:tgz
 MAKEFILE=	Makefile.freebsd
+BUILD_WRKSRC=	${WRKSRC}/unix
+ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/mgen
 PORTDOCS=	README.TXT VERSION.TXT mgen.html example.mgn
@@ -30,11 +32,10 @@ post-patch:
 		${WRKSRC}/unix/Makefile.freebsd \
 		${WRKSRC}/protolib/unix/Makefile.freebsd
 
-do-build:
-	${DO_MAKE_BUILD} -C ${WRKSRC}/unix ${PORTNAME}
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unix/mgen ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}

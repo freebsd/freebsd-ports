@@ -3,5 +3,5 @@ include/ass/ass_types.h
 lib/libass.a
 lib/libass.so
 lib/libass.so.5
-lib/libass.so.5.1.0
+lib/libass.so.5.2.1
 libdata/pkgconfig/libass.pc

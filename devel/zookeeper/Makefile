@@ -1,76 +1,71 @@
-# Created by: gnn@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	zookeeper
-PORTVERSION=	3.4.6
-PORTREVISION=	4
+PORTVERSION=	3.4.7
 CATEGORIES=	devel java
-MASTER_SITES=	APACHE/zookeeper/zookeeper-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	${PORTNAME}/current
 
 MAINTAINER=	skreuzer@FreeBSD.org
-COMMENT=	Service for maintaining distributed configuration, naming and locks
+COMMENT=	Coordination Service for Distributed Applications
 
-LICENSE=	APACHE20
+RUN_DEPENDS=	slf4j>=1.7.5:${PORTSDIR}/devel/slf4j \
+		netty>=3.5.5:${PORTSDIR}/java/netty \
+		jline>=0.9.94:${PORTSDIR}/devel/jline \
+		log4j>=1.2.16:${PORTSDIR}/devel/log4j \
+		libzookeeper>=3.4.7:${PORTSDIR}/devel/libzookeeper
 
-LIB_DEPENDS=	libcppunit.so:${PORTSDIR}/devel/cppunit
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+USERS=	zookeeper
+GROUPS=	zookeeper
 
-USES+=	cpe
-CPE_VENDOR=	apache
+ZOOKEEPER_JAR=	${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar
+
+ZOOKEEPER_DBDIR?=	/var/db/zookeeper
+ZOOKEEPER_LOGDIR?=	/var/log/zookeeper
+
+SUB_FILES=	zookeeper zkCli.sh zkServer.sh
+SUB_LIST=	JAVA=${JAVA} \
+		JAVALIBDIR=${JAVALIBDIR} \
+		ETCDIR=${ETCDIR} \
+		ZOOKEEPER_USER=${USERS} \
+		ZOOKEEPER_GROUP=${GROUPS} \
+		ZOOKEEPER_LOGDIR=${ZOOKEEPER_LOGDIR}
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
+		ZOOKEEPER_DBDIR=${ZOOKEEPER_DBDIR} \
+		ZOOKEEPER_LOGDIR=${ZOOKEEPER_LOGDIR} \
+		JAVALIBDIR=${JAVALIBDIR}
+
+NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7
 JAVA_VENDOR=	openjdk
 JAVA_RUN=	yes
-
 USE_RC_SUBR=	zookeeper
 
-NO_BUILD=	yes
-NO_ARCH=	yes
-
-SCRIPTS=	zkCleanup.sh \
-		zkCli.sh \
-		zkEnv.sh \
-		zkServer.sh
 PORTDOCS=	*
 
-PLIST_SUB=	PORTNAME=${PORTNAME} \
-		PORTVERSION=${PORTVERSION} \
-		JAVA_HOME=${JAVA_HOME}
+.include <bsd.port.pre.mk>
 
-ZOOKEEPER_LOGDIR?=	/var/log/${PORTNAME}
-ZOOKEEPER_RUNDIR?=	/var/run/${PORTNAME}
-
-SUB_LIST+=	ZOOKEEPER_LOGDIR=${ZOOKEEPER_LOGDIR} \
-		ZOOKEEPER_RUNDIR=${ZOOKEEPER_RUNDIR} \
-		JAVA_HOME=${JAVA_HOME}
-
-OPTIONS_DEFINE=	DOCS
-
-post-patch:
-.for f in ${SCRIPTS}
-	${REINPLACE_CMD} -e "s|bash|${LOCALBASE}/bin/bash|" ${WRKSRC}/bin/${f}
-.endfor
+post-extract:
+	@${REINPLACE_CMD} "/dataDir/s|=.*|=${ZOOKEEPER_DBDIR}|" ${WRKDIR}/${DISTNAME}/conf/zoo_sample.cfg
+	@${RM} ${WRKDIR}/${DISTNAME}/conf/zoo_sample.cfg.bak
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin
-.for f in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin
-.endfor
-	cd ${WRKSRC} && ${COPYTREE_SHARE} conf ${STAGEDIR}${PREFIX}/${PORTNAME}/
-	cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX}/${PORTNAME}/
-	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${PREFIX}/${PORTNAME}
-	${LN} -s ${PREFIX}/${PORTNAME}/bin/zkCli.sh ${STAGEDIR}${PREFIX}/bin/zkCli.sh
+	${CP} -Rp ${WRKDIR}/${DISTNAME}/conf/ ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${ZOOKEEPER_JAR} ${STAGEDIR}${JAVALIBDIR}
+	${LN} -nfs ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${ZOOKEEPER_LOGDIR}
-	@${MKDIR} ${STAGEDIR}${ZOOKEEPER_RUNDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/zkCli.sh ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/zkServer.sh ${STAGEDIR}${PREFIX}/bin/
 
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	${RM} -r ${STAGEDIR}${DOCSDIR}/skin/translations
-	${RM} -r ${STAGEDIR}${DOCSDIR}/skin/scripts
-	${RM} -r ${STAGEDIR}${DOCSDIR}/skin/css
+	${MKDIR} ${STAGEDIR}${ZOOKEEPER_LOGDIR}
+	${MKDIR} ${STAGEDIR}${ZOOKEEPER_DBDIR}
 
-.include <bsd.port.mk>
+.if (PORT_OPTIONS:MDOCS)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKDIR}/${DISTNAME}/docs && \
+	${TAR} -cf - . | ${TAR} -xf - -C ${STAGEDIR}${DOCSDIR})
+.endif
+
+.include <bsd.port.post.mk>

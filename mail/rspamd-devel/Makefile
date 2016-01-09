@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.1.0.a.17122015
+PORTVERSION=	1.1.0.a2.04012016
 CATEGORIES=	mail
-MASTER_SITES=	http://rspamd.com/downloads/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -17,9 +16,13 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
 		libhiredis.so:${PORTSDIR}/databases/hiredis
 
-RSPAMD_VERSION=	1.1.0
 CONFLICTS_INSTALL=	rspamd
-WRKSRC=		${WRKDIR}/${PORTNAME}-${RSPAMD_VERSION}
+
+RSPAMD_VERSION=	1.1.0
+USE_GITHUB=	yes
+GH_ACCOUNT=	vstakhov
+GH_PROJECT=	rspamd
+GH_TAGNAME=	36f5aa8
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR
 GPERF_DESC=		google perf-tools profiling
@@ -38,7 +41,8 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DBUILD_PORT=yes \
 		-DFORCE_GMIME24=yes \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
-		-DNO_SHARED=ON
+		-DNO_SHARED=ON \
+		-DDEBUG=ON
 
 USES=		cmake:outsource gettext iconv pkgconfig tar:xz perl5 \
 		compiler:c11
@@ -48,6 +52,8 @@ USE_PERL5=	build
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
 USE_SQLITE=	yes
+DEBUG_FLAGS=	-g -O0
+WITH_DEBUG=	yes
 
 .include <bsd.port.options.mk>
 

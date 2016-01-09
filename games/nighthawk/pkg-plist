@@ -1,10 +1,4 @@
-@owner root
-@group games
-@mode 6755
-bin/nighthawk
-@owner
-@group
-@mode
+@(root,games,6755) bin/nighthawk
 man/man6/nighthawk.6.gz
 %%DATADIR%%/data/Anoyle/Bridge.f
 %%DATADIR%%/data/Anoyle/Bridge.m
@@ -206,20 +200,4 @@ man/man6/nighthawk.6.gz
 %%DATADIR%%/data/xpm/standard/ship_complete.xpm
 %%DATADIR%%/data/xpm/standard/trans_terminated.xpm
 %%DATADIR%%/data/xpm/xpm.i
-@dirrm %%DATADIR%%/data/xpm/standard
-@dirrm %%DATADIR%%/data/xpm/font
-@dirrm %%DATADIR%%/data/xpm
-@dirrm %%DATADIR%%/data/music
-@dirrm %%DATADIR%%/data/Zaxon
-@dirrm %%DATADIR%%/data/Tobruk
-@dirrm %%DATADIR%%/data/Seafarer
-@dirrm %%DATADIR%%/data/Ophukus
-@dirrm %%DATADIR%%/data/Mearkat
-@dirrm %%DATADIR%%/data/Haldeck
-@dirrm %%DATADIR%%/data/Friendship
-@dirrm %%DATADIR%%/data/Esperence
-@dirrm %%DATADIR%%/data/Discovery
-@dirrm %%DATADIR%%/data/Anoyle
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
 @unexec if [ ! -s /var/games/nighthawk.scores ]; then rm -f /var/games/nighthawk.scores; fi

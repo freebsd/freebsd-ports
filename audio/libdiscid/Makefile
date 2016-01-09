@@ -11,11 +11,7 @@ COMMENT=	Library for creating MusicBrainz DiscIDs
 
 LICENSE=	LGPL21
 
-USES=		cmake
+USES=		cmake pathfix
 USE_LDCONFIG=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \
-		 ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

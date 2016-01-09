@@ -60,7 +60,6 @@
     SUBDIR += h5utils
     SUBDIR += harminv
     SUBDIR += hdf
-    SUBDIR += hdf-java
     SUBDIR += hdf5
     SUBDIR += hs-bio
     SUBDIR += isaac-cfd
@@ -157,6 +156,7 @@
     SUBDIR += py-pysal
     SUBDIR += py-pyteomics
     SUBDIR += py-pyteomics.biolccc
+    SUBDIR += py-scikit-fuzzy
     SUBDIR += py-scikit-learn
     SUBDIR += py-scikit-sparse
     SUBDIR += py-scimath

@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer mp3 encode plugin
+COMMENT=	GStreamer High-quality free mp3 encode plugin
 
 GST_PLUGIN=	lame
 DIST=		ugly

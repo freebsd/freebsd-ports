@@ -892,6 +892,7 @@ lib/wine/api-ms-win-core-memory-l1-1-1.dll.so
 lib/wine/api-ms-win-core-misc-l1-1-0.dll.so
 lib/wine/api-ms-win-core-namedpipe-l1-1-0.dll.so
 lib/wine/api-ms-win-core-namedpipe-l1-2-0.dll.so
+lib/wine/api-ms-win-core-path-l1-1-0.dll.so
 lib/wine/api-ms-win-core-processenvironment-l1-1-0.dll.so
 lib/wine/api-ms-win-core-processenvironment-l1-2-0.dll.so
 lib/wine/api-ms-win-core-processthreads-l1-1-0.dll.so
@@ -946,6 +947,7 @@ lib/wine/api-ms-win-eventing-provider-l1-1-0.dll.so
 lib/wine/api-ms-win-ntuser-dc-access-l1-1-0.dll.so
 lib/wine/api-ms-win-security-base-l1-1-0.dll.so
 lib/wine/api-ms-win-security-base-l1-2-0.dll.so
+lib/wine/api-ms-win-security-lsalookup-l1-1-0.dll.so
 lib/wine/api-ms-win-security-sddl-l1-1-0.dll.so
 lib/wine/api-ms-win-service-core-l1-1-1.dll.so
 lib/wine/api-ms-win-service-management-l1-1-0.dll.so
@@ -1152,6 +1154,7 @@ lib/wine/fakedlls/api-ms-win-core-memory-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-misc-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-namedpipe-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-namedpipe-l1-2-0.dll
+lib/wine/fakedlls/api-ms-win-core-path-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-processenvironment-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-processenvironment-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-processthreads-l1-1-0.dll
@@ -1206,6 +1209,7 @@ lib/wine/fakedlls/api-ms-win-eventing-provider-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-ntuser-dc-access-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-security-base-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-security-base-l1-2-0.dll
+lib/wine/fakedlls/api-ms-win-security-lsalookup-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-security-sddl-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-service-core-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-service-management-l1-1-0.dll
@@ -1897,6 +1901,7 @@ lib/wine/libd3d9.def
 lib/wine/libd3dcompiler.def
 lib/wine/libd3dim.def
 lib/wine/libd3drm.def
+lib/wine/libd3dx10.def
 lib/wine/libd3dx9.def
 lib/wine/libd3dxof.def
 lib/wine/libdbgeng.def

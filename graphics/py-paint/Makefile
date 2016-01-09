@@ -18,6 +18,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libttf.so:${PORTSDIR}/print/freetype
 
+OPTIONS_DEFINE=	EXAMPLES
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	libartlgpl2
@@ -34,6 +36,7 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/paint.so
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} ${WRKSRC}/test* ${STAGEDIR}${EXAMPLESDIR}
 

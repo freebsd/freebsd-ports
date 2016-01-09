@@ -5,12 +5,10 @@ PORTNAME=	hlfl
 PORTVERSION=	0.60.1
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.hlfl.org/pub/hlfl/
+MASTER_SITES=	ftp://ftp.cusae.com/pub/hlfl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Level Firewall Language
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,0 +1,10 @@
+--- tools/CMakeLists.txt.orig	2014-03-15 15:11:32 UTC
++++ tools/CMakeLists.txt
+@@ -4,7 +4,6 @@ PROJECT(${PROJECT})
+ if(MSVC)
+     set(CMAKE_CXX_FLAGS "/O3")
+ else()
+-    set(CMAKE_CXX_FLAGS "-O3 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64")
+ endif()
+ 
+ SET(CPP_SRC osmpbf-outline.cpp)

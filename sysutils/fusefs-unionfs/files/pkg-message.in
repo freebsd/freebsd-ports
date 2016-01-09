@@ -1,0 +1,14 @@
+You will need to load the kernel module 'fuse' to use this package. To load
+this at boot time, add the following line to /boot/loader.conf:
+
+fuse_load="YES"
+
+If you want unprivileged users to be able to use unionfs, add the following
+line to /etc/sysctl.conf:
+
+vfs.usermount=1
+
+You can enable them immediately with:
+
+kldload fuse
+sysctl vfs.usermount=1

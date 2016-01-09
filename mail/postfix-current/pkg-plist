@@ -164,6 +164,7 @@ sbin/postmulti
 sbin/postsuper
 sbin/posttls-finger
 sbin/sendmail
+%%DATADIR%%/mailer.conf.postfix
 @dir libexec/postfix/dynamicmaps.cf.d
 @dir libexec/postfix/postfix-files.d
 @dir %%PFETC%%

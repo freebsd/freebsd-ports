@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stomp
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	net-im pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

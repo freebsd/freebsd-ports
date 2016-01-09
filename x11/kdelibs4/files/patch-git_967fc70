@@ -1,0 +1,35 @@
+From: Rex Dieter <rdieter@math.unl.edu>
+Date: Sat, 07 Nov 2015 12:54:26 +0000
+Subject: FindTaglib.cmake: fix version detection for 1.10
+X-Git-Tag: v4.14.15
+X-Git-Url: http://quickgit.kde.org/?p=kdelibs.git&a=commitdiff&h=967fc70300d5c2ae34d39b61757b717f6fca8805
+---
+FindTaglib.cmake: fix version detection for 1.10
+---
+
+
+--- cmake/modules/FindTaglib.cmake
++++ cmake/modules/FindTaglib.cmake
+@@ -29,10 +29,10 @@
+ 
+   exec_program(${TAGLIBCONFIG_EXECUTABLE} ARGS --version RETURN_VALUE _return_VALUE OUTPUT_VARIABLE TAGLIB_VERSION)
+ 
+-  if(TAGLIB_VERSION STRLESS "${TAGLIB_MIN_VERSION}")
++  if("${TAGLIB_MIN_VERSION}" VERSION_GREATER TAGLIB_VERSION)
+      message(STATUS "TagLib version not found: version searched :${TAGLIB_MIN_VERSION}, found ${TAGLIB_VERSION}")
+      set(TAGLIB_FOUND FALSE)
+-  else(TAGLIB_VERSION STRLESS "${TAGLIB_MIN_VERSION}")
++  else("${TAGLIB_MIN_VERSION}" VERSION_GREATER TAGLIB_VERSION)
+ 
+      exec_program(${TAGLIBCONFIG_EXECUTABLE} ARGS --libs RETURN_VALUE _return_VALUE OUTPUT_VARIABLE TAGLIB_LIBRARIES)
+ 
+@@ -43,7 +43,7 @@
+         message(STATUS "Found taglib: ${TAGLIB_LIBRARIES}")
+      endif(TAGLIB_LIBRARIES AND TAGLIB_CFLAGS)
+      string(REGEX REPLACE " *-I" ";" TAGLIB_INCLUDES "${TAGLIB_CFLAGS}")
+-  endif(TAGLIB_VERSION STRLESS "${TAGLIB_MIN_VERSION}") 
++  endif("${TAGLIB_MIN_VERSION}" VERSION_GREATER TAGLIB_VERSION)
+   mark_as_advanced(TAGLIB_CFLAGS TAGLIB_LIBRARIES TAGLIB_INCLUDES)
+ 
+ else(TAGLIBCONFIG_EXECUTABLE)
+

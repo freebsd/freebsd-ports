@@ -1,6 +1,4 @@
 include/gwenhywfar4/gwen-gui-fox16/api.h
-include/gwenhywfar4/gwen-gui-fox16/cppdialog.hpp
-include/gwenhywfar4/gwen-gui-fox16/cppgui.hpp
 include/gwenhywfar4/gwen-gui-fox16/fox16_gui.hpp
 include/gwenhywfar4/gwen-gui-fox16/fox16_htmlctx.hpp
 include/gwenhywfar4/gwen-gui-fox16/fox16_htmllabel.hpp

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	migemo.el
-PORTVERSION=	1.9
-PORTREVISION=	2
+PORTVERSION=	1.9.1
 CATEGORIES=	japanese elisp
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -18,7 +17,7 @@ RUN_DEPENDS=	cmigemo:${PORTSDIR}/japanese/cmigemo
 
 GH_ACCOUNT=	emacs-jp
 GH_PROJECT=	migemo
-GH_TAGNAME=	38f4756
+GH_TAGNAME=	97e0779
 
 CONFLICTS=	ja-migemo-emacs24-[0-9]*
 

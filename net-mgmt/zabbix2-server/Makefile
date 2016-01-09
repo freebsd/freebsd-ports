@@ -58,8 +58,11 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--datadir=${ETCDIR}
 
 .if ${ZABBIX_BUILD} != "agent"
-LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+USES+=		execinfo
+
+CPPFLAGS+=	${EXECINFO_CPPFLAGS}
+LDFLAGS+=	${EXECINFO_LDFLAGS}
 
 SUB_FILES=	pkg-message
 

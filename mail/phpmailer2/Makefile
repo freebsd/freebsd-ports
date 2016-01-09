@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full Featured Email Transfer Class for PHP4
 
 BROKEN=		unfetchable
+DEPRECATED=	Obsolete, use mail/phpmailer instead
+EXPIRATION_DATE=2016-02-01
 
 LICENSE=	LGPL21
 

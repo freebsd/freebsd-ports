@@ -50,6 +50,12 @@ MANPAGES_USE=	gnome=libxslt:build
 MANPAGES_CONFIGURE_ENABLE=	man-pages
 OPTIONS_SUB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "armv6" || ${ARCH} == "armv6hf")
+USE_GCC=       yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/|${PREFIX}/bin/|g' \
 		${WRKSRC}/docs/man/pkexec.xml \
@@ -66,4 +72,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}/var/lib/polkit-1/localauthority/${i}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

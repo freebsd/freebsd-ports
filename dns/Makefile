@@ -9,7 +9,6 @@
     SUBDIR += autotrust
     SUBDIR += axfr2acl
     SUBDIR += bind-tools
-    SUBDIR += bind10
     SUBDIR += bind9-devel
     SUBDIR += bind910
     SUBDIR += bind99

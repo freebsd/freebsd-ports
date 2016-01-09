@@ -16,12 +16,11 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid \
 		libneon.so:${PORTSDIR}/www/neon
 
-USES=		cmake
+USES=		cmake pathfix
 USE_LDCONFIG=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \
-		-e '/CppUnit/d' ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e '/CppUnit/d' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		 ${WRKSRC}/cmake/modules/*.cmake
 

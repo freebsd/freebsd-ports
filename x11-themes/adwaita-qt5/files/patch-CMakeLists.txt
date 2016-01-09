@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2015-07-20 11:19:10 UTC
++++ CMakeLists.txt
+@@ -51,5 +51,5 @@ if (BUILD_EXAMPLE)
+     endif()
+ endif()
+ 
+-add_subdirectory(assets)
+-add_subdirectory(src)
+\ No newline at end of file
++#add_subdirectory(assets)
++add_subdirectory(src)

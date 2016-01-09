@@ -1,7 +1,0 @@
-bin/%%GDB_TARG%%-gdb
-bin/%%GDB_TARG%%-run
-%%GDB_TARG%%/bin/gdb
-%%GDB_TARG%%/bin/run
-lib/lib%%GDB_TARG%%-sim.a
-man/man1/%%GDB_TARG%%-gdb.1.gz
-man/man1/%%GDB_TARG%%-run.1.gz

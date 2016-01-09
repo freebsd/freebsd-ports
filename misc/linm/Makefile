@@ -3,7 +3,7 @@
 
 PORTNAME=	linm
 DISTVERSION=	0.8.1-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc shells
 MASTER_SITES=	http://kldp.net/frs/download.php/4508/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -27,23 +27,17 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	SMB DOCS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSMB}
-LIB_DEPENDS+=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-PLIST_SUB+=	SMB=""
-.else
-CONFIGURE_ENV+=	ac_cv_lib_smbclient_smbc_new_context=no
-PLIST_SUB+=	SMB="@comment "
-.endif
+SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_CONFIGURE_ENV_OFF=	ac_cv_lib_smbclient_smbc_new_context=no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|configpath|cfgpath|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^AM_CFLAGS/s|=.*|= -fPIC -std=gnu89|' \
 		${WRKSRC}/panel/vfs/libssh2/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog README README.ko_euckr README.ko_utf8
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}

@@ -2,22 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	bdflib
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	CHEESESHOP/source/b/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Library for working with BDF font files
 
 LICENSE=	GPLv3
 
+NO_ARCH=	yes
 USES=		python:2
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 
 post-patch:
-	@${REINPLACE_CMD} -e '/def/!s,guess_version(),"${PORTVERSION}",' \
-		${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e 's|version=guess_version()|version="${PORTVERSION}"|' ${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.mk>

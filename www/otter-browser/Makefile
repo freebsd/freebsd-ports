@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	otter
-PORTVERSION=	0.9.07
+PORTVERSION=	0.9.09
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 # Avoid pkgname conflict with misc/otter
@@ -11,7 +11,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Browser based on Qt 5
 
 USE_QT5=	concurrent core dbus gui multimedia network printsupport \
-		script sql sql-sqlite3 webkit widgets \
+		script sql sql-sqlite3 webkit widgets xmlpatterns \
 		buildtools_build qmake_build
 USES=		cmake:outsource desktop-file-utils
 

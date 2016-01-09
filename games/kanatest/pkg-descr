@@ -1,9 +1,0 @@
-During test the Kanatest displays randomly selected kana char
-(respecting mode and lesson) and waits for user answer expected as
-romaji equivalent. This process continues until all questions will be
-answered or all questions will be answered correctly (depends on
-options). At the end of test a short info about drilling time and
-correctness ratio is displayed. The results are stored and user can
-review his performance in any time.
-
-WWW: http://clayo.org/kanatest/

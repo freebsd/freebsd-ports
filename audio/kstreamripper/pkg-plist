@@ -1,8 +1,6 @@
 bin/kstreamripper
 share/applications/kde4/kstreamripper.desktop
-share/apps/kstreamripper/action-favorite-genres-amarok.svgz
 share/apps/kstreamripper/kstreamripperui.rc
-share/apps/kstreamripper/parse_rules.txt
 share/apps/kstreamripper/tips
 share/config.kcfg/settings_general.kcfg
 share/config.kcfg/settings_stream.kcfg

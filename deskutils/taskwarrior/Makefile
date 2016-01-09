@@ -2,42 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	taskwarrior
-PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTVERSION=	2.5.0
 CATEGORIES=	deskutils
-MASTER_SITES=	http://taskwarrior.org/download/
 DISTNAME=	task-${PORTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Feature-rich command-line todo list manager
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=GNUTLS
-OPTIONS_DEFAULT=GNUTLS
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
-GNUTLS_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_GnuTLS=TRUE
+USES=		compiler:c++11-lib cmake python:test shebangfix
 
-.include <bsd.port.options.mk>
+USE_GITHUB=	yes
+GH_ACCOUNT=	taskwarrior
+GH_PROJECT=	task
 
-.if ${OSVERSION} < 1000000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang36:${PORTSDIR}/lang/clang36
-CPP=	${LOCALBASE}/bin/clang-cpp36
-CC=	${LOCALBASE}/bin/clang36
-CXX=	${LOCALBASE}/bin/clang++36
-.endif
-
-WRKSRC=		${WRKDIR}/task-${PORTVERSION}
-
-USES=		cmake:outsource shebangfix
-SHEBANG_FILES=	scripts/*/*.pl \
-		scripts/*/*.rb \
-		scripts/*/*.py \
-		doc/rc/refresh \
-		scripts/bash/context
 CMAKE_ARGS+=	-DTASK_DOCDIR:STRING=${DATADIR:S/${PREFIX}\///} \
-   		-DTASK_MAN1DIR:STRING=man/man1 \
+		-DTASK_MAN1DIR:STRING=man/man1 \
 		-DTASK_MAN5DIR:STRING=man/man5
+
+SHEBANG_FILES=	scripts/*/*.pl \
+		doc/rc/refresh \
+
+do-test:
+	@cd ${WRKSRC}/test && \
+	${PYTHON_CMD} run_all --verbose && \
+	${PYTHON_CMD} problems
 
 .include <bsd.port.mk>

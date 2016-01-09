@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	taglib
-PORTVERSION=	1.9.1
-PORTREVISION=	2
+PORTVERSION=	1.10
 CATEGORIES=	audio
 MASTER_SITES=	http://taglib.github.io/releases/
 
@@ -15,14 +14,10 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_MPL=	${WRKSRC}/COPYING.MPL
 
-USES=		cmake cpe
+USES=		cmake cpe pathfix
 CMAKE_ARGS=	-DWITH_ASF:BOOL=ON \
 		-DWITH_MP4:BOOL=ON
 USE_LDCONFIG=	yes
-
-# clang will generate code that just doesn't work with clementine-player
-# if this isn't compiled as though it were C99.
-USE_CSTD=	c99
 
 CPE_VENDOR=	scott_wheeler
 
@@ -40,8 +35,5 @@ post-patch-RCC-on:
 		${WRKSRC}/taglib.pc.cmake ${WRKSRC}/taglib-config.cmake
 	@${REINPLACE_CMD} -e 's|-ltag_c|-ltag_c -lrcc|g' \
 		${WRKSRC}/bindings/c/taglib_c.pc.cmake
-post-patch:
-	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
-		${WRKSRC}/CMakeLists.txt ${WRKSRC}/bindings/c/CMakeLists.txt
 
 .include <bsd.port.mk>

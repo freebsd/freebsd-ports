@@ -1,6 +1,6 @@
---- a/configure
-+++ a/configure
-@@ -273,7 +273,7 @@ DSOSUF=".so"
+--- configure.orig	2015-12-16 20:50:32 UTC
++++ configure
+@@ -276,7 +276,7 @@ DSOSUF=".so"
  LDFLAGS_SHARED="-shared"
  modules="no"
  prefix="/usr/local"
@@ -9,43 +9,31 @@
  datadir="\${prefix}/share"
  qemu_docdir="\${prefix}/share/doc/qemu"
  bindir="\${prefix}/bin"
-@@ -2062,7 +2062,7 @@ if test "$gtk" != "no"; then
-         if $pkg_config --exists "$gtkx11package >= $gtkversion"; then
-             gtk_libs="$gtk_libs -lX11"
+@@ -2241,7 +2241,7 @@ if test "$gtk" != "no"; then
+             gtk_cflags="$gtk_cflags $x11_cflags"
+             gtk_libs="$gtk_libs $x11_libs"
          fi
 -        libs_softmmu="$gtk_libs $libs_softmmu"
 +        libs_softmmu="$gtk_libs -lintl $libs_softmmu"
          gtk="yes"
      elif test "$gtk" = "yes"; then
          feature_not_found "gtk" "Install gtk2 or gtk3 devel"
-@@ -3500,15 +3500,18 @@ if compile_prog "" "" ; then
- fi
+@@ -3864,14 +3864,7 @@ fi
  
  # Check if tools are available to build documentation.
-+#if test "$docs" != "no" ; then
-+#  if has makeinfo && has pod2man; then
-+#    docs=yes
-+#  else
-+#    if test "$docs" = "yes" ; then
-+#      feature_not_found "docs" "Install texinfo and Perl/perl-podlators"
-+#    fi
-+#    docs=no
-+#  fi
-+#fi
  if test "$docs" != "no" ; then
 -  if has makeinfo && has pod2man; then
--    docs=yes
+     docs=yes
 -  else
 -    if test "$docs" = "yes" ; then
 -      feature_not_found "docs" "Install texinfo and Perl/perl-podlators"
 -    fi
 -    docs=no
 -  fi
-+  docs=yes
  fi
  
  # Search for bswap_32 function
-@@ -3650,6 +3653,17 @@ fi
+@@ -3999,6 +3992,17 @@ fi
  
  # check for libusb
  if test "$libusb" != "no" ; then
@@ -63,7 +51,7 @@
      if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
          libusb="yes"
          libusb_cflags=$($pkg_config --cflags libusb-1.0)
-@@ -3662,6 +3676,7 @@ if test "$libusb" != "no" ; then
+@@ -4011,6 +4015,7 @@ if test "$libusb" != "no" ; then
          fi
          libusb="no"
      fi

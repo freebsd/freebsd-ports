@@ -1,0 +1,10 @@
+--- services/virus_scan/Makefile.in.orig	2016-01-03 23:26:16 UTC
++++ services/virus_scan/Makefile.in
+@@ -750,7 +750,6 @@
+ install-data-local:
+ 	for f in $(CONFS); do \
+ 		$(INSTALL) $$f $(DESTDIR)$(CONFIGDIR)/$$f.default; \
+-		if test ! -f $(DESTDIR)$(CONFIGDIR)/$$f; then $(INSTALL) $$f $(DESTDIR)$(CONFIGDIR)/$$f; fi \
+ 	done
+ 	$(mkinstalldirs) $(DESTDIR)$(cicapdatadir)/templates/virus_scan/en/
+ 	for f in $(TMPLS); do $(INSTALL) $$f $(DESTDIR)$(cicapdatadir)/templates/virus_scan/en/; done

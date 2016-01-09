@@ -1,0 +1,47 @@
+memory: fix XENMEM_exchange error handling
+
+assign_pages() can fail due to the domain getting killed in parallel,
+which should not result in a hypervisor crash.
+
+Also delete a redundant put_gfn() - all relevant paths leading to the
+"fail" label already do this (and there are also paths where it was
+plain wrong). All of the put_gfn()-s got introduced by 51032ca058
+("Modify naming of queries into the p2m"), including the otherwise
+unneeded initializer for k (with even a kind of misleading comment -
+the compiler warning could actually have served as a hint that the use
+is wrong).
+
+This is XSA-159.
+
+Reported-by: Julien Grall <julien.grall@citrix.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Acked-by: Ian Campbell <ian.campbell@citrix.com>
+
+--- a/xen/common/memory.c
++++ b/xen/common/memory.c
+@@ -334,7 +334,7 @@ static long memory_exchange(XEN_GUEST_HA
+     PAGE_LIST_HEAD(out_chunk_list);
+     unsigned long in_chunk_order, out_chunk_order;
+     xen_pfn_t     gpfn, gmfn, mfn;
+-    unsigned long i, j, k = 0; /* gcc ... */
++    unsigned long i, j, k;
+     unsigned int  memflags = 0;
+     long          rc = 0;
+     struct domain *d;
+@@ -572,11 +572,12 @@ static long memory_exchange(XEN_GUEST_HA
+  fail:
+     /* Reassign any input pages we managed to steal. */
+     while ( (page = page_list_remove_head(&in_chunk_list)) )
+-    {
+-        put_gfn(d, gmfn + k--);
+         if ( assign_pages(d, page, 0, MEMF_no_refcount) )
+-            BUG();
+-    }
++        {
++            BUG_ON(!d->is_dying);
++            if ( test_and_clear_bit(_PGC_allocated, &page->count_info) )
++                put_page(page);
++        }
+ 
+  dying:
+     rcu_unlock_domain(d);

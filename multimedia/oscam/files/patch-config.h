@@ -1,15 +1,18 @@
 --- config.h.orig	2015-09-30 21:11:35 UTC
 +++ config.h
-@@ -7,7 +7,7 @@
+@@ -5,10 +5,8 @@
+ #define WEBIF_LIVELOG 1
+ #define WEBIF_JQUERY 1
  #define TOUCH 1
- //#define WITH_SSL 1
- #if defined(__linux__) || defined(__CYGWIN__)
--#define HAVE_DVBAPI 1
-+//#define HAVE_DVBAPI 1
- #endif
+-//#define WITH_SSL 1
+-#if defined(__linux__) || defined(__CYGWIN__)
++#define WITH_SSL 1
+ #define HAVE_DVBAPI 1
+-#endif
  #define READ_SDT_CHARSETS 1
  #define CLOCKFIX 1
-@@ -23,18 +23,18 @@
+ #define IRDETO_GUESSING 1
+@@ -23,18 +21,18 @@
  #define MODULE_MONITOR 1
  
  //#define MODULE_CAMD33 1

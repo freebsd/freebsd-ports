@@ -16,10 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
-USES=		ncurses tar:tgz
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		localbase ncurses tar:tgz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -30,10 +27,12 @@ post-patch:
 		 s|-ldl |$$(LDFLAGS) |' ${WRKSRC}/Makefile
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} listener setlistener \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_DATA} listener.conf \
-		${STAGEDIR}${PREFIX}/etc/listener.conf.sample)
+	${INSTALL_PROGRAM} ${WRKSRC}/listener ${WRKSRC}/setlistener \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/listener.conf \
+		${STAGEDIR}${PREFIX}/etc/listener.conf.sample
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} manual.html \
 		${STAGEDIR}${DOCSDIR})

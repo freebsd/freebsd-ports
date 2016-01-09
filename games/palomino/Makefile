@@ -5,7 +5,7 @@ PORTNAME=	palomino
 PORTVERSION=	20131231
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.palomino3d.org/software/${PORTNAME}/
+MASTER_SITES=	SF/palomino-sim
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \
 		${PORTNAME}_data_misc_${MISC_VER}${EXTRACT_SUFX} \
 		${PORTNAME}_data_models_${MODELS_VER}${EXTRACT_SUFX} \
@@ -14,8 +14,6 @@ DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Action flight simulation computer program using OSG
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE_GNU_GPL_2.txt

@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	metaf2xml
-PORTVERSION=	1.57
+PORTVERSION=	1.58
 CATEGORIES=	science perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Parse and Decode METAR, TAF, SYNOP and BUOY and Store as XML
+COMMENT=	Parse and Decode METAR, TAF, SYNOP, BUOY and AMDAR and Write as XML
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

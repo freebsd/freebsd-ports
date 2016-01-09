@@ -1,0 +1,6 @@
+A Python module incorporating an interface to the SPDX license database.
+
+This library serves purely as a holder for the database that can be
+found on the SPDX website <https://spdx.org/licenses/>.
+
+WWW: https://github.com/bbqsrc/spdx-python

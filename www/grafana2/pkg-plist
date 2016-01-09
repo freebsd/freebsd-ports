@@ -1,5 +1,5 @@
 bin/grafana-server
-etc/grafana2.conf
+@sample etc/grafana2.conf.sample
 share/grafana/conf/defaults.ini
 share/grafana/public/app/app.js
 share/grafana/public/app/core/config.js

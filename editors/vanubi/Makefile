@@ -13,12 +13,11 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 GH_TAGNAME=	eedac1d
 
 USE_GITHUB=	yes
-USES=	autoreconf desktop-file-utils gmake libtool pkgconfig
+USES=		autoreconf desktop-file-utils execinfo gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 gtksourceview3 libwnck3 vte3
 USE_LDCONFIG=	yes

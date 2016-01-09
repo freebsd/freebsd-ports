@@ -777,7 +777,6 @@
     SUBDIR += piddle
     SUBDIR += pikopixel
     SUBDIR += pinpoint
-    SUBDIR += pinta
     SUBDIR += pixelize
     SUBDIR += pixen
     SUBDIR += pixie
@@ -827,6 +826,7 @@
     SUBDIR += py-django-easy-thumbnails
     SUBDIR += py-editobj
     SUBDIR += py-exif
+    SUBDIR += py-exifread
     SUBDIR += py-exiv2
     SUBDIR += py-freeimagepy
     SUBDIR += py-gchartwrapper

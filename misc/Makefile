@@ -222,13 +222,10 @@
     SUBDIR += kde4-l10n-nn
     SUBDIR += kde4-l10n-pa
     SUBDIR += kde4-l10n-ro
-    SUBDIR += kde4-l10n-si
     SUBDIR += kde4-l10n-sk
     SUBDIR += kde4-l10n-sl
     SUBDIR += kde4-l10n-sr
     SUBDIR += kde4-l10n-sv
-    SUBDIR += kde4-l10n-tg
-    SUBDIR += kde4-l10n-th
     SUBDIR += kde4-l10n-tr
     SUBDIR += kde4-l10n-ug
     SUBDIR += kde4-l10n-wa
@@ -422,6 +419,8 @@
     SUBDIR += py-qt4-doc
     SUBDIR += py-qt5-demo
     SUBDIR += py-qt5-doc
+    SUBDIR += py-spdx
+    SUBDIR += py-spdx-lookup
     SUBDIR += py-yolk
     SUBDIR += pylize
     SUBDIR += pypanda

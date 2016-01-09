@@ -14,11 +14,11 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Yet another message interface on Emacsen
 
 USE_EMACS=	yes
+NO_ARCH=	yes
 
 CONFLICTS=	wanderlust-*-2.15.*
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
@@ -109,9 +109,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/elmo/elmo-shimbun.el ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/wl
 .endif
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MAKE} install-docs
-.endif
 	${MAKE} install-samples
 	${MAKE} install-utils
 .if defined(EMACS_PACKAGESDIR)
@@ -119,7 +116,7 @@ post-install:
 .endif
 
 # local targets
-install-docs:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTDOCDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTDOCDIR_JA}
 .for i in ${DOCS}

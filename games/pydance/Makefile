@@ -7,7 +7,6 @@ PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://people.freebsd.org/~sylvio/pydance/ \
 		http://icculus.org/pyddr/ \
-		http://offload1.icculus.org/pyddr/ \
 		http://www.informatik.uni-frankfurt.de/~polzer/distfiles/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SONGS}
 DIST_SUBDIR=	pydance

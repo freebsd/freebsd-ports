@@ -5,7 +5,7 @@ PORTVERSION=	0.8.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	mmoll@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby workflow/orchestration engine
 
 LICENSE=	MIT

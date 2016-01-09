@@ -1,5 +1,5 @@
---- lib/MSDW/SMTP/Server.pm	2014-11-05 08:28:37.163794430 +0300
-+++ lib/MSDW/SMTP/Server.pm	2014-11-05 08:34:51.757769187 +0300
+--- lib/MSDW/SMTP/Server.pm.orig	2009-07-27 13:33:29 UTC
++++ lib/MSDW/SMTP/Server.pm
 @@ -11,7 +11,7 @@
  # Written by Bennett Todd <bet@rahul.net>
  
@@ -9,7 +9,7 @@
  use IO::File;
  
  =head1 NAME
-@@ -88,15 +88,14 @@
+@@ -88,15 +88,14 @@ desired.
  =item new(interface => $interface, port => $port);
  
  The interface and port to listen on must be specified. The interface
@@ -33,7 +33,7 @@
  =item accept([debug => FD]);
  
  accept takes optional args and returns nothing. If an error occurs
-@@ -154,7 +153,7 @@
+@@ -154,7 +153,7 @@ sub new {
      my ($this, @opts) = @_;
      my $class = ref($this) || $this;
      my $self = bless { @opts }, $class;

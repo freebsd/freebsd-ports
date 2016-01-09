@@ -18,11 +18,12 @@ BUILD_DEPENDS=	p5-Mail-DKIM>=0:${PORTSDIR}/mail/p5-Mail-DKIM \
 		p5-Error>=0:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS_DEFINE=	IPV6
+OPTIONS_DEFINE=	IPV6 TEST
+OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
 USES=		perl5 shebangfix
-SHEBANG_FILES=  scripts/*
+SHEBANG_FILES=	scripts/*
 NO_ARCH=	yes
 USE_RC_SUBR=	dkimproxy_in dkimproxy_out
 
@@ -35,9 +36,12 @@ SUB_LIST+=	PERL=${PERL} \
 
 IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 
-IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-lib-MSDW-SMTP-Server.pm
-IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-scripts-dkimproxy.out
-IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-scripts-dkimproxy_in.conf.example
-IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-scripts-dkimproxy_out.conf.example
+IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-lib-MSDW-SMTP-Server.pm \
+			${FILESDIR}/extra-patch-scripts-dkimproxy.out \
+			${FILESDIR}/extra-patch-scripts-dkimproxy_in.conf.example \
+			${FILESDIR}/extra-patch-scripts-dkimproxy_out.conf.example
+
+TEST_DESC=	Use dkim_responder.pl
+TEST_RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 
 .include <bsd.port.mk>

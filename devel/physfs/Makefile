@@ -4,7 +4,7 @@
 PORTNAME=	physfs
 PORTVERSION=	2.0.3
 CATEGORIES=	devel
-MASTER_SITES=	http://offload1.icculus.org:9090/${PORTNAME}/downloads/
+MASTER_SITES=	http://icculus.org/${PORTNAME}/downloads/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Library to provide abstract access to various archives

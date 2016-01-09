@@ -8,5 +8,4 @@
 %%SQUIRRELDIR%%/plugins/secure_login/version
 %%SQUIRRELDIR%%/plugins/secure_login/INSTALL
 %%SQUIRRELDIR%%/plugins/secure_login/config.sample.php
-@dirrmtry %%SQUIRRELDIR%%/plugins/secure_login
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
