@@ -58,6 +58,7 @@ include/dovecot-2.2-pigeonhole/sieve/sieve-stringlist.h
 include/dovecot-2.2-pigeonhole/sieve/sieve-types.h
 include/dovecot-2.2-pigeonhole/sieve/sieve-validator.h
 include/dovecot-2.2-pigeonhole/sieve/sieve.h
+include/dovecot-2.2-pigeonhole/sieve/strtrim.h
 lib/dovecot-2.2-pigeonhole/libdovecot-sieve.a
 lib/dovecot-2.2-pigeonhole/libdovecot-sieve.so
 lib/dovecot-2.2-pigeonhole/libdovecot-sieve.so.0
