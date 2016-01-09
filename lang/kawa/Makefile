@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kawa
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	lang scheme java
 MASTER_SITES=	GNU
 
