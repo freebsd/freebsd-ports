@@ -1,6 +1,5 @@
 @unexec [ ! -f %%CLAMAV_PID_DIR%%/clamsmtpd.pid ] || %%PREFIX%%/etc/rc.d/clamsmtpd.sh stop || true
+etc/clamsmtpd.conf.sample
 man/man5/clamsmtpd.conf.5.gz
 man/man8/clamsmtpd.8.gz
 sbin/clamsmtpd
-etc/clamsmtpd.conf-sample
-%%EXAMPLESDIR%%/virus_action.sh
