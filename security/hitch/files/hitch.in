@@ -31,7 +31,7 @@ load_rc_config $name
 : ${hitch_enable="NO"}
 : ${hitch_config="%%PREFIX%%/etc/hitch.conf"}
 
-command="%%PREFIX%%/sbin/hitch-openssl"
+command="%%PREFIX%%/sbin/hitch"
 command_args="--daemon -u nobody -g nobody -s --config=${hitch_config}"
 
 required_files=${hitch_config}
