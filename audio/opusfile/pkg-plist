@@ -2,11 +2,11 @@ include/opus/opusfile.h
 lib/libopusfile.a
 lib/libopusfile.so
 lib/libopusfile.so.0
-lib/libopusfile.so.0.3.1
+lib/libopusfile.so.0.4.0
 lib/libopusurl.a
 lib/libopusurl.so
 lib/libopusurl.so.0
-lib/libopusurl.so.0.3.1
+lib/libopusurl.so.0.4.0
 libdata/pkgconfig/opusfile.pc
 libdata/pkgconfig/opusurl.pc
 @comment Insert PLIST.doc here
