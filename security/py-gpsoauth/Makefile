@@ -2,7 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gpsoauth
-PORTVERSION=	0.0.20150603
+#Drop the date string after 0.1 has been released.
+#This saves us the trouble of introducing PORTEPOCH.
+PORTVERSION=	0.0.20151011
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,10 +16,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:${PORTSDIR}/security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:${PORTSDIR}/www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}ndg_httpsclient>0:${PORTSDIR}/net/py-ndg_httpsclient \
+		${PYTHON_PKGNAMEPREFIX}openssl>0:${PORTSDIR}/security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}pyasn1>0:${PORTSDIR}/devel/py-pyasn1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	simon-weber
-GH_TAGNAME=	ea8246b
+GH_TAGNAME=	ad65445		# This corresponds to release 0.0.5
 
 USES=		python
 USE_PYTHON=	distutils autoplist
