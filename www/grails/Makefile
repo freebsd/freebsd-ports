@@ -16,6 +16,7 @@ USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	LICENSE README build.gradle build.properties gradle.properties \
 		gradlew conf dist gradle lib media plugins scripts src
@@ -43,6 +44,8 @@ do-install:
 	@${LN} -fs ${DATADIR}/bin/${file} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
+
+do-install-DOCS-on:
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@cd ${WRKSRC}/doc \
 	  && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
@@ -52,8 +55,5 @@ do-install:
 post-install:
 	@${FIND} -s ${DATAFILES:S,^,${WRKSRC}/,} -not -type d 2>/dev/null | \
 	  ${SED} -ne 's,^${WRKSRC},${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${FIND} -s -d ${DATAFILES:S,^,${WRKSRC}/,} -type d 2>/dev/null | \
-	  ${SED} -ne 's,^${WRKSRC},@dirrm ${DATADIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${ECHO_CMD} '@dirrm ${DATADIR:S,^${PREFIX}/,,}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
