@@ -6,7 +6,7 @@ PORTVERSION=	2.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	steve.polyack@intermedix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP5 code for Mustache
 
 LICENSE=	MIT
