@@ -1490,6 +1490,7 @@
     SUBDIR += py-GinGin
     SUBDIR += py-HTMLgen
     SUBDIR += py-Lightbox
+    SUBDIR += py-MechanicalSoup
     SUBDIR += py-Products.CMFPlone
     SUBDIR += py-Products.PloneLDAP
     SUBDIR += py-Products.TinyMCE
