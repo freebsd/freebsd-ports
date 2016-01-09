@@ -58,6 +58,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5f276780-b6ce-11e5-9731-5453ed2e2b49">
+    <topic>pygments -- shell injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>py27-pygments</name>
+	<name>py32-pygments</name>
+	<name>py33-pygments</name>
+	<name>py34-pygments</name>
+	<name>py35-pygments</name>
+	<range><lt>2.0.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8557">
+	  <p>The FontManager._get_nix_font_path function in formatters/img.py
+	    in Pygments 1.2.2 through 2.0.2 allows remote attackers to execute
+	    arbitrary commands via shell metacharacters in a font name.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8557</cvename>
+      <mlist>http://seclists.org/fulldisclosure/2015/Oct/4</mlist>
+      <url>https://bitbucket.org/birkenfeld/pygments-main/commits/0036ab1c99e256298094505e5e92fdacdfc5b0a8</url>
+    </references>
+    <dates>
+      <discovery>2015-09-28</discovery>
+      <entry>2016-01-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="631fc042-b636-11e5-83ef-14dae9d210b8">
     <topic>polkit -- multiple vulnerabilities</topic>
     <affects>
