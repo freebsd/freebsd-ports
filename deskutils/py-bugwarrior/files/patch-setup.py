@@ -1,10 +1,17 @@
---- setup.py.orig	2015-02-25 17:30:21 UTC
+--- setup.py.orig	2016-01-09 17:19:18 UTC
 +++ setup.py
-@@ -52,6 +52,7 @@ setup(name='bugwarrior',
+@@ -46,11 +46,13 @@ setup(name='bugwarrior',
+           "pyxdg",
+       ],
+       tests_require=[
+-          "Mock",
++          "mock",
+           "unittest2",
+           "nose",
            "jira>=0.22",
            "megaplan>=1.4",
++          "pypandoc",
++          "pyac",
        ],
-+      test_suite='nose.collector',
+       test_suite='nose.collector',
        entry_points="""
-       [console_scripts]
-       bugwarrior-pull = bugwarrior:pull
