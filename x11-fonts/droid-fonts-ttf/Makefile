@@ -48,7 +48,6 @@ maketar: do-clean extract
 	${SED} 's|^|%%FONTSDIR%%/|' ${MS_FONTS} > ${MS_PLIST}
 	${ECHO_CMD} "%%FONTSDIR%%/fonts.dir" >> ${MS_PLIST}
 	${ECHO_CMD} "%%FONTSDIR%%/fonts.scale" >> ${MS_PLIST}
-	${ECHO_CMD} "@dirrm %%FONTSDIR%%" >> ${MS_PLIST}
 	${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
 
 .include <bsd.port.mk>
