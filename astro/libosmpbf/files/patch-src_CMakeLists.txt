@@ -1,0 +1,10 @@
+--- src/CMakeLists.txt.orig	2014-03-15 15:11:32 UTC
++++ src/CMakeLists.txt
+@@ -3,7 +3,6 @@ PROTOBUF_GENERATE_CPP(CPPS HS fileformat
+ if(MSVC)
+     set(CMAKE_CXX_FLAGS "/O3")
+ else()
+-    set(CMAKE_CXX_FLAGS "-O3")
+ endif()
+ 
+ add_library(osmpbf STATIC ${CPPS})
