@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	opusfile
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 		MOZILLA/opus
@@ -31,14 +30,15 @@ OPTIONS_DEFAULT=	# empty
 DOXYGEN_CONFIGURE_ENABLE=	doc
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 
+CONFIGURE_ARGS+=	--disable-examples
 INSTALL_TARGET=	install-strip
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| @openssl@||' \
-		${WRKSRC}/opusfile.pc.in  ${WRKSRC}/opusurl.pc.in
-	@${REINPLACE_CMD} -e '/libopusurl_la_SOURCES/s/http.c/& src\/ftime.c/' \
-		-e '/dist_doc_DATA/s/COPYING//' \
-		${WRKSRC}/Makefile.am
+	@${GREP} -l '@openssl@' ${WRKSRC}/opusurl.pc.in | \
+		${XARGS} ${REINPLACE_CMD} -e 's| @openssl@||'
+	@${GREP} -L 'src/ftime.c' ${WRKSRC}/Makefile.am | \
+		${XARGS} ${REINPLACE_CMD} -e '/dist_doc_DATA/s/COPYING//' \
+		-e '/libopusurl_la_SOURCES/s|= \(src/http\.c\)|= src/ftime.c \1|'
 	@${CP} ${FILESDIR}/ftime.c ${WRKSRC}/src/
 
 post-install-DOXYGEN-on:
