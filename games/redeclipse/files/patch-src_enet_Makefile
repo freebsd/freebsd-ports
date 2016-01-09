@@ -1,7 +1,0 @@
---- src/enet/Makefile.orig	2015-03-22 02:34:16.000000000 +0300
-+++ src/enet/Makefile	2015-03-24 22:15:46.907606000 +0300
-@@ -1,4 +1,3 @@
--CFLAGS=-O3 -fomit-frame-pointer
- override CFLAGS:= $(CFLAGS) -Iinclude $(shell ./check_cflags.sh $(CC) $(CFLAGS))
- 
- OBJS= \
