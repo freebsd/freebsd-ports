@@ -1,0 +1,66 @@
+--- src/data_view.c.orig	2016-01-08 10:28:41 UTC
++++ src/data_view.c
+@@ -689,7 +689,7 @@ data_view_set_image(RubricaDataView* vie
+   priv = RUBRICA_DATA_VIEW_GET_PRIVATE(view);
+ 
+   gtk_image_set_from_pixbuf(GTK_IMAGE(priv->image), pixbuf);
+-  gdk_pixbuf_unref(pixbuf);
++  g_object_unref(pixbuf);
+ }
+ 
+ 
+@@ -952,7 +952,7 @@ write_addresses(RubricaDataView* view, R
+ 
+       data_view_write(body, "\n");
+       data_view_write_pixbuf(body, pixbuf, _("Addresses"));      
+-      gdk_pixbuf_unref(pixbuf);
++      g_object_unref(pixbuf);
+ 
+       for (; address; address = r_card_get_next_address(R_CARD(card)))
+ 	{
+@@ -1057,8 +1057,7 @@ write_work(RubricaDataView* view, RPerso
+ 
+       data_view_write(body, "\n");
+       data_view_write_pixbuf(body, pixbuf, _("Work"));
+-      gdk_pixbuf_unref(pixbuf);
+-
++      g_object_unref(pixbuf);
+       data_view_write_line(body, _("Assignment"), assignment, TRUE);
+       data_view_write_line(body, _("Organization"), organization, TRUE);
+       data_view_write_line(body, _("Department"), department, TRUE);
+@@ -1093,7 +1092,7 @@ write_net (RubricaDataView* view, RCard*
+       
+       data_view_write(body, "\n");
+       data_view_write_pixbuf(body, pixbuf, _("Net"));
+-      gdk_pixbuf_unref(pixbuf);
++      g_object_unref(pixbuf);
+       
+       for (; net; net = r_card_get_next_net_address(R_CARD(card)))
+ 	{	  
+@@ -1165,7 +1164,7 @@ write_telephones(RubricaDataView* view, 
+ 
+       data_view_write(body, "\n");
+       data_view_write_pixbuf(body, pixbuf, _("Telephone"));
+-      gdk_pixbuf_unref(pixbuf);
++      g_object_unref(pixbuf);
+ 
+       for (; tel; tel = r_card_get_next_telephone(R_CARD(card)))
+ 	{
+@@ -1210,7 +1209,7 @@ write_notes(RubricaDataView* view, RPers
+       
+       data_view_write(body, "\n");
+       data_view_write_pixbuf(body, pixbuf, _("Notes"));
+-      gdk_pixbuf_unref(pixbuf);
++      g_object_unref(pixbuf);
+ 
+       if (has_partner)
+ 	{   
+@@ -1257,7 +1256,7 @@ write_company_notes(RubricaDataView* vie
+       data_view_write(body, "\n");
+       data_view_write_pixbuf(body, pixbuf, _("Notes"));
+       data_view_write(body, "\n");
+-      gdk_pixbuf_unref(pixbuf);
++      g_object_unref(pixbuf);
+ 
+       data_view_write(body, text);   
+     }
