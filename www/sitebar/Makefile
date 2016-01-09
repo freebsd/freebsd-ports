@@ -24,7 +24,5 @@ do-install:
 		${FIND} . ! -type d -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
 	@${FIND} ${STAGEDIR}${DATADIR} ! -type d | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${DATADIR} -type d | ${SORT} -r | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
