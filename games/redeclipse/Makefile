@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redeclipse
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -12,7 +12,7 @@ COMMENT=	Single-player and multi-player first-person ego-shooter
 LICENSE=	MIT ZLIB
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	redeclipse-data>=1.5.0:${PORTSDIR}/games/redeclipse-data
+RUN_DEPENDS=	redeclipse-data>=1.5.3:${PORTSDIR}/games/redeclipse-data
 
 BROKEN_sparc64=	does not build on sparc64
 
@@ -52,12 +52,6 @@ DEDICATED_PLIST_FILES=	bin/${PORTNAME}_server libexec/${PORTNAME}_server
 OPTIMIZED_CFLAGS_CFLAGS=	-O3 -fomit-frame-pointer -ffast-math
 OPTIMIZED_CFLAGS_CXXFLAGS=	-O3 -fomit-frame-pointer -ffast-math
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1100000
-USE_GCC=	yes	# clang < 3.6.1 dies, see https://llvm.org/bugs/show_bug.cgi?id=23010
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|CLIENT_PCH=.*|CLIENT_PCH=|' ${WRKSRC}/src/Makefile
 
@@ -75,4 +69,4 @@ do-install-DEDICATED-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}_server ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME}_server_bsd ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}_server
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
