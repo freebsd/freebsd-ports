@@ -24,7 +24,6 @@ PLIST_FILES+=	lib/lib${PLUGIN_NAME}_pi.a \
 		lib/lib${PLUGIN_NAME}_pi.so.0 \
 		lib/lib${PLUGIN_NAME}_pi.so.0.0.0 \
 		etc/verlihub/plugins/lib${PLUGIN_NAME}_pi.so
-PLIST_DIRSTRY+=	etc/verlihub/plugins etc/verlihub
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGMESSAGE_TEMPLATE=	${PORTSDIR}/net-p2p/verlihub-plugins/pkg-message.plugins
