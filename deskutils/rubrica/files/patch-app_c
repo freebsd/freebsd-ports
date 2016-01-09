@@ -1,0 +1,11 @@
+--- src/app.c.orig	2016-01-08 10:28:54 UTC
++++ src/app.c
+@@ -1339,7 +1339,7 @@ rubrica_app_init(RubricaApp* self)
+   
+   self->priv->cutted         = NULL;
+   self->priv->notify         = notify_notification_new("Rubrica Addressbook",
+-						      NULL, "info", NULL);
++						      "info", NULL);
+   self->priv->active_plugin  = g_strdup("autodetect");
+   self->priv->manager        = r_lib_get_manager();
+   self->priv->print_settings = NULL;
