@@ -333,7 +333,7 @@ libexec/gimp/2.2/plug-ins/file-html-table
 libexec/gimp/2.2/plug-ins/file-ico
 %%JASPER%%libexec/gimp/2.2/plug-ins/file-jp2-load
 libexec/gimp/2.2/plug-ins/file-jpeg
-%%MNG%%libexec/gimp/2.2/plug-ins/file-mng
+%%LIBMNG%%libexec/gimp/2.2/plug-ins/file-mng
 libexec/gimp/2.2/plug-ins/file-pat
 libexec/gimp/2.2/plug-ins/file-pcx
 %%POPPLER%%libexec/gimp/2.2/plug-ins/file-pdf-load
@@ -341,14 +341,14 @@ libexec/gimp/2.2/plug-ins/file-pdf-save
 libexec/gimp/2.2/plug-ins/file-pix
 libexec/gimp/2.2/plug-ins/file-png
 libexec/gimp/2.2/plug-ins/file-pnm
-%%GS%%libexec/gimp/2.2/plug-ins/file-ps
+%%GHOSTSCRIPT%%libexec/gimp/2.2/plug-ins/file-ps
 libexec/gimp/2.2/plug-ins/file-psd-load
 libexec/gimp/2.2/plug-ins/file-psd-save
 libexec/gimp/2.2/plug-ins/file-psp
 libexec/gimp/2.2/plug-ins/file-raw
 libexec/gimp/2.2/plug-ins/file-sgi
 libexec/gimp/2.2/plug-ins/file-sunras
-%%SVG%%libexec/gimp/2.2/plug-ins/file-svg
+%%LIBRSVG2%%libexec/gimp/2.2/plug-ins/file-svg
 libexec/gimp/2.2/plug-ins/file-tga
 libexec/gimp/2.2/plug-ins/file-tiff-load
 libexec/gimp/2.2/plug-ins/file-tiff-save
@@ -387,7 +387,7 @@ libexec/gimp/2.2/plug-ins/mail
 libexec/gimp/2.2/plug-ins/map-object
 libexec/gimp/2.2/plug-ins/max-rgb
 libexec/gimp/2.2/plug-ins/maze
-%%EXIF%%libexec/gimp/2.2/plug-ins/metadata
+%%LIBEXIF%%libexec/gimp/2.2/plug-ins/metadata
 libexec/gimp/2.2/plug-ins/mosaic
 libexec/gimp/2.2/plug-ins/newsprint
 libexec/gimp/2.2/plug-ins/nl-filter
