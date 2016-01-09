@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_CodeSniffer
-PORTVERSION=	2.3.4
+PORTVERSION=	2.5.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@toco-domains.de
