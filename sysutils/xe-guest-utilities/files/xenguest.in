@@ -19,7 +19,16 @@ rcvar=xenguest_enable
 
 load_rc_config $name
 
-: ${xenguest_enable:=NO}
+autoxen=`sysctl kern.vm_guest`
+autoxen="${autoxen#kern.vm_guest: }"
+case "${autoxen}" in
+xen)
+	: ${xenguest_enable:=YES}
+	;;
+*)
+	: ${xenguest_enable:=NO}
+	;;
+esac
 
 pidfile=/var/run/xe-daemon.pid
 command="%%PREFIX%%/sbin/xe-daemon"
