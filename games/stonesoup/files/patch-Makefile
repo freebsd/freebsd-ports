@@ -1,4 +1,4 @@
---- Makefile.orig	2015-03-23 01:49:21 UTC
+--- Makefile.orig	2015-12-08 12:42:11 UTC
 +++ Makefile
 @@ -71,7 +71,7 @@
  #    them; you can also ask for a package with convenience libraries instead --
@@ -9,16 +9,16 @@
  
  # Disable GNU Make implicit rules and variables. Leaving them enabled will slow
  # down MinGW and Cygwin builds by a very VERY noticeable degree. Besides, we have
-@@ -103,7 +103,7 @@ include Makefile.obj
- #
- 
+@@ -105,7 +105,7 @@ include Makefile.obj
+ # Which C++ standard to support
+ STDFLAG = -std=c++11
  
 -CFOTHERS := -pipe $(EXTERNAL_FLAGS)
 +CFOTHERS := $(CFLAGS)
  CFWARN := 
  CFWARN_L := -Wall -Wformat-security -Wundef
  
-@@ -112,7 +112,7 @@ DEFINES := $(EXTERNAL_DEFINES)
+@@ -114,7 +114,7 @@ DEFINES := $(EXTERNAL_DEFINES)
  ifdef ANDROID
  LDFLAGS := $(EXTERNAL_LDFLAGS) $(LDFLAGS)
  else
@@ -27,7 +27,7 @@
  endif
  
  #
-@@ -120,8 +120,6 @@ endif
+@@ -122,8 +122,6 @@ endif
  #
  AR = ar
  RANLIB = ranlib
@@ -36,7 +36,7 @@
  RM = rm -f
  COPY = cp
  COPY_R = cp -r
-@@ -495,16 +493,6 @@ ifneq ($(GCC_VER),)
+@@ -512,16 +510,6 @@ ifneq ($(GCC_VER),)
  GCC_VER_SUFFIX:=-$(GCC_VER)
  endif
  
@@ -52,8 +52,8 @@
 -
  ifneq ($(FORCE_CC),)
  GCC := $(FORCE_CC)
- else
-@@ -554,15 +542,6 @@ ifdef USE_ICC
+ HOSTCC := $(FORCE_CC)
+@@ -575,15 +563,6 @@ ifdef USE_ICC
  
  # Some very good optimization flags.
    CFOPTIMIZE := -O2 -parallel
@@ -69,7 +69,7 @@
  endif
  
  ifdef LTO
-@@ -636,13 +615,13 @@ ifndef BUILD_LUA
+@@ -655,13 +634,13 @@ ifndef BUILD_LUA
          LUA_PACKAGE = lua-5.1
        endif
      else
@@ -85,7 +85,7 @@
    endif
    INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I | sed -e 's/-I/-isystem /')
    CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
-@@ -655,7 +634,7 @@ endif
+@@ -674,7 +653,7 @@ endif
  
  ifndef BUILD_SQLITE
    ifeq ($(shell grep -q sqlite3_prepare $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
@@ -94,7 +94,7 @@
      LIBS += $(SQLITE_LIB)
      ifneq ($(shell grep -q sqlite3_prepare_v2 $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
        DEFINES_L += -DANCIENT_SQLITE
-@@ -743,7 +722,7 @@ endif
+@@ -762,7 +741,7 @@ endif
  endif
  
  DEFINES_L += $(PNG_CFLAGS) $(FREETYPE_CFLAGS) $(SDL2_CFLAGS)
@@ -103,7 +103,7 @@
  
  endif # TILES
  
-@@ -816,7 +795,7 @@ ifndef NOWIZARD
+@@ -831,7 +810,7 @@ ifndef NOWIZARD
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE
@@ -112,7 +112,7 @@
  endif
  
  ifdef PCH
-@@ -943,7 +922,7 @@ else
+@@ -958,7 +937,7 @@ else
    SYS_PROPORTIONAL_FONT = $(shell { name=$(OUR_PROPORTIONAL_FONT);\
      {\
        fc-list | sed 's/: .*//' | grep -Fi "/$$name";\
@@ -121,7 +121,7 @@
        do [ -d $$dir ] && echo $$dir; done;\
      } | xargs -I% find % -type f -iname $$name -print | head -n1; } 2>/dev/null)
    ifneq (,$(SYS_PROPORTIONAL_FONT))
-@@ -968,7 +947,7 @@ else
+@@ -983,7 +962,7 @@ else
    SYS_MONOSPACED_FONT = $(shell { name=$(OUR_MONOSPACED_FONT);\
      {\
        fc-list | sed 's/: .*//' | grep -Fi "/$$name";\
@@ -130,7 +130,7 @@
        do [ -d $$dir ] && echo $$dir; done;\
      } | xargs -I% find % -type f -iname $$name -print | head -n1; } 2>/dev/null)
    ifneq (,$(SYS_MONOSPACED_FONT))
-@@ -1035,10 +1014,6 @@ CFWARN := -wd383,810,869,981,1418 -we14,
+@@ -1050,10 +1029,6 @@ CFWARN := -wd383,810,869,981,1418 -we14,
  CFWARN_L :=
  endif
  
