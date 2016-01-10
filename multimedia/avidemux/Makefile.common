@@ -18,8 +18,7 @@ USE_QT4=	# empty
 
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME:C/-.*//}/options
 
-USE_SQLITE=	yes
-USES=		cmake:outsource pkgconfig iconv gmake compiler:features
+USES=		cmake:outsource pkgconfig iconv gmake compiler:features sqlite
 USES+=		dos2unix execinfo
 DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake po/CMakeLists.txt
 CMAKE_ARGS+=	-DGNUMAKE_EXECUTABLE=gmake

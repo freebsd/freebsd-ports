@@ -61,7 +61,7 @@ MODULES+=	postgres
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	3
+USES+=		sqlite
 MODULES+=	sqlite3
 .endif
 

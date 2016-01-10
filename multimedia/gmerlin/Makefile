@@ -17,11 +17,10 @@ LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libgavl.so:${PORTSDIR}/multimedia/gavl \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		gettext libtool makeinfo pathfix pkgconfig
+USES=		gettext libtool makeinfo pathfix pkgconfig sqlite
 USE_GNOME=	gtk20 libxml2
 USE_XORG=	x11 xext xfixes xinerama xv
 USE_GL=		gl
-USE_SQLITE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_inotify_init=no
 CONFIGURE_ARGS=	--disable-v4l --disable-v4l2 --disable-v4lconvert \
