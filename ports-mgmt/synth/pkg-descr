@@ -1,0 +1,23 @@
+Synth is a custom packge repository builder for FreeBSD and DragonFly.
+
+It is intended to replace Portmaster, portupgrade, and poudriere for
+the average user.  It is simple to learn (the powerful options are
+limited in number) and user-friendly, but it is extremely fast due
+to its parallel building capability.  It will "drop-in" on any system
+as it leverages the stock pkg(8) facilities.  All ports are built
+in a clean environment, so it is finally safe to build ports as
+needed on a live system.  The default profile is the system itself, not
+a new jail, which can be a valuable feature for some environments.
+
+To bring a system up-to-date only requires one command after the ports
+tree is updated:
+
+  > synth upgrade-system
+
+During the building process, a curses-based display will show the status
+of all the builders and the entire bulk run process.  Synth is intended
+to be grasped and utilized by novice users within minutes, but offers
+most of the same powerful features as Poudriere for the power users.
+Synth requires no preparation; it works immediately upon installation.
+
+WWW: https://github.com/jrmarino/synth
