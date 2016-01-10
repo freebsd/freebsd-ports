@@ -25,15 +25,13 @@ PLIST=		${WRKDIR}/.pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
+PORTDATA=	*
+PORTDOCS=	documentation.html upgrading.html loglevels.txt
+
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-MASTER_SITES+=	http://www.spambouncer.org/configure/:upg
-DISTFILES+=	upgrading.shtml:upg
-PORTDOCS=	documentation.html upgrading.html loglevels.txt
-.endif
+DOCS_MASTER_SITES=	http://www.spambouncer.org/configure/:upg
+DOCS_DISTFILES=		upgrading.shtml:upg
 
 pre-extract:
 	${MKDIR} ${EXTRACT_DIR}
@@ -42,23 +40,17 @@ post-extract:
 	${MV} ${EXTRACT_DIR} ${WRKDIR}
 	${RM} -rf ${WRKDIRPREFIX}${.CURDIR}/worktmp
 
-pre-install:
-	(cd ${WRKSRC} && ${FIND} -s . -type f | ${GREP} -v "^\.\/\." |	\
-		${GREP} -v docs | ${SED} -e 's,.,%%DATADIR%%,1' > ${PLIST})
-	(cd ${WRKSRC} && ${FIND} -s . -type d | ${GREP} -v docs | ${SORT} -r |	\
-		${SED} -e 's,.,@dirrm %%DATADIR%%,' >> ${PLIST})
-
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
 	${RM} -rf ${STAGEDIR}${DATADIR}/docs
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/quickstart.shtml \
 		${STAGEDIR}${DOCSDIR}/documentation.html
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/upgrading.shtml \
 		${STAGEDIR}${DOCSDIR}/upgrading.html
 	${INSTALL_DATA} ${WRKSRC}/docs/loglevels.txt ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
