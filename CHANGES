@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20150110:
+AUTHOR: bapt@FreeBSD.org
+
+  USE_FIREBIRD and USE_SQLITE has been replaced by USES=firebird and
+  USES=sqlite
+
 20151105:
 AUTHOR: mat@FreeBSD.org
 
