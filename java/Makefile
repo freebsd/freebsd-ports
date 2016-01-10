@@ -28,6 +28,7 @@
     SUBDIR += hamcrest
     SUBDIR += icedtea-web
     SUBDIR += infobus
+    SUBDIR += intellij
     SUBDIR += jad
     SUBDIR += jaf
     SUBDIR += jai
