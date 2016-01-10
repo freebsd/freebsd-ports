@@ -94,7 +94,7 @@ CONFIGURE_ENG+=	TURN_NO_MONGO=1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
+USES+=		sqlite
 .else
 CONFIGURE_ENV+=	TURN_NO_SQLITE=1
 .endif

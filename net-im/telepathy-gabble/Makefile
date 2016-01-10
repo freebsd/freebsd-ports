@@ -23,9 +23,8 @@ RUN_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		alias gmake libtool pathfix pkgconfig python:build
+USES=		alias gmake libtool pathfix pkgconfig python:build sqlite
 USE_GNOME=	glib20 gtksourceview3 libxslt:build
-USE_SQLITE=	3
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
