@@ -8,10 +8,10 @@
  To enable the standalone ViewVC server in rc.conf use
  parameter viewvc_enable="YES".
 
- You can also adjust the user which runs the ViewVC standalone 
+ You can also adjust the user which runs the ViewVC standalone
  server with the parameter "viewvc_user".
 
- If you want to run the ViewVC standalone server with another 
+ If you want to run the ViewVC standalone server with another
  IP/PORT, use the parameter "viewvc_flags".
 
  To see all available parameters, use the command
@@ -21,16 +21,23 @@
  To use ViewVC with Apache or lighttpd as a CGI script,
  see the following config examples.
 
- Example config lines for Apache
- ===============================
- Alias /viewvc "%%PREFIX%%/viewvc/bin/cgi/"
- <Directory "%%PREFIX%%/viewvc/bin/cgi">
-    AddHandler cgi-script .cgi
-    Options NONE +ExecCGI
-    DirectoryIndex viewvc.cgi
-    Require all granted
- </Directory>
+ Example config lines for Apache 2.4
+ ===================================
+ <IfModule wsgi_module>
+   WSGIRestrictSignal Off
+ </IfModule>
 
+ <IfModule !wsgi_module>
+   ScriptAlias "/viewvc" "%%PREFIX%%/viewvc/bin/cgi/viewvc.cgi"
+ </IfModule>
+
+ <IfModule wsgi_module>
+   WSGIScriptAlias "/viewvc" "%%PREFIX%%/viewvc/bin/wsgi/viewvc.wsgi"
+ </IfModule>
+
+ <Location /viewvc>
+     Options NONE +ExecCGI
+ </Location>
 
  Example config lines for lighttpd
  =================================
