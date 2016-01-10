@@ -3,6 +3,7 @@
 
 PORTNAME=	Toader
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -45,7 +46,7 @@ SHEBANG_FILES=	bin/toader-autodoc bin/toader-css bin/toader-dir \
 
 PORTDOCS=	*
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Documentation/* ${STAGEDIR}${DOCSDIR}
 
