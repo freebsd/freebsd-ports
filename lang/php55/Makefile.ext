@@ -246,7 +246,7 @@ CONFIGURE_ARGS+=--with-pdo-firebird=${LOCALBASE}
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
 
-USE_FIREBIRD=	yes
+USES+=		firebird
 .endif
 
 .if ${PHP_MODNAME} == "pdo_mysql"
