@@ -1,18 +1,11 @@
---- sql/CMakeLists.txt.orig	2013-04-05 14:27:18.000000000 +0200
-+++ sql/CMakeLists.txt	2013-04-19 15:08:12.000000000 +0200
-@@ -423,6 +423,7 @@
+--- sql/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
++++ sql/CMakeLists.txt
+@@ -24,6 +24,8 @@ INCLUDE_DIRECTORIES(
+   ${ZLIB_INCLUDE_DIR}
+   ${SSL_INCLUDE_DIRS}
+   ${CMAKE_BINARY_DIR}/sql
++  ${CMAKE_BINARY_DIR}/include
++  ${CMAKE_BINARY_DIR}
+ )
  
- IF(INSTALL_LAYOUT STREQUAL "STANDALONE")
- 
-+IF(FALSE)
- # Copy db.opt into data/test/
- SET(DBOPT_FILE ${CMAKE_CURRENT_SOURCE_DIR}/db.opt ) 
- INSTALL(FILES ${DBOPT_FILE} DESTINATION data/test COMPONENT DataFiles)
-@@ -467,6 +468,7 @@
-   INSTALL(FILES ${DUMMY_FILE} DESTINATION data/mysql COMPONENT DataFiles)
- ENDIF()
- ENDIF()
-+ENDIF()
- 
- ADD_CUSTOM_TARGET(show-dist-name
-   COMMAND ${CMAKE_COMMAND} -E echo "${CPACK_PACKAGE_FILE_NAME}"
+ SET(CONF_SOURCES

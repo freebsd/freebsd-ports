@@ -1,10 +1,10 @@
---- CMakeLists.txt.orig	2014-07-18 15:48:39.000000000 +0000
-+++ CMakeLists.txt	2014-08-04 14:18:38.795491147 +0000
-@@ -500,12 +500,10 @@
+--- CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
++++ CMakeLists.txt
+@@ -577,12 +577,10 @@ IF(UNIX)
  ENDIF()
  
  IF(NOT WITHOUT_SERVER)
--  ADD_SUBDIRECTORY(tests)
+-  ADD_SUBDIRECTORY(testclients)
    ADD_SUBDIRECTORY(sql)
    OPTION (WITH_EMBEDDED_SERVER "Compile MySQL with embedded server" OFF)
    IF(WITH_EMBEDDED_SERVER) 
@@ -13,18 +13,16 @@
    ENDIF(WITH_EMBEDDED_SERVER)
  ENDIF()
  
-@@ -514,10 +512,7 @@
+@@ -591,8 +589,6 @@ ENDIF()
  ADD_SUBDIRECTORY(scripts)
  
  IF(NOT WITHOUT_SERVER)
 -  ADD_SUBDIRECTORY(mysql-test)
 -  ADD_SUBDIRECTORY(mysql-test/lib/My/SafeProcess)
    ADD_SUBDIRECTORY(support-files)
--  ADD_SUBDIRECTORY(sql-bench)
    IF(EXISTS ${CMAKE_SOURCE_DIR}/internal/CMakeLists.txt)
      ADD_SUBDIRECTORY(internal)
-   ENDIF()
-@@ -572,6 +567,7 @@
+@@ -647,6 +643,7 @@ ENDIF()
  #
  # RPM installs documentation directly from the source tree
  #
@@ -32,10 +30,11 @@
  IF(NOT INSTALL_LAYOUT MATCHES "RPM")
    INSTALL(FILES COPYING LICENSE.mysql 
    DESTINATION ${INSTALL_DOCREADMEDIR} 
-@@ -597,5 +593,6 @@
+@@ -673,6 +670,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
      PATTERN "sp-imp-spec.txt" EXCLUDE
    )
  ENDIF()
 +ENDIF()
  
  INCLUDE(CPack)
+ 
