@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mail_room
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
