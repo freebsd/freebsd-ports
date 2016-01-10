@@ -27,9 +27,9 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libraw.so:${PORTSDIR}/graphics/libraw \
 		librest-0.7.so:${PORTSDIR}/devel/librest
 
-USES=		shebangfix gettext desktop-file-utils gmake pkgconfig tar:xz
+USES=		shebangfix gettext desktop-file-utils gmake pkgconfig sqlite \
+		tar:xz
 USE_GNOME=	dconf gtk30 gnomedocutils
-USE_SQLITE=	3
 USE_GSTREAMER1=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-icon-update
