@@ -31,7 +31,6 @@ PLIST_FILES=	bin/phalanx \
 		%%DATADIR%%/eco.phalanx \
 		%%DATADIR%%/pbook.phalanx \
 		%%DATADIR%%/sbook.phalanx
-PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 
@@ -39,6 +38,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/phalanx ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.phalanx ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/${file}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
