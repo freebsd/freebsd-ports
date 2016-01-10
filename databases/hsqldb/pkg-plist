@@ -162,6 +162,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/book-pref.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/building-app.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/builtinfunctions-chapt.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/compatibility-chapt.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/dataaccess-chapt.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/databaseobjects-chapt.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/dbproperties-chapt.html

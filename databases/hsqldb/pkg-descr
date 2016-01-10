@@ -1,3 +1,5 @@
+HyperSQL
+
 HSQLDB is the leading SQL relational database engine written in Java. It has a
 JDBC driver and supports a rich subset of ANSI-92 SQL (BNF tree format) plus
 SQL 99 and 2003 enhancements. It offers a small (less than 100k in one version
