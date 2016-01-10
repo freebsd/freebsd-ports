@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.CMFPlone
-PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTVERSION=	4.3.7
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -116,7 +115,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}zope.tales>=0:${PORTSDIR}/devel/py-zope.tales \
 		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:${PORTSDIR}/devel/py-zope.traversing
 
-USES=		python:2 zip
-USE_PYTHON=	distutils
+NO_ARCH=	yes
+USES=		python:2.7 zip
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

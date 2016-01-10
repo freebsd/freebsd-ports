@@ -1,4 +1,4 @@
 This package defines a dynamic module type that lets you create objects in the
 dynamic module on demand.
 
-WWW: http://code.google.com/p/dexterity/
+WWW: https://pypi.python.org/pypi/plone.alterego
