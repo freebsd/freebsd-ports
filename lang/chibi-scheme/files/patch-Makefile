@@ -1,6 +1,6 @@
---- Makefile.orig	2014-11-24 02:25:56 UTC
+--- Makefile.orig	2015-05-10 13:47:12 UTC
 +++ Makefile
-@@ -66,15 +66,15 @@ endif
+@@ -72,15 +72,15 @@ endif
  
  ifeq ($(SEXP_USE_DL),0)
  XLDFLAGS  := $(LDFLAGS) $(RLDFLAGS) $(GCLDFLAGS) -lm
@@ -19,20 +19,21 @@
  
  include/chibi/install.h: Makefile
  	echo '#define sexp_so_extension "'$(SO)'"' > $@
-@@ -274,7 +274,7 @@ dist-clean: dist-clean-libs cleaner
+@@ -250,7 +250,7 @@ dist-clean: dist-clean-libs cleaner
  
  install: all
  	$(MKDIR) $(DESTDIR)$(BINDIR)
 -	$(INSTALL) -m0755 chibi-scheme$(EXE) $(DESTDIR)$(BINDIR)/
-+	$(INSTALL) -s -m0755 chibi-scheme$(EXE) $(DESTDIR)$(BINDIR)/
++	$(INSTALL_BIN) -m0755 chibi-scheme$(EXE) $(DESTDIR)$(BINDIR)/
  	$(INSTALL) -m0755 tools/chibi-ffi $(DESTDIR)$(BINDIR)/
  	$(INSTALL) -m0755 tools/chibi-doc $(DESTDIR)$(BINDIR)/
  	$(INSTALL) -m0755 tools/snow-chibi $(DESTDIR)$(BINDIR)/
-@@ -316,32 +316,31 @@ install: all
+@@ -294,28 +294,28 @@ install: all
  	$(MKDIR) $(DESTDIR)$(BINMODDIR)/chibi/optimize/
  	$(MKDIR) $(DESTDIR)$(BINMODDIR)/scheme/
  	$(MKDIR) $(DESTDIR)$(BINMODDIR)/srfi/18 $(DESTDIR)$(BINMODDIR)/srfi/27 $(DESTDIR)$(BINMODDIR)/srfi/33 $(DESTDIR)$(BINMODDIR)/srfi/39 $(DESTDIR)$(BINMODDIR)/srfi/69 $(DESTDIR)$(BINMODDIR)/srfi/95 $(DESTDIR)$(BINMODDIR)/srfi/98
 -	$(INSTALL) -m0755 $(CHIBI_COMPILED_LIBS) $(DESTDIR)$(BINMODDIR)/chibi/
+-	$(INSTALL) -m0755 $(CHIBI_CRYPTO_COMPILED_LIBS) $(DESTDIR)$(BINMODDIR)/chibi/crypto/
 -	$(INSTALL) -m0755 $(CHIBI_IO_COMPILED_LIBS) $(DESTDIR)$(BINMODDIR)/chibi/io/
 -	$(INSTALL) -m0755 $(CHIBI_OPT_COMPILED_LIBS) $(DESTDIR)$(BINMODDIR)/chibi/optimize/
 -	$(INSTALL) -m0755 lib/scheme/time$(SO) $(DESTDIR)$(BINMODDIR)/scheme/
@@ -43,23 +44,24 @@
 -	$(INSTALL) -m0755 lib/srfi/69/hash$(SO) $(DESTDIR)$(BINMODDIR)/srfi/69
 -	$(INSTALL) -m0755 lib/srfi/95/qsort$(SO) $(DESTDIR)$(BINMODDIR)/srfi/95
 -	$(INSTALL) -m0755 lib/srfi/98/env$(SO) $(DESTDIR)$(BINMODDIR)/srfi/98
-+	$(INSTALL) -s -m0755 $(CHIBI_COMPILED_LIBS) $(DESTDIR)$(BINMODDIR)/chibi/
-+	$(INSTALL) -s -m0755 $(CHIBI_IO_COMPILED_LIBS) $(DESTDIR)$(BINMODDIR)/chibi/io/
-+	$(INSTALL) -s -m0755 $(CHIBI_OPT_COMPILED_LIBS) $(DESTDIR)$(BINMODDIR)/chibi/optimize/
-+	$(INSTALL) -s -m0755 lib/scheme/time$(SO) $(DESTDIR)$(BINMODDIR)/scheme/
-+	$(INSTALL) -s -m0755 lib/srfi/18/threads$(SO) $(DESTDIR)$(BINMODDIR)/srfi/18
-+	$(INSTALL) -s -m0755 lib/srfi/27/rand$(SO) $(DESTDIR)$(BINMODDIR)/srfi/27
-+	$(INSTALL) -s -m0755 lib/srfi/33/bit$(SO) $(DESTDIR)$(BINMODDIR)/srfi/33
-+	$(INSTALL) -s -m0755 lib/srfi/39/param$(SO) $(DESTDIR)$(BINMODDIR)/srfi/39
-+	$(INSTALL) -s -m0755 lib/srfi/69/hash$(SO) $(DESTDIR)$(BINMODDIR)/srfi/69
-+	$(INSTALL) -s -m0755 lib/srfi/95/qsort$(SO) $(DESTDIR)$(BINMODDIR)/srfi/95
-+	$(INSTALL) -s -m0755 lib/srfi/98/env$(SO) $(DESTDIR)$(BINMODDIR)/srfi/98
++	$(INSTALL_BIN) -m0755 $(CHIBI_COMPILED_LIBS) $(DESTDIR)$(BINMODDIR)/chibi/
++	$(INSTALL_BIN) -m0755 $(CHIBI_CRYPTO_COMPILED_LIBS) $(DESTDIR)$(BINMODDIR)/chibi/crypto/
++	$(INSTALL_BIN) -m0755 $(CHIBI_IO_COMPILED_LIBS) $(DESTDIR)$(BINMODDIR)/chibi/io/
++	$(INSTALL_BIN) -m0755 $(CHIBI_OPT_COMPILED_LIBS) $(DESTDIR)$(BINMODDIR)/chibi/optimize/
++	$(INSTALL_BIN) -m0755 lib/scheme/time$(SO) $(DESTDIR)$(BINMODDIR)/scheme/
++	$(INSTALL_BIN) -m0755 lib/srfi/18/threads$(SO) $(DESTDIR)$(BINMODDIR)/srfi/18
++	$(INSTALL_BIN) -m0755 lib/srfi/27/rand$(SO) $(DESTDIR)$(BINMODDIR)/srfi/27
++	$(INSTALL_BIN) -m0755 lib/srfi/33/bit$(SO) $(DESTDIR)$(BINMODDIR)/srfi/33
++	$(INSTALL_BIN) -m0755 lib/srfi/39/param$(SO) $(DESTDIR)$(BINMODDIR)/srfi/39
++	$(INSTALL_BIN) -m0755 lib/srfi/69/hash$(SO) $(DESTDIR)$(BINMODDIR)/srfi/69
++	$(INSTALL_BIN) -m0755 lib/srfi/95/qsort$(SO) $(DESTDIR)$(BINMODDIR)/srfi/95
++	$(INSTALL_BIN) -m0755 lib/srfi/98/env$(SO) $(DESTDIR)$(BINMODDIR)/srfi/98
  	$(MKDIR) $(DESTDIR)$(INCDIR)
  	$(INSTALL) -m0644 $(INCLUDES) $(DESTDIR)$(INCDIR)/
  	$(MKDIR) $(DESTDIR)$(LIBDIR)
  	$(MKDIR) $(DESTDIR)$(SOLIBDIR)
 -	$(INSTALL) -m0755 libchibi-scheme$(SO_VERSIONED_SUFFIX) $(DESTDIR)$(SOLIBDIR)/
-+	$(INSTALL) -s -m0755 libchibi-scheme$(SO_VERSIONED_SUFFIX) $(DESTDIR)$(SOLIBDIR)/
++	$(INSTALL_BIN) -m0755 libchibi-scheme$(SO_VERSIONED_SUFFIX) $(DESTDIR)$(SOLIBDIR)/
  	$(LN) -s -f libchibi-scheme$(SO_VERSIONED_SUFFIX) $(DESTDIR)$(SOLIBDIR)/libchibi-scheme$(SO_MAJOR_VERSIONED_SUFFIX)
  	$(LN) -s -f libchibi-scheme$(SO_VERSIONED_SUFFIX) $(DESTDIR)$(SOLIBDIR)/libchibi-scheme$(SO)
  	-$(INSTALL) -m0644 libchibi-scheme.a $(DESTDIR)$(SOLIBDIR)/
@@ -70,8 +72,21 @@
  	$(MKDIR) $(DESTDIR)$(MANDIR)
  	$(INSTALL) -m0644 doc/chibi-scheme.1 $(DESTDIR)$(MANDIR)/
  	$(INSTALL) -m0644 doc/chibi-ffi.1 $(DESTDIR)$(MANDIR)/
- 	$(INSTALL) -m0644 doc/chibi-doc.1 $(DESTDIR)$(MANDIR)/
--	-if type ldconfig >/dev/null 2>/dev/null; then ldconfig; fi
+@@ -332,7 +332,7 @@ uninstall:
+ 	-$(RM) $(DESTDIR)$(SOLIBDIR)/libchibi-scheme$(SO_VERSIONED_SUFFIX)
+ 	-$(RM) $(DESTDIR)$(SOLIBDIR)/libchibi-scheme$(SO_MAJOR_VERSIONED_SUFFIX)
+ 	-$(RM) $(DESTDIR)$(LIBDIR)/libchibi-scheme$(SO).a
+-	-$(RM) $(DESTDIR)$(SOLIBDIR)/pkgconfig/chibi-scheme.pc
++	-$(RM) $(DESTDIR)$(PKGCONFDIR)/chibi-scheme.pc
+ 	-$(CD) $(DESTDIR)$(INCDIR) && $(RM) $(INCLUDES)
+ 	-$(RM) $(DESTDIR)$(MODDIR)/srfi/99/records/*.{sld,scm}
+ 	-$(RM) $(DESTDIR)$(MODDIR)/.*.meta
+@@ -371,7 +371,7 @@ uninstall:
+ 	-$(RMDIR) $(DESTDIR)$(MODDIR)/srfi $(DESTDIR)$(BINMODDIR)/srfi
+ 	-$(RMDIR) $(DESTDIR)$(MODDIR) $(DESTDIR)$(BINMODDIR)
+ 	-$(RM) $(DESTDIR)$(MANDIR)/chibi-scheme.1 $(DESTDIR)$(MANDIR)/chibi-ffi.1 $(DESTDIR)$(MANDIR)/chibi-doc.1
+-	-$(RM) $(DESTDIR)$(SOLIBDIR)/pkgconfig/chibi-scheme.pc
++	-$(RM) $(DESTDIR)$(PKGCONFDIR)/chibi-scheme.pc
  
- uninstall:
- 	-$(RM) $(DESTDIR)$(BINDIR)/chibi-scheme$(EXE)
+ dist: dist-clean
+ 	$(RM) chibi-scheme-$(VERSION).tgz
