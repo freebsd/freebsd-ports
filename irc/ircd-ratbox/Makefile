@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	ircd-ratbox-devel-[0-9]* charybdis-[0-9]*
 
-USES=		cpe libtool SQLITE tar:bzip2
+USES=		cpe libtool sqlite tar:bzip2
 CPE_VENDOR=	ratbox
 USE_RC_SUBR=	ircd-ratbox
 USE_LDCONFIG=	${PREFIX}/lib/ircd-ratbox
