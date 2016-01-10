@@ -28,12 +28,11 @@ PORTSCOUT=	limit:1.4.*$$
 USE_GSTREAMER1=	yes
 USE_XORG=	xt xdamage xcomposite
 USES=		bison compiler:c++11-lib gettext gmake gperf libtool perl5 \
-		pkgconfig shebangfix tar:xz
+		pkgconfig shebangfix sqlite tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
 USE_GNOME=	cairo gtk20 gtk30 introspection:build libxslt
 USE_GL=		gl
-USE_SQLITE=	3
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

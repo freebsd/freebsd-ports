@@ -14,8 +14,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 GH_ACCOUNT=	mono
 USE_GITHUB=	yes
-USE_SQLITE=	3
-USES=		gmake mono pathfix pkgconfig tar:bzip2
+USES=		gmake mono pathfix pkgconfig sqlite tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_GMCS=${LOCALBASE}/bin/mcs
 USE_AUTOTOOLS=	automake autoconf aclocal
