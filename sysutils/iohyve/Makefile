@@ -4,7 +4,7 @@ PORTNAME=	iohyve
 PORTVERSION=	0.7.3
 CATEGORIES=	sysutils
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	trentnthompson@gmail.com
 COMMENT=	bhyve manager utilizing ZFS and other FreeBSD tools
 
 LICENSE=	BSD2CLAUSE
