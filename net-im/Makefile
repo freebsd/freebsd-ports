@@ -145,6 +145,7 @@
     SUBDIR += qwit-devel
     SUBDIR += qxmpp
     SUBDIR += ramblercontacts
+    SUBDIR += ricochet
     SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-hipchat
     SUBDIR += rubygem-lita
