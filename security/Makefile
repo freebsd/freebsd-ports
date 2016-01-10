@@ -50,6 +50,7 @@
     SUBDIR += calife
     SUBDIR += ccrypt
     SUBDIR += ccsrch
+    SUBDIR += certificate-transparency
     SUBDIR += cfs
     SUBDIR += cfv
     SUBDIR += chaosreader
