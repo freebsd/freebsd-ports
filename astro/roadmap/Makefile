@@ -33,7 +33,6 @@ PLIST_FILES=	${BINS:S,^,bin/,} ${GUI_BINS:S,^,bin/,} \
 		${GUI_BINS:S,^gtk,bin/,} ${SCRIPTS:S,^,bin/,} \
 		man/man1/roadgps.1.gz man/man1/roadmap.1.gz \
 		${DATA:S,^,%%DATADIR%%/,}
-PLIST_DIRS=	%%DATADIR%%
 
 BINS=		dumpmap buildmap buildmap_osm buildplace buildus
 GUI_BINS=	gtkroadmap gtkroadgps
