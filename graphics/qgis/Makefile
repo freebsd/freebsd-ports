@@ -25,8 +25,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
 GH_TAGNAME=	B403532
 
-USES=		cpe bison cmake execinfo fortran gmake python
-USE_SQLITE=	yes
+USES=		cpe bison cmake execinfo fortran gmake sqlite python
 USE_QT4=	gui svg xml network sql designer testlib linguist_build \
 		qmake_build moc_build rcc_build uic_build
 

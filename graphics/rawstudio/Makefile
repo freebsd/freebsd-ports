@@ -22,10 +22,10 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 
-USES=		desktop-file-utils gettext gmake jpeg libtool pathfix pkgconfig
+USES=		desktop-file-utils gettext gmake jpeg libtool pathfix pkgconfig \
+		sqlite
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 libxml2 gconf2
-USE_SQLITE=	3
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

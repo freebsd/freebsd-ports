@@ -13,8 +13,7 @@ RUN_DEPENDS=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		gettext gmake iconv libtool pkgconfig tar:bzip2 python
-USE_SQLITE=	yes
+USES=		gettext gmake iconv libtool pkgconfig tar:bzip2 python sqlite
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include

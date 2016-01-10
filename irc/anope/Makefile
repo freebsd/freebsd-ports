@@ -83,7 +83,7 @@ PLIST_SUB+=	SASL="@comment "
 
 .if ${PORT_OPTIONS:MSQLITE}
 PLIST_SUB+=	SQLITE=""
-USE_SQLITE=	yes
+USES+=		sqlite
 .else
 PLIST_SUB+=	SQLITE="@comment "
 .endif

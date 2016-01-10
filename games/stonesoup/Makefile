@@ -14,9 +14,8 @@ COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../licence.txt
 
-USE_SQLITE=	yes
 USES=		bison compiler:c++11-lib gmake lua:51 perl5 pkgconfig \
-		shebangfix tar:xz
+		shebangfix sqlite tar:xz
 
 USE_PERL5=	build
 SHEBANG_FILES=	util/gen-mi-enum \
