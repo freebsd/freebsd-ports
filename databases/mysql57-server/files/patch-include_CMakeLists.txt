@@ -1,9 +1,9 @@
---- include/CMakeLists.txt.orig	2013-01-22 17:54:49.000000000 +0100
-+++ include/CMakeLists.txt	2013-02-13 14:53:40.000000000 +0100
-@@ -65,10 +65,12 @@
-   ${HEADERS_GEN_CONFIGURE}
+--- include/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
++++ include/CMakeLists.txt
+@@ -69,10 +69,12 @@ SET(HEADERS 
  )
  
+ INSTALL(FILES ../libbinlogevents/export/binary_log_types.h DESTINATION ${INSTALL_INCLUDEDIR})
 +IF(FALSE)
  INSTALL(FILES ${HEADERS} DESTINATION ${INSTALL_INCLUDEDIR} COMPONENT Development)
  INSTALL(DIRECTORY mysql/ DESTINATION ${INSTALL_INCLUDEDIR}/mysql COMPONENT Development 

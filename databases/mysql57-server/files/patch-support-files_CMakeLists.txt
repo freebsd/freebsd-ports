@@ -1,6 +1,6 @@
---- support-files/CMakeLists.txt.orig	2010-12-23 17:38:19.000000000 +0100
-+++ support-files/CMakeLists.txt	2010-12-23 17:41:11.000000000 +0100
-@@ -74,7 +74,9 @@
+--- support-files/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
++++ support-files/CMakeLists.txt
+@@ -69,7 +69,9 @@ IF(UNIX)
      INSTALL(FILES magic DESTINATION ${inst_location} COMPONENT SupportFiles)
    ENDIF()
  
@@ -8,5 +8,5 @@
    INSTALL(FILES mysql.m4 DESTINATION ${INSTALL_SHAREDIR}/aclocal COMPONENT Development)
 +ENDIF()
    CONFIGURE_FILE(MySQL-shared-compat.spec.sh ${CMAKE_CURRENT_BINARY_DIR}/MySQL-shared-compat.spec @ONLY)
-   CONFIGURE_FILE(mysql.spec.sh ${CMAKE_CURRENT_BINARY_DIR}/mysql.spec @ONLY)
-   CONFIGURE_FILE(mysql.spec.sh ${CMAKE_CURRENT_BINARY_DIR}/mysql.${VERSION}.spec @ONLY)
+   
+   SET(bindir ${prefix}/${INSTALL_BINDIR})
