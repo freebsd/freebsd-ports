@@ -18,12 +18,11 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sqlite3=${LOCALBASE} --localstatedir="${PREFIX}/var"
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		libtool sqlite
 
 CONFLICTS=	softhsm-1.*
 
 USE_LDCONFIG=	yes
-USE_SQLITE=	yes
 
 OPTIONS_SINGLE=		CRYP
 OPTIONS_SINGLE_CRYP=	CRYP_OPEN CRYP_BOTAN
