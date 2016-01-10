@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.16.2
+PORTVERSION=	0.17.1
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 MASTER_SITES=	http://crawl.develz.org/release/
@@ -27,12 +27,10 @@ WRKSRC=		${WRKDIR}/stone_soup-${PORTVERSION}/source/
 SUB_FILES=	README.FreeBSD
 PLIST_SUB=	SAVEDIR="${SAVEDIR}"
 
-# WIZARD is currently broken upstream, remove until fixed
-##OPTIONS_DEFINE=	SOUND WIZARD LUA_BINDINGS DOCS EXAMPLES
-OPTIONS_DEFINE=	SOUND LUA_BINDINGS DOCS EXAMPLES
+OPTIONS_DEFINE=	SOUND WIZARD LUA_BINDINGS DOCS EXAMPLES
 
 SOUND_DESC=	Sound support
-##WIZARD_DESC=	Wizard mode
+WIZARD_DESC=	Wizard mode
 LUA_BINDINGS_DESC=	Bindings for LUA user scripts
 
 MAKE_ARGS=	prefix=${PREFIX} \
@@ -51,9 +49,9 @@ MAKE_ARGS=	prefix=${PREFIX} \
 MAKE_ARGS+=	V=yes
 .endif
 
-##.if empty(PORT_OPTIONS:MWIZARD)
-##MAKE_ARGS+=	NOWIZARD=y
-##.endif
+.if empty(PORT_OPTIONS:MWIZARD)
+MAKE_ARGS+=	NOWIZARD=y
+.endif
 
 .if ${PORT_OPTIONS:MSDL}
 CONFLICTS+=	${PORTNAME}-[0-9]*
@@ -86,6 +84,10 @@ MAKE_ARGS+=	NO_LUA_BINDINGS=yes
 
 .if ${COMPILER_TYPE} != clang
 CFLAGS+=	-D_GLIBCXX_USE_C99
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+CFLAGS+=	-std=c++11
 .endif
 
 post-patch:
