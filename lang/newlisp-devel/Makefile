@@ -77,7 +77,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	3
+USES+=		sqlite
 MODULES+=	sqlite3
 PLIST_SUB+=	SQLITE=""
 .else

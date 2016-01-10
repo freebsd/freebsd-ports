@@ -162,7 +162,7 @@ IGNORE=		DRAC is not available
 .endif
 
 .if ${PORT_OPTIONS:MHTTP} || ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=yes
+USES+=	sqlite
 .endif
 
 .if !${PORT_OPTIONS:MGSSAPI_BASE} && !${PORT_OPTIONS:MGSSAPI_HEIMDAL} && \
