@@ -11,8 +11,6 @@ MASTER_SITES=	http://www.nickg.me.uk/files/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical configurable talking cow
 
-OPTIONS_DEFINE=	DBUS
-
 USE_GNOME=	gtk20
 USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
@@ -27,10 +25,8 @@ PLIST_FILES=	bin/xcowdream \
 		%%DATADIR%%/cow_large.png \
 		%%DATADIR%%/cow_med.png \
 		%%DATADIR%%/cow_small.png
-PLIST_DIRS=	%%DATADIR%%
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+OPTIONS_DEFINE=	DBUS
 
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 DBUS_CFLAGS=		-DWITH_DBUS
