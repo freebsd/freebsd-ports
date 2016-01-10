@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nokogiri
-PORTVERSION=	1.6.6.4
+PORTVERSION=	1.6.7.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
