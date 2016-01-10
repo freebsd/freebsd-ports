@@ -1,0 +1,6 @@
+From monitoring individual cluster nodes, to viewing real-time
+threads, ElasticHQ enables up-to-the-second insight in to ElasticSearch
+cluster runtime metrics and configurations, using the ElasticSearch
+REST API.
+
+WWW: http://www.elastichq.org/
