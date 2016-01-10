@@ -1,0 +1,31 @@
+--- configure.ac.orig	2015-10-23 16:31:08.000000000 +0200
++++ configure.ac	2015-11-23 19:43:54.895959000 +0100
+@@ -83,9 +83,7 @@ AC_CHECK_HEADER([gtest/gtest.h],, [missi
+ AS_VAR_APPEND([CPPFLAGS], [" -I$GMOCK_DIR/include"])
+ AC_CHECK_HEADER([gmock/gmock.h],, [missing_gmock=1])
+ AS_VAR_APPEND([CPPFLAGS], [" -I$GTEST_DIR"])
+-AC_CHECK_HEADER([$GTEST_DIR/src/gtest-all.cc],, [missing_gtest=1])
+ AS_VAR_APPEND([CPPFLAGS], [" -I$GMOCK_DIR"])
+-AC_CHECK_HEADER([$GMOCK_DIR/src/gmock-all.cc],, [missing_gmock=1])
+ CPPFLAGS="$saved_CPPFLAGS"
+ AS_IF([test -n "$missing_gtest"],
+       [AC_MSG_ERROR([could not find a working Google Test])])
+@@ -105,7 +103,7 @@ AC_SEARCH_LIBS([clock_gettime], [rt],,, 
+ 
+ AC_MSG_CHECKING([checking for gflags library])
+ LIBS="-lgflags $LIBS"
+-AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <gflags/gflags.h>], [google::ParseCommandLineFlags(NULL, NULL, true)])], [have_gflags=yes], [have_gflags=no])
++AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <gflags/gflags.h>], [gflags::ParseCommandLineFlags(NULL, NULL, true)])], [have_gflags=yes], [have_gflags=no])
+ AC_MSG_RESULT([$have_gflags])
+ AS_IF([test "x$have_gflags" = "xno"],
+       [AC_MSG_ERROR([gflags library could not be found])])
+@@ -117,6 +115,9 @@ AC_MSG_RESULT([$have_glog])
+ AS_IF([test "x$have_glog" = "xno"],
+       [AC_MSG_ERROR([glog library could not be found])])
+ 
++# Required for "make check" to build.
++LIBS="$LIBS -lgtest -lgmock"
++
+ save_LIBS="$LIBS"
+ AS_UNSET([LIBS])
+ AC_SEARCH_LIBS([snappy_compress], [snappy],,, [$save_LIBS])

@@ -1,0 +1,4 @@
+bin/ct
+bin/ct-clustertool
+bin/ct-mirror
+bin/ct-server
