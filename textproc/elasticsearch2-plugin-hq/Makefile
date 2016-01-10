@@ -1,21 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	hq
-PORTVERSION=	1.0.0
+PORTVERSION=	2.0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
-PORTEPOCH=	1
 CATEGORIES=	textproc
-PKGNAMEPREFIX=	elasticsearch-plugin-
+PKGNAMEPREFIX=	elasticsearch2-plugin-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	ElasticSearch HQ Plugin
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	elasticsearch>=1.7.0:${PORTSDIR}/textproc/elasticsearch
+RUN_DEPENDS=	elasticsearch2>=2.0.0:${PORTSDIR}/textproc/elasticsearch2
 
-CONFLICTS=	elasticsearch2-plugin-hq-2.*
+CONFLICTS=	elasticsearch-plugin-hq-1.*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	royrusso
