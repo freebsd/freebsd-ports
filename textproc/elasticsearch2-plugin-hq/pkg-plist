@@ -604,6 +604,8 @@ lib/elasticsearch/plugins/HQ/_site/js/lib/jquery/jquery.tablesorter.js
 lib/elasticsearch/plugins/HQ/_site/js/lib/jquery/jquery.tablesorter.min.js
 lib/elasticsearch/plugins/HQ/_site/js/lib/jquery/jquery.tablesorter.pager.js
 lib/elasticsearch/plugins/HQ/_site/js/lib/jquery/jquery.tablesorter.pager.min.js
+lib/elasticsearch/plugins/HQ/_site/js/lib/lodash/lodash.js
+lib/elasticsearch/plugins/HQ/_site/js/lib/lodash/lodash.min.js
 lib/elasticsearch/plugins/HQ/_site/js/lib/numeraljs/languages/be-nl.js
 lib/elasticsearch/plugins/HQ/_site/js/lib/numeraljs/languages/cs.js
 lib/elasticsearch/plugins/HQ/_site/js/lib/numeraljs/languages/da-dk.js
