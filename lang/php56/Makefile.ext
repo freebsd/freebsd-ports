@@ -277,7 +277,7 @@ USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_sqlite"
-USE+=		sqlite
+USES+=		sqlite
 CONFIGURE_ARGS+=--with-pdo-sqlite=${LOCALBASE}
 
 USE_PHP=	pdo
