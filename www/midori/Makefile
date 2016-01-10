@@ -31,8 +31,7 @@ USE_GNOME=	glib20 intltool libxml2
 USE_XORG=	xscrnsaver
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USES=		cmake desktop-file-utils gettext pkgconfig tar:bzip2
-USE_SQLITE=	yes
+USES=		cmake desktop-file-utils gettext pkgconfig sqlite tar:bzip2
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
