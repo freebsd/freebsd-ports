@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jquery-atwho-rails
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails4
