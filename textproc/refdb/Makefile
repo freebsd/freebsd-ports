@@ -38,14 +38,14 @@ OPTIONS_DEFAULT=	PGSQL
 DOCS_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 			docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 
-SHEBANG_FILES=          ${WRKSRC}/scripts/*
+SHEBANG_FILES=	${WRKSRC}/scripts/*
 
-USE_RC_SUBR=            refdbd
+USE_RC_SUBR=	refdbd
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USES+=  mysql
+USE_MYSQL=	yes
 # If libdbi-drivers has been built without MySQL driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdmysql.so)
 IGNORE=		rebuild databases/libdbi-drivers with MySQL support
@@ -55,7 +55,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 CONFIGURE_ARGS+=	--with-db-server=mysql
 
 .elif ${PORT_OPTIONS:MPGSQL}
-USES+=  pgsql
+USES+=	pgsql
 # If libdbi-drivers has been built without PostgreSQL driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdpgsql.so)
 IGNORE=		rebuild databases/libdbi-drivers with PostgreSQL support
