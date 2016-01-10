@@ -856,6 +856,7 @@
     SUBDIR += py-pymacaroons-pynacl
     SUBDIR += py-pyme
     SUBDIR += py-pynacl
+    SUBDIR += py-pyotp
     SUBDIR += py-pyptlib
     SUBDIR += py-pysaml2
     SUBDIR += py-pyscard
