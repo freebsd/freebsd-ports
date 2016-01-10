@@ -19,10 +19,10 @@ EXPIRATION_DATE=	2016-01-15
 LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:${PORTSDIR}/databases/php${PHP_VER}-pdo_odbc
 
+USES=		sqlite
 USE_PHP=	dom filter ftp json pcre pdo pdo_sqlite posix \
 		session simplexml xml xmlreader xmlwriter xmlrpc \
 		xsl zlib odbc
-USE_SQLITE=	yes
 
 DEFAULT_VERSIONS+=php=5
 

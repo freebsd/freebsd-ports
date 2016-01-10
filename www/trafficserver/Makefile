@@ -20,14 +20,13 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		cpe execinfo gmake libtool perl5 pkgconfig tar:bzip2 tcl
+USES=		cpe execinfo gmake libtool perl5 pkgconfig tar:bzip2 sqlite tcl
 CPE_VENDOR=	apache
 CPE_PRODUCT=	traffic_server
 USE_PERL5=	build run
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
-USE_SQLITE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
