@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--without-mysql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE2}
-USE_SQLITE=	2
+USES+=		sqlite:2
 .else
 CONFIGURE_ARGS+=	--without-sqlite
 .endif

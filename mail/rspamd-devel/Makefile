@@ -45,13 +45,12 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DDEBUG=ON
 
 USES=		cmake:outsource gettext iconv pkgconfig tar:xz perl5 \
-		compiler:c11
+		compiler:c11 sqlite
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
-USE_SQLITE=	yes
 DEBUG_FLAGS=	-g -O0
 WITH_DEBUG=	yes
 

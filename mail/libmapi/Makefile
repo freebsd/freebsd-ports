@@ -22,8 +22,8 @@ RUN_DEPENDS=	${SAMBA_DEP}
 CODENAME=	QUADRANT
 DOWNLOADCODE=	244
 
-USE_SQLITE=	3
-USES=		compiler:c++11-lib gmake pathfix pkgconfig python shebangfix
+USES=		compiler:c++11-lib gmake pathfix pkgconfig python shebangfix \
+		sqlite
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
