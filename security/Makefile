@@ -850,6 +850,7 @@
     SUBDIR += py-pyaff4
     SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto
+    SUBDIR += py-pycryptodome
     SUBDIR += py-pycryptopp
     SUBDIR += py-pydeep
     SUBDIR += py-pyelliptic
