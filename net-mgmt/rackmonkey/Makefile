@@ -65,7 +65,7 @@ do-install:
 	cd ${WRKSRC}/perl && ${COPYTREE_SHARE} RackMonkey ${STAGEDIR}${WWWDIR}/
 	${MKDIR} ${WRKDIR}/build_conf; \
 	${CP} ${WRKSRC}/conf/rackmonkey.conf-default ${WRKDIR}/build_conf/rackmonkey.conf; \
-	if [ "${USES:MSQLITE}" ]; then \
+	if [ "${USES:Msqlite}" ]; then \
 		${ECHO} "Building with SQLite............."; \
 		${SED} -i '' -e 's%dbconnect =%dbconnect = dbi:SQLite:dbname=${WWWDIR}/rackmonkey.db%' ${WRKDIR}/build_conf/rackmonkey.conf; \
 		if [ "${INIT_DB}" ]; then \
