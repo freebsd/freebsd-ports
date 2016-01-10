@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	impacket
-PORTVERSION=	0.9.13
-PORTREVISION=	1
+PORTVERSION=	0.9.14
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/CoreSecurity/impacket/releases/download/impacket_${PORTVERSION:S,.,_,g}/
@@ -26,9 +25,9 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/impacket && ${COPYTREE_SHARE} testcases ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
