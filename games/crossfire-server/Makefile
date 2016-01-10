@@ -22,8 +22,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		gmake libtool localbase perl5 python uidfix
-USE_SQLITE=	3
+USES=		gmake libtool localbase perl5 python sqlite uidfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --with-check=no --localstatedir=/var/games
 CONFIGURE_SHELL=${LOCALBASE}/bin/bash

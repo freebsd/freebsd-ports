@@ -96,8 +96,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USES+=	pkgconfig
-USE_SQLITE=	3
+USES+=	pkgconfig sqlite
 EXTRAS:=${EXTRAS},m_sqlite3.cpp
 PLIST_SUB+=	SQLITE=""
 .else

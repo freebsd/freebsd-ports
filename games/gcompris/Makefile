@@ -22,11 +22,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		gnucap:${PORTSDIR}/cad/gnucap
 
 USES=		display:configure gettext gmake libtool pathfix pkgconfig \
-		python:2 shebangfix tar:bzip2
+		python:2 shebangfix sqlite tar:bzip2
 SHEBANG_FILES=	boards/voices/*.sh
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
-USE_SQLITE=	3
 USE_SDL=	mixer
 USE_GNOME=	intlhack gnomeprefix gtk20 pygtk2 libxml2 librsvg2
 CPPFLAGS+=	-I${LOCALBASE}/include

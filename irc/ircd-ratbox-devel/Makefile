@@ -16,9 +16,8 @@ LICENSE=	GPLv2
 
 CONFLICTS=	ircd-ratbox-[0-9]* charybdis-[0-9]*
 
-USES=		libtool perl5 tar:bzip2
+USES=		libtool perl5 sqlite tar:bzip2
 USE_RC_SUBR=	ircd-ratbox
-USE_SQLITE=	3
 USE_PERL5=	build
 USE_LDCONFIG=	${PREFIX}/lib/ircd-ratbox
 

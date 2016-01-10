@@ -19,9 +19,8 @@ BUILD_DEPENDS=	p5-DBI>0:${PORTSDIR}/databases/p5-DBI
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_CSTD=	gnu89
-USE_SQLITE=	3
 USE_PERL5=	build
-USES=		gettext gmake ncurses perl5
+USES=		gettext gmake ncurses perl5 sqlite
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D_XOPEN_SOURCE_EXTENDED
