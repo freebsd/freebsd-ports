@@ -1,4 +1,4 @@
---- portscout.pl.orig	2016-01-04 10:46:49 UTC
+--- portscout.pl.orig	2016-01-10 17:42:32 UTC
 +++ portscout.pl
 @@ -463,7 +463,7 @@ sub VersionCheck
  
@@ -9,7 +9,7 @@
  
  		# Look to see if the URL contains the distfile version.
  		# This will affect our checks and guesses later on.
-@@ -493,15 +493,23 @@ sub VersionCheck
+@@ -493,9 +493,12 @@ sub VersionCheck
  		}
  
  		# Check for special handler for this site first
@@ -23,18 +23,27 @@
  
  			if (!$sh->GetFiles($site, $port, \@files)) {
  				info($k, $site, 'SiteHandler::GetFiles() failed for ' . $site);
- 				next;
- 			}
- 		}
-+                elsif (!$sh)
-+		{
-+			print "No \n"
-+				unless ($settings{quiet});
-+		}
- 		elsif ($site->scheme eq 'ftp')
+@@ -506,6 +509,9 @@ sub VersionCheck
  		{
  			my $ftp;
-@@ -713,7 +721,8 @@ sub VersionCheck
+ 
++			print "No. Trying FTP...\n"
++				unless ($settings{quiet});
++
+ 			$ftp = Net::FTP->new(
+ 				$site->host,
+ 				Port    => $site->port,
+@@ -609,6 +615,9 @@ sub VersionCheck
+ 		{
+ 			my ($ua, $response);
+ 
++			print "No. Trying HTTP...\n"
++				unless ($settings{quiet});
++
+ 			unless (robotsallowed($dbh, $site, $sitedata)) {
+ 				info($k, $site, 'Ignoring site as per rules in robots.txt.');
+ 
+@@ -713,7 +722,8 @@ sub VersionCheck
  
  				# Got a response which wasn't HTTP 4xx -> bail out
  				if ($response->is_success && $response->status_line !~ /^4/) {
@@ -44,7 +53,7 @@
  					$sths->{sitedata_initliecount}->execute($sitedata->{host})
  						unless($settings{precious_data});
  					next;
-@@ -797,7 +806,7 @@ sub VersionCheck
+@@ -797,7 +807,7 @@ sub VersionCheck
  							$new_found = 1;
  							last;
  						} else {
@@ -53,7 +62,7 @@
  						}
  
  						last if ($new_found);
-@@ -867,7 +876,10 @@ sub FindNewestFile
+@@ -867,7 +877,10 @@ sub FindNewestFile
  
  	foreach my $file (@$files)
  	{
@@ -65,7 +74,7 @@
  
  		if ($file =~ /^(.*)\/(.*?)$/) {
  			# Files from SiteHandlers can come with paths
-@@ -888,6 +900,9 @@ sub FindNewestFile
+@@ -888,6 +901,9 @@ sub FindNewestFile
  
  			my $skip = 0;
  
@@ -75,7 +84,7 @@
  			if ($poss_path) {
  				# Do a full-URL comparison for $old_found
  				# if we're dealing with paths too.
-@@ -908,14 +923,20 @@ sub FindNewestFile
+@@ -908,14 +924,20 @@ sub FindNewestFile
  			} else {
  				if ($file eq $distfile) {
  					$old_found = 1;
@@ -96,7 +105,7 @@
  					next;
  				}
  			}
-@@ -940,31 +961,64 @@ sub FindNewestFile
+@@ -940,31 +962,64 @@ sub FindNewestFile
  
  			# Possible candidate - extract version
  
@@ -177,7 +186,7 @@
  
  				# Skip any specific versions if requested
  
-@@ -973,6 +1027,8 @@ sub FindNewestFile
+@@ -973,6 +1028,8 @@ sub FindNewestFile
  
  					foreach (split (/\s+/, $port->{skipversions})) {
  						if ($new_v eq $_) {
@@ -186,7 +195,7 @@
  							$skip = 1;
  							last;
  						}
-@@ -981,7 +1037,7 @@ sub FindNewestFile
+@@ -981,7 +1038,7 @@ sub FindNewestFile
  					next if ($skip);
  				}
  
@@ -195,7 +204,7 @@
  					if ($new_v =~ /[-_.]([A-Za-z]+[A-Za-z_-]{2,})$/) {
  						my $str = $1;
  						next if (
-@@ -1026,12 +1082,19 @@ sub FindNewestFile
+@@ -1026,12 +1083,19 @@ sub FindNewestFile
  
  				# Test our new version string
  
