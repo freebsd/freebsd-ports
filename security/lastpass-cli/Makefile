@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lastpass-cli
-PORTVERSION=	0.6.0
+PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -43,5 +43,8 @@ XSEL_RUN_DEPENDS=	xsel:${PORTSDIR}/x11/xsel
 post-extract:
 	@${REINPLACE_CMD} -e 's/-Wno-language-extension-token//g' \
 		${WRKSRC}/Makefile
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lpass
 
 .include <bsd.port.mk>
