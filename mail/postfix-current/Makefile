@@ -61,7 +61,7 @@ PGSQL_USES=		pgsql
 SASLKMIT_LIB_DEPENDS=	libkrb5.so:${PORTSDIR}/security/krb5
 SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
-SQLITE_USE=		SQLITE=yes
+SQLITE_USES=		sqlite
 TLS_USE=		OPENSSL=yes
 
 CDB_DESC=	CDB maps lookups
