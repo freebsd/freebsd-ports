@@ -1,6 +1,7 @@
-%%XPI_XPIDIR%%/LICENSE
 %%XPI_XPIDIR%%/chrome/speeddial.jar
 %%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/nsISpeedDialCache.xpt
 %%XPI_XPIDIR%%/components/speeddialcache.js
 %%XPI_XPIDIR%%/defaults/preferences/speeddial.js
 %%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/LICENSE
