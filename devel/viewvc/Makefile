@@ -3,6 +3,7 @@
 
 PORTNAME=	viewvc
 PORTVERSION=	1.1.24
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
 		LOCAL/ohauer
@@ -63,7 +64,7 @@ post-patch:
 		${WRKSRC}/bin/standalone.py
 # to much files, use own shebangfix
 	${FIND} ${WRKSRC} -type f | ${GREP} -v -e 'png' -e 'images' \
-		| ${XARGS} ${REINPLACE_CMD} -i '' \
+		| ${XARGS} ${SED} -i '' \
 		-e '1s|^\#![[:space:]]*/usr/bin/env python|\#!${PYTHON_CMD}|' \
 		-e '1s|^\#![[:space:]]*/usr/bin/python|\#!${PYTHON_CMD}|'
 
