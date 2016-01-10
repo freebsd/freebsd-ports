@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.locales
-PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTVERSION=	4.3.7
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,8 @@ COMMENT=	Translation files for Plone
 
 LICENSE=	GPLv2
 
-USES=		python:2 zip
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python:2.7
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

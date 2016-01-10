@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.LDAPUserFolder
-PORTVERSION=	2.26
-PORTREVISION=	1
+PORTVERSION=	2.27
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +20,9 @@ OPTIONS_DEFINE=		POSIXGROUP_PATCH
 POSIXGROUP_PATCH_DESC=	Use posixGroup for group membership
 OPTIONS_DEFAULT=	POSIXGROUP_PATCH
 
-USE_PYTHON=	distutils
-USES=		python:2
+NO_ARCH=	yes
+USES=		python:2.7
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.options.mk>
 

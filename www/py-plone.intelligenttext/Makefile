@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.intelligenttext
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,8 @@ COMMENT=	Transforms from text/x-web-intelligent to text/html
 
 LICENSE=	GPLv2
 
-USES=		python zip
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

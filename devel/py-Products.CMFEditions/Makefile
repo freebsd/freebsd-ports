@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.CMFEditions
-PORTVERSION=	2.2.8
-PORTREVISION=	1
+PORTVERSION=	2.2.18
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +26,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.copy>0:${PORTSDIR}/devel/py-zope.copy \
 		${PYTHON_PKGNAMEPREFIX}transaction>=0:${PORTSDIR}/devel/py-transaction \
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3
 
-USE_PYTHON=	distutils
-USES=		python zope zip
+NO_ARCH=	yes
+USES=		python zope
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
