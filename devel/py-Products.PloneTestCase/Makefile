@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.PloneTestCase
-PORTVERSION=	0.9.17
-PORTREVISION=	1
+PORTVERSION=	0.9.18
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.
 		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:${PORTSDIR}/devel/py-Products.GenericSetup \
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3
 
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 USES=		python:2 zope zip
 
 .include <bsd.port.mk>

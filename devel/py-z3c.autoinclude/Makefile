@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	z3c.autoinclude
-PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.dottedname>=0:${PORTSDIR}/devel/py-zope
 		${PYTHON_PKGNAMEPREFIX}zc.buildout>=0:${PORTSDIR}/devel/py-zc.buildout
 
 USES=		python zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

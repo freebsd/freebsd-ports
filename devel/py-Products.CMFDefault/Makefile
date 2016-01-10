@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.CMFDefault
-PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +11,15 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Default product for the Zope Content Management Framework
 
 LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:${PORTSDIR}/devel/py-eggtestinfo
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.formlib>=1.0.2:${PORTSDIR}/devel/py-five.formlib \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:${PORTSDIR}/devel/py-Products.CMFCore \
 		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:${PORTSDIR}/devel/py-Products.GenericSetup
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

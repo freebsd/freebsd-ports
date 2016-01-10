@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.browserlayer
-PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTVERSION=	2.1.6
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.
 		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:${PORTSDIR}/devel/py-Products.CMFCore \
 		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=1.4:${PORTSDIR}/devel/py-Products.GenericSetup \
 
-USES=		python zip
-USE_PYTHON=	distutils autoplist
-#USES=			zope
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
+#USES=		zope
 
 .include <bsd.port.mk>

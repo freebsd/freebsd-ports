@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.theming
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.7
 PORTEPOCH=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
@@ -27,7 +26,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}diazo>=0:${PORTSDIR}/devel/py-diazo \
 		${PYTHON_PKGNAMEPREFIX}five.globalrequest>=0:${PORTSDIR}/devel/py-five.globalrequest \
 		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:${PORTSDIR}/devel/py-zope.traversing
 
+NO_ARCH=	yes
 USES=		python zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
