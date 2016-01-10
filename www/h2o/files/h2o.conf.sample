@@ -1,5 +1,6 @@
 # vi: ft=yaml
-# to find out the configuration commands, run: h2o --help
+# see https://h2o.examp1e.net/ for detailed documentation
+# see h2o --help for command-line options and settings
 user: www
 pid-file: /var/run/h2o.pid
 access-log: /var/log/h2o/h2o-access.log
@@ -12,7 +13,8 @@ listen:
         # generate your own certificates
         certificate-file: /usr/local/etc/h2o/server.crt
         key-file: /usr/local/etc/h2o/server.key
-file.dirlisting: on
+# enable Apache-style directory listings
+# file.dirlisting: on
 # per-host configuration
 hosts:
     my.example.org:
@@ -25,6 +27,6 @@ hosts:
             "/poudriere":
                 file.dir: "/usr/local/poudriere/data/logs/bulk"
             "/FreeBSD:10:amd64":
-                file.dir: "/usr/local/poudriere/data/packages/10_1_amd64-default/"
+                file.dir: "/usr/local/poudriere/data/packages/10_2_amd64-default/"
             "/FreeBSD:11:amd64":
                 file.dir: "/usr/local/poudriere/data/packages/current_amd64-default/"
