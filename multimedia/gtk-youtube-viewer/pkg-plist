@@ -4,6 +4,7 @@ bin/youtube-viewer
 %%SITE_PERL%%/WWW/YoutubeViewer/Activities.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/Authentication.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/Channels.pm
+%%SITE_PERL%%/WWW/YoutubeViewer/CommentThreads.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/ConfigData.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/GetCaption.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/GuideCategories.pm
@@ -25,10 +26,12 @@ bin/youtube-viewer
 %%GTK2%%%%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer/icons/gtk-youtube-viewer.png
 %%GTK2%%%%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer/icons/spinner.gif
 %%GTK2%%%%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer/icons/user.png
+%%PERL5_MAN1%%/youtube-viewer.1.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::Activities.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::Authentication.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::Channels.3.gz
+%%PERL5_MAN3%%/WWW::YoutubeViewer::CommentThreads.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::ConfigData.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::GetCaption.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::GuideCategories.3.gz
@@ -43,6 +46,5 @@ bin/youtube-viewer
 %%PERL5_MAN3%%/WWW::YoutubeViewer::Utils.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::VideoCategories.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::Videos.3.gz
-%%PERL5_MAN1%%/youtube-viewer.1.gz
 %%GTK2%%share/applications/gtk-youtube-viewer.desktop
 %%GTK2%%share/pixmaps/gtk-youtube-viewer.png
