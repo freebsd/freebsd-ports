@@ -22,8 +22,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 
 USE_GNOME=	intlhack glib20 introspection:build
 GNU_CONFIGURE=	yes
-USES=		gmake gettext pathfix python:2 pkgconfig libtool tar:xz
-USE_SQLITE=	3
+USES=		gmake gettext pathfix python:2 pkgconfig libtool sqlite tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip

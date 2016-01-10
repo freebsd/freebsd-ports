@@ -17,8 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tstack
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf execinfo ncurses python readline
-USE_SQLITE=	3
+USES=		autoreconf execinfo ncurses python readline sqlite
 
 PLIST_FILES=	bin/lnav man/man1/lnav.1.gz
 

@@ -16,12 +16,11 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 USES=		gettext-tools gmake libtool pathfix pkgconfig python:build \
-		tar:bzip2
+		sqlite tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 gnomedocutils intltool libxml2 \
 		libxslt:build introspection:build
-USE_SQLITE=	yes
 GLIB_SCHEMAS=	org.freedesktop.Telepathy.Logger.gschema.xml
 INSTALL_TARGET=	install-strip
 

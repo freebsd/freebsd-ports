@@ -13,16 +13,13 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQLite backed FUSE file system
 
-USES=		fuse
-USE_SQLITE=	3
+USES=		fuse sqlite
 
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README
 
 PLIST_FILES=	bin/sqlfs
-
-.include <bsd.port.pre.mk>
 
 do-build:
 	(cd ${WRKSRC} && ${CC} -DFUSE -DFUSE_USE_VERSION=25		\
@@ -37,4 +34,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

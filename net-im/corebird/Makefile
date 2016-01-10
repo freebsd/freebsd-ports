@@ -20,10 +20,9 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 USE_GITHUB=	yes
 GH_ACCOUNT=	baedert
 
-USES=		autoreconf gettext gmake libtool pkgconfig
+USES=		autoreconf gettext gmake libtool pkgconfig sqlite
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 pango
-USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		GSTREAMER

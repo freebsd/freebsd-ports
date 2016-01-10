@@ -14,8 +14,7 @@ LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
-USES=		libtool pkgconfig
-USE_SQLITE=	3
+USES=		libtool pkgconfig sqlite
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \
 		ac_cv_path_PYTHON=no \

@@ -177,7 +177,7 @@ PLIST_SUB+=	UNIXODBC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFIREBIRD}
-USE_FIREBIRD=	YES
+USES+=		firebird
 CONFIGURE_ARGS+=--with-rlm_sql_firebird
 PLIST_SUB+=	FIREBIRD=""
 .else
