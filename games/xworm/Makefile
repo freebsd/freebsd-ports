@@ -19,8 +19,8 @@ MAKE_ARGS=	CC="${CC}" INCDIR="-I${LOCALBASE}/include" \
 		LINUXLINK="-L${LOCALBASE}/lib -lXt -lX11 -lm"
 
 DATA=		font grid raw
-PLIST_FILES=	bin/xworm ${DATA:S/^/%%DATADIR%%\/xworm./}
-PLIST_DIRS=	%%DATADIR%%
+PLIST_FILES=	bin/xworm \
+		${DATA:S/^/%%DATADIR%%\/xworm./}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xworm ${STAGEDIR}${PREFIX}/bin
