@@ -1,5 +1,4 @@
 bin/gfind
-bin/goldfind
 bin/glocate
 bin/gupdatedb
 bin/gxargs
@@ -8,7 +7,6 @@ libexec/gcode
 libexec/gfrcode
 man/man1/gfind.1.gz
 man/man1/glocate.1.gz
-man/man1/goldfind.1.gz
 man/man1/gupdatedb.1.gz
 man/man1/gxargs.1.gz
 man/man5/glocatedb.5.gz
