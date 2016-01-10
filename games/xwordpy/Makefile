@@ -15,6 +15,7 @@ BROKEN=		unfetchable
 USE_GNOME=	pygtk2
 USES=		python
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/xwordpy \
 		%%DATADIR%%/crossword-check-all.png \
@@ -22,7 +23,6 @@ PLIST_FILES=	bin/xwordpy \
 		%%DATADIR%%/crossword-clock.png \
 		%%DATADIR%%/crossword-solve.png \
 		%%DATADIR%%/layout-rtb.png
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%DATADIR%%|\'${DATADIR}\'|g" \
