@@ -22,7 +22,7 @@ UNICODE_DESC=		Normalize tokens to Unicode (UTF-8) (recommended)
 
 CONFLICTS_INSTALL?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-tc-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
-USES=		cpe perl5 shebangfix tar:bzip2
+USES+=		cpe perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	contrib/randomtrain.sh contrib/scramble.sh \
 		src/tests/unsort.pl contrib/*.pl
 USE_PERL5=	run
