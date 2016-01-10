@@ -366,7 +366,7 @@ CONFIGURE_ARGS+=--enable-sockets
 .endif
 
 .if ${PHP_MODNAME} == "sqlite3"
-USE_SQLITE=	yes
+USES+=		sqlite
 CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
 .endif
 
