@@ -1,9 +1,7 @@
-# Created by: Kurt Jaeger <pi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Encoding-BER
-PORTVERSION=	1.00
-PORTREVISION=	1
+PORTVERSION=	1.02
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JAW
