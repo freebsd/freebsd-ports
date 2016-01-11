@@ -21,7 +21,9 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=		DOCS EXAMPLES
 
 PORTDATA=	x509-types/
-PORTDOCS=	ChangeLog README.quickstart.md doc/
+_pd_files=	ChangeLog README.quickstart.md
+_pd_dirs=	doc/
+PORTDOCS=	${_pd_files} ${_pd_dirs}
 
 SUB_FILES=	easyrsa
 
@@ -35,13 +37,12 @@ do-install:
 
 do-install-DOCS-on:
 		${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
-.if "" != ${i:M*/}
+.for i in ${_pd_files}
+		${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.endfor
+.for i in ${_pd_dirs}
 		${MKDIR} ${STAGEDIR}${DOCSDIR}/${i}
 		(cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${i})
-.else
-		${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endif
 .endfor
 
 .include <bsd.port.mk>
