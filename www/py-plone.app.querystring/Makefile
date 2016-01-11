@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.querystring
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTVERSION=	1.2.9
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DateTime>=0:${PORTSDIR}/devel/py-DateTime \
 		${PYTHON_PKGNAMEPREFIX}plone.app.layout>=0:${PORTSDIR}/www/py-plone.app.layout \
 		${PYTHON_PKGNAMEPREFIX}plone.app.registry>=1.1:${PORTSDIR}/www/py-plone.app.registry \
 		${PYTHON_PKGNAMEPREFIX}plone.app.vocabularies>=0:${PORTSDIR}/www/py-plone.app.vocabularies \
+		${PYTHON_PKGNAMEPREFIX}plone.batching>0:${PORTSDIR}/www/py-plone.batching \
 		${PYTHON_PKGNAMEPREFIX}plone.registry>0:${PORTSDIR}/www/py-plone.registry \
 		${PYTHON_PKGNAMEPREFIX}zope.component>0:${PORTSDIR}/devel/py-zope.component \
 		${PYTHON_PKGNAMEPREFIX}zope.dottedname>0:${PORTSDIR}/devel/py-zope.dottedname \
@@ -29,7 +29,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DateTime>=0:${PORTSDIR}/devel/py-DateTime \
 		${PYTHON_PKGNAMEPREFIX}zope.publisher>0:${PORTSDIR}/devel/py-zope.publisher \
 		${PYTHON_PKGNAMEPREFIX}zope.schema>0:${PORTSDIR}/devel/py-zope.schema
 
-USES=		python zip
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

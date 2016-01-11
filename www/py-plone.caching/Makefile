@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.caching
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,8 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}z3c.caching>=0:${PORTSDIR}/devel/py-z3c.cach
 		${PYTHON_PKGNAMEPREFIX}plone.transformchain>=0:${PORTSDIR}/www/py-plone.transformchain \
 		${PYTHON_PKGNAMEPREFIX}five.globalrequest>=0:${PORTSDIR}/devel/py-five.globalrequest
 
+NO_ARCH=	yes
 USES=		python zip
-USE_PYTHON=	distutils autoplist
-#USES=			zope
+USE_PYTHON=	autoplist distutils
+#USES=		zope
 
 .include <bsd.port.mk>

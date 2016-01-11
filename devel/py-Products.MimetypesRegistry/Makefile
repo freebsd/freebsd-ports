@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.MimetypesRegistry
-PORTVERSION=	2.0.5
-PORTREVISION=	2
+PORTVERSION=	2.0.8
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.contenttype>=0:${PORTSDIR}/devel/py-zop
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3
 
 USES=		python:2 zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

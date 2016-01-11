@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone
-PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTVERSION=	4.3.7
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Plone-${PORTVERSION}
@@ -25,7 +24,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFPlacefulWorkflow>=0:${PORTSDIR}/
 OPTIONS_DEFINE=		LDAP
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.ldap>=1.2.6:${PORTSDIR}/www/py-plone.app.ldap
 
+NO_ARCH=	yes
 USES=		cpe python zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -2,4 +2,4 @@ This package provides optional support for "behaviors". A behavior is
 a re-usable aspect of an object that can be enabled or disabled without
 changing the component registry.
 
-WWW: http://code.google.com/p/dexterity/
+WWW: https://pypi.python.org/pypi/plone.behavior

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.workflow
-PORTVERSION=	2.1.6
-PORTREVISION=	1
+PORTVERSION=	2.1.9
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.memoize>0:${PORTSDIR}/www/py-plone.mem
 		${PYTHON_PKGNAMEPREFIX}zope.schema>0:${PORTSDIR}/devel/py-zope.schema \
 		${PYTHON_PKGNAMEPREFIX}zope.site>0:${PORTSDIR}/devel/py-zope.site \
 		${PYTHON_PKGNAMEPREFIX}zope.testing>0:${PORTSDIR}/devel/py-zope.testing \
+		${PYTHON_PKGNAMEPREFIX}zope.dottedname>0:${PORTSDIR}/devel/py-zope.dottedname \
+		${PYTHON_PKGNAMEPREFIX}zope.lifecycleevent>0:${PORTSDIR}/devel/py-zope.lifecycleevent \
 		${PYTHON_PKGNAMEPREFIX}Acquisition>0:${PORTSDIR}/devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}DateTime>0:${PORTSDIR}/devel/py-DateTime \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>0:${PORTSDIR}/devel/py-Products.CMFCore \
@@ -29,7 +30,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.memoize>0:${PORTSDIR}/www/py-plone.mem
 		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>0:${PORTSDIR}/devel/py-Products.GenericSetup \
 		${PYTHON_PKGNAMEPREFIX}Products.statusmessages>0:${PORTSDIR}/devel/py-Products.statusmessages
 
-USES=		python zope zip
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python zip zope
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

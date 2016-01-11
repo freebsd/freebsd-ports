@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.upgrade
-PORTVERSION=	1.3.4
-PORTREVISION=	2
+PORTVERSION=	1.3.19
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,10 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borg.localrole>=0:${PORTSDIR}/security/py-bo
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}Products.Archetypes>=0:${PORTSDIR}/devel/py-Products.Archetypes \
 		${PYTHON_PKGNAMEPREFIX}Products.contentmigration>=0:${PORTSDIR}/devel/py-Products.contentmigration \
-		${PYTHON_PKGNAMEPREFIX}Products.CMFActionIcons>=0:${PORTSDIR}/devel/py-Products.CMFActionIcons \
-		${PYTHON_PKGNAMEPREFIX}Products.CMFCalendar>=0:${PORTSDIR}/devel/py-Products.CMFCalendar \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:${PORTSDIR}/devel/py-Products.CMFCore \
-		${PYTHON_PKGNAMEPREFIX}Products.CMFDefault>=0:${PORTSDIR}/devel/py-Products.CMFDefault \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFDiffTool>=0:${PORTSDIR}/devel/py-Products.CMFDiffTool \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFEditions>=0:${PORTSDIR}/devel/py-Products.CMFEditions \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFFormController>=0:${PORTSDIR}/devel/py-Products.CMFFormController \
@@ -40,7 +36,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borg.localrole>=0:${PORTSDIR}/security/py-bo
 		${PYTHON_PKGNAMEPREFIX}Products.DCWorkflow>=0:${PORTSDIR}/devel/py-Products.DCWorkflow \
 		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:${PORTSDIR}/devel/py-Products.GenericSetup \
 		${PYTHON_PKGNAMEPREFIX}Products.MimetypesRegistry>=0:${PORTSDIR}/devel/py-Products.MimetypesRegistry \
-		${PYTHON_PKGNAMEPREFIX}Products.PloneLanguageTool>=0:${PORTSDIR}/devel/py-Products.PloneLanguageTool \
 		${PYTHON_PKGNAMEPREFIX}Products.PlonePAS>=0:${PORTSDIR}/security/py-Products.PlonePAS \
 		${PYTHON_PKGNAMEPREFIX}Products.PluggableAuthService>=0:${PORTSDIR}/security/py-Products.PluggableAuthService \
 		${PYTHON_PKGNAMEPREFIX}Products.PortalTransforms>=0:${PORTSDIR}/devel/py-Products.PortalTransforms \
@@ -48,7 +43,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borg.localrole>=0:${PORTSDIR}/security/py-bo
 		${PYTHON_PKGNAMEPREFIX}Products.SecureMailHost>=0:${PORTSDIR}/mail/py-Products.SecureMailHost \
 		${PYTHON_PKGNAMEPREFIX}Products.ZCatalog>=2.13.4:${PORTSDIR}/devel/py-Products.ZCatalog
 
-USES=		python zope zip
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python zope
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

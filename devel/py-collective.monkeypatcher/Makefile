@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	collective.monkeypatcher
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +13,6 @@ COMMENT=	Applying monkey patches on startup using ZCML configuration
 LICENSE=	ZPL21
 
 USES=		python zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
