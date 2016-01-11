@@ -1,8 +1,8 @@
 # $FreeBSD$
 #
-# Provide support for SQLite
-# Feature:	sqlite
-# Usage:	USES=	sqlite[:version]
+# Provide support for firebird
+# Feature:	firebird
+# Usage:	USES=	firebird[:version]
 # MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_FIREBIRD_MK)
