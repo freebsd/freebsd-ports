@@ -1,5 +1,6 @@
-bandwidthd/etc/bandwidthd.conf-dist
 bandwidthd/bandwidthd
+@sample bandwidthd/etc/bandwidthd.conf.sample
 bandwidthd/htdocs/legend.gif
 bandwidthd/htdocs/logo.gif
-etc/rc.d/bandwidthd.sh.sample
+etc/rc.d/bandwidthd
+%%PORTDOCS%%%%DOCSDIR%%/README
