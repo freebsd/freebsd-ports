@@ -2,6 +2,7 @@
 
 PORTNAME=	DBD-cego
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.lemke-it.com/
 PKGNAMEPREFIX=	p5-
