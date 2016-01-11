@@ -1,8 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	easy-rsa
-DISTVERSION=	2.2.2
+DISTVERSION=	3.0.1
 CATEGORIES=	security net-mgmt
+MASTER_SITES=	https://github.com/OpenVPN/easy-rsa/releases/download/${DISTVERSION}/
+DISTNAME=	EasyRSA-${DISTVERSION}
 
 # Eric F. Crist <ecrist@secure-computing.net> does not require my
 # approval for changes to this package. -- mandree@FreeBSD.org
@@ -11,10 +13,35 @@ COMMENT=	Small RSA key management package based on openssl
 
 LICENSE=	GPLv2
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	OpenVPN
+CONFLICTS_INSTALL=easy-rsa2-*
 
-GNU_CONFIGURE=	yes
-USES=		autoreconf
+USES=		tar:tgz
+NO_BUILD=	yes
+
+OPTIONS_DEFINE=		DOCS EXAMPLES
+
+PORTDATA=	x509-types/
+PORTDOCS=	ChangeLog README.quickstart.md doc/
+
+SUB_FILES=	easyrsa
+
+do-install:
+		${MKDIR} ${STAGEDIR}${PREFIX}/bin
+		${INSTALL_SCRIPT} ${WRKDIR}/easyrsa ${STAGEDIR}${PREFIX}/bin/
+		${MKDIR} ${STAGEDIR}${DATADIR}/x509-types/
+		${INSTALL_SCRIPT} ${WRKSRC}/easyrsa ${STAGEDIR}${DATADIR}/easyrsa.real
+		${INSTALL_DATA} ${WRKSRC}/vars.example ${STAGEDIR}${DATADIR}
+		(cd ${WRKSRC}/x509-types/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/x509-types/)
+
+do-install-DOCS-on:
+		${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${PORTDOCS}
+.if "" != ${i:M*/}
+		${MKDIR} ${STAGEDIR}${DOCSDIR}/${i}
+		(cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${i})
+.else
+		${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.endif
+.endfor
 
 .include <bsd.port.mk>
