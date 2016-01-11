@@ -1,5 +1,5 @@
---- src/tilda.c.orig	2014-10-28 11:26:57.000000000 +0000
-+++ src/tilda.c	2015-04-09 12:05:56.977831590 +0000
+--- src/tilda.c.orig	2015-12-16 12:11:58 UTC
++++ src/tilda.c
 @@ -12,6 +12,7 @@
   * You should have received a copy of the GNU Library General Public
   * License along with this library. If not, see <http://www.gnu.org/licenses/>.
