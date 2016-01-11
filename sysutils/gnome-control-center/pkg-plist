@@ -15,7 +15,7 @@ share/applications/gnome-mouse-panel.desktop
 share/applications/gnome-notifications-panel.desktop
 share/applications/gnome-online-accounts-panel.desktop
 share/applications/gnome-power-panel.desktop
-share/applications/gnome-printers-panel.desktop
+%%CUPS%%share/applications/gnome-printers-panel.desktop
 share/applications/gnome-privacy-panel.desktop
 share/applications/gnome-region-panel.desktop
 share/applications/gnome-search-panel.desktop
