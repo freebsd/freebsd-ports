@@ -19,7 +19,7 @@ INSTALL_TARGET=	install --without-ldconfig
 
 .if !defined(XMMS2_SLAVE)
 USE_GNOME=	glib20
-USE_SQLITE=	3
+USES+=		sqlite
 
 USE_LDCONFIG=	yes
 
