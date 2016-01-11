@@ -210,7 +210,7 @@ amd64fbsd_trapframe_sniffer (const struct frame_unwind *self,
 }
 
 static const struct frame_unwind amd64fbsd_trapframe_unwind = {
-  NORMAL_FRAME,
+  SIGTRAMP_FRAME,
   default_frame_unwind_stop_reason,
   amd64fbsd_trapframe_this_id,
   amd64fbsd_trapframe_prev_register,

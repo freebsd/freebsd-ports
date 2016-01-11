@@ -62,10 +62,10 @@ __FBSDID("$FreeBSD$");
 
 #include "kgdb.h"
 
-static int dumpnr;
 static int verbose;
 
 static char crashdir[PATH_MAX];
+static char *dumpnr;
 static char *kernel;
 static char *remote;
 static char *vmcore;
@@ -96,7 +96,7 @@ usage(void)
 }
 
 static void
-kernel_from_dumpnr(int nr)
+kernel_from_dumpnr(const char *nr)
 {
 	char line[PATH_MAX], path[PATH_MAX];
 	FILE *info;
@@ -110,14 +110,14 @@ kernel_from_dumpnr(int nr)
 	 * subdirectory kernel.<nr> and called kernel.  The latter allows us
 	 * to collect the modules in the same place.
 	 */
-	snprintf(path, sizeof(path), "%s/kernel.%d", crashdir, nr);
+	snprintf(path, sizeof(path), "%s/kernel.%s", crashdir, nr);
 	if (stat(path, &st) == 0) {
 		if (S_ISREG(st.st_mode)) {
 			kernel = strdup(path);
 			return;
 		}
 		if (S_ISDIR(st.st_mode)) {
-			snprintf(path, sizeof(path), "%s/kernel.%d/kernel",
+			snprintf(path, sizeof(path), "%s/kernel.%s/kernel",
 			    crashdir, nr);
 			if (stat(path, &st) == 0 && S_ISREG(st.st_mode)) {
 				kernel = strdup(path);
@@ -133,7 +133,7 @@ kernel_from_dumpnr(int nr)
 	 * with debugging info (called either kernel.full or kernel.debug).
 	 * If we have a debug kernel, use it.
 	 */
-	snprintf(path, sizeof(path), "%s/info.%d", crashdir, nr);
+	snprintf(path, sizeof(path), "%s/info.%s", crashdir, nr);
 	info = fopen(path, "r");
 	if (info == NULL) {
 		warn("%s", path);
@@ -223,7 +223,7 @@ main(int argc, char *argv[])
 	char *s;
 	int a, ch;
 
-	dumpnr = -1;
+	dumpnr = NULL;
 
 	strlcpy(crashdir, "/var/crash", sizeof(crashdir));
 	s = getenv("KGDB_CRASH_DIR");
@@ -284,13 +284,7 @@ main(int argc, char *argv[])
 			annotation_level = 1;
 			break;
 		case 'n':	/* use dump with given number. */
-			dumpnr = strtol(optarg, &s, 0);
-			if (dumpnr < 0 || *s != '\0') {
-				warnx("option %c: invalid kernel dump number",
-				    optopt);
-				usage();
-				/* NOTREACHED */
-			}
+			dumpnr = optarg;
 			break;
 		case 'q':
 			kgdb_quiet = 1;
@@ -317,7 +311,7 @@ main(int argc, char *argv[])
 		}
 	}
 
-	if (((vmcore != NULL) ? 1 : 0) + ((dumpnr >= 0) ? 1 : 0) +
+	if (((vmcore != NULL) ? 1 : 0) + ((dumpnr != NULL) ? 1 : 0) +
 	    ((remote != NULL) ? 1 : 0) > 1) {
 		warnx("options -c, -n and -r are mutually exclusive");
 		usage();
@@ -330,13 +324,13 @@ main(int argc, char *argv[])
 	if (argc > optind)
 		kernel = strdup(argv[optind++]);
 
-	if (argc > optind && (dumpnr >= 0 || remote != NULL)) {
+	if (argc > optind && (dumpnr != NULL || remote != NULL)) {
 		warnx("options -n and -r do not take a core file. Ignored");
 		optind = argc;
 	}
 
-	if (dumpnr >= 0) {
-		snprintf(path, sizeof(path), "%s/vmcore.%d", crashdir, dumpnr);
+	if (dumpnr != NULL) {
+		snprintf(path, sizeof(path), "%s/vmcore.%s", crashdir, dumpnr);
 		if (stat(path, &st) == -1)
 			err(1, "%s", path);
 		if (!S_ISREG(st.st_mode))
@@ -372,7 +366,7 @@ main(int argc, char *argv[])
 
 	/* If we don't have a kernel image yet, try to find one. */
 	if (kernel == NULL) {
-		if (dumpnr >= 0)
+		if (dumpnr != NULL)
 			kernel_from_dumpnr(dumpnr);
 
 		if (kernel == NULL)
