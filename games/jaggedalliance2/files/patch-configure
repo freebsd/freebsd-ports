@@ -1,0 +1,11 @@
+--- configure.orig	2014-05-09 20:51:45 UTC
++++ configure
+@@ -47,7 +47,7 @@ fi
+ # writing Makefile.config
+ echo "# configuration options"                                  >Makefile.config
+ echo "BINARY_DIR               := $PREFIX/bin"                  >>Makefile.config
+-echo "MANPAGE_DIR              := $PREFIX/share/man/man6"       >>Makefile.config
++echo "MANPAGE_DIR              := $PREFIX/man/man6"             >>Makefile.config
+ echo "FULL_PATH_EXTRA_DATA_DIR := $PREFIX/share/ja2"            >>Makefile.config
+ echo "INSTALLABLE              := yes"                          >>Makefile.config
+ 
