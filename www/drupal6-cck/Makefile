@@ -242,5 +242,6 @@ MODULE_FILES=	help/add-existing-field.html \
 		translations/vi.po
 DOC_FILES=	CHANGELOG.txt DEVELOPER.txt README.txt UPGRADE.txt \
 		LICENSE.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

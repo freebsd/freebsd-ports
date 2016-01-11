@@ -146,5 +146,6 @@ MODULE_FILES=	contrib/image_attach/tests/image_attach.test \
 		views/image_plugin_argument_validate_image_size.inc
 
 DOC_FILES=	LICENSE.txt CHANGELOG.txt INSTALL.txt README.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

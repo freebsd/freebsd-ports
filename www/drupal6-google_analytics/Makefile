@@ -14,5 +14,6 @@ MODULE_FILES=	googleanalytics.admin.inc googleanalytics.install googleanalytics.
 		googleanalytics.info googleanalytics.js googleanalytics.test
 
 DOC_FILES=	LICENSE.txt README.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

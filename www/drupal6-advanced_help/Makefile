@@ -43,5 +43,6 @@ MODULE_FILES=	help/advanced_help.help.ini help/ini-file.html \
 		translations/advanced_help.pot \
 		translations/fr.po
 DOC_FILES=	LICENSE.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
