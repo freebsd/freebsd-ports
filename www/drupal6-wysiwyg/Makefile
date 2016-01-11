@@ -65,6 +65,7 @@ MODULE_DIRS=	editors/css editors/js editors plugins/break/images \
 		plugins/break/langs plugins/break plugins translations
 
 DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${LN} -s ${PREFIX}/${TINYMCEDIR} ${STAGEDIR}${PREFIX}/${DRUPAL_MODDIR}

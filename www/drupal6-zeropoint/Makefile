@@ -140,5 +140,6 @@ MODULE_FILES=	_custom/custom-style.css _custom/headerimg/credits.txt \
 		search-theme-form.tpl.php template.php theme-settings.php \
 		views-view.tpl.php zeropoint.info
 DOC_FILES=	CHANGELOG.txt LICENSE.txt README.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

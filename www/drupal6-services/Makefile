@@ -59,5 +59,6 @@ MODULE_FILES=	auth/services_keyauth/services_keyauth.admin.inc \
 		services.resource-translation.inc services_admin_browse.inc
 
 DOC_FILES=	LICENSE.txt README.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
