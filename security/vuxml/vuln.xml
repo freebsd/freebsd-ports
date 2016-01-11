@@ -58,6 +58,68 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6b771fe2-b84e-11e5-92f9-485d605f4717">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php55</name>
+	<name>php55-gd</name>
+	<name>php55-wddx</name>
+	<name>php55-xmlrpc</name>
+	<range><lt>5.5.31</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<name>php56-gd</name>
+	<name>php56-soap</name>
+	<name>php56-wddx</name>
+	<name>php56-xmlrpc</name>
+	<range><lt>5.6.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP reports:</p>
+	<blockquote cite="http://www.php.net/ChangeLog-5.php#5.5.31">
+	  <ul><li>Core:
+	  <ul>
+	  <li>Fixed bug #70755 (fpm_log.c memory leak and buffer overflow).</li>
+	  </ul></li>
+	  <li>GD:
+	  <ul>
+	  <li>Fixed bug #70976 (Memory Read via gdImageRotateInterpolated Array
+	      Index Out of Bounds).</li>
+	  </ul></li>
+	  <li>SOAP:
+	  <ul>
+	  <li>Fixed bug #70900 (SoapClient systematic out of memory error).</li>
+	  </ul></li>
+	  <li>Wddx
+	  <ul>
+	  <li>Fixed bug #70661 (Use After Free Vulnerability in WDDX Packet
+	      Deserialization).</li>
+	  <li>Fixed bug #70741 (Session WDDX Packet Deserialization Type
+	      Confusion Vulnerability).</li>
+	  </ul></li>
+	  <li>XMLRPC:
+	  <ul>
+	  <li>Fixed bug #70728 (Type Confusion Vulnerability in
+	      PHP_to_XMLRPC_worker()).</li>
+	  </ul></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.php.net/ChangeLog-5.php#5.5.31</url>
+      <url>http://www.php.net/ChangeLog-5.php#5.6.17</url>
+    </references>
+    <dates>
+      <discovery>2016-01-07</discovery>
+      <entry>2016-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5f276780-b6ce-11e5-9731-5453ed2e2b49">
     <topic>pygments -- shell injection vulnerability</topic>
     <affects>
