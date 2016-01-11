@@ -386,9 +386,6 @@ kld_solib_create_inferior_hook (int from_tty)
 {
 	struct kld_info *info;
 
-	if (!have_partial_symbols())
-		return;
-
 	info = get_kld_info();
 	
 	/*

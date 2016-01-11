@@ -189,7 +189,7 @@ ppcfbsd_trapframe_sniffer (const struct frame_unwind *self,
 
 static const struct frame_unwind ppcfbsd_trapframe_unwind =
 {
-  NORMAL_FRAME,
+  SIGTRAMP_FRAME,
   default_frame_unwind_stop_reason,
   ppcfbsd_trapframe_this_id,
   ppcfbsd_trapframe_prev_register,
