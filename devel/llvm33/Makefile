@@ -137,7 +137,9 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "arm"
+.if ${ARCH} == "aarch64"
+BROKEN=		Does not compile on aarch64
+.elif ${ARCH} == "arm"
 BROKEN=		Does not compile on arm
 .elif ${ARCH} == "sparc64"
 BROKEN=		does not compile on sparc64
