@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/telepathy-haze/Makefile 19801 2014-08-13 09:46:10Z gusi $
 
 PORTNAME=	telepathy-haze
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-haze/
 
