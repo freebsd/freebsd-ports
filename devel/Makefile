@@ -3988,6 +3988,7 @@
     SUBDIR += py-darcsver
     SUBDIR += py-dateutil
     SUBDIR += py-dbus
+    SUBDIR += py-debtcollector
     SUBDIR += py-decorator
     SUBDIR += py-decoratortools
     SUBDIR += py-defusedxml
