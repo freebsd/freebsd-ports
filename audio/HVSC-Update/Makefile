@@ -23,6 +23,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
