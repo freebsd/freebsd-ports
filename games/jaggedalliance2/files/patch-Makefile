@@ -1,0 +1,25 @@
+--- Makefile.orig	2014-05-09 20:51:45 UTC
++++ Makefile
+@@ -607,14 +607,14 @@ clean distclean:
+ 	$(Q)rm -fr $(DEPS) $(OBJS) $(BINARY)
+ 
+ install: $(BINARY)
+-	test -z "$(INSTALLABLE)" || install -d $(BINARY_DIR)
+-	test -z "$(INSTALLABLE)" || install -d $(MANPAGE_DIR)
+-	test -z "$(INSTALLABLE)" || install -d $(FULL_PATH_EXTRA_DATA_DIR)
+-	test -z "$(INSTALLABLE)" || install -m 555 $(BINARY) $(BINARY_DIR)
+-	test -z "$(INSTALLABLE)" || cp -r externalized $(FULL_PATH_EXTRA_DATA_DIR)
+-	test -z "$(INSTALLABLE)" || cp -r mods         $(FULL_PATH_EXTRA_DATA_DIR)
+-	test -z "$(INSTALLABLE)" || cp -r _unittests   $(FULL_PATH_EXTRA_DATA_DIR)
+-	test -z "$(INSTALLABLE)" || install -m 444 ja2_manpage $(MANPAGE_DIR)/ja2.6
++	test -z "$(INSTALLABLE)" || install -d ${DESTDIR}$(BINARY_DIR)
++	test -z "$(INSTALLABLE)" || install -d ${DESTDIR}$(MANPAGE_DIR)
++	test -z "$(INSTALLABLE)" || install -d ${DESTDIR}$(FULL_PATH_EXTRA_DATA_DIR)
++	test -z "$(INSTALLABLE)" || install -m 555 $(BINARY) ${DESTDIR}$(BINARY_DIR)
++	test -z "$(INSTALLABLE)" || cp -r externalized ${DESTDIR}$(FULL_PATH_EXTRA_DATA_DIR)
++	test -z "$(INSTALLABLE)" || cp -r mods         ${DESTDIR}$(FULL_PATH_EXTRA_DATA_DIR)
++	test -z "$(INSTALLABLE)" || cp -r _unittests   ${DESTDIR}$(FULL_PATH_EXTRA_DATA_DIR)
++	test -z "$(INSTALLABLE)" || install -m 444 ja2_manpage ${DESTDIR}$(MANPAGE_DIR)/ja2.6
+ 
+ 	@test -n "$(INSTALLABLE)" || echo "------------------------------------------------------------------------------"
+ 	@test -n "$(INSTALLABLE)" || echo "This build doesn't support installation."
