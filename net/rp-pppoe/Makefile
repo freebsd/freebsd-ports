@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rp-pppoe
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 CATEGORIES=	net
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/
 
