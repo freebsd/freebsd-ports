@@ -23,5 +23,6 @@ MODULE_FILES=	page_title-admin-settings-form.tpl.php page_title.install page_tit
 MODULE_DIRS=	modules views/plugins/ views tests
 
 DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

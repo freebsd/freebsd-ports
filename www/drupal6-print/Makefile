@@ -30,5 +30,6 @@ MODULE_FILES=	icons/mail_icon.gif icons/pdf_icon.gif icons/print_icon.gif \
 		translations/tr.po translations/uk.po
 DOC_FILES=	CHANGELOG.txt CREDITS.txt INSTALL.txt \
 		LICENSE.txt MAINTAINERS.txt README.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

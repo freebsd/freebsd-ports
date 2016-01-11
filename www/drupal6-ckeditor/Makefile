@@ -313,6 +313,8 @@ DOC_FILES=	ckeditor/LICENSE.html ckeditor/INSTALL.html \
 		TROUBLESHOOTING.txt README.txt \
 		LICENSE.txt CHANGELOG.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/ckeditor_3.3.tar.gz
 

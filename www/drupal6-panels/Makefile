@@ -188,5 +188,6 @@ MODULE_FILES=	translations/panels.pot \
 DOC_FILES=	README.txt LICENSE.txt \
 		KNOWN_ISSUES.txt INSTALL.txt \
 		D6UPDATE.txt CHANGELOG.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

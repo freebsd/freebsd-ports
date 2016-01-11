@@ -47,9 +47,6 @@ DOCSDIR?=	${DRUPAL_DOCSDIR}
 .if ${_DRUPAL_COMP}
 _USES_POST+=	drupal
 PKGNAMEPREFIX=  drupal${_DRUPAL_VERSION}-
-.if defined(DOC_FILES)
-OPTIONS_DEFINE=	DOCS
-.endif
 
 # drupal contributions must be licensed under the GPLv2 or GPLv3.  This is
 # documented at: http://drupal.org/licensing/faq/

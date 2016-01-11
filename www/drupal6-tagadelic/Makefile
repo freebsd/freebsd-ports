@@ -21,5 +21,6 @@ MODULE_FILES=	tagadelic.css tagadelic.info tagadelic.install \
 		translations/nl.po translations/pl.po \
 		translations/ru.po translations/tagadelic.pot
 DOC_FILES=	LICENSE.txt README.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
