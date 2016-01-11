@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	abcm2ps
-PORTVERSION=	7.8.14
+PORTVERSION=	8.10.0
 CATEGORIES=	print audio
 MASTER_SITES=	http://moinejf.free.fr/
 
@@ -10,16 +10,17 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Converts ABC to music sheet in PostScript format
 
 USES=		cpe
+USE_GCC=	yes
 CPE_VENDOR=	moinejf
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 
 PORTDOCS=	Changes README deco.abc newfeatures.abc sample.abc sample2.abc\
-		sample3.abc sample4.abc voices.abc sample3.eps features.txt \
-		format.txt options.txt
+		sample3.abc sample4.abc voices.abc sample3.eps \
+		options.txt
 PLIST_FILES=	bin/abcm2ps \
 		%%DATADIR%%/flute.fmt %%DATADIR%%/landscape.fmt \
-		%%DATADIR%%/tight.fmt %%DATADIR%%/musicfont.fmt
+		%%DATADIR%%/musicfont.fmt
 
 OPTIONS_DEFINE=	DOCS
 
