@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -144,7 +144,7 @@ EXTRACT_DEPENDS=bash:${PORTSDIR}/shells/bash \
 		git:${PORTSDIR}/devel/git \
 		${AUTOCONF_DEPENDS}
 
-# Fix build on FreeBSD 8.4 and 9.3 (false positive: powl)
+# Fix build on FreeBSD 9.x (false positive: powl)
 CONFIGURE_ENV+=	ac_cv_have_powl=no
 CONFIGURE_ARGS+=--without-pulse
 USE_AUTOTOOLS=	autoconf
