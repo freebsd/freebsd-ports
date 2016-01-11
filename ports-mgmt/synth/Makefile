@@ -3,6 +3,7 @@
 
 PORTNAME=	synth
 PORTVERSION=	0.98
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
@@ -20,7 +21,7 @@ USES=		ada:6 ncurses:port
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
 GH_PROJECT=	synth_external:bundle
-GH_TAGNAME=	v1.3:bundle
+GH_TAGNAME=	v1.3:bundle 9becf93
 
 # When framework is moved to Ada6, the ada-util and ini-file-manager
 # libraries can be used as prebuilt (switch default.gpr url)
