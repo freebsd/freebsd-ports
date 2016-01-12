@@ -31,4 +31,5 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssd-test.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/surface-scan.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tiobench-example.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/waitfor.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zipf.fio
