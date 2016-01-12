@@ -1231,6 +1231,7 @@
     SUBDIR += py-hexdump
     SUBDIR += py-html2text
     SUBDIR += py-hyperestraier-python
+    SUBDIR += py-hypua2jamo
     SUBDIR += py-jaxml
     SUBDIR += py-junit-xml
     SUBDIR += py-libtre
