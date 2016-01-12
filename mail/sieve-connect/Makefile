@@ -11,10 +11,8 @@ MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/ \
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Command-line client for the MANAGESIEVE protocol
 
-LICENSE=	unknown
-LICENSE_NAME=	Public Domain
+LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \

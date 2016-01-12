@@ -12,11 +12,9 @@ EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Android Fastboot protocol CLI tool
 
-LICENSE=	APACHE20 BSD2CLAUSE PUBLIC_DOMAIN
+LICENSE=	APACHE20 BSD2CLAUSE PD
 LICENSE_COMB=	multi
-LICENSE_NAME_PUBLIC_DOMAIN=	Public Domain
-LICENSE_FILE_PUBLIC_DOMAIN=	${WRKSRC}/libselinux/NOTICE
-LICENSE_PERMS_PUBLIC_DOMAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_FILE_PD=	${WRKSRC}/libselinux/NOTICE
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 

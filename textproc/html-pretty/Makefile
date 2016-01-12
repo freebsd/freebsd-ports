@@ -12,9 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML and SGML prettyprinter and text-to-HTML/SGML converter
 
 LICENSE=	PD
-LICENSE_NAME=	Public Domain
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 

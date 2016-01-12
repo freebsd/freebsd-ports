@@ -10,11 +10,8 @@ DISTNAME=	Symbola
 MAINTAINER=	elizabeth@interlinked.me
 COMMENT=	Basic Latin, Greek, Cyrillic and many Symbol blocks of Unicode
 
-LICENSE=	Public_domain
-LICENSE_GROUPS=	COPYFREE FONTS
-LICENSE_NAME=	Disclaimer of rights
+LICENSE=	PD
 LICENSE_FILE=	${FILESDIR}/COPYING
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
