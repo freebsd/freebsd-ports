@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	linux-crashplan
-DISTVERSION=	4.3.0
+DISTVERSION=	4.5.0
 CATEGORIES=	sysutils linux
-MASTER_SITES=	http://download.crashplan.com/installs/linux/install/CrashPlan/
+MASTER_SITES=	https://download.code42.com/installs/linux/install/CrashPlan/
 DISTNAME=	CrashPlan_${DISTVERSION}_Linux
 
 MAINTAINER=	subtil@gmail.com
@@ -13,7 +13,7 @@ COMMENT=	Backs up data to remote servers or hard drives
 RUN_DEPENDS=	linux-sun-jre17>=0:${PORTSDIR}/java/linux-sun-jre17 \
 		bash:${PORTSDIR}/shells/bash
 
-WRKSRC=		${WRKDIR}/CrashPlan-install
+WRKSRC=		${WRKDIR}/crashplan-install
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	expat fontconfig xorglibs
