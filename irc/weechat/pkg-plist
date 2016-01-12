@@ -12,6 +12,7 @@ lib/weechat/plugins/trigger.so
 lib/weechat/plugins/xfer.so
 libdata/pkgconfig/weechat.pc
 %%MANPAGES%%man/man1/weechat.1.gz
+%%MANPAGES%%man/cs/man1/weechat.1.gz
 %%MANPAGES%%man/de/man1/weechat.1.gz
 %%MANPAGES%%man/fr/man1/weechat.1.gz
 %%MANPAGES%%man/it/man1/weechat.1.gz
@@ -39,6 +40,7 @@ libdata/pkgconfig/weechat.pc
 %%DOCS%%%%DOCSDIR%%/weechat_plugin_api.fr.html
 %%DOCS%%%%DOCSDIR%%/weechat_plugin_api.it.html
 %%DOCS%%%%DOCSDIR%%/weechat_plugin_api.ja.html
+%%DOCS%%%%DOCSDIR%%/weechat_quickstart.cs.html
 %%DOCS%%%%DOCSDIR%%/weechat_quickstart.de.html
 %%DOCS%%%%DOCSDIR%%/weechat_quickstart.en.html
 %%DOCS%%%%DOCSDIR%%/weechat_quickstart.es.html
