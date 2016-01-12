@@ -6,7 +6,7 @@
  mail under unix operating systems, including support for color terminals, MIME,
 -OpenPGP, and a threaded sorting mode.
 +OpenPGP, and a threaded sorting mode. Details of how to use all of this is
-+available in \fI${DOCSDIR}\fP.
++available in @docdir@.
  .PP
  .I Note:
  .IR
