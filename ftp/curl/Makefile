@@ -3,7 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.46.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -53,7 +53,7 @@ INSTALL_TARGET=	install-strip
 TEST_ENV=	${MAKE_ENV} LC_ALL=C
 TEST_TARGET=	test
 USE_PERL5=	build
-USES=		gmake libtool pathfix perl5 tar:lzma
+USES=		gmake libtool localbase pathfix perl5 tar:lzma
 
 .if !defined(BUILDING_HIPHOP)
 USE_LDCONFIG=	yes
@@ -78,17 +78,12 @@ SLAVEDIRS=	ftp/curl-hiphop
 CA_BUNDLE_CONFIGURE_OFF=--without-ca-bundle
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-CARES_CONFIGURE_OFF=	--disable-ares
-CARES_CONFIGURE_ON=	--enable-ares=${LOCALBASE}
+CARES_CONFIGURE_ENABLE=	ares
 CARES_LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
-COOKIES_CONFIGURE_OFF=	--disable-cookies
-COOKIES_CONFIGURE_ON=	--enable-cookies
-CURL_DEBUG_CONFIGURE_OFF=	--disable-curldebug
-CURL_DEBUG_CONFIGURE_ON=--enable-curldebug
-DEBUG_CONFIGURE_OFF=	--disable-debug
-DEBUG_CONFIGURE_ON=	--enable-debug
-GNUTLS_CONFIGURE_OFF=	--without-gnutls
-GNUTLS_CONFIGURE_ON=	--with-gnutls=${LOCALBASE}
+COOKIES_CONFIGURE_ENABLE=	cookies
+CURL_DEBUG_CONFIGURE_ENABLE=	curldebug
+DEBUG_CONFIGURE_ENABLE=	debug
+GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GSSAPI_BASE_CONFIGURE_ON=	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
 GSSAPI_BASE_CPPFLAGS=	${GSSAPICPPFLAGS}
@@ -100,35 +95,27 @@ GSSAPI_HEIMDAL_CPPFLAGS=${GSSAPICPPFLAGS}
 GSSAPI_HEIMDAL_LDFLAGS=	${GSSAPILDFLAGS}
 GSSAPI_HEIMDAL_LIBS=	${GSSAPILIBS}
 GSSAPI_HEIMDAL_USES=	gssapi:heimdal
-GSSAPI_MIT_CONFIGURE_ON=	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_MIT_CONFIGURE_ON=--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
 GSSAPI_MIT_CPPFLAGS=	${GSSAPICPPFLAGS}
 GSSAPI_MIT_LDFLAGS=	${GSSAPILDFLAGS}
 GSSAPI_MIT_LIBS=	${GSSAPILIBS}
 GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 HTTP2_BUILD_DEPENDS=	nghttp2>=1.0.0:${PORTSDIR}/www/nghttp2
-HTTP2_CONFIGURE_OFF=	--without-nghttp2
-HTTP2_CONFIGURE_ON=	--with-nghttp2=${LOCALBASE}
+HTTP2_CONFIGURE_WITH=	nghttp2
 HTTP2_LIB_DEPENDS=	libnghttp2.so:${PORTSDIR}/www/nghttp2
 HTTP2_RUN_DEPENDS=	nghttp2>=1.0.0:${PORTSDIR}/www/nghttp2
 HTTP2_USES=		pkgconfig
-IDN_CONFIGURE_OFF=	--without-libidn
-IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE}
+IDN_CONFIGURE_WITH=	libidn
 IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 IPV6_CATEGORIES=	ipv6
-IPV6_CONFIGURE_OFF=	--disable-ipv6
-IPV6_CONFIGURE_ON=	--enable-ipv6
-LDAP_CONFIGURE_OFF=	--disable-ldap
-LDAP_CONFIGURE_ON=	--enable-ldap
+IPV6_CONFIGURE_ENABLE=	ipv6
+LDAP_CONFIGURE_ENABLE=	ldap
 LDAP_USE=		OPENLDAP=yes
-LDAP_USES=		localbase
-LDAPS_CONFIGURE_OFF=	--disable-ldaps
-LDAPS_CONFIGURE_ON=	--enable-ldaps
-LIBSSH2_CONFIGURE_OFF=	--without-libssh2
-LIBSSH2_CONFIGURE_ON=	--with-libssh2=${LOCALBASE}
+LDAPS_CONFIGURE_ENABLE=	ldaps
+LIBSSH2_CONFIGURE_WITH=	libssh2
 LIBSSH2_LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
-NSS_CONFIGURE_OFF=	--without-nss
-NSS_CONFIGURE_ON=	--with-nss=yes
+NSS_CONFIGURE_WITH=	nss
 NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
 NSS_USES=		pkgconfig
 OPENSSL_CONFIGURE_OFF=	--without-ssl
@@ -136,20 +123,14 @@ OPENSSL_CONFIGURE_ON=	--with-ssl=${OPENSSLBASE}
 OPENSSL_CPPFLAGS=	-I${OPENSSLINC}
 OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
 OPENSSL_USE=		OPENSSL=yes
-POLARSSL_CONFIGURE_OFF=	--without-polarssl
-POLARSSL_CONFIGURE_ON=	--with-polarssl=${LOCALBASE}
+POLARSSL_CONFIGURE_WITH=polarssl
 POLARSSL_LIB_DEPENDS=	libmbedtls.so.9:${PORTSDIR}/security/polarssl13
-PROXY_CONFIGURE_OFF=	--disable-proxy
-PROXY_CONFIGURE_ON=	--enable-proxy
-RTMP_CONFIGURE_OFF=	--without-librtmp
-RTMP_CONFIGURE_ON=	--with-librtmp=${LOCALBASE}
+PROXY_CONFIGURE_ENABLE=	proxy
+RTMP_CONFIGURE_WITH=	librtmp
 RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
-THREADED_RESOLVER_CONFIGURE_OFF=--disable-threaded-resolver
-THREADED_RESOLVER_CONFIGURE_ON=	--enable-threaded-resolver
-TLS_SRP_CONFIGURE_OFF=	--disable-tls-srp
-TLS_SRP_CONFIGURE_ON=	--enable-tls-srp
-WOLFSSL_CONFIGURE_OFF=	--without-cyassl
-WOLFSSL_CONFIGURE_ON=	--with-cyassl=${LOCALBASE}
+THREADED_RESOLVER_CONFIGURE_ENABLE=	threaded-resolver
+TLS_SRP_CONFIGURE_ENABLE=	tls-srp
+WOLFSSL_CONFIGURE_WITH=	cyassl
 WOLFSSL_LIB_DEPENDS=	libwolfssl.so:${PORTSDIR}/security/wolfssl
 
 .include <bsd.port.options.mk>
