@@ -3,13 +3,14 @@
 
 PORTNAME=	ansible
 PORTVERSION=	1.9.4
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Radically simple IT automation
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
