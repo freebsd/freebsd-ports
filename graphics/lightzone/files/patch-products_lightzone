@@ -1,9 +1,9 @@
---- products/lightzone.orig	2015-08-04 13:37:11 UTC
+--- products/lightzone.orig	2016-01-10 14:20:56 UTC
 +++ products/lightzone
-@@ -21,13 +21,7 @@ elif [ "${PLATFORM}" = "FreeBSD" ]; then
+@@ -28,13 +28,7 @@ else
+   pkgjavadir=${usrdir}/share/lightzone/lib
  fi
  
- pkgjavadir=${usrdir}/share/java/lightzone
 -if [ -d ${usrdir}/libexec/lightzone ]; then
 -  pkglibexecdir=${usrdir}/libexec/lightzone
 -elif [ -d ${usrdir}/lib64/lightzone ]; then
