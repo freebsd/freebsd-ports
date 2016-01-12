@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Harness
-PORTVERSION=	3.35
+PORTVERSION=	3.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,7 @@ COMMENT=	Run Perl standard test scripts with statistics
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
