@@ -10,7 +10,7 @@ MASTER_SITES=	SUNSITE/system/backup
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix reader for the Microsoft Tape Format used by NT Backup
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:tgz

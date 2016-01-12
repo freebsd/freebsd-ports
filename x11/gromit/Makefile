@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.home.unix-ag.org/simon/gromit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GRaphics Over Miscellaneous Objects (Gromit)
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig

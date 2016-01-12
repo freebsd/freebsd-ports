@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://tmda.net/pub/tmda/releases/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python-based SPAM reduction system
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python shebangfix tar:tgz

@@ -18,7 +18,7 @@ COMMENT=	DNS tunnel server
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_RC_SUBR=	nstxd

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Drivel%20%28stable%29/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blog editor for GNOME
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 

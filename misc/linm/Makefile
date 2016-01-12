@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Mdir, mc-style terminal file manager
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext pkgconfig gmake libtool

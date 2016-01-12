@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-099-pre22
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another billiards simulator
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USE_SDL=	sdl
 USE_GL=		gl

@@ -9,7 +9,7 @@ CATEGORIES=	games devel
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modified Stratagus engine for Wyrmsun
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \

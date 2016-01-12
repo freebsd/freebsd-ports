@@ -14,7 +14,7 @@ COMMENT=	Free Lemmings-like game
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libboost_signals.so:${PORTSDIR}/devel/boost-libs
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lib iconv scons tar:bzip2

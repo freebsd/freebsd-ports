@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.boa.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance single-tasking web server
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gmake makeinfo tar:bzip2

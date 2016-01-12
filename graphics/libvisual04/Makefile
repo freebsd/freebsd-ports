@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	04
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
 
-LICENSE=	LGPL21 # or any later version
+LICENSE=	LGPL21+
 
 USES=		gettext libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-devel-${HASTYMAIL_REV}
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Small, fast and secure yet powerful IMAP webmail
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes

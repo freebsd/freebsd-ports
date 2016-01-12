@@ -10,7 +10,7 @@ DISTNAME=	template_lite_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smaller, faster alternative to the Smarty template engine
 
-LICENSE=	LGPL21 # pr later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes

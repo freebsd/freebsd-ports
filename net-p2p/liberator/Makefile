@@ -11,7 +11,7 @@ DISTNAME=	ofcp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line client to FreeNet Network
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2

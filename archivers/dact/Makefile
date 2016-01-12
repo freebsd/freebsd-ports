@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.rkeene.org/files/oss/dact/release/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Adaptive Compression Tool
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \

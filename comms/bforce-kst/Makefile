@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-0.22.8.kst7
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
 USES=		gmake

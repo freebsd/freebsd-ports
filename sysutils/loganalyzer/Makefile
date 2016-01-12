@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.adiscon.com/loganalyzer/
 MAINTAINER=	cristianorolim@outlook.com
 COMMENT=	Web based Syslog browsing and analysis
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	PHP 5.4 EOL reached

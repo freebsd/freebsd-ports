@@ -8,7 +8,7 @@ MASTER_SITES=	http://onscripter.sourceforge.jp/
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	Visual novel engine compatible with NScripter
 
-LICENSE=	GPLv2 # or any later version
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig

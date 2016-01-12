@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended bash brace expansion to expand hostnames or commands
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 

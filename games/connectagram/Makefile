@@ -10,7 +10,7 @@ MASTER_SITES=	http://gottcode.org/connectagram/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Word unscrambling game
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

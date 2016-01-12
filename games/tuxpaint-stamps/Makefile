@@ -9,7 +9,7 @@ MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION:S|.|-|g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TuxPaint Stamps
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint

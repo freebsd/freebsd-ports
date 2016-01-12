@@ -11,7 +11,7 @@ DISTNAME=	mj-${PORTVERSION}-src
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Networked Mah Jong program, together with a computer player
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		gmake perl5 pkgconfig
 USE_GNOME=	gtk20

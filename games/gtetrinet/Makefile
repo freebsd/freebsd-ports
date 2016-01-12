@@ -11,7 +11,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version of the popular TetriNET multiplayer Tetris clone
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pathfix gettext gmake pkgconfig tar:bzip2

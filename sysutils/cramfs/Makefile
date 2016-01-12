@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Linux Compressed ROM FileSystem
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake

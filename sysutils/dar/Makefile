@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Command-line backup tool, aimed for disks
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		compiler:c++11-lang libtool shebangfix
 SHEBANG_FILES=	doc/samples/dar_backup doc/samples/*.bash doc/samples/*.sh

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/gttr/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time tracker for gnome2
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libqof.so:${PORTSDIR}/databases/qof

@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp modules for the Verilog language
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	#

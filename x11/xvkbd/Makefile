@@ -9,7 +9,7 @@ MASTER_SITES=	http://homepage3.nifty.com/tsato/xvkbd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual keyboard for X applications
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

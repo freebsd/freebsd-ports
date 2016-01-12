@@ -11,7 +11,7 @@ MASTER_SITES=	http://alioth.debian.org/frs/download.php/1140/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for access to scanners, digitals camera, frame grabbers etc
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
 

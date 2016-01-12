@@ -9,7 +9,7 @@ MASTER_SITES=	SF/ff-extractor/ff-extractor/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flat file extractor
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		makeinfo

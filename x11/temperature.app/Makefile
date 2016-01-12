@@ -11,7 +11,7 @@ DISTNAME=	Temperature.app-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockable WindowMaker applet which displays the local temperature
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget

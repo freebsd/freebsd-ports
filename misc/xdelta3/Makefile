@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}3-${PORTVERSION}
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 

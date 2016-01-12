@@ -12,7 +12,7 @@ DISTNAME=	qt-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 bindings for GStreamer multimedia library
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs

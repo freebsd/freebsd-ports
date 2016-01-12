@@ -10,7 +10,7 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POV-Ray oriented modeller
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	lib3ds.so:${PORTSDIR}/graphics/lib3ds

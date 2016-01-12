@@ -11,7 +11,7 @@ PKGNAMESUFFIX?=	-tools
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metalink generation tool
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \

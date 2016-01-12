@@ -11,7 +11,7 @@ DISTNAME=	pptp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		perl5
 MAKE_ARGS=	CC="${CC}" OPTIMIZE="${CFLAGS}" DEBUG="" \

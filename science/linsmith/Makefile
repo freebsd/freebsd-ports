@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Smith charting program
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		gettext pkgconfig
 USE_GNOME=	libgnomeui libxml2

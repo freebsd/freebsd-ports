@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	gnustep-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep CD player with CDDB support
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio \

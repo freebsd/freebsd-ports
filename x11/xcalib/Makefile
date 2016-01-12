@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for display calibration of X11-Servers with ICC profiles
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake

@@ -10,7 +10,7 @@ DISTNAME=	GMines-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Well-known minesweeper game for GNUstep
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		gnustep
 USE_GNUSTEP=	back build

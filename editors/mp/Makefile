@@ -9,7 +9,7 @@ MASTER_SITES=	http://triptico.com/download/mp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programming text editor
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		iconv ncurses

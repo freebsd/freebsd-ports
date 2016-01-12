@@ -11,7 +11,7 @@ MASTER_SITES=	SAVANNAH \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of Perl scripts for using an Apple iPod
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \

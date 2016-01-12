@@ -42,7 +42,7 @@ MASTER_SITES=	SF
 MAINTAINER=	woodsb02@gmail.com
 COMMENT=	GTK based Gnutella client
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		iconv localbase pkgconfig tar:bzip2
 USE_GNOME=	glib20 libxml2

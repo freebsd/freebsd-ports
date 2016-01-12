@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Directory lister which sorts the file list in 2D
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSI prevention tool
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:${PORTSDIR}/devel/py-cheetah
 LIB_DEPENDS=	libgdome.so:${PORTSDIR}/textproc/gdome2

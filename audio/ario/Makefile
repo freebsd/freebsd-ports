@@ -10,7 +10,7 @@ MASTER_SITES=	SF/ario-player/ario-player/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ario is a GTK2 client for MPD
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \

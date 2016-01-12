@@ -11,7 +11,7 @@ DISTNAME=	PyPanel-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop panel written in Python
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \

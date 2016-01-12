@@ -10,7 +10,7 @@ MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic Sudoku game
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

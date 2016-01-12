@@ -9,7 +9,7 @@ CATEGORIES=	net-im
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Console client for Tox
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox	\

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.skamphausen.de/downloads/cdargs/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Navigate the filesystem using a menu interface or a bookmark system
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

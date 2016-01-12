@@ -11,7 +11,7 @@ DISTNAME=	libAfterBase-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AfterStep basic functionality library
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 
 USES=		desthack
 GNU_CONFIGURE=	yes

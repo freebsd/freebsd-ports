@@ -10,7 +10,7 @@ MASTER_SITES=	http://mjr.towers.org.uk/comp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager based on aewm++
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ALL_TARGET=	all

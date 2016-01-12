@@ -10,7 +10,7 @@ MASTER_SITES=	SUNSITE/utils/compress
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract/decompress CP/M LBR archives
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CPPFLAGS} ${CFLAGS} ${LDFLAGS}"

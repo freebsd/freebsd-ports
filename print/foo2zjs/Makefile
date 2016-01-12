@@ -12,7 +12,7 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for printers that use the ZjStream wire protocol
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client

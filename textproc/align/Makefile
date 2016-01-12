@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/align/ \
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Text column alignment filter
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 NO_BUILD=	yes
 

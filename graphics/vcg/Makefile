@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}.20050204
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualization Tool for compiler graphs
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 

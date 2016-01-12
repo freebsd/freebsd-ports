@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tool to split and merge wav files
 
-LICENSE=	GPLv2 # or any later version
+LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	PULSEAUDIO NLS
 OPTIONS_SUB=	yes

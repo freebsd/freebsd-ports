@@ -11,7 +11,7 @@ MASTER_SITES=	http://downloads.sourceforge.net/arx/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform port of Arx Fatalis
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/ARX_PUBLIC_LICENSE.txt
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2

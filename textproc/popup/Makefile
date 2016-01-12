@@ -10,7 +10,7 @@ DISTNAME=	Popup-${PORTVERSION}pre1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive learning aid for pairs of words
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		gnustep
 USE_GNUSTEP=	back build

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.alhem.net/project/minder/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small network application for automatic maintenance of peer lists
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libSockets.so:${PORTSDIR}/net/Sockets
 

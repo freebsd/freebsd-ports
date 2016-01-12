@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shell environment to limited sets of commands to users
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 USES=		python
 USE_PYTHON=	distutils

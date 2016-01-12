@@ -10,7 +10,7 @@ MASTER_SITES=	http://gtkballs.antex.ru/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lines-like simple logic game for X Window System
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pkgconfig

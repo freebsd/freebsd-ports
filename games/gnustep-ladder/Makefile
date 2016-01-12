@@ -12,7 +12,7 @@ DISTNAME=	Ladder-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Go frontend for GNUstep
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
 RUN_DEPENDS=	gnugo:${PORTSDIR}/games/gnugo

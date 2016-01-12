@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${PORTNAME}-pc-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic snake game in which you attempt to eat all the pain
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING.txt
 
 RUN_DEPENDS=	${PYGAME}

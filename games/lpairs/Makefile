@@ -10,7 +10,7 @@ MASTER_SITES=	SF/lgames/${PORTNAME}/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Classical memory game
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

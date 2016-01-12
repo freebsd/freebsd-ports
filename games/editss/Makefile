@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/jylefort
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for XPilot shipshapes
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		imake

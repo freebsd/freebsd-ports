@@ -10,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple HTML format editor
 
-LICENSE=	LGPL3 # (or later)
+LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>=2.15:${PORTSDIR}/devel/py-python-distutils-extra \

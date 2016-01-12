@@ -13,7 +13,7 @@ COMMENT=	Perl Incompatible Regular Expressions library
 USE_GITHUB=	yes
 GH_ACCOUNT=	dprokoptsev
 
-LICENSE=	LGPL3 # or later
+LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

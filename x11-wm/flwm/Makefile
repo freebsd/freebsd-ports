@@ -9,7 +9,7 @@ CATEGORIES=	x11-wm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Fast Light Window Manager
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk-devel
 

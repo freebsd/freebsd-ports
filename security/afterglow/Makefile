@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/AfterGlow%201.x/${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Collection of graph-generating scripts
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL
 
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \

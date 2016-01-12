@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}.tar.bz2 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Education software to help people to study English
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libespeak.so:${PORTSDIR}/audio/espeak

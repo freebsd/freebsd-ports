@@ -10,7 +10,7 @@ MASTER_SITES=	SF/cannonsmash/CannonSmash/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D tabletennis game
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext gmake pkgconfig

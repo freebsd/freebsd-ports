@@ -9,7 +9,7 @@ MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical tool to change TuxPaint settings
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper \

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/wvware/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	junovitch@FreeBSD.org
 COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \

@@ -10,7 +10,7 @@ MASTER_SITES=	http://devaux.fabien.free.fr/flux/
 MAINTAINER=	alfredoj69@gmail.com
 COMMENT=	Fluxbox window manager configuration program
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig

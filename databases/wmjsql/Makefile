@@ -10,7 +10,7 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL server status displaying dockapp
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake

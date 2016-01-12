@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	stefan.rumetshofer@drei.at
 COMMENT=	FUSE-based filesystem for transcoding flac to mp3 on the fly
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \

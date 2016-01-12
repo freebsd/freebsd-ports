@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.linuks.mine.nu/dockapp/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockable Shuffle game for WindowMaker and AfterStep
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XORG=	xpm

@@ -10,7 +10,7 @@ MASTER_SITES=	https://kiza.eu/media/software/tornado/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ccurses-based game of weather destruction
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext gmake ncurses

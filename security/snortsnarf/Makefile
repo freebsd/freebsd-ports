@@ -12,7 +12,7 @@ DISTNAME=	SnortSnarf-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate HTML report summaries from snort incident alerts
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules

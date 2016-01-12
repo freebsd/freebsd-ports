@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.pas
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyze molecules for the presence of functional groups
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 NO_WRKSUBDIR=	yes
 

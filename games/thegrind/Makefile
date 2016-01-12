@@ -10,7 +10,7 @@ MASTER_SITES=	SF/radius-engine/ld21/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple game about escaping from work
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libradius-engine.a:${PORTSDIR}/graphics/radius-engine

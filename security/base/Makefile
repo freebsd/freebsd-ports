@@ -9,7 +9,7 @@ MASTER_SITES=	SF/secureideas/BASE/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic Analysis and Security Engine - analyzing Snort alerts
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/GPL
 
 RUN_DEPENDS=	${ADODB_DIR}/adodb.inc.php:${PORTSDIR}/databases/adodb5 \

@@ -11,7 +11,7 @@ DISTNAME=	ijb-zlib-11
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP proxy server that eliminates ads
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		tar:tgz
 ALL_TARGET=	# yes, an empty target.

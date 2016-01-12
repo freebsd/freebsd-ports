@@ -14,7 +14,7 @@ MAINTAINER=		gavin@FreeBSD.org
 COMMENT=		Network head to head version of T*tris
 
 BROKEN=			unfetchable
-LICENSE=		GPLv2 # (or later)
+LICENSE=		GPLv2+
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure

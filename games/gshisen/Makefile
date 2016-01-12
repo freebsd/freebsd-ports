@@ -11,7 +11,7 @@ DISTNAME=	GShisen-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shisen-sho puzzle game for GNUstep
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		gnustep
 USE_GNUSTEP=	back build

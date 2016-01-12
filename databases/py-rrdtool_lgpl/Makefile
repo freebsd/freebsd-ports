@@ -12,7 +12,7 @@ DISTNAME=	py-rrdtool-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to RRDTool, the graphing and logging utility
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool

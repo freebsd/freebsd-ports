@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_lib_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Widget library based on OpenGL
 
-LICENSE=	LGPL20 # or later
+LICENSE=	LGPL20+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_lib
 

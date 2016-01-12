@@ -9,7 +9,7 @@ CATEGORIES=	games
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Game about Trains
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.jbrain.com/pub/linux/serial/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCPSER turns serial port into an emulated Hayes compatible modem
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 LDFLAGS+=	-pthread
 USES=		dos2unix gmake

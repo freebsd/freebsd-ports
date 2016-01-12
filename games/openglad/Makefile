@@ -10,7 +10,7 @@ MASTER_SITES=	SF/snowstorm/OpenGlad/Openglad-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL port of an old DOS game called Gladiator
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake

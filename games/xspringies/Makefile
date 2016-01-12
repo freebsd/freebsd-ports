@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mass and spring simulation system
 
-LICENSE=	GPLv1 # (or later)
+LICENSE=	GPLv1+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XORG=	x11 xext

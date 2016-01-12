@@ -11,7 +11,7 @@ DISTNAME=	Pixie-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Photorealistic renderer with Pixar's RenderMan-like interface
 
-LICENSE=	LGPL21 # (or later)
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \

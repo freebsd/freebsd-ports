@@ -11,7 +11,7 @@ DISTNAME=	lv451
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful Multilingual File Viewer
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../GPL.txt
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shapelib support for gpsman
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib
 RUN_DEPENDS=	gpsman:${PORTSDIR}/astro/gpsman
