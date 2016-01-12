@@ -21,6 +21,8 @@ share/icons/hicolor/256x256/apps/lightzone.png
 share/icons/hicolor/32x32/apps/lightzone.png
 share/icons/hicolor/48x48/apps/lightzone.png
 share/icons/hicolor/64x64/apps/lightzone.png
+%%JAVASHAREDIR%%/lightzone/asm-all-2.2.2.jar
+%%JAVASHAREDIR%%/lightzone/laf-widget.jar
 %%JAVASHAREDIR%%/lightzone/lcjai.jar
 %%JAVASHAREDIR%%/lightzone/lightcrafts-linux.jar
 %%JAVASHAREDIR%%/lightzone/lightcrafts.jar
