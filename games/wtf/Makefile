@@ -9,6 +9,8 @@ MASTER_SITES=	SF/bsdwtf
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Translates common Internet acronyms
 
+LICENSE=	PD
+
 OPTIONS_DEFINE=	OFFENSIVE
 OPTIONS_DEFAULT=OFFENSIVE
 OFFENSIVE_DESC=	Include offensive acronyms
