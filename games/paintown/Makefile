@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fighting game similar to Streets of Rage and TMNT
 
 LICENSE=	BSD3CLAUSE
