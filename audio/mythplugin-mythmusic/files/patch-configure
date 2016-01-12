@@ -1,6 +1,6 @@
---- configure.orig	2013-09-18 20:06:08.000000000 +0000
-+++ configure	2013-10-16 15:21:39.000000000 +0000
-@@ -227,6 +227,10 @@
+--- configure.orig	2015-06-16 16:03:30 UTC
++++ configure
+@@ -227,6 +227,10 @@ add_cxxflags(){
      append ECXXFLAGS "$@"
  }
  
@@ -11,7 +11,7 @@
  check_cxx(){
      log check_cxx "$@"
      cat > $TMPCXX
-@@ -561,6 +565,10 @@
+@@ -561,6 +565,10 @@ OPENGLV=$(cat mythconfig.mak | grep -e "
  EXTRALIBS=$(cat mythconfig.mak | grep -e "^EXTRALIBS=")
  EXTRALIBS=${EXTRALIBS#EXTRALIBS=}
  
@@ -19,10 +19,10 @@
 +add_cxxflags "-I${prefix}/include"
 +add_ldflags "-L${prefix}/lib"
 +
- if ! is_qmake5 $qmake ; then
-   if ! is_qmake4 $qmake; then
-       is_qmake4 qmake-qt4 && qmake=qmake-qt4 || die "qmake for Qt4.8 or newer not found.\nPlease specify the correct qmake with --qmake="
-@@ -653,6 +661,7 @@
+ if is_qmake4 $qmake || is_qmake4 qmake-qt4; then
+     if is_qmake4 qmake-qt4; then
+         qmake=qmake-qt4
+@@ -657,6 +665,7 @@ if enabled music ; then
          echo "MythMusic requires FLAC."
      fi
  
