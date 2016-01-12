@@ -14,9 +14,6 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Service monitoring and logging utilities by djb
 
 LICENSE=	PD
-LICENSE_NAME=	public domain
-LICENSE_TEXT=	The daemontools-0.76.tar.gz archive is in the public domain as of 2007.12.28.
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	freedt-[0-9]* serialmail-[0-9]*
 

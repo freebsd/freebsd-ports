@@ -10,10 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	baptiste@bapt.name
 COMMENT=	Python implementation of df
 
-LICENSE=	unknown
-LICENSE_NAME=	Public Domain
+LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 SUB_FILES=	pkg-message
 

@@ -11,10 +11,8 @@ COMMENT=	Portable Scheme interpreter with a Unix interface
 
 BROKEN=		unfetchable
 
-LICENSE=	public
-LICENSE_NAME=	Public Domain
+LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIBDIR=		${DATADIR}
 MAKE_ARGS=	${MAKE_ENV}

@@ -12,9 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
 
 LICENSE=	PD
-LICENSE_NAME=	Public Domain
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CFLAGS+=	-I${LOCALBASE}/include
 EXTRALIBS=	-L${LOCALBASE}/lib
