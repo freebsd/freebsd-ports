@@ -3,6 +3,7 @@
 
 PORTNAME=	state_machines-activerecord
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activerecord4>=4.1:${PORTSDIR}/databases/rubygem-activerecord4 \
-		rubygem-state_machines>=0.4.0:${PORTSDIR}/devel/rubygem-state_machines
+		rubygem-state_machines-activemodel>=0.3.0:${PORTSDIR}/databases/rubygem-state_machines-activemodel
 
 NO_ARCH=	yes
 USE_RUBY=	yes
