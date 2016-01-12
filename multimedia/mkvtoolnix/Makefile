@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	8.7.0
+PORTVERSION=	8.8.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		LOCAL/ehaupt
