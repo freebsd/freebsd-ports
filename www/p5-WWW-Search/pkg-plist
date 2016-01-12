@@ -10,6 +10,8 @@ bin/WebSearch
 %%SITE_PERL%%/WWW/Search/Simple.pm
 %%SITE_PERL%%/WWW/Search/Test.pm
 %%SITE_PERL%%/WWW/SearchResult.pm
+%%PERL5_MAN1%%/AutoSearch.1.gz
+%%PERL5_MAN1%%/WebSearch.1.gz
 %%PERL5_MAN3%%/WWW::Search.3.gz
 %%PERL5_MAN3%%/WWW::Search::Null.3.gz
 %%PERL5_MAN3%%/WWW::Search::Null::Count.3.gz
@@ -20,5 +22,3 @@ bin/WebSearch
 %%PERL5_MAN3%%/WWW::Search::Simple.3.gz
 %%PERL5_MAN3%%/WWW::Search::Test.3.gz
 %%PERL5_MAN3%%/WWW::SearchResult.3.gz
-%%PERL5_MAN1%%/AutoSearch.1.gz
-%%PERL5_MAN1%%/WebSearch.1.gz
