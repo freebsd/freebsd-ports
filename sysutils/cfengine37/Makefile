@@ -21,7 +21,7 @@ PKGNAMESUFFIX=	37
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
-CONFLICTS=	cfengine-[234]*
+CONFLICTS=	cfengine-[2-689]*
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
