@@ -88,6 +88,7 @@ bin/dancer2
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/t/002_index_route.t
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/views/index.tt
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/views/layouts/main.tt
+%%PERL5_MAN1%%/dancer2.1.gz
 %%PERL5_MAN3%%/Dancer2.3.gz
 %%PERL5_MAN3%%/Dancer2::CLI.3.gz
 %%PERL5_MAN3%%/Dancer2::CLI::Command::gen.3.gz
@@ -154,4 +155,3 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Template::Tiny.3.gz
 %%PERL5_MAN3%%/Dancer2::Test.3.gz
 %%PERL5_MAN3%%/Dancer2::Tutorial.3.gz
-%%PERL5_MAN1%%/dancer2.1.gz
