@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	conkeror
-PORTVERSION=	20140911
+PORTVERSION=	20150730
 CATEGORIES=	www
 MASTER_SITES=	http://distfiles.pirateparty.in/ashish/ \
 		LOCAL/ashish
@@ -19,20 +19,19 @@ FIREFOX_DESC?=	Use XULRunner from Firefox port
 LIBXUL_DESC?=	Use XULRunner from LibXUL port
 OPTIONS_DEFAULT+=	LIBXUL
 
-USES=		desktop-file-utils tar:xz
+USES=		desktop-file-utils tar:xz gmake
 
 LIBXUL_USES=	gecko
-FIREFOX_USES=	gecko:firefox,32
-
-.include <bsd.port.options.mk>
+FIREFOX_USES=	gecko:firefox,32+
+ALL_TARGET=	# empty
 
 BUILD_ID=	${ECHO_CMD} -n `whoami`@`hostname`_`date +%s`
 
 post-patch:
 		cd ${WRKSRC} && \
-			${MV} debian/conkeror.desktop . && \
+			${MV} contrib/conkeror.desktop . && \
 			${MV} contrib/man/conkeror.1 . && \
-			${RM} -rf contrib/debian contrib/man debian tests && \
+			${RM} -rf contrib/debian contrib/dist contrib/man debian tests && \
 			${RM} -f contrib/build.sh contrib/install.sh contrib/mketags.sh \
 			contrib/testrun.sh contrib/run-conkeror && \
 			${MKDIR} share  && \
@@ -41,14 +40,12 @@ post-patch:
 			style share && \
 			${MV} COPYING CREDITS Info.plist chrome.manifest \
 			content-policy.manifest share
-.if ${PORT_OPTIONS:MFIREFOX}
+		${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR},g" ${WRKSRC}/conkeror
+
+post-patch-FIREFOX-on:
 		${REINPLACE_CMD} -e "s/xulrunner/firefox/g" ${WRKSRC}/conkeror
 		${REINPLACE_CMD} -e "s/XULRUNNER/FIREFOX/g" ${WRKSRC}/conkeror
 		${REINPLACE_CMD} -e 's/exec $${FIREFOX}/exec $${FIREFOX} -app/' ${WRKSRC}/conkeror
-.endif
-
-do-build:
-		${MAKE} -C ${WRKSRC}
 
 do-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/libexec/conkeror
