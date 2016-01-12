@@ -5,7 +5,7 @@ PORTNAME=	isbg
 PORTVERSION=	1.00
 CATEGORIES=	mail
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scan an IMAP inbox for spam using SpamAssassin
 
 # any OSI approved open source license

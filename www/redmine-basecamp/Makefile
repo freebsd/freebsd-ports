@@ -6,7 +6,7 @@ PORTVERSION=	20130325
 CATEGORIES=	www
 PKGNAMEPREFIX=	redmine-
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basecamp Theme for Redmine
 
 LICENSE=	MIT
