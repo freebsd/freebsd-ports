@@ -5,21 +5,24 @@ PORTNAME=	tailor
 PORTVERSION=	0.9.35
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://darcs.arstecnica.it/
+MASTER_SITES=	http://BSDforge.com/projects/source/devel/tailor/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Migrates changesets between version control systems
 
-BROKEN=		unfetchable
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
 
 USES=		python
 USE_PYTHON=	distutils
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
