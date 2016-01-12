@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	autobox-Core
-PORTVERSION=	1.30
+PORTVERSION=	1.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,8 @@ COMMENT=	Core functions exposed as methods in primitive types
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-autobox>=2.71:${PORTSDIR}/devel/p5-autobox
+BUILD_DEPENDS=	p5-Want>=0.26:${PORTSDIR}/devel/p5-Want \
+		p5-autobox>=2.71:${PORTSDIR}/devel/p5-autobox
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
