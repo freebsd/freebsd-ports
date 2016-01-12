@@ -10,7 +10,7 @@ MASTER_SITES=	SF/lgames/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice clone of classical Breakout game
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_SDL=	sdl

@@ -11,7 +11,7 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fetch lyrics gmpc plugin
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc

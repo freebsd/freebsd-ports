@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical circuit design and simulation tool
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_QT4=	moc_build uic_build rcc_build linguisttools_build \

@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/eadler
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Version control system
 
-LICENSE=	GPLv2 # or any later version
+LICENSE=	GPLv2+
 
 CONFLICTS_INSTALL?=	cvs+ipv6-[12]* cvs-devel-[12]*
 

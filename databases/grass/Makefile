@@ -22,7 +22,7 @@ MASTER_SITE_SUBDIR=	grass64/source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source Geographical Information System (GIS)
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.TXT
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13

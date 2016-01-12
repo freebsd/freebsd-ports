@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read, parse, merge and write RSS and Atom feeds
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		iconv gmake
 USE_GNOME=	libxml2

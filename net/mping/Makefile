@@ -9,7 +9,7 @@ MASTER_SITES=	http://mping.uninett.no/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mping network statistics collector
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-plugin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gimp plugin to correct lens distortion using the lensfun library
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/exiv2.pc:${PORTSDIR}/graphics/exiv2 \

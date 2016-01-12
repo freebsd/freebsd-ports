@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.thrysoee.dk/xtermcontrol/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for dynamic control of xterm properties
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 

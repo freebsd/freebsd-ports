@@ -11,7 +11,7 @@ DISTNAME=	TiMidity++-${PORTVERSION}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Software MIDI player
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 .if !defined(PKGNAMESUFFIX)
 LIB_DEPENDS=	libarc.so:${PORTSDIR}/archivers/libarc \

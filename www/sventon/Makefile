@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin-svnkit
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web client for browsing Subversion repositories
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 USES=		zip

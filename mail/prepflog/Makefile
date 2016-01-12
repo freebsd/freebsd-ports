@@ -11,7 +11,7 @@ COMMENT=	Prepares logfiles in a sanitised format for pflogsumm and awstats
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		perl5 shebangfix tar:tgz
 NO_BUILD=	yes

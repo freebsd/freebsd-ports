@@ -14,7 +14,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved NQ engine with ZQuake and FuhQuake graphical effects
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 

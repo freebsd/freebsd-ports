@@ -9,7 +9,7 @@ MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Incoming mail monitor dockapp with a similar look to wmcpuload
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake localbase pkgconfig tar:bzip2

@@ -11,7 +11,7 @@ MASTER_SITES=	TUCOWS/x11/entertain \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very popular card game for 1-4 players over a network
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	GTK1 SLANG
 OPTIONS_DEFAULT=	GTK1 SLANG

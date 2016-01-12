@@ -11,7 +11,7 @@ COMMENT=	Web interface for anyRemote
 
 RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ COMMENT=	Extensible vector graphics editor with LaTeX support
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 

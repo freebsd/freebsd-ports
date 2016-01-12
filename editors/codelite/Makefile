@@ -9,7 +9,7 @@ MASTER_SITES=	GH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source IDE for C/C++
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 

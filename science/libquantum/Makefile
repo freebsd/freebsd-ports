@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.libquantum.de/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for quantum computing and quantum simulation
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

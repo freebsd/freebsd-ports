@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.sourcefiles.org/Multimedia/Tools/Network/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MMS ripper - a client for the proprietary protocol mms://
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 

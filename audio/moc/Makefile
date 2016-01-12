@@ -9,7 +9,7 @@ MASTER_SITES=	http://ftp.daper.net/pub/soft/moc/stable/
 MAINTAINER=	rzinkov@gmail.com
 COMMENT=	Console audio player designed to be powerful and easy to use
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl

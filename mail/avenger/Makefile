@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.mailavenger.org/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-spam SMTP server
 
-LICENSE=	GPLv2 # or later (though COPYING is GPLv3)
+LICENSE=	GPLv2+ # though COPYING is GPLv3
 
 USE_BDB=	42+
 USE_OPENSSL=	yes

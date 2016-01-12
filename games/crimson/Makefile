@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-fields
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tactical war game in the tradition of Battle Isle
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

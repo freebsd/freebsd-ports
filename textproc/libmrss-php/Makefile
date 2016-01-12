@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-php
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP library for parsing, writing, and creating RSS
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libmrss.so:${PORTSDIR}/textproc/libmrss

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolbox for manipulating Ogg video files
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libogg.so:${PORTSDIR}/audio/libogg \

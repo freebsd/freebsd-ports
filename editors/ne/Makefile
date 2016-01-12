@@ -9,7 +9,7 @@ MASTER_SITES=	http://ne.di.unimi.it/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice and powerful editor
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 #LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_WRKSRC=	${WRKSRC}/src

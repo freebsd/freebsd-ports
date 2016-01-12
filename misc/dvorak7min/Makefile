@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}${DISTVERSIONSUFFIX}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses-based Dvorak typing tutor
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
 
-LICENSE=	LGPL21 # or any later version
+LICENSE=	LGPL21+
 
 PORTSCOUT=	limit:^0\.2\.
 

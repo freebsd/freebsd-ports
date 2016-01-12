@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Romanian dictionaries databases and query application
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 USES=		qmake
 USE_QT4=	corelib gui network moc_build rcc_build

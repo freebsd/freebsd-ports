@@ -10,7 +10,7 @@ MASTER_SITES=	http://jak-linux.org/projects/dir2ogg/${PORTVERSION:R}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line {wav,mp3,m4a} to ogg converter
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	faad:${PORTSDIR}/audio/faad \

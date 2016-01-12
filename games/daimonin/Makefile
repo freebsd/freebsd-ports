@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	F/OSS Massively Multiplayer On-line Role-playing Game (MMORPG)
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../../License
 
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \

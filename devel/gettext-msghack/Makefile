@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	gettext-
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Alter gettext po files in special ways
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 NO_BUILD=	yes
 NO_ARCH=	yes

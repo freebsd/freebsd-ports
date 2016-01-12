@@ -10,7 +10,7 @@ MASTER_SITES=	SF/openwince/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to work with JTAG-aware boards
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${OPENWINCE_INCLUDE_DEP}:${PORTSDIR}/devel/openwince-include
 RUN_DEPENDS:=	${BUILD_DEPENDS}

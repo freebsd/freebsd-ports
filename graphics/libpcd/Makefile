@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for reading PhotoCD images
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 

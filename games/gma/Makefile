@@ -11,7 +11,7 @@ COMMENT=	Go-moku game which learns playing the game from studying its opponent
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 

@@ -11,7 +11,7 @@ MASTER_SITES=	LOCAL/kwm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer widget
 
-LICENSE=	LGPL21 # or later; source says LGPL20+ though
+LICENSE=	LGPL21+ # source says LGPL20+ though
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

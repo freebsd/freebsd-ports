@@ -10,7 +10,7 @@ MASTER_SITES=	http://BSDforge.com/projects/source/audio/streamtranscoder/
 MAINTAINER=	mark@mkproductions.org
 COMMENT=	Transcode and stream audio to a SHOUTcast/Icecast/Peercast server
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \

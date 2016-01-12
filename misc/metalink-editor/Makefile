@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}editor-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI editor to create and edit metalinks
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		dos2unix python zip

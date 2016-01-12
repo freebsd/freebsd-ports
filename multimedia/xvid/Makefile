@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}core-${PORTVERSION}
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Opensource MPEG-4 codec, based on OpenDivx
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKDIR}/xvidcore/LICENSE
 
 USES=		gmake

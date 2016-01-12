@@ -9,7 +9,7 @@ MASTER_SITES=	http://joakimandersson.se/files/
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	tail(1) replacement with color support
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 		libltdl.so:${PORTSDIR}/devel/libltdl \

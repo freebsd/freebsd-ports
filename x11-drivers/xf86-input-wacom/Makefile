@@ -8,7 +8,7 @@ MASTER_SITES=	SF/linuxwacom/${PORTNAME}
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X.Org Wacom tablet driver
 
-LICENSE=	GPLv2 # or any later version
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 RUN_DEPENDS=	webcamd>=3.1.0.1:${PORTSDIR}/multimedia/webcamd

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical tool for designing finite state machines
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 OPTIONS_DEFINE=	GRAPHVIZ DOCS EXAMPLES
 

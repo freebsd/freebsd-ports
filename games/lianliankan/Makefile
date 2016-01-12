@@ -11,7 +11,7 @@ DISTNAME=	llk_linux-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tile matching game
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		autoreconf libtool pkgconfig
 USE_GNOME=	gtk20 esound

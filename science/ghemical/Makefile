@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	release20111012 current
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Computational chemistry software package
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libmopac7.so:${PORTSDIR}/biology/mopac \
 		libghemical.so:${PORTSDIR}/science/libghemical \

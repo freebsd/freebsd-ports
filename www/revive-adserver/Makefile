@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.revive-adserver.org/
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	Free, opensource ad server in PHP
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_BUILD=	yes

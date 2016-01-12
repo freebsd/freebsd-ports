@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/${PORTVERSION}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for the manipulation of convex polyhedra
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	libglpk.so:${PORTSDIR}/math/glpk \

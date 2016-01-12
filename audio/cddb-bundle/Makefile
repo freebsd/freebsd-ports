@@ -11,7 +11,7 @@ DISTNAME=	cdplayer-${CDPLAYER_VERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CDDB client bundle GNUstep
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2 gnustep

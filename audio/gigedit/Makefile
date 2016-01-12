@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.linuxsampler.org/packages/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instrument editor for gig files
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser

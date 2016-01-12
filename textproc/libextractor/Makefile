@@ -10,7 +10,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for keyword extraction
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
 

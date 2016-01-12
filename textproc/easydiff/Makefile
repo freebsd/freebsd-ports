@@ -10,7 +10,7 @@ DISTNAME=	EasyDiff-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep graphical diff
 
-LICENSE=	GPLv2 # or later; COPYING has GPLv3
+LICENSE=	GPLv2+ # COPYING has GPLv3
 
 USES=		gnustep
 USE_GNUSTEP=	back build

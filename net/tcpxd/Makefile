@@ -12,7 +12,7 @@ MASTER_SITES=	http://fossies.org/unix/privat/ \
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	General purpose TCP/IP relay
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph the life story of a file under CVS or RCS
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd

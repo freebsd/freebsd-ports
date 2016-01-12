@@ -9,7 +9,7 @@ MASTER_SITES=	http://phrat.de/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal wrapper for creating drop-down consoles
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_XORG=	x11

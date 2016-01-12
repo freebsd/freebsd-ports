@@ -10,7 +10,7 @@ MASTER_SITES=	SUNSITE/system/serial
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC 2217 compliant serial port redirector
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS

@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Media Transfer Protocol (MTP) library
 
-LICENSE=	LGPL21 # or any later version
+LICENSE=	LGPL21+
 
 CONFLICTS_INSTALL=libosmo-sccp-[0-9]* # lib/libmtp.a
 

@@ -12,7 +12,7 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast implementation of the xmlrpc spec for Python
 
-LICENSE=	LGPL21 # (or later)
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python

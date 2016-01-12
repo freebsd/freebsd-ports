@@ -9,7 +9,7 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple window manager with no fat library dependencies
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		pkgconfig
 USE_XORG=	ice x11 xext xinerama xtst

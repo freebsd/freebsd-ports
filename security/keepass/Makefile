@@ -11,7 +11,7 @@ DISTNAME=	KeePass-${PORTVERSION}-Source
 MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Light-weight and easy-to-use password manager
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	icotool:${PORTSDIR}/graphics/icoutils
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \

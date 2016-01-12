@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus

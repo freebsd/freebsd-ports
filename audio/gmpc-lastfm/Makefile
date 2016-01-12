@@ -12,7 +12,7 @@ DISTNAME=	gmpc-last-fm-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Last.FM metadata fetcher plugin for gmpc
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd

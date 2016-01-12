@@ -11,7 +11,7 @@ DISTNAME=	LapisPuzzle-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tetris-like game for GNUstep
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gnustep

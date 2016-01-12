@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.dhondt.de/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add-on converter for CalculiX
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" YACC="${YACC}"

@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/paulus/
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Graphical diff tool
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES+=		tk

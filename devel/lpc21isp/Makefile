@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISP programmer tool for flashing NXP & Analog Devices ARM7 CPUs
 
-LICENSE=	LGPL3 # (or later)
+LICENSE=	LGPL3+
 
 USES=		gmake
 

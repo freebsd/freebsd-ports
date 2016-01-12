@@ -9,7 +9,7 @@ MASTER_SITES=	http://crypto.stanford.edu/~eujin/sslsniffer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSLv3/TLS and SSLv2 sniffer
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

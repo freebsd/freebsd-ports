@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Relase	# yes, this is not a typo (here)
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for capturing images to generate timelapse videos
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2

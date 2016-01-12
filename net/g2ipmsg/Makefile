@@ -10,7 +10,7 @@ MASTER_SITES=	http://ipmsg.org/archive/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Popup style message communication tool for GNOME2
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix intltool libgnomeui

@@ -10,7 +10,7 @@ MASTER_SITES=	PACKETSTORM/crypt/SSL/slush
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Telnet-like application which uses a secure SSL channel
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT.GPL
 
 GNU_CONFIGURE=	yes

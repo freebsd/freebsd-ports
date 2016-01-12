@@ -11,7 +11,7 @@ DISTNAME=	Sudoku-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sudoku solver and generator
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 
 USES=		gnustep
 USE_GNUSTEP=	back build

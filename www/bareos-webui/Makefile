@@ -14,7 +14,7 @@ GH_TAGNAME=	c826a4cbd4ff7340fb9b020ca824c9c48bd52948
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A PHP-Frontend to manage Bareos over the web
 
-LICENSE=	AGPLv3 # or later
+LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:tgz

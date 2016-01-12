@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt client for the Monopd server
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
 LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \

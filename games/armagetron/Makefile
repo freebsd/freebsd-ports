@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.src.tar.bz2
 MAINTAINER=	ianthetechie@gmail.com
 COMMENT=	Multiplayer networked Tron clone in 3D
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake jpeg

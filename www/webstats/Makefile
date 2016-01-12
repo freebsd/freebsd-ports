@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	kevin@caomhin.demon.co.uk
 COMMENT=	Automated log file processing
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	health-
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Nutrition software to record what you eat
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake

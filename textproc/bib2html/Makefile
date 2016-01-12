@@ -14,7 +14,7 @@ COMMENT=	BibTeX to HTML Translator
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]$//}/src

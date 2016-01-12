@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Liberate the universe from the evil company WEAPCO
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE
 
 USES=		gmake iconv python:2,build shebangfix

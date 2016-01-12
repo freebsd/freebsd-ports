@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.bacula-web.org/files/bacula-web.org/downloads/
 MAINTAINER=	dan@langille.org
 COMMENT=	Bacula-web provides a summarized output of Bacula jobs
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/DOCS/COPYING
 
 USES=		tar:tgz

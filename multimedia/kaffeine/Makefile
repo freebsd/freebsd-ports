@@ -9,7 +9,7 @@ MASTER_SITES=	SF/kaffeine/current
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia player based on KDE and VLC
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat

@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat

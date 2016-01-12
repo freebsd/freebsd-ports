@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}_v${PORTVERSION}.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts gff-formated genomic data-sets to PostScript
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 		bash:${PORTSDIR}/shells/bash

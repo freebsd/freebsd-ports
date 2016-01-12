@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-sdl${EXTRACT_SUFX}
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Classic single screen vertical shoot em up SDL
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-sdl

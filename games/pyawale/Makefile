@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.gna.org/pyawale/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	African board game
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYGAME}

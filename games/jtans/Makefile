@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ancient puzzle
 
-LICENSE=	GPLv2 # or later; got from website
+LICENSE=	GPLv2+ # got from website
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}

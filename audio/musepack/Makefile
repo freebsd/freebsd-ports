@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_src_r475
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Decoder, encoder, and replaygain for musepack (mpc)
 
-LICENSE=	BSD3CLAUSE GPLv2 LGPL21 #or later for the (L)GPL'ed part
+LICENSE=	BSD3CLAUSE GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
 USES=		autoreconf libtool

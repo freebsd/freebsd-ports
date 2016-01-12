@@ -10,7 +10,7 @@ MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Brick breaker (Arkanoid-like game)
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod \

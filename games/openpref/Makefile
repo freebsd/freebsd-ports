@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/OpenPref-Qt4/${PORTNAME}-${PORTVERSION}/
 MAINTAINER=	annulen@yandex.ru
 COMMENT=	Preferans game
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake

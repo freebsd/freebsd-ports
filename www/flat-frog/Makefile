@@ -9,7 +9,7 @@ MASTER_SITES=	SF/flatfrog/flatfrog/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Templating engine working in php
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes

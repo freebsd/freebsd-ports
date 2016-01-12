@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP Web-based News Reader
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		tar:tgz
 USE_PHP=	yes

@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-zh_TW
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

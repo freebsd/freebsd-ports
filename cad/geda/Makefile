@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-gaf-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL Electronic Design Automation tools
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libstroke.so:${PORTSDIR}/devel/libstroke \
 		libguile.so:${PORTSDIR}/lang/guile

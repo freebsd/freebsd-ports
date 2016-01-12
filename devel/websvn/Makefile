@@ -9,7 +9,7 @@ MASTER_SITES=	http://websvn.tigris.org/files/documents/1380/49056/
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Subversion repository web frontend
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		cpe

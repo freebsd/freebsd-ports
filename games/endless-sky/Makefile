@@ -9,7 +9,7 @@ CATEGORIES=	games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Space exploration and combat game similar to Escape Velocity
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 

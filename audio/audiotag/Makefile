@@ -9,7 +9,7 @@ MASTER_SITES=	GHC
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool for mass tagging/renaming of audio files
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
