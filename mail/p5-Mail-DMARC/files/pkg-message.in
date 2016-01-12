@@ -1,0 +1,5 @@
+Mail::DMARC
+
+config example: %%SITE_PERL%%/auto/share/dist/Mail-DMARC/mail-dmarc.ini
+copy it to /usr/local/etc
+
