@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-Menus
-PORTVERSION=	2.96
+PORTVERSION=	2.99
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:REEDFISH
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-Data-Dump-Streamer>0:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
 		p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
