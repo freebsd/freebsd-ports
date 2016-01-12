@@ -5,14 +5,13 @@ PORTNAME=	ircproxy
 PORTVERSION=	1.3.6
 PORTREVISION=	3
 CATEGORIES=	irc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://BSDforge.com/projects/source/irc/ircproxy/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	IRC proxy/bouncer daemon
 
-BROKEN=		unfetchable
-
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
 
@@ -43,6 +42,6 @@ post-patch:
 		s|EGROUP="users"|EGROUP="ircproxyd"|g' ${WRKSRC}/data/${PORTNAME}d.conf
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/imkpasswd ${STAGEDIR}${PREFIX}/bin/ircproxyd
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/imkpasswd ${STAGEDIR}${PREFIX}/bin/ircproxyd
 
 .include <bsd.port.mk>

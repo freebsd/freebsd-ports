@@ -1,3 +1,13 @@
-This is a port of ircproxy, it is an IRC proxy/bouncer.
+ircproxy is an advanced multi-user IRC bouncer written in C with IPv6 and
+SSL support. It can proxy simultaneous users at the same time to different
+IRC servers. The IRC connection can stay connected to IRC when the IRC
+client disconnects, the user can then later reattach to the same IRC
+connection.
 
-WWW: http://ircproxy.sourceforge.net
+Private messages and channel activity can an be logged when no IRC clients
+are attached. You can then see what you have been missing while you're
+offline. It is also possible to attach multiple IRC clients on the same
+IRC connection. This is useful if you want to be connected from home and
+work at the same time without cloning.
+
+WWW: http://ircproxy.sourceforge.net/
