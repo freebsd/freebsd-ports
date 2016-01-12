@@ -1,5 +1,6 @@
 %%SITE_ARCH%%/Cwd.pm
 %%SITE_ARCH%%/File/Spec.pm
+%%SITE_ARCH%%/File/Spec/AmigaOS.pm
 %%SITE_ARCH%%/File/Spec/Cygwin.pm
 %%SITE_ARCH%%/File/Spec/Epoc.pm
 %%SITE_ARCH%%/File/Spec/Functions.pm
@@ -11,6 +12,7 @@
 %%SITE_ARCH%%/auto/Cwd/Cwd.so
 %%PERL5_MAN3%%/Cwd.3.gz
 %%PERL5_MAN3%%/File::Spec.3.gz
+%%PERL5_MAN3%%/File::Spec::AmigaOS.3.gz
 %%PERL5_MAN3%%/File::Spec::Cygwin.3.gz
 %%PERL5_MAN3%%/File::Spec::Epoc.3.gz
 %%PERL5_MAN3%%/File::Spec::Functions.3.gz
