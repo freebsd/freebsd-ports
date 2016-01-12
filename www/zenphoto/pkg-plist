@@ -1241,7 +1241,6 @@
 %%WWWDIR%%/zp-core/zp-extensions/slideshow/slideshow-counter.php
 %%WWWDIR%%/zp-core/zp-extensions/slideshow/slideshow.css
 %%WWWDIR%%/zp-core/zp-extensions/slideshow.php
-%%WWWDIR%%/zp-core/zp-extensions/slideshow2/cycle.css
 %%WWWDIR%%/zp-core/zp-extensions/slideshow2/fonts/cycle2-icons.eot
 %%WWWDIR%%/zp-core/zp-extensions/slideshow2/fonts/cycle2-icons.svg
 %%WWWDIR%%/zp-core/zp-extensions/slideshow2/fonts/cycle2-icons.ttf
@@ -1263,6 +1262,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.tile.min.js
 %%WWWDIR%%/zp-core/zp-extensions/slideshow2/jquery.cycle2.video.min.js
 %%WWWDIR%%/zp-core/zp-extensions/slideshow2/slideshow-counter.php
+%%WWWDIR%%/zp-core/zp-extensions/slideshow2/slideshow2.css
 %%WWWDIR%%/zp-core/zp-extensions/slideshow2.php
 %%WWWDIR%%/zp-core/zp-extensions/static_html_cache.php
 %%WWWDIR%%/zp-core/zp-extensions/tag_extras.php
@@ -1342,6 +1342,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/fullscreen/plugin.min.js
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/hr/plugin.min.js
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/image/plugin.min.js
+%%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/imagetools/plugin.min.js
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/importcss/plugin.min.js
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/insertdatetime/plugin.min.js
 %%WWWDIR%%/zp-core/zp-extensions/tinymce4/plugins/layer/plugin.min.js
