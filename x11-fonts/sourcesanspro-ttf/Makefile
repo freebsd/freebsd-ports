@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sourcesanspro-ttf
-PORTVERSION=	1.065
-PORTREVISION=	1
+PORTVERSION=	1.075
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	office@FreeBSD.org
@@ -14,8 +13,9 @@ LICENSE=	OFL11
 USE_GITHUB=	yes
 GH_ACCOUNT=	adobe-fonts
 GH_PROJECT=	source-sans-pro
-GH_TAGNAME=	2.010R-ro/1.065R-it
+GH_TAGNAME=	2.020R-ro/${PORTVERSION}R-it
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		fonts
 USE_XORG=	x11
