@@ -58,6 +58,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="333f655a-b93a-11e5-9efa-5453ed2e2b49">
+    <topic>p5-PathTools -- File::Spec::canonpath loses taint</topic>
+    <affects>
+      <package>
+	<name>p5-PathTools</name>
+	<range>
+	  <gt>3.4000</gt>
+	  <lt>3.6200</lt>
+	</range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ricardo Signes reports:</p>
+	<blockquote>
+	  <p>Beginning in PathTools 3.47 and/or perl 5.20.0, the
+	    File::Spec::canonpath() routine returned untained strings even if
+	    passed tainted input. This defect undermines the guarantee of taint
+	    propagation, which is sometimes used to ensure that unvalidated
+	    user input does not reach sensitive code.</p>
+	  <p>This defect was found and reported by David Golden of MongoDB.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8607</cvename>
+      <url>https://rt.perl.org/Public/Bug/Display.html?id=126862</url>
+    </references>
+    <dates>
+      <discovery>2016-01-11</discovery>
+      <entry>2016-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6b771fe2-b84e-11e5-92f9-485d605f4717">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
