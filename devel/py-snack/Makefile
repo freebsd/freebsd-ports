@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	snack
-PORTVERSION=	0.52.17
+PORTVERSION=	0.52.18
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/n/e/newt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,6 +37,9 @@ post-patch: apply-slist
 		${WRKSRC}/peanuts.py
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_snack.so
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}
 
