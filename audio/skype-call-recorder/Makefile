@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	skype-call-recorder
-PORTVERSION=	0.8
+PORTVERSION=	0.11
 CATEGORIES=	audio
 MASTER_SITES=	http://atdot.ch/scr/files/${PORTVERSION}/
 
@@ -24,8 +24,8 @@ PLIST_FILES=	bin/skype-call-recorder \
 		share/icons/hicolor/128x128/apps/skype-call-recorder.png
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,VORBISENC_LIBRARY},& -logg -lvorbis,' \
-		-e '/CMAKE_CXX_FLAGS_RELEASE/d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/CMAKE_CXX_FLAGS_RELEASE/d' \
+		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's,date --utc,TZ=UTC date,' \
 		${WRKSRC}/makeversion
 
