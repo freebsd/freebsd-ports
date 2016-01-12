@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://vagalume.igalia.com/files/source/ \
 		DEBIAN_POOL/pool/main/v/vagalume/
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+-based client for the Last.fm online radio
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
