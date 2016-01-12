@@ -1,0 +1,4 @@
+Mail::DMARC - Perl implementation of DMARC
+ DMARC: Domain-based Message Authentication, Reporting and Conformance
+
+WWW: https://github.com/msimerson/mail-dmarc
