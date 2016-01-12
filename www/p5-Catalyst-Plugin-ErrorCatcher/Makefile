@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-ErrorCatcher
-PORTVERSION=	0.0.8.18
+PORTVERSION=	0.0.8.20
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CHISEL
@@ -39,6 +39,7 @@ TEST_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0.10010:${PORTSDIR}/www/p5-Cata
 		p5-Test-UseAllModules>=0:${PORTSDIR}/devel/p5-Test-UseAllModules \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
