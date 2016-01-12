@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poison
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
@@ -13,5 +13,7 @@ LICENSE=	ISCL
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	devinus
+
+MIX_REWRITE=	yes
 
 .include <bsd.port.mk>
