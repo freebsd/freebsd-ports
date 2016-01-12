@@ -1253,6 +1253,7 @@
     SUBDIR += py-pyes
     SUBDIR += py-pygments
     SUBDIR += py-pygtail
+    SUBDIR += py-pyhwp
     SUBDIR += py-pyphen
     SUBDIR += py-pyscss
     SUBDIR += py-pysrt
