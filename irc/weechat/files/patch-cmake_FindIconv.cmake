@@ -1,4 +1,4 @@
---- cmake/FindIconv.cmake
+--- cmake/FindIconv.cmake.orig	2016-01-10 08:17:50 UTC
 +++ cmake/FindIconv.cmake
 @@ -48,9 +48,8 @@ find_library(ICONV_LIBRARY
  
