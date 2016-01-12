@@ -10,7 +10,7 @@ DISTNAME=	sslproxy-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSL proxy for securing insecure connections
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		gmake tar:tgz
 USE_OPENSSL=	yes

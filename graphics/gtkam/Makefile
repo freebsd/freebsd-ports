@@ -10,7 +10,7 @@ MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and view files from various digital cameras
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libexif-gtk.so:${PORTSDIR}/graphics/libexif-gtk \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2

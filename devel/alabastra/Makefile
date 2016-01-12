@@ -11,7 +11,7 @@ DISTNAME=	Alabastra-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ editor written with Qt 4
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

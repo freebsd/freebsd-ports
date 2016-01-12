@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Gpredict/${PORTVERSION}
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio satellite tracking and prediction
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib \
 		libcurl.so:${PORTSDIR}/ftp/curl \

@@ -11,7 +11,7 @@ DISTNAME=	ViewKlass-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Framework for Motif
 
-LICENSE=	LGPL20 # (or later)
+LICENSE=	LGPL20+
 
 GNU_CONFIGURE=	yes
 USES=		imake:env motif

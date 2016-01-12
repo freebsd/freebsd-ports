@@ -9,7 +9,7 @@ MASTER_SITES=	http://ipaudit.sourceforge.net/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP traffic summarizer
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:tgz

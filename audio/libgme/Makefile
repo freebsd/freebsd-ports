@@ -9,7 +9,7 @@ DISTNAME=	game-music-emu-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of video game music emulators
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 
 USES=		cmake dos2unix ninja tar:bzip2
 USE_LDCONFIG=	yes

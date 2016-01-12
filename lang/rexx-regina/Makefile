@@ -11,7 +11,7 @@ DISTNAME=	Regina-REXX-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rexx interpreter
 
-LICENSE=	LGPL21 # (or later)
+LICENSE=	LGPL21+
 
 USES=		gmake iconv tar:bzip2
 USE_RC_SUBR=	rxstack

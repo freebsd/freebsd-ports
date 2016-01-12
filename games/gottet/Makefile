@@ -10,7 +10,7 @@ MASTER_SITES=	http://gottcode.org/gottet/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tetris clone
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

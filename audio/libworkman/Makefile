@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-1999-06-20
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Workman library required by some audio apps
 
-LICENSE=	LGPL20 # or later
+LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		imake

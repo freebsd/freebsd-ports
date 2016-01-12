@@ -12,7 +12,7 @@ DISTNAME=	${PYPORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to Sendmail milter API
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if !exists(/usr/lib/libmilter.so)

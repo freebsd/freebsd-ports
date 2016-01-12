@@ -9,7 +9,7 @@ CATEGORIES=	devel games
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	NScripter-like novel-game interpreter with Unicode support
 
-LICENSE=	GPLv2 # or any later version
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libsmpeg2.so:${PORTSDIR}/multimedia/smpeg2 \
 		libfreetype.so:${PORTSDIR}/print/freetype2

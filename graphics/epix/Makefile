@@ -9,7 +9,7 @@ MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/epix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates math plots and line figures using easy-to-learn syntax
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash

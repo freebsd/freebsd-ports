@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.savannah.nongnu.org/releases/bino/ http://levsha.m
 MAINTAINER=	i@levsha.me
 COMMENT=	3D video player with multi-display support
 
-LICENSE=	GPLv3 # or any later version
+LICENSE=	GPLv3+
 
 USES=		desktop-file-utils gmake pkgconfig tar:xz
 USE_GL=		glew

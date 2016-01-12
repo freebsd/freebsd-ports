@@ -9,7 +9,7 @@ CATEGORIES=	audio
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DSSI plugin that emulates the sound of the TB-303 Bassline
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \

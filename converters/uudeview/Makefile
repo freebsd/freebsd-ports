@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libuu.so:${PORTSDIR}/converters/uulib

@@ -11,7 +11,7 @@ MASTER_SITES=	http://voodoo.bawue.com/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon that monitor network services
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

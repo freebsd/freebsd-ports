@@ -10,7 +10,7 @@ MASTER_SITES=	http://njhurst.com/programming/cross-stitch/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross Stitch software
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
 

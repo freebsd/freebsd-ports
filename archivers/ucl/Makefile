@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data compression library with low memory usage
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	libucl

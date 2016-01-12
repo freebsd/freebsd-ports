@@ -10,7 +10,7 @@ DISTNAME=	Template_.2.2.3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance PHP compiling template engine
 
-LICENSE=	LGPL20 # or later
+LICENSE=	LGPL20+
 
 WRKSRC=		${WRKDIR}
 FETCH_ARGS+=	-o ${DISTNAME}.tar.gz

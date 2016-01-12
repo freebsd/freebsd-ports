@@ -10,7 +10,7 @@ DISTNAME=	pbl_${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Peter Graf's Program Base Library
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 
 MAKEFILE=	makefile
 TEST_TARGET=	test

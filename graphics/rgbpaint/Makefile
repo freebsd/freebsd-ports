@@ -10,7 +10,7 @@ MASTER_SITES=	SF/mtpaint/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very basic painting program
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		gettext pkgconfig tar:bzip2
 USE_GNOME=	gtk20

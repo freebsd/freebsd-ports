@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.rpcurnow.force9.co.uk/tdl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	To-do list manager
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	devtodo-[0-9]*

@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced molecular editor and viewer
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	eigen2>2:${PORTSDIR}/math/eigen2
 LIB_DEPENDS=	libopenbabel.so:${PORTSDIR}/science/openbabel

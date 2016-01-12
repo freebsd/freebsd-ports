@@ -9,7 +9,7 @@ CATEGORIES=	net-im python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instant messenging client written in python
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}dnspython>0:${PORTSDIR}/dns/py-dnspython \

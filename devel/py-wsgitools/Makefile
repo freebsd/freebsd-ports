@@ -12,7 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	aehlig@linta.de
 COMMENT=	Useful middlewares and filters for wsgi as well as scgi servers
 
-LICENSE=	GPLv2                    # or higher
+LICENSE=	GPLv2+
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

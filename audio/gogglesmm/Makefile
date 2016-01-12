@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music collection manager and player
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \

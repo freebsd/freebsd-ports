@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION:R}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction around libmpdclient
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool pathfix pkgconfig

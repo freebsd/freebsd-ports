@@ -10,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for handling 3DS (3D Studio) files
 
-LICENSE=	LGPL21 # (or later)
+LICENSE=	LGPL21+
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

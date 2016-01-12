@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	andrey@bsdnir.info
 COMMENT=	Emulator of Elektronika RPN programmable calculator series
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \

@@ -16,7 +16,7 @@ COMMENT=	Educational arcade game starring Tux
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING_GPL3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_w_fonts-${PORTVERSION}

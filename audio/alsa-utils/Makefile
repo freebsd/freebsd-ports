@@ -10,7 +10,7 @@ MASTER_SITES=	ALSA/utils \
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	ALSA compatibility utils
 
-LICENSE=	GPLv2 # or any later version
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins

@@ -12,7 +12,7 @@ DISTNAME=	mopac7-${MOPAC_SUBVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Semi-empirical (MNDO, etc.) molecular orbital calculation
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		fortran gmake libtool pathfix
 GNU_CONFIGURE=	yes

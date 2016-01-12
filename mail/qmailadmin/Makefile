@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	autorespond:${PORTSDIR}/mail/autorespond \

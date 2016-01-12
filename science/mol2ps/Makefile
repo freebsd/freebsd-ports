@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read molecular structure files and generate Postscript output
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 NO_WRKSUBDIR=	yes
 

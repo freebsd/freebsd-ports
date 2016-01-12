@@ -9,7 +9,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP(S) and FTP
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		charsetfix cpe gmake makeinfo perl5 tar:xz

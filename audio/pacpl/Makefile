@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Audio Converter
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 RUN_DEPENDS=	p5-Audio-FLAC-Header>0:${PORTSDIR}/audio/p5-Audio-FLAC-Header \
 		p5-Audio-Scan>0:${PORTSDIR}/audio/p5-Audio-Scan \

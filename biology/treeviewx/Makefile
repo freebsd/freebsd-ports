@@ -11,7 +11,7 @@ DISTNAME=	tv-0.5
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phylogenetic tree viewer
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_WX=		2.8

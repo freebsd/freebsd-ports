@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	0
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GTK-based git repository viewer (gtk2 version)
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git

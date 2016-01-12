@@ -10,7 +10,7 @@ MASTER_SITES=	SF/torrus/torrus/
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	Data Series Processing Framework - think mrtg with xml configs
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \

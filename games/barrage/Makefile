@@ -10,7 +10,7 @@ MASTER_SITES=	SF/lgames/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Destroy as many targets as possible
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake

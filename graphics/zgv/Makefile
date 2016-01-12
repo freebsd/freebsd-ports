@@ -10,7 +10,7 @@ MASTER_SITES=	SUNSITE/apps/graphics/viewers/svga
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics viewer for SVGAlib
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff

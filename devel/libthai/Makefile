@@ -9,7 +9,7 @@ MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thai language support library
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdatrie.so:${PORTSDIR}/devel/libdatrie

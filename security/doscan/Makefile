@@ -10,7 +10,7 @@ MASTER_SITES=	http://static.enyo.de/fw/releases/doscan/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to quickly scan your network for machines listening on a TCP port
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre

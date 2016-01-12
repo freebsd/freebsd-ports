@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - development version
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=  v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.tntnet.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of general-purpose C++ classes
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 PATCH_STRIP=	-p1

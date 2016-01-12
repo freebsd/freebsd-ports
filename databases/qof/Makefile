@@ -9,7 +9,7 @@ DISTNAME=	qof_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Query Object Framework
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	gnotime-2.[0-3]* gnotime-2.4.0* gnotime-2.4.1 gnotime-2.4.1_[12]*

@@ -12,7 +12,7 @@ DISTNAME=	game-src-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple Tetris-like game
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		gmake tar:tgz
 USE_SDL=	sdl image mixer

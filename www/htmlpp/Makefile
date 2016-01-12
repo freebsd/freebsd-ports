@@ -11,7 +11,7 @@ DISTNAME=	htmlp42a
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script to allow easy creation of HTML from template files
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	htmlpp

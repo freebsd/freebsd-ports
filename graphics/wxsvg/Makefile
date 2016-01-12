@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	C++ library to create, manipulate, and render SVG files
 
-LICENSE=	LGPL21 # (or later)
+LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libexpat.so:${PORTSDIR}/textproc/expat2

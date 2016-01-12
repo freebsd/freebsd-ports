@@ -10,7 +10,7 @@ MASTER_SITES=	SF/rhino/GRhino/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GRhino Othello/Reversi Program
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext pkgconfig perl5

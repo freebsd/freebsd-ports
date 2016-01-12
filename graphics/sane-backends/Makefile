@@ -10,7 +10,7 @@ MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4146/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 

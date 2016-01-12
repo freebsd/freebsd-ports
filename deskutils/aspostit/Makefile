@@ -10,7 +10,7 @@ MASTER_SITES=	AFTERSTEP/apps/aspostit
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AfterStep dockable version of XPostIt
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USE_XORG=	xpm xaw xext x11
 USES=		gmake jpeg

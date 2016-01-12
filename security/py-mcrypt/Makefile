@@ -12,7 +12,7 @@ DISTNAME=	python-mcrypt-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive Python interface to the mcrypt library
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt

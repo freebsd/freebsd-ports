@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tutorial and reference for CVS
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_ARCH=	yes

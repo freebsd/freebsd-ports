@@ -9,7 +9,7 @@ MASTER_SITES=	https://dev.gentoo.org/~voyageur/distfiles/
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Dockapp for monitoring memory and swap usage
 
-LICENSE=	GPLv2 # or any later version
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf

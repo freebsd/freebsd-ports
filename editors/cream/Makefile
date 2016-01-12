@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Cream/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gvim extension with many features
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
 

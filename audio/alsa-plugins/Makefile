@@ -10,7 +10,7 @@ MASTER_SITES=	ALSA/plugins \
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	ALSA compatibility library plugins
 
-LICENSE=	LGPL21 # or any later version
+LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 

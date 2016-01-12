@@ -12,7 +12,7 @@ COMMENT=	Set of programs for working with tabular ASCII data
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	CHRON DOCS
 OPTIONS_SUB=	yes

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search using regexes for file names and text
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 USES=		qmake dos2unix zip
 DOS2UNIX_GLOB=	*.cpp *.h

@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atari ST emulator
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libpng.so:${PORTSDIR}/graphics/png

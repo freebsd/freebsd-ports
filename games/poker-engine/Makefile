@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.gna.org/pokersource/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library that implements poker rules
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync \

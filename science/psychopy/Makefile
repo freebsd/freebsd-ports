@@ -9,7 +9,7 @@ MASTER_SITES=	GH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Psychophysics toolkit for Python
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \

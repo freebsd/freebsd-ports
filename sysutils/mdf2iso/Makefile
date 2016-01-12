@@ -10,7 +10,7 @@ MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/mdf2iso/
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Alcohol 120% to ISO converter
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		tar:xz
 

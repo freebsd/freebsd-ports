@@ -11,7 +11,7 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lets you stream music files to your mpd that are not in your database
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \

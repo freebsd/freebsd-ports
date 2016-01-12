@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.ipd.bth.se/ska/sim_home/filer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Hash Table
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf libtool

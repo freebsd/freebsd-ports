@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary packing utility that uses a genetic algorithm
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 
 USES=		gmake tar:bzip2	# parallel builds (-jX) are broken with BSD make(1)
 

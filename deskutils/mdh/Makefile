@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.gozer.org/programs/gtk/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2-based toolbar, like a smaller GNOME panel
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig tar:bzip2

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-XXIV-source
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Xboard-compatible chess playing program
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/p/P/:S/-source//}

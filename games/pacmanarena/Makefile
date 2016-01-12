@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME:S/na/n-a/}.tar.bz2 \
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Pacman clone in full 3D with a few surprises
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

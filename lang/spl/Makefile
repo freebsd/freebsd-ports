@@ -10,7 +10,7 @@ MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shakespeare programming language
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		bison gmake

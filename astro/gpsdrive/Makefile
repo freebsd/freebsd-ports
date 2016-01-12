@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.gpsdrive.de/packages/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPS navigation system
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre

@@ -11,7 +11,7 @@ DISTNAME=	mc-${PORTVERSION:S/.p9/-pre9/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight Midnight Commander clone
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk

@@ -9,7 +9,7 @@ MASTER_SITES=	http://korzen.org/soft/trf/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Billing software for traffic counting working with most Polish ISPs
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	DOCS
 

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.e271.net/~marina/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue like adventure game
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 MAKE_ENV=	MKDIR="${MKDIR}"
 

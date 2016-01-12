@@ -8,7 +8,7 @@ MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/plume-creator/
 MAINTAINER=	yamagi@yamagi.org
 COMMENT=	Open source tool for novelists
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 DATE=		20150510
 

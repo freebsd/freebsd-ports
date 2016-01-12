@@ -12,7 +12,7 @@ DISTNAME=	XFrisk-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player networked Risk game for X11
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d

@@ -11,7 +11,7 @@ MASTER_SITES=	FRUGALWARE/games-extra/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arcade game that relies on quick reflexes
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

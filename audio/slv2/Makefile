@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.drobilla.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LV2 Application Support Library
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:${PORTSDIR}/audio/lv2core

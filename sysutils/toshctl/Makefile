@@ -10,7 +10,7 @@ MASTER_SITES=	http://freebie.miraclenet.co.th/notebook/toshctl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool to access parts of the Toshiba hardware interface
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/toshctl
 

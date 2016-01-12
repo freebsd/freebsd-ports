@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend to MiMMS (Multimedia Stream ripper)
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	mimms:${PORTSDIR}/multimedia/mimms
 
