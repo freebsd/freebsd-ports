@@ -3,7 +3,7 @@
 
 PORTNAME=	yum
 PORTVERSION=	3.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://yum.baseurl.org/download/${PORTVERSION:R}/
 
@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		msgfmt:${PORTSDIR}/devel/gettext \
 		intltool-update:${PORTSDIR}/textproc/intltool
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${PYTHON_SITELIBDIR}/rpm/__init__.py:${PORTSDIR}/archivers/rpm4 \
