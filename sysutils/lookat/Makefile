@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lookat
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.wagemakers.be/downloads/lookat/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
@@ -13,9 +13,13 @@ COMMENT=	Program to view Un*x text files and manual pages
 GNU_CONFIGURE=	yes
 USES=		gmake
 
+PLIST_FILES=	bin/lookat \
+		"@sample etc/lookat.conf.sample" \
+		man/man1/lookat.1.gz
 PORTDOCS=	README
+PORTEXAMPLES=	blue_config.cfg
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/lookat.conf|${PREFIX}&|g' \
@@ -30,5 +34,10 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/blue_config.cfg \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
