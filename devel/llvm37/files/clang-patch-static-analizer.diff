@@ -1,0 +1,5332 @@
+diff --git tools/clang/tools/CMakeLists.txt tools/clang/tools/CMakeLists.txt.orig
+index 891bf84..dba676a 100644
+--- tools/clang/tools/CMakeLists.txt.orig
++++ tools/clang/tools/CMakeLists.txt
+@@ -5,6 +5,8 @@ add_clang_subdirectory(driver)
+ add_subdirectory(clang-format)
+ add_subdirectory(clang-format-vs)
+ add_subdirectory(clang-fuzzer)
++add_subdirectory(scan-build)
++add_subdirectory(scan-view)
+ 
+ add_subdirectory(c-index-test)
+ add_subdirectory(libclang)
+diff --git tools/clang/tools/scan-build/CMakeLists.txt tools/clang/tools/scan-build/CMakeLists.txt.orig
+new file mode 100644
+index 0000000..78c243d
+--- /dev/null
++++ tools/clang/tools/scan-build/CMakeLists.txt
+@@ -0,0 +1,82 @@
++option(CLANG_INSTALL_SCANBUILD "Install the scan-build tool" ON)
++
++include(GNUInstallDirs)
++
++if (WIN32 AND NOT CYGWIN)
++  set(BinFiles
++        scan-build.bat)
++  set(LibexecFiles
++        ccc-analyzer.bat
++        c++-analyzer.bat)
++else()
++  set(BinFiles
++        scan-build)
++  set(LibexecFiles
++        ccc-analyzer
++        c++-analyzer)
++  if (APPLE)
++    list(APPEND BinFiles
++           set-xcode-analyzer)
++  endif()
++endif()
++
++set(ManPages
++      scan-build.1)
++
++set(ShareFiles
++      scanview.css
++      sorttable.js)
++
++
++if(CLANG_INSTALL_SCANBUILD)
++  foreach(BinFile ${BinFiles})
++    add_custom_command(OUTPUT ${CMAKE_BINARY_DIR}/bin/${BinFile}
++                       COMMAND ${CMAKE_COMMAND} -E make_directory
++                         ${CMAKE_BINARY_DIR}/bin
++                       COMMAND ${CMAKE_COMMAND} -E copy
++                         ${CMAKE_CURRENT_SOURCE_DIR}/bin/${BinFile}
++                         ${CMAKE_BINARY_DIR}/bin/
++                       DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/bin/${BinFile})
++    list(APPEND Depends ${CMAKE_BINARY_DIR}/bin/${BinFile})
++    install(PROGRAMS bin/${BinFile} DESTINATION bin)
++  endforeach()
++
++  foreach(LibexecFile ${LibexecFiles})
++    add_custom_command(OUTPUT ${CMAKE_BINARY_DIR}/libexec/${LibexecFile}
++                       COMMAND ${CMAKE_COMMAND} -E make_directory
++                         ${CMAKE_BINARY_DIR}/libexec
++                       COMMAND ${CMAKE_COMMAND} -E copy
++                         ${CMAKE_CURRENT_SOURCE_DIR}/libexec/${LibexecFile}
++                         ${CMAKE_BINARY_DIR}/libexec/
++                       DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/libexec/${LibexecFile})
++    list(APPEND Depends ${CMAKE_BINARY_DIR}/libexec/${LibexecFile})
++    install(PROGRAMS libexec/${LibexecFile} DESTINATION libexec)
++  endforeach()
++
++  foreach(ManPage ${ManPages})
++    add_custom_command(OUTPUT ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_MANDIR}/man1/${ManPage}
++                       COMMAND ${CMAKE_COMMAND} -E make_directory
++                         ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_MANDIR}/man1
++                       COMMAND ${CMAKE_COMMAND} -E copy
++                         ${CMAKE_CURRENT_SOURCE_DIR}/man/${ManPage}
++                         ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_MANDIR}/man1/
++                       DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/man/${ManPage})
++    list(APPEND Depends ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_MANDIR}/man1/${ManPage})
++    install(PROGRAMS man/${ManPage} DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
++  endforeach()
++
++  foreach(ShareFile ${ShareFiles})
++    add_custom_command(OUTPUT ${CMAKE_BINARY_DIR}/share/scan-build/${ShareFile}
++                       COMMAND ${CMAKE_COMMAND} -E make_directory
++                         ${CMAKE_BINARY_DIR}/share/scan-build
++                       COMMAND ${CMAKE_COMMAND} -E copy
++                         ${CMAKE_CURRENT_SOURCE_DIR}/share/scan-build/${ShareFile}
++                         ${CMAKE_BINARY_DIR}/share/scan-build/
++                       DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/share/scan-build/${ShareFile})
++    list(APPEND Depends ${CMAKE_BINARY_DIR}/share/scan-build/${ShareFile})
++    install(FILES share/scan-build/${ShareFile} DESTINATION share/scan-build)
++  endforeach()
++
++  add_custom_target(scan-build ALL DEPENDS ${Depends})
++  set_target_properties(scan-build PROPERTIES FOLDER "Misc")
++endif()
+diff --git tools/clang/tools/scan-build/Makefile tools/clang/tools/scan-build/Makefile.orig
+new file mode 100644
+index 0000000..23aa198
+--- /dev/null
++++ tools/clang/tools/scan-build/Makefile
+@@ -0,0 +1,53 @@
++##===- tools/scan-build/Makefile ---------------------------*- Makefile -*-===##
++# 
++#                     The LLVM Compiler Infrastructure
++#
++# This file is distributed under the University of Illinois Open Source
++# License. See LICENSE.TXT for details.
++# 
++##===----------------------------------------------------------------------===##
++
++CLANG_LEVEL := ../..
++
++include $(CLANG_LEVEL)/../../Makefile.config
++include $(CLANG_LEVEL)/Makefile
++
++ifeq ($(HOST_OS),MingW)
++  Suffix := .bat
++endif
++
++CLANG_INSTALL_SCANBUILD ?= 1
++
++ifeq ($(CLANG_INSTALL_SCANBUILD), 1)
++  InstallTargets := $(ToolDir)/scan-build$(Suffix) \
++                    $(LibexecDir)/c++-analyzer$(Suffix) \
++                    $(LibexecDir)/ccc-analyzer$(Suffix) \
++                    $(ShareDir)/scan-build/scanview.css \
++                    $(ShareDir)/scan-build/sorttable.js \
++                    $(ShareDir)/man/man1/scan-build.1
++
++  ifeq ($(HOST_OS),Darwin)
++    InstallTargets := $(InstallTargets) $(ToolDir)/set-xcode-analyzer
++  endif
++endif
++
++all:: $(InstallTargets)
++
++$(ToolDir)/%: bin/% Makefile $(ToolDir)/.dir
++	$(Echo) "Copying $(notdir $<) to the 'bin' directory..."
++	$(Verb)cp $< $@
++	$(Verb)chmod +x $@
++
++$(LibexecDir)/%: libexec/% Makefile $(LibexecDir)/.dir
++	$(Echo) "Copying $(notdir $<) to the 'libexec' directory..."
++	$(Verb)cp $< $@
++	$(Verb)chmod +x $@
++
++$(ShareDir)/man/man1/%: man/% Makefile $(ShareDir)/man/man1/.dir
++	$(Echo) "Copying $(notdir $<) to the 'man' directory..."
++	$(Verb)cp $< $@
++
++$(ShareDir)/scan-build/%: share/scan-build/% Makefile $(ShareDir)/scan-build/.dir
++	$(Echo) "Copying $(notdir $<) to the 'share' directory..."
++	$(Verb)cp $< $@
++
+diff --git tools/clang/tools/scan-build/bin/scan-build tools/clang/tools/scan-build/bin/scan-build.orig
+new file mode 100755
+index 0000000..6a14484
+--- /dev/null
++++ tools/clang/tools/scan-build/bin/scan-build
+@@ -0,0 +1,1832 @@
++#!/usr/bin/env perl
++#
++#                     The LLVM Compiler Infrastructure
++#
++# This file is distributed under the University of Illinois Open Source
++# License. See LICENSE.TXT for details.
++#
++##===----------------------------------------------------------------------===##
++#
++# A script designed to wrap a build so that all calls to gcc are intercepted
++# and piped to the static analyzer.
++#
++##===----------------------------------------------------------------------===##
++
++use strict;
++use warnings;
++use FindBin qw($RealBin);
++use Digest::MD5;
++use File::Basename;
++use File::Find;
++use File::Copy qw(copy);
++use File::Path qw( rmtree mkpath );
++use Term::ANSIColor;
++use Term::ANSIColor qw(:constants);
++use Cwd qw/ getcwd abs_path /;
++use Sys::Hostname;
++use Hash::Util qw(lock_keys);
++
++my $Prog = "scan-build";
++my $BuildName;
++my $BuildDate;
++
++my $TERM = $ENV{'TERM'};
++my $UseColor = (defined $TERM and $TERM =~ 'xterm-.*color' and -t STDOUT
++                and defined $ENV{'SCAN_BUILD_COLOR'});
++
++# Portability: getpwuid is not implemented for Win32 (see Perl language
++# reference, perlport), use getlogin instead.
++my $UserName = HtmlEscape(getlogin() || getpwuid($<) || 'unknown');
++my $HostName = HtmlEscape(hostname() || 'unknown');
++my $CurrentDir = HtmlEscape(getcwd());
++
++my $CmdArgs;
++
++my $Date = localtime();
++
++# Command-line/config arguments.
++my %Options = (
++  Verbose => 0,              # Verbose output from this script.
++  AnalyzeHeaders => 0,
++  OutputDir => undef,        # Parent directory to store HTML files.
++  HtmlTitle => basename($CurrentDir)." - scan-build results",
++  IgnoreErrors => 0,         # Ignore build errors.
++  ViewResults => 0,          # View results when the build terminates.
++  ExitStatusFoundBugs => 0,  # Exit status reflects whether bugs were found
++  KeepEmpty => 0,            # Don't remove output directory even with 0 results.
++  EnableCheckers => {},
++  DisableCheckers => {},
++  UseCC => undef,            # C compiler to use for compilation.
++  UseCXX => undef,           # C++ compiler to use for compilation.
++  AnalyzerTarget => undef,
++  StoreModel => undef,
++  ConstraintsModel => undef,
++  InternalStats => undef,
++  OutputFormat => "html",
++  ConfigOptions => [],       # Options to pass through to the analyzer's -analyzer-config flag.
++  ReportFailures => undef,
++  AnalyzerStats => 0,
++  MaxLoop => 0,
++  PluginsToLoad => [],
++  AnalyzerDiscoveryMethod => undef,
++  OverrideCompiler => 0      # The flag corresponding to the --override-compiler command line option.
++);
++lock_keys(%Options);
++
++##----------------------------------------------------------------------------##
++# Diagnostics
++##----------------------------------------------------------------------------##
++
++sub Diag {
++  if ($UseColor) {
++    print BOLD, MAGENTA "$Prog: @_";
++    print RESET;
++  }
++  else {
++    print "$Prog: @_";
++  }
++}
++
++sub ErrorDiag {
++  if ($UseColor) {
++    print STDERR BOLD, RED "$Prog: ";
++    print STDERR RESET, RED @_;
++    print STDERR RESET;
++  } else {
++    print STDERR "$Prog: @_";
++  }
++}
++
++sub DiagCrashes {
++  my $Dir = shift;
++  Diag ("The analyzer encountered problems on some source files.\n");
++  Diag ("Preprocessed versions of these sources were deposited in '$Dir/failures'.\n");
++  Diag ("Please consider submitting a bug report using these files:\n");
++  Diag ("  http://clang-analyzer.llvm.org/filing_bugs.html\n")
++}
++
++sub DieDiag {
++  if ($UseColor) {
++    print STDERR BOLD, RED "$Prog: ";
++    print STDERR RESET, RED @_;
++    print STDERR RESET;
++  }
++  else {
++    print STDERR "$Prog: ", @_;
++  }
++  exit 1;
++}
++
++##----------------------------------------------------------------------------##
++# Print default checker names
++##----------------------------------------------------------------------------##
++
++if (grep /^--help-checkers$/, @ARGV) {
++    my @options = qx($0 -h);
++    foreach (@options) {
++    next unless /^ \+/;
++    s/^\s*//;
++    my ($sign, $name, @text) = split ' ', $_;
++    print $name, $/ if $sign eq '+';
++    }
++    exit 0;
++}
++
++##----------------------------------------------------------------------------##
++# Declaration of Clang options.  Populated later.
++##----------------------------------------------------------------------------##
++
++my $Clang;
++my $ClangSB;
++my $ClangCXX;
++my $ClangVersion;
++
++##----------------------------------------------------------------------------##
++# GetHTMLRunDir - Construct an HTML directory name for the current sub-run.
++##----------------------------------------------------------------------------##
++
++sub GetHTMLRunDir {
++  die "Not enough arguments." if (@_ == 0);
++  my $Dir = shift @_;
++  my $TmpMode = 0;
++  if (!defined $Dir) {
++    $Dir = $ENV{'TMPDIR'} || $ENV{'TEMP'} || $ENV{'TMP'} || "/tmp";
++    $TmpMode = 1;
++  }
++
++  # Chop off any trailing '/' characters.
++  while ($Dir =~ /\/$/) { chop $Dir; }
++
++  # Get current date and time.
++  my @CurrentTime = localtime();
++  my $year  = $CurrentTime[5] + 1900;
++  my $day   = $CurrentTime[3];
++  my $month = $CurrentTime[4] + 1;
++  my $hour =  $CurrentTime[2];
++  my $min =   $CurrentTime[1];
++  my $sec =   $CurrentTime[0];
++
++  my $TimeString = sprintf("%02d%02d%02d", $hour, $min, $sec);
++  my $DateString = sprintf("%d-%02d-%02d-%s-$$",
++                           $year, $month, $day, $TimeString);
++
++  # Determine the run number.
++  my $RunNumber;
++
++  if (-d $Dir) {
++    if (! -r $Dir) {
++      DieDiag("directory '$Dir' exists but is not readable.\n");
++    }
++    # Iterate over all files in the specified directory.
++    my $max = 0;
++    opendir(DIR, $Dir);
++    my @FILES = grep { -d "$Dir/$_" } readdir(DIR);
++    closedir(DIR);
++
++    foreach my $f (@FILES) {
++      # Strip the prefix '$Prog-' if we are dumping files to /tmp.
++      if ($TmpMode) {
++        next if (!($f =~ /^$Prog-(.+)/));
++        $f = $1;
++      }
++
++      my @x = split/-/, $f;
++      next if (scalar(@x) != 4);
++      next if ($x[0] != $year);
++      next if ($x[1] != $month);
++      next if ($x[2] != $day);
++      next if ($x[3] != $TimeString);
++      next if ($x[4] != $$);
++
++      if ($x[5] > $max) {
++        $max = $x[5];
++      }
++    }
++
++    $RunNumber = $max + 1;
++  }
++  else {
++
++    if (-x $Dir) {
++      DieDiag("'$Dir' exists but is not a directory.\n");
++    }
++
++    if ($TmpMode) {
++      DieDiag("The directory '/tmp' does not exist or cannot be accessed.\n");
++    }
++
++    # $Dir does not exist.  It will be automatically created by the
++    # clang driver.  Set the run number to 1.
++
++    $RunNumber = 1;
++  }
++
++  die "RunNumber must be defined!" if (!defined $RunNumber);
++
++  # Append the run number.
++  my $NewDir;
++  if ($TmpMode) {
++    $NewDir = "$Dir/$Prog-$DateString-$RunNumber";
++  }
++  else {
++    $NewDir = "$Dir/$DateString-$RunNumber";
++  }
++
++  # Make sure that the directory does not exist in order to avoid hijack.
++  if (-e $NewDir) {
++      DieDiag("The directory '$NewDir' already exists.\n");
++  }
++
++  mkpath($NewDir);
++  return $NewDir;
++}
++
++sub SetHtmlEnv {
++
++  die "Wrong number of arguments." if (scalar(@_) != 2);
++
++  my $Args = shift;
++  my $Dir = shift;
++
++  die "No build command." if (scalar(@$Args) == 0);
++
++  my $Cmd = $$Args[0];
++
++  if ($Cmd =~ /configure/ || $Cmd =~ /autogen/) {
++    return;
++  }
++
++  if ($Options{Verbose}) {
++    Diag("Emitting reports for this run to '$Dir'.\n");
++  }
++
++  $ENV{'CCC_ANALYZER_HTML'} = $Dir;
++}
++
++##----------------------------------------------------------------------------##
++# ComputeDigest - Compute a digest of the specified file.
++##----------------------------------------------------------------------------##
++
++sub ComputeDigest {
++  my $FName = shift;
++  DieDiag("Cannot read $FName to compute Digest.\n") if (! -r $FName);
++
++  # Use Digest::MD5.  We don't have to be cryptographically secure.  We're
++  # just looking for duplicate files that come from a non-malicious source.
++  # We use Digest::MD5 because it is a standard Perl module that should
++  # come bundled on most systems.
++  open(FILE, $FName) or DieDiag("Cannot open $FName when computing Digest.\n");
++  binmode FILE;
++  my $Result = Digest::MD5->new->addfile(*FILE)->hexdigest;
++  close(FILE);
++
++  # Return the digest.
++  return $Result;
++}
++
++##----------------------------------------------------------------------------##
++#  UpdatePrefix - Compute the common prefix of files.
++##----------------------------------------------------------------------------##
++
++my $Prefix;
++
++sub UpdatePrefix {
++  my $x = shift;
++  my $y = basename($x);
++  $x =~ s/\Q$y\E$//;
++
++  if (!defined $Prefix) {
++    $Prefix = $x;
++    return;
++  }
++
++  chop $Prefix while (!($x =~ /^\Q$Prefix/));
++}
++
++sub GetPrefix {
++  return $Prefix;
++}
++
++##----------------------------------------------------------------------------##
++#  UpdateInFilePath - Update the path in the report file.
++##----------------------------------------------------------------------------##
++
++sub UpdateInFilePath {
++  my $fname = shift;
++  my $regex = shift;
++  my $newtext = shift;
++
++  open (RIN, $fname) or die "cannot open $fname";
++  open (ROUT, ">", "$fname.tmp") or die "cannot open $fname.tmp";
++
++  while (<RIN>) {
++    s/$regex/$newtext/;
++    print ROUT $_;
++  }
++
++  close (ROUT);
++  close (RIN);
++  rename("$fname.tmp", $fname)
++}
++
++##----------------------------------------------------------------------------##
++# AddStatLine - Decode and insert a statistics line into the database.
++##----------------------------------------------------------------------------##
++
++sub AddStatLine {
++  my $Line  = shift;
++  my $Stats = shift;
++  my $File  = shift;
++
++  print $Line . "\n";
++
++  my $Regex = qr/(.*?)\ ->\ Total\ CFGBlocks:\ (\d+)\ \|\ Unreachable
++      \ CFGBlocks:\ (\d+)\ \|\ Exhausted\ Block:\ (yes|no)\ \|\ Empty\ WorkList:
++      \ (yes|no)/x;
++
++  if ($Line !~ $Regex) {
++    return;
++  }
++
++  # Create a hash of the interesting fields
++  my $Row = {
++    Filename    => $File,
++    Function    => $1,
++    Total       => $2,
++    Unreachable => $3,
++    Aborted     => $4,
++    Empty       => $5
++  };
++
++  # Add them to the stats array
++  push @$Stats, $Row;
++}
++
++##----------------------------------------------------------------------------##
++# ScanFile - Scan a report file for various identifying attributes.
++##----------------------------------------------------------------------------##
++
++# Sometimes a source file is scanned more than once, and thus produces
++# multiple error reports.  We use a cache to solve this problem.
++
++my %AlreadyScanned;
++
++sub ScanFile {
++
++  my $Index = shift;
++  my $Dir = shift;
++  my $FName = shift;
++  my $Stats = shift;
++
++  # Compute a digest for the report file.  Determine if we have already
++  # scanned a file that looks just like it.
++
++  my $digest = ComputeDigest("$Dir/$FName");
++
++  if (defined $AlreadyScanned{$digest}) {
++    # Redundant file.  Remove it.
++    unlink("$Dir/$FName");
++    return;
++  }
++
++  $AlreadyScanned{$digest} = 1;
++
++  # At this point the report file is not world readable.  Make it happen.
++  chmod(0644, "$Dir/$FName");
++
++  # Scan the report file for tags.
++  open(IN, "$Dir/$FName") or DieDiag("Cannot open '$Dir/$FName'\n");
++
++  my $BugType        = "";
++  my $BugFile        = "";
++  my $BugFunction    = "";
++  my $BugCategory    = "";
++  my $BugDescription = "";
++  my $BugPathLength  = 1;
++  my $BugLine        = 0;
++
++  while (<IN>) {
++    last if (/<!-- BUGMETAEND -->/);
++
++    if (/<!-- BUGTYPE (.*) -->$/) {
++      $BugType = $1;
++    }
++    elsif (/<!-- BUGFILE (.*) -->$/) {
++      $BugFile = abs_path($1);
++      if (!defined $BugFile) {
++         # The file no longer exists: use the original path.
++         $BugFile = $1;
++      }
++      UpdatePrefix($BugFile);
++    }
++    elsif (/<!-- BUGPATHLENGTH (.*) -->$/) {
++      $BugPathLength = $1;
++    }
++    elsif (/<!-- BUGLINE (.*) -->$/) {
++      $BugLine = $1;
++    }
++    elsif (/<!-- BUGCATEGORY (.*) -->$/) {
++      $BugCategory = $1;
++    }
++    elsif (/<!-- BUGDESC (.*) -->$/) {
++      $BugDescription = $1;
++    }
++    elsif (/<!-- FUNCTIONNAME (.*) -->$/) {
++      $BugFunction = $1;
++    }
++
++  }
++
++
++  close(IN);
++
++  if (!defined $BugCategory) {
++    $BugCategory = "Other";
++  }
++
++  # Don't add internal statistics to the bug reports
++  if ($BugCategory =~ /statistics/i) {
++    AddStatLine($BugDescription, $Stats, $BugFile);
++    return;
++  }
++
++  push @$Index,[ $FName, $BugCategory, $BugType, $BugFile, $BugFunction, $BugLine,
++                 $BugPathLength ];
++}
++
++##----------------------------------------------------------------------------##
++# CopyFiles - Copy resource files to target directory.
++##----------------------------------------------------------------------------##
++
++sub CopyFiles {
++
++  my $Dir = shift;
++
++  my $JS = Cwd::realpath("$RealBin/../share/scan-build/sorttable.js");
++
++  DieDiag("Cannot find 'sorttable.js'.\n")
++    if (! -r $JS);
++
++  copy($JS, "$Dir");
++
++  DieDiag("Could not copy 'sorttable.js' to '$Dir'.\n")
++    if (! -r "$Dir/sorttable.js");
++
++  my $CSS = Cwd::realpath("$RealBin/../share/scan-build/scanview.css");
++
++  DieDiag("Cannot find 'scanview.css'.\n")
++    if (! -r $CSS);
++
++  copy($CSS, "$Dir");
++
++  DieDiag("Could not copy 'scanview.css' to '$Dir'.\n")
++    if (! -r $CSS);
++}
++
++##----------------------------------------------------------------------------##
++# CalcStats - Calculates visitation statistics and returns the string.
++##----------------------------------------------------------------------------##
++
++sub CalcStats {
++  my $Stats = shift;
++
++  my $TotalBlocks = 0;
++  my $UnreachedBlocks = 0;
++  my $TotalFunctions = scalar(@$Stats);
++  my $BlockAborted = 0;
++  my $WorkListAborted = 0;
++  my $Aborted = 0;
++
++  # Calculate the unique files
++  my $FilesHash = {};
++
++  foreach my $Row (@$Stats) {
++    $FilesHash->{$Row->{Filename}} = 1;
++    $TotalBlocks += $Row->{Total};
++    $UnreachedBlocks += $Row->{Unreachable};
++    $BlockAborted++ if $Row->{Aborted} eq 'yes';
++    $WorkListAborted++ if $Row->{Empty} eq 'no';
++    $Aborted++ if $Row->{Aborted} eq 'yes' || $Row->{Empty} eq 'no';
++  }
++
++  my $TotalFiles = scalar(keys(%$FilesHash));
++
++  # Calculations
++  my $PercentAborted = sprintf("%.2f", $Aborted / $TotalFunctions * 100);
++  my $PercentBlockAborted = sprintf("%.2f", $BlockAborted / $TotalFunctions
++      * 100);
++  my $PercentWorkListAborted = sprintf("%.2f", $WorkListAborted /
++      $TotalFunctions * 100);
++  my $PercentBlocksUnreached = sprintf("%.2f", $UnreachedBlocks / $TotalBlocks
++      * 100);
++
++  my $StatsString = "Analyzed $TotalBlocks blocks in $TotalFunctions functions"
++    . " in $TotalFiles files\n"
++    . "$Aborted functions aborted early ($PercentAborted%)\n"
++    . "$BlockAborted had aborted blocks ($PercentBlockAborted%)\n"
++    . "$WorkListAborted had unfinished worklists ($PercentWorkListAborted%)\n"
++    . "$UnreachedBlocks blocks were never reached ($PercentBlocksUnreached%)\n";
++
++  return $StatsString;
++}
++
++##----------------------------------------------------------------------------##
++# Postprocess - Postprocess the results of an analysis scan.
++##----------------------------------------------------------------------------##
++
++my @filesFound;
++my $baseDir;
++sub FileWanted {
++    my $baseDirRegEx = quotemeta $baseDir;
++    my $file = $File::Find::name;
++
++    # The name of the file is generated by clang binary (HTMLDiagnostics.cpp)
++    if ($file =~ /report-.*\.html$/) {
++       my $relative_file = $file;
++       $relative_file =~ s/$baseDirRegEx//g;
++       push @filesFound, $relative_file;
++    }
++}
++
++sub Postprocess {
++
++  my $Dir           = shift;
++  my $BaseDir       = shift;
++  my $AnalyzerStats = shift;
++  my $KeepEmpty     = shift;
++
++  die "No directory specified." if (!defined $Dir);
++
++  if (! -d $Dir) {
++    Diag("No bugs found.\n");
++    return 0;
++  }
++
++  $baseDir = $Dir . "/";
++  find({ wanted => \&FileWanted, follow => 0}, $Dir);
++
++  if (scalar(@filesFound) == 0 and ! -e "$Dir/failures") {
++    if (! $KeepEmpty) {
++      Diag("Removing directory '$Dir' because it contains no reports.\n");
++      rmtree($Dir) or die "Cannot rmtree '$Dir' : $!";
++    }
++    Diag("No bugs found.\n");
++    return 0;
++  }
++
++  # Scan each report file and build an index.
++  my @Index;
++  my @Stats;
++  foreach my $file (@filesFound) { ScanFile(\@Index, $Dir, $file, \@Stats); }
++
++  # Scan the failures directory and use the information in the .info files
++  # to update the common prefix directory.
++  my @failures;
++  my @attributes_ignored;
++  if (-d "$Dir/failures") {
++    opendir(DIR, "$Dir/failures");
++    @failures = grep { /[.]info.txt$/ && !/attribute_ignored/; } readdir(DIR);
++    closedir(DIR);
++    opendir(DIR, "$Dir/failures");
++    @attributes_ignored = grep { /^attribute_ignored/; } readdir(DIR);
++    closedir(DIR);
++    foreach my $file (@failures) {
++      open IN, "$Dir/failures/$file" or DieDiag("cannot open $file\n");
++      my $Path = <IN>;
++      if (defined $Path) { UpdatePrefix($Path); }
++      close IN;
++    }
++  }
++
++  # Generate an index.html file.
++  my $FName = "$Dir/index.html";
++  open(OUT, ">", $FName) or DieDiag("Cannot create file '$FName'\n");
++
++  # Print out the header.
++
++print OUT <<ENDTEXT;
++<html>
++<head>
++<title>${Options{HtmlTitle}}</title>
++<link type="text/css" rel="stylesheet" href="scanview.css"/>
++<script src="sorttable.js"></script>
++<script language='javascript' type="text/javascript">
++function SetDisplay(RowClass, DisplayVal)
++{
++  var Rows = document.getElementsByTagName("tr");
++  for ( var i = 0 ; i < Rows.length; ++i ) {
++    if (Rows[i].className == RowClass) {
++      Rows[i].style.display = DisplayVal;
++    }
++  }
++}
++
++function CopyCheckedStateToCheckButtons(SummaryCheckButton) {
++  var Inputs = document.getElementsByTagName("input");
++  for ( var i = 0 ; i < Inputs.length; ++i ) {
++    if (Inputs[i].type == "checkbox") {
++      if(Inputs[i] != SummaryCheckButton) {
++        Inputs[i].checked = SummaryCheckButton.checked;
++        Inputs[i].onclick();
++      }
++    }
++  }
++}
++
++function returnObjById( id ) {
++    if (document.getElementById)
++        var returnVar = document.getElementById(id);
++    else if (document.all)
++        var returnVar = document.all[id];
++    else if (document.layers)
++        var returnVar = document.layers[id];
++    return returnVar;
++}
++
++var NumUnchecked = 0;
++
++function ToggleDisplay(CheckButton, ClassName) {
++  if (CheckButton.checked) {
++    SetDisplay(ClassName, "");
++    if (--NumUnchecked == 0) {
++      returnObjById("AllBugsCheck").checked = true;
++    }
++  }
++  else {
++    SetDisplay(ClassName, "none");
++    NumUnchecked++;
++    returnObjById("AllBugsCheck").checked = false;
++  }
++}
++</script>
++<!-- SUMMARYENDHEAD -->
++</head>
++<body>
++<h1>${Options{HtmlTitle}}</h1>
++
++<table>
++<tr><th>User:</th><td>${UserName}\@${HostName}</td></tr>
++<tr><th>Working Directory:</th><td>${CurrentDir}</td></tr>
++<tr><th>Command Line:</th><td>${CmdArgs}</td></tr>
++<tr><th>Clang Version:</th><td>${ClangVersion}</td></tr>
++<tr><th>Date:</th><td>${Date}</td></tr>
++ENDTEXT
++
++print OUT "<tr><th>Version:</th><td>${BuildName} (${BuildDate})</td></tr>\n"
++  if (defined($BuildName) && defined($BuildDate));
++
++print OUT <<ENDTEXT;
++</table>
++ENDTEXT
++
++  if (scalar(@filesFound)) {
++    # Print out the summary table.
++    my %Totals;
++
++    for my $row ( @Index ) {
++      my $bug_type = ($row->[2]);
++      my $bug_category = ($row->[1]);
++      my $key = "$bug_category:$bug_type";
++
++      if (!defined $Totals{$key}) { $Totals{$key} = [1,$bug_category,$bug_type]; }
++      else { $Totals{$key}->[0]++; }
++    }
++
++    print OUT "<h2>Bug Summary</h2>";
++
++    if (defined $BuildName) {
++      print OUT "\n<p>Results in this analysis run are based on analyzer build <b>$BuildName</b>.</p>\n"
++    }
++
++  my $TotalBugs = scalar(@Index);
++print OUT <<ENDTEXT;
++<table>
++<thead><tr><td>Bug Type</td><td>Quantity</td><td class="sorttable_nosort">Display?</td></tr></thead>
++<tr style="font-weight:bold"><td class="SUMM_DESC">All Bugs</td><td class="Q">$TotalBugs</td><td><center><input type="checkbox" id="AllBugsCheck" onClick="CopyCheckedStateToCheckButtons(this);" checked/></center></td></tr>
++ENDTEXT
++
++    my $last_category;
++
++    for my $key (
++      sort {
++        my $x = $Totals{$a};
++        my $y = $Totals{$b};
++        my $res = $x->[1] cmp $y->[1];
++        $res = $x->[2] cmp $y->[2] if ($res == 0);
++        $res
++      } keys %Totals )
++    {
++      my $val = $Totals{$key};
++      my $category = $val->[1];
++      if (!defined $last_category or $last_category ne $category) {
++        $last_category = $category;
++        print OUT "<tr><th>$category</th><th colspan=2></th></tr>\n";
++      }
++      my $x = lc $key;
++      $x =~ s/[ ,'":\/()]+/_/g;
++      print OUT "<tr><td class=\"SUMM_DESC\">";
++      print OUT $val->[2];
++      print OUT "</td><td class=\"Q\">";
++      print OUT $val->[0];
++      print OUT "</td><td><center><input type=\"checkbox\" onClick=\"ToggleDisplay(this,'bt_$x');\" checked/></center></td></tr>\n";
++    }
++
++  # Print out the table of errors.
++
++print OUT <<ENDTEXT;
++</table>
++<h2>Reports</h2>
++
++<table class="sortable" style="table-layout:automatic">
++<thead><tr>
++  <td>Bug Group</td>
++  <td class="sorttable_sorted">Bug Type<span id="sorttable_sortfwdind">&nbsp;&#x25BE;</span></td>
++  <td>File</td>
++  <td>Function/Method</td>
++  <td class="Q">Line</td>
++  <td class="Q">Path Length</td>
++  <td class="sorttable_nosort"></td>
++  <!-- REPORTBUGCOL -->
++</tr></thead>
++<tbody>
++ENDTEXT
++
++    my $prefix = GetPrefix();
++    my $regex;
++    my $InFileRegex;
++    my $InFilePrefix = "File:</td><td>";
++
++    if (defined $prefix) {
++      $regex = qr/^\Q$prefix\E/is;
++      $InFileRegex = qr/\Q$InFilePrefix$prefix\E/is;
++    }
++
++    for my $row ( sort { $a->[2] cmp $b->[2] } @Index ) {
++      my $x = "$row->[1]:$row->[2]";
++      $x = lc $x;
++      $x =~ s/[ ,'":\/()]+/_/g;
++
++      my $ReportFile = $row->[0];
++
++      print OUT "<tr class=\"bt_$x\">";
++      print OUT "<td class=\"DESC\">";
++      print OUT $row->[1];
++      print OUT "</td>";
++      print OUT "<td class=\"DESC\">";
++      print OUT $row->[2];
++      print OUT "</td>";
++
++      # Update the file prefix.
++      my $fname = $row->[3];
++
++      if (defined $regex) {
++        $fname =~ s/$regex//;
++        UpdateInFilePath("$Dir/$ReportFile", $InFileRegex, $InFilePrefix)
++      }
++
++      print OUT "<td>";
++      my @fname = split /\//,$fname;
++      if ($#fname > 0) {
++        while ($#fname >= 0) {
++          my $x = shift @fname;
++          print OUT $x;
++          if ($#fname >= 0) {
++            print OUT "/";
++          }
++        }
++      }
++      else {
++        print OUT $fname;
++      }
++      print OUT "</td>";
++
++      print OUT "<td class=\"DESC\">";
++      print OUT $row->[4];
++      print OUT "</td>";
++
++      # Print out the quantities.
++      for my $j ( 5 .. 6 ) {
++        print OUT "<td class=\"Q\">$row->[$j]</td>";
++      }
++
++      # Print the rest of the columns.
++      for (my $j = 7; $j <= $#{$row}; ++$j) {
++        print OUT "<td>$row->[$j]</td>"
++      }
++
++      # Emit the "View" link.
++      print OUT "<td><a href=\"$ReportFile#EndPath\">View Report</a></td>";
++
++      # Emit REPORTBUG markers.
++      print OUT "\n<!-- REPORTBUG id=\"$ReportFile\" -->\n";
++
++      # End the row.
++      print OUT "</tr>\n";
++    }
++
++    print OUT "</tbody>\n</table>\n\n";
++  }
++
++  if (scalar (@failures) || scalar(@attributes_ignored)) {
++    print OUT "<h2>Analyzer Failures</h2>\n";
++
++    if (scalar @attributes_ignored) {
++      print OUT "The analyzer's parser ignored the following attributes:<p>\n";
++      print OUT "<table>\n";
++      print OUT "<thead><tr><td>Attribute</td><td>Source File</td><td>Preprocessed File</td><td>STDERR Output</td></tr></thead>\n";
++      foreach my $file (sort @attributes_ignored) {
++        die "cannot demangle attribute name\n" if (! ($file =~ /^attribute_ignored_(.+).txt/));
++        my $attribute = $1;
++        # Open the attribute file to get the first file that failed.
++        next if (!open (ATTR, "$Dir/failures/$file"));
++        my $ppfile = <ATTR>;
++        chomp $ppfile;
++        close ATTR;
++        next if (! -e "$Dir/failures/$ppfile");
++        # Open the info file and get the name of the source file.
++        open (INFO, "$Dir/failures/$ppfile.info.txt") or
++          die "Cannot open $Dir/failures/$ppfile.info.txt\n";
++        my $srcfile = <INFO>;
++        chomp $srcfile;
++        close (INFO);
++        # Print the information in the table.
++        my $prefix = GetPrefix();
++        if (defined $prefix) { $srcfile =~ s/^\Q$prefix//; }
++        print OUT "<tr><td>$attribute</td><td>$srcfile</td><td><a href=\"failures/$ppfile\">$ppfile</a></td><td><a href=\"failures/$ppfile.stderr.txt\">$ppfile.stderr.txt</a></td></tr>\n";
++        my $ppfile_clang = $ppfile;
++        $ppfile_clang =~ s/[.](.+)$/.clang.$1/;
++        print OUT "  <!-- REPORTPROBLEM src=\"$srcfile\" file=\"failures/$ppfile\" clangfile=\"failures/$ppfile_clang\" stderr=\"failures/$ppfile.stderr.txt\" info=\"failures/$ppfile.info.txt\" -->\n";
++      }
++      print OUT "</table>\n";
++    }
++
++    if (scalar @failures) {
++      print OUT "<p>The analyzer had problems processing the following files:</p>\n";
++      print OUT "<table>\n";
++      print OUT "<thead><tr><td>Problem</td><td>Source File</td><td>Preprocessed File</td><td>STDERR Output</td></tr></thead>\n";
++      foreach my $file (sort @failures) {
++        $file =~ /(.+).info.txt$/;
++        # Get the preprocessed file.
++        my $ppfile = $1;
++        # Open the info file and get the name of the source file.
++        open (INFO, "$Dir/failures/$file") or
++          die "Cannot open $Dir/failures/$file\n";
++        my $srcfile = <INFO>;
++        chomp $srcfile;
++        my $problem = <INFO>;
++        chomp $problem;
++        close (INFO);
++        # Print the information in the table.
++        my $prefix = GetPrefix();
++        if (defined $prefix) { $srcfile =~ s/^\Q$prefix//; }
++        print OUT "<tr><td>$problem</td><td>$srcfile</td><td><a href=\"failures/$ppfile\">$ppfile</a></td><td><a href=\"failures/$ppfile.stderr.txt\">$ppfile.stderr.txt</a></td></tr>\n";
++        my $ppfile_clang = $ppfile;
++        $ppfile_clang =~ s/[.](.+)$/.clang.$1/;
++        print OUT "  <!-- REPORTPROBLEM src=\"$srcfile\" file=\"failures/$ppfile\" clangfile=\"failures/$ppfile_clang\" stderr=\"failures/$ppfile.stderr.txt\" info=\"failures/$ppfile.info.txt\" -->\n";
++      }
++      print OUT "</table>\n";
++    }
++    print OUT "<p>Please consider submitting preprocessed files as <a href=\"http://clang-analyzer.llvm.org/filing_bugs.html\">bug reports</a>. <!-- REPORTCRASHES --> </p>\n";
++  }
++
++  print OUT "</body></html>\n";
++  close(OUT);
++  CopyFiles($Dir);
++
++  # Make sure $Dir and $BaseDir are world readable/executable.
++  chmod(0755, $Dir);
++  if (defined $BaseDir) { chmod(0755, $BaseDir); }
++
++  # Print statistics
++  print CalcStats(\@Stats) if $AnalyzerStats;
++
++  my $Num = scalar(@Index);
++  if ($Num == 1) {
++    Diag("$Num bug found.\n");
++  } else {
++    Diag("$Num bugs found.\n");
++  }
++  if ($Num > 0 && -r "$Dir/index.html") {
++    Diag("Run 'scan-view $Dir' to examine bug reports.\n");
++  }
++
++  DiagCrashes($Dir) if (scalar @failures || scalar @attributes_ignored);
++
++  return $Num;
++}
++
++##----------------------------------------------------------------------------##
++# RunBuildCommand - Run the build command.
++##----------------------------------------------------------------------------##
++
++sub AddIfNotPresent {
++  my $Args = shift;
++  my $Arg = shift;
++  my $found = 0;
++
++  foreach my $k (@$Args) {
++    if ($k eq $Arg) {
++      $found = 1;
++      last;
++    }
++  }
++
++  if ($found == 0) {
++    push @$Args, $Arg;
++  }
++}
++
++sub SetEnv {
++  my $EnvVars = shift @_;
++  foreach my $var ('CC', 'CXX', 'CLANG', 'CLANG_CXX',
++                   'CCC_ANALYZER_ANALYSIS', 'CCC_ANALYZER_PLUGINS',
++                   'CCC_ANALYZER_CONFIG') {
++    die "$var is undefined\n" if (!defined $var);
++    $ENV{$var} = $EnvVars->{$var};
++  }
++  foreach my $var ('CCC_ANALYZER_STORE_MODEL',
++                   'CCC_ANALYZER_CONSTRAINTS_MODEL',
++                   'CCC_ANALYZER_INTERNAL_STATS',
++                   'CCC_ANALYZER_OUTPUT_FORMAT',
++                   'CCC_CC',
++                   'CCC_CXX',
++                   'CCC_REPORT_FAILURES',
++                   'CLANG_ANALYZER_TARGET') {
++    my $x = $EnvVars->{$var};
++    if (defined $x) { $ENV{$var} = $x }
++  }
++  my $Verbose = $EnvVars->{'VERBOSE'};
++  if ($Verbose >= 2) {
++    $ENV{'CCC_ANALYZER_VERBOSE'} = 1;
++  }
++  if ($Verbose >= 3) {
++    $ENV{'CCC_ANALYZER_LOG'} = 1;
++  }
++}
++
++sub RunXcodebuild {
++  my $Args = shift;
++  my $IgnoreErrors = shift;
++  my $CCAnalyzer = shift;
++  my $CXXAnalyzer = shift;
++  my $EnvVars = shift;
++
++  if ($IgnoreErrors) {
++    AddIfNotPresent($Args,"-PBXBuildsContinueAfterErrors=YES");
++  }
++
++  # Detect the version of Xcode.  If Xcode 4.6 or higher, use new
++  # in situ support for analyzer interposition without needed to override
++  # the compiler.
++  open(DETECT_XCODE, "-|", $Args->[0], "-version") or
++    die "error: cannot detect version of xcodebuild\n";
++
++  my $oldBehavior = 1;
++
++  while(<DETECT_XCODE>) {
++    if (/^Xcode (.+)$/) {
++      my $ver = $1;
++      if ($ver =~ /^([0-9]+[.][0-9]+)[^0-9]?/) {
++        if ($1 >= 4.6) {
++          $oldBehavior = 0;
++          last;
++        }
++      }
++    }
++  }
++  close(DETECT_XCODE);
++
++  # If --override-compiler is explicitely requested, resort to the old
++  # behavior regardless of Xcode version.
++  if ($Options{OverrideCompiler}) {
++    $oldBehavior = 1;
++  }
++
++  if ($oldBehavior == 0) {
++    my $OutputDir = $EnvVars->{"OUTPUT_DIR"};
++    my $CLANG = $EnvVars->{"CLANG"};
++    my $OtherFlags = $EnvVars->{"CCC_ANALYZER_ANALYSIS"};
++    push @$Args,
++        "RUN_CLANG_STATIC_ANALYZER=YES",
++        "CLANG_ANALYZER_OUTPUT=plist-html",
++        "CLANG_ANALYZER_EXEC=$CLANG",
++        "CLANG_ANALYZER_OUTPUT_DIR=$OutputDir",
++        "CLANG_ANALYZER_OTHER_FLAGS=$OtherFlags";
++
++    return (system(@$Args) >> 8);
++  }
++
++  # Default to old behavior where we insert a bogus compiler.
++  SetEnv($EnvVars);
++
++  # Check if using iPhone SDK 3.0 (simulator).  If so the compiler being
++  # used should be gcc-4.2.
++  if (!defined $ENV{"CCC_CC"}) {
++    for (my $i = 0 ; $i < scalar(@$Args); ++$i) {
++      if ($Args->[$i] eq "-sdk" && $i + 1 < scalar(@$Args)) {
++        if (@$Args[$i+1] =~ /^iphonesimulator3/) {
++          $ENV{"CCC_CC"} = "gcc-4.2";
++          $ENV{"CCC_CXX"} = "g++-4.2";
++        }
++      }
++    }
++  }
++
++  # Disable PCH files until clang supports them.
++  AddIfNotPresent($Args,"GCC_PRECOMPILE_PREFIX_HEADER=NO");
++
++  # When 'CC' is set, xcodebuild uses it to do all linking, even if we are
++  # linking C++ object files.  Set 'LDPLUSPLUS' so that xcodebuild uses 'g++'
++  # (via c++-analyzer) when linking such files.
++  $ENV{"LDPLUSPLUS"} = $CXXAnalyzer;
++
++  return (system(@$Args) >> 8);
++}
++
++sub RunBuildCommand {
++  my $Args = shift;
++  my $IgnoreErrors = shift;
++  my $Cmd = $Args->[0];
++  my $CCAnalyzer = shift;
++  my $CXXAnalyzer = shift;
++  my $EnvVars = shift;
++
++  if ($Cmd =~ /\bxcodebuild$/) {
++    return RunXcodebuild($Args, $IgnoreErrors, $CCAnalyzer, $CXXAnalyzer, $EnvVars);
++  }
++
++  # Setup the environment.
++  SetEnv($EnvVars);
++
++  if ($Cmd =~ /(.*\/?gcc[^\/]*$)/ or
++      $Cmd =~ /(.*\/?cc[^\/]*$)/ or
++      $Cmd =~ /(.*\/?llvm-gcc[^\/]*$)/ or
++      $Cmd =~ /(.*\/?clang$)/ or
++      $Cmd =~ /(.*\/?ccc-analyzer[^\/]*$)/) {
++
++    if (!($Cmd =~ /ccc-analyzer/) and !defined $ENV{"CCC_CC"}) {
++      $ENV{"CCC_CC"} = $1;
++    }
++
++    shift @$Args;
++    unshift @$Args, $CCAnalyzer;
++  }
++  elsif ($Cmd =~ /(.*\/?g\+\+[^\/]*$)/ or
++        $Cmd =~ /(.*\/?c\+\+[^\/]*$)/ or
++        $Cmd =~ /(.*\/?llvm-g\+\+[^\/]*$)/ or
++        $Cmd =~ /(.*\/?clang\+\+$)/ or
++        $Cmd =~ /(.*\/?c\+\+-analyzer[^\/]*$)/) {
++    if (!($Cmd =~ /c\+\+-analyzer/) and !defined $ENV{"CCC_CXX"}) {
++      $ENV{"CCC_CXX"} = $1;
++    }
++    shift @$Args;
++    unshift @$Args, $CXXAnalyzer;
++  }
++  elsif ($Cmd eq "make" or $Cmd eq "gmake" or $Cmd eq "mingw32-make") {
++    AddIfNotPresent($Args, "CC=$CCAnalyzer");
++    AddIfNotPresent($Args, "CXX=$CXXAnalyzer");
++    if ($IgnoreErrors) {
++      AddIfNotPresent($Args,"-k");
++      AddIfNotPresent($Args,"-i");
++    }
++  }
++
++  return (system(@$Args) >> 8);
++}
++
++##----------------------------------------------------------------------------##
++# DisplayHelp - Utility function to display all help options.
++##----------------------------------------------------------------------------##
++
++sub DisplayHelp {
++
++  my $ArgClangNotFoundErrMsg = shift;
++print <<ENDTEXT;
++USAGE: $Prog [options] <build command> [build options]
++
++ENDTEXT
++
++  if (defined $BuildName) {
++    print "ANALYZER BUILD: $BuildName ($BuildDate)\n\n";
++  }
++
++print <<ENDTEXT;
++OPTIONS:
++
++ -analyze-headers
++
++   Also analyze functions in #included files.  By default, such functions
++   are skipped unless they are called by functions within the main source file.
++
++ -o <output location>
++
++   Specifies the output directory for analyzer reports. Subdirectories will be
++   created as needed to represent separate "runs" of the analyzer. If this
++   option is not specified, a directory is created in /tmp (TMPDIR on Mac OS X)
++   to store the reports.
++
++ -h
++ --help
++
++   Display this message.
++
++ -k
++ --keep-going
++
++   Add a "keep on going" option to the specified build command. This option
++   currently supports make and xcodebuild. This is a convenience option; one
++   can specify this behavior directly using build options.
++
++ --html-title [title]
++ --html-title=[title]
++
++   Specify the title used on generated HTML pages. If not specified, a default
++   title will be used.
++
++ -plist
++
++   By default the output of scan-build is a set of HTML files. This option
++   outputs the results as a set of .plist files.
++
++ -plist-html
++
++   By default the output of scan-build is a set of HTML files. This option
++   outputs the results as a set of HTML and .plist files.
++
++ --status-bugs
++
++   By default, the exit status of scan-build is the same as the executed build
++   command. Specifying this option causes the exit status of scan-build to be 1
++   if it found potential bugs and 0 otherwise.
++
++ --use-cc [compiler path]
++ --use-cc=[compiler path]
++
++   scan-build analyzes a project by interposing a "fake compiler", which
++   executes a real compiler for compilation and the static analyzer for analysis.
++   Because of the current implementation of interposition, scan-build does not
++   know what compiler your project normally uses.  Instead, it simply overrides
++   the CC environment variable, and guesses your default compiler.
++
++   In the future, this interposition mechanism to be improved, but if you need
++   scan-build to use a specific compiler for *compilation* then you can use
++   this option to specify a path to that compiler.
++
++   If the given compiler is a cross compiler, you may also need to provide
++   --analyzer-target option to properly analyze the source code because static
++   analyzer runs as if the code is compiled for the host machine by default.
++
++ --use-c++ [compiler path]
++ --use-c++=[compiler path]
++
++   This is the same as "--use-cc" but for C++ code.
++
++ --analyzer-target [target triple name for analysis]
++ --analyzer-target=[target triple name for analysis]
++
++   This provides target triple information to clang static analyzer.
++   It only changes the target for analysis but doesn't change the target of a
++   real compiler given by --use-cc and --use-c++ options.
++
++ -v
++
++   Enable verbose output from scan-build. A second and third '-v' increases
++   verbosity.
++
++ -V
++ --view
++
++   View analysis results in a web browser when the build completes.
++
++ADVANCED OPTIONS:
++
++ -no-failure-reports
++
++   Do not create a 'failures' subdirectory that includes analyzer crash reports
++   and preprocessed source files.
++
++ -stats
++
++   Generates visitation statistics for the project being analyzed.
++
++ -maxloop <loop count>
++
++   Specifiy the number of times a block can be visited before giving up.
++   Default is 4. Increase for more comprehensive coverage at a cost of speed.
++
++ -internal-stats
++
++   Generate internal analyzer statistics.
++
++ --use-analyzer [Xcode|path to clang]
++ --use-analyzer=[Xcode|path to clang]
++
++   scan-build uses the 'clang' executable relative to itself for static
++   analysis. One can override this behavior with this option by using the
++   'clang' packaged with Xcode (on OS X) or from the PATH.
++
++ --keep-empty
++
++   Don't remove the build results directory even if no issues were reported.
++
++ --override-compiler
++   Always resort to the ccc-analyzer even when better interposition methods
++   are available.
++
++ -analyzer-config <options>
++
++   Provide options to pass through to the analyzer's -analyzer-config flag.
++   Several options are separated with comma: 'key1=val1,key2=val2'
++
++   Available options:
++     * stable-report-filename=true or false (default)
++       Switch the page naming to:
++       report-<filename>-<function/method name>-<id>.html
++       instead of report-XXXXXX.html
++
++CONTROLLING CHECKERS:
++
++ A default group of checkers are always run unless explicitly disabled.
++ Checkers may be enabled/disabled using the following options:
++
++ -enable-checker [checker name]
++ -disable-checker [checker name]
++
++LOADING CHECKERS:
++
++ Loading external checkers using the clang plugin interface:
++
++ -load-plugin [plugin library]
++ENDTEXT
++
++  if (defined $Clang && -x $Clang) {
++    # Query clang for list of checkers that are enabled.
++
++    # create a list to load the plugins via the 'Xclang' command line
++    # argument
++    my @PluginLoadCommandline_xclang;
++    foreach my $param ( @{$Options{PluginsToLoad}} ) {
++      push ( @PluginLoadCommandline_xclang, "-Xclang" );
++      push ( @PluginLoadCommandline_xclang, "-load" );
++      push ( @PluginLoadCommandline_xclang, "-Xclang" );
++      push ( @PluginLoadCommandline_xclang, $param );
++    }
++
++    my %EnabledCheckers;
++    foreach my $lang ("c", "objective-c", "objective-c++", "c++") {
++      my $ExecLine = join(' ', qq/"$Clang"/, @PluginLoadCommandline_xclang, "--analyze", "-x", $lang, "-", "-###", "2>&1", "|");
++      open(PS, $ExecLine);
++      while (<PS>) {
++        foreach my $val (split /\s+/) {
++          $val =~ s/\"//g;
++          if ($val =~ /-analyzer-checker\=([^\s]+)/) {
++            $EnabledCheckers{$1} = 1;
++          }
++        }
++      }
++    }
++
++    # Query clang for complete list of checkers.
++    my @PluginLoadCommandline;
++    foreach my $param ( @{$Options{PluginsToLoad}} ) {
++      push ( @PluginLoadCommandline, "-load" );
++      push ( @PluginLoadCommandline, $param );
++    }
++
++    my $ExecLine = join(' ', qq/"$Clang"/, "-cc1", @PluginLoadCommandline, "-analyzer-checker-help", "2>&1", "|");
++    open(PS, $ExecLine);
++    my $foundCheckers = 0;
++    while (<PS>) {
++      if (/CHECKERS:/) {
++        $foundCheckers = 1;
++        last;
++      }
++    }
++    if (!$foundCheckers) {
++      print "  *** Could not query Clang for the list of available checkers.";
++    }
++    else {
++      print("\nAVAILABLE CHECKERS:\n\n");
++      my $skip = 0;
++       while(<PS>) {
++        if (/experimental/) {
++          $skip = 1;
++          next;
++        }
++        if ($skip) {
++          next if (!/^\s\s[^\s]/);
++          $skip = 0;
++        }
++        s/^\s\s//;
++        if (/^([^\s]+)/) {
++          # Is the checker enabled?
++          my $checker = $1;
++          my $enabled = 0;
++          my $aggregate = "";
++          foreach my $domain (split /\./, $checker) {
++            $aggregate .= $domain;
++            if ($EnabledCheckers{$aggregate}) {
++              $enabled =1;
++              last;
++            }
++            # append a dot, if an additional domain is added in the next iteration
++            $aggregate .= ".";
++          }
++
++          if ($enabled) {
++            print " + ";
++          }
++          else {
++            print "   ";
++          }
++        }
++        else {
++          print "   ";
++        }
++        print $_;
++      }
++      print "\nNOTE: \"+\" indicates that an analysis is enabled by default.\n";
++    }
++    close PS;
++  }
++  else {
++    print "  *** Could not query Clang for the list of available checkers.\n";
++    if (defined  $ArgClangNotFoundErrMsg) {
++      print "  *** Reason: $ArgClangNotFoundErrMsg\n";
++    }
++  }
++
++print <<ENDTEXT
++
++BUILD OPTIONS
++
++ You can specify any build option acceptable to the build command.
++
++EXAMPLE
++
++ scan-build -o /tmp/myhtmldir make -j4
++
++The above example causes analysis reports to be deposited into a subdirectory
++of "/tmp/myhtmldir" and to run "make" with the "-j4" option. A different
++subdirectory is created each time scan-build analyzes a project. The analyzer
++should support most parallel builds, but not distributed builds.
++
++ENDTEXT
++}
++
++##----------------------------------------------------------------------------##
++# HtmlEscape - HTML entity encode characters that are special in HTML
++##----------------------------------------------------------------------------##
++
++sub HtmlEscape {
++  # copy argument to new variable so we don't clobber the original
++  my $arg = shift || '';
++  my $tmp = $arg;
++  $tmp =~ s/&/&amp;/g;
++  $tmp =~ s/</&lt;/g;
++  $tmp =~ s/>/&gt;/g;
++  return $tmp;
++}
++
++##----------------------------------------------------------------------------##
++# ShellEscape - backslash escape characters that are special to the shell
++##----------------------------------------------------------------------------##
++
++sub ShellEscape {
++  # copy argument to new variable so we don't clobber the original
++  my $arg = shift || '';
++  if ($arg =~ /["\s]/) { return "'" . $arg . "'"; }
++  return $arg;
++}
++
++##----------------------------------------------------------------------------##
++# FindClang - searches for 'clang' executable.
++##----------------------------------------------------------------------------##
++
++sub FindClang {
++  if (!defined $Options{AnalyzerDiscoveryMethod}) {
++    $Clang = Cwd::realpath("$RealBin/bin/clang") if (-f "$RealBin/bin/clang");
++    if (!defined $Clang || ! -x $Clang) {
++      $Clang = Cwd::realpath("$RealBin/clang") if (-f "$RealBin/clang");
++    }
++    if (!defined $Clang || ! -x $Clang) {
++      return "error: Cannot find an executable 'clang' relative to" .
++             " scan-build. Consider using --use-analyzer to pick a version of" .
++             " 'clang' to use for static analysis.\n";
++    }
++  }
++  else {
++    if ($Options{AnalyzerDiscoveryMethod} =~ /^[Xx]code$/) {
++      my $xcrun = `which xcrun`;
++      chomp $xcrun;
++      if ($xcrun eq "") {
++        return "Cannot find 'xcrun' to find 'clang' for analysis.\n";
++      }
++      $Clang = `$xcrun -toolchain XcodeDefault -find clang`;
++      chomp $Clang;
++      if ($Clang eq "") {
++        return "No 'clang' executable found by 'xcrun'\n";
++      }
++    }
++    else {
++      $Clang = $Options{AnalyzerDiscoveryMethod};
++      if (!defined $Clang or not -x $Clang) {
++        return "Cannot find an executable clang at '$Options{AnalyzerDiscoveryMethod}'\n";
++      }
++    }
++  }
++  return undef;
++}
++
++##----------------------------------------------------------------------------##
++# Process command-line arguments.
++##----------------------------------------------------------------------------##
++
++my $RequestDisplayHelp = 0;
++my $ForceDisplayHelp = 0;
++
++sub ProcessArgs {
++  my $Args = shift;
++  my $NumArgs = 0;
++
++  while (@$Args) {
++
++    $NumArgs++;
++
++    # Scan for options we recognize.
++
++    my $arg = $Args->[0];
++
++    if ($arg eq "-h" or $arg eq "--help") {
++      $RequestDisplayHelp = 1;
++      shift @$Args;
++      next;
++    }
++
++    if ($arg eq '-analyze-headers') {
++      shift @$Args;
++      $Options{AnalyzeHeaders} = 1;
++      next;
++    }
++
++    if ($arg eq "-o") {
++      shift @$Args;
++
++      if (!@$Args) {
++        DieDiag("'-o' option requires a target directory name.\n");
++      }
++
++      # Construct an absolute path.  Uses the current working directory
++      # as a base if the original path was not absolute.
++      my $OutDir = shift @$Args;
++      mkpath($OutDir) unless (-e $OutDir);  # abs_path wants existing dir
++      $Options{OutputDir} = abs_path($OutDir);
++
++      next;
++    }
++
++    if ($arg =~ /^--html-title(=(.+))?$/) {
++      shift @$Args;
++
++      if (!defined $2 || $2 eq '') {
++        if (!@$Args) {
++          DieDiag("'--html-title' option requires a string.\n");
++        }
++
++        $Options{HtmlTitle} = shift @$Args;
++      } else {
++        $Options{HtmlTitle} = $2;
++      }
++
++      next;
++    }
++
++    if ($arg eq "-k" or $arg eq "--keep-going") {
++      shift @$Args;
++      $Options{IgnoreErrors} = 1;
++      next;
++    }
++
++    if ($arg =~ /^--use-cc(=(.+))?$/) {
++      shift @$Args;
++      my $cc;
++
++      if (!defined $2 || $2 eq "") {
++        if (!@$Args) {
++          DieDiag("'--use-cc' option requires a compiler executable name.\n");
++        }
++        $cc = shift @$Args;
++      }
++      else {
++        $cc = $2;
++      }
++
++      $Options{UseCC} = $cc;
++      next;
++    }
++
++    if ($arg =~ /^--use-c\+\+(=(.+))?$/) {
++      shift @$Args;
++      my $cxx;
++
++      if (!defined $2 || $2 eq "") {
++        if (!@$Args) {
++          DieDiag("'--use-c++' option requires a compiler executable name.\n");
++        }
++        $cxx = shift @$Args;
++      }
++      else {
++        $cxx = $2;
++      }
++
++      $Options{UseCXX} = $cxx;
++      next;
++    }
++
++    if ($arg =~ /^--analyzer-target(=(.+))?$/) {
++      shift @ARGV;
++      my $AnalyzerTarget;
++
++      if (!defined $2 || $2 eq "") {
++        if (!@ARGV) {
++          DieDiag("'--analyzer-target' option requires a target triple name.\n");
++        }
++        $AnalyzerTarget = shift @ARGV;
++      }
++      else {
++        $AnalyzerTarget = $2;
++      }
++
++      $Options{AnalyzerTarget} = $AnalyzerTarget;
++      next;
++    }
++
++    if ($arg eq "-v") {
++      shift @$Args;
++      $Options{Verbose}++;
++      next;
++    }
++
++    if ($arg eq "-V" or $arg eq "--view") {
++      shift @$Args;
++      $Options{ViewResults} = 1;
++      next;
++    }
++
++    if ($arg eq "--status-bugs") {
++      shift @$Args;
++      $Options{ExitStatusFoundBugs} = 1;
++      next;
++    }
++
++    if ($arg eq "-store") {
++      shift @$Args;
++      $Options{StoreModel} = shift @$Args;
++      next;
++    }
++
++    if ($arg eq "-constraints") {
++      shift @$Args;
++      $Options{ConstraintsModel} = shift @$Args;
++      next;
++    }
++
++    if ($arg eq "-internal-stats") {
++      shift @$Args;
++      $Options{InternalStats} = 1;
++      next;
++    }
++
++    if ($arg eq "-plist") {
++      shift @$Args;
++      $Options{OutputFormat} = "plist";
++      next;
++    }
++
++    if ($arg eq "-plist-html") {
++      shift @$Args;
++      $Options{OutputFormat} = "plist-html";
++      next;
++    }
++
++    if ($arg eq "-analyzer-config") {
++      shift @$Args;
++      push @{$Options{ConfigOptions}}, shift @$Args;
++      next;
++    }
++
++    if ($arg eq "-no-failure-reports") {
++      shift @$Args;
++      $Options{ReportFailures} = 0;
++      next;
++    }
++
++    if ($arg eq "-stats") {
++      shift @$Args;
++      $Options{AnalyzerStats} = 1;
++      next;
++    }
++
++    if ($arg eq "-maxloop") {
++      shift @$Args;
++      $Options{MaxLoop} = shift @$Args;
++      next;
++    }
++
++    if ($arg eq "-enable-checker") {
++      shift @$Args;
++      my $Checker = shift @$Args;
++      # Store $NumArgs to preserve the order the checkers were enabled.
++      $Options{EnableCheckers}{$Checker} = $NumArgs;
++      delete $Options{DisableCheckers}{$Checker};
++      next;
++    }
++
++    if ($arg eq "-disable-checker") {
++      shift @$Args;
++      my $Checker = shift @$Args;
++      # Store $NumArgs to preserve the order the checkers were disabled.
++      $Options{DisableCheckers}{$Checker} = $NumArgs;
++      delete $Options{EnableCheckers}{$Checker};
++      next;
++    }
++
++    if ($arg eq "-load-plugin") {
++      shift @$Args;
++      push @{$Options{PluginsToLoad}}, shift @$Args;
++      next;
++    }
++
++    if ($arg eq "--use-analyzer") {
++      shift @$Args;
++      $Options{AnalyzerDiscoveryMethod} = shift @$Args;
++      next;
++    }
++
++    if ($arg =~ /^--use-analyzer=(.+)$/) {
++      shift @$Args;
++      $Options{AnalyzerDiscoveryMethod} = $1;
++      next;
++    }
++
++    if ($arg eq "--keep-empty") {
++      shift @$Args;
++      $Options{KeepEmpty} = 1;
++      next;
++    }
++
++    if ($arg eq "--override-compiler") {
++      shift @$Args;
++      $Options{OverrideCompiler} = 1;
++      next;
++    }
++
++    DieDiag("unrecognized option '$arg'\n") if ($arg =~ /^-/);
++
++    $NumArgs--;
++    last;
++  }
++  return $NumArgs;
++}
++
++if (!@ARGV) {
++  $ForceDisplayHelp = 1
++}
++
++ProcessArgs(\@ARGV);
++# All arguments are now shifted from @ARGV. The rest is a build command, if any.
++
++if (!@ARGV and !$RequestDisplayHelp) {
++  ErrorDiag("No build command specified.\n\n");
++  $ForceDisplayHelp = 1;
++}
++
++my $ClangNotFoundErrMsg = FindClang();
++
++if ($ForceDisplayHelp || $RequestDisplayHelp) {
++  DisplayHelp($ClangNotFoundErrMsg);
++  exit $ForceDisplayHelp;
++}
++
++DieDiag($ClangNotFoundErrMsg) if (defined $ClangNotFoundErrMsg);
++
++$ClangCXX = $Clang;
++if ($Clang !~ /\+\+(\.exe)?$/) {
++  # If $Clang holds the name of the clang++ executable then we leave
++  # $ClangCXX and $Clang equal, otherwise construct the name of the clang++
++  # executable from the clang executable name.
++
++  # Determine operating system under which this copy of Perl was built.
++  my $IsWinBuild = ($^O =~/msys|cygwin|MSWin32/);
++  if($IsWinBuild) {
++    $ClangCXX =~ s/.exe$/++.exe/;
++  }
++  else {
++    $ClangCXX =~ s/\-\d+\.\d+$//;
++    $ClangCXX .= "++";
++  }
++}
++
++# Make sure to use "" to handle paths with spaces.
++$ClangVersion = HtmlEscape(`"$Clang" --version`);
++
++# Determine where results go.
++$CmdArgs = HtmlEscape(join(' ', map(ShellEscape($_), @ARGV)));
++
++# Determine the output directory for the HTML reports.
++my $BaseDir = $Options{OutputDir};
++$Options{OutputDir} = GetHTMLRunDir($Options{OutputDir});
++
++# Determine the location of ccc-analyzer.
++my $AbsRealBin = Cwd::realpath($RealBin);
++my $Cmd = "$AbsRealBin/../libexec/ccc-analyzer";
++my $CmdCXX = "$AbsRealBin/../libexec/c++-analyzer";
++
++# Portability: use less strict but portable check -e (file exists) instead of
++# non-portable -x (file is executable). On some windows ports -x just checks
++# file extension to determine if a file is executable (see Perl language
++# reference, perlport)
++if (!defined $Cmd || ! -e $Cmd) {
++  $Cmd = "$AbsRealBin/ccc-analyzer";
++  DieDiag("'ccc-analyzer' does not exist at '$Cmd'\n") if(! -e $Cmd);
++}
++if (!defined $CmdCXX || ! -e $CmdCXX) {
++  $CmdCXX = "$AbsRealBin/c++-analyzer";
++  DieDiag("'c++-analyzer' does not exist at '$CmdCXX'\n") if(! -e $CmdCXX);
++}
++
++Diag("Using '$Clang' for static analysis\n");
++
++SetHtmlEnv(\@ARGV, $Options{OutputDir});
++
++my @AnalysesToRun;
++foreach (sort { $Options{EnableCheckers}{$a} <=> $Options{EnableCheckers}{$b} } 
++         keys %{$Options{EnableCheckers}}) { 
++  # Push checkers in order they were enabled.
++  push @AnalysesToRun, "-analyzer-checker", $_;
++}
++foreach (sort { $Options{DisableCheckers}{$a} <=> $Options{DisableCheckers}{$b} } 
++         keys %{$Options{DisableCheckers}}) { 
++  # Push checkers in order they were disabled.
++  push @AnalysesToRun, "-analyzer-disable-checker", $_;
++}
++if ($Options{AnalyzeHeaders}) { push @AnalysesToRun, "-analyzer-opt-analyze-headers"; }
++if ($Options{AnalyzerStats}) { push @AnalysesToRun, '-analyzer-checker=debug.Stats'; }
++if ($Options{MaxLoop} > 0) { push @AnalysesToRun, "-analyzer-max-loop $Options{MaxLoop}"; }
++
++# Delay setting up other environment variables in case we can do true
++# interposition.
++my $CCC_ANALYZER_ANALYSIS = join ' ', @AnalysesToRun;
++my $CCC_ANALYZER_PLUGINS = join ' ', map { "-load ".$_ } @{$Options{PluginsToLoad}};
++my $CCC_ANALYZER_CONFIG = join ' ', map { "-analyzer-config ".$_ } @{$Options{ConfigOptions}};
++my %EnvVars = (
++  'CC' => $Cmd,
++  'CXX' => $CmdCXX,
++  'CLANG' => $Clang,
++  'CLANG_CXX' => $ClangCXX,
++  'VERBOSE' => $Options{Verbose},
++  'CCC_ANALYZER_ANALYSIS' => $CCC_ANALYZER_ANALYSIS,
++  'CCC_ANALYZER_PLUGINS' => $CCC_ANALYZER_PLUGINS,
++  'CCC_ANALYZER_CONFIG' => $CCC_ANALYZER_CONFIG,
++  'OUTPUT_DIR' => $Options{OutputDir},
++  'CCC_CC' => $Options{UseCC},
++  'CCC_CXX' => $Options{UseCXX},
++  'CCC_REPORT_FAILURES' => $Options{ReportFailures},
++  'CCC_ANALYZER_STORE_MODEL' => $Options{StoreModel},
++  'CCC_ANALYZER_CONSTRAINTS_MODEL' => $Options{ConstraintsModel},
++  'CCC_ANALYZER_INTERNAL_STATS' => $Options{InternalStats},
++  'CCC_ANALYZER_OUTPUT_FORMAT' => $Options{OutputFormat},
++  'CLANG_ANALYZER_TARGET' => $Options{AnalyzerTarget}
++);
++
++# Run the build.
++my $ExitStatus = RunBuildCommand(\@ARGV, $Options{IgnoreErrors}, $Cmd, $CmdCXX,
++                                \%EnvVars);
++
++if (defined $Options{OutputFormat}) {
++  if ($Options{OutputFormat} =~ /plist/) {
++    Diag "Analysis run complete.\n";
++    Diag "Analysis results (plist files) deposited in '$Options{OutputDir}'\n";
++  }
++  if ($Options{OutputFormat} =~ /html/) {
++    # Postprocess the HTML directory.
++    my $NumBugs = Postprocess($Options{OutputDir}, $BaseDir,
++                              $Options{AnalyzerStats}, $Options{KeepEmpty});
++
++    if ($Options{ViewResults} and -r "$Options{OutputDir}/index.html") {
++      Diag "Analysis run complete.\n";
++      Diag "Viewing analysis results in '$Options{OutputDir}' using scan-view.\n";
++      my $ScanView = Cwd::realpath("$RealBin/scan-view");
++      if (! -x $ScanView) { $ScanView = "scan-view"; }
++      if (! -x $ScanView) { $ScanView = Cwd::realpath("$RealBin/../../scan-view/bin/scan-view"); }
++      exec $ScanView, "$Options{OutputDir}";
++    }
++
++    if ($Options{ExitStatusFoundBugs}) {
++      exit 1 if ($NumBugs > 0);
++      exit 0;
++    }
++  }
++}
++
++exit $ExitStatus;
+diff --git tools/clang/tools/scan-build/bin/scan-build.bat tools/clang/tools/scan-build/bin/scan-build.bat.orig
+new file mode 100644
+index 0000000..77be674
+--- /dev/null
++++ tools/clang/tools/scan-build/bin/scan-build.bat
+@@ -0,0 +1 @@
++perl -S scan-build %*
+diff --git tools/clang/tools/scan-build/bin/set-xcode-analyzer tools/clang/tools/scan-build/bin/set-xcode-analyzer.orig
+new file mode 100755
+index 0000000..8e67482
+--- /dev/null
++++ tools/clang/tools/scan-build/bin/set-xcode-analyzer
+@@ -0,0 +1,114 @@
++#!/usr/bin/python
++
++# [PR 11661] Note that we hardwire to /usr/bin/python because we
++# want to the use the system version of Python on Mac OS X.
++# This one has the scripting bridge enabled.
++
++import sys
++if sys.version_info < (2, 7):
++    print "set-xcode-analyzer requires Python 2.7 or later"
++    sys.exit(1)
++
++import os
++import subprocess
++import re
++import tempfile
++import shutil
++import stat
++from AppKit import *
++
++def FindClangSpecs(path):
++  print "(+) Searching for xcspec file in: ", path
++  for root, dirs, files in os.walk(path):
++    for f in files:
++      if f.endswith(".xcspec") and f.startswith("Clang LLVM"):
++        yield os.path.join(root, f)
++
++def ModifySpec(path, isBuiltinAnalyzer, pathToChecker):
++  t = tempfile.NamedTemporaryFile(delete=False)
++  foundAnalyzer = False
++  with open(path) as f:
++    if isBuiltinAnalyzer:
++      # First search for CLANG_ANALYZER_EXEC.  Newer
++      # versions of Xcode set EXEC_PATH to be CLANG_ANALYZER_EXEC.
++      with open(path) as f2:
++        for line in f2:
++          if line.find("CLANG_ANALYZER_EXEC") >= 0:
++            pathToChecker = "$(CLANG_ANALYZER_EXEC)"
++            break
++    # Now create a new file.
++    for line in f:
++      if not foundAnalyzer:
++        if line.find("Static Analyzer") >= 0:
++          foundAnalyzer = True
++      else:
++        m = re.search('^(\s*ExecPath\s*=\s*")', line)
++        if m:
++          line = "".join([m.group(0), pathToChecker, '";\n'])
++          # Do not modify further ExecPath's later in the xcspec.
++          foundAnalyzer = False
++      t.write(line)
++  t.close()
++  print "(+) processing:", path
++  try:
++    shutil.copy(t.name, path)
++    os.chmod(path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IROTH)
++  except IOError, why:
++    print "    (-) Cannot update file:", why, "\n"
++  except OSError, why:
++    print "    (-) Cannot update file:", why, "\n"
++  os.unlink(t.name)
++
++def main():
++  from optparse import OptionParser
++  parser = OptionParser('usage: %prog [options]')
++  parser.set_description(__doc__)
++  parser.add_option("--use-checker-build", dest="path",
++                    help="Use the Clang located at the provided absolute path, e.g. /Users/foo/checker-1")
++  parser.add_option("--use-xcode-clang", action="store_const",
++                    const="$(CLANG)", dest="default",
++                    help="Use the Clang bundled with Xcode")
++  (options, args) = parser.parse_args()
++  if options.path is None and options.default is None:
++    parser.error("You must specify a version of Clang to use for static analysis.  Specify '-h' for details")
++
++  # determine if Xcode is running
++  for x in NSWorkspace.sharedWorkspace().runningApplications():
++    if x.localizedName().find("Xcode") >= 0:
++      print "(-) You must quit Xcode first before modifying its configuration files."
++      sys.exit(1)
++
++  isBuiltinAnalyzer = False
++  if options.path:
++    # Expand tildes.
++    path = os.path.expanduser(options.path)
++    if not path.endswith("clang"):
++      print "(+) Using Clang bundled with checker build:", path
++      path = os.path.join(path, "bin", "clang");
++    else:
++      print "(+) Using Clang located at:", path
++  else:
++    print "(+) Using the Clang bundled with Xcode"
++    path = options.default
++    isBuiltinAnalyzer = True
++
++  try:
++    xcode_path = subprocess.check_output(["xcode-select", "-print-path"])
++  except AttributeError:
++    # Fall back to the default install location when using Python < 2.7.0
++    xcode_path = "/Developer"
++  if (xcode_path.find(".app/") != -1):
++    # Cut off the 'Developer' dir, as the xcspec lies in another part
++    # of the Xcode.app subtree.
++    xcode_path = xcode_path.rsplit('/Developer', 1)[0]
++
++  foundSpec = False
++  for x in FindClangSpecs(xcode_path):
++    foundSpec = True
++    ModifySpec(x, isBuiltinAnalyzer, path)
++
++  if foundSpec == False:
++      print "(-) No compiler configuration file was found.  Xcode's analyzer has not been updated."
++
++if __name__ == '__main__':
++  main()
+diff --git tools/clang/tools/scan-build/libexec/c++-analyzer tools/clang/tools/scan-build/libexec/c++-analyzer.orig
+new file mode 100755
+index 0000000..dda5db9
+--- /dev/null
++++ tools/clang/tools/scan-build/libexec/c++-analyzer
+@@ -0,0 +1,8 @@
++#!/usr/bin/env perl
++
++use Cwd qw/ abs_path /;
++use File::Basename qw/ dirname /;
++# Add scan-build dir to the list of places where perl looks for modules.
++use lib dirname(abs_path($0));
++
++do 'ccc-analyzer';
+diff --git tools/clang/tools/scan-build/libexec/c++-analyzer.bat tools/clang/tools/scan-build/libexec/c++-analyzer.bat.orig
+new file mode 100644
+index 0000000..69f048a
+--- /dev/null
++++ tools/clang/tools/scan-build/libexec/c++-analyzer.bat
+@@ -0,0 +1 @@
++perl -S c++-analyzer %*
+diff --git tools/clang/tools/scan-build/libexec/ccc-analyzer tools/clang/tools/scan-build/libexec/ccc-analyzer.orig
+new file mode 100755
+index 0000000..831dd42
+--- /dev/null
++++ tools/clang/tools/scan-build/libexec/ccc-analyzer
+@@ -0,0 +1,777 @@
++#!/usr/bin/env perl
++#
++#                     The LLVM Compiler Infrastructure
++#
++# This file is distributed under the University of Illinois Open Source
++# License. See LICENSE.TXT for details.
++#
++##===----------------------------------------------------------------------===##
++#
++#  A script designed to interpose between the build system and gcc.  It invokes
++#  both gcc and the static analyzer.
++#
++##===----------------------------------------------------------------------===##
++
++use strict;
++use warnings;
++use FindBin;
++use Cwd qw/ getcwd abs_path /;
++use File::Temp qw/ tempfile /;
++use File::Path qw / mkpath /;
++use File::Basename;
++use Text::ParseWords;
++
++##===----------------------------------------------------------------------===##
++# List form 'system' with STDOUT and STDERR captured.
++##===----------------------------------------------------------------------===##
++
++sub silent_system {
++  my $HtmlDir = shift;
++  my $Command = shift;
++
++  # Save STDOUT and STDERR and redirect to a temporary file.
++  open OLDOUT, ">&", \*STDOUT;
++  open OLDERR, ">&", \*STDERR;
++  my ($TmpFH, $TmpFile) = tempfile("temp_buf_XXXXXX",
++                                   DIR => $HtmlDir,
++                                   UNLINK => 1);
++  open(STDOUT, ">$TmpFile");
++  open(STDERR, ">&", \*STDOUT);
++
++  # Invoke 'system', STDOUT and STDERR are output to a temporary file.
++  system $Command, @_;
++
++  # Restore STDOUT and STDERR.
++  open STDOUT, ">&", \*OLDOUT;
++  open STDERR, ">&", \*OLDERR;
++
++  return $TmpFH;
++}
++
++##===----------------------------------------------------------------------===##
++# Compiler command setup.
++##===----------------------------------------------------------------------===##
++
++# Search in the PATH if the compiler exists
++sub SearchInPath {
++    my $file = shift;
++    foreach my $dir (split (':', $ENV{PATH})) {
++        if (-x "$dir/$file") {
++            return 1;
++        }
++    }
++    return 0;
++}
++
++my $Compiler;
++my $Clang;
++my $DefaultCCompiler;
++my $DefaultCXXCompiler;
++my $IsCXX;
++my $AnalyzerTarget;
++
++# If on OSX, use xcrun to determine the SDK root.
++my $UseXCRUN = 0;
++
++if (`uname -a` =~ m/Darwin/) {
++  $DefaultCCompiler = 'clang';
++  $DefaultCXXCompiler = 'clang++';
++  # Older versions of OSX do not have xcrun to
++  # query the SDK location.
++  if (-x "/usr/bin/xcrun") {
++    $UseXCRUN = 1;
++  }
++} else {
++  $DefaultCCompiler = 'gcc';
++  $DefaultCXXCompiler = 'g++';
++}
++
++if ($FindBin::Script =~ /c\+\+-analyzer/) {
++  $Compiler = $ENV{'CCC_CXX'};
++  if (!defined $Compiler || (! -x $Compiler && ! SearchInPath($Compiler))) { $Compiler = $DefaultCXXCompiler; }
++
++  $Clang = $ENV{'CLANG_CXX'};
++  if (!defined $Clang || ! -x $Clang) { $Clang = 'clang++'; }
++
++  $IsCXX = 1
++}
++else {
++  $Compiler = $ENV{'CCC_CC'};
++  if (!defined $Compiler || (! -x $Compiler && ! SearchInPath($Compiler))) { $Compiler = $DefaultCCompiler; }
++
++  $Clang = $ENV{'CLANG'};
++  if (!defined $Clang || ! -x $Clang) { $Clang = 'clang'; }
++
++  $IsCXX = 0
++}
++
++$AnalyzerTarget = $ENV{'CLANG_ANALYZER_TARGET'};
++
++##===----------------------------------------------------------------------===##
++# Cleanup.
++##===----------------------------------------------------------------------===##
++
++my $ReportFailures = $ENV{'CCC_REPORT_FAILURES'};
++if (!defined $ReportFailures) { $ReportFailures = 1; }
++
++my $CleanupFile;
++my $ResultFile;
++
++# Remove any stale files at exit.
++END {
++  if (defined $ResultFile && -z $ResultFile) {
++    unlink($ResultFile);
++  }
++  if (defined $CleanupFile) {
++    unlink($CleanupFile);
++  }
++}
++
++##----------------------------------------------------------------------------##
++#  Process Clang Crashes.
++##----------------------------------------------------------------------------##
++
++sub GetPPExt {
++  my $Lang = shift;
++  if ($Lang =~ /objective-c\+\+/) { return ".mii" };
++  if ($Lang =~ /objective-c/) { return ".mi"; }
++  if ($Lang =~ /c\+\+/) { return ".ii"; }
++  return ".i";
++}
++
++# Set this to 1 if we want to include 'parser rejects' files.
++my $IncludeParserRejects = 0;
++my $ParserRejects = "Parser Rejects";
++my $AttributeIgnored = "Attribute Ignored";
++my $OtherError = "Other Error";
++
++sub ProcessClangFailure {
++  my ($Clang, $Lang, $file, $Args, $HtmlDir, $ErrorType, $ofile) = @_;
++  my $Dir = "$HtmlDir/failures";
++  mkpath $Dir;
++
++  my $prefix = "clang_crash";
++  if ($ErrorType eq $ParserRejects) {
++    $prefix = "clang_parser_rejects";
++  }
++  elsif ($ErrorType eq $AttributeIgnored) {
++    $prefix = "clang_attribute_ignored";
++  }
++  elsif ($ErrorType eq $OtherError) {
++    $prefix = "clang_other_error";
++  }
++
++  # Generate the preprocessed file with Clang.
++  my ($PPH, $PPFile) = tempfile( $prefix . "_XXXXXX",
++                                 SUFFIX => GetPPExt($Lang),
++                                 DIR => $Dir);
++  close ($PPH);
++  system $Clang, @$Args, "-E", "-o", $PPFile;
++
++  # Create the info file.
++  open (OUT, ">", "$PPFile.info.txt") or die "Cannot open $PPFile.info.txt\n";
++  print OUT abs_path($file), "\n";
++  print OUT "$ErrorType\n";
++  print OUT "@$Args\n";
++  close OUT;
++  `uname -a >> $PPFile.info.txt 2>&1`;
++  `"$Compiler" -v >> $PPFile.info.txt 2>&1`;
++  rename($ofile, "$PPFile.stderr.txt");
++  return (basename $PPFile);
++}
++
++##----------------------------------------------------------------------------##
++#  Running the analyzer.
++##----------------------------------------------------------------------------##
++
++sub GetCCArgs {
++  my $HtmlDir = shift;
++  my $mode = shift;
++  my $Args = shift;
++  my $line;
++  my $OutputStream = silent_system($HtmlDir, $Clang, "-###", $mode, @$Args);
++  while (<$OutputStream>) {
++    next if (!/\s"?-cc1"?\s/);
++    $line = $_;
++  }
++  die "could not find clang line\n" if (!defined $line);
++  # Strip leading and trailing whitespace characters.
++  $line =~ s/^\s+|\s+$//g;
++  my @items = quotewords('\s+', 0, $line);
++  my $cmd = shift @items;
++  die "cannot find 'clang' in 'clang' command\n" if (!($cmd =~ /clang/));
++  return \@items;
++}
++
++sub Analyze {
++  my ($Clang, $OriginalArgs, $AnalyzeArgs, $Lang, $Output, $Verbose, $HtmlDir,
++      $file) = @_;
++
++  my @Args = @$OriginalArgs;
++  my $Cmd;
++  my @CmdArgs;
++  my @CmdArgsSansAnalyses;
++
++  if ($Lang =~ /header/) {
++    exit 0 if (!defined ($Output));
++    $Cmd = 'cp';
++    push @CmdArgs, $file;
++    # Remove the PCH extension.
++    $Output =~ s/[.]gch$//;
++    push @CmdArgs, $Output;
++    @CmdArgsSansAnalyses = @CmdArgs;
++  }
++  else {
++    $Cmd = $Clang;
++
++    # Create arguments for doing regular parsing.
++    my $SyntaxArgs = GetCCArgs($HtmlDir, "-fsyntax-only", \@Args);
++    @CmdArgsSansAnalyses = @$SyntaxArgs;
++
++    # Create arguments for doing static analysis.
++    if (defined $ResultFile) {
++      push @Args, '-o', $ResultFile;
++    }
++    elsif (defined $HtmlDir) {
++      push @Args, '-o', $HtmlDir;
++    }
++    if ($Verbose) {
++      push @Args, "-Xclang", "-analyzer-display-progress";
++    }
++
++    foreach my $arg (@$AnalyzeArgs) {
++      push @Args, "-Xclang", $arg;
++    }
++
++    # Display Ubiviz graph?
++    if (defined $ENV{'CCC_UBI'}) {
++      push @Args, "-Xclang", "-analyzer-viz-egraph-ubigraph";
++    }
++
++    if (defined $AnalyzerTarget) {
++      push @Args, "-target", $AnalyzerTarget;
++    }
++
++    my $AnalysisArgs = GetCCArgs($HtmlDir, "--analyze", \@Args);
++    @CmdArgs = @$AnalysisArgs;
++  }
++
++  my @PrintArgs;
++  my $dir;
++
++  if ($Verbose) {
++    $dir = getcwd();
++    print STDERR "\n[LOCATION]: $dir\n";
++    push @PrintArgs,"'$Cmd'";
++    foreach my $arg (@CmdArgs) {
++        push @PrintArgs,"\'$arg\'";
++    }
++  }
++  if ($Verbose == 1) {
++    # We MUST print to stderr.  Some clients use the stdout output of
++    # gcc for various purposes.
++    print STDERR join(' ', @PrintArgs);
++    print STDERR "\n";
++  }
++  elsif ($Verbose == 2) {
++    print STDERR "#SHELL (cd '$dir' && @PrintArgs)\n";
++  }
++
++  # Save STDOUT and STDERR of clang to a temporary file and reroute
++  # all clang output to ccc-analyzer's STDERR.
++  # We save the output file in the 'crashes' directory if clang encounters
++  # any problems with the file.
++  my ($ofh, $ofile) = tempfile("clang_output_XXXXXX", DIR => $HtmlDir);
++
++  my $OutputStream = silent_system($HtmlDir, $Cmd, @CmdArgs);
++  while ( <$OutputStream> ) {
++    print $ofh $_;
++    print STDERR $_;
++  }
++  my $Result = $?;
++  close $ofh;
++
++  # Did the command die because of a signal?
++  if ($ReportFailures) {
++    if ($Result & 127 and $Cmd eq $Clang and defined $HtmlDir) {
++      ProcessClangFailure($Clang, $Lang, $file, \@CmdArgsSansAnalyses,
++                          $HtmlDir, "Crash", $ofile);
++    }
++    elsif ($Result) {
++      if ($IncludeParserRejects && !($file =~/conftest/)) {
++        ProcessClangFailure($Clang, $Lang, $file, \@CmdArgsSansAnalyses,
++                            $HtmlDir, $ParserRejects, $ofile);
++      } else {
++        ProcessClangFailure($Clang, $Lang, $file, \@CmdArgsSansAnalyses,
++                            $HtmlDir, $OtherError, $ofile);
++      }
++    }
++    else {
++      # Check if there were any unhandled attributes.
++      if (open(CHILD, $ofile)) {
++        my %attributes_not_handled;
++
++        # Don't flag warnings about the following attributes that we
++        # know are currently not supported by Clang.
++        $attributes_not_handled{"cdecl"} = 1;
++
++        my $ppfile;
++        while (<CHILD>) {
++          next if (! /warning: '([^\']+)' attribute ignored/);
++
++          # Have we already spotted this unhandled attribute?
++          next if (defined $attributes_not_handled{$1});
++          $attributes_not_handled{$1} = 1;
++
++          # Get the name of the attribute file.
++          my $dir = "$HtmlDir/failures";
++          my $afile = "$dir/attribute_ignored_$1.txt";
++
++          # Only create another preprocessed file if the attribute file
++          # doesn't exist yet.
++          next if (-e $afile);
++
++          # Add this file to the list of files that contained this attribute.
++          # Generate a preprocessed file if we haven't already.
++          if (!(defined $ppfile)) {
++            $ppfile = ProcessClangFailure($Clang, $Lang, $file,
++                                          \@CmdArgsSansAnalyses,
++                                          $HtmlDir, $AttributeIgnored, $ofile);
++          }
++
++          mkpath $dir;
++          open(AFILE, ">$afile");
++          print AFILE "$ppfile\n";
++          close(AFILE);
++        }
++        close CHILD;
++      }
++    }
++  }
++
++  unlink($ofile);
++}
++
++##----------------------------------------------------------------------------##
++#  Lookup tables.
++##----------------------------------------------------------------------------##
++
++my %CompileOptionMap = (
++  '-nostdinc' => 0,
++  '-include' => 1,
++  '-idirafter' => 1,
++  '-imacros' => 1,
++  '-iprefix' => 1,
++  '-iquote' => 1,
++  '-iwithprefix' => 1,
++  '-iwithprefixbefore' => 1
++);
++
++my %LinkerOptionMap = (
++  '-framework' => 1,
++  '-fobjc-link-runtime' => 0
++);
++
++my %CompilerLinkerOptionMap = (
++  '-Wwrite-strings' => 0,
++  '-ftrapv-handler' => 1, # specifically call out separated -f flag
++  '-mios-simulator-version-min' => 0, # This really has 1 argument, but always has '='
++  '-isysroot' => 1,
++  '-arch' => 1,
++  '-m32' => 0,
++  '-m64' => 0,
++  '-stdlib' => 0, # This is really a 1 argument, but always has '='
++  '--sysroot' => 1,
++  '-target' => 1,
++  '-v' => 0,
++  '-mmacosx-version-min' => 0, # This is really a 1 argument, but always has '='
++  '-miphoneos-version-min' => 0 # This is really a 1 argument, but always has '='
++);
++
++my %IgnoredOptionMap = (
++  '-MT' => 1,  # Ignore these preprocessor options.
++  '-MF' => 1,
++
++  '-fsyntax-only' => 0,
++  '-save-temps' => 0,
++  '-install_name' => 1,
++  '-exported_symbols_list' => 1,
++  '-current_version' => 1,
++  '-compatibility_version' => 1,
++  '-init' => 1,
++  '-e' => 1,
++  '-seg1addr' => 1,
++  '-bundle_loader' => 1,
++  '-multiply_defined' => 1,
++  '-sectorder' => 3,
++  '--param' => 1,
++  '-u' => 1,
++  '--serialize-diagnostics' => 1
++);
++
++my %LangMap = (
++  'c'   => $IsCXX ? 'c++' : 'c',
++  'cp'  => 'c++',
++  'cpp' => 'c++',
++  'cxx' => 'c++',
++  'txx' => 'c++',
++  'cc'  => 'c++',
++  'C'   => 'c++',
++  'ii'  => 'c++-cpp-output',
++  'i'   => $IsCXX ? 'c++-cpp-output' : 'c-cpp-output',
++  'm'   => 'objective-c',
++  'mi'  => 'objective-c-cpp-output',
++  'mm'  => 'objective-c++',
++  'mii' => 'objective-c++-cpp-output',
++);
++
++my %UniqueOptions = (
++  '-isysroot' => 0
++);
++
++##----------------------------------------------------------------------------##
++# Languages accepted.
++##----------------------------------------------------------------------------##
++
++my %LangsAccepted = (
++  "objective-c" => 1,
++  "c" => 1,
++  "c++" => 1,
++  "objective-c++" => 1,
++  "c-cpp-output" => 1,
++  "objective-c-cpp-output" => 1,
++  "c++-cpp-output" => 1
++);
++
++##----------------------------------------------------------------------------##
++#  Main Logic.
++##----------------------------------------------------------------------------##
++
++my $Action = 'link';
++my @CompileOpts;
++my @LinkOpts;
++my @Files;
++my $Lang;
++my $Output;
++my %Uniqued;
++
++# Forward arguments to gcc.
++my $Status = system($Compiler,@ARGV);
++if (defined $ENV{'CCC_ANALYZER_LOG'}) {
++  print STDERR "$Compiler @ARGV\n";
++}
++if ($Status) { exit($Status >> 8); }
++
++# Get the analysis options.
++my $Analyses = $ENV{'CCC_ANALYZER_ANALYSIS'};
++
++# Get the plugins to load.
++my $Plugins = $ENV{'CCC_ANALYZER_PLUGINS'};
++
++# Get the store model.
++my $StoreModel = $ENV{'CCC_ANALYZER_STORE_MODEL'};
++
++# Get the constraints engine.
++my $ConstraintsModel = $ENV{'CCC_ANALYZER_CONSTRAINTS_MODEL'};
++
++#Get the internal stats setting.
++my $InternalStats = $ENV{'CCC_ANALYZER_INTERNAL_STATS'};
++
++# Get the output format.
++my $OutputFormat = $ENV{'CCC_ANALYZER_OUTPUT_FORMAT'};
++if (!defined $OutputFormat) { $OutputFormat = "html"; }
++
++# Get the config options.
++my $ConfigOptions = $ENV{'CCC_ANALYZER_CONFIG'};
++
++# Determine the level of verbosity.
++my $Verbose = 0;
++if (defined $ENV{'CCC_ANALYZER_VERBOSE'}) { $Verbose = 1; }
++if (defined $ENV{'CCC_ANALYZER_LOG'}) { $Verbose = 2; }
++
++# Get the HTML output directory.
++my $HtmlDir = $ENV{'CCC_ANALYZER_HTML'};
++
++my %DisabledArchs = ('ppc' => 1, 'ppc64' => 1);
++my %ArchsSeen;
++my $HadArch = 0;
++my $HasSDK = 0;
++
++# Process the arguments.
++foreach (my $i = 0; $i < scalar(@ARGV); ++$i) {
++  my $Arg = $ARGV[$i];
++  my ($ArgKey) = split /=/,$Arg,2;
++
++  # Be friendly to "" in the argument list.
++  if (!defined($ArgKey)) {
++    next;
++  }
++
++  # Modes ccc-analyzer supports
++  if ($Arg =~ /^-(E|MM?)$/) { $Action = 'preprocess'; }
++  elsif ($Arg eq '-c') { $Action = 'compile'; }
++  elsif ($Arg =~ /^-print-prog-name/) { exit 0; }
++
++  # Specially handle duplicate cases of -arch
++  if ($Arg eq "-arch") {
++    my $arch = $ARGV[$i+1];
++    # We don't want to process 'ppc' because of Clang's lack of support
++    # for Altivec (also some #defines won't likely be defined correctly, etc.)
++    if (!(defined $DisabledArchs{$arch})) { $ArchsSeen{$arch} = 1; }
++    $HadArch = 1;
++    ++$i;
++    next;
++  }
++
++  # On OSX/iOS, record if an SDK path was specified.  This
++  # is innocuous for other platforms, so the check just happens.
++  if ($Arg =~ /^-isysroot/) {
++    $HasSDK = 1;
++  }
++
++  # Options with possible arguments that should pass through to compiler.
++  if (defined $CompileOptionMap{$ArgKey}) {
++    my $Cnt = $CompileOptionMap{$ArgKey};
++    push @CompileOpts,$Arg;
++    while ($Cnt > 0) { ++$i; --$Cnt; push @CompileOpts, $ARGV[$i]; }
++    next;
++  }
++  # Handle the case where there isn't a space after -iquote
++  if ($Arg =~ /^-iquote.*/) {
++    push @CompileOpts,$Arg;
++    next;
++  }
++
++  # Options with possible arguments that should pass through to linker.
++  if (defined $LinkerOptionMap{$ArgKey}) {
++    my $Cnt = $LinkerOptionMap{$ArgKey};
++    push @LinkOpts,$Arg;
++    while ($Cnt > 0) { ++$i; --$Cnt; push @LinkOpts, $ARGV[$i]; }
++    next;
++  }
++
++  # Options with possible arguments that should pass through to both compiler
++  # and the linker.
++  if (defined $CompilerLinkerOptionMap{$ArgKey}) {
++    my $Cnt = $CompilerLinkerOptionMap{$ArgKey};
++
++    # Check if this is an option that should have a unique value, and if so
++    # determine if the value was checked before.
++    if ($UniqueOptions{$Arg}) {
++      if (defined $Uniqued{$Arg}) {
++        $i += $Cnt;
++        next;
++      }
++      $Uniqued{$Arg} = 1;
++    }
++
++    push @CompileOpts,$Arg;
++    push @LinkOpts,$Arg;
++
++    while ($Cnt > 0) {
++      ++$i; --$Cnt;
++      push @CompileOpts, $ARGV[$i];
++      push @LinkOpts, $ARGV[$i];
++    }
++    next;
++  }
++
++  # Ignored options.
++  if (defined $IgnoredOptionMap{$ArgKey}) {
++    my $Cnt = $IgnoredOptionMap{$ArgKey};
++    while ($Cnt > 0) {
++      ++$i; --$Cnt;
++    }
++    next;
++  }
++
++  # Compile mode flags.
++  if ($Arg =~ /^-(?:[DIU]|isystem)(.*)$/) {
++    my $Tmp = $Arg;
++    if ($1 eq '') {
++      # FIXME: Check if we are going off the end.
++      ++$i;
++      $Tmp = $Arg . $ARGV[$i];
++    }
++    push @CompileOpts,$Tmp;
++    next;
++  }
++
++  if ($Arg =~ /^-m.*/) {
++    push @CompileOpts,$Arg;
++    next;
++  }
++
++  # Language.
++  if ($Arg eq '-x') {
++    $Lang = $ARGV[$i+1];
++    ++$i; next;
++  }
++
++  # Output file.
++  if ($Arg eq '-o') {
++    ++$i;
++    $Output = $ARGV[$i];
++    next;
++  }
++
++  # Get the link mode.
++  if ($Arg =~ /^-[l,L,O]/) {
++    if ($Arg eq '-O') { push @LinkOpts,'-O1'; }
++    elsif ($Arg eq '-Os') { push @LinkOpts,'-O2'; }
++    else { push @LinkOpts,$Arg; }
++
++    # Must pass this along for the __OPTIMIZE__ macro
++    if ($Arg =~ /^-O/) { push @CompileOpts,$Arg; }
++    next;
++  }
++
++  if ($Arg =~ /^-std=/) {
++    push @CompileOpts,$Arg;
++    next;
++  }
++
++  # Get the compiler/link mode.
++  if ($Arg =~ /^-F(.+)$/) {
++    my $Tmp = $Arg;
++    if ($1 eq '') {
++      # FIXME: Check if we are going off the end.
++      ++$i;
++      $Tmp = $Arg . $ARGV[$i];
++    }
++    push @CompileOpts,$Tmp;
++    push @LinkOpts,$Tmp;
++    next;
++  }
++
++  # Input files.
++  if ($Arg eq '-filelist') {
++    # FIXME: Make sure we aren't walking off the end.
++    open(IN, $ARGV[$i+1]);
++    while (<IN>) { s/\015?\012//; push @Files,$_; }
++    close(IN);
++    ++$i;
++    next;
++  }
++
++  if ($Arg =~ /^-f/) {
++    push @CompileOpts,$Arg;
++    push @LinkOpts,$Arg;
++    next;
++  }
++
++  # Handle -Wno-.  We don't care about extra warnings, but
++  # we should suppress ones that we don't want to see.
++  if ($Arg =~ /^-Wno-/) {
++    push @CompileOpts, $Arg;
++    next;
++  }
++
++  # Handle -Xclang some-arg. Add both arguments to the compiler options.
++  if ($Arg =~ /^-Xclang$/) {
++    # FIXME: Check if we are going off the end.
++    ++$i;
++    push @CompileOpts, $Arg;
++    push @CompileOpts, $ARGV[$i];
++    next;
++  }
++
++  if (!($Arg =~ /^-/)) {
++    push @Files, $Arg;
++    next;
++  }
++}
++
++# If we are on OSX and have an installation where the
++# default SDK is inferred by xcrun use xcrun to infer
++# the SDK.
++if (not $HasSDK and $UseXCRUN) {
++  my $sdk = `/usr/bin/xcrun --show-sdk-path -sdk macosx`;
++  chomp $sdk;
++  push @CompileOpts, "-isysroot", $sdk;
++}
++
++if ($Action eq 'compile' or $Action eq 'link') {
++  my @Archs = keys %ArchsSeen;
++  # Skip the file if we don't support the architectures specified.
++  exit 0 if ($HadArch && scalar(@Archs) == 0);
++
++  foreach my $file (@Files) {
++    # Determine the language for the file.
++    my $FileLang = $Lang;
++
++    if (!defined($FileLang)) {
++      # Infer the language from the extension.
++      if ($file =~ /[.]([^.]+)$/) {
++        $FileLang = $LangMap{$1};
++      }
++    }
++
++    # FileLang still not defined?  Skip the file.
++    next if (!defined $FileLang);
++
++    # Language not accepted?
++    next if (!defined $LangsAccepted{$FileLang});
++
++    my @CmdArgs;
++    my @AnalyzeArgs;
++
++    if ($FileLang ne 'unknown') {
++      push @CmdArgs, '-x', $FileLang;
++    }
++
++    if (defined $StoreModel) {
++      push @AnalyzeArgs, "-analyzer-store=$StoreModel";
++    }
++
++    if (defined $ConstraintsModel) {
++      push @AnalyzeArgs, "-analyzer-constraints=$ConstraintsModel";
++    }
++
++    if (defined $InternalStats) {
++      push @AnalyzeArgs, "-analyzer-stats";
++    }
++
++    if (defined $Analyses) {
++      push @AnalyzeArgs, split '\s+', $Analyses;
++    }
++
++    if (defined $Plugins) {
++      push @AnalyzeArgs, split '\s+', $Plugins;
++    }
++
++    if (defined $OutputFormat) {
++      push @AnalyzeArgs, "-analyzer-output=" . $OutputFormat;
++      if ($OutputFormat =~ /plist/) {
++        # Change "Output" to be a file.
++        my ($h, $f) = tempfile("report-XXXXXX", SUFFIX => ".plist",
++                               DIR => $HtmlDir);
++        $ResultFile = $f;
++        # If the HtmlDir is not set, we should clean up the plist files.
++        if (!defined $HtmlDir || -z $HtmlDir) {
++          $CleanupFile = $f;
++        }
++      }
++    }
++    if (defined $ConfigOptions) {
++      push @AnalyzeArgs, split '\s+', $ConfigOptions;
++    }
++
++    push @CmdArgs, @CompileOpts;
++    push @CmdArgs, $file;
++
++    if (scalar @Archs) {
++      foreach my $arch (@Archs) {
++        my @NewArgs;
++        push @NewArgs, '-arch', $arch;
++        push @NewArgs, @CmdArgs;
++        Analyze($Clang, \@NewArgs, \@AnalyzeArgs, $FileLang, $Output,
++                $Verbose, $HtmlDir, $file);
++      }
++    }
++    else {
++      Analyze($Clang, \@CmdArgs, \@AnalyzeArgs, $FileLang, $Output,
++              $Verbose, $HtmlDir, $file);
++    }
++  }
++}
+diff --git tools/clang/tools/scan-build/libexec/ccc-analyzer.bat tools/clang/tools/scan-build/libexec/ccc-analyzer.bat.orig
+new file mode 100644
+index 0000000..2a85376
+--- /dev/null
++++ tools/clang/tools/scan-build/libexec/ccc-analyzer.bat
+@@ -0,0 +1 @@
++perl -S ccc-analyzer %*
+diff --git tools/clang/tools/scan-build/man/scan-build.1 tools/clang/tools/scan-build/man/scan-build.1.orig
+new file mode 100644
+index 0000000..3d3a9f8
+--- /dev/null
++++ tools/clang/tools/scan-build/man/scan-build.1
+@@ -0,0 +1,349 @@
++.\" This file is distributed under the University of Illinois Open Source
++.\" License. See LICENSE.TXT for details.
++.\" $Id$
++.Dd May 25, 2012
++.Dt SCAN-BUILD 1
++.Os "clang" "3.5"
++.Sh NAME
++.Nm scan-build
++.Nd Clang static analyzer
++.Sh SYNOPSIS
++.Nm
++.Op Fl ohkvV
++.Op Fl analyze-headers
++.Op Fl enable-checker Op Ar checker_name
++.Op Fl disable-checker Op Ar checker_name
++.Op Fl Fl help
++.Op Fl Fl help-checkers
++.Op Fl Fl html-title Op Ar =title
++.Op Fl Fl keep-going
++.Op Fl plist
++.Op Fl plist-html
++.Op Fl Fl status-bugs
++.Op Fl Fl use-c++ Op Ar =compiler_path
++.Op Fl Fl use-cc Op Ar =compiler_path
++.Op Fl Fl view
++.Op Fl constraints Op Ar model
++.Op Fl maxloop Ar N
++.Op Fl no-failure-reports
++.Op Fl stats
++.Op Fl store Op Ar model
++.Ar build_command
++.Op build_options
++.\"
++.\" Sh DESCRIPTION
++.Sh DESCRIPTION
++.Nm
++is a Perl script that invokes the Clang static analyzer.  Options used by
++.Nm
++or by the analyzer appear first, followed by the
++.Ar build_command
++and any
++.Ar build_options
++normally used to build the target system.
++.Pp
++The static analyzer employs a long list of checking algorithms, see
++.Sx CHECKERS .
++Output can be written in standard
++.Li .plist
++and/or HTML format.
++.Pp
++The following options are supported:
++.Bl -tag -width indent
++.It Fl analyze-headers
++Also analyze functions in #included files.
++.It Fl enable-checker Ar checker_name , Fl disable-checker Ar checker_name
++Enable/disable
++.Ar checker_name .
++See
++.Sx CHECKERS .
++.It Fl h , Fl Fl help
++Display this message.
++.It Fl Fl help-checkers
++List default checkers, see
++.Sx CHECKERS .
++.It Fl Fl html-title Ns Op = Ns Ar title
++Specify the title used on generated HTML pages.
++A default title is generated if
++.Ar title
++is not specified.
++.It Fl k , Fl Fl keep-going
++Add a
++.Dq keep on going
++option to
++.Ar build_command .
++Currently supports make and xcodebuild. This is a convenience option;
++one can specify this behavior directly using build options.
++.It Fl o
++Target directory for HTML report files.  Subdirectories will be
++created as needed to represent separate invocations
++of the analyzer.  If this option is not specified, a directory is
++created in /tmp (TMPDIR on Mac OS X) to store the reports.
++.It Fl plist
++Output the results as a set of
++.Li .plist
++files. (By default the output of
++.Nm
++is a set of HTML files.)
++.It Fl plist-html
++Output the results as a set of HTML and .plist files
++.It Fl Fl status-bugs
++Set exit status to 1 if it found potential bugs and 0 otherwise. By
++default the exit status of
++.Nm
++is that returned by
++.Ar build_command .
++.It Fl Fl use-c++ Ns Op = Ns Ar compiler_path
++Guess the default compiler for your C++ and Objective-C++ code. Use this
++option to specify an alternate compiler.
++.It Fl Fl use-cc Ns Op = Ns Ar compiler_path
++Guess the default compiler for your C and Objective-C code. Use this
++option to specify an alternate compiler.
++.It Fl v
++Verbose output from
++.Nm
++and the analyzer. A second and
++third
++.Ar v
++increases verbosity.
++.It Fl V , Fl Fl view
++View analysis results in a web browser when the build completes.
++.It Fl constraints Op Ar model
++Specify the contraint engine used by the analyzer.  By default the
++.Ql range
++model is used.  Specifying
++.Ql basic
++uses a simpler, less powerful constraint model used by checker-0.160
++and earlier.
++.It Fl maxloop Ar N
++Specifiy the number of times a block can be visited before giving
++up. Default is 4. Increase for more comprehensive coverage at a
++cost of speed.
++.It Fl no-failure-reports
++Do not create a
++.Ql failures
++subdirectory that includes analyzer crash reports and preprocessed
++source files.
++.It Fl stats
++Generates visitation statistics for the project being analyzed.
++.It Fl store Op Ar model
++Specify the store model used by the analyzer. By default, the
++.Ql region
++store model is used.
++.Ql region
++specifies a field-
++sensitive store model. Users can also specify
++.Ql basic
++which is far less precise but can more quickly analyze code.
++.Ql basic
++was the default store model for checker-0.221 and earlier.
++.\"
++.El
++.Sh EXIT STATUS
++.Nm
++returns the value returned by
++.Ar build_command
++unless
++.Fl Fl status-bugs
++or
++.Fl Fl keep-going
++is used.
++.\"
++.\" Other sections not yet used ...
++.\" .Sh ENVIRONMENT
++.\" .Sh FILES
++.\" .Sh DIAGNOSTICS
++.\" .Sh COMPATIBILITY
++.\" .Sh HISTORY
++.\" .Sh BUGS
++.\"
++.Sh CHECKERS
++The checkers listed below may be enabled/disabled using the
++.Fl enable-checker
++and
++.Fl disable-checker
++options.
++A default group of checkers is run unless explicitly disabled.
++Exactly which checkers constitute the default group is a function
++of the operating system in use; they are listed with
++.Fl Fl help-checkers .
++.Bl -tag -width indent.
++.It core.AdjustedReturnValue
++Check to see if the return value of a function call is different than
++the caller expects (e.g., from calls through function pointers).
++.It core.AttributeNonNull
++Check for null pointers passed as arguments to a function whose arguments are marked with the
++.Ql nonnull
++attribute.
++.It core.CallAndMessage
++Check for logical errors for function calls and Objective-C message expressions (e.g., uninitialized arguments, null function pointers).
++.It core.DivideZero
++Check for division by zero.
++.It core.NullDereference
++Check for dereferences of null pointers.
++.It core.StackAddressEscape
++Check that addresses to stack memory do not escape the function.
++.It core.UndefinedBinaryOperatorResult
++Check for undefined results of binary operators.
++.It core.VLASize
++Check for declarations of VLA of undefined or zero size.
++.It core.builtin.BuiltinFunctions
++Evaluate compiler builtin functions, e.g.
++.Fn alloca .
++.It core.builtin.NoReturnFunctions
++Evaluate
++.Ql panic
++functions that are known to not return to the caller.
++.It core.uninitialized.ArraySubscript
++Check for uninitialized values used as array subscripts.
++.It core.uninitialized.Assign
++Check for assigning uninitialized values.
++.It core.uninitialized.Branch
++Check for uninitialized values used as branch conditions.
++.It core.uninitialized.CapturedBlockVariable
++Check for blocks that capture uninitialized values.
++.It core.uninitialized.UndefReturn
++Check for uninitialized values being returned to the caller.
++.It deadcode.DeadStores
++Check for values stored to variables that are never read afterwards.
++.It debug.DumpCFG
++Display Control-Flow Graphs.
++.It debug.DumpCallGraph
++Display Call Graph.
++.It debug.DumpDominators
++Print the dominance tree for a given Control-Flow Graph.
++.It debug.DumpLiveVars
++Print results of live variable analysis.
++.It debug.Stats
++Emit warnings with analyzer statistics.
++.It debug.TaintTest
++Mark tainted symbols as such.
++.It debug.ViewCFG
++View Control-Flow Graphs using
++.Ic GraphViz .
++.It debug.ViewCallGraph
++View Call Graph using
++.Ic GraphViz .
++.It llvm.Conventions
++Check code for LLVM codebase conventions.
++.It osx.API
++Check for proper uses of various Mac OS X APIs.
++.It osx.AtomicCAS
++Evaluate calls to
++.Vt OSAtomic
++functions.
++.It osx.SecKeychainAPI
++Check for proper uses of Secure Keychain APIs.
++.It osx.cocoa.AtSync
++Check for null pointers used as mutexes for @synchronized.
++.It osx.cocoa.ClassRelease
++Check for sending
++.Ql retain ,
++.Ql release,
++or
++.Ql autorelease
++directly to a Class.
++.It osx.cocoa.IncompatibleMethodTypes
++Warn about Objective-C method signatures with type incompatibilities.
++.It osx.cocoa.NSAutoreleasePool
++Warn for suboptimal uses of
++.Vt NSAutoreleasePool
++in Objective-C GC mode.
++.It osx.cocoa.NSError
++Check usage of NSError** parameters.
++.It osx.cocoa.NilArg
++Check for prohibited nil arguments to Objective-C method calls.
++.It osx.cocoa.RetainCount
++Check for leaks and improper reference count management.
++.It osx.cocoa.SelfInit
++Check that
++.Ql self
++is properly initialized inside an initializer method.
++.It osx.cocoa.UnusedIvars
++Warn about private ivars that are never used.
++.It osx.cocoa.VariadicMethodTypes
++Check for passing non-Objective-C types to variadic methods that expect only Objective-C types.
++.It osx.coreFoundation.CFError
++Check usage of CFErrorRef* parameters.
++.It osx.coreFoundation.CFNumber
++Check for proper uses of
++.Fn CFNumberCreate .
++.It osx.coreFoundation.CFRetainRelease
++Check for null arguments to
++.Fn CFRetain ,
++.Fn CFRelease ,
++and
++.Fn CFMakeCollectable .
++.It osx.coreFoundation.containers.OutOfBounds
++Checks for index out-of-bounds when using the
++.Vt CFArray
++API.
++.It osx.coreFoundation.containers.PointerSizedValues
++Warns if
++.Vt CFArray ,
++.Vt CFDictionary ,
++or
++.Vt CFSet
++are created with non-pointer-size values.
++.It security.FloatLoopCounter
++Warn on using a floating point value as a loop counter (CERT: FLP30-C, FLP30-CPP).
++.It security.insecureAPI.UncheckedReturn
++Warn on uses of functions whose return values must be always checked.
++.It security.insecureAPI.getpw
++Warn on uses of
++.Fn getpw .
++.It security.insecureAPI.gets
++Warn on uses of
++.Fn gets .
++.It security.insecureAPI.mkstemp
++Warn when
++.Fn mkstemp
++is passed fewer than 6 X's in the format string.
++.It security.insecureAPI.mktemp
++Warn on uses of
++.Fn mktemp .
++.It security.insecureAPI.rand
++Warn on uses of
++.Fn rand ,
++.Fn random ,
++and related functions.
++.It security.insecureAPI.strcpy
++Warn on uses of
++.Fn strcpy
++and
++.Fn strcat .
++.It security.insecureAPI.vfork
++Warn on uses of
++.Fn vfork .
++.It unix.API
++Check calls to various UNIX/Posix functions.
++.It unix.Malloc
++Check for memory leaks, double free, and use-after-free.
++.It unix.cstring.BadSizeArg
++Check the size argument passed into C string functions for common
++erroneous patterns.
++.It unix.cstring.NullArg
++Check for null pointers being passed as arguments to C string functions.
++.El
++.\"
++.Sh EXAMPLE
++.Ic scan-build -o /tmp/myhtmldir make -j4
++.Pp
++The above example causes analysis reports to be deposited into
++a subdirectory of
++.Pa /tmp/myhtmldir
++and to run
++.Ic make
++with the
++.Fl j4
++option.
++A different subdirectory is created each time
++.Nm
++analyzes a project.
++The analyzer should support most parallel builds, but not distributed builds.
++.Sh AUTHORS
++.Nm
++was written by
++.An "Ted Kremenek" .
++Documentation contributed by
++.An "James K. Lowden" Aq jklowden@schemamania.org .
+diff --git tools/clang/tools/scan-build/share/scan-build/scanview.css tools/clang/tools/scan-build/share/scan-build/scanview.css.orig
+new file mode 100644
+index 0000000..cf8a5a6
+--- /dev/null
++++ tools/clang/tools/scan-build/share/scan-build/scanview.css
+@@ -0,0 +1,62 @@
++body { color:#000000; background-color:#ffffff }
++body { font-family: Helvetica, sans-serif; font-size:9pt }
++h1 { font-size: 14pt; }
++h2 { font-size: 12pt; }
++table { font-size:9pt }
++table { border-spacing: 0px; border: 1px solid black }
++th, table thead {
++  background-color:#eee; color:#666666;
++  font-weight: bold; cursor: default;
++  text-align:center;
++  font-weight: bold; font-family: Verdana;
++  white-space:nowrap;
++}
++.W { font-size:0px }
++th, td { padding:5px; padding-left:8px; text-align:left }
++td.SUMM_DESC { padding-left:12px }
++td.DESC { white-space:pre }
++td.Q { text-align:right }
++td { text-align:left }
++tbody.scrollContent { overflow:auto }
++
++table.form_group {
++    background-color: #ccc;
++    border: 1px solid #333;
++    padding: 2px;
++}
++
++table.form_inner_group {
++    background-color: #ccc;
++    border: 1px solid #333;
++    padding: 0px;
++}
++
++table.form {
++    background-color: #999;
++    border: 1px solid #333;
++    padding: 2px;
++}
++
++td.form_label {
++    text-align: right;
++    vertical-align: top;
++}
++/* For one line entires */
++td.form_clabel {
++    text-align: right;
++    vertical-align: center;
++}
++td.form_value {
++    text-align: left;
++    vertical-align: top;
++}
++td.form_submit {
++    text-align: right;
++    vertical-align: top;
++}
++
++h1.SubmitFail {
++    color: #f00;
++}
++h1.SubmitOk {
++}
+diff --git tools/clang/tools/scan-build/share/scan-build/sorttable.js tools/clang/tools/scan-build/share/scan-build/sorttable.js.orig
+new file mode 100644
+index 0000000..32faa07
+--- /dev/null
++++ tools/clang/tools/scan-build/share/scan-build/sorttable.js
+@@ -0,0 +1,492 @@
++/*
++  SortTable
++  version 2
++  7th April 2007
++  Stuart Langridge, http://www.kryogenix.org/code/browser/sorttable/
++
++  Instructions:
++  Download this file
++  Add <script src="sorttable.js"></script> to your HTML
++  Add class="sortable" to any table you'd like to make sortable
++  Click on the headers to sort
++
++  Thanks to many, many people for contributions and suggestions.
++  Licenced as X11: http://www.kryogenix.org/code/browser/licence.html
++  This basically means: do what you want with it.
++*/
++
++
++var stIsIE = /*@cc_on!@*/false;
++
++sorttable = {
++  init: function() {
++    // quit if this function has already been called
++    if (arguments.callee.done) return;
++    // flag this function so we don't do the same thing twice
++    arguments.callee.done = true;
++    // kill the timer
++    if (_timer) clearInterval(_timer);
++
++    if (!document.createElement || !document.getElementsByTagName) return;
++
++    sorttable.DATE_RE = /^(\d\d?)[\/\.-](\d\d?)[\/\.-]((\d\d)?\d\d)$/;
++
++    forEach(document.getElementsByTagName('table'), function(table) {
++      if (table.className.search(/\bsortable\b/) != -1) {
++        sorttable.makeSortable(table);
++      }
++    });
++
++  },
++
++  makeSortable: function(table) {
++    if (table.getElementsByTagName('thead').length == 0) {
++      // table doesn't have a tHead. Since it should have, create one and
++      // put the first table row in it.
++      the = document.createElement('thead');
++      the.appendChild(table.rows[0]);
++      table.insertBefore(the,table.firstChild);
++    }
++    // Safari doesn't support table.tHead, sigh
++    if (table.tHead == null) table.tHead = table.getElementsByTagName('thead')[0];
++
++    if (table.tHead.rows.length != 1) return; // can't cope with two header rows
++
++    // Sorttable v1 put rows with a class of "sortbottom" at the bottom (as
++    // "total" rows, for example). This is B&R, since what you're supposed
++    // to do is put them in a tfoot. So, if there are sortbottom rows,
++    // for backward compatibility, move them to tfoot (creating it if needed).
++    sortbottomrows = [];
++    for (var i=0; i<table.rows.length; i++) {
++      if (table.rows[i].className.search(/\bsortbottom\b/) != -1) {
++        sortbottomrows[sortbottomrows.length] = table.rows[i];
++      }
++    }
++    if (sortbottomrows) {
++      if (table.tFoot == null) {
++        // table doesn't have a tfoot. Create one.
++        tfo = document.createElement('tfoot');
++        table.appendChild(tfo);
++      }
++      for (var i=0; i<sortbottomrows.length; i++) {
++        tfo.appendChild(sortbottomrows[i]);
++      }
++      delete sortbottomrows;
++    }
++
++    // work through each column and calculate its type
++    headrow = table.tHead.rows[0].cells;
++    for (var i=0; i<headrow.length; i++) {
++      // manually override the type with a sorttable_type attribute
++      if (!headrow[i].className.match(/\bsorttable_nosort\b/)) { // skip this col
++        mtch = headrow[i].className.match(/\bsorttable_([a-z0-9]+)\b/);
++        if (mtch) { override = mtch[1]; }
++	      if (mtch && typeof sorttable["sort_"+override] == 'function') {
++	        headrow[i].sorttable_sortfunction = sorttable["sort_"+override];
++	      } else {
++	        headrow[i].sorttable_sortfunction = sorttable.guessType(table,i);
++	      }
++	      // make it clickable to sort
++	      headrow[i].sorttable_columnindex = i;
++	      headrow[i].sorttable_tbody = table.tBodies[0];
++	      dean_addEvent(headrow[i],"click", function(e) {
++
++          if (this.className.search(/\bsorttable_sorted\b/) != -1) {
++            // if we're already sorted by this column, just
++            // reverse the table, which is quicker
++            sorttable.reverse(this.sorttable_tbody);
++            this.className = this.className.replace('sorttable_sorted',
++                                                    'sorttable_sorted_reverse');
++            this.removeChild(document.getElementById('sorttable_sortfwdind'));
++            sortrevind = document.createElement('span');
++            sortrevind.id = "sorttable_sortrevind";
++            sortrevind.innerHTML = stIsIE ? '&nbsp<font face="webdings">5</font>' : '&nbsp;&#x25B4;';
++            this.appendChild(sortrevind);
++            return;
++          }
++          if (this.className.search(/\bsorttable_sorted_reverse\b/) != -1) {
++            // if we're already sorted by this column in reverse, just
++            // re-reverse the table, which is quicker
++            sorttable.reverse(this.sorttable_tbody);
++            this.className = this.className.replace('sorttable_sorted_reverse',
++                                                    'sorttable_sorted');
++            this.removeChild(document.getElementById('sorttable_sortrevind'));
++            sortfwdind = document.createElement('span');
++            sortfwdind.id = "sorttable_sortfwdind";
++            sortfwdind.innerHTML = stIsIE ? '&nbsp<font face="webdings">6</font>' : '&nbsp;&#x25BE;';
++            this.appendChild(sortfwdind);
++            return;
++          }
++
++          // remove sorttable_sorted classes
++          theadrow = this.parentNode;
++          forEach(theadrow.childNodes, function(cell) {
++            if (cell.nodeType == 1) { // an element
++              cell.className = cell.className.replace('sorttable_sorted_reverse','');
++              cell.className = cell.className.replace('sorttable_sorted','');
++            }
++          });
++          sortfwdind = document.getElementById('sorttable_sortfwdind');
++          if (sortfwdind) { sortfwdind.parentNode.removeChild(sortfwdind); }
++          sortrevind = document.getElementById('sorttable_sortrevind');
++          if (sortrevind) { sortrevind.parentNode.removeChild(sortrevind); }
++
++          this.className += ' sorttable_sorted';
++          sortfwdind = document.createElement('span');
++          sortfwdind.id = "sorttable_sortfwdind";
++          sortfwdind.innerHTML = stIsIE ? '&nbsp<font face="webdings">6</font>' : '&nbsp;&#x25BE;';
++          this.appendChild(sortfwdind);
++
++	        // build an array to sort. This is a Schwartzian transform thing,
++	        // i.e., we "decorate" each row with the actual sort key,
++	        // sort based on the sort keys, and then put the rows back in order
++	        // which is a lot faster because you only do getInnerText once per row
++	        row_array = [];
++	        col = this.sorttable_columnindex;
++	        rows = this.sorttable_tbody.rows;
++	        for (var j=0; j<rows.length; j++) {
++	          row_array[row_array.length] = [sorttable.getInnerText(rows[j].cells[col]), rows[j]];
++	        }
++	        /* If you want a stable sort, uncomment the following line */
++	        sorttable.shaker_sort(row_array, this.sorttable_sortfunction);
++	        /* and comment out this one */
++	        //row_array.sort(this.sorttable_sortfunction);
++
++	        tb = this.sorttable_tbody;
++	        for (var j=0; j<row_array.length; j++) {
++	          tb.appendChild(row_array[j][1]);
++	        }
++
++	        delete row_array;
++	      });
++	    }
++    }
++  },
++
++  guessType: function(table, column) {
++    // guess the type of a column based on its first non-blank row
++    sortfn = sorttable.sort_alpha;
++    for (var i=0; i<table.tBodies[0].rows.length; i++) {
++      text = sorttable.getInnerText(table.tBodies[0].rows[i].cells[column]);
++      if (text != '') {
++        if (text.match(/^-?[£$¤]?[\d,.]+%?$/)) {
++          return sorttable.sort_numeric;
++        }
++        // check for a date: dd/mm/yyyy or dd/mm/yy
++        // can have / or . or - as separator
++        // can be mm/dd as well
++        possdate = text.match(sorttable.DATE_RE)
++        if (possdate) {
++          // looks like a date
++          first = parseInt(possdate[1]);
++          second = parseInt(possdate[2]);
++          if (first > 12) {
++            // definitely dd/mm
++            return sorttable.sort_ddmm;
++          } else if (second > 12) {
++            return sorttable.sort_mmdd;
++          } else {
++            // looks like a date, but we can't tell which, so assume
++            // that it's dd/mm (English imperialism!) and keep looking
++            sortfn = sorttable.sort_ddmm;
++          }
++        }
++      }
++    }
++    return sortfn;
++  },
++
++  getInnerText: function(node) {
++    // gets the text we want to use for sorting for a cell.
++    // strips leading and trailing whitespace.
++    // this is *not* a generic getInnerText function; it's special to sorttable.
++    // for example, you can override the cell text with a customkey attribute.
++    // it also gets .value for <input> fields.
++
++    hasInputs = (typeof node.getElementsByTagName == 'function') &&
++                 node.getElementsByTagName('input').length;
++
++    if (node.getAttribute("sorttable_customkey") != null) {
++      return node.getAttribute("sorttable_customkey");
++    }
++    else if (typeof node.textContent != 'undefined' && !hasInputs) {
++      return node.textContent.replace(/^\s+|\s+$/g, '');
++    }
++    else if (typeof node.innerText != 'undefined' && !hasInputs) {
++      return node.innerText.replace(/^\s+|\s+$/g, '');
++    }
++    else if (typeof node.text != 'undefined' && !hasInputs) {
++      return node.text.replace(/^\s+|\s+$/g, '');
++    }
++    else {
++      switch (node.nodeType) {
++        case 3:
++          if (node.nodeName.toLowerCase() == 'input') {
++            return node.value.replace(/^\s+|\s+$/g, '');
++          }
++        case 4:
++          return node.nodeValue.replace(/^\s+|\s+$/g, '');
++          break;
++        case 1:
++        case 11:
++          var innerText = '';
++          for (var i = 0; i < node.childNodes.length; i++) {
++            innerText += sorttable.getInnerText(node.childNodes[i]);
++          }
++          return innerText.replace(/^\s+|\s+$/g, '');
++          break;
++        default:
++          return '';
++      }
++    }
++  },
++
++  reverse: function(tbody) {
++    // reverse the rows in a tbody
++    newrows = [];
++    for (var i=0; i<tbody.rows.length; i++) {
++      newrows[newrows.length] = tbody.rows[i];
++    }
++    for (var i=newrows.length-1; i>=0; i--) {
++       tbody.appendChild(newrows[i]);
++    }
++    delete newrows;
++  },
++
++  /* sort functions
++     each sort function takes two parameters, a and b
++     you are comparing a[0] and b[0] */
++  sort_numeric: function(a,b) {
++    aa = parseFloat(a[0].replace(/[^0-9.-]/g,''));
++    if (isNaN(aa)) aa = 0;
++    bb = parseFloat(b[0].replace(/[^0-9.-]/g,''));
++    if (isNaN(bb)) bb = 0;
++    return aa-bb;
++  },
++  sort_alpha: function(a,b) {
++    if (a[0]==b[0]) return 0;
++    if (a[0]<b[0]) return -1;
++    return 1;
++  },
++  sort_ddmm: function(a,b) {
++    mtch = a[0].match(sorttable.DATE_RE);
++    y = mtch[3]; m = mtch[2]; d = mtch[1];
++    if (m.length == 1) m = '0'+m;
++    if (d.length == 1) d = '0'+d;
++    dt1 = y+m+d;
++    mtch = b[0].match(sorttable.DATE_RE);
++    y = mtch[3]; m = mtch[2]; d = mtch[1];
++    if (m.length == 1) m = '0'+m;
++    if (d.length == 1) d = '0'+d;
++    dt2 = y+m+d;
++    if (dt1==dt2) return 0;
++    if (dt1<dt2) return -1;
++    return 1;
++  },
++  sort_mmdd: function(a,b) {
++    mtch = a[0].match(sorttable.DATE_RE);
++    y = mtch[3]; d = mtch[2]; m = mtch[1];
++    if (m.length == 1) m = '0'+m;
++    if (d.length == 1) d = '0'+d;
++    dt1 = y+m+d;
++    mtch = b[0].match(sorttable.DATE_RE);
++    y = mtch[3]; d = mtch[2]; m = mtch[1];
++    if (m.length == 1) m = '0'+m;
++    if (d.length == 1) d = '0'+d;
++    dt2 = y+m+d;
++    if (dt1==dt2) return 0;
++    if (dt1<dt2) return -1;
++    return 1;
++  },
++
++  shaker_sort: function(list, comp_func) {
++    // A stable sort function to allow multi-level sorting of data
++    // see: http://en.wikipedia.org/wiki/Cocktail_sort
++    // thanks to Joseph Nahmias
++    var b = 0;
++    var t = list.length - 1;
++    var swap = true;
++
++    while(swap) {
++        swap = false;
++        for(var i = b; i < t; ++i) {
++            if ( comp_func(list[i], list[i+1]) > 0 ) {
++                var q = list[i]; list[i] = list[i+1]; list[i+1] = q;
++                swap = true;
++            }
++        } // for
++        t--;
++
++        if (!swap) break;
++
++        for(var i = t; i > b; --i) {
++            if ( comp_func(list[i], list[i-1]) < 0 ) {
++                var q = list[i]; list[i] = list[i-1]; list[i-1] = q;
++                swap = true;
++            }
++        } // for
++        b++;
++
++    } // while(swap)
++  }
++}
++
++/* ******************************************************************
++   Supporting functions: bundled here to avoid depending on a library
++   ****************************************************************** */
++
++// Dean Edwards/Matthias Miller/John Resig
++
++/* for Mozilla/Opera9 */
++if (document.addEventListener) {
++    document.addEventListener("DOMContentLoaded", sorttable.init, false);
++}
++
++/* for Internet Explorer */
++/*@cc_on @*/
++/*@if (@_win32)
++    document.write("<script id=__ie_onload defer src=javascript:void(0)><\/script>");
++    var script = document.getElementById("__ie_onload");
++    script.onreadystatechange = function() {
++        if (this.readyState == "complete") {
++            sorttable.init(); // call the onload handler
++        }
++    };
++/*@end @*/
++
++/* for Safari */
++if (/WebKit/i.test(navigator.userAgent)) { // sniff
++    var _timer = setInterval(function() {
++        if (/loaded|complete/.test(document.readyState)) {
++            sorttable.init(); // call the onload handler
++        }
++    }, 10);
++}
++
++/* for other browsers */
++window.onload = sorttable.init;
++
++// written by Dean Edwards, 2005
++// with input from Tino Zijdel, Matthias Miller, Diego Perini
++
++// http://dean.edwards.name/weblog/2005/10/add-event/
++
++function dean_addEvent(element, type, handler) {
++	if (element.addEventListener) {
++		element.addEventListener(type, handler, false);
++	} else {
++		// assign each event handler a unique ID
++		if (!handler.$$guid) handler.$$guid = dean_addEvent.guid++;
++		// create a hash table of event types for the element
++		if (!element.events) element.events = {};
++		// create a hash table of event handlers for each element/event pair
++		var handlers = element.events[type];
++		if (!handlers) {
++			handlers = element.events[type] = {};
++			// store the existing event handler (if there is one)
++			if (element["on" + type]) {
++				handlers[0] = element["on" + type];
++			}
++		}
++		// store the event handler in the hash table
++		handlers[handler.$$guid] = handler;
++		// assign a global event handler to do all the work
++		element["on" + type] = handleEvent;
++	}
++};
++// a counter used to create unique IDs
++dean_addEvent.guid = 1;
++
++function removeEvent(element, type, handler) {
++	if (element.removeEventListener) {
++		element.removeEventListener(type, handler, false);
++	} else {
++		// delete the event handler from the hash table
++		if (element.events && element.events[type]) {
++			delete element.events[type][handler.$$guid];
++		}
++	}
++};
++
++function handleEvent(event) {
++	var returnValue = true;
++	// grab the event object (IE uses a global event object)
++	event = event || fixEvent(((this.ownerDocument || this.document || this).parentWindow || window).event);
++	// get a reference to the hash table of event handlers
++	var handlers = this.events[event.type];
++	// execute each event handler
++	for (var i in handlers) {
++		this.$$handleEvent = handlers[i];
++		if (this.$$handleEvent(event) === false) {
++			returnValue = false;
++		}
++	}
++	return returnValue;
++};
++
++function fixEvent(event) {
++	// add W3C standard event methods
++	event.preventDefault = fixEvent.preventDefault;
++	event.stopPropagation = fixEvent.stopPropagation;
++	return event;
++};
++fixEvent.preventDefault = function() {
++	this.returnValue = false;
++};
++fixEvent.stopPropagation = function() {
++  this.cancelBubble = true;
++}
++
++// Dean's forEach: http://dean.edwards.name/base/forEach.js
++/*
++	forEach, version 1.0
++	Copyright 2006, Dean Edwards
++	License: http://www.opensource.org/licenses/mit-license.php
++*/
++
++// array-like enumeration
++if (!Array.forEach) { // mozilla already supports this
++	Array.forEach = function(array, block, context) {
++		for (var i = 0; i < array.length; i++) {
++			block.call(context, array[i], i, array);
++		}
++	};
++}
++
++// generic enumeration
++Function.prototype.forEach = function(object, block, context) {
++	for (var key in object) {
++		if (typeof this.prototype[key] == "undefined") {
++			block.call(context, object[key], key, object);
++		}
++	}
++};
++
++// character enumeration
++String.forEach = function(string, block, context) {
++	Array.forEach(string.split(""), function(chr, index) {
++		block.call(context, chr, index, string);
++	});
++};
++
++// globally resolve forEach enumeration
++var forEach = function(object, block, context) {
++	if (object) {
++		var resolve = Object; // default
++		if (object instanceof Function) {
++			// functions have a "length" property
++			resolve = Function;
++		} else if (object.forEach instanceof Function) {
++			// the object implements a custom forEach method so use that
++			object.forEach(block, context);
++			return;
++		} else if (typeof object == "string") {
++			// the object is a string
++			resolve = String;
++		} else if (typeof object.length == "number") {
++			// the object is array-like
++			resolve = Array;
++		}
++		resolve.forEach(object, block, context);
++	}
++};
+diff --git tools/clang/tools/scan-view/CMakeLists.txt tools/clang/tools/scan-view/CMakeLists.txt.orig
+new file mode 100644
+index 0000000..b305ca5
+--- /dev/null
++++ tools/clang/tools/scan-view/CMakeLists.txt
+@@ -0,0 +1,41 @@
++option(CLANG_INSTALL_SCANVIEW "Install the scan-view tool" ON)
++
++set(BinFiles
++      scan-view)
++
++set(ShareFiles
++      ScanView.py
++      Reporter.py
++      startfile.py
++      FileRadar.scpt
++      GetRadarVersion.scpt
++      bugcatcher.ico)
++
++if(CLANG_INSTALL_SCANVIEW)
++  foreach(BinFile ${BinFiles})
++    add_custom_command(OUTPUT ${CMAKE_BINARY_DIR}/bin/${BinFile}
++                       COMMAND ${CMAKE_COMMAND} -E make_directory
++                         ${CMAKE_BINARY_DIR}/bin
++                       COMMAND ${CMAKE_COMMAND} -E copy
++                         ${CMAKE_CURRENT_SOURCE_DIR}/bin/${BinFile}
++                         ${CMAKE_BINARY_DIR}/bin/
++                       DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/bin/${BinFile})
++    list(APPEND Depends ${CMAKE_BINARY_DIR}/bin/${BinFile})
++    install(PROGRAMS bin/${BinFile} DESTINATION bin)
++  endforeach()
++
++  foreach(ShareFile ${ShareFiles})
++    add_custom_command(OUTPUT ${CMAKE_BINARY_DIR}/share/scan-view/${ShareFile}
++                       COMMAND ${CMAKE_COMMAND} -E make_directory
++                         ${CMAKE_BINARY_DIR}/share/scan-view
++                       COMMAND ${CMAKE_COMMAND} -E copy
++                         ${CMAKE_CURRENT_SOURCE_DIR}/share/${ShareFile}
++                         ${CMAKE_BINARY_DIR}/share/scan-view/
++                       DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/share/${ShareFile})
++    list(APPEND Depends ${CMAKE_BINARY_DIR}/share/scan-view/${ShareFile})
++    install(FILES share/${ShareFile} DESTINATION share/scan-view)
++  endforeach()
++
++  add_custom_target(scan-view ALL DEPENDS ${Depends})
++  set_target_properties(scan-view PROPERTIES FOLDER "Misc")
++endif()
+diff --git tools/clang/tools/scan-view/Makefile tools/clang/tools/scan-view/Makefile.orig
+new file mode 100644
+index 0000000..37e4404
+--- /dev/null
++++ tools/clang/tools/scan-view/Makefile
+@@ -0,0 +1,37 @@
++##===- tools/scan-view/Makefile ----------------------------*- Makefile -*-===##
++# 
++#                     The LLVM Compiler Infrastructure
++#
++# This file is distributed under the University of Illinois Open Source
++# License. See LICENSE.TXT for details.
++# 
++##===----------------------------------------------------------------------===##
++
++CLANG_LEVEL := ../..
++
++include $(CLANG_LEVEL)/../../Makefile.config
++include $(CLANG_LEVEL)/Makefile
++
++CLANG_INSTALL_SCANVIEW ?= 1
++
++ifeq ($(CLANG_INSTALL_SCANVIEW), 1)
++  InstallTargets := $(ToolDir)/scan-view \
++                    $(ShareDir)/scan-view/Reporter.py \
++                    $(ShareDir)/scan-view/ScanView.py \
++                    $(ShareDir)/scan-view/startfile.py \
++                    $(ShareDir)/scan-view/FileRadar.scpt \
++                    $(ShareDir)/scan-view/GetRadarVersion.scpt \
++                    $(ShareDir)/scan-view/bugcatcher.ico
++endif
++
++all:: $(InstallTargets)
++
++$(ToolDir)/%: bin/% Makefile $(ToolDir)/.dir
++	$(Echo) "Copying $(notdir $<) to the 'bin' directory..."
++	$(Verb)cp $< $@
++	$(Verb)chmod +x $@
++
++$(ShareDir)/scan-view/%: share/% Makefile $(ShareDir)/scan-view/.dir
++	$(Echo) "Copying $(notdir $<) to the 'share' directory..."
++	$(Verb)cp $< $@
++
+diff --git tools/clang/tools/scan-view/bin/scan-view tools/clang/tools/scan-view/bin/scan-view.orig
+new file mode 100755
+index 0000000..1b6e8ba
+--- /dev/null
++++ tools/clang/tools/scan-view/bin/scan-view
+@@ -0,0 +1,143 @@
++#!/usr/bin/env python
++
++"""The clang static analyzer results viewer.
++"""
++
++import sys
++import imp
++import os
++import posixpath
++import thread
++import time
++import urllib
++import webbrowser
++
++# How long to wait for server to start.
++kSleepTimeout = .05
++kMaxSleeps = int(60 / kSleepTimeout)
++
++# Default server parameters
++
++kDefaultHost = '127.0.0.1'
++kDefaultPort = 8181
++kMaxPortsToTry = 100
++
++###
++
++
++def url_is_up(url):
++    try:
++        o = urllib.urlopen(url)
++    except IOError:
++        return False
++    o.close()
++    return True
++
++
++def start_browser(port, options):
++    import urllib
++    import webbrowser
++
++    url = 'http://%s:%d' % (options.host, port)
++
++    # Wait for server to start...
++    if options.debug:
++        sys.stderr.write('%s: Waiting for server.' % sys.argv[0])
++        sys.stderr.flush()
++    for i in range(kMaxSleeps):
++        if url_is_up(url):
++            break
++        if options.debug:
++            sys.stderr.write('.')
++            sys.stderr.flush()
++        time.sleep(kSleepTimeout)
++    else:
++        print >> sys.stderr, 'WARNING: Unable to detect that server started.'
++
++    if options.debug:
++        print >> sys.stderr, '%s: Starting webbrowser...' % sys.argv[0]
++    webbrowser.open(url)
++
++
++def run(port, options, root):
++    # Prefer to look relative to the installed binary
++    share = os.path.dirname(__file__) + "/../share/scan-view"
++    if not os.path.isdir(share):
++        # Otherwise look relative to the source
++        share = os.path.dirname(__file__) + "/../../scan-view/share"
++    sys.path.append(share)
++
++    import ScanView
++    try:
++        print 'Starting scan-view at: http://%s:%d' % (options.host,
++                                                       port)
++        print '  Use Ctrl-C to exit.'
++        httpd = ScanView.create_server((options.host, port),
++                                       options, root)
++        httpd.serve_forever()
++    except KeyboardInterrupt:
++        pass
++
++
++def port_is_open(port):
++    import SocketServer
++    try:
++        t = SocketServer.TCPServer((kDefaultHost, port), None)
++    except:
++        return False
++    t.server_close()
++    return True
++
++
++def main():
++    import argparse
++    parser = argparse.ArgumentParser(description="The clang static analyzer "
++                                                 "results viewer.")
++    parser.add_argument("root", metavar="<results directory>", type=str)
++    parser.add_argument(
++        '--host', dest="host", default=kDefaultHost, type=str,
++        help="Host interface to listen on. (default=%s)" % kDefaultHost)
++    parser.add_argument('--port', dest="port", default=None, type=int,
++                        help="Port to listen on. (default=%s)" % kDefaultPort)
++    parser.add_argument("--debug", dest="debug", default=0,
++                        action="count",
++                        help="Print additional debugging information.")
++    parser.add_argument("--auto-reload", dest="autoReload", default=False,
++                        action="store_true",
++                        help="Automatically update module for each request.")
++    parser.add_argument("--no-browser", dest="startBrowser", default=True,
++                        action="store_false",
++                        help="Don't open a webbrowser on startup.")
++    parser.add_argument("--allow-all-hosts", dest="onlyServeLocal",
++                        default=True, action="store_false",
++                        help='Allow connections from any host (access '
++                             'restricted to "127.0.0.1" by default)')
++    args = parser.parse_args()
++
++    # Make sure this directory is in a reasonable state to view.
++    if not posixpath.exists(posixpath.join(args.root, 'index.html')):
++        parser.error('Invalid directory, analysis results not found!')
++
++    # Find an open port. We aren't particularly worried about race
++    # conditions here. Note that if the user specified a port we only
++    # use that one.
++    if args.port is not None:
++        port = args.port
++    else:
++        for i in range(kMaxPortsToTry):
++            if port_is_open(kDefaultPort + i):
++                port = kDefaultPort + i
++                break
++        else:
++            parser.error('Unable to find usable port in [%d,%d)' %
++                         (kDefaultPort, kDefaultPort+kMaxPortsToTry))
++
++    # Kick off thread to wait for server and start web browser, if
++    # requested.
++    if args.startBrowser:
++        t = thread.start_new_thread(start_browser, (port, args))
++
++    run(port, args, args.root)
++
++if __name__ == '__main__':
++    main()
+diff --git tools/clang/tools/scan-view/share/Reporter.py tools/clang/tools/scan-view/share/Reporter.py.orig
+new file mode 100644
+index 0000000..294e05b
+--- /dev/null
++++ tools/clang/tools/scan-view/share/Reporter.py
+@@ -0,0 +1,248 @@
++"""Methods for reporting bugs."""
++
++import subprocess, sys, os
++
++__all__ = ['ReportFailure', 'BugReport', 'getReporters']
++
++#
++
++class ReportFailure(Exception):
++    """Generic exception for failures in bug reporting."""
++    def __init__(self, value):        
++        self.value = value
++
++# Collect information about a bug.
++
++class BugReport:
++    def __init__(self, title, description, files):
++        self.title = title
++        self.description = description
++        self.files = files
++
++# Reporter interfaces.
++
++import os
++
++import email, mimetypes, smtplib
++from email import encoders
++from email.message import Message
++from email.mime.base import MIMEBase
++from email.mime.multipart import MIMEMultipart
++from email.mime.text import MIMEText
++
++#===------------------------------------------------------------------------===#
++# ReporterParameter
++#===------------------------------------------------------------------------===#
++
++class ReporterParameter:
++  def __init__(self, n):
++    self.name = n
++  def getName(self):
++    return self.name
++  def getValue(self,r,bugtype,getConfigOption):
++     return getConfigOption(r.getName(),self.getName())
++  def saveConfigValue(self):
++    return True
++
++class TextParameter (ReporterParameter):
++  def getHTML(self,r,bugtype,getConfigOption):
++    return """\
++<tr>
++<td class="form_clabel">%s:</td>
++<td class="form_value"><input type="text" name="%s_%s" value="%s"></td>
++</tr>"""%(self.getName(),r.getName(),self.getName(),self.getValue(r,bugtype,getConfigOption))
++
++class SelectionParameter (ReporterParameter):
++  def __init__(self, n, values):
++    ReporterParameter.__init__(self,n)
++    self.values = values
++    
++  def getHTML(self,r,bugtype,getConfigOption):
++    default = self.getValue(r,bugtype,getConfigOption)
++    return """\
++<tr>
++<td class="form_clabel">%s:</td><td class="form_value"><select name="%s_%s">
++%s
++</select></td>"""%(self.getName(),r.getName(),self.getName(),'\n'.join(["""\
++<option value="%s"%s>%s</option>"""%(o[0],
++                                     o[0] == default and ' selected="selected"' or '',
++                                     o[1]) for o in self.values]))
++
++#===------------------------------------------------------------------------===#
++# Reporters
++#===------------------------------------------------------------------------===#
++
++class EmailReporter:
++    def getName(self):
++        return 'Email'
++
++    def getParameters(self):
++        return map(lambda x:TextParameter(x),['To', 'From', 'SMTP Server', 'SMTP Port'])
++
++    # Lifted from python email module examples.
++    def attachFile(self, outer, path):
++        # Guess the content type based on the file's extension.  Encoding
++        # will be ignored, although we should check for simple things like
++        # gzip'd or compressed files.
++        ctype, encoding = mimetypes.guess_type(path)
++        if ctype is None or encoding is not None:
++            # No guess could be made, or the file is encoded (compressed), so
++            # use a generic bag-of-bits type.
++            ctype = 'application/octet-stream'
++        maintype, subtype = ctype.split('/', 1)
++        if maintype == 'text':
++            fp = open(path)
++            # Note: we should handle calculating the charset
++            msg = MIMEText(fp.read(), _subtype=subtype)
++            fp.close()
++        else:
++            fp = open(path, 'rb')
++            msg = MIMEBase(maintype, subtype)
++            msg.set_payload(fp.read())
++            fp.close()
++            # Encode the payload using Base64
++            encoders.encode_base64(msg)
++        # Set the filename parameter
++        msg.add_header('Content-Disposition', 'attachment', filename=os.path.basename(path))
++        outer.attach(msg)
++
++    def fileReport(self, report, parameters):
++        mainMsg = """\
++BUG REPORT
++---
++Title: %s
++Description: %s
++"""%(report.title, report.description)
++
++        if not parameters.get('To'):
++            raise ReportFailure('No "To" address specified.')
++        if not parameters.get('From'):
++            raise ReportFailure('No "From" address specified.')
++
++        msg = MIMEMultipart()
++        msg['Subject'] = 'BUG REPORT: %s'%(report.title)
++        # FIXME: Get config parameters
++        msg['To'] = parameters.get('To')
++        msg['From'] = parameters.get('From')
++        msg.preamble = mainMsg
++
++        msg.attach(MIMEText(mainMsg, _subtype='text/plain'))
++        for file in report.files:
++            self.attachFile(msg, file)
++
++        try:
++            s = smtplib.SMTP(host=parameters.get('SMTP Server'),
++                             port=parameters.get('SMTP Port'))
++            s.sendmail(msg['From'], msg['To'], msg.as_string())
++            s.close()
++        except:
++            raise ReportFailure('Unable to send message via SMTP.')
++
++        return "Message sent!"
++
++class BugzillaReporter:
++    def getName(self):
++        return 'Bugzilla'
++    
++    def getParameters(self):
++        return map(lambda x:TextParameter(x),['URL','Product'])
++
++    def fileReport(self, report, parameters):
++        raise NotImplementedError
++ 
++
++class RadarClassificationParameter(SelectionParameter):
++  def __init__(self):
++    SelectionParameter.__init__(self,"Classification",
++            [['1', 'Security'], ['2', 'Crash/Hang/Data Loss'],
++             ['3', 'Performance'], ['4', 'UI/Usability'], 
++             ['6', 'Serious Bug'], ['7', 'Other']])
++
++  def saveConfigValue(self):
++    return False
++    
++  def getValue(self,r,bugtype,getConfigOption):
++    if bugtype.find("leak") != -1:
++      return '3'
++    elif bugtype.find("dereference") != -1:
++      return '2'
++    elif bugtype.find("missing ivar release") != -1:
++      return '3'
++    else:
++      return '7'
++
++class RadarReporter:
++    @staticmethod
++    def isAvailable():
++        # FIXME: Find this .scpt better
++        path = os.path.join(os.path.dirname(__file__),'../share/scan-view/GetRadarVersion.scpt')
++        try:
++          p = subprocess.Popen(['osascript',path], 
++          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
++        except:
++            return False
++        data,err = p.communicate()
++        res = p.wait()
++        # FIXME: Check version? Check for no errors?
++        return res == 0
++
++    def getName(self):
++        return 'Radar'
++
++    def getParameters(self):
++        return [ TextParameter('Component'), TextParameter('Component Version'),
++                 RadarClassificationParameter() ]
++
++    def fileReport(self, report, parameters):
++        component = parameters.get('Component', '')
++        componentVersion = parameters.get('Component Version', '')
++        classification = parameters.get('Classification', '')
++        personID = ""
++        diagnosis = ""
++        config = ""
++
++        if not component.strip():
++            component = 'Bugs found by clang Analyzer'
++        if not componentVersion.strip():
++            componentVersion = 'X'
++
++        script = os.path.join(os.path.dirname(__file__),'../share/scan-view/FileRadar.scpt')
++        args = ['osascript', script, component, componentVersion, classification, personID, report.title,
++                report.description, diagnosis, config] + map(os.path.abspath, report.files)
++#        print >>sys.stderr, args
++        try:
++          p = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
++        except:
++            raise ReportFailure("Unable to file radar (AppleScript failure).")
++        data, err = p.communicate()
++        res = p.wait()
++
++        if res:
++            raise ReportFailure("Unable to file radar (AppleScript failure).")
++
++        try:
++            values = eval(data)
++        except:
++            raise ReportFailure("Unable to process radar results.")
++
++        # We expect (int: bugID, str: message)
++        if len(values) != 2 or not isinstance(values[0], int):
++            raise ReportFailure("Unable to process radar results.")
++
++        bugID,message = values
++        bugID = int(bugID)
++        
++        if not bugID:
++            raise ReportFailure(message)
++        
++        return "Filed: <a href=\"rdar://%d/\">%d</a>"%(bugID,bugID)
++
++###
++
++def getReporters():
++    reporters = []
++    if RadarReporter.isAvailable():
++        reporters.append(RadarReporter())
++    reporters.append(EmailReporter())
++    return reporters
++
+diff --git tools/clang/tools/scan-view/share/ScanView.py tools/clang/tools/scan-view/share/ScanView.py.orig
+new file mode 100644
+index 0000000..7dc0351
+--- /dev/null
++++ tools/clang/tools/scan-view/share/ScanView.py
+@@ -0,0 +1,767 @@
++import BaseHTTPServer
++import SimpleHTTPServer
++import os
++import sys
++import urllib, urlparse
++import posixpath
++import StringIO
++import re
++import shutil
++import threading
++import time
++import socket
++import itertools
++
++import Reporter
++import ConfigParser
++
++###
++# Various patterns matched or replaced by server.
++
++kReportFileRE = re.compile('(.*/)?report-(.*)\\.html')
++
++kBugKeyValueRE = re.compile('<!-- BUG([^ ]*) (.*) -->')
++
++#  <!-- REPORTPROBLEM file="crashes/clang_crash_ndSGF9.mi" stderr="crashes/clang_crash_ndSGF9.mi.stderr.txt" info="crashes/clang_crash_ndSGF9.mi.info" -->
++
++kReportCrashEntryRE = re.compile('<!-- REPORTPROBLEM (.*?)-->')
++kReportCrashEntryKeyValueRE = re.compile(' ?([^=]+)="(.*?)"')
++
++kReportReplacements = []
++
++# Add custom javascript.
++kReportReplacements.append((re.compile('<!-- SUMMARYENDHEAD -->'), """\
++<script language="javascript" type="text/javascript">
++function load(url) {
++  if (window.XMLHttpRequest) {
++    req = new XMLHttpRequest();
++  } else if (window.ActiveXObject) {
++    req = new ActiveXObject("Microsoft.XMLHTTP");
++  }
++  if (req != undefined) {
++    req.open("GET", url, true);
++    req.send("");
++  }
++}
++</script>"""))
++
++# Insert additional columns.
++kReportReplacements.append((re.compile('<!-- REPORTBUGCOL -->'), 
++                            '<td></td><td></td>'))
++
++# Insert report bug and open file links.
++kReportReplacements.append((re.compile('<!-- REPORTBUG id="report-(.*)\\.html" -->'),
++                            ('<td class="Button"><a href="report/\\1">Report Bug</a></td>' + 
++                             '<td class="Button"><a href="javascript:load(\'open/\\1\')">Open File</a></td>')))
++
++kReportReplacements.append((re.compile('<!-- REPORTHEADER -->'),
++                                       '<h3><a href="/">Summary</a> > Report %(report)s</h3>'))
++
++kReportReplacements.append((re.compile('<!-- REPORTSUMMARYEXTRA -->'),
++                            '<td class="Button"><a href="report/%(report)s">Report Bug</a></td>'))
++
++# Insert report crashes link.
++
++# Disabled for the time being until we decide exactly when this should
++# be enabled. Also the radar reporter needs to be fixed to report
++# multiple files.
++
++#kReportReplacements.append((re.compile('<!-- REPORTCRASHES -->'),
++#                            '<br>These files will automatically be attached to ' +
++#                            'reports filed here: <a href="report_crashes">Report Crashes</a>.'))
++
++###
++# Other simple parameters
++
++kShare = posixpath.join(posixpath.dirname(__file__), '../share/scan-view')
++kConfigPath = os.path.expanduser('~/.scanview.cfg')
++
++###
++
++__version__ = "0.1"
++
++__all__ = ["create_server"]
++
++class ReporterThread(threading.Thread):
++    def __init__(self, report, reporter, parameters, server):
++        threading.Thread.__init__(self)
++        self.report = report
++        self.server = server
++        self.reporter = reporter
++        self.parameters = parameters
++        self.success = False
++        self.status = None
++
++    def run(self):
++        result = None
++        try:
++            if self.server.options.debug:
++                print >>sys.stderr, "%s: SERVER: submitting bug."%(sys.argv[0],)
++            self.status = self.reporter.fileReport(self.report, self.parameters)
++            self.success = True
++            time.sleep(3)
++            if self.server.options.debug:
++                print >>sys.stderr, "%s: SERVER: submission complete."%(sys.argv[0],)
++        except Reporter.ReportFailure,e:
++            self.status = e.value
++        except Exception,e:
++            s = StringIO.StringIO()
++            import traceback
++            print >>s,'<b>Unhandled Exception</b><br><pre>'
++            traceback.print_exc(e,file=s)
++            print >>s,'</pre>'
++            self.status = s.getvalue()
++
++class ScanViewServer(BaseHTTPServer.HTTPServer):
++    def __init__(self, address, handler, root, reporters, options):
++        BaseHTTPServer.HTTPServer.__init__(self, address, handler)
++        self.root = root
++        self.reporters = reporters
++        self.options = options        
++        self.halted = False
++        self.config = None
++        self.load_config()
++
++    def load_config(self):
++        self.config = ConfigParser.RawConfigParser()
++
++        # Add defaults
++        self.config.add_section('ScanView')
++        for r in self.reporters:
++            self.config.add_section(r.getName())
++            for p in r.getParameters():
++              if p.saveConfigValue():
++                self.config.set(r.getName(), p.getName(), '')
++
++        # Ignore parse errors
++        try:
++            self.config.read([kConfigPath])
++        except:
++            pass
++
++        # Save on exit
++        import atexit
++        atexit.register(lambda: self.save_config())
++        
++    def save_config(self):
++        # Ignore errors (only called on exit).
++        try:
++            f = open(kConfigPath,'w')
++            self.config.write(f)
++            f.close()
++        except:
++            pass
++        
++    def halt(self):
++        self.halted = True
++        if self.options.debug:
++            print >>sys.stderr, "%s: SERVER: halting." % (sys.argv[0],)
++
++    def serve_forever(self):
++        while not self.halted:
++            if self.options.debug > 1:
++                print >>sys.stderr, "%s: SERVER: waiting..." % (sys.argv[0],)
++            try:
++                self.handle_request()
++            except OSError,e:
++                print 'OSError',e.errno
++
++    def finish_request(self, request, client_address):
++        if self.options.autoReload:
++            import ScanView
++            self.RequestHandlerClass = reload(ScanView).ScanViewRequestHandler
++        BaseHTTPServer.HTTPServer.finish_request(self, request, client_address)
++
++    def handle_error(self, request, client_address):
++        # Ignore socket errors
++        info = sys.exc_info()
++        if info and isinstance(info[1], socket.error):
++            if self.options.debug > 1:
++                print >>sys.stderr, "%s: SERVER: ignored socket error." % (sys.argv[0],)
++            return
++        BaseHTTPServer.HTTPServer.handle_error(self, request, client_address)
++
++# Borrowed from Quixote, with simplifications.
++def parse_query(qs, fields=None):
++    if fields is None:
++        fields = {}
++    for chunk in filter(None, qs.split('&')):
++        if '=' not in chunk:
++            name = chunk
++            value = ''
++        else:
++            name, value = chunk.split('=', 1)
++        name = urllib.unquote(name.replace('+', ' '))
++        value = urllib.unquote(value.replace('+', ' '))
++        item = fields.get(name)
++        if item is None:
++            fields[name] = [value]
++        else:
++            item.append(value)
++    return fields
++
++class ScanViewRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
++    server_version = "ScanViewServer/" + __version__
++    dynamic_mtime = time.time()
++
++    def do_HEAD(self):
++        try:
++            SimpleHTTPServer.SimpleHTTPRequestHandler.do_HEAD(self)
++        except Exception,e:
++            self.handle_exception(e)
++            
++    def do_GET(self):
++        try:
++            SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
++        except Exception,e:
++            self.handle_exception(e)
++            
++    def do_POST(self):
++        """Serve a POST request."""
++        try:
++            length = self.headers.getheader('content-length') or "0"
++            try:
++                length = int(length)
++            except:
++                length = 0
++            content = self.rfile.read(length)
++            fields = parse_query(content)
++            f = self.send_head(fields)
++            if f:
++                self.copyfile(f, self.wfile)
++                f.close()
++        except Exception,e:
++            self.handle_exception(e)            
++
++    def log_message(self, format, *args):
++        if self.server.options.debug:
++            sys.stderr.write("%s: SERVER: %s - - [%s] %s\n" %
++                             (sys.argv[0],
++                              self.address_string(),
++                              self.log_date_time_string(),
++                              format%args))
++
++    def load_report(self, report):
++        path = os.path.join(self.server.root, 'report-%s.html'%report)
++        data = open(path).read()
++        keys = {}
++        for item in kBugKeyValueRE.finditer(data):
++            k,v = item.groups()
++            keys[k] = v
++        return keys
++
++    def load_crashes(self):
++        path = posixpath.join(self.server.root, 'index.html')
++        data = open(path).read()
++        problems = []
++        for item in kReportCrashEntryRE.finditer(data):
++            fieldData = item.group(1)
++            fields = dict([i.groups() for i in 
++                           kReportCrashEntryKeyValueRE.finditer(fieldData)])
++            problems.append(fields)
++        return problems
++
++    def handle_exception(self, exc):
++        import traceback
++        s = StringIO.StringIO()
++        print >>s, "INTERNAL ERROR\n"
++        traceback.print_exc(exc, s)
++        f = self.send_string(s.getvalue(), 'text/plain')
++        if f:
++            self.copyfile(f, self.wfile)
++            f.close()        
++            
++    def get_scalar_field(self, name):
++        if name in self.fields:
++            return self.fields[name][0]
++        else:
++            return None
++
++    def submit_bug(self, c):
++        title = self.get_scalar_field('title')
++        description = self.get_scalar_field('description')
++        report = self.get_scalar_field('report')
++        reporterIndex = self.get_scalar_field('reporter')
++        files = []
++        for fileID in self.fields.get('files',[]):
++            try:
++                i = int(fileID)
++            except:
++                i = None
++            if i is None or i<0 or i>=len(c.files):
++                return (False, 'Invalid file ID')
++            files.append(c.files[i])
++        
++        if not title:
++            return (False, "Missing title.")
++        if not description:
++            return (False, "Missing description.")
++        try:
++            reporterIndex = int(reporterIndex)
++        except:
++            return (False, "Invalid report method.")
++        
++        # Get the reporter and parameters.
++        reporter = self.server.reporters[reporterIndex]
++        parameters = {}
++        for o in reporter.getParameters():
++            name = '%s_%s'%(reporter.getName(),o.getName())
++            if name not in self.fields:
++                return (False, 
++                        'Missing field "%s" for %s report method.'%(name,
++                                                                    reporter.getName()))
++            parameters[o.getName()] = self.get_scalar_field(name)
++
++        # Update config defaults.
++        if report != 'None':
++            self.server.config.set('ScanView', 'reporter', reporterIndex)
++            for o in reporter.getParameters():
++              if o.saveConfigValue():
++                name = o.getName()
++                self.server.config.set(reporter.getName(), name, parameters[name])
++
++        # Create the report.
++        bug = Reporter.BugReport(title, description, files)
++
++        # Kick off a reporting thread.
++        t = ReporterThread(bug, reporter, parameters, self.server)
++        t.start()
++
++        # Wait for thread to die...
++        while t.isAlive():
++            time.sleep(.25)
++        submitStatus = t.status
++
++        return (t.success, t.status)
++
++    def send_report_submit(self):
++        report = self.get_scalar_field('report')
++        c = self.get_report_context(report)
++        if c.reportSource is None:
++            reportingFor = "Report Crashes > "
++            fileBug = """\
++<a href="/report_crashes">File Bug</a> > """%locals()
++        else:
++            reportingFor = '<a href="/%s">Report %s</a> > ' % (c.reportSource, 
++                                                                   report)
++            fileBug = '<a href="/report/%s">File Bug</a> > ' % report
++        title = self.get_scalar_field('title')
++        description = self.get_scalar_field('description')
++
++        res,message = self.submit_bug(c)
++
++        if res:
++            statusClass = 'SubmitOk'
++            statusName = 'Succeeded'
++        else:
++            statusClass = 'SubmitFail'
++            statusName = 'Failed'
++
++        result = """
++<head>
++  <title>Bug Submission</title>
++  <link rel="stylesheet" type="text/css" href="/scanview.css" />
++</head>
++<body>
++<h3>
++<a href="/">Summary</a> > 
++%(reportingFor)s
++%(fileBug)s
++Submit</h3>
++<form name="form" action="">
++<table class="form">
++<tr><td>
++<table class="form_group">
++<tr>
++  <td class="form_clabel">Title:</td>
++  <td class="form_value">
++    <input type="text" name="title" size="50" value="%(title)s" disabled>
++  </td>
++</tr>
++<tr>
++  <td class="form_label">Description:</td>
++  <td class="form_value">
++<textarea rows="10" cols="80" name="description" disabled>
++%(description)s
++</textarea>
++  </td>
++</table>
++</td></tr>
++</table>
++</form>
++<h1 class="%(statusClass)s">Submission %(statusName)s</h1>
++%(message)s
++<p>
++<hr>
++<a href="/">Return to Summary</a>
++</body>
++</html>"""%locals()
++        return self.send_string(result)
++
++    def send_open_report(self, report):
++        try:
++            keys = self.load_report(report)
++        except IOError:
++            return self.send_error(400, 'Invalid report.')
++
++        file = keys.get('FILE')
++        if not file or not posixpath.exists(file):
++            return self.send_error(400, 'File does not exist: "%s"' % file)
++
++        import startfile
++        if self.server.options.debug:
++            print >>sys.stderr, '%s: SERVER: opening "%s"'%(sys.argv[0],
++                                                            file)
++
++        status = startfile.open(file)
++        if status:
++            res = 'Opened: "%s"' % file
++        else:
++            res = 'Open failed: "%s"' % file
++
++        return self.send_string(res, 'text/plain')
++
++    def get_report_context(self, report):
++        class Context:
++            pass
++        if report is None or report == 'None':
++            data = self.load_crashes()
++            # Don't allow empty reports.
++            if not data:
++                raise ValueError, 'No crashes detected!'
++            c = Context()
++            c.title = 'clang static analyzer failures'
++
++            stderrSummary = ""
++            for item in data:
++                if 'stderr' in item:
++                    path = posixpath.join(self.server.root, item['stderr'])
++                    if os.path.exists(path):
++                        lns = itertools.islice(open(path), 0, 10)
++                        stderrSummary += '%s\n--\n%s' % (item.get('src', 
++                                                                  '<unknown>'),
++                                                         ''.join(lns))
++
++            c.description = """\
++The clang static analyzer failed on these inputs:
++%s
++
++STDERR Summary
++--------------
++%s
++""" % ('\n'.join([item.get('src','<unknown>') for item in data]),
++       stderrSummary)
++            c.reportSource = None
++            c.navMarkup = "Report Crashes > "
++            c.files = []
++            for item in data:                
++                c.files.append(item.get('src',''))
++                c.files.append(posixpath.join(self.server.root,
++                                              item.get('file','')))
++                c.files.append(posixpath.join(self.server.root,
++                                              item.get('clangfile','')))
++                c.files.append(posixpath.join(self.server.root,
++                                              item.get('stderr','')))
++                c.files.append(posixpath.join(self.server.root,
++                                              item.get('info','')))
++            # Just in case something failed, ignore files which don't
++            # exist.
++            c.files = [f for f in c.files
++                       if os.path.exists(f) and os.path.isfile(f)]
++        else:
++            # Check that this is a valid report.            
++            path = posixpath.join(self.server.root, 'report-%s.html' % report)
++            if not posixpath.exists(path):
++                raise ValueError, 'Invalid report ID'
++            keys = self.load_report(report)
++            c = Context()
++            c.title = keys.get('DESC','clang error (unrecognized')
++            c.description = """\
++Bug reported by the clang static analyzer.
++
++Description: %s
++File: %s
++Line: %s
++"""%(c.title, keys.get('FILE','<unknown>'), keys.get('LINE', '<unknown>'))
++            c.reportSource = 'report-%s.html' % report
++            c.navMarkup = """<a href="/%s">Report %s</a> > """ % (c.reportSource,
++                                                                  report)
++
++            c.files = [path]
++        return c
++
++    def send_report(self, report, configOverrides=None):
++        def getConfigOption(section, field):            
++            if (configOverrides is not None and
++                section in configOverrides and
++                field in configOverrides[section]):
++                return configOverrides[section][field]
++            return self.server.config.get(section, field)
++
++        # report is None is used for crashes
++        try:
++            c = self.get_report_context(report)
++        except ValueError, e:
++            return self.send_error(400, e.message)
++
++        title = c.title
++        description= c.description
++        reportingFor = c.navMarkup
++        if c.reportSource is None:
++            extraIFrame = ""
++        else:
++            extraIFrame = """\
++<iframe src="/%s" width="100%%" height="40%%"
++        scrolling="auto" frameborder="1">
++  <a href="/%s">View Bug Report</a>
++</iframe>""" % (c.reportSource, c.reportSource)
++
++        reporterSelections = []
++        reporterOptions = []
++
++        try:
++            active = int(getConfigOption('ScanView','reporter'))
++        except:
++            active = 0
++        for i,r in enumerate(self.server.reporters):
++            selected = (i == active)
++            if selected:
++                selectedStr = ' selected'
++            else:
++                selectedStr = ''
++            reporterSelections.append('<option value="%d"%s>%s</option>'%(i,selectedStr,r.getName()))
++            options = '\n'.join([ o.getHTML(r,title,getConfigOption) for o in r.getParameters()])
++            display = ('none','')[selected]
++            reporterOptions.append("""\
++<tr id="%sReporterOptions" style="display:%s">
++  <td class="form_label">%s Options</td>
++  <td class="form_value">
++    <table class="form_inner_group">
++%s
++    </table>
++  </td>
++</tr>
++"""%(r.getName(),display,r.getName(),options))
++        reporterSelections = '\n'.join(reporterSelections)
++        reporterOptionsDivs = '\n'.join(reporterOptions)
++        reportersArray = '[%s]'%(','.join([`r.getName()` for r in self.server.reporters]))
++
++        if c.files:
++            fieldSize = min(5, len(c.files))
++            attachFileOptions = '\n'.join(["""\
++<option value="%d" selected>%s</option>""" % (i,v) for i,v in enumerate(c.files)])
++            attachFileRow = """\
++<tr>
++  <td class="form_label">Attach:</td>
++  <td class="form_value">
++<select style="width:100%%" name="files" multiple size=%d>
++%s
++</select>
++  </td>
++</tr>
++""" % (min(5, len(c.files)), attachFileOptions)
++        else:
++            attachFileRow = ""
++
++        result = """<html>
++<head>
++  <title>File Bug</title>
++  <link rel="stylesheet" type="text/css" href="/scanview.css" />
++</head>
++<script language="javascript" type="text/javascript">
++var reporters = %(reportersArray)s;
++function updateReporterOptions() {
++  index = document.getElementById('reporter').selectedIndex;
++  for (var i=0; i < reporters.length; ++i) {
++    o = document.getElementById(reporters[i] + "ReporterOptions");
++    if (i == index) {
++      o.style.display = "";
++    } else {
++      o.style.display = "none";
++    }
++  }
++}
++</script>
++<body onLoad="updateReporterOptions()">
++<h3>
++<a href="/">Summary</a> > 
++%(reportingFor)s
++File Bug</h3>
++<form name="form" action="/report_submit" method="post">
++<input type="hidden" name="report" value="%(report)s">
++
++<table class="form">
++<tr><td>
++<table class="form_group">
++<tr>
++  <td class="form_clabel">Title:</td>
++  <td class="form_value">
++    <input type="text" name="title" size="50" value="%(title)s">
++  </td>
++</tr>
++<tr>
++  <td class="form_label">Description:</td>
++  <td class="form_value">
++<textarea rows="10" cols="80" name="description">
++%(description)s
++</textarea>
++  </td>
++</tr>
++
++%(attachFileRow)s
++
++</table>
++<br>
++<table class="form_group">
++<tr>
++  <td class="form_clabel">Method:</td>
++  <td class="form_value">
++    <select id="reporter" name="reporter" onChange="updateReporterOptions()">
++    %(reporterSelections)s
++    </select>
++  </td>
++</tr>
++%(reporterOptionsDivs)s
++</table>
++<br>
++</td></tr>
++<tr><td class="form_submit">
++  <input align="right" type="submit" name="Submit" value="Submit">
++</td></tr>
++</table>
++</form>
++
++%(extraIFrame)s
++
++</body>
++</html>"""%locals()
++
++        return self.send_string(result)
++
++    def send_head(self, fields=None):
++        if (self.server.options.onlyServeLocal and
++            self.client_address[0] != '127.0.0.1'):
++            return self.send_error(401, 'Unauthorized host.')
++
++        if fields is None:
++            fields = {}
++        self.fields = fields
++
++        o = urlparse.urlparse(self.path)
++        self.fields = parse_query(o.query, fields)
++        path = posixpath.normpath(urllib.unquote(o.path))
++
++        # Split the components and strip the root prefix.
++        components = path.split('/')[1:]
++        
++        # Special case some top-level entries.
++        if components:
++            name = components[0]
++            if len(components)==2:
++                if name=='report':
++                    return self.send_report(components[1])
++                elif name=='open':
++                    return self.send_open_report(components[1])
++            elif len(components)==1:
++                if name=='quit':
++                    self.server.halt()
++                    return self.send_string('Goodbye.', 'text/plain')
++                elif name=='report_submit':
++                    return self.send_report_submit()
++                elif name=='report_crashes':
++                    overrides = { 'ScanView' : {},
++                                  'Radar' : {},
++                                  'Email' : {} }
++                    for i,r in enumerate(self.server.reporters):
++                        if r.getName() == 'Radar':
++                            overrides['ScanView']['reporter'] = i
++                            break
++                    overrides['Radar']['Component'] = 'llvm - checker'
++                    overrides['Radar']['Component Version'] = 'X'
++                    return self.send_report(None, overrides)
++                elif name=='favicon.ico':
++                    return self.send_path(posixpath.join(kShare,'bugcatcher.ico'))
++        
++        # Match directory entries.
++        if components[-1] == '':
++            components[-1] = 'index.html'
++
++        relpath = '/'.join(components)
++        path = posixpath.join(self.server.root, relpath)
++
++        if self.server.options.debug > 1:
++            print >>sys.stderr, '%s: SERVER: sending path "%s"'%(sys.argv[0],
++                                                                 path)
++        return self.send_path(path)
++
++    def send_404(self):
++        self.send_error(404, "File not found")
++        return None
++
++    def send_path(self, path):
++        # If the requested path is outside the root directory, do not open it
++        rel = os.path.abspath(path)
++        if not rel.startswith(os.path.abspath(self.server.root)):
++          return self.send_404()
++        
++        ctype = self.guess_type(path)
++        if ctype.startswith('text/'):
++            # Patch file instead
++            return self.send_patched_file(path, ctype)
++        else:
++            mode = 'rb'
++        try:
++            f = open(path, mode)
++        except IOError:
++            return self.send_404()
++        return self.send_file(f, ctype)
++
++    def send_file(self, f, ctype):
++        # Patch files to add links, but skip binary files.
++        self.send_response(200)
++        self.send_header("Content-type", ctype)
++        fs = os.fstat(f.fileno())
++        self.send_header("Content-Length", str(fs[6]))
++        self.send_header("Last-Modified", self.date_time_string(fs.st_mtime))
++        self.end_headers()
++        return f
++
++    def send_string(self, s, ctype='text/html', headers=True, mtime=None):
++        if headers:
++            self.send_response(200)
++            self.send_header("Content-type", ctype)
++            self.send_header("Content-Length", str(len(s)))
++            if mtime is None:
++                mtime = self.dynamic_mtime
++            self.send_header("Last-Modified", self.date_time_string(mtime))
++            self.end_headers()
++        return StringIO.StringIO(s)
++
++    def send_patched_file(self, path, ctype):
++        # Allow a very limited set of variables. This is pretty gross.
++        variables = {}
++        variables['report'] = ''
++        m = kReportFileRE.match(path)
++        if m:
++            variables['report'] = m.group(2)
++
++        try:
++            f = open(path,'r')
++        except IOError:
++            return self.send_404()
++        fs = os.fstat(f.fileno())
++        data = f.read()
++        for a,b in kReportReplacements:
++            data = a.sub(b % variables, data)
++        return self.send_string(data, ctype, mtime=fs.st_mtime)
++
++
++def create_server(address, options, root):
++    import Reporter
++
++    reporters = Reporter.getReporters()
++
++    return ScanViewServer(address, ScanViewRequestHandler,
++                          root,
++                          reporters,
++                          options)
+diff --git tools/clang/tools/scan-view/share/startfile.py tools/clang/tools/scan-view/share/startfile.py.orig
+new file mode 100644
+index 0000000..e8fbe2d
+--- /dev/null
++++ tools/clang/tools/scan-view/share/startfile.py
+@@ -0,0 +1,203 @@
++"""Utility for opening a file using the default application in a cross-platform
++manner. Modified from http://code.activestate.com/recipes/511443/.
++"""
++
++__version__ = '1.1x'
++__all__ = ['open']
++
++import os
++import sys
++import webbrowser
++import subprocess
++
++_controllers = {}
++_open = None
++
++
++class BaseController(object):
++    '''Base class for open program controllers.'''
++
++    def __init__(self, name):
++        self.name = name
++
++    def open(self, filename):
++        raise NotImplementedError
++
++
++class Controller(BaseController):
++    '''Controller for a generic open program.'''
++
++    def __init__(self, *args):
++        super(Controller, self).__init__(os.path.basename(args[0]))
++        self.args = list(args)
++
++    def _invoke(self, cmdline):
++        if sys.platform[:3] == 'win':
++            closefds = False
++            startupinfo = subprocess.STARTUPINFO()
++            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
++        else:
++            closefds = True
++            startupinfo = None
++
++        if (os.environ.get('DISPLAY') or sys.platform[:3] == 'win' or
++                                                    sys.platform == 'darwin'):
++            inout = file(os.devnull, 'r+')
++        else:
++            # for TTY programs, we need stdin/out
++            inout = None
++
++        # if possible, put the child precess in separate process group,
++        # so keyboard interrupts don't affect child precess as well as
++        # Python
++        setsid = getattr(os, 'setsid', None)
++        if not setsid:
++            setsid = getattr(os, 'setpgrp', None)
++
++        pipe = subprocess.Popen(cmdline, stdin=inout, stdout=inout,
++                                stderr=inout, close_fds=closefds,
++                                preexec_fn=setsid, startupinfo=startupinfo)
++
++        # It is assumed that this kind of tools (gnome-open, kfmclient,
++        # exo-open, xdg-open and open for OSX) immediately exit after lauching
++        # the specific application
++        returncode = pipe.wait()
++        if hasattr(self, 'fixreturncode'):
++            returncode = self.fixreturncode(returncode)
++        return not returncode
++
++    def open(self, filename):
++        if isinstance(filename, basestring):
++            cmdline = self.args + [filename]
++        else:
++            # assume it is a sequence
++            cmdline = self.args + filename
++        try:
++            return self._invoke(cmdline)
++        except OSError:
++            return False
++
++
++# Platform support for Windows
++if sys.platform[:3] == 'win':
++
++    class Start(BaseController):
++        '''Controller for the win32 start progam through os.startfile.'''
++
++        def open(self, filename):
++            try:
++                os.startfile(filename)
++            except WindowsError:
++                # [Error 22] No application is associated with the specified
++                # file for this operation: '<URL>'
++                return False
++            else:
++                return True
++
++    _controllers['windows-default'] = Start('start')
++    _open = _controllers['windows-default'].open
++
++
++# Platform support for MacOS
++elif sys.platform == 'darwin':
++    _controllers['open']= Controller('open')
++    _open = _controllers['open'].open
++
++
++# Platform support for Unix
++else:
++
++    import commands
++
++    # @WARNING: use the private API of the webbrowser module
++    from webbrowser import _iscommand
++
++    class KfmClient(Controller):
++        '''Controller for the KDE kfmclient program.'''
++
++        def __init__(self, kfmclient='kfmclient'):
++            super(KfmClient, self).__init__(kfmclient, 'exec')
++            self.kde_version = self.detect_kde_version()
++
++        def detect_kde_version(self):
++            kde_version = None
++            try:
++                info = commands.getoutput('kde-config --version')
++
++                for line in info.splitlines():
++                    if line.startswith('KDE'):
++                        kde_version = line.split(':')[-1].strip()
++                        break
++            except (OSError, RuntimeError):
++                pass
++
++            return kde_version
++
++        def fixreturncode(self, returncode):
++            if returncode is not None and self.kde_version > '3.5.4':
++                return returncode
++            else:
++                return os.EX_OK
++
++    def detect_desktop_environment():
++        '''Checks for known desktop environments
++
++        Return the desktop environments name, lowercase (kde, gnome, xfce)
++        or "generic"
++
++        '''
++
++        desktop_environment = 'generic'
++
++        if os.environ.get('KDE_FULL_SESSION') == 'true':
++            desktop_environment = 'kde'
++        elif os.environ.get('GNOME_DESKTOP_SESSION_ID'):
++            desktop_environment = 'gnome'
++        else:
++            try:
++                info = commands.getoutput('xprop -root _DT_SAVE_MODE')
++                if ' = "xfce4"' in info:
++                    desktop_environment = 'xfce'
++            except (OSError, RuntimeError):
++                pass
++
++        return desktop_environment
++
++
++    def register_X_controllers():
++        if _iscommand('kfmclient'):
++            _controllers['kde-open'] = KfmClient()
++
++        for command in ('gnome-open', 'exo-open', 'xdg-open'):
++            if _iscommand(command):
++                _controllers[command] = Controller(command)
++
++    def get():
++        controllers_map = {
++            'gnome': 'gnome-open',
++            'kde': 'kde-open',
++            'xfce': 'exo-open',
++        }
++
++        desktop_environment = detect_desktop_environment()
++
++        try:
++            controller_name = controllers_map[desktop_environment]
++            return _controllers[controller_name].open
++
++        except KeyError:
++            if _controllers.has_key('xdg-open'):
++                return _controllers['xdg-open'].open
++            else:
++                return webbrowser.open
++
++
++    if os.environ.get("DISPLAY"):
++        register_X_controllers()
++    _open = get()
++
++
++def open(filename):
++    '''Open a file or an URL in the registered default application.'''
++
++    return _open(filename)
