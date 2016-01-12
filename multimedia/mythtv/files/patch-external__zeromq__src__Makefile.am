@@ -1,0 +1,10 @@
+--- external/zeromq/src/Makefile.am.orig	2015-11-16 14:31:23.735432710 +0000
++++ external/zeromq/src/Makefile.am	2015-11-16 14:28:48.465433398 +0000
+@@ -1,6 +1,6 @@
+ lib_LTLIBRARIES = libmythzmq.la
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(PKG_CONFIG_PATH)
+ pkgconfig_DATA = libmythzmq.pc
+ 
+ include_HEADERS = ../include/zmq.h ../include/zmq.hpp ../include/zmq_utils.h
