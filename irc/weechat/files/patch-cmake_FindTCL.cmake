@@ -1,6 +1,6 @@
---- cmake/FindTCL.cmake.orig	2015-01-12 09:49:31.591454833 +0000
-+++ cmake/FindTCL.cmake	2015-01-12 09:52:04.595540774 +0000
-@@ -55,97 +55,18 @@
+--- cmake/FindTCL.cmake.orig	2016-01-10 08:17:50 UTC
++++ cmake/FindTCL.cmake
+@@ -55,97 +55,18 @@ if(TCL_FOUND)
    set(TCL_FIND_QUIETLY TRUE)
  endif()
  
@@ -55,10 +55,8 @@
 -  tcl
 -  tcl${TCL_VERSION} tcl${TCL_TCLSH_VERSION}
 -  PATHS ${TCL_POSSIBLE_LIB_PATHS}
-+  tcl${TCL_INT_VERSION}
-+  PATHS ${BSD_TCL_LIBDIR}
-   )
- 
+-  )
+-
 -cmake_find_frameworks(Tcl)
 -
 -set(TCL_FRAMEWORK_INCLUDES)
@@ -83,8 +81,10 @@
 -  /usr/local/include/tcl${TCL_VERSION}
 -  /usr/local/include/tcl8.6
 -  /usr/local/include/tcl8.5
--  )
--
++  tcl${TCL_INT_VERSION}
++  PATHS ${BSD_TCL_LIBDIR}
+   )
+ 
 -if(WIN32)
 -  set(TCLTK_POSSIBLE_INCLUDE_PATHS ${TCLTK_POSSIBLE_INCLUDE_PATHS}
 -    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\ActiveState\\ActiveTcl\\${ActiveTcl_CurrentVersion}]/include"
