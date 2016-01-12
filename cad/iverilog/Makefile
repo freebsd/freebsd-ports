@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USES=		bison gmake
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000033
