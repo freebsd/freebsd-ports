@@ -14,10 +14,8 @@ DISTNAME=	MUMPS_${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
 
-LICENSE=	Public_Domain
-LICENSE_NAME=	"Public Domain"
+LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 #-----------------------------------------------------------------------
 

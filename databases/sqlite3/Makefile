@@ -10,10 +10,7 @@ DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
 
-LICENSE=	public
-LICENSE_NAME=	Public Domain
-LICENSE_TEXT=	Description of the license can be obtained from the following URL: https://www.sqlite.org/copyright.html
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	PD
 
 CONFLICTS=	sqlcipher-[0-9]*
 

@@ -17,10 +17,7 @@ DISTFILES+=	hmactestvectors.zip:mac
 MAINTAINER=	jmg@FreeBSD.org
 COMMENT=	Collection of NIST's Know Answer Test Vectors
 
-LICENSE=        Public_domain
-LICENSE_NAME=   Public Domain
-LICENSE_PERMS=  dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_TEXT=	Public Domain, US Gov't work is not copyrighted in the US.
+LICENSE=        PD
 
 # We want each dist file in it's own subdir
 EXTRACT_AFTER_ARGS= -s ":^:nist-kat/$${file%.zip}/:"
