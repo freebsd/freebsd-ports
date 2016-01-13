@@ -12,6 +12,8 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not build with octave-4.0.0
+
 GNU_CONFIGURE=	yes
 
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
