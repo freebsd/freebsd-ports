@@ -7,7 +7,6 @@ bin/mythffserver
 bin/mythfrontend
 bin/mythjobqueue
 bin/mythlcdserver
-bin/mythlogserver
 bin/mythmediaserver
 bin/mythpreviewgen
 bin/mythreplex
@@ -425,7 +424,6 @@ include/mythtv/mythwidgets.h
 include/mythtv/mythwizard.h
 include/mythtv/netgrabbermanager.h
 include/mythtv/netutils.h
-include/mythtv/nzmqt/nzmqt.hpp
 include/mythtv/oldsettings.h
 include/mythtv/output.h
 include/mythtv/playgroup.h
@@ -483,9 +481,6 @@ include/mythtv/virtualkeyboard_qt.h
 include/mythtv/visual.h
 include/mythtv/volumebase.h
 include/mythtv/xmlparse.h
-include/mythtv/zeromq/zmq.h
-include/mythtv/zeromq/zmq.hpp
-include/mythtv/zeromq/zmq_utils.h
 lib/libmyth-0.27.so
 lib/libmyth-0.27.so.0
 lib/libmyth-0.27.so.0.27
@@ -517,10 +512,6 @@ lib/libmythmetadata-0.27.so
 lib/libmythmetadata-0.27.so.0
 lib/libmythmetadata-0.27.so.0.27
 lib/libmythmetadata-0.27.so.0.27.0
-lib/libmythnzmqt.so
-lib/libmythnzmqt.so.0
-lib/libmythnzmqt.so.0.27
-lib/libmythnzmqt.so.0.27.0
 lib/libmythpostproc.so
 lib/libmythpostproc.so.52
 lib/libmythpostproc.so.52.2.100
@@ -554,10 +545,6 @@ lib/libmythupnp-0.27.so
 lib/libmythupnp-0.27.so.0
 lib/libmythupnp-0.27.so.0.27
 lib/libmythupnp-0.27.so.0.27.0
-lib/libmythzmq.a
-lib/libmythzmq.so
-lib/libmythzmq.so.1
-lib/libmythzmq.so.1.0.1
 lib/mythtv/filters/libadjust.so
 lib/mythtv/filters/libbobdeint.so
 lib/mythtv/filters/libcrop.so
@@ -574,7 +561,6 @@ lib/mythtv/filters/libpostprocess.so
 lib/mythtv/filters/libquickdnr.so
 lib/mythtv/filters/libvflip.so
 lib/mythtv/filters/libyadif.so
-lib/pkgconfig/libmythzmq.pc
 %%DATADIR%%/CDS_scpd.xml
 %%DATADIR%%/CMGR_scpd.xml
 %%DATADIR%%/MFEXML_scpd.xml

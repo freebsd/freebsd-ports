@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv-frontend
-PORTVERSION=	0.27.0.20140121
-PORTREVISION=	6
+PORTVERSION=	0.27.5.20150616
 CATEGORIES=	multimedia
-MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
@@ -22,7 +20,7 @@ CONFLICTS=	mythtv-[0-9]*
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythtv
-GH_TAGNAME=	5a5e1cd
+GH_TAGNAME=	ad97d24
 
 WRKSRC_SUBDIR=	${GH_PROJECT}
 
@@ -44,12 +42,13 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 
 CPPFLAGS+=	${QTCPPFLAGS}
 CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" \
-		QTDIR="${QT_PREFIX}"
+		QTDIR="${QT_PREFIX}" \
+		PKG_CONFIG_PATH="${LOCALBASE}/libdata/pkgconfig"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --cxx="${CXX}" --libxml2-path="${LOCALBASE}/include/libxml2" \
-		--disable-audio-alsa --disable-indev=alsa --disable-outdev=alsa --disable-firewire \
-		--disable-hdhomerun --disable-v4l2 --disable-ivtv --disable-hdpvr \
+		--disable-audio-alsa --disable-indev=alsa --disable-outdev=alsa --disable-mythlogserver \
+		--disable-firewire --disable-hdhomerun --disable-v4l2 --disable-ivtv --disable-hdpvr \
 		--disable-dvb --enable-opengl-video --without-bindings=perl,python,php
 
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
