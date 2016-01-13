@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION?=	2.0.0.0
+PORTVERSION?=	2.0.0.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
@@ -11,11 +11,6 @@ COMMENT=	Radically simple IT automation
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BUILD_DEPENDS+=	a2x:${PORTSDIR}/textproc/asciidoc \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
@@ -53,14 +48,6 @@ post-patch:
 
 .for f in docs/man/man1/* examples/* lib/ansible/*.py lib/ansible/*/*.py
 	@${REINPLACE_CMD} -e 's|/usr/share/ansible|${DATADIR}|' ${WRKSRC}/${f}
-.endfor
-
-post-build:
-.for f in ansible-doc ansible-galaxy ansible-playbook ansible-pull \
-	ansible-vault ansible
-	${LOCALBASE}/bin/a2x -d manpage -f manpage -L \
-		${WRKSRC}/docs/man/man1/${f}.1.asciidoc.in
-	${RM} ${WRKSRC}/docs/man/man1/${f}.1.asciidoc.in
 .endfor
 
 post-install:
