@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pure-csv
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	textproc
 MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
@@ -13,7 +12,7 @@ COMMENT=	CSV reading and writing module for the Pure language
 
 LICENSE=	BSD3CLAUSE
 
-USES=		pure
+USES=		pkgconfig pure
 PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
 
