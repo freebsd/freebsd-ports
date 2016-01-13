@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 ALL_TARGET=	all-redirect
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|\([[:blank:]]\)\($$(exec_prefix)\)|\1$$(DESTDIR)\2| ; \
