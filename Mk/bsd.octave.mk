@@ -8,8 +8,6 @@
 # It is, in effect, a wrapper using the package handling already built
 # into math/octave.
 
-BROKEN=		octave-4.0.0 is currently non-functional
-
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases \
 		SF/octave/Octave%20Forge%20Packages/R2009-06-07 \
 		SF/octave/Octave%20Forge%20Packages/R2009-05-08
