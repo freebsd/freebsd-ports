@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+201601XX:
+  AFFECTS: users of sysutils/ansible
+  AUTHOR: lifanov@mail.lifanov.com
+
+  Ansible 2.0.0 introduces a number of incompatible configuration changes.
+  Please read changelog and migrate current configuration:
+
+  https://raw.githubusercontent.com/ansible/ansible/v2.0.0.0-1/CHANGELOG.md
+
+  Ansible 1.9.* will be provided as sysutils/ansible1 until the next update
+  of 2.0 branch.
+
 20160111:
   AFFECTS: users of security/easy-rsa
   AUTHOR: mandree@FreeBSD.org
