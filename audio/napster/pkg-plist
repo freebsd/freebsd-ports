@@ -1,5 +1,5 @@
 bin/nap
-bin/napping
+@(,,4755) bin/napping
 man/man1/nap.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
