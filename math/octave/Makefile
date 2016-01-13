@@ -3,6 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -38,7 +39,6 @@ USES=		charsetfix fortran gmake libtool perl5 pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_TEX=	dvipsk:build
-USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
