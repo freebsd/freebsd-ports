@@ -52,6 +52,11 @@ LITE=	yes
 
 .if defined (LITE)
 OPTIONS_UNSET=	NLS DOCS EXAMPLES
+PLIST_SUB+=	COMPRESSED_FOLDERS="@comment "
+PLIST_SUB+=	HTML="@comment "
+PLIST_SUB+=	NLS="@comment "
+PLIST_SUB+=	XML="@comment "
+PLIST_SUB+=	NNTP="@comment "
 .else
 OPTIONS_DEFINE=	COMPRESSED_FOLDERS SASL DEBUG DOCS EXAMPLES FLOCK \
 		GPGME GREETING_PATCH GSSAPI HTML ICONV IDN IFDEF_PATCH \
@@ -335,4 +340,9 @@ pre-build::
 		${WRKSRC}/doc/Makefile
 .endif
 
+post-stage:
+.if defined(LITE)
+	-${RM} ${STAGEDIR}${PREFIX}/lib/charset.alias
+	-${RM} ${STAGEDIR}${PREFIX}/share/locale/locale.alias
+.endif
 .include <bsd.port.mk>
