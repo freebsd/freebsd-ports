@@ -301,7 +301,7 @@ _LICENSE_DISTFILES=	${LICENSE_DISTFILES}
 _LICENSE_GROUPS_${lic}?=#
 .		if ${_LICENSE_LIST:M${lic}} != ""
 # Case 1: license defined in the framework.
-_LICENSE_TYPE_${lic}=	known
+_LICENSE_TYPE_${lic} =	known
 .			for var in ${_LICENSE_LIST_PORT_VARS}
 .				if defined(LICENSE_${var}_${lic})
 _LICENSE_ERROR?=	redefining LICENSE_${var}_${lic} is not allowed for known licenses, to define a custom license try another LICENSE name for ${lic} like ${lic}-variant
@@ -314,25 +314,25 @@ _LICENSE_ERROR?=	ERROR: missing _LICENSE_${var}_${lic} in bsd.licenses.db.mk
 .			if !defined(LICENSE_FILE_${lic})
 .				if !defined(LICENSE_TEXT_${lic})
 .					if exists(${_LICENSE_STORE}/${lic})
-_LICENSE_FILE_${lic}=		${_LICENSE_STORE}/${lic}
+_LICENSE_FILE_${lic} =		${_LICENSE_STORE}/${lic}
 .					else
 #  No license file in /usr/ports/Templates/Licenses
-_LICENSE_TEXT_${lic}=	The license: ${lic} (${_LICENSE_NAME_${lic}}) is standard, please read from the web.
-_LICENSE_FILE_${lic}=	${WRKDIR}/${lic}
+_LICENSE_TEXT_${lic} =	The license: ${lic} (${_LICENSE_NAME_${lic}}) is standard, please read from the web.
+_LICENSE_FILE_${lic} =	${WRKDIR}/${lic}
 .					endif
 .				else
 _LICENSE_ERROR?=	defining LICENSE_TEXT_${lic} is not allowed for known licenses
 .				endif
 .			else
-_LICENSE_FILE_${lic}=	${LICENSE_FILE_${lic}}
+_LICENSE_FILE_${lic} =	${LICENSE_FILE_${lic}}
 .			endif
 
 .		else
 # Case 2: license only known by the port.
-_LICENSE_TYPE_${lic}=	unknown
+_LICENSE_TYPE_${lic} =	unknown
 .			for var in ${_LICENSE_LIST_PORT_VARS}
 .				if defined(LICENSE_${var}_${lic})
-_LICENSE_${var}_${lic}=	${LICENSE_${var}_${lic}}
+_LICENSE_${var}_${lic} =	${LICENSE_${var}_${lic}}
 .				elif !defined(_LICENSE_${var}_${lic})
 _LICENSE_ERROR?=	for unknown licenses, defining LICENSE_${var}_${lic} is mandatory (otherwise use a known LICENSE)
 .				endif
@@ -354,11 +354,11 @@ _LICENSE_PERMS_${lic}:=	${__LICENSE_PERMS}
 .				if !defined(LICENSE_TEXT_${lic})
 _LICENSE_ERROR?=		either LICENSE_FILE_${lic} or LICENSE_TEXT_${lic} must be defined
 .				else
-_LICENSE_TEXT_${lic}=	${LICENSE_TEXT_${lic}}
-_LICENSE_FILE_${lic}=	${WRKDIR}/${lic}
+_LICENSE_TEXT_${lic} =	${LICENSE_TEXT_${lic}}
+_LICENSE_FILE_${lic} =	${WRKDIR}/${lic}
 .				endif
 .			else
-_LICENSE_FILE_${lic}=	${LICENSE_FILE_${lic}}
+_LICENSE_FILE_${lic} =	${LICENSE_FILE_${lic}}
 .			endif
 .		endif
 
@@ -368,9 +368,9 @@ _LICENSE_ERROR?=		defining both LICENSE_FILE_${lic} and LICENSE_TEXT_${lic}is no
 .		endif
 # Distfiles
 .		if !defined(LICENSE_DISTFILES_${lic})
-_LICENSE_DISTFILES_${lic}=	${_DISTFILES}
+_LICENSE_DISTFILES_${lic} =	${_DISTFILES}
 .		else
-_LICENSE_DISTFILES_${lic}=	${LICENSE_DISTFILES_${lic}}
+_LICENSE_DISTFILES_${lic} =	${LICENSE_DISTFILES_${lic}}
 .		endif
 .	endfor
 .endif
@@ -724,7 +724,7 @@ ${_LICENSE_COOKIE}:
 .		endif
 .		for lic in ${_LICENSE}
 .			for var in NAME PERMS GROUPS DISTFILES
-	@${ECHO_CMD} "_LICENSE_${var}_${lic}=${_LICENSE_${var}_${lic}:C/^[[:blank:]]*//}" >> ${_LICENSE_CATALOG_TMP}
+	@${ECHO_CMD} "_LICENSE_${var}_${lic} =${_LICENSE_${var}_${lic}:C/^[[:blank:]]*//}" >> ${_LICENSE_CATALOG_TMP}
 .			endfor
 .		endfor
 # Report
