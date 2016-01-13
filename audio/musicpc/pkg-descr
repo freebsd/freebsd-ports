@@ -1,4 +1,4 @@
 A client for MPD, the Music Player Daemon.
 mpc connects to a MPD running on a machine via a network.
 
-WWW: http://www.musicpd.org
+WWW: http://www.musicpd.org/
