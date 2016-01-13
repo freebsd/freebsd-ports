@@ -1658,6 +1658,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%PRIV_LIB%%/unicore/To/Uc.pl
 %%PRIV_LIB%%/unicore/To/Upper.pl
 %%PRIV_LIB%%/unicore/To/WB.pl
+%%PRIV_LIB%%/unicore/To/_PerlWB.pl
 %%PRIV_LIB%%/unicore/UCD.pl
 %%PRIV_LIB%%/unicore/lib/Age/NA.pl
 %%PRIV_LIB%%/unicore/lib/Age/V11.pl
