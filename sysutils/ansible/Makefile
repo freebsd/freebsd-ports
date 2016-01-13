@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTVERSION?=	2.0.0.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
@@ -13,19 +12,23 @@ COMMENT=	Radically simple IT automation
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS+=	a2x:${PORTSDIR}/textproc/asciidoc \
+		xsltproc:${PORTSDIR}/textproc/libxslt \
+		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:${PORTSDIR}/security/py-paramiko \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:${PORTSDIR}/devel/py-Jinja2
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 NO_ARCH=	yes
 USES=		cpe python:2 shebangfix
 USE_PYTHON=	autoplist distutils
 python_CMD=	${LOCALBASE}/bin/python
-SHEBANG_FILES=	lib/ansible/runner/action_plugins/synchronize.py \
-		lib/ansible/modules/core/*/*.py \
+SHEBANG_FILES+=	lib/ansible/modules/core/*/*.py \
 		lib/ansible/modules/core/*/*/*.py \
 		lib/ansible/modules/extras/*/*.py \
 		lib/ansible/modules/extras/*/*/*.py
@@ -43,18 +46,21 @@ PLIST_FILES+=	man/man1/ansible-doc.1.gz \
 PORTEXAMPLES=	ansible.cfg hosts
 
 post-patch:
-.for f in bin/ansible-galaxy docs/man/man1/ansible-galaxy.1 \
-	docs/man/man1/ansible-playbook.1 docs/man/man1/ansible.1 \
-	examples/ansible.cfg examples/hosts lib/ansible/constants.py \
-	lib/ansible/module_utils/urls.py lib/ansible/modules/core/system/setup.py \
-	lib/ansible/playbook/__init__.py lib/ansible/runner/__init__.py
+.for f in bin/* docs/man/man1/* examples/* lib/ansible/*.py \
+	lib/ansible/*/*.py lib/ansible/*/*/*.py lib/ansible/*/*/*/*.py
 	@${REINPLACE_CMD} -e 's|/etc/ansible|${ETCDIR}|' ${WRKSRC}/${f}
 .endfor
 
-.for f in docs/man/man1/ansible-playbook.1 docs/man/man1/ansible.1 \
-	examples/ansible.cfg lib/ansible/constants.py \
-	lib/ansible/playbook/__init__.py lib/ansible/runner/__init__.py \
+.for f in docs/man/man1/* examples/* lib/ansible/*.py lib/ansible/*/*.py
 	@${REINPLACE_CMD} -e 's|/usr/share/ansible|${DATADIR}|' ${WRKSRC}/${f}
+.endfor
+
+post-build:
+.for f in ansible-doc ansible-galaxy ansible-playbook ansible-pull \
+	ansible-vault ansible
+	${LOCALBASE}/bin/a2x -d manpage -f manpage -L \
+		${WRKSRC}/docs/man/man1/${f}.1.asciidoc.in
+	${RM} ${WRKSRC}/docs/man/man1/${f}.1.asciidoc.in
 .endfor
 
 post-install:
