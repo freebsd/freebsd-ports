@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	ocaml-
@@ -15,8 +15,7 @@ LICENSE_NAME=	OCaml-SQLite3 unique permissive license
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=			gmake pkgconfig
-USE_SQLITE=		yes
+USES=			gmake pkgconfig sqlite
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
