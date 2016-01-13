@@ -17,7 +17,7 @@ use File::Remove qw(remove);
 
 # Interrogate octave to see where it stores its packages.
 
-open(OCTAVE,"octave -H -q --no-site-file --eval \"pkg('prefix');pkg('global_list')\" |") || die;
+open(OCTAVE,"octave-cli -H -q --no-site-file --eval \"pkg('prefix');pkg('global_list')\" |") || die;
 my $install_prefix = <OCTAVE> || die;
 chomp $install_prefix;
 $install_prefix =~ s/.*\s+//;
@@ -76,7 +76,7 @@ while (my $p = <$install_prefix/*>) {
 # out everything.
 
 my %check_installed;
-open(OCTAVE,"octave -H -q --no-site-file --eval \"pkg('list')\" |") || die;
+open(OCTAVE,"octave-cli -H -q --no-site-file --eval \"pkg('list')\" |") || die;
 <OCTAVE>;
 my $out = join "",<OCTAVE>;
 while ($out =~ s/^\s*(\S+)\s*\|\s*(\S+).*$//m) {
@@ -158,7 +158,7 @@ if ($nr_to_remove>0) {
   foreach my $p (@ordered_list_to_remove) {
     print "load-octave-pkg: octave is uninstalling $p.\n";
     $p =~ s/\-[\d\.]+\.tar\.gz//;
-    system "octave -H -q --no-site-file --eval \"pkg('uninstall','$p')\" > /dev/null";
+    system "octave-cli -H -q --no-site-file --eval \"pkg('uninstall','$p')\" > /dev/null";
   }
 }
 
@@ -238,7 +238,7 @@ make_ordered_list_to_install(join("|",sort keys %to_install));
 
 foreach my $p (@ordered_list_to_install) {
   print "load-octave-pkg: octave is installing $p.\n";
-  system "octave -H -q --no-site-file --eval \"pkg('install','$tardir/$p')\" > /dev/null\n";
+  system "octave-cli -H -q --no-site-file --eval \"pkg('install','$tardir/$p')\" > /dev/null\n";
 }
 
 # Remove directories that may have been left behind by the octave packaging
