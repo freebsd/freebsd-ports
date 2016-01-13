@@ -10,7 +10,7 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Converts ABC to music sheet in PostScript format
 
 USES=		cpe
-USE_GCC=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 CPE_VENDOR=	moinejf
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
@@ -28,7 +28,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abcm2ps ${STAGEDIR}${PREFIX}/bin/
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.fmt ${STAGEDIR}${DATADIR}/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
