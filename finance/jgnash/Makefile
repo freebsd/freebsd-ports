@@ -24,6 +24,7 @@ JAVA_VERSION=	1.6+
 JAVA_VENDOR=	openjdk
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
