@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	checkbashisms
-PORTVERSION=	2.15.5
+PORTVERSION=	2.15.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	DEBIAN/pool/main/d/devscripts/
 DISTNAME=	devscripts_${PORTVERSION}
 
 MAINTAINER=	nukama+maintainer@gmail.com
-COMMENT=	Debian script that checks for bash-isms
+COMMENT=	Check for the presence of bashisms
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/devscripts-${PORTVERSION}
 SHEBANG_FILES=	scripts/checkbashisms.pl
 
 PLIST_FILES=	bin/checkbashisms \
-		man/man1/checkbashisms.1.gz
+		man/man1/checkbashisms.1.gz \
+		etc/bash_completion.d/_checkbashisms.bash
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|###VERSION###|${PORTVERSION}|' ${WRKSRC}/scripts/checkbashisms.pl
@@ -30,5 +31,8 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/bin/checkbashisms
 	${INSTALL_MAN} ${WRKSRC}/scripts/checkbashisms.1 \
 	    ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/scripts/checkbashisms.bash_completion \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/_checkbashisms.bash
 
 .include <bsd.port.mk>
