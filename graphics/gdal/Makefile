@@ -30,7 +30,7 @@ OPTIONS_RADIO_PDF=	PODOFO POPPLER
 PCRE_DESC=	Regular expression support for SQLite
 SPATIALITE_DESC=SpatiaLite support
 
-CFLAGS+=	-fPIC
+CFLAGS+=	-fPIC -flax-vector-conversions
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--enable-static=yes \
 		--with-geotiff=${LOCALBASE} \
