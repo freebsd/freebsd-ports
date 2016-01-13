@@ -15,6 +15,8 @@ GH_ACCOUNT=	nevat
 GH_PROJECT=	abbayedesmorts-gpl
 GH_TAGNAME=	558116d5d6
 
+PORTSCOUT=	skipv:v1.2,v1.13,v1.11 # git repo contains required portability fixes
+
 USE_SDL=	sdl2 mixer2 image2
 
 DATADIR=	${PREFIX}/share/abbayev2
