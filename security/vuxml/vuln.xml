@@ -58,6 +58,44 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a7a4e96c-ba50-11e5-9728-002590263bf5">
+    <topic>kibana4 -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>kibana4</name>
+	<name>kibana41</name>
+	<range><lt>4.1.4</lt></range>
+      </package>
+      <package>
+	<name>kibana42</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>kibana43</name>
+	<range><lt>4.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/blog/kibana-4-3-1-and-4-2-2-and-4-1-4">
+	  <p>Fixes XSS vulnerability (CVE pending) - Thanks to Vladimir Ivanov
+	    for responsibly reporting.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/205961</freebsdpr>
+      <freebsdpr>ports/205962</freebsdpr>
+      <freebsdpr>ports/205963</freebsdpr>
+      <url>https://www.elastic.co/blog/kibana-4-3-1-and-4-2-2-and-4-1-4</url>
+    </references>
+    <dates>
+      <discovery>2015-12-17</discovery>
+      <entry>2016-01-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="333f655a-b93a-11e5-9efa-5453ed2e2b49">
     <topic>p5-PathTools -- File::Spec::canonpath loses taint</topic>
     <affects>
