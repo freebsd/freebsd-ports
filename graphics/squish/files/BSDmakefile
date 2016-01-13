@@ -1,0 +1,15 @@
+LIB=		squish
+SHLIB_MAJOR=	1
+SRCS!=		echo *.cpp
+NO_PROFILE=	yes
+
+CXXFLAGS+=	-include limits.h -I${.CURDIR}
+
+LIBDIR=		${PREFIX}/lib
+INCSDIR=	${PREFIX}/include
+INCS=		squish.h
+# The below two are needed until PR 206126 is resolved
+INCSOWN=	${LIBOWN}
+INCSGRP=	${LIBGRP}
+
+.include <bsd.lib.mk>
