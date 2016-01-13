@@ -62,6 +62,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/UserAgent/Server.pm
 %%SITE_PERL%%/Mojo/UserAgent/Transactor.pm
 %%SITE_PERL%%/Mojo/Util.pm
+%%SITE_PERL%%/Mojo/WebSocket.pm
 %%SITE_PERL%%/Mojolicious.pm
 %%SITE_PERL%%/Mojolicious/Command.pm
 %%SITE_PERL%%/Mojolicious/Command/cgi.pm
@@ -195,6 +196,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::UserAgent::Server.3.gz
 %%PERL5_MAN3%%/Mojo::UserAgent::Transactor.3.gz
 %%PERL5_MAN3%%/Mojo::Util.3.gz
+%%PERL5_MAN3%%/Mojo::WebSocket.3.gz
 %%PERL5_MAN3%%/Mojolicious.3.gz
 %%PERL5_MAN3%%/Mojolicious::Command.3.gz
 %%PERL5_MAN3%%/Mojolicious::Command::cgi.3.gz
