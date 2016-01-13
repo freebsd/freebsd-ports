@@ -11,6 +11,7 @@ bin/pg_dump
 bin/pg_dumpall
 bin/pg_isready
 bin/pg_restore
+bin/pgbench
 bin/psql
 bin/reindexdb
 bin/vacuumdb

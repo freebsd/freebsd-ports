@@ -5,6 +5,11 @@ bin/pg_ctl
 bin/pg_receivexlog
 bin/pg_resetxlog
 bin/pg_recvlogical
+bin/pg_archivecleanup
+bin/pg_test_fsync
+bin/pg_test_timing
+bin/pg_xlogdump
+bin/pg_upgrade
 bin/postgres
 bin/postmaster
 etc/periodic/daily/502.pgsql
