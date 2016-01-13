@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rcpd
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net-mgmt net
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rcpd/
 
