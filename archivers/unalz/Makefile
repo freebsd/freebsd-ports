@@ -5,13 +5,12 @@ PORTNAME=	unalz
 PORTVERSION=	0.65
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.kipple.pe.kr/win/unalz/
+MASTER_SITES=	http://BSDforge.com/projects/source/archivers/unalz/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Extracts AlZip archives
 
-BROKEN=		unfetchable
-
+LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/readme.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
