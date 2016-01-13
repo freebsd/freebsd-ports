@@ -13,7 +13,7 @@ MAINTAINER=	jhs@berklix.com
 COMMENT=	Multi-radix calculator for x11
 
 # XORG_CAT=	app
-# USE_IMAKE=	yes
+# USES= imake
 #	Maybe later.
 #	It would move from distfiles/hexcalc..tar.Z
 #	to distfiles/xorg/app/hexcalc..tar.Z & require change in distinfo
