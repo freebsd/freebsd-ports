@@ -12,7 +12,7 @@
  
  # Options for compilation
  
-@@ -16,10 +13,8 @@ GNUSTEP_OPTS =	-DGNUSTEP \
+@@ -16,13 +13,11 @@ GNUSTEP_OPTS =	-DGNUSTEP \
  		-fobjc-exceptions \
  		-fconstant-string-class=NSConstantString
  
@@ -22,8 +22,13 @@
  		-Wno-multichar \
 -		-g \
  		-D_FILE_OFFSET_BITS=64 \
- 		-isystem /usr/local/GNUstep/System/Library/Headers \
- 		-I/usr/local/include
+-		-isystem /usr/local/GNUstep/System/Library/Headers \
+-		-I/usr/local/include
++		-isystem $(LOCALBASE)/GNUstep/System/Library/Headers \
++		-I$(LOCALBASE)/include
+ 
+ OBJC_OPTS =	-std=gnu99
+ 
 @@ -42,6 +37,7 @@ LIBS =	-Wl,--no-whole-archive \
  	-lgnustep-base \
  	-lz \
@@ -32,6 +37,17 @@
  	-licuuc \
  	-lobjc \
  	-lm
+@@ -49,8 +45,8 @@ LIBS =	-Wl,--no-whole-archive \
+ ALL_LDFLAGS =	-Wl,--whole-archive \
+ 		-fexceptions \
+ 		-fgnu-runtime \
+-		-L/usr/local/lib \
+-		-L/usr/local/GNUstep/System/Library/Libraries \
++		-L$(LOCALBASE)/lib \
++		-L$(LOCALBASE)/GNUstep/System/Library/Libraries \
+ 		$(LDFLAGS)
+ 
+ # Paths
 @@ -74,7 +70,7 @@ libXADMaster.a: $(LIBRARY_OBJS)
  	$(AR) rcs $@ $^
  
