@@ -12,9 +12,10 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		does not build with octave-4.0.0
-
 GNU_CONFIGURE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -E 's/Octave_map/octave_map/g' ${WRKSRC}/src/*.cc
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 .include <bsd.port.mk>
