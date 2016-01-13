@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mad
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,6 @@ do-configure:
 		--prefix ${LOCALBASE}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/madmodule.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mad.so
 
 .include <bsd.port.mk>
