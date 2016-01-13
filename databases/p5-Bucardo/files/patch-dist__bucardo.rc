@@ -1,5 +1,5 @@
---- ./dist/bucardo.rc.orig	2014-03-16 16:30:40.000000000 +0100
-+++ ./dist/bucardo.rc	2014-06-24 17:39:05.000000000 +0200
+--- dist/bucardo.rc.orig	2014-11-07 17:55:46 UTC
++++ dist/bucardo.rc
 @@ -11,10 +11,11 @@
  . /etc/rc.subr
  
