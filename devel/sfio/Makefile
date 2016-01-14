@@ -16,10 +16,18 @@ EXTRACT_BEFORE_ARGS=	-idF
 EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 
+.include <bsd.port.pre.mk>
+
 # Remove a test that's too clever for its own good
 post-extract:
 	@${MV} ${WRKSRC}/src/lib/sfio/Sfio_t/tmmap2read.c \
 		${WRKSRC}/src/lib/sfio/Sfio_t/.tmmap2read.c
+
+.if ${OSVERSION} >= 1100093
+post-patch:
+	${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \
+		${WRKSRC}/src/lib/sfio/*.[ch]
+.endif
 
 do-build:
 	@cd ${WRKSRC}/src/lib/sfio && ${MAKE} all -f makefile
@@ -31,4 +39,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man1/iffe.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/man3/sfio.3 ${STAGEDIR}${PREFIX}/man/man3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
