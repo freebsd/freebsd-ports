@@ -26,4 +26,5 @@ libexec/rbenv-versions
 libexec/rbenv-whence
 libexec/rbenv-which
 %%DATADIR%%/completions/rbenv.bash
+%%DATADIR%%/completions/rbenv.fish
 %%DATADIR%%/completions/rbenv.zsh
