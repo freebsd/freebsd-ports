@@ -12,6 +12,13 @@
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/tincd
 #
+# tincd_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable tincd.
+# tincd_cfg (str):	Set to "" by default.
+#			Set it to NETNAMEs to use (ex.: "vpn1 vpn2").
+# tincd_flags (str):	Set to "" by default.
+#			Set it to flags to use (ex.: "-d 1 --logfile").
+#
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 
 tincd_enable=${tincd_enable:-"NO"}
@@ -55,7 +62,6 @@ tincd_stop()
 		echo "Stopping tincd"
 		$command -k
 	else
-		echo "Stopping tincd for: "
 		for cfg in $tincd_cfg
 		do
 			echo "Stopping tincd for: ${cfg}"
