@@ -1,11 +1,3 @@
-@mode 2755
-@group games
-bin/trojka
-@group
-@mode
+@(,games,2755) bin/trojka
 man/man6/trojka.6.gz
-%%DATADIR%%/README
-@group games
-%%DATADIR%%/trojka.scores
-@group
-@dirrm %%DATADIR%%
+@sample(,games,664) /var/games/trojka.scores.sample
