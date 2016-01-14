@@ -6,4 +6,4 @@ overhead, such as rtti and exception handling, and assumes one will mostly be
 linking applications with other pure C based libraries rather than using the
 overhead of the standard C++ library and other similar class frameworks. 
 
-WWW: http://www.gnutelephony.org/index.php/GNU_uCommon_C%2B%2B
+WWW: https://www.gnu.org/software/commoncpp/
