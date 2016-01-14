@@ -30,10 +30,7 @@
 %%PGADMDIR%%/classes/database/Postgres90.php
 %%PGADMDIR%%/classes/database/Postgres91.php
 %%PGADMDIR%%/colproperties.php
-@unexec if cmp -s %D/%%PGADMDIR%%/conf/config.inc.php %D/%%PGADMDIR%%/conf/config.inc.php-dist; then rm -f %D/%%PGADMDIR%%/conf/config.inc.php; fi
-%%PGADMDIR%%/conf/config.inc.php-dist
-@exec cp -np %D/%%PGADMOLDDIR%%/conf/config.inc.php %B/config.inc.php
-@exec cp -np %B/%f %B/config.inc.php
+@sample %%PGADMDIR%%/conf/config.inc.php
 %%PGADMDIR%%/constraints.php
 %%PGADMDIR%%/conversions.php
 %%PGADMDIR%%/database.php
