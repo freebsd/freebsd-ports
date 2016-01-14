@@ -1,8 +1,8 @@
---- src/oss.cpp.orig	2015-11-03 08:30:29 UTC
-+++ src/oss.cpp
-@@ -31,7 +31,10 @@ int _oss_ccaudio_dummy = 0;
- #include <unistd.h>
- #include <sys/soundcard.h>
+--- utils/audiotool.cpp.orig	2015-11-03 08:30:29 UTC
++++ utils/audiotool.cpp
+@@ -20,7 +20,10 @@
+ #include <ccaudio2.h>
+ #include <ccaudio2-config.h>
  #ifdef  HAVE_ENDIAN_H
 -#include <endian.h>
 +#include <sys/endian.h>
@@ -11,4 +11,4 @@
 +#define __BYTE_ORDER _BYTE_ORDER
  #endif
  
- #include <ucommon/export.h>
+ #if !defined(__BIG_ENDIAN)
