@@ -17,8 +17,6 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libgd.so:${PORTSDIR}/${GD_PORT}
 
-BROKEN_FreeBSD_11=	namespace collision
-
 USES=		bison cpe gmake jpeg libtool:keepla pkgconfig pathfix shebangfix
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -264,6 +262,10 @@ SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.tcl
 .endif
 
 post-patch:
+.if ${OSVERSION} >= 1100093
+	${REINPLACE_CMD} 's,SF_FLAGS,SFIO_FLAGS,g' \
+		${WRKSRC}/lib/sfio/*.[ch]
+.endif
 	${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} \
 		-e "s|\([^:]*:.*\) install-pdfDATA\(.*\)|\1\2|g" \
