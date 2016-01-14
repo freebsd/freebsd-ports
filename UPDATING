@@ -5,7 +5,7 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-201601XX:
+20160113:
   AFFECTS: users of sysutils/ansible
   AUTHOR: lifanov@mail.lifanov.com
 
