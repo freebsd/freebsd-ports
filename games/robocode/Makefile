@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	robocode
-PORTVERSION=	1.9.2.2
+PORTVERSION=	1.9.2.5
 CATEGORIES=	games java
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${DISTVERSION}-setup.jar
@@ -10,8 +10,6 @@ DIST_SUBDIR=	java
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game for learning Java[tm] programming language
-
-BROKEN=		unfetchable
 
 LICENSE=	EPL
 
@@ -50,7 +48,5 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 	@${MKDIR} ${STAGEDIR}${DATADIR}/config
-	@(cd ${STAGEDIR}${DATADIR} && ${CHMOD} -R 775 config roborumble robots)
-	@${CHMOD} +x ${STAGEDIR}${DATADIR}/*.sh
 
 .include <bsd.port.mk>
