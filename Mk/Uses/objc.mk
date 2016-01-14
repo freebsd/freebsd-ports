@@ -16,7 +16,11 @@ IGNORE=	USES=objc only accepts no arguments or 'compiler'
 .endif
 
 _CCVERSION!=	${CC} --version
-COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g}
+.if defined(.PARSEDIR)
+COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:tW:C/([0-9]).([0-9]).*/\1\2/g}
+.else
+COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g:u}
+.endif
 .if ${_CCVERSION:Mclang}
 COMPILER_TYPE=	clang
 .else
@@ -32,7 +36,11 @@ _ALTCCVERSION!=	/usr/bin/clang --version
 _ALTCCVERSION!=	/usr/bin/gcc --version
 .endif
 
-ALT_COMPILER_VERSION=	${_ALTCCVERSION:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g}
+.if defined(.PARSEDIR)
+ALT_COMPILER_VERSION=	${_ALTCCVERSION:M[0-9].[0-9]*:tW:C/([0-9]).([0-9]).*/\1\2/g}
+.else
+ALT_COMPILER_VERSION=	${_ALTCCVERSION:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g:u}
+.endif
 .if ${_ALTCCVERSION:Mclang}
 ALT_COMPILER_TYPE=	clang
 .elif !empty(_ALTCCVERSION)
