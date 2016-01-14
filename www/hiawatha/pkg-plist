@@ -1,30 +1,33 @@
 bin/ssi-cgi
+%%ETCDIR%%/cgi-wrapper.conf
 @sample %%ETCDIR%%/cgi-wrapper.conf.sample
+%%ETCDIR%%/error.xslt
 @sample %%ETCDIR%%/error.xslt.sample
+%%ETCDIR%%/hiawatha.conf
 @sample %%ETCDIR%%/hiawatha.conf.sample
+%%ETCDIR%%/index.xslt
 @sample %%ETCDIR%%/index.xslt.sample
+%%ETCDIR%%/mimetype.conf
 @sample %%ETCDIR%%/mimetype.conf.sample
 @sample %%ETCDIR%%/toolkit.conf.sample
-sbin/cgi-wrapper
-sbin/hiawatha
-sbin/wigwam
-lib/hiawatha/libmbedtls.so
 lib/hiawatha/libmbedcrypto.so
 lib/hiawatha/libmbedcrypto.so.0
-lib/hiawatha/libmbedcrypto.so.2.1.2
+lib/hiawatha/libmbedcrypto.so.2.2.0
+lib/hiawatha/libmbedtls.so
 lib/hiawatha/libmbedtls.so.10
-lib/hiawatha/libmbedtls.so.2.1.2
+lib/hiawatha/libmbedtls.so.2.2.0
 lib/hiawatha/libmbedx509.so
 lib/hiawatha/libmbedx509.so.0
-lib/hiawatha/libmbedx509.so.2.1.2
+lib/hiawatha/libmbedx509.so.2.2.0
 man/man1/cgi-wrapper.1.gz
 man/man1/hiawatha.1.gz
 man/man1/ssi-cgi.1.gz
 man/man1/wigwam.1.gz
-@sample %%WWWDIR%%/index.html.sample
-@dir %%WWWDIR%%
-@dir lib/hiawatha
-@dir %%ETCDIR%%
-@dir /var/log/hiawatha
+sbin/cgi-wrapper
+sbin/hiawatha
+sbin/wigwam
+%%WWWDIR%%/index.html
+%%WWWDIR%%/index.html.sample
 @dir /var/lib/hiawatha
 @dir /var/lib
+@dir /var/log/hiawatha
