@@ -52,11 +52,6 @@ LITE=	yes
 
 .if defined (LITE)
 OPTIONS_UNSET=	NLS DOCS EXAMPLES
-PLIST_SUB+=	COMPRESSED_FOLDERS="@comment "
-PLIST_SUB+=	HTML="@comment "
-PLIST_SUB+=	NLS="@comment "
-PLIST_SUB+=	XML="@comment "
-PLIST_SUB+=	NNTP="@comment "
 .else
 OPTIONS_DEFINE=	COMPRESSED_FOLDERS SASL DEBUG DOCS EXAMPLES FLOCK \
 		GPGME GREETING_PATCH GSSAPI HTML ICONV IDN IFDEF_PATCH \
@@ -125,6 +120,13 @@ URLVIEW_RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 .if defined (LITE)
 PKGNAMESUFFIX=	-lite
 PLIST_SUB+=	MAILBOX_MANPAGES=""
+PLIST_SUB+=	COMPRESSED_FOLDERS="@comment "
+PLIST_SUB+=	HTML="@comment "
+PLIST_SUB+=	XML="@comment "
+PLIST_SUB+=	NNTP="@comment "
+# XXX bug in bpm ?
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 DEBUG_CONFIGURE_ON=	--enable-debug
@@ -340,9 +342,4 @@ pre-build::
 		${WRKSRC}/doc/Makefile
 .endif
 
-post-stage:
-.if defined(LITE)
-	-${RM} ${STAGEDIR}${PREFIX}/lib/charset.alias
-	-${RM} ${STAGEDIR}${PREFIX}/share/locale/locale.alias
-.endif
 .include <bsd.port.mk>
