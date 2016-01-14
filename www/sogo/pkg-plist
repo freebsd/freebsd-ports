@@ -34,9 +34,12 @@ GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoContentOb
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoCredentialsFile.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoDAVAuthenticator.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoDateFormatter.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoDefaultsSource.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoDomainDefaults.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoFolder.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoGCSFolder.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoGroup.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoLDAPDefaults.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoMailer.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoObject.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoParentFolder.h
@@ -45,9 +48,12 @@ GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoProductLo
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoProxyAuthenticator.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoSession.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoSieveManager.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoSource.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoStartupLogger.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoStaticAuthenticator.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoSystemDefaults.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoUser.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoUserDefaults.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoUserFolder.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoUserManager.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/2/Headers/SOGoUserProfile.h
