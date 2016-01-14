@@ -4177,6 +4177,7 @@
     SUBDIR += py-optik
     SUBDIR += py-orbit
     SUBDIR += py-ordereddict
+    SUBDIR += py-oslo.i18n
     SUBDIR += py-palm
     SUBDIR += py-parsedatetime
     SUBDIR += py-path.py
