@@ -169,11 +169,12 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/libs/robocode.ui.editor-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/roborumble.jar
 %%DATADIR%%/license/epl-v10.html
-%%DATADIR%%/meleerumble.sh
+@(,,755) %%DATADIR%%/meleerumble.sh
 %%DATADIR%%/robocode.ico
-%%DATADIR%%/robocode.sh
+@(,,755) %%DATADIR%%/robocode.sh
 %%DATADIR%%/roborumble.ico
-%%DATADIR%%/roborumble.sh
+@(,,755) %%DATADIR%%/roborumble.sh
+@mode 755
 %%DATADIR%%/roborumble/meleerumble.txt
 %%DATADIR%%/roborumble/roborumble.properties
 %%DATADIR%%/roborumble/roborumble.txt
@@ -262,14 +263,17 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/robots/sampleteam/Point.java
 %%DATADIR%%/robots/sampleteam/RobotColors.class
 %%DATADIR%%/robots/sampleteam/RobotColors.java
-%%DATADIR%%/teamrumble.sh
+@mode
+@(,,755) %%DATADIR%%/teamrumble.sh
 %%DATADIR%%/templates/newjavafile.tpt
 %%DATADIR%%/templates/newjuniorrobot.tpt
 %%DATADIR%%/templates/newrobot.tpt
 %%DATADIR%%/theme/editor/Robocode Black Theme.properties
 %%DATADIR%%/theme/editor/Robocode White Theme.properties
-%%DATADIR%%/twinduel.sh
+@(,,755) %%DATADIR%%/twinduel.sh
 %%DATADIR%%/versions.md
 share/pixmaps/robocode.png
 share/pixmaps/roborumble.png
-@dir %%DATADIR%%/config
+@dir(,,755) %%DATADIR%%/robots
+@dir(,,755) %%DATADIR%%/roborumble
+@dir(,,755) %%DATADIR%%/config
