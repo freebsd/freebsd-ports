@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.1.0.a2.04012016
+PORTVERSION=	1.1.0.a3.14012016
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -13,8 +13,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
 		libevent.so:${PORTSDIR}/devel/libevent2 \
-		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
-		libhiredis.so:${PORTSDIR}/databases/hiredis
+		libluajit-5.1.so:${PORTSDIR}/lang/luajit
 
 CONFLICTS_INSTALL=	rspamd
 
@@ -22,7 +21,7 @@ RSPAMD_VERSION=	1.1.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	36f5aa8
+GH_TAGNAME=	8803f26
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR
 GPERF_DESC=		google perf-tools profiling
