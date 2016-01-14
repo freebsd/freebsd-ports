@@ -1,20 +1,78 @@
---- CMakeLists.txt.orig	2014-05-04 01:56:54.000000000 +0200
-+++ CMakeLists.txt	2014-05-20 10:27:42.000000000 +0200
-@@ -159,7 +159,7 @@
+--- CMakeLists.txt.orig	2015-12-13 13:01:59 UTC
++++ CMakeLists.txt
+@@ -55,10 +55,7 @@ else()
  endif()
  
- include_directories(${USES_UCOMMON_INCLUDE_DIRS})
--link_directories(${USES_UCOMMON_LIBRARY_DIRS})
-+link_directories(${USES_UCOMMON_LIBRARY_DIRS} ${WITH_LIBS})
- add_definitions(${USES_UCOMMON_CFLAGS})
+ check_include_files(sys/soundcard.h HAVE_SYS_SOUNDCARD_H)
+-check_include_files(speex/speex.h HAVE_SPEEX_SPEEX_H)
+-check_include_files(gsm.h HAVE_GSM_H)
+-check_include_files(gsm/gsm.h HAVE_GSM_GSM_H)
+-check_include_files(endian.h HAVE_ENDIAN_H)
++check_include_files(sys/endian.h HAVE_ENDIAN_H)
  
- # by default we build static libs for windows, shared libs for unix.
-@@ -243,7 +243,7 @@
- 
-     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ccaudio2.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/ccaudio2.pc)
- 
--    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ccaudio2.pc DESTINATION ${INSTALL_LIBDIR}/pkgconfig)
-+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ccaudio2.pc DESTINATION libdata/pkgconfig)
+ check_library_exists(ossaudio _oss_ioctl "" OSSAUDIO_LIB)
+ if(OSSAUDIO_LIB)
+@@ -79,20 +76,39 @@ if(MATH_LIB)
+     set(MATH_LIB m)
  endif()
  
- install(FILES ${ccaudio_conf} DESTINATION ${SYSCONFDIR})
+-if(NOT HAVE_SPEEX_SPEEX_H AND EXISTS ${CMAKE_BINARY_DIR}/Frameworks/Speex)
+-    include_directories(${CMAKE_BINARY_DIR}/Frameworks/Speex/include)
+-    link_directories(${CMAKE_BINARY_DIR}/Frameworks/Speex/lib)
+-    set(HAVE_SPEEX_SPEEX_H 1)
+-endif()
++# Find Speex
++find_path(SPEEX_INCLUDE_DIR speex/speex.h)
+ 
+-if(HAVE_SPEEX_SPEEX_H)
+-    set(AUDIO_LIBS ${AUDIO_LIBS} speex)
++find_library(SPEEX_LIBRARY speex)
++
++find_package_handle_standard_args(SPEEX DEFAULT_MSG SPEEX_INCLUDE_DIR SPEEX_LIBRARY)
++
++if(SPEEX_FOUND)
++	set(SPEEX_LIBRARIES ${SPEEX_LIBRARY})
++	set(AUDIO_LIBS ${AUDIO_LIBS} ${SPEEX_LIBRARIES})
++	set(SPEEX_INCLUDE_DIRS ${SPEEX_INCLUDE_DIR})
++	set(HAVE_SPEEX_SPEEX_H 1)
+ endif()
+ 
+-if(HAVE_GSM_H OR HAVE_GSM_GSM_H)
+-    set(AUDIO_LIBS ${AUDIO_LIBS} gsm)
++mark_as_advanced(SPEEX_INCLUDE_DIR SPEEX_LIBRARY)
++
++# Find GSM
++find_path(GSM_INCLUDE_DIR gsm.h)
++
++find_library(GSM_LIBRARY gsm)
++
++find_package_handle_standard_args(GSM DEFAULT_MSG GSM_INCLUDE_DIR GSM_LIBRARY)
++
++if(GSM_FOUND)
++	set(GSM_LIBRARIES ${GSM_LIBRARY})
++	set(AUDIO_LIBS ${AUDIO_LIBS} ${GSM_LIBRARIES})
++	set(GSM_INCLUDE_DIRS ${GSM_INCLUDE_DIR})
++	set(HAVE_GSM_H 1)
+ endif()
+ 
++mark_as_advanced(GSM_INCLUDE_DIR GSM_LIBRARY)
++######
++
+ file(GLOB ccaudio_src src/*.cpp)
+ file(GLOB ccaudio_man1 utils/*.1)
+ file(GLOB ccaudio_conf utils/*.conf)
+@@ -111,12 +127,12 @@ set_source_dependencies(ccaudio2 ucommon
+ target_link_libraries(ccaudio2 ${USES_UCOMMON_LIBRARIES} ${AUDIO_LIBS} ${WITH_MATH_LIB} ${MATH_LIB})
+ 
+ add_executable(ccaudio-tonetool utils/tonetool.cpp)
+-add_dependencies(ccaudio-tonetool ccaudio2 ucommon)
++add_dependencies(ccaudio-tonetool ccaudio2)
+ set_target_properties(ccaudio-tonetool PROPERTIES OUTPUT_NAME tonetool)
+ target_link_libraries(ccaudio-tonetool ccaudio2 ucommon ${USES_UCOMMON_LIBRARIES})
+ 
+ add_executable(ccaudio-audiotool utils/audiotool.cpp)
+-add_dependencies(ccaudio-audiotool ccaudio2 ucommon)
++add_dependencies(ccaudio-audiotool ccaudio2)
+ set_target_properties(ccaudio-audiotool PROPERTIES OUTPUT_NAME audiotool)
+ target_link_libraries(ccaudio-audiotool ccaudio2 ucommon ${USES_UCOMMON_LIBRARIES})
+ 

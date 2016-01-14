@@ -4,7 +4,7 @@ etc/tones.conf
 include/ccaudio2.h
 lib/libccaudio2.so
 lib/libccaudio2.so.2
-lib/libccaudio2.so.2.0.3
+lib/libccaudio2.so.2.0.6
 libdata/pkgconfig/ccaudio2.pc
 man/man1/audiotool.1.gz
 man/man1/tonetool.1.gz
