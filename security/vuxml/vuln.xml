@@ -58,6 +58,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="842cd117-ba54-11e5-9728-002590263bf5">
+    <topic>prosody -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>prosody</name>
+	<range><lt>0.9.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Prosody Team reports:</p>
+	<blockquote cite="http://blog.prosody.im/prosody-0-9-9-security-release/">
+	  <p>Fix path traversal vulnerability in mod_http_files
+	    (CVE-2016-1231)</p>
+	  <p>Fix use of weak PRNG in generation of dialback secrets
+	    (CVE-2016-1232)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1231</cvename>
+      <cvename>CVE-2016-1232</cvename>
+      <freebsdpr>ports/206150</freebsdpr>
+      <url>http://blog.prosody.im/prosody-0-9-9-security-release/</url>
+    </references>
+    <dates>
+      <discovery>2016-01-08</discovery>
+      <entry>2016-01-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7a4e96c-ba50-11e5-9728-002590263bf5">
     <topic>kibana4 -- XSS vulnerability</topic>
     <affects>
