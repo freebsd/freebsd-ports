@@ -1,5 +1,5 @@
-SHA256 (openssh-7.1p1.tar.gz) = fc0a6d2d1d063d5c66dffd952493d0cda256cad204f681de0f84ef85b2ad8428
-SIZE (openssh-7.1p1.tar.gz) = 1493170
+SHA256 (openssh-7.1p2.tar.gz) = dd75f024dcf21e06a0d6421d582690bf987a1f6323e32ad6619392f3bfde6bbd
+SIZE (openssh-7.1p2.tar.gz) = 1475829
 SHA256 (openssh-6.8p1-sctp-2573.patch.gz) = 0348713ad4cb4463e90cf5202ed41c8f726d7d604f3f93922a9aa55b86abf04a
 SIZE (openssh-6.8p1-sctp-2573.patch.gz) = 8531
 SHA256 (openssh-7.0p1+x509-8.5.diff.gz) = 6000557f1ddae06aff8837d440d93342a923fada571fec59fc5dedf388fb5f9e
