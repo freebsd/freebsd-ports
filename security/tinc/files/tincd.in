@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: tincd
-# REQUIRE: ipfilter FILESYSTEMS sysctl netif ldconfig
+# REQUIRE: ipfilter FILESYSTEMS sysctl netif
 # BEFORE:  SERVERS routing
 # KEYWORD: nojail
 #
@@ -33,11 +33,13 @@ stop_cmd="tincd_stop"
 reload_cmd="tincd_reload"
 extra_commands="reload"
 procname=${command:-tincd}
+ldconfig_command="/sbin/ldconfig"
 
 load_rc_config $name
 
 tincd_start()
 {
+	${ldconfig_command} -elf -m %%LOCALBASE%%/lib
 	if test -z "${tincd_cfg}"
 	then
 		echo "Starting tincd"
