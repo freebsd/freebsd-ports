@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dfe0cdc1-baf2-11e5-863a-b499baebfeaf">
+    <topic>openssh -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<range>
+	  <gt>5.4p0,1</gt>
+	  <lt>7.1p2,1</lt>
+	</range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSH reports:</p>
+	<blockquote cite="http://www.openssh.com/security.html">
+	  <p>OpenSSH clients between versions 5.4 and 7.1 are vulnerable to
+	  information disclosure that may allow a malicious server to retrieve
+	  information including under some circumstances, user's private keys.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openssh.com/security.html</url>
+      <cvename>CVE-2016-0777</cvename>
+      <cvename>CVE-2016-0778</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-14</discovery>
+      <entry>2016-01-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="842cd117-ba54-11e5-9728-002590263bf5">
     <topic>prosody -- multiple vulnerabilities</topic>
     <affects>
