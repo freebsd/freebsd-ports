@@ -1,0 +1,7 @@
+lib/sane/libsane-epkowa.so
+lib/sane/libsane-epkowa.so.1
+man/man5/sane-epkowa.5.gz
+@postexec echo "epkowa" >> %D/etc/sane.d/dll.conf
+@postexec echo "usb /dev/uscanner0" > %D/etc/sane.d/epkowa.conf.sample
+@preunexec sed -i "" -e '/^epkowa$/d' %D/etc/sane.d/dll.conf
+@sample etc/sane.d/epkowa.conf.sample
