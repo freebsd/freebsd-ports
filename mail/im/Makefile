@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	im
-PORTVERSION=	151
-PORTREVISION=	1
+PORTVERSION=	152
 CATEGORIES=	mail
 MASTER_SITES=	http://tats.haun.org/im/
 
@@ -19,11 +18,19 @@ CONFIGURE_ARGS=	--with-hostname=_domain_of_your_mail_address_
 CONFIGURE_ENV=	im_path_perl=${PERL}
 MAKE_ARGS=	prefix=${PREFIX} imlibdir=${ETCDIR}
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES RPOP
 
 RPOP_DESC=	Use RPOP instead of APOP
 RPOP_CONFIGURE_ENABLE=	rpop
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|SiteConfig ;|SiteConfig.sample ;|' ${WRKSRC}/Makefile.in
+
+post-configure:
+	@${LN} -sf SiteConfig ${WRKSRC}/cnf.im/SiteConfig.sample
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/man
