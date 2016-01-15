@@ -80,6 +80,7 @@
     SUBDIR += kremotecontrol
     SUBDIR += kvasd
     SUBDIR += libconcord
+    SUBDIR += libfap
     SUBDIR += libfec
     SUBDIR += libimobiledevice
     SUBDIR += libirman

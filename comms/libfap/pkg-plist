@@ -1,0 +1,6 @@
+include/fap.h
+lib/libfap.a
+lib/libfap.so
+lib/libfap.so.6
+lib/libfap.so.6.0.0
+libdata/pkgconfig/libfap.pc
