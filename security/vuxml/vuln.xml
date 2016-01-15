@@ -58,6 +58,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6c808811-bb9a-11e5-a65c-485d605f4717">
+    <topic>h2o -- directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>h2o</name>
+	<range><lt>1.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yakuzo OKU reports:</p>
+	<blockquote cite="http://h2o.examp1e.net/vulnerabilities.html">
+	  <p>When redirect directive is used, this flaw allows a remote
+	     attacker to inject response headers into an HTTP redirect response.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1133</cvename>
+      <url>https://h2o.examp1e.net/vulnerabilities.html</url>
+    </references>
+    <dates>
+      <discovery>2016-01-13</discovery>
+      <entry>2016-01-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dfe0cdc1-baf2-11e5-863a-b499baebfeaf">
     <topic>openssh -- information disclosure</topic>
     <affects>
