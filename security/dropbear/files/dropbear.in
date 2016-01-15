@@ -56,7 +56,8 @@ dropbear_precmd()
 load_rc_config $name
 
 : ${dropbear_enable="NO"}
+: ${dropbear_args:=""}
 
-command_args="-P $pidfile"
+command_args="-P $pidfile $dropbear_args"
 
 run_rc_command "$1"
