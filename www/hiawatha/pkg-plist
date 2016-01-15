@@ -1,13 +1,8 @@
 bin/ssi-cgi
-%%ETCDIR%%/cgi-wrapper.conf
 @sample %%ETCDIR%%/cgi-wrapper.conf.sample
-%%ETCDIR%%/error.xslt
 @sample %%ETCDIR%%/error.xslt.sample
-%%ETCDIR%%/hiawatha.conf
 @sample %%ETCDIR%%/hiawatha.conf.sample
-%%ETCDIR%%/index.xslt
 @sample %%ETCDIR%%/index.xslt.sample
-%%ETCDIR%%/mimetype.conf
 @sample %%ETCDIR%%/mimetype.conf.sample
 @sample %%ETCDIR%%/toolkit.conf.sample
 lib/hiawatha/libmbedcrypto.so
