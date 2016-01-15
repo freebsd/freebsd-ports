@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvdstyler
-PORTVERSION=	2.9.4
+PORTVERSION=	2.9.6
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
@@ -63,7 +63,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/doc_DATA/s|COPYING||' \
 		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|"sg\*"|"cd*"|g' \
-		${WRKSRC}/src/BurnDlg.cpp
+		${WRKSRC}/src/SysUtils.cpp
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
 		${WRKSRC}/src/Config.h
 
