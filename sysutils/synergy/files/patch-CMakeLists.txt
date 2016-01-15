@@ -1,12 +1,12 @@
---- CMakeLists.txt.orig	2015-05-26 23:56:21.000000000 +0800
-+++ CMakeLists.txt	2015-08-03 14:02:26.524577000 +0800
-@@ -74,10 +74,6 @@
+--- CMakeLists.txt.orig	2016-01-11 08:43:40.989031000 -0800
++++ CMakeLists.txt	2016-01-11 08:44:16.000036000 -0800
+@@ -75,10 +75,6 @@
  # Depending on the platform, pass in the required defines.
  if (UNIX)
  
 -	# warnings as errors:
 -	# we have a problem with people checking in code with warnings.
--	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-unused-local-typedef")
 -
  	if (NOT APPLE)
  		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
