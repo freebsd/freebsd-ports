@@ -187,6 +187,7 @@ lib/gwyddion/modules/file/jeol.so
 lib/gwyddion/modules/file/jpkscan.so
 lib/gwyddion/modules/file/jspmfile.so
 lib/gwyddion/modules/file/keyence.so
+lib/gwyddion/modules/file/leica.so
 lib/gwyddion/modules/file/lextfile.so
 lib/gwyddion/modules/file/magellan.so
 lib/gwyddion/modules/file/mapvue.so
@@ -206,6 +207,7 @@ lib/gwyddion/modules/file/nanoscope-ii.so
 lib/gwyddion/modules/file/nanoscope.so
 lib/gwyddion/modules/file/nanotop.so
 lib/gwyddion/modules/file/netcdf.so
+lib/gwyddion/modules/file/nmmxyz.so
 lib/gwyddion/modules/file/nrrdfile.so
 lib/gwyddion/modules/file/nt-mdt.so
 lib/gwyddion/modules/file/nxiifile.so
@@ -304,6 +306,7 @@ lib/gwyddion/modules/process/drift.so
 lib/gwyddion/modules/process/dwt.so
 lib/gwyddion/modules/process/dwtanisotropy.so
 lib/gwyddion/modules/process/edge.so
+lib/gwyddion/modules/process/entropy.so
 lib/gwyddion/modules/process/extend.so
 lib/gwyddion/modules/process/facet-level.so
 lib/gwyddion/modules/process/facet_analysis.so
@@ -416,13 +419,13 @@ lib/gwyddion/modules/volume/volume_slice.so
 %%RUBY%%lib/gwyddion/ruby/gwyddion/dump.rb
 lib/libgwyapp2.so
 lib/libgwyapp2.so.0
-lib/libgwyapp2.so.0.14.0
+lib/libgwyapp2.so.0.14.1
 lib/libgwyddion2.so
 lib/libgwyddion2.so.0
-lib/libgwyddion2.so.0.18.0
+lib/libgwyddion2.so.0.19.0
 lib/libgwydgets2.so
 lib/libgwydgets2.so.0
-lib/libgwydgets2.so.0.20.0
+lib/libgwydgets2.so.0.21.0
 lib/libgwydraw2.so
 lib/libgwydraw2.so.0
 lib/libgwydraw2.so.0.4.0
@@ -431,7 +434,7 @@ lib/libgwymodule2.so.0
 lib/libgwymodule2.so.0.8.1
 lib/libgwyprocess2.so
 lib/libgwyprocess2.so.0
-lib/libgwyprocess2.so.0.26.0
+lib/libgwyprocess2.so.0.27.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gwy.so
 libdata/pkgconfig/gwyddion.pc
 libexec/gwyddion/plugins/file/dump
