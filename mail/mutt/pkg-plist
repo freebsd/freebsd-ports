@@ -1,11 +1,7 @@
 bin/flea
 bin/mutt
 bin/muttbug
-@group mail
-@mode 2755
-bin/mutt_dotlock
-@group wheel
-@mode
+@(,mail,2755) bin/mutt_dotlock
 bin/pgpewrap
 bin/pgpring
 bin/smime_keys
@@ -17,8 +13,8 @@ man/man1/muttbug.1.gz
 man/man1/pgpewrap.1.gz
 man/man1/pgpring.1.gz
 man/man1/smime_keys.1.gz
-%%MBOXMAN%%man/man5/mbox.5.gz
-%%MBOXMAN%%man/man5/mmdf.5.gz
+%%MAILBOX_MANPAGES%%man/man5/mbox.5.gz
+%%MAILBOX_MANPAGES%%man/man5/mmdf.5.gz
 man/man5/muttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -48,7 +44,7 @@ man/man5/muttrc.5.gz
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/reference.html
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/security.html
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/tuning.html
-%%XML%%%%HTML%%%%COMPRESS%%%%PORTDOCS%%%%DOCSDIR%%/compressed-folders.html
+%%XML%%%%HTML%%%%COMPRESSED_FOLDERS%%%%PORTDOCS%%%%DOCSDIR%%/compressed-folders.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mush.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Pine.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tin.rc

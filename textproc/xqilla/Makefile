@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	xqilla
-PORTVERSION=	2.3.0
-PORTREVISION=	3
+PORTVERSION=	2.3.2
 PORTEPOCH=	1
 CATEGORIES=	textproc
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	XQilla-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,27 +14,34 @@ COMMENT=	XQuery and XPath2 library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3
+LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
+		libtidy.so:${PORTSDIR}/www/tidy-lib
 
-USES=		gmake libtool
-USE_LDCONFIG=	yes
+USES=		libtool
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-PORTDOCS=	*
+CONFIGURE_ARGS=	--with-xerces=${LOCALBASE} \
+		--with-faxpp=no \
+		--with-tidy=${LOCALBASE}
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOXYGEN
 
-MAKE_JOBS_UNSAFE=	yes
+DOCYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
+   			dot:${PORTSDIR}/graphics/graphviz
+DOCYGEN_ALL_TARGET=	all docs
 
-DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
-			dot:${PORTSDIR}/graphics/graphviz
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|[[:blank:]]-R$$(xerces_lib)||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|[[:blank:]]-R$$with_.*"|"|' ${WRKSRC}/configure
 
-post-build-DOCS-on:
-	cd ${WRKSRC} && ${MAKE_CMD} docs
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \*-api ${STAGEDIR}${DOCSDIR}
+post-install-DOXYGEN-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} "*-api" \
+		${STAGEDIR}${DOCSDIR})
+	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${DOCSDIR:S|${PREFIX}/||} \
+		! -type d >> ${TMPPLIST})
 
 .include <bsd.port.mk>

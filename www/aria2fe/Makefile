@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aria2 Qt front-end
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 RUN_DEPENDS=	aria2c:${PORTSDIR}/www/aria2 \
 		xterm:${PORTSDIR}/x11/xterm

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libass
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.13.1
 CATEGORIES=	multimedia devel
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -11,7 +10,8 @@ COMMENT=	Portable ASS/SSA subtitle renderer
 LICENSE=	ISCL
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfribidi.so:${PORTSDIR}/converters/fribidi
+		libfribidi.so:${PORTSDIR}/converters/fribidi \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
@@ -22,8 +22,8 @@ USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=Makefile.am
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	ENCA FONTCONFIG HARFBUZZ
-OPTIONS_DEFAULT=ENCA FONTCONFIG HARFBUZZ
+OPTIONS_DEFINE=	HARFBUZZ
+OPTIONS_DEFAULT=HARFBUZZ
 OPTIONS_DEFINE_amd64=	ASM
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_amd64=	ASM
@@ -31,13 +31,6 @@ OPTIONS_DEFAULT_amd64=	ASM
 ASM_BUILD_DEPENDS=${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 ASM_CONFIGURE_ENABLE=asm
 ASM_DESC?=	Use optimized ASM routines on x86/amd64
-
-ENCA_LIB_DEPENDS=libenca.so:${PORTSDIR}/converters/enca
-ENCA_CONFIGURE_ENABLE=enca
-ENCA_DESC?=	Charset conversion via enca
-
-FONTCONFIG_LIB_DEPENDS=libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-FONTCONFIG_CONFIGURE_ENABLE=fontconfig
 
 HARFBUZZ_LIB_DEPENDS=libharfbuzz.so:${PORTSDIR}/print/harfbuzz
 HARFBUZZ_CONFIGURE_ENABLE=harfbuzz

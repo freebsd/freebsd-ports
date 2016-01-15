@@ -10,7 +10,7 @@ CATEGORIES=	deskutils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful e-book reader
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \

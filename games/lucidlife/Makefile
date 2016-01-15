@@ -12,7 +12,7 @@ COMMENT=	GTK2 implementation of Conway's Game of Life
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pkgconfig

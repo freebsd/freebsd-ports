@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmusicapi
-PORTVERSION=	5.0.0.20150603
+PORTVERSION=	7.0.0
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,12 +21,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.3.0:${PORTSDIR}/devel/py-appdirs 
 		${PYTHON_PKGNAMEPREFIX}gpsoauth>=0.0:${PORTSDIR}/security/py-gpsoauth \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=2.5.0:${PORTSDIR}/devel/py-protobuf \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}validictory>=0.9.3:${PORTSDIR}/devel/py-validictory
+		${PYTHON_PKGNAMEPREFIX}validictory>=0.9.3:${PORTSDIR}/devel/py-validictory \
+		${PYTHON_PKGNAMEPREFIX}ndg_httpsclient>0:${PORTSDIR}/net/py-ndg_httpsclient \
+		${PYTHON_PKGNAMEPREFIX}MechanicalSoup>0:${PORTSDIR}/www/py-MechanicalSoup \
+		${PYTHON_PKGNAMEPREFIX}openssl>0:${PORTSDIR}/security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}pyasn1>0:${PORTSDIR}/devel/py-pyasn1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	simon-weber
-GH_PROJECT=	Unofficial-Google-Music-API
-GH_TAGNAME=	3b0a550
+GH_PROJECT=	gmusicapi
+GH_TAGNAME=	18ff98e
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -11,7 +11,7 @@ MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp which provides a drawer to launch applications
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		gmake pkgconfig
 USE_GNOME=	gdkpixbuf2

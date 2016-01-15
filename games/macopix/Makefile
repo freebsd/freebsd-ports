@@ -11,14 +11,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window sitter for X11
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
-
-LICENSE=	GPLv2 # or later
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 RESTRICTED=	'contains commercial character data'
 

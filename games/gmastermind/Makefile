@@ -10,7 +10,7 @@ DISTNAME=	GMastermind-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Well-known mastermind game
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gnustep

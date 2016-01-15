@@ -1,0 +1,84 @@
+--- configure.in.orig	2015-12-23 05:29:36 UTC
++++ configure.in
+@@ -620,7 +620,7 @@ AC_DEFUN([RUBY_DTRACE_AVAILABLE],
+ [AC_CACHE_CHECK(whether dtrace USDT is available, rb_cv_dtrace_available,
+ [
+     echo "provider conftest{ probe fire(); };" > conftest_provider.d
+-    if $DTRACE -h -o conftest_provider.h -s conftest_provider.d >/dev/null 2>/dev/null; then
++    if $DTRACE -xnolibs -h -o conftest_provider.h -s conftest_provider.d >/dev/null 2>/dev/null; then
+       AC_TRY_COMPILE([@%:@include "conftest_provider.h"], [CONFTEST_FIRE();], [
+ 	# DTrace is available on the system
+ 	rb_cv_dtrace_available=yes
+@@ -644,13 +644,13 @@ AC_DEFUN([RUBY_DTRACE_POSTPROCESS],
+       probe fire();
+     };
+ _PROBES
+-    $DTRACE -h -o conftest_provider.h -s conftest_provider.d >/dev/null 2>/dev/null &&
++    $DTRACE -xnolibs -h -o conftest_provider.h -s conftest_provider.d >/dev/null 2>/dev/null &&
+     :
+   }; then
+     AC_TRY_COMPILE([@%:@include "conftest_provider.h"], [CONFTEST_FIRE();], [
+ 	if {
+ 	    cp -p conftest.${ac_objext} conftest.${ac_objext}.save &&
+-	    $DTRACE -G -s conftest_provider.d conftest.${ac_objext} 2>/dev/null &&
++	    $DTRACE -xnolibs -G -s conftest_provider.d conftest.${ac_objext} 2>/dev/null &&
+ 	    :
+ 	}; then
+ 	    if cmp -s conftest.o conftest.${ac_objext}.save; then
+@@ -1222,10 +1222,10 @@ main()
+   ],
+ [	LIBS="-lm $LIBS"])
+ 
+-AC_CHECK_LIB(crypt, crypt)      # glibc (GNU/Linux, GNU/Hurd, GNU/kFreeBSD)
+-AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/Solaris and SYSV
+-AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
+-AC_CHECK_LIB(socket, shutdown)  # SunOS/Solaris
++AC_SEARCH_LIBS(crypt, crypt)      # glibc (GNU/Linux, GNU/Hurd, GNU/kFreeBSD)
++AC_SEARCH_LIBS(dlopen, dl)	# Dynamic linking for SunOS/Solaris and SYSV
++AC_SEARCH_LIBS(shl_load, dld)	# Dynamic linking for HP-UX
++AC_SEARCH_LIBS(shutdown, socket)  # SunOS/Solaris
+ 
+ dnl Checks for header files.
+ AC_HEADER_DIRENT
+@@ -2440,7 +2440,7 @@ AS_IF([test "x$rb_cv_atan2_inf_c99" = xy
+ if test x"$ac_cv_func_clock_gettime" != xyes; then
+     # glibc 2.17 moves clock_* functions from librt to the main C library.
+     # http://sourceware.org/ml/libc-announce/2012/msg00001.html
+-    AC_CHECK_LIB(rt, clock_gettime)
++    AC_SEARCH_LIBS(clock_gettime, rt)
+     if test x"$ac_cv_lib_rt_clock_gettime" = xyes; then
+ 	AC_DEFINE(HAVE_CLOCK_GETTIME, 1)
+     fi
+@@ -2847,7 +2847,7 @@ else
+ fi
+ 
+ if test x"$enable_pthread" = xyes; then
+-    for pthread_lib in thr pthread pthreads c c_r root; do
++    for pthread_lib in pthread thr pthreads c c_r root; do
+ 	AC_CHECK_LIB($pthread_lib, pthread_kill,
+ 		     rb_with_pthread=yes, rb_with_pthread=no)
+ 	if test "$rb_with_pthread" = "yes"; then break; fi
+@@ -2861,6 +2861,7 @@ if test x"$enable_pthread" = xyes; then
+ 	[c],    [],
+ 	[root], [],
+ 	[c_r],  [MAINLIBS="-pthread $MAINLIBS"],
++	[pthread],  [MAINLIBS="-pthread $MAINLIBS"],
+ 	        [AS_CASE(["$target_os"],
+ 		    [openbsd*|mirbsd*], [LIBS="-pthread $LIBS"],
+ 		    [LIBS="-l$pthread_lib $LIBS"])])
+@@ -3173,7 +3174,6 @@ if test "$with_dln_a_out" != yes; then
+ 			: ${LDSHARED='$(CC) -shared'}
+ 			if test "$rb_cv_binary_elf" = yes; then
+ 			    LDFLAGS="$LDFLAGS -rdynamic"
+-			    DLDFLAGS="$DLDFLAGS "'-Wl,-soname,$@'
+ 			else
+ 			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
+ 			fi
+@@ -3657,6 +3657,7 @@ AS_CASE("$enable_shared", [yes], [
+     [freebsd*|dragonfly*], [
+ 	SOLIBS='$(LIBS)'
+ 	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR)$(MINOR)'
++	LIBRUBY_DLDFLAGS='-Wl,-soname,$(LIBRUBY_SO)'
+ 	if test "$rb_cv_binary_elf" != "yes" ; then
+ 	    LIBRUBY_SO="$LIBRUBY_SO.\$(TEENY)"
+ 	    LIBRUBY_ALIASES=''

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.tcptrace.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP dump file analysis tool
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

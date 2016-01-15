@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		LOCAL/mat/${PORTNAME}
 DISTNAME=	dcc-${PORTVERSION}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Distributed Checksum Clearinghouse bulk email detector
 
 .if ! defined(PACKAGE_BUILDING)

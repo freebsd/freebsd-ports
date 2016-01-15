@@ -14,7 +14,7 @@ MASTER_SITES=	http://artfiles.org/kernel.org/pub/software/utils/admin/ranpwd/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate random passwords
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		gmake
 GNU_CONFIGURE=	yes

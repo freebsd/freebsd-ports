@@ -12,6 +12,7 @@ share/applications/mpv.desktop
 share/icons/hicolor/16x16/apps/mpv.png
 share/icons/hicolor/32x32/apps/mpv.png
 share/icons/hicolor/64x64/apps/mpv.png
+share/icons/hicolor/scalable/apps/mpv.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/input.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplayer-input.conf

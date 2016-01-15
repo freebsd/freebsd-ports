@@ -26,9 +26,10 @@ do-configure:
 	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:g" ${WRKSRC}/source/config.h
 	cd ${WRKSRC} && ${LN} -sf source/* unix/* .
 
-do-install:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/moria.6 ${STAGEDIR}${PREFIX}/man/man6/
+
+post-install-DOCS-on:
 	cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
 
 .include <bsd.port.mk>

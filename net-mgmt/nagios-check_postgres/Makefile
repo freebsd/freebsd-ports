@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	check_postgres
-PORTVERSION=	2.21.0
-PORTREVISION=	5
+PORTVERSION=	2.22.0
 CATEGORIES=	net-mgmt databases perl5
 MASTER_SITES=	http://bucardo.org/downloads/
 PKGNAMEPREFIX=	nagios-
@@ -96,21 +95,19 @@ CACTI_LINKS=	dbstats
 post-patch:
 	${REINPLACE_CMD} -e s,%%LOCALBASE%%,${LOCALBASE}, ${WRKSRC}/check_postgres.pl
 
-post-install:
-.if ${PORT_OPTIONS:MNAGIOS}
+post-install-NAGIOS-on:
 	@${MKDIR} ${STAGEDIR}${NAGIOS_PLUGINS}
 .for l in ${NAGIOS_LINKS}
 	${LN} -s ../../bin/check_postgres.pl \
 		${STAGEDIR}${NAGIOS_PLUGINS}/check_postgres_${l}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MCACTI}
+
+post-install-CACTI-on:
 	@${MKDIR} ${STAGEDIR}${CACTI_SCRIPTS}
 .for l in ${CACTI_LINKS}
 	${LN} -s ../../../bin/check_postgres.pl \
 		${STAGEDIR}${CACTI_SCRIPTS}/check_postgres_${l}
 .endfor
-.endif
 
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} test

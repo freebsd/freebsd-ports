@@ -109,8 +109,8 @@ lib/qmmp/PlayListFormats/libplsplaylistformat.so
 lib/qmmp/PlayListFormats/libxspfplaylistformat.so
 %%CURL%%lib/qmmp/Transports/libhttp.so
 %%MMS%%lib/qmmp/Transports/libmms.so
-%%SKINNEDUI%%lib/qmmp/Ui/libskinned.so
 %%QSUI%%lib/qmmp/Ui/libqsui.so
+%%SKINNEDUI%%lib/qmmp/Ui/libskinned.so
 %%ANALYZER%%lib/qmmp/Visual/libanalyzer.so
 %%PROJECTM%%lib/qmmp/Visual/libprojectm.so
 libdata/pkgconfig/qmmp.pc

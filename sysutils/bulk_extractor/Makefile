@@ -12,13 +12,13 @@ COMMENT=	Program that scans a disk image and extracts useful information
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		sqlite
 LIB_DEPENDS=	libafflib.so:${PORTSDIR}/sysutils/afflib \
 		libewf.so:${PORTSDIR}/devel/libewf \
 		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_OPENSSL=	yes
-USE_SQLITE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-exiv2=true
 CPPFLAGS+=	-I${LOCALBASE}/include

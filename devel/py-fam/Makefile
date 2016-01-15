@@ -12,7 +12,7 @@ DISTNAME=	python-fam-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to the File Alteration Monitor
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python fam

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.bacula-web.org/files/bacula-web.org/downloads/
 MAINTAINER=	dan@langille.org
 COMMENT=	Bacula-web provides a summarized output of Bacula jobs
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/DOCS/COPYING
 
 USES=		tar:tgz
@@ -29,6 +29,8 @@ SUB_LIST=	BASE=${BASE}
 OPTIONS_DEFINE=		MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	PGSQL
 
+SQLITE_USES=	sqlite
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -46,7 +48,6 @@ USE_PHP+=		pdo_pgsql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=		yes
 CONFIGURE_ARGS+=	--with-sqlite=yes
 SUB_LIST+=		REQ_SQLITE=sqlite
 USE_PHP+=		pdo_sqlite

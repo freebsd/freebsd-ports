@@ -5,8 +5,8 @@ PORTNAME=	volta
 PORTVERSION=	0.3.0
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://dl.dropbox.com/u/7234177/Releases/ \
-		http://projects.martini.nu/volta/chrome/site/
+MASTER_SITES=	https://bitbucket.org/mahlon/volta/downloads/ \
+		http://dl.dropbox.com/u/7234177/Releases/
 
 MAINTAINER=	mahlon@martini.nu
 COMMENT=	High performance, low resource URI rewriter for Squid

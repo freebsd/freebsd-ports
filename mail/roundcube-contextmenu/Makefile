@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	roundcube>=1.1:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JohnDoh
@@ -22,13 +23,6 @@ GH_PROJECT=	Roundcube-Plugin-Context-Menu
 PLUGINDIR=	${WWWDIR:S,/${PORTNAME}$$,,}/roundcube/plugins/${PORTNAME}
 RCDIR_REL=	${WWWDIR_REL:S,/${PORTNAME}$$,,}/roundcube
 PLIST_SUB=	RCDIR_REL="${RCDIR_REL}"
-
-# This target is only meant to be used by the port maintainer.
-x-generate-plist: build
-	make makeplist | \
-	${SED} \
-	    -e "s,^\(@dirrm\)try\( %%RCDIR_REL%%/plugins/contextmenu\),\1\2," \
-	    >${.CURDIR}/pkg-plist.tmp
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PLUGINDIR}

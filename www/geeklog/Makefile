@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.geeklog.net/filemgmt/upload_dir/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web content management system
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		cpe
 

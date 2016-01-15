@@ -50,6 +50,7 @@
     SUBDIR += gb2ps
     SUBDIR += gcin
     SUBDIR += gimp-help-zh_CN
+    SUBDIR += gydict
     SUBDIR += hc
     SUBDIR += ibus-chewing
     SUBDIR += ibus-libpinyin

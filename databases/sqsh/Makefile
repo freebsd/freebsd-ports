@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for querying Sybase database servers
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libct.so:${PORTSDIR}/databases/freetds
 

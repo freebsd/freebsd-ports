@@ -8,7 +8,7 @@ CATEGORIES=	games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Infiniminer/Minecraft inspired game
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/doc/lgpl-2.1.txt
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3

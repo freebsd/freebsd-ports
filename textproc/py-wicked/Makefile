@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wicked
-PORTVERSION=	1.1.10
-PORTREVISION=	1
+PORTVERSION=	1.1.12
 CATEGORIES=	textproc python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.container>=0:${PORTSDIR}/devel/py-zope.
 		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:${PORTSDIR}/devel/py-zope.traversing
 
 USES=		python zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

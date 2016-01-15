@@ -10,7 +10,7 @@ MASTER_SITES=	http://phash.org/releases/ \
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Open source perceptual hash library
 
-LICENSE=	GPLv3 # or any later version
+LICENSE=	GPLv3+
 
 USES=		gmake libtool pathfix
 GNU_CONFIGURE=	yes

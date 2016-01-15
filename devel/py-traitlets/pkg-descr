@@ -1,0 +1,5 @@
+Traitlets is a framework that lets Python classes have attributes with type
+checking, dynamically calculated default values, and 'on change' callbacks.
+Keeps configuration in a varietry of formats, including json.
+
+WWW: https://pypi.python.org/pypi/traitlets/

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vsftpd
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	https://security.appspot.com/downloads/ \
 		GENTOO

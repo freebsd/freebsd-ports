@@ -10,9 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for decompressing Amiga DMS files
 
 LICENSE=	PD
-LICENSE_NAME=	Public Domain
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		tar:bzip2
 HAS_CONFIGURE=	yes

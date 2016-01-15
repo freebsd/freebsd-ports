@@ -16,7 +16,7 @@ COMMENT=	Astrology program for X11 and alpha-numeric terminals
 
 # Swiss Ephemeris GPLv2 licensed, see
 # http://www.astro.com/ftp/swisseph/LICENSE.TXT
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 EPHE=		sweph_00.tar.gz:ephe sweph_06.tar.gz:ephe \
 		sweph_12.tar.gz:ephe sweph_18.tar.gz:ephe \

@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: tincd
-# REQUIRE: ipfilter FILESYSTEMS sysctl netif ldconfig
+# REQUIRE: ipfilter FILESYSTEMS sysctl netif
 # BEFORE:  SERVERS routing
 # KEYWORD: nojail
 #
@@ -11,6 +11,13 @@
 #	/etc/rc.conf
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/tincd
+#
+# tincd_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable tincd.
+# tincd_cfg (str):	Set to "" by default.
+#			Set it to NETNAMEs to use (ex.: "vpn1 vpn2").
+# tincd_flags (str):	Set to "" by default.
+#			Set it to flags to use (ex.: "-d 1 --logfile").
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 
@@ -26,11 +33,13 @@ stop_cmd="tincd_stop"
 reload_cmd="tincd_reload"
 extra_commands="reload"
 procname=${command:-tincd}
+ldconfig_command="/sbin/ldconfig"
 
 load_rc_config $name
 
 tincd_start()
 {
+	${ldconfig_command} -elf -m %%LOCALBASE%%/lib
 	if test -z "${tincd_cfg}"
 	then
 		echo "Starting tincd"
@@ -55,7 +64,6 @@ tincd_stop()
 		echo "Stopping tincd"
 		$command -k
 	else
-		echo "Stopping tincd for: "
 		for cfg in $tincd_cfg
 		do
 			echo "Stopping tincd for: ${cfg}"

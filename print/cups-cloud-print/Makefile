@@ -8,7 +8,7 @@ CATEGORIES=	print
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print using Google Cloud Print
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-client

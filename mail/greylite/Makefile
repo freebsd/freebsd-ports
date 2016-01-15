@@ -14,8 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
-USES=		tar:bzip2
-USE_SQLITE=	3
+USES=		sqlite tar:bzip2
 PLIST_FILES=	bin/greylite \
 		%%DNSBLENV%%bin/dnsblenv	\
 		%%UCSPI2SOCKET%%bin/ucspi2socket \

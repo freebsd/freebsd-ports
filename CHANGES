@@ -10,6 +10,22 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160112:
+AUTHOR: amdmi3@FreeBSD.org
+
+  Support has been added for "or later" variants of GNU licenses
+  (e.g. LICENSE=GPLv2+) and for Public Domain (LICENSE=PD).
+
+  Complete list of new LICENSE values:
+
+  AGPLv3+ GPLv1+ GPLv2+ GPLv3+ GPLv3RLE+ LGPL20+ LGPL21+ LGPL3+ PD
+
+20160110:
+AUTHOR: bapt@FreeBSD.org
+
+  USE_FIREBIRD and USE_SQLITE has been replaced by USES=firebird and
+  USES=sqlite
+
 20151105:
 AUTHOR: mat@FreeBSD.org
 

@@ -12,7 +12,7 @@ COMMENT=	Apple Lisa 2 Emulator
 
 BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		tar:bzip2
 USE_WX=		2.8

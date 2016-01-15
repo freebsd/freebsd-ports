@@ -10,7 +10,7 @@ MASTER_SITES=	https://lisas.de/kover/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG CD cover printer
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb \

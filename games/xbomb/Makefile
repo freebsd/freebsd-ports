@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.gedanken.org.uk/software/xbomb/download/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Minesweeper with a couple of grid types
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		pkgconfig tar:tgz
 USE_XORG=	xaw7
 
@@ -21,9 +24,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xbomb ${STAGEDIR}${PREFIX}/bin/xbomb
 	${INSTALL_MAN} ${WRKSRC}/xbomb.6 ${STAGEDIR}${MANPREFIX}/man/man6/xbomb.6
 	${INSTALL_DATA} ${WRKSRC}/xbomb.ad ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XBomb
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/xbomb
-	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/X11/xbomb/xbomb3.hi
-	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/X11/xbomb/xbomb4.hi
-	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/X11/xbomb/xbomb6.hi
+	@${MKDIR} ${STAGEDIR}/var/games/xbomb
+	@${TOUCH} ${STAGEDIR}/var/games/xbomb/xbomb3.hi.sample
+	@${TOUCH} ${STAGEDIR}/var/games/xbomb/xbomb4.hi.sample
+	@${TOUCH} ${STAGEDIR}/var/games/xbomb/xbomb6.hi.sample
 
 .include <bsd.port.mk>

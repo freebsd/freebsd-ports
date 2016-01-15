@@ -377,6 +377,7 @@
     SUBDIR += octave-forge-signal
     SUBDIR += octave-forge-simp
     SUBDIR += octave-forge-sockets
+    SUBDIR += octave-forge-sparsersb
     SUBDIR += octave-forge-specfun
     SUBDIR += octave-forge-special-matrix
     SUBDIR += octave-forge-spline-gcvspl
@@ -388,6 +389,7 @@
     SUBDIR += octave-forge-symband
     SUBDIR += octave-forge-symbolic
     SUBDIR += octave-forge-tcl-octave
+    SUBDIR += octave-forge-tisean
     SUBDIR += octave-forge-tsa
     SUBDIR += octave-forge-video
     SUBDIR += octave-forge-xraylib

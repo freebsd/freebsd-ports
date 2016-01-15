@@ -28,12 +28,11 @@ PORTSCOUT=	limitw:1,even
 USE_GSTREAMER1=	yes
 USE_XORG=	x11 xext ice
 USES=		bison cmake compiler:c++11-lib gettext gmake gperf jpeg perl5 \
-		pkgconfig python:2 tar:xz
+		pkgconfig python:2 sqlite tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
 USE_GNOME=	cairo gtk20 gtk30 introspection:build libxml2 libxslt
 USE_GL=		gl egl
-USE_SQLITE=	3
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

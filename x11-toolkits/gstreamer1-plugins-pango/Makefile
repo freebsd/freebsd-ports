@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	x11-toolkits
 
-COMMENT=	Gstreamer pango textoverlay plugin
+COMMENT=	GStreamer pango textoverlay plugin
 
 GST_PLUGIN=	pango
 DIST=		base

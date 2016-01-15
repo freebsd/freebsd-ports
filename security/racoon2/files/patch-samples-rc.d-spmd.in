@@ -1,6 +1,12 @@
---- samples/rc.d-spmd.in.orig	2007-07-11 09:59:30.000000000 +0900
-+++ samples/rc.d-spmd.in	2008-04-17 15:11:55.000000000 +0900
-@@ -13,7 +13,7 @@
+--- samples/rc.d-spmd.in.orig	2007-07-11 00:59:30 UTC
++++ samples/rc.d-spmd.in
+@@ -9,11 +9,13 @@
+ 
+ . /etc/rc.subr
+ 
++: ${spmd_enable="NO"}
++
+ prefix=@prefix@
  exec_prefix=@exec_prefix@
  
  name="spmd"

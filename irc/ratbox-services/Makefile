@@ -109,7 +109,7 @@ CONFIGURE_ARGS+=	--disable-memoserv
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=		3
+USES+=			sqlite
 CONFIGURE_ARGS+=	--enable-sqlite3=${LOCALBASE}
 .endif
 

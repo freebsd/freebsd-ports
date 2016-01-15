@@ -1,11 +1,8 @@
 %%HACKLINK%%bin/nethack
-@mode 555
-bin/%%HACKNAME%%
+@(,,555) bin/%%HACKNAME%%
 @owner games
 @group games
-@mode 02755
-%%DATADIR%%/%%HACKNAME%%
-@mode
+@(,,02755) %%DATADIR%%/%%HACKNAME%%
 %%DATADIR%%/A-filla.lev
 %%DATADIR%%/A-fillb.lev
 %%DATADIR%%/A-goal.lev
@@ -89,9 +86,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/juiblex.lev
 %%DATADIR%%/knox.lev
 %%DATADIR%%/license
-@mode 664
-%%DATADIR%%/logfile
-@mode
+@(,,664) %%DATADIR%%/logfile
 %%DATADIR%%/medusa-1.lev
 %%DATADIR%%/medusa-2.lev
 %%DATADIR%%/minefill.lev
@@ -107,12 +102,8 @@ bin/%%HACKNAME%%
 %%DATADIR%%/perm
 %%DATADIR%%/pet_mark.xbm
 %%DATADIR%%/quest.dat
-@mode 664
-%%DATADIR%%/record
-@mode
-@mode 02755
-%%DATADIR%%/recover
-@mode
+@(,,664) %%DATADIR%%/record
+@(,,02755) %%DATADIR%%/recover
 %%DATADIR%%/rip.xpm
 %%DATADIR%%/rumors
 %%DATADIR%%/sanctum.lev
@@ -135,12 +126,5 @@ man/man6/lev_comp%%HACKEXT%%.6.gz
 man/man6/%%HACKNAME%%.6.gz
 man/man6/recover%%HACKEXT%%.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
-@mode 0775
-@owner games
-@group games
-@dirrmtry %%DATADIR%%/save
-@group
-@owner
-@mode
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dir(games,games,0775) %%DATADIR%%
+@dir(games,games,0775) %%DATADIR%%/save

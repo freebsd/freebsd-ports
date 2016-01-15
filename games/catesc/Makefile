@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	catesc
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

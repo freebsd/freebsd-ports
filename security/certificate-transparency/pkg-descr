@@ -1,0 +1,8 @@
+Google's Certificate Transparency project is an open framework for monitoring
+and auditing SSL certificates in nearly real time.  It makes it possible
+to detect SSL certificates that have been mistakenly issued by a certificate
+authority or maliciously acquired from an otherwise unimpeachable certificate
+authority. It also makes it possible to identify certificate authorities
+that have gone rogue and are maliciously issuing certificates. 
+
+WWW: https://www.certificate-transparency.org/

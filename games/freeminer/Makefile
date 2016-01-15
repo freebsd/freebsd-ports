@@ -9,9 +9,9 @@ CATEGORIES=	games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open source sandbox game inspired by Minecraft
 
-LICENSE=	LGPL21 GPLv3 # or later
+LICENSE=	LGPL21+ GPLv3+ # source mentions GPLv3+, LICENSE.txt LGPL21+
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING # don't remove space
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 

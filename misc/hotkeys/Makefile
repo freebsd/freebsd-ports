@@ -11,7 +11,7 @@ DISTNAME=	hotkeys_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows usage of special keys on internet/multimedia keyboards
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2

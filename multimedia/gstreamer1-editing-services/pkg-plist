@@ -64,7 +64,7 @@ lib/girepository-%%VERSION%%/GES-%%VERSION%%.typelib
 lib/gstreamer-%%VERSION%%/libgstnle.so
 lib/libges-%%VERSION%%.so
 lib/libges-%%VERSION%%.so.0
-lib/libges-%%VERSION%%.so.0.0.0
+lib/libges-%%VERSION%%.so.%%SOVERSION%%
 libdata/pkgconfig/gst-editing-services-%%VERSION%%.pc
 share/bash-completion/completions/ges-launch-%%VERSION%%
 share/gir-%%VERSION%%/GES-%%VERSION%%.gir

@@ -11,7 +11,7 @@ DISTNAME=	Balazar-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D adventure and roleplaying game
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d \
 		libfreetype.so:${PORTSDIR}/print/freetype2

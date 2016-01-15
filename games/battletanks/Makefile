@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast 2D tank arcade game with multiplayer and split-screen modes
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip

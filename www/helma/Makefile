@@ -9,7 +9,7 @@ MASTER_SITES=	http://adele.helma.org/download/helma/${PORTVERSION}/ \
 		LOCAL/decke
 DISTFILES=	helma-${PORTVERSION}.tar.gz helma-${PORTVERSION}-src.tar.gz
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web application framework for fast and efficient scripting
 
 LICENSE=	BSD3CLAUSE

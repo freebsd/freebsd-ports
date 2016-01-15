@@ -9,7 +9,7 @@ MASTER_SITES=	http://mvertes.free.fr/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts flat ASCII text to man page format
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk

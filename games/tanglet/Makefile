@@ -10,7 +10,7 @@ MASTER_SITES=	http://gottcode.org/tanglet/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Single player word finding game based on Boggle
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

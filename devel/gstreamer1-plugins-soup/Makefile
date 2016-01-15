@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	devel
 
-COMMENT=	Gstreamer soup http src plugin
+COMMENT=	GStreamer soup based http input plugin
 
 GST_PLUGIN=	soup
 DIST=		good

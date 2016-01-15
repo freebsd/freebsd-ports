@@ -9,7 +9,7 @@ CATEGORIES=	games devel
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modified Stratagus engine for Wyrmsun
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
@@ -21,8 +21,7 @@ GH_PROJECT=     Wyrmgus
 
 USE_GL=		gl glu
 USE_SDL=	sdl
-USE_SQLITE=	3
-USES=		compiler:c++11-lib cmake:outsource lua:51 pkgconfig
+USES=		compiler:c++11-lib cmake:outsource lua:51 pkgconfig sqlite
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DTOLUA++_APP:STRING="tolua++-${LUA_VER}" \
 		-DTOLUA++_INCLUDE_DIR:STRING="${LUA_INCDIR}" \

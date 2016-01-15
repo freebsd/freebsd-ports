@@ -12,7 +12,7 @@ EXTRACT_ONLY=   # empty
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Tool that replies with a standard answer to incoming identd requests
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 PLIST_FILES=	sbin/identd
 USE_RC_SUBR=	fakeidentd

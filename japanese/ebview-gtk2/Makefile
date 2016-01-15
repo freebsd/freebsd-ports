@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-gtk2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Book Viewer
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libeb.so:${PORTSDIR}/japanese/eb
 

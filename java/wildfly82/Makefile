@@ -12,6 +12,9 @@ COMMENT=	Replacement for JBoss Application Server
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Fully EOL when version 10.0 was released
+EXPIRATION_DATE=	2016-07-15
+
 USE_RC_SUBR=	wildfly82
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+

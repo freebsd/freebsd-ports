@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.CMFCalendar
-PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTVERSION=	2.2.3
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +11,16 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Calendar product for the Zope Content Management Framework
 
 LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eggtestinfo>0:${PORTSDIR}/devel/py-eggtestinfo
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:${PORTSDIR}/devel/py-Products.CMFCore \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFDefault>=0:${PORTSDIR}/devel/py-Products.CMFDefault \
-		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:${PORTSDIR}/devel/py-Products.GenericSetup
+		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:${PORTSDIR}/devel/py-Products.GenericSetup \
+		${PYTHON_PKGNAMEPREFIX}zope.app.form>0:${PORTSDIR}/devel/py-zope.app.form
 
-USES=		python:2
-USE_PYTHON=	distutils
+NO_ARCH=	yes
+USES=		python:2.7
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

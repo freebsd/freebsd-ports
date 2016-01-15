@@ -9,7 +9,7 @@ CATEGORIES=	graphics
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Library to convert clothoid splines into Bezier splines
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes

@@ -12,10 +12,8 @@ DISTNAME=	${PORTNAME}editor-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI editor to create and edit metalinks
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
-
-OPTIONS_DEFINE=	DOCS
 
 USES=		dos2unix python zip
 DOS2UNIX_REGEX=	.*\.txt
@@ -24,23 +22,20 @@ USE_PYTHON=	distutils
 PYDISTUTILS_EGGINFO=	metalink_editor-${PORTVERSION}-py${PYTHON_VER}.egg-info
 USE_WX=		3.0+
 WX_COMPS=	python
+NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
 DESKTOP_ENTRIES=	"Metalink editor" \
-			"GUI editor to create and edit metalinks" \
+			"" \
 			"${DATADIR}/metalink.png" \
 			"metalink_editor.py" \
 			"Network;FileTransfer;" \
 			true
 
-#
-# Documents to install
-#
-DOC_FILES=	\
-		readme.txt
-#
-PORTDOCS=	*
+PORTDOCS=	readme.txt
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 # Create a package to avoid namespace pollution
@@ -63,16 +58,17 @@ pre-configure:
 		> ${WRKSRC}/${PYSETUP}
 
 post-install:
-# docs
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
 # fix installation permissions for restritive umask(1)
 	@${FIND} \
 		${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Metalink_editor \
 		-type f -exec \
 		${CHMOD} ${SHAREMODE} {} \;
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

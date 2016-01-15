@@ -3,30 +3,20 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.5.24
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
 		ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
 		http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://www3.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
-		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://www.spinnaker.de/mutt/compressed/:rr \
-		http://lunar-linux.org/~tchan/mutt/:tchan
+		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://www3.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
-		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://home.woolridge.ca/mutt/patches/:dw \
-		http://www.spinnaker.de/mutt/compressed/:rr \
-		http://www.emaillab.org/mutt/${AC_PATCH_VERSION}/:jp
+		http://home.woolridge.ca/mutt/patches/:dw
 
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (development version)
@@ -54,9 +44,12 @@ USE_AUTOTOOLS=	automake autoconf
 AUTOMAKE_ARGS=	--add-missing --foreign
 USE_OPENSSL=	yes
 
+OPTIONS_SUB=	yes
+
 .if defined (MUTT_LITE)
-LITE=	YES
+LITE=	yes
 .endif
+
 .if defined (LITE)
 OPTIONS_UNSET=	NLS DOCS EXAMPLES
 .else
@@ -67,7 +60,7 @@ OPTIONS_DEFINE=	COMPRESSED_FOLDERS SASL DEBUG DOCS EXAMPLES FLOCK \
 		MIXMASTER NLS NNTP PARENT_CHILD_MATCH_PATCH \
 		QUOTE_PATCH REVERSE_REPLY_PATCH SIDEBAR_PATCH \
 		SIGNATURE_MENU SMART_DATE SMIME_OUTLOOK_COMPAT SMTP \
-		TOKYOCABINET TRASH_PATCH XML
+		TOKYOCABINET TRASH_PATCH URLVIEW XML
 
 OPTIONS_SINGLE=	SCREEN
 OPTIONS_RADIO=	SPELL
@@ -103,6 +96,7 @@ SMIME_OUTLOOK_COMPAT_DESC=	SMIME outlook compatibility
 SMTP_DESC=	SMTP relay support
 TOKYOCABINET_DESC=	Use tokyocabinet instead of Berkley DB
 TRASH_PATCH_DESC=	Trash folder support
+URLVIEW_DESC=	Use urlview for the URL selector menu
 XML_DESC=	Use XML tools for rebuilding documentation
 
 OPTIONS_DEFAULT=	COMPRESSED_FOLDERS HTML ICONV IDN IFDEF_PATCH \
@@ -110,13 +104,107 @@ OPTIONS_DEFAULT=	COMPRESSED_FOLDERS HTML ICONV IDN IFDEF_PATCH \
 		MAILDIR_HEADER_CACHE MAILDIR_MTIME_PATCH NLS \
 		NCURSES PARENT_CHILD_MATCH_PATCH QUOTE_PATCH \
 		REVERSE_REPLY_PATCH SMART_DATE SMIME_OUTLOOK_COMPAT \
-		SASL SMTP TRASH_PATCH XML
+		SASL SMTP TRASH_PATCH URLVIEW XML
 .endif
+
+RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+
+.if !defined (LITE)
+ASPELL_BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+ASPELL_RUN_DEPENDS=		aspell:${PORTSDIR}/textproc/aspell
+ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
+ISPELL_RUN_DEPENDS=		ispell:${PORTSDIR}/textproc/aspell-ispell
+URLVIEW_RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
+.endif
+
+.if defined (LITE)
+PKGNAMESUFFIX=	-lite
+PLIST_SUB+=	MAILBOX_MANPAGES=""
+PLIST_SUB+=	COMPRESSED_FOLDERS="@comment "
+PLIST_SUB+=	HTML="@comment "
+PLIST_SUB+=	XML="@comment "
+PLIST_SUB+=	NNTP="@comment "
+# XXX bug in bpm ?
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=	--disable-nls
+.endif
+
+DEBUG_CONFIGURE_ON=	--enable-debug
+
+# Handle ncurses/ncurses-port/slang
+SLANG_CONFIGURE_ON=	--with-slang=${LOCALBASE}
+SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_VARS=	PKGMESSAGE=${FILESDIR}/pkg-message.slang
+
+NCURSES_USES=	ncurses
+
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--disable-nls
+
+ICONV_USES=	iconv:translit
+ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
+ICONV_CONFIGURE_OFF=	--disable-iconv
+
+ASPELL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aspell
+##PARENT_CHILD_MATCH_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-parent-child-match
+REVERSE_REPLY_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-reverse_reply
+
+SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
+
+#MIXMASTER_BUILD_DEPENDS=	mixmaster:${PORTSDIR}/mail/mixmaster
+MIXMASTER_RUN_DEPENDS=	mixmaster:${PORTSDIR}/mail/mixmaster
+MIXMASTER_CONFIGURE_ON=	--with-mixmaster=${LOCALBASE}
+
+SMIME_OUTLOOK_COMPAT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-smime-outlook
+SMART_DATE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-smartdate
+
+FLOCK_CONFIGURE_ON=	--enable-flock
+FLOCK_CONFIGURE_OFF=	--disable-flock
+
+LOCALES_FIX_CONFIGURE_ON=	--enable-locales-fix
+
+IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_CONFIGURE_ON=	--with-idn
+IDN_CONFIGURE_OFF=	--without-idn
+
+GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_CONFIGURE_ON=	--enable-gpgme
+GPGME_CONFIGURE_OFF=	--disable-gpgme
+
+SMTP_CONFIGURE_ON=	--enable-smtp
+SMTP_CONFIGURE_OFF=	--disable-smtp
+
+MAILDIR_HEADER_CACHE_CONFIGURE_OFF=	--without-qdbm
+
+COMPRESSED_FOLDERS_DISTFILES=	patch-${RR_PATCH_VERSION}.rr.compressed.gz:vvv
+COMPRESSED_FOLDERS_CONFIGURE_ON=	--enable-compressed
+COMPRESSED_FOLDERS_VARS=	XML_NEEDED=yes
+
+QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
+		patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
+QUOTE_PATCH_VARS=	XML_NEEDED=yes
+
+NNTP_DISTFILES= patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv \
+		patch-${VVV_PATCH_VERSION}.vvv.nntp_ru.gz:vvv
+NNTP_CONFIGURE_ON=	--enable-nntp
+NNTP_VARS=	XML_NEEDED=yes
+NNTP_CATEGORIES=	news
+
+SIDEBAR_PATCH_VARS=	XML_NEEDED=yes
+
+DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
+
+SIGNATURE_MENU_IGNORE=	SIGNATURE_MENU does not work at the moment
+SIGNATURE_MENU_VARS=	XML_NEEDED=yes
+SIGNATURE_MENU_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-signature-menu
+
+MBOX_HOOK_PATCH_IGNORE=	MBOX_HOOK_PATCH does not work at the moment
+MBOX_HOOK_PATCH_PATCHFILES=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 
 .include <bsd.port.options.mk>
 
 DW_PATCH_VERSION=	1.5.6
-AC_PATCH_VERSION=	1.5.9
 DW_MBOX_PATCH_VERSION=	1.5.18
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
@@ -130,14 +218,6 @@ DW_PATCH_VERSION=	${PORTVERSION}
 .if !defined(DW_MBOX_PATCH_VERSION)
 DW_MBOX_PATCH_VERSION=	${DW_PATCH_VERSION}
 .endif
-.if !defined(AC_PATCH_VERSION)
-AC_PATCH_VERSION=	${PORTVERSION}
-.endif
-
-.if defined (LITE)
-PKGNAMESUFFIX=	-lite
-PLIST_SUB+=	MBOXMAN=""
-.endif
 
 # XXX
 # this should be done automagically by aclocal but ....
@@ -148,123 +228,6 @@ pre-build::
 			-e "s|^(AUTOMAKE = ).+|\1${AUTOMAKE}|" \
 			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
 		${BUILD_WRKSRC}/Makefile
-
-RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
-
-.if !defined (LITE)
-.if ${PORT_OPTIONS:MASPELL}
-BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
-RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
-.elif ${PORT_OPTIONS:MISPELL}
-BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
-.endif
-.if defined(PACKAGE_BUILDING)
-RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
-.endif
-.endif
-
-# Handle ncurses/ncurses-port/slang
-.if ${PORT_OPTIONS:MSLANG}
-CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
-LIB_DEPENDS+=	libslang.so:${PORTSDIR}/devel/libslang2
-.endif
-
-.if ${PORT_OPTIONS:MNCURSES}
-USES+=		ncurses
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MMIXMASTER}
-# BUILD_DEPENDS+=	mixmaster:${PORTSDIR}/mail/mixmaster
-RUN_DEPENDS+=	mixmaster:${PORTSDIR}/mail/mixmaster
-CONFIGURE_ARGS+=	--with-mixmaster=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MSMIME_OUTLOOK_COMPAT}
-post-patch::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
-.endif
-
-.if ${PORT_OPTIONS:MSMART_DATE}
-post-patch::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smartdate
-.endif
-
-.if ${PORT_OPTIONS:MSIGNATURE_MENU}
-IGNORE=	the WITH_SIGNATURE_MENU does not work at the moment
-XML_NEEDED=	yes
-post-patch::
-	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-signature-menu
-.endif
-
-.if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
-post-patch::
-.if ${PORT_OPTIONS:MNNTP}
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-maildir-mtime-nntp
-.else
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-maildir-mtime
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MASPELL}
-post-patch::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-aspell
-.endif
-
-.if ${PORT_OPTIONS:MREVERSE_REPLY_PATCH}
-post-patch::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-reverse_reply
-.endif
-
-.if ${PORT_OPTIONS:MPARENT_CHILD_MATCH_PATCH}
-post-patch::
-	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-parent-child-match
-.endif
-
-.if ${PORT_OPTIONS:MFLOCK}
-CONFIGURE_ARGS+=	--enable-flock
-.else
-CONFIGURE_ARGS+=	--disable-flock
-.endif
-
-.if ${PORT_OPTIONS:MLOCALES_FIX}
-CONFIGURE_ARGS+=	--enable-locales-fix
-.endif
-
-.if ${PORT_OPTIONS:MICONV}
-USES+=			iconv:translit
-CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
-.else
-CONFIGURE_ARGS+=	--disable-iconv
-.endif
-
-.if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
-CONFIGURE_ARGS+=	--with-idn
-.else
-CONFIGURE_ARGS+=	--without-idn
-.endif
-
-.if ${PORT_OPTIONS:MGPGME}
-LIB_DEPENDS+=	libgpgme.so:${PORTSDIR}/security/gpgme
-CONFIGURE_ARGS+=	--enable-gpgme
-.else
-CONFIGURE_ARGS+=	--disable-gpgme
-.endif
-LDFLAGS=
 
 .if ${PORT_OPTIONS:MGSSAPI}
 .if exists(${LOCALBASE}/bin/krb5-config)
@@ -280,7 +243,7 @@ CONFIGURE_ARGS+=	--with-gss=${HEIMDAL_HOME}
 LDFLAGS+=		-L${HEIMDAL_HOME}/lib -Wl,-rpath=${HEIMDAL_HOME}/lib -ltinfow
 .elif (defined(MAKE_KERBEROS5)) || exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-gss
-WITH_KRB5_SYS=YES
+WITH_KRB5_SYS=yes
 .endif
 .endif
 
@@ -288,84 +251,52 @@ LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib:/usr/lib -ltinfow
 CFLAGS+=		${CFLAGS_ADD}
 LDFLAGS+=		${LDFLAGS_ADD}
 
-.if ${PORT_OPTIONS:MSMTP}
-CONFIGURE_ARGS+=	--enable-smtp
-.else
-CONFIGURE_ARGS+=	--disable-smtp
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
 PATCH_DIST_STRIP=	-p1
 
-.if ${PORT_OPTIONS:MCOMPRESSED_FOLDERS}
-DISTFILES+=	patch-${RR_PATCH_VERSION}.rr.compressed.gz:vvv
-CONFIGURE_ARGS+=	--enable-compressed
-XML_NEEDED=	yes
-pre-patch::
+pre-patch-PARENT_CHILD_MATCH_PATCH-on:
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-parent-child-match
+
+pre-patch-COMPRESSED_FOLDERS-on:
 	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${RR_PATCH_VERSION}.rr.compressed.gz > ${WRKDIR}/patch-compressed
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
 		 ${WRKDIR}/patch-compressed
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-compressed
-.endif
 
-.if ${PORT_OPTIONS:MNNTP}
-DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv
-DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp_ru.gz:vvv
-CONFIGURE_ARGS+=	--enable-nntp
-XML_NEEDED=	yes
-CATEGORIES+=	news
-PLIST_SUB+=	NNTP=""
-pre-patch::
+pre-patch-NNTP-on:
 	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${VVV_PATCH_VERSION}.vvv.nntp.gz > ${WRKDIR}/patch-nntp
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
 		${WRKDIR}/patch-nntp
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-nntp
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/ChangeLog.nntp ${STAGEDIR}${DOCSDIR}
-.else
-PLIST_SUB+=	NNTP="@comment "
-.endif
 
-.if ${PORT_OPTIONS:MQUOTE_PATCH}
-PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
-		patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
-XML_NEEDED=	yes
-.endif
-
-.if ${PORT_OPTIONS:MIFDEF_PATCH}
-post-patch::
-	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-ifdef
-.endif
-
-.if ${PORT_OPTIONS:MMBOX_HOOK_PATCH}
-IGNORE=	the MBOX_HOOK_PATCH does not work at the moment
-#PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
-.endif
-
+post-patch-NNTP-on:
 .if ${PORT_OPTIONS:MSIDEBAR_PATCH}
-XML_NEEDED=	yes
-.if ${PORT_OPTIONS:MNNTP}
-post-patch::
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-sidebar-nntp
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-sidebar-refresh
-.else
-post-patch::
+.endif
+.if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime-nntp
+.endif
+
+post-patch-NNTP-off:
+.if ${PORT_OPTIONS:MSIDEBAR_PATCH}
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-sidebar
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-sidebar-refresh
 .endif
+.if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime
 .endif
 
-.if ${PORT_OPTIONS:MGREETING_PATCH}
-post-patch::
+post-install-NNTP-on:
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog.nntp ${STAGEDIR}${DOCSDIR}
+
+post-patch-GREETING_PATCH-on:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-greeting
-.endif
-.if ${PORT_OPTIONS:MTRASH_PATCH}
-post-patch::
+
+post-patch-IFDEF_PATCH-on:
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-ifdef
+
+post-patch-TRASH_PATCH-on:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-trash-purge
-.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 
@@ -386,12 +317,6 @@ pre-configure::
 		${WRKSRC}/imap/auth_gss.c
 .endif
 
-.if ${PORT_OPTIONS:MCOMPRESSED_FOLDERS}
-PLIST_SUB+=	COMPRESS=""
-.else
-PLIST_SUB+=	COMPRESS="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MIMAP_HEADER_CACHE} || ${PORT_OPTIONS:MMAILDIR_HEADER_CACHE}
 .if ${PORT_OPTIONS:MTOKYOCABINET}
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --without-bdb --with-tokyocabinet
@@ -407,48 +332,14 @@ pre-configure::
 CONFIGURE_ARGS+=	--disable-hcache
 .endif
 
-.if ${PORT_OPTIONS:MMAILDIR_HEADER_CACHE}
-CONFIGURE_ARGS+=	--without-qdbm
-.endif
-
-.if ${PORT_OPTIONS:MMAILBOX_MANPAGES}
-PLIST_SUB+=	MBOXMAN=""
-.else
-PLIST_SUB+=	MBOXMAN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MHTML}
-PLIST_SUB+=	HTML=""
-.else
-PLIST_SUB+=	HTML="@comment "
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-post-build:
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
-	@${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
-		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
-		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
-		${WRKSRC}/doc/mutt.man
-	@${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
-		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
-		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
-		${WRKSRC}/doc/muttrc.man
-.endif
-
 .if defined (XML_NEEDED) && ${PORT_OPTIONS:MXML}
-PLIST_SUB+=	XML=""
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		lynx:${PORTSDIR}/www/lynx
 .else
-PLIST_SUB+=	XML="@comment "
 pre-build::
 	@${REINPLACE_CMD} -E -e 's|-xsltproc|@-true xsltproc|g' \
 		${WRKSRC}/doc/Makefile
-.endif
-
-.if ${PORT_OPTIONS:MSLANG}
-PKGMESSAGE=	${FILESDIR}/pkg-message.slang
 .endif
 
 .include <bsd.port.mk>

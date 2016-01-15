@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awscli
-PORTVERSION=	1.9.11
+PORTVERSION=	1.9.17
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 
@@ -11,7 +11,7 @@ COMMENT=	Universal Command Line Interface for Amazon Web Services
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.2.11:${PORTSDIR}/devel/py-botocore \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.3.15:${PORTSDIR}/devel/py-botocore \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.2.5:${PORTSDIR}/devel/py-colorama \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0.10:${PORTSDIR}/textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}rsa>=3.1.2:${PORTSDIR}/security/py-rsa

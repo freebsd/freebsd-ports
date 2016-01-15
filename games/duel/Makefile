@@ -11,7 +11,7 @@ DISTNAME=	lin${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Overhead, OpenGL space shooter
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \

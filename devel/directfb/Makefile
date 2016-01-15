@@ -49,8 +49,6 @@ CONFIGURE_ARGS=	--disable-osx --disable-extra-warnings --disable-profiling \
 		--with-inputdrivers=all --with-smooth-scaling \
 		--with-dither-rgb16=advanced
 
-BROKEN_alpha=	Does not compile on alpha
-
 DOCS_BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype

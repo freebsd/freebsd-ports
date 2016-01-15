@@ -4,7 +4,7 @@ PORTREVISION=	0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	1-plugins-amrwbdec
 
-COMMENT=	Gstreamer OpenCore based Adaptive Multi-Rate Wide-Band Decoder plugin
+COMMENT=	GStreamer OpenCore based Adaptive Multi-Rate Wide-Band Decoder plugin
 
 GST_PLUGIN=	amrwb
 DIST=		ugly

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	gimp-
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Gimp plug-in for texture synthesis
 
-LICENSE=	GPLv2 # or later (COPYING has GPLv3)
+LICENSE=	GPLv2+ # though COPYING has GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/gimp/2.2/python/gimpfu.py:${PORTSDIR}/graphics/py-gimp
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool

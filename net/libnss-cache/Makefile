@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libnss-cache
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	net
 
 MAINTAINER=	k@kev009.com
@@ -16,7 +15,7 @@ USES=		gmake
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	7df95b7182eb71663dc7910b530ea0dec6fea205
+GH_TAGNAME=	version/0.15
 
 PLIST_FILES=	lib/nss_nsscache.so lib/nss_nsscache.so.1
 

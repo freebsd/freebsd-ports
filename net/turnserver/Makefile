@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	4.5.0.2
-PORTREVISION=	1
+PORTVERSION=	4.5.0.3
 CATEGORIES=	net
 MASTER_SITES=	http://turnserver.open-sys.org/downloads/v${PORTVERSION}/:prog \
 		http://turnserver.open-sys.org/downloads/extradocs/:xdocs \
@@ -94,7 +93,7 @@ CONFIGURE_ENG+=	TURN_NO_MONGO=1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
+USES+=		sqlite
 .else
 CONFIGURE_ENV+=	TURN_NO_SQLITE=1
 .endif

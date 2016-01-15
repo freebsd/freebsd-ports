@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer HLS plugin
+COMMENT=	GStreamer HTTP Live Streaming (HLS) plugin
 
 GST_PLUGIN=	hls
 DIST=		bad

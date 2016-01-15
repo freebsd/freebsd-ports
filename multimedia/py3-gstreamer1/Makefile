@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	1
 DISTNAME=	gst-python-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	Python bindings for Gstreamer
+COMMENT=	GStreamer python 3 bindings
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -25,7 +25,7 @@ PLIST_SUB=	VERSION="${GST_VERSION}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USE_PYTHON=	py3plist
+USE_PYTHON=	py3kplist
 
 PLIST_SUB+=	PVERSION=${PYTHON_VER:S/.//}
 

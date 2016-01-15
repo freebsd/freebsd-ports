@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	audio
 
-COMMENT=	Gstreamer gme plugin
+COMMENT=	GStreamer emulate gaming console sound processors plugin
 
 GST_PLUGIN=	gme
 DIST=		bad

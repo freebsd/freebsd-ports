@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 		libgcr-3.so:${PORTSDIR}/security/gcr
 
 USES=		cmake desktop-file-utils gettext gmake \
-		libtool pathfix pkgconfig shebangfix tar:xz
+		libtool pkgconfig shebangfix tar:xz
 USE_GNOME=	gnomedocutils gnomeprefix gtk30 intlhack
 SHEBANG_FILES=	desktop/geary-attach
 USE_LDCONFIG=	yes

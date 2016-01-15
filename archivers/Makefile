@@ -204,6 +204,7 @@
     SUBDIR += unace
     SUBDIR += unadf
     SUBDIR += unalz
+    SUBDIR += unarchiver
     SUBDIR += unarj
     SUBDIR += undms
     SUBDIR += unfoo

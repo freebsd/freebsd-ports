@@ -10,7 +10,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Secure (encrypted) remote shell compatible with ssh 2
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liboop.so:${PORTSDIR}/devel/liboop \

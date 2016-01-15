@@ -7,6 +7,7 @@ lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Local.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.PathReader.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Post.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Poster.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.ReportUploadError.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Settings.Files.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Settings.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.StatServer.beam

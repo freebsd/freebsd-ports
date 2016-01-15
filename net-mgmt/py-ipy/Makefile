@@ -13,8 +13,9 @@ COMMENT=	Python module for handling IPv4 and IPv6 Addresses and Networks
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
-test: install
+do-test:
 	${PYTHON_CMD} ${WRKSRC}/test/test_IPy.py
 
 .include <bsd.port.mk>

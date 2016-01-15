@@ -13,7 +13,7 @@ COMMENT=	Multi-player networked nibbles game
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	GTK1
 OPTIONS_DEFAULT=	GTK1

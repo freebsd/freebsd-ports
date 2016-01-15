@@ -13,12 +13,15 @@ COMMENT=	Scanning, Parsing, and Rewriting Kit
 
 USES=		python:2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/spark.py ${STAGEDIR}${PYTHON_SITELIBDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in doc.html doc.tex paper.ps.gz
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}

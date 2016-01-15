@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	i3status
-PORTVERSION=	2.8
-PORTREVISION=	5
+PORTVERSION=	2.10
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/i3status/
 
@@ -11,12 +10,17 @@ COMMENT=	Small program for generating a status bar
 
 LICENSE=	BSD3CLAUSE
 
+OPTIONS_DEFINE=	PULSEAUDIO
+
 LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
 		libyajl.so:${PORTSDIR}/devel/yajl
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		gmake tar:bzip2
+
+PULSEAUDIO_EXTRA_PATCHES_OFF=	${FILESDIR}/no-pulseaudio.diff
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/i3status.c

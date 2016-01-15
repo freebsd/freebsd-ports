@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160113:
+  AFFECTS: users of sysutils/ansible
+  AUTHOR: lifanov@mail.lifanov.com
+
+  Ansible 2.0.0 introduces a number of incompatible configuration changes.
+  Please read changelog and migrate current configuration:
+
+  https://raw.githubusercontent.com/ansible/ansible/v2.0.0.0-1/CHANGELOG.md
+
+  Ansible 1.9.* will be provided as sysutils/ansible1 until the next update
+  of 2.0 branch.
+
+20160111:
+  AFFECTS: users of security/easy-rsa
+  AUTHOR: mandree@FreeBSD.org
+
+  The port has been upgraded to version 3. This incurs major changes,
+  please see ${PREFIX}/share/doc/easy-rsa/doc/EasyRSA-Upgrade-Notes.md
+  for details.
+
+  The old version 2.2.2 has been retained as security/easy-rsa2.
+
 20151227:
   AFFECTS: users of games/nethack34
   AUTHOR: glewis@FreeBSD.org

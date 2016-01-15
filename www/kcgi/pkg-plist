@@ -21,6 +21,8 @@ man/man3/khttp_head.3.gz
 man/man3/khttp_parse.3.gz
 man/man3/khttp_template.3.gz
 man/man3/khttp_write.3.gz
+man/man3/khttpbasic_validate.3.gz
+man/man3/khttpdigest_validate.3.gz
 man/man3/kmalloc.3.gz
 man/man3/kutil_urlencode.3.gz
 man/man3/kvalid_string.3.gz

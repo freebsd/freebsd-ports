@@ -1,0 +1,11 @@
+The Unarchiver is an archive unpacker program with support for the lots of
+popular ZIP, RAR, 7z, tar, gzip, bzip2, LZMA, XZ, CAB, MSI, NSIS, EXE, ISO,
+BIN, split file formats, as well as the old Stuffit, Stuffit X, DiskDouble,
+Compact Pro, Packit, cpio, compress (.Z), ARJ, ARC, PAK, ACE, ZOO, LZH, ADF,
+DMS, LZX, PowerPacker, LBR, Squeeze, Crunch, and other old/obscure formats.
+
+It can also handle filenames in foreign character sets, created with non-
+English versions of some operating systems, and is particularly useful for
+processing CJK archives correctly.
+
+WWW: https://unarchiver.c3.cx/commandline

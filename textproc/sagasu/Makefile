@@ -10,7 +10,7 @@ MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME tool to find strings in a set of files
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		pathfix pkgconfig gettext gmake
 USE_GNOME=	libgnomeui

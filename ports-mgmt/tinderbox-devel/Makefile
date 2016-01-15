@@ -16,6 +16,10 @@ COMMENT=	Port build tinderbox system, devel version
 
 CONFLICTS=	tinderbox-[0-9]*
 
+IGNORE=		much older than stable version (ports-mgmt/tinderbox)
+DEPRECATED=	use newer stable version (ports-mgmt/tinderbox)
+EXPIRATION_DATE=	2016-02-14
+
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	PGSQL MYSQL SQLITE
 

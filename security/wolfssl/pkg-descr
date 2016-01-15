@@ -1,23 +1,22 @@
-Wolfssl is an embedded SSL Library for programmers building security
+WolfSSL is an embedded SSL Library for programmers building security
 functionality into their applications and devices.
 
-Features
-  SSL version 3 and TLS versions 1, 1.1 and 1.2 (client and server)
-  Minimum size of 60-100kb, depending on build options
-  Runtime memory usage between 5-50kb
-  DTLS support (client and server)
-  OpenSSL compatibility layer
-  zlib compression support
-  integration in MySQL, stunnel, Lighttpd availible.
-  MD2, MD4, MD5, SHA-1, RIPEMD, HMAC, DES, 3DES, AES, ARC4, TWOFISH, BLOWFISH,
-  RSA, DSS, DH, and PKCS#5 PBKDF2
-  ia32 assembly for AES, 3DES, BLOWFISH, TWOFISH, ARC4, MD5, SHA, and RIPEMD
-  SSE2 instructions for Large Integers
-  Simple API
-  Interchangeable crypto and certificate libraries
-  PEM and DER certificate support
-  Very fast
+Highlights
+- Up to TLS 1.2 and DTLS 1.2
+- Full client and server support
+- Progressive list of supported ciphers
+- Key and Certificate generation
+- OCSP, CRL support
 
-LICENSE: GPL2 with FOSS extension
+Lightweight
+- Small Size: 20-100kB
+- Runtime Memory:  1-36kB
+- 20x smaller than OpenSSL
 
-WWW: http://www.yassl.com/
+Portable
+- Abstraction Layers (OS, Custom I/O, Standard C library, and more)
+- Simple API
+- OpenSSL Compatibility Layer
+- Long list of supported platforms
+
+WWW: http://www.wolfssl.com/

@@ -10,7 +10,7 @@ MASTER_SITES=	http://mednafen.fobby.net/releases/files/
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable multi-system emulator
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \

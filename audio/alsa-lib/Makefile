@@ -10,7 +10,7 @@ MASTER_SITES=	ALSA/lib \
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	ALSA compatibility library
 
-LICENSE=	LGPL21 # or any later version
+LICENSE=	LGPL21+
 
 USES=		cpe libtool:keepla tar:bzip2
 USE_LDCONFIG=	yes

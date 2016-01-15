@@ -262,6 +262,10 @@ SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.tcl
 .endif
 
 post-patch:
+.if ${OSVERSION} >= 1100093
+	${REINPLACE_CMD} 's,SF_FLAGS,SFIO_FLAGS,g' \
+		${WRKSRC}/lib/sfio/*.[ch]
+.endif
 	${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} \
 		-e "s|\([^:]*:.*\) install-pdfDATA\(.*\)|\1\2|g" \

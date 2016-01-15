@@ -4,7 +4,7 @@ PORTREVISION=	0
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	1-plugins-dv
 
-COMMENT=	Gstreamer dv plugin
+COMMENT=	GStreamer dv demux and decoder plugin based on libdv
 
 GST_PLUGIN=	libdv
 DIST=		good

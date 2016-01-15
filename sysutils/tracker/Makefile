@@ -25,10 +25,10 @@ RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		sqlite tar:xz
 USE_GNOME=	gtk30 intltool introspection:build libxslt:build
 USE_LDCONFIG=	yes
-USE_SQLITE=	3
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

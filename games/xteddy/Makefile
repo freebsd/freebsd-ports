@@ -12,14 +12,14 @@ MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Cuddlesome teddy for the X desktop
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 
-USES=		pkgconfig
+USES=		localbase pkgconfig
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lXext
+LDFLAGS+=	-lXext
 
 PLIST_FILES=	bin/xteddy bin/xteddy_test bin/xtoys \
 		man/man6/xteddy.6.gz \
@@ -31,7 +31,6 @@ PLIST_FILES=	bin/xteddy bin/xteddy_test bin/xtoys \
 		%%DATADIR%%/xpenguin.png %%DATADIR%%/xpuppy.png \
 		%%DATADIR%%/xruessel.png %%DATADIR%%/xteddy.png \
 		%%DATADIR%%/xtrouble.png %%DATADIR%%/xtuxxy.png
-PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
 .for f in configure xteddy.c

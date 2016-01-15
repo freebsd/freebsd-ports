@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing program designed for young children
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \

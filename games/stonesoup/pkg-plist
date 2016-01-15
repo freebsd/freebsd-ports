@@ -80,6 +80,7 @@ bin/stonesoup
 %%DATADIR%%/dat/des/branches/vaults_rooms_hard.des
 %%DATADIR%%/dat/des/branches/vaults_rooms_standard.des
 %%DATADIR%%/dat/des/branches/zot.des
+%%DATADIR%%/dat/des/builder/alphashops.des
 %%DATADIR%%/dat/des/builder/arena.des
 %%DATADIR%%/dat/des/builder/decor.des
 %%DATADIR%%/dat/des/builder/dummy.des
@@ -125,7 +126,6 @@ bin/stonesoup
 %%DATADIR%%/dat/des/serial/ice.des
 %%DATADIR%%/dat/des/serial/magic_research.des
 %%DATADIR%%/dat/des/serial/park.des
-%%DATADIR%%/dat/des/serial/ponds.des
 %%DATADIR%%/dat/des/serial/serial_guide.txt
 %%DATADIR%%/dat/des/serial/sigils.des
 %%DATADIR%%/dat/des/serial/undead.des
@@ -142,7 +142,6 @@ bin/stonesoup
 %%DATADIR%%/dat/des/test.des
 %%DATADIR%%/dat/des/test/suite-los.des
 %%DATADIR%%/dat/des/test/suite.des
-%%DATADIR%%/dat/des/traps/beogh_trap.des
 %%DATADIR%%/dat/des/traps/boulders.des
 %%DATADIR%%/dat/des/traps/grate.des
 %%DATADIR%%/dat/des/traps/rats_trap.des
@@ -153,7 +152,6 @@ bin/stonesoup
 %%DATADIR%%/dat/des/tutorial/lesson4.des
 %%DATADIR%%/dat/des/tutorial/lesson5.des
 %%DATADIR%%/dat/des/variable/ambush.des
-%%DATADIR%%/dat/des/variable/ancient_champions.des
 %%DATADIR%%/dat/des/variable/arcadia.des
 %%DATADIR%%/dat/des/variable/cathedral_bats.des
 %%DATADIR%%/dat/des/variable/compat.des
@@ -167,7 +165,6 @@ bin/stonesoup
 %%DATADIR%%/dat/des/variable/mini.des
 %%DATADIR%%/dat/des/variable/mini_features.des
 %%DATADIR%%/dat/des/variable/mini_monsters.des
-%%DATADIR%%/dat/des/zotdef/zotdef.des
 %%DATADIR%%/dat/descript/ability.txt
 %%DATADIR%%/dat/descript/backgrounds.txt
 %%DATADIR%%/dat/descript/branches.txt
@@ -358,7 +355,6 @@ bin/stonesoup
 %%DATADIR%%/dat/descript/pl/gods.txt
 %%DATADIR%%/dat/descript/pl/hints.txt
 %%DATADIR%%/dat/descript/pl/items.txt
-%%DATADIR%%/dat/descript/pl/monsters.txt
 %%DATADIR%%/dat/descript/pl/quotes.txt
 %%DATADIR%%/dat/descript/pl/skills.txt
 %%DATADIR%%/dat/descript/pl/species.txt
@@ -537,6 +533,7 @@ bin/stonesoup
 %%DATADIR%%/docs/develop/android.txt
 %%DATADIR%%/docs/develop/coding_conventions.txt
 %%DATADIR%%/docs/develop/ctags.txt
+%%DATADIR%%/docs/develop/editor_tips.txt
 %%DATADIR%%/docs/develop/gdb_tips.txt
 %%DATADIR%%/docs/develop/levels/advanced.txt
 %%DATADIR%%/docs/develop/levels/introduction.txt
@@ -546,7 +543,6 @@ bin/stonesoup
 %%DATADIR%%/docs/develop/new_dev_checklist.txt
 %%DATADIR%%/docs/develop/patch_guide.txt
 %%DATADIR%%/docs/develop/process.txt
-%%DATADIR%%/docs/develop/release.txt
 %%DATADIR%%/docs/develop/save_compatibility.txt
 %%DATADIR%%/docs/develop/spells.txt
 %%DATADIR%%/docs/develop/testing.txt
@@ -568,6 +564,7 @@ bin/stonesoup
 %%DATADIR%%/settings/0.12_monster_glyphs.txt
 %%DATADIR%%/settings/0.13_monster_glyphs.txt
 %%DATADIR%%/settings/0.14_monster_glyphs.txt
+%%DATADIR%%/settings/0.16_monster_glyphs.txt
 %%DATADIR%%/settings/0.9_monster_glyphs.txt
 %%DATADIR%%/settings/034_command_keys.txt
 %%DATADIR%%/settings/034_monster_glyphs.txt

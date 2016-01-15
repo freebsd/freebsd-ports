@@ -21,12 +21,11 @@ EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64
 
-USES=		bison cpe gmake iconv localbase ncurses shebangfix
+USES=		bison cpe gmake iconv localbase ncurses shebangfix sqlite
 USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_SQLITE=	3
 USE_RC_SUBR=	asterisk
 
 GNU_CONFIGURE=	yes

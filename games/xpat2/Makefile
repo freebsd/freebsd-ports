@@ -11,7 +11,7 @@ MASTER_SITES=	SUNSITE/games/solitaires
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 solitaire game with 14 variations
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

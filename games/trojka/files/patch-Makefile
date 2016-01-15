@@ -1,11 +1,11 @@
---- Makefile.orig	Sat Oct 21 05:17:43 1995
-+++ Makefile	Tue Jul 18 11:39:08 2000
-@@ -6,14 +6,25 @@
+--- Makefile.orig	1995-10-20 21:17:43 UTC
++++ Makefile
+@@ -6,14 +6,24 @@
  #
  
  
 -
-+SCOREDIR=$(PREFIX)/share/trojka
++SCOREDIR=/var/games
 +SCOREFILE=$(SCOREDIR)/trojka.scores
 +CFLAGS+= -DSCOREFILE=\"$(SCOREFILE)\"
  OBJS= trojka.o screen.o scan.o hiscore.o system.o
@@ -17,18 +17,17 @@
  
  install:
 -	cp trojka /usr/games
-+	install -c -d -m 0755 $(DESTDIR)$(SCOREDIR)
-+	install -c -s trojka $(DESTDIR)$(PREFIX)/bin
-+	install -c -m 0644 README $(DESTDIR)$(SCOREDIR)
-+	install -c -m 0664 /dev/null $(DESTDIR)$(SCOREFILE)
-+	install -c -m 0444 trojka.6.out $(DESTDIR)$(PREFIX)/man/man6/trojka.6
++	${BSD_INSTALL_PROGRAM} trojka $(DESTDIR)$(PREFIX)/bin
++	${BSD_INSTALL_MAN} trojka.6.out $(DESTDIR)$(PREFIX)/man/man6/trojka.6
++	mkdir -p $(DESTDIR)$(SCOREDIR)
++	touch $(DESTDIR)$(SCOREFILE).sample
 +
 +trojka.6.out:	trojka.6
 +	sed "s|%%PREFIX%%|$(PREFIX)|" trojka.6 > trojka.6.out
  
  clean:
  	rm -f $(PROGS) *.o core a.out trojka.scores
-@@ -53,3 +64,5 @@
+@@ -53,3 +63,5 @@ hpux:	
  
  linux:
  	make trojka "CFLAGS=-DLINUX"

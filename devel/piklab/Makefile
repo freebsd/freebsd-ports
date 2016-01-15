@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE/Qt IDE for microcontroller development
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 DOS2UNIX_FILES=	cmake/Piklab.cmake
 USE_QT4=	corelib gui qt3support qtestlib xml \

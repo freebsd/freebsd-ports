@@ -7,5 +7,5 @@ include/libodfgen-0.1/libodfgen/libodfgen-api.hxx
 include/libodfgen-0.1/libodfgen/libodfgen.hxx
 lib/libodfgen-0.1.so
 lib/libodfgen-0.1.so.1
-lib/libodfgen-0.1.so.1.0.5
+lib/libodfgen-0.1.so.1.0.6
 libdata/pkgconfig/libodfgen-0.1.pc

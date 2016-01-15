@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wtforms
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,26 +16,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>0:${PORTSDIR}/devel/py-babel
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:${PORTSDIR}/devel/py-coverage \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy-devel>0:${PORTSDIR}/databases/py-sqlalchemy-devel \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy08>0:${PORTSDIR}/databases/py-sqlalchemy-devel \
 		${PYTHON_PKGNAMEPREFIX}pep8>0:${PORTSDIR}/devel/pep8 \
 		${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil
 
-OPTIONS_DEFINE=		TESTS
-TESTS_DESC=		Install test suite dependencies
-TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
+OPTIONS_DEFINE=		DOCS
 
+NO_ARCH=	yes
 USES=		python zip
 USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	*
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs/html/ && ${COPYTREE_SHARE} _static/ ${STAGEDIR}${DOCSDIR}/)
 	(cd ${WRKSRC}/docs/html/ && ${CP} *.html ${STAGEDIR}${DOCSDIR}/)
 	(cd ${WRKSRC}/docs/html/ && ${CP} *.js ${STAGEDIR}${DOCSDIR}/)
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

@@ -1,12 +1,12 @@
---- libSNL/src/makefile.orig	Mon Feb 20 13:50:59 2006
-+++ libSNL/src/makefile	Mon Feb 20 13:52:03 2006
-@@ -14,11 +14,11 @@
+--- libSNL/src/makefile.orig	2015-07-30 21:36:35 UTC
++++ libSNL/src/makefile
+@@ -15,11 +15,11 @@ objFiles := snlCircularOffsetCurve.o \
  
  libName = libSNL.so.0.2
  
 -export cflags = -Wall -fPIC -O3 
 -export cname = g++
-+export cflags = -fPIC -Wall -g
++export cflags = -fPIC -Wall -O3
 +export cname = c++
  
 -CXXFLAGS := $(cflags)
@@ -15,4 +15,4 @@
 +CFLAGS ?= $(cflags)
  
  libSNL:     $(objFiles)
- 	        $(cname) $(cflags) -fPIC -shared -o $(libName) $(objFiles)
+ 	@       echo

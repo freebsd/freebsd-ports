@@ -24,6 +24,7 @@ DST1=		m3-bootstrap.AMD64.FREEBSD.92.tar.bz2:boot
 DST2=		m3-bootstrap.x86_64.DRAGONFLY.36.tar.bz2:boot
 
 ONLY_FOR_ARCHS=		amd64
+PORTSCOUT=		ignore:1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	modula3

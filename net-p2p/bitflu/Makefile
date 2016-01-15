@@ -17,6 +17,7 @@ RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 
 USES=		perl5 shebangfix tar:tgz
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SHEBANG_FILES=	bitflu.pl
 SUB_FILES=	pkg-message
@@ -39,9 +40,13 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/Bitflu
 	${INSTALL_DATA} ${WRKSRC}/plugins/Bitflu/*.pm ${STAGEDIR}${DATADIR}/plugins/Bitflu
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.config.example \
 		${STAGEDIR}${EXAMPLESDIR}/${PORTNAME}.config
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

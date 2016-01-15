@@ -3,7 +3,7 @@
 
 PORTNAME=	nethack32
 PORTVERSION=	3.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${TRUEPORTNAME}/${TRUEPORTNAME}/3.2.2
 DISTNAME=	nethack-322
@@ -70,6 +70,7 @@ post-install:
 .endif
 	${DO_MAKE_BUILD} -C ${WRKSRC}/doc ${MAKE_ARGS} manpages
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${STAGEDIR}${DOCSDIR}
 

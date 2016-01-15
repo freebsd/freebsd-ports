@@ -10,7 +10,7 @@ MASTER_SITES=	http://bhepple.freeshell.org/dcalc/unix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome-based scientific calculator
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gunits:${PORTSDIR}/math/units

@@ -11,7 +11,7 @@ DISTNAME=	uudeview-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for uu/xx/Base64/BinHex/yEnc de-/encoding
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

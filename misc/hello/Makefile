@@ -9,7 +9,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for saying hello to the world and reading email
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		charsetfix gmake perl5

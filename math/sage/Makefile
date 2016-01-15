@@ -91,9 +91,7 @@ post-install:
 	@${FIND} -s ${STAGED_SAGE_DIR} -not -type d | \
 		${SED} -e 's#${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	@${FIND} -s ${STAGED_SAGE_DIR} -type d -empty | \
-		${SED} -e 's#${STAGEDIR}${PREFIX}/#@exec ${MKDIR} %D/#' >> ${TMPPLIST}
-	@${FIND} -s ${STAGED_SAGE_DIR} -type d -depth | \
-		${SED} -e 's#${STAGEDIR}${PREFIX}/#@dirrm #' >> ${TMPPLIST}
+		${SED} -e 's#${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
 
 .include <bsd.port.pre.mk>
 

@@ -10,7 +10,7 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	LaTeX like document creation system with PostScript/PDF output
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 
 OPTIONS_DEFINE=	DOCS
 

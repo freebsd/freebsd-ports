@@ -10,7 +10,7 @@ MASTER_SITES=	http://mozplugger.mozdev.org/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for loading web content in external viewers
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

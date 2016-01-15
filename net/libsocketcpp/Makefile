@@ -10,7 +10,7 @@ MASTER_SITES=	SF/libsocket/${PORTNAME}-stable/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper library to the sockets
 
-LICENSE=	LGPL21 # (or later)
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		libtool

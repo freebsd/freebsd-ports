@@ -1,6 +1,6 @@
---- src/bin/keactrl/keactrl.in.orig	2015-07-23 16:45:11 UTC
+--- src/bin/keactrl/keactrl.in.orig	2015-12-28 12:18:45 UTC
 +++ src/bin/keactrl/keactrl.in
-@@ -77,7 +77,7 @@ get_pid_from_file() {
+@@ -69,7 +69,7 @@ get_pid_from_file() {
      local conf_name=$(basename ${kea_config_file} | cut -f1 -d'.')
  
      # Default the directory to --localstatedir
@@ -9,7 +9,7 @@
  
      # Use directory override if set (primarily for testing only)
      if [ ! -z $KEA_PIDFILE_DIR ]; then
-@@ -260,7 +260,7 @@ check_kea_conf() {
+@@ -252,7 +252,7 @@ check_kea_conf() {
  # to the default file.
  if [ -z ${KEA_LOGGER_DESTINATION} ]; then
      prefix=@prefix@

@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-COMMENT=	Gstreamer vector graphics plugin
+COMMENT=	GStreamer overlay renderer plugin based on cairo
 
 GST_PLUGIN=	cairo
 DIST=		good

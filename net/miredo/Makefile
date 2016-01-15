@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.remlab.net/files/miredo/archive/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Opensource Teredo (IPv6 tunneling) implementation
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libJudy.so:${PORTSDIR}/devel/judy

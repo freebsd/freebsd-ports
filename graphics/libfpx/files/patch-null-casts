@@ -1,0 +1,23 @@
+--- oless/expdf.cxx	2013-09-02 11:47:00.000000000 -0400
++++ oless/expdf.cxx	2014-02-14 14:29:24.000000000 -0500
+@@ -610,5 +610,5 @@
+         olErr(EH_Err, STG_E_INVALIDFUNCTION);
+     olChk(Validate());
+-    if (snbExclude != NULL)
++    if (snbExclude != 0)
+         olErr(EH_Err, STG_E_INVALIDPARAMETER);
+     olChk(OpenEntry(pwcsName, STGTY_STORAGE, grfMode, (void **)&pdfExp));
+@@ -909,5 +909,5 @@
+     sc = OpenStorage(pwcsName, (IStorage*)NULL,
+                      STGM_DIRECT| STGM_READ| STGM_SHARE_EXCLUSIVE,
+-                     (SNBW)NULL, (DWORD)NULL, &pstgsrc);
++                     0, 0, &pstgsrc);
+ 
+     if (SUCCEEDED(sc))
+@@ -951,5 +951,5 @@
+         olChk(OpenStream(pwcsName, (void *)NULL,
+                          STGM_DIRECT | STGM_READ | STGM_SHARE_EXCLUSIVE,
+-                         (DWORD)NULL, &pstmsrc));
++                         0, &pstmsrc));
+ 
+         //  It's a stream

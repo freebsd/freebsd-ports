@@ -10,7 +10,7 @@ MASTER_SITES=	http://ess.r-project.org/downloads/ess/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	R support for Emacsen
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	R:${PORTSDIR}/math/R

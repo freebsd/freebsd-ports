@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	feedgnuplot
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://search.cpan.org/CPAN/authors/id/D/DK/DKOGAN/
 PKGNAMEPREFIX=	p5-

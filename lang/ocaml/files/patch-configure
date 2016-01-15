@@ -68,7 +68,11 @@
        bytecclinkopts="$bytecclinkopts -Wl,-E"
        natdynlinkopts="-Wl,-E"
        byteccrpath="-Wl,-rpath,"
-@@ -793,6 +793,7 @@ if test $with_sharedlibs = "yes"; then
+@@ -790,9 +790,11 @@ if test $with_sharedlibs = "yes"; then
+       fi;;
+     x86_64-*-darwin*)             natdynlink=true;;
+     powerpc*-*-linux*)            natdynlink=true;;
++    powerpc*-*-freebsd*)          natdynlink=true;;
      sparc*-*-linux*)              natdynlink=true;;
      i686-*-kfreebsd*)             natdynlink=true;;
      x86_64-*-kfreebsd*)           natdynlink=true;;
@@ -76,7 +80,15 @@
      i[3456]86-*-freebsd*)         natdynlink=true;;
      x86_64-*-freebsd*)            natdynlink=true;;
      i[3456]86-*-openbsd*)         natdynlink=true;;
-@@ -862,6 +863,7 @@ case "$target" in
+@@ -844,6 +846,7 @@ case "$target" in
+   i[3456]86-*-gnu*)             arch=i386; system=gnu;;
+   i[3456]86-*-mingw*)           arch=i386; system=mingw;;
+   powerpc*-*-linux*)            arch=power; model=ppc; system=elf;;
++  powerpc-*-freebsd*)           arch=power; model=ppc; system=bsd_elf;;
+   powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
+   powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd_elf;;
+   powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
+@@ -862,6 +865,7 @@ case "$target" in
    zaurus*-*-openbsd*)           arch=arm; system=bsd;;
    x86_64-*-linux*)              arch=amd64; system=linux;;
    x86_64-*-gnu*)                arch=amd64; system=gnu;;
@@ -84,7 +96,7 @@
    x86_64-*-freebsd*)            arch=amd64; system=freebsd;;
    x86_64-*-netbsd*)             arch=amd64; system=netbsd;;
    x86_64-*-openbsd*)            arch=amd64; system=openbsd;;
-@@ -889,7 +891,7 @@ else
+@@ -889,7 +893,7 @@ else
  fi
  
  nativecccompopts=''
@@ -93,7 +105,7 @@
  # FIXME the naming of nativecclinkopts is broken: these are options for
  # ld (for shared libs), not for cc
  nativeccrpath="$byteccrpath"
-@@ -932,6 +934,8 @@ case "$arch,$system" in
+@@ -932,6 +936,8 @@ case "$arch,$system" in
                    esac;;
    arm,freebsd)    as="${TOOLPREF}cc -c"
                    aspp="${TOOLPREF}cc -c";;
@@ -102,7 +114,7 @@
    *,freebsd)      as="${TOOLPREF}as"
                    aspp="${TOOLPREF}cc -c";;
    amd64,*|arm,*|arm64,*|i386,*|power,bsd*|sparc,*)
-@@ -955,6 +959,7 @@ case "$arch,$system" in
+@@ -955,6 +961,7 @@ case "$arch,$system" in
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
    amd64,linux) profiling='prof';;
    amd64,openbsd) profiling='prof';;
@@ -110,7 +122,7 @@
    amd64,freebsd) profiling='prof';;
    amd64,netbsd) profiling='prof';;
    amd64,gnu) profiling='prof';;
-@@ -1415,6 +1420,8 @@ if test "$pthread_wanted" = "yes"; then
+@@ -1415,6 +1422,8 @@ if test "$pthread_wanted" = "yes"; then
    case "$target" in
      *-*-solaris*)  pthread_link="-lpthread -lposix4"
                     pthread_caml_link="-cclib -lpthread -cclib -lposix4";;
@@ -119,7 +131,7 @@
      *-*-freebsd*)  pthread_link="-pthread"
                     pthread_caml_link="-cclib -pthread";;
      *-*-openbsd*)  pthread_link="-pthread"
-@@ -1431,7 +1438,7 @@ if test "$pthread_wanted" = "yes"; then
+@@ -1431,7 +1440,7 @@ if test "$pthread_wanted" = "yes"; then
      bytecccompopts="$bytecccompopts -D_REENTRANT"
      nativecccompopts="$nativecccompopts -D_REENTRANT"
      case "$target" in
@@ -128,7 +140,7 @@
            bytecccompopts="$bytecccompopts -D_THREAD_SAFE"
            nativecccompopts="$nativecccompopts -D_THREAD_SAFE";;
        *-*-openbsd*)
-@@ -1601,6 +1608,7 @@ if test "$x11_include" = "not found"; th
+@@ -1601,6 +1610,7 @@ if test "$x11_include" = "not found"; th
        else
          x11_libs="-L$dir"
          case "$target" in
@@ -136,7 +148,7 @@
            *-kfreebsd*-gnu) x11_link="-L$dir -lX11";;
            *-*-*bsd*) x11_link="-R$dir -L$dir -lX11";;
            *) x11_link="-L$dir -lX11";;
-@@ -1644,10 +1652,10 @@ echo "X11_LINK=$x11_link" >> Makefile
+@@ -1644,10 +1654,10 @@ echo "X11_LINK=$x11_link" >> Makefile
  # Look for BFD library
  
  if sh ./hasgot -DPACKAGE=ocaml -i bfd.h && \
@@ -149,7 +161,7 @@
  else
    wrn "BFD library not found, 'objinfo' will be unable to display info on .cmxs files."
    echo "LIBBFD_LINK=" >> Makefile
-@@ -1686,12 +1694,6 @@ if $no_naked_pointers; then
+@@ -1686,12 +1696,6 @@ if $no_naked_pointers; then
    echo "#define NO_NAKED_POINTERS" >> m.h
  fi
  

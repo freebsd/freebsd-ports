@@ -16,8 +16,7 @@ LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
 USE_GNOME=	gtk30 intlhack introspection:build
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_SQLITE=	3
+USES=		gettext gmake libtool pathfix pkgconfig sqlite tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-gtk-doc-html=no

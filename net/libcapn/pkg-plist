@@ -3,5 +3,5 @@ include/capn/platform.h
 include/capn/version.h
 lib/libcapn.so
 lib/libcapn.so.1
-lib/libcapn.so.1.0.0
+lib/libcapn.so.1.1.0
 libdata/pkgconfig/libcapn.pc

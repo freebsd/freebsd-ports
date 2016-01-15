@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game where the player has to arrange balls in triplets
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \

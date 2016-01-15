@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-COMMENT=	Gstreamer jpeg2000 decoder plugin
+COMMENT=	GStreamer jpeg2000 decoder plugin
 
 GST_PLUGIN=	openjpeg
 DIST=		bad

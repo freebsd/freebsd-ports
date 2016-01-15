@@ -1,9 +1,0 @@
-==============================================================================
-
-To complete the installation of this port you need to copy the file
-"DUKE3D.GRP" from the original Duke Nukem 3D distribution as "duke3d.grp" to
-"%%DATADIR%%".
-
-There is a high resolution pack at "http://hrp.duke4.net/".
-
-==============================================================================

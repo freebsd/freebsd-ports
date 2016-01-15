@@ -10,7 +10,7 @@ DISTNAME=	Grr-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rss reader for GNUstep
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libRSSKit.so:${PORTSDIR}/www/rsskit

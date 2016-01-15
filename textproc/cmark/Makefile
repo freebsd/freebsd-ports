@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmark
-PORTVERSION=	0.22.0
+PORTVERSION=	0.23.0
 CATEGORIES=	textproc
 
 MAINTAINER=	t@tobik.me
@@ -14,6 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jgm
 
 USES=		cmake:outsource
+USE_LDCONFIG=	yes
 
 post-patch:
 	${REINPLACE_CMD} -i "" 's|share/||g' ${WRKSRC}/man/CMakeLists.txt

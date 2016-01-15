@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus \

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Products.CMFDynamicViewFTI
-PORTVERSION=	4.0.5
-PORTREVISION=	1
+PORTVERSION=	4.1.3
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.browsermenu>0:${PORTSDIR}/devel/py-zope
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}ExtensionClass>=0:${PORTSDIR}/devel/py-ExtensionClass
 
-USES=		python zip
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

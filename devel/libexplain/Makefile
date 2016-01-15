@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library which may be used to explain Unix and Linux system call errors
 
-LICENSE=	LGPL3 # or later
+LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed

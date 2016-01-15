@@ -18,4 +18,4 @@ Features:
       supporting timeouts and the ability to wait for events on
       more than one channel.
 
-WWW: http://github.com/ask/kombu
+WWW: https://kombu.readthedocs.org/

@@ -38,7 +38,7 @@ share/apps/tellico/entry-templates/Video.xsl
 share/apps/tellico/gcstar2tellico.xsl
 share/apps/tellico/giantbomb2tellico.xsl
 share/apps/tellico/goodreads2tellico.xsl
-share/apps/tellico/griffith2tellico.py
+share/apps/tellico/griffith2tellico.xsl
 share/apps/tellico/hddvd-logo.png
 share/apps/tellico/isbndb2tellico.xsl
 share/apps/tellico/mods2tellico.xsl
@@ -121,6 +121,7 @@ share/apps/tellico/tellico2html.xsl
 share/apps/tellico/tellico2onix.xsl
 share/apps/tellico/tellicoui.rc
 share/apps/tellico/thegamesdb2tellico.xsl
+share/apps/tellico/unixref2tellico.xsl
 share/apps/tellico/vhs-logo.png
 share/apps/tellico/vinoxml2tellico.xsl
 share/apps/tellico/welcome.html

@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm

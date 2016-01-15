@@ -2,7 +2,7 @@
 
 PORTNAME=	sonarr
 PORTVERSION=	2.0.0.3645
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.sonarr.tv/v2/master/mono/
 DISTNAME=	NzbDrone.master.${PORTVERSION}.mono
@@ -15,6 +15,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	mono>0:${PORTSDIR}/lang/mono \
 		mediainfo>0:${PORTSDIR}/multimedia/mediainfo \
 		sqlite3>0:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_RC_SUBR=	sonarr
 
@@ -26,6 +27,5 @@ USERS=	sonarr
 do-install:
 	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}
-	${MKDIR} ${STAGEDIR}/${PREFIX}/sonarr
 
 .include <bsd.port.mk>

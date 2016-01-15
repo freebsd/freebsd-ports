@@ -9,7 +9,7 @@ MASTER_SITES=	http://opsec.eu/src/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple graphical interface to manage a small Certification Authority
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \

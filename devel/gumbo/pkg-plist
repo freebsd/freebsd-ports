@@ -1,4 +1,5 @@
 include/gumbo.h
+include/tag_enum.h
 lib/libgumbo.a
 lib/libgumbo.so
 lib/libgumbo.so.1

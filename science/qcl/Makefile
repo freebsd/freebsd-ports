@@ -9,7 +9,7 @@ MASTER_SITES=	http://tph.tuwien.ac.at/~oemer/tgz/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quantum computer simulator
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		bison gmake readline tar:tgz
 

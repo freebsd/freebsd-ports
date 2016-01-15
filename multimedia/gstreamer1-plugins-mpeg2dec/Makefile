@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer mpeg decode plugin
+COMMENT=	GStreamer mpeg decode plugin
 
 GST_PLUGIN=	mpeg2dec
 DIST=		ugly

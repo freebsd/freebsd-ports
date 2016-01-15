@@ -9,7 +9,7 @@ CATEGORIES=	games
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Underwater 2D fantasy action-adventure (game engine)
 
-LICENSE=	GPLv2 # or any later version
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
 LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \

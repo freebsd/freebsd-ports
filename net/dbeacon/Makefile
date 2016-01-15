@@ -11,7 +11,7 @@ COMMENT=	Distributed multicast beacon server
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		gmake
 

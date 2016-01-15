@@ -1,4 +1,5 @@
 bin/automappingconverter
+bin/terraingenerator
 bin/tiled
 bin/tmxrasterizer
 bin/tmxviewer
@@ -39,8 +40,9 @@ share/mime/packages/tiled.xml
 %%DATADIR%%/translations/tiled_ja.qm
 %%DATADIR%%/translations/tiled_lv.qm
 %%DATADIR%%/translations/tiled_nl.qm
+%%DATADIR%%/translations/tiled_pl.qm
 %%DATADIR%%/translations/tiled_pt.qm
-%%DATADIR%%/translations/tiled_pt_BR.qm
+%%DATADIR%%/translations/tiled_pt_PT.qm
 %%DATADIR%%/translations/tiled_ru.qm
 %%DATADIR%%/translations/tiled_zh.qm
 %%DATADIR%%/translations/tiled_zh_TW.qm

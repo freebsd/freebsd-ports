@@ -24,9 +24,8 @@ PGSQL_USES=	pgsql
 SDL_USE=	SDL=image,mixer,sdl,sound,ttf
 
 USES=		execinfo gmake iconv libtool localbase makeinfo pkgconfig \
-		shebangfix tar:xz
+		shebangfix sqlite tar:xz
 USE_GNOME=	pango
-USE_SQLITE=	yes
 USE_XORG=	ice xi xmu
 USE_GL=		gl glut
 GNU_CONFIGURE=	yes

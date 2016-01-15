@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:E}.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library to evaluate poker hands
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

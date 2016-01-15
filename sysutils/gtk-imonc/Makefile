@@ -10,7 +10,7 @@ MASTER_SITES=	http://stefan-strigler.de/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2-based imond-client to control an on(e) disc fli4l router
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gettext iconv

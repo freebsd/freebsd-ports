@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vmtouch
-PORTVERSION=	0.8.0
+PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 
@@ -12,11 +12,11 @@ COMMENT=	Virtual Memory Toucher
 USE_GITHUB=	yes
 GH_ACCOUNT=	hoytech
 
+USES=		perl5
+USE_PERL5=	build # pod2man
+
 PLIST_FILES=	bin/vmtouch \
 		man/man8/vmtouch.8.gz
-
-do-build:
-	${CC} ${CFLAGS} -o ${WRKSRC}/vmtouch ${WRKSRC}/vmtouch.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vmtouch ${STAGEDIR}${PREFIX}/bin/

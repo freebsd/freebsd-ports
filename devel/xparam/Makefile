@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General-purpose tool for parameter handling in C++
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool:build

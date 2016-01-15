@@ -10,24 +10,25 @@ MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data compression library with low memory usage
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	DOCS
+CONFLICTS_INSTALL=	libucl
 
 USES=		libtool
-USE_LDCONFIG=	yes
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
-
-INSTALL_TARGET=		install-strip
-CONFLICTS_INSTALL=      libucl
+USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS NEWS README THANKS TODO
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/.libs/uclpack ${STAGEDIR}${PREFIX}/bin
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA}	${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

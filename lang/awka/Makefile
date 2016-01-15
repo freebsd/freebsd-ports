@@ -10,7 +10,7 @@ MASTER_SITES=	http://awka.sourceforge.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts the AWK script to C, then compiles it
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 GNU_CONFIGURE=	yes

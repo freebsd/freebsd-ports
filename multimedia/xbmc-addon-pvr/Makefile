@@ -8,6 +8,9 @@ CATEGORIES=	multimedia
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	XBMC PVR addons for various backends
 
+DEPRECATED=	Does not work with multimedia/kodi 15.x and newer
+EXPIRATION_DATE=	2016-02-12
+
 RUN_DEPENDS+=	kodi:${PORTSDIR}/multimedia/kodi
 
 USE_GITHUB=	yes

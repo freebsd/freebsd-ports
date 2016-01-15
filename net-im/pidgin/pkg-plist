@@ -49,6 +49,9 @@ include/pidgin/minidialog.h
 include/pidgin/pidgin.h
 include/pidgin/pidginstock.h
 include/pidgin/pidgintooltip.h
+%%PERL:%%lib/pidgin/perl/Pidgin.pm
+%%PERL:%%lib/pidgin/perl/auto/Pidgin/Pidgin.so
+%%PERL:%%lib/pidgin/perl/auto/Pidgin/.packlist
 %%CAP%%lib/pidgin/cap.so
 lib/pidgin/convcolors.so
 lib/pidgin/extplacement.so
@@ -73,6 +76,7 @@ lib/pidgin/xmppconsole.so
 lib/pidgin/xmppdisco.so
 libdata/pkgconfig/pidgin.pc
 man/man1/pidgin.1.gz
+%%PERLMAN:%%man/man3/Pidgin.3.gz
 share/appdata/pidgin.appdata.xml
 share/applications/pidgin.desktop
 share/icons/hicolor/16x16/apps/pidgin.png

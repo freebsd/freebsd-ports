@@ -6,7 +6,7 @@ PORTVERSION=	2.2.5
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Free version of the SSL/TLS protocol forked from OpenSSL
 
 LICENSE=	BSD4CLAUSE

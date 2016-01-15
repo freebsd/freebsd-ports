@@ -1,5 +1,6 @@
 %%PLUGINDIR_REL%%/Changelog
-%%PLUGINDIR_REL%%/README
+%%PLUGINDIR_REL%%/LICENSE.md
+%%PLUGINDIR_REL%%/README.md
 %%PLUGINDIR_REL%%/composer.json
 @sample %%PLUGINDIR_REL%%/config.inc.php.sample
 %%PLUGINDIR_REL%%/localization/bg_BG.inc
@@ -15,8 +16,6 @@
 %%PLUGINDIR_REL%%/localization/pl_PL.inc
 %%PLUGINDIR_REL%%/localization/ru_RU.inc
 %%PLUGINDIR_REL%%/localization/uk_UA.inc
-%%PLUGINDIR_REL%%/skins/classic/default/tb_label.css
-%%PLUGINDIR_REL%%/skins/classic/default/thunderbird_32.png
 %%PLUGINDIR_REL%%/skins/classic/tb_label.css
 %%PLUGINDIR_REL%%/skins/classic/thunderbird_32.png
 %%PLUGINDIR_REL%%/skins/default/tb_label.css

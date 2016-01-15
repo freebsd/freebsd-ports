@@ -11,7 +11,7 @@ DISTNAME=	${SF_NAME}-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modification of the classical Freedroid engine into an RPG
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_sparc64=	does not configure

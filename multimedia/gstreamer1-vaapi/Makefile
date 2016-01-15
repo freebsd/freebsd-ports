@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-vaapi
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/gstreamer-vaapi/
 DISTNAME=	gstreamer-vaapi-${PORTVERSION}

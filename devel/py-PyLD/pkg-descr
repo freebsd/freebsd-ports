@@ -1,0 +1,23 @@
+This library is an implementation of the JSON-LD specification in Python.
+
+JSON-LD is designed as a light-weight syntax that can be used to
+express Linked Data. It is primarily intended to be a way to express
+Linked Data in JavaScript and other Web-based programming environments.
+It is also useful when building interoperable Web Services and when
+storing Linked Data in JSON-based document storage engines. It is
+practical and designed to be as simple as possible, utilizing the
+large number of JSON parsers and existing code that is in use today.
+It is designed to be able to express key-value pairs, RDF data,
+RDFa data, Microformats data, and Microdata. That is, it supports
+every major Web-based structured data model in use today.
+
+The syntax does not require many applications to change their JSON,
+but easily add meaning by adding context in a way that is either
+in-band or out-of-band. The syntax is designed to not disturb already
+deployed systems running on JSON, but provide a smooth migration
+path from JSON to JSON with added semantics. Finally, the format
+is intended to be fast to parse, fast to generate, stream-based and
+document-based processing compatible, and require a very small
+memory footprint in order to operate.
+
+WWW: http://github.com/digitalbazaar/pyld

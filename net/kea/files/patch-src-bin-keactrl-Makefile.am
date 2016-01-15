@@ -1,4 +1,4 @@
---- src/bin/keactrl/Makefile.am.orig	2015-07-23 16:45:11 UTC
+--- src/bin/keactrl/Makefile.am.orig	2015-12-28 12:18:05 UTC
 +++ src/bin/keactrl/Makefile.am
 @@ -38,7 +38,7 @@ install-data-local:
  	$(mkinstalldirs) $(DESTDIR)/@sysconfdir@/@PACKAGE@

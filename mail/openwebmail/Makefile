@@ -24,24 +24,48 @@ PATCH_STRIP=	-p1
 PLIST=		${WRKDIR}/.PLIST.${PKGNAME}
 SUB_FILES=	pkg-install
 
+PLIST_DIRS=	www/cgi-bin/openwebmail/etc/addressbooks \
+		www/cgi-bin/openwebmail/etc/sessions \
+		www/cgi-bin/openwebmail/etc/users \
+		www/data/openwebmail/help/zh_CN.GB2312/images/_notes \
+		www/data/openwebmail/help/zh_CN.GB2312/templates_and_data/_notes
+
 OPTIONS_DEFINE=	ANTIWORD MAGICK ISPELL LEARNSPAM LSOF PAM POP3_OVER_SSL QUOTA \
 		SPAMCHECK SPAMCHECK_ALL SPEEDYCGI TNEF VIRUSCHECK VIRUSCHECK_ALL \
 		WGET
 
 ANTIWORD_DESC=	AntiWord
+ANTIWORD_RUN_DEPENDS=	antiword:${PORTSDIR}/textproc/antiword
 ISPELL_DESC=	ISpell
+ISPELL_RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
 LEARNSPAM_DESC=	Learn HAM/SPAM
+LEARNSPAM_IMPLIES=	SPAMCHECK
 LSOF_DESC=	lsof
+LSOF_RUN_DEPENDS=	${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
+MAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 PAM_DESC=	PAM
+PAM_RUN_DEPENDS=	p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM
 POP3_OVER_SSL_DESC=	POP3 Over SSL
+POP3_OVER_SSL_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 QUOTA_DESC=	Quota
+QUOTA_RUN_DEPENDS=	p5-Quota>=0:${PORTSDIR}/sysutils/p5-Quota
 SPAMCHECK_DESC=	Spam check (Mail::SpamAssassin)
+SPAMCHECK_RUN_DEPENDS=	spamassassin>=0:${PORTSDIR}/mail/spamassassin
 SPAMCHECK_ALL_DESC=	Spam check for all (default: pop3)
+SPAMCHECK_ALL_IMPLIES=	SPAMCHECK
 SPEEDYCGI_DESC=	SpeedyCGI
+SPEEDYCGI_RUN_DEPENDS=	speedy_suidperl:${PORTSDIR}/www/p5-CGI-SpeedyCGI
+SPEEDYCGI_SUB_LIST=	WITHOUT_SPEEDYCGI="@comment "
+SPEEDYCGI_SUB_LIST_OFF=	WITHOUT_SPEEDYCGI=""
+SPEEDYCGI_EXTRA_PATCHES=	${PATCH_WRKSRC}/misc/patches/suidperl2speedy_suidperl.notmp.patch
 TNEF_DESC=	tnef
+TNEF_RUN_DEPENDS=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 VIRUSCHECK_DESC=	Virus check (Clam AntiVirus)
+VIRUSCHECK_RUN_DEPENDS=	clamdscan:${PORTSDIR}/security/clamav
 VIRUSCHECK_ALL_DESC=	Virus check for all (default: pop3)
+VIRUSCHECK_ALL_IMPLIES=	VIRUSCHECK
 WGET_DESC=	wget
+WGET_RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 .include <bsd.port.pre.mk>
 
@@ -57,66 +81,6 @@ PERL_V!=	${PERL} -V
 .endif # dosuid
 .endif # exists(${PERL})
 .endif # SPEEDYCGI
-
-.if ${PORT_OPTIONS:MLEARNSPAM} || !empty(PORT_OPTIONS:MSPAMCHECK_ALL)
-PORT_OPTIONS+=	SPAMCHECK
-.endif
-
-.if ${PORT_OPTIONS:MVIRUSCHECK_ALL}
-PORT_OPTIONS+=	VIRUSCHECK
-.endif
-
-.if ${PORT_OPTIONS:MANTIWORD}
-RUN_DEPENDS+=	antiword:${PORTSDIR}/textproc/antiword
-.endif
-
-.if ${PORT_OPTIONS:MMAGICK}
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
-.endif
-
-.if ${PORT_OPTIONS:MISPELL}
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
-.endif
-
-.if ${PORT_OPTIONS:MLSOF}
-RUN_DEPENDS+	${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
-.endif
-
-.if ${PORT_OPTIONS:MPAM}
-RUN_DEPENDS+=	p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM
-.endif
-
-.if ${PORT_OPTIONS:MPOP3_OVER_SSL}
-RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
-.endif
-
-.if ${PORT_OPTIONS:MQUOTA}
-RUN_DEPENDS+=	p5-Quota>=0:${PORTSDIR}/sysutils/p5-Quota
-.endif
-
-.if ${PORT_OPTIONS:MTNEF}
-RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
-.endif
-
-.if ${PORT_OPTIONS:MSPAMCHECK}
-RUN_DEPENDS+=	spamassassin>=0:${PORTSDIR}/mail/spamassassin
-.endif
-
-.if ${PORT_OPTIONS:MSPEEDYCGI}
-RUN_DEPENDS+=	speedy_suidperl:${PORTSDIR}/www/p5-CGI-SpeedyCGI
-SUB_LIST+=	WITHOUT_SPEEDYCGI="@comment "
-EXTRA_PATCHES+=	${PATCH_WRKSRC}/misc/patches/suidperl2speedy_suidperl.notmp.patch
-.else
-SUB_LIST+=	WITHOUT_SPEEDYCGI=""
-.endif
-
-.if ${PORT_OPTIONS:MVIRUSCHECK}
-RUN_DEPENDS+=	clamdscan:${PORTSDIR}/security/clamav
-.endif
-
-.if ${PORT_OPTIONS:MWGET}
-RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
-.endif
 
 post-extract:
 .for x in addressbooks/global calendar.book
@@ -138,27 +102,28 @@ post-patch:
 	@${MV} ${PATCH_WRKSRC}/etc/openwebmail.conf ${PATCH_WRKSRC}/etc/openwebmail.conf.sample
 	@${PERL} -pi.bak -e 's,${LOCALBASE}/www/cgi-bin/openwebmail,${OWCGIDIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf.sample
 	@${PERL} -pi.bak -e 's,${LOCALBASE}/www/data/openwebmail,${OWDATADIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf.sample
-.if ${PORT_OPTIONS:MLEARNSPAM}
+
+post-patch-LEARNSPAM-on:
 	@${PERL} -pi.bak -e 's,enable_learnspam	no,enable_learnspam	yes,g' ${PATCH_WRKSRC}/etc/openwebmail.conf.sample
-.endif
-.if ${PORT_OPTIONS:MSPAMCHECK}
+
+post-patch-SPAMCHECK-on:
 	@${PERL} -pi.bak -e 's,enable_spamcheck	no,enable_spamcheck	yes,g' ${PATCH_WRKSRC}/etc/openwebmail.conf.sample
 	@${ECHO} "enable_saprefs	yes" >> ${PATCH_WRKSRC}/etc/openwebmail.conf.sample
-.endif
-.if ${PORT_OPTIONS:MSPAMCHECK_ALL}
+
+post-patch-SPAMCHECK_ALL-on:
 	@${ECHO} "spamcheck_source_allowed	all" >> ${PATCH_WRKSRC}/etc/openwebmail.conf.sample
-.endif
-.if ${PORT_OPTIONS:MVIRUSCHECK}
+
+post-patch-VIRUSCHECK-on:
 	@${PERL} -pi.bak -e 's,enable_viruscheck	no,enable_viruscheck	yes,g' ${PATCH_WRKSRC}/etc/openwebmail.conf.sample
-.endif
-.if ${PORT_OPTIONS:MVIRUSCHECK_ALL}
+
+post-patch-VIRUSCHECK_ALL-on:
 	@${ECHO} "viruscheck_source_allowed	all" >> ${PATCH_WRKSRC}/etc/openwebmail.conf.sample
-.endif
-.if ${PORT_OPTIONS:MSPEEDYCGI}
+
+post-patch-SPEEDYCGI-on:
 	@${ECHO} "has_savedsuid_support	no" >> ${PATCH_WRKSRC}/etc/openwebmail.conf.sample
-.else
+
+post-patch-SPEEDYCGI-off:
 	@${PERL} -pi.bak -e 's,/usr/bin/suidperl,${PERL},g' ${PATCH_WRKSRC}/openwebmail*pl
-.endif
 
 pre-install:
 	@: > ${PLIST}
@@ -171,20 +136,12 @@ pre-install:
 	@${PRINTF} "%s\n%s\n" "@owner" "@group" >> ${PLIST}
 	@${FIND} ${WRKSRC}/data/openwebmail \( -type f -o -type l \) -and -not -name openwebmail.conf.sample | \
 		${SED} -e 's,^${WRKSRC},www,' | ${SORT} -u >> ${PLIST}
-.if empty(PORT_OPTIONS:MSPEEDYCGI)
+
+pre-install-SPEEDYCGI-off:
 	@${FIND} ${WRKSRC}/*/openwebmail -name "openwebmail*pl" | \
 		${SED} -e 's,^${WRKSRC},www,' \
 		-e 's,openwebmail/openwebmail,openwebmail/.openwebmail,g' \
 		>> ${TMPPLIST}
-.endif
-	@${FIND} ${WRKSRC}/*/openwebmail -type d | ${SORT} -ur | \
-		${GREP} -v UTF-8 | \
-		${SED} -e 's,^${WRKSRC},@dirrm www,' >> ${PLIST}
-	@${FIND} ${WRKSRC}/*/openwebmail -type d | ${SORT} -ur | \
-		${GREP} UTF-8 | \
-		${SED} -e 's,^${WRKSRC},@dirrmtry www,' >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry www/cgi-bin" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry www/data" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${OWCGIDIR} ${STAGEDIR}${OWDATADIR}

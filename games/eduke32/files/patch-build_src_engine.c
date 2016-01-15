@@ -1,11 +1,11 @@
---- build/src/engine.c.orig	2015-08-02 08:40:39 UTC
+--- build/src/engine.c.orig	2015-09-23 17:55:31 UTC
 +++ build/src/engine.c
 @@ -5349,7 +5349,8 @@ static void drawalls(int32_t bunch)
              static char fn[32], tmpbuf[80];
-             char purple = getclosestcol(63, 0, 63);
-             char yellow = getclosestcol(63, 63, 0);
+             char purple = getclosestcol(255, 0, 255);
+             char yellow = getclosestcol(255, 255, 0);
 -            char *bakframe = (char *)Xaligned_alloc(16, xdim*ydim);
-+            char *bakframe;
++	     char *bakframe;
 +            posix_memalign(&bakframe, 16, xdim*ydim);
  
              begindrawing();  //{{{
@@ -19,9 +19,9 @@
  
              if (xdimen < 1 << 11)
              {
-@@ -11654,7 +11655,7 @@ static void initsmost(void)
-         if (*dynarray[i].ptr)
-             Baligned_free(*dynarray[i].ptr);
+@@ -11757,7 +11758,7 @@ static void initsmost(void)
+     {
+         Baligned_free(*dynarray[i].ptr);
  
 -        *dynarray[i].ptr = Xaligned_alloc(16, dynarray[i].size);
 +         posix_memalign(dynarray[i].ptr, 16, dynarray[i].size);

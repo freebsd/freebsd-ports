@@ -9,7 +9,7 @@ CATEGORIES=	astro geography
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Correlate digital camera photos with GPS data in GPX format
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2 \

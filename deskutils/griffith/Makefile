@@ -10,7 +10,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/87859599/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight film collection manager
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \

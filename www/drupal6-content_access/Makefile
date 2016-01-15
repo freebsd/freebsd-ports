@@ -27,5 +27,6 @@ MODULE_FILES=	tests/content_access.test \
 		translations/sv.po
 
 DOC_FILES=	README.txt UPGRADE.txt LICENSE.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

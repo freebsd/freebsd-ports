@@ -10,7 +10,7 @@ MASTER_SITES=	SF/lgames/${PORTNAME}/${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Breakout-style arcade game
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 

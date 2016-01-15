@@ -2,17 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	xtermcontrol
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.thrysoee.dk/xtermcontrol/ \
 		http://fossies.org/linux/privat/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Tool for dynamic control of xterm properties
 
-LICENSE=	GPLv2 # (or later)
-
-RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_libintl_h=no

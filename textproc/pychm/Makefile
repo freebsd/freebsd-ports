@@ -10,7 +10,7 @@ MASTER_SITES=	SF/gnochm/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	cpm@fbsd.es
 COMMENT=	Bindings for CHMLIB library
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib

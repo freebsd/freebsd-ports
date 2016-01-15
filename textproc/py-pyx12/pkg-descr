@@ -1,5 +1,6 @@
-pyx12 is a python based ANSI X.12 to XML EDI translator and validator.  It is
-designed to be a step in the conversion of a X12 transaction to back-end
-database process. The initial target is X12N to support HIPAA transactions.
+pyx12 is a python based ANSI X.12 to XML EDI translator and validator.
+It is designed to be a step in the conversion of a X12 transaction to
+back-end database process. The initial target is X12N to support HIPAA
+transactions.
 
-WWW: http://pyx12.sourceforge.net/
+WWW: https://github.com/azoner/pyx12

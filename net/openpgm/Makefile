@@ -11,7 +11,7 @@ DISTNAME=	libpgm-${PORTVERSION}
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Implementation of the PGM reliable multicast protocol
 
-LICENSE=	LGPL21 # and newer
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 
 USES=		drupal:7,module
 
-OPTIONS_DEFINE=	TINYMCE3 CKEDITOR YUI
+OPTIONS_DEFINE=	TINYMCE3 CKEDITOR YUI DOCS
 
 TINYMCE3_DESC=	Install TinyMCE3 Editor
 CKEDITOR_DESC=	Install CKEditor

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/swishplusplus/swishplusplus/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Web Indexing System for Humans: C++ version
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Copying
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget

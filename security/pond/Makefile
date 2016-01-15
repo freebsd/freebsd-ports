@@ -2,6 +2,7 @@
 
 PORTNAME=	pond
 PORTVERSION=	20150830
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://c-s.li/ports/
 DISTFILES=	pond-20150830.tar.gz \
@@ -13,7 +14,7 @@ COMMENT=	Forward secure, asynchronous messenger
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.crypto/bcrypt.a:${PORTSDIR}/security/go.crypto \
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/golang.org/x/crypto/bcrypt.a:${PORTSDIR}/security/go.crypto \
 		${LOCALBASE}/${GO_LIBDIR}/github.com/golang/protobuf/proto.a:${PORTSDIR}/devel/goprotobuf \
 		${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.net/dict.a:${PORTSDIR}/net/go.net
 RUN_DEPENDS=	tor:${PORTSDIR}/security/tor
@@ -53,20 +54,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\<gtkspell|\<gtkspell-2.0\/gtkspell|g' \
 		${WRKDIR}/go-gtk-20151214/gtkspell/gtkspell_fedora.go \
 		${WRKDIR}/go-gtk-20151214/gtkspell/gtkspell_ubuntu.go
-	@${REINPLACE_CMD} -e 's|golang.org\/x\/crypto|code.google.com\/p\/go.crypto|g' \
-		${WRKDIR}/pond-20150830/bbssig/bbssig.go \
-		${WRKDIR}/pond-20150830/transport/transport.go \
-		${WRKDIR}/pond-20150830/pond-server/main.go \
-		${WRKDIR}/pond-20150830/protos/const.go \
-		${WRKDIR}/pond-20150830/client/ratchet/ratchet.go \
-		${WRKDIR}/pond-20150830/panda/panda.go \
-		${WRKDIR}/pond-20150830/pond/client.go \
-		${WRKDIR}/pond-20150830/pond/disk.go \
-		${WRKDIR}/pond-20150830/pond/network.go \
-		${WRKDIR}/pond-20150830/client/disk/disk.go \
-		${WRKDIR}/pond-20150830/pond/background.go \
-		${WRKDIR}/pond-20150830/pond/cli-input.go \
-		${WRKDIR}/pond-20150830/pond/cli.go
 	@${REINPLACE_CMD} -e 's|golang.org/x/net|code.google.com\/p\/go.net|g' \
 		${WRKDIR}/pond-20150830/panda/appengine.go \
 		${WRKDIR}/pond-20150830/pond/network.go

@@ -10,5 +10,5 @@ include/libcdr-0.1/libcdr/libcdr.h
 include/libcdr-0.1/libcdr/libcdr_api.h
 lib/libcdr-0.1.so
 lib/libcdr-0.1.so.1
-lib/libcdr-0.1.so.1.0.1
+lib/libcdr-0.1.so.1.0.2
 libdata/pkgconfig/libcdr-0.1.pc

@@ -9,7 +9,7 @@ CATEGORIES=	games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Doom 3 GPL source port
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../COPYING.txt
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \

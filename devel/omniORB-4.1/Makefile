@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	41
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robust high performance CORBA ORB for C++ and Python
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	omniORB-4.2.*

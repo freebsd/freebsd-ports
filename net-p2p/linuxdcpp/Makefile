@@ -9,7 +9,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/69733951/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of the DC++ Direct Connect client to Unix-like systems
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-libs

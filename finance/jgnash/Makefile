@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	jgnash
-PORTVERSION=	2.15.2
+PORTVERSION=	2.21.0
 CATEGORIES=	finance java
 MASTER_SITES=	SF/jgnash/Active%20Stable%202.x
 DISTNAME=	jgnash-${PORTVERSION}-bin
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free personal finance manager
 
 LICENSE=	GPLv3
@@ -24,6 +24,7 @@ JAVA_VERSION=	1.6+
 JAVA_VENDOR=	openjdk
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

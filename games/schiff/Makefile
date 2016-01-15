@@ -15,7 +15,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steer your ship(s) with the keyboard
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	${PYGAME}
 

@@ -1,17 +1,15 @@
---- CMakeLists.txt.orig	2014-04-11 09:25:28.000000000 +0800
-+++ CMakeLists.txt	2015-02-15 11:25:11.959775965 +0800
-@@ -103,8 +103,9 @@ set(TEST_BIN_DIR ${PROJECT_BINARY_DIR}/t
- 
+--- CMakeLists.txt.orig	2014-04-11 01:25:28 UTC
++++ CMakeLists.txt
+@@ -104,7 +104,7 @@ set(TEST_BIN_DIR ${PROJECT_BINARY_DIR}/t
  set(INSTALL_INC_DIR ${CMAKE_INSTALL_PREFIX}/include/chewing)
  set(INSTALL_LIB_DIR ${CMAKE_INSTALL_PREFIX}/lib)
-+set(INSTALL_LIBDATA_DIR ${CMAKE_INSTALL_PREFIX}/libdata)
  set(INSTALL_DATA_DIR ${CMAKE_INSTALL_PREFIX}/share/libchewing)
 -set(INSTALL_INFO_DIR ${CMAKE_INSTALL_PREFIX}/share/info)
 +set(INSTALL_INFO_DIR ${CMAKE_INSTALL_PREFIX}/info)
  
  set(INFO_SRC ${PROJECT_SOURCE_DIR}/doc/libchewing.texi)
  set(INFO_BIN ${PROJECT_BINARY_DIR}/doc/libchewing.info)
-@@ -166,11 +167,7 @@ if (MAKEINFO)
+@@ -166,11 +166,7 @@ if (MAKEINFO)
      add_custom_target(INFO ALL DEPENDS ${INFO_BIN})
      add_dependencies(check INFO)
  
@@ -24,10 +22,3 @@
  endif()
  
  
-@@ -428,5 +425,5 @@ install(FILES ${ALL_DATA} DESTINATION ${
- install(FILES ${ALL_STATIC_DATA} DESTINATION ${INSTALL_DATA_DIR})
- install(FILES ${ALL_INC} DESTINATION ${INSTALL_INC_DIR})
- install(FILES ${PROJECT_BINARY_DIR}/chewing.pc
--    DESTINATION ${INSTALL_LIB_DIR}/pkgconfig)
-+	DESTINATION ${INSTALL_LIBDATA_DIR}/pkgconfig)
- install(TARGETS ${LIBS} DESTINATION ${INSTALL_LIB_DIR})

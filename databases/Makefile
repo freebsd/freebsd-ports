@@ -687,6 +687,14 @@
     SUBDIR += postgresql94-plpython
     SUBDIR += postgresql94-pltcl
     SUBDIR += postgresql94-server
+    SUBDIR += postgresql95-client
+    SUBDIR += postgresql95-contrib
+    SUBDIR += postgresql95-docs
+    SUBDIR += postgresql95-pgtcl
+    SUBDIR += postgresql95-plperl
+    SUBDIR += postgresql95-plpython
+    SUBDIR += postgresql95-pltcl
+    SUBDIR += postgresql95-server
     SUBDIR += postgresql_autodoc
     SUBDIR += powerarchitect
     SUBDIR += proftpd-mod_sql_mysql
@@ -744,6 +752,7 @@
     SUBDIR += py-pgspecial
     SUBDIR += py-pgxnclient
     SUBDIR += py-pickledb
+    SUBDIR += py-pickleshare
     SUBDIR += py-postgresql
     SUBDIR += py-psycogreen
     SUBDIR += py-psycopg

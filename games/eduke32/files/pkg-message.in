@@ -1,0 +1,11 @@
+==============================================================================
+
+To complete the installation of this port you need to copy the file
+"DUKE3D.GRP" from the original Duke Nukem 3D distribution as "duke3d.grp" to
+%%DATADIR%%, if you want to install it globally, and then run with
+-g %%DATADIR%%/duke3d.grp parameter. If you also installed any of the
+optional packs, you need to add the -g parameter in the same manner.
+
+If you installed the XXX Pack, you need to include both HRP and XXX Packs.
+
+==============================================================================

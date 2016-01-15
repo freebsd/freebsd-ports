@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: bandwidthd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable bandwidthd:
+# bandwidthd_enable (bool):	Set it to "YES" to enable bandwidthd.
+#				Default is "NO".
+
+bandwidthd_enable=${bandwidthd_enable:="NO"}
+
+. /etc/rc.subr
+
+name="bandwidthd"
+rcvar="bandwidthd_enable"
+
+command="%%PREFIX%%/bandwidthd/bandwidthd"
+required_files="%%PREFIX%%/bandwidthd/etc/bandwidthd.conf"
+pidfile="/var/run/bandwidthd.pid"
+
+load_rc_config $name
+run_rc_command "$1"

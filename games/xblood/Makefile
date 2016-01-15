@@ -10,7 +10,7 @@ MASTER_SITES=	http://kozos.jp/myfreesoft/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes the root window bloody
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 MAKE_ENV=	X11BASE=${LOCALBASE}

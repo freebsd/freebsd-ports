@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	geier@lostpackets.de
 COMMENT=	Python binding of the notmuch mail search and indexing library
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../../COPYING-GPL-3
 
 LIB_DEPENDS=	libnotmuch.so:${PORTSDIR}/mail/notmuch

@@ -28,7 +28,6 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-USE_PACKAGE_DEPENDS=	yes
 
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 

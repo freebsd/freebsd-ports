@@ -17,13 +17,12 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libxdg-basedir.so:${PORTSDIR}/x11/libxdg-basedir
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		compiler:features dos2unix gmake jpeg lua:51
+USES=		compiler:features dos2unix gmake jpeg lua:51 sqlite
 USE_GNOME=	libxml2
-USE_SQLITE=	3
 USE_SDL=	sdl mixer ttf net
 USE_GL=		gl glu
 DOS2UNIX_GLOB=	*.cpp *.h

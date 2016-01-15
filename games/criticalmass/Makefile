@@ -12,7 +12,7 @@ DISTNAME=	CriticalMass-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL/OpenGL space shoot'em up game
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \

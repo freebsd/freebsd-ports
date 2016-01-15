@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 client for MPD (the Music Player Daemon)
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
 		libtag.so:${PORTSDIR}/audio/taglib

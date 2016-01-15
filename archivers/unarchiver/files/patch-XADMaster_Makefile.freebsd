@@ -1,0 +1,68 @@
+--- XADMaster/Makefile.freebsd.orig	2015-09-23 20:24:59 UTC
++++ XADMaster/Makefile.freebsd
+@@ -1,10 +1,7 @@
+ # Compilers and linkers
+ 
+-OBJCC = clang
+-CC = clang
+-CXX = clang++
++OBJCC ?= $(CC)
+ LD = $(CXX)
+-AR = ar
+ 
+ # Options for compilation
+ 
+@@ -16,13 +13,11 @@ GNUSTEP_OPTS =	-DGNUSTEP \
+ 		-fobjc-exceptions \
+ 		-fconstant-string-class=NSConstantString
+ 
+-GCC_OPTS = 	-O2 \
+-		-Wno-import \
++GCC_OPTS = 	$(CFLAGS) -Wno-import \
+ 		-Wno-multichar \
+-		-g \
+ 		-D_FILE_OFFSET_BITS=64 \
+-		-isystem /usr/local/GNUstep/System/Library/Headers \
+-		-I/usr/local/include
++		-isystem $(LOCALBASE)/GNUstep/System/Library/Headers \
++		-I$(LOCALBASE)/include
+ 
+ OBJC_OPTS =	-std=gnu99
+ 
+@@ -42,6 +37,7 @@ LIBS =	-Wl,--no-whole-archive \
+ 	-lgnustep-base \
+ 	-lz \
+ 	-lbz2 \
++	-lwavpack \
+ 	-licuuc \
+ 	-lobjc \
+ 	-lm
+@@ -49,8 +45,8 @@ LIBS =	-Wl,--no-whole-archive \
+ ALL_LDFLAGS =	-Wl,--whole-archive \
+ 		-fexceptions \
+ 		-fgnu-runtime \
+-		-L/usr/local/lib \
+-		-L/usr/local/GNUstep/System/Library/Libraries \
++		-L$(LOCALBASE)/lib \
++		-L$(LOCALBASE)/GNUstep/System/Library/Libraries \
+ 		$(LDFLAGS)
+ 
+ # Paths
+@@ -74,7 +70,7 @@ libXADMaster.a: $(LIBRARY_OBJS)
+ 	$(AR) rcs $@ $^
+ 
+ ../UniversalDetector/libUniversalDetector.a:
+-	gmake -C ../UniversalDetector -f Makefile.linux
++	$(MAKE) -C ../UniversalDetector -f Makefile.freebsd
+ 
+ XADTest2: $(XADTEST2_OBJS) libXADMaster.a ../UniversalDetector/libUniversalDetector.a
+ 	$(LD) $(ALL_LDFLAGS) -o $@ $^ $(LIBS)
+@@ -99,7 +95,7 @@ lsar: $(LSAR_OBJS) $(CMDLINE_OBJS) libXA
+ 
+ clean:
+ 	rm -rf $(BUILD_DIR) $(EXECUTABLE_FILES) $(LIBRARY_FILES)
+-	gmake -C ../UniversalDetector -f Makefile.linux clean
++	$(MAKE) -C ../UniversalDetector -f Makefile.freebsd clean
+ 
+ .PHONY: ../UniversalDetector/libUniversalDetector.a clean
+ 

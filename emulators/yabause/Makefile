@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sega Saturn system emulator
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		cmake dos2unix openal:soft pkgconfig
 DOS2UNIX_FILES=	src/qt/YabauseThread.cpp

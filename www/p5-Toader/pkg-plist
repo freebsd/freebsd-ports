@@ -14,6 +14,7 @@ bin/toader-temp
 %%PERL5_MAN3%%/Toader::Config.3.gz
 %%PERL5_MAN3%%/Toader::Directory.3.gz
 %%PERL5_MAN3%%/Toader::Entry.3.gz
+%%PERL5_MAN3%%/Toader::Entry::Cache.3.gz
 %%PERL5_MAN3%%/Toader::Entry::Helper.3.gz
 %%PERL5_MAN3%%/Toader::Entry::Manage.3.gz
 %%PERL5_MAN3%%/Toader::Gallery.3.gz
@@ -52,6 +53,7 @@ bin/toader-temp
 %%SITE_PERL%%/Toader/Config.pm
 %%SITE_PERL%%/Toader/Directory.pm
 %%SITE_PERL%%/Toader/Entry.pm
+%%SITE_PERL%%/Toader/Entry/Cache.pm
 %%SITE_PERL%%/Toader/Entry/Helper.pm
 %%SITE_PERL%%/Toader/Entry/Manage.pm
 %%SITE_PERL%%/Toader/Gallery.pm

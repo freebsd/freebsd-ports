@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-COMMENT=	Gstreamer libvisual plugin
+COMMENT=	GStreamer libvisual plugin
 
 GST_PLUGIN=	libvisual
 DIST=		base

@@ -129,7 +129,7 @@ WANT_PGSQL=	client server
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
+USES+=	sqlite
 RUN_DEPENDS+=\
 p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif

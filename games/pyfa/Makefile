@@ -9,7 +9,7 @@ CATEGORIES=	games python
 MAINTAINER=	andrey@bsdnir.info
 COMMENT=	Fitting tool for EVE Online
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil \

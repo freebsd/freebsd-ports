@@ -4,10 +4,11 @@ aimed to be reviewable, secure, DPI/censorship-resistant, written on Go.
 It uses fast strong passphrase authenticated key agreement protocol with
 augmented zero-knowledge mutual peers authentication (PAKE DH A-EKE).
 Encrypted, authenticated data transport that hides message's length and
-timestamps. Perfect forward secrecy property. Resistance to: offline
-dictionary attacks, replay attacks, client's passphrases compromising
-and dictionary attacks on the server side. Built-in heartbeating,
-rehandshaking, real-time statistics. Ability to work through UDP, TCP
-and HTTP proxies. IPv4/IPv6-compatibility. GNU/Linux and FreeBSD support.
+timestamps. Optional encryptionless mode, that still preserves data
+confidentiality. Perfect forward secrecy property. Resistance to:
+offline dictionary attacks, replay attacks, client's passphrases
+compromising and dictionary attacks on the server side. Built-in
+heartbeating, rehandshaking, real-time statistics. Ability to work
+through UDP, TCP and HTTP proxies. IPv4/IPv6-compatibility.
 
 WWW: http://www.cypherpunks.ru/govpn/

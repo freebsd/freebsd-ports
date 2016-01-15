@@ -9,7 +9,7 @@ MASTER_SITES=	http://perso.univ-lyon1.fr/thierry.excoffier/XBL/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D block-dropping game
 
-LICENSE=	GPLv1 # or later
+LICENSE=	GPLv1+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XORG=	x11

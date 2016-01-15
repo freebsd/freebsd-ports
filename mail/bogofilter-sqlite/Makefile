@@ -8,8 +8,7 @@ PKGNAMESUFFIX=	-sqlite
 
 MAINTAINER=	mandree@FreeBSD.org
 
-USE_SQLITE=	3
-
+USES=		sqlite
 CONFLICTS_INSTALL=	bogofilter-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-tc-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
 CONFIGURE_ARGS=	--with-database=sqlite

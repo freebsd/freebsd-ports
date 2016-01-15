@@ -20,5 +20,6 @@ MODULE_FILES=	generate/path_redirect_generate.drush.inc \
 MODULE_DIRS=	generate
 
 DOC_FILES=	LICENSE.txt README.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

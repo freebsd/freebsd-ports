@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quackle
-PORTVERSION=	0.98
+PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 
-USES=		gmake qmake
+USES=		compiler:c++11-lib gmake qmake
 USE_QT4=	gui moc_build
 
 BUILD_WRKSRC=	${WRKSRC}/quacker
@@ -34,8 +34,7 @@ post-configure:
 
 pre-build:
 .for dir in . quackleio
-	@(cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${WRKSRC}/${dir} && ${DO_MAKE_BUILD} ${ALL_TARGET})
 .endfor
 
 do-install:

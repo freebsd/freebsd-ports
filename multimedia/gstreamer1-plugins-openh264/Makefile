@@ -3,7 +3,7 @@
 PORTREVISION=	0
 CATEGORIES=	multimedia
 
-COMMENT=	Gstreamer (openh264) plugin
+COMMENT=	GStreamer (openh264) plugin
 
 GST_PLUGIN=	openh264
 DIST=		bad

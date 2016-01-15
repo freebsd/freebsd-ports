@@ -9,7 +9,7 @@ CATEGORIES=	games
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Rrhythm game simulator
+COMMENT=	Rhythm game simulator
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Docs/Licenses.txt
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 
 USE_GITHUB=	yes
 
-USES=		cmake:outsource iconv jpeg pathfix perl5 pkgconfig shebangfix
+USES=		cmake:outsource iconv jpeg perl5 pkgconfig shebangfix
 SHEBANG_FILES=	Utils/*.pl extern/zlib/zlib2ansi
 USE_XORG=	x11 xrandr xtst
 USE_GL=		glew

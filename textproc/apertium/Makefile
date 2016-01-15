@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolbox to build shallow-transfer machine translation systems
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	liblttoolbox3.so:${PORTSDIR}/textproc/lttoolbox \

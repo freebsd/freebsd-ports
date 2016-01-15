@@ -1,16 +1,16 @@
---- Makefile.am.orig	2015-07-23 16:45:11 UTC
+--- Makefile.am.orig	2015-12-28 12:18:05 UTC
 +++ Makefile.am
-@@ -121,7 +121,7 @@ cppcheck:
+@@ -106,7 +106,7 @@ cppcheck:
  # These steps are necessary during installation
  install-exec-hook:
  	mkdir -p $(DESTDIR)${localstatedir}/log/
 -	mkdir -p $(DESTDIR)${localstatedir}/run/${PACKAGE_NAME}
 +	mkdir -p $(DESTDIR)${localstatedir}/run/
  
- ### include tool to generate documentation from log message specifications
- ### in the distributed tarball:
-@@ -439,7 +439,7 @@ EXTRA_DIST += ext/asio/asio/deadline_tim
- EXTRA_DIST += ext/asio/asio/stream_socket_service.hpp
+ EXTRA_DIST  = tools/path_replacer.sh
+ EXTRA_DIST += tools/mk_cfgrpt.sh
+@@ -114,7 +114,7 @@ EXTRA_DIST += tools/mk_cfgrpt.sh
+ #### include external sources in the distributed tarball:
  EXTRA_DIST += ext/coroutine/coroutine.h
  
 -pkgconfigdir = $(libdir)/pkgconfig

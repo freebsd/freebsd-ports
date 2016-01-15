@@ -2,6 +2,7 @@
 
 PORTNAME=	libevhtp
 PORTVERSION=	1.2.11
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ultima1252@gmail.com
@@ -37,8 +38,13 @@ STATIC_CMAKE_ON=	-DEVHTP_BUILD_SHARED:STRING=OFF
 STATIC_CMAKE_OFF=	-DEVHTP_BUILD_SHARED:STRING=ON
 
 post-patch:
-	@${REINPLACE_CMD} 's/\/evhtp//' ${WRKSRC}/evhtp.pc.in
-	@${REINPLACE_CMD} 's/INCLUDE_INSTALL_DIR}\/evhtp/INCLUDE_INSTALL_DIR}/ ; s/lib\/pkgconfig/libdata\/pkgconfig/ ; s/PATCH_VERSION [0-9]*/PATCH_VERSION ${PORTVERSION:S/1.2.//}/' \
+	@${REINPLACE_CMD} '/HAS_SYS_ONIG onig/d ; s/lib\/pkgconfig/libdata\/pkgconfig/ ; s/PATCH_VERSION [0-9]*/PATCH_VERSION ${PORTVERSION:S/1.2.//}/' \
 		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} 's/<evhtp-config.h>/"evhtp-config.h"/ ; s/<evthr.h>/"evthr.h"/ ; s/<htparse.h>/"htparse.h"/' \
+	 ${WRKSRC}/evhtp.h ${WRKSRC}/evthr.h
+
+post-build:
+	@${REINPLACE_CMD} 's/<onigposix.h>/"onigposix.h"/' \
+		${WRKSRC}/evhtp.h
 
 .include <bsd.port.mk>

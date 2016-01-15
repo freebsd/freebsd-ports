@@ -13,10 +13,7 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking tool for analysing TCP and UDP performance
 
-LICENSE=	PUBLIC_DOMAIN
-LICENSE_NAME=	${LICENSE:S/_/ /}
-LICENSE_TEXT=	The license: ${_LICENSE} (${_LICENSE_NAME}) is standard, please read from the web.
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	PD
 
 NO_WRKSUBDIR=	yes
 

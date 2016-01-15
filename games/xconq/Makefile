@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical multi-player strategy game and game design system
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	SDL
 

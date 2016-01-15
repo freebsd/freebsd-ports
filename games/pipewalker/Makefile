@@ -11,7 +11,7 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the NetWalk game
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		desktop-file-utils

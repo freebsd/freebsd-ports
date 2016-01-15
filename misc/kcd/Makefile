@@ -10,7 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Change directory in full-screen visual mode
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext ncurses perl5
 GNU_CONFIGURE=	yes
@@ -31,8 +32,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/po/${i}.gmo \
 		${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES/kcd.mo
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/kcd.csh.init ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/kcd.sh.init ${STAGEDIR}${EXAMPLESDIR}

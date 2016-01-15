@@ -10,7 +10,7 @@ MASTER_SITES=	http://zoinks.mikelockwood.com/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 programmer's editor and development environment
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

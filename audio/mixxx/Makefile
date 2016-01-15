@@ -11,7 +11,7 @@ MASTER_SITES=	http://downloads.mixxx.org/${PORTNAME}-${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DJ mixing application
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \

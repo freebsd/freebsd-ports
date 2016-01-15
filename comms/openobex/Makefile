@@ -11,7 +11,7 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open source implementation of the OBEX protocol
 
 USE_LDCONFIG=	yes
-USES=		pathfix cmake dos2unix
+USES=		cmake dos2unix
 DOS2UNIX_FILES=	CMakeLists.txt
 CMAKE_ARGS+=	-DPKGCONFIG_INSTALL_DIR:STRING="${PREFIX}/libdata/pkgconfig"
 

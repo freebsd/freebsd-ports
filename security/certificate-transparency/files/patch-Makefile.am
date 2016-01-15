@@ -1,0 +1,30 @@
+--- Makefile.am.orig	2015-10-24 17:22:55.332874000 +0200
++++ Makefile.am	2015-10-24 17:22:58.002519000 +0200
+@@ -9,8 +9,6 @@ AM_CXXFLAGS = \
+ 	-fno-exceptions
+ 
+ BUILT_SOURCES = \
+-	cpp/gmock-all.cc \
+-	cpp/gtest-all.cc \
+ 	cpp/monitoring/prometheus/metrics.pb.cc \
+ 	cpp/monitoring/prometheus/metrics.pb.h \
+ 	proto/ct.pb.cc \
+@@ -115,9 +113,6 @@ endif
+ cpp/gtest-all.cc: $(GTEST_DIR)/src/gtest-all.cc
+ 	$(AM_V_at)cp $^ $@
+ 
+-cpp/gmock-all.cc: $(GMOCK_DIR)/src/gmock-all.cc
+-	$(AM_V_at)cp $^ $@
+-
+ test/testdata/urlfetcher_test_certs/localhost-key.pem: test/create_url_fetcher_test_certs.sh
+ 	$(AM_V_GEN)test/create_url_fetcher_test_certs.sh
+ 
+@@ -186,8 +181,6 @@ cpp_libtest_a_CPPFLAGS = \
+ 	-I$(GTEST_DIR) \
+ 	$(AM_CPPFLAGS)
+ cpp_libtest_a_SOURCES = \
+-	cpp/gmock-all.cc \
+-	cpp/gtest-all.cc \
+ 	cpp/util/testing.cc
+ 
+ cpp_server_ct_mirror_LDADD = \

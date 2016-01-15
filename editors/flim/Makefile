@@ -10,13 +10,14 @@ MASTER_SITES=	http://git.chise.org/elisp/dist/flim/flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
-COMMENT?=	FLIM, message representation or encoding elisp library for emacs
+COMMENT?=	Message representation or encoding elisp library for emacs
 
 LICENSE=	GPLv2
 
 PORTCLASS?=	master
 
 USES=		cpe makeinfo
+NO_ARCH=	yes
 
 CPE_VENDOR=	gnu
 
