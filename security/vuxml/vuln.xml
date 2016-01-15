@@ -91,8 +91,8 @@ Notes:
       <package>
 	<name>openssh-portable</name>
 	<range>
-	  <gt>5.4p0,1</gt>
-	  <lt>7.1p2,1</lt>
+	  <gt>5.4.p0,1</gt>
+	  <lt>7.1.p2,1</lt>
 	</range>
       </package>
     </affects>
@@ -114,6 +114,7 @@ Notes:
     <dates>
       <discovery>2016-01-14</discovery>
       <entry>2016-01-14</entry>
+      <modified>2016-01-15</modified>
     </dates>
   </vuln>
 
@@ -8848,7 +8849,7 @@ Notes:
     <affects>
       <package>
 	<name>openssh-portable</name>
-	<range><lt>7.0p1,1</lt></range>
+	<range><lt>7.0.p1,1</lt></range>
       </package>
     </affects>
     <description>
@@ -8872,6 +8873,7 @@ Notes:
     <dates>
       <discovery>2015-08-11</discovery>
       <entry>2015-08-21</entry>
+      <modified>2016-01-15</modified>
     </dates>
   </vuln>
 
