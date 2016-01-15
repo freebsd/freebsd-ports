@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-CA
-PORTVERSION=	0.23
-PORTREVISION=	3
+PORTVERSION=	0.24
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +23,8 @@ BUILD_DEPENDS=	p5-Convert-ASN1>=0.02:${PORTSDIR}/converters/p5-Convert-ASN1 \
 		p5-Inline-C>=0:${PORTSDIR}/devel/p5-Inline-C \
 		p5-Net-SSLeay>=1.25:${PORTSDIR}/security/p5-Net-SSLeay
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Group>=0:${PORTSDIR}/devel/p5-Test-Group
+TEST_DEPENDS=	p5-Test-Group>=0:${PORTSDIR}/devel/p5-Test-Group \
+		p5-Test-Taint>=0:${PORTSDIR}/devel/p5-Test-Taint
 
 USES=		perl5
 USE_PERL5=	modbuild
