@@ -35,9 +35,6 @@ share/applications/lgeneral.desktop
 %%DATADIR%%/gfx/terrain/pg/airfield.bmp
 %%DATADIR%%/gfx/terrain/pg/airfield_rain.bmp
 %%DATADIR%%/gfx/terrain/pg/airfield_snow.bmp
-%%DATADIR%%/gfx/terrain/pg/bridge.bmp
-%%DATADIR%%/gfx/terrain/pg/bridge_rain.bmp
-%%DATADIR%%/gfx/terrain/pg/bridge_snow.bmp
 %%DATADIR%%/gfx/terrain/pg/clear.bmp
 %%DATADIR%%/gfx/terrain/pg/clear_rain.bmp
 %%DATADIR%%/gfx/terrain/pg/clear_snow.bmp
