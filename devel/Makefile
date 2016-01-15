@@ -4178,6 +4178,7 @@
     SUBDIR += py-orbit
     SUBDIR += py-ordereddict
     SUBDIR += py-oslo.i18n
+    SUBDIR += py-oslo.serialization
     SUBDIR += py-oslo.utils
     SUBDIR += py-palm
     SUBDIR += py-parsedatetime
