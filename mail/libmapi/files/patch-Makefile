@@ -1,16 +1,16 @@
---- Makefile.orig	2014-05-05 15:10:56.000000000 +0200
-+++ Makefile	2014-05-05 15:11:14.000000000 +0200
-@@ -246,9 +246,6 @@
- 	$(INSTALL) -m 0644 gen_ndr/property.h $(DESTDIR)$(includedir)/gen_ndr/
- 	$(INSTALL) -m 0644 gen_ndr/ndr_exchange.h $(DESTDIR)$(includedir)/gen_ndr/
+--- Makefile.orig	2015-05-16 17:22:04.000000000 +0200
++++ Makefile	2015-12-20 13:01:04.141904000 +0100
+@@ -255,9 +255,6 @@
  	$(INSTALL) -m 0644 gen_ndr/ndr_property.h $(DESTDIR)$(includedir)/gen_ndr/
+ 	$(INSTALL) -m 0644 gen_ndr/asyncemsmdb.h $(DESTDIR)$(includedir)/gen_ndr/
+ 	$(INSTALL) -m 0644 gen_ndr/ndr_asyncemsmdb.h $(DESTDIR)$(includedir)/gen_ndr/
 -	@$(SED) $(DESTDIR)$(includedir)/libmapi/*.h
 -	@$(SED) $(DESTDIR)$(includedir)/libmapi/socket/*.h
 -	@$(SED) $(DESTDIR)$(includedir)/gen_ndr/*.h
  
  libmapi-installscript:
  	$(INSTALL) -d $(DESTDIR)$(datadir)/setup/profiles
-@@ -388,7 +385,6 @@
+@@ -401,7 +398,6 @@
  	$(INSTALL) -m 0644 libmapi++/profile.h $(DESTDIR)$(includedir)/libmapi++/
  	$(INSTALL) -m 0644 libmapi++/property_container.h $(DESTDIR)$(includedir)/libmapi++/
  	$(INSTALL) -m 0644 libmapi++/session.h $(DESTDIR)$(includedir)/libmapi++/
@@ -18,7 +18,7 @@
  
  libmapixx-libs-clean:
  	rm -f libmapi++/src/*.po
-@@ -559,7 +555,6 @@
+@@ -572,7 +568,6 @@
  	@echo "[*] install: libmapiadmin headers"
  	$(INSTALL) -d $(DESTDIR)$(includedir)/libmapiadmin 
  	$(INSTALL) -m 0644 libmapiadmin/libmapiadmin.h $(DESTDIR)$(includedir)/libmapiadmin/
@@ -26,7 +26,7 @@
  
  libmapiadmin-uninstallpc:
  	rm -f $(DESTDIR)$(libdir)/pkgconfig/libmapiadmin.pc
-@@ -630,7 +625,6 @@
+@@ -643,7 +638,6 @@
  	@echo "[*] install: libocpf headers"
  	$(INSTALL) -d $(DESTDIR)$(includedir)/libocpf
  	$(INSTALL) -m 0644 libocpf/ocpf.h $(DESTDIR)$(includedir)/libocpf/
@@ -34,7 +34,7 @@
  
  libocpf-uninstallpc:
  	rm -f $(DESTDIR)$(libdir)/pkgconfig/libocpf.pc
-@@ -794,7 +788,6 @@
+@@ -830,7 +824,6 @@
  endif
  	$(INSTALL) -m 0644 mapiproxy/libmapiserver/libmapiserver.h $(DESTDIR)$(includedir)/
  	$(INSTALL) -m 0644 mapiproxy/libmapiserver.pc $(DESTDIR)$(libdir)/pkgconfig
@@ -42,11 +42,11 @@
  
  libmapiserver-clean:
  	rm -f mapiproxy/libmapiserver/*.po mapiproxy/libmapiserver/*.o
-@@ -881,7 +874,6 @@
+@@ -920,7 +913,6 @@
  	$(INSTALL) -m 0644 mapiproxy/libmapiserver.pc $(DESTDIR)$(libdir)/pkgconfig
  	$(INSTALL) -d $(DESTDIR)$(datadir)/setup/mapistore
  	$(INSTALL) -m 0644 setup/mapistore/*.ldif $(DESTDIR)$(datadir)/setup/mapistore/
 -	@$(SED) $(DESTDIR)$(includedir)/mapistore/*.h
  
  libmapistore-clean:	$(OC_MAPISTORE_CLEAN)
- 	rm -f mapiproxy/libmapistore/*.po mapiproxy/libmapistore/*.o
+ 	rm -f libmapistore.$(SHLIBEXT).$(LIBMAPISTORE_SO_VERSION)
