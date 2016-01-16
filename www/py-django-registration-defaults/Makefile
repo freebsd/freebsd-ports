@@ -3,6 +3,7 @@
 
 PORTNAME=	django-registration-defaults
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Default templates and settings for django-registration
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-registration>=0:${PORTSDIR}/www/py-django-registration
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-registration>=0:${PORTSDIR}/www/py-django-registration18
 
 USES=		python
 USE_PYTHON=	distutils autoplist

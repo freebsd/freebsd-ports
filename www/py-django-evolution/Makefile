@@ -3,6 +3,7 @@
 
 PORTNAME=	django-evolution
 PORTVERSION=	0.7.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Database schema evolution tool for the Django web framework
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django18
 
 USE_GITHUB=	yes
 
