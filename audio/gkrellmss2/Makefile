@@ -10,7 +10,7 @@ MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellmss/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM plugin with a VU meter showing left/right channel audio
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
@@ -35,11 +35,12 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins
-	@${STRIP_CMD} ${WRKSRC}/src/gkrellmss.so
-	${INSTALL_DATA} ${WRKSRC}/src/gkrellmss.so \
+	${INSTALL_LIB} ${WRKSRC}/src/gkrellmss.so \
 		${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins/gkrellmss.so
 	${INSTALL_DATA} ${WRKSRC}/po/ru.mo \
 		${STAGEDIR}${PREFIX}/share/locale/ru/LC_MESSAGES/gkrellm-gkrellmss.mo
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
