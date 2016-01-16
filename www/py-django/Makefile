@@ -23,6 +23,8 @@ CPE_VENDOR=	djangoproject
 
 CONFLICTS=	py[23][0-9]-django-devel-[0-9]* py[23][0-9]-django-1.[0-57-9].*
 
+IGNORE=		This port will switch to a meta port soon. Please use py-django18 instead.
+
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
 OPTIONS_DEFINE=		FASTCGI HTMLDOCS
