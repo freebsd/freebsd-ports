@@ -3,7 +3,7 @@
 
 PORTNAME=	easy-thumbnails
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}django-
@@ -13,7 +13,7 @@ COMMENT=	Easy thumbnails for Django
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=0:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:${PORTSDIR}/www/py-django18
 
 USES=		python
 USE_PYTHON=	distutils autoplist
