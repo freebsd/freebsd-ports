@@ -12,7 +12,7 @@ COMMENT=	User registration with social account authentication
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.6:${PORTSDIR}/www/py-django18
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.6:${PORTSDIR}/www/py-django18
 
 NO_ARCH=	yes
 USES=		python

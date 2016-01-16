@@ -14,7 +14,7 @@ COMMENT=	Content management system built with the Django framework
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}south>=0.7.3:${PORTSDIR}/databases/py-south \
-		${PYTHON_PKGNAMEPREFIX}django>=1.4:${PORTSDIR}/www/py-django18 \
+		${PYTHON_PKGNAMEPREFIX}django18>=1.4:${PORTSDIR}/www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}django-classy-tags>=0.3.4.1:${PORTSDIR}/www/py-django-classy-tags \
 		${PYTHON_PKGNAMEPREFIX}django-mptt>=0.5.2:${PORTSDIR}/www/py-django-mptt \
 		${PYTHON_PKGNAMEPREFIX}django-sekizai>=0.6.1:${PORTSDIR}/www/py-django-sekizai \

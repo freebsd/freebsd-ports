@@ -13,7 +13,7 @@ COMMENT=	The best way to have Django DRY forms
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django18
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:${PORTSDIR}/www/py-django18
 
 USES=		python
 USE_PYTHON=	distutils autoplist

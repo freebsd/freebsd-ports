@@ -14,7 +14,7 @@ COMMENT=	Helper for generating Javascript catalog to static files
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django<=18:${PORTSDIR}/www/py-django18 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:${PORTSDIR}/www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}django-appconf>=0.6:${PORTSDIR}/www/py-django-appconf
 
 USES=		python

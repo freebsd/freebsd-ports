@@ -14,7 +14,7 @@ COMMENT=	OpenID integration for django.contrib.auth
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3.1:${PORTSDIR}/www/py-django18 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.3.1:${PORTSDIR}/www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}openid>=2.2.5:${PORTSDIR}/security/py-openid
 
 USES=		python

@@ -13,7 +13,7 @@ COMMENT=	LDAP integration for django.contrib.auth
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3.1:${PORTSDIR}/www/py-django18 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.3.1:${PORTSDIR}/www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}ldap>=2.0:${PORTSDIR}/net/py-ldap
 
 USES=		python:2

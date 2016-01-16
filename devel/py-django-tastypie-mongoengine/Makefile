@@ -3,6 +3,7 @@
 
 PORTNAME=		django-tastypie-mongoengine
 PORTVERSION=		0.4.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=		devel
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}django-tastypie>=0.9.12:${PORTSDIR}/www/py-django-tastypie \
 		${PYTHON_PKGNAMEPREFIX}mongoengine>=0.8.7:${PORTSDIR}/devel/py-mongoengine \
-		${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django
+		${PYTHON_PKGNAMEPREFIX}django18>0:${PORTSDIR}/www/py-django18
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		wlanslovenija
