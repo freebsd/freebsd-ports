@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flashrom
-PORTVERSION=	0.9.7
-PORTREVISION=	2
+PORTVERSION=	0.9.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.flashrom.org/releases/
 
