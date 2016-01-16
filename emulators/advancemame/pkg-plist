@@ -1,4 +1,4 @@
-bin/advj 
+bin/advj
 bin/advk
 bin/advm
 bin/advmame
@@ -9,12 +9,19 @@ man/man1/advk.1.gz
 man/man1/advm.1.gz
 man/man1/advmame.1.gz
 man/man1/advs.1.gz
-%%DATADIR%%/artwork/.keep_me
-%%DATADIR%%/diff/.keep_me
 %%DATADIR%%/event.dat
-%%DATADIR%%/history.dat
 %%DATADIR%%/hiscore.dat
-%%DATADIR%%/image/.keep_me
-%%DATADIR%%/rom/.keep_me
-%%DATADIR%%/sample/.keep_me
-%%DATADIR%%/snap/.keep_me
+%%DATADIR%%/history.dat
+%%DATADIR%%/rom/gridlee.zip
+%%DATADIR%%/rom/polyplay.zip
+%%DATADIR%%/rom/robby.zip
+%%DATADIR%%/sample/gridlee.zip
+%%DATADIR%%/snap/gridlee.zip
+%%DATADIR%%/snap/polyplay.zip
+%%DATADIR%%/snap/robby.zip
+@dir %%DATADIR%%/snap
+@dir %%DATADIR%%/sample
+@dir %%DATADIR%%/rom
+@dir %%DATADIR%%/image
+@dir %%DATADIR%%/crc
+@dir %%DATADIR%%/artwork
