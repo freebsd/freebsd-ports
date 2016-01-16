@@ -1,0 +1,8 @@
+fileobj is a portable hex editor with vi like interface.
+This software provides basic vi commands for binary editing.
+Features include insert, replace, delete data in hexadecimal or ascii,
+cut and paste, undo and redo, visual select, partial buffer loading,
+multiple buffers support, multiple windows support,
+block device (raw disk) support, mapping binary data to C struct, etc.
+
+WWW: https://github.com/kusumi/fileobj/tree/v0.7
