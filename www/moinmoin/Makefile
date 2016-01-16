@@ -7,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
 
-MAINTAINER=	khsing.cn@gmail.com
+MAINTAINER=	linimon@FreeBSD.org
 COMMENT=	Python clone of WikiWiki
 
 LICENSE=	GPLv2
