@@ -19,7 +19,7 @@ MY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mimeparse>=0.1.4:${PORTSDIR}/devel/py-mimepar
 BUILD_DEPENDS=	${MY_DEPENDS}
 
 RUN_DEPENDS?=	${MY_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}django>=1.5:${PORTSDIR}/www/py-django18
+		${PYTHON_PKGNAMEPREFIX}django18>=1.5:${PORTSDIR}/www/py-django18
 
 USES=		python
 USE_PYTHON=	distutils autoplist
