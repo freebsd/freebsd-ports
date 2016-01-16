@@ -3,7 +3,7 @@
 
 PORTNAME=	tf
 PORTVERSION=	5.0b8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net games
 MASTER_SITES=	SF/tinyfugue/tinyfugue/5.0%20beta%208
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
@@ -27,5 +27,8 @@ post-patch:
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/src/tf
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/src/tf.1.nroffman ${STAGEDIR}${PREFIX}/man/man1/tf.1
 
 .include <bsd.port.mk>
