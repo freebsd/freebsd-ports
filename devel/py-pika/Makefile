@@ -2,15 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	pika
-PORTVERSION=	0.9.14
+PORTVERSION=	0.10.0
 CATEGORIES=	devel net
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python AMQP Client Library
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
