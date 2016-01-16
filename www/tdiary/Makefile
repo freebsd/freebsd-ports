@@ -11,6 +11,7 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Web-based diary system (like weblog) written in Ruby
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-fastimage>=1.6.3:${PORTSDIR}/graphics/rubygem-fastimage \
 		rubygem-hikidoc>=0.1.0:${PORTSDIR}/textproc/rubygem-hikidoc \
@@ -69,7 +70,6 @@ pre-patch:
 	@${RM} ${WRKSRC}/.travis.yml
 	@${RM} ${WRKSRC}/Gemfile
 	@${RM} ${WRKSRC}/Gemfile.lock
-	@${RM} ${WRKSRC}/LICENSE
 	@${RM} ${WRKSRC}/Procfile
 	@${RM} ${WRKSRC}/Rakefile
 	@${RM} ${WRKSRC}/config.ru
@@ -95,16 +95,20 @@ pre-install:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${TDIARY_SCRIPT} ${STAGEDIR}${PREFIX}/bin
-	@-${MKDIR} ${STAGEDIR}${WWWDIR}
-	${TAR} --exclude "doc" -C ${WRKSRC} -cf - . | ${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${TAR} --exclude doc --exclude LICENSE -C ${WRKSRC} -cf - . | ${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 x-generate-plist: stage
 	${ECHO_CMD} bin/%%TDIARY_SCRIPT%% > pkg-plist.new
+	${ECHO_CMD} @owner %%WWWOWN%% >> pkg-plist.new
+	${ECHO_CMD} @group %%WWWGRP%% >> pkg-plist.new
 	${FIND} ${STAGEDIR}${WWWDIR} -type f -o -type l | ${SORT} | ${SED} -e 's,${STAGEDIR}${WWWDIR},%%WWWDIR%%,g' >> pkg-plist.new
-	${FIND} ${STAGEDIR}${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${STAGEDIR}${WWWDIR},@dirrm %%WWWDIR%%,g' >> pkg-plist.new
-	${ECHO_CMD} @exec mkdir -p %D/%%WWWDIR%%/tmp >> pkg-plist.new
-	${ECHO_CMD} @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%% >> pkg-plist.new
+	${FIND} ${STAGEDIR}${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${STAGEDIR}${WWWDIR},@dir %%WWWDIR%%,g' >> pkg-plist.new
+	${ECHO_CMD} @owner >> pkg-plist.new
+	${ECHO_CMD} @group >> pkg-plist.new
 
 .include <bsd.port.mk>
