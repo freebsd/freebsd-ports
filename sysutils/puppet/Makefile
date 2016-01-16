@@ -11,6 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Configuration management framework written in Ruby
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-hiera1>=0:${PORTSDIR}/sysutils/rubygem-hiera1
@@ -22,6 +23,7 @@ USES=		cpe
 CPE_VENDOR=	puppetlabs
 CONFLICTS_INSTALL=	puppet37-* puppet4-*
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RC_SUBR=	puppet puppetmaster
 PORTDOCS=	LICENSE README.md
@@ -32,8 +34,6 @@ SUB_FILES+=	pkg-message
 SUB_LIST=	RUBY=${RUBY}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppet|${ETCDIR}|" \
@@ -71,14 +71,16 @@ post-install:
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/ext/rack/config.ru ${STAGEDIR}${WWWDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ext/rack/example-passenger-vhost.conf ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
