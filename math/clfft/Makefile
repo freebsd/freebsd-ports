@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clfft
-PORTVERSION=	2.6.1
+PORTVERSION=	2.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -17,6 +17,8 @@ LIB_DEPENDS=	libOpenCL.so:${PORTSDIR}/devel/ocl-icd
 RUN_DEPENDS=	opencl>=0:${PORTSDIR}/devel/opencl
 
 BROKEN_FreeBSD_9=	clFFT is only supported on FreeBSD 10.1 and newer
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON_amd64=	only builds and is supported on amd64
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	clMathLibraries
@@ -27,6 +29,7 @@ USES=		cmake
 
 CMAKE_ARGS+=	-DBUILD_CLIENT=OFF \
 		-DBUILD_TEST=OFF \
+		-DBUILD_CALLBACK_CLIENT=OFF \
 		-DSUFFIX_LIB=""
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
