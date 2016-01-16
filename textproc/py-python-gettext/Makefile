@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-gettext
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +11,8 @@ COMMENT=	Python Gettext po to mo file compiler
 
 LICENSE=	BSD2CLAUSE
 
+NO_ARCH=	yes
 USES=		python zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} <= 3000
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>=0:${PORTSDIR}/devel/py-unittest2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
