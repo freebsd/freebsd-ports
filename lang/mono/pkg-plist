@@ -156,6 +156,7 @@ lib/libmono-profiler-log.a
 lib/libmono-profiler-log.so
 lib/libmono-profiler-log.so.0
 lib/libmono-profiler-log.so.0.0.0
+lib/libmono-profiler-log-static.a
 lib/libmonoboehm-2.0.a
 lib/libmonoboehm-2.0.so
 lib/libmonoboehm-2.0.so.1
