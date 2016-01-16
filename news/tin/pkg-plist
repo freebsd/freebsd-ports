@@ -23,4 +23,5 @@ man/man5/tin_mmdf.5.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/tin.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/tin.mo
