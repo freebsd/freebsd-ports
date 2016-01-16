@@ -30,7 +30,7 @@ OPTIONS_RADIO_PDF=	PODOFO POPPLER
 PCRE_DESC=	Regular expression support for SQLite
 SPATIALITE_DESC=SpatiaLite support
 
-CFLAGS+=	-fPIC -flax-vector-conversions
+CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--enable-static=yes \
 		--with-geotiff=${LOCALBASE} \
@@ -151,4 +151,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/GDALmake.opt ${STAGEDIR}${DATADIR}/
 	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libgdal.so.${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+CFLAGS+=	-flax-vector-conversions
+.endif
+
+.include <bsd.port.post.mk>
