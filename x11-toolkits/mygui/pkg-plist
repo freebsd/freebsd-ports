@@ -36,10 +36,6 @@ include/MYGUI/MyGUI_DelegateImplement.h
 include/MYGUI/MyGUI_DeprecatedTypes.h
 include/MYGUI/MyGUI_DeprecatedWidgets.h
 include/MYGUI/MyGUI_Diagnostic.h
-include/MYGUI/MyGUI_DummyDataManager.h
-include/MYGUI/MyGUI_DummyDiagnostic.h
-include/MYGUI/MyGUI_DummyPlatform.h
-include/MYGUI/MyGUI_DummyRenderManager.h
 include/MYGUI/MyGUI_DynLib.h
 include/MYGUI/MyGUI_DynLibManager.h
 include/MYGUI/MyGUI_EditBox.h
@@ -178,7 +174,6 @@ include/MYGUI/MyGUI_XmlDocument.h
 include/MYGUI/Plugin.h
 include/MYGUI/StrangeButton.h
 lib/Plugin_StrangeButton.so
-lib/libMyGUI.DummyPlatform.a
 lib/libMyGUIEngine.so
 lib/libMyGUIEngine.so.3
 lib/libMyGUIEngine.so.3.2.2
