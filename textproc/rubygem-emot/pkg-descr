@@ -1,0 +1,5 @@
+Yet another emoji handler. It contains 870 emojis with its name and
+codepoint(but not contains emoji fonts or images). All names of emojis
+are from Emoji cheat sheet for Campfire and GitHub.
+
+WWW: https://github.com/melborne/emot
