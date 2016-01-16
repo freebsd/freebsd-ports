@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twig
-PORTVERSION=	1.23.1
+PORTVERSION=	1.23.3
 CATEGORIES=	www
 MASTER_SITES=	http://pear.twig-project.org/get/
 PKGNAMEPREFIX=	pecl-
