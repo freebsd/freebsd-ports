@@ -1,6 +1,6 @@
---- src/params.h.orig
+--- src/params.h.orig	2012-09-20 14:35:00 UTC
 +++ src/params.h
-@@ -101,7 +101,11 @@
+@@ -134,7 +134,11 @@
  /*
   * File names.
   */

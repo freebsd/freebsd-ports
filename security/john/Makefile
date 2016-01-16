@@ -3,7 +3,7 @@
 
 PORTNAME=	john
 DISTVERSION=	1.7.9-jumbo-7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/g/ \
 		http://mirrors.kernel.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
@@ -38,6 +38,7 @@ PORTDOCS=	CHANGES CONFIG EXAMPLES EXTERNAL FAQ MODES OPTIONS README \
 
 OPTIONS_DEFINE=	OPENMP DOCS
 OPENMP_DESC=	Compile with OpenMP support
+OPENMP_USES=	compiler:openmp
 
 .include <bsd.port.pre.mk>
 
@@ -57,6 +58,10 @@ ALL_TARGET=	generic
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+CFLAGS+=	-flax-vector-conversions
 .endif
 
 post-patch:
