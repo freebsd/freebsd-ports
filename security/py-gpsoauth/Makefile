@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpsoauth
-#Drop the date string after 0.1 has been released.
-#This saves us the trouble of introducing PORTEPOCH.
-PORTVERSION=	0.0.20151011
+PORTVERSION=	0.1.0
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:${PORTSDIR}/security/py-pycr
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	simon-weber
-GH_TAGNAME=	ad65445		# This corresponds to release 0.0.5
+GH_TAGNAME=	1f1ae3f
 
 USES=		python
 USE_PYTHON=	distutils autoplist
