@@ -57,7 +57,4 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-plist:
-	cd ${WRKSRC}/src && ${SH} plist.sh > ${PLIST}
-
 .include <bsd.port.mk>
