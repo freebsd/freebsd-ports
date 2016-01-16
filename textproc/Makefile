@@ -1227,7 +1227,6 @@
     SUBDIR += py-feedparser
     SUBDIR += py-genshi
     SUBDIR += py-genshi-devel
-    SUBDIR += py-gettext
     SUBDIR += py-hexdump
     SUBDIR += py-html2text
     SUBDIR += py-hyperestraier-python
@@ -1262,6 +1261,7 @@
     SUBDIR += py-pystemmer
     SUBDIR += py-python-augeas
     SUBDIR += py-python-docx
+    SUBDIR += py-python-gettext
     SUBDIR += py-pytidylib
     SUBDIR += py-pyx12
     SUBDIR += py-qrcode

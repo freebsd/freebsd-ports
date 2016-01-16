@@ -1,12 +1,11 @@
 # $FreeBSD$
 
-PORTNAME=	gettext
+PORTNAME=	python-gettext
 PORTVERSION=	2.1
 PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Python Gettext po to mo file compiler
