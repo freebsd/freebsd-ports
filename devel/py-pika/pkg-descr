@@ -3,4 +3,4 @@ that tries to stay fairly independent of the underlying network
 support library. Pika was developed primarily for use with
 RabbitMQ, but should also work with other AMQP 0-9-1 brokers.
 
-WWW:	http://tonyg.github.com/pika/
+WWW: https://pika.readthedocs.org
