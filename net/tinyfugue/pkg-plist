@@ -66,3 +66,4 @@ lib/%%DISTNAME%%-lib/tr.tf
 lib/%%DISTNAME%%-lib/watch.tf
 lib/%%DISTNAME%%-lib/world-q.tf
 lib/%%DISTNAME%%-lib/worldqueue.tf
+man/man1/tf.1.gz
