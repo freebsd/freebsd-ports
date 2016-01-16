@@ -14,10 +14,9 @@ LICENSE=	GPLv3
 CONFLICTS=	weechat-devel-[0-9]*
 
 USE_LDCONFIG=	yes
-USES=		cmake iconv ncurses tar:bzip2
+USES=		cmake iconv localbase ncurses tar:bzip2
 CMAKE_ARGS+=	-DENABLE_GUILE=no \
 		-DICONV_INCLUDE_PATH=${ICONV_INCLUDE_PATH}
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt
@@ -40,7 +39,7 @@ RUBY_DESC=	Ruby scripting language support
 ASPELL_CMAKE_OFF=	-DENABLE_ASPELL=no
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 
-BACKTRACE_LIB_DEPENDS=	libexecinfo.so:devel/libexecinfo
+BACKTRACE_USES=		execinfo
 
 CA_BUNDLE_CMAKE_ON=	-DCA_FILE=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
