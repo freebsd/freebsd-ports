@@ -1,16 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	poppler
-PORTVERSION=	2.2.5
-PORTREVISION=	1
+PORTVERSION=	3.0.7
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for Poppler
 
-LICENSE=	LGPL21 LGPL3
-LICENSE_COMB=	dual
+LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 RUN_DEPENDS=	rubygem-cairo>=1.14.0:${PORTSDIR}/graphics/rubygem-cairo \
