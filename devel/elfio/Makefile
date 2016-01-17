@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for reading and generating files in the ELF binary format
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes

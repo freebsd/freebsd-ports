@@ -14,7 +14,6 @@ COMMENT=	Ruby library to manipulate HTML/XML tree data structure
 OPTIONS_DEFINE=	DOCS
 
 USE_RUBY=	yes
-USE_RUBY_RD2=		yes
 USE_RUBY_RDOC=		yes
 
 LIB_FILES=	htree.rb htree

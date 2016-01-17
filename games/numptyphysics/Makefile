@@ -10,7 +10,7 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Drawing physics-based puzzle game
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2 desktop-file-utils

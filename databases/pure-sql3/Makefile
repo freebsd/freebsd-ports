@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pure-sql3
-PORTVERSION=	0.4
-PORTREVISION=	4
+PORTVERSION=	0.5
 CATEGORIES=	databases
 MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
@@ -14,9 +13,7 @@ COMMENT=	Pure language binding to the SQLite3 library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
-
-USES=		pure
+USES=		pkgconfig pure sqlite
 PORTDOCS=	README
 PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES

@@ -4,7 +4,7 @@
 PORTNAME=	openssl
 PORTVERSION=	1.0.2
 DISTVERSIONSUFFIX=	e
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -129,7 +129,7 @@ EXTRACONFIGURE+=	no-ssl2
 .if ${PORT_OPTIONS:MSSL3}
 EXTRACONFIGURE+=	enable-ssl3
 .else
-EXTRACONFIGURE+=	no-ssl3
+EXTRACONFIGURE+=	no-ssl3 no-ssl3-method
 .endif
 
 .if ${PORT_OPTIONS:MMD2}

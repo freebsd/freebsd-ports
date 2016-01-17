@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twin panel file manager for KDE, like midnight or norton commander
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake:outsource gettext tar:bzip2

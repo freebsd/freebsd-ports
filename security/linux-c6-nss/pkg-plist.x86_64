@@ -1,4 +1,3 @@
-@comment file listing
 etc/pki/nssdb/cert8.db
 etc/pki/nssdb/key3.db
 etc/pki/nssdb/secmod.db
@@ -19,9 +18,4 @@ usr/lib64/libsoftokn3.so
 usr/lib64/nss/unsupported-tools/shlibsign
 usr/lib64/nss/unsupported-tools/bltest
 usr/lib64/nss/unsupported-tools/fipstest
-@comment non-empty directory listing in revers order
-@dirrm etc/pki/nssdb
-@dirrmtry etc/pki
-@dirrm usr/lib64/nss/unsupported-tools
-@dirrm usr/lib64/nss/saved
-@dirrm usr/lib64/nss
+@dir usr/lib64/nss/saved

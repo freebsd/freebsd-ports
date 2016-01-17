@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for production and maintenance of web sites
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:bzip2

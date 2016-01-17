@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Qt-based financial manager
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \

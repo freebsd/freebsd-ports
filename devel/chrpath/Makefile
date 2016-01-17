@@ -13,20 +13,18 @@ COMMENT=	Tool to modify DT_RPATH in existing ELF binaries
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-USES=		gmake
-
 PLIST_FILES=	bin/chrpath man/man1/chrpath.1.gz
-
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.	for i in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.	endfor
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

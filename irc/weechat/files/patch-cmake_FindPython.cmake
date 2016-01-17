@@ -1,6 +1,6 @@
---- cmake/FindPython.cmake.orig	2015-01-12 09:23:34.292562072 +0000
-+++ cmake/FindPython.cmake	2015-01-12 09:32:04.954526522 +0000
-@@ -33,17 +33,9 @@
+--- cmake/FindPython.cmake.orig	2016-01-10 08:17:50 UTC
++++ cmake/FindPython.cmake
+@@ -33,17 +33,9 @@ if(PYTHON_FOUND)
     set(PYTHON_FIND_QUIETLY TRUE)
  endif()
  
@@ -21,7 +21,7 @@
  
  if(PYTHON_EXECUTABLE)
    execute_process(
-@@ -52,11 +44,6 @@
+@@ -52,11 +44,6 @@ if(PYTHON_EXECUTABLE)
      )
  
    execute_process(
@@ -33,7 +33,7 @@
      COMMAND ${PYTHON_EXECUTABLE} -c "import sys; from distutils.sysconfig import *; sys.stdout.write(get_config_var('LINKFORSHARED'))"
      OUTPUT_VARIABLE PYTHON_LFLAGS
      )
-@@ -65,32 +52,13 @@
+@@ -65,32 +52,13 @@ if(PYTHON_EXECUTABLE)
      NAMES Python.h
      HINTS ${PYTHON_INC_DIR}
      )

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector-based GPS moving map
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
@@ -33,7 +33,6 @@ PLIST_FILES=	${BINS:S,^,bin/,} ${GUI_BINS:S,^,bin/,} \
 		${GUI_BINS:S,^gtk,bin/,} ${SCRIPTS:S,^,bin/,} \
 		man/man1/roadgps.1.gz man/man1/roadmap.1.gz \
 		${DATA:S,^,%%DATADIR%%/,}
-PLIST_DIRS=	%%DATADIR%%
 
 BINS=		dumpmap buildmap buildmap_osm buildplace buildus
 GUI_BINS=	gtkroadmap gtkroadgps

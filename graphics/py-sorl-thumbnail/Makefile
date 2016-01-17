@@ -3,7 +3,7 @@
 
 PORTNAME=	sorl-thumbnail
 PORTVERSION=	3.2.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +30,7 @@ OPTIONS_DEFAULT=	DJANGO
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDJANGO}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django18
 .endif
 
 .if ${PORT_OPTIONS:MPDF}

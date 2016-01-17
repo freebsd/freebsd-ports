@@ -3,6 +3,7 @@
 
 PORTNAME=	django-datetime-widget
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	melvyn@magemana.nl
 COMMENT=	Simple and clean widget for DateTimeField
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:${PORTSDIR}/www/py-django18
 
 USES=		python
 USE_PYTHON=	autoplist distutils

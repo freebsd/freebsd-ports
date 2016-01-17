@@ -35,6 +35,10 @@ ASDF_REGISTRY=	${PREFIX}/${CL_LIBDIR_REL}/system-registry
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
 
+.if ${PORTNAME} != "ccl"
+NO_ARCH=	yes
+.endif
+
 .if defined(FASL_TARGET)
 FASL_DIR_REL=	${FASL_TARGET}fasl
 PKGNAMESUFFIX=	-${FASL_TARGET}
@@ -116,10 +120,5 @@ post-install:
 		| ${SORT} \
 		| ${AWK} '{ print "${CL_LIBDIR_REL}/${PORTNAME}/${FASL_DIR_REL}/" $$1 }' \
 		>> ${TMPPLIST}
-	@cd ${WRKSRC} && ${FIND} * -type d \
-		| ${SORT} -r \
-		| ${AWK} '{ print "@dirrm ${CL_LIBDIR_REL}/${PORTNAME}/${FASL_DIR_REL}/" $$1 }' \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm ${CL_LIBDIR_REL}/${PORTNAME}/${FASL_DIR_REL}" >> ${TMPPLIST}
 
 .endif # FASL_BUILD

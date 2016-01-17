@@ -2,47 +2,65 @@
 # $FreeBSD$
 
 PORTNAME=	advancemess
-PORTVERSION=	0.102.0.1
-PORTREVISION=	7
+PORTVERSION=	1.4
 CATEGORIES=	emulators
-MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	https://github.com/amadvance/advancemame/releases/download/${DISTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL MESS port with advanced TV and monitor video support
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+RUN_DEPENDS=	advancemame>=1.4:${PORTSDIR}/emulators/advancemame
 
-USE_GL=		yes
-USES=		gmake
+USES=		gmake ncurses
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-svgalib --disable-fb --disable-alsa --enable-oss \
+		--disable-kevent
+
 CFLAGS+=	-idirafter ${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	FREETYPE SLANG
-SLANG_DESC=	Enable sLang support (for video driver)
+PORTDOCS=	*
+PLIST_FILES=	bin/advmess \
+		man/man1/advmess.1.gz \
+		share/advance/sysinfo.dat
 
+OPTIONS_DEFINE=		FREETYPE SLANG
+OPTIONS_DEFINE_i386=	ASM
+OPTIONS_DEFAULT=	FREETYPE
+OPTIONS_DEFAULT_i386=	ASM
+
+ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+ASM_USE=		gcc=any
+ASM_CONFIGURE_ENABLE=	asm
+FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
-FREETYPE_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
-
-SLANG_CONFIGURE_ENABLE=	slang
 SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_CONFIGURE_ENABLE=	slang
+SLANG_LDFLAGS=		-lncurses
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-.endif
+BROKEN_powerpc=		Does not compile on powerpc
 
 post-patch:
-	@${REINPLACE_CMD} -E -e '/pkgdocdir/d' \
-		-e 's,(bin|man|pkg)dir),DESTDIR)$$(&,' \
-		${WRKSRC}/advance/advance.mak
+	@${REINPLACE_CMD} -e \
+		's|@@|@|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/WHOLE_CFLAGS_OPT/s|-O2|| ; \
+		 /WHOLE_LDFLAGS/s|-s||' ${WRKSRC}/advance/advance.mak
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|-pthread|' ${WRKSRC}/advance/emu.mak
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/advmess
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} advmess \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/support && ${INSTALL_MAN} advmess.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/advance
+	(cd ${WRKSRC}/support && ${INSTALL_DATA} sysinfo.dat \
+		${STAGEDIR}${PREFIX}/share/advance)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

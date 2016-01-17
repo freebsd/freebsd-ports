@@ -2,18 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.9.2
+PORTVERSION=	3.10.0
 CATEGORIES=	databases
-MASTER_SITES=	https://www.sqlite.org/2015/ http://www2.sqlite.org/2015/ http://www3.sqlite.org/2015/
+MASTER_SITES=	https://www.sqlite.org/2016/ http://www2.sqlite.org/2016/ http://www3.sqlite.org/2016/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
 
-LICENSE=	public
-LICENSE_NAME=	Public Domain
-LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://www.sqlite.org/copyright.html
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	PD
 
 CONFLICTS=	sqlcipher-[0-9]*
 
@@ -25,12 +22,13 @@ CFLAGS+=	-Os
 
 MAKE_JOBS_UNSAFE=	yes
 
-# Compilation Options For SQLite http://www.sqlite.org/compile.html
+# Compilation Options For SQLite https://www.sqlite.org/compile.html
 OPTIONS_DEFINE=	FTS4 UPD_DEL_LIMIT URI URI_AUTHORITY SOUNDEX METADATA \
 		DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS \
-		EXTENSION READLINE ARMOR STMT DBSTAT FTS5 JSON1 RBU
+		EXTENSION ARMOR STMT DBSTAT FTS5 JSON1 RBU \
+		LIKENOTBLOB STSHELL
 OPTIONS_SINGLE=	RAMT
-OPTIONS_RADIO=	STAT
+OPTIONS_RADIO=	STAT RL
 OPTIONS_GROUP=	UNICODE RTREEG
 
 UPD_DEL_LIMIT_DESC=	ORDER BY and LIMIT on UPDATE and DELETE
@@ -43,26 +41,31 @@ MEMMAN_DESC=		Allows it to release unused memory
 SECURE_DELETE_DESC=	Overwrite deleted information with zeros
 UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
 EXTENSION_DESC=		Allow loadable extensions
+STSHELL_DESC=		Statically link libsqlite3 into shell
 
-# http://www.sqlite.org/compile.html#enable_api_armor
+# https://sqlite.org/compile.html#like_doesnt_match_blobs
+LIKENOTBLOB_DESC=	LIKE does not match blobs
+
+# https://www.sqlite.org/compile.html#enable_api_armor
 ARMOR_DESC=		Detect misuse of the API
 
-# http://www.sqlite.org/fts3.html
+# https://www.sqlite.org/fts3.html
+# https://www.sqlite.org/compile.html#enable_fts3_parenthesis
 FTS4_DESC=		Enable FTS3/4 (Full Text Search) module
 
-# http://www.sqlite.org/fts5.html
+# https://www.sqlite.org/fts5.html
 FTS5_DESC=		Enable version 5 full-text search engine
 
-# http://www.sqlite.org/json1.html
+# https://www.sqlite.org/json1.html
 JSON1_DESC=		Enable the JSON1 extension
 
-# http://www.sqlite.org/rbu.html
+# https://www.sqlite.org/rbu.html
 RBU_DESC=		Enable the Resumable Bulk Update
 
-# http://www.sqlite.org/c3ref/stmt_scanstatus.html
+# https://www.sqlite.org/c3ref/stmt_scanstatus.html
 STMT_DESC=		Prepared Statement Scan Status
 
-# http://www.sqlite.org/tempfiles.html#tempstore
+# https://www.sqlite.org/tempfiles.html#tempstore
 OPTIONS_SINGLE_RAMT=	TS0 TS1 TS2 TS3
 RAMT_DESC=		Where to store temporary file
 TS0_DESC=		Always use temporary file
@@ -70,28 +73,34 @@ TS1_DESC=		File by default, change allowed PRAGMA
 TS2_DESC=		Memory by default, change allowed PRAGMA
 TS3_DESC=		Always use memory
 
-# http://www.sqlite.org/queryplanner-ng.html#qpstab
+# https://www.sqlite.org/queryplanner-ng.html#qpstab
 OPTIONS_RADIO_STAT=	STAT3 STAT4
-STAT_DESC=		Which query planner to use
+STAT_DESC=		Which query planner to use, Stability or ...
 STAT3_DESC=		collect histogram data from leftmost column
 STAT4_DESC=		collect histogram data from all columns
 
-# http://www.sqlite.org/dbstat.html
+# https://www.sqlite.org/dbstat.html
 DBSTAT_DESC=		Enable DBSTAT Virtual Table
 
-# http://www.sqlite.org/fts3.html#tokenizer
+# https://www.sqlite.org/fts3.html#tokenizer
 OPTIONS_GROUP_UNICODE=	ICU UNICODE61
 UNICODE_DESC=		Unicode support
 UNICODE61_DESC=		Unicode Version 6.1 tokenizer
 
-# http://www.sqlite.org/rtree.html
+# https://www.sqlite.org/rtree.html
 OPTIONS_GROUP_RTREEG=	RTREE RTREE_INT
 RTREEG_DESC=		Index type for range queries
 RTREE_DESC=		Enable R*Tree module
 RTREE_INT_DESC=		Store 32-bit sig int (no float) coordinates
 
+OPTIONS_RADIO_RL=	READLINES READLINEP EDITLINE
+RL_DESC=		Which command line editing library to use:
+READLINES_DESC=		the libreadline from system
+READLINEP_DESC=		the GNU libreadline from ports
+EDITLINE_DESC=		the BSD libedit from ports
+
 OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS \
-			EXTENSION TS1 UNICODE61 RTREE READLINE DBSTAT
+			EXTENSION TS1 UNICODE61 RTREE DBSTAT STSHELL
 # SECURE_DELETE, UNLOCK_NOTIFY, DBSTAT (since 41.0) used by www/firefox et al.
 # RTREE used by graphics/mapnik, databases/spatialite
 
@@ -107,12 +116,6 @@ PLIST_FILES=	bin/sqlite3 include/sqlite3.h include/sqlite3ext.h \
 CPPFLAGS+=		-DSQLITE_DEFAULT_FILE_PERMISSIONS=${DEFAULT_FILE_PERMISSIONS}
 .endif
 
-# This macro sets the default size of the page-cache for temporary files
-# created by SQLite to store intermediate results, in pages.
-.ifdef TEMP_CACHE_SIZE
-CPPFLAGS+=		-DSQLITE_DEFAULT_TEMP_CACHE_SIZE=${TEMP_CACHE_SIZE}
-.endif
-
 # Use an in-ram database for temporary tables (never,no,yes,always),
 TS0_CPPFLAGS=	-DSQLITE_TEMP_STORE=0
 TS1_CPPFLAGS=	-DSQLITE_TEMP_STORE=1
@@ -122,7 +125,7 @@ TS3_CPPFLAGS=	-DSQLITE_TEMP_STORE=3
 RTREE_CPPFLAGS=	-DSQLITE_ENABLE_RTREE=1
 RTREE_INT_CPPFLAGS=	-DSQLITE_RTREE_INT_ONLY=1
 
-FTS4_CPPFLAGS=	-DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_FTS3_PARENTHESIS=1 -DSQLITE_ENABLE_FTS4=1
+FTS4_CPPFLAGS=	-DSQLITE_ENABLE_FTS3_PARENTHESIS=1 -DSQLITE_ENABLE_FTS4=1
 SOUNDEX_CPPFLAGS=	-DSQLITE_SOUNDEX=1
 MEMMAN_CPPFLAGS=	-DSQLITE_ENABLE_MEMORY_MANAGEMENT=1
 UPD_DEL_LIMIT_CPPFLAGS=	-DSQLITE_ENABLE_UPDATE_DELETE_LIMIT=1
@@ -150,14 +153,22 @@ ICU_LDFLAGS=	`${LOCALBASE}/bin/icu-config --ldflags`
 
 UNICODE61_CPPFLAGS_OFF=	-DSQLITE_DISABLE_FTS3_UNICODE=1
 
-READLINE_CONFIGURE_ENABLE=	readline
-READLINE_USES=	readline
+READLINES_CONFIGURE_ON=	--enable-readline
+READLINES_USES=	readline
+READLINEP_CONFIGURE_ON=	--enable-readline
+READLINEP_USES=	readline:port
+EDITLINE_CONFIGURE_ENABLE=	editline
+EDITLINE_USES=	libedit
 
 FTS5_CONFIGURE_ENABLE=	fts5
 
 JSON1_CONFIGURE_ENABLE=	json1
 
 RBU_CPPFLAGS=	-DSQLITE_ENABLE_RBU=1
+
+LIKENOTBLOB_CPPFLAGS=	-DSQLITE_LIKE_DOESNT_MATCH_BLOBS=1
+
+STSHELL_CONFIGURE_ENABLE=	static-shell
 
 .include <bsd.port.options.mk>
 

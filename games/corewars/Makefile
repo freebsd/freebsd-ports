@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%2C%20tar.gz%29/${PORTVERSIO
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulation game where the goal is to crash each other's programs
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone

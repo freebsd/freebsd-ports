@@ -9,7 +9,7 @@ CATEGORIES=	devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Machine learning system
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 
 BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir \
 		ocaml-cfg>0:${PORTSDIR}/devel/ocaml-cfg \

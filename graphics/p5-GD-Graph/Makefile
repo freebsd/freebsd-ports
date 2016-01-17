@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	GD-Graph
-PORTVERSION=	1.49
+PORTVERSION=	1.51
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	GDGraph-${DISTVERSION}
+DISTNAME=	GDGraph-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Graph plotting module for perl5
@@ -17,7 +17,9 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0.40:${PORTSDIR}/devel/p5-Test-Exception
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

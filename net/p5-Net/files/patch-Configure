@@ -1,5 +1,5 @@
---- ./Configure.orig	2014-05-31 00:05:23.000000000 +0200
-+++ ./Configure	2014-07-26 12:24:59.000000000 +0200
+--- Configure.orig	2014-05-30 22:05:23 UTC
++++ Configure
 @@ -267,8 +267,7 @@
  Do you want to modify/update your configuration (y|n) ?
  EDQ

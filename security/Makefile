@@ -50,6 +50,7 @@
     SUBDIR += calife
     SUBDIR += ccrypt
     SUBDIR += ccsrch
+    SUBDIR += certificate-transparency
     SUBDIR += cfs
     SUBDIR += cfv
     SUBDIR += chaosreader
@@ -109,6 +110,7 @@
     SUBDIR += dsniff
     SUBDIR += duo
     SUBDIR += easy-rsa
+    SUBDIR += easy-rsa2
     SUBDIR += easypg
     SUBDIR += elixir-comeonin
     SUBDIR += elixir-comeonin_i18n
@@ -797,6 +799,7 @@
     SUBDIR += py-Products.PlonePAS
     SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
+    SUBDIR += py-scrypt
     SUBDIR += py-SecretStorage
     SUBDIR += py-acme
     SUBDIR += py-artifacts
@@ -849,6 +852,7 @@
     SUBDIR += py-pyaff4
     SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto
+    SUBDIR += py-pycryptodome
     SUBDIR += py-pycryptopp
     SUBDIR += py-pydeep
     SUBDIR += py-pyelliptic
@@ -856,6 +860,7 @@
     SUBDIR += py-pymacaroons-pynacl
     SUBDIR += py-pyme
     SUBDIR += py-pynacl
+    SUBDIR += py-pyotp
     SUBDIR += py-pyptlib
     SUBDIR += py-pysaml2
     SUBDIR += py-pyscard

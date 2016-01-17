@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xlib implementation of an attractive, configurable clock
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 

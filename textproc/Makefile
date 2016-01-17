@@ -159,6 +159,8 @@
     SUBDIR += elasticsearch-plugin-sql
     SUBDIR += elasticsearch-river-rabbitmq
     SUBDIR += elasticsearch2
+    SUBDIR += elasticsearch2-plugin-hq
+    SUBDIR += elasticsearch2-plugin-sql
     SUBDIR += elixir-earmark
     SUBDIR += elixir-ex_doc
     SUBDIR += elixir-funnel
@@ -1225,10 +1227,10 @@
     SUBDIR += py-feedparser
     SUBDIR += py-genshi
     SUBDIR += py-genshi-devel
-    SUBDIR += py-gettext
     SUBDIR += py-hexdump
     SUBDIR += py-html2text
     SUBDIR += py-hyperestraier-python
+    SUBDIR += py-hypua2jamo
     SUBDIR += py-jaxml
     SUBDIR += py-junit-xml
     SUBDIR += py-libtre
@@ -1251,6 +1253,7 @@
     SUBDIR += py-pyes
     SUBDIR += py-pygments
     SUBDIR += py-pygtail
+    SUBDIR += py-pyhwp
     SUBDIR += py-pyphen
     SUBDIR += py-pyscss
     SUBDIR += py-pysrt
@@ -1258,6 +1261,7 @@
     SUBDIR += py-pystemmer
     SUBDIR += py-python-augeas
     SUBDIR += py-python-docx
+    SUBDIR += py-python-gettext
     SUBDIR += py-pytidylib
     SUBDIR += py-pyx12
     SUBDIR += py-qrcode
@@ -1373,6 +1377,7 @@
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
     SUBDIR += rubygem-autoprefixer-rails
+    SUBDIR += rubygem-babosa
     SUBDIR += rubygem-charlock_holmes
     SUBDIR += rubygem-coderay
     SUBDIR += rubygem-colorator
@@ -1389,6 +1394,7 @@
     SUBDIR += rubygem-elasticsearch
     SUBDIR += rubygem-elasticsearch-api
     SUBDIR += rubygem-elasticsearch-transport
+    SUBDIR += rubygem-emot
     SUBDIR += rubygem-escape_utils
     SUBDIR += rubygem-escape_utils-rails4
     SUBDIR += rubygem-ezamar

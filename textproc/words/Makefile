@@ -11,12 +11,7 @@ DISTNAME=	${PORTNAME}all
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Latin-English Dictionary Program
 
-LICENSE=	public
-LICENSE_NAME=	Public Domain
-LICENSE_TEXT=	All parts of the WORDS system, source code and data files, \
-		are made freely available to anyone that wishes to use them, \
-		for whatever purpose.
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	PD
 
 USES=		ada zip
 NO_WRKSUBDIR=	yes

@@ -10,12 +10,11 @@ MASTER_SITES=	SF/presage/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent predictive text entry platform
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
-USES=		libtool pkgconfig
-USE_SQLITE=	3
+USES=		libtool pkgconfig sqlite
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \
 		ac_cv_path_PYTHON=no \

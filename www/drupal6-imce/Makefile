@@ -52,5 +52,6 @@ MODULE_FILES=	translations/uk.po \
 		css/collapsed.png
 
 DOC_FILES=	README.txt LICENSE.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

@@ -11,7 +11,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/67068999/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for processing STL triangulated solid meshes
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	DOCS
 

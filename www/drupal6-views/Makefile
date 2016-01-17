@@ -395,6 +395,7 @@ MODULE_FILES=	css/views-admin.css \
 
 DOC_FILES=	LICENSE.txt README.txt CHANGELOG.txt \
 		documentation-standards.txt
+OPTIONS_DEFINE=	DOCS
 
 ## Maintenance targets for creating lists of directories and files.
 module-dirs: patch

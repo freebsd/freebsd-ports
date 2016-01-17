@@ -24,7 +24,6 @@ RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc \
 		rzip:${PORTSDIR}/archivers/rzip \
 		unace:${PORTSDIR}/archivers/unace \
 		unrar:${PORTSDIR}/archivers/unrar \
-		unzip:${PORTSDIR}/archivers/unzip \
 		zoo:${PORTSDIR}/archivers/zoo \
 		flac:${PORTSDIR}/audio/flac
 
@@ -46,5 +45,6 @@ do-install:
 	${RM} -rf ${WRKSRC}/../${PORTNAME}-archive-1.6/${i}
 .endfor
 	@cd ${WRKDIR}/${PORTNAME}-archive-1.6/x/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	@${FIND} ${STAGEDIR}${DATADIR} -type f -exec ${CHMOD} +x {} \;
 
 .include <bsd.port.mk>

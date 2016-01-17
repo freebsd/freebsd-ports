@@ -1,6 +1,12 @@
---- samples/rc.d-iked.in.orig	2005-10-28 15:33:16.000000000 +0900
-+++ samples/rc.d-iked.in	2008-04-17 15:11:55.000000000 +0900
-@@ -14,10 +14,10 @@
+--- samples/rc.d-iked.in.orig	2005-10-28 06:33:16 UTC
++++ samples/rc.d-iked.in
+@@ -10,14 +10,16 @@
+ 
+ . /etc/rc.subr
+ 
++: ${iked_enable="NO"}
++
+ prefix=@prefix@
  exec_prefix=@exec_prefix@
  
  name="iked"

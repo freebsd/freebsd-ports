@@ -11,7 +11,7 @@ MASTER_SITES=	BERLIOS \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D downhill racing game... kind of like TuxRacer Improved
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \

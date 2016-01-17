@@ -3,14 +3,14 @@
 #   $MCom: ports/finance/gnucash-docs/Makefile,v 1.7 2007/08/04 03:51:29 marcus Exp $
 
 PORTNAME=	gnucash-docs
-PORTVERSION=	2.6.10
+PORTVERSION=	2.6.11
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/gnucash/${PORTNAME}/${PORTVERSION} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
 		http://www.linas.org/pub/
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Documentation for gnucash
 
 LIB_DEPENDS=	librarian.so:${PORTSDIR}/textproc/rarian

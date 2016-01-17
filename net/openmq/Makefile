@@ -27,12 +27,16 @@ USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6 1.7
 JAVA_VENDOR=	openjdk
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/mq
 PLIST=		${WRKDIR}/pkg-plist
 MAKE_ENV+=	ANT_OPTS=-Xmx1g
 
 .ifndef IMQ_CLIENT
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 .endif
 
@@ -42,8 +46,6 @@ USE_RC_SUBR=	imq
 .else
 SUB_FILES=	pkg-message
 .endif
-
-.include <bsd.port.options.mk>
 
 # Get the bootstrap jars in place before the build starts, because
 # pointyhat doesn't allow them to be downloaded by the "bootstrap"
@@ -67,25 +69,8 @@ pre-install:
 .ifndef IMQ_CLIENT
 		@cd ${WRKSRC}/dist/mq && ${FIND} bin lib -type f -exec \
 			${ECHO_CMD} "imq/{}" \; > ${PLIST}
-		@cd ${WRKSRC}/dist/mq && ${FIND} -d bin lib -type d -exec \
-			${ECHO_CMD} "@dirrm imq/{}" \; >> ${PLIST}
 		@cd ${WRKSRC}/dist/mq && ${FIND} etc -depth 1 -type f -print | \
 			${SED} -e "\-/-s--/mq/-" >> ${PLIST}
-		@${ECHO_CMD} "@dirrmtry etc/mq" >> ${PLIST}
-
-		@cd ${WRKSRC}/dist/mq && ${FIND} javadoc -type f -print | \
-			${SED} -e "/^javadoc/s//%%PORTDOCS%%%%DOCSDIR%%/" >> ${PLIST}
-		@cd ${WRKSRC}/dist/mq && ${FIND} -d javadoc -mindepth 1 -type d -print | \
-			${SED} -e "/^javadoc/s//%%PORTDOCS%%@dirrm %%DOCSDIR%%/" >> ${PLIST}
-		@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
-
-		@cd ${WRKSRC}/dist/mq && ${FIND} examples -type f -print | \
-			${SED} -e "/^examples/s//%%PORTEXAMPLES%%%%EXAMPLESDIR%%/" >> ${PLIST}
-		@cd ${WRKSRC}/dist/mq && ${FIND} -d examples -mindepth 1 -type d -print | \
-			${SED} -e "/^examples/s//%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/" >> ${PLIST}
-		@${ECHO_CMD} "%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%" >> ${PLIST}
-
-		@${ECHO_CMD} "@dirrmtry imq" >> ${PLIST}
 .else
 		@${ECHO_CMD} "%%JAVAJARDIR%%/jms.jar" > ${PLIST}
 		@${ECHO_CMD} "%%JAVAJARDIR%%/imq.jar" >> ${PLIST}
@@ -103,16 +88,6 @@ do-install:
 		@cd ${WRKSRC}/dist/mq/etc && ${FIND} . -depth 1 -type f | \
 			${CPIO} --quiet -pdmu -R ${BINOWN}:${BINGRP} ${STAGEDIR}${PREFIX}/etc/mq
 		@${CHMOD} 640 ${STAGEDIR}${PREFIX}/etc/mq/*.sample
-.if ${PORT_OPTIONS:MDOCS}
-		@${MKDIR} ${STAGEDIR}${DOCSDIR}
-		@cd ${WRKSRC}/dist/mq/javadoc && ${FIND} . | \
-			${CPIO} --quiet -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-		@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-		@cd ${WRKSRC}/dist/mq/examples && ${FIND} . | \
-			${CPIO} --quiet -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 .else
 		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/imq.jar ${STAGEDIR}${JAVAJARDIR}
 		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/jms.jar ${STAGEDIR}${JAVAJARDIR}
@@ -120,5 +95,15 @@ do-install:
 		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/jaxm-api.jar ${STAGEDIR}${JAVAJARDIR}
 		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/imqxm.jar ${STAGEDIR}${JAVAJARDIR}
 .endif
+
+do-install-DOCS-on:
+		@${MKDIR} ${STAGEDIR}${DOCSDIR}
+		@cd ${WRKSRC}/dist/mq/javadoc && ${FIND} . | \
+			${CPIO} --quiet -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+		@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+		@cd ${WRKSRC}/dist/mq/examples && ${FIND} . | \
+			${CPIO} --quiet -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4-based advanced keyboard layout switcher
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libxkbfile.so:${PORTSDIR}/x11/libxkbfile
 

@@ -33,6 +33,8 @@ do-install:
 		-e 's|%%PREFIX%%|${PREFIX}|' \
 		${FILESDIR}/asdf-init.lisp > \
 		${STAGEDIR}${PREFIX}/etc/asdf-init.lisp.default
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

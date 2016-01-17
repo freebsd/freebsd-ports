@@ -10,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Library Provide Complete Braille Transcription Services
 
-LICENSE=	LGPL3 GPLv3 # or later
+LICENSE=	LGPL3+ GPLv3+
 LICENSE_COMB=	multi
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash

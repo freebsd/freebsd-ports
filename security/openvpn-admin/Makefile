@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend to openvpn
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	openvpn:${PORTSDIR}/security/openvpn

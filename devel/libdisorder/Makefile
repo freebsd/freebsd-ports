@@ -9,7 +9,7 @@ MASTER_SITES=	http://libdisorder.freshdefense.net/releases/
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Simple C library for entropy measurement
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_LDCONFIG=	yes

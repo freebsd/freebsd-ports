@@ -9,7 +9,7 @@ MASTER_SITES=	SF/hanstunnel/source
 MAINTAINER=	vsityz@gmail.com
 COMMENT=	Hans makes it possible to tunnel IPv4 through ICMP
 
-LICENSE=	FPL GPLv3 # or any later version
+LICENSE=	FPL GPLv3+
 LICENSE_COMB=	multi
 LICENSE_NAME_FPL=Freeware Public License
 LICENSE_FILE_FPL=${WRKSRC}/src/sha1_license.txt

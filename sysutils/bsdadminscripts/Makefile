@@ -13,6 +13,7 @@ COMMENT=	Collection of administration scripts
 LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 TMP?=	/tmp
 VAR?=	/var
@@ -24,11 +25,7 @@ OPTIONS_DEFINE=	DOCS
 SUB_FILES=	distviper pkg_libchk pkg_upgrade uma
 SUB_LIST=	TMP=${TMP} PREFIX=${PREFIX} VAR=${VAR} PORTS=${PORTSDIR}
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDOCS}
-EVALDOCS=	-nodoc
-.endif
+DOCS_VARS_OFF=	EVALDOCS=-nodoc
 
 do-install:
 	cd ${WRKSRC}/src && ${SH} install.sh \
@@ -56,13 +53,8 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/*.sample ${STAGEDIR}${ETCDIR}
 	${RM} -rf ${STAGEDIR}${PREFIX}/etc/*.sample
 
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
-
-plist:
-	cd ${WRKSRC}/src && ${SH} plist.sh > ${PLIST}
-		${ECHO} "@dirrm ${DATADIR_REL}" >> ${PLIST}
 
 .include <bsd.port.mk>

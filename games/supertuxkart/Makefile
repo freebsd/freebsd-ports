@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free 3D kart racing game
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \

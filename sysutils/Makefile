@@ -31,6 +31,7 @@
     SUBDIR += anacron
     SUBDIR += and
     SUBDIR += ansible
+    SUBDIR += ansible1
     SUBDIR += apachetop
     SUBDIR += apcpwr
     SUBDIR += apcupsd
@@ -126,6 +127,7 @@
     SUBDIR += cfengine-masterfiles
     SUBDIR += cfengine-masterfiles36
     SUBDIR += cfengine-masterfiles37
+    SUBDIR += cfengine-masterfiles38
     SUBDIR += cfengine22
     SUBDIR += cfengine32
     SUBDIR += cfengine33
@@ -133,6 +135,7 @@
     SUBDIR += cfengine35
     SUBDIR += cfengine36
     SUBDIR += cfengine37
+    SUBDIR += cfengine38
     SUBDIR += chgrep
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon

@@ -13,8 +13,6 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Old-school, puzzle game similar to Solomon's Key
 
 LICENSE=	PD
-LICENSE_NAME=	Public Domain
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game

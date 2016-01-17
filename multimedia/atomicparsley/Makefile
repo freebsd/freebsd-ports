@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line program for reading parsing and setting MP4/M4A metadata
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		zip

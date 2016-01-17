@@ -11,7 +11,7 @@ MASTER_SITES=	SUNSITE/apps/sound/recorders \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to record and playback raw audio data
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/copyright
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

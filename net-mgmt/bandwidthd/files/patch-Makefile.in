@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2005-01-11 21:15:49 UTC
++++ Makefile.in
+@@ -41,7 +41,7 @@ install: all
+ 	@INSTALL@ -d $(DESTDIR)$(exec_prefix)/bandwidthd/etc
+ 	@INSTALL@ -d $(DESTDIR)$(exec_prefix)/bandwidthd/htdocs
+ 	@INSTALL@ -m755 -s bandwidthd $(DESTDIR)$(exec_prefix)/bandwidthd	
+-	if [ ! -f $(DESTDIR)$(exec_prefix)/bandwidthd/etc/bandwidthd.conf ] ; then @INSTALL@ -m644 etc/bandwidthd.conf $(DESTDIR)$(exec_prefix)/bandwidthd/etc/ ; fi
++	@INSTALL@ -m644 etc/bandwidthd.conf $(DESTDIR)$(exec_prefix)/bandwidthd/etc/bandwidthd.conf.sample
+ 	@INSTALL@ -m644 htdocs/legend.gif $(DESTDIR)$(exec_prefix)/bandwidthd/htdocs
+ 	@INSTALL@ -m644 htdocs/logo.gif $(DESTDIR)$(exec_prefix)/bandwidthd/htdocs
+ 

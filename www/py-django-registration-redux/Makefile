@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-registration-redux
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	User-registration application for Django
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.4:${PORTSDIR}/www/py-django18
 
 NO_ARCH=	yes
 USES=		python

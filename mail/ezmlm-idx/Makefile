@@ -52,7 +52,7 @@ PLIST_SUB+=	MYSQL="@comment " PGSQL="" SQLITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
+USES+=		sqlite
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include
 EXTRACT_LIB+=	-L${LOCALBASE}/lib -lsqlite3
 ALL_TARGET+=	sqlite3

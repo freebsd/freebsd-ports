@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.foofus.net/~jmk/tools/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speedy, massively parallel, modular, login brute-forcer
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2

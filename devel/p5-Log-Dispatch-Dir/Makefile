@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch-Dir
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Log messages to separate files in a directory, with rotate options
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-File-Slurp-Tiny>=0:${PORTSDIR}/devel/p5-File-Slurp-Tiny \
 		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \

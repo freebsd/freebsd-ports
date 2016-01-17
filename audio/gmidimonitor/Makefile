@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.gna.org/gmidimonitor/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ application that shows MIDI events
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \

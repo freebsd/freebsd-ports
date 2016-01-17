@@ -2,24 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	Getopt-Lucid
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	1.06
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	Getopt::Lucid - Clear, readable syntax for command line processing
+COMMENT=	Clear, readable syntax for command line processing
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Exception-Class-TryCatch>=1.10:${PORTSDIR}/devel/p5-Exception-Class-TryCatch \
-		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
-		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp
-RUN_DEPENDS=	p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Storable>=2.16:${PORTSDIR}/devel/p5-Storable
+BUILD_DEPENDS=	p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Exception-Class-TryCatch>=1.10:${PORTSDIR}/devel/p5-Exception-Class-TryCatch
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

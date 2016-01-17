@@ -11,7 +11,7 @@ MASTER_SITES=	GENTOO \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Orbital simulator
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:tgz

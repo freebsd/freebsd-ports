@@ -11,7 +11,7 @@ MASTER_SITES=	https://launchpad.net/procenv/trunk/${PORTVERSION}/+download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to show process environment
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xmlwf:${PORTSDIR}/textproc/expat2

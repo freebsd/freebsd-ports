@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	28
 MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Server)
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \

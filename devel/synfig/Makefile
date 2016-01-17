@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/source
 MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Vector based 2D animation package
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	etl>=0.04.19_1:${PORTSDIR}/devel/etl
 LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs \

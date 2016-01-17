@@ -15,7 +15,7 @@ COMMENT=	Educational typing tutor starring Tux the Linux Penguin
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed

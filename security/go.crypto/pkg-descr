@@ -1,4 +1,4 @@
 go.crypto contains additional packages dealing with cryptography for Go, such
 as bcrypt, blowfish, openpgp and ssh.
 
-WWW: http://code.google.com/p/go/source/browse?repo=crypto
+WWW: https://godoc.org/golang.org/x/crypto

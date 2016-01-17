@@ -10,7 +10,7 @@ MASTER_SITES=	SF/winfingerprint/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates packets to match a list of Cisco PIX access lists
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet

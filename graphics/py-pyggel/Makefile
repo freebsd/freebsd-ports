@@ -14,11 +14,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	koalative@gmail.com
 COMMENT=	Python Graphical Game Engine and Libraries
 
-LICENSE=	LGPL3 Public_Domain
+LICENSE=	LGPL3 PD
 LICENSE_COMB=	dual
-LICENSE_NAME_Public_Domain=	Public Domain
-LICENSE_TEXT_Public_Domain=	Public Domain
-LICENSE_PERMS_Public_Domain=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYGAME} \

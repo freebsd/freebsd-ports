@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turn based, multiplayer strategic game with nice graphics
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip

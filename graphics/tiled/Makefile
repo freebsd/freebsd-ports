@@ -9,8 +9,7 @@ CATEGORIES=	graphics editors games
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	General purpose tile map editor
 
-LICENSE=	GPLv2 # or later
-LICENSE+=	BSD2CLAUSE BSD3CLAUSE
+LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2+
 LICENSE_COMB=	multi
 
 USE_GITHUB=	yes

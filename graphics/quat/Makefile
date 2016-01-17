@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three-dimensional fractal creator (command line only)
 
 BROKEN=		unfetchable
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
 

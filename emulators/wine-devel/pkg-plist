@@ -835,6 +835,7 @@ include/wine/windows/ddk/hidsdi.h
 include/wine/windows/ddk/hidtypes.h
 include/wine/windows/ddk/imm.h
 include/wine/windows/ddk/mountmgr.h
+%%STAGING%%include/wine/windows/ddk/ndis.h
 include/wine/windows/ddk/ntddcdvd.h
 include/wine/windows/ddk/ntddk.h
 include/wine/windows/ddk/ntddser.h
@@ -948,6 +949,7 @@ lib/wine/api-ms-win-ntuser-dc-access-l1-1-0.dll.so
 lib/wine/api-ms-win-security-base-l1-1-0.dll.so
 lib/wine/api-ms-win-security-base-l1-2-0.dll.so
 lib/wine/api-ms-win-security-lsalookup-l1-1-0.dll.so
+%%STAGING%%lib/wine/api-ms-win-security-lsalookup-l1-1-1.dll.so
 lib/wine/api-ms-win-security-sddl-l1-1-0.dll.so
 lib/wine/api-ms-win-service-core-l1-1-1.dll.so
 lib/wine/api-ms-win-service-management-l1-1-0.dll.so
@@ -1210,6 +1212,7 @@ lib/wine/fakedlls/api-ms-win-ntuser-dc-access-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-security-base-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-security-base-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-security-lsalookup-l1-1-0.dll
+%%STAGING%%lib/wine/fakedlls/api-ms-win-security-lsalookup-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-security-sddl-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-service-core-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-service-management-l1-1-0.dll

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycurl
-PORTVERSION=	7.19.5.3
-PORTREVISION=	1
+PORTVERSION=	7.21.5
 CATEGORIES=	ftp python
 MASTER_SITES=	CHEESESHOP \
 		http://pycurl.sourceforge.net/download/ \

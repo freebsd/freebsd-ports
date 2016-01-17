@@ -440,6 +440,10 @@ share/applications/gnucash.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.1999
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2000
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2001
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2002
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2003
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2004
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2005

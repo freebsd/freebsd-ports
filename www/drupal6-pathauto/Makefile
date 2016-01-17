@@ -15,5 +15,6 @@ MODULE_FILES=	pathauto.admin.inc pathauto.inc pathauto.install pathauto.module \
 		pathauto.test pathauto.api.php pathauto.info pathauto.js \
 		pathauto.pathauto.inc pathauto.tokens.inc
 DOC_FILES=	INSTALL.txt API.txt README.txt LICENSE.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

@@ -10,7 +10,7 @@ MASTER_SITES=	CHEESESHOP/source/y/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pronounceable word generator
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python

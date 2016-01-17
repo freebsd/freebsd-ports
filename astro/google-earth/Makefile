@@ -2,7 +2,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	6.0.3.2197
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/advanced/previous/:previous \
@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 OPTIONS_DEFINE=	NVIDIA
 
 USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs curl
+USE_LINUX_APPS=	xorglibs curl nss
 USES=		perl5 shared-mime-info desktop-file-utils
 USE_PERL5=	patch build
 

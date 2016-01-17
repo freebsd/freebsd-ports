@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to detect connectivity between network segments
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-Net-PcapUtils>=0:${PORTSDIR}/net/p5-Net-PcapUtils \

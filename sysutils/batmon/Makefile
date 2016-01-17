@@ -8,7 +8,7 @@ MASTER_SITES=	SAVANNAH/gap
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep battery monitor for laptops
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		gnustep
 USE_GNUSTEP=	back build

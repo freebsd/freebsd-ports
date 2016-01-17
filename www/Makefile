@@ -1493,6 +1493,7 @@
     SUBDIR += py-GinGin
     SUBDIR += py-HTMLgen
     SUBDIR += py-Lightbox
+    SUBDIR += py-MechanicalSoup
     SUBDIR += py-Products.CMFPlone
     SUBDIR += py-Products.PloneLDAP
     SUBDIR += py-Products.TinyMCE
@@ -1590,6 +1591,7 @@
     SUBDIR += py-django16-tastypie
     SUBDIR += py-django17
     SUBDIR += py-django18
+    SUBDIR += py-django19
     SUBDIR += py-django_compressor
     SUBDIR += py-djangotoolbox
     SUBDIR += py-djblets
@@ -2339,7 +2341,6 @@
     SUBDIR += xpi-linkification
     SUBDIR += xpi-live_http_headers
     SUBDIR += xpi-live_pagerank
-    SUBDIR += xpi-locale-switcher
     SUBDIR += xpi-menueditor
     SUBDIR += xpi-mldonkey
     SUBDIR += xpi-modify_headers

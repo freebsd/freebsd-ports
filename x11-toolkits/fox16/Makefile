@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
 
-LICENSE=	LGPL3 # (or later)
+LICENSE=	LGPL3+
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff

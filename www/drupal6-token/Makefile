@@ -21,5 +21,6 @@ MODULE_FILES=	translations/token.pot translations/da.po translations/de.po \
 MODULE_DIRS=	translations
 
 DOC_FILES=	API.txt LICENSE.txt README.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

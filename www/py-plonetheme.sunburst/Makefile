@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plonetheme.sunburst
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.4.7
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,8 @@ COMMENT=	Default theme for Plone 4
 
 LICENSE=	GPLv2
 
+NO_ARCH=	yes
 USES=		python zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

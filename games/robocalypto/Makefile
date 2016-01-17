@@ -17,10 +17,7 @@ EXTRACT_ONLY=	PYGGEL-V${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PYGGEL demo game
 
-LICENSE=	Public_Domain_LICENSE
-LICENSE_NAME=	Public Domain License
-LICENSE_TEXT=	Public Domain
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	PD
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyggel>=0:${PORTSDIR}/graphics/py-pyggel
 

@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Library to provide abstract access to various archives
 
+CONFLICTS_INSTALL=	physfs-[0-9]*
+
 USES=		cmake
 USE_LDCONFIG=	yes
 

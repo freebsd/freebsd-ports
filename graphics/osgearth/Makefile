@@ -21,8 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gwaldron
 
 USE_LDCONFIG=	YES
-USE_SQLITE=	3
-USES=		cmake gmake pkgconfig
+USES=		cmake gmake pkgconfig sqlite
 PLIST_SUB=	OSGVERSION=3.2.1
 
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:PATH=${LOCALBASE}/include \

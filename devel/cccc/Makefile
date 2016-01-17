@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C and C++ Code Counter
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=		gmake
 MAKEFILE=	makefile

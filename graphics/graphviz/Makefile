@@ -296,6 +296,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|GTS_LIBS)|GTS_LIBS) $$(MATH_LIBS)|' \
 		${WRKSRC}/cmd/smyrna/Makefile.in
 	${CP} ${WRKSRC}/lib/cgraph/cgraph.h ${WRKSRC}/plugin/ming/
+.if ${OSVERSION} >= 1100093
+	${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \
+		${WRKSRC}/lib/sfio/*.[ch]
+.endif
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's| install-txtDATA$$||' \
 		${WRKSRC}/Makefile.in

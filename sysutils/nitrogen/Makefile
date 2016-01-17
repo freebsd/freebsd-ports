@@ -10,7 +10,7 @@ MASTER_SITES=	http://projects.l3ib.org/nitrogen/files/
 MAINTAINER=	corentin@ralite.com
 COMMENT=	Background browser and setter for X windows
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	gnome-icon-theme>0:${PORTSDIR}/misc/gnome-icon-theme \

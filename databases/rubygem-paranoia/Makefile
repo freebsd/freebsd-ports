@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paranoia
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

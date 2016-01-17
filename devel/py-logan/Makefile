@@ -3,6 +3,7 @@
 
 PORTNAME=	logan
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,8 +12,8 @@ COMMENT=	Logan is a toolkit for running standalone Django applications
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:${PORTSDIR}/www/py-django18
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:${PORTSDIR}/www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}nose>=1.1.2:${PORTSDIR}/devel/py-nose
 

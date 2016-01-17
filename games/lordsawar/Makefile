@@ -8,7 +8,7 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Warlords II clone
 
-LICENSE=	GPLv3 # (or later)
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lib gettext gmake libarchive pkgconfig

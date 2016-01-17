@@ -4,7 +4,7 @@
  #endif
  		break;
  	case 3: /* SSLv3 protocol */
-+#ifdef OPENSSL_NO_SSL3
++#if defined(OPENSSL_NO_SSL3)
 +		printf(("%s\n", _("CRITICAL - SSL protocol version 3 is not supported by your SSL library.")));
 +		return STATE_CRITICAL;
 +#else

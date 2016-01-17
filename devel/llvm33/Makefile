@@ -137,7 +137,9 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "arm"
+.if ${ARCH} == "aarch64"
+BROKEN=		Does not compile on aarch64
+.elif ${ARCH} == "arm"
 BROKEN=		Does not compile on arm
 .elif ${ARCH} == "sparc64"
 BROKEN=		does not compile on sparc64
@@ -258,13 +260,6 @@ build-plist:
 	${FIND} ${STAGEDIR}${DOCSDIR} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
 	    ${SORT} >> ${PLIST}
-	${FIND} ${STAGEDIR}${LLVM_PREFIX} -type d | \
-	    ${SED} -e 's|${STAGEDIR}${PREFIX}/||' | \
-	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
-	echo "%%LIT%%@dirrm %%PYTHON_SITELIBDIR%%/lit${LLVM_SUFFIX}" >> ${PLIST}
-	${FIND} ${STAGEDIR}${DOCSDIR} -type d | \
-	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' | \
-	    ${SORT} -r >> ${PLIST}
 
 .if make(svn-patch)
 .if !defined(PATCH_REV)

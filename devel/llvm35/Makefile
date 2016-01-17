@@ -142,6 +142,10 @@ NOT_FOR_ARCH=	ia64
 BROKEN=	CMake support only works with clang
 .endif
 
+.if ${ARCH} == "aarch64"
+BROKEN=		Does not compile on aarch64
+.endif
+
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--enable-pic --with-pic
 .endif

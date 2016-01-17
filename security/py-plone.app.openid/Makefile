@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.openid
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.openid>=0:${PORTSDIR}/security/py-plon
 		${PYTHON_PKGNAMEPREFIX}Products.PlonePAS>=2.0.10:${PORTSDIR}/security/py-Products.PlonePAS \
 		${PYTHON_PKGNAMEPREFIX}Products.PluggableAuthService>=0:${PORTSDIR}/security/py-Products.PluggableAuthService
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python zip
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

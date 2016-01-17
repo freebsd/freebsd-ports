@@ -13,15 +13,16 @@ MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test bed for `Cons' development
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/bin/cons:${PORTSDIR}/devel/cons
 
+USES=		perl5 tar:tgz
 WRKSRC=		${WRKDIR}/cons-${PORTVERSION}/test
 NO_BUILD=	yes
+NO_ARCH=	yes
 
-USES=		perl5 tar:tgz
 PLIST_SUB=	CONS_VER="${PORTVERSION}" CONS_TEST="${CONS_TEST}"
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-test//}-${PORTVERSION}/test
@@ -51,6 +52,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/${CONS_TEST}/Test/Cmd
 	${INSTALL_MAN} ${WRKSRC}/cons-test.1.gz \
 		${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 

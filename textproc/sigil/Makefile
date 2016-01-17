@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG ePub editor
 
-LICENSE=	GPLv3 # or any later version
+LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libminizip.so:${PORTSDIR}/archivers/minizip \
 		libpcre.so:${PORTSDIR}/devel/pcre \

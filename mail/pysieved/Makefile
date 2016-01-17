@@ -11,7 +11,7 @@ MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Python Managesieve Server
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python tar:bzip2

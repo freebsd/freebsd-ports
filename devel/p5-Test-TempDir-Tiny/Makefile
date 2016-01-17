@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-TempDir-Tiny
-PORTVERSION=	0.004
+PORTVERSION=	0.010
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,7 +11,9 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Temporary directories that stick around when tests fail
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

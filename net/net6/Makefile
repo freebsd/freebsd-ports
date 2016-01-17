@@ -10,7 +10,7 @@ MASTER_SITES=	http://releases.0x539.de/net6/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network access framework for IPv4/IPv6
 
-LICENSE=	LGPL20 # or later (COPYING is LGPL21)
+LICENSE=	LGPL20+ # though COPYING is LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \

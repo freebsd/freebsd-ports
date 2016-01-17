@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	3.7.0
-PORTREVISION=	6
+DISTVERSION=	3.7.1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -40,6 +39,7 @@ OPTIONS_SUB=	yes
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-fformat_extensions.diff \
+	${PATCHDIR}/clang-patch-static-analizer.diff \
 	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt \
 	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format.py \
 	${PATCHDIR}/clang-patch-svn-250416
@@ -144,8 +144,12 @@ COMMANDS+=	clang \
 		clang-check \
 		clang-cpp \
 		clang-format \
-		clang-tblgen
-MAN1SRCS+=	clang.1
+		clang-tblgen \
+		scan-build \
+		scan-view
+MAN1SRCS+=	clang.1 \
+		scan-build.1
+CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer)
 .endif
 
 .if ${PORT_OPTIONS:MEXTRAS}
@@ -256,6 +260,21 @@ EXTRA_PATCHES+= \
 
 post-extract-CLANG-on:
 	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
+	${MKDIR} ${PATCH_WRKSRC}/tools/clang/tools/scan-view/share
+	cd ${PATCH_WRKSRC}/tools/clang/tools/scan-view && \
+	    ${MV} Resources/bugcatcher.ico Resources/FileRadar.scpt \
+	    Resources/GetRadarVersion.scpt share
+	${RM} ${PATCH_WRKSRC}/tools/clang/tools/scan-build/sorttable.js
+	${RM} ${PATCH_WRKSRC}/tools/clang/tools/scan-build/scanview.css
+	${RM} ${PATCH_WRKSRC}/tools/clang/tools/scan-build/set-xcode-analyzer
+	${RM} ${PATCH_WRKSRC}/tools/clang/tools/scan-build/scan-build.1
+	${RM} ${PATCH_WRKSRC}/tools/clang/tools/scan-build/scan-build.*
+	${RM} ${PATCH_WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer.*
+	${RM} ${PATCH_WRKSRC}/tools/clang/tools/scan-build/c++-analyzer.*
+	${RM} ${PATCH_WRKSRC}/tools/clang/tools/scan-view/Reporter.py
+	${RM} ${PATCH_WRKSRC}/tools/clang/tools/scan-view/ScanView.py
+	${RM} ${PATCH_WRKSRC}/tools/clang/tools/scan-view/scan-view
+	${RM} ${PATCH_WRKSRC}/tools/clang/tools/scan-view/startfile.py
 
 post-extract-EXTRAS-on:
 	${MV} ${WRKSRC_extras} ${PATCH_WRKSRC}/tools/clang/tools/extra
@@ -365,7 +384,7 @@ build-plist:
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	awk '{ \
-	    if ($$0 ~ /clang/ && $$0 !~ /(omp.h|libclang_rt|sanitizer|blacklist.txt|${EXTRAS_PATTERN})/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(omp.h|libclang_rt|sanitizer|blacklist.txt|${EXTRAS_PATTERN})/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /(sanitizer|blacklist.txt)/) {printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \

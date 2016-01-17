@@ -10,7 +10,7 @@ MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/Plugins/ \
 PKGNAMEPREFIX=	gkrellm-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAINTAINER=	ports@FreeBSD.org

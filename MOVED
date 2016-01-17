@@ -6609,7 +6609,6 @@ graphics/mingplot||2014-09-01|Not staged
 graphics/orca||2014-09-01|Not staged
 graphics/php5-chartdirector||2014-09-01|Not staged
 graphics/ruby-rmagick||2014-09-01|Not staged
-graphics/sane-epkowa||2014-09-01|Not staged
 graphics/uDrawGraph||2014-09-01|Not staged
 graphics/visionworkbench||2014-09-01|Not staged
 irc/bobot++||2014-09-01|Not staged
@@ -8100,3 +8099,6 @@ devel/msp430-gcc|devel/gcc-msp430-ti-toolchain|2016-01-08|Has expired: Obsolete.
 devel/msp430mcu|devel/gcc-msp430-ti-toolchain|2016-01-08|Has expired: Obsolete. Please, use devel/gcc-msp430-ti-toolchain
 devel/msp430-libc|devel/gcc-msp430-ti-toolchain|2016-01-08|Has expired: Obsolete. Please, use devel/gcc-msp430-ti-toolchain
 devel/msp430-binutils|devel/gcc-msp430-ti-toolchain|2016-01-08|Has expired: Obsolete. Please, use devel/gcc-msp430-ti-toolchain
+devel/e_dbus||2016-01-15|Has expired: Not used anymore by x11-wm/enlightenment
+www/xpi-locale-switcher||2016-01-15|Has expired: incompatible with Firefox 34 (and later presumably)
+textproc/py-gettext|textproc/py-python-gettext|2016-01-16|Renamed to match upstream name

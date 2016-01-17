@@ -191,6 +191,10 @@ CFLAGS+=		-DMDB_DSYNC=O_SYNC -Dfdatasync=fsync
 
 .if !${PORT_OPTIONS:MFETCH}
 CONFIGURE_ARGS+=	--without-fetch
+.else
+. if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != "" || defined(WITH_OPENSSL_PORT)
+BROKEN=	using OpenSSL from ports and OPTION FETCH together is not supported
+. endif
 .endif
 
 .if ${PORT_OPTIONS:MSASL}

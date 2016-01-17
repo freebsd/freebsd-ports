@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.buzuluk.cz/pub/alo/knutclient/stable/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual client for UPS system NUT
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libqimageblitz.so:${PORTSDIR}/x11/qimageblitz

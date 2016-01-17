@@ -18,8 +18,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 
 USE_GL=		gl glu
 USE_SDL=	sdl
-USE_SQLITE=	3
-USES=		cmake:outsource lua:51 pkgconfig
+USES=		cmake:outsource lua:51 pkgconfig sqlite
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DTOLUA++_APP:STRING="tolua++-${LUA_VER}" \
 		-DTOLUA++_INCLUDE_DIR:STRING="${LUA_INCDIR}" \

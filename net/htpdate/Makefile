@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.vervest.org/htp/archive/c/ \
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Time synchronization over http utility
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USES=	tar:bzip2
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

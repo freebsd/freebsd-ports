@@ -3,7 +3,7 @@
 
 PORTNAME=	squish
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://libsquish.googlecode.com/files/
 
@@ -12,11 +12,12 @@ COMMENT=	Open source DXT compression library
 
 LICENSE=	MIT
 
-USES=		gmake
+USES=		uidfix
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}
 PLIST_FILES=	include/squish.h \
-		lib/libsquish.a
-CXXFLAGS+=	-fPIC -include limits.h
+		lib/libsquish.a lib/libsquish.so.1 lib/libsquish.so
+MAKEFILE=	${FILESDIR}/BSDmakefile
+USE_LDCONFIG=	yes
 
 OPTIONS_RADIO=	RG1
 OPTIONS_RADIO_RG1=	ALTIVEC SSE

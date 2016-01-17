@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.puchalla-online.de/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast command line MP3 editor
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2 readline

@@ -225,37 +225,3 @@ share/applications/conkeror.desktop
 %%DATADIR%%/style/gesso/theme.json
 %%DATADIR%%/style/mono/conkeror--mono.css
 %%DATADIR%%/style/mono/theme.json
-@dir %%DATADIR%%/style/default
-@dir %%DATADIR%%/style/gesso
-@dir %%DATADIR%%/style/mono
-@dir %%DATADIR%%/style
-@dir %%DATADIR%%/search-engines
-@dir %%DATADIR%%/modules/page-modes
-@dir %%DATADIR%%/modules/extensions
-@dir %%DATADIR%%/modules/compat
-@dir %%DATADIR%%/modules/bindings/default/content-buffer
-@dir %%DATADIR%%/modules/bindings/default
-@dir %%DATADIR%%/modules/bindings
-@dir %%DATADIR%%/modules
-@dir %%DATADIR%%/locale/sv-SE
-@dir %%DATADIR%%/locale/en-US
-@dir %%DATADIR%%/locale
-@dir %%DATADIR%%/help
-@dir %%DATADIR%%/defaults/preferences
-@dir %%DATADIR%%/defaults
-@dir %%DATADIR%%/contrib/art
-@dir %%DATADIR%%/contrib/config
-@dir %%DATADIR%%/contrib/modules
-@dir %%DATADIR%%/contrib/xrev/defaults/preferences
-@dir %%DATADIR%%/contrib/xrev/defaults
-@dir %%DATADIR%%/contrib/xrev/content
-@dir %%DATADIR%%/contrib/xrev/chrome
-@dir %%DATADIR%%/contrib/xrev
-@dir %%DATADIR%%/contrib
-@dir %%DATADIR%%/content
-@dir %%DATADIR%%/components
-@dir %%DATADIR%%/chrome
-@dir %%DATADIR%%/branding/content
-@dir %%DATADIR%%/branding
-@dir %%DATADIR%%
-@dir libexec/conkeror

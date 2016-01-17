@@ -12,7 +12,7 @@ MASTER_SITES=	GENTOO \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Guitar (and other instruments) tuner for GTK+2
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.nongnu.org/materm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi terminal based on aterm
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XORG=	xpm

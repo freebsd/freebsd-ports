@@ -10,7 +10,7 @@ DISTNAME=	Jigsaw-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulates a jigsaw puzzle and illustrates the use of clipping paths
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		gnustep
 USE_GNUSTEP=	back build

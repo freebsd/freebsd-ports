@@ -13,10 +13,8 @@ PATCHFILES=	csrd.c.diff.gz
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Utility for Shogakukan Random House English-Japanese Dictionary
 
-LICENSE=	PUBLIC_DOMAIN
-LICENSE_NAME=	Public Domain
+LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/csrd.doc
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKEFILE=	makefile.unx
 MAKE_ARGS=	CC="${CC}"

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subversion repository activity report generator
 
-LICENSE=	LGPL21 # or later
+LICENSE=	LGPL21+
 
 RUN_DEPENDS=	subversion>=1.3:${PORTSDIR}/devel/subversion
 

@@ -19,5 +19,6 @@ MODULE_FILES=	arrow-right.png nice_menus.install nice_menus_default-rtl.css \
 		superfish/js/jquery.hoverIntent.minified.js \
 		superfish/js/superfish.js
 DOC_FILES=	CHANGELOG.txt README.txt UPGRADE.txt LICENSE.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

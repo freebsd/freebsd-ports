@@ -12,7 +12,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python karaoke application (Plays CD+G, MP3+G, OGG+G files)
 
-LICENSE=	LGPL21 # (or later)
+LICENSE=	LGPL21+
 
 BUILD_DEPENDS=	${PYGAME}
 LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \

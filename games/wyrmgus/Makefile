@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	wyrmgus
-PORTVERSION=	1.6.0
+PORTVERSION=	1.9.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modified Stratagus engine for Wyrmsun
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
@@ -21,8 +21,7 @@ GH_PROJECT=     Wyrmgus
 
 USE_GL=		gl glu
 USE_SDL=	sdl
-USE_SQLITE=	3
-USES=		compiler:c++11-lib cmake:outsource lua:51 pkgconfig
+USES=		compiler:c++11-lib cmake:outsource lua:51 pkgconfig sqlite
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DTOLUA++_APP:STRING="tolua++-${LUA_VER}" \
 		-DTOLUA++_INCLUDE_DIR:STRING="${LUA_INCDIR}" \
@@ -34,7 +33,7 @@ PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/wyrmsun.ico
 
-OPTIONS_DEFINE=	MIKMOD MNG THEORA VORBIS X11 FLUIDSYNTH DOCS
+OPTIONS_DEFINE=	MIKMOD MNG THEORA VORBIS X11 FLUIDSYNTH PHYSFS DOCS
 OPTIONS_DEFAULT=VORBIS X11
 
 MIKMOD_LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
@@ -63,6 +62,11 @@ FLUIDSYNTH_DESC=	FluidSynth sound library support
 FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 FLUIDSYNTH_CMAKE_ON=	-DWITH_FLUIDSYNTH:BOOL=ON
 FLUIDSYNTH_CMAKE_OFF=	-DWITH_FLUIDSYNTH:BOOL=OFF
+
+PHYSFS_DESC=		PhysFS support
+PHYSFS_LIB_DEPENDS=	libphysfs.so:devel/physfs
+PHYSFS_CMAKE_ON=	-DWITH_PHYSFS:BOOL=ON
+PHYSFS_CMAKE_OFF=	-DWITH_PHYSFS:BOOL=OFF
 
 .include <bsd.port.pre.mk>
 

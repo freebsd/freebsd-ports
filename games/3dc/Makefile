@@ -11,7 +11,7 @@ DISTNAME=	3Dc-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3-Dimensional Chess for X Window System
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../GPL
 
 LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d

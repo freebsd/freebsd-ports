@@ -10,17 +10,22 @@ MASTER_SITES=	http://redundancy.redundancy.org/mirror/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio mixer for the WindowMaker dock
 
-OPTIONS_DEFINE=	DOCS
-
-PLIST_FILES=	bin/wmsmixer
-PORTDOCS=	README
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		alias imake
 USE_XORG=	xpm
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}"
 
+PLIST_FILES=	bin/wmsmixer
+PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmsmixer ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

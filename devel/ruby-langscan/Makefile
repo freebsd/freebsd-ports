@@ -18,6 +18,7 @@ BUILD_DEPENDS=	flex>=2.5.31:${PORTSDIR}/textproc/flex
 
 BROKEN_RUBY21=	yes
 BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
 
 USES=		perl5
 USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env

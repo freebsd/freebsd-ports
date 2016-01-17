@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game about a duck that is in a maze
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING.txt
 
 RUN_DEPENDS=	${PYGAME}

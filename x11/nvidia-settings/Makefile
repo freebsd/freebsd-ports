@@ -3,7 +3,7 @@
 
 PORTNAME=	nvidia-settings
 PORTVERSION=	355.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	bland@FreeBSD.org
@@ -43,6 +43,8 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -E -e 's,__(PIXMAP|UTILS)_PATH__/,,' \
 		-e '/^Categories/ s,=.*,=  Settings;HardwareSettings;,' \
 		${WRKSRC}/doc/nvidia-settings.desktop
+	${REINPLACE_CMD} -e 's|/usr/share/nvidia/|${LOCALBASE}/share/doc/NVIDIA_GLX-1.0/|' \
+		${WRKSRC}/src/gtk+-2.x/ctkappprofile.c
 
 post-install:	.SILENT
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnvidia-gtk2.so.${PORTVERSION}

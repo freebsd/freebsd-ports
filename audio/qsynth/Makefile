@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt fluidsynth front-end application
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 #LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth

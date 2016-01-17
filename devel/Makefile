@@ -412,7 +412,6 @@
     SUBDIR += dyncall
     SUBDIR += e00compr
     SUBDIR += e2fsprogs-libss
-    SUBDIR += e_dbus
     SUBDIR += easygit
     SUBDIR += eblob
     SUBDIR += ebnf2yacc
@@ -3988,6 +3987,7 @@
     SUBDIR += py-darcsver
     SUBDIR += py-dateutil
     SUBDIR += py-dbus
+    SUBDIR += py-debtcollector
     SUBDIR += py-decorator
     SUBDIR += py-decoratortools
     SUBDIR += py-defusedxml
@@ -4113,6 +4113,7 @@
     SUBDIR += py-kaptan
     SUBDIR += py-kayako
     SUBDIR += py-kazoo
+    SUBDIR += py-keystoneauth1
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
@@ -4145,6 +4146,7 @@
     SUBDIR += py-mock
     SUBDIR += py-mongoengine
     SUBDIR += py-mongokit
+    SUBDIR += py-monotonic
     SUBDIR += py-more-itertools
     SUBDIR += py-mox
     SUBDIR += py-msgpack
@@ -4174,6 +4176,9 @@
     SUBDIR += py-optik
     SUBDIR += py-orbit
     SUBDIR += py-ordereddict
+    SUBDIR += py-oslo.i18n
+    SUBDIR += py-oslo.serialization
+    SUBDIR += py-oslo.utils
     SUBDIR += py-palm
     SUBDIR += py-parsedatetime
     SUBDIR += py-path.py
@@ -4762,6 +4767,7 @@
     SUBDIR += rubygem-cri
     SUBDIR += rubygem-cucumber
     SUBDIR += rubygem-cucumber-core
+    SUBDIR += rubygem-cucumber-wire
     SUBDIR += rubygem-curses
     SUBDIR += rubygem-cyoi
     SUBDIR += rubygem-daemon_controller
@@ -4792,6 +4798,7 @@
     SUBDIR += rubygem-enumerize
     SUBDIR += rubygem-equalizer
     SUBDIR += rubygem-errand
+    SUBDIR += rubygem-event-bus
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-excon
     SUBDIR += rubygem-execjs
@@ -5075,6 +5082,7 @@
     SUBDIR += rubygem-sugar-high
     SUBDIR += rubygem-sumbur
     SUBDIR += rubygem-sundawg_country_codes
+    SUBDIR += rubygem-svn2git
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-table_print

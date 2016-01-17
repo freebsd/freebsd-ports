@@ -10,10 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Print binary in hex format
 
-LICENSE=	unknown
-LICENSE_NAME=	Public Domain
-LICENSE_TEXT=	This software us in the public domain
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	PD
 
 WRKSRC=		${WRKDIR}
 USES=		python zip

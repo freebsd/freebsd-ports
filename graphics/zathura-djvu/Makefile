@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-djvu
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura/plugins/download/
 
@@ -22,7 +21,7 @@ RUN_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
 PLIST_FILES=	lib/zathura/djvu.so share/applications/zathura-djvu.desktop
 
 USE_GNOME=	glib20 gtk30
-USES=		desktop-file-utils gmake pkgconfig
+USES=		compiler:c11 desktop-file-utils gmake pkgconfig
 
 PLIST_FILES=	lib/zathura/djvu.so \
 		share/applications/zathura-djvu.desktop

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	z3c.form
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.2.8
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +11,7 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Advanced form and widget framework for Zope 3
 
 LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}zope.browser>=0:${PORTSDIR}/devel/py-zope.browser \
@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}zope.site>0:${PORTSDIR}/devel/py-zope.site \
 		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:${PORTSDIR}/devel/py-zope.traversing
 
-USES=		python zip
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

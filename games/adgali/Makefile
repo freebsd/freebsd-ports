@@ -12,7 +12,7 @@ COMMENT=	Open source game library useful for 2D game development
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \

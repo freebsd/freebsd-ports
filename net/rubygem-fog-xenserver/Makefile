@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-xenserver
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

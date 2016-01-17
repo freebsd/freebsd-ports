@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph layout optimizer
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

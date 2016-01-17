@@ -6,10 +6,11 @@ PORTVERSION=	2.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	steve.polyack@intermedix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP5 code for Mustache
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bobthecow
@@ -17,6 +18,7 @@ GH_PROJECT=	mustache.php
 
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 
@@ -28,6 +30,8 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/mustache.php ${STAGEDIR}${DATADIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/test/fixtures/examples/* ${STAGEDIR}${EXAMPLESDIR}
 

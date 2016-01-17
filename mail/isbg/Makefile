@@ -5,21 +5,20 @@ PORTNAME=	isbg
 PORTVERSION=	1.00
 CATEGORIES=	mail
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scan an IMAP inbox for spam using SpamAssassin
 
 # any OSI approved open source license
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/spamassassin \
+RUN_DEPENDS=	spamassassin:${PORTSDIR}/mail/spamassassin \
 		${PYTHON_PKGNAMEPREFIX}docopt>=0.6.1:${PORTSDIR}/devel/py-docopt
 
 USE_GITHUB=	yes
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		python
-USE_PYTHON=	distutils
-
-PLIST_FILES=	bin/${PORTNAME}.py
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

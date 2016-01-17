@@ -16,3 +16,5 @@ SHA256 (erlang/mnesia_overview.pdf) = f07f9edd4ba865a1c50647dd6fa4a8f49277f8f3be
 SIZE (erlang/mnesia_overview.pdf) = 150266
 SHA256 (erlang/programming_rules.pdf) = b95f8851004832b044e064c12976a422613ece897e98308a27ee8b66738b4502
 SIZE (erlang/programming_rules.pdf) = 77025
+SHA256 (erlang/patch-otp-18.2.2) = 2a223e838a5b018535905f813eb95830dcced30b39dce3fdac02919c98823353
+SIZE (erlang/patch-otp-18.2.2) = 9587

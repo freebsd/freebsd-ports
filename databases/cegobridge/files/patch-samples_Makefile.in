@@ -1,0 +1,11 @@
+--- samples/Makefile.in.orig	2016-01-12 08:48:10 UTC
++++ samples/Makefile.in
+@@ -802,7 +802,7 @@ uninstall-am:
+ 	uninstall uninstall-am
+ 
+ 
+-export BUILDDIR = @abs_top_builddir@
++# export BUILDDIR = @abs_top_builddir@
+ 
+ .NOTPARALLEL:
+ 

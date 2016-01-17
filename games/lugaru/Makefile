@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-rev${DISTVERSION}-src
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	3D arcade with unique fighting system and anthropomorphic characters
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \

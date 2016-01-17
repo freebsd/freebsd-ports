@@ -11,7 +11,7 @@ DISTNAME=	UMark-for-Linux-v${DISTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament 200x series benchmark utility
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig shebangfix

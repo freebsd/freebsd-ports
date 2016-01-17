@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-PORTVERSION=	0.2.6.10
-PORTREVISION=	1
+PORTVERSION=	0.2.7.6
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -44,6 +43,10 @@ USERS=		_tor
 CONFLICTS=	tor-devel-[0-9]*
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000000
+WITH_OPENSSL_PORT=	yes
+.endif
 
 .if !defined(USE_GCC) && empty(CC:T:M*gcc4*) && \
 empty(PORT_OPTIONS:MSTATIC_TOR) && empty(ARCH:Mia64)

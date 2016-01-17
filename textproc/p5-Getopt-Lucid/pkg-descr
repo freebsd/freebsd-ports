@@ -4,4 +4,4 @@ subjective standard, Getopt::Lucid relies on a more verbose,
 plain-English option specification as compared against the more symbolic
 approach of Getopt::Long.
 
-WWW:	http://search.cpan.org/dist/Getopt-Lucid/
+WWW: http://search.cpan.org/dist/Getopt-Lucid/

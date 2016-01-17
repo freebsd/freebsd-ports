@@ -12,7 +12,7 @@ DISTNAME=	omniNotify-2-latest
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CORBA Notification Service (CosNotification) for omniORB
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libomniORB4.so:${PORTSDIR}/devel/omniORB-4.1

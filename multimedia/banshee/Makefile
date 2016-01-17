@@ -33,14 +33,13 @@ YOUTUBE_DESC=	Build and/or install the Youtube extension
 OPTIONS_DEFAULT=BPMDETECT GIO MTP WEBKIT YOUTUBE
 
 USES=		desktop-file-utils gmake libtool mono pathfix perl5 \
-		pkgconfig shared-mime-info tar:xz
+		pkgconfig shared-mime-info sqlite tar:xz
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomedocutils gnomesharp20 gtksharp20 intltool
 USE_GSTREAMER=	cdparanoia
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME:C/-.*//}
 USE_XORG=	xrandr xxf86vm
-USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

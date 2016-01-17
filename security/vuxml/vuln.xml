@@ -58,6 +58,332 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3b5c2362-bd07-11e5-b7ef-5453ed2e2b49">
+    <topic>libproxy -- stack-based buffer overflow</topic>
+    <affects>
+      <!-- libproxy-python is not affected. It only installs a .py file that
+	   dlopen()s libproxy.so. -->
+      <package>
+	<name>libproxy</name>
+	<range><ge>0.4.0</ge></range>
+	<range><lt>0.4.6_1</lt></range>
+      </package>
+      <package>
+	<name>libproxy-gnome</name>
+	<range><ge>0.4.0</ge></range>
+	<range><lt>0.4.6_2</lt></range>
+      </package>
+      <package>
+	<name>libproxy-kde</name>
+	<range><ge>0.4.0</ge></range>
+	<range><lt>0.4.6_6</lt></range>
+      </package>
+      <package>
+	<name>libproxy-perl</name>
+	<range><ge>0.4.0</ge></range>
+	<range><lt>0.4.6_3</lt></range>
+      </package>
+      <package>
+	<name>libproxy-webkit</name>
+	<range><ge>0.4.0</ge></range>
+	<range><lt>0.4.6_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tomas Hoger reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=864417#c0">
+	  <p>A buffer overflow flaw was discovered in the libproxy's
+	    url::get_pac() used to download proxy.pac proxy auto-configuration
+	    file. A malicious host hosting proxy.pac, or a man in the middle
+	    attacker, could use this flaw to trigger a stack-based buffer
+	    overflow in an application using libproxy, if proxy configuration
+	    instructed it to download proxy.pac file from a remote HTTP
+	    server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4504</cvename>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-4504</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2012/10/12/1</mlist>
+      <url>https://github.com/libproxy/libproxy/commit/c440553c12836664afd24a24fb3a4d10a2facd2c</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=864417</url>
+      <mlist>https://groups.google.com/forum/?fromgroups=#!topic/libproxy/VxZ8No7mT0E</mlist>
+    </references>
+    <dates>
+      <discovery>2012-10-10</discovery>
+      <entry>2016-01-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="046fedd1-bd01-11e5-bbf4-5404a68ad561">
+    <topic>ffmpeg -- remote attacker can access local files</topic>
+    <affects>
+      <package>
+	<name>ffmpeg</name>
+	<range>
+	  <gt>2.0.0</gt>
+	  <lt>2.8.5</lt>
+	</range>
+      </package>
+      <package>
+	<name>mplayer</name>
+	<name>mencoder</name>
+	<range>
+	  <lt>1.2.r20151219_2</lt>
+	</range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Arch Linux reports:</p>
+	<blockquote cite="https://bugs.archlinux.org/task/47738">
+	  <p>ffmpeg has a vulnerability in the current version that allows the
+	    attacker to create a specially crafted video file, downloading which
+	    will send files from a user PC to a remote attacker server. The
+	    attack does not even require the user to open that file — for
+	    example, KDE Dolphin thumbnail generation is enough.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1897</cvename>
+      <cvename>CVE-2016-1898</cvename>
+      <freebsdpr>ports/206282</freebsdpr>
+      <url>https://www.ffmpeg.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2016-01-13</discovery>
+      <entry>2016-01-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6c808811-bb9a-11e5-a65c-485d605f4717">
+    <topic>h2o -- directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>h2o</name>
+	<range><lt>1.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yakuzo OKU reports:</p>
+	<blockquote cite="http://h2o.examp1e.net/vulnerabilities.html">
+	  <p>When redirect directive is used, this flaw allows a remote
+	     attacker to inject response headers into an HTTP redirect response.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1133</cvename>
+      <url>https://h2o.examp1e.net/vulnerabilities.html</url>
+    </references>
+    <dates>
+      <discovery>2016-01-13</discovery>
+      <entry>2016-01-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="dfe0cdc1-baf2-11e5-863a-b499baebfeaf">
+    <topic>openssh -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<range>
+	  <gt>5.4.p0,1</gt>
+	  <lt>7.1.p2,1</lt>
+	</range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSH reports:</p>
+	<blockquote cite="http://www.openssh.com/security.html">
+	  <p>OpenSSH clients between versions 5.4 and 7.1 are vulnerable to
+	  information disclosure that may allow a malicious server to retrieve
+	  information including under some circumstances, user's private keys.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openssh.com/security.html</url>
+      <cvename>CVE-2016-0777</cvename>
+      <cvename>CVE-2016-0778</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-14</discovery>
+      <entry>2016-01-14</entry>
+      <modified>2016-01-15</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="842cd117-ba54-11e5-9728-002590263bf5">
+    <topic>prosody -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>prosody</name>
+	<range><lt>0.9.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Prosody Team reports:</p>
+	<blockquote cite="http://blog.prosody.im/prosody-0-9-9-security-release/">
+	  <p>Fix path traversal vulnerability in mod_http_files
+	    (CVE-2016-1231)</p>
+	  <p>Fix use of weak PRNG in generation of dialback secrets
+	    (CVE-2016-1232)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1231</cvename>
+      <cvename>CVE-2016-1232</cvename>
+      <freebsdpr>ports/206150</freebsdpr>
+      <url>http://blog.prosody.im/prosody-0-9-9-security-release/</url>
+    </references>
+    <dates>
+      <discovery>2016-01-08</discovery>
+      <entry>2016-01-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a7a4e96c-ba50-11e5-9728-002590263bf5">
+    <topic>kibana4 -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>kibana4</name>
+	<name>kibana41</name>
+	<range><lt>4.1.4</lt></range>
+      </package>
+      <package>
+	<name>kibana42</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+      <package>
+	<name>kibana43</name>
+	<range><lt>4.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/blog/kibana-4-3-1-and-4-2-2-and-4-1-4">
+	  <p>Fixes XSS vulnerability (CVE pending) - Thanks to Vladimir Ivanov
+	    for responsibly reporting.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/205961</freebsdpr>
+      <freebsdpr>ports/205962</freebsdpr>
+      <freebsdpr>ports/205963</freebsdpr>
+      <url>https://www.elastic.co/blog/kibana-4-3-1-and-4-2-2-and-4-1-4</url>
+    </references>
+    <dates>
+      <discovery>2015-12-17</discovery>
+      <entry>2016-01-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="333f655a-b93a-11e5-9efa-5453ed2e2b49">
+    <topic>p5-PathTools -- File::Spec::canonpath loses taint</topic>
+    <affects>
+      <package>
+	<name>p5-PathTools</name>
+	<range>
+	  <gt>3.4000</gt>
+	  <lt>3.6200</lt>
+	</range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ricardo Signes reports:</p>
+	<blockquote>
+	  <p>Beginning in PathTools 3.47 and/or perl 5.20.0, the
+	    File::Spec::canonpath() routine returned untained strings even if
+	    passed tainted input. This defect undermines the guarantee of taint
+	    propagation, which is sometimes used to ensure that unvalidated
+	    user input does not reach sensitive code.</p>
+	  <p>This defect was found and reported by David Golden of MongoDB.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8607</cvename>
+      <url>https://rt.perl.org/Public/Bug/Display.html?id=126862</url>
+    </references>
+    <dates>
+      <discovery>2016-01-11</discovery>
+      <entry>2016-01-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6b771fe2-b84e-11e5-92f9-485d605f4717">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php55</name>
+	<name>php55-gd</name>
+	<name>php55-wddx</name>
+	<name>php55-xmlrpc</name>
+	<range><lt>5.5.31</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<name>php56-gd</name>
+	<name>php56-soap</name>
+	<name>php56-wddx</name>
+	<name>php56-xmlrpc</name>
+	<range><lt>5.6.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP reports:</p>
+	<blockquote cite="http://www.php.net/ChangeLog-5.php#5.5.31">
+	  <ul><li>Core:
+	  <ul>
+	  <li>Fixed bug #70755 (fpm_log.c memory leak and buffer overflow).</li>
+	  </ul></li>
+	  <li>GD:
+	  <ul>
+	  <li>Fixed bug #70976 (Memory Read via gdImageRotateInterpolated Array
+	      Index Out of Bounds).</li>
+	  </ul></li>
+	  <li>SOAP:
+	  <ul>
+	  <li>Fixed bug #70900 (SoapClient systematic out of memory error).</li>
+	  </ul></li>
+	  <li>Wddx
+	  <ul>
+	  <li>Fixed bug #70661 (Use After Free Vulnerability in WDDX Packet
+	      Deserialization).</li>
+	  <li>Fixed bug #70741 (Session WDDX Packet Deserialization Type
+	      Confusion Vulnerability).</li>
+	  </ul></li>
+	  <li>XMLRPC:
+	  <ul>
+	  <li>Fixed bug #70728 (Type Confusion Vulnerability in
+	      PHP_to_XMLRPC_worker()).</li>
+	  </ul></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.php.net/ChangeLog-5.php#5.5.31</url>
+      <url>http://www.php.net/ChangeLog-5.php#5.6.17</url>
+    </references>
+    <dates>
+      <discovery>2016-01-07</discovery>
+      <entry>2016-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5f276780-b6ce-11e5-9731-5453ed2e2b49">
     <topic>pygments -- shell injection vulnerability</topic>
     <affects>
@@ -8624,7 +8950,7 @@ Notes:
     <affects>
       <package>
 	<name>openssh-portable</name>
-	<range><lt>7.0p1,1</lt></range>
+	<range><lt>7.0.p1,1</lt></range>
       </package>
     </affects>
     <description>
@@ -8648,6 +8974,7 @@ Notes:
     <dates>
       <discovery>2015-08-11</discovery>
       <entry>2015-08-21</entry>
+      <modified>2016-01-15</modified>
     </dates>
   </vuln>
 

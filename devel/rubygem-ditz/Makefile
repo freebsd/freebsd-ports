@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Simple lightweight distributed issue tracker
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-trollop>=1.9:${PORTSDIR}/devel/rubygem-trollop

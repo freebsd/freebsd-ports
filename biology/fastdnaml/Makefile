@@ -11,7 +11,7 @@ DISTNAME=	fastDNAml_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Faster DNAML, makes phylogenetic trees using maximum likelihood
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 BUILD_WRKSRC=	${WRKSRC}/source
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

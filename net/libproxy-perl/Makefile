@@ -2,7 +2,7 @@
 # $FreeBSD$
 #    $MCom: ports/net/libproxy-perl/Makefile,v 1.1 2011/01/12 13:10:53 kwm Exp $
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-perl
 

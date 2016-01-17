@@ -9,7 +9,7 @@ CATEGORIES=	astro geography devel
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library for handling binary OpenStreetMap data
 
-LICENSE=	LGPL3 # or later
+LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.osmpbf
 
 LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf

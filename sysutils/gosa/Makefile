@@ -12,7 +12,7 @@ MASTER_SITES=	http://oss.gonicus.de/pub/gosa/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web Based LDAP Administration Program
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-Crypt-SmbHash>=0.12:${PORTSDIR}/security/p5-Crypt-SmbHash \

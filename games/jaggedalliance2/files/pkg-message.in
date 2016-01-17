@@ -1,18 +1,7 @@
 ==========================================================================
 
     This Jagged Alliance 2 port requires data files from the original
-    game CD and installation.  Copy the following files:
-
-    Put all *.slf files into %%DATADIR%%/Data.
-    Put all *.jsd and *.sti files from the TILECACHE directory into
-    %%DATADIR%%/Data/TILECACHE.
-    All filenames must be lowercase!
-    After copying you can use "make lowercase" to rename all files.
-
-    When a user starts the game for the first time a file ~/.ja2/ja2.ini
-    is created. In there the path to the data files has to be specified at
-    the line "data_dir = ...".
-
-    Enjoy!
+    game CD and installation.  Copy Data/ directory from original game
+    into %%DATADIR%%/
 
 ==========================================================================

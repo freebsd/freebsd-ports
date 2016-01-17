@@ -10,7 +10,7 @@ MASTER_SITES=	SF/corewar/pMARS/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable corewar system with ICWS'94 extensions
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

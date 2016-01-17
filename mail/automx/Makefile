@@ -9,7 +9,7 @@ CATEGORIES=	mail
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Handles mail account profile requests from mail clients
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \

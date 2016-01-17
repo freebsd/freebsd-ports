@@ -3,6 +3,7 @@
 
 PORTNAME=	django-bootstrap-form
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +16,6 @@ LICENSE=	MIT
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.5:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.5:${PORTSDIR}/www/py-django18
 
 .include <bsd.port.mk>

@@ -146,7 +146,7 @@ USE_OPENSSL=	yes
 .if ${PHP_MODNAME} == "interbase"
 CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}
 
-USE_FIREBIRD=	yes
+USES+=		firebird
 .endif
 
 .if ${PHP_MODNAME} == "json"
@@ -246,7 +246,7 @@ CONFIGURE_ARGS+=--with-pdo-firebird=${LOCALBASE}
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
 
-USE_FIREBIRD=	yes
+USES+=		firebird
 .endif
 
 .if ${PHP_MODNAME} == "pdo_mysql"
@@ -277,7 +277,7 @@ USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_sqlite"
-USE_SQLITE=	yes
+USES+=		sqlite
 CONFIGURE_ARGS+=--with-pdo-sqlite=${LOCALBASE}
 
 USE_PHP=	pdo
@@ -366,7 +366,7 @@ CONFIGURE_ARGS+=--enable-sockets
 .endif
 
 .if ${PHP_MODNAME} == "sqlite3"
-USE_SQLITE=	yes
+USES+=		sqlite
 CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
 .endif
 

@@ -10,7 +10,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/56075754/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Birthday reminder for Pidgin
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple

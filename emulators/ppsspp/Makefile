@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
 
-LICENSE=	GPLv2 # or any later version
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip \
 		libsnappy.so:${PORTSDIR}/archivers/snappy \

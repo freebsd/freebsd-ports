@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Python toolkit for stream-based generation of output for the web
 
+DEPRECATED=     The port is no longer updated and behind the main genshi port
+EXPIRATION_DATE= 2016-03-31
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 

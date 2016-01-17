@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nano
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
 		GNU

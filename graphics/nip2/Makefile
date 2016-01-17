@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nip2
-PORTVERSION=	8.0
-PORTREVISION=	1
+PORTVERSION=	8.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION}/
 

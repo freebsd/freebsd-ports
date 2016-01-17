@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	findlib
-PORTVERSION=	1.5.6
+PORTVERSION=	1.6.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-

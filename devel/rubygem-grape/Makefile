@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grape
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

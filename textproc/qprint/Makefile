@@ -8,10 +8,8 @@ MASTER_SITES=	http://www.fourmilab.ch/webtools/qprint/
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Encode and decode Quoted-Printable files
 
-LICENSE=	public
-LICENSE_NAME=	Public Domain
+LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes

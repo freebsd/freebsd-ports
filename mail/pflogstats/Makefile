@@ -13,7 +13,7 @@ COMMENT=	Postfix Log Statistics Reporter
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \

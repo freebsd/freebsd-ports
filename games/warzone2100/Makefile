@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \

@@ -74,5 +74,6 @@ MODULE_DIRS=	components \
 		views
 
 DOC_FILES=	CHANGELOG.txt LICENSE.txt README.txt THEMING.txt
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

@@ -117,6 +117,9 @@
     SUBDIR += movingmotif
     SUBDIR += mowitz
     SUBDIR += mygui
+    SUBDIR += mygui-dummy
+    SUBDIR += mygui-ogre
+    SUBDIR += mygui-opengl
     SUBDIR += neXtaw
     SUBDIR += nucleo
     SUBDIR += ocaml-lablgtk2

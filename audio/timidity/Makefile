@@ -13,7 +13,7 @@ COMMENT=	MIDI to PCM software synthesizer
 
 CONFLICTS=	timidity++-2.*
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		alias

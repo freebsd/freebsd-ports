@@ -116,8 +116,6 @@ OPENSSL_CMAKE_ON=	-DWITH_SSL=system
 OPENSSL_CMAKE_ON=	-DWITH_SSL=yes
 .endif
 
-USE_CLANG=	3.3+
-
 post-extract:
 	${RM} -rvf ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
 

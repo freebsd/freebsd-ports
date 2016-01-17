@@ -29,6 +29,7 @@ MODULE_FILES=	geshi-extra/drupal5.php geshi-extra/drupal6.php \
 
 DOC_DIRS=	geshi-extra
 DOC_FILES=	LICENSE.txt README.txt geshi-extra/README
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e's|%%LOCALBASE%%|${LOCALBASE}|g' \

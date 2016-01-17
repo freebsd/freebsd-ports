@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.archlinux.org/other/pacman/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Package manager from ArchLinux
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \

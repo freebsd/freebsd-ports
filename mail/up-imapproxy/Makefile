@@ -12,7 +12,7 @@ DISTNAME=	squirrelmail-imap_proxy-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Caching IMAP proxy server
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOVECOT DOCS

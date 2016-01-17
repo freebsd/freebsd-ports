@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plone.app.customerize
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,8 +22,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.customerize>=0:${PORTSDIR}/devel/py-fiv
 		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:${PORTSDIR}/devel/py-Products.CMFCore \
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition
 
-USES=		python zip
-USE_PYTHON=	distutils autoplist
-#USES=			zope
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
+#USES=		zope
 
 .include <bsd.port.mk>

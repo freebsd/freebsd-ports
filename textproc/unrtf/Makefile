@@ -9,7 +9,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Converter from RTF to several formats, including HTML and LaTeX
 
-LICENSE=	GPLv3 # or later
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gmake iconv

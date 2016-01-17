@@ -12,7 +12,7 @@ COMMENT=	Diff application for semistructured data such as XML files
 
 BROKEN=		unfetchable
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf pkgconfig tar:bzip2

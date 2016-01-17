@@ -13,7 +13,8 @@ COMMENT=	Allows to set the available languages in Plone site
 
 LICENSE=	GPLv2
 
+NO_ARCH=	yes
 USES=		python zip
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

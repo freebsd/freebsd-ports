@@ -1,25 +1,13 @@
---- src/Makefile.orig	2015-03-22 02:34:16.000000000 +0300
-+++ src/Makefile	2015-03-24 22:21:53.223966000 +0300
-@@ -3,10 +3,9 @@
- APPSERVER=$(APPNAME)_server
- 
- #CXXFLAGS= -ggdb3
--CXXFLAGS= -O3 -fomit-frame-pointer -ffast-math
- override CXXFLAGS+= -Wall -fsigned-char -fno-exceptions -fno-rtti
- 
--PLATFORM= $(shell gcc -dumpmachine)
-+PLATFORM= $(shell ${CC} -dumpmachine)
- 
- ifeq (,$(PLATFORM_BIN))
- ifneq (,$(findstring arm,$(PLATFORM)))
-@@ -80,8 +79,8 @@
+--- src/Makefile.orig	2015-07-18 02:54:17 UTC
++++ src/Makefile
+@@ -80,8 +80,8 @@ else
  BIN_SUFFIX=_native
  endif
  endif
 -CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
 -CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
 +CLIENT_INCLUDES= $(INCLUDES) -I${LOCALBASE}/include `${SDL_CONFIG} --cflags`
-+CLIENT_LIBS= -Lenet -lenet -L${LOCALBASE}/include -lX11 `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lz -lGL
++CLIENT_LIBS= -Lenet -lenet -L${LOCALBASE}/lib -lX11 `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lz -lGL
  endif
  ifneq (,$(findstring linux,$(PLATFORM)))
  CLIENT_LIBS+= -lrt

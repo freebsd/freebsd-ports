@@ -46,10 +46,6 @@ RFACTER_RUN_DEPENDS=	rubygem-facter>=2.0:${PORTSDIR}/sysutils/rubygem-facter
 CFACTER_BUILD_DEPENDS=	facter>=3.0:${PORTSDIR}/sysutils/facter
 CFACTER_RUN_DEPENDS=	facter>=3.0:${PORTSDIR}/sysutils/facter
 
-.include <bsd.port.options.mk>
-
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppetlabs/puppet|${ETCDIR}|" \
 		${WRKSRC}/install.rb \
@@ -99,14 +95,16 @@ post-install:
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/ext/rack/config.ru ${STAGEDIR}${WWWDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ext/rack/example-passenger-vhost.conf ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

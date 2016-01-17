@@ -1,12 +1,18 @@
---- Makefile.libs.orig	2014-11-24 02:25:56 UTC
+--- Makefile.libs.orig	2015-05-10 13:47:12 UTC
 +++ Makefile.libs
-@@ -31,7 +31,8 @@ SOLIBDIR  ?= $(PREFIX)/lib
+@@ -16,6 +16,7 @@ LS        ?= ls
+ CP        ?= cp
+ LN        ?= ln
+ INSTALL   ?= install
++INSTALL_BIN	?=	$(INSTALL)
+ MKDIR     ?= $(INSTALL) -d
+ RMDIR     ?= rmdir
+ TAR       ?= tar
+@@ -31,6 +32,7 @@ SOLIBDIR  ?= $(PREFIX)/lib
  INCDIR    ?= $(PREFIX)/include/chibi
  MODDIR    ?= $(PREFIX)/share/chibi
  BINMODDIR ?= $(PREFIX)/lib/chibi
--MANDIR    ?= $(PREFIX)/share/man/man1
 +PKGCONFDIR ?= $(PREFIX)/lib/pkgconfig
-+MANDIR    ?= $(PREFIX)/man/man1
+ MANDIR    ?= $(PREFIX)/share/man/man1
  
  DESTDIR   ?=
- 

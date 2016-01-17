@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/packages/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle game similar to PipeMania
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake

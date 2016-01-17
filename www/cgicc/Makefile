@@ -9,7 +9,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C++ class library for writing CGI applications
 
-LICENSE=	LGPL3 # (or later)
+LICENSE=	LGPL3+
 
 OPTIONS_DEFINE=	DOCS
 

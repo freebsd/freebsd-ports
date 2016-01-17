@@ -11,7 +11,7 @@ MASTER_SITES=	http://vesuri.jormas.com/xpk/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The eXternal PacKer (XPK) library system
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool

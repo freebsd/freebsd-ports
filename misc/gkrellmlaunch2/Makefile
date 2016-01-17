@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application launcher plugin for GKrellM2
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	gkrellm2>0:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm2>0:${PORTSDIR}/sysutils/gkrellm2

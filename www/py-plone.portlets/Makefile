@@ -24,7 +24,8 @@ RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3 \
 		${PYTHON_PKGNAMEPREFIX}zope.schema>=0:${PORTSDIR}/devel/py-zope.schema \
 		${PYTHON_PKGNAMEPREFIX}zope.site>=0:${PORTSDIR}/devel/py-zope.site
 
+NO_ARCH=	yes
 USES=		python zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

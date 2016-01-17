@@ -40,6 +40,11 @@ SUB_FILES+=	pkg-message
 PGSQL_USES=	pgsql
 PGSQL_CONFIGURE_WITH=	pgsql=${LOCALBASE}
 
+SQLITE2_USES=	sqlite:2
+SQLITE3_USES=	sqlite
+SQLITE2_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
+SQLITE3_CONFIGURE_ON=	--with-sqlite3=${LOCALBASE}
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -67,16 +72,6 @@ CONFIGURE_ARGS+=	--disable-syslog
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE2}
-USE_SQLITE=	2
-CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE3}
-USE_SQLITE=	3
-CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
 .endif
 
 PORTDATA=	*

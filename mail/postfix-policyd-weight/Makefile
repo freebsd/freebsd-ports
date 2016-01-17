@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	postfix-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weighted policy daemon for postfix
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Net-DNS>=0.72:${PORTSDIR}/dns/p5-Net-DNS \

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/chanta/descargas/
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free 2D jump and run game
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake

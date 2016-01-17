@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ess
-DISTVERSION=	15.09-1
+DISTVERSION=	15.09-2
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/ \
 		http://stat.ethz.ch/ESS/downloads/ess/
@@ -10,7 +10,7 @@ MASTER_SITES=	http://ess.r-project.org/downloads/ess/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	R support for Emacsen
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	R:${PORTSDIR}/math/R

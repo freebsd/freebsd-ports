@@ -9,7 +9,7 @@ MASTER_SITES=	SF/synfig/releases/${PORTVERSION}/source
 MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Vector-based 2D animation software package
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	etl>=0.04.19_1:${PORTSDIR}/devel/etl
 LIB_DEPENDS=	libsynfig.so:${PORTSDIR}/devel/synfig

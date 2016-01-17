@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light and fast web based squid proxy traffic analyser
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/gnugpl.txt
 
 USES=		perl5 shebangfix tar:tgz

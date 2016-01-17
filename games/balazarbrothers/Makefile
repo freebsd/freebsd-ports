@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free software 3D puzzle game
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d \

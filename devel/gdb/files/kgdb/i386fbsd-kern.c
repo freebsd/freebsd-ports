@@ -277,7 +277,7 @@ i386fbsd_dblfault_sniffer (const struct frame_unwind *self,
 }
 
 static const struct frame_unwind i386fbsd_dblfault_unwind = {
-  NORMAL_FRAME,
+  SIGTRAMP_FRAME,
   default_frame_unwind_stop_reason,
   i386fbsd_dblfault_this_id,
   i386fbsd_dblfault_prev_register,
@@ -436,7 +436,7 @@ i386fbsd_trapframe_sniffer (const struct frame_unwind *self,
 }
 
 static const struct frame_unwind i386fbsd_trapframe_unwind = {
-  NORMAL_FRAME,
+  SIGTRAMP_FRAME,
   default_frame_unwind_stop_reason,
   i386fbsd_trapframe_this_id,
   i386fbsd_trapframe_prev_register,

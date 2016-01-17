@@ -9,7 +9,7 @@ MASTER_SITES=	SF/linux-ntfs/NTFS%20Tools%20and%20Library/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and library to manipulate NTFS partitions
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Superseded by sysutils/fusefs-ntfs

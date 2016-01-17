@@ -1,0 +1,6 @@
+MechanicalSoup is a Python library for automating interaction with
+websites. It automatically stores and sends cookies, follows redirects,
+and can follow links and submit forms. Javascript is not supported at
+the Moment.
+
+WWW: https://github.com/hickford/MechanicalSoup

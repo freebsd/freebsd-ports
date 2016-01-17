@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	AccessControl
-PORTVERSION=	3.0.8
-PORTREVISION=	1
+PORTVERSION=	3.0.12
 CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +11,7 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Security framework for Zope2
 
 LICENSE=	ZPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}DateTime>=0:${PORTSDIR}/devel/py-DateTime \
@@ -31,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}zope.security>=0:${PORTSDIR}/security/py-zope.security \
 		${PYTHON_PKGNAMEPREFIX}zope.testing>=0:${PORTSDIR}/devel/py-zope.testing
 
-USES=		python:2 zip
-USE_PYTHON=	distutils autoplist
+USES=		python:2.7
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

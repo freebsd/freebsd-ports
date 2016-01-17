@@ -12,7 +12,7 @@ DISTNAME=	Crypt-MatrixSSL3-3.3.0.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small alternative SSL implementation
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

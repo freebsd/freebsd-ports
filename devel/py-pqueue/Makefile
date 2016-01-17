@@ -12,7 +12,7 @@ DISTNAME=	PQueue-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fibonacci-Heap based Priority-Queue Extension for Python
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python tar:bzip2

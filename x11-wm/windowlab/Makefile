@@ -11,7 +11,7 @@ DIST_SUBDIR=	repacked
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small window manager for X11
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 USES=		gmake tar

@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commodore SID-chip emulator that plays SID music files
 
-LICENSE=	GPLv2 # (or later)
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libsidplay.so:${PORTSDIR}/audio/libsidplay
 

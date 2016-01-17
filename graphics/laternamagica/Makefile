@@ -10,7 +10,7 @@ DISTNAME=	LaternaMagica-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer and slideshow application
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 
 USES=		gnustep
 USE_GNUSTEP=	back build

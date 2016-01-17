@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif widget set for displaying HTML 3.2 documents
 
-LICENSE=	LGPL20 # (or later)
+LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png

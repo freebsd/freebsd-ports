@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plonetheme.classic
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,8 @@ COMMENT=	Classic Plone 3 default theme
 
 LICENSE=	GPLv2
 
+NO_ARCH=	yes
 USES=		python zip
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

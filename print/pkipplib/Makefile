@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.pykota.com/software/pkipplib/download/tarballs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create and parse IPP requests
 
-LICENSE=	GPLv2 # or later
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python

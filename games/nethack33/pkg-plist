@@ -149,4 +149,5 @@ man/man6/lev_comp%%HACKEXT%%.6.gz
 man/man6/%%HACKNAME%%.6.gz
 man/man6/recover%%HACKEXT%%.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
+@dir(games,games,0775) %%DATADIR%%
 @dir(games,games,0775) %%DATADIR%%/save
