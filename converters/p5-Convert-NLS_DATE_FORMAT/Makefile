@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Convert-NLS_DATE_FORMAT
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.06
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KOLIBRIE
@@ -14,9 +13,10 @@ COMMENT=	Convert Oracle NLS_DATE_FORMAT <-> strftime format strings
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 USES=		perl5
 
 .include <bsd.port.mk>
