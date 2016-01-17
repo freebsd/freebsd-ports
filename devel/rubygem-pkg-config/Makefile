@@ -2,22 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	pkg-config
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	pkg-config implementation for Ruby
 
-LICENSE=	LGPL21 LGPL3
-LICENSE_COMB=	dual
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LGPL-2.1
 
-USES=		pkgconfig
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
+USES=		pkgconfig
 
 .include <bsd.port.mk>
