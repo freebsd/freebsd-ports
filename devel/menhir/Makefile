@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	menhir
-PORTVERSION=	20140422
+PORTVERSION=	20151112
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LR(1) parser generator for OCaml
 
-USES=		gmake
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
 OCAML_PKGDIRS=		menhirLib
+
+USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
