@@ -1,0 +1,23 @@
+bin/bincimapd
+bin/bincimap-up
+@sample etc/bincimap/bincimap.conf.sample
+man/man1/bincimap-up.1.gz
+man/man1/bincimapd.1.gz
+man/man5/bincimap.conf.5.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/bincimap-faq.html
+%%PORTDOCS%%%%DOCSDIR%%/bincimap-goals.html
+%%PORTDOCS%%%%DOCSDIR%%/bincimap-imapdir.html
+%%PORTDOCS%%%%DOCSDIR%%/bincimap-manual.ps
+%%PORTDOCS%%%%DOCSDIR%%/bincimap-tech.html
+%%PORTDOCS%%%%DOCSDIR%%/bincimap.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/bincimap-auth-teapop.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bincimap.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/checkpassword.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toimapdir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tomaildir++
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xinetd-bincimap
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xinetd-bincimaps
