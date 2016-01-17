@@ -13,3 +13,12 @@
  manualpage()
  {
  cat << _MANUALPAGE
+@@ -421,7 +427,7 @@
+         # Decode URLs
+         if echo "$file" | grep -q '^file:///'; then
+             file=${file#file://}
+-            file="$(printf "$(echo "$file" | sed -e 's@%\([a-f0-9A-F]\{2\}\)@\\x\1@g')")"
++            file="$(echo "$file" | unvis -h)"
+         fi
+         check_input_file "$file"
+ 
