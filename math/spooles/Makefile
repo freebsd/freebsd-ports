@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmpich.a:${PORTSDIR}/net/mpich2
 
 USES=		gmake tar:tgz
 
+OPTIONS_DEFINE=	DOCS
+
 .if defined(WITH_MPI)
 PLIST_SUB+=	MPI=""
 PLIST_SUB+=	MT="@comment "
@@ -47,8 +49,6 @@ PICFLAG?=	-fpic
 .endif
 
 .SILENT:
-
-OPTIONS_DEFINE=	DOCS
 
 pre-everything::
 .if !defined(WITH_MPI)
