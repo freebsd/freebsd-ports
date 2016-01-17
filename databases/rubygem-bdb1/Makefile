@@ -13,6 +13,7 @@ LICENSE_COMB=	dual
 
 BROKEN_RUBY21=	yes
 BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
 
 USES=		execinfo
 USE_RUBY=	yes
