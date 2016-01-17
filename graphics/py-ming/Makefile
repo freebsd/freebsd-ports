@@ -21,6 +21,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libming.so:${PORTSDIR}/graphics/ming \
 		libpng.so:${PORTSDIR}/graphics/png
 
+PORTSCOUT=	limit:^ming-
+
 CONFIGURE_ARGS=	--enable-python
 CONFIGURE_ENV=	PYTHON_LDFLAGS="-L${PYTHON_LIBDIR} -l${PYTHON_VERSION}${PYTHON_ABIVER}"
 GNU_CONFIGURE=	yes
