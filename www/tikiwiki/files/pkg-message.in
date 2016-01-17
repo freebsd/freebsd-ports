@@ -4,7 +4,7 @@
     #
     # Directives to allow use of tikiwiki
     #
-    Alias /%%PORTNAME%% "%%PREFIX%%/%%TIKIWIKI_DIR%%/"
+    Alias /tikiwiki "%%PREFIX%%/%%TIKIWIKI_DIR%%/"
 
 2) Open the following page in your browser and follow the instructions:
     http://www.your.host/tikiwiki/
