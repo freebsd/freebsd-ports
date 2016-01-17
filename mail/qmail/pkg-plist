@@ -187,51 +187,25 @@ scripts/mkaliasdir
 @exec %D/configure/install x
 @comment Do initial config setup if not already done
 @exec if ! [ -e %D/control/me ]; then (cd %D/configure && ./config); fi
-@dirrm bin
-%%LDAP%%@dirrm boot/qmail/env
-%%LDAP%%@dirrm boot/qmail/log
-%%LDAP%%@dirrm boot/qmail-smtpd/env
-%%LDAP%%@dirrm boot/qmail-smtpd/log
-%%LDAP%%@dirrm boot/qmail-smtpd
-%%LDAP%%@dirrm boot/qmail-qmqpd/env
-%%LDAP%%@dirrm boot/qmail-qmqpd/log
-%%LDAP%%@dirrm boot/qmail-qmqpd
-%%LDAP%%@dirrm boot/qmail-pop3d/env
-%%LDAP%%@dirrm boot/qmail-pop3d/log
-%%LDAP%%@dirrm boot/qmail-pop3d
-%%LDAP%%@dirrm boot/qmail-imapd/env
-%%LDAP%%@dirrm boot/qmail-imapd/log
-%%LDAP%%@dirrm boot/qmail-imapd
-%%LDAP%%@dirrm boot/qmail-pop3d-ssl/env
-%%LDAP%%@dirrm boot/qmail-pop3d-ssl/log
-%%LDAP%%@dirrm boot/qmail-pop3d-ssl
-%%LDAP%%@dirrm boot/qmail-imapd-ssl/env
-%%LDAP%%@dirrm boot/qmail-imapd-ssl/log
-%%LDAP%%@dirrm boot/qmail-imapd-ssl
-%%LDAP%%@dirrm boot/qmail-pbsdbd/env
-%%LDAP%%@dirrm boot/qmail-pbsdbd/log
-%%LDAP%%@dirrm boot/qmail-pbsdbd
-%%LDAP%%@dirrm boot/qmail
-%%LDAP%%@dirrm log/qmail
-%%LDAP%%@dirrm log/qmail-smtpd
-%%LDAP%%@dirrm log/qmail-qmqpd
-%%LDAP%%@dirrm log/qmail-pop3d
-%%LDAP%%@dirrm log/qmail-imapd
-%%LDAP%%@dirrm log/qmail-pop3d-ssl
-%%LDAP%%@dirrm log/qmail-imapd-ssl
-%%LDAP%%@dirrm log/qmail-pbsdbd
-%%LDAP%%@dirrm log
-@dirrm boot
-@dirrm configure
-@dirrm man/man1
-@dirrm man/man5
-@dirrm man/man7
-@dirrm man/man8
-@dirrm man
-@dirrm scripts
-@dirrmtry control
-@dirrmtry alias
-@dirrmtry users
+%%LDAP%%@dir boot/qmail/env
+%%LDAP%%@dir boot/qmail-imapd/env
+%%LDAP%%@dir boot/qmail-imapd-ssl/env
+%%LDAP%%@dir boot/qmail-pbsdbd/env
+%%LDAP%%@dir boot/qmail-pop3d/env
+%%LDAP%%@dir boot/qmail-pop3d-ssl/env
+%%LDAP%%@dir boot/qmail-qmqpd/env
+%%LDAP%%@dir boot/qmail-smtpd/env
+%%LDAP%%@dir log/qmail
+%%LDAP%%@dir log/qmail-imapd
+%%LDAP%%@dir log/qmail-imapd-ssl
+%%LDAP%%@dir log/qmail-pbsdbd
+%%LDAP%%@dir log/qmail-pop3d
+%%LDAP%%@dir log/qmail-pop3d-ssl
+%%LDAP%%@dir log/qmail-qmqpd
+%%LDAP%%@dir log/qmail-smtpd
+@dir alias
+@dir control
+@dir users
 @unexec echo "1) If you are permanently removing qmail, you should also 'rm -rf ${PKG_PREFIX}' and remove the qmail users/groups." | /usr/bin/fmt
 @unexec echo "2) Do not forget to reconfigure your /etc/mail/mailer.conf to use your older MTA, or reconfigure your old MTA binaries if you decided to replace them." | /usr/bin/fmt
 @unexec echo "3) Do not forget to enable sendmail as your default MTA if you have to. You can do it just executing 'echo sendmail_enable=\"YES\"' >> /etc/rc.conf" | /usr/bin/fmt
