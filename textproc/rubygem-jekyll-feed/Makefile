@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-feed
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
