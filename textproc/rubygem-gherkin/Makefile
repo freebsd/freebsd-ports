@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gherkin
-PORTVERSION=	2.12.2
+PORTVERSION=	3.2.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -9,9 +9,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast Gherkin lexer/parser based on the Ragel State Machine Compiler
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-multi_json>=1.3:${PORTSDIR}/devel/rubygem-multi_json
-
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
