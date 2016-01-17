@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USES=		python tar:bzip2
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 PLIST_FILES=	share/pixmaps/pysolfc.png
 DATADIR=	${PREFIX}/share/PySolFC
@@ -37,26 +38,25 @@ OPTIONS_SUB=	yes
 CARDSETS_DISTFILES=	PySolFC-Cardsets-${DISTVERSION}${EXTRACT_SUFX}:cardsets
 NLS_USES=		gettext
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${MV} ${WRKSRC}/pysol.py ${WRKSRC}/pysolfc
 	@${REINPLACE_CMD} -e 's|pysol.py|pysolfc|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|^Icon.*|Icon=${PORTNAME}|' \
 		-e 's|^Exec.*|Exec=${PORTNAME}|' \
 		${WRKSRC}/data/pysol.desktop
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e "s|for l in ('ru', 'ru_RU')|for l in ()|" \
-		${WRKSRC}/setup.py
-.endif
 	@${FIND} ${WRKDIR} -name .thumbnails -or -name .xvpics | \
 		${XARGS} ${RM} -rf
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e "s|for l in ('ru', 'ru_RU')|for l in ()|" \
+		${WRKSRC}/setup.py
+
 post-install:
 	${LN} -s ${PREFIX}/share/icons/pysol01.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
-.if ${PORT_OPTIONS:MCARDSETS}
+
+post-install-CARDSETS-on:
 .for cdir in ${CARDSET_DUPS}
 	@${RM} -rf ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION}/cardset-${cdir}
 .endfor
@@ -64,10 +64,8 @@ post-install:
 		${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}
 	@cd ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION} && \
 		${FIND} . -type f | ${SED} -e 's|^./|${DATADIR_REL}/|' >> ${TMPPLIST}
-	@cd ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION} && \
-		${FIND} . -type d -mindepth 1 | ${SORT} -r | \
-		${SED} -e 's|^./|@dirrm ${DATADIR_REL}/|' >> ${TMPPLIST}
-.endif
+
+post-install-DOCS-on:
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
