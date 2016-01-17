@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiredis
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby wrapper for hiredis
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	redis>=0:${PORTSDIR}/databases/redis
 
