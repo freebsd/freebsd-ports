@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blockenspiel
-PORTVERSION=	0.4.5
+PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,10 +11,9 @@ COMMENT=	Library designed to make it easy to implement DSL blocks in Ruby
 
 LICENSE=	BSD3CLAUSE
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-BROKEN_RUBY23=	yes
 
 .include <bsd.port.mk>
