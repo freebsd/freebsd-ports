@@ -68,6 +68,13 @@ Notes:
 	  <lt>2.8.5</lt>
 	</range>
       </package>
+      <package>
+	<name>mplayer</name>
+	<name>mencoder</name>
+	<range>
+	  <lt>1.2.r20151219_2</lt>
+	</range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
