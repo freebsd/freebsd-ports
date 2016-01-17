@@ -1,5 +1,5 @@
---- Makefile.in.orig	2011-08-10 14:54:57.000000000 +0800
-+++ Makefile.in	2011-09-13 09:01:08.592572769 +0800
+--- Makefile.in.orig	2011-08-10 06:54:57 UTC
++++ Makefile.in
 @@ -47,7 +47,8 @@
  @VPATH_BUILD_TRUE@am__append_1 = -I$(top_builddir)/include \
  @VPATH_BUILD_TRUE@	-I$(top_srcdir)/languages -Ilanguages \
