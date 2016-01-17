@@ -2,8 +2,5 @@ bin/cargo
 etc/bash_completion.d/cargo
 lib/rustlib/manifest-cargo
 man/man1/cargo.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE-APACHE
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE-MIT
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE-THIRD-PARTY
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 share/zsh/site-functions/_cargo
