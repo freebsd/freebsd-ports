@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grape-entity
-PORTVERSION=	0.4.8
+PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Entities - a simple Facade to use with your models and API
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-multi_json>=1.3.2:${PORTSDIR}/devel/rubygem-multi_json
