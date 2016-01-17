@@ -1,6 +1,5 @@
 bin/mmdb-dump-metadata
 bin/mmdb-dump-search-tree
-bin/mmdb-verify-database
 %%SITE_PERL%%/MaxMind/DB/Reader.pm
 %%SITE_PERL%%/MaxMind/DB/Reader/Data/Container.pm
 %%SITE_PERL%%/MaxMind/DB/Reader/Data/EndMarker.pm
@@ -11,5 +10,4 @@ bin/mmdb-verify-database
 %%SITE_PERL%%/MaxMind/DB/Reader/Role/NodeReader.pm
 %%SITE_PERL%%/MaxMind/DB/Reader/Role/Reader.pm
 %%SITE_PERL%%/MaxMind/DB/Reader/Role/Sysreader.pm
-%%SITE_PERL%%/MaxMind/DB/Verifier.pm
 %%PERL5_MAN3%%/MaxMind::DB::Reader.3.gz
