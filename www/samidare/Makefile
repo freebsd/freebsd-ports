@@ -29,6 +29,8 @@ PLIST_FILES=	bin/samidare man/man1/samidare.1.gz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+BROKEN_RUBY23=	yes
+
 post-build:
 	@${REINPLACE_CMD} -e '1d' ${BUILD_WRKSRC}/${PORTNAME}
 	@cd ${BUILD_WRKSRC}; ${MV} ${PORTNAME}.man ${PORTNAME}.1

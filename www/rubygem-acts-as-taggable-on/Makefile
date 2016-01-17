@@ -18,4 +18,6 @@ USE_RUBY=	YES
 USE_RUBYGEMS=	YES
 RUBYGEM_AUTOPLIST=	YES
 
+BROKEN_RUBY23=	yes
+
 .include <bsd.port.mk>
