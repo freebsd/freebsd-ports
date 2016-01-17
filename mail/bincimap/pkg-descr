@@ -1,0 +1,7 @@
+Binc IMAP is a GPL licensed IMAP4rev1 server for Maildir, written in C++.
+It strives to be stable, fast, flexible, and RFC compliant.
+
+For those familiar with qmail-pop3d, this IMAP server will be the natural
+choice.  It is invoked similarly and uses checkpassword to authenticate.
+
+WWW: https://sourceforge.net/projects/bincimap/
