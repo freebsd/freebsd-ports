@@ -39,7 +39,7 @@ do-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_CMD} ${SCONS_ARGS})
 
 do-install:
-	@(cd ${WRKSRC} && ${SENTENV} ${MAKE_CMD} ${SCONS_ARGS} ${INSTALL_TARGET})
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_CMD} ${SCONS_ARGS} ${INSTALL_TARGET})
 
 post-patch:
 	@${REINPLACE_CMD} -E \
