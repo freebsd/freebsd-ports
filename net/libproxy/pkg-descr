@@ -6,4 +6,4 @@ GNOME? KDE? Command line? WPAD? PAC? Network changed? It doesn't matter!
 Just ask libproxy what proxy to use: you get simple code and your users
 get correct, consistant behavior and broad infrastructure compatibility.
 
-WWW: http://code.google.com/p/libproxy/
+WWW: https://libproxy.github.io/libproxy/
