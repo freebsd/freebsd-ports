@@ -58,6 +58,54 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="05eeb7e9-b987-11e5-83ef-14dae9d210b8">
+    <topic>isc-dhcpd -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>isc-dhcp41-server</name>
+	<range><lt>4.1.e_10,2</lt></range>
+      </package>
+      <package>
+	<name>isc-dhcp41-client</name>
+	<range><lt>4.1.e_3,2</lt></range>
+      </package>
+      <package>
+	<name>isc-dhcp41-relay</name>
+	<range><lt>4.1.e_6,2</lt></range>
+      </package>
+      <package>
+	<name>isc-dhcp42-client</name>
+	<name>isc-dhcp42-server</name>
+	<name>isc-dhcp42-relay</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>isc-dhcp43-client</name>
+	<name>isc-dhcp43-server</name>
+	<name>isc-dhcp43-relay</name>
+	<range><lt>4.3.3.p1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01334">
+	  <p>A badly formed packet with an invalid IPv4 UDP length field
+	    can cause a DHCP server, client, or relay program to terminate
+	    abnormally.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://kb.isc.org/article/AA-01334</url>
+      <cvename>CVE-2015-8605</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-05</discovery>
+      <entry>2016-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3b5c2362-bd07-11e5-b7ef-5453ed2e2b49">
     <topic>libproxy -- stack-based buffer overflow</topic>
     <affects>
