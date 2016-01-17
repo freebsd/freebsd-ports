@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	violetland
-PORTVERSION=	0.4.3
-PORTREVISION=	6
+PORTVERSION=	0.5
+PORTREVISION=	7
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,10 +14,9 @@ LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 USE_GITHUB=	yes
 GH_ACCOUNT=	ooxi
 
-USES=		cmake dos2unix gettext
+USES=		cmake gettext
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
-DOS2UNIX_FILES=	CMakeLists.txt src/system/utility/FileUtility.cpp
 CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"
 
 PLIST_FILES=	bin/violetland \
@@ -28,10 +27,6 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e '/set.libList/ s|)| ${LOCALBASE}/lib/libintl.so&|' \
-		${WRKSRC}/CMakeLists.txt
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
@@ -39,7 +34,7 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} CHANGELOG README_EN.TXT README_RU.TXT \
+	cd ${WRKSRC} && ${INSTALL_DATA} CHANGELOG.md README.md \
 		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
