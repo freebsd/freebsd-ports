@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	6
 CATEGORIES=	www
 
-MAINTAINER=	robak@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robust and small WWW server forked from Nginx
 
 LICENSE=	BSD2CLAUSE
