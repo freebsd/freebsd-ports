@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curtsies
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Curses-like terminal wrapper, with colored strings
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blessings>=1.5:${PORTSDIR}/devel/py-blessings \
 		${PYTHON_PKGNAMEPREFIX}wcwidth>=0.1.4:${PORTSDIR}/devel/py-wcwidth
