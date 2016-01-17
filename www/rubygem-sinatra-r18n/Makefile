@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sinatra-r18n
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Sinatra extension that provides i18n support to your web application
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-r18n-core=${PORTVERSION}:${PORTSDIR}/devel/rubygem-r18n-core \
 		rubygem-sinatra>=1.3:${PORTSDIR}/www/rubygem-sinatra
