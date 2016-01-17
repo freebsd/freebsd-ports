@@ -58,6 +58,65 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3b5c2362-bd07-11e5-b7ef-5453ed2e2b49">
+    <topic>libproxy -- stack-based buffer overflow</topic>
+    <affects>
+      <!-- libproxy-python is not affected. It only installs a .py file that
+	   dlopen()s libproxy.so. -->
+      <package>
+	<name>libproxy</name>
+	<range><ge>0.4.0</ge></range>
+	<range><lt>0.4.6_1</lt></range>
+      </package>
+      <package>
+	<name>libproxy-gnome</name>
+	<range><ge>0.4.0</ge></range>
+	<range><lt>0.4.6_2</lt></range>
+      </package>
+      <package>
+	<name>libproxy-kde</name>
+	<range><ge>0.4.0</ge></range>
+	<range><lt>0.4.6_6</lt></range>
+      </package>
+      <package>
+	<name>libproxy-perl</name>
+	<range><ge>0.4.0</ge></range>
+	<range><lt>0.4.6_3</lt></range>
+      </package>
+      <package>
+	<name>libproxy-webkit</name>
+	<range><ge>0.4.0</ge></range>
+	<range><lt>0.4.6_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tomas Hoger reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=864417#c0">
+	  <p>A buffer overflow flaw was discovered in the libproxy's
+	    url::get_pac() used to download proxy.pac proxy auto-configuration
+	    file. A malicious host hosting proxy.pac, or a man in the middle
+	    attacker, could use this flaw to trigger a stack-based buffer
+	    overflow in an application using libproxy, if proxy configuration
+	    instructed it to download proxy.pac file from a remote HTTP
+	    server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4504</cvename>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-4504</url>
+      <mlist>http://www.openwall.com/lists/oss-security/2012/10/12/1</mlist>
+      <url>https://github.com/libproxy/libproxy/commit/c440553c12836664afd24a24fb3a4d10a2facd2c</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=864417</url>
+      <mlist>https://groups.google.com/forum/?fromgroups=#!topic/libproxy/VxZ8No7mT0E</mlist>
+    </references>
+    <dates>
+      <discovery>2012-10-10</discovery>
+      <entry>2016-01-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="046fedd1-bd01-11e5-bbf4-5404a68ad561">
     <topic>ffmpeg -- remote attacker can access local files</topic>
     <affects>
