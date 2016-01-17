@@ -1,5 +1,3 @@
-[ excerpt from developer's site ]
-
 Bayespam is a qmail spam filter written in Perl, using Bayesian
 classification to filter out unsolicited commercial email. It is
 written with ease of installation and use in mind, and it is
@@ -12,4 +10,4 @@ for Spam. In this paper, Mr. Graham talked about a spam filter he
 is working on that used Bayesian classification to determine if a
 particular piece of email is spam or not.
 
-WWW: http://www.garyarnold.com/Bayespam
+WWW: http://BSDforge.com/projects/mail/bayespam
