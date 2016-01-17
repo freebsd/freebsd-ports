@@ -1,3 +1,4 @@
+bin/pycocci
 bin/spatch
 bin/spatch.byte
 lib/coccinelle/dllpycaml_stubs.so
@@ -41,5 +42,6 @@ lib/coccinelle/python/coccilib/xml_firehose.py
 lib/coccinelle/spatch
 lib/coccinelle/standard.h
 lib/coccinelle/standard.iso
+man/man1/pycocci.1.gz
 man/man1/spatch.1.gz
 man/man3/Coccilib.3cocci.gz
