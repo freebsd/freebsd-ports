@@ -170,6 +170,7 @@
     SUBDIR += py-pyliblzma
     SUBDIR += py-python-snappy
     SUBDIR += py-rarfile
+    SUBDIR += py-warctools
     SUBDIR += qpress
     SUBDIR += quazip
     SUBDIR += quazip-qt5
