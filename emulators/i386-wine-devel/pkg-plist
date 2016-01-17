@@ -265,6 +265,7 @@ include/wine/windows/ddk/hidsdi.h
 include/wine/windows/ddk/hidtypes.h
 include/wine/windows/ddk/imm.h
 include/wine/windows/ddk/mountmgr.h
+%%STAGING%%include/wine/windows/ddk/ndis.h
 include/wine/windows/ddk/ntddcdvd.h
 include/wine/windows/ddk/ntddk.h
 include/wine/windows/ddk/ntddser.h
@@ -964,6 +965,7 @@ lib32/wine/api-ms-win-core-memory-l1-1-1.dll.so
 lib32/wine/api-ms-win-core-misc-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-namedpipe-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-namedpipe-l1-2-0.dll.so
+lib32/wine/api-ms-win-core-path-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-processenvironment-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-processenvironment-l1-2-0.dll.so
 lib32/wine/api-ms-win-core-processthreads-l1-1-0.dll.so
@@ -1018,6 +1020,8 @@ lib32/wine/api-ms-win-eventing-provider-l1-1-0.dll.so
 lib32/wine/api-ms-win-ntuser-dc-access-l1-1-0.dll.so
 lib32/wine/api-ms-win-security-base-l1-1-0.dll.so
 lib32/wine/api-ms-win-security-base-l1-2-0.dll.so
+lib32/wine/api-ms-win-security-lsalookup-l1-1-0.dll.so
+%%STAGING%%lib32/wine/api-ms-win-security-lsalookup-l1-1-1.dll.so
 lib32/wine/api-ms-win-security-sddl-l1-1-0.dll.so
 lib32/wine/api-ms-win-service-core-l1-1-1.dll.so
 lib32/wine/api-ms-win-service-management-l1-1-0.dll.so
@@ -1224,6 +1228,7 @@ lib32/wine/fakedlls/api-ms-win-core-memory-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-core-misc-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-namedpipe-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-namedpipe-l1-2-0.dll
+lib32/wine/fakedlls/api-ms-win-core-path-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-processenvironment-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-processenvironment-l1-2-0.dll
 lib32/wine/fakedlls/api-ms-win-core-processthreads-l1-1-0.dll
@@ -1278,6 +1283,8 @@ lib32/wine/fakedlls/api-ms-win-eventing-provider-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-ntuser-dc-access-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-security-base-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-security-base-l1-2-0.dll
+lib32/wine/fakedlls/api-ms-win-security-lsalookup-l1-1-0.dll
+%%STAGING%%lib32/wine/fakedlls/api-ms-win-security-lsalookup-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-security-sddl-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-service-core-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-service-management-l1-1-0.dll
@@ -1965,6 +1972,7 @@ lib32/wine/libd3d9.def
 lib32/wine/libd3dcompiler.def
 lib32/wine/libd3dim.def
 lib32/wine/libd3drm.def
+lib32/wine/libd3dx10.def
 lib32/wine/libd3dx9.def
 lib32/wine/libd3dxof.def
 lib32/wine/libdbgeng.def
