@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="046fedd1-bd01-11e5-bbf4-5404a68ad561">
+    <topic>ffmpeg -- remote attacker can access local files</topic>
+    <affects>
+      <package>
+	<name>ffmpeg</name>
+	<range>
+	  <gt>2.0.0</gt>
+	  <lt>2.8.5</lt>
+	</range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Arch Linux reports:</p>
+	<blockquote cite="https://bugs.archlinux.org/task/47738">
+	  <p>ffmpeg has a vulnerability in the current version that allows the
+	    attacker to create a specially crafted video file, downloading which
+	    will send files from a user PC to a remote attacker server. The
+	    attack does not even require the user to open that file — for
+	    example, KDE Dolphin thumbnail generation is enough.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1897</cvename>
+      <cvename>CVE-2016-1898</cvename>
+      <freebsdpr>ports/206282</freebsdpr>
+      <url>https://www.ffmpeg.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2016-01-13</discovery>
+      <entry>2016-01-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6c808811-bb9a-11e5-a65c-485d605f4717">
     <topic>h2o -- directory traversal vulnerability</topic>
     <affects>
