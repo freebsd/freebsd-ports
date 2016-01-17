@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	List-Objects-WithUtils
-PORTVERSION=	2.025001
+PORTVERSION=	2.027002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	List objects, kitchen sink included
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
 		p5-List-UtilsBy>=0.09:${PORTSDIR}/devel/p5-List-UtilsBy \
