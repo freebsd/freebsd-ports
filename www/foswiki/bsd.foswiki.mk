@@ -50,13 +50,6 @@ make-dist:
 		${XARGS} ${TOUCH} && \
 		${TAR} cjvf ${DISTNAME}.tar.bz2 ${DISTNAME}
 
-create-plist:	extract
-	@${FIND} -s ${WRKSRC} -not -type d |\
-		${SED} -e 's|^${WRKSRC}|%%FWDIR%%|' > ${PLIST}
-	@${FIND} -ds ${WRKSRC} -type d -not -name ${DISTNAME} | \
-		${SED} -e "s,^${WRKSRC},@dirrm %%FWDIR%%," >> ${PLIST}
-	@${ECHO_CMD} '@dirrm %%FWDIR%%' >> ${PLIST}
-
 do-install:
 	@${INSTALL} -d ${STAGEDIR}${FWDIR}/
 	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${FWDIR}/
