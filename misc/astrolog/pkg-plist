@@ -1,7 +1,5 @@
 bin/astrolog
-@unexec if [ -f %D/lib/astrolog/astrolog.dat ] && cmp -s %D/lib/astrolog/astrolog.dat %D/lib/astrolog/astrolog.dat-dist; then rm -f %D/lib/astrolog/astrolog.dat; fi
-lib/astrolog/astrolog.dat-dist
-@exec if [ ! -f %D/lib/astrolog/astrolog.dat ] ; then cp -p %D/%F %B/astrolog.dat; fi
+@sample lib/astrolog/astrolog.dat-dist lib/astrolog/astrolog.dat
 lib/astrolog/fixstars.ast
 lib/astrolog/seas_00.se1
 lib/astrolog/seas_06.se1
