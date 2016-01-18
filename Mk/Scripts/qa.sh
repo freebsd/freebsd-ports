@@ -31,8 +31,8 @@ shebangonefile() {
 		;;
 	esac
 
-	interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p;2q' "$f")
-	case "$interp" in
+	interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p;2q' "${f}")
+	case "${interp}" in
 	"") ;;
 	${LINUXBASE}/*) ;;
 	${LOCALBASE}/*) ;;
@@ -245,7 +245,7 @@ libperl() {
 			# No results presents a blank line from heredoc.
 			[ -z "${f}" ] && continue
 			files=$((files+1))
-			found=`readelf -d $f | awk "BEGIN {libperl=1; rpath=10; runpath=100}
+			found=`readelf -d ${f} | awk "BEGIN {libperl=1; rpath=10; runpath=100}
 				/NEEDED.*${LIBPERL}/  { libperl = 0 }
 				/RPATH.*perl.*CORE/   { rpath   = 0 }
 				/RUNPATH.*perl.*CORE/ { runpath = 0 }
@@ -274,7 +274,7 @@ libperl() {
 		$(find ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL} -name '*.so')
 		EOT
 
-		if [ $files -gt 0 -a $has_some_libperl_so -eq 0 ]; then
+		if [ ${files} -gt 0 -a ${has_some_libperl_so} -eq 0 ]; then
 			err "None of the .so in ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL} are linked with ${LIBPERL}, see above for the full list."
 			return 1
 		else
@@ -318,4 +318,4 @@ for check in ${checks}; do
 	${check} || ret=1
 done
 
-exit $ret
+exit ${ret}
