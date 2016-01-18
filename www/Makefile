@@ -2055,6 +2055,7 @@
     SUBDIR += sitecopy
     SUBDIR += siteframe
     SUBDIR += skytemplate
+    SUBDIR += slowcgi
     SUBDIR += smarty2
     SUBDIR += smarty3
     SUBDIR += smb_auth
