@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postsrsd
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	mail
 
 MAINTAINER=	ports@bsdserwis.com
@@ -25,10 +24,12 @@ CMAKE_ARGS+=	--no-warn-unused-cli \
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
 
-PORTDOCS=	README.md main.cf.ex
+PORTDOCS=	README.md main.cf.ex README_UPGRADE.md
 
 OPTIONS_DEFINE=	DOCS
 
 DOCS_CMAKE_ON=	-DENABLE_DOCS:STRING="ON"
+
+PLIST_FILES=	sbin/postsrsd man/man8/postsrsd.8.gz etc/postsrsd.secret
 
 .include <bsd.port.mk>
