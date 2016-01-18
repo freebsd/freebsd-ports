@@ -39,10 +39,4 @@
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default/redirect_standard.tpl
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/index.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/version
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib
-%%PORTDOCS%%@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/doc
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
