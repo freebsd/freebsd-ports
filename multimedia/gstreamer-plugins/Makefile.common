@@ -186,8 +186,6 @@ gst_amrnb_LIB_DEPENDS+=	libopencore-amrnb.so:${PORTSDIR}/audio/opencore-amr
 gst_amrnb_PLIST_FILES=	${GST_LIB_DIR}/libgstamrnb.la \
 			${GST_LIB_DIR}/libgstamrnb.so \
 			share/gstreamer-${VERSION}/presets/GstAmrnbEnc.prs
-gst_amrnb_PLIST_DIRSTRY=share/gstreamer-${VERSION}/presets \
-			share/gstreamer-${VERSION}
 gst_amrnb_DIST=		ugly
 
 # amrwbdec
@@ -589,8 +587,6 @@ gst_x264_LIB_DEPENDS+=	libx264.so:${PORTSDIR}/multimedia/libx264
 gst_x264_PLIST_FILES=	${GST_LIB_DIR}/libgstx264.la \
 		${GST_LIB_DIR}/libgstx264.so \
 		share/gstreamer-${VERSION}/presets/GstX264Enc.prs
-gst_x264_PLIST_DIRSTRY=	share/gstreamer-${VERSION}/presets \
-			share/gstreamer-${VERSION}
 gst_x264_DIST=	ugly
 
 # xvid
@@ -635,7 +631,6 @@ RUN_DEPENDS+=	${gst_${GST_PLUGIN}_RUN_DEPENDS}
 USES+=		${gst_${GST_PLUGIN}_USES}
 PLIST_FILES=	${gst_${GST_PLUGIN}_PLIST_FILES}
 PLIST_DIRS=	${gst_${GST_PLUGIN}_PLIST_DIRS}
-PLIST_DIRSTRY=	${gst_${GST_PLUGIN}_PLIST_DIRSTRY}
 EXTRA_LIBS+=	${gst_${GST_PLUGIN}_EXTRA_LIBS}
 USE_GNOME+=	${gst_${GST_PLUGIN}_USE_GNOME}
 CONFIGURE_ENV+=	${gst_${GST_PLUGIN}_CONFIGURE_ENV}
