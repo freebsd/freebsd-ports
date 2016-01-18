@@ -46,17 +46,6 @@ PLIST_SUB+=	${SUB_LIST}
 post-patch:
 	@${RM} -f ${WRKSRC}/cron.sh ${WRKSRC}/.htaccess
 
-.ifdef MAINTAINER_MODE
-genplist: extract patch
-	@${FIND} -s ${WRKSRC} -type f | ${SED} \
-		-e 's,${WRKSRC},%%MAGENTODIR%%,' > ${PORTSDIR}/www/magento/pkg-plist.new
-	@${FIND} -s -d ${WRKSRC} -type d | ${SED} \
-		-e 's,${WRKSRC}/media,@dirrmtry %%MAGENTODIR%%/media,' \
-		-e 's,${WRKSRC}/var,@dirrmtry %%MAGENTODIR%%/var,' \
-		-e 's,${WRKSRC},@dirrm %%MAGENTODIR%%,' >> ${PORTSDIR}/www/magento/pkg-plist.new
-
-.endif
-
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${MAGENTODIR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/cron.sh ${STAGEDIR}${PREFIX}/${MAGENTODIR}
