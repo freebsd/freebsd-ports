@@ -1,6 +1,6 @@
---- ng/ng.tcl.orig	2010-06-08 09:33:22.000000000 +0700
-+++ ng/ng.tcl	2010-06-08 09:33:39.000000000 +0700
-@@ -26,7 +26,7 @@
+--- ng/ng.tcl.orig	2014-08-29 09:54:01 UTC
++++ ng/ng.tcl
+@@ -32,7 +32,7 @@ if { [lsearch [array names env] NETGENDI
      set ngdir $env(NETGENDIR) 
  }
  if { [string length $ngdir] == 0 } {
