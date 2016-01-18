@@ -3,7 +3,7 @@
 
 PORTNAME=	infobot
 PORTVERSION=	0.45.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	http://www.infobot.org/src/ \
 		http://www.infobot.org/src/prior/
