@@ -25,7 +25,12 @@ that system. Example:
   [centos:vars]
   ansible_python_interpreter=/usr/bin/python
 
+Python notes:
+
 If you have Python 3.x as the default, please set
 ansible_python_interpreter=%%LOCALBASE%%/bin/python2
+
+Ansible 2 requires that lang/python27 port is built
+with SEM option enabled, which is the default
 
 ===============================================================================
