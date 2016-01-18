@@ -188,9 +188,9 @@ post-install:
 # strip returns an error for non binary files, but we have a big mix
 	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/* 2>/dev/null
 	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/apache22/mod_*.so
-.if ${PORT_OPTIONS:MLOG_FORENSIC}
+
+post-install-LOG_FORENSIC-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${STAGEDIR}${PREFIX}/sbin
-.endif
 
 # maintainer only, check for new modules
 modlist: extract
