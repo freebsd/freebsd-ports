@@ -251,26 +251,24 @@ libperl() {
 				/RUNPATH.*perl.*CORE/ { runpath = 0 }
 				END {print libperl+rpath+runpath}
 				"`
-			# FIXME When 8.4 goes out of commission, replace the ;;
-			# with ;& in the case below.  Also, change the logic on
-			# detecting if there was a file with libperl.so
-			if [ "$found" -ne "0" ]; then
-				case "$found" in
-					*1)
-						warn "${f} is not linked with ${LIBPERL}, not respecting lddlflags?"
-						;; #;&
-					*1?)
-						has_some_libperl_so=1
-						warn "${f} does not have a rpath to ${LIBPERL}, not respecting lddlflags?"
-						;; #;&
-					1??)
-						has_some_libperl_so=1
-						warn "${f} does not have a runpath to ${LIBPERL}, not respecting lddlflags?"
-						;; #;&
-				esac
-			else
-				has_some_libperl_so=1
-			fi
+			case "${found}" in
+				*1)
+					warn "${f} is not linked with ${LIBPERL}, not respecting lddlflags?"
+					;;
+				*0)
+					has_some_libperl_so=1
+					case "${found}" in
+						*1?)
+							warn "${f} does not have a rpath to ${LIBPERL}, not respecting lddlflags?"
+							;;
+					esac
+					case "${found}" in
+						1??)
+							warn "${f} does not have a runpath to ${LIBPERL}, not respecting lddlflags?"
+							;;
+					esac
+					;;
+			esac
 		# Use heredoc to avoid losing rc from find|while subshell
 		done <<-EOT
 		$(find ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL} -name '*.so')
