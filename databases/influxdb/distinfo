@@ -1,5 +1,5 @@
-SHA256 (influxdb-influxdb-v0.9.6_GH0.tar.gz) = c782d03b3ce3a0b2512277225b3163f82fd3fd28356c06a592690e56f6cb8580
-SIZE (influxdb-influxdb-v0.9.6_GH0.tar.gz) = 1135911
+SHA256 (influxdb-influxdb-v0.9.6.1_GH0.tar.gz) = 4e5e2a83f885d1c531ea538397cef1de94717eab02c7e589b9696f22dd65d3e2
+SIZE (influxdb-influxdb-v0.9.6.1_GH0.tar.gz) = 1134698
 SHA256 (alecthomas-log4go-5c3c713_GH0.tar.gz) = ea492017025d02f1204ba744fc01130b547da7e07b661598cac83a3ca63c6255
 SIZE (alecthomas-log4go-5c3c713_GH0.tar.gz) = 16187
 SHA256 (armon-go-metrics-06b6099_GH0.tar.gz) = 9536fa2418200cc060edeb24fa3c778abbed7dfce626784663aa39b411477a8a
@@ -36,6 +36,8 @@ SHA256 (hashicorp-go-msgpack-fa3f638_GH0.tar.gz) = 6353c623d5d58c7ca03e2bdac63f9
 SIZE (hashicorp-go-msgpack-fa3f638_GH0.tar.gz) = 49496
 SHA256 (influxdb-enterprise-client-25665cb_GH0.tar.gz) = 867a109025936d030b1d43e35df4e88ed7a9f267c8bf33b5e110293f6c7ef694
 SIZE (influxdb-enterprise-client-25665cb_GH0.tar.gz) = 6531
+SHA256 (influxdata-usage-client-475977e_GH0.tar.gz) = b62bc789b1e508b3904a9514705d0d5c362e9788028eeab97c588927a94d59f7
+SIZE (influxdata-usage-client-475977e_GH0.tar.gz) = 6620
 SHA256 (jwilder-encoding-07d88d4_GH0.tar.gz) = c061d88b954e13a5c1c74b964e9b56c9a670f3f3ec8c8f563827f5323b8e2ae7
 SIZE (jwilder-encoding-07d88d4_GH0.tar.gz) = 9462
 SHA256 (kimor79-gollectd-61d0dee_GH0.tar.gz) = 217d827fb26d1cf7b1fa3bae7fa51fc5b25ff2141151ffa7d328d015cd4fb498
