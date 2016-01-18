@@ -171,8 +171,8 @@ Notes:
       <package>
 	<name>ffmpeg</name>
 	<range>
-	  <gt>2.0.0</gt>
-	  <lt>2.8.5</lt>
+	  <gt>2.0,1</gt>
+	  <lt>2.8.5,1</lt>
 	</range>
       </package>
       <package>
