@@ -1,4 +1,2 @@
-@unexec if cmp -s %D/etc/sshit.conf %D/etc/sshit.conf-dist; then rm -f %D/etc/sshit.conf; fi
-etc/sshit.conf-dist
-@exec if [ ! -f %D/etc/sshit.conf ] ; then cp -p %D/%F %B/sshit.conf; fi
+@sample etc/sshit.conf-dist etc/sshit.conf
 sbin/sshit
