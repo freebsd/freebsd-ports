@@ -1,13 +1,13 @@
---- CMakeLists.txt.orig	2015-12-30 13:35:04 UTC
+--- CMakeLists.txt.orig	2016-01-18 08:59:14 UTC
 +++ CMakeLists.txt
-@@ -39,8 +39,8 @@ add_custom_command(TARGET nordlicht POST
- install(TARGETS libnordlicht DESTINATION ${LIB_INSTALL_DIR})
- install(TARGETS nordlicht DESTINATION bin)
+@@ -49,8 +49,8 @@ install(TARGETS nordlicht DESTINATION bi
  install(FILES nordlicht.h DESTINATION include)
--install(FILES ${CMAKE_BINARY_DIR}/nordlicht.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
--install(FILES ${CMAKE_BINARY_DIR}/nordlicht.1 DESTINATION share/man/man1)
-+install(FILES ${CMAKE_BINARY_DIR}/nordlicht.pc DESTINATION libdata/pkgconfig)
-+install(FILES ${CMAKE_BINARY_DIR}/nordlicht.1 DESTINATION man/man1)
+ 
+ if (NOT WIN32)
+-    install(FILES ${CMAKE_BINARY_DIR}/nordlicht.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
+-    install(FILES ${CMAKE_BINARY_DIR}/nordlicht.1 DESTINATION share/man/man1)
++    install(FILES ${CMAKE_BINARY_DIR}/nordlicht.pc DESTINATION libdata/pkgconfig)
++    install(FILES ${CMAKE_BINARY_DIR}/nordlicht.1 DESTINATION man/man1)
+ endif()
  
  add_custom_target(check testsuite)
- add_custom_target(download_testfile ${CMAKE_COMMAND} -P ${CMAKE_SOURCE_DIR}/cmake/download_testfile.cmake)
