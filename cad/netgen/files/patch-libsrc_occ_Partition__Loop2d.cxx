@@ -1,5 +1,5 @@
---- libsrc/occ/Partition_Loop2d.cxx.orig	2012-11-09 16:15:02.000000000 +0100
-+++ libsrc/occ/Partition_Loop2d.cxx	2013-05-12 11:41:09.000000000 +0200
+--- libsrc/occ/Partition_Loop2d.cxx.orig	2014-08-29 09:54:03 UTC
++++ libsrc/occ/Partition_Loop2d.cxx
 @@ -52,6 +52,10 @@
  #include <gp_Pnt.hxx>
  #include <gp_Pnt2d.hxx>

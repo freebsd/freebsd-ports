@@ -1,6 +1,6 @@
---- ng/ngappinit.cpp.orig	2010-06-08 09:13:06.000000000 +0700
-+++ ng/ngappinit.cpp	2010-06-08 09:13:20.000000000 +0700
-@@ -151,7 +151,7 @@
+--- ng/ngappinit.cpp.orig	2014-08-29 09:54:01 UTC
++++ ng/ngappinit.cpp
+@@ -149,7 +149,7 @@ int main(int argc, char ** argv)
    if (getenv ("NETGENDIR") && strlen (getenv ("NETGENDIR")))
      ngdir = getenv ("NETGENDIR");
    else
