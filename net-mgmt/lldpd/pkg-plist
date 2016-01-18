@@ -4,7 +4,7 @@ include/lldpctl.h
 lib/liblldpctl.a
 lib/liblldpctl.so
 lib/liblldpctl.so.4
-lib/liblldpctl.so.4.7.0
+lib/liblldpctl.so.4.8.0
 libdata/pkgconfig/lldpctl.pc
 man/man8/lldpcli.8.gz
 man/man8/lldpctl.8.gz
