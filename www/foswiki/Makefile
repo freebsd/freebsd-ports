@@ -19,21 +19,17 @@ RUN_DEPENDS=	p5-Error>=0.15:${PORTSDIR}/lang/p5-Error \
 
 USES=		cpe perl5 tar:tgz
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	OPTINT OPTOTH APACHE
 OPTIONS_DEFAULT=	OPTINT OPTOTH
-OPTINT_DESC=	Install Perl modules for intl character support
-OPTOTH_DESC=	Install other optional Perl modules
-APACHE_DESC=	Install Apache web server and sample config file
+OPTIONS_SUB=	yes
+OPTINT_DESC=	Perl modules for intl character support
+OPTOTH_DESC=	Other optional Perl modules
+APACHE_DESC=	Apache web server and sample config file
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPTINT}
-RUN_DEPENDS+=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon
-.endif
-
-.if ${PORT_OPTIONS:MOPTOTH}
-RUN_DEPENDS+=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
+OPTINT_RUN_DEPENDS=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon
+OPTOTH_RUN_DEPENDS=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
 		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-CGI-Session>=4.40:${PORTSDIR}/www/p5-CGI-Session \
@@ -44,28 +40,14 @@ RUN_DEPENDS+=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Net>=1.19:${PORTSDIR}/net/p5-Net
-.endif
-
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN?=22+
-PLIST_SUB+=	NOAPACHE=""
-PKGMESSAGE=	pkg-message-apache
-SUB_FILES+=	pkg-message-apache
-
-CONFDIR_REL=	${APACHEETCDIR}/Includes
-CONFDIR=	${PREFIX}/${CONFDIR_REL}
-
-PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
-.else
-# Weirdness - need to include in this branch of the .if because
-# it was included in the other one. The other branch needs the
-# include performed after the USE_APACHE variable is set so
-# APACHE_VERSION can be tested above.
-
-PLIST_SUB+=	NOAPACHE="@comment "
-PKGMESSAGE=	pkg-message-noapache
-SUB_FILES+=	pkg-message-noapache
-.endif
+APACHE_USE=	APACHE_RUN=22+
+APACHE_SUB_FILES=	pkg-message-apache
+APACHE_SUB_LIST=	FOSCONFDIR=${CONFDIR}
+APACHE_PLIST_SUB=	CONFDIR=${APACHEETCDIR}/Includes
+APACHE_VARS=	PKGMESSAGE=pkg-message-apache \
+		CONFDIR=${PREFIX}/${APACHEETCDIR}/Includes
+APACHE_SUB_FILES_OFF=	pkg-message-noapache
+APACHE_VARS_OFF=	PKGMESSAGE=pkg-message-noapache
 
 SUB_FILES+=	LocalSite.cfg
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
@@ -91,8 +73,7 @@ post-patch:
 		LocalLib.cfg
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 
-post-install:
-.if ${PORT_OPTIONS:MAPACHE}
+post-install-APACHE-on:
 	@${MKDIR} ${STAGEDIR}${CONFDIR}
 	@if [ -d "${STAGEDIR}${CONFDIR}" ]; then \
 	  ${INSTALL_DATA} ${WRKSRC}/foswiki_httpd_conf.txt \
@@ -105,7 +86,6 @@ post-install:
 	  ${ECHO_MSG} "" ; \
 	  ${FALSE} ; \
 	fi
-.endif
 
 .include "${.CURDIR}/bsd.foswiki.mk"
 .include <bsd.port.mk>
