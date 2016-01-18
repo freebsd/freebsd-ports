@@ -15,10 +15,10 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for the block building game
 
-LIB_DEPENDS=	libopenal.so:${PORTSDIR}/audio/openal-soft
 RUN_DEPENDS=	${JAVALIBDIR}/lwjgl/lwjgl.jar:${PORTSDIR}/games/lwjgl
 
 WRKSRC=		${WRKDIR}
+USES=		openal
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
