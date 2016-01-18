@@ -14,7 +14,7 @@
 %%DATADIR%%/double_pinyin_mspy.schema.yaml
 %%DATADIR%%/emoji.dict.yaml
 %%DATADIR%%/emoji.schema.yaml
-%%DATADIR%%/essay.kct
+%%DATADIR%%/essay.txt
 %%DATADIR%%/ipa_xsampa.dict.yaml
 %%DATADIR%%/ipa_xsampa.schema.yaml
 %%DATADIR%%/jyutping.dict.yaml

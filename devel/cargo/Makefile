@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo
-PORTVERSION=	0.4.0.20150720
+PORTVERSION=	0.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	dumbbell@FreeBSD.org
@@ -12,8 +12,8 @@ COMMENT=	Rust's Package Manager
 LICENSE=	APACHE20 \
 		MIT
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE \
-		${WRKSRC}/LICENSE-MIT
+# APACHE20 license is standard, see Templates/Licenses/APACHE20
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 # The following files are required:
 #
@@ -34,73 +34,69 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE \
 #   install Cargo.
 
 MASTER_SITES=	https://static.rust-lang.org/cargo-dist/2015-04-02/:bootstrap \
-		LOCAL/dumbbell:registry
-
-DISTFILES=	${CARGO_BOOT}:bootstrap
-EXTRACT_ONLY=	${DISTNAME}${_GITHUB_EXTRACT_SUFX} \
-		${DISTFILE_rust_installer}
-
-.if (${.TARGET} != gen-registry) && !defined(SKIP_CARGO_REGISTRY)
+		LOCAL/jbeich:registry
+.if !defined(SKIP_CARGO_REGISTRY)
 DISTFILES+=	${CARGO_REGISTRY}:registry
-EXTRACT_ONLY+=	${CARGO_REGISTRY}
 .endif
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang
-GH_PROJECT=	${PORTNAME} \
-		rust-installer:rust_installer
-GH_TAGNAME=	9c5ffcb871 \
-		c37d374:rust_installer
+GH_PROJECT=	rust-installer:rust_installer
+GH_TAGNAME=	4915c75:rust_installer
 
-CARGO_BOOT_SIG=	x86_64-unknown-freebsd
+CARGO_BOOT_SIG=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}
 CARGO_BOOT=	${PORTNAME}-nightly-${CARGO_BOOT_SIG}${EXTRACT_SUFX}
-CARGO_REGISTRY=	${DISTNAME:S/${GH_ACCOUNT}-${PORTNAME}/${PORTNAME}-registry/}${EXTRACT_SUFX}
-
-USES=		gmake python:2,build pkgconfig
-
-# The bootstrapped cargo is built with OpenSSL from ports (libssl.so.8).
-USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=yes
+CARGO_REGISTRY=	${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
+CARGO_REGISTRY_BOOT_HASH=	1ecc6299db9ec823
+# Like above but with: pnacl-build-helper, libressl-pnacl-sys
+CARGO_REGISTRY_CUR_HASH=	88ac128001ac3a9a
 
 # We don't USES=cmake here, because cmake is not Cargo's build system.
 # It's used by a bundled dependency (libgit2).
-BUILD_DEPENDS=	${LOCALBASE}/bin/cmake:${PORTSDIR}/devel/cmake \
-		rustc:${PORTSDIR}/lang/rust-nightly
+BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake \
+		${RUST_PORT:T}>=1.5.0:${PORTSDIR}/${RUST_PORT}
 LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2 \
 		libcurl.so:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	rustc:${PORTSDIR}/${RUST_PORT}
+RUST_PORT?=	lang/rust
 
-# FIXME: Don't add rust as a runtime dependency. As we need rust-nightly
-# to build Cargo, the same version would be pulled by installing Cargo,
-# preventing its use with the stable version of Rust.
-# RUN_DEPENDS=	rustc:${PORTSDIR}/lang/rust
-
+USES=		gmake python:-2.7,build pkgconfig
+USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
-MAKE_ENV+=	LD_LIBRARY_PATH="${WRKSRC}/target/snapshot/cargo/lib"
-
-# git log -1 --date=short --pretty=format:'%cd'
-CFG_VER_DATE=	${PORTVERSION:C/.*\.([0-9]{4})([0-9]{2})([0-9]{2})/\1-\2-\3/}
-# git rev-parse --short HEAD
-CFG_VER_HASH=	${GH_TAGNAME}
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${MANPREFIX}/man"
+MAKE_ENV=	ARGS="${CARGO_ARGS}"
+CARGO_ARGS=	--jobs ${MAKE_JOBS_NUMBER}
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 MAKE_ARGS+=	VERBOSE=1
 .endif
 
-MAKE_JOBS_UNSAFE=	yes
+OPTIONS_DEFINE=	BOOTSTRAP
+OPTIONS_DEFAULT=BOOTSTRAP
 
-.include <bsd.port.pre.mk>
+BOOTSTRAP_DESC=		Bootstrap using pre-built vendor snapshot
+BOOTSTRAP_CONFIGURE_OFF=--local-cargo="$$(command -v cargo)" # respect PATH
+BOOTSTRAP_VARS_OFF=	EXTRACT_AFTER_ARGS="-s/${CARGO_REGISTRY_BOOT_HASH}/${CARGO_REGISTRY_CUR_HASH}/"
+BOOTSTRAP_DISTFILES=	${CARGO_BOOT}:bootstrap
+BOOTSTRAP_EXTRACT_ONLY=	${DISTFILES:N*\:bootstrap:C/:.*//}
+BOOTSTRAP_MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/target/snapshot/cargo/lib"
+BOOTSTRAP_VARS=		EXTRACT_AFTER_ARGS="-s/${CARGO_REGISTRY_CUR_HASH}/${CARGO_REGISTRY_BOOT_HASH}/"
+.if !exists(/usr/lib/libssl.so.8) # OPENSSL_SHLIBVER
+BOOTSTRAP_VARS+=	WITH_OPENSSL_PORT=yes
+.endif
 
 post-extract:
-	@(${RMDIR} ${WRKSRC}/src/rust-installer && \
-	  ${MV} ${WRKSRC_rust_installer} ${WRKSRC}/src/rust-installer)
+	@${RMDIR} ${WRKSRC}/src/rust-installer
+	@${MV} ${WRKSRC_rust_installer} ${WRKSRC}/src/rust-installer
+
+post-extract-BOOTSTRAP-on:
 	@${MKDIR} ${WRKSRC}/target/dl
 	${LN} -sf ${DISTDIR}/${CARGO_BOOT} ${WRKSRC}/target/dl/
 
 post-patch:
-	${REINPLACE_CMD} \
-		-e 's|^CFG_VER_DATE =.*|CFG_VER_DATE = ${CFG_VER_DATE}|' \
-		-e 's|^CFG_VER_HASH =.*|CFG_VER_HASH = ${CFG_VER_HASH}|' \
+# Fix mandir and don't install licenses outside of ${_LICENSE_DIR}
+	@${REINPLACE_CMD} -e 's,share/man,man,' \
+		-e 's, LICENSE-[^[:space:]]*,,g' \
 		${WRKSRC}/Makefile.in
 
 # In case the previous "make stage" failed, this ensures rust's
@@ -121,14 +117,8 @@ pre-install:
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/install.log
-	@${MV} ${STAGEDIR}${PREFIX}/share/man/man1/cargo.1 \
-		${STAGEDIR}${PREFIX}/man/man1/cargo.1
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/man/man1 \
-		${STAGEDIR}${PREFIX}/share/man
-	@${REINPLACE_CMD} -e 's|${STAGEDIR}||' \
-		-e 's|share/man/man1/cargo\.1|man/man1/cargo.1.gz|' \
+	@${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' \
 		${STAGEDIR}${PREFIX}/lib/rustlib/manifest-cargo
-	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/manifest-cargo.bak
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cargo
 	@${RM} \
 		${STAGEDIR}${PREFIX}/lib/rustlib/components \
@@ -138,19 +128,19 @@ post-install:
 # "make gen-registry" is a special target to ease this port update.
 #
 # After changing the version number and the Git revision, you can run
-# "make registry" to update the distinfo and create a new snapshot of
+# "make gen-registry" to update the distinfo and create a new snapshot of
 # the registry. The new registry is written to ${DISTDIR} and can be
 # uploaded.
 
 gen-registry:
-	${MAKE} -DSKIP_CARGO_REGISTRY makesum
-	${MAKE} -DSKIP_CARGO_REGISTRY
-	cd ${WRKDIR} && \
-		${TAR} cvf - \
+	${MAKE} -C${.CURDIR} -DSKIP_CARGO_REGISTRY makesum
+	${MAKE} -C${.CURDIR} -DSKIP_CARGO_REGISTRY
+	${TAR} cJvf ${_DISTDIR}/${CARGO_REGISTRY} -C${WRKDIR} \
+		--uid 0 --gid 0 \
 		--exclude libgit2/tests/ \
 		--exclude curl/tests/ \
 		--exclude 'index/github.com-*/.git/' \
-		.cargo | ${GZIP_CMD} > ${DISTDIR}/${CARGO_REGISTRY}
-	${MAKE} makesum
+		.cargo
+	${MAKE} -C${.CURDIR} makesum
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

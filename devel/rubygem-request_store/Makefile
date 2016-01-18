@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	request_store
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

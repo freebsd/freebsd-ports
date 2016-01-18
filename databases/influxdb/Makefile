@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	influxdb
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases net-mgmt
 
@@ -31,6 +31,7 @@ GH_ACCOUNT=	influxdb:DEFAULT \
 		golang:golang_protobuf,golang_snappy \
 		hashicorp:raft,raft_boltdb,go_msgpack \
 		influxdb:enterprise_client \
+		influxdata:usage_client \
 		jwilder:encoding \
 		kimor79:gollectd \
 		peterh:liner \
@@ -43,14 +44,16 @@ GH_PROJECT=	bolt:bolt crypto:crypto encoding:encoding \
 		liner:liner log4go:log4go pat:pat pool:pool \
 		protobuf:gogo_protobuf protobuf:golang_protobuf \
 		raft-boltdb:raft_boltdb raft:raft ratecounter:ratecounter \
-		snappy:golang_snappy, statik:statik toml:toml go-uuid:go_uuid
+		snappy:golang_snappy, statik:statik toml:toml go-uuid:go_uuid \
+		usage-client:usage_client
 GH_TAGNAME=	b34b35e:bolt 056c9bc:toml 1351f93:crypto 4d47685:liner \
 		5c3c713:log4go 274df12:statik e492fd3:gogo_protobuf \
 		61d0dee:gollectd 68415e7:golang_protobuf 06b6099:go_metrics \
 		b8a3500:pat cba550e:pool d1e82c1:raft_boltdb ed3ca8a:go_uuid \
 		d136cd1:raft fa3f638:go_msgpack 723cc1e:golang_snappy \
 		9fc824c:go_collectd 86c69b3:go_bits 27cd597:go_bitstream \
-		07d88d4:encoding 25665cb:enterprise_client 5a11f58:ratecounter
+		07d88d4:encoding 25665cb:enterprise_client 5a11f58:ratecounter \
+		475977e:usage_client
 
 SUB_FILES=	influxd
 SUB_LIST+=	INFLUXD_USER=${INFLUXD_USER} \
@@ -109,6 +112,7 @@ post-patch:
 	@${MV} ${WRKSRC_crypto} ${WRKSRC}/src/golang.org/x/crypto
 	@${MV} ${WRKSRC_encoding} ${WRKSRC}/src/github.com/jwilder/encoding
 	@${MV} ${WRKSRC_enterprise_client} ${WRKSRC}/src/github.com/influxdb/enterprise-client
+	@${MV} ${WRKSRC_usage_client} ${WRKSRC}/src/github.com/influxdb/usage-client
 	@${MV} ${WRKSRC_go_bits} ${WRKSRC}/src/github.com/dgryski/go-bits
 	@${MV} ${WRKSRC_go_bitstream} ${WRKSRC}/src/github.com/dgryski/go-bitstream
 	@${MV} ${WRKSRC_go_collectd}/api ${WRKSRC}/src/collectd.org/api

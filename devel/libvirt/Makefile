@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -70,6 +70,7 @@ CONFIGURE_ARGS+=	--without-avahi \
 		--without-lxc \
 		--without-uml \
 		--without-xen \
+		--without-login-shell \
 		--with-ssh2 \
 		--localstatedir=${VARDIR}
 

@@ -30,6 +30,9 @@ RUN_DEPENDS=	rubygem-classifier-reborn>=2.0:${PORTSDIR}/devel/rubygem-classifier
 		rubygem-toml>=0.1.0:${PORTSDIR}/devel/rubygem-toml
 
 CONFLICTS_INSTALL=	rubygem-jekyll-3.*
+
+PORTSCOUT=	limit:^2\.
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

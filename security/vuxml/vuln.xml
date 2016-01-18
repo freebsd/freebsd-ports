@@ -58,6 +58,103 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6809c6db-bdeb-11e5-b5fe-002590263bf5">
+    <topic>go -- information disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><ge>1.5,1</ge><lt>1.5.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jason Buberel reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2016/01/13/7">
+	  <p>A security-related issue has been reported in Go's math/big
+	    package. The issue was introduced in Go 1.5. We recommend that all
+	    users upgrade to Go 1.5.3, which fixes the issue. Go programs must
+	    be recompiled with Go 1.5.3 in order to receive the fix.</p>
+	  <p>The Go team would like to thank Nick Craig-Wood for identifying the
+	    issue.</p>
+	  <p>This issue can affect RSA computations in crypto/rsa, which is used
+	    by crypto/tls. TLS servers on 32-bit systems could plausibly leak
+	    their RSA private key due to this issue. Other protocol
+	    implementations that create many RSA signatures could also be
+	    impacted in the same way.</p>
+	  <p>Specifically, incorrect results in one part of the RSA Chinese
+	    Remainder computation can cause the result to be incorrect in such a
+	    way that it leaks one of the primes. While RSA blinding should
+	    prevent an attacker from crafting specific inputs that trigger the
+	    bug, on 32-bit systems the bug can be expected to occur at random
+	    around one in 2^26 times. Thus collecting around 64 million
+	    signatures (of known data) from an affected server should be enough
+	    to extract the private key used.</p>
+	  <p>On 64-bit systems, the frequency of the bug is so low (less than
+	    one in 2^50) that it would be very difficult to exploit.
+	    Nonetheless, everyone is strongly encouraged to upgrade.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8618</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2016/01/13/7</url>
+      <url>https://go-review.googlesource.com/#/c/17672/</url>
+      <url>https://go-review.googlesource.com/#/c/18491/</url>
+    </references>
+    <dates>
+      <discovery>2016-01-13</discovery>
+      <entry>2016-01-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="05eeb7e9-b987-11e5-83ef-14dae9d210b8">
+    <topic>isc-dhcpd -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>isc-dhcp41-server</name>
+	<range><lt>4.1.e_10,2</lt></range>
+      </package>
+      <package>
+	<name>isc-dhcp41-client</name>
+	<range><lt>4.1.e_3,2</lt></range>
+      </package>
+      <package>
+	<name>isc-dhcp41-relay</name>
+	<range><lt>4.1.e_6,2</lt></range>
+      </package>
+      <package>
+	<name>isc-dhcp42-client</name>
+	<name>isc-dhcp42-server</name>
+	<name>isc-dhcp42-relay</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>isc-dhcp43-client</name>
+	<name>isc-dhcp43-server</name>
+	<name>isc-dhcp43-relay</name>
+	<range><lt>4.3.3.p1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01334">
+	  <p>A badly formed packet with an invalid IPv4 UDP length field
+	    can cause a DHCP server, client, or relay program to terminate
+	    abnormally.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://kb.isc.org/article/AA-01334</url>
+      <cvename>CVE-2015-8605</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-05</discovery>
+      <entry>2016-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3b5c2362-bd07-11e5-b7ef-5453ed2e2b49">
     <topic>libproxy -- stack-based buffer overflow</topic>
     <affects>
@@ -123,8 +220,8 @@ Notes:
       <package>
 	<name>ffmpeg</name>
 	<range>
-	  <gt>2.0.0</gt>
-	  <lt>2.8.5</lt>
+	  <gt>2.0,1</gt>
+	  <lt>2.8.5,1</lt>
 	</range>
       </package>
       <package>

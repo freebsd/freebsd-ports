@@ -1,5 +1,4 @@
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @owner qmailq
 @group qmail
 @mode 4511

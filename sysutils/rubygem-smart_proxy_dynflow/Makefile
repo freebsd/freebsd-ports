@@ -17,20 +17,18 @@ RUN_DEPENDS=	foreman-proxy>=1.9.0:${PORTSDIR}/net/foreman-proxy \
 		rubygem-sqlite3>=0:${PORTSDIR}/databases/rubygem-sqlite3
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	share/foreman-proxy/bundler.d/dynflow.rb \
-		"@sample etc/foreman-proxy/settings.d/dynflow.yml.sample"
+PLIST_FILES=	"@sample etc/foreman-proxy/settings.d/dynflow.yml.sample" \
+		share/foreman-proxy/bundler.d/dynflow.rb
 
 post-install:
-		${MKDIR} ${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d
-		${INSTALL_DATA} ${WRKSRC}/settings.d/dynflow.yml.example \
-			${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/dynflow.yml.sample
-		${MKDIR} ${STAGEDIR}${PREFIX}/share/foreman-proxy/bundler.d
-		${INSTALL_DATA} ${WRKSRC}/bundler.d/dynflow.rb \
-			${STAGEDIR}${PREFIX}/share/foreman-proxy/bundler.d/dynflow.rb
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d ${STAGEDIR}${PREFIX}/share/foreman-proxy/bundler.d
+	${INSTALL_DATA} ${WRKSRC}/settings.d/dynflow.yml.example \
+		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/dynflow.yml.sample
+	${INSTALL_DATA} ${WRKSRC}/bundler.d/dynflow.rb \
+		${STAGEDIR}${PREFIX}/share/foreman-proxy/bundler.d/dynflow.rb
 
 .include <bsd.port.mk>

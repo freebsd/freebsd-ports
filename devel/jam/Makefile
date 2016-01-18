@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	jam
-PORTVERSION=	2.5
-PORTREVISION=	2
+PORTVERSION=	2.6
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/jam/
+MASTER_SITES=	https://swarm.workshop.perforce.com/projects/perforce_software-jam/download/main/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Build utility like make(1)
 
-OPTIONS_DEFINE=	DOCS
-NO_WRKSUBDIR=	yes
 USES=		zip
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
 

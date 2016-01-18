@@ -9,25 +9,9 @@
 @unexec [ -x %D/sbin/webmaild ] && %D/sbin/webmaild stop || true
 @unexec [ -x %D/sbin/courierldapaliasd ] && %D/sbin/courierldapaliasd stop || true
 @unexec [ -x %D/sbin/courierfilter ] && %D/sbin/courierfilter stop || true
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %D/etc/courier/aliasdir
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 -d %D/etc/courier/aliases
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %D/etc/courier/esmtpacceptmailfor.dir
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %D/etc/courier/esmtppercentrelay.dir
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 -d %D/etc/courier/filters
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 -d %D/etc/courier/filters/active
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %D/etc/courier/shared
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %D/etc/courier/shared.tmp
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %D/etc/courier/smtpaccess
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 -d %D/etc/courier/webadmin
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 -d %D/etc/courier/webadmin/added
-@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 -d %D/etc/courier/webadmin/removed
 @unexec rm -f %D/etc/courier/*.dat 2>/dev/null || true
 bin/addcr
-@owner %%MAILOWN%%
-@group %%MAILGRP%%
-bin/cancelmsg
-@owner
-@group
+@(%%MAILOWN%%,%%MAILGRP%%,) bin/cancelmsg
 bin/courier-config
 bin/couriermlm
 bin/couriertls
@@ -147,19 +131,6 @@ etc/courier/webmail.authpam
 etc/courier/webmlmrc.dist
 @exec [ -f %D/etc/courier/webmlmrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/webmlmrc.dist
 @comment etc/courier/webmlmrc
-@dirrmtry etc/courier/aliasdir
-@dirrmtry etc/courier/aliases
-@dirrmtry etc/courier/esmtpacceptmailfor.dir
-@dirrmtry etc/courier/esmtppercentrelay.dir
-@dirrmtry etc/courier/filters/active
-@dirrmtry etc/courier/filters
-@dirrmtry etc/courier/shared
-@dirrmtry etc/courier/shared.tmp
-@dirrmtry etc/courier/smtpaccess
-@dirrmtry etc/courier/webadmin/added
-@dirrmtry etc/courier/webadmin/removed
-@dirrmtry etc/courier/webadmin
-@dirrmtry etc/courier
 libexec/courier/aliascombine
 libexec/courier/aliascreate
 libexec/courier/aliasexp
@@ -171,19 +142,13 @@ libexec/courier/makedatprog
 @owner %%MAILOWN%%
 @group %%MAILGRP%%
 libexec/courier/modules/dsn/courierdsn
-@dirrm libexec/courier/modules/dsn
 libexec/courier/modules/esmtp/addcr
 libexec/courier/modules/esmtp/courieresmtp
 libexec/courier/modules/esmtp/courieresmtpd
-@dirrm libexec/courier/modules/esmtp
 %%WITHFAX%%libexec/courier/modules/fax/courierfax
-%%WITHFAX%%@dirrm libexec/courier/modules/fax
 libexec/courier/modules/local/courierdeliver
 libexec/courier/modules/local/courierlocal
-@dirrm libexec/courier/modules/local
 %%WITHUUCP%%libexec/courier/modules/uucp/courieruucp
-%%WITHUUCP%%@dirrm libexec/courier/modules/uucp
-@dirrm libexec/courier/modules
 @owner
 @group
 libexec/courier/pcpd
@@ -194,11 +159,8 @@ libexec/courier/submitmkdir
 libexec/courier/webmail/webadmin
 libexec/courier/webmail/webmail
 libexec/courier/webmail/webmlm
-@dirrm libexec/courier/webmail
-@dirrm libexec/courier
 libexec/filters/dupfilter
 libexec/filters/perlfilter
-@dirrmtry libexec/filters
 man/man1/cancelmsg.1.gz
 man/man1/couriermlm.1.gz
 man/man1/couriertcpd.1.gz
@@ -335,7 +297,6 @@ share/courier/couriermlm/webmlmprocessed.html
 share/courier/couriermlm/webmlmrequestreceived.tmpl.html
 share/courier/couriermlm/webmlmsubinfo.tmpl.html
 share/courier/couriermlm/webmlmsublist.tmpl.html
-@dirrm share/courier/couriermlm
 share/courier/courierwebadmin/admin-00machine.html
 share/courier/courierwebadmin/admin-00machine.pl
 share/courier/courierwebadmin/admin-05local.html
@@ -381,7 +342,6 @@ share/courier/courierwebadmin/notsupp.html
 share/courier/courierwebadmin/unsecure.html
 share/courier/courierwebadmin/webadmin.pl
 share/courier/courierwebadmin/webadmin.pm
-@dirrm share/courier/courierwebadmin
 share/courier/esmtpd
 share/courier/esmtpd-ssl
 %%WITHFAX%%share/courier/faxmail/application-pdf.filter
@@ -393,7 +353,6 @@ share/courier/esmtpd-ssl
 %%WITHFAX%%share/courier/faxmail/init
 %%WITHFAX%%share/courier/faxmail/new_fax
 %%WITHFAX%%share/courier/faxmail/text-plain.filter
-%%WITHFAX%%@dirrm share/courier/faxmail
 share/courier/filterctl
 share/courier/imapd
 share/courier/imapd-ssl
@@ -464,8 +423,6 @@ share/courier/sqwebmail/html/en-us/refreshfr.html
 share/courier/sqwebmail/html/en-us/smileys.txt
 share/courier/sqwebmail/html/en-us/spellchk.html
 share/courier/sqwebmail/html/en
-@dirrm share/courier/sqwebmail/html/en-us
-@dirrm share/courier/sqwebmail/html
 share/courier/sqwebmail/images/bg.png
 share/courier/sqwebmail/images/bluebottomleft.png
 share/courier/sqwebmail/images/bluebottomright.png
@@ -513,12 +470,9 @@ share/courier/sqwebmail/images/sqwebmail.css
 share/courier/sqwebmail/images/trash2.png
 share/courier/sqwebmail/images/uncancel.png
 share/courier/sqwebmail/images/wikifmt.html
-@dirrm share/courier/sqwebmail/images
 share/courier/sqwebmail/ldapsearch
 share/courier/sqwebmail/sendit.sh
 share/courier/sqwebmail/webgpg
-@dirrm share/courier/sqwebmail
-@dirrm share/courier
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BENCHMARKS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.imap
@@ -636,8 +590,6 @@ share/courier/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/html/submit.html
 %%PORTDOCS%%%%DOCSDIR%%/html/testmxlookup.html
 %%PORTDOCS%%%%DOCSDIR%%/html/webmlmd.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/bin/cancelmsg
 @comment @exec chown %%BINOWN%%:mail %D/bin/maildrop
 @comment @exec chown %%BINOWN%%:%%MAILGRP%% %D/bin/mailq
@@ -673,16 +625,33 @@ share/courier/sqwebmail/webgpg
 @comment @exec chmod 0555 %D/share/courier/sqwebmail/html/en-us
 @comment @exec chmod 0555 %D/share/courier/sqwebmail/images
 @unexec echo y | crontab -u %%CACHEOWN%% -r 2>/dev/null || true
-@unexec rm -rf %%CALENDIR%% %%CACHEDIR%% 2>/dev/null || true
-@dirrmtry %%CALENDIR%%/localcache
-@dirrmtry %%CALENDIR%%/private
-@dirrmtry %%CALENDIR%%/public
-@dirrmtry %%CALENDIR%%
-@dirrmtry %%LOCALSTATEDIR%%/allfilters
-@dirrmtry %%LOCALSTATEDIR%%/filters
-@dirrmtry %%LOCALSTATEDIR%%/msgq
-@dirrmtry %%LOCALSTATEDIR%%/msgs
-@dirrmtry %%LOCALSTATEDIR%%/tmp
-@dirrmtry %%LOCALSTATEDIR%%/track
-@dirrmtry %%LOCALSTATEDIR%%
-@dirrmtry %%CACHEDIR%%
+@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/aliasdir
+@dir(%%MAILOWN%%,%%MAILGRP%%,0750) etc/courier/aliases
+@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/esmtpacceptmailfor.dir
+@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/esmtppercentrelay.dir
+@dir(%%MAILOWN%%,%%MAILGRP%%,0750) etc/courier/filters
+@dir(%%MAILOWN%%,%%MAILGRP%%,0750) etc/courier/filters/active
+@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/shared
+@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/shared.tmp
+@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/smtpaccess
+@dir(%%MAILOWN%%,%%MAILGRP%%,0700) etc/courier/webadmin
+@dir(%%MAILOWN%%,%%MAILGRP%%,0700) etc/courier/webadmin/added
+@dir(%%MAILOWN%%,%%MAILGRP%%,0700) etc/courier/webadmin/removed
+@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/dsn
+@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/esmtp
+%%WITHFAX%%@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/fax
+@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/local
+%%WITHUUCP%%@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/uucp
+@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules
+@dir %%CALENDIR%%/localcache
+@dir %%CALENDIR%%/private
+@dir %%CALENDIR%%/public
+@dir %%CALENDIR%%
+@dir %%LOCALSTATEDIR%%/allfilters
+@dir %%LOCALSTATEDIR%%/filters
+@dir %%LOCALSTATEDIR%%/msgq
+@dir %%LOCALSTATEDIR%%/msgs
+@dir %%LOCALSTATEDIR%%/tmp
+@dir %%LOCALSTATEDIR%%/track
+@dir %%LOCALSTATEDIR%%
+@dir %%CACHEDIR%%

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Aug 26 19:12:42 2004
++++ Makefile.in	Thu Aug 26 19:17:29 2004
+@@ -87,7 +87,7 @@
+ prefix = @prefix@
+ sysconfdir = @sysconfdir@
+ 
+-SUBDIRS = conf contrib doc man service src
++SUBDIRS = contrib man src
+ 
+ #--------------------------------------------------------------------------
+ EXTRA_DIST = bincimap.spec config.h COPYING.OpenSSL config.h.in README.SSL

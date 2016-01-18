@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exception_notification
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.4
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 

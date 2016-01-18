@@ -118,6 +118,7 @@ lib/libstlvis.so.0.0.0
 %%DATADIR%%/include/adfront3.hpp
 %%DATADIR%%/include/adtree.hpp
 %%DATADIR%%/include/algprim.hpp
+%%DATADIR%%/include/archive_base.hpp
 %%DATADIR%%/include/array.hpp
 %%DATADIR%%/include/autodiff.hpp
 %%DATADIR%%/include/autoptr.hpp

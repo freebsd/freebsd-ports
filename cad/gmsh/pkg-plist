@@ -103,6 +103,7 @@ include/gmsh/StringUtils.h
 include/gmsh/SuperEl.h
 include/gmsh/VertexArray.h
 include/gmsh/Voronoi3D.h
+include/gmsh/adaptiveData.h
 include/gmsh/bezierBasis.h
 include/gmsh/boundaryLayersData.h
 include/gmsh/cartesian.h
@@ -195,7 +196,9 @@ man/man1/gmsh.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/demos/tower.i4
 %%PORTDOCS%%%%DOCSDIR%%/demos/tower.i5
 %%PORTDOCS%%%%DOCSDIR%%/demos/transfinite.geo
+%%PORTDOCS%%%%DOCSDIR%%/demos/view_groups.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/bgmesh.pos
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/image.png
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t1.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t10.geo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t11.geo
