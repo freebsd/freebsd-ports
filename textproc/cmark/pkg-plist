@@ -4,7 +4,7 @@ include/cmark_export.h
 include/cmark_version.h
 lib/libcmark.a
 lib/libcmark.so
-lib/libcmark.so.0.23.0
+lib/libcmark.so.0.24.1
 libdata/pkgconfig/libcmark.pc
 man/man1/cmark.1.gz
 man/man3/cmark.3.gz
