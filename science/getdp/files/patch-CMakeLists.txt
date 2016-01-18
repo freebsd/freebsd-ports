@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2015-11-07 18:29:23 UTC
++++ CMakeLists.txt
+@@ -850,7 +850,7 @@ else(WIN32 OR CYGWIN)
+   set(GETDP_BIN bin)
+   set(GETDP_LIB lib)
+   set(GETDP_DOC share/doc/getdp)
+-  set(GETDP_MAN share/man/man1)
++  set(GETDP_MAN man/man1)
+ endif(WIN32 OR CYGWIN)
+ 
+ # mark targets as optional so we can install them separately if needed
