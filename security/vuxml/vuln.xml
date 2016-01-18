@@ -58,6 +58,58 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7c63775e-be31-11e5-b5fe-002590263bf5">
+    <topic>libarchive -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libarchive</name>
+	<range><lt>3.1.2_5,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0211">
+	  <p>Integer signedness error in the archive_write_zip_data function in
+	    archive_write_set_format_zip.c in libarchive 3.1.2 and earlier, when
+	    running on 64-bit machines, allows context-dependent attackers to
+	    cause a denial of service (crash) via unspecified vectors, which
+	    triggers an improper conversion between unsigned and signed types,
+	    leading to a buffer overflow.</p>
+	</blockquote>
+	<blockquote cite="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2304">
+	  <p>Absolute path traversal vulnerability in bsdcpio in libarchive
+	    3.1.2 and earlier allows remote attackers to write to arbitrary
+	    files via a full pathname in an archive.</p>
+	</blockquote>
+	<p>Libarchive issue tracker reports:</p>
+	<blockquote cite="https://github.com/libarchive/libarchive/issues/502">
+	  <p>Using a crafted tar file bsdtar can perform an out-of-bounds memory
+	    read which will lead to a SEGFAULT. The issue exists when the
+	    executable skips data in the archive. The amount of data to skip is
+	    defined in byte offset [16-19] If ASLR is disabled, the issue can
+	    lead to an infinite loop.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-0211</cvename>
+      <cvename>CVE-2015-2304</cvename>
+      <freebsdpr>ports/200176</freebsdpr>
+      <url>https://github.com/libarchive/libarchive/pull/110</url>
+      <url>https://github.com/libarchive/libarchive/commit/5935715</url>
+      <url>https://github.com/libarchive/libarchive/commit/2253154</url>
+      <url>https://github.com/libarchive/libarchive/issues/502</url>
+      <url>https://github.com/libarchive/libarchive/commit/3865cf2</url>
+      <url>https://github.com/libarchive/libarchive/commit/e6c9668</url>
+      <url>https://github.com/libarchive/libarchive/commit/24f5de6</url>
+    </references>
+    <dates>
+      <discovery>2012-12-06</discovery>
+      <entry>2016-01-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6809c6db-bdeb-11e5-b5fe-002590263bf5">
     <topic>go -- information disclosure vulnerability</topic>
     <affects>
