@@ -3,7 +3,6 @@ a simple way for applications and administrators to store data;
 often GConf is used to store preferences for applications.
 
 Some of the features of GConf are:
-GConf provides:
 
     * Documentation for each configuration key, so that administrators
       can better modify the value.
