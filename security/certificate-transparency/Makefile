@@ -35,6 +35,7 @@ GH_PROJECT=	certificate-transparency
 GH_TAGNAME=	7e1cf3b
 
 CPPFLAGS+=	"-I${LOCALBASE}/include"
+CPPFLAGS+=	"-I${LOCALBASE}/include/evhtp"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
