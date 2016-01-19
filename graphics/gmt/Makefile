@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gmt
-PORTVERSION=	4.5.13
-PORTREVISION=	2
+PORTVERSION=	4.5.14
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		ftp://ftp.geologi.uio.no/pub/%SUBDIR%/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		ftp://ftp.soest.hawaii.edu/gshhg/:gshhg \
 		ftp://ftp.scc.u-tokai.ac.jp/pub/gmt/:gshhg
 MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/legacy
-DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${GSHHG_DISTNAME}.tar.gz:gshhg
 
 MAINTAINER=	ports@FreeBSD.org
@@ -30,11 +30,11 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake shebangfix tar:bzip2
+USES=		autoreconf:build gmake pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	gmtswitch doc/examples/*/*.sh src/GMT.in \
 		src/gmt_shell_functions.sh.in src/gmtget.in \
 		src/gmtlogo.in src/isogmt.in
-USE_AUTOTOOLS=	autoconf
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-gshhg-dir=${DATADIR}/coast
 INSTALL_TARGET=	install-gmt install-data install-man install-doc
@@ -50,7 +50,7 @@ OPTIONS_SUB=		yes
 
 DEBUG_CONFIGURE_ON=	--enable-debug --enable-devdebug
 EPS_DESC=		Set .eps as default output format, otherwise .ps
-EPS_CONFNIGURE_ON=	--enable-eps
+EPS_CONFIGURE_ON=	--enable-eps
 GDAL_DESC=		Compile in experimental GDAL support
 GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 GDAL_CONFIGURE_ON=	--enable-gdal
@@ -66,7 +66,7 @@ SHARED_USE=		LDCONFIG=yes
 X11_USE=		XORG=x11,xaw,xmu,xt
 X11_CONFIGURE_OFF=	--disable-xgrid
 
-STRIP_FILES=	blockmean blockmedian blockmode filter1d fitcircle \
+STRIP_BINS=	blockmean blockmedian blockmode filter1d fitcircle \
 		gmt2rgb gmtconvert gmtdefaults gmtmath gmtselect \
 		gmtset grd2cpt grd2xyz grdblend grdclip \
 		grdcontour grdcut grdedit grdfft grdfilter \
@@ -79,23 +79,30 @@ STRIP_FILES=	blockmean blockmedian blockmode filter1d fitcircle \
 		psmask psrose psscale pstext pswiggle \
 		psxy psxyz sample1d spectrum1d splitxyz \
 		surface trend1d trend2d triangulate xyz2grd
+STRIP_LIBS=	libgmt.so.4 libgmtps.so.4 libpsl.so.4
 
 # http://www.soest.hawaii.edu/pwessel/gshhg/
-GSHHG_DISTNAME=	gshhg-gmt-2.3.0
+GSHHG_DISTNAME=	gshhg-gmt-2.3.4
 
-.include <bsd.port.options.mk>
+pre-configure:
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} AUTOHEADER="${TRUE}" \
+		${AUTORECONF} -f -i)
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 	@${MKDIR} ${STAGEDIR}${DATADIR}/coast
 	(cd ${WRKDIR}/${GSHHG_DISTNAME} && ${INSTALL_DATA} README.TXT *.nc \
 		${STAGEDIR}${DATADIR}/coast)
-.if ${PORT_OPTIONS:MX11}
+.for i in ${STRIP_BINS}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
+.endfor
+
+post-install-X11-on:
 	(cd ${WRKSRC}/src/xgrid && ${INSTALL_PROGRAM} xgridedit \
 		${STAGEDIR}${PREFIX}/bin)
-.endif
-.for i in ${STRIP_FILES}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
+
+post-install-SHARED-on:
+.for i in ${STRIP_LIBS}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${i}
 .endfor
 
 .include <bsd.port.mk>
