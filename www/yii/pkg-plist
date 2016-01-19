@@ -188,6 +188,7 @@ bin/yiic
 %%DATADIR%%/framework/base/CApplicationComponent.php
 %%DATADIR%%/framework/base/CBehavior.php
 %%DATADIR%%/framework/base/CComponent.php
+%%DATADIR%%/framework/base/CDbStatePersister.php
 %%DATADIR%%/framework/base/CErrorEvent.php
 %%DATADIR%%/framework/base/CErrorHandler.php
 %%DATADIR%%/framework/base/CException.php
