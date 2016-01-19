@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gupnp
-PORTVERSION=	0.20.14
-PORTREVISION=	1
+PORTVERSION=	0.20.15
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -12,7 +11,8 @@ COMMENT=	Framework for UPnP devices
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	gobject-introspection>=0.6.4:${PORTSDIR}/devel/gobject-introspection
+BUILD_DEPENDS=	gobject-introspection>=0.6.4:${PORTSDIR}/devel/gobject-introspection \
+		gssdp>=0.14.13:${PORTSDIR}/net/gssdp
 LIB_DEPENDS=	libgssdp-1.0.so:${PORTSDIR}/net/gssdp \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
