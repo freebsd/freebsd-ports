@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160119:
+  AFFECTS: users of security/tor, security/tor-devel
+  AUTHOR: amdmi3@FreeBSD.org
+
+  The tor ports now create /var/log/tor subdirectory for tor logs. If
+  you've used /var/log/tor as a log _file_, you'll need to update your
+  torrc and move the file before updating the port.
+
 20160118:
   AFFECTS: users of mail/rspamd and mail/rmilter
   AUTHOR: vsevolod@FreeBSD.org
