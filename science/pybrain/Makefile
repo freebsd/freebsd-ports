@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pybrain
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.3.3
 CATEGORIES=	science python
 
 MAINTAINER=	wen@FreeBSD.org
@@ -16,6 +15,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.7.1:${PORTSDIR}/science/py-scipy
 USE_GITHUB=	yes
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
