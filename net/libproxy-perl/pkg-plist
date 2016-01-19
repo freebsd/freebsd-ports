@@ -1,3 +1,2 @@
 %%SITE_ARCH%%/Net/Libproxy.pm
 %%SITE_ARCH%%/auto/Net/Libproxy/Libproxy.so
-@dir lib/libproxy/%%VERSION%%/modules

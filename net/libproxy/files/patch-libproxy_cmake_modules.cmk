@@ -1,16 +1,15 @@
---- libproxy/cmake/modules.cmk.orig	2011-01-08 01:06:52.000000000 +0100
-+++ libproxy/cmake/modules.cmk	2011-01-08 01:07:02.000000000 +0100
-@@ -17,10 +17,10 @@ include(cmake/modules/pacrunner_mozjs.cm
- include(cmake/modules/pacrunner_webkit.cmk)
- 
- # Build the pacrunner into libproxy unless we are building for multiple engines
--set(BIPR 1)
--if(MOZJS_FOUND AND WEBKIT_FOUND)
-+#set(BIPR 1)
-+#if(MOZJS_FOUND AND WEBKIT_FOUND)
-   set(BIPR 0)
--endif()
-+#endif()
- 
- #
- ## Module definition
+Use only the value of WITH_KDE to determine whether to build config_kde.
+
+See the changes in patch-libproxy_cmake_modules_config__kde.cmk for more
+information.
+--- libproxy/cmake/modules.cmk.orig	2016-01-18 19:41:03 UTC
++++ libproxy/cmake/modules.cmk
+@@ -32,7 +32,7 @@ px_module(config_envvar            "${EN
+ px_module(config_sysconfig         "${SYSCONFIG_FOUND}" 1)
+ px_module(config_gnome             "${GNOME2_FOUND}" 0)
+ px_module(config_gnome3            "${GNOME3_FOUND}" 0)
+-px_module(config_kde               "${KDE_FOUND}"    0)
++px_module(config_kde               "${WITH_KDE}"     0)
+ px_module(config_macosx            "${SC_FOUND}"     1       ${SC_LIBRARIES} ${CF_LIBRARIES})
+ px_module(config_w32reg            "${WIN32}"        1)
+ px_module(ignore_domain            1                 1)
