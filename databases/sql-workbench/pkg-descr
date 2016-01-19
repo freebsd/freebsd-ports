@@ -1,0 +1,9 @@
+SQL Workbench/J is a free, DBMS-independent, cross-platform SQL
+query tool. It is written in Java and should run on any operating
+system that provides a Java Runtime Environment.
+
+Its main focus is on running SQL scripts (either interactively or
+as a batch) and export/import features. Graphical query building
+or more advanced DBA tasks are not the focus and are not planned.
+
+WWW: http://www.sql-workbench.net/

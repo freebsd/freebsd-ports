@@ -1,0 +1,11 @@
+--- SQLWorkbench.desktop.orig	2015-08-05 22:10:56 UTC
++++ SQLWorkbench.desktop
+@@ -2,7 +2,7 @@
+ Comment=
+ Comment[en_US]=
+ Encoding=UTF-8
+-Exec=java -jar sqlworkbench.jar
++Exec=sqlworkbench
+ GenericName=Workbench
+ GenericName[en_US]=SQL Workbench/J
+ Icon=workbench32.png
