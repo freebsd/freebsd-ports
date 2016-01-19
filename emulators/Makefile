@@ -98,6 +98,7 @@
     SUBDIR += mupen64plus-video-glide64mk2
     SUBDIR += mupen64plus-video-rice
     SUBDIR += mupen64plus-video-z64
+    SUBDIR += nestopia
     SUBDIR += nonpareil
     SUBDIR += o2em
     SUBDIR += ods2reader
