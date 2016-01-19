@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	shadowsocks-libev
-DISTVERSIONPREFIX=v
 PORTVERSION=	1.6.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	xiaoding+freebsd@xiaoding.org
@@ -25,6 +25,8 @@ USE_RC_SUBR=	shadowsocks_libev
 post-patch:
 	${REINPLACE_CMD} -e 's|^pkgconfiglibdir.*|pkgconfiglibdir = ${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|^#ifdef TCP_FASTOPEN|#if defined(TCP_FASTOPEN) \&\& defined(__linux)|' \
+		${WRKSRC}/src/local.c ${WRKSRC}/src/server.c
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
