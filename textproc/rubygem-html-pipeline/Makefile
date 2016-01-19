@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	html-pipeline
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,11 +11,10 @@ COMMENT=	GitHub HTML processing filters and utilities
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport>=2:${PORTSDIR}/devel/rubygem-activesupport \
+RUN_DEPENDS=	rubygem-activesupport4>=2:${PORTSDIR}/devel/rubygem-activesupport4 \
 		rubygem-nokogiri>=1.4:${PORTSDIR}/textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
