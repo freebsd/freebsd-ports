@@ -10,6 +10,7 @@ MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Ohai profiles your system and emits JSON
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-ffi>=1.9.0:${PORTSDIR}/devel/rubygem-ffi \
 		rubygem-ffi-yajl>=1.0.1:${PORTSDIR}/devel/rubygem-ffi-yajl \
@@ -22,6 +23,7 @@ RUN_DEPENDS=	rubygem-ffi>=1.9.0:${PORTSDIR}/devel/rubygem-ffi \
 		rubygem-systemu>=2.6.4:${PORTSDIR}/devel/rubygem-systemu \
 		rubygem-wmi-lite>=1.0.0:${PORTSDIR}/devel/rubygem-wmi-lite
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
