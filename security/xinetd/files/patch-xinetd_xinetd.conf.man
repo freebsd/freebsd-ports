@@ -1,0 +1,11 @@
+--- xinetd/xinetd.conf.man.orig	2015-05-23 15:05:32 UTC
++++ xinetd/xinetd.conf.man
+@@ -233,7 +233,7 @@ determines the program to execute for th
+ determines the arguments passed to the server. In contrast to \fBinetd\fP,
+ the server name should \fInot\fP be included in \fIserver_args\fP.
+ .TP
+-+.B libwrap
++.B libwrap
+ overrides the service name passed to libwrap (which defaults to the
+ server name, the first server_args component with NAMEINARGS, the id
+ for internal services and the service name for redirected services).
