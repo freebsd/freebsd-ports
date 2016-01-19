@@ -1,0 +1,32 @@
+commit f30191930114cc334e02bb471f2c547198cad91c
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Mon Jan 18 20:19:09 2016 +0100
+
+    config_kde: Decide whether to build the module based only on WITH_KDE.
+
+    kreadconfig/kreadconfig5 are runtime dependencies only. As such, there
+    should not be a build-time dependency on those in CMake at all. In other
+    words, building without those binaries works perfectly fine, and they
+    are only required when running libproxy.
+
+commit 8ca0db36983e9154c808288fea4cbdfc9a7ea4c5
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Mon Jan 18 16:59:28 2016 +0100
+
+    Make the KDE config module optional again.
+
+    This is a follow-up to bd9bf72 ("Add generic KDE config module"): make
+    it possible for distributions to not build the KDE config module at all,
+    even if it does not have any dependencies on Qt/KDE/KF5.
+--- libproxy/cmake/modules/config_kde.cmk.orig	2016-01-12 16:41:07 UTC
++++ libproxy/cmake/modules/config_kde.cmk
+@@ -1,6 +1,4 @@
+-find_program(KDE4_CONF kreadconfig)
+-find_program(KF5_CONF kreadconfig5)
++option(WITH_KDE "Build module to read proxy settings from KDE4/KF5" ON)
+ 
+-if (KDE4_CONF OR KF5_CONF)
+-  set(KDE_FOUND 1)
+-endif()
++# There are no additional detections; kreadconfig (from KDE4) and kreadconfig5
++# (from KF5) are only needed at runtime.

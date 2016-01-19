@@ -1,0 +1,2 @@
+lib/libproxy/%%VERSION%%/modules/config_gnome3.so
+libexec/pxgsettings
