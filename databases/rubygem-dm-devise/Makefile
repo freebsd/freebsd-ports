@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Adds DataMapper support to devise
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-devise>=1.3:${PORTSDIR}/devel/rubygem-devise \
 		rubygem-dm-core>=1.0.2:${PORTSDIR}/databases/rubygem-dm-core \
@@ -19,7 +20,6 @@ RUN_DEPENDS=	rubygem-devise>=1.3:${PORTSDIR}/devel/rubygem-devise \
 		rubygem-dm-timestamps>=1.0.2:${PORTSDIR}/databases/rubygem-dm-timestamps
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
