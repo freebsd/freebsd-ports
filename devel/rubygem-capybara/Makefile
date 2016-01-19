@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	capybara
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,8 @@ COMMENT=	Integration testing tool for rack based web applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-RUN_DEPENDS=	rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types \
+RUN_DEPENDS=	rubygem-addressable>=0:${PORTSDIR}/www/rubygem-addressable \
+		rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-nokogiri>=1.3.3:${PORTSDIR}/textproc/rubygem-nokogiri \
 		rubygem-rack16>=1.0.0:${PORTSDIR}/www/rubygem-rack16 \
 		rubygem-rack-test>=0.5.4:${PORTSDIR}/www/rubygem-rack-test \
