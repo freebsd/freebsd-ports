@@ -1,0 +1,12 @@
+The bedtools utilities are a suite of tools for performing a wide range of
+genomics analysis tasks.  The most widely-used of these tools enable genome
+arithmetic, i.e., set theory on the genome.  For example, with bedtools one
+can intersect, merge, count, complement, and shuffle genomic intervals from
+multiple files in common genomic formats such as BAM, BED, GFF/GTF, and VCF.
+
+Although each individual utility is designed to do a relatively simple task,
+e.g., intersect two interval files, more sophisticated analyses can be
+conducted by stringing together multiple bedtools operations on the command
+line or in shell scripts.
+
+WWW: http://bedtools.readthedocs.org/
