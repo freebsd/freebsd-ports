@@ -8,6 +8,7 @@
     SUBDIR += avida
     SUBDIR += babel
     SUBDIR += bcftools
+    SUBDIR += bedtools
     SUBDIR += biococoa
     SUBDIR += biojava
     SUBDIR += blat
