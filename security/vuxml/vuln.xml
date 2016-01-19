@@ -58,6 +58,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="51358314-bec8-11e5-82cd-bcaec524bf84">
+    <topic>claws-mail -- no bounds checking on the output buffer in conv_jistoeuc, conv_euctojis, conv_sjistoeuc</topic>
+    <affects>
+      <package>
+	<name>claws-mail</name>
+	<range><lt>3.13.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>DrWhax reports:</p>
+	<blockquote cite="http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=3557">
+	  <p>So in codeconv.c there is a function for japanese character set
+	    conversion called conv_jistoeuc().  There is no bounds checking on
+	    the output buffer, which is created on the stack with alloca()
+	    Bug can be triggered by sending an email to TAILS_luser@riseup.net
+	    or whatever.
+
+	    Since my C is completely rusty, you might be able to make a better
+	    judgement on the severity of this issue. Marking critical for now.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8614</cvename>
+      <url>https://security-tracker.debian.org/tracker/CVE-2015-8614</url>
+    </references>
+    <dates>
+      <discovery>2015-11-04</discovery>
+      <entry>2016-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7c63775e-be31-11e5-b5fe-002590263bf5">
     <topic>libarchive -- multiple vulnerabilities</topic>
     <affects>
