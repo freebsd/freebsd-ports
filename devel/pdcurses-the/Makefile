@@ -11,6 +11,9 @@ DISTNAME=	PDCurses-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses library implementation for Win32, DOS, OS/2, and X11
 
+DEPRECATED=	Seperate port is no longer needed, see PR#201187
+EXPIRATION_DATE=	2016-01-31
+
 CONFLICTS=	pdcurses-[0-9]*
 
 USE_LDCONFIG=	yes
