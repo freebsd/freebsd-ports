@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dotenv
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Loads environment variables from `.env`
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
