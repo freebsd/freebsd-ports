@@ -1,8 +1,0 @@
---- utils/CMakeLists.txt~
-+++ utils/CMakeLists.txt
-@@ -3,4 +3,5 @@ link_directories(${LIBPROXY_LIBRARY_DIRS
- 
- add_executable(proxy proxy.c)
- target_link_libraries(proxy libproxy)
-+set(CMAKE_C_COMPILER ${CMAKE_CXX_COMPILER})
- install(TARGETS proxy RUNTIME DESTINATION ${BIN_INSTALL_DIR})

@@ -1,10 +1,21 @@
---- bindings/perl/src/CMakeLists.txt.orig	2010-09-01 20:23:34 UTC
+* Explicitly against libperl.so.x.y.
+  This is being discussed in https://github.com/libproxy/libproxy/pull/7.
+  We need this for `make stage-qa' to pass, as the Libproxy.so binding uses
+  libperl symbols and thus should link against it.
+
+* Set RPATH in Libproxy.so.
+  We do not install libperl.so into ${LOCALBASE}/lib, so the Libproxy.so ELF
+  binary must be told the non-default location where it should look for
+  libperl.so.x.y.
+--- bindings/perl/src/CMakeLists.txt.orig	2016-01-12 16:41:07 UTC
 +++ bindings/perl/src/CMakeLists.txt
-@@ -12,6 +12,7 @@ set(Libproxy_LIB_SRCS Libproxy.c)
- 
- set(CMAKE_C_COMPILER ${CMAKE_CXX_COMPILER})
- set(CMAKE_C_FLAGS ${PERL_CXX_FLAGS} )
-+SET(CMAKE_INSTALL_RPATH ${PERL_INCLUDE_DIR})
- 
+@@ -12,7 +12,8 @@ set(Libproxy_LIB_SRCS Libproxy.c)
  set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/perl/blib/arch/auto/Net)
  add_library(PLlibproxy SHARED ${Libproxy_LIB_SRCS})
+ 
+-target_link_libraries(PLlibproxy libproxy pthread)
++target_link_libraries(PLlibproxy ${PERL_LIBRARY} libproxy pthread)
++set_target_properties(PLlibproxy PROPERTIES INSTALL_RPATH "${PERL_INCLUDE_DIR}")
+ set_target_properties(PLlibproxy PROPERTIES OUTPUT_NAME "Libproxy")
+ set_target_properties(PLlibproxy PROPERTIES PREFIX "")
+ 

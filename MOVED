@@ -4887,7 +4887,6 @@ graphics/phpsview||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
 misc/usbrh||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
 net/atmsupport||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
 comms/ib-kmod||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
-net/libproxy-mozjs||2013-09-01|Has expired: Does not work with newer libxul
 www/helixplugin||2013-09-01|Has expired: Does not work with newer libxul
 deskutils/chmsee||2013-09-01|Has expired: Does not work with newer libxul
 www/moonshine||2013-09-01|Has expired: Does not work with newer libxul
