@@ -40,4 +40,10 @@ GLIB_SCHEMAS=	org.gnome.builder.editor.gschema.xml \
 		org.gnome.builder.experimental.gschema.xml \
 		org.gnome.builder.project-tree.gschema.xml
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+BROKEN=		does not builds
+.endif
+
+.include <bsd.port.post.mk>
