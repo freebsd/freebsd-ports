@@ -1,4 +1,4 @@
---- configure.ac.orig	2013-11-05 19:44:32.000000000 +0000
+--- configure.ac.orig	2013-11-05 19:44:32 UTC
 +++ configure.ac
 @@ -640,10 +640,10 @@ else
  	if test "$os" = "Darwin" ; then
