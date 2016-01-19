@@ -66,7 +66,10 @@ CMAKE_ARGS+=	-DWITH_MOZJS:BOOL=OFF
 . endif
 .endif
 
+# This will be removed after the update to 0.4.12.
+.if !target(post-install)
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/libproxy/${PORTVERSION}/modules/
+.endif
 
 .include <bsd.port.mk>
