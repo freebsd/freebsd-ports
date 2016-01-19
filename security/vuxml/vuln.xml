@@ -214,28 +214,23 @@ Notes:
 	   dlopen()s libproxy.so. -->
       <package>
 	<name>libproxy</name>
-	<range><ge>0.4.0</ge></range>
-	<range><lt>0.4.6_1</lt></range>
+	<range><ge>0.4.0</ge><lt>0.4.6_1</lt></range>
       </package>
       <package>
 	<name>libproxy-gnome</name>
-	<range><ge>0.4.0</ge></range>
-	<range><lt>0.4.6_2</lt></range>
+	<range><ge>0.4.0</ge><lt>0.4.6_2</lt></range>
       </package>
       <package>
 	<name>libproxy-kde</name>
-	<range><ge>0.4.0</ge></range>
-	<range><lt>0.4.6_6</lt></range>
+	<range><ge>0.4.0</ge><lt>0.4.6_6</lt></range>
       </package>
       <package>
 	<name>libproxy-perl</name>
-	<range><ge>0.4.0</ge></range>
-	<range><lt>0.4.6_3</lt></range>
+	<range><ge>0.4.0</ge><lt>0.4.6_3</lt></range>
       </package>
       <package>
 	<name>libproxy-webkit</name>
-	<range><ge>0.4.0</ge></range>
-	<range><lt>0.4.6_4</lt></range>
+	<range><ge>0.4.0</ge><lt>0.4.6_4</lt></range>
       </package>
     </affects>
     <description>
@@ -263,6 +258,7 @@ Notes:
     <dates>
       <discovery>2012-10-10</discovery>
       <entry>2016-01-17</entry>
+      <modified>2016-01-18</modified>
     </dates>
   </vuln>
 
