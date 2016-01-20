@@ -12,7 +12,6 @@ share/applications/tvbrowser.desktop
 %%DATADIR%%/imgs/FilterSet16.png
 %%DATADIR%%/imgs/FilterSet22.png
 %%DATADIR%%/imgs/Jar16.gif
-%%DATADIR%%/imgs/TVBrowser.ico
 %%DATADIR%%/imgs/beanshell.png
 %%DATADIR%%/imgs/columns2.jpg
 %%DATADIR%%/imgs/columns_afternoon.jpg
@@ -21,7 +20,6 @@ share/applications/tvbrowser.desktop
 %%DATADIR%%/imgs/columns_evening.jpg
 %%DATADIR%%/imgs/columns_midday.jpg
 %%DATADIR%%/imgs/desktop.ico
-%%DATADIR%%/imgs/systray.ico
 %%DATADIR%%/imgs/time_block_gray.png
 %%DATADIR%%/imgs/time_block_white.png
 %%DATADIR%%/imgs/tvabout.png
