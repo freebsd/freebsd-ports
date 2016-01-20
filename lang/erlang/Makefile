@@ -76,10 +76,6 @@ DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
 		programming_rules.pdf:erlangse
 .endif
 
-# See http://wiki.freebsd.org/DTrace to learn how to enable DTrace
-# on your system. You will need to configure STRIP, WITH_CTF and
-# CFLAGS in your make.conf before building.
-
 # If you run Erlang and get a message resembling "WARNING: number of
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
@@ -96,6 +92,8 @@ USE_GCC?=	yes
 
 .if ${PORT_OPTIONS:MDTRACE}
 CONFIGURE_ARGS+=--with-dynamic-trace=dtrace
+CFLAGS+=	-fno-omit-frame-pointer
+STRIP=
 .else
 CONFIGURE_ARGS+=--without-dynamic-trace
 .endif
