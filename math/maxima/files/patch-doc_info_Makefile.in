@@ -1,25 +1,17 @@
---- doc/info/Makefile.in.orig	2008-12-08 11:08:06.607586350 -0500
-+++ doc/info/Makefile.in	2008-12-08 11:10:05.539477973 -0500
-@@ -202,24 +202,10 @@
-     check_crlf check_tab fix_crlf fix_tab build_index.pl
+--- doc/info/Makefile.in.orig	2015-11-09 06:18:56 UTC
++++ doc/info/Makefile.in
+@@ -1282,16 +1282,10 @@ clean-html:
+ @CHM_TRUE@	rm -rf chm
  
  check_texinfo:
--	pattern=`printf "\r$$"` ; \
--	bad_files=`find . -name '*.texi' -print | xargs $(EGREP) -l -e "$$pattern"` ; \
--	[ -z  "$$bad_files" ] || ( echo "ERROR: The following files have DOS-style EOLs: $$bad_files" ; \
--	echo "Run make distclean and then /doc/info/fix_crlf to fix the problem." ; exit 1 )
--	pattern=`printf "\t"` ; \
+-	@pattern=`printf "\t"` ; \
 -	bad_files=`find . -name '*.texi' -print | xargs $(EGREP) -l -e "$$pattern"` ; \
 -	[ -z  "$$bad_files" ] || ( echo "ERROR: The following files have unexpanded Tabs: $$bad_files" ; \
 -	echo "Run make distclean and then /doc/info/fix_tab to fix the problem." ; exit 1 )
 +	echo "check_texinfo dummy target"
  
  warn_texinfo:
--	pattern=`printf "\r$$"` ; \
--	bad_files=`find . -name '*.texi' -print | xargs $(EGREP) -l -e "$$pattern"` ; \
--	[ -z  "$$bad_files" ] || ( echo "WARNING: The following files have DOS-style EOLs: $$bad_files" ; \
--	echo "Run /doc/info/fix_crlf to fix the problem." )
--	pattern=`printf "\t"` ; \
+-	@pattern=`printf "\t"` ; \
 -	bad_files=`find . -name '*.texi' -print | xargs $(EGREP) -l -e "$$pattern"` ; \
 -	[ -z  "$$bad_files" ] || ( echo "WARNING: The following files have unexpanded Tabs: $$bad_files" ; \
 -	echo "Run /doc/info/fix_tab to fix the problem." )
