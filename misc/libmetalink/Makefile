@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libmetalink
-PORTVERSION=	0.1.2
-PORTREVISION=	2
+PORTVERSION=	0.1.3
 CATEGORIES=	misc
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/ \
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${PORTNAME}-${PORTVERSION}/+download/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,7 +21,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		libtool localbase pathfix tar:bzip2
+USES=		libtool localbase pathfix tar:xz
 
 PORTEXAMPLES=	LibO_3.5.4_Win_x86_install_multi.msi.meta4 \
 		metalinkcat.c \
