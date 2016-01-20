@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	propro
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -12,6 +12,8 @@ COMMENT=	Facility to manage extension object properties
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+PORTSCOUT=	limit:^1.*
 
 USES=		tar:tgz
 USE_PHP=	yes
