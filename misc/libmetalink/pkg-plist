@@ -6,7 +6,7 @@ include/metalink/metalinkver.h
 lib/libmetalink.a
 lib/libmetalink.so
 lib/libmetalink.so.3
-lib/libmetalink.so.3.0.0
+lib/libmetalink.so.3.1.0
 libdata/pkgconfig/libmetalink.pc
 man/man3/metalink_checksum_t.3.gz
 man/man3/metalink_chunk_checksum_t.3.gz
