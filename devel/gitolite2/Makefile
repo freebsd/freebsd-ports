@@ -9,7 +9,7 @@ MASTER_SITES=	GH \
 		LOCAL/tdb
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access control layer on top of git
 
 LICENSE=	GPLv2

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADAMK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Checks if process has access to the web
 
 LICENSE=	ART10 GPLv1

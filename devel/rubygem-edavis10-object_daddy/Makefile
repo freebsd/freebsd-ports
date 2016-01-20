@@ -6,7 +6,7 @@ PORTVERSION=	0.4.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object Daddy assists in automating testing
 
 LICENSE=	MIT
