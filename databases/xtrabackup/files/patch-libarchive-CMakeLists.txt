@@ -1,0 +1,14 @@
+--- storage/innobase/xtrabackup/src/libarchive/CMakeLists.txt	2015-10-16 20:40:52.000000000 +0200
++++ storage/innobase/xtrabackup/src/libarchive/CMakeLists.txt.new	2015-11-03 14:46:57.952677630 +0100
+@@ -822,9 +822,9 @@
+ # Especially for early development, we want to be a little
+ # aggressive about diagnosing build problems; this can get
+ # relaxed somewhat in final shipping versions.
+-IF ("CMAKE_C_COMPILER_ID" MATCHES "^GNU$")
++IF (CMAKE_C_COMPILER_ID MATCHES "^GNU$")
+   ADD_DEFINITIONS(-Wall -Werror)
+-ENDIF ("CMAKE_C_COMPILER_ID" MATCHES "^GNU$")
++ENDIF (CMAKE_C_COMPILER_ID MATCHES "^GNU$")
+ 
+ IF(ENABLE_TEST)
+ ADD_CUSTOM_TARGET(run_all_tests)
