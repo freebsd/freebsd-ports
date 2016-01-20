@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	raphf
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -13,9 +13,10 @@ COMMENT=	Resource and persistent handles factory
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+PORTSCOUT=	limit:^1.*
+
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-#IGNORE_WITH_PHP=	56
 
 .include <bsd.port.mk>
