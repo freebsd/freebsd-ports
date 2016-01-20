@@ -10,10 +10,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that helps you create bindings between C++ and Lua
 
-LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
-
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 
 USES=		lua:51
 USE_LDCONFIG=	yes
@@ -42,8 +42,10 @@ do-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libluabind.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/libluabind.so ${STAGEDIR}${PREFIX}/lib
-	cd ${WRKSRC} && ${COPYTREE_SHARE} luabind ${STAGEDIR}${PREFIX}/include
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} luabind ${STAGEDIR}${PREFIX}/include
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
