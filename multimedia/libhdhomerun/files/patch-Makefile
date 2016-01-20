@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-01-20 02:55:42 UTC
++++ Makefile
+@@ -11,7 +11,7 @@ LIBSRCS += hdhomerun_pkt.c
+ LIBSRCS += hdhomerun_sock_posix.c
+ LIBSRCS += hdhomerun_video.c
+ 
+-CC    := $(CROSS_COMPILE)gcc
++#CC    := $(CROSS_COMPILE)gcc
+ STRIP := $(CROSS_COMPILE)strip
+ 
+ CFLAGS += -Wall -O2 -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wpointer-arith
