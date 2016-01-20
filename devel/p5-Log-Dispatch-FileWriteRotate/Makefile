@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch-FileWriteRotate
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,12 +12,13 @@ COMMENT=	Log to files that archive/rotate themselves, w/ File::Write::Rotate
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-File-Write-Rotate>=0:${PORTSDIR}/devel/p5-File-Write-Rotate \
+BUILD_DEPENDS=	p5-File-Write-Rotate>=0.29:${PORTSDIR}/devel/p5-File-Write-Rotate \
 		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-BUILD_DEPENDS+=	p5-Perl-osnames>=0.09:${PORTSDIR}/devel/p5-Perl-osnames
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
