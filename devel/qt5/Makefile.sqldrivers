@@ -19,10 +19,5 @@ INSTALL_WRKSRC?=${BUILD_WRKSRC}
 PLIST_FILES+=	${QT_LIBDIR_REL}/cmake/Qt5Sql/Qt5Sql_Q${DB}DriverPlugin.cmake \
 		${QT_PLUGINDIR_REL}/sqldrivers/libqsql${DB:tl:C/^sql//}.so \
 		%%DEBUG%%${QT_PLUGINDIR_REL}/sqldrivers/libqsql${DB:tl:C/^sql//}.so.debug
-PLIST_DIRSTRY+=	${QT_PLUGINDIR_REL}/sqldrivers \
-		${QT_PLUGINDIR_REL} \
-		${QT_ARCHDIR_REL} \
-		${QT_LIBDIR_REL}/cmake/Qt5Sql \
-		${QT_LIBDIR_REL}/cmake
 
 .include <bsd.port.mk>
