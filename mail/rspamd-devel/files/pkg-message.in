@@ -1,0 +1,10 @@
+======================================================================
+ - Add the following line to /etc/rc.conf to enable rspamd:
+
+     rspamd_enable="YES"
+
+ - A symbolic link to %%ETCDIR%%/rspamd.newsyslog.conf
+   has been created in the /usr/local/etc/newsyslog.conf.d directory.
+   You can edit %%ETCDIR%%/rspamd.newsyslog.conf
+   to change log file rotation configuration.
+======================================================================
