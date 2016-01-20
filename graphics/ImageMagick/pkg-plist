@@ -1366,6 +1366,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/image.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/layer.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/list.html
+%%PORTDOCS%%%%DOCSDIR%%-6/www/api/magick++-classes.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/magick-deprecate.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/magick-image.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/magick-property.html
