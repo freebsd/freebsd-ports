@@ -3,6 +3,7 @@
 
 PORTNAME=	tvheadend
 PORTVERSION=	4.0.8
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org
@@ -45,14 +46,18 @@ CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib
 CFLAGS+=	-I${LOCALBASE}/include -Wno-conversion -Wno-int-to-pointer-cast
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lssl -lcrypto -lz
 
-OPTIONS_DEFINE=	AVAHI DVBCSA TRANSCODING XMLTV
-OPTIONS_DEFAULT=DVBCSA
+OPTIONS_DEFINE=	AVAHI DVBCSA HDHOMERUN TRANSCODING XMLTV
+OPTIONS_DEFAULT=DVBCSA HDHOMERUN
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 
 DVBCSA_DESC=		Replace internal ffdecsa with dvbcsa
 DVBCSA_LIB_DEPENDS=	libdvbcsa.so:${PORTSDIR}/multimedia/libdvbcsa
 DVBCSA_CONFIGURE_ENABLE=	dvbcsa
+
+HDHOMERUN_DESC=		Native support for HDHomeRun network tuners
+HDHOMERUN_LIB_DEPENDS=	libhdhomerun.so:${PORTSDIR}/multimedia/libhdhomerun
+HDHOMERUN_CONFIGURE_ENABLE=	hdhomerun_client
 
 TRANSCODING_DESC=	Transcoding for mobile and web clients
 TRANSCODING_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
