@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Check the correct line endings in your project
 
 LICENSE=	ART10 GPLv1
