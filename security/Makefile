@@ -670,6 +670,7 @@
     SUBDIR += p5-openxpki
     SUBDIR += p5-openxpki-i18n
     SUBDIR += pad
+    SUBDIR += pam-modules
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
     SUBDIR += pam_fprint
