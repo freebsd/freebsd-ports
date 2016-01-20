@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bitlbee-facebook
-PORTVERSION=	20151227
+PORTVERSION=	1.0.0
+PORTEPOCH=	1
 CATEGORIES=	irc
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -18,8 +19,8 @@ USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	gahr
-GH_TAGNAME=	20151224
+GH_ACCOUNT=	jgeboski
+GH_TAGNAME=	v${PORTVERSION}
 
 INSTALL_TARGET=	install-strip
 
