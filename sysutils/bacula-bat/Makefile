@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-PORTREVISION=	3
 PKGNAMESUFFIX=	-bat
 
 COMMENT=	Network backup solution (GUI)
