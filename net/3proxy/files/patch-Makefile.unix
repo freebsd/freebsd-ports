@@ -1,6 +1,6 @@
---- Makefile.unix.orig	2015-02-17 13:09:13 UTC
+--- Makefile.unix.orig	2016-01-19 22:20:05 UTC
 +++ Makefile.unix
-@@ -9,18 +9,18 @@
+@@ -8,18 +8,18 @@
  # library support. Add -DSAFESQL for poorely written ODBC library / drivers.
  
  BUILDDIR =
@@ -8,13 +8,13 @@
 +CC ?= gcc
  
  # you may need -L/usr/pkg/lib for older NetBSD versions
--CFLAGS = -Wall -g -O2 -c -pthread -D_THREAD_SAFE -D_REENTRANT -DNOODBC -DWITH_STD_MALLOC -DFD_SETSIZE=4096 -DWITH_POLL
-+CFLAGS = -Wall -c %%CFLAGS%% -DNOODBC -DWITH_STD_MALLOC -DFD_SETSIZE=4096 -DWITH_POLL
+-CFLAGS = -g -O2 -c -pthread -D_THREAD_SAFE -D_REENTRANT -DNOODBC -DWITH_STD_MALLOC -DFD_SETSIZE=4096 -DWITH_POLL
++CFLAGS = -c %%CFLAGS%% -DNOODBC -DWITH_STD_MALLOC -DFD_SETSIZE=4096 -DWITH_POLL
  COUT = -o 
 -LN = gcc
--LDFLAGS = -Wall -O2 -pthread
+-LDFLAGS = -O2 -pthread
 +LN ?= ${CC}
-+LDFLAGS = -Wall -lpthread
++LDFLAGS = -pthread
  # -lpthreads may be reuqired on some platforms instead of -pthreads
  # -ldl or -lld may be required for some platforms
  DCFLAGS = -fpic

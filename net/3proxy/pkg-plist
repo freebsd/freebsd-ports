@@ -1,9 +1,7 @@
 bin/3proxy
-bin/countersutil
 bin/dighosts
 bin/ftppr
 bin/icqpr
-bin/msnpr
 bin/mycrypt
 bin/pop3p
 bin/httppr
