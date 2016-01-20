@@ -292,7 +292,7 @@ sbin/osipsconsole
 %%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/README.db_mysql
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/README.db_postgres
 %%RADIUS%%%%PORTDOCS%%%%DOCSDIR%%/README.aaa_radius
-%%UNIXODBC%%%%PORTDOCS%%%%%DOCSDIR%%/README.db_unixodbc
+%%UNIXODBC%%%%PORTDOCS%%%%DOCSDIR%%/README.db_unixodbc
 %%TLS%%%%PORTDOCS%%%%DOCSDIR%%/README.proto_tls
 %%DATADIR%%/dbtext/opensips/acc
 %%DATADIR%%/dbtext/opensips/active_watchers
