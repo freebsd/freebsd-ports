@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	fileobj
-PORTVERSION=	0.7.23.1
+PORTVERSION=	0.7.25
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
-MAINTAINER=	zrj@ef.irc
+MAINTAINER=	zrj@dragonflybsd.org
 COMMENT=	Portable hex editor with vi like interface
 
 LICENSE=	BSD2CLAUSE
@@ -15,6 +15,6 @@ GH_ACCOUNT=	kusumi
 USE_GITHUB=	yes
 
 USES=		python tar:bzip2
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
