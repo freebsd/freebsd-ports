@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-DISTVERSION=	7.2.0
-PORTREVISION?=	1
+DISTVERSION=	7.4.0
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -32,9 +31,10 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS
-OPTIONS_DEFAULT?=	NLS PGSQL
+OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS ENABLE_IPV6
+OPTIONS_DEFAULT?=	NLS PGSQL ENABLE_IPV6
 MTX_DESC=		Install mtx for control of autochanger devices
+ENABLE_IPV6_DESC=	Enable IPv6 support
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
 
@@ -140,6 +140,11 @@ readline_CONFIGURE=	${LOCALBASE}
 readline_CONFIGURE=	yes
 .endif
 
+# if IPv6 is not in the kernel, it generates many errors
+.if ! ${PORT_OPTIONS:MENABLE_IPV6}
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
 CONFIGURE_ARGS+=	--with-readline=${readline_CONFIGURE}
 
 .if defined(WITH_CLIENT_ONLY)
@@ -185,7 +190,7 @@ post-install:
 .else
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${STAGEDIR}${ETCDIR}/bacula-barcodes.sample
-        #the following are installed by the -CLIENT port, and I (ler@lerctr.org)
+	#the following are installed by the -CLIENT port, and I (ler@lerctr.org)
 	#don't know how to remove them from being built for the -SERVER port.
 	${RM} ${STAGEDIR}${LOCALBASE}/lib/bpipe-fd.so
 	${RM} ${STAGEDIR}${LOCALBASE}/lib/libbac-${PORTVERSION}.so
