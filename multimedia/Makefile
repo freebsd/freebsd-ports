@@ -181,6 +181,7 @@
     SUBDIR += libdvdnav
     SUBDIR += libdvdread
     SUBDIR += libfame
+    SUBDIR += libhdhomerun
     SUBDIR += libkate
     SUBDIR += libmatroska
     SUBDIR += libmediaart

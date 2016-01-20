@@ -1,0 +1,12 @@
+This package supports the Silicon Dust HDHomeRun,
+a networked digital TV tuner compatible with VLC and Tvheadend.
+
+This utility can be used for:
+
+ * Discovering your tuner location and name
+ * Gathering tuner settings
+ * Modifying tuner settings
+ * Performing scans
+ * Performing firmware upgrades
+
+WWW: http://www.silicondust.com/support/downloads/linux/
