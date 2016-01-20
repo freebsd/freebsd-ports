@@ -3,6 +3,7 @@
 
 PORTNAME=	propro
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTSCOUT=	limit:^1.*
 
-USES=		tar:tgz
+USES=		gmake tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
