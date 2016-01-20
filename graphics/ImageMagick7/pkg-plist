@@ -619,6 +619,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/advanced-windows-installation.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/animate.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/api/Image.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/MagickCore/ImageMagick_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/MagickCore/ImageMagick_8h.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/MagickCore/MagickCore_8h-source.html
@@ -1390,6 +1391,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/layer.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/list.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/list.php
+%%PORTDOCS%%%%DOCSDIR%%-7/www/api/magick++-classes.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/magick-deprecate.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/magick-deprecate.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/magick-image.html
@@ -1465,7 +1467,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/contact.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/convert.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/css/README.txt
-%%PORTDOCS%%%%DOCSDIR%%-7/www/css/bootstrap.css
 %%PORTDOCS%%%%DOCSDIR%%-7/www/css/magick.css
 %%PORTDOCS%%%%DOCSDIR%%-7/www/display.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/distribute-pixel-cache.html
@@ -1486,7 +1487,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/install-source.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/jp2.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/js/README.txt
-%%PORTDOCS%%%%DOCSDIR%%-7/www/js/bootstrap.js
 %%PORTDOCS%%%%DOCSDIR%%-7/www/js/magick.js
 %%PORTDOCS%%%%DOCSDIR%%-7/www/license.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/links.html
