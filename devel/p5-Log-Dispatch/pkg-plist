@@ -15,6 +15,7 @@
 %%SITE_PERL%%/Log/Dispatch/Output.pm
 %%SITE_PERL%%/Log/Dispatch/Screen.pm
 %%SITE_PERL%%/Log/Dispatch/Syslog.pm
+%%SITE_PERL%%/Log/Dispatch/Vars.pm
 %%PERL5_MAN3%%/Log::Dispatch.3.gz
 %%PERL5_MAN3%%/Log::Dispatch::ApacheLog.3.gz
 %%PERL5_MAN3%%/Log::Dispatch::Base.3.gz
@@ -31,3 +32,4 @@
 %%PERL5_MAN3%%/Log::Dispatch::Output.3.gz
 %%PERL5_MAN3%%/Log::Dispatch::Screen.3.gz
 %%PERL5_MAN3%%/Log::Dispatch::Syslog.3.gz
+%%PERL5_MAN3%%/Log::Dispatch::Vars.3.gz
