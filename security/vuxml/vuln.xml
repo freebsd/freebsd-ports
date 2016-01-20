@@ -58,6 +58,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="62c0dbbd-bfce-11e5-b5fe-002590263bf5">
+    <topic>cgit -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cgit</name>
+	<range><lt>0.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jason A. Donenfeld reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2016/01/14/6">
+	  <p>Reflected Cross Site Scripting and Header Injection in Mimetype
+	    Query String.</p>
+	  <p>Stored Cross Site Scripting and Header Injection in Filename
+	    Parameter.</p>
+	  <p>Integer Overflow resulting in Buffer Overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1899</cvename>
+      <cvename>CVE-2016-1900</cvename>
+      <cvename>CVE-2016-1901</cvename>
+      <freebsdpr>ports/206417</freebsdpr>
+      <url>http://lists.zx2c4.com/pipermail/cgit/2016-January/002817.html</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/01/14/6</url>
+    </references>
+    <dates>
+      <discovery>2016-01-14</discovery>
+      <entry>2016-01-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="314830d8-bf91-11e5-96d6-14dae9d210b8">
     <topic>bind -- denial of service vulnerabilities</topic>
     <affects>
