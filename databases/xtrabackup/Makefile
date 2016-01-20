@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtrabackup
-PORTVERSION=	2.2.12
+PORTVERSION=	2.3.3
 CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-${PORTVERSION}/source/tarball/
 DISTNAME=	percona-${PORTNAME}-${PORTVERSION}
@@ -16,16 +16,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 # quilt is required by build.sh
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		cmake:${PORTSDIR}/devel/cmake \
-		bison:${PORTSDIR}/devel/bison
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		bison:${PORTSDIR}/devel/bison \
+		xxd:${PORTSDIR}/editors/vim-lite
+LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgpg-error.so:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		qpress:${PORTSDIR}/archivers/qpress
 
 # autotool is in use for 5.1 builds
-USES=		alias autoreconf:build cpe gettext cmake libtool perl5
+USES=		alias autoreconf:build cpe gettext cmake libtool perl5 shebangfix
 CPE_VENDOR=	percona
+SHEBANG_FILES=	storage/innobase/xtrabackup/xbcloud_osenv.sh
 
-PLIST_FILES=	bin/xtrabackup bin/xbstream bin/innobackupex bin/xbcrypt
+PLIST_FILES=	bin/xtrabackup bin/xbstream bin/innobackupex bin/xbcrypt \
+		bin/xbcloud bin/xbcloud_osenv
 
 .include <bsd.port.mk>
