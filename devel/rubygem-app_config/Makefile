@@ -5,7 +5,7 @@ PORTVERSION=	2.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby gem for storing application configuration
 
 LICENSE=	MIT

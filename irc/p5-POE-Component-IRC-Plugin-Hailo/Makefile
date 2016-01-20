@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HINRIK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PoCo-IRC plugin for a Hailo conversation simulator
 
 LICENSE=	ART10 GPLv1

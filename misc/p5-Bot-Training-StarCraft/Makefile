@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AVAR
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide starcraft.trn via Bot::Training
 
 LICENSE=	ART10 GPLv1

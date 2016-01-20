@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Declare version conflicts for your dist
 
 LICENSE=	ART10 GPLv1
