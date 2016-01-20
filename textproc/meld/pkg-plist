@@ -259,6 +259,22 @@ share/help/es/meld/resolving-conflicts.page
 share/help/es/meld/text-filters.page
 share/help/es/meld/vc-mode.page
 share/help/es/meld/vc-supported.page
+share/help/sv/meld/command-line.page
+share/help/sv/meld/file-changes.page
+share/help/sv/meld/file-filters.page
+share/help/sv/meld/file-mode.page
+share/help/sv/meld/flattened-view.page
+share/help/sv/meld/folder-mode.page
+share/help/sv/meld/index.page
+share/help/sv/meld/introduction.page
+share/help/sv/meld/keyboard-shortcuts.page
+share/help/sv/meld/legal.xml
+share/help/sv/meld/missing-functionality.page
+share/help/sv/meld/preferences.page
+share/help/sv/meld/resolving-conflicts.page
+share/help/sv/meld/text-filters.page
+share/help/sv/meld/vc-mode.page
+share/help/sv/meld/vc-supported.page
 share/icons/HighContrast/scalable/apps/meld.svg
 share/icons/hicolor/16x16/actions/meld-change-apply-left.png
 share/icons/hicolor/16x16/actions/meld-change-apply-right.png
@@ -348,6 +364,7 @@ share/locale/zh_TW/LC_MESSAGES/meld.mo
 %%DATADIR%%/ui/vcview-ui.xml
 %%DATADIR%%/ui/vcview.ui
 share/mime/packages/meld.xml
+@dir share/help/sv/meld/figures
 @dir share/help/es/meld/figures
 @dir share/help/el/meld/figures
 @dir share/help/de/meld/figures
