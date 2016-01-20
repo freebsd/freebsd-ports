@@ -90,6 +90,19 @@ PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gs
 EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
 .endif
 
+# Must add this patch before HPN due to conflicts
+.if ${PORT_OPTIONS:MKERB_GSSAPI}
+# 7.1 patch taken from
+# http://sources.debian.net/data/main/o/openssh/1:7.1p2-2/debian/patches/gssapi.patch
+# which was originally based on 5.7 patch from
+# http://www.sxw.org.uk/computing/patches/
+.  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
+# Needed glue for applying HPN patch without conflict
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-hpn-gss-glue
+.  endif
+PATCHFILES+=	openssh-7.1p2-gsskex-all-20141021-debian-rh-20160104.patch.gz:-p1:gsskex
+.endif
+
 # http://www.psc.edu/index.php/hpn-ssh https://github.com/rapier1/hpn-ssh https://github.com/rapier1/openssh-portable
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 PORTDOCS+=		HPN-README
@@ -98,15 +111,6 @@ HPN_DISTVERSION=	6.7p1
 #PATCH_SITES+=		SOURCEFORGE/hpnssh/HPN-SSH%20${HPN_VERSION}%20${HPN_DISTVERSION}/:hpn
 #PATCHFILES+=		${PORTNAME}-${HPN_DISTVERSION}-hpnssh${HPN_VERSION}.diff.gz:-p1:hpn
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hpn:-p2
-.endif
-
-# Must add this patch after HPN due to conflicts
-.if ${PORT_OPTIONS:MKERB_GSSAPI}
-# 6.7 patch taken from
-# http://sources.debian.net/data/main/o/openssh/1:6.7p1-3/debian/patches/gssapi.patch
-# which was originally based on 5.7 patch from
-# http://www.sxw.org.uk/computing/patches/
-PATCHFILES+=	openssh-6.7p1-gsskex-all-20141021-284f364.patch.gz:-p1:gsskex
 .endif
 
 CONFIGURE_LIBS+=	-lutil
@@ -133,10 +137,6 @@ BROKEN=		X509 patch incompatible with KERB_GSSAPI patch
 .  endif
 
 .endif
-
-.  if ${PORT_OPTIONS:MKERB_GSSAPI}
-BROKEN=		Does not apply to 6.8
-.  endif
 
 .if ${PORT_OPTIONS:MHEIMDAL_BASE} && ${PORT_OPTIONS:MKERB_GSSAPI}
 BROKEN=		KERB_GSSAPI Requires either MIT or HEMIDAL, does not build with base Heimdal currently
