@@ -9,4 +9,6 @@ PKGMESSAGE=	/nonexistent
 
 MASTERDIR=	${.CURDIR}/../mvdsv
 
+BROKEN=		fails to patch
+
 .include "${MASTERDIR}/Makefile"
