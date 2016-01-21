@@ -1,0 +1,37 @@
+Sent upstream: https://github.com/aarnt/octopkg/pull/4
+
+commit 5f02bb3e504d1d3560ee5a7a3d7c0f90b25adac5
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Thu Jan 21 13:27:57 2016 +0100
+
+    QtSolutions: Fix build with Qt 5.5.1.
+
+    Import commit ad9bc4600 to the qt-solutions git repository:
+      QtSingleApplication: Fix build with Qt 5.5 due to the QDataStream
+      include cleanup.
+
+    This fixes the following error:
+
+    src/QtSolutions/qtlocalpeer.cpp:159:17: error: variable has incomplete type 'QDataStream'
+        QDataStream ds(&socket);
+                    ^
+    /usr/local/include/qt5/QtCore/qglobal.h:570:7: note: forward declaration of 'QDataStream'
+    class QDataStream;
+          ^
+    src/QtSolutions/qtlocalpeer.cpp:179:17: error: variable has incomplete type 'QDataStream'
+        QDataStream ds(socket);
+                    ^
+    /usr/local/include/qt5/QtCore/qglobal.h:570:7: note: forward declaration of 'QDataStream'
+    class QDataStream;
+          ^
+
+--- src/QtSolutions/qtlocalpeer.cpp
++++ src/QtSolutions/qtlocalpeer.cpp
+@@ -40,6 +40,7 @@
+ 
+ #include "qtlocalpeer.h"
+ #include <QtCore/QCoreApplication>
++#include <QtCore/QDataStream>
+ #include <QtCore/QTime>
+ #include <QRegularExpression>
+ 
