@@ -1,6 +1,25 @@
---- poppler.defs.orig	2009-09-27 17:07:59.000000000 +0800
-+++ poppler.defs	2012-04-09 05:50:38.000000000 +0800
-@@ -1646,58 +1646,6 @@
+--- poppler.defs.orig	2009-09-27 11:07:59.000000000 +0200
++++ poppler.defs	2016-01-20 09:29:09.187672000 +0100
+@@ -578,18 +578,6 @@
+   )
+ )
+ 
+-(define-enum Orientation
+-  (in-module "Poppler")
+-  (c-name "PopplerOrientation")
+-  (gtype-id "POPPLER_TYPE_ORIENTATION")
+-  (values
+-    '("portrait" "POPPLER_ORIENTATION_PORTRAIT")
+-    '("landscape" "POPPLER_ORIENTATION_LANDSCAPE")
+-    '("upsidedown" "POPPLER_ORIENTATION_UPSIDEDOWN")
+-    '("seascape" "POPPLER_ORIENTATION_SEASCAPE")
+-  )
+-)
+-
+ (define-enum PageTransitionType
+   (in-module "Poppler")
+   (c-name "PopplerPageTransitionType")
+@@ -1646,58 +1634,6 @@
    (return-type "GType")
  )
  
@@ -59,7 +78,7 @@
  (define-method render
    (of-object "PopplerPage")
    (c-name "poppler_page_render")
-@@ -1752,6 +1700,12 @@
+@@ -1752,6 +1688,12 @@
    (return-type "int")
  )
  
@@ -72,7 +91,7 @@
  (define-method get_duration
    (of-object "PopplerPage")
    (c-name "poppler_page_get_duration")
-@@ -1796,9 +1750,15 @@
+@@ -1796,9 +1738,15 @@
    (of-object "PopplerPage")
    (c-name "poppler_page_get_text")
    (return-type "char*")
@@ -89,7 +108,7 @@
    )
  )
  
-@@ -1886,6 +1846,16 @@
+@@ -1886,6 +1834,16 @@
    )
  )
  
@@ -106,7 +125,7 @@
  (define-method get_crop_box
    (of-object "PopplerPage")
    (c-name "poppler_page_get_crop_box")
-@@ -1895,6 +1865,16 @@
+@@ -1895,6 +1853,16 @@
    )
  )
  
