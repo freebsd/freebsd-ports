@@ -134,7 +134,7 @@ libdata/pkgconfig/gstreamer-base-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-controller-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-net-%%VERSION%%.pc
 libexec/gstreamer-%%VERSION%%/gst-plugin-scanner
-libexec/gstreamer-%%VERSION%%/gst-ptp-helper
+@(,,7755) libexec/gstreamer-%%VERSION%%/gst-ptp-helper
 man/man1/gst-inspect-%%VERSION%%.1.gz
 man/man1/gst-launch-%%VERSION%%.1.gz
 man/man1/gst-typefind-%%VERSION%%.1.gz
