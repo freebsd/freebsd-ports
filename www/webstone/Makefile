@@ -22,6 +22,8 @@ CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	install
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${FIND} ${WRKSRC}/bin -name "*.pl" -o -name "*.wpl" | ${XARGS} \
 		${REINPLACE_CMD} -i '' -e '1s|.*perl.*|#!${perl_CMD}|'
