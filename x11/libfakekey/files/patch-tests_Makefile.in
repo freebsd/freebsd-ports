@@ -1,0 +1,13 @@
+--- tests/Makefile.in.orig	2005-12-08 13:45:02 UTC
++++ tests/Makefile.in
+@@ -61,8 +61,8 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=c
+ 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+ 	$(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(X11_CFLAGS) \
++	$(AM_LDFLAGS) $(LDFLAGS) $(X11_LIBS) -o $@
+ SOURCES = fakekey-test.c
+ DIST_SOURCES = fakekey-test.c
+ ETAGS = etags
