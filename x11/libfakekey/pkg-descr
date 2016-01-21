@@ -1,0 +1,4 @@
+libfakekey is a simple library for converting UTF-8 characters into 'fake' X
+key-presses.
+
+WWW: https://www.yoctoproject.org/tools-resources/projects/matchbox
