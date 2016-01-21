@@ -12,7 +12,7 @@ MASTER_SITES=	LOCAL/gahr \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Tiny CD, a simple ncurses-based CD player
 
-CONFLICTS=	coreos-etcd
+CONFLICTS_INSTALL=coreos-etcd
 
 USE_SDL=	sdl
 
