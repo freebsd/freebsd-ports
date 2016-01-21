@@ -1,0 +1,29 @@
+From 9c21825332543189ca7083171c7aff9f1e3aff06 Mon Sep 17 00:00:00 2001
+From: Ken Moore <moorekou@gmail.com>
+Date: Wed, 28 Oct 2015 13:55:55 -0400
+Subject: [PATCH] Add a couple "const" declarations to the PC-BSD utilities
+ keyboard settings classes. This is apparently needed for 11.x compilation.
+
+---
+ src-qt5/libpcbsd/utils/keyboardsettings.h | 4 ++--
+  1 file changed, 2 insertions(+), 2 deletions(-)
+--- libpcbsd/utils/keyboardsettings.h
++++ libpcbsd/utils/keyboardsettings.h
+@@ -41,7 +41,7 @@ namespace keyboard
+         SLayout(){;}
+         SLayout(QString layout, QString variant):layout_id(layout),variant_id(variant){;}
+ 
+-        bool operator==(const SLayout& l)
++        bool operator==(const SLayout& l) const
+         {
+             return (layout_id == l.layout_id) && (variant_id == l.variant_id);
+         }
+@@ -80,7 +80,7 @@ namespace keyboard
+             group_name = fullName.split(":")[0];
+             option = fullName.split(":")[1];
+         }
+-        bool operator==(const SOption& opt)
++        bool operator==(const SOption& opt) const
+         {
+             return ((group_name == opt.group_name)&&(option == opt.option));
+         }
