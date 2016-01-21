@@ -151,9 +151,7 @@ paths() {
 		[ -z "${f}" ] && continue
 		# Ignore false-positive/harmless files
 		case "${f}" in
-			*/lib/ruby/gems/*/Makefile) continue ;;
-			*/lib/ruby/gems/*/Makefile.html) continue ;;
-			*/lib/ruby/gems/*/mkmf.log) continue ;;
+			*/lib/ruby/gems/*) continue ;;
 			*/share/texmf-var/web2c/*/*.fmt) continue ;;
 			*/share/texmf-var/web2c/*/*.log) continue ;;
 		esac
