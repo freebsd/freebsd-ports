@@ -1,7 +1,0 @@
-#!/bin/sh
-PKGNAME=$1
-LIBTOOL=`whereis -b -q libtool`
-case "$2" in
-	PRE-INSTALL) ;;
-	POST-INSTALL) [ -n "${LIBTOOL}" -a -n "${PKG_PREFIX}" ] && "${LIBTOOL}" --finish "${PKG_PREFIX}/lib" ;;
-esac
