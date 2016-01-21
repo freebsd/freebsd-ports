@@ -58,6 +58,80 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5237f5d7-c020-11e5-b397-d050996490d0">
+    <topic>ntp -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.8p6</lt></range>
+      </package>
+      <package>
+	<name>ntp-devel</name>
+	<range><lt>4.3.90</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Network Time Foundation reports:</p>
+	<blockquote cite="http://support.ntp.org/bin/view/Main/SecurityNotice#January_2016_NTP_4_2_8p6_Securit">
+	  <p>NTF's NTP Project has been notified of the following low-
+	    and medium-severity vulnerabilities that are fixed in
+	    ntp-4.2.8p6, released on Tuesday, 19 January 2016:</p>
+	  <ul>
+	    <li>Bug 2948 / CVE-2015-8158: Potential Infinite Loop
+	      in ntpq.  Reported by Cisco ASIG.</li>
+	    <li>Bug 2945 / CVE-2015-8138: origin: Zero Origin
+	      Timestamp Bypass.  Reported by Cisco ASIG.</li>
+	    <li>Bug 2942 / CVE-2015-7979: Off-path Denial of
+	      Service (DoS) attack on authenticated broadcast
+	      mode.  Reported by Cisco ASIG.</li>
+	    <li>Bug 2940 / CVE-2015-7978: Stack exhaustion in
+	      recursive traversal of restriction list.
+	      Reported by Cisco ASIG.</li>
+	    <li>Bug 2939 / CVE-2015-7977: reslist NULL pointer
+	      dereference.  Reported by Cisco ASIG.</li>
+	    <li>Bug 2938 / CVE-2015-7976: ntpq saveconfig command
+	      allows dangerous characters in filenames.
+	      Reported by Cisco ASIG.</li>
+	    <li>Bug 2937 / CVE-2015-7975: nextvar() missing length
+	      check.  Reported by Cisco ASIG.</li>
+	    <li>Bug 2936 / CVE-2015-7974: Skeleton Key: Missing
+	      key check allows impersonation between authenticated
+	      peers.  Reported by Cisco ASIG.</li>
+	    <li>Bug 2935 / CVE-2015-7973: Deja Vu: Replay attack on
+	      authenticated broadcast mode.  Reported by Cisco ASIG.</li>
+	  </ul>
+	  <p>Additionally, mitigations are published for the following
+	    two issues:</p>
+	  <ul>
+	    <li>Bug 2947 / CVE-2015-8140: ntpq vulnerable to replay
+	      attacks.  Reported by Cisco ASIG.</li>
+	    <li>Bug 2946 / CVE-2015-8139: Origin Leak: ntpq and ntpdc,
+	      disclose origin.  Reported by Cisco ASIG.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7973</cvename>
+      <cvename>CVE-2015-7974</cvename>
+      <cvename>CVE-2015-7975</cvename>
+      <cvename>CVE-2015-7976</cvename>
+      <cvename>CVE-2015-7977</cvename>
+      <cvename>CVE-2015-7978</cvename>
+      <cvename>CVE-2015-7979</cvename>
+      <cvename>CVE-2015-8138</cvename>
+      <cvename>CVE-2015-8139</cvename>
+      <cvename>CVE-2015-8140</cvename>
+      <cvename>CVE-2015-8158</cvename>
+      <url>http://support.ntp.org/bin/view/Main/SecurityNotice#January_2016_NTP_4_2_8p6_Securit</url>
+    </references>
+    <dates>
+      <discovery>2016-01-20</discovery>
+      <entry>2016-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="62c0dbbd-bfce-11e5-b5fe-002590263bf5">
     <topic>cgit -- multiple vulnerabilities</topic>
     <affects>
