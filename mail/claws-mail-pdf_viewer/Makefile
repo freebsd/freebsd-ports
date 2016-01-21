@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdf_viewer
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	PDF and PostScript viewer plugin for Claws Mail
 
