@@ -2,6 +2,7 @@
 
 PORTNAME=	lm4tools
 PORTVERSION=	0.1.3.20141201
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
@@ -14,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	utzig
 GH_TAGNAME=	5a4bc0b
 
-USES=		gmake
+USES=		pkgconfig gmake
 
 PORTDOCS=	README.md \
 		lmicdiusb/commands.txt lmicdiusb/README
