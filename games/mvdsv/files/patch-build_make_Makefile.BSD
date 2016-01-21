@@ -1,6 +1,6 @@
 --- build/make/Makefile.BSD.orig	2011-10-06 07:24:17 UTC
 +++ build/make/Makefile.BSD
-@@ -17,7 +17,7 @@ SV_DIR = ../../src
+@@ -17,17 +17,15 @@ SV_DIR = ../../src
  # for gcc its like: make mvdsv FORCE32BITFLAGS=-m32
  # configure script add FORCE32BITFLAGS=-m32
  
@@ -9,7 +9,18 @@
  
  .if !defined(NOKQUEUE) && (${UNAME} == "FreeBSD" || ${UNAME} == "DragonFly")
  DO_CFLAGS		+=	-DKQUEUE
-@@ -94,7 +94,7 @@ SV_OBJS = \
+ .endif
+ 
+-WITH_OPTIMIZED_CFLAGS = YES
+-
+ USE_ASM=-Did386
+ .if defined(WITH_OPTIMIZED_CFLAGS)
+-DO_CFLAGS		+=	-O2 -fno-strict-aliasing -ffast-math -funroll-loops
++DO_CFLAGS		+=	-ffast-math -funroll-loops
+ . if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
+ ASM=${USE_ASM}
+ DO_CFLAGS		+=	${ASM}
+@@ -94,7 +92,7 @@ SV_OBJS = \
  		${SV_DIR}/pcre/get.o \
  		${SV_DIR}/pcre/pcre.o
  
@@ -18,7 +29,7 @@
  SV_ASM_OBJS = \
  		${SV_DIR}/bothtoolsa.o \
  		${SV_DIR}/math.o
-@@ -105,10 +105,10 @@ SV_ASM_OBJS = \
+@@ -105,10 +103,10 @@ SV_ASM_OBJS = \
  #############################################################################
  
  .c.o:
