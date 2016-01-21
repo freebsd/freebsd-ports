@@ -58,6 +58,59 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="371bbea9-3836-4832-9e70-e8e928727f8c">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>48.0.2564.82</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.de/2016/01/stable-channel-update_20.html">
+	  <p>This update includes 37 security fixes, including:</p>
+	  <ul>
+	    <li>[497632] High CVE-2016-1612: Bad cast in V8.</li>
+	    <li>[572871] High CVE-2016-1613: Use-after-free in PDFium.</li>
+	    <li>[544691] Medium CVE-2016-1614: Information leak in Blink.</li>
+	    <li>[468179] Medium CVE-2016-1615: Origin confusion in Omnibox.</li>
+	    <li>[541415] Medium CVE-2016-1616: URL Spoofing.</li>
+	    <li>[544765] Medium CVE-2016-1617: History sniffing with HSTS and
+	      CSP.</li>
+	    <li>[552749] Medium CVE-2016-1618: Weak random number generator in
+	      Blink.</li>
+	    <li>[557223] Medium CVE-2016-1619: Out-of-bounds read in
+	      PDFium.</li>
+	    <li>[579625] CVE-2016-1620: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>Multiple vulnerabilities in V8 fixed at the tip of the 4.8
+	      branch.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1612</cvename>
+      <cvename>CVE-2016-1613</cvename>
+      <cvename>CVE-2016-1614</cvename>
+      <cvename>CVE-2016-1615</cvename>
+      <cvename>CVE-2016-1616</cvename>
+      <cvename>CVE-2016-1617</cvename>
+      <cvename>CVE-2016-1618</cvename>
+      <cvename>CVE-2016-1619</cvename>
+      <cvename>CVE-2016-1620</cvename>
+      <url>http://googlechromereleases.blogspot.de/2016/01/stable-channel-update_20.html</url>
+    </references>
+    <dates>
+      <discovery>2016-01-20</discovery>
+      <entry>2016-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5237f5d7-c020-11e5-b397-d050996490d0">
     <topic>ntp -- multiple vulnerabilities</topic>
     <affects>
