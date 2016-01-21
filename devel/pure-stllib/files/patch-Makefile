@@ -1,19 +1,11 @@
---- ./Makefile.orig	2013-08-28 18:17:41.000000000 +0200
-+++ ./Makefile	2013-10-16 22:49:25.000000000 +0200
-@@ -17,12 +17,12 @@
+--- Makefile.orig	2014-03-23 10:09:16 UTC
++++ Makefile
+@@ -17,7 +17,7 @@ installdir  = $(addprefix $(DESTDIR), $(
  MOD_CXXFLAGS = $(PIC) $(shell pkg-config pure --cflags) $(CFLAGS) $(CPPFLAGS)
  MOD_LDFLAGS = $(shell pkg-config pure --libs) $(LDFLAGS)
  
 -CFLAGS = -g -O2 -Wall -Wextra
 +CFLAGS ?= -g -O2 -Wall -Wextra
  
--ifeq "$(DLL)" ".dylib"
-+#ifeq "$(DLL)" ".dylib"
- # OSX may need this (untested)
--DLL_FLAGS = -install_name "$(libdir)/pure/$@"
--endif
-+#DLL_FLAGS = -install_name "$(libdir)/pure/$@"
-+#endif
- 
- # Basic rules to build the module, clean, check, install and uninstall.
- 
+ ifeq "$(DLL)" ".dylib"
+ DLL_FLAGS = -install_name "$(libdir)/pure/$@"
