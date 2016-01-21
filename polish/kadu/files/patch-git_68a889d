@@ -1,0 +1,112 @@
+Upstream patch that fixes the build with Qt 5.5.1.
+
+From 68a889d01e3c6a69183454272cc6b103df59399f Mon Sep 17 00:00:00 2001
+From: Rafał Przemysław Malinowski <rafal.przemyslaw.malinowski@gmail.com>
+Date: Wed, 16 Dec 2015 21:46:05 +0100
+Subject: [PATCH] build: fix OBS builds
+
+---
+ kadu-core/main.cpp                                                  | 1 +
+ kadu-core/os/single-application/single-application.cpp              | 1 +
+ plugins/encryption_ng/encryption-ng-plugin.cpp                      | 1 +
+ plugins/encryption_ng/encryption-ng-plugin.h                        | 1 +
+ plugins/encryption_ng/keys/key-shared.h                             | 1 +
+ plugins/encryption_ng_simlite/encryption-ng-simlite-decryptor.h     | 1 +
+ plugins/encryption_ng_simlite/encryption-ng-simlite-encryptor.h     | 1 +
+ plugins/encryption_ng_simlite/encryption-ng-simlite-key-generator.h | 1 +
+ plugins/encryption_ng_simlite/pkcs1_certificate.h                   | 1 +
+ 9 files changed, 9 insertions(+), 0 deletions(-)
+
+--- kadu-core/main.cpp
++++ kadu-core/main.cpp
+@@ -28,6 +28,7 @@
+  * along with this program. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
++#include <QtCore/QDataStream>
+ #include <QtCore/QLibraryInfo>
+ #include <QtCore/QTranslator>
+ #include <QtCrypto>
+--- kadu-core/os/single-application/single-application.cpp
++++ kadu-core/os/single-application/single-application.cpp
+@@ -28,6 +28,7 @@
+ #include <QtCore/QCoreApplication>
+ #include <QtCore/QDir>
+ #include <QtCore/QRegExp>
++#include <QtCore/QDataStream>
+ #include <QtNetwork/QLocalServer>
+ #include <QtNetwork/QLocalSocket>
+ #include <memory>
+--- plugins/encryption_ng/encryption-ng-plugin.cpp
++++ plugins/encryption_ng/encryption-ng-plugin.cpp
+@@ -21,6 +21,7 @@
+  */
+ 
+ #include <QtCore/QCoreApplication>
++#include <QtCore/QDataStream>
+ #include <QtCore/QtGlobal>
+ #include <QtWidgets/QApplication>
+ #include <QtCrypto>
+--- plugins/encryption_ng/encryption-ng-plugin.h
++++ plugins/encryption_ng/encryption-ng-plugin.h
+@@ -21,6 +21,7 @@
+ #ifndef ENCRYPTION_NG_PLUGIN_H
+ #define ENCRYPTION_NG_PLUGIN_H
+ 
++#include <QtCore/QDataStream>
+ #include <QtCore/QObject>
+ 
+ #include <QtCrypto>
+--- plugins/encryption_ng/keys/key-shared.h
++++ plugins/encryption_ng/keys/key-shared.h
+@@ -21,6 +21,7 @@
+ #ifndef KEY_SHARED_H
+ #define KEY_SHARED_H
+ 
++#include <QtCore/QDataStream>
+ #include <QtCrypto>
+ 
+ #include "../encryption_exports.h"
+--- plugins/encryption_ng_simlite/encryption-ng-simlite-decryptor.h
++++ plugins/encryption_ng_simlite/encryption-ng-simlite-decryptor.h
+@@ -21,6 +21,7 @@
+ #ifndef ENCRYPTION_NG_SIMLITE_DECRYPTOR_H
+ #define ENCRYPTION_NG_SIMLITE_DECRYPTOR_H
+ 
++#include <QtCore/QDataStream>
+ #include <QtCore/QObject>
+ #include <QtCrypto>
+ 
+--- plugins/encryption_ng_simlite/encryption-ng-simlite-encryptor.h
++++ plugins/encryption_ng_simlite/encryption-ng-simlite-encryptor.h
+@@ -20,6 +20,7 @@
+ #ifndef ENCRYPTION_NG_SIMLITE_ENCRYPTOR_H
+ #define ENCRYPTION_NG_SIMLITE_ENCRYPTOR_H
+ 
++#include <QtCore/QDataStream>
+ #include <QtCore/QObject>
+ #include <QtCrypto>
+ 
+--- plugins/encryption_ng_simlite/encryption-ng-simlite-key-generator.h
++++ plugins/encryption_ng_simlite/encryption-ng-simlite-key-generator.h
+@@ -20,6 +20,7 @@
+ #ifndef ENCRYPTION_NG_SIMLITE_KEY_GENERATOR_H
+ #define ENCRYPTION_NG_SIMLITE_KEY_GENERATOR_H
+ 
++#include <QtCore/QDataStream>
+ #include <QtCore/QtGlobal>
+ #include <QtCrypto>
+ 
+--- plugins/encryption_ng_simlite/pkcs1_certificate.h
++++ plugins/encryption_ng_simlite/pkcs1_certificate.h
+@@ -25,6 +25,7 @@
+ #ifndef PKCS1_CERTIFICATE_H
+ #define PKCS1_CERTIFICATE_H
+ 
++#include <QtCore/QDataStream>
+ #include <QtCrypto>
+ #include <stdint.h>
+ 
+--
+libgit2 0.23.3
+
