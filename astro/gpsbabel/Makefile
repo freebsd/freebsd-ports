@@ -26,12 +26,7 @@ OPTIONS_SUB=	GUI
 GUI_ALL_TARGET=	gui
 GUI_USE=	QT4=gui,xml,network,webkit
 GUI_USE+=	QT4=linguisttools_build,moc_build,rcc_build,uic_build
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGUI}
-MAKE_JOBS_UNSAFE=	yes
-.endif
+GUI_VARS=	MAKE_JOBS_UNSAFE=yes
 
 post-patch:
 	@${REINPLACE_CMD} '/langPath_ = / \
@@ -40,7 +35,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gpsbabel ${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MGUI}
+
+do-install-GUI-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/gui/objects/gpsbabelfe-bin \
 		${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/gui/gpsbabel.desktop \
@@ -49,6 +45,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gui/*.qm ${STAGEDIR}${DATADIR}/translations/
 	${INSTALL_DATA} ${WRKSRC}/gui/images/appicon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/gpsbabel.png
-.endif
 
 .include <bsd.port.mk>
