@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pure-stllib
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.6
 CATEGORIES=	devel
-MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
+MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
 
 MAINTAINER=	lichray@gmail.com
@@ -13,9 +12,7 @@ COMMENT=	Pure interface to C++ STL map and vectors
 
 LICENSE=	BSD3CLAUSE
 
-USES=		pure pkgconfig
-
-USE_GCC=	yes
+USES=		pkgconfig pure
 
 PORTDOCS=	*
 
