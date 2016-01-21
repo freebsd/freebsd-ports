@@ -48,7 +48,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		cups-pdf>=0:${PORTSDIR}/print/cups-pdf \
 		cups-filters>=0:${PORTSDIR}/print/cups-filters \
 		cups-bjnp>=0:${PORTSDIR}/print/cups-bjnp \
-		splix>=0:${PORTSDIR}/print/splix \
 		fusefs-ntfs>=0:${PORTSDIR}/sysutils/fusefs-ntfs \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		rsync:${PORTSDIR}/net/rsync \
