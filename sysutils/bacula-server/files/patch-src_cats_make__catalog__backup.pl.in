@@ -1,8 +1,0 @@
---- src/cats/make_catalog_backup.pl.in.orig	2015-08-13 13:52:24 UTC
-+++ src/cats/make_catalog_backup.pl.in
-@@ -1,4 +1,4 @@
--#!/usr/bin/env perl
-+#!/usr/local/bin/perl
- #
- # Author: Eric Bollengier, Copyright, 2006
- # License: BSD 2-Clause; see file LICENSE-FOSS
