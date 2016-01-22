@@ -3,6 +3,7 @@
 
 PORTNAME=	lightzone
 DISTVERSION=	4.1.5
+PORTREVISION=	1
 CATEGORIES=	graphics java
 DIST_SUBDIR=	${PORTNAME}
 
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	jhindexer:${PORTSDIR}/java/javahelp \
 		autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libtiff.so:${PORTSDIR}/graphics/tiff
+RUN_DEPENDS=	jhindexer:${PORTSDIR}/java/javahelp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ktgw0316
