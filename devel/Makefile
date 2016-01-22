@@ -467,6 +467,7 @@
     SUBDIR += eric4
     SUBDIR += eric6
     SUBDIR += eris
+    SUBDIR += erlang-backoff
     SUBDIR += erlang-bbmustache
     SUBDIR += erlang-bear
     SUBDIR += erlang-certifi
