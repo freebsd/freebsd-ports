@@ -1,0 +1,5 @@
+Database connection behaviour and database connection pool designed
+for handling transaction, prepare/execute and client process
+prepare/encode/decode.
+
+WWW: https://github.com/fishcakez/db_connection

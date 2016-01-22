@@ -53,6 +53,7 @@
     SUBDIR += dbtool
     SUBDIR += dbview
     SUBDIR += elixir-calecto
+    SUBDIR += elixir-db_connection
     SUBDIR += elixir-ecto
     SUBDIR += elixir-ecto_migrate
     SUBDIR += elixir-exredis
