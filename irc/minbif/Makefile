@@ -12,6 +12,8 @@ COMMENT=	IRC to instant messaging gateway
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
 
 # right now PLUGINS installs prpl-coincoin and prpl-gayattitude
