@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
@@ -36,7 +36,6 @@ APE_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
 NLS_CONFIGURE_ENABLE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/^itlocaledir = .*/itlocaledir = @datarootdir@\/locale/' ${WRKSRC}/po/Makefile.in.in
 post-patch-WINDOWS_CHARS-on:
 	@${REINPLACE_CMD} -e 's^#define[[:blank:]]*BADCHARS.*^#define BADCHARS "/"^' ${WRKSRC}/src/util.h
 
