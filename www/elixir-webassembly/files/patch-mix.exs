@@ -1,10 +1,9 @@
---- mix.exs.orig	2015-10-14 03:03:56 UTC
+--- mix.exs.orig	2016-01-22 18:42:10 UTC
 +++ mix.exs
-@@ -5,8 +5,6 @@ defmodule WebAssembly.Mixfile do
-     [app: :webassembly,
+@@ -6,7 +6,6 @@ defmodule WebAssembly.Mixfile do
       docs: [main: WebAssembly],
-      version: "0.6.0",
--     elixir: "~> 1.0",
+      version: "0.6.1",
+      elixir: "~> 1.0",
 -     deps: deps,
       description: description,
       package: package,
