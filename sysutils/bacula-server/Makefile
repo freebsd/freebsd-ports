@@ -3,6 +3,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	7.4.0
+PORTREVISION=   1
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -12,7 +13,7 @@ MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
 
 USES+=		libtool readline shebangfix
-SHEBANG_FILES=	scripts/dvd-handler.in
+SHEBANG_FILES=	scripts/dvd-handler.in src/cats/make_catalog_backup.pl.in
 python_OLD_CMD=	@PYTHON@
 USE_OPENSSL=	yes
 
@@ -190,6 +191,7 @@ post-install:
 .else
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${STAGEDIR}${ETCDIR}/bacula-barcodes.sample
+	${MV} ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql.sample
 	#the following are installed by the -CLIENT port, and I (ler@lerctr.org)
 	#don't know how to remove them from being built for the -SERVER port.
 	${RM} ${STAGEDIR}${LOCALBASE}/lib/bpipe-fd.so
