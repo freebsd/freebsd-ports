@@ -1,0 +1,22 @@
+xxdiff is a graphical tool for viewing the differences between two or three
+files, or between two directories, and can produce a merged version thereof.
+
+Some of its features:
+
+  - Comparing two files, three files, or two directories (shallow and
+    recursive)
+  - Horizontal diffs highlighting
+  - Files can be merged interactively and resulting output visualized
+    and saved
+  - Has features to assist in performing merge reviews/policing
+  - Can unmerge CVS conflicts in automatically merged file and display
+    them as two files, to help resolve conflicts
+  - Uses external diff program to compute differences: works with GNU
+    diff, SGI diff and ClearCase's cleardiff, and any other diff whose
+    output is similar to those
+  - Fully customizable with a resource file
+  - Look-and-feel similar to Rudy Wortel's/SGI xdiff; it is desktop
+    agnostic (i.e. will work equally well with KDE or GNOME)
+  - Features and output that ease integration with scripts
+
+WWW: http://furius.ca/xxdiff/

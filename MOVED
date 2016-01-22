@@ -4756,8 +4756,6 @@ textproc/kbedic||2013-07-26|Has expired: Depends on Qt 3.x
 textproc/skim||2013-07-26|Has expired: Depends on Qt 3.x
 textproc/uim-kde||2013-07-26|Has expired: Depends on Qt 3.x
 textproc/uim-qt||2013-07-26|Has expired: Depends on Qt 3.x
-textproc/xxdiff||2013-07-26|Has expired: Depends on Qt 3.x
-textproc/xxdiff-scripts||2013-07-26|Has expired: Depends on Qt 3.x
 ukrainian/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 vietnamese/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 www/kdewebdev||2013-07-26|Has expired: Depends on Qt 3.x
