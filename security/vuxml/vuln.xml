@@ -58,6 +58,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="99d3a8a5-c13c-11e5-96d6-14dae9d210b8">
+    <topic>imlib2 -- denial of service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>imlib2</name>
+	<range><lt>1.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Enlightenment reports:</p>
+	<blockquote cite="https://git.enlightenment.org/legacy/imlib2.git/tree/ChangeLog">
+	  <p>GIF loader: Fix segv on images without colormap</p>
+	  <p>Prevent division-by-zero crashes.</p>
+	  <p>Fix segfault when opening input/queue/id:000007,src:000000,op:flip1,pos:51 with feh</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://git.enlightenment.org/legacy/imlib2.git/tree/ChangeLog</url>
+      <url>http://seclists.org/oss-sec/2016/q1/162</url>
+      <cvename>CVE-2014-9762</cvename>
+      <cvename>CVE-2014-9763</cvename>
+      <cvename>CVE-2014-9764</cvename>
+    </references>
+    <dates>
+      <discovery>2013-12-21</discovery>
+      <entry>2016-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b4578647-c12b-11e5-96d6-14dae9d210b8">
     <topic>bind -- denial of service vulnerability</topic>
     <affects>
