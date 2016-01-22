@@ -23,6 +23,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwa_concat_kdf.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwa_curve25519.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwa_curve448.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwa_ed25519.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwa_ed448.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwa_math.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwa_pkcs1.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwa_pkcs5.beam
@@ -67,6 +68,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jws_alg_rsa_pss.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwt.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_server.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_keccakf1600.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_unsupported.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sup.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose.hrl
@@ -99,6 +101,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwa_concat_kdf.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwa_curve25519.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwa_curve448.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwa_ed25519.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwa_ed448.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwa_math.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwa_pkcs1.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwa_pkcs5.erl
@@ -143,6 +146,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jws_alg_rsa_pss.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwt.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_server.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3_keccakf1600.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3_unsupported.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sup.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
