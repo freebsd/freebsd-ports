@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	keybinder
-PORTVERSION=	0.3.0
-PORTREVISION=	5
+PORTVERSION=	0.3.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
-MASTER_SITES=	GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for registering keyboard shortcuts
@@ -12,42 +11,43 @@ COMMENT=	Library for registering keyboard shortcuts
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
-USES=		gmake libtool pathfix pkgconfig
+BUILD_DEPENDS=	gtkdocize:${PORTSDIR}/textproc/gtk-doc
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	engla
+
+USES=		autoreconf gmake libtool pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile.am
 USE_GNOME=	gtk20 introspection:build
 USE_XORG=	x11 xext xrender
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk-doc
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES PYTHON LUA
-OPTIONS_DEFAULT=PYTHON
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		EXAMPLES LUA PYTHON
+OPTIONS_DEFAULT=	PYTHON
+OPTIONS_SUB=		yes
 
 # Override LUA description
-LUA_DESC=	Lua bindings
+LUA_DESC=		Lua bindings
+LUA_USES=		lua:51
+LUA_CONFIGURE_ON=	--with-lua-includes=${LUA_INCDIR}
+LUA_CONFIGURE_OFF=	--disable-lua
+PYTHON_USES=		python:2
+PYTHON_USE=		gnome=pygtk2
+PYTHON_CONFIGURE_OFF=	--disable-python
 
-.include <bsd.port.options.mk>
+pre-configure:
+	@(cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/gtkdocize)
 
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		python:2
-USE_GNOME+=	pygtk2
-.else
-CONFIGURE_ARGS+=	--disable-python
-.endif
+post-build-EXAMPLES-on:
+	@${REINPLACE_CMD} -i '' -e \
+		's|lua5.1|lua-${LUA_VER}|g' ${WRKSRC}/examples/Makefile
 
-.if ${PORT_OPTIONS:MLUA}
-USES+=		lua:51
-CONFIGURE_ARGS+=	--with-lua-includes=${LUA_INCDIR}
-.else
-CONFIGURE_ARGS+=	--disable-lua
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${REINPLACE_CMD} -i '' -e 's|lua5.1|lua-${LUA_VER}|g' ${WRKSRC}/examples/Makefile
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-.endif
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} * \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
