@@ -2,6 +2,7 @@
 
 PORTNAME=	libreoffice
 PORTVERSION=	5.0.4
+PORTREVISION=	1
 CATEGORIES+=	editors
  
 MAINTAINER=	office@FreeBSD.org
