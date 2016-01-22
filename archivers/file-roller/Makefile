@@ -3,6 +3,7 @@
 
 PORTNAME=	file-roller
 PORTVERSION=	3.16.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
@@ -13,7 +14,10 @@ COMMENT=	Archive manager for zip files, tar, etc
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
-    		unzip:${PORTSDIR}/archivers/unzip
+    		zipinfo:${PORTSDIR}/archivers/unzip
+
+# Port unzip is desired, but specify the uniquely named zipinfo to ensure
+# archivers/unzip is pulled in.  Using "unzip" is satisfied by base unzip  
 
 PORTSCOUT=	limitw:1,even
 
