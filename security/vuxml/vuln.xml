@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b4578647-c12b-11e5-96d6-14dae9d210b8">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.8P3</lt></range>
+      </package>
+      <package>
+	<name>bind910</name>
+	<range><lt>9.10.3P3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01335">
+	  <p>Specific APL data could trigger an INSIST in apl_42.c</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://kb.isc.org/article/AA-01335</url>
+      <cvename>CVE-2015-8704</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-19</discovery>
+      <entry>2016-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="371bbea9-3836-4832-9e70-e8e928727f8c">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
@@ -220,12 +250,8 @@ Notes:
   </vuln>
 
   <vuln vid="314830d8-bf91-11e5-96d6-14dae9d210b8">
-    <topic>bind -- denial of service vulnerabilities</topic>
+    <topic>bind -- denial of service vulnerability</topic>
     <affects>
-      <package>
-	<name>bind99</name>
-	<range><lt>9.9.8P3</lt></range>
-      </package>
       <package>
 	<name>bind910</name>
 	<range><lt>9.10.3P3</lt></range>
@@ -234,23 +260,20 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>ISC reports:</p>
-	<blockquote cite="https://kb.isc.org/article/AA-00913">
-	  <p>CVE-2015-8704 Specific APL data could trigger an INSIST in apl_42.c</p>
-	  <p>CVE-2015-8705 Problems converting OPT resource records and ECS options to
+	<blockquote cite="https://kb.isc.org/article/AA-01336">
+	  <p>Problems converting OPT resource records and ECS options to
 	    text format can cause BIND to terminate</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <url>https://kb.isc.org/article/AA-00913</url>
-      <url>https://kb.isc.org/article/AA-01335/0</url>
-      <url>https://kb.isc.org/article/AA-01336/0</url>
-      <cvename>CVE-2015-8704</cvename>
+      <url>https://kb.isc.org/article/AA-01336</url>
       <cvename>CVE-2015-8705</cvename>
     </references>
     <dates>
       <discovery>2016-01-19</discovery>
       <entry>2016-01-20</entry>
+      <modified>2016-01-22</modified>
     </dates>
   </vuln>
 
