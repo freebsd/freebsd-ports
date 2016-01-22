@@ -327,10 +327,8 @@ _WANTS_META_PORT=	3
 # hint. Just warn maintainers, if the versions do not match
 # (_PYTHON_VERSION_NONSUPPORTED).
 _PYTHON_VERSION:=	${PYTHON_VERSION:S/^python//}
-_PYTHON_CMD=		${LOCALBASE}/bin/${PYTHON_VERSION}
 .else
 _PYTHON_VERSION:=	${PYTHON_DEFAULT_VERSION:S/^python//}
-_PYTHON_CMD=		${LOCALBASE}/bin/${PYTHON_DEFAULT_VERSION}
 .endif # defined(PYTHON_VERSION)
 
 # Validate Python version whether it meets the version restriction.
@@ -362,7 +360,6 @@ __VER=		${ver}
 	!(!empty(_PYTHON_VERSION_MAXIMUM) && ( \
 		${__VER} > ${_PYTHON_VERSION_MAXIMUM}))
 _PYTHON_VERSION=	${ver}
-_PYTHON_CMD=		${LOCALBASE}/bin/python${ver}
 .endif
 .endfor
 .if !defined(_PYTHON_VERSION)
