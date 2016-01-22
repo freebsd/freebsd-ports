@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.076
+PORTVERSION=	2.077
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -12,6 +12,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Model to create configuration validation tool
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
 		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
