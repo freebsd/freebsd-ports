@@ -1,0 +1,5 @@
+Backoff is an Erlang library to deal with exponential backoffs and
+timers to be used within OTP processes when dealing with cyclical
+events, such as reconnections, or generally retrying things.
+
+WWW: https://github.com/ferd/backoff
