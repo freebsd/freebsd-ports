@@ -6,7 +6,7 @@
 # Mk/Uses/perl5.mk.
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.4214
+PORTVERSION=	0.4216
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +27,11 @@ USES=		perl5
 USE_PERL5=	modbuild
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502000
+BUILD_DEPENDS+=	p5-Test-Harness>=3.29:${PORTSDIR}/devel/p5-Test-Harness
+RUN_DEPENDS+=	p5-Test-Harness>=3.29:${PORTSDIR}/devel/p5-Test-Harness
+.endif
 
 .if ${PERL_LEVEL} < 502105
 BUILD_DEPENDS+=	p5-CPAN-Meta>=2.142060:${PORTSDIR}/devel/p5-CPAN-Meta
