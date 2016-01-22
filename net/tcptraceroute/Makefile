@@ -16,6 +16,8 @@ LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 OPTIONS_DEFINE=	DOCS
 
+PORTSCOUT=	limit:^[0-9]
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 
