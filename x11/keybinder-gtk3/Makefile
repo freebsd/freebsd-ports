@@ -1,12 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	keybinder
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.1
+DISTVERSIONPREFIX=	keybinder-3.0-v
 CATEGORIES=	x11
-MASTER_SITES=	GENTOO
 PKGNAMESUFFIX=	-gtk3
-DISTNAME=	${PORTNAME}-3.0-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for registering keyboard shortcuts
@@ -14,14 +12,23 @@ COMMENT=	Library for registering keyboard shortcuts
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc-html --without-html-dir
-USES=		gmake libtool pathfix pkgconfig
+BUILD_DEPENDS=	gtkdocize:${PORTSDIR}/textproc/gtk-doc
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	engla
+
+USES=		autoreconf gmake libtool pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile.am
 USE_GNOME=	gtk30 introspection:build
 USE_XORG=	x11 xext xrender
-USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-silent-rules --disable-gtk-doc
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
-PLIST_SUB+=	VERSION="3.0"
+PLIST_SUB=	VERSION="3.0"
+
+pre-configure:
+	@(cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/gtkdocize)
 
 .include <bsd.port.mk>
