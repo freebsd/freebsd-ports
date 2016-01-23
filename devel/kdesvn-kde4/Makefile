@@ -9,9 +9,9 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
 
-LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
 
 CONFLICTS=	qsvn-[0-9]*
 
