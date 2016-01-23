@@ -3,19 +3,25 @@
 
 PORTNAME=	cdrkit
 PORTVERSION=	1.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cdrkit.org/releases/ \
 		http://debburn.alioth.debian.org/
 
 MAINTAINER=	jharris@widomaker.com
-COMMENT=	Command-line CD/DVD writing suite
+COMMENT?=	Command-line CD/DVD writing suite
+
+RUN_DEPENDS?=	${PORTNAME}-genisoimage>0:${PORTSDIR}/sysutils/genisoimage
 
 USES=		cmake iconv perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	3rd-party/dirsplit/dirsplit
 
-CONFLICTS=	cdrtools-[0-9]* cjk-cdrtools-[0-9]* cdrtools-devel-[0-9]*
+CONFLICTS?=	cdrtools-[0-9]* cjk-cdrtools-[0-9]* cdrtools-devel-[0-9]*
+
+SLAVEDIRS=	sysutils/genisoimage
+
+PLIST_SUB?=	CDRKIT="" GENISOIMAGE="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/include/AddSchilyBits.cmake \
