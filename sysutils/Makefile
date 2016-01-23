@@ -343,6 +343,7 @@
     SUBDIR += gconf-editor
     SUBDIR += gdisk
     SUBDIR += gdmap
+    SUBDIR += genisoimage
     SUBDIR += geomWatch
     SUBDIR += geomgui
     SUBDIR += getdelta
