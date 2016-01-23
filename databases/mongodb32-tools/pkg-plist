@@ -1,0 +1,12 @@
+bin/bsondump
+bin/mongodump
+bin/mongoexport
+bin/mongofiles
+bin/mongoimport
+bin/mongooplog
+bin/mongorestore
+bin/mongostat
+bin/mongotop
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/THIRD-PARTY-NOTICES
