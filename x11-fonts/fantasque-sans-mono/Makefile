@@ -4,7 +4,7 @@ PORTNAME=	fantasque-sans-mono
 PORTVERSION=	1.6.5
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://openfontlibrary.org/assets/downloads/${PORTNAME}/db52617ba875d08cbd8e080ca3d9f756/
+MASTER_SITES=	https://fontlibrary.org/assets/downloads/${PORTNAME}/db52617ba875d08cbd8e080ca3d9f756/
 DISTNAME=	fantasque-sans-mono
 
 MAINTAINER=	rakuco@FreeBSD.org
