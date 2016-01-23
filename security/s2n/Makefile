@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s2n
-PORTVERSION=	20150909
+PORTVERSION=	20160120
 CATEGORIES=	security
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
-GH_TAGNAME=	674df33
+GH_TAGNAME=	6e1d139
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -29,8 +29,6 @@ ALL_TARGET=	bin
 WITH_OPENSSL_PORT=	yes
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
-# Actually used on 9 to build with gcc
-EXTRA_PATCHES=		${FILESDIR}/extra-patch-tls_s2n__connection.c
 .endif
 
 post-patch:
