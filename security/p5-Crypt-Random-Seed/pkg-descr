@@ -1,0 +1,8 @@
+Crypt::Random::Seed is a simple mechanism to get strong randomness. The main
+purpose of this module is to provide a simple way to generate a seed for a PRNG
+such as Math::Random::ISAAC, for use in cryptographic key generation, or as the
+seed for an upstream module such as Bytes::Random::Secure. Flags for requiring
+non-blocking sources are allowed, as well as a very simple method for plugging
+in a source.
+
+WWW: http://search.cpan.org/dist/Crypt-Random-Seed/
