@@ -13,8 +13,6 @@ DIST_SUBDIR=	${PORTNAME:S/wx//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Mupen64Plus 2.0 GUI frontend written using wxWidgets
 
-BROKEN_FreeBSD_8=	does not build: lack of long long support
-
 LIB_DEPENDS=	libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64plus-core
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-audio-sdl.so:${PORTSDIR}/emulators/mupen64plus-audio-sdl \
