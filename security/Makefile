@@ -235,6 +235,7 @@
     SUBDIR += httprint
     SUBDIR += hydra
     SUBDIR += i2p
+    SUBDIR += i2pd
     SUBDIR += iaikpkcs11wrapper
     SUBDIR += idea
     SUBDIR += identify
