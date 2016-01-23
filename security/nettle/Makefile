@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nettle
-PORTVERSION=	2.7.1
+PORTVERSION=	3.1.1
 CATEGORIES=	security
 MASTER_SITES=	GNU \
 		http://www.lysator.liu.se/~nisse/archive/:liu \
@@ -11,8 +11,8 @@ MASTER_SITES=	GNU \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Low-level cryptographic library
 
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+LICENSE=	LGPL3 GPLv2+
+LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
@@ -38,6 +38,9 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .if ${ARCH} == "sparc64"
 CONFIGURE_ENV+=	CCPIC=-fPIC
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
