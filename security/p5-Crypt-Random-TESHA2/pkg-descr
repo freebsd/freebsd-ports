@@ -1,0 +1,4 @@
+Crypt::Random::TESHA2 implements userspace voodoo entropy. You should use a
+proper O/S supplied entropy source such as /dev/random or the Win32 Crypt API.
+
+WWW: http://search.cpan.org/dist/Crypt-Random-TESHA2/
