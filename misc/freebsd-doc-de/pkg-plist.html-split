@@ -311,6 +311,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-ggate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-gjournal.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-glabel.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-raid3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/getting-started.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/history.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/index.html
@@ -340,7 +341,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-custom-kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-devices.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-modules.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-basics.html
@@ -479,13 +479,14 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-user.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-bsdinstall.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-live-cd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-localization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-sysinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/video-playback.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-guest.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-config-quick-start.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-compiz-fusion.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-fonts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-install.html
