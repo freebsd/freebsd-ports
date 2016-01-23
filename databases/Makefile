@@ -190,6 +190,7 @@
     SUBDIR += metakit
     SUBDIR += monetdb
     SUBDIR += mongodb
+    SUBDIR += mongodb32
     SUBDIR += mrtg-mysql-load
     SUBDIR += mtools-mongodb
     SUBDIR += mtop
