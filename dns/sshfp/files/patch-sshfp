@@ -1,0 +1,29 @@
+--- sshfp.orig	2016-01-21 09:01:28 UTC
++++ sshfp
+@@ -129,7 +129,7 @@ def sshfp_from_file(khfile, wantedHosts)
+ 		fingerprints.append(process_records(data, wantedHosts))
+ 	return "\n".join(fingerprints)
+ 
+-def check_keytype(keytype):
++def check_keytype(keytype, hostname):
+ 	global algos
+ 	for algo in algos:
+ 		if "ssh-%s" % algo[:-1] == keytype[:-1]:
+@@ -141,7 +141,7 @@ def check_keytype(keytype):
+ def process_record(record, hostname):
+ 	(host, keytype, key) = record.split(" ")
+ 	key = key.rstrip()
+-	if check_keytype(keytype):
++	if check_keytype(keytype, hostname):
+ 		record = create_sshfp(hostname, keytype, key)
+ 		return record
+ 	return ""
+@@ -168,7 +168,7 @@ def process_records(data, hostnames):
+ 		if "," in host:
+ 			host = host.split(",")[0]
+ 		if all_hosts or host in hostnames or host == hostnames:
+-			if not check_keytype(keytype):
++			if not check_keytype(keytype, host):
+ 				continue
+ 			all_records.append(create_sshfp(host, keytype, key))
+ 	if all_records:
