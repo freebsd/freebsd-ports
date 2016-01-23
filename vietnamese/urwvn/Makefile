@@ -39,6 +39,5 @@ ttf-gen:	extract
 		${SORT} | ${TR} '\n' ' '
 	@${ECHO} ""
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../../chinese/ttfm/Makefile.ttf"
+.include <bsd.port.mk>
