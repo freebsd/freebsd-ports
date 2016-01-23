@@ -1,0 +1,30 @@
+From 8755fb33dcb1e4398bec3e4931f04525b9a463e6 Mon Sep 17 00:00:00 2001
+From: Adam Waldenberg <adam.waldenberg@ejwa.se>
+Date: Mon, 24 Nov 2014 09:36:11 +0100
+Subject: [PATCH] Doesn't start when using "C" locale (Fixes issue 29).
+
+---
+ gitinspector/localization.py | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+
+--- gitinspector/localization.py
++++ gitinspector/localization.py
+@@ -51,11 +51,14 @@ def init():
+ 				lang = locale.getdefaultlocale()
+ 				os.environ['LANG'] = lang[0]
+ 
+-			filename = basedir.get_basedir() + "/translations/messages_%s.mo" % lang[0][0:2]
++			if lang[0] is not None:
++				filename = basedir.get_basedir() + "/translations/messages_%s.mo" % lang[0][0:2]
+ 
+-			try:
+-				__translation__ = gettext.GNUTranslations(open(filename, "rb"))
+-			except IOError:
++				try:
++					__translation__ = gettext.GNUTranslations(open(filename, "rb"))
++				except IOError:
++					__translation__ = gettext.NullTranslations()
++			else:
+ 				__translation__ = gettext.NullTranslations()
+ 
+ 		__enabled__ = True
