@@ -40,6 +40,7 @@
     SUBDIR += encodings
     SUBDIR += fantasque-sans-mono
     SUBDIR += farsifonts
+    SUBDIR += fifteen
     SUBDIR += fira
     SUBDIR += fntsample
     SUBDIR += font-adobe-100dpi
