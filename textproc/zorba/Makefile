@@ -20,8 +20,6 @@ LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 RUN_DEPENDS=	fop:${PORTSDIR}/textproc/fop
 
-BROKEN_FreeBSD_8=	does not build due to lack of strtoull
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	PHP PYTHON RUBY JAVA DOCS
