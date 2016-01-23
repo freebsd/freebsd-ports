@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:${PORTSDIR}/devel/maven33
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
+BROKEN_FreeBSD_11=	build eats all CPU, do not unbreak without portmgr@ approval
 ONLY_FOR_ARCHS=	i386 amd64
 CONFLICTS_INSTALL=	eclipse
 
