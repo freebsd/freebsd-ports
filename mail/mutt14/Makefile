@@ -145,7 +145,7 @@ post-patch:
 		${WRKSRC}/contrib/Makefile.in
 .if ${PORT_OPTIONS:MMUTT_XFACE}
 	@${ECHO} "===>  Applying XFACE patch"
-	slrnface_dir=`${FIND} ${PORTSDIR}/news/slrnface/work -type d \
+	slrnface_dir=`${FIND} ${WRKDIR}/../../../news/slrnface/work -type d \
 			-name slrnface-\*`; \
 	cd ${BUILD_WRKSRC}; ${PATCH} ${PATCH_ARGS} < $$slrnface_dir/mutt.patch
 .endif
