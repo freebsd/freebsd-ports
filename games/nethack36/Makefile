@@ -58,16 +58,6 @@ PLIST_SUB+=	HACKLINK=""
 PLIST_SUB+=	HACKLINK="@comment "
 .endif
 
-pre-everything::
-	@if [ "${PKGBASE}" != "nethack" ]; then \
-	${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ; \
-	${ECHO_MSG} " You cannot install nethack and ${PKGBASE} in parallel   " ; \
-	${ECHO_MSG} " But ${PKGBASE} reads your prior nethack scores           " ; \
-	${ECHO_MSG} " Don't forget to backup your nethack libdir if it's      " ; \
-	${ECHO_MSG} " important for you                                       " ; \
-	${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ; \
-	fi
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/include/config.h
