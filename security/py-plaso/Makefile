@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plaso
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/log2timeline/plaso/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -40,11 +39,15 @@ RUN_DEPENDS=	hachoir-core>=0:${PORTSDIR}/devel/hachoir-core \
 		${PYTHON_PKGNAMEPREFIX}pyelasticsearch>=0:${PORTSDIR}/textproc/py-pyelasticsearch \
 		${PYTHON_PKGNAMEPREFIX}pytsk>=0:${PORTSDIR}/sysutils/py-pytsk \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz \
+		${PYTHON_PKGNAMEPREFIX}pyzmq>=0:${PORTSDIR}/net/py-pyzmq \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=0:${PORTSDIR}/textproc/py-xlsxwriter \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:${PORTSDIR}/devel/py-mock
 
-USES=		python:2
+NO_ARCH=	yes
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 # Note: for regression tests set LANG to en_US.UTF-8
