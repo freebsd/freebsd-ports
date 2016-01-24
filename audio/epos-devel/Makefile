@@ -13,7 +13,6 @@ COMMENT=	Text-to-Speech system
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
-BROKEN_FreeBSD_8=	does not build on FreeBSD < 10.x
 BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
 
 USES=		gmake
