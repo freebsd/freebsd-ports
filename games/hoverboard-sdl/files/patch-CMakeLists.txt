@@ -1,0 +1,27 @@
+--- CMakeLists.txt.orig	2016-01-23 13:29:12 UTC
++++ CMakeLists.txt
+@@ -27,14 +27,7 @@ IF(NOT MSVC)
+ ENDIF(NOT MSVC)
+ 
+ # depends
+-IF(NOT EXISTS ${PROJECT_SOURCE_DIR}/extlibs/libSDL2pp/CMakeLists.txt)
+-	MESSAGE(FATAL_ERROR "The source directory\n  ${PROJECT_SOURCE_DIR}/extlibs/libSDL2pp\ndoes not contain a CMakeLists.txt file.\nIt is likely that you forgot to run\n  git submodule init && git submodule update")
+-ENDIF(NOT EXISTS ${PROJECT_SOURCE_DIR}/extlibs/libSDL2pp/CMakeLists.txt)
+-
+-SET(SDL2PP_WITH_IMAGE TRUE)
+-SET(SDL2PP_WITH_TTF TRUE)
+-ADD_SUBDIRECTORY(extlibs/libSDL2pp)
+-
++FIND_PACKAGE(SDL2PP)
+ FIND_PACKAGE(Threads)
+ 
+ # definitions
+@@ -81,7 +74,7 @@ IF(SYSTEMWIDE OR STANDALONE)
+ 	INSTALL(TARGETS hoverboard RUNTIME DESTINATION ${BINDIR})
+ 	INSTALL(DIRECTORY data/ DESTINATION ${DATADIR})
+ 
+-	INSTALL(FILES README.md COPYING COPYING.DATA DESTINATION ${DOCSDIR})
++	INSTALL(FILES README.md DESTINATION ${DOCSDIR})
+ 
+ 	IF(NOT WIN32)
+ 		CONFIGURE_FILE(misc/hoverboard.desktop.in misc/hoverboard.desktop)
