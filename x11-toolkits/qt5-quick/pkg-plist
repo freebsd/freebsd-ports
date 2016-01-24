@@ -1,7 +1,6 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/designerwindowmanager_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qaccessiblequickitem_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qaccessiblequickview_p.h
-%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qqmlaccessible_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickaccessibleattached_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickaccessiblefactory_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickanchors_p.h
@@ -83,6 +82,7 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickshadereffectmesh_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickshadereffectnode_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickshadereffectsource_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickshortcut_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquicksmoothedanimation_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquicksmoothedanimation_p_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qquickspringanimation_p.h
@@ -303,7 +303,6 @@
 %%QT_LIBDIR%%/libQt5QuickWidgets.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQt5QuickWidgets.so.%%FULLVER%%.debug
 %%QT_BINDIR%%/qml
-%%QT_BINDIR%%/qmlbundle
 %%QT_BINDIR%%/qmleasing
 %%QT_BINDIR%%/qmlimportscanner
 %%QT_BINDIR%%/qmllint
@@ -333,6 +332,7 @@
 %%QT_QMLDIR%%/Qt/labs/settings/qmldir
 %%QT_QMLDIR%%/QtQml/Models.2/libmodelsplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/QtQml/Models.2/libmodelsplugin.so.debug
+%%QT_QMLDIR%%/QtQml/Models.2/plugins.qmltypes
 %%QT_QMLDIR%%/QtQml/Models.2/qmldir
 %%QT_QMLDIR%%/QtQml/StateMachine/libqtqmlstatemachine.so
 %%DEBUG%%%%QT_QMLDIR%%/QtQml/StateMachine/libqtqmlstatemachine.so.debug

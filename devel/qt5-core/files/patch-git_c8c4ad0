@@ -1,0 +1,31 @@
+commit c8c4ad0c62cacec749b6c42e0a58339446093bba
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Sat Dec 26 02:30:58 2015 +0100
+
+    forkfd: Define __BSD_VISIBLE and _NETBSD_SOURCE.
+
+    pipe2's availability on BSD operating systems depends on the
+    __BSD_VISIBLE macro on FreeBSD and OpenBSD and _NETBSD_SOURCE on
+    NetBSD (DragonFly BSD appears to define it unconditionally).
+
+    Those two macros are generally set by default, except when
+    _POSIX_C_SOURCE is set. Since we consciously set _POSIX_C_SOURCE but
+    need pipe2, explicitly define the visibility macros.
+
+    This fixes the -no-pch build on FreeBSD at least.
+
+    Change-Id: Icc77f6b5d1f9a5bf7bd8048cabbb01f8f89397cc
+    Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
+--- src/3rdparty/forkfd/forkfd.c
++++ src/3rdparty/forkfd/forkfd.c
+@@ -25,8 +25,10 @@
+ 
+ #ifndef _GNU_SOURCE
+ #  define _GNU_SOURCE
++#  define _NETBSD_SOURCE 1
+ #  define _POSIX_C_SOURCE 200809L
+ #  define _XOPEN_SOURCE 700
++#  define __BSD_VISIBLE 1
+ #endif
+ #include "forkfd.h"
+ 

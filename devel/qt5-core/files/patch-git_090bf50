@@ -1,0 +1,25 @@
+commit 090bf50771ec1e5d089b0ae0488059a5643883b2
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Sun Dec 27 01:24:34 2015 +0100
+
+    forkfd: Only enable pipe2 on FreeBSD >= 10.0.
+
+    The system call is not present on earlier releases, and since the 9.x
+    series will be supported until the end of 2016, add a check for the
+    __FreeBSD_version macro and only enable pipe2 support if the value is
+    high enough.
+
+    Change-Id: I5633531cec7e95d42ff5f4b14afe772ae8d7d66d
+    Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
+
+--- src/3rdparty/forkfd/forkfd.c
++++ src/3rdparty/forkfd/forkfd.c
+@@ -62,7 +62,7 @@
+ #  undef HAVE_WAITID
+ #endif
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) && defined(__FreeBSD_version) && __FreeBSD_version >= 1000032
+ #  define HAVE_PIPE2    1
+ #endif
+ 

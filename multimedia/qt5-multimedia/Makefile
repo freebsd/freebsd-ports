@@ -2,13 +2,13 @@
 
 PORTNAME=	multimedia
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt audio, video, radio and camera support module
 
+USE_GL=		yes
 USE_QT5=	core gui network opengl qml quick widgets \
 		buildtools_build
 QT_DIST=	${PORTNAME}
@@ -28,7 +28,8 @@ AUDIOPLUGIN_DESC=		Audio plugins to build
 
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 GSTREAMER_BUILD_DEPENDS=${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-GSTREAMER_USE=		GSTREAMER=yes,bad
+GSTREAMER_EXTRA_PATCHES_OFF=	${FILESDIR}/extrapatch-no-gstreamer
+GSTREAMER_USE=		GSTREAMER1=bad
 OPENAL_USES=		openal
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 
@@ -45,11 +46,11 @@ QT_CONFIG+=	-alsa
 
 .if ${PORT_OPTIONS:MGSTREAMER}
 QT_DEFINES+=	GSTREAMER
-QT_CONFIG+=	gstreamer
+QT_CONFIG+=	gstreamer-1.0
 .else
 TBR_DEPENDS+=	gstreamer
 QT_DEFINES+=	-GSTREAMER
-QT_CONFIG+=	-gstreamer
+QT_CONFIG+=	-gstreamer-1.0
 .endif
 
 .if ! ${PORT_OPTIONS:MOPENAL}

@@ -1,0 +1,12 @@
+%%QT_INCDIR%%/QtUiPlugin/QDesignerCustomWidgetCollectionInterface
+%%QT_INCDIR%%/QtUiPlugin/QDesignerCustomWidgetInterface
+%%QT_INCDIR%%/QtUiPlugin/QDesignerExportWidget
+%%QT_INCDIR%%/QtUiPlugin/QtUiPlugin
+%%QT_INCDIR%%/QtUiPlugin/QtUiPluginDepends
+%%QT_INCDIR%%/QtUiPlugin/QtUiPluginVersion
+%%QT_INCDIR%%/QtUiPlugin/customwidget.h
+%%QT_INCDIR%%/QtUiPlugin/qdesignerexportwidget.h
+%%QT_INCDIR%%/QtUiPlugin/qtuipluginversion.h
+%%QT_LIBDIR%%/cmake/Qt5UiPlugin/Qt5UiPluginConfig.cmake
+%%QT_LIBDIR%%/cmake/Qt5UiPlugin/Qt5UiPluginConfigVersion.cmake
+%%QT_MKSPECDIR%%/modules/qt_%%QT_LIBDIR%%_uiplugin.pri

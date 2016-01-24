@@ -891,6 +891,7 @@
     SUBDIR += qt4-opengl
     SUBDIR += qt4-pixeltool
     SUBDIR += qt4-svg
+    SUBDIR += qt5-3d
     SUBDIR += qt5-graphicaleffects
     SUBDIR += qt5-imageformats
     SUBDIR += qt5-opengl

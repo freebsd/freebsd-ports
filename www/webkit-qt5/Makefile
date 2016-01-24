@@ -2,7 +2,6 @@
 
 PORTNAME=	webkit
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	2
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -19,7 +18,7 @@ USE_GL=		gl
 USE_GNOME=	libxml2 libxslt
 USE_PERL5=	build
 USE_QT5=	core gui network opengl printsupport qml quick sql \
-		testlib widgets buildtools_build
+		widgets buildtools_build
 QT_DIST=	${PORTNAME}
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
@@ -39,7 +38,7 @@ QT_CONFIG=	accessibility accessibility-atspi-bridge
 OPTIONS_DEFINE=	GSTREAMER
 OPTIONS_DEFAULT=GSTREAMER
 
-GSTREAMER_USE=	GNOME=glib20 GSTREAMER=yes
+GSTREAMER_USE=	GNOME=glib20 GSTREAMER1=yes
 
 .include <bsd.port.pre.mk>
 
