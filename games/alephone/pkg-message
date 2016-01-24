@@ -4,18 +4,9 @@ Aleph One has been installed.
 
 This package does not include any Aleph One data files. To obtain the original
 ones use the "games/alephone-data" port. The "games/alephone-scenarios" port
-contains more (unofficial) scenarios. In addition, you can search for data
-files here:
+contains more (unofficial) scenarios. In addition, you can search for game
+stuff here:
 
-* http://archives.bungie.org/
-
-* http://fileball.net/marathon/
-
-* http://orbitalarm.bungie.org/downloads/alephone.html
-
-* http://marathon.bungie.org/scenarionews/
-
-Aleph One works best with OpenGL. If you do not have an OpenGL card and the
-game is sluggish, try using the "-g" option to disable OpenGL.
+* http://www.simplici7y.com/
 
 ==============================================================================
