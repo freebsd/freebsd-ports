@@ -1,0 +1,146 @@
+--- ./sys/unix/Makefile.top.orig	2015-11-18 21:54:59.000000000 +0100
++++ ./sys/unix/Makefile.top	2016-01-20 14:57:30.972963262 +0100
+@@ -18,18 +18,18 @@
+ 
+ # make NetHack
+ #PREFIX	 = /usr
+-GAME     = nethack
++GAME     = nethack%%HACKEXT%%
+ # GAME     = nethack.prg
+ #GAMEUID  = games
+-#GAMEGRP  = bin
++GAMEGRP  = games
+ 
+ # Permissions - some places use setgid instead of setuid, for instance
+ # See also the option "SECURE" in include/config.h
+-#GAMEPERM = 04755
+-FILEPERM = 0644
++GAMEPERM = 02755
++FILEPERM = 0664
+ # VARFILEPERM = 0644
+ EXEPERM  = 0755
+-DIRPERM  = 0755
++DIRPERM  = 0775
+ # VARDIRPERM = 0755
+ 
+ # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else HACKDIR
+@@ -39,10 +39,11 @@
+ # therefore there should not be anything in HACKDIR that you want to keep
+ # (if there is, you'll have to do the installation by hand or modify the
+ # instructions)
+-#HACKDIR  = $(PREFIX)/games/lib/$(GAME)dir
+-#VARDIR  = $(HACKDIR)
++HACKDIR  = ${PREFIX}/share/nethack%%HACKEXT%%
++VARDIR  = $(HACKDIR)
++INSTDIR = $(HACKDIR)
+ # Where nethack.sh in installed.  If this is not defined, the wrapper is not used.
+-#SHELLDIR = $(PREFIX)/games
++SHELLDIR = ${PREFIX}/bin
+ 
+ # per discussion in Install.X11 and Install.Qt
+ #VARDATND = 
+@@ -53,7 +54,7 @@
+ # for BeOS
+ # VARDATND = beostiles
+ # for Gnome
+-# VARDATND = x11tiles pet_mark.xbm pilemark.xpm rip.xpm mapbg.xpm
++VARDATND = x11tiles pet_mark.xbm pilemark.xbm rip.xpm mapbg.xpm
+ 
+ VARDATD = bogusmon data engrave epitaph oracles options quest.dat rumors
+ VARDAT = $(VARDATD) $(VARDATND)
+@@ -201,56 +202,34 @@
+ 		-e '}' 					\
+ 	  	-e '$$s/.*/nodlb/p' < dat/options` ;	\
+ 	$(MAKE) dofiles-$${target-nodlb}
+-	(cd dat ; cp symbols $(INSTDIR) )
+-	cp src/$(GAME) $(INSTDIR)
+-	cp util/recover $(INSTDIR)
+-	-if test -n '$(SHELLDIR)'; then rm -f $(SHELLDIR)/$(GAME); fi
++	(cd dat ; cp symbols ${DESTDIR}$(INSTDIR) )
++	cp src/$(GAME) ${DESTDIR}$(INSTDIR)/$(GAME)
++	cp util/recover ${DESTDIR}$(INSTDIR)
++	-if test -n '${DESTDIR}$(SHELLDIR)'; then rm -f ${DESTDIR}$(SHELLDIR)/$(GAME); fi
+ 	if test -n '$(SHELLDIR)'; then \
+ 		sed -e 's;/usr/games/lib/nethackdir;$(HACKDIR);' \
+ 		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
+ 		< sys/unix/nethack.sh \
+-		> $(SHELLDIR)/$(GAME) ; fi
+-# set up their permissions
+-	-( cd $(INSTDIR) ; $(CHOWN) $(GAMEUID) $(GAME) recover ; \
+-			$(CHGRP) $(GAMEGRP) $(GAME) recover )
+-	chmod $(GAMEPERM) $(INSTDIR)/$(GAME)
+-	chmod $(EXEPERM) $(INSTDIR)/recover
+-	-if test -n '$(SHELLDIR)'; then \
+-		$(CHOWN) $(GAMEUID) $(SHELLDIR)/$(GAME); fi
+-	if test -n '$(SHELLDIR)'; then \
+-		$(CHGRP) $(GAMEGRP) $(SHELLDIR)/$(GAME); \
+-		chmod $(EXEPERM) $(SHELLDIR)/$(GAME); fi
+-	-( cd $(INSTDIR) ; $(CHOWN) $(GAMEUID) symbols ; \
+-			$(CHGRP) $(GAMEGRP) symbols ; \
+-			chmod $(FILEPERM) symbols )
++		> ${DESTDIR}$(SHELLDIR)/$(GAME) ; fi
+ 
+ dofiles-dlb: check-dlb
+-	( cd dat ; cp nhdat $(DATNODLB) $(INSTDIR) )
+-# set up their permissions
+-	-( cd $(INSTDIR) ; $(CHOWN) $(GAMEUID) nhdat $(DATNODLB) ; \
+-			$(CHGRP) $(GAMEGRP) nhdat $(DATNODLB) ; \
+-			chmod $(FILEPERM) nhdat $(DATNODLB) )
++	( cd dat ; cp nhdat $(DATNODLB) ${DESTDIR}$(INSTDIR) )
+ 
+ dofiles-nodlb:
+ # copy over the game files
+-	( cd dat ; cp $(DAT) $(INSTDIR) )
+-# set up their permissions
+-	-( cd $(INSTDIR) ; $(CHOWN) $(GAMEUID) $(DAT) ; \
+-			$(CHGRP) $(GAMEGRP) $(DAT) ; \
+-			chmod $(FILEPERM) $(DAT) )
++	( cd dat ; cp $(DAT) ${DESTDIR}$(INSTDIR) )
+ 
+ update: $(GAME) recover $(VARDAT) dungeon spec_levs
+ #	(don't yank the old version out from under people who're playing it)
+-	-mv $(INSTDIR)/$(GAME) $(INSTDIR)/$(GAME).old
++	-mv ${DESTDIR}$(INSTDIR)/$(GAME) ${DESTDIR}$(INSTDIR)/$(GAME).old
+ #	quest.dat is also kept open and has the same problems over NFS
+ #	(quest.dat may be inside nhdat if dlb is in use)
+-	-mv $(INSTDIR)/quest.dat $(INSTDIR)/quest.dat.old
+-	-mv $(INSTDIR)/nhdat $(INSTDIR)/nhdat.old
++	-mv ${DESTDIR}$(INSTDIR)/quest.dat ${DESTDIR}$(INSTDIR)/quest.dat.old
++	-mv ${DESTDIR}$(INSTDIR)/nhdat ${DESTDIR}$(INSTDIR)/nhdat.old
+ # set up new versions of the game files
+ 	( $(MAKE) dofiles )
+ # touch time-sensitive files
+ 	-touch -c $(VARDIR)/bones* $(VARDIR)/?lock* $(VARDIR)/wizard*
+-	-touch -c $(VARDIR)/save/*
+ 	touch $(VARDIR)/perm $(VARDIR)/record
+ # and a reminder
+ 	@echo You may also want to install the man pages via the doc Makefile.
+@@ -262,23 +241,16 @@
+ 	true; $(PREINSTALL)
+ # set up the directories
+ # not all mkdirs have -p; those that don't will create a -p directory
+-	-if test -n '$(SHELLDIR)'; then \
+-		mkdir -p $(SHELLDIR); fi
+-	rm -rf $(INSTDIR) $(VARDIR)
+-	-mkdir -p $(INSTDIR) $(VARDIR) $(VARDIR)/save
++	-if test -n '${DESTDIR}$(SHELLDIR)'; then \
++		mkdir -p ${DESTDIR}$(SHELLDIR); fi
++	rm -rf ${DESTDIR}$(INSTDIR) ${DESTDIR}$(VARDIR)
++	-mkdir -p ${DESTDIR}$(INSTDIR) ${DESTDIR}$(VARDIR) ${DESTDIR}$(VARDIR)/save
+ 	if test -d ./-p; then rmdir ./-p; fi
+-	-$(CHOWN) $(GAMEUID) $(INSTDIR) $(VARDIR) $(VARDIR)/save
+-	$(CHGRP) $(GAMEGRP) $(INSTDIR) $(VARDIR) $(VARDIR)/save
+ # order counts here:
+-	chmod $(DIRPERM) $(INSTDIR)
+-	chmod $(VARDIRPERM) $(VARDIR) $(VARDIR)/save
+ # set up the game files
+ 	( $(MAKE) dofiles )
+ # set up some additional files
+-	touch $(VARDIR)/perm $(VARDIR)/record $(VARDIR)/logfile $(VARDIR)/xlogfile
+-	-( cd $(VARDIR) ; $(CHOWN) $(GAMEUID) perm record logfile xlogfile ; \
+-			$(CHGRP) $(GAMEGRP) perm record logfile xlogfile ; \
+-			chmod $(VARFILEPERM) perm record logfile xlogfile )
++	touch ${DESTDIR}$(VARDIR)/perm ${DESTDIR}$(VARDIR)/record ${DESTDIR}$(VARDIR)/logfile ${DESTDIR}$(VARDIR)/xlogfile
+ 	true; $(POSTINSTALL)
+ # and a reminder
+ 	@echo You may also want to reinstall the man pages via the doc Makefile.

@@ -625,6 +625,8 @@
     SUBDIR += nethack33-nox11
     SUBDIR += nethack34
     SUBDIR += nethack34-nox11
+    SUBDIR += nethack36
+    SUBDIR += nethack36-nox11
     SUBDIR += netherearth
     SUBDIR += netpanzer
     SUBDIR += netradiant
