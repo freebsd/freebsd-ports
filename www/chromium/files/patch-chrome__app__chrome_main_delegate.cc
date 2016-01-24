@@ -9,15 +9,6 @@
  #include "components/crash/content/app/breakpad_linux.h"
  #endif
  
-@@ -405,7 +405,7 @@
- }  // namespace
- 
- ChromeMainDelegate::ChromeMainDelegate() {
--#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX)
-+#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
-   // Record the startup process creation time on supported platforms.
-   startup_metric_utils::RecordStartupProcessCreationTime(
-       base::CurrentProcessInfo::CreationTime());
 @@ -508,7 +508,7 @@
        std::string format_str =
            command_line.GetSwitchValueASCII(switches::kDiagnosticsFormat);
