@@ -3,6 +3,7 @@
 
 PORTNAME=	slurpie
 PORTVERSION=	2.0b
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/ \
 		http://people.FreeBSD.org/~foxfair/distfiles/

@@ -1,5 +1,5 @@
---- src/mn.h.orig	Sat Jan 30 13:09:01 1999
-+++ src/mn.h	Sun Feb 13 19:13:32 2000
+--- src/mn.h.orig	1999-01-30 21:09:01 UTC
++++ src/mn.h
 @@ -2,11 +2,12 @@
  #define _MN_H_
  
