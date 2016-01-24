@@ -8,8 +8,9 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 translation tool
 
-USE_QT5=	assistant_run core linguisttools_run printsupport \
-		uitools_build widgets xml buildtools_build
+USE_QT5=	core gui printsupport widgets xml \
+		assistant_run linguisttools_run \
+		buildtools_build designer_build uitools_build
 QT_DIST=	tools
 USES=		qmake
 

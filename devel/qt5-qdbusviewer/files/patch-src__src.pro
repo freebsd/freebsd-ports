@@ -3,9 +3,9 @@ missing dependencies.
 
 --- src/src.pro
 +++ src/src.pro
-@@ -1,38 +1,3 @@
+@@ -1,37 +1,2 @@
  TEMPLATE = subdirs
- 
+-
 -qtHaveModule(widgets) {
 -    no-png {
 -        message("Some graphics-related tools are unavailable without PNG support")
@@ -14,13 +14,13 @@ missing dependencies.
 -                  pixeltool \
 -                  qtestlib \
 -                  designer
--#    unix:!mac:!embedded:!qpa:SUBDIRS += qtconfig
 -
 -        linguist.depends = designer
 -    }
 -}
 -
--SUBDIRS += linguist
+-SUBDIRS += linguist \
+-    qtplugininfo
 -if(!android|android_app):!ios: SUBDIRS += qtpaths
 -
 -mac {
@@ -31,7 +31,7 @@ missing dependencies.
 -    SUBDIRS += androiddeployqt
 -}
 -
- qtHaveModule(dbus): SUBDIRS += qdbus
+-qtHaveModule(dbus): SUBDIRS += qdbus
 -
 -win32|winrt:SUBDIRS += windeployqt
 -winrt:SUBDIRS += winrtrunner
@@ -39,6 +39,6 @@ missing dependencies.
 -
 -qtNomakeTools( \
 -    pixeltool \
--    qtconfig \
 -    macdeployqt \
 -)
++SUBDIRS += qdbus

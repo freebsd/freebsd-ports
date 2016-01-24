@@ -194,10 +194,10 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_designer.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_designer_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_designercomponents_private.pri
-%%QT_PLUGINDIR%%/designer/libqwebview.so
-%%DEBUG%%%%QT_PLUGINDIR%%/designer/libqwebview.so.debug
 %%QT_PLUGINDIR%%/designer/libqquickwidget.so
 %%DEBUG%%%%QT_PLUGINDIR%%/designer/libqquickwidget.so.debug
+%%QT_PLUGINDIR%%/designer/libqwebview.so
+%%DEBUG%%%%QT_PLUGINDIR%%/designer/libqwebview.so.debug
 libdata/pkgconfig/Qt5Designer.pc
 libdata/pkgconfig/Qt5DesignerComponents.pc
 share/pixmaps/designer-qt5.png

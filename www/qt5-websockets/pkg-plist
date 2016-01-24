@@ -32,8 +32,9 @@
 %%DEBUG%%%%QT_LIBDIR%%/libQt5WebSockets.so.%%FULLVER%%.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_websockets.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_websockets_private.pri
-%%QT_QMLDIR%%/Qt/WebSockets/libdeclarative_qmlwebsockets.so
-%%DEBUG%%%%QT_QMLDIR%%/Qt/WebSockets/libdeclarative_qmlwebsockets.so.debug
-%%QT_QMLDIR%%/Qt/WebSockets/plugins.qmltypes
+%%QT_QMLDIR%%/QtWebSockets/libdeclarative_qmlwebsockets.so
+%%DEBUG%%%%QT_QMLDIR%%/QtWebSockets/libdeclarative_qmlwebsockets.so.debug
+%%QT_QMLDIR%%/QtWebSockets/plugins.qmltypes
+%%QT_QMLDIR%%/QtWebSockets/qmldir
 %%QT_QMLDIR%%/Qt/WebSockets/qmldir
 libdata/pkgconfig/Qt5WebSockets.pc

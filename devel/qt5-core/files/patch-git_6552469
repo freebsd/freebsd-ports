@@ -1,0 +1,43 @@
+commit 655246969eaa916fbc098a7315dc24830f5b8b5d
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Mon Dec 28 11:43:36 2015 +0100
+
+    forkfd: Also define BSD visibility macros in forkfd_qt.cpp.
+
+    This is a follow-up to c8c4ad0 ("forkfd: Define __BSD_VISIBLE and
+    _NETBSD_SOURCE").
+
+    Defining those macros in forkfd.c is not enough: forkfd_qt.cpp also sets
+    _POSIX_C_SOURCE, and sys/cdefs.h can be included implicitly via Qt's
+    headers (<algorithm> ends up pulling unistd.h that leads to sys/cdefs.h
+    and sys/types.h with both libstdc++ and older libc++ versions). In this
+    case, __BSD_VISIBLE/_NETBSD_SOURCE are not defined, _POSIX_C_SOURCE is,
+    several type definitions are omitted and by the time we include
+    sys/time.h in forkfd.c the build fails. On FreeBSD < 11, the error looks
+    like this:
+
+    In file included from io/../../3rdparty/forkfd/forkfd.c:36,
+                     from io/forkfd_qt.cpp:80:
+    /usr/include/sys/time.h:94: error: 'u_int' has not been declared
+
+    Change-Id: I01fa2f5861027d99936d3026faeee9f0db3ecabd
+    Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
+
+--- src/corelib/io/forkfd_qt.cpp
++++ src/corelib/io/forkfd_qt.cpp
+@@ -39,6 +39,15 @@
+ #  define _XOPEN_SOURCE 700
+ #endif
+ 
++// Define BSD visibility macros. These are also defined in forkfd.c, but the
++// headers using them may be included before forkfd.c itself.
++#ifndef _NETBSD_SOURCE
++#  define _NETBSD_SOURCE 1
++#endif
++#ifndef __BSD_VISIBLE
++#  define __BSD_VISIBLE 1
++#endif
++
+ #include <QtCore/qatomic.h>
+ #include "qprocess_p.h"
+ 

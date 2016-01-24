@@ -25,6 +25,7 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_webchannel.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webchannel_private.pri
 %%QT_QMLDIR%%/QtWebChannel/libdeclarative_webchannel.so
+%%DEBUG%%%%QT_QMLDIR%%/QtWebChannel/libdeclarative_webchannel.so.debug
 %%QT_QMLDIR%%/QtWebChannel/plugins.qmltypes
 %%QT_QMLDIR%%/QtWebChannel/qmldir
 libdata/pkgconfig/Qt5WebChannel.pc

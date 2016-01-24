@@ -2,7 +2,6 @@
 
 PORTNAME=	gui
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	3
 CATEGORIES=	x11-toolkits graphics
 PKGNAMEPREFIX=	qt5-
 
@@ -23,11 +22,11 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USES=		jpeg
-USE_GL=		gl
+USE_GL=		gl egl
 USE_GNOME=	glib20
 USE_QT5=	core dbus qmake_build buildtools_build
 QT_DIST=	base
-USE_XORG=	x11 xi xrender
+USE_XORG=	ice sm x11 xi xrender
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-no-eglfs \
 		-no-evdev \
@@ -49,6 +48,9 @@ MORE_WRKSRCS=	src/platformsupport \
 # main ones; input contexts require no additional dependency.
 MORE_WRKSRCS+=	src/plugins/imageformats \
 		src/plugins/platforminputcontexts
+
+# openglextensions is the static library to use for further things like qtcanvas3d
+MORE_WRKSRCS+=	src/openglextensions
 
 QT_DEFINES=	ACCESSIBILITY DBUS FONTCONFIG FREETYPE GLIB \
 		IMAGEFORMAT_PNG OPENGL SHAPE XCB XKB XKBCOMMON XRENDER

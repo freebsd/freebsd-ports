@@ -58,10 +58,13 @@
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslconfiguration_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslcontext_openssl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslkey_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslpresharedkeyauthenticator_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_mac_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_openssl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_openssl_symbols_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslsocket_winrt_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qtcpserver_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qtcpsocket_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qurlinfo_p.h
 %%QT_INCDIR%%/QtNetwork/QAbstractNetworkCache
@@ -100,8 +103,10 @@
 %%QT_INCDIR%%/QtNetwork/QSslCertificateExtension
 %%QT_INCDIR%%/QtNetwork/QSslCipher
 %%QT_INCDIR%%/QtNetwork/QSslConfiguration
+%%QT_INCDIR%%/QtNetwork/QSslEllipticCurve
 %%QT_INCDIR%%/QtNetwork/QSslError
 %%QT_INCDIR%%/QtNetwork/QSslKey
+%%QT_INCDIR%%/QtNetwork/QSslPreSharedKeyAuthenticator
 %%QT_INCDIR%%/QtNetwork/QSslSocket
 %%QT_INCDIR%%/QtNetwork/QTcpServer
 %%QT_INCDIR%%/QtNetwork/QTcpSocket
@@ -136,8 +141,10 @@
 %%QT_INCDIR%%/QtNetwork/qsslcertificateextension.h
 %%QT_INCDIR%%/QtNetwork/qsslcipher.h
 %%QT_INCDIR%%/QtNetwork/qsslconfiguration.h
+%%QT_INCDIR%%/QtNetwork/qsslellipticcurve.h
 %%QT_INCDIR%%/QtNetwork/qsslerror.h
 %%QT_INCDIR%%/QtNetwork/qsslkey.h
+%%QT_INCDIR%%/QtNetwork/qsslpresharedkeyauthenticator.h
 %%QT_INCDIR%%/QtNetwork/qsslsocket.h
 %%QT_INCDIR%%/QtNetwork/qtcpserver.h
 %%QT_INCDIR%%/QtNetwork/qtcpsocket.h

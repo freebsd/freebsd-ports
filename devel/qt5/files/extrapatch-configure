@@ -16,9 +16,9 @@
   as the value of QMAKE_DEFAULT_LIBDIRS in mkspecs/qconfig.pri (which qmake
   uses to filter out those same paths when processing .pro files).
 
---- configure
-+++ configure
-@@ -3683,7 +3683,7 @@ setBootstrapVariable()
+--- configure.orig	2015-03-16 17:16:10.000000000 +0100
++++ configure	2015-05-01 09:35:38.595937000 +0200
+@@ -3853,7 +3853,7 @@
  }
  
  # build qmake
@@ -27,7 +27,7 @@
      echo "Creating qmake..."
  
      mkdir -p "$outpath/qmake" || exit
-@@ -4542,8 +4542,8 @@ for _SQLDR in $CFG_SQL_AVAILABLE; do
+@@ -4777,8 +4777,8 @@
                  SQLITE_AUTODETECT_FAILED="no"
                  if [ "$CFG_SQLITE" = "system" ]; then
                      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists sqlite3 2>/dev/null; then
@@ -38,8 +38,8 @@
                      else
                          QT_CFLAGS_SQLITE=
                          QT_LFLAGS_SQLITE="-lsqlite3 -lz"
-@@ -4643,8 +4643,8 @@ fi
- # auto-detect libdbus-1 support
+@@ -4881,8 +4881,8 @@
+ fi
  if [ "$CFG_DBUS" = "linked" ]; then
      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --atleast-version="$MIN_DBUS_1_VERSION" dbus-1 2>/dev/null; then
 -        QT_CFLAGS_DBUS=`$PKG_CONFIG --cflags dbus-1 2>/dev/null`
@@ -49,7 +49,7 @@
      else
          QT_LIBS_DBUS="-ldbus-1"
      fi
-@@ -4672,8 +4672,8 @@ fi
+@@ -4928,8 +4928,8 @@
  # auto-detect Glib support
  if [ "$CFG_GLIB" != "no" ]; then
      if [ -n "$PKG_CONFIG" ]; then
@@ -60,7 +60,7 @@
      fi
      if compileTest unix/glib "Glib" $QT_CFLAGS_GLIB $QT_LIBS_GLIB; then
          CFG_GLIB=yes
-@@ -4696,9 +4696,9 @@ fi
+@@ -4952,9 +4952,9 @@
  # auto-detect GTK style support
  if [ "$CFG_GLIB" = "yes" -a "$CFG_QGTKSTYLE" != "no" ]; then
      if [ -n "$PKG_CONFIG" ]; then
@@ -73,7 +73,7 @@
      fi
      if [ -n "$QT_CFLAGS_QGTK2" ] ; then
          CFG_QGTKSTYLE=yes
-@@ -4745,8 +4745,8 @@ fi
+@@ -5001,8 +5001,8 @@
  # Auto-detect PulseAudio support
  if [ "$CFG_PULSEAUDIO" != "no" ]; then
      if [ -n "$PKG_CONFIG" ]; then
@@ -84,22 +84,7 @@
      fi
      if compileTest unix/pulseaudio "PulseAudio" $QT_CFLAGS_PULSEAUDIO $QT_LIBS_PULSEAUDIO; then
          CFG_PULSEAUDIO=yes
-@@ -4870,10 +4870,10 @@ if [ "$CFG_OPENGL" = "auto" ] || [ "$CFG_OPENGL" = "yes" ]; then
- elif [ "$CFG_OPENGL" = "es2" ]; then
-     #OpenGL ES 2.0
-     if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists glesv2 2>/dev/null; then
--        QMAKE_INCDIR_OPENGL_ES2=`$PKG_CONFIG --cflags-only-I glesv2 2>/dev/null | sed -e 's,^-I,,g' -e 's, -I, ,g'`
--        QMAKE_LIBDIR_OPENGL_ES2=`$PKG_CONFIG --libs-only-L glesv2 2>/dev/null | sed -e 's,^-L,,g' -e 's, -L, ,g'`
--        QMAKE_LIBS_OPENGL_ES2=`$PKG_CONFIG --libs glesv2 2>/dev/null`
--        QMAKE_CFLAGS_OPENGL_ES2=`$PKG_CONFIG --cflags glesv2 2>/dev/null`
-+        QMAKE_INCDIR_OPENGL_ES2=`$PKG_CONFIG --cflags-only-I glesv2 2>/dev/null | filterIncludeOptions | sed -e 's,^-I,,g' -e 's, -I, ,g'`
-+        QMAKE_LIBDIR_OPENGL_ES2=`$PKG_CONFIG --libs-only-L glesv2 2>/dev/null | filterLibraryOptions | sed -e 's,^-L,,g' -e 's, -L, ,g'`
-+        QMAKE_LIBS_OPENGL_ES2=`$PKG_CONFIG --libs glesv2 2>/dev/null | filterLibraryOptions`
-+        QMAKE_CFLAGS_OPENGL_ES2=`$PKG_CONFIG --cflags glesv2 2>/dev/null | filterIncludeOptions`
-         QMakeVar set QMAKE_INCDIR_OPENGL_ES2 "`shellArgumentListToQMakeList "$QMAKE_INCDIR_OPENGL_ES2"`"
-         QMakeVar set QMAKE_LIBDIR_OPENGL_ES2 "`shellArgumentListToQMakeList "$QMAKE_LIBDIR_OPENGL_ES2"`"
-         QMakeVar set QMAKE_LIBS_OPENGL_ES2 "`shellArgumentListToQMakeList "$QMAKE_LIBS_OPENGL_ES2"`"
-@@ -4918,8 +4918,8 @@ fi
+@@ -5165,8 +5165,8 @@
  # auto-detect FontConfig support
  if [ "$CFG_FONTCONFIG" != "no" ]; then
      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists fontconfig --exists freetype2 2>/dev/null; then
@@ -110,7 +95,7 @@
      else
          QT_CFLAGS_FONTCONFIG=
          QT_LIBS_FONTCONFIG="-lfreetype -lfontconfig"
-@@ -4945,9 +4945,9 @@ ORIG_CFG_KMS="$CFG_KMS"
+@@ -5192,9 +5192,9 @@
  
  if [ "$CFG_LIBUDEV" != "no" ]; then
      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists libudev 2>/dev/null; then
@@ -123,7 +108,7 @@
          QMakeVar set QMAKE_INCDIR_LIBUDEV "$QMAKE_INCDIR_LIBUDEV"
          QMakeVar set QMAKE_LIBS_LIBUDEV "$QMAKE_LIBS_LIBUDEV"
      fi
-@@ -5036,8 +5036,8 @@ fi
+@@ -5333,8 +5333,8 @@
  
  if [ "$CFG_XCB" != "no" ]; then
      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists "xcb >= 1.5" 2>/dev/null; then
@@ -134,7 +119,7 @@
      fi
      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists "x11" 2> /dev/null; then
          QMAKE_X11_PREFIX="`$PKG_CONFIG --variable=prefix x11`"
-@@ -5056,16 +5056,16 @@ if [ "$CFG_XCB" != "no" ]; then
+@@ -5353,16 +5353,16 @@
              CFG_XCB="system"
              if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists "xcb >= 1.5" 2>/dev/null; then
                  XCB_PACKAGES="xcb xcb-shm xcb-sync xcb-xfixes xcb-randr xcb-image xcb-keysyms xcb-icccm xcb-shape"
@@ -155,7 +140,7 @@
                  if compileTest qpa/xcb-xkb "xcb-xkb" $QMAKE_CFLAGS_XKB $QMAKE_LIBS_XKB; then
                      CFG_XKB=yes
                  fi
-@@ -5119,8 +5119,8 @@ fi
+@@ -5416,8 +5416,8 @@
  
  if [ "$CFG_DIRECTFB" != "no" ]; then
      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists directfb 2>/dev/null; then
@@ -166,7 +151,7 @@
          if compileTest qpa/directfb "DirectFB" $QMAKE_CFLAGS_DIRECTFB $QMAKE_LIBS_DIRECTFB; then
              CFG_DIRECTFB=yes
          elif [ "$CFG_DIRECTFB" = "yes" ] && [ "$CFG_CONFIGURE_EXIT_ON_ERROR" = "yes" ]; then
-@@ -5173,8 +5173,8 @@ if [ "$CFG_XCB" != "no" ]; then
+@@ -5470,8 +5470,8 @@
      if [ "$CFG_XKBCOMMON" != "no" ] && [ "$CFG_XKBCOMMON" != "qt" ]; then
          # Check if there is a suitable system-wide xkbcommon
          if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists "xkbcommon xkbcommon-x11 >= $MIN_REQ_XKBCOMMON" 2>/dev/null; then
@@ -177,7 +162,7 @@
  
              QMakeVar set QMAKE_CFLAGS_XKBCOMMON "$QMAKE_CFLAGS_XKBCOMMON"
              QMakeVar set QMAKE_LIBS_XKBCOMMON "$QMAKE_LIBS_XKBCOMMON"
-@@ -5227,9 +5227,9 @@ if [ "$CFG_EGL" != "no" ]; then
+@@ -5524,9 +5524,9 @@
      fi
  
      if [ -n "$PKG_CONFIG" ] && $PKG_CONFIG --exists egl 2>/dev/null; then
