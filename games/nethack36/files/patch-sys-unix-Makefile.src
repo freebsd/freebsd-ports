@@ -1,0 +1,130 @@
+--- ./sys/unix/Makefile.src.orig	2015-11-12 08:51:56.000000000 +0100
++++ ./sys/unix/Makefile.src	2016-01-20 14:51:33.282986884 +0100
+@@ -149,13 +149,24 @@
+ # directories.  The ones given below is the usual spot for linux systems.
+ # The paths are for glibconfig.h and gnomesupport.h respectively.
+ #
+-GNOMEINC=-I/usr/lib/glib/include -I/usr/lib/gnome-libs/include -I../win/gnome
++GNOMEINC= $(shell ${GNOME_CONFIG} --cflags gnomeui)
+ 
+ # flags for debugging:
+ # CFLAGS = -g -I../include
++CFLAGS += -I../include
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++CFLAGS += -DX11_GRAPHICS -I${LOCALBASE}/include
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++CFLAGS += -DQT_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++CFLAGS += -DGNOME_GRAPHICS ${CPPFLAGS}
++endif
+ 
+ #CFLAGS = -O -I../include
+ #LFLAGS = 
++LINK = $(CC)
+ 
+ # The Qt and Be window systems are written in C++, while the rest of
+ # NetHack is standard C.  If using Qt, uncomment the LINK line here to get
+@@ -222,8 +233,27 @@
+ 
+ #
+ #
+-#WINSRC = $(WINTTYSRC)
+-#WINOBJ = $(WINTTYOBJ)
++WINSRC = $(WINTTYSRC)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINSRC += $(WINX11SRC)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINSRC += $(WINQTSRC)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINSRC += $(WINGNOMESRC)
++endif
++
++WINOBJ = $(WINTTYOBJ)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINOBJ += $(WINX11OBJ)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINOBJ += $(WINQTOBJ)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINOBJ += $(WINGNOMEOBJ)
++endif
+ 
+ # on some systems the termcap library is in -ltermcap or -lcurses
+ # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+@@ -239,23 +269,23 @@
+ # WINTTYLIB = -lcurses
+ # WINTTYLIB = -lcurses16
+ # WINTTYLIB = -lncurses
+-#WINTTYLIB = -ltermlib
++WINTTYLIB = -ltermlib
+ #
+ # libraries for X11
+ # If USE_XPM is defined in config.h, you will also need -lXpm here.
+-WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
++WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -L${LOCALBASE}/lib
+ # WINX11LIB = -lXaw -lXmu -lXt -lX11
+ # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
+ # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
+ #
+ # libraries for Qt
+-WINQTLIB = -L$(QTDIR)/lib -lqt
++WINQTLIB = ${QTCFGLIBS} ${LIBQT}
+ #
+ # libraries for KDE (with Qt)
+ WINKDELIB = -lkdecore -lkdeui -lXext
+ #
+ # libraries for Gnome
+-WINGNOMELIB = -lgnomeui -lgnome -lart_lgpl -lgtk -lgdk -lpopt
++WINGNOMELIB = $(shell ${GNOME_CONFIG} --libs gnomeui) ${LDFLAGS}
+ #
+ # libraries for Gem port
+ WINGEMLIB = -le_gem -lgem
+@@ -263,7 +293,16 @@
+ # libraries for BeOS 
+ WINBELIB = -lbe
+ 
+-#WINLIB = $(WINTTYLIB)
++WINLIB = $(WINTTYLIB)
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++WINLIB += $(WINX11LIB)
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++WINLIB += $(WINQTLIB)
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++WINLIB += $(WINGNOMELIB)
++endif
+ 
+ # any other strange libraries your system needs (for Sysunix only -- the more
+ # specialized targets should already be right)
+@@ -296,7 +335,7 @@
+ LIBS =
+ 
+ # make NetHack
+-GAME     = nethack
++GAME     = nethack%%HACKEXT%%
+ # GAME     = nethack.prg
+ 
+ # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
+@@ -482,13 +521,13 @@
+ 
+ # Qt windowport meta-object-compiler output
+ qt_kde0.moc: ../include/qt_kde0.h
+-	$(QTDIR)/bin/moc -o qt_kde0.moc ../include/qt_kde0.h
++	${MOC} -o qt_kde0.moc ../include/qt_kde0.h
+ 
+ qt_win.moc: ../include/qt_win.h
+-	$(QTDIR)/bin/moc -o qt_win.moc ../include/qt_win.h
++	${MOC} -o qt_win.moc ../include/qt_win.h
+ 
+ qttableview.moc: ../include/qttableview.h
+-	$(QTDIR)/bin/moc -o qttableview.moc ../include/qttableview.h
++	${MOC} -o qttableview.moc ../include/qttableview.h
+ 
+ $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
+ 		../include/objclass.h ../include/monsym.h \

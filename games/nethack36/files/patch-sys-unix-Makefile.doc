@@ -1,0 +1,47 @@
+--- ./sys/unix/Makefile.doc.orig	2015-06-12 08:32:45.000000000 +0200
++++ ./sys/unix/Makefile.doc	2016-01-20 14:52:36.968982348 +0100
+@@ -57,17 +57,17 @@
+ 	latex Guidebook.tex
+ 
+ 
+-GAME	= nethack
+-MANDIR	= /usr/man/man6
++GAME	= nethack%%HACKEXT%%
++MANDIR	= ${PREFIX}/man/man
+ MANEXT	= 6
+ 
+ # manual installation for most BSD-style systems
+-GAMEMANCREATE = cat nethack.6 | $(NHGREP) >
+-LEVMANCREATE = cat lev_comp.6 | $(NHGREP) >
+-DGNMANCREATE = cat dgn_comp.6 | $(NHGREP) >
+-RCVRMANCREATE = cat recover.6 | $(NHGREP) >
+-DLBMANCREATE = cat dlb.6 | $(NHGREP) >
+-MDMANCREATE = cat makedefs.6 | $(NHGREP) >
++GAMEMANCREATE = cat nethack.6 | $(NHGREP) > nethack.6.out ; ${BSD_INSTALL_MAN} nethack.6.out
++LEVMANCREATE = cat lev_comp.6 | $(NHGREP) > lev_comp.6.out ; ${BSD_INSTALL_MAN} lev_comp.6.out
++DGNMANCREATE = cat dgn_comp.6 | $(NHGREP) > dgn_comp.6.out ; ${BSD_INSTALL_MAN} dgn_comp.6.out
++RCVRMANCREATE = cat recover.6 | $(NHGREP) > recover.6.out ; ${BSD_INSTALL_MAN} recover.6.out
++DLBMANCREATE = cat dlb.6 | $(NHGREP) > dlb.6.out ; ${BSD_INSTALL_MAN} dlb.6.out
++MDMANCREATE = cat makedefs.6 | $(NHGREP) > makedefs.6.out ; ${BSD_INSTALL_MAN} makedefs.6.out
+ # manual installation for most SYSV-style systems
+ # GAMEMANCREATE = cat nethack.6 | $(NHGREP) | nroff -man - >
+ # LEVMANCREATE = cat lev_comp.6 | $(NHGREP) | nroff -man - >
+@@ -77,12 +77,12 @@
+ # MDMANCREATE = cat makedefs.6 | $(NHGREP) | nroff -man - >
+ 
+ manpages:
+-	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
+-	-$(LEVMANCREATE) $(MANDIR)/lev_comp.$(MANEXT)
+-	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
+-	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
+-	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
+-	-$(MDMANCREATE) $(MANDIR)/makedefs.$(MANEXT)
++	-$(GAMEMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/nethack%%HACKEXT%%.$(MANEXT)
++	-$(LEVMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/lev_comp%%HACKEXT%%.$(MANEXT)
++	-$(DGNMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/dgn_comp%%HACKEXT%%.$(MANEXT)
++	-$(RCVRMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/recover%%HACKEXT%%.$(MANEXT)
++	-$(DLBMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/dlb%%HACKEXT%%.$(MANEXT)
++	-$(MDMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/makedefs%%HACKEXT%%.$(MANEXT)
+ 
+ # manual creation for distribution
+ DISTRIB = Guidebook.txt nethack.txt lev_comp.txt dgn_comp.txt recover.txt \
