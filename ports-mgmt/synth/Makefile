@@ -3,7 +3,7 @@
 
 PORTNAME=	synth
 PORTVERSION=	0.98
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
@@ -21,7 +21,7 @@ USES=		ada:6 ncurses:port
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
 GH_PROJECT=	synth_external:bundle
-GH_TAGNAME=	v1.3:bundle 87fa713
+GH_TAGNAME=	v1.3:bundle 4507b31
 
 # When framework is moved to Ada6, the ada-util and ini-file-manager
 # libraries can be used as prebuilt (switch default.gpr url)
@@ -42,12 +42,12 @@ do-build:
 	(cd ${WRKSRC}/external/include/adacurses && ${SETENV} ${MAKE_ENV} \
 		gcc -I. -c ${csrc}.c -o ../../build/adacurses/${csrc}.o)
 .endfor
-	(cd ${WRKSRC}/synthexec && ${SETENV} ${MAKE_ENV} \
-		gcc -c nonblock_wait.c -o ../build/nonblock_wait.o)
+	(cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} \
+		gcc -c unix_core.c -o ../build/unix_core.o)
 	(cd ${WRKSRC}/synthexec && ${SETENV} ${MAKE_ENV} \
 		gcc synthexec.c -o ../build/synthexec)
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -P default \
-		-largs build/nonblock_wait.o)
+		-largs build/unix_core.o)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/synth \
