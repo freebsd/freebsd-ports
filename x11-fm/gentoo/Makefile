@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	gentoo
-PORTVERSION=	0.19.13
-PORTREVISION=	1
+PORTVERSION=	0.20.6
 CATEGORIES=	x11-fm
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/ \
-		http://mirror.4bit.ws/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
+LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	FAM DOCS
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk30
 USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
