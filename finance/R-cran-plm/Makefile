@@ -2,21 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	plm
-DISTVERSION=	1.4-0
-PORTREVISION=	2
+DISTVERSION=	1.5-12
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Linear Models for Panel Data
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
-RUN_DEPENDS=	R-cran-bdsmatrix>0:${PORTSDIR}/math/R-cran-bdsmatrix \
-		R-cran-Formula>=0.2.0:${PORTSDIR}/math/R-cran-Formula \
+RUN_DEPENDS=	R-cran-Formula>=0.2.0:${PORTSDIR}/math/R-cran-Formula \
+		R-cran-bdsmatrix>0:${PORTSDIR}/math/R-cran-bdsmatrix \
+		R-cran-zoo>0:${PORTSDIR}/math/R-cran-zoo \
 		R-cran-sandwich>0:${PORTSDIR}/math/R-cran-sandwich \
-		R-cran-zoo>0:${PORTSDIR}/math/R-cran-zoo
+		R-cran-car>0:${PORTSDIR}/math/R-cran-car \
+		R-cran-lmtest>0:${PORTSDIR}/finance/R-cran-lmtest
 
 USES=	cran:auto-plist
 
