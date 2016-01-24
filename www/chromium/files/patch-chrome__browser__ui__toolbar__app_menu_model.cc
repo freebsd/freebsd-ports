@@ -1,6 +1,6 @@
---- chrome/browser/ui/toolbar/wrench_menu_model.cc.orig	2015-07-15 16:29:58.000000000 -0400
-+++ chrome/browser/ui/toolbar/wrench_menu_model.cc	2015-07-21 21:50:51.697458000 -0400
-@@ -796,7 +796,7 @@
+--- chrome/browser/ui/toolbar/app_menu_model.cc.orig	2016-01-21 14:37:58.792459231 +0100
++++ chrome/browser/ui/toolbar/app_menu_model.cc	2016-01-21 14:39:05.304456038 +0100
+@@ -779,7 +779,7 @@
      case IDC_UPGRADE_DIALOG:
        return browser_defaults::kShowUpgradeMenuItem &&
            UpgradeDetector::GetInstance()->notify_upgrade();
