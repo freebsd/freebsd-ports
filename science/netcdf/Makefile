@@ -4,7 +4,6 @@
 PORTNAME=	netcdf
 PORTVERSION=	4.3.3.1
 PORTREVISION=	1
-PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -28,7 +27,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		libtool localbase pathfix pkgconfig:run
+USES=		libtool localbase pathfix
 
 DAP_CONFIGURE_ENABLE=	dap
 DAP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
