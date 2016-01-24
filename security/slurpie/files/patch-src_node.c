@@ -1,6 +1,4 @@
-diff --git src/node.c src/node.c
-index 28d5d8a..3135ea0 100644
---- src/node.c
+--- src/node.c.orig	1999-01-30 21:10:17 UTC
 +++ src/node.c
 @@ -102,7 +102,7 @@ void clean_up( int exit_status )
  
