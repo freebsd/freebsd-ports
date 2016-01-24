@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Aug 26 19:12:42 2004
-+++ Makefile.in	Thu Aug 26 19:17:29 2004
-@@ -87,7 +87,7 @@
+--- Makefile.in.orig	2005-07-21 10:02:30 UTC
++++ Makefile.in
+@@ -87,7 +87,7 @@ datadir = @datadir@
  prefix = @prefix@
  sysconfdir = @sysconfdir@
  
