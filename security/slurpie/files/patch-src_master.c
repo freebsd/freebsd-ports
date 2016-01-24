@@ -1,6 +1,4 @@
-diff --git src/master.c src/master.c
-index 4b24f9b..683d9a6 100644
---- src/master.c
+--- src/master.c.orig	1999-01-30 21:08:08 UTC
 +++ src/master.c
 @@ -132,7 +132,7 @@ char *get_time_str( u_int seconds )
     return timestr;
