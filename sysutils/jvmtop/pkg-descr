@@ -6,4 +6,4 @@ It's tested with different releases of Oracle JDK, IBM JDK and OpenJDK on
 FreeBSD, Linux, Solaris and Windows hosts.  Jvmtop requires a JDK - a JRE
 will not suffice.
 
-WWW: http://code.google.com/p/jvmtop/
+WWW: https://github.com/patric-r/jvmtop
