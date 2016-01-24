@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-src
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake dos2unix iconv
+USES=		gmake dos2unix iconv pkgconfig
 USE_SDL=	image2 mixer2
 
 DOS2UNIX_GLOB=	*.txt
