@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zetacoin
-PORTVERSION=	0.9.2.4
+PORTVERSION=	0.9.2.7
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	daniel@morante.net
@@ -10,40 +11,45 @@ COMMENT=	Peer-to-Peer crypto currency with quick transactions
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
+
+USES+=		autoreconf compiler:c++0x gmake libtool pkgconfig:build
 
 BROKEN_armv6=	AtomicPointer not implemented
 
 USE_GITHUB=	yes
-GH_TAGNAME=	22ddb9b
 
 OPTIONS_DEFINE=	X11 UPNP WALLET CLI TEST
 OPTIONS_SUB=	yes
 
 WALLET_DESC=	Build wallet or P2P server node only
 QRCODES_DESC=	Enable QR code display when building graphical interface
-CLI_DESC=	Build command line RPC client
+CLI_DESC=		Build command line RPC client
 
 OPTIONS_DEFAULT=	X11 WALLET QRCODES
-OPTIONS_GROUP=	X11
+OPTIONS_GROUP=		X11
 OPTIONS_GROUP_X11=	QRCODES
 
 UPNP_CONFIGURE_WITH=	miniupnpc
-UPNP_LIB_DEPENDS=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+UPNP_LIB_DEPENDS=		libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+UPNP_CPPFLAGS=          -I${LOCALBASE}/include
+UPNP_LIBS=              -L${LOCALBASE}/lib
 
 X11_CONFIGURE_WITH=	gui
 X11_CONFIGURE_ON=	--without-daemon
 X11_CONFIGURE_OFF=	--with-daemon
 X11_BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
+X11_LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 X11_USE=	qt4=corelib,network,gui,qmake_build,linguisttools_build \
-		qt4=uic_build,moc_build,rcc_build,qtestlib_build
+			qt4=uic_build,moc_build,rcc_build,qtestlib_build
 X11_USES=	desktop-file-utils
 
 WALLET_CONFIGURE_ENABLE=	wallet
-WALLET_CXXFLAGS=	-I${BDB_INCLUDE_DIR} -L${BDB_LIB_DIR}
-WALLET_USE=	bdb=yes
+WALLET_CXXFLAGS=	-I${BDB_INCLUDE_DIR}
+WALLET_LIBS=		-L${BDB_LIB_DIR}
+WALLET_USE=	bdb=48
 
+QRCODES_IMPLIES=	X11
 QRCODES_LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
 QRCODES_CONFIGURE_WITH=	qrencode
 
@@ -53,15 +59,9 @@ TEST_CONFIGURE_ENABLE=	tests
 TEST_ALL_TARGET=	check
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SSL_LIBS="-lssl" CRYPTO_LIBS="-lcrypto" SSL_CFLAGS="-I/usr/include" CRYPTO_CFLAGS="-I/usr/include"
-
-USES=		autoreconf gmake
+CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
+				SSL_CFLAGS="-I${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl"
 USE_OPENSSL=	yes
-WANT_BDB_VER=	48
-
-CXXFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-L${LOCALBASE}/lib
-CXXFLAGS+=	-Wno-invalid-offsetof
 
 QT_BINARY=		${PORTNAME}-qt
 CLI_BINARY=		${PORTNAME}-cli
@@ -74,8 +74,8 @@ PLIST_SUB+=	EXECUTABLE_QT=bin/${QT_BINARY} \
 
 .include <bsd.port.options.mk>
 
-.if empty(PORT_OPTIONS:MX11) && !empty(PORT_OPTIONS:MQRCODES)
-BROKEN=	QRCODES requires X11 support.  Run 'make config' again!
+.if ${PORT_OPTIONS:MX11}
+QT_NONSTANDARD=	yes
 .endif
 
 # tests will currently fail
