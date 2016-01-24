@@ -3,7 +3,7 @@
 
 PORTNAME=	plplot
 PORTVERSION=	5.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 
@@ -16,14 +16,13 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${FREEFONT_DIR}/FreeMono.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 LIB_DEPENDS=	libLASi.so:${PORTSDIR}/devel/lasi \
 		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libqhull.so:${PORTSDIR}/math/qhull5 \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${FREEFONT_DIR}/FreeMono.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 
 USE_GNOME=	pango
 USE_PERL5=	build
-USES=		cmake ghostscript gmake perl5 pkgconfig
+USES=		cmake ghostscript gmake localbase perl5 pathfix pkgconfig
 CMAKE_ARGS=	-DENABLE_java:BOOL=OFF \
 		-DENABLE_octave:BOOL=OFF \
 		-DENABLE_pdl:BOOL=OFF \
@@ -32,6 +31,7 @@ CMAKE_ARGS=	-DENABLE_java:BOOL=OFF \
 		-DENABLE_ocaml:BOOL=OFF \
 		-DENABLE_pyqt4:BOOL=OFF \
 		-DPL_FREETYPE_FONT_PATH:PATH="${FREEFONT_DIR}" \
+		-DCMAKE_INSTALL_PKG_CONFIG_DIR:PATH="${PREFIX}/libdata/pkgconfig" \
 		-DPLD_plmeta:BOOL=OFF
 CFLAGS+=	-D_IS_BUILDING_PLPLOT_PORT_
 USE_LDCONFIG=	yes
@@ -39,7 +39,9 @@ USE_LDCONFIG=	yes
 FREEFONT_DIR=	${LOCALBASE}/share/fonts/freefont-ttf
 
 OPTIONS_DEFINE=	FORTRAN GD LUA PYTHON QT4 TCLTK THREADS WXGTK X11 DOCS
-OPTIONS_DEFAULT=THREADS X11
+OPTIONS_RADIO=	QHULL
+OPTIONS_RADIO_QHULL=	QHULL2012 QHULL2003
+OPTIONS_DEFAULT=	QHULL2012 THREADS X11
 OPTIONS_SUB=	yes
 
 FORTRAN_USES=		fortran
@@ -60,6 +62,13 @@ PYTHON_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
 PYTHON_RUN_DEPENDS=	${PYNUMPY}
 PYTHON_CONFIGURE_ENV=	PYTHON_VERSION="${PYTHON_VERSION}"
 PYTHON_CMAKE_OFF=	-DENABLE_python:BOOL=OFF
+
+QHULL2003_DESC=		Legacy Qhull support
+QHULL2012_DESC=		Latest Qhull support
+QHULL2012_LIB_DEPENDS=	libqhull.so.6:${PORTSDIR}/math/qhull
+QHULL2003_LIB_DEPENDS=	libqhull.so.5:${PORTSDIR}/math/qhull5
+QHULL2012_CMAKE_ON=	-DQHULL_INCLUDE_DIRS="${LOCALBASE}/include/libqhull"
+QHULL2012_2FIX=		lib/nn/delaunay.c src/plgridd.c
 
 TCLTK_LIB_DEPENDS=	libitk.so:${PORTSDIR}/x11-toolkits/itk
 TCLTK_RUN_DEPENDS=	iwidgets>0:${PORTSDIR}/x11-toolkits/iwidgets
@@ -105,5 +114,11 @@ pre-configure:
 		${WRKSRC}/cmake/modules/FindLTDL.cmake
 	${GREP} -lR "/usr/local" ${WRKSRC}/cmake/modules | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
+.if ${PORT_OPTIONS:MQHULL2012}
+. for src in ${QHULL2012_2FIX}
+	${REINPLACE_CMD} -e 's|qhull/qhull_a|libqhull/qhull_a|'	\
+		${WRKSRC}/${src}
+. endfor
+.endif
 
 .include <bsd.port.mk>
