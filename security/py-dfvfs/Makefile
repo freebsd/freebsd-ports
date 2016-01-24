@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfvfs
-PORTVERSION=	20150708
+PORTVERSION=	20160108
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	libbde>=a:${PORTSDIR}/devel/libbde \
 		libewf>=0:${PORTSDIR}/devel/libewf \
+		libfsntfs>=e:${PORTSDIR}/devel/libfsntfs \
 		libqcow>=a:${PORTSDIR}/devel/libqcow \
 		libsigscan>=e:${PORTSDIR}/devel/libsigscan \
 		libsmdev>=a:${PORTSDIR}/devel/libsmdev \
@@ -28,7 +29,8 @@ RUN_DEPENDS=	libbde>=a:${PORTSDIR}/devel/libbde \
 		${PYTHON_PKGNAMEPREFIX}pytsk>=0:${PORTSDIR}/sysutils/py-pytsk \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
-USES=		python:2
+NO_ARCH=	yes
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 # Note: for regression tests set LANG to en_US.UTF-8
