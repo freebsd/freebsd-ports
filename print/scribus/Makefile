@@ -21,15 +21,14 @@ LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms \
 		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libhyphen.so:${PORTSDIR}/textproc/hyphen \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-pillow
 
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	libartlgpl2 libxml2
-USES=		cmake desktop-file-utils ghostscript:run jpeg pkgconfig \
-		python shared-mime-info tar:bz2
+USES=		cmake desktop-file-utils execinfo ghostscript:run jpeg \
+		pkgconfig python shared-mime-info tar:bz2
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -Wno-ferror-limit
