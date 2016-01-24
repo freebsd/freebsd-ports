@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2015-01-21 20:28:16 UTC
-+++ content/browser/renderer_host/render_widget_host_view_aura.cc
-@@ -89,7 +89,7 @@
+--- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2016-01-21 16:05:17.322098582 +0100
++++ content/browser/renderer_host/render_widget_host_view_aura.cc	2016-01-21 16:08:52.682084606 +0100
+@@ -102,7 +102,7 @@
  #include "ui/gfx/win/dpi.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "content/common/input_messages.h"
  #include "ui/events/linux/text_edit_command_auralinux.h"
  #include "ui/events/linux/text_edit_key_bindings_delegate_auralinux.h"
-@@ -677,7 +677,7 @@
+@@ -736,7 +736,7 @@
    if (host)
      return reinterpret_cast<gfx::NativeViewId>(host->GetAcceleratedWidget());
  #endif
@@ -18,21 +18,21 @@
  }
  
  gfx::NativeViewAccessible RenderWidgetHostViewAura::GetNativeViewAccessible() {
-@@ -2326,7 +2326,7 @@
+@@ -2543,7 +2543,7 @@
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    return NeedsInputGrab();
  #endif
    return false;
-@@ -2542,7 +2542,7 @@
+@@ -2774,7 +2774,7 @@
+   if (host_->delegate())
+     target_host = host_->delegate()->GetFocusedRenderWidgetHost(host_);
  
- void RenderWidgetHostViewAura::ForwardKeyboardEvent(
-     const NativeWebKeyboardEvent& event) {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_BSD)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    ui::TextEditKeyBindingsDelegateAuraLinux* keybinding_delegate =
        ui::GetTextEditKeyBindingsDelegate();
    std::vector<ui::TextEditCommandAuraLinux> commands;
