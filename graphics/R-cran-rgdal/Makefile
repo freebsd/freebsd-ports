@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	rgdal
-DISTVERSION=	1.1-1
+DISTVERSION=	1.1-3
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Bindings for the Geospatial Data Abstraction Library
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 		libproj.so:${PORTSDIR}/graphics/proj
