@@ -9,10 +9,8 @@ MASTER_SITES=	http://pwmt.org/projects/zathura/plugins/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Poppler render PDF plugin for Zathura PDF viewer
 
-LICENSE=	zlib
-LICENSE_NAME=	zlib license
+LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 BUILD_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
