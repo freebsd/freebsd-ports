@@ -408,6 +408,7 @@
     SUBDIR += hohlin
     SUBDIR += hoichess
     SUBDIR += holotz-castle
+    SUBDIR += hoverboard-sdl
     SUBDIR += hypatia_engine
     SUBDIR += iagno
     SUBDIR += icbm3d
