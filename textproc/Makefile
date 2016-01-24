@@ -1302,6 +1302,7 @@
     SUBDIR += py-wstools
     SUBDIR += py-wtforms
     SUBDIR += py-xlrd
+    SUBDIR += py-xlsxwriter
     SUBDIR += py-xlutils
     SUBDIR += py-xlwriter
     SUBDIR += py-xlwt
