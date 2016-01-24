@@ -8097,3 +8097,4 @@ devel/msp430-binutils|devel/gcc-msp430-ti-toolchain|2016-01-08|Has expired: Obso
 devel/e_dbus||2016-01-15|Has expired: Not used anymore by x11-wm/enlightenment
 www/xpi-locale-switcher||2016-01-15|Has expired: incompatible with Firefox 34 (and later presumably)
 textproc/py-gettext|textproc/py-python-gettext|2016-01-16|Renamed to match upstream name
+archivers/jzip.org||2016-01-24|Has expired: Abandoned, outdated (no updates since 2003)
