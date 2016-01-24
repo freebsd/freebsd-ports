@@ -9,10 +9,8 @@ MASTER_SITES=	http://pwmt.org/projects/zathura-pdf-mupdf/download/
 MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	MuPDF render PDF plugin for Zathura PDF viewer
 
-LICENSE=	zlib
-LICENSE_NAME=	zlib license
+LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura \
 		mupdf>=1.8,1:${PORTSDIR}/graphics/mupdf
