@@ -1,4 +1,5 @@
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.App.beam
+lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Backoff.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Connection.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.Error.beam
 lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.LogEntry.beam
@@ -24,6 +25,7 @@ lib/elixir/lib/db_connection/ebin/Elixir.DBConnection.beam
 lib/elixir/lib/db_connection/ebin/db_connection.app
 lib/elixir/lib/db_connection/lib/db_connection.ex
 lib/elixir/lib/db_connection/lib/db_connection/app.ex
+lib/elixir/lib/db_connection/lib/db_connection/backoff.ex
 lib/elixir/lib/db_connection/lib/db_connection/connection.ex
 lib/elixir/lib/db_connection/lib/db_connection/error.ex
 lib/elixir/lib/db_connection/lib/db_connection/log_entry.ex
