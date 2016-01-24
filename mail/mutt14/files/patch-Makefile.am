@@ -1,0 +1,22 @@
+--- Makefile.am.orig	2007-05-23 03:17:52.000000000 +0200
++++ Makefile.am	2015-12-29 17:27:11.713299000 +0100
+@@ -2,7 +2,7 @@
+ ## Use aclocal -I m4; automake --foreign
+ 
+ AUTOMAKE_OPTIONS = foreign
+-EXTRA_PROGRAMS = mutt_dotlock pgpring makedoc
++EXTRA_PROGRAMS = mutt_dotlock pgpewrap pgpring makedoc
+ 
+ if BUILD_IMAP
+ IMAP_SUBDIR = imap
+@@ -90,6 +90,10 @@
+ pgpring_LDADD = @LIBOBJS@ $(INTLLIBS) 
+ pgpring_DEPENDENCIES = @LIBOBJS@ $(INTLDEPS)
+ 
++pgpewrap_SOURCES = pgpewrap.c
++pgpewrap_LDADD = @LIBOBJS@ $(INTLLIBS) 
++pgpewrap_DEPENDENCIES = @LIBOBJS@ $(INTLDEPS)
++
+ mutt_dotlock.c: dotlock.c
+ 	cp $(srcdir)/dotlock.c mutt_dotlock.c
+ 
