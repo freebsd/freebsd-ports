@@ -69,7 +69,6 @@ man/man1/gentoo.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/menus.txt
 %%PORTDOCS%%%%DOCSDIR%%/misc.html
 %%PORTDOCS%%%%DOCSDIR%%/quick.html
-%%PORTDOCS%%%%DOCSDIR%%/relnotes.html
 %%PORTDOCS%%%%DOCSDIR%%/scratch/README
 %%PORTDOCS%%%%DOCSDIR%%/scratch/command_args.txt
 %%PORTDOCS%%%%DOCSDIR%%/scratch/command_howto.txt
