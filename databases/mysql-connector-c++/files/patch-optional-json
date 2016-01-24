@@ -1,0 +1,36 @@
+The newly-added JSON-support may not be available in the older
+version of MySQL client-library against which this connector may
+be building. Fortunately, that's easy to detect at compile time...
+
+	-mi
+
+--- driver/mysql_resultbind.cpp	2016-01-12 13:42:38.000000000 -0500
++++ driver/mysql_resultbind.cpp	2016-01-24 03:58:18.451886000 -0500
+@@ -87,5 +87,7 @@
+     case MYSQL_TYPE_STRING:
+     case MYSQL_TYPE_VAR_STRING:
++#ifdef MYSQL_TYPE_JSON
+     case MYSQL_TYPE_JSON:
++#endif
+       return st_buffer_size_type(new char[field->max_length + 1], field->max_length + 1, field->type);
+ 
+--- driver/mysql_util.cpp	2016-01-12 13:42:38.000000000 -0500
++++ driver/mysql_util.cpp	2016-01-24 04:01:04.499990000 -0500
+@@ -432,6 +432,8 @@
+     case MYSQL_TYPE_GEOMETRY:
+       return sql::DataType::GEOMETRY;
++#ifdef MYSQL_TYPE_JSON
+     case MYSQL_TYPE_JSON:
+       return sql::DataType::JSON;
++#endif
+     default:
+       return sql::DataType::UNKNOWN;
+@@ -646,6 +648,8 @@
+     case MYSQL_TYPE_GEOMETRY:
+       return "GEOMETRY";
++#ifdef MYSQL_TYPE_JSON
+     case MYSQL_TYPE_JSON:
+       return "JSON";
++#endif
+     default:
+       return "UNKNOWN";
