@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	9.21
-PORTREVISION=	1
+PORTVERSION=	9.22
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
