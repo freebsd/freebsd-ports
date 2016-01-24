@@ -48,7 +48,6 @@
     SUBDIR += hs-zlib-enum
     SUBDIR += innoextract
     SUBDIR += javatar
-    SUBDIR += jzip.org
     SUBDIR += jzlib
     SUBDIR += kzip
     SUBDIR += laszip
