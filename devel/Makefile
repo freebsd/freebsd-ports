@@ -1185,6 +1185,7 @@
     SUBDIR += libfirm
     SUBDIR += libfortuna
     SUBDIR += libfreefare
+    SUBDIR += libfsntfs
     SUBDIR += libftdi
     SUBDIR += libftdi1
     SUBDIR += libfwsi
