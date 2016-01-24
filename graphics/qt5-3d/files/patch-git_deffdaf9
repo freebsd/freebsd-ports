@@ -1,0 +1,34 @@
+Paths reworked for Qt 5.5.
+
+commit deffdaf9b14c78535a1290757d54082a51dd518f
+Author: Paul Lemire <paul.lemire@kdab.com>
+Date:   Thu Nov 19 12:18:02 2015 +0100
+
+    GraphicsHelper: fix switch
+
+    Change-Id: I9bc47d84407d1ed6fc5efd7d2acfff094855939c
+    Reviewed-by: Andy Nichols <andy.nichols@theqtcompany.com>
+
+--- src/render/backend/qgraphicscontext.cpp
++++ src/render/backend/qgraphicscontext.cpp
+@@ -1032,15 +1032,15 @@ GLuint QGraphicsContext::byteSizeFromTyp
+ GLint QGraphicsContext::glDataTypeFromAttributeDataType(QAttribute::DataType dataType)
+ {
+     switch (dataType) {
+-    case QAttribute::DataType::Byte:
++    case QAttribute::Byte:
+         return GL_BYTE;
+-    case QAttribute::DataType::UnsignedByte:
++    case QAttribute::UnsignedByte:
+         return GL_UNSIGNED_BYTE;
+-    case QAttribute::DataType::Short:
++    case QAttribute::Short:
+         return GL_SHORT;
+-    case QAttribute::DataType::UnsignedShort:
++    case QAttribute::UnsignedShort:
+         return GL_UNSIGNED_SHORT;
+-    case QAttribute::DataType::Int:
++    case QAttribute::Int:
+         return GL_INT;
+     case QAttribute::UnsignedInt:
+         return GL_UNSIGNED_INT;

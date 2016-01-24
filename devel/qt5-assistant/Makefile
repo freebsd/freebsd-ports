@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 documentation browser
 
-USE_QT5=	core help network printsupport sql webkit widgets \
+USE_QT5=	core gui help network printsupport sql webkit widgets \
 		buildtools_build sql-sqlite3_run
 QT_DIST=	tools
 USES=		qmake

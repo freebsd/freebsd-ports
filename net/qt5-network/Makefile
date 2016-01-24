@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt network module
 
+LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 USE_OPENSSL=	yes
@@ -20,8 +21,8 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-QT_DEFINES=	OPENSSL SSL
-QT_CONFIG=	openssl
+QT_DEFINES=	LIBPROXY OPENSSL SSL
+QT_CONFIG=	libproxy openssl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \

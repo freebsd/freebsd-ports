@@ -1,0 +1,150 @@
+Patch reworked for Qt 5.5.
+Sent upstream: https://codereview.qt-project.org/#/c/144744/
+
+commit d5120908c74133d9fd249b920cff0dc76313f43f
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Mon Dec 28 00:46:31 2015 +0100
+
+    Stop using enum references that require C++11.
+
+    Use Qt::Foo instead of Qt::Enum::Foo, which is a C++11 extension. When
+    building with clang without -std=c++11, this results in warnings. With
+    older GCC versions, the code simply does not build.
+
+    This is similar to commit deffdaf9 ("GraphicsHelper: fix switch").
+
+    Change-Id: I28389b90bafb3df87187742ef55267ce2df1ba1a
+    Reviewed-by: Sean Harmer <sean.harmer@kdab.com>
+
+--- src/input/q3dmouseevent.cpp
++++ src/input/q3dmouseevent.cpp
+@@ -114,16 +114,16 @@ Q3DMouseEvent::~Q3DMouseEvent()
+ Q3DMouseEvent::Buttons Q3DMouseEvent::button() const
+ {
+     switch (m_event.button()) {
+-    case Qt::MouseButton::LeftButton:
+-        return Q3DMouseEvent::Buttons::LeftButton;
+-    case Qt::MouseButton::RightButton:
+-        return Q3DMouseEvent::Buttons::RightButton;
+-    case Qt::MouseButton::MiddleButton:
+-        return Q3DMouseEvent::Buttons::MiddleButton;
+-    case Qt::MouseButton::BackButton:
+-        return Q3DMouseEvent::Buttons::BackButton;
++    case Qt::LeftButton:
++        return Q3DMouseEvent::LeftButton;
++    case Qt::RightButton:
++        return Q3DMouseEvent::RightButton;
++    case Qt::MiddleButton:
++        return Q3DMouseEvent::MiddleButton;
++    case Qt::BackButton:
++        return Q3DMouseEvent::BackButton;
+     default:
+-        return Q3DMouseEvent::Buttons::NoButton;
++        return Q3DMouseEvent::NoButton;
+     }
+ }
+ 
+@@ -143,17 +143,17 @@ Q3DMouseEvent::Modifiers Q3DMouseEvent::modifier() const
+ {
+     switch (m_event.modifiers()) {
+     case Qt::ShiftModifier:
+-        return Q3DMouseEvent::Modifiers::ShiftModifier;
++        return Q3DMouseEvent::ShiftModifier;
+     case Qt::ControlModifier:
+-        return Q3DMouseEvent::Modifiers::ControlModifier;
++        return Q3DMouseEvent::ControlModifier;
+     case Qt::AltModifier:
+-        return Q3DMouseEvent::Modifiers::AltModifier;
++        return Q3DMouseEvent::AltModifier;
+     case Qt::MetaModifier:
+-        return Q3DMouseEvent::Modifiers::MetaModifier;
++        return Q3DMouseEvent::MetaModifier;
+     case Qt::KeypadModifier:
+-        return Q3DMouseEvent::Modifiers::KeypadModifier;
++        return Q3DMouseEvent::KeypadModifier;
+     default:
+-        return Q3DMouseEvent::Modifiers::NoModifier;
++        return Q3DMouseEvent::NoModifier;
+     }
+ }
+ 
+@@ -242,17 +242,17 @@ Q3DWheelEvent::Modifiers Q3DWheelEvent::modifier() const
+ {
+     switch (m_event.modifiers()) {
+     case Qt::ShiftModifier:
+-        return Q3DWheelEvent::Modifiers::ShiftModifier;
++        return Q3DWheelEvent::ShiftModifier;
+     case Qt::ControlModifier:
+-        return Q3DWheelEvent::Modifiers::ControlModifier;
++        return Q3DWheelEvent::ControlModifier;
+     case Qt::AltModifier:
+-        return Q3DWheelEvent::Modifiers::AltModifier;
++        return Q3DWheelEvent::AltModifier;
+     case Qt::MetaModifier:
+-        return Q3DWheelEvent::Modifiers::MetaModifier;
++        return Q3DWheelEvent::MetaModifier;
+     case Qt::KeypadModifier:
+-        return Q3DWheelEvent::Modifiers::KeypadModifier;
++        return Q3DWheelEvent::KeypadModifier;
+     default:
+-        return Q3DWheelEvent::Modifiers::NoModifier;
++        return Q3DWheelEvent::NoModifier;
+     }
+ }
+ 
+--- src/input/q3dmouseevent.h
++++ src/input/q3dmouseevent.h
+@@ -59,11 +59,11 @@ class QT3DINPUTSHARED_EXPORT QMouseEvent : public QObject
+ 
+ public:
+     enum Buttons {
+-        LeftButton = Qt::MouseButton::LeftButton,
+-        RightButton = Qt::MouseButton::RightButton,
+-        MiddleButton = Qt::MouseButton::MiddleButton,
+-        BackButton = Qt::MouseButton::BackButton,
+-        NoButton = Qt::MouseButton::NoButton
++        LeftButton = Qt::LeftButton,
++        RightButton = Qt::RightButton,
++        MiddleButton = Qt::MiddleButton,
++        BackButton = Qt::BackButton,
++        NoButton = Qt::NoButton
+     };
+     Q_ENUM(Buttons)
+ 
+@@ -109,11 +109,11 @@ class QT3DINPUTSHARED_EXPORT QWheelEvent : public QObject
+ 
+ public:
+     enum Buttons {
+-        LeftButton = Qt::MouseButton::LeftButton,
+-        RightButton = Qt::MouseButton::RightButton,
+-        MiddleButton = Qt::MouseButton::MiddleButton,
+-        BackButton = Qt::MouseButton::BackButton,
+-        NoButton = Qt::MouseButton::NoButton
++        LeftButton = Qt::LeftButton,
++        RightButton = Qt::RightButton,
++        MiddleButton = Qt::MiddleButton,
++        BackButton = Qt::BackButton,
++        NoButton = Qt::NoButton
+     };
+     Q_ENUM(Buttons)
+ 
+--- src/quick3d/quick3d/items/quick3dentityloader.cpp
++++ src/quick3d/quick3d/items/quick3dentityloader.cpp
+@@ -64,7 +64,7 @@ protected:
+         Quick3DEntityLoaderPrivate *priv = Quick3DEntityLoaderPrivate::get(m_loader);
+ 
+         switch (status) {
+-        case Status::Ready: {
++        case Ready: {
+             Q_ASSERT(priv->m_entity == Q_NULLPTR);
+             priv->m_entity = qobject_cast<QEntity *>(object());
+             Q_ASSERT(priv->m_entity != Q_NULLPTR);
+@@ -73,7 +73,7 @@ protected:
+             break;
+         }
+ 
+-        case Status::Error: {
++        case Error: {
+             QQmlEnginePrivate::warning(qmlEngine(m_loader), errors());
+             priv->clear();
+             emit m_loader->entityChanged();
