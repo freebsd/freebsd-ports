@@ -8,10 +8,8 @@ MASTER_SITES=	http://pwmt.org/projects/zathura-ps/download/
 MAINTAINER=	mike.d.ft402@gmail.com
 COMMENT=	PostScript support for Zathura PDF viewer
 
-LICENSE=	zlib
-LICENSE_NAME=	zlib license
+LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libspectre.so:${PORTSDIR}/print/libspectre
 BUILD_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
