@@ -2,22 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	enca
-PORTVERSION=	1.13
-PORTREVISION=	1
+PORTVERSION=	1.18
 CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	http://dl.cihar.com/enca/
 
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	Detect encoding of text files
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	umap:${PORTSDIR}/converters/p5-Unicode-Map8
 LIB_DEPENDS=	librecode.so:${PORTSDIR}/converters/recode
 RUN_DEPENDS=	umap:${PORTSDIR}/converters/p5-Unicode-Map8
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-USES=		gmake iconv libtool pathfix pkgconfig tar:bzip2
+USES=		gmake iconv libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
