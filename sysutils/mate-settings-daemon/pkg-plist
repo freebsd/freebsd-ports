@@ -50,21 +50,21 @@ man/man1/msd-locate-pointer.1.gz
 share/MateConf/gsettings/mate-settings-daemon.convert
 share/dbus-1/services/org.mate.SettingsDaemon.service
 share/dbus-1/system-services/org.mate.SettingsDaemon.DateTimeMechanism.service
+share/icons/hicolor/16x16/apps/msd-xrandr.png
+share/icons/hicolor/22x22/apps/msd-xrandr.png
+share/icons/hicolor/24x24/apps/msd-xrandr.png
+share/icons/hicolor/32x32/apps/msd-xrandr.png
+share/icons/hicolor/scalable/apps/msd-xrandr.svg
 share/icons/mate/16x16/actions/touchpad-disabled.png
 share/icons/mate/16x16/actions/touchpad-enabled.png
-share/icons/mate/16x16/apps/msd-xrandr.png
 share/icons/mate/22x22/actions/touchpad-disabled.png
 share/icons/mate/22x22/actions/touchpad-enabled.png
-share/icons/mate/22x22/apps/msd-xrandr.png
 share/icons/mate/24x24/actions/touchpad-disabled.png
 share/icons/mate/24x24/actions/touchpad-enabled.png
-share/icons/mate/24x24/apps/msd-xrandr.png
 share/icons/mate/32x32/actions/touchpad-disabled.png
 share/icons/mate/32x32/actions/touchpad-enabled.png
-share/icons/mate/32x32/apps/msd-xrandr.png
 share/icons/mate/scalable/actions/touchpad-disabled.svg
 share/icons/mate/scalable/actions/touchpad-enabled.svg
-share/icons/mate/scalable/apps/msd-xrandr.svg
 share/locale/af/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/am/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ar/LC_MESSAGES/mate-settings-daemon.mo
@@ -161,14 +161,13 @@ share/locale/zh_HK/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/zu/LC_MESSAGES/mate-settings-daemon.mo
 share/mate-control-center/keybindings/50-accessibility.xml
-share/mate-settings-daemon/acme.ui
-share/mate-settings-daemon/icons/hicolor/64x64/devices/kbd-capslock-off.png
-share/mate-settings-daemon/icons/hicolor/64x64/devices/kbd-capslock-on.png
-share/mate-settings-daemon/icons/hicolor/64x64/devices/kbd-numlock-off.png
-share/mate-settings-daemon/icons/hicolor/64x64/devices/kbd-numlock-on.png
-share/mate-settings-daemon/icons/hicolor/64x64/devices/kbd-scrolllock-off.png
-share/mate-settings-daemon/icons/hicolor/64x64/devices/kbd-scrolllock-on.png
-share/mate-settings-daemon/msd-a11y-preferences-dialog.ui
+%%DATADIR%%/acme.ui
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-capslock-off.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-capslock-on.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-numlock-off.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-numlock-on.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-scrolllock-off.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-scrolllock-on.png
+%%DATADIR%%/msd-a11y-preferences-dialog.ui
 share/polkit-1/actions/org.mate.settingsdaemon.datetimemechanism.policy
-@dir etc/mate-settings-daemon/xrandr
-@dir etc/mate-settings-daemon
+@dir %%ETCDIR%%/xrandr

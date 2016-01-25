@@ -1,6 +1,6 @@
---- configure.ac.orig	2013-03-26 21:00:43.000000000 -0500
-+++ configure.ac	2013-03-26 21:06:27.000000000 -0500
-@@ -349,7 +349,7 @@
+--- configure.ac.orig	2015-11-29 20:13:23.000000000 +0100
++++ configure.ac	2016-01-08 23:56:37.487626000 +0100
+@@ -269,7 +269,7 @@
  GETTEXT_PACKAGE=mate-applets
  AC_SUBST(GETTEXT_PACKAGE)
  AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext Package])
@@ -9,18 +9,16 @@
  AM_GLIB_GNU_GETTEXT
  
  # this is the directory where the *.{mo,gmo} files are installed
-@@ -390,8 +390,8 @@
+@@ -310,7 +310,7 @@
  	   AC_CHECK_LIB(apm,apm_read,[HAVE_LIBAPM=yes],[HAVE_LIBAPM=no])
  	   ;;
         # list of supported OS cores that do not use libapm
 -       i386-*-freebsd*|*-*-netbsd*|*-*-openbsd*|*-*kfreebsd*-gnu)
--          if [ -n "${OS_SYS}" ]; then
-+       i386-*-freebsd*|amd64-*-freebsd*|*-*-netbsd*|*-*-openbsd*|*-*kfreebsd*-gnu)
-+          if test -n "${OS_SYS}" ; then
++       *-*-freebsd*|*-*-netbsd*|*-*-openbsd*|*-*kfreebsd*-gnu)
+           if test -n "${OS_SYS}"; then
  	       ACPIINC="-I${OS_SYS}"
  	   else
- 	       ACPIINC="-I/usr/src/sys"
-@@ -521,6 +521,9 @@
+@@ -418,6 +418,9 @@
        *linux*)
           build_cpufreq_applet=yes
  	 ;;
@@ -30,7 +28,7 @@
        *)
           AC_MSG_WARN([${host} is not supported by cpufreq applet, not building])
  	 build_cpufreq_applet=no
-@@ -623,14 +626,14 @@
+@@ -526,14 +529,14 @@
  builderdir="${pkgdatadir}/builder"
  AC_SUBST(builderdir)
  

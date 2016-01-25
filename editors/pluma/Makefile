@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pluma
-PORTVERSION=	1.10.2
+PORTVERSION=	1.12.1
 CATEGORIES=	editors mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -39,5 +39,7 @@ SHEBANG_FILES=	${WRKSRC}/plugins/externaltools/data/search-recursive.tool.in \
 GLIB_SCHEMAS=	org.mate.pluma.gschema.xml \
 		org.mate.pluma.plugins.filebrowser.gschema.xml \
 		org.mate.pluma.plugins.time.gschema.xml
+
+PLIST_SUB+=	PYTHON=""
 
 .include <bsd.port.mk>

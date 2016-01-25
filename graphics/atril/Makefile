@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	atril
-PORTVERSION=	1.10.2
-PORTREVISION?=	2
+PORTVERSION=	1.12.2
+PORTREVISION?=	0
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -15,8 +15,6 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
 		libspectre.so:${PORTSDIR}/print/libspectre
-
-RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 
 PORTSCOUT=	limitw:1,even
 SLAVEPORT?=	no

@@ -82,7 +82,7 @@ docutils_DETECT=	${LOCALBASE}/libdata/pkgconfig/mate-doc-utils.pc
 docutils_BUILD_DEPENDS=	${docutils_DETECT}:${PORTSDIR}/textproc/mate-doc-utils
 docutils_RUN_DEPENDS=	${docutils_DETECT}:${PORTSDIR}/textproc/mate-doc-utils
 
-icontheme_DETECT=	${LOCALBASE}/libdata/pkgconfig/mate-icon-theme.pc
+icontheme_DETECT=	${LOCALBASE}/share/icons/mate/index.theme
 icontheme_BUILD_DEPENDS=${icontheme_DETECT}:${PORTSDIR}/x11-themes/mate-icon-theme
 icontheme_RUN_DEPENDS=	${icontheme_DETECT}:${PORTSDIR}/x11-themes/mate-icon-theme
 
