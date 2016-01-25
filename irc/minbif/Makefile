@@ -3,7 +3,7 @@
 
 PORTNAME=	minbif
 PORTVERSION=	1.0.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	irc net-im
 MASTER_SITES=	https://symlink.me/attachments/download/148/
 
@@ -12,21 +12,11 @@ COMMENT=	IRC to instant messaging gateway
 
 LICENSE=	GPLv2
 
-BROKEN=		fails to build
-
 LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
-
-# right now PLUGINS installs prpl-coincoin and prpl-gayattitude
-OPTIONS_DEFINE=	CACA GNUTLS VIDEO PLUGINS DOCS
-OPTIONS_DEFAULT=	CACA
-CACA_DESC=	Buddy icon display using libcaca
-VIDEO_DESC=	Webcam display using libcaca (depends on CACA)
-PLUGINS_DESC=	Compile additional libpurple-plugins
-
-USE_RC_SUBR=	minbif
 
 USES=		cmake pkgconfig
 USE_GNOME=	glib20
+USE_RC_SUBR=	${PORTNAME}
 
 CFLAGS+=	-DX_DISPLAY_MISSING
 LDFLAGS+=	-pthread
@@ -37,11 +27,16 @@ GROUPS=		minbif
 SUB_FILES=	pkg-message
 SUB_LIST=	USERS="${USERS}"
 
-PORTDOCS=	*
-PLIST_FILES=	bin/minbif %%ETCDIR%%/minbif.conf-dist \
-		%%ETCDIR%%/minbif.motd-dist man/man8/minbif.8.gz
+OPTIONS_DEFINE=	CACA GNUTLS VIDEO PLUGINS DOCS
+OPTIONS_DEFAULT=	CACA
+VIDEO_IMPLIES=	CACA
 
-CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
+CACA_DESC=	Buddy icon display using libcaca
+VIDEO_DESC=	Webcam display using libcaca (implies CACA)
+PLUGINS_DESC=	Compile additional libpurple-plugins
+
+CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca \
+			libImlib2.so:${PORTSDIR}/graphics/imlib2
 CACA_CMAKE_ON=		-DENABLE_CACA:BOOL=ON -DENABLE_IMLIB:BOOL=ON
 CACA_CMAKE_OFF=		-DENABLE_CACA:BOOL=OFF -DENABLE_IMLIB:BOOL=OFF
 
@@ -55,55 +50,35 @@ PLUGINS_CMAKE_OFF=	-DENABLE_PLUGIN:BOOL=OFF
 PLUGINS_PLIST_FILES=	lib/purple-2/libcoincoin.so \
 			lib/purple-2/libgayattitude.so
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MVIDEO} && !empty(PORT_OPTIONS:MCACA)
-USE_GSTREAMER+=	core good
-LIB_DEPENDS+=	libgstfarsight-0.10.so:${PORTSDIR}/net-im/farsight2
-CMAKE_ARGS+=	-DENABLE_VIDEO:BOOL=ON
-.else
-CMAKE_ARGS+=	-DENABLE_VIDEO:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MCACA}
-LIB_DEPENDS+=	libImlib2.so:${PORTSDIR}/graphics/imlib2
-.endif
-
-.if ${PORT_OPTIONS:MVIDEO} && empty(PORT_OPTIONS:MCACA)
-IGNORE=	if you want to enable webcam support, you must also enable CACA
-.endif
+VIDEO_USE=		GSTREAMER=core,good
+VIDEO_CMAKE_ON=		-DENABLE_VIDEO:BOOL=ON
+VIDEO_CMAKE_OFF=	-DENABLE_VIDEO:BOOL=OFF
+VIDEO_LIB_DEPENDS=	libgstfarsight-0.10.so:${PORTSDIR}/net-im/farsight2
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|"-lpthread -lstdc++"||' ${WRKSRC}/src/CMakeLists.txt
-	@${REINPLACE_CMD} -e \
-		'/pam_misc.h/d' ${WRKSRC}/src/im/auth_pam.h
-
-post-build:
-	@${LN} -sf minbif.conf ${WRKSRC}/minbif.conf-dist
-	@${LN} -sf minbif.motd ${WRKSRC}/minbif.motd-dist
+	@${REINPLACE_CMD} -e '/pam_misc\.h/d' ${WRKSRC}/src/im/auth_pam.h
 
 do-install:
-	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} ${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/man && ${INSTALL_MAN} minbif.8 \
-		${STAGEDIR}${MAN8PREFIX}/man/man8)
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/minbif.8 ${STAGEDIR}${MANPREFIX}/man/man8
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} minbif.conf-dist \
-		${STAGEDIR}${ETCDIR})
-	(cd ${WRKSRC} && ${INSTALL_DATA} minbif.motd-dist \
-		${STAGEDIR}${ETCDIR})
-.if ${PORT_OPTIONS:MPLUGINS}
+	${INSTALL_DATA} ${WRKSRC}/minbif.conf \
+		${STAGEDIR}${ETCDIR}/minbif.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/minbif.motd \
+		${STAGEDIR}${ETCDIR}/minbif.motd.sample
+
+do-install-PLUGINS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/purple-2
-	(cd ${WRKSRC}/plugins/coincoin && ${INSTALL_LIB} libcoincoin.so \
-		${STAGEDIR}${PREFIX}/lib/purple-2)
-	(cd ${WRKSRC}/plugins/gayattitude && ${INSTALL_LIB} libgayattitude.so \
-		${STAGEDIR}${PREFIX}/lib/purple-2)
-.endif
+	${INSTALL_LIB} ${WRKSRC}/plugins/coincoin/libcoincoin.so \
+		${WRKSRC}/plugins/gayattitude/libgayattitude.so \
+			${STAGEDIR}${PREFIX}/lib/purple-2
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README \
-		${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} minbif.xinetd \
-		${STAGEDIR}${DOCSDIR})
+.for f in AUTHORS ChangeLog README doc/minbif.xinetd
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
