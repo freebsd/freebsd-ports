@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mtsatsenko
-GH_PROJECT=	${PORTNAME}
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure
