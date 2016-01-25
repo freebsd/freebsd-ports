@@ -21,6 +21,8 @@ LIB_DEPENDS=	libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
 		libgjs.so:${PORTSDIR}/lang/gjs \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
+BROKEN_FreeBSD_9=	Does not builds
+
 PORTSCOUT=	limitw:1,even
 PORTDOCS=	*
 
@@ -40,10 +42,4 @@ GLIB_SCHEMAS=	org.gnome.builder.editor.gschema.xml \
 		org.gnome.builder.experimental.gschema.xml \
 		org.gnome.builder.project-tree.gschema.xml
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		does not builds
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
