@@ -19,16 +19,13 @@ USE_PYTHON=	autoplist distutils
 USE_OPENLDAP=	yes
 WANT_OPENLDAP_VER=	24
 
-REPLACE_ARGS=	-e 's,/usr/include/sasl,${LOCALBASE}/include/sasl,' \
-		-e 's,/usr/local,${LOCALBASE},'
-
 OPTIONS_DEFINE=	SASL
 
 SASL_VARS=	WANT_OPENLDAP_SASL=yes
 SASL_CONFLICTS=	openldap24-client-2.*
 
 do-configure:
-	@${REINPLACE_CMD} ${REPLACE_ARGS} ${WRKSRC}/setup.cfg
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' ${WRKSRC}/setup.cfg
 
 do-configure-SASL-off:
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q setopt -c _ldap -s HAVE_TLS -o defines
