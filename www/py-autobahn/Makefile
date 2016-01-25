@@ -1,42 +1,53 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	autobahn
-PORTVERSION=	0.9.6
-CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PORTNAME=		autobahn
+PORTVERSION=		0.11.0
+DISTVERSIONPREFIX=	v
+CATEGORIES=		www python
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	WebSocket client & server library, WAMP real-time framework
+MAINTAINER=		koobs@FreeBSD.org
+COMMENT=		WebSocket client & server library, WAMP real-time framework
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.6.1:${PORTSDIR}/devel/py-six
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest \
-		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.6.1:${PORTSDIR}/devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}txaio>=2.2.0:${PORTSDIR}/devel/py-txaio
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.7.2:${PORTSDIR}/devel/py-pytest \
+		${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:${PORTSDIR}/devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2 \
+		${PYTHON_PKGNAMEPREFIX}trollius>0:${PORTSDIR}/devel/py-trollius # Not really a depends, but the test doesnt skip
 
-USES=		dos2unix python
+USES=		python
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
+
+GH_ACCOUNT=	crossbario
+GH_PROJECT=	autobahn-python
 
 OPTIONS_DEFINE=		ACCELERATE SERIALIZATION
 OPTIONS_MULTI=		BACKENDS
 OPTIONS_MULTI_BACKENDS=	ASYNCIO TWISTED
-OPTIONS_DEFAULT=	ASYNCIO ACCELERATE SERIALIZATION TWISTED
+OPTIONS_DEFAULT=	ACCELERATE SERIALIZATION TWISTED
 
 BACKENDS_DESC=		Networking Backends
 
 ACCELERATE_DESC=	WebSocket and JSON Acceleration
-ASYNCIO_DESC=		asyncio (PEP-3156 aka "Tulip") Backend
+ASYNCIO_DESC=		asyncio (PEP-3156) Backend (Python 3.x ONLY)
 SERIALIZATION_DESC=	WAMPv2 Binary Serialization
 TWISTED_DESC=		Twisted Backend (Python 2.x ONLY)
 
 ACCELERATE_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}wsaccel>=0.6.2:${PORTSDIR}/www/py-wsaccel \
 				${PYTHON_PKGNAMEPREFIX}ujson>=1.33:${PORTSDIR}/devel/py-ujson
+
 SERIALIZATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.4.0:${PORTSDIR}/devel/py-msgpack
-TWISTED_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6:${PORTSDIR}/devel/py-zope.interface
-TWISTED_USES=			twisted:run
+
+TWISTED_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6:${PORTSDIR}/devel/py-zope.interface \
+				${PYTHON_PKGNAMEPREFIX}twisted>=12.1:${PORTSDIR}/devel/py-twisted
 
 .include <bsd.port.pre.mk>
 
@@ -44,13 +55,15 @@ TWISTED_USES=			twisted:run
 BROKEN=	Twisted currently only supports Python 2.x. Disable the TWISTED option and use ASYNCIO instead
 .endif
 
-.if ${PORT_OPTIONS:MASYNCIO} && ${PYTHON_REL} <= 3400
-.if ${PYTHON_REL} >= 3300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}asyncio>=0.2.1:${PORTSDIR}/devel/py-asyncio
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}trollius>=0.1.2:${PORTSDIR}/devel/py-trollius \
-		${PYTHON_PKGNAMEPREFIX}futures>=2.1.5:${PORTSDIR}/devel/py-futures
+.if ${PORT_OPTIONS:MASYNCIO}
+.if ${PYTHON_REL} <= 3000
+BROKEN=	ASYNCIO requires Python 3.x. Disable the ASYNCIO option and use TWISTED instead
+.elif ${PYTHON_REL} <= 3300
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}asyncio>=3.4.3:${PORTSDIR}/devel/py-asyncio
 .endif
 .endif
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest autobahn
 
 .include <bsd.port.post.mk>
