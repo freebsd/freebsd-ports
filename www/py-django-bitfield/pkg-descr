@@ -1,0 +1,3 @@
+Provides a BitField like class (using a BigIntegerField) for your Django models.
+
+WWW: https://github.com/disqus/django-bitfield
