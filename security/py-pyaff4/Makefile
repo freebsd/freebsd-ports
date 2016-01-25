@@ -3,6 +3,7 @@
 
 PORTNAME=	PyAFF4
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}intervaltree>=2.1.0:${PORTSDIR}/devel/py-int
 NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+post-extract:
+	@${CHMOD} -R a+rX ${WRKSRC}
 
 .include <bsd.port.mk>
