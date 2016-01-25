@@ -15,25 +15,23 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1-modules>0:${PORTSDIR}/devel/py-pyasn1-modules
 
+CONFLICTS_INSTALL=	py27-pyldap
 USES=		python:2
 USE_PYTHON=	autoplist distutils
-USE_OPENLDAP=		yes
+USE_OPENLDAP=	yes
 WANT_OPENLDAP_VER=	24
+
 OPTIONS_DEFINE=	SASL
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSASL}
-WANT_OPENLDAP_SASL=	yes
-CONFLICTS+=		openldap24-client-2.*
-.endif
+SASL_VARS=	WANT_OPENLDAP_SASL=yes
+SASL_CONFLICTS=	openldap24-client-2.*
 
 do-configure:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' ${WRKSRC}/setup.cfg
-.if ! ${PORT_OPTIONS:MSASL}
+
+do-configure-SASL-off:
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q setopt -c _ldap -s HAVE_TLS -o defines
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q saveopts
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_ldap.so
