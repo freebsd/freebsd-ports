@@ -13,7 +13,6 @@ bin/qsheff
 %%ETCDIR%%/install-wrapper.sh
 %%ETCDIR%%/uninstall-wrapper.sh
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
