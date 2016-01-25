@@ -1633,6 +1633,8 @@
 %%T%%/jre/lib/deploy/mixcode_s.png
 %%T%%/jre/lib/deploy/splash.gif
 %%T%%/jre/lib/deploy/splash@2x.gif
+%%T%%/jre/lib/deploy/splash_11-lic.gif
+%%T%%/jre/lib/deploy/splash_11@2x-lic.gif
 %%T%%/jre/lib/desktop/applications/sun-java.desktop
 %%T%%/jre/lib/desktop/applications/sun-javaws.desktop
 %%T%%/jre/lib/desktop/applications/sun_java.desktop
