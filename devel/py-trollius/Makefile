@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trollius
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}futures>0:${PORTSDIR}/devel/py-futures
 
 do-test:
 	@cd ${WRKSRC} && \
-	${PYTHON_CMD} runtests.py
+	${PYTHON_CMD} runtests.py && \
+	${PYTHON_CMD} run_aiotest.py
 
 .include <bsd.port.post.mk>
