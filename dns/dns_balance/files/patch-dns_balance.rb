@@ -1,5 +1,11 @@
---- dns_balance.rb.orig	Sat Jun 11 02:23:56 2005
-+++ dns_balance.rb	Tue Aug  8 23:51:31 2006
+--- dns_balance.rb.orig	2005-06-10 22:23:56 UTC
++++ dns_balance.rb
+@@ -1,4 +1,4 @@
+-#!/usr/bin/ruby
++#!/usr/local/bin/ruby22
+ #
+ # DNS Balance --- 動的負荷分散を行なう DNS サーバ
+ #
 @@ -7,14 +7,7 @@
  # $Id: dns_balance.rb,v 1.25 2003/06/13 22:07:27 elca Exp $
  
@@ -16,7 +22,7 @@
  $LOAD_PATH.freeze
  
  require 'socket'
-@@ -204,6 +197,14 @@
+@@ -204,6 +197,14 @@ OptionParser::new {
    opt.on("--as", "Enable AS namespace") {
      OPT["as"] = true
    }
@@ -31,7 +37,7 @@
    opt.on_tail("-h", "--help", "Show this help message and exit") {
      STDERR.printf("%s", opt.to_s)
      exit(111)
-@@ -212,10 +213,42 @@
+@@ -212,10 +213,42 @@ OptionParser::new {
  }
  OPT.freeze
  
@@ -77,7 +83,7 @@
  ML.log("start")
  
  
-@@ -224,7 +257,7 @@
+@@ -224,7 +257,7 @@ ML.log("start")
  #
  Thread::start {
    loop {
@@ -86,7 +92,7 @@
        begin
  	load("addr")
  
-@@ -234,7 +267,7 @@
+@@ -234,7 +267,7 @@ Thread::start {
        end
      end
  
