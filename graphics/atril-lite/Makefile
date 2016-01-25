@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-lite
 
 COMMENT=	MATE multi-format document viewer

@@ -3525,6 +3525,7 @@ share/themes/BlackMATE/gtk-3.0/assets/pane-separator-grip-hover.svg
 share/themes/BlackMATE/gtk-3.0/assets/pane-separator-grip-vertical-hover.svg
 share/themes/BlackMATE/gtk-3.0/assets/pane-separator-grip-vertical.svg
 share/themes/BlackMATE/gtk-3.0/assets/pane-separator-grip.svg
+share/themes/BlackMATE/gtk-3.0/assets/panel-grid.svg
 share/themes/BlackMATE/gtk-3.0/assets/primary-toolbar-button-active-border-dark.svg
 share/themes/BlackMATE/gtk-3.0/assets/primary-toolbar-raised-button-border-dark.svg
 share/themes/BlackMATE/gtk-3.0/assets/progressbar-border-dark.svg
@@ -3673,6 +3674,7 @@ share/themes/Blue-Submarine/cinnamon/switch-on.png
 share/themes/Blue-Submarine/cinnamon/thumbnail.png
 share/themes/Blue-Submarine/cinnamon/ws-switch-arrow-down.svg
 share/themes/Blue-Submarine/cinnamon/ws-switch-arrow-up.svg
+share/themes/Blue-Submarine/emerald/blue-submarine.emerald
 share/themes/Blue-Submarine/gtk-2.0/apps/Handles/handle-caja.png
 share/themes/Blue-Submarine/gtk-2.0/apps/Handles/resize-grip.png
 share/themes/Blue-Submarine/gtk-2.0/apps/Panel/arrow-blank.png
@@ -3842,6 +3844,8 @@ share/themes/BlueMenta/cinnamon/switch-on.png
 share/themes/BlueMenta/cinnamon/thumbnail.png
 share/themes/BlueMenta/cinnamon/ws-switch-arrow-down.svg
 share/themes/BlueMenta/cinnamon/ws-switch-arrow-up.svg
+share/themes/BlueMenta/emerald/Menta.emerald
+share/themes/BlueMenta/emerald/README
 share/themes/BlueMenta/gtk-2.0/apps/Caja/breadcrumb_active.png
 share/themes/BlueMenta/gtk-2.0/apps/Caja/breadcrumb_normal.png
 share/themes/BlueMenta/gtk-2.0/apps/Caja/breadcrumb_prelight.png
@@ -4093,6 +4097,7 @@ share/themes/ContrastHigh/gtk-2.0/gtkrc
 share/themes/ContrastHigh/gtk-3.0/gtk-widgets.css
 share/themes/ContrastHigh/gtk-3.0/gtk.css
 share/themes/ContrastHigh/gtk-3.0/mate-applications.css
+share/themes/ContrastHigh/gtk-3.0/other-applications.css
 share/themes/ContrastHigh/gtk-3.0/resize-grip.svg
 share/themes/ContrastHigh/gtk-3.0/settings.ini
 share/themes/ContrastHigh/index.theme
@@ -4230,6 +4235,7 @@ share/themes/ContrastHighInverse/gtk-2.0/gtkrc
 share/themes/ContrastHighInverse/gtk-3.0/gtk-widgets.css
 share/themes/ContrastHighInverse/gtk-3.0/gtk.css
 share/themes/ContrastHighInverse/gtk-3.0/mate-applications.css
+share/themes/ContrastHighInverse/gtk-3.0/other-applications.css
 share/themes/ContrastHighInverse/gtk-3.0/resize-grip.svg
 share/themes/ContrastHighInverse/gtk-3.0/settings.ini
 share/themes/ContrastHighInverse/index.theme
@@ -4394,6 +4400,7 @@ share/themes/Green-Submarine/cinnamon/switch-on.png
 share/themes/Green-Submarine/cinnamon/thumbnail.png
 share/themes/Green-Submarine/cinnamon/ws-switch-arrow-down.svg
 share/themes/Green-Submarine/cinnamon/ws-switch-arrow-up.svg
+share/themes/Green-Submarine/emerald/green-submarine.emerald
 share/themes/Green-Submarine/gtk-2.0/apps/Handles/handle-caja.png
 share/themes/Green-Submarine/gtk-2.0/apps/Handles/resize-grip.png
 share/themes/Green-Submarine/gtk-2.0/apps/Panel/arrow-blank.png
@@ -4558,6 +4565,7 @@ share/themes/GreenLaguna/gtk-3.0/assets/pane-separator-grip-hover.svg
 share/themes/GreenLaguna/gtk-3.0/assets/pane-separator-grip-vertical-hover.svg
 share/themes/GreenLaguna/gtk-3.0/assets/pane-separator-grip-vertical.svg
 share/themes/GreenLaguna/gtk-3.0/assets/pane-separator-grip.svg
+share/themes/GreenLaguna/gtk-3.0/assets/panel-grid.svg
 share/themes/GreenLaguna/gtk-3.0/assets/radio-menuitem-checked-insensitive.svg
 share/themes/GreenLaguna/gtk-3.0/assets/radio-menuitem-checked-prelight.svg
 share/themes/GreenLaguna/gtk-3.0/assets/radio-menuitem-checked.svg
@@ -4688,6 +4696,8 @@ share/themes/Menta/cinnamon/switch-on.png
 share/themes/Menta/cinnamon/thumbnail.png
 share/themes/Menta/cinnamon/ws-switch-arrow-down.svg
 share/themes/Menta/cinnamon/ws-switch-arrow-up.svg
+share/themes/Menta/emerald/Menta.emerald
+share/themes/Menta/emerald/README
 share/themes/Menta/gtk-2.0/apps/Caja/breadcrumb_active.png
 share/themes/Menta/gtk-2.0/apps/Caja/breadcrumb_normal.png
 share/themes/Menta/gtk-2.0/apps/Caja/breadcrumb_prelight.png

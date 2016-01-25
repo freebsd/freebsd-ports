@@ -5,6 +5,7 @@ include/libmatekbd/matekbd-keyboard-config.h
 include/libmatekbd/matekbd-keyboard-drawing.h
 include/libmatekbd/matekbd-status.h
 include/libmatekbd/matekbd-util.h
+lib/girepository-1.0/Matekbd-1.0.typelib
 lib/libmatekbd.a
 lib/libmatekbd.so
 lib/libmatekbd.so.4
@@ -16,6 +17,7 @@ lib/libmatekbdui.so.4.2.0
 libdata/pkgconfig/libmatekbd.pc
 libdata/pkgconfig/libmatekbdui.pc
 share/MateConf/gsettings/matekbd.convert
+share/gir-1.0/Matekbd-1.0.gir
 %%DATADIR%%/ui/show-layout.ui
 share/locale/am/LC_MESSAGES/libmatekbd.mo
 share/locale/ar/LC_MESSAGES/libmatekbd.mo
@@ -51,6 +53,7 @@ share/locale/he/LC_MESSAGES/libmatekbd.mo
 share/locale/hi/LC_MESSAGES/libmatekbd.mo
 share/locale/hr/LC_MESSAGES/libmatekbd.mo
 share/locale/hu/LC_MESSAGES/libmatekbd.mo
+share/locale/hy/LC_MESSAGES/libmatekbd.mo
 share/locale/id/LC_MESSAGES/libmatekbd.mo
 share/locale/it/LC_MESSAGES/libmatekbd.mo
 share/locale/ja/LC_MESSAGES/libmatekbd.mo
