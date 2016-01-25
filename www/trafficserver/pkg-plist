@@ -1,4 +1,4 @@
-@unexec if [ ! -s %D/%%ETCDIR%%/proxy.pac ]; then rm -f %D/%%ETCDIR%%/proxy.pac; fi
+@postunexec if [ ! -s %D/%%ETCDIR%%/proxy.pac ]; then rm -f %D/%%ETCDIR%%/proxy.pac; fi
 bin/traffic_cop
 bin/traffic_crashlog
 bin/traffic_ctl
@@ -13,7 +13,6 @@ bin/traffic_top
 bin/traffic_via
 bin/trafficserver
 bin/tspush
-bin/tstop
 bin/tsxs
 %%ETCDIR%%/trafficserver-release
 @owner %%WWWOWN%%
@@ -56,7 +55,6 @@ bin/tsxs
 @sample %%ETCDIR%%/logs_xml.config.sample
 @sample %%ETCDIR%%/parent.config.sample
 @sample %%ETCDIR%%/plugin.config.sample
-@sample %%ETCDIR%%/prefetch.config.sample
 @sample %%ETCDIR%%/records.config.sample
 @sample %%ETCDIR%%/remap.config.sample
 @sample %%ETCDIR%%/socks.config.sample
@@ -64,7 +62,6 @@ bin/tsxs
 @sample %%ETCDIR%%/ssl_multicert.config.sample
 @sample %%ETCDIR%%/stats.config.xml.sample
 @sample %%ETCDIR%%/storage.config.sample
-@sample %%ETCDIR%%/update.config.sample
 @sample %%ETCDIR%%/vaddrs.config.sample
 @sample %%ETCDIR%%/volume.config.sample
 include/atscppapi/Async.h
@@ -101,16 +98,16 @@ include/ts/mgmtapi.h
 include/ts/remap.h
 include/ts/ts.h
 lib/libatscppapi.so
-lib/libatscppapi.so.5
+lib/libatscppapi.so.6
 lib/libatscppapi.so.%%PORTVERSION%%
 lib/libtsconfig.so
-lib/libtsconfig.so.5
+lib/libtsconfig.so.6
 lib/libtsconfig.so.%%PORTVERSION%%
 lib/libtsmgmt.so
-lib/libtsmgmt.so.5
+lib/libtsmgmt.so.6
 lib/libtsmgmt.so.%%PORTVERSION%%
 lib/libtsutil.so
-lib/libtsutil.so.5
+lib/libtsutil.so.6
 lib/libtsutil.so.%%PORTVERSION%%
 libdata/pkgconfig/trafficserver.pc
 libexec/trafficserver/AsyncHttpFetch.so
@@ -142,29 +139,6 @@ libexec/trafficserver/libloader.so
 libexec/trafficserver/regex_remap.so
 libexec/trafficserver/stats_over_http.so
 libexec/trafficserver/tcpinfo.so
-%%CACHEURL%%libexec/trafficserver/authproxy.so
-%%CACHEURL%%libexec/trafficserver/background_fetch.so
-%%CACHEURL%%libexec/trafficserver/balancer.so
-%%CACHEURL%%libexec/trafficserver/buffer_upload.so
-%%CACHEURL%%libexec/trafficserver/channel_stats.so
-%%CACHEURL%%libexec/trafficserver/collapsed_connection.so
-%%CACHEURL%%libexec/trafficserver/combo_handler.so
-%%CACHEURL%%libexec/trafficserver/custom_redirect.so
-%%CACHEURL%%libexec/trafficserver/epic.so
-%%CACHEURL%%libexec/trafficserver/escalate.so
-%%CACHEURL%%libexec/trafficserver/esi.so
-%%CACHEURL%%libexec/trafficserver/generator.so
-%%CACHEURL%%libexec/trafficserver/header_normalize.so
-%%CACHEURL%%libexec/trafficserver/hipes.so
-%%CACHEURL%%libexec/trafficserver/metalink.so
-%%CACHEURL%%libexec/trafficserver/regex_revalidate.so
-%%CACHEURL%%libexec/trafficserver/s3_auth.so
-%%CACHEURL%%libexec/trafficserver/ssl_cert_loader.so
-%%CACHEURL%%libexec/trafficserver/sslheaders.so
-%%CACHEURL%%libexec/trafficserver/stale_while_revalidate.so
-%%CACHEURL%%libexec/trafficserver/tslua.so
-%%CACHEURL%%libexec/trafficserver/url_sig.so
-%%CACHEURL%%libexec/trafficserver/xdebug.so
 %%SITE_PERL%%/Apache/TS.pm
 %%SITE_PERL%%/Apache/TS.pm.in
 %%SITE_PERL%%/Apache/TS/AdminClient.pm

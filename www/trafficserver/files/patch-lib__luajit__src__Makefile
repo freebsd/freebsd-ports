@@ -1,4 +1,4 @@
---- lib/luajit/src/Makefile.orig	2015-06-30 04:11:56 UTC
+--- lib/luajit/src/Makefile.orig	2015-09-08 17:43:45 UTC
 +++ lib/luajit/src/Makefile
 @@ -25,7 +25,7 @@ NODOTABIVER= 51
  # with "make clean", followed by "make" if you change any options.
@@ -9,12 +9,3 @@
  #
  # Use this if you want to force a 32 bit build on a 64 bit multilib OS.
  #CC= gcc -m32
-@@ -313,7 +313,7 @@ ifeq (iOS,$(TARGET_SYS))
-   TARGET_DYNXLDOPTS=
-   TARGET_XSHLDFLAGS+= -install_name $(TARGET_DYLIBPATH) -compatibility_version $(MAJVER).$(MINVER) -current_version $(MAJVER).$(MINVER).$(RELVER)
- else
--  ifneq (,$(findstring stack-protector,$(shell $(TARGET_CC) -dumpspecs)))
-+  ifneq (,$(findstring stack-protector,$(shell $(TARGET_CC))))
-     TARGET_XCFLAGS+= -fno-stack-protector
-   endif
-   ifneq (SunOS,$(TARGET_SYS))
