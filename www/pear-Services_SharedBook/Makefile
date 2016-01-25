@@ -13,4 +13,6 @@ RUN_DEPENDS=	${PEARDIR}/HTTP/Client.php:${PORTSDIR}/www/pear-HTTP_Client
 
 USES=	pear
 
+BROKEN=		checksum mismatch
+
 .include <bsd.port.mk>
