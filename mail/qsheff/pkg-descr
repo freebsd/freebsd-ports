@@ -1,11 +1,16 @@
-A qmail-queue replacement to filter mail traffic and more.
-It supports:
-	* Antivirus executing
-	* body filtering
-	* subject filtering
-	* attachment blocking
-	* quarantine
-	* white/black list
-	* single line logging for qmail and many features.
+qSheff is a wrapper for the qmail queue that scans email for viruses and
+spam.  Infected messages are rejected before they reach the queue, so the
+server doesn't perform any job for them.  After checking the message, it
+will wake the qmail queue.  Some of the supported features:
 
-WWW: http://www.enderunix.org/qsheff
+  - Antivirus executing (ClamAV)
+  - Header and body filtering
+  - Subject filtering
+  - Attachment blocking
+  - Quarantine support
+  - White/black lists
+  - Single line logging for qmail
+  - Basic DoS attack prevention
+  - And much more...
+
+WWW: http://www.enderunix.org/qsheff/
