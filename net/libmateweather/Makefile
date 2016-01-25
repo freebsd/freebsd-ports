@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmateweather
-PORTVERSION=	1.10.0
+PORTVERSION=	1.12.1
 CATEGORIES=	net mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -20,6 +20,7 @@ USE_GNOME=	gtk20 libxml2 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
+		--with-gtk=2.0 \
 		--with-html-dir=${PREFIX}/share/doc
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

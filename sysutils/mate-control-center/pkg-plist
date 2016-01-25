@@ -12,6 +12,7 @@ bin/mate-network-properties
 bin/mate-thumbnail-font
 bin/mate-typing-monitor
 bin/mate-window-properties
+etc/xdg/menus/mate-preferences-categories.menu
 etc/xdg/menus/matecc.menu
 include/libmate-slab/app-resizer.h
 include/libmate-slab/app-shell.h

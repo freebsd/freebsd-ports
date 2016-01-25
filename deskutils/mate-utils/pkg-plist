@@ -531,8 +531,14 @@ share/help/zh_TW/mate-disk-usage-analyzer/figures/baobab_treemaps.png
 share/help/zh_TW/mate-disk-usage-analyzer/figures/baobab_window.png
 share/help/zh_TW/mate-disk-usage-analyzer/index.docbook
 share/help/zh_TW/mate-disk-usage-analyzer/legal.xml
+share/icons/hicolor/16x16/apps/mate-system-log.png
+share/icons/hicolor/22x22/apps/mate-system-log.png
 share/icons/hicolor/24x24/apps/mate-disk-usage-analyzer.png
+share/icons/hicolor/256x256/apps/mate-system-log.png
+share/icons/hicolor/32x32/apps/mate-system-log.png
+share/icons/hicolor/48x48/apps/mate-system-log.png
 share/icons/hicolor/scalable/apps/mate-disk-usage-analyzer.svg
+share/icons/hicolor/scalable/apps/mate-system-log-symbolic.svg
 share/locale/af/LC_MESSAGES/mate-utils.mo
 share/locale/am/LC_MESSAGES/mate-utils.mo
 share/locale/ar/LC_MESSAGES/mate-utils.mo

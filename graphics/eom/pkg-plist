@@ -100,6 +100,7 @@ share/applications/eom.desktop
 %%DATADIR%%/eom-preferences-dialog.ui
 %%DATADIR%%/eom-toolbar.xml
 %%DATADIR%%/eom-ui.xml
+%%DATADIR%%/eom.css
 %%DATADIR%%/gtkrc
 %%DATADIR%%/icons/hicolor/16x16/actions/eom-image-collection.png
 %%DATADIR%%/icons/hicolor/16x16/actions/eom-plugin.png
@@ -289,6 +290,7 @@ share/locale/he/LC_MESSAGES/eom.mo
 share/locale/hi/LC_MESSAGES/eom.mo
 share/locale/hr/LC_MESSAGES/eom.mo
 share/locale/hu/LC_MESSAGES/eom.mo
+share/locale/hy/LC_MESSAGES/eom.mo
 share/locale/id/LC_MESSAGES/eom.mo
 share/locale/is/LC_MESSAGES/eom.mo
 share/locale/it/LC_MESSAGES/eom.mo
@@ -348,4 +350,3 @@ share/locale/zh_CN/LC_MESSAGES/eom.mo
 share/locale/zh_HK/LC_MESSAGES/eom.mo
 share/locale/zh_TW/LC_MESSAGES/eom.mo
 share/locale/zu/LC_MESSAGES/eom.mo
-@dir lib/eom/plugins
