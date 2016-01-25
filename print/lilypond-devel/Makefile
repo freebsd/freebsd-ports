@@ -31,7 +31,6 @@ LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile \
 		libgmp.so:${PORTSDIR}/math/gmp \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-BROKEN_FreeBSD_8=	does not build on FreeBSD < 10.x
 BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
 
 INFO=		internals \
