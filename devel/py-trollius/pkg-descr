@@ -2,4 +2,4 @@ Trollius provides infrastructure for writing single-threaded concurrent code
 using coroutines, multiplexing I/O access over sockets and other resources,
 running network clients and servers, and other related primitives.
 
-WWW: https://bitbucket.org/enovance/trollius/
+WWW: https://github.com/haypo/trollius
