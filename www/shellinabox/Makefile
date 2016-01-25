@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	shellinabox
-PORTVERSION=	2.14
-PORTREVISION=	6
+PORTVERSION=	2.19
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	olivier@cochard.me
 COMMENT=	Publish command line shell through AJAX interface
 
 LICENSE=	GPLv2
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	shellinabox
+
 OPTIONS_DEFINE=	CORES NOLOGIN
 CORES_DESC=	Patch shellinaboxd to enable core dumps
 NOLOGIN_DESC=	Login through ssh (not through login)
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	\
-		--prefix=${PREFIX} \
-		--infodir=${PREFIX}/${INFO_PATH} \
-		--mandir=${MANPREFIX}/man
+USES=	autoreconf libtool
+GNU_CONFIGURE=	yes
 
 USE_RC_SUBR=	shellinaboxd
 USERS?=		shellinabox
