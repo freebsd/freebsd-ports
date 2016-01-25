@@ -25,8 +25,6 @@ PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \
 		sample_cfg_budgetone.txt sample_cfg_x-lite.txt
 PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 
-BROKEN_FreeBSD_8=	Problem with libosip2 during configure
-
 post-extract:
 .for docs in ${PORTDOCS2}
 	${CP} ${WRKSRC}/doc/${docs} ${WRKSRC}
