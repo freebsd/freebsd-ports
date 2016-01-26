@@ -24,18 +24,12 @@
 lib/libnetxms.so
 lib/libnetxms.so.1
 lib/libnetxms.so.1.0.0
-lib/libnxexpat.so
-lib/libnxexpat.so.1
-lib/libnxexpat.so.1.0.0
-%%CLIENT%%lib/libnxtre.so
-%%CLIENT%%lib/libnxtre.so.5
 %%NXCP%%lib/libnxsqlite.so
 %%NXCP%%lib/libnxsqlite.so.1
 %%AGENT%%lib/libnxsqlite.so.1.0.0
 %%NXCP%%lib/libnxdb.so
 %%NXCP%%lib/libnxdb.so.1
 %%AGENT%%lib/libnxdb.so.1.0.0
-%%AGENT%%lib/libnxtre.so.5.0.0
 %%AGENT%%lib/netxms/devemu.nsm
 %%NXCP%%lib/libappagent.so
 %%NXCP%%lib/libappagent.so.1
@@ -46,9 +40,7 @@ lib/libnxexpat.so.1.0.0
 %%SERVER%%lib/libnsm_filemgr.so
 %%NXCP%%lib/libnsm_portcheck.so
 %%AGENT%%lib/libnsm_devemu.so
-%%AGENT%%lib/libnxjansson.so
-%%AGENT%%lib/libnxjansson.so.4
-%%AGENT%%lib/libnxjansson.so.4.6.0
+%%NXCP%%lib/libnsm_netsvc.so
 %%NXCP%%lib/libnxsd.so
 %%NXCP%%lib/libnxsd.so.1
 %%AGENT%%lib/libnxsd.so.1.0.0
@@ -92,6 +84,9 @@ lib/libnxexpat.so.1.0.0
 %%SERVER%%lib/libnxsms_nxagent.so
 %%SERVER%%lib/libnxsms_nxagent.so.1
 %%SERVER%%lib/libnxsms_nxagent.so.1.0.0
+%%SERVER%%lib/libnxsms_websms.so
+%%SERVER%%lib/libnxsms_websms.so.1
+%%SERVER%%lib/libnxsms_websms.so.1.0.0
 %%SERVER%%lib/libnxsnmp.so
 %%SERVER%%lib/libnxsnmp.so.1
 %%SERVER%%lib/libnxsnmp.so.1.0.0
@@ -101,7 +96,9 @@ lib/libnxexpat.so.1.0.0
 %%NXCP%%lib/netxms/dbquery.nsm
 %%NXCP%%lib/netxms/ecs.nsm
 %%NXCP%%lib/netxms/freebsd.nsm
+%%SERVER%%lib/netxms/jira.hdlink
 %%NXCP%%lib/netxms/logwatch.nsm
+%%NXCP%%lib/netxms/netsvc.nsm
 %%NXCP%%lib/netxms/ping.nsm
 %%NXCP%%lib/netxms/portcheck.nsm
 %%NXCP%%lib/netxms/sms.nsm
@@ -595,3 +592,5 @@ lib/libnxexpat.so.1.0.0
 %%SERVER%%%%DATADIR%%/sql/dbschema_oracle.sql
 %%SERVER%%%%DATADIR%%/sql/dbschema_pgsql.sql
 %%SERVER%%%%DATADIR%%/sql/dbschema_sqlite.sql
+@owner
+@group

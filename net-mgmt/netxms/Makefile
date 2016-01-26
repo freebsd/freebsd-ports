@@ -3,7 +3,7 @@
 
 PORTNAME=	netxms
 PORTVERSION=	1.2.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/ \
 		http://www.netxms.org/download/archive/
@@ -14,18 +14,23 @@ COMMENT=	Network monitoring system
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libjansson.so:${PORTSDIR}/devel/jansson \
+		libtre.so:${PORTSDIR}/textproc/libtre
+
 PORTSCOUT=	limit:^1\.
 
 OPTIONS_DEFINE=	SERVER CLIENT AGENT
 OPTIONS_DEFAULT=	CLIENT AGENT
-SERVER_ENABLED_MODULES=	MYSQL
-SERVER_DISABLED_MODULES=	PGSQL SQLITE ODBC
 OPTIONS_SINGLE=	SERVER
-OPTIONS_SINGLE_SERVER=	${SERVER_ENABLED_MODULES} ${SERVER_DISABLED_MODULES}
+OPTIONS_SINGLE_SERVER=	MYSQL PGSQL SQLITE ODBC
 OPTIONS_SUB=	yes
+
 SERVER_DESC=	Install NetXMS server & agent
 CLIENT_DESC=	Install NetXMS client
 AGENT_DESC=	Install NetXMS agent
+
 CLIENT_CONFIGURE_ON=	--with-client
 AGENT_CONFIGURE_ON=	--with-agent
 SERVER_CONFIGURE_ON=	--with-server
@@ -41,9 +46,7 @@ ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 USE_OPENSSL=	yes
 USES=		gmake iconv libtool perl5
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--with-internal-libjansson \
-		--with-internal-libtre
+CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
