@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v3.4/
 PKGNAMESUFFIX=	-gui
