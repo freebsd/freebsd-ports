@@ -6,6 +6,7 @@ aarch64-none-elf/bin/nm
 aarch64-none-elf/bin/objcopy
 aarch64-none-elf/bin/objdump
 aarch64-none-elf/bin/ranlib
+aarch64-none-elf/bin/readelf
 aarch64-none-elf/bin/size
 aarch64-none-elf/bin/strip
 aarch64-none-elf/lib/ldscripts/aarch64elf.x
