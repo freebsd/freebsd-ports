@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2e8cdd36-c3cc-11e5-b5fe-002590263bf5">
+    <topic>sudo -- potential privilege escalation via symlink misconfiguration</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><lt>1.8.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5602">
+	  <p>sudoedit in Sudo before 1.8.15 allows local users to gain
+	    privileges via a symlink attack on a file whose full path is defined
+	    using multiple wildcards in /etc/sudoers, as demonstrated by
+	    "/home/*/*/file.txt."</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5602</cvename>
+      <freebsdpr>ports/206590</freebsdpr>
+      <url>https://www.exploit-db.com/exploits/37710/</url>
+      <url>https://bugzilla.sudo.ws/show_bug.cgi?id=707</url>
+      <url>http://www.sudo.ws/stable.html#1.8.15</url>
+    </references>
+    <dates>
+      <discovery>2015-11-17</discovery>
+      <entry>2016-01-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="99d3a8a5-c13c-11e5-96d6-14dae9d210b8">
     <topic>imlib2 -- denial of service vulnerabilities</topic>
     <affects>
