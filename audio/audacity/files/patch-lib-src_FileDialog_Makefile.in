@@ -1,0 +1,11 @@
+--- lib-src/FileDialog/Makefile.in	2016-01-24 02:11:11.530847000 -0800
++++ lib-src/FileDialog/Makefile.in	2016-01-24 02:03:53.243242000 -0800
+@@ -212,7 +212,7 @@
+ am__v_OBJCXX_0 = @echo "  OBJCXX  " $@;
+ am__v_OBJCXX_1 = 
+ OBJCXXLD = $(OBJCXX)
+-OBJCXXLINK = $(LIBTOOL) $(AM_V_lt) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
++OBJCXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(OBJCXXLD) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ AM_V_OBJCXXLD = $(am__v_OBJCXXLD_@AM_V@)
