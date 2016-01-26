@@ -240,6 +240,7 @@ munin:*:842:
 dahdi:*:843:asterisk
 subsonic:*:844:
 sogod:*:846:
+domoticz:*:847:
 fossy:*:901:www
 scanlogd:*:902:
 _ocserv:*:903:
