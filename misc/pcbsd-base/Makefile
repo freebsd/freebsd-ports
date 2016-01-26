@@ -21,7 +21,7 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		${LOCALBASE}/share/appcafe/dispatcher:${PORTSDIR}/sysutils/pcbsd-appweb \
 		git:${PORTSDIR}/devel/git \
 		beadm:${PORTSDIR}/sysutils/beadm \
-		samba41>=0:${PORTSDIR}/net/samba41 \
+		samba42>=0:${PORTSDIR}/net/samba42 \
 		xorg>=0:${PORTSDIR}/x11/xorg \
 		xf86-input-synaptics>=0:${PORTSDIR}/x11-drivers/xf86-input-synaptics \
 		xf86-video-intel>=0:${PORTSDIR}/x11-drivers/xf86-video-intel \
