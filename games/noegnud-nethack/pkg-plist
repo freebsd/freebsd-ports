@@ -9,8 +9,6 @@ share/noegnud-0.8.0/nethack-3.4.3/noegnud-0.8.0-nethack-3.4.3
 share/noegnud-0.8.0/nethack-3.4.3/perm
 share/noegnud-0.8.0/nethack-3.4.3/record
 share/noegnud-0.8.0/nethack-3.4.3/recover
-@exec chown root:wheel %D/share/noegnud-0.8.0
-@exec chmod 775 %D/share/noegnud-0.8.0/nethack-3.4.3
-@dirrmtry share/noegnud-0.8.0/nethack-3.4.3/save
-@dirrmtry share/noegnud-0.8.0/nethack-3.4.3
-@dirrmtry share/noegnud-0.8.0
+@dir share/noegnud-0.8.0/nethack-3.4.3/save
+@dir(,,775) share/noegnud-0.8.0/nethack-3.4.3
+@dir(root,wheel,) share/noegnud-0.8.0
