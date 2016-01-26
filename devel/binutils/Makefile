@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.25.1
+PORTVERSION=	2.26
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -77,8 +77,9 @@ post-install:
 	${REINPLACE_CMD} '/#include "ansidecl.h"/d' ${STAGEDIR}${PREFIX}/include/bfd.h
 .else
 .if ${PKGNAMEPREFIX:S/-$//} != ${BUTARGET}
-	${RM} -rf ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}
+	if [ -d ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//} ]; then rm -rf ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//} ; fi
 .endif
+	@if [ -d ${STAGEDIR}${PREFIX}/${INFO_PATH} ] ; then rm -rf ${STAGEDIR}${PREFIX}/${INFO_PATH}; fi
 	${LN} -fs ../../bin/${BUTARGET}-size ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/size
 .endif
 
