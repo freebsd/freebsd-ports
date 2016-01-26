@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 
+DEPRECATED=	Not used any more
+EXPIRATION_DATE=2016-03-26
+
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
