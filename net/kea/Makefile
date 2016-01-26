@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kea
-PORTVERSION=	0.9.2
+PORTVERSION=	1.0.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	ISC
 MASTER_SITE_SUBDIR=	kea/${PORTVERSION}
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	kea/${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Alternative DHCP implementation by ISC
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	MPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblog4cplus.so:${PORTSDIR}/devel/log4cplus \
@@ -24,11 +24,12 @@ CONFIGURE_ARGS=	--disable-silent-rules \
 		--with-openssl=${OPENSSLBASE} \
 		--with-log4cplus=${LOCALBASE} \
 		--with-boost-include=${LOCALBASE}/include \
+		--with-boost-lib-dir=${LOCALBASE}/lib \
 		--without-werror
 INSTALL_TARGET=	install-strip
 PORTDOCS=	AUTHORS COPYING ChangeLog README \
 		kea-guide.css kea-guide.html kea-guide.txt \
-		kea-messages.html \
+		kea-messages.html kea-logo-100x70.png \
 		examples
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL

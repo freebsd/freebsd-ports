@@ -1,6 +1,6 @@
---- src/lib/dhcpsrv/daemon.cc.orig	2015-07-23 16:45:11 UTC
+--- src/lib/dhcpsrv/daemon.cc.orig	2015-12-28 12:18:45 UTC
 +++ src/lib/dhcpsrv/daemon.cc
-@@ -36,7 +36,7 @@ namespace dhcp {
+@@ -28,7 +28,7 @@ namespace dhcp {
  
  Daemon::Daemon()
      : signal_set_(), signal_handler_(), config_file_(""), proc_name_(""),
