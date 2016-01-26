@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tanks-of-freedom
-PORTVERSION=	0.4.0.2
+PORTVERSION=	0.4.0.3
 DISTVERSIONSUFFIX=-beta
 CATEGORIES=	games
 
