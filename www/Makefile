@@ -121,6 +121,7 @@
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
     SUBDIR += dokuwiki
+    SUBDIR += domoticz
     SUBDIR += dotclear
     SUBDIR += dotproject
     SUBDIR += download-gemist

@@ -1,0 +1,43 @@
+#! /bin/sh
+#
+#
+
+# PROVIDE: domoticz
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable domoticz:
+#
+#domoticz_enable (bool): set to "YES" to start domotics at boot
+#domoticz_dbdir (str):   Default to "/var/db/domoticz"
+#                        domoticz database directory
+#domoticz_user (str):    Default to www, user for starting domoticz
+#domoticz_group (str):   Default to www, group for stating domoticz
+#domoticz_pidfile (str): Custum PID file path and name
+#                        Default to "/var/run/domoticz/${hostname}.pid".
+#domoticz_args (str):    Custom additional arguments to be passed
+#                        Default to "-syslog -daemon -wwwbind 0.0.0.0"
+
+. /etc/rc.subr
+
+name="domoticz"
+rcvar="domoticz_enable"
+
+load_rc_config $name
+
+: ${domoticz_dbdir:="/var/db/domoticz"}
+: ${domoticz_user:=domoticz}
+: ${domoticz_group:=domoticz}
+: ${domoticz_enable:=NO}
+: ${domoticz_directory:=%%PREFIX%%/domoticz/domoticz}
+: ${domoticz_args:="-syslog -daemon -wwwbind 0.0.0.0"}
+
+#: ${domoticz_args:="-syslog -dbase %%PREFIX%%/domoticz/db/domoticz.db -daemon -wwwbind 0.0.0.0 -p /var/run/domoticz.pid"}
+
+pidfile=${domoticz_pidfile:-"/var/run/domoticz/${hostname}.pid"}
+
+command="%%PREFIX%%/domoticz/domoticz"
+command_args="-dbase ${domoticz_dbdir}/domoticz.db -pidfile ${pidfile} ${domoticz_args}"
+
+run_rc_command "$1"
