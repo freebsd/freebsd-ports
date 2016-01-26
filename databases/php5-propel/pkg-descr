@@ -1,8 +1,0 @@
-Propel is a full-service object persistence and query toolkit for PHP.
-
-It allows you to access your database using a set of objects,
-providing a simple API for storing and querying data.  You might
-already have heard of this technique, but under a different name, like
-Data Access Objects (DAO) or Object Relational Mapping (ORM).
-
-WWW: http://propel.phpdb.org/

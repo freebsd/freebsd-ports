@@ -1531,7 +1531,6 @@
     SUBDIR += sgrep2
     SUBDIR += sigil
     SUBDIR += silvercity
-    SUBDIR += simplehtmldom
     SUBDIR += simplexml
     SUBDIR += sk-aspell
     SUBDIR += sk-hunspell

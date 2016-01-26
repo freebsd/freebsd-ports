@@ -228,7 +228,6 @@
     SUBDIR += mysqltcl
     SUBDIR += mysqltuner
     SUBDIR += mytop
-    SUBDIR += mywwwatcher
     SUBDIR += nagios-check_mongodb
     SUBDIR += nagios-check_postgres_replication
     SUBDIR += nagios-check_redis
@@ -578,7 +577,6 @@
     SUBDIR += pgworksheet
     SUBDIR += php-adodb-ext
     SUBDIR += php-mdcached
-    SUBDIR += php5-creole
     SUBDIR += php5-dba
     SUBDIR += php5-interbase
     SUBDIR += php5-mssql
@@ -594,7 +592,6 @@
     SUBDIR += php5-pdo_pgsql
     SUBDIR += php5-pdo_sqlite
     SUBDIR += php5-pgsql
-    SUBDIR += php5-propel
     SUBDIR += php5-redis
     SUBDIR += php5-sqlite3
     SUBDIR += php5-sybase_ct
