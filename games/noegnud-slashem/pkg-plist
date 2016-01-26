@@ -181,8 +181,6 @@ share/noegnud-0.8.0/slashem-0.0.6E4F8/wizard2.lev
 share/noegnud-0.8.0/slashem-0.0.6E4F8/wizard3.lev
 share/noegnud-0.8.0/slashem-0.0.6E4F8/wizhelp
 share/noegnud-0.8.0/slashem-0.0.6E4F8/yeenoghu.lev
-@exec chown root:wheel %D/share/noegnud-0.8.0
-@exec chmod 775 %D/share/noegnud-0.8.0/slashem-0.0.6E4F8
-@dirrmtry share/noegnud-0.8.0/slashem-0.0.6E4F8/save
-@dirrmtry share/noegnud-0.8.0/slashem-0.0.6E4F8
-@dirrmtry share/noegnud-0.8.0
+@dir share/noegnud-0.8.0/slashem-0.0.6E4F8/save
+@dir(,,775) share/noegnud-0.8.0/slashem-0.0.6E4F8
+@dir(root,wheel,) share/noegnud-0.8.0
