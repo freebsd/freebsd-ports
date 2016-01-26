@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tome4
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0
 CATEGORIES=	games
 MASTER_SITES=	http://te4.org/dl/t-engine/ \
 		SF/lifanov-ports-distfiles/${PORTNAME}/:icons
@@ -13,7 +13,8 @@ EXTRACT_ONLY=	t-engine4-src-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Epic tactical turn-based roguelike adventure
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	premake4:${PORTSDIR}/devel/premake4
 LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
