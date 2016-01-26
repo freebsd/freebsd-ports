@@ -1,9 +1,0 @@
-*************************************************************************
-
-You can add the library path ( DEFAULT: %%DATADIR%% )
-to the "include_path=" directive in your php.ini file 
-( DEFAULT: %%PREFIX%%/etc/php.ini ), such as:
-
- include_path = ".:%%DATADIR%%"
-
-*************************************************************************

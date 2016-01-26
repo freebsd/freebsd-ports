@@ -767,7 +767,6 @@
     SUBDIR += php5-exif
     SUBDIR += php5-ffmpeg
     SUBDIR += php5-gd
-    SUBDIR += php5-swfed
     SUBDIR += php55-exif
     SUBDIR += php55-gd
     SUBDIR += php56-exif
