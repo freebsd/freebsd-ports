@@ -15,7 +15,6 @@ lib/elixir/lib/hex/ebin/Elixir.Hex.Parallel.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Registry.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.RemoteConverger.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Resolver.Backtracks.beam
-lib/elixir/lib/hex/ebin/Elixir.Hex.Resolver.Experimental.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Resolver.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.SCM.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Shell.beam
@@ -58,7 +57,6 @@ lib/elixir/lib/hex/lib/hex/registry.ex
 lib/elixir/lib/hex/lib/hex/remote_converger.ex
 lib/elixir/lib/hex/lib/hex/resolver.ex
 lib/elixir/lib/hex/lib/hex/resolver/backtracks.ex
-lib/elixir/lib/hex/lib/hex/resolver/experimental.ex
 lib/elixir/lib/hex/lib/hex/scm.ex
 lib/elixir/lib/hex/lib/hex/shell.ex
 lib/elixir/lib/hex/lib/hex/state.ex
