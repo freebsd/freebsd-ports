@@ -11,6 +11,11 @@
 # libvirtd_enable (bool):       Set to 'YES' to enable
 #                               Default: NO
 #
+# libvirtd_flags (str):         Custom additional arguments to be passed to libvirtd.
+#                               For example, to make it listen on TCP ports, set it
+#                               to "--listen".
+#                               Default: ""
+#
 
 . /etc/rc.subr
 
@@ -19,12 +24,13 @@ rcvar=libvirtd_enable
 
 load_rc_config $name
 
+: ${libvirtd_enable:="NO"}
+: ${libvirtd_flags:=""}
+
 command=%%PREFIX%%/sbin/libvirtd
 pidfile=/var/run/${name}.pid
 
 command_args="--daemon --pid-file=${pidfile}"
-
-: ${libvirtd_enable:="NO"}
 
 PATH="${PATH}:/usr/local/sbin:/usr/local/bin"
 
