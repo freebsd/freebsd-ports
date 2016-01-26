@@ -9,6 +9,3 @@ BU_PREFIX=	x86_64-${OPSYS:tl}
 FREEBSD_EXTENSION=	yes
 
 .include "${MASTERDIR}/Makefile"
-
-post-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/bin/gcov-tool
