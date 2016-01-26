@@ -123,8 +123,8 @@ share/icons/hicolor/scalable/apps/audacity.svg
 %%NLS%%share/locale/nl/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/oc/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/audacity.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/audacity.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/audacity.mo
@@ -137,7 +137,7 @@ share/icons/hicolor/scalable/apps/audacity.svg
 %%NLS%%share/locale/tr/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/audacity.mo
-%%NLS%%share/locale/zh/LC_MESSAGES/audacity.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/audacity.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacity.mo
 share/mime/packages/audacity.xml
 share/pixmaps/audacity.xpm
