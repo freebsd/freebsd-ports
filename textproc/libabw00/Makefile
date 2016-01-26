@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	00
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library providing ability to interpret Abiword documents
 
+DEPRECATED=	Not used any more
+EXPIRATION_DATE=2016-03-26
+
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
