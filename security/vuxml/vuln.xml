@@ -58,6 +58,46 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fb754341-c3e2-11e5-b5fe-002590263bf5">
+    <topic>wordpress -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>4.4.1,1</lt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<name>ja-wordpress</name>
+	<name>ru-wordpress</name>
+	<name>zh-wordpress-zh_CN</name>
+	<name>zh-wordpress-zh_TW</name>
+	<range><lt>4.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Aaron Jorbin reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>WordPress 4.4.1 is now available. This is a security release for
+	    all previous versions and we strongly encourage you to update your
+	    sites immediately.</p>
+	  <p>WordPress versions 4.4 and earlier are affected by a cross-site
+	    scripting vulnerability that could allow a site to be compromised.
+	    This was reported by Crtc4L.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1564</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2016/01/08/3</url>
+      <url>https://wordpress.org/news/2016/01/wordpress-4-4-1-security-and-maintenance-release/</url>
+    </references>
+    <dates>
+      <discovery>2016-01-06</discovery>
+      <entry>2016-01-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a763a0e7-c3d9-11e5-b5fe-002590263bf5">
     <topic>privoxy -- multiple vulnerabilities</topic>
     <affects>
