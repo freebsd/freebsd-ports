@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	00
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for import of reflowable e-book formats
 
+DEPRECATED=	Not used any more
+EXPIRATION_DATE=2016-03-26
+
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
