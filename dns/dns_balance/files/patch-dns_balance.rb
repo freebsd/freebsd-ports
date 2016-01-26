@@ -1,11 +1,5 @@
 --- dns_balance.rb.orig	2005-06-10 22:23:56 UTC
 +++ dns_balance.rb
-@@ -1,4 +1,4 @@
--#!/usr/bin/ruby
-+#!/usr/local/bin/ruby22
- #
- # DNS Balance --- 動的負荷分散を行なう DNS サーバ
- #
 @@ -7,14 +7,7 @@
  # $Id: dns_balance.rb,v 1.25 2003/06/13 22:07:27 elca Exp $
  
