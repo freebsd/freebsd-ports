@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lazarus
-PORTVERSION=	1.4.2
+PORTVERSION=	1.6RC2
 DISTVERSIONSUFFIX=	-0
-PORTREVISION?=	3
+PORTREVISION?=	0
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION:S/.0//} \
 		LOCAL/acm/freepascal
@@ -44,11 +44,7 @@ OPTIONS_DEFAULT=	GTK2 GDB
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "i386"
-LAZARUS_ARCH=	i386
-.elif ${ARCH} == "amd64"
-LAZARUS_ARCH=	x86_64
-.endif
+LAZARUS_ARCH=	${ARCH:S,amd64,x86_64,}
 
 BUILDNAME=	${LAZARUS_ARCH}-${OPSYS:tl}
 LCL_UNITS_DIR=	${LOCALBASE}/share/${PORTNAME}-${PORTVERSION}/lcl/units/${BUILDNAME}
@@ -84,7 +80,6 @@ LIB_DEPENDS+=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
 RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
-#OPT_EXTRA=	"-dUSE_QT_45"
 .endif
 
 post-extract:

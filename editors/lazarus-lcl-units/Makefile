@@ -1,7 +1,7 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	3
+PORTREVISION=	0
 PKGNAMESUFFIX=	-lcl-units
 
 COMMENT=	Lazarus components library units
