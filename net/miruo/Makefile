@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	miruo
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.6b
 CATEGORIES=	net
 
 MAINTAINER=	meta+ports@vmeta.jp
