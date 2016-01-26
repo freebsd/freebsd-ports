@@ -1,6 +1,6 @@
---- ./config.m4.orig	2011-12-30 17:41:22.000000000 +0800
-+++ ./config.m4	2013-11-14 21:46:12.000000000 +0800
-@@ -38,8 +38,18 @@
+--- config.m4.orig	2011-12-30 09:41:22 UTC
++++ config.m4
+@@ -38,8 +38,18 @@ if test "x${PHP_PDO_CASSANDRA}" != "xno"
      PHP_THRIFT_VERSION=`${PKG_CONFIG} thrift --modversion`
  
      AC_MSG_RESULT([found version ${PHP_THRIFT_VERSION}])
