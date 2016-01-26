@@ -505,7 +505,6 @@
     SUBDIR += lmon
     SUBDIR += lnav
     SUBDIR += log_analysis
-    SUBDIR += loganalyzer
     SUBDIR += logrotate
     SUBDIR += logstalgia
     SUBDIR += logstash

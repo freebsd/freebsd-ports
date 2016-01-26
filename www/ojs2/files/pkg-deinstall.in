@@ -1,5 +1,0 @@
-#!/bin/sh
-
-if [ "$2" = "DEINSTALL" ]; then
-  /bin/rm -rf %%WWWDIR%%/cache
-fi

@@ -1,7 +1,0 @@
-Creole is a database abstraction layer for PHP5.
-
-It abstracts PHP's native db-specific API to create more portable code
-while also providing developers with a clean fully object-oriented
-interface based loosely on the API for Java's JDBC.
-
-WWW: http://creole.phpdb.org/

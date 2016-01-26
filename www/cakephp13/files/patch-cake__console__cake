@@ -1,8 +1,0 @@
---- cake/console/cake.orig	2013-11-27 16:28:16.000000000 +0100
-+++ cake/console/cake	2013-11-27 16:28:29.000000000 +0100
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!/bin/sh
- ################################################################################
- #
- # Bake is a shell script for running CakePHP bake script

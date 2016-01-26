@@ -36,7 +36,6 @@
     SUBDIR += asterisk-stat
     SUBDIR += atutor
     SUBDIR += august
-    SUBDIR += autoindex2
     SUBDIR += awffull
     SUBDIR += aws
     SUBDIR += aws-demos
@@ -61,11 +60,6 @@
     SUBDIR += c-icap
     SUBDIR += c-icap-modules
     SUBDIR += cadaver
-    SUBDIR += cakephp11
-    SUBDIR += cakephp13
-    SUBDIR += cakephp21
-    SUBDIR += cakephp22
-    SUBDIR += cakephp23
     SUBDIR += calamaris
     SUBDIR += calendarserver
     SUBDIR += castget
@@ -207,7 +201,6 @@
     SUBDIR += flood
     SUBDIR += flot
     SUBDIR += fluxbb
-    SUBDIR += fluxcms
     SUBDIR += fnord
     SUBDIR += formication
     SUBDIR += foswiki
@@ -218,7 +211,6 @@
     SUBDIR += freeway
     SUBDIR += fswiki
     SUBDIR += ftasv
-    SUBDIR += fusionpbx
     SUBDIR += g-cows
     SUBDIR += g-gcl
     SUBDIR += gaeo
@@ -350,7 +342,6 @@
     SUBDIR += interchange
     SUBDIR += itop
     SUBDIR += iwebcal
-    SUBDIR += jawstats
     SUBDIR += jdresolve
     SUBDIR += jericho-html
     SUBDIR += jesred
@@ -573,7 +564,6 @@
     SUBDIR += obhttpd
     SUBDIR += ocaml-net
     SUBDIR += offline-npm
-    SUBDIR += ojs2
     SUBDIR += opencart
     SUBDIR += openxmldir
     SUBDIR += opera
@@ -2248,7 +2238,6 @@
     SUBDIR += web2ldap
     SUBDIR += webalizer
     SUBDIR += webbrowser
-    SUBDIR += webcalendar
     SUBDIR += webcheck
     SUBDIR += webcopy
     SUBDIR += webcrawl

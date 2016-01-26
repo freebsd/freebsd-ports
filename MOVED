@@ -8099,3 +8099,22 @@ www/xpi-locale-switcher||2016-01-15|Has expired: incompatible with Firefox 34 (a
 textproc/py-gettext|textproc/py-python-gettext|2016-01-16|Renamed to match upstream name
 archivers/jzip.org||2016-01-24|Has expired: Abandoned, outdated (no updates since 2003)
 devel/i386-linux-binutils||2026-01-26|Not any usage in the ports tree
+databases/mywwwatcher||2016-01-25|Has expired: PHP 5.4 EOL reached
+databases/php5-creole||2016-01-25|Has expired: PHP 5.4 EOL reached
+databases/php5-propel||2016-01-25|Has expired: PHP 5.4 EOL reached
+deskutils/fengoffice||2016-01-25|Has expired: PHP 5.4 EOL reached
+devel/simpletest||2016-01-25|Has expired: PHP 5.4 EOL reached
+graphics/php5-swfed||2016-01-25|Has expired: PHP 5.4 EOL reached
+sysutils/loganalyzer||2016-01-25|Has expired: PHP 5.4 EOL reached
+textproc/simplehtmldom||2016-01-25|Has expired: PHP 5.4 EOL reached
+www/autoindex2||2016-01-25|Has expired: PHP 5.4 EOL reached
+www/cakephp11||2016-01-25|Has expired: PHP 5.4 EOL reached
+www/cakephp13||2016-01-25|Has expired: PHP 5.4 EOL reached
+www/cakephp21||2016-01-25|Has expired: PHP 5.4 EOL reached
+www/cakephp22||2016-01-25|Has expired: PHP 5.4 EOL reached
+www/cakephp23||2016-01-25|Has expired: PHP 5.4 EOL reached
+www/fluxcms||2016-01-25|Has expired: PHP 5.4 EOL reached
+www/fusionpbx||2016-01-25|Has expired: PHP 5.4 EOL reached
+www/jawstats||2016-01-25|Has expired: PHP 5.4 EOL reached
+www/ojs2||2016-01-25|Has expired: PHP 5.4 EOL reached
+www/webcalendar||2016-01-25|Has expired: PHP 5.4 EOL reached
