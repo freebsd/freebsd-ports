@@ -10,5 +10,5 @@ share/noegnud-0.8.0/littlehack-0.0.1/perm
 share/noegnud-0.8.0/littlehack-0.0.1/record
 share/noegnud-0.8.0/littlehack-0.0.1/recover
 @dir share/noegnud-0.8.0/littlehack-0.0.1/save
-@dir share/noegnud-0.8.0/littlehack-0.0.1
-@dir(root,wheel,775) share/noegnud-0.8.0
+@dir(,,775) share/noegnud-0.8.0/littlehack-0.0.1
+@dir(root,wheel,) share/noegnud-0.8.0
