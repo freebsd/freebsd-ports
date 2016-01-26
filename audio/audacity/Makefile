@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	2.1.1
-PORTREVISION=	2
+PORTVERSION=	2.1.2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/audacity/audacity/archive/
 DISTNAME=	Audacity-${PORTVERSION}
@@ -29,7 +28,7 @@ USES=		compiler:c11 cpe desktop-file-utils gmake pkgconfig shared-mime-info sheb
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 OPTIONS_SUB=	yes
-USE_WX=		2.8+
+USE_WX=		3.0+
 WX_COMPS=	wx
 INSTALLS_ICONS=	yes
 PORTDOCS=	README.txt
