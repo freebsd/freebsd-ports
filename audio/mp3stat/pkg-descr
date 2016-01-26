@@ -1,13 +1,14 @@
-Mp3stat is a utility to read information about mp3s and oggs bitstream. Most
-specifically, how certain bitrates have been placed in the bitstream by the
-encoder. Not only does mp3stat give you a graphical representation of the
-average bitrate per 1/500th of the file in a linear bar graph to allow you to
-compare encoders and settings, it also has a batch file mode. The batch file
-mode allows you to use mp3stat as a script utility instead of gui, for use in
-your own programs and or scripts. The batch mode can trivially be extended to
-give just as much info as the gui version but now defaults to a configurable
-output of 3 pieces of info, name, runtime, average bitrate. The batch mode
-can take mp3s and oggs in the same directory but it cannot (not yet at least)
-recursively run into subdirectories.
+Mp3stat is a utility to read information about MP3's and OGG's bitstream.
+More specifically, how certain bitrates have been placed in the bitstream
+by the encoder. Not only does mp3stat give you a graphical representation
+of the average bitrate per 1/500th of the file in, a linear bar graph to
+allow you to compare encoders and settings, it also has a batch file mode.
+The batch file mode allows you to use mp3stat as a script utility instead
+of GUI, for use in your own programs and or scripts. The batch mode can be
+extended trivially to give just as much info as the GUI version, but now
+defaults to configurable output of 3 pieces of info; name, runtime, and
+average bitrate. The batch mode can take MP3's, and OGG's in the same
+directory, but it cannot (yet at least) recursively run into subdirectories
+-- this will be possible in the next version, arriving soon.
 
-WWW: https://signal-lost.homeip.net/
+WWW: http://BSDforge.com/projects/audio/mp3stat/
