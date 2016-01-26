@@ -8098,3 +8098,4 @@ devel/e_dbus||2016-01-15|Has expired: Not used anymore by x11-wm/enlightenment
 www/xpi-locale-switcher||2016-01-15|Has expired: incompatible with Firefox 34 (and later presumably)
 textproc/py-gettext|textproc/py-python-gettext|2016-01-16|Renamed to match upstream name
 archivers/jzip.org||2016-01-24|Has expired: Abandoned, outdated (no updates since 2003)
+devel/i386-linux-binutils||2026-01-26|Not any usage in the ports tree
