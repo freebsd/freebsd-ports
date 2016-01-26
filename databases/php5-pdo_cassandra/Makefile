@@ -3,7 +3,7 @@
 
 PORTNAME=	pdo_cassandra
 PORTVERSION=	0.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 PKGNAMEPREFIX=	php5-
 
@@ -12,10 +12,6 @@ COMMENT=	PDO driver for Apache Cassandra
 
 LICENSE=	APACHE20
 
-BROKEN=		fails to compile
-DEPRECATED=	PHP 5.4 EOL reached
-EXPIRATION_DATE=	2016-01-15
-
 LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
@@ -23,13 +19,11 @@ GH_ACCOUNT=	mkoppanen
 GH_PROJECT=	php-${PORTNAME}
 GH_TAGNAME=	7debd5b
 
-USES=		pkgconfig
+USES=		compiler:c++11-lang pkgconfig
+USE_CXXSTD=	c++11
 USE_PHP_BUILD=	yes
 USE_PHP=	pdo
 USE_PHPEXT=	yes
-PHP_DEFAULT=	5.4
-IGNORE_WITH_PHP=52
-USE_GCC=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/thrift/bsd.thrift.mk"
@@ -46,9 +40,8 @@ LIB_DEPENDS+=	libthrift.so:${PORTSDIR}/devel/thrift
 .endif
 
 post-configure:
-.if ${THRIFT_PORTVERSION} == "0.8.0"
-	${REINPLACE_CMD} 's/\([^:]\)apache::thrift/\1 ::apache::thrift/g' ${WRKSRC}/gen-cpp/Cassandra.h
 	${REINPLACE_CMD} 's/\([^:]\)apache::thrift/\1 ::apache::thrift/g' ${WRKSRC}/gen-cpp/Cassandra.cpp
-.endif
+	${REINPLACE_CMD} 's/\([^:]\)apache::thrift/\1 ::apache::thrift/g' ${WRKSRC}/gen-cpp/Cassandra.h
+	${REINPLACE_CMD} 's/\([^:]\)apache::thrift/\1 ::apache::thrift/g' ${WRKSRC}/gen-cpp/cassandra_types.cpp
 
 .include <bsd.port.post.mk>
