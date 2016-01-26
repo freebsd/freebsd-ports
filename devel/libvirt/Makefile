@@ -3,6 +3,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -15,14 +16,14 @@ LICENSE=	LGPL3
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libssh2.so:${PORTSDIR}/security/libssh2
 BUILD_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	dnsmasq:${PORTSDIR}/dns/dnsmasq \
 		dmidecode:${PORTSDIR}/sysutils/dmidecode
 
-OPTIONS_DEFINE=	DOCS NLS QEMU SASL
+OPTIONS_DEFINE=	DOCS GNUTLS NLS QEMU SASL
+OPTIONS_DEFAULT=	GNUTLS
 OPTIONS_DEFINE_amd64=	XEN
 .if exists(/usr/sbin/bhyve)
 OPTIONS_DEFINE_amd64+=	BHYVE
@@ -44,6 +45,10 @@ QEMU_CFLAGS=	-I${LOCALBASE}/include
 QEMU_LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl
 QEMU_RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
 			qemu-io:${PORTSDIR}/emulators/qemu-devel
+
+GNUTLS_CONFIGURE_ON=	--with-gnutls=${LOCALBASE}
+GNUTLS_CONFIGURE_OFF=	--without-gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
