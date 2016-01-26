@@ -13,10 +13,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Harmonic tide clock and tide predictor
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-USES=		compiler:c++0x gmake libtool tar:bzip2
+USES=		compiler:c++0x gmake libtool localbase tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_tcd_h=yes \
 		ac_cv_lib_tcd_get_tide_db_header=yes
@@ -24,10 +25,8 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-Wno-deprecated-declarations
-CPPFLAGS+=	-I${TCD_WRKSRC} $$(libpng-config --I_opts) \
-		-I${LOCALBASE}/include
-LDFLAGS+=	-L${TCD_WRKSRC}/.libs $$(libpng-config --L_opts) \
-		-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${TCD_WRKSRC} $$(libpng-config --I_opts)
+LDFLAGS+=	-L${TCD_WRKSRC}/.libs $$(libpng-config --L_opts)
 
 OPTIONS_DEFINE=		WVS X11
 OPTIONS_DEFAULT=	X11
@@ -37,18 +36,13 @@ WVS_DESC=		Use world vector shoreline data (37MB)
 WVS_DISTFILES=		${WVS_DISTNAME}${EXTRACT_SUFX}
 X11_USE=		xorg=xaw,xpm
 X11_CONFIGURE_WITH=	x
+X11_DESKTOP_ENTRIES=	"XTide" "" "xtide" "xtide" "" ""
 
 TCD_DISTNAME=	libtcd-2.2.6-r2
 TCD_WRKSRC=	${WRKDIR}/${TCD_DISTNAME:C/-r[0-9]+//}
 HARM_DISTNAME=	harmonics-dwf-20141224-free
 HARM_WRKSRC=	${WRKDIR}/${HARM_DISTNAME:C/-free//}
 WVS_DISTNAME=	wvs
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-DESKTOP_ENTRIES="XTide" "" "${PREFIX}/share/pixmaps/xtide.png" "xtide" "" ""
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

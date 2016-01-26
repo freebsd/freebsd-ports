@@ -1,0 +1,23 @@
+--- sys/unix/Makefile.utl.orig	2015-12-07 08:26:01 UTC
++++ sys/unix/Makefile.utl
+@@ -92,8 +92,18 @@ NHSROOT=..
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+ 
+-#CFLAGS = -O -I../include
+-#LFLAGS =
++CFLAGS += -I../include
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++CFLAGS += -DX11_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++CFLAGS += -DQT_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++CFLAGS += -DGNOME_GRAPHICS
++endif
++
++LFLAGS =
+ 
+ LIBS =
+ 

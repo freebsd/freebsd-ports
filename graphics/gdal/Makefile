@@ -3,7 +3,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -28,67 +28,56 @@ OPTIONS_DEFAULT=JASPER
 OPTIONS_RADIO=	PDF
 OPTIONS_RADIO_PDF=	PODOFO POPPLER
 PCRE_DESC=	Regular expression support for SQLite
-SPATIALITE_DESC=SpatiaLite support
 
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--enable-static=yes \
-		--with-geotiff=${LOCALBASE} \
-		--with-gif=${LOCALBASE} \
-		--with-jpeg=${LOCALBASE} \
-		--with-libjson-c=${LOCALBASE} \
+		--with-geotiff=yes \
+		--with-gif=yes \
+		--with-jpeg=yes \
+		--with-libjson-c=yes \
 		--with-liblzma=yes \
-		--with-libtiff=${LOCALBASE} \
+		--with-libtiff=yes \
 		--with-libz=/usr \
-		--with-png=${LOCALBASE} \
+		--with-png=yes \
 		--with-threads=yes \
 		--without-libtool \
 		${ICONV_CONFIGURE_ARG}
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${ICONV_PREFIX}/lib ${ICONV_LIB}
+LDFLAGS+=	${ICONV_LIB}
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
-USES=		gmake iconv jpeg tar:xz
+USES=		gmake iconv jpeg localbase tar:xz
 
 PLIST_SUB=	MAJOR_VER=${PORTVERSION:R:R} PORTVERSION=${PORTVERSION}
 PORTDATA=	*
 
 SLAVEDIRS=	graphics/p5-Geo-GDAL graphics/php-gdal graphics/py-gdal graphics/ruby-gdal
 
-ARMADILLO_CONFIGURE_OFF=--with-armadillo=no
-ARMADILLO_CONFIGURE_ON=	--with-armadillo=${LOCALBASE}
+ARMADILLO_CONFIGURE_WITH=	armadillo
 ARMADILLO_LIB_DEPENDS=	libarmadillo.so:${PORTSDIR}/math/armadillo
-CFITSIO_CONFIGURE_OFF=	--with-cfitsio=no
-CFITSIO_CONFIGURE_ON=	--with-cfitsio=${LOCALBASE}
+CFITSIO_CONFIGURE_WITH=	cfitsio
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
 CURL_CONFIGURE_OFF=	--with-curl=no
 CURL_CONFIGURE_ON=	--with-curl=${LOCALBASE}/bin/curl-config
 CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-ECW_CONFIGURE_OFF=	--with-ecw=no
-ECW_CONFIGURE_ON=	--with-ecw=yes
+ECW_CONFIGURE_WITH=	ecw
 ECW_LIB_DEPENDS=	libNCSEcw.so:${PORTSDIR}/graphics/libecwj2
-EXPAT_CONFIGURE_OFF=	--with-expat=no
-EXPAT_CONFIGURE_ON=	--with-expat=${LOCALBASE}
+EXPAT_CONFIGURE_WITH=	expat
 EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
-FREEXL_CONFIGURE_OFF=	--with-freexl=no
-FREEXL_CONFIGURE_ON=	--with-freexl=${LOCALBASE}
+FREEXL_CONFIGURE_WITH=	freexl
 FREEXL_LIB_DEPENDS=	libfreexl.so:${PORTSDIR}/textproc/freexl
 GEOS_CONFIGURE_OFF=	--with-geos=no
 GEOS_CONFIGURE_ON=	--with-geos=${LOCALBASE}/bin/geos-config
 GEOS_LIB_DEPENDS=	libgeos.so:${PORTSDIR}/graphics/geos
-GTA_CONFIGURE_OFF=	--with-gta=no
-GTA_CONFIGURE_ON=	--with-gta=${LOCALBASE}
+GTA_CONFIGURE_WITH=	gta
 GTA_LIB_DEPENDS=	libgta.so:${PORTSDIR}/devel/libgta
-HDF5_CONFIGURE_OFF=	--with-hdf5=no
-HDF5_CONFIGURE_ON=	--with-hdf5=${LOCALBASE}
+HDF5_CONFIGURE_WITH=	hdf5
 HDF5_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
-JASPER_CONFIGURE_OFF=	--with-jasper=no
-JASPER_CONFIGURE_ON=	--with-jasper=${LOCALBASE}
+JASPER_CONFIGURE_WITH=	jasper
 JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
-KML_CONFIGURE_OFF=	--with-libkml=no
-KML_CONFIGURE_ON=	--with-libkml=${LOCALBASE}
+KML_CONFIGURE_WITH=	libkml
 KML_LIB_DEPENDS=	libkmlbase.so:${PORTSDIR}/science/libkml
 LIBXML2_CONFIGURE_OFF=	--with-xml2=no
 LIBXML2_CONFIGURE_ON=	--with-xml2=${LOCALBASE}/bin/xml2-config
@@ -96,41 +85,30 @@ LIBXML2_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 MYSQL_CONFIGURE_OFF=	--with-mysql=no
 MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
 MYSQL_USE=		MYSQL=yes
-NETCDF_CONFIGURE_OFF=	--with-netcdf=no
-NETCDF_CONFIGURE_ON=	--with-netcdf=${LOCALBASE}
+NETCDF_CONFIGURE_WITH=	netcdf
 NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
-ODBC_CONFIGURE_OFF=	--with-odbc=no
-ODBC_CONFIGURE_ON=	--with-odbc=${LOCALBASE}
+ODBC_CONFIGURE_WITH=	odbc
 ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
-OPENJPEG_CONFIGURE_OFF=	--with-openjpeg=no
-OPENJPEG_CONFIGURE_ON=	--with-openjpeg=${LOCALBASE}
+OPENJPEG_CONFIGURE_WITH=openjpeg
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:${PORTSDIR}/graphics/openjpeg
-PCRE_CONFIGURE_OFF=	--with-pcre=no
-PCRE_CONFIGURE_ON=	--with-pcre=${LOCALBASE}
+PCRE_CONFIGURE_WITH=	pcre
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PGSQL_CONFIGURE_OFF=	--with-pg=no
 PGSQL_CONFIGURE_ON=	--with-pg=${LOCALBASE}/bin/pg_config
 PGSQL_USES=		pgsql
-PODOFO_CONFIGURE_OFF=	--with-podofo=no
-PODOFO_CONFIGURE_ON=	--with-podofo=${LOCALBASE}
+PODOFO_CONFIGURE_WITH=	podofo
 PODOFO_LIB_DEPENDS=	libpodofo.so:${PORTSDIR}/graphics/podofo
-POPPLER_CONFIGURE_OFF=	--with-poppler=no
-POPPLER_CONFIGURE_ON=	--with-poppler=${LOCALBASE}
+POPPLER_CONFIGURE_WITH=	poppler
 POPPLER_LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler
-PROJ_CONFIGURE_OFF=	--with-static-proj4=no
-PROJ_CONFIGURE_ON=	--with-static-proj4=${LOCALBASE}
+PROJ_CONFIGURE_WITH=	static-proj4
 PROJ_LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj
-SPATIALITE_CONFIGURE_OFF=	--with-spatialite=no
-SPATIALITE_CONFIGURE_ON=--with-spatialite=${LOCALBASE}
+SPATIALITE_CONFIGURE_WITH=	spatialite
 SPATIALITE_LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite
-SQLITE_CONFIGURE_OFF=	--with-sqlite3=no
-SQLITE_CONFIGURE_ON=	--with-sqlite3=${LOCALBASE}
+SQLITE_CONFIGURE_WITH=	sqlite3
 SQLITE_USE=		SQLITE=yes
-WEBP_CONFIGURE_OFF=	--with-webp=no
-WEBP_CONFIGURE_ON=	--with-webp=${LOCALBASE}
+WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
-XERCES_CONFIGURE_OFF=	--with-xerces=no
-XERCES_CONFIGURE_ON=	--with-xerces=${LOCALBASE}
+XERCES_CONFIGURE_WITH=	xerces
 XERCES_LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
 
 post-patch:

@@ -7,6 +7,9 @@ COMMENT=	Convert QuakeWorld demos from QWD format to MVD format
 DESCR=		${.CURDIR}/pkg-descr
 PKGMESSAGE=	/nonexistent
 
+BUILD_WRKSRC=	${WRKSRC}/tools/qwdtools/source
+GH_PROJECT=	mvdsv
+
 MASTERDIR=	${.CURDIR}/../mvdsv
 
 .include "${MASTERDIR}/Makefile"

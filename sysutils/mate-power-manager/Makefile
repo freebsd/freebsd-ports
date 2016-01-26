@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-power-manager
-PORTVERSION=	1.10.2
+PORTVERSION=	1.12.1
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

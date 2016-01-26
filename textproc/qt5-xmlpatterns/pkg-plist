@@ -102,7 +102,6 @@
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qdatetimefns_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qdatetimefns_tpl_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qdaytimeduration_p.h
-%%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qdebug_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qdecimal_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qdeduplicateiterator_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qdeepequalfn_p.h
@@ -275,6 +274,7 @@
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtokenizer_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtokenrevealer_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtokensource_p.h
+%%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtokenvalue_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtracefn_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtreatas_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qtriplecontainer_p.h
@@ -303,6 +303,7 @@
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qvariableloader_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qvariablereference_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qwithparam_p.h
+%%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qxmldebug_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qxmlpatternistcli_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qxmlquery_p.h
 %%QT_INCDIR%%/QtXmlPatterns/%%FULLVER%%/QtXmlPatterns/private/qxmlresultitems_p.h

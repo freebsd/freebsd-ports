@@ -22,6 +22,7 @@
     SUBDIR += bible_names-fpw
     SUBDIR += bookview
     SUBDIR += bugzilla44
+    SUBDIR += bugzilla50
     SUBDIR += calligra-l10n
     SUBDIR += canna-lib
     SUBDIR += canna-server

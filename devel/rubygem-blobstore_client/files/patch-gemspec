@@ -1,11 +1,13 @@
 --- blobstore_client.gemspec.orig	2015-12-25 09:52:23 UTC
 +++ blobstore_client.gemspec
-@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+@@ -23,8 +23,8 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<aws-sdk-resources>, ["= 2.2.0"])
+-      s.add_runtime_dependency(%q<aws-sdk-resources>, ["= 2.2.0"])
 -      s.add_runtime_dependency(%q<httpclient>, ["= 2.4.0"])
++      s.add_runtime_dependency(%q<aws-sdk-resources>, [">= 2.2.0"])
 +      s.add_runtime_dependency(%q<httpclient>, [">= 2.4.0"])
        s.add_runtime_dependency(%q<multi_json>, ["~> 1.1"])
-       s.add_runtime_dependency(%q<bosh_common>, ["~> 1.3156.0"])
+       s.add_runtime_dependency(%q<bosh_common>, ["~> 1.3184.1.0"])
        s.add_development_dependency(%q<rspec>, ["~> 3.0"])

@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jan 30 13:14:03 1999
-+++ Makefile	Sun Feb 13 19:11:27 2000
+--- Makefile.orig	1999-01-30 21:14:03 UTC
++++ Makefile
 @@ -1,7 +1,6 @@
 -CC = gcc
  all: slurpie slurp

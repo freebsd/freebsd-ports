@@ -10,6 +10,8 @@ DISTNAME=	jre-${JRE_VERSION}u${JRE_UPDATE_VERSION}-linux-i586
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JRE_VERSION} Runtime Environment for Linux
 
+FORBIDDEN=	Multiple security vulnerabilities
+
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	License does not allow distribution with fee

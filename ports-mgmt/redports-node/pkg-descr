@@ -1,0 +1,6 @@
+Redports is a fully hosted continuous integration platform for
+testing FreeBSD Ports. redports-node is running on each building
+machine which asks for new building jobs from the master and
+builds them using poudriere.
+
+WWW: https://freebsd.github.io/redports/

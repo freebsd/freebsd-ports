@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
 
+NO_ARCH=	yes
 USES=		gettext python tar:bzip2
 USE_PYTHON=	autoplist distutils
 

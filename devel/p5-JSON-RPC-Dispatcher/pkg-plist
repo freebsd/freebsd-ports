@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/JSON::RPC::Dispatcher.3.gz
-%%PERL5_MAN3%%/JSON::RPC::Dispatcher::App.3.gz
-%%PERL5_MAN3%%/JSON::RPC::Dispatcher::Procedure.3.gz
 %%SITE_PERL%%/JSON/RPC/Dispatcher.pm
 %%SITE_PERL%%/JSON/RPC/Dispatcher/App.pm
 %%SITE_PERL%%/JSON/RPC/Dispatcher/Procedure.pm
+%%PERL5_MAN3%%/JSON::RPC::Dispatcher.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Dispatcher::App.3.gz
+%%PERL5_MAN3%%/JSON::RPC::Dispatcher::Procedure.3.gz

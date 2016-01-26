@@ -1,7 +1,7 @@
 --- bosh_cli.gemspec.orig	2015-12-25 06:40:56 UTC
 +++ bosh_cli.gemspec
 @@ -27,17 +27,17 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<bosh-template>, ["~> 1.3177.0"])
+       s.add_runtime_dependency(%q<bosh-template>, ["~> 1.3184.1.0"])
        s.add_runtime_dependency(%q<cf-uaa-lib>, ["~> 3.2.1"])
        s.add_runtime_dependency(%q<json_pure>, ["~> 1.7"])
 -      s.add_runtime_dependency(%q<highline>, ["~> 1.6.2"])
@@ -12,7 +12,7 @@
 +      s.add_runtime_dependency(%q<progressbar>, [">= 0.9.0"])
 +      s.add_runtime_dependency(%q<httpclient>, [">= 2.4.0"])
 +      s.add_runtime_dependency(%q<terminal-table>, [">= 1.4.3"])
-       s.add_runtime_dependency(%q<blobstore_client>, ["~> 1.3177.0"])
+       s.add_runtime_dependency(%q<blobstore_client>, ["~> 1.3184.1.0"])
        s.add_runtime_dependency(%q<net-ssh>, ["= 2.9.2"])
        s.add_runtime_dependency(%q<net-ssh-gateway>, ["~> 1.2.0"])
 -      s.add_runtime_dependency(%q<net-scp>, ["~> 1.1.0"])

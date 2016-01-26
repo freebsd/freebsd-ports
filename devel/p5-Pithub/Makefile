@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pithub
-PORTVERSION=	0.01032
+PORTVERSION=	0.01033
 CATEGORIES=	devel
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OALDERS
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	p5-Array-Iterator>=0:${PORTSDIR}/devel/p5-Array-Iterator \
 		p5-Cache-LRU>=0.04:${PORTSDIR}/devel/p5-Cache-LRU \
 		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-JSON-MaybeXS>=1.002000:${PORTSDIR}/converters/p5-JSON-MaybeXS \
+		p5-JSON-MaybeXS>=1.003003:${PORTSDIR}/converters/p5-JSON-MaybeXS \
 		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-Moo>=1.001000:${PORTSDIR}/devel/p5-Moo \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww

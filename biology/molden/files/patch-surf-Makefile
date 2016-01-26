@@ -1,0 +1,789 @@
+--- surf/Makefile.orig	2015-05-02 19:48:48 UTC
++++ surf/Makefile
+@@ -1,12 +1,8 @@
+ # Compilation flags
+-#CC	    = cc
+-CC	    = cc
+ INCLUDE     = -I. 
+ #LINCLUDE    = -lcurses -ltermcap -lm
+ LINCLUDE    = -lm
+-OPT_CFLAGS  = -O2 $(FLAGS) $(INCLUDE)
+ #CFLAGS	    = -g $(FLAGS) $(INCLUDE)
+-CFLAGS	    = -O2 $(FLAGS) $(INCLUDE) ${EXT}
+ 
+ ifeq ($(uname), Darwin)
+ #
+@@ -73,670 +69,117 @@ depend: $(DEPEND)
+ # DO NOT DELETE
+ 
+ surf.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-surf.o: /usr/include/sys/_symbol_aliasing.h
+-surf.o: /usr/include/sys/_posix_availability.h /usr/include/Availability.h
+-surf.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-surf.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-surf.o: /usr/include/i386/_types.h /usr/include/sys/_pthread/_pthread_types.h
+-surf.o: /usr/include/sys/_types/_va_list.h /usr/include/sys/_types/_size_t.h
+-surf.o: /usr/include/sys/_types/_null.h /usr/include/sys/stdio.h
+-surf.o: /usr/include/sys/_types/_off_t.h /usr/include/sys/_types/_ssize_t.h
+-surf.o: /usr/include/secure/_stdio.h /usr/include/secure/_common.h
+-surf.o: /usr/include/math.h /usr/include/stdlib.h /usr/include/sys/wait.h
+-surf.o: /usr/include/sys/_types/_pid_t.h /usr/include/sys/_types/_id_t.h
+-surf.o: /usr/include/sys/signal.h /usr/include/sys/appleapiopts.h
+-surf.o: /usr/include/machine/signal.h /usr/include/i386/signal.h
+-surf.o: /usr/include/machine/_mcontext.h /usr/include/i386/_mcontext.h
+-surf.o: /usr/include/mach/i386/_structs.h
+-surf.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-surf.o: /usr/include/sys/_types/_sigaltstack.h
+-surf.o: /usr/include/sys/_types/_ucontext.h
+-surf.o: /usr/include/sys/_types/_sigset_t.h /usr/include/sys/_types/_uid_t.h
+-surf.o: /usr/include/sys/resource.h /usr/include/stdint.h
+-surf.o: /usr/include/sys/_types/_int8_t.h /usr/include/sys/_types/_int16_t.h
+-surf.o: /usr/include/sys/_types/_int32_t.h /usr/include/sys/_types/_int64_t.h
+-surf.o: /usr/include/_types/_uint8_t.h /usr/include/_types/_uint16_t.h
+-surf.o: /usr/include/_types/_uint32_t.h /usr/include/_types/_uint64_t.h
+-surf.o: /usr/include/sys/_types/_intptr_t.h
+-surf.o: /usr/include/sys/_types/_uintptr_t.h /usr/include/_types/_intmax_t.h
+-surf.o: /usr/include/_types/_uintmax_t.h /usr/include/sys/_types/_timeval.h
+-surf.o: /usr/include/machine/endian.h /usr/include/i386/endian.h
+-surf.o: /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h
+-surf.o: /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h
+-surf.o: /usr/include/sys/_types/_ct_rune_t.h
+-surf.o: /usr/include/sys/_types/_rune_t.h /usr/include/sys/_types/_wchar_t.h
+-surf.o: /usr/include/machine/types.h /usr/include/i386/types.h
+-surf.o: /usr/include/sys/_types/_dev_t.h /usr/include/sys/_types/_mode_t.h
+-surf.o: /usr/include/string.h /usr/include/sys/_types/_rsize_t.h
+-surf.o: /usr/include/sys/_types/_errno_t.h /usr/include/strings.h
+-surf.o: /usr/include/secure/_string.h /usr/include/sys/time.h
+-surf.o: /usr/include/sys/_types/_fd_def.h /usr/include/sys/_types/_timespec.h
+-surf.o: /usr/include/sys/_types/_time_t.h
+-surf.o: /usr/include/sys/_types/_suseconds_t.h
+-surf.o: /usr/include/sys/_types/_fd_setsize.h
+-surf.o: /usr/include/sys/_types/_fd_set.h /usr/include/sys/_types/_fd_clr.h
+-surf.o: /usr/include/sys/_types/_fd_isset.h
+-surf.o: /usr/include/sys/_types/_fd_zero.h /usr/include/sys/_types/_fd_copy.h
+-surf.o: /usr/include/time.h /usr/include/sys/_types/_clock_t.h
+-surf.o: /usr/include/sys/_select.h linalg.h
++surf.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++surf.o: /usr/include/machine/_types.h /usr/include/math.h
++surf.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++surf.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/time.h
++surf.o: /usr/include/sys/_timeval.h /usr/include/sys/types.h
++surf.o: /usr/include/machine/endian.h /usr/include/sys/_pthreadtypes.h
++surf.o: /usr/include/sys/select.h /usr/include/sys/_sigset.h
++surf.o: /usr/include/sys/timespec.h /usr/include/time.h linalg.h
+ io.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-io.o: /usr/include/sys/_symbol_aliasing.h
+-io.o: /usr/include/sys/_posix_availability.h /usr/include/Availability.h
+-io.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-io.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-io.o: /usr/include/i386/_types.h /usr/include/sys/_pthread/_pthread_types.h
+-io.o: /usr/include/sys/_types/_va_list.h /usr/include/sys/_types/_size_t.h
+-io.o: /usr/include/sys/_types/_null.h /usr/include/sys/stdio.h
+-io.o: /usr/include/sys/_types/_off_t.h /usr/include/sys/_types/_ssize_t.h
+-io.o: /usr/include/secure/_stdio.h /usr/include/secure/_common.h
+-io.o: /usr/include/math.h /usr/include/stdlib.h /usr/include/sys/wait.h
+-io.o: /usr/include/sys/_types/_pid_t.h /usr/include/sys/_types/_id_t.h
+-io.o: /usr/include/sys/signal.h /usr/include/sys/appleapiopts.h
+-io.o: /usr/include/machine/signal.h /usr/include/i386/signal.h
+-io.o: /usr/include/machine/_mcontext.h /usr/include/i386/_mcontext.h
+-io.o: /usr/include/mach/i386/_structs.h
+-io.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-io.o: /usr/include/sys/_types/_sigaltstack.h
+-io.o: /usr/include/sys/_types/_ucontext.h /usr/include/sys/_types/_sigset_t.h
+-io.o: /usr/include/sys/_types/_uid_t.h /usr/include/sys/resource.h
+-io.o: /usr/include/stdint.h /usr/include/sys/_types/_int8_t.h
+-io.o: /usr/include/sys/_types/_int16_t.h /usr/include/sys/_types/_int32_t.h
+-io.o: /usr/include/sys/_types/_int64_t.h /usr/include/_types/_uint8_t.h
+-io.o: /usr/include/_types/_uint16_t.h /usr/include/_types/_uint32_t.h
+-io.o: /usr/include/_types/_uint64_t.h /usr/include/sys/_types/_intptr_t.h
+-io.o: /usr/include/sys/_types/_uintptr_t.h /usr/include/_types/_intmax_t.h
+-io.o: /usr/include/_types/_uintmax_t.h /usr/include/sys/_types/_timeval.h
+-io.o: /usr/include/machine/endian.h /usr/include/i386/endian.h
+-io.o: /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h
+-io.o: /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h
+-io.o: /usr/include/sys/_types/_ct_rune_t.h /usr/include/sys/_types/_rune_t.h
+-io.o: /usr/include/sys/_types/_wchar_t.h /usr/include/machine/types.h
+-io.o: /usr/include/i386/types.h /usr/include/sys/_types/_dev_t.h
+-io.o: /usr/include/sys/_types/_mode_t.h /usr/include/string.h
+-io.o: /usr/include/sys/_types/_rsize_t.h /usr/include/sys/_types/_errno_t.h
+-io.o: /usr/include/strings.h /usr/include/secure/_string.h
+-io.o: /usr/include/sys/time.h /usr/include/sys/_types/_fd_def.h
+-io.o: /usr/include/sys/_types/_timespec.h /usr/include/sys/_types/_time_t.h
+-io.o: /usr/include/sys/_types/_suseconds_t.h
+-io.o: /usr/include/sys/_types/_fd_setsize.h /usr/include/sys/_types/_fd_set.h
+-io.o: /usr/include/sys/_types/_fd_clr.h /usr/include/sys/_types/_fd_isset.h
+-io.o: /usr/include/sys/_types/_fd_zero.h /usr/include/sys/_types/_fd_copy.h
+-io.o: /usr/include/time.h /usr/include/sys/_types/_clock_t.h
+-io.o: /usr/include/sys/_select.h linalg.h
++io.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++io.o: /usr/include/machine/_types.h /usr/include/math.h
++io.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++io.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/time.h
++io.o: /usr/include/sys/_timeval.h /usr/include/sys/types.h
++io.o: /usr/include/machine/endian.h /usr/include/sys/_pthreadtypes.h
++io.o: /usr/include/sys/select.h /usr/include/sys/_sigset.h
++io.o: /usr/include/sys/timespec.h /usr/include/time.h linalg.h
+ compute.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-compute.o: /usr/include/sys/_symbol_aliasing.h
+-compute.o: /usr/include/sys/_posix_availability.h /usr/include/Availability.h
+-compute.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-compute.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-compute.o: /usr/include/i386/_types.h
+-compute.o: /usr/include/sys/_pthread/_pthread_types.h
+-compute.o: /usr/include/sys/_types/_va_list.h
+-compute.o: /usr/include/sys/_types/_size_t.h /usr/include/sys/_types/_null.h
+-compute.o: /usr/include/sys/stdio.h /usr/include/sys/_types/_off_t.h
+-compute.o: /usr/include/sys/_types/_ssize_t.h /usr/include/secure/_stdio.h
+-compute.o: /usr/include/secure/_common.h /usr/include/math.h
+-compute.o: /usr/include/stdlib.h /usr/include/sys/wait.h
+-compute.o: /usr/include/sys/_types/_pid_t.h /usr/include/sys/_types/_id_t.h
+-compute.o: /usr/include/sys/signal.h /usr/include/sys/appleapiopts.h
+-compute.o: /usr/include/machine/signal.h /usr/include/i386/signal.h
+-compute.o: /usr/include/machine/_mcontext.h /usr/include/i386/_mcontext.h
+-compute.o: /usr/include/mach/i386/_structs.h
+-compute.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-compute.o: /usr/include/sys/_types/_sigaltstack.h
+-compute.o: /usr/include/sys/_types/_ucontext.h
+-compute.o: /usr/include/sys/_types/_sigset_t.h
+-compute.o: /usr/include/sys/_types/_uid_t.h /usr/include/sys/resource.h
+-compute.o: /usr/include/stdint.h /usr/include/sys/_types/_int8_t.h
+-compute.o: /usr/include/sys/_types/_int16_t.h
+-compute.o: /usr/include/sys/_types/_int32_t.h
+-compute.o: /usr/include/sys/_types/_int64_t.h /usr/include/_types/_uint8_t.h
+-compute.o: /usr/include/_types/_uint16_t.h /usr/include/_types/_uint32_t.h
+-compute.o: /usr/include/_types/_uint64_t.h
+-compute.o: /usr/include/sys/_types/_intptr_t.h
+-compute.o: /usr/include/sys/_types/_uintptr_t.h
+-compute.o: /usr/include/_types/_intmax_t.h /usr/include/_types/_uintmax_t.h
+-compute.o: /usr/include/sys/_types/_timeval.h /usr/include/machine/endian.h
+-compute.o: /usr/include/i386/endian.h /usr/include/sys/_endian.h
+-compute.o: /usr/include/libkern/_OSByteOrder.h
+-compute.o: /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h
+-compute.o: /usr/include/sys/_types/_ct_rune_t.h
+-compute.o: /usr/include/sys/_types/_rune_t.h
+-compute.o: /usr/include/sys/_types/_wchar_t.h /usr/include/machine/types.h
+-compute.o: /usr/include/i386/types.h /usr/include/sys/_types/_dev_t.h
+-compute.o: /usr/include/sys/_types/_mode_t.h /usr/include/string.h
+-compute.o: /usr/include/sys/_types/_rsize_t.h
+-compute.o: /usr/include/sys/_types/_errno_t.h /usr/include/strings.h
+-compute.o: /usr/include/secure/_string.h /usr/include/sys/time.h
+-compute.o: /usr/include/sys/_types/_fd_def.h
+-compute.o: /usr/include/sys/_types/_timespec.h
+-compute.o: /usr/include/sys/_types/_time_t.h
+-compute.o: /usr/include/sys/_types/_suseconds_t.h
+-compute.o: /usr/include/sys/_types/_fd_setsize.h
+-compute.o: /usr/include/sys/_types/_fd_set.h
+-compute.o: /usr/include/sys/_types/_fd_clr.h
+-compute.o: /usr/include/sys/_types/_fd_isset.h
+-compute.o: /usr/include/sys/_types/_fd_zero.h
+-compute.o: /usr/include/sys/_types/_fd_copy.h /usr/include/time.h
+-compute.o: /usr/include/sys/_types/_clock_t.h /usr/include/sys/_select.h
+-compute.o: linalg.h chull.h dual.h
++compute.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++compute.o: /usr/include/machine/_types.h /usr/include/math.h
++compute.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++compute.o: /usr/include/string.h /usr/include/strings.h
++compute.o: /usr/include/sys/time.h /usr/include/sys/_timeval.h
++compute.o: /usr/include/sys/types.h /usr/include/machine/endian.h
++compute.o: /usr/include/sys/_pthreadtypes.h /usr/include/sys/select.h
++compute.o: /usr/include/sys/_sigset.h /usr/include/sys/timespec.h
++compute.o: /usr/include/time.h linalg.h chull.h dual.h
+ dual.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-dual.o: /usr/include/sys/_symbol_aliasing.h
+-dual.o: /usr/include/sys/_posix_availability.h /usr/include/Availability.h
+-dual.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-dual.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-dual.o: /usr/include/i386/_types.h /usr/include/sys/_pthread/_pthread_types.h
+-dual.o: /usr/include/sys/_types/_va_list.h /usr/include/sys/_types/_size_t.h
+-dual.o: /usr/include/sys/_types/_null.h /usr/include/sys/stdio.h
+-dual.o: /usr/include/sys/_types/_off_t.h /usr/include/sys/_types/_ssize_t.h
+-dual.o: /usr/include/secure/_stdio.h /usr/include/secure/_common.h
+-dual.o: /usr/include/math.h /usr/include/stdlib.h /usr/include/sys/wait.h
+-dual.o: /usr/include/sys/_types/_pid_t.h /usr/include/sys/_types/_id_t.h
+-dual.o: /usr/include/sys/signal.h /usr/include/sys/appleapiopts.h
+-dual.o: /usr/include/machine/signal.h /usr/include/i386/signal.h
+-dual.o: /usr/include/machine/_mcontext.h /usr/include/i386/_mcontext.h
+-dual.o: /usr/include/mach/i386/_structs.h
+-dual.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-dual.o: /usr/include/sys/_types/_sigaltstack.h
+-dual.o: /usr/include/sys/_types/_ucontext.h
+-dual.o: /usr/include/sys/_types/_sigset_t.h /usr/include/sys/_types/_uid_t.h
+-dual.o: /usr/include/sys/resource.h /usr/include/stdint.h
+-dual.o: /usr/include/sys/_types/_int8_t.h /usr/include/sys/_types/_int16_t.h
+-dual.o: /usr/include/sys/_types/_int32_t.h /usr/include/sys/_types/_int64_t.h
+-dual.o: /usr/include/_types/_uint8_t.h /usr/include/_types/_uint16_t.h
+-dual.o: /usr/include/_types/_uint32_t.h /usr/include/_types/_uint64_t.h
+-dual.o: /usr/include/sys/_types/_intptr_t.h
+-dual.o: /usr/include/sys/_types/_uintptr_t.h /usr/include/_types/_intmax_t.h
+-dual.o: /usr/include/_types/_uintmax_t.h /usr/include/sys/_types/_timeval.h
+-dual.o: /usr/include/machine/endian.h /usr/include/i386/endian.h
+-dual.o: /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h
+-dual.o: /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h
+-dual.o: /usr/include/sys/_types/_ct_rune_t.h
+-dual.o: /usr/include/sys/_types/_rune_t.h /usr/include/sys/_types/_wchar_t.h
+-dual.o: /usr/include/machine/types.h /usr/include/i386/types.h
+-dual.o: /usr/include/sys/_types/_dev_t.h /usr/include/sys/_types/_mode_t.h
+-dual.o: /usr/include/string.h /usr/include/sys/_types/_rsize_t.h
+-dual.o: /usr/include/sys/_types/_errno_t.h /usr/include/strings.h
+-dual.o: /usr/include/secure/_string.h /usr/include/sys/time.h
+-dual.o: /usr/include/sys/_types/_fd_def.h /usr/include/sys/_types/_timespec.h
+-dual.o: /usr/include/sys/_types/_time_t.h
+-dual.o: /usr/include/sys/_types/_suseconds_t.h
+-dual.o: /usr/include/sys/_types/_fd_setsize.h
+-dual.o: /usr/include/sys/_types/_fd_set.h /usr/include/sys/_types/_fd_clr.h
+-dual.o: /usr/include/sys/_types/_fd_isset.h
+-dual.o: /usr/include/sys/_types/_fd_zero.h /usr/include/sys/_types/_fd_copy.h
+-dual.o: /usr/include/time.h /usr/include/sys/_types/_clock_t.h
+-dual.o: /usr/include/sys/_select.h linalg.h dual.h chull.h
++dual.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++dual.o: /usr/include/machine/_types.h /usr/include/math.h
++dual.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++dual.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/time.h
++dual.o: /usr/include/sys/_timeval.h /usr/include/sys/types.h
++dual.o: /usr/include/machine/endian.h /usr/include/sys/_pthreadtypes.h
++dual.o: /usr/include/sys/select.h /usr/include/sys/_sigset.h
++dual.o: /usr/include/sys/timespec.h /usr/include/time.h linalg.h dual.h
++dual.o: chull.h
+ utils.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-utils.o: /usr/include/sys/_symbol_aliasing.h
+-utils.o: /usr/include/sys/_posix_availability.h /usr/include/Availability.h
+-utils.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-utils.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-utils.o: /usr/include/i386/_types.h
+-utils.o: /usr/include/sys/_pthread/_pthread_types.h
+-utils.o: /usr/include/sys/_types/_va_list.h /usr/include/sys/_types/_size_t.h
+-utils.o: /usr/include/sys/_types/_null.h /usr/include/sys/stdio.h
+-utils.o: /usr/include/sys/_types/_off_t.h /usr/include/sys/_types/_ssize_t.h
+-utils.o: /usr/include/secure/_stdio.h /usr/include/secure/_common.h
+-utils.o: /usr/include/math.h /usr/include/stdlib.h /usr/include/sys/wait.h
+-utils.o: /usr/include/sys/_types/_pid_t.h /usr/include/sys/_types/_id_t.h
+-utils.o: /usr/include/sys/signal.h /usr/include/sys/appleapiopts.h
+-utils.o: /usr/include/machine/signal.h /usr/include/i386/signal.h
+-utils.o: /usr/include/machine/_mcontext.h /usr/include/i386/_mcontext.h
+-utils.o: /usr/include/mach/i386/_structs.h
+-utils.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-utils.o: /usr/include/sys/_types/_sigaltstack.h
+-utils.o: /usr/include/sys/_types/_ucontext.h
+-utils.o: /usr/include/sys/_types/_sigset_t.h /usr/include/sys/_types/_uid_t.h
+-utils.o: /usr/include/sys/resource.h /usr/include/stdint.h
+-utils.o: /usr/include/sys/_types/_int8_t.h /usr/include/sys/_types/_int16_t.h
+-utils.o: /usr/include/sys/_types/_int32_t.h
+-utils.o: /usr/include/sys/_types/_int64_t.h /usr/include/_types/_uint8_t.h
+-utils.o: /usr/include/_types/_uint16_t.h /usr/include/_types/_uint32_t.h
+-utils.o: /usr/include/_types/_uint64_t.h /usr/include/sys/_types/_intptr_t.h
+-utils.o: /usr/include/sys/_types/_uintptr_t.h /usr/include/_types/_intmax_t.h
+-utils.o: /usr/include/_types/_uintmax_t.h /usr/include/sys/_types/_timeval.h
+-utils.o: /usr/include/machine/endian.h /usr/include/i386/endian.h
+-utils.o: /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h
+-utils.o: /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h
+-utils.o: /usr/include/sys/_types/_ct_rune_t.h
+-utils.o: /usr/include/sys/_types/_rune_t.h /usr/include/sys/_types/_wchar_t.h
+-utils.o: /usr/include/machine/types.h /usr/include/i386/types.h
+-utils.o: /usr/include/sys/_types/_dev_t.h /usr/include/sys/_types/_mode_t.h
+-utils.o: /usr/include/string.h /usr/include/sys/_types/_rsize_t.h
+-utils.o: /usr/include/sys/_types/_errno_t.h /usr/include/strings.h
+-utils.o: /usr/include/secure/_string.h /usr/include/sys/time.h
+-utils.o: /usr/include/sys/_types/_fd_def.h
+-utils.o: /usr/include/sys/_types/_timespec.h
+-utils.o: /usr/include/sys/_types/_time_t.h
+-utils.o: /usr/include/sys/_types/_suseconds_t.h
+-utils.o: /usr/include/sys/_types/_fd_setsize.h
+-utils.o: /usr/include/sys/_types/_fd_set.h /usr/include/sys/_types/_fd_clr.h
+-utils.o: /usr/include/sys/_types/_fd_isset.h
+-utils.o: /usr/include/sys/_types/_fd_zero.h
+-utils.o: /usr/include/sys/_types/_fd_copy.h /usr/include/time.h
+-utils.o: /usr/include/sys/_types/_clock_t.h /usr/include/sys/_select.h
+-utils.o: linalg.h
++utils.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++utils.o: /usr/include/machine/_types.h /usr/include/math.h
++utils.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++utils.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/time.h
++utils.o: /usr/include/sys/_timeval.h /usr/include/sys/types.h
++utils.o: /usr/include/machine/endian.h /usr/include/sys/_pthreadtypes.h
++utils.o: /usr/include/sys/select.h /usr/include/sys/_sigset.h
++utils.o: /usr/include/sys/timespec.h /usr/include/time.h linalg.h
+ lp.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-lp.o: /usr/include/sys/_symbol_aliasing.h
+-lp.o: /usr/include/sys/_posix_availability.h /usr/include/Availability.h
+-lp.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-lp.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-lp.o: /usr/include/i386/_types.h /usr/include/sys/_pthread/_pthread_types.h
+-lp.o: /usr/include/sys/_types/_va_list.h /usr/include/sys/_types/_size_t.h
+-lp.o: /usr/include/sys/_types/_null.h /usr/include/sys/stdio.h
+-lp.o: /usr/include/sys/_types/_off_t.h /usr/include/sys/_types/_ssize_t.h
+-lp.o: /usr/include/secure/_stdio.h /usr/include/secure/_common.h
+-lp.o: /usr/include/math.h /usr/include/stdlib.h /usr/include/sys/wait.h
+-lp.o: /usr/include/sys/_types/_pid_t.h /usr/include/sys/_types/_id_t.h
+-lp.o: /usr/include/sys/signal.h /usr/include/sys/appleapiopts.h
+-lp.o: /usr/include/machine/signal.h /usr/include/i386/signal.h
+-lp.o: /usr/include/machine/_mcontext.h /usr/include/i386/_mcontext.h
+-lp.o: /usr/include/mach/i386/_structs.h
+-lp.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-lp.o: /usr/include/sys/_types/_sigaltstack.h
+-lp.o: /usr/include/sys/_types/_ucontext.h /usr/include/sys/_types/_sigset_t.h
+-lp.o: /usr/include/sys/_types/_uid_t.h /usr/include/sys/resource.h
+-lp.o: /usr/include/stdint.h /usr/include/sys/_types/_int8_t.h
+-lp.o: /usr/include/sys/_types/_int16_t.h /usr/include/sys/_types/_int32_t.h
+-lp.o: /usr/include/sys/_types/_int64_t.h /usr/include/_types/_uint8_t.h
+-lp.o: /usr/include/_types/_uint16_t.h /usr/include/_types/_uint32_t.h
+-lp.o: /usr/include/_types/_uint64_t.h /usr/include/sys/_types/_intptr_t.h
+-lp.o: /usr/include/sys/_types/_uintptr_t.h /usr/include/_types/_intmax_t.h
+-lp.o: /usr/include/_types/_uintmax_t.h /usr/include/sys/_types/_timeval.h
+-lp.o: /usr/include/machine/endian.h /usr/include/i386/endian.h
+-lp.o: /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h
+-lp.o: /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h
+-lp.o: /usr/include/sys/_types/_ct_rune_t.h /usr/include/sys/_types/_rune_t.h
+-lp.o: /usr/include/sys/_types/_wchar_t.h /usr/include/machine/types.h
+-lp.o: /usr/include/i386/types.h /usr/include/sys/_types/_dev_t.h
+-lp.o: /usr/include/sys/_types/_mode_t.h /usr/include/string.h
+-lp.o: /usr/include/sys/_types/_rsize_t.h /usr/include/sys/_types/_errno_t.h
+-lp.o: /usr/include/strings.h /usr/include/secure/_string.h
+-lp.o: /usr/include/sys/time.h /usr/include/sys/_types/_fd_def.h
+-lp.o: /usr/include/sys/_types/_timespec.h /usr/include/sys/_types/_time_t.h
+-lp.o: /usr/include/sys/_types/_suseconds_t.h
+-lp.o: /usr/include/sys/_types/_fd_setsize.h /usr/include/sys/_types/_fd_set.h
+-lp.o: /usr/include/sys/_types/_fd_clr.h /usr/include/sys/_types/_fd_isset.h
+-lp.o: /usr/include/sys/_types/_fd_zero.h /usr/include/sys/_types/_fd_copy.h
+-lp.o: /usr/include/time.h /usr/include/sys/_types/_clock_t.h
+-lp.o: /usr/include/sys/_select.h linalg.h
++lp.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++lp.o: /usr/include/machine/_types.h /usr/include/math.h
++lp.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++lp.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/time.h
++lp.o: /usr/include/sys/_timeval.h /usr/include/sys/types.h
++lp.o: /usr/include/machine/endian.h /usr/include/sys/_pthreadtypes.h
++lp.o: /usr/include/sys/select.h /usr/include/sys/_sigset.h
++lp.o: /usr/include/sys/timespec.h /usr/include/time.h linalg.h
+ chull.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-chull.o: /usr/include/sys/_symbol_aliasing.h
+-chull.o: /usr/include/sys/_posix_availability.h /usr/include/Availability.h
+-chull.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-chull.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-chull.o: /usr/include/i386/_types.h
+-chull.o: /usr/include/sys/_pthread/_pthread_types.h
+-chull.o: /usr/include/sys/_types/_va_list.h /usr/include/sys/_types/_size_t.h
+-chull.o: /usr/include/sys/_types/_null.h /usr/include/sys/stdio.h
+-chull.o: /usr/include/sys/_types/_off_t.h /usr/include/sys/_types/_ssize_t.h
+-chull.o: /usr/include/secure/_stdio.h /usr/include/secure/_common.h
+-chull.o: /usr/include/math.h /usr/include/stdlib.h /usr/include/sys/wait.h
+-chull.o: /usr/include/sys/_types/_pid_t.h /usr/include/sys/_types/_id_t.h
+-chull.o: /usr/include/sys/signal.h /usr/include/sys/appleapiopts.h
+-chull.o: /usr/include/machine/signal.h /usr/include/i386/signal.h
+-chull.o: /usr/include/machine/_mcontext.h /usr/include/i386/_mcontext.h
+-chull.o: /usr/include/mach/i386/_structs.h
+-chull.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-chull.o: /usr/include/sys/_types/_sigaltstack.h
+-chull.o: /usr/include/sys/_types/_ucontext.h
+-chull.o: /usr/include/sys/_types/_sigset_t.h /usr/include/sys/_types/_uid_t.h
+-chull.o: /usr/include/sys/resource.h /usr/include/stdint.h
+-chull.o: /usr/include/sys/_types/_int8_t.h /usr/include/sys/_types/_int16_t.h
+-chull.o: /usr/include/sys/_types/_int32_t.h
+-chull.o: /usr/include/sys/_types/_int64_t.h /usr/include/_types/_uint8_t.h
+-chull.o: /usr/include/_types/_uint16_t.h /usr/include/_types/_uint32_t.h
+-chull.o: /usr/include/_types/_uint64_t.h /usr/include/sys/_types/_intptr_t.h
+-chull.o: /usr/include/sys/_types/_uintptr_t.h /usr/include/_types/_intmax_t.h
+-chull.o: /usr/include/_types/_uintmax_t.h /usr/include/sys/_types/_timeval.h
+-chull.o: /usr/include/machine/endian.h /usr/include/i386/endian.h
+-chull.o: /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h
+-chull.o: /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h
+-chull.o: /usr/include/sys/_types/_ct_rune_t.h
+-chull.o: /usr/include/sys/_types/_rune_t.h /usr/include/sys/_types/_wchar_t.h
+-chull.o: /usr/include/machine/types.h /usr/include/i386/types.h
+-chull.o: /usr/include/sys/_types/_dev_t.h /usr/include/sys/_types/_mode_t.h
+-chull.o: /usr/include/string.h /usr/include/sys/_types/_rsize_t.h
+-chull.o: /usr/include/sys/_types/_errno_t.h /usr/include/strings.h
+-chull.o: /usr/include/secure/_string.h /usr/include/sys/time.h
+-chull.o: /usr/include/sys/_types/_fd_def.h
+-chull.o: /usr/include/sys/_types/_timespec.h
+-chull.o: /usr/include/sys/_types/_time_t.h
+-chull.o: /usr/include/sys/_types/_suseconds_t.h
+-chull.o: /usr/include/sys/_types/_fd_setsize.h
+-chull.o: /usr/include/sys/_types/_fd_set.h /usr/include/sys/_types/_fd_clr.h
+-chull.o: /usr/include/sys/_types/_fd_isset.h
+-chull.o: /usr/include/sys/_types/_fd_zero.h
+-chull.o: /usr/include/sys/_types/_fd_copy.h /usr/include/time.h
+-chull.o: /usr/include/sys/_types/_clock_t.h /usr/include/sys/_select.h
+-chull.o: linalg.h chull.h
++chull.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++chull.o: /usr/include/machine/_types.h /usr/include/math.h
++chull.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++chull.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/time.h
++chull.o: /usr/include/sys/_timeval.h /usr/include/sys/types.h
++chull.o: /usr/include/machine/endian.h /usr/include/sys/_pthreadtypes.h
++chull.o: /usr/include/sys/select.h /usr/include/sys/_sigset.h
++chull.o: /usr/include/sys/timespec.h /usr/include/time.h linalg.h chull.h
+ tessel_cases.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-tessel_cases.o: /usr/include/sys/_symbol_aliasing.h
+-tessel_cases.o: /usr/include/sys/_posix_availability.h
+-tessel_cases.o: /usr/include/Availability.h
+-tessel_cases.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-tessel_cases.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-tessel_cases.o: /usr/include/i386/_types.h
+-tessel_cases.o: /usr/include/sys/_pthread/_pthread_types.h
+-tessel_cases.o: /usr/include/sys/_types/_va_list.h
+-tessel_cases.o: /usr/include/sys/_types/_size_t.h
+-tessel_cases.o: /usr/include/sys/_types/_null.h /usr/include/sys/stdio.h
+-tessel_cases.o: /usr/include/sys/_types/_off_t.h
+-tessel_cases.o: /usr/include/sys/_types/_ssize_t.h
+-tessel_cases.o: /usr/include/secure/_stdio.h /usr/include/secure/_common.h
+-tessel_cases.o: /usr/include/math.h /usr/include/stdlib.h
+-tessel_cases.o: /usr/include/sys/wait.h /usr/include/sys/_types/_pid_t.h
+-tessel_cases.o: /usr/include/sys/_types/_id_t.h /usr/include/sys/signal.h
+-tessel_cases.o: /usr/include/sys/appleapiopts.h /usr/include/machine/signal.h
+-tessel_cases.o: /usr/include/i386/signal.h /usr/include/machine/_mcontext.h
+-tessel_cases.o: /usr/include/i386/_mcontext.h
+-tessel_cases.o: /usr/include/mach/i386/_structs.h
+-tessel_cases.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-tessel_cases.o: /usr/include/sys/_types/_sigaltstack.h
+-tessel_cases.o: /usr/include/sys/_types/_ucontext.h
+-tessel_cases.o: /usr/include/sys/_types/_sigset_t.h
+-tessel_cases.o: /usr/include/sys/_types/_uid_t.h /usr/include/sys/resource.h
+-tessel_cases.o: /usr/include/stdint.h /usr/include/sys/_types/_int8_t.h
+-tessel_cases.o: /usr/include/sys/_types/_int16_t.h
+-tessel_cases.o: /usr/include/sys/_types/_int32_t.h
+-tessel_cases.o: /usr/include/sys/_types/_int64_t.h
+-tessel_cases.o: /usr/include/_types/_uint8_t.h
+-tessel_cases.o: /usr/include/_types/_uint16_t.h
+-tessel_cases.o: /usr/include/_types/_uint32_t.h
+-tessel_cases.o: /usr/include/_types/_uint64_t.h
+-tessel_cases.o: /usr/include/sys/_types/_intptr_t.h
+-tessel_cases.o: /usr/include/sys/_types/_uintptr_t.h
+-tessel_cases.o: /usr/include/_types/_intmax_t.h
+-tessel_cases.o: /usr/include/_types/_uintmax_t.h
+-tessel_cases.o: /usr/include/sys/_types/_timeval.h
+-tessel_cases.o: /usr/include/machine/endian.h /usr/include/i386/endian.h
+-tessel_cases.o: /usr/include/sys/_endian.h
+-tessel_cases.o: /usr/include/libkern/_OSByteOrder.h
+-tessel_cases.o: /usr/include/libkern/i386/_OSByteOrder.h
+-tessel_cases.o: /usr/include/alloca.h /usr/include/sys/_types/_ct_rune_t.h
+-tessel_cases.o: /usr/include/sys/_types/_rune_t.h
+-tessel_cases.o: /usr/include/sys/_types/_wchar_t.h
+-tessel_cases.o: /usr/include/machine/types.h /usr/include/i386/types.h
+-tessel_cases.o: /usr/include/sys/_types/_dev_t.h
+-tessel_cases.o: /usr/include/sys/_types/_mode_t.h /usr/include/string.h
+-tessel_cases.o: /usr/include/sys/_types/_rsize_t.h
+-tessel_cases.o: /usr/include/sys/_types/_errno_t.h /usr/include/strings.h
+-tessel_cases.o: /usr/include/secure/_string.h /usr/include/sys/time.h
+-tessel_cases.o: /usr/include/sys/_types/_fd_def.h
+-tessel_cases.o: /usr/include/sys/_types/_timespec.h
+-tessel_cases.o: /usr/include/sys/_types/_time_t.h
+-tessel_cases.o: /usr/include/sys/_types/_suseconds_t.h
+-tessel_cases.o: /usr/include/sys/_types/_fd_setsize.h
+-tessel_cases.o: /usr/include/sys/_types/_fd_set.h
+-tessel_cases.o: /usr/include/sys/_types/_fd_clr.h
+-tessel_cases.o: /usr/include/sys/_types/_fd_isset.h
+-tessel_cases.o: /usr/include/sys/_types/_fd_zero.h
+-tessel_cases.o: /usr/include/sys/_types/_fd_copy.h /usr/include/time.h
+-tessel_cases.o: /usr/include/sys/_types/_clock_t.h /usr/include/sys/_select.h
+-tessel_cases.o: linalg.h dual.h
++tessel_cases.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++tessel_cases.o: /usr/include/machine/_types.h /usr/include/math.h
++tessel_cases.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++tessel_cases.o: /usr/include/string.h /usr/include/strings.h
++tessel_cases.o: /usr/include/sys/time.h /usr/include/sys/_timeval.h
++tessel_cases.o: /usr/include/sys/types.h /usr/include/machine/endian.h
++tessel_cases.o: /usr/include/sys/_pthreadtypes.h /usr/include/sys/select.h
++tessel_cases.o: /usr/include/sys/_sigset.h /usr/include/sys/timespec.h
++tessel_cases.o: /usr/include/time.h linalg.h dual.h
+ tessel_patches.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-tessel_patches.o: /usr/include/sys/_symbol_aliasing.h
+-tessel_patches.o: /usr/include/sys/_posix_availability.h
+-tessel_patches.o: /usr/include/Availability.h
+-tessel_patches.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-tessel_patches.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-tessel_patches.o: /usr/include/i386/_types.h
+-tessel_patches.o: /usr/include/sys/_pthread/_pthread_types.h
+-tessel_patches.o: /usr/include/sys/_types/_va_list.h
+-tessel_patches.o: /usr/include/sys/_types/_size_t.h
+-tessel_patches.o: /usr/include/sys/_types/_null.h /usr/include/sys/stdio.h
+-tessel_patches.o: /usr/include/sys/_types/_off_t.h
+-tessel_patches.o: /usr/include/sys/_types/_ssize_t.h
+-tessel_patches.o: /usr/include/secure/_stdio.h /usr/include/secure/_common.h
+-tessel_patches.o: /usr/include/math.h /usr/include/stdlib.h
+-tessel_patches.o: /usr/include/sys/wait.h /usr/include/sys/_types/_pid_t.h
+-tessel_patches.o: /usr/include/sys/_types/_id_t.h /usr/include/sys/signal.h
+-tessel_patches.o: /usr/include/sys/appleapiopts.h
+-tessel_patches.o: /usr/include/machine/signal.h /usr/include/i386/signal.h
+-tessel_patches.o: /usr/include/machine/_mcontext.h
+-tessel_patches.o: /usr/include/i386/_mcontext.h
+-tessel_patches.o: /usr/include/mach/i386/_structs.h
+-tessel_patches.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-tessel_patches.o: /usr/include/sys/_types/_sigaltstack.h
+-tessel_patches.o: /usr/include/sys/_types/_ucontext.h
+-tessel_patches.o: /usr/include/sys/_types/_sigset_t.h
+-tessel_patches.o: /usr/include/sys/_types/_uid_t.h
+-tessel_patches.o: /usr/include/sys/resource.h /usr/include/stdint.h
+-tessel_patches.o: /usr/include/sys/_types/_int8_t.h
+-tessel_patches.o: /usr/include/sys/_types/_int16_t.h
+-tessel_patches.o: /usr/include/sys/_types/_int32_t.h
+-tessel_patches.o: /usr/include/sys/_types/_int64_t.h
+-tessel_patches.o: /usr/include/_types/_uint8_t.h
+-tessel_patches.o: /usr/include/_types/_uint16_t.h
+-tessel_patches.o: /usr/include/_types/_uint32_t.h
+-tessel_patches.o: /usr/include/_types/_uint64_t.h
+-tessel_patches.o: /usr/include/sys/_types/_intptr_t.h
+-tessel_patches.o: /usr/include/sys/_types/_uintptr_t.h
+-tessel_patches.o: /usr/include/_types/_intmax_t.h
+-tessel_patches.o: /usr/include/_types/_uintmax_t.h
+-tessel_patches.o: /usr/include/sys/_types/_timeval.h
+-tessel_patches.o: /usr/include/machine/endian.h /usr/include/i386/endian.h
+-tessel_patches.o: /usr/include/sys/_endian.h
+-tessel_patches.o: /usr/include/libkern/_OSByteOrder.h
+-tessel_patches.o: /usr/include/libkern/i386/_OSByteOrder.h
+-tessel_patches.o: /usr/include/alloca.h /usr/include/sys/_types/_ct_rune_t.h
+-tessel_patches.o: /usr/include/sys/_types/_rune_t.h
+-tessel_patches.o: /usr/include/sys/_types/_wchar_t.h
+-tessel_patches.o: /usr/include/machine/types.h /usr/include/i386/types.h
+-tessel_patches.o: /usr/include/sys/_types/_dev_t.h
+-tessel_patches.o: /usr/include/sys/_types/_mode_t.h /usr/include/string.h
+-tessel_patches.o: /usr/include/sys/_types/_rsize_t.h
+-tessel_patches.o: /usr/include/sys/_types/_errno_t.h /usr/include/strings.h
+-tessel_patches.o: /usr/include/secure/_string.h /usr/include/sys/time.h
+-tessel_patches.o: /usr/include/sys/_types/_fd_def.h
+-tessel_patches.o: /usr/include/sys/_types/_timespec.h
+-tessel_patches.o: /usr/include/sys/_types/_time_t.h
+-tessel_patches.o: /usr/include/sys/_types/_suseconds_t.h
+-tessel_patches.o: /usr/include/sys/_types/_fd_setsize.h
+-tessel_patches.o: /usr/include/sys/_types/_fd_set.h
+-tessel_patches.o: /usr/include/sys/_types/_fd_clr.h
+-tessel_patches.o: /usr/include/sys/_types/_fd_isset.h
+-tessel_patches.o: /usr/include/sys/_types/_fd_zero.h
+-tessel_patches.o: /usr/include/sys/_types/_fd_copy.h /usr/include/time.h
+-tessel_patches.o: /usr/include/sys/_types/_clock_t.h
+-tessel_patches.o: /usr/include/sys/_select.h linalg.h
++tessel_patches.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++tessel_patches.o: /usr/include/machine/_types.h /usr/include/math.h
++tessel_patches.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++tessel_patches.o: /usr/include/string.h /usr/include/strings.h
++tessel_patches.o: /usr/include/sys/time.h /usr/include/sys/_timeval.h
++tessel_patches.o: /usr/include/sys/types.h /usr/include/machine/endian.h
++tessel_patches.o: /usr/include/sys/_pthreadtypes.h /usr/include/sys/select.h
++tessel_patches.o: /usr/include/sys/_sigset.h /usr/include/sys/timespec.h
++tessel_patches.o: /usr/include/time.h linalg.h
+ tessel_convex.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-tessel_convex.o: /usr/include/sys/_symbol_aliasing.h
+-tessel_convex.o: /usr/include/sys/_posix_availability.h
+-tessel_convex.o: /usr/include/Availability.h
+-tessel_convex.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-tessel_convex.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-tessel_convex.o: /usr/include/i386/_types.h
+-tessel_convex.o: /usr/include/sys/_pthread/_pthread_types.h
+-tessel_convex.o: /usr/include/sys/_types/_va_list.h
+-tessel_convex.o: /usr/include/sys/_types/_size_t.h
+-tessel_convex.o: /usr/include/sys/_types/_null.h /usr/include/sys/stdio.h
+-tessel_convex.o: /usr/include/sys/_types/_off_t.h
+-tessel_convex.o: /usr/include/sys/_types/_ssize_t.h
+-tessel_convex.o: /usr/include/secure/_stdio.h /usr/include/secure/_common.h
+-tessel_convex.o: /usr/include/math.h /usr/include/stdlib.h
+-tessel_convex.o: /usr/include/sys/wait.h /usr/include/sys/_types/_pid_t.h
+-tessel_convex.o: /usr/include/sys/_types/_id_t.h /usr/include/sys/signal.h
+-tessel_convex.o: /usr/include/sys/appleapiopts.h
+-tessel_convex.o: /usr/include/machine/signal.h /usr/include/i386/signal.h
+-tessel_convex.o: /usr/include/machine/_mcontext.h
+-tessel_convex.o: /usr/include/i386/_mcontext.h
+-tessel_convex.o: /usr/include/mach/i386/_structs.h
+-tessel_convex.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-tessel_convex.o: /usr/include/sys/_types/_sigaltstack.h
+-tessel_convex.o: /usr/include/sys/_types/_ucontext.h
+-tessel_convex.o: /usr/include/sys/_types/_sigset_t.h
+-tessel_convex.o: /usr/include/sys/_types/_uid_t.h /usr/include/sys/resource.h
+-tessel_convex.o: /usr/include/stdint.h /usr/include/sys/_types/_int8_t.h
+-tessel_convex.o: /usr/include/sys/_types/_int16_t.h
+-tessel_convex.o: /usr/include/sys/_types/_int32_t.h
+-tessel_convex.o: /usr/include/sys/_types/_int64_t.h
+-tessel_convex.o: /usr/include/_types/_uint8_t.h
+-tessel_convex.o: /usr/include/_types/_uint16_t.h
+-tessel_convex.o: /usr/include/_types/_uint32_t.h
+-tessel_convex.o: /usr/include/_types/_uint64_t.h
+-tessel_convex.o: /usr/include/sys/_types/_intptr_t.h
+-tessel_convex.o: /usr/include/sys/_types/_uintptr_t.h
+-tessel_convex.o: /usr/include/_types/_intmax_t.h
+-tessel_convex.o: /usr/include/_types/_uintmax_t.h
+-tessel_convex.o: /usr/include/sys/_types/_timeval.h
+-tessel_convex.o: /usr/include/machine/endian.h /usr/include/i386/endian.h
+-tessel_convex.o: /usr/include/sys/_endian.h
+-tessel_convex.o: /usr/include/libkern/_OSByteOrder.h
+-tessel_convex.o: /usr/include/libkern/i386/_OSByteOrder.h
+-tessel_convex.o: /usr/include/alloca.h /usr/include/sys/_types/_ct_rune_t.h
+-tessel_convex.o: /usr/include/sys/_types/_rune_t.h
+-tessel_convex.o: /usr/include/sys/_types/_wchar_t.h
+-tessel_convex.o: /usr/include/machine/types.h /usr/include/i386/types.h
+-tessel_convex.o: /usr/include/sys/_types/_dev_t.h
+-tessel_convex.o: /usr/include/sys/_types/_mode_t.h /usr/include/string.h
+-tessel_convex.o: /usr/include/sys/_types/_rsize_t.h
+-tessel_convex.o: /usr/include/sys/_types/_errno_t.h /usr/include/strings.h
+-tessel_convex.o: /usr/include/secure/_string.h /usr/include/sys/time.h
+-tessel_convex.o: /usr/include/sys/_types/_fd_def.h
+-tessel_convex.o: /usr/include/sys/_types/_timespec.h
+-tessel_convex.o: /usr/include/sys/_types/_time_t.h
+-tessel_convex.o: /usr/include/sys/_types/_suseconds_t.h
+-tessel_convex.o: /usr/include/sys/_types/_fd_setsize.h
+-tessel_convex.o: /usr/include/sys/_types/_fd_set.h
+-tessel_convex.o: /usr/include/sys/_types/_fd_clr.h
+-tessel_convex.o: /usr/include/sys/_types/_fd_isset.h
+-tessel_convex.o: /usr/include/sys/_types/_fd_zero.h
+-tessel_convex.o: /usr/include/sys/_types/_fd_copy.h /usr/include/time.h
+-tessel_convex.o: /usr/include/sys/_types/_clock_t.h
+-tessel_convex.o: /usr/include/sys/_select.h linalg.h
++tessel_convex.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++tessel_convex.o: /usr/include/machine/_types.h /usr/include/math.h
++tessel_convex.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++tessel_convex.o: /usr/include/string.h /usr/include/strings.h
++tessel_convex.o: /usr/include/sys/time.h /usr/include/sys/_timeval.h
++tessel_convex.o: /usr/include/sys/types.h /usr/include/machine/endian.h
++tessel_convex.o: /usr/include/sys/_pthreadtypes.h /usr/include/sys/select.h
++tessel_convex.o: /usr/include/sys/_sigset.h /usr/include/sys/timespec.h
++tessel_convex.o: /usr/include/time.h linalg.h
+ tessel_concave.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-tessel_concave.o: /usr/include/sys/_symbol_aliasing.h
+-tessel_concave.o: /usr/include/sys/_posix_availability.h
+-tessel_concave.o: /usr/include/Availability.h
+-tessel_concave.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-tessel_concave.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-tessel_concave.o: /usr/include/i386/_types.h
+-tessel_concave.o: /usr/include/sys/_pthread/_pthread_types.h
+-tessel_concave.o: /usr/include/sys/_types/_va_list.h
+-tessel_concave.o: /usr/include/sys/_types/_size_t.h
+-tessel_concave.o: /usr/include/sys/_types/_null.h /usr/include/sys/stdio.h
+-tessel_concave.o: /usr/include/sys/_types/_off_t.h
+-tessel_concave.o: /usr/include/sys/_types/_ssize_t.h
+-tessel_concave.o: /usr/include/secure/_stdio.h /usr/include/secure/_common.h
+-tessel_concave.o: /usr/include/math.h /usr/include/stdlib.h
+-tessel_concave.o: /usr/include/sys/wait.h /usr/include/sys/_types/_pid_t.h
+-tessel_concave.o: /usr/include/sys/_types/_id_t.h /usr/include/sys/signal.h
+-tessel_concave.o: /usr/include/sys/appleapiopts.h
+-tessel_concave.o: /usr/include/machine/signal.h /usr/include/i386/signal.h
+-tessel_concave.o: /usr/include/machine/_mcontext.h
+-tessel_concave.o: /usr/include/i386/_mcontext.h
+-tessel_concave.o: /usr/include/mach/i386/_structs.h
+-tessel_concave.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-tessel_concave.o: /usr/include/sys/_types/_sigaltstack.h
+-tessel_concave.o: /usr/include/sys/_types/_ucontext.h
+-tessel_concave.o: /usr/include/sys/_types/_sigset_t.h
+-tessel_concave.o: /usr/include/sys/_types/_uid_t.h
+-tessel_concave.o: /usr/include/sys/resource.h /usr/include/stdint.h
+-tessel_concave.o: /usr/include/sys/_types/_int8_t.h
+-tessel_concave.o: /usr/include/sys/_types/_int16_t.h
+-tessel_concave.o: /usr/include/sys/_types/_int32_t.h
+-tessel_concave.o: /usr/include/sys/_types/_int64_t.h
+-tessel_concave.o: /usr/include/_types/_uint8_t.h
+-tessel_concave.o: /usr/include/_types/_uint16_t.h
+-tessel_concave.o: /usr/include/_types/_uint32_t.h
+-tessel_concave.o: /usr/include/_types/_uint64_t.h
+-tessel_concave.o: /usr/include/sys/_types/_intptr_t.h
+-tessel_concave.o: /usr/include/sys/_types/_uintptr_t.h
+-tessel_concave.o: /usr/include/_types/_intmax_t.h
+-tessel_concave.o: /usr/include/_types/_uintmax_t.h
+-tessel_concave.o: /usr/include/sys/_types/_timeval.h
+-tessel_concave.o: /usr/include/machine/endian.h /usr/include/i386/endian.h
+-tessel_concave.o: /usr/include/sys/_endian.h
+-tessel_concave.o: /usr/include/libkern/_OSByteOrder.h
+-tessel_concave.o: /usr/include/libkern/i386/_OSByteOrder.h
+-tessel_concave.o: /usr/include/alloca.h /usr/include/sys/_types/_ct_rune_t.h
+-tessel_concave.o: /usr/include/sys/_types/_rune_t.h
+-tessel_concave.o: /usr/include/sys/_types/_wchar_t.h
+-tessel_concave.o: /usr/include/machine/types.h /usr/include/i386/types.h
+-tessel_concave.o: /usr/include/sys/_types/_dev_t.h
+-tessel_concave.o: /usr/include/sys/_types/_mode_t.h /usr/include/string.h
+-tessel_concave.o: /usr/include/sys/_types/_rsize_t.h
+-tessel_concave.o: /usr/include/sys/_types/_errno_t.h /usr/include/strings.h
+-tessel_concave.o: /usr/include/secure/_string.h /usr/include/sys/time.h
+-tessel_concave.o: /usr/include/sys/_types/_fd_def.h
+-tessel_concave.o: /usr/include/sys/_types/_timespec.h
+-tessel_concave.o: /usr/include/sys/_types/_time_t.h
+-tessel_concave.o: /usr/include/sys/_types/_suseconds_t.h
+-tessel_concave.o: /usr/include/sys/_types/_fd_setsize.h
+-tessel_concave.o: /usr/include/sys/_types/_fd_set.h
+-tessel_concave.o: /usr/include/sys/_types/_fd_clr.h
+-tessel_concave.o: /usr/include/sys/_types/_fd_isset.h
+-tessel_concave.o: /usr/include/sys/_types/_fd_zero.h
+-tessel_concave.o: /usr/include/sys/_types/_fd_copy.h /usr/include/time.h
+-tessel_concave.o: /usr/include/sys/_types/_clock_t.h
+-tessel_concave.o: /usr/include/sys/_select.h linalg.h
++tessel_concave.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++tessel_concave.o: /usr/include/machine/_types.h /usr/include/math.h
++tessel_concave.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++tessel_concave.o: /usr/include/string.h /usr/include/strings.h
++tessel_concave.o: /usr/include/sys/time.h /usr/include/sys/_timeval.h
++tessel_concave.o: /usr/include/sys/types.h /usr/include/machine/endian.h
++tessel_concave.o: /usr/include/sys/_pthreadtypes.h /usr/include/sys/select.h
++tessel_concave.o: /usr/include/sys/_sigset.h /usr/include/sys/timespec.h
++tessel_concave.o: /usr/include/time.h linalg.h
+ tessel_torus.o: surf.h /usr/include/stdio.h /usr/include/sys/cdefs.h
+-tessel_torus.o: /usr/include/sys/_symbol_aliasing.h
+-tessel_torus.o: /usr/include/sys/_posix_availability.h
+-tessel_torus.o: /usr/include/Availability.h
+-tessel_torus.o: /usr/include/AvailabilityInternal.h /usr/include/_types.h
+-tessel_torus.o: /usr/include/sys/_types.h /usr/include/machine/_types.h
+-tessel_torus.o: /usr/include/i386/_types.h
+-tessel_torus.o: /usr/include/sys/_pthread/_pthread_types.h
+-tessel_torus.o: /usr/include/sys/_types/_va_list.h
+-tessel_torus.o: /usr/include/sys/_types/_size_t.h
+-tessel_torus.o: /usr/include/sys/_types/_null.h /usr/include/sys/stdio.h
+-tessel_torus.o: /usr/include/sys/_types/_off_t.h
+-tessel_torus.o: /usr/include/sys/_types/_ssize_t.h
+-tessel_torus.o: /usr/include/secure/_stdio.h /usr/include/secure/_common.h
+-tessel_torus.o: /usr/include/math.h /usr/include/stdlib.h
+-tessel_torus.o: /usr/include/sys/wait.h /usr/include/sys/_types/_pid_t.h
+-tessel_torus.o: /usr/include/sys/_types/_id_t.h /usr/include/sys/signal.h
+-tessel_torus.o: /usr/include/sys/appleapiopts.h /usr/include/machine/signal.h
+-tessel_torus.o: /usr/include/i386/signal.h /usr/include/machine/_mcontext.h
+-tessel_torus.o: /usr/include/i386/_mcontext.h
+-tessel_torus.o: /usr/include/mach/i386/_structs.h
+-tessel_torus.o: /usr/include/sys/_pthread/_pthread_attr_t.h
+-tessel_torus.o: /usr/include/sys/_types/_sigaltstack.h
+-tessel_torus.o: /usr/include/sys/_types/_ucontext.h
+-tessel_torus.o: /usr/include/sys/_types/_sigset_t.h
+-tessel_torus.o: /usr/include/sys/_types/_uid_t.h /usr/include/sys/resource.h
+-tessel_torus.o: /usr/include/stdint.h /usr/include/sys/_types/_int8_t.h
+-tessel_torus.o: /usr/include/sys/_types/_int16_t.h
+-tessel_torus.o: /usr/include/sys/_types/_int32_t.h
+-tessel_torus.o: /usr/include/sys/_types/_int64_t.h
+-tessel_torus.o: /usr/include/_types/_uint8_t.h
+-tessel_torus.o: /usr/include/_types/_uint16_t.h
+-tessel_torus.o: /usr/include/_types/_uint32_t.h
+-tessel_torus.o: /usr/include/_types/_uint64_t.h
+-tessel_torus.o: /usr/include/sys/_types/_intptr_t.h
+-tessel_torus.o: /usr/include/sys/_types/_uintptr_t.h
+-tessel_torus.o: /usr/include/_types/_intmax_t.h
+-tessel_torus.o: /usr/include/_types/_uintmax_t.h
+-tessel_torus.o: /usr/include/sys/_types/_timeval.h
+-tessel_torus.o: /usr/include/machine/endian.h /usr/include/i386/endian.h
+-tessel_torus.o: /usr/include/sys/_endian.h
+-tessel_torus.o: /usr/include/libkern/_OSByteOrder.h
+-tessel_torus.o: /usr/include/libkern/i386/_OSByteOrder.h
+-tessel_torus.o: /usr/include/alloca.h /usr/include/sys/_types/_ct_rune_t.h
+-tessel_torus.o: /usr/include/sys/_types/_rune_t.h
+-tessel_torus.o: /usr/include/sys/_types/_wchar_t.h
+-tessel_torus.o: /usr/include/machine/types.h /usr/include/i386/types.h
+-tessel_torus.o: /usr/include/sys/_types/_dev_t.h
+-tessel_torus.o: /usr/include/sys/_types/_mode_t.h /usr/include/string.h
+-tessel_torus.o: /usr/include/sys/_types/_rsize_t.h
+-tessel_torus.o: /usr/include/sys/_types/_errno_t.h /usr/include/strings.h
+-tessel_torus.o: /usr/include/secure/_string.h /usr/include/sys/time.h
+-tessel_torus.o: /usr/include/sys/_types/_fd_def.h
+-tessel_torus.o: /usr/include/sys/_types/_timespec.h
+-tessel_torus.o: /usr/include/sys/_types/_time_t.h
+-tessel_torus.o: /usr/include/sys/_types/_suseconds_t.h
+-tessel_torus.o: /usr/include/sys/_types/_fd_setsize.h
+-tessel_torus.o: /usr/include/sys/_types/_fd_set.h
+-tessel_torus.o: /usr/include/sys/_types/_fd_clr.h
+-tessel_torus.o: /usr/include/sys/_types/_fd_isset.h
+-tessel_torus.o: /usr/include/sys/_types/_fd_zero.h
+-tessel_torus.o: /usr/include/sys/_types/_fd_copy.h /usr/include/time.h
+-tessel_torus.o: /usr/include/sys/_types/_clock_t.h /usr/include/sys/_select.h
+-tessel_torus.o: linalg.h
+-  
+-# DEPENDENCIES MUST END AT END OF FILE
+-# IF YOU PUT STUFF HERE IT WILL GO AWAY
+-# see make depend above
+-  
++tessel_torus.o: /usr/include/sys/_null.h /usr/include/sys/_types.h
++tessel_torus.o: /usr/include/machine/_types.h /usr/include/math.h
++tessel_torus.o: /usr/include/machine/_limits.h /usr/include/stdlib.h
++tessel_torus.o: /usr/include/string.h /usr/include/strings.h
++tessel_torus.o: /usr/include/sys/time.h /usr/include/sys/_timeval.h
++tessel_torus.o: /usr/include/sys/types.h /usr/include/machine/endian.h
++tessel_torus.o: /usr/include/sys/_pthreadtypes.h /usr/include/sys/select.h
++tessel_torus.o: /usr/include/sys/_sigset.h /usr/include/sys/timespec.h
++tessel_torus.o: /usr/include/time.h linalg.h

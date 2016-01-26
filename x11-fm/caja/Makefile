@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/x11-fm/mate-file-manager/Makefile 19574 2014-04-25 21:11:18Z kwm $
 
 PORTNAME=	caja
-PORTVERSION=	1.10.3
+PORTVERSION=	1.12.2
 CATEGORIES=	x11-fm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

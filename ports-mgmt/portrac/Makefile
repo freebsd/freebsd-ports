@@ -11,13 +11,15 @@ COMMENT=	Simple GUI tool for tracking port updates
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_FreeBSD_9=	does not build (lacking c++11 support)
 BROKEN_sparc64=	fails to compile: error in C++ code
 
 PLIST_FILES=	bin/portrac \
 		share/portrac/portrac.png \
 		share/portrac/up-to-date.png \
 		share/portrac/updates-available.png
+
+# Unhide std::to_string() to fix build with GCC (ports/193528)
+CXXFLAGS=	-D_GLIBCXX_USE_C99
 
 USES=		compiler:c++11-lib qmake tar:bzip2
 USE_CXXSTD=	c++11

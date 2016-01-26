@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	47.0.2526.111
+PORTVERSION=	48.0.2564.82
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -273,11 +273,12 @@ pre-configure:
 		'third_party/cacheinvalidation' \
 		'third_party/catapult' \
 		'third_party/catapult/third_party/beautifulsoup' \
+		'third_party/catapult/third_party/py_vulcanize' \
+		'third_party/catapult/third_party/py_vulcanize/py_vulcanize' \
+		'third_party/catapult/third_party/py_vulcanize/third_party/rcssmin' \
+		'third_party/catapult/third_party/py_vulcanize/third_party/rjsmin' \
 		'third_party/catapult/tracing' \
 		'third_party/catapult/tracing/third_party' \
-		'third_party/catapult/tracing/third_party/tvcm' \
-		'third_party/catapult/tracing/third_party/tvcm/third_party/rcssmin' \
-		'third_party/catapult/tracing/third_party/tvcm/third_party/rjsmin' \
 		'third_party/cld' \
 		'third_party/cros_system_api' \
 		'third_party/dom_distiller_js' \
@@ -325,7 +326,6 @@ pre-configure:
 		'third_party/pywebsocket' \
 		'third_party/qcms' \
 		'third_party/qunit' \
-		'third_party/readability' \
 		'third_party/sfntly' \
 		'third_party/sinonjs' \
 		'third_party/skia' \

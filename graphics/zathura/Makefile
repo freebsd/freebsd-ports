@@ -9,10 +9,8 @@ MASTER_SITES=	http://pwmt.org/projects/zathura/download/
 MAINTAINER=	quentin.stievenart@gmail.com
 COMMENT=	Customizable lightweight pdf viewer
 
-LICENSE=	zlib
-LICENSE_NAME=	zlib license
+LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libgirara-gtk3.so:${PORTSDIR}/x11-toolkits/girara

@@ -1302,6 +1302,7 @@
     SUBDIR += py-wstools
     SUBDIR += py-wtforms
     SUBDIR += py-xlrd
+    SUBDIR += py-xlsxwriter
     SUBDIR += py-xlutils
     SUBDIR += py-xlwriter
     SUBDIR += py-xlwt
@@ -1688,6 +1689,8 @@
     SUBDIR += xsv
     SUBDIR += xt
     SUBDIR += xwindiff
+    SUBDIR += xxdiff
+    SUBDIR += xxdiff-scripts
     SUBDIR += y2l
     SUBDIR += yali
     SUBDIR += yamcha

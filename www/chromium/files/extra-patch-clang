@@ -95,9 +95,9 @@
  
    int32 run_ms = 42;
    int32 queue_ms = 8;
---- chrome/browser/sync/glue/synced_session_tracker.cc	2015-04-15 00:18:50.000000000 +0200
-+++ chrome/browser/sync/glue/synced_session_tracker.cc	2015-04-18 22:02:15.000000000 +0200
-@@ -262,7 +262,7 @@
+--- components/sync_sessions/synced_session_tracker.cc.orig	2016-01-21 13:04:41.772845558 +0100
++++ components/sync_sessions/synced_session_tracker.cc	2016-01-21 13:05:17.652842509 +0100
+@@ -286,7 +286,7 @@
    }
    DCHECK(window_ptr);
    DCHECK_EQ(window_ptr->window_id.id(), window_id);
@@ -133,17 +133,6 @@
  
      EXPECT_CALL(callback_, OnError(_))
          .Times(2);
---- media/filters/decrypting_video_decoder_unittest.cc	2015-04-15 00:31:22.000000000 +0200
-+++ media/filters/decrypting_video_decoder_unittest.cc	2015-04-18 22:03:40.000000000 +0200
-@@ -422,7 +422,7 @@
-   // NULL callback to cancel the |decryptor_ready_cb|.
-   EXPECT_CALL(*this, RequestDecryptorNotification(IsNullCallback())).WillOnce(
-       ResetAndRunCallback(&decryptor_ready_cb,
--                          reinterpret_cast<Decryptor*>(NULL),
-+                          static_cast<Decryptor*>(NULL),
-                           base::Bind(&DecryptingVideoDecoderTest::DecryptorSet,
-                                      base::Unretained(this))));
-   EXPECT_CALL(*this, DecryptorSet(_)).Times(0);
 --- third_party/hunspell/src/hunspell/affentry.hxx.orig 2015-07-21 18:46:37.322427000 -0400
 +++ third_party/hunspell/src/hunspell/affentry.hxx  2015-07-21 18:48:02.034251000 -0400
 @@ -27,7 +27,7 @@
@@ -222,26 +211,6 @@
  
    tasks_.erase(it, tasks_.end());
  
---- third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc.orig  2015-09-03 09:31:11.815462000 -0400
-+++ third_party/webrtc/modules/audio_coding/main/acm2/audio_coding_module_impl.cc   2015-09-03 09:31:50.974163000 -0400
-@@ -1028,7 +1028,7 @@
- 
- const AudioEncoder* AudioCodingImpl::GetSenderInfo() const {
-   FATAL() << "Not implemented yet.";
--  return reinterpret_cast<const AudioEncoder*>(NULL);
-+  return static_cast<const AudioEncoder*>(NULL);
- }
- 
- const CodecInst* AudioCodingImpl::GetSenderCodecInst() {
-@@ -1048,7 +1048,7 @@
- 
- const ReceiverInfo* AudioCodingImpl::GetReceiverInfo() const {
-   FATAL() << "Not implemented yet.";
--  return reinterpret_cast<const ReceiverInfo*>(NULL);
-+  return static_cast<const ReceiverInfo*>(NULL);
- }
- 
- bool AudioCodingImpl::RegisterReceiveCodec(AudioDecoder* receive_codec) { 
 --- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig	2015-10-14 22:17:57.580250000 +0200
 +++ third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp	2015-10-14 22:18:13.766229000 +0200
 @@ -358,7 +358,7 @@

@@ -20,6 +20,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdataurl_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdatetime_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdatetimeparser_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdebug_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdir_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qelfparser_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qeucjpcodec_p.h
@@ -120,6 +121,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstatemachine_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstorageinfo_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstringalgorithms_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstringiterator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsystemerror_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsystemlibrary_p.h

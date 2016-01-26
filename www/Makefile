@@ -1532,6 +1532,7 @@
     SUBDIR += py-django-appmedia
     SUBDIR += py-django-assets
     SUBDIR += py-django-auth-ldap
+    SUBDIR += py-django-bitfield
     SUBDIR += py-django-bootstrap-form
     SUBDIR += py-django-caching-app-plugins
     SUBDIR += py-django-classy-tags

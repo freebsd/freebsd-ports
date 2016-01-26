@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stlink
-PORTVERSION=	1.1.0.20151012
+PORTVERSION=	1.1.0.20160111
 CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
@@ -16,15 +16,12 @@ GTK3_USE=		GNOME=gtk30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	texane
-GH_TAGNAME=	e37b657
+GH_TAGNAME=	37ecabf
 
 USES=		autoreconf gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README tutorial.pdf
-
-pre-configure:
-	cd ${WRKSRC} && ./autogen.sh
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

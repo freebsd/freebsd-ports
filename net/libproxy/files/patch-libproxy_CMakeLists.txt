@@ -1,11 +1,28 @@
---- libproxy/CMakeLists.txt.orig	2010-09-01 22:23:34.000000000 +0200
-+++ libproxy/CMakeLists.txt	2010-12-27 10:59:14.000000000 +0100
-@@ -6,7 +6,7 @@
+Setting _POSIX_C_SOURCE unsets __BSD_VISIBLE by default, and several symbols
+end up being hidden, leading to failures such as:
+
+In file included from /wrkdir/libproxy-0.4.12/libproxy/test/url-encode.cpp:2:
+In file included from /usr/include/c++/v1/iostream:38:
+In file included from /usr/include/c++/v1/ios:216:
+/usr/include/c++/v1/__locale:545:16: error: use of undeclared identifier 'isascii'
+        return isascii(__c) ? (__tab_[static_cast<int>(__c)] & __m) !=0 : false;
+               ^
+/usr/include/c++/v1/__locale:552:22: error: use of undeclared identifier 'isascii'
+            *__vec = isascii(*__low) ? __tab_[static_cast<int>(*__low)] : 0;
+                     ^
+/usr/include/c++/v1/__locale:560:17: error: use of undeclared identifier 'isascii'
+            if (isascii(*__low) && (__tab_[static_cast<int>(*__low)] & __m))
+                ^
+/usr/include/c++/v1/__locale:569:19: error: use of undeclared identifier 'isascii'
+            if (!(isascii(*__low) && (__tab_[static_cast<int>(*__low)] & __m)))
+                  ^
+--- libproxy/CMakeLists.txt.orig	2016-01-12 16:41:07 UTC
++++ libproxy/CMakeLists.txt
+@@ -6,7 +6,6 @@ set_project_version(0 4 12)
  if (WIN32)
    add_definitions(-D_CRT_SECURE_NO_WARNINGS=1)
  else(WIN32)
--  add_definitions(-D_POSIX_C_SOURCE=1)
-+#  add_definitions(-D_POSIX_C_SOURCE=1)
+-  add_definitions(-D_POSIX_C_SOURCE=200112L)
    set(CMAKE_CXX_FLAGS "-fvisibility=hidden ${CMAKE_CXX_FLAGS}")
  endif(WIN32)
  

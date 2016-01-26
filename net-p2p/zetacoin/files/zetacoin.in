@@ -27,6 +27,8 @@
 name=%%PORTNAME%%
 rcvar=%%PORTNAME%%_enable
 
+load_rc_config $name
+
 : ${%%PORTNAME%%_enable:=NO}
 : ${%%PORTNAME%%_config=%%PREFIX%%/etc/%%PORTNAME%%.conf}
 : ${%%PORTNAME%%_datadir=/var/db/%%PORTNAME%%}
@@ -40,6 +42,8 @@ pidfile="${%%PORTNAME%%_datadir}/%%PORTNAME%%d.pid"
 stop_cmd=%%PORTNAME%%_stop
 command_args="-conf=${%%PORTNAME%%_config} -datadir=${%%PORTNAME%%_datadir} -noupnp -daemon -pid=${pidfile}"
 start_precmd="${name}_prestart"
+reindex_cmd=%%PORTNAME%%_reindex
+extra_commands="reindex"
 
 %%PORTNAME%%_create_datadir()
 {
@@ -72,5 +76,15 @@ start_precmd="${name}_prestart"
 	wait_for_pids ${rc_pid}
 }
 
-load_rc_config $name
+%%PORTNAME%%_reindex()
+{
+	if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+	    %%PORTNAME%%_stop
+	fi
+
+	echo "Reindexing ${name} blockchain."
+	command_args="${command_args} -reindex"
+	eval ${command} ${command_args}
+}
+
 run_rc_command "$1"

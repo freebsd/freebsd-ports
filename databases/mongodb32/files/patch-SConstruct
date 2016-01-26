@@ -1,0 +1,15 @@
+--- SConstruct.orig	2015-12-02 19:01:34 UTC
++++ SConstruct
+@@ -840,9 +840,9 @@ if has_option('variables-help'):
+     print env_vars.GenerateHelpText(env)
+     Exit(0)
+ 
+-unknown_vars = env_vars.UnknownVariables()
+-if unknown_vars:
+-    env.FatalError("Unknown variables specified: {0}", ", ".join(unknown_vars.keys()))
++#unknown_vars = env_vars.UnknownVariables()
++#if unknown_vars:
++#    env.FatalError("Unknown variables specified: {0}", ", ".join(unknown_vars.keys()))
+ 
+ def set_config_header_define(env, varname, varval = 1):
+     env['CONFIG_HEADER_DEFINES'][varname] = varval

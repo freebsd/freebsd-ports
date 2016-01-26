@@ -27,7 +27,7 @@ Qt_Pre_Include=	bsd.qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=	4 5
 QT4_VERSION?=	4.8.7
-QT5_VERSION?=	5.4.1
+QT5_VERSION?=	5.5.1
 
 QT_PREFIX?=		${LOCALBASE}
 
@@ -90,12 +90,21 @@ DISTFILES=		${DISTNAME:S,$,${EXTRACT_SUFX},}
 DIST_SUBDIR=		KDE/Qt/${_QT_VERSION}
 USES+=			tar:xz
 
+# Qt (at least when used with qmake) has a tendency to overlink: some libraries
+# have dependencies on others in the mkspec configurations and the latter are
+# always passed to the linker even if they are not actually used. By passing
+# --as-needed to the linker by default when building the Qt ports we do not
+# have to declare a lot of unnecessary dependencies in USE_QT5.
+# This could arguably work for Qt4 too, but since it is maintenance mode it is
+# better not to fix what is not explicitly broken there.
+LDFLAGS+=		-Wl,--as-needed
+
 .  if ${.TARGETS:Mmakesum} || ${.TARGETS:Mfetch} && \
 	defined(DISABLE_SIZE) && defined(NO_CHECKSUM)
 # Ensure that the "makesum" target (with its inner "fetch" one) uses
 # devel/qt*/distinfo for every port.
-QT_DIST=		base declarative doc graphicaleffects imageformats \
-				multimedia quick1 quickcontrols script serialport svg tools \
+QT_DIST=		3d base canvas3d connectivity declarative doc enginio graphicaleffects imageformats \
+				location multimedia quick1 quickcontrols script sensors serialport svg tools \
 				translations webchannel webkit webkit-examples websockets x11extras xmlpatterns
 .  endif
 
@@ -290,21 +299,26 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_INCDIR} \
 .endif # !defined(QT_NONSTANDARD)
 
 _USE_QT_ALL=	assistant clucene dbus declarative designer gui help \
-				imageformats linguist linguisttools multimedia network opengl pixeltool \
-				qdbusviewer qmake script scripttools sql sql-ibase sql-mysql \
-				sql-odbc sql-pgsql sql-sqlite2 sql-sqlite3 svg testlib webkit \
+				imageformats l10n linguist linguisttools multimedia \
+				network opengl pixeltool qdbusviewer qmake script \
+				scripttools sql sql-ibase sql-mysql sql-odbc sql-pgsql \
+				sql-sqlite2 sql-sqlite3 svg testlib webkit \
 				xml xmlpatterns
 
 _USE_QT4_ONLY=	accessible assistant-adp assistantclient codecs-cn codecs-jp \
 				codecs-kr codecs-tw corelib demo doc graphicssystems-opengl \
-				help-tools iconengines inputmethods l10n makeqpf moc phonon \
+				help-tools iconengines inputmethods makeqpf moc phonon \
 				phonon-gst porting qdoc3 qmlviewer qt3support qtconfig \
 				qtestlib qvfb rcc uic uic3 xmlpatterns-tool
 
-_USE_QT5_ONLY=	buildtools concurrent core graphicaleffects \
-				paths phonon4 printsupport qdbus qdoc qev qml quick \
-				quickcontrols serialport uitools webchannel websockets \
+_USE_QT5_ONLY=	3d buildtools canvas3d concurrent connectivity core \
+				enginio graphicaleffects location paths phonon4 \
+				printsupport qdbus qdoc qev qml quick quickcontrols \
+				sensors serialport uiplugin uitools webchannel websockets \
 				widgets x11extras
+
+3d_PORT=		graphics/${_QT_RELNAME}-3d
+3d_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}3DCore.so
 
 accessible_PORT=	accessibility/${_QT_RELNAME}-accessible
 accessible_PATH=	${QT_PLUGINDIR}/accessible/libqtaccessiblewidgets.so
@@ -320,6 +334,9 @@ assistantclient_PATH=	${QT_LIBDIR}/libQt${_QT_LIBVER}AssistantClient.so
 
 buildtools_PORT=	devel/${_QT_RELNAME}-buildtools
 buildtools_PATH=	${MOC}
+
+canvas3d_PORT=		x11-toolkits/${_QT_RELNAME}-canvas3d
+canvas3d_PATH=		${QT_QMLDIR}/QtCanvas3D/qmldir
 
 clucene_PORT=		textproc/clucene-${_QT_RELNAME}
 clucene_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}CLucene.so
@@ -338,6 +355,9 @@ codecs-tw_PATH=		${QT_PLUGINDIR}/codecs/libqtwcodecs.so
 
 concurrent_PORT=	devel/${_QT_RELNAME}-concurrent
 concurrent_PATH=	${QT_LIBDIR}/libQt${_QT_LIBVER}Concurrent.so
+
+connectivity_PORT=	comms/${_QT_RELNAME}-connectivity
+connectivity_PATH=	${QT_LIBDIR}/libQt${_QT_LIBVER}Bluetooth.so
 
 core_PORT=			devel/${_QT_RELNAME}-core
 core_PATH=			${QT_LIBDIR}/libQt${_QT_LIBVER}Core.so
@@ -359,6 +379,9 @@ designer_PATH=		${QT_BINDIR}/designer${_QT_BINSUFX}
 
 doc_PORT=			misc/${_QT_RELNAME}-doc
 doc_PATH=			${_QT_RELNAME}-doc>=${_QT_VERSION:R:R}
+
+enginio_PORT=		net/${_QT_RELNAME}-enginio
+enginio_PATH=		${QT_LIBDIR}/libEnginio.so
 
 graphicaleffects_PORT=	graphics/${_QT_RELNAME}-graphicaleffects
 graphicaleffects_PATH=	${QT_QMLDIR}/QtGraphicalEffects/qmldir
@@ -389,6 +412,9 @@ linguist_PATH=		${QT_BINDIR}/linguist${_QT_BINSUFX}
 
 linguisttools_PORT=	devel/${_QT_RELNAME}-linguisttools
 linguisttools_PATH=	${LRELEASE}
+
+location_PORT=		devel/${_QT_RELNAME}-location
+location_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}Location.so
 
 l10n_PORT=			misc/${_QT_RELNAME}-l10n
 l10n_PATH=			${_QT_RELNAME}-l10n>=${_QT_VERSION:R:R}
@@ -474,6 +500,9 @@ qvfb_PATH=			${QT_BINDIR}/qvfb${_QT_BINSUFX}
 rcc_PORT=			devel/${_QT_RELNAME}-rcc
 rcc_PATH=			${RCC}
 
+sensors_PORT=		comms/${_QT_RELNAME}-sensors
+sensors_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}Sensors.so
+
 script_PORT=		devel/${_QT_RELNAME}-script
 script_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}Script.so
 
@@ -514,6 +543,9 @@ uic_PATH=			${UIC}
 
 uic3_PORT=			devel/${_QT_RELNAME}-uic3
 uic3_PATH=			${QT_BINDIR}/uic3
+
+uiplugin_PORT=		x11-toolkits/${_QT_RELNAME}-uiplugin
+uiplugin_PATH=		${QT_INCDIR}/QtUiPlugin/QtUiPlugin
 
 uitools_PORT=		devel/${_QT_RELNAME}-uitools
 uitools_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}UiTools.a

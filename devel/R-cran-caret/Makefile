@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	caret
-DISTVERSION=	6.0-62
+DISTVERSION=	6.0-64
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Classification and Regression Training
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	R-cran-ggplot2>0:${PORTSDIR}/graphics/R-cran-ggplot2 \
 		R-cran-car>0:${PORTSDIR}/math/R-cran-car \

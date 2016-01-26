@@ -1,0 +1,8 @@
+{
+   "manifest": "https://api.redports.org/downloads/manifest.json",
+   "pubkeyhash": "d36e912c47725fdbbd1efcc2d4ecaff7d75b428a3bfaa35d0b124fd663d9ef95",
+   "server": "https://api.redports.org/",
+   "machineid": "",
+   "secret": ""
+}
+

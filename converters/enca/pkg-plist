@@ -20,4 +20,4 @@ man/man1/enconv.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-Auxiliary-Functions.html
 %%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-Charsets-and-Surfaces.html
 %%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-Typedefs-and-Constants.html
-%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca.devhelp
+%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca.devhelp2

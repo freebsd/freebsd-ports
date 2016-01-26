@@ -1,5 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/jzip.org.jar" "$@"

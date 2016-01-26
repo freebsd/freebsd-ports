@@ -9,10 +9,11 @@ MASTER_SITES=	GH \
 		LOCAL/tdb
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access control layer on top of git
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
 
@@ -22,38 +23,32 @@ GH_TAGNAME=	912a8bd
 
 CONFLICTS=	gitolite-[^2]*
 
-USES=		perl5	shebangfix
+USES=		cpe perl5 shebangfix
+CPE_VENDOR=	sitaram_chamarty
 SHEBANG_FILES=	hooks/common/update \
-	src/gl-admin-push \
-	src/gl-auth-command \
-	src/gl-compile-conf \
-	src/gl-conf-convert \
-	src/gl-dryrun \
-	src/gl-install \
-	src/gl-mirror-push \
-	src/gl-mirror-shell \
-	src/gl-query-rc \
-	src/gl-setup \
-	src/gl-setup-authkeys \
-	src/gl-time \
-	src/gl-tool \
-	src/sshkeys-lint
+		src/gl-admin-push \
+		src/gl-auth-command \
+		src/gl-compile-conf \
+		src/gl-conf-convert \
+		src/gl-dryrun \
+		src/gl-install \
+		src/gl-mirror-push \
+		src/gl-mirror-shell \
+		src/gl-query-rc \
+		src/gl-setup \
+		src/gl-setup-authkeys \
+		src/gl-time \
+		src/gl-tool \
+		src/sshkeys-lint
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	GITUSER
+OPTIONS_SUB=	yes
 
 GITUSER_DESC=	Create git user as gitolite provider
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGITUSER}
-USERS=		git
-GROUPS=		${USERS}
-PLIST_SUB+=	GITUSER=""
-.else
-PLIST_SUB+=	GITUSER="@comment "
-.endif
+GITUSER_VARS=	USERS=git GROUPS=git
 
 GLAUTHCOMMAND=	\
 \#!/bin/sh\n \
@@ -85,11 +80,11 @@ post-build:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gitolite
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gitolite
 	${INSTALL_SCRIPT} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/libexec/gitolite/
-	${MKDIR} ${STAGEDIR}${DATADIR}/conf
+	@${MKDIR} ${STAGEDIR}${DATADIR}/conf
 	${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${DATADIR}/conf
-	${MKDIR} ${STAGEDIR}${DATADIR}/hooks
+	@${MKDIR} ${STAGEDIR}${DATADIR}/hooks
 	(cd ${WRKSRC}/hooks && ${COPYTREE_BIN} \* ${STAGEDIR}${DATADIR}/hooks)
 	${INSTALL_SCRIPT} ${WRKDIR}/auth-command ${STAGEDIR}${PREFIX}/bin/gl-auth-command
 	${INSTALL_SCRIPT} ${WRKDIR}/setup ${STAGEDIR}${PREFIX}/bin/gl-setup

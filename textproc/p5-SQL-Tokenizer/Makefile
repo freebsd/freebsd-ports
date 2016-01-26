@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:IZUT
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Simple regular expressions based SQL tokenizer
 
 LICENSE=	ART10 GPLv1

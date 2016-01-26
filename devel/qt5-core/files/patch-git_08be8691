@@ -1,0 +1,45 @@
+commit 08be8691f7ba5e522cbc000b1880941128ad5f8c
+Author: Dmitry Shachnev <mitya57@gmail.com>
+Date:   Fri Oct 23 21:21:38 2015 +0300
+
+    Fix QStorageInfo on BSD4 systems
+    
+    - On NetBSD, the defines were not properly defined;
+    - On all other BSD systems, we use statfs which does not have f_frsize
+      member, revert to using f_bsize there.
+    
+    Task-number: QTBUG-48267
+    Change-Id: Ia1ed484ac61a615fcbb5b45affb516b5e86a64b0
+    Reviewed-by: Oswald Buddenhagen <oswald.buddenhagen@theqtcompany.com>
+    Reviewed-by: Lisandro Damián Nicanor Pérez Meyer <perezmeyer@gmail.com>
+    Reviewed-by: Thiago Macieira <thiago.macieira@intel.com>
+
+--- src/corelib/io/qstorageinfo_unix.cpp
++++ src/corelib/io/qstorageinfo_unix.cpp
+@@ -68,8 +68,8 @@
+ 
+ #if defined(Q_OS_BSD4)
+ #  if defined(Q_OS_NETBSD)
+-     define QT_STATFSBUF struct statvfs
+-     define QT_STATFS    ::statvfs
++#    define QT_STATFSBUF struct statvfs
++#    define QT_STATFS    ::statvfs
+ #  else
+ #    define QT_STATFSBUF struct statfs
+ #    define QT_STATFS    ::statfs
+@@ -506,9 +506,15 @@ void QStorageInfoPrivate::retrieveVolumeInfo()
+         valid = true;
+         ready = true;
+ 
++#if defined(Q_OS_BSD4) && !defined(Q_OS_NETBSD)
++        bytesTotal = statfs_buf.f_blocks * statfs_buf.f_bsize;
++        bytesFree = statfs_buf.f_bfree * statfs_buf.f_bsize;
++        bytesAvailable = statfs_buf.f_bavail * statfs_buf.f_bsize;
++#else
+         bytesTotal = statfs_buf.f_blocks * statfs_buf.f_frsize;
+         bytesFree = statfs_buf.f_bfree * statfs_buf.f_frsize;
+         bytesAvailable = statfs_buf.f_bavail * statfs_buf.f_frsize;
++#endif
+ #if defined(Q_OS_ANDROID) || defined (Q_OS_BSD4)
+ #if defined(_STATFS_F_FLAGS)
+         readOnly = (statfs_buf.f_flags & ST_RDONLY) != 0;

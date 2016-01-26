@@ -158,6 +158,4 @@ PLIST_DIR_LIST=		lib/kicad
 PLIST_SHAREDDIR_LIST=	share/mimelnk/application \
 			share/mimelnk
 
-BROKEN_FreeBSD_8=	does not build: absence of strtoll(3)
-
 .include <bsd.port.mk>

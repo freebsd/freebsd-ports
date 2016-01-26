@@ -13,6 +13,10 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
+DEPRECATED=	etcdctl is now part of etcd, following the change from the upstream
+EXPIRATION_DATE=2016-02-04
+CONFLICTS=	coreos-etcd-2.*
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos
 

@@ -231,11 +231,9 @@ include/scribus/pluginmanager.h
 include/scribus/pluginmanagerprefsgui.h
 include/scribus/plugins/barcodegenerator/barcode.h
 include/scribus/plugins/barcodegenerator/barcodegenerator.h
-include/scribus/plugins/barcodegenerator/ui_barcodegenerator.h
 include/scribus/plugins/colorwheel/colorwheel.h
 include/scribus/plugins/colorwheel/colorwheelwidget.h
 include/scribus/plugins/colorwheel/cwdialog.h
-include/scribus/plugins/colorwheel/ui_cwdialog.h
 include/scribus/plugins/fileloader/oldscribusformat/oldscribusformat.h
 include/scribus/plugins/fileloader/oldscribusformat/oldscribusformatimpl.h
 include/scribus/plugins/fileloader/scribus12format/scribus12format.h
@@ -246,7 +244,6 @@ include/scribus/plugins/fileloader/scribus13format/scribus13format.h
 include/scribus/plugins/fileloader/scribus13format/scribus13formatimpl.h
 include/scribus/plugins/fontpreview/fontpreview.h
 include/scribus/plugins/fontpreview/fontpreviewplugin.h
-include/scribus/plugins/fontpreview/ui_fontpreview.h
 include/scribus/plugins/formatidlist.h
 include/scribus/plugins/gettext/csvim/csvdia.h
 include/scribus/plugins/gettext/csvim/csvim.h
@@ -297,10 +294,8 @@ include/scribus/plugins/newfromtemplateplugin/nftsettings.h
 include/scribus/plugins/newfromtemplateplugin/nfttemplate.h
 include/scribus/plugins/pixmapexport/dialog.h
 include/scribus/plugins/pixmapexport/export.h
-include/scribus/plugins/pixmapexport/ui_exportform.h
 include/scribus/plugins/saveastemplateplugin/satdialog.h
 include/scribus/plugins/saveastemplateplugin/satemplate.h
-include/scribus/plugins/saveastemplateplugin/ui_satdialog.h
 include/scribus/plugins/scriptplugin/cmdcolor.h
 include/scribus/plugins/scriptplugin/cmddialog.h
 include/scribus/plugins/scriptplugin/cmddoc.h
@@ -325,14 +320,10 @@ include/scribus/plugins/scriptplugin/scriptercore.h
 include/scribus/plugins/scriptplugin/scripterprefsgui.h
 include/scribus/plugins/scriptplugin/scriptplugin.h
 include/scribus/plugins/scriptplugin/svgimport.h
-include/scribus/plugins/scriptplugin/ui_pconsole.h
-include/scribus/plugins/scriptplugin/ui_runscriptdialog.h
-include/scribus/plugins/scriptplugin/ui_scripterprefsgui.h
 include/scribus/plugins/short-words/configuration.h
 include/scribus/plugins/short-words/parse.h
 include/scribus/plugins/short-words/shortwords.h
 include/scribus/plugins/short-words/swprefsgui.h
-include/scribus/plugins/short-words/ui_swdialog.h
 include/scribus/plugins/short-words/version.h
 include/scribus/plugins/short-words/vlnadialog.h
 include/scribus/plugins/svgexplugin/svgexplugin.h
@@ -386,26 +377,20 @@ include/scribus/plugins/tools/2geomtools/lib2geom/transforms.h
 include/scribus/plugins/tools/2geomtools/lib2geom/utils.h
 include/scribus/plugins/tools/2geomtools/meshdistortion/meshdistortion.h
 include/scribus/plugins/tools/2geomtools/meshdistortion/meshdistortiondialog.h
-include/scribus/plugins/tools/2geomtools/meshdistortion/ui_meshdistortiondialog.h
 include/scribus/plugins/tools/2geomtools/pathalongpath/pathalongpath.h
 include/scribus/plugins/tools/2geomtools/pathalongpath/pathdialog.h
-include/scribus/plugins/tools/2geomtools/pathalongpath/ui_pathdialogbase.h
 include/scribus/plugins/tools/hunspellcheck/hunspelldialog.h
 include/scribus/plugins/tools/hunspellcheck/hunspelldict.h
 include/scribus/plugins/tools/hunspellcheck/hunspellplugin.h
 include/scribus/plugins/tools/hunspellcheck/hunspellpluginimpl.h
 include/scribus/plugins/tools/hunspellcheck/hunspellpluginstructs.h
-include/scribus/plugins/tools/hunspellcheck/ui_hunspelldialogbase.h
 include/scribus/plugins/tools/lenseffects/lensdialog.h
 include/scribus/plugins/tools/lenseffects/lenseffects.h
-include/scribus/plugins/tools/lenseffects/ui_lensdialogbase.h
 include/scribus/plugins/tools/pathconnect/pathconnect.h
 include/scribus/plugins/tools/pathconnect/pathconnectdialog.h
-include/scribus/plugins/tools/pathconnect/ui_pathconnectdialogbase.h
 include/scribus/plugins/tools/pathcut/pathcut.h
 include/scribus/plugins/tools/pathfinder/pathfinder.h
 include/scribus/plugins/tools/pathfinder/pathfinderdialog.h
-include/scribus/plugins/tools/pathfinder/ui_pathfinderbase.h
 include/scribus/plugins/tools/pathstroker/pathstroker.h
 include/scribus/plugins/tools/spellcheck/aspellplugin.h
 include/scribus/plugins/tools/spellcheck/aspellpluginimpl.h
@@ -413,7 +398,6 @@ include/scribus/plugins/tools/spellcheck/suggest.h
 include/scribus/plugins/tools/subdivide/subdivide.h
 include/scribus/plugins/tools/transform/transformdialog.h
 include/scribus/plugins/tools/transform/transformeffect.h
-include/scribus/plugins/tools/transform/ui_transformdialogbase.h
 include/scribus/polygonwidget.h
 include/scribus/polyprops.h
 include/scribus/prefs.h
@@ -588,55 +572,6 @@ include/scribus/ui/edittoolbar.h
 include/scribus/ui/filetoolbar.h
 include/scribus/ui/modetoolbar.h
 include/scribus/ui/pdftoolbar.h
-include/scribus/ui_aboutplugins.h
-include/scribus/ui_aligndistribute.h
-include/scribus/ui_charselect.h
-include/scribus/ui_charselectenhanced.h
-include/scribus/ui_cmsprefsbase.h
-include/scribus/ui_copypagetomasterpage.h
-include/scribus/ui_createrange.h
-include/scribus/ui_docitemattrprefs.h
-include/scribus/ui_docsections.h
-include/scribus/ui_downloaddictionaries.h
-include/scribus/ui_gtfiledialog.h
-include/scribus/ui_guidemanager.h
-include/scribus/ui_helpbrowser.h
-include/scribus/ui_hysettingsBase.h
-include/scribus/ui_insertaframe.h
-include/scribus/ui_latexeditor.h
-include/scribus/ui_measurementsbase.h
-include/scribus/ui_multipleduplicate.h
-include/scribus/ui_multiprogressdialog.h
-include/scribus/ui_nftdialog.h
-include/scribus/ui_nftwidget.h
-include/scribus/ui_pageitemattributes.h
-include/scribus/ui_patterndialog.h
-include/scribus/ui_picsearch.h
-include/scribus/ui_picsearchoptions.h
-include/scribus/ui_picstatus.h
-include/scribus/ui_pluginmanagerprefsgui.h
-include/scribus/ui_polygonwidgetbase.h
-include/scribus/ui_printdialogbase.h
-include/scribus/ui_replacecolors.h
-include/scribus/ui_replaceonecolor.h
-include/scribus/ui_selectobjects.h
-include/scribus/ui_shortcutwidget.h
-include/scribus/ui_smcstylewidget.h
-include/scribus/ui_smlinestylewidget.h
-include/scribus/ui_smpstylewidget.h
-include/scribus/ui_smreplacedia.h
-include/scribus/ui_smstyleimport.h
-include/scribus/ui_stylemanager.h
-include/scribus/ui_tabdisplay.h
-include/scribus/ui_tabexternaltoolswidget.h
-include/scribus/ui_tabgeneral.h
-include/scribus/ui_tabkeyboardshortcutswidget.h
-include/scribus/ui_tabmiscellaneous.h
-include/scribus/ui_tabprinter.h
-include/scribus/ui_tabscrapbook.h
-include/scribus/ui_tocindexprefs.h
-include/scribus/ui_unicodesearch.h
-include/scribus/ui_useprintermarginsdialog.h
 include/scribus/undogui.h
 include/scribus/undomanager.h
 include/scribus/undoobject.h
@@ -3357,60 +3292,8 @@ share/pixmaps/scribus.png
 %%DATADIR%%/translations/scribus.zh_CN.qm
 %%DATADIR%%/translations/scribus.zh_TW.qm
 %%DATADIR%%/unicodenameslist.txt
-@dir include/scribus/CMakeFiles/scribus.dir/downloadmanager
-@dir include/scribus/CMakeFiles/scribus.dir/tt/simpletreemodel
-@dir include/scribus/CMakeFiles/scribus.dir/ui
-@dir include/scribus/colormgmt/CMakeFiles/scribus_colormgmt_lib.dir
-@dir include/scribus/desaxe/CMakeFiles/scribus_desaxe_lib.dir
-@dir include/scribus/fonts/CMakeFiles/scribus_fonts_lib.dir
-@dir include/scribus/plugins/CMakeFiles
-@dir include/scribus/plugins/barcodegenerator/CMakeFiles/barcodegenerator.dir
-@dir include/scribus/plugins/colorwheel/CMakeFiles/colorwheel.dir
-@dir include/scribus/plugins/fileloader/CMakeFiles
-@dir include/scribus/plugins/fileloader/scribus12format/CMakeFiles/scribus12format.dir
-@dir include/scribus/plugins/fileloader/scribus134format/CMakeFiles/scribus134format.dir
-@dir include/scribus/plugins/fileloader/scribus13format/CMakeFiles/scribus13format.dir
-@dir include/scribus/plugins/fontpreview/CMakeFiles/fontpreview.dir
-@dir include/scribus/plugins/gettext/CMakeFiles
-@dir include/scribus/plugins/gettext/csvim/CMakeFiles/csvim.dir
-@dir include/scribus/plugins/gettext/docim/CMakeFiles/docim.dir
-@dir include/scribus/plugins/gettext/htmlim/CMakeFiles/htmlim.dir
-@dir include/scribus/plugins/gettext/odtim/CMakeFiles/odtimplugin.dir
-@dir include/scribus/plugins/gettext/pdbim/CMakeFiles/pdbim.dir
-@dir include/scribus/plugins/gettext/sxwim/CMakeFiles/sxwimplugin.dir
-@dir include/scribus/plugins/gettext/textfilter/CMakeFiles/textfilterplugin.dir
-@dir include/scribus/plugins/gettext/txtim/CMakeFiles/txtim.dir
-@dir include/scribus/plugins/import/CMakeFiles
-@dir include/scribus/plugins/import/ai/CMakeFiles/importai.dir
-@dir include/scribus/plugins/import/cvg/CMakeFiles/importcvg.dir
-@dir include/scribus/plugins/import/oodraw/CMakeFiles/oodrawimp.dir
-@dir include/scribus/plugins/import/pct/CMakeFiles/importpct.dir
-@dir include/scribus/plugins/import/ps/CMakeFiles/importps.dir
-@dir include/scribus/plugins/import/svg/CMakeFiles/svgimplugin.dir
-@dir include/scribus/plugins/import/wmf/CMakeFiles/wmfimplugin.dir
-@dir include/scribus/plugins/import/xfig/CMakeFiles/importxfig.dir
-@dir include/scribus/plugins/pixmapexport/CMakeFiles/scribusexportpixmap.dir
-@dir include/scribus/plugins/saveastemplateplugin/CMakeFiles/saveastemplateplugin.dir
-@dir include/scribus/plugins/scriptplugin/CMakeFiles/scriptplugin.dir
-@dir include/scribus/plugins/scriptplugin/samples/CMakeFiles
+@dir include/scribus/unicodemap
+@dir include/scribus/profiles
+@dir include/scribus/plugins/scriptplugin/scripts
 @dir include/scribus/plugins/scriptplugin/scripter2
-@dir include/scribus/plugins/scriptplugin/scripts/CMakeFiles
-@dir include/scribus/plugins/short-words/CMakeFiles/scribusshortwords.dir
-@dir include/scribus/plugins/svgexplugin/CMakeFiles/svgexplugin.dir
-@dir include/scribus/plugins/tools/2geomtools/CMakeFiles
-@dir include/scribus/plugins/tools/2geomtools/lib2geom/CMakeFiles/2geom.dir
-@dir include/scribus/plugins/tools/2geomtools/meshdistortion/CMakeFiles/meshdistortion.dir
-@dir include/scribus/plugins/tools/2geomtools/pathalongpath/CMakeFiles/pathalongpath.dir
-@dir include/scribus/plugins/tools/CMakeFiles
-@dir include/scribus/plugins/tools/hunspellcheck/CMakeFiles/hunspellplugin.dir
-@dir include/scribus/plugins/tools/lenseffects/CMakeFiles/lenseffects.dir
-@dir include/scribus/plugins/tools/pathconnect/CMakeFiles/pathconnect.dir
-@dir include/scribus/plugins/tools/pathcut/CMakeFiles/pathcut.dir
-@dir include/scribus/plugins/tools/pathfinder/CMakeFiles/pathfinder.dir
-@dir include/scribus/plugins/tools/pathstroker/CMakeFiles/pathstroker.dir
-@dir include/scribus/plugins/tools/subdivide/CMakeFiles/subdivide.dir
-@dir include/scribus/plugins/tools/transform/CMakeFiles/transformeffect.dir
-@dir include/scribus/profiles/CMakeFiles
-@dir include/scribus/styles/CMakeFiles/scribus_styles_lib.dir
-@dir include/scribus/text/CMakeFiles/scribus_text_lib.dir
-@dir include/scribus/unicodemap/CMakeFiles
+@dir include/scribus/plugins/scriptplugin/samples

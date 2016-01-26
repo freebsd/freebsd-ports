@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maxima
-PORTVERSION=	5.31.3
-PORTREVISION=	2
+PORTVERSION=	5.37.3
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -26,6 +25,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			${LISPSELECT}
 
 INFO=	maxima imaxima xmaxima
+#maxima.info-1 maxima.info-2 maxima.info-3
 
 PLIST_SUB=	BINDIR=${BINDIRECTORY}
 PLIST_SUB+=	LISPBIN=${LISPBINARY}
@@ -100,8 +100,6 @@ post-patch:
 	@${FIND} -X ${WRKSRC}/interfaces/xmaxima -name 'Makefile.in' | ${XARGS} \
 	${REINPLACE_CMD} -e "s;tclsh;${TCLSH};g"
 	@${REINPLACE_CMD} -e "s;/usr;${LOCALBASE};g" ${WRKSRC}/src/intl.lisp
-	@cd ${WRKSRC}/doc/info ; ${LOCALBASE}/bin/bash ./fix_crlf ; \
-	${LOCALBASE}/bin/bash ./fix_tab
 	@${REINPLACE_CMD} -e 's;$$maxima_image_base;$${maxima_image_base};g' \
 	${WRKSRC}/src/maxima.in
 .if defined(MAXIMA_LISP_OPTIONS) && !empty(MAXIMA_LISP_OPTIONS)

@@ -1,6 +1,7 @@
 libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/bash_completion
 %%DATADIR%%/bash_completion.sh
+%%DATADIR%%/completions/_reptyr
 %%DATADIR%%/completions/a2x
 %%DATADIR%%/completions/abook
 %%DATADIR%%/completions/aclocal
@@ -426,7 +427,6 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/renice
 %%DATADIR%%/completions/reportbug
 %%DATADIR%%/completions/repquota
-%%DATADIR%%/completions/reptyr
 %%DATADIR%%/completions/resolvconf
 %%DATADIR%%/completions/rfcomm
 %%DATADIR%%/completions/rfkill

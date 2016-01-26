@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minetest_game
-PORTVERSION=	0.4.12
+PORTVERSION=	0.4.13
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -24,9 +24,11 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "game.conf menu mods" ${STAGEDIR}${DATADIR}/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

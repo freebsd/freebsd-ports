@@ -3,7 +3,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	LOCAL/mat/bind
 #MASTER_SITES=	https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=snapshot;h=${HASH};sf=tgz;f=
@@ -19,8 +19,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.0.a20151227
-HASH=		7321d8d
+ISCVERSION=	9.11.0.a20160125
+HASH=		1fe6b74
 
 MAKE_JOBS_UNSAFE=	yes
 

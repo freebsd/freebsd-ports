@@ -434,8 +434,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-portsnap.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-disks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/userppp.html

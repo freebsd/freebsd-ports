@@ -1,4 +1,4 @@
---- src/printing.c.orig	2014-06-10 04:06:36 UTC
+--- src/printing.c.orig	2013-05-15 04:23:40 UTC
 +++ src/printing.c
 @@ -151,8 +151,6 @@ static gint layout_set_headers(PangoLayo
  

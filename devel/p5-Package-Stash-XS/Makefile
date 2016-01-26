@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Faster and more correct implementation of the Package::Stash API
 
 LICENSE=	ART10 GPLv1

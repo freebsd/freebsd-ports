@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.1.0.b2.18012016
+PORTVERSION=	1.1.1.b2.20012016
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -17,11 +17,11 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 
 CONFLICTS_INSTALL=	rspamd
 
-RSPAMD_VERSION=	1.1.0
+RSPAMD_VERSION=	1.1.1
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	b739110
+GH_TAGNAME=	a85edb5
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR
 GPERF_DESC=		google perf-tools profiling
@@ -29,6 +29,7 @@ REDIRECTOR_DESC=	Install HTTP redirector
 
 USE_RC_SUBR=	rspamd
 
+SUB_FILES=	pkg-message rspamd.newsyslog.conf.sample
 PLIST_SUB+=	ETCDIR=etc/rspamd \
 		RSPAMDVERSION=${RSPAMD_VERSION}
 CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
@@ -90,5 +91,10 @@ post-stage:
 		${RM} ${STAGEDIR}/${ETCDIR}/rspamd.systemd.conf
 		# No need, since rspamd.conf.sample is a same
 		${RM} ${STAGEDIR}/${ETCDIR}/rspamd.sysvinit.conf
+	${INSTALL_DATA} ${WRKDIR}/rspamd.newsyslog.conf.sample ${STAGEDIR}${ETCDIR}
+
+post-install:
+	@${MKDIR} ${STAGEDIR}/usr/local/etc/newsyslog.conf.d
+	${LN} -s ${ETCDIR}/rspamd.newsyslog.conf ${STAGEDIR}/usr/local/etc/newsyslog.conf.d
 
 .include <bsd.port.mk>

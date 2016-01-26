@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}final
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight IMAP server for Maildir
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	checkpassword-pam:${PORTSDIR}/security/checkpassword-pam \

@@ -1,4 +1,4 @@
---- man/3proxy.8.orig	2015-02-17 13:09:13 UTC
+--- man/3proxy.8.orig	2016-01-19 22:20:05 UTC
 +++ man/3proxy.8
 @@ -26,7 +26,7 @@ It can establish multiple
  gateways with HTTP and HTTPS proxy with FTP over HTTP support, SOCKS v4,
@@ -28,27 +28,17 @@
  configuration file
  .SH BUGS
  Report all bugs to
--.BR 3proxy@security.nnov.ru
-+.BR 3proxy@3proxy.ru
+ .BR 3proxy@3proxy.ru
  .SH SEE ALSO
 -3proxy.cfg(3), proxy(8), ftppr(8), socks(8), pop3p(8), tcppm(8), udppm(8),
 +3proxy.cfg(3), httppr(8), ftppr(8), socks(8), pop3p(8), tcppm(8), udppm(8),
  kill(1), syslogd(8),
  .br
  http://3proxy.ru/
-@@ -148,6 +148,6 @@ http://3proxy.ru/
- 3APA3A is pronounced as \`\`zaraza\'\'.
- .SH AUTHORS
- 3proxy is designed by 3APA3A
--.RI ( 3APA3A@security.nnov.ru ),
-+.RI ( 3APA3A@3proxy.ru ),
- Vladimir Dubrovin
--.RI ( vlad@sandy.ru )
-+.RI ( vlad@securityvulns.ru )
---- man/3proxy.cfg.3.orig	2015-02-17 13:09:13 UTC
+--- man/3proxy.cfg.3.orig	2016-01-19 22:20:05 UTC
 +++ man/3proxy.cfg.3
-@@ -114,7 +114,7 @@ view without ability to reset).
- (for proxy) - anonymous proxy (random client information reported)
+@@ -153,7 +153,7 @@ listen on given local HOST:port for inco
+ connect to given remote HOST:port instead of listening local connection on -p or default port. Can be used with another 3proxy service running -R option for connect back functionality. Most commonly used with proxy or socks. HOST can be given as IP or hostname, useful in case of dynamic DNS.
  .br
   Also, all options mentioned for 
 -.BR proxy (8)
@@ -56,78 +46,52 @@
  .BR socks (8)
  .BR pop3p (8)
  .BR tcppm (8)
-@@ -884,13 +884,13 @@ corruption and/or Content-Length chaging
- 
- 
+@@ -927,7 +927,7 @@ corruption and/or Content-Length chaging
+ Report all bugs to
+ .BR 3proxy@3proxy.ru
  .SH SEE ALSO
 -3proxy(8), proxy(8), ftppr(8), socks(8), pop3p(8), tcppm(8), udppm(8), syslogd(8),
 +3proxy(8), httppr(8), ftppr(8), socks(8), pop3p(8), tcppm(8), udppm(8), syslogd(8),
  .br
  http://3proxy.ru/
  .SH TRIVIA
- 3APA3A is pronounced as \`\`zaraza\'\'.
- .SH AUTHORS
- 3proxy is designed by 3APA3A
--.RI ( 3APA3A@security.nnov.ru ),
-+.RI ( 3APA3A@3proxy.ru ),
- Vladimir Dubrovin
--.RI ( vlad@sandy.ru )
-+.RI ( vlad@securityvulns.ru )
---- man/ftppr.8.orig	2015-02-17 13:09:13 UTC
+--- man/ftppr.8.orig	2016-01-19 22:20:05 UTC
 +++ man/ftppr.8
-@@ -75,11 +75,11 @@ Only cleartext authentication is current
+@@ -75,7 +75,7 @@ Only cleartext authentication is current
  Report all bugs to
- .BR 3proxy@security.nnov.ru
+ .BR 3proxy@3proxy.ru
  .SH SEE ALSO
 -3proxy(8), proxy(8), pop3p(8), socks(8), tcppm(8), udppm(8), syslogd(8),
 +3proxy(8), httppr(8), pop3p(8), socks(8), tcppm(8), udppm(8), syslogd(8),
  .br
  http://3proxy.ru/
  .SH AUTHORS
- 3proxy is designed by 3APA3A
--.RI ( 3APA3A@security.nnov.ru ),
-+.RI ( 3APA3A@3proxy.ru ),
- Vladimir Dubrovin
--.RI ( vlad@sandy.ru )
-+.RI ( vlad@securityvulns.ru )
---- man/icqpr.8.orig	2015-02-17 13:09:13 UTC
+--- man/icqpr.8.orig	2016-01-19 22:20:05 UTC
 +++ man/icqpr.8
-@@ -68,11 +68,11 @@ as a destination in client application. 
+@@ -68,7 +68,7 @@ as a destination in client application. 
  Report all bugs to
- .BR 3proxy@security.nnov.ru
+ .BR 3proxy@3proxy.ru
  .SH SEE ALSO
 -3proxy(8), proxy(8), ftppr(8), socks(8), pop3p(8), udppm(8), syslogd(8),
 +3proxy(8), httppr(8), ftppr(8), socks(8), pop3p(8), udppm(8), syslogd(8),
  .br
  http://3proxy.ru/
  .SH AUTHORS
- 3proxy is designed by 3APA3A
--.RI ( 3APA3A@security.nnov.ru ),
-+.RI ( 3APA3A@3proxy.ru ),
- Vladimir Dubrovin
--.RI ( vlad@sandy.ru )
-+.RI ( vlad@securityvulns.ru )
---- man/pop3p.8.orig	2015-02-17 13:09:13 UTC
+--- man/pop3p.8.orig	2016-01-19 22:20:05 UTC
 +++ man/pop3p.8
-@@ -71,11 +71,11 @@ we know which server to connect.
+@@ -71,7 +71,7 @@ we know which server to connect.
  Report all bugs to
- .BR 3proxy@security.nnov.ru
+ .BR 3proxy@3proxy.ru
  .SH SEE ALSO
 -3proxy(8), ftppr(8), proxy(8), socks(8), tcppm(8), udppm(8), syslogd(8),
 +3proxy(8), ftppr(8), httppr(8), socks(8), tcppm(8), udppm(8), syslogd(8),
  .br
  http://3proxy.ru/
  .SH AUTHORS
- 3proxy is designed by 3APA3A
--.RI ( 3APA3A@security.nnov.ru ),
-+.RI ( 3APA3A@3proxy.ru ),
- Vladimir Dubrovin
--.RI ( vlad@sandy.ru )
-+.RI ( vlad@securityvulns.ru )
---- man/proxy.8.orig	2015-02-17 13:09:13 UTC
+--- man/proxy.8.orig	2016-01-19 22:20:05 UTC
 +++ man/proxy.8
 @@ -1,15 +1,15 @@
--.TH proxy "8" "July 2009" "3proxy 0.7" "Universal proxy server"
+-.TH proxy "8" "January 2016" "3proxy 0.8" "Universal proxy server"
 +.TH httppr "8" "July 2009" "3proxy 0.7" "Universal proxy server"
  .SH NAME
 -.B proxy
@@ -146,80 +110,47 @@
  is HTTP gateway service with HTTPS and FTP over HTTPS support.
  .SH OPTIONS
  .TP
-@@ -71,6 +71,6 @@ Report all bugs to
- http://3proxy.ru/
- .SH AUTHORS
- 3proxy is designed by 3APA3A
--.RI ( 3APA3A@security.nnov.ru ),
-+.RI ( 3APA3A@3proxy.ru ),
- Vladimir Dubrovin
--.RI ( vlad@sandy.ru )
-+.RI ( vlad@securityvulns.ru )
---- man/smtpp.8.orig	2015-02-17 13:09:13 UTC
+--- man/smtpp.8.orig	2016-01-19 22:20:05 UTC
 +++ man/smtpp.8
-@@ -72,11 +72,11 @@ we know which server to connect.
+@@ -72,7 +72,7 @@ we know which server to connect.
  Report all bugs to
- .BR 3proxy@security.nnov.ru
+ .BR 3proxy@3proxy.ru
  .SH SEE ALSO
 -3proxy(8), ftppr(8), proxy(8), socks(8), tcppm(8), udppm(8), syslogd(8),
 +3proxy(8), ftppr(8), httppr(8), socks(8), tcppm(8), udppm(8), syslogd(8),
  .br
  http://3proxy.ru/
  .SH AUTHORS
- 3proxy is designed by 3APA3A
--.RI ( 3APA3A@security.nnov.ru ),
-+.RI ( 3APA3A@3proxy.ru ),
- Vladimir Dubrovin
--.RI ( vlad@sandy.ru )
-+.RI ( vlad@securityvulns.ru )
---- man/socks.8.orig	2015-02-17 13:09:13 UTC
+--- man/socks.8.orig	2016-01-19 22:20:05 UTC
 +++ man/socks.8
-@@ -67,11 +67,11 @@ instead.
+@@ -67,7 +67,7 @@ instead.
  Report all bugs to
- .BR 3proxy@security.nnov.ru
+ .BR 3proxy@3proxy.ru
  .SH SEE ALSO
 -3proxy(8), proxy(8), ftppr(8), pop3p(8), tcppm(8), udppm(8), syslogd(8),
 +3proxy(8), httppr(8), ftppr(8), pop3p(8), tcppm(8), udppm(8), syslogd(8),
  .br
  http://3proxy.ru/
  .SH AUTHORS
- 3proxy is designed by 3APA3A
--.RI ( 3APA3A@security.nnov.ru ),
-+.RI ( 3APA3A@3proxy.ru ),
- Vladimir Dubrovin
--.RI ( vlad@sandy.ru )
-+.RI ( vlad@securityvulns.ru )
---- man/tcppm.8.orig	2015-02-17 13:09:13 UTC
+--- man/tcppm.8.orig	2016-01-19 22:20:05 UTC
 +++ man/tcppm.8
-@@ -61,11 +61,11 @@ as a destination in client application. 
+@@ -61,7 +61,7 @@ as a destination in client application. 
  Report all bugs to
- .BR 3proxy@security.nnov.ru
+ .BR 3proxy@3proxy.ru
  .SH SEE ALSO
 -3proxy(8), proxy(8), ftppr(8), socks(8), pop3p(8), udppm(8), syslogd(8),
 +3proxy(8), httppr(8), ftppr(8), socks(8), pop3p(8), udppm(8), syslogd(8),
  .br
  http://3proxy.ru/
  .SH AUTHORS
- 3proxy is designed by 3APA3A
--.RI ( 3APA3A@security.nnov.ru ),
-+.RI ( 3APA3A@3proxy.ru ),
- Vladimir Dubrovin
--.RI ( vlad@sandy.ru )
-+.RI ( vlad@securityvulns.ru )
---- man/udppm.8.orig	2015-02-17 13:09:13 UTC
+--- man/udppm.8.orig	2016-01-19 22:20:05 UTC
 +++ man/udppm.8
-@@ -67,11 +67,11 @@ as a destination in client application. 
+@@ -67,7 +67,7 @@ as a destination in client application. 
  Report all bugs to
- .BR 3proxy@security.nnov.ru
+ .BR 3proxy@3proxy.ru
  .SH SEE ALSO
 -3proxy(8), proxy(8), ftppr(8), socks(8), pop3p(8), udppm(8), syslogd(8),
 +3proxy(8), httppr(8), ftppr(8), socks(8), pop3p(8), udppm(8), syslogd(8),
  .br
  http://3proxy.ru/
  .SH AUTHORS
- 3proxy is designed by 3APA3A
--.RI ( 3APA3A@security.nnov.ru ),
-+.RI ( 3APA3A@3proxy.ru ),
- Vladimir Dubrovin
--.RI ( vlad@sandy.ru )
-+.RI ( vlad@securityvulns.ru )

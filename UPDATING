@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160119:
+  AFFECTS: users of security/tor, security/tor-devel
+  AUTHOR: amdmi3@FreeBSD.org
+
+  The tor ports now create /var/log/tor subdirectory for tor logs. If
+  you've used /var/log/tor as a log _file_, you'll need to update your
+  torrc and move the file before updating the port.
+
+20160118:
+  AFFECTS: users of mail/rspamd and mail/rmilter
+  AUTHOR: vsevolod@FreeBSD.org
+
+  Rspamd has been updated to the version 1.1.0. If you have used per user
+  statistics, then please consult changelog for details: your configuration
+  should be changed.
+
+  Rmilter has been updated to the version 1.7.0. Support of SPF and Spamassassin
+  has been dropped from this project completely. You might also consider
+  migration from memcahched to redis in this version.
+
 20160113:
   AFFECTS: users of sysutils/ansible
   AUTHOR: lifanov@mail.lifanov.com

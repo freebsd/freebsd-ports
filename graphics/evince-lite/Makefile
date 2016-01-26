@@ -1,7 +1,7 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	4
 PKGNAMESUFFIX=	-lite
 
 COMMENT=	GNOME 3 multi-format document viewer without the GNOME dependancies

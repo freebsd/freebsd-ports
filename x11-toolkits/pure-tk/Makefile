@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pure-tk
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
+MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
 
 MAINTAINER=	lichray@gmail.com
@@ -12,26 +12,24 @@ COMMENT=	Basic interface between Pure and Tcl/Tk
 
 LICENSE=	BSD3CLAUSE
 
-USES=		pure tk:86+
+USES=		pkgconfig pure tk:86+
 
-MAKE_ARGS+=	tclvers=${TCL_VER}
+#MAKE_ARGS+=	tclvers=${TCL_VER}
 
 PLIST_FILES=	lib/pure/gnocl.pure \
 		lib/pure/tk.so \
 		lib/pure/tk.pure
 
+PORTDOCS=	README
+PORTEXAMPLES=	*
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	${REINPLACE_CMD} \
-		-e "s|/usr/include|${LOCALBASE}/include|g" \
+		-e "s|pkg-config tcl|pkg-config tk|" \
 		-e "s|-ltcl\$$(tclvers)|-ltcl${TCL_SHLIB_VER}|" \
 		-e "s|-ltk\$$(tclvers)|-ltk${TK_SHLIB_VER}|" \
 		${WRKSRC}/Makefile
-
-PORTDOCS=	README
-
-PORTEXAMPLES=	*
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

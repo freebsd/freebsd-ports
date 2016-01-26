@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Site
-PORTVERSION=	0.53
-PORTREVISION=	1
+PORTVERSION=	0.56
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DWHEELER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build browsable HTML documentation for your app
 
 LICENSE=	ART10 GPLv1
@@ -25,6 +24,7 @@ OPTIONS_DEFINE=	PODT
 
 PODT_DESC=	Include Pod package tests
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 

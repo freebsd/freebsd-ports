@@ -8,8 +8,8 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 graphical user interface designer
 
-USE_QT5=	assistant_run core gui network printsupport webkit \
-		widgets xml buildtools_build
+USE_QT5=	assistant_run core gui network printsupport quick uiplugin \
+		webkit widgets xml buildtools_build
 QT_DIST=	tools
 USES=		qmake
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
@@ -23,7 +23,9 @@ BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/uitools/ d' \
+# uiplugin is built in x11-toolkits/qt5-uiplugin.
+# uitools is built in devel/qt5-uitools.
+	${REINPLACE_CMD} -e '/uiplugin/ d' -e '/uitools/ d' \
 		${WRKSRC}/src/${PORTNAME}/src/src.pro
 
 post-install:

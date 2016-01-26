@@ -50,16 +50,11 @@ pre-configure:
 
 post-install:
 	${CHMOD} ${BINMODE} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/${PORTNAME}/ocaml/camlexer
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-
-x-generate-plist:
-	${ECHO} %%RUBY_SITELIBDIR%%/langscan.rb > pkg-plist.new
-	${FIND} ${RUBY_SITEARCHLIBDIR}/${PORTNAME} -type f | ${SORT} | ${SED} -e 's,${RUBY_SITEARCHLIBDIR},%%RUBY_SITEARCHLIBDIR%%,' >> pkg-plist.new
-	${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type f | ${SORT} | ${SED} -e 's,${RUBY_SITELIBDIR},%%RUBY_SITELIBDIR%%,' >> pkg-plist.new
-	${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type d -depth | ${SORT} -r | ${SED} -e 's,${RUBY_SITELIBDIR},@dirrm %%RUBY_SITELIBDIR%%,' >> pkg-plist.new
-	${FIND} ${RUBY_SITEARCHLIBDIR}/${PORTNAME} -type d -depth | ${SORT} -r | ${SED} -e 's,${RUBY_SITEARCHLIBDIR},@dirrm %%RUBY_SITEARCHLIBDIR%%,' >> pkg-plist.new
 
 .include <bsd.port.mk>

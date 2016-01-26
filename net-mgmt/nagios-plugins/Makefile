@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	2.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/ \
@@ -75,6 +75,7 @@ CONFIGURE_ARGS+=ac_cv_path_PATH_TO_QMAIL_QSTAT=/var/qmail/bin/qmail-qstat \
 		ac_cv_path_PATH_TO_PING6=/sbin/ping6 \
 		--with-ping-command="/sbin/ping -n -c %d %s" \
 		--with-ping6-command="/sbin/ping6 -n -c %d %s" \
+		ac_cv_path_PATH_TO_SUDO=${LOCALBASE}/bin/sudo \
 		ac_cv_path_PATH_TO_SMBCLIENT=${LOCALBASE}/bin/smbclient
 
 CPPFLAGS+=	-I${LOCALBASE}/include

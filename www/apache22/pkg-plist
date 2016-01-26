@@ -180,9 +180,9 @@ sbin/split-logfile
 %%DATADIR%%/build/program.mk
 %%DATADIR%%/build/rules.mk
 %%DATADIR%%/build/special.mk
-@unexec if cmp -s %D/%%WWWDIR%%/data/index.html %D/%%DATADIR%%/misc/index.html; then rm -f %D/%%WWWDIR%%/data/index.html; fi
+@preunexec if cmp -s %D/%%WWWDIR%%/data/index.html %D/%%DATADIR%%/misc/index.html; then rm -f %D/%%WWWDIR%%/data/index.html; fi
 %%DATADIR%%/misc/index.html
-@exec [ -f %D/%%WWWDIR%%/data/index.html ] || cp %D/%%DATADIR%%/misc/index.html %D/%%WWWDIR%%/data/index.html
+@postexec [ -f %D/%%WWWDIR%%/data/index.html ] || cp %D/%%DATADIR%%/misc/index.html %D/%%WWWDIR%%/data/index.html
 @(,,0400) %%WWWDIR%%/cgi-bin/printenv
 @(,,0400) %%WWWDIR%%/cgi-bin/test-cgi
 %%WWWDIR%%/error/HTTP_BAD_GATEWAY.html.var
@@ -428,6 +428,6 @@ sbin/split-logfile
 %%WWWDIR%%/icons/world1.png
 %%WWWDIR%%/icons/world2.gif
 %%WWWDIR%%/icons/world2.png
-@unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
+@preunexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
 @dir %%ETCDIR%%/envvars.d
 @dir %%WWWDIR%%/data

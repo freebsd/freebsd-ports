@@ -21,6 +21,8 @@ LIB_DEPENDS=	libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
 		libgjs.so:${PORTSDIR}/lang/gjs \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
+BROKEN_FreeBSD_9=	Does not builds
+
 PORTSCOUT=	limitw:1,even
 PORTDOCS=	*
 

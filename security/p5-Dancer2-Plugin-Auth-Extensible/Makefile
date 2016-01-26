@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2-Plugin-Auth-Extensible
-PORTVERSION=	0.401
+PORTVERSION=	0.501
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,10 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Crypt-SaltedHash>=0:${PORTSDIR}/security/p5-Crypt-SaltedHash \
 		p5-Session-Token>=0:${PORTSDIR}/security/p5-Session-Token \
-		p5-Dancer2>=0.153002:${PORTSDIR}/www/p5-Dancer2
+		p5-Dancer2>=0.166000:${PORTSDIR}/www/p5-Dancer2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

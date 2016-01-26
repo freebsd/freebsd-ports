@@ -1,0 +1,26 @@
+Fixes the build with Qt 5.5.1.
+
+From 798c831ba1f1c3e4c2d382fad017aed94f8aff8c Mon Sep 17 00:00:00 2001
+From: Shilyaev Egor <egor.shilyaev@gmail.com>
+Date: Sun, 30 Aug 2015 14:59:40 +0500
+Subject: [PATCH] =?UTF-8?q?fix:=20=D0=9F=D1=80=D0=B5=D0=B4=D1=83=D0=BF?=
+ =?UTF-8?q?=D1=80=D0=B5=D0=B6=D0=B4=D0=B5=D0=BD=D0=B8=D0=B5=20=D0=B2=20Qt?=
+ =?UTF-8?q?=205.5?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ 3rdparty/qtsingleapplication/qtlocalpeer.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+--- 3rdparty/qtsingleapplication/qtlocalpeer.cpp
++++ 3rdparty/qtsingleapplication/qtlocalpeer.cpp
+@@ -41,6 +41,7 @@
+ 
+ #include "qtlocalpeer.h"
+ #include <QCoreApplication>
++#include <QDataStream>
+ #include <QTime>
+ 
+ #if defined(Q_OS_WIN)

@@ -23,6 +23,8 @@ OPTIONS_DEFINE=	BARCODE XISBN
 BARCODE_DESC=	Barcode support
 XISBN_DESC=	xISBN support
 
+PORTSCOUT=	skipv:2.01,2.02,2.03,2.04,2.05,2.06,2.07,2.08,2.09
+
 NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure

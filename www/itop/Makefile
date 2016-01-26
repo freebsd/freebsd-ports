@@ -1,22 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	itop
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
-DISTNAME=	iTop-${PORTVERSION}-2127
+DISTNAME=	iTop-${PORTVERSION}-2459
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Simple, web based IT Service Management tool
 
 LICENSE=	AGPLv3
 
-USES=		cpe zip
+RUN_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
+
+USES=		cpe shebangfix zip
+SHEBANG_FILES=	lib/tcpdf/tools/tcpdf_addfont.php setup/install/install.sh
+
 CPE_VENDOR=	combodo
-USE_PHP=	ctype iconv mbstring pcre session xml zlib readline \
+USE_PHP=	ctype gd iconv mbstring pcre session xml zlib readline \
 		dom simplexml hash json soap mcrypt filter zip
 
+WRKSRC=		${WRKDIR}/web
 NO_BUILD=	yes
 
 ITOPDIR=	${WWWDIR}/${PORTNAME}

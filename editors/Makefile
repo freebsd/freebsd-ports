@@ -241,6 +241,7 @@
     SUBDIR += texstudio
     SUBDIR += textroom
     SUBDIR += texworks
+    SUBDIR += the
     SUBDIR += thoteditor
     SUBDIR += tpad
     SUBDIR += tree-widget

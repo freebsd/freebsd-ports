@@ -1,27 +1,11 @@
---- ./Makefile.orig	2012-03-22 19:47:34.000000000 +0100
-+++ ./Makefile	2014-01-04 17:44:05.000000000 +0100
-@@ -4,11 +4,11 @@
- 
- # platform-specific setup
- 
--DLL         = $(shell pkg-config pure --variable DLL)
--PIC         = $(shell pkg-config pure --variable PIC)
--shared      = $(shell pkg-config pure --variable shared)
-+DLL         = .so
-+PIC         = -fPIC
-+shared      = -shared
- 
--libdir      = $(shell pkg-config pure --variable libdir)
-+libdir      = $(prefix)/lib
- installdir  = $(addprefix $(DESTDIR), $(libdir)/pure)
- 
- MOD_CXXFLAGS  = $(PIC) $(shell pkg-config pure --cflags) $(CXXFLAGS) $(CPPFLAGS)
-@@ -25,7 +25,7 @@
+--- Makefile.orig	2014-03-22 20:23:33 UTC
++++ Makefile
+@@ -30,7 +30,7 @@ objects = $(patsubst %.cc, %$(DLL), $(cp
  all: $(objects)
  
  %$(DLL): %.cc
--	g++ $(shared) -o $@ $(MOD_CXXFLAGS) $< $(MOD_LDFLAGS) $(LIBS)
-+	$(CXX) $(shared) $(CPPFLAGS) $(CXXFLAGS) $(PIC) $< -o $@ $(LDFLAGS) -lpure $(LIBS)
+-	g++ $(shared) $(dllname) -o $@ $(MOD_CXXFLAGS) $< $(MOD_LDFLAGS) $(LIBS)
++	$(CXX) $(shared) $(dllname) -o $@ $(MOD_CXXFLAGS) $< $(MOD_LDFLAGS) $(LIBS)
  
  clean:
  	rm -f *.o *$(DLL) examples/life *~

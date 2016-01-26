@@ -1,0 +1,29 @@
+#!/bin/sh
+# Created by: Mark Felder <feld@FreeBSD.org>
+#
+# $FreeBSD$
+#
+# PROVIDE: plexpy
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable PlexPy:
+#
+# plexpy_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=plexpy
+rcvar=plexpy_enable
+load_rc_config $name
+
+: ${plexpy_enable:=NO}
+: ${plexpy_user=nobody}
+
+pidfile=%%PREFIX%%/plexpy/plexpy.pid
+command_interpreter=%%PYTHON_CMD%%
+command=%%PREFIX%%/plexpy/PlexPy.py
+command_args="-d --nolaunch --pid ${pidfile}"
+
+run_rc_command "$1"

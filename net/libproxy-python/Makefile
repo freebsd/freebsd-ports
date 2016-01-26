@@ -9,29 +9,25 @@ PKGNAMESUFFIX=	-python
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	python binding for libproxy
 
-LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
+RUN_DEPENDS=	libproxy>=${PORTVERSION}:${PORTSDIR}/net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-USES+=		python
+
+INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}/bindings/python
+NO_ARCH=	yes
+NO_BUILD=	yes
+USES=		python
 
 LIBPROXY_SLAVE=	python
 
-do-build:
-# empty
-
-post-build:
-	${PYTHON_CMD} -Qold ${PYTHON_LIBDIR}/compileall.py \
-		${WRKSRC}/bindings/python
+post-install:
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-f -d ${PYTHONPREFIX_SITELIBDIR} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
-		${WRKSRC}/bindings/python
-
-do-install:
-	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-.for file in libproxy.py libproxy.pyc libproxy.pyo
-	${INSTALL_DATA} ${WRKSRC}/bindings/python/${file} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}
-.endfor
+		-f -d ${PYTHONPREFIX_SITELIBDIR} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include "${MASTERDIR}/Makefile"

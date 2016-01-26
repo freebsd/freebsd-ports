@@ -1,4 +1,4 @@
---- plaso/output/elastic.py.orig	2015-06-09 20:25:30 UTC
+--- plaso/output/elastic.py.orig	2015-12-31 17:37:07 UTC
 +++ plaso/output/elastic.py
 @@ -135,6 +135,8 @@ class ElasticSearchOutputModule(interfac
      """

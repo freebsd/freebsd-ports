@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	etcd
-PORTVERSION=	0.4.6
+PORTVERSION=	2.2.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
@@ -10,30 +10,28 @@ MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Highly-available key value store and service discovery
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+
+CONFLICTS_INSTALL=coreos-etcdctl-0.* etcd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos
 
-PLIST_FILES=	bin/bench \
-		bin/etcd
-
+PLIST_FILES=	bin/etcd \
+		bin/etcdctl
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 DOCS_DESC=	Install etcd README file
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$VER|${DISTVERSION}|' ${WRKSRC}/scripts/release-version
-	@${REINPLACE_CMD} -e '/VER=/d' ${WRKSRC}/scripts/release-version
-
 do-build:
 	cd ${WRKSRC}; ${SH} build
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/bench ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/etcd ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/etcdctl ${STAGEDIR}${PREFIX}/bin/
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

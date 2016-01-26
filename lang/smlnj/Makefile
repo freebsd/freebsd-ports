@@ -261,7 +261,6 @@ MLNOINSTALL=	.cm
 MLNOINSTALL+=	sml.bin.${MLARCH}-unix sml.boot.${MLARCH}-unix \
 		sml.lib sml.${MLARCH}-bsd
 .endif
-MLSRCEXCLUDEREGEX=	-e '^(@dirrm\ )?${MLROOTRELATIVE}/base/runtime'
 .for excl in ${MLNOINSTALL}
 MLSRCEXCLUDEREGEX+=	-e '/${excl}$$' -e '/${excl}/'
 .endfor

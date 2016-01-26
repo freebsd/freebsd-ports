@@ -4756,8 +4756,6 @@ textproc/kbedic||2013-07-26|Has expired: Depends on Qt 3.x
 textproc/skim||2013-07-26|Has expired: Depends on Qt 3.x
 textproc/uim-kde||2013-07-26|Has expired: Depends on Qt 3.x
 textproc/uim-qt||2013-07-26|Has expired: Depends on Qt 3.x
-textproc/xxdiff||2013-07-26|Has expired: Depends on Qt 3.x
-textproc/xxdiff-scripts||2013-07-26|Has expired: Depends on Qt 3.x
 ukrainian/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 vietnamese/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 www/kdewebdev||2013-07-26|Has expired: Depends on Qt 3.x
@@ -4887,7 +4885,6 @@ graphics/phpsview||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
 misc/usbrh||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
 net/atmsupport||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
 comms/ib-kmod||2013-09-01|Has expired: Broken on FreeBSD 8 and newer
-net/libproxy-mozjs||2013-09-01|Has expired: Does not work with newer libxul
 www/helixplugin||2013-09-01|Has expired: Does not work with newer libxul
 deskutils/chmsee||2013-09-01|Has expired: Does not work with newer libxul
 www/moonshine||2013-09-01|Has expired: Does not work with newer libxul
@@ -8101,3 +8098,4 @@ devel/msp430-binutils|devel/gcc-msp430-ti-toolchain|2016-01-08|Has expired: Obso
 devel/e_dbus||2016-01-15|Has expired: Not used anymore by x11-wm/enlightenment
 www/xpi-locale-switcher||2016-01-15|Has expired: incompatible with Firefox 34 (and later presumably)
 textproc/py-gettext|textproc/py-python-gettext|2016-01-16|Renamed to match upstream name
+archivers/jzip.org||2016-01-24|Has expired: Abandoned, outdated (no updates since 2003)

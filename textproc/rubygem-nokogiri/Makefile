@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nokogiri
-PORTVERSION=	1.6.7.1
+PORTVERSION=	1.6.7.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -21,5 +21,6 @@ PLIST_FILES=	bin/nokogiri
 
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR} -name '*.o' -o -name '*.so' | ${XARGS} ${STRIP_CMD}
+	${RMDIR} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/ports/
 
 .include <bsd.port.mk>

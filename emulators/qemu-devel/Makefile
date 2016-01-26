@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 DISTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 PKGNAMESUFFIX=	-devel
@@ -22,7 +23,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc6
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS \
-		STATIC_LINK DOCS BSD_USER
+		STATIC_LINK DOCS
 SAMBA_DESC=		samba dependency (for -smb)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
 SASL_DESC=		cyrus-sasl dependency (vnc encryption)
@@ -33,7 +34,6 @@ PCAP_DESC=		pcap dependency (networking with bpf)
 USBREDIR_DESC=		usb device network redirection (experimental!)
 GNS3_DESC=		gns3 patches (promiscuous multicast)
 X86_TARGETS_DESC=	Don't build non-x86 system targets
-BSD_USER_DESC=		Also build bsd-user targets (for testing)
 STATIC_LINK_DESC=	Statically link the executables
 OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP GNS3
 OPTIONS_SUB=	yes
@@ -68,10 +68,6 @@ SAMBA_RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba36
 DOCS_BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 DOCS_USES=		makeinfo
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
-
-.if !defined(QEMU_USER_STATIC)
-CONFLICTS_INSTALL=	qemu--devel-[0-9]* qemu-sbruno-[0-9]*
-.endif
 
 PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 

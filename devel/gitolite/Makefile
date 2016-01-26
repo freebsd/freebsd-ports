@@ -9,7 +9,7 @@ MASTER_SITES=	GH \
 		LOCAL/milki \
 		LOCAL/tdb
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access control layer on top of git
 
 LICENSE=	GPLv2
@@ -25,24 +25,16 @@ GH_TAGNAME=	3455375
 CONFLICTS=	gitolite-[^3]*
 
 USES=		cpe perl5
-
 CPE_VENDOR=	sitaram_chamarty
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	GITUSER DOCS
+OPTIONS_SUB=	yes
 
 GITUSER_DESC=	Create git user as gitolite provider
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGITUSER}
-USERS=		git
-GROUPS=		${USERS}
-PLIST_SUB+=	GITUSER=""
-.else
-PLIST_SUB+=	GITUSER="@comment "
-.endif
+GITUSER_VARS=	USERS=git GROUPS=git
 
 post-patch:
 	@${FIND} ${WRKSRC} \
@@ -69,8 +61,9 @@ do-install:
 	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} Gitolite ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/)
 	${LN} -s ${PREFIX}/libexec/gitolite/gitolite ${STAGEDIR}${PREFIX}/bin/gitolite
 
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/CHANGELOG ${STAGEDIR}${DOCSDIR}
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

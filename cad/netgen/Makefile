@@ -4,7 +4,7 @@
 PORTNAME=	netgen
 PORTVERSION=	5.3.1
 CATEGORIES=	cad
-MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:S|.0$||}/
+MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:C|\.[[:digit:]]+$||}/
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Automatic 3D tetrahedral mesh generator

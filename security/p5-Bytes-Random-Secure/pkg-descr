@@ -1,0 +1,20 @@
+Bytes::Random::Secure provides two interfaces for obtaining crypto-quality
+random bytes. The simple interface is built around plain functions. For greater
+control over the Random Number Generator's seeding, there is an Object Oriented
+interface that provides much more flexibility.
+
+The "functions" interface provides functions that can be used any time you need
+a string of a specific number of random bytes. The random bytes are available as
+simple strings, or as hex-digits, Quoted Printable, or MIME Base64. There are
+equivalent methods available from the OO interface, plus a few others.
+
+This module can be a drop-in replacement for Bytes::Random, with the primary
+enhancement of using a cryptographic-quality random number generator to create
+the random data. The random_bytes function emulates the user interface of
+Bytes::Random's function by the same name. But with Bytes::Random::Secure the
+random number generator comes from Math::Random::ISAAC, and is suitable for
+cryptographic purposes. The harder problem to solve is how to seed the
+generator. This module uses Crypt::Random::Seed to generate the initial seeds
+for Math::Random::ISAAC.
+
+WWW: http://search.cpan.org/dist/Bytes-Random-Secure/

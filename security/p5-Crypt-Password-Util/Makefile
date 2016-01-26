@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-Password-Util
-PORTVERSION=	0.12
+PORTVERSION=	0.17
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,11 +12,13 @@ COMMENT=	Crypt password utilities
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-UUID-Random-Patch-UseMRS>=0:${PORTSDIR}/devel/p5-UUID-Random-Patch-UseMRS
+BUILD_DEPENDS=	p5-Bytes-Random-Secure>=0:${PORTSDIR}/security/p5-Bytes-Random-Secure
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

@@ -48,7 +48,7 @@ post-patch:
 	    misc/news/newsgate)
 
 TEST_CMD=	'(cd ${WRKSRC}/agent/test; ${SETENV} ${MAKE_ENV} ${MAKE})'
-post-build:
+do-test:
 	@if [ `${ID} -u` = 0 ]; then \
 	  ${CHOWN} -R nobody ${WRKSRC}/agent/test; \
 	  su -m nobody -c ${TEST_CMD}; \

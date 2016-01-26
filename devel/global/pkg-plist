@@ -18,6 +18,7 @@ man/man1/gtags-cscope.1.gz
 man/man1/gtags.1.gz
 man/man1/htags-server.1.gz
 man/man1/htags.1.gz
+man/man5/gtags.conf.5.gz
 share/gtags/BOKIN_MODEL
 share/gtags/BOKIN_MODEL_FAQ
 share/gtags/BUILD_TOOLS
@@ -27,7 +28,6 @@ share/gtags/PLUGIN_HOWTO.pygments
 share/gtags/README.PATCHES
 share/gtags/SERVERSIDE_HOWTO
 share/gtags/completion.cgi.tmpl
-share/gtags/ctags-5.8.patch
 share/gtags/elvis-2.2_0.patch
 share/gtags/elvis.rc
 share/gtags/geco.rc

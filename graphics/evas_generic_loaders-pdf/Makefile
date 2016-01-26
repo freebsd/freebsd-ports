@@ -3,6 +3,7 @@
 
 PORTNAME=	pdf
 PORTVERSION=	1.16.0
+PORTREVISION=	1
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PKGNAMEPREFIX:S/-//}/
 PKGNAMEPREFIX=	evas_generic_loaders-

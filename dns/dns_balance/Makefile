@@ -3,11 +3,13 @@
 
 PORTNAME=	dns_balance
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	http://www.netlab.cs.tsukuba.ac.jp/~yokota/archive/
+MASTER_SITES=	http://www.netlab.cs.tsukuba.ac.jp/~yokota/archive/ \
+		http://BSDforge.com/projects/source/dns/dns_balance/
 DISTNAME=	DNS-Balance-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Dynamic load-balancing DNS server
 
 USE_RUBY=	yes

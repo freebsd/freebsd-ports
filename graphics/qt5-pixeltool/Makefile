@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 screen magnifier
 
-USE_QT5=	core network widgets buildtools_build
+USE_QT5=	core gui widgets buildtools_build
 QT_DIST=	tools
 USES=		qmake
 

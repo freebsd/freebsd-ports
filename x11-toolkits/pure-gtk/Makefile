@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pure-gtk
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.13
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
+MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 DIST_SUBDIR=	pure
 
 MAINTAINER=	lichray@gmail.com
@@ -20,7 +19,6 @@ USES=		pkgconfig pure:ffi
 USE_GNOME=	glib20 gtk20 atk pango
 
 PORTDOCS=	README
-
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

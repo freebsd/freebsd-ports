@@ -53,6 +53,7 @@
     SUBDIR += dbtool
     SUBDIR += dbview
     SUBDIR += elixir-calecto
+    SUBDIR += elixir-db_connection
     SUBDIR += elixir-ecto
     SUBDIR += elixir-ecto_migrate
     SUBDIR += elixir-exredis
@@ -189,6 +190,8 @@
     SUBDIR += metakit
     SUBDIR += monetdb
     SUBDIR += mongodb
+    SUBDIR += mongodb32
+    SUBDIR += mongodb32-tools
     SUBDIR += mrtg-mysql-load
     SUBDIR += mtools-mongodb
     SUBDIR += mtop
@@ -928,6 +931,7 @@
     SUBDIR += spatialite-tools
     SUBDIR += spatialite_gui
     SUBDIR += speedtables
+    SUBDIR += sql-workbench
     SUBDIR += sqlbuddy
     SUBDIR += sqlcached
     SUBDIR += sqlcipher

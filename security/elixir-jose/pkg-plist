@@ -43,6 +43,7 @@ lib/elixir/lib/jose/ebin/jose_jwa_concat_kdf.beam
 lib/elixir/lib/jose/ebin/jose_jwa_curve25519.beam
 lib/elixir/lib/jose/ebin/jose_jwa_curve448.beam
 lib/elixir/lib/jose/ebin/jose_jwa_ed25519.beam
+lib/elixir/lib/jose/ebin/jose_jwa_ed448.beam
 lib/elixir/lib/jose/ebin/jose_jwa_math.beam
 lib/elixir/lib/jose/ebin/jose_jwa_pkcs1.beam
 lib/elixir/lib/jose/ebin/jose_jwa_pkcs5.beam
@@ -87,6 +88,7 @@ lib/elixir/lib/jose/ebin/jose_jws_alg_rsa_pss.beam
 lib/elixir/lib/jose/ebin/jose_jwt.beam
 lib/elixir/lib/jose/ebin/jose_server.beam
 lib/elixir/lib/jose/ebin/jose_sha3.beam
+lib/elixir/lib/jose/ebin/jose_sha3_keccakf1600.beam
 lib/elixir/lib/jose/ebin/jose_sha3_unsupported.beam
 lib/elixir/lib/jose/ebin/jose_sup.beam
 lib/elixir/lib/jose/lib/jose.ex

@@ -3,6 +3,7 @@
 
 PORTNAME=	gpicview
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lxde/GPicView%20%28image%20Viewer%29/GpicView%20${PORTVERSION}/
 
@@ -11,7 +12,7 @@ COMMENT=	Simple and fast image viewer for X11
 
 LICENSE=	GPLv2
 
-USES=		desktop-file-utils gmake pkgconfig
+USES=		desktop-file-utils gettext gmake pkgconfig
 USE_GNOME=	gtk20 intltool
 INSTALLS_ICONS=	yes
 

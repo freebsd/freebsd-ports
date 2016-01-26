@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-connector-c++
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/Connector-C++
 

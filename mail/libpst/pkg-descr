@@ -4,8 +4,7 @@ formats.
 This version can now convert both 32-bit Outlook files (pre-2003), and the
 64-bit Outlook 2003 .pst files. Utilities are supplied to convert email messages
 to both mbox and MH mailbox formats, and to DII load file format for use with
-many of the CT Summation products.  Contacts can be converted to a simple list,
-to vcard format, or to
-.ldif format for import to an LDAP server.
+many of the CT Summation products. Contacts can be converted to a simple list,
+to vcard format, or to .ldif format for import to an LDAP server.
 
 WWW: http://www.five-ten-sg.com/libpst/

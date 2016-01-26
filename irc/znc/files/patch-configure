@@ -1,0 +1,15 @@
+--- configure.orig	2015-11-15 17:54:23 UTC
++++ configure
+@@ -3388,10 +3388,8 @@ appendLD () {
+ 
+ case "${host_os}" in
+ 	freebsd*)
+-		# -D__GNU_LIBRARY__ makes this work on fbsd 4.11
+-		appendCXX -I/usr/local/include -D__GNU_LIBRARY__
+-		appendLib -L/usr/local/lib -lcompat
+-		appendMod -L/usr/local/lib
++		appendCXX -I/usr/local/include
++		appendLD -L/usr/local/lib
+ 	;;
+ 	solaris*)
+ 		appendLib -lsocket -lnsl -lresolv
