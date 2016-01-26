@@ -1,5 +1,6 @@
 lib/elixir/lib/phoenix/ebin/Elixir.Mix.Phoenix.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Mix.Tasks.Compile.Phoenix.beam
+lib/elixir/lib/phoenix/ebin/Elixir.Mix.Tasks.Local.Phoenix.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Digest.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Channel.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Mix.Tasks.Phoenix.Gen.Html.beam
@@ -79,6 +80,7 @@ lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.View.beam
 lib/elixir/lib/phoenix/ebin/Elixir.Phoenix.beam
 lib/elixir/lib/phoenix/ebin/phoenix.app
 lib/elixir/lib/phoenix/ebin/phoenix_new.app
+lib/elixir/lib/phoenix/installer/lib/local_phoenix.ex
 lib/elixir/lib/phoenix/installer/lib/phoenix_new.ex
 lib/elixir/lib/phoenix/installer/templates/ecto/model_case.ex
 lib/elixir/lib/phoenix/installer/templates/ecto/repo.ex
