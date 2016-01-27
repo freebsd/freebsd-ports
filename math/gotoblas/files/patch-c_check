@@ -1,5 +1,5 @@
---- c_check~	2009-08-27 01:40:47.000000000 +0900
-+++ c_check	2009-09-03 15:44:04.000000000 +0900
+--- c_check.orig	2010-01-28 19:26:25 UTC
++++ c_check
 @@ -2,7 +2,7 @@
  
  # Checking cross compile
@@ -8,8 +8,8 @@
 +$hostarch = `uname -m | sed -e s/i.86/x86/ | sed -e s/amd64/x86_64/` ;chop($hostarch);
  
  $binary = $ENV{"BINARY"};
-
-@@ -143,7 +143,7 @@
+ 
+@@ -215,7 +215,7 @@ open(CONFFILE, "> $config"  ) || die "Ca
  # print $data, "\n";
  
  print MAKEFILE "OSNAME=$os\n";

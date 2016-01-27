@@ -3,13 +3,14 @@
 
 PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}.${LAPACKVER}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	LOCAL/maho/gotoblas \
 		NL/lapack:lapack NL/lapack/timing:lapack_tmg
 DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz \
 		lapack-${LAPACKVER}.tgz:lapack \
 		large.tgz:lapack_tmg timing.tgz:lapack_tmg
+DIST_SUBDIR=	gotoblas
 EXTRACT_ONLY=	${GOTOBLAS2_SRCFILE}
 
 MAINTAINER=	cpm@fbsd.es
@@ -18,9 +19,6 @@ COMMENT=	Fast implementation of Basic Linear Algebra Subprograms
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/00License.txt
 
-BROKEN=		fails to build, does not respect DISABLE_MAKE_JOBS
-
-DIST_SUBDIR=	gotoblas
 GOTOBLAS2VER=	1.13
 GOTOBLAS2_SRCFILE=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz
 LAPACKVER=	3.4.0
@@ -30,7 +28,7 @@ TIMING_FILE=	timing.tgz
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/GotoBLAS2
 
-USES=		gmake perl5
+USES=		fortran gmake perl5
 USE_GCC=	yes
 USE_PERL5=	build
 GOTOLIBS=	libgoto2 libgoto2p
@@ -107,6 +105,7 @@ post-patch:
 	-e 's+%%_GCC_RUNTIME%%+${_GCC_RUNTIME}+' \
 	-e 's+$$(CROSS_SUFFIX)+${LOCALBASE}/bin/+' \
 		${WRKSRC}/Makefile.system
+
 .if ${PORT_OPTIONS:MOPENMP}
 	${REINPLACE_CMD} -e "s+GOTO_NUM_THREADS+OMP_NUM_THREADS+g" \
 		${WRKSRC}/test/Makefile \

@@ -1,9 +1,9 @@
---- /dev/null	2012-02-01 12:00:00.000000000 +0900
-+++ patch.for_lapack-3.4.0	2012-02-01 11:59:44.000000000 +0900
+--- patch.for_lapack-3.4.0.orig	2015-12-11 10:27:29 UTC
++++ patch.for_lapack-3.4.0
 @@ -0,0 +1,378 @@
 +
 +--- a/lapack-3.4.0/INSTALL/Makefile	2011-10-01 11:37:03.000000000 +0900
-++++ lapack-3.4.0/INSTALL/Makefile	2012-02-01 11:05:05.000000000 +0900
+++++ lapack-3.4.0/INSTALL/Makefile
 +@@ -27,7 +27,7 @@
 + 	$(LOADER) $(LOADOPTS) -o testversion ilaver.o LAPACK_version.o
 + 
@@ -15,7 +15,7 @@
 + 
 +diff -ur /work/ports/va/lapack-3.4.0/Makefile lapack-3.4.0/Makefile
 +--- a/lapack-3.4.0/Makefile	2011-11-12 06:08:04.000000000 +0900
-++++ lapack-3.4.0/Makefile	2012-02-01 11:05:05.000000000 +0900
+++++ lapack-3.4.0/Makefile
 +@@ -20,9 +20,12 @@
 + blaslib:
 + 	( cd BLAS/SRC; $(MAKE) )
@@ -32,7 +32,7 @@
 + 	
 +
 +--- a/lapack-3.4.0/SRC/Makefile	2011-10-04 11:58:05.000000000 +0900
-++++ lapack-3.4.0/SRC/Makefile	2012-02-01 11:58:55.000000000 +0900
+++++ lapack-3.4.0/SRC/Makefile
 +@@ -54,9 +54,9 @@
 + #
 + #######################################################################
@@ -314,7 +314,7 @@
 + cla_wwaddw.o: cla_wwaddw.f ; $(FORTRAN) $(NOOPT) -c $< -o $@
 +
 +--- a/lapack-3.4.0/TESTING/EIG/Makefile	2011-09-27 06:52:31.000000000 +0900
-++++ lapack-3.4.0/TESTING/EIG/Makefile	2012-02-01 11:05:05.000000000 +0900
+++++ lapack-3.4.0/TESTING/EIG/Makefile
 +@@ -129,22 +129,22 @@
 + ../xeigtsts: $(SEIGTST) $(SCIGTST) $(AEIGTST) ../../$(LAPACKLIB); \
 +           $(LOADER) $(LOADOPTS) -o xeigtsts \
@@ -344,7 +344,7 @@
 + $(SCIGTST): $(FRC)
 +
 +--- a/lapack-3.4.0/TESTING/LIN/Makefile	2011-11-01 07:21:11.000000000 +0900
-++++ lapack-3.4.0/TESTING/LIN/Makefile	2012-02-01 11:05:05.000000000 +0900
+++++ lapack-3.4.0/TESTING/LIN/Makefile
 +@@ -243,27 +243,27 @@
 + 
 + xlintsts : $(ALINTST) $(SLINTST) $(SCLNTST) ../../$(LAPACKLIB)
