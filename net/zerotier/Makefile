@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zerotier
-DISTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	net
-MASTER_SITES=	GH
 
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	Network virtualization everywhere
