@@ -39,7 +39,8 @@ post-install:
 			*) ${MV} $$fn unnethack_$$fn ;; \
 		esac; \
 	done
+
+post-install-DOCS-on:
 	${INSTALL_DATA} ${FILESDIR}/sample.unnethackrc ${STAGEDIR}${DOCSDIR}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
