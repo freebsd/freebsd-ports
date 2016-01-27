@@ -3,6 +3,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -115,6 +116,15 @@ post-install:
 	@${ECHO_MSG} "############################################################################"
 	@${ECHO_MSG} "# See ${EXAMPLESDIR} for some demonstration code        #"
 	@${ECHO_MSG} "############################################################################"
+.endif
+.if ${PORT_OPTIONS:MPERL_MODULE}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/RRDs/RRDs.so
+.endif
+.if ${PORT_OPTIONS:MPYTHON_MODULE}
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rrdtool.so
+.endif
+.if ${PORT_OPTIONS:MRUBY_MODULE}
+	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/RRD.so
 .endif
 
 .include <bsd.port.mk>
