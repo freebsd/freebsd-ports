@@ -1,5 +1,5 @@
---- scripts/xdg-open.orig	2012-09-19 21:04:46.000000000 +0000
-+++ scripts/xdg-open	2012-09-19 21:25:05.000000000 +0000
+--- scripts/xdg-open.orig	2016-01-27 21:08:36.394542000 +0100
++++ scripts/xdg-open	2016-01-27 21:43:57.950007000 +0100
 @@ -33,6 +33,12 @@
  #
  #---------------------------------------------
@@ -13,7 +13,105 @@
  manualpage()
  {
  cat << _MANUALPAGE
-@@ -421,7 +427,7 @@
+@@ -303,13 +309,34 @@
+ 
+ detectDE()
+ {
+-    if [ x"$KDE_FULL_SESSION" = x"true" ]; then DE=kde;
+-    elif [ x"$GNOME_DESKTOP_SESSION_ID" != x"" ]; then DE=gnome;
+-    elif `dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.GetNameOwner string:org.gnome.SessionManager > /dev/null 2>&1` ; then DE=gnome;
+-    elif xprop -root _DT_SAVE_MODE 2> /dev/null | grep ' = \"xfce4\"$' >/dev/null 2>&1; then DE=xfce;
+-    elif [ x"$DESKTOP_SESSION" == x"LXDE" ]; then DE=lxde;
+-    else DE=""
+-    fi
++  #First check the XDG_CURRENT_DESKTOP environment variable (latest standards - case sensitive)
++  if [ "${XDG_CURRENT_DESKTOP}" == "KDE" ]; then DE=kde;
++  elif [ "${XDG_CURRENT_DESKTOP}" == "LXDE" ]; then DE=lxde;
++  elif [ "${XDG_CURRENT_DESKTOPN}" == "MATE" ]; then DE=mate;
++  elif [ "${XDG_CURRENT_DESKTOP}" == "GNOME" ]; then DE=gnome;
++  elif [ "${XDG_CURRENT_DESKTOP}" == "CINNAMON" ]; then DE=gnome;
++  elif [ "${XDG_CURRENT_DESKTOP}" == "XFCE" ]; then DE=xfce;
++  elif [ "${XDG_CURRENT_DESKTOP}" == "Lumina" ]; then DE=lumina;  
++  #Check for the PCDM_SESSION environment variable (always uppercase)
++  elif [ "${PCDM_SESSION}" == "KDE" ]; then DE=kde;
++  elif [ "${PCDM_SESSION}" == "LXDE" ]; then DE=lxde;
++  elif [ "${PCDM_SESSION}" == "MATE" ]; then DE=mate;
++  elif [ "${PCDM_SESSION}" == "GNOME" ]; then DE=gnome;
++  elif [ "${PCDM_SESSION}" == "CINNAMON" ]; then DE=gnome;
++  elif [ "${PCDM_SESSION}" == "XFCE" ]; then DE=xfce;
++  elif [ "${PCDM_SESSION}" == "LUMINA" ]; then DE=lumina;
++  #Otherwise use the old/classic methods for detection
++  elif [ x"$KDE_FULL_SESSION" == x"true" ]; then DE=kde;
++  elif [ x"$GNOME_DESKTOP_SESSION_ID" != x"" ]; then DE=gnome;
++  elif `dbus-send --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.GetNameOwner string:org.gnome.SessionManager > /dev/null 2>&1` ; then DE=gnome;
++  elif xprop -root _DT_SAVE_MODE 2> /dev/null | grep ' = \"xfce4\"$' >/dev/null 2>&1; then DE=xfce;
++  elif [ x"$DESKTOP_SESSION" == x"LXDE" ]; then DE=lxde;
++  #Simple fallback for non-XDG window managers if Lumina is installed in the normal place (no heavy runtime dependencies)
++  elif [ -x "/usr/local/bin/lumina-open" ]; then DE=lumina;
++  #No DE found
++  else DE=""
++  fi
++  unset UR_PROCS
+ }
+ 
+ #----------------------------------------------------------------------------
+@@ -339,15 +366,18 @@
+ 
+ open_kde()
+ {
+-    if kde-open -v 2>/dev/null 1>&2; then
+-        kde-open "$1"
++    if [ -n "$KDE_SESSION_VERSION" ]; then
++        case "${KDE_SESSION_VERSION}" in
++          4)
++            kde-open "$1"
++          ;;
++          5)
++            kde-open${KDE_SESSION_VERSION} "$1"
++          ;;
++        esac
+     else
+-        if [ x"$KDE_SESSION_VERSION" = x"4" ]; then
+-            kfmclient openURL "$1"
+-        else
+-            kfmclient exec "$1"
+-            kfmclient_fix_exit_code $?
+-        fi
++        kfmclient exec "$1"
++        kfmclient_fix_exit_code $?
+     fi
+ 
+     if [ $? -eq 0 ]; then
+@@ -383,6 +413,28 @@
+     fi
+ }
+ 
++open_mate()
++{
++  gvfs-open "$1"
++
++  if [ $? -eq 0 ]; then
++       exit_success
++  else
++       exit_failure_operation_failed
++  fi
++}
++
++open_lumina()
++{
++  lumina-open "$1"
++  
++  if [ $? -eq 0 ]; then
++       exit_success
++  else
++       exit_failure_operation_failed
++  fi
++}
++
+ open_generic_xdg_mime()
+ {
+     filetype=`xdg-mime query filetype "$1" | sed "s/;.*//"`
+@@ -421,7 +473,7 @@
          # Decode URLs
          if echo "$file" | grep -q '^file:///'; then
              file=${file#file://}
@@ -22,3 +120,34 @@
          fi
          check_input_file "$file"
  
+@@ -527,7 +579,7 @@
+ if [ x"$BROWSER" = x"" ]; then
+     BROWSER=links2:links:lynx:w3m
+     if [ -n "$DISPLAY" ]; then
+-        BROWSER=firefox:mozilla:epiphany:konqueror:chromium-browser:google-chrome:$BROWSER
++        BROWSER=firefox:mozilla:epiphany:konqueror:chrome:chromium-browser:google-chrome:$BROWSER
+     fi
+ fi
+ 
+@@ -540,6 +592,10 @@
+     open_gnome "$url"
+     ;;
+ 
++    mate)
++    open_mate "$url"
++    ;;
++
+     xfce)
+     open_xfce "$url"
+     ;;
+@@ -548,6 +604,10 @@
+     open_lxde "$url"
+     ;;
+ 
++    lumina)
++    open_lumina "$url"
++    ;;
++    
+     generic)
+     open_generic "$url"
+     ;;
