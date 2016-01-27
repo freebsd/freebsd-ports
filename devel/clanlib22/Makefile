@@ -20,11 +20,10 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake jpeg libtool pathfix pkgconfig tar:tgz
+USES=		gmake jpeg libtool pathfix pkgconfig sqlite tar:tgz
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 USE_GL=		yes
-USE_SQLITE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
