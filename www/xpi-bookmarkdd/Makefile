@@ -9,6 +9,9 @@ CATEGORIES=	www
 MAINTAINER=	gustavofukao@gmail.com
 COMMENT=	Detects duplicates when bookmarks are added
 
+BROKEN=		incompatible with Firefox 34+
+EXPIRATION_DATE=	2016-01-30
+
 XPI_ID=		{ba243cb0-b824-4a26-9418-73ee795d9b9d}
 XPI_NUM=	1553
 XPI_DISTNAME=	bookmark_duplicate_detector

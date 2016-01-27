@@ -1,5 +1,5 @@
-Keybinder is a library for registering global keyboard shortcuts.  Keybinder
-works with GTK-based applications using the X Window System.
+Keybinder is a library for registering global keyboard shortcuts.
+Keybinder works with GTK-based applications using the X Window System.
 
 The port provides the following:
 
@@ -8,4 +8,4 @@ The port provides the following:
   - Python bindings, python-keybinder
   - An examples directory with programs in C, Lua, Python, and Vala
 
-WWW: http://kaizer.se/wiki/keybinder/
+WWW: https://github.com/engla/keybinder

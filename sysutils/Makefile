@@ -343,6 +343,7 @@
     SUBDIR += gconf-editor
     SUBDIR += gdisk
     SUBDIR += gdmap
+    SUBDIR += genisoimage
     SUBDIR += geomWatch
     SUBDIR += geomgui
     SUBDIR += getdelta
@@ -504,7 +505,6 @@
     SUBDIR += lmon
     SUBDIR += lnav
     SUBDIR += log_analysis
-    SUBDIR += loganalyzer
     SUBDIR += logrotate
     SUBDIR += logstalgia
     SUBDIR += logstash

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf
-PORTVERSION=	4.3.3.1
+PORTVERSION=	4.4.0
 PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		libtool localbase pathfix
+USES=		libtool localbase pathfix pkgconfig:run
 
 DAP_CONFIGURE_ENABLE=	dap
 DAP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl

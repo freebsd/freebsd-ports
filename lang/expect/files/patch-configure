@@ -1,6 +1,6 @@
---- configure.orig	2010-09-16 22:46:47.000000000 +0200
-+++ configure	2014-02-21 14:43:41.000000000 +0100
-@@ -8103,7 +8103,7 @@
+--- configure.orig	2010-09-16 20:46:47 UTC
++++ configure
+@@ -8103,7 +8103,7 @@ fi
  	    # This configuration from FreeBSD Ports.
  	    SHLIB_CFLAGS="-fPIC"
  	    SHLIB_LD="${CC} -shared"
@@ -9,7 +9,7 @@
  	    SHLIB_SUFFIX=".so"
  	    LDFLAGS=""
  	    if test $doRpath = yes; then
-@@ -8123,7 +8123,7 @@
+@@ -8123,7 +8123,7 @@ fi
  	    # Version numbers are dot-stripped by system policy.
  	    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
  	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
@@ -18,7 +18,7 @@
  	    TCL_LIB_VERSIONS_OK=nodots
  	    ;;
  	Darwin-*)
-@@ -16349,9 +16349,9 @@
+@@ -16349,9 +16349,9 @@ rm -f conftest*
  	    if test x"${TK_BIN_DIR}" != x ; then
  		SHLIB_LD_LIBS="${SHLIB_LD_LIBS} \"`${CYGPATH} ${TK_BIN_DIR}/${TK_STUB_LIB_FILE}`\""
  	    fi
@@ -30,7 +30,7 @@
  	fi
  	# Some packages build their own stubs libraries
  	eval eval "PKG_STUB_LIB_FILE=${PACKAGE_NAME}stub${UNSHARED_LIB_SUFFIX}"
-@@ -16368,10 +16368,10 @@
+@@ -16368,10 +16368,10 @@ rm -f conftest*
  	    if test x"${TK_BIN_DIR}" != x ; then
  		SHLIB_LD_LIBS="${SHLIB_LD_LIBS} ${TK_STUB_LIB_SPEC}"
  	    fi

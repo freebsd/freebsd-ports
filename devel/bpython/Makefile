@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bpython
-PORTVERSION=	0.14.2
+PORTVERSION=	0.15
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://bpython-interpreter.org/releases/

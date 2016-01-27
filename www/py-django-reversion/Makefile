@@ -3,6 +3,7 @@
 
 PORTNAME=	django-reversion
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Provides comprehensive version control facilities to Django apps
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=0:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=0:${PORTSDIR}/www/py-django18
 
 USES=		python
 USE_PYTHON=	distutils

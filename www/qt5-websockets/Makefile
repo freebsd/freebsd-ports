@@ -6,7 +6,7 @@ CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Implements the WebSocket protocol as specified in RFC 6455.
+COMMENT=	Qt implementation of WebSocket protocol
 
 USE_QT5=	buildtools_build core network qml quick
 QT_DIST=	${PORTNAME}

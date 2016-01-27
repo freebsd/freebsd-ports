@@ -31,8 +31,8 @@ shebangonefile() {
 		;;
 	esac
 
-	interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p;2q' "$f")
-	case "$interp" in
+	interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p;2q' "${f}")
+	case "${interp}" in
 	"") ;;
 	${LINUXBASE}/*) ;;
 	${LOCALBASE}/*) ;;
@@ -151,9 +151,7 @@ paths() {
 		[ -z "${f}" ] && continue
 		# Ignore false-positive/harmless files
 		case "${f}" in
-			*/lib/ruby/gems/*/Makefile) continue ;;
-			*/lib/ruby/gems/*/Makefile.html) continue ;;
-			*/lib/ruby/gems/*/mkmf.log) continue ;;
+			*/lib/ruby/gems/*) continue ;;
 			*/share/texmf-var/web2c/*/*.fmt) continue ;;
 			*/share/texmf-var/web2c/*/*.log) continue ;;
 		esac
@@ -245,38 +243,36 @@ libperl() {
 			# No results presents a blank line from heredoc.
 			[ -z "${f}" ] && continue
 			files=$((files+1))
-			found=`readelf -d $f | awk "BEGIN {libperl=1; rpath=10; runpath=100}
+			found=`readelf -d ${f} | awk "BEGIN {libperl=1; rpath=10; runpath=100}
 				/NEEDED.*${LIBPERL}/  { libperl = 0 }
 				/RPATH.*perl.*CORE/   { rpath   = 0 }
 				/RUNPATH.*perl.*CORE/ { runpath = 0 }
 				END {print libperl+rpath+runpath}
 				"`
-			# FIXME When 8.4 goes out of commission, replace the ;;
-			# with ;& in the case below.  Also, change the logic on
-			# detecting if there was a file with libperl.so
-			if [ "$found" -ne "0" ]; then
-				case "$found" in
-					*1)
-						warn "${f} is not linked with ${LIBPERL}, not respecting lddlflags?"
-						;; #;&
-					*1?)
-						has_some_libperl_so=1
-						warn "${f} does not have a rpath to ${LIBPERL}, not respecting lddlflags?"
-						;; #;&
-					1??)
-						has_some_libperl_so=1
-						warn "${f} does not have a runpath to ${LIBPERL}, not respecting lddlflags?"
-						;; #;&
-				esac
-			else
-				has_some_libperl_so=1
-			fi
+			case "${found}" in
+				*1)
+					warn "${f} is not linked with ${LIBPERL}, not respecting lddlflags?"
+					;;
+				*0)
+					has_some_libperl_so=1
+					case "${found}" in
+						*1?)
+							warn "${f} does not have a rpath to ${LIBPERL}, not respecting lddlflags?"
+							;;
+					esac
+					case "${found}" in
+						1??)
+							warn "${f} does not have a runpath to ${LIBPERL}, not respecting lddlflags?"
+							;;
+					esac
+					;;
+			esac
 		# Use heredoc to avoid losing rc from find|while subshell
 		done <<-EOT
 		$(find ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL} -name '*.so')
 		EOT
 
-		if [ $files -gt 0 -a $has_some_libperl_so -eq 0 ]; then
+		if [ ${files} -gt 0 -a ${has_some_libperl_so} -eq 0 ]; then
 			err "None of the .so in ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL} are linked with ${LIBPERL}, see above for the full list."
 			return 1
 		else
@@ -320,4 +316,4 @@ for check in ${checks}; do
 	${check} || ret=1
 done
 
-exit $ret
+exit ${ret}

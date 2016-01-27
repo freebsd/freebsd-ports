@@ -20,8 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jmhodges
 GH_TAGNAME=	1ddad808d4
 
-BROKEN_FreeBSD_8=	Build has leftover /readelf.core, PR 194986
-
 .include <bsd.port.pre.mk>
 
 # Build fails on FreeBSD10+ if value of "CC" is not set to "clang"

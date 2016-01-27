@@ -62,7 +62,7 @@ VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxSVC \
 VBOX_GUEST_VER=	${PORTVERSION}
 
 OPTIONS_DEFINE=	DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO PYTHON \
-		QT4 UDPTUNNEL VDE VNC VPX WEBSERVICE X11
+		QT4 R0LOGGING UDPTUNNEL VDE VNC VPX WEBSERVICE X11
 OPTIONS_DEFAULT=	DBUS PYTHON QT4 UDPTUNNEL VNC WEBSERVICE X11
 OPTIONS_SUB=	yes
 
@@ -70,6 +70,7 @@ DEBUG_DESC=	Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
 MANUAL_DESC=	Build with user manual
 QT4_DESC=	Build with QT4 Frontend
+R0LOGGING_DESC=	Enable R0 logging
 UDPTUNNEL_DESC=	Build with UDP tunnel support
 VDE_DESC=	Build with VDE support
 VNC_DESC=	Build with VNC support
@@ -125,8 +126,13 @@ BROKEN=		QT4 frontend requires X11 support. Run 'make config' again!
 
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_BUILDTYPE=	debug
+KMK_FLAGS+=	BUILD_TYPE=debug
 .else
 KMK_BUILDTYPE=	release
+.endif
+
+.if ${PORT_OPTIONS:MR0LOGGING} && empty(PORT_OPTIONS:MDEBUG)
+BROKEN=		R0 logging requires debug build
 .endif
 
 .if ${PORT_OPTIONS:MGUESTADDITIONS}
@@ -192,7 +198,7 @@ PLIST_SUB+=	ARCH="${KMK_ARCH}"
 
 KMK_BUILDDIR=	${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
-KMK_FLAGS=	-j${MAKE_JOBS_NUMBER}
+KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.pre.mk>
 
@@ -240,6 +246,9 @@ post-patch:
 	@${ECHO} 'VBOX_PATH_GSOAP_BIN = ${PREFIX}/bin' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_GSOAP_IMPORT = ${PREFIX}/share/gsoap/import' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $(VBOX_GCC_WARN) -Wno-long-long' >> ${WRKSRC}/LocalConfig.kmk
+.endif
+.if ${PORT_OPTIONS:MR0LOGGING}
+	@${ECHO} 'VBOX_WITH_R0_LOGGING = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \

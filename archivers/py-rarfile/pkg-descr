@@ -1,0 +1,4 @@
+This is Python module for RAR archive reading. The interface is made
+as zipfile like as possible.
+
+WWW: https://github.com/markokr/rarfile

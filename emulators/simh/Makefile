@@ -13,7 +13,7 @@ COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 NO_WRKSUBDIR=	yes
 
 USES=		gmake dos2unix zip
-DOS2UNIX_FILES=	VAX/vax_sysdev.c
+DOS2UNIX_FILES=	makefile VAX/vax_sysdev.c
 MAKE_ENV=	GCC="${CC}" CFLAGS_O="${CFLAGS}" USE_NETWORK=1
 MAKEFILE=	makefile
 

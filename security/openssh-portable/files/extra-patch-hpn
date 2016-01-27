@@ -1110,8 +1110,8 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	}
  	if (roaming_atomicio(vwrite, connection_out, client_version_string,
  	    strlen(client_version_string)) != strlen(client_version_string))
---- work.clean/openssh-6.8p1/sshconnect2.c	2015-03-17 00:49:20.000000000 -0500
-+++ work/openssh-6.8p1/sshconnect2.c	2015-04-03 16:54:23.936298000 -0500
+--- work.clean/openssh-7.1p2/sshconnect2.c.orig	2016-01-13 17:10:45.000000000 -0800
++++ work.clean/openssh-7.1p2/sshconnect2.c	2016-01-19 17:49:17.929000000 -0800
 @@ -80,6 +80,14 @@
  extern char *client_version_string;
  extern char *server_version_string;
@@ -1127,7 +1127,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  /*
   * SSH2 key exchange
-@@ -153,13 +161,16 @@
+@@ -153,13 +161,16 @@ order_hostkeyalgs(char *host, struct soc
  	return ret;
  }
  
@@ -1145,18 +1145,17 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	xxx_host = host;
  	xxx_hostaddr = hostaddr;
  
-@@ -222,6 +233,10 @@
- 	kex->server_version_string=server_version_string;
- 	kex->verify_host_key=&verify_host_key_callback;
- 
+@@ -232,6 +243,9 @@ ssh_kex2(char *host, struct sockaddr *ho
+ 	packet_send();
+ 	packet_write_wait();
+ #endif
 +#ifdef NONE_CIPHER_ENABLED
 +	xxx_kex = kex;
 +#endif
-+
- 	dispatch_run(DISPATCH_BLOCK, &kex->done, active_state);
+ }
  
- 	if (options.use_roaming && !kex->roaming) {
-@@ -423,6 +438,29 @@
+ /*
+@@ -416,6 +430,29 @@ ssh_userauth2(const char *local_user, co
  	pubkey_cleanup(&authctxt);
  	dispatch_range(SSH2_MSG_USERAUTH_MIN, SSH2_MSG_USERAUTH_MAX, NULL);
  

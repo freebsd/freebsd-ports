@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing-gtk
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils python
 
@@ -19,6 +19,7 @@ USES=		python:2
 USE_PYTHON=	autoplist distutils
 USE_GNOME=	gtk30 pygobject3
 INSTALLS_ICONS=	yes
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \

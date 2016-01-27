@@ -45,7 +45,6 @@
     SUBDIR += etask
     SUBDIR += everygui
     SUBDIR += fbreader
-    SUBDIR += fengoffice
     SUBDIR += fet
     SUBDIR += freemind
     SUBDIR += fusenshi

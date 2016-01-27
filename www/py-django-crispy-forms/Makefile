@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-crispy-forms
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	The best way to have Django DRY forms
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:${PORTSDIR}/www/py-django18
 
 USES=		python
 USE_PYTHON=	distutils autoplist

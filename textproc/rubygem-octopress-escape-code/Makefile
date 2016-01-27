@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	octopress-escape-code
-PORTVERSION=	2.0.6
+PORTVERSION=	2.1.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Adds escape sequences for code blocks in Jekyll
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-octopress-hooks>=2.0:${PORTSDIR}/devel/rubygem-octopress-hooks
+RUN_DEPENDS=	rubygem-jekyll>=3.0:${PORTSDIR}/www/rubygem-jekyll
 
 NO_ARCH=	yes
 USE_RUBY=	yes

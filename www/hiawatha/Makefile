@@ -3,6 +3,7 @@
 
 PORTNAME=	hiawatha
 PORTVERSION=	10.0
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 

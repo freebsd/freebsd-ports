@@ -2,7 +2,7 @@
 
 PORTNAME=	pike78
 PORTVERSION=	${PIKEVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
@@ -109,10 +109,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/pike.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@cd ${STAGEDIR}${PREFIX} && \
 		(${FIND} pike/${PORTVERSION} ! -type d && \
-		${FIND} pike/${PORTVERSION} -type d -empty -delete && \
-		${FIND} -d pike/${PORTVERSION} -type d | \
-		${SED} 's,^,@dirrm ,' && \
-		${ECHO_CMD} '@unexec rmdir %D/pike 2>/dev/null || true' \
+		${FIND} pike/${PORTVERSION} -type d -empty -delete \
 		) >> ${TMPPLIST}
 
 verify:

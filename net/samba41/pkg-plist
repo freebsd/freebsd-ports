@@ -153,12 +153,6 @@ include/samba4/util/time.h
 include/samba4/util/xfile.h
 include/samba4/util_ldb.h
 include/samba4/wbclient.h
-@dirrm include/samba4/util
-@dirrm include/samba4/samba
-@dirrm include/samba4/ndr
-@dirrm include/samba4/gen_ndr
-@dirrm include/samba4/core
-@dirrm include/samba4
 lib/libdcerpc-atsvc.so
 lib/libdcerpc-atsvc.so.0
 lib/libdcerpc-binding.so
@@ -451,20 +445,6 @@ lib/shared-modules/vfs/zfsacl.so
 %%MODULE_VFS_SHADOW_COPY_TEST%%lib/shared-modules/vfs/shadow_copy_test.so
 %%MODULE_VFS_SKEL_OPAQUE%%lib/shared-modules/vfs/skel_opaque.so
 %%MODULE_VFS_SKEL_TRANSPARENT%%lib/shared-modules/vfs/skel_transparent.so
-@dirrmtry lib/shared-modules/vfs
-%%AD_DC%%@dirrmtry lib/shared-modules/service
-%%AD_DC%%@dirrmtry lib/shared-modules/process_model
-@dirrmtry lib/shared-modules/perfcount
-@dirrmtry lib/shared-modules/pdb
-@dirrmtry lib/shared-modules/nss_info
-@dirrmtry lib/shared-modules/ldb
-@dirrmtry lib/shared-modules/idmap
-@dirrmtry lib/shared-modules/gpext
-@dirrmtry lib/shared-modules/gensec
-@dirrmtry lib/shared-modules/bind9
-@dirrmtry lib/shared-modules/auth
-@dirrmtry lib/shared-modules
-@dirrmtry lib/samba
 libdata/pkgconfig/dcerpc.pc
 libdata/pkgconfig/dcerpc_atsvc.pc
 libdata/pkgconfig/dcerpc_samr.pc
@@ -805,28 +785,6 @@ libdata/pkgconfig/wbclient.pc
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/xattr_native.so
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/xattr_tdb.so
 @unexec find %D/%%PYTHON_SITELIBDIR%%/samba -name '*.py[co]' -delete >/dev/null 2>&1
-@dirrm %%PYTHON_SITELIBDIR%%/samba/web_server
-@dirrm %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool
-@dirrm %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc
-@dirrm %%PYTHON_SITELIBDIR%%/samba/tests/blackbox
-@dirrm %%PYTHON_SITELIBDIR%%/samba/tests
-@dirrm %%PYTHON_SITELIBDIR%%/samba/samba3
-@dirrm %%PYTHON_SITELIBDIR%%/samba/provision
-@dirrm %%PYTHON_SITELIBDIR%%/samba/netcmd
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external/testtools/tests/matchers
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external/testtools/tests
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external/testtools/testresult
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external/testtools/matchers
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external/testtools
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external/subunit/tests
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external/subunit
-%%PY_DNSPYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/IN
-%%PY_DNSPYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes/ANY
-%%PY_DNSPYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/samba/external/dns/rdtypes
-%%PY_DNSPYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/samba/external/dns
-@dirrm %%PYTHON_SITELIBDIR%%/samba/external
-@dirrm %%PYTHON_SITELIBDIR%%/samba/dcerpc
-@dirrm %%PYTHON_SITELIBDIR%%/samba
 %%DATADIR%%/codepages/lowcase.dat
 %%DATADIR%%/codepages/upcase.dat
 %%DATADIR%%/codepages/valid.dat
@@ -920,11 +878,6 @@ libdata/pkgconfig/wbclient.pc
 %%AD_DC%%%%DATADIR%%/setup/slapd.conf
 %%AD_DC%%%%DATADIR%%/setup/spn_update_list
 %%AD_DC%%%%DATADIR%%/setup/ypServ30.ldif
-%%AD_DC%%@dirrm %%DATADIR%%/setup/display-specifiers
-%%AD_DC%%@dirrm %%DATADIR%%/setup/ad-schema
-%%AD_DC%%@dirrm %%DATADIR%%/setup
-@dirrm %%DATADIR%%/codepages
-@dirrm %%DATADIR%%
 man/man1/dbwrap_tool.1.gz
 man/man1/findsmb.1.gz
 man/man1/gentest.1.gz
@@ -1024,7 +977,10 @@ man/man8/vfs_time_audit.8.gz
 man/man8/vfs_tsmsm.8.gz
 man/man8/vfs_xattr_tdb.8.gz
 man/man8/winbindd.8.gz
-@dirrmtry /var/run/samba4
-@dirrmtry /var/log/samba4
-@dirrmtry /var/db/samba4/private
-@dirrmtry /var/db/samba4
+@dir lib/shared-modules/perfcount
+@dir lib/shared-modules/pdb
+@dir lib/shared-modules/gpext
+@dir /var/run/samba4
+@dir /var/log/samba4
+@dir /var/db/samba4/private
+@dir /var/db/samba4

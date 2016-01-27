@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	citrix_ica
-PORTVERSION=	13.2.1
+PORTVERSION=	13.3.0
 CATEGORIES=	net comms linux
 MASTER_SITES=	#
-DISTNAME=	linuxx86-13.2.1.328635
+DISTNAME=	linuxx86-${PORTVERSION}.344519
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
@@ -38,7 +38,7 @@ SUB_LIST=	CDIR=${CDIR}
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=May not be redistributed due to licensing. Please visit https://www.citrix.com/downloads/citrix-receiver/linux/receiver-for-linux-1321.html accept their license and download ${DISTFILES} into ${DISTDIR}
+IGNORE=May not be redistributed due to licensing. Please visit https://www.citrix.com/downloads/citrix-receiver/linux/ accept their license and download ${DISTFILES} into ${DISTDIR}
 .endif
 
 .if defined(ICA_CERTS)

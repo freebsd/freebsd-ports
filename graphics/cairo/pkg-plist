@@ -1,4 +1,4 @@
-bin/cairo-sphinx
+%%GLIB%%bin/cairo-sphinx
 bin/cairo-trace
 include/cairo/cairo-deprecated.h
 include/cairo/cairo-features.h
@@ -20,10 +20,10 @@ lib/cairo/cairo-fdr.a
 lib/cairo/cairo-fdr.so
 lib/cairo/cairo-fdr.so.0
 lib/cairo/cairo-fdr.so.0.0.0
-lib/cairo/cairo-sphinx.a
-lib/cairo/cairo-sphinx.so
-lib/cairo/cairo-sphinx.so.0
-lib/cairo/cairo-sphinx.so.0.0.0
+%%GLIB%%lib/cairo/cairo-sphinx.a
+%%GLIB%%lib/cairo/cairo-sphinx.so
+%%GLIB%%lib/cairo/cairo-sphinx.so.0
+%%GLIB%%lib/cairo/cairo-sphinx.so.0.0.0
 lib/cairo/libcairo-trace.a
 lib/cairo/libcairo-trace.so
 lib/cairo/libcairo-trace.so.0

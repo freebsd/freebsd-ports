@@ -15,6 +15,8 @@ COMMENT=	Component of SPARK 2015
 LICENSE=	LGPL21 GPLv3
 LICENSE_COMB=	multi
 
+BROKEN=		broken by recent updated to an ocaml dependency
+
 BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir \
 		ocaml-zip>1:${PORTSDIR}/archivers/ocaml-zip \
 		ocaml-zarith>1.2:${PORTSDIR}/math/ocaml-zarith \

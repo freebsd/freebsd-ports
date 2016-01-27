@@ -52,8 +52,8 @@ envvars="%%PREFIX%%/sbin/envvars"
 apache24_accf()
 {
   if checkyesno apache24_http_accept_enable; then
-    /sbin/kldstat -v | grep accf_http > /dev/null 2>&1 || /sbin/kldload accf_http || return ${?}
-    /sbin/kldstat -v | grep accf_data > /dev/null 2>&1 || /sbin/kldload accf_data || return ${?}
+    /sbin/kldstat -qm accf_http || /sbin/kldload accf_http || return ${?}
+    /sbin/kldstat -qm accf_data || /sbin/kldload accf_data || return ${?}
   else
     apache24_flags="${apache24_flags} -DNOHTTPACCEPT"
   fi

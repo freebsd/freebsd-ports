@@ -2,16 +2,10 @@ bin/infobot
 %%ETCDIR%%/infobot-are.txt
 %%ETCDIR%%/infobot-is.txt
 %%ETCDIR%%/infobot.channels
-@unexec if cmp -s %D/%%ETCDIR%%/infobot.config %D/%%ETCDIR%%/infobot.config-dist; then rm -f %D/%%ETCDIR%%/infobot.config; fi
-%%ETCDIR%%/infobot.config-dist
-@exec if [ ! -f %D/%%ETCDIR%%/infobot.config ]; then cp -p %D/%F %B/infobot.config; fi
+@sample %%ETCDIR%%/infobot.config-dist %%ETCDIR%%/infobot.config
 %%ETCDIR%%/infobot.crontab
-@unexec if cmp -s %D/%%ETCDIR%%/infobot.help %D/%%ETCDIR%%/infobot.help-dist; then rm -f %D/%%ETCDIR%%/infobot.help; fi
-%%ETCDIR%%/infobot.help-dist
-@exec if [ ! -f %D/%%ETCDIR%%/infobot.help ]; then cp -p %D/%F %B/infobot.help; fi
-@unexec if cmp -s %D/%%ETCDIR%%/infobot.users %D/%%ETCDIR%%/infobot.users-dist; then rm -f %D/%%ETCDIR%%/infobot.users; fi
-%%ETCDIR%%/infobot.users-dist
-@exec if [ ! -f %D/%%ETCDIR%%/infobot.users ]; then cp -p %D/%F %B/infobot.users; fi
+@sample %%ETCDIR%%/infobot.help-dist %%ETCDIR%%/infobot.help
+@sample %%ETCDIR%%/infobot.users-dist %%ETCDIR%%/infobot.users
 %%ETCDIR%%/magic8.txt
 %%ETCDIR%%/sane-are.txt
 %%ETCDIR%%/sane-ignore.txt

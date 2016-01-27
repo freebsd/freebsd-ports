@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	imaputils
-PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTVERSION=	1.0.4
 CATEGORIES=	mail
-MASTER_SITES=	http://tsatsenko.ru/ports/distfiles/
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Number of tools and scripts for use with IMAP servers
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mtsatsenko
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

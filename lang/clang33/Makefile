@@ -191,12 +191,6 @@ build-plist:
 	${FIND} ${STAGEDIR}${DOCSDIR} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
 	    ${SORT} >> ${PLIST}
-	${FIND} ${PLIST_DIR_LIST:S|^|${STAGEDIR}${LLVM_PREFIX}/|} -type d | \
-	    ${SED} -e 's|${STAGEDIR}${PREFIX}/|@dirrm |' | \
-	    ${SORT} -r >> ${PLIST}
-	${FIND} ${STAGEDIR}${DOCSDIR} -type d | ${SORT} -r | \
-	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' \
-	    >> ${PLIST}
 
 .if make(svn-patch)
 .if !defined(PATCH_REV)

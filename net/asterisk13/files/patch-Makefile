@@ -1,4 +1,4 @@
---- Makefile.orig	2015-07-24 22:20:17 UTC
+--- Makefile.orig	2015-12-15 18:01:38 UTC
 +++ Makefile
 @@ -128,7 +128,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(
  OVERWRITE=y
@@ -14,7 +14,7 @@
  
  # Default install directory for DAHDI hooks.
 -DAHDI_UDEV_HOOK_DIR = /usr/share/dahdi/span_config.d
-+# DAHDI_UDEV_HOOK_DIR = /usr/share/dahdi/span_config.d
++#DAHDI_UDEV_HOOK_DIR = /usr/share/dahdi/span_config.d
  
  # This Makefile previously contained a note about the ability to use .asterisk.makeopts
  # from your home directory or /etc/asterisk.makeopts to set defaults for menuselect.
@@ -51,7 +51,7 @@
  
  installdirs:
  	@for i in $(INSTALLDIRS); do \
-@@ -602,10 +607,10 @@ bininstall: _all installdirs $(SUBDIRS_I
+@@ -603,10 +608,10 @@ bininstall: _all installdirs $(SUBDIRS_I
  	if [ -f contrib/firmware/iax/iaxy.bin ] ; then \
  		$(INSTALL) -m 644 contrib/firmware/iax/iaxy.bin "$(DESTDIR)$(ASTDATADIR)/firmware/iax/iaxy.bin"; \
  	fi
@@ -66,7 +66,7 @@
  
  $(SUBDIRS_INSTALL):
  	+@DESTDIR="$(DESTDIR)" ASTSBINDIR="$(ASTSBINDIR)" $(SUBMAKE) -C $(@:-install=) install
-@@ -638,7 +643,7 @@ ifneq ($(filter ~%,$(DESTDIR)),)
+@@ -639,7 +644,7 @@ ifneq ($(filter ~%,$(DESTDIR)),)
  	@exit 1
  endif
  
@@ -75,18 +75,11 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install "$(DESTDIR)" . ; \
  	fi
-@@ -680,29 +685,16 @@ adsi:
- 		else \
- 			echo "Installing $$x" ; \
- 		fi ; \
--		$(INSTALL) -m 644 "$$x" "$(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`" ; \
-+		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`.sample ; \
- 	done
- 
- samples: adsi
- 	@echo Installing other config files...
- 	@for x in configs/samples/*.sample; do \
--		dst="$(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`" ;	\
+@@ -682,23 +687,10 @@ upgrade: bininstall
+ #  (2) the extension to strip off
+ define INSTALL_CONFIGS
+ 	@for x in configs/$(1)/*$(2); do \
+-		dst="$(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x $(2)`"; \
 -		if [ -f "$${dst}" ]; then \
 -			if [ "$(OVERWRITE)" = "y" ]; then \
 -				if cmp -s "$${dst}" "$$x" ; then \
@@ -102,13 +95,13 @@
  		echo "Installing file $$x"; \
 -		$(INSTALL) -m 644 "$$x" "$${dst}" ;\
 +		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`.sample ; \
- 	done
+ 	done ; \
 -	if [ "$(OVERWRITE)" = "y" ]; then \
-+	@if true; then \
++	if true; then \
  		echo "Updating asterisk.conf" ; \
  		sed -e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \
  			-e 's|^astmoddir.*$$|astmoddir => $(ASTMODDIR)|' \
-@@ -715,15 +707,15 @@ samples: adsi
+@@ -711,8 +703,8 @@ define INSTALL_CONFIGS
  			-e 's|^astrundir.*$$|astrundir => $(ASTVARRUNDIR)|' \
  			-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
  			-e 's|^astsbindir.*$$|astsbindir => $(ASTSBINDIR)|' \
@@ -117,13 +110,14 @@
 +			"$(DESTDIR)$(ASTCONFPATH).sample" > "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
 +		$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH).sample" ; \
  		rm -f "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
- 	fi ; \
- 	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/INBOX"
- 	build_tools/make_sample_voicemail "$(DESTDIR)/$(ASTDATADIR)" "$(DESTDIR)/$(ASTSPOOLDIR)"
+ 	fi
+ endef
+@@ -728,7 +720,7 @@ adsi:
+ 		else \
+ 			echo "Installing $$x" ; \
+ 		fi ; \
+-		$(INSTALL) -m 644 "$$x" "$(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`" ; \
++		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x`.sample ; \
+ 	done
  
- 	@for x in phoneprov/*; do \
--		dst="$(DESTDIR)$(ASTDATADIR)/$$x" ;	\
-+		dst="$(DESTDIR)$(ASTDATADIR)/$$x" ;     \
- 		if [ -f "$${dst}" ]; then \
- 			if [ "$(OVERWRITE)" = "y" ]; then \
- 				if cmp -s "$${dst}" "$$x" ; then \
+ samples: adsi

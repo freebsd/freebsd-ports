@@ -3,7 +3,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	libartlgpl2 libxml2
-USES=		cmake desktop-file-utils execinfo ghostscript:run jpeg \
+USES=		cmake:outsource desktop-file-utils execinfo ghostscript:run jpeg \
 		pkgconfig python shared-mime-info tar:bz2
 USE_LDCONFIG=	yes
 

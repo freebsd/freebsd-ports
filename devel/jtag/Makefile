@@ -11,19 +11,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to work with JTAG-aware boards
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${OPENWINCE_INCLUDE_DEP}:${PORTSDIR}/devel/openwince-include
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+ONLY_FOR_ARCHS=	i386
 
 USES=		readline tar:bzip2
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 PORTDOCS=	*
 
-ONLY_FOR_ARCHS=	i386
 OPENWINCE_INCLUDE=${LOCALBASE}/include/openwince
 OPENWINCE_INCLUDE_DEP=${OPENWINCE_INCLUDE}/common.h
 
@@ -38,7 +36,7 @@ post-extract:
 		"s,/usr/local/include/openwince,${OPENWINCE_INCLUDE}," \
 		${WRKSRC}/configure
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README TODO doc/internals.xml \
 		${STAGEDIR}${DOCSDIR})

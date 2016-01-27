@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	RcppArmadillo
-PORTVERSION=	0.6.300.2.0
+PORTVERSION=	0.6.400.2.2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Rcpp integration for Armadillo templated linear algebra library
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	R-cran-Rcpp>=0.11.0:${PORTSDIR}/devel/R-cran-Rcpp
 

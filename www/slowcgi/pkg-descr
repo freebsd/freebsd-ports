@@ -1,0 +1,5 @@
+slowcgi is a server which implements the FastCGI Protocol to execute CGI
+scripts. FastCGI was designed to overcome the CGI protocol's scalability
+and resource sharing limitations.
+
+WWW: https://github.com/koue/slowcgi

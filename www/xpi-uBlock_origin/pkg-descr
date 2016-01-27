@@ -7,3 +7,4 @@ which mode will cause all 3rd-party network requests to be blocked by default,
 unless allowed by the user.
 
 WWW: https://github.com/gorhill/uBlock/wiki
+WWW: https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/

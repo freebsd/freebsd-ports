@@ -1455,6 +1455,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%PRIV_LIB%%/pod/perl5235delta.pod
 %%PRIV_LIB%%/pod/perl5236delta.pod
 %%PRIV_LIB%%/pod/perl5237delta.pod
+%%PRIV_LIB%%/pod/perl5238delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -1658,6 +1659,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%PRIV_LIB%%/unicore/To/Uc.pl
 %%PRIV_LIB%%/unicore/To/Upper.pl
 %%PRIV_LIB%%/unicore/To/WB.pl
+%%PRIV_LIB%%/unicore/To/_PerlLB.pl
 %%PRIV_LIB%%/unicore/To/_PerlWB.pl
 %%PRIV_LIB%%/unicore/UCD.pl
 %%PRIV_LIB%%/unicore/lib/Age/NA.pl
@@ -2129,6 +2131,7 @@ etc/man.d/perl%%PERL_VER%%.conf
 %%MAN1%%/perl5235delta.1.gz
 %%MAN1%%/perl5236delta.1.gz
 %%MAN1%%/perl5237delta.1.gz
+%%MAN1%%/perl5238delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz

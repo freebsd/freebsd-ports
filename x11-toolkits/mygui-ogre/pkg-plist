@@ -1,0 +1,10 @@
+include/MYGUI/MyGUI_LastHeader.h
+include/MYGUI/MyGUI_OgreDataManager.h
+include/MYGUI/MyGUI_OgreDataStream.h
+include/MYGUI/MyGUI_OgreDiagnostic.h
+include/MYGUI/MyGUI_OgrePlatform.h
+include/MYGUI/MyGUI_OgreRTTexture.h
+include/MYGUI/MyGUI_OgreRenderManager.h
+include/MYGUI/MyGUI_OgreTexture.h
+include/MYGUI/MyGUI_OgreVertexBuffer.h
+lib/libMyGUI.OgrePlatform.a

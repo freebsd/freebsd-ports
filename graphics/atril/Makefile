@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	atril
-PORTVERSION=	1.10.2
+PORTVERSION=	1.12.2
 PORTREVISION?=	0
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
@@ -15,8 +15,6 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
 		libspectre.so:${PORTSDIR}/print/libspectre
-
-RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 
 PORTSCOUT=	limitw:1,even
 SLAVEPORT?=	no
@@ -46,7 +44,7 @@ USE_MATE+=	desktop
 GLIB_SCHEMAS=	org.mate.Atril.gschema.xml
 
 OPTIONS_DEFINE=	CAJA COMICS DJVU DVI EPUB KEYRING T1LIB XPS
-OPTIONS_DEFAULT=CAJA COMICS EPUB KEYRING XPS
+OPTIONS_DEFAULT=CAJA COMICS DJVU EPUB KEYRING XPS
 DVI_DESC=	DVI viewer support
 T1LIB_DESC=	T1LIB for TYPE1 fonts to DVI (Enables DVI)
 CAJA_DESC=	Caja plugin

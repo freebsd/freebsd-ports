@@ -1,0 +1,15 @@
+--- makefile.orig	2012-04-23 16:28:04.000000000 +0200
++++ makefile	2016-01-19 20:21:21.371550000 +0100
+@@ -332,8 +332,10 @@
+   endif
+   ifeq (,$(NO_LTO))
+     ifneq (,$(findstring -flto,$(GCC_OPTIMIZERS)))
+-      CFLAGS_O += -flto -fwhole-program
+-      LDFLAGS_O += -flto -fwhole-program
++      ifneq (,$(findstring -fwhole-program,$(GCC_OPTIMIZERS)))
++        CFLAGS_O += -flto -fwhole-program
++        LDFLAGS_O += -flto -fwhole-program
++      endif
+     endif
+   endif
+   BUILD_FEATURES = - compiler optimizations and no debugging support

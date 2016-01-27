@@ -1,11 +1,11 @@
---- mkspecs/features/qt_module.prf.orig
-+++ mkspecs/features/qt_module.prf
-@@ -189,7 +189,7 @@
-     QMAKE_PKGCONFIG_INSTALL_REPLACE += lib_replace
+--- mkspecs/features/qt_module.prf.orig	2015-03-16 17:16:43.000000000 +0100
++++ mkspecs/features/qt_module.prf	2015-05-01 09:47:31.767105000 +0200
+@@ -200,7 +200,7 @@
+     QMAKE_PKGCONFIG_INSTALL_REPLACE += pclib_replace
  
      unix {
 -        CONFIG += create_libtool explicitlib
 +        CONFIG += explicitlib
-         QMAKE_LIBTOOL_LIBDIR = $$qt_libdir
-         QMAKE_LIBTOOL_INSTALL_REPLACE += lib_replace
-     }
+         host_build: \
+             QMAKE_LIBTOOL_LIBDIR = $$[QT_HOST_LIBS]
+         else: \

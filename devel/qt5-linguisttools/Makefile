@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt localization tools
 
-USE_QT5=	core xml buildtools_build qml_build
+USE_QT5=	core xml buildtools_build
 QT_DIST=	tools
 USES=		qmake
 

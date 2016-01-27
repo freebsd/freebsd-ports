@@ -1,0 +1,17 @@
+bin/fsntfsinfo
+include/libfsntfs.h
+include/libfsntfs/codepage.h
+include/libfsntfs/definitions.h
+include/libfsntfs/error.h
+include/libfsntfs/extern.h
+include/libfsntfs/features.h
+include/libfsntfs/types.h
+lib/libfsntfs.a
+lib/libfsntfs.so
+lib/libfsntfs.so.1
+lib/libfsntfs.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pyfsntfs.a
+%%PYTHON_SITELIBDIR%%/pyfsntfs.so
+libdata/pkgconfig/libfsntfs.pc
+man/man1/fsntfsinfo.1.gz
+man/man3/libfsntfs.3.gz

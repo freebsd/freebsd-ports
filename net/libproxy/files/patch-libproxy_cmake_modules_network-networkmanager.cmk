@@ -1,9 +1,0 @@
---- libproxy/cmake/modules/network_networkmanager.cmk.orig	2011-01-08 01:21:37.000000000 +0100
-+++ libproxy/cmake/modules/network_networkmanager.cmk	2011-01-08 01:22:18.000000000 +0100
-@@ -1,3 +1,4 @@
- if (NOT WIN32 AND NOT APPLE)
-+  option(WITH_NETWORKMANAGER "Search for NetworkManager package" ON)
-   px_check_modules(NM NetworkManager dbus-1)
--endif()
-\ No newline at end of file
-+endif()

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xaric
-PORTVERSION=	0.13.6
-PORTREVISION=	1
+PORTVERSION=	0.13.7
 CATEGORIES=	irc
 MASTER_SITES=	http://xaric.org/software/xaric/releases/
 

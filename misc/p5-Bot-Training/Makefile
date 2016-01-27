@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AVAR
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Plain text training material for bots like Hailo and MegaHAL
 
 LICENSE=	ART10 GPLv1

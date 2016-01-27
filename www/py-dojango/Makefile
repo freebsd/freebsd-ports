@@ -3,6 +3,7 @@
 
 PORTNAME=	dojango
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	www python java
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Django application for building dojo
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.6:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.6:${PORTSDIR}/www/py-django18
 
 OPTIONS_DEFINE=		JAVA
 

@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Copyright 2007, AnyWi Technologies
+#
+# PROVIDE: bincimapd
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+#
+# Note: tcpserver can be found in the sysutils/ucspi-tcp package.
+. /etc/rc.subr
+name="bincimapd"
+rcvar=`set_rcvar`
+load_rc_config $name
+: ${bincimapd_enable="NO"}
+: ${bincimapd_tcpserver="%%PREFIX%%/bin/tcpserver"}
+: ${bincimapd_tcpserver_flags="-R -H"}
+: ${bincimapd_host="0"}
+: ${bincimapd_port="imap"}
+: ${bincimapd_conf="%%PREFIX%%/etc/bincimap/bincimap.conf"}
+: ${bincimapd_pidfile="/var/run/bincimapd.pid"}
+: ${bincimapd_checkpassword="%%PREFIX%%/bin/checkpassword-pam"} # e.g. /usr/local/bin/checkpassword-pam
+: ${bincimapd_checksubprogram="/usr/bin/true"}
+
+bincimapd_start()
+{
+	rc_pid=$(check_pidfile ${pidfile} ${bincimapd_tcpserver})
+	if [ -z "$rc_pid" ]; then
+		echo -n "Starting bincimapd: "
+		$bincimapd_tcpserver $bincimapd_tcpserver_flags $bincimapd_host $bincimapd_port \
+			%%PREFIX%%/bin/bincimap-up --conf=$bincimapd_conf -- \
+			%%PREFIX%%/bin/checkpassword-pam -s imap -- %%PREFIX%%/bin/bincimapd &
+		echo $! > $bincimapd_pidfile
+		echo "."
+	else
+		echo "${name} already running? (check ${pidfile}"
+		return 1
+	fi
+}
+
+start_cmd="bincimapd_start"
+command=${bincimapd_tcpserver}
+pidfile=${bincimapd_pidfile}
+run_rc_command "$1"

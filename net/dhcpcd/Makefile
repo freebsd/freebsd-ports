@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dhcpcd
-PORTVERSION=	6.10.0
+PORTVERSION=	6.10.1
 CATEGORIES=	net
 MASTER_SITES=	http://roy.marples.name/downloads/dhcpcd/ \
 		http://roy.aydogan.net/dhcpcd/ \

@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-gettext>=0:${PORTSDIR}/devel/rubygem-gettext \
 		rubygem-gtk2>=0:${PORTSDIR}/x11-toolkits/rubygem-gtk2
 
 BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
 
 OPTIONS_DEFINE=	DOCS
 

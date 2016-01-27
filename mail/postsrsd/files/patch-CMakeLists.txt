@@ -1,6 +1,6 @@
---- CMakeLists.txt	2014-01-03 01:01:47.000000000 +0100
-+++ CMakeLists.txt.new	2014-06-18 02:01:27.734952000 +0200
-@@ -3,45 +3,22 @@
+--- CMakeLists.txt.orig	2015-12-13 08:56:05 UTC
++++ CMakeLists.txt
+@@ -4,11 +4,14 @@ include(CheckIncludeFile)
  
  option(GENERATE_SRS_SECRET "Generate a random SRS secret if none exists during install" ON)
  option(USE_APPARMOR "Enable AppArmor profile" OFF)
@@ -8,50 +8,67 @@
  
 +if(MK_CHROOT_DIR)
  set(CHROOT_DIR "${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME}" CACHE PATH "Chroot jail for daemon")
--set(CONFIG_DIR "/etc/default" CACHE PATH "Location of configuration file")
 +endif()
-+set(CONFIG_DIR "${CMAKE_INSTALL_PREFIX}/etc" CACHE PATH "Location of configuration file")
+ set(SYSCONF_DIR "/etc" CACHE PATH "Global system configuration folder")
+ set(SYSD_UNIT_DIR "${SYSCONF_DIR}/systemd/system" CACHE PATH "Systemd unit file folder")
+-set(CONFIG_DIR "${SYSCONF_DIR}/default" CACHE PATH "Location of startup configuration file")
++set(CONFIG_DIR "${CMAKE_INSTALL_PREFIX}/etc" CACHE PATH "Location of startup configuration file")
+ set(DOC_DIR "share/doc/${PROJECT_NAME}" CACHE PATH "Path for documentation files")
+ mark_as_advanced(CHROOT_DIR SYSCONF_DIR SYSD_UNIT_DIR CONFIG_DIR DOC_DIR)
  
- find_program(HELP2MAN help2man DOC "path to help2man executable")
+@@ -16,8 +19,6 @@ find_program(HELP2MAN help2man DOC "path
  find_program(DD dd DOC "path to dd executable")
  find_program(BASE64 base64 DOC "path to base64 executable")
+ find_program(OPENSSL openssl DOC "path to OpenSSL executable")
 -find_program(INSSERV insserv DOC "path to insserv executable")
 -find_program(CHKCONFIG chkconfig DOC "path to chkconfig executable")
--
+ find_library(LIBSOCKET socket)
+ find_library(LIBNSL nsl)
+ 
+@@ -46,26 +47,6 @@ if(HAVE_TIME_H)
+     add_definitions(-DHAVE_TIME_H)
+ endif()
+ 
 -if(NOT DEFINED INIT_FLAVOR)
--    if(IS_DIRECTORY "/etc/init" AND EXISTS "/lib/init/upstart-job")
+-	if(IS_DIRECTORY "${SYSD_UNIT_DIR}" AND EXISTS "/usr/lib/systemd/systemd")
+-        message(STATUS "Detected init flavor: systemd")
+-        set(INIT_FLAVOR "systemd" CACHE STRING "Init daemon of this system")
+-    elseif(IS_DIRECTORY "${SYSCONF_DIR}/init" AND EXISTS "/lib/init/upstart-job")
 -        message(STATUS "Detected init flavor: upstart")
 -        set(INIT_FLAVOR "upstart" CACHE STRING "Init daemon of this system")
--    elseif(IS_DIRECTORY "/etc/init.d" AND EXISTS "/lib/lsb/init-functions")
--        message(STATUS "Detected init flavor: sysv-lsb")
--        set(INIT_FLAVOR "sysv-lsb" CACHE STRING "Init daemon of this system")
--    elseif(IS_DIRECTORY "/etc/init.d" AND EXISTS "/etc/init.d/functions")
+-    elseif(IS_DIRECTORY "${SYSCONF_DIR}/init.d" AND EXISTS "${SYSCONF_DIR}/init.d/functions")
 -        message(STATUS "Detected init flavor: sysv-redhat")
 -        set(INIT_FLAVOR "sysv-redhat" CACHE STRING "Init daemon of this system")
+-    elseif(IS_DIRECTORY "${SYSCONF_DIR}/init.d" AND EXISTS "/lib/lsb/init-functions")
+-        message(STATUS "Detected init flavor: sysv-lsb")
+-        set(INIT_FLAVOR "sysv-lsb" CACHE STRING "Init daemon of this system")
 -    else()
 -        message(STATUS "Detected init flavor: none")
 -        message(STATUS "System startup files will not be installed")
 -        set(INIT_FLAVOR "" CACHE STRING "Init daemon of this system")
 -    endif()
 -endif()
- 
+-
  add_executable(${PROJECT_NAME} postsrsd.c sha1.c srs2.c)
+ 
+ if(${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
+@@ -74,15 +55,7 @@ endif()
  
  get_target_property(POSTSRSD ${PROJECT_NAME} LOCATION)
  get_filename_component(POSTSRSD ${POSTSRSD} NAME_WE)
 -set(APPARMOR_PROFILE "${CMAKE_INSTALL_PREFIX}/sbin/${POSTSRSD}")
 -string(REGEX REPLACE "^/+" "" APPARMOR_PROFILE "${APPARMOR_PROFILE}")
 -string(REPLACE "/" "." APPARMOR_PROFILE "${APPARMOR_PROFILE}")
--
--configure_file(${PROJECT_NAME}.lsb_init.in ${PROJECT_NAME}.lsb_init @ONLY)
--configure_file(${PROJECT_NAME}.rh_init.in ${PROJECT_NAME}.rh_init @ONLY)
--configure_file(${PROJECT_NAME}.upstart.in ${PROJECT_NAME}.upstart @ONLY)
--configure_file(${PROJECT_NAME}.apparmor.in ${PROJECT_NAME}.apparmor @ONLY)
-+
- configure_file(postinstall.cmake.in postinstall.cmake @ONLY)
  
- if(HELP2MAN)
-@@ -49,7 +26,7 @@
+-configure_file(init/${PROJECT_NAME}.sysv-lsb.in ${PROJECT_NAME}.sysv-lsb @ONLY)
+-configure_file(init/${PROJECT_NAME}.sysv-redhat.in ${PROJECT_NAME}.sysv-redhat @ONLY)
+-configure_file(init/${PROJECT_NAME}.upstart.in ${PROJECT_NAME}.upstart @ONLY)
+-configure_file(init/${PROJECT_NAME}.apparmor.in ${PROJECT_NAME}.apparmor @ONLY)
+-configure_file(init/${PROJECT_NAME}.systemd.in ${PROJECT_NAME}.systemd @ONLY)
+ configure_file(init/${PROJECT_NAME}.default.in ${PROJECT_NAME}.default @ONLY)
+ 
+ configure_file(postinstall.cmake.in postinstall.cmake @ONLY)
+@@ -92,7 +65,7 @@ add_custom_command(TARGET ${PROJECT_NAME
  	COMMAND ${HELP2MAN} ARGS -s8 -o${PROJECT_NAME}.8 -n "Postfix Sender Rewriting Scheme daemon" -N -h-h -v-v ${CMAKE_CURRENT_BINARY_DIR}/${POSTSRSD}
  	VERBATIM
  )
@@ -60,12 +77,12 @@
  endif()
  
  if(USE_APPARMOR)
-@@ -57,6 +34,8 @@
+@@ -100,6 +73,8 @@ if(USE_APPARMOR)
  endif()
  
  install(TARGETS ${PROJECT_NAME} DESTINATION "sbin")
 +if(ENABLE_DOCS)
- install(FILES README.md main.cf.ex DESTINATION "share/doc/${PROJECT_NAME}")
+ install(FILES README.md README_UPGRADE.md main.cf.ex DESTINATION "${DOC_DIR}")
 +endif()
  install(SCRIPT "${CMAKE_CURRENT_BINARY_DIR}/postinstall.cmake")
  

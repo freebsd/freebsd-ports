@@ -11,7 +11,8 @@ DISTNAME=	SpiralLoops-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Loop-based sampler
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
@@ -25,8 +26,6 @@ PORTDOCS=	CHANGES README
 DESKTOP_ENTRIES="SpiralLoops" "" "" "SpiralLoops" "" false
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.orig
@@ -47,7 +46,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/SpiralLoops ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

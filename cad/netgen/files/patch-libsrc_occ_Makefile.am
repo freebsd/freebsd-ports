@@ -1,5 +1,5 @@
---- libsrc/occ/Makefile.am.orig	2010-11-08 10:10:46.000000000 +0600
-+++ libsrc/occ/Makefile.am	2010-11-08 10:10:57.000000000 +0600
+--- libsrc/occ/Makefile.am.orig	2014-08-29 09:54:03 UTC
++++ libsrc/occ/Makefile.am
 @@ -1,5 +1,4 @@
 -noinst_HEADERS = occgeom.hpp occmeshsurf.hpp \
 -Partition_Inter2d.hxx Partition_Loop2d.hxx Partition_Loop.hxx \

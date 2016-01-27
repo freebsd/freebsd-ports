@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	TweetStream provides simple Ruby access to Twitter Streaming API
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-daemons>=1.1:${PORTSDIR}/devel/rubygem-daemons \
 		rubygem-em-http-request>=1.1.1:${PORTSDIR}/www/rubygem-em-http-request \

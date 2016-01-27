@@ -14,6 +14,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby modules to handle various calendars
 
 BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

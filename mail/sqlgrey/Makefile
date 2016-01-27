@@ -14,7 +14,9 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
 		p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \
-		p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser
+		p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
+		${LOCALBASE}/bin/gmd5sum:${PORTSDIR}/sysutils/coreutils
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${WRKSRC}/sqlgrey-logstats.pl ${WRKSRC}/update_sqlgrey_config ${WRKSRC}/sqlgrey
@@ -60,17 +62,17 @@ post-patch:
 	@${REINPLACE_CMD} -e 's!/etc/sqlgrey!${PREFIX}/${ETCDIR}!g' ${WRKSRC}/sqlgrey
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey-logstats.pl ${STAGEDIR}/${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey ${STAGEDIR}/${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/update_sqlgrey_config ${STAGEDIR}/${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey-logstats.pl ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey ${STAGEDIR}/${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/update_sqlgrey_config ${STAGEDIR}/${PREFIX}/sbin
 	@cd ${WRKSRC} && perldoc -u sqlgrey | pod2man sqlgrey > ${STAGEDIR}/${MANPREFIX}/man/man1/sqlgrey.1
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/${ETCDIR}
 .for i in ${ETCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${STAGEDIR}/${PREFIX}/${ETCDIR}/${i}.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/${i} ${STAGEDIR}/${PREFIX}/${ETCDIR}/${i}.sample
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}/${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${STAGEDIR}/${DOCSDIR}."
 .endif
 

@@ -1,0 +1,11 @@
+# newsyslog configuration file for rspamd(8)
+#
+# Link (or copy) rspamd.newsyslog.conf to /usr/local/etc/newsyslog.conf.d/
+# to take care of log rotation.
+#
+# ln -s /usr/local/etc/rspamd/rspamd.newsyslog.conf /usr/local/etc/newsyslog.conf.d
+#
+# See newsyslog.conf(5) for details.
+#
+# logfilename          [owner:group]    mode count size when  flags [/pid_file] [sig_num]
+/var/log/rspamd/rspamd.log	nobody:nobody	644   7	   *	@T00  JC    /var/run/rspamd/rspamd.pid 30

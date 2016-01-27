@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vms-empire
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 

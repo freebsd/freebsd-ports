@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2005-07-21 10:02:30 UTC
++++ Makefile.in
+@@ -87,7 +87,7 @@ datadir = @datadir@
+ prefix = @prefix@
+ sysconfdir = @sysconfdir@
+ 
+-SUBDIRS = conf contrib doc man service src
++SUBDIRS = contrib man src
+ 
+ #--------------------------------------------------------------------------
+ EXTRA_DIST = bincimap.spec config.h COPYING.OpenSSL config.h.in README.SSL

@@ -1,20 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	ipdb
-PORTVERSION=	0.8
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	milki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPython-enabled pdb
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0.10:${PORTSDIR}/devel/ipython
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

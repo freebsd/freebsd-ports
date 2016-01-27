@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	unicorn-worker-killer
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@michael-fausten.de
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Kill unicorn workers by memory and request counts
 
 LICENSE=	GPLv2 GPLv3 RUBY

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-PORTVERSION=	2.9.3
+PORTVERSION=	2.11.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -19,6 +19,8 @@ LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		liblapack.so:${PORTSDIR}/math/lapack
 RUN_DEPENDS=	getdp:${PORTSDIR}/science/getdp
 
+BROKEN_powerpc64=	Does not build on powerpc64
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
 SLAVEDIRS=	cad/gmsh-occ
@@ -31,92 +33,65 @@ MAKE_JOBS_UNSAFE=	yes
 
 CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=YES
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	STATIC_LIB SHARED_LIB TETGEN METIS TAUCS MED CGNS GMM OCC
+OPTIONS_DEFAULT=	DOCS STATIC_LIB SHARED_LIB TETGEN METIS MED CGNS GMM
 
-BROKEN_powerpc64=	Does not build on powerpc64
+STATIC_LIB_DESC=	Build static library
+SHARED_LIB_DESC=	Build shared library
+TETGEN_LIB_DESC=	Enable tetgen as an alternative 3D mesh generator
+METIS_LIB_DESC=		Enable metis as an alternative 3D mesh generator
+TAUCS_LIB_DESC=		Enable the Taucs linear algebra solver
+MED_LIB_DESC=		Enable MED support
+CGNS_LIB_DESC=		Enable CGNS support
+GMM_LIB_DESC=		Enable gmm++ support
+OCC_LIB_DESC=		Enable STEP, IGES and BREP support
 
-.if !defined(WITHOUT_STATIC_LIB)
-CMAKE_ARGS+=	-DENABLE_BUILD_LIB=ON
-ALL_TARGET+=	lib
-PLIST_SUB+=	STATIC_LIB=""
-.else
-PLIST_SUB+=	STATIC_LIB="@comment "
-.endif
+OPTIONS_SUB=		yes
 
-.if !defined(WITHOUT_SHARED_LIB)
-CMAKE_ARGS+=	-DENABLE_BUILD_SHARED=ON
-ALL_TARGET+=	shared
-PLIST_SUB+=	SHARED_LIB="" VER=${PORTVERSION} VE=${PORTVERSION:R}
-USE_LDCONFIG=	yes
-.else
-PLIST_SUB+=	SHARED_LIB="@comment "
-.endif
+STATIC_LIB_CMAKE_ON=	-DENABLE_BUILD_LIB=ON
+STATIC_LIB_ALL_TARGET=	lib
+SHARED_LIB_CMAKE_ON=	-DENABLE_BUILD_SHARED=ON
+SHARED_LIB_ALL_TARGET=	shared
+SHARED_LIB_VARS=	use_ldconfig=yes
+PLIST_SUB+=		SHARED_LIB="" VER=${PORTVERSION} VE=${PORTVERSION:R}
+DOCS_CMAKE_OFF=		-DINSTALL_DOCS=OFF
+TETGEN_CMAKE_ON=	-DENABLE_TETGEN=ON
+TETGEN_CMAKE_OFF=	-DENABLE_TETGEN=OFF
+TETGEN_VARS=		"no_cdrom=Contact appropriate authors for commercial purposes if including Tetgen or Metis"
+METIS_CMAKE_ON=	-DENABLE_METIS=ON
+METIS_CMAKE_OFF=	-DENABLE_METIS=OFF
+METIS_VARS=		"no_cdrom=Contact appropriate authors for commercial purposes if including Tetgen or Metis"
+METIS_VARS=		distfiles+=manual.pdf
+TAUCS_LIB_DEPENDS=	libtaucs.so:${PORTSDIR}/math/taucs
+TAUCS_CMAKE_ON=		-DENABLE_TAUCS=ON
+TAUCS_CMAKE_OFF=	-DENABLE_TAUCS=OFF
+MED_LIB_DEPENDS=	libmed.so:${PORTSDIR}/french/med
+MED_CMAKE_ON=		-DENABLE_MED=ON
+MED_CMAKE_OFF=		-DENABLE_MED=OFF
+CGNS_LIB_DEPENDS=	libcgns.so:${PORTSDIR}/science/cgnslib
+CGNS_CMAKE_ON=		-DENABLE_CGNS=ON
+CGNS_CMAKE_OFF=		-DENABLE_CGNS=OFF
+GMM_CMAKE_OFF=		-DENABLE_GMM=OFF
+OCC_LIB_DEPENDS=	libTKernel.so:${PORTSDIR}/cad/opencascade
+OCC_CMAKE_ON=		-DENABLE_OCC=ON -DOCC_INC=${LOCALBASE}/include/OpenCASCADE
+OCC_CFLAGS=		-DHAVE_CONFIG_H -DHAVE_WOK_CONFIG_H -DFREEBSD
+OCC_CONFLICTS=		gmsh-2.*
+OCC_CMAKE_OFF=		-DENABLE_OCC=OFF
+OCC_CONFLICTS_OFF=	gmsh-occ-2.*
 
-.if defined(PORT_OPTIONS:MDOCS)
-CMAKE_ARGS+=	-DINSTALL_DOCS=OFF
-.endif
-
-.if defined(WITHOUT_TETGEN)
-CMAKE_ARGS+=	-DENABLE_TETGEN=OFF
-.else
-NO_CDROM=	Contact appropriate authors for commercial purposes if including Tetgen or Metis
-CMAKE_ARGS+=	-DENABLE_TETGEN=ON
-.endif
+.include <bsd.port.options.mk>
 
 # Even though the taucs port pulls in the metis port, we will still need
-# WITHOUT_METIS not set when WITH_TAUCS is set, otherwise the linker
-# does not find the libraries installed by the metis port.
-.if defined(WITH_TAUCS) && defined(WITHOUT_METIS)
-IGNORE=		requires that WITHOUT_METIS is not set if WITH_TAUCS is set
+# METIS set when TAUCS is set, otherwise the linker does not find the
+# libraries installed by the metis port.
+.if ${PORT_OPTIONS:MTAUCS} && !${PORT_OPTIONS:MMETIS}
+IGNORE=		METIS must be set if TAUCS is set
 .endif
 
-.if !defined(WITHOUT_METIS)
-NO_CDROM=	Contact appropriate authors for commercial purposes if including Tetgen or Metis
-CMAKE_ARGS+=	-DENABLE_METIS=ON
-.if defined(PORT_OPTIONS:MDOCS)
+.if !${PORT_OPTIONS:MMETIS} && ${PORT_OPTIONS:MDOCS}
 IGNORE=		the license for Metis requires that its documentation is included
 .endif
-DISTFILES+=	manual.pdf
-PLIST_SUB+=	METIS=""
-.else
-CMAKE_ARGS+=	-DENABLE_METIS=OFF
-PLIST_SUB+=	METIS="@comment "
-.endif
 
-.if defined(WITH_TAUCS)
-LIB_DEPENDS+=	libtaucs.so:${PORTSDIR}/math/taucs
-CMAKE_ARGS+=	-DENABLE_TAUCS=ON
-.else
-CMAKE_ARGS+=	-DENABLE_TAUCS=OFF
-.endif
-
-.if !defined(WITHOUT_MED)
-LIB_DEPENDS+=	libmed.so:${PORTSDIR}/french/med
-CMAKE_ARGS+=	-DENABLE_MED=ON
-.else
-CMAKE_ARGS+=	-DENABLE_MED=OFF
-.endif
-
-.if !defined(WITHOUT_CGNS)
-LIB_DEPENDS+=	libcgns.so:${PORTSDIR}/science/cgnslib
-CMAKE_ARGS+=	-DENABLE_CGNS=ON
-.else
-CMAKE_ARGS+=	-DENABLE_CGNS=OFF
-.endif
-
-.if defined(WITHOUT_GMM)
-CMAKE_ARGS+=	-DENABLE_GMM=OFF
-.endif
-
-.if defined(WITH_OCC)
-LIB_DEPENDS+=	libTKernel.so:${PORTSDIR}/cad/opencascade
-CMAKE_ARGS+=	-DENABLE_OCC=ON -DOCC_INC=${LOCALBASE}/include/OpenCASCADE
-CFLAGS+=	-DHAVE_CONFIG_H -DHAVE_WOK_CONFIG_H -DFREEBSD
-CONFLICTS=	gmsh-2.*
-.else
-CMAKE_ARGS+=	-DENABLE_OCC=OFF
-CONFLICTS=	gmsh-occ-2.*
-.endif
 
 # TODO
 # Dependencies against PythonLibs, swig and petsc are found and registered if installed
@@ -126,61 +101,17 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-pre-everything::
-	@${ECHO_MSG} ""
-.if !defined(WITHOUT_TETGEN)
-	@${ECHO_MSG} "Define WITHOUT_TETGEN to disable Tetgen as an alternative"
-	@${ECHO_MSG} "3D mesh generator."
-	@${ECHO_MSG} ""
-.endif
-.if !defined(WITHOUT_METIS)
-	@${ECHO_MSG} "Define WITHOUT_METIS to disable Metis as an alternative"
-	@${ECHO_MSG} "3D mesh generator."
-	@${ECHO_MSG} ""
-.endif
-.if !defined(WITH_TAUCS)
-	@${ECHO_MSG} "Define WITH_TAUCS to enable the Taucs linear algebra solver."
-	@${ECHO_MSG} ""
-.endif
-.if !defined(WITHOUT_MED)
-	@${ECHO_MSG} "Define WITHOUT_MED to disable MED support."
-	@${ECHO_MSG} ""
-.endif
-.if !defined(WITHOUT_CGNS)
-	@${ECHO_MSG} "Define WITHOUT_CGNS to disable CGNS support."
-	@${ECHO_MSG} ""
-.endif
-.if !defined(WITHOUT_GMM)
-	@${ECHO_MSG} "Define WITHOUT_GMM to disable gmm++ support."
-	@${ECHO_MSG} ""
-.endif
-.if !defined(WITH_OCC)
-	@${ECHO_MSG} "Define WITH_OCC to enable STEP, IGES and BREP support"
-	@${ECHO_MSG} "(through OpenCascade)."
-	@${ECHO_MSG} ""
-.endif
-.if !defined(WITHOUT_STATIC_LIB)
-	@${ECHO_MSG} "Define WITHOUT_STATIC_LIB to avoid building and installing the static library."
-	@${ECHO_MSG} "(You would want to do this to reduce build time.)"
-	@${ECHO_MSG} ""
-.endif
-.if !defined(WITHOUT_SHARED_LIB)
-	@${ECHO_MSG} "Define WITHOUT_SHARED_LIB to avoid building and installing the shared library."
-	@${ECHO_MSG} "(You would want to do this to reduce build time.)"
-	@${ECHO_MSG} ""
-.endif
-
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/manual.pdf ${WRKDIR}
 	${TOUCH} ${PKGMESSAGE}
-.if !defined(WITHOUT_TETGEN)
+.if ${PORT_OPTIONS:MTETGEN}
 	@${ECHO} >> ${PKGMESSAGE}
 	@${ECHO} "The FreeBSD project has been granted redistribution rights" >> ${PKGMESSAGE}
 	@${ECHO} "but anyone attempting to redistribute Gmsh with Tetgen" >> ${PKGMESSAGE}
 	@${ECHO} "for strict commercial purposes must still contact the author" >> ${PKGMESSAGE}
 	@${ECHO} "(Hang Si) and license the code." >> ${PKGMESSAGE}
 .endif
-.if !defined(WITHOUT_METIS)
+.if ${PORT_OPTIONS:MMETIS}
 	@${ECHO} >> ${PKGMESSAGE}
 	@${ECHO} "The FreeBSD project has been granted redistribution rights" >> ${PKGMESSAGE}
 	@${ECHO} "but anyone attempting to redistribute Gmsh with Metis" >> ${PKGMESSAGE}
@@ -188,7 +119,7 @@ post-extract:
 	@${ECHO} "http://glaros.dtc.umn.edu/gkhome/metis/metis/faq?q=metis/metis/faq#distribute" >> ${PKGMESSAGE}
 	@${ECHO} "\"A Fast and Highly Quality Multilevel Scheme for Partitioning Irregular Graphs\". George Karypis and Vipin Kumar. SIAM Journal on Scientific Computing, Vol. 20, No. 1, pp. 359-392, 1999." >> ${PKGMESSAGE}
 .endif
-.if defined(WITH_TAUCS)
+.if ${PORT_OPTIONS:MTAUCS}
 	@${ECHO} >> ${PKGMESSAGE}
 	@${ECHO} "There might be licensing issues with using Taucs with Gmsh" >> ${PKGMESSAGE}
 	@${ECHO} "because Taucs requires Metis." >> ${PKGMESSAGE}
@@ -199,7 +130,7 @@ pre-configure:
 		-e s+share/man/man1+man/man1+ ${WRKSRC}/CMakeLists.txt
 
 post-install:
-.if !defined(WITHOUT_METIS)
+.if ${PORT_OPTIONS:MMETIS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/metis
 	${INSTALL_DATA} ${WRKDIR}/manual.pdf ${STAGEDIR}${DOCSDIR}/metis
 .endif

@@ -5,6 +5,4 @@ a Web proxy. Studying proxy performance under various [stress] conditions is
 essential for performance tuning, evaluation of new algorithms, analysis of
 hardware configurations, and comparing available proxy products.
 
-Documentation can be found at http://polygraph.ircache.net/doc/
-
 WWW: http://www.web-polygraph.org/

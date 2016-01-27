@@ -114,8 +114,10 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/responsiveDesign_2x.png
 %%DATADIR%%/resources/inspector/Images/searchNext.png
 %%DATADIR%%/resources/inspector/Images/searchPrev.png
+%%DATADIR%%/resources/inspector/Images/securityPropertyInfo.svg
 %%DATADIR%%/resources/inspector/Images/securityPropertyInsecure.svg
 %%DATADIR%%/resources/inspector/Images/securityPropertySecure.svg
+%%DATADIR%%/resources/inspector/Images/securityPropertyUnknown.svg
 %%DATADIR%%/resources/inspector/Images/securityPropertyWarning.svg
 %%DATADIR%%/resources/inspector/Images/securityStateInsecure.svg
 %%DATADIR%%/resources/inspector/Images/securityStateNeutral.svg

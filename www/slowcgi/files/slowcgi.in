@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: slowcgi
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable slowcgi:
+# slowcgi_enable="YES"
+# slowcgi_flags="<set as needed>"
+
+. /etc/rc.subr
+
+name=slowcgi
+rcvar=slowcgi_enable
+
+command="%%PREFIX%%/sbin/slowcgi"
+
+slowcgi_enable=${slowcgi_enable:-"NO"}
+slowcgi_flags=${slowcgi_flags:-""}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	02
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Microsoft file word processor format import filter library
 
+DEPRECATED=	Not used any more
+EXPIRATION_DATE=2016-03-26
+
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 

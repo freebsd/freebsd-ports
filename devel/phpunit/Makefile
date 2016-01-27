@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpunit
-PORTVERSION=	4.8.0
+PORTVERSION=	5.1.0
 CATEGORIES=	devel www
 MASTER_SITES=	https://phar.phpunit.de/ \
 		http://ports.toco-domains.de/
@@ -13,7 +13,7 @@ COMMENT=	Testing framework for unit tests
 
 LICENSE=	BSD3CLAUSE
 
-CONFLICTS=	pear-PHPUnit-[123]*
+CONFLICTS=	pear-PHPUnit-[1234]* php5-*
 
 USES=		cpe
 CPE_VENDOR=	phpunit_project

@@ -32,8 +32,5 @@ do-install:
 	@${ECHO_CMD} \
 		'@exec chown -R ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/data' \
 		>> ${TMPPLIST}
-	@(cd ${WRKSRC}/${PORTNAME}; ${FIND} . -type d) | ${SORT} -r | \
-		${SED} -ne 's,^${PORTNAME}/,@dirrm ${WWWDIR_REL}/,p' \
-		>> ${TMPPLIST}
 
 .include <bsd.port.mk>

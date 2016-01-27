@@ -9,6 +9,9 @@ MASTER_SITES=	LODEV
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools for parsing the visio file format structure
 
+DEPRECATED=	Not used any more
+EXPIRATION_DATE=2016-03-26
+
 LICENSE=	LGPL21 MPL GPLv2
 LICENSE_COMB=	dual
 

@@ -4,7 +4,7 @@ PORTNAME=	consolamono-ttf
 PORTVERSION=	20130127
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://openfontlibrary.org/assets/downloads/consolamono/61cc2afcc4eca96efe7c6ebf178d39df/
+MASTER_SITES=	https://fontlibrary.org/assets/downloads/consolamono/61cc2afcc4eca96efe7c6ebf178d39df/
 DISTNAME=	consolamono
 
 MAINTAINER=	rakuco@FreeBSD.org

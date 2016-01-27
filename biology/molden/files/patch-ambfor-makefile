@@ -1,10 +1,10 @@
---- ambfor/makefile.orig	2011-04-29 20:40:50.000000000 +0900
-+++ ambfor/makefile	2012-09-24 02:50:23.000000000 +0900
+--- ambfor/makefile.orig	2015-05-02 19:49:10 UTC
++++ ambfor/makefile
 @@ -12,12 +12,12 @@
  #
  # 
  
--CFLAGS = -c -g
+-CFLAGS = -c -g ${EXT}
 +CFLAGS += -c
  #FC = g77 
 -FC = gfortran
@@ -14,10 +14,10 @@
  LIBS =  -lm
 -LDR = ${FC} -g
 +LDR = ${FC}
+ EXT :=
  
- OBJS = angle.o bond.o charge.o conn.o enegrd.o getinp.o param.o \
- 	tors.o vdwlj.o math.o switch.o wrtout.o pbc.o 
-@@ -47,7 +47,7 @@
+ ifeq ($(uname), Darwin)
+@@ -56,7 +56,7 @@ ambmd:	md.o verlet.o qvdw.o allocmd.o $(
  	$(LDR) -o ambmd md.o verlet.o qvdw.o allocmd.o $(OBJS) $(LIBS)
  
  ambfor.o:	ambfor.f

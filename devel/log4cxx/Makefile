@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ port of the Log4j project
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1
 
@@ -29,17 +30,13 @@ BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boos
 DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
 DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 
-.include <bsd.port.options.mk>
-
 post-configure:
 	@${REINPLACE_CMD} -e 's|-dpR|-pr|' \
 		-e '/^htmldest/ s|$$(pkgdatadir)|${DOCSDIR}|' \
 		${WRKSRC}/src/site/doxy/Makefile
 
-post-install:
-.if ${PORT_OPTIONS:MDOXYGEN}
+post-install-DOXYGEN-on:
 	@cd ${STAGEDIR}${PREFIX} && \
-	${FIND} ${DOCSDIR:S|${PREFIX}/||} ! -type d >> ${TMPPLIST}
-.endif
+		${FIND} ${DOCSDIR:S|${PREFIX}/||} ! -type d >> ${TMPPLIST}
 
 .include <bsd.port.mk>

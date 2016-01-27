@@ -3,7 +3,7 @@
 
 PORTNAME=	graphite-web
 PORTVERSION=	0.9.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:${PORTSDIR}/graphics/py-cairo \
 		${PYTHON_PKGNAMEPREFIX}carbon>=${PORTVERSION}:${PORTSDIR}/databases/py-carbon \
-		${PYTHON_PKGNAMEPREFIX}django>=1.4:${PORTSDIR}/www/py-django \
+		${PYTHON_PKGNAMEPREFIX}django18>=1.4:${PORTSDIR}/www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}django-tagging>=0.3.1:${PORTSDIR}/www/py-django-tagging \
 		xorg-fonts-truetype>=0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	vietunicode-trichlor
 PORTVERSION=	2004.04.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	SF/vietunicode/VietFonts-TriChlor/TrichlorSet%20v2004
 DISTNAME=	VietFonts_TriChlor_ttf
@@ -34,6 +34,5 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${TTF} ${STAGEDIR}${FONTSDIR})
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../../chinese/ttfm/Makefile.ttf"
+.include <bsd.port.mk>

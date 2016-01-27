@@ -18,6 +18,7 @@ RUN_DEPENDS=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
 
 USE_RUBY=	yes
 USE_RAKE=	yes
+NO_ARCH=	yes
 
 GEMS_BASE_DIR=	lib/ruby/gems/${RUBY_VER}
 GEMS_DIR=	${GEMS_BASE_DIR}/gems
@@ -55,13 +56,8 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-ruby-1.9-temp
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	rubygem-allison>=0:${PORTSDIR}/devel/rubygem-allison
-.else
-RUBYGEM_ARGS+=	--no-rdoc
-.endif
+DOCS_BUILD_DEPENDS=	rubygem-allison>=0:${PORTSDIR}/devel/rubygem-allison
+DOCS_VARS_OFF=		RUBYGEM_ARGS+=--no-rdoc
 
 post-patch:
 .for l in 1.8.6 1.8.7 1.9.2 1.9.3
@@ -76,28 +72,18 @@ do-build:
 
 do-install:
 	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} pkg/${GEMFILES} -- --build-args ${CONFIGURE_ARGS})
+	@${RM} -r ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}/build_info
+	@${RMDIR} ${STAGEDIR}/${PREFIX}/${GEMS_BASE_DIR}/extensions
 
 post-install:
 	@${ECHO} ${GEM_CACHE} >> ${TMPPLIST}
 	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
-.if ${PORT_OPTIONS:MDOCS}
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_DOC_DIR} -type f -print | ${SED} -E -e \
-		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_DOC_DIR} -type d -print | ${SED} -E -e \
-		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
-.endif
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR} -type d -print | ${SED} -E -e \
-		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${GEMS_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_CMD} "@unexec rmdir %D/${DOC_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-.endif
-	@${ECHO_CMD} "@unexec rmdir %D/${CACHE_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${SPEC_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${GEMS_BASE_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO} "@dir ${DOC_DIR}" >> ${TMPPLIST}
+
+post-install-DOCS-on:
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_DOC_DIR} -type f -print | ${SED} -E -e \
+		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

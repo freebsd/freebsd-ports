@@ -3,7 +3,7 @@
 
 PORTNAME=	vietunicode-hannom
 PORTVERSION=	2005.02.06
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	SF/vietunicode/hannom/hannom%20v2005
 DISTNAME=	hannom
@@ -26,6 +26,5 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${TTF} ${STAGEDIR}${FONTSDIR})
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../../chinese/ttfm/Makefile.ttf"
+.include <bsd.port.mk>

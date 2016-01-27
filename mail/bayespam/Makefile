@@ -5,13 +5,13 @@ PORTNAME=	bayespam
 PORTVERSION=	0.9.2
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.garyarnold.com/sites/default/files/
+MASTER_SITES=	http://BSDforge.com/projects/source/mail/bayespam/
 EXTRACT_SUFX=	.tar_.gz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	qmail spam filter written in Perl using Bayesian classification
+MAINTAINER=	portmaster@BSDforge.com
+COMMENT=	Qmail spam filter written in Perl using Bayesian classification
 
-BROKEN=		unfetchable
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 

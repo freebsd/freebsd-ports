@@ -1,15 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	gdk_pixbuf2
-PORTVERSION=	2.2.5
+PORTVERSION=	3.0.7
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for GdkPixbuf2
 
-LICENSE=	LGPL21 LGPL3
-LICENSE_COMB=	dual
+LICENSE=	LGPL21+
 
 RUN_DEPENDS=	rubygem-glib2>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-glib2
 

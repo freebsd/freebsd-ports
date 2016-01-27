@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trac
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.9
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -33,12 +33,11 @@ PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-ps
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>0:${PORTSDIR}/devel/py-subversion
 
-CONFLICTS=		ja-trac-[0-9]*
 PORTEXAMPLES=		*
 PORTDATA=		*
 MAKE_ENV=		HOME=/dev/null
 
-USES=			python:2 shebangfix
+USES=			python:-2.7 shebangfix
 SHEBANG_FILES=		contrib/cgi-bin/trac.fcgi contrib/cgi-bin/trac.cgi \
 			trac/tests/functional/better_twill.py trac/tests/functional/tester.py \
 			trac/tests/functional/testenv.py trac/tests/functional/compat.py \

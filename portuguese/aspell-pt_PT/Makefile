@@ -11,6 +11,10 @@ PKGNAMEPREFIX?=	pt_PT-
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Portuguese dictionary
 
+PORTSCOUT=	skipv:6-pt_PT-20070206-0
+
+NO_ARCH=	yes
+
 DICT=	 	pt_PT
 
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"

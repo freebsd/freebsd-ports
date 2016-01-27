@@ -31,10 +31,10 @@ OPTIONS_SUB=	yes
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-.include <bsd.port.options.mk>
-
-.if !exists(${LOCALBASE}/bin/gpgsm)
-IGNORE=		requires gpgsm. (Re)Install security/gnupg with the GPGSM option ON
-.endif
+pre-configure:
+	@(if [ ! -e ${LOCALBASE}/bin/gpgsm ] ; then \
+	${ECHO_MSG} "gpa requires gpgsm. (Re)Install security/gnupg with the GPGSM option ON" ; \
+	exit 1; \
+	fi)
 
 .include <bsd.port.mk>

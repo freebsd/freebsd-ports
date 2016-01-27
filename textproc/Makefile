@@ -1227,7 +1227,6 @@
     SUBDIR += py-feedparser
     SUBDIR += py-genshi
     SUBDIR += py-genshi-devel
-    SUBDIR += py-gettext
     SUBDIR += py-hexdump
     SUBDIR += py-html2text
     SUBDIR += py-hyperestraier-python
@@ -1262,6 +1261,7 @@
     SUBDIR += py-pystemmer
     SUBDIR += py-python-augeas
     SUBDIR += py-python-docx
+    SUBDIR += py-python-gettext
     SUBDIR += py-pytidylib
     SUBDIR += py-pyx12
     SUBDIR += py-qrcode
@@ -1302,6 +1302,7 @@
     SUBDIR += py-wstools
     SUBDIR += py-wtforms
     SUBDIR += py-xlrd
+    SUBDIR += py-xlsxwriter
     SUBDIR += py-xlutils
     SUBDIR += py-xlwriter
     SUBDIR += py-xlwt
@@ -1394,6 +1395,7 @@
     SUBDIR += rubygem-elasticsearch
     SUBDIR += rubygem-elasticsearch-api
     SUBDIR += rubygem-elasticsearch-transport
+    SUBDIR += rubygem-emot
     SUBDIR += rubygem-escape_utils
     SUBDIR += rubygem-escape_utils-rails4
     SUBDIR += rubygem-ezamar
@@ -1529,7 +1531,6 @@
     SUBDIR += sgrep2
     SUBDIR += sigil
     SUBDIR += silvercity
-    SUBDIR += simplehtmldom
     SUBDIR += simplexml
     SUBDIR += sk-aspell
     SUBDIR += sk-hunspell
@@ -1687,6 +1688,8 @@
     SUBDIR += xsv
     SUBDIR += xt
     SUBDIR += xwindiff
+    SUBDIR += xxdiff
+    SUBDIR += xxdiff-scripts
     SUBDIR += y2l
     SUBDIR += yali
     SUBDIR += yamcha

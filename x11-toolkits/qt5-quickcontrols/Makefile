@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Set of controls for building complete interfaces in Qt Quick
 
-USE_QT5=	core gui qml quick testlib widgets \
+USE_QT5=	core gui qml quick widgets \
 		buildtools_build
 QT_DIST=	quickcontrols
 USES=		qmake

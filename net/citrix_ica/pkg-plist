@@ -37,7 +37,6 @@
 %%WEBPLUGIN_DIR%%/config/usertemplate/Untrusted_Region.ini
 %%WEBPLUGIN_DIR%%/config/wfclient.ini
 %%WEBPLUGIN_DIR%%/desktop/Citrix-mime_types.xml
-%%WEBPLUGIN_DIR%%/eula.txt
 %%WEBPLUGIN_DIR%%/gtk/glade/about.glade
 %%WEBPLUGIN_DIR%%/gtk/glade/aboutAdditional.glade
 %%WEBPLUGIN_DIR%%/gtk/glade/authdialogbox.glade
@@ -166,7 +165,6 @@
 %%WEBPLUGIN_DIR%%/nls/C
 %%WEBPLUGIN_DIR%%/nls/de.UTF-8/XCapture
 %%WEBPLUGIN_DIR%%/nls/de.UTF-8/XCapture.ad
-%%WEBPLUGIN_DIR%%/nls/de.UTF-8/eula.txt
 %%WEBPLUGIN_DIR%%/nls/de.UTF-8/pna.nls
 %%WEBPLUGIN_DIR%%/nls/de.UTF-8/setupwfc.msg
 %%WEBPLUGIN_DIR%%/nls/de.UTF8
@@ -179,7 +177,6 @@
 %%WEBPLUGIN_DIR%%/nls/de/XCapture
 %%WEBPLUGIN_DIR%%/nls/de/XCapture.ad
 %%WEBPLUGIN_DIR%%/nls/de/appsrv.ini
-%%WEBPLUGIN_DIR%%/nls/de/eula.txt
 %%WEBPLUGIN_DIR%%/nls/de/hinst.msg
 %%WEBPLUGIN_DIR%%/nls/de/index.htm
 %%WEBPLUGIN_DIR%%/nls/de/module.ini
@@ -188,7 +185,6 @@
 %%WEBPLUGIN_DIR%%/nls/de/wfclient.ini
 %%WEBPLUGIN_DIR%%/nls/en.UTF-8/XCapture
 %%WEBPLUGIN_DIR%%/nls/en.UTF-8/XCapture.ad
-%%WEBPLUGIN_DIR%%/nls/en.UTF-8/eula.txt
 %%WEBPLUGIN_DIR%%/nls/en.UTF-8/pna.nls
 %%WEBPLUGIN_DIR%%/nls/en.UTF-8/setupwfc.msg
 %%WEBPLUGIN_DIR%%/nls/en.UTF8
@@ -200,7 +196,6 @@
 %%WEBPLUGIN_DIR%%/nls/en/XCapture
 %%WEBPLUGIN_DIR%%/nls/en/XCapture.ad
 %%WEBPLUGIN_DIR%%/nls/en/appsrv.ini
-%%WEBPLUGIN_DIR%%/nls/en/eula.txt
 %%WEBPLUGIN_DIR%%/nls/en/hinst.msg
 %%WEBPLUGIN_DIR%%/nls/en/index.htm
 %%WEBPLUGIN_DIR%%/nls/en/module.ini
@@ -209,7 +204,6 @@
 %%WEBPLUGIN_DIR%%/nls/en/wfclient.ini
 %%WEBPLUGIN_DIR%%/nls/es.UTF-8/XCapture
 %%WEBPLUGIN_DIR%%/nls/es.UTF-8/XCapture.ad
-%%WEBPLUGIN_DIR%%/nls/es.UTF-8/eula.txt
 %%WEBPLUGIN_DIR%%/nls/es.UTF-8/pna.nls
 %%WEBPLUGIN_DIR%%/nls/es.UTF-8/setupwfc.msg
 %%WEBPLUGIN_DIR%%/nls/es.UTF8
@@ -221,7 +215,6 @@
 %%WEBPLUGIN_DIR%%/nls/es/XCapture
 %%WEBPLUGIN_DIR%%/nls/es/XCapture.ad
 %%WEBPLUGIN_DIR%%/nls/es/appsrv.ini
-%%WEBPLUGIN_DIR%%/nls/es/eula.txt
 %%WEBPLUGIN_DIR%%/nls/es/hinst.msg
 %%WEBPLUGIN_DIR%%/nls/es/index.htm
 %%WEBPLUGIN_DIR%%/nls/es/module.ini
@@ -230,7 +223,6 @@
 %%WEBPLUGIN_DIR%%/nls/es/wfclient.ini
 %%WEBPLUGIN_DIR%%/nls/fr.UTF-8/XCapture
 %%WEBPLUGIN_DIR%%/nls/fr.UTF-8/XCapture.ad
-%%WEBPLUGIN_DIR%%/nls/fr.UTF-8/eula.txt
 %%WEBPLUGIN_DIR%%/nls/fr.UTF-8/pna.nls
 %%WEBPLUGIN_DIR%%/nls/fr.UTF-8/setupwfc.msg
 %%WEBPLUGIN_DIR%%/nls/fr.UTF8
@@ -242,7 +234,6 @@
 %%WEBPLUGIN_DIR%%/nls/fr/XCapture
 %%WEBPLUGIN_DIR%%/nls/fr/XCapture.ad
 %%WEBPLUGIN_DIR%%/nls/fr/appsrv.ini
-%%WEBPLUGIN_DIR%%/nls/fr/eula.txt
 %%WEBPLUGIN_DIR%%/nls/fr/hinst.msg
 %%WEBPLUGIN_DIR%%/nls/fr/index.htm
 %%WEBPLUGIN_DIR%%/nls/fr/module.ini
@@ -251,7 +242,6 @@
 %%WEBPLUGIN_DIR%%/nls/fr/wfclient.ini
 %%WEBPLUGIN_DIR%%/nls/ja.UTF-8/XCapture
 %%WEBPLUGIN_DIR%%/nls/ja.UTF-8/XCapture.ad
-%%WEBPLUGIN_DIR%%/nls/ja.UTF-8/eula.txt
 %%WEBPLUGIN_DIR%%/nls/ja.UTF-8/pna.nls
 %%WEBPLUGIN_DIR%%/nls/ja.UTF-8/setupwfc.msg
 %%WEBPLUGIN_DIR%%/nls/ja.UTF8
@@ -264,7 +254,6 @@
 %%WEBPLUGIN_DIR%%/nls/ja/XCapture
 %%WEBPLUGIN_DIR%%/nls/ja/XCapture.ad
 %%WEBPLUGIN_DIR%%/nls/ja/appsrv.ini
-%%WEBPLUGIN_DIR%%/nls/ja/eula.txt
 %%WEBPLUGIN_DIR%%/nls/ja/hinst.msg
 %%WEBPLUGIN_DIR%%/nls/ja/index.htm
 %%WEBPLUGIN_DIR%%/nls/ja/module.ini
@@ -273,7 +262,6 @@
 %%WEBPLUGIN_DIR%%/nls/ja/wfclient.ini
 %%WEBPLUGIN_DIR%%/nls/ru.UTF-8/XCapture
 %%WEBPLUGIN_DIR%%/nls/ru.UTF-8/XCapture.ad
-%%WEBPLUGIN_DIR%%/nls/ru.UTF-8/eula.txt
 %%WEBPLUGIN_DIR%%/nls/ru.UTF-8/pna.nls
 %%WEBPLUGIN_DIR%%/nls/ru.UTF-8/setupwfc.msg
 %%WEBPLUGIN_DIR%%/nls/ru/LC_MESSAGES/AuthManager.mo
@@ -283,7 +271,6 @@
 %%WEBPLUGIN_DIR%%/nls/ru/XCapture
 %%WEBPLUGIN_DIR%%/nls/ru/XCapture.ad
 %%WEBPLUGIN_DIR%%/nls/ru/appsrv.ini
-%%WEBPLUGIN_DIR%%/nls/ru/eula.txt
 %%WEBPLUGIN_DIR%%/nls/ru/hinst.msg
 %%WEBPLUGIN_DIR%%/nls/ru/index.htm
 %%WEBPLUGIN_DIR%%/nls/ru/module.ini
@@ -296,7 +283,6 @@
 %%WEBPLUGIN_DIR%%/nls/zh_CN.utf8
 %%WEBPLUGIN_DIR%%/nls/zh_HANS.UTF-8/XCapture
 %%WEBPLUGIN_DIR%%/nls/zh_HANS.UTF-8/XCapture.ad
-%%WEBPLUGIN_DIR%%/nls/zh_HANS.UTF-8/eula.txt
 %%WEBPLUGIN_DIR%%/nls/zh_HANS.UTF-8/pna.nls
 %%WEBPLUGIN_DIR%%/nls/zh_HANS.UTF-8/setupwfc.msg
 %%WEBPLUGIN_DIR%%/nls/zh_HANS/LC_MESSAGES/AuthManager.mo
@@ -306,7 +292,6 @@
 %%WEBPLUGIN_DIR%%/nls/zh_HANS/XCapture
 %%WEBPLUGIN_DIR%%/nls/zh_HANS/XCapture.ad
 %%WEBPLUGIN_DIR%%/nls/zh_HANS/appsrv.ini
-%%WEBPLUGIN_DIR%%/nls/zh_HANS/eula.txt
 %%WEBPLUGIN_DIR%%/nls/zh_HANS/hinst.msg
 %%WEBPLUGIN_DIR%%/nls/zh_HANS/index.htm
 %%WEBPLUGIN_DIR%%/nls/zh_HANS/module.ini
@@ -472,6 +457,14 @@
 %%WEBPLUGIN_DIR%%/usb/ctxusbd.rc
 %%WEBPLUGIN_DIR%%/usb/ica-usb.rules
 %%WEBPLUGIN_DIR%%/usb/usb.conf
+%%WEBPLUGIN_DIR%%/eula.txt
+%%WEBPLUGIN_DIR%%/nls/de.UTF-8/eula.txt
+%%WEBPLUGIN_DIR%%/nls/en.UTF-8/eula.txt
+%%WEBPLUGIN_DIR%%/nls/es.UTF-8/eula.txt
+%%WEBPLUGIN_DIR%%/nls/fr.UTF-8/eula.txt
+%%WEBPLUGIN_DIR%%/nls/ja.UTF-8/eula.txt
+%%WEBPLUGIN_DIR%%/nls/ru.UTF-8/eula.txt
+%%WEBPLUGIN_DIR%%/nls/zh_HANS.UTF-8/eula.txt
 @(,,00555) %%WEBPLUGIN_DIR%%/util/DeleteCompleteFlashCache.sh
 @(,,00555) %%WEBPLUGIN_DIR%%/util/configmgr
 @(,,00555) %%WEBPLUGIN_DIR%%/util/conncenter

@@ -1,0 +1,24 @@
+--- sshconnect2.c.orig	2016-01-19 18:10:12.550854000 -0800
++++ sshconnect2.c	2016-01-19 18:10:27.290409000 -0800
+@@ -160,11 +160,6 @@ ssh_kex2(char *host, struct sockaddr *ho
+ 	struct kex *kex;
+ 	int r;
+ 
+-#ifdef GSSAPI
+-	char *orig = NULL, *gss = NULL;
+-	char *gss_host = NULL;
+-#endif
+-
+ 	xxx_host = host;
+ 	xxx_hostaddr = hostaddr;
+ 
+@@ -199,6 +194,9 @@ ssh_kex2(char *host, struct sockaddr *ho
+ 	}
+ 
+ #ifdef GSSAPI
++	char *orig = NULL, *gss = NULL;
++	char *gss_host = NULL;
++
+ 	if (options.gss_keyex) {
+ 		/* Add the GSSAPI mechanisms currently supported on this
+ 		 * client to the key exchange algorithm proposal */

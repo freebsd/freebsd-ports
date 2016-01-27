@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-09-30 19:14:07.000000000 +0200
-+++ Makefile.in	2014-02-28 12:00:40.000000000 +0100
-@@ -236,10 +236,10 @@
+--- Makefile.in.orig	2010-09-30 17:14:07 UTC
++++ Makefile.in
+@@ -236,10 +236,10 @@ install-libraries: libraries $(SCRIPTS)
  	    $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(includedir) ; \
  	done;
  # install standalone scripts and their man pages, if requested
@@ -13,3 +13,12 @@
  	    rm -f $$i ; \
  	  else true; fi ; \
  	done
+@@ -259,7 +259,7 @@ install-doc: doc
+ 	$(INSTALL_DATA) $(srcdir)/libexpect.man $(DESTDIR)$(mandir)/man3/libexpect.3
+ 	-for i in $(SCRIPT_MANPAGE_LIST) ; do \
+ 	  if [ -f $(srcdir)/example/$$i.man ] ; then \
+-	    $(INSTALL_DATA) $(srcdir)/example/$$i.man $(DESTDIR)$(mandir)/man1/$$i.1 ; \
++	    $(INSTALL_DATA) $(srcdir)/example/$$i.man $(DESTDIR)$(datadir)/$$i.1 ; \
+ 	  else true; fi ; \
+ 	done
+ 

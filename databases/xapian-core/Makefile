@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-core
-PORTVERSION=	1.2.21
+PORTVERSION=	1.2.22
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Probabilistic text search database engine
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS SSE2
 SSE2_DESC=	Use SSE2 for floating point

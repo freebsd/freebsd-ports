@@ -3,8 +3,8 @@ Use <sys/endian.h> instead of the linux-ish <endian.h>
 Use __attribute__ ((__nothrow__)) instead of the linux-ish __THROW (from the
 linux sys/cdefs.h) macro - should work with clang and gcc on FreeBSD.
 
---- genisoimage/sha256.c.orig	2009-10-11 12:27:59.000000000 -0600
-+++ genisoimage/sha256.c	2011-10-27 14:55:25.000000000 -0600
+--- genisoimage/sha256.c.orig	2009-10-11 18:27:59 UTC
++++ genisoimage/sha256.c
 @@ -24,9 +24,9 @@
  
  /* Written by Ulrich Drepper <drepper@redhat.com>, 2007.  */
@@ -16,9 +16,9 @@ linux sys/cdefs.h) macro - should work with clang and gcc on FreeBSD.
  #include <sys/types.h>
  
  #include "sha256.h"
---- genisoimage/sha256.h.orig	2009-05-10 15:49:54.000000000 -0600
-+++ genisoimage/sha256.h	2011-10-27 14:58:30.000000000 -0600
-@@ -42,14 +42,14 @@
+--- genisoimage/sha256.h.orig	2009-05-10 21:49:54 UTC
++++ genisoimage/sha256.h
+@@ -42,14 +42,14 @@ struct sha256_ctx
  
  /* Initialize structure containing state of computation.
     (FIPS 180-2: 5.3.2)  */
@@ -35,7 +35,7 @@ linux sys/cdefs.h) macro - should work with clang and gcc on FreeBSD.
  
  /* Process the remaining bytes in the buffer and put result from CTX
     in first 32 bytes following RESBUF.
-@@ -57,6 +57,6 @@
+@@ -57,6 +57,6 @@ extern void sha256_process_bytes (const 
     IMPORTANT: On some systems it is required that RESBUF is correctly
     aligned for a 32 bits value.  */
  extern void *sha256_finish_ctx (struct sha256_ctx *ctx, void *resbuf)
@@ -43,9 +43,22 @@ linux sys/cdefs.h) macro - should work with clang and gcc on FreeBSD.
 +  __attribute__ ((__nothrow__));
  
  #endif /* sha256.h */
---- genisoimage/sha512.h.orig	2009-05-10 15:49:54.000000000 -0600
-+++ genisoimage/sha512.h	2011-10-27 14:58:35.000000000 -0600
-@@ -42,14 +42,14 @@
+--- genisoimage/sha512.c.orig	2009-10-11 18:27:59 UTC
++++ genisoimage/sha512.c
+@@ -24,9 +24,9 @@
+ 
+ /* Written by Ulrich Drepper <drepper@redhat.com>, 2007.  */
+ 
+-#include <endian.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <sys/endian.h>
+ #include <sys/types.h>
+ 
+ #include "sha512.h"
+--- genisoimage/sha512.h.orig	2009-05-10 21:49:54 UTC
++++ genisoimage/sha512.h
+@@ -42,14 +42,14 @@ struct sha512_ctx
  
  /* Initialize structure containing state of computation.
     (FIPS 180-2: 5.3.3)  */
@@ -62,7 +75,7 @@ linux sys/cdefs.h) macro - should work with clang and gcc on FreeBSD.
  
  /* Process the remaining bytes in the buffer and put result from CTX
     in first 64 bytes following RESBUF.
-@@ -57,6 +57,6 @@
+@@ -57,6 +57,6 @@ extern void sha512_process_bytes (const 
     IMPORTANT: On some systems it is required that RESBUF is correctly
     aligned for a 64 bits value.  */
  extern void *sha512_finish_ctx (struct sha512_ctx *ctx, void *resbuf)
@@ -70,16 +83,3 @@ linux sys/cdefs.h) macro - should work with clang and gcc on FreeBSD.
 +  __attribute__ ((__nothrow__));
  
  #endif /* sha512.h */
---- genisoimage/sha512.c.orig	2009-10-11 12:27:59.000000000 -0600
-+++ genisoimage/sha512.c	2011-10-27 14:59:01.000000000 -0600
-@@ -24,9 +24,9 @@
- 
- /* Written by Ulrich Drepper <drepper@redhat.com>, 2007.  */
- 
--#include <endian.h>
- #include <stdlib.h>
- #include <string.h>
-+#include <sys/endian.h>
- #include <sys/types.h>
- 
- #include "sha512.h"

@@ -23,6 +23,8 @@ CONFLICTS_INSTALL=	ja-ming-[0-9]*
 
 OPTIONS_DEFINE=	DOCS
 
+PORTSCOUT=	limit:^ming-
+
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/ming
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

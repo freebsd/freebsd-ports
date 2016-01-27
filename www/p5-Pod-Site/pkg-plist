@@ -1,6 +1,6 @@
 bin/podsite
-%%PERL5_MAN3%%/Pod::Site.3.gz
-%%PERL5_MAN1%%/podsite.1.gz
 %%SITE_PERL%%/Pod/Site.pm
 %%SITE_PERL%%/Pod/Site/podsite.css
 %%SITE_PERL%%/Pod/Site/podsite.js
+%%PERL5_MAN1%%/podsite.1.gz
+%%PERL5_MAN3%%/Pod::Site.3.gz

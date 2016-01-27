@@ -10,7 +10,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Wrapper for the standard ruby OpenSSL library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=yes

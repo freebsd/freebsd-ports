@@ -2,6 +2,7 @@
 
 PORTNAME=	tilda
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	x11
 
@@ -11,6 +12,7 @@ COMMENT=	Drop down x11 terminal with transparency support
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	vte3>=0:${PORTSDIR}/x11-toolkits/vte3
+RUN_DEPENDS=	vte3>=0:${PORTSDIR}/x11-toolkits/vte3
 LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse
 
 GNU_CONFIGURE=	yes

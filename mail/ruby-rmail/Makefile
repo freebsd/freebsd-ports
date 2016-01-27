@@ -15,6 +15,7 @@ COMMENT=	Lightweight mail manipulating library for Ruby
 LICENSE=	BSD3CLAUSE
 
 BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
 
 OPTIONS_DEFINE=	DOCS
 

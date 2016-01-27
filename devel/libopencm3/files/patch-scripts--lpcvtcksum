@@ -1,8 +1,0 @@
---- scripts/lpcvtcksum.orig	2014-02-15 20:35:10.000000000 +0400
-+++ scripts/lpcvtcksum	2014-02-15 20:35:13.000000000 +0400
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#! /usr/local/bin/python2
- #
- # Compute and insert the vector table checksum required for booting the
- # LPC43xx and some other NXP ARM microcontrollers.

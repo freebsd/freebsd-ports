@@ -181,6 +181,7 @@
     SUBDIR += libdvdnav
     SUBDIR += libdvdread
     SUBDIR += libfame
+    SUBDIR += libhdhomerun
     SUBDIR += libkate
     SUBDIR += libmatroska
     SUBDIR += libmediaart
@@ -299,6 +300,7 @@
     SUBDIR += plexhometheater
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
+    SUBDIR += plexpy
     SUBDIR += podcastdl
     SUBDIR += poe
     SUBDIR += ppm2fli

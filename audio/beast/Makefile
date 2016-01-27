@@ -49,6 +49,8 @@ SSE_VARS=	SSE_FLAGS="-mmmx -msse"
 
 BROKEN_powerpc64=	Does not build
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^[[:space:]].*FLAGS -[Ofgp].*"/s|^|#| ; \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-applets
-PORTVERSION=	1.10.3
+PORTVERSION=	1.12.1
 PORTREVISION=	1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
@@ -20,7 +20,6 @@ LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 		libhal.so:${PORTSDIR}/sysutils/hal \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	gucharmap:${PORTSDIR}/deskutils/gucharmap
 
 PORTSCOUT=	limitw:1,even
 
@@ -32,7 +31,7 @@ USE_GNOME=	gdkpixbuf2 gtksourceview2 introspection:build \
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--disable-networkmanager
+CONFIGURE_ARGS=	--with-gtk=2.0
 CONFIGURE_ENV=	OS_SYS="/usr/include"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
@@ -45,8 +44,8 @@ GLIB_SCHEMAS=	org.mate.panel.applet.charpick.gschema.xml \
 		org.mate.panel.applet.timer.gschema.xml \
 		org.mate.stickynotes.gschema.xml
 
-FIX_APPLETS=	accessx-status battstat charpick drivemount geyes \
-		invest-applet/data multiload stickynotes trashapplet
+FIX_APPLETS=	accessx-status battstat \
+		invest-applet/data stickynotes trashapplet
 
 .include <bsd.port.pre.mk>
 
@@ -75,6 +74,10 @@ post-patch:
 .for dir in ${FIX_APPLETS}
 	@${REINPLACE_CMD} -e 's|@LIBEXECDIR@/|@LIBEXECDIR@/mate-|g' \
 		${WRKSRC}/${dir}/org.mate.*
+.endfor
+.for dir in command timerapplet
+	@${REINPLACE_CMD} -e 's|(libexecdir)/|(libexecdir)/mate-|g' \
+		${WRKSRC}/${dir}/Makefile.in
 .endfor
 
 .include <bsd.port.post.mk>

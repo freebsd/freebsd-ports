@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bibtool
-PORTVERSION=	2.61
+PORTVERSION=	2.63
 CATEGORIES=	textproc print
 MASTER_SITES=	TEX_CTAN/biblio/bibtex/utils/${PORTNAME}
 DISTNAME=	BibTool-${PORTVERSION}
@@ -20,6 +20,9 @@ MAKEFILE=	makefile
 INSTALL_TARGET=	install install.man
 
 PORTDOCS=	bibtool.pdf ref_card.pdf c_lib.pdf
+
+post-patch:
+	${REINPLACE_CMD} 's/bibtex$$/&8/' ${WRKSRC}/doc/Makefile
 
 post-build:
 	cd ${WRKSRC} && ${MAKE} doc && ${MAKE} doc

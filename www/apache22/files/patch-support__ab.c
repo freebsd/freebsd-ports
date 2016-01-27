@@ -508,6 +508,15 @@ Backport ab from apache 2.4.x (r1663405)
          }
      }
      {
+@@ -1154,7 +1222,7 @@ static void start_connect(struct connect
+     apr_status_t rv;
+ 
+     if (!(started < requests))
+-    return;
++        return;
+ 
+     c->read = 0;
+     c->bread = 0;
 @@ -1171,18 +1239,30 @@ static void start_connect(struct connect
                  SOCK_STREAM, 0, c->ctx)) != APR_SUCCESS) {
      apr_err("socket", rv);
@@ -934,7 +943,7 @@ Backport ab from apache 2.4.x (r1663405)
  {
      if (!use_html) {
 -        printf("This is ApacheBench, Version %s\n", AP_AB_BASEREVISION " <$Revision: 655654 $>");
-+        printf("This is ApacheBench, Version %s\n", AP_AB_BASEREVISION " <$Revision: 1663405 $>");
++        printf("This is ApacheBench, Version %s\n", AP_AB_BASEREVISION " <$Revision: 1706008 $>");
          printf("Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/\n");
          printf("Licensed to The Apache Software Foundation, http://www.apache.org/\n");
          printf("\n");
@@ -942,7 +951,7 @@ Backport ab from apache 2.4.x (r1663405)
      else {
          printf("<p>\n");
 -        printf(" This is ApacheBench, Version %s <i>&lt;%s&gt;</i><br>\n", AP_AB_BASEREVISION, "$Revision: 655654 $");
-+        printf(" This is ApacheBench, Version %s <i>&lt;%s&gt;</i><br>\n", AP_AB_BASEREVISION, "$Revision: 1663405 $");
++        printf(" This is ApacheBench, Version %s <i>&lt;%s&gt;</i><br>\n", AP_AB_BASEREVISION, "$Revision: 1706008 $");
          printf(" Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/<br>\n");
          printf(" Licensed to The Apache Software Foundation, http://www.apache.org/<br>\n");
          printf("</p>\n<p>\n");
@@ -988,16 +997,31 @@ Backport ab from apache 2.4.x (r1663405)
      fprintf(stderr, "    -h              Display usage information (this message)\n");
  #ifdef USE_SSL
  
-@@ -1894,7 +1968,7 @@ static void usage(const char *progname)
+@@ -1887,6 +1961,12 @@ static void usage(const char *progname)
+ #define SSL2_HELP_MSG ""
+ #endif
+ 
++#ifndef OPENSSL_NO_SSL3
++#define SSL3_HELP_MSG "SSL3, "
++#else
++#define SSL3_HELP_MSG ""
++#endif
++
+ #ifdef HAVE_TLSV1_X
+ #define TLS1_X_HELP_MSG ", TLS1.1, TLS1.2"
+ #else
+@@ -1894,8 +1974,8 @@ static void usage(const char *progname)
  #endif
  
      fprintf(stderr, "    -Z ciphersuite  Specify SSL/TLS cipher suite (See openssl ciphers)\n");
 -    fprintf(stderr, "    -f protocol     Specify SSL/TLS protocol\n"); 
+-    fprintf(stderr, "                    (" SSL2_HELP_MSG "SSL3, TLS1" TLS1_X_HELP_MSG " or ALL)\n");
 +    fprintf(stderr, "    -f protocol     Specify SSL/TLS protocol\n");
-     fprintf(stderr, "                    (" SSL2_HELP_MSG "SSL3, TLS1" TLS1_X_HELP_MSG " or ALL)\n");
++    fprintf(stderr, "                    (" SSL2_HELP_MSG SSL3_HELP_MSG "TLS1" TLS1_X_HELP_MSG " or ALL)\n");
  #endif
      exit(EINVAL);
-@@ -1904,7 +1978,7 @@ static void usage(const char *progname)
+ }
+@@ -1904,7 +1984,7 @@ static void usage(const char *progname)
  
  /* split URL into parts */
  
@@ -1006,7 +1030,7 @@ Backport ab from apache 2.4.x (r1663405)
  {
      char *cp;
      char *h;
-@@ -1935,9 +2009,7 @@ static int parse_url(char *url)
+@@ -1935,9 +2015,7 @@ static int parse_url(char *url)
  
      if ((cp = strchr(url, '/')) == NULL)
          return 1;
@@ -1017,7 +1041,7 @@ Backport ab from apache 2.4.x (r1663405)
      rv = apr_parse_addr_port(&hostname, &scope_id, &port, h, cntxt);
      if (rv != APR_SUCCESS || !hostname || scope_id) {
          return 1;
-@@ -1974,9 +2046,9 @@ static int parse_url(char *url)
+@@ -1974,9 +2052,9 @@ static int parse_url(char *url)
  
  /* ------------------------------------------------------- */
  
@@ -1029,7 +1053,7 @@ Backport ab from apache 2.4.x (r1663405)
  {
      apr_file_t *postfd;
      apr_finfo_t finfo;
-@@ -1997,11 +2069,7 @@ static int open_postfile(const char *pfi
+@@ -1997,11 +2075,7 @@ static int open_postfile(const char *pfi
          return rv;
      }
      postlen = (apr_size_t)finfo.size;
@@ -1042,7 +1066,7 @@ Backport ab from apache 2.4.x (r1663405)
      rv = apr_file_read_full(postfd, postdata, postlen, NULL);
      if (rv != APR_SUCCESS) {
          fprintf(stderr, "ab: Could not read POST data file: %s\n",
-@@ -2009,7 +2077,7 @@ static int open_postfile(const char *pfi
+@@ -2009,7 +2083,7 @@ static int open_postfile(const char *pfi
          return rv;
      }
      apr_file_close(postfd);
@@ -1051,7 +1075,7 @@ Backport ab from apache 2.4.x (r1663405)
  }
  
  /* ------------------------------------------------------- */
-@@ -2017,11 +2085,11 @@ static int open_postfile(const char *pfi
+@@ -2017,11 +2091,11 @@ static int open_postfile(const char *pfi
  /* sort out command-line args and call test */
  int main(int argc, const char * const argv[])
  {
@@ -1065,7 +1089,7 @@ Backport ab from apache 2.4.x (r1663405)
      char c;
  #ifdef USE_SSL
      AB_SSL_METHOD_CONST SSL_METHOD *meth = SSLv23_client_method();
-@@ -2033,12 +2101,13 @@ int main(int argc, const char * const ar
+@@ -2033,12 +2107,13 @@ int main(int argc, const char * const ar
      tdstring = "bgcolor=white";
      cookie = "";
      auth = "";
@@ -1080,7 +1104,7 @@ Backport ab from apache 2.4.x (r1663405)
  
  #ifdef NOT_ASCII
      status = apr_xlate_open(&to_ascii, "ISO-8859-1", APR_DEFAULT_CHARSET, cntxt);
-@@ -2058,15 +2127,17 @@ int main(int argc, const char * const ar
+@@ -2058,15 +2133,17 @@ int main(int argc, const char * const ar
      }
  #endif
  
@@ -1101,7 +1125,7 @@ Backport ab from apache 2.4.x (r1663405)
                  if (requests <= 0) {
                      err("Invalid number of requests\n");
                  }
-@@ -2078,76 +2149,80 @@ int main(int argc, const char * const ar
+@@ -2078,76 +2155,80 @@ int main(int argc, const char * const ar
                  heartbeatres = 0;
                  break;
              case 'c':
@@ -1211,7 +1235,7 @@ Backport ab from apache 2.4.x (r1663405)
                  tmp[l] = '\0';
  
                  auth = apr_pstrcat(cntxt, auth, "Authorization: Basic ", tmp,
-@@ -2157,27 +2232,27 @@ int main(int argc, const char * const ar
+@@ -2157,27 +2238,27 @@ int main(int argc, const char * const ar
                  /*
                   * assume username passwd already to be in colon separated form.
                   */
@@ -1247,7 +1271,7 @@ Backport ab from apache 2.4.x (r1663405)
                      opt_useragent = 1;
                  }
                  break;
-@@ -2190,7 +2265,7 @@ int main(int argc, const char * const ar
+@@ -2190,7 +2271,7 @@ int main(int argc, const char * const ar
                   */
              case 'x':
                  use_html = 1;
@@ -1256,7 +1280,7 @@ Backport ab from apache 2.4.x (r1663405)
                  break;
              case 'X':
                  {
-@@ -2198,22 +2273,22 @@ int main(int argc, const char * const ar
+@@ -2198,22 +2279,22 @@ int main(int argc, const char * const ar
                      /*
                       * assume proxy-name[:port]
                       */
@@ -1283,7 +1307,7 @@ Backport ab from apache 2.4.x (r1663405)
                  break;
              case 'h':
                  usage(argv[0]);
-@@ -2221,26 +2296,33 @@ int main(int argc, const char * const ar
+@@ -2221,26 +2302,35 @@ int main(int argc, const char * const ar
              case 'V':
                  copyright();
                  return 0;
@@ -1309,8 +1333,10 @@ Backport ab from apache 2.4.x (r1663405)
                      meth = SSLv2_client_method();
  #endif
 -                } else if (strncasecmp(optarg, "SSL3", 4) == 0) {
++#ifndef OPENSSL_NO_SSL3
 +                } else if (strncasecmp(opt_arg, "SSL3", 4) == 0) {
                      meth = SSLv3_client_method();
++#endif
  #ifdef HAVE_TLSV1_X
 -                } else if (strncasecmp(optarg, "TLS1.1", 6) == 0) {
 +                } else if (strncasecmp(opt_arg, "TLS1.1", 6) == 0) {
@@ -1324,7 +1350,7 @@ Backport ab from apache 2.4.x (r1663405)
                      meth = TLSv1_client_method();
                  }
                  break;
-@@ -2253,6 +2335,10 @@ int main(int argc, const char * const ar
+@@ -2253,6 +2343,10 @@ int main(int argc, const char * const ar
          usage(argv[0]);
      }
  
@@ -1335,7 +1361,7 @@ Backport ab from apache 2.4.x (r1663405)
      if (parse_url(apr_pstrdup(cntxt, opt->argv[opt->ind++]))) {
          fprintf(stderr, "%s: invalid URL\n", argv[0]);
          usage(argv[0]);
-@@ -2296,6 +2382,10 @@ int main(int argc, const char * const ar
+@@ -2296,6 +2390,10 @@ int main(int argc, const char * const ar
          exit(1);
      }
      SSL_CTX_set_options(ssl_ctx, SSL_OP_ALL);

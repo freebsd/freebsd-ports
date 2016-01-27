@@ -8,17 +8,14 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Text-to-Speech system
+COMMENT=	Language independent Text-to-Speech (TTS) system
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
-BROKEN_FreeBSD_8=	does not build on FreeBSD < 10.x
-BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
-
 USES=		gmake
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_lib_stdcpp_main=no YACC=${YACC}
+CONFIGURE_ENV=	YACC="${YACC}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^\(SUBDIRS =.*\)doc/\1/' ${WRKSRC}/Makefile.in

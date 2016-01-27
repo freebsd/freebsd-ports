@@ -11,6 +11,9 @@ DISTNAME=	jdk-${JDK_VERSION}u${JDK_UPDATE_VERSION}-linux-i586
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JDK_VERSION} Development Kit for Linux
 
+DEPRECATED=	Unsupported and known for multiple security vulnerabilities
+EXPIRATION_DATE=2016-02-29
+
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 OPTIONS_DEFINE=	DEMO

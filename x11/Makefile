@@ -159,6 +159,7 @@
     SUBDIR += libdmx
     SUBDIR += libdnd
     SUBDIR += libexo
+    SUBDIR += libfakekey
     SUBDIR += libfm
     SUBDIR += libfm-extra
     SUBDIR += libgnome

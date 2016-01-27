@@ -3,7 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.91
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://inkscape.global.ssl.fastly.net/media/resources/file/ \
 		LOCAL/kwm
@@ -51,8 +51,6 @@ OPENMP_USES_OFF=	compiler:features
 
 POPPLER_DESC=		PDF preview rendering
 POPPLER_CONFIGURE_ENABLE=	poppler-cairo
-#POPPLER_CONFIGURE_ON=	--enable-poppler-cairo
-#POPPLER_CONFIGURE_OFF=	--enable-poppler-cairo=no
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 
 VISIO_DESC=		Support for Microsoft Visio diagrams
@@ -62,7 +60,7 @@ VISIO_LIB_DEPENDS=	librevenge-stream-0.0.so:${PORTSDIR}/textproc/librevenge \
 
 WPG_DESC=		Support for WordPerfect graphics
 WPG_CONFIGURE_ENABLE=	wpg
-WPG_LIB_DEPENDS=	libwpg-0.2.so:${PORTSDIR}/graphics/libwpg
+WPG_LIB_DEPENDS=	libwpg-0.3.so:${PORTSDIR}/graphics/libwpg03
 
 .include <bsd.port.pre.mk>
 
@@ -85,9 +83,5 @@ CXX=    ${LOCALBASE}/bin/clang++34
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
 	    	${WRKSRC}/configure
-#.if ! ${PORT_OPTIONS:MPOPPLER}
-#	@${REINPLACE_CMD} -e 's|poppler|pdisable|g' \
-#		${WRKSRC}/configure
-#.endif
 
 .include <bsd.port.post.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgrex
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	elixir-
@@ -15,7 +15,8 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	ericmj
 
-MIX_BUILD_DEPS=	devel/elixir-connection \
+MIX_BUILD_DEPS=	databases/elixir-db_connection \
+		devel/elixir-connection \
 		devel/elixir-decimal
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 MIX_REWRITE=	yes

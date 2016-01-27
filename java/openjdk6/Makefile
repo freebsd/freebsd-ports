@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk6
-PORTVERSION=	b37
+PORTVERSION=	b38
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/ant/binaries/:ant \
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		dejavu>0:${PORTSDIR}/x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	11_nov_2015
+OPENJDK_BUILDDATE=	20_jan_2016
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA IPV6 TZUPDATE
@@ -64,7 +64,7 @@ USE_XORG=	x11 xext xi xt xtst
 
 # do not depend on devel/apache-ant to avoid circular dependency, but
 # use .tar.bz2 distfile to avoid duplicated downloads
-ANTVERSION=	1.9.4
+ANTVERSION=	1.9.6
 ANTFILE=	apache-ant-${ANTVERSION}-bin.tar.bz2
 
 JTREG_BUILD=	b05_29_nov_2012

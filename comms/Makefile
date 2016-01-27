@@ -80,6 +80,7 @@
     SUBDIR += kremotecontrol
     SUBDIR += kvasd
     SUBDIR += libconcord
+    SUBDIR += libfap
     SUBDIR += libfec
     SUBDIR += libimobiledevice
     SUBDIR += libirman
@@ -140,6 +141,8 @@
     SUBDIR += qico
     SUBDIR += qrq
     SUBDIR += qsstv
+    SUBDIR += qt5-connectivity
+    SUBDIR += qt5-sensors
     SUBDIR += qt5-serialport
     SUBDIR += qtel
     SUBDIR += quisk

@@ -3,6 +3,7 @@
 
 PORTNAME=	django-debug-toolbar
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Configurable set of panels to display debug information
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4.2:${PORTSDIR}/www/py-django \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.4.2:${PORTSDIR}/www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>0:${PORTSDIR}/databases/py-sqlparse
 
 USES=		python

@@ -1,5 +1,6 @@
 bin/3omns
 man/man6/3omns.6.gz
+%%DATADIR%%/base/bot.lua
 %%DATADIR%%/base/core.lua
 %%DATADIR%%/base/entities/bomn.lua
 %%DATADIR%%/base/entities/crate.lua

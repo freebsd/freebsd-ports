@@ -22,7 +22,6 @@ LIB_DEPENDS?=	libevent.so:${PORTSDIR}/devel/libevent2 \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 
-BROKEN_FreeBSD_8=	does not build on FreeBSD < 10.x
 BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
 
 USES=		autoreconf compiler:c++11-lib gmake pkgconfig
@@ -35,6 +34,7 @@ GH_PROJECT=	certificate-transparency
 GH_TAGNAME=	7e1cf3b
 
 CPPFLAGS+=	"-I${LOCALBASE}/include"
+CPPFLAGS+=	"-I${LOCALBASE}/include/evhtp"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

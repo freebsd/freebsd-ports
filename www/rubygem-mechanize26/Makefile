@@ -11,6 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	WWW::Mechanize, a handy web browsing ruby object
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.rdoc
 
 RUN_DEPENDS=	rubygem-domain_name>=0.5.1:${PORTSDIR}/net/rubygem-domain_name \
 		rubygem-http-cookie>=1.0.0:${PORTSDIR}/www/rubygem-http-cookie \

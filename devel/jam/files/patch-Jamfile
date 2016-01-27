@@ -1,5 +1,5 @@
---- Jamfile.orig	Thu Aug 19 15:19:29 2004
-+++ Jamfile	Fri Aug 26 17:10:28 2005
+--- Jamfile.orig	2014-08-07 18:24:14 UTC
++++ Jamfile
 @@ -7,7 +7,7 @@
  
  if $(VMS) 	{ LOCATE_TARGET ?= [.binvms] ; }

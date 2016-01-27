@@ -2,61 +2,63 @@
 # $FreeBSD$
 
 PORTNAME=	starfighter
-PORTVERSION=	1.2
-PORTREVISION=	4
+PORTVERSION=	1.5.1.1
 CATEGORIES=	games
-MASTER_SITES=	SF/pr-${PORTNAME}/ \
-		SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}.png:icons
+MASTER_SITES=	SAVANNAH/${PORTNAME}/1.5 \
+		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}-src${EXTRACT_SUFX} \
+		${PORTNAME}-icons${EXTRACT_SUFX}:icons
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Liberate the universe from the evil company WEAPCO
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/docs/LICENSE
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-src
 
-USES=		gmake iconv python:2,build shebangfix
-USE_XORG=	x11 xau xdmcp
-USE_SDL=	image mixer
-WITH_ZLIB=	yes
-MAKEFILE=	makefile
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-SHEBANG_FILES=	pack.py unpack.py
+USES=		gmake dos2unix iconv pkgconfig
+USE_SDL=	image2 mixer2
 
-INSTALLS_ICONS=	yes
+DOS2UNIX_GLOB=	*.txt
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png \
-		%%DATADIR%%/${PORTNAME}.pak
+PORTDOCS=	*
 
-PORTDOCS=	index.html
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	README.txt
 
-OPTIONS_DEFINE=	DOCS
+DOCSRCDIR2=	${WRKSRC}/docs/
+DOCSDIR2=	${DOCSDIR}/docs/
+DOC_FILES2=	*.png *.html
 
-DESKTOP_ENTRIES="Project Starfighter" "" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ""
+OPTIONS_DEFINE= DOCS
+
+INSTALLS_ICONS= yes
+ICON_SIZES=     16x16 32x32 48x48 64x64 72x72 96x96 128x128
 
 post-patch:
 	@${REINPLACE_CMD} \
-	-e 's|mkdir -p $$(DESTDIR)$$(DOCDIR)|| ; \
-	s|cp -p $$(DOCS) $$(DESTDIR)$$(DOCDIR)|| ; \
-	s| -O2 -Wall|${CXXFLAGS}| ; \
-	s|docs/\*|docs/index.html| ; \
+	-e 's| -O2 -Wall|${CXXFLAGS}| ; \
+	s|mkdir -p $$(DESTDIR)$$(DOCDIR)|| ; \
+	s|cp $$(DOCS) $$(DESTDIR)$$(DOCDIR)|| ; \
 	s|/usr|${LOCALBASE}| ; \
 	s|$$(PREFIX)/games/|$$(PREFIX)/bin/| ; \
 	s|/share/games/parallelrealities/|/share/starfighter/|' \
-		${WRKSRC}/makefile
+		${WRKSRC}/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
+.for s in ${ICON_SIZES}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
+.endfor
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.mk>

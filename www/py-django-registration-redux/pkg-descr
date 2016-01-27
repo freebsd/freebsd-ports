@@ -1,4 +1,4 @@
 A fairly simple user-registration application for Django,
 designed to make allowing user signups as painless as possible
 
-WWW: http://django-registration-redux.readthedocs.org/
+WWW: https://github.com/macropin/django-registration

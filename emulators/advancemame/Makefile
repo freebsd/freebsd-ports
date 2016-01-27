@@ -2,67 +2,69 @@
 # $FreeBSD$
 
 PORTNAME=	advancemame
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	1.4
 CATEGORIES=	emulators
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/amadvance/advancemame/releases/download/${DISTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL MAME port with advanced TV and monitor video support
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
+USES=		gmake ncurses
 USE_SDL=	sdl
-USES=		gmake
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-asm --disable-svgalib --disable-fb \
-		--disable-alsa --enable-oss --disable-slang \
-		--disable-ncurses --disable-kevent
-
-DATADIR=	${PREFIX}/share/advance
+CONFIGURE_ARGS=	--disable-svgalib --disable-fb --disable-alsa --enable-oss \
+		--disable-kevent
 
 CFLAGS+=	-idirafter ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN_FILES=	advdev.1 advj.1 advk.1 advm.1 advmame.1 advs.1
+DOCSDIR=	${PREFIX}/share/doc/advance
+DATADIR=	${PREFIX}/share/advance
+
 PORTDOCS=	*
 
-MAKE_JOBS_UNSAFE=	yes
+OPTIONS_DEFINE=		DOCS FREETYPE SLANG
+OPTIONS_DEFINE_i386=	ASM
+OPTIONS_DEFAULT=	FREETYPE
+OPTIONS_DEFAULT_i386=	ASM
 
-OPTIONS_DEFINE=	FREETYPE DOCS
-OPTIONS_DEFAULT=FREETYPE
-
+ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+ASM_USE=		gcc=any
+ASM_CONFIGURE_ENABLE=	asm
+FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
-FREETYPE_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
+SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_CONFIGURE_ENABLE=	slang
+SLANG_LDFLAGS=		-lncurses
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-lpthread|-pthread|' ${WRKSRC}/configure
+		's|-lpthread|-pthread| ; \
+		 /prefix/s|^\(docdir\)|#\1| ; \
+		 /prefix/s|^\(mandir\)|#\1|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		's|@@|@|' ${WRKSRC}/Makefile.in
+		's|@@|@| ; \
+		 /^INSTALL_PROGRAM /s|=.*|= @INSTALL_PROGRAM@| ; \
+		 /^INSTALL_MAN /s|=.*|= @INSTALL_MAN@| ; \
+		 /^INSTALL_DATA /s|=.*|= @INSTALL_DATA@|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
-		'/\(pkgdocdir\)/s|^|#| ; \
+		's|\([[:space:]]\)\($$(bindir)\)|\1$$(DESTDIR)\2| ; \
+		 s|\([[:space:]]\)\($$(pkgdir)\)|\1$$(DESTDIR)\2| ; \
+		 s|\([[:space:]]\)\($$(pkgdocdir)\)|\1$$(DESTDIR)\2| ; \
+		 s|\([[:space:]]\)\($$(mandir)\)|\1$$(DESTDIR)\2| ; \
 		 /WHOLE_CFLAGS_OPT/s|-O2|| ; \
 		 /WHOLE_LDFLAGS/s|-s||' ${WRKSRC}/advance/advance.mak
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|-pthread|' ${WRKSRC}/advance/emu.mak
 
-do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} advj advk advm advmame advs \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN_FILES} \
-		${STAGEDIR}${MANPREFIX}/man/man1)
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/support && ${INSTALL_DATA} *.dat ${STAGEDIR}${DATADIR})
-.for i in artwork diff image rom sample snap
-	@${MKDIR} ${STAGEDIR}${DATADIR}/${i}
-	@${ECHO_CMD} -n > ${STAGEDIR}${DATADIR}/${i}/.keep_me
-.endfor
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} HISTORY README RELEASE \
 		${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.[ht]* ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

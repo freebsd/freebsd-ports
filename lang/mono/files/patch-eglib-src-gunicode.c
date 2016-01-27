@@ -1,6 +1,6 @@
---- eglib/src/gunicode.c.orig
+--- eglib/src/gunicode.c.orig	2015-09-24 09:36:09 UTC
 +++ eglib/src/gunicode.c
-@@ -219,10 +219,10 @@
+@@ -219,10 +219,10 @@ g_get_charset (G_CONST_RETURN char **cha
  		is_utf8 = FALSE;
  #else
  		/* These shouldn't be heap allocated */

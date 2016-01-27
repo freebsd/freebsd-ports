@@ -55,11 +55,13 @@ share/locale/en_GB/LC_MESSAGES/caja-extensions.mo
 share/locale/es/LC_MESSAGES/caja-extensions.mo
 share/locale/et/LC_MESSAGES/caja-extensions.mo
 share/locale/eu/LC_MESSAGES/caja-extensions.mo
+share/locale/fi/LC_MESSAGES/caja-extensions.mo
 share/locale/fr/LC_MESSAGES/caja-extensions.mo
 share/locale/gl/LC_MESSAGES/caja-extensions.mo
 share/locale/hi/LC_MESSAGES/caja-extensions.mo
 share/locale/hr/LC_MESSAGES/caja-extensions.mo
 share/locale/hu/LC_MESSAGES/caja-extensions.mo
+share/locale/hy/LC_MESSAGES/caja-extensions.mo
 share/locale/id/LC_MESSAGES/caja-extensions.mo
 share/locale/it/LC_MESSAGES/caja-extensions.mo
 share/locale/ja/LC_MESSAGES/caja-extensions.mo
@@ -77,6 +79,7 @@ share/locale/ro/LC_MESSAGES/caja-extensions.mo
 share/locale/ru/LC_MESSAGES/caja-extensions.mo
 share/locale/sk/LC_MESSAGES/caja-extensions.mo
 share/locale/sl/LC_MESSAGES/caja-extensions.mo
+share/locale/sq/LC_MESSAGES/caja-extensions.mo
 share/locale/sr/LC_MESSAGES/caja-extensions.mo
 share/locale/sv/LC_MESSAGES/caja-extensions.mo
 share/locale/tr/LC_MESSAGES/caja-extensions.mo

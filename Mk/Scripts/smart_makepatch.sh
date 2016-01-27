@@ -184,9 +184,9 @@ regenerate_patches() {
 	local OUT
 	local ORIG
 	local new_list
-	new_list=$(cd ${PATCH_WRKSRC} && \
+	new_list=$(cd "${PATCH_WRKSRC}" && \
 		find -s * -type f -name '*.orig' 2>/dev/null)
-	(cd ${PATCH_WRKSRC} && for F in ${new_list}; do
+	(cd "${PATCH_WRKSRC}" && for F in ${new_list}; do
 		ORIG=${F#./}
 		NEW=${ORIG%.orig}
 		cmp -s ${ORIG} ${NEW} && continue

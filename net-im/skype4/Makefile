@@ -11,7 +11,8 @@ PKGNAMESUFFIX=	4
 MAINTAINER=	xmj@chaot.net
 COMMENT=	P2P VoIP software
 
-RUN_DEPENDS=	${LINUXBASE}/lib/skype_oss_wrapper/libpulse.so.0:${PORTSDIR}/audio/linux-skype_oss_wrapper
+RUN_DEPENDS=	${LINUXBASE}/lib/skype_oss_wrapper/libpulse.so.0:${PORTSDIR}/audio/linux-skype_oss_wrapper \
+	linux-${USE_LINUX}-pulseaudio-libs-glib2>0:${PORTSDIR}/audio/linux-c6-pulseaudio-libs-glib2
 
 CONFLICTS=	skype-devel-[0-9]*
 
@@ -34,7 +35,7 @@ SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100075
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100075 || ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002507)
 BROKEN=		Skype 4.3 requires Linux 2.6.32 emulation.
 .endif
 

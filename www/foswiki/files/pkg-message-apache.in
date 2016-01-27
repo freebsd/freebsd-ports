@@ -4,15 +4,15 @@ file.
 
 To complete the installation, please:
 
-- Copy %%CONFDIR%%/foswiki.conf.sample to
-  %%CONFDIR%%/foswiki.conf 
+- Copy %%FOSCONFDIR%%/foswiki.conf.sample to
+  %%FOSCONFDIR%%/foswiki.conf 
 
-- Review the contents of %%CONFDIR%%/foswiki.conf
+- Review the contents of %%FOSCONFDIR%%/foswiki.conf
   to ensure they match your local security policies, and modify the
   file if necessary.
 
 - If you want to configure Foswiki from a remote machine, search for the
-  following in %%CONFDIR%%/foswiki.conf:
+  following in %%FOSCONFDIR%%/foswiki.conf:
 
   <FilesMatch "^configure.*">
       SetHandler cgi-script

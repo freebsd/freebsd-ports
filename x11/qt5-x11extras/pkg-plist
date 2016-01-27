@@ -12,6 +12,7 @@
 %%QT_LIBDIR%%/libQt5X11Extras.so.5
 %%QT_LIBDIR%%/libQt5X11Extras.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5X11Extras.so.%%FULLVER%%
+%%DEBUG%%%%QT_LIBDIR%%/libQt5X11Extras.so.%%FULLVER%%.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_x11extras.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_x11extras_private.pri
 libdata/pkgconfig/Qt5X11Extras.pc

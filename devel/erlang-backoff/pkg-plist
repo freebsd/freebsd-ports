@@ -1,0 +1,5 @@
+lib/erlang/lib/backoff-%%VERSION%%/ebin/backoff.app
+lib/erlang/lib/backoff-%%VERSION%%/ebin/backoff.beam
+lib/erlang/lib/backoff-%%VERSION%%/src/backoff.app.src
+lib/erlang/lib/backoff-%%VERSION%%/src/backoff.erl
+%%PORTDOCS%%%%DOCSDIR%%/README.md

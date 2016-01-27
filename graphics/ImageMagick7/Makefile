@@ -2,7 +2,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	7.0.0-0~beta${DATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
 		http://www.imagemagick.org/download/beta/ \
@@ -37,7 +37,7 @@ COMMENT=	Image processing tools (unstable version)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DATE=		20151120
+DATE=		20160119
 WRKSRC=		${WRKDIR}/${PORTNAME}-7.0.0-0
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl

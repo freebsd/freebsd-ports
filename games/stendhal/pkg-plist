@@ -21,6 +21,17 @@ share/stendhal/lib/log4j.jar
 share/stendhal/lib/marauroa.jar
 share/stendhal/lib/LICENSES.txt
 share/stendhal/lib/NOTICE.txt
+share/stendhal/lib/h2-license.html
+share/stendhal/lib/jetty-license.html
+share/stendhal/lib/jetty-notice.html
+share/stendhal/lib/jnlp-license.txt
+share/stendhal/lib/json-simple-license.txt
+share/stendhal/lib/junit-license.html
+share/stendhal/lib/jython-license.txt
+share/stendhal/lib/log4j-license.txt
+share/stendhal/lib/servlet-api-license.txt
+share/stendhal/lib/sha512crypt-license.txt
+share/stendhal/lib/websocket-license.txt
 @dir share/stendhal/log
 %%CLIENT%%bin/stendhal
 %%CLIENT%%man/man1/stendhal.1.gz

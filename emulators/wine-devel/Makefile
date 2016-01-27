@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.9.1
+DISTVERSION=	1.9.2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -147,7 +147,6 @@ EXTRACT_DEPENDS=bash:${PORTSDIR}/shells/bash \
 # Fix build on FreeBSD 9.x (false positive: powl)
 CONFIGURE_ENV+=	ac_cv_have_powl=no
 CONFIGURE_ARGS+=--without-pulse
-USE_AUTOTOOLS=	autoconf
 
 post-extract: fix-shebang
 	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${COMP_DIST} --strip-components 1

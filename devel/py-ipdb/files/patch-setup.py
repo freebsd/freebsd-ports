@@ -1,6 +1,6 @@
---- setup.py.orig	2013-06-12 23:11:21.000000000 -0700
-+++ setup.py	2013-06-12 23:11:32.000000000 -0700
-@@ -41,7 +41,7 @@
+--- setup.py.orig	2015-06-03 09:21:14 UTC
++++ setup.py
+@@ -48,7 +48,7 @@ setup(name='ipdb',
        license='GPL',
        packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
        include_package_data=True,

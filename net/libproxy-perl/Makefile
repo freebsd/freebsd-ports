@@ -2,7 +2,7 @@
 # $FreeBSD$
 #    $MCom: ports/net/libproxy-perl/Makefile,v 1.1 2011/01/12 13:10:53 kwm Exp $
 
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-perl
 
@@ -14,8 +14,10 @@ LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
+
+BUILD_WRKSRC=	${CONFIGURE_WRKSRC}/bindings/perl
+INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}/bindings/perl
 USES=		perl5
-INSTALL_WRKSRC=	${WRKSRC}/bindings/perl
 
 LIBPROXY_SLAVE=	perl
 

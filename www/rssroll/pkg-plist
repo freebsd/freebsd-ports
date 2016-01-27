@@ -2,11 +2,15 @@ bin/rssroll
 @sample etc/rssrollrc.sample
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
-www/cgi-bin/rssroll.cgi
-www/data/rssroll/css/common.css
-www/data/rssroll/css/default.css
-www/data/rssroll/html/header.html
-www/data/rssroll/html/main.html
-www/data/rssroll/html/feed.html
-www/data/rssroll/html/footer.html
-@dir www/data/rssroll
+%%WWWDIR%%/css/common.css
+%%WWWDIR%%/css/default.css
+%%WWWDIR%%/css/flak.css
+%%WWWDIR%%/html/default/feed.html
+%%WWWDIR%%/html/default/footer.html
+%%WWWDIR%%/html/default/header.html
+%%WWWDIR%%/html/flak/feed.html
+%%WWWDIR%%/html/flak/footer.html
+%%WWWDIR%%/html/flak/header.html
+%%WWWDIR%%/html/main.html
+%%WWWDIR%%/index.cgi
+@dir %%WWWDIR%%

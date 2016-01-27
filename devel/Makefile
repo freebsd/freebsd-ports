@@ -412,7 +412,6 @@
     SUBDIR += dyncall
     SUBDIR += e00compr
     SUBDIR += e2fsprogs-libss
-    SUBDIR += e_dbus
     SUBDIR += easygit
     SUBDIR += eblob
     SUBDIR += ebnf2yacc
@@ -468,6 +467,7 @@
     SUBDIR += eric4
     SUBDIR += eric6
     SUBDIR += eris
+    SUBDIR += erlang-backoff
     SUBDIR += erlang-bbmustache
     SUBDIR += erlang-bear
     SUBDIR += erlang-certifi
@@ -1026,7 +1026,6 @@
     SUBDIR += htable
     SUBDIR += hub
     SUBDIR += hwloc
-    SUBDIR += i386-linux-binutils
     SUBDIR += ice
     SUBDIR += icmake
     SUBDIR += icu
@@ -1185,6 +1184,7 @@
     SUBDIR += libfirm
     SUBDIR += libfortuna
     SUBDIR += libfreefare
+    SUBDIR += libfsntfs
     SUBDIR += libftdi
     SUBDIR += libftdi1
     SUBDIR += libfwsi
@@ -4396,6 +4396,7 @@
     SUBDIR += py-twistedCore
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
+    SUBDIR += py-txaio
     SUBDIR += py-tzlocal
     SUBDIR += py-ua_parser
     SUBDIR += py-ujson
@@ -4599,6 +4600,7 @@
     SUBDIR += qt5-help
     SUBDIR += qt5-linguist
     SUBDIR += qt5-linguisttools
+    SUBDIR += qt5-location
     SUBDIR += qt5-qdbus
     SUBDIR += qt5-qdbusviewer
     SUBDIR += qt5-qdoc
@@ -4768,6 +4770,7 @@
     SUBDIR += rubygem-cri
     SUBDIR += rubygem-cucumber
     SUBDIR += rubygem-cucumber-core
+    SUBDIR += rubygem-cucumber-wire
     SUBDIR += rubygem-curses
     SUBDIR += rubygem-cyoi
     SUBDIR += rubygem-daemon_controller
@@ -4798,6 +4801,7 @@
     SUBDIR += rubygem-enumerize
     SUBDIR += rubygem-equalizer
     SUBDIR += rubygem-errand
+    SUBDIR += rubygem-event-bus
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-excon
     SUBDIR += rubygem-execjs
@@ -4869,6 +4873,7 @@
     SUBDIR += rubygem-ice_cube
     SUBDIR += rubygem-ice_nine
     SUBDIR += rubygem-inflecto
+    SUBDIR += rubygem-instance_storage
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-like
     SUBDIR += rubygem-iobuffer
@@ -5166,7 +5171,6 @@
     SUBDIR += simgear
     SUBDIR += simian
     SUBDIR += simple_components
-    SUBDIR += simpletest
     SUBDIR += skalibs
     SUBDIR += slf4j
     SUBDIR += smack

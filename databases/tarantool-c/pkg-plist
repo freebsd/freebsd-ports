@@ -21,9 +21,5 @@ include/tarantool/tnt_stream.h
 include/tarantool/tnt_update.h
 lib/libtarantool.a
 lib/libtarantool.so
-lib/libtarantool.so.1.0
-lib/libtarantool.so.1.0.0
-lib/libtarantoolnet.a
-lib/libtarantoolnet.so
-lib/libtarantoolnet.so.1.0
-lib/libtarantoolnet.so.1.0.0
+lib/libtarantool.so.2.0
+lib/libtarantool.so.2.0.0

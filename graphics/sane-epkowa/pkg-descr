@@ -1,0 +1,7 @@
+A SANE scanner backend for various Epson scanners.
+
+This backend supports many more devices than the sane-epson included
+in graphics/sane-backends, including new multifunction devices such
+as the SX400.
+
+WWW: http://avasys.jp/english/

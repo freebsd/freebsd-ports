@@ -6,7 +6,7 @@ PORTVERSION=	2.6.11
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Quicken-like money and finance manager
 
 LICENSE=	GPLv2 GPLv3

@@ -19,6 +19,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libsary.so:${PORTSDIR}/textproc/sary
 
 BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
 
 OPTIONS_DEFINE=	DOCS
 

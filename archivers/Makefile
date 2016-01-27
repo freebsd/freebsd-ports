@@ -48,7 +48,6 @@
     SUBDIR += hs-zlib-enum
     SUBDIR += innoextract
     SUBDIR += javatar
-    SUBDIR += jzip.org
     SUBDIR += jzlib
     SUBDIR += kzip
     SUBDIR += laszip
@@ -169,6 +168,8 @@
     SUBDIR += py-lzma
     SUBDIR += py-pyliblzma
     SUBDIR += py-python-snappy
+    SUBDIR += py-rarfile
+    SUBDIR += py-warctools
     SUBDIR += qpress
     SUBDIR += quazip
     SUBDIR += quazip-qt5

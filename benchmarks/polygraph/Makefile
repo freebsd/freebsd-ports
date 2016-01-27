@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	polygraph
-PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTVERSION=	4.9.0
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	benchmarks www
-MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/ \
-		http://people.bsdgroup.de/~as/freebsd/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking tool for Web proxies
@@ -15,27 +13,40 @@ COMMENT=	Benchmarking tool for Web proxies
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		shebangfix tar:tgz
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USES=		gmake ncurses shebangfix tar:tgz
 SHEBANG_FILES=	tools/*.pl
 USE_GCC=	any
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CONFLICTS=	ltrace-0*
 
-OPTIONS_DEFINE=	GNUPLOT OPENSSL PERL ZLIB
-OPTIONS_DEFAULT=OPENSSL ZLIB
+OPTIONS_DEFINE=		DOCS GNUPLOT GSSAPI LDNS PERL SSL ZLIB
+OPTIONS_DEFAULT=	SSL ZLIB
 
-GNUPLOT_DESC=	GNUPlot for full reporting functionality
-OPENSSL_DESC=	Enable SSL/HTTPS support
-PERL_DESC=	Install Perl for PolyGraph tools
-ZLIB_DESC=	Enable HTTP compression support
-
+GNUPLOT_DESC=		GNUPlot for full reporting functionality
 GNUPLOT_RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-OPENSSL_USE=		OPENSSL=yes
-OPENSSL_CONFIGURE_ON=	--with-ssl=${OPENSSLBASE}
+GSSAPI_USES=		gssapi:mit
+GSSAPI_CONFIGURE_ON=	--with-kerberos=${KRB5CONFIG} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_CONFIGURE_OFF=	--without-kerberos
+LDNS_DESC=		DNS zone file support via libldns
+LDNS_LIB_DEPENDS=	libldns.so:${PORTSDIR}/dns/ldns
+LDNS_CONFIGURE_ON=	--with-ldns=${LOCALBASE}/bin/ldns-config
+LDNS_CONFIGURE_OFF=	--without-ldns
+SSL_DESC=		SSL/HTTPS support
+SSL_USE=		openssl=yes
+SSL_CONFIGURE_ON=	--with-ssl=${OPENSSLBASE}
+SSL_CONFIGURE_OFF=	--without-ssl
+PERL_DESC=		Install Perl for PolyGraph tools
 PERL_USES=		perl5
-PERL_USE=		PERL5=run
-ZLIB_CONFIGURE_WITH=	zlib=/usr
+PERL_USE=		perl5=run
+ZLIB_DESC=		HTTP compression support
+ZLIB_CONFIGURE_ON=	--with-zlib=/usr
+ZLIB_CONFIGURE_OFF=	--without-zlib
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/LICENSE /d' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

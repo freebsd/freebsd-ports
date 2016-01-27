@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsch
-PORTVERSION=	0.1.52
+PORTVERSION=	0.1.53
 CATEGORIES=	net java security
 MASTER_SITES=	SF
 

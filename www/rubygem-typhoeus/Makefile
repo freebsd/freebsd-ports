@@ -10,8 +10,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Parallel HTTP request library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-ethon>=0.7.4:${PORTSDIR}/www/rubygem-ethon
+RUN_DEPENDS=	rubygem-ethon>=0.8.0:${PORTSDIR}/www/rubygem-ethon
 
 NO_ARCH=	yes
 USE_RUBY=	yes

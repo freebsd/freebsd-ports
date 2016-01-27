@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libzrtpcppcore
+PORTVERSION=	4.5.0
 DISTVERSIONPREFIX=	V
-DISTVERSION=	4.4.0
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,8 +15,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	wernerd
 GH_PROJECT=	ZRTPCPP
 
-USES=		cmake:outsource
-CMAKE_ARGS=	-DCORE_LIB=true
+USES=		cmake:outsource compiler:c++11-lib
+USE_CXXSTD=	c++11
+CMAKE_ARGS=	-DCORE_LIB:BOOL=ON
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

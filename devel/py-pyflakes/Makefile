@@ -2,20 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	pyflakes
-PORTVERSION=	0.8.1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Program to analyze Python programs and detect various errors
+COMMENT=	Passive checker of Python programs
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

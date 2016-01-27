@@ -3,7 +3,7 @@
 
 PORTNAME=	Math-Random-ISAAC-XS
 PORTVERSION=	1.004
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JAWNSY
@@ -16,5 +16,8 @@ TEST_DEPENDS=	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 USES=		perl5
 USE_PERL5=	modbuild
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Random/ISAAC/XS/XS.so
 
 .include <bsd.port.mk>

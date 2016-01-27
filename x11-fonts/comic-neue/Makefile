@@ -9,10 +9,7 @@ MASTER_SITES=	http://comicneue.com/
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Free Comic Sans alternative
 
-LICENSE=	CC0
-LICENSE_NAME=	CC0 1.0 Universal
-LICENSE_TEXT=	See http://creativecommons.org/publicdomain/zero/1.0/
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	CC0-1.0
 
 USES=		fonts zip
 NO_BUILD=	yes

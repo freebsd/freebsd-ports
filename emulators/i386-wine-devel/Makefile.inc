@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.8.r3
+PORTVERSION=	1.9.1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
@@ -69,7 +69,7 @@ PLIST_SUB+=	OSREL${osrel}-STAGING="@comment "
 .endif
 .endfor
 
-.if ${OPSYS} != FreeBSD || (!(${OSVERSION} < 1000000) && !(${OSVERSION} >= 1001000 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1100085 && ${OSVERSION} < 1200000))
+.if ${OPSYS} != FreeBSD || (!(${OSVERSION} < 1000000) && !(${OSVERSION} >= 1001000 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1100090 && ${OSVERSION} < 1200000))
 IGNORE=		binaries compiled for FreeBSD 9.3+, 10.1+ and -current only
 DISTFILES=
 .endif

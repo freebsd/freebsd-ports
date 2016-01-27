@@ -3,6 +3,7 @@
 
 PORTNAME=	tor
 PORTVERSION=	0.2.7.6
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -106,6 +107,10 @@ CONFIGURE_ARGS+=	--disable-transparent
 post-patch:
 	@${REINPLACE_CMD} -E -e "s@(-z) (relro|now)@-Wl,\1,\2@g" \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|lib/tor|db/tor|' \
+		${WRKSRC}/src/config/torrc.*.in \
+		${WRKSRC}/doc/tor.1.* \
+		${WRKSRC}/doc/tor.html.in
 
 post-patch-STATIC_TOR-off:
 	@${REINPLACE_CMD} -e "s@-ltcmalloc@${LOCALBASE}/lib/libtcmalloc.so@" \
@@ -118,6 +123,9 @@ post-patch-STATIC_TOR-on:
 post-configure:
 	@${REINPLACE_CMD} -e '\|^nodist_man1_MANS =|s|$$|$$(install_mans:=.1)|' \
 		${WRKSRC}/Makefile
+
+post-install:
+	@${MKDIR} ${STAGEDIR}/var/log/tor ${STAGEDIR}/var/run/tor
 
 .if ! ${PORT_OPTIONS:MTOR2WEB}
 check regression-test test: build

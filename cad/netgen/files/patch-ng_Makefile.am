@@ -1,11 +1,11 @@
---- ng/Makefile.am-orig	2012-11-22 00:29:00.000000000 +0000
-+++ ng/Makefile.am	2012-11-22 00:29:28.000000000 +0000
-@@ -14,7 +14,7 @@
+--- ng/Makefile.am.orig	2014-08-29 09:54:01 UTC
++++ ng/Makefile.am
+@@ -22,7 +22,7 @@ netgen_LDADD = $(top_builddir)/libsrc/vi
  	$(top_builddir)/libsrc/csg/libcsg.la \
  	$(top_builddir)/libsrc/interface/libinterface.la \
  	$(top_builddir)/libsrc/meshing/libmesh.la \
--	-L$(TK_BIN_DIR)/Togl1.7 $(TOGLLIBDIR) -lTogl $(LIBGLU) $(TK_LIB_SPEC) $(TCL_LIB_SPEC) $(MPI_LIBS) $(FFMPEG_LIBS) $(JPEGLIB_LIBS) $(PKG_LIBS)
-+	-L$(TK_BIN_DIR)/Togl-1.7 $(TOGLLIBDIR) -ltogl $(LIBGLU) $(TK_LIB_SPEC) $(TCL_LIB_SPEC) $(MPI_LIBS) $(FFMPEG_LIBS) $(JPEGLIB_LIBS) $(PKG_LIBS)
+-	-L$(TK_BIN_DIR)/Togl1.7 $(TOGLLIBDIR) -lTogl $(LIBGLU) $(TK_LIB_SPEC) $(TCL_LIB_SPEC) $(MPI_LIBS) $(FFMPEG_LIBS) $(JPEGLIB_LIBS) $(PKG_LIBS) $(MKL_LIBS) 
++	-ltogl $(LIBGLU) $(TK_LIB_SPEC) $(TCL_LIB_SPEC) $(MPI_LIBS) $(FFMPEG_LIBS) $(JPEGLIB_LIBS) $(PKG_LIBS) $(MKL_LIBS) 
+ 
+ 
  #
- #	$(top_builddir)/libsrc/occ/liboccvis.la 
- #	$(top_builddir)/libsrc/occ/libocc.la 

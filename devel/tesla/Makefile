@@ -24,13 +24,6 @@ CXX=		clang++33
 
 CMAKE_ARGS+=	-DCMAKE_LLVM_CONFIG=llvm-config33
 
-CONFIGURE_WRKSRC=	${WRKSRC}/build
-BUILD_WRKSRC=		${WRKSRC}/build
+BROKEN_FreeBSD_9=	does not build
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000000
-BROKEN=	does not build on 8 and 9
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

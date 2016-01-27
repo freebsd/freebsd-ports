@@ -1,6 +1,6 @@
---- ./wodim/CMakeLists.txt.orig	2007-05-30 21:55:02.000000000 +0400
-+++ ./wodim/CMakeLists.txt	2012-01-14 20:56:17.754839146 +0400
-@@ -9,16 +9,6 @@
+--- wodim/CMakeLists.txt.orig	2009-11-27 22:57:01 UTC
++++ wodim/CMakeLists.txt
+@@ -9,16 +9,6 @@ SET(CDRECORD_COMMON_SRCS cd_misc.c defau
  
  INCLUDE(CheckIncludeFiles)
  

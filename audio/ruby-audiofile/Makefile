@@ -19,6 +19,7 @@ COMMENT=	Ruby binding to the audiofile library
 LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 
 BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

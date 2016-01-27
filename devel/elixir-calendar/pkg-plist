@@ -15,6 +15,8 @@ lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsTime.Calendar.NaiveDateTime
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsTime.Calendar.Time.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsTime.Tuple.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.ContainsTime.beam
+lib/elixir/lib/calendar/ebin/Elixir.Calendar.Date.Format.beam
+lib/elixir/lib/calendar/ebin/Elixir.Calendar.Date.Parse.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.Date.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.DateTime.Format.beam
 lib/elixir/lib/calendar/ebin/Elixir.Calendar.DateTime.Parse.beam
@@ -33,6 +35,8 @@ lib/elixir/lib/calendar/ebin/calendar.app
 lib/elixir/lib/calendar/lib/calendar.ex
 lib/elixir/lib/calendar/lib/calendar/ambiguous_date_time.ex
 lib/elixir/lib/calendar/lib/calendar/date.ex
+lib/elixir/lib/calendar/lib/calendar/date/format.ex
+lib/elixir/lib/calendar/lib/calendar/date/parse.ex
 lib/elixir/lib/calendar/lib/calendar/date_time.ex
 lib/elixir/lib/calendar/lib/calendar/date_time/format.ex
 lib/elixir/lib/calendar/lib/calendar/date_time/parse.ex

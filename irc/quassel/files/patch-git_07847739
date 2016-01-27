@@ -1,0 +1,43 @@
+commit 078477395aaec1edee90922037ebc8a36b072d90
+Author: Armin K <krejzi@email.com>
+Date:   Sat May 2 23:04:53 2015 +0200
+
+    Fix build with Qt-5.5
+
+    http://code.qt.io/cgit/qt/qtbase.git/commit/?id=ebef2ad1360c80ad62de5f4a1c4e7e4051725c1c
+
+--- src/client/treemodel.cpp
++++ src/client/treemodel.cpp
+@@ -556,10 +556,9 @@ void TreeModel::endAppendChilds()
+     ChildStatus cs = _childStatus;
+ #ifndef QT_NO_DEBUG
+     QModelIndex parent = indexByItem(parentItem);
+-#endif
+     Q_ASSERT(cs.parent == parent);
+     Q_ASSERT(rowCount(parent) == cs.childCount + cs.end - cs.start + 1);
+-
++#endif
+     _aboutToRemoveOrInsert = false;
+     for (int i = cs.start; i <= cs.end; i++) {
+         connectItem(parentItem->child(i));
+@@ -605,9 +604,9 @@ void TreeModel::endRemoveChilds()
+ #ifndef QT_NO_DEBUG
+     ChildStatus cs = _childStatus;
+     QModelIndex parent = indexByItem(parentItem);
+-#endif
+     Q_ASSERT(cs.parent == parent);
+     Q_ASSERT(rowCount(parent) == cs.childCount - cs.end + cs.start - 1);
++#endif
+     _aboutToRemoveOrInsert = false;
+ 
+     endRemoveRows();
+--- src/common/peer.h
++++ src/common/peer.h
+@@ -22,6 +22,7 @@
+ #define PEER_H
+ 
+ #include <QAbstractSocket>
++#include <QDataStream>
+ #include <QPointer>
+ 
+ #include "authhandler.h"

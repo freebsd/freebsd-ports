@@ -1,5 +1,5 @@
---- common/safeuuid.h.orig	2013-12-04 08:13:34.000000000 +0800
-+++ common/safeuuid.h	2013-12-06 00:04:28.067689030 +0800
+--- common/safeuuid.h.orig	2013-12-04 00:13:34 UTC
++++ common/safeuuid.h
 @@ -55,6 +55,7 @@
  
  // UUID API on FreeBSD, NetBSD and AIX.

@@ -3,7 +3,7 @@ missing dependencies.
 
 --- src/src.pro
 +++ src/src.pro
-@@ -1,38 +1,2 @@
+@@ -1,37 +1,2 @@
  TEMPLATE = subdirs
 -
 -qtHaveModule(widgets) {
@@ -14,13 +14,13 @@ missing dependencies.
 -                  pixeltool \
 -                  qtestlib \
 -                  designer
--#    unix:!mac:!embedded:!qpa:SUBDIRS += qtconfig
 -
 -        linguist.depends = designer
 -    }
 -}
 -
--SUBDIRS += linguist
+-SUBDIRS += linguist \
+-    qtplugininfo
 -if(!android|android_app):!ios: SUBDIRS += qtpaths
 -
 -mac {
@@ -39,7 +39,6 @@ missing dependencies.
 -
 -qtNomakeTools( \
 -    pixeltool \
--    qtconfig \
 -    macdeployqt \
 -)
 +SUBDIRS = assistant

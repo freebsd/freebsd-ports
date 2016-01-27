@@ -1,21 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	lm4tools
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.3.20141201
 PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	TI Tiva C ARM microcontroller tools
 
-LICENSE=		GPLv2 BSD3CLAUSE
-LICENSE_COMB=		multi
+LICENSE=	GPLv2 BSD3CLAUSE
+LICENSE_COMB=	multi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	utzig
-GH_TAGNAME=	1cfd813
+GH_TAGNAME=	5a4bc0b
 
-USES=		gmake
+USES=		pkgconfig gmake
 
 PORTDOCS=	README.md \
 		lmicdiusb/commands.txt lmicdiusb/README

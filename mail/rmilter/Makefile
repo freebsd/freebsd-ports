@@ -1,16 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	rmilter
-PORTVERSION=	1.6.7
+PORTVERSION=	1.7.1
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
-COMMENT=	Milter that performs spamd, clamav, and spf checks
+COMMENT=	Milter that performs rspamd, clamav, and other checks
 
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libspf2.so:${PORTSDIR}/mail/libspf2 \
 		libopendkim.so:${PORTSDIR}/mail/opendkim
 
 USE_GITHUB=	yes
@@ -23,8 +22,7 @@ USE_OPENSSL=	yes
 USERS=		_rmilter
 GROUPS=		_rmilter
 
-CMAKE_ARGS+=	-DENABLE_SPF=ON \
-		-DENABLE_DKIM=ON
+CMAKE_ARGS+=	-DENABLE_DKIM=ON
 
 WITH_SENDMAIL_BASE=	yes
 

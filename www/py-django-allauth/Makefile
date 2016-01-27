@@ -2,6 +2,7 @@
 
 PORTNAME=	django-allauth
 PORTVERSION=	0.24.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ COMMENT=	User registration with social account authentication
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.6:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.6:${PORTSDIR}/www/py-django18
 
 NO_ARCH=	yes
 USES=		python

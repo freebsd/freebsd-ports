@@ -1,0 +1,38 @@
+--- doc/nethack.6.orig	2003-12-07 15:39:13.000000000 -0800
++++ doc/nethack.6	2015-12-27 14:12:43.428436000 -0800
+@@ -5,7 +5,7 @@
+ .SH SYNOPSIS
+ .na
+ .hy 0
+-.B nethack
++.B %%HACKNAME%%
+ [
+ .B \-d
+ .I directory
+@@ -197,7 +197,7 @@
+ supplies a directory which is to serve as the playground.
+ It overrides the value from NETHACKDIR, HACKDIR,
+ or the directory specified by the game administrator during compilation
+-(usually /usr/games/lib/nethackdir).
++(usually %%HACKDIR%%).
+ This option is usually only useful to the game administrator.
+ The playground must contain several auxiliary files such as help files,
+ the list of top scorers, and a subdirectory
+@@ -222,7 +222,7 @@
+ distinction, as he may eventually release a new version of his own.
+ .SH FILES
+ .PP
+-All files are in the playground, normally /usr/games/lib/nethackdir.
++All files are in the playground, normally %%HACKDIR%%.
+ If DLB was defined during the compile, the data files and special levels
+ will be inside a larger file, normally nhdat, instead of being separate
+ files.
+@@ -295,7 +295,7 @@
+ In addition, SHOPTYPE is used in debugging (wizard) mode.
+ .SH "SEE ALSO"
+ .PP
+-dgn_comp(6), lev_comp(6), recover(6)
++dgn_comp%%HACKEXT%%(6), lev_comp%%HACKEXT%%(6), recover%%HACKEXT%%(6)
+ .SH BUGS
+ .PP
+ Probably infinite.

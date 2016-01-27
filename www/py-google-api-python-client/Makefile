@@ -2,7 +2,7 @@
 
 PORTNAME=	google-api-python-client
 PORTVERSION=	1.4.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}httplib2>=0.8:${PORTSDIR}/www/py-httplib2 \
 		${PKGNAMEPREFIX}uritemplate>=0.6:${PORTSDIR}/net/py-uritemplate
 
 DJANGO_DESC=	Use the library with Django
-DJANGO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3:${PORTSDIR}/www/py-django
+DJANGO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.3:${PORTSDIR}/www/py-django18
 
 GAE_DESC=	Use the library with Google App Engine
 GAE_RUN_DEPENDS=	google-appengine>=1.4.3:${PORTSDIR}/www/google-appengine

@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt declarative framework for dynamic user interfaces
 
+USE_GL=		gl
 USE_QT5=	core gui network qml sql testlib \
 		widgets xmlpatterns buildtools_build
 QT_DIST=	declarative

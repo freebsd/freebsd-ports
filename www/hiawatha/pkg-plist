@@ -1,13 +1,8 @@
 bin/ssi-cgi
-%%ETCDIR%%/cgi-wrapper.conf
 @sample %%ETCDIR%%/cgi-wrapper.conf.sample
-%%ETCDIR%%/error.xslt
 @sample %%ETCDIR%%/error.xslt.sample
-%%ETCDIR%%/hiawatha.conf
 @sample %%ETCDIR%%/hiawatha.conf.sample
-%%ETCDIR%%/index.xslt
 @sample %%ETCDIR%%/index.xslt.sample
-%%ETCDIR%%/mimetype.conf
 @sample %%ETCDIR%%/mimetype.conf.sample
 @sample %%ETCDIR%%/toolkit.conf.sample
 lib/hiawatha/libmbedcrypto.so
@@ -26,8 +21,7 @@ man/man1/wigwam.1.gz
 sbin/cgi-wrapper
 sbin/hiawatha
 sbin/wigwam
-%%WWWDIR%%/index.html
-%%WWWDIR%%/index.html.sample
+@sample %%WWWDIR%%/index.html.sample
 @dir /var/lib/hiawatha
 @dir /var/lib
 @dir /var/log/hiawatha

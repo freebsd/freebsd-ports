@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 graphical interface to D-Bus
 
-USE_QT5=	core dbus widgets xml buildtools_build
+USE_QT5=	core dbus gui widgets xml buildtools_build
 QT_DIST=	tools
 USES=		qmake
 

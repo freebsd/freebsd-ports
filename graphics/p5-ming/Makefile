@@ -22,6 +22,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 
 OPTIONS_DEFINE=	EXAMPLES
 
+PORTSCOUT=	limit:^ming-
+
 CONFIGURE_ARGS=	--enable-perl
 GNU_CONFIGURE=	yes
 USES=		autoreconf bison gmake libtool localbase perl5 shebangfix

@@ -1,0 +1,8 @@
+bin/minbif
+@sample %%ETCDIR%%/minbif.conf.sample
+@sample %%ETCDIR%%/minbif.motd.sample
+man/man8/minbif.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/minbif.xinetd

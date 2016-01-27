@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PayflowPro
-PORTVERSION=	3101
-PORTREVISION=	1
+PORTVERSION=	4706
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VKHERA
@@ -23,6 +22,7 @@ post-install:
 
 PLIST_FILES=	etc/ca-bundle.crt \
 		%%SITE_PERL%%/PayflowPro.pm \
+		%%SITE_PERL%%/mk-ca-bundle.pl \
 		%%PERL5_MAN3%%/PayflowPro.3.gz
 
 .include <bsd.port.mk>

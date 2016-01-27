@@ -3,6 +3,7 @@
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.39
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -32,11 +33,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 USE_RC_SUBR=	lighttpd
 
-OPTIONS_DEFINE=	BZIP2 DOCS FAM GDBM IPV6 LIBEV LUA MEMCACHE MYSQL MYSQLAUTH \
+OPTIONS_DEFINE=	ATTR BZIP2 DOCS FAM GDBM IPV6 LIBEV LUA MEMCACHE MYSQL MYSQLAUTH \
 		NODELAY LDAP OPENSSL SPAWNFCGI VALGRIND WEBDAV
 
 OPTIONS_DEFAULT=	IPV6 OPENSSL
 
+ATTR_DESC=	extended attributes support
 BZIP2_DESC=	bzip2 support (mod_compress)
 GDBM_DESC=	gdbm storage (mod_trigger_b4_dl)
 LDAP_DESC=	LDAP authentication
@@ -50,24 +52,25 @@ SPAWNFCGI_DESC=	Depend on spawn-fcgi utility
 VALGRIND_DESC=	valgrind support
 WEBDAV_DESC=	WebDAV support
 
-BZIP2_CONFIGURE_WITH=   bzip2
-FAM_USES=       fam
-FAM_CONFIGURE_ON=       --with-fam
-FAM_CONFIGURE_ENV=      FAM_CFLAGS="-I${LOCALBASE}/include" FAM_LIBS="-L${LOCALBASE}/lib"
-GDBM_LIB_DEPENDS=       libgdbm.so:${PORTSDIR}/databases/gdbm
-GDBM_CONFIGURE_WITH=    gdbm
-IPV6_CONFIGURE_OFF=     --disable-ipv6
-LIBEV_CONFIGURE_WITH=   libev=${LOCALBASE}
-LIBEV_LIB_DEPENDS=      libev.so:${PORTSDIR}/devel/libev
-LUA_USES=               lua:51+
-LUA_CONFIGURE_WITH=     lua
-LUA_CONFIGURE_ENV=      LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
-MEMCACHE_LIB_DEPENDS=   libmemcache.so:${PORTSDIR}/databases/libmemcache
+ATTR_CONFIGURE_WITH=	attr
+BZIP2_CONFIGURE_WITH=	bzip2
+FAM_USES=		fam
+FAM_CONFIGURE_ON=	--with-fam
+FAM_CONFIGURE_ENV=	FAM_CFLAGS="-I${LOCALBASE}/include" FAM_LIBS="-L${LOCALBASE}/lib"
+GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBM_CONFIGURE_WITH=	gdbm
+IPV6_CONFIGURE_OFF=	--disable-ipv6
+LIBEV_CONFIGURE_WITH=	libev=${LOCALBASE}
+LIBEV_LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
+LUA_USES=		lua:51+
+LUA_CONFIGURE_WITH=	lua
+LUA_CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
+MEMCACHE_LIB_DEPENDS=	libmemcache.so:${PORTSDIR}/databases/libmemcache
 MEMCACHE_CONFIGURE_WITH=memcache
-MYSQLAUTH_IMPLIES=	 MYSQL
-SPAWNFCGI_RUN_DEPENDS=  spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
-VALGRIND_BUILD_DEPENDS= valgrind:${PORTSDIR}/devel/valgrind
-VALGRIND_RUN_DEPENDS=   valgrind:${PORTSDIR}/devel/valgrind
+MYSQLAUTH_IMPLIES=	MYSQL
+SPAWNFCGI_RUN_DEPENDS=	spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
+VALGRIND_BUILD_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
+VALGRIND_RUN_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
 VALGRIND_CONFIGURE_WITH=valgrind
 
 LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf

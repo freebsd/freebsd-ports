@@ -3,6 +3,7 @@
 
 PORTNAME=	django-simple-captcha
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Simple, yet powerful, Django captcha application
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3:${PORTSDIR}/www/py-django \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.3:${PORTSDIR}/www/py-django18 \
 		${PYTHON_PKGNAMEPREFIX}pillow>=2.0.0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}six>=1.2.0:${PORTSDIR}/devel/py-six
 

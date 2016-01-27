@@ -19,8 +19,7 @@ bin/imsetup
 bin/imsort
 bin/imstore
 bin/imtar
-%%ETCDIR%%/SiteConfig
-@unexec if [ -f %B/SiteConfig.new ]; then rm -f %B/SiteConfig.new; fi
+@sample %%ETCDIR%%/SiteConfig.sample
 lib/IM/Address.pm
 lib/IM/Alias.pm
 lib/IM/Config.pm

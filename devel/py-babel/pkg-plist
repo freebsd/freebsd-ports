@@ -27,6 +27,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/cmdline.rst
 %%PORTDOCS%%%%DOCSDIR%%/conf.py
 %%PORTDOCS%%%%DOCSDIR%%/dates.rst
+%%PORTDOCS%%%%DOCSDIR%%/dev.rst
 %%PORTDOCS%%%%DOCSDIR%%/index.rst
 %%PORTDOCS%%%%DOCSDIR%%/installation.rst
 %%PORTDOCS%%%%DOCSDIR%%/intro.rst

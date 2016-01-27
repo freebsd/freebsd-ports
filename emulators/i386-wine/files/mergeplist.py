@@ -95,29 +95,33 @@ def main(plists):
 def gen_list(plists):
     plists_len = len(plists)
     plists.sort(key=lambda x: int(x.rsplit('.', 2)[-1].split('-', 2)[0]))
-    names = ["OSREL" + i.rsplit('.', 2)[-1] for i in plists]
+    names = ["OSREL" + plist.rsplit('.', 2)[-1] for plist in plists]
     for i in range(plists_len):
         with open(plists[i], 'r') as file:
-            plists[i] = OrderedSet(i.strip() for i in file.readlines())
-    empty = sum(len(i) == 0 for i in plists)
+            plists[i] = OrderedSet(line.strip() for line in file.readlines())
+    empty = sum(len(plist) == 0 for plist in plists)
     while empty < plists_len:
-        if not empty and all(plists[1].peek() == i.peek() for i in plists[1:]):
-            # Test if the top of the queues are all common
-            yield plists[1].peek()
-            for i in plists:
-                i.pop()
+        line = plists[0].peek()
+        # Test if the top of the plists are all common
+        if not empty and all(line == plist.peek() for plist in plists):
+            yield line
+            for plist in plists:
+                plist.pop()
         else:
-            # Find which of the queues have non-common lines
+            # Find which of the plists have non-common lines
             lines = {}
             for i in range(plists_len):
-                while len(plists[i]) and not all(plists[i].peek() in j for j in plists):
-                    lines.setdefault(plists[i].pop(), []).append(i)
-            keys = list(lines.keys())
-            keys.sort()
-            for k in keys:
-                for i in lines[k]:
-                    yield "%%" + names[i] + "%%" + k
-        empty = sum(len(i) == 0 for i in plists)
+                while len(plists[i]) and not all(plists[i].peek() in plist for plist in plists):
+                    lines.setdefault(plists[i].pop(), []).append(names[i])
+            for line in sorted(lines.keys()):
+                suffix = lines[line][0].split('-', 2)
+                suffix = len(suffix) == 2 and suffix[-1]
+                if suffix and all(name.split('-', 2)[-1] == suffix for name in lines[line]):
+                    yield "%%" + suffix + "%%" + line
+                else:
+                    for name in lines[line]:
+                        yield "%%" + name + "%%" + line
+        empty = sum(len(plist) == 0 for plist in plists)
 
 if __name__ == '__main__':
     main(sys.argv[1:])

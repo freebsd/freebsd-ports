@@ -4,6 +4,8 @@ lib/libnewt.a
 lib/libnewt.so
 lib/libnewt.so.%%SOVERSION%%
 lib/libnewt.so.%%VERSION%%
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_snack.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/snack.py
 %%TCL%%lib/whip%%VERSION%%/pkgIndex.tcl
 %%TCL%%lib/whip%%VERSION%%/whiptcl.so
 libdata/pkgconfig/libnewt.pc

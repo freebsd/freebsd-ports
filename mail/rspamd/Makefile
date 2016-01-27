@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.0.11
+PORTVERSION=	1.1.1
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -17,11 +17,9 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 
 CONFLICTS_INSTALL=	rspamd
 
-OPTIONS_DEFINE=	GPERF REDIRECTOR HIREDIS
+OPTIONS_DEFINE=	GPERF REDIRECTOR
 GPERF_DESC=		Google perf-tools profiling
 REDIRECTOR_DESC=	Install HTTP redirector
-HIREDIS_DESC=		Redis support through hiredis
-OPTIONS_DEFAULT=	HIREDIS
 
 USE_RC_SUBR=	rspamd
 
@@ -73,12 +71,6 @@ USE_OPENSSL=	yes
 	p5-SWF-File>=0:${PORTSDIR}/graphics/p5-SWF-File
 .else
  PLIST_SUB+=		REDIRECTOR="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MHIREDIS}
- LIB_DEPENDS+=	libhiredis.so:${PORTSDIR}/databases/hiredis
-.else
- CMAKE_ARGS+=	-DENABLE_HIREDIS=OFF
 .endif
 
 post-stage:

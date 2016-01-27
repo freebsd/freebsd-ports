@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-net-ldap>=0.9:${PORTSDIR}/net/rubygem-net-ldap \
 		rubygem-rubyntlm>=0.3:${PORTSDIR}/net/rubygem-rubyntlm
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -3,6 +3,7 @@
 
 PORTNAME=	django-profiles
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://bitbucket.org/ubernostrum/django-profiles/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ COMMENT=	User-profile application for Django
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django18
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 USES=		python

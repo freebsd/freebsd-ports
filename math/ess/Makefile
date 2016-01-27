@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ess
-DISTVERSION=	15.09-1
+DISTVERSION=	15.09-2
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/ \
 		http://stat.ethz.ch/ESS/downloads/ess/

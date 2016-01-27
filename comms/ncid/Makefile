@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncid
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	comms
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -24,12 +24,13 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-PORTDOCS=	CHANGES CONTRIBUTORS.md Devices.md Documentation.md FAQ.md Gateways.md \
-		GettingStarted.md INSTALL-Cygwin.md INSTALL-Fedora.md INSTALL-FreeBSD.md \
-		INSTALL-Mac.md INSTALL-Raspbian.md INSTALL-Redhat.md INSTALL-TiVo.md \
-		INSTALL-Ubuntu.md INSTALL-Win.md INSTALL.md Makefile Modems.md \
-		NCID-API.odt NCID-SDK.md NCID_Documentation.md README.docdir ReleaseNotes.md \
-		TODO.md Verbose.md mk-epub ncid-1.jpg
+PORTDOCS=	Alias.md CHANGES CONTRIBUTORS.md Clients.md Devices.md FAQ.md GPL.md \
+		Gateways.md GettingStarted.md Hangup.md INSTALL-Cygwin.md INSTALL-Fedora.md \
+		INSTALL-FreeBSD.md INSTALL-Mac.md INSTALL-Raspbian.md INSTALL-Redhat.md \
+		INSTALL-TiVo.md INSTALL-Ubuntu.md INSTALL-Win.md INSTALL.md InstallIndex.md \
+		Makefile Modems.md Modules.md NCID-API.md NCID-SDK.md Obtain.md README.docdir \
+		ReleaseNotes.md TODO.md Tools.md Use.md UserManualIndex.md Verbose.md mk-epub \
+		ncid-1.jpg ncid-cover.jpg
 
 post-extract:
 	@cd ${WRKSRC}/FreeBSD;for i in *.rc; do \

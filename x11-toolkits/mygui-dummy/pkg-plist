@@ -1,0 +1,5 @@
+include/MYGUI/MyGUI_DummyDataManager.h
+include/MYGUI/MyGUI_DummyDiagnostic.h
+include/MYGUI/MyGUI_DummyPlatform.h
+include/MYGUI/MyGUI_DummyRenderManager.h
+lib/libMyGUI.DummyPlatform.a

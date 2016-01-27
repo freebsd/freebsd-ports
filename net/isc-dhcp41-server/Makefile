@@ -15,10 +15,13 @@ COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 LICENSE=	ISCL
 
-PATCHLEVEL=	R7
-PORTREVISION_SERVER=	9
-PORTREVISION_CLIENT=	2
-PORTREVISION_RELAY=	5
+PATCHLEVEL=	R12-P1
+PORTREVISION_SERVER=	10
+PORTREVISION_CLIENT=	3
+PORTREVISION_RELAY=	6
+
+DEPRECATED=	isc-dhcp 4.1 is now End of Life
+EXPIRATION_DATE=	2016-03-01
 
 SUBSYS?=	server
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-${PATCHLEVEL}
@@ -138,7 +141,7 @@ post-patch:
 	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${MSG_FILE} > ${PKGMESSAGE}
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${WRKSRC}/client/dhclient.conf
+		${WRKSRC}/client/dhclient.conf.example
 
 do-install:
 	${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/${SUBSYS} install
@@ -168,7 +171,9 @@ do-install:
 post-install:
 .if ${SUBSYS} == client
 	${INSTALL_SCRIPT} ${WRKSRC}/client/scripts/freebsd ${STAGEDIR}${PREFIX}/sbin/dhclient-script
+	${MV} ${STAGEDIR}${PREFIX}/etc/dhclient.conf.example ${STAGEDIR}${PREFIX}/etc/dhclient.conf.sample
 .elif ${SUBSYS} == server
+	${MV} ${STAGEDIR}${PREFIX}/etc/dhcpd.conf.example ${STAGEDIR}${PREFIX}/etc/dhcpd.conf.sample
 .if ${PORT_OPTIONS:MIPV6}
 	@${LN} -sf isc-dhcpd ${STAGEDIR}${PREFIX}/etc/rc.d/isc-dhcpd6
 .endif

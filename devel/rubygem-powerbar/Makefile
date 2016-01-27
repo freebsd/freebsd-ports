@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerbar
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.17
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -11,8 +11,7 @@ COMMENT=	Progressbar library for Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-ansi>=1.5.0:${PORTSDIR}/devel/rubygem-ansi \
-		rubygem-hashie>=1.1.0:${PORTSDIR}/devel/rubygem-hashie
+RUN_DEPENDS=	rubygem-hashie>=1.1.0:${PORTSDIR}/devel/rubygem-hashie
 
 NO_ARCH=	yes
 USE_RUBY=	yes

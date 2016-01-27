@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	keybase
-PORTVERSION=	0.7.8
+PORTVERSION=	0.8.25
 CATEGORIES=	security
 MASTER_SITES=	https://dist.keybase.io/pkg/files/ \
 		LOCAL/sunpoet

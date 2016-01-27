@@ -38,8 +38,5 @@ sbin/courierlogger
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.authdebug.html
 %%PORTDOCS%%%%DOCSDIR%%/README_authlib.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry(%%MAILOWN%%,%%MAILGRP%%,750) %%AUTHDAEMONVAR%%
-@dirrmtry etc/authlib
-@dirrm(%%MAILOWN%%,%%MAILGRP%%,755) libexec/courier-authlib
-@dirrm lib/courier-authlib
+@dir(%%MAILOWN%%,%%MAILGRP%%,750) %%AUTHDAEMONVAR%%
+@dir(%%MAILOWN%%,%%MAILGRP%%,755) libexec/courier-authlib

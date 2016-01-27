@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	netgen
-PORTVERSION=	5.0.0
-PORTREVISION=	4
+PORTVERSION=	5.3.1
 CATEGORIES=	cad
-MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:S|.0$||}/
+MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:C|\.[[:digit:]]+$||}/
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Automatic 3D tetrahedral mesh generator
@@ -13,7 +12,7 @@ COMMENT=	Automatic 3D tetrahedral mesh generator
 LIB_DEPENDS=	libTix8.4.3.so:${PORTSDIR}/x11-toolkits/tix \
 		libtogl.so:${PORTSDIR}/graphics/togl
 
-BROKEN=		Does not compile because of issues with cad/opencascade
+OCC_BROKEN=	Does not compile because of issues with cad/opencascade
 
 USE_LDCONFIG=	yes
 USES=		gmake jpeg libtool tk
@@ -30,7 +29,7 @@ FETCH_BEFORE_ARGS+=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 OPTIONS_DEFINE=		OCC FFMPEG
 OCC_DESC=		Compile with OpenCascade geometry kernel
 FFMPEG_DESC=		video recording with FFmpeg
-OPTIONS_DEFAULT=	OCC
+OPTIONS_DEFAULT=	# OCC
 
 BROKEN_sparc64=		internal gcc error (Bug 23159)
 

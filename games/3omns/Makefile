@@ -24,7 +24,7 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chazomaticus
-GH_TAGNAME=	21292f0
+GH_TAGNAME=	ded6410
 
 USES=		autoreconf compiler:c++11-lang gmake pkgconfig lua:52
 USE_SDL=	image2 sdl2 ttf2

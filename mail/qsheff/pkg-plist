@@ -1,19 +1,11 @@
 bin/qsheff
-@unexec if cmp -s %D/%%ETCDIR%%/qsheff.attach %D/%%ETCDIR%%/qsheff.attach-default; then rm -f %D/%%ETCDIR%%/qsheff.attach; fi
-%%ETCDIR%%/qsheff.attach-default
-@exec [ -f %B/qsheff.attach ] || cp %B/%f %B/qsheff.attach
-@unexec if cmp -s %D/%%ETCDIR%%/qsheff.conf %D/%%ETCDIR%%/qsheff.conf-default; then rm -f %D/%%ETCDIR%%/qsheff.conf; fi
-%%ETCDIR%%/qsheff.conf-default
-@unexec if cmp -s %D/%%ETCDIR%%/qsheff.rules %D/%%ETCDIR%%/qsheff.rules-default; then rm -f %D/%%ETCDIR%%/qsheff.rules; fi
-%%ETCDIR%%/qsheff.rules-default
-@exec [ -f %B/qsheff.rules ] || cp %B/%f %B/qsheff.rules
-@unexec if cmp -s %D/%%ETCDIR%%/qsheff.ignore %D/%%ETCDIR%%/qsheff.ignore-default; then rm -f %D/%%ETCDIR%%/qsheff.ignore; fi
-%%ETCDIR%%/qsheff.ignore-default
-@exec [ -f %B/qsheff.ignore ] || cp %B/%f %B/qsheff.ignore
+@sample %%ETCDIR%%/qsheff.attach-default %%ETCDIR%%/qsheff.attach
+@sample %%ETCDIR%%/qsheff.conf-default %%ETCDIR%%/qsheff.conf
+@sample %%ETCDIR%%/qsheff.ignore-default %%ETCDIR%%/qsheff.ignore
+@sample %%ETCDIR%%/qsheff.rules-default %%ETCDIR%%/qsheff.rules
 %%ETCDIR%%/install-wrapper.sh
 %%ETCDIR%%/uninstall-wrapper.sh
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

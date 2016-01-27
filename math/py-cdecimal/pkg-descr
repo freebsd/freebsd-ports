@@ -1,0 +1,18 @@
+The cdecimal is a fast drop-in replacement for the decimal module in Python's
+standard library. Both modules provide complete implementations of the General
+Decimal Arithmetic Specification.
+
+Typical performance gains are between 30x for I/O heavy benchmarks and 80x for
+numerical programs. In a database benchmark, cdecimal exhibits a speedup of
+12x over decimal.py.
+
+ 	decimal	cdecimal speedup
+pi	42.75s	0.58s	 74x
+telco	172.19s	5.68s	 30x
+psycopg	3.57s	0.29s	 12x
+
+All Python versions from 2.5 up to 3.2 are supported. For the few remaining
+differences, read the cdecimal documentation. cdecimal has been included in
+Python-3.3.
+
+WWW: http://www.bytereef.org/mpdecimal/index.html

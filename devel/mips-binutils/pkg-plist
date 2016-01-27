@@ -41,6 +41,7 @@ mips-freebsd/bin/nm
 mips-freebsd/bin/objcopy
 mips-freebsd/bin/objdump
 mips-freebsd/bin/ranlib
+mips-freebsd/bin/readelf
 mips-freebsd/bin/strip
 mips-freebsd/bin/size
 mips-freebsd/lib/ldscripts/elf32btsmip.x

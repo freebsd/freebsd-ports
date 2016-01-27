@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch
-PORTVERSION=	2.51
+PORTVERSION=	2.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,15 +10,19 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Suite of OO modules for logging messages to multiple outputs
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 		p5-Dist-CheckConflicts>=0.02:${PORTSDIR}/devel/p5-Dist-CheckConflicts \
 		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Params-Validate>=1.03:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3 \
+		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
-OPTIONS_DEFINE=	APACHELOG MIMELITE MAILSEND MAILSENDER MAILSENDMAIL
-OPTIONS_DEFAULT=MAILSENDMAIL
+OPTIONS_DEFINE=		APACHELOG MIMELITE MAILSEND MAILSENDER MAILSENDMAIL
+OPTIONS_DEFAULT=	MAILSENDMAIL
 APACHELOG_DESC=		Apache::Log support
 MIMELITE_DESC=		MIME::Lite support
 MAILSEND_DESC=		Mail::Send support

@@ -1,29 +1,29 @@
---- configure.orig	2010-11-26 16:07:59.000000000 +0100
-+++ configure	2011-07-09 14:33:08.000000000 +0200
-@@ -7738,7 +7738,7 @@ fi
+--- configure.orig	2015-12-24 08:48:36.000000000 +0100
++++ configure	2016-01-16 18:09:27.783380000 +0100
+@@ -9167,7 +9167,7 @@ fi
  
  
- case $host_os in #(vi
--freebsd*)
-+XXXfreebsd*)
+ case $host_os in
+-(freebsd*)
++(XXXfreebsd*)
  	# This is only necessary if you are linking against an obsolete
  	# version of ncurses (but it should do no harm, since it's static).
  	if test "$cf_nculib_root" = ncurses ; then
-@@ -8985,7 +8985,7 @@ fi
+@@ -10649,7 +10649,7 @@ fi
  
  
- case $host_os in #(vi
--freebsd*)
-+XXXfreebsd*)
+ case $host_os in
+-(freebsd*)
++(XXXfreebsd*)
  	# This is only necessary if you are linking against an obsolete
  	# version of ncurses (but it should do no harm, since it's static).
  	if test "$cf_nculib_root" = ncurses ; then
-@@ -9666,7 +9666,7 @@ echo "$ac_t""$cf_result" 1>&6
+@@ -11329,7 +11329,7 @@ echo "$ac_t""$cf_result" 1>&6
  
  if test "$cf_result" = no ; then
- case $host_os in #(vi
--freebsd*) #(vi
-+XXXfreebsd*) #(vi
-     echo $ac_n "checking for tgoto in -lmytinfo""... $ac_c" 1>&6
- echo "configure:9672: checking for tgoto in -lmytinfo" >&5
+ case $host_os in
+-(freebsd*)
++(XXXfreebsd*)
+ 	echo $ac_n "checking for tgoto in -lmytinfo""... $ac_c" 1>&6
+ echo "configure:11335: checking for tgoto in -lmytinfo" >&5
  ac_lib_var=`echo mytinfo'_'tgoto | sed 'y%./+-%__p_%'`

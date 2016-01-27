@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lgeneral
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 		SF/${PORTNAME}/${PORTNAME}-data:data
@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turn-based strategy engine inspired by Panzer General
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 USE_CSTD=	gnu89

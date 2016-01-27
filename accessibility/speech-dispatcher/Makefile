@@ -2,6 +2,7 @@
 
 PORTNAME=	speech-dispatcher
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	accessibility audio
 MASTER_SITES=	http://devel.freebsoft.org/pub/projects/speechd/
 
@@ -23,6 +24,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
+.if !defined(SPEECH_SLAVE)
+
+CONFIGURE_ARGS+=--disable-python
+
 ETCFILES=	clients/emacs.conf modules/pico-generic.conf \
 		modules/cicero.conf modules/dtk-generic.conf \
 		modules/epos-generic.conf modules/espeak-generic.conf \
@@ -35,8 +40,7 @@ PORTDOCS=	ANNOUNCE AUTHORS ChangeLog FAQ NEWS README TODO
 
 INFO=		spd-say speech-dispatcher speech-dispatcher-cs ssip
 
-OPTIONS_DEFINE=	ALSA AO DOCS ESPEAK FESTIVAL FLITE NAS \
-		PULSEAUDIO PYTHON
+OPTIONS_DEFINE=	ALSA AO DOCS ESPEAK FESTIVAL FLITE NAS PULSEAUDIO
 OPTIONS_DEFAULT=ESPEAK
 OPTIONS_SUB=	yes
 
@@ -64,11 +68,6 @@ NAS_CONFIGURE_WITH=	nas
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=pulse
 
-PYTHON_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py3-xdg
-PYTHON_USES=		python:3
-PYTHON_USE=		PYTHON=py3kplist
-PYTHON_CONFIGURE_ENABLE=python
-
 post-patch:
 	@${REINPLACE_CMD} -e '/SUBDIRS/ s/tests//' \
 		${WRKSRC}/src/Makefile.in
@@ -81,5 +80,17 @@ post-install:
 	@${RMDIR} ${STAGEDIR}${DATADIR} || ${TRUE}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+
+.else
+
+USES+=		python:3
+LIB_DEPENDS+=	libspeechd.so:${PORTSDIR}/accessibility/speech-dispatcher
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py3-xdg
+
+USE_PYTHON=	py3kplist
+PLIST_SUB=	PYVER=${PYTHON_VER:S|.||}
+
+.endif
 
 .include <bsd.port.mk>

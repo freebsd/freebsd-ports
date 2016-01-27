@@ -1,8 +1,16 @@
-Epos is a language independent rule-driven Text-to-Speech (TTS) system 
-primarily designed to serve as a research tool. Epos is (or tries to be) 
-independent of the language processed, linguistic description method, 
-and computing environment.
+Epos is a language independent rule-driven Text-to-Speech (TTS) system
+primarily designed to serve as a research tool.  Epos is (or tries to be)
+independent of the language processed, linguistic description method, and
+computing environment.  It has the following features:
 
-This port is built from the development branch of Epos.
+  - Czech and Slovak text to speech synthesis configuration
+  - LPC and time domain speech synthesizers
+  - Prosody modelling driven by rules, prosody models, and artificial
+    neural networks
+  - All language dependencies are defined in the configuration files,
+    as opposed to the source code
+  - Documentation in English included in the distribution
 
-WWW: http://epos.ure.cas.cz/
+This is a port for the development version of Epos.
+
+WWW: http://epos.ufe.cz/

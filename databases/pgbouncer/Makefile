@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgbouncer
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7
 CATEGORIES=	databases
 MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
 		http://pgbouncer.github.io/downloads/files/${PORTVERSION}/
@@ -24,6 +24,7 @@ USE_RC_SUBR=	pgbouncer
 
 GNU_CONFIGURE=	yes
 USES=		gmake
+USE_OPENSSL=	yes
 
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --enable-evdns
 CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread"
@@ -39,6 +40,12 @@ PLIST_SUB+=	PGBOUNCER_USER="${USERS}" \
 		PGBOUNCER_LOGDIR="${PGBOUNCER_LOGDIR}" \
 		PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
 SUB_LIST+=	PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+WITH_OPENSSL_PORT=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|= pgbouncer.log|= ${PGBOUNCER_LOGDIR}/pgbouncer.log|g" \
@@ -58,4 +65,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PGBOUNCER_RUNDIR} \
 		${STAGEDIR}${PGBOUNCER_LOGDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	viewnior
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://siyanpanayotov.com/project/viewnior/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	xsisqox
 GH_PROJECT=	Viewnior
-GH_TAGNAME=	55ebe9b
+GH_TAGNAME=	1c83094
 
 USES=		autoreconf desktop-file-utils gmake libtool pkgconfig \
 		gettext-tools

@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:${PORTSDIR}/sysutils/rubygem-bundler \
 BROKEN_FreeBSD_9=	does not build
 BROKEN_FreeBSD_11=	does not build
 
+BROKEN_RUBY23=	yes
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-P "${PREFIX}" \
 		-I "${PREFIX}/include/rubinius" \
@@ -38,7 +40,7 @@ CONFIGURE_ARGS=	-P "${PREFIX}" \
 		--stagingdir "${STAGEDIR}${PREFIX}" --with-execinfo \
 		--system-name ${OPSYS}
 
-USES=		perl5 gmake tar:bzip2 readline compiler:c++11-lib libedit
+USES=		compiler:c++11-lib execinfo gmake perl5 readline tar:bzip2
 USE_OPENSSL=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
@@ -63,8 +65,7 @@ FREEBSD_DIR=	${F_ARCH}-${F_OS}-${F_MAJOR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000
-LIB_DEPENDS+=		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+.if !exists(/usr/lib/libexecinfo.so)
 CONFIGURE_ARGS+=	--with-opt-dir "${LOCALBASE}"
 .endif
 

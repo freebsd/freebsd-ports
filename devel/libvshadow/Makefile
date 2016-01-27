@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvshadow
-PORTVERSION=	20151220
+PORTVERSION=	20160110
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvshadow/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine

@@ -67,7 +67,7 @@ DOCS_USES=		makeinfo
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
 
 .if !defined(QEMU_USER_STATIC)
-CONFLICTS_INSTALL=	qemu--devel-[0-9]* qemu-sbruno-[0-9]*
+CONFLICTS_INSTALL=	qemu-devel-[0-9]* qemu-sbruno-[0-9]*
 .endif
 
 PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt

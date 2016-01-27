@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Apr 23 01:45:50 2003
-+++ Makefile	Fri Aug 26 17:17:13 2005
+--- Makefile.orig	2014-08-07 18:24:14 UTC
++++ Makefile
 @@ -1,7 +1,5 @@
  # Makefile for jam
  

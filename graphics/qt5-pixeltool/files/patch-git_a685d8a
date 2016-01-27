@@ -1,0 +1,20 @@
+commit a685d8ad61335ce9908bf5ce4d4cd63283965a83
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Tue Jan 19 15:19:49 2016 +0100
+
+    pixeltool: Stop depending on QtNetwork.
+
+    There is nothing in the code using the QtNetwork module, so stop
+    requiring it in the build system.
+
+    Change-Id: I1f7bc89a9589dc2510f38a11fc4b4aeb69d662bc
+    Reviewed-by: Friedemann Kleint <Friedemann.Kleint@theqtcompany.com>
+
+--- src/pixeltool/pixeltool.pro
++++ src/pixeltool/pixeltool.pro
+@@ -1,4 +1,4 @@
+-QT += widgets network
++QT += widgets
+ 
+ mac {
+     QMAKE_INFO_PLIST=Info_mac.plist

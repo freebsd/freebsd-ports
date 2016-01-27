@@ -11,5 +11,4 @@
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/mark_read.pot
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/setup.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/version
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

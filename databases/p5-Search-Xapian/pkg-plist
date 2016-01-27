@@ -24,6 +24,7 @@
 %%SITE_ARCH%%/Search/Xapian/MSet.pm
 %%SITE_ARCH%%/Search/Xapian/MSet/Tied.pm
 %%SITE_ARCH%%/Search/Xapian/MSetIterator.pm
+%%SITE_ARCH%%/Search/Xapian/MatchSpy.pm
 %%SITE_ARCH%%/Search/Xapian/MultiValueSorter.pm
 %%SITE_ARCH%%/Search/Xapian/NetworkError.pm
 %%SITE_ARCH%%/Search/Xapian/NetworkTimeoutError.pm
@@ -44,6 +45,7 @@
 %%SITE_ARCH%%/Search/Xapian/TermIterator.pm
 %%SITE_ARCH%%/Search/Xapian/TradWeight.pm
 %%SITE_ARCH%%/Search/Xapian/UnimplementedError.pm
+%%SITE_ARCH%%/Search/Xapian/ValueCountMatchSpy.pm
 %%SITE_ARCH%%/Search/Xapian/ValueIterator.pm
 %%SITE_ARCH%%/Search/Xapian/Weight.pm
 %%SITE_ARCH%%/Search/Xapian/WritableDatabase.pm
@@ -69,6 +71,7 @@
 %%PERL5_MAN3%%/Search::Xapian::InvalidArgumentError.3.gz
 %%PERL5_MAN3%%/Search::Xapian::InvalidOperationError.3.gz
 %%PERL5_MAN3%%/Search::Xapian::LogicError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::MatchSpy.3.gz
 %%PERL5_MAN3%%/Search::Xapian::MultiValueSorter.3.gz
 %%PERL5_MAN3%%/Search::Xapian::NetworkError.3.gz
 %%PERL5_MAN3%%/Search::Xapian::NetworkTimeoutError.3.gz
@@ -84,6 +87,7 @@
 %%PERL5_MAN3%%/Search::Xapian::TermIterator.3.gz
 %%PERL5_MAN3%%/Search::Xapian::TradWeight.3.gz
 %%PERL5_MAN3%%/Search::Xapian::UnimplementedError.3.gz
+%%PERL5_MAN3%%/Search::Xapian::ValueCountMatchSpy.3.gz
 %%PERL5_MAN3%%/Search::Xapian::ValueIterator.3.gz
 %%PERL5_MAN3%%/Search::Xapian::Weight.3.gz
 %%PERL5_MAN3%%/Search::Xapian::WritableDatabase.3.gz

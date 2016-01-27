@@ -1,4 +1,3 @@
-%%PYTHON%%bin/spd-conf
 bin/spd-say
 bin/spdsend
 bin/speech-dispatcher
@@ -26,27 +25,6 @@ lib/libspeechd.a
 lib/libspeechd.so
 lib/libspeechd.so.2
 lib/libspeechd.so.2.6.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/__init__.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/__init__.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/_test.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/_test.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/_test.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/client.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/client.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/client.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/paths.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/paths.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd/paths.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd_config/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd_config/__init__.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd_config/__init__.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd_config/config.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd_config/config.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd_config/config.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd_config/paths.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd_config/paths.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/speechd_config/paths.pyo
 lib/speech-dispatcher-modules/sd_cicero
 lib/speech-dispatcher-modules/sd_dummy
 %%ESPEAK%%lib/speech-dispatcher-modules/sd_espeak
@@ -67,4 +45,3 @@ libdata/pkgconfig/speech-dispatcher.pc
 share/locale/cs/LC_MESSAGES/speech-dispatcher.mo
 share/locale/hu/LC_MESSAGES/speech-dispatcher.mo
 share/sounds/speech-dispatcher/dummy-message.wav
-%%PYTHON%%share/sounds/speech-dispatcher/test.wav

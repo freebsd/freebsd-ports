@@ -1,0 +1,9 @@
+txaio is a helper library for writing code that runs unmodified
+on both Twisted and asyncio / Trollius.
+
+This is like six, but for wrapping over differences between
+Twisted and asyncio so one can write code that runs unmodified
+on both (aka source code compatibility). In other words: your
+users can choose if they want asyncio or Twisted as a dependency.
+
+WWW: https://github.com/crossbario/txaio

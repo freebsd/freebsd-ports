@@ -45,12 +45,12 @@ post-patch:
 		's|/usr/lib|${LOCALBASE}/lib| ; \
 		 /luarocks/d' ${WRKSRC}/samples/*.lua
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} alien.* \
-		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/doc/alien.* ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/samples && ${INSTALL_DATA} *.lua \
-		${STAGEDIR}${EXAMPLESDIR})
+	${INSTALL_DATA} ${WRKSRC}/samples/*.lua ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

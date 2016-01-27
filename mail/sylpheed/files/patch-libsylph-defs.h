@@ -1,4 +1,4 @@
---- libsylph/defs.h.orig	2014-06-10 04:06:36 UTC
+--- libsylph/defs.h.orig	2012-03-26 07:27:43 UTC
 +++ libsylph/defs.h
 @@ -89,8 +89,8 @@
  #else
@@ -16,7 +16,7 @@
  #  define DEFAULT_SPOOL_PATH	_PATH_MAILDIR
  #else
 -#  define DEFAULT_SPOOL_PATH	"/var/spool/mail"
-+#  define DEFAULT_SPOOL_PATH	"/var/mail"
++#  define DEFAULT_SPOOL_PATH	"/var/spool"
  #endif
  
  #define BUFFSIZE			8192

@@ -420,6 +420,7 @@
     SUBDIR += linux-c6-nas-libs
     SUBDIR += linux-c6-openal-soft
     SUBDIR += linux-c6-pulseaudio-libs
+    SUBDIR += linux-c6-pulseaudio-libs-glib2
     SUBDIR += linux-c6-pulseaudio-utils
     SUBDIR += linux-c6-sdl_mixer
     SUBDIR += linux-f10-alsa-lib

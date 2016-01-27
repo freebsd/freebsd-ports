@@ -3,7 +3,7 @@
 
 PORTNAME=	Text-FIGlet
 PORTVERSION=	2.19.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,11 @@ TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
 NO_ARCH=	yes
+REINPLACE_ARGS=	-i ''
 USE_PERL5=	configure
 USES=		perl5 tar:tgz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/games/lib|${PREFIX}/share|' ${WRKSRC}/bin/*.pl ${WRKSRC}/lib/Text/FIGlet.pm ${WRKSRC}/lib/Text/FIGlet/*.pm
 
 .include <bsd.port.mk>

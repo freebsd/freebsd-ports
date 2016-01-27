@@ -3,7 +3,7 @@
 
 PORTNAME=	policyd2
 PORTVERSION=	2.0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://download.policyd.org/v${PORTVERSION}/
 DISTNAME=	cluebringer-v${PORTVERSION}
@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
+		gsed:${PORTSDIR}/textproc/gsed \
 		p5-Net-CIDR>=0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
 		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
 		p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap
@@ -59,6 +60,9 @@ USE_PHP=	pdo_pgsql
 post-patch:
 	@${REINPLACE_CMD} 's|/etc|${PREFIX}/etc|' ${WRKSRC}/cbpadmin \
 		${WRKSRC}/cbpolicyd
+	@${REINPLACE_CMD} 's|sed|gsed|' ${WRKSRC}/database/convert-tsql \
+		${WRKSRC}/database/whitelists/parse-checkhelo-whitelist \
+		${WRKSRC}/database/whitelists/parse-greylisting-whitelist
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR} \

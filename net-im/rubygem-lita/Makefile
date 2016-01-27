@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lita
-PORTVERSION=	4.6.1
+PORTVERSION=	4.7.0
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 

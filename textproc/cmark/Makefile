@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	cmark
-PORTVERSION=	0.23.0
+PORTVERSION=	0.24.1
 CATEGORIES=	textproc
 
 MAINTAINER=	t@tobik.me
 COMMENT=	CommonMark parsing and rendering library and program in C
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jgm

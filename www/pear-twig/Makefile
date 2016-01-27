@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twig
-PORTVERSION=	1.23.1
+PORTVERSION=	1.23.3
 CATEGORIES=	www pear
 MASTER_SITES=	http://pear.twig-project.org/get/
 DISTNAME=	Twig-${PORTVERSION}

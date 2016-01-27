@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yii
-PORTVERSION=	1.1.16
+PORTVERSION=	1.1.17
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -29,21 +29,10 @@ PORTDOCS=	CHANGELOG LICENSE README UPGRADE
 
 INSTALL_DIRS=	framework
 
-PGSQL_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MREQPHP}
-USE_PHP+=	dom gd mcrypt memcache pdo soap
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	pdo_mysql
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_PHP+=	pdo_sqlite
-.endif
+MYSQL_USE=	PHP=pdo_mysql
+PGSQL_USE=	PHP=pdo_pgsql
+REQPHP_USE=	PHP=dom,gd,mcrypt,memcache,pdo,soap
+SQLITE_USE=	PHP=pdo_sqlite
 
 post-patch:
 	@${SED} -i "" -e "s,dirname(__FILE__),'${DATADIR}/framework'," ${WRKSRC}/framework/yiic

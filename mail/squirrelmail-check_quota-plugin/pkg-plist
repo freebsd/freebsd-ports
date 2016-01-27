@@ -23,10 +23,4 @@
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/themes/index.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/troubleshoot.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/version
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/images/
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/swf/
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default/
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/themes/
-@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

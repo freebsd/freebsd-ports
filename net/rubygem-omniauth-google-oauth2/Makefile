@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniauth-google-oauth2
-PORTVERSION=	0.2.10
+PORTVERSION=	0.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

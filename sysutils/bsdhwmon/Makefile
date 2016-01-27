@@ -2,12 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	bsdhwmon
-PORTVERSION=	20150429
+PORTVERSION=	20151206
 CATEGORIES=	sysutils
-MASTER_SITES=	http://bsdhwmon.koitsu.org/dist/
 
 MAINTAINER=	jdc@koitsu.org
 COMMENT=	Hardware sensor monitoring utility for FreeBSD
+
+LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	koitsu
+GH_TAGNAME=	9aec193
 
 PLIST_FILES=	sbin/bsdhwmon man/man8/bsdhwmon.8.gz
 

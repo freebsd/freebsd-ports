@@ -1,0 +1,12 @@
+bin/nestopia
+share/pixmaps/nestopia.svg
+share/applications/nestopia.desktop
+%%DATADIR%%/icons/nestopia.svg
+%%DATADIR%%/icons/nespad.svg
+%%DATADIR%%/icons/nestopia48.png
+%%DATADIR%%/icons/nestopia96.png
+%%DATADIR%%/icons/nestopia32.png
+%%DATADIR%%/icons/nestopia128.png
+%%DATADIR%%/icons/nestopia64.png
+%%DATADIR%%/NstDatabase.xml
+%%DATADIR%%/nestopia.desktop

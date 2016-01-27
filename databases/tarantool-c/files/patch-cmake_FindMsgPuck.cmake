@@ -1,4 +1,4 @@
---- cmake/FindMsgPuck.cmake.orig	2015-08-21 21:12:03 UTC
+--- cmake/FindMsgPuck.cmake.orig	2016-01-20 13:26:58 UTC
 +++ cmake/FindMsgPuck.cmake
 @@ -9,6 +9,7 @@ endif (MSGPUCK_INCLUDE_DIR)
  if (MSGPUCK_INCLUDE_DIR)

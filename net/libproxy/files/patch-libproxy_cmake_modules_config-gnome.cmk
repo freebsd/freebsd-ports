@@ -1,8 +1,0 @@
---- libproxy/cmake/modules/config_gnome.cmk.orig	2011-01-08 01:14:36.000000000 +0100
-+++ libproxy/cmake/modules/config_gnome.cmk	2011-01-08 01:16:19.000000000 +0100
-@@ -1,4 +1,5 @@
- if (NOT WIN32 AND NOT APPLE)
-+  option(WITH_GNOME "Search for GConf2 package" ON)
-   px_check_modules(GNOME gconf-2.0 gobject-2.0)
-   
-   # GNOME (gconf) helper
