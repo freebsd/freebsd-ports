@@ -1,9 +1,9 @@
---- doc/Makefile.in.orig	2010-04-26 03:40:16.000000000 +0800
-+++ doc/Makefile.in	2010-04-26 03:44:14.000000000 +0800
-@@ -344,9 +344,9 @@
+--- doc/Makefile.in.orig	2016-01-27 10:49:53 UTC
++++ doc/Makefile.in
+@@ -377,9 +377,9 @@ CLEANFILES = $(GENERATED_EXTRADIST) pod2
  
  # what should go into the distribution
- EXTRA_DIST = $(POD) $(POD3) $(HTML) $(MAN) $(MAN3) $(TXT) rrdtool-dump.dtd rrdtool-xport.dtd rrdgraph_libdbi.pod rrdlua.pod
+ EXTRA_DIST = $(GENERATED_EXTRADIST) $(POD) $(POD3) rrdtool-dump.dtd rrdtool-xport.dtd rrdgraph_libdbi.pod rrdlua.pod
 -idocdir = $(RRDDOCDIR)/txt
 +idocdir = $(datadir)/doc/rrdtool/txt
  idoc_DATA = $(POD) $(TXT)
