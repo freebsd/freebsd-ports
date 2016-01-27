@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dblatex
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,7 +18,8 @@ USE_PYTHON=	distutils autoplist
 USE_TEX=	tex
 NO_ARCH=	yes
 
-PYDISTUTILS_INSTALLARGS+=	--catalogs=${LOCALBASE}/share/xml/catalog.ports
+PYDISTUTILS_INSTALLARGS+=	--catalogs=${LOCALBASE}/share/xml/catalog.ports \
+				--prefix=${PREFIX}
 
 OPTIONS_DEFINE=	DOCS
 
