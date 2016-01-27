@@ -1,0 +1,57 @@
+--- CMakeLists.txt.orig	2015-12-17 18:30:44.000000000 +0100
++++ CMakeLists.txt	2015-12-22 17:37:43.246216000 +0100
+@@ -10,7 +10,7 @@
+     DEFINITION LUA_LIBRARIES)
+ ELSE(USE_BUILTIN_LUA)
+   find_package(PkgConfig)
+-  pkg_check_modules(LUA lua>=5.2)
++  pkg_check_modules(LUA lua-5.2)
+   IF(LUA_FOUND)
+     INCLUDE_DIRECTORIES(${LUA_INCLUDE_DIRS})
+     add_definitions(-DWITH_EXTERNAL_LUA)
+@@ -132,23 +132,24 @@
+   ENDIF(CMAKE_COMPILER_IS_GNUCXX)
+ ENDMACRO()
+ 
+-FIND_PROGRAM(GIT_EXECUTABLE git
+-  DOC "git command line client")
++#FIND_PROGRAM(GIT_EXECUTABLE git
++#  DOC "git command line client")
+ 
+-MACRO(Gitversion_GET_REVISION dir variable)
+-  EXECUTE_PROCESS(COMMAND ${GIT_EXECUTABLE} rev-list HEAD --count
+-    OUTPUT_VARIABLE ${variable}
+-    OUTPUT_STRIP_TRAILING_WHITESPACE)
+-ENDMACRO(Gitversion_GET_REVISION)
+-
+-Gitversion_GET_REVISION(. ProjectRevision)
+-MATH(EXPR ProjectRevision "${ProjectRevision}+2107")
+-MESSAGE(STATUS "Compiling Revision #${ProjectRevision}")
++#MACRO(Gitversion_GET_REVISION dir variable)
++#  EXECUTE_PROCESS(COMMAND ${GIT_EXECUTABLE} rev-list HEAD --count
++#    OUTPUT_VARIABLE ${variable}
++#    OUTPUT_STRIP_TRAILING_WHITESPACE)
++#ENDMACRO(Gitversion_GET_REVISION)
++
++#Gitversion_GET_REVISION(. ProjectRevision)
++#MATH(EXPR ProjectRevision "${ProjectRevision}+2107")
++#MESSAGE(STATUS "Compiling Revision #${ProjectRevision}")
++MESSAGE(STATUS "Compiling Revision #XXXDOMOTICZXXX")
+ 
+ # The version number.
+ set (domoticz_VERSION_MAJOR 3)
+ set (domoticz_VERSION_MINOR 0)
+-set (domoticz_VERSION_PATCH ${ProjectRevision})
++set (domoticz_VERSION_PATCH XXXDOMOTICZXXX)
+ 
+ include_directories(${CMAKE_SOURCE_DIR}/main) 
+ 
+@@ -482,7 +483,7 @@
+ IF(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+   target_link_libraries(domoticz ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${CURL_LIBRARIES} pthread ${LUA_LIBRARIES} mqtt ${SQLite_LIBRARIES} ${CMAKE_DL_LIBS})
+ else()
+-  target_link_libraries(domoticz -lrt ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${CURL_LIBRARIES} pthread ${LUA_LIBRARIES} mqtt ${SQLite_LIBRARIES} ${CMAKE_DL_LIBS})
++  target_link_libraries(domoticz -lrt ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${CURL_LIBRARIES} -LXXXPREFIXXX/lib pthread ${LUA_LIBRARIES} mqtt ${SQLite_LIBRARIES} ${CMAKE_DL_LIBS})
+ ENDIF()
+ 
+ ADD_PRECOMPILED_HEADER(domoticz "main/stdafx.h")

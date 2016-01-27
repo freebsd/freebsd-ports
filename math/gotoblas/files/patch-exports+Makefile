@@ -1,6 +1,6 @@
---- exports/Makefile~	2011-08-09 13:19:10.000000000 +0900
-+++ exports/Makefile	2011-08-09 13:57:42.000000000 +0900
-@@ -106,6 +106,7 @@
+--- exports/Makefile.orig	2010-02-05 16:01:00 UTC
++++ exports/Makefile
+@@ -106,6 +106,7 @@ so : ../$(LIBSONAME)
  endif
  
  ifeq ($(OSNAME), FreeBSD)

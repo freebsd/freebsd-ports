@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.4.8
-PORTREVISION=	9
+PORTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -27,12 +27,11 @@ CONFIGURE_ARGS=	--disable-tcl --disable-silent-rules
 PORTEXAMPLES=	4charts.pl bigtops.pl cgi-demo.cgi minmax.pl perftest.pl \
 		piped-demo.pl shared-demo.pl stripes.pl
 
-OPTIONS_DEFINE=	DEJAVU GRAPH JSON MMAP NLS PERL_MODULE PYTHON_MODULE \
+OPTIONS_DEFINE=	DEJAVU GRAPH MMAP NLS PERL_MODULE PYTHON_MODULE \
 		RUBY_MODULE EXAMPLES DOCS
-OPTIONS_DEFAULT=	GRAPH MMAP PERL_MODULE
+OPTIONS_DEFAULT=	DEJAVU GRAPH MMAP PERL_MODULE
 GRAPH_DESC=		Enable the rrdtool graph command (needs cairo)
 DEJAVU_DESC=		Use DejaVu fonts (requires X11)
-JSON_DESC=		Support of json export
 MMAP_DESC=		Use mmap in rrd_update
 PERL_MODULE_DESC=	Build PERL module
 PYTHON_MODULE_DESC=	Build PYTHON bindings
@@ -73,10 +72,6 @@ PLIST_SUB+=	WITH_PERL="@comment "
 CONFIGURE_ARGS+=	--disable-mmap
 .endif
 
-.if ${PORT_OPTIONS:MJSON}
-EXTRA_PATCHES+=		${FILESDIR}/thirdparty-json.diff
-.endif
-
 .if ${PORT_OPTIONS:MGRAPH}
 LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpng.so:${PORTSDIR}/graphics/png
@@ -94,7 +89,7 @@ USE_GNOME+=	intltool
 CONFIGURE_ARGS+=--disable-nls
 .endif
 
-.if exists(${LOCALBASE}/share/fonts/dejavu) || ${PORT_OPTIONS:MDEJAVU}
+.if ${PORT_OPTIONS:MDEJAVU}
 RUN_DEPENDS+=	dejavu>0:${PORTSDIR}/x11-fonts/dejavu
 .endif
 
@@ -124,6 +119,12 @@ post-install:
 .endif
 .if ${PORT_OPTIONS:MPERL_MODULE}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/RRDs/RRDs.so
+.endif
+.if ${PORT_OPTIONS:MPYTHON_MODULE}
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rrdtool.so
+.endif
+.if ${PORT_OPTIONS:MRUBY_MODULE}
+	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/RRD.so
 .endif
 
 .include <bsd.port.mk>

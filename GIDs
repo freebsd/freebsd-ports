@@ -97,6 +97,7 @@ monetdb:*:156:
 barman:*:157:
 pootle:*:158:
 nocat:*:159:
+_ypldap:*:160:
 sfs:*:171:
 agk:*:172:
 polipo:*:173:
@@ -240,6 +241,7 @@ munin:*:842:
 dahdi:*:843:asterisk
 subsonic:*:844:
 sogod:*:846:
+domoticz:*:847:
 fossy:*:901:www
 scanlogd:*:902:
 _ocserv:*:903:

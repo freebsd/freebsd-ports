@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	5.2.0
-PORTREVISION?=	1
+PORTVERSION=	5.3.0
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX?=	powerpc64-
@@ -40,6 +39,8 @@ EXTRA_PATCHES+= ${FILESDIR}/freebsd-format-extensions
 .endif
 .endif
 
+CONFIGURE_ENV=	LC_ALL=C
+MAKE_ENV=	LC_ALL=C
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--without-headers \
@@ -53,6 +54,7 @@ CONFIGURE_SCRIPT=	../${PORTNAME}-${PORTVERSION}/configure
 
 ALL_TARGET?=	all-gcc
 INSTALL_TARGET?=	install-gcc
+BROKEN_FreeBSD9=	plist is different on 9.x that on other arches
 
 .include <bsd.port.options.mk>
 
@@ -65,13 +67,14 @@ CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 post-extract:
 	@${MKDIR} ${WRKSRC}
 
-post-stage:
+post-install:
 	@if [ -f ${STAGEDIR}${PREFIX}/bin/cpp ] ; then \
 		mv ${STAGEDIR}${PREFIX}/bin/cpp  \
 		    ${STAGEDIR}${PREFIX}/bin/${GCC_TARGET}-cpp ; \
 	fi
-.for f in c++ cpp g++ gcc gcc-ar gcc-nm gcc-ranlib gcov
+.for f in c++ cpp g++ gcc gcc-ar gcc-nm gcc-ranlib gcov gcov-tool
 	@${RM} ${STAGEDIR}${PREFIX}/bin/$f
+	@${RM} ${STAGEDIR}${PREFIX}/man/man1/$f.1
 	@${RM} ${STAGEDIR}${PREFIX}/man/man1/$f.1.gz
 .endfor
 	@${RM} ${STAGEDIR}${PREFIX}/info/*

@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160127:
+  AFFECTS: users of net-im/uTox
+  AUTHOR: amdmi3@FreeBSD.org
+
+  Before upgrading uTox port, please set maximum font scale in the
+  program options.
+
 20160119:
   AFFECTS: users of security/tor, security/tor-devel
   AUTHOR: amdmi3@FreeBSD.org

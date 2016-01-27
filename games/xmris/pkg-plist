@@ -13,6 +13,4 @@ lib/X11/app-defaults/xmris/alphabet.gdn
 lib/X11/app-defaults/xmris/digits.gdn
 lib/X11/app-defaults/xmris/puzzle.gdn
 lib/X11/app-defaults/xmris/xmred.gdn
-@exec install -d -g games -m 775 %D/lib/X11/xmris
-@dirrmtry lib/X11/xmris
-@dirrm lib/X11/app-defaults/xmris
+@dir(,games,775) lib/X11/xmris

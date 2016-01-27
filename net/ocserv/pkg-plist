@@ -1,5 +1,6 @@
 bin/occtl
 bin/ocpasswd
+bin/ocserv-fw
 man/man8/occtl.8.gz
 man/man8/ocpasswd.8.gz
 man/man8/ocserv.8.gz

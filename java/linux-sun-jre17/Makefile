@@ -10,7 +10,8 @@ DISTNAME=	jre-${JRE_VERSION}u${JRE_UPDATE_VERSION}-linux-i586
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JRE_VERSION} Runtime Environment for Linux
 
-FORBIDDEN=	Multiple security vulnerabilities
+DEPRECATED=	Unsupported and known for multiple security vulnerabilities
+EXPIRATION_DATE=2016-02-29
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 

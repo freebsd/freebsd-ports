@@ -1,6 +1,6 @@
---- Makefile.system.orig	2010-01-28 15:11:08.000000000 -0500
-+++ Makefile.system	2011-09-05 12:30:26.000000000 -0400
-@@ -93,6 +93,11 @@
+--- Makefile.system.orig	2010-01-28 20:11:08 UTC
++++ Makefile.system
+@@ -93,6 +93,11 @@ ifeq ($(OSNAME), Linux)
  EXTRALIB	+= -lm
  endif
  
@@ -12,7 +12,7 @@
  ifeq ($(OSNAME), AIX)
  EXTRALIB	+= -lm
  endif
-@@ -608,7 +612,7 @@
+@@ -608,7 +613,7 @@ PATCH	= patch
  GREP	= grep
  endif
  
@@ -21,7 +21,7 @@
  AWK	= awk
  
  REVISION = -r$(VERSION)
-@@ -631,15 +635,6 @@
+@@ -631,15 +636,6 @@ ifndef LIBSUFFIX
  LIBSUFFIX = a
  endif
  
@@ -37,7 +37,7 @@
  ifndef SMP
  LIBNAME		= $(LIBPREFIX)$(REVISION).$(LIBSUFFIX)
  LIBNAME_P	= $(LIBPREFIX)$(REVISION)_p.$(LIBSUFFIX)
-@@ -647,7 +642,6 @@
+@@ -647,7 +643,6 @@ else
  LIBNAME		= $(LIBPREFIX)p$(REVISION).$(LIBSUFFIX)
  LIBNAME_P	= $(LIBPREFIX)p$(REVISION)_p.$(LIBSUFFIX)
  endif
@@ -45,7 +45,7 @@
  
  
  LIBSONAME    = $(LIBNAME:.$(LIBSUFFIX)=.so)
-@@ -661,7 +655,7 @@
+@@ -661,7 +656,7 @@ LIBS		= $(TOPDIR)/$(LIBNAME)
  LIBS_P		= $(TOPDIR)/$(LIBNAME_P)
  
  export OSNAME

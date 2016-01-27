@@ -1,6 +1,6 @@
---- patch.for_lapack-3.1.1.org	2010-02-02 11:11:11.000000000 +0900
-+++ patch.for_lapack-3.1.1	2010-02-02 11:13:40.000000000 +0900
-@@ -30,7 +30,7 @@
+--- patch.for_lapack-3.1.1.orig	2009-12-16 20:41:30 UTC
++++ patch.for_lapack-3.1.1
+@@ -30,7 +30,7 @@ diff -ruN lapack-3.1.1.old/Makefile lapa
  diff -ruN lapack-3.1.1.old/SRC/Makefile lapack-3.1.1/SRC/Makefile
  --- lapack-3.1.1.old/SRC/Makefile	2007-02-23 15:33:05.000000000 -0600
  +++ lapack-3.1.1/SRC/Makefile	2009-12-16 14:41:09.000000000 -0600
@@ -9,7 +9,7 @@
   #
   #######################################################################
    
-@@ -531,17 +531,35 @@
+@@ -531,17 +531,35 @@ diff -ruN lapack-3.1.1.old/SRC/Makefile 
  +ALLOBJ_P = $(ALLOBJ:.$(SUFFIX)=.$(PSUFFIX))
  +
   ../$(LAPACKLIB): $(ALLOBJ)
@@ -52,7 +52,7 @@
   	$(DZLAUX)
   	$(RANLIB) ../$(LAPACKLIB)
   
-@@ -570,115 +588,4 @@
+@@ -570,115 +588,4 @@ diff -ruN lapack-3.1.1.old/SRC/Makefile 
   
  +slaruv.$(PSUFFIX): slaruv.f ; $(FORTRAN) $(PNOOPT) -O0 -c $< -o $@
  +dlaruv.$(PSUFFIX): dlaruv.f ; $(FORTRAN) $(PNOOPT) -O0 -c $< -o $@

@@ -13,8 +13,9 @@ MASTERDIR=	${.CURDIR}/../../sysutils/bareos-server
 PLIST_FILES=	sbin/bareos-fd-static \
 		sbin/bconsole-static
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	NLS LMDB
 OPTIONS_DEFAULT=#
+LMDB_DESC=	Enable build of LMDB support
 
 CONFIGURE_ARGS+=	--enable-client-only \
 			--enable-static-fd \

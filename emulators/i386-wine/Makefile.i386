@@ -72,10 +72,6 @@ post-install-script:
 			echo lib32/$${i##*/} >> ${TMPPLIST} ; \
 		fi ; \
 	done
-	echo '@dirrm lib32/.libGL/dri' >> ${TMPPLIST}
-	echo '@dirrm lib32/.libGL' >> ${TMPPLIST}
-	echo '@dirrmtry lib32' >> ${TMPPLIST}; \
-	echo '@dirrm bin32' >> ${TMPPLIST}
 	# Install nvidia patching script
 	${INSTALL_SCRIPT} ${SLAVEDIR}/files/nvidia.sh ${STAGEDIR}${DATADIR}/patch-nvidia.sh
 	echo ${DATADIR:S|$(PREFIX)/||}/patch-nvidia.sh >> ${TMPPLIST}

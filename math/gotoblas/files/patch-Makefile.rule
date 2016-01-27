@@ -1,6 +1,6 @@
---- Makefile.rule	2009-12-16 11:26:22.000000000 +0900
-+++ Makefile.rule	2009-12-31 19:16:48.000000000 +0900
-@@ -14,10 +14,10 @@
+--- Makefile.rule.orig	2010-02-05 16:02:04 UTC
++++ Makefile.rule
+@@ -14,10 +14,10 @@ VERSION = 1.13
  
  # C compiler including binary type(32bit / 64bit). Default is gcc.
  # Don't use Intel Compiler or PGI, it won't generate right codes as I expect.

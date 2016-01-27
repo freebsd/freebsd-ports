@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8b27f1bc-c509-11e5-a95f-b499baebfeaf">
+    <topic>curl -- Credentials not checked</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>7.10.0</ge></range>
+	<range><lt>7.47.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cURL project reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20160127A.html">
+	  <p>libcurl will reuse NTLM-authenticated proxy connections
+	    without properly making sure that the connection was
+	    authenticated with the same credentials as set for this
+	    transfer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://curl.haxx.se/docs/adv_20160127A.html</url>
+      <cvename>CVE-2016-0755</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-27</discovery>
+      <entry>2016-01-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb754341-c3e2-11e5-b5fe-002590263bf5">
     <topic>wordpress -- XSS vulnerability</topic>
     <affects>
