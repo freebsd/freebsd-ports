@@ -25,16 +25,6 @@ PLIST_FILES=	sbin/portmaster \
 BASH_PLIST_FILES=	etc/bash_completion.d/portmaster.sh
 ZSH_PLIST_FILES=	share/zsh/site-functions/_portmaster
 
-.include <bsd.port.options.mk>
-
-DEPRECATED=	Unmaintained and does not fully support modern ports framework.
-.if ${ARCH} == i386 || ${ARCH} == amd64
-DEPRECATED+=	Please consider migrating to ports-mgmt/synth or\
-		ports-mgmt/poudriere.
-.else
-DEPRECATED+=	Please consider migrating to ports-mgmt/poudriere.
-.endif
-
 verify: checksum
 
 do-build:
