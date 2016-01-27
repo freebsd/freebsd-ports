@@ -3,7 +3,7 @@
 
 PORTNAME=	ansible
 PORTVERSION?=	2.0.0.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
@@ -17,8 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:${PORTSDIR}/security/py-paramiko \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:${PORTSDIR}/devel/py-Jinja2
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 EXTRA_PATCHES?=	${FILESDIR}/extra-patch-8647fdc
 
@@ -43,6 +41,12 @@ PLIST_FILES+=	man/man1/ansible-doc.1.gz \
 
 PORTEXAMPLES=	ansible.cfg hosts
 
+OPTIONS_DEFINE=	DOCS EXAMPLES NETADDR
+OPTIONS_DEFAULT=NETADDR
+
+NETADDR_DESC=	Dependency on py-netaddr for ipaddr() filter
+NETADDR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netaddr>0:${PORTSDIR}/net/py-netaddr
+
 post-patch:
 .for f in bin/* docs/man/man1/* examples/* lib/ansible/*.py \
 	lib/ansible/*/*.py lib/ansible/*/*/*.py lib/ansible/*/*/*/*.py
@@ -57,6 +61,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/*.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/ansible.cfg ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/hosts ${STAGEDIR}${EXAMPLESDIR}
