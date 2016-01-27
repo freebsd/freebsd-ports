@@ -22,7 +22,7 @@ RUN_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
 		tex-formats>=0:${PORTSDIR}/print/tex-formats \
 		tex-dvipsk>=0:${PORTSDIR}/print/tex-dvipsk
 
-USE_QT5=	core dbus designer graphicaleffects gui imageformats multimedia \
+USE_QT5=	buildtools core dbus designer graphicaleffects gui imageformats multimedia \
 		network printsupport svg webkit widgets x11extras xml linguist qmake
 
 NO_BUILD=	yes
