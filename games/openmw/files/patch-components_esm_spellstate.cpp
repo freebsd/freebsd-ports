@@ -1,4 +1,4 @@
---- components/esm/spellstate.cpp.orig	2015-11-24 02:42:35 UTC
+--- components/esm/spellstate.cpp.orig	2016-01-12 16:11:28 UTC
 +++ components/esm/spellstate.cpp
 @@ -12,7 +12,7 @@ namespace ESM
          {

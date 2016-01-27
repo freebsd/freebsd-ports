@@ -1,4 +1,4 @@
---- files/gamecontrollerdb.txt.orig	2015-11-24 02:42:35 UTC
+--- files/gamecontrollerdb.txt.orig	2016-01-12 16:11:28 UTC
 +++ files/gamecontrollerdb.txt
 @@ -99,3 +99,7 @@ ff113133000000000000504944564944,SVEN X-
  05000000362800000100000002010000,OUYA Game Controller,a:b0,b:b3,dpdown:b9,dpleft:b10,dpright:b11,dpup:b8,guide:b14,leftshoulder:b4,leftstick:b6,lefttrigger:a2,leftx:a0,lefty:a1,platform:Linux,rightshoulder:b5,rightstick:b7,righttrigger:a5,rightx:a3,righty:a4,x:b1,y:b2,

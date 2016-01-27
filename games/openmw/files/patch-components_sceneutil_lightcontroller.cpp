@@ -1,4 +1,4 @@
---- components/sceneutil/lightcontroller.cpp.orig	2015-11-24 02:42:35 UTC
+--- components/sceneutil/lightcontroller.cpp.orig	2016-01-12 16:11:28 UTC
 +++ components/sceneutil/lightcontroller.cpp
 @@ -2,6 +2,7 @@
  
