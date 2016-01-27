@@ -9,9 +9,12 @@ bin/bwild
 etc/bareos/mtx-changer.conf
 lib/bareos/plugins/BareosDirPluginBaseclass.py
 lib/bareos/plugins/BareosDirWrapper.py
+lib/bareos/plugins/BareosSdPluginBaseclass.py
+lib/bareos/plugins/BareosSdWrapper.py
 lib/bareos/plugins/autoxflate-sd.so
 lib/bareos/plugins/bareos-dir-class-plugin.py
 lib/bareos/plugins/bareos-dir.py.template
+lib/bareos/plugins/bareos-sd-class-plugin.py
 lib/bareos/plugins/bareos-sd.py.template
 lib/bareos/plugins/bareos_dir_consts.py
 lib/bareos/plugins/bareos_sd_consts.py
@@ -39,6 +42,7 @@ lib/bareos/scripts/ddl/updates/%%DBTYPE%%.12_14.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.14_2001.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2001_2002.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2002_2003.sql
+lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2003_2004.sql
 lib/bareos/scripts/ddl/versions.map
 lib/bareos/scripts/delete_catalog_backup
 lib/bareos/scripts/disk-changer
@@ -51,7 +55,10 @@ lib/bareos/scripts/make_catalog_backup.pl
 lib/bareos/scripts/mtx-changer
 lib/bareos/scripts/query.sql
 lib/bareos/scripts/update_bareos_tables
-lib/libbareoscats-%%DBTYPE%%-15.2.0.so
+%%NDMP%%lib/libbareosndmp-%%LIB_VERSION%%.so
+%%NDMP%%lib/libbareosndmp.la
+%%NDMP%%lib/libbareosndmp.so
+lib/libbareoscats-%%DBTYPE%%-%%LIB_VERSION%%.so
 lib/libbareoscats-%%DBTYPE%%.so
 lib/libbareoscats-%%LIB_VERSION%%.so
 lib/libbareoscats.la
@@ -93,3 +100,5 @@ sbin/btraceback
 sbin/bwild
 sbin/chio-bareos
 @dir(bareos,bareos,) %%BAREOS_DIR%%
+@dir /var/log/bareos
+@dir /var/run/bareos

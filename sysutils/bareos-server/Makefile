@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	bareos
-DISTVERSION=	15.2
-PORTREVISION?=	1
+DISTVERSION=	15.2.2
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
 
 USE_GITHUB=	yes
-GH_TAGNAME=	bb1529f88585da31a0053f06727c74f2a7cb0dc1
+GH_TAGNAME=	fb775025d54ef77abb4d67cc5aa9ecb90bca4839
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Backup archiving recovery open sourced (server)
@@ -23,7 +23,7 @@ LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 USERS=		bareos
 GROUPS=		${USERS}
 
-PLIST_SUB+=	LIB_VERSION=${PORTVERSION}.0
+PLIST_SUB+=	LIB_VERSION=${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -31,14 +31,19 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE?=	MTX PYTHON NLS OPENSSL
+OPTIONS_DEFINE?=	MTX PYTHON NDMP NLS OPENSSL
 OPTIONS_DEFAULT?=	NLS OPENSSL PGSQL
+OPTIONS_SUB=		yes
 MTX_DESC=		Install mtx for control of autochanger devices
+NDMP_DESC=		Enable build of NDMP support
 
 .if ${PKGNAMESUFFIX} == "-server"
 OPTIONS_SINGLE_DATABASE=	SQLITE3 MYSQL PGSQL
 OPTIONS_SINGLE=		DATABASE
 DATABASE_DESC=		Database support
+
+NDMP_CONFIGURE_ON=      --enable-ndmp=yes
+NDMP_CONFIGURE_OFF=     --enable-ndmp=no
 .endif
 
 OPENSSL_USE=	OPENSSL=yes
@@ -46,7 +51,6 @@ OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 OPENSSL_CONFIGURE_OFF=	--with-openssl="no"
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
-
 PYTHON_USES=		  python
 PYTHON_CONFIGURE_ON=	--with-python=yes
 PYTHON_CONFIGURE_OFF=	--with-python=no
@@ -83,6 +87,10 @@ CONFIGURE_ARGS+=--with-tcp-wrappers=/usr/lib \
 		--with-pid-dir=/var/run/bareos
 
 .if defined(WITH_CLIENT_ONLY)
+LMDB_CONFIGURE_ON=	--enable-lmdb=yes
+LMDB_CONFIGURE_OFF=	--enable-lmdb=no
+LMDB_CFLAGS=		-DMDB_DSYNC=O_SYNC
+
 CONFIGURE_ARGS+=--with-fd-user=root \
 		--with-fd-group=wheel
 .else
@@ -168,7 +176,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|_NONSHARED||g' ${WRKSRC}/src/filed/Makefile.in
 .if defined(WITH_CLIENT_ONLY)
 	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|\(.*$${MKDIR} $${DESTDIR}$${scriptdir}\)|#\1|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|\(.*$${MKDIR} $${DESTDIR}$${scriptdir}\)|#\1|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|bareos-dir.d/||g' ${WRKSRC}/src/plugins/filed/Makefile.in
 .else
 #	In server port don't install filed
 	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' \
@@ -183,6 +192,7 @@ post-patch:
 post-install:
 .if defined(WITH_CLIENT_ONLY)
 	${MV} ${STAGEDIR}${ETCDIR}/bconsole.conf ${STAGEDIR}${ETCDIR}/bconsole.conf.sample
+	${MV} ${STAGEDIR}${ETCDIR}/plugin-python-ldap.conf ${STAGEDIR}${ETCDIR}/plugin-python-ldap.conf.sample
 .else
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bareos ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/bareos-barcodes ${STAGEDIR}${ETCDIR}/bareos-barcodes.sample

@@ -2,20 +2,26 @@
 @group bareos
 @sample %%ETCDIR%%/bconsole.conf.sample
 @group wheel
+%%LMDB%%@sample %%ETCDIR%%/plugin-python-ldap.conf.sample
 lib/libbareos.la
 lib/libbareos.so
-lib/libbareos-15.2.0.so
+lib/libbareos-15.2.2.so
 lib/libbareoscfg.la
 lib/libbareoscfg.so
-lib/libbareoscfg-15.2.0.so
+lib/libbareoscfg-15.2.2.so
 lib/libbareosfind.la
 lib/libbareosfind.so
-lib/libbareosfind-15.2.0.so
+lib/libbareosfind-15.2.2.so
+%%LMDB%%lib/libbareoslmdb.la
+%%LMDB%%lib/libbareoslmdb.so
+%%LMDB%%lib/libbareoslmdb-15.2.2.so
 lib/bareos/plugins/BareosFdPluginBaseclass.py
+%%LMDB%%lib/bareos/plugins/BareosFdPluginLDAP.py
 lib/bareos/plugins/BareosFdPluginLocalFileset.py
 lib/bareos/plugins/BareosFdWrapper.py
 lib/bareos/plugins/bareos-fd-local-fileset.py
 lib/bareos/plugins/bareos-fd-mock-test.py
+%%LMDB%%lib/bareos/plugins/bareos-fd-ldap.py
 lib/bareos/plugins/bareos_fd_consts.py
 lib/bareos/plugins/bareos-fd.py.template
 lib/bareos/plugins/bpipe-fd.so
