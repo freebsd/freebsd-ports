@@ -1,4 +1,4 @@
---- apps/openmw/crashcatcher.cpp.orig	2015-11-24 02:42:35 UTC
+--- apps/openmw/crashcatcher.cpp.orig	2016-01-12 16:11:28 UTC
 +++ apps/openmw/crashcatcher.cpp
 @@ -24,7 +24,7 @@
  #ifndef PR_SET_PTRACER
