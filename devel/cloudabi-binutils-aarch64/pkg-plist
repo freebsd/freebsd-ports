@@ -67,6 +67,5 @@ aarch64-unknown-cloudabi/bin/nm
 aarch64-unknown-cloudabi/bin/objcopy
 aarch64-unknown-cloudabi/bin/objdump
 aarch64-unknown-cloudabi/bin/ranlib
-aarch64-unknown-cloudabi/bin/readelf
 aarch64-unknown-cloudabi/bin/size
 aarch64-unknown-cloudabi/bin/strip
