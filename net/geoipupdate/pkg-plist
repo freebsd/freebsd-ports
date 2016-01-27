@@ -1,4 +1,4 @@
 bin/geoipupdate
-@sample etc/GeoIP.conf.sample
+@sample etc/GeoIP.conf etc/GeoIP.conf.default
 man/man1/geoipupdate.1.gz
 man/man5/GeoIP.conf.5.gz
