@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plexpy
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	multimedia python
 DISTVERSIONPREFIX=v
 
@@ -35,5 +35,6 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX}/plexpy
 	cd ${WRKSRC} && ${COPYTREE_SHARE} plexpy ${STAGEDIR}${PREFIX}/plexpy
 	${INSTALL_SCRIPT} ${WRKSRC}/PlexPy.py ${STAGEDIR}${PREFIX}/plexpy
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG.md ${STAGEDIR}${PREFIX}/plexpy
 
 .include <bsd.port.mk>
