@@ -159,10 +159,3 @@ bin/xlogical
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 var/xlogical/xlogical.scores
-@dirrm var/xlogical
-@dirrmtry var
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%
