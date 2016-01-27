@@ -1,0 +1,175 @@
+--- bfd/config.bfd
++++ bfd/config.bfd
+@@ -177,6 +177,11 @@
+     targ_selvecs="aarch64_elf64_le_vec aarch64_elf32_le_vec aarch64_elf32_be_vec arm_elf32_be_vec arm_elf32_le_vec"
+     want64=true
+     ;;
++  aarch64-*-cloudabi*)
++    targ_defvec=aarch64_elf64_le_cloudabi_vec
++    targ_selvecs=aarch64_elf64_be_cloudabi_vec
++    want64=true
++    ;;
+   aarch64-*-linux*)
+     targ_defvec=aarch64_elf64_le_vec
+     targ_selvecs="aarch64_elf64_be_vec aarch64_elf32_le_vec aarch64_elf32_be_vec arm_elf32_le_vec arm_elf32_be_vec"
+--- bfd/configure
++++ bfd/configure
+@@ -15288,7 +15288,9 @@
+     aarch64_elf32_be_vec)	 tb="$tb elf32-aarch64.lo elfxx-aarch64.lo elf-ifunc.lo elf32.lo $elf"; target_size=64 ;;
+     aarch64_elf32_le_vec)	 tb="$tb elf32-aarch64.lo elfxx-aarch64.lo elf-ifunc.lo elf32.lo $elf"; target_size=64 ;;
+     aarch64_elf64_be_vec)	 tb="$tb elf64-aarch64.lo elfxx-aarch64.lo elf-ifunc.lo elf64.lo $elf"; target_size=64 ;;
++    aarch64_elf64_be_cloudabi_vec) tb="$tb elf64-aarch64.lo elfxx-aarch64.lo elf-ifunc.lo elf64.lo $elf"; target_size=64 ;;
+     aarch64_elf64_le_vec)	 tb="$tb elf64-aarch64.lo elfxx-aarch64.lo elf-ifunc.lo elf64.lo $elf"; target_size=64 ;;
++    aarch64_elf64_le_cloudabi_vec) tb="$tb elf64-aarch64.lo elfxx-aarch64.lo elf-ifunc.lo elf64.lo $elf"; target_size=64 ;;
+     alpha_ecoff_le_vec)		 tb="$tb coff-alpha.lo ecoff.lo ecofflink.lo"; target_size=64 ;;
+     alpha_elf64_vec)		 tb="$tb elf64-alpha.lo elf64.lo $elf"; target_size=64 ;;
+     alpha_elf64_fbsd_vec)	 tb="$tb elf64-alpha.lo elf64.lo $elf"; target_size=64 ;;
+--- bfd/elfnn-aarch64.c
++++ bfd/elfnn-aarch64.c
+@@ -8061,3 +8061,22 @@
+ #define elf_backend_obj_attrs_section		".ARM.attributes"
+ 
+ #include "elfNN-target.h"
++
++/* CloudABI support.  */
++
++#undef	TARGET_LITTLE_SYM
++#define	TARGET_LITTLE_SYM	aarch64_elfNN_le_cloudabi_vec
++#undef	TARGET_LITTLE_NAME
++#define	TARGET_LITTLE_NAME	"elfNN-littleaarch64-cloudabi"
++#undef	TARGET_BIG_SYM
++#define	TARGET_BIG_SYM		aarch64_elfNN_be_cloudabi_vec
++#undef	TARGET_BIG_NAME
++#define	TARGET_BIG_NAME		"elfNN-bigaarch64-cloudabi"
++
++#undef	ELF_OSABI
++#define	ELF_OSABI		ELFOSABI_CLOUDABI
++
++#undef	elfNN_bed
++#define	elfNN_bed		elfNN_aarch64_cloudabi_bed
++
++#include "elfNN-target.h"
+--- bfd/targets.c
++++ bfd/targets.c
+@@ -563,7 +563,9 @@
+ extern const bfd_target aarch64_elf32_be_vec;
+ extern const bfd_target aarch64_elf32_le_vec;
+ extern const bfd_target aarch64_elf64_be_vec;
++extern const bfd_target aarch64_elf64_be_cloudabi_vec;
+ extern const bfd_target aarch64_elf64_le_vec;
++extern const bfd_target aarch64_elf64_le_cloudabi_vec;
+ extern const bfd_target alpha_ecoff_le_vec;
+ extern const bfd_target alpha_elf64_vec;
+ extern const bfd_target alpha_elf64_fbsd_vec;
+@@ -938,7 +940,9 @@
+ 	&aarch64_elf32_be_vec,
+ 	&aarch64_elf32_le_vec,
+ 	&aarch64_elf64_be_vec,
++	&aarch64_elf64_be_cloudabi_vec,
+ 	&aarch64_elf64_le_vec,
++	&aarch64_elf64_le_cloudabi_vec,
+ #endif
+ 
+ #ifdef BFD64
+--- gas/configure.tgt
++++ gas/configure.tgt
+@@ -470,6 +470,7 @@ case ${generic_target} in
+   z8k-*-coff | z8k-*-sim)		fmt=coff ;;
+ 
+   *-*-aout | *-*-scout)			fmt=aout ;;
++  *-*-cloudabi*)			fmt=elf ;;
+   *-*-dragonfly*)			fmt=elf em=dragonfly ;;
+   *-*-freebsd* | *-*-kfreebsd*-gnu)	fmt=elf em=freebsd ;;
+   *-*-bsd*)				fmt=aout em=sun3 ;;
+--- include/elf/common.h
++++ include/elf/common.h
+@@ -73,6 +73,7 @@
+ #define ELFOSABI_NSK	     14	/* Hewlett-Packard Non-Stop Kernel */
+ #define ELFOSABI_AROS	     15	/* AROS */
+ #define ELFOSABI_FENIXOS     16 /* FenixOS */
++#define ELFOSABI_CLOUDABI    17 /* Nuxi CloudABI */
+ #define ELFOSABI_C6000_ELFABI 64 /* Bare-metal TMS320C6000 */
+ #define ELFOSABI_C6000_LINUX 65 /* Linux TMS320C6000 */
+ #define ELFOSABI_ARM	     97	/* ARM */
+--- ld/Makefile.in
++++ ld/Makefile.in
+@@ -727,6 +727,8 @@
+ 	eaarch64elf32.c \
+ 	eaarch64elfb.c \
+ 	eaarch64elf32b.c \
++	eaarch64cloudabi.c \
++	eaarch64cloudabib.c \
+ 	eaarch64linux.c \
+ 	eaarch64linuxb.c \
+ 	eaarch64linux32.c \
+@@ -3001,6 +3003,14 @@
+   $(ELF_DEPS) $(srcdir)/emultempl/aarch64elf.em \
+   $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+ 
++eaarch64cloudabi.c: $(srcdir)/emulparams/aarch64cloudabi.sh \
++  $(ELF_DEPS) $(srcdir)/emultempl/aarch64elf.em \
++  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
++
++eaarch64cloudabib.c: $(srcdir)/emulparams/aarch64cloudabib.sh $(srcdir)/emulparams/aarch64cloudabi.sh \
++  $(ELF_DEPS) $(srcdir)/emultempl/aarch64elf.em \
++  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
++
+ eaarch64linux.c: $(srcdir)/emulparams/aarch64linux.sh \
+   $(ELF_DEPS) $(srcdir)/emultempl/aarch64elf.em \
+   $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+--- ld/configure.tgt
++++ ld/configure.tgt
+@@ -49,6 +49,8 @@
+ 			targ_extra_emuls="aarch64elf aarch64elf32 aarch64elf32b armelfb armelf" ;;
+ aarch64-*-elf)		targ_emul=aarch64elf
+ 			targ_extra_emuls="aarch64elf32 aarch64elf32b aarch64elfb armelf armelfb" ;;
++aarch64-*-cloudabi*)	targ_emul=aarch64cloudabi
++			targ_extra_emuls=aarch64cloudabib ;;
+ aarch64_be-*-linux*)	targ_emul=aarch64linuxb
+ 			targ_extra_libpath="aarch64linux aarch64linux32 aarch64linux32b armelfb_linux_eabi armelf_linux_eabi"
+ 			targ_extra_emuls="aarch64elfb aarch64elf aarch64elf32 aarch64elf32b armelfb armelf $targ_extra_libpath" ;;
+--- ld/emulparams/aarch64cloudabi.sh
++++ ld/emulparams/aarch64cloudabi.sh
+@@ -0,0 +1,37 @@
++ARCH=aarch64
++MACHINE=
++NOP=0
++
++SCRIPT_NAME=elf
++ELFSIZE=64
++OUTPUT_FORMAT="elf64-littleaarch64-cloudabi"
++BIG_OUTPUT_FORMAT="elf64-bigaarch64-cloudabi"
++LITTLE_OUTPUT_FORMAT="elf64-littleaarch64-cloudabi"
++NO_REL_RELOCS=yes
++
++TEMPLATE_NAME=elf32
++EXTRA_EM_FILE=aarch64elf
++
++GENERATE_SHLIB_SCRIPT=yes
++GENERATE_PIE_SCRIPT=yes
++
++MAXPAGESIZE="CONSTANT (MAXPAGESIZE)"
++COMMONPAGESIZE="CONSTANT (COMMONPAGESIZE)"
++SEPARATE_GOTPLT=24
++IREL_IN_PLT=
++
++TEXT_START_ADDR=0x400000
++
++DATA_START_SYMBOLS='PROVIDE (__data_start = .);';
++
++# AArch64 does not support .s* sections.
++NO_SMALL_DATA=yes
++
++OTHER_BSS_SYMBOLS='__bss_start__ = .;'
++OTHER_BSS_END_SYMBOLS='_bss_end__ = . ; __bss_end__ = . ;'
++OTHER_END_SYMBOLS='__end__ = . ;'
++
++OTHER_SECTIONS='.note.gnu.arm.ident 0 : { KEEP (*(.note.gnu.arm.ident)) }'
++ATTRS_SECTIONS='.ARM.attributes 0 : { KEEP (*(.ARM.attributes)) KEEP (*(.gnu.attributes)) }'
++# Ensure each PLT entry is aligned to a cache line.
++PLT=".plt          ${RELOCATING-0} : ALIGN(16) { *(.plt)${IREL_IN_PLT+ *(.iplt)} }"
+--- ld/emulparams/aarch64cloudabib.sh
++++ ld/emulparams/aarch64cloudabib.sh
+@@ -0,0 +1,2 @@
++. ${srcdir}/emulparams/aarch64cloudabi.sh
++OUTPUT_FORMAT="elf64-bigaarch64-cloudabi"
