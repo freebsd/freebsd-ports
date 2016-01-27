@@ -1,8 +1,4 @@
-@group games
-@mode 2555
-bin/xshisen
-@group
-@mode
+@(,games,2555) bin/xshisen
 lib/X11/app-defaults/XShisen
 lib/X11/ja_JP.eucJP/app-defaults/XShisen
 %%DATADIR%%/s1/chun.xpm
@@ -77,17 +73,8 @@ lib/X11/ja_JP.eucJP/app-defaults/XShisen
 %%DATADIR%%/s2/s9.xpm
 %%DATADIR%%/s2/sha.xpm
 %%DATADIR%%/s2/ton.xpm
-@group games
-@mode 0660
-%%DATADIR%%/xshisen.scores
-@group
-@mode
+@(,games,0660) %%DATADIR%%/xshisen.scores
 man/man6/xshisen.6.gz
 man/ja/man6/xshisen.6.gz
-@dirrm %%DATADIR%%/s2
-@dirrm %%DATADIR%%/s1
-@dirrm %%DATADIR%%
-@dirrmtry lib/X11/ja_JP.eucJP/app-defaults
-@dirrmtry lib/X11/ja_JP.eucJP
 @exec [ -d %D/lib/X11/ja_JP.EUC/ -a -d %D/lib/X11/ja_JP.EUC/app-defaults ] && ln -s %D/lib/X11/ja_JP.eucJP/app-defaults/XShisen %D/lib/X11/ja_JP.EUC/app-defaults || true
 @unexec rm %D/lib/X11/ja_JP.EUC/app-defaults/XShisen 2>/dev/null || true
