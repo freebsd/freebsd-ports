@@ -14,7 +14,6 @@ BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
 		fpcres:${PORTSDIR}/lang/fpc-utils
 
 USES=		dos2unix zip
-#USES=		zip
 USE_FPC=	cairo fcl-base fcl-image pasjpeg rtl-objpas x11
 USE_GNOME=	#
 
