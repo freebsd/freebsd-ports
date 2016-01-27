@@ -53,6 +53,7 @@ bin/git-show-tree
 bin/git-show-unmerged-branches
 bin/git-squash
 bin/git-summary
+bin/git-sync
 bin/git-touch
 bin/git-undo
 bin/git-unlock
@@ -109,6 +110,7 @@ man/man1/git-show-tree.1.gz
 man/man1/git-show-unmerged-branches.1.gz
 man/man1/git-squash.1.gz
 man/man1/git-summary.1.gz
+man/man1/git-sync.1.gz
 man/man1/git-touch.1.gz
 man/man1/git-undo.1.gz
 man/man1/git-unlock.1.gz
