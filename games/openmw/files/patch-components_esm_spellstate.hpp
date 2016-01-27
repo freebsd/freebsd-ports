@@ -1,4 +1,4 @@
---- components/esm/spellstate.hpp.orig	2015-11-24 02:42:35 UTC
+--- components/esm/spellstate.hpp.orig	2016-01-12 16:11:28 UTC
 +++ components/esm/spellstate.hpp
 @@ -28,7 +28,7 @@ namespace ESM
              float mMagnitude;

@@ -1,6 +1,6 @@
---- apps/essimporter/converter.hpp.orig	2015-11-22 18:54:17 UTC
+--- apps/essimporter/converter.hpp.orig	2016-01-12 16:11:28 UTC
 +++ apps/essimporter/converter.hpp
-@@ -118,7 +118,7 @@ public:
+@@ -121,7 +121,7 @@ public:
          {
              mContext->mPlayer.mObject.mCreatureStats.mLevel = npc.mNpdt52.mLevel;
              mContext->mPlayerBase = npc;
