@@ -21,16 +21,12 @@ USE_SDL=	sdl image mixer
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	@${CHMOD} 755 ${WRKSRC}/missing
 	@${RM} ${WRKSRC}/LICENSE
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/[A-Z][A-Z]* ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
