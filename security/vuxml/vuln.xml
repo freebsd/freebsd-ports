@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="50394bc9-c5fa-11e5-96a5-d93b343d1ff7">
+    <topic>prosody -- user impersonation vulnerability</topic>
+    <affects>
+      <package>
+	<name>prosody</name>
+	<range><lt>0.9.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Prosody team reports:</p>
+    <blockquote cite="https://prosody.im/security/advisory_20160127/">
+	 <p>Adopt key generation algorithm from XEP-0185, to
+	 prevent impersonation attacks (CVE-2016-0756)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/206707</freebsdpr>
+      <cvename>CVE-2016-0756</cvename>
+      <url>https://prosody.im/security/advisory_20160127/</url>
+    </references>
+    <dates>
+      <discovery>2016-01-27</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3679fd10-c5d1-11e5-b85f-0018fe623f2b">
     <topic>openssl -- multiple vulnerabilities</topic>
     <affects>
