@@ -1,7 +1,7 @@
 # $FreeBSD$
 #
 
-    COMMENT = Games
+    COMMENT = Games and related software
 
     SUBDIR += 0ad
     SUBDIR += 0verkill
@@ -893,6 +893,7 @@
     SUBDIR += sjeng
     SUBDIR += ski
     SUBDIR += sl
+    SUBDIR += slade
     SUBDIR += slashem-tty
     SUBDIR += slump
     SUBDIR += slune
