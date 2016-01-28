@@ -1,5 +1,5 @@
---- mutt.orig/buffy.c.orig	2015-04-22 08:09:04.000000000 +0200
-+++ mutt/buffy.c	2015-04-22 08:12:54.000000000 +0200
+--- a/buffy.c.orig	2015-12-15 19:11:10.949983000 +0100
++++ b/buffy.c	2015-12-15 19:11:10.963818000 +0100
 @@ -26,6 +26,7 @@
  #include "mx.h"
  
@@ -8,7 +8,7 @@
  
  #ifdef USE_IMAP
  #include "imap.h"
-@@ -584,19 +585,28 @@
+@@ -602,19 +603,28 @@
        {
        case M_MBOX:
        case M_MMDF:
@@ -42,9 +42,9 @@
  	  BuffyCount++;
 Index: mutt/globals.h
 ===================================================================
---- mutt.orig/globals.h	2012-11-02 13:16:39.000000000 +0100
-+++ mutt/globals.h	2012-11-02 13:16:40.000000000 +0100
-@@ -214,6 +214,8 @@
+--- a/globals.h.orig	2015-12-15 19:11:10.951646000 +0100
++++ b/globals.h	2015-12-15 19:11:10.963953000 +0100
+@@ -219,6 +219,8 @@
  WHERE struct buffy_t *CurBuffy INITVAL(0);
  WHERE short DrawFullLine INITVAL(0);
  WHERE short SidebarWidth;
@@ -55,11 +55,9 @@ Index: mutt/globals.h
  WHERE short ImapPipelineDepth;
 Index: mutt/init.h
 ===================================================================
---- mutt.orig/init.h	2012-11-02 13:16:39.000000000 +0100
-+++ mutt/init.h	2012-11-02 13:16:40.000000000 +0100
-@@ -2009,6 +2009,12 @@
-   { "sidebar_width", DT_NUM, R_BOTH, UL &SidebarWidth, 0 },
-   /*
+--- a/init.h.orig	2015-12-15 19:11:10.954277000 +0100
++++ b/init.h	2015-12-15 19:11:10.966235000 +0100
+@@ -2042,6 +2042,12 @@
    ** .pp
    ** The width of the sidebar.
    */
@@ -70,11 +68,13 @@ Index: mutt/init.h
 +  ** (0 disables refreshing).
 +  */
    { "sidebar_shortpath", DT_BOOL, R_BOTH, OPTSIDEBARSHORTPATH, 0 },
+   /*
+   ** .pp
 Index: mutt/sidebar.c
 ===================================================================
---- mutt.orig/sidebar.c	2012-11-02 13:16:39.000000000 +0100
-+++ mutt/sidebar.c	2012-11-02 13:16:40.000000000 +0100
-@@ -252,6 +252,7 @@
+--- a/sidebar.c.orig	2015-12-15 19:11:10.959133000 +0100
++++ b/sidebar.c	2015-12-15 19:11:10.966747000 +0100
+@@ -211,6 +211,7 @@
                  saveSidebarWidth = SidebarWidth;
                  if(!option(OPTSIDEBAR)) SidebarWidth = 0;
                  initialized = true;
@@ -82,11 +82,10 @@ Index: mutt/sidebar.c
          }
  
          /* save or restore the value SidebarWidth */
-@@ -464,3 +465,16 @@
- 	set_curbuffy("");	/* default is the first mailbox */
+@@ -417,3 +418,16 @@
  	draw_sidebar(menu);
  }
-+
+ 
 +int sidebar_should_refresh()
 +{
 +	if (option(OPTSIDEBAR) && SidebarRefresh > 0) {
@@ -99,10 +98,11 @@ Index: mutt/sidebar.c
 +{
 +	SidebarLastRefresh = time(NULL);
 +}
++
 Index: mutt/sidebar.h
 ===================================================================
---- mutt.orig/sidebar.h	2012-11-02 13:16:39.000000000 +0100
-+++ mutt/sidebar.h	2012-11-02 13:16:40.000000000 +0100
+--- a/sidebar.h.orig	2015-12-15 19:11:10.959229000 +0100
++++ b/sidebar.h	2015-12-15 19:11:10.966962000 +0100
 @@ -32,5 +32,7 @@
  void scroll_sidebar(int, int);
  void set_curbuffy(char*);
