@@ -58,6 +58,301 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7a59e283-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- XSS vulnerability in SQL editor</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-9/">
+	  <p>With a crafted SQL query, it is possible to trigger an
+	    XSS attack in the SQL editor.</p>
+	  <p>We consider this vulnerability to be non-critical.</p>
+	  <p>This vulnerability can be triggered only by someone who is
+	    logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    pages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-9/</url>
+      <cvename>CVE-2016-2045</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="78b4ebfb-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Full path disclosure vulnerability in SQL parser</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-8/">
+	  <p>By calling a particular script that is part of phpMyAdmin
+	    in an unexpected way, it is possible to trigger phpMyAdmin
+	    to display a PHP error message which contains the full path
+	    of the directory where phpMyAdmin is installed.</p>
+	  <p>We consider this vulnerability to be non-critical.</p>
+	  <p>This path disclosure is possible on servers where the
+	    recommended setting of the PHP configuration directive
+	    display_errors is set to on, which is against the
+	    recommendations given in the PHP manual for a production
+	    server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-8/</url>
+      <cvename>CVE-2016-2044</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7694927f-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- XSS vulnerability in normalization page</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-7/">
+	  <p>With a crafted table name it is possible to trigger an
+	    XSS attack in the database normalization page.</p>
+	  <p>We consider this vulnerability to be non-critical.</p>
+	  <p>This vulnerability can be triggered only by someone who is
+	    logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required page.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-7/</url>
+      <cvename>CVE-2016-2043</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="740badcb-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Multiple full path disclosure vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-6/">
+	  <p>By calling some scripts that are part of phpMyAdmin in an
+	    unexpected way, it is possible to trigger phpMyAdmin to
+	    display a PHP error message which contains the full path of
+	    the directory where phpMyAdmin is installed.</p>
+	  <p>We consider these vulnerabilities to be non-critical.</p>
+	  <p>This path disclosure is possible on servers where the
+	    recommended setting of the PHP configuration directive
+	    display_errors is set to on, which is against the
+	    recommendations given in the PHP manual for a production
+	    server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-6/</url>
+      <cvename>CVE-2016-2042</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="71b24d99-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Unsafe comparison of XSRF/CSRF token</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-5/">
+	  <p>The comparison of the XSRF/CSRF token parameter with the
+	    value saved in the session is vulnerable to timing
+	    attacks. Moreover, the comparison could be bypassed if the
+	    XSRF/CSRF token matches a particular pattern.</p>
+	  <p>We consider this vulnerability to be serious.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-5/</url>
+      <cvename>CVE-2016-2041</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6f0c2d1b-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Insecure password generation in JavaScript</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-4/">
+	  <p>Password suggestion functionality uses Math.random()
+	    which does not provide cryptographically secure random
+	    numbers.</p>
+	  <p>We consider this vulnerability to be non-critical.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-4/</url>
+      <cvename>CVE-2016-1927</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6cc06eec-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Multiple XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-3/">
+	  <ul>
+	    <li>With a crafted table name it is possible to trigger
+	      an XSS attack in the database search page.</li>
+	    <li>With a crafted SET value or a crafted search query, it
+	      is possible to trigger an XSS attacks in the zoom search
+	      page.</li>
+	    <li>With a crafted hostname header, it is possible to
+	      trigger an XSS attacks in the home page.</li>
+	  </ul>
+	  <p>We consider these vulnerabilities to be non-critical.</p>
+	  <p>These vulnerabilities can be triggered only by someone
+	    who is logged in to phpMyAdmin, as the usual token
+	    protection prevents non-logged-in users from accessing the
+	    required pages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-3/</url>
+      <cvename>CVE-2016-2040</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="60ab0e93-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Unsafe generation of XSRF/CSRF token</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-2/">
+	  <p>The XSRF/CSRF token is generated with a weak algorithm
+	    using functions that do not return cryptographically secure
+	    values.</p>
+	  <p>We consider this vulnerability to be non-critical.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-2/</url>
+      <cvename>CVE-2016-2039</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5d6a204f-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Multiple full path disclosure vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-1/">
+	  <p>By calling some scripts that are part of phpMyAdmin in an
+	    unexpected way, it is possible to trigger phpMyAdmin to
+	    display a PHP error message which contains the full path of
+	    the directory where phpMyAdmin is installed.</p>
+	  <p>We consider these vulnerabilities to be non-critical.</p>
+	  <p>This path disclosure is possible on servers where the
+	    recommended setting of the PHP configuration directive
+	    display_errors is set to on, which is against the
+	    recommendations given in the PHP manual for a production
+	    server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-1/</url>
+      <cvename>CVE-2016-2038</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="50394bc9-c5fa-11e5-96a5-d93b343d1ff7">
     <topic>prosody -- user impersonation vulnerability</topic>
     <affects>
