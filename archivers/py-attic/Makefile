@@ -14,8 +14,8 @@ COMMENT=	Deduplicating backup program
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.1.10:${PORTSDIR}/devel/py-msgpack
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.1.10:${PORTSDIR}/devel/py-msgpack
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.1.10:${PORTSDIR}/devel/py-msgpack-python
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.1.10:${PORTSDIR}/devel/py-msgpack-python
 
 USES=		python:3.2+
 USE_PYTHON=	autoplist distutils

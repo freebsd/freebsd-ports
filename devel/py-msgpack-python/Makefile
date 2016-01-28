@@ -1,17 +1,13 @@
 # Created by: Andrey Zonov <andrey@zonov.org>
 # $FreeBSD$
 
-PORTNAME=	msgpack
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTNAME=	msgpack-python
+PORTVERSION=	0.4.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 
-# TODO: Rename to py-msgpack-python (upstream name)
-
-MAINTAINER=	zont@FreeBSD.org
+MAINTAINER=	brendan+freebsd@bbqsrc.net
 COMMENT=	MessagePack (de)serializer for Python
 
 LICENSE=	APACHE20
