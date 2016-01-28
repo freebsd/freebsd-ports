@@ -2,5 +2,6 @@ bin/nordlicht
 include/nordlicht.h
 lib/libnordlicht.so
 lib/libnordlicht.so.0
+lib/libnordlicht.so.0.4.4
 libdata/pkgconfig/nordlicht.pc
 man/man1/nordlicht.1.gz
