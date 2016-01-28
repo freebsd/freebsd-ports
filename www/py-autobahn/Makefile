@@ -44,7 +44,7 @@ TWISTED_DESC=		Twisted Backend (Python 2.x ONLY)
 ACCELERATE_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}wsaccel>=0.6.2:${PORTSDIR}/www/py-wsaccel \
 				${PYTHON_PKGNAMEPREFIX}ujson>=1.33:${PORTSDIR}/devel/py-ujson
 
-SERIALIZATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.4.0:${PORTSDIR}/devel/py-msgpack
+SERIALIZATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.4.0:${PORTSDIR}/devel/py-msgpack-python
 
 TWISTED_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6:${PORTSDIR}/devel/py-zope.interface \
 				${PYTHON_PKGNAMEPREFIX}twisted>=12.1:${PORTSDIR}/devel/py-twisted
