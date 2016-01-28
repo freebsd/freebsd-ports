@@ -701,7 +701,6 @@
     SUBDIR += pbimaker
     SUBDIR += pcbsd-appweb
     SUBDIR += pcbsd-libsh
-    SUBDIR += pcbsd-sysadm
     SUBDIR += pcbsd-syscache
     SUBDIR += pcbsd-utils
     SUBDIR += pcbsd-utils-qt5
