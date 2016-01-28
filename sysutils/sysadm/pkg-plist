@@ -5,6 +5,7 @@ etc/rc.d/sysadm-websocket
 include/sysadm-firewall.h
 include/sysadm-general.h
 include/sysadm-global.h
+include/sysadm-iocage.h
 include/sysadm-lifepreserver.h
 include/sysadm-network.h
 include/sysadm-servicemanager.h
