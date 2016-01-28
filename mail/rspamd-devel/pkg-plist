@@ -6,6 +6,7 @@ bin/rspamc-%%RSPAMDVERSION%%
 bin/rspamc
 %%REDIRECTOR%%bin/rspamd-redirector
 @sample %%ETCDIR%%/2tld.inc.sample
+@sample %%ETCDIR%%/mime_types.inc.sample
 @sample %%ETCDIR%%/common.conf.sample
 @sample %%ETCDIR%%/composites.conf.sample
 @sample %%ETCDIR%%/dmarc_whitelist.inc.sample
@@ -21,6 +22,7 @@ bin/rspamc
 %%ETCDIR%%/modules.d/hfilter.conf
 %%ETCDIR%%/modules.d/ip_score.conf
 %%ETCDIR%%/modules.d/maillist.conf
+%%ETCDIR%%/modules.d/mime_types.conf
 %%ETCDIR%%/modules.d/multimap.conf
 %%ETCDIR%%/modules.d/once_received.conf
 %%ETCDIR%%/modules.d/phishing.conf
@@ -49,6 +51,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/hfilter.lua
 %%DATADIR%%/lua/ip_score.lua
 %%DATADIR%%/lua/maillist.lua
+%%DATADIR%%/lua/mime_types.lua
 %%DATADIR%%/lua/multimap.lua
 %%DATADIR%%/lua/once_received.lua
 %%DATADIR%%/lua/phishing.lua
