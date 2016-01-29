@@ -444,6 +444,7 @@
     SUBDIR += jaildaemon
     SUBDIR += jailme
     SUBDIR += jailrc
+    SUBDIR += jailutils
     SUBDIR += javaservicewrapper
     SUBDIR += jdiskreport
     SUBDIR += jfbterm
