@@ -62,7 +62,10 @@ Notes:
     <topic>radicale -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>radicale</name>
+	<name>py27-radicale</name>
+	<name>py32-radicale</name>
+	<name>py33-radicale</name>
+	<name>py34-radicale</name>
 	<range><lt>1.1</lt></range>
       </package>
     </affects>
