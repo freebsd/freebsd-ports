@@ -49,7 +49,6 @@ include/armadillo_bits/SpSubview_meat.hpp
 include/armadillo_bits/SpValProxy_bones.hpp
 include/armadillo_bits/SpValProxy_meat.hpp
 include/armadillo_bits/access.hpp
-include/armadillo_bits/arma_boost.hpp
 include/armadillo_bits/arma_cmath.hpp
 include/armadillo_bits/arma_config.hpp
 include/armadillo_bits/arma_forward.hpp
@@ -59,6 +58,7 @@ include/armadillo_bits/arma_rng.hpp
 include/armadillo_bits/arma_rng_cxx11.hpp
 include/armadillo_bits/arma_rng_cxx98.hpp
 include/armadillo_bits/arma_static_check.hpp
+include/armadillo_bits/arma_str.hpp
 include/armadillo_bits/arma_version.hpp
 include/armadillo_bits/arrayops_bones.hpp
 include/armadillo_bits/arrayops_meat.hpp
@@ -140,6 +140,7 @@ include/armadillo_bits/fn_inplace_trans.hpp
 include/armadillo_bits/fn_interp1.hpp
 include/armadillo_bits/fn_inv.hpp
 include/armadillo_bits/fn_join.hpp
+include/armadillo_bits/fn_kmeans.hpp
 include/armadillo_bits/fn_kron.hpp
 include/armadillo_bits/fn_log_det.hpp
 include/armadillo_bits/fn_lu.hpp
@@ -439,7 +440,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.6
-lib/libarmadillo.so.6.400.3
+lib/libarmadillo.so.6.500.4
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake
