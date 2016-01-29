@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memoise
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,7 +11,7 @@ COMMENT=	Memoise functions for R
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-digest>=0:${PORTSDIR}/security/R-cran-digest
+RUN_DEPENDS=	R-cran-digest>=0.6.3:${PORTSDIR}/security/R-cran-digest
 
 USES=	cran:auto-plist
 
