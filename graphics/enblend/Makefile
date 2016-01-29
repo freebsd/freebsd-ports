@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enblend
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.4
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/enblend/enblend-enfuse/enblend-enfuse-${PORTVERSION:R}
