@@ -58,6 +58,44 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3166222b-c6a4-11e5-96d6-14dae9d210b8">
+    <topic>owncloud -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>owncloud</name>
+	<range><lt>8.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Owncloud reports:</p>
+	<blockquote cite="https://owncloud.org/blog/owncloud-8-2-2-8-1-5-8-0-10-and-7-0-12-here-with-sharing-ldap-fixes/">
+	  <ul>
+	  <li><p>Reflected XSS in OCS provider discovery
+	    (oC-SA-2016-001)</p></li>
+	  <li><p>Information Exposure Through Directory Listing in the
+	    file scanner (oC-SA-2016-002)</p></li>
+	  <li><p>Disclosure of files that begin with ".v" due to
+	    unchecked return value (oC-SA-2016-003)</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://owncloud.org/blog/owncloud-8-2-2-8-1-5-8-0-10-and-7-0-12-here-with-sharing-ldap-fixes/</url>
+      <url>https://owncloud.org/security/advisory/?id=oc-sa-2016-001</url>
+      <url>https://owncloud.org/security/advisory/?id=oc-sa-2016-002</url>
+      <url>https://owncloud.org/security/advisory/?id=oc-sa-2016-003</url>
+      <cvename>CVE-2016-1498</cvename>
+      <cvename>CVE-2016-1499</cvename>
+      <cvename>CVE-2016-1500</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-FIXME</discovery>
+      <entry>2016-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ff824eea-c69c-11e5-96d6-14dae9d210b8">
     <topic>radicale -- multiple vulnerabilities</topic>
     <affects>
