@@ -1,8 +1,8 @@
---- src/classes/optFileWriter.cc.intermediate	2015-09-20 01:43:24 UTC
+--- src/classes/optFileWriter.cc.orig	2003-01-25 05:17:43 UTC
 +++ src/classes/optFileWriter.cc
-@@ -1,5 +1,6 @@
+@@ -1,4 +1,6 @@
  #include "optFileWriter.h"
- #include <cstdlib>
++#include <cstdlib>
 +#include <cstring>
  
  
