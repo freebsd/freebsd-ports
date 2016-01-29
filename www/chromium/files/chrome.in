@@ -16,4 +16,4 @@ EOMSG
 	exit 1
 fi
 ulimit -c 0
-exec %%PREFIX%%/share/chromium/chrome $*
+exec %%PREFIX%%/share/chromium/chrome ${1+"$@"}
