@@ -1,0 +1,32 @@
+--- configure.orig	2015-05-17 21:09:56.000000000 +0000
++++ configure	2015-10-17 23:52:10.459092000 +0000
+@@ -15226,11 +15226,11 @@
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libusb\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libusb") 2>&5
++  ($PKG_CONFIG --exists --print-errors "libusb-0.1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBUSB0_CFLAGS=`$PKG_CONFIG --cflags "libusb" 2>/dev/null`
++  pkg_cv_LIBUSB0_CFLAGS=`$PKG_CONFIG --cflags "libusb-0.1" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -15242,12 +15242,12 @@
+     pkg_cv_LIBUSB0_LIBS="$LIBUSB0_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libusb\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libusb") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libusb-0.1\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libusb-0.1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBUSB0_LIBS=`$PKG_CONFIG --libs "libusb" 2>/dev/null`
++  pkg_cv_LIBUSB0_LIBS=`$PKG_CONFIG --libs "libusb-0.1" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
