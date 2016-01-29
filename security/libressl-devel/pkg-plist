@@ -369,7 +369,6 @@ man/man3/CMS_get0_SignerInfos.3.gz
 man/man3/CMS_get0_type.3.gz
 man/man3/CMS_get1_ReceiptRequest.3.gz
 man/man3/CMS_sign.3.gz
-man/man3/CMS_sign_add1_signer.3.gz
 man/man3/CMS_sign_receipt.3.gz
 man/man3/CMS_uncompress.3.gz
 man/man3/CMS_verify.3.gz
@@ -716,7 +715,6 @@ man/man3/EVP_MD_type.3.gz
 man/man3/EVP_OpenFinal.3.gz
 man/man3/EVP_OpenInit.3.gz
 man/man3/EVP_OpenUpdate.3.gz
-man/man3/EVP_PKEVP_PKEY_CTX_set_app_data.3.gz
 man/man3/EVP_PKEY_CTX_ctrl.3.gz
 man/man3/EVP_PKEY_CTX_ctrl_str.3.gz
 man/man3/EVP_PKEY_CTX_dup.3.gz
@@ -744,7 +742,6 @@ man/man3/EVP_PKEY_assign_RSA.3.gz
 man/man3/EVP_PKEY_cmp.3.gz
 man/man3/EVP_PKEY_cmp_parameters.3.gz
 man/man3/EVP_PKEY_copy_parameters.3.gz
-man/man3/EVP_PKEY_ctrl_str.3.gz
 man/man3/EVP_PKEY_decrypt.3.gz
 man/man3/EVP_PKEY_decrypt_init.3.gz
 man/man3/EVP_PKEY_derive.3.gz
@@ -987,7 +984,6 @@ man/man3/RIPEMD160.3.gz
 man/man3/RIPEMD160_Final.3.gz
 man/man3/RIPEMD160_Init.3.gz
 man/man3/RIPEMD160_Update.3.gz
-man/man3/RSA_PKCS1_RSAref.3.gz
 man/man3/RSA_PKCS1_SSLeay.3.gz
 man/man3/RSA_blinding_off.3.gz
 man/man3/RSA_blinding_on.3.gz
@@ -1088,7 +1084,6 @@ man/man3/SSL_CTX_sess_number.3.gz
 man/man3/SSL_CTX_sess_set_cache_size.3.gz
 man/man3/SSL_CTX_sess_set_get_cb.3.gz
 man/man3/SSL_CTX_sess_set_new_cb.3.gz
-man/man3/SSL_CTX_sess_set_remove.3.gz
 man/man3/SSL_CTX_sess_set_remove_cb.3.gz
 man/man3/SSL_CTX_sess_timeouts.3.gz
 man/man3/SSL_CTX_sessions.3.gz
@@ -1159,7 +1154,6 @@ man/man3/SSL_free.3.gz
 man/man3/SSL_get0_session.3.gz
 man/man3/SSL_get1_session.3.gz
 man/man3/SSL_get_SSL_CTX.3.gz
-man/man3/SSL_get_accept_state.3.gz
 man/man3/SSL_get_cipher.3.gz
 man/man3/SSL_get_cipher_bits.3.gz
 man/man3/SSL_get_cipher_list.3.gz
@@ -1177,7 +1171,6 @@ man/man3/SSL_get_fd.3.gz
 man/man3/SSL_get_info_callback.3.gz
 man/man3/SSL_get_max_cert_list.3.gz
 man/man3/SSL_get_mode.3.gz
-man/man3/SSL_get_msg_callback_arg.3.gz
 man/man3/SSL_get_options.3.gz
 man/man3/SSL_get_peer_cert_chain.3.gz
 man/man3/SSL_get_peer_certificate.3.gz
@@ -1369,7 +1362,6 @@ man/man3/bn_dump.3.gz
 man/man3/bn_expand.3.gz
 man/man3/bn_expand2.3.gz
 man/man3/bn_fix_top.3.gz
-man/man3/bn_internal.3.gz
 man/man3/bn_mul_add_words.3.gz
 man/man3/bn_mul_comba4.3.gz
 man/man3/bn_mul_comba8.3.gz
@@ -1415,7 +1407,6 @@ man/man3/d2i_ECPKParameters.3.gz
 man/man3/d2i_ECPKParameters_bio.3.gz
 man/man3/d2i_ECPKParameters_fp.3.gz
 man/man3/d2i_Netscape_RSA.3.gz
-man/man3/d2i_PKCS8PrivateKey.3.gz
 man/man3/d2i_PKCS8PrivateKey_bio.3.gz
 man/man3/d2i_PKCS8PrivateKey_fp.3.gz
 man/man3/d2i_RSAPrivateKey.3.gz
@@ -1441,7 +1432,6 @@ man/man3/des_read_pw_string.3.gz
 man/man3/dh.3.gz
 man/man3/dsa.3.gz
 man/man3/ec.3.gz
-man/man3/ecdsa.3.gz
 man/man3/engine.3.gz
 man/man3/evp.3.gz
 man/man3/get_session_cb.3.gz
@@ -1493,7 +1483,6 @@ man/man3/lh_node_usage_stats_bio.3.gz
 man/man3/lh_retrieve.3.gz
 man/man3/lh_stats.3.gz
 man/man3/lh_stats_bio.3.gz
-man/man3/lhash.3.gz
 man/man3/mul.3.gz
 man/man3/mul_add.3.gz
 man/man3/new_session_cb.3.gz
@@ -1554,8 +1543,6 @@ man/man3/tls_peer_cert_issuer.3.gz
 man/man3/tls_peer_cert_provided.3.gz
 man/man3/tls_peer_cert_subject.3.gz
 man/man3/tmp_rsa_callback.3.gz
-man/man3/ui.3.gz
-man/man3/ui_compat.3.gz
 man/man3/verify_callback.3.gz
 man/man3/x509.3.gz
 @dir etc/ssl/certs
