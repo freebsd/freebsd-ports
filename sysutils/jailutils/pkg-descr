@@ -1,0 +1,11 @@
+This is a collection of utilities for listing, stopping, and doing other
+various things with jails.
+
+  - injail: to determine if process is running in a jail
+  - jails: lists all the running jails
+  - jid: translates jail ids to jail host names and vice versa
+  - jkill: shutdown or restart a jail
+  - jps: lists processes running in a jail
+  - jstart: secure replacement for the jail command
+
+WWW: http://thewalter.net/stef/freebsd/jails/jailutils/

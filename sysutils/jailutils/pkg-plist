@@ -1,0 +1,13 @@
+man/man8/injail.8.gz
+man/man8/jails.8.gz
+man/man8/jid.8.gz
+man/man8/jkill.8.gz
+man/man8/jps.8.gz
+man/man8/jstart.8.gz
+sbin/injail
+sbin/jails
+sbin/jid
+sbin/jkill
+sbin/jps
+sbin/jstart
+sbin/killjail
