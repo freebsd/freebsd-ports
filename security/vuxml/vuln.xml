@@ -58,6 +58,35 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ff824eea-c69c-11e5-96d6-14dae9d210b8">
+    <topic>radicale -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>radicale</name>
+	<range><lt>1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Radicale reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2016/01/06/4">
+	  <p>The multifilesystem backend allows access to arbitrary
+	    files on all platforms.</p>
+	  <p>Prevent regex injection in rights management.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2016/01/06/4</url>
+      <cvename>CVE-2015-8747</cvename>
+      <cvename>CVE-2015-8748</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-24</discovery>
+      <entry>2016-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a59e283-c60b-11e5-bf36-6805ca0b3d42">
     <topic>phpmyadmin -- XSS vulnerability in SQL editor</topic>
     <affects>
