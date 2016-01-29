@@ -61,6 +61,7 @@
     SUBDIR += p5-Verilog-Perl
     SUBDIR += pcb
     SUBDIR += pdnmesh
+    SUBDIR += pycam
     SUBDIR += pythoncad
     SUBDIR += qcad
     SUBDIR += qcad-partslib
