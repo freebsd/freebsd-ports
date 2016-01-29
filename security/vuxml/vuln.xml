@@ -58,6 +58,34 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="93eadedb-c6a6-11e5-96d6-14dae9d210b8">
+    <topic>nghttp2 -- use after free</topic>
+    <affects>
+      <package>
+	<name>nghttp2</name>
+	<range><lt>1.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>nghttp2 reports:</p>
+	<blockquote cite="https://nghttp2.org/blog/2015/12/23/nghttp2-v1-6-0/">
+	  <p>This release fixes heap-use-after-free bug in idle stream
+	    handling code. We strongly recommend to upgrade the older installation
+	    to this latest version as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://nghttp2.org/blog/2015/12/23/nghttp2-v1-6-0/</url>
+      <cvename>CVE-2015-8659</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-23</discovery>
+      <entry>2016-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3166222b-c6a4-11e5-96d6-14dae9d210b8">
     <topic>owncloud -- multiple vulnerabilities</topic>
     <affects>
