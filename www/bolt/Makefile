@@ -3,7 +3,7 @@
 
 PORTNAME=	bolt
 PORTVERSION=	2.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://bolt.cm/distribution/
 
@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	curl gd openssl simplexml
+USE_PHP=	ctype curl dom gd json mbstring openssl simplexml tokenizer
 WANT_PHP_WEB=	yes
 
 PLIST_SUB+=	WWWGRP=${WWWGRP}
