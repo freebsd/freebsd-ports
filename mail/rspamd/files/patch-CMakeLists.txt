@@ -1,6 +1,6 @@
---- ./CMakeLists.txt.orig	2015-09-01 16:28:36.000000000 +0300
-+++ ./CMakeLists.txt	2015-09-21 14:10:42.046330451 +0300
-@@ -1042,6 +1042,19 @@
+--- CMakeLists.txt.orig	2016-01-28 17:45:10.000000000 +0000
++++ CMakeLists.txt	2016-01-28 23:41:09.681819000 +0000
+@@ -1090,6 +1090,20 @@
  ENDIF(WANT_SYSTEMD_UNITS MATCHES "ON")
  IF(BUILD_PORT)
  	INSTALL_IF_NOT_EXISTS(${MAIN_CONF} ${CONFDIR} "rspamd.conf" ".sample")
@@ -10,6 +10,7 @@
 +	INSTALL_IF_NOT_EXISTS("conf/worker-controller.inc" ${CONFDIR} "worker-controller.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/worker-normal.inc" ${CONFDIR} "worker-normal.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/2tld.inc" ${CONFDIR} "2tld.inc" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/mime_types.inc" ${CONFDIR} "mime_types.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/composites.conf" ${CONFDIR} "composites.conf" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/metrics.conf" ${CONFDIR} "metrics.conf" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/modules.conf" ${CONFDIR} "modules.conf" ".sample")
@@ -20,10 +21,3 @@
  ELSE(BUILD_PORT)
  	INSTALL_IF_NOT_EXISTS(${MAIN_CONF} ${CONFDIR} "rspamd.conf" "")
  ENDIF(BUILD_PORT)
-@@ -1109,4 +1122,4 @@
- IF(NOT DEBIAN_BUILD)
- 	ADD_CUSTOM_TARGET(check DEPENDS rspamd-test)
- 	ADD_CUSTOM_TARGET(run-test DEPENDS check COMMAND test/rspamd-test)
--ENDIF(NOT DEBIAN_BUILD)
-\ No newline at end of file
-+ENDIF(NOT DEBIAN_BUILD)
