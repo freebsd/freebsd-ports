@@ -1,0 +1,5 @@
+*********************************************************************
+* At this point it is prudent to remind you that OpenLibm is still  *
+* experimental. There are some test failures. For more information, *
+* please checkout https://github.com/julialang/openlibm/issues/10 . *
+*********************************************************************

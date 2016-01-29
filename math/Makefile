@@ -399,6 +399,7 @@
     SUBDIR += open-axiom
     SUBDIR += openblas
     SUBDIR += openfst
+    SUBDIR += openlibm
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-Genetic

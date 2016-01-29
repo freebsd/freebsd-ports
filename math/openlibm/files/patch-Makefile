@@ -1,0 +1,42 @@
+--- Makefile.orig	2014-12-01 13:10:35 UTC
++++ Makefile
+@@ -37,6 +37,16 @@ else
+ 	@-ln -sf libopenlibm.$(SHLIB_EXT).$(SOMAJOR).$(SOMINOR) libopenlibm.$(SHLIB_EXT)
+ endif
+ 
++check test: test/test-double test/test-float
++	test/test-double
++	test/test-float
++
++test/test-double: libopenlibm.$(SHLIB_EXT)
++	$(MAKE) -C test test-double
++
++test/test-float: libopenlibm.$(SHLIB_EXT)
++	$(MAKE) -C test test-float
++
+ clean:
+ 	@for dir in $(SUBDIRS) .; do \
+ 		rm -fr $$dir/*.o $$dir/*.a $$dir/*.$(SHLIB_EXT)*; \
+@@ -53,15 +63,15 @@ openlibm.pc: openlibm.pc.in Make.inc Mak
+ 
+ install: all openlibm.pc
+ 	mkdir -p $(DESTDIR)$(shlibdir)
+-	mkdir -p $(DESTDIR)$(libdir)/pkgconfig
++	mkdir -p $(DESTDIR)$(pkgconfigdir)
+ 	mkdir -p $(DESTDIR)$(includedir)/openlibm
+-	cp -a libopenlibm.$(SHLIB_EXT)* $(DESTDIR)$(shlibdir)/
+-	cp -a libopenlibm.a $(DESTDIR)$(libdir)/
+-	cp -a src/openlibm.h $(DESTDIR)$(includedir)/
+-	cp -a openlibm.pc $(DESTDIR)$(libdir)/pkgconfig/
++	${BSD_INSTALL_LIB} libopenlibm.$(SHLIB_EXT)* $(DESTDIR)$(shlibdir)/
++	${BSD_INSTALL_DATA} libopenlibm.a $(DESTDIR)$(libdir)/
++	${BSD_INSTALL_DATA} src/openlibm.h $(DESTDIR)$(includedir)/
++	${BSD_INSTALL_DATA} openlibm.pc $(DESTDIR)$(pkgconfigdir)/
+ ifneq ($(wildcard $(ARCH)/bsd_asm.h),)
+-	cp -a $(ARCH)/bsd_asm.h $(DESTDIR)$(includedir)/openlibm/
++	${BSD_INSTALL_DATA} $(ARCH)/bsd_asm.h $(DESTDIR)$(includedir)/openlibm/
+ endif
+ ifneq ($(wildcard $(ARCH)/bsd_cdefs.h),)
+-	cp -a $(ARCH)/bsd_cdefs.h $(DESTDIR)$(includedir)/openlibm/
++	${BSD_INSTALL_DATA} $(ARCH)/bsd_cdefs.h $(DESTDIR)$(includedir)/openlibm/
+ endif
