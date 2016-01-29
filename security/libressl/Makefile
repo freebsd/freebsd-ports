@@ -1,8 +1,8 @@
 # Created by: Vsevolod Stakhov <vsevolod@FreeBSD.org>
-# $FreeBSD: head/security/libressl/Makefile 399426 2015-10-16 07:13:03Z brnrd $
+# $FreeBSD: head/security/libressl/Makefile 405314 2016-01-05 19:47:13Z brnrd $
 
 PORTNAME=	libressl
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CPE_VENDOR=	openbsd
 
-OPTIONS_DEFINE=	MAN3
-OPTIONS_DEFAULT=	MAN3
+OPTIONS_DEFINE=	CERTBUNDLE MAN3
+OPTIONS_DEFAULT=	CERTBUNDLE MAN3
+CERTBUNDLE_DESC=	Install LibreSSL's cert bundle ${PREFIX}/etc/ssl/cert.pem
 MAN3_DESC=	Install API manpages (section 3)
 
 CONFLICTS?=	openssl-[0-9]* \
@@ -25,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-silent-rules
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+OPTIONS_SUB=	yes
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
