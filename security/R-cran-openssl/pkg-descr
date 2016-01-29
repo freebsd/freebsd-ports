@@ -1,0 +1,12 @@
+Bindings to OpenSSL libssl and libcrypto, plus custom SSH pubkey
+parsers. Supports RSA, DSA and NIST curves P-256, P-384 and P-521.
+Cryptographic signatures can either be created and verified manually
+or via x509 certificates. AES block cipher is used in CBC mode for
+symmetric encryption; RSA for asymmetric (public key) encryption.
+High-level envelope functions combine RSA and AES for encrypting
+arbitrary sized data. Other utilities include key generators, hash
+functions (md5, sha1, sha256, etc), base64 encoder, a secure random
+number generator, and 'bignum' math methods for manually performing
+crypto calculations on large multibyte integers.
+
+WWW: https://cran.r-project.org/web/packages/openssl/
