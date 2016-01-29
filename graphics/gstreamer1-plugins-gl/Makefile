@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer GL graphics plugin
@@ -18,5 +18,7 @@ pre-build:
 post-install:
 	@cd ${WRKSRC}/gst-libs/gst/gl && ${SETENV} DESTDIR=${STAGEDIR} \
 		INSTALL_TARGET=${INSTALL_TARGET} ${GMAKE} install
+	${INSTALL_DATA} ${WRKSRC}/pkgconfig/gstreamer-gl.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/gstreamer-gl-1.0.pc
 
 .include "${MASTERDIR}/Makefile"
