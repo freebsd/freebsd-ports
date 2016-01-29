@@ -1,7 +1,11 @@
---- doc/Makefile.in.orig	2007-10-29 13:08:52.000000000 -0700
-+++ doc/Makefile.in	2007-10-29 13:11:09.000000000 -0700
-@@ -30,7 +30,10 @@
- 	$(MAKEINFO) --no-split $(srcdir)/screen.texinfo -o screen.info
+--- doc/Makefile.in.orig	2006-10-23 13:06:32 UTC
++++ doc/Makefile.in
+@@ -27,25 +27,34 @@ pdf screen.pdf: screen.texinfo mostlycle
+ 
+ info screen.info: screen.texinfo
+ 	@rm -f screen.info*
+-	$(MAKEINFO) $(srcdir)/screen.texinfo -o screen.info
++	$(MAKEINFO) --no-split $(srcdir)/screen.texinfo -o screen.info
  
  install: installdirs
 +.if defined(WITH_MAN)
@@ -11,8 +15,10 @@
  	-$(MAKE) screen.info
  	-if test -f screen.info; then d=.; else d=$(srcdir); fi; \
  	if test -f $$d/screen.info; then \
-@@ -39,13 +42,19 @@
- 	  install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/screen.info; \
+ 	for f in $$d/screen.info*; do $(INSTALL_DATA) $$f $(DESTDIR)$(infodir);done; \
+ 	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
+-	  install-info --info-dir=$(DESTDIR)$(infodir) $$d/screen.info; \
++	  install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/screen.info; \
  	else true; fi; \
  	fi
 +.endif
