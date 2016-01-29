@@ -55,6 +55,7 @@ lib/elixir/lib/maru/ebin/Elixir.Maru.Validations.Values.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.Validations.beam
 lib/elixir/lib/maru/ebin/Elixir.Maru.beam
 lib/elixir/lib/maru/ebin/Elixir.Mix.Tasks.Maru.Routers.beam
+lib/elixir/lib/maru/ebin/Elixir.Mix.Tasks.Maru.Routes.beam
 lib/elixir/lib/maru/ebin/maru.app
 lib/elixir/lib/maru/lib/maru.ex
 lib/elixir/lib/maru/lib/maru/builder.ex
@@ -86,4 +87,5 @@ lib/elixir/lib/maru/lib/maru/test.ex
 lib/elixir/lib/maru/lib/maru/utils.ex
 lib/elixir/lib/maru/lib/maru/validations.ex
 lib/elixir/lib/maru/lib/mix/tasks/routers.ex
+lib/elixir/lib/maru/lib/mix/tasks/routes.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md
