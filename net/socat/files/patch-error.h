@@ -1,4 +1,4 @@
---- error.h.orig	2015-01-24 10:15:22 UTC
+--- error.h.orig	2015-01-26 09:59:47 UTC
 +++ error.h
 @@ -229,8 +229,8 @@ struct diag_dgram {
  } ;
