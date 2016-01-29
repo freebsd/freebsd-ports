@@ -58,6 +58,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a0d77bc8-c6a7-11e5-96d6-14dae9d210b8">
+    <topic>typo3 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>typo3</name>
+	<range><lt>7.6.1</lt></range>
+      </package>
+      <package>
+	<name>typo3-lts</name>
+	<range><lt>6.2.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>TYPO3 Security Team reports:</p>
+	<blockquote cite="http://lists.typo3.org/pipermail/typo3-announce/2015/000351.html">
+	  <p>It has been discovered that TYPO3 CMS is susceptible to
+	    Cross-Site Scripting and Cross-Site Flashing.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.typo3.org/pipermail/typo3-announce/2015/000351.html</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-010/</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-011/</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-012/</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-013/</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-014/</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-015/</url>
+    </references>
+    <dates>
+      <discovery>2015-12-15</discovery>
+      <entry>2016-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="93eadedb-c6a6-11e5-96d6-14dae9d210b8">
     <topic>nghttp2 -- use after free</topic>
     <affects>
