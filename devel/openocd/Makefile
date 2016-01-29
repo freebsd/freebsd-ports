@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openocd
-PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTVERSION=	0.9.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -49,7 +48,7 @@ SYSFSGPIO=	Support Programming via sysfs GPIOs
 RMTBITBANG_DESC=Support Remote-Bitbang Driver
 MINIDRIVER_DESC=Dummy minidriver only (will exclude others!)
 
-USES=		gmake libtool tar:bzip2
+USES=		gmake libtool pkgconfig tar:bzip2
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 INFO=		openocd
 
@@ -115,14 +114,15 @@ CONFIGURE_ARGS+=	--disable-dummy
 .endif
 
 .if ${PORT_OPTIONS:MFT2232}
-CONFIGURE_ARGS+=	--enable-ft2232_libftdi
+CONFIGURE_ARGS+=	--enable-legacy-ft2232_libftdi
 WITH_LIBFTDI=		yes
 .else
-CONFIGURE_ARGS+=	--disable-ft2232_libftdi
+CONFIGURE_ARGS+=	--disable-legacy-ft2232_libftdi
 .endif
 
 .if ${PORT_OPTIONS:MFTDI}
 CONFIGURE_ARGS+=	--enable-ftdi
+WITH_LIBFTDI=		yes
 .else
 CONFIGURE_ARGS+=	--disable-ftdi
 .endif
