@@ -1,7 +1,9 @@
 bin/rrd2whisper.py
 bin/whisper-create.py
+bin/whisper-diff.py
 bin/whisper-dump.py
 bin/whisper-fetch.py
+bin/whisper-fill.py
 bin/whisper-info.py
 bin/whisper-merge.py
 bin/whisper-resize.py
