@@ -4,6 +4,7 @@
 PORTNAME=	RetroArch
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	yuri@rawbw.com
@@ -12,7 +13,8 @@ COMMENT=	Cross-platform entertainment system based on libretro API
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxkbcommon.so:${PORTSDIR}/x11/libxkbcommon
+LIB_DEPENDS=	libxkbcommon.so:${PORTSDIR}/x11/libxkbcommon \
+		libdrm.so:${PORTSDIR}/graphics/libdrm
 
 OPTIONS_DEFINE=	FFMPEG OSS JACK PULSEAUDIO ALSA SDL OPENGL OPENAL NETPLAY PYTHON V4L FREETYPE FBO
 OPTIONS_DEFAULT=FFMPEG OSS PULSEAUDIO SDL OPENGL OPENAL NETPLAY PYTHON V4L FREETYPE FBO
@@ -33,14 +35,15 @@ ALSA_CONFIGURE_ENABLE=	alsa
 SDL_USE=		SDL=sdl2 image2
 SDL_CONFIGURE_ON=	--disable-sdl --enable-sdl2
 SDL_CONFIGURE_OFF=	--disable-sdl --disable-sdl2
-OPENGL_USE=		GL=gl
+OPENGL_USE=		GL=gl,gbm
 OPENGL_CONFIGURE_ENABLE=opengl
 OPENAL_USES=		openal:soft
 OPENAL_CONFIGURE_ENABLE=al
 NETPLAY_CONFIGURE_ENABLE=	netplay
 PYTHON_CONFIGURE_ENABLE=python
-PYTHON_USES=		python:3.4+
+PYTHON_USES=		python:3
 V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+V4L_BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
 V4L_CONFIGURE_ENABLE=	v4l2
 FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
@@ -56,7 +59,7 @@ GH_ACCOUNT=	libretro
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--global-config-dir=${LOCALBASE}/etc
-USES=		compiler:c++11-lib gmake
+USES=		compiler:c++11-lib gmake pkgconfig
 USE_XORG=	x11 xext xinerama xv xxf86vm
 
 MAN1PAGES=	retroarch-cg2glsl.1 retroarch-joyconfig.1 retroarch.1
