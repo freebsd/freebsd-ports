@@ -592,7 +592,6 @@
     SUBDIR += php5-pdo_pgsql
     SUBDIR += php5-pdo_sqlite
     SUBDIR += php5-pgsql
-    SUBDIR += php5-redis
     SUBDIR += php5-sqlite3
     SUBDIR += php5-sybase_ct
     SUBDIR += php5-tarantool
