@@ -16,7 +16,7 @@ LICENSE=	MIT
 
 CONFLICTS=	x11iraf-[0-9]*
 
-USES=		tar:tgz
+USES=		ncurses tar:tgz
 USE_XORG=	xft
 GNU_CONFIGURE=	yes
 
