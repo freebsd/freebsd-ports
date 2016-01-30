@@ -3,7 +3,7 @@
 
 PORTNAME=	bareos
 DISTVERSION=	15.2.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -14,11 +14,12 @@ GH_TAGNAME=	fb775025d54ef77abb4d67cc5aa9ecb90bca4839
 MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Backup archiving recovery open sourced (server)
 
-USES+=		libtool:keepla
+USES+=		libtool:keepla pkgconfig
 
 CONFLICTS?=	bacula*-server-*
 
-LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2 \
+		libjansson.so:${PORTSDIR}/devel/jansson
 
 USERS=		bareos
 GROUPS=		${USERS}
@@ -84,7 +85,8 @@ CONFIGURE_ARGS+=--with-tcp-wrappers=/usr/lib \
 		--with-sbin-perm=755 \
 		--with-db-user=bareos \
 		--with-baseport=9101 \
-		--with-pid-dir=/var/run/bareos
+		--with-pid-dir=/var/run/bareos \
+		--with-jansson=${LOCALBASE}
 
 .if defined(WITH_CLIENT_ONLY)
 LMDB_CONFIGURE_ON=	--enable-lmdb=yes
