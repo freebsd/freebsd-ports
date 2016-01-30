@@ -16,6 +16,8 @@ COMMENT=	Technology for engineering high-reliability s/w applications
 LICENSE=	GPLv3
 
 BROKEN=		brutally fails test suite - with ICE
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-02-29
 
 BUILD_DEPENDS=	gnatcoll>=2014:${PORTSDIR}/devel/gnatcoll
 RUN_DEPENDS=	gnatwhy3:${PORTSDIR}/math/why3-spark \

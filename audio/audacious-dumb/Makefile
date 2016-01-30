@@ -18,6 +18,8 @@ BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
 		${LOCALBASE}/lib/libdumb.a:${PORTSDIR}/audio/dumb
 
 BROKEN=		Does not compile with audacious 3.6.x.
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-02-29
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
