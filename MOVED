@@ -8118,3 +8118,4 @@ www/jawstats||2016-01-25|Has expired: PHP 5.4 EOL reached
 www/ojs2||2016-01-25|Has expired: PHP 5.4 EOL reached
 www/webcalendar||2016-01-25|Has expired: PHP 5.4 EOL reached
 devel/py-msgpack|devel/py-msgpack-python|2016-01-28|Renamed to match upstream naming
+www/xpi-bookmarkdd||2016-01-30|Has expired, incompatible with Firefox 34+
