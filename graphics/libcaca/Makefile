@@ -10,7 +10,7 @@ MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphics library that outputs text instead of pixels
 
-USES=		libtool pathfix pkgconfig
+USES=		libtool ncurses pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-doc \
