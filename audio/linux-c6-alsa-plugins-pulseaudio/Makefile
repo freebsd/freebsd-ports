@@ -5,7 +5,6 @@ PORTNAME=	alsa-plugins-pulseaudio
 PORTVERSION=	1.0.21
 PORTREVISION=	2
 CATEGORIES=	audio linux
-PKGNAMEPREFIX=	linux-${USE_LINUX}-
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	PulseAudio plugin for ALSA (Linux CentOS ${LINUX_DIST_VER})

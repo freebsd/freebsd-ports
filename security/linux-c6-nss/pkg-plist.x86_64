@@ -1,10 +1,15 @@
 etc/pki/nssdb/cert8.db
 etc/pki/nssdb/key3.db
 etc/pki/nssdb/secmod.db
+etc/prelink.conf.d/nss-softokn-prelink.conf
 lib64/libfreebl3.chk
 lib64/libfreebl3.so
+lib64/libfreeblpriv3.chk
+lib64/libfreeblpriv3.so
 usr/lib64/libfreebl3.chk
 usr/lib64/libfreebl3.so
+usr/lib64/libfreeblpriv3.chk
+usr/lib64/libfreeblpriv3.so
 usr/lib64/libnss3.so
 usr/lib64/nss/libnssckbi.so
 usr/lib64/libnssdbm3.chk
@@ -18,4 +23,5 @@ usr/lib64/libsoftokn3.so
 usr/lib64/nss/unsupported-tools/shlibsign
 usr/lib64/nss/unsupported-tools/bltest
 usr/lib64/nss/unsupported-tools/fipstest
+usr/share/dracut/modules.d/05nss-softokn/install
 @dir usr/lib64/nss/saved
