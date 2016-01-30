@@ -704,6 +704,7 @@
     SUBDIR += wxMaxima
     SUBDIR += x12arima
     SUBDIR += xblas
+    SUBDIR += xfce4-calculator-plugin
     SUBDIR += xgobi
     SUBDIR += xgraph
     SUBDIR += xlapack
