@@ -1,5 +1,5 @@
---- ./Makefile.orig	1996-05-26 09:26:46.000000000 +0000
-+++ ./Makefile	2014-02-06 21:14:36.000000000 +0000
+--- Makefile.orig	1996-05-26 09:26:46 UTC
++++ Makefile
 @@ -24,22 +24,22 @@
  # But where to change without revealing my secret identity?
  
@@ -29,7 +29,7 @@
  
  # Where to install the Tcl code, if you use the Tcl code that is.
  TCL_DIR = $(TIMID_DIR)
-@@ -112,9 +112,9 @@
+@@ -112,9 +112,9 @@ EXTRALIBS += -lncurses
  #EXTRALIBS += -lgen
  
  # Select the Tcl/Tk interface
@@ -42,7 +42,7 @@
  #EXTRAINCS +=
  #EXTRALIBS +=
  
-@@ -136,7 +136,7 @@
+@@ -136,7 +136,7 @@ DISTZIP = timid$(FNVERSION).zip
  SDIST = timidity-lib-$(SUPPVERSION).tar.gz
  SDISTZIP = tilib$(FNSUPPVERSION).zip
  
@@ -51,7 +51,16 @@
  	-DTIMID_VERSION=\"$(VERSION)\" $(SYSTEM) $(EXTRAINCS)
  
  ########### All relevant files.. Anybody know autoconf?
-@@ -228,10 +228,10 @@
+@@ -220,7 +220,7 @@ spotless: clean
+ 	$(CC) $(CFLAGS) -c $<
+ 
+ $(PROJ): $(COBJS)
+-	$(CC) $(CFLAGS) -o $(PROJ) $(COBJS) $(EXTRALIBS) -lm
++	$(CC) $(CFLAGS) -o $(PROJ) $(COBJS) $(LDFLAGS) $(EXTRALIBS) -lm
+ 
+ bag: bag.c
+ 	$(CC) $(CFLAGS) -o bag bag.c
+@@ -228,10 +228,10 @@ bag: bag.c
  wav2pat: wav2pat.c
  	$(CC) $(CFLAGS) -o wav2pat wav2pat.c
  
@@ -66,7 +75,7 @@
  
  ########### Installation targets
  
-@@ -249,22 +249,22 @@
+@@ -249,22 +249,22 @@ install.all: install.bin install.man ins
  
  # install.bin: $(PROJ) Dumb make thinks it has to have $(COBJS) to install...
  install.bin:

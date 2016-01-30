@@ -16,7 +16,7 @@ CONFLICTS=	timidity++-2.*
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias
+USES=		alias ncurses
 TIINS=		goemon.tgz
 INSTALL_TARGET=	install.all
 
