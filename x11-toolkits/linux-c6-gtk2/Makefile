@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits linux
 DISTFILES=	${DISTNAME}.${LINUX_RPM_ARCH}.rpm \
 		${PORTNAME}-engines-2.18.4-5.el6.${LINUX_DIST}.${LINUX_RPM_ARCH}.rpm \
 		pixman-0.32.4-4.el6.${LINUX_RPM_ARCH}.rpm \
-		jasper-libs-1.900.1-15.el6_1.1.${LINUX_RPM_ARCH}.rpm
+		jasper-libs-1.900.1-16.el6_6.3.${LINUX_RPM_ARCH}.rpm
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GTK+ library, version 2.X  (Linux CentOS ${LINUX_DIST_VER})
@@ -28,7 +28,7 @@ DESCR=		${.CURDIR}/../${PORTNAME}0/pkg-descr
 .if defined(PACKAGE_BUILDING)
 SRC_DISTFILES=	gtk2-${PORTVERSION}-${RPMVERSION}.src.rpm:SOURCE \
 		pixman-0.32.4-4.el6.src.rpm:SOURCE \
-		jasper-1.900.1-15.el6_1.1.src.rpm:SOURCE
+		jasper-1.900.1-16.el6_6.3.src.rpm:SOURCE
 .endif
 
 .include <bsd.port.mk>

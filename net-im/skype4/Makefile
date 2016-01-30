@@ -3,6 +3,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	4.3.0.37
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.skype.com/linux/
@@ -11,8 +12,7 @@ PKGNAMESUFFIX=	4
 MAINTAINER=	xmj@chaot.net
 COMMENT=	P2P VoIP software
 
-RUN_DEPENDS=	${LINUXBASE}/lib/skype_oss_wrapper/libpulse.so.0:${PORTSDIR}/audio/linux-skype_oss_wrapper \
-	linux-${USE_LINUX}-pulseaudio-libs-glib2>0:${PORTSDIR}/audio/linux-c6-pulseaudio-libs-glib2
+RUN_DEPENDS=	${LINUXBASE}/lib/skype_oss_wrapper/libpulse.so.0:${PORTSDIR}/audio/linux-skype_oss_wrapper
 
 CONFLICTS=	skype-devel-[0-9]*
 
