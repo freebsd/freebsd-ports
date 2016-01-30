@@ -11,6 +11,7 @@ COMMENT=	Interactive C program browser
 
 LICENSE=	BSD3CLAUSE
 
+USES=		ncurses
 OPTIONS_DEFINE=	XCSCOPE
 OPTIONS_SUB=	yes
 XCSCOPE_DESC=	Install (X)Emacs package
