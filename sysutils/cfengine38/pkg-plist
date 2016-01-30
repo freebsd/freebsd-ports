@@ -302,6 +302,7 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/services_win.cf
 %%DOCSDIR%%/examples/setuidlog.cf
 %%DOCSDIR%%/examples/setvar.cf
+%%DOCSDIR%%/examples/simple_ssh_key_distribution.cf
 %%DOCSDIR%%/examples/shuffle.cf
 %%DOCSDIR%%/examples/software_dist.cf
 %%DOCSDIR%%/examples/software_update_version_yum.cf
