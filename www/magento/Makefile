@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/magento
 OPTIONS_DEFINE=	OAUTH SESSIONS REDIS EXAMPLES
 OAUTH_DESC=	Depend on pecl-oauth for REST API
 SESSIONS_DESC=	Mark Cm/RedisSession module active
-REDIS_DESC=	Depend on php5-redis for faster redis backend
+REDIS_DESC=	Depend on php56-redis for faster redis backend
 #SNAPPY_DESC=	Use google snappy for Redis Cache compression
 
 NO_BUILD=	yes
@@ -29,7 +29,7 @@ MAGENTODIR?=	www/magento
 RUN_DEPENDS+=	pecl-oauth>=1.2.3:${PORTSDIR}/net/pecl-oauth
 .endif
 .if !empty(${PORT_OPTIONS:MREDIS})
-RUN_DEPENDS+=	php5-redis>=2.2.0:${PORTSDIR}/databases/php5-redis
+RUN_DEPENDS+=	php56-redis>=2.2.0:${PORTSDIR}/databases/php56-redis
 .endif
 # First need to submit the port
 #.if ${PORT_OPTIONS:MSNAPPY}
