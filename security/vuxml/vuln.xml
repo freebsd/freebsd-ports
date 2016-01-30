@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c1c18ee1-c711-11e5-96d6-14dae9d210b8">
+    <topic>nginx -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><lt>1.8.1</lt></range>
+      </package>
+      <package>
+	<name>nginx-devel</name>
+	<range><lt>1.9.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Maxim Dounin reports:</p>
+	<blockquote cite="http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html">
+	  <p>Several problems in nginx resolver were identified, which
+	    might allow an attacker to cause worker process crash, or might have
+	    potential other impact if the "resolver" directive
+	    is used in a configuration file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html</url>
+      <cvename>CVE-2016-0742</cvename>
+      <cvename>CVE-2016-0746</cvename>
+      <cvename>CVE-2016-0747</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-26</discovery>
+      <entry>2016-01-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a0d77bc8-c6a7-11e5-96d6-14dae9d210b8">
     <topic>typo3 -- multiple vulnerabilities</topic>
     <affects>
