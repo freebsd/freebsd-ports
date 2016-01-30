@@ -1,0 +1,4 @@
+A Python interface to libarchive. It uses the standard ctypes module to
+dynamically load and access the C library.
+
+WWW: https://github.com/Changaco/python-libarchive-c
