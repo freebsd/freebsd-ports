@@ -2,6 +2,7 @@
 
 PORTNAME=	zookeeper
 PORTVERSION=	3.4.7
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/current
@@ -37,6 +38,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		JAVALIBDIR=${JAVALIBDIR}
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7
 JAVA_VENDOR=	openjdk
@@ -45,8 +47,6 @@ USE_RC_SUBR=	zookeeper
 
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	@${REINPLACE_CMD} "/dataDir/s|=.*|=${ZOOKEEPER_DBDIR}|" ${WRKDIR}/${DISTNAME}/conf/zoo_sample.cfg
 	@${RM} ${WRKDIR}/${DISTNAME}/conf/zoo_sample.cfg.bak
@@ -54,7 +54,8 @@ post-extract:
 do-install:
 	${CP} -Rp ${WRKDIR}/${DISTNAME}/conf/ ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${ZOOKEEPER_JAR} ${STAGEDIR}${JAVALIBDIR}
-	${LN} -nfs ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	(cd ${STAGEDIR}/${JAVAJARDIR} && ${LN} -nfs \
+		${PORTNAME}-${PORTVERSION}.jar ${PORTNAME}.jar)
 
 	${INSTALL_SCRIPT} ${WRKDIR}/zkCli.sh ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKDIR}/zkServer.sh ${STAGEDIR}${PREFIX}/bin/
@@ -62,10 +63,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${ZOOKEEPER_LOGDIR}
 	${MKDIR} ${STAGEDIR}${ZOOKEEPER_DBDIR}
 
-.if (PORT_OPTIONS:MDOCS)
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKDIR}/${DISTNAME}/docs && \
 	${TAR} -cf - . | ${TAR} -xf - -C ${STAGEDIR}${DOCSDIR})
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
