@@ -6,6 +6,7 @@ bin/pg_receivexlog
 bin/pg_resetxlog
 bin/pg_recvlogical
 bin/pg_archivecleanup
+bin/pg_rewind
 bin/pg_test_fsync
 bin/pg_test_timing
 bin/pg_xlogdump
