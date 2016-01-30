@@ -94,6 +94,7 @@
     SUBDIR += deadbeef-jack-plugin
     SUBDIR += deadbeef-mpris-plugin
     SUBDIR += deadbeef-mpris2-plugin
+    SUBDIR += deadbeef-musical-spectrum-plugin
     SUBDIR += decibel-audio-player
     SUBDIR += deforaos-mixer
     SUBDIR += dekagen

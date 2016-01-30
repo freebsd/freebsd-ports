@@ -1,0 +1,5 @@
+This plugin is based on DeaDBeeF stock spectrum.  It offers variable FFT
+size (up to 32768), Blackmann-Harris and Hanning window functions, and
+various eye candy options.
+
+WWW: https://github.com/cboxdoerfer/ddb_musical_spectrum
