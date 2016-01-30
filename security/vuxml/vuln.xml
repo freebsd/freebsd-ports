@@ -63,7 +63,7 @@ Notes:
     <affects>
       <package>
 	<name>nginx</name>
-	<range><lt>1.8.1</lt></range>
+	<range><lt>1.8.1,2</lt></range>
       </package>
       <package>
 	<name>nginx-devel</name>
