@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	logrotate
-PORTVERSION=	3.8.9
-PORTREVISION=	1
+PORTVERSION=	3.9.2
 CATEGORIES=	sysutils
-MASTER_SITES=	https://fedorahosted.org/releases/l/o/logrotate/
 
 MAINTAINER=	js@iksz.hu
 COMMENT=	Daemon to rotate, compress, remove, and mail system log files
@@ -14,10 +12,12 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
+USE_GITHUB=	yes
+
 PATCH_STRIP=		-p1
-USES=		gmake
-MAKE_ENV=	"BASEDIR=${PREFIX}"
-CPP=		${CC} -E
+USES=		gmake autoreconf
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
 post-install:
 	@${SED} -e 's|__PREFIX__|${PREFIX}|' \
