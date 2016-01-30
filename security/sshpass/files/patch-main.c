@@ -1,5 +1,5 @@
---- main.c.orig	2011-08-06 07:04:33 UTC
-+++ main.c
+--- main.c.orig	2011-08-06 15:04:33.000000000 +0800
++++ main.c	2016-01-30 22:17:43.489015000 +0800
 @@ -1,5 +1,5 @@
  /*  This file is part of "sshpass", a tool for batch running password ssh authentication
 - *  Copyright (C) 2006 Lingnu Open Source Consulting Ltd.
@@ -7,7 +7,7 @@
   *
   *  This program is free software; you can redistribute it and/or modify
   *  it under the terms of the GNU General Public License as published by
-@@ -69,6 +69,8 @@ struct {
+@@ -69,6 +69,8 @@
  	int fd;
  	const char *password;
      } pwsrc;
@@ -16,7 +16,7 @@
  } args;
  
  static void show_help()
-@@ -77,6 +79,7 @@ static void show_help()
+@@ -77,6 +79,7 @@
  	    "   -f filename   Take password to use from file\n"
  	    "   -d number     Use number as file descriptor for getting password\n"
  	    "   -p password   Provide password as argument (security unwise)\n"
@@ -24,7 +24,7 @@
  	    "   -e            Password is passed as env-var \"SSHPASS\"\n"
  	    "   With no parameters - password will be taken from stdin\n\n"
  	    "   -h            Show help (this screen)\n"
-@@ -99,7 +102,7 @@ static int parse_options( int argc, char
+@@ -99,7 +102,7 @@
      fprintf(stderr, "Conflicting password source\n"); \
      error=RETURN_CONFLICTING_ARGUMENTS; }
  
@@ -33,7 +33,7 @@
  	switch( opt ) {
  	case 'f':
  	    // Password should come from a file
-@@ -130,6 +133,9 @@ static int parse_options( int argc, char
+@@ -130,6 +133,9 @@
                      optarg[i]='z';
              }
  	    break;
@@ -43,7 +43,20 @@
  	case 'e':
  	    VIRGIN_PWTYPE;
  
-@@ -359,7 +365,7 @@ int handleoutput( int fd )
+@@ -265,6 +271,12 @@
+ 	setsid();
+         // This line makes the ptty our controlling tty. We do not otherwise need it open
+         slavept=open(name, O_RDWR );
++#ifdef __FreeBSD__
++	if (ioctl(slavept, TIOCSCTTY, NULL) == -1) {
++	    perror("sshpass: Failed to TIOCSCTTY");
++	    exit(RETURN_RUNTIME_ERROR);
++	}
++#endif
+         close( slavept );
+ 	
+ 	close( masterpt );
+@@ -359,7 +371,7 @@
      // We are looking for the string
      static int prevmatch=0; // If the "password" prompt is repeated, we have the wrong password.
      static int state1, state2;
@@ -52,7 +65,7 @@
      static const char compare2[]="The authenticity of host "; // Asks to authenticate host
      // static const char compare3[]="WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!"; // Warns about man in the middle attack
      // The remote identification changed error is sent to stderr, not the tty, so we do not handle it.
-@@ -367,6 +373,10 @@ int handleoutput( int fd )
+@@ -367,6 +379,10 @@
      char buffer[40];
      int ret=0;
  
