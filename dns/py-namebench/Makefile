@@ -9,18 +9,19 @@ MASTER_SITES=	GOOGLE_CODE \
 		LOCAL/jgh/dns/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open Source DNS benchmark utility
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS+= ${PYTHON_PKGNAMEPREFIX}Jinja2>=2.5.5:${PORTSDIR}/devel/py-Jinja2 \
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.5.5:${PORTSDIR}/devel/py-Jinja2 \
 	${PYTHON_PKGNAMEPREFIX}graphy>=1.0:${PORTSDIR}/graphics/py-graphy \
 	${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:${PORTSDIR}/dns/py-dnspython \
 	${PYTHON_PKGNAMEPREFIX}httplib2>=0.6.0:${PORTSDIR}/www/py-httplib2 \
 	${PYTHON_PKGNAMEPREFIX}simplejson>=2.1.6:${PORTSDIR}/devel/py-simplejson
+
+USES=	python tar:tgz
 
 .include <bsd.port.options.mk>
 
@@ -33,7 +34,6 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	README.txt
 
-USES=		python
 USE_PYTHON=	distutils autoplist
 
 PYDISTUTILS_INSTALLARGS+=	--install-data=${PREFIX}/share
