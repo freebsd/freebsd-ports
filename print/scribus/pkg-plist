@@ -675,6 +675,7 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/de/color2.html
 %%PORTDOCS%%%%DOCSDIR%%/de/color3.html
 %%PORTDOCS%%%%DOCSDIR%%/de/color4.html
+%%PORTDOCS%%%%DOCSDIR%%/de/color4a.html
 %%PORTDOCS%%%%DOCSDIR%%/de/color5.html
 %%PORTDOCS%%%%DOCSDIR%%/de/color6.html
 %%PORTDOCS%%%%DOCSDIR%%/de/color7.html
@@ -869,6 +870,7 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/de/images/eps-imp5.png
 %%PORTDOCS%%%%DOCSDIR%%/de/images/externallink.png
 %%PORTDOCS%%%%DOCSDIR%%/de/images/externalweblink.png
+%%PORTDOCS%%%%DOCSDIR%%/de/images/faecher_hlc-lab.png
 %%PORTDOCS%%%%DOCSDIR%%/de/images/file-error1.png
 %%PORTDOCS%%%%DOCSDIR%%/de/images/file-error2.png
 %%PORTDOCS%%%%DOCSDIR%%/de/images/file-error3.png
@@ -1214,6 +1216,7 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/color2.html
 %%PORTDOCS%%%%DOCSDIR%%/en/color3.html
 %%PORTDOCS%%%%DOCSDIR%%/en/color4.html
+%%PORTDOCS%%%%DOCSDIR%%/en/color4a.html
 %%PORTDOCS%%%%DOCSDIR%%/en/color5.html
 %%PORTDOCS%%%%DOCSDIR%%/en/color6.html
 %%PORTDOCS%%%%DOCSDIR%%/en/color7.html
@@ -1405,6 +1408,7 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/images/eps-imp5.png
 %%PORTDOCS%%%%DOCSDIR%%/en/images/externallink.png
 %%PORTDOCS%%%%DOCSDIR%%/en/images/externalweblink.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/faecher_hlc-lab.png
 %%PORTDOCS%%%%DOCSDIR%%/en/images/file-error1.png
 %%PORTDOCS%%%%DOCSDIR%%/en/images/file-error2.png
 %%PORTDOCS%%%%DOCSDIR%%/en/images/file-error3.png
@@ -2901,6 +2905,10 @@ share/pixmaps/scribus.png
 %%DATADIR%%/swatches/Bundesregierung_CMYK_TZ.xml
 %%DATADIR%%/swatches/Bundesregierung_HKS.xml
 %%DATADIR%%/swatches/COPYING_RESENE.txt
+%%DATADIR%%/swatches/CIE-HLC_CMYK.xml
+%%DATADIR%%/swatches/CIE-HLC_RGB.xml
+%%DATADIR%%/swatches/CIE-LAB_CMYK.xml
+%%DATADIR%%/swatches/CIE-LAB_RGB.xml
 %%DATADIR%%/swatches/Classic_Kit.xml
 %%DATADIR%%/swatches/ColorBrewer.xml
 %%DATADIR%%/swatches/Colortrend Wood Stains_bs00_3.eps
