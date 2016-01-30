@@ -4850,7 +4850,7 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-openssl</name>
-	<range><ge>0</ge></range>
+	<range><lt>1.0.1e_7</lt></range>
       </package>
     </affects>
     <description>
@@ -4882,6 +4882,7 @@ Notes:
     <dates>
       <discovery>2015-12-03</discovery>
       <entry>2015-12-05</entry>
+      <modified>2016-01-31</modified>
     </dates>
   </vuln>
 
@@ -14375,7 +14376,7 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-libxml2</name>
-	<range><ge>*</ge></range>
+	<range><lt>2.7.6_5</lt></range>
       </package>
       <package>
 	<name>linux-f10-libxml2</name>
@@ -14401,7 +14402,7 @@ Notes:
     <dates>
       <discovery>2015-04-14</discovery>
       <entry>2015-07-01</entry>
-      <modified>2015-07-15</modified>
+      <modified>2015-01-31</modified>
     </dates>
   </vuln>
 
@@ -19493,7 +19494,7 @@ Notes:
       </package>
       <package>
 	<name>linux-f10-xorg-libs</name>
-	<range><ge>*</ge></range>
+	<range><lt>7.4_4</lt></range>
       </package>
     </affects>
     <description>
@@ -19524,7 +19525,7 @@ Notes:
     <dates>
       <discovery>2015-03-17</discovery>
       <entry>2015-03-18</entry>
-      <modified>2015-07-15</modified>
+      <modified>2016-01-31</modified>
     </dates>
   </vuln>
 
