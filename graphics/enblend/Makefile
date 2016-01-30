@@ -11,7 +11,8 @@ DISTNAME=	enblend-enfuse-${PORTVERSION}
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	Tool for image blending with multiresolution splines
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo \
+BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
+		${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo \
 		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
