@@ -1,6 +1,6 @@
---- sys/unix/Makefile.src.orig	Sat Aug  5 19:52:57 2000
-+++ sys/unix/Makefile.src	Sat May 18 01:19:31 2002
-@@ -139,19 +139,28 @@
+--- sys/unix/Makefile.src.orig	2000-08-05 10:52:57 UTC
++++ sys/unix/Makefile.src
+@@ -139,19 +139,28 @@ SYSOBJ = ioctl.o unixmain.o unixtty.o un
  # directories.  The ones given below is the usual spot for linux systems.
  # The paths are for glibconfig.h and gnomesupport.h respectively.
  #
@@ -33,7 +33,7 @@
  #LD=g++
  
  # Set the WINSRC, WINOBJ, and WINLIB lines to correspond to your desired
-@@ -204,7 +213,26 @@
+@@ -204,7 +213,26 @@ WINBEOBJ =
  #
  #
  WINSRC = $(WINTTYSRC)
@@ -60,7 +60,12 @@
  
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -224,19 +252,19 @@
+@@ -220,23 +248,23 @@ WINOBJ = $(WINTTYOBJ)
+ # WINTTYLIB = -lcurses
+ # WINTTYLIB = -lcurses16
+ # WINTTYLIB = -lncurses
+-WINTTYLIB = -ltermlib
++WINTTYLIB = -lncurses
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
@@ -83,7 +88,7 @@
  #
  # libraries for Gem port
  WINGEMLIB = -le_gem -lgem
-@@ -245,6 +273,15 @@
+@@ -245,6 +273,15 @@ WINGEMLIB = -le_gem -lgem
  WINBELIB = -lbe
  
  WINLIB = $(WINTTYLIB)
@@ -99,7 +104,16 @@
  
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
-@@ -445,10 +482,10 @@
+@@ -376,7 +413,7 @@ $(GAME):	$(SYSTEM)
+ 
+ Sysunix:	$(HOBJ) Makefile
+ 	@echo "Loading ..."
+-	@$(CC) $(LFLAGS) -o $(GAME) $(HOBJ) $(WINLIB) $(LIBS)
++	@$(CC) $(LFLAGS) -o $(GAME) $(HOBJ) $(LDFLAGS) $(WINLIB) $(LIBS)
+ 	@touch Sysunix
+ 
+ Sys3B2:	$(HOBJ) Makefile
+@@ -445,10 +482,10 @@ objects.o:
  
  # Qt windowport meta-object-compiler output
  qt_kde0.moc: ../include/qt_kde0.h
