@@ -12,13 +12,14 @@ COMMENT=	Snake game written in C and ncurses
 
 LICENSE=	MIT
 
-USES=		tar:tgz
+USES=		ncurses tar:tgz
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c -lcurses)
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c \
+		${LDFLAGS} -lncurses)
 
 do-install:
 	(cd ${WRKSRC} \
