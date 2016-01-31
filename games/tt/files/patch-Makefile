@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Sep 11 15:09:08 2003
-+++ Makefile	Fri Sep 12 22:20:35 2003
-@@ -6,10 +6,10 @@
+--- Makefile.orig	2003-05-27 10:46:17 UTC
++++ Makefile
+@@ -6,13 +6,14 @@ OBJ = $(SRC:.c=.o)
  LINTFLAGS = -abh
  
  # --- Choose one of these CFLAGS ---
@@ -14,4 +14,9 @@
 +#CFLAGS += $(OPT) -DNO_USLEEP_SYSCALL		# Generic BSD?
  
  # --- Choose one of these LDLIBS ---
- LDLIBS = -lcurses -ltermcap 			# Sun and Generic BSD
+-LDLIBS = -lcurses -ltermcap 			# Sun and Generic BSD
++LDLIBS=	-lncurses
++#LDLIBS = -lcurses -ltermcap 			# Sun and Generic BSD
+ #LDLIBS = -lcurses -lx				# SCO System V
+ #LBLIBS = -lcurses				# Generic System V?
+ 
