@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake ncurses
 
 PLIST_FILES=	bin/aecat bin/aewan bin/aemakeflic \
 		man/man1/aecat.1.gz \
