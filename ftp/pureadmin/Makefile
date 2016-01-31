@@ -10,25 +10,24 @@ MASTER_SITES=	SF/purify/Default/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Management utility for the PureFTPd
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		fam gettext gmake pathfix pkgconfig
+USES=		fam gettext gmake localbase pathfix pkgconfig
 USE_GNOME=	intltool libglade2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lX11 -lm
+LIBS+=		-lX11 -lm
 
 PORTDOCS=	index.txt introduction.txt main_window.txt \
 		preferences.txt user_manager.txt
 
+OPTIONS_DEFINE=	DOCS
+
 pre-configure:
 	@${REINPLACE_CMD} -e '/install-data-local:/s|install-docs||' ${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
