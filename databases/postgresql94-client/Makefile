@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
+
 COMMENT=	PostgreSQL database (client)
 
 MASTERDIR=	${.CURDIR}/../postgresql94-server
