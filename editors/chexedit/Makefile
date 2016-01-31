@@ -15,6 +15,7 @@ COMMENT=	Full screen text mode Hex editor using the [n]curses library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/chexedit \
 		man/man1/chexedit.1.gz
