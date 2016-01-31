@@ -14,7 +14,7 @@ COMMENT=	Audio mixer for X11, terminal, or command line
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2
+USES=		ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--enable-own-labels \
