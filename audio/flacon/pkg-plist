@@ -9,12 +9,14 @@ share/icons/hicolor/48x48/apps/flacon.png
 %%DATADIR%%/translations/flacon_de.qm
 %%DATADIR%%/translations/flacon_es.qm
 %%DATADIR%%/translations/flacon_es_MX.qm
+%%DATADIR%%/translations/flacon_et.qm
 %%DATADIR%%/translations/flacon_fr.qm
 %%DATADIR%%/translations/flacon_gl.qm
 %%DATADIR%%/translations/flacon_hu.qm
 %%DATADIR%%/translations/flacon_it.qm
 %%DATADIR%%/translations/flacon_ja_JP.qm
 %%DATADIR%%/translations/flacon_lt.qm
+%%DATADIR%%/translations/flacon_nb.qm
 %%DATADIR%%/translations/flacon_pl.qm
 %%DATADIR%%/translations/flacon_pl_PL.qm
 %%DATADIR%%/translations/flacon_pt_BR.qm
