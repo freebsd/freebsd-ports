@@ -9,6 +9,7 @@ MASTER_SITES=	SUNSITE/games/strategy
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic space-age stock trading game
 
+USES=		ncurses
 PLIST_FILES=	bin/starlanes man/man6/starlanes.6.gz
 
 post-patch:
@@ -17,8 +18,8 @@ post-patch:
 		 s|(restrict|(m_restrict|' ${WRKSRC}/starlanes.c
 
 do-build:
-	(cd ${WRKSRC} \
-		&& ${CC} ${CFLAGS} -o starlanes starlanes.c -lcurses)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${CC} ${CFLAGS} -o starlanes starlanes.c ${LDFLAGS} -lncurses)
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} starlanes ${STAGEDIR}${PREFIX}/bin)
