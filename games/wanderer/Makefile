@@ -12,8 +12,8 @@ COMMENT=	Rogue like adventure game
 
 LICENSE=	GPLv2+
 
+USES=		ncurses
 MAKE_ENV=	MKDIR="${MKDIR}"
-
 CFLAGS+=	-Wno-return-type
 
 post-patch:
