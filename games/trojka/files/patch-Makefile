@@ -1,6 +1,6 @@
 --- Makefile.orig	1995-10-20 21:17:43 UTC
 +++ Makefile
-@@ -6,14 +6,24 @@
+@@ -6,21 +6,31 @@
  #
  
  
@@ -27,7 +27,15 @@
  
  clean:
  	rm -f $(PROGS) *.o core a.out trojka.scores
-@@ -53,3 +63,5 @@ hpux:	
+ 
+ trojka: $(OBJS)
+ #	$(CC) $(CFLAGS) $(OBJS) -lcurses -ltermlib -o trojka
+-	$(CC) $(CFLAGS) $(OBJS) -lcurses -o trojka
++	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) -lncurses -o trojka
+ 
+ 
+ # patch for HP-UX, need 'codelibs'
+@@ -53,3 +63,5 @@ hpux:
  
  linux:
  	make trojka "CFLAGS=-DLINUX"
