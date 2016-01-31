@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very simple Tetris-style game
 
 ALL_TARGET=	bugs
-USES=		tar:Z
+USES=		ncurses tar:Z
 
 OPTIONS_DEFINE=	DOCS
 
