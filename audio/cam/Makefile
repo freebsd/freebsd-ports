@@ -9,9 +9,10 @@ MASTER_SITES=	SUNSITE/apps/sound/mixers
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cpu's Audio Mixer [curses based]
 
-USES=		tar:tgz
+USES=		ncurses tar:tgz
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		LIBS="${LDFLAGS} -lncurses" \
 		BINDIR="${PREFIX}/bin" \
 		MANDIR="${MAN1PREFIX}/man/man1" \
 		XEFILE=""
