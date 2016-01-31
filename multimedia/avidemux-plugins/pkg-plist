@@ -24,11 +24,13 @@ lib/ADM_plugins6/videoEncoders/libADM_ve_null.so
 lib/ADM_plugins6/videoFilters/libADM_vf_addBorders.so
 lib/ADM_plugins6/videoFilters/libADM_vf_avsfilter.so
 lib/ADM_plugins6/videoFilters/libADM_vf_blackenBorders.so
+lib/ADM_plugins6/videoFilters/libADM_vf_black.so
 lib/ADM_plugins6/videoFilters/libADM_vf_changeFps.so
 lib/ADM_plugins6/videoFilters/libADM_vf_colorYuv.so
 lib/ADM_plugins6/videoFilters/libADM_vf_decimate.so
 lib/ADM_plugins6/videoFilters/libADM_vf_DgBob.so
 lib/ADM_plugins6/videoFilters/libADM_vf_dummy.so
+lib/ADM_plugins6/videoFilters/libADM_vf_fadeTo.so
 lib/ADM_plugins6/videoFilters/libADM_vf_fadeToBlack.so
 lib/ADM_plugins6/videoFilters/libADM_vf_mean.so
 lib/ADM_plugins6/videoFilters/libADM_vf_gauss.so
