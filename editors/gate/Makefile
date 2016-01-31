@@ -13,6 +13,7 @@ COMMENT=	Simple and unobtrusive line-oriented text editor
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-aspell=${LOCALBASE}/bin/aspell
