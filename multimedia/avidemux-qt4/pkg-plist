@@ -2,6 +2,7 @@ bin/avidemux3_jobs_qt4
 bin/avidemux3_qt4
 include/avidemux/2.6/qt4/config.h
 lib/libADM_UIQT46.so
+lib/libADM_openGLQT46.so
 lib/libADM_render6_QT4.so
 share/avidemux6/qt4/i18n/avidemux_ca.qm
 share/avidemux6/qt4/i18n/avidemux_cs.qm

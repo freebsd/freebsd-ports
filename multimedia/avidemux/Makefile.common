@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-AVIDEMUX_VERSION=	2.6.10
+AVIDEMUX_VERSION=	2.6.11
 MASTER_SITES=	\
 		SF/avidemux/avidemux/${PORTVERSION}
 DISTNAME=	avidemux_${PORTVERSION}
@@ -20,7 +20,7 @@ OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME:C/-.*//}/options
 
 USES=		cmake:outsource pkgconfig iconv gmake compiler:features sqlite
 USES+=		dos2unix execinfo
-DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake po/CMakeLists.txt
+DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake
 CMAKE_ARGS+=	-DGNUMAKE_EXECUTABLE=gmake
 CMAKE_ARGS+=	-DAVIDEMUX_PACKAGER=none
 CMAKE_ARGS+=	-DQT5:BOOL=OFF
