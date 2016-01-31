@@ -11,6 +11,8 @@ MASTER_SITES=	SUNSITE/games/strategy/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based battleship type game
 
+USES=		ncurses
+
 OPTIONS_DEFINE=	DOCS
 
 do-install:
