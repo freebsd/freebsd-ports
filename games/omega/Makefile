@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complex rogue-style game of dungeon exploration
 
-USES=		gmake
+USES=		gmake ncurses
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	# empty
 CFLAGS+=	-Wno-return-type
