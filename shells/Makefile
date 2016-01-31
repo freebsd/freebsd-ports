@@ -20,6 +20,7 @@
     SUBDIR += hs-shelly
     SUBDIR += ibsh
     SUBDIR += jailkit
+    SUBDIR += klish
     SUBDIR += ksh93
     SUBDIR += lshell
     SUBDIR += mksh
