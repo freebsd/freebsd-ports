@@ -110,10 +110,19 @@
  
  # make NetHack
 -GAME     = nethack
-+GAME     = nethack%%HACKEXT%%
++GAME     = nethack34
  # GAME     = nethack.prg
  
  # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
+@@ -392,7 +430,7 @@ $(GAME):	$(SYSTEM)
+ 
+ Sysunix:	$(HOBJ) Makefile
+ 	@echo "Loading ..."
+-	$(LINK) $(LFLAGS) -o $(GAME) $(HOBJ) $(WINLIB) $(LIBS)
++	$(LINK) $(LFLAGS) -o $(GAME) $(HOBJ) $(LDFLAGS) $(WINLIB) $(LIBS)
+ 	@touch Sysunix
+ 
+ Sys3B2:	$(HOBJ) Makefile
 @@ -461,13 +499,13 @@ objects.o:
  
  # Qt windowport meta-object-compiler output
