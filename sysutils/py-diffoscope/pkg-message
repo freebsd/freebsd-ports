@@ -1,0 +1,12 @@
+===========================================================================
+
+  diffoscope currently relies on /dev/fd. To enable this feature on your
+  system, run:
+
+    # mount -t fdescfs fdesc /dev/fd
+
+  To make it permanent, add the to /etc/fstab:
+
+    fdesc   /dev/fd         fdescfs         rw      0       0
+
+===========================================================================
