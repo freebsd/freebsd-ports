@@ -10,6 +10,8 @@ DISTNAME=	ninvaders-${PORTVERSION}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	The nInvaders game is a Space Invaders clone for ncurses
 
+USES=		ncurses
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
