@@ -16,4 +16,6 @@ LICENSE_NAME=	Trojka Copyright
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USES=		ncurses
+
 .include <bsd.port.mk>
