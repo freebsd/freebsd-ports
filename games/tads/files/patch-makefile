@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Jan 17 00:30:32 2003
-+++ Makefile	Fri Jan 17 00:30:49 2003
-@@ -238,16 +238,16 @@
+--- Makefile.orig	2004-11-05 13:34:49 UTC
++++ Makefile
+@@ -246,16 +246,16 @@ MATT=Matt Herberg <meherberg@earthlink.n
  # compatibility libraries installed.  It has not been tested with a bare
  # FreeBSD system without the Linux libraries.
  #
@@ -22,7 +22,7 @@
 +AFLAGS=
 +OVLFLG=
 +MACHDEP=
-+LIBS=-ltermcap
++LIBS=$(LDFLAGS) -lncurses
 +MAKEXEC=touch
  
  # OpenBSD 3.0 with gcc 2.95.3

@@ -1,5 +1,6 @@
-Index: osunixt.h
-@@ -84,7 +84,7 @@
+--- osunixt.h.orig	2004-02-17 02:20:41 UTC
++++ osunixt.h
+@@ -84,7 +84,7 @@ Tue Nov 22 15:16:10 EST 1994    Dave Bag
   * Define the following to use sgtty.h instead of termios or direct
   * ioctl hacking.
   */
