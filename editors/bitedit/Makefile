@@ -11,6 +11,7 @@ COMMENT=	Bitedit is a simple ncurses program for editing a file
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 MAKE_ARGS=	CFLAGS="${CFLAGS} -DVERSION=\\\"${PORTVERSION}\\\""
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
