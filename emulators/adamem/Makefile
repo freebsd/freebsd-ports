@@ -30,6 +30,8 @@ do-install:
 .for f in adamem.snd OS7.rom WP.rom EOS.rom
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/adamem.txt ${STAGEDIR}${DOCSDIR}
 
