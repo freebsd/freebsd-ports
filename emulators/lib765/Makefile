@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulation of uPD765a Floppy Disc Controller
 
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/doc/COPYING.LIB
 
 USES=		libtool
 GNU_CONFIGURE=	yes
@@ -25,8 +26,10 @@ LIBDSK_CONFIGURE_OFF=	--without-libdsk
 LIBDSK_LIB_DEPENDS=	libdsk.so:${PORTSDIR}/emulators/libdsk
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib765.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog doc/765.txt ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib765.so
 
 .include <bsd.port.mk>
