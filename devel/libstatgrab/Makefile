@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig libtool
+USES=		pathfix pkgconfig libtool ncurses
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
