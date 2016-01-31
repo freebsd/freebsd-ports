@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.miketaylor.org.uk/tech/tt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tetris for Terminals
 
+USES=		ncurses
+
 ALL_TARGET=	tt
 
 OPTIONS_DEFINE=	DOCS
