@@ -14,8 +14,9 @@ COMMENT=	Text editor with block and binary operations
 
 LICENSE=	GPLv3
 
-USES=	tar:bzip2
+USES=		ncurses tar:bzip2
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
 
 MAKE_JOBS_UNSAFE=	yes
 
