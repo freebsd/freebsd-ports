@@ -52,7 +52,7 @@
  	check_header slang.h
  	enabled slang_h && _cdefos="-D_SLANG_ -D__OS_NAME__='\"Unix/Slang\"' $_cdefos"
 -	enabled slang_h && _oslibs="-lslang $_oslibs" || disable _slang
-+	enabled slang_h && _oslibs="-lslang -ltermcap $_oslibs" || disable _slang
++	enabled slang_h && _oslibs="-lslang -lncurses $_oslibs" || disable _slang
  echores "$slang_h"
  	fi
 -	if enabled _curses -a disabled _slang; then
