@@ -12,6 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced version of UAE, the Amiga emulator
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	uae-[0-9]*
 
@@ -38,6 +39,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/uae ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/readdisk ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog README docs/bsdsocket.txt \
 		docs/cmd-line.txt docs/compiling.txt docs/configuration.txt \
