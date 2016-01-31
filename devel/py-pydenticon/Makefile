@@ -3,6 +3,7 @@
 
 PORTNAME=	pydenticon
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +20,9 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+post-extract:
+	@${CHMOD} -R a+rX ${WRKSRC}
 
 do-test:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test)
