@@ -15,6 +15,7 @@ LICENSE=	GPLv3
 
 CONFLICTS=	nano-2*
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR} --enable-utf8
