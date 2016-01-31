@@ -1,5 +1,5 @@
---- Makefile.orig	1989-03-31 02:04:11.000000000 +0800
-+++ Makefile	2014-05-27 21:34:34.280623089 +0800
+--- Makefile.orig	1989-03-30 18:04:11 UTC
++++ Makefile
 @@ -1,26 +1,28 @@
  # Makefile for Uzap.
 -BINDIR = /usr/local
@@ -13,7 +13,7 @@
  
  uzap: uzap.o edit.o search.o screen.o
 -	cc -O uzap.o edit.o search.o screen.o -lcurses -ltermcap -o uzap
-+	$(CC) $(CFLAGS) uzap.o edit.o search.o screen.o -lcurses -ltermcap -o uzap
++	$(CC) $(CFLAGS) uzap.o edit.o search.o screen.o $(LDFLAGS) -lncurses -o uzap
  
  uzap.o: uzap.c 
 -	cc -c -O uzap.c  
