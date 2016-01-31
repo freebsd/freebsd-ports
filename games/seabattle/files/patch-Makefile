@@ -1,5 +1,5 @@
---- Makefile.orig	Wed May 14 02:53:34 1997
-+++ Makefile	Fri Feb  2 04:20:41 2001
+--- Makefile.orig	1997-05-13 17:53:34 UTC
++++ Makefile
 @@ -8,7 +8,7 @@
  ##############################################################
  
@@ -9,7 +9,7 @@
  #CC = cc
  
  #On Suns, SGIs, and other Unix systems uncomment the following
-@@ -17,12 +17,12 @@
+@@ -17,12 +17,12 @@ CC = gcc
  #C_OPTS = 
  #L_OPTS = -lcurses
  
@@ -18,11 +18,12 @@
  #
 -PLATFORM = Linux
 -C_OPTS = -O2 -Wall
+-L_OPTS = -lncurses
+-
 +PLATFORM = FreeBSD/Linux
 +DATADIR = ${PREFIX}/share/seabattle
 +C_OPTS = ${CFLAGS} -DDATADIR=\"${DATADIR}\"
- L_OPTS = -lncurses
--
++L_OPTS = $(LDFLAGS) -lncurses
  
  #For Dos/Windows DJGPP (you need the curses lib)
  #PLATFORM = DOS_DJGPP
