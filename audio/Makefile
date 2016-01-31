@@ -95,6 +95,7 @@
     SUBDIR += deadbeef-mpris-plugin
     SUBDIR += deadbeef-mpris2-plugin
     SUBDIR += deadbeef-musical-spectrum-plugin
+    SUBDIR += deadbeef-quick-search-plugin
     SUBDIR += deadbeef-waveform-seekbar-plugin
     SUBDIR += decibel-audio-player
     SUBDIR += deforaos-mixer
