@@ -1,0 +1,11 @@
+--- Makefile.orig	2014-08-21 16:30:06 UTC
++++ Makefile
+@@ -5,7 +5,7 @@ DESTDIR?=	#empty
+ PREFIX?=	/usr
+ 
+ all:
+-	${CC} ${CFLAGS} -o xtgyoretsu xtgyoretsu.c -lcurses -lm
++	${CC} ${CFLAGS} -o xtgyoretsu xtgyoretsu.c ${LDFLAGS} -lncurses -lm
+ 	strip --strip-unneeded xtgyoretsu
+ 
+ install:
