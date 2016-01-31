@@ -14402,7 +14402,7 @@ Notes:
     <dates>
       <discovery>2015-04-14</discovery>
       <entry>2015-07-01</entry>
-      <modified>2015-01-31</modified>
+      <modified>2016-01-31</modified>
     </dates>
   </vuln>
 
@@ -19490,7 +19490,7 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-xorg-libs</name>
-	<range><ge>*</ge></range>
+	<range><lt>7.4_4</lt></range>
       </package>
       <package>
 	<name>linux-f10-xorg-libs</name>
