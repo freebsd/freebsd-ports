@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple library for VT102 terminal emulation
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake ncurses
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/rote-config include/rote/rote.h \
