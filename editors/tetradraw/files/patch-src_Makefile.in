@@ -1,0 +1,14 @@
+--- src/Makefile.in.orig	2001-08-29 01:46:58 UTC
++++ src/Makefile.in
+@@ -87,9 +87,9 @@ AUTOMAKE_OPTIONS = 1.4
+ MAINTAINERCLEANFILES = Makefile.in
+ EXTRA_DIST = art/* *.h
+ 
+-LDFLAGS = -L$(top_srcdir)/src
++LDFLAGS = @LDFLAGS@ -L$(top_srcdir)/src
+ INCLUDES = -I$(top_srcdir) -I.
+-CFLAGS = -Wall -ggdb3
++CFLAGS = @CFLAGS@
+ 
+ bin_PROGRAMS = tetradraw tetraview
+ 

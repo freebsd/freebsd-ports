@@ -13,12 +13,9 @@ COMMENT=	Fully featured ANSI art editor/viewer with TCP/IP multidraw support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/tetradraw bin/tetraview
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^CFLAGS =.*$$|CFLAGS = @CFLAGS@|g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
