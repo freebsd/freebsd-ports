@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig libtool ncurses
+USES=		pathfix pkgconfig libtool
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
@@ -24,7 +24,7 @@ OPTIONS_DEFAULT=	TOOLS
 
 TOOLS_DESC=	Build and install statgrab and saidar
 TOOLS_CONFIGURE_ENABLE=	statgrab saidar
-TOOLS_USES=	shebangfix perl5
+TOOLS_USES=	shebangfix perl5 ncurses
 TOOLS_VARS=	SHEBANG_FILES+="src/statgrab/statgrab-make-mrtg-config.in \
 				src/statgrab/statgrab-make-mrtg-index.in" \
 		LICENSE+=GPLv2 LICENSE_COMB=multi
