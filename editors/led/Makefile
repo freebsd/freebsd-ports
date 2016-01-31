@@ -13,7 +13,7 @@ COMMENT=	Tiny text editor, with a number of useful programming features
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		perl5
+USES=		ncurses perl5
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
