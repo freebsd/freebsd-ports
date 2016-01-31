@@ -110,7 +110,7 @@
  
  # make NetHack
 -GAME     = nethack
-+GAME     = nethack34
++GAME     = nethack%%HACKEXT%%
  # GAME     = nethack.prg
  
  # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
