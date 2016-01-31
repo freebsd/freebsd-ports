@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.cs.helsinki.fi/u/penberg/duhdraw/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANSI graphic drawing program
 
+USES=		ncurses
+
 MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 
 PLIST_FILES=	bin/ansi bin/ansitoc bin/duhdraw
