@@ -1,0 +1,15 @@
+echo $2 for FRITZING
+
+case $2 in
+PRE-INSTALL)
+	if ! id fritzing  > /dev/null 2>&1
+	then
+		pw adduser fritzing
+	fi
+;;
+POST-INSTALL)
+	echo fritzing shared files owned by fritzing user
+	chown -R fritzing:fritzing %%PREFIX%%/share/fritzing
+	chmod -R g+w %%PREFIX%%/share/fritzing
+;;
+esac
