@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2012-12-21 21:18:18.000000000 -0200
-+++ CMakeLists.txt	2013-03-11 08:20:10.000000000 -0300
-@@ -95,7 +95,7 @@
+--- CMakeLists.txt.orig	2016-01-15 15:51:19 UTC
++++ CMakeLists.txt
+@@ -95,7 +95,7 @@ add_executable(${PROJECT_AWE_NAME}
  if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
      set_target_properties(${PROJECT_AWE_NAME}
          PROPERTIES
@@ -9,7 +9,7 @@
  endif()
  
  target_link_libraries(${PROJECT_AWE_NAME}
-@@ -317,7 +317,9 @@
+@@ -317,7 +317,9 @@ install(DIRECTORY ${BUILD_DIR}/themes DE
      PATTERN "*.in" EXCLUDE)
  install(DIRECTORY ${SOURCE_DIR}/themes DESTINATION ${AWESOME_DATA_PATH}
      PATTERN "*.in" EXCLUDE)
