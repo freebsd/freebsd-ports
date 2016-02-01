@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
 
-USES=		fortran
+USES=		fortran ncurses
 USE_LDCONFIG=	yes
 MAKE_FLAGS=	INSTALLDIR=${STAGEDIR}${PREFIX} OS=freebsd ENV=gnu \
 		FORTRAN=yes FC_freebsd=${F77}
