@@ -1,6 +1,6 @@
 # $FreeBSD$
 #
-# Provide support for firebird
+# Provide support for Firebird
 # Feature:	firebird
 # Usage:	USES=	firebird[:version]
 # MAINTAINER:	ports@FreeBSD.org
