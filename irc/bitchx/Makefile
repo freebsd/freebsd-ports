@@ -14,7 +14,7 @@ COMMENT=	Feature-rich scriptable IRC client
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		cpe gmake
+USES=		cpe gmake ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
