@@ -17,7 +17,7 @@ TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GITHUB=	yes
 
-USES=		autoreconf gmake perl5 shebangfix
+USES=		autoreconf gmake ncurses perl5 shebangfix
 USE_PERL5=	test
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
