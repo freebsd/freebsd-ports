@@ -1,8 +1,6 @@
 bin/pkg-config.pl
 bin/ppkg-config
 %%SITE_PERL%%/PkgConfig.pm
-%%SITE_PERL%%/gen_multi_tests.pl
-%%SITE_PERL%%/run_test.pl
 %%PERL5_MAN1%%/pkg-config.pl.1.gz
 %%PERL5_MAN1%%/ppkg-config.1.gz
 %%PERL5_MAN3%%/PkgConfig.3.gz
