@@ -11,7 +11,9 @@ bin/oai-listsets
 %%SITE_PERL%%/Net/OAI/ListRecords.pm
 %%SITE_PERL%%/Net/OAI/ListSets.pm
 %%SITE_PERL%%/Net/OAI/Record.pm
+%%SITE_PERL%%/Net/OAI/Record/DocumentHelper.pm
 %%SITE_PERL%%/Net/OAI/Record/Header.pm
+%%SITE_PERL%%/Net/OAI/Record/NamespaceFilter.pm
 %%SITE_PERL%%/Net/OAI/Record/OAI_DC.pm
 %%SITE_PERL%%/Net/OAI/ResumptionToken.pm
 %%PERL5_MAN1%%/oai-listrecords.1.gz
@@ -26,6 +28,8 @@ bin/oai-listsets
 %%PERL5_MAN3%%/Net::OAI::ListRecords.3.gz
 %%PERL5_MAN3%%/Net::OAI::ListSets.3.gz
 %%PERL5_MAN3%%/Net::OAI::Record.3.gz
+%%PERL5_MAN3%%/Net::OAI::Record::DocumentHelper.3.gz
 %%PERL5_MAN3%%/Net::OAI::Record::Header.3.gz
+%%PERL5_MAN3%%/Net::OAI::Record::NamespaceFilter.3.gz
 %%PERL5_MAN3%%/Net::OAI::Record::OAI_DC.3.gz
 %%PERL5_MAN3%%/Net::OAI::ResumptionToken.3.gz
