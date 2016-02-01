@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Exception::Class.3.gz
-%%PERL5_MAN3%%/Exception::Class::Base.3.gz
 %%SITE_PERL%%/Exception/Class.pm
 %%SITE_PERL%%/Exception/Class/Base.pm
+%%PERL5_MAN3%%/Exception::Class.3.gz
+%%PERL5_MAN3%%/Exception::Class::Base.3.gz
