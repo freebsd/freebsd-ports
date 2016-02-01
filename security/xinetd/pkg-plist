@@ -1,4 +1,4 @@
-bin/xconv
+%%XCONV%%bin/xconv
 sbin/xinetd
 man/man5/xinetd.conf.5.gz
 man/man8/xconv.8.gz
