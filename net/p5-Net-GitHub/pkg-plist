@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Net/GitHub/V3/Events.pm
 %%SITE_PERL%%/Net/GitHub/V3/Gists.pm
 %%SITE_PERL%%/Net/GitHub/V3/GitData.pm
+%%SITE_PERL%%/Net/GitHub/V3/Gitignore.pm
 %%SITE_PERL%%/Net/GitHub/V3/Issues.pm
 %%SITE_PERL%%/Net/GitHub/V3/OAuth.pm
 %%SITE_PERL%%/Net/GitHub/V3/Orgs.pm
@@ -16,6 +17,7 @@
 %%PERL5_MAN3%%/Net::GitHub::V3::Events.3.gz
 %%PERL5_MAN3%%/Net::GitHub::V3::Gists.3.gz
 %%PERL5_MAN3%%/Net::GitHub::V3::GitData.3.gz
+%%PERL5_MAN3%%/Net::GitHub::V3::Gitignore.3.gz
 %%PERL5_MAN3%%/Net::GitHub::V3::Issues.3.gz
 %%PERL5_MAN3%%/Net::GitHub::V3::OAuth.3.gz
 %%PERL5_MAN3%%/Net::GitHub::V3::Orgs.3.gz
