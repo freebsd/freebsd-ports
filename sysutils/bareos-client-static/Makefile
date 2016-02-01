@@ -22,6 +22,8 @@ CONFIGURE_ARGS+=	--enable-client-only \
 			--enable-static-cons \
 			--disable-libtool \
 			--disable-build-dird \
-			--disable-build-stored
+			--disable-build-stored \
+			--with-jansson=${LOCALBASE}
+
 
 .include "${MASTERDIR}/Makefile"
