@@ -1,0 +1,6 @@
+stud is a network proxy that terminates TLS/SSL connections
+and forwards the unencrypted traffic to some backend. It's
+designed to handle 10s of thousands of connections
+efficiently on multicore machines.
+
+WWW: https://github.com/bumptech/stud
