@@ -9,10 +9,11 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Collection of clustering tools
 
+LICENSE=	BSD2CLAUSE
+
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
 X11_USE=	XORG=x11
@@ -20,7 +21,7 @@ X11_USE=	XORG=x11
 .include <bsd.port.options.mk>
 
 post-patch:
-.if empty(PORT_OPTIONS:MX11)
+.if !$(PORT_OPTIONS:MX11)
 	${REINPLACE_CMD} -E 's,^(SUBDIRS) = .*,\1 = barrier dsh jsd pcp dtop tools,' ${WRKSRC}/Makefile.in
 .endif
 
