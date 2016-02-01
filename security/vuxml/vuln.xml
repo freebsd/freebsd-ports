@@ -58,6 +58,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e00d8b94-c88a-11e5-b5fe-002590263bf5">
+    <topic>gdcm -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gdcm</name>
+	<range><lt>2.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CENSUS S.A. reports:</p>
+	<blockquote cite="http://census-labs.com/news/2016/01/11/gdcm-buffer-overflow-imageregionreaderreadintobuffer/">
+	  <p>GDCM versions 2.6.0 and 2.6.1 (and possibly previous versions) are
+	    prone to an integer overflow vulnerability which leads to a buffer
+	    overflow and potentially to remote code execution.</p>
+	</blockquote>
+	<blockquote cite="http://census-labs.com/news/2016/01/11/gdcm-out-bounds-read-jpeglscodec-decodeextent/">
+	  <p>GDCM versions 2.6.0 and 2.6.1 (and possibly previous versions) are
+	    prone to an out-of-bounds read vulnerability due to missing checks.
+	    </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8396</cvename>
+      <cvename>CVE-2015-8397</cvename>
+      <url>http://census-labs.com/news/2016/01/11/gdcm-buffer-overflow-imageregionreaderreadintobuffer/</url>
+      <url>http://census-labs.com/news/2016/01/11/gdcm-out-bounds-read-jpeglscodec-decodeextent/</url>
+    </references>
+    <dates>
+      <discovery>2015-12-23</discovery>
+      <entry>2016-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c1c18ee1-c711-11e5-96d6-14dae9d210b8">
     <topic>nginx -- multiple vulnerabilities</topic>
     <affects>
