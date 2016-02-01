@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	OAI-Harvester
-PORTVERSION=	1.15
-PORTREVISION=	2
+PORTVERSION=	1.20
 PORTEPOCH=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
@@ -21,6 +20,8 @@ BUILD_DEPENDS=	p5-URI>=1.30:${PORTSDIR}/net/p5-URI \
 		p5-XML-SAX-Base>=1.04:${PORTSDIR}/textproc/p5-XML-SAX-Base \
 		p5-libwww>=2.0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
+		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
