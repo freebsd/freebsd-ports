@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WebDAO
-PORTVERSION=	2.14
-PORTREVISION=	1
+PORTVERSION=	2.25
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ZAG
@@ -24,14 +23,8 @@ BUILD_DEPENDS=	p5-DateTime>=0.37:${PORTSDIR}/devel/p5-DateTime \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
-
-# maintainer section:
-x-generate-plist:
-	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
-	| ${SED} -E \
-		's,.*share/nls/.+$$,,g \
-		' | ${TR} -s '\n') > temp-pkg-plist
 
 .include <bsd.port.mk>
