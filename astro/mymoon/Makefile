@@ -16,7 +16,7 @@ LIB_DEPENDS=	libnova.so:${PORTSDIR}/astro/libnova
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake nurses
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
