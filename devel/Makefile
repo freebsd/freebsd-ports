@@ -3490,7 +3490,6 @@
     SUBDIR += pcsc-ada
     SUBDIR += pcsc-lite
     SUBDIR += pdcurses
-    SUBDIR += pdcurses-the
     SUBDIR += pear
     SUBDIR += pear-Config
     SUBDIR += pear-Console_Color

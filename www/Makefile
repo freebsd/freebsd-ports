@@ -91,7 +91,6 @@
     SUBDIR += cntlm
     SUBDIR += cocoon
     SUBDIR += codeigniter
-    SUBDIR += codeigniter22
     SUBDIR += coppermine
     SUBDIR += cplanet
     SUBDIR += cppcms
@@ -1578,7 +1577,6 @@
     SUBDIR += py-django-voting
     SUBDIR += py-django16
     SUBDIR += py-django16-tastypie
-    SUBDIR += py-django17
     SUBDIR += py-django18
     SUBDIR += py-django19
     SUBDIR += py-django_compressor
