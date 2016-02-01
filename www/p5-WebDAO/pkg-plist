@@ -24,8 +24,6 @@ bin/webdao.psgi
 %%SITE_PERL%%/WebDAO/Session.pm
 %%SITE_PERL%%/WebDAO/SessionSH.pm
 %%SITE_PERL%%/WebDAO/Sessionco.pm
-%%SITE_PERL%%/WebDAO/Store/Abstract.pm
-%%SITE_PERL%%/WebDAO/Store/Storable.pm
 %%SITE_PERL%%/WebDAO/Test.pm
 %%SITE_PERL%%/WebDAO/Util.pm
 %%PERL5_MAN3%%/WebDAO.3.gz
@@ -50,8 +48,6 @@ bin/webdao.psgi
 %%PERL5_MAN3%%/WebDAO::Session.3.gz
 %%PERL5_MAN3%%/WebDAO::SessionSH.3.gz
 %%PERL5_MAN3%%/WebDAO::Sessionco.3.gz
-%%PERL5_MAN3%%/WebDAO::Store::Abstract.3.gz
-%%PERL5_MAN3%%/WebDAO::Store::Storable.3.gz
 %%PERL5_MAN3%%/WebDAO::Test.3.gz
 %%PERL5_MAN3%%/WebDAO::Util.3.gz
 %%PERL5_MAN1%%/wd_fcgi.fpl.1.gz
