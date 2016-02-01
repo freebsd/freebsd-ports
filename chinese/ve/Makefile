@@ -13,7 +13,8 @@ COMMENT=	NTHU-CS Maple BBS 2.36 BBS-like editor
 LICENSE=	GPLv1 GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-MAKE_ARGS=	CC="${CC}"
+USES=		ncurses
+MAKE_ARGS=	CC="${CC}" LIBS="${LDFLAGS} -lncurses"
 
 PLIST_FILES=	bin/ve \
 		%%DATADIR%%/ve.hlp
