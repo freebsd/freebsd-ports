@@ -1,5 +1,5 @@
---- bin/oj_linux.sh.orig	2014-11-26 00:15:22.000000000 +0100
-+++ bin/oj_linux.sh	2014-12-21 22:31:45.000000000 +0100
+--- bin/oj_linux.sh.orig	2016-01-08 09:30:28 UTC
++++ bin/oj_linux.sh
 @@ -4,9 +4,11 @@
  ## if unset defaults to
  ##   JUMP_HOME (oj app folder) if writable or $HOME/.openjump (user home)
@@ -12,7 +12,7 @@
  
  ## uncomment and change your memory configuration here 
  ## Xms is initial size, Xmx is maximum size
-@@ -48,6 +50,7 @@
+@@ -51,6 +53,7 @@ extract_libs(){
    # extract zipped files in native dir (our way to ship symlinks to desktops)
    for filepath in $(find "$1/" -name '*.tgz' -o -name '*.tar.gz')
    do
@@ -20,7 +20,7 @@
      file=$(basename "$filepath")
      folder=$(dirname "$filepath")
      done=".$file.unzipped"
-@@ -71,6 +74,7 @@
+@@ -74,6 +77,7 @@ postinstall(){
  
  macinstall(){
    # create app package
@@ -28,29 +28,14 @@
    cp -R -a "$1"/bin/OpenJUMP.app/Contents "$1" &&\
    awk '{sub(/..\/oj_/,"bin/oj_",$0)}1' "$1"/bin/OpenJUMP.app/Contents/Resources/script > "$1"/Contents/Resources/script &&\
    echo patched oj.app
-@@ -79,12 +83,14 @@
- }
- 
- ## detect home folder
-+echo "#####  \$0 = '$0'"
- if(test -L "$0") then
-   auxlink=`ls -l "$0" | sed 's/^[^>]*-> //g'`
-   JUMP_HOME=`dirname "$auxlink"`/..
- else 
-   JUMP_HOME=`dirname "$0"`/..
- fi
-+echo "#####  JUMP_HOME = '$JUMP_HOME'"
- 
- ## run postinstalls only, if requested
- case "$1" in
-@@ -100,13 +106,19 @@
+@@ -110,13 +114,19 @@ esac
  
  ## cd into jump home
  OLD_DIR=`pwd`
 +echo "#####  pwd = '$OLD_DIR'"
  cd "$JUMP_HOME"
 +PWD_DIR=`pwd`
-+echo "#####  cd '$JUMP_HOME', pwd = '$PWD_DIR'"
++echo "##### cd '$JUMP_HOME', pwd = '$PWD_DIR'"
  
  ## determine where to place settings, if no path given
 +echo "#####  ===== JUMP_SETTINGS = '$JUMP_SETTINGS'"
@@ -63,7 +48,7 @@
      # try users home dir
      JUMP_SETTINGS="$HOME/.openjump"
      # create if missing
-@@ -123,14 +135,19 @@
+@@ -134,14 +144,19 @@ fi
  # 1. first in oj_home/jre
  # 2. in configured java_home
  # 3. in path
@@ -83,24 +68,31 @@
  fi
  
  # java available
-@@ -139,20 +156,26 @@
+@@ -150,24 +165,27 @@ fi
  add the location of java to your PATH environment variable." && ERROR=1 && end
  
  # resolve recursive links to java binary
 +echo "#####  ===== Resolve recursive links to java binary: \$1 = '$1'"
- relPath(){ echo $1 | awk '/^\//{exit 1}'; }
-+echo "#####  awk script survived after \$1 test"
  relPath "$JAVA" && JAVA="$(pwd)/$JAVA"
 -while [ -L "${JAVA}" ]; do
 -  JDIR=$(dirname "$JAVA")
--  JAVA=$(readlink -n "${JAVA}")
+-  JAVA_CANDIDATE=$(readlink -n "${JAVA}")
+-  # protect against Gentoo's run-java-tool.bash wrapper
+-  if [ $(basename "$JAVA") != $(basename "$JAVA_CANDIDATE") ]; then
+-    break
+-  fi
+-  JAVA="$JAVA_CANDIDATE"
 -  relPath "$JAVA" && JAVA="${JDIR}/${JAVA}"
 -done
++echo "#####  awk script survived after \$1 test"
 +#while [ -L "${JAVA}" ]; do
 +#  JDIR=$(dirname "$JAVA")
-+#  echo "#####    JDIR = '$JDIR'"
-+#  JAVA=$(readlink -n "${JAVA}")
-+#  echo "#####    JAVA = '$JAVA'"
++#  JAVA_CANDIDATE=$(readlink -n "${JAVA}")
++#  # protect against Gentoo's run-java-tool.bash wrapper
++#  if [ $(basename "$JAVA") != $(basename "$JAVA_CANDIDATE") ]; then
++#    break
++#  fi
++#  JAVA="$JAVA_CANDIDATE"
 +#  relPath "$JAVA" && JAVA="${JDIR}/${JAVA}"
 +#done
  # java executable file?
@@ -109,23 +101,22 @@
  
  # java version check
  JAVA_VERSIONSTRING="$("$JAVA" -version 2>&1)"
--JAVA_VERSION=$(echo $JAVA_VERSIONSTRING | awk -F'"' '/^java version/{print $2}' | awk -F'.' '{print $1"."$2}')
-+echo "#####  JAVA_VERSIONSTRING = '$JAVA_VERSIONSTRING'"
+-JAVA_VERSION=$(echo $JAVA_VERSIONSTRING | awk -F'[ \056]' '{gsub(/["\047]+/,"")}/version [0-9]+\.[0-9]+/{print $3"."$4; exit}' )
 +JAVA_VERSION=$(echo $JAVA_VERSIONSTRING | awk -F'"' '/^java version/ || /^openjdk version/{print $2}' | awk -F'.' '{print $1"."$2}')
 +echo "#####  JAVA_VERSION = '$JAVA_VERSION'"
  JAVA_ARCH=$(echo $JAVA_VERSIONSTRING | grep -q -i 64-bit && echo x64 || echo x86)
  JAVA_NEEDED="1.6"
- if ! is_decimal "$JAVA_VERSION" || ! awk "BEGIN{if($JAVA_VERSION < $JAVA_NEEDED)exit 1}"; then
-@@ -166,7 +189,7 @@
- echo "Using '$(basename "${JAVA}")' found in '$(dirname "${JAVA}")"
- echo $("$JAVA" -version 2>&1|awk 'BEGIN{ORS=""}{print $0"; "}')
+ if ! is_decimal "$JAVA_VERSION"; then
+@@ -189,7 +207,7 @@ echo ---JAVA---
+ echo "Using '$(basename "${JAVA}")' found in '$(dirname "${JAVA}")'"
+ "$JAVA" -version 2>&1|awk 'BEGIN{ORS=""}{print $0"; "}END{print "\n"}'
  
 -JUMP_PROFILE=~/.jump/openjump.profile
 +JUMP_PROFILE="$HOME/.openjump/openjump.profile"
  if [ -f "$JUMP_PROFILE" ]; then
    source $JUMP_PROFILE
  fi
-@@ -175,8 +198,13 @@
+@@ -198,8 +216,13 @@ fi
  if [ -z "$JUMP_LIB" ]; then
    JUMP_LIB="./lib"
  fi
@@ -139,7 +130,7 @@
  
  JUMP_PLUGINS=./bin/default-plugins.xml
  if [ -z "$JUMP_PLUGINS" ] || [ ! -f "$JUMP_PLUGINS" ]; then
-@@ -185,6 +213,7 @@
+@@ -208,6 +231,7 @@ if [ -z "$JUMP_PLUGINS" ] || [ ! -f "$JU
      JUMP_PLUGINS="./scripts/default-plugins.xml"
    fi
  fi
@@ -147,7 +138,7 @@
  
  # include every jar/zip in lib and native dir
  for libfile in "$JUMP_LIB/"*.zip "$JUMP_LIB/"*.jar "$JUMP_NATIVE_DIR/$JAVA_ARCH/"*.jar "$JUMP_NATIVE_DIR/"*.jar
-@@ -193,29 +222,39 @@
+@@ -216,29 +240,39 @@ do
  done
  CLASSPATH=.:./bin:./conf:$CLASSPATH
  export CLASSPATH;
@@ -188,7 +179,7 @@
  
  # allow jre to find native libraries in native dir, lib/ext (backwards compatibility)
  NATIVE_PATH="$JUMP_NATIVE_DIR/$JAVA_ARCH:$JUMP_NATIVE_DIR:$JUMP_PLUGIN_DIR"
-@@ -251,7 +290,11 @@
+@@ -274,7 +308,11 @@ echo "$JUMP_SETTINGS/"
  
  echo ---Detect maximum memory limit---
  # use previously set or detect RAM size in bytes
@@ -201,7 +192,7 @@
  if [ -n "$JAVA_MAXMEM" ]; then
    echo "max. memory limit defined via JAVA_MAXMEM=$JAVA_MAXMEM"
  elif ! is_number "$RAM_SIZE"; then
-@@ -269,14 +312,18 @@
+@@ -292,14 +330,18 @@ else
    else
      MEM_MAX="$MEM_MINUS1GB"
    fi
@@ -221,10 +212,8 @@
    # output info
    echo set max. memory limit to $MEM_MAX_MB MiB
  fi
-@@ -294,4 +341,4 @@
- cd "$OLD_DIR"
+@@ -318,3 +360,4 @@ cd "$OLD_DIR"
  
  ## run end function
--end
-\ No newline at end of file
-+end
+ end
++

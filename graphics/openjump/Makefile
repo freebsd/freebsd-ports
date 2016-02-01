@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	OpenJUMP
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	graphics java geography
 MASTER_SITES=	SF/jump-pilot/OpenJUMP/${PORTVERSION}
 DISTNAME=	${PORTNAME}-Portable-${PORTVERSION}-r${PLUS_REV}-PLUS
@@ -44,8 +44,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USES=		zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-r${PLUS_REV}-PLUS
-PLUS_REV=	4164
+PLUS_REV=	4795
 
 do-install:
 	@${ECHO_CMD} "--->  Installing JAR files"
