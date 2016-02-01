@@ -8121,3 +8121,9 @@ devel/py-msgpack|devel/py-msgpack-python|2016-01-28|Renamed to match upstream na
 www/xpi-bookmarkdd||2016-01-30|Has expired, incompatible with Firefox 34+
 databases/php5-redis||2016-01-30|Has expired: PHP 5.4 EOL reached, use databases/php55-redis or databases/php56-redis instead
 audio/linux-c6-pulseaudio-libs-glib2||2016-01-31|Integrated into audio/linux-c6-pulseaudio-libs
+devel/pdcurses-the||2016-02-01|Has expired: Seperate port is no longer needed, see PR
+www/py-django17||2016-02-01|Has expired: End of extended support: December 1, 2015
+www/codeigniter22|www/codeigniter|2016-02-01|Has expired: Codeigniter 2.2.x reached its End of Life on 31 October 2015. Please update to the current version.
+java/wildfly80||2016-02-01|Has expired: Fully EOL when version 8.2 was released
+java/wildfly81||2016-02-01|Has expired: Fully EOL when version 9.0 was released
+mail/phpmailer2|mail/phpmailer|2016-02-01|Has expired: Obsolete, use mail/phpmailer instead
