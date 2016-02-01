@@ -58,6 +58,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a52a7172-c92e-11e5-96d6-14dae9d210b8">
+    <topic>socat -- diffie hellman parameter was not prime</topic>
+    <affects>
+      <package>
+	<name>socat</name>
+	<range><ge>1.7.2.5</ge><lt>1.7.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>socat reports:</p>
+	<blockquote cite="http://www.dest-unreach.org/socat/contrib/socat-secadv7.html">
+	  <p>In the OpenSSL address implementation the hard coded 1024
+	    bit DH p parameter was not prime. The effective cryptographic strength
+	    of a key exchange using these parameters was weaker than the one one
+	    could get by using a prime p. Moreover, since there is no indication of
+	    how these parameters were chosen, the existence of a trapdoor that makes
+	    possible for an eavesdropper to recover the shared secret from a key
+	    exchange that uses them cannot be ruled out.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.dest-unreach.org/socat/contrib/socat-secadv7.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-01</discovery>
+      <entry>2016-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4f00dac0-1e18-4481-95af-7aaad63fd303">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
