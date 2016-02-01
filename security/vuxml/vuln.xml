@@ -58,6 +58,85 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4f00dac0-1e18-4481-95af-7aaad63fd303">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<name>linux-firefox</name>
+	<range><lt>44.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>2.41</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>38.6.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<name>thunderbird</name>
+	<name>linux-thunderbird</name>
+	<range><lt>38.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Foundation reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/#firefox44">
+	  <p>MFSA 2016-01 Miscellaneous memory safety hazards (rv:44.0
+	    / rv:38.6)</p>
+	  <p>MFSA 2016-02 Out of Memory crash when parsing GIF format
+	    images</p>
+	  <p>MFSA 2016-03 Buffer overflow in WebGL after out of memory
+	    allocation</p>
+	  <p>MFSA 2016-04 Firefox allows for control characters to be
+	    set in cookie names</p>
+	  <p>MFSA 2016-06 Missing delay following user click events in
+	    protocol handler dialog</p>
+	  <p>MFSA 2016-07 Errors in mp_div and mp_exptmod
+	    cryptographic functions in NSS</p>
+	  <p>MFSA 2016-09 Addressbar spoofing attacks</p>
+	  <p>MFSA 2016-10 Unsafe memory manipulation found through
+	    code inspection</p>
+	  <p>MFSA 2016-11 Application Reputation service disabled in
+	    Firefox 43</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7208</cvename>
+      <cvename>CVE-2016-1930</cvename>
+      <cvename>CVE-2016-1931</cvename>
+      <cvename>CVE-2016-1933</cvename>
+      <cvename>CVE-2016-1935</cvename>
+      <cvename>CVE-2016-1937</cvename>
+      <cvename>CVE-2016-1938</cvename>
+      <cvename>CVE-2016-1939</cvename>
+      <cvename>CVE-2016-1942</cvename>
+      <cvename>CVE-2016-1943</cvename>
+      <cvename>CVE-2016-1944</cvename>
+      <cvename>CVE-2016-1945</cvename>
+      <cvename>CVE-2016-1946</cvename>
+      <cvename>CVE-2016-1947</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-01/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-02/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-03/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-04/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-06/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-07/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-09/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-10/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-11/</url>
+    </references>
+    <dates>
+      <discovery>2016-01-26</discovery>
+      <entry>2016-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e00d8b94-c88a-11e5-b5fe-002590263bf5">
     <topic>gdcm -- multiple vulnerabilities</topic>
     <affects>
