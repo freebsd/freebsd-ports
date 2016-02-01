@@ -11,6 +11,7 @@ COMMENT=	Captures and analyzes DNS traffic (or analyzes libpcap dump)
 
 LICENSE=	BSD2CLAUSE
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/dnstop \
