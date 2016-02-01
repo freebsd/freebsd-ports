@@ -1,5 +1,5 @@
---- CMake/FindOpenJPEG.cmake.orig	2014-04-03 09:33:49.000000000 +0200
-+++ CMake/FindOpenJPEG.cmake	2014-06-10 09:34:13.000000000 +0200
+--- CMake/FindOpenJPEG.cmake.orig	2015-08-22 14:09:50 UTC
++++ CMake/FindOpenJPEG.cmake
 @@ -18,7 +18,15 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
@@ -17,7 +17,7 @@
  find_package(OpenJPEG QUIET NO_MODULE)
  
  if( NOT OpenJPEG_DIR )
-@@ -51,3 +59,4 @@
+@@ -51,3 +59,4 @@ mark_as_advanced(
    OPENJPEG_INCLUDE_DIR
    )
  endif()
