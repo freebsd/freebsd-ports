@@ -399,8 +399,8 @@ share/cinnamon/applets/keyboard@cinnamon.org/settings-schema.json
 share/cinnamon/applets/menu@cinnamon.org/applet.js
 share/cinnamon/applets/menu@cinnamon.org/metadata.json
 share/cinnamon/applets/menu@cinnamon.org/settings-schema.json
-share/cinnamon/applets/network@cinnamon.org/applet.js
-share/cinnamon/applets/network@cinnamon.org/metadata.json
+@comment share/cinnamon/applets/network@cinnamon.org/applet.js
+@comment share/cinnamon/applets/network@cinnamon.org/metadata.json
 share/cinnamon/applets/notifications@cinnamon.org/alt-critical-notif-symbolic.svg
 share/cinnamon/applets/notifications@cinnamon.org/applet.js
 share/cinnamon/applets/notifications@cinnamon.org/critical-notif-symbolic.svg
