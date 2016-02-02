@@ -5911,7 +5911,6 @@ cad/chipmunk||2014-04-11|Has expired: Unmaintained since 1999
 graphics/comix||2014-04-11|Has expired: Insists on installing in /usr/local, and uses nautilus2 which is deprecated
 www/mambo||2014-04-11|Has expired: Broken for more than 6 months
 devel/lua-rds-parser||2014-04-11|Has expired: Broken for more than 6 months
-editors/the||2014-04-11|Has expired: Unmaintained since 1999
 japanese/exmh2||2014-04-11|Has expired: Unmaintained since 1999
 net/freewais-sf||2014-04-11|Has expired: Unmaintained since 1999
 editors/elvis||2014-04-11|Has expired: Unmaintained since 1999
@@ -8097,7 +8096,6 @@ devel/e_dbus||2016-01-15|Has expired: Not used anymore by x11-wm/enlightenment
 www/xpi-locale-switcher||2016-01-15|Has expired: incompatible with Firefox 34 (and later presumably)
 textproc/py-gettext|textproc/py-python-gettext|2016-01-16|Renamed to match upstream name
 archivers/jzip.org||2016-01-24|Has expired: Abandoned, outdated (no updates since 2003)
-devel/i386-linux-binutils||2016-01-26|Not any usage in the ports tree
 databases/mywwwatcher||2016-01-25|Has expired: PHP 5.4 EOL reached
 databases/php5-creole||2016-01-25|Has expired: PHP 5.4 EOL reached
 databases/php5-propel||2016-01-25|Has expired: PHP 5.4 EOL reached
@@ -8117,13 +8115,14 @@ www/fusionpbx||2016-01-25|Has expired: PHP 5.4 EOL reached
 www/jawstats||2016-01-25|Has expired: PHP 5.4 EOL reached
 www/ojs2||2016-01-25|Has expired: PHP 5.4 EOL reached
 www/webcalendar||2016-01-25|Has expired: PHP 5.4 EOL reached
+devel/i386-linux-binutils||2016-01-26|Not any usage in the ports tree
 devel/py-msgpack|devel/py-msgpack-python|2016-01-28|Renamed to match upstream naming
 www/xpi-bookmarkdd||2016-01-30|Has expired, incompatible with Firefox 34+
 databases/php5-redis||2016-01-30|Has expired: PHP 5.4 EOL reached, use databases/php55-redis or databases/php56-redis instead
 audio/linux-c6-pulseaudio-libs-glib2||2016-01-31|Integrated into audio/linux-c6-pulseaudio-libs
 devel/pdcurses-the||2016-02-01|Has expired: Seperate port is no longer needed, see PR
 www/py-django17||2016-02-01|Has expired: End of extended support: December 1, 2015
-www/codeigniter22|www/codeigniter|2016-02-01|Has expired: Codeigniter 2.2.x reached its End of Life on 31 October 2015. Please update to the current version.
+www/codeigniter22|www/codeigniter|2016-02-01|Has expired: Codeigniter 2.2.x reached its End of Life on 31 October 2015. Please update to the current version
 java/wildfly80||2016-02-01|Has expired: Fully EOL when version 8.2 was released
 java/wildfly81||2016-02-01|Has expired: Fully EOL when version 9.0 was released
 mail/phpmailer2|mail/phpmailer|2016-02-01|Has expired: Obsolete, use mail/phpmailer instead
