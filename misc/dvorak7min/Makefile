@@ -14,7 +14,9 @@ COMMENT=	Ncurses-based Dvorak typing tutor
 
 LICENSE=	GPLv2+
 
+USES=		ncurses
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
