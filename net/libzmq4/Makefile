@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libzmq4
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.4
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 DISTNAME=	zeromq-${DISTVERSION}
@@ -28,6 +28,7 @@ CURVE_CONFIGURE_WITH=	libsodium
 CURVE_LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
 
 DEBUG_CONFIGURE_ENABLE=	debug
+DEBUG_VARS=		WITH_DEBUG=yes
 
 PGM_CONFIGURE_WITH=	pgm
 PGM_LIB_DEPENDS=	libpgm.so:${PORTSDIR}/net/openpgm
@@ -36,16 +37,8 @@ CONFIGURE_ARGS+=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 CFLAGS+=	-Wno-long-long
 MAKE_ENV=	V=1
+
 INSTALL_TARGET=	install-strip
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-WITH_DEBUG=	yes
-.endif
-
-regression-test: build
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} check)
+TEST_TARGET=	check
 
 .include <bsd.port.mk>
