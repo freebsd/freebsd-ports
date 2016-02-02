@@ -8,7 +8,7 @@
 PORTNAME=	snappy
 PORTVERSION=	1.0.4.1
 DISTVERSIONPREFIX=	snappy-java-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers java
 MASTER_SITES=	GH:source1 \
 		http://snappy.googlecode.com/files/:source2 \
@@ -32,7 +32,7 @@ GH_ACCOUNT=	xerial
 GH_PROJECT=	snappy-java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7
+JAVA_VERSION=	1.7+
 USES=		gmake
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	Default_CXX=${CXX}
