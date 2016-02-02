@@ -61,7 +61,7 @@ GLIB_SCHEMAS=	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml \
 OPTIONS_DEFINE=	PULSEAUDIO
 OPTIONS_SUB=	yes
 
-PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 
 .include <bsd.port.mk>
