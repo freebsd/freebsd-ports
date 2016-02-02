@@ -1,9 +1,0 @@
---- lib-src/libsoxr/configure.orig	2015-07-11 10:02:22 UTC
-+++ lib-src/libsoxr/configure
-@@ -12,6 +12,5 @@
- 
- srcdir="$@"
- srcdir="${srcdir#*--srcdir=}"
--srcdir="./${srcdir/ */}"
- 
- cmake -DBUILD_SHARED_LIBS=OFF -DWITH_OPENMP=OFF "${srcdir}"
