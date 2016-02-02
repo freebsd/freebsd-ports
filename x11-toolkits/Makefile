@@ -208,7 +208,6 @@
     SUBDIR += py-wxPython28-common
     SUBDIR += py-wxPython30
     SUBDIR += py-xlib
-    SUBDIR += py32-tkinter
     SUBDIR += py33-tkinter
     SUBDIR += py34-tkinter
     SUBDIR += py35-tkinter
