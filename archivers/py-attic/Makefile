@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.1.10:${PORTSDIR}/devel/py-msgpack-python
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.1.10:${PORTSDIR}/devel/py-msgpack-python
 
-USES=		python:3.2+
+USES=		python:3.3+
 USE_PYTHON=	autoplist distutils
 USE_OPENSSL=	yes
 

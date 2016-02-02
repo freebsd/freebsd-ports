@@ -15,7 +15,7 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}spdx>0:${PORTSDIR}/misc/py-spdx
 
-USES=		python:3.2+
+USES=		python:3.3+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
