@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbson
-PORTVERSION=	1.1.9
+PORTVERSION=	1.3.2
 CATEGORIES=	devel
 
 MAINTAINER=	waitman@waitman.net
