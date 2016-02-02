@@ -1,0 +1,60 @@
+--- shlr/Makefile.orig	2016-01-30 16:12:17 UTC
++++ shlr/Makefile
+@@ -186,52 +186,8 @@ uninstall deinstall:
+ 	#rm -f ${DESTDIR}${LIBDIR}/libr_tcc*
+ 	#rm -f ${DESTDIR}${LIBDIR}/libr_z*
+ 
+-ifeq ($(USE_CAPSTONE),1)
+-# Do nothing here
+-capstone:
+-
+-capstone-sync:
+-
+-capstone-build:
+-
+-else
+-
+-ifeq ($(CS_TAR),)
+-capstone: capstone-sync
+-
+-capstone-sync:
+-	"$(SHELL)" capstone.sh "${CS_URL}" "${CS_BRA}" "${CS_TIP}" "${CS_REV}"
+-ifeq ($(CS_PATCHES),1)
+-	cd capstone ; git reset --hard
+-	cd capstone ; for PATCH in ../capstone-patches/* ; do patch -p1 < $$PATCH ; done
+-endif
+-
+-.PHONY: capstone
+-else
+-
+-capstone-sync: capstone
+-
+-capstone-clean:
+-	cd capstone ; $(MAKE) clean
+-
+-capstone: capstone-$(CS_VER).tar.gz
+-	tar xzvf capstone-$(CS_VER).tar.gz
+-	rm -rf capstone
+-	mv capstone-$(CS_VER) capstone
+-	cd capstone ; for PATCH in ../capstone-patches/* ; do patch -p1 < $$PATCH ; done
+-
+-capstone-$(CS_VER).tar.gz:
+-	$(WGET) --no-check-certificate -O capstone-$(CS_VER).tar.gz -c $(CS_TAR)
+-endif
+-
+ CAPSTONE_CFLAGS=-g
+ 
+-ifeq (${EXT_AR},)
+-all:
+-	echo EXT_AR is not defined
+-	exit 1
+-endif
+-
+ capstone-build: capstone
+ 	cd capstone && CFLAGS="-Dmips=mips ${CAPSTONE_CFLAGS} $(CFLAGS)" LDFLAGS="$(LDFLAGS)" \
+ 		$(MAKE) CC="$(CC)" AR_EXT=a IS_CYGWIN=0 CAPSTONE_STATIC=yes CAPSTONE_SHARED=no \
+@@ -239,4 +195,3 @@ capstone-build: capstone
+ ifneq (${EXT_AR},a)
+ 	-cp -f capstone/libcapstone.a capstone/libcapstone.${EXT_AR}
+ endif
+-endif
