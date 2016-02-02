@@ -58,6 +58,77 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bb0ef21d-0e1b-461b-bc3d-9cba39948888">
+    <topic>rails -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-actionpack</name>
+	<range><lt>3.2.22.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack4</name>
+	<range><lt>4.2.5.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionview</name>
+	<range><lt>4.2.5.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activemodel4</name>
+	<range><lt>4.2.5.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activerecord</name>
+	<range><lt>3.2.22.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activerecord4</name>
+	<range><lt>4.2.5.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rails</name>
+	<range><lt>3.2.22.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rails-html-sanitizer</name>
+	<range><lt>1.0.3</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rails4</name>
+	<range><lt>4.2.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby on Rails blog:</p>
+	<blockquote cite="http://weblog.rubyonrails.org/2016/1/25/Rails-5-0-0-beta1-1-4-2-5-1-4-1-14-1-3-2-22-1-and-rails-html-sanitizer-1-0-3-have-been-released/">
+	  <p>Rails 5.0.0.beta1.1, 4.2.5.1, 4.1.14.1, and 3.2.22.1 have been
+	    released! These contain important security fixes, and it is
+	    recommended that users upgrade as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7576</cvename>
+      <cvename>CVE-2015-7577</cvename>
+      <cvename>CVE-2015-7581</cvename>
+      <cvename>CVE-2016-0751</cvename>
+      <cvename>CVE-2016-0752</cvename>
+      <cvename>CVE-2016-0753</cvename>
+      <url>https://groups.google.com/d/msg/rubyonrails-security/ANv0HDHEC3k/mt7wNGxbFQAJ</url>
+      <url>https://groups.google.com/d/msg/rubyonrails-security/cawsWcQ6c8g/tegZtYdbFQAJ</url>
+      <url>https://groups.google.com/d/msg/rubyonrails-security/dthJ5wL69JE/YzPnFelbFQAJ</url>
+      <url>https://groups.google.com/d/msg/rubyonrails-security/9oLY_FCzvoc/w9oI9XxbFQAJ</url>
+      <url>https://groups.google.com/d/msg/rubyonrails-security/335P1DcLG00/OfB9_LhbFQAJ</url>
+      <url>https://groups.google.com/d/msg/rubyonrails-security/6jQVC1geukQ/8oYETcxbFQAJ</url>
+      <url>http://weblog.rubyonrails.org/2016/1/25/Rails-5-0-0-beta1-1-4-2-5-1-4-1-14-1-3-2-22-1-and-rails-html-sanitizer-1-0-3-have-been-released/</url>
+    </references>
+    <dates>
+      <discovery>2016-01-25</discovery>
+      <entry>2016-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a52a7172-c92e-11e5-96d6-14dae9d210b8">
     <topic>socat -- diffie hellman parameter was not prime</topic>
     <affects>
