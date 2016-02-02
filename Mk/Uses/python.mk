@@ -10,14 +10,14 @@
 #
 # version 	If your port requires only some set of Python versions, you
 # 		can set this to [min]-[max] or min+ or -max or as an
-# 		explicit version or as a meta port version (eg. 3.2-3.3 for
-# 		[min]-[max], 2.7+ or -3.2 for min+ and -max, 2.7 for an
+# 		explicit version or as a meta port version (eg. 3.3-3.4 for
+# 		[min]-[max], 2.7+ or -3.3 for min+ and -max, 2.7 for an
 # 		explicit version or 3 for a meta port version). Example:
 #
 #			USES=python:2.7		# Only use Python 2.7
-#			USES=python:3.2+	# Use Python 3.2 or newer
-#			USES=python:3.2-3.3	# Use Python 3.2 or 3.3
-#			USES=python:-3.2	# Use any Python up to 3.2
+#			USES=python:3.3+	# Use Python 3.3 or newer
+#			USES=python:3.3-3.4	# Use Python 3.3 or 3.4
+#			USES=python:-3.3	# Use any Python up to 3.3
 #			USES=python:2		# Use the Python 2 meta port
 #			USES=python		# Use the set default Python
 #						# version
