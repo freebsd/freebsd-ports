@@ -4105,6 +4105,7 @@
     SUBDIR += py-joblib
     SUBDIR += py-jsmin
     SUBDIR += py-json-py
+    SUBDIR += py-json-sempai
     SUBDIR += py-jsonlib
     SUBDIR += py-jsonlib2
     SUBDIR += py-jsonpatch
@@ -4408,7 +4409,6 @@
     SUBDIR += py-unpaddedbase64
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
-    SUBDIR += py-json-sempai
     SUBDIR += py-urwidtrees
     SUBDIR += py-usb
     SUBDIR += py-user_agents
