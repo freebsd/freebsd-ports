@@ -13,7 +13,7 @@ COMMENT=	SPDX license list database
 
 LICENSE=	CC0-1.0
 
-USES=		python:3.2+
+USES=		python:3.3+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
