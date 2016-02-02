@@ -1,6 +1,6 @@
---- configure.ac.orig	2015-05-27 07:51:35 UTC
+--- configure.ac.orig	2016-01-22 09:51:17 UTC
 +++ configure.ac
-@@ -120,7 +120,7 @@ then
+@@ -155,7 +155,7 @@ then
  fi
  
  # Where to install .pc files.
@@ -9,7 +9,7 @@
  AC_SUBST(pkgconfigdir)
  
  # Check for standards compliance mode
-@@ -641,7 +641,7 @@ SAVE_CFLAGS="$CFLAGS"
+@@ -715,7 +715,7 @@ SAVE_CFLAGS="$CFLAGS"
  # Emulate behavior of src/Makefile.am
  if test "x$GCC" = "xyes"
  then
@@ -18,7 +18,7 @@
  fi
  
  AC_CACHE_CHECK([for strtok_r],
-@@ -770,7 +770,7 @@ AC_CHECK_FUNCS(getutxent, [have_getutxen
+@@ -844,7 +844,7 @@ AC_CHECK_FUNCS(getutxent, [have_getutxen
  if test "x$GCC" = "xyes"
  then
  	SAVE_CFLAGS="$CFLAGS"
@@ -27,7 +27,7 @@
  fi
  
  AC_CHECK_FUNCS(strptime, [have_strptime="yes"], [have_strptime="no"])
-@@ -1495,6 +1495,7 @@ if test "x$with_kstat" = "xyes"
+@@ -1571,6 +1571,7 @@ if test "x$with_kstat" = "xyes"
  then
  	AC_CHECK_LIB(kstat, kstat_open, [with_kstat="yes"], [with_kstat="no (libkstat not found)"], [])
  fi
@@ -35,7 +35,7 @@
  if test "x$with_kstat" = "xyes"
  then
  	AC_CHECK_LIB(devinfo, di_init, [with_devinfo="yes"], [with_devinfo="no (not found)"], [])
-@@ -1504,6 +1505,8 @@ if test "x$with_kstat" = "xyes"
+@@ -1580,6 +1581,8 @@ if test "x$with_kstat" = "xyes"
  then
  	AC_DEFINE(HAVE_LIBKSTAT, 1,
  		  [Define to 1 if you have the 'kstat' library (-lkstat)])
@@ -44,7 +44,36 @@
  fi
  AM_CONDITIONAL(BUILD_WITH_LIBKSTAT, test "x$with_kstat" = "xyes")
  AM_CONDITIONAL(BUILD_WITH_LIBDEVINFO, test "x$with_devinfo" = "xyes")
-@@ -3346,7 +3349,7 @@ then
+@@ -2624,8 +2627,8 @@ AC_ARG_WITH(libmongoc, [AS_HELP_STRING([
+ 	 with_libmongoc="no"
+  else
+ 	 with_libmongoc="yes"
+-	 LIBMONGOC_CPPFLAGS="$LIBMONGOC_CPPFLAGS -I$withval/include"
+-	 LIBMONGOC_LDFLAGS="$LIBMONGOC_LDFLAGS -L$withval/lib"
++	 LIBMONGOC_CPPFLAGS="$LIBMONGOC_CPPFLAGS -I$withval/include/libmongoc-1.0 -I$withval/include/libbson-1.0"
++	 LIBMONGOC_LDFLAGS="$LIBMONGOC_LDFLAGS -L$withval/lib -lsasl2 -lssl -lcrypto  -lmongoc-1.0 -lbson-1.0"
+  fi; fi
+ ],
+ [with_libmongoc="yes"])
+@@ -2642,7 +2645,7 @@ then
+ 	then
+ 		AC_MSG_NOTICE([libmongoc CPPFLAGS: $LIBMONGOC_CPPFLAGS])
+ 	fi
+-	AC_CHECK_HEADERS(mongo.h,
++	AC_CHECK_HEADERS(mongoc.h,
+ 	[with_libmongoc="yes"],
+ 	[with_libmongoc="no ('mongo.h' not found)"],
+ [#if HAVE_STDINT_H
+@@ -2658,7 +2661,7 @@ then
+ 	then
+ 		AC_MSG_NOTICE([libmongoc LDFLAGS: $LIBMONGOC_LDFLAGS])
+ 	fi
+-	AC_CHECK_LIB(mongoc, mongo_run_command,
++	AC_CHECK_LIB(mongoc-1.0, mongoc_client_command,
+ 	[with_libmongoc="yes"],
+ 	[with_libmongoc="no (symbol 'mongo_run_command' not found)"])
+ fi
+@@ -3415,7 +3418,7 @@ then
  	SAVE_LIBS="$LIBS"
  	# trigger an error if Perl_load_module*() uses __attribute__nonnull__(3)
  	# (see issues #41 and #42)
@@ -53,7 +82,7 @@
  	LIBS="$LIBS $PERL_LIBS"
  
  	AC_CACHE_CHECK([for broken Perl_load_module()],
-@@ -3576,7 +3579,7 @@ fi
+@@ -3645,7 +3648,7 @@ fi
  if test "x$with_python" = "xyes"
  then
  	AC_MSG_CHECKING([for Python CPPFLAGS])
@@ -62,7 +91,7 @@
  	python_config_status=$?
  
  	if test "$python_config_status" -ne 0 || test "x$python_include_path" = "x"
-@@ -3599,7 +3602,7 @@ fi
+@@ -3668,7 +3671,7 @@ fi
  if test "x$with_python" = "xyes"
  then
  	AC_MSG_CHECKING([for Python LDFLAGS])
@@ -71,7 +100,7 @@
  	python_config_status=$?
  
  	if test "$python_config_status" -ne 0 || test "x$python_library_path" = "x"
-@@ -3614,7 +3617,7 @@ fi
+@@ -3683,7 +3686,7 @@ fi
  if test "x$with_python" = "xyes"
  then
  	AC_MSG_CHECKING([for Python LIBS])
@@ -80,7 +109,7 @@
  	python_config_status=$?
  
  	if test "$python_config_status" -ne 0 || test "x$python_library_flags" = "x"
-@@ -3629,7 +3632,7 @@ fi
+@@ -3698,7 +3701,7 @@ fi
  if test "x$with_python" = "xyes"
  then
  	LDFLAGS="-L$python_library_path $LDFLAGS"
@@ -89,7 +118,7 @@
  
  	AC_CHECK_FUNC(PyObject_CallFunction,
  		      [with_python="yes"],
-@@ -4692,8 +4695,8 @@ AC_ARG_WITH(libvarnish, [AS_HELP_STRING(
+@@ -4761,8 +4764,8 @@ AC_ARG_WITH(libvarnish, [AS_HELP_STRING(
  	else if test -d "$with_libvarnish/lib"
  	then
  		AC_MSG_NOTICE([Not checking for libvarnish: Manually configured])
@@ -100,11 +129,11 @@
  		with_libvarnish="yes"
  	fi; fi; fi
  ],
-@@ -5263,6 +5266,7 @@ fi
+@@ -5334,6 +5337,7 @@ fi
  
  if test "x$ac_system" = "xFreeBSD"
  then
 +	plugin_disk="yes"
-         plugin_zfs_arc="yes"
+ 	plugin_zfs_arc="yes"
  fi
  

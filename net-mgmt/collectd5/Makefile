@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	5.5.0
-PORTREVISION=	4
+PORTVERSION=	5.5.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://collectd.org/files/ \
 		http://collectd.org/files/
@@ -24,9 +23,9 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=		CGI DEBUG GCRYPT LOGSTASH VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
-OPTIONS_GROUP_OUTPUT=	KAFKA NOTIFYDESKTOP NOTIFYEMAIL RIEMANN RRDTOOL
+OPTIONS_GROUP_OUTPUT=	KAFKA MONGODB NOTIFYDESKTOP NOTIFYEMAIL RIEMANN RRDTOOL
 OPTIONS_GROUP_INPUT=	CURL CURL_JSON CURL_XML DBI IPMI JSON MEMCACHEC \
-			MODBUS MONGODB MYSQL NUTUPS OLSRD ONEWIRE OPENLDAP \
+			MODBUS MYSQL NUTUPS OLSRD ONEWIRE OPENLDAP \
 			PERL PGSQL PINBA PING PYTHON RABBITMQ REDIS ROUTEROS \
 			SIGROK SNMP STATGRAB STATSD TOKYOTYRANT VARNISH XML \
 			XMMS ZOOKEEPER
@@ -44,7 +43,7 @@ KAFKA_DESC=		Enable write_kafka plugin
 LOGSTASH_DESC=		Enable log_logstash plugin (requires json)
 MEMCACHEC_DESC=		Enable memcachec plugin
 MODBUS_DESC=		Enable modbus plugin
-MONGODB_DESC=		Enable MongoDB-based plugins
+MONGODB_DESC=		Enable write_mongodb plugin (BROKEN)
 MYSQL_DESC=		Enable mysql-based plugins
 NOTIFYDESKTOP_DESC=	Enable desktop notifications
 NOTIFYEMAIL_DESC=	Enable notifications via email
@@ -79,8 +78,6 @@ USE_RC_SUBR=	collectd collectdmon
 
 USE_LDCONFIG=	yes
 
-CONFLICTS=	collectd-4.[0-9]*
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
@@ -89,6 +86,9 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-all-plugins \
 		--disable-static \
 		--without-amqp \
+		--disable-ceph \
+		--disable-cgroups \
+		--disable-fhcount \
 		--without-java \
 		--without-libaquaero5 \
 		--without-libganglia \
@@ -98,7 +98,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--without-libkstat \
 		--without-libldap \
 		--without-libmnl \
-		--without-libmodbus \
 		--without-libnetlink \
 		--without-libnetapp \
 		--without-libowcapi \
@@ -154,11 +153,13 @@ MEMCACHEC_CONFIGURE_WITH=	libmemcached=${LOCALBASE}
 
 MODBUS_LIB_DEPENDS=		libmodbus.so:${PORTSDIR}/comms/libmodbus
 MODBUS_CONFIGURE_ENABLE=	modbus
-MODBUS_CONFIGURE_WITH=		libmodbus=${LOCALBASE}
+MODBUS_CONFIGURE_WITH=		libmodbus=use_pkgconfig
 
 MONGODB_LIB_DEPENDS=		libmongoc-1.0.so:${PORTSDIR}/devel/mongo-c-driver
+MONGODB_LIB_DEPENDS+=		libbson-1.0.so:${PORTSDIR}/devel/libbson
 MONGODB_CONFIGURE_ENABLE=	write_mongodb
 MONGODB_CONFIGURE_WITH=		libmongoc=${LOCALBASE}
+MONGODB_BROKEN=			fails to configure with write_mongodb option
 
 MYSQL_USE=			mysql=yes
 MYSQL_CONFIGURE_ENABLE=		mysql
@@ -277,7 +278,6 @@ CONFIGURE_ARGS+=--enable-aggregation \
 		--enable-dns \
 		--enable-email \
 		--enable-exec \
-		--enable-fhcount \
 		--enable-filecount \
 		--enable-load \
 		--enable-logfile \
