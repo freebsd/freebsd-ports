@@ -161,6 +161,7 @@
     SUBDIR += teamwords
     SUBDIR += telegram
     SUBDIR += telegram-purple
+    SUBDIR += telegramqml
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-farsight
     SUBDIR += telepathy-farstream
