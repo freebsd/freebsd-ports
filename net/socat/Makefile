@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	socat
-PORTVERSION=	1.7.3.0
-PORTREVISION=	2
+PORTVERSION=	1.7.3.1
+PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		LOCAL/ehaupt

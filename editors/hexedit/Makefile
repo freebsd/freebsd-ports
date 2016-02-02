@@ -14,7 +14,7 @@ COMMENT=	View and edit files in hexadecimal or ASCII
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		tar:tgz
+USES=		ncurses tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/hexedit man/man1/hexedit.1.gz

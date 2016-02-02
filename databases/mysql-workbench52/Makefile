@@ -16,6 +16,8 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 BROKEN=		does not build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-02-29
 
 LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs \

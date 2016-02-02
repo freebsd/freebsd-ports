@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RMySQL
-DISTVERSION=	0.10.7
+DISTVERSION=	0.10.8
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,6 +17,6 @@ USE_MYSQL=	yes
 USES=	cran:auto-plist
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|bin/bash|bin/sh|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/bin\//s|bash|sh|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

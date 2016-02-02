@@ -2,6 +2,7 @@
 
 PORTNAME=	mpich
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.mpich.org/static/downloads/${DISTVERSION}/
 
@@ -32,8 +33,12 @@ OPTIONS_SUB=		yes
 FORTRAN_USES=			fortran
 FORTRAN_CONFIGURE_ENABLE=	fortran
 FORTRAN_CONFIGURE_ON=		\
-	MPICH_LDFLAGS="-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
-		       -L${LOCALBASE}/lib/gcc${_GCC_VER} -B${LOCALBASE}/bin"
+	MPICH_MPICC_LDFLAGS="${MPICH_LDFLAGS}" \
+	MPICH_MPICXX_LDFLAGS="${MPICH_LDFLAGS}" \
+	MPICH_MPIF77_LDFLAGS="${MPICH_LDFLAGS}" \
+	MPICH_MPIFORT_LDFLAGS="${MPICH_LDFLAGS}"
+MPICH_LDFLAGS=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
+		-L${LOCALBASE}/lib/gcc${_GCC_VER} -B${LOCALBASE}/bin
 
 PM_DESC=	Process managers
 GFORKER_DESC=	Simple local process manager

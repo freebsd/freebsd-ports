@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmo-netif
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://git.osmocom.org/libosmo-netif/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/

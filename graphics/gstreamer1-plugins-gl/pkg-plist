@@ -47,4 +47,5 @@ lib/gstreamer-%%VERSION%%/libgstopengl.so
 lib/libgstgl-%%VERSION%%.so
 lib/libgstgl-%%VERSION%%.so.0
 lib/libgstgl-%%VERSION%%.so.%%SOVERSION%%
+libdata/pkgconfig/gstreamer-gl-1.0.pc
 share/gir-%%VERSION%%/GstGL-%%VERSION%%.gir

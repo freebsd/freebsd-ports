@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atari ST emulator
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libpng.so:${PORTSDIR}/graphics/png
@@ -38,10 +39,10 @@ post-build:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${MANPREFIX}/man/fr/man1
-	(cd ${WRKSRC}/doc/fr && ${INSTALL_MAN} ${PORTNAME}.1.gz \
-		${STAGEDIR}${MANPREFIX}/man/fr/man1)
+	${INSTALL_MAN} ${WRKSRC}/doc/fr/${PORTNAME}.1.gz ${STAGEDIR}${MANPREFIX}/man/fr/man1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/fr
-	(cd ${WRKSRC}/doc/fr && ${INSTALL_DATA} *.txt \
-		${STAGEDIR}${DOCSDIR}/fr)
+	${INSTALL_DATA} ${WRKSRC}/doc/fr/*.txt ${STAGEDIR}${DOCSDIR}/fr
 
 .include <bsd.port.mk>

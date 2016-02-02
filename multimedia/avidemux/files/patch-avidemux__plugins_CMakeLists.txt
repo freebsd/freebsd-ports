@@ -1,10 +1,10 @@
---- avidemux_plugins/CMakeLists.txt.orig	2015-05-15 09:19:29 UTC
+--- avidemux_plugins/CMakeLists.txt.orig	2016-01-31 19:06:53 UTC
 +++ avidemux_plugins/CMakeLists.txt
-@@ -202,7 +202,6 @@ ENDIF(DO_COMMON)
- ADD_SUBDIRECTORY(ADM_videoEncoder)
+@@ -203,7 +203,6 @@ ADD_SUBDIRECTORY(ADM_videoEncoder)
  ADD_SUBDIRECTORY(ADM_videoFilters6)
  IF(DO_QT4)
+         add_subdirectory(ADM_demuxers/VapourSynth)
 -        add_subdirectory(ADM_scriptEngines)
-         IF(USE_OPENGL AND NOT WIN32)
+         #IF(USE_OPENGL AND NOT WIN32)
+         IF(USE_OPENGL )
           ADD_SUBDIRECTORY(ADM_videoFilters6_openGl)
-         ENDIF(USE_OPENGL AND NOT WIN32)

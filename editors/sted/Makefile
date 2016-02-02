@@ -11,15 +11,14 @@ COMMENT=	Simple/Small/Stupid Text Editor
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 WRKSRC=		${WRKDIR}/sted
+MAKE_ARGS=	CC="${CC}" C_OPTS="${CFLAGS}" L_OPTS="${LDFLAGS} -lncurses"
 
 PORTDOCS=	CHANGES README
 PLIST_FILES=	bin/sted man/man1/sted.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|CC = gcc|CC ?= gcc|" \
-			-e "s|C_OPTS = -Wall -O2|C_OPTS = ${CFLAGS}|" \
-			${WRKSRC}/Makefile
 	@${REINPLACE_CMD} "s|<curses.h>|<ncurses.h>|" ${WRKSRC}/sted.c
 
 do-install:

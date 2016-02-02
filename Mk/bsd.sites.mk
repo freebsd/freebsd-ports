@@ -452,7 +452,6 @@ MASTER_SITE_GCC+= \
 	http://gcc.cybermirror.org/%SUBDIR%/ \
 	http://gcc-uk.internet.bs/%SUBDIR%/ \
 	http://www.netgull.com/gcc/%SUBDIR%/ \
-	http://mirrors.webhostinggeeks.com/gcc/%SUBDIR%/ \
 	http://robotlab.itk.ppke.hu/gcc/%SUBDIR%/ \
 	http://gcc.fyxm.net/%SUBDIR%/ \
 	http://gcc.igor.onlinedirect.bg/%SUBDIR%/ \

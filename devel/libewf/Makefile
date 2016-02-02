@@ -23,11 +23,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} --with-libuuid=${LOCALBASE} ${ICONV_CONFIGURE_ARG} --with-libsmdev=no
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
-# posix_fadvise(2) did not return correct value on error
-.if (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100007) || (${OSVERSION} >= 1000000 && ${OSVERSION} < 1000703) || (${OSVERSION} < 902507)
-CONFIGURE_ENV+=	ac_cv_func_posix_fadvise=no
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

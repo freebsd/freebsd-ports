@@ -27,15 +27,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MANUAL_PACKAGE_BUILD=	requires www/tomcat6 with HTTP_PORT=8080
 
-BROKEN=		fails to extract: tar: Error opening archive: Failed to open 'bbb-default.tar.gz'
-
 USES=		dos2unix
 DOS2UNIX_REGEX=	.+\.(conf|jsp|properties|xml)$
 
 USE_JAVA=	yes
 JAVA_EXTRACT=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	${PORTNAME}
 USE_RC_SUBR=   	openoffice
 SOFFICEBIN?=	${PREFIX}/bin/openoffice-4.0.1
@@ -58,7 +55,11 @@ KONFERENCE_DESC=	konference Asterisk module
 OPENOFFICE_DESC=	Include OpenOffice support
 
 PLIST_SUB+=	RED5_HOME=${RED5_HOME:S,^${PREFIX}/,,} \
+		RED5_USER=${RED5_USER} \
+		RED5_GROUP=${RED5_GROUP} \
 		TOMCAT_HOME=${TOMCAT_HOME:S,^${PREFIX}/,,} \
+		TOMCAT_USER=${TOMCAT_USER} \
+		TOMCAT_GROUP=${TOMCAT_GROUP} \
 		WWWROOT=${WWWROOT:S,^${PREFIX}/,,}
 
 SUB_LIST+=	PORTNAME=${PORTNAME} \
@@ -97,21 +98,23 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/openoffice-4.0.1:${PORTSDIR}/editors/openoffice
 .endif
 
 post-extract:
+	@${MKDIR} ${WRKSRC}
 .for f in bbb_extensions.conf bbb_sip.conf nginx-bigbluebutton.conf
-	@${INSTALL_DATA} ${_DISTDIR}/${f} ${WRKDIR}
+	@${INSTALL_DATA} ${_DISTDIR}/${f} ${WRKSRC}
 .endfor
 .for f in bbb-default bigbluebutton-webapps client deskshare sip video
-	@cd ${WRKDIR} && ${TAR} xf ${f}${EXTRACT_SUFX}
+	@cd ${WRKSRC} && ${TAR} xf ../${f}${EXTRACT_SUFX}
 .endfor
-	@cd ${WRKDIR}/client && ${MV} client/* . && ${RMDIR} client
-	@${MKDIR} ${WRKDIR}/bigbluebutton-tomcat
-	@cd ${WRKDIR}/bigbluebutton-tomcat && ${JAR} xf \
+	@cd ${WRKDIR} && ${MV} conf red5-0.9.1 ${WRKSRC}
+	@cd ${WRKSRC}/client && ${MV} client/* . && ${RMDIR} client
+	@${MKDIR} ${WRKSRC}/bigbluebutton-tomcat
+	@cd ${WRKSRC}/bigbluebutton-tomcat && ${JAR} xf \
 		${WRKDIR}/bigbluebutton.war
-	@cd ${WRKDIR} && ${FIND} . -name .gitignore -delete
+	@cd ${WRKSRC} && ${FIND} . -name .gitignore -delete
 
 post-patch:
-	@${RM} ${WRKDIR}/deskshare/WEB-INF/deskshare.conf.orig
-	@${FIND} ${WRKDIR} -type f -name '*.orig' -execdir ${SH} -c \
+	@${RM} ${WRKSRC}/deskshare/WEB-INF/deskshare.conf.orig
+	@${FIND} ${WRKSRC} -type f -name '*.orig' -execdir ${SH} -c \
 		'f={} && ${MV} $${f%.orig} $${f%.orig}-dist && ${RM} $$f' ';'
 
 pre-install:
@@ -134,34 +137,26 @@ pre-install:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${WWWDIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/bbb-conf ${STAGEDIR}${PREFIX}/bin
-.for d in asterisk blank freeswitch nginx
-	@${MKDIR} ${STAGEDIR}${DATADIR}/${d}
-.endfor
-	@${INSTALL_DATA} ${FILESDIR}/nopdfmark.ps ${STAGEDIR}${DATADIR}/blank
-.for f in blank-slide.swf blank-thumb.png
-	@${INSTALL_DATA} ${_DISTDIR}/${f} ${STAGEDIR}${DATADIR}/blank
-.endfor
-.for f in bbb_extensions.conf bbb_sip.conf
-	@${INSTALL_DATA} ${WRKDIR}/${f}-dist ${STAGEDIR}${DATADIR}/asterisk
-.endfor
-.for f in nginx.conf nginx-bigbluebutton.conf
-	@${INSTALL_DATA} ${WRKDIR}/${f}-dist ${STAGEDIR}${DATADIR}/nginx
-.endfor
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} conf ${STAGEDIR}${DATADIR}/freeswitch
+	${INSTALL_SCRIPT} ${WRKDIR}/bbb-conf ${STAGEDIR}${PREFIX}/bin
+	@(cd ${STAGEDIR}${DATADIR} && ${MKDIR} asterisk blank freeswitch nginx)
+	${INSTALL_DATA} ${FILESDIR}/nopdfmark.ps ${STAGEDIR}${DATADIR}/blank
+	(cd ${_DISTDIR} && ${INSTALL_DATA} blank-slide.swf blank-thumb.png \
+		${STAGEDIR}${DATADIR}/blank)
+	(cd ${WRKSRC} && ${INSTALL_DATA} bbb_*.conf-dist \
+		${STAGEDIR}${DATADIR}/asterisk)
+	${INSTALL_DATA} ${WRKSRC}/nginx-bigbluebutton.conf-dist \
+		${WRKDIR}/nginx.conf-dist ${STAGEDIR}${DATADIR}/nginx
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} conf ${STAGEDIR}${DATADIR}/freeswitch)
 	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/webapps/bigbluebutton
-	@cd ${WRKDIR}/bigbluebutton-tomcat && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${TOMCAT_HOME}/webapps/bigbluebutton
-	@${CHOWN} ${TOMCAT_USER}:${TOMCAT_GROUP} \
-		${STAGEDIR}${TOMCAT_HOME}/webapps/bigbluebutton
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} bigbluebutton-default ${STAGEDIR}${WWWROOT}
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} client ${STAGEDIR}${WWWDIR}
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} 'bigbluebutton deskshare sip video' \
-		${STAGEDIR}${RED5_HOME}/webapps
-	@cd ${RED5_HOME} && ${CHOWN} -R ${RED5_USER}:${RED5_GROUP} \
-		webapps
-.for f in aopalliance-1.0.jar spring-aop-3.0.0.jar
-	@${INSTALL_DATA} ${WRKDIR}/red5-0.9.1/lib/${f} ${STAGEDIR}${RED5_HOME}/lib
-.endfor
+	(cd ${WRKSRC}/bigbluebutton-tomcat && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${TOMCAT_HOME}/webapps/bigbluebutton)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} bigbluebutton-default \
+		${STAGEDIR}${WWWROOT})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} client ${STAGEDIR}${WWWDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} 'bigbluebutton deskshare sip video' \
+		${STAGEDIR}${RED5_HOME}/webapps)
+	@${MKDIR} ${STAGEDIR}${RED5_HOME}/lib
+	(cd ${WRKSRC}/red5-0.9.1/lib && ${INSTALL_DATA} aopalliance-1.0.jar \
+		spring-aop-3.0.0.jar ${STAGEDIR}${RED5_HOME}/lib)
 
 .include <bsd.port.mk>

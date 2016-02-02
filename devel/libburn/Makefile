@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libburn
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.2.pl01
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 
@@ -11,6 +11,8 @@ COMMENT=	Libburnia library to read/write optical discs
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USES=		libtool
 GNU_CONFIGURE=	yes

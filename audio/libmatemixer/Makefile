@@ -11,6 +11,8 @@ COMMENT=	Mixer library for MATE desktop
 
 LICENSE=	LGPL21
 
+PORTSCOUT=	limitw:1,even
+
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 intlhack
 GNU_CONFIGURE=	yes

@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake ncurses
 
 post-configure:
 	@${REINPLACE_CMD} -e '49s,-s,,' ${WRKSRC}/src/Makefile

@@ -11,16 +11,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP, FTP, and Gopher mirroring tool
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	tar:bzip2
+USES=		localbase tar:bzip2
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-locale-dir=${PREFIX}/share/locale \
 		--disable-debug --disable-gnome --disable-js \
 		--enable-utf-8 --enable-threads
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DANTE GTK2 NLS DOCS
 DANTE_DESC=	Enable SOCKS proxy support
@@ -45,8 +43,10 @@ pre-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pavuk_authinfo.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/pavukrc.sample ${STAGEDIR}${PREFIX}/etc
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in AUTHORS BUGS CREDITS ChangeLog COPYING MAILINGLIST NEWS \
+.for f in AUTHORS BUGS CREDITS ChangeLog MAILINGLIST NEWS \
 	README TODO wget-pavuk.HOWTO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbvis
-PORTVERSION=	9.1.6
+PORTVERSION=	9.2.14
 CATEGORIES=	java databases
 MASTER_SITES=	http://www.dbvis.com/product_download/${PORTNAME}-${PORTVERSION}/media/
 DISTNAME=	dbvis_unix_${PORTVERSION:S/./_/g}
@@ -16,7 +16,7 @@ LICENSE_TEXT=	Full license can be found at http://www.dbvis.com/eula/
 LICENSE_PERMS=	auto-accept
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 JAVA_VENDOR=	openjdk
 NO_BUILD=	yes
 RESTRICTED=	Redistribution is not permitted
@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/DbVisualizer
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s ../share/dbvis dbvis
+	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s ../share/dbvis/dbvis dbvis
 	${CHMOD} a+x ${STAGEDIR}${DATADIR}/dbvis
 
 post-install:

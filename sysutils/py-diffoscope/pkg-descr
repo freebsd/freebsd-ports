@@ -1,0 +1,17 @@
+diffoscope will try to get to the bottom of what makes files or
+directories different. It will recursively unpack archives of many kinds
+and transform various binary formats into more human readable form to
+compare them. It can compare two tarballs, ISO images, or PDF just as
+easily.
+
+It can be scripted through error codes, and a report can be produced
+with the detected differences. The report can be text or HTML. When no
+type of report has been selected, diffoscope defaults to write a text
+report on the standard output.
+
+diffoscope is developed as part of the 'reproducible builds' Debian
+project. It is meant to be able to quickly understand why two builds
+of the same package produce different outputs. diffoscope was previously
+named debbindiff.
+
+WWW: https://diffoscope.org/

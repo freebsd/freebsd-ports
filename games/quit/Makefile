@@ -12,11 +12,13 @@ COMMENT=	Bicycle with trailers like "sl"
 
 MANLANG=	ja
 
+USES=		ncurses
+
 OPTIONS_DEFINE=	DOCS
 
 do-build:
 	${CC} ${CFLAGS} ${CPPFLAGS} -o ${WRKSRC}/quit \
-		${WRKSRC}/quit.c -lncurses
+		${WRKSRC}/quit.c ${LDFLAGS} -lncurses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/quit ${STAGEDIR}${PREFIX}/bin

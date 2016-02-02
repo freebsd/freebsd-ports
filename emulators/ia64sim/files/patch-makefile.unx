@@ -1,8 +1,16 @@
---- makefile.unx.orig	Sat Feb 12 22:25:47 2000
-+++ makefile.unx	Sun May  6 11:48:13 2001
-@@ -21 +21 @@
+--- makefile.unx.orig	2000-02-13 06:25:47 UTC
++++ makefile.unx
+@@ -18,11 +18,11 @@ EXECDIR = execute
+ OBJDIR = obj
+ INCDIR = include
+ CC = gcc
 -CFLAGS = -O3 -m486 -fomit-frame-pointer -s -I$(INCDIR)
 +CFLAGS += -s -I$(INCDIR)
-@@ -25 +25 @@
+ 
+ ASMSRCS= assemble.c bundle.c asmfunc.c jumptbl.c decode.c symbols.c
+  
 -EXECSRCS = execute.c utils.c f_unit.c b_unit.c x_unit.c  \
 +EXECSRCS = elf.c execute.c utils.c f_unit.c b_unit.c x_unit.c  \
+            m_unit.c i_alu.c i_cmp.c i_shft.c globals.c
+ 
+ ASMOBJS = $(ASMSRCS:.c=.o) 

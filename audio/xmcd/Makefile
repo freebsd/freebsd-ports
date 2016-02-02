@@ -14,7 +14,7 @@ LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libFLAC.so:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
-USES=		imake motif
+USES=		imake motif ncurses
 USE_XORG=	x11 xext xaw xmu xp xpm xt sm ice
 PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH} OPSYS=${OPSYS}
 SUB_FILES=	pkg-message

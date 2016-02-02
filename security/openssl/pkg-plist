@@ -1149,8 +1149,8 @@ man/man3/SSL_CTX_add1_chain_cert.3.gz
 man/man3/SSL_CTX_add_client_CA.3.gz
 man/man3/SSL_CTX_add_client_custom_ext.3.gz
 man/man3/SSL_CTX_add_extra_chain_cert.3.gz
-man/man3/SSL_CTX_add_session.3.gz
 man/man3/SSL_CTX_add_server_custom_ext.3.gz
+man/man3/SSL_CTX_add_session.3.gz
 man/man3/SSL_CTX_build_cert_chain.3.gz
 man/man3/SSL_CTX_callback_ctrl.3.gz
 man/man3/SSL_CTX_check_private_key.3.gz
@@ -1242,6 +1242,8 @@ man/man3/SSL_CTX_set_session_cache_mode.3.gz
 man/man3/SSL_CTX_set_session_id_context.3.gz
 man/man3/SSL_CTX_set_ssl_version.3.gz
 man/man3/SSL_CTX_set_timeout.3.gz
+man/man3/SSL_CTX_set_tlsext_status_arg.3.gz
+man/man3/SSL_CTX_set_tlsext_status_cb.3.gz
 man/man3/SSL_CTX_set_tlsext_ticket_key_cb.3.gz
 man/man3/SSL_CTX_set_tmp_dh.3.gz
 man/man3/SSL_CTX_set_tmp_dh_callback.3.gz
@@ -1327,6 +1329,7 @@ man/man3/SSL_get_session.3.gz
 man/man3/SSL_get_shared_curve.3.gz
 man/man3/SSL_get_shutdown.3.gz
 man/man3/SSL_get_ssl_method.3.gz
+man/man3/SSL_get_tlsext_status_ocsp_resp.3.gz
 man/man3/SSL_get_verify_callback.3.gz
 man/man3/SSL_get_verify_depth.3.gz
 man/man3/SSL_get_verify_mode.3.gz
@@ -1377,6 +1380,8 @@ man/man3/SSL_set_session.3.gz
 man/man3/SSL_set_session_id_context.3.gz
 man/man3/SSL_set_shutdown.3.gz
 man/man3/SSL_set_ssl_method.3.gz
+man/man3/SSL_set_tlsext_status_ocsp_resp.3.gz
+man/man3/SSL_set_tlsext_status_type.3.gz
 man/man3/SSL_set_tmp_dh.3.gz
 man/man3/SSL_set_tmp_dh_callback.3.gz
 man/man3/SSL_set_tmp_rsa.3.gz
@@ -1540,8 +1545,8 @@ man/man3/d2i_DHparams.3.gz
 man/man3/d2i_DSAPrivateKey.3.gz
 man/man3/d2i_DSAPublicKey.3.gz
 man/man3/d2i_DSA_PUBKEY.3.gz
-man/man3/d2i_DSAparams.3.gz
 man/man3/d2i_DSA_SIG.3.gz
+man/man3/d2i_DSAparams.3.gz
 man/man3/d2i_ECDSA_SIG.3.gz
 man/man3/d2i_ECPKParameters.3.gz
 man/man3/d2i_ECPKParameters_bio.3.gz
@@ -1582,8 +1587,8 @@ man/man3/err.3.gz
 man/man3/evp.3.gz
 man/man3/hmac.3.gz
 man/man3/i2d_ASN1_OBJECT.3.gz
-man/man3/i2d_CMS_bio_stream.3.gz
 man/man3/i2d_CMS_ContentInfo.3.gz
+man/man3/i2d_CMS_bio_stream.3.gz
 man/man3/i2d_DHparams.3.gz
 man/man3/i2d_DSAPrivateKey.3.gz
 man/man3/i2d_DSAPublicKey.3.gz

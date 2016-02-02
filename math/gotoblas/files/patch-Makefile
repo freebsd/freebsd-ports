@@ -1,6 +1,6 @@
---- Makefile.orig	2010-01-21 05:54:38.000000000 +0900
-+++ Makefile	2012-01-24 17:17:35.000000000 +0900
-@@ -23,7 +23,7 @@
+--- Makefile.orig	2010-01-20 20:54:38 UTC
++++ Makefile
+@@ -23,7 +23,7 @@ all :: libs netlib tests shared
  	@echo " GotoBLAS build complete."
  	@echo
  	@echo "  OS               ... $(OSNAME)             "
@@ -9,7 +9,7 @@
  ifndef BINARY64
  	@echo "  BINARY           ... 32bit                 "
  else
-@@ -142,46 +142,41 @@
+@@ -142,46 +142,41 @@ hpl_p :
  	fi; \
  	done
  
@@ -79,7 +79,7 @@
  endif
  
  large.tgz : 
-@@ -194,21 +189,21 @@
+@@ -194,21 +189,21 @@ ifndef NOFORTRAN
  	-wget http://www.netlib.org/lapack/timing/timing.tgz
  endif
  
@@ -111,7 +111,7 @@
  
  dummy :
  
-@@ -223,8 +218,8 @@
+@@ -223,8 +218,8 @@ ifdef DYNAMIC_ARCH
  endif
  	@rm -f *.$(LIBSUFFIX) *.so *~ *.exe getarch getarch_2nd *.dll *.lib *.$(SUFFIX) *.dwf libgoto2.$(LIBSUFFIX) libgoto2_p.$(LIBSUFFIX) *.lnk myconfig.h
  	@rm -f Makefile.conf config.h Makefile_kernel.conf config_kernel.h st* *.dylib

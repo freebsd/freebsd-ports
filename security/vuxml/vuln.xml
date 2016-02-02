@@ -58,6 +58,735 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a52a7172-c92e-11e5-96d6-14dae9d210b8">
+    <topic>socat -- diffie hellman parameter was not prime</topic>
+    <affects>
+      <package>
+	<name>socat</name>
+	<range><ge>1.7.2.5</ge><lt>1.7.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>socat reports:</p>
+	<blockquote cite="http://www.dest-unreach.org/socat/contrib/socat-secadv7.html">
+	  <p>In the OpenSSL address implementation the hard coded 1024
+	    bit DH p parameter was not prime. The effective cryptographic strength
+	    of a key exchange using these parameters was weaker than the one one
+	    could get by using a prime p. Moreover, since there is no indication of
+	    how these parameters were chosen, the existence of a trapdoor that makes
+	    possible for an eavesdropper to recover the shared secret from a key
+	    exchange that uses them cannot be ruled out.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.dest-unreach.org/socat/contrib/socat-secadv7.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-01</discovery>
+      <entry>2016-02-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4f00dac0-1e18-4481-95af-7aaad63fd303">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<name>linux-firefox</name>
+	<range><lt>44.0,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>2.41</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>38.6.0,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<name>thunderbird</name>
+	<name>linux-thunderbird</name>
+	<range><lt>38.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Foundation reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/#firefox44">
+	  <p>MFSA 2016-01 Miscellaneous memory safety hazards (rv:44.0
+	    / rv:38.6)</p>
+	  <p>MFSA 2016-02 Out of Memory crash when parsing GIF format
+	    images</p>
+	  <p>MFSA 2016-03 Buffer overflow in WebGL after out of memory
+	    allocation</p>
+	  <p>MFSA 2016-04 Firefox allows for control characters to be
+	    set in cookie names</p>
+	  <p>MFSA 2016-06 Missing delay following user click events in
+	    protocol handler dialog</p>
+	  <p>MFSA 2016-07 Errors in mp_div and mp_exptmod
+	    cryptographic functions in NSS</p>
+	  <p>MFSA 2016-09 Addressbar spoofing attacks</p>
+	  <p>MFSA 2016-10 Unsafe memory manipulation found through
+	    code inspection</p>
+	  <p>MFSA 2016-11 Application Reputation service disabled in
+	    Firefox 43</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7208</cvename>
+      <cvename>CVE-2016-1930</cvename>
+      <cvename>CVE-2016-1931</cvename>
+      <cvename>CVE-2016-1933</cvename>
+      <cvename>CVE-2016-1935</cvename>
+      <cvename>CVE-2016-1937</cvename>
+      <cvename>CVE-2016-1938</cvename>
+      <cvename>CVE-2016-1939</cvename>
+      <cvename>CVE-2016-1942</cvename>
+      <cvename>CVE-2016-1943</cvename>
+      <cvename>CVE-2016-1944</cvename>
+      <cvename>CVE-2016-1945</cvename>
+      <cvename>CVE-2016-1946</cvename>
+      <cvename>CVE-2016-1947</cvename>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-01/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-02/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-03/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-04/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-06/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-07/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-09/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-10/</url>
+      <url>https://www.mozilla.org/security/advisories/mfsa2016-11/</url>
+    </references>
+    <dates>
+      <discovery>2016-01-26</discovery>
+      <entry>2016-02-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e00d8b94-c88a-11e5-b5fe-002590263bf5">
+    <topic>gdcm -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gdcm</name>
+	<range><lt>2.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CENSUS S.A. reports:</p>
+	<blockquote cite="http://census-labs.com/news/2016/01/11/gdcm-buffer-overflow-imageregionreaderreadintobuffer/">
+	  <p>GDCM versions 2.6.0 and 2.6.1 (and possibly previous versions) are
+	    prone to an integer overflow vulnerability which leads to a buffer
+	    overflow and potentially to remote code execution.</p>
+	</blockquote>
+	<blockquote cite="http://census-labs.com/news/2016/01/11/gdcm-out-bounds-read-jpeglscodec-decodeextent/">
+	  <p>GDCM versions 2.6.0 and 2.6.1 (and possibly previous versions) are
+	    prone to an out-of-bounds read vulnerability due to missing checks.
+	    </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8396</cvename>
+      <cvename>CVE-2015-8397</cvename>
+      <url>http://census-labs.com/news/2016/01/11/gdcm-buffer-overflow-imageregionreaderreadintobuffer/</url>
+      <url>http://census-labs.com/news/2016/01/11/gdcm-out-bounds-read-jpeglscodec-decodeextent/</url>
+    </references>
+    <dates>
+      <discovery>2015-12-23</discovery>
+      <entry>2016-02-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c1c18ee1-c711-11e5-96d6-14dae9d210b8">
+    <topic>nginx -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><lt>1.8.1,2</lt></range>
+      </package>
+      <package>
+	<name>nginx-devel</name>
+	<range><lt>1.9.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Maxim Dounin reports:</p>
+	<blockquote cite="http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html">
+	  <p>Several problems in nginx resolver were identified, which
+	    might allow an attacker to cause worker process crash, or might have
+	    potential other impact if the "resolver" directive
+	    is used in a configuration file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://mailman.nginx.org/pipermail/nginx/2016-January/049700.html</url>
+      <cvename>CVE-2016-0742</cvename>
+      <cvename>CVE-2016-0746</cvename>
+      <cvename>CVE-2016-0747</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-26</discovery>
+      <entry>2016-01-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a0d77bc8-c6a7-11e5-96d6-14dae9d210b8">
+    <topic>typo3 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>typo3</name>
+	<range><lt>7.6.1</lt></range>
+      </package>
+      <package>
+	<name>typo3-lts</name>
+	<range><lt>6.2.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>TYPO3 Security Team reports:</p>
+	<blockquote cite="http://lists.typo3.org/pipermail/typo3-announce/2015/000351.html">
+	  <p>It has been discovered that TYPO3 CMS is susceptible to
+	    Cross-Site Scripting and Cross-Site Flashing.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.typo3.org/pipermail/typo3-announce/2015/000351.html</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-010/</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-011/</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-012/</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-013/</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-014/</url>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2015-015/</url>
+    </references>
+    <dates>
+      <discovery>2015-12-15</discovery>
+      <entry>2016-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="93eadedb-c6a6-11e5-96d6-14dae9d210b8">
+    <topic>nghttp2 -- use after free</topic>
+    <affects>
+      <package>
+	<name>nghttp2</name>
+	<range><lt>1.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>nghttp2 reports:</p>
+	<blockquote cite="https://nghttp2.org/blog/2015/12/23/nghttp2-v1-6-0/">
+	  <p>This release fixes heap-use-after-free bug in idle stream
+	    handling code. We strongly recommend to upgrade the older installation
+	    to this latest version as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://nghttp2.org/blog/2015/12/23/nghttp2-v1-6-0/</url>
+      <cvename>CVE-2015-8659</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-23</discovery>
+      <entry>2016-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3166222b-c6a4-11e5-96d6-14dae9d210b8">
+    <topic>owncloud -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>owncloud</name>
+	<range><lt>8.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Owncloud reports:</p>
+	<blockquote cite="https://owncloud.org/blog/owncloud-8-2-2-8-1-5-8-0-10-and-7-0-12-here-with-sharing-ldap-fixes/">
+	  <ul>
+	  <li><p>Reflected XSS in OCS provider discovery
+	    (oC-SA-2016-001)</p></li>
+	  <li><p>Information Exposure Through Directory Listing in the
+	    file scanner (oC-SA-2016-002)</p></li>
+	  <li><p>Disclosure of files that begin with ".v" due to
+	    unchecked return value (oC-SA-2016-003)</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://owncloud.org/blog/owncloud-8-2-2-8-1-5-8-0-10-and-7-0-12-here-with-sharing-ldap-fixes/</url>
+      <url>https://owncloud.org/security/advisory/?id=oc-sa-2016-001</url>
+      <url>https://owncloud.org/security/advisory/?id=oc-sa-2016-002</url>
+      <url>https://owncloud.org/security/advisory/?id=oc-sa-2016-003</url>
+      <cvename>CVE-2016-1498</cvename>
+      <cvename>CVE-2016-1499</cvename>
+      <cvename>CVE-2016-1500</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-23</discovery>
+      <entry>2016-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ff824eea-c69c-11e5-96d6-14dae9d210b8">
+    <topic>radicale -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-radicale</name>
+	<name>py32-radicale</name>
+	<name>py33-radicale</name>
+	<name>py34-radicale</name>
+	<range><lt>1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Radicale reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2016/01/06/4">
+	  <p>The multifilesystem backend allows access to arbitrary
+	    files on all platforms.</p>
+	  <p>Prevent regex injection in rights management.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2016/01/06/4</url>
+      <cvename>CVE-2015-8747</cvename>
+      <cvename>CVE-2015-8748</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-24</discovery>
+      <entry>2016-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7a59e283-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- XSS vulnerability in SQL editor</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-9/">
+	  <p>With a crafted SQL query, it is possible to trigger an
+	    XSS attack in the SQL editor.</p>
+	  <p>We consider this vulnerability to be non-critical.</p>
+	  <p>This vulnerability can be triggered only by someone who is
+	    logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    pages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-9/</url>
+      <cvename>CVE-2016-2045</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="78b4ebfb-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Full path disclosure vulnerability in SQL parser</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-8/">
+	  <p>By calling a particular script that is part of phpMyAdmin
+	    in an unexpected way, it is possible to trigger phpMyAdmin
+	    to display a PHP error message which contains the full path
+	    of the directory where phpMyAdmin is installed.</p>
+	  <p>We consider this vulnerability to be non-critical.</p>
+	  <p>This path disclosure is possible on servers where the
+	    recommended setting of the PHP configuration directive
+	    display_errors is set to on, which is against the
+	    recommendations given in the PHP manual for a production
+	    server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-8/</url>
+      <cvename>CVE-2016-2044</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7694927f-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- XSS vulnerability in normalization page</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-7/">
+	  <p>With a crafted table name it is possible to trigger an
+	    XSS attack in the database normalization page.</p>
+	  <p>We consider this vulnerability to be non-critical.</p>
+	  <p>This vulnerability can be triggered only by someone who is
+	    logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required page.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-7/</url>
+      <cvename>CVE-2016-2043</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="740badcb-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Multiple full path disclosure vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-6/">
+	  <p>By calling some scripts that are part of phpMyAdmin in an
+	    unexpected way, it is possible to trigger phpMyAdmin to
+	    display a PHP error message which contains the full path of
+	    the directory where phpMyAdmin is installed.</p>
+	  <p>We consider these vulnerabilities to be non-critical.</p>
+	  <p>This path disclosure is possible on servers where the
+	    recommended setting of the PHP configuration directive
+	    display_errors is set to on, which is against the
+	    recommendations given in the PHP manual for a production
+	    server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-6/</url>
+      <cvename>CVE-2016-2042</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="71b24d99-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Unsafe comparison of XSRF/CSRF token</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-5/">
+	  <p>The comparison of the XSRF/CSRF token parameter with the
+	    value saved in the session is vulnerable to timing
+	    attacks. Moreover, the comparison could be bypassed if the
+	    XSRF/CSRF token matches a particular pattern.</p>
+	  <p>We consider this vulnerability to be serious.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-5/</url>
+      <cvename>CVE-2016-2041</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6f0c2d1b-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Insecure password generation in JavaScript</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-4/">
+	  <p>Password suggestion functionality uses Math.random()
+	    which does not provide cryptographically secure random
+	    numbers.</p>
+	  <p>We consider this vulnerability to be non-critical.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-4/</url>
+      <cvename>CVE-2016-1927</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6cc06eec-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Multiple XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-3/">
+	  <ul>
+	    <li>With a crafted table name it is possible to trigger
+	      an XSS attack in the database search page.</li>
+	    <li>With a crafted SET value or a crafted search query, it
+	      is possible to trigger an XSS attacks in the zoom search
+	      page.</li>
+	    <li>With a crafted hostname header, it is possible to
+	      trigger an XSS attacks in the home page.</li>
+	  </ul>
+	  <p>We consider these vulnerabilities to be non-critical.</p>
+	  <p>These vulnerabilities can be triggered only by someone
+	    who is logged in to phpMyAdmin, as the usual token
+	    protection prevents non-logged-in users from accessing the
+	    required pages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-3/</url>
+      <cvename>CVE-2016-2040</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="60ab0e93-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Unsafe generation of XSRF/CSRF token</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-2/">
+	  <p>The XSRF/CSRF token is generated with a weak algorithm
+	    using functions that do not return cryptographically secure
+	    values.</p>
+	  <p>We consider this vulnerability to be non-critical.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-2/</url>
+      <cvename>CVE-2016-2039</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5d6a204f-c60b-11e5-bf36-6805ca0b3d42">
+    <topic>phpmyadmin -- Multiple full path disclosure vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/security/PMASA-2016-1/">
+	  <p>By calling some scripts that are part of phpMyAdmin in an
+	    unexpected way, it is possible to trigger phpMyAdmin to
+	    display a PHP error message which contains the full path of
+	    the directory where phpMyAdmin is installed.</p>
+	  <p>We consider these vulnerabilities to be non-critical.</p>
+	  <p>This path disclosure is possible on servers where the
+	    recommended setting of the PHP configuration directive
+	    display_errors is set to on, which is against the
+	    recommendations given in the PHP manual for a production
+	    server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2016-1/</url>
+      <cvename>CVE-2016-2038</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-28</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="50394bc9-c5fa-11e5-96a5-d93b343d1ff7">
+    <topic>prosody -- user impersonation vulnerability</topic>
+    <affects>
+      <package>
+	<name>prosody</name>
+	<range><lt>0.9.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Prosody team reports:</p>
+    <blockquote cite="https://prosody.im/security/advisory_20160127/">
+	 <p>Adopt key generation algorithm from XEP-0185, to
+	 prevent impersonation attacks (CVE-2016-0756)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/206707</freebsdpr>
+      <cvename>CVE-2016-0756</cvename>
+      <url>https://prosody.im/security/advisory_20160127/</url>
+    </references>
+    <dates>
+      <discovery>2016-01-27</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3679fd10-c5d1-11e5-b85f-0018fe623f2b">
+    <topic>openssl -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.0.2_7</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.2f</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20160128.txt">
+	  <ol>
+	    <li>Historically OpenSSL only ever generated DH parameters based on "safe"
+	      primes. More recently (in version 1.0.2) support was provided for
+	      generating X9.42 style parameter files such as those required for RFC 5114
+	      support. The primes used in such files may not be "safe". Where an
+	      application is using DH configured with parameters based on primes that are
+	      not "safe" then an attacker could use this fact to find a peer's private
+	      DH exponent. This attack requires that the attacker complete multiple
+	      handshakes in which the peer uses the same private DH exponent. For example
+	      this could be used to discover a TLS server's private DH exponent if it's
+	      reusing the private DH exponent or it's using a static DH ciphersuite.
+	      OpenSSL provides the option SSL_OP_SINGLE_DH_USE for ephemeral DH (DHE) in
+	      TLS. It is not on by default. If the option is not set then the server
+	      reuses the same private DH exponent for the life of the server process and
+	      would be vulnerable to this attack. It is believed that many popular
+	      applications do set this option and would therefore not be at risk.
+	      (CVE-2016-0701)</li>
+	    <li>A malicious client can negotiate SSLv2 ciphers that have been disabled on
+	      the server and complete SSLv2 handshakes even if all SSLv2 ciphers have
+	      been disabled, provided that the SSLv2 protocol was not also disabled via
+	      SSL_OP_NO_SSLv2.
+	      (CVE-2015-3197)</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-0701</cvename>
+      <cvename>CVE-2015-3197</cvename>
+      <url>https://www.openssl.org/news/secadv/20160128.txt</url>
+    </references>
+    <dates>
+      <discovery>2016-01-22</discovery>
+      <entry>2016-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8b27f1bc-c509-11e5-a95f-b499baebfeaf">
+    <topic>curl -- Credentials not checked</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>7.10.0</ge><lt>7.47.0</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-curl</name>
+	<name>linux-c6_64-curl</name>
+	<range><ge>7.10.0</ge></range>
+      </package>
+      <package>
+	<name>linux-f10-curl</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cURL project reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20160127A.html">
+	  <p>libcurl will reuse NTLM-authenticated proxy connections
+	    without properly making sure that the connection was
+	    authenticated with the same credentials as set for this
+	    transfer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://curl.haxx.se/docs/adv_20160127A.html</url>
+      <cvename>CVE-2016-0755</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-27</discovery>
+      <entry>2016-01-27</entry>
+      <modified>2016-02-02</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="fb754341-c3e2-11e5-b5fe-002590263bf5">
     <topic>wordpress -- XSS vulnerability</topic>
     <affects>
@@ -4275,7 +5004,7 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-openssl</name>
-	<range><ge>0</ge></range>
+	<range><lt>1.0.1e_7</lt></range>
       </package>
     </affects>
     <description>
@@ -4307,6 +5036,7 @@ Notes:
     <dates>
       <discovery>2015-12-03</discovery>
       <entry>2015-12-05</entry>
+      <modified>2016-01-31</modified>
     </dates>
   </vuln>
 
@@ -13800,7 +14530,7 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-libxml2</name>
-	<range><ge>*</ge></range>
+	<range><lt>2.7.6_5</lt></range>
       </package>
       <package>
 	<name>linux-f10-libxml2</name>
@@ -13826,7 +14556,7 @@ Notes:
     <dates>
       <discovery>2015-04-14</discovery>
       <entry>2015-07-01</entry>
-      <modified>2015-07-15</modified>
+      <modified>2016-01-31</modified>
     </dates>
   </vuln>
 
@@ -18914,11 +19644,11 @@ Notes:
       </package>
       <package>
 	<name>linux-c6-xorg-libs</name>
-	<range><ge>*</ge></range>
+	<range><lt>7.4_4</lt></range>
       </package>
       <package>
 	<name>linux-f10-xorg-libs</name>
-	<range><ge>*</ge></range>
+	<range><lt>7.4_4</lt></range>
       </package>
     </affects>
     <description>
@@ -18949,7 +19679,7 @@ Notes:
     <dates>
       <discovery>2015-03-17</discovery>
       <entry>2015-03-18</entry>
-      <modified>2015-07-15</modified>
+      <modified>2016-01-31</modified>
     </dates>
   </vuln>
 

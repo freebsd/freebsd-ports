@@ -13,6 +13,9 @@ COMMENT=	Action Controller and Action View of Rails MVC Framework
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
+DEPRECATED=	Rails 4.1 is no longer supported - please switch to Rails 4.2
+EXPIRATION_DATE=	2016-03-31
+
 RUN_DEPENDS=	rubygem-actionview41>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-actionview41 \
 		rubygem-activesupport41>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport41 \
 		rubygem-rack15>=1.5.2:${PORTSDIR}/www/rubygem-rack15 \

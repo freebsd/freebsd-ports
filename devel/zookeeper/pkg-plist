@@ -5,6 +5,5 @@ bin/zkServer.sh
 %%ETCDIR%%/log4j.properties
 %%ETCDIR%%/configuration.xsl
 %%ETCDIR%%/zoo_sample.cfg
-@dirrmtry %%ETCDIR%%
 @dir(zookeeper,zookeeper,755) %%ZOOKEEPER_LOGDIR%%
 @dir(zookeeper,zookeeper,755) %%ZOOKEEPER_DBDIR%%

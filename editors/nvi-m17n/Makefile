@@ -22,7 +22,7 @@ LICENSE=	BSD4CLAUSE
 PATCH_DIST_ARGS=	-d ${WRKSRC}/.. --forward --quiet -E -p0 -f
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 
-USES=		perl5
+USES=		ncurses perl5
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"' \

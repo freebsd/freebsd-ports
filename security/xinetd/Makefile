@@ -14,16 +14,20 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xinetd
 ALL_TARGET=	build
 CONFIGURE_ARGS+=	--with-loadavg
+OPTIONS_SUB=	yes
 
-USES=		cpe shebangfix perl5
-USE_PERL5=	run
+USES=		cpe shebangfix
 SHEBANG_FILES=	${WRKSRC}/xinetd/xconv.pl
 
-OPTIONS_DEFINE=	IPV6 LIBWRAP
-OPTIONS_DEFAULT=	LIBWRAP
+OPTIONS_DEFINE=	IPV6 LIBWRAP XCONV
+OPTIONS_DEFAULT=	LIBWRAP XCONV
+
+XCONV_DESC=	Install xconv utility (requires perl)
 
 IPV6_CONFIGURE_WITH=	ipv6
 LIBWRAP_CONFIGURE_WITH=	libwrap
+XCONV_USES=	perl5
+XCONV_USE=	PERL5=run
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/xinetd/xconfig.h

@@ -1,12 +1,12 @@
---- CMakeLists.txt.orig	2016-01-18 08:59:14 UTC
+--- CMakeLists.txt.orig	2016-01-24 19:35:50 UTC
 +++ CMakeLists.txt
-@@ -49,8 +49,8 @@ install(TARGETS nordlicht DESTINATION bi
+@@ -63,8 +63,8 @@ install(TARGETS nordlicht DESTINATION bi
  install(FILES nordlicht.h DESTINATION include)
  
  if (NOT WIN32)
--    install(FILES ${CMAKE_BINARY_DIR}/nordlicht.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
+-		install(FILES ${CMAKE_BINARY_DIR}/nordlicht.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
 -    install(FILES ${CMAKE_BINARY_DIR}/nordlicht.1 DESTINATION share/man/man1)
-+    install(FILES ${CMAKE_BINARY_DIR}/nordlicht.pc DESTINATION libdata/pkgconfig)
++		install(FILES ${CMAKE_BINARY_DIR}/nordlicht.pc DESTINATION libdata/pkgconfig)
 +    install(FILES ${CMAKE_BINARY_DIR}/nordlicht.1 DESTINATION man/man1)
  endif()
  

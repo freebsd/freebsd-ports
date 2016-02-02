@@ -6,7 +6,6 @@ aarch64-freebsd/bin/nm
 aarch64-freebsd/bin/objcopy
 aarch64-freebsd/bin/objdump
 aarch64-freebsd/bin/ranlib
-aarch64-freebsd/bin/readelf
 aarch64-freebsd/bin/size
 aarch64-freebsd/bin/strip
 aarch64-freebsd/lib/ldscripts/aarch64elf.x

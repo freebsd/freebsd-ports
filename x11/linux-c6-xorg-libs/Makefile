@@ -3,12 +3,12 @@
 
 PORTNAME=	xorg-libs
 PORTVERSION=	7.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 linux
 MASTER_SITES=	CENTOS_LINUX CENTOS_LINUX_UPDATES
 DISTFILES=	libICE-1.0.6-1.el6.${LINUX_RPM_ARCH}.rpm \
 		libSM-1.2.1-2.el6.${LINUX_RPM_ARCH}.rpm \
-		libX11-1.6.0-2.2.el6.${LINUX_RPM_ARCH}.rpm \
+		libX11-1.6.0-6.el6.${LINUX_RPM_ARCH}.rpm \
 		libXScrnSaver-1.2.2-2.el6.${LINUX_RPM_ARCH}.rpm \
 		libXau-1.0.6-4.el6.${LINUX_RPM_ARCH}.rpm \
 		libXaw-1.0.11-2.el6.${LINUX_RPM_ARCH}.rpm \
@@ -19,7 +19,7 @@ DISTFILES=	libICE-1.0.6-1.el6.${LINUX_RPM_ARCH}.rpm \
 		libXevie-1.0.3-4.el6.${LINUX_RPM_ARCH}.rpm \
 		libXext-1.3.2-2.1.el6.${LINUX_RPM_ARCH}.rpm \
 		libXfixes-5.0.1-2.1.el6.${LINUX_RPM_ARCH}.rpm \
-		libXfont-1.4.5-4.el6_6.${LINUX_RPM_ARCH}.rpm \
+		libXfont-1.4.5-5.el6_7.${LINUX_RPM_ARCH}.rpm \
 		libXft-2.3.1-2.el6.${LINUX_RPM_ARCH}.rpm \
 		libXi-1.7.2-2.2.el6.${LINUX_RPM_ARCH}.rpm \
 		libXinerama-1.1.3-2.1.el6.${LINUX_RPM_ARCH}.rpm \
@@ -37,14 +37,14 @@ DISTFILES=	libICE-1.0.6-1.el6.${LINUX_RPM_ARCH}.rpm \
 		libXxf86misc-1.0.3-4.el6.${LINUX_RPM_ARCH}.rpm \
 		libXxf86vm-1.1.3-2.1.el6.${LINUX_RPM_ARCH}.rpm \
 		libfontenc-1.0.5-2.el6.${LINUX_RPM_ARCH}.rpm \
-		libxcb-1.9.1-2.el6.${LINUX_RPM_ARCH}.rpm \
+		libxcb-1.9.1-3.el6.${LINUX_RPM_ARCH}.rpm \
 		libxkbfile-1.0.6-1.1.el6.${LINUX_RPM_ARCH}.rpm \
 		mesa-libGLw-6.5.1-10.el6.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
 SRC_DISTFILES=	libICE-1.0.6-1.el6.src.rpm:SOURCE \
 		libSM-1.2.1-2.el6.src.rpm:SOURCE \
-		libX11-1.6.0-2.2.el6.src.rpm:SOURCE \
+		libX11-1.6.0-6.el6.src.rpm:SOURCE \
 		libXScrnSaver-1.2.2-2.el6.src.rpm:SOURCE \
 		libXau-1.0.6-4.el6.src.rpm:SOURCE \
 		libXaw-1.0.11-2.el6.src.rpm:SOURCE \
@@ -55,7 +55,7 @@ SRC_DISTFILES=	libICE-1.0.6-1.el6.src.rpm:SOURCE \
 		libXevie-1.0.3-4.el6.src.rpm:SOURCE \
 		libXext-1.3.2-2.1.el6.src.rpm:SOURCE \
 		libXfixes-5.0.1-2.1.el6.src.rpm:SOURCE \
-		libXfont-1.4.5-4.el6_6.src.rpm:SOURCE \
+		libXfont-1.4.5-5.el6_7.src.rpm:SOURCE \
 		libXft-2.3.1-2.el6.src.rpm:SOURCE \
 		libXi-1.7.2-2.2.el6.src.rpm:SOURCE \
 		libXinerama-1.1.3-2.1.el6.src.rpm:SOURCE \
@@ -73,7 +73,7 @@ SRC_DISTFILES=	libICE-1.0.6-1.el6.src.rpm:SOURCE \
 		libXxf86misc-1.0.3-4.el6.src.rpm:SOURCE \
 		libXxf86vm-1.1.3-2.1.el6.src.rpm:SOURCE \
 		libfontenc-1.0.5-2.el6.src.rpm:SOURCE \
-		libxcb-1.9.1-2.el6.src.rpm:SOURCE \
+		libxcb-1.9.1-3.el6.src.rpm:SOURCE \
 		libxkbfile-1.0.6-1.1.el6.src.rpm:SOURCE \
 		mesa-libGLw-6.5.1-10.el6.src.rpm:SOURCE
 .endif

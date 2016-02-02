@@ -399,6 +399,7 @@
     SUBDIR += open-axiom
     SUBDIR += openblas
     SUBDIR += openfst
+    SUBDIR += openlibm
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-Genetic
@@ -703,6 +704,7 @@
     SUBDIR += wxMaxima
     SUBDIR += x12arima
     SUBDIR += xblas
+    SUBDIR += xfce4-calculator-plugin
     SUBDIR += xgobi
     SUBDIR += xgraph
     SUBDIR += xlapack

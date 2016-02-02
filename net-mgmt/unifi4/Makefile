@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unifi4
-PORTVERSION=	4.7.6
+PORTVERSION=	4.8.12
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	https://www.ubnt.com/downloads/unifi/${PORTVERSION}/
@@ -12,7 +12,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	UniFi Controller
 
-RUN_DEPENDS=	mongodb>0:${PORTSDIR}/databases/mongodb
+RUN_DEPENDS=	mongodb>0:${PORTSDIR}/databases/mongodb \
+		snappyjava>0:${PORTSDIR}/archivers/snappy-java
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
@@ -38,6 +39,10 @@ WRKSRC=		${WRKDIR}/UniFi
 
 RESTRICTED=	Redistribution of bundled firmware images is not permitted
 CONFLICTS=	unifi2-* unifi3-*
+
+post-patch:
+	${RM} ${WRKSRC}/lib/snappy-java-1.0.5.jar
+	(cd ${WRKSRC}/lib && ${LN} -s ${JAVAJARDIR}/snappy-java.jar snappy-java-1.0.5.jar)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi

@@ -12,8 +12,6 @@ COMMENT=	Stable Distribution Functions
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BROKEN=		requires R >=  3.1.0
-
 USES=	cran:auto-plist
 
 .include <bsd.port.mk>

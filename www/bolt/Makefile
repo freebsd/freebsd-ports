@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bolt
-PORTVERSION=	2.2.10
-PORTREVISION=	1
+PORTVERSION=	2.2.17
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://bolt.cm/distribution/
 
@@ -14,12 +14,10 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	curl gd openssl simplexml
+USE_PHP=	ctype curl dom gd json mbstring openssl simplexml tokenizer
 WANT_PHP_WEB=	yes
 
 PLIST_SUB+=	WWWGRP=${WWWGRP}
-
-WRKSRC=	${WRKDIR}/bolt-git-2015-09-01-ca8eace
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	SQLITE

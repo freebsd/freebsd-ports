@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zmq
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	1.1.3
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

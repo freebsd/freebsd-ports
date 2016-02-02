@@ -23,6 +23,12 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 1000000
+USE_GCC=	4.9
+.endif
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
@@ -30,4 +36,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

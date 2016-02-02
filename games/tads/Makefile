@@ -17,6 +17,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 CONFLICTS=	frobtads-1.*
 
+USES=		ncurses
 WRKSRC=		${WRKDIR}/tads-3.0.8/tads2
 DATADIR=	${PREFIX}/share/tads2
 

@@ -1,21 +1,49 @@
---- Makefile.orig	2015-06-13 00:14:56 UTC
-+++ Makefile
-@@ -16,10 +16,6 @@ ifeq ($(V4LCONVERT), 1)
-     DEPS += libv4lconvert
- endif
+--- Makefile.orig	2015-12-29 12:13:36.418539000 +0200
++++ Makefile	2015-12-29 12:16:20.089265000 +0200
+@@ -2,7 +2,7 @@
+ # set to anything else to disable them
+ DBUS = 1
+ V4LCONVERT = 1
+-FILTER_AUDIO = 0
++FILTER_AUDIO = 1
+ UNITY = 0
  
--ifeq ($(FILTER_AUDIO), 1)
--    DEPS += filteraudio
--endif
--
- ifeq ($(UNITY), 1)
-     DEPS += messaging-menu unity
- endif
-@@ -41,6 +37,7 @@ endif
+ DEPS = libtoxav libtoxcore openal vpx libsodium
+@@ -50,6 +50,37 @@
  
- ifeq ($(FILTER_AUDIO), 1)
-     CFLAGS += -DAUDIO_FILTERING
-+    LDFLAGS += -lfilteraudio
- endif
+ 	TRAY_OBJ = icons/utox-128x128.o
+ 	TRAY_GEN = $(LD) -r -b binary icons/utox-128x128.png -o
++else ifeq ($(UNAME_S), FreeBSD)
++	OUT_FILE = utox
++
++	DEPS += fontconfig freetype2 x11 xext xrender
++
++	ifeq ($(V4LCONVERT), 1)
++		DEPS += libv4lconvert
++	else
++		CFLAGS += -DNO_V4LCONVERT
++	endif
++
++	ifeq ($(UNITY), 1)
++		DEPS += messaging-menu unity
++		CFLAGS += -DUNITY
++	endif
++
++	ifeq ($(DBUS), 1)
++		DEPS += dbus-1
++	else
++		CFLAGS += -DNO_DBUS
++	endif
++
++	CFLAGS += $(shell pkg-config --cflags $(DEPS))
++
++	LDFLAGS += $(shell pkg-config --libs $(DEPS))
++
++	OS_SRC = $(wildcard src/xlib/*.c)
++	OS_OBJ = $(OS_SRC:.c=.o)
++
++	TRAY_OBJ = icons/utox-128x128.o
++	TRAY_GEN = $(LD) -r -b binary icons/utox-128x128.png -o
+ else ifeq ($(UNAME_O), Cygwin)
+ 	OUT_FILE = utox.exe
  
- ifeq ($(UNITY), 1)

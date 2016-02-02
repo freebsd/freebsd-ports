@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	reflex:${PORTSDIR}/textproc/reflex
 
-USES=		pkgconfig shebangfix tar:tgz
+USES=		ncurses pkgconfig shebangfix tar:tgz
 SHEBANG_FILES=	perl/vileget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	cf_cv_crypt_works=yes

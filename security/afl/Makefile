@@ -2,23 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	1.95b
+PORTVERSION=	1.96b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	t@tobik.me
 COMMENT=	Fast instrumented fuzzer
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 USES=		compiler gmake tar:tgz
 
-OPTIONS_DEFINE=			DEBUG DOCS MINIMIZE_CORPUS \
-				PLOT_SUPPORT TEST_INSTRUMENTATION
+OPTIONS_DEFINE=		DEBUG DOCS MINIMIZE_CORPUS PLOT_SUPPORT TEST_INSTRUMENTATION
 MINIMIZE_CORPUS_DESC=	Install afl-cmin. Adds bash dependency
 PLOT_SUPPORT_DESC=	Support progress plotting. Adds Gnuplot dependency
-TEST_INSTRUMENTATION_DESC=	Execute tests expected to fail in jails
-OPTIONS_DEFAULT=		MINIMIZE_CORPUS PLOT_SUPPORT
+TEST_INSTRUMENTATION_DESC=	Execute tests (expected to fail in jails)
+OPTIONS_DEFAULT=		DOCS MINIMIZE_CORPUS PLOT_SUPPORT
 
 OPTIONS_SUB=	yes
 
@@ -27,8 +27,6 @@ PORTSCOUT=	ignore:1
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	Uses binary instrumentation
 
-# XXX replace with bsd.port.options.mk once 8.4-RELEASE is EOL
-# COMPILER_TYPE is defined in .pre without /usr/share/mk/bsd.compiler.mk
 .include <bsd.port.pre.mk>
 
 .if (${COMPILER_TYPE} == "clang" && ${ARCH} == "i386")
@@ -52,7 +50,7 @@ post-patch:
 		-e 's@ afl-(cmin|plot|whatsup) @ @g' \
 		${WRKSRC}/Makefile
 .if (${COMPILER_TYPE} == "clang" && ${ARCH} == "i386")
-	${REINPLACE_CMD} -e 's@\(  as_params\[0\] = "\)@\1${LOCALBASE}/bin/@' \
+	${REINPLACE_CMD} -e 's@\(  as_params\[0\] = afl_as ? afl_as : \)\(.*\)@\1(u8*)"${LOCALBASE}/bin/as";@' \
 		${WRKSRC}/afl-as.c
 .endif
 

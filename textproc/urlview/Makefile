@@ -10,6 +10,7 @@ COMMENT=	URL extractor/launcher
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	sigpipe
 GH_TAGNAME=	45443109

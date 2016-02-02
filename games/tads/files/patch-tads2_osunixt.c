@@ -1,5 +1,6 @@
-Index: osunixt.c
-@@ -960,7 +960,7 @@
+--- osunixt.c.orig	2004-12-15 02:06:26 UTC
++++ osunixt.c
+@@ -960,7 +960,7 @@ t_tty(int action)
          t.c_cc[VMIN] = 1;
          t.c_cc[VTIME] = 0;
  #if !defined(SGI_IRIX)
@@ -8,7 +9,7 @@ Index: osunixt.c
  #else
          t.c_oflag &= (~TAB3);
  #endif
-@@ -984,7 +984,7 @@
+@@ -984,7 +984,7 @@ t_tty(int action)
  #ifdef  USE_SGTTY
      ospeed = t.sg_ospeed;
  #else   

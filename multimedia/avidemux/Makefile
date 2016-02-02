@@ -6,7 +6,6 @@
 
 PORTNAME=	avidemux
 PORTVERSION=	${AVIDEMUX_VERSION}
-PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org

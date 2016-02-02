@@ -54,6 +54,5 @@ x86_64-unknown-cloudabi/bin/nm
 x86_64-unknown-cloudabi/bin/objcopy
 x86_64-unknown-cloudabi/bin/objdump
 x86_64-unknown-cloudabi/bin/ranlib
-x86_64-unknown-cloudabi/bin/readelf
 x86_64-unknown-cloudabi/bin/size
 x86_64-unknown-cloudabi/bin/strip

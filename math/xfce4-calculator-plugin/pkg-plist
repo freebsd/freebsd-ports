@@ -1,0 +1,9 @@
+libexec/xfce4/panel-plugins/xfce4-calculator-plugin
+share/icons/hicolor/16x16/apps/xfce4-calculator-plugin.png
+share/icons/hicolor/22x22/apps/xfce4-calculator-plugin.png
+share/icons/hicolor/24x24/apps/xfce4-calculator-plugin.png
+share/icons/hicolor/256x256/apps/xfce4-calculator-plugin.png
+share/icons/hicolor/32x32/apps/xfce4-calculator-plugin.png
+share/icons/hicolor/48x48/apps/xfce4-calculator-plugin.png
+share/icons/hicolor/64x64/apps/xfce4-calculator-plugin.png
+share/xfce4/panel-plugins/calculator.desktop

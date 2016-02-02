@@ -19,12 +19,7 @@ MAKEFILE=	makefile
 
 SUB_FILES=	pkg-message
 
-BIN_FILES=	altair altairz80 gri h316 hp2100 i1401 i1620 i7094 ibm1130 \
-		id16 id32 lgp nova pdp1 pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 pdp9 \
-		s3 sds swtp6800mp-a swtp6800mp-a2 vax vax780
-
 PORTDOCS=	0readme_${PORTVERSION:R:S/.//}.txt 0readme_ethernet.txt
-PLIST_FILES=	${BIN_FILES:S/^/bin\//g} bin/simh-eclipse %%DATADIR%%/ka655x.bin
 
 OPTIONS_DEFINE=	DOCS
 
@@ -38,14 +33,16 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/VAX/vax_sysdev.c
 
-do-install:
-	(cd ${WRKSRC}/BIN && ${INSTALL_PROGRAM} ${BIN_FILES} \
-		${STAGEDIR}${PREFIX}/bin)
+post-build:
 # eclipse conflicts with java/eclipse, install it as simh-eclipse
-	${INSTALL_PROGRAM} ${WRKSRC}/BIN/eclipse \
-		${STAGEDIR}${PREFIX}/bin/simh-eclipse
+	@${MV} ${WRKSRC}/BIN/eclipse ${WRKSRC}/BIN/simh-eclipse
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/BIN/* ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/VAX/ka655x.bin ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 

@@ -1,0 +1,11 @@
+--- fritzing.desktop.orig	2015-03-17 13:36:55 UTC
++++ fritzing.desktop
+@@ -2,7 +2,7 @@
+ Name=Fritzing
+ GenericName=Fritzing
+ Comment=Electronic Design Automation software
+-Exec=Fritzing
++Exec=Fritzing -f /usr/local/share/fritzing
+ Icon=fritzing
+ Terminal=false
+ Type=Application

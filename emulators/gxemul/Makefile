@@ -40,10 +40,12 @@ post-patch:
 		 /CXXFLAGS=/s|-f[a-zA-Z-]+||g' ${WRKSRC}/configure
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} gxemul \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/man && ${INSTALL_MAN} gxemul.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/gxemul \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/gxemul.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${DOCSDIR})

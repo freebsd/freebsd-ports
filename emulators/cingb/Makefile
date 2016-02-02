@@ -30,7 +30,7 @@ CPPFLAGS+=	-DUSE_LITTLE_ENDIAN
 .endif
 
 do-configure:
-	cd ${WRKSRC} && ${SED} -e \
+	@cd ${WRKSRC} && ${SED} -e \
 		's|%%%endian%%%|$${CPPFLAGS}|g ; \
 		 s|^CFLAGS|#CFLAGS|g ; \
 		 s|%%%prefix-setup%%%||g ; \
@@ -53,6 +53,8 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cingb ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/cingb_conf ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.FAQ ${STAGEDIR}${DOCSDIR}

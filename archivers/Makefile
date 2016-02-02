@@ -163,6 +163,7 @@
     SUBDIR += pxz
     SUBDIR += py-attic
     SUBDIR += py-bz2file
+    SUBDIR += py-libarchive-c
     SUBDIR += py-librtfcomp
     SUBDIR += py-lz4
     SUBDIR += py-lzma
@@ -170,6 +171,7 @@
     SUBDIR += py-python-snappy
     SUBDIR += py-rarfile
     SUBDIR += py-warctools
+    SUBDIR += py3-libarchive-c
     SUBDIR += qpress
     SUBDIR += quazip
     SUBDIR += quazip-qt5

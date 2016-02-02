@@ -1,4 +1,4 @@
---- apps/wizard/CMakeLists.txt.orig	2015-11-24 02:42:35 UTC
+--- apps/wizard/CMakeLists.txt.orig	2016-01-12 16:11:28 UTC
 +++ apps/wizard/CMakeLists.txt
 @@ -150,6 +150,7 @@ endif()
  

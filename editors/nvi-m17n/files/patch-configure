@@ -1,4 +1,4 @@
---- configure.orig	2014-01-15 15:12:44.000000000 +0000
+--- configure.orig	2016-01-31 11:55:44 UTC
 +++ configure
 @@ -1805,10 +1805,8 @@ if test "$vi_cv_canna" = "yes"; then
  		case "$host_os" in
@@ -13,3 +13,19 @@
  		*)
  			vi_cannapath="/usr/local/canna";;
  		esac
+@@ -2155,13 +2153,13 @@ fi
+ #	[  --disable-curses        DON'T use the nvi-provided curses routines.],
+ #	[vi_cv_curses="other curses"], [vi_cv_curses="bundled curses"])
+ #AC_MSG_RESULT($vi_cv_curses)
+-vi_cv_curses="bundled curses"
++vi_cv_curses="other curses"
+ case "$vi_cv_curses" in
+ "bundled curses")
+ 	CPPFLAGS="-I\$(srcdir)/curses $CPPFLAGS"
+ 	cobjs="\$(COBJS)";;
+ "other curses")
+-	LIBS="-lcurses $LIBS";;
++	LIBS="-lncurses $LIBS";;
+ esac
+ 
+ echo $ac_n "checking for sys/mman.h""... $ac_c" 1>&6

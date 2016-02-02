@@ -3,6 +3,7 @@
 
 PORTNAME=	trafficserver
 PORTVERSION=	6.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -11,8 +12,7 @@ COMMENT=	Fast, scalable and extensible HTTP proxy server
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libcurl.so:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libhwloc.so:${PORTSDIR}/devel/hwloc \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
@@ -62,6 +62,8 @@ INTERIM_CONFIGURE_ENABLE=	interim-cache
 SPDY_CONFIGURE_ENABLE=	spdy
 SPDY_LIB_DEPENDS=	libspdylay.so:${PORTSDIR}/www/spdylay
 
+BROKEN_FreeBSD_9=	Trafficserver is only supported on FreeBSD 10.1 or newer
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRECLAIM}
@@ -72,11 +74,6 @@ CONFIGURE_ARGS+=	--enable-freelist
 CONFIGURE_ARGS+=	--disable-freelist
 .else
 IGNORE=	no allocation strategy selected
-.endif
-
-.if ${OSVERSION} >= 900033 && exists(/usr/bin/clang)
-CC=		clang
-CXX=		clang++
 .endif
 
 .if ! exists(/var/cache)
