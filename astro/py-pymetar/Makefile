@@ -14,6 +14,7 @@ COMMENT=	Python module that provides access to NOAA METAR weather reports
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
 USES=		python:2 shebangfix
 
