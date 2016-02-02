@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fntsample
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	4.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/fntsample/fntsample/${PORTVERSION} \
 		http://unicode.org/Public/6.0.0/ucd/:unidata
@@ -17,22 +16,18 @@ COMMENT=	Show Unicode coverage of a font
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS=	pdfoutline:${PORTSDIR}/textproc/pdfoutline
-
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--with-unicode-blocks=${WRKSRC}/Blocks.txt
 GNU_CONFIGURE=	yes
 USE_GNOME=	pango
 USE_PERL5=	run
-USES=		gettext perl5 pkgconfig
+USES=		gettext iconv perl5 pkgconfig
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz \
-		%%NLS%%share/locale/uk/LC_MESSAGES/${PORTNAME}.mo
+		share/locale/uk/LC_MESSAGES/${PORTNAME}.mo
 
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/Blocks.txt ${WRKSRC}/
