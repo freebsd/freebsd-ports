@@ -1,0 +1,40 @@
+--- src/config.h.in.orig	2016-01-22 09:56:33 UTC
++++ src/config.h.in
+@@ -562,8 +562,8 @@
+ /* Define to 1 if you have the <modbus.h> header file. */
+ #undef HAVE_MODBUS_H
+ 
+-/* Define to 1 if you have the <mongo.h> header file. */
+-#undef HAVE_MONGO_H
++/* Define to 1 if you have the <mongoc.h> header file. */
++#undef HAVE_MONGOC_H
+ 
+ /* Define to 1 if you have the <mysql.h> header file. */
+ #undef HAVE_MYSQL_H
+@@ -1541,13 +1541,15 @@
+    module search path. */
+ #undef LT_MODULE_PATH_VAR
+ 
+-/* Define to the sub-directory in which libtool stores uninstalled libraries.
+-   */
++/* Define to the sub-directory where libtool stores uninstalled libraries. */
+ #undef LT_OBJDIR
+ 
+ /* Define to the shared library suffix, say, ".dylib". */
+ #undef LT_SHARED_EXT
+ 
++/* Define to the shared archive member specification, say "(shr.o)". */
++#undef LT_SHARED_LIB_MEMBER
++
+ /* Define if NAN is defined by default and can initialize static variables. */
+ #undef NAN_STATIC_DEFAULT
+ 
+@@ -1644,7 +1646,7 @@
+ /* Define to empty if `const' does not conform to ANSI C. */
+ #undef const
+ 
+-/* Define to a type to use for `error_t' if it is not otherwise available. */
++/* Define to a type to use for 'error_t' if it is not otherwise available. */
+ #undef error_t
+ 
+ /* Define to `int' if <sys/types.h> doesn't define. */
