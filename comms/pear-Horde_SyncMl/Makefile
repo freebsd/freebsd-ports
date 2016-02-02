@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_SyncMl
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	comms www pear
 
 MAINTAINER=	horde@FreeBSD.org
