@@ -4332,7 +4332,6 @@
     SUBDIR += py-setuptools
     SUBDIR += py-setuptools-git
     SUBDIR += py-setuptools27
-    SUBDIR += py-setuptools32
     SUBDIR += py-setuptools33
     SUBDIR += py-setuptools34
     SUBDIR += py-setuptools35
