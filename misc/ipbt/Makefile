@@ -10,9 +10,10 @@ MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/ipbt/ \
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	High-tech ttyrec player with improvements over ttyplay
 
-USES=		perl5 shebangfix
+USES=		ncurses perl5 shebangfix
 
 ALL_TARGET=	${PORTNAME}
+MAKE_ARGS=	LFLAGS="${LDFLAGS}"
 PLIST_FILES=	bin/ipbt bin/ttygrep bin/ttydump man/man1/ipbt.1.gz
 SHEBANG_FILES=	sbcsgen.pl Makefile ttygrep ttydump
 
