@@ -14,6 +14,7 @@ COMMENT=	GNU watch command
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 LDFLAGS+=	-lncurses
 
 PLIST_FILES=	bin/${PKGBASE} man/man1/gnu-watch.1.gz
