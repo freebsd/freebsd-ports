@@ -16,10 +16,4 @@ PROJECTHOST=	python-${PORTNAME}
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 2600
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
