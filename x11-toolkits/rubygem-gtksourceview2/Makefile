@@ -2,6 +2,7 @@
 
 PORTNAME=	gtksourceview2
 PORTVERSION=	3.0.7
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 

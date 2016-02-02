@@ -2,6 +2,7 @@
 
 PORTNAME=	cairo-gobject
 PORTVERSION=	3.0.7
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

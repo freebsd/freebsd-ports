@@ -3,6 +3,7 @@
 
 PORTNAME=	rbtrace
 PORTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -20,8 +21,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/rbtrace \
-		%%GEM_LIB_DIR%%/ext/src/msgpack-1.1.0/src/.libs/libmsgpack.la \
-		%%GEM_LIB_DIR%%/ext/src/msgpack-1.1.0/src/.libs/libmsgpackc.la
+PLIST_FILES=	bin/rbtrace
 
 .include <bsd.port.mk>
