@@ -11,7 +11,7 @@ COMMENT=	XMPP Library
 
 LICENSE=	MIT
 
-USES=		python:3.2+
+USES=		python:3.3+
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	fritzy

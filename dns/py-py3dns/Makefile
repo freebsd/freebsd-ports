@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:${PORTSDIR}/devel/py-pytest
 
-USES=		python:3.2+
+USES=		python:3.3+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

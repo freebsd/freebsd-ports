@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	liblog4cplus.so:${PORTSDIR}/devel/log4cplus \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs
 
-USES=		libtool python:3.1+ autoreconf
+USES=		libtool python:3.3+ autoreconf
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}

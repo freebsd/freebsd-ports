@@ -13,7 +13,7 @@ COMMENT=	Generate visual dependency trees for FreeBSD ports
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.2+
+USES=		python:3.3+
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

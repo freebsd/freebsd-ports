@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.0.1:${PORTSDIR}/textproc/py-fe
 USE_GITHUB=	yes
 GH_ACCOUNT=	wking
 
-USES=		python:3.2+
+USES=		python:3.3+
 USE_PYTHON=	distutils autoplist
 
 CONFLICTS_INSTALL=	py*-rss2email-2.*
