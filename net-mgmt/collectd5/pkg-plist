@@ -30,7 +30,6 @@ lib/collectd/disk.so
 lib/collectd/dns.so
 lib/collectd/email.so
 lib/collectd/exec.so
-lib/collectd/fhcount.so
 lib/collectd/filecount.so
 %%STATGRAB%%lib/collectd/interface.so
 %%IPMI%%lib/collectd/ipmi.so
