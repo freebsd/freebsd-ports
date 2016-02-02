@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdfoutline
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	4.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/fntsample/fntsample/${PORTVERSION}
 DISTNAME=	fntsample-${PORTVERSION}
@@ -18,6 +17,7 @@ BUILD_DEPENDS=	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl \
 		p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PERL5=	run
 USES=		perl5 pkgconfig shebangfix
@@ -27,8 +27,8 @@ PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
 post-patch:
-	@${SED} -e 's|##PACKAGE##|fntsample|g; s|##LOCALEDIR##|${PREFIX}/share/locale|g' ${WRKSRC}/${PORTNAME}.pl > ${WRKSRC}/${PORTNAME}
-	@${SED} -e 's|@DATE@|2008-10-22|g' ${WRKSRC}/${PORTNAME}.1.in > ${WRKSRC}/${PORTNAME}.1
+	@${SED} -e 's|##PACKAGE##|fntsample|g; s|##LOCALEDIR##|${LOCALBASE}/share/locale|g' ${WRKSRC}/${PORTNAME}.pl > ${WRKSRC}/${PORTNAME}
+	@${SED} -e 's|@DATE@|2010-07-12|g' ${WRKSRC}/${PORTNAME}.1.in > ${WRKSRC}/${PORTNAME}.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
