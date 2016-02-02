@@ -10,6 +10,7 @@ DISTNAME=	lazyread-${PORTVERSION}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Lazyread can auto-scroll files on your screen in movie credit fashion
 
+USES=		ncurses
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
