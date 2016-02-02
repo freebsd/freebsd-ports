@@ -3,6 +3,7 @@
 
 PORTNAME=	haproxy
 DISTVERSION=	1.7-dev1
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.7/src/devel/
 PKGNAMESUFFIX=	-devel
@@ -14,7 +15,7 @@ COMMENT=	Reliable, high performance TCP/HTTP load balancer
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-CONFLICTS=	haproxy-[1234567890]\*
+CONFLICTS_INSTALL=	haproxy-[1234567890]\*
 
 USES=		cpe gmake
 USE_RC_SUBR=	haproxy
