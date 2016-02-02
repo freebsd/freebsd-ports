@@ -14,6 +14,7 @@
     SUBDIR += coccinella
     SUBDIR += convey
     SUBDIR += corebird
+    SUBDIR += cutegram
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += ekiga

@@ -1,0 +1,7 @@
+Cutegram is a free and opensource telegram clients for Linux, Windows, OS X and
+OpenBSD, focusing on user friendly, compatibility with desktop environments.
+Cutegram using Qt5, QML, libqtelegram, libappindication, AsemanQtTools
+technologies and Faenza icons and Twitter emojies graphic sets. It's free and
+released under GPLv3 license.
+
+WWW: http://aseman.co/en/products/cutegram/
