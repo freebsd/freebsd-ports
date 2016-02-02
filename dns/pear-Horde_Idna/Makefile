@@ -1,6 +1,6 @@
 # $FreeBSD$
 PORTNAME=	Horde_Idna
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	dns www pear
 
 MAINTAINER=	horde@FreeBSD.org

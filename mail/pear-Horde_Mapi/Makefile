@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Mapi
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	pear-
 
