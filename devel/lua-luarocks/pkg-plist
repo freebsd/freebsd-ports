@@ -11,6 +11,7 @@ bin/luarocks-admin-%%LUA_VER%%
 %%LUA_MODSHAREDIR%%/luarocks/cache.lua
 %%LUA_MODSHAREDIR%%/luarocks/cfg.lua
 %%LUA_MODSHAREDIR%%/luarocks/command_line.lua
+%%LUA_MODSHAREDIR%%/luarocks/config_cmd.lua
 %%LUA_MODSHAREDIR%%/luarocks/deps.lua
 %%LUA_MODSHAREDIR%%/luarocks/dir.lua
 %%LUA_MODSHAREDIR%%/luarocks/doc.lua
