@@ -5,6 +5,7 @@ PORTNAME=	pycam
 PORTVERSION=	0.5.1
 CATEGORIES=	cad python
 MASTER_SITES=	SOURCEFORGE/pycam/${PORTNAME}/${PORTVERSION}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Toolpath generator for 3-axis CNC machining
@@ -15,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
 
-USES=		python
+USES=		python:-2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
