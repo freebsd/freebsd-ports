@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpinger
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -13,6 +13,7 @@ LICENSE=	BSD2CLAUSE
 USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	dennypage
+MAKEFILE=	Makefile.freebsd
 
 PLIST_FILES=	bin/dpinger
 
