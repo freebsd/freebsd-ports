@@ -24,7 +24,7 @@ BUILD_DEPENDS+=	autogen:${PORTSDIR}/devel/autogen \
 WRKSRC=		${WRKDIR}/${PORTNAME}-Audacity-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c11 cpe desktop-file-utils gmake pkgconfig shared-mime-info shebangfix dos2unix
+USES=		compiler:c++11-lib cpe desktop-file-utils gmake pkgconfig shared-mime-info shebangfix dos2unix
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 OPTIONS_SUB=	yes
@@ -32,12 +32,12 @@ USE_WX=		3.0+
 WX_COMPS=	wx
 INSTALLS_ICONS=	yes
 PORTDOCS=	README.txt
-INSTALL_TARGET=	install-strip
 DOS2UNIX_GLOB=	Makefile.* *.c* *.h
+SHEBANG_FILES=	lib-src/lv2/build
 
-OPTIONS_DEFINE=	NLS DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA LAME MAD MIDI \
+OPTIONS_DEFINE=	NLS DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA LAME LV2 MAD \
 		SBSMS SOUNDTOUCH TWOLAME VAMP VORBIS VST
-OPTIONS_DEFAULT=	FLAC ID3TAG LADSPA MAD MIDI \
+OPTIONS_DEFAULT=	FLAC ID3TAG LADSPA MAD \
 			SBSMS SOUNDTOUCH TWOLAME VAMP VORBIS VST
 
 OPTIONS_DEFINE_amd64=	SSE
@@ -47,6 +47,7 @@ OPTIONS_DEFAULT_i386=	${MACHINE_CPU:tu:MSSE}
 
 DEBUG_DESC=	Enable debug support
 LAME_DESC=	Use lame for import and export support
+LV2_DESC=	Add LV2 plug-in support
 MAD_DESC=	Use libmad for mp2/3 decoding support
 MIDI_DESC=	Use portSMF for Midi support
 SBSMS_DESC=	Use libsbsms for pitch and tempo changing
@@ -58,7 +59,7 @@ VST_DESC=	VST plug-in support
 
 CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
-CONFIGURE_ARGS+=	--with-lib-preference="local system" --without-lv2 \
+CONFIGURE_ARGS+=	--with-lib-preference="local system" \
 			--enable-portaudio --enable-unicode --with-libsoxr
 
 CONFIGURE_SHELL?=${LOCALBASE}/bin/bash
@@ -85,10 +86,10 @@ LADSPA_RUN_DEPENDS=	listplugins:${PORTSDIR}/audio/ladspa
 MAD_CONFIGURE_WITH=	libmad
 MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
 
-MIDI_CONFIGURE_WITH=	midi
-
 LAME_CONFIGURE_WITH=	lame
 LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
+
+LV2_CONFIGURE_WITH=	lv2
 
 SBSMS_CONFIGURE_WITH=	sbsms
 
@@ -114,8 +115,15 @@ CFLAGS+=	-I${WRKSRC}/lib-src/portsmf \
 		-I${WRKSRC}/lib-src/portaudio-v19/include \
 		-I${WRKSRC}/lib-src/lame -I${LOCALBASE}/include
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+CXXFLAGS+=	-std=c++11
+.endif
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
