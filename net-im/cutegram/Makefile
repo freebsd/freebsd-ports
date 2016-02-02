@@ -1,0 +1,33 @@
+# Created by: Henry Hu <henry.hu.sh@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	cutegram
+PORTVERSION=	2.7.1
+DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	-stable
+CATEGORIES=	net-im
+
+MAINTAINER=	henry.hu.sh@gmail.com
+COMMENT=	Free and opensource telegram client
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libqtelegram-ae.so:${PORTSDIR}/net-im/libqtelegram-ae \
+		libtelegramqml.so:${PORTSDIR}/net-im/telegramqml
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Aseman-Land
+GH_PROJECT=	Cutegram aseman-qt-tools:tools
+GH_TAGNAME=	91bf14b:tools
+
+USES=		qmake:outsource desktop-file-utils
+USE_QT5=	qmake_build buildtools_build core qml quick sql xml multimedia \
+		widgets dbus webkit quickcontrols graphicaleffects sql-sqlite3
+INSTALLS_ICONS=	yes
+
+post-extract:
+	@${RMDIR} ${WRKSRC}/Cutegram/asemantools && \
+	${MV} ${WRKSRC_tools} ${WRKSRC}/Cutegram/asemantools
+
+.include <bsd.port.mk>
