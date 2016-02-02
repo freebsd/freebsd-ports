@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Crypt_Blowfish
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	security www pear
 PKGNAMEPREFIX=	pear-
 

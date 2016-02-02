@@ -116,6 +116,7 @@ do-autogenerate-plist: patch
 	@cd ${WRKSRC} && ${PEAR} install -n -f -P ${WRKDIR}/inst package.xml > /dev/null 2> /dev/null
 .for R in .channels .depdb .depdblock .filemap .lock .registry
 	@${RM} -rf ${WRKDIR}/inst/${PREFIX}/${LPEARDIR}/${R}
+	@${RM} -rf ${WRKDIR}/inst/${R}
 .endfor
 	@FILES=`cd ${WRKDIR}/inst && ${FIND} . -type f | ${CUT} -c 2- | \
 	${GREP} -v -E "^${PREFIX}/"` || exit 0; \
