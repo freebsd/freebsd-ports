@@ -8,22 +8,29 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	DNS (Domain Name Service) library for Python 3
+COMMENT=	Python 3 DNS library
 
 LICENSE=	CNRI
 LICENSE_NAME=	CNRI LICENSE AGREEMENT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-NO_ARCH=	yes
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:${PORTSDIR}/devel/py-pytest
+
+USES=		python:3.2+
 USE_PYTHON=	autoplist distutils
-USES=		python
+
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3300
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipaddress>=0:${PORTSDIR}/net/py-ipaddress
+.if ${PYTHON_REL} == 3300
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipaddress>=0:${PORTSDIR}/net/py-ipaddress
+.elif ${PYTHON_REL} <= 3200
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipaddr>=0:${PORTSDIR}/devel/py-ipaddr
 .endif
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.post.mk>
