@@ -755,6 +755,15 @@ Notes:
 	<name>curl</name>
 	<range><ge>7.10.0</ge><lt>7.47.0</lt></range>
       </package>
+      <package>
+	<name>linux-c6-curl</name>
+	<name>linux-c6_64-curl</name>
+	<range><ge>7.10.0</ge></range>
+      </package>
+      <package>
+	<name>linux-f10-curl</name>
+	<range><ge>0</ge></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -774,7 +783,7 @@ Notes:
     <dates>
       <discovery>2016-01-27</discovery>
       <entry>2016-01-27</entry>
-      <modified>2016-01-30</modified>
+      <modified>2016-02-02</modified>
     </dates>
   </vuln>
 
