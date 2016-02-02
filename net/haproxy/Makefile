@@ -3,6 +3,7 @@
 
 PORTNAME=	haproxy
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/1.6/src/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
@@ -13,7 +14,7 @@ COMMENT=	Reliable, high performance TCP/HTTP load balancer
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-CONFLICTS=	haproxy-devel-[0-9]*
+CONFLICTS_INSTALL=	haproxy-devel-[0-9]*
 
 USES=		cpe gmake
 USE_RC_SUBR=	haproxy
