@@ -14,6 +14,7 @@ COMMENT=	Powerful Multilingual File Viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../GPL.txt
 
+USES=		ncurses
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
 
