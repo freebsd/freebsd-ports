@@ -9,6 +9,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Interactive Tools - a file system browser for UNIX systems
 
+USES=		ncurses
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--disable-transition
 
