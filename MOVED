@@ -8128,3 +8128,7 @@ java/wildfly81||2016-02-01|Has expired: Fully EOL when version 9.0 was released
 mail/phpmailer2|mail/phpmailer|2016-02-01|Has expired: Obsolete, use mail/phpmailer instead
 cad/pycam|cad/py-pycam|2016-02-03|Add py- prefix to directory name
 lang/python32||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
+devel/py-setuptools32||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
+databases/py32-gdbm||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
+databases/py32-sqlite3||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
+x11-toolkits/py32-tkinter||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
