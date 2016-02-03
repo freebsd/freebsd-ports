@@ -19,6 +19,9 @@ include/nmsg/chalias.h
 include/nmsg/compat.h
 include/nmsg/constants.h
 include/nmsg/container.h
+include/nmsg/filter.h
+include/nmsg/fltmod.h
+include/nmsg/fltmod_plugin.h
 include/nmsg/input.h
 include/nmsg/io.h
 include/nmsg/ipdg.h
@@ -41,6 +44,7 @@ lib/libnmsg.a
 lib/libnmsg.so
 lib/libnmsg.so.6
 lib/libnmsg.so.6.0.0
+lib/nmsg/nmsg_flt1_sample.so
 lib/nmsg/nmsg_msg9_base.so
 libdata/pkgconfig/libnmsg.pc
 %%MANPAGES%%man/man1/nmsgtool.1.gz
