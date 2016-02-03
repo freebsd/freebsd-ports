@@ -17,20 +17,11 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:${PORTSDIR}/devel/py-pytest
 
-USES=		python:3.3+
-USE_PYTHON=	autoplist distutils
-
 NO_ARCH=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} == 3300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipaddress>=0:${PORTSDIR}/net/py-ipaddress
-.elif ${PYTHON_REL} <= 3200
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipaddr>=0:${PORTSDIR}/devel/py-ipaddr
-.endif
+USE_PYTHON=	autoplist distutils
+USES=		python:3.3+
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
+	cd ${WRKSRC}/ && ${PYTHON_CMD} -m pytest
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
