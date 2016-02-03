@@ -3,6 +3,7 @@
 
 PORTNAME=	pip
 PORTVERSION=	7.1.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,13 +11,14 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Tool for installing and managing Python packages
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # Tests also need bzr, git, otherwise they fail
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}pytest-capturelog>0:${PORTSDIR}/devel/py-pytest-capturelog \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:${PORTSDIR}/devel/py-pytest-timeout \
-		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:${PORTSDIR}/devel/py-pytest-xdist \
-		${PYTHON_PKGNAMEPREFIX}virtualenv>=13.0.0:${PORTSDIR}/devel/py-virtualenv \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:${PORTSDIR}/devel/py-pytest-xdist \
+		${PYTHON_PKGNAMEPREFIX}virtualenv>=1.10:${PORTSDIR}/devel/py-virtualenv \
 		${PYTHON_PKGNAMEPREFIX}scripttest>=1.3:${PORTSDIR}/devel/py-scripttest \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}pretend>0:${PORTSDIR}/devel/py-pretend \
@@ -38,6 +40,8 @@ USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	pip/__init__.py
 
 GH_ACCOUNT=	pypa
+
+NO_ARCH=	yes
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
