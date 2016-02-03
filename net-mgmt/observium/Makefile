@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	observium
-PORTVERSION=	0.15.06.6430
+PORTVERSION=	0.16.1.7533
 PORTREVISION=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	dirkx@webweaving.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 
 LICENSE=	GPLv3
@@ -17,8 +17,7 @@ LICENSE=	GPLv3
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		python shebangfix
-SHEBANG_FILES=	html/js/makemini.pl \
-	mibs/process.pl \
+SHEBANG_FILES=	mibs/process.pl \
 	scripts/agent-local/areca-hw \
 	scripts/agent-local/asterisk \
 	scripts/agent-local/bind \
@@ -27,28 +26,33 @@ SHEBANG_FILES=	html/js/makemini.pl \
 	scripts/agent-local/exim-mailqueue.sh \
 	scripts/agent-local/hdarray \
 	scripts/agent-local/ipmitool-sensor \
+	scripts/agent-local/kamailio \
 	scripts/agent-local/ksm \
+	scripts/agent-local/lighttpd \
 	scripts/agent-local/lmsensors \
 	scripts/agent-local/postfix_mailgraph \
 	scripts/agent-local/postfix_qshape \
 	scripts/agent-local/postgresql.pl \
+	scripts/agent-local/proxmox-qemu \
 	scripts/agent-local/sabnzbd-qstatus \
 	scripts/agent-local/temperature \
+	scripts/agent-local/virt-what \
 	scripts/agent-local/vmwaretools \
 	scripts/agent-local/zimbra \
-	scripts/cron-hourly.sh \
-	scripts/cron-minute.sh \
-	scripts/cron.sh \
+	scripts/add_ds.pl \
 	scripts/get-geshi.sh \
 	scripts/get-jpgraph.sh \
-	scripts/ifAlias scripts/rename-mibs.pl \
+	scripts/ifAlias \
+	scripts/ifAlias_persist \
 	scripts/makecss.sh \
 	scripts/observium_agent \
-	scripts/removespikes.php scripts/rrdtoolx.py \
-	scripts/removespikes.pl scripts/add_ds.pl \
+	scripts/removespikes.php \
+	scripts/removespikes.pl \
+	scripts/rename-mibs.pl \
+	scripts/rrdtoolx.py \
 	scripts/watchmaillog/watchmaillog.pl
 
-USE_PHP=	ctype filter gd json mcrypt mysql session snmp tokenizer xml
+USE_PHP=	ctype filter gd iconv json mcrypt mysql mysqli posix session snmp tokenizer xml zlib
 WANT_PHP_CLI=	yes
 
 NO_BUILD=	yes
@@ -82,13 +86,13 @@ WMIC_RUN_DEPENDS=	wmic:${PORTSDIR}/net-mgmt/wmi-client
 .include <bsd.port.options.mk>
 
 SUB_FILES+=	pkg-message
-SUB_LIST+=	PHP="${PHPBASE}/bin/php"
+SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PHPBASE}/bin/python
 
-ROOT_FILES=	rename_device.php snmptrap.php .scrutinizer.yml add_device.php \
+ROOT_FILES=	rename_device.php snmptrap.php add_device.php \
 		snmpd.conf.example check-errors.php config_to_json.php delete_device.php \
 		syslog.php irc.php snmp.conf.example adduser.php discovery.php \
 		check-services.php poller.php config.php.default poller-wrapper.py
-ROOT_DIRS=	html scripts includes update mibs
+ROOT_DIRS=	html scripts includes update mibs libs
 
 PORTDOCS=	INSTALL README
 PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
@@ -119,8 +123,8 @@ do-install:
 .for f in ${ROOT_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
 .endfor
-	# Create empty rrd dir writable by www
-	${MKDIR} ${STAGEDIR}/${WWWDIR}/rrd
+	# Create empty rrd dir and logs writable by www (the apache user)
+	${MKDIR} ${STAGEDIR}/${WWWDIR}/rrd ${STAGEDIR}/${WWWDIR}/logs
 	# Files in scripts dir should be executable
 	${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;
 	# Ensure PHP and Python scripts are executable
