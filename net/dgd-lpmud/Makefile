@@ -3,7 +3,7 @@
 
 PORTNAME=	dgd-lpmud
 PORTVERSION=	2.4.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net games
 MASTER_SITES=	LOCAL/glewis/dgd \
 		http://ftp.dworkin.nl/dgd/lib/
@@ -50,6 +50,8 @@ do-install:
 		${STAGEDIR}${DATADIR}/lpmud/ACCESS.ALLOW.example
 	${MV} ${STAGEDIR}${DATADIR}/lpmud/ACCESS.DENY \
 		${STAGEDIR}${DATADIR}/lpmud/ACCESS.DENY.example
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
