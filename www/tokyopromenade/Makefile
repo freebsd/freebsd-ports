@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tokyopromenade
-PORTVERSION=	0.9.22
-PORTREVISION=	2
+PORTVERSION=	0.9.25
 CATEGORIES=	www
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/
 
