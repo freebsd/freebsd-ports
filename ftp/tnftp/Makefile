@@ -9,6 +9,7 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Enhanced ftp client from NetBSD
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
