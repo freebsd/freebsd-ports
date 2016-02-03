@@ -1,0 +1,7 @@
+bin/llpp
+bin/llppac
+etc/bash_completion.d/_llpp.bash
+etc/bash_completion.d/_llppac.bash
+share/applications/llpp.desktop
+share/zsh/site-functions/_llpp
+share/zsh/site-functions/_llppac
