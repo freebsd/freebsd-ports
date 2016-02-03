@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmsg
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	net
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
 		libxs.so:${PORTSDIR}/devel/libxs \
 		libwdns.so:${PORTSDIR}/dns/wdns \
-		libyajl.so:${PORTSDIR}/devel/yajl 
+		libyajl.so:${PORTSDIR}/devel/yajl
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
