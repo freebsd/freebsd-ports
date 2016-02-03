@@ -29,6 +29,7 @@ PLIST_FILES=	bin/samidare man/man1/samidare.1.gz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes
 
 post-build:
