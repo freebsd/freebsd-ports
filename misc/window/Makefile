@@ -11,8 +11,10 @@ COMMENT=	Window environment on ASCII terminals
 
 LICENSE=	BSD4CLAUSE
 
+USES=		ncurses
 WRKSRC=		${WRKDIR}/window
 CFLAGS+=	-Wno-return-type
+MAKE_ARGS=	LDADD="-lncurses -lutil"
 
 PLIST_FILES=	bin/window man/man1/window.1.gz
 
