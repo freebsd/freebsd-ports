@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	3.0.7
+DISTVERSION=	3.2.0-rc3
 CATEGORIES=	databases
-MASTER_SITES=	http://download.redis.io/releases/
+MASTER_SITES=	https://github.com/antirez/redis/archive/
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${DISTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
@@ -22,6 +24,8 @@ LUA_DESC=	Use lang/lua instead of builtin lua
 LUAJIT_DESC=	Use lang/luajit instead of builtin lua
 TESTS_DESC=	Install lang/tcl for redis unit tests
 TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 .include <bsd.port.options.mk>
 
@@ -58,7 +62,7 @@ CONFLICTS?=	redis-3.*
 USES+=		gmake
 MAKE_ENV=	"V=yo"
 USE_RC_SUBR=	redis sentinel
-BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \
+BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb \
 		redis-cli redis-sentinel redis-server
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
