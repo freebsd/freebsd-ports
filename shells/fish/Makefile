@@ -11,7 +11,7 @@ COMMENT=	User friendly command line shell
 
 LICENSE=	GPLv2
 
-USES=		autoreconf cpe gmake iconv pkgconfig pathfix
+USES=		autoreconf cpe gmake iconv ncurses pkgconfig pathfix
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	fishshell
