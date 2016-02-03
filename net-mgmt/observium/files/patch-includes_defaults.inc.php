@@ -1,15 +1,15 @@
---- includes/defaults.inc.php.orig	2014-11-21 12:33:07 UTC
+--- includes/defaults.inc.php.orig	2016-01-27 16:07:55 UTC
 +++ includes/defaults.inc.php
-@@ -17,7 +17,7 @@ error_reporting(E_ERROR);
+@@ -36,7 +36,7 @@ $config['db']['debug']      = TRUE;     
  
  // Default directories
  
--$config['install_dir']   = "/opt/observium";
+-#$config['install_dir']   = "/opt/observium";
 +$config['install_dir']   = "/usr/local/www/observium";
  #$config['html_dir']      = $config['install_dir'] . "/html";
  #$config['rrd_dir']       = $config['install_dir'] . "/rrd";
- #$config['log_file']      = $config['install_dir'] . "/observium.log";
-@@ -29,27 +29,27 @@ $config['install_dir']   = "/opt/observi
+ #$config['template_dir']  = $config['install_dir'] . "/templates";
+@@ -49,27 +49,27 @@ $config['db']['debug']      = TRUE;     
  
  // Location of executables
  
@@ -40,7 +40,7 @@
 -$config['neato']          = "/usr/bin/neato";
 -$config['sfdp']           = "/usr/bin/sfdp";
 -$config['svn']            = "/usr/bin/svn";
--#$config['git']            = '/usr/bin/git'; // Not enabled by default, used in show device config feature for git-enabled repos
+-$config['git']            = "/usr/bin/git"; // Used in show device config feature for git-enabled repos and rancid >= 3.2
 -$config['wmic']           = "/bin/wmic";
 +$config['mtr']            = "/usr/local/sbin/mtr";
 +$config['nmap']           = "/usr/local/bin/nmap";
@@ -52,7 +52,7 @@
 +$config['neato']          = "/usr/local/bin/neato";
 +$config['sfdp']           = "/usr/local/bin/sfdp";
 +$config['svn']            = "/usr/local/bin/svn";
-+#$config['git']            = "/usr/local/bin/git"; // Not enabled by default, used in show device config feature for git-enabled repos
++$config['git']            = "/usr/local/bin/git"; // Used in show device config feature for git-enabled repos and rancid >= 3.2
 +$config['wmic']           = "/usr/local/bin/wmic";
  $config['file']           = "/usr/bin/file";
  
