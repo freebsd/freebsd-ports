@@ -13,6 +13,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libkpass.so:${PORTSDIR}/security/libkpass
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
