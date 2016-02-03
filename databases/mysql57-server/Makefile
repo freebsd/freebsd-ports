@@ -3,7 +3,7 @@
 
 PORTNAME=	mysql
 PORTVERSION=	5.7.10
-PORTREVISION=	1
+PORTREVISION?=	2
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.7:MySQL SF/boost/boost/1.59.0:boost
 PKGNAMESUFFIX?=	57-server
@@ -84,6 +84,7 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
 OPTIONS_GROUP=		STORAGE
 OPTIONS_GROUP_STORAGE=	ARCHIVE BLACKHOLE EXAMPLE FEDERATED INNOBASE PARTITION PERFSCHEMA
+OPTIONS_SUB=		YES
 STORAGE_DESC=		Permissible "Storage Engines" (to compile statically into the server)
 ARCHIVE_DESC=		Compile "Archive Storage" statically in server
 BLACKHOLE_DESC=		Compile "Blackhole Storage" statically in server
@@ -117,7 +118,7 @@ OPENSSL_CMAKE_ON=	-DWITH_SSL=yes
 .endif
 
 post-extract:
-	${RM} -rvf ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
+	@${RM} -rvf ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
