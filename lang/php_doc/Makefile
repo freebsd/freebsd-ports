@@ -11,6 +11,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT?=	PHP documentation in HTML
 
 NO_BUILD=	YES
+NO_ARCH=	yes
 NO_WRKSUBDIR=	YES
 SLAVEDIRS=	french/php_doc \
 		german/php_doc \
@@ -26,12 +27,12 @@ PLIST=		${WRKDIR}/pkg-plist
 
 .for lang in ${PHP_HTML_NORMAL}
 .if ${PHP_LANG} == ${lang}
-WRK_SRC=	${WRKDIR}/html/
+WRK_SRC=	${WRKDIR}/${PORTNAME}-${PHP_LANG}-${PORTVERSION}/html/
 .endif
 .endfor
 .for lang in ${PHP_HTML_CHUNKED}
 .if ${PHP_LANG} == ${lang}
-WRK_SRC=	${WRKDIR}/php-chunked-xhtml/
+WRK_SRC=	${WRKDIR}/${PORTNAME}-${PHP_LANG}-${PORTVERSION}/php-chunked-xhtml/
 .endif
 .endfor
 
@@ -53,7 +54,6 @@ pre-fetch:
 
 pre-install:
 	${FIND} ${WRK_SRC} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e "s,${WRK_SRC},%%PHPDOCDIR%%," > ${PLIST}
-	${FIND} ${WRK_SRC} -type d | ${SORT} -r | ${SED} -e "s,${WRK_SRC},@dirrm %%PHPDOCDIR%%," >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PHPDOCDIR}
