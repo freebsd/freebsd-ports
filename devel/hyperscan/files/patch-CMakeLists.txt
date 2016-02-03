@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2016-02-03 13:53:36 UTC
++++ CMakeLists.txt
+@@ -170,8 +170,8 @@ else()
+     endif()
+ 
+     # set compiler flags - more are tested and added later
+-    set(EXTRA_C_FLAGS "-std=c99 -Wall -Wextra -Wshadow -Wcast-qual -Werror")
+-    set(EXTRA_CXX_FLAGS "-std=c++11 -Wall -Wextra -Werror -Wno-shadow -Wswitch -Wreturn-type -Wcast-qual -Wno-deprecated -Wnon-virtual-dtor")
++    set(EXTRA_C_FLAGS "-std=c99 -Wall -Wextra -Wshadow -Wcast-qual")
++    set(EXTRA_CXX_FLAGS "-std=c++11 -Wall -Wextra -Wno-shadow -Wswitch -Wreturn-type -Wcast-qual -Wno-deprecated -Wnon-virtual-dtor")
+ 
+     if (NOT CMAKE_C_FLAGS MATCHES .*march.*)
+         message(STATUS "Building for current host CPU")

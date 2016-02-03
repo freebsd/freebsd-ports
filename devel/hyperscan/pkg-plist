@@ -1,0 +1,7 @@
+include/hs/hs.h
+include/hs/hs_common.h
+include/hs/hs_compile.h
+include/hs/hs_runtime.h
+lib/libhs.a
+lib/libhs_runtime.a
+libdata/pkgconfig/libhs.pc
