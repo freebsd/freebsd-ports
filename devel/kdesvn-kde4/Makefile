@@ -32,10 +32,11 @@ post-patch:
 	${RM} ${WRKSRC}/src/kiosvn/svn*.protocol
 
 post-patch-DOCS-off:
-	${ECHO} "ADD_SUBDIRECTORY(man)" > ${WRKSRC}/doc/CMakeLists.txt
+	${FIND} ${WRKSRC}/docs -name CMakeLists.txt | \
+		${XARGS} ${REINPLACE_CMD} -n '/kde4_create_manpage/p'
 
 post-patch-NLS-off:
-	${REINPLACE_CMD} -e 's,ADD_SUBDIRECTORY(po), ,g' \
+	${REINPLACE_CMD} '/macro_optional_add_subdirectory( po )/d'  \
 		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
