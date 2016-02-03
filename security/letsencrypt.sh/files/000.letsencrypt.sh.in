@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+case "$monthly_letsencrypt_enable" in
+    [Yy][Ee][Ss])
+	%%PREFIX%%/bin/letsencrypt.sh -c
+        ;;
+    *)
+        ;;
+esac
+

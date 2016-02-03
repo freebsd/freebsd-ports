@@ -1,0 +1,4 @@
+Letencrypt.sh is a pure BASH implementation of the ACME
+protocol used by Lets Encrypt.
+
+WWW: https://github.com/lukas2511/letsencrypt.sh
