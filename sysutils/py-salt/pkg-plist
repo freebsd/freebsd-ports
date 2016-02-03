@@ -305,6 +305,8 @@
 %%PYTHON_SITELIBDIR%%/salt/grains/core.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/disks.py
 %%PYTHON_SITELIBDIR%%/salt/grains/disks.pyc
+%%PYTHON_SITELIBDIR%%/salt/grains/esxi.py
+%%PYTHON_SITELIBDIR%%/salt/grains/esxi.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/external_ip.py
 %%PYTHON_SITELIBDIR%%/salt/grains/external_ip.pyc
 %%PYTHON_SITELIBDIR%%/salt/grains/extra.py
@@ -509,6 +511,8 @@
 %%PYTHON_SITELIBDIR%%/salt/modules/environ.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/eselect.py
 %%PYTHON_SITELIBDIR%%/salt/modules/eselect.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/esxi.py
+%%PYTHON_SITELIBDIR%%/salt/modules/esxi.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/etcd_mod.py
 %%PYTHON_SITELIBDIR%%/salt/modules/etcd_mod.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/event.py
@@ -847,6 +851,8 @@
 %%PYTHON_SITELIBDIR%%/salt/modules/shadow.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/slack_notify.py
 %%PYTHON_SITELIBDIR%%/salt/modules/slack_notify.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/slsutil.py
+%%PYTHON_SITELIBDIR%%/salt/modules/slsutil.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/smartos_imgadm.py
 %%PYTHON_SITELIBDIR%%/salt/modules/smartos_imgadm.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/smartos_virt.py
@@ -951,6 +957,8 @@
 %%PYTHON_SITELIBDIR%%/salt/modules/virt.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/virtualenv_mod.py
 %%PYTHON_SITELIBDIR%%/salt/modules/virtualenv_mod.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/vsphere.py
+%%PYTHON_SITELIBDIR%%/salt/modules/vsphere.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/win_autoruns.py
 %%PYTHON_SITELIBDIR%%/salt/modules/win_autoruns.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/win_dacl.py
@@ -1141,6 +1149,8 @@
 %%PYTHON_SITELIBDIR%%/salt/proxy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/salt/proxy/chronos.py
 %%PYTHON_SITELIBDIR%%/salt/proxy/chronos.pyc
+%%PYTHON_SITELIBDIR%%/salt/proxy/esxi.py
+%%PYTHON_SITELIBDIR%%/salt/proxy/esxi.pyc
 %%PYTHON_SITELIBDIR%%/salt/proxy/fx2.py
 %%PYTHON_SITELIBDIR%%/salt/proxy/fx2.pyc
 %%PYTHON_SITELIBDIR%%/salt/proxy/junos.py
@@ -1267,6 +1277,8 @@
 %%PYTHON_SITELIBDIR%%/salt/roster/clustershell.pyc
 %%PYTHON_SITELIBDIR%%/salt/roster/flat.py
 %%PYTHON_SITELIBDIR%%/salt/roster/flat.pyc
+%%PYTHON_SITELIBDIR%%/salt/roster/range.py
+%%PYTHON_SITELIBDIR%%/salt/roster/range.pyc
 %%PYTHON_SITELIBDIR%%/salt/roster/scan.py
 %%PYTHON_SITELIBDIR%%/salt/roster/scan.pyc
 %%PYTHON_SITELIBDIR%%/salt/runner.py
@@ -1475,6 +1487,8 @@
 %%PYTHON_SITELIBDIR%%/salt/states/environ.pyc
 %%PYTHON_SITELIBDIR%%/salt/states/eselect.py
 %%PYTHON_SITELIBDIR%%/salt/states/eselect.pyc
+%%PYTHON_SITELIBDIR%%/salt/states/esxi.py
+%%PYTHON_SITELIBDIR%%/salt/states/esxi.pyc
 %%PYTHON_SITELIBDIR%%/salt/states/etcd_mod.py
 %%PYTHON_SITELIBDIR%%/salt/states/etcd_mod.pyc
 %%PYTHON_SITELIBDIR%%/salt/states/event.py
