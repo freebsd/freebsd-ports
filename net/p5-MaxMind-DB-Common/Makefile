@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MaxMind-DB-Common
-PORTVERSION=	0.040000
+PORTVERSION=	0.040001
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -12,6 +12,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Code shared by the DB reader and writer modules
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Data-Dumper-Concise>=0:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
