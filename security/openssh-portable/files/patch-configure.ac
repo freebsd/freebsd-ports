@@ -1,0 +1,11 @@
+--- configure.ac.intermediate	2016-02-03 22:06:00 UTC
++++ configure.ac
+@@ -1543,7 +1543,7 @@ AC_ARG_WITH([libedit],
+ 			LIBEDIT=`$PKGCONFIG --libs libedit`
+ 			CPPFLAGS="$CPPFLAGS `$PKGCONFIG --cflags libedit`"
+ 		else
+-			LIBEDIT="-ledit -lcurses"
++			LIBEDIT="-ledit -lncurses"
+ 		fi
+ 		OTHERLIBS=`echo $LIBEDIT | sed 's/-ledit//'`
+ 		AC_CHECK_LIB([edit], [el_init],
