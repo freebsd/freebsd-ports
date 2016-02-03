@@ -7,7 +7,7 @@ CATEGORIES=	devel textproc
 MASTER_SITES=	GH:hs SF/boost/boost/1.59.0:boost
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:hs boost_1_59_0.tar.gz:boost
 
-MAINTAINER=	vsevolod@highsecure.ru
+MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	High-performance multiple regex matching library
 
 LICENSE=	BSD3CLAUSE
