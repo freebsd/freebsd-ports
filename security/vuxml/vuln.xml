@@ -58,6 +58,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0652005e-ca96-11e5-96d6-14dae9d210b8">
+    <topic>salt -- code execution</topic>
+    <affects>
+      <package>
+	<name>py27-salt</name>
+	<name>py32-salt</name>
+	<name>py33-salt</name>
+	<name>py34-salt</name>
+	<name>py35-salt</name>
+	<range><ge>2015.8.0</ge><lt>2015.8.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SaltStack reports:</p>
+	<blockquote cite="https://docs.saltstack.com/en/latest/topics/releases/2015.8.4.html">
+	  <p>Improper handling of clear messages on the minion, which
+	    could result in executing commands not sent by the master.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://docs.saltstack.com/en/latest/topics/releases/2015.8.4.html</url>
+      <url>https://github.com/saltstack/salt/pull/30613/files</url>
+      <cvename>CVE-2016-1866</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-25</discovery>
+      <entry>2016-02-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bb0ef21d-0e1b-461b-bc3d-9cba39948888">
     <topic>rails -- multiple vulnerabilities</topic>
     <affects>
