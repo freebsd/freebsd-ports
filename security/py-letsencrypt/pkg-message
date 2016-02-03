@@ -7,7 +7,7 @@ use on production systems.
 This port installs the "standalone" Python client only, which does not use and
 is not the letsencrypt-auto bootstrap/wrapper script.
 
-To obtain certificates, use use the 'certonly' command as follows:
+To obtain certificates, use the 'certonly' command as follows:
 
  # sudo letsencrypt --server <server-URL> certonly
 
