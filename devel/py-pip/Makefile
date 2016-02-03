@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pip
-PORTVERSION=	7.1.2
-PORTREVISION=	1
+PORTVERSION=	8.0.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -33,6 +32,7 @@ DOCS_PORTDOCS=	*
 DOCS_VARS=	PYDISTUTILS_BUILD_TARGET=build_sphinx \
 		PYDISTUTILS_BUILDARGS="-n --all-files --fresh-env"
 
+NO_ARCH=	yes
 USES=		python shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
