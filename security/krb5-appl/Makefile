@@ -20,7 +20,7 @@ CONFLICTS=		krb4-[0-9]* krb5-1.[0-7].* heimdal-[0-9]* srp-[0-9]*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_OPENSSL=		yes
-USES=			gmake perl5 gssapi:mit
+USES=			gmake ncurses perl5 gssapi:mit
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu89
