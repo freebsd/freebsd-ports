@@ -1025,6 +1025,7 @@
     SUBDIR += hs-word8
     SUBDIR += htable
     SUBDIR += hub
+    SUBDIR += hyperscan
     SUBDIR += hwloc
     SUBDIR += ice
     SUBDIR += icmake
