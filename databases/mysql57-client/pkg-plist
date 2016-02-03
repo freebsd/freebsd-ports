@@ -10,6 +10,7 @@ bin/mysqlimport
 bin/mysqlpump
 bin/mysqlshow
 bin/mysqlslap
+include/mysql/binary_log_types.h
 include/mysql/big_endian.h
 include/mysql/byte_order_generic.h
 include/mysql/byte_order_generic_x86.h
