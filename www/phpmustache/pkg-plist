@@ -1,3 +1,7 @@
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blocks/Blocks.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blocks/blocks.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blocks/blocks.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blocks/partials/parent.mustache
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/child_context/ChildContext.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/child_context/child_context.mustache
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/child_context/child_context.txt
@@ -19,6 +23,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/escaped/Escaped.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/escaped/escaped.mustache
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/escaped/escaped.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filters/Filters.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filters/filters.mustache
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filters/filters.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grand_parent_context/GrandParentContext.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grand_parent_context/grand_parent_context.mustache
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grand_parent_context/grand_parent_context.txt
