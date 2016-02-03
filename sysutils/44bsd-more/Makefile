@@ -9,10 +9,11 @@ MASTER_SITES=	LOCAL/cy
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The pager installed with FreeBSD before less(1) was imported
 
-USES=		tar:bzip2
+USES=		ncurses tar:bzip2
 NO_WRKSUBDIR=	yes
 
 CFLAGS=		-Wno-return-type
+MAKE_ARGS=	LDADD="-lncurses"
 
 RELDATE=	20000521
 
