@@ -10,6 +10,7 @@
 %%WWWDIR%%/admin/plugins.php
 %%WWWDIR%%/admin/tools.php
 %%WWWDIR%%/admin/upgrade.php
+%%WWWDIR%%/composer.json
 %%WWWDIR%%/css/cal.css
 %%WWWDIR%%/css/infos.css
 %%WWWDIR%%/css/palette.png
@@ -31,12 +32,13 @@
 %%WWWDIR%%/images/facebook.png
 %%WWWDIR%%/images/favicon.gif
 %%WWWDIR%%/images/filter.gif
-%%WWWDIR%%/images/friendfeed.png
 %%WWWDIR%%/images/loading.gif
 %%WWWDIR%%/images/pencil.png
 %%WWWDIR%%/images/share.png
 %%WWWDIR%%/images/twitter.png
 %%WWWDIR%%/images/yourls-logo.png
+%%WWWDIR%%/includes/BookmarkletGen/BookmarkletGen.php
+%%WWWDIR%%/includes/BookmarkletGen/README.md
 %%WWWDIR%%/includes/Requests/README.md
 %%WWWDIR%%/includes/Requests/Requests.php
 %%WWWDIR%%/includes/Requests/Requests/Auth.php
@@ -45,6 +47,9 @@
 %%WWWDIR%%/includes/Requests/Requests/Cookie/Jar.php
 %%WWWDIR%%/includes/Requests/Requests/Exception.php
 %%WWWDIR%%/includes/Requests/Requests/Exception/HTTP.php
+%%WWWDIR%%/includes/Requests/Requests/Exception/HTTP/304.php
+%%WWWDIR%%/includes/Requests/Requests/Exception/HTTP/305.php
+%%WWWDIR%%/includes/Requests/Requests/Exception/HTTP/306.php
 %%WWWDIR%%/includes/Requests/Requests/Exception/HTTP/400.php
 %%WWWDIR%%/includes/Requests/Requests/Exception/HTTP/401.php
 %%WWWDIR%%/includes/Requests/Requests/Exception/HTTP/402.php
@@ -385,6 +390,8 @@
 %%WWWDIR%%/includes/geo/flags/flag_zw.gif
 %%WWWDIR%%/includes/geo/flags/flag_zz.gif
 %%WWWDIR%%/includes/geo/geoip.inc
+%%WWWDIR%%/includes/http_build_url/README.md
+%%WWWDIR%%/includes/http_build_url/http_build_url.php
 %%WWWDIR%%/includes/load-yourls.php
 %%WWWDIR%%/includes/phpass/PasswordHash.php
 %%WWWDIR%%/includes/phpass/README.md
