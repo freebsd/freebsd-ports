@@ -19,7 +19,7 @@ GH_ACCOUNT=	grke
 
 USE_RC_SUBR=	burp
 GNU_CONFIGURE=	yes
-USES=		gmake localbase
+USES=		gmake localbase ncurses
 
 CONFIGURE_ARGS=	--sbindir="${PREFIX}/sbin" \
 		--sysconfdir=${ETCDIR} \
