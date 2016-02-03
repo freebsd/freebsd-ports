@@ -12,8 +12,9 @@ COMMENT=	Bruteforce password MD5 hashes
 
 ALL_TARGET=	little
 PLIST_FILES=	bin/mdcrack
+MAKE_ARGS=	LDFLAGS="${LDFLAGS} -lncurses"
 
-USES=		compiler:features
+USES=		compiler:features ncurses
 
 .include <bsd.port.pre.mk>
 
