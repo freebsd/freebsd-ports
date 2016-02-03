@@ -14,8 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 
+USES=		ncurses
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	curses_loc=${NCURSESBASE}
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 PLIST_FILES=	bin/convert_pwdb bin/pwdb2csv bin/pwman man/man1/pwman.1.gz
