@@ -9,7 +9,9 @@ MASTER_SITES=	LOCAL/will
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NAKAMURA's Shell Form input
 
+USES=		ncurses
 WRKSRC=		${WRKDIR}
+MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 PLIST_FILES=	bin/nsf man/man1/nsf.1.gz
 ALL_TARGET=
 
