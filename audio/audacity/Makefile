@@ -3,6 +3,7 @@
 
 PORTNAME=	audacity
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/audacity/audacity/archive/
 DISTNAME=	Audacity-${PORTVERSION}
