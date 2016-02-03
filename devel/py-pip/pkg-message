@@ -1,0 +1,14 @@
+============================== !!!! WARNING !!!! ==========================
+
+pip MUST ONLY be used:
+
+ * With the --user flag, OR
+ * To install or manage Python packages in virtual environments
+
+Failure to follow this warning can and will result in an inconsistent
+system-wide Python environment (LOCALBASE/lib/pythonX.Y/site-packages) and
+cause errors.
+
+Avoid using pip as root unless you know what you're doing.
+
+============================== !!!! WARNING !!!! ==========================
