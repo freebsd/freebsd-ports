@@ -25,6 +25,7 @@ USES_PERL5=	build
 USE_JAVA=	yes
 JAVA_RUN=	yes
 USE_GCC=	any
+NO_CCACHE=	yes
 
 ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
@@ -62,4 +63,5 @@ do-install:
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	${INSTALL_LIB} ${WRKSRC}/bindings/java/sigar-bin/lib/libsigar-${ARCH:S,i386,x86,}-freebsd-${PLATFORM_VER}.so \
 		${STAGEDIR}${JAVAJARDIR}/${LIBNAME}
+
 .include <bsd.port.post.mk>
