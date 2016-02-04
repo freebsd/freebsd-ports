@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-01092003
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD version of text-based Tetris game
 
+USES=		ncurses
+MAKE_ARGS=	TMPLDFLAGS="-lncurses"
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>
