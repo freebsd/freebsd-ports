@@ -9,7 +9,8 @@ MASTER_SITES=	LOCAL/dannyboy
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Locks a terminal while showing fortunes
 
-USES=		tar:bzip2
+USES=		ncurses tar:bzip2
+MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 
 PLIST_FILES=	bin/fortunelock man/man1/${PORTNAME}.1.gz
 
