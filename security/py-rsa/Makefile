@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsa
-PORTVERSION=	3.1.4
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,20 +11,17 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Pure-Python RSA implementation
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.3:${PORTSDIR}/devel/py-pyasn1
-TEST_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2 \
-		${RUN_DEPENDS}
-
-OPTIONS_DEFINE=	TESTS
-
-TESTS_DESC=		Install tools for unit tests
-TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
-regression-test: build
+NO_ARCH=	yes
+
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} run_tests.py
 
 .include <bsd.port.mk>
