@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
-USES=		gmake tar:xz
+USES=		gmake ncurses tar:xz
 
 MAN1=		dtpstree.1
 PLIST_FILES=	bin/dtpstree \
