@@ -11,7 +11,7 @@ MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Program to view Un*x text files and manual pages
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake ncurses
 
 PLIST_FILES=	bin/lookat \
 		"@sample etc/lookat.conf.sample" \
