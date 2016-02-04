@@ -13,7 +13,9 @@ COMMENT=	Remote system monitoring utility
 
 LICENSE=	BSD4CLAUSE
 
+USES=		ncurses
 CFLAGS+=	-w
+MAKE_ARGS+=	LDFLAGS="${LDFLAGS} -lncurses"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rmonitor ${STAGEDIR}${PREFIX}/bin/rmonitor
