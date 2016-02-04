@@ -58,6 +58,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="559f3d1b-cb1d-11e5-80a4-001999f8d30b">
+    <topic>asterisk -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<range><lt>1.8.32.3_5</lt></range>
+      </package>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.21.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk13</name>
+	<range><lt>13.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>AST-2016-001 - BEAST vulnerability in HTTP server</p>
+	  <p>AST-2016-002 - File descriptor exhaustion in chan_sip</p>
+	  <p>AST-2016-003 - Remote crash vulnerability when receiving UDPTL FAX data</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2016-001.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2016-002.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2016-003.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-03</discovery>
+      <entry>2016-02-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0652005e-ca96-11e5-96d6-14dae9d210b8">
     <topic>salt -- code execution</topic>
     <affects>
