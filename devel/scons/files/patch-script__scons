@@ -1,5 +1,5 @@
---- ./script/scons.orig	2013-04-19 23:35:11.656613793 -0400
-+++ ./script/scons	2013-04-19 23:35:16.127614561 -0400
+--- script/scons.orig	2015-11-09 11:25:09 UTC
++++ script/scons
 @@ -1,4 +1,4 @@
 -#! /usr/bin/env python
 +#! /usr/bin/env python2

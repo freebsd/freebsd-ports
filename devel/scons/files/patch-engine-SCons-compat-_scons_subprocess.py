@@ -1,10 +1,10 @@
 Index: engine/SCons/compat/_scons_subprocess.py
 ===================================================================
---- engine/SCons/compat/_scons_subprocess.py (revision 2695)
-+++ engine/SCons/compat/_scons_subprocess.py (working copy)
-@@ -581,13 +581,19 @@
-     class object:
-         pass
+--- engine/SCons/compat/_scons_subprocess.py.orig	2015-11-09 11:25:09 UTC
++++ engine/SCons/compat/_scons_subprocess.py
+@@ -569,13 +569,19 @@ def list2cmdline(seq):
+ 
+     return ''.join(result)
  
 +import thread
 +lock = thread.allocate_lock()
@@ -23,7 +23,7 @@ Index: engine/SCons/compat/_scons_subprocess.py
          _cleanup()
  
          self._child_created = False
-@@ -655,6 +661,7 @@
+@@ -643,6 +649,7 @@ class Popen(object):
                  self.stderr = os.fdopen(errread, 'rU', bufsize)
              else:
                  self.stderr = os.fdopen(errread, 'rb', bufsize)
