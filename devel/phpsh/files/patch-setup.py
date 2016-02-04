@@ -1,6 +1,6 @@
---- setup.py.orig
+--- setup.py.orig	2011-05-13 22:16:32 UTC
 +++ setup.py
-@@ -7,15 +7,15 @@
+@@ -7,17 +7,14 @@ import os
  sys.path.insert(0, 'src')
  from phpsh import __version__
  
@@ -16,13 +16,15 @@
 +### EMACS:    os.waitpid(p.pid, 0)
  
  # something better than this?
- if os.getenv("USER") == "root":
+-if os.getenv("USER") == "root":
 -    config_dir = "/etc/phpsh"
-+    config_dir = "%%ETCDIR%%"
- else:
-     config_dir = os.getenv("HOME") + "/.phpsh"
+-else:
+-    config_dir = os.getenv("HOME") + "/.phpsh"
++config_dir = "%%ETCDIR%%"
  
-@@ -33,7 +33,7 @@
+ setup(
+     name="phpsh",
+@@ -33,7 +30,7 @@ setup(
                              "xdebug-clients/geben/LICENSE",
                              "xdebug-clients/geben/Makefile",
                              "xdebug-clients/geben/geben.el",
