@@ -58,6 +58,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e78bfc9d-cb1e-11e5-b251-0050562a4d7b">
+    <topic>py-rsa -- Bleichenbacher'06 signature forgery vulnerability</topic>
+    <affects>
+      <package>
+	<name>py27-rsa</name>
+	<name>py32-rsa</name>
+	<name>py33-rsa</name>
+	<name>py34-rsa</name>
+	<name>py35-rsa</name>
+	<range><lt>3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Filippo Valsorda reports:</p>
+	<blockquote cite="https://blog.filippo.io/bleichenbacher-06-signature-forgery-in-python-rsa/">
+	  <p>
+	   python-rsa is vulnerable to a straightforward variant of the
+	   Bleichenbacher'06 attack against RSA signature verification
+	   with low public exponent.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1494</cvename>
+      <url>https://blog.filippo.io/bleichenbacher-06-signature-forgery-in-python-rsa/</url>
+      <url>https://bitbucket.org/sybren/python-rsa/pull-requests/14/security-fix-bb06-attack-in-verify-by</url>
+      <url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-1494</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/01/05/3</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/01/05/1</url>
+    </references>
+    <dates>
+      <discovery>2016-01-05</discovery>
+      <entry>2016-02-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="559f3d1b-cb1d-11e5-80a4-001999f8d30b">
     <topic>asterisk -- Multiple vulnerabilities</topic>
     <affects>
