@@ -13,7 +13,7 @@ COMMENT=	Minesweeper-style game for text-mode terminals
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		gmake
+USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-prefsdir=${DATADIR} \
 		--with-scoresdir=${DATADIR} \
