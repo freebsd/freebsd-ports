@@ -5,14 +5,14 @@ PORTNAME=	less
 PORTVERSION=	458
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.greenwoodsoftware.com/less/ \
-	http://bitrote.org/distfiles/
+		http://bitrote.org/distfiles/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Better pager utility
 
 LICENSE=	GPLv3
 
-USES+=	cpe
+USES=		cpe ncurses
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
