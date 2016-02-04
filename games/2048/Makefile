@@ -17,7 +17,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Tiehuis
 GH_PROJECT=	2048-cli
 
+USES=		ncurses
 ALL_TARGET=	2048 2048nc
+MAKE_ARGS=	LIBS="-lncurses"
 PLIST_FILES=	bin/2048 bin/2048nc man/man1/2048.1.gz man/man1/2048nc.1.gz
 PORTDOCS=	README.md
 
