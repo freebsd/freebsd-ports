@@ -16,6 +16,8 @@ COMMENT=	Ncurses based arcade game with only 64 lines of code
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		ncurses
+MAKE_ARGS=	LDFLAGS="${LDFLAGS} -lncurses"
 ALL_TARGET=	#empty
 
 PORTDOCS=	README
