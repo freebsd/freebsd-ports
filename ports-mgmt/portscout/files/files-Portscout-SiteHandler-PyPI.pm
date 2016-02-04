@@ -109,14 +109,13 @@ sub GetFiles
 	$ua->agent(USER_AGENT);
 	$resp = $ua->request(HTTP::Request->new(GET => $query));
 	if ($resp->is_success) {
-	    my ($json, $info, $version);
+	    my ($json, $urls);
 
-    	    $json = decode_json($resp->decoded_content);
-	    $info = $json->{info};
-	    $version = $info->{version};
-	    next unless $version;
-
-	    push(@$files, $json->{releases}{$version}[0]{filename});
+	    $json = decode_json($resp->decoded_content);
+	    $urls = $json->{urls};
+	    foreach my $url (@$urls) {
+		push(@$files, $url->{filename});
+	    }
 	} else {
 	    _debug("GET failed: " . $resp->code);
 	    return 0;

@@ -1,11 +1,16 @@
---- Portscout/SiteHandler/PyPI.pm.orig	2015-10-25 05:00:48 UTC
+--- Portscout/SiteHandler/PyPI.pm.orig	2016-02-04 08:23:53 UTC
 +++ Portscout/SiteHandler/PyPI.pm
-@@ -115,7 +115,7 @@ sub GetFiles
- 	    $info = $json->{info};
- 	    $version = $info->{version};
- 	    next unless $version;
--
-+	    _debug("GET success: " . $resp->code . " Filename: " . $json->{releases}{$version}[0]{filename});
- 	    push(@$files, $json->{releases}{$version}[0]{filename});
+@@ -109,11 +109,13 @@ sub GetFiles
+ 	$ua->agent(USER_AGENT);
+ 	$resp = $ua->request(HTTP::Request->new(GET => $query));
+ 	if ($resp->is_success) {
++	    _debug("GET success: " . $resp->code);
+ 	    my ($json, $urls);
+ 
+ 	    $json = decode_json($resp->decoded_content);
+ 	    $urls = $json->{urls};
+ 	    foreach my $url (@$urls) {
++		_debug("PyPi File: " . $url->{filename});
+ 		push(@$files, $url->{filename});
+ 	    }
  	} else {
- 	    _debug("GET failed: " . $resp->code);
