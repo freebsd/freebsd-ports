@@ -8,7 +8,7 @@ MASTER_SITES=	http://rspamd.com/downloads/
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
