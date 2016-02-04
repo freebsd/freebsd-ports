@@ -3,6 +3,7 @@
 
 PORTNAME=	lgeneral
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 		SF/${PORTNAME}/${PORTNAME}-data:data
@@ -12,19 +13,16 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turn-based strategy engine inspired by Panzer General
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+BROKEN_powerpc=	does not install
+BROKEN_sparc64=	does not install
+
+USES=		gmake localbase
 USE_CSTD=	gnu89
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-BROKEN_powerpc=	Does not install on ${ARCH}
-BROKEN_sparc64=	Does not install on ${ARCH}
 
 OPTIONS_DEFINE=		DOCS NLS SOUND
 OPTIONS_DEFAULT=	SOUND
@@ -44,9 +42,13 @@ post-install:
 .for i in flags terrain units
 	@${MKDIR} ${STAGEDIR}${DATADIR}/gfx/${i}
 .endfor
-	(${STAGEDIR}${PREFIX}/bin/lgc-pg -s ${WRKDIR}/pg-data \
-		-d ${STAGEDIR}${DATADIR})
+	${SETENV} DISPLAY= \
+		${STAGEDIR}${PREFIX}/bin/lgc-pg --separate-bridges \
+		-s ${WRKDIR}/pg-data \
+		-d ${STAGEDIR}${DATADIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README.* ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README.* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
