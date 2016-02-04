@@ -11,6 +11,7 @@ COMMENT=	Compare directories and select files to copy
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 LDFLAGS+=	-lncurses -lform
 
 PLIST_FILES=	bin/cdircmp
