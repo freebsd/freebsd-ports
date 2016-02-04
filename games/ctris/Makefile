@@ -12,7 +12,8 @@ COMMENT=	Colorized, small, and flexible Tetris(TM)-clone for the console
 
 LICENSE=	GPLv2
 
-USES=		tar:bzip2
+USES=		ncurses tar:bzip2
+MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses -lm"
 
 PLIST_FILES=	bin/ctris man/man6/ctris.6.gz
 
