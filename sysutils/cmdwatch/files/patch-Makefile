@@ -1,6 +1,15 @@
---- ./Makefile.orig	2002-08-28 15:23:52.000000000 +0200
-+++ ./Makefile	2013-10-22 10:54:40.000000000 +0200
-@@ -26,9 +26,9 @@
+--- Makefile.orig	2002-08-28 13:23:52 UTC
++++ Makefile
+@@ -5,7 +5,7 @@ STRIP ?= strip
+ OBJS = getopt.o getopt1.o cmdwatch.o
+ 
+ all : startup $(OBJS) 
+-	@$(CC) -o cmdwatch $(OBJS) -lcurses
++	@$(CC) -o cmdwatch $(OBJS) $(LDFLAGS) -lncurses
+ 	@strip cmdwatch
+ 	@echo " done."
+ 
+@@ -26,9 +26,9 @@ clean :
  	@rm -f *.o cmdwatch
  
  install : all
