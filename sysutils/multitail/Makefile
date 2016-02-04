@@ -13,7 +13,7 @@ COMMENT=	Tail multiple files on console with ncurses
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		alias gmake tar:tgz
+USES=		alias gmake ncurses tar:tgz
 
 PLIST_FILES=	bin/multitail etc/multitail.conf.sample \
 		man/man1/multitail.1.gz
