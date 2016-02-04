@@ -12,6 +12,7 @@ COMMENT=	Copy files in curses interface
 CONFLICTS=	p5-VCP-[0-9]* \
 		p5-VCP-autrijus-[0-9]*
 
+USES=		ncurses
 LDFLAGS+=	-lncurses
 
 OPTIONS_DEFINE=	DOCS
