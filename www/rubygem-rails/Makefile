@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	3.2.22
+PORTVERSION=	3.2.22.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -41,7 +41,6 @@ RUN_DEPENDS=	rubygem-actionmailer>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actio
 NOPORTDOCS=	yes
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBY_RDOC=	yes
 USE_RUBYGEMS=	yes
