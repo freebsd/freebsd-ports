@@ -3,7 +3,7 @@
 
 PORTNAME=	autotrust
 PORTVERSION=	0.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/autotrust/
 
