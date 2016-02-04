@@ -13,6 +13,7 @@ COMMENT=	Drive a buggy across the moons surface
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--sharedstatedir=/var/games
