@@ -20,10 +20,10 @@ LEVEL_EASY_DESC=	Killing Xzarna: easy
 LEVEL_MEDIUM_DESC=	Killing Xzarna: medium
 LEVEL_HARD_DESC=	Killing Xzarna: hard
 
+USES=		ncurses
+MAKE_ARGS=	LIB="${LDFLAGS} -lncurses"
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
 ALL_TARGET=	${PORTNAME}
-
 PORTDOCS=	README STORY TO_DO
 PLIST_FILES=	bin/alienwave
 
@@ -35,7 +35,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^CC /s|^|#| ; \
 		 /^CFLAGS /s|^|#| ; \
-		 s|-lncurses|-lcurses| ; \
 		 /strip /s|^|#|' ${WRKSRC}/Makefile
 
 do-install:
