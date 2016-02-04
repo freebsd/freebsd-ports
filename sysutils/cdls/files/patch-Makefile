@@ -1,0 +1,9 @@
+--- Makefile.orig	2012-04-13 16:42:46 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ all:
+-	cc -O2 -Wall -o cdls cdls.c -lncurses
++	${CC} -O2 -Wall -o cdls cdls.c ${LDFLAGS} -lncurses
+ install:
+ 	install -o root -g wheel cdls /usr/local/bin/cdls
+ clean:
