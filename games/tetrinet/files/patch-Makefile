@@ -1,0 +1,11 @@
+--- Makefile.orig	2003-10-05 18:39:24 UTC
++++ Makefile
+@@ -30,7 +30,7 @@ binonly:
+ ########
+ 
+ tetrinet: $(OBJS)
+-	$(CC) -o $@ $(OBJS) -lncurses
++	$(CC) -o $@ $(OBJS) $(LDFLAGS) -lncurses
+ 
+ tetrinet-server: server.c sockets.c tetrinet.c tetris.c server.h sockets.h tetrinet.h tetris.h
+ 	$(CC) $(CFLAGS) -o $@ -DSERVER_ONLY server.c sockets.c tetrinet.c tetris.c
