@@ -1,6 +1,6 @@
---- ./Makefile.orig	Fri Sep 22 04:48:22 2006
-+++ ./Makefile	Wed Nov  1 19:01:16 2006
-@@ -2,14 +2,15 @@
+--- Makefile.orig	2006-09-22 07:48:22 UTC
++++ Makefile
+@@ -2,14 +2,13 @@
  EXECUTABLE = tss
  
  SRC    = src/main.c
@@ -8,15 +8,13 @@
 -COMPILE= $(CC) $(CFLAGS)
 -CC = gcc
 +CFLAGS += -Wall -ansi -pedantic -s -DBSD $(CPPFLAGS)
-+LDFLAGS += -lcurses -lcrypt
 +COMPILE = $(CC) $(CFLAGS)
-+CC ?= gcc
  
  all: $(EXECUTABLE)
  
  $(EXECUTABLE): $(SRC)
 -	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(SRC)
-+	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(SRC) $(LDFLAGS)
++	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(SRC) $(LDFLAGS) -lncurses -lcrypt
  
  %.o: %.c
  	$(COMPILE) -o $@ $<
