@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.chruetertee.ch/files/download/
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Watches the output from a command at specified intervals
 
+USES=		ncurses
 PLIST_FILES=	bin/cmdwatch man/man1/cmdwatch.1.gz
 
 .include <bsd.port.mk>
