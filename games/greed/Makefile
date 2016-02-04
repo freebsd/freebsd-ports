@@ -12,9 +12,10 @@ COMMENT=	Text puzzle game with the aim of clearing the game field
 
 LICENSE=	BSD3CLAUSE
 
+USES=		ncurses
 SCOREFILE?=	/var/games/greed.hs
 CFLAGS+=	-DSCOREFILE=\"${SCOREFILE}\" -DNOTBSD -DRELEASE=\"${PORTVERSION}\"
-LDFLAGS+=	-lcurses
+LDFLAGS+=	-lncurses
 PLIST_SUB+=	SCOREFILE=${SCOREFILE}
 
 do-build:
