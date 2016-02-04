@@ -9,7 +9,9 @@ MASTER_SITES=	SF/bjk/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Character Animation Viewer for Everyone
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/cave.1.gz

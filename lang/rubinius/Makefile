@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:${PORTSDIR}/sysutils/rubygem-bundler \
 BROKEN_FreeBSD_9=	does not build
 BROKEN_FreeBSD_11=	does not build
 
+BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes
 
 HAS_CONFIGURE=	yes
@@ -100,56 +101,5 @@ do-build:
 	@${FIND} ${STAGEDIR} -type f -name 'gem_make.out' -delete
 	@${FIND} ${STAGEDIR} -type f -name 'mkmf.log' -delete
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rbx
-
-plist:
-	@truncate -s0 pkg-plist
-	@${ECHO_CMD} "bin/rbx" >> pkg-plist
-	@${ECHO_CMD} "bin/testrbx" >> pkg-plist
-#
-# Includes
-#
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/include/rubinius ! -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/include/rubinius -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
-#
-# Libs
-#
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/rubinius ! -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/rubinius -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
-#
-# Kernel and Runtime
-#
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/rubinius ! -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/rubinius -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
-#
-# Gems
-#
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/gems/rubinius ! -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/gems/rubinius -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
-#
-# Site libs and vendor libs
-#
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/site_ruby/rubinius ! -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/site_ruby/rubinius -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/vendor_ruby/rubinius ! -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${STAGEDIR}${PREFIX}/lib/ruby/vendor_ruby/rubinius -type d | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/*,@dirrm ,' >> pkg-plist
-#
-# Shared dirs
-#
-	@${ECHO_CMD} "@dirrmtry lib/ruby/site_ruby" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry lib/ruby/vendor_ruby" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry lib/ruby/gems" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry lib/ruby" >> pkg-plist
 
 .include <bsd.port.post.mk>

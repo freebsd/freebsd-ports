@@ -10,6 +10,8 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Versatile ncurses-based hex editor
 
+USES=		ncurses
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/hexcurse man/man1/hexcurse.1.gz

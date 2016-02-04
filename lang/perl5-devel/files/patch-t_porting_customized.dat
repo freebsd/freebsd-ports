@@ -1,8 +1,17 @@
---- t/porting/customized.dat.orig	2016-01-12 13:34:39 UTC
+--- t/porting/customized.dat.orig	2016-02-01 02:22:53 UTC
 +++ t/porting/customized.dat
-@@ -9,7 +9,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
+@@ -14,7 +14,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/Mksymlists.pm 23a4b33b974e036d59bf55aa02e025506a408048
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM.pm 288df61e9ba7be3505b58b6345091fe1f310a117
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_AIX.pm 8578f2ea4ec9e764a789f6ecf620ea449ddca8c1
+-ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm 9f1f6c51fb0337726c99332facc52159c0619fe2
++ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm fc5a731797f5c4fedf02ea2b5277aa720f0880ab
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_BeOS.pm a0ec076bedfa0c2e52fc2b735fbc75b4c2706bbf
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Cygwin.pm 976b10ec76d1fe6f7ee9000b5596e8950434880b
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Darwin.pm bc4b33fa5296ab35bcb1be1c18759b93c4de2598
+@@ -37,7 +37,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
+ ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/t/prereq.t 53bda2c549fd13a6b6c13a070ca6bc79883081c0
  ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/t/vstrings.t 90035a2bdbf45f15b9c3196d072d7cba7e662871
- ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/t/lib/MakeMaker/Test/NoXS.pm 371cdff1b2375017907cfbc9c8f4a31f5ad10582
  Math::BigRat cpan/Math-BigRat/lib/Math/BigRat.pm 6eabc68e04f67694f6fe523e64eb013fc337ca5b
 -Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm fe0bc906fb74b69cfd3fb289316ba669d770d465
 +Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 07e7d337de37d19b3cc7025af17b9111fb2ba265

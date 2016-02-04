@@ -11,6 +11,8 @@ MAINTAINER=	rand@iteris.com
 COMMENT=	Nagios integration for VictorOps incident notification service
 
 BROKEN=		Unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-02-29
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES

@@ -1,0 +1,26 @@
+commit 8df464ebf0db8b04d0baae6a14504f3796e355a0
+Author: Jeremy Bobbio <lunar@debian.org>
+Date:   Sat Jan 30 13:47:47 2016 +0000
+
+    Also use libarchive to read metadata from ar archives
+
+    The output is more precise and less dependent on binutils version.
+
+    The command line `ar` tool is not used any more so remove it from the
+    required tools.
+
+--- tests/data/deb_metadata_expected_diff.orig	2016-01-31 06:42:09 UTC
++++ tests/data/deb_metadata_expected_diff
+@@ -1,6 +1,7 @@
+ @@ -1,3 +1,3 @@
+- rw-r--r-- 0/0      4 Jun 24 17:40 2015 debian-binary
+--rw-r--r-- 0/0    444 Jun 24 17:40 2015 control.tar.gz
+--rw-r--r-- 0/0   1626 Jun 24 17:40 2015 data.tar.gz
+-+rw-r--r-- 0/0    442 Jun 24 17:40 2015 control.tar.gz
+-+rw-r--r-- 0/0   1754 Jun 24 17:40 2015 data.tar.gz
++--rw-r--r--   0        0        0        4 2015-06-24 17:40:03.000000 debian-binary
++--rw-r--r--   0        0        0      444 2015-06-24 17:40:03.000000 control.tar.gz
++--rw-r--r--   0        0        0     1626 2015-06-24 17:40:03.000000 data.tar.gz
+++-rw-r--r--   0        0        0        4 2015-06-24 17:40:26.000000 debian-binary
+++-rw-r--r--   0        0        0      442 2015-06-24 17:40:26.000000 control.tar.gz
+++-rw-r--r--   0        0        0     1754 2015-06-24 17:40:26.000000 data.tar.gz

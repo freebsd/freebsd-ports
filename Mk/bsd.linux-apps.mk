@@ -321,6 +321,7 @@ libogg_DETECT=		${libogg${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libogg_PORT=		${PORTSDIR}/audio/linux${LINUX_BASEPORT_NAME}-libogg
 
 libpciaccess_c6_FILE=		${LINUXBASE}/usr/lib/libpciaccess.so.0.11.1
+libpciaccess_c6_64_FILE=		${LINUXBASE}/usr/lib64/libpciaccess.so.0.11.1
 libpciaccess_DETECT=		${libpciaccess${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libpciaccess_PORT=		${PORTSDIR}/devel/linux${LINUX_BASEPORT_NAME}-libpciaccess
 
@@ -387,8 +388,8 @@ naslibs_PORT=		${PORTSDIR}/audio/linux${LINUX_BASEPORT_NAME}-nas-libs
 naslibs_DEPENDS=	xorglibs
 
 openldap_f10_FILE=	${LINUXBASE}/usr/lib/libldap-2.4.so.2.2.0
-openldap_c6_FILE=	${LINUXBASE}/lib/libldap-2.4.so.2.10.2
-openldap_c6_64_FILE=	${LINUXBASE}/lib64/libldap-2.4.so.2.10.2
+openldap_c6_FILE=	${LINUXBASE}/lib/libldap-2.4.so.2.10.3
+openldap_c6_64_FILE=	${LINUXBASE}/lib64/libldap-2.4.so.2.10.3
 openldap_DETECT=	${openldap${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 openldap_PORT=		${PORTSDIR}/net/linux${LINUX_BASEPORT_NAME}-openldap
 

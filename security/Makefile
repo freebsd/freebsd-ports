@@ -7,6 +7,7 @@
     SUBDIR += ADMsnmp
     SUBDIR += R-cran-ROAuth
     SUBDIR += R-cran-digest
+    SUBDIR += R-cran-openssl
     SUBDIR += aescrypt
     SUBDIR += aespipe
     SUBDIR += afl
@@ -282,6 +283,7 @@
     SUBDIR += l5
     SUBDIR += lasso
     SUBDIR += lastpass-cli
+    SUBDIR += letsencrypt.sh
     SUBDIR += libassuan
     SUBDIR += libbeid
     SUBDIR += libbf
@@ -1066,6 +1068,7 @@
     SUBDIR += stoken
     SUBDIR += strobe
     SUBDIR += strongswan
+    SUBDIR += stud
     SUBDIR += stunnel
     SUBDIR += subversion-gnome-keyring
     SUBDIR += subversion-kwallet

@@ -14,9 +14,11 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	Constructs linkage maps of markers segregating in experimental crosses
 
+USES=		ncurses
 USE_CSTD=	gnu89
 CFLAGS+=	-Wno-return-type
 NO_WRKSUBDIR=	yes
+MAKE_ARGS+=	SYS_LIBS="${LDFLAGS} -lm -lncurses"
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:

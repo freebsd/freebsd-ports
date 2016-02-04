@@ -1,5 +1,7 @@
+lib/elixir/lib/html_entities/ebin/Elixir.HtmlEntities.Util.beam
 lib/elixir/lib/html_entities/ebin/Elixir.HtmlEntities.beam
 lib/elixir/lib/html_entities/ebin/html_entities.app
 lib/elixir/lib/html_entities/lib/html_entities.ex
+lib/elixir/lib/html_entities/lib/html_entities/util.ex
 lib/elixir/lib/html_entities/lib/html_entities_list.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.md

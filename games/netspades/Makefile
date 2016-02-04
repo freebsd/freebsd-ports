@@ -27,10 +27,10 @@ GTK1_USE=		GNOME=gtk12
 GTK1_CONFIGURE_OFF=	--without-gtk
 GTK1_PLIST_FILES=	bin/gspades man/man6/gspades.6.gz
 
-SLANG_USES=		readline
+SLANG_USES=		readline ncurses
 SLANG_CONFIGURE_OFF=	--without-slang
 SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
-SLANG_LDFLAGS=		-ltermcap
+SLANG_LDFLAGS=		-lncurses
 SLANG_PLIST_FILES=	bin/slspades man/man6/slspades.6.gz
 
 .include <bsd.port.options.mk>

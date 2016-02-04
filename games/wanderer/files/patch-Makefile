@@ -1,0 +1,11 @@
+--- Makefile.orig	2003-04-17 03:11:52 UTC
++++ Makefile
+@@ -8,7 +8,7 @@ OBJ = monsters.o m.o save.o jump.o displ
+ 
+ #CFLAGS = -O -s
+ #CFLAGS = -g
+-LIBS = -lcurses
++LIBS = $(LDFLAGS) -lncurses
+ #CC = cc
+ 
+ all:	wanderer

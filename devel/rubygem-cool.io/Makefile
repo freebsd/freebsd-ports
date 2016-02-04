@@ -14,8 +14,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	\
 	rubygem-iobuffer>=1.0.0:${PORTSDIR}/devel/rubygem-iobuffer
 
-BROKEN_RUBY22=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

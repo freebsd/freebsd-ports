@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	visit1985
 
-USES=		gmake
+USES=		gmake ncurses
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=		DEBUG

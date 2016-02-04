@@ -34,12 +34,21 @@ load_rc_config $name
 
 extra_commands=reload
 
+start_precmd=asterisk_precmd
 stop_cmd=asterisk_stop
 reload_cmd=asterisk_reload
 
 command="%%PREFIX%%/sbin/asterisk"
 command_args="${asterisk_args} -F -U ${asterisk_user}"
 pidfile=${asterisk_pidfile}
+
+asterisk_precmd()
+{
+	local rundir=${asterisk_pidfile%/*}
+	if [ ! -d $rundir ] ; then
+		install -d -m 0755 -o asterisk -g asterisk $rundir
+	fi
+}
 
 asterisk_stop()
 {

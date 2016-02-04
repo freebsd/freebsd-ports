@@ -26,5 +26,5 @@ man/man1/pdf.1.gz
 man/man1/prm.1.gz
 man/man1/rseq.1.gz
 man/man1/run.1.gz
-man/man1/dvt.1.gz
-man/man1/rvt.1.gz
+%%X11%%man/man1/dvt.1.gz
+%%X11%%man/man1/rvt.1.gz

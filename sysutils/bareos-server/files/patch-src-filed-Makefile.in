@@ -1,11 +1,30 @@
---- src/filed/Makefile.in	2015-08-08 14:17:28.058350000 -0500
-+++ src/filed/Makefile.in	2015-08-08 14:17:49.001877000 -0500
-@@ -84,7 +84,7 @@
+--- src/filed/Makefile.in	2015-12-03 03:22:54.000000000 -0500
++++ src/filed/Makefile.in	2016-02-01 18:17:25.879376000 -0500
+@@ -25,6 +25,7 @@
+ GNUTLS_LIBS_NONSHARED = @GNUTLS_LIBS_NONSHARED@
+ 
+ JANSSON_CPPFLAGS = @JANSSON_INC@
++JANSSON_LDFLAGS = @JANSSON_LIBS@
+ COMPRESS_CPPFLAGS += @ZLIB_INC@ @LZO_INC@ @FASTLZ_INC@
+ 
+ first_rule: all
+@@ -76,7 +77,7 @@
+ 	@echo "Linking $@ ..."
+ 	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -L../lib -L../findlib -o $@ $(SVROBJS) \
+ 	  $(FDLIBS) -lbareosfind -lbareoscfg -lbareos -lm $(LIBS) \
+-	  $(DLIB) $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
++	  $(DLIB) $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
+ 
+ static-bareos-fd: Makefile $(SVROBJS) \
+ 		  ../findlib/libbareosfind.a \
+@@ -84,8 +85,8 @@
  		  ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
  	@echo "Linking $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -static -L../lib -L../findlib -o $@ $(SVROBJS) \
 -	   $(FDLIBS) -lbareosfind -lbareoscfg -lbareos -lm $(LIBS) \
+-	   $(DLIB) $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS)
 +	   -lbareosfind -lbareoscfg -lbareos -lm $(FDLIBS) $(LIBS) \
- 	   $(DLIB) $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS)
++	   $(DLIB) $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS) $(JANSSON_LDFLAGS)
  	strip $@
  
+ Makefile: $(srcdir)/Makefile.in $(topdir)/config.status

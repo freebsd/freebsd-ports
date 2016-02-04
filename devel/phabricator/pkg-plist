@@ -38,6 +38,7 @@ lib/php/phabricator/bin/worker
 lib/php/phabricator/conf/__init_conf__.php
 lib/php/phabricator/conf/keys/.keep
 lib/php/phabricator/conf/local/README
+@sample lib/php/phabricator/conf/local/local.json.sample
 lib/php/phabricator/externals/JsShrink/jsShrink.php
 lib/php/phabricator/externals/JsShrink/readme.txt
 lib/php/phabricator/externals/amazon-ses/ses.php

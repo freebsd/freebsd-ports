@@ -1,0 +1,11 @@
+--- configure.orig	2016-01-20 02:07:12 UTC
++++ configure
+@@ -14169,7 +14169,7 @@ fi
+ 	  end
+ 	end
+ 	ruby_glib2_path = ruby_glib2_gem.full_gem_path
+-	print("-I ", File.join(ruby_glib2_path, "ext", "glib2"))')
++	print("-I ", File.join(ruby_glib2_path, "lib"))')
+       if test $? -eq 0; then
+         CFLAGS="$CFLAGS $RUBY_GLIB2_CFLAGS"
+       else

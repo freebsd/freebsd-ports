@@ -1,0 +1,65 @@
+--- configure.in.orig	2012-02-28 19:50:27.000000000 +0100
++++ configure.in	2016-01-25 20:15:46.034842000 +0100
+@@ -96,9 +96,19 @@
+ 		 sys/soundcard.h \
+ 		 sys/time.h \
+ 		 unistd.h \
+-		 xmmintrin.h \
+ 		 linux/soundcard.h)
+ 
++dnl Checks for actually working SSE intrinsics
++AC_MSG_CHECKING(working SSE intrinsics)
++AC_COMPILE_IFELSE(
++    [AC_LANG_PROGRAM(
++	[[#include <xmmintrin.h>]],
++	[[_mm_sfence();]])],
++    [AC_DEFINE([HAVE_XMMINTRIN_H], [1], [Define if SSE intrinsics work.])
++     ac_cv_header_xmmintrin_h=yes],
++   [ac_cv_header_xmmintrin_h=no])
++AC_MSG_RESULT(${ac_cv_header_xmmintrin_h})
++
+ dnl Checks for typedefs, structures, and compiler characteristics.
+ AC_C_CONST
+ AC_C_INLINE
+--- configure.orig	2012-02-28 19:54:37.000000000 +0100
++++ configure	2016-01-25 20:16:07.429512000 +0100
+@@ -11922,7 +11918,6 @@
+ 		 sys/soundcard.h \
+ 		 sys/time.h \
+ 		 unistd.h \
+-		 xmmintrin.h \
+ 		 linux/soundcard.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+@@ -11937,6 +11932,31 @@
+ done
+ 
+ 
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking working SSE intrinsics" >&5
++$as_echo_n "checking working SSE intrinsics... " >&6; }
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++#include <xmmintrin.h>
++int
++main ()
++{
++_mm_sfence();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_compile "$LINENO"; then :
++
++$as_echo "#define HAVE_XMMINTRIN_H 1" >>confdefs.h
++
++     ac_cv_header_xmmintrin_h=yes
++else
++  ac_cv_header_xmmintrin_h=no
++fi
++rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: ${ac_cv_header_xmmintrin_h}" >&5
++$as_echo "${ac_cv_header_xmmintrin_h}" >&6; }
++
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for an ANSI C-conforming const" >&5
+ $as_echo_n "checking for an ANSI C-conforming const... " >&6; }
+ if ${ac_cv_c_const+:} false; then :

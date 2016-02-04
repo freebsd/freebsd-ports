@@ -46,22 +46,24 @@ SRCS+= usb_libusb.cpp
 .PATH: ${.CURDIR}/../base
 SRCS+= file.cpp
 SRCS+= logging.cpp
-SRCS+= strings.cpp
+SRCS+= parsenetaddress.cpp
 SRCS+= stringprintf.cpp
+SRCS+= strings.cpp
 TEST_SRCS+= file_test.cpp
 TEST_SRCS+= logging_test.cpp
+TEST_SRCS+= parsenetaddress_test.cpp
 TEST_SRCS+= stringprintf_test.cpp
 TEST_SRCS+= strings_test.cpp
 TEST_SRCS+= test_main.cpp
 TEST_SRCS+= test_utils.cpp
 
 .PATH: ${.CURDIR}/../libcutils
-SRCS+= socket_inaddr_any_server.c
-SRCS+= socket_local_client.c
-SRCS+= socket_local_server.c
-SRCS+= socket_loopback_client.c
-SRCS+= socket_loopback_server.c
-SRCS+= socket_network_client.c
+SRCS+= socket_inaddr_any_server_unix.c
+SRCS+= socket_local_client_unix.c
+SRCS+= socket_local_server_unix.c
+SRCS+= socket_loopback_client_unix.c
+SRCS+= socket_loopback_server_unix.c
+SRCS+= socket_network_client_unix.c
 SRCS+= load_file.c
 SRCS+= threads.c
 

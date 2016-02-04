@@ -26,7 +26,7 @@ COMMENT=	Less + zcat + ISO-2022 + UTF-8 - a pager similar to more and pg
 
 LICENSE=	GPLv2
 
-USES=		desthack
+USES=		desthack ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cs-regex
 PORTDOCS=	README.iso README.iso.jp README.lesw.euc \

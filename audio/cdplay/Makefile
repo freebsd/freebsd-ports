@@ -10,7 +10,9 @@ MASTER_SITES=	LOCAL/dannyboy
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD-player with text-based user interface
 
+USES=		ncurses
 MAKE_ARGS=	CFLAGS="${CFLAGS} -c -ansi"	\
+		LFLAGS="${LDFLAGS} -lncurses"   \
 		BINPATH="${PREFIX}/bin/"	\
 		MANPATH="${MANPREFIX}/man/man1/" \
 		CC="${CC}"

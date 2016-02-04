@@ -17,7 +17,7 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
 		gpatch:${PORTSDIR}/devel/patch
 
 GNU_CONFIGURE=	yes
-USES=		cpe gmake iconv libtool perl5 pkgconfig tar:xz
+USES=		cpe gmake iconv libtool ncurses perl5 pkgconfig tar:xz
 CPE_VENDOR=	debian
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 

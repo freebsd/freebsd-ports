@@ -25,6 +25,7 @@
     SUBDIR += feappv
     SUBDIR += fidocadj
     SUBDIR += freehdl
+    SUBDIR += fritzing
     SUBDIR += gdsreader
     SUBDIR += gdt
     SUBDIR += geda
@@ -61,6 +62,7 @@
     SUBDIR += p5-Verilog-Perl
     SUBDIR += pcb
     SUBDIR += pdnmesh
+    SUBDIR += py-pycam
     SUBDIR += pythoncad
     SUBDIR += qcad
     SUBDIR += qcad-partslib

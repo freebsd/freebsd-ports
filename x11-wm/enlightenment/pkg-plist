@@ -341,7 +341,6 @@ libdata/pkgconfig/enlightenment.pc
 libdata/pkgconfig/everything.pc
 share/applications/emixer.desktop
 share/applications/enlightenment_filemanager.desktop
-share/pixmaps/emixer.png
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
 %%DATADIR%%/data/backgrounds/Brown_Rock_Hi.edj
@@ -389,11 +388,6 @@ share/pixmaps/emixer.png
 %%DATADIR%%/data/config/mobile/enlightenment-mobile.png
 %%DATADIR%%/data/config/mobile/module.battery.cfg
 %%DATADIR%%/data/config/mobile/module.conf.cfg
-%%DATADIR%%/data/config/mobile/module.illume-home.cfg
-%%DATADIR%%/data/config/mobile/module.illume-indicator.cfg
-%%DATADIR%%/data/config/mobile/module.illume-keyboard.cfg
-%%DATADIR%%/data/config/mobile/module.illume-softkey.cfg
-%%DATADIR%%/data/config/mobile/module.illume2.cfg
 %%DATADIR%%/data/config/mobile/profile.desktop
 %%DATADIR%%/data/config/profile.cfg
 %%DATADIR%%/data/config/standard/e.cfg
@@ -488,8 +482,8 @@ share/pixmaps/emixer.png
 %%DATADIR%%/data/flags/lv_flag.png
 %%DATADIR%%/data/flags/ma_flag.png
 %%DATADIR%%/data/flags/mao_flag.png
-%%DATADIR%%/data/flags/me_flag.png
 %%DATADIR%%/data/flags/md_flag.png
+%%DATADIR%%/data/flags/me_flag.png
 %%DATADIR%%/data/flags/mk_flag.png
 %%DATADIR%%/data/flags/ml_flag.png
 %%DATADIR%%/data/flags/mm_flag.png
@@ -590,4 +584,5 @@ share/pixmaps/emixer.png
 %%NLS%%share/locale/uk/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/enlightenment.mo
+share/pixmaps/emixer.png
 share/xsessions/enlightenment.desktop

@@ -12,7 +12,9 @@ COMMENT=	DOS-XTREE(tm) look-a-like file manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		ncurses
 ALL_TARGET=	ytree
+MAKE_ARGS=	LDFLAGS="${LDFLAGS} -lncurses -lcompat"
 
 OPTIONS_DEFINE=	DOCS
 

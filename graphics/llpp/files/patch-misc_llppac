@@ -1,0 +1,11 @@
+--- misc/llppac.orig	2015-10-13 20:12:27 UTC
++++ misc/llppac
+@@ -197,7 +197,7 @@ EOF
+     *) die "unhandled filter type: '$type'";;
+ esac
+ 
+-hash=$(md5sum "$md5of") || die "$hash"
++hash=$(md5 -q "$md5of") || die "$hash"
+ casp=$cachedir/${hash%% *}$caspsuf
+ (test -n "$force" -o ! -e "$casp") && eval "$filt" "$conv"
+ 

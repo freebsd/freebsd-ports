@@ -93,7 +93,6 @@
     SUBDIR += cntlm
     SUBDIR += cocoon
     SUBDIR += codeigniter
-    SUBDIR += codeigniter22
     SUBDIR += coppermine
     SUBDIR += cplanet
     SUBDIR += cppcms
@@ -1581,7 +1580,6 @@
     SUBDIR += py-django-voting
     SUBDIR += py-django16
     SUBDIR += py-django16-tastypie
-    SUBDIR += py-django17
     SUBDIR += py-django18
     SUBDIR += py-django19
     SUBDIR += py-django_compressor
@@ -2008,6 +2006,7 @@
     SUBDIR += rubygem-thin
     SUBDIR += rubygem-tinyatom
     SUBDIR += rubygem-tinymce-rails
+    SUBDIR += rubygem-totoridipjp
     SUBDIR += rubygem-tumblr_client
     SUBDIR += rubygem-turbolinks
     SUBDIR += rubygem-turbolinks-rails41
@@ -2284,7 +2283,6 @@
     SUBDIR += xoops
     SUBDIR += xpi-adblock
     SUBDIR += xpi-adblock_plus
-    SUBDIR += xpi-bookmarkdd
     SUBDIR += xpi-clear_cache_button
     SUBDIR += xpi-clearfields
     SUBDIR += xpi-close-all-tabs

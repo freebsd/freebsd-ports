@@ -18,3 +18,5 @@ SHA256 (erlang/programming_rules.pdf) = b95f8851004832b044e064c12976a422613ece89
 SIZE (erlang/programming_rules.pdf) = 77025
 SHA256 (erlang/patch-otp-18.2.2) = 2a223e838a5b018535905f813eb95830dcced30b39dce3fdac02919c98823353
 SIZE (erlang/patch-otp-18.2.2) = 9587
+SHA256 (erlang/patch-otp-18.2.3) = 9294879b4b3f1fc9eb005003b1e930458b184e543a898f21d7cab921e36a0862
+SIZE (erlang/patch-otp-18.2.3) = 55919

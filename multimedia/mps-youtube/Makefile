@@ -39,7 +39,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}
 
-USES=		python:3.2+
+USES=		python:3.3+
 USE_PYTHON=	autoplist distutils
 
 post-install:

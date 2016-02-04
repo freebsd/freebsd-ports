@@ -14,6 +14,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-02-29
 
 LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \

@@ -1,4 +1,4 @@
---- src/dms/cdata.h.orig
+--- src/dms/cdata.h.orig	2004-05-19 01:22:12 UTC
 +++ src/dms/cdata.h
 @@ -31,7 +31,7 @@
  		#define INLINE inline

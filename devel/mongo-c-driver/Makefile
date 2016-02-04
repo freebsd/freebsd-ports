@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongo-c-driver
-PORTVERSION=	1.1.9
+PORTVERSION=	1.3.2
 CATEGORIES=	devel
 
 MAINTAINER=	waitman@waitman.net
@@ -22,9 +22,6 @@ USE_LDCONFIG=	yes
 LDFLAGS+=	-pthread
 
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" V=1
-
-pre-configure:
-	cd ${WRKSRC} && ./autogen.sh
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmongoc-priv.so.0.0.0

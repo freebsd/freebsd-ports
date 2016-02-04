@@ -447,6 +447,7 @@
     SUBDIR += jaildaemon
     SUBDIR += jailme
     SUBDIR += jailrc
+    SUBDIR += jailutils
     SUBDIR += javaservicewrapper
     SUBDIR += jdiskreport
     SUBDIR += jfbterm
@@ -783,6 +784,7 @@
     SUBDIR += py-croniter
     SUBDIR += py-crontab
     SUBDIR += py-danzfs
+    SUBDIR += py-diffoscope
     SUBDIR += py-dlipower
     SUBDIR += py-drmaa
     SUBDIR += py-execnet

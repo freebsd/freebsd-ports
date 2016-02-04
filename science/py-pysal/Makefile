@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysal
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:${PORTSDIR}/devel/py-nose
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
-USES=		python:2
+USE_PYTHON=	autoplist concurrent distutils
+USES=		python
 
 .include <bsd.port.mk>

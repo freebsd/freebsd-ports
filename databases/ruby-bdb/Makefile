@@ -21,8 +21,6 @@ USE_BDB=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-BROKEN_RUBY23=	yes
-
 USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
@@ -59,10 +57,6 @@ SHEBANG_FILES=	examples/record.rb \
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} >= 2.0
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-features.rb
-.endif
-
 .if ${RUBY_VER} >= 2.1
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-bdbxml2-bdbxml.h
 .endif
@@ -71,7 +65,7 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-bdbxml2-bdbxml.h
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-common.c-21
 .endif
 
-.if ${RUBY_VER} == 2.2
+.if ${RUBY_VER} >= 2.2
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-common.c-22 \
 			${FILESDIR}/extra-patch-src-recnum.c-22 \
 			${FILESDIR}/extra-patch-src-cursor.c-22

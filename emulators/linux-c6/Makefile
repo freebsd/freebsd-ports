@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linux-${USE_LINUX}
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -51,7 +51,6 @@ RUN_DEPENDS+=	linux-${USE_LINUX}-libasyncns>0:${PORTSDIR}/dns/linux-c6-libasyncn
 		linux-${USE_LINUX}-arts>0:${PORTSDIR}/audio/linux-c6-arts \
 		linux-${USE_LINUX}-pulseaudio-utils>0:${PORTSDIR}/audio/linux-c6-pulseaudio-utils \
 		linux-${USE_LINUX}-pulseaudio-libs>0:${PORTSDIR}/audio/linux-c6-pulseaudio-libs \
-		linux-${USE_LINUX}-pulseaudio-libs-glib2>0:${PORTSDIR}/audio/linux-c6-pulseaudio-libs-glib2 \
 		linux-${USE_LINUX}-mikmod>0:${PORTSDIR}/audio/linux-c6-mikmod \
 		linux-${USE_LINUX}-openal-soft>0:${PORTSDIR}/audio/linux-c6-openal-soft \
 		linux-${USE_LINUX}-libvorbis>0:${PORTSDIR}/audio/linux-c6-libvorbis \

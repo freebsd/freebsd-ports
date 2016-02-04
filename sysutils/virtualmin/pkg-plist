@@ -57,6 +57,7 @@ lib/webmin/virtual-server/copy-mailbox.pl
 lib/webmin/virtual-server/copy_cert.cgi
 lib/webmin/virtual-server/copy_cert_dovecot.cgi
 lib/webmin/virtual-server/copy_cert_postfix.cgi
+lib/webmin/virtual-server/copy_cert_proftpd.cgi
 lib/webmin/virtual-server/create-admin.pl
 lib/webmin/virtual-server/create-alias.pl
 lib/webmin/virtual-server/create-database.pl
@@ -531,6 +532,7 @@ lib/webmin/virtual-server/help/config_default_procmail.nl.html
 lib/webmin/virtual-server/help/config_defip.html
 lib/webmin/virtual-server/help/config_defip.nl.html
 lib/webmin/virtual-server/help/config_defip6.html
+lib/webmin/virtual-server/help/config_delete_logs.html
 lib/webmin/virtual-server/help/config_denied_domains.html
 lib/webmin/virtual-server/help/config_denied_domains.nl.html
 lib/webmin/virtual-server/help/config_dir.html
@@ -702,6 +704,7 @@ lib/webmin/virtual-server/help/config_pbzip2.html
 lib/webmin/virtual-server/help/config_pbzip2.nl.html
 lib/webmin/virtual-server/help/config_php_ini.html
 lib/webmin/virtual-server/help/config_php_ini.nl.html
+lib/webmin/virtual-server/help/config_php_paths.html
 lib/webmin/virtual-server/help/config_plan_auto.html
 lib/webmin/virtual-server/help/config_plan_auto.nl.html
 lib/webmin/virtual-server/help/config_post_check.html
@@ -1739,6 +1742,7 @@ lib/webmin/virtual-server/lang/zh_CN.UTF-8
 lib/webmin/virtual-server/lang/zh_TW.Big5
 lib/webmin/virtual-server/lang/zh_TW.UTF-8
 lib/webmin/virtual-server/latest-scripts-key.asc
+lib/webmin/virtual-server/letsencrypt.cgi
 lib/webmin/virtual-server/link.cgi
 lib/webmin/virtual-server/list-admins.pl
 lib/webmin/virtual-server/list-aliases.pl
@@ -1757,6 +1761,7 @@ lib/webmin/virtual-server/list-gcs-files.pl
 lib/webmin/virtual-server/list-mailbox.pl
 lib/webmin/virtual-server/list-php-directories.pl
 lib/webmin/virtual-server/list-php-ini.pl
+lib/webmin/virtual-server/list-php-versions.pl
 lib/webmin/virtual-server/list-plans.pl
 lib/webmin/virtual-server/list-redirects.pl
 lib/webmin/virtual-server/list-resellers.pl
@@ -1942,6 +1947,9 @@ lib/webmin/virtual-server/newfeatures-all/4.15/2-recovery
 lib/webmin/virtual-server/newfeatures-all/4.16/1-aws
 lib/webmin/virtual-server/newfeatures-all/4.17/1-replication
 lib/webmin/virtual-server/newfeatures-all/4.19/1-cloudmail
+lib/webmin/virtual-server/newfeatures-all/4.19/2-letsencrypt
+lib/webmin/virtual-server/newfeatures-all/5.0/1-excludes
+lib/webmin/virtual-server/newfeatures-all/5.0/2-backuplogs
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -2107,6 +2115,7 @@ lib/webmin/virtual-server/stop_feature.cgi
 lib/webmin/virtual-server/stop_script.cgi
 lib/webmin/virtual-server/subdomain-template
 lib/webmin/virtual-server/summary_domain.cgi
+lib/webmin/virtual-server/switch_theme.cgi
 lib/webmin/virtual-server/system_info.pl
 lib/webmin/virtual-server/test-imap.pl
 lib/webmin/virtual-server/test-pop3.pl

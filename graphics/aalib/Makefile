@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INFO=		aalib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 

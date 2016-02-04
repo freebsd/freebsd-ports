@@ -5,7 +5,7 @@ PORTNAME=	qt47-webkit
 PORTVERSION=	4.7.2
 PORTREVISION=	1
 CATEGORIES=	www linux
-MASTER_SITES=	http://dl.atrpms.net/el6-${LINUX_REPO_ARCH}/atrpms/testing/ LOCAL/xmj
+MASTER_SITES=	https://www.mirrorservice.org/sites/dl.atrpms.net/el6-${LINUX_REPO_ARCH}/atrpms/testing/ LOCAL/xmj
 DIST_SUBDIR=	rpm/${LINUX_RPM_ARCH}/atrpms/6
 
 MAINTAINER=	emulation@FreeBSD.org

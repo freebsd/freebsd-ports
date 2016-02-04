@@ -12,7 +12,7 @@ COMMENT=	Advanced genealogical system
 
 LICENSE=	MIT
 
-USES=		bison iconv tar:bzip2
+USES=		bison iconv ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS NLS

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	govpn
-PORTVERSION=	5.3
+PORTVERSION=	5.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ru/govpn/download/ \
 		http://sourceforge.net/projects/govpn/files/

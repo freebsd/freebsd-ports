@@ -3,6 +3,7 @@
 
 PORTNAME=	milter-manager
 PORTVERSION=	2.0.7
+PORTREVERSION=	1
 CATEGORIES=	mail ruby
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/-/%20/}/${PORTVERSION}
 
@@ -46,9 +47,10 @@ EXAMPLESDIR=	${WRKDIR}/examples
 .endif
 
 post-patch:
-	${FIND} ${WRKSRC} -type f -name Makefile.in -exec \
+	@${FIND} ${WRKSRC} -type f -name Makefile.in -exec \
 	${REINPLACE_CMD} -e "s#\$$(datadir)/@PACKAGE@#${DATADIR}#" \
 			 -e "s#\$$(datarootdir)/\$$(PACKAGE)#${DATADIR}#" {} +
-	${REINPLACE_CMD} -e "s#\\\\\$$(pkgdatadir)/sample#${EXAMPLESDIR}#" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s#\\\\\$$(pkgdatadir)/sample#${EXAMPLESDIR}#" ${WRKSRC}/configure
+	@${RM} -r ${WRKSRC}/binding/ruby/glib-2.2.5
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 %%NC%%bin/nc
 bin/openssl
-%%CERTBUNDLE%%etc/ssl/cert.pem
 etc/ssl/openssl.cnf
 etc/ssl/x509v3.cnf
 include/openssl/aes.h
@@ -649,6 +648,10 @@ man/man3/ERR_reason_error_string.3.gz
 man/man3/ERR_remove_state.3.gz
 man/man3/ERR_remove_thread_state.3.gz
 man/man3/ERR_set_mark.3.gz
+<<<<<<< HEAD
+=======
+man/man3/EVP_BytesToKey.3.gz
+>>>>>>> 602437260434a911cf17bd26095b139edbe8f84d
 man/man3/EVP_AEAD_CTX_cleanup.3.gz
 man/man3/EVP_AEAD_CTX_init.3.gz
 man/man3/EVP_AEAD_CTX_open.3.gz
@@ -657,7 +660,10 @@ man/man3/EVP_AEAD_key_length.3.gz
 man/man3/EVP_AEAD_max_overhead.3.gz
 man/man3/EVP_AEAD_max_tag_len.3.gz
 man/man3/EVP_AEAD_nonce_length.3.gz
+<<<<<<< HEAD
 man/man3/EVP_BytesToKey.3.gz
+=======
+>>>>>>> 602437260434a911cf17bd26095b139edbe8f84d
 man/man3/EVP_CIPHER_CTX_block_size.3.gz
 man/man3/EVP_CIPHER_CTX_cipher.3.gz
 man/man3/EVP_CIPHER_CTX_cleanup.3.gz

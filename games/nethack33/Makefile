@@ -13,7 +13,7 @@ COMMENT=	Dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-${PORTVERSION}
 
-USES=		gmake tar:tgz
+USES=		gmake ncurses tar:tgz
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
 		HACKEXT="${HACKEXT}"

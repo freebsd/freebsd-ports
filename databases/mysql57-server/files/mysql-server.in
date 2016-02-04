@@ -41,7 +41,7 @@ mysql_limits_args="-e -U ${mysql_user}"
 : ${hostname:=`/bin/hostname`}
 pidfile=${mysql_pidfile:-"${mysql_dbdir}/${hostname}.pid"}
 command="/usr/sbin/daemon"
-command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_optfile} --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args}"
+command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_optfile} --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args} --skip-performance-schema"
 procname="%%PREFIX%%/libexec/mysqld"
 start_precmd="${name}_prestart"
 start_postcmd="${name}_poststart"

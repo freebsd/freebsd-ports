@@ -4,6 +4,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/boot/load_plugin.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/boot/mainloop.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/boot/option.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/boot/shell/account.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/boot/shell/generate.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/boot/shell/makepot.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/boot/shell/spec.rb
@@ -11,14 +12,6 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/configloader.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/entity.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/environment.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/event.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/event_filter.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/event_listener.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred/deferred.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred/deferredable.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/deferred/test.deferred.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/lib/instance_storage.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/lazy.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/lib/mikutwitter/api_call_support.rb
@@ -91,8 +84,10 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_miracle_painter.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_pseudo_message_widget.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_replyviewer.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_special_edge.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_sub_parts_favorite.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_sub_parts_helper.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_sub_parts_quote.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_sub_parts_retweet.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_sub_parts_voter.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/mui/cairo_textselector.rb
@@ -222,7 +217,9 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/zh/console.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/zh_CN/console.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/zh_TW/console.po
-%%RUBY_SITELIBDIR%%/mikutter/core/plugin/core.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/core/.mikutter.yml
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/core/configuration.json
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/core/core.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/direct_message.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/dmlistview.rb
@@ -381,6 +378,8 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/zh/mentions.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/zh_CN/mentions.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/zh_TW/mentions.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/notification/.mikutter.yml
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/notification/notification.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/notify.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/ar/notify.po
@@ -445,6 +444,8 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/zh_CN/proxy.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/zh_TW/proxy.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/proxy.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/quoted_message/.mikutter.yml
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/quoted_message/quoted_message.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/ar/ratelimit.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/de/ratelimit.po
@@ -593,7 +594,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/sound.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/filter.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/parma_streamer.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/perma_streamer.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/ar/streaming.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/de/streaming.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/el/streaming.po
@@ -610,6 +611,8 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/streamer.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/streamer_error.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/streaming.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming_connection_status/.mikutter.yml
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming_connection_status/streaming_connection_status.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/tco/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/tco/tco.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/template
@@ -634,6 +637,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/copy.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/copy_all.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/directmessage.png
+%%RUBY_SITELIBDIR%%/mikutter/core/skin/data/dont_like.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/etc.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/fav.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/followers.png
@@ -641,12 +645,15 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/forward.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/icon.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/icon_alternative.png
+%%RUBY_SITELIBDIR%%/mikutter/core/skin/data/like.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/list.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/loading.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/notfound.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/overbutton.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/overbutton_mouseover.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/post.png
+%%RUBY_SITELIBDIR%%/mikutter/core/skin/data/protected.png
+%%RUBY_SITELIBDIR%%/mikutter/core/skin/data/quote.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/reply.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/retweet.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/retweet_cancel.png
@@ -677,6 +684,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/timeline.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/underconstruction.png
 %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/unfav.png
+%%RUBY_SITELIBDIR%%/mikutter/core/skin/data/verified.png
 %%RUBY_SITELIBDIR%%/mikutter/core/user.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/userconfig.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/userlist.rb

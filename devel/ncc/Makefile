@@ -10,6 +10,9 @@ MASTER_SITES=	http://students.ceid.upatras.gr/~sxanth/ncc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program analysis tool and call-graph navigator
 
+LICENSE=	ART10
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
+
 ALL_TARGET=	# empty
 MAKE_ARGS+=	CC="${CXX}" LCFLAGS="${CFLAGS}"
 USES=		python:run
@@ -42,6 +45,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ncc
 	${INSTALL_DATA}	${WRKSRC}/doc/nognu ${STAGEDIR}${PREFIX}/include/ncc
 	${INSTALL_MAN} ${WRKSRC}/ncc.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 

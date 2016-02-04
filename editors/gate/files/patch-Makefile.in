@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2003-06-19 16:47:56 UTC
++++ Makefile.in
+@@ -25,7 +25,7 @@ DIST= README $(SRCS) gate.h config.h.in
+     Makefile.in gate.1.C gate.help CHANGES
+ 
+ gate: $(OBJS)
+-	$(CC) -o gate $(CFLAGS) $(OBJS) $(LIBS)
++	$(CC) -o gate $(CFLAGS) $(OBJS) $(LDFLAGS) $(LIBS)
+ 
+ main.o: main.c gate.h config.h
+ util.o: util.c gate.h config.h

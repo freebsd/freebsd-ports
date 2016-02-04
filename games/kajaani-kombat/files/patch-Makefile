@@ -1,0 +1,23 @@
+--- Makefile.orig	2005-01-31 18:57:14 UTC
++++ Makefile
+@@ -47,7 +47,7 @@ endif
+ INS=/usr/bin/install
+ 
+ client_libs = `sdl-config --libs` -lSDL_net -lSDL_image -lSDL_ttf -lSDL_mixer
+-server_libs = `sdl-config --libs` -lSDL_net -lcurses
++server_libs = `sdl-config --libs` -lSDL_net -lncurses
+ 
+ client_objs = game_obj.o terrain.o msg.o rotozoom.o gfx.o game_client.o main.o coord.o block.o \
+ 	particle_efects.o animation.o gfx_functions.o gui.o gui_screens.o game_server.o audio.o\
+@@ -85,9 +85,9 @@ connects.o: connects.h connects.cpp msg.
+ client_net.o: client_net.h client_net.cpp globals.h monitor_queue.h msg.h
+ 
+ client: $(client_objs)
+-	$(CXX) $(client_objs) -o kajaani-kombat $(client_libs)
++	$(CXX) $(client_objs) -o kajaani-kombat $(LDFLAGS) $(client_libs)
+ server: $(server_objs)
+-	$(CXX) $(server_objs) -o kajaani-kombat-server $(server_libs)
++	$(CXX) $(server_objs) -o kajaani-kombat-server $(LDFLAGS) $(server_libs)
+ 
+ .PHONY: all clean client server install
+ 

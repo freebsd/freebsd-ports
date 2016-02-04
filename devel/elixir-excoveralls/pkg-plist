@@ -1,3 +1,4 @@
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Circle.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.ConfServer.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Cover.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.InvalidConfigError.beam
@@ -17,6 +18,7 @@ lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.SubApps.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Task.Util.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Travis.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Circle.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Detail.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Post.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Travis.beam
@@ -24,6 +26,7 @@ lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.beam
 lib/elixir/lib/excoveralls/ebin/excoveralls.app
 lib/elixir/lib/excoveralls/lib/conf/coveralls.json
 lib/elixir/lib/excoveralls/lib/excoveralls.ex
+lib/elixir/lib/excoveralls/lib/excoveralls/circle.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/conf_server.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/cover.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/exceptions.ex

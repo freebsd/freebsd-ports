@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://sedsed.sourceforge.net/
 EXTRACT_SUFX=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Python script that masters SED scripts
 
 PLIST_FILES=	bin/sedsed

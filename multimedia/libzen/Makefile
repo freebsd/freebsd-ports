@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libzen
-PORTVERSION=	0.7.79
+PORTVERSION=	0.7.82
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--enable-shared
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		libtool pathfix tar:bzip2
+USES=		libtool pathfix tar:xz
 
 WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/ZenLib/Project/GNU/Library
 

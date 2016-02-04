@@ -1,5 +1,4 @@
 bin/openssl
-%%CERTBUNDLE%%etc/ssl/cert.pem
 etc/ssl/openssl.cnf
 etc/ssl/x509v3.cnf
 include/openssl/aes.h

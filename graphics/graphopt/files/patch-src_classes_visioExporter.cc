@@ -1,8 +1,8 @@
---- src/classes/visioExporter.cc.intermediate	2015-09-20 01:43:24 UTC
+--- src/classes/visioExporter.cc.orig	2003-04-16 02:55:39 UTC
 +++ src/classes/visioExporter.cc
-@@ -1,5 +1,6 @@
+@@ -1,4 +1,6 @@
  #include "visioExporter.h"
- #include <cstdlib>
++#include <cstdlib>
 +#include <cstring>
  
  

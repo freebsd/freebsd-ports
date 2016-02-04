@@ -1,5 +1,5 @@
---- makefile.orig	Tue Aug 10 18:47:06 1993
-+++ makefile	Tue Jun  4 13:56:54 2002
+--- makefile.orig	1993-08-10 15:47:06 UTC
++++ makefile
 @@ -42,7 +42,7 @@
  
  PROJ	= hpack
@@ -9,7 +9,7 @@
  
  LFLAGS	= -o $(PROJ) -lcurses $(CMDL)	# Flags for linker
  
-@@ -55,6 +55,7 @@
+@@ -55,6 +55,7 @@ LS		= ls -l				# Directory command
  ECHO	= echo				# Echo to screen command
  MAKE	= make				# The make command
  MV		= mv				# Rename command
@@ -17,7 +17,7 @@
  
  #****************************************************************************
  #*																			*
-@@ -68,7 +69,7 @@
+@@ -68,7 +69,7 @@ default:
  		@$(ECHO)
  		@$(ECHO) "To create HPACK, you have to enter the Unix system type you want to build it"
  		@$(ECHO) "for.  Possible options are: aix (RS6000), aix370, aix386, bsd386, convex,"
@@ -26,13 +26,12 @@
  		@$(ECHO) "ultrix_old (Ultrix 3.x or earlier), and uts4.  If none of the above fit,"
  		@$(ECHO) "try 'make generic', and send a copy of any changes necessary to the author,"
  		@$(ECHO) "pgut1@cs.aukuni.ac.nz"
-@@ -317,6 +318,21 @@
- 
+@@ -318,6 +319,21 @@ bsd386:
  convex:
  		@$(MAKE) hpack CMDC="-DCONVEX" CC="cc"
-+
+ 
 +freebsd:
-+		@make $(PROJ) LFLAGS="-o $(PROJ) -ltermcap"
++		@make $(PROJ) LFLAGS="-o $(PROJ) $(LDFLAGS) -lncurses"
 +		cd keycvt; make freebsd
 +
 +freebsd.install:
@@ -45,6 +44,7 @@
 +		$(BSD_INSTALL_DATA) docs/$(PROJ).1 $(PREFIX)/man/man1
 +		-[ ! -f $(PREFIX)/etc/hpack.cfg ] && $(BSD_INSTALL_DATA) -m 644 docs/hpack.cfg $(PREFIX)/etc
 +		cd keycvt; $(MAKE) freebsd.install
- 
++
  # Generic: Generic BSD-ish system running gcc
  
+ generic:

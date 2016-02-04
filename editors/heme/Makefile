@@ -11,8 +11,10 @@ COMMENT=	Small and fast console hex editor for Unix-like systems
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 ALL_TARGET=	${PORTNAME}
 MAKE_ARGS=	CFLAGS="${CFLAGS} -Wall -DHAVE_MMAP" \
+		LDFLAGS="${LDFLAGS} -lncurses" \
 		INSTALL_PREFIX="${STAGEDIR}${PREFIX}"
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz

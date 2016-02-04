@@ -1,0 +1,36 @@
+commit 308f60064fee6d5707514b65f6acad656a8a4feb
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Tue Feb 2 19:04:11 2016 +0100
+
+    FreeBSD: Do not try to cast NULL to int.
+
+    Passing NULL to the data parameter in calls to ptrace(2) causes failures
+    on 64-bit FreeBSD 9 installations, where GCC 4.2.1 complains like this:
+
+    platform/freebsd/arch/x86_common.h: In function 'arch_get_register':
+    platform/freebsd/arch/x86_common.h:48: warning: cast from pointer to integer of different size
+    platform/freebsd/arch/x86_common.h: In function 'arch_set_register':
+    platform/freebsd/arch/x86_common.h:57: warning: cast from pointer to integer of different size
+    platform/freebsd/arch/x86_common.h:59: warning: cast from pointer to integer of different size
+    platform/freebsd/freebsd_ptrace.c: In function 'ptrace_memcpy_to_child':
+    platform/freebsd/freebsd_ptrace.c:267: warning: cast from pointer to integer of different size
+    platform/freebsd/freebsd_ptrace.c: In function 'ptrace_memcpy_from_child':
+    platform/freebsd/freebsd_ptrace.c:282: warning: cast from pointer to integer of different size
+
+    Make ptrace_command pass 0 to _ptrace_command so that the final
+    expansion looks like this:
+      __ptrace_command((cld), (req), (void*)(addr), (int)(0))
+    instead of
+      __ptrace_command((cld), (req), (void*)(addr), (int)(((void*)0)))
+
+--- platform/freebsd/freebsd_ptrace.c
++++ platform/freebsd/freebsd_ptrace.c
+@@ -47,7 +47,7 @@
+ static int __ptrace_command(struct ptrace_child *child, int req,
+                             void *, int);
+ 
+-#define ptrace_command(cld, req, ...) _ptrace_command(cld, req, ## __VA_ARGS__, NULL, NULL)
++#define ptrace_command(cld, req, ...) _ptrace_command(cld, req, ## __VA_ARGS__, 0, 0)
+ #define _ptrace_command(cld, req, addr, data, ...) __ptrace_command((cld), (req), (void*)(addr), (int)(data))
+ 
+ 

@@ -91,6 +91,7 @@ PKGINSTALL?=	${PKGDIR}/pkg-install-server
 .else
 # Client part stuff
 LIB_DEPENDS+=	libedit.so.0:${PORTSDIR}/devel/libedit
+LDFLAGS+=	-L${LOCALBASE}/lib # to link in lncurses pulled in by libedit
 
 CONFIGURE_ARGS+=	--with-system-editline
 CONFIGURE_ENV+=	ac_cv_lib_edit_readline="yes"

@@ -501,6 +501,10 @@ do-build:
 do-install:
 	(cd ${BUILD_WRKSRC}; ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} ${GEMFILES} -- --build-args ${CONFIGURE_ARGS})
 	${RM} -r ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}/build_info/
+	${FIND} ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR} -type f -name '*.so' -exec ${STRIP_CMD} {} +
+	${FIND} ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR} -type f \( -name mkmf.log -or -name gem_make.out \) -delete
+	${RM} -rf ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/ext \
+		${STAGEDIR}${PREFIX}/${CACHE_DIR} 2> /dev/null || ${TRUE}
 	${RMDIR} ${STAGEDIR}${PREFIX}/${EXT_DIR} 2> /dev/null || ${TRUE}
 .if defined(NOPORTDOCS)
 	-@${RMDIR} ${STAGEDIR}${PREFIX}/${DOC_DIR}
@@ -509,7 +513,6 @@ do-install:
 . if defined(RUBYGEM_AUTOPLIST)
 .  if !target(post-install-script)
 post-install-script:
-	@${ECHO} ${GEM_CACHE} >> ${TMPPLIST}
 	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${DOC_DIR} -type f -print | ${SED} -E -e \

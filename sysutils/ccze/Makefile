@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake
+USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

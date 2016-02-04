@@ -3,11 +3,12 @@
 
 PORTNAME=	opensmtpd
 PORTVERSION=	5.7.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
-DISTNAME=	${PORTNAME}-${PORTVERSION}p1
+DISTNAME=	${PORTNAME}-${PORTVERSION}p2
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD

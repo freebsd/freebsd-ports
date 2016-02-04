@@ -5,7 +5,7 @@ PORTNAME=	alsa-utils
 PORTVERSION=	1.0.22
 PORTREVISION=	2
 CATEGORIES=	audio linux
-MASTER_SITES=	CENTOS_LINUX_UPDATES
+MASTER_SITES=	CENTOS_LINUX
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Advanced Linux Sound Architecture libraries (Linux CentOS ${LINUX_DIST_VER})

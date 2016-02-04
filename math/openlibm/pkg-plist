@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+include/openlibm.h
+%%EXTRA_HEADER%%include/openlibm/bsd_asm.h
+%%EXTRA_HEADER%%include/openlibm/bsd_cdefs.h
+lib/libopenlibm.a
+lib/libopenlibm.so
+lib/libopenlibm.so.1
+lib/libopenlibm.so.1.0
+libdata/pkgconfig/openlibm.pc

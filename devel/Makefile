@@ -1025,6 +1025,7 @@
     SUBDIR += hs-word8
     SUBDIR += htable
     SUBDIR += hub
+    SUBDIR += hyperscan
     SUBDIR += hwloc
     SUBDIR += ice
     SUBDIR += icmake
@@ -3490,7 +3491,6 @@
     SUBDIR += pcsc-ada
     SUBDIR += pcsc-lite
     SUBDIR += pdcurses
-    SUBDIR += pdcurses-the
     SUBDIR += pear
     SUBDIR += pear-Config
     SUBDIR += pear-Console_Color
@@ -3733,6 +3733,7 @@
     SUBDIR += php-composer
     SUBDIR += php-jq
     SUBDIR += php-libawl
+    SUBDIR += php-maxminddb
     SUBDIR += php-memoize
     SUBDIR += php-scalar_objects
     SUBDIR += php-uprofiler
@@ -4106,6 +4107,7 @@
     SUBDIR += py-joblib
     SUBDIR += py-jsmin
     SUBDIR += py-json-py
+    SUBDIR += py-json-sempai
     SUBDIR += py-jsonlib
     SUBDIR += py-jsonlib2
     SUBDIR += py-jsonpatch
@@ -4151,7 +4153,7 @@
     SUBDIR += py-monotonic
     SUBDIR += py-more-itertools
     SUBDIR += py-mox
-    SUBDIR += py-msgpack
+    SUBDIR += py-msgpack-python
     SUBDIR += py-multipledispatch
     SUBDIR += py-mwlib
     SUBDIR += py-mwlib.ext
@@ -4256,6 +4258,7 @@
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-distutils-extra
     SUBDIR += py-python-jenkins
+    SUBDIR += py-python-magic
     SUBDIR += py-python-pcre
     SUBDIR += py-python-statsd
     SUBDIR += py-python2-pythondialog
@@ -4330,7 +4333,6 @@
     SUBDIR += py-setuptools
     SUBDIR += py-setuptools-git
     SUBDIR += py-setuptools27
-    SUBDIR += py-setuptools32
     SUBDIR += py-setuptools33
     SUBDIR += py-setuptools34
     SUBDIR += py-setuptools35
@@ -4530,6 +4532,7 @@
     SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
     SUBDIR += py3-pytz
+    SUBDIR += py3-python-magic
     SUBDIR += py3-vcversioner
     SUBDIR += py3-xdg
     SUBDIR += py_static_check
@@ -4784,6 +4787,7 @@
     SUBDIR += rubygem-default_value_for
     SUBDIR += rubygem-delayed_job
     SUBDIR += rubygem-delayer
+    SUBDIR += rubygem-delayer-deferred
     SUBDIR += rubygem-deprecated
     SUBDIR += rubygem-deprecated2
     SUBDIR += rubygem-descendants_tracker
@@ -4962,6 +4966,7 @@
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
     SUBDIR += rubygem-plist
+    SUBDIR += rubygem-pluggaloid
     SUBDIR += rubygem-polyamorous
     SUBDIR += rubygem-polyglot
     SUBDIR += rubygem-popen4

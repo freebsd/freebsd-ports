@@ -12,7 +12,7 @@ DISTFILES=		estic-1.60-sources.zip estic-1.61-patch-from-1.60.zip
 MAINTAINER=		dinoex@FreeBSD.org
 COMMENT=		Controller for ISDN TK-Anlage (PBX) made by Istec
 
-USES=		zip
+USES=		ncurses zip
 USE_CSTD=	gnu89
 USE_CXXSTD=	gnu++98
 USE_GCC=	any

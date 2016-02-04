@@ -46,6 +46,7 @@ include/avidemux/2.6/libavutil/macros.h
 include/avidemux/2.6/libavutil/mathematics.h
 include/avidemux/2.6/libavutil/mem.h
 include/avidemux/2.6/libavutil/old_pix_fmts.h
+include/avidemux/2.6/libavutil/opt.h
 include/avidemux/2.6/libavutil/pixfmt.h
 include/avidemux/2.6/libavutil/rational.h
 include/avidemux/2.6/libavutil/samplefmt.h

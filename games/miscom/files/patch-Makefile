@@ -1,0 +1,11 @@
+--- Makefile.orig	1997-03-15 21:37:42 UTC
++++ Makefile
+@@ -41,7 +41,7 @@ LIBS=-lncurses
+ FILES=main.o draw.o wwn.o fire.o unix.o level.o sound.o
+ 
+ miscom: $(FILES)
+-	$(CC) $(CFLAGS) -o miscom $(FILES) $(LIBS)
++	$(CC) $(CFLAGS) -o miscom $(FILES) $(LDFLAGS) $(LIBS)
+ 
+ install:
+ 	install -m 511 miscom $(BINDIR)

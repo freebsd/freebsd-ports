@@ -7,7 +7,7 @@ CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Text::Xslate renderer for for Mojolicious
 
 LICENSE=	ART10 GPLv1

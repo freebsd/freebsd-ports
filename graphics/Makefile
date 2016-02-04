@@ -565,6 +565,7 @@
     SUBDIR += linux-f10-sdl_ttf
     SUBDIR += linux-f10-tiff
     SUBDIR += linux-f10-ungif
+    SUBDIR += llpp
     SUBDIR += lprof-devel
     SUBDIR += lua-gd
     SUBDIR += luminance

@@ -29,7 +29,7 @@ CONS25_DESC=	Add a patch to support color for default console
 MAILDIR_DESC=	Add a patch for maildir support
 .endif
 
-USES=		libtool tar:xz
+USES=		libtool ncurses tar:xz
 
 MAKE_JOBS_UNSAFE=	yes
 

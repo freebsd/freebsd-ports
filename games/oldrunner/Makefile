@@ -11,7 +11,7 @@ COMMENT=	Textmode remake of Broderbund's LodeRunner
 
 LICENSE=	BSD2CLAUSE
 
-USES=		gmake
+USES=		ncurses gmake
 HAS_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 

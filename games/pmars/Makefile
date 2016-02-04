@@ -24,6 +24,7 @@ ICWS94_DESC=	Enable ICWS'94 support
 PERMUTATE_DESC=	Enable the -P switch
 SERVER_DESC=	Build the command-line interface
 SMALLMEM_DESC=	Use 16-bit addresses (smaller)
+CURSES_USES=	ncurses
 
 OPTIONS_SUB=	yes
 
@@ -40,7 +41,7 @@ SMALLMEM_MAKE_ARGS=	CFLAGS+="-DSMALLMEM"
 .if ${PORT_OPTIONS:MCURSES}
 TARGETS+=	curses
 CURSES_ARGS+=	CFLAGS+="-DGRAPHX" \
-		LIB+="-lcurses"
+		LIB+="${LDFLAGS} -lncurses"
 .endif
 
 .if ${PORT_OPTIONS:MSERVER}

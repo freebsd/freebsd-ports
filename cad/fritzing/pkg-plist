@@ -1,0 +1,5 @@
+bin/Fritzing
+man/man1/Fritzing.1.gz
+share/applications/fritzing.desktop
+share/icons/hicolor/64x64/apps/fritzing.png
+@dir %%DATADIR%%/parts/core

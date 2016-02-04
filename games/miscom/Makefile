@@ -13,6 +13,8 @@ COMMENT=	Atari "Missile Command" clone
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		ncurses
+
 ALL_TARGET=	# empty
 
 MAKE_ARGS=	CC="${CC}" DATADIR="${DATADIR}" \

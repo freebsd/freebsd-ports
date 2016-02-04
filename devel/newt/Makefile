@@ -14,14 +14,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2 \
 		libpopt.so:${PORTSDIR}/devel/popt
 
-USES=		gmake
+USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 MAKE_ENV=	PCFLAGS="${CFLAGS}"
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lcurses
+LDFLAGS+=	-L${LOCALBASE}/lib -lncurses
 
 PLIST_SUB=	SOVERSION="${SOVERSION}" \
 		VERSION="${PORTVERSION}"
