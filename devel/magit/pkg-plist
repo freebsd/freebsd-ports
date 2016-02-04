@@ -5,6 +5,8 @@
 %%ELISPDIR%%/magit-apply.el
 %%ELISPDIR%%/magit-apply.elc
 %%ELISPDIR%%/magit-autoloads.el
+%%ELISPDIR%%/magit-autorevert.el
+%%ELISPDIR%%/magit-autorevert.elc
 %%ELISPDIR%%/magit-bisect.el
 %%ELISPDIR%%/magit-bisect.elc
 %%ELISPDIR%%/magit-blame.el
@@ -37,6 +39,8 @@
 %%ELISPDIR%%/magit-sequence.elc
 %%ELISPDIR%%/magit-stash.el
 %%ELISPDIR%%/magit-stash.elc
+%%ELISPDIR%%/magit-submodule.el
+%%ELISPDIR%%/magit-submodule.elc
 %%ELISPDIR%%/magit-utils.el
 %%ELISPDIR%%/magit-utils.elc
 %%ELISPDIR%%/magit-version.el
@@ -44,5 +48,3 @@
 %%ELISPDIR%%/magit-wip.elc
 %%ELISPDIR%%/magit.el
 %%ELISPDIR%%/magit.elc
-%%ELISPDIR%%/with-editor.el
-%%ELISPDIR%%/with-editor.elc
