@@ -52,6 +52,7 @@ lib/libjogl_awt.so
 %%PORTDOCS%%%%DOCSDIR%%/help-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/index-all.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/script.js
 %%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/AWTGraphicsConfiguration.html
 %%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/AWTGraphicsDevice.html
 %%PORTDOCS%%%%DOCSDIR%%/javax/media/opengl/AbstractGraphicsConfiguration.html
