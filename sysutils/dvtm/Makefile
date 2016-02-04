@@ -8,6 +8,7 @@ MASTER_SITES=	http://www.brain-dump.org/projects/dvtm/
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Tiling window management for the console
 
+USES=		ncurses
 PLIST_FILES=	bin/dvtm bin/dvtm-status \
 		man/man1/dvtm.1.gz
 
