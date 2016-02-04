@@ -10,14 +10,18 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	New variant of NetHack
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake ncurses
 MAKE_JOBS_UNSAFE=	yes
 
 VARDIR_REL=	var/games/${PORTNAME}
 VARDIR=		${PREFIX}/${VARDIR_REL}
-CONFIGURE_ARGS=	--datadir="${DATADIR:H}" --localstatedir="${VARDIR:H}" --docdir="${DOCSDIR:H}" \
-		--with-owner=no --with-group=no \
-		--enable-data-librarian
+CONFIGURE_ARGS=	--datadir="${DATADIR:H}" \
+		--localstatedir="${VARDIR:H}" \
+		--docdir="${DOCSDIR:H}" \
+		--with-owner=no \
+		--with-group=no \
+		--enable-data-librarian \
+		LFLAGS="${LDFLAGS}"
 MAKE_ARGS=	MANPREFIX="${STAGEDIR}${MANPREFIX}"
 INSTALL_TARGET=	install manpages
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
