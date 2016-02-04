@@ -1,0 +1,11 @@
+--- Makefile.orig	2003-01-13 23:12:57 UTC
++++ Makefile
+@@ -51,7 +51,7 @@ dist:
+ 	arc=$(ARC); cd $(TMPDIR) && tar -cf - $$arc | gzip >$$arc.tar.gz
+ 
+ wtail: $(OBJ)
+-	$(CC) $(LDFLAGS) -o $@ $(OBJ) -lcurses
++	$(CC) $(LDFLAGS) -o $@ $(OBJ) -lncurses
+ 
+ version.c: VERSION
+ 	cat VERSION | sed 's/.*/const char version[] = "&";/' >$@
