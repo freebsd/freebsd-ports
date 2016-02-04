@@ -19,13 +19,12 @@ bin/replace
 bin/resolve_stack_dump
 bin/resolveip
 bin/zlib_decompress
-include/mysql/binary_log_types.h
 lib/mysql/libmysqld.a
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/daemon_example.ini
-lib/mysql/plugin/ha_example.so
+%%NO_EXAMPLE%%lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/libdaemon_example.so
 lib/mysql/plugin/libtest_framework.so
 lib/mysql/plugin/libtest_services.so

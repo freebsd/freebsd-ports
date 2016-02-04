@@ -3,7 +3,7 @@
 
 PORTNAME=	mysql
 PORTVERSION=	5.7.10
-PORTREVISION=	1
+PORTREVISION?=	2
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.7:MySQL SF/boost/boost/1.59.0:boost
 PKGNAMESUFFIX?=	57-server
@@ -40,7 +40,8 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_SCRIPTDIR="bin" \
 		-DINSTALL_SHAREDIR="share" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
-		-DLOCAL_BOOST_DIR=${WRKSRC}/../boost_1_59_0 \
+		-DLOCAL_BOOST_DIR=${WRKDIR}/boost_1_59_0 \
+		-DBOOST_INCLUDE_DIR=${WRKDIR}/boost_1_59_0 \
 		-DWITH_INNODB_EXTRA_DEBUG=0
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
@@ -61,7 +62,6 @@ WANT_MYSQL_VER=	57
 USES+=		bison:build cpe perl5
 USE_PERL5=	run
 
-CONFLICTS_BUILD=	boost-libs-1.55*
 CONFLICTS_INSTALL=	mariadb[0-9]*-server-* \
 			mysql[0-46-9][0-689]-server-* \
 			percona[0-9]*-server-*
@@ -84,6 +84,7 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
 OPTIONS_GROUP=		STORAGE
 OPTIONS_GROUP_STORAGE=	ARCHIVE BLACKHOLE EXAMPLE FEDERATED INNOBASE PARTITION PERFSCHEMA
+OPTIONS_SUB=		YES
 STORAGE_DESC=		Permissible "Storage Engines" (to compile statically into the server)
 ARCHIVE_DESC=		Compile "Archive Storage" statically in server
 BLACKHOLE_DESC=		Compile "Blackhole Storage" statically in server
@@ -116,10 +117,8 @@ OPENSSL_CMAKE_ON=	-DWITH_SSL=system
 OPENSSL_CMAKE_ON=	-DWITH_SSL=yes
 .endif
 
-USE_CLANG=	3.3+
-
 post-extract:
-	${RM} -rvf ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
+	@${RM} -rvf ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
