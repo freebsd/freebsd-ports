@@ -12,8 +12,9 @@ COMMENT=	Display information gathered from MB power management controller
 
 LICENSE=	BSD2CLAUSE
 
-USES=		uidfix
+USES=		ncurses uidfix
 GNU_CONFIGURE=	yes
+MAKE_ARGS+=	LDFLAGS="${LDFLAGS} -lncurses"
 
 ONLY_FOR_ARCHS=	i386 amd64
 
