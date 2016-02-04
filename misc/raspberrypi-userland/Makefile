@@ -3,7 +3,7 @@
 
 PORTNAME=	raspberrypi-userland
 PORTVERSION=	20151105
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 MAINTAINER=	mikael.urankar@gmail.com
@@ -22,7 +22,7 @@ GH_TAGNAME=	fcbf8a3
 
 USE_LDCONFIG=	yes
 
-USES=		cmake
+USES=		cmake:outsource
 CMAKE_ARGS+=	-DVMCS_INSTALL_PREFIX=${PREFIX} \
 		-DCMAKE_TOOLCHAIN_FILE=${WRKSRC}/makefiles/cmake/toolchains/arm-freebsd.cmake
 

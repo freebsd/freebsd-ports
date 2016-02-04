@@ -388,16 +388,5 @@ sbin/vcfiled
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/libs/vgfont/vgft.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/rebuild.sh
 share/install/vcfiled
-@dir include/interface/vchiq_arm/CMakeFiles/vchiq_arm.dir
-@dir include/interface/vchiq_arm/CMakeFiles/vchiq_test.dir
-@dir include/interface/vcos/CMakeFiles
 @dir include/interface/vcos/glibc
-@dir include/interface/vcos/pthreads/CMakeFiles/vcos.dir/__/generic
-@dir include/interface/vcos/pthreads/CMakeFiles/vcos.dir/__/glibc
-@dir include/interface/vcos/pthreads/generic/CMakeFiles
-@dir include/interface/vmcs_host/CMakeFiles/vchostif.dir/linux
-@dir include/interface/vmcs_host/CMakeFiles/vcilcs.dir
-@dir include/interface/vmcs_host/linux/vcfiled/CMakeFiles/vcfiled.dir
-@dir include/interface/vmcs_host/linux/vcfiled/CMakeFiles/vcfiled_check.dir
-@dir include/interface/vmcs_host/linux/vcfiled/CMakeFiles/vcfiled_lock_test.dir
 @dir include/interface/vmcs_host/linux/vcfiled/etc/init.d
