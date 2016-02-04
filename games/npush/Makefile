@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Curses-based logic game similar to Sokoban and Boulder Dash
 
+USES=		ncurses
 PORTDOCS=	*
 PORTDATA=	*
 
@@ -20,7 +21,8 @@ post-patch:
 		${WRKSRC}/npush.cpp
 
 do-build:
-	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -o npush npush.cpp -lncurses
+	cd ${WRKSRC} && \
+		${CXX} ${CXXFLAGS} -o npush npush.cpp ${LDFLAGS} -lncurses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/npush ${STAGEDIR}${PREFIX}/bin
