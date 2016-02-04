@@ -3,7 +3,7 @@
 
 PORTNAME=	dlipower
 PORTVERSION=	0.7.117
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,13 +11,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	imp@FreeBSD.org
 COMMENT=	CLI interface to Digital Logger's (DLI) Power Strips
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.0:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.0:${PORTSDIR}/www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9:${PORTSDIR}/devel/py-six
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	dlipower/fence_dli
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
