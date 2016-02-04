@@ -1,0 +1,7 @@
+The library with-editor makes it easy to use the Emacsclient as the
+$EDITOR of child processes, making sure they know how to call
+home. For remote processes a substitute is provided, which
+communicates with Emacs on standard output instead of using a socket
+as the Emacsclient does.
+
+WWW: https://github.com/magit/with-editor
