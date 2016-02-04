@@ -15,7 +15,8 @@ COMMENT=	The old "ladder" game
 
 RESTRICTED=	possible copyright problems ?
 
-USES=		tar
+USES=		ncurses tar
+MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 NO_WRKSUBDIR=	true
 
 .include <bsd.port.mk>
