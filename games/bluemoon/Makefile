@@ -11,7 +11,7 @@ COMMENT=	Blue Moon card solitaire
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gmake
+USES=		gmake ncurses
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
