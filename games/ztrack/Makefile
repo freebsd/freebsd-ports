@@ -13,10 +13,11 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple ncurses based pseudo-3D driving game
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_RANDOM"
+USES=		ncurses
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_RANDOM" \
+		LIBS="${LDFLAGS} -lncurses"
 ALL_TARGET=	ztrack
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz \
 		${DESKTOPDIR}/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png
