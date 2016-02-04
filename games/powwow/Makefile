@@ -10,6 +10,7 @@ MASTER_SITES=	http://hoopajoo.net/static/projects/ \
 MAINTAINER=	otis@sk.FreeBSD.org
 COMMENT=	Client to play MUDs
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 pre-build:
