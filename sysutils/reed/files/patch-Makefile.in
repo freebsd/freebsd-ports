@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2002-11-09 00:59:08 UTC
++++ Makefile.in
+@@ -1,8 +1,8 @@
+ all:
+-	$(CC) -O2 -o reed reed.c filemode.c -lcurses
++	$(CC) -O2 -o reed reed.c filemode.c $(LDFLAGS) -lncurses
+ 
+ debug:
+-	$(CC) -o reed reed.c filemode.c -lcurses -Wall -g
++	$(CC) -o reed reed.c filemode.c $(LDFLAGS) -lncurses -Wall -g
+ 
+ install:
+ 	install -d $(DESTDIR)PREFIX/bin

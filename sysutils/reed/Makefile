@@ -13,7 +13,7 @@ COMMENT=	Text pager with autoscrolling and more
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		perl5 shebangfix
+USES=		ncurses perl5 shebangfix
 USE_PERL5=	run build patch
 SHEBANG_FILES=	wrap breed
 HAS_CONFIGURE=	yes
