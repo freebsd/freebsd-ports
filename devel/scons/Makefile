@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	scons
-PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	gavin@16degrees.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Build tool alternative to make
 
 LICENSE=	MIT
