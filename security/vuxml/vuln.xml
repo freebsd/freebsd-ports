@@ -58,6 +58,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1091d2d1-cb2e-11e5-b14b-bcaec565249c">
+    <topic>webkit -- UI spoof</topic>
+    <affects>
+      <package>
+	<name>webkit-gtk2</name>
+	<name>webkit-gtk3</name>
+	<range><lt>2.4.9_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>webkit reports:</p>
+	<blockquote cite="http://webkitgtk.org/security/WSA-2015-0002.html">
+	  <p>The ScrollView::paint function in platform/scroll/ScrollView.cpp
+	    in Blink, as used in Google Chrome before 35.0.1916.114, allows
+	    remote attackers to spoof the UI by extending scrollbar painting
+	    into the parent frame.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1748</cvename>
+      <url>http://webkitgtk.org/security/WSA-2015-0002.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-28</discovery>
+      <entry>2016-02-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e78bfc9d-cb1e-11e5-b251-0050562a4d7b">
     <topic>py-rsa -- Bleichenbacher'06 signature forgery vulnerability</topic>
     <affects>
