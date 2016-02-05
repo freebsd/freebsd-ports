@@ -46,6 +46,12 @@ LIBEVENT_CONFIGURE_WITH=libevent
 
 .include <bsd.port.options.mk>
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 1000000
+CONFIGURE_ARGS+=	--disable-gost
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
@@ -58,4 +64,4 @@ post-install:
 .endif
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns.so.*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
