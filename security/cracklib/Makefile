@@ -109,7 +109,7 @@ post-install:
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/
 	${LN} -s ${PORTNAME}.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/FascistCheck.3
 	@${MKDIR} ${STAGEDIR}${DICTPATH}
-	@PATH=$${PATH}:${STAGEDIR}${PREFIX}/sbin ${STAGEDIR}${PREFIX}/sbin/create-cracklib-dict -o ${STAGEDIR}${DICTPATH}/cracklib-words ${_DISTDIR}/${WORDS_DISTFILE}
+	@PATH=$${PATH}:${STAGEDIR}${PREFIX}/sbin LD_LIBRARY_PATH=/lib:/usr/lib:${STAGEDIR}${PREFIX}/lib ${STAGEDIR}${PREFIX}/sbin/create-cracklib-dict -o ${STAGEDIR}${DICTPATH}/cracklib-words ${_DISTDIR}/${WORDS_DISTFILE}
 .endif
 
 .include <bsd.port.mk>
