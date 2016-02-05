@@ -17,7 +17,7 @@ CONFIGURE_ARGS=	--with-libpcap=${LOCALBASE} \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake libtool
+USES=		gmake libtool ncurses
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
