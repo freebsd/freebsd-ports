@@ -1,7 +1,7 @@
 The goals of this project are simple:
 Create a highly configurable, easily modifiable source code beautifier.
 
-What it does: 
+What it does:
 * Ident code, aligning on parens, assignments, etc
 * Align on '=' and variable definitions
 * Align structure initializers
@@ -14,4 +14,4 @@ What it does:
 * Supports embedded SQL 'EXEC SQL' stuff
 * Highly configurable - 168 configurable options as of version 0.30
 
-WWW: http://uncrustify.sourceforge.net
+WWW: http://uncrustify.sourceforge.net/
