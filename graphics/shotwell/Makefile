@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.22.0
-PORTREVISION=	2
+PORTVERSION=	0.22.0.99
 CATEGORIES=	graphics gnome
-MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
+#MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
+MASTER_SITES=	http://rainbow-runner.nl/freebsd/
 
 MAINTAINER=	cmt@burggraben.net
 COMMENT=	Open source photo manager for GNOME
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libgexiv2.so:${PORTSDIR}/graphics/gexiv2 \
 		libexif.so:${PORTSDIR}/graphics/libexif \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2 \
-		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
+		libwebkit2gtk-4.0.so:${PORTSDIR}/www/webkit2-gtk3 \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
 		libraw.so:${PORTSDIR}/graphics/libraw \
 		librest-0.7.so:${PORTSDIR}/devel/librest
