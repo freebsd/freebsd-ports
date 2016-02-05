@@ -3,15 +3,22 @@ client with lots of useful features and an intuitive interface.
 
 Among others, the features of FileZilla include the following:
 
-* Easy to use.
-* Supports FTP, FTP over SSL/TLS (FTPS) and SSH File Transfer Protocol (SFTP).
-* Cross-platform. Runs on Windows, Linux, *BSD, OSX and more.
-* Available in many languages.
-* Supports resume and transfer of large files >4GB.
-* Powerful Site Manager and transfer queue.
-* Drag & drop support.
-* Configurable Speed limits.
-* Filename filters.
-* Network configuration wizard.
+* Supports FTP, FTP over SSL/TLS (FTPS) and SSH File Transfer Protocol (SFTP)
+* IPv6 support
+* Available in many languages
+* Supports resume and transfer of large files >4GB
+* Tabbed user interface
+* Powerful Site Manager and transfer queue
+* Bookmarks
+* Drag & drop support
+* Configurable transfer speed limits
+* Filename filters
+* Network configuration wizard
+* Remite file editing
+* Keep-alive
+* HTTP/1.1, SOCKS5 and FTP-Proxy support
+* Logging to file
+* Synchronized directory browsing
+* Remote file search
 
 WWW: http://filezilla-project.org/
