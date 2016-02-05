@@ -12,6 +12,8 @@ COMMENT=	Easy editor with both curses and X11 interfaces
 
 LICENSE=	ART10
 
+USES=		ncurses
+
 OPTIONS_DEFINE=	XAE
 XAE_DESC=	Build X11 version 'xae'
 
