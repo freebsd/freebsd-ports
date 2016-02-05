@@ -14,10 +14,10 @@ COMMENT=	Recvnet (inverse telnet) is a utility for debugging tcp connections
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		tar:tgz
+USES=		ncurses tar:tgz
 
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
-LDFLAGS+=	-lcurses
+LDFLAGS+=	-lncurses
 
 PLIST_FILES=	bin/recvnet
 
