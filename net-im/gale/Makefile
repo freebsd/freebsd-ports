@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc \
 		libwwwcore.so:${PORTSDIR}/www/libwww \
 		libadns.so:${PORTSDIR}/dns/adns
 
-USES=		iconv libtool
+USES=		iconv libtool ncurses
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib12
 USE_OPENSSL=	yes
