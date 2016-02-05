@@ -21,7 +21,7 @@ BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
 CFLAGS+=	-D_SIZE_T
 
 WRKSRC=			${WRKDIR}/elm${PORTVERSION}
-USES=		gettext
+USES=		gettext ncurses
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ENV=		PREFIX="${PREFIX}"
