@@ -11,7 +11,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pager utility that speaks Vietnamese
 
+USES=		ncurses
 ALL_TARGET=	clobber all
+MAKE_ARGS=	LIBS="-lncurses -lc"
 CFLAGS+=	-Wno-return-type
 
 PLIST_FILES=	bin/vnless \
