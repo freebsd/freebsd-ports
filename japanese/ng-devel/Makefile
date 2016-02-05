@@ -10,15 +10,14 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Emacs-clone with Japanese support
 
+CONFLICTS=	ng-[0-9]*
+
+USES=		ncurses
 GNU_CONFIGURE=	yes
 ALL_TARGET=	ng
-
 CFLAGS+=	-Wno-error=return-type
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
-
-CONFLICTS=	ng-[0-9]*
-
 PORTDOCS=	${MYPORTDOCS:S/$/.euc-jp/}
 PLIST_FILES=	bin/ng
 
