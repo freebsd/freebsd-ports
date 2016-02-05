@@ -17,7 +17,7 @@ COMMENT=	Small (150k), fast, perl-based IRC client
 
 RUN_DEPENDS=	p5-Perl4-CoreLibs>=0:${PORTSDIR}/devel/p5-Perl4-CoreLibs
 
-USES=		perl5
+USES=		ncurses perl5
 
 IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>0:${PORTSDIR}/net/p5-IO-Socket-INET6
 IPV6_EXTRA_PATCHES=	${PATCHDIR}/dsirc-ipv6
@@ -47,7 +47,8 @@ pre-patch:
 		${WRKSRC}/dsirc.prepatch > ${WRKSRC}/dsirc
 
 do-build:
-	${CC} ${CFLAGS} ${WRKSRC}/ssfe.c -o ${WRKSRC}/ssfe -ltermcap
+	${CC} ${CFLAGS} ${WRKSRC}/ssfe.c -o ${WRKSRC}/ssfe \
+		${LDFLAGS} -lncurses
 
 do-install:
 	@${MKDIR} ${SIRCLIBDIR}
