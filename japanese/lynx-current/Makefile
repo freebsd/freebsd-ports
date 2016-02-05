@@ -18,7 +18,7 @@ MINOR_VERSION=	dev.3
 CONFLICTS=	lynx-2.* ja-lynx-2.8.7.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}
-USES=		cpe shebangfix tar:bzip2
+USES=		cpe ncurses shebangfix tar:bzip2
 SHEBANG_FILES=	samples/mailto-form.pl
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
