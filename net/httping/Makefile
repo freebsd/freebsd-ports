@@ -19,6 +19,7 @@ PLIST_FILES=	bin/httping man/man1/httping.1.gz
 OPTIONS_DEFINE=	NCURSES FFTW SSL
 
 OPTIONS_DEFAULT=NCURSES SSL
+NCURSES_USES=	ncurses
 
 .include <bsd.port.options.mk>
 
