@@ -1,5 +1,5 @@
---- Makefile.orig	2005-03-03 08:59:05.000000000 +0300
-+++ Makefile	2014-10-02 18:10:01.000000000 +0400
+--- Makefile.orig	2005-03-03 05:59:05 UTC
++++ Makefile
 @@ -1,10 +1,10 @@
 -CC = cc
 +CC ?= cc
@@ -9,7 +9,7 @@
  
  all: $(OBJS)
 -	$(CC) $(CFLAGS) -o cnd $(OBJS) -lcurses -lkvm
-+	$(CC) $(CFLAGS) -o cnd $(OBJS) -lcurses
++	$(CC) $(CFLAGS) -o cnd $(OBJS) $(LDFLAGS) -lncurses
  .c.o:
  	$(CC) $(CFLAGS) -c -I/usr/include/ -o $@ $<
  .SUFFIXS: .c .o

@@ -1,5 +1,5 @@
---- main.c.orig	2014-10-02 17:44:25.000000000 +0400
-+++ main.c	2014-10-02 18:08:23.000000000 +0400
+--- main.c.orig	2005-04-22 16:13:05 UTC
++++ main.c
 @@ -41,14 +41,13 @@
  #include <sys/time.h>
  #include <stdarg.h>
@@ -39,7 +39,7 @@
  
  int winw,winh;
  WINDOW *mainw;
-@@ -173,7 +161,6 @@
+@@ -173,7 +161,6 @@ void screen_init() {
  	getmaxyx(stdscr,winh,winw);
  	if(winh < 20 || winw < 20) {
  		endwin();
@@ -47,7 +47,7 @@
  		fprintf(stderr,"Screen size is too small, sorry\n");
  		exit(1);
  	}
-@@ -241,35 +228,37 @@
+@@ -241,35 +228,37 @@ void screen_check() {
  	return;
  }
  
@@ -110,7 +110,7 @@
  }
  
  int main(int argc, char *argv[]) {
-@@ -280,9 +269,6 @@
+@@ -280,9 +269,6 @@ int main(int argc, char *argv[]) {
  	unsigned long curo = 0;
  #define CURIS curi / timea.tv_sec
  #define CUROS curo / timea.tv_sec
@@ -120,7 +120,7 @@
  	int i = 0;
  	int x = 0;
  	int j = 0;
-@@ -393,48 +379,10 @@
+@@ -393,48 +379,10 @@ int main(int argc, char *argv[]) {
  	argc -= optind;
  	argv += optind;
  	
@@ -156,7 +156,7 @@
 -		}
 -		if(kread(ifnetaddr,(char *)&foonet,sizeof foonet))
 -			return 1;
--
+ 
 -#if __FreeBSD_version >= 501113
 -		strncpy(name,foonet.if_xname,sizeof(name));
 -#else
@@ -166,13 +166,12 @@
 -#endif
 -			
 -	}
-+
 +	readstat(&lasti, &lasto);
 +	gettimeofday(&last,NULL);
  
  	/* start curses */
  	initscr();
-@@ -486,37 +434,32 @@
+@@ -486,37 +434,32 @@ int main(int argc, char *argv[]) {
  	}
  	/* screen init.. */
  	screen_init();
@@ -218,7 +217,7 @@
  		in_total += curi;
  		out_total += curo;
  		
-@@ -569,7 +512,6 @@
+@@ -569,7 +512,6 @@ int main(int argc, char *argv[]) {
  				logi[i] = (unsigned int *)malloc(sizeof(unsigned int));
  				if(logi[i] == NULL) {
  					fprintf(stderr,"error,allocating memory\n");
@@ -226,7 +225,7 @@
  					endwin();
  					exit(1);
  				}
-@@ -583,7 +525,6 @@
+@@ -583,7 +525,6 @@ int main(int argc, char *argv[]) {
  				logo[i] = (unsigned int *)malloc(sizeof(unsigned int));
  				if(logo[i] == NULL) {
  					fprintf(stderr,"error,allocating memory\n");
@@ -234,7 +233,7 @@
  					endwin();
  					exit(1);
  				}
-@@ -648,9 +589,8 @@
+@@ -648,9 +589,8 @@ int main(int argc, char *argv[]) {
  		
  		gettimeofday(&last,NULL);
  		select(0,NULL,NULL,NULL,&timea);
