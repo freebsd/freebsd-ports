@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	axis2
-PORTVERSION=	1.6.4
+PORTVERSION=	1.7.0
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/axis/${PORTNAME}/java/core/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
@@ -59,7 +59,7 @@ do-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/{} \;
-	cd ${WRKSRC}/samples && ${FIND} . -type f -not -name '*.class' -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} \;
+#	cd ${WRKSRC}/samples && ${FIND} . -type f -not -name '*.class' -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} \;
 .endif
 
 .include <bsd.port.mk>
