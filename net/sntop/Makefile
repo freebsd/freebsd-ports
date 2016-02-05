@@ -13,6 +13,7 @@ COMMENT=	Monitor status of network nodes using fping
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		ncurses
 RUN_DEPENDS=	${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 
 GNU_CONFIGURE=	yes
