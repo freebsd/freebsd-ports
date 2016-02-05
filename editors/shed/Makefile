@@ -11,6 +11,7 @@ COMMENT=	Simple ncurses-based pico-style hex editor
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
