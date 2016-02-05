@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.2.6c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive, multi-threaded web browser for text terminals
 
-USES=		gettext
+USES=		gettext ncurses
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--path-archprefix=${PREFIX} --path-prefix=${PREFIX} \
 		--enable-i18n --enable-local-cgi --enable-ipv6
