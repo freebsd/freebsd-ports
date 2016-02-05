@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	novaclient
-PORTVERSION=	3.2.0	
+PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,8 +24,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0:${PORTSDIR}/devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.2.0:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:${PORTSDIR}/devel/py-six
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	novaclient/tests/functional/hooks/post_test_hook.sh
 USE_PYTHON=	distutils autoplist noegginfo
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,install_requires.*,,' ${WRKSRC}/setup.py
