@@ -30,7 +30,7 @@
 %%PGADMDIR%%/classes/database/Postgres90.php
 %%PGADMDIR%%/classes/database/Postgres91.php
 %%PGADMDIR%%/colproperties.php
-@sample %%PGADMDIR%%/conf/config.inc.php
+@sample %%PGADMDIR%%/conf/config.inc.php.sample
 %%PGADMDIR%%/constraints.php
 %%PGADMDIR%%/conversions.php
 %%PGADMDIR%%/database.php
