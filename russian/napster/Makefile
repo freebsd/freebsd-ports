@@ -11,6 +11,7 @@ MASTERDIR=	${.CURDIR}/../../audio/napster
 
 CONFLICTS=	nap-[0-9]*
 
+USES=		ncurses
 WITH_ENCODING_PATCH=	yes
 
 pre-configure:
