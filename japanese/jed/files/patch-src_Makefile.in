@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Tue Jul 20 20:55:47 1999
-+++ src/Makefile.in	Sun Feb  6 00:02:49 2000
-@@ -104,7 +104,7 @@
+--- src/Makefile.in.orig	1999-07-20 11:55:47 UTC
++++ src/Makefile.in
+@@ -104,7 +104,7 @@ jprocess_O_DEP = $(SRCDIR)/pty.c
  all: jed rgrep
  
  
@@ -9,7 +9,7 @@
  	@echo jed created in $(OBJDIR)
  $(OBJDIR)/jed: $(OBJS) $(OBJDIR)/display.o $(OBJGPMMOUSEO)
  	cd $(OBJDIR); $(CC) $(OFILES) display.o $(GPMMOUSEO) \
-@@ -132,7 +132,7 @@
+@@ -132,7 +132,7 @@ $(SRCDIR)/xterm.c: $(SRCDIR)/xkeys.c
  $(SRCDIR)/syntax.c: $(SRCDIR)/dfasyntx.c
  	touch $(SRCDIR)/syntax.c
  #
@@ -18,12 +18,12 @@
  	@echo xjed created in $(OBJDIR)
  $(OBJDIR)/xjed : $(OBJS) $(OBJDIR)/xterm.o $(OBJDIR)/vterm.o
  	cd $(OBJDIR); \
-@@ -142,7 +142,7 @@
+@@ -142,7 +142,7 @@ $(OBJDIR)/xjed : $(OBJS) $(OBJDIR)/xterm
  rgrep: $(OBJDIR)/rgrep
  	@echo rgrep created in $(OBJDIR)
  $(OBJDIR)/rgrep: $(OBJDIR)/vfile.o $(OBJDIR)/rgrep.o
 -	cd $(OBJDIR); $(CC) vfile.o rgrep.o -o rgrep $(LDFLAGS) $(SLANG_LIB) -lslang -lm
-+	cd $(OBJDIR); $(CC) vfile.o rgrep.o -o rgrep $(LDFLAGS) $(SLANG_LIB) -lslang -lcurses -lm
++	cd $(OBJDIR); $(CC) vfile.o rgrep.o -o rgrep $(LDFLAGS) $(SLANG_LIB) -lslang -lncurses -lm
  #
  getmail: $(OBJDIR)/getmail
  	@echo getmail created in $(OBJDIR)
