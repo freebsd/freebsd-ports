@@ -8132,3 +8132,4 @@ devel/py-setuptools32||2016-02-02|Has expired: Full EOL reached. Please update t
 databases/py32-gdbm||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
 databases/py32-sqlite3||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
 x11-toolkits/py32-tkinter||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
+sysutils/puppet|sysutils/puppet38|2016-02-05|Renamed

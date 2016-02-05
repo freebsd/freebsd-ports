@@ -6,6 +6,7 @@ PORTVERSION=	3.8.4
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
+PKGNAMESUFFIX=	37
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Configuration management framework written in Ruby
