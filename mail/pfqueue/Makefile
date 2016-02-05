@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
-USES=		libtool
+USES=		libtool ncurses
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
