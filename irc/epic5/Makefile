@@ -3,6 +3,7 @@
 
 PORTNAME=	epic5
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
 
@@ -17,11 +18,10 @@ USE_OPENSSL=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 CFLAGS:=	${CFLAGS:C/-O2/-O/g}
 
-OPTIONS_DEFINE=	DOCS PERL RUBY TCL TERMCAP
-TERMCAP_DESC=	Refuse to use terminfo/ncurses
+OPTIONS_DEFINE=	DOCS PERL RUBY TCL
 
 CONFIGURE_ARGS+=--with-iconv=${ICONV_PREFIX}
-USES=		iconv libarchive tar:xz
+USES=		iconv libarchive ncurses tar:xz
 
 PERL_USES=	perl5
 PERL_CONFIGURE_WITH=	perl
@@ -29,7 +29,9 @@ RUBY_USE=	ruby=yes
 RUBY_CONFIGURE_WITH=	ruby
 TCL_USES=	tcl
 TCL_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR}/tclConfig.sh
-TERMCAP_CONFIGURE_WITH=	termcap
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|' ${WRKSRC}/configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/epic5-${PORTVERSION}
