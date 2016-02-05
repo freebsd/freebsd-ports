@@ -12,6 +12,7 @@ COMMENT=	Another 'Internet Relay Chat' Client
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 
