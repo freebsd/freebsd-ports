@@ -4021,7 +4021,7 @@ Notes:
     <affects>
       <package>
 	<name>samba36</name>
-	<range><ge>3.6.0</ge><le>3.6.25</le></range>
+	<range><ge>3.6.0</ge><lt>3.6.25_2</lt></range>
       </package>
       <package>
 	<name>samba4</name>
@@ -4081,6 +4081,7 @@ Notes:
     <dates>
       <discovery>2015-12-16</discovery>
       <entry>2015-12-19</entry>
+      <modified>2016-02-05</modified>
     </dates>
   </vuln>
 
