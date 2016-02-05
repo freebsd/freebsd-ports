@@ -13,7 +13,7 @@ COMMENT=	Curses based MIME Mail Reader
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv
+USES=		iconv ncurses
 MAKE_ARGS=	LIBS='${LIBS}' CXX='${CXX}' CXXFLAGS='${CXXFLAGS}'
 ALL_TARGET=	${PORTNAME}
 
@@ -25,7 +25,7 @@ CXXFLAGS+=	-DTHREADMAIL \
 		-DMAILPATH=\"/var/mail\" \
 		-DMAILER=\"/usr/sbin/sendmail\ -t\" \
 		-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB} -lcurses -lmd
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB} -lncurses -lmd
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
