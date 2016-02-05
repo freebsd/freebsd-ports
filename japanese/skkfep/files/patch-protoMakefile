@@ -1,8 +1,10 @@
---- protoMakefile.orig	Tue Jul  7 00:31:15 1998
-+++ protoMakefile	Wed Aug  2 02:56:16 2000
-@@ -1,4 +1,4 @@
+--- protoMakefile.orig	2003-09-02 23:49:31 UTC
++++ protoMakefile
+@@ -1,5 +1,5 @@
 -CFLAGS=$(SYSINCLUDE) $(SYSDEFINE) $(DEFINE) $(OPTIMIZE)
+-LIBS  =$(SYSLIBS) $(EXTRALIBS) -ltermcap
 +CFLAGS+=$(SYSINCLUDE) $(SYSDEFINE) $(DEFINE) $(OPTIMIZE)
- LIBS  =$(SYSLIBS) $(EXTRALIBS) -ltermcap
++LIBS  =$(SYSLIBS) $(EXTRALIBS) $(LDFLAGS) -lncurses
  
  OBJS=fep.o connsh.o readwrite.o terms.o stty.o keybind.o romkan.o etc.o\
+ 	kkconv.o keymap.o version.o
