@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Vi-like binary file (hex)editor
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
