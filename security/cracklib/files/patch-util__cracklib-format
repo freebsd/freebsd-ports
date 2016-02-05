@@ -1,0 +1,10 @@
+--- util/cracklib-format.orig	2015-08-18 11:41:16.000000000 -0700
++++ util/cracklib-format	2016-02-04 21:05:17.397847600 -0800
+@@ -3,6 +3,7 @@
+ # This preprocesses a set of word lists into a suitable form for input
+ # into cracklib-packer
+ #
++unset LANG
+ gzip -cdf "$@" |
+     grep -v '^\(#\|$\)' |
+     tr '[A-Z]' '[a-z]' |
