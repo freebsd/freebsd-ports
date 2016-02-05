@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-hiera>=2.0:${PORTSDIR}/sysutils/rubygem-hiera \
 
 USES=		cpe
 CPE_VENDOR=	puppetlabs
-CONFLICTS_INSTALL=	puppet-* puppet37-*
+CONFLICTS_INSTALL=	puppet38-* puppet37-*
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
