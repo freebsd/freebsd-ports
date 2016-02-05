@@ -465,3 +465,19 @@ share/icons/Gentoo-test/scalable/emblems/emblem-ohno.svg
 share/icons/Gentoo-test/scalable/emblems/emblem-personal.svg
 share/icons/Gentoo-test/scalable/emblems/emblem-special.svg
 share/icons/Gentoo-test/scalable/emblems/emblem-urgent.svg
+@dir share/icons/Gentoo-test/scalable/mimetypes
+@dir share/icons/Gentoo-test/scalable/filesystems
+@dir share/icons/Gentoo-test/scalable/devices
+@dir share/icons/Gentoo-test/96x96/mimetypes
+@dir share/icons/Gentoo-test/96x96/emblems
+@dir share/icons/Gentoo-test/96x96/devices
+@dir share/icons/Gentoo-test/72x72/mimetypes
+@dir share/icons/Gentoo-test/72x72/emblems
+@dir share/icons/Gentoo-test/36x36/mimetypes
+@dir share/icons/Gentoo-test/36x36/devices
+@dir share/icons/Gentoo-test/24x24/mimetypes
+@dir share/icons/Gentoo-test/24x24/devices
+@dir share/icons/Gentoo-test/192x192/mimetypes
+@dir share/icons/Gentoo-test/192x192/emblems
+@dir share/icons/Gentoo-test/12x12/mimetypes
+@dir share/icons/Gentoo-test/12x12/devices
