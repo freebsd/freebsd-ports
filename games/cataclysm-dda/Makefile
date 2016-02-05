@@ -17,7 +17,7 @@ LICENSE_NAME=	Creative Commons Attribution-ShareAlike 3.0 Unported License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake shebangfix compiler:c++11-lib execinfo
+USES=		alias compiler:c++11-lib execinfo gmake shebangfix ncurses
 SHEBANG_FILES=	lang/*.sh
 bash_CMD=	/bin/sh
 
