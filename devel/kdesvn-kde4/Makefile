@@ -26,7 +26,7 @@ USE_QT4=	corelib gui xml network dbus svg sql \
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-OPTIONS_NLS_USES=	gettext
+NLS_USES=	gettext
 
 post-patch:
 	${RM} ${WRKSRC}/src/kiosvn/svn*.protocol
