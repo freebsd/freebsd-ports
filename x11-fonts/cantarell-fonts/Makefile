@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cantarell-fonts
-PORTVERSION=	0.0.16
+PORTVERSION=	0.0.21
 CATEGORIES=	x11-fonts gnome
 MASTER_SITES=	GNOME
 
@@ -11,7 +11,7 @@ COMMENT=	Cantarell, a Humanist sans-serif font family
 
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		gmake pkgconfig tar:xz
+USES=		fonts gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.avail
 FONTSDIR=	share/fonts/cantarell

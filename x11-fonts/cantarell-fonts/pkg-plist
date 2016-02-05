@@ -1,5 +1,5 @@
 etc/fonts/conf.avail/31-cantarell.conf
-share/fonts/cantarell/Cantarell-Bold.otf
-share/fonts/cantarell/Cantarell-Regular.otf
-@exec %D/bin/fc-cache -f -v %D/%%FONTSDIR%%
-@unexec %D/bin/fc-cache -f -v %D/%%FONTSDIR%%
+%%FONTSDIR%%/Cantarell-Bold-Oblique.otf
+%%FONTSDIR%%/Cantarell-Bold.otf
+%%FONTSDIR%%/Cantarell-Oblique.otf
+%%FONTSDIR%%/Cantarell-Regular.otf
