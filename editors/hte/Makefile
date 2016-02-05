@@ -12,7 +12,7 @@ COMMENT=	File editor/viewer/analyzer for executables
 
 LICENSE=	GPLv2
 
-USES=	tar:bzip2
+USES=		ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/hte
