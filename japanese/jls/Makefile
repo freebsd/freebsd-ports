@@ -15,14 +15,17 @@ MAINTAINER=	kazami@angels.vg
 COMMENT=	Japanized ls
 
 CONFLICTS=	sleuthkit-[0-9]*
-USES=		uidfix
 
+USES=		ncurses uidfix
 PLIST_FILES=	bin/jls \
 		man/man1/jls.1.gz
 
 WRKSRC=	${WRKDIR}/ls
 
 pre-patch:
-	cd ${WRKSRC}; ${MV} ls.1 jls.1
+	(cd ${WRKSRC} && ${MV} ls.1 jls.1)
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ltermcap|-lncurses|g' ${WRKSRC}/Makefile
+	
 .include <bsd.port.mk>
