@@ -457,3 +457,19 @@ share/icons/gnome-rh8/scalable/emblems/emblem-special.icon
 share/icons/gnome-rh8/scalable/emblems/emblem-special.svg
 share/icons/gnome-rh8/scalable/emblems/emblem-urgent.icon
 share/icons/gnome-rh8/scalable/emblems/emblem-urgent.svg
+@dir share/icons/gnome-rh8/scalable/mimetypes
+@dir share/icons/gnome-rh8/scalable/filesystems
+@dir share/icons/gnome-rh8/scalable/devices
+@dir share/icons/gnome-rh8/96x96/mimetypes
+@dir share/icons/gnome-rh8/96x96/emblems
+@dir share/icons/gnome-rh8/96x96/devices
+@dir share/icons/gnome-rh8/72x72/mimetypes
+@dir share/icons/gnome-rh8/72x72/emblems
+@dir share/icons/gnome-rh8/36x36/mimetypes
+@dir share/icons/gnome-rh8/36x36/devices
+@dir share/icons/gnome-rh8/24x24/mimetypes
+@dir share/icons/gnome-rh8/24x24/devices
+@dir share/icons/gnome-rh8/192x192/mimetypes
+@dir share/icons/gnome-rh8/192x192/emblems
+@dir share/icons/gnome-rh8/12x12/mimetypes
+@dir share/icons/gnome-rh8/12x12/devices
