@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 
-USES+=		tk
+USES=		ncurses tk
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--exec-prefix=${STAGEDIR}${PREFIX}
@@ -25,6 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	${REINPLACE_CMD} -e 's|tcl80|tcl${TCL_SHLIB_VER}|; \
+		s|-lcurses|-lncurses|; \
 		s|tk80|tk${TK_SHLIB_VER}|; \
 		s|^grantpt|XXXgrantpt|;' \
 			${WRKSRC}/configure
