@@ -58,6 +58,45 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="448047e9-030e-4ce4-910b-f21a3ad5d9a0">
+    <topic>shotwell -- not verifying certificates</topic>
+    <affects>
+      <package>
+	<name>shotwell</name>
+	<range><lt>0.22.0.99</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael Catanzaro reports:</p>
+	<blockquote cite="https://mail.gnome.org/archives/distributor-list/2016-January/msg00000.html">
+	  <p>Shotwell has a serious security issue ("Shotwell does not
+	    verify TLS certificates").  Upstream is no longer active and
+	    I do not expect any further upstream releases unless someone
+	    from the community steps up to maintain it.</p>
+
+	  <p>What is the impact of the issue? If you ever used any of
+	    the publish functionality (publish to Facebook, publish to
+	    Flickr, etc.), your passwords may have been stolen; changing
+	    them is not a bad idea.</p>
+
+	  <p>What is the risk of the update? Regressions. The easiest
+	    way to validate TLS certificates was to upgrade WebKit; it
+	    seems to work but I don't have accounts with the online
+	    services it supports, so I don't know if photo publishing
+	    still works properly on all the services.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://mail.gnome.org/archives/distributor-list/2016-January/msg00000.html</url>
+    </references>
+    <dates>
+      <discovery>2016-01-06</discovery>
+      <entry>2016-02-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1091d2d1-cb2e-11e5-b14b-bcaec565249c">
     <topic>webkit -- UI spoof</topic>
     <affects>
