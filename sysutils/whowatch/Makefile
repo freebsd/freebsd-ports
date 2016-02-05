@@ -21,6 +21,6 @@ PLIST_FILES=	bin/whowatch man/man1/${PORTNAME}.1.gz
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name 'proc????.c' | ${XARGS} ${REINPLACE_CMD} -E \
-		-e 's/kp_.?proc\.._/kp_/ ; s/pcred\.p_//'
+		-e 's/kp_.?proc\.._/ki_/ ; s/pcred\.p_//'
 
 .include <bsd.port.mk>
