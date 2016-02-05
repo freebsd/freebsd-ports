@@ -1,0 +1,11 @@
+--- Makefile.orig	2012-04-15 11:30:05 UTC
++++ Makefile
+@@ -7,7 +7,7 @@ BOINC_HOME?=	/var/db/boinc
+ all: boinc_curses
+ 
+ boinc_curses: boinc_curses.c
+-	${CXX} -o boinc_curses boinc_curses.c -lncurses ${BOINCLIBDIR}/libboinc.a -I${BOINCINCDIR} -DBOINC_HOME=\"${BOINC_HOME}\" -Wall ${CFLAGS}
++	${CXX} -o boinc_curses boinc_curses.c $(LDFLAGS) -lncurses ${BOINCLIBDIR}/libboinc.a -I${BOINCINCDIR} -DBOINC_HOME=\"${BOINC_HOME}\" -Wall ${CFLAGS}
+ 
+ clean:
+ 	-@rm boinc_curses
