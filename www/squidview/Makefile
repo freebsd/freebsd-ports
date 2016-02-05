@@ -11,6 +11,7 @@ COMMENT=	Monitor squid statistics in realtime
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 DOCS=		HOWTO README
