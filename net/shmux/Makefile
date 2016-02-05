@@ -13,7 +13,7 @@ COMMENT=	Utility to run commands on multiple hosts using shell commands
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:tgz
+USES=		ncurses tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/examples
 
