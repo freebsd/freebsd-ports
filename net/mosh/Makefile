@@ -21,7 +21,7 @@ CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -
 		TINFO_CFLAGS="-I/usr/include"
 INSTALL_TARGET=	install-strip
 USE_OPENSSL=	yes
-USES=		autoreconf:autoconf perl5 pkgconfig
+USES=		autoreconf:autoconf ncurses perl5 pkgconfig
 
 CONFLICTS_INSTALL=	mosh-0.[2-9].*
 
