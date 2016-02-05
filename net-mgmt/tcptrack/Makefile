@@ -13,6 +13,7 @@ COMMENT=	Packet sniffer that displays TCP information like top(1)
 
 LICENSE=	LGPL21
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/tcptrack man/man1/tcptrack.1.gz
