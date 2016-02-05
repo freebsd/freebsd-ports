@@ -13,6 +13,8 @@ COMMENT=	Version 4.0 of the threaded readnews newsreader
 
 CONFLICTS_INSTALL=trn-3.[0-9]* cnews-* s-news-[0-9]*
 
+USES=		ncurses
+
 .include <bsd.port.pre.mk>
 
 post-patch:
