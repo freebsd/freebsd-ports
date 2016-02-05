@@ -11,7 +11,7 @@ COMMENT=	PuppetDB storeconfigs backend
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		puppet:${PORTSDIR}/sysutils/puppet
+		puppet:${PORTSDIR}/sysutils/puppet38
 BUILD_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
 
