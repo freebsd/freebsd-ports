@@ -12,7 +12,7 @@ COMMENT=	Curses-based SSH multiplexer
 
 LIB_DEPENDS=	librote.so:${PORTSDIR}/devel/rote
 
-USES=		gmake
+USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 LIBS+=		-lncurses
 
