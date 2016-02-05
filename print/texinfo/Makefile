@@ -25,7 +25,7 @@ NLS_CONFIGURE_ENABLE=	nls
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install install-tex
 PKGDEINSTALL=	${PKGINSTALL}
-USES+=		charsetfix cpe gmake:lite perl5 tar:xz
+USES+=		charsetfix cpe gmake:lite ncurses perl5 tar:xz
 
 MAKE_ARGS=	TEXMF=${LOCALBASE}/${TEXMF} PERL=${LOCALBASE}/bin/perl
 INFO=		texinfo info-stnd info
