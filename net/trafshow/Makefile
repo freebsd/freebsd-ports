@@ -8,13 +8,13 @@ PORTEPOCH=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/ \
 		ftp://ftp.nsk.su/pub/RinetSoftware/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Full screen visualization of network traffic
 
 CONFLICTS=	trafshow-4.* trafshow3-*
 
+USES=		ncurses tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 ALL_TARGET=	trafshow
