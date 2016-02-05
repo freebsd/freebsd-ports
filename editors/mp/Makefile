@@ -69,6 +69,7 @@ post-patch:
 		's|<ncursesw/|<| ; \
 		 s|-I/usr/local/include|| ; \
 		 s|-L/usr/local/lib|| ; \
+		 s|-lncursesw|${LDFLAGS} -lncursesw| ; \
 		 /gtk+/s|3.0|${CONFOPT_GTK}.0| ; \
 		 /OK/s|3.0|${CONFOPT_GTK}.0| ; \
 		 /CONFOPT_GTK/s|3|${CONFOPT_GTK}|' ${WRKSRC}/config.sh
