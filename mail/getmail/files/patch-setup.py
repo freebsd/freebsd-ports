@@ -1,6 +1,6 @@
---- setup.py.orig	2007-11-23 08:26:55.000000000 -0800
-+++ setup.py	2008-02-05 09:24:03.000000000 -0800
-@@ -39,12 +39,11 @@
+--- setup.py.orig	2009-01-08 21:55:25 UTC
++++ setup.py
+@@ -39,12 +39,11 @@ GETMAILDOCDIR = os.path.join(
      datadir or prefix,
      'share',
      'doc',
@@ -14,7 +14,7 @@
      'man',
      'man1'
  )
-@@ -98,25 +97,6 @@
+@@ -98,25 +97,6 @@ setup(
      'getmail_mbox'
      ],
      data_files=[
