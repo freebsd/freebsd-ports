@@ -22,6 +22,9 @@ LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libmpfr.so:${PORTSDIR}/math/mpfr
 
+DEPRECATED=	No longer used
+EXPIRATION_DATE=2016-03-05
+
 CONFLICTS=	seed-2.[0-9]*
 
 GNU_CONFIGURE=	yes
