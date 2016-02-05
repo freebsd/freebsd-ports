@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another ircII based irc client
 
+USES=		ncurses
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
