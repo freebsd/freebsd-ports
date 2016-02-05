@@ -10,8 +10,9 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English dictionary utility for Korean
 
+USES=		ncurses
 EXTRACT_AFTER_ARGS=	--exclude '*.o'
-MAKE_ARGS=	CC="${CC}"
+MAKE_ARGS=	CC="${CC}" LDADD="-lz ${LDFLAGS} -lncurses"
 PLIST_FILES=	bin/edic bin/engdic
 PORTDATA=	[a-z].dic.gz
 
