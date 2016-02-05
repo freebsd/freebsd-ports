@@ -3,8 +3,9 @@
 
 PORTNAME=	htop
 PORTVERSION=	1.0.3
+PORTREVISION=	1
+DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
-MASTER_SITES=	http://hisham.hm/htop/releases/${PORTVERSION}/
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Better top(1) - interactive process viewer
@@ -22,6 +23,10 @@ LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 
 CONFIGURE_ARGS=	--with-proc=/compat/linux/proc --enable-unicode
 USES=		autoreconf ncurses libtool execinfo python:2,build
+USE_GITHUB=	yes
+GH_ACCOUNT=	hishamhm
+GH_PROJECT=	htop
+GH_TAGNAME=	5c593fa
 
 LSOF_RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
