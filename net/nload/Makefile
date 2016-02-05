@@ -12,6 +12,7 @@ COMMENT=	Console application which monitors network traffic in real time
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/nload man/man1/nload.1.gz
