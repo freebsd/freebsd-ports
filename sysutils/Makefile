@@ -440,6 +440,7 @@
     SUBDIR += jadm
     SUBDIR += jail-primer
     SUBDIR += jail2
+    SUBDIR += jailadmin
     SUBDIR += jailctl
     SUBDIR += jaildaemon
     SUBDIR += jailme
