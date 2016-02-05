@@ -1,0 +1,13 @@
+libfilezilla is a small and modern C++ library, offering some basic
+functionality to build high-performing, platform-independent programs.
+
+Some of the highlights include:
+
+* A typesafe, multi-threaded event system that's very simple to use yet
+  extremely efficient
+* Timers for periodic events
+* A datetime class that not only tracks timestamp but also their accuracy,
+  which simplifies dealing with timestamps originating from different sources
+* Simple process handling for spawning child processes with redirected I/O
+
+WWW: http://lib.filezilla-project.org/
