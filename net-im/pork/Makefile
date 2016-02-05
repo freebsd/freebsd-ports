@@ -1,18 +1,17 @@
 # Created by: Bob Bomar <bob@bomar.us>
 # $FreeBSD$
 
-PORTNAME=		pork
-PORTVERSION=		0.99.8.1
-CATEGORIES=		net-im
-MASTER_SITES=		SF/ojnk/${PORTNAME}/${PORTVERSION}
+PORTNAME=	pork
+PORTVERSION=	0.99.8.1
+CATEGORIES=	net-im
+MASTER_SITES=	SF/ojnk/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Console-based AIM client
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Console-based AIM client
 
-USES=			perl5
-USE_OPENSSL=		yes
-
-GNU_CONFIGURE=		yes
+USES=		ncurses perl5
+USE_OPENSSL=	yes
+GNU_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^inline //' ${WRKSRC}/src/*.h
