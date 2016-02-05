@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	5250 Telnet protocol and Terminal
 
-USES=		libtool
+USES=		libtool ncurses
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-os-dir=no --with-ssl=${OPENSSLBASE}
