@@ -10,7 +10,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vi/ex clone that speaks Chinese
 
+USES=		ncurses
 CFLAGS+=	-Wno-error=return-type
+MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 
 do-install:
 	@# install target in celvis Makefile is not too good -- this is easier
