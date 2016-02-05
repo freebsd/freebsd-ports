@@ -13,10 +13,12 @@ COMMENT=	Full screen editor
 NO_CDROM=	Resale allowed for media cost only
 
 NO_WRKSUBDIR=	yes
-USES=		dos2unix zip
+USES=		dos2unix ncurses zip
 EXTRACT_BEFORE_ARGS=	-Lq
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/*.c
+	@${REINPLACE_CMD} -e 's|-ltermcap|${LDFLAGS} -lncurses|g' \
+		${WRKSRC}/freebsd/makefile
 
 .include <bsd.port.mk>
