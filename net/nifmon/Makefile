@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.freebsd-support.de/misc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based network interface monitoring tool
 
+USES=		ncurses
+MAKE_ARGS=	LDADD="-lncurses"
 PLIST_FILES=	bin/nifmon man/man8/nifmon.8.gz
 
 do-install:
