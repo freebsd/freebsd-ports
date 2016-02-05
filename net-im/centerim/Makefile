@@ -13,7 +13,7 @@ COMMENT=	Text mode menu- and window-driven IM interface
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		iconv gmake pkgconfig shebangfix
+USES=		iconv gmake ncurses pkgconfig shebangfix
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
