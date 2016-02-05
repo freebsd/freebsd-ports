@@ -13,12 +13,13 @@ PATCHFILES=	ng-1.4.4-replace_bug.patch
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Light Emacs-clone with Japanese support
 
+USES=		ncurses
 MAKEFILE=	sys/sysv/Makefile
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LDFLAGS}"
 ALL_TARGET=	ng
 
 CFLAGS+=	-Wno-error=return-type
-LDFLAGS+=	-ltermcap
+LDFLAGS+=	-lncurses
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
