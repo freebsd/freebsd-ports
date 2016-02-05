@@ -3,6 +3,7 @@
 
 PORTNAME=	blist
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+post-extract:
+	@${CHMOD} -R a+rX ${WRKSRC}
 
 do-test:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test)
