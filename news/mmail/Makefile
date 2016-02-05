@@ -12,8 +12,8 @@ COMMENT=	Offline BBS mail packet reader supporting QWK/OMEN/SOUP/OPX/BLUEWAVE
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 
-USES=		gmake
-MAKE_ARGS=	OPTS=""
+USES=		gmake ncurses
+MAKE_ARGS=	OPTS="" LIBS="${LDFLAGS} -lncurses"
 
 PLIST_FILES=	bin/mmail \
 		man/man1/mmail.1.gz
