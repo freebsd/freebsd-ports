@@ -68,7 +68,8 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jws_alg_rsa_pss.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwt.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_server.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3.beam
-lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_keccakf1600.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_keccakf1600_driver.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_keccakf1600_nif.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_unsupported.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sup.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose.hrl
@@ -146,7 +147,8 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jws_alg_rsa_pss.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwt.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_server.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3.erl
-lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3_keccakf1600.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3_keccakf1600_driver.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3_keccakf1600_nif.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3_unsupported.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sup.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
