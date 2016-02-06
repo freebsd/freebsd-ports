@@ -3,7 +3,7 @@
 
 PORTNAME=	opendmarc
 PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail security
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/Previous%20Releases
@@ -14,12 +14,16 @@ COMMENT=	DMARC library and milter implementation
 LICENSE=		BSD3CLAUSE SENDMAIL
 LICENSE_COMB=		multi
 
+RUN_DEPENDS=	p5-Switch>=0:${PORTSDIR}/lang/p5-Switch \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+
 LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
 LICENSE_GROUPS_SENDMAIL=	FSF OSI
 LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
 LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		libtool shebangfix
+USES=		libtool perl5 shebangfix
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	opendmarc
 
@@ -42,10 +46,10 @@ SHEBANG_FILES=	reports/opendmarc-expire.in \
 
 PORTDOCS=	*
 
-.if !exists( /usr/include/libmilter/mfapi.h )
-BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
-CFLAGS+=	-I${LOCALBASE}/include
-.endif
+.include <bsd.port.pre.mk>
+
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
+CONFIGURE_ARGS+=	--with-milter=${MILTERBASE}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
@@ -53,4 +57,4 @@ post-install:
 		${WRKSRC}/opendmarc/opendmarc.conf.sample ${STAGEDIR}${PREFIX}/etc/mail
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopendmarc.so.2
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
