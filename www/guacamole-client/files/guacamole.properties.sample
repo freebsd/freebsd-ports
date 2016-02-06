@@ -1,0 +1,10 @@
+###
+### guacamole.properties.sample
+###
+
+
+### The Host the Guacamole proxy daemon (guacd) is listening on.
+#
+guacd-host:	localhost
+guacd-port: 	4822
+#guacd-ssl: 	true     ### default is false
