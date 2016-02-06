@@ -1,5 +1,5 @@
---- src/s_audio_alsa.c.orig	2011-11-07 13:06:38.000000000 +0900
-+++ src/s_audio_alsa.c	2012-02-26 03:12:50.000000000 +0900
+--- src/s_audio_alsa.c.orig	2014-09-18 00:09:56 UTC
++++ src/s_audio_alsa.c
 @@ -25,7 +25,14 @@
  #include <sched.h>
  #include <sys/mman.h>
