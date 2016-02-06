@@ -12,8 +12,8 @@ COMMENT=	Satellite tracking program for amateur radio satellites
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 INSTALL_TARGET=	install install.man
-
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-patch:
