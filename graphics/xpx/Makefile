@@ -17,8 +17,11 @@ USES=		imake:notall
 USE_XORG=	x11 xext
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
+
 PORTDOCS=	xpx.doc xpxrc.eg
 PLIST_FILES=	bin/xpx
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|myname|my_name|g' ${WRKSRC}/magtoppm.c
@@ -27,8 +30,8 @@ post-patch:
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC}; ${SH} configure)
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
