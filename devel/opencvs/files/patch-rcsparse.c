@@ -1,6 +1,6 @@
---- rcsparse.c.orig	2015-05-04 09:15:45 UTC
-+++ rcsparse.c
-@@ -1228,8 +1228,6 @@ valid_login(char *login_name)
+--- rcsparse.c.orig	2016-02-06 23:25:25.000000000 +0100
++++ rcsparse.c	2016-02-06 23:33:35.539982000 +0100
+@@ -1227,8 +1227,6 @@ valid_login(char *login_name)
  			return 0;
  		}
  	}
