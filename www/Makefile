@@ -246,6 +246,7 @@
     SUBDIR += gstreamer1-plugins-neon
     SUBDIR += gtkhtml3
     SUBDIR += gtkhtml4
+    SUBDIR += guacamole-client
     SUBDIR += guile-www
     SUBDIR += gurlchecker
     SUBDIR += h2o

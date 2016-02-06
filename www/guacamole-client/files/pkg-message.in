@@ -1,0 +1,8 @@
+###	Guacamole-client requires authentecation to start.
+###	cp %%PREFIX%%/etc/guacamole/user-mapping.xml.sample \
+###	%%PREFIX%%/etc/guacamole/user-mapping.xml
+###
+###	Once tomcat8 and guacd are running
+###	http://localhost:8080/guacamole Only ssh is installed
+###	by default. To add more protocols, rebuild guacamole-
+###	server.

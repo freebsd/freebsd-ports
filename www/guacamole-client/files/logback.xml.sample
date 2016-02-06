@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Guacamole logs all messages to console by default. Servlet containers
+  like Tomcat will automattically redirect these messages to a log file,
+  catalina.out in the case of Tomcat. Valid levels= error, warn, info,  
+   debug -->
+<configuration>
+
+    <!-- Appender for debugging -->
+    <appender name="GUAC-DEBUG" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Log at DEBUG level -->
+    <root level="debug">
+        <appender-ref ref="GUAC-DEBUG"/>
+    </root>
+
+</configuration>
