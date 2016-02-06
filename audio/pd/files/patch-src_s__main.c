@@ -1,6 +1,6 @@
---- src/s_main.c.orig	2011-03-07 10:11:02.000000000 +0900
-+++ src/s_main.c	2011-04-06 19:30:04.000000000 +0900
-@@ -936,7 +940,11 @@
+--- src/s_main.c.orig	2015-09-09 23:08:21 UTC
++++ src/s_main.c
+@@ -1137,7 +1137,11 @@ static void sys_afterargparse(void)
              /* add "doc/5.reference" library to helppath */
      strncpy(sbuf, sys_libdir->s_name, MAXPDSTRING-30);
      sbuf[MAXPDSTRING-30] = 0;
