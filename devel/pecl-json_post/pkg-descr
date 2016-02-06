@@ -1,0 +1,6 @@
+This extension provides a PHP content type handler for "application/json" and
+"text/json" to PHP's form data parser. If the `Content-Type` of an incoming
+request is `text/json`, the JSON contents of the request body will by parsed
+into `$_POST`.
+
+WWW: https://pecl.php.net/package/json_post
