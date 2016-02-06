@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: guacd
+# REQUIRE: LOGIN
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# guacd_enable (bool):		Set to "NO" by default.
+#				Set it to "YES" to enable guacd.
+# guacd_user (str):		User to run guacd as
+#				Default to "%%GUACD_USER%%" created by the port
+# guacd_group (str):		Group to run guacd as
+#				Default to "%%GUACD_GROUP%%" created by the port
+# guacd_pidfile (str):		Set to "" by default will use the path
+
+. /etc/rc.subr
+
+name=guacd
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${guacd_enable:="NO"}
+: ${guacd_user:="%%GUACD_USER%%"}
+: ${guacd_group:="%%GUACD_GROUP%%"}
+: ${guacd_pidfile:="/var/run/${name}/${name}.pid"}
+
+command=%%PREFIX%%/sbin/guacd
+pidfile=${guacd_pidfile}
+
+command_args="-p ${pidfile}"
+
+start_precmd="guacd_prestart"
+guacd_prestart() {
+        if [ -f ${pidfile} ]; then
+                rm -f ${pidfile}
+                echo "Removing stale pidfile."
+        elif [ ! -d ${pidfile%/*} ]; then
+                install -d -o ${guacd_user} -g ${guacd_group} ${pidfile%/*}
+        fi
+}
+
+
+run_rc_command "$1"
