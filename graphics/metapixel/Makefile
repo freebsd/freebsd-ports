@@ -11,15 +11,17 @@ MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/metapixel/files/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Photomosaic generator
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 		libpng.so:${PORTSDIR}/graphics/png
 
-CPPFLAGS+=	$$(libpng-config --I_opts) -I${LOCALBASE}/include -I.
-LDFLAGS+=	$$(libpng-config --L_opts) -L${LOCALBASE}/lib
 USES=		gmake jpeg shebangfix
 SHEBANG_FILES=	metapixel-prepare metapixel-sizesort
+
+CPPFLAGS+=	$$(libpng-config --I_opts) -I${LOCALBASE}/include -I.
+LDFLAGS+=	$$(libpng-config --L_opts) -L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/metapixel \
 		bin/metapixel-convert \
@@ -40,9 +42,13 @@ do-install:
 		metapixel-imagesize ${STAGEDIR}${PREFIX}/bin)
 	(cd ${WRKSRC} && ${INSTALL_SCRIPT} metapixel-prepare \
 		metapixel-sizesort ${STAGEDIR}${PREFIX}/bin)
-	${INSTALL_MAN} ${WRKSRC}/metapixel.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/metapixel.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR})
 
