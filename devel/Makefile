@@ -505,7 +505,6 @@
     SUBDIR += erlang-syslog
     SUBDIR += es-eric6
     SUBDIR += etcd
-    SUBDIR += etcdctl
     SUBDIR += etl
     SUBDIR += euca2ools
     SUBDIR += eventxx
