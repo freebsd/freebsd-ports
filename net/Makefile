@@ -189,6 +189,7 @@
     SUBDIR += gtic
     SUBDIR += gtk-vnc
     SUBDIR += gtknetcat
+    SUBDIR += guacamole-server
     SUBDIR += gupnp
     SUBDIR += gupnp-av
     SUBDIR += gupnp-dlna
