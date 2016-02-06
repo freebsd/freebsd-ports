@@ -1,0 +1,7 @@
+Miller is like sed, awk, cut, join, and sort for name-indexed data such
+as CSV.
+
+With Miller you get to use named fields without needing to count
+positional indices.
+
+WWW: http://johnkerl.org/miller/doc/

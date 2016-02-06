@@ -1,0 +1,30 @@
+--- c/Makefile.orig	2016-01-31 11:19:35 UTC
++++ c/Makefile
+@@ -370,7 +370,7 @@ mlr_LDADD = \
+ 			lib/libmlr.la \
+ 			dsls/libfdsl.la \
+ 			dsls/libpdsl.la \
+-			-lm
++			-lm -lc
+ 
+ 
+ # Other executable variants
+@@ -483,15 +483,15 @@ clean-noinstPROGRAMS:
+ 
+ mlr$(EXEEXT): $(mlr_OBJECTS) $(mlr_DEPENDENCIES) $(EXTRA_mlr_DEPENDENCIES) 
+ 	@rm -f mlr$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(mlr_OBJECTS) $(mlr_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(LINK) $(mlr_OBJECTS) $(mlr_LDADD) $(LIBS) -lc
+ 
+ mlrg$(EXEEXT): $(mlrg_OBJECTS) $(mlrg_DEPENDENCIES) $(EXTRA_mlrg_DEPENDENCIES) 
+ 	@rm -f mlrg$(EXEEXT)
+-	$(AM_V_CCLD)$(mlrg_LINK) $(mlrg_OBJECTS) $(mlrg_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(mlrg_LINK) $(mlrg_OBJECTS) $(mlrg_LDADD) $(LIBS) -lc
+ 
+ mlrp$(EXEEXT): $(mlrp_OBJECTS) $(mlrp_DEPENDENCIES) $(EXTRA_mlrp_DEPENDENCIES) 
+ 	@rm -f mlrp$(EXEEXT)
+-	$(AM_V_CCLD)$(mlrp_LINK) $(mlrp_OBJECTS) $(mlrp_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(mlrp_LINK) $(mlrp_OBJECTS) $(mlrp_LDADD) $(LIBS) -lc
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
