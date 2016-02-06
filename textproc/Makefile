@@ -471,6 +471,7 @@
     SUBDIR += mguesser
     SUBDIR += mi-aspell
     SUBDIR += mifluz
+    SUBDIR += miller
     SUBDIR += minised
     SUBDIR += mk-aspell
     SUBDIR += mkcatalog
