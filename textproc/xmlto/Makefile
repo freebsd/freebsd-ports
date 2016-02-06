@@ -73,7 +73,12 @@ CONFIGURE_ARGS+=	--with-backend=dblatex
 
 post-patch:
 	@# get rid of nonstandard "type" option -t:
-	cd ${WRKSRC} && ${FIND} . -type f -exec ${REINPLACE_CMD} -i '' -e 's/type -t/which/;' '{}' '+'
+	${SED} -i '' -e 's/type -t/which/;' \
+		${WRKSRC}/format/docbook/epub \
+		${WRKSRC}/format/docbook/txt \
+		${WRKSRC}/format/fo/dvi \
+		${WRKSRC}/format/fo/pdf \
+		${WRKSRC}/format/xhtml1/txt
 	@# get rid of GNU-make-ism (BSD make defines $< only in suffix rules)
 	${REINPLACE_CMD} -e '/^GEN_MANPAGE/{s/\$$</$$>/;}' ${WRKSRC}/Makefile.in
 
