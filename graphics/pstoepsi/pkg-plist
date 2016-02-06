@@ -1,2 +1,2 @@
 bin/pstoepsi
-share/doc/pstoepsi/README.this-site.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.this-site.gz
