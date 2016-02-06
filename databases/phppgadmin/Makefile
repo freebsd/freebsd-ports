@@ -3,7 +3,7 @@
 
 PORTNAME=	phppgadmin
 PORTVERSION=	5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/phpPgAdmin%20%5Bstable%5D/phpPgAdmin-5.1
 DISTNAME=	phpPgAdmin-${PORTVERSION}
@@ -34,8 +34,6 @@ do-configure:
 		${WRKSRC}/conf/config.inc.php-dist
 	${RM} -f ${WRKSRC}/conf/config.inc.php \
 		${WRKSRC}/conf/config.inc.php-dist.bak
-	${MV} -i ${WRKSRC}/conf/config.inc.php-dist \
-		${WRKSRC}/conf/config.inc.php.sample
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PGADMDIR}
