@@ -58,6 +58,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6ac79ed8-ccc2-11e5-932b-5404a68ad561">
+    <topic>ffmpeg -- remote denial of service in JPEG2000 decoder</topic>
+    <affects>
+      <package>
+	<name>ffmpeg</name>
+	<range><lt>2.8.6,1</lt></range>
+      </package>
+      <package>
+	<name>mplayer</name>
+	<name>mencoder</name>
+	<range>
+	  <lt>1.2.r20151219_3</lt>
+	</range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>FFmpeg security reports:</p>
+	<blockquote cite="https://www.ffmpeg.org/security.html">
+	  <p>FFmpeg 2.8.6 fixes the following vulnerabilities:
+	    CVE-2016-2213</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-2213</cvename>
+      <url>https://www.ffmpeg.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2016-01-27</discovery>
+      <entry>2016-02-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="448047e9-030e-4ce4-910b-f21a3ad5d9a0">
     <topic>shotwell -- not verifying certificates</topic>
     <affects>
