@@ -26,6 +26,7 @@ USE_QT4=	corelib gui xml network dbus svg sql \
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
+NLS_CMAKE_OFF=	-DBUILD_po=OFF
 NLS_USES=	gettext
 
 post-patch:
@@ -34,9 +35,5 @@ post-patch:
 post-patch-DOCS-off:
 	${FIND} ${WRKSRC}/docs -name CMakeLists.txt | \
 		${XARGS} ${REINPLACE_CMD} -n '/kde4_create_manpage/p'
-
-post-patch-NLS-off:
-	${REINPLACE_CMD} '/macro_optional_add_subdirectory( po )/d'  \
-		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
