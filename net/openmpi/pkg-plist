@@ -224,7 +224,7 @@
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.12
-%%MPIDIR%%/lib/libmpi.so.12.0.1
+%%MPIDIR%%/lib/libmpi.so.12.0.2
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so
 %%MPIDIR%%/lib/libmpi_cxx.so.1
@@ -235,8 +235,8 @@
 %%MPIDIR%%/lib/libmpi_mpifh.so.12.0.0
 %%MPIDIR%%/lib/libmpi_usempi.la
 %%MPIDIR%%/lib/libmpi_usempi.so
-%%MPIDIR%%/lib/libmpi_usempi.so.1
-%%MPIDIR%%/lib/libmpi_usempi.so.1.4.1
+%%MPIDIR%%/lib/libmpi_usempi.so.5
+%%MPIDIR%%/lib/libmpi_usempi.so.5.1.0
 %%MPIDIR%%/lib/libompitrace.la
 %%MPIDIR%%/lib/libompitrace.so
 %%MPIDIR%%/lib/libompitrace.so.0
@@ -244,11 +244,11 @@
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.13
-%%MPIDIR%%/lib/libopen-pal.so.13.0.1
+%%MPIDIR%%/lib/libopen-pal.so.13.0.2
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.12
-%%MPIDIR%%/lib/libopen-rte.so.12.0.1
+%%MPIDIR%%/lib/libopen-rte.so.12.0.2
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.la
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.so
