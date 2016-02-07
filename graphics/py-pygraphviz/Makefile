@@ -1,25 +1,25 @@
 # Created by: Hye-Shik Chang <perky@fallin.lv>
 # $FreeBSD$
 
-PORTNAME=	graphviz
+PORTNAME=	pygraphviz
 PORTVERSION=	1.3.1
 CATEGORIES=	graphics python
-MASTER_SITES=	CHEESESHOP \
-		http://networkx.lanl.gov/download/pygraphviz/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pygraphviz-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python interface to GraphViz agraph
 
-BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
-RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+
+LIB_DEPENDS=	libcgraph.so:${PORTSDIR}/graphics/graphviz
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.1:${PORTSDIR}/devel/py-nose
 
 USES=		pkgconfig python
-USE_PYTHON=	distutils
-PYDISTUTILS_PKGNAME=	pygraphviz
+USE_PYTHON=	autoplist concurrent distutils
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+PYDISTUTILS_BUILD_TARGET=	build build_ext
+PYDISTUTILS_BUILDARGS=		--include-dirs=${LOCALBASE}/include \
+				--library-dirs=${LOCALBASE}/lib/graphviz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+; \
@@ -27,5 +27,8 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pygraphviz/_graphviz.so
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

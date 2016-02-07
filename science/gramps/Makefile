@@ -3,7 +3,7 @@
 
 PORTNAME=	gramps
 PORTVERSION=	3.4.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science gnome python
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
@@ -37,7 +37,7 @@ EXIV_DESC=		Managing exiv metadata support
 ENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
 EXIV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}exiv2>=0.1.3:${PORTSDIR}/graphics/py-exiv2
 GNOME_USE=		GNOME=pygnome2,gnomedocutils
-GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>-0:${PORTSDIR}/graphics/py-graphviz
+GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:${PORTSDIR}/graphics/py-pygraphviz
 PYWEBKITGTK_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:${PORTSDIR}/www/py-webkitgtk
 
 pre-extract:
