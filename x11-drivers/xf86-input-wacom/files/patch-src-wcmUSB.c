@@ -18,3 +18,15 @@
  
  #define MAX_USB_EVENTS 32
  
+@@ -276,6 +283,11 @@ static struct WacomModelDesc
+ 	{ WACOM_VENDOR_ID, 0x315,200000, 200000, &usbIntuosPro,  "Intuos Pro M"		},
+ 	{ WACOM_VENDOR_ID, 0x317,200000, 200000, &usbIntuosPro,  "Intuos Pro L"		},
+ 
++	{ WACOM_VENDOR_ID, 0x33B,200000, 200000, &usbIntuos5,    "Intuos Draw small"	},
++	{ WACOM_VENDOR_ID, 0x33C,200000, 200000, &usbIntuos5,    "Intuos Art/Photo/Comic small"},
++	{ WACOM_VENDOR_ID, 0x33D,200000, 200000, &usbIntuos5,    "Intuos Draw medium"	},
++	{ WACOM_VENDOR_ID, 0x33E,200000, 200000, &usbIntuos5,    "Intuos Art medium"	},
++
+ 	{ WACOM_VENDOR_ID, 0x3F, 200000, 200000, &usbCintiqV5,   "Cintiq 21UX"		},
+ 	{ WACOM_VENDOR_ID, 0xC5, 200000, 200000, &usbCintiqV5,   "Cintiq 20WSX"		},
+ 	{ WACOM_VENDOR_ID, 0xC6, 200000, 200000, &usbCintiqV5,   "Cintiq 12WX"		},
