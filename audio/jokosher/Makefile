@@ -26,14 +26,14 @@ PIDGIN_DESC=	Pidgin status extension
 PROFILES_DESC=	Gnome Audio Profiels extension
 PULSE_DESC=	${PULSEAUDIO_DESC}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 .endif
 
 .if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MPROFILES} \
-	|| ${HAVE_GNOME:Mpygnome2}!=""
+	|| exists(${LOCALBASE}/libdata/pkgconfig/gnome-python-2.0.pc)
 USE_GNOME+=	pygnome2
 .endif
 
@@ -64,4 +64,4 @@ post-patch:	.SILENT
 		's|"update-desktop-database"|&, "${PREFIX}/share/applications"|' \
 		${WRKSRC}/bin/${PORTNAME} ${WRKSRC}/${PYSETUP}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

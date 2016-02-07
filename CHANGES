@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160207:
+AUTHOR: kwm@FreeBSD.org
+
+  The GNOME and MATE framework activation changed. To use the frameworks
+  now either gnome or mate needs to be added USES.
+
+  The usage of USE_GNOME, USE_MATE, INSTALLS_ICONS and for example
+  GLIB_SCHEMAS stays the same.
+
+  Like with USES, the use of USE_GNOME and so after bsd.port.pre.mk
+  is now forbidden.
+
 20160112:
 AUTHOR: amdmi3@FreeBSD.org
 
