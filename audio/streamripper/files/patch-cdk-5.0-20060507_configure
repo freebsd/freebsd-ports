@@ -1,0 +1,11 @@
+--- cdk-5.0-20060507/configure.orig	2005-12-28 22:41:24 UTC
++++ cdk-5.0-20060507/configure
+@@ -1993,7 +1993,7 @@ case $host_os in #(vi
+ aix[45]*) #(vi
+ 	CPPFLAGS="$CPPFLAGS -D_ALL_SOURCE"
+ 	;;
+-freebsd*) #(vi
++freebsd*|dragonfly*) #(vi
+ 	# 5.x headers associate
+ 	#	_XOPEN_SOURCE=600 with _POSIX_C_SOURCE=200112L
+ 	#	_XOPEN_SOURCE=500 with _POSIX_C_SOURCE=199506L
