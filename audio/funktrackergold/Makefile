@@ -14,7 +14,7 @@ OPTIONS_DEFINE=	DOCS
 
 LICENSE=	GPLv2
 
-USES=		compiler:nestedfct tar:tgz
+USES=		compiler:nestedfct ncurses tar:tgz
 
 WRKSRC=		${WRKDIR}/funkgold
 MAKE_ARGS=	EXTRA_LDFLAGS="-lpthread"
