@@ -10,25 +10,23 @@ MASTER_SITES=	http://www.freedesktop.org/software/icon-slicer/releases/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for generating icon and cursor themes
 
-LICENSE=	GPLv2
+LICENSE=	MIT # in readme and sources; COPYING seem to be unrelated
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
-USES=		pkgconfig
+USES=		localbase pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	AUTHORS ChangeLog README
+PLIST_FILES=	bin/${PORTNAME}
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|examples||' ${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
