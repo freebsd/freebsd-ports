@@ -1,12 +1,12 @@
---- webapp/graphite/local_settings.py.example.orig	2013-08-21 17:11:04.000000000 +0000
-+++ webapp/graphite/local_settings.py.example	2014-02-14 05:02:05.550117395 +0000
+--- webapp/graphite/local_settings.py.example.orig	2015-11-27 18:37:16 UTC
++++ webapp/graphite/local_settings.py.example
 @@ -62,6 +62,9 @@
  #CONF_DIR = '/opt/graphite/conf'
  #STORAGE_DIR = '/opt/graphite/storage'
  #CONTENT_DIR = '/opt/graphite/webapp/content'
 +CONF_DIR = '%%PREFIX%%/etc/graphite'
 +STORAGE_DIR = '/var/db/carbon'
-+CONTENT_DIR = '%%DATADIR%%/content'
++CONTENT_DIR = '%%PREFIX%%/share/graphite-web/content'
  
  # To further or fully customize the paths, modify the following. Note that the
  # default settings for each of these are relative to CONF_DIR and STORAGE_DIR
