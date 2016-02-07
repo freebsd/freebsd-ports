@@ -11,7 +11,7 @@ DISTNAME=	PokerTH-${PORTVERSION}-src
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Poker game written in C++/Qt4
 
-LICENSE=	GPLv2
+LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
@@ -40,8 +40,11 @@ post-patch:
 		-e 's|LIB_DIRS =.*|LIB_DIRS = ${LOCALBASE}/lib|g' \
 		-e '/.*QMAKE_CXXFLAGS.*/d' \
 		${WRKSRC}/*.pro
+	@${FIND} ${WRKSRC} -name '*.cpp' -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's|[io]fstream|std::&|'
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pokerth
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pokerth_server ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docs/pokerth.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
