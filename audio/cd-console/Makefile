@@ -9,7 +9,8 @@ MASTER_SITES=	http://www.oskusoft.com/osku/cd-console/
 MAINTAINER=	jdunn@aquezada.com
 COMMENT=	Curses-based console CD player
 
-MAKE_ARGS=	BINPATH=${STAGEDIR}${PREFIX}/bin
+USES=		ncurses
+MAKE_ARGS=	BINPATH=${STAGEDIR}${PREFIX}/bin LIBS="${LDFLAGS} -lncurses"
 
 PLIST_FILES=	bin/cd-console
 
