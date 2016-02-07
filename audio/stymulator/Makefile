@@ -14,7 +14,7 @@ COMMENT=	Command-line Yamaha YM2149 (.ym) chiptune player
 
 LICENSE=	GPLv2
 
-USES=		dos2unix
+USES=		dos2unix ncurses
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
@@ -22,6 +22,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MANPAGE1=	ymplayer.1 ym2wav.1
 PLIST_FILES=	bin/ym2wav bin/ymplayer bin/stymulator man/man1/ymplayer.1.gz \
 		man/man1/ym2wav.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lncurses|$$(LDFLAGS) -lncurses|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ym2wav ${STAGEDIR}${PREFIX}/bin
