@@ -8,8 +8,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Curses-based emulator for the Wyse 60 terminal
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
-
 MAKE_ARGS=	etc_DATA=wy60.rc.sample
 
 pre-build:
