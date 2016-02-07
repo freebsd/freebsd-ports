@@ -47,7 +47,7 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 post-extract:
 	${MV} ${WRKDIR}/cdk-${CDK_VERSION} ${WRKSRC}
 
-xpost-patch:
+post-patch:
 	@${REINPLACE_CMD} -e '/if test/s|==|=|g' ${WRKSRC}/configure
 #	avoid potential name conflict with ncurses
 	@${LN} -sv ${WRKSRC}/cdk-5.0-20060507/include/menu.h \
