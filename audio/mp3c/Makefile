@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	mp3info:${PORTSDIR}/audio/mp3info \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
+USES=		ncurses
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=${PREFIX}"
 
