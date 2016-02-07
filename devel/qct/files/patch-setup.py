@@ -1,6 +1,6 @@
---- setup.py.orig	2009-02-16 01:49:32.000000000 +0300
-+++ setup.py	2012-01-18 19:01:41.000000000 +0400
-@@ -10,20 +10,8 @@
+--- setup.py.orig	2009-02-15 22:49:32 UTC
++++ setup.py
+@@ -10,20 +10,8 @@ if not hasattr(sys, 'version_info') or s
      raise SystemExit, "Qct requires python 2.4 or later."
  
  extra = {}
