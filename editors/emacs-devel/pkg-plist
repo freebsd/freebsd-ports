@@ -893,6 +893,22 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/survival.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/vipcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/viperCard.tex
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/calccard.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/cs-dired-ref.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/cs-refcard.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/cs-survival.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/de-refcard.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/dired-ref.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-dired-ref.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-refcard.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-survival.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/gnus-booklet.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/gnus-refcard.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/orgcard.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/refcard.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/survival.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/vipcard.pdf
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/viperCard.pdf
 %%DATADIR%%/%%EMACS_VER%%/etc/rgb.txt
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/README
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/calstbl.rnc
@@ -2756,8 +2772,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/dig.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/dns.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/dns.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-bob.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-bob.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-export.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-export.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-hotlist.el.gz
@@ -2768,6 +2782,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-bbdb.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-bbdb.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-bob.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-bob.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-ldap.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-ldap.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudcb-mab.el.gz
@@ -3942,6 +3958,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/xml.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/xt-mouse.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/xt-mouse.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.elc
 %%DATADIR%%/%%EMACS_VER%%/site-lisp/subdirs.el
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/alloc.c
@@ -4035,6 +4053,7 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/keyboard.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/keymap.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/keymap.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/kqueue.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/lastfile.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/lisp.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/lread.c
@@ -4094,6 +4113,8 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexsol.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexw32.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/vm-limit.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/xwidget.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/xwidget.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w16select.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32.h
