@@ -10,7 +10,7 @@ MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Full-screen editing calculator
 
 GNU_CONFIGURE=	yes
-USES=		tar:tgz
+USES=		ncurses tar:tgz
 MAKEFILE=	makefile
 
 do-install:
