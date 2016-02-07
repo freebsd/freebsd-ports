@@ -14,13 +14,12 @@ COMMENT=	Renders ASCII art from mathematical expressions
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		readline
-
+USES=		ncurses readline
 WRKSRC=		${WRKDIR}/${PORTNAME}
+CFLAGS+=	-I${LOCALBASE}/include
+MAKE_ARGS=	LIBS="-lreadline -lncurses"
 
 PLIST_FILES=	bin/aamath man/man1/aamath.1.gz
-
-CFLAGS+=	-I${LOCALBASE}/include
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
