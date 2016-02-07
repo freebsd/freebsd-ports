@@ -58,6 +58,7 @@ Setup Apache by creating a vhost similar to the following:
 	<Directory "%%PYTHON_SITELIBDIR%%/django/contrib/admin/static/">
 		Order deny,allow
 		Allow from all
+		Require all granted
 	</Directory>
 
 	# The graphite.wsgi file has to be accessible by apache. It won't
@@ -65,11 +66,13 @@ Setup Apache by creating a vhost similar to the following:
 	<Directory %%PREFIX%%/etc/graphite/>
 		Order deny,allow
 		Allow from all
+		Require all granted
 	</Directory>
 
 	<Directory %%DATADIR%%/content/>
 		Order deny,allow
 		Allow from all
+		Require all granted
 	</Directory>
 
 </VirtualHost>
