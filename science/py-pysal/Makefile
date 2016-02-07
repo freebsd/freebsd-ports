@@ -23,4 +23,8 @@ NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
+post-patch:
+	@${REINPLACE_CMD} -e "s|check_stable=True|check_stable=False|" \
+		${WRKSRC}/pysal/config.py
+
 .include <bsd.port.mk>
