@@ -11,7 +11,7 @@ DISTNAME=	py${PORTNAME}-for-renpy-${DISTVERSION}
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Reimplementation of portions of the pygame API using SDL2
 
-LICENSE=	LGPL21 ZLIB
+LICENSE=	LGPL21+ ZLIB
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
