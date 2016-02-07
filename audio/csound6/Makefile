@@ -12,7 +12,8 @@ DIST_SUBDIR=	csound
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound synthesizer
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	boost-libs>0:${PORTSDIR}/devel/boost-libs \
 		swig>2:${PORTSDIR}/devel/swig20 \
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	boost-libs>0:${PORTSDIR}/devel/boost-libs \
 LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
-USES=		bison cmake python:2
+USES=		bison cmake localbase python:2
 CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
 		-DBUILD_JAVA_INTERFACE:BOOL=OFF \
 		-DBUILD_P5GLOVE_OPCODES:BOOL=OFF \
@@ -32,9 +33,6 @@ CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
 		-DPYTHON_MODULE_INSTALL_DIR:PATH="${PYTHONPREFIX_SITELIBDIR}"
 USE_LDCONFIG=	yes
 SSP_UNSAFE=	yes
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
 
