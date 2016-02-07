@@ -670,7 +670,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
-NGINX_MODSECURITY_VERSION=	2.9.0
+NGINX_MODSECURITY_VERSION=	2.9.1-RC1
 LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
@@ -678,7 +678,7 @@ LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libyajl.so:${PORTSDIR}/devel/yajl
 USE_APACHE=	22+
 USE_GNOME+=	libxml2
-MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION}/:modsecurity
+MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION:S/RC/rc/}/:modsecurity
 DISTFILES+=	modsecurity-${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
