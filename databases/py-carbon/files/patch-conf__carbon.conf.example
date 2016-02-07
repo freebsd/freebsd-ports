@@ -1,10 +1,10 @@
---- conf/carbon.conf.example.orig	2014-02-13 16:47:59.689772807 +0000
-+++ conf/carbon.conf.example	2014-02-13 16:48:17.904771292 +0000
+--- conf/carbon.conf.example.orig	2015-11-27 18:37:07 UTC
++++ conf/carbon.conf.example
 @@ -29,6 +29,7 @@
  #   PID_DIR        = /var/run/
  #
  #LOCAL_DATA_DIR = /opt/graphite/storage/whisper/
 +LOCAL_DATA_DIR = /var/db/carbon/whisper/
  
- # Enable daily log rotation. If disabled, a kill -HUP can be used after a manual rotate
- ENABLE_LOGROTATION = True
+ # Enable daily log rotation. If disabled, carbon will automatically re-open
+ # the file if it's rotated out of place (e.g. by logrotate daemon)

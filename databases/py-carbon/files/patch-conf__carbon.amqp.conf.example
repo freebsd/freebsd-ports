@@ -1,5 +1,5 @@
---- conf/carbon.amqp.conf.example.orig	2014-02-13 17:04:10.949705742 +0000
-+++ conf/carbon.amqp.conf.example	2014-02-13 17:04:42.404703056 +0000
+--- conf/carbon.amqp.conf.example.orig	2015-11-27 18:37:07 UTC
++++ conf/carbon.amqp.conf.example
 @@ -1,7 +1,7 @@
  # This is a configuration file with AMQP enabled
  
