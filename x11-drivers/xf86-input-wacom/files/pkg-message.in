@@ -1,16 +1,8 @@
-To configure the driver with HAL just reattach the tablet for Xserver
-to pick it up. Otherwise, use/edit the sample configuration file:
+wacom(4x) is configured automatically via devd or HAL. However, if you
+prefer to do so manually copy and edit the sample:
 
   $ cd %%PREFIX%%/etc/X11/xorg.conf.d/
   $ cp wacom.conf.sample wacom.conf
-
-On xorg-server-1.7 and earlier you may need to also merge wacom.conf
-into xorg.conf and add the following lines to ServerLayout section
-
-	InputDevice	"wacom stylus"
-	InputDevice	"wacom eraser"
-	InputDevice	"wacom touch"
-	InputDevice	"wacom pad"
 
 moused(8) may interfere with tablet input by attaching to fake /dev/ums*.
 To prevent that add a usb_quirk(4) then detach and attach the tablet.

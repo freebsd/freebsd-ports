@@ -2,6 +2,7 @@
 
 PORTNAME=	xf86-input-wacom
 PORTVERSION=	0.32.0
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	SF/linuxwacom/${PORTNAME}
 
@@ -36,10 +37,6 @@ post-patch:
 		-e 's/dir=.*xorg-server/& \
 			--define-variable prefix="$$prefix"/' \
 		${WRKSRC}/configure
-
-# XXX adjust MatchProduct to whatever Xorg/devd reports
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s/ conf//' \
-		${WRKSRC}/Makefile.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/X11/xorg.conf.d
