@@ -11,7 +11,7 @@ COMMENT=	Lambda calculus interpreter
 
 LICENSE=	GPLv2
 
-USES=		perl5 readline shebangfix
+USES=		perl5 ncurses readline shebangfix
 USE_PERL5=	build
 SHEBANG_FILES=	docs/trans_xml_for_cat.pl
 GNU_CONFIGURE=	yes
@@ -24,6 +24,10 @@ PLIST_FILES=	bin/lambda \
 
 DOCS=		lambda.html lambdamanual.html user_manual_style.css
 PORTDOCS=	*
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-ltermcap|-lncurses|' ${WRKSRC}/configure \
+		${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lambda ${STAGEDIR}${PREFIX}/bin
