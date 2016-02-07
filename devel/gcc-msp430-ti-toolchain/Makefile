@@ -45,7 +45,7 @@ NOT_FOR_ARCHS=		aarch64 arm armeb armv6 armv6hf \
 			mips mips64 mips64el mipsel mipsn32
 NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
 
-USES=		bison compiler cpe gmake libtool makeinfo tar:bzip2
+USES=		bison compiler cpe gmake libtool makeinfo ncurses tar:bzip2
 USE_CSTD=	gnu89
 
 GNU_CONFIGURE=		yes
