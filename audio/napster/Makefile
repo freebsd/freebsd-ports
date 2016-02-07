@@ -11,6 +11,7 @@ COMMENT?=	MP3 sharing, search, and chat client for the OpenNAP network
 
 CONFLICTS?=	ru-nap-*
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
