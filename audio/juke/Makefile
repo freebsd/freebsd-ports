@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.moll.no/oyvind/distfiles/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple (n)curses based juke box program
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message
