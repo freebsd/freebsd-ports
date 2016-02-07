@@ -15,33 +15,26 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	X11 TTY XVIEW
 OPTIONS_DEFAULT=	X11 TTY
+OPTIONS_SUB=	yes
 X11_DESC=	Build X11 version of calctool
 TTY_DESC=	Build tty version of calctool
 XVIEW_DESC=	Build tty version of calctool
+TTY_USES=	ncurses
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
 BINARIES+=	xcalctool
-PLIST_SUB+=	X11=""
-.else
-PLIST_SUB+=	X11="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTTY}
 BINARIES+=	tty_calctool
-PLIST_SUB+=	TTY=""
-.else
-PLIST_SUB+=	TTY="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXVIEW}
 BINARIES+=	xv_calctool
 LIB_DEPENDS+=	libxview.so:${PORTSDIR}/x11-toolkits/xview
-PLIST_SUB+=	XVIEW=""
-.else
-PLIST_SUB+=	XVIEW="@comment "
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -55,6 +48,7 @@ post-patch:
 				-e "s#%%LOCALBASE%%#${LOCALBASE}#g" \
 				-e "s#%%BINARIES%%#${BINARIES}#g" \
 				-e "s#%%DATADIR%%#${DATADIR}#g" \
+				-e 's|-ltermcap|$${LDFLAGS} -lncurses|g' \
 				${WRKSRC}/Makefile
 
 do-install:
