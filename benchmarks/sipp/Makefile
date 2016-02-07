@@ -16,7 +16,7 @@ GH_ACCOUNT=	SIPp
 
 PLIST_FILES=	bin/sipp man/man1/sipp.1.gz
 
-USES=		gmake
+USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	OPENSSL GSL PCAP RTPSTREAM SCTP
@@ -42,6 +42,9 @@ PCAP_FILES=	dtmf_2833_0.pcap dtmf_2833_1.pcap dtmf_2833_2.pcap \
 		g711a.pcap
 
 PCAP_PLIST_FILES=	${PCAP_FILES:S|^|${DATADIR}/pcap/|}
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-lcurses|-lncurses|' ${WRKSRC}/configure
 
 post-patch-PCAP-on:
 	@${REINPLACE_CMD} \
