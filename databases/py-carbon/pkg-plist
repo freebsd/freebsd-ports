@@ -3,108 +3,108 @@ bin/carbon-cache.py
 bin/carbon-client.py
 bin/carbon-relay.py
 bin/validate-storage-schemas.py
-@sample %%ETCDIR%%/rewrite-rules.conf.example etc/carbon/rewrite-rules.conf
+@sample %%ETCDIR%%/aggregation-rules.conf.example etc/carbon/aggregation-rules.conf
+@sample %%ETCDIR%%/blacklist.conf.example etc/carbon/blacklist.conf
 @sample %%ETCDIR%%/carbon.amqp.conf.example etc/carbon/carbon.amqp.conf
 @sample %%ETCDIR%%/carbon.conf.example etc/carbon/carbon.conf
-@sample %%ETCDIR%%/aggregation-rules.conf.example etc/carbon/aggregation-rules.conf
 @sample %%ETCDIR%%/relay-rules.conf.example etc/carbon/relay-rules.conf
-@sample %%ETCDIR%%/storage-schemas.conf.example etc/carbon/storage-schemas.conf
-@sample %%ETCDIR%%/blacklist.conf.example etc/carbon/blacklist.conf
+@sample %%ETCDIR%%/rewrite-rules.conf.example etc/carbon/rewrite-rules.conf
 @sample %%ETCDIR%%/storage-aggregation.conf.example etc/carbon/storage-aggregation.conf
+@sample %%ETCDIR%%/storage-schemas.conf.example etc/carbon/storage-schemas.conf
 @sample %%ETCDIR%%/whitelist.conf.example etc/carbon/whitelist.conf
-%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.py
-%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.py
-%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_cache_plugin.py
-%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.pyc
-%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.pyc
-%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_cache_plugin.pyc
-%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.pyo
-%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.pyo
-%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_cache_plugin.pyo
-%%PYTHON_SITELIBDIR%%/carbon/amqp_publisher.py
-%%PYTHON_SITELIBDIR%%/carbon/cache.py
-%%PYTHON_SITELIBDIR%%/carbon/client.py
-%%PYTHON_SITELIBDIR%%/carbon/exceptions.py
-%%PYTHON_SITELIBDIR%%/carbon/util.py
-%%PYTHON_SITELIBDIR%%/carbon/relayrules.py
-%%PYTHON_SITELIBDIR%%/carbon/hashing.py
-%%PYTHON_SITELIBDIR%%/carbon/log.py
-%%PYTHON_SITELIBDIR%%/carbon/manhole.py
-%%PYTHON_SITELIBDIR%%/carbon/events.py
 %%PYTHON_SITELIBDIR%%/carbon/__init__.py
-%%PYTHON_SITELIBDIR%%/carbon/routers.py
-%%PYTHON_SITELIBDIR%%/carbon/conf.py
-%%PYTHON_SITELIBDIR%%/carbon/management.py
-%%PYTHON_SITELIBDIR%%/carbon/writer.py
-%%PYTHON_SITELIBDIR%%/carbon/amqp_listener.py
-%%PYTHON_SITELIBDIR%%/carbon/rewrite.py
-%%PYTHON_SITELIBDIR%%/carbon/instrumentation.py
-%%PYTHON_SITELIBDIR%%/carbon/storage.py
-%%PYTHON_SITELIBDIR%%/carbon/state.py
-%%PYTHON_SITELIBDIR%%/carbon/service.py
-%%PYTHON_SITELIBDIR%%/carbon/protocols.py
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.py
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/__init__.py
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/receiver.py
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/buffers.py
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.pyc
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/__init__.pyc
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/receiver.pyc
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/buffers.pyc
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.pyo
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/__init__.pyo
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/receiver.pyo
-%%PYTHON_SITELIBDIR%%/carbon/aggregator/buffers.pyo
-%%PYTHON_SITELIBDIR%%/carbon/amqp0-8.xml
-%%PYTHON_SITELIBDIR%%/carbon/amqp_publisher.pyc
-%%PYTHON_SITELIBDIR%%/carbon/cache.pyc
-%%PYTHON_SITELIBDIR%%/carbon/client.pyc
-%%PYTHON_SITELIBDIR%%/carbon/exceptions.pyc
-%%PYTHON_SITELIBDIR%%/carbon/util.pyc
-%%PYTHON_SITELIBDIR%%/carbon/relayrules.pyc
-%%PYTHON_SITELIBDIR%%/carbon/hashing.pyc
-%%PYTHON_SITELIBDIR%%/carbon/log.pyc
-%%PYTHON_SITELIBDIR%%/carbon/manhole.pyc
-%%PYTHON_SITELIBDIR%%/carbon/events.pyc
 %%PYTHON_SITELIBDIR%%/carbon/__init__.pyc
-%%PYTHON_SITELIBDIR%%/carbon/routers.pyc
-%%PYTHON_SITELIBDIR%%/carbon/conf.pyc
-%%PYTHON_SITELIBDIR%%/carbon/management.pyc
-%%PYTHON_SITELIBDIR%%/carbon/writer.pyc
-%%PYTHON_SITELIBDIR%%/carbon/amqp_listener.pyc
-%%PYTHON_SITELIBDIR%%/carbon/rewrite.pyc
-%%PYTHON_SITELIBDIR%%/carbon/instrumentation.pyc
-%%PYTHON_SITELIBDIR%%/carbon/storage.pyc
-%%PYTHON_SITELIBDIR%%/carbon/state.pyc
-%%PYTHON_SITELIBDIR%%/carbon/service.pyc
-%%PYTHON_SITELIBDIR%%/carbon/protocols.pyc
-%%PYTHON_SITELIBDIR%%/carbon/amqp_publisher.pyo
-%%PYTHON_SITELIBDIR%%/carbon/cache.pyo
-%%PYTHON_SITELIBDIR%%/carbon/client.pyo
-%%PYTHON_SITELIBDIR%%/carbon/exceptions.pyo
-%%PYTHON_SITELIBDIR%%/carbon/util.pyo
-%%PYTHON_SITELIBDIR%%/carbon/relayrules.pyo
-%%PYTHON_SITELIBDIR%%/carbon/hashing.pyo
-%%PYTHON_SITELIBDIR%%/carbon/log.pyo
-%%PYTHON_SITELIBDIR%%/carbon/manhole.pyo
-%%PYTHON_SITELIBDIR%%/carbon/events.pyo
 %%PYTHON_SITELIBDIR%%/carbon/__init__.pyo
-%%PYTHON_SITELIBDIR%%/carbon/routers.pyo
-%%PYTHON_SITELIBDIR%%/carbon/conf.pyo
-%%PYTHON_SITELIBDIR%%/carbon/management.pyo
-%%PYTHON_SITELIBDIR%%/carbon/writer.pyo
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/__init__.py
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/__init__.pyc
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/__init__.pyo
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/buffers.py
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/buffers.pyc
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/buffers.pyo
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/receiver.py
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/receiver.pyc
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/receiver.pyo
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.py
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.pyc
+%%PYTHON_SITELIBDIR%%/carbon/aggregator/rules.pyo
+%%PYTHON_SITELIBDIR%%/carbon/amqp0-8.xml
+%%PYTHON_SITELIBDIR%%/carbon/amqp_listener.py
+%%PYTHON_SITELIBDIR%%/carbon/amqp_listener.pyc
 %%PYTHON_SITELIBDIR%%/carbon/amqp_listener.pyo
-%%PYTHON_SITELIBDIR%%/carbon/rewrite.pyo
+%%PYTHON_SITELIBDIR%%/carbon/amqp_publisher.py
+%%PYTHON_SITELIBDIR%%/carbon/amqp_publisher.pyc
+%%PYTHON_SITELIBDIR%%/carbon/amqp_publisher.pyo
+%%PYTHON_SITELIBDIR%%/carbon/cache.py
+%%PYTHON_SITELIBDIR%%/carbon/cache.pyc
+%%PYTHON_SITELIBDIR%%/carbon/cache.pyo
+%%PYTHON_SITELIBDIR%%/carbon/client.py
+%%PYTHON_SITELIBDIR%%/carbon/client.pyc
+%%PYTHON_SITELIBDIR%%/carbon/client.pyo
+%%PYTHON_SITELIBDIR%%/carbon/conf.py
+%%PYTHON_SITELIBDIR%%/carbon/conf.pyc
+%%PYTHON_SITELIBDIR%%/carbon/conf.pyo
+%%PYTHON_SITELIBDIR%%/carbon/events.py
+%%PYTHON_SITELIBDIR%%/carbon/events.pyc
+%%PYTHON_SITELIBDIR%%/carbon/events.pyo
+%%PYTHON_SITELIBDIR%%/carbon/exceptions.py
+%%PYTHON_SITELIBDIR%%/carbon/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/carbon/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/carbon/hashing.py
+%%PYTHON_SITELIBDIR%%/carbon/hashing.pyc
+%%PYTHON_SITELIBDIR%%/carbon/hashing.pyo
+%%PYTHON_SITELIBDIR%%/carbon/instrumentation.py
+%%PYTHON_SITELIBDIR%%/carbon/instrumentation.pyc
 %%PYTHON_SITELIBDIR%%/carbon/instrumentation.pyo
-%%PYTHON_SITELIBDIR%%/carbon/storage.pyo
-%%PYTHON_SITELIBDIR%%/carbon/state.pyo
-%%PYTHON_SITELIBDIR%%/carbon/service.pyo
+%%PYTHON_SITELIBDIR%%/carbon/log.py
+%%PYTHON_SITELIBDIR%%/carbon/log.pyc
+%%PYTHON_SITELIBDIR%%/carbon/log.pyo
+%%PYTHON_SITELIBDIR%%/carbon/management.py
+%%PYTHON_SITELIBDIR%%/carbon/management.pyc
+%%PYTHON_SITELIBDIR%%/carbon/management.pyo
+%%PYTHON_SITELIBDIR%%/carbon/manhole.py
+%%PYTHON_SITELIBDIR%%/carbon/manhole.pyc
+%%PYTHON_SITELIBDIR%%/carbon/manhole.pyo
+%%PYTHON_SITELIBDIR%%/carbon/protocols.py
+%%PYTHON_SITELIBDIR%%/carbon/protocols.pyc
 %%PYTHON_SITELIBDIR%%/carbon/protocols.pyo
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.py
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.pyc
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.pyo
-@dir /var/db/carbon/whisper
-@dir /var/db/carbon/rrd
-@dir /var/db/carbon/log
+%%PYTHON_SITELIBDIR%%/carbon/relayrules.py
+%%PYTHON_SITELIBDIR%%/carbon/relayrules.pyc
+%%PYTHON_SITELIBDIR%%/carbon/relayrules.pyo
+%%PYTHON_SITELIBDIR%%/carbon/rewrite.py
+%%PYTHON_SITELIBDIR%%/carbon/rewrite.pyc
+%%PYTHON_SITELIBDIR%%/carbon/rewrite.pyo
+%%PYTHON_SITELIBDIR%%/carbon/routers.py
+%%PYTHON_SITELIBDIR%%/carbon/routers.pyc
+%%PYTHON_SITELIBDIR%%/carbon/routers.pyo
+%%PYTHON_SITELIBDIR%%/carbon/service.py
+%%PYTHON_SITELIBDIR%%/carbon/service.pyc
+%%PYTHON_SITELIBDIR%%/carbon/service.pyo
+%%PYTHON_SITELIBDIR%%/carbon/state.py
+%%PYTHON_SITELIBDIR%%/carbon/state.pyc
+%%PYTHON_SITELIBDIR%%/carbon/state.pyo
+%%PYTHON_SITELIBDIR%%/carbon/storage.py
+%%PYTHON_SITELIBDIR%%/carbon/storage.pyc
+%%PYTHON_SITELIBDIR%%/carbon/storage.pyo
+%%PYTHON_SITELIBDIR%%/carbon/util.py
+%%PYTHON_SITELIBDIR%%/carbon/util.pyc
+%%PYTHON_SITELIBDIR%%/carbon/util.pyo
+%%PYTHON_SITELIBDIR%%/carbon/writer.py
+%%PYTHON_SITELIBDIR%%/carbon/writer.pyc
+%%PYTHON_SITELIBDIR%%/carbon/writer.pyo
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.py
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.pyc
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.pyo
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_cache_plugin.py
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_cache_plugin.pyc
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_cache_plugin.pyo
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.py
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.pyc
+%%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.pyo
 @dir /var/db/carbon/lists
+@dir /var/db/carbon/log
+@dir /var/db/carbon/rrd
+@dir /var/db/carbon/whisper
 @dir /var/db/carbon

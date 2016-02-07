@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	carbon
-PORTVERSION=	0.9.12
-PORTREVISION=	2
+PORTVERSION=	0.9.15
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,5 +20,9 @@ USES=		python:2 twisted:run
 USE_RC_SUBR=	carbon
 USE_GITHUB=	yes
 GH_ACCOUNT=	graphite-project
+
+post-stage:
+	${RM} -rf ${STAGEDIR}${PREFIX}/examples/init.d
+	${RMDIR} ${STAGEDIR}${PREFIX}/examples
 
 .include <bsd.port.mk>
