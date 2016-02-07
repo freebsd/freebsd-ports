@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-PORTVERSION=	${EMACS_VER}.${EMACS_REV}
+PORTVERSION=	${EMACS_VER}
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
+MASTER_SITES=	GNU_ALPHA/emacs/pretest
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -22,18 +23,12 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]*              \
 		xemacs-devel-[0-9]* xemacs-mule-[0-9]*                \
 		xemacs-devel-mule-[0-9]* emacs-nox11-[0-9]*
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	0a7ad07
-
-EMACS_VER=	25.0.50
-EMACS_REV=	20160102
+EMACS_VER=	25.0.90
 GNU_CONFIGURE=	yes
-USES=		autoreconf cpe gmake makeinfo ncurses pkgconfig
+USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO_PATH=	${DATADIR_REL}/info
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
 CPE_VENDOR=	gnu
 
 SUB_LIST+=	ARCHLIBDIR=${PREFIX}/libexec/emacs/${EMACS_VER}/\
@@ -57,7 +52,7 @@ INFO=		ada-mode auth autotype bovine calc ccmode cl dbus     \
 
 OPTIONS_DEFINE=	X11 ACL DBUS GCONF GIF JPEG M17N OTF PNG SOUND        \
 		SOURCES SVG TIFF SCROLLBARS XFT XIM XML XPM MAGICK    \
-		GNUTLS GSETTINGS LTO FILENOTIFY LLDB CAIRO MODULES
+		GNUTLS GSETTINGS LTO FILENOTIFY LLDB CAIRO MODULES XWIDGETS
 
 OPTIONS_SINGLE=	X11 SOUND
 
@@ -75,6 +70,7 @@ FILENOTIFY_DESC=File notification support
 LTO_DESC=	Enable link-time optimization (requires GCC 4.6+)
 LLDB_DESC=	Enable lldb support for GUD (from llvm.org)
 MODULES_DESC=	Dynamic modules support
+XWIDGETS_DESC=  Enable use of some GTK widgets in Emacs buffers
 
 OPTIONS_SINGLE_X11=	GTK2 GTK3 XAW XAW3D MOTIF
 OPTIONS_SINGLE_SOUND=	ALSA OSS
@@ -177,6 +173,9 @@ CAIRO_CONFIGURE_ON=	--with-cairo
 
 MODULES_CONFIGURE_ON=	--with-modules
 
+XWIDGETS_CONFIGURE_ON=	--with-xwidgets
+XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+
 .include <bsd.port.options.mk>
 
 # clang is broken on i386 platform in -O2, due to use of alloca, and
@@ -196,7 +195,7 @@ INSTALLS_ICONS=	yes
 .if ${PORT_OPTIONS:MM17N}
 IGNORE=		m17n requires Xft. Please run 'make config'
 .elif ${PORT_OPTIONS:MOTF}
-IGNORE=		Opentype fonts require Xft. Please run 'make config'
+IGNORE=		support for Opentype fonts require Xft. Please run 'make config'
 .endif
 .endif
 .else
@@ -210,7 +209,13 @@ IGNORE=		option ${OPT} requires X11 option
 
 .if !${PORT_OPTIONS:MDBUS}
 .if ${PORT_OPTIONS:MGSETTINGS}
-IGNORE=		GSettings requires DBUS. Please run 'make config'
+IGNORE=		support for GSettings requires DBUS. Please run 'make config'
+.endif
+.endif
+
+.if !${PORT_OPTIONS:MGTK3}
+.if ${PORT_OPTIONS:MXWIDGETS}
+IGNORE=		support for XWidgets requires GTK3. Please run 'make config'
 .endif
 .endif
 
@@ -229,9 +234,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/^Terminal=.*$$/Terminal=true/'        \
 		${WRKSRC}/etc/emacs.desktop
 .endif
-
-pre-configure:
-	@cd ${WRKSRC} && ./autogen.sh
 
 post-install:
 .if ${PORT_OPTIONS:MSOURCES}
