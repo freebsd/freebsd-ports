@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=all \
 		--disable-pch
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lboost_system
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
