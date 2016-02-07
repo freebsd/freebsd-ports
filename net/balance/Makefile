@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	balance
-PORTVERSION=	3.56
+PORTVERSION=	3.57
 CATEGORIES=	net
 MASTER_SITES=	http://www.inlab.de/
 
