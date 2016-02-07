@@ -22,4 +22,7 @@ PORTDOCS=	*
 
 CONFLICTS_INSTALL=	libedit-*
 
+post-patch:
+	${REINPLACE_CMD} -e 's|-ltermcap||' ${WRKSRC}/examples/Makefile.am
+
 .include <bsd.port.mk>
