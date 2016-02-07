@@ -13,7 +13,7 @@ COMMENT?=	Lightweight CLI (command line) BitTorrent client and utilities
 
 SLAVEPORT?=	cli
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 .if ${SLAVEPORT} == cli
 LICENSE+=	MIT
 LICENSE_COMB=	multi
