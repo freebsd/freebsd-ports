@@ -1,4 +1,4 @@
-#-*- tab-width: 4; -*-
+#-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
 # $FreeBSD$
@@ -13,12 +13,8 @@
 #
 # ======================= /USERS ================================
 
-.if !defined(_POSTMKINCLUDED) && !defined(Gnome_Pre_Include)
-
 # Please make sure all changes to this file are passed through the maintainer.
 # Do not commit them yourself (unless of course you're the Port's Wraith ;).
-Gnome_Include_MAINTAINER=	gnome@FreeBSD.org
-Gnome_Pre_Include=			bsd.gnome.mk
 
 # This section defines possible names of GNOME components and all information
 # necessary for ports to use those components.
@@ -59,6 +55,16 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #				and will display correctly. This macro isn't needed
 #				for QT based applications, which use a different method.
 #
+# MAINTAINER: gnome@FreeBSD.org
+
+.if !defined(_INCLUDE_USES_GNOME_MK)
+_INCLUDE_USES_GNOME_MK=        yes
+
+_USES_POST+=	gnome
+
+.if !empty(gnome_ARGS)
+IGNORE=	USES=gnome takes no arguments
+.endif
 
 # non-version specific components
 _USE_GNOME_ALL= esound intlhack intltool introspection \
@@ -554,17 +560,6 @@ HAVE_GNOME+=	${component}
 .  endif
 .endif
 
-.endif
-# End of optional part.
-
-.if defined(_POSTMKINCLUDED) && !defined(Gnome_Post_Include)
-
-Gnome_Post_Include=		bsd.gnome.mk
-
-.if !defined(Gnome_Pre_Include)
-.error The Pre include part of bsd.gnome.mk part is not included. Did you forget WANT_GNOME=yes before bsd.port.pre.mk?
-.endif
-
 .if defined(USE_GNOME)
 # First of all expand all USE_GNOME_IMPL recursively
 . for component in ${_USE_GNOME_ALL}
@@ -653,14 +648,6 @@ MAKE_ENV+=	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 . endif
 .endif
 
-.if defined(GNOME_PRE_PATCH)
-
-pre-patch: gnome-pre-patch
-
-gnome-pre-patch:
-	@${GNOME_PRE_PATCH:C/^;//1}
-.endif
-
 .if defined(WANT_GNOME)
 USE_GNOME?=
 .  if ${_USE_GNOME_SAVED}==${USE_GNOME}
@@ -676,9 +663,23 @@ RUN_DEPENDS+=	${GNOME_SUBR}:${PORTSDIR}/sysutils/gnome_subr
 SUB_LIST+=		GNOME_SUBR=${GNOME_SUBR}
 .endif
 
+.endif
+# end of the part
+
+.if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_GNOME_POST_MK)
+_INCLUDE_USES_GNOME_POST_MK=     yes
+
+.if defined(GNOME_PRE_PATCH)
+
+_USES_patch+=	290:gnome-pre-patch
+
+gnome-pre-patch:
+	@${GNOME_PRE_PATCH:C/^;//1}
+.endif
+
 .if defined(GCONF_SCHEMAS) || defined(INSTALLS_OMF) || defined(INSTALLS_ICONS) \
 	|| defined(GLIB_SCHEMAS)
-post-install: gnome-post-install
+_USES_install+=	690:gnome-post-install
 
 gnome-post-install:
 .  if defined(GCONF_SCHEMAS)
