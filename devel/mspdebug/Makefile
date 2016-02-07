@@ -18,7 +18,7 @@ OPTIONS_DEFINE=		READLINE LIBMSP430
 OPTIONS_DEFAULT=	READLINE LIBMSP430
 LIBMSP430_DESC=		Use TI libmsp430 USB driver
 
-READLINE_USES=		readline
+READLINE_USES=		readline pkgconfig
 READLINE_MAKE_ARGS_OFF=	WITHOUT_READLINE=1
 
 LIBMSP430_LIB_DEPENDS=	libmsp430.so:${PORTSDIR}/devel/msp430-debug-stack
@@ -31,5 +31,8 @@ PLIST_FILES=	bin/mspdebug \
 		share/mspdebug/ti_3410.fw.txt \
 		share/doc/mspdebug/EmbeddedMode.txt \
 		share/doc/mspdebug/README
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ltermcap||' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
