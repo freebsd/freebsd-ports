@@ -53,6 +53,7 @@ OPTIONS_SINGLE_BACKEND=	GCC LLVM
 
 GCC_DESC=		Code generator is GCC  (mature)
 LLVM_DESC=		Code generator is LLVM (experimental)
+LLVM_USES=		libedit ncurses
 
 .if exists (/sbin/hammer)
 OPTIONS_DEFAULT=	LLVM
@@ -118,6 +119,7 @@ post-patch:
 		-e 's|(INSTALL_DATA)|(BSD_INSTALL_DATA)|' \
 		${WRKSRC}/configure ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|clang++|clang++${LLVMVER}|' \
+		-e 's|\((LDFLAGS)\)|\1 -L${LOCALBASE}/lib|' \
 		${WRKSRC}/src/ortho/llvm/Makefile
 
 .if ${PORT_OPTIONS:MGCC}
