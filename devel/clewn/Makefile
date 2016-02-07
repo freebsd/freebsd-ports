@@ -12,8 +12,11 @@ COMMENT=	Clewn provides Gdb support within Vim
 
 RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim
 
-USES=		gmake readline
+USES=		gmake ncurses readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	vimdir=${PREFIX}/share/vim/vimfiles
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-lcurses|-lncurses|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
