@@ -11,7 +11,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/./-/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts PNG files to Windows icon resource files
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
@@ -23,6 +24,8 @@ LDFLAGS+=	$$(libpng-config --ldflags)
 PORTDOCS=	bmp.txt
 PLIST_FILES=	bin/png2ico man/man1/png2ico.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	(cd ${WRKSRC} && ${CXX} ${CXXFLAGS} ${CPPFLAGS} -o png2ico \
 		png2ico.cpp ${LDFLAGS})
@@ -30,6 +33,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/png2ico ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/doc/png2ico.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
