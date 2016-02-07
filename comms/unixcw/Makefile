@@ -24,13 +24,17 @@ CONFIGURE_ARGS+=	--includedir="${LOCALBASE}/include" \
 			--disable-alsa --disable-pulseaudio
 
 USE_LDCONFIG=	yes
-USES+=		gmake libtool pkgconfig
+USES+=		gmake libtool ncurses pkgconfig
 USE_CSTD=	gnu99
 WRKSRC=		${WRKDIR}/unixcw-${PORTVERSION}
 MAJOR_LIB_VER=	6
 MINOR_LIB_VER=	5.1
 PLIST_SUB=	MAJOR_LIB_VER=${MAJOR_LIB_VER}
 PLIST_SUB+=	MINOR_LIB_VER=${MINOR_LIB_VER}
+
+post-patch:
+	${REINPLACE_CMD} -e 's|curses|ncurses|g' ${WRKSRC}/configure \
+		${WRKSRC}/src/cwcp/Makefile.in
 
 post-install:
 .ifndef XCWCP
