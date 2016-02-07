@@ -16,9 +16,9 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libicutu.so:${PORTSDIR}/devel/icu
 
-USES=		gmake libtool pkgconfig pathfix python
+USES=		gmake libtool pkgconfig pathfix python:2
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 introspection:build
+USE_GNOME=	glib20 introspection:build pygobject3
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-gtk-doc-html \
@@ -29,15 +29,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc-html \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 3000
-USE_GNOME+=	py3gobject3
-.else
-USE_GNOME+=	pygobject3
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's| -Wempty-body||' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

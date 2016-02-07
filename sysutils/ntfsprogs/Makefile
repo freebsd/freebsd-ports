@@ -42,12 +42,6 @@ SUB_FILES=	pkg-message
 WANT_GNOME=	yes
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-CFLAGS:=	${CFLAGS:C/-O.?/-O0/g}
-.endif
-
 .if ${PORT_OPTIONS:MGNOMEVFS2}
 CONFIGURE_ARGS+=--enable-gnome-vfs
 USE_GNOME=	gnomevfs2
@@ -55,6 +49,12 @@ PLIST_SUB+=	GNOMEVFS2=""
 .else
 CONFIGURE_ARGS+=--disable-gnome-vfs
 PLIST_SUB+=	GNOMEVFS2="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS:=	${CFLAGS:C/-O.?/-O0/g}
 .endif
 
 .if ${PORT_OPTIONS:MLOCK}

@@ -45,7 +45,7 @@ PORTDOCS=	MAINREADME.html MP4LIVE_INTERNALS.html MPEG4IP_Guide.pdf \
 		ReadingList.txt encoding.htm m4rm.html \
 		mp4player.jpg mrm.html pi.html prm.html
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 ###
 ## Auto detect possible extensions
@@ -170,4 +170,4 @@ CONFIGURE_ARGS+=	--disable-mmx
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

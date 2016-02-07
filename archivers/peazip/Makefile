@@ -40,7 +40,7 @@ QT4_DESC=		Use qt4 interface
 
 OPTIONS_DEFAULT=	GTK2 7Z
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
@@ -112,4 +112,4 @@ do-install:
 		${INSTALL_DATA} peazip.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_SCRIPT} ${WRKDIR}/pea ${WRKDIR}/pealauncher ${WRKDIR}/peazip ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
