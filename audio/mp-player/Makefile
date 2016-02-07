@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
 
+USES=		ncurses
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lmikmod -lpthread -lncurses -lpanel
 DEFINES=	-D_REENTRANT
