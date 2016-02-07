@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:${PORTSDIR}/science/udunits \
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libpng.so:${PORTSDIR}/graphics/png
 
-USES=		jpeg
+USES=		jpeg ncurses
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV+=		SUPPLIBS="${LOCALBASE}"
 CONFIGURE_ARGS+=	--enable-dyn-supplibs \
