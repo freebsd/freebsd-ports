@@ -1,8 +1,6 @@
---- modules/json/c/json.y
+--- modules/json/c/json.y.orig	2016-02-04 05:14:14 UTC
 +++ modules/json/c/json.y
-@@ -3,26 +3,32 @@
-  * Mikhail.
-  */
+@@ -5,11 +5,15 @@
  
  %{
  #include <tcl.h>
@@ -18,7 +16,7 @@
  
  #include <json_y.h>
  
- #define TOKEN(tok)   TRACE (("TOKEN  %s\n", tok))
+@@ -17,10 +21,12 @@
  #define TOKEN1(tok)  TRACE (("TOKEN  %s (%s)\n", tok, Tcl_GetString(context->obj)))
  #define REDUCE(rule) TRACE (("REDUCE %s\n", rule))
  
@@ -34,11 +32,7 @@
  static void jsonerror(struct context *, const char *);
  static int  jsonlexp(struct context *context);
  
- #define YYPARSE_PARAM_TYPE void *
- #define YYPARSE_PARAM	   context
-@@ -105,18 +111,27 @@
- 	}
- 	;
+@@ -107,14 +113,23 @@ values	: value
  
  members	: member
  	{
@@ -62,15 +56,10 @@
  		$$ = $1;
  	}
  	;
- 
- member	: string ':' value
-@@ -177,10 +192,69 @@
-       continue;
-     }
-     break;
+@@ -180,6 +195,65 @@ jsonskip(struct context *context)
    }
  }
-+
+ 
 +/*
 + * JSON has 3 string-literals: "null", "true", and "false". Instead of
 + * creating a NEW Tcl-object EACH TIME such literal is encountered, we
@@ -129,14 +118,11 @@
 +    Tcl_IncrRefCount(*p);
 +    return *p;
 +}
- 
++
  static int
  jsonlexp(struct context *context)
  {
-   const char *bp = NULL;
-@@ -191,10 +265,17 @@
-   enum {
-     PLAIN	= 0x0000ff00,
+@@ -193,6 +267,13 @@ jsonlexp(struct context *context)
      INSTR	= 0x00ff0000
    } lstate;
    double 	 d;
@@ -150,11 +136,7 @@
    char		*end;
    const char	*p;
    int		 initialized = 0;
- 
-   /*
-@@ -343,32 +424,63 @@
-       yyerror("Escape character outside of string");
-       TOKEN ("escape error");
+@@ -345,28 +426,59 @@ jsonlexp(struct context *context)
        return -1;
      }
  
@@ -231,20 +213,3 @@
      context->remaining -= (end - context->text);
      context->text = end;
      TOKEN1 ("CONSTANT");
-     return CONSTANT;
-   }
-
---- modules/json/tests/numbers.json
-+++ modules/json/tests/numbers.json
-@@ -0,0 +1,6 @@
-+{"numbers": {
-+	"int"	:	123,
-+	"long"	:	1234567890123456789,
-+	"bigint":	12345678901234567890123456789012345678901234567890123456789
-+}
-+}
-
---- modules/json/tests/numbers.result
-+++ modules/json/tests/numbers.result
-@@ -0,0 +1,1 @@
-+numbers {int 123 long 1234567890123456789 bigint 12345678901234567890123456789012345678901234567890123456789}

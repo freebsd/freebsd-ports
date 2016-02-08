@@ -217,17 +217,6 @@
 +#include "util.h"  /* Allocation utilities */
  
  /*
-@@ -421,8 +423,8 @@ rde_param_query_ls (RDE_PARAM p, long in
- }
- 
--SCOPE long int
-+SCOPE intptr_t
- rde_param_query_lstop (RDE_PARAM p)
- {
--    (long int) rde_stack_top (p->LS);
-+    return (intptr_t) rde_stack_top (p->LS);
- }
- 
 @@ -671,5 +673,5 @@ error_set (RDE_PARAM p, long int s)
      ASSERT_BOUNDS(s,p->numstr);
  
@@ -515,17 +504,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -883,5 +885,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -816,17 +794,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -879,17 +846,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -942,17 +898,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1005,17 +950,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1068,17 +1002,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1131,17 +1054,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1194,17 +1106,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1257,17 +1158,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1320,17 +1210,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1383,17 +1262,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1446,17 +1314,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1509,17 +1366,6 @@
 +	#include <stdlib.h>
  	#include <string.h>
  	#define SCOPE static
-@@ -733,8 +735,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -897,5 +899,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1579,17 +1425,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1641,17 +1476,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1703,17 +1527,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1765,17 +1578,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1827,17 +1629,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1889,17 +1680,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -1951,17 +1731,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -2013,17 +1782,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -2075,17 +1833,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -2137,17 +1884,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -2199,17 +1935,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);
@@ -2261,17 +1986,6 @@
 +	#include <stdint.h>
  	#include <stdlib.h>
  	#include <ctype.h>
-@@ -700,8 +700,8 @@
- 	    rde_stack_get (p->LS, lc, lv);
- 	}
--	SCOPE long int
-+	SCOPE intptr_t
- 	rde_param_query_lstop (RDE_PARAM p)
- 	{
--	    (long int) rde_stack_top (p->LS);
-+	    return (intptr_t) rde_stack_top (p->LS);
- 	}
- 	SCOPE Tcl_HashTable*
 @@ -864,5 +864,5 @@
  	    p->ER->msg      = rde_stack_new (NULL);
  	    ASSERT_BOUNDS(s,p->numstr);

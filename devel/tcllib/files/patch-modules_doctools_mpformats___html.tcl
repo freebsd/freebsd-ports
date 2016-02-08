@@ -1,4 +1,4 @@
---- modules/doctools/mpformats/_html.tcl.orig	2015-04-30 04:21:20 UTC
+--- modules/doctools/mpformats/_html.tcl.orig	2016-02-04 05:14:14 UTC
 +++ modules/doctools/mpformats/_html.tcl
 @@ -129,7 +129,7 @@ proc stable {}         {return [markup "
  proc link   {text url} {return [markup "<a href=\"$url\">"]$text[markup </a>]}
