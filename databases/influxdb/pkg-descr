@@ -1,13 +1,16 @@
-An open-source, distributed, time series database with no external dependencies.
-InfluxDB is the new home for all of your metrics, events, and analytics.
+An open-source, distributed, time series database with no external
+dependencies. InfluxDB is the new home for all of your metrics,
+events, and analytics.
 
-InfluxDB is a time series, metrics, and analytics database. It'written in Go and
-has no external dependencies. That means once you install it there's nothing
-else to manage (like Redis, ZooKeeper, HBase, or whatever).
+InfluxDB is a time series, metrics, and analytics database. It'written
+in Go and has no external dependencies. That means once you install
+it there's nothing else to manage (like Redis, ZooKeeper, HBase,
+or whatever).
 
-InfluxDB is targeted at use cases for DevOps, metrics, sensor data, and
-real-time analytics. It arose from our need for a database like this on more
-than a few previous products we' built. You can read more about our jurney from 
-SaaS application to open source time series database.
+InfluxDB is targeted at use cases for DevOps, metrics, sensor data,
+and real-time analytics. It arose from our need for a database like
+this on more than a few previous products we' built. You can read
+more about our jurney from SaaS application to open source time
+series database.
 
 WWW: http://influxdb.com
