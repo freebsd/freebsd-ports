@@ -9,7 +9,7 @@ lib/girepository-1.0/Rsvg-2.0.typelib
 lib/librsvg-2.a
 lib/librsvg-2.so
 lib/librsvg-2.so.2
-lib/librsvg-2.so.2.40.12
+lib/librsvg-2.so.%%PORTVERSION%%
 libdata/pkgconfig/librsvg-2.0.pc
 man/man1/rsvg-convert.1.gz
 share/doc/rsvg-2.0/RsvgHandle.html
