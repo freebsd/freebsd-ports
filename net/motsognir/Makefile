@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	motsognir
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.8
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/v${PORTVERSION}
 
-MAINTAINER=	mateusz@viste.fr
+MAINTAINER=	kaltheat@gmail.com
 COMMENT=	Full-featured gopher server without dependencies
 
 LICENSE=	GPLv3
