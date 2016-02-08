@@ -12,6 +12,7 @@ MAINTAINER=	milios@ccsys.com
 COMMENT=	Decentralized, open DNS system and general purpose key/value store
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
