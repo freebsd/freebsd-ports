@@ -17,6 +17,7 @@ LIB_DEPENDS=	liboop.so:${PORTSDIR}/devel/liboop \
 		libgmp.so:${PORTSDIR}/math/gmp \
 		libnettle.so:${PORTSDIR}/security/nettle
 
+BROKEN=		does not build
 BROKEN_FreeBSD_9=	does not build
 BROKEN_sparc64=	fails to compile: unexpected identifier
 
