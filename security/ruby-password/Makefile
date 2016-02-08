@@ -3,7 +3,7 @@
 
 PORTNAME=	password
 PORTVERSION=	0.5.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ USE_RUBY_EXTCONF=	yes
 RUBY_SHEBANG_FILES=	example/*
 SADIR=	lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 
-CONFIGURE_ARGS=	--with-crack-dict="${LOCALBASE}/libdata/cracklib/pw_dict.pwd"
+CONFIGURE_ARGS=	--with-crack-dict="${LOCALBASE}/libdata/cracklib/cracklib-words.pwd"
 INSTALL_TARGET=	site-install
 MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
