@@ -34,6 +34,7 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
+CFLAGS+=	-isystem ${LOCALBASE}/include/evhtp
 
 PATHFIX_MAKEFILEIN=	Makefile.am
 
