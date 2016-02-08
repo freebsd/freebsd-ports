@@ -14,6 +14,7 @@ COMMENT=	PECL extension for ncurses
 
 LICENSE=	PHP301
 
+USES=		ncurses
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
