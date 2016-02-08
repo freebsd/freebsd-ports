@@ -24,7 +24,7 @@ XMLRPC_DESC=	Compile with xmlrpc-c support
 CONFIGURE_ARGS=	--disable-debug
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-pthread
-USES=		compiler:c++11-lang pkgconfig
+USES=		compiler:c++11-lang ncurses pkgconfig
 
 PLIST_FILES=	bin/rtorrent
 PORTDOCS=	README

@@ -443,6 +443,7 @@
     SUBDIR += jadm
     SUBDIR += jail-primer
     SUBDIR += jail2
+    SUBDIR += jailadmin
     SUBDIR += jailctl
     SUBDIR += jaildaemon
     SUBDIR += jailme
@@ -768,10 +769,10 @@
     SUBDIR += pstacku
     SUBDIR += pstree
     SUBDIR += ptools
-    SUBDIR += puppet
     SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el
     SUBDIR += puppet37
+    SUBDIR += puppet38
     SUBDIR += puppet4
     SUBDIR += pv
     SUBDIR += pwd_unmkdb

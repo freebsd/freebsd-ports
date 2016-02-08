@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses version of the dice game for one or more players
 
-USES=		tar:Z
+USES=		ncurses tar:Z
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:

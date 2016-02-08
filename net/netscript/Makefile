@@ -21,7 +21,7 @@ netscript_OLD_CMD=	/usr/bin/netscript
 netscript_CMD=		${LOCALBASE}/bin/netscript
 
 CFLAGS+=	-DNCURSES -DARPA -DBSD_T -Wl,--export-dynamic
-LDFLAGS+=	-lcurses
+LDFLAGS+=	-lncurses
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

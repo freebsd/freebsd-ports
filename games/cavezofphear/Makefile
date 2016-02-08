@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
-USES=		gmake tar:bzip2
+USES=		gmake ncurses tar:bzip2
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	phear
 

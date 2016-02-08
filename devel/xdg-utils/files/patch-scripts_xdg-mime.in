@@ -1,0 +1,47 @@
+--- scripts/xdg-mime.in.orig	2016-01-27 22:14:36.041781000 +0100
++++ scripts/xdg-mime.in	2016-01-27 22:17:25.276625000 +0100
+@@ -315,7 +315,7 @@
+     [ -n "$xdg_user_dir" ] || xdg_user_dir="$HOME/.local/share"
+ 
+     xdg_system_dirs="$XDG_DATA_DIRS"
+-    [ -n "$xdg_system_dirs" ] || xdg_system_dirs=/usr/local/share/:/usr/share/
++    [ -n "$xdg_system_dirs" ] || xdg_system_dirs=%%LOCALBASE%%/share/:/usr/share/
+ 
+     preference=-1
+     desktop_file=""
+@@ -389,7 +389,7 @@
+     xdg_user_dir="$XDG_DATA_HOME"
+     [ -n "$xdg_user_dir" ] || xdg_user_dir="$HOME/.local/share"
+     xdg_system_dirs="$XDG_DATA_DIRS"
+-    [ -n "$xdg_system_dirs" ] || xdg_system_dirs=/usr/local/share/:/usr/share/
++    [ -n "$xdg_system_dirs" ] || xdg_system_dirs=%%LOCALBASE%%/share/:/usr/share/
+ 
+     local oldifs="$IFS" dir
+ 
+@@ -492,7 +492,7 @@
+             ;;
+         esac
+         check_input_file "$filename"
+-        filename=`readlink -f -- "$filename"`
++        filename=`stat -f "$filename"`
+         ;;
+ 
+       default)
+@@ -694,7 +694,7 @@
+ xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
+ 
+ xdg_system_dirs="$XDG_DATA_DIRS"
+-[ -n "$xdg_system_dirs" ] || xdg_system_dirs=/usr/local/share/:/usr/share/
++[ -n "$xdg_system_dirs" ] || xdg_system_dirs=%%LOCALBASE%%/share/:/usr/share/
+ for x in `echo $xdg_system_dirs | sed 's/:/ /g'`; do
+     if [ -w $x/$xdg_dir_name ] ; then
+         [ x"$mode" = x"system" ] && xdg_base_dir="$x/mime"
+@@ -726,7 +726,7 @@
+ # TODO: Gnome legacy support
+ # See http://forums.fedoraforum.org/showthread.php?t=26875
+ gnome_user_dir="$HOME/.gnome/apps"
+-gnome_global_dir=/usr/share/gnome/apps
++gnome_global_dir=%%LOCALBASE%%/share/gnome/apps
+ [ -w $gnome_global_dir ] || gnome_global_dir=
+ DEBUG 3 "gnome_user_dir: $gnome_user_dir"
+ DEBUG 3 "gnome_global_dir: $gnome_global_dir"

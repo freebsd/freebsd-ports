@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imapsync
-PORTVERSION=	1.670
+PORTVERSION=	1.678
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail perl5
 MASTER_SITES=	https://codeload.github.com/imapsync/imapsync/tar.gz/imapsync-${PORTVERSION}?dummy=/

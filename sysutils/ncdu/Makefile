@@ -11,6 +11,7 @@ COMMENT=	Ncurses du(1)
 
 LICENSE=	MIT
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz

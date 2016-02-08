@@ -18,7 +18,15 @@
  
  #INSTALL = install --mode=+r,u+w
  INSTALL = install -m 644
-@@ -114,7 +114,7 @@ GLDOPTS=	# -[B]static links statically
+@@ -54,6 +54,7 @@ liblist	= \
+ 	ls /lib/libtermcap.so*	$(LIBDIR)/libtermcap.so*; \
+ 	ls /lib/libncursesw.so*	$(LIBDIR)/libncursesw.so*; \
+ 	ls /lib/libncurses.so*	$(LIBDIR)/libncurses.so*; \
++	ls /usr/local/lib/libncurses.so; \
+ 
+ 
+ # select first library found from list, replace with -l... if static
+@@ -114,7 +115,7 @@ GLDOPTS=	# -[B]static links statically
  # compiler selection and compiler-specific options
  # (source warnings, optimisation and debug)
  

@@ -20,13 +20,17 @@ PLIST_FILES=	%%JAVAJARDIR%%/libreadline-java.jar \
 		lib/libJavaEditline.so \
 		lib/libJavaGetline.so
 PORTDOCS=	README.1st README jython.sh JReadlineCompleter.py
-USES=		gmake libedit readline
+USES=		gmake libedit ncurses readline
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-ltermcap|-lncurses|' \
+		${WRKSRC}/src/native/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libreadline-java.jar \

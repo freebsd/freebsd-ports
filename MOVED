@@ -6859,7 +6859,6 @@ sysutils/eroaster||2014-09-01|Not staged
 sysutils/freqsdwn||2014-09-01|Not staged
 sysutils/gnomebaker||2014-09-01|Not staged
 sysutils/ispman||2014-09-01|Not staged
-sysutils/jailadmin||2014-09-01|Not staged
 sysutils/jailuser||2014-09-01|Not staged
 sysutils/linux-afaapps||2014-09-01|Not staged
 sysutils/netident||2014-09-01|Not staged
@@ -8133,3 +8132,7 @@ devel/py-setuptools32||2016-02-02|Has expired: Full EOL reached. Please update t
 databases/py32-gdbm||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
 databases/py32-sqlite3||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
 x11-toolkits/py32-tkinter||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
+sysutils/puppet|sysutils/puppet38|2016-02-05|Renamed
+devel/etcdctl|devel/etcd|2016-02-06|Has expired: etcdctl is now part of etcd, following the change from the upstream
+graphics/py-graphviz|graphics/py-pygraphviz|2016-02-07|Renamed to match upstream (PyPI) name
+security/polarssl||2016-02-07|Has expired: Upstream is ending support for 1.2.x

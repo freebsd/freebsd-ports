@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--localstatedir=/var/games
-USES=		gettext
+USES=		gettext ncurses
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/games

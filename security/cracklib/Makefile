@@ -2,13 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	cracklib
-PORTVERSION=	2.9.4
+PORTVERSION=	2.9.6
 CATEGORIES=	security
 .if defined(PYTHON_SLAVEPORT)
 CATEGORIES+=	python
 .endif
-MASTER_SITES=	SF \
+MASTER_SITES=	 https://github.com/cracklib/cracklib/releases/download/cracklib-2.9.6/ \
 		LOCAL/cy
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-words-${PORTVERSION}.gz
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+WORDS_DISTFILE=	${PORTNAME}-words-${PORTVERSION}.gz
 
 MAINTAINER= 	cy@FreeBSD.org
 COMMENT?=	Password-checking library
@@ -16,7 +20,7 @@ COMMENT?=	Password-checking library
 LICENSE=	LGPL21
 
 DICTPATH=	${PREFIX}/libdata/${PORTNAME}
-DICTFILE=	${DICTPATH}/pw_dict
+DICTFILE=	${DICTPATH}/cracklib-words
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-default-dict=${DICTFILE}
 INSTALL_TARGET=	install-strip
@@ -43,9 +47,9 @@ PLIST_FILES=	include/crack.h \
 		lib/libcrack.so \
 		lib/libcrack.so.2 \
 		lib/libcrack.so.2.9.0 \
-		libdata/cracklib/pw_dict.hwm \
-		libdata/cracklib/pw_dict.pwd \
-		libdata/cracklib/pw_dict.pwi \
+		libdata/cracklib/cracklib-words.hwm \
+		libdata/cracklib/cracklib-words.pwd \
+		libdata/cracklib/cracklib-words.pwi \
 		man/man3/FascistCheck.3.gz \
 		man/man3/cracklib.3.gz \
 		sbin/cracklib-check \
@@ -105,7 +109,7 @@ post-install:
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/
 	${LN} -s ${PORTNAME}.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/FascistCheck.3
 	@${MKDIR} ${STAGEDIR}${DICTPATH}
-	${INSTALL_DATA} ${FILESDIR}/pw_dict* ${STAGEDIR}${DICTPATH}/
+	@PATH=$${PATH}:${STAGEDIR}${PREFIX}/sbin LD_LIBRARY_PATH=/lib:/usr/lib:${STAGEDIR}${PREFIX}/lib ${STAGEDIR}${PREFIX}/sbin/create-cracklib-dict -o ${STAGEDIR}${DICTPATH}/cracklib-words ${_DISTDIR}/${WORDS_DISTFILE}
 .endif
 
 .include <bsd.port.mk>

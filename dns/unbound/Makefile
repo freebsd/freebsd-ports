@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.7
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -12,7 +12,7 @@ COMMENT=	Validating, recursive, and caching DNS resolver
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES+=		autoreconf cpe gmake libtool
+USES+=		autoreconf cpe libtool
 CPE_VENDOR=	nlnetlabs
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -95,7 +95,6 @@ CONFIGURE_ARGS+=--without-pthreads
 .endif
 
 post-patch:
-	@${MKDIR} ${WRKSRC}/balancer
 	@${RM} ${WRKSRC}/util/configlexer.c
 	@${REINPLACE_CMD} -e 's|if test ! -e $$(DESTDIR)$$(configfile); then || ; \
 		s|$$(configfile); fi|$$(configfile).sample|' \
@@ -125,12 +124,10 @@ post-install:
 	@${CAT} ${WRKDIR}/pkg-message
 	@${ECHO_MSG} "============================================================="
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}; \
-	for f in ${PORTDOCS}; do \
-		cd ${WRKSRC}/doc && ${INSTALL_DATA} $${f} ${STAGEDIR}${DOCSDIR}/; \
-	done
-.endif
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 regression-test: build
 	cd ${WRKSRC} && ${MAKE} test

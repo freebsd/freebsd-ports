@@ -17,10 +17,13 @@ RUN_DEPENDS=	pbmtoepsi:${PORTSDIR}/graphics/netpbm
 
 USES=		ghostscript:run
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 pre-patch:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/pstoepsi ${WRKSRC}/pstoepsi.prefix
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/README.this-site ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/pstoepsi ${WRKSRC}/pstoepsi.prefix
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/README.this-site ${WRKSRC}
 
 do-build:
 	${SED} -e "s+%%PREFIX%%+${PREFIX}+g" ${WRKSRC}/pstoepsi.prefix > \
@@ -29,6 +32,8 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pstoepsi ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.this-site.gz ${STAGEDIR}${DOCSDIR}
 

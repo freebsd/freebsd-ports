@@ -6,7 +6,7 @@ PORTVERSION=	2.2.3
 PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.netraam.net/scrollz/download/ \
-		http://www.scrollz.org/download/
+		http://BSDforge.com/projects/source/irc/scrollz/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

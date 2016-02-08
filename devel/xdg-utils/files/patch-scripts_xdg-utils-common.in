@@ -1,0 +1,56 @@
+--- scripts/xdg-utils-common.in.orig	2016-01-27 22:52:37.833381000 +0100
++++ scripts/xdg-utils-common.in	2016-01-28 09:44:29.953139000 +0100
+@@ -279,6 +279,44 @@
+          XFCE)
+            DE=xfce
+            ;;
++         Lumina)
++           DE=lumina
++           ;;
++         X-Generic)
++           DE=generic
++           ;;
++      esac
++    fi
++
++# xxx PCDM_SESSION check here?
++    if [ -n "${PCDM_SESSION}" ]; then
++      case "${PCDM_SESSION}" in
++         # only recently added to menu-spec, pre-spec X- still in use
++         CINNAMON)
++           DE=cinnamon;
++           ;;
++         ENLIGHTENMENT)
++           DE=enlightenment;
++           ;;
++         # GNOME, GNOME-Classic:GNOME, or GNOME-Flashback:GNOME
++         GNOME*)
++           DE=gnome;
++           ;;
++         KDE)
++           DE=kde;
++           ;;
++         LXDE)
++           DE=lxde;
++           ;;
++         MATE)
++           DE=mate;
++           ;;
++         XFCE)
++           DE=xfce
++           ;;
++         LUMINA)
++           DE=lumina
++           ;;
+          X-Generic)
+            DE=generic
+            ;;
+@@ -294,6 +332,8 @@
+       elif xprop -root _DT_SAVE_MODE 2> /dev/null | grep ' = \"xfce4\"$' >/dev/null 2>&1; then DE=xfce;
+       elif xprop -root 2> /dev/null | grep -i '^xfce_desktop_window' >/dev/null 2>&1; then DE=xfce
+       elif echo $DESKTOP | grep -q '^Enlightenment'; then DE=enlightenment;
++      #Simple fallback for non-XDG window managers if Lumina is installed in the normal place (no heavy runtime dependencies)
++      elif [ -x "/usr/local/bin/lumina-open" ]; then DE=lumina;
+       fi
+     fi
+ 

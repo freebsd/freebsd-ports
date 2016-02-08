@@ -21,7 +21,7 @@ RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 
 USES=		cpe
 CPE_VENDOR=	puppetlabs
-CONFLICTS_INSTALL=	puppet-* puppet4-*
+CONFLICTS_INSTALL=	puppet38-* puppet4-*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RC_SUBR=	puppet puppetmaster

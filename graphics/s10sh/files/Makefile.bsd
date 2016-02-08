@@ -3,7 +3,7 @@ NO_MAN	=	oh...
 
 SRCS	=	main.c crc.c serial.c common.c bar.c
 
-LDADD	+=	-lreadline -ltermcap ${LDFLAGS}
+LDADD	+=	-lreadline -lncurses ${LDFLAGS}
 CFLAGS	+=	-DHAVE_READLINE ${CPPFLAGS}
 
 .if !defined(WITHOUT_USB)

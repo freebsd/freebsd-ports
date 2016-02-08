@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	MP3 console ncurses-based player
 
-USES=		gmake
+USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}"

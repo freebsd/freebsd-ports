@@ -14,6 +14,7 @@ COMMENT=	Text-based puzzle game
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/games
 

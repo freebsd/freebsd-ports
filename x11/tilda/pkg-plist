@@ -27,4 +27,3 @@ share/pixmaps/tilda.png
 %%PORTDOCS%%%%DOCSDIR%%/HACKING.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/TODO.md
-%%PORTDOCS%%@dir %%DOCSDIR%%

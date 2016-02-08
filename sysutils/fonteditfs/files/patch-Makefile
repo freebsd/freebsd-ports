@@ -1,5 +1,5 @@
---- Makefile.orig	2003-09-20 08:17:34.000000000 -0700
-+++ Makefile	2014-01-01 12:27:59.000000000 -0800
+--- Makefile.orig	2003-09-20 15:17:34 UTC
++++ Makefile
 @@ -2,14 +2,9 @@
  # - TODO: MAKE NEATER ONE 
  # This makefile should work under most POSIX OSes (at least FreeBSD)
@@ -13,11 +13,11 @@
 +all: fnteditfs
  fnteditfs: fnteditfs.o font.o stack.o
 -	gcc -o fnteditfs fnteditfs.o font.o stack.o -lcurses
-+	${CC} -o fnteditfs fnteditfs.o font.o stack.o -lcurses
++	${CC} -o fnteditfs fnteditfs.o font.o stack.o ${LDFLAGS} -lncurses
  	strip fnteditfs
  
  fnteditfs.o: fnteditfs.c font.h stack.h
-@@ -17,8 +12,8 @@
+@@ -17,8 +12,8 @@ font.o:	font.c font.h
  stack.o: stack.c stack.h
  
  install: fnteditfs fnteditfs.1

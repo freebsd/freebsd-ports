@@ -3,8 +3,7 @@
 
 PORTNAME=	tcllib
 DISTVERSIONPREFIX=	${PORTNAME}_
-DISTVERSION=	1_17
-PORTREVISION=	2
+DISTVERSION=	1_18
 CATEGORIES=	devel tcl
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -16,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE?=DOCS MANPAGES
+OPTIONS_SUB=	yes
 
 WRKSRC=		${WRKDIR}/tcllib-tcllib_${DISTVERSION}
 USE_GITHUB=	yes
@@ -24,7 +24,7 @@ USES+=		tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
 MAKE_ENV+=	LANG=C
-TEST_TARGET=	test
+TEST_TARGET=	do-test
 PORTDOCS=	*
 
 INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
@@ -36,24 +36,26 @@ INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 #
 # Man pages
 #
-.if !empty(${PORT_OPTIONS:MMANPAGES}) && !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
+.if "${ALL_TARGET}" != "ctictl"
+
+.if ${PORT_OPTIONS:MMANPAGES}
 ALL_TARGET+=	nroff-doc
 INSTALL_ARGS+=	-nroff-path ${STAGEDIR}${PREFIX}/man/mann
-PLIST_SUB+=	MAN=""
 .else
 INSTALL_ARGS+=	-no-nroff
-PLIST_SUB+=	MAN="@comment "
 .endif
 
 #
 # HTML documentation
 #
-.if !empty(${PORT_OPTIONS:MDOCS}) && !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	html-doc
 INSTALL_ARGS+=	-html-path ${STAGEDIR}${DOCSDIR}
 .else
 INSTALL_ARGS+=	-no-html
 .endif
+
+.endif # ${ALL_TARGET} != "crictl"
 
 .if !target(post-patch)
 post-patch:
@@ -94,6 +96,11 @@ post-patch:
 	for man in `${FIND} . -name "*.n"`; do \
 	    ${MV} $$man `echo $$man | ${SED} -e 's|n$$|tcllib.n|'`; \
 	done
+
+#
+#	remove all .orig files
+#
+	${FIND} ${WRKSRC} -type f -name "*.orig" -delete
 .endif
 
 .if !target(do-install)
@@ -101,7 +108,7 @@ do-install:
 	cd ${WRKSRC} && ${TCLSH} ./installer.tcl ${INSTALL_ARGS}
 .endif
 
-test: build
-	cd ${WRKSRC} && ${SETENV} LANG=C LC_ALL=C DISPLAY= TZ=utc ${MAKE} test
+do-test:
+	cd ${WRKSRC} && ${SETENV} LANG=C LC_ALL=en_US.UTF-8 DISPLAY= TZ=utc ${MAKE} test
 
 .include <bsd.port.mk>

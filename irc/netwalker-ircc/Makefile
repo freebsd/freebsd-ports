@@ -11,7 +11,7 @@ COMMENT=	Lightweight curses-based IRC client
 
 LICENSE=	GPLv2
 
-USES=		tar:tgz
+USES=		ncurses tar:tgz
 
 LDFLAGS+=	-lncurses -lpthread
 

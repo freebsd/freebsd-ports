@@ -18,7 +18,7 @@ MINOR_VERSION=	rel.1
 
 CONFLICTS=	lynx-2.* ja-lynx-2.8.8.*
 
-USES=		cpe shebangfix tar:bzip2
+USES=		cpe ncurses shebangfix tar:bzip2
 SHEBANG_FILES=	samples/mailto-form.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \

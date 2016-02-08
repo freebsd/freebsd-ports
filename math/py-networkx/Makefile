@@ -3,7 +3,7 @@
 
 PORTNAME=	networkx
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	http://networkx.lanl.gov/download/networkx/ \
 		CHEESESHOP
@@ -42,7 +42,7 @@ MPL_DESC=	Flexible graph rendering
 MPL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.0:${PORTSDIR}/math/py-matplotlib
 
 GRAPHVIZ_DESC=	Additional graph layout and rendering algorithms
-GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>=1.2:${PORTSDIR}/graphics/py-graphviz
+GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.2:${PORTSDIR}/graphics/py-pygraphviz
 
 YAML_DESC=	Reading and writing YAML files
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml

@@ -2,7 +2,7 @@
 
 PORTNAME=	fsm
 PORTVERSION=	0.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	python-${PORTNAME}
@@ -14,7 +14,7 @@ COMMENT=	Pure Python Implementation of a Finite State Machine
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphviz>=1.0:${PORTSDIR}/graphics/py-graphviz
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.0:${PORTSDIR}/graphics/py-pygraphviz
 
 USES=		python
 USE_PYTHON=	distutils

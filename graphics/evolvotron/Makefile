@@ -13,8 +13,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generative software that evolves images/textures/patterns
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	GPLv3+ # LICENSE file is GPLv2 though
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
@@ -22,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		python qmake
 USE_QT4=	corelib gui xml moc_build
-QMAKE_ARGS+=	VERSION_NUMBER="${PORTVERSION}"
+QMAKE_ARGS=	VERSION_NUMBER="${PORTVERSION}"
 QMAKE_SOURCE_PATH=	${WRKSRC}/main.pro
 MAKE_JOBS_UNSAFE=	yes
 
@@ -49,11 +48,9 @@ do-install:
 .for i in evolvotron evolvotron_mutate evolvotron_render
 	${INSTALL_PROGRAM} ${WRKSRC}/${i}/${i} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-
 .for lib in libevolvotron libfunction
 	${INSTALL_DATA} ${WRKSRC}/${lib}/${lib}.a ${STAGEDIR}${PREFIX}/lib/
 .endfor
-
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
@@ -61,12 +58,12 @@ do-install:
 .endfor
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
-
 .for m in evolvotron.1 evolvotron_mutate.1 evolvotron_render.1
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${m} \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
 .endfor
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

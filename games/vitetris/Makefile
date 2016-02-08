@@ -9,6 +9,7 @@ MASTER_SITES=	http://victornils.net/tetris/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal-based Tetris clone in vein of Nintendo Tetris
 
+USES=		ncurses
 HAS_CONFIGURE=	yes
 ALL_TARGET=	#
 CONFIGURE_ARGS=	--prefix=${PREFIX} --datarootdir=${PREFIX}/share \

@@ -39,6 +39,7 @@
     SUBDIR += jftp
     SUBDIR += jftpgw
     SUBDIR += lftp
+    SUBDIR += libfilezilla
     SUBDIR += linux-c6-curl
     SUBDIR += linux-f10-curl
     SUBDIR += llnlxdir

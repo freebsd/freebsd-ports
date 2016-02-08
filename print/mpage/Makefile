@@ -9,11 +9,11 @@ PORTNAME=	mpage
 PORTVERSION=	2.5.6
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print multiple pages per sheet of paper
 
+USES=		tar:tgz
 ALL_TARGET=	default
 
 PORTDOCS=	CHANGES Characters Copyright Encoding.format FAQ NEWS \
@@ -23,7 +23,9 @@ PLIST_FILES=	bin/mpage %%DATADIR%%/CP850.PC %%DATADIR%%/ISO+STD+OTH \
 		%%DATADIR%%/ISO-Latin.1 %%DATADIR%%/ISO-Latin.2 \
 		man/man1/mpage.1.gz
 
-post-install:
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

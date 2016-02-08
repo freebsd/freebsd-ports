@@ -11,8 +11,9 @@ DISTNAME=	popcheck
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preview and delete messages in POP3 mailbox
 
+USES=		ncurses
 ALL_TARGET=	popcheck
-
+MAKE_ARGS=	LDFLAGS="${LDFLAGS} -lncurses"
 PLIST_FILES=	bin/popcheck man/man1/popcheck.1.gz
 
 do-install:

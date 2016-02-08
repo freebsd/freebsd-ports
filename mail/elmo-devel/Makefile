@@ -14,7 +14,7 @@ COMMENT=	Receive, filter, read, compose, and send mail at the text console
 CONFLICTS=	elmo-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		iconv perl5 shebangfix
+USES=		iconv ncurses perl5 shebangfix
 SHEBANG_FILES=	src/elmoconf.pl
 USE_OPENSSL=	yes
 USE_PERL5=	run

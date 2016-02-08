@@ -1,0 +1,13 @@
+--- libtool.orig	2016-01-31 11:54:21 UTC
++++ libtool
+@@ -7514,10 +7514,6 @@ func_mode_link ()
+ 	    # These systems don't actually have a C library (as such)
+ 	    test X-lc = "X$arg" && continue
+ 	    ;;
+-	  *-*-openbsd* | *-*-freebsd* | *-*-dragonfly* | *-*-bitrig*)
+-	    # Do not include libc due to us having libc/libc_r.
+-	    test X-lc = "X$arg" && continue
+-	    ;;
+ 	  *-*-rhapsody* | *-*-darwin1.[012])
+ 	    # Rhapsody C and math libraries are in the System framework
+ 	    func_append deplibs " System.ltframework"

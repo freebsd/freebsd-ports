@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-USES=		gmake
+USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-asciidoc
 

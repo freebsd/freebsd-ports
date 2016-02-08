@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Console network display
 
+USES=		ncurses
 PLIST_FILES=	bin/cnd
 
 do-install:

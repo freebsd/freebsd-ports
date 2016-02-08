@@ -1,14 +1,10 @@
---- conf/graphite.wsgi.example.orig	2013-08-21 17:11:04.000000000 +0000
-+++ conf/graphite.wsgi.example	2014-09-14 03:30:45.456594225 +0000
-@@ -1,8 +1,10 @@
- import os, sys
+--- conf/graphite.wsgi.example.orig	2015-11-27 18:37:16 UTC
++++ conf/graphite.wsgi.example
+@@ -1,6 +1,6 @@
+ import os
+ import sys
 -sys.path.append('/opt/graphite/webapp')
 +sys.path.append('%%PREFIX%%/graphite/webapp')
- os.environ['DJANGO_SETTINGS_MODULE'] = 'graphite.settings'
  
-+import django
- import django.core.handlers.wsgi
-+django.setup()
- 
- application = django.core.handlers.wsgi.WSGIHandler()
- 
+ try:
+     from importlib import import_module

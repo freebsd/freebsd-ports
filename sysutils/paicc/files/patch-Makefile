@@ -1,33 +1,34 @@
---- Makefile.orig	Mon Sep  2 19:13:20 1996
-+++ Makefile	Sat Apr 28 16:34:34 2001
-@@ -13,8 +13,8 @@
+--- Makefile.orig	1996-09-03 02:13:20 UTC
++++ Makefile
+@@ -12,16 +12,12 @@
+ #
  #   3) make install
  
 -BIN=/usr/local/bin
 -MAN=/usr/local/man
 -CC=cc -O
 -SHELL=/bin/sh
-+#BIN=/usr/local/bin
-+#MAN=/usr/local/man
-+#CC=cc -O
-+#SHELL=/bin/sh
  
  
-@@ -22,5 +22,5 @@
+ 
  all:
  	@echo "Making PAICC ..."
 -	@make paicc CFLAGS=" -O" LFLAGS=" -lcurses"
-+	@make paicc CFLAGS="${CFLAGS}" LFLAGS=" -lcurses"
++	@make paicc CFLAGS="${CFLAGS}" LFLAGS="${LDFLAGS} -lncurses"
  
  clean:
-@@ -35,5 +35,5 @@
+ 	rm -fr paicc.o evap.o paicc
+@@ -34,7 +30,7 @@ paicc: paicc.o evap.o
+ 
  evap.o: evap/evap.h evap/evap.c
  	@echo '  making evap.o ...'
 -	$(CC) -DP_EVAP_MM_PATH=\"$(BIN)/paiccmm.a\" -c $$CFLAGS evap/evap.c
 +	$(CC) -DP_EVAP_MM_PATH=\"$(PREFIX)/libdata/paiccmm.a\" -c $$CFLAGS evap/evap.c
  
  paicc.o: paicc.c evap.o evap/evap.h evap/paicc_pdt_out
-@@ -47,14 +47,10 @@
+ 	@echo '  making paicc.o ...'; \
+@@ -46,16 +42,12 @@ install:
+ 	@echo "Copying and linking PAICC to $(BIN) ..."
  	cp paicc $(BIN)/paicc
  	chmod 755 $(BIN)/paicc
 -	-rm -fr $(BIN)/paint_changed_characters
@@ -45,3 +46,4 @@
 -	-ln -s $(MAN)/man1/paicc.1 $(MAN)/man1/paint_changed_characters.1
  
  # Unix flavor-dependent section!
+ 

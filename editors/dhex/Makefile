@@ -13,6 +13,7 @@ COMMENT=	Ncurses-based hex-editor with diff mode
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 MANPAGE1=	dhex.1
 MANPAGE5=	dhexrc.5 dhex_markers.5 dhex_searchlog.5
 

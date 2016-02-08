@@ -3,14 +3,12 @@
 
 PORTNAME=	nrpe
 DISTVERSION=	2.15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT?=	Nagios Remote Plugin Executor
-
-RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 CONFLICTS=	nrpe-ssl-2.*
 
@@ -20,10 +18,14 @@ USE_RC_SUBR=	nrpe2
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	SSL ARGS
-OPTIONS_DEFAULT=ARGS
+OPTIONS_RADIO=	PLUGINS
+OPTIONS_RADIO_PLUGINS=	MONPLUGINS NAGPLUGINS
+OPTIONS_DEFAULT=ARGS NAGPLUGINS
 
 SSL_DESC=	Enable SSL support (disables plain-text server)
 ARGS_DESC=	Enable command argument processing
+NAGPLUGINS_DESC=Use net-mgmt/nagios-plugins
+MONPLUGINS_DESC=Use net-mgmt/monitoring-plugins
 
 SSL_USE=		OPENSSL=yes
 SSL_CONFIGURE_ON=	--enable-ssl --with-ssl=${OPENSSLDIR} \
@@ -34,6 +36,9 @@ SSL_CFLAGS=		-I${OPENSSLINC}
 
 ARGS_CONFIGURE_ON=	--enable-command-args
 ARGS_CONFIGURE_OFF=	--disable-command-args
+
+MONPLUGINS_RUN_DEPENDS= ${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/monitoring-plugins
+NAGPLUGINS_RUN_DEPENDS= ${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios

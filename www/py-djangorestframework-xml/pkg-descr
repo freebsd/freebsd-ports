@@ -1,0 +1,8 @@
+XML support for Django REST Framework
+
+XML support extracted as a third party package directly from the
+official Django REST Framework implementation. It requires the
+defusedxml package only because it safeguards against some security
+issues that were discovered.
+
+WWW: http://jpadilla.github.io/django-rest-framework-xml/

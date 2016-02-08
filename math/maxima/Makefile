@@ -3,6 +3,7 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.37.3
+PORTREVISION=	1
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -25,7 +26,6 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			${LISPSELECT}
 
 INFO=	maxima imaxima xmaxima
-#maxima.info-1 maxima.info-2 maxima.info-3
 
 PLIST_SUB=	BINDIR=${BINDIRECTORY}
 PLIST_SUB+=	LISPBIN=${LISPBINARY}

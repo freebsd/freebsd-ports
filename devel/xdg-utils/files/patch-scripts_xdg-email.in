@@ -1,0 +1,38 @@
+--- scripts/xdg-email.in.orig	2016-01-27 22:09:31.736910000 +0100
++++ scripts/xdg-email.in	2016-01-27 22:46:01.701427000 +0100
+@@ -34,7 +34,7 @@
+ {
+     local THUNDERBIRD MAILTO NEWMAILTO TO CC BCC SUBJECT BODY ATTACH
+     THUNDERBIRD="$1"
+-    MAILTO=$(echo "$2" | sed 's/^mailto://')
++    MAILTO=$(echo "$2" | tr '&' '\n')
+     echo "$MAILTO" | grep -qs "^?"
+     if [ "$?" = "0" ] ; then
+         MAILTO=$(echo "$MAILTO" | sed 's/^?//')
+@@ -48,7 +48,7 @@
+     BCC=$(/bin/echo -e $(echo "$MAILTO" | grep '^bcc=' | sed 's/^bcc=//;s/%\(..\)/\\x\1/g' | awk '{ printf "%s,",$0 }'))
+     SUBJECT=$(echo "$MAILTO" | grep '^subject=' | tail -n 1)
+     BODY=$(echo "$MAILTO" | grep '^body=' | tail -n 1)
+-    ATTACH=$(/bin/echo -e $(echo "$MAILTO" | grep '^attach=' | sed 's/^attach=//;s/%\(..\)/\\x\1/g' | awk '{ printf "%s,",$0 }' | sed 's/,$//'))
++    ATTACH=$(for attachment in $(echo "$MAILTO" | sed -ne 's,^attach=,file://,gp') ; do printf "%s," "$attachment" ; done); ATTACH=${ATTACH%,}
+ 
+     if [ -z "$TO" ] ; then
+         NEWMAILTO=
+@@ -293,7 +293,7 @@
+ 
+ options=
+ mailto=
+-utf8="iconv -t utf8"
++utf8="iconv -t UTF-8"
+ while [ $# -gt 0 ] ; do
+     parm="$1"
+     shift
+@@ -434,7 +434,7 @@
+ if [ x"$BROWSER" = x"" ]; then
+     BROWSER=www-browser:links2:elinks:links:lynx:w3m
+     if [ -n "$DISPLAY" ]; then
+-        BROWSER=x-www-browser:firefox:iceweasel:seamonkey:mozilla:epiphany:konqueror:chromium-browser:google-chrome:$BROWSER
++        BROWSER=x-www-browser:firefox:iceweasel:seamonkey:mozilla:epiphany:konqueror:chrome:chromium-browser:google-chrome:$BROWSER
+     fi
+ fi
+ 

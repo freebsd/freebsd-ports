@@ -17,7 +17,7 @@ COMMENT=	Noia Icons for Gnome
 
 RESTRICTED=	${REASON}
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"

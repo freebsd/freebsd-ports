@@ -1,11 +1,11 @@
---- Makefile.in.orig	2010/10/30 02:29:59
-+++ Makefile.in	2010/10/30 02:32:04
-@@ -17,7 +17,7 @@
+--- Makefile.in.orig	2013-04-04 16:55:06 UTC
++++ Makefile.in
+@@ -17,7 +17,7 @@ CPPFLAGS = @CPPFLAGS@
  EXEEXT = @EXEEXT@
  O=o
  
 -LIBS = @LIBS@
-+LIBS = -ltermcap
++LIBS = -lncurses
  
  prefix = @prefix@
  exec_prefix = @exec_prefix@

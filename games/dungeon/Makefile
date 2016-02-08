@@ -22,6 +22,7 @@ EXTRACT_ONLY=	dungeon-gdt-glk.tar.gz \
 MAINTAINER=	sailor@63bit.net
 COMMENT=	Text adventure which became Zork I-III
 
+USES=		ncurses
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/dungeon \
@@ -43,6 +44,7 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's/^CC =/CC ?=/' \
 		-e 's/^CFLAGS =/CFLAGS +=/' \
 		-e 's/^OPTIONS = -g/OPTIONS =/' \
+		-e "s@LIBS = @LIBS = ${LDFLAGS} @g" \
 		-e '/^OPTIONS = -O/d' \
 		${WRKSRC}/glkterm/Makefile ${WRKSRC}/dungeon-gdt/Makefile
 

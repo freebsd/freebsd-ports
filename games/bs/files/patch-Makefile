@@ -1,0 +1,11 @@
+--- Makefile.orig	2016-02-04 19:19:31 UTC
++++ Makefile
+@@ -8,7 +8,7 @@ CC = gcc
+ DESTDIR = 
+ 
+ bs: bs.c
+-	$(CC) $(CFLAGS) -o bs bs.c -lncurses
++	$(CC) $(CFLAGS) -o bs bs.c $(LDFLAGS) -lncurses
+ 
+ bs.6: bs.xml
+ 	xmlto man bs.xml

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		execinfo gmake libtool pathfix pkgconfig
+USES=		execinfo gmake libtool ncurses pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I../include -I${LOCALBASE}/include

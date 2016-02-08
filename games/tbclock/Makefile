@@ -9,7 +9,9 @@ MASTER_SITES=	http://tamentis.com/projects/tbclock/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary clock in curses
 
+USES=		ncurses
 HAS_CONFIGURE=	yes
+MAKE_ARGS=	LIBFLAGS="${LDFLAGS} -lncurses"
 PLIST_FILES=	bin/${PORTNAME} man/man1/tbclock.1.gz
 
 post-patch:

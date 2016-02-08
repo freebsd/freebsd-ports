@@ -3,7 +3,7 @@
 
 PORTNAME=	emkatic
 PORTVERSION=	0.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	russian emulators
 MASTER_SITES=	SF/${PORTNAME}/eMKatic%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
 USE_FPC=	cairo fcl-base fcl-image fcl-json fcl-xml pasjpeg x11
 
 PROJECT_FILE=	emkatic.lpi
-LAZARUS_VER=	1.4.2
+LAZARUS_VER=	1.6RC2
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 LCL_UNITS_DIR=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}

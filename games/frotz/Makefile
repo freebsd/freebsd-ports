@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	DavidGriffith
 
-USES=		gmake
+USES=		gmake ncurses
 
-MAKE_ARGS=	-e
+MAKE_ARGS=	-e CURSES="${LDFLAGS} -lncurses"
 MAKE_ENV=	OPTS="${CFLAGS}" CONFIG_DIR="${PREFIX}/etc"
 
 PLIST_FILES=	bin/frotz \

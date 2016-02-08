@@ -15,15 +15,16 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary Editor And Viewer, a full featured binary file editor
 
+USES=		ncurses
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:S/.//}
-
 ALL_TARGET=	beav
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUNIX -DBSD -DNOPROTO"
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(OFILES):|$$(OFILES):|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|(OFILES):|$$(OFILES):|' \
+		-e 's|-lncurses|${LDFLAGS} -lncurses|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/beav.1
 
 do-install:

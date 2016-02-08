@@ -14,8 +14,9 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
-USES=		autoreconf:build gmake tar:bzip2
-
+USES=		autoreconf:build gmake ncurses tar:bzip2
+TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
+CONFIGURE_ARGS=	--build=${TARGET_SDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 # Avoid GNU_CONFIGURE as it breaks staging
@@ -45,12 +46,6 @@ CPPFLAGS+=	`freetype-config --cflags`
 LDFLAGS+=	`freetype-config --libs`
 .else
 ONLY_FOR_ARCHS= amd64
-.endif
-
-.if ${ARCH} == "amd64"
-TARGET_SDIR=	x86_64-unknown-${OPSYS:tl}${OSREL}
-.else
-TARGET_SDIR=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${PORT_OPTIONS:MCSL}

@@ -11,10 +11,9 @@ COMMENT=	VZ-like full-screen text editor with Japanese support
 
 LICENSE=	GPLv2
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
-
 CFLAGS+=	-Wno-error=return-type		# required for Clang
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS

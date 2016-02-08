@@ -16,7 +16,7 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 CONFLICTS=	pidof-[0-9]* pstree-2.[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake ncurses
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

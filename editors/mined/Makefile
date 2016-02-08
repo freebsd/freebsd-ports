@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 
-USES=		gmake desktop-file-utils
+USES=		desktop-file-utils gmake ncurses
 MAKEFILE=	makefile
 REINPLACE_ARGS=	-i ""
 MAKE_ARGS=	GMAKE="${MAKE_CMD}" CC="${CC}" OPT="${CFLAGS}"

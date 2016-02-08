@@ -3,21 +3,24 @@
 
 PORTNAME=	rayshade
 PORTVERSION=	4.0.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://ccl.net/cca/software/SOURCES/C/rayshade/ \
 		http://www.mirrorservice.org/sites/graphics.stanford.edu/pub/rayshade/ \
 		ftp://graphics.stanford.edu/pub/rayshade/
-DISTFILES=	${PORTNAME}.${PORTVERSION}.tar.Z ${GUIDE_PS_Z}
+DISTFILES=	${PORTNAME}.${PORTVERSION}.tar.Z
 DIST_SUBDIR=	rayshade
 EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible system for creating ray-traced images
 
-BUILD_DEPENDS=	$(LOCALBASE)/lib/librle.a:${PORTSDIR}/graphics/urt
+LICENSE=	rayshade
+LICENSE_NAME=	Rayshade license
+LICENSE_FILE=	${WRKSRC}/Doc/Copyright
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+BUILD_DEPENDS=	$(LOCALBASE)/lib/librle.a:${PORTSDIR}/graphics/urt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION:R}
 
@@ -29,11 +32,10 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/rayshade
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
+DOCS_DISTFILES=	guide.ps.Z
 
-.if ${PORT_OPTIONS:MDOCS}
-GUIDE_PS_Z=	guide.ps.Z
-.endif
+.include <bsd.port.options.mk>
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS=	< ${WRKDIR}/config.ans
@@ -48,15 +50,16 @@ pre-configure:
 		< ${FILESDIR}/config.ans > ${WRKDIR}/config.ans
 
 do-install:
-	(cd ${WRKSRC}/rayshade && ${INSTALL_PROGRAM} rayshade \
-		${STAGEDIR}${PREFIX}/bin)
-.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_PROGRAM} ${WRKSRC}/rayshade/rayshade \
+		${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${GUIDE_PS_Z} \
-		${STAGEDIR}${DOCSDIR})
-.endif
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/guide.ps.Z \
+		${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/Examples && ${INSTALL_DATA} * \
-		${STAGEDIR}${EXAMPLESDIR})
+	${INSTALL_DATA} ${WRKSRC}/Examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

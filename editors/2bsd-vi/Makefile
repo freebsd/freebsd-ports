@@ -15,7 +15,7 @@ COMMENT=	The original vi editor, updated to run on modern OSes
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	tar:bzip2
+USES=		ncurses tar:bzip2
 
 PRESERVEDIR=	/var/preserve/${PKGBASE}
 PLIST_SUB=	PRESERVEDIR="${PRESERVEDIR}"

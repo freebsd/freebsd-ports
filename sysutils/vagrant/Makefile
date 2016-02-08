@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant
-PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
@@ -25,7 +24,7 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.3:${PORTSDIR}/sysutils/rubygem-bundler \
 		rubygem-log4r>=1.1.10:${PORTSDIR}/sysutils/rubygem-log4r \
 		rubygem-net-scp>=1.1.0:${PORTSDIR}/security/rubygem-net-scp \
 		rubygem-net-sftp>=2.1:${PORTSDIR}/security/rubygem-net-sftp \
-		rubygem-net-ssh>=2.6.6:${PORTSDIR}/security/rubygem-net-ssh \
+		rubygem-net-ssh>=3.0.1:${PORTSDIR}/security/rubygem-net-ssh \
 		rubygem-nokogiri>=1.6.3.1:${PORTSDIR}/textproc/rubygem-nokogiri \
 		rubygem-rb-kqueue>=0.2.2:${PORTSDIR}/devel/rubygem-rb-kqueue \
 		rubygem-rest-client>=1.6.0:${PORTSDIR}/www/rubygem-rest-client \

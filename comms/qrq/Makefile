@@ -12,7 +12,7 @@ COMMENT=	Morse telegraphy trainer similar to the classic DOS version by DL4MM
 
 LICENSE=	GPLv2
 
-USES=		gmake shebangfix
+USES=		gmake ncurses shebangfix
 SHEBANG_FILES=	qrqscore
 
 post-install:

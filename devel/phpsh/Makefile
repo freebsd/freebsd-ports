@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python tar:bzip2
 USE_PYTHON=	distutils autoplist
 USE_PHP=	pcre posix tokenizer
+NO_ARCH=	yes
 
 WANT_PHP_CLI=	yes
 
@@ -26,12 +27,7 @@ PYDISTUTILS_PKGVERSION=	1.3
 
 OPTIONS_DEFINE=	PCNTL
 PCNTL_DESC=	Fork on every command (pcntl PHP extension)
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPCNTL}
-USE_PHP+=	pcntl
-.endif
+PCNTL_USE=	PHP=pcntl
 
 post-patch:
 	@${GREP} -Rl '%%ETCDIR%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \

@@ -1,9 +1,9 @@
---- src/VBox/Additions/x11/vboxvideo/Makefile.kmk.orig	2015-03-16 13:00:34.000000000 -0400
-+++ src/VBox/Additions/x11/vboxvideo/Makefile.kmk	2015-03-30 02:29:37.842678000 -0400
-@@ -20,6 +20,9 @@
+--- src/VBox/Additions/x11/vboxvideo/Makefile.kmk.orig	2016-01-19 19:14:53 UTC
++++ src/VBox/Additions/x11/vboxvideo/Makefile.kmk
+@@ -20,6 +20,9 @@ include $(KBUILD_PATH)/subheader.kmk
  
  vboxvideo_70_DEFS := \
- 	IN_MODULE XORG_7X RENDER=1 IN_RT_STATIC
+ 	IN_MODULE XORG_7X RENDER=1 IN_RT_STATIC X_BYTE_ORDER=X_LITTLE_ENDIAN
 +ifeq ($(KBUILD_TARGET),freebsd) # don't use .freebsd or anything here.
 + vboxvideo_70_DEFS += GCCUSESGAS
 +endif

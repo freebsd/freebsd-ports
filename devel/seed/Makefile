@@ -20,6 +20,9 @@ LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libmpfr.so:${PORTSDIR}/math/mpfr
 
+DEPRECATED=	No longer used
+EXPIRATION_DATE=2016-03-05
+
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intltool libxml2 introspection
 USE_LDCONFIG=	yes
