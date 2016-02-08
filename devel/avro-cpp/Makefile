@@ -22,5 +22,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/lang/c++
 post-patch:
 	@${REINPLACE_CMD} -e 's|COMMAND python|COMMAND "${PYTHON_CMD}"|' \
 		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|BOOST_CHECKPOINT|BOOST_TEST_CHECKPOINT|' \
+		${WRKSRC}/test/SchemaTests.cc
+	@${REINPLACE_CMD} -e 's|BOOST_MESSAGE|BOOST_TEST_MESSAGE|' \
+		${WRKSRC}/test/buffertest.cc
 
 .include <bsd.port.mk>
