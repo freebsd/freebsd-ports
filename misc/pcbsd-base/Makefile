@@ -84,8 +84,6 @@ RUN_DEPENDS=	pc-updategui:${PORTSDIR}/sysutils/pcbsd-utils-qt5 \
 		paprefs>=0:${PORTSDIR}/audio/paprefs \
 		pavucontrol>=0:${PORTSDIR}/audio/pavucontrol \
 		disktype>=0:${PORTSDIR}/sysutils/disktype \
-		grub-mkconfig:${PORTSDIR}/sysutils/grub2-pcbsd \
-		grub2-efi>=0:${PORTSDIR}/sysutils/grub2-efi \
 		unrar:${PORTSDIR}/archivers/unrar \
 		7z:${PORTSDIR}/archivers/p7zip \
 		avahi-browse:${PORTSDIR}/net/avahi-app \
