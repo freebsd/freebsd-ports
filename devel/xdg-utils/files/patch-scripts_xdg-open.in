@@ -1,0 +1,62 @@
+--- scripts/xdg-open.in.orig	2016-01-27 22:52:37.829535000 +0100
++++ scripts/xdg-open.in	2016-01-28 11:10:29.639949000 +0100
+@@ -15,6 +15,12 @@
+ #
+ #---------------------------------------------
+ 
++# If we are started from a Linux app with LD_PRELOAD set unset that
++# so native apps (like browers) won't fail to start.
++if [ "x$(uname)" = "xLinux" ]; then
++    unset LD_PRELOAD
++fi
++
+ manualpage()
+ {
+ cat << _MANUALPAGE
+@@ -92,7 +98,7 @@
+         if [ -x /usr/bin/printf ]; then
+             printf=/usr/bin/printf
+         fi
+-        file=$($printf "$(echo "$file" | sed -e 's@%\([a-f0-9A-F]\{2\}\)@\\x\1@g')")
++        file=$(echo "$file" | unvis -h)
+     fi
+     echo "$file"
+ }
+@@ -211,6 +217,17 @@
+     fi
+ }
+ 
++open_lumina()
++{
++  lumina-open "$1"
++
++  if [ $? -eq 0 ]; then
++       exit_success
++  else
++       exit_failure_operation_failed
++  fi
++}
++
+ #-----------------------------------------
+ # Recursively search .desktop file
+ 
+@@ -380,7 +397,7 @@
+     if [ x"$BROWSER" = x"" ]; then
+         BROWSER=www-browser:links2:elinks:links:lynx:w3m
+         if [ -n "$DISPLAY" ]; then
+-            BROWSER=x-www-browser:firefox:iceweasel:seamonkey:mozilla:epiphany:konqueror:chromium-browser:google-chrome:$BROWSER
++            BROWSER=x-www-browser:firefox:iceweasel:seamonkey:mozilla:epiphany:konqueror:chrome:chromium-browser:google-chrome:$BROWSER
+         fi
+     fi
+ 
+@@ -472,6 +489,10 @@
+     open_mate "$url"
+     ;;
+ 
++    lumina)
++    open_lumina "$url"
++    ;;
++
+     xfce)
+     open_xfce "$url"
+     ;;
