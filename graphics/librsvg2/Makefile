@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librsvg
-PORTVERSION=	2.40.12
+PORTVERSION=	2.40.13
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libcroco-0.6.so:${PORTSDIR}/textproc/libcroco
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix libgsf gdkpixbuf2 introspection:build libxml2 \
 		pango
 USE_LDCONFIG=	yes
@@ -25,6 +25,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-vala \
 		--disable-Bsymbolic
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GTK3_REQUIRED=3.[0-9][0-9].[0-9]|GTK3_REQUIRED=9.90.0|g' \
