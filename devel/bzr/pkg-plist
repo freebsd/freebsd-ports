@@ -1007,6 +1007,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_upgrade.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_upgrade.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_upgrade.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_verify_signatures.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_verify_signatures.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_verify_signatures.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_version.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_version.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_version.pyo
