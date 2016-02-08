@@ -3,7 +3,7 @@
 
 PORTNAME=	linplasma
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SUNSITE/apps/graphics/hacks/svgalib
 
@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=	i386
 
 ALL_TARGET=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_FILES=	bin/linplasma
+PLIST_FILES=	"@(root,,4755) bin/linplasma"
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
@@ -29,7 +29,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/linplasma ${STAGEDIR}${PREFIX}/bin
-	${CHMOD} +s ${STAGEDIR}${PREFIX}/bin/linplasma
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
