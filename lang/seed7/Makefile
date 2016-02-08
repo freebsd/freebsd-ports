@@ -18,7 +18,7 @@ LICENSE_COMB=	multi
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		tar:tgz
+USES=		ncurses tar:tgz
 USE_XORG=	x11
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
