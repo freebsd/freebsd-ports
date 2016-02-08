@@ -1000,6 +1000,8 @@ share/applications/kde4/okularApplication_doc_calligra.desktop
 share/applications/kde4/okularApplication_docx_calligra.desktop
 share/applications/kde4/okularApplication_odp.desktop
 share/applications/kde4/okularApplication_odt.desktop
+share/applications/kde4/okularApplication_powerpoint_calligra.desktop
+share/applications/kde4/okularApplication_pptx_calligra.desktop
 share/applications/kde4/okularApplication_wpd_calligra.desktop
 share/applications/kde4/plan.desktop
 share/applications/kde4/planwork.desktop
@@ -7064,7 +7066,7 @@ share/icons/hicolor/1024x1024/apps/calligraauthor.png
 share/icons/hicolor/1024x1024/apps/calligraflow.png
 share/icons/hicolor/1024x1024/apps/calligrakarbon.png
 share/icons/hicolor/1024x1024/apps/calligrakexi.png
-share/icons/hicolor/1024x1024/apps/calligrakrita.png
+share/icons/hicolor/1024x1024/apps/calligrakrita2.png
 share/icons/hicolor/1024x1024/apps/calligraplan.png
 share/icons/hicolor/1024x1024/apps/calligrasheets.png
 share/icons/hicolor/1024x1024/apps/calligrastage.png
@@ -7074,7 +7076,7 @@ share/icons/hicolor/128x128/apps/calligraauthor.png
 share/icons/hicolor/128x128/apps/calligraflow.png
 share/icons/hicolor/128x128/apps/calligrakarbon.png
 share/icons/hicolor/128x128/apps/calligrakexi.png
-share/icons/hicolor/128x128/apps/calligrakrita.png
+share/icons/hicolor/128x128/apps/calligrakrita2.png
 share/icons/hicolor/128x128/apps/calligraplan.png
 share/icons/hicolor/128x128/apps/calligraplanwork.png
 share/icons/hicolor/128x128/apps/calligrasheets.png
@@ -7094,7 +7096,7 @@ share/icons/hicolor/16x16/apps/calligraauthor.png
 share/icons/hicolor/16x16/apps/calligraflow.png
 share/icons/hicolor/16x16/apps/calligrakarbon.png
 share/icons/hicolor/16x16/apps/calligrakexi.png
-share/icons/hicolor/16x16/apps/calligrakrita.png
+share/icons/hicolor/16x16/apps/calligrakrita2.png
 share/icons/hicolor/16x16/apps/calligraplan.png
 share/icons/hicolor/16x16/apps/calligraplanwork.png
 share/icons/hicolor/16x16/apps/calligrasheets.png
@@ -7112,7 +7114,7 @@ share/icons/hicolor/22x22/apps/calligraauthor.png
 share/icons/hicolor/22x22/apps/calligraflow.png
 share/icons/hicolor/22x22/apps/calligrakarbon.png
 share/icons/hicolor/22x22/apps/calligrakexi.png
-share/icons/hicolor/22x22/apps/calligrakrita.png
+share/icons/hicolor/22x22/apps/calligrakrita2.png
 share/icons/hicolor/22x22/apps/calligraplan.png
 share/icons/hicolor/22x22/apps/calligraplanwork.png
 share/icons/hicolor/22x22/apps/calligrasheets.png
@@ -7127,7 +7129,7 @@ share/icons/hicolor/256x256/apps/calligraauthor.png
 share/icons/hicolor/256x256/apps/calligraflow.png
 share/icons/hicolor/256x256/apps/calligrakarbon.png
 share/icons/hicolor/256x256/apps/calligrakexi.png
-share/icons/hicolor/256x256/apps/calligrakrita.png
+share/icons/hicolor/256x256/apps/calligrakrita2.png
 share/icons/hicolor/256x256/apps/calligraplan.png
 share/icons/hicolor/256x256/apps/calligrasheets.png
 share/icons/hicolor/256x256/apps/calligrastage.png
@@ -7139,7 +7141,7 @@ share/icons/hicolor/32x32/apps/calligraauthor.png
 share/icons/hicolor/32x32/apps/calligraflow.png
 share/icons/hicolor/32x32/apps/calligrakarbon.png
 share/icons/hicolor/32x32/apps/calligrakexi.png
-share/icons/hicolor/32x32/apps/calligrakrita.png
+share/icons/hicolor/32x32/apps/calligrakrita2.png
 share/icons/hicolor/32x32/apps/calligraplan.png
 share/icons/hicolor/32x32/apps/calligraplanwork.png
 share/icons/hicolor/32x32/apps/calligrasheets.png
@@ -7154,7 +7156,7 @@ share/icons/hicolor/48x48/apps/calligraauthor.png
 share/icons/hicolor/48x48/apps/calligraflow.png
 share/icons/hicolor/48x48/apps/calligrakarbon.png
 share/icons/hicolor/48x48/apps/calligrakexi.png
-share/icons/hicolor/48x48/apps/calligrakrita.png
+share/icons/hicolor/48x48/apps/calligrakrita2.png
 share/icons/hicolor/48x48/apps/calligraplan.png
 share/icons/hicolor/48x48/apps/calligraplanwork.png
 share/icons/hicolor/48x48/apps/calligrasheets.png
@@ -7169,7 +7171,7 @@ share/icons/hicolor/512x512/apps/calligraauthor.png
 share/icons/hicolor/512x512/apps/calligraflow.png
 share/icons/hicolor/512x512/apps/calligrakarbon.png
 share/icons/hicolor/512x512/apps/calligrakexi.png
-share/icons/hicolor/512x512/apps/calligrakrita.png
+share/icons/hicolor/512x512/apps/calligrakrita2.png
 share/icons/hicolor/512x512/apps/calligraplan.png
 share/icons/hicolor/512x512/apps/calligrasheets.png
 share/icons/hicolor/512x512/apps/calligrastage.png
@@ -7179,7 +7181,7 @@ share/icons/hicolor/64x64/apps/calligraauthor.png
 share/icons/hicolor/64x64/apps/calligraflow.png
 share/icons/hicolor/64x64/apps/calligrakarbon.png
 share/icons/hicolor/64x64/apps/calligrakexi.png
-share/icons/hicolor/64x64/apps/calligrakrita.png
+share/icons/hicolor/64x64/apps/calligrakrita2.png
 share/icons/hicolor/64x64/apps/calligraplan.png
 share/icons/hicolor/64x64/apps/calligraplanwork.png
 share/icons/hicolor/64x64/apps/calligrasheets.png
@@ -7196,7 +7198,7 @@ share/icons/hicolor/scalable/apps/calligraauthor.svgz
 share/icons/hicolor/scalable/apps/calligraflow.svgz
 share/icons/hicolor/scalable/apps/calligrakarbon.svgz
 share/icons/hicolor/scalable/apps/calligrakexi.svgz
-share/icons/hicolor/scalable/apps/calligrakrita.svgz
+share/icons/hicolor/scalable/apps/calligrakrita2.svgz
 share/icons/hicolor/scalable/apps/calligraplan.svgz
 share/icons/hicolor/scalable/apps/calligraplanwork.svgz
 share/icons/hicolor/scalable/apps/calligrasheets.svgz
@@ -7522,11 +7524,15 @@ share/kde4/services/libokularGenerator_doc_calligra.desktop
 share/kde4/services/libokularGenerator_docx_calligra.desktop
 share/kde4/services/libokularGenerator_odp.desktop
 share/kde4/services/libokularGenerator_odt.desktop
+share/kde4/services/libokularGenerator_powerpoint_calligra.desktop
+share/kde4/services/libokularGenerator_pptx_calligra.desktop
 share/kde4/services/libokularGenerator_wpd_calligra.desktop
 share/kde4/services/okularDoc_calligra.desktop
 share/kde4/services/okularDocx_calligra.desktop
 share/kde4/services/okularOdp.desktop
 share/kde4/services/okularOdt.desktop
+share/kde4/services/okularPowerpoint_calligra.desktop
+share/kde4/services/okularPptx_calligra.desktop
 share/kde4/services/okularWpd_calligra.desktop
 share/kde4/services/qimageioplugins/kra.desktop
 share/kde4/services/qimageioplugins/ora.desktop
