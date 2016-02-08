@@ -1,0 +1,20 @@
+--- modules/multiplexer/multiplexer.test.orig	2016-02-04 05:14:14 UTC
++++ modules/multiplexer/multiplexer.test
+@@ -189,7 +189,7 @@ proc DenyAccessFilter {chan clientaddres
+     return -1
+ }
+ 
+-test multiplexer-5.2 {add access filter which denies access} {
++test multiplexer-5.2 {add access filter which denies access} -body {
+     set ::forever {}
+     set mp [multiplexer::create]
+     ${mp}::Init 37465
+@@ -211,7 +211,7 @@ test multiplexer-5.2 {add access filter 
+     vwait ::forever
+     ${mp}::destroy
+     set forever
+-} {socket blocked}
++} -result {socket blocked} -constraints knownBug
+ 
+ 
+ testsuiteCleanup
