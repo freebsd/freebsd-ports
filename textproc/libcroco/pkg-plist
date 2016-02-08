@@ -29,7 +29,6 @@ include/libcroco-%%VERSION%%/libcroco/cr-utils.h
 include/libcroco-%%VERSION%%/libcroco/libcroco-config.h
 include/libcroco-%%VERSION%%/libcroco/libcroco.h
 lib/libcroco-%%VERSION%%.a
-lib/libcroco-%%VERSION%%.la
 lib/libcroco-%%VERSION%%.so
 lib/libcroco-%%VERSION%%.so.3
 lib/libcroco-%%VERSION%%.so.3.0.1
@@ -37,7 +36,7 @@ libdata/pkgconfig/libcroco-%%VERSION%%.pc
 share/gtk-doc/html/libcroco/ch01.html
 share/gtk-doc/html/libcroco/home.png
 share/gtk-doc/html/libcroco/index.html
-share/gtk-doc/html/libcroco/index.sgml
+share/gtk-doc/html/libcroco/left-insensitive.png
 share/gtk-doc/html/libcroco/left.png
 share/gtk-doc/html/libcroco/libcroco-cr-additional-sel.html
 share/gtk-doc/html/libcroco/libcroco-cr-attr-sel.html
@@ -67,6 +66,8 @@ share/gtk-doc/html/libcroco/libcroco-cr-token.html
 share/gtk-doc/html/libcroco/libcroco-cr-utils.html
 share/gtk-doc/html/libcroco/libcroco-libcroco-config.html
 share/gtk-doc/html/libcroco/libcroco.devhelp2
+share/gtk-doc/html/libcroco/right-insensitive.png
 share/gtk-doc/html/libcroco/right.png
 share/gtk-doc/html/libcroco/style.css
+share/gtk-doc/html/libcroco/up-insensitive.png
 share/gtk-doc/html/libcroco/up.png
