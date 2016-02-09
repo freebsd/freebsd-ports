@@ -48,6 +48,7 @@ OPTIONS_SUB=	yes
 
 .if defined (MUTT_LITE)
 LITE=	yes
+USES+=	ncurses
 .endif
 
 .if defined (LITE)
