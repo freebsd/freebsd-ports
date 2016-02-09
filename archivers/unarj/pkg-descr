@@ -1,7 +1,5 @@
-This is an extract-only program which allows access to the contents of ARJ 
-archives. You cannot specify a base directory or select individual files 
-to extract.  UNARJ does not support empty directories or volume labels.  
-UNARJ is much slower than ARJ because ARJ is highly optimized using 
-assembly language.
+This is an extract-only program which allows access to the contents of ARJ
+archives. You cannot specify a base directory or select individual files
+to extract.  UNARJ does not support empty directories or volume labels.
 
 WWW: http://www.arjsoftware.com/
