@@ -68,7 +68,7 @@ Notes:
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>J.C. Cleaver reports reports:</p>
+	<p>J.C. Cleaver reports:</p>
 	<blockquote cite="http://lists.xymon.com/pipermail/xymon/2016-February/042986.html">
 	  <ul>
 	  <li><p>CVE-2016-2054: Buffer overflow in xymond handling of
