@@ -58,6 +58,162 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a8de962a-cf15-11e5-805c-5453ed2e2b49">
+    <topic>py-imaging, py-pillow -- Buffer overflow in PCD decoder</topic>
+    <affects>
+      <package>
+	<name>py27-pillow</name>
+	<name>py33-pillow</name>
+	<name>py34-pillow</name>
+	<name>py35-pillow</name>
+	<range><lt>2.9.0_1</lt></range>
+      </package>
+      <package>
+	<name>py27-imaging</name>
+	<range><lt>1.1.7_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Pillow maintainers report:</p>
+	<blockquote cite="https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html">
+	  <p>In all versions of Pillow, dating back at least to the last PIL
+	    1.1.7 release, PcdDecode.c has a buffer overflow error.</p>
+	  <p>The state.buffer for PcdDecode.c is allocated based on a 3 bytes
+	    per pixel sizing, where PcdDecode.c wrote into the buffer assuming
+	    4 bytes per pixel. This writes 768 bytes beyond the end of the
+	    buffer into other Python object storage. In some cases, this causes
+	    a segfault, in others an internal Python malloc error.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://openwall.com/lists/oss-security/2016/02/02/5</mlist>
+      <url>https://github.com/python-pillow/Pillow/commit/ae453aa18b66af54e7ff716f4ccb33adca60afd4</url>
+      <url>https://github.com/python-pillow/Pillow/issues/568</url>
+    </references>
+    <dates>
+      <discovery>2016-02-02</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0519db18-cf15-11e5-805c-5453ed2e2b49">
+    <topic>py-pillow -- Integer overflow in Resample.c</topic>
+    <affects>
+      <package>
+	<name>py27-pillow</name>
+	<name>py33-pillow</name>
+	<name>py34-pillow</name>
+	<name>py35-pillow</name>
+	<range><lt>2.9.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Pillow maintainers report:</p>
+	<blockquote cite="https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html">
+	  <p>If a large value was passed into the new size for an image, it is
+	    possible to overflow an int32 value passed into malloc, leading the
+	    malloc’d buffer to be undersized. These allocations are followed by
+	    a loop that writes out of bounds. This can lead to corruption on
+	    the heap of the Python process with attacker controlled float
+	    data.</p>
+	  <p>This issue was found by Ned Williamson.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/python-pillow/Pillow/commit/41fae6d9e2da741d2c5464775c7f1a609ea03798</url>
+      <url>https://github.com/python-pillow/Pillow/issues/1710</url>
+    </references>
+    <dates>
+      <discovery>2016-02-05</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6ea60e00-cf13-11e5-805c-5453ed2e2b49">
+    <topic>py-imaging, py-pillow -- Buffer overflow in FLI decoding code</topic>
+    <affects>
+      <package>
+	<name>py27-pillow</name>
+	<name>py33-pillow</name>
+	<name>py34-pillow</name>
+	<name>py35-pillow</name>
+	<range><lt>2.9.0_1</lt></range>
+      </package>
+      <package>
+	<name>py27-imaging</name>
+	<range><lt>1.1.7_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Pillow maintainers report:</p>
+	<blockquote cite="https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html">
+	  <p>In all versions of Pillow, dating back at least to the last PIL
+	    1.1.7 release, FliDecode.c has a buffer overflow error.</p>
+	  <p>There is a memcpy error where x is added to a target buffer
+	    address. X is used in several internal temporary variable roles,
+	    but can take a value up to the width of the image. Im-&gt;image[y]
+	    is a set of row pointers to segments of memory that are the size of
+	    the row. At the max y, this will write the contents of the line off
+	    the end of the memory buffer, causing a segfault.</p>
+	  <p>This issue was found by Alyssa Besseling at Atlassian.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-0775</cvename>
+      <url>https://github.com/python-pillow/Pillow/commit/bcaaf97f4ff25b3b5b9e8efeda364e17e80858ec</url>
+    </references>
+    <dates>
+      <discovery>2016-02-05</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="53252879-cf11-11e5-805c-5453ed2e2b49">
+    <topic>py-pillow -- Buffer overflow in TIFF decoding code</topic>
+    <affects>
+      <package>
+	<name>py27-pillow</name>
+	<name>py33-pillow</name>
+	<name>py34-pillow</name>
+	<name>py35-pillow</name>
+	<range><lt>2.9.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Pillow maintainers report:</p>
+	<blockquote cite="https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html">
+	  <p>Pillow 3.1.0 and earlier when linked against libtiff &gt;= 4.0.0 on
+	    x64 may overflow a buffer when reading a specially crafted tiff
+	    file.</p>
+	  <p>Specifically, libtiff &gt;= 4.0.0 changed the return type of
+	    TIFFScanlineSize from int32 to machine dependent int32|64. If the
+	    scanline is sized so that it overflows an int32, it may be
+	    interpreted as a negative number, which will then pass the size check
+	    in TiffDecode.c line 236. To do this, the logical scanline size has
+	    to be &gt; 2gb, and for the test file, the allocated buffer size is 64k
+	    against a roughly 4gb scan line size. Any image data over 64k is
+	    written over the heap, causing a segfault.</p>
+	  <p>This issue was found by security researcher FourOne.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-0740</cvename>
+      <url>https://github.com/python-pillow/Pillow/commit/6dcbf5bd96b717c58d7b642949da8d323099928e</url>
+    </references>
+    <dates>
+      <discovery>2016-02-04</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ac79ed8-ccc2-11e5-932b-5404a68ad561">
     <topic>ffmpeg -- remote denial of service in JPEG2000 decoder</topic>
     <affects>
