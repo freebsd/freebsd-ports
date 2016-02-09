@@ -31,7 +31,10 @@ MAKE_ARGS+=	BOOST_DIR=${LOCALBASE} \
 
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${FIND} ${WRKSRC}/DLL430_v3/src/TI/DLL430 \
+		\( -name '*.cpp' -o -name '*.h' \) -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's|[io]fstream|std::&|; s|std::std::|std::|'
 
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/libmsp430.so ${STAGEDIR}${PREFIX}/lib/libmsp430.so
@@ -41,4 +44,4 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/slau320v.pdf ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/slau656.pdf ${STAGEDIR}${DOCSDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
