@@ -3,7 +3,7 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.16.1.7533
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -63,7 +63,9 @@ RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		mtr:${PORTSDIR}/net/mtr-nox11 \
 		${LOCALBASE}/share/pear/Net/IPv4.php:${PORTSDIR}/net/pear-Net_IPv4 \
 		${LOCALBASE}/share/pear/Net/IPv6.php:${PORTSDIR}/net/pear-Net_IPv6 \
-		snmpget:${PORTSDIR}/net-mgmt/net-snmp
+		snmpget:${PORTSDIR}/net-mgmt/net-snmp \
+		sudo:${PORTSDIR}/security/sudo
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER SVN WMIC
 OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER SVN WMIC
