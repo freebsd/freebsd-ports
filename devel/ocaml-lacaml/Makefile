@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml interface to BLAS and LAPACK libraries
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl
@@ -47,15 +48,17 @@ post-patch:
 		 s|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/myocamlbuild.ml
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in AUTHORS.txt CHANGES.txt README.md TODO.md
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DOCSDIR})
-.endfor
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${EXAMPLESDIR})
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/lacaml/*.cmxs
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/lacaml/*.so
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in AUTHORS.txt CHANGES.txt README.md TODO.md
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.endfor
+
+post-install-EXAMPLES-on:
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
