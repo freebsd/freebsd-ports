@@ -3,7 +3,7 @@
 
 PORTNAME=	pptpclient
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/pptp/pptp-${PORTVERSION}
 DISTNAME=	pptp-${PORTVERSION}
@@ -14,6 +14,7 @@ COMMENT=	PPTP client for establishing a VPN link with an NT server
 LICENSE=	GPLv2+
 
 USES=		perl5
+USE_RC_SUBR=	pptp
 MAKE_ARGS=	CC="${CC}" OPTIMIZE="${CFLAGS}" DEBUG="" \
 		PPPD="/usr/sbin/ppp" IP="/usr/bin/true"
 CFLAGS+=	-DUSER_PPP
