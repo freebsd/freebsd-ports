@@ -120,7 +120,7 @@ get_cookie()
 	# fail if wget returned non-zero exitcode or cookies.txt is empty
 	_return=$?
 	cookie_str="$(grep '^.google.com[[:space:]]' "${cookie}" 2>/dev/null | \
-		sed -ne 's/^.*\(ID=.*\)$/\1/p')"
+		sed -ne 's/^.*\(NID[^=]*=.*\)$/\1/p')"
 	if [ ${_return} -ne 0 -o -z "${cookie_str}" ]; then
 		rm "${cookie}" 2>/dev/null
 		out 'E\n' "cannot get cookie: ${cookie_str}"
@@ -154,7 +154,7 @@ get_page()
 	urls=$(wget -T5 -t2 -q -U"${ua}" --no-cache \
 		--load-cookies "${cookie}" -O- \
 		"${url}" | tr '}' '\n' | grep "{\"pid\":\"P.*\",\"src\":" | \
-		sed 's/^.*"src":"\(http:\/\/[^"]*\)".*$/\1/;s/\\u0026/\&/g' | sort -u)
+		sed 's/^.*"src":"\(https:\/\/[^"]*\)".*$/\1/;s/\\u0026/\&/g' | sort -u)
 
 	for	url in ${urls}; do
 		page=$(echo "${url}" | sed 's/^.*&pg=\([^&]*\)&.*$/\1/')
