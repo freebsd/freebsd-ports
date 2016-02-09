@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wcslib
-PORTVERSION=	5.13
+PORTVERSION=	5.14
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
