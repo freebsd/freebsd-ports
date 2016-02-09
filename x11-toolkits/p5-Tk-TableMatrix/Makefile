@@ -17,6 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	X11LIB=${LOCALBASE}/lib X11INC=${LOCALBASE}/include
+MAKE_JOBS_UNSAFE=	yes
 
 # This would conflict with x11-toolkits/p5-Tk
 post-install:
