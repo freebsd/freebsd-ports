@@ -44,6 +44,9 @@ GH_ACCOUNT=	rust-lang
 GH_PROJECT=	rust-installer:rust_installer
 GH_TAGNAME=	4915c75:rust_installer
 
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap cargo
+
 CARGO_BOOT_SIG=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}
 CARGO_BOOT=	${PORTNAME}-nightly-${CARGO_BOOT_SIG}${EXTRACT_SUFX}
 CARGO_REGISTRY=	${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
