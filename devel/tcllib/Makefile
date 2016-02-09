@@ -36,7 +36,7 @@ INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 #
 # Man pages
 #
-.if "${ALL_TARGET}" != "ctictl"
+.if !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
 
 .if ${PORT_OPTIONS:MMANPAGES}
 ALL_TARGET+=	nroff-doc
