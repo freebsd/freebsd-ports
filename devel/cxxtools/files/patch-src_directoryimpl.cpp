@@ -1,5 +1,5 @@
---- a/src/directoryimpl.cpp
-+++ b/src/directoryimpl.cpp
+--- src/directoryimpl.cpp.orig	2013-12-26 09:33:48 UTC
++++ src/directoryimpl.cpp
 @@ -27,6 +27,7 @@
   */
  #include "directoryimpl.h"
