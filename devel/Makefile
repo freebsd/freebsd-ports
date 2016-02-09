@@ -4384,6 +4384,7 @@
     SUBDIR += py-thrift
     SUBDIR += py-timelib
     SUBDIR += py-tipper
+    SUBDIR += total-ordering
     SUBDIR += py-tox
     SUBDIR += py-trace2html
     SUBDIR += py-traitlets
