@@ -2,8 +2,8 @@ Obtained from:
 
 	https://github.com/maekitalo/cxxtools/commit/645dedf575da32198ac815655e5c6e5cd5cc4461
 
---- a/include/cxxtools/char.h
-+++ b/include/cxxtools/char.h
+--- include/cxxtools/char.h.orig	2014-01-17 19:05:09 UTC
++++ include/cxxtools/char.h
 @@ -72,23 +72,8 @@ namespace cxxtools
              : _value(0)
              {}
