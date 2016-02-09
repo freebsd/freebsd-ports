@@ -3,7 +3,7 @@
 
 PORTNAME=	shutter
 PORTVERSION=	0.93.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://shutter-project.org/wp-content/uploads/releases/tars/
 
@@ -13,7 +13,8 @@ COMMENT=	Screenshot tool
 LICENSE=	GPLv3 GPLv2 # the latter for some shipped cursors
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	librsvg2>=2.40.6:${PORTSDIR}/graphics/librsvg2 \
+RUN_DEPENDS=	ImageMagick>=6.9.3.1,1:${PORTSDIR}/graphics/ImageMagick \
+		librsvg2>=2.40.6:${PORTSDIR}/graphics/librsvg2 \
 		p5-File-BaseDir>=0.03:${PORTSDIR}/devel/p5-File-BaseDir \
 		p5-File-Copy-Recursive>=0.38_1:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		p5-File-Spec-Native>=1.003_1:${PORTSDIR}/devel/p5-File-Spec-Native \
