@@ -21,6 +21,8 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 		libhidapi.so:${PORTSDIR}/comms/hidapi
 
+BROKEN_FreeBSD_9=	does not build (internal compiler error)
+
 USES=		compiler:c++11-lib gmake zip:infozip
 USE_LDCONFIG=	yes
 
