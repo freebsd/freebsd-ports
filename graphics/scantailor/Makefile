@@ -46,6 +46,10 @@ PORTDOCS=	*
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|_[12]|boost::lambda::&|g; s|bind(|boost::lambda::&|' \
+		${WRKSRC}/filters/*/Filter.cpp
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/resources/icons/appicon-about.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
