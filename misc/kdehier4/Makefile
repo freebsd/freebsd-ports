@@ -11,6 +11,9 @@ COMMENT=	Meta port to organize KDE4_PREFIX
 NO_BUILD=	yes
 USE_KDE4=	#
 
+DEPRECATED=	Not used since 2014
+EXPIRATION_DATE=2016-03-09
+
 .include <bsd.port.pre.mk>
 
 .if ${KDE4_PREFIX} != ${PREFIX}
