@@ -58,6 +58,48 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1cecd5e0-c372-11e5-96d6-14dae9d210b8">
+    <topic>xymon-server -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xymon-server</name>
+	<range><lt>4.3.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>J.C. Cleaver reports reports:</p>
+	<blockquote cite="http://lists.xymon.com/pipermail/xymon/2016-February/042986.html">
+	  <ul>
+	  <li><p>CVE-2016-2054: Buffer overflow in xymond handling of
+	    "config" command</p></li>
+	  <li><p> CVE-2016-2055: Access to possibly confidential files
+	    in the Xymon configuration directory</p></li>
+	  <li><p>CVE-2016-2056: Shell command injection in the
+	    "useradm" and "chpasswd" web applications</p></li>
+	  <li><p>CVE-2016-2057: Incorrect permissions on IPC queues
+	    used by the xymond daemon can bypass IP access filtering</p></li>
+	  <li><p>CVE-2016-2058: Javascript injection in "detailed status
+	    webpage" of monitoring items; XSS vulnerability via malformed
+	    acknowledgment messages</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.xymon.com/pipermail/xymon/2016-February/042986.html</url>
+      <cvename>CVE-2016-2054</cvename>
+      <cvename>CVE-2016-2055</cvename>
+      <cvename>CVE-2016-2056</cvename>
+      <cvename>CVE-2016-2057</cvename>
+      <cvename>CVE-2016-2058</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-19</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="85eb4e46-cf16-11e5-840f-485d605f4717">
     <topic>php -- pcre vulnerability</topic>
     <affects>
