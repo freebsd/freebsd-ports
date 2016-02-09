@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ak@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File system automounting implemented in user-space using FUSE
 
 LICENSE=	GPLv2
