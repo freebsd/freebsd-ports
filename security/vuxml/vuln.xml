@@ -58,6 +58,50 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="85eb4e46-cf16-11e5-840f-485d605f4717">
+    <topic>php -- pcre vulnerability</topic>
+    <affects>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.32</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP reports:</p>
+	<blockquote cite="http://php.net/ChangeLog-5.php#5.6.18">
+	  <ul><li>PCRE:
+	  <ul>
+	  <li>Upgraded bundled PCRE library to 8.38.(CVE-2015-8383,
+	   CVE-2015-8386, CVE-2015-8387, CVE-2015-8389, CVE-2015-8390,
+	   CVE-2015-8391, CVE-2015-8393, CVE-2015-8394)</li>
+	  </ul></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8383</cvename>
+      <cvename>CVE-2015-8386</cvename>
+      <cvename>CVE-2015-8387</cvename>
+      <cvename>CVE-2015-8389</cvename>
+      <cvename>CVE-2015-8390</cvename>
+      <cvename>CVE-2015-8391</cvename>
+      <cvename>CVE-2015-8393</cvename>
+      <cvename>CVE-2015-8394</cvename>
+      <url>http://php.net/ChangeLog-5.php#5.6.18</url>
+      <url>http://php.net/ChangeLog-5.php#5.5.32</url>
+    </references>
+    <dates>
+      <discovery>2016-02-04</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8de962a-cf15-11e5-805c-5453ed2e2b49">
     <topic>py-imaging, py-pillow -- Buffer overflow in PCD decoder</topic>
     <affects>
