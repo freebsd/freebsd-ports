@@ -39,7 +39,7 @@ OPTIONS_SUB=	yes
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
 
-READLINE_LIB_DEPENDS=	libreadline.so:${PORTSDIR}/devel/readline
+READLINE_USES=		readline
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_HAVE_DOXYGEN="false"
