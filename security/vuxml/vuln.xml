@@ -69,19 +69,33 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Talos reports:</p>
-	<blockquote cite="http://www.talosintel.com/reports/TALOS-2016-0058/">
-	  <p>A specially crafted font can cause an out-of-bounds read
-	    resulting in arbitrary code execution.</p>
+	<blockquote cite="http://blog.talosintel.com/2016/02/vulnerability-spotlight-libgraphite.html">
+	  <ul>
+	  <li><p>An exploitable denial of service vulnerability exists
+	    in the font handling of Libgraphite. A specially crafted font can cause
+	    an out-of-bounds read potentially resulting in an information leak or
+	    denial of service.</p></li>
+	  <li><p>A specially crafted font can cause a buffer overflow
+	    resulting in potential code execution.</p></li>
+	  <li><p>An exploitable NULL pointer dereference exists in the
+	    bidirectional font handling functionality of Libgraphite. A specially
+	    crafted font can cause a NULL pointer dereference resulting in a
+	    crash.</p></li>
+	  </ul>
 	</blockquote>
       </body>
     </description>
     <references>
-      <url>http://www.talosintel.com/reports/TALOS-2016-0058/</url>
+      <url>http://blog.talosintel.com/2016/02/vulnerability-spotlight-libgraphite.html</url>
       <cvename>CVE-2016-1521</cvename>
+      <cvename>CVE-2016-1522</cvename>
+      <cvename>CVE-2016-1523</cvename>
+      <cvename>CVE-2016-1526</cvename>
     </references>
     <dates>
       <discovery>2016-02-05</discovery>
       <entry>2016-02-09</entry>
+      <modified>2016-02-09</modified>
     </dates>
   </vuln>
 
