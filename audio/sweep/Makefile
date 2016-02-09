@@ -8,8 +8,10 @@ PORTEPOCH=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Sound editor for the GNOME/GTK+2 desktop
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
