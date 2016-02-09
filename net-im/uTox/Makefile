@@ -2,6 +2,7 @@
 
 PORTNAME=	uTox
 PORTVERSION=	0.5.1.20160121
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	fidaj@ukr.net
@@ -14,6 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox \
 		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libsodium.so:${PORTSDIR}/security/libsodium \
 		libv4lconvert.so:${PORTSDIR}/multimedia/libv4l \
 		libvpx.so:${PORTSDIR}/multimedia/libvpx \
 		libfilteraudio.so:${PORTSDIR}/audio/libfilteraudio
@@ -33,9 +35,15 @@ OPTIONS_DEFAULT=	DBUS
 DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 DBUS_MAKE_ARGS_OFF=	DBUS=0
 
-pre-configure:
+post-patch:
 	@${REINPLACE_CMD} -e 's|$$(GIT_V)|${DISTVERSION}-${GH_TAGNAME}|' \
 		-e 's|share/man|man|' ${WRKSRC}/${MAKEFILE}
+
+pre-configure:
+	@(if [ ! -e "${LOCALBASE}/lib/libtoxav.so" ]; then \
+		${ECHO_CMD} "==> ${PKGNAME} requires net-im/tox port to be built with SODIUM option enabled"; \
+		${FALSE}; \
+	fi)
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/utox
