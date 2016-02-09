@@ -55,9 +55,56 @@ Help is also available from ports-security@freebsd.org.
 Notes:
   * Please add new entries to the beginning of this file.
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
-
 -->
+
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="36034227-cf81-11e5-9c2b-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>48.0.2564.109</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2016/02/stable-channel-update_9.html">
+	  <p>6 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[546677] High CVE-2016-1622: Same-origin bypass in Extensions.
+	      Credit to anonymous.</li>
+	    <li>[577105] High CVE-2016-1623: Same-origin bypass in DOM. Credit
+	      to Mariusz Mlynski.</li>
+	    <li>[583607] High CVE-2016-1624: Buffer overflow in Brotli. Credit
+	      to lukezli.</li>
+	    <li>[509313] Medium CVE-2016-1625: Navigation bypass in Chrome
+	      Instant. Credit to Jann Horn.</li>
+	    <li>[571480] Medium CVE-2016-1626: Out-of-bounds read in PDFium.
+	      Credit to anonymous, working with HP's Zero Day Initiative.</li>
+	    <li>[585517] CVE-2016-1627: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1622</cvename>
+      <cvename>CVE-2016-1623</cvename>
+      <cvename>CVE-2016-1624</cvename>
+      <cvename>CVE-2016-1625</cvename>
+      <cvename>CVE-2016-1626</cvename>
+      <cvename>CVE-2016-1627</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2016/02/stable-channel-update_9.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-08</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8f10fa04-cf6a-11e5-96d6-14dae9d210b8">
     <topic>graphite2 -- code execution vulnerability</topic>
     <affects>
