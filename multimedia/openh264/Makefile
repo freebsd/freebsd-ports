@@ -20,7 +20,8 @@ USE_LDCONFIG=	yes
 ASFLAGS+=	${ASFLAGS_${MACHINE}_${CHOSEN_COMPILER_TYPE}}
 ASFLAGS_arm_clang=	-no-integrated-as
 ASFLAGS_arm64_clang=	-no-integrated-as
-MAKE_ARGS=	OS=bsd ARCH="${ARCH:S/amd64/x86_64/}" \
+MAKE_ARGS=	PREFIX="${PREFIX}" \
+		OS=bsd ARCH="${ARCH:S/amd64/x86_64/}" \
 		CCASFLAGS='$$(CFLAGS) ${ASFLAGS}' \
 		CFLAGS_OPT="" CFLAGS_DEBUG=""
 ALL_TARGET=	all
