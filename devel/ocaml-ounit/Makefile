@@ -11,24 +11,26 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml unit test framework
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
 USES=		gmake
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
 OCAML_PKGDIRS=	oUnit
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 ALL_TARGET=	all allopt testall doc
 MAKE_ENV=	OCAMLFIND_DESTDIR=${PREFIX}/lib/ocaml/site-lib
+
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+
 OPTIONS_DEFINE=	DOCS
 
-post-install:
-	@${ECHO_MSG} "==>  Installing port documentation for ${PKGORIGIN}..."
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@( cd ${WRKSRC}; ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR} )
-	@( cd ${WRKSRC}/doc; \
-	   ${INSTALL_DATA} style.css ${STAGEDIR}${DOCSDIR}; \
-	   for f in `${FIND} . -type f -name \\*.html -print`; do \
-		${INSTALL_DATA} $${f} ${STAGEDIR}${DOCSDIR}; \
-	   done )
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/style.css ${STAGEDIR}${DOCSDIR}
+	${FIND} ${WRKSRC}/doc -type f -name "*.html" -exec \
+		${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR} \;
 
 .include <bsd.port.mk>
