@@ -1,0 +1,6 @@
+Code to deeply merge multiple python dictionaries
+
+This provides the option_merge.MergedOptions class, which allows
+you to treat multiple python dictionaries as one.
+
+WWW: http://github.com/delfick/option_merge
