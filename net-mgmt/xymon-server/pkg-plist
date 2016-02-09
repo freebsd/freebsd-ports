@@ -274,7 +274,9 @@ man/man8/xymonproxy.8
 %%WWWDIR%%/server/web/topchanges_footer
 %%WWWDIR%%/server/web/topchanges_form
 %%WWWDIR%%/server/web/topchanges_header
+%%WWWDIR%%/server/web/trends_footer
 %%WWWDIR%%/server/web/trends_form
+%%WWWDIR%%/server/web/trends_header
 %%WWWDIR%%/server/web/useradm_footer
 %%WWWDIR%%/server/web/useradm_form
 %%WWWDIR%%/server/web/useradm_header
