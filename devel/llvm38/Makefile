@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	3.8.0rc1
+DISTVERSION=	3.8.0rc2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -149,6 +149,8 @@ CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|so
 
 .if ${PORT_OPTIONS:MEXTRAS}
 COMMANDS+=	${EXTRAS_COMMANDS}
+MAN1SRCS+=	extraclangtools.1
+PORTDOCS+=	clang-tools
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
@@ -202,13 +204,16 @@ BROKEN=	LLDB does not build with Python 3
 .if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
 # Evil hack around gcc48 not providing a usable c++11 environment on 9.x
 PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
+PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
 .endif
 
 post-extract-CLANG-on:
 	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
 
 post-extract-EXTRAS-on:
+.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_extras} ${PATCH_WRKSRC}/tools/clang/tools/extra
+.endif
 
 post-extract-LLD-on:
 	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
