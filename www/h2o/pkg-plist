@@ -9,11 +9,14 @@ share/h2o/start_server
 %%PORTDOCS%%%%DOCSDIR%%/assets/firstpaintbench.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/remotebench.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/searchstyle.css
+%%PORTDOCS%%%%DOCSDIR%%/assets/staticfile612-nginx1910-h2o170.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/style.css
 %%PORTDOCS%%%%DOCSDIR%%/benchmarks.html
 %%PORTDOCS%%%%DOCSDIR%%/configure.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/access_log_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/base_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/basic_auth.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/cgi.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/command_options.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/errordoc_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/expires_directives.html
@@ -23,6 +26,7 @@ share/h2o/start_server
 %%PORTDOCS%%%%DOCSDIR%%/configure/headers_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/http1_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/http2_directives.html
+%%PORTDOCS%%%%DOCSDIR%%/configure/mruby.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/mruby_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/proxy_directives.html
 %%PORTDOCS%%%%DOCSDIR%%/configure/quick_start.html
