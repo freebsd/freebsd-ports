@@ -4340,6 +4340,7 @@
     SUBDIR += py-setuptools_hg
     SUBDIR += py-setuptools_scm
     SUBDIR += py-sh
+    SUBDIR += py-should_dsl
     SUBDIR += py-shapely
     SUBDIR += py-simplegeneric
     SUBDIR += py-simplejson
