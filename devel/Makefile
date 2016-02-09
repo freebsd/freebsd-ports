@@ -4166,6 +4166,7 @@
     SUBDIR += py-ncurses
     SUBDIR += py-nose
     SUBDIR += py-nose-cov
+    SUBDIR += py-noseofyeti
     SUBDIR += py-notifier
     SUBDIR += py-notify
     SUBDIR += py-ocempgui
