@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	papi
-PORTVERSION=	5.4.2
+PORTVERSION=	5.4.3
 CATEGORIES=	devel
 MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
