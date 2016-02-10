@@ -15,5 +15,6 @@ RUN_DEPENDS=	rubygem-eventmachine>=0.12.10:${PORTSDIR}/devel/rubygem-eventmachin
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
