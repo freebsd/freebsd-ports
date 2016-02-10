@@ -36,8 +36,12 @@ do-install:
 	@${REINPLACE_CMD} -E -e "s@^(user=).*@\1\"root\"@;s@^(lmonhome=).*@\1\"${PREFIX}/${PORTNAME}\"@" ${WRKSRC}/examples/lmon.init
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/lmon.init \
 		${STAGEDIR}${PREFIX}/etc/rc.d/lmon.sh.sample
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.rules ${STAGEDIR}${EXAMPLESDIR}
 

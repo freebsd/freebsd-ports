@@ -1,0 +1,47 @@
+--- scripts/xdg-desktop-menu.in.orig	2016-01-27 22:06:06.661844000 +0100
++++ scripts/xdg-desktop-menu.in	2016-01-27 22:08:30.057702000 +0100
+@@ -67,7 +67,7 @@
+ 
+     for MIME in $mimetypes ; do
+         xdg_default_dirs="$XDG_DATA_DIRS"
+-        [ -n "$xdg_default_dirs" ] || xdg_default_dirs=/usr/local/share/:/usr/share/
++        [ -n "$xdg_default_dirs" ] || xdg_default_dirs=%%LOCALBASE%%/share/:/usr/share/
+         if [ x"$mode" = x"user" ] ; then
+             xdg_user_dir="$XDG_DATA_HOME"
+             [ -n "$xdg_user_dir" ] || xdg_user_dir="$HOME/.local/share"
+@@ -110,7 +110,7 @@
+     xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
+ 
+     xdg_system_dirs="$XDG_CONFIG_DIRS"
+-    [ -n "$xdg_system_dirs" ] || xdg_system_dirs=/etc/xdg
++    [ -n "$xdg_system_dirs" ] || xdg_system_dirs=%%LOCALBASE%%/etc/xdg
+     xdg_global_dir=
+     for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
+         if [ -w $x/$xdg_dir_name ] ; then
+@@ -475,7 +475,7 @@
+ xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
+ 
+ xdg_system_dirs="$XDG_DATA_DIRS"
+-[ -n "$xdg_system_dirs" ] || xdg_system_dirs=/usr/local/share/:/usr/share/
++[ -n "$xdg_system_dirs" ] || xdg_system_dirs=%%LOCALBASE%%/share/:/usr/share/
+ xdg_global_dir=
+ for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
+     if [ -w $x/$xdg_dir_name ] ; then
+@@ -542,7 +542,7 @@
+ xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
+ 
+ xdg_system_dirs="$XDG_DATA_DIRS"
+-[ -n "$xdg_system_dirs" ] || xdg_system_dirs=/usr/local/share/:/usr/share/
++[ -n "$xdg_system_dirs" ] || xdg_system_dirs=%%LOCALBASE%%/share/:/usr/share/
+ xdg_global_dir=
+ for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
+     if [ -w $x/$xdg_dir_name ] ; then
+@@ -556,7 +556,7 @@
+ [ -w $kde_global_dir ] || kde_global_dir=
+ 
+ gnome_user_dir="$HOME/.gnome/apps"
+-gnome_global_dir="/usr/share/gnome/apps"
++gnome_global_dir="%%LOCALBASE%%/share/gnome/apps"
+ [ -w $gnome_global_dir ] || gnome_global_dir=
+ 
+ DEBUG 3 "Install locations for *.desktop files:"

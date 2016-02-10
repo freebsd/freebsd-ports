@@ -11,6 +11,8 @@ COMMENT=	Simulation of a full-scale war between two emperors
 
 LICENSE=	GPLv2
 
+USES=		ncurses
+MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 PORTDOCS=	AUTHORS BUGS HACKING NEWS README
 OPTIONS_DEFINE=	DOCS
 

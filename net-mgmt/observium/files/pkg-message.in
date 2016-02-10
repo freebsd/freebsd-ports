@@ -4,14 +4,59 @@ http://observium.org/wiki/Installation
 
 with the following notes:
 - Installation directory is %%WWWDIR%%
-- $config['fping'] should be set to '%%LOCALBASE%%/sbin/fping'
 - The following lines should be added to /etc/crontab:
 
 33	*/6	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h all
 */5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h new
 */5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% poller.php -h all
+*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PYTHON%% poller-wrapper.py 2
 
 Notes:
-- Setting $config['snmp']['internal'] to true is not recommended. The
-  php function snmp_set_quick_print() used by Observium leaves units like
-  kB in the value and Observium currently does not deal with that correctly.
+
+- With newer MySQL databases you may need to disable strict mode for
+  Observium to function:
+
+	SET GLOBAL sql_mode = '';
+
+- Apache needs mod_rewrite enabled; uncomment the line below in httpd.conf as needed.
+
+    LoadModule rewrite_module libexec/apache24/mod_rewrite.so
+
+- A minimal install can be created with the following steps and configuration file:
+
+0: make sure apache and mysql are up and running.
+
+1: create the database and a dbaccount with the following (my)SQL commands:
+
+    CREATE DATABASE observium DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+    GRANT ALL PRIVILEGES ON observium.* TO 'observium'@'localhost' IDENTIFIED BY 'notSecure';
+    SET GLOBAL sql_mode = '';
+
+2: create a minimal config file at:
+
+	 %%WWWDIR%%/config.php
+
+    containing:
+
+<?php
+$config['db_host'] = 'localhost';
+$config['db_user'] = 'observium';
+$config['db_pass'] = 'notSecure';
+$config['db_name'] = 'observium';
+
+3:  populate the admin user and initialize the database (as 'www' user):
+
+sudo -u www %%WWWDIR%%/discovery.php -u
+sudo -u www %%WWWDIR%%/adduser.php admin SomeInsecureAdminPassword 10
+
+4:   and verify that collection is working:
+
+sudo -u www %%WWWDIR%%/discovery.php -h all -d
+sudo -u www %%WWWDIR%%/poller.php -h all -d
+
+5: Install the above crontabs.
+
+6: log in with a web browser; using the username 'admin' and the 
+   password 'SomeInsecureAdminPassword'.
+
+   Hosts can be added from the webinterface or from the commandline.

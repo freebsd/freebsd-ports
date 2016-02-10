@@ -28,6 +28,7 @@ USES=		gettext gmake pkgconfig
 USE_GCC=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 gtk20
 USE_XORG=	x11 xcomposite xcursor xdamage xext xfixes xi xinerama xrandr xrender
+TMPDIR=		${WRKDIR}
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLUGINS=	beautify \

@@ -1,0 +1,11 @@
+--- Makefile.orig	2014-05-21 12:29:36 UTC
++++ Makefile
+@@ -6,7 +6,7 @@ SOURCES = README COPYING NEWS Makefile c
+ CFLAGS=-O
+ 
+ bluemoon: bluemoon.c
+-	cc $(CFLAGS) -DRELEASE=\"$(VERS)\" bluemoon.c -lncurses -o bluemoon
++	$(CC) $(CFLAGS) -DRELEASE=\"$(VERS)\" bluemoon.c $(LDFLAGS) -lncurses -o bluemoon
+ 
+ bluemoon.6: bluemoon.xml
+ 	xmlto man bluemoon.xml

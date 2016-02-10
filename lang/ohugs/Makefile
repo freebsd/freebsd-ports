@@ -22,8 +22,8 @@ LIB_DEPENDS=	libTix8.4.3.so:${PORTSDIR}/x11-toolkits/tix
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
 BUILD_WRKSRC=	${WRKSRC}/src
-USES=		bison readline
-LDFLAGS+=	-lm -lreadline -ltermcap
+USES=		bison ncurses readline
+LDFLAGS+=	-lm -lreadline -lncurses
 
 .if ${PORT_OPTIONS:MX11}
 USES+=		tk

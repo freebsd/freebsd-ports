@@ -565,6 +565,7 @@
     SUBDIR += linux-f10-sdl_ttf
     SUBDIR += linux-f10-tiff
     SUBDIR += linux-f10-ungif
+    SUBDIR += llpp
     SUBDIR += lprof-devel
     SUBDIR += lua-gd
     SUBDIR += luminance
@@ -838,7 +839,6 @@
     SUBDIR += py-graph
     SUBDIR += py-graph-core
     SUBDIR += py-graph-dot
-    SUBDIR += py-graphviz
     SUBDIR += py-graphy
     SUBDIR += py-gvgen
     SUBDIR += py-imaging
@@ -863,6 +863,7 @@
     SUBDIR += py-pyganim
     SUBDIR += py-pyggel
     SUBDIR += py-pyglet
+    SUBDIR += py-pygraphviz
     SUBDIR += py-pygooglechart
     SUBDIR += py-pyproj
     SUBDIR += py-qt4-svg

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.9.2
+DISTVERSION=	1.9.3
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -68,7 +68,7 @@ CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
 DOSBOX_RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
 
-GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.40-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
+GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.44-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
 
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
@@ -120,7 +120,7 @@ X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 CONFIGURE_ARGS+=	--enable-win64 --libdir=${PREFIX}/lib
 PLIST_SUB+=		WINE32="@comment " WINE64=""
 
-.if ${CHOSEN_COMPILER_TYPE} == clang
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 38
 CPPFLAGS+=		-D__builtin_ms_va_list=__builtin_va_list \
 			-D__builtin_ms_va_start=__builtin_va_start \
 			-D__builtin_ms_va_end=__builtin_va_end \

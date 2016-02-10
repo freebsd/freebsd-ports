@@ -17,7 +17,7 @@ LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gettext gmake shebangfix
+USES=		gettext gmake ncurses shebangfix
 SHEBANG_FILES=	examples/showdir.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SLANG_H_LOC="${LOCALBASE}/include/slang.h" \
@@ -26,7 +26,7 @@ MAKE_ENV=	INSTALL_PREFIX="${STAGEDIR}"
 
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lcurses -lintl
+LIBS+=		-L${LOCALBASE}/lib -lncurses -lintl
 
 post-patch:
 	@${REINPLACE_CMD} -e \

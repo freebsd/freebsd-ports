@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yourls
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,6 +16,7 @@ GH_ACCOUNT=	${PORTNAME:tu}
 GH_PROJECT=	${PORTNAME:tu}
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USES=		cpe
 USE_PHP=	bcmath curl json mysql pcre xml

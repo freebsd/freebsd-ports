@@ -121,13 +121,9 @@ PLIST_SUB+=		PERL:="@comment not installed: " \
 			PERLMAN:="@comment not installed: "
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if !defined(PIDGIN_SLAVE)
-.if ${HAVE_GNOME:Mgconf2}!="" || exists(${LOCALBASE}/bin/gconftool-2)
 USE_GNOME+=	gconf2
 GCONF_SCHEMAS=	purple.schemas
-.endif
 .endif
 
 #.if defined(WITH_GTKUI) && ${HAVE_GNOME:Mevolutiondataserver}!=""
@@ -331,6 +327,8 @@ post-patch:
 .if defined(PIDGIN_SLAVE)
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(top_builddir)/libpurple/libpurple.la|-lpurple|'
+	@${REINPLACE_CMD} -e 's|gconftool-2|gconftool-disabled|g' \
+		${WRKSRC}/configure
 .endif
 
 .if !defined(PIDGIN_SLAVE) && ${PORT_OPTIONS:MPERL}
@@ -339,4 +337,4 @@ post-stage:
 		${STAGEDIR}${PREFIX}/lib/purple-2/perl/auto/Purple/.packlist
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- irssistats.c.orig	2007-11-10 19:40:55.000000000 +0100
-+++ irssistats.c	2012-12-03 11:42:45.000000000 +0100
-@@ -1561,19 +1561,19 @@
+--- irssistats.c.orig	2007-11-10 18:40:55 UTC
++++ irssistats.c
+@@ -1561,19 +1561,19 @@ void gen_xhtml(char *xhtmlfile)
    fclose(fic);
  }
  

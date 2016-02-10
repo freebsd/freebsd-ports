@@ -11,7 +11,7 @@ DISTNAME=	openscad-${PORTVERSION}.src
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \

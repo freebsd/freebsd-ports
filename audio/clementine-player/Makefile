@@ -7,14 +7,11 @@ PORTREVISION=	7
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}${PKGNAMESUFFIX}
-GH_PROJECT=	Clementine
-
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Cross-platform music player based on Amarok 1.4
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 		libchromaprint.so:${PORTSDIR}/audio/chromaprint \
@@ -25,6 +22,10 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 		libechonest.so:${PORTSDIR}/audio/libechonest
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}${PKGNAMESUFFIX}
+GH_PROJECT=	Clementine
 
 USES=		compiler:c++11-lib cmake desktop-file-utils execinfo \
 		gettext-tools pkgconfig

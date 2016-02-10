@@ -15,7 +15,7 @@ COMMENT=	Full-screen curses based spread sheet program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake
+USES=		cmake ncurses
 
 # We download the prebuilt binary tarball for Linux in order to avoid
 # having to generate the pdf and html docs from the LyX sourcecode.

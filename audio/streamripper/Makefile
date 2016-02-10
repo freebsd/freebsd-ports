@@ -21,7 +21,7 @@ LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
 OPTIONS_DEFINE=	FAAD VORBIS
 OPTIONS_DEFAULT=FAAD VORBIS
 
-USES=		iconv pkgconfig
+USES=		iconv ncurses pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-libmad \
@@ -49,10 +49,15 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/if test/s|==|=|g' ${WRKSRC}/configure
+#	avoid potential name conflict with ncurses
+	@${LN} -sv ${WRKSRC}/cdk-5.0-20060507/include/menu.h \
+		${WRKSRC}/cdk-5.0-20060507/include/cdkmenu.h
+	@${REINPLACE_CMD} -e "s|<menu.h>|<cdkmenu.h>|g" \
+		${WRKSRC}/cdk-5.0-20060507/include/cdk.h
 
 pre-configure:
 	(cd ${WRKSRC}/cdk-${CDK_VERSION} && ${SETENV} CC="${CC}" \
-		CFLAGS="${CFLAGS}" ${SH} ./configure)
+		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" ${SH} ./configure)
 
 pre-build:
 	(cd ${WRKSRC}/cdk-${CDK_VERSION} && ${SETENV} ${MAKE_ENV} \

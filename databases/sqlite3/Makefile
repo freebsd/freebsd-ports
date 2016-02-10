@@ -13,8 +13,6 @@ COMMENT=	SQL database engine in a C library
 
 LICENSE=	PD
 
-CONFLICTS=	sqlcipher-[0-9]*
-
 USES=		libtool ncurses pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

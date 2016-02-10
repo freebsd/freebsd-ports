@@ -28,6 +28,7 @@
     SUBDIR += ccnet
     SUBDIR += cdpd
     SUBDIR += cdpr
+    SUBDIR += cdpsnarf
     SUBDIR += centreon-clib
     SUBDIR += check_ipmi_sensor
     SUBDIR += check_logfiles

@@ -19,6 +19,9 @@ USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes
 
+CONFIGURE_ARGS= CPPFLAGS="${CFLAGS}"
+MAKE_ARGS=	 CLIBFLAGS="${LDFLAGS}"
+
 PLIST_FILES=	bin/wyrd etc/wyrdrc man/man1/wyrd.1.gz man/man5/wyrdrc.5.gz
 PORTDOCS=	manual.html manual.pdf
 

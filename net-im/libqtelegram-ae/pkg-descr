@@ -1,0 +1,5 @@
+libqtelegram-aseman-edition is a fork of libqtelegram by Aseman Team which is
+porting to windows and mac alongside linux support. It's also build using qmake
+instead of cmake.
+
+WWW: https://github.com/Aseman-Land/libqtelegram-aseman-edition

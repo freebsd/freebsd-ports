@@ -12,6 +12,8 @@ COMMENT=	Not Eriks Windowing Toolkit Python bindings
 
 LICENSE=	GPLv2
 
+BROKEN=		conflicts with devel/newt
+
 LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2 \
 		libpopt.so:${PORTSDIR}/devel/popt \
 		libnewt.so:${PORTSDIR}/devel/newt

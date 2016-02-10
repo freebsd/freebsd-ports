@@ -20,8 +20,9 @@ LIB_DEPENDS=	libslang.so:${PORTSDIR}/japanese/libslang
 VERSION=	0.99.8
 JP_VERSION=	067
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	JED_ROOT="${JED_ROOT}" X_EXTRA_LIBS="-lcurses"
+CONFIGURE_ENV=	JED_ROOT="${JED_ROOT}" X_EXTRA_LIBS="-lncurses"
 CONFIGURE_ARGS=	--enable-x-locale=no
 ALL_TARGET=	${BINSTUFF} getmail
 MAKE_JOBS_UNSAFE=	yes

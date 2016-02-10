@@ -12,7 +12,7 @@ SNAPDATE=	20110223
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	GoldEd+ (FTN message editor)
 
-USES=		tar:bzip2 gmake
+USES=		gmake ncurses tar:bzip2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

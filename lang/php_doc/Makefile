@@ -3,6 +3,7 @@
 
 PORTNAME=	php_doc
 PORTVERSION?=	20131017
+PORTREVISION=	2
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
@@ -10,8 +11,9 @@ DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
 MAINTAINER=	edwin@mavetju.org
 COMMENT?=	PHP documentation in HTML
 
-NO_BUILD=	YES
-NO_WRKSUBDIR=	YES
+NO_BUILD=	yes
+NO_ARCH=	yes
+NO_WRKSUBDIR=	yes
 SLAVEDIRS=	french/php_doc \
 		german/php_doc \
 		japanese/php_doc \
@@ -26,12 +28,12 @@ PLIST=		${WRKDIR}/pkg-plist
 
 .for lang in ${PHP_HTML_NORMAL}
 .if ${PHP_LANG} == ${lang}
-WRK_SRC=	${WRKDIR}/html/
+WRK_SRC=	${WRKSRC}/html/
 .endif
 .endfor
 .for lang in ${PHP_HTML_CHUNKED}
 .if ${PHP_LANG} == ${lang}
-WRK_SRC=	${WRKDIR}/php-chunked-xhtml/
+WRK_SRC=	${WRKSRC}/php-chunked-xhtml/
 .endif
 .endfor
 
@@ -53,9 +55,9 @@ pre-fetch:
 
 pre-install:
 	${FIND} ${WRK_SRC} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e "s,${WRK_SRC},%%PHPDOCDIR%%," > ${PLIST}
-	${FIND} ${WRK_SRC} -type d | ${SORT} -r | ${SED} -e "s,${WRK_SRC},@dirrm %%PHPDOCDIR%%," >> ${PLIST}
 
 do-install:
+	@[ -d "${WRK_SRC}" ] # ensure dir exists, else we can silently get an empty package
 	@${MKDIR} ${STAGEDIR}${PHPDOCDIR}
 	${FIND} ${WRK_SRC} -type d | ${SED} -e "s,${WRK_SRC},${STAGEDIR}${PHPDOCDIR}/," | ${XARGS} ${MKDIR}
 	for f in `${FIND} ${WRK_SRC} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e 's,${WRK_SRC},,'`; do \

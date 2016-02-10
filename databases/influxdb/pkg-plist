@@ -1,4 +1,6 @@
 bin/influx
+bin/influx_inspect
+bin/influx_tsm
 bin/influxd
 @dir(%%INFLUXD_USER%%,%%INFLUXD_GROUP%%,0750) %%INFLUXD_DBDIR%%
 @dir(%%INFLUXD_USER%%,%%INFLUXD_GROUP%%,0750) %%INFLUXD_LOGDIR%%

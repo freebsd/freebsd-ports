@@ -22,3 +22,5 @@ SHA256 (patch-7u85-b02.xz) = 87699747b28ae80cb168f1e2af3dcff65cc0ef9a74decebcf4e
 SIZE (patch-7u85-b02.xz) = 78796
 SHA256 (patch-7u91-b02.xz) = b18c3843d656340fcca0e9b0eb0410a598dbce9c53c84fc6fde53d189bf44829
 SIZE (patch-7u91-b02.xz) = 152344
+SHA256 (patch-7u95-b00.xz) = bb522469cedcd31ff15fde745ab5717bd012c52ce2e25d1180b3338b90f755a3
+SIZE (patch-7u95-b00.xz) = 91612

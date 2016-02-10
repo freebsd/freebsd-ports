@@ -11,7 +11,7 @@ COMMENT=	Text-based contact management software
 
 LIB_DEPENDS=	libvc.so:${PORTSDIR}/devel/libvc
 
-USES=		tar:bzip2
+USES=		ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${PREFIX}/include \
 		-L${PREFIX}/lib

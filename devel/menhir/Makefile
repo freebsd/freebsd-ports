@@ -3,6 +3,7 @@
 
 PORTNAME=	menhir
 PORTVERSION=	20151112
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 
@@ -14,7 +15,8 @@ USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
 OCAML_PKGDIRS=		menhirLib
 
-USES=		gmake
+USES=		gmake shebangfix
+SHEBANG_FILES=	demos/find-menhir.sh
 MAKE_JOBS_UNSAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}

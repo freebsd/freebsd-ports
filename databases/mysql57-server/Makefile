@@ -3,7 +3,7 @@
 
 PORTNAME=	mysql
 PORTVERSION=	5.7.10
-PORTREVISION=	1
+PORTREVISION?=	3
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.7:MySQL SF/boost/boost/1.59.0:boost
 PKGNAMESUFFIX?=	57-server
@@ -84,6 +84,7 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
 OPTIONS_GROUP=		STORAGE
 OPTIONS_GROUP_STORAGE=	ARCHIVE BLACKHOLE EXAMPLE FEDERATED INNOBASE PARTITION PERFSCHEMA
+OPTIONS_SUB=		YES
 STORAGE_DESC=		Permissible "Storage Engines" (to compile statically into the server)
 ARCHIVE_DESC=		Compile "Archive Storage" statically in server
 BLACKHOLE_DESC=		Compile "Blackhole Storage" statically in server
@@ -101,6 +102,15 @@ INNOBASE_CMAKE_ON=	-DWITH_INNOBASE_STORAGE_ENGINE=1
 PARTITION_CMAKE_ON=	-DWITH_PARTITION_STORAGE_ENGINE=1
 PERFSCHEMA_CMAKE_ON=	-DWITH_PERFSCHEMA_STORAGE_ENGINE=1
 
+OPTIONS_GROUP+=		FEATURES
+OPTIONS_GROUP_FEATURES=	PERFSCHM
+FEATURES_DESC=		Default features knobs
+PERFSCHM_DESC=		Enable "Performance Schema" by default (High RAM usage)
+OPTIONS_DEFAULT+=	PERFSCHM
+
+PERFSCHM_SUB_LIST+=	PERFSCHEMRC=""
+PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
+
 .else
 USES+=		readline
 .endif
@@ -117,7 +127,7 @@ OPENSSL_CMAKE_ON=	-DWITH_SSL=yes
 .endif
 
 post-extract:
-	${RM} -rvf ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
+	@${RM} -rvf ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt

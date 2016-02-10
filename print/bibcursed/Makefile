@@ -6,17 +6,18 @@ PORTVERSION=	2.0.1
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple curses-based editor for BibTeX bibliography files
 
+USES=		ncurses tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/bibcursed man/man1/bibcursed.1.gz
 
 do-build:
-	cd ${WRKSRC}; ${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME} -lncurses
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${CC} ${CFLAGS} \
+		${PORTNAME}.c -o ${PORTNAME} ${LDFLAGS} -lncurses)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

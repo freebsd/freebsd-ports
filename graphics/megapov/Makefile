@@ -17,13 +17,9 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_WRKSRC=	${WRKSRC}/unix
 
-USES=		gmake jpeg tar:bzip2
+USES=		gmake jpeg localbase tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	COMPILED_BY="ports@FreeBSD.org"
-
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -46,12 +42,12 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|"-O3"|""|' ${WRKSRC}/configure
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for i in include scenes
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${EXAMPLESDIR})
-.endfor
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "include scenes" ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

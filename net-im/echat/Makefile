@@ -9,6 +9,8 @@ MASTER_SITES=	http://echat.deep.perm.ru/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LAN chat program over the TCP/IP networks
 
+USES=		ncurses
+MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 SUB_FILES=	pkg-message
 
 post-patch:

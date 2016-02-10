@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: fusioninventory
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# fusioninventory_enable (bool): Set to NO by default.
+#				 Set it to YES to enable.
+#
+
+. /etc/rc.subr
+
+name=fusioninventory
+rcvar=fusioninventory_enable
+
+load_rc_config $name
+
+: ${fusioninventory_enable:="NO"}
+
+pidfile=/var/run/${name}.pid
+
+command=%%PREFIX%%/bin/fusioninventory-agent
+command_args="--daemon --pidfile=${pidfile}"
+command_interpreter=%%PREFIX%%/bin/perl
+
+run_rc_command "$1"

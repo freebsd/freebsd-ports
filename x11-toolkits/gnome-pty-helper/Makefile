@@ -1,23 +1,41 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gnome-pty-helper/Makefile 18942 2013-12-08 01:31:37Z kwm $
 
 PORTNAME=	gnome-pty-helper
-PORTREVISION=	0
-PKGNAMESUFFIX=	#empty
+PORTVERSION=	0.40.2
+CATEGORIES=	x11-toolkits gnome
+MASTER_SITES=	GNOME/sources/vte/${PORTVERSION:R}
+DISTNAME=	vte-${PORTVERSION}
+DIST_SUBDIR=	gnome3
 
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	utmp/wtmp/lastlog helper program for the vte Terminal widget
 
-VTE3_SLAVE=	yes
+BUILD_DEPENDS+=	gnutls>=0:${PORTSDIR}/security/gnutls
 
-MASTERDIR=	${.CURDIR}/../../x11-toolkits/vte3
+PORTSCOUT=	ignore:1
+
+USES=		gmake tar:xz
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+
 CONFIGURE_WRKSRC=	${WRKSRC}/gnome-pty-helper
 BUILD_WRKSRC=	${WRKSRC}/gnome-pty-helper
 INSTALL_WRKSRC=	${WRKSRC}/gnome-pty-helper
-PLIST=		${.CURDIR}/pkg-plist
-USE_GNOME=	gnomeprefix
-CONFIGURE_ARGS=	# empty
-#PATCH_STRIP=	-p1
-#EXTRA_PATCHES+=	${MASTERDIR}/files/patch-gnome-pty-helper_gnome-pty-helper.c
 
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.options.mk>
+
+post-patch:
+# borrowed osversion from bsd.ssp.mk
+.if ${OSVERSION} < 1000036 && ${ARCH} == i386
+	@${REINPLACE_CMD} -e 's|-fstack-protector-strong||g; \
+		s|-fstack-protector||g' \
+		${WRKSRC}/configure
+.endif
+	@${REINPLACE_CMD} -e 's|(AM_MAKEFLAGS) install-exec-hook|(AM_MAKEFLAGS)|g' \
+		${WRKSRC}/gnome-pty-helper/Makefile.in
+
+.include <bsd.port.mk>

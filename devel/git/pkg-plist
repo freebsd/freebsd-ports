@@ -120,7 +120,7 @@ man/man1/git-rev-list.1.gz
 man/man1/git-rev-parse.1.gz
 man/man1/git-revert.1.gz
 man/man1/git-rm.1.gz
-man/man1/git-send-email.1.gz
+%%SEND_EMAIL%%man/man1/git-send-email.1.gz
 man/man1/git-send-pack.1.gz
 man/man1/git-sh-setup.1.gz
 man/man1/git-sh-i18n.1.gz
@@ -315,7 +315,7 @@ libexec/git-core/git-rev-list
 libexec/git-core/git-rev-parse
 libexec/git-core/git-revert
 libexec/git-core/git-rm
-libexec/git-core/git-send-email
+%%SEND_EMAIL%%libexec/git-core/git-send-email
 libexec/git-core/git-send-pack
 libexec/git-core/git-sh-i18n
 libexec/git-core/git-sh-i18n--envsubst
@@ -604,7 +604,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-rev-parse.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-revert.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-rm.html
-%%HTMLDOCS%%%%DOCSDIR%%/git-send-email.html
+%%SEND_EMAIL%%%%HTMLDOCS%%%%DOCSDIR%%/git-send-email.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-send-pack.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-sh-i18n.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-sh-i18n--envsubst.html
@@ -962,7 +962,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-check-attr.txt
 %%HTMLDOCS%%%%DOCSDIR%%/config.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-http-fetch.txt
-%%HTMLDOCS%%%%DOCSDIR%%/git-send-email.txt
+%%SEND_EMAIL%%%%HTMLDOCS%%%%DOCSDIR%%/git-send-email.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-annotate.txt
 %%HTMLDOCS%%%%DOCSDIR%%/gitmodules.txt
 %%HTMLDOCS%%%%DOCSDIR%%/pull-fetch-param.txt

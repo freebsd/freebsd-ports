@@ -1,5 +1,5 @@
---- Makefile.in.orig	2001-07-29 07:43:49.000000000 +0200
-+++ Makefile.in	2014-05-08 00:46:44.189113048 +0200
+--- Makefile.in.orig	2001-07-29 05:43:49 UTC
++++ Makefile.in
 @@ -5,19 +5,19 @@
  #  initial_directory is now set in the config file
  mpg123_location   := "mpg123"
@@ -23,7 +23,7 @@
  
  ## Define this for bufferring or add other parameters to mpg123 and ogg123
  mpg123_params := -b 320
-@@ -35,14 +35,14 @@
+@@ -35,14 +35,14 @@ ogg123_params := -d oss
  
  VERSION="2.0pre6"
  WKGDIR=cmp3-kenrevs
@@ -41,7 +41,16 @@
  CC= @CC@
  OBJS= cmp3common.o cmp3fileio.o cmp3manager.o cmp3curses.o \
        cmp3llist.o cmp3main.o cmp3listfiles.o cmp3playlist.o cmp3volume.o \
-@@ -103,7 +103,7 @@
+@@ -83,7 +83,7 @@ shmdump: cmp3shmdump.c
+ 	$(CC) $(CFLAGS) cmp3shmdump.c -o cmp3shmdump
+ 
+ cmp3: lib $(OBJS)
+-	$(CC) $(CFLAGS) $(OBJS) nevlib/libnev.a $(LIBS) -o cmp3
++	$(CC) $(CFLAGS) $(OBJS) nevlib/libnev.a $(LDFLAGS) $(LIBS) -o cmp3
+ 
+ lib:
+ 	@$(MAKE) -C nevlib lib
+@@ -103,7 +103,7 @@ tar: distclean
  install: rnmp3 cmp3
  	install -c -s cmp3 $(install_directory)/cmp3
  	install -c -s rnmp3 $(install_directory)/rnmp3

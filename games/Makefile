@@ -546,6 +546,7 @@
     SUBDIR += linux-rtcw
     SUBDIR += linux-ssamtfe
     SUBDIR += linux-ssamtse
+    SUBDIR += linux-unigine-heaven
     SUBDIR += linux-unrealgold
     SUBDIR += linux-uplink-demo
     SUBDIR += linux-ut

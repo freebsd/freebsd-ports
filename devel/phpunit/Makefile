@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpunit
-PORTVERSION=	5.1.0
+PORTVERSION=	5.2.3
 CATEGORIES=	devel www
 MASTER_SITES=	https://phar.phpunit.de/ \
 		http://ports.toco-domains.de/

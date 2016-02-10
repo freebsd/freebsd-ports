@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 
-USES=		gmake
+USES=		gmake ncurses
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes

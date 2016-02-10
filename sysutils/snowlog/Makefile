@@ -12,6 +12,7 @@ COMMENT=	Webserver access log browser/analyzer
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
+USES=		ncurses
 DOCS=		INSTALLATION doc/README doc/filters.example
 SHAREDOCS=	referers.regexp useragents.regexp
 

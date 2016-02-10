@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sjroz@verizon.net
 COMMENT=	Runs command repeatedly; shows output
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 DISPLAY_PROGRAM_PREFIX?=

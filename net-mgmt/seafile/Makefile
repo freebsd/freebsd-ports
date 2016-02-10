@@ -39,7 +39,7 @@ PATHFIX_MAKEFILEIN=	Makefile.am
 
 CONFIGURE_ARGS=	--enable-server
 INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/evhtp
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 HAIWENDIR=	www/haiwen

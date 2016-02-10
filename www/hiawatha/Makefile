@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Advanced and secure webserver for Unix
 
 LICENSE=	GPLv2

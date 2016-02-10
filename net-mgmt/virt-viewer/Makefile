@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virt-viewer
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	3.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 

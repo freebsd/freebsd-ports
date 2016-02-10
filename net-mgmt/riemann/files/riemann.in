@@ -36,6 +36,7 @@ load_rc_config $name
 : ${riemann_min_mem:="256m"}
 : ${riemann_max_mem:="1g"}
 : ${riemann_java_opts:=" -server \
+        -Dapp=${name} \
         -Xms${riemann_min_mem} \
         -Xmx${riemann_max_mem} \
         -Xss256k \
@@ -53,16 +54,17 @@ load_rc_config $name
         -XX:+UseParNewGC \
         -XX:CMSInitiatingOccupancyFraction=75 "}
 
-riemann_pidfile="%%RIEMANN_PIDDIR%%${name}.pid"
+pidfile="%%RIEMANN_PIDFILE%%"
 command="/usr/sbin/daemon"
-procname="${riemann_java_home}/bin/java"
-command_args="-f -c -p ${riemann_pidfile} ${procname} ${riemann_java_opts} \
+command_args="-f -c -r -P ${pidfile} \
+    ${riemann_java_home}/bin/java \
+    ${riemann_java_opts} \
     -jar ${riemann_jarfile} ${riemann_config}"
 required_files="${java_cmd} ${riemann_config}"
 
 riemann_prestart()
 {
-    	install -o ${riemann_user} /dev/null ${riemann_pidfile}
+    	install -o ${riemann_user} /dev/null ${pidfile}
 }
 start_precmd=${name}_prestart
 

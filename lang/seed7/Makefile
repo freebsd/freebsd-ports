@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20140907
+DISTVERSION=	05_20160130
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	High-level, extensible programming language
 
 # The language libraries are licensed under the LGPL21 license. Starting from
@@ -19,10 +18,12 @@ LICENSE_COMB=	multi
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+USES=		ncurses tar:tgz
 USE_XORG=	x11
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
+TEST_TARGET=	do-test
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
 MAKE_ENV+=	S7_LIB_DIR=${S7_LIB_DIR} \
@@ -75,7 +76,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/s7.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/../doc/s7c.1 ${STAGEDIR}${PREFIX}/man/man1
 
-regression-test: build
+do-test:
 	cd ${WRKSRC} && ${MAKE} -f ${MAKEFILE} test
 
 .include <bsd.port.mk>

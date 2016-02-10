@@ -12,7 +12,7 @@ COMMENT=	Text-mode Infocom game interpreter
 
 NO_WRKSUBDIR=	yes
 
-USES=		zip
+USES=		ncurses zip
 
 CPPFLAGS+=	-DPOSIX -DHAVE_GETOPT
 
@@ -27,7 +27,7 @@ post-patch:
 		 s|^CFLAGS =|CFLAGS +=| ; \
 		 s|-DPOSIX|$${CPPFLAGS}| ; \
 		 s|^LDFLAGS|#LDFLAGS| ; \
-		 s|-lcurses|-ltermcap|' ${WRKSRC}/Makefile
+		 s|-lcurses|-lncurses|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|^void main|int main|' ${WRKSRC}/jzexe.c
 

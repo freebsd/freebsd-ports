@@ -8,14 +8,18 @@ CATEGORIES=	games
 MAINTAINER=	hym@cocoa.freemail.ne.jp
 COMMENT=	Steam locomotive runs across the screen if you type "sl" instead of "ls"
 
+USES=		ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	mtoyoda
 
-PLIST_FILES=bin/${PORTNAME} man/man1/${PORTNAME}.1.gz man/ja/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz \
+		man/ja/man1/${PORTNAME}.1.gz
 PORTDOCS=	*
 
 do-build:
-	${CC} ${CFLAGS} -I${WRKSRC} -o ${WRKSRC}/sl ${WRKSRC}/sl.c -lncurses
+	${CC} ${CFLAGS} -I${WRKSRC} -o ${WRKSRC}/sl ${WRKSRC}/sl.c \
+		${LDFLAGS} -lncurses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

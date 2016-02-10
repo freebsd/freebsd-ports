@@ -1,5 +1,5 @@
-SHA256 (asterisk-13.7.0.tar.gz) = d04c783e18a41de5fd6d8dc375533633995ea5a11437df727f0f6a32bfdbcd7a
-SIZE (asterisk-13.7.0.tar.gz) = 32198169
+SHA256 (asterisk-13.7.2.tar.gz) = 8a22856f0cff22b6f1d901eb0a91d459cd73f3ab1f71e9738b947428947fb232
+SIZE (asterisk-13.7.2.tar.gz) = 32176731
 SHA256 (asterisk-core-sounds-en-g729-1.4.27.tar.gz) = f5d21ca8305b29ea84fb4603c65c041483ea3a9cd0bf313eb4f098342a29af5f
 SIZE (asterisk-core-sounds-en-g729-1.4.27.tar.gz) = 1408055
 SHA256 (asterisk-moh-opsound-g729-2.03.tar.gz) = 0147ca9a97f0c550227aacb7793499057c4d2c64e021c95f93722f27d5549585

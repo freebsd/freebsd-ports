@@ -22,7 +22,8 @@ CONFIGURE_ARGS=	--with-etc-dir="${ETCDIR}" \
 		--with-var-dir="${NAGIOSDIR}" \
 		--with-status-file="${NAGIOSDIR}/status.dat" \
 		--with-nagios-data=3
-USES=		perl5
+USES=		ncurses perl5
+MAKE_ARGS=	LIBS="-lncurses"
 ALL_TARGET=	cnagios
 
 post-install:

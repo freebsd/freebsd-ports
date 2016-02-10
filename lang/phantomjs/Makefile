@@ -26,6 +26,7 @@ RUBY_NO_RUN_DEPENDS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/phantomjs
 #PATCH_DEBUG=	yes
+NO_CCACHE=	yes
 
 # NOTE:
 #   build.sh --qtwebkit=system requires Qt 5.3.x.  We cannot use it.

@@ -27,7 +27,8 @@ PATCHFILES=	patch-7u45-b30.xz \
 		patch-7u76-b31.xz \
 		patch-7u80-b32.xz \
 		patch-7u85-b02.xz \
-		patch-7u91-b02.xz
+		patch-7u91-b02.xz \
+		patch-7u95-b00.xz
 
 MAINTAINER?=	glewis@FreeBSD.org
 COMMENT?=	Java Development Kit 7
@@ -56,8 +57,8 @@ JAVAVMS_COMMENT+=	JRE
 INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}-jre
 .endif
 
-PORT_MINOR_VERSION=	91
-PORT_BUILD_NUMBER=	02
+PORT_MINOR_VERSION=	95
+PORT_BUILD_NUMBER=	00
 JDK_MAJOR_VERSION=	7
 JDK_MINOR_VERSION=	40
 JDK_BUILD_NUMBER=	43

@@ -2,22 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	9menu
-PORTVERSION=	1.8
-PORTREVISION=	2
+PORTVERSION=	1.9
 CATEGORIES=	x11 plan9
-MASTER_SITES=	ftp://freefriends.org/arnold/Source/ \
-		NETBSD
-EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple menu patterned after Plan9
 
-EXTRACT_CMD=	${GZCAT}
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	| ${SH}
-
+USE_GITHUB=	yes
+GH_ACCOUNT=	arnoldrobbins
+GH_TAGNAME=	776a521
 USE_XORG=	x11
-NO_WRKSUBDIR=	yes
 MAKEFILE=	Makefile.noimake
 ALL_TARGET=	9menu
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

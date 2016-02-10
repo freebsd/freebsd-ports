@@ -19,10 +19,10 @@ include/papiStdEventDefs.h
 lib/libpapi.a
 lib/libpapi.so
 lib/libpapi.so.5
-lib/libpapi.so.5.4.2
-lib/libpapi.so.5.4.2.0
-libdata/pkgconfig/papi-5.4.2.0.pc
-libdata/pkgconfig/papi-5.4.2.pc
+lib/libpapi.so.5.4.3
+lib/libpapi.so.5.4.3.0
+libdata/pkgconfig/papi-5.4.3.0.pc
+libdata/pkgconfig/papi-5.4.3.pc
 libdata/pkgconfig/papi-5.pc
 libdata/pkgconfig/papi.pc
 man/man1/PAPI_derived_event_files.1.gz

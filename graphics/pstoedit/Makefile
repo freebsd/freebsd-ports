@@ -10,17 +10,16 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
-USES=		ghostscript pathfix pkgconfig libtool
+USES=		ghostscript libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-isystem ${LOCALBASE}/include/ming
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -56,9 +55,11 @@ post-patch:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${STAGEDIR}${DOCSDIR}
 
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.ps ${STAGEDIR}${EXAMPLESDIR}
 

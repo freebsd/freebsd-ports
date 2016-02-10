@@ -1,0 +1,10 @@
+--- cfg.data.orig	2002-11-09 00:59:08 UTC
++++ cfg.data
+@@ -1,6 +1,6 @@
+ PROGNAME="Reed"
+ VERSION="5.4"
+ PROGRAMS="perl fold"
+-LIBS="c curses"
++LIBS="c ncurses"
+ PM="Getopt/Std Text/Wrap"
+ HEADERS="sys/dir.h sys/stat.h ctype.h curses.h dirent.h getopt.h regex.h limits.h time.h unistd.h"

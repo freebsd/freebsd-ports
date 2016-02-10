@@ -1,0 +1,9 @@
+%%MK_LINK%%/root/.guacamole
+%%TOMCAT%%apache-tomcat-8.0/webapps/guacamole.war
+etc/guacamole/guacamole.properties.sample
+etc/guacamole/logback.xml.sample
+etc/guacamole/user-mapping.xml.sample
+%%DATADIR%%/guacamole-auth-jdbc.tar.gz
+%%DATADIR%%/guacamole-auth-ldap.tar.gz
+%%DATADIR%%/guacamole-auth-noauth.tar.gz
+%%DATADIR%%/guacamole.war

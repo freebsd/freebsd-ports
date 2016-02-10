@@ -12,7 +12,7 @@ COMMENT=	Easy processing of keyboard entry from terminal-based programs
 
 LICENSE=	MIT
 
-USES=		gmake libtool:build
+USES=		gmake libtool:build ncurses pkgconfig
 LIB_DEPENDS=	libunibilium.so:${PORTSDIR}/devel/unibilium
 USE_LDCONFIG=	yes
 MAKE_ARGS=	MANDIR=${MANPREFIX}/man

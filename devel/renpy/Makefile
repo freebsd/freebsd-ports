@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Framework for developing visual-novel type games
 
-LICENSE=	APACHE20 BSD3CLAUSE DejaVu LGPL21 MIT OFL11 ZLIB
+LICENSE=	APACHE20 BSD3CLAUSE DejaVu LGPL21+ MIT OFL11 ZLIB
 LICENSE_COMB=	multi
 LICENSE_NAME_DejaVu=	Bitstream Vera and Arev fonts license
 LICENSE_FILE_DejaVu=	${WRKSRC}/renpy/common/DejaVuSans.txt

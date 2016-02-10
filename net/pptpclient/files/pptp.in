@@ -1,0 +1,169 @@
+#!/bin/sh
+#
+# Copyright (c) 2015-2016 Devin Teske
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# $FreeBSD$
+#
+
+# PROVIDE: pptp
+# REQUIRE: DAEMON LOGIN FILESYSTEMS
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="pptp"
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+: ${pptp_timeout=10}
+extra_commands="iface inet"
+
+pptp_query()
+{
+	local qtype="$1"
+	ifconfig -l | awk '{
+		n = split($0, a)
+		for (i = 1; i <= n; i++)
+			if (a[i] ~ /^tun[[:digit:]]+/) print a[i]
+	}' | xargs -rn1 -Iif ifconfig if inet | awk -v qtype="$qtype" '
+	BEGIN { qtype = tolower(qtype) }
+	/^[^[:space:]]/ { iface = $1; next }
+	iface && $1 == "inet" && $3 == "-->" { inet[iface] = $2; next }
+	$1$2$3 == "OpenedbyPID" { pid[iface] = $4 }
+	END {
+		for (iface in pid) {
+			(cmd = "ps -o ucomm= -p " pid[iface]) | getline ucomm
+			close(cmd)
+			if (ucomm != "ppp") continue
+			if (qtype == "iface") {
+				sub(/:.*/, "", iface)
+				print iface
+				found = 1
+			} else if (qtype == "inet" && inet[iface]) {
+				print inet[iface]
+				found = 1
+			} else if (qtype != "inet") {
+				print pid[iface]
+				found = 1
+			}
+		}
+		exit !found
+	}'
+}
+
+pptp_start()
+{
+	local pid inet timeout="$pptp_timeout"
+	if pid=$( pptp_query pid ); then
+		echo "$name already running as pid $pid."
+		return 1
+	fi
+
+	debug "$command $pptp_flags &"
+	eval $command $pptp_flags \&
+	echo -n "Waiting for pptp to start"
+	if [ $timeout -gt 0 ] 2> /dev/null; then
+		while [ $timeout -gt 0 ] && ! pid=$( pptp_query pid ); do
+			sleep 1
+			echo -n .
+			timeout=$(( $timeout - 1 ))
+		done
+	else
+		while ! pid=$( pptp_query pid ); do sleep 1; echo -n .; done
+	fi
+	echo
+	echo -n "Waiting for ppp session"
+	while pid=$( pptp_query pid ); do
+		inet=$( pptp_query inet ) && break
+		sleep 1
+		echo -n .
+	done
+	echo
+	if ! inet=$( pptp_query inet ); then
+		rm -f "$pidfile"
+		echo "pptp failed to start."
+		return 1
+	fi
+	echo "$pid" > "$pidfile"
+}
+
+pptp_stop()
+{
+	local pid
+	if ! pid=$( pptp_query pid ); then
+		echo "$name is not running."
+		return 1
+	fi
+
+	kill $pid
+	echo -n "Waiting for pid $pid to exit"
+	while pid=$( pptp_query pid ); do sleep 1; echo -n .; done
+	echo
+	rm -f "$pidfile"
+	echo "$name stopped."
+}
+
+pptp_status()
+{
+	local pid
+	if ! pid=$( pptp_query pid ); then
+		echo "$name is not running."
+		return 1
+	fi
+	echo "$name is running as pid $pid."
+}
+
+pptp_iface()
+{
+	local pid iface
+	if ! pid=$( pptp_query pid ); then
+		echo "$name is not running." >&2
+		return 1
+	fi
+	if ! iface=$( pptp_query iface ); then
+		echo "$name not associated with any interface." >&2
+		return 1
+	fi
+	echo "$iface"
+}
+
+pptp_inet()
+{
+	local pid inet
+	if ! pid=$( pptp_query pid ) || ! inet=$( pptp_query inet ); then
+		echo "$name is not running." >&2
+		return 1
+	fi
+	echo "$inet"
+}
+
+start_cmd=pptp_start
+stop_cmd=pptp_stop
+status_cmd=pptp_status
+iface_cmd=pptp_iface
+inet_cmd=pptp_inet
+
+load_rc_config $name
+run_rc_command "$1"

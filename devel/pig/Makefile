@@ -17,13 +17,11 @@ COMMENT=	Engine for executing data flows in parallel on Hadoop
 
 LICENSE=	APACHE20
 
-.if defined(PACKAGE_BUILDING)
-BROKEN=		tries to make outbound http connection during build phase breaking tinderbox.  Software itself does not have known issues, remove this BROKEN line and build your own package
-.endif
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		yarn:${PORTSDIR}/devel/hadoop2
+
+BROKEN=		tries to make outbound http connection during build phase breaking tinderbox.  Software itself does not have known issues, remove this BROKEN line and build your own package
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+

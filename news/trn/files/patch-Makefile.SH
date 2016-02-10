@@ -1,6 +1,14 @@
---- Makefile.SH.orig	Thu Jun  4 10:49:20 1998
-+++ Makefile.SH	Thu Jun  4 10:49:50 1998
-@@ -133,6 +133,7 @@
+--- Makefile.SH.orig	1994-11-19 06:01:14 UTC
++++ Makefile.SH
+@@ -35,7 +35,6 @@ TOUCH = touch
+ lintflags = -phbvxac $vincludes
+ 
+ CFLAGS = $optimize $ccflags $vincludes
+-LDFLAGS = $ldflags
+ 
+ rnbin = $installbin
+ rnlib = $installprivlib
+@@ -133,6 +132,7 @@ install: $(public) $(private) $(manpages
  # won't work with csh
  	export PATH || exit 1
  	- (cd `./filexp $(rnbin)`; mv trn trn.old)

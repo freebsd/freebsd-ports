@@ -63,7 +63,6 @@ etc/grub.d/40_custom.dist
 etc/grub.d/41_custom
 etc/grub.d/50_otherbe
 etc/grub.d/README
-info/dir
 lib/grub/i386-pc/acpi.mod
 lib/grub/i386-pc/acpi.module
 lib/grub/i386-pc/adler32.mod

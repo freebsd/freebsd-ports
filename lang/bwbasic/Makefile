@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bywater Basic interpreter
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_WRKSUBDIR=	yes
 
@@ -28,9 +29,11 @@ post-patch:
 	@${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} 's|bindir)|DESTDIR)$$(&|' ${WRKSRC}/Makefile.in
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.doc ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/bwbtest; ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}spdx-lookup>=0.3.0:${PORTSDIR}/misc/py-spdx-lookup
 
-USES=		python:3.2+
+USES=		python:3.3+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

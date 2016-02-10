@@ -11,11 +11,15 @@ COMMENT=	Better pager utility (and it speaks Chinese)
 
 LICENSE=	BSD2CLAUSE
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
 CPP=		#
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ltermcap|-lncurses|' ${WRKSRC}/configure
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

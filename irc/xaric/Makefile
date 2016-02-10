@@ -10,11 +10,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC Client similer to BitchX or ircII
 
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix
+USES=		gmake ncurses pathfix
 USE_OPENSSL=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ggdb3||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xaric ${STAGEDIR}${PREFIX}/bin

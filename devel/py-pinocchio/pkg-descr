@@ -1,0 +1,9 @@
+pinocchio plugins for the nose testing framework
+
+Extra plugins for the nose testing framework. Provides tools for
+flexibly assigning decorator tags to tests, choosing tests based
+on their runtime, doing moderately sophisticated code coverage
+analysis of your unit tests, and making your test descriptions look
+like specifications.
+
+WWW: https://pypi.python.org/pypi/pinocchio/

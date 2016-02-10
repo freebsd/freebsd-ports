@@ -83,17 +83,17 @@ pre-build:
 	${CHMOD} 755 ${BUILD_BINPATH}/gcc
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/jogl/doc/userguide/index.html \
-		${STAGEDIR}${DOCSDIR}/UserGuide.html
-	cd ${BUILD_WRKSRC}/../javadoc_public && \
-		${FIND} . -print | ${CPIO} -pdm ${STAGEDIR}${DOCSDIR}
-.endif
 	${INSTALL_DATA} ${WRKSRC}/gluegen/build/obj/libgluegen-rt.so \
 		${WRKSRC}/jogl/build/obj/libjogl.so \
 		${WRKSRC}/jogl/build/obj/libjogl_awt.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/gluegen/build/gluegen-rt.jar \
 		${WRKSRC}/jogl/build/jogl.jar ${STAGEDIR}${JAVAJARDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/jogl/doc/userguide/index.html \
+		${STAGEDIR}${DOCSDIR}/UserGuide.html
+	cd ${BUILD_WRKSRC}/../javadoc_public && \
+		${FIND} . -print | ${CPIO} -pdm ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

@@ -320,7 +320,7 @@ USES+=	gssapi:base,flags
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_LDAP}
 # WWW: https://github.com/kvspb/nginx-auth-ldap
-GIT_HTTP_AUTH_LDAP_VERSION=	be8ff8eecb
+GIT_HTTP_AUTH_LDAP_VERSION=	8517bb0
 GH_ACCOUNT+=	kvspb:http_auth_ldap
 GH_PROJECT+=	nginx-auth-ldap:http_auth_ldap
 GH_TAGNAME+=	${GIT_HTTP_AUTH_LDAP_VERSION}:http_auth_ldap
@@ -423,7 +423,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_eval}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_FANCYINDEX}
-NGINX_FANCYINDEX_VERSION=	0.3.5
+NGINX_FANCYINDEX_VERSION=	0.3.6
 GH_ACCOUNT+=	aperezdc:fancyindex
 GH_PROJECT+=	ngx-fancyindex:fancyindex
 GH_TAGNAME+=	v${NGINX_FANCYINDEX_VERSION}:fancyindex
@@ -496,7 +496,7 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-GIT_PUSH_VERSION=	0.731
+GIT_PUSH_VERSION=	0.98
 GH_ACCOUNT+=	slact:push
 GH_PROJECT+=	nchan:push
 GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push
@@ -654,7 +654,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	0.9.19
+NGINX_LUA_VERSION=	0.10.0
 GH_ACCOUNT+=	openresty:lua
 GH_PROJECT+=	lua-nginx-module:lua
 GH_TAGNAME+=	v${NGINX_LUA_VERSION}:lua
@@ -670,7 +670,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
-NGINX_MODSECURITY_VERSION=	2.9.0
+NGINX_MODSECURITY_VERSION=	2.9.1-RC1
 LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
@@ -678,7 +678,7 @@ LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libyajl.so:${PORTSDIR}/devel/yajl
 USE_APACHE=	22+
 USE_GNOME+=	libxml2
-MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION}/:modsecurity
+MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION:S/RC/rc/}/:modsecurity
 DISTFILES+=	modsecurity-${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
@@ -702,7 +702,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.0.22
+PASSENGER_VERSION=	5.0.24
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module

@@ -40,7 +40,7 @@ QT4_DESC=		Use qt4 interface
 
 OPTIONS_DEFAULT=	GTK2
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
@@ -63,4 +63,4 @@ do-install:
 	@cd ${WRKSRC}/units && \
 		${INSTALL_PROGRAM} transgui ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

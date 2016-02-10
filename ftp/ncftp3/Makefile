@@ -15,7 +15,7 @@ COMMENT=	FTP client with advanced user interface
 LICENSE=	ARTPERL10
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
-USES=		tar:bzip2
+USES=		ncurses tar:bzip2
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 USE_LDCONFIG=	yes

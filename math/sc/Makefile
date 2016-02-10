@@ -10,6 +10,8 @@ MASTER_SITES=	SUNSITE/apps/financial/spreadsheet
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Curses-based spreadsheet program
 
+USES=		ncurses
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^prefix=/s,=.*,=$${PREFIX},' \
 		-e '/^CC=/s,=.*,=${CC},' \

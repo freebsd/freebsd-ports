@@ -3,7 +3,7 @@
 
 PORTNAME=	portscout
 PORTVERSION=	0.8.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
 		http://www.atarininja.org/~wxs/distfiles/ \
@@ -39,7 +39,7 @@ PORTDOCS=	UPDATING portscout-portconfig.txt xml-datasrc-example.xml
 
 HTTPS_RUN_DEPENDS=	p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https
 
-SQLITE_USE=		SQLITE=3
+SQLITE_USES=		sqlite
 SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 
 PGSQL_USES=		pgsql
@@ -60,7 +60,7 @@ post-extract:
 	@${CP} ${FILESDIR}/files-Portscout-SiteHandler-GitHub.pm ${WRKSRC}/Portscout/SiteHandler/GitHub.pm
 	@${CP} ${FILESDIR}/files-Portscout-SiteHandler-PyPI.pm ${WRKSRC}/Portscout/SiteHandler/PyPI.pm
 
-post-patch:
+pre-install:
 .if ${PORT_OPTIONS:MSQLITE}
 	@${REINPLACE_CMD} 's/^\([^#]*DBI:Pg.*\)$$/#\1/g' ${WRKSRC}/portscout.conf
 	@${REINPLACE_CMD} 's/^#\(.*DBI:SQLite.*\)$$/\1/g' ${WRKSRC}/portscout.conf

@@ -14,7 +14,7 @@ WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 
 ERL_RELEASE=	R16B02-basho5
 
-USES=		gmake perl5
+USES=		gmake ncurses perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

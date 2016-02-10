@@ -11,17 +11,21 @@ DISTNAME=	rvi
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple interface to RCS
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 PLIST_FILES=	bin/rvi
-PORTDOCS=	rvi.txt
+PORTDOCS=	*
+
 OPTIONS_DEFINE=	DOCS
 
 do-build:
-	@cd ${WRKSRC}/&&${CXX} -I. ${CFLAGS} -o rvi src/rvi.cc
+	@cd ${WRKSRC} && ${CXX} -I. ${CXXFLAGS} -o rvi src/rvi.cc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rvi ${STAGEDIR}${PREFIX}/bin/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/rvi.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

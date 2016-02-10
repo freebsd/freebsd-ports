@@ -1,0 +1,11 @@
+--- golded3/Makefile.orig	2011-02-19 22:37:43 UTC
++++ golded3/Makefile
+@@ -36,7 +36,7 @@ endif
+ include $(TOP)/GNUmakef.inc
+ 
+ ifeq ($(USE_NCURSES),1)
+-STDLIBS+= $(LIBCURSES)
++STDLIBS+= $(LDFLAGS) $(LIBCURSES)
+ endif
+ 
+ include $(TOP)/GNUmakef.prg

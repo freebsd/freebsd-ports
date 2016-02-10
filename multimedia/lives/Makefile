@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.4.8
+PORTVERSION=	2.6.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -87,6 +87,9 @@ post-patch:
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
 	@${REINPLACE_CMD} '/selectRandom/d' \
 		${WRKSRC}/lives-plugins/weed-plugins/projectM.cpp
+
+pre-build-NLS-on:
+	@(cd ${WRKSRC}/po && ${DO_MAKE_BUILD} update-po)
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

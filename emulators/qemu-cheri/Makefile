@@ -13,7 +13,7 @@ GH_ACCOUNT=	CTSRD-CHERI
 GH_TAGNAME=	${QEMU_COMMIT}
 
 HAS_CONFIGURE=	yes
-USES=	gmake libtool pkgconfig python:2,build
+USES=	gmake libtool makeinfo pkgconfig python:2,build
 USE_XORG=	pixman
 USE_GNOME+=	glib20
 #MAKE_ENV+=	BSD_MAKE="${MAKE}"

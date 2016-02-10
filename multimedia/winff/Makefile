@@ -33,7 +33,7 @@ DESKTOP_ENTRIES=	"${PORTNAME}"	\
 			true
 
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d
-LAZARUS_VER=	1.4.2
+LAZARUS_VER=	1.6RC2
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 LCL_UNITS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
 
@@ -45,7 +45,7 @@ QT4_DESC=		Use qt4 interface
 
 OPTIONS_DEFAULT=	GTK2
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
@@ -80,4 +80,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.pdf ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -14,6 +14,7 @@ COMMENT=	Displays information in real time about users currently logged on
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		ncurses
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/whowatch man/man1/${PORTNAME}.1.gz

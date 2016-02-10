@@ -57,17 +57,6 @@ CMAKE_ARGS+=	-DNO_NLS:BOOL=ON
 PLIST_SUB+=	NLS="@comment " QT_NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-# is this kosher?  the result seems to run tho...  (see ports/185997)
-.if $(COMPILER_FEATURES:Mlibc++)
-LDFLAGS+=	-lc++
-.endif
-
-#.if ${COMPILER_TYPE} == clang
-USE_GCC=	yes
-#.endif
-
 # for libexecinfo: (so that __builtin_frame_address() finds the top
 # of the stack)
 .if ${ARCH} == "amd64"
@@ -264,6 +253,17 @@ PLIST_SUB+=	AMRNB="@comment "
 CMAKE_ARGS+=	-DOPENCORE_AMRWB:BOOL=OFF
 PLIST_SUB+=	AMRWB="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
+
+# is this kosher?  the result seems to run tho...  (see ports/185997)
+.if $(COMPILER_FEATURES:Mlibc++)
+LDFLAGS+=	-lc++
+.endif
+
+#.if ${COMPILER_TYPE} == clang
+USE_GCC=	yes
+#.endif
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64

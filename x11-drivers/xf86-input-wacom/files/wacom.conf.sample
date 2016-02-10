@@ -1,4 +1,4 @@
-# A static configuration example for Bamboo P&T for use without HAL.
+# Manual configuration example for Bamboo Pen & Touch for use without devd or HAL.
 
 Section "InputDevice"
 	Identifier	"wacom stylus"

@@ -1,0 +1,14 @@
+
+To use this script you should copy the examples in
+%%PREFIX%%/etc/%%PORTNAME%%/ and at least add a
+domain and a contact mail address.
+
+You should also copy the openssl.cnf.sample file in
+%%PREFIX%%/openssl so you won't get warnings about
+it missing.
+
+In order to run the script regularly to update
+the certificates add this line to /etc/periodic.conf
+
+monthly_letsencrypt_enable="YES"
+

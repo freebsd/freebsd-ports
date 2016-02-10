@@ -246,6 +246,7 @@
     SUBDIR += gstreamer1-plugins-neon
     SUBDIR += gtkhtml3
     SUBDIR += gtkhtml4
+    SUBDIR += guacamole-client
     SUBDIR += guile-www
     SUBDIR += gurlchecker
     SUBDIR += h2o
@@ -1559,6 +1560,10 @@
     SUBDIR += py-django-registration
     SUBDIR += py-django-registration-defaults
     SUBDIR += py-django-registration-redux
+    SUBDIR += py-djangorestframework
+    SUBDIR += py-djangorestframework-csv
+    SUBDIR += py-djangorestframework-filters
+    SUBDIR += py-djangorestframework-xml
     SUBDIR += py-django-reversion
     SUBDIR += py-django-sekizai
     SUBDIR += py-django-signals-ahoy

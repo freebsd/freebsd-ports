@@ -10,7 +10,7 @@ COMMENT=	Interactive typing tutor
 
 LICENSE=	GPLv3
 
-USES=		iconv shebangfix tar:xz
+USES=		iconv ncurses shebangfix tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	EMACS=no
 CPPFLAGS+=	-I${LOCALBASE}/include -I${WRKDIR}/include
