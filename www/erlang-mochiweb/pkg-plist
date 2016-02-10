@@ -15,6 +15,7 @@ lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_acceptor.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_base64url.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_charref.beam
+lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_clock.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_cookies.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_cover.beam
 lib/erlang/lib/mochiweb-%%VERSION%%/ebin/mochiweb_echo.beam
@@ -50,6 +51,7 @@ lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_acceptor.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_base64url.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_charref.erl
+lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_clock.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_cookies.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_cover.erl
 lib/erlang/lib/mochiweb-%%VERSION%%/src/mochiweb_echo.erl
