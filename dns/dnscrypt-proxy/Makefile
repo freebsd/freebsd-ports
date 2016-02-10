@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	1.6.0
-PORTREVISION=	3
+PORTVERSION=	1.6.1
 CATEGORIES=	dns
 MASTER_SITES=	http://download.dnscrypt.org/dnscrypt-proxy/ \
 		http://www.dns-lab.com/downloads/dnscrypt-proxy/
@@ -39,9 +38,7 @@ SUB_FILES=	pkg-message
 
 USERS=		_dnscrypt-proxy
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README \
-		README-PLUGINS.markdown README-WINDOWS.markdown \
-		README.markdown TECHNOTES THANKS
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README* THANKS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
