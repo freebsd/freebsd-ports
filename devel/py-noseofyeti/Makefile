@@ -27,7 +27,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	delfick
 GH_PROJECT=	nose-of-yeti
 GH_TAGNAME=	e8f3110
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 SHEBANG_FILES=	test.sh
 PYTHON_OLD_CMD=	"/usr/bin/env python"
 
