@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2015-07-06 08:07:23 UTC
-+++ CMakeLists.txt
-@@ -277,6 +277,9 @@ file(GLOB MANPAGES
+--- CMakeLists.txt.orig	2015-12-27 18:56:11.000000000 +0900
++++ CMakeLists.txt	2015-12-27 18:57:35.000000000 +0900
+@@ -373,6 +373,9 @@
    RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
    man/nvim.1)
  

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	neovim
-PORTVERSION=	0.0.0.201507060407
-PORTREVISION=	1
+PORTVERSION=	0.1.1
+PORTREVISION=	0
 CATEGORIES=	editors
 MASTER_SITES=	GH
 
@@ -22,11 +22,14 @@ LIB_DEPENDS=	libunibilium.so:${PORTSDIR}/devel/unibilium \
 		libuv.so:${PORTSDIR}/devel/libuv \
 		libmsgpack.so:${PORTSDIR}/devel/msgpack
 
-USES=		cmake lua
+USES=		cmake lua gmake
 USE_GITHUB=	yes
-GH_TAGNAME=	1b78ad1
+GH_TAGNAME=	v0.1.1
 
 CMAKE_ARGS+=	-DLUA_PRG=${LUA_CMD} \
 		-DUSE_BUNDLED_DEPS=OFF
+DISTFILES=	v0.1.1.tar.gz
+
+MASTER_SITE_GITHUB=	https://github.com/neovim/neovim/archive/
 
 .include <bsd.port.mk>
