@@ -4,6 +4,7 @@
 PORTNAME=	tcllib
 DISTVERSIONPREFIX=	${PORTNAME}_
 DISTVERSION=	1_18
+PORTREVISION=	1
 CATEGORIES=	devel tcl
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -36,9 +37,7 @@ INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 #
 # Man pages
 #
-.if !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
-
-.if ${PORT_OPTIONS:MMANPAGES}
+.if ${PORT_OPTIONS:MMANPAGES} && !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
 ALL_TARGET+=	nroff-doc
 INSTALL_ARGS+=	-nroff-path ${STAGEDIR}${PREFIX}/man/mann
 .else
@@ -48,14 +47,12 @@ INSTALL_ARGS+=	-no-nroff
 #
 # HTML documentation
 #
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS} && !(defined(ALL_TARGET) && !empty(${ALL_TARGET:Mcritcl}))
 ALL_TARGET+=	html-doc
 INSTALL_ARGS+=	-html-path ${STAGEDIR}${DOCSDIR}
 .else
 INSTALL_ARGS+=	-no-html
 .endif
-
-.endif # ${ALL_TARGET} != "crictl"
 
 .if !target(post-patch)
 post-patch:
