@@ -57,6 +57,32 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="515b4327-cf8a-11e5-96d6-14dae9d210b8">
+    <topic>dnscrypt-proxy -- code execution</topic>
+    <affects>
+      <package>
+	<name>dnscrypt-proxy</name>
+	<range><ge>1.1.0</ge><lt>1.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Frank Denis reports:</p>
+	<blockquote cite="ihttps://github.com/jedisct1/dnscrypt-proxy/blob/1d129f7d5f0d469308967cbe4eacb4a6919f1fa1/NEWS#L2-L8">
+	  <p>Malformed packets could lead to denial of service or code
+	    execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/jedisct1/dnscrypt-proxy/blob/1d129f7d5f0d469308967cbe4eacb4a6919f1fa1/NEWS#L2-L8</url>
+    </references>
+    <dates>
+      <discovery>2016-02-02</discovery>
+      <entry>2016-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36034227-cf81-11e5-9c2b-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
