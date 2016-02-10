@@ -1,0 +1,17 @@
+Provides a subclass of Thread with facilities to raise an exception
+in the thread or terminate the thread from another thread.
+
+terminable_thread provides a subclass of threading.Thread, adding
+the facility to raise exceptions in the context of the given thread.
+
+This facility is incorporated in the terminable_thread.Thread methods
+raise_exc, which raises an arbitrary exception, and terminate, which
+raises SystemExit.
+
+This is not done in an entirely robust manner, and there may be
+unreported issues with it.
+
+It uses the unexposed PyThreadState_SetAsyncExc function (via ctypes)
+to raise an exception for the given thread.
+
+WWW: http://github.com/intuited/terminable_thread
