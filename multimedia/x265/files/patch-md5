@@ -1,0 +1,33 @@
+Use FreeBSD's MD5-implementation instead of yet another bundled one.
+
+	-mi
+
+--- common/CMakeLists.txt	2016-01-25 00:16:50.000000000 -0500
++++ common/CMakeLists.txt	2016-02-02 17:57:52.620700000 -0500
+@@ -109,5 +109,4 @@
+     threadpool.cpp threadpool.h
+     wavefront.h wavefront.cpp
+-    md5.cpp md5.h
+     bitstream.h bitstream.cpp
+     yuv.cpp yuv.h
+--- common/picyuv.h	2016-01-25 00:16:50.000000000 -0500
++++ common/picyuv.h	2016-02-02 21:52:24.690114000 -0500
+@@ -25,6 +25,8 @@
+ #define X265_PICYUV_H
+ 
++#include <sys/types.h>
++#include <md5.h>
++
+ #include "common.h"
+-#include "md5.h"
+ #include "x265.h"
+ 
+--- encoder/frameencoder.cpp	2016-01-25 00:16:50.000000000 -0500
++++ encoder/frameencoder.cpp	2016-02-02 18:06:58.918647000 -0500
+@@ -667,5 +667,5 @@
+             m_seiReconPictureDigest.m_method = SEIDecodedPictureHash::MD5;
+             for (int i = 0; i < planes; i++)
+-                MD5Final(&m_state[i], m_seiReconPictureDigest.m_digest[i]);
++                MD5Final(m_seiReconPictureDigest.m_digest[i], &m_state[i]);
+         }
+         else if (m_param->decodedPictureHashSEI == 2)
