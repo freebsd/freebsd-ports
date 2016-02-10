@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.9.10
+PORTVERSION=	1.9.11
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -1008,6 +1008,14 @@ post-patch:
 		's!--std=c99!-DMONGO_HAVE_STDINT!' \
 		${WRKSRC_gridfs}/config
 .endif
+.if ${PORT_OPTIONS:MLUA}
+	@${REINPLACE_CMD} \
+		's!ngx_udp_connection_t!ngx_resolver_connection_t!g; \
+		s!udp_connections!connections!g; \
+		s!udp_connection.connection!udp_connection.udp!g; \
+		s!uc->connection!uc->udp!g' \
+		${WRKSRC_lua}/src/ngx_http_lua_socket_udp.*
+.endif
 .if ${PORT_OPTIONS:MPASSENGER}
 	@${REINPLACE_CMD} \
 		'177,179s!true!false!' \
@@ -1030,6 +1038,20 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}/ngx_http_sflow_config.h
+.endif
+.if ${PORT_OPTIONS:MSTATSD}
+	@${REINPLACE_CMD} \
+		's!ngx_udp_connection_t!ngx_resolver_connection_t!g; \
+		s!uc->connection!uc->udp!g; \
+		s!e->udp_connection->connection!e->udp_connection->udp!g' \
+		${WRKSRC_statsd}/ngx_http_statsd.c
+.endif
+.if ${PORT_OPTIONS:MUDPLOG}
+	@${REINPLACE_CMD} \
+		's!ngx_udp_connection_t!ngx_resolver_connection_t!g; \
+		s!uc->connection!uc->udp!g; \
+		s!e->udp_connection->connection!e->udp_connection->udp!g' \
+		${WRKDIR}/nginx_udplog_module-${NGINX_UDPLOG_VERSION}/ngx_http_udplog_module.c
 .endif
 .if ${PORT_OPTIONS:MICONV}
 	@${REINPLACE_CMD} \
