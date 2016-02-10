@@ -57,7 +57,7 @@ for i in $dnscrypt_proxy_instances; do
     eval dnscrypt_proxy_logfile_tmp=\${${i}_logfile}
 
 :   ${dnscrypt_proxy_uid_tmp:=_dnscrypt-proxy}       # User to run daemon as
-:   ${dnscrypt_proxy_resolver_tmp:=opendns}          # resolver to use
+:   ${dnscrypt_proxy_resolver_tmp:=cisco}            # resolver to use
 :   ${dnscrypt_proxy_pidfile_tmp:=/var/run/${i}.pid} # Path to pid file
 :   ${dnscrypt_proxy_logfile_tmp:=/var/log/${i}.log} # Path to log file
 
