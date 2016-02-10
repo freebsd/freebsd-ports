@@ -26,7 +26,7 @@ USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	delfick
 GH_TAGNAME=	6761e6c
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	*
 
