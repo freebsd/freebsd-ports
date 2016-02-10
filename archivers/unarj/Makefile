@@ -17,9 +17,6 @@ PORTDOCS=	unarj.txt technote.txt
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	${CP} ${FILESDIR}/sanitize.c ${WRKSRC}
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unarj ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

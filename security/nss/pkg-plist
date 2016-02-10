@@ -1,6 +1,5 @@
 bin/certcgi
 bin/certutil
-bin/checkcert
 bin/cmsutil
 bin/crlutil
 bin/derdump

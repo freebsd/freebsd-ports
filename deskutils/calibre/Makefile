@@ -3,6 +3,7 @@
 
 PORTNAME=	calibre
 PORTVERSION=	2.50.1
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -59,7 +60,8 @@ USE_RC_SUBR=	calibre
 EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 
 USES=		desktop-file-utils pkgconfig python:2 shared-mime-info shebangfix tar:xz
-SHEBANG_FILES=	src/calibre/ebooks/metadata/odt.py \
+SHEBANG_FILES=	resources/calibre-portable.sh \
+		src/calibre/ebooks/metadata/odt.py \
 		src/calibre/utils/*.py \
 		src/odf/*.py
 USE_QT5=	buildtools_build dbus qmake_build

@@ -7,22 +7,24 @@ CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ak@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File system automounting implemented in user-space using FUSE
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fuse pkgconfig
 GNU_CONFIGURE=	yes
 
-SUB_FILES=	pkg-message
-
-PORTDOCS=	AUTHORS ChangeLog README
+PORTDOCS=	AUTHORS README
 
 OPTIONS_DEFINE=	DOCS
+DOCS_SUB_FILES=	pkg-message
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/afuse.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/afuse.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

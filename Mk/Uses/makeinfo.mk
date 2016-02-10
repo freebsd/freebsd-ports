@@ -4,7 +4,7 @@
 #
 # Feature:	makeinfo
 # Usage:	USES=makeinfo
-# Valid ARGS:	build (default, implicit), run, both
+# Valid ARGS:	none
 #
 # MAINTAINER: portmgr@FreeBSD.org
 

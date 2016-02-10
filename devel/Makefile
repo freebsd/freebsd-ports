@@ -3994,6 +3994,7 @@
     SUBDIR += py-decorator
     SUBDIR += py-decoratortools
     SUBDIR += py-defusedxml
+    SUBDIR += py-delfick_error
     SUBDIR += py-deliciousapi
     SUBDIR += py-demjson
     SUBDIR += py-dexml
@@ -4166,6 +4167,7 @@
     SUBDIR += py-ncurses
     SUBDIR += py-nose
     SUBDIR += py-nose-cov
+    SUBDIR += py-noseofyeti
     SUBDIR += py-notifier
     SUBDIR += py-notify
     SUBDIR += py-ocempgui
@@ -4178,6 +4180,7 @@
     SUBDIR += py-omniorb
     SUBDIR += py-omniorb-3
     SUBDIR += py-optik
+    SUBDIR += py-option_merge
     SUBDIR += py-orbit
     SUBDIR += py-ordereddict
     SUBDIR += py-oslo.i18n
@@ -4197,6 +4200,7 @@
     SUBDIR += py-phonenumbers
     SUBDIR += py-phpserialize
     SUBDIR += py-pika
+    SUBDIR += py-pinocchio
     SUBDIR += py-pip
     SUBDIR += py-pkgconfig
     SUBDIR += py-plan
@@ -4340,6 +4344,7 @@
     SUBDIR += py-setuptools_hg
     SUBDIR += py-setuptools_scm
     SUBDIR += py-sh
+    SUBDIR += py-should_dsl
     SUBDIR += py-shapely
     SUBDIR += py-simplegeneric
     SUBDIR += py-simplejson
@@ -4381,6 +4386,7 @@
     SUBDIR += py-thrift
     SUBDIR += py-timelib
     SUBDIR += py-tipper
+    SUBDIR += py-total-ordering
     SUBDIR += py-tox
     SUBDIR += py-trace2html
     SUBDIR += py-traitlets

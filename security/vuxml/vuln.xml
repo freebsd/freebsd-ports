@@ -55,9 +55,425 @@ Help is also available from ports-security@freebsd.org.
 Notes:
   * Please add new entries to the beginning of this file.
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
-
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5d8e56c3-9e67-4d5b-81c9-3a409dfd705f">
+    <topic>flash -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.569</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb16-04.html">
+	  <p>These updates resolve a type confusion vulnerability that
+	    could lead to code execution (CVE-2016-0985).</p>
+	  <p>These updates resolve use-after-free vulnerabilities that
+	    could lead to code execution (CVE-2016-0973, CVE-2016-0974,
+	    CVE-2016-0975, CVE-2016-0982, CVE-2016-0983, CVE-2016-0984).</p>
+	  <p>These updates resolve a heap buffer overflow vulnerability
+	    that could lead to code execution (CVE-2016-0971).</p>
+	  <p>These updates resolve memory corruption vulnerabilities
+	    that could lead to code execution (CVE-2016-0964,
+	    CVE-2016-0965, CVE-2016-0966, CVE-2016-0967, CVE-2016-0968,
+	    CVE-2016-0969, CVE-2016-0970, CVE-2016-0972, CVE-2016-0976,
+	    CVE-2016-0977, CVE-2016-0978, CVE-2016-0979, CVE-2016-0980,
+	    CVE-2016-0981).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0964</cvename>
+      <cvename>CVE-2015-0965</cvename>
+      <cvename>CVE-2015-0966</cvename>
+      <cvename>CVE-2015-0967</cvename>
+      <cvename>CVE-2015-0968</cvename>
+      <cvename>CVE-2015-0969</cvename>
+      <cvename>CVE-2015-0970</cvename>
+      <cvename>CVE-2015-0971</cvename>
+      <cvename>CVE-2015-0972</cvename>
+      <cvename>CVE-2015-0973</cvename>
+      <cvename>CVE-2015-0974</cvename>
+      <cvename>CVE-2015-0975</cvename>
+      <cvename>CVE-2015-0976</cvename>
+      <cvename>CVE-2015-0977</cvename>
+      <cvename>CVE-2015-0978</cvename>
+      <cvename>CVE-2015-0979</cvename>
+      <cvename>CVE-2015-0980</cvename>
+      <cvename>CVE-2015-0981</cvename>
+      <cvename>CVE-2015-0982</cvename>
+      <cvename>CVE-2015-0983</cvename>
+      <cvename>CVE-2015-0984</cvename>
+      <cvename>CVE-2015-0985</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb16-04.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-09</discovery>
+      <entry>2016-02-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="515b4327-cf8a-11e5-96d6-14dae9d210b8">
+    <topic>dnscrypt-proxy -- code execution</topic>
+    <affects>
+      <package>
+	<name>dnscrypt-proxy</name>
+	<range><ge>1.1.0</ge><lt>1.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Frank Denis reports:</p>
+	<blockquote cite="ihttps://github.com/jedisct1/dnscrypt-proxy/blob/1d129f7d5f0d469308967cbe4eacb4a6919f1fa1/NEWS#L2-L8">
+	  <p>Malformed packets could lead to denial of service or code
+	    execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/jedisct1/dnscrypt-proxy/blob/1d129f7d5f0d469308967cbe4eacb4a6919f1fa1/NEWS#L2-L8</url>
+    </references>
+    <dates>
+      <discovery>2016-02-02</discovery>
+      <entry>2016-02-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="36034227-cf81-11e5-9c2b-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>48.0.2564.109</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2016/02/stable-channel-update_9.html">
+	  <p>6 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[546677] High CVE-2016-1622: Same-origin bypass in Extensions.
+	      Credit to anonymous.</li>
+	    <li>[577105] High CVE-2016-1623: Same-origin bypass in DOM. Credit
+	      to Mariusz Mlynski.</li>
+	    <li>[583607] High CVE-2016-1624: Buffer overflow in Brotli. Credit
+	      to lukezli.</li>
+	    <li>[509313] Medium CVE-2016-1625: Navigation bypass in Chrome
+	      Instant. Credit to Jann Horn.</li>
+	    <li>[571480] Medium CVE-2016-1626: Out-of-bounds read in PDFium.
+	      Credit to anonymous, working with HP's Zero Day Initiative.</li>
+	    <li>[585517] CVE-2016-1627: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1622</cvename>
+      <cvename>CVE-2016-1623</cvename>
+      <cvename>CVE-2016-1624</cvename>
+      <cvename>CVE-2016-1625</cvename>
+      <cvename>CVE-2016-1626</cvename>
+      <cvename>CVE-2016-1627</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2016/02/stable-channel-update_9.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-08</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8f10fa04-cf6a-11e5-96d6-14dae9d210b8">
+    <topic>graphite2 -- code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>graphite2</name>
+	<range><lt>1.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Talos reports:</p>
+	<blockquote cite="http://blog.talosintel.com/2016/02/vulnerability-spotlight-libgraphite.html">
+	  <ul>
+	  <li><p>An exploitable denial of service vulnerability exists
+	    in the font handling of Libgraphite. A specially crafted font can cause
+	    an out-of-bounds read potentially resulting in an information leak or
+	    denial of service.</p></li>
+	  <li><p>A specially crafted font can cause a buffer overflow
+	    resulting in potential code execution.</p></li>
+	  <li><p>An exploitable NULL pointer dereference exists in the
+	    bidirectional font handling functionality of Libgraphite. A specially
+	    crafted font can cause a NULL pointer dereference resulting in a
+	    crash.</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.talosintel.com/2016/02/vulnerability-spotlight-libgraphite.html</url>
+      <cvename>CVE-2016-1521</cvename>
+      <cvename>CVE-2016-1522</cvename>
+      <cvename>CVE-2016-1523</cvename>
+      <cvename>CVE-2016-1526</cvename>
+    </references>
+    <dates>
+      <discovery>2016-02-05</discovery>
+      <entry>2016-02-09</entry>
+      <modified>2016-02-09</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="1cecd5e0-c372-11e5-96d6-14dae9d210b8">
+    <topic>xymon-server -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xymon-server</name>
+	<range><lt>4.3.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>J.C. Cleaver reports:</p>
+	<blockquote cite="http://lists.xymon.com/pipermail/xymon/2016-February/042986.html">
+	  <ul>
+	  <li><p>CVE-2016-2054: Buffer overflow in xymond handling of
+	    "config" command</p></li>
+	  <li><p> CVE-2016-2055: Access to possibly confidential files
+	    in the Xymon configuration directory</p></li>
+	  <li><p>CVE-2016-2056: Shell command injection in the
+	    "useradm" and "chpasswd" web applications</p></li>
+	  <li><p>CVE-2016-2057: Incorrect permissions on IPC queues
+	    used by the xymond daemon can bypass IP access filtering</p></li>
+	  <li><p>CVE-2016-2058: Javascript injection in "detailed status
+	    webpage" of monitoring items; XSS vulnerability via malformed
+	    acknowledgment messages</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.xymon.com/pipermail/xymon/2016-February/042986.html</url>
+      <cvename>CVE-2016-2054</cvename>
+      <cvename>CVE-2016-2055</cvename>
+      <cvename>CVE-2016-2056</cvename>
+      <cvename>CVE-2016-2057</cvename>
+      <cvename>CVE-2016-2058</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-19</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="85eb4e46-cf16-11e5-840f-485d605f4717">
+    <topic>php -- pcre vulnerability</topic>
+    <affects>
+      <package>
+	<name>php55</name>
+	<range><lt>5.5.32</lt></range>
+      </package>
+      <package>
+	<name>php56</name>
+	<range><lt>5.6.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP reports:</p>
+	<blockquote cite="http://php.net/ChangeLog-5.php#5.6.18">
+	  <ul><li>PCRE:
+	  <ul>
+	  <li>Upgraded bundled PCRE library to 8.38.(CVE-2015-8383,
+	   CVE-2015-8386, CVE-2015-8387, CVE-2015-8389, CVE-2015-8390,
+	   CVE-2015-8391, CVE-2015-8393, CVE-2015-8394)</li>
+	  </ul></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8383</cvename>
+      <cvename>CVE-2015-8386</cvename>
+      <cvename>CVE-2015-8387</cvename>
+      <cvename>CVE-2015-8389</cvename>
+      <cvename>CVE-2015-8390</cvename>
+      <cvename>CVE-2015-8391</cvename>
+      <cvename>CVE-2015-8393</cvename>
+      <cvename>CVE-2015-8394</cvename>
+      <url>http://php.net/ChangeLog-5.php#5.6.18</url>
+      <url>http://php.net/ChangeLog-5.php#5.5.32</url>
+    </references>
+    <dates>
+      <discovery>2016-02-04</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a8de962a-cf15-11e5-805c-5453ed2e2b49">
+    <topic>py-imaging, py-pillow -- Buffer overflow in PCD decoder</topic>
+    <affects>
+      <package>
+	<name>py27-pillow</name>
+	<name>py33-pillow</name>
+	<name>py34-pillow</name>
+	<name>py35-pillow</name>
+	<range><lt>2.9.0_1</lt></range>
+      </package>
+      <package>
+	<name>py27-imaging</name>
+	<range><lt>1.1.7_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Pillow maintainers report:</p>
+	<blockquote cite="https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html">
+	  <p>In all versions of Pillow, dating back at least to the last PIL
+	    1.1.7 release, PcdDecode.c has a buffer overflow error.</p>
+	  <p>The state.buffer for PcdDecode.c is allocated based on a 3 bytes
+	    per pixel sizing, where PcdDecode.c wrote into the buffer assuming
+	    4 bytes per pixel. This writes 768 bytes beyond the end of the
+	    buffer into other Python object storage. In some cases, this causes
+	    a segfault, in others an internal Python malloc error.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://openwall.com/lists/oss-security/2016/02/02/5</mlist>
+      <url>https://github.com/python-pillow/Pillow/commit/ae453aa18b66af54e7ff716f4ccb33adca60afd4</url>
+      <url>https://github.com/python-pillow/Pillow/issues/568</url>
+    </references>
+    <dates>
+      <discovery>2016-02-02</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0519db18-cf15-11e5-805c-5453ed2e2b49">
+    <topic>py-pillow -- Integer overflow in Resample.c</topic>
+    <affects>
+      <package>
+	<name>py27-pillow</name>
+	<name>py33-pillow</name>
+	<name>py34-pillow</name>
+	<name>py35-pillow</name>
+	<range><lt>2.9.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Pillow maintainers report:</p>
+	<blockquote cite="https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html">
+	  <p>If a large value was passed into the new size for an image, it is
+	    possible to overflow an int32 value passed into malloc, leading the
+	    malloc’d buffer to be undersized. These allocations are followed by
+	    a loop that writes out of bounds. This can lead to corruption on
+	    the heap of the Python process with attacker controlled float
+	    data.</p>
+	  <p>This issue was found by Ned Williamson.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/python-pillow/Pillow/commit/41fae6d9e2da741d2c5464775c7f1a609ea03798</url>
+      <url>https://github.com/python-pillow/Pillow/issues/1710</url>
+    </references>
+    <dates>
+      <discovery>2016-02-05</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6ea60e00-cf13-11e5-805c-5453ed2e2b49">
+    <topic>py-imaging, py-pillow -- Buffer overflow in FLI decoding code</topic>
+    <affects>
+      <package>
+	<name>py27-pillow</name>
+	<name>py33-pillow</name>
+	<name>py34-pillow</name>
+	<name>py35-pillow</name>
+	<range><lt>2.9.0_1</lt></range>
+      </package>
+      <package>
+	<name>py27-imaging</name>
+	<range><lt>1.1.7_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Pillow maintainers report:</p>
+	<blockquote cite="https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html">
+	  <p>In all versions of Pillow, dating back at least to the last PIL
+	    1.1.7 release, FliDecode.c has a buffer overflow error.</p>
+	  <p>There is a memcpy error where x is added to a target buffer
+	    address. X is used in several internal temporary variable roles,
+	    but can take a value up to the width of the image. Im-&gt;image[y]
+	    is a set of row pointers to segments of memory that are the size of
+	    the row. At the max y, this will write the contents of the line off
+	    the end of the memory buffer, causing a segfault.</p>
+	  <p>This issue was found by Alyssa Besseling at Atlassian.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-0775</cvename>
+      <url>https://github.com/python-pillow/Pillow/commit/bcaaf97f4ff25b3b5b9e8efeda364e17e80858ec</url>
+    </references>
+    <dates>
+      <discovery>2016-02-05</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="53252879-cf11-11e5-805c-5453ed2e2b49">
+    <topic>py-pillow -- Buffer overflow in TIFF decoding code</topic>
+    <affects>
+      <package>
+	<name>py27-pillow</name>
+	<name>py33-pillow</name>
+	<name>py34-pillow</name>
+	<name>py35-pillow</name>
+	<range><lt>2.9.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Pillow maintainers report:</p>
+	<blockquote cite="https://pillow.readthedocs.org/en/3.1.x/releasenotes/3.1.1.html">
+	  <p>Pillow 3.1.0 and earlier when linked against libtiff &gt;= 4.0.0 on
+	    x64 may overflow a buffer when reading a specially crafted tiff
+	    file.</p>
+	  <p>Specifically, libtiff &gt;= 4.0.0 changed the return type of
+	    TIFFScanlineSize from int32 to machine dependent int32|64. If the
+	    scanline is sized so that it overflows an int32, it may be
+	    interpreted as a negative number, which will then pass the size check
+	    in TiffDecode.c line 236. To do this, the logical scanline size has
+	    to be &gt; 2gb, and for the test file, the allocated buffer size is 64k
+	    against a roughly 4gb scan line size. Any image data over 64k is
+	    written over the heap, causing a segfault.</p>
+	  <p>This issue was found by security researcher FourOne.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-0740</cvename>
+      <url>https://github.com/python-pillow/Pillow/commit/6dcbf5bd96b717c58d7b642949da8d323099928e</url>
+    </references>
+    <dates>
+      <discovery>2016-02-04</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ac79ed8-ccc2-11e5-932b-5404a68ad561">
     <topic>ffmpeg -- remote denial of service in JPEG2000 decoder</topic>
     <affects>
