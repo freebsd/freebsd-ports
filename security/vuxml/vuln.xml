@@ -56,7 +56,6 @@ Notes:
   * Please add new entries to the beginning of this file.
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
-
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="36034227-cf81-11e5-9c2b-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
