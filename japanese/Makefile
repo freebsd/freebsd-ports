@@ -219,7 +219,6 @@
     SUBDIR += php_doc
     SUBDIR += plain2
     SUBDIR += plan
-    SUBDIR += prn
     SUBDIR += py-mecab
     SUBDIR += py-tegaki
     SUBDIR += py-tegaki-gtk
