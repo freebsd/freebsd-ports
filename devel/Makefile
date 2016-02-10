@@ -1392,6 +1392,7 @@
     SUBDIR += linux_libusb
     SUBDIR += lion
     SUBDIR += lldb37
+    SUBDIR += lldb38
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
