@@ -1392,6 +1392,7 @@
     SUBDIR += linux_libusb
     SUBDIR += lion
     SUBDIR += lldb37
+    SUBDIR += lldb38
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
@@ -4378,6 +4379,7 @@
     SUBDIR += py-tempora
     SUBDIR += py-tempstorage
     SUBDIR += py-termcolor
+    SUBDIR += py-terminable_thread
     SUBDIR += py-termstyle
     SUBDIR += py-testgears
     SUBDIR += py-testoob

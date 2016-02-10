@@ -2,13 +2,12 @@
 
 PORTNAME=	portmaster
 PORTVERSION=	3.17.9
-PORTREVISION=	0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
-  		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 		GH
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@toco-domains.de
 COMMENT=	Manage your ports without external databases or languages
 
 LICENSE=	BSD2CLAUSE
@@ -24,6 +23,9 @@ PLIST_FILES=	sbin/portmaster \
 
 BASH_PLIST_FILES=	etc/bash_completion.d/portmaster.sh
 ZSH_PLIST_FILES=	share/zsh/site-functions/_portmaster
+
+BASH_RUN_DEPENDS=	bash>=0:${PORTSDIR}/shells/bash
+ZSH_RUN_DEPENDS=	zsh>=0:${PORTSDIR}/shells/zsh
 
 verify: checksum
 

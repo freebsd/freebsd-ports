@@ -1,16 +1,19 @@
 # $FreeBSD$
 
-PORTNAME=	total-ordering
-PORTVERSION=	0.1.0
+PORTNAME=	terminable_thread
+PORTVERSION=	0.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	truckman@FreeBSD.org
-COMMENT=	Backport functools.total_ordering to Python 2.x
+COMMENT=	Thread subclass / raise exceptions or terminate from another thread
+
+LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_ARCH=	yes
-USES=		python:-2.7
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

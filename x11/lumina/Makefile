@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-Release
 PORTREVISION=	1
@@ -33,7 +33,7 @@ PCBSD_DESC=	Use the PC-BSD system interface settings.
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMULTIMEDIA}
-RUN_DEPENDS+=	gstreamer-plugins-core>=0:${PORTSDIR}/multimedia/gstreamer-plugins-core
+RUN_DEPENDS+=	gstreamer1-plugins-core>=0:${PORTSDIR}/multimedia/gstreamer1-plugins-core
 .endif
 
 MAKE_JOBS_UNSAFE=yes
@@ -41,7 +41,7 @@ MAKE_JOBS_UNSAFE=yes
 USE_XORG=	x11 xdamage
 USE_XCB=		x11extras wm
 USE_LDCONFIG=	yes
-USE_QT5=	core gui network quick svg linguist multimedia imageformats \
+USE_QT5=	core gui network svg linguist multimedia imageformats \
 		buildtools x11extras concurrent
 USES=		desktop-file-utils qmake
 USE_GITHUB=	yes

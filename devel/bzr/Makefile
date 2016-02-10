@@ -4,8 +4,7 @@
 PORTNAME=	bzr
 PORTVERSION=	2.7.0
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/235965106/ \
-	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Distributed version control system by Canonical
