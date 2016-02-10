@@ -1,12 +1,10 @@
 include/gmp.h
 include/gmpxx.h
 lib/libgmp.a
-lib/libgmp.la
 lib/libgmp.so
 lib/libgmp.so.10
 lib/libgmp.so.10.1.3
 lib/libgmpxx.a
-lib/libgmpxx.la
 lib/libgmpxx.so
 lib/libgmpxx.so.4
 lib/libgmpxx.so.4.3.3
