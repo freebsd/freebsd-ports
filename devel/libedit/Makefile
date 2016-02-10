@@ -24,6 +24,6 @@ CONFIGURE_ARGS=	--enable-widec
 MAKE_ENV=	LC_ALL=C
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFLICT_INSTALL=	editline-*
+CONFLICTS_INSTALL=	editline-*
 
 .include <bsd.port.mk>
