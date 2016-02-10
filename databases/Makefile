@@ -891,6 +891,7 @@
     SUBDIR += rubygem-do_mysql
     SUBDIR += rubygem-do_postgres
     SUBDIR += rubygem-do_sqlite3
+    SUBDIR += rubygem-em-redis-unified
     SUBDIR += rubygem-familia
     SUBDIR += rubygem-globalid
     SUBDIR += rubygem-her

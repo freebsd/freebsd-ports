@@ -1,0 +1,6 @@
+An EventMachine based library for interacting with the Redis data store
+by Salvatore 'antirez' Sanfilippo. Modeled after eventmachine's
+implementation of the memcached protocol, and influenced by Ezra Zygmuntowicz's
+redis-rb library (distributed as part of Redis).
+
+WWW: https://rubygems.org/gems/em-redis-unified
