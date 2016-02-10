@@ -14,7 +14,7 @@ COMMENT=	Deductive program verification platform
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICT_INSTALL= why3-gpl-*
+CONFLICTS_INSTALL= why3-gpl-*
 
 BUILD_DEPENDS=	ocaml-zarith>1.2:${PORTSDIR}/math/ocaml-zarith \
 		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
