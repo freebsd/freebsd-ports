@@ -197,6 +197,7 @@
     SUBDIR += snzip
     SUBDIR += squeeze
     SUBDIR += squsq
+    SUBDIR += star
     SUBDIR += stuffit
     SUBDIR += szip
     SUBDIR += tardy
