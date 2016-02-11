@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icedtea-web
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.2
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
 		http://icedtea.classpath.org/download/source/
@@ -11,9 +11,12 @@ COMMENT=	Free Java plug-in and Java Web Start for OpenJDK
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		bash:${PORTSDIR}/shells/bash \
+		gsed:${PORTSDIR}/textproc/gsed
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+TEST_DEPENDS=	${HAMCREST_JAR}:${PORTSDIR}/java/hamcrest \
+		${JUNIT_JAR}:${PORTSDIR}/java/junit
 
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
@@ -22,7 +25,7 @@ JAVA_VENDOR=	openjdk
 USE_PERL5=	build
 USE_XORG=	x11
 USES=		desktop-file-utils gmake perl5 pkgconfig shebangfix
-SHEBANG_FILES=	javac.in jrunscript.in launcher/launchers.in
+SHEBANG_FILES=	jrunscript.in launcher/launchers.in
 
 WANT_GNOME=	yes
 
@@ -30,58 +33,55 @@ EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SETENV} LC_ALL=en_US.UTF-8 ${TAR} -xf -
 
-PLIST_FILES=	bin/itweb-javaws \
-		bin/itweb-policyeditor \
-		bin/itweb-settings \
-		man/man1/itweb-javaws.1.gz \
-		man/man1/itweb-policyeditor.1.gz \
-		man/man1/itweb-settings.1.gz \
-		share/applications/itweb-javaws.desktop \
-		share/applications/itweb-policyeditor.desktop \
-		share/applications/itweb-settings.desktop \
-		share/pixmaps/itweb-javaws.png
-PORTDATA=	javaws_splash.png netx.jar
-PORTDOCS=	netx
+CONFIGURE_ARGS=		--with-hamcrest="${HAMCREST_JAR}"
+CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
+CONFIGURE_ARGS+=	--with-jre-home="${JAVA_HOME}/jre"
+CONFIGURE_ARGS+=	--with-junit="${JUNIT_JAR}"
+CONFIGURE_ARGS+=	--with-rhino="${RHINO_JAR}"
+CONFIGURE_ARGS+=	--with-tagsoup="${TAGSOUP_JAR}"
+.for opt in asm chrome chromium ecj epiphany firefox jacoco midori opera
+CONFIGURE_ARGS+=	--without-${opt}
+.endfor
+CONFIGURE_ENV=		BIN_BASH=${bash_CMD}
+CONFIGURE_SHELL=	${bash_CMD}
 
-CONFIGURE_ARGS=	--with-asm=no --with-ecj=no --with-emma=no --with-jacoco=no
-CONFIGURE_ARGS+=--with-jdk-home="${JAVA_HOME}"
-CONFIGURE_ARGS+=--with-jre-home="${JAVA_HOME}/jre"
-CONFIGURE_ARGS+=--with-tagsoup=no
-CONFIGURE_ENV=	BIN_BASH=${bash_CMD}
+TEST_TARGET=	check
 
-OPTIONS_DEFINE=	PLUGIN RHINO TEST
-OPTIONS_DEFAULT=PLUGIN
+OPTIONS_DEFINE=	DOCS PLUGIN RHINO TAGSOUP
+OPTIONS_DEFAULT=DOCS PLUGIN
+OPTIONS_SUB=	yes
+
 PLUGIN_DESC=	Enable the browser plug-in
 RHINO_DESC=	Add support for Proxy Auto Config files
-TEST_DESC=	Add support for running regression test
+TAGSOUP_DESC=	Enable cleaning up of malformed JNLP files
 
 DOCS_CONFIGURE_ENABLE=	docs
-PLUGIN_CONFIGURE_ENABLE=plugin
+DOCS_PORTDOCS=		netx
+
 RHINO_BUILD_DEPENDS=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
-RHINO_RUN_DEPENDS=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
-RHINO_CONFIGURE_OFF=	--with-rhino=no
-RHINO_CONFIGURE_ON=	--with-rhino=${JAVASHAREDIR}/rhino/rhino.jar
-TEST_BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
-TEST_CONFIGURE_OFF=	--with-junit=no
-TEST_CONFIGURE_ON=	--with-junit=${JAVALIBDIR}/junit.jar
-PLUGIN_PLIST_FILES=	lib/IcedTeaPlugin.so
+RHINO_RUN_DEPENDS=	${RHINO_BUILD_DEPENDS}
+RHINO_VARS=		RHINO_JAR="${JAVASHAREDIR}/rhino/rhino.jar"
+RHINO_VARS_OFF=		RHINO_JAR=no
+
+TAGSOUP_BUILD_DEPENDS=	${JAVALIBDIR}/tagsoup.jar:${PORTSDIR}/textproc/tagsoup
+TAGSOUP_RUN_DEPENDS=	${TAGSOUP_BUILD_DEPENDS}
+TAGSOUP_VARS=		TAGSOUP_JAR="${JAVALIBDIR}/tagsoup.jar"
+TAGSOUP_VARS_OFF=	TAGSOUP_JAR=no
+
+PLUGIN_CONFIGURE_ENABLE=plugin
+PLUGIN_PORTDOCS=	plugin
+PLUGIN_TEST_TARGET=	plugin-tests
 PLUGIN_USE=		GNOME=glib20
 PLUGIN_USES=		gecko webplugin:native
+PLUGIN_VARS=		WEBPLUGIN_DIR=${PREFIX}/lib
+PLUGIN_VARS+=		WEBPLUGIN_FILES=IcedTeaPlugin.so
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPLUGIN}
-PORTDATA+=	plugin.jar
-PORTDOCS+=	plugin
-WEBPLUGIN_DIR=	${PREFIX}/lib
-WEBPLUGIN_FILES=IcedTeaPlugin.so
-.endif
+HAMCREST_JAR=	${JAVALIBDIR}/hamcrest.jar
+JUNIT_JAR=	${JAVALIBDIR}/junit.jar
 
 .include <bsd.port.pre.mk>
 
-.if ${JAVA_PORT_VERSION} == "1.8.0"
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-jdk8
-.elif ${JAVA_PORT_VERSION} == "1.6.0"
+.if ${JAVA_PORT_VERSION} == "1.6.0"
 pre-extract:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "IMPORTANT: To build IcedTea-Web ${PORTVERSION}, you have to turn on 'ICEDTEA' option"
@@ -91,30 +91,23 @@ pre-extract:
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e 's|^sed\([[:space:]]\)|gsed\1|' \
+	    -e 's|\([[:space:]]\)sed\([[:space:]]\)|\1gsed\2|g' \
+	    ${WRKSRC}/Makefile.in ${WRKSRC}/html-gen.sh
 	${REINPLACE_CMD} -e 's|^Icon=javaws|Icon=itweb-javaws|' \
 	    ${WRKSRC}/*.desktop.in
-	${CP} -fp ${FILESDIR}/*.html \
-	    ${WRKSRC}/netx/net/sourceforge/jnlp/resources
-
-.if ${PORT_OPTIONS:MTEST}
-post-build:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Run \"make test\" to execute regression test."
-	@${ECHO_MSG}
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.desktop ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/javaws.png \
-	    ${STAGEDIR}${PREFIX}/share/pixmaps/itweb-javaws.png
-
-.if ${PORT_OPTIONS:MTEST}
-test:	build
-	@(cd ${WRKSRC}; ${MAKE_CMD} check)
-.if ${PORT_OPTIONS:MPLUGIN}
-	@(cd ${WRKSRC}; ${MAKE_CMD} plugin-tests)
-.endif
-.endif
+.for lang in cs de en pl
+.for man in javaws policyeditor
+	${MV} ${STAGEDIR}${MANPREFIX}/man/${lang:Nen}/man1/${man}.1 \
+	    ${STAGEDIR}${MANPREFIX}/man/${lang:Nen}/man1/itweb-${man}.1
+.endfor
+.endfor
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Run \"make test\" to execute regression test."
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
