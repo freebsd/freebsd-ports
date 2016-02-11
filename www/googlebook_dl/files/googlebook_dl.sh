@@ -31,39 +31,35 @@ parse_options()
 	OPTC=$((${OPTIND} - 1))
 }
 
+err()
+{
+	local exitval=$1
+
+	shift
+	echo 1>&2 "${0##*/}: $*"
+	exit ${exitval}
+}
+
 #
 # returns true if argument is a positive/negative whole integer.
 # stolen from bsdinstall
 #
 isinteger()
 {
-	local arg="$1"
+	local arg="${1#-}"
 
-	# prevent division-by-zero
-	[ "${arg}" = "0" ] && return
+	[ -z ${arg} ] && err 3 'isinteger(): bad syntax'
 
-	# attempt to perform arithmetic divison (an operation which will exit
-	# with error unless arg is a valid positive/negative whole integer).
-	( : $((0/$arg)) ) > /dev/null 2>&1
-}
-
-err()
-{
-	local exitval
-
-	exitval=$1
-	shift
-	echo 1>&2 "${0##*/}: $*"
-	exit ${exitval}
+	[ "${arg}" = "${arg%[!0-9]*}" ]
 }
 
 usage()
 {
-	echo "usage: ${0##*/} [-ahPpvw] totpages bookid"
+	echo "usage: ${0##*/} [-ahPpvw] [numpages] bookid"
 	echo '	-h display this help'
 	echo '	-a all mode (try to get links from all pages, including already downloaded)'
-	echo '	-P pageprefix (*PA, PP, PR, PT)'
-	echo '	-p http://proxy.tld:port,proxy.tld,ip:port | proxylist.txt'
+	echo '	-P pageprefix when numpages specified (*PA, PP, PR, PT)'
+	echo '	-p https://proxy.tld:port,proxy.tld,ip:port | https-proxylist.txt'
 	echo '	-v verbose'
 	echo '	-w pagewidth (800, *1024, 1280, 1440, 1680, ...)'
 	echo
@@ -76,9 +72,10 @@ usage()
 #
 progress()
 {
-	local page
+	local page=$1
 
-	page=$1
+	[ -z ${page} ] && err 3 'progress(): bad syntax'
+
 	if [ $((${page} % 10)) -eq 0 -a "${lastchar}" = '.' ]; then
 		echo -n ${page}
 	elif [ $((${page} % 2)) -eq 0 ]; then
@@ -91,17 +88,19 @@ progress()
 #
 out()
 {
-	[ -z "$1" -a -z "$2" ] && err 3 'out(): bad syntax'
+	local msg="$1" verbose_msg="$2"
 
-	if [ -n "${verbose}" -a -n "$2" ]; then
-		echo $2
-	elif [ -z "${verbose}" -a ! -z "$1" ]; then
-		[ "$1" = '.' ] && lastchar=.
+	[ -z "${msg}" -a -z "${verbose_msg}" ] && err 3 'out(): bad syntax'
+
+	if [ -n "${verbose}" -a -n "${verbose_msg}" ]; then
+		echo ${verbose_msg}
+	elif [ -z "${verbose}" -a ! -z "${msg}" ]; then
+		[ "${msg}" = '.' ] && lastchar=.
 		case ${lastchar} in
-		[.ce]) printf "$1" ;;
-			*) printf " $1" ;;
+		[.ce]) printf "${msg}" ;;
+			*) printf " ${msg}" ;;
 		esac
-		lastchar=${1#${1%?}}
+		lastchar=${msg#${msg%?}}
 	fi
 }
 
@@ -113,14 +112,14 @@ get_cookie()
 	rm "${cookie}" 2>/dev/null
 
 	# get cookie
-	wget -T5 -t2 -q -U"${ua}" --keep-session-cookies \
+	wget ${optcommon} -U"${ua}" --keep-session-cookies \
 		--save-cookies "${cookie}" -O/dev/null \
-		"http://books.google.com/books?id=${bookid}&pg=PA1&jscmd=click3"
+		"${baseurl}${bookid}&pg=PA1&jscmd=click3"
 
-	# fail if wget returned non-zero exitcode or cookies.txt is empty
+	# fail if non-zero exitcode returned or cookie has wrong format
 	_return=$?
-	cookie_str="$(grep '^.google.com[[:space:]]' "${cookie}" 2>/dev/null | \
-		sed -ne 's/^.*\(NID[^=]*=.*\)$/\1/p')"
+	cookie_str="$(sed -ne \
+		'/^.google.com[[:space:]]/s/^.*\(NID[^=]*=.*\)$/\1/p' "${cookie}")"
 	if [ ${_return} -ne 0 -o -z "${cookie_str}" ]; then
 		rm "${cookie}" 2>/dev/null
 		out 'E\n' "cannot get cookie: ${cookie_str}"
@@ -133,44 +132,43 @@ get_cookie()
 
 get_page()
 {
-	local page url urls _return
+	local url urls _return page=$1
 
-	[ -z $1 ] && err 3 'get_page(): bad syntax'
-	page=$1
+	[ -z ${page} ] && err 3 'get_page(): bad syntax'
 
 	# pull signatures only from missing pages unless in all mode
-	[ -f "${bookid}/${pageprefix}${page}.png" -a -z "${all}" ] && return
+	[ -f "${bookid}/${page}.png" -a -z "${all}" ] && return
 
-	# change cookie every 100 pages
+	# change cookie every 100 pages tried
 	if [ $((${got_pages} % 100)) -eq 0 ]; then
 		get_cookie || return 1
 	fi
 	got_pages=$((${got_pages} + 1))
 
-	url="http://books.google.com/books?id=${bookid}&pg=${pageprefix}${page}&jscmd=click3"
-	out "$(progress ${got_pages})" "${pageprefix}${page}: ${url}&w=${pagewidth} TRY"
+	url="${baseurl}${bookid}&pg=${page}&jscmd=click3"
+	out "$(progress ${got_pages})" "${page}: ${url}&w=${pagewidth} TRY"
 
+	# fetch urls
 	# NB! signatures tied to cookie and ip
-	urls=$(wget -T5 -t2 -q -U"${ua}" --no-cache \
-		--load-cookies "${cookie}" -O- \
-		"${url}" | tr '}' '\n' | grep "{\"pid\":\"P.*\",\"src\":" | \
-		sed 's/^.*"src":"\(https:\/\/[^"]*\)".*$/\1/;s/\\u0026/\&/g' | sort -u)
+	urls=$(wget ${optcommon} -U"${ua}" --load-cookies "${cookie}" -O- \
+		"${url}" | tr '}' '\n' | \
+		sed -ne 's/^.*"src":"\(https:\/\/[^"]*\)".*$/\1/; /pg=/s/\\u0026/\&/gp')
 
+	# fetch pages
 	for	url in ${urls}; do
-		page=$(echo "${url}" | sed 's/^.*&pg=\([^&]*\)&.*$/\1/')
+		page=${url##*&pg=}; page=${page%%&*}
 
 		# check again if page already downloaded, we usually get a few
 		# urls from a single request
 		if [ ! -f "${bookid}/${page}.png" ]; then
 			got_pages=$((${got_pages} + 1))
 
-			wget -T5 -t3 -q -U"${ua}" --no-cache \
-				--load-cookies "${cookie}" \
+			wget ${optcommon} -U"${ua}" --load-cookies "${cookie}" \
 				-O"${bookid}/${page}.png" "${url}&w=${pagewidth}"
 
 			_return=$?
 			if [ ${_return} -ne 0 ]; then
-				# sometime google books just returns 404
+				# sometime google books returns 404
 				rm "${bookid}/${page}.png"
 				out 'e' "${page}: ${url}&w=${pagewidth} ERROR"
 			else
@@ -184,40 +182,67 @@ get_page()
 
 get_pages()
 {
-	local page got_pages
-
+	local page got_pages=1
 	# for out(), progress()
 	local lastchar=.
 
-	got_pages=1
+	# randomize page requests - google books only shows 200 - 300 urls
+	# in one session. also remove duplicates.
+	PAGELIST=$(echo ${PAGELIST} | tr ' ' '\n' | sort -u -R)
 
-	# randomize page requests - google books only shows 200 - 300 urls in one
-	# session
-	#
-	# if start on odd second count from 1 to totpages, on even - from totpages to 1
-	# [ $((`date -j "+%s"` % 2)) -eq 0 ] && descending_order=yes
-	# XXX not portable
-	if [ $(jot -r 1 0 1) -ne 0 ]; then
-		echo "fetching pages in ascending order"
+	get_cookie || return 1
 
-		get_cookie || return 1
-		page=1
-		while [ ${page} -le ${totpages} ]; do
-			get_page ${page} || return 1
-			page=$((${page} + 1))
-		done
-	else
-		echo "fetching pages in descending order"
+	for page in ${PAGELIST}; do
+		get_page ${page} || return 1
+	done
+}
 
-		get_cookie || return 1
-		page=${totpages}
-		while [ ${page} -ge 1 ]; do
-			get_page ${page} || return 1
-			page=$((${page} - 1))
-		done
+#
+# returns number of already retrieved pages in retpages
+#
+get_retpages()
+{
+	local RETPAGELIST="$(echo "${bookid}"/P*)"
+
+	retpages=$(set -- ${RETPAGELIST}; echo $#)
+	# bookid dir is empty
+	[ ${retpages} -eq 1 -a "${RETPAGELIST}" != "${RETPAGELIST%\*}" ] && \
+		retpages=0
+}
+
+get_pagelist()
+{
+	local _return url="${baseurl}${bookid}&pg=PA1&jscmd=click3"
+
+	# autodetect available pages
+	# XXX there can be a few not listed pages
+	PAGELIST=$(wget ${optcommon} -U"${ua}" -O- "${url}" | \
+		tr '}' '\n' | sed -ne 's/^.*"[Pp]id":"\(P[^"]*\)".*/\1/p' | sort -u)
+
+	# fail if non-zero exitcode returned or PAGELIST is empty
+	_return=$?
+	if [ ${_return} -ne 0 -o -z "${PAGELIST}" ]; then
+		err 2 'cannot autodetect available pages, try to set numpages manually'
 	fi
 
-	echo
+	# XXX hack: add PP1-3, PT1-2 to PAGELIST manually
+	PAGELIST="${PAGELIST} PP1 PP2 PP3 PT1 PT2"
+}
+
+#
+# create PAGELIST, only for pageprefix
+#
+make_pagelist()
+{
+	local page=1 numpages=$1
+
+	[ -z ${numpages} ] && err 3 'make_pagelist(): bad syntax'
+
+	PAGELIST=
+	while [ ${page} -le ${numpages} ]; do
+		PAGELIST="${PAGELIST} ${pageprefix}${page}"
+		page=$((${page} + 1))
+	done
 }
 
 
@@ -225,30 +250,47 @@ get_pages()
 # MAIN
 #
 
-# with wrong UserAgent we will get 401 Unauthorized
+# with wrong UserAgent google returns 401 Unauthorized
 # ua='Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) Firefox/3.0'
 ua='Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1)'
+
+baseurl='https://books.google.com/books?id='
+
+# common wget options
+optcommon='-T5 -t3 -q'
 
 # default page width
 pagewidth=1024
 
-# PA - books pages			${totpages}
-# PR - preface, contents 	~30
-# PP,PT - front, back title	~10
-# default page prefix
+# PA - books pages
+# PR - preface, contents 	~20
+# PP,PT - front, back title	~4
+# default page prefix for numpages
 pageprefix=PA
 
-parse_options ${1+"$@"}
+# remove possible environment pollution
+unset http_proxy https_proxy
+
+parse_options "$@"
 shift ${OPTC}
 
 isinteger "${pagewidth}" || err 4 "pagewidth must be integer: ${pagewidth}"
 
 [ -z $1 ] && usage
-totpages=$1
-isinteger "${totpages}" || err 4 "totpages must be integer: ${totpages}"
 
-[ -z $2 ] && usage
-bookid=$2
+# fallback to old enumeration method if numpages provided
+if isinteger $1; then
+	numpages=$1
+
+	[ -z $2 ] && usage
+	bookid=$2
+
+	make_pagelist ${numpages}
+else
+	bookid=$1
+	get_pagelist
+	numpages=$(set -- ${PAGELIST}; echo $#)
+fi
 
 # if bookid dir already exist, continue from previous try
 if [ ! -d "${bookid}" ]; then
@@ -259,12 +301,18 @@ cookie=`mktemp -t cookie` || err 2 'mktemp error'
 
 trap "rm ${cookie} 2>/dev/null; exit 1" 1 2 3 10 13 15
 
+get_retpages
+echo "pages total/retrieved: ~${numpages}/${retpages}"
+
 if [ -z "${proxylist}" ]; then
 	get_pages
+	echo
 else
-	for http_proxy in ${proxylist}; do
-		echo "using proxy ${http_proxy}"
+	for https_proxy in ${proxylist}; do
+		echo "using proxy ${https_proxy}"
+		export https_proxy
 		get_pages
+		echo
 	done
 fi
 
