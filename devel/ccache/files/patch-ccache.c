@@ -1,7 +1,7 @@
 Determine whether cc(1) is clang or gcc at compile-time.
 
---- ccache.c.orig	2015-10-15 15:01:14.756621000 -0700
-+++ ccache.c	2015-10-15 15:01:47.738326000 -0700
+--- ccache.c.orig	2015-10-08 19:14:23 UTC
++++ ccache.c
 @@ -1350,6 +1350,11 @@ compiler_is_clang(struct args *args)
  {
  	char *name = basename(args->argv[0]);
