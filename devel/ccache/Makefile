@@ -3,7 +3,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ \
 		LOCAL/bdrewery
