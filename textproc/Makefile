@@ -1574,6 +1574,7 @@
     SUBDIR += sxml
     SUBDIR += syck
     SUBDIR += ta-aspell
+    SUBDIR += tagsoup
     SUBDIR += tclExpat
     SUBDIR += tdhkit
     SUBDIR += te-aspell
