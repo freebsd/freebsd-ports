@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- rmt/Makefile.man.orig	2016-02-10 20:47:23 UTC
++++ rmt/Makefile.man
+@@ -8,10 +8,10 @@ include		$(SRCROOT)/$(RULESDIR)/rules.to
+ ###########################################################################
+ 
+ MANDIR=		man
+-TARGETMAN=	rmt
++TARGETMAN=	srmt
+ MANSECT=	$(MANSECT_CMD)
+ MANSUFFIX=	$(MANSUFF_CMD)
+-MANFILE=	rmt.1
++MANFILE=	srmt.1
+ 
+ ###########################################################################
+ include		$(SRCROOT)/$(RULESDIR)/rules.man
