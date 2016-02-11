@@ -144,6 +144,7 @@
     SUBDIR += musixtex
     SUBDIR += muttprint
     SUBDIR += nenscript
+    SUBDIR += okc321
     SUBDIR += openprinting
     SUBDIR += p5-Font-FreeType
     SUBDIR += p5-Net-CUPS
