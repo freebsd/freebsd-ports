@@ -6,7 +6,7 @@ PORTVERSION=	1.5.7
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Validating, recursive, and caching DNS resolver
 
 LICENSE=	BSD3CLAUSE
