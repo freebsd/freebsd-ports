@@ -136,6 +136,7 @@ bin/idea
 %%IDEA_HOME%%/lib/jzlib-1.1.1.jar
 %%IDEA_HOME%%/lib/kotlin-reflect.jar
 %%IDEA_HOME%%/lib/kotlin-runtime.jar
+%%IDEA_HOME%%/lib/libpty/freebsd/%%PTY4J_ARCH%%/libpty.so
 @comment %%IDEA_HOME%%/lib/libpty/linux/x86/libpty.so
 @comment %%IDEA_HOME%%/lib/libpty/linux/x86_64/libpty.so
 @comment %%IDEA_HOME%%/lib/libpty/macosx/x86/libpty.dylib
@@ -154,7 +155,7 @@ bin/idea
 %%IDEA_HOME%%/lib/miglayout-swing.jar
 %%IDEA_HOME%%/lib/nanoxml-2.2.3.jar
 %%IDEA_HOME%%/lib/nekohtml-1.9.14.jar
-%%IDEA_HOME%%/lib/netty-all-4.1.0.Beta6.jar
+%%IDEA_HOME%%/lib/netty-all-4.1.0.Beta8.jar
 %%IDEA_HOME%%/lib/openapi.jar
 %%IDEA_HOME%%/lib/optimizedFileManager.jar
 %%IDEA_HOME%%/lib/oromatcher.jar
@@ -262,7 +263,6 @@ bin/idea
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-runner.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-runtime-sources.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-runtime.jar
-%%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlinr.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/LICENSE.txt
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/NOTICE.txt
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/third_party/args4j_LICENSE.txt
@@ -279,6 +279,10 @@ bin/idea
 %%IDEA_HOME%%/plugins/Kotlin/lib/kotlin-plugin.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/kotlin-reflect.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/kotlin-runtime.jar
+%%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-daemon-client.jar
+%%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-test.jar
+%%IDEA_HOME%%/plugins/Kotlin/lib/kotlin-android-extensions-compiler-plugin.jar
+%%IDEA_HOME%%/plugins/Kotlin/lib/kotlin-android-extensions-plugin.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/markdown.jar
 %%IDEA_HOME%%/plugins/android/lib/GoogleFeedback.jar
 %%IDEA_HOME%%/plugins/android/lib/android-common.jar
