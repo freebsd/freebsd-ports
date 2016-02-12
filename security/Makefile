@@ -843,7 +843,6 @@
     SUBDIR += py-mhash
     SUBDIR += py-oauth2client
     SUBDIR += py-oauthlib
-    SUBDIR += py-openid
     SUBDIR += py-openssl
     SUBDIR += py-paramiko
     SUBDIR += py-passlib
@@ -874,6 +873,7 @@
     SUBDIR += py-pyscard
     SUBDIR += py-pysha3
     SUBDIR += py-python-gnupg
+    SUBDIR += py-python-openid
     SUBDIR += py-python-registry
     SUBDIR += py-rekall
     SUBDIR += py-rekall-core
