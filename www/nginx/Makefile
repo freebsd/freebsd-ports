@@ -85,6 +85,7 @@ OPTIONS_DEFINE=	\
 	HTTP_UPSTREAM_STICKY \
 	HTTP_ZIP \
 	ARRAYVAR \
+	BROTLI \
 	DRIZZLE \
 	ENCRYPTSESSION \
 	FORMINPUT \
@@ -179,6 +180,7 @@ HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_ZIP_DESC=			3rd party http_zip module
 ARRAYVAR_DESC=			3rd party array_var module
+BROTLI_DESC=			3rd party brotli module
 DRIZZLE_DESC=			3rd party drizzlie module
 ENCRYPTSESSION_DESC=		3rd party encrypted_session module
 FORMINPUT_DESC=			3rd party form_input module
@@ -889,6 +891,16 @@ GH_ACCOUNT+=	openresty:arrayvar
 GH_PROJECT+=	array-var-nginx-module:arrayvar
 GH_TAGNAME+=	v${NGINX_ARRAYVAR_VERSION}:arrayvar
 CONFIGURE_ARGS+=--add-module=${WRKSRC_arrayvar}
+.endif
+
+.if ${PORT_OPTIONS:MBROTLI}
+NGINX_BROTLI_VERSION=	86998c6
+LIB_DEPENDS+=	libbrotlidec.so:${PORTSDIR}/devel/libbrotli \
+		libbrotlienc.so:${PORTSDIR}/devel/libbrotli
+GH_ACCOUNT+=	google:brotli
+GH_PROJECT+=	ngx_brotli:brotli
+GH_TAGNAME+=	${NGINX_BROTLI_VERSION}:brotli
+CONFIGURE_ARGS+=--add-module=${WRKSRC_brotli}
 .endif
 
 .if ${PORT_OPTIONS:MFORMINPUT}
