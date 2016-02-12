@@ -1,6 +1,4 @@
-diff --git a/configs/http.conf.sample b/configs/http.conf.sample
-index 1a7f4fd..9a06fcf 100644
---- configs/http.conf.sample
+--- configs/http.conf.sample.orig	2014-06-12 16:05:50 UTC
 +++ configs/http.conf.sample
 @@ -67,10 +67,31 @@ bindaddr=127.0.0.1
  ; If no path is given for tlscertfile or tlsprivatekey, default is to look in current
@@ -34,9 +32,7 @@ index 1a7f4fd..9a06fcf 100644
  ; The post_mappings section maps URLs to real paths on the filesystem.  If a
  ; POST is done from within an authenticated manager session to one of the
  ; configured POST mappings, then any files in the POST will be placed in the
-diff --git a/include/asterisk/tcptls.h b/include/asterisk/tcptls.h
-index f3f5e1f..eb7166f 100644
---- include/asterisk/tcptls.h
+--- include/asterisk/tcptls.h.orig	2014-06-13 04:58:51 UTC
 +++ include/asterisk/tcptls.h
 @@ -79,7 +79,15 @@ enum ast_ssl_flags {
  	/*! Use SSLv3 for outgoing client connections */
@@ -55,9 +51,7 @@ index f3f5e1f..eb7166f 100644
  };
  
  struct ast_tls_config {
-diff --git a/main/http.c b/main/http.c
-index 9bebbe7..4bfa985 100644
---- main/http.c
+--- main/http.c.orig	2014-06-13 04:58:51 UTC
 +++ main/http.c
 @@ -1118,10 +1118,13 @@ static int __ast_http_load(int reload)
  	}
@@ -83,11 +77,9 @@ index 9bebbe7..4bfa985 100644
  				&& !ast_tls_read_conf(&http_tls_cfg, &https_desc, v->name, v->value)) {
  				continue;
  			}
-diff --git a/main/tcptls.c b/main/tcptls.c
-index a5a2af6..f73c2aa 100644
---- main/tcptls.c
+--- main/tcptls.c.orig	2015-04-08 16:53:07 UTC
 +++ main/tcptls.c
-@@ -749,6 +749,7 @@ static int __ssl_setup(struct ast_tls_config *cfg, int client)
+@@ -749,6 +749,7 @@ static int __ssl_setup(struct ast_tls_co
  	return 0;
  #else
  	int disable_ssl = 0;
@@ -95,35 +87,41 @@ index a5a2af6..f73c2aa 100644
  
  	if (!cfg->enabled)
  		return 0;
-@@ -793,11 +794,24 @@ static int __ssl_setup(struct ast_tls_config *cfg, int client)
+@@ -793,12 +794,30 @@ static int __ssl_setup(struct ast_tls_co
  	 * them. SSLv23_*_method supports TLSv1+.
  	 */
  	if (disable_ssl) {
 -		long ssl_opts;
 +		ssl_opts |= SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3;
 +	}
-+
-+	if (ast_test_flag(&cfg->flags, AST_SSL_SERVER_CIPHER_ORDER)) {
-+		ssl_opts |= SSL_OP_CIPHER_SERVER_PREFERENCE;
-+	}
  
 -		ssl_opts = SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3;
 -		SSL_CTX_set_options(cfg->ssl_ctx, ssl_opts);
++	if (ast_test_flag(&cfg->flags, AST_SSL_SERVER_CIPHER_ORDER)) {
++		ssl_opts |= SSL_OP_CIPHER_SERVER_PREFERENCE;
+ 	}
+ 
 +	if (ast_test_flag(&cfg->flags, AST_SSL_DISABLE_TLSV1)) {
 +		ssl_opts |= SSL_OP_NO_TLSv1;
- 	}
++	}
++#if defined(HAVE_SSL_OP_NO_TLSV1_1) && defined(HAVE_SSL_OP_NO_TLSV1_2)
 +	if (ast_test_flag(&cfg->flags, AST_SSL_DISABLE_TLSV11)) {
 +		ssl_opts |= SSL_OP_NO_TLSv1_1;
 +	}
 +	if (ast_test_flag(&cfg->flags, AST_SSL_DISABLE_TLSV12)) {
 +		ssl_opts |= SSL_OP_NO_TLSv1_2;
 +	}
++#else
++	ast_log(LOG_WARNING, "Your version of OpenSSL leaves you potentially vulnerable "
++			"to the SSL BEAST attack. Please upgrade to OpenSSL 1.0.1 or later\n");
++#endif
 +
 +	SSL_CTX_set_options(cfg->ssl_ctx, ssl_opts);
- 
++
  	SSL_CTX_set_verify(cfg->ssl_ctx,
  		ast_test_flag(&cfg->flags, AST_SSL_VERIFY_CLIENT) ? SSL_VERIFY_PEER | SSL_VERIFY_FAIL_IF_NO_PEER_CERT : SSL_VERIFY_NONE,
-@@ -1109,6 +1123,14 @@ int ast_tls_read_conf(struct ast_tls_config *tls_cfg, struct ast_tcptls_session_
+ 		NULL);
+@@ -1109,6 +1128,14 @@ int ast_tls_read_conf(struct ast_tls_con
  			ast_clear_flag(&tls_cfg->flags, AST_SSL_TLSV1_CLIENT);
  			ast_clear_flag(&tls_cfg->flags, AST_SSL_SSLV3_CLIENT);
  		}
@@ -138,3 +136,18 @@ index a5a2af6..f73c2aa 100644
  	} else {
  		return -1;
  	}
+--- include/asterisk/autoconfig.h.in.orig	2014-06-20 23:12:25 UTC
++++ include/asterisk/autoconfig.h.in
+@@ -752,6 +752,12 @@
+ /* Define to 1 if you have the ISDN SS7 library. */
+ #undef HAVE_SS7
+ 
++/* Define if your system has the SSL_OP_NO_TLSV1_1 headers. */
++#undef HAVE_SSL_OP_NO_TLSV1_1
++
++/* Define if your system has the SSL_OP_NO_TLSV1_2 headers. */
++#undef HAVE_SSL_OP_NO_TLSV1_2
++
+ /* Define to 1 if `stat' has the bug that it succeeds when given the
+    zero-length file name argument. */
+ #undef HAVE_STAT_EMPTY_STRING_BUG
