@@ -43,7 +43,7 @@ LUA_PREMK=	yes
 .include <bsd.port.pre.mk>
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--ostype=freebsd --c-compiler="${CC}" --linker="${LD}" --with-lua-include="${LUA_INCDIR}"
+CONFIGURE_ARGS+=	--ostype=freebsd --c-compiler="${CC}" --linker="${CC}" --with-lua-include="${LUA_INCDIR}"
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" PREFIX="${PREFIX}" LUA_SUFFIX="-${LUA_VER}" LUA_LIBDIR="${LUA_LIBDIR}" LUA_INCDIR="${LUA_INCDIR}"
 
 SUB_FILES=	pkg-deinstall
