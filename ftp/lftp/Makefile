@@ -20,14 +20,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		charsetfix iconv libtool readline shebangfix
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+USES=		charsetfix iconv libtool localbase readline shebangfix
 GNU_CONFIGURE=	yes
-# XXX FreeBSD 9.x has posix_fallocate() for OSVERSION > 900035,
-# but is missing the required POSIX_FADV_* macros
-CONFIGURE_ENV=	i_cv_posix_fallocate_works=no
 
 PORTDOCS=	AUTHORS BUGS ChangeLog FAQ FEATURES INSTALL \
 		MIRRORS NEWS README README.debug-levels README.modules \
