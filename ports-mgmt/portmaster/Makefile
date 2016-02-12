@@ -2,6 +2,7 @@
 
 PORTNAME=	portmaster
 PORTVERSION=	3.17.9
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -23,9 +24,6 @@ PLIST_FILES=	sbin/portmaster \
 
 BASH_PLIST_FILES=	etc/bash_completion.d/portmaster.sh
 ZSH_PLIST_FILES=	share/zsh/site-functions/_portmaster
-
-BASH_RUN_DEPENDS=	bash>=0:${PORTSDIR}/shells/bash
-ZSH_RUN_DEPENDS=	zsh>=0:${PORTSDIR}/shells/zsh
 
 verify: checksum
 
