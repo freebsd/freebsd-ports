@@ -1537,6 +1537,7 @@
     SUBDIR += py-django-extensions
     SUBDIR += py-django-filer
     SUBDIR += py-django-formtools
+    SUBDIR += py-django-happenings
     SUBDIR += py-django-haystack
     SUBDIR += py-django-json-rpc
     SUBDIR += py-django-keyedcache
