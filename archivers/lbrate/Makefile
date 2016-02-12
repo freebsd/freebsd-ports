@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	SUNSITE/utils/compress
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Extract/decompress CP/M LBR archives
 
 LICENSE=	GPLv2+
@@ -23,10 +23,10 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lbrate ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/lbrate.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/lbrate.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
