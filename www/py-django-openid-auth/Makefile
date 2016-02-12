@@ -3,7 +3,7 @@
 
 PORTNAME=	django-openid-auth
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security python
 MASTER_SITES=	http://launchpadlibrarian.net/80020365/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ COMMENT=	OpenID integration for django.contrib.auth
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.3.1:${PORTSDIR}/www/py-django18 \
-		${PYTHON_PKGNAMEPREFIX}openid>=2.2.5:${PORTSDIR}/security/py-openid
+		${PYTHON_PKGNAMEPREFIX}python-openid>=2.2.5:${PORTSDIR}/security/py-python-openid
 
 USES=		python
 USE_PYTHON=	distutils
