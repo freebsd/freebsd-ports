@@ -3,17 +3,19 @@
 
 PORTNAME=	python-openid
 PORTVERSION=	2.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
-MASTER_SITES=	LOCAL/clsung
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	openid-python-openid-2.2.5-0-gb666238
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Python OpenID version
 
-WRKSRC=		${WRKDIR}/openid-python-openid-b666238
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
