@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	openid
+PORTNAME=	python-openid
 PORTVERSION=	2.2.5
 PORTREVISION=	1
 CATEGORIES=	security python
