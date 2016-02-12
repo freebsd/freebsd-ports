@@ -3,6 +3,7 @@
 
 PORTNAME=	htop
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
@@ -18,6 +19,8 @@ LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 
 CONFIGURE_ARGS=	--enable-unicode
 USES=		autoreconf execinfo libtool ncurses python:2,build shebangfix
+SHEBANG_LANG=	python2
+SHEBANG_FILES=	scripts/MakeHeader.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	hishamhm
 
