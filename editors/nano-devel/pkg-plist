@@ -26,6 +26,7 @@ man/man5/nanorc.5.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/id/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/it/LC_MESSAGES/nano.mo
