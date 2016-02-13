@@ -1,15 +1,6 @@
---- configure.orig	2011-10-27 08:40:31.000000000 +0000
-+++ configure	2014-02-20 19:04:01.546588828 +0000
-@@ -14827,7 +14827,7 @@
-   imagemagick_support="no"
- else
- 	IMAGEMAGICK_CFLAGS=$pkg_cv_IMAGEMAGICK_CFLAGS
--	IMAGEMAGICK_LIBS=$pkg_cv_IMAGEMAGICK_LIBS
-+	IMAGEMAGICK_LIBS="$pkg_cv_IMAGEMAGICK_LIBS /usr/local/lib/gcc47/libstdc++.so"
-         { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
- $as_echo "yes" >&6; }
- 
-@@ -15411,7 +15411,7 @@
+--- configure.orig	2011-10-27 08:40:31 UTC
++++ configure
+@@ -15411,7 +15411,7 @@ fi #end of PKG_CHECK_MODULES
  if test -z "$QTDIR"; then
    MOC="moc-qt4"
  else

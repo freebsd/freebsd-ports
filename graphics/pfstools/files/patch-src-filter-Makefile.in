@@ -1,6 +1,6 @@
---- src/filter/Makefile.in.orig	2011-10-27 08:40:29.000000000 +0000
-+++ src/filter/Makefile.in	2014-02-20 19:04:01.556587853 +0000
-@@ -38,7 +38,8 @@
+--- src/filter/Makefile.in.orig	2011-10-27 08:40:29 UTC
++++ src/filter/Makefile.in
+@@ -38,7 +38,8 @@ bin_PROGRAMS = pfsgamma$(EXEEXT) pfsclam
  	pfssize$(EXEEXT) pfsextractchannels$(EXEEXT) \
  	pfspanoramic$(EXEEXT) pfsrotate$(EXEEXT) pfsflip$(EXEEXT) \
  	pfscut$(EXEEXT) pfspad$(EXEEXT) pfscat$(EXEEXT) \
@@ -10,7 +10,7 @@
  subdir = src/filter
  DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -54,6 +55,9 @@
+@@ -54,6 +55,9 @@ CONFIG_CLEAN_FILES =
  CONFIG_CLEAN_VPATH_FILES =
  am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"
  PROGRAMS = $(bin_PROGRAMS)
@@ -20,7 +20,7 @@
  am_pfsabsolute_OBJECTS = pfsabsolute.$(OBJEXT)
  pfsabsolute_OBJECTS = $(am_pfsabsolute_OBJECTS)
  pfsabsolute_LDADD = $(LDADD)
-@@ -120,13 +124,15 @@
+@@ -120,13 +124,15 @@ SOURCES = $(pfsabsolute_SOURCES) $(pfsca
  	$(pfscut_SOURCES) $(pfsdisplayfunction_SOURCES) \
  	$(pfsextractchannels_SOURCES) $(pfsflip_SOURCES) \
  	$(pfsgamma_SOURCES) $(pfspad_SOURCES) $(pfspanoramic_SOURCES) \
@@ -38,7 +38,7 @@
  am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
  am__vpath_adj = case $$p in \
      $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
-@@ -314,6 +320,7 @@
+@@ -314,6 +320,7 @@ pfscut_SOURCES = pfscut.cpp
  pfspad_SOURCES = pfspad.cpp
  pfscat_SOURCES = pfscat.cpp
  pfsabsolute_SOURCES = pfsabsolute.cpp
@@ -46,7 +46,7 @@
  INCLUDES = -I${srcdir}/../pfs
  all: all-am
  
-@@ -392,6 +399,9 @@
+@@ -392,6 +399,9 @@ clean-binPROGRAMS:
  	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
  	echo " rm -f" $$list; \
  	rm -f $$list
