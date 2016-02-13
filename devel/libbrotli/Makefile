@@ -3,6 +3,7 @@
 
 PORTNAME=	libbrotli
 PORTVERSION=	${BROTLI_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel archivers
 
 MAINTAINER=	osa@FreeBSD.org
