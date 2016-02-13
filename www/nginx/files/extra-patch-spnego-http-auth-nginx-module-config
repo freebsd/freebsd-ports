@@ -1,5 +1,5 @@
---- ../spnego-http-auth-nginx-module-f76d5d9/config.orig	2015-06-13 20:49:15.590751000 +0300
-+++ ../spnego-http-auth-nginx-module-f76d5d9/config	2015-06-13 20:49:31.024936000 +0300
+--- ../spnego-http-auth-nginx-module-c85a38c/config.orig	2015-06-13 20:49:15.590751000 +0300
++++ ../spnego-http-auth-nginx-module-c85a38c/config	2015-06-13 20:49:31.024936000 +0300
 @@ -1,4 +1,4 @@
  ngx_addon_name=ngx_http_auth_spnego_module
  HTTP_MODULES="$HTTP_MODULES ngx_http_auth_spnego_module"
