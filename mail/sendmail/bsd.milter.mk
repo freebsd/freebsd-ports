@@ -14,8 +14,8 @@
 # WITH_SENDMAIL_BASE=yes	- Use milter in the base
 # WITH_SENDMAIL_PORT=yes	- Use milter from ports
 #
-# If unspecified, check for the lib exits in the base system,
-# but give an installed port preference over it.
+# If unspecified, check for the lib exist in the base system,
+# but gives an installed port preference over it.
 #
 #
 # Overrideable defaults:
@@ -56,8 +56,7 @@ WITH_SENDMAIL_BASE=yes
 .if defined(WITH_SENDMAIL_STATIC_MILTER)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.so.${MILTER_SOVER}:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-RUN_DEPENDS+=	${LOCALBASE}/lib/libmilter.so.${MILTER_SOVER}:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
+LIB_DEPENDS+=	libmilter.so.${MILTER_SOVER}:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
 .endif
 
 SENDMAIL_MILTER_PORT?=	libmilter
@@ -73,14 +72,6 @@ CFLAGS+=${MILTERINC}
 .else
 CFLAGS=${MILTERINC}
 .endif
-.endif
-
-.if defined(WITHOUT_MILTER)
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
-	@${ECHO_MSG} and rebuild sendmail in the ports
-	@${FALSE}
 .endif
 
 .endif
