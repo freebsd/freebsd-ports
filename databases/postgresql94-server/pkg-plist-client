@@ -591,6 +591,7 @@ lib/libpq.a
 lib/libpq.so
 lib/libpq.so.5
 lib/postgresql/pgxs/config/install-sh
+lib/postgresql/pgxs/config/missing
 lib/postgresql/pgxs/src/Makefile.global
 lib/postgresql/pgxs/src/Makefile.port
 lib/postgresql/pgxs/src/Makefile.shlib
