@@ -1,0 +1,17 @@
+--- src/triggers/post-compile/ssh-authkeys-split.orig	2015-11-01 12:01:20 UTC
++++ src/triggers/post-compile/ssh-authkeys-split
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/bash
++#!/bin/sh
+ 
+ #   split multi-key files into separate keys like ssh-authkeys likes
+ 
+@@ -60,7 +60,7 @@ do
+     while read line
+     do
+         echo "$line" > $SKD/$base@$seq.pub
+-        (( seq++ ))
++        seq=$(( $seq + 1 ))
+     done < $k
+ 
+     # now delete the original file
