@@ -92,6 +92,7 @@ EXTRACONFIGURE+=	no-sse2
 .endif
 
 .if ${PORT_OPTIONS:MASM}
+BROKEN_sparc64=	option ASM generates illegal instructions
 EXTRACONFIGURE+=	enable-asm
 .else
 EXTRACONFIGURE+=	no-asm
