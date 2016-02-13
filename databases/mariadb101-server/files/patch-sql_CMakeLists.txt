@@ -1,0 +1,30 @@
+Fix up missing WITHOUT_DOCS, WITHOUT_CLIENT options
+
+--- sql/CMakeLists.txt.orig	2015-10-15 15:43:45 UTC
++++ sql/CMakeLists.txt
+@@ -340,6 +340,7 @@ ADD_CUSTOM_TARGET(distclean
+   VERBATIM
+   )
+ 
++IF(FALSE)
+ IF(INSTALL_LAYOUT STREQUAL "STANDALONE")
+ 
+ # Copy db.opt into data/test/
+@@ -383,6 +384,7 @@ ELSE()
+   INSTALL(FILES ${DUMMY_FILE} DESTINATION data/mysql COMPONENT DataFiles)
+ ENDIF(WIN32 AND MYSQLD_EXECUTABLE)
+ ENDIF(INSTALL_LAYOUT STREQUAL "STANDALONE")
++ENDIF()
+ 
+ IF(WIN32)
+   SET(my_bootstrap_sql ${CMAKE_CURRENT_BINARY_DIR}/my_bootstrap.sql)
+@@ -425,7 +427,9 @@ IF(WIN32)
+   TARGET_LINK_LIBRARIES(mysql_upgrade_service mysys winservice)
+ ENDIF(WIN32)
+ 
++IF(FALSE)
+ INSTALL(DIRECTORY . DESTINATION ${INSTALL_INCLUDEDIR}/private COMPONENT Development
+   FILES_MATCHING PATTERN "*.h"
+   PATTERN share EXCLUDE
+   PATTERN CMakeFiles EXCLUDE)
++ENDIF()
