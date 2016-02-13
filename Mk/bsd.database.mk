@@ -108,6 +108,7 @@ MYSQL56_LIBVER=		18
 MYSQL56p_LIBVER=	18
 MYSQL57_LIBVER=		20
 MYSQL100m_LIBVER=	18
+MYSQL101m_LIBVER=	18
 
 # Setting/finding MySQL version we want.
 .if exists(${LOCALBASE}/bin/mysql)
