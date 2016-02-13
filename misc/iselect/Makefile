@@ -13,7 +13,7 @@ COMMENT=	Interactive Selection Tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		shebangfix
+USES=		ncurses shebangfix
 SHEBANG_FILES=	example/gotourl/gotourl \
 		example/ilogin/ilogin \
 		example/melm/melm \
@@ -21,6 +21,7 @@ SHEBANG_FILES=	example/gotourl/gotourl \
 		example/scvs/scvs
 perl_OLD_CMD=	/sw/bin/perl
 GNU_CONFIGURE=	yes
+MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/iselect man/man1/iselect.1.gz
 PORTEXAMPLES=	*
@@ -32,7 +33,8 @@ SLANG_CONFIGURE_ON=	--with-incdir=${LOCALBASE}/include \
 			--with-libdir=${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' \
+		-e 's|-lcurses|-lncurses|' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iselect ${STAGEDIR}${PREFIX}/bin
