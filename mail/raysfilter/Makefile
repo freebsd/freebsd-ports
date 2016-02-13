@@ -2,6 +2,7 @@
 
 PORTNAME=	raysfilter
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	LOCAL/dinoex
 DISTNAME=	rays-filter-${PORTVERSION}
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/GNU-public-licence.txt
 USES=		shebangfix
 CTARGETS+=	rays-filter
 CFLAGS+=	-Wall
-LIBS+=		-lpthread
+LIBS+=		-lpthread -lmilter
 SHEBANG_FILES=	mf-analyze
 ETCFILES=	header-list.conf mail-filter.conf string-list.conf
 BINFILES=	mf-reset mf-start mf-stop mf-archive mf-analyze mf-memory
@@ -27,17 +28,6 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
-
-.if exists(${LOCALBASE}/include/libmilter/mfdef.h) \
-|| defined(WITH_SENDMAIL_BASE)
-LIBS+=		-lmilter
-.else
-LIBS+=		-lmilter -lsmutil
-.endif
-
-.if defined(SENDMAIL_WITH_SFIO)
-LIBS+=		-lsfio
-.endif
 
 .for i in ${CTARGETS}
 ${i}:

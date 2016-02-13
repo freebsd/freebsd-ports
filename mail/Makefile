@@ -200,6 +200,7 @@
     SUBDIR += libesmtp
     SUBDIR += libetpan
     SUBDIR += libmapi
+    SUBDIR += libmilter
     SUBDIR += libpst
     SUBDIR += librfc822
     SUBDIR += libsieve
