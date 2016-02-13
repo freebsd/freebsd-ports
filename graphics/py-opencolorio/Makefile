@@ -1,12 +1,12 @@
 # Created by: Shane Ambler <FreeBSD@Shaneware.biz>
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-tools
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-COMMENT=	Tools to work with OpenColorIO profiles
+COMMENT=	OpenColorIO python bindings
 
 MASTERDIR=	${.CURDIR}/../opencolorio
-OCIO_SLAVE=	tools
+OCIO_SLAVE=	pymodule
 OPTIONS_EXCLUDE=DOCS
 
 .include "${MASTERDIR}/Makefile"
