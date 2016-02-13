@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Nov 18 00:00:00 2000
-+++ Makefile.in	Thu Apr  5 04:47:50 2001
+--- Makefile.in.orig	2002-05-27 15:00:00 UTC
++++ Makefile.in
 @@ -3,13 +3,13 @@
  #
  
@@ -18,16 +18,18 @@
  CHMOD	= chmod
  
  LSRC	= lipsf.c output.c print.c control.c args.c var.c
-@@ -43,7 +43,7 @@
+@@ -42,8 +42,8 @@ POLSB	= $(POLS)__EXE__
+ POBJ1	= pols__OBJ__ term__OBJ__ input__OBJ__ file__OBJ__ style__OBJ__ __DOSOBJ__
  POBJ2	= output__OBJ__ print__OBJ__ control__OBJ__ args__OBJ__ var__OBJ__ __DOSOBJS__
  KNJOBJ	= pols__OBJ__ input__OBJ__ file__OBJ__ style__OBJ__
- LDFLAGS	= __TERMLIBS__ __OTHERLIBS__
+-LDFLAGS	= __TERMLIBS__ __OTHERLIBS__
 -CFLAGS	= -D__OSTYPE__ __CCOPTIONS__
++LDFLAGS += __TERMLIBS__ __OTHERLIBS__
 +CFLAGS	+= -D__OSTYPE__
  
  .SUFFIXES: .h .c __OBJ__ __EXE__
  
-@@ -115,14 +115,10 @@
+@@ -115,14 +115,10 @@ config.h: config.hin
  # to install all
  
  install: $(LIPSFB) $(POLSB) $(LIPSF).$(MANSEC) $(POLS).$(MANSEC)
