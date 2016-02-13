@@ -1,6 +1,6 @@
---- src/fileformat/pfsinexr.cpp.orig	2008-01-01 13:01:21.000000000 +0000
-+++ src/fileformat/pfsinexr.cpp	2014-02-20 19:04:01.546588828 +0000
-@@ -234,7 +234,7 @@
+--- src/fileformat/pfsinexr.cpp.orig	2008-01-01 13:01:21 UTC
++++ src/fileformat/pfsinexr.cpp
+@@ -234,7 +234,7 @@ void readFrames( int argc, char* argv[] 
      }
      
      file.setFrameBuffer( frameBuffer );
