@@ -3,6 +3,7 @@
 
 PORTNAME=	scam-backscatter
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.elandsys.com/scam/scam-backscatter/ \
 		http://dist.epipe.com/mirrors/scam-backscatter/
