@@ -57,6 +57,64 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e8b6605b-d29f-11e5-8458-6cc21735f730">
+    <topic>PostgreSQL -- Security Fixes for Regular Expressions, PL/Java.</topic>
+    <affects>
+      <package>
+	<name>postgresql91-server</name>
+	<range><ge>9.1.0</ge><lt>9.1.20</lt></range>
+      </package>
+      <package>
+	<name>postgresql92-server</name>
+	<range><ge>9.2.0</ge><lt>9.2.15</lt></range>
+      </package>
+      <package>
+	<name>postgresql93-server</name>
+	<range><ge>9.3.0</ge><lt>9.3.11</lt></range>
+      </package>
+      <package>
+	<name>postgresql94-server</name>
+	<range><ge>9.4.0</ge><lt>9.4.6</lt></range>
+      </package>
+      <package>
+	<name>postgresql95-server</name>
+	<range><ge>9.5.0</ge><lt>9.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="http://www.postgresql.org/about/news/1615/">
+	  <p>
+	  Security Fixes for Regular Expressions, PL/Java
+	  </p>
+	  <ul>
+	    <li>CVE-2016-0773: This release closes security hole CVE-2016-0773,
+	    an issue with regular expression (regex) parsing. Prior code allowed
+	    users to pass in expressions which included out-of-range Unicode
+	    characters, triggering a backend crash.  This issue is critical for
+	    PostgreSQL systems with untrusted users or which generate regexes
+	    based on user input.
+	    </li>
+	    <li>CVE-2016-0766: The update also fixes CVE-2016-0766, a privilege
+	    escalation issue for users of PL/Java.  Certain custom configuration
+	    settings (GUCS) for PL/Java will now be modifiable only by the
+	    database superuser
+	    </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-0773</cvename>
+      <cvename>CVE-2016-0766</cvename>
+    </references>
+    <dates>
+      <discovery>2016-02-08</discovery>
+      <entry>2016-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d8e56c3-9e67-4d5b-81c9-3a409dfd705f">
     <topic>flash -- multiple vulnerabilities</topic>
     <affects>
