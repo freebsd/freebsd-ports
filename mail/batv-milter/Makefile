@@ -11,7 +11,7 @@ MAINTAINER=	umq@ueo.co.jp
 COMMENT=	Milter for BATV (Bounce Address Tag Validation)
 
 .if !exists( /usr/include/libmilter/mfapi.h )
-BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
+BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/libmilter
 .endif
 
 USES=		uidfix
