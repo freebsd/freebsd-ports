@@ -17,7 +17,6 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 HAS_CONFIGURE=	yes
-CONFIGURE_LOG=	config.err
 USES=		compiler cpe gmake perl5 pkgconfig tar:bzip2 shebangfix
 USE_LDCONFIG=	yes
 USE_PERL5=	build
