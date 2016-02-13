@@ -2,6 +2,7 @@
 
 PORTNAME=	rmilter
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
