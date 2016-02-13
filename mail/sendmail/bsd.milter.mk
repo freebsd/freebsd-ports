@@ -20,7 +20,7 @@
 #
 # Overrideable defaults:
 #
-# SENDMAIL_MILTER_PORT?=	sendmail
+# SENDMAIL_MILTER_PORT?=	libmilter
 #
 # The makefile sets this variables:
 # MILTERBASE		- "/usr" or ${LOCALBASE}
@@ -60,7 +60,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.so.${MILTER_SOVER}:${PORTSDIR}/mail/$
 RUN_DEPENDS+=	${LOCALBASE}/lib/libmilter.so.${MILTER_SOVER}:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
 .endif
 
-SENDMAIL_MILTER_PORT?=	sendmail
+SENDMAIL_MILTER_PORT?=	libmilter
 MILTER_SOVER?=	6
 MILTERBASE?=	${LOCALBASE}
 MILTERINC=	-I${MILTERBASE}/include
