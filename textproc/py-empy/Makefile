@@ -2,15 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	empy
-PORTVERSION=	3.3
+PORTVERSION=	3.3.2
 CATEGORIES=	textproc python
 MASTER_SITES=	http://www.alcyone.com/software/empy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Powerful and robust templating system for Python
 
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
