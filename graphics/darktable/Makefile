@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	1.6.9
+PORTVERSION=	2.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION}/
+MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
 MAINTAINER=	dumbbell@FreeBSD.org
 COMMENT=	Virtual lighttable and darkroom for photographers
@@ -12,52 +12,54 @@ COMMENT=	Virtual lighttable and darkroom for photographers
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2 \
-		liblensfun.so:${PORTSDIR}/graphics/lensfun \
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
+		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libcurl.so:${PORTSDIR}/ftp/curl
+		liblensfun.so:${PORTSDIR}/graphics/lensfun \
+		libpugixml.so:${PORTSDIR}/textproc/pugixml \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	uses SSE instructions
+ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS_REASON=	uses SSE instructions and 64-bit address space
 
-USES=		compiler:c++11-lib cmake:outsource desktop-file-utils	\
-		ninja pkgconfig sqlite tar:xz
-USE_GNOME=	gtk20 intltool librsvg2
+USES=		cmake:outsource compiler:c++11-lib desktop-file-utils	\
+		jpeg ninja pkgconfig sqlite tar:xz
+USE_GNOME=	gtk30 intltool librsvg2 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-OPTIONS_DEFINE=	COLORD DOCS FB_PICASA FLICKR GEO GNOMEKEYRING GPHOTO	\
-		GRAPHMAGICK LIBSECRET LUA NLS OPENEXR OPENJPEG RAWSPEED	\
+OPTIONS_DEFINE=	COLORD DOCS FLICKR GEO GNOMEKEYRING GPHOTO GRAPHMAGICK	\
+		LIBSECRET LUA NLS OPENEXR OPENJPEG PRINT RAWSPEED	\
 		SLIDESHOW SQUISH WEBP
 
 GEO_DESC=	Support geotagging
-FB_PICASA_DESC=	Support export to Facebook and Picasa
 LIBSECRET_DESC=	Support libsecret as password backend
 SQUISH_DESC=	Compress thumbnail via libsquish
 RAWSPEED_DESC=	Compile with rawspeed backend
 SLIDESHOW_DESC=	Build OpenGL/SDL slideshow viewer
 
-OPTIONS_DEFAULT=COLORD FB_PICASA FLICKR GEO GPHOTO LUA NLS OPENEXR	\
-		OPENJPEG RAWSPEED SLIDESHOW SQUISH WEBP
+OPTIONS_DEFAULT=COLORD FLICKR GEO GPHOTO LUA NLS OPENEXR OPENJPEG	\
+		PRINT RAWSPEED SLIDESHOW SQUISH WEBP
 OPTIONS_SUB=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.rc/~rc/}
 
 CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1
 CMAKE_ARGS+=	-DBUILD_CMSTEST:BOOL=ON
 CMAKE_ARGS+=	-DUSE_KWALLET:BOOL=ON
 
-# darktable 1.4 can use colord but provides its own libcolord,
+# darktable 1.4+ can use colord but provides its own libcolord,
 # statically linked to libdarktable.so.
-COLORD_LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord
+COLORD_LIB_DEPENDS=	libcolord-gtk.so:${PORTSDIR}/graphics/colord-gtk
 COLORD_CMAKE_OFF=	-DUSE_COLORD:BOOL=OFF
-
-FB_PICASA_LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
-FB_PICASA_CMAKE_OFF=	-DUSE_GLIBJSON:BOOL=OFF
 
 FLICKR_LIB_DEPENDS=	libflickcurl.so:${PORTSDIR}/www/flickcurl
 FLICKR_CMAKE_OFF=	-DUSE_FLICKR:BOOL=OFF
 
-GEO_LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+GEO_LIB_DEPENDS=	libosmgpsmap-1.0.so:${PORTSDIR}/x11-toolkits/osm-gps-map \
+			libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 GEO_CMAKE_OFF=		-DUSE_GEO:BOOL=OFF
 
 GNOMEKEYRING_LIB_DEPENDS=libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
@@ -84,6 +86,9 @@ OPENEXR_CMAKE_OFF=	-DUSE_OPENEXR:BOOL=OFF
 OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 OPENJPEG_CMAKE_OFF=	-DUSE_OPENJPEG:BOOL=OFF
 
+PRINT_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+PRINT_CMAKE_OFF=	-DBUILD_PRINT:BOOL=OFF
+
 RAWSPEED_CMAKE_OFF=	-DDONT_USE_RAWSPEED:BOOL=ON
 
 SLIDESHOW_USE=		GL=gl SDL=sdl
@@ -102,15 +107,30 @@ WEBP_CMAKE_OFF=		-DUSE_WEBP:BOOL=OFF
 BUILD_DEPENDS+=	clang37:${PORTSDIR}/devel/llvm37
 RUN_DEPENDS+=	clang37:${PORTSDIR}/devel/llvm37
 
-CPP=		${LOCALBASE}/bin/clang-cpp37
-CC=		${LOCALBASE}/bin/clang37
-CXX=		${LOCALBASE}/bin/clang++37
-LDFLAGS+=	-L${LOCALBASE}/llvm37/lib -lomp
+CPP=		clang-cpp37
+CC=		clang37
+CXX=		clang++37
+
+# FIXME: At least in 3.7.0 and 3.7.1, Clang doesn't find libomp.so
+# itself. Furthermore, there may be a regression in 3.7.1 because we now
+# need to explicitely link to libm.so as well.
+OPENMP_FLAGS=	-L${LOCALBASE}/llvm37/lib -lm -lomp
+LDFLAGS+=	${OPENMP_FLAGS}
+
+# Last but not least, there is a second change or regression in CMake
+# 3.4.x: CMAKE_EXE_LINKER_FLAGS is not passed to TRY_COMPILE by default
+# anymore. The CMP0056 policy must be explicitely set to NEW to ensure
+# linker flags are passed.
+# See: https://cmake.org/cmake/help/v3.4/policy/CMP0056.html
+CMAKE_ARGS+=	-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW
 .endif
 
 .if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=	RelWithDebInfo
 STRIP=
 .endif
+
+post-patch:
+	@${MV} ${WRKSRC}/data/darktableconfig.dtd ${WRKSRC}/data/darktableconfig.dtd.in
 
 .include <bsd.port.post.mk>
