@@ -19,7 +19,6 @@ GH_ACCOUNT=	bagder google:brotli
 GH_PROJECT=	brotli:brotli
 GH_TAGNAME=	${LIBBROTLI_VERSION} v${BROTLI_VERSION}:brotli
 
-#USES=		pkgconfig autoreconf libtool compiler:c++0x gmake
 USES=		pkgconfig autoreconf libtool compiler:c++0x
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
