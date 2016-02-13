@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	car
-DISTVERSION=	2.1-0
+DISTVERSION=	2.1-1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -15,6 +15,6 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	R-cran-pbkrtest>=0.3.2:${PORTSDIR}/math/R-cran-pbkrtest \
 		R-cran-quantreg>0:${PORTSDIR}/math/R-cran-quantreg
 
-USES=	cran:auto-plist
+USES=	cran
 
 .include <bsd.port.mk>
