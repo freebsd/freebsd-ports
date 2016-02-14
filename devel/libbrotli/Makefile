@@ -3,7 +3,7 @@
 
 PORTNAME=	libbrotli
 PORTVERSION=	${BROTLI_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel archivers
 
 MAINTAINER=	osa@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Library for generic-purpose lossless compression algorithm
 
 LICENSE=	MIT
 
-LIBBROTLI_VERSION=	53d53e8
+LIBBROTLI_VERSION=	347bc0f
 BROTLI_VERSION=		0.3.0
 
 USE_GITHUB=	yes
