@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful widget set complementary to GTK+ 2.0
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
@@ -29,7 +32,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/gtkextra/gtkcharsel.c
 
-post-install:
+post-install-DOCS-on:
 .for d in reference tutorial
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
 	@(cd ${WRKSRC}/docs/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
