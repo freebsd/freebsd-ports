@@ -1,7 +1,7 @@
---- dma.c.orig	2013-08-22 10:56:28.000000000 +0000
-+++ dma.c	2013-08-22 11:03:59.000000000 +0000
-@@ -343,7 +343,7 @@ retry:
- 			exit(1);
+--- dma.c.orig	2016-02-07 12:41:49 UTC
++++ dma.c
+@@ -340,7 +340,7 @@ retry:
+ 			exit(EX_SOFTWARE);
  		}
  		if (gettimeofday(&now, NULL) == 0 &&
 -		    (now.tv_sec - st.st_mtim.tv_sec > MAX_TIMEOUT)) {
@@ -9,7 +9,7 @@
  			snprintf(errmsg, sizeof(errmsg),
  				 "Could not deliver for the last %d seconds. Giving up.",
  				 MAX_TIMEOUT);
-@@ -560,7 +560,7 @@ main(int argc, char **argv)
+@@ -564,7 +564,7 @@ main(int argc, char **argv)
  skipopts:
  	if (logident_base == NULL)
  		logident_base = "dma";
@@ -18,12 +18,12 @@
  
  	act.sa_handler = sighup_handler;
  	act.sa_flags = 0;
-@@ -598,7 +598,7 @@ skipopts:
- 		errlog(1, "can not read aliases file `%s'", config.aliases);
+@@ -596,7 +596,7 @@ skipopts:
+ 		errlog(EX_SOFTWARE, "could not parse aliases file `%s'", config.aliases);
  
  	if ((sender = set_from(&queue, sender)) == NULL)
--		errlog(1, NULL);
-+		errlog(1, "set_from failed");
+-		errlog(EX_SOFTWARE, NULL);
++		errlog(EX_SOFTWARE, "set_from failed");
  
  	if (newspoolf(&queue) != 0)
- 		errlog(1, "can not create temp file in `%s'", config.spooldir);
+ 		errlog(EX_CANTCREAT, "can not create temp file in `%s'", config.spooldir);
