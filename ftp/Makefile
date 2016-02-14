@@ -63,8 +63,6 @@
     SUBDIR += pavuk
     SUBDIR += pear-Net_FTP
     SUBDIR += pftpd
-    SUBDIR += php5-curl
-    SUBDIR += php5-ftp
     SUBDIR += php55-curl
     SUBDIR += php55-ftp
     SUBDIR += php56-curl

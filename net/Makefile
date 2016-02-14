@@ -884,10 +884,6 @@
     SUBDIR += pen
     SUBDIR += pfinger
     SUBDIR += phamm
-    SUBDIR += php5-ldap
-    SUBDIR += php5-soap
-    SUBDIR += php5-sockets
-    SUBDIR += php5-xmlrpc
     SUBDIR += php55-ldap
     SUBDIR += php55-soap
     SUBDIR += php55-sockets
