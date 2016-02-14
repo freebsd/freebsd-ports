@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libpeas
-PORTVERSION=	1.14.0
-PORTREVISION?=	1
+PORTVERSION=	1.16.0
+PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,7 +22,7 @@ LIB_DEPENDS+=	libpeas-1.0.so:${PORTSDIR}/devel/libpeas
 PORTSCOUT=	ignore:1
 .endif
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack introspection:build
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

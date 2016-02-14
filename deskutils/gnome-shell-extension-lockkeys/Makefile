@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-lockkeys
-PORTVERSION=	0.0.0.20150613
+PORTVERSION=	0.0.0.20151017
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		gettext gmake pkgconfig tar:xz
+USES=		gettext gmake gnome pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -22,7 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GLIB_SCHEMAS=	org.gnome.shell.extensions.lockkeys.gschema.xml
 
 GH_ACCOUNT=	kazysmaster
-GH_TAGNAME=	76ac557
+GH_TAGNAME=	222289e
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 

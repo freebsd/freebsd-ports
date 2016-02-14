@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vino
-PORTVERSION=	3.16.0
+PORTVERSION=	3.18.1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cpe gettext gmake pathfix pkgconfig tar:xz
+USES=		cpe gettext gmake gnome pathfix pkgconfig tar:xz
 CPE_VENDOR=	david_king
 USE_GNOME=	gtk30 intlhack
 USE_XORG=	xdamage xfixes xtst

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	goobox
-PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTVERSION=	3.4.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid \
 		libbrasero-media3.so:${PORTSDIR}/sysutils/brasero \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
-USES=		desktop-file-utils gettext gmake pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake gnome pkgconfig tar:xz
 USE_GNOME=	glib20 gtk30 intlhack
 USE_XORG=	x11
 USE_GSTREAMER1=	yes

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sound-juicer
-PORTVERSION=	3.16.1
-PORTREVISION=	1
+PORTVERSION=	3.18.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libmusicbrainz5.so:${PORTSDIR}/audio/libmusicbrainz5 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack
 USE_GSTREAMER1=	cdparanoia flac good vorbis
 GNU_CONFIGURE=	yes

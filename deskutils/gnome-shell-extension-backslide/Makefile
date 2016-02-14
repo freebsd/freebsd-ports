@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-shell-extension-backslide
 PORTVERSION=	0.0.0.20140520
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	https://bitbucket.org/LukasKnuth/backslide/get/
 DISTFILES=	7e36a49fc5e1.zip
@@ -19,7 +19,7 @@ RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 
 WRKSRC=		${WRKDIR}/LukasKnuth-backslide-7e36a49fc5e1
 
-USES=		gettext gmake pkgconfig tar:xz
+USES=		gettext gmake gnome pkgconfig tar:xz
 USE_GNOME=	glib20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

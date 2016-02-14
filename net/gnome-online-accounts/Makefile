@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-online-accounts
-PORTVERSION=	3.16.5
+PORTVERSION=	3.18.3
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libwebkit2gtk-4.0.so:${PORTSDIR}/www/webkit2-gtk3 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack introspection:build libxslt:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -29,6 +29,8 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS=	--enable-lastfm
+
 GLIB_SCHEMAS=	org.gnome.online-accounts.gschema.xml
 
 # for webkit2-gtk3

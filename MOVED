@@ -8137,3 +8137,5 @@ security/polarssl||2016-02-07|Has expired: Upstream is ending support for 1.2.x
 multimedia/xbmc-addon-pvr||2016-02-12|Has expired: Does not work with multimedia/kodi 15.x and newer
 security/py-openid|security/py-python-openid|2016-02-13|Renamed to match upstream (PyPI) name
 ports-mgmt/tinderbox-devel|ports-mgmt/tinderbox|2016-02-14|Has expired: use newer stable version (ports-mgmt/tinderbox)
+deskutils/alacarte||2016-02-10|Not part of GNOME anymore
+deskutils/gnome-shell-extension-calculator||2016-02-10|Obsolete. gnome-calculator provides the functionality since GNOME 3.14

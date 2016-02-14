@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-shell-extension-audio-output-switcher
 PORTVERSION=	0.0.0.20140520
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		gettext gmake pkgconfig tar:xz
+USES=		gettext gmake gnome pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -30,7 +30,7 @@ PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 NO_BUILD=	yes
 
 post-patch:
-		@${REINPLACE_CMD} -e 's|3.12"|3.12","3.14","3.16"|g' \
+		@${REINPLACE_CMD} -e 's|3.12"|3.12","3.14","3.16", "3.18"|g' \
 			${WRKSRC}/metadata.json
 
 do-install:

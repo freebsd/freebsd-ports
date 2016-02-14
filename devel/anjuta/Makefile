@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anjuta
-PORTVERSION=	3.16.0
-PORTREVISION=	1
+PORTVERSION=	3.18.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,13 +19,13 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc
 		automake>=0:${PORTSDIR}/devel/automake \
 		autoconf>=0:${PORTSDIR}/devel/autoconf \
 		libtool>=2.4:${PORTSDIR}/devel/libtool \
-		gdb>=7.3:${PORTSDIR}/devel/gdb \
+		gdb>=7.10:${PORTSDIR}/devel/gdb \
 		gmake:${PORTSDIR}/devel/gmake \
 		yelp>=3.0.0:${PORTSDIR}/x11/yelp
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bison desktop-file-utils gettext gmake libtool pathfix \
+USES=		bison desktop-file-utils gettext gmake gnome libtool pathfix \
 		perl5 pkgconfig:both python shared-mime-info shebangfix tar:xz
 SHEBANG_FILES=	plugins/project-wizard/templates/js_minimal/src/main.js \
 		plugins/tools/scripts/find-fixmes.pl \
@@ -45,6 +44,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-symbol-db-shm=/tmp \
 		--disable-packagekit \
+		--disable-neon \
 		--enable-compile-warnings=minimum \
 		--enable-introspection=yes
 DOCSDIR=	share/doc/libanjuta
@@ -91,15 +91,16 @@ TERMINAL_CONFIGURE_ENABLE=	plugin-terminal
 
 SVN_BUILD_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 SVN_LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
-			libneon.so:${PORTSDIR}/www/neon
+			libserf-1.so:${PORTSDIR}/www/serf
 SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 SVN_CONFIGURE_ENABLE=	plugin-subversion
 
 DEVHELP_LIB_DEPENDS=	libdevhelp-3.so:${PORTSDIR}/devel/devhelp
 DEVHELP_CONFIGURE_ENBABLE=	plugin-devhelp
 
-VALA_BUILD_DEPENDS=	vala>=0.14.0:${PORTSDIR}/lang/vala
-VALA_RUN_DEPENDS=	vala>=0.14.0:${PORTSDIR}/lang/vala
+VALA_VER=		0.30
+VALA_BUILD_DEPENDS=	vala>=${VALA_VER}<${VALA_VER}.99:${PORTSDIR}/lang/vala
+VALA_RUN_DEPENDS=	vala>=${VALA_VER}<${VALA_VER}.99:${PORTSDIR}/lang/vala
 VALA_CONFIGURE_ENABLE=	vala
 
 post-patch:
@@ -108,6 +109,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${PREFIX}|g' \
 		${WRKSRC}/libanjuta/anjuta-utils.c
 	@${REINPLACE_CMD} -e 's|ac_ct_CXX" = "x"|CXX" = "x"|g' \
+		-e 's|libvala-0.28|libvala-${VALA_VER}|g' \
+		-e 's|valaver="-0.28"|valaver="-${VALA_VER}"|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|values.h|limits.h|g' \
 		${WRKSRC}/plugins/project-wizard/property.h \
@@ -115,5 +118,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-fprofile-arcs||g' \
 		${WRKSRC}/libanjuta/tests/Makefile.in \
 		${WRKSRC}/libanjuta/tests/Makefile.am
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${PREFIX}|g' \
+		${WRKSRC}/plugins/gdb/debugger.c
 
 .include <bsd.port.mk>

@@ -4,6 +4,7 @@ include/libsoup-%%VERSION%%/libsoup/soup-auth-domain-digest.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth-domain.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth-manager.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth.h
+include/libsoup-%%VERSION%%/libsoup/soup-autocleanups.h
 include/libsoup-%%VERSION%%/libsoup/soup-cache.h
 include/libsoup-%%VERSION%%/libsoup/soup-connection.h
 include/libsoup-%%VERSION%%/libsoup/soup-content-decoder.h
@@ -48,6 +49,7 @@ include/libsoup-%%VERSION%%/libsoup/soup-value-utils.h
 include/libsoup-%%VERSION%%/libsoup/soup-version.h
 include/libsoup-%%VERSION%%/libsoup/soup-websocket-connection.h
 include/libsoup-%%VERSION%%/libsoup/soup-websocket.h
+include/libsoup-%%VERSION%%/libsoup/soup-xmlrpc-old.h
 include/libsoup-%%VERSION%%/libsoup/soup-xmlrpc.h
 include/libsoup-%%VERSION%%/libsoup/soup.h
 lib/girepository-1.0/Soup-%%VERSION%%.typelib
@@ -100,7 +102,6 @@ share/gtk-doc/html/libsoup-%%VERSION%%/index.sgml
 share/gtk-doc/html/libsoup-%%VERSION%%/ix01.html
 share/gtk-doc/html/libsoup-%%VERSION%%/left-insensitive.png
 share/gtk-doc/html/libsoup-%%VERSION%%/left.png
-share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-GValue-Support.html
 share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-HTML-Form-Support.html
 share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-Soup-Miscellaneous-Utilities.html
 share/gtk-doc/html/libsoup-%%VERSION%%/libsoup-%%VERSION%%-SoupServer-deprecated-API.html
@@ -157,6 +158,7 @@ share/locale/ml/LC_MESSAGES/libsoup.mo
 share/locale/mr/LC_MESSAGES/libsoup.mo
 share/locale/nb/LC_MESSAGES/libsoup.mo
 share/locale/nl/LC_MESSAGES/libsoup.mo
+share/locale/oc/LC_MESSAGES/libsoup.mo
 share/locale/or/LC_MESSAGES/libsoup.mo
 share/locale/pa/LC_MESSAGES/libsoup.mo
 share/locale/pl/LC_MESSAGES/libsoup.mo

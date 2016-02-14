@@ -115,6 +115,7 @@ share/icons/hicolor/256x256/apps/gnome-photos.png
 share/icons/hicolor/32x32/apps/gnome-photos.png
 share/icons/hicolor/48x48/apps/gnome-photos.png
 share/icons/hicolor/scalable/apps/gnome-photos-symbolic.svg
+share/locale/an/LC_MESSAGES/gnome-photos.mo
 share/locale/ar/LC_MESSAGES/gnome-photos.mo
 share/locale/as/LC_MESSAGES/gnome-photos.mo
 share/locale/bg/LC_MESSAGES/gnome-photos.mo

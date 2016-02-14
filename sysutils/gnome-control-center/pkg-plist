@@ -26,7 +26,6 @@ share/applications/gnome-user-accounts-panel.desktop
 share/bash-completion/completions/gnome-control-center
 share/dbus-1/services/org.gnome.ControlCenter.SearchProvider.service
 share/dbus-1/services/org.gnome.ControlCenter.service
-%%DATADIR%%/datetime/backward
 %%DATADIR%%/icons/hicolor/16x16/devices/audio-headset.svg
 %%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-high.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-low.png
@@ -174,6 +173,7 @@ share/locale/fi/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/fi/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/fr/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/fur/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/gl/LC_MESSAGES/gnome-control-center-2.0.mo

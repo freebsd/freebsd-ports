@@ -40,6 +40,7 @@ lib/aisleriot/guile/2.0/glenwood.go
 lib/aisleriot/guile/2.0/gold-mine.go
 lib/aisleriot/guile/2.0/golf.go
 lib/aisleriot/guile/2.0/gypsy.go
+lib/aisleriot/guile/2.0/hamilton.go
 lib/aisleriot/guile/2.0/helsinki.go
 lib/aisleriot/guile/2.0/hopscotch.go
 lib/aisleriot/guile/2.0/isabel.go
@@ -82,6 +83,7 @@ lib/aisleriot/guile/2.0/treize.go
 lib/aisleriot/guile/2.0/triple-peaks.go
 lib/aisleriot/guile/2.0/union-square.go
 lib/aisleriot/guile/2.0/valentine.go
+lib/aisleriot/guile/2.0/wall.go
 lib/aisleriot/guile/2.0/westhaven.go
 lib/aisleriot/guile/2.0/whitehead.go
 lib/aisleriot/guile/2.0/will-o-the-wisp.go
@@ -91,7 +93,6 @@ lib/aisleriot/guile/2.0/zebra.go
 lib/valgrind/aisleriot.supp
 libexec/aisleriot/ar-cards-renderer
 man/man6/sol.6.gz
-share/appdata/sol.appdata.xml
 %%DATADIR%%/cards/anglo.svgz
 %%DATADIR%%/cards/anglo_bitmap.svgz
 %%DATADIR%%/cards/bellot.svgz
@@ -114,6 +115,7 @@ share/appdata/sol.appdata.xml
 %%DATADIR%%/sounds/slide.ogg
 %%DATADIR%%/sounds/splat.ogg
 %%DATADIR%%/sounds/victory.ogg
+share/appdata/sol.appdata.xml
 share/applications/sol.desktop
 share/help/C/aisleriot/accordion.xml
 share/help/C/aisleriot/agnes.xml
@@ -158,6 +160,7 @@ share/help/C/aisleriot/glenwood.xml
 share/help/C/aisleriot/gold_mine.xml
 share/help/C/aisleriot/golf.xml
 share/help/C/aisleriot/gypsy.xml
+share/help/C/aisleriot/hamilton.xml
 share/help/C/aisleriot/helsinki.xml
 share/help/C/aisleriot/hopscotch.xml
 share/help/C/aisleriot/index.docbook
@@ -202,6 +205,7 @@ share/help/C/aisleriot/treize.xml
 share/help/C/aisleriot/triple_peaks.xml
 share/help/C/aisleriot/union_square.xml
 share/help/C/aisleriot/valentine.xml
+share/help/C/aisleriot/wall.xml
 share/help/C/aisleriot/westhaven.xml
 share/help/C/aisleriot/whitehead.xml
 share/help/C/aisleriot/will_o_the_wisp.xml
@@ -249,6 +253,7 @@ share/help/ca/aisleriot/glenwood.xml
 share/help/ca/aisleriot/gold_mine.xml
 share/help/ca/aisleriot/golf.xml
 share/help/ca/aisleriot/gypsy.xml
+share/help/ca/aisleriot/hamilton.xml
 share/help/ca/aisleriot/helsinki.xml
 share/help/ca/aisleriot/hopscotch.xml
 share/help/ca/aisleriot/index.docbook
@@ -293,12 +298,106 @@ share/help/ca/aisleriot/treize.xml
 share/help/ca/aisleriot/triple_peaks.xml
 share/help/ca/aisleriot/union_square.xml
 share/help/ca/aisleriot/valentine.xml
+share/help/ca/aisleriot/wall.xml
 share/help/ca/aisleriot/westhaven.xml
 share/help/ca/aisleriot/whitehead.xml
 share/help/ca/aisleriot/will_o_the_wisp.xml
 share/help/ca/aisleriot/yield.xml
 share/help/ca/aisleriot/yukon.xml
 share/help/ca/aisleriot/zebra.xml
+share/help/cs/aisleriot/accordion.xml
+share/help/cs/aisleriot/agnes.xml
+share/help/cs/aisleriot/athena.xml
+share/help/cs/aisleriot/auld_lang_syne.xml
+share/help/cs/aisleriot/aunt_mary.xml
+share/help/cs/aisleriot/backbone.xml
+share/help/cs/aisleriot/bakers_dozen.xml
+share/help/cs/aisleriot/bakers_game.xml
+share/help/cs/aisleriot/bear_river.xml
+share/help/cs/aisleriot/beleaguered_castle.xml
+share/help/cs/aisleriot/block_ten.xml
+share/help/cs/aisleriot/bristol.xml
+share/help/cs/aisleriot/camelot.xml
+share/help/cs/aisleriot/canfield.xml
+share/help/cs/aisleriot/carpet.xml
+share/help/cs/aisleriot/chessboard.xml
+share/help/cs/aisleriot/clock.xml
+share/help/cs/aisleriot/cover.xml
+share/help/cs/aisleriot/cruel.xml
+share/help/cs/aisleriot/definitions.xml
+share/help/cs/aisleriot/diamond_mine.xml
+share/help/cs/aisleriot/doublets.xml
+share/help/cs/aisleriot/eagle-wing.xml
+share/help/cs/aisleriot/easthaven.xml
+share/help/cs/aisleriot/eight_off.xml
+share/help/cs/aisleriot/elevator.xml
+share/help/cs/aisleriot/eliminator.xml
+share/help/cs/aisleriot/escalator.xml
+share/help/cs/aisleriot/first_law.xml
+share/help/cs/aisleriot/fortress.xml
+share/help/cs/aisleriot/fortunes.xml
+share/help/cs/aisleriot/forty_thieves.xml
+share/help/cs/aisleriot/fourteen.xml
+share/help/cs/aisleriot/freecell.xml
+share/help/cs/aisleriot/gaps.xml
+share/help/cs/aisleriot/gay_gordons.xml
+share/help/cs/aisleriot/giant.xml
+share/help/cs/aisleriot/glenwood.xml
+share/help/cs/aisleriot/gold_mine.xml
+share/help/cs/aisleriot/golf.xml
+share/help/cs/aisleriot/gypsy.xml
+share/help/cs/aisleriot/hamilton.xml
+share/help/cs/aisleriot/helsinki.xml
+share/help/cs/aisleriot/hopscotch.xml
+share/help/cs/aisleriot/index.docbook
+share/help/cs/aisleriot/isabel.xml
+share/help/cs/aisleriot/jamestown.xml
+share/help/cs/aisleriot/jumbo.xml
+share/help/cs/aisleriot/kansas.xml
+share/help/cs/aisleriot/king_albert.xml
+share/help/cs/aisleriot/kings_audience.xml
+share/help/cs/aisleriot/klondike.xml
+share/help/cs/aisleriot/labyrinth.xml
+share/help/cs/aisleriot/lady_jane.xml
+share/help/cs/aisleriot/legal.xml
+share/help/cs/aisleriot/maze.xml
+share/help/cs/aisleriot/monte_carlo.xml
+share/help/cs/aisleriot/napoleons_tomb.xml
+share/help/cs/aisleriot/neighbor.xml
+share/help/cs/aisleriot/odessa.xml
+share/help/cs/aisleriot/osmosis.xml
+share/help/cs/aisleriot/peek.xml
+share/help/cs/aisleriot/pileon.xml
+share/help/cs/aisleriot/plait.xml
+share/help/cs/aisleriot/poker.xml
+share/help/cs/aisleriot/quatorze.xml
+share/help/cs/aisleriot/royal_east.xml
+share/help/cs/aisleriot/saratoga.xml
+share/help/cs/aisleriot/scorpion.xml
+share/help/cs/aisleriot/scuffle.xml
+share/help/cs/aisleriot/seahaven.xml
+share/help/cs/aisleriot/sir_tommy.xml
+share/help/cs/aisleriot/spider.xml
+share/help/cs/aisleriot/spider_three_decks.xml
+share/help/cs/aisleriot/spiderette.xml
+share/help/cs/aisleriot/straight_up.xml
+share/help/cs/aisleriot/streets_and_alleys.xml
+share/help/cs/aisleriot/ten_across.xml
+share/help/cs/aisleriot/terrace.xml
+share/help/cs/aisleriot/thieves.xml
+share/help/cs/aisleriot/thirteen.xml
+share/help/cs/aisleriot/thumb_and_pouch.xml
+share/help/cs/aisleriot/treize.xml
+share/help/cs/aisleriot/triple_peaks.xml
+share/help/cs/aisleriot/union_square.xml
+share/help/cs/aisleriot/valentine.xml
+share/help/cs/aisleriot/wall.xml
+share/help/cs/aisleriot/westhaven.xml
+share/help/cs/aisleriot/whitehead.xml
+share/help/cs/aisleriot/will_o_the_wisp.xml
+share/help/cs/aisleriot/yield.xml
+share/help/cs/aisleriot/yukon.xml
+share/help/cs/aisleriot/zebra.xml
 share/help/de/aisleriot/accordion.xml
 share/help/de/aisleriot/agnes.xml
 share/help/de/aisleriot/athena.xml
@@ -340,6 +439,7 @@ share/help/de/aisleriot/glenwood.xml
 share/help/de/aisleriot/gold_mine.xml
 share/help/de/aisleriot/golf.xml
 share/help/de/aisleriot/gypsy.xml
+share/help/de/aisleriot/hamilton.xml
 share/help/de/aisleriot/helsinki.xml
 share/help/de/aisleriot/hopscotch.xml
 share/help/de/aisleriot/index.docbook
@@ -384,6 +484,7 @@ share/help/de/aisleriot/treize.xml
 share/help/de/aisleriot/triple_peaks.xml
 share/help/de/aisleriot/union_square.xml
 share/help/de/aisleriot/valentine.xml
+share/help/de/aisleriot/wall.xml
 share/help/de/aisleriot/westhaven.xml
 share/help/de/aisleriot/whitehead.xml
 share/help/de/aisleriot/will_o_the_wisp.xml
@@ -431,6 +532,7 @@ share/help/el/aisleriot/glenwood.xml
 share/help/el/aisleriot/gold_mine.xml
 share/help/el/aisleriot/golf.xml
 share/help/el/aisleriot/gypsy.xml
+share/help/el/aisleriot/hamilton.xml
 share/help/el/aisleriot/helsinki.xml
 share/help/el/aisleriot/hopscotch.xml
 share/help/el/aisleriot/index.docbook
@@ -475,6 +577,7 @@ share/help/el/aisleriot/treize.xml
 share/help/el/aisleriot/triple_peaks.xml
 share/help/el/aisleriot/union_square.xml
 share/help/el/aisleriot/valentine.xml
+share/help/el/aisleriot/wall.xml
 share/help/el/aisleriot/westhaven.xml
 share/help/el/aisleriot/whitehead.xml
 share/help/el/aisleriot/will_o_the_wisp.xml
@@ -522,6 +625,7 @@ share/help/en_GB/aisleriot/glenwood.xml
 share/help/en_GB/aisleriot/gold_mine.xml
 share/help/en_GB/aisleriot/golf.xml
 share/help/en_GB/aisleriot/gypsy.xml
+share/help/en_GB/aisleriot/hamilton.xml
 share/help/en_GB/aisleriot/helsinki.xml
 share/help/en_GB/aisleriot/hopscotch.xml
 share/help/en_GB/aisleriot/index.docbook
@@ -566,6 +670,7 @@ share/help/en_GB/aisleriot/treize.xml
 share/help/en_GB/aisleriot/triple_peaks.xml
 share/help/en_GB/aisleriot/union_square.xml
 share/help/en_GB/aisleriot/valentine.xml
+share/help/en_GB/aisleriot/wall.xml
 share/help/en_GB/aisleriot/westhaven.xml
 share/help/en_GB/aisleriot/whitehead.xml
 share/help/en_GB/aisleriot/will_o_the_wisp.xml
@@ -613,6 +718,7 @@ share/help/es/aisleriot/glenwood.xml
 share/help/es/aisleriot/gold_mine.xml
 share/help/es/aisleriot/golf.xml
 share/help/es/aisleriot/gypsy.xml
+share/help/es/aisleriot/hamilton.xml
 share/help/es/aisleriot/helsinki.xml
 share/help/es/aisleriot/hopscotch.xml
 share/help/es/aisleriot/index.docbook
@@ -657,6 +763,7 @@ share/help/es/aisleriot/treize.xml
 share/help/es/aisleriot/triple_peaks.xml
 share/help/es/aisleriot/union_square.xml
 share/help/es/aisleriot/valentine.xml
+share/help/es/aisleriot/wall.xml
 share/help/es/aisleriot/westhaven.xml
 share/help/es/aisleriot/whitehead.xml
 share/help/es/aisleriot/will_o_the_wisp.xml
@@ -704,6 +811,7 @@ share/help/eu/aisleriot/glenwood.xml
 share/help/eu/aisleriot/gold_mine.xml
 share/help/eu/aisleriot/golf.xml
 share/help/eu/aisleriot/gypsy.xml
+share/help/eu/aisleriot/hamilton.xml
 share/help/eu/aisleriot/helsinki.xml
 share/help/eu/aisleriot/hopscotch.xml
 share/help/eu/aisleriot/index.docbook
@@ -748,6 +856,7 @@ share/help/eu/aisleriot/treize.xml
 share/help/eu/aisleriot/triple_peaks.xml
 share/help/eu/aisleriot/union_square.xml
 share/help/eu/aisleriot/valentine.xml
+share/help/eu/aisleriot/wall.xml
 share/help/eu/aisleriot/westhaven.xml
 share/help/eu/aisleriot/whitehead.xml
 share/help/eu/aisleriot/will_o_the_wisp.xml
@@ -795,6 +904,7 @@ share/help/fr/aisleriot/glenwood.xml
 share/help/fr/aisleriot/gold_mine.xml
 share/help/fr/aisleriot/golf.xml
 share/help/fr/aisleriot/gypsy.xml
+share/help/fr/aisleriot/hamilton.xml
 share/help/fr/aisleriot/helsinki.xml
 share/help/fr/aisleriot/hopscotch.xml
 share/help/fr/aisleriot/index.docbook
@@ -839,6 +949,7 @@ share/help/fr/aisleriot/treize.xml
 share/help/fr/aisleriot/triple_peaks.xml
 share/help/fr/aisleriot/union_square.xml
 share/help/fr/aisleriot/valentine.xml
+share/help/fr/aisleriot/wall.xml
 share/help/fr/aisleriot/westhaven.xml
 share/help/fr/aisleriot/whitehead.xml
 share/help/fr/aisleriot/will_o_the_wisp.xml
@@ -886,6 +997,7 @@ share/help/gl/aisleriot/glenwood.xml
 share/help/gl/aisleriot/gold_mine.xml
 share/help/gl/aisleriot/golf.xml
 share/help/gl/aisleriot/gypsy.xml
+share/help/gl/aisleriot/hamilton.xml
 share/help/gl/aisleriot/helsinki.xml
 share/help/gl/aisleriot/hopscotch.xml
 share/help/gl/aisleriot/index.docbook
@@ -930,6 +1042,7 @@ share/help/gl/aisleriot/treize.xml
 share/help/gl/aisleriot/triple_peaks.xml
 share/help/gl/aisleriot/union_square.xml
 share/help/gl/aisleriot/valentine.xml
+share/help/gl/aisleriot/wall.xml
 share/help/gl/aisleriot/westhaven.xml
 share/help/gl/aisleriot/whitehead.xml
 share/help/gl/aisleriot/will_o_the_wisp.xml
@@ -977,6 +1090,7 @@ share/help/hu/aisleriot/glenwood.xml
 share/help/hu/aisleriot/gold_mine.xml
 share/help/hu/aisleriot/golf.xml
 share/help/hu/aisleriot/gypsy.xml
+share/help/hu/aisleriot/hamilton.xml
 share/help/hu/aisleriot/helsinki.xml
 share/help/hu/aisleriot/hopscotch.xml
 share/help/hu/aisleriot/index.docbook
@@ -1021,6 +1135,7 @@ share/help/hu/aisleriot/treize.xml
 share/help/hu/aisleriot/triple_peaks.xml
 share/help/hu/aisleriot/union_square.xml
 share/help/hu/aisleriot/valentine.xml
+share/help/hu/aisleriot/wall.xml
 share/help/hu/aisleriot/westhaven.xml
 share/help/hu/aisleriot/whitehead.xml
 share/help/hu/aisleriot/will_o_the_wisp.xml
@@ -1068,6 +1183,7 @@ share/help/oc/aisleriot/glenwood.xml
 share/help/oc/aisleriot/gold_mine.xml
 share/help/oc/aisleriot/golf.xml
 share/help/oc/aisleriot/gypsy.xml
+share/help/oc/aisleriot/hamilton.xml
 share/help/oc/aisleriot/helsinki.xml
 share/help/oc/aisleriot/hopscotch.xml
 share/help/oc/aisleriot/index.docbook
@@ -1112,6 +1228,7 @@ share/help/oc/aisleriot/treize.xml
 share/help/oc/aisleriot/triple_peaks.xml
 share/help/oc/aisleriot/union_square.xml
 share/help/oc/aisleriot/valentine.xml
+share/help/oc/aisleriot/wall.xml
 share/help/oc/aisleriot/westhaven.xml
 share/help/oc/aisleriot/whitehead.xml
 share/help/oc/aisleriot/will_o_the_wisp.xml
@@ -1159,6 +1276,7 @@ share/help/pt_BR/aisleriot/glenwood.xml
 share/help/pt_BR/aisleriot/gold_mine.xml
 share/help/pt_BR/aisleriot/golf.xml
 share/help/pt_BR/aisleriot/gypsy.xml
+share/help/pt_BR/aisleriot/hamilton.xml
 share/help/pt_BR/aisleriot/helsinki.xml
 share/help/pt_BR/aisleriot/hopscotch.xml
 share/help/pt_BR/aisleriot/index.docbook
@@ -1203,6 +1321,7 @@ share/help/pt_BR/aisleriot/treize.xml
 share/help/pt_BR/aisleriot/triple_peaks.xml
 share/help/pt_BR/aisleriot/union_square.xml
 share/help/pt_BR/aisleriot/valentine.xml
+share/help/pt_BR/aisleriot/wall.xml
 share/help/pt_BR/aisleriot/westhaven.xml
 share/help/pt_BR/aisleriot/whitehead.xml
 share/help/pt_BR/aisleriot/will_o_the_wisp.xml
@@ -1250,6 +1369,7 @@ share/help/ru/aisleriot/glenwood.xml
 share/help/ru/aisleriot/gold_mine.xml
 share/help/ru/aisleriot/golf.xml
 share/help/ru/aisleriot/gypsy.xml
+share/help/ru/aisleriot/hamilton.xml
 share/help/ru/aisleriot/helsinki.xml
 share/help/ru/aisleriot/hopscotch.xml
 share/help/ru/aisleriot/index.docbook
@@ -1294,6 +1414,7 @@ share/help/ru/aisleriot/treize.xml
 share/help/ru/aisleriot/triple_peaks.xml
 share/help/ru/aisleriot/union_square.xml
 share/help/ru/aisleriot/valentine.xml
+share/help/ru/aisleriot/wall.xml
 share/help/ru/aisleriot/westhaven.xml
 share/help/ru/aisleriot/whitehead.xml
 share/help/ru/aisleriot/will_o_the_wisp.xml
@@ -1341,6 +1462,7 @@ share/help/sl/aisleriot/glenwood.xml
 share/help/sl/aisleriot/gold_mine.xml
 share/help/sl/aisleriot/golf.xml
 share/help/sl/aisleriot/gypsy.xml
+share/help/sl/aisleriot/hamilton.xml
 share/help/sl/aisleriot/helsinki.xml
 share/help/sl/aisleriot/hopscotch.xml
 share/help/sl/aisleriot/index.docbook
@@ -1385,6 +1507,7 @@ share/help/sl/aisleriot/treize.xml
 share/help/sl/aisleriot/triple_peaks.xml
 share/help/sl/aisleriot/union_square.xml
 share/help/sl/aisleriot/valentine.xml
+share/help/sl/aisleriot/wall.xml
 share/help/sl/aisleriot/westhaven.xml
 share/help/sl/aisleriot/whitehead.xml
 share/help/sl/aisleriot/will_o_the_wisp.xml
@@ -1432,6 +1555,7 @@ share/help/sr/aisleriot/glenwood.xml
 share/help/sr/aisleriot/gold_mine.xml
 share/help/sr/aisleriot/golf.xml
 share/help/sr/aisleriot/gypsy.xml
+share/help/sr/aisleriot/hamilton.xml
 share/help/sr/aisleriot/helsinki.xml
 share/help/sr/aisleriot/hopscotch.xml
 share/help/sr/aisleriot/index.docbook
@@ -1476,6 +1600,7 @@ share/help/sr/aisleriot/treize.xml
 share/help/sr/aisleriot/triple_peaks.xml
 share/help/sr/aisleriot/union_square.xml
 share/help/sr/aisleriot/valentine.xml
+share/help/sr/aisleriot/wall.xml
 share/help/sr/aisleriot/westhaven.xml
 share/help/sr/aisleriot/whitehead.xml
 share/help/sr/aisleriot/will_o_the_wisp.xml
@@ -1523,6 +1648,7 @@ share/help/sr@latin/aisleriot/glenwood.xml
 share/help/sr@latin/aisleriot/gold_mine.xml
 share/help/sr@latin/aisleriot/golf.xml
 share/help/sr@latin/aisleriot/gypsy.xml
+share/help/sr@latin/aisleriot/hamilton.xml
 share/help/sr@latin/aisleriot/helsinki.xml
 share/help/sr@latin/aisleriot/hopscotch.xml
 share/help/sr@latin/aisleriot/index.docbook
@@ -1567,6 +1693,7 @@ share/help/sr@latin/aisleriot/treize.xml
 share/help/sr@latin/aisleriot/triple_peaks.xml
 share/help/sr@latin/aisleriot/union_square.xml
 share/help/sr@latin/aisleriot/valentine.xml
+share/help/sr@latin/aisleriot/wall.xml
 share/help/sr@latin/aisleriot/westhaven.xml
 share/help/sr@latin/aisleriot/whitehead.xml
 share/help/sr@latin/aisleriot/will_o_the_wisp.xml
@@ -1614,6 +1741,7 @@ share/help/sv/aisleriot/glenwood.xml
 share/help/sv/aisleriot/gold_mine.xml
 share/help/sv/aisleriot/golf.xml
 share/help/sv/aisleriot/gypsy.xml
+share/help/sv/aisleriot/hamilton.xml
 share/help/sv/aisleriot/helsinki.xml
 share/help/sv/aisleriot/hopscotch.xml
 share/help/sv/aisleriot/index.docbook
@@ -1658,6 +1786,7 @@ share/help/sv/aisleriot/treize.xml
 share/help/sv/aisleriot/triple_peaks.xml
 share/help/sv/aisleriot/union_square.xml
 share/help/sv/aisleriot/valentine.xml
+share/help/sv/aisleriot/wall.xml
 share/help/sv/aisleriot/westhaven.xml
 share/help/sv/aisleriot/whitehead.xml
 share/help/sv/aisleriot/will_o_the_wisp.xml
@@ -1705,6 +1834,7 @@ share/help/zh_CN/aisleriot/glenwood.xml
 share/help/zh_CN/aisleriot/gold_mine.xml
 share/help/zh_CN/aisleriot/golf.xml
 share/help/zh_CN/aisleriot/gypsy.xml
+share/help/zh_CN/aisleriot/hamilton.xml
 share/help/zh_CN/aisleriot/helsinki.xml
 share/help/zh_CN/aisleriot/hopscotch.xml
 share/help/zh_CN/aisleriot/index.docbook
@@ -1749,6 +1879,7 @@ share/help/zh_CN/aisleriot/treize.xml
 share/help/zh_CN/aisleriot/triple_peaks.xml
 share/help/zh_CN/aisleriot/union_square.xml
 share/help/zh_CN/aisleriot/valentine.xml
+share/help/zh_CN/aisleriot/wall.xml
 share/help/zh_CN/aisleriot/westhaven.xml
 share/help/zh_CN/aisleriot/whitehead.xml
 share/help/zh_CN/aisleriot/will_o_the_wisp.xml
@@ -1872,4 +2003,5 @@ share/locale/zh_TW/LC_MESSAGES/aisleriot.mo
 @dir share/help/en_GB/aisleriot/figures
 @dir share/help/el/aisleriot/figures
 @dir share/help/de/aisleriot/figures
+@dir share/help/cs/aisleriot/figures
 @dir share/help/ca/aisleriot/figures

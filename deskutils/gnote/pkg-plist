@@ -39,8 +39,8 @@ lib/gnote/addins/%%VERSION%%/underline.desktop
 lib/gnote/addins/%%VERSION%%/underline.so
 lib/gnote/addins/%%VERSION%%/webdavsyncservice.desktop
 lib/gnote/addins/%%VERSION%%/webdavsyncservice.so
-lib/libgnote-3.16.so.0
-lib/libgnote-3.16.so.0.1.1
+lib/libgnote-3.18.so.0
+lib/libgnote-3.18.so.0.0.1
 lib/libgnote.so
 man/man1/gnote.1.gz
 share/appdata/gnote.appdata.xml
