@@ -1,4 +1,14 @@
-wm2 -- a window manager
-=======================
+wm2 is a window manager for X.  It provides an unusual style of window
+decoration and as little functionality as I feel comfortable with in a
+window manager.  wm2 is not configurable, except by editing the source
+and recompiling the code, and is really intended for people who don't
+particularly want their window manager to be too friendly.
+
+wm2 provides:
+* Decorative frames for your windows.
+* The ability to move, resize, hide and restore windows.
+* No icons.
+* No configurable root menus, buttons or mouse or keyboard bindings.
+* No virtual desktop, toolbars or integrated applications.
 
 WWW: http://www.all-day-breakfast.com/wm2/

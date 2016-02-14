@@ -1,6 +1,6 @@
---- Manager.h.orig	Tue Jan 28 17:41:36 2003
-+++ Manager.h	Tue Jan 28 17:41:46 2003
-@@ -85,7 +85,7 @@
+--- Manager.h.orig	1997-03-21 11:12:30 UTC
++++ Manager.h
+@@ -85,7 +85,7 @@ private:
  
      static Boolean m_initialising;
      static int errorHandler(Display *, XErrorEvent *);
