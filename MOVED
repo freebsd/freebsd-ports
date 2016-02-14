@@ -8136,3 +8136,4 @@ graphics/py-graphviz|graphics/py-pygraphviz|2016-02-07|Renamed to match upstream
 security/polarssl||2016-02-07|Has expired: Upstream is ending support for 1.2.x
 multimedia/xbmc-addon-pvr||2016-02-12|Has expired: Does not work with multimedia/kodi 15.x and newer
 security/py-openid|security/py-python-openid|2016-02-13|Renamed to match upstream (PyPI) name
+ports-mgmt/tinderbox-devel|ports-mgmt/tinderbox|2016-02-14|Has expired: use newer stable version (ports-mgmt/tinderbox)
