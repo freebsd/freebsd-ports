@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	Git-Repository
-PORTVERSION=	1.316
+PORTVERSION=	1.317
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:BOOK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -17,8 +16,6 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	git:${PORTSDIR}/devel/git \
 		p5-System-Command>=1.103:${PORTSDIR}/devel/p5-System-Command
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=1.41:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=1.08:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 NO_ARCH=	yes
 USES=		perl5
