@@ -1,5 +1,7 @@
 bin/gcalccmd
 bin/gnome-calculator
+lib/gnome-calculator/libcalculator.a
+lib/gnome-calculator/libcalculator.so
 libexec/gnome-calculator-search-provider
 man/man1/gcalccmd.1.gz
 man/man1/gnome-calculator.1.gz

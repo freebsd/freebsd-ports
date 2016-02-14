@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-games
-PORTVERSION=	3.16.0
+PORTVERSION=	3.18.0
 CATEGORIES=	games gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -13,6 +13,7 @@ USES=		metaport
 RUN_DEPENDS=	five-or-more:${PORTSDIR}/games/five-or-more \
 		atomix:${PORTSDIR}/games/atomix \
 		four-in-a-row:${PORTSDIR}/games/four-in-a-row \
+		gnome-2048:${PORTSDIR}/games/gnome-2048 \
 		gnome-chess:${PORTSDIR}/games/gnome-chess \
 		gnome-klotski:${PORTSDIR}/games/gnome-klotski \
 		gnome-mahjongg:${PORTSDIR}/games/gnome-mahjongg \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-sound-recorder
-PORTVERSION=	3.16.0
+PORTVERSION=	3.18.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgjs.so:${PORTSDIR}/lang/gjs
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig python:3 tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig python:3 tar:xz
 USE_GNOME=	gnomedesktop3 gtk30 intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -17,7 +17,7 @@ lib/girepository-1.0/ClutterGst-3.0.typelib
 @comment lib/gstreamer-1.0/libgstclutter-3.0.so
 lib/libclutter-gst-3.0.so
 lib/libclutter-gst-3.0.so.0
-lib/libclutter-gst-3.0.so.0.10.0
+lib/libclutter-gst-3.0.so.0.14.0
 libdata/pkgconfig/clutter-gst-3.0.pc
 %%DOCSDIR%%-3.0/ClutterGstAspectratio.html
 %%DOCSDIR%%-3.0/ClutterGstCamera.html

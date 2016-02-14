@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-contacts
-PORTVERSION=	3.16.2
+PORTVERSION=	3.18.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -21,7 +21,7 @@ PORTSCOUT=	limitw:1,even
 
 USE_GNOME=	evolutiondataserver3 gnomedesktop3 gtk30 intlhack \
 		introspection:build
-USES=		gettext gmake pathfix perl5 pkgconfig tar:xz
+USES=		gettext gmake gnome pathfix perl5 pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

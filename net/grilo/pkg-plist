@@ -33,15 +33,15 @@ lib/girepository-1.0/GrlPls-0.2.typelib
 lib/libgrilo-0.2.a
 lib/libgrilo-0.2.so
 lib/libgrilo-0.2.so.1
-lib/libgrilo-0.2.so.1.8.0
+lib/libgrilo-0.2.so.1.10.0
 lib/libgrlnet-0.2.a
 lib/libgrlnet-0.2.so
 lib/libgrlnet-0.2.so.0
-lib/libgrlnet-0.2.so.0.1.9
+lib/libgrlnet-0.2.so.0.1.10
 lib/libgrlpls-0.2.a
 lib/libgrlpls-0.2.so
 lib/libgrlpls-0.2.so.0
-lib/libgrlpls-0.2.so.0.0.4
+lib/libgrlpls-0.2.so.0.0.5
 libdata/pkgconfig/grilo-0.2.pc
 libdata/pkgconfig/grilo-net-0.2.pc
 libdata/pkgconfig/grilo-pls-0.2.pc
@@ -52,6 +52,7 @@ share/gir-1.0/Grl-0.2.gir
 share/gir-1.0/GrlNet-0.2.gir
 share/gir-1.0/GrlPls-0.2.gir
 share/locale/as/LC_MESSAGES/grilo.mo
+share/locale/bs/LC_MESSAGES/grilo.mo
 share/locale/ca/LC_MESSAGES/grilo.mo
 share/locale/ca@valencia/LC_MESSAGES/grilo.mo
 share/locale/cs/LC_MESSAGES/grilo.mo
@@ -73,6 +74,7 @@ share/locale/lt/LC_MESSAGES/grilo.mo
 share/locale/lv/LC_MESSAGES/grilo.mo
 share/locale/ml/LC_MESSAGES/grilo.mo
 share/locale/nb/LC_MESSAGES/grilo.mo
+share/locale/oc/LC_MESSAGES/grilo.mo
 share/locale/pa/LC_MESSAGES/grilo.mo
 share/locale/pl/LC_MESSAGES/grilo.mo
 share/locale/pt/LC_MESSAGES/grilo.mo

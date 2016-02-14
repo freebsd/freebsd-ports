@@ -183,6 +183,7 @@ share/icons/Adwaita/16x16/devices/drive-harddisk.png
 share/icons/Adwaita/16x16/devices/drive-multidisk.png
 share/icons/Adwaita/16x16/devices/drive-optical.png
 share/icons/Adwaita/16x16/devices/drive-removable-media.png
+share/icons/Adwaita/16x16/devices/ebook-reader.png
 share/icons/Adwaita/16x16/devices/input-dialpad.png
 share/icons/Adwaita/16x16/devices/input-gaming.png
 share/icons/Adwaita/16x16/devices/input-keyboard.png
@@ -559,6 +560,7 @@ share/icons/Adwaita/22x22/devices/drive-harddisk.png
 share/icons/Adwaita/22x22/devices/drive-multidisk.png
 share/icons/Adwaita/22x22/devices/drive-optical.png
 share/icons/Adwaita/22x22/devices/drive-removable-media.png
+share/icons/Adwaita/22x22/devices/ebook-reader.png
 share/icons/Adwaita/22x22/devices/input-dialpad.png
 share/icons/Adwaita/22x22/devices/input-gaming.png
 share/icons/Adwaita/22x22/devices/input-keyboard.png
@@ -926,6 +928,7 @@ share/icons/Adwaita/24x24/devices/drive-harddisk.png
 share/icons/Adwaita/24x24/devices/drive-multidisk.png
 share/icons/Adwaita/24x24/devices/drive-optical.png
 share/icons/Adwaita/24x24/devices/drive-removable-media.png
+share/icons/Adwaita/24x24/devices/ebook-reader.png
 share/icons/Adwaita/24x24/devices/input-dialpad.png
 share/icons/Adwaita/24x24/devices/input-gaming.png
 share/icons/Adwaita/24x24/devices/input-keyboard.png
@@ -1201,6 +1204,7 @@ share/icons/Adwaita/256x256/devices/drive-harddisk.png
 share/icons/Adwaita/256x256/devices/drive-multidisk.png
 share/icons/Adwaita/256x256/devices/drive-optical.png
 share/icons/Adwaita/256x256/devices/drive-removable-media.png
+share/icons/Adwaita/256x256/devices/ebook-reader.png
 share/icons/Adwaita/256x256/devices/input-dialpad.png
 share/icons/Adwaita/256x256/devices/input-gaming.png
 share/icons/Adwaita/256x256/devices/input-keyboard.png
@@ -1524,6 +1528,7 @@ share/icons/Adwaita/32x32/devices/drive-harddisk.png
 share/icons/Adwaita/32x32/devices/drive-multidisk.png
 share/icons/Adwaita/32x32/devices/drive-optical.png
 share/icons/Adwaita/32x32/devices/drive-removable-media.png
+share/icons/Adwaita/32x32/devices/ebook-reader.png
 share/icons/Adwaita/32x32/devices/input-dialpad.png
 share/icons/Adwaita/32x32/devices/input-gaming.png
 share/icons/Adwaita/32x32/devices/input-keyboard.png
@@ -1896,6 +1901,7 @@ share/icons/Adwaita/48x48/devices/drive-harddisk.png
 share/icons/Adwaita/48x48/devices/drive-multidisk.png
 share/icons/Adwaita/48x48/devices/drive-optical.png
 share/icons/Adwaita/48x48/devices/drive-removable-media.png
+share/icons/Adwaita/48x48/devices/ebook-reader.png
 share/icons/Adwaita/48x48/devices/input-dialpad.png
 share/icons/Adwaita/48x48/devices/input-gaming.png
 share/icons/Adwaita/48x48/devices/input-keyboard.png
@@ -2189,6 +2195,11 @@ share/icons/Adwaita/cursors/sb_right_arrow
 share/icons/Adwaita/cursors/sb_up_arrow
 share/icons/Adwaita/cursors/sb_v_double_arrow
 share/icons/Adwaita/cursors/se-resize
+share/icons/Adwaita/cursors/size_all
+share/icons/Adwaita/cursors/size_bdiag
+share/icons/Adwaita/cursors/size_fdiag
+share/icons/Adwaita/cursors/size_hor
+share/icons/Adwaita/cursors/size_ver
 share/icons/Adwaita/cursors/sw-resize
 share/icons/Adwaita/cursors/target
 share/icons/Adwaita/cursors/tcross
@@ -2261,8 +2272,8 @@ share/icons/Adwaita/scalable/actions/format-justify-fill-symbolic.svg
 share/icons/Adwaita/scalable/actions/format-justify-left-symbolic.svg
 share/icons/Adwaita/scalable/actions/format-justify-right-symbolic.svg
 share/icons/Adwaita/scalable/actions/format-text-bold-symbolic.svg
-share/icons/Adwaita/scalable/actions/format-text-direction-ltr-symbolic.svg
-share/icons/Adwaita/scalable/actions/format-text-direction-rtl-symbolic.svg
+share/icons/Adwaita/scalable/actions/format-text-direction-symbolic-rtl.svg
+share/icons/Adwaita/scalable/actions/format-text-direction-symbolic.svg
 share/icons/Adwaita/scalable/actions/format-text-italic-symbolic.svg
 share/icons/Adwaita/scalable/actions/format-text-strikethrough-symbolic.svg
 share/icons/Adwaita/scalable/actions/format-text-underline-symbolic.svg
@@ -2281,10 +2292,6 @@ share/icons/Adwaita/scalable/actions/go-previous-symbolic.svg
 share/icons/Adwaita/scalable/actions/go-top-symbolic.svg
 share/icons/Adwaita/scalable/actions/go-up-symbolic.svg
 share/icons/Adwaita/scalable/actions/help-about-symbolic.svg
-share/icons/Adwaita/scalable/actions/image-crop-symbolic.svg
-share/icons/Adwaita/scalable/actions/image-denoise-symbolic.svg
-share/icons/Adwaita/scalable/actions/image-filter-symbolic.svg
-share/icons/Adwaita/scalable/actions/image-sharpen-symbolic.svg
 share/icons/Adwaita/scalable/actions/insert-image-symbolic.svg
 share/icons/Adwaita/scalable/actions/insert-link-symbolic.svg
 share/icons/Adwaita/scalable/actions/insert-object-symbolic.svg
@@ -2571,13 +2578,13 @@ share/icons/Adwaita/scalable/status/mail-attachment-symbolic.svg
 share/icons/Adwaita/scalable/status/mail-read-symbolic.svg
 share/icons/Adwaita/scalable/status/mail-replied-symbolic.svg
 share/icons/Adwaita/scalable/status/mail-unread-symbolic.svg
-share/icons/Adwaita/scalable/status/media-playlist-consecutive-rtl-symbolic.svg
+share/icons/Adwaita/scalable/status/media-playlist-consecutive-symbolic-rtl.svg
 share/icons/Adwaita/scalable/status/media-playlist-consecutive-symbolic.svg
-share/icons/Adwaita/scalable/status/media-playlist-repeat-rtl-symbolic.svg
-share/icons/Adwaita/scalable/status/media-playlist-repeat-song-rtl-symbolic.svg
+share/icons/Adwaita/scalable/status/media-playlist-repeat-song-symbolic-rtl.svg
 share/icons/Adwaita/scalable/status/media-playlist-repeat-song-symbolic.svg
+share/icons/Adwaita/scalable/status/media-playlist-repeat-symbolic-rtl.svg
 share/icons/Adwaita/scalable/status/media-playlist-repeat-symbolic.svg
-share/icons/Adwaita/scalable/status/media-playlist-shuffle-rtl-symbolic.svg
+share/icons/Adwaita/scalable/status/media-playlist-shuffle-symbolic-rtl.svg
 share/icons/Adwaita/scalable/status/media-playlist-shuffle-symbolic.svg
 share/icons/Adwaita/scalable/status/microphone-sensitivity-high-symbolic.svg
 share/icons/Adwaita/scalable/status/microphone-sensitivity-low-symbolic.svg
@@ -2633,7 +2640,7 @@ share/icons/Adwaita/scalable/status/rotation-locked-symbolic.svg
 share/icons/Adwaita/scalable/status/security-high-symbolic.svg
 share/icons/Adwaita/scalable/status/security-low-symbolic.svg
 share/icons/Adwaita/scalable/status/security-medium-symbolic.svg
-share/icons/Adwaita/scalable/status/semi-starred-rtl-symbolic.svg
+share/icons/Adwaita/scalable/status/semi-starred-symbolic-rtl.svg
 share/icons/Adwaita/scalable/status/semi-starred-symbolic.svg
 share/icons/Adwaita/scalable/status/software-update-available-symbolic.svg
 share/icons/Adwaita/scalable/status/software-update-urgent-symbolic.svg
@@ -2647,6 +2654,7 @@ share/icons/Adwaita/scalable/status/user-away-symbolic.svg
 share/icons/Adwaita/scalable/status/user-busy-symbolic.svg
 share/icons/Adwaita/scalable/status/user-idle-symbolic.svg
 share/icons/Adwaita/scalable/status/user-invisible-symbolic.svg
+share/icons/Adwaita/scalable/status/user-not-tracked-symbolic.svg
 share/icons/Adwaita/scalable/status/user-offline-symbolic.svg
 share/icons/Adwaita/scalable/status/user-status-pending-symbolic.svg
 share/icons/Adwaita/scalable/status/user-trash-full-symbolic.svg
@@ -2663,5 +2671,34 @@ share/icons/Adwaita/scalable/status/weather-showers-scattered-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-showers-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-snow-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-storm-symbolic.svg
-@exec /usr/bin/find %%LOCALBASE%%/share/icons -type d -depth 1 -exec %D/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null || /usr/bin/true
-@unexec /usr/bin/find %%LOCALBASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true
+@dir share/locale/an/LC_MESSAGES
+@dir share/locale/as/LC_MESSAGES
+@dir share/locale/ast/LC_MESSAGES
+@dir share/locale/be@latin/LC_MESSAGES
+@dir share/locale/bn_IN/LC_MESSAGES
+@dir share/locale/ca@valencia/LC_MESSAGES
+@dir share/locale/crh/LC_MESSAGES
+@dir share/locale/csb/LC_MESSAGES
+@dir share/locale/dz/LC_MESSAGES
+@dir share/locale/en@shaw/LC_MESSAGES
+@dir share/locale/fur/LC_MESSAGES
+@dir share/locale/fy/LC_MESSAGES
+@dir share/locale/gd/LC_MESSAGES
+@dir share/locale/kk/LC_MESSAGES
+@dir share/locale/km/LC_MESSAGES
+@dir share/locale/ku/LC_MESSAGES
+@dir share/locale/mai/LC_MESSAGES
+@dir share/locale/mg/LC_MESSAGES
+@dir share/locale/mr/LC_MESSAGES
+@dir share/locale/nds/LC_MESSAGES
+@dir share/locale/nhn/LC_MESSAGES
+@dir share/locale/oc/LC_MESSAGES
+@dir share/locale/ps/LC_MESSAGES
+@dir share/locale/rw/LC_MESSAGES
+@dir share/locale/si/LC_MESSAGES
+@dir share/locale/sr@latin/LC_MESSAGES
+@dir share/locale/te/LC_MESSAGES
+@dir share/locale/ug/LC_MESSAGES
+@dir share/locale/uz@cyrillic/LC_MESSAGES
+@dir share/locale/xh/LC_MESSAGES
+@dir share/locale/zh_HK/LC_MESSAGES

@@ -37,6 +37,7 @@ libexec/gvfsd-dav
 %%AVAHI%%libexec/gvfsd-dnssd
 libexec/gvfsd-ftp
 %%FUSE%%libexec/gvfsd-fuse
+%%GOOGLE%%libexec/gvfsd-google
 %%GPHOTO2%%libexec/gvfsd-gphoto2
 libexec/gvfsd-http
 libexec/gvfsd-localtest
@@ -86,11 +87,11 @@ share/bash-completion/completions/gvfs-save
 share/bash-completion/completions/gvfs-set-attribute
 share/bash-completion/completions/gvfs-trash
 share/bash-completion/completions/gvfs-tree
-share/dbus-1/services/gvfs-daemon.service
-share/dbus-1/services/gvfs-metadata.service
-%%AFC%%share/dbus-1/services/org.gtk.Private.AfcVolumeMonitor.service
-%%GPHOTO2%%share/dbus-1/services/org.gtk.Private.GPhoto2VolumeMonitor.service
-%%HAL%%share/dbus-1/services/org.gtk.Private.HalVolumeMonitor.service
+share/dbus-1/services/org.gtk.vfs.Daemon.service
+share/dbus-1/services/org.gtk.vfs.Metadata.service
+%%AFC%%share/dbus-1/services/org.gtk.vfs.AfcVolumeMonitor.service
+%%GPHOTO2%%share/dbus-1/services/org.gtk.vfs.GPhoto2VolumeMonitor.service
+%%HAL%%share/dbus-1/services/org.gtk.vfs.HalVolumeMonitor.service
 %%AFC%%%%DATADIR%%/mounts/afc.mount
 share/gvfs/mounts/afp-browse.mount
 share/gvfs/mounts/afp.mount
@@ -102,6 +103,8 @@ share/gvfs/mounts/afp.mount
 %%AVAHI%%%%DATADIR%%/mounts/dav+sd.mount
 %%AVAHI%%%%DATADIR%%/mounts/dns-sd.mount
 %%DATADIR%%/mounts/ftp.mount
+%%DATADIR%%/mounts/ftps.mount
+%%GOOGLE%%%%DATADIR%%/mounts/google.mount
 %%GPHOTO2%%%%DATADIR%%/mounts/gphoto2.mount
 %%DATADIR%%/mounts/http.mount
 %%DATADIR%%/mounts/localtest.mount

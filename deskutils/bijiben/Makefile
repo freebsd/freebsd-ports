@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bijiben
-PORTVERSION=	3.16.2
+PORTVERSION=	3.18.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libtracker-control-1.0.so:${PORTSDIR}/sysutils/tracker \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake libtool \
+USES=		desktop-file-utils gettext gmake gnome libtool \
 		pathfix pkgconfig shared-mime-info tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	evolutiondataserver3 gnomedesktop3 gtk30 intlhack \

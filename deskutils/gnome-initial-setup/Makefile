@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-initial-setup
-PORTVERSION=	3.16.3
+PORTVERSION=	3.18.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,7 +20,7 @@ RUN_DEPENDS=	gdm>=3.0.0:${PORTSDIR}/x11/gdm
 
 PORTSCOUT=	limitw:1,even
 
-USES=		autoreconf compiler:c++11-lib gettext gmake libtool \
+USES=		autoreconf compiler:c++11-lib gettext gmake gnome libtool \
 		pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack
 USE_LDCONFIG=	yes

@@ -1,0 +1,5 @@
+libgames-support is a small library intended for internal use by GNOME Games,
+but it may be used by others. The API will only break with the major version
+number. The ABI is unstable.
+
+WWW: https://git.gnome.org/browse/libgames-support

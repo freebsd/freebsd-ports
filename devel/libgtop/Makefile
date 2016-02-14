@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgtop
-PORTVERSION=	2.31.90
+PORTVERSION=	2.32.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,7 +12,8 @@ COMMENT=	GNOME top library
 
 USE_PERL5=	build
 USE_XORG=	xau
-USES=		gettext gmake libtool makeinfo pathfix perl5 pkgconfig tar:xz
+USES=		gettext gmake gnome libtool makeinfo pathfix perl5 \
+		pkgconfig tar:xz
 USE_GNOME=	gnomeprefix glib20 intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
