@@ -63,6 +63,7 @@ man/man1/tentacle_server.1.gz
 %%DATADIR%%/util/pandora_revent.pl
 %%DATADIR%%/util/pandora_revent_create.pl
 %%DATADIR%%/util/pandora_server
+%%DATADIR%%/util/pandora_server_logrotate
 %%DATADIR%%/util/pandora_snmp.README
 %%DATADIR%%/util/pandora_snmp.sh
 %%DATADIR%%/util/pandora_sync_db.pl
