@@ -57,6 +57,42 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3aa8b781-d2c4-11e5-b2bd-002590263bf5">
+    <topic>horde -- XSS vulnerabilies</topic>
+    <affects>
+      <package>
+	<name>horde</name>
+	<range><lt>5.2.9</lt></range>
+      </package>
+      <package>
+	<name>pear-Horde_Core</name>
+	<range><lt>2.22.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Horde Team reports:</p>
+	<blockquote cite="http://lists.horde.org/archives/announce/2016/001149.html">
+	  <p>Fixed XSS vulnerabilities in menu bar and form renderer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8807</cvename>
+      <cvename>CVE-2016-2228</cvename>
+      <url>https://github.com/horde/horde/commit/11d74fa5a22fe626c5e5a010b703cd46a136f253</url>
+      <url>https://bugs.horde.org/ticket/14213</url>
+      <url>https://github.com/horde/horde/commit/f03301cf6edcca57121a15e80014c4d0f29d99a0</url>
+      <url>https://github.com/horde/horde/commit/ab07a1b447de34e13983b4d7ceb18b58c3a358d8</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/02/06/4</url>
+      <url>http://lists.horde.org/archives/announce/2016/001149.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-02</discovery>
+      <entry>2016-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e8b6605b-d29f-11e5-8458-6cc21735f730">
     <topic>PostgreSQL -- Security Fixes for Regular Expressions, PL/Java.</topic>
     <affects>
