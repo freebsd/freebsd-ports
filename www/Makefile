@@ -489,7 +489,6 @@
     SUBDIR += mod_myvhost
     SUBDIR += mod_ntlm2
     SUBDIR += mod_perl2
-    SUBDIR += mod_php5
     SUBDIR += mod_php55
     SUBDIR += mod_php56
     SUBDIR += mod_proctitle
@@ -1433,7 +1432,6 @@
     SUBDIR += pecl-varnish
     SUBDIR += pecl-yaf
     SUBDIR += pecl-yar
-    SUBDIR += pecl-zendopcache
     SUBDIR += perlbal
     SUBDIR += pglogd
     SUBDIR += phalcon
@@ -1441,8 +1439,6 @@
     SUBDIR += php-plurk-api
     SUBDIR += php-screw
     SUBDIR += php-templates
-    SUBDIR += php5-session
-    SUBDIR += php5-tidy
     SUBDIR += php55-opcache
     SUBDIR += php55-session
     SUBDIR += php55-tidy

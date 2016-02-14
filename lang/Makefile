@@ -245,8 +245,6 @@
     SUBDIR += pharo
     SUBDIR += phc
     SUBDIR += php-mode.el
-    SUBDIR += php5
-    SUBDIR += php5-extensions
     SUBDIR += php55
     SUBDIR += php55-extensions
     SUBDIR += php56
