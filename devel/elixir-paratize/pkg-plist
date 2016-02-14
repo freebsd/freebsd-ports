@@ -1,4 +1,3 @@
-lib/elixir/lib/paratize/ebin/Elixir.Collectable.Paratize.TaskOptions.beam
 lib/elixir/lib/paratize/ebin/Elixir.Paratize.Base.beam
 lib/elixir/lib/paratize/ebin/Elixir.Paratize.Chunk.beam
 lib/elixir/lib/paratize/ebin/Elixir.Paratize.Pool.beam
