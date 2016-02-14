@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.9.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -245,10 +246,12 @@ SUB_LIST+=	WWWOWN=${WWWOWN} \
 		NGINX_TMPDIR=${NGINX_TMPDIR}
 
 HAS_CONFIGURE=	yes
+MODULESDIR=	${ETCDIR}/modules
 CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--with-cc-opt="-I ${LOCALBASE}/include" \
 		--with-ld-opt="-L ${LOCALBASE}/lib" \
 		--conf-path=${ETCDIR}/nginx.conf \
+		--modules-path=${MODULESDIR} \
 		--sbin-path=${PREFIX}/sbin/nginx \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
 		--error-log-path=${NGINX_ERRORLOG} \
@@ -454,7 +457,7 @@ CONFIGURE_ARGS+=--with-http_flv_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_GEOIP}
-CONFIGURE_ARGS+=--with-http_geoip_module
+CONFIGURE_ARGS+=--with-http_geoip_module=dynamic
 LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 .endif
 
@@ -468,7 +471,7 @@ CONFIGURE_ARGS+=--with-http_gunzip_module
 
 .if ${PORT_OPTIONS:MHTTP_IMAGE_FILTER}
 LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
-CONFIGURE_ARGS+=--with-http_image_filter_module
+CONFIGURE_ARGS+=--with-http_image_filter_module=dynamic
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_MP4}
@@ -612,7 +615,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-goodies-nginx-sticky-module-ng-c825
 
 .if ${PORT_OPTIONS:MHTTP_XSLT}
 USE_GNOME+=	libxml2 libxslt
-CONFIGURE_ARGS+=--with-http_xslt_module
+CONFIGURE_ARGS+=--with-http_xslt_module=dynamic
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_ZIP}
@@ -878,7 +881,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_njs}/nginx
 .endif
 
 .if ${PORT_OPTIONS:MSTREAM}
-CONFIGURE_ARGS+=--with-stream
+CONFIGURE_ARGS+=--with-stream=dynamic
 .if ${PORT_OPTIONS:MSTREAM_SSL}
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
@@ -902,7 +905,7 @@ PLIST_SUB+=	WWWDATA="@comment "
 .endif		# WITH_HTTP
 
 .if ${PORT_OPTIONS:MMAIL}
-CONFIGURE_ARGS+=--with-mail
+CONFIGURE_ARGS+=--with-mail=dynamic
 .if empty(PORT_OPTIONS:MMAIL_IMAP)
 CONFIGURE_ARGS+=--without-mail_imap_module
 .endif
@@ -1096,6 +1099,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${MODULESDIR}
 	${MKDIR} ${STAGEDIR}${NGINX_TMPDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${STAGEDIR}${PREFIX}/sbin
 .for i in koi-utf koi-win win-utf
@@ -1120,6 +1124,10 @@ do-install:
 		${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/
 .endif
 
+# Install dynamic modules
+	(cd ${WRKSRC}/objs/ && ${FIND} . -name '*.so' -maxdepth 1 -type f \
+		-exec ${INSTALL_PROGRAM} "{}" ${STAGEDIR}${MODULESDIR} \;)
+
 .if ${PORT_OPTIONS:MNAXSI}
 	${INSTALL_DATA} \
 	${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_config/naxsi_core.rules \
@@ -1136,5 +1144,9 @@ post-install:
 .if ${PORT_OPTIONS:MNAXSI}
 	${ECHO_CMD} etc/nginx/naxsi_core.rules >> ${TMPPLIST}
 .endif
+
+# Add dynamic modules to the plist
+	(cd ${STAGEDIR}${PREFIX} && ${FIND} ${MODULESDIR:S|${PREFIX}/||} \
+		! -type d >> ${TMPPLIST})
 
 .include <bsd.port.mk>
