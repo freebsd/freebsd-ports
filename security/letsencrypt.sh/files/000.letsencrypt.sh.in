@@ -8,9 +8,17 @@ then
     source_periodic_confs
 fi
 
-case "$monthly_letsencrypt_enable" in
+case "$weekly_letsencrypt_enable" in
     [Yy][Ee][Ss])
-	%%PREFIX%%/bin/letsencrypt.sh -c
+	if [ -z "$weekly_letsencrypt_user" ]
+	then
+		%%PREFIX%%/bin/letsencrypt.sh -c
+	else
+		su -m "$weekly_letsencrypt_user" -c '%%PREFIX%%/bin/letsencrypt.sh -c'
+	fi
+	if [ -x "$weekly_letsencrypt_deployscript" ]
+		$weekly_letsencrypt_deployscript
+	fi
         ;;
     *)
         ;;

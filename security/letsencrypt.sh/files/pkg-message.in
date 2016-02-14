@@ -10,5 +10,13 @@ it missing.
 In order to run the script regularly to update
 the certificates add this line to /etc/periodic.conf
 
-monthly_letsencrypt_enable="YES"
+weekly_letsencrypt_enable="YES"
+
+Additionally the following parameters can be added to
+/etc/periodic.conf
+
+To run the certification renenewal as a different user
+weekly_letsencrypt_user="_letsencrypt"
+To run a script after the renewal (as root)
+weekly_letsencrypt_deployscript="%%PREFIX%%/etc/%%PORTNAME%%/deploy.sh"
 
