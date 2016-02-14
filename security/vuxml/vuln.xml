@@ -11174,6 +11174,10 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<blockquote cite="http://www.openssh.com/txt/release-7.0">
+	  <p>OpenSSH 6.8 and 6.9 incorrectly set TTYs to be world-writable.
+	    Local attackers may be able to write arbitrary messages to
+	    logged-in users, including terminal escape sequences. Reported
+	    by Nikolay Edigaryev.</p>
 	  <p>Fixed a privilege separation
 	    weakness related to PAM support. Attackers who could successfully
 	    compromise the pre-authentication process for remote code
@@ -11188,11 +11192,14 @@ Notes:
     </description>
     <references>
       <url>http://www.openssh.com/txt/release-7.0</url>
+      <cvename>CVE-2015-6563</cvename>
+      <cvename>CVE-2015-6564</cvename>
+      <cvename>CVE-2015-6565</cvename>
     </references>
     <dates>
       <discovery>2015-08-11</discovery>
       <entry>2015-08-21</entry>
-      <modified>2016-01-15</modified>
+      <modified>2016-02-14</modified>
     </dates>
   </vuln>
 
