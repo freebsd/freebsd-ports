@@ -67,7 +67,6 @@
     SUBDIR += symports
     SUBDIR += synth
     SUBDIR += tinderbox
-    SUBDIR += tinderbox-devel
     SUBDIR += wanted-ports
     SUBDIR += xps
 
