@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
+CONFLICTS=	cups-filters-1.8*
+
 USES=		autoreconf ghostscript perl5 pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \

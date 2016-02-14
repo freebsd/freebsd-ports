@@ -22,6 +22,8 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libpoppler.so:${PORTSDIR}/graphics/poppler
 
+CONFLICTS=	foomatic-filters-4*
+
 USES=		compiler:c++11-lib cpe ghostscript gmake jpeg libtool pathfix \
 		pkgconfig shebangfix tar:xz
 CPE_VENDOR=	linuxfoundation
