@@ -70,11 +70,11 @@ Notes:
 	<p>Nghttp2 reports:</p>
 	<blockquote cite="https://nghttp2.org/blog/2016/02/11/nghttp2-v1-7-1/">
 	  <p>Out of memory in nghttpd, nghttp, and libnghttp2_asio applications
-	  due to unlimited incoming HTTP header fields.</p>
+	   due to unlimited incoming HTTP header fields.</p>
 	  <p>nghttpd, nghttp, and libnghttp2_asio applications do not limit the memory usage
-	  for the incoming HTTP header field. If peer sends specially crafted HTTP/2
-	  HEADERS frames and CONTINUATION frames, they will crash with out of memory
-	  error.</p>
+	   for the incoming HTTP header field. If peer sends specially crafted HTTP/2
+	   HEADERS frames and CONTINUATION frames, they will crash with out of memory
+	   error.</p>
 	  <p>Note that libnghttp2 itself is not affected by this vulnerability.</p>
 	</blockquote>
       </body>
@@ -158,16 +158,16 @@ Notes:
 	  </p>
 	  <ul>
 	    <li>CVE-2016-0773: This release closes security hole CVE-2016-0773,
-	    an issue with regular expression (regex) parsing. Prior code allowed
-	    users to pass in expressions which included out-of-range Unicode
-	    characters, triggering a backend crash.  This issue is critical for
-	    PostgreSQL systems with untrusted users or which generate regexes
-	    based on user input.
+	     an issue with regular expression (regex) parsing. Prior code allowed
+	     users to pass in expressions which included out-of-range Unicode
+	     characters, triggering a backend crash.  This issue is critical for
+	     PostgreSQL systems with untrusted users or which generate regexes
+	     based on user input.
 	    </li>
 	    <li>CVE-2016-0766: The update also fixes CVE-2016-0766, a privilege
-	    escalation issue for users of PL/Java.  Certain custom configuration
-	    settings (GUCS) for PL/Java will now be modifiable only by the
-	    database superuser
+	     escalation issue for users of PL/Java.  Certain custom configuration
+	     settings (GUCS) for PL/Java will now be modifiable only by the
+	     database superuser
 	    </li>
 	  </ul>
 	</blockquote>
