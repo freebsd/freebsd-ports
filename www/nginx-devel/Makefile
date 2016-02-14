@@ -429,11 +429,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_dav_ext}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_EVAL}
-NGINX_EVAL_VERSION=	1.0.3
-GH_ACCOUNT+=	vkholodkov:eval
+NGINX_EVAL_VERSION=	342c812
+GH_ACCOUNT+=	openresty:eval
 GH_PROJECT+=	nginx-eval-module:eval
 GH_TAGNAME+=	${NGINX_EVAL_VERSION}:eval
-CONFIGURE_ARGS+=--add-module=${WRKSRC_eval}
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_eval}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_FANCYINDEX}
@@ -680,11 +680,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	0.10.0
+NGINX_LUA_VERSION=	7410339
 GH_ACCOUNT+=	openresty:lua
 GH_PROJECT+=	lua-nginx-module:lua
-GH_TAGNAME+=	v${NGINX_LUA_VERSION}:lua
-CONFIGURE_ARGS+=--add-module=${WRKSRC_lua}
+GH_TAGNAME+=	${NGINX_LUA_VERSION}:lua
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_lua}
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
@@ -1022,14 +1022,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!--std=c99!-DMONGO_HAVE_STDINT!' \
 		${WRKSRC_gridfs}/config
-.endif
-.if ${PORT_OPTIONS:MLUA}
-	@${REINPLACE_CMD} \
-		's!ngx_udp_connection_t!ngx_resolver_connection_t!g; \
-		s!udp_connections!connections!g; \
-		s!udp_connection.connection!udp_connection.udp!g; \
-		s!uc->connection!uc->udp!g' \
-		${WRKSRC_lua}/src/ngx_http_lua_socket_udp.*
 .endif
 .if ${PORT_OPTIONS:MPASSENGER}
 	@${REINPLACE_CMD} \
