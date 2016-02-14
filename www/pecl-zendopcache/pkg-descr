@@ -1,7 +1,0 @@
-The Zend OPcache provides faster PHP execution through opcode caching and
-optimization. It improves PHP performance by storing precompiled script
-bytecode in the shared memory. This eliminates the stages of reading code from
-the disk and compiling it on future access. In addition, it applies a few
-bytecode optimization patterns that make code execution faster.
-
-WWW: https://github.com/zend-dev/ZendOptimizerPlus

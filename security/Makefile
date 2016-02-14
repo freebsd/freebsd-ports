@@ -752,10 +752,6 @@
     SUBDIR += pgpgpg
     SUBDIR += pgpin
     SUBDIR += php-suhosin
-    SUBDIR += php5-filter
-    SUBDIR += php5-hash
-    SUBDIR += php5-mcrypt
-    SUBDIR += php5-openssl
     SUBDIR += php55-filter
     SUBDIR += php55-hash
     SUBDIR += php55-mcrypt
