@@ -428,6 +428,7 @@ share/help/zh_CN/iagno/translate.page
 %%DATADIR%%/themes/svg/black_and_white.svg
 %%DATADIR%%/themes/svg/high_contrast.svg
 %%DATADIR%%/themes/svg/sun_and_star.svg
+%%DATADIR%%/themes/key/sun_and_star.theme
 share/icons/hicolor/16x16/apps/iagno.png
 share/icons/hicolor/22x22/apps/iagno.png
 share/icons/hicolor/24x24/apps/iagno.png
@@ -466,6 +467,7 @@ share/locale/eu/LC_MESSAGES/iagno.mo
 share/locale/fa/LC_MESSAGES/iagno.mo
 share/locale/fi/LC_MESSAGES/iagno.mo
 share/locale/fr/LC_MESSAGES/iagno.mo
+share/locale/fur/LC_MESSAGES/iagno.mo
 share/locale/ga/LC_MESSAGES/iagno.mo
 share/locale/gl/LC_MESSAGES/iagno.mo
 share/locale/gu/LC_MESSAGES/iagno.mo

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-devel-docs
-PORTVERSION=	3.16.2
-PORTREVISION=	1
+PORTVERSION=	3.18.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,7 +14,7 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext-tools gmake pkgconfig shebangfix tar:xz
+USES=		gettext-tools gmake gnome pkgconfig shebangfix tar:xz
 SHEBANG_LANG=	gjs
 gjs_OLD_CMD=	/usr/bin/gjs
 gjs_CMD=	${LOCALBASE}/bin/gjs

@@ -37,7 +37,6 @@ include/libgtop-2.0/glibtop/sysdeps.h
 include/libgtop-2.0/glibtop/sysinfo.h
 include/libgtop-2.0/glibtop/union.h
 include/libgtop-2.0/glibtop/uptime.h
-include/libgtop-2.0/glibtop/version.h
 include/libgtop-2.0/glibtop_machine.h
 include/libgtop-2.0/glibtop_server.h
 include/libgtop-2.0/glibtop_suid.h

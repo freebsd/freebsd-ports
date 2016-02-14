@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdl
-PORTVERSION=	3.16.0
+PORTVERSION=	3.18.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 PORTSCOUT=	limitw:1,even
 
 USE_GNOME=	gtk30 intlhack introspection:build
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

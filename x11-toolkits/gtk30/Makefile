@@ -4,8 +4,8 @@
 # adwaita-icon-theme, gnome-themes-standard and mate-themes
 
 PORTNAME=	gtk
-PORTVERSION=	3.16.7
-PORTREVISION?=	2
+PORTVERSION=	3.18.7
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	3
@@ -34,9 +34,8 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk gdkpixbuf2 introspection:build pango
-#gtk-update-icon-cache \
-#		introspection:build pango
-USES+=		gettext gmake libtool pathfix perl5 pkgconfig
+#gtk-update-icon-cache
+USES+=		gettext gmake gnome libtool pathfix perl5 pkgconfig
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
 CONFIGURE_ARGS=	--enable-x11-backend \
@@ -47,7 +46,7 @@ LIBS+=		-L${LOCALBASE}/lib
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
-LIBVERSION=	0.1600.7
+LIBVERSION=	0.1800.7
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
@@ -55,7 +54,7 @@ GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.Debug.gschema.xml \
 		org.gtk.Settings.FileChooser.gschema.xml
 
-OPTIONS_DEFINE=	CUPS CLOUDPRINT COLORD DEBUG BROADWAY TYPEAHEAD
+OPTIONS_DEFINE=	CUPS CLOUDPRINT COLORD DEBUG BROADWAY
 OPTIONS_DEFAULT=CUPS COLORD BROADWAY
 OPTIONS_SUB=	yes
 
@@ -75,11 +74,6 @@ CLOUDPRINT_LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/devel/librest \
 			libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
 DEBUG_CONFIGURE_ENABLE=debug
-
-# GTK+ 3.17 has a beter way
-TYPEAHEAD_DESC=		Re-enable type-a-head functionality in file chooser
-TYPEAHEAD_EXTRA_PATCHES=${FILESDIR}/extra-gtk_gtkfilechooserwidget.c \
-		${FILESDIR}/extra-gtk_ui_gtkfilechooserwidget.ui
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \

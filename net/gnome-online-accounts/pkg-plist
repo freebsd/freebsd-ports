@@ -34,6 +34,7 @@ share/icons/hicolor/16x16/apps/goa-account-facebook.png
 share/icons/hicolor/16x16/apps/goa-account-flickr.png
 share/icons/hicolor/16x16/apps/goa-account-foursquare.png
 share/icons/hicolor/16x16/apps/goa-account-google.png
+share/icons/hicolor/16x16/apps/goa-account-msn.png
 share/icons/hicolor/16x16/apps/goa-account-owncloud.png
 share/icons/hicolor/16x16/apps/goa-account-pocket.png
 share/icons/hicolor/16x16/apps/goa-account.png
@@ -62,6 +63,7 @@ share/icons/hicolor/22x22/apps/goa-account-facebook.png
 share/icons/hicolor/22x22/apps/goa-account-flickr.png
 share/icons/hicolor/22x22/apps/goa-account-foursquare.png
 share/icons/hicolor/22x22/apps/goa-account-google.png
+share/icons/hicolor/22x22/apps/goa-account-msn.png
 share/icons/hicolor/22x22/apps/goa-account-owncloud.png
 share/icons/hicolor/22x22/apps/goa-account-pocket.png
 share/icons/hicolor/22x22/apps/goa-account.png
@@ -90,6 +92,7 @@ share/icons/hicolor/24x24/apps/goa-account-facebook.png
 share/icons/hicolor/24x24/apps/goa-account-flickr.png
 share/icons/hicolor/24x24/apps/goa-account-foursquare.png
 share/icons/hicolor/24x24/apps/goa-account-google.png
+share/icons/hicolor/24x24/apps/goa-account-msn.png
 share/icons/hicolor/24x24/apps/goa-account-owncloud.png
 share/icons/hicolor/24x24/apps/goa-account-pocket.png
 share/icons/hicolor/24x24/apps/goa-account.png
@@ -118,6 +121,7 @@ share/icons/hicolor/32x32/apps/goa-account-facebook.png
 share/icons/hicolor/32x32/apps/goa-account-flickr.png
 share/icons/hicolor/32x32/apps/goa-account-foursquare.png
 share/icons/hicolor/32x32/apps/goa-account-google.png
+share/icons/hicolor/32x32/apps/goa-account-msn.png
 share/icons/hicolor/32x32/apps/goa-account-owncloud.png
 share/icons/hicolor/32x32/apps/goa-account-pocket.png
 share/icons/hicolor/32x32/apps/goa-account.png
@@ -145,6 +149,7 @@ share/icons/hicolor/48x48/apps/goa-account-facebook.png
 share/icons/hicolor/48x48/apps/goa-account-flickr.png
 share/icons/hicolor/48x48/apps/goa-account-foursquare.png
 share/icons/hicolor/48x48/apps/goa-account-google.png
+share/icons/hicolor/48x48/apps/goa-account-msn.png
 share/icons/hicolor/48x48/apps/goa-account-owncloud.png
 share/icons/hicolor/48x48/apps/goa-account-pocket.png
 share/icons/hicolor/48x48/apps/goa-account.png
@@ -172,6 +177,8 @@ share/icons/hicolor/48x48/apps/im-zephyr.png
 share/icons/hicolor/96x96/apps/goa-account-facebook.png
 share/icons/hicolor/96x96/apps/goa-account-flickr.png
 share/icons/hicolor/96x96/apps/goa-account-foursquare.png
+share/icons/hicolor/96x96/apps/goa-account-google.png
+share/icons/hicolor/96x96/apps/goa-account-msn.png
 share/icons/hicolor/96x96/apps/goa-account-owncloud.png
 share/icons/hicolor/96x96/apps/goa-account-pocket.png
 share/icons/hicolor/96x96/apps/goa-account.png

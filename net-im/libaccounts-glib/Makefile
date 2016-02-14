@@ -31,4 +31,8 @@ INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix pkgconfig python
 USE_GNOME=	pygobject3 introspection libxml2
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror||g' \
+		${WRKSRC}/libaccounts-glib/Makefile.in
+
 .include <bsd.port.mk>

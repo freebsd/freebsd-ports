@@ -6,7 +6,12 @@ driver the user needs to have read/write permissions on
 /dev/dri/cardN (usually N=0). If gnome-shell is launched from gdm, the
 gdm user also needs this access.
 
-Access can be granted by adding the user(s) to the wheel group or using
-a devfs.rules(5) to change the mode of the /dev/dri/card0 on creation. 
+Access can be granted by adding the user(s) to the video group.
 
-	add path 'dri/*' mode 0666 group operator
+Additional for FreeBSD versions before FreeBSD 11.0-CURRENT revision
+286524. And any FreeBSD 10.x version and FreeBSD 9.3-Release.
+
+By using a devfs.rules(5) to change the mode of the /dev/dri/card0 on creation.
+
+	add path 'dri/*' mode 0666 group video
+

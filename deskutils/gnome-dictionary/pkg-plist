@@ -1,6 +1,7 @@
 bin/gnome-dictionary
 include/gdict-1.0/gdict/gdict-client-context.h
 include/gdict-1.0/gdict/gdict-context.h
+include/gdict-1.0/gdict/gdict-database-chooser-button.h
 include/gdict-1.0/gdict/gdict-database-chooser.h
 include/gdict-1.0/gdict/gdict-defbox.h
 include/gdict-1.0/gdict/gdict-enum-types.h
@@ -14,8 +15,8 @@ include/gdict-1.0/gdict/gdict-version.h
 include/gdict-1.0/gdict/gdict.h
 lib/girepository-1.0/Gdict-1.0.typelib
 lib/libgdict-1.0.so
-lib/libgdict-1.0.so.8
-lib/libgdict-1.0.so.8.1.0
+lib/libgdict-1.0.so.10
+lib/libgdict-1.0.so.10.0.0
 libdata/pkgconfig/gdict-1.0.pc
 man/man1/gnome-dictionary.1.gz
 share/appdata/org.gnome.Dictionary.appdata.xml
@@ -47,7 +48,6 @@ share/gtk-doc/html/gdict/gdict.html
 share/gtk-doc/html/gdict/gdictui.html
 share/gtk-doc/html/gdict/home.png
 share/gtk-doc/html/gdict/index.html
-share/gtk-doc/html/gdict/index.sgml
 share/gtk-doc/html/gdict/introduction.html
 share/gtk-doc/html/gdict/ix01.html
 share/gtk-doc/html/gdict/ix02.html
@@ -586,7 +586,6 @@ share/locale/hi/LC_MESSAGES/gnome-dictionary.mo
 share/locale/hr/LC_MESSAGES/gnome-dictionary.mo
 share/locale/hu/LC_MESSAGES/gnome-dictionary.mo
 share/locale/id/LC_MESSAGES/gnome-dictionary.mo
-share/locale/is/LC_MESSAGES/gnome-dictionary.mo
 share/locale/it/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ja/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ka/LC_MESSAGES/gnome-dictionary.mo

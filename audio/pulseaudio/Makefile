@@ -5,8 +5,7 @@
 # PORTREVISION bumps of depending ports.
 
 PORTNAME=	pulseaudio
-PORTVERSION=	6.0
-PORTREVISION=	2
+PORTVERSION=	8.0
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -29,8 +28,8 @@ LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 USE_GNOME=	glib20 intltool
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
-USES=		cpe execinfo gettext gmake libtool pathfix pkgconfig \
-		shebangfix tar:xz
+USES=		cpe compiler:c11 execinfo gettext gmake gnome libtool \
+		pathfix pkgconfig shebangfix tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread" \
 		OPENSSL_CFLAGS="-I/usr/include" \
@@ -75,7 +74,7 @@ SIMD_CONFIGURE_ENABLE=	orc
 SIMD_LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
 ZSH_CONFIGURE_OFF=	--without-zsh-completion-dir
 
-PULSE_VERSION=	${PORTVERSION}
+PULSE_VERSION=	${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PLIST_SUB=	PULSE_VERSION=${PULSE_VERSION}
 
 post-patch:
@@ -91,7 +90,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
 		${STAGEDIR}${PREFIX}/etc/pulse/${ii}.sample
 .endfor
+
 post-install-BASH-off:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	@${RM} -rf ${STAGEDIR}${PREFIX}/share/bash-completion
 
 .include <bsd.port.mk>
