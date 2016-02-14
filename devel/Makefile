@@ -42,6 +42,7 @@
     SUBDIR += R-cran-reshape2
     SUBDIR += R-cran-rngtools
     SUBDIR += R-cran-rstudioapi
+    SUBDIR += R-cran-tidyr
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += aarch64-binutils
