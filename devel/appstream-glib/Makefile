@@ -4,7 +4,8 @@
 PORTNAME=	appstream-glib
 PORTVERSION=	0.5.7
 CATEGORIES=	devel
-MASTER_SITES=	http://people.freedesktop.org/~hughsient/appstream-glib/releases/
+#MASTER_SITES=	http://people.freedesktop.org/~hughsient/appstream-glib/releases/
+MASTER_SITES=	http://rainbow-runner.nl/freebsd/
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
