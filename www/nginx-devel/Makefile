@@ -399,19 +399,19 @@ USE_OPENSSL_PORT=	yes
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
-NGINX_ECHO_VERSION=	0.57
+NGINX_ECHO_VERSION=	4f7aa50
 GH_ACCOUNT+=	openresty:echo
 GH_PROJECT+=	echo-nginx-module:echo
-GH_TAGNAME+=	v${NGINX_ECHO_VERSION}:echo
-CONFIGURE_ARGS+=--add-module=${WRKSRC_echo}
+GH_TAGNAME+=	${NGINX_ECHO_VERSION}:echo
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_echo}
 .endif
 
 .if ${PORT_OPTIONS:MHEADERS_MORE}
-NGINX_HEADERS_MORE_VERSION=	0.261
+NGINX_HEADERS_MORE_VERSION=	f5559ec
 GH_ACCOUNT+=	openresty:headers_more
 GH_PROJECT+=	headers-more-nginx-module:headers_more
-GH_TAGNAME+=	v${NGINX_HEADERS_MORE_VERSION}:headers_more
-CONFIGURE_ARGS+=--add-module=${WRKSRC_headers_more}
+GH_TAGNAME+=	${NGINX_HEADERS_MORE_VERSION}:headers_more
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_headers_more}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_DAV} || defined(USE_HTTP_DAV)
@@ -782,12 +782,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_rtmp}
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
-NGINX_SET_MISC_VERSION=	0.29
+NGINX_SET_MISC_VERSION=	6582fb4
 GH_ACCOUNT+=	openresty:setmisc
 GH_PROJECT+=	set-misc-nginx-module:setmisc
-GH_TAGNAME+=	v${NGINX_SET_MISC_VERSION}:setmisc
-CONFIGURE_ARGS+=--add-module=${WRKSRC_setmisc}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-set-misc-nginx-module-config
+GH_TAGNAME+=	${NGINX_SET_MISC_VERSION}:setmisc
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_setmisc}
 .endif
 
 .if ${PORT_OPTIONS:MSFLOW}
