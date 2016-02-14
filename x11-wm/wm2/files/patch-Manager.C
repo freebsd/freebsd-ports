@@ -1,6 +1,6 @@
---- Manager.C.orig	Fri Mar 21 12:12:30 1997
-+++ Manager.C	Tue Jan 28 17:45:03 2003
-@@ -368,7 +368,7 @@
+--- Manager.C.orig	1997-03-21 11:12:30 UTC
++++ Manager.C
+@@ -368,7 +368,7 @@ Time WindowManager::timestamp(Boolean re
      return m_currentTime;
  }
  
