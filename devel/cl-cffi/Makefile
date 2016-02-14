@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cffi
-PORTVERSION=	0.14.0
+PORTVERSION=	0.16.1
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://common-lisp.net/project/cffi/releases/:src \
 		http://olgeni.olgeni.com/~olgeni/cffi/${PORTVERSION}/:doc
@@ -47,7 +47,7 @@ do-install:
 	@${LN} -sf ${ASDF_PATHNAME}/cffi.asd ${ASDF_PATHNAME}/cffi-uffi-compat.asd \
 		${ASDF_PATHNAME}/cffi-grovel.asd ${STAGEDIR}${ASDF_REGISTRY}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 .for FILE in shareable-vectors.txt allegro-internals.txt mem-vector.txt
 	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
