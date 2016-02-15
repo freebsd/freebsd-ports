@@ -12,7 +12,8 @@
 # # optional
 # quasselcore_data="/var/db/quasselcore"
 # quasselcore_log="/var/log/quasselcore.log"
-# quasselcore_args="--configdir=${quasselcore_data} --logfile=${quasselcore_log}"
+# quasselcore_listen="0.0.0.0,::"
+# quasselcore_args="--configdir=${quasselcore_data} --logfile=${quasselcore_log} --listen=${quasselcore_listen}"
 # quasselcore_user="quasselcore"
 # quasselcore_group="quasselcore"
 
@@ -26,7 +27,8 @@ load_rc_config ${name}
 : ${quasselcore_enable:="NO"}
 : ${quasselcore_data="/var/db/quasselcore"}
 : ${quasselcore_log="/var/log/quasselcore.log"}
-: ${quasselcore_args="--configdir=${quasselcore_data} --logfile=${quasselcore_log}"}
+: ${quasselcore_listen="0.0.0.0,::"}
+: ${quasselcore_args="--configdir=${quasselcore_data} --logfile=${quasselcore_log} --listen=${quasselcore_listen}"}
 : ${quasselcore_user="quasselcore"}
 : ${quasselcore_group="${quasselcore_user}"}
 
