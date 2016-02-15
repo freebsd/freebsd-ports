@@ -1,6 +1,6 @@
 bin/foomatic-rip
 @sample etc/foomatic/filter.conf.sample
-libexec/cups/backend/beh
+libexec/cups/backend/foomatic-beh
 libexec/cups/filter/foomatic-rip
 lib/ppr/interfaces/foomatic-rip
 lib/ppr/lib/foomatic-rip
