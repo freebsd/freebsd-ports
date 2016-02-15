@@ -17,6 +17,7 @@ case "$weekly_letsencrypt_enable" in
 		su -m "$weekly_letsencrypt_user" -c '%%PREFIX%%/bin/letsencrypt.sh -c'
 	fi
 	if [ -x "$weekly_letsencrypt_deployscript" ]
+	then
 		$weekly_letsencrypt_deployscript
 	fi
         ;;
