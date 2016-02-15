@@ -2,6 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	13.7.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:main,g729
 MASTER_SITE_SUBDIR=	asterisk/:main \
@@ -247,9 +248,6 @@ post-patch:
 .else
 	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/%%LIBSYSINFO%%/d' ${WRKSRC}/main/Makefile
-.endif
-.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1000015 && !(defined(WITH_OPENSSL_PORT) || (!defined(WITH_OPENSSL_BASE) && exists(${LOCALBASE}/lib/libcrypto.so))))
-	@${REINPLACE_CMD} -e 's/SSL_OP_NO_TLSv1[_12]*;/0;/' ${WRKSRC}/main/tcptls.c
 .endif
 
 .if exists(${FILESDIR}/.asterisk.makeopts)

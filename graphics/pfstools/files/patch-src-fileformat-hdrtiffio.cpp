@@ -1,6 +1,6 @@
---- src/fileformat/hdrtiffio.cpp.orig	2011-10-27 08:39:07.000000000 +0000
-+++ src/fileformat/hdrtiffio.cpp	2014-02-20 19:04:01.546588828 +0000
-@@ -66,7 +66,7 @@
+--- src/fileformat/hdrtiffio.cpp.orig	2011-10-27 08:39:07 UTC
++++ src/fileformat/hdrtiffio.cpp
+@@ -66,7 +66,7 @@ HDRTiffReader::HDRTiffReader( const char
    }
  
    DEBUG_STR << "TIFF file \"" << filename << "\" ("
@@ -9,7 +9,7 @@
  
  	//--- image parameters
    if(!TIFFGetField(tif, TIFFTAG_COMPRESSION, &comp)) // compression type
-@@ -81,7 +81,7 @@
+@@ -81,7 +81,7 @@ HDRTiffReader::HDRTiffReader( const char
    switch(phot)
    {
      case PHOTOMETRIC_LOGLUV:
@@ -18,7 +18,7 @@
        if (comp != COMPRESSION_SGILOG && comp != COMPRESSION_SGILOG24)
        {
  	TIFFClose(tif);
-@@ -96,7 +96,7 @@
+@@ -96,7 +96,7 @@ HDRTiffReader::HDRTiffReader( const char
        relative_values=true;
        break;
      case PHOTOMETRIC_RGB:
@@ -27,7 +27,7 @@
       // read extra samples (# of alpha channels)
        if (TIFFGetField( tif, TIFFTAG_EXTRASAMPLES,
                          &extra_samples_per_pixel, &extra_sample_types )!=1)
-@@ -121,36 +121,36 @@
+@@ -121,36 +121,36 @@ HDRTiffReader::HDRTiffReader( const char
        if( bps==8 )
        {
  	TypeOfData = BYTE;
@@ -70,7 +70,7 @@
  	TIFFClose(tif);
  	throw pfs::Exception("TIFF: unsupported bits per sample for "
  			     "grayscale image.");
-@@ -160,7 +160,7 @@
+@@ -160,7 +160,7 @@ HDRTiffReader::HDRTiffReader( const char
        relative_values=true;
        break;
      default:
@@ -79,7 +79,7 @@
        TIFFClose(tif);
        strcpy(format_string,"unknown");
        relative_values=false;
-@@ -184,12 +184,12 @@
+@@ -184,12 +184,12 @@ void HDRTiffReader::readImage( pfs::Arra
    //--- image length
    uint32 imagelength;
    TIFFGetField(tif, TIFFTAG_IMAGELENGTH, &imagelength);

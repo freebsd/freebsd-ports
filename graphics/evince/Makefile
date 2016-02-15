@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evince
-PORTVERSION=	3.16.1
-PORTREVISION?=	3
+PORTVERSION=	3.18.2
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -24,8 +23,8 @@ RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 PORTSCOUT=	limitw:1,even
 SLAVEPORT?=	no
 
-USES=		compiler:c++11-lib desktop-file-utils gettext gmake libtool \
-		pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib desktop-file-utils gettext gmake \
+		gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

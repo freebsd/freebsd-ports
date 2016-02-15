@@ -1,3 +1,4 @@
+share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/CoverflowAltTab.pot
 share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/config.js
 share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/coverflowSwitcher.js
 share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/extension.js
@@ -9,6 +10,8 @@ share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/locale/de/LC_MESSAGES/cove
 share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/locale/de/LC_MESSAGES/coverflow.po
 share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/locale/it/LC_MESSAGES/coverflow.mo
 share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/locale/it/LC_MESSAGES/coverflow.po
+share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/locale/pt_BR/LC_MESSAGES/pt_BR.mo
+share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/locale/pt_BR/LC_MESSAGES/pt_BR.po
 share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/manager.js
 share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/metadata.json
 share/gnome-shell/extensions/CoverflowAltTab@dmo60.de/platform.js

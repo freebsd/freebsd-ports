@@ -2,6 +2,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.15.2
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BDB_SUFFIX}${PKGNAMESUFFIX2}
@@ -9,6 +10,11 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Reliable, highly configurable mail transfer agent with utilities
+
+LICENSE=	Sendmail
+LICENSE_NAME=	Sendmail License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-*
 
@@ -38,8 +44,8 @@ SENDMAIL=	${PREFIX}/sbin/sendmail
 BASEMAIL=	/usr/libexec/sendmail/sendmail
 MILTER_SOVER?=	6
 
-OPTIONS_DEFINE?=	SHMEM SEM LA NIS IPV6 TLS SASL SASLAUTHD LDAP BDB SOCKETMAP CYRUSLOOKUP PICKY_HELO_CHECK MILTER MILTER_SHARED MILTER_POOL DOCS
-OPTIONS_DEFAULT?=	SHMEM SEM LA NIS IPV6 TLS SASL SASLAUTHD PICKY_HELO_CHECK MILTER MILTER_SHARED MILTER_POOL
+OPTIONS_DEFINE?=	SHMEM SEM LA NIS IPV6 TLS SASL SASLAUTHD LDAP BDB SOCKETMAP CYRUSLOOKUP PICKY_HELO_CHECK MILTER DOCS
+OPTIONS_DEFAULT?=	SHMEM SEM LA NIS IPV6 TLS SASL SASLAUTHD PICKY_HELO_CHECK MILTER
 NO_OPTIONS_SORT=yes
 SHMEM_DESC=		System V shared memory support
 LA_DESC=		load averages support
@@ -49,9 +55,7 @@ BDB_DESC=		Berkeley DB version 4 support
 SOCKETMAP_DESC=		Enable socketmap feature
 CYRUSLOOKUP_DESC=	Enable cyruslookup feature
 PICKY_HELO_CHECK_DESC=	Enable picky HELO check
-MILTER_DESC=		Build libmilter
-MILTER_SHARED_DESC=	Build shared libmilter
-MILTER_POOL_DESC=	Enable milter thread pools
+MILTER_DESC=		Enable milter support
 
 BDB_USE=	BDB=yes
 LDAP_USE=	OPENLDAP=yes
@@ -119,16 +123,6 @@ SITE+=	${FILESDIR}/site.config.m4.milter
 USE_OPENSSL=	yes
 .endif
 
-.if ${PORT_OPTIONS:MMILTER}
-.if ${PORT_OPTIONS:MMILTER_SHARED}
-PLIST_SUB+=	MILTER_SHARED=""
-PLIST_SUB+=	MILTER_SOVER=${MILTER_SOVER}
-MAKE_ENV+=	MILTER_SOVER=${MILTER_SOVER}
-.else
-PLIST_SUB+=	MILTER_SHARED="@comment "
-.endif
-.endif
-
 SED_SCRIPT=	-e "s|\`-O\'|\`${CFLAGS}\'|" \
 		-e 's|%%CC%%|${CC}|' -e 's|%%LD%%|${LD}|'
 
@@ -141,13 +135,6 @@ post-patch:
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
 		-e "s=%%PORTSDIR%%=${PORTSDIR}=g" \
 		${PKGDIR}/pkg-message > ${WRKSRC}/pkg-message
-.if ${PORT_OPTIONS:MMILTER} && ${PORT_OPTIONS:MMILTER_SHARED}
-	@${CP} -pR ${WRKSRC}/libmilter ${WRKSRC}/libsharedmilter
-	${CP} ${FILESDIR}/sharedlibrary.m4 \
-		${WRKSRC}/devtools/M4/UNIX/sharedlibrary.m4
-	${REINPLACE_CMD} -e 's=`library=`sharedlibrary=' \
-		${WRKSRC}/libsharedmilter/Makefile.m4
-.endif
 
 do-configure:
 	${REINPLACE_CMD} ${SED_SCRIPT} ${WRKSRC}/devtools/OS/FreeBSD
@@ -192,30 +179,13 @@ do-configure:
 	'APPENDDEF(`confENVDEF'\'', `-DLA_TYPE=LA_ZERO'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
-.if ${PORT_OPTIONS:MMILTER} && ${PORT_OPTIONS:MMILTER_POOL}
-	${ECHO_CMD} \
-	 'APPENDDEF(`conf_libmilter_ENVDEF'\'', `-DSM_CONF_POLL=1'\'')' \
-		>> ${WCONF}/site.config.m4
-	${ECHO_CMD} \
-	 'APPENDDEF(`conf_libmilter_ENVDEF'\'', `-D_FFR_WORKERS_POOL=1'\'')' \
-		>> ${WCONF}/site.config.m4
-.endif
 
 post-build:
 	(cd ${WRKSRC}/doc/op && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} op.txt)
-.if ${PORT_OPTIONS:MMILTER}
-	(cd ${BUILD_WRKSRC}/libmilter; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-.if ${PORT_OPTIONS:MMILTER_SHARED}
-	(cd ${BUILD_WRKSRC}/libsharedmilter; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-.endif
-.endif
 
 pre-install:
 	${MKDIR} ${STAGEDIR}/etc/mail
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
-.if ${PORT_OPTIONS:MMILTER}
-	@${CAT} ${FILESDIR}/pkg-milter >>${PLIST}
-.endif
 	@cd ${WRKSRC} && ${FIND} cf -type f | \
 	${AWK} '{print "share/sendmail/" $$1}' >>${PLIST}
 .if ${PORT_OPTIONS:MDOCS}
@@ -235,22 +205,6 @@ post-install:
 	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} force-install)
 	(cd ${WRKSRC}/rmail && \
 	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} force-install)
-.if ${PORT_OPTIONS:MMILTER}
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/libmilter
-	${INSTALL_DATA} ${WRKSRC}/include/libmilter/mfapi.h \
-		${WRKSRC}/include/libmilter/mfdef.h \
-		${STAGEDIR}${PREFIX}/include/libmilter/
-	${INSTALL_DATA} \
-	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libmilter/libmilter.a \
-	 ${STAGEDIR}${PREFIX}/lib/
-.if ${PORT_OPTIONS:MMILTER_SHARED}
-	${INSTALL_LIB} \
-	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libsharedmilter/libmilter.so \
-	 ${STAGEDIR}${PREFIX}/lib/libmilter.so.${MILTER_SOVER}
-	${LN} -sf libmilter.so.${MILTER_SOVER} \
-		${STAGEDIR}${PREFIX}/lib/libmilter.so
-.endif
-.endif
 .for i in ${LMAN8}
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${MANPREFIX}/man/man8/
 .endfor
@@ -263,7 +217,13 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/sendmail
 	${TAR} -C ${WRKSRC} -cf - cf | \
 		${TAR} -C ${STAGEDIR}${PREFIX}/share/sendmail -xf -
-.if ${PORT_OPTIONS:MDOCS}
+	${RM} ${STAGEDIR}${PREFIX}/man/cat*/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vacation
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rmail
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/*
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/op/op.ps ${STAGEDIR}${DOCSDIR}/op.ps
@@ -272,21 +232,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sendmail/README ${STAGEDIR}${DOCSDIR}/SENDMAIL
 	${INSTALL_DATA} ${WRKSRC}/mail.local/README ${STAGEDIR}${DOCSDIR}/MAIL.LOCAL
 	${INSTALL_DATA} ${WRKSRC}/smrsh/README ${STAGEDIR}${DOCSDIR}/SMRSH
-.if ${PORT_OPTIONS:MMILTER}
-	${INSTALL_DATA} ${WRKSRC}/libmilter/README ${STAGEDIR}${DOCSDIR}/MILTER
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/libmilter
-	${TAR} -C ${WRKSRC}/libmilter/docs -cf - . | \
-		${TAR} -C ${STAGEDIR}${DOCSDIR}/libmilter -xf -
-.endif
 .if ${PORT_OPTIONS:MCYRUSLOOKUP}
 	${INSTALL_DATA} ${FILESDIR}/CYRUS_LOOKUP ${STAGEDIR}${DOCSDIR}/CYRUS_LOOKUP
 .endif
-.endif
-	${RM} ${STAGEDIR}${PREFIX}/man/cat*/*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vacation
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rmail
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/*
 
 mailer.base:
 	@${SED} \

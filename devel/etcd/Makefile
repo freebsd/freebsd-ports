@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
-CONFLICTS_INSTALL=coreos-etcdctl-0.* etcd
+CONFLICTS_INSTALL=coreos-etcdctl-0.*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos

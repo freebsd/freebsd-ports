@@ -16,9 +16,11 @@ lib/libdevhelp-3.so
 lib/libdevhelp-3.so.2
 lib/libdevhelp-3.so.2.0.0
 libdata/pkgconfig/libdevhelp-3.0.pc
+man/man1/devhelp.1.gz
 share/GConf/gsettings/devhelp.convert
-share/appdata/devhelp.appdata.xml
-share/applications/devhelp.desktop
+share/appdata/org.gnome.Devhelp.appdata.xml
+share/applications/org.gnome.Devhelp.desktop
+share/dbus-1/services/org.gnome.Devhelp.service
 %%DATADIR%%/assistant/assistant.css
 %%DATADIR%%/assistant/assistant.js
 %%DATADIR%%/dtd/devhelp-1.dtd

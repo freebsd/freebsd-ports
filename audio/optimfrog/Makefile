@@ -14,7 +14,7 @@ LICENSE_NAME=	OptimFROG - License
 LICENSE_FILE=	${WRKSRC}/license.html	#only available as html file
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-INSTALL_CONFLICTS?=	optimfrog-sse2-[0-9]*
+CONFLICTS_INSTALL?=	optimfrog-sse2-[0-9]*
 
 ONLY_FOR_ARCHS?=	amd64 i386
 

@@ -2,6 +2,6 @@ bin/qqwing
 include/qqwing.hpp
 lib/libqqwing.so
 lib/libqqwing.so.2
-lib/libqqwing.so.2.0.3
+lib/libqqwing.so.2.1.0
 libdata/pkgconfig/qqwing.pc
 man/man1/qqwing.1.gz

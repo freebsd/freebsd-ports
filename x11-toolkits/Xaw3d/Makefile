@@ -25,20 +25,20 @@ OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	@${MKDIR} ${WRKSRC}/X11/Xaw3d
 	@cd ${WRKSRC}/X11/Xaw3d; ${LN} -sf ../../*.h .
-.if ! ${PORT_OPTIONS:MNLS}
+
+post-extract-NLS-off:
 	@${REINPLACE_CMD} -e '/LINTLIBS =/s/=.*/=/' \
 		-e '/#ifdef XawI18nDefines/s//#if 0/' \
 		${WRKSRC}/Imakefile
-.endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libXaw3d.so
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libXaw3d.so
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.XAW3D ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

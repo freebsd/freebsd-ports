@@ -1,0 +1,41 @@
+Index: lib/configure
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ CONFIG="config.mk"
+ PREFIX="/usr/local"
+@@ -80,7 +80,7 @@
+ 
+ # If someone runs sudo make install as very first command, and configure later,
+ # $CONFIG cannot be overwritten, and must be deleted before continuing.
+-if [[ -f "$CONFIG" && ! -w "$CONFIG" ]]; then
++if [ -f "$CONFIG" -a ! -w "$CONFIG" ]; then
+     echo "Cannot overwrite file $CONFIG! Please delete it."
+     exit 1
+ fi
+@@ -135,10 +135,8 @@
+ 
+ # SSE
+ if [ "$SSE" = 'auto' ]; then
+-    if [[ "$(uname -m)" =~ (amd|x86_)64 ||
+-          "$(grep -E -m1 "^flags" /proc/cpuinfo)" =~ "sse" ]]; then
+-        SSE=1
+-    fi
++    echo $(uname -m) | grep -E -q '(amd|x86_)64' && SSE=1
++    grep -E -m1 -q '^flags.*sse' /proc/cpuinfo 2>/dev/null && SSE=1
+ fi
+ 
+ if [ "$SSE" -eq 1 ]; then
+@@ -161,9 +159,8 @@
+     else
+         OPENMPFLAGS="-fopenmp"
+     fi
+-    if [[ "$("$CC" -xc -E $OPENMPFLAGS <(echo "#ifdef _OPENMP
+-           #include <omp.h>
+-           #endif") 2>&1)" =~ "omp_get_thread_num" ]]; then
++    if echo "$(printf '#ifdef _OPENMP\n#include <omp.h>\n#endif\n' | \
++        "$CC" -xc -E $OPENMPFLAGS - 2>&1)" | grep -q omp_get_thread_num; then
+         cflags "$OPENMPFLAGS"
+         lflags "$OPENMPFLAGS"
+         status "OpenMP" "yes"

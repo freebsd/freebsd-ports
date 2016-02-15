@@ -4,7 +4,7 @@ man/man1/gpodder-migrate2tres.1.gz
 %%GTK2%%man/man1/gpodder.1.gz
 %%GTK2%%bin/gpodder
 bin/gpodder-migrate2tres
-%%PYTHON_SITELIBDIR%%/gpodder-3.8.3-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/gpodder-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/gpodder/__init__.py
 %%PYTHON_SITELIBDIR%%/gpodder/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__init__.pyo
@@ -44,9 +44,6 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/feedservice.py
 %%PYTHON_SITELIBDIR%%/gpodder/feedservice.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/feedservice.pyo
-%%PYTHON_SITELIBDIR%%/gpodder/flattr.py
-%%PYTHON_SITELIBDIR%%/gpodder/flattr.pyc
-%%PYTHON_SITELIBDIR%%/gpodder/flattr.pyo
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/__init__.py
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/__init__.pyc
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/__init__.pyo
@@ -89,9 +86,6 @@ bin/gpodder-migrate2tres
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/draw.py
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/draw.pyc
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/draw.pyo
-%%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/flattr.py
-%%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/flattr.pyc
-%%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/flattr.pyo
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__init__.py
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__init__.pyc
 %%GTK2%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__init__.pyo
@@ -146,9 +140,6 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/opml.py
 %%PYTHON_SITELIBDIR%%/gpodder/opml.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/opml.pyo
-%%PYTHON_SITELIBDIR%%/gpodder/pipe/__init__.py
-%%PYTHON_SITELIBDIR%%/gpodder/pipe/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gpodder/pipe/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gpodder/player.py
 %%PYTHON_SITELIBDIR%%/gpodder/player.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/player.pyo
@@ -185,9 +176,6 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/vimeo.py
 %%PYTHON_SITELIBDIR%%/gpodder/vimeo.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/vimeo.pyo
-%%PYTHON_SITELIBDIR%%/gpodder/webui/__init__.py
-%%PYTHON_SITELIBDIR%%/gpodder/webui/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gpodder/webui/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gpodder/youtube.py
 %%PYTHON_SITELIBDIR%%/gpodder/youtube.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/youtube.pyo
@@ -219,9 +207,6 @@ bin/gpodder-migrate2tres
 %%DATADIR%%/extensions/ubuntu_unity.py
 %%DATADIR%%/extensions/update_feeds_on_startup.py
 %%DATADIR%%/extensions/video_converter.py
-%%DATADIR%%/images/button-flattr-grey.png
-%%DATADIR%%/images/button-flattr.png
-%%DATADIR%%/images/button-flattred.png
 %%DATADIR%%/images/directory-examples.png
 %%DATADIR%%/images/directory-gpodder.png
 %%DATADIR%%/images/directory-opml.png
@@ -240,15 +225,9 @@ bin/gpodder-migrate2tres
 %%GTK2%%%%DATADIR%%/ui/gtk/gpodderchannel.ui
 %%GTK2%%%%DATADIR%%/ui/gtk/gpodderconfigeditor.ui
 %%GTK2%%%%DATADIR%%/ui/gtk/gpodderepisodeselector.ui
-%%GTK2%%%%DATADIR%%/ui/gtk/gpodderflattrsignin.ui
 %%GTK2%%%%DATADIR%%/ui/gtk/gpodderpodcastdirectory.ui
 %%GTK2%%%%DATADIR%%/ui/gtk/gpodderpreferences.ui
 %%GTK2%%%%DATADIR%%/ui/gtk/gpodderwelcome.ui
-%%DATADIR%%/ui/web/gpodder.js
-%%DATADIR%%/ui/web/images/audio.png
-%%DATADIR%%/ui/web/images/video.png
-%%DATADIR%%/ui/web/index.html
-%%DATADIR%%/ui/web/style.css
 %%GTK2%%share/icons/hicolor/16x16/apps/gpodder.ico
 %%GTK2%%share/icons/hicolor/16x16/apps/gpodder.png
 %%GTK2%%share/icons/hicolor/22x22/apps/gpodder.png
@@ -277,6 +256,7 @@ share/locale/he/LC_MESSAGES/gpodder.mo
 share/locale/id_ID/LC_MESSAGES/gpodder.mo
 share/locale/it/LC_MESSAGES/gpodder.mo
 share/locale/kk/LC_MESSAGES/gpodder.mo
+share/locale/ko_KR/LC_MESSAGES/gpodder.mo
 share/locale/nb/LC_MESSAGES/gpodder.mo
 share/locale/nl/LC_MESSAGES/gpodder.mo
 share/locale/nn/LC_MESSAGES/gpodder.mo

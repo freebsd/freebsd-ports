@@ -1,0 +1,15 @@
+--- bsd/dma-mbox-create/Makefile.orig	2016-02-07 12:41:49 UTC
++++ bsd/dma-mbox-create/Makefile
+@@ -17,8 +17,9 @@ PREFIX?=	/usr/local
+ LIBEXEC?=	${PREFIX}/libexec
+ CONFDIR?=	${PREFIX}/etc/dma
+ 
+-BINOWN= root
+-BINGRP= mail
+-BINMODE=4554
++BINDIR=	${LIBEXEC}
++#BINOWN= root
++#BINGRP= mail
++#BINMODE=4554
+ 
+ .include <bsd.prog.mk>

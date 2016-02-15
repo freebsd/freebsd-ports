@@ -3,7 +3,7 @@
 
 PORTNAME=	rbl-milter
 PORTVERSION=	0.30
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://opensource.confusticate.com/rbl-milter/
 
@@ -20,4 +20,5 @@ CONFIGURE_ARGS+=	--with-sendmail=${MILTERBASE} \
 			--with-sendmail-obj=${MILTERBASE}/lib
 
 .include "${.CURDIR}/../sendmail/bsd.milter.mk"
+
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-PORTVERSION=	1.21.4
+PORTVERSION=	1.21.5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
@@ -75,14 +75,8 @@ post-patch:
 		's|/usr/local/lib|${LOCALBASE}/lib|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		's|= -g -O2|=|' \
-		${WRKSRC}/mk/localdefs.in
-	@${REINPLACE_CMD} -e \
-		's|@NOCMDLINE@||g ; \
-	 	 s|@prefix@|${PREFIX}| ; \
-		 s|REALPREFIX=$$PREFIX|REALPREFIX=$$DESTDIR$$PREFIX| ; \
-		 s|python setup.py|${PYTHON_CMD} setup.py| ; \
-		 s|$${ROOTFORPYTHON}||' \
+		's|@NOCMDLINE@|| ; \
+		 s|python setup.py|${PYTHON_CMD} setup.py|' \
 		${WRKSRC}/recollinstall.in
 	@${REINPLACE_CMD} -e \
 		's|python setup.py|${PYTHON_CMD} setup.py|' \

@@ -192,13 +192,6 @@
 +#include <stdint.h> /* intptr_t */
  
  /*
-@@ -55,5 +55,5 @@ SCOPE Tcl_Obj*           rde_param_query
- SCOPE void               rde_param_query_es      (RDE_PARAM p, long int* ec, ERROR_STATE*** ev);
- SCOPE void               rde_param_query_ls      (RDE_PARAM p, long int* lc, void*** lv);
--SCOPE long int           rde_param_query_lstop   (RDE_PARAM p);
-+SCOPE intptr_t           rde_param_query_lstop   (RDE_PARAM p);
- SCOPE Tcl_HashTable*     rde_param_query_nc      (RDE_PARAM p);
- SCOPE int                rde_param_query_st      (RDE_PARAM p);
 --- modules/pt/rde_critcl/param.c	2015-04-30 04:21:20 UTC
 +++ modules/pt/rde_critcl/param.c	2015-05-27 18:11:57
 @@ -4,9 +4,11 @@

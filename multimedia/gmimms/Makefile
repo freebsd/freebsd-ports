@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend to MiMMS (Multimedia Stream ripper)
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	mimms:${PORTSDIR}/multimedia/mimms
 
@@ -22,19 +23,19 @@ INSTALL_TARGET=	install-exec
 
 CFLAGS+=	-Wno-error=return-type
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
+PORTDOCS=	AUTHORS ChangeLog
 PLIST_FILES=	bin/gmimms
 
-DESKTOP_ENTRIES=	"GMiMMS" \
-			"Multimedia Stream ripper" \
-			"" \
-			"gmimms" \
-			"GTK;AudioVideo;Network;" \
-			"false"
+DESKTOP_ENTRIES="GMiMMS" \
+		"Multimedia Stream ripper" \
+		"" \
+		"gmimms" \
+		"GTK;AudioVideo;Network;" \
+		"false"
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 

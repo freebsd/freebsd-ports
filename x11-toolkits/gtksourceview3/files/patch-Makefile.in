@@ -1,11 +1,11 @@
---- Makefile.in.orig	2011-02-02 00:24:30.000000000 +0000
-+++ Makefile.in	2011-02-02 00:24:36.000000000 +0000
-@@ -306,7 +306,7 @@
+--- Makefile.in.orig	2015-08-31 13:55:15.919297000 +0200
++++ Makefile.in	2015-08-31 13:55:35.773605000 +0200
+@@ -429,7 +429,7 @@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
- ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 -SUBDIRS = gtksourceview po data docs tests
 +SUBDIRS = gtksourceview po data docs
- pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = gtksourceview-3.0.pc
  EXTRA_DIST = \
+ 	intltool-extract.in \

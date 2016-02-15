@@ -19,7 +19,7 @@ USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	delfick
 GH_TAGNAME=	2940589
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m nose --with-noy

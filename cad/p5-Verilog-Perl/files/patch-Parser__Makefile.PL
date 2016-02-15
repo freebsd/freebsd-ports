@@ -1,6 +1,6 @@
---- Parser/Makefile.PL	2014-03-11 19:59:40.000000000 -0300
-+++ Parser/Makefile.PL	2014-06-25 11:19:19.000000000 -0300
-@@ -9,13 +9,15 @@
+--- Parser/Makefile.PL.orig	2016-02-02 23:36:13 UTC
++++ Parser/Makefile.PL
+@@ -9,13 +9,15 @@ use Config;
  
  sub MY::postamble {
      my $out;
@@ -17,7 +17,7 @@
      }
      # Note OPTIMIZE is passed from upper makefile, so this code needed there too.
      my $optimize = $Config{optimize};  $optimize =~ s/(^| )-O2( |$)/\1-O\2/g;
-@@ -46,7 +48,7 @@
+@@ -50,7 +52,7 @@ sub MY::postamble {
      $out .= "${cmt}CFLAGS += -DFLEX_DEBUG\n";
      $out .= "LEXFLAGS += -d\n";
      $out .= '

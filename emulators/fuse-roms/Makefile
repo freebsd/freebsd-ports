@@ -30,7 +30,7 @@ RESTRICTED=	No explicit permission to redistribute
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_PLIST_FILES=%%DOCSDIR%%/rom-distribution.txt
+DOCS_PLIST_FILES=${DOCSDIR_REL}/rom-distribution.txt
 
 post-extract:
 	${CP} ${DISTDIR}/Opus-22.rom ${WRKDIR}/usr/share/fuse/opus.rom

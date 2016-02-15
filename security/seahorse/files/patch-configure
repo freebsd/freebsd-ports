@@ -1,11 +1,21 @@
---- configure.orig	2014-11-22 16:52:37.804032295 +0100
-+++ configure	2014-11-22 16:52:48.509032582 +0100
-@@ -2527,7 +2527,7 @@
- GTK_REQ=3.4.0
- GTK_MAX=GTK_VERSION_3_4
+make configure not require a specific gnupg version..
+
+--- configure.orig	2015-09-28 19:51:56.713332000 +0200
++++ configure	2015-09-28 19:52:39.551499000 +0200
+@@ -8640,7 +8640,6 @@
+ 				branch=`echo $ver | sed 's/\.[0-9]*$//'`
+ 				if test "$branch" = "$major.$minor"; then
+ 					min_micro=`echo $ver | sed 's/^[0-9]*\.[0-9]*\.//'`
+-					if test "$min_micro" -le "$micro"; then
  
--GNUPG_ACCEPTED="1.2 1.4 2.0"
-+GNUPG_ACCEPTED="1.2 1.4 2.0 2.1"
- GPGME_REQUIRED=1.0.0
- LIBSECRET_REQUIRED=0.16
- AVAHI_GLIB_REQUIRED=0.6
+ cat >>confdefs.h <<_ACEOF
+ #define GPG_MAJOR $major
+@@ -8657,8 +8656,6 @@
+ _ACEOF
+ 
+ 						ok="yes"
+-						break
+-					fi
+ 				fi
+ 			done
+ 		fi

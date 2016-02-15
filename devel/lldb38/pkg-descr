@@ -1,0 +1,9 @@
+LLDB is a next generation, high-performance debugger. It is built as a
+set of reusable components which highly leverage existing libraries in
+the larger LLVM Project, such as the Clang expression parser and LLVM
+disassembler.
+
+This is a meta port. The Clang compiler is installed by the
+devel/llvm38 port.
+
+WWW: http://lldb.llvm.org/

@@ -82,7 +82,6 @@
 %%SOFTMMU%%%%DATADIR%%/petalogix-ml605.dtb
 %%SOFTMMU%%%%DATADIR%%/spapr-rtas.bin
 %%SOFTMMU%%%%DATADIR%%/slof.bin
-%%SOFTMMU%%%%DATADIR%%/s390-zipl.rom
 %%SOFTMMU%%%%DATADIR%%/linuxboot.bin
 %%SOFTMMU%%%%DATADIR%%/multiboot.bin
 %%SOFTMMU%%%%DATADIR%%/sgabios.bin

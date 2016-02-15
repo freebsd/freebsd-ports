@@ -10,8 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight window manager
 
 LICENSE=	GPLv2+
-
-OPTIONS_DEFINE=	DOCS
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig
 USE_XORG=	sm x11 xext
@@ -24,9 +23,13 @@ LDFLAGS+=	`pkg-config --libs sm x11 xext ice`
 PORTDOCS=	AUTHORS BUGS ChangeLog README TODO
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

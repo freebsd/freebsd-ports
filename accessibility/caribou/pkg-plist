@@ -53,6 +53,7 @@ share/antler/style.css
 %%DATADIR%%/layouts/fullscale/us.xml
 %%DATADIR%%/layouts/scan/us.xml
 %%DATADIR%%/layouts/touch/ara.xml
+%%DATADIR%%/layouts/touch/de.xml
 %%DATADIR%%/layouts/touch/fr.xml
 %%DATADIR%%/layouts/touch/il.xml
 %%DATADIR%%/layouts/touch/us.xml
@@ -90,6 +91,7 @@ share/locale/hu/LC_MESSAGES/caribou.mo
 share/locale/id/LC_MESSAGES/caribou.mo
 share/locale/it/LC_MESSAGES/caribou.mo
 share/locale/ja/LC_MESSAGES/caribou.mo
+share/locale/kk/LC_MESSAGES/caribou.mo
 share/locale/km/LC_MESSAGES/caribou.mo
 share/locale/kn/LC_MESSAGES/caribou.mo
 share/locale/ko/LC_MESSAGES/caribou.mo

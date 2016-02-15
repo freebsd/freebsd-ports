@@ -1,4 +1,4 @@
 This port provides a FreeBSD kernel module that can be used to
 retrieve the font bitmaps stored in BIOS memory.
 
-WWW: http://rene-ladan.nl/biosfont/
+WWW: https://rene-ladan.nl/biosfont/

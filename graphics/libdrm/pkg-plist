@@ -10,7 +10,14 @@ include/libdrm/i915_drm.h
 %%INTEL_DRIVER%%include/libdrm/intel_debug.h
 include/libdrm/mach64_drm.h
 include/libdrm/mga_drm.h
-%%NOUVEAU%%include/libdrm/nouveau.h
+%%NOUVEAU%%include/libdrm/nouveau/nouveau.h
+%%NOUVEAU%%include/libdrm/nouveau/nvif/cl0080.h
+%%NOUVEAU%%include/libdrm/nouveau/nvif/cl9097.h
+%%NOUVEAU%%include/libdrm/nouveau/nvif/class.h
+%%NOUVEAU%%include/libdrm/nouveau/nvif/if0002.h
+%%NOUVEAU%%include/libdrm/nouveau/nvif/if0003.h
+%%NOUVEAU%%include/libdrm/nouveau/nvif/ioctl.h
+%%NOUVEAU%%include/libdrm/nouveau/nvif/unpack.h
 include/libdrm/nouveau_drm.h
 include/libdrm/qxl_drm.h
 include/libdrm/r128_drm.h

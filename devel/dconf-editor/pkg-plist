@@ -49,10 +49,12 @@ share/locale/ml/LC_MESSAGES/dconf.mo
 share/locale/mr/LC_MESSAGES/dconf.mo
 share/locale/nb/LC_MESSAGES/dconf.mo
 share/locale/nl/LC_MESSAGES/dconf.mo
+share/locale/oc/LC_MESSAGES/dconf.mo
 share/locale/pa/LC_MESSAGES/dconf.mo
 share/locale/pl/LC_MESSAGES/dconf.mo
 share/locale/pt/LC_MESSAGES/dconf.mo
 share/locale/pt_BR/LC_MESSAGES/dconf.mo
+share/locale/ro/LC_MESSAGES/dconf.mo
 share/locale/ru/LC_MESSAGES/dconf.mo
 share/locale/sk/LC_MESSAGES/dconf.mo
 share/locale/sl/LC_MESSAGES/dconf.mo

@@ -6,7 +6,7 @@ lib/girepository-1.0/GSound-1.0.typelib
 lib/libgsound.a
 lib/libgsound.so
 lib/libgsound.so.0
-lib/libgsound.so.0.0.0
+lib/libgsound.so.0.0.2
 libdata/pkgconfig/gsound.pc
 share/gir-1.0/GSound-1.0.gir
 share/gtk-doc/html/gsound/GSoundContext.html

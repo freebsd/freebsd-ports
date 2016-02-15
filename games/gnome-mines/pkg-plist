@@ -14,6 +14,7 @@ share/applications/gnome-mines.desktop
 %%DATADIR%%/themes/bgcolors/8mines.svg
 %%DATADIR%%/themes/bgcolors/exploded.svg
 %%DATADIR%%/themes/bgcolors/flag.svg
+%%DATADIR%%/themes/bgcolors/incorrect.svg
 %%DATADIR%%/themes/bgcolors/maybe.svg
 %%DATADIR%%/themes/bgcolors/mine.svg
 %%DATADIR%%/themes/bgcolors/overmine.svg
@@ -28,6 +29,7 @@ share/applications/gnome-mines.desktop
 %%DATADIR%%/themes/classic/8mines.svg
 %%DATADIR%%/themes/classic/exploded.svg
 %%DATADIR%%/themes/classic/flag.svg
+%%DATADIR%%/themes/classic/incorrect.svg
 %%DATADIR%%/themes/classic/maybe.svg
 %%DATADIR%%/themes/classic/mine.svg
 %%DATADIR%%/themes/classic/overmine.svg
@@ -42,6 +44,7 @@ share/applications/gnome-mines.desktop
 %%DATADIR%%/themes/default/8mines.svg
 %%DATADIR%%/themes/default/exploded.svg
 %%DATADIR%%/themes/default/flag.svg
+%%DATADIR%%/themes/default/incorrect.svg
 %%DATADIR%%/themes/default/maybe.svg
 %%DATADIR%%/themes/default/mine.svg
 %%DATADIR%%/themes/default/overmine.svg
@@ -715,6 +718,7 @@ share/locale/eu/LC_MESSAGES/gnome-mines.mo
 share/locale/fa/LC_MESSAGES/gnome-mines.mo
 share/locale/fi/LC_MESSAGES/gnome-mines.mo
 share/locale/fr/LC_MESSAGES/gnome-mines.mo
+share/locale/fur/LC_MESSAGES/gnome-mines.mo
 share/locale/ga/LC_MESSAGES/gnome-mines.mo
 share/locale/gl/LC_MESSAGES/gnome-mines.mo
 share/locale/gu/LC_MESSAGES/gnome-mines.mo

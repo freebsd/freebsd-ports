@@ -1,6 +1,6 @@
---- mouseclock.c.orig	Sun May  5 09:47:18 1996
-+++ mouseclock.c	Mon Oct  6 23:09:43 1997
-@@ -31,6 +31,7 @@
+--- mouseclock.c.orig	1996-05-05 16:47:18 UTC
++++ mouseclock.c
+@@ -31,6 +31,7 @@ int Scr;
  Window Root;
  int shadow_size = 2;
  int shadow_mode = 1;
@@ -8,7 +8,7 @@
  
  /* ---------------------------------------------------------------- */
  void
-@@ -56,6 +57,7 @@
+@@ -56,6 +57,7 @@ usage (const char *nom)
    printf ("-display <dpy>   display name\n");
    printf ("-fg <color>      foreground color\n");
    printf ("-fn <font_name>  font to use\n");
@@ -16,7 +16,7 @@
  
    exit (1);
  }
-@@ -266,6 +268,11 @@
+@@ -266,6 +268,11 @@ main (int argc, char **argv)
  	  shadow_mode = 0;
  	  continue;
  	}
@@ -28,7 +28,7 @@
        usage (argv[0]);
      }
  
-@@ -295,7 +302,7 @@
+@@ -295,7 +302,7 @@ main (int argc, char **argv)
  	  struct tm *now_tm = localtime (&now);
  	  Cursor cur;
  

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MT
-PORTVERSION=	5.2.12
+PORTVERSION=	5.2.13
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES?=	http://www.movabletype.org/downloads/stable/\
@@ -14,6 +14,9 @@ MAINTAINER?=	takefu@airport.fm
 COMMENT?=	Web-based personal publishing system for weblogs
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Reached it's EOL in September 2015
+EXPIRATION_DATE=	2016-03-13
 
 CONFLICTS?=	de-MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].* ru-MT-[2-5].*
 
@@ -107,16 +110,16 @@ MT_LANG=
 PLIST_SUB+=	LANG_RU="@comment "
 .endif
 
-.include <bsd.port.options.mk>
-
 .if ${PORT_OPTIONS:MMYSQL}
 DB_DIR?=	/var/db/mysql/WEBLOG_DATABASEDIR
-.endif
-.if ${PORT_OPTIONS:MPGSQL}
+PLIST_SUB+=	DB="@comment "\
+		DBMYSQL_DIR=${DB_DIR:H}
+.elif ${PORT_OPTIONS:MPGSQL}
 WANT_PGSQL=	server
-.endif
-.if empty(PORT_OPTIONS:MPGSQL) && empty(PORT_OPTIONS:MMYSQL)
+PLIST_SUB+=	DB="@comment "
+.elif empty(PORT_OPTIONS:MPGSQL) && empty(PORT_OPTIONS:MMYSQL)
 DB_DIR?=	${PREFIX}/${CGIDIR}/db
+PLIST_SUB+=	DB=""
 .endif
 
 pre-everything::

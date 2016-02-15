@@ -556,8 +556,6 @@
     SUBDIR += pecl-bitset
     SUBDIR += pecl-stats
     SUBDIR += pecl-trader
-    SUBDIR += php5-bcmath
-    SUBDIR += php5-gmp
     SUBDIR += php55-bcmath
     SUBDIR += php55-gmp
     SUBDIR += php56-bcmath

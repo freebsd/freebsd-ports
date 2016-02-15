@@ -3,7 +3,7 @@
 
 PORTNAME=	imaging
 PORTVERSION=	1.1.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics python
 MASTER_SITES=	http://effbot.org/media/downloads/ \
 		http://www.pythonware.net/storage/
@@ -15,6 +15,9 @@ COMMENT=	The Python Imaging Library
 
 LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms \
 		libfreetype.so:${PORTSDIR}/print/freetype2
+
+DEPRECATED=	Unmaintained upstream; use graphics/py-pillow
+EXPIRATION_DATE=2016-03-11
 
 USES=		jpeg python
 DIST_SUBDIR=	python

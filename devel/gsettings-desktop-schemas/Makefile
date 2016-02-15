@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsettings-desktop-schemas
-PORTVERSION=	3.16.1
+PORTVERSION=	3.18.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/fonts/conf.avail/31-cantarell.conf:${PORTSDIR}/x11
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix perl5 pkgconfig tar:xz
+USES=		gettext gmake gnome pathfix perl5 pkgconfig tar:xz
 USE_PERL5=	build
 USE_GNOME=	intltool glib20 introspection:build
 GNU_CONFIGURE=	yes

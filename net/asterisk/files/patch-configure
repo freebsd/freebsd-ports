@@ -1,6 +1,15 @@
 --- configure.orig	2014-08-17 22:31:23 UTC
 +++ configure
-@@ -4698,9 +4698,9 @@ astetcdir='${sysconfdir}/asterisk'
+@@ -632,6 +632,8 @@ CONFIG_GMIME
+ AIS_LIB
+ AIS_INCLUDE
+ PBX_AIS
++PBX_SSL_OP_NO_TLSV1_2
++PBX_SSL_OP_NO_TLSV1_1
+ OPENH323_BUILD
+ OPENH323_SUFFIX
+ OPENH323_LIBDIR
+@@ -4698,9 +4700,9 @@ astetcdir='${sysconfdir}/asterisk'
  astheaderdir='${includedir}/asterisk'
  astlibdir='${libdir}/asterisk'
  astmandir='${mandir}'
@@ -12,7 +21,7 @@
  astkeydir='${astvarlibdir}'
  astspooldir='${localstatedir}/spool/asterisk'
  astlogdir='${localstatedir}/log/asterisk'
-@@ -4723,8 +4723,6 @@ esac
+@@ -4723,8 +4725,6 @@ esac
  case "${host_os}" in
       freebsd*)
       ac_default_prefix=/usr/local
@@ -21,7 +30,7 @@
       ;;
       openbsd*)
       ac_default_prefix=/usr/local
-@@ -18470,6 +18468,8 @@ $as_echo_n "checking if \"struct ifaddrs
+@@ -18470,6 +18470,8 @@ $as_echo_n "checking if \"struct ifaddrs
  
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -30,7 +39,7 @@
   #include <ifaddrs.h>
  int
  main ()
-@@ -26245,7 +26245,7 @@ $as_echo "${OPENH323_BUILD}" >&6; }
+@@ -26245,7 +26247,7 @@ $as_echo "${OPENH323_BUILD}" >&6; }
  
  	fi
  
@@ -39,7 +48,7 @@
  
  	if test "${HAS_OPENH323:-unset}" != "unset"; then
  	   { $as_echo "$as_me:${as_lineno-$LINENO}: checking OpenH323 installation validity" >&5
-@@ -26343,13 +26343,13 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_
+@@ -26343,13 +26345,13 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_
        ast_ext_lib_check_save_CFLAGS="${CFLAGS}"
        CFLAGS="${CFLAGS} "
        as_ac_Lib=`$as_echo "ac_cv_lib_lua5.2_${pbxfuncname}" | $as_tr_sh`
@@ -56,7 +65,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26391,18 +26391,18 @@ fi
+@@ -26391,18 +26393,18 @@ fi
  
     # now check for the header.
     if test "${AST_LUA_FOUND}" = "yes"; then
@@ -78,7 +87,7 @@
  if test "x$ac_cv_header_lua5_2_lua_h" = xyes; then :
    LUA_HEADER_FOUND=1
  else
-@@ -26455,13 +26455,13 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_
+@@ -26455,13 +26457,13 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_
        ast_ext_lib_check_save_CFLAGS="${CFLAGS}"
        CFLAGS="${CFLAGS} "
        as_ac_Lib=`$as_echo "ac_cv_lib_lua5.1_${pbxfuncname}" | $as_tr_sh`
@@ -95,7 +104,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26503,18 +26503,18 @@ fi
+@@ -26503,18 +26505,18 @@ fi
  
     # now check for the header.
     if test "${AST_LUA_FOUND}" = "yes"; then
@@ -117,3 +126,106 @@
  if test "x$ac_cv_header_lua5_1_lua_h" = xyes; then :
    LUA_HEADER_FOUND=1
  else
+@@ -27879,6 +27881,102 @@ $as_echo "no" >&6; }
+ 
+ fi
+ 
++if test "$PBX_OPENSSL" = "1";
++then
++
++    if test "x${PBX_SSL_OP_NO_TLSV1_1}" != "x1"; then
++	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for SSL_OP_NO_TLSv1_1 in openssl/ssl.h" >&5
++$as_echo_n "checking for SSL_OP_NO_TLSv1_1 in openssl/ssl.h... " >&6; }
++	saved_cppflags="${CPPFLAGS}"
++	if test "x${SSL_OP_NO_TLSV1_1_DIR}" != "x"; then
++	    SSL_OP_NO_TLSV1_1_INCLUDE="-I${SSL_OP_NO_TLSV1_1_DIR}/include"
++	fi
++	CPPFLAGS="${CPPFLAGS} ${SSL_OP_NO_TLSV1_1_INCLUDE}"
++
++	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++ #include <openssl/ssl.h>
++int
++main ()
++{
++#if defined(SSL_OP_NO_TLSv1_1)
++				int foo = 0;
++			        #else
++			        int foo = bar;
++			        #endif
++				0
++
++  ;
++  return 0;
++
++_ACEOF
++if ac_fn_c_try_compile "$LINENO"; then :
++     { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++		PBX_SSL_OP_NO_TLSV1_1=1
++
++$as_echo "#define HAVE_SSL_OP_NO_TLSV1_1 1" >>confdefs.h
++
++
++
++else
++     { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++
++fi
++rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
++	CPPFLAGS="${saved_cppflags}"
++    fi
++
++
++
++    if test "x${PBX_SSL_OP_NO_TLSV1_2}" != "x1"; then
++	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for SSL_OP_NO_TLSv1_2 in openssl/ssl.h" >&5
++$as_echo_n "checking for SSL_OP_NO_TLSv1_2 in openssl/ssl.h... " >&6; }
++	saved_cppflags="${CPPFLAGS}"
++	if test "x${SSL_OP_NO_TLSV1_2_DIR}" != "x"; then
++	    SSL_OP_NO_TLSV1_2_INCLUDE="-I${SSL_OP_NO_TLSV1_2_DIR}/include"
++	fi
++	CPPFLAGS="${CPPFLAGS} ${SSL_OP_NO_TLSV1_2_INCLUDE}"
++
++	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++ #include <openssl/ssl.h>
++int
++main ()
++{
++if defined(SSL_OP_NO_TLSv1_2)
++				int foo = 0;
++			        #else
++			        int foo = bar;
++			        #endif
++				0
++
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_compile "$LINENO"; then :
++    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++		PBX_SSL_OP_NO_TLSV1_2=1
++
++$as_echo "#define HAVE_SSL_OP_NO_TLSV1_2 1" >>confdefs.h
++
++
++
++else
++     { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++
++fi
++rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
++	CPPFLAGS="${saved_cppflags}"
++    fi
++
++
++fi
++
+ 
+ if test "x${PBX_SRTP}" != "x1" -a "${USE_SRTP}" != "no"; then
+    pbxlibdir=""

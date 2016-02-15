@@ -42,6 +42,7 @@
     SUBDIR += R-cran-reshape2
     SUBDIR += R-cran-rngtools
     SUBDIR += R-cran-rstudioapi
+    SUBDIR += R-cran-tidyr
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += aarch64-binutils
@@ -1123,6 +1124,7 @@
     SUBDIR += libbobcat
     SUBDIR += libbonobo
     SUBDIR += libbonobo-reference
+    SUBDIR += libbrotli
     SUBDIR += libbson
     SUBDIR += libburn
     SUBDIR += libc++
@@ -1392,6 +1394,7 @@
     SUBDIR += linux_libusb
     SUBDIR += lion
     SUBDIR += lldb37
+    SUBDIR += lldb38
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
@@ -3742,19 +3745,10 @@
     SUBDIR += php5-blitz-devel
     SUBDIR += php5-dav
     SUBDIR += php5-geshi
-    SUBDIR += php5-gettext
     SUBDIR += php5-ice
-    SUBDIR += php5-json
     SUBDIR += php5-msgpack
-    SUBDIR += php5-pcntl
     SUBDIR += php5-pinba
-    SUBDIR += php5-readline
-    SUBDIR += php5-shmop
-    SUBDIR += php5-sysvmsg
-    SUBDIR += php5-sysvsem
-    SUBDIR += php5-sysvshm
     SUBDIR += php5-thrift
-    SUBDIR += php5-tokenizer
     SUBDIR += php55-gettext
     SUBDIR += php55-json
     SUBDIR += php55-pcntl
@@ -4378,6 +4372,7 @@
     SUBDIR += py-tempora
     SUBDIR += py-tempstorage
     SUBDIR += py-termcolor
+    SUBDIR += py-terminable_thread
     SUBDIR += py-termstyle
     SUBDIR += py-testgears
     SUBDIR += py-testoob

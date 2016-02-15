@@ -60,6 +60,7 @@ share/X11/xkb/keycodes/evdev
 share/X11/xkb/keycodes/fujitsu
 share/X11/xkb/keycodes/hp
 share/X11/xkb/keycodes/ibm
+share/X11/xkb/keycodes/jolla
 share/X11/xkb/keycodes/macintosh
 share/X11/xkb/keycodes/olpc
 share/X11/xkb/keycodes/sgi_vndr/indigo
@@ -144,6 +145,7 @@ share/X11/xkb/symbols/iq
 share/X11/xkb/symbols/ir
 share/X11/xkb/symbols/is
 share/X11/xkb/symbols/it
+share/X11/xkb/symbols/jolla_vndr/sbj
 share/X11/xkb/symbols/jp
 share/X11/xkb/symbols/ke
 share/X11/xkb/symbols/keypad
@@ -252,6 +254,7 @@ share/X11/xkb/symbols/sun_vndr/ua
 share/X11/xkb/symbols/sun_vndr/us
 share/X11/xkb/symbols/sy
 share/X11/xkb/symbols/terminate
+share/X11/xkb/symbols/tg
 share/X11/xkb/symbols/th
 share/X11/xkb/symbols/tj
 share/X11/xkb/symbols/tm
@@ -294,8 +297,8 @@ share/X11/xkb/types/pc
 %%NLS%%share/locale/fi/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xkeyboard-config.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xkeyboard-config.mo

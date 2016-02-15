@@ -4,10 +4,12 @@ man/man1/fet.1.gz
 man/man1/fet-cl.1.gz
 %%NLS%%%%DATADIR%%/translations/fet_ar.qm
 %%NLS%%%%DATADIR%%/translations/fet_ca.qm
+%%NLS%%%%DATADIR%%/translations/fet_cs.qm
 %%NLS%%%%DATADIR%%/translations/fet_da.qm
 %%NLS%%%%DATADIR%%/translations/fet_de.qm
 %%NLS%%%%DATADIR%%/translations/fet_el.qm
 %%NLS%%%%DATADIR%%/translations/fet_es.qm
+%%NLS%%%%DATADIR%%/translations/fet_eu.qm
 %%NLS%%%%DATADIR%%/translations/fet_fa.qm
 %%NLS%%%%DATADIR%%/translations/fet_fr.qm
 %%NLS%%%%DATADIR%%/translations/fet_gl.qm

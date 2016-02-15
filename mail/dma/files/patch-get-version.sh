@@ -1,10 +1,11 @@
---- get-version.sh.orig	2012-03-08 17:37:54.000000000 +0000
-+++ get-version.sh	2012-03-08 17:38:41.000000000 +0000
-@@ -1,9 +1,7 @@
- #!/bin/sh
+--- get-version.sh.orig	2016-02-07 12:41:49 UTC
++++ get-version.sh
+@@ -2,10 +2,8 @@
  
+ tmp=$1
+ file=${tmp:=VERSION}
 -gitver=$(git describe 2>/dev/null | tr - .)
- filever=$(cat VERSION)
+ filever=$(cat ${file} 2>/dev/null)
  
 -version=${gitver}
  : ${version:=$filever}

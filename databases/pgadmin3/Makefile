@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pgadmin3
-PORTVERSION=	1.20.0
-PORTREVISION=	1
+PORTVERSION=	1.22.1
+PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	PGSQL/pgadmin3/release/v${PORTVERSION}/src
 DIST_SUBDIR=	postgresql
@@ -15,14 +15,12 @@ LICENSE=	PostgreSQL
 
 BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
-IGNORE_WITH_PGSQL=	8.2 8.3 8.4
-USES=		gettext gmake pgsql #:9.0+
+USES=		gettext gmake pgsql:9.0+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-version=${USE_WX} --enable-databasedesigner
 USE_GNOME=	libxml2 libxslt
 USE_WX=		2.8
 WX_COMPS=	wx contrib
-WX_UNICODE=	yes
 
 PLIST_FILES=	bin/pgadmin3
 PORTDATA=	*

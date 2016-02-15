@@ -1,7 +1,7 @@
 # Created by: Sergey Kozlov <kozlov.sergey.404@gmail.com>
 # $FreeBSD$
 
-PORTVERSION=	4.3.1
+PORTVERSION=	4.3.2
 PKGNAMESUFFIX=	43
 MASTERDIR=	${.CURDIR}/../kibana42
 PKGDIR=		${.CURDIR}

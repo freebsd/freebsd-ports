@@ -598,6 +598,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/FormatCharacters.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Future.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Geometry.html
+%%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Image++.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Image.fig
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Image.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/Image.png
@@ -626,6 +627,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/advanced-windows-installation.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/animate.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api.html
+%%PORTDOCS%%%%DOCSDIR%%-6/www/api/Image++.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/MagickCore/ImageMagick_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/MagickCore/ImageMagick_8h.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/MagickCore/MagickCore_8h-source.html

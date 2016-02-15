@@ -24,6 +24,7 @@ share/applications/gnome-genius.desktop
 %%DATADIR%%/examples/easy-matrix-examples.gel
 %%DATADIR%%/examples/eulers-method-exp-run.gel
 %%DATADIR%%/examples/eulers-method-graphs-exp.gel
+%%DATADIR%%/examples/explicit-fdm-heat.gel
 %%DATADIR%%/examples/fourier-series-animation.gel
 %%DATADIR%%/examples/fourier-series-plotting.gel
 %%DATADIR%%/examples/laplace-fdm.gel
@@ -39,6 +40,7 @@ share/applications/gnome-genius.desktop
 %%DATADIR%%/examples/strange-attractor.gel
 %%DATADIR%%/examples/taylor-exp.gel
 %%DATADIR%%/examples/taylor-sin.gel
+%%DATADIR%%/examples/vibrating-drumhead-modes.gel
 %%DATADIR%%/gel/calculus/differentiation.gel
 %%DATADIR%%/gel/calculus/fourier.gel
 %%DATADIR%%/gel/calculus/integration.gel
@@ -159,6 +161,7 @@ share/icons/hicolor/8x8/apps/gnome-genius.png
 share/icons/hicolor/scalable/apps/gnome-genius.svg
 share/locale/ar/LC_MESSAGES/genius.mo
 share/locale/az/LC_MESSAGES/genius.mo
+share/locale/bs/LC_MESSAGES/genius.mo
 share/locale/ca/LC_MESSAGES/genius.mo
 share/locale/cs/LC_MESSAGES/genius.mo
 share/locale/da/LC_MESSAGES/genius.mo
@@ -167,6 +170,7 @@ share/locale/dz/LC_MESSAGES/genius.mo
 share/locale/el/LC_MESSAGES/genius.mo
 share/locale/en_CA/LC_MESSAGES/genius.mo
 share/locale/en_GB/LC_MESSAGES/genius.mo
+share/locale/eo/LC_MESSAGES/genius.mo
 share/locale/es/LC_MESSAGES/genius.mo
 share/locale/eu/LC_MESSAGES/genius.mo
 share/locale/fr/LC_MESSAGES/genius.mo
@@ -194,7 +198,7 @@ share/locale/rw/LC_MESSAGES/genius.mo
 share/locale/sl/LC_MESSAGES/genius.mo
 share/locale/sq/LC_MESSAGES/genius.mo
 share/locale/sr/LC_MESSAGES/genius.mo
-share/locale/sr@Latn/LC_MESSAGES/genius.mo
+share/locale/sr@latin/LC_MESSAGES/genius.mo
 share/locale/sv/LC_MESSAGES/genius.mo
 share/locale/zh_CN/LC_MESSAGES/genius.mo
 share/locale/zh_TW/LC_MESSAGES/genius.mo

@@ -1,0 +1,18 @@
+--- src/core/CMakeLists.txt.orig	2014-09-11 19:08:18 UTC
++++ src/core/CMakeLists.txt
+@@ -4,8 +4,8 @@
+ include_directories(
+     ${CMAKE_SOURCE_DIR}/export/
+     ${CMAKE_BINARY_DIR}/export/
+-    ${EXTERNAL_INCLUDE_DIRS}
+     ${CMAKE_SOURCE_DIR}/ext/oiio/src/include
++    ${EXTERNAL_INCLUDE_DIRS}
+ )
+ 
+ file(GLOB_RECURSE core_src_files "${CMAKE_SOURCE_DIR}/src/core/*.cpp")
+@@ -90,4 +90,4 @@ message(STATUS "Create OpenColorIO.pc fr
+ configure_file(${CMAKE_SOURCE_DIR}/export/pkgconfig/OpenColorIO.pc.in
+     ${CMAKE_CURRENT_BINARY_DIR}/OpenColorIO.pc @ONLY)
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/OpenColorIO.pc
+-    DESTINATION ${CMAKE_INSTALL_EXEC_PREFIX}/lib${LIB_SUFFIX}/pkgconfig/)
++    DESTINATION ${CMAKE_INSTALL_EXEC_PREFIX}/libdata/pkgconfig/)

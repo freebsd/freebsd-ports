@@ -685,6 +685,7 @@ include/wine/windows/shdeprecated.h
 include/wine/windows/shdeprecated.idl
 include/wine/windows/shdispid.h
 include/wine/windows/shellapi.h
+%%STAGING%%include/wine/windows/shellscalingapi.h
 include/wine/windows/shldisp.h
 include/wine/windows/shldisp.idl
 include/wine/windows/shlguid.h
@@ -1603,6 +1604,7 @@ lib32/wine/fakedlls/msctfp.dll
 lib32/wine/fakedlls/msdaps.dll
 lib32/wine/fakedlls/msdelta.dll
 lib32/wine/fakedlls/msdmo.dll
+lib32/wine/fakedlls/msdrm.dll
 lib32/wine/fakedlls/msftedit.dll
 lib32/wine/fakedlls/msg711.acm
 lib32/wine/fakedlls/msgsm32.acm
@@ -2203,6 +2205,7 @@ lib32/wine/msctfp.dll.so
 lib32/wine/msdaps.dll.so
 lib32/wine/msdelta.dll.so
 lib32/wine/msdmo.dll.so
+lib32/wine/msdrm.dll.so
 lib32/wine/msftedit.dll.so
 lib32/wine/msg711.acm.so
 lib32/wine/msgsm32.acm.so

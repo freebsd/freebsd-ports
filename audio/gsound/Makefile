@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsound
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	GNOME
 
@@ -12,7 +12,7 @@ COMMENT=	GObject library for playing system sounds
 BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libcanberra.so:${PORTSDIR}/audio/libcanberra
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

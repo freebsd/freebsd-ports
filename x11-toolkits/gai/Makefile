@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/GAI%20-%20Library/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General Applet Interface Library
 
+LICENSE=	LGPL20+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
 USES=		gettext-tools pkgconfig tar:bzip2
@@ -21,28 +24,20 @@ CONFIGURE_ENV=	SDLCONF=${SDL_CONFIG}
 CONFIGURE_ARGS=	--disable-gnome
 CPPFLAGS+=	`pkg-config --cflags libgnomeui-2.0`
 
-PLIST_FILES=	include/gai/gai.h lib/libgai.so.${PORTVERSION} \
-		lib/libgai.so.0 lib/libgai.so libdata/pkgconfig/gai.pc \
-		share/locale/de/LC_MESSAGES/gai.mo
 PORTDOCS=	*
+PORTEXAMPLES=	*
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|sdl-config --|${SDL_CONFIG} --|g; \
 		s|/usr/X11R6|${LOCALBASE}|g" ${WRKSRC}/configure
 
-post-install:
-	cd ${WRKSRC}/docs && \
-	${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
-	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
-.for dir in docking examples templates
-	cd ${WRKSRC} && \
-	${FIND} ${dir} -type d -exec ${MKDIR} "${STAGEDIR}${EXAMPLESDIR}/{}" \; && \
-	${FIND} ${dir} -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${EXAMPLESDIR}/{}" \;
-.endfor
-	@${FIND} ${STAGEDIR}${EXAMPLESDIR} -type f | \
-		${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST}
+post-install-DOCS-on:
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "docking examples templates" ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

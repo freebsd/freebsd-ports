@@ -341,6 +341,7 @@
     SUBDIR += gnake
     SUBDIR += gnarr
     SUBDIR += gno3dtet
+    SUBDIR += gnome-2048
     SUBDIR += gnome-chess
     SUBDIR += gnome-games
     SUBDIR += gnome-klotski
@@ -512,6 +513,7 @@
     SUBDIR += lianliankan
     SUBDIR += libdungeonmaker
     SUBDIR += libfov
+    SUBDIR += libgames-support
     SUBDIR += libggz
     SUBDIR += libkdegames
     SUBDIR += libkmahjongg

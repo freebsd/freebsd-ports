@@ -11,29 +11,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based window manager
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_UNSAFE= yes
 
 USE_QT4=	corelib gui moc_build qmake_build
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	CHANGES README
-PLIST_FILES=	bin/qlwm \
-		lib/qlwm/biff \
-		lib/qlwm/dclock \
-		lib/qlwm/files/appdefaults \
-		lib/qlwm/files/button_left.xpm \
-		lib/qlwm/files/button_right.xpm \
-		lib/qlwm/files/defaults \
-		lib/qlwm/files/menu.xpm \
-		lib/qlwm/files/menuconfig \
-		lib/qlwm/files/tiled.xpm \
-		lib/qlwm/files/winlist.xpm \
-		lib/qlwm/qlwm \
-		man/man1/qlwm.1.gz
 
 SUB_FILES=	qlwm
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${ECHO} "QMAKE_LFLAGS= -lXext -lX11" >> /${WRKSRC}/src/qlwm.pro
@@ -52,6 +40,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/files/appdefaults ${STAGEDIR}${PREFIX}/lib/qlwm/files
 	${INSTALL_DATA} ${WRKSRC}/files/defaults ${STAGEDIR}${PREFIX}/lib/qlwm/files
 	${INSTALL_DATA} ${WRKSRC}/files/menuconfig ${STAGEDIR}${PREFIX}/lib/qlwm/files
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}

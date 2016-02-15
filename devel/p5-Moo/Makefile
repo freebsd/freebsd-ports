@@ -27,8 +27,14 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-XS_BUILD_DEPENDS=	p5-Class-XSAccessor>=1.18:${PORTSDIR}/devel/p5-Class-XSAccessor \
-			p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+XS_BUILD_DEPENDS=	p5-Class-XSAccessor>=1.18:${PORTSDIR}/devel/p5-Class-XSAccessor
 XS_RUN_DEPENDS:=	${XS_BUILD_DEPENDS}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502104 && ${PORT_OPTIONS:MXS}
+BUILD_DEPENDS+=		p5-Scalar-List-Utils>=1.41:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=		p5-Scalar-List-Utils>=1.41:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>

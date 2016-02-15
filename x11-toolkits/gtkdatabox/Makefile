@@ -11,11 +11,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+2 widget to display large amounts of numerical data
 
-LICENSE=	LGPL21
-
-OPTIONS_DEFINE=	GLADE GLADEUI DOCS EXAMPLES
-GLADE_DESC=	Enable libglade2 support
-GLADEUI_DESC=	Enable glade3 support
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool pathfix pkgconfig
 USE_GNOME=	gtk20
@@ -25,14 +22,16 @@ CONFIGURE_ARGS=	--includedir="${PREFIX}/include/${PORTNAME}" \
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_SUB=yes
-
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	GLADE GLADEUI DOCS EXAMPLES
+OPTIONS_SUB=	yes
+
+GLADE_DESC=	Enable libglade2 support
 GLADE_USE=	GNOME=libglade2
 GLADE_CONFIGURE_ENABLE=	libglade
-
+GLADEUI_DESC=	Enable glade3 support
 GLADEUI_LIB_DEPENDS=	libgladeui-1.so:${PORTSDIR}/devel/glade3
 GLADEUI_CONFIGURE_ENABLE=	glade
 
@@ -45,9 +44,12 @@ post-patch:
 		 /DISABLE_DEPRECATED/d' ${WRKSRC}/${dir}/Makefile.in
 .endfor
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} api ${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.c ${STAGEDIR}${EXAMPLESDIR})
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

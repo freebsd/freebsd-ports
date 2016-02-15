@@ -85,6 +85,7 @@ OPTIONS_DEFINE=	\
 	HTTP_UPSTREAM_STICKY \
 	HTTP_ZIP \
 	ARRAYVAR \
+	BROTLI \
 	DRIZZLE \
 	ENCRYPTSESSION \
 	FORMINPUT \
@@ -179,6 +180,7 @@ HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_ZIP_DESC=			3rd party http_zip module
 ARRAYVAR_DESC=			3rd party array_var module
+BROTLI_DESC=			3rd party brotli module
 DRIZZLE_DESC=			3rd party drizzlie module
 ENCRYPTSESSION_DESC=		3rd party encrypted_session module
 FORMINPUT_DESC=			3rd party form_input module
@@ -308,7 +310,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_auth_digest_module.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
-GIT_HTTP_AUTH_KRB5_VERSION=	f76d5d9
+GIT_HTTP_AUTH_KRB5_VERSION=	c85a38c
 GH_ACCOUNT+=	stnoonan:auth_krb5
 GH_PROJECT+=	spnego-http-auth-nginx-module:auth_krb5
 GH_TAGNAME+=	${GIT_HTTP_AUTH_KRB5_VERSION}:auth_krb5
@@ -496,7 +498,7 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-GIT_PUSH_VERSION=	0.98
+GIT_PUSH_VERSION=	0.99.4
 GH_ACCOUNT+=	slact:push
 GH_PROJECT+=	nchan:push
 GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push
@@ -889,6 +891,16 @@ GH_ACCOUNT+=	openresty:arrayvar
 GH_PROJECT+=	array-var-nginx-module:arrayvar
 GH_TAGNAME+=	v${NGINX_ARRAYVAR_VERSION}:arrayvar
 CONFIGURE_ARGS+=--add-module=${WRKSRC_arrayvar}
+.endif
+
+.if ${PORT_OPTIONS:MBROTLI}
+NGINX_BROTLI_VERSION=	86998c6
+LIB_DEPENDS+=	libbrotlidec.so:${PORTSDIR}/devel/libbrotli \
+		libbrotlienc.so:${PORTSDIR}/devel/libbrotli
+GH_ACCOUNT+=	google:brotli
+GH_PROJECT+=	ngx_brotli:brotli
+GH_TAGNAME+=	${NGINX_BROTLI_VERSION}:brotli
+CONFIGURE_ARGS+=--add-module=${WRKSRC_brotli}
 .endif
 
 .if ${PORT_OPTIONS:MFORMINPUT}

@@ -9,7 +9,7 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/src/qt-${PORTNAME}/
 PKGNAMESUFFIX=	-qt4
 DISTNAME=	qt-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 bindings for GStreamer multimedia library
 
 LICENSE=	LGPL21+

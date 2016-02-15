@@ -3,6 +3,7 @@
 
 PORTNAME=	pillow
 PORTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -96,7 +97,7 @@ do-install:
 		${PYDISTUTILS_SETUP} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS} \
 		${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
 
-regression-test: extract
+do-test: extract
 	@cd ${WRKSRC} && \
 	${PYTHON_CMD} ${PYSETUP} build_ext -i && \
 	${PYTHON_CMD} selftest.py

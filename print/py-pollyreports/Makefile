@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PollyReports
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.7
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +12,13 @@ COMMENT=	Band-oriented PDF report generation from database query
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	REPORTLAB
 
-REPORTLAB_DESC=	Install Reportlab2
-REPORTLAB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab2>=2.1:${PORTSDIR}/print/py-reportlab2
+REPORTLAB_DESC=	Install Reportlab
+REPORTLAB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>=3.0:${PORTSDIR}/print/py-reportlab
 
 .include <bsd.port.mk>

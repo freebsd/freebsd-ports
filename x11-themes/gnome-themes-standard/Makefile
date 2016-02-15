@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-themes-standard
-PORTVERSION=	3.16.2
-PORTREVISION=	1
+PORTVERSION=	3.18.0
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,7 +13,7 @@ COMMENT=	Standard themes for GNOME
 CONFLICTS=	gnome-themes-2.[0-9]*
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext-tools gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext-tools gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk20 gtk30 intlhack librsvg2
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

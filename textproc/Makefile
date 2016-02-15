@@ -1165,15 +1165,6 @@
     SUBDIR += perl2html
     SUBDIR += permute
     SUBDIR += php-mecab
-    SUBDIR += php5-ctype
-    SUBDIR += php5-dom
-    SUBDIR += php5-pspell
-    SUBDIR += php5-simplexml
-    SUBDIR += php5-wddx
-    SUBDIR += php5-xml
-    SUBDIR += php5-xmlreader
-    SUBDIR += php5-xmlwriter
-    SUBDIR += php5-xsl
     SUBDIR += php55-ctype
     SUBDIR += php55-dom
     SUBDIR += php55-pspell
@@ -1574,6 +1565,7 @@
     SUBDIR += sxml
     SUBDIR += syck
     SUBDIR += ta-aspell
+    SUBDIR += tagsoup
     SUBDIR += tclExpat
     SUBDIR += tdhkit
     SUBDIR += te-aspell

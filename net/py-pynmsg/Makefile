@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libnmsg.so:${PORTSDIR}/net/nmsg
 
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 USES=		pkgconfig python shebangfix uniquefiles:dirs
 
 SHEBANG_FILES=	examples/*.py

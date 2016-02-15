@@ -1,6 +1,6 @@
---- spool.c.orig	2013-06-03 14:03:15.000000000 +0000
-+++ spool.c	2013-08-22 11:07:47.000000000 +0000
-@@ -415,7 +415,7 @@ flushqueue_since(unsigned int period)
+--- spool.c.orig	2016-02-07 12:41:49 UTC
++++ spool.c
+@@ -416,7 +416,7 @@ flushqueue_since(unsigned int period)
  		return (0);
  
  	/* Did the flush file get touched within the last period seconds? */

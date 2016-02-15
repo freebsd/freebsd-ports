@@ -9,7 +9,7 @@ MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/libdwarf/libdwarf-20130207
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Library to analyze DWARF debugging information in ELF files
 
-INSTALL_CONFLICT=	bsdlibdwarf*
+CONFLICTS_INSTALL=	bsdlibdwarf*
 
 MAKE_JOBS_UNSAFE=	yes
 

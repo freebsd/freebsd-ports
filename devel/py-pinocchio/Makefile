@@ -15,6 +15,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>0:${PORTSDIR}/devel/py-colorama
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

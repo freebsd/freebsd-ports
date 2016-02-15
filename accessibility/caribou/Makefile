@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	caribou
-PORTVERSION=	0.4.18.1
+PORTVERSION=	0.4.19
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter \
 		libxklavier.so:${PORTSDIR}/x11/libxklavier
 RUN_DEPENDS=	py2?-atspi>=2.1.91:${PORTSDIR}/accessibility/py-atspi
 
-USES=		gettext gmake libtool pathfix pkgconfig python:2 \
+USES=		gettext gmake gnome libtool pathfix pkgconfig python:2 \
 		shebangfix tar:xz
 USE_GNOME=	gtk30 intlhack introspection:build libxml2 \
 		libxslt:build pygobject3

@@ -13,7 +13,6 @@ share/help/C/gnome-help/a11y-visualalert.page
 share/help/C/gnome-help/a11y.page
 share/help/C/gnome-help/about-this-guide.page
 share/help/C/gnome-help/accounts-add.page
-share/help/C/gnome-help/accounts-create.page
 share/help/C/gnome-help/accounts-disable-service.page
 share/help/C/gnome-help/accounts-provider-not-available.page
 share/help/C/gnome-help/accounts-remove.page
@@ -38,6 +37,7 @@ share/help/C/gnome-help/bluetooth.page
 share/help/C/gnome-help/clock-calendar.page
 share/help/C/gnome-help/clock-set.page
 share/help/C/gnome-help/clock-timezone.page
+share/help/C/gnome-help/clock-world.page
 share/help/C/gnome-help/clock.page
 share/help/C/gnome-help/color-assignprofiles.page
 share/help/C/gnome-help/color-calibrate-camera.page
@@ -72,6 +72,8 @@ share/help/C/gnome-help/disk-check.page
 share/help/C/gnome-help/disk-format.page
 share/help/C/gnome-help/disk-partitions.page
 share/help/C/gnome-help/disk.page
+share/help/C/gnome-help/display-blank.page
+share/help/C/gnome-help/display-brightness.page
 share/help/C/gnome-help/display-dual-monitors.page
 share/help/C/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/C/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -218,7 +220,6 @@ share/help/C/gnome-help/look-display-fuzzy.page
 share/help/C/gnome-help/look-resolution.page
 share/help/C/gnome-help/media.page
 share/help/C/gnome-help/more-help.page
-share/help/C/gnome-help/mouse-disabletouchpad.page
 share/help/C/gnome-help/mouse-doubleclick.page
 share/help/C/gnome-help/mouse-lefthanded.page
 share/help/C/gnome-help/mouse-middleclick.page
@@ -253,7 +254,6 @@ share/help/C/gnome-help/net-firewall-ports.page
 share/help/C/gnome-help/net-fixed-ip-address.page
 share/help/C/gnome-help/net-general.page
 share/help/C/gnome-help/net-install-flash.page
-share/help/C/gnome-help/net-install-moonlight.page
 share/help/C/gnome-help/net-macaddress.page
 share/help/C/gnome-help/net-manual.page
 share/help/C/gnome-help/net-mobile.page
@@ -290,7 +290,6 @@ share/help/C/gnome-help/power-batteryslow.page
 share/help/C/gnome-help/power-batterywindows.page
 share/help/C/gnome-help/power-closelid.page
 share/help/C/gnome-help/power-constantfan.page
-share/help/C/gnome-help/power-hibernate.page
 share/help/C/gnome-help/power-hotcomputer.page
 share/help/C/gnome-help/power-lowpower.page
 share/help/C/gnome-help/power-nowireless.page
@@ -345,7 +344,6 @@ share/help/C/gnome-help/shell-keyboard-shortcuts.page
 share/help/C/gnome-help/shell-lockscreen.page
 share/help/C/gnome-help/shell-notifications.page
 share/help/C/gnome-help/shell-overview.page
-share/help/C/gnome-help/shell-terminology.page
 share/help/C/gnome-help/shell-windows-lost.page
 share/help/C/gnome-help/shell-windows-maximize.page
 share/help/C/gnome-help/shell-windows-states.page
@@ -401,6 +399,7 @@ share/help/C/system-admin-guide/keyboard-layout.page
 share/help/C/system-admin-guide/legal.xml
 share/help/C/system-admin-guide/lockdown-command-line.page
 share/help/C/system-admin-guide/lockdown-file-saving.page
+share/help/C/system-admin-guide/lockdown-online-accounts.page
 share/help/C/system-admin-guide/lockdown-printing.page
 share/help/C/system-admin-guide/lockdown-repartitioning.page
 share/help/C/system-admin-guide/login-automatic.page
@@ -435,7 +434,6 @@ share/help/as/gnome-help/a11y-visualalert.page
 share/help/as/gnome-help/a11y.page
 share/help/as/gnome-help/about-this-guide.page
 share/help/as/gnome-help/accounts-add.page
-share/help/as/gnome-help/accounts-create.page
 share/help/as/gnome-help/accounts-disable-service.page
 share/help/as/gnome-help/accounts-provider-not-available.page
 share/help/as/gnome-help/accounts-remove.page
@@ -460,6 +458,7 @@ share/help/as/gnome-help/bluetooth.page
 share/help/as/gnome-help/clock-calendar.page
 share/help/as/gnome-help/clock-set.page
 share/help/as/gnome-help/clock-timezone.page
+share/help/as/gnome-help/clock-world.page
 share/help/as/gnome-help/clock.page
 share/help/as/gnome-help/color-assignprofiles.page
 share/help/as/gnome-help/color-calibrate-camera.page
@@ -494,6 +493,8 @@ share/help/as/gnome-help/disk-check.page
 share/help/as/gnome-help/disk-format.page
 share/help/as/gnome-help/disk-partitions.page
 share/help/as/gnome-help/disk.page
+share/help/as/gnome-help/display-blank.page
+share/help/as/gnome-help/display-brightness.page
 share/help/as/gnome-help/display-dual-monitors.page
 share/help/as/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/as/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -640,7 +641,6 @@ share/help/as/gnome-help/look-display-fuzzy.page
 share/help/as/gnome-help/look-resolution.page
 share/help/as/gnome-help/media.page
 share/help/as/gnome-help/more-help.page
-share/help/as/gnome-help/mouse-disabletouchpad.page
 share/help/as/gnome-help/mouse-doubleclick.page
 share/help/as/gnome-help/mouse-lefthanded.page
 share/help/as/gnome-help/mouse-middleclick.page
@@ -675,7 +675,6 @@ share/help/as/gnome-help/net-firewall-ports.page
 share/help/as/gnome-help/net-fixed-ip-address.page
 share/help/as/gnome-help/net-general.page
 share/help/as/gnome-help/net-install-flash.page
-share/help/as/gnome-help/net-install-moonlight.page
 share/help/as/gnome-help/net-macaddress.page
 share/help/as/gnome-help/net-manual.page
 share/help/as/gnome-help/net-mobile.page
@@ -712,7 +711,6 @@ share/help/as/gnome-help/power-batteryslow.page
 share/help/as/gnome-help/power-batterywindows.page
 share/help/as/gnome-help/power-closelid.page
 share/help/as/gnome-help/power-constantfan.page
-share/help/as/gnome-help/power-hibernate.page
 share/help/as/gnome-help/power-hotcomputer.page
 share/help/as/gnome-help/power-lowpower.page
 share/help/as/gnome-help/power-nowireless.page
@@ -767,7 +765,6 @@ share/help/as/gnome-help/shell-keyboard-shortcuts.page
 share/help/as/gnome-help/shell-lockscreen.page
 share/help/as/gnome-help/shell-notifications.page
 share/help/as/gnome-help/shell-overview.page
-share/help/as/gnome-help/shell-terminology.page
 share/help/as/gnome-help/shell-windows-lost.page
 share/help/as/gnome-help/shell-windows-maximize.page
 share/help/as/gnome-help/shell-windows-states.page
@@ -820,7 +817,6 @@ share/help/ca/gnome-help/a11y-visualalert.page
 share/help/ca/gnome-help/a11y.page
 share/help/ca/gnome-help/about-this-guide.page
 share/help/ca/gnome-help/accounts-add.page
-share/help/ca/gnome-help/accounts-create.page
 share/help/ca/gnome-help/accounts-disable-service.page
 share/help/ca/gnome-help/accounts-provider-not-available.page
 share/help/ca/gnome-help/accounts-remove.page
@@ -845,6 +841,7 @@ share/help/ca/gnome-help/bluetooth.page
 share/help/ca/gnome-help/clock-calendar.page
 share/help/ca/gnome-help/clock-set.page
 share/help/ca/gnome-help/clock-timezone.page
+share/help/ca/gnome-help/clock-world.page
 share/help/ca/gnome-help/clock.page
 share/help/ca/gnome-help/color-assignprofiles.page
 share/help/ca/gnome-help/color-calibrate-camera.page
@@ -879,6 +876,8 @@ share/help/ca/gnome-help/disk-check.page
 share/help/ca/gnome-help/disk-format.page
 share/help/ca/gnome-help/disk-partitions.page
 share/help/ca/gnome-help/disk.page
+share/help/ca/gnome-help/display-blank.page
+share/help/ca/gnome-help/display-brightness.page
 share/help/ca/gnome-help/display-dual-monitors.page
 share/help/ca/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ca/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -1025,7 +1024,6 @@ share/help/ca/gnome-help/look-display-fuzzy.page
 share/help/ca/gnome-help/look-resolution.page
 share/help/ca/gnome-help/media.page
 share/help/ca/gnome-help/more-help.page
-share/help/ca/gnome-help/mouse-disabletouchpad.page
 share/help/ca/gnome-help/mouse-doubleclick.page
 share/help/ca/gnome-help/mouse-lefthanded.page
 share/help/ca/gnome-help/mouse-middleclick.page
@@ -1060,7 +1058,6 @@ share/help/ca/gnome-help/net-firewall-ports.page
 share/help/ca/gnome-help/net-fixed-ip-address.page
 share/help/ca/gnome-help/net-general.page
 share/help/ca/gnome-help/net-install-flash.page
-share/help/ca/gnome-help/net-install-moonlight.page
 share/help/ca/gnome-help/net-macaddress.page
 share/help/ca/gnome-help/net-manual.page
 share/help/ca/gnome-help/net-mobile.page
@@ -1097,7 +1094,6 @@ share/help/ca/gnome-help/power-batteryslow.page
 share/help/ca/gnome-help/power-batterywindows.page
 share/help/ca/gnome-help/power-closelid.page
 share/help/ca/gnome-help/power-constantfan.page
-share/help/ca/gnome-help/power-hibernate.page
 share/help/ca/gnome-help/power-hotcomputer.page
 share/help/ca/gnome-help/power-lowpower.page
 share/help/ca/gnome-help/power-nowireless.page
@@ -1152,7 +1148,6 @@ share/help/ca/gnome-help/shell-keyboard-shortcuts.page
 share/help/ca/gnome-help/shell-lockscreen.page
 share/help/ca/gnome-help/shell-notifications.page
 share/help/ca/gnome-help/shell-overview.page
-share/help/ca/gnome-help/shell-terminology.page
 share/help/ca/gnome-help/shell-windows-lost.page
 share/help/ca/gnome-help/shell-windows-maximize.page
 share/help/ca/gnome-help/shell-windows-states.page
@@ -1205,7 +1200,6 @@ share/help/cs/gnome-help/a11y-visualalert.page
 share/help/cs/gnome-help/a11y.page
 share/help/cs/gnome-help/about-this-guide.page
 share/help/cs/gnome-help/accounts-add.page
-share/help/cs/gnome-help/accounts-create.page
 share/help/cs/gnome-help/accounts-disable-service.page
 share/help/cs/gnome-help/accounts-provider-not-available.page
 share/help/cs/gnome-help/accounts-remove.page
@@ -1230,6 +1224,7 @@ share/help/cs/gnome-help/bluetooth.page
 share/help/cs/gnome-help/clock-calendar.page
 share/help/cs/gnome-help/clock-set.page
 share/help/cs/gnome-help/clock-timezone.page
+share/help/cs/gnome-help/clock-world.page
 share/help/cs/gnome-help/clock.page
 share/help/cs/gnome-help/color-assignprofiles.page
 share/help/cs/gnome-help/color-calibrate-camera.page
@@ -1264,6 +1259,8 @@ share/help/cs/gnome-help/disk-check.page
 share/help/cs/gnome-help/disk-format.page
 share/help/cs/gnome-help/disk-partitions.page
 share/help/cs/gnome-help/disk.page
+share/help/cs/gnome-help/display-blank.page
+share/help/cs/gnome-help/display-brightness.page
 share/help/cs/gnome-help/display-dual-monitors.page
 share/help/cs/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/cs/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -1410,7 +1407,6 @@ share/help/cs/gnome-help/look-display-fuzzy.page
 share/help/cs/gnome-help/look-resolution.page
 share/help/cs/gnome-help/media.page
 share/help/cs/gnome-help/more-help.page
-share/help/cs/gnome-help/mouse-disabletouchpad.page
 share/help/cs/gnome-help/mouse-doubleclick.page
 share/help/cs/gnome-help/mouse-lefthanded.page
 share/help/cs/gnome-help/mouse-middleclick.page
@@ -1445,7 +1441,6 @@ share/help/cs/gnome-help/net-firewall-ports.page
 share/help/cs/gnome-help/net-fixed-ip-address.page
 share/help/cs/gnome-help/net-general.page
 share/help/cs/gnome-help/net-install-flash.page
-share/help/cs/gnome-help/net-install-moonlight.page
 share/help/cs/gnome-help/net-macaddress.page
 share/help/cs/gnome-help/net-manual.page
 share/help/cs/gnome-help/net-mobile.page
@@ -1482,7 +1477,6 @@ share/help/cs/gnome-help/power-batteryslow.page
 share/help/cs/gnome-help/power-batterywindows.page
 share/help/cs/gnome-help/power-closelid.page
 share/help/cs/gnome-help/power-constantfan.page
-share/help/cs/gnome-help/power-hibernate.page
 share/help/cs/gnome-help/power-hotcomputer.page
 share/help/cs/gnome-help/power-lowpower.page
 share/help/cs/gnome-help/power-nowireless.page
@@ -1537,7 +1531,6 @@ share/help/cs/gnome-help/shell-keyboard-shortcuts.page
 share/help/cs/gnome-help/shell-lockscreen.page
 share/help/cs/gnome-help/shell-notifications.page
 share/help/cs/gnome-help/shell-overview.page
-share/help/cs/gnome-help/shell-terminology.page
 share/help/cs/gnome-help/shell-windows-lost.page
 share/help/cs/gnome-help/shell-windows-maximize.page
 share/help/cs/gnome-help/shell-windows-states.page
@@ -1590,7 +1583,6 @@ share/help/de/gnome-help/a11y-visualalert.page
 share/help/de/gnome-help/a11y.page
 share/help/de/gnome-help/about-this-guide.page
 share/help/de/gnome-help/accounts-add.page
-share/help/de/gnome-help/accounts-create.page
 share/help/de/gnome-help/accounts-disable-service.page
 share/help/de/gnome-help/accounts-provider-not-available.page
 share/help/de/gnome-help/accounts-remove.page
@@ -1615,6 +1607,7 @@ share/help/de/gnome-help/bluetooth.page
 share/help/de/gnome-help/clock-calendar.page
 share/help/de/gnome-help/clock-set.page
 share/help/de/gnome-help/clock-timezone.page
+share/help/de/gnome-help/clock-world.page
 share/help/de/gnome-help/clock.page
 share/help/de/gnome-help/color-assignprofiles.page
 share/help/de/gnome-help/color-calibrate-camera.page
@@ -1649,6 +1642,8 @@ share/help/de/gnome-help/disk-check.page
 share/help/de/gnome-help/disk-format.page
 share/help/de/gnome-help/disk-partitions.page
 share/help/de/gnome-help/disk.page
+share/help/de/gnome-help/display-blank.page
+share/help/de/gnome-help/display-brightness.page
 share/help/de/gnome-help/display-dual-monitors.page
 share/help/de/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/de/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -1795,7 +1790,6 @@ share/help/de/gnome-help/look-display-fuzzy.page
 share/help/de/gnome-help/look-resolution.page
 share/help/de/gnome-help/media.page
 share/help/de/gnome-help/more-help.page
-share/help/de/gnome-help/mouse-disabletouchpad.page
 share/help/de/gnome-help/mouse-doubleclick.page
 share/help/de/gnome-help/mouse-lefthanded.page
 share/help/de/gnome-help/mouse-middleclick.page
@@ -1830,7 +1824,6 @@ share/help/de/gnome-help/net-firewall-ports.page
 share/help/de/gnome-help/net-fixed-ip-address.page
 share/help/de/gnome-help/net-general.page
 share/help/de/gnome-help/net-install-flash.page
-share/help/de/gnome-help/net-install-moonlight.page
 share/help/de/gnome-help/net-macaddress.page
 share/help/de/gnome-help/net-manual.page
 share/help/de/gnome-help/net-mobile.page
@@ -1867,7 +1860,6 @@ share/help/de/gnome-help/power-batteryslow.page
 share/help/de/gnome-help/power-batterywindows.page
 share/help/de/gnome-help/power-closelid.page
 share/help/de/gnome-help/power-constantfan.page
-share/help/de/gnome-help/power-hibernate.page
 share/help/de/gnome-help/power-hotcomputer.page
 share/help/de/gnome-help/power-lowpower.page
 share/help/de/gnome-help/power-nowireless.page
@@ -1922,7 +1914,6 @@ share/help/de/gnome-help/shell-keyboard-shortcuts.page
 share/help/de/gnome-help/shell-lockscreen.page
 share/help/de/gnome-help/shell-notifications.page
 share/help/de/gnome-help/shell-overview.page
-share/help/de/gnome-help/shell-terminology.page
 share/help/de/gnome-help/shell-windows-lost.page
 share/help/de/gnome-help/shell-windows-maximize.page
 share/help/de/gnome-help/shell-windows-states.page
@@ -1975,7 +1966,6 @@ share/help/el/gnome-help/a11y-visualalert.page
 share/help/el/gnome-help/a11y.page
 share/help/el/gnome-help/about-this-guide.page
 share/help/el/gnome-help/accounts-add.page
-share/help/el/gnome-help/accounts-create.page
 share/help/el/gnome-help/accounts-disable-service.page
 share/help/el/gnome-help/accounts-provider-not-available.page
 share/help/el/gnome-help/accounts-remove.page
@@ -2000,6 +1990,7 @@ share/help/el/gnome-help/bluetooth.page
 share/help/el/gnome-help/clock-calendar.page
 share/help/el/gnome-help/clock-set.page
 share/help/el/gnome-help/clock-timezone.page
+share/help/el/gnome-help/clock-world.page
 share/help/el/gnome-help/clock.page
 share/help/el/gnome-help/color-assignprofiles.page
 share/help/el/gnome-help/color-calibrate-camera.page
@@ -2034,6 +2025,8 @@ share/help/el/gnome-help/disk-check.page
 share/help/el/gnome-help/disk-format.page
 share/help/el/gnome-help/disk-partitions.page
 share/help/el/gnome-help/disk.page
+share/help/el/gnome-help/display-blank.page
+share/help/el/gnome-help/display-brightness.page
 share/help/el/gnome-help/display-dual-monitors.page
 share/help/el/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/el/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -2180,7 +2173,6 @@ share/help/el/gnome-help/look-display-fuzzy.page
 share/help/el/gnome-help/look-resolution.page
 share/help/el/gnome-help/media.page
 share/help/el/gnome-help/more-help.page
-share/help/el/gnome-help/mouse-disabletouchpad.page
 share/help/el/gnome-help/mouse-doubleclick.page
 share/help/el/gnome-help/mouse-lefthanded.page
 share/help/el/gnome-help/mouse-middleclick.page
@@ -2215,7 +2207,6 @@ share/help/el/gnome-help/net-firewall-ports.page
 share/help/el/gnome-help/net-fixed-ip-address.page
 share/help/el/gnome-help/net-general.page
 share/help/el/gnome-help/net-install-flash.page
-share/help/el/gnome-help/net-install-moonlight.page
 share/help/el/gnome-help/net-macaddress.page
 share/help/el/gnome-help/net-manual.page
 share/help/el/gnome-help/net-mobile.page
@@ -2252,7 +2243,6 @@ share/help/el/gnome-help/power-batteryslow.page
 share/help/el/gnome-help/power-batterywindows.page
 share/help/el/gnome-help/power-closelid.page
 share/help/el/gnome-help/power-constantfan.page
-share/help/el/gnome-help/power-hibernate.page
 share/help/el/gnome-help/power-hotcomputer.page
 share/help/el/gnome-help/power-lowpower.page
 share/help/el/gnome-help/power-nowireless.page
@@ -2307,7 +2297,6 @@ share/help/el/gnome-help/shell-keyboard-shortcuts.page
 share/help/el/gnome-help/shell-lockscreen.page
 share/help/el/gnome-help/shell-notifications.page
 share/help/el/gnome-help/shell-overview.page
-share/help/el/gnome-help/shell-terminology.page
 share/help/el/gnome-help/shell-windows-lost.page
 share/help/el/gnome-help/shell-windows-maximize.page
 share/help/el/gnome-help/shell-windows-states.page
@@ -2360,7 +2349,6 @@ share/help/es/gnome-help/a11y-visualalert.page
 share/help/es/gnome-help/a11y.page
 share/help/es/gnome-help/about-this-guide.page
 share/help/es/gnome-help/accounts-add.page
-share/help/es/gnome-help/accounts-create.page
 share/help/es/gnome-help/accounts-disable-service.page
 share/help/es/gnome-help/accounts-provider-not-available.page
 share/help/es/gnome-help/accounts-remove.page
@@ -2385,6 +2373,7 @@ share/help/es/gnome-help/bluetooth.page
 share/help/es/gnome-help/clock-calendar.page
 share/help/es/gnome-help/clock-set.page
 share/help/es/gnome-help/clock-timezone.page
+share/help/es/gnome-help/clock-world.page
 share/help/es/gnome-help/clock.page
 share/help/es/gnome-help/color-assignprofiles.page
 share/help/es/gnome-help/color-calibrate-camera.page
@@ -2419,6 +2408,8 @@ share/help/es/gnome-help/disk-check.page
 share/help/es/gnome-help/disk-format.page
 share/help/es/gnome-help/disk-partitions.page
 share/help/es/gnome-help/disk.page
+share/help/es/gnome-help/display-blank.page
+share/help/es/gnome-help/display-brightness.page
 share/help/es/gnome-help/display-dual-monitors.page
 share/help/es/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/es/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -2565,7 +2556,6 @@ share/help/es/gnome-help/look-display-fuzzy.page
 share/help/es/gnome-help/look-resolution.page
 share/help/es/gnome-help/media.page
 share/help/es/gnome-help/more-help.page
-share/help/es/gnome-help/mouse-disabletouchpad.page
 share/help/es/gnome-help/mouse-doubleclick.page
 share/help/es/gnome-help/mouse-lefthanded.page
 share/help/es/gnome-help/mouse-middleclick.page
@@ -2600,7 +2590,6 @@ share/help/es/gnome-help/net-firewall-ports.page
 share/help/es/gnome-help/net-fixed-ip-address.page
 share/help/es/gnome-help/net-general.page
 share/help/es/gnome-help/net-install-flash.page
-share/help/es/gnome-help/net-install-moonlight.page
 share/help/es/gnome-help/net-macaddress.page
 share/help/es/gnome-help/net-manual.page
 share/help/es/gnome-help/net-mobile.page
@@ -2637,7 +2626,6 @@ share/help/es/gnome-help/power-batteryslow.page
 share/help/es/gnome-help/power-batterywindows.page
 share/help/es/gnome-help/power-closelid.page
 share/help/es/gnome-help/power-constantfan.page
-share/help/es/gnome-help/power-hibernate.page
 share/help/es/gnome-help/power-hotcomputer.page
 share/help/es/gnome-help/power-lowpower.page
 share/help/es/gnome-help/power-nowireless.page
@@ -2692,7 +2680,6 @@ share/help/es/gnome-help/shell-keyboard-shortcuts.page
 share/help/es/gnome-help/shell-lockscreen.page
 share/help/es/gnome-help/shell-notifications.page
 share/help/es/gnome-help/shell-overview.page
-share/help/es/gnome-help/shell-terminology.page
 share/help/es/gnome-help/shell-windows-lost.page
 share/help/es/gnome-help/shell-windows-maximize.page
 share/help/es/gnome-help/shell-windows-states.page
@@ -2745,7 +2732,6 @@ share/help/fi/gnome-help/a11y-visualalert.page
 share/help/fi/gnome-help/a11y.page
 share/help/fi/gnome-help/about-this-guide.page
 share/help/fi/gnome-help/accounts-add.page
-share/help/fi/gnome-help/accounts-create.page
 share/help/fi/gnome-help/accounts-disable-service.page
 share/help/fi/gnome-help/accounts-provider-not-available.page
 share/help/fi/gnome-help/accounts-remove.page
@@ -2770,6 +2756,7 @@ share/help/fi/gnome-help/bluetooth.page
 share/help/fi/gnome-help/clock-calendar.page
 share/help/fi/gnome-help/clock-set.page
 share/help/fi/gnome-help/clock-timezone.page
+share/help/fi/gnome-help/clock-world.page
 share/help/fi/gnome-help/clock.page
 share/help/fi/gnome-help/color-assignprofiles.page
 share/help/fi/gnome-help/color-calibrate-camera.page
@@ -2804,6 +2791,8 @@ share/help/fi/gnome-help/disk-check.page
 share/help/fi/gnome-help/disk-format.page
 share/help/fi/gnome-help/disk-partitions.page
 share/help/fi/gnome-help/disk.page
+share/help/fi/gnome-help/display-blank.page
+share/help/fi/gnome-help/display-brightness.page
 share/help/fi/gnome-help/display-dual-monitors.page
 share/help/fi/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/fi/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -2950,7 +2939,6 @@ share/help/fi/gnome-help/look-display-fuzzy.page
 share/help/fi/gnome-help/look-resolution.page
 share/help/fi/gnome-help/media.page
 share/help/fi/gnome-help/more-help.page
-share/help/fi/gnome-help/mouse-disabletouchpad.page
 share/help/fi/gnome-help/mouse-doubleclick.page
 share/help/fi/gnome-help/mouse-lefthanded.page
 share/help/fi/gnome-help/mouse-middleclick.page
@@ -2985,7 +2973,6 @@ share/help/fi/gnome-help/net-firewall-ports.page
 share/help/fi/gnome-help/net-fixed-ip-address.page
 share/help/fi/gnome-help/net-general.page
 share/help/fi/gnome-help/net-install-flash.page
-share/help/fi/gnome-help/net-install-moonlight.page
 share/help/fi/gnome-help/net-macaddress.page
 share/help/fi/gnome-help/net-manual.page
 share/help/fi/gnome-help/net-mobile.page
@@ -3022,7 +3009,6 @@ share/help/fi/gnome-help/power-batteryslow.page
 share/help/fi/gnome-help/power-batterywindows.page
 share/help/fi/gnome-help/power-closelid.page
 share/help/fi/gnome-help/power-constantfan.page
-share/help/fi/gnome-help/power-hibernate.page
 share/help/fi/gnome-help/power-hotcomputer.page
 share/help/fi/gnome-help/power-lowpower.page
 share/help/fi/gnome-help/power-nowireless.page
@@ -3077,7 +3063,6 @@ share/help/fi/gnome-help/shell-keyboard-shortcuts.page
 share/help/fi/gnome-help/shell-lockscreen.page
 share/help/fi/gnome-help/shell-notifications.page
 share/help/fi/gnome-help/shell-overview.page
-share/help/fi/gnome-help/shell-terminology.page
 share/help/fi/gnome-help/shell-windows-lost.page
 share/help/fi/gnome-help/shell-windows-maximize.page
 share/help/fi/gnome-help/shell-windows-states.page
@@ -3130,7 +3115,6 @@ share/help/fr/gnome-help/a11y-visualalert.page
 share/help/fr/gnome-help/a11y.page
 share/help/fr/gnome-help/about-this-guide.page
 share/help/fr/gnome-help/accounts-add.page
-share/help/fr/gnome-help/accounts-create.page
 share/help/fr/gnome-help/accounts-disable-service.page
 share/help/fr/gnome-help/accounts-provider-not-available.page
 share/help/fr/gnome-help/accounts-remove.page
@@ -3155,6 +3139,7 @@ share/help/fr/gnome-help/bluetooth.page
 share/help/fr/gnome-help/clock-calendar.page
 share/help/fr/gnome-help/clock-set.page
 share/help/fr/gnome-help/clock-timezone.page
+share/help/fr/gnome-help/clock-world.page
 share/help/fr/gnome-help/clock.page
 share/help/fr/gnome-help/color-assignprofiles.page
 share/help/fr/gnome-help/color-calibrate-camera.page
@@ -3189,6 +3174,8 @@ share/help/fr/gnome-help/disk-check.page
 share/help/fr/gnome-help/disk-format.page
 share/help/fr/gnome-help/disk-partitions.page
 share/help/fr/gnome-help/disk.page
+share/help/fr/gnome-help/display-blank.page
+share/help/fr/gnome-help/display-brightness.page
 share/help/fr/gnome-help/display-dual-monitors.page
 share/help/fr/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/fr/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -3335,7 +3322,6 @@ share/help/fr/gnome-help/look-display-fuzzy.page
 share/help/fr/gnome-help/look-resolution.page
 share/help/fr/gnome-help/media.page
 share/help/fr/gnome-help/more-help.page
-share/help/fr/gnome-help/mouse-disabletouchpad.page
 share/help/fr/gnome-help/mouse-doubleclick.page
 share/help/fr/gnome-help/mouse-lefthanded.page
 share/help/fr/gnome-help/mouse-middleclick.page
@@ -3370,7 +3356,6 @@ share/help/fr/gnome-help/net-firewall-ports.page
 share/help/fr/gnome-help/net-fixed-ip-address.page
 share/help/fr/gnome-help/net-general.page
 share/help/fr/gnome-help/net-install-flash.page
-share/help/fr/gnome-help/net-install-moonlight.page
 share/help/fr/gnome-help/net-macaddress.page
 share/help/fr/gnome-help/net-manual.page
 share/help/fr/gnome-help/net-mobile.page
@@ -3407,7 +3392,6 @@ share/help/fr/gnome-help/power-batteryslow.page
 share/help/fr/gnome-help/power-batterywindows.page
 share/help/fr/gnome-help/power-closelid.page
 share/help/fr/gnome-help/power-constantfan.page
-share/help/fr/gnome-help/power-hibernate.page
 share/help/fr/gnome-help/power-hotcomputer.page
 share/help/fr/gnome-help/power-lowpower.page
 share/help/fr/gnome-help/power-nowireless.page
@@ -3462,7 +3446,6 @@ share/help/fr/gnome-help/shell-keyboard-shortcuts.page
 share/help/fr/gnome-help/shell-lockscreen.page
 share/help/fr/gnome-help/shell-notifications.page
 share/help/fr/gnome-help/shell-overview.page
-share/help/fr/gnome-help/shell-terminology.page
 share/help/fr/gnome-help/shell-windows-lost.page
 share/help/fr/gnome-help/shell-windows-maximize.page
 share/help/fr/gnome-help/shell-windows-states.page
@@ -3515,7 +3498,6 @@ share/help/gl/gnome-help/a11y-visualalert.page
 share/help/gl/gnome-help/a11y.page
 share/help/gl/gnome-help/about-this-guide.page
 share/help/gl/gnome-help/accounts-add.page
-share/help/gl/gnome-help/accounts-create.page
 share/help/gl/gnome-help/accounts-disable-service.page
 share/help/gl/gnome-help/accounts-provider-not-available.page
 share/help/gl/gnome-help/accounts-remove.page
@@ -3540,6 +3522,7 @@ share/help/gl/gnome-help/bluetooth.page
 share/help/gl/gnome-help/clock-calendar.page
 share/help/gl/gnome-help/clock-set.page
 share/help/gl/gnome-help/clock-timezone.page
+share/help/gl/gnome-help/clock-world.page
 share/help/gl/gnome-help/clock.page
 share/help/gl/gnome-help/color-assignprofiles.page
 share/help/gl/gnome-help/color-calibrate-camera.page
@@ -3574,6 +3557,8 @@ share/help/gl/gnome-help/disk-check.page
 share/help/gl/gnome-help/disk-format.page
 share/help/gl/gnome-help/disk-partitions.page
 share/help/gl/gnome-help/disk.page
+share/help/gl/gnome-help/display-blank.page
+share/help/gl/gnome-help/display-brightness.page
 share/help/gl/gnome-help/display-dual-monitors.page
 share/help/gl/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/gl/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -3720,7 +3705,6 @@ share/help/gl/gnome-help/look-display-fuzzy.page
 share/help/gl/gnome-help/look-resolution.page
 share/help/gl/gnome-help/media.page
 share/help/gl/gnome-help/more-help.page
-share/help/gl/gnome-help/mouse-disabletouchpad.page
 share/help/gl/gnome-help/mouse-doubleclick.page
 share/help/gl/gnome-help/mouse-lefthanded.page
 share/help/gl/gnome-help/mouse-middleclick.page
@@ -3755,7 +3739,6 @@ share/help/gl/gnome-help/net-firewall-ports.page
 share/help/gl/gnome-help/net-fixed-ip-address.page
 share/help/gl/gnome-help/net-general.page
 share/help/gl/gnome-help/net-install-flash.page
-share/help/gl/gnome-help/net-install-moonlight.page
 share/help/gl/gnome-help/net-macaddress.page
 share/help/gl/gnome-help/net-manual.page
 share/help/gl/gnome-help/net-mobile.page
@@ -3792,7 +3775,6 @@ share/help/gl/gnome-help/power-batteryslow.page
 share/help/gl/gnome-help/power-batterywindows.page
 share/help/gl/gnome-help/power-closelid.page
 share/help/gl/gnome-help/power-constantfan.page
-share/help/gl/gnome-help/power-hibernate.page
 share/help/gl/gnome-help/power-hotcomputer.page
 share/help/gl/gnome-help/power-lowpower.page
 share/help/gl/gnome-help/power-nowireless.page
@@ -3847,7 +3829,6 @@ share/help/gl/gnome-help/shell-keyboard-shortcuts.page
 share/help/gl/gnome-help/shell-lockscreen.page
 share/help/gl/gnome-help/shell-notifications.page
 share/help/gl/gnome-help/shell-overview.page
-share/help/gl/gnome-help/shell-terminology.page
 share/help/gl/gnome-help/shell-windows-lost.page
 share/help/gl/gnome-help/shell-windows-maximize.page
 share/help/gl/gnome-help/shell-windows-states.page
@@ -3900,7 +3881,6 @@ share/help/gu/gnome-help/a11y-visualalert.page
 share/help/gu/gnome-help/a11y.page
 share/help/gu/gnome-help/about-this-guide.page
 share/help/gu/gnome-help/accounts-add.page
-share/help/gu/gnome-help/accounts-create.page
 share/help/gu/gnome-help/accounts-disable-service.page
 share/help/gu/gnome-help/accounts-provider-not-available.page
 share/help/gu/gnome-help/accounts-remove.page
@@ -3925,6 +3905,7 @@ share/help/gu/gnome-help/bluetooth.page
 share/help/gu/gnome-help/clock-calendar.page
 share/help/gu/gnome-help/clock-set.page
 share/help/gu/gnome-help/clock-timezone.page
+share/help/gu/gnome-help/clock-world.page
 share/help/gu/gnome-help/clock.page
 share/help/gu/gnome-help/color-assignprofiles.page
 share/help/gu/gnome-help/color-calibrate-camera.page
@@ -3959,6 +3940,8 @@ share/help/gu/gnome-help/disk-check.page
 share/help/gu/gnome-help/disk-format.page
 share/help/gu/gnome-help/disk-partitions.page
 share/help/gu/gnome-help/disk.page
+share/help/gu/gnome-help/display-blank.page
+share/help/gu/gnome-help/display-brightness.page
 share/help/gu/gnome-help/display-dual-monitors.page
 share/help/gu/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/gu/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -4105,7 +4088,6 @@ share/help/gu/gnome-help/look-display-fuzzy.page
 share/help/gu/gnome-help/look-resolution.page
 share/help/gu/gnome-help/media.page
 share/help/gu/gnome-help/more-help.page
-share/help/gu/gnome-help/mouse-disabletouchpad.page
 share/help/gu/gnome-help/mouse-doubleclick.page
 share/help/gu/gnome-help/mouse-lefthanded.page
 share/help/gu/gnome-help/mouse-middleclick.page
@@ -4140,7 +4122,6 @@ share/help/gu/gnome-help/net-firewall-ports.page
 share/help/gu/gnome-help/net-fixed-ip-address.page
 share/help/gu/gnome-help/net-general.page
 share/help/gu/gnome-help/net-install-flash.page
-share/help/gu/gnome-help/net-install-moonlight.page
 share/help/gu/gnome-help/net-macaddress.page
 share/help/gu/gnome-help/net-manual.page
 share/help/gu/gnome-help/net-mobile.page
@@ -4177,7 +4158,6 @@ share/help/gu/gnome-help/power-batteryslow.page
 share/help/gu/gnome-help/power-batterywindows.page
 share/help/gu/gnome-help/power-closelid.page
 share/help/gu/gnome-help/power-constantfan.page
-share/help/gu/gnome-help/power-hibernate.page
 share/help/gu/gnome-help/power-hotcomputer.page
 share/help/gu/gnome-help/power-lowpower.page
 share/help/gu/gnome-help/power-nowireless.page
@@ -4232,7 +4212,6 @@ share/help/gu/gnome-help/shell-keyboard-shortcuts.page
 share/help/gu/gnome-help/shell-lockscreen.page
 share/help/gu/gnome-help/shell-notifications.page
 share/help/gu/gnome-help/shell-overview.page
-share/help/gu/gnome-help/shell-terminology.page
 share/help/gu/gnome-help/shell-windows-lost.page
 share/help/gu/gnome-help/shell-windows-maximize.page
 share/help/gu/gnome-help/shell-windows-states.page
@@ -4285,7 +4264,6 @@ share/help/hi/gnome-help/a11y-visualalert.page
 share/help/hi/gnome-help/a11y.page
 share/help/hi/gnome-help/about-this-guide.page
 share/help/hi/gnome-help/accounts-add.page
-share/help/hi/gnome-help/accounts-create.page
 share/help/hi/gnome-help/accounts-disable-service.page
 share/help/hi/gnome-help/accounts-provider-not-available.page
 share/help/hi/gnome-help/accounts-remove.page
@@ -4310,6 +4288,7 @@ share/help/hi/gnome-help/bluetooth.page
 share/help/hi/gnome-help/clock-calendar.page
 share/help/hi/gnome-help/clock-set.page
 share/help/hi/gnome-help/clock-timezone.page
+share/help/hi/gnome-help/clock-world.page
 share/help/hi/gnome-help/clock.page
 share/help/hi/gnome-help/color-assignprofiles.page
 share/help/hi/gnome-help/color-calibrate-camera.page
@@ -4344,6 +4323,8 @@ share/help/hi/gnome-help/disk-check.page
 share/help/hi/gnome-help/disk-format.page
 share/help/hi/gnome-help/disk-partitions.page
 share/help/hi/gnome-help/disk.page
+share/help/hi/gnome-help/display-blank.page
+share/help/hi/gnome-help/display-brightness.page
 share/help/hi/gnome-help/display-dual-monitors.page
 share/help/hi/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/hi/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -4490,7 +4471,6 @@ share/help/hi/gnome-help/look-display-fuzzy.page
 share/help/hi/gnome-help/look-resolution.page
 share/help/hi/gnome-help/media.page
 share/help/hi/gnome-help/more-help.page
-share/help/hi/gnome-help/mouse-disabletouchpad.page
 share/help/hi/gnome-help/mouse-doubleclick.page
 share/help/hi/gnome-help/mouse-lefthanded.page
 share/help/hi/gnome-help/mouse-middleclick.page
@@ -4525,7 +4505,6 @@ share/help/hi/gnome-help/net-firewall-ports.page
 share/help/hi/gnome-help/net-fixed-ip-address.page
 share/help/hi/gnome-help/net-general.page
 share/help/hi/gnome-help/net-install-flash.page
-share/help/hi/gnome-help/net-install-moonlight.page
 share/help/hi/gnome-help/net-macaddress.page
 share/help/hi/gnome-help/net-manual.page
 share/help/hi/gnome-help/net-mobile.page
@@ -4562,7 +4541,6 @@ share/help/hi/gnome-help/power-batteryslow.page
 share/help/hi/gnome-help/power-batterywindows.page
 share/help/hi/gnome-help/power-closelid.page
 share/help/hi/gnome-help/power-constantfan.page
-share/help/hi/gnome-help/power-hibernate.page
 share/help/hi/gnome-help/power-hotcomputer.page
 share/help/hi/gnome-help/power-lowpower.page
 share/help/hi/gnome-help/power-nowireless.page
@@ -4617,7 +4595,6 @@ share/help/hi/gnome-help/shell-keyboard-shortcuts.page
 share/help/hi/gnome-help/shell-lockscreen.page
 share/help/hi/gnome-help/shell-notifications.page
 share/help/hi/gnome-help/shell-overview.page
-share/help/hi/gnome-help/shell-terminology.page
 share/help/hi/gnome-help/shell-windows-lost.page
 share/help/hi/gnome-help/shell-windows-maximize.page
 share/help/hi/gnome-help/shell-windows-states.page
@@ -4670,7 +4647,6 @@ share/help/hu/gnome-help/a11y-visualalert.page
 share/help/hu/gnome-help/a11y.page
 share/help/hu/gnome-help/about-this-guide.page
 share/help/hu/gnome-help/accounts-add.page
-share/help/hu/gnome-help/accounts-create.page
 share/help/hu/gnome-help/accounts-disable-service.page
 share/help/hu/gnome-help/accounts-provider-not-available.page
 share/help/hu/gnome-help/accounts-remove.page
@@ -4695,6 +4671,7 @@ share/help/hu/gnome-help/bluetooth.page
 share/help/hu/gnome-help/clock-calendar.page
 share/help/hu/gnome-help/clock-set.page
 share/help/hu/gnome-help/clock-timezone.page
+share/help/hu/gnome-help/clock-world.page
 share/help/hu/gnome-help/clock.page
 share/help/hu/gnome-help/color-assignprofiles.page
 share/help/hu/gnome-help/color-calibrate-camera.page
@@ -4729,6 +4706,8 @@ share/help/hu/gnome-help/disk-check.page
 share/help/hu/gnome-help/disk-format.page
 share/help/hu/gnome-help/disk-partitions.page
 share/help/hu/gnome-help/disk.page
+share/help/hu/gnome-help/display-blank.page
+share/help/hu/gnome-help/display-brightness.page
 share/help/hu/gnome-help/display-dual-monitors.page
 share/help/hu/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/hu/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -4875,7 +4854,6 @@ share/help/hu/gnome-help/look-display-fuzzy.page
 share/help/hu/gnome-help/look-resolution.page
 share/help/hu/gnome-help/media.page
 share/help/hu/gnome-help/more-help.page
-share/help/hu/gnome-help/mouse-disabletouchpad.page
 share/help/hu/gnome-help/mouse-doubleclick.page
 share/help/hu/gnome-help/mouse-lefthanded.page
 share/help/hu/gnome-help/mouse-middleclick.page
@@ -4910,7 +4888,6 @@ share/help/hu/gnome-help/net-firewall-ports.page
 share/help/hu/gnome-help/net-fixed-ip-address.page
 share/help/hu/gnome-help/net-general.page
 share/help/hu/gnome-help/net-install-flash.page
-share/help/hu/gnome-help/net-install-moonlight.page
 share/help/hu/gnome-help/net-macaddress.page
 share/help/hu/gnome-help/net-manual.page
 share/help/hu/gnome-help/net-mobile.page
@@ -4947,7 +4924,6 @@ share/help/hu/gnome-help/power-batteryslow.page
 share/help/hu/gnome-help/power-batterywindows.page
 share/help/hu/gnome-help/power-closelid.page
 share/help/hu/gnome-help/power-constantfan.page
-share/help/hu/gnome-help/power-hibernate.page
 share/help/hu/gnome-help/power-hotcomputer.page
 share/help/hu/gnome-help/power-lowpower.page
 share/help/hu/gnome-help/power-nowireless.page
@@ -5002,7 +4978,6 @@ share/help/hu/gnome-help/shell-keyboard-shortcuts.page
 share/help/hu/gnome-help/shell-lockscreen.page
 share/help/hu/gnome-help/shell-notifications.page
 share/help/hu/gnome-help/shell-overview.page
-share/help/hu/gnome-help/shell-terminology.page
 share/help/hu/gnome-help/shell-windows-lost.page
 share/help/hu/gnome-help/shell-windows-maximize.page
 share/help/hu/gnome-help/shell-windows-states.page
@@ -5055,7 +5030,6 @@ share/help/id/gnome-help/a11y-visualalert.page
 share/help/id/gnome-help/a11y.page
 share/help/id/gnome-help/about-this-guide.page
 share/help/id/gnome-help/accounts-add.page
-share/help/id/gnome-help/accounts-create.page
 share/help/id/gnome-help/accounts-disable-service.page
 share/help/id/gnome-help/accounts-provider-not-available.page
 share/help/id/gnome-help/accounts-remove.page
@@ -5080,6 +5054,7 @@ share/help/id/gnome-help/bluetooth.page
 share/help/id/gnome-help/clock-calendar.page
 share/help/id/gnome-help/clock-set.page
 share/help/id/gnome-help/clock-timezone.page
+share/help/id/gnome-help/clock-world.page
 share/help/id/gnome-help/clock.page
 share/help/id/gnome-help/color-assignprofiles.page
 share/help/id/gnome-help/color-calibrate-camera.page
@@ -5114,6 +5089,8 @@ share/help/id/gnome-help/disk-check.page
 share/help/id/gnome-help/disk-format.page
 share/help/id/gnome-help/disk-partitions.page
 share/help/id/gnome-help/disk.page
+share/help/id/gnome-help/display-blank.page
+share/help/id/gnome-help/display-brightness.page
 share/help/id/gnome-help/display-dual-monitors.page
 share/help/id/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/id/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -5260,7 +5237,6 @@ share/help/id/gnome-help/look-display-fuzzy.page
 share/help/id/gnome-help/look-resolution.page
 share/help/id/gnome-help/media.page
 share/help/id/gnome-help/more-help.page
-share/help/id/gnome-help/mouse-disabletouchpad.page
 share/help/id/gnome-help/mouse-doubleclick.page
 share/help/id/gnome-help/mouse-lefthanded.page
 share/help/id/gnome-help/mouse-middleclick.page
@@ -5295,7 +5271,6 @@ share/help/id/gnome-help/net-firewall-ports.page
 share/help/id/gnome-help/net-fixed-ip-address.page
 share/help/id/gnome-help/net-general.page
 share/help/id/gnome-help/net-install-flash.page
-share/help/id/gnome-help/net-install-moonlight.page
 share/help/id/gnome-help/net-macaddress.page
 share/help/id/gnome-help/net-manual.page
 share/help/id/gnome-help/net-mobile.page
@@ -5332,7 +5307,6 @@ share/help/id/gnome-help/power-batteryslow.page
 share/help/id/gnome-help/power-batterywindows.page
 share/help/id/gnome-help/power-closelid.page
 share/help/id/gnome-help/power-constantfan.page
-share/help/id/gnome-help/power-hibernate.page
 share/help/id/gnome-help/power-hotcomputer.page
 share/help/id/gnome-help/power-lowpower.page
 share/help/id/gnome-help/power-nowireless.page
@@ -5387,7 +5361,6 @@ share/help/id/gnome-help/shell-keyboard-shortcuts.page
 share/help/id/gnome-help/shell-lockscreen.page
 share/help/id/gnome-help/shell-notifications.page
 share/help/id/gnome-help/shell-overview.page
-share/help/id/gnome-help/shell-terminology.page
 share/help/id/gnome-help/shell-windows-lost.page
 share/help/id/gnome-help/shell-windows-maximize.page
 share/help/id/gnome-help/shell-windows-states.page
@@ -5440,7 +5413,6 @@ share/help/it/gnome-help/a11y-visualalert.page
 share/help/it/gnome-help/a11y.page
 share/help/it/gnome-help/about-this-guide.page
 share/help/it/gnome-help/accounts-add.page
-share/help/it/gnome-help/accounts-create.page
 share/help/it/gnome-help/accounts-disable-service.page
 share/help/it/gnome-help/accounts-provider-not-available.page
 share/help/it/gnome-help/accounts-remove.page
@@ -5465,6 +5437,7 @@ share/help/it/gnome-help/bluetooth.page
 share/help/it/gnome-help/clock-calendar.page
 share/help/it/gnome-help/clock-set.page
 share/help/it/gnome-help/clock-timezone.page
+share/help/it/gnome-help/clock-world.page
 share/help/it/gnome-help/clock.page
 share/help/it/gnome-help/color-assignprofiles.page
 share/help/it/gnome-help/color-calibrate-camera.page
@@ -5499,6 +5472,8 @@ share/help/it/gnome-help/disk-check.page
 share/help/it/gnome-help/disk-format.page
 share/help/it/gnome-help/disk-partitions.page
 share/help/it/gnome-help/disk.page
+share/help/it/gnome-help/display-blank.page
+share/help/it/gnome-help/display-brightness.page
 share/help/it/gnome-help/display-dual-monitors.page
 share/help/it/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/it/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -5645,7 +5620,6 @@ share/help/it/gnome-help/look-display-fuzzy.page
 share/help/it/gnome-help/look-resolution.page
 share/help/it/gnome-help/media.page
 share/help/it/gnome-help/more-help.page
-share/help/it/gnome-help/mouse-disabletouchpad.page
 share/help/it/gnome-help/mouse-doubleclick.page
 share/help/it/gnome-help/mouse-lefthanded.page
 share/help/it/gnome-help/mouse-middleclick.page
@@ -5680,7 +5654,6 @@ share/help/it/gnome-help/net-firewall-ports.page
 share/help/it/gnome-help/net-fixed-ip-address.page
 share/help/it/gnome-help/net-general.page
 share/help/it/gnome-help/net-install-flash.page
-share/help/it/gnome-help/net-install-moonlight.page
 share/help/it/gnome-help/net-macaddress.page
 share/help/it/gnome-help/net-manual.page
 share/help/it/gnome-help/net-mobile.page
@@ -5717,7 +5690,6 @@ share/help/it/gnome-help/power-batteryslow.page
 share/help/it/gnome-help/power-batterywindows.page
 share/help/it/gnome-help/power-closelid.page
 share/help/it/gnome-help/power-constantfan.page
-share/help/it/gnome-help/power-hibernate.page
 share/help/it/gnome-help/power-hotcomputer.page
 share/help/it/gnome-help/power-lowpower.page
 share/help/it/gnome-help/power-nowireless.page
@@ -5772,7 +5744,6 @@ share/help/it/gnome-help/shell-keyboard-shortcuts.page
 share/help/it/gnome-help/shell-lockscreen.page
 share/help/it/gnome-help/shell-notifications.page
 share/help/it/gnome-help/shell-overview.page
-share/help/it/gnome-help/shell-terminology.page
 share/help/it/gnome-help/shell-windows-lost.page
 share/help/it/gnome-help/shell-windows-maximize.page
 share/help/it/gnome-help/shell-windows-states.page
@@ -5825,7 +5796,6 @@ share/help/ja/gnome-help/a11y-visualalert.page
 share/help/ja/gnome-help/a11y.page
 share/help/ja/gnome-help/about-this-guide.page
 share/help/ja/gnome-help/accounts-add.page
-share/help/ja/gnome-help/accounts-create.page
 share/help/ja/gnome-help/accounts-disable-service.page
 share/help/ja/gnome-help/accounts-provider-not-available.page
 share/help/ja/gnome-help/accounts-remove.page
@@ -5850,6 +5820,7 @@ share/help/ja/gnome-help/bluetooth.page
 share/help/ja/gnome-help/clock-calendar.page
 share/help/ja/gnome-help/clock-set.page
 share/help/ja/gnome-help/clock-timezone.page
+share/help/ja/gnome-help/clock-world.page
 share/help/ja/gnome-help/clock.page
 share/help/ja/gnome-help/color-assignprofiles.page
 share/help/ja/gnome-help/color-calibrate-camera.page
@@ -5884,6 +5855,8 @@ share/help/ja/gnome-help/disk-check.page
 share/help/ja/gnome-help/disk-format.page
 share/help/ja/gnome-help/disk-partitions.page
 share/help/ja/gnome-help/disk.page
+share/help/ja/gnome-help/display-blank.page
+share/help/ja/gnome-help/display-brightness.page
 share/help/ja/gnome-help/display-dual-monitors.page
 share/help/ja/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ja/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -6030,7 +6003,6 @@ share/help/ja/gnome-help/look-display-fuzzy.page
 share/help/ja/gnome-help/look-resolution.page
 share/help/ja/gnome-help/media.page
 share/help/ja/gnome-help/more-help.page
-share/help/ja/gnome-help/mouse-disabletouchpad.page
 share/help/ja/gnome-help/mouse-doubleclick.page
 share/help/ja/gnome-help/mouse-lefthanded.page
 share/help/ja/gnome-help/mouse-middleclick.page
@@ -6065,7 +6037,6 @@ share/help/ja/gnome-help/net-firewall-ports.page
 share/help/ja/gnome-help/net-fixed-ip-address.page
 share/help/ja/gnome-help/net-general.page
 share/help/ja/gnome-help/net-install-flash.page
-share/help/ja/gnome-help/net-install-moonlight.page
 share/help/ja/gnome-help/net-macaddress.page
 share/help/ja/gnome-help/net-manual.page
 share/help/ja/gnome-help/net-mobile.page
@@ -6102,7 +6073,6 @@ share/help/ja/gnome-help/power-batteryslow.page
 share/help/ja/gnome-help/power-batterywindows.page
 share/help/ja/gnome-help/power-closelid.page
 share/help/ja/gnome-help/power-constantfan.page
-share/help/ja/gnome-help/power-hibernate.page
 share/help/ja/gnome-help/power-hotcomputer.page
 share/help/ja/gnome-help/power-lowpower.page
 share/help/ja/gnome-help/power-nowireless.page
@@ -6157,7 +6127,6 @@ share/help/ja/gnome-help/shell-keyboard-shortcuts.page
 share/help/ja/gnome-help/shell-lockscreen.page
 share/help/ja/gnome-help/shell-notifications.page
 share/help/ja/gnome-help/shell-overview.page
-share/help/ja/gnome-help/shell-terminology.page
 share/help/ja/gnome-help/shell-windows-lost.page
 share/help/ja/gnome-help/shell-windows-maximize.page
 share/help/ja/gnome-help/shell-windows-states.page
@@ -6210,7 +6179,6 @@ share/help/kn/gnome-help/a11y-visualalert.page
 share/help/kn/gnome-help/a11y.page
 share/help/kn/gnome-help/about-this-guide.page
 share/help/kn/gnome-help/accounts-add.page
-share/help/kn/gnome-help/accounts-create.page
 share/help/kn/gnome-help/accounts-disable-service.page
 share/help/kn/gnome-help/accounts-provider-not-available.page
 share/help/kn/gnome-help/accounts-remove.page
@@ -6235,6 +6203,7 @@ share/help/kn/gnome-help/bluetooth.page
 share/help/kn/gnome-help/clock-calendar.page
 share/help/kn/gnome-help/clock-set.page
 share/help/kn/gnome-help/clock-timezone.page
+share/help/kn/gnome-help/clock-world.page
 share/help/kn/gnome-help/clock.page
 share/help/kn/gnome-help/color-assignprofiles.page
 share/help/kn/gnome-help/color-calibrate-camera.page
@@ -6269,6 +6238,8 @@ share/help/kn/gnome-help/disk-check.page
 share/help/kn/gnome-help/disk-format.page
 share/help/kn/gnome-help/disk-partitions.page
 share/help/kn/gnome-help/disk.page
+share/help/kn/gnome-help/display-blank.page
+share/help/kn/gnome-help/display-brightness.page
 share/help/kn/gnome-help/display-dual-monitors.page
 share/help/kn/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/kn/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -6415,7 +6386,6 @@ share/help/kn/gnome-help/look-display-fuzzy.page
 share/help/kn/gnome-help/look-resolution.page
 share/help/kn/gnome-help/media.page
 share/help/kn/gnome-help/more-help.page
-share/help/kn/gnome-help/mouse-disabletouchpad.page
 share/help/kn/gnome-help/mouse-doubleclick.page
 share/help/kn/gnome-help/mouse-lefthanded.page
 share/help/kn/gnome-help/mouse-middleclick.page
@@ -6450,7 +6420,6 @@ share/help/kn/gnome-help/net-firewall-ports.page
 share/help/kn/gnome-help/net-fixed-ip-address.page
 share/help/kn/gnome-help/net-general.page
 share/help/kn/gnome-help/net-install-flash.page
-share/help/kn/gnome-help/net-install-moonlight.page
 share/help/kn/gnome-help/net-macaddress.page
 share/help/kn/gnome-help/net-manual.page
 share/help/kn/gnome-help/net-mobile.page
@@ -6487,7 +6456,6 @@ share/help/kn/gnome-help/power-batteryslow.page
 share/help/kn/gnome-help/power-batterywindows.page
 share/help/kn/gnome-help/power-closelid.page
 share/help/kn/gnome-help/power-constantfan.page
-share/help/kn/gnome-help/power-hibernate.page
 share/help/kn/gnome-help/power-hotcomputer.page
 share/help/kn/gnome-help/power-lowpower.page
 share/help/kn/gnome-help/power-nowireless.page
@@ -6542,7 +6510,6 @@ share/help/kn/gnome-help/shell-keyboard-shortcuts.page
 share/help/kn/gnome-help/shell-lockscreen.page
 share/help/kn/gnome-help/shell-notifications.page
 share/help/kn/gnome-help/shell-overview.page
-share/help/kn/gnome-help/shell-terminology.page
 share/help/kn/gnome-help/shell-windows-lost.page
 share/help/kn/gnome-help/shell-windows-maximize.page
 share/help/kn/gnome-help/shell-windows-states.page
@@ -6595,7 +6562,6 @@ share/help/lv/gnome-help/a11y-visualalert.page
 share/help/lv/gnome-help/a11y.page
 share/help/lv/gnome-help/about-this-guide.page
 share/help/lv/gnome-help/accounts-add.page
-share/help/lv/gnome-help/accounts-create.page
 share/help/lv/gnome-help/accounts-disable-service.page
 share/help/lv/gnome-help/accounts-provider-not-available.page
 share/help/lv/gnome-help/accounts-remove.page
@@ -6620,6 +6586,7 @@ share/help/lv/gnome-help/bluetooth.page
 share/help/lv/gnome-help/clock-calendar.page
 share/help/lv/gnome-help/clock-set.page
 share/help/lv/gnome-help/clock-timezone.page
+share/help/lv/gnome-help/clock-world.page
 share/help/lv/gnome-help/clock.page
 share/help/lv/gnome-help/color-assignprofiles.page
 share/help/lv/gnome-help/color-calibrate-camera.page
@@ -6654,6 +6621,8 @@ share/help/lv/gnome-help/disk-check.page
 share/help/lv/gnome-help/disk-format.page
 share/help/lv/gnome-help/disk-partitions.page
 share/help/lv/gnome-help/disk.page
+share/help/lv/gnome-help/display-blank.page
+share/help/lv/gnome-help/display-brightness.page
 share/help/lv/gnome-help/display-dual-monitors.page
 share/help/lv/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/lv/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -6800,7 +6769,6 @@ share/help/lv/gnome-help/look-display-fuzzy.page
 share/help/lv/gnome-help/look-resolution.page
 share/help/lv/gnome-help/media.page
 share/help/lv/gnome-help/more-help.page
-share/help/lv/gnome-help/mouse-disabletouchpad.page
 share/help/lv/gnome-help/mouse-doubleclick.page
 share/help/lv/gnome-help/mouse-lefthanded.page
 share/help/lv/gnome-help/mouse-middleclick.page
@@ -6835,7 +6803,6 @@ share/help/lv/gnome-help/net-firewall-ports.page
 share/help/lv/gnome-help/net-fixed-ip-address.page
 share/help/lv/gnome-help/net-general.page
 share/help/lv/gnome-help/net-install-flash.page
-share/help/lv/gnome-help/net-install-moonlight.page
 share/help/lv/gnome-help/net-macaddress.page
 share/help/lv/gnome-help/net-manual.page
 share/help/lv/gnome-help/net-mobile.page
@@ -6872,7 +6839,6 @@ share/help/lv/gnome-help/power-batteryslow.page
 share/help/lv/gnome-help/power-batterywindows.page
 share/help/lv/gnome-help/power-closelid.page
 share/help/lv/gnome-help/power-constantfan.page
-share/help/lv/gnome-help/power-hibernate.page
 share/help/lv/gnome-help/power-hotcomputer.page
 share/help/lv/gnome-help/power-lowpower.page
 share/help/lv/gnome-help/power-nowireless.page
@@ -6927,7 +6893,6 @@ share/help/lv/gnome-help/shell-keyboard-shortcuts.page
 share/help/lv/gnome-help/shell-lockscreen.page
 share/help/lv/gnome-help/shell-notifications.page
 share/help/lv/gnome-help/shell-overview.page
-share/help/lv/gnome-help/shell-terminology.page
 share/help/lv/gnome-help/shell-windows-lost.page
 share/help/lv/gnome-help/shell-windows-maximize.page
 share/help/lv/gnome-help/shell-windows-states.page
@@ -6980,7 +6945,6 @@ share/help/mr/gnome-help/a11y-visualalert.page
 share/help/mr/gnome-help/a11y.page
 share/help/mr/gnome-help/about-this-guide.page
 share/help/mr/gnome-help/accounts-add.page
-share/help/mr/gnome-help/accounts-create.page
 share/help/mr/gnome-help/accounts-disable-service.page
 share/help/mr/gnome-help/accounts-provider-not-available.page
 share/help/mr/gnome-help/accounts-remove.page
@@ -7005,6 +6969,7 @@ share/help/mr/gnome-help/bluetooth.page
 share/help/mr/gnome-help/clock-calendar.page
 share/help/mr/gnome-help/clock-set.page
 share/help/mr/gnome-help/clock-timezone.page
+share/help/mr/gnome-help/clock-world.page
 share/help/mr/gnome-help/clock.page
 share/help/mr/gnome-help/color-assignprofiles.page
 share/help/mr/gnome-help/color-calibrate-camera.page
@@ -7039,6 +7004,8 @@ share/help/mr/gnome-help/disk-check.page
 share/help/mr/gnome-help/disk-format.page
 share/help/mr/gnome-help/disk-partitions.page
 share/help/mr/gnome-help/disk.page
+share/help/mr/gnome-help/display-blank.page
+share/help/mr/gnome-help/display-brightness.page
 share/help/mr/gnome-help/display-dual-monitors.page
 share/help/mr/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/mr/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -7185,7 +7152,6 @@ share/help/mr/gnome-help/look-display-fuzzy.page
 share/help/mr/gnome-help/look-resolution.page
 share/help/mr/gnome-help/media.page
 share/help/mr/gnome-help/more-help.page
-share/help/mr/gnome-help/mouse-disabletouchpad.page
 share/help/mr/gnome-help/mouse-doubleclick.page
 share/help/mr/gnome-help/mouse-lefthanded.page
 share/help/mr/gnome-help/mouse-middleclick.page
@@ -7220,7 +7186,6 @@ share/help/mr/gnome-help/net-firewall-ports.page
 share/help/mr/gnome-help/net-fixed-ip-address.page
 share/help/mr/gnome-help/net-general.page
 share/help/mr/gnome-help/net-install-flash.page
-share/help/mr/gnome-help/net-install-moonlight.page
 share/help/mr/gnome-help/net-macaddress.page
 share/help/mr/gnome-help/net-manual.page
 share/help/mr/gnome-help/net-mobile.page
@@ -7257,7 +7222,6 @@ share/help/mr/gnome-help/power-batteryslow.page
 share/help/mr/gnome-help/power-batterywindows.page
 share/help/mr/gnome-help/power-closelid.page
 share/help/mr/gnome-help/power-constantfan.page
-share/help/mr/gnome-help/power-hibernate.page
 share/help/mr/gnome-help/power-hotcomputer.page
 share/help/mr/gnome-help/power-lowpower.page
 share/help/mr/gnome-help/power-nowireless.page
@@ -7312,7 +7276,6 @@ share/help/mr/gnome-help/shell-keyboard-shortcuts.page
 share/help/mr/gnome-help/shell-lockscreen.page
 share/help/mr/gnome-help/shell-notifications.page
 share/help/mr/gnome-help/shell-overview.page
-share/help/mr/gnome-help/shell-terminology.page
 share/help/mr/gnome-help/shell-windows-lost.page
 share/help/mr/gnome-help/shell-windows-maximize.page
 share/help/mr/gnome-help/shell-windows-states.page
@@ -7365,7 +7328,6 @@ share/help/nl/gnome-help/a11y-visualalert.page
 share/help/nl/gnome-help/a11y.page
 share/help/nl/gnome-help/about-this-guide.page
 share/help/nl/gnome-help/accounts-add.page
-share/help/nl/gnome-help/accounts-create.page
 share/help/nl/gnome-help/accounts-disable-service.page
 share/help/nl/gnome-help/accounts-provider-not-available.page
 share/help/nl/gnome-help/accounts-remove.page
@@ -7390,6 +7352,7 @@ share/help/nl/gnome-help/bluetooth.page
 share/help/nl/gnome-help/clock-calendar.page
 share/help/nl/gnome-help/clock-set.page
 share/help/nl/gnome-help/clock-timezone.page
+share/help/nl/gnome-help/clock-world.page
 share/help/nl/gnome-help/clock.page
 share/help/nl/gnome-help/color-assignprofiles.page
 share/help/nl/gnome-help/color-calibrate-camera.page
@@ -7424,6 +7387,8 @@ share/help/nl/gnome-help/disk-check.page
 share/help/nl/gnome-help/disk-format.page
 share/help/nl/gnome-help/disk-partitions.page
 share/help/nl/gnome-help/disk.page
+share/help/nl/gnome-help/display-blank.page
+share/help/nl/gnome-help/display-brightness.page
 share/help/nl/gnome-help/display-dual-monitors.page
 share/help/nl/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/nl/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -7570,7 +7535,6 @@ share/help/nl/gnome-help/look-display-fuzzy.page
 share/help/nl/gnome-help/look-resolution.page
 share/help/nl/gnome-help/media.page
 share/help/nl/gnome-help/more-help.page
-share/help/nl/gnome-help/mouse-disabletouchpad.page
 share/help/nl/gnome-help/mouse-doubleclick.page
 share/help/nl/gnome-help/mouse-lefthanded.page
 share/help/nl/gnome-help/mouse-middleclick.page
@@ -7605,7 +7569,6 @@ share/help/nl/gnome-help/net-firewall-ports.page
 share/help/nl/gnome-help/net-fixed-ip-address.page
 share/help/nl/gnome-help/net-general.page
 share/help/nl/gnome-help/net-install-flash.page
-share/help/nl/gnome-help/net-install-moonlight.page
 share/help/nl/gnome-help/net-macaddress.page
 share/help/nl/gnome-help/net-manual.page
 share/help/nl/gnome-help/net-mobile.page
@@ -7642,7 +7605,6 @@ share/help/nl/gnome-help/power-batteryslow.page
 share/help/nl/gnome-help/power-batterywindows.page
 share/help/nl/gnome-help/power-closelid.page
 share/help/nl/gnome-help/power-constantfan.page
-share/help/nl/gnome-help/power-hibernate.page
 share/help/nl/gnome-help/power-hotcomputer.page
 share/help/nl/gnome-help/power-lowpower.page
 share/help/nl/gnome-help/power-nowireless.page
@@ -7697,7 +7659,6 @@ share/help/nl/gnome-help/shell-keyboard-shortcuts.page
 share/help/nl/gnome-help/shell-lockscreen.page
 share/help/nl/gnome-help/shell-notifications.page
 share/help/nl/gnome-help/shell-overview.page
-share/help/nl/gnome-help/shell-terminology.page
 share/help/nl/gnome-help/shell-windows-lost.page
 share/help/nl/gnome-help/shell-windows-maximize.page
 share/help/nl/gnome-help/shell-windows-states.page
@@ -7750,7 +7711,6 @@ share/help/pa/gnome-help/a11y-visualalert.page
 share/help/pa/gnome-help/a11y.page
 share/help/pa/gnome-help/about-this-guide.page
 share/help/pa/gnome-help/accounts-add.page
-share/help/pa/gnome-help/accounts-create.page
 share/help/pa/gnome-help/accounts-disable-service.page
 share/help/pa/gnome-help/accounts-provider-not-available.page
 share/help/pa/gnome-help/accounts-remove.page
@@ -7775,6 +7735,7 @@ share/help/pa/gnome-help/bluetooth.page
 share/help/pa/gnome-help/clock-calendar.page
 share/help/pa/gnome-help/clock-set.page
 share/help/pa/gnome-help/clock-timezone.page
+share/help/pa/gnome-help/clock-world.page
 share/help/pa/gnome-help/clock.page
 share/help/pa/gnome-help/color-assignprofiles.page
 share/help/pa/gnome-help/color-calibrate-camera.page
@@ -7809,6 +7770,8 @@ share/help/pa/gnome-help/disk-check.page
 share/help/pa/gnome-help/disk-format.page
 share/help/pa/gnome-help/disk-partitions.page
 share/help/pa/gnome-help/disk.page
+share/help/pa/gnome-help/display-blank.page
+share/help/pa/gnome-help/display-brightness.page
 share/help/pa/gnome-help/display-dual-monitors.page
 share/help/pa/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/pa/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -7955,7 +7918,6 @@ share/help/pa/gnome-help/look-display-fuzzy.page
 share/help/pa/gnome-help/look-resolution.page
 share/help/pa/gnome-help/media.page
 share/help/pa/gnome-help/more-help.page
-share/help/pa/gnome-help/mouse-disabletouchpad.page
 share/help/pa/gnome-help/mouse-doubleclick.page
 share/help/pa/gnome-help/mouse-lefthanded.page
 share/help/pa/gnome-help/mouse-middleclick.page
@@ -7990,7 +7952,6 @@ share/help/pa/gnome-help/net-firewall-ports.page
 share/help/pa/gnome-help/net-fixed-ip-address.page
 share/help/pa/gnome-help/net-general.page
 share/help/pa/gnome-help/net-install-flash.page
-share/help/pa/gnome-help/net-install-moonlight.page
 share/help/pa/gnome-help/net-macaddress.page
 share/help/pa/gnome-help/net-manual.page
 share/help/pa/gnome-help/net-mobile.page
@@ -8027,7 +7988,6 @@ share/help/pa/gnome-help/power-batteryslow.page
 share/help/pa/gnome-help/power-batterywindows.page
 share/help/pa/gnome-help/power-closelid.page
 share/help/pa/gnome-help/power-constantfan.page
-share/help/pa/gnome-help/power-hibernate.page
 share/help/pa/gnome-help/power-hotcomputer.page
 share/help/pa/gnome-help/power-lowpower.page
 share/help/pa/gnome-help/power-nowireless.page
@@ -8082,7 +8042,6 @@ share/help/pa/gnome-help/shell-keyboard-shortcuts.page
 share/help/pa/gnome-help/shell-lockscreen.page
 share/help/pa/gnome-help/shell-notifications.page
 share/help/pa/gnome-help/shell-overview.page
-share/help/pa/gnome-help/shell-terminology.page
 share/help/pa/gnome-help/shell-windows-lost.page
 share/help/pa/gnome-help/shell-windows-maximize.page
 share/help/pa/gnome-help/shell-windows-states.page
@@ -8135,7 +8094,6 @@ share/help/pt_BR/gnome-help/a11y-visualalert.page
 share/help/pt_BR/gnome-help/a11y.page
 share/help/pt_BR/gnome-help/about-this-guide.page
 share/help/pt_BR/gnome-help/accounts-add.page
-share/help/pt_BR/gnome-help/accounts-create.page
 share/help/pt_BR/gnome-help/accounts-disable-service.page
 share/help/pt_BR/gnome-help/accounts-provider-not-available.page
 share/help/pt_BR/gnome-help/accounts-remove.page
@@ -8160,6 +8118,7 @@ share/help/pt_BR/gnome-help/bluetooth.page
 share/help/pt_BR/gnome-help/clock-calendar.page
 share/help/pt_BR/gnome-help/clock-set.page
 share/help/pt_BR/gnome-help/clock-timezone.page
+share/help/pt_BR/gnome-help/clock-world.page
 share/help/pt_BR/gnome-help/clock.page
 share/help/pt_BR/gnome-help/color-assignprofiles.page
 share/help/pt_BR/gnome-help/color-calibrate-camera.page
@@ -8194,6 +8153,8 @@ share/help/pt_BR/gnome-help/disk-check.page
 share/help/pt_BR/gnome-help/disk-format.page
 share/help/pt_BR/gnome-help/disk-partitions.page
 share/help/pt_BR/gnome-help/disk.page
+share/help/pt_BR/gnome-help/display-blank.page
+share/help/pt_BR/gnome-help/display-brightness.page
 share/help/pt_BR/gnome-help/display-dual-monitors.page
 share/help/pt_BR/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/pt_BR/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -8340,7 +8301,6 @@ share/help/pt_BR/gnome-help/look-display-fuzzy.page
 share/help/pt_BR/gnome-help/look-resolution.page
 share/help/pt_BR/gnome-help/media.page
 share/help/pt_BR/gnome-help/more-help.page
-share/help/pt_BR/gnome-help/mouse-disabletouchpad.page
 share/help/pt_BR/gnome-help/mouse-doubleclick.page
 share/help/pt_BR/gnome-help/mouse-lefthanded.page
 share/help/pt_BR/gnome-help/mouse-middleclick.page
@@ -8375,7 +8335,6 @@ share/help/pt_BR/gnome-help/net-firewall-ports.page
 share/help/pt_BR/gnome-help/net-fixed-ip-address.page
 share/help/pt_BR/gnome-help/net-general.page
 share/help/pt_BR/gnome-help/net-install-flash.page
-share/help/pt_BR/gnome-help/net-install-moonlight.page
 share/help/pt_BR/gnome-help/net-macaddress.page
 share/help/pt_BR/gnome-help/net-manual.page
 share/help/pt_BR/gnome-help/net-mobile.page
@@ -8412,7 +8371,6 @@ share/help/pt_BR/gnome-help/power-batteryslow.page
 share/help/pt_BR/gnome-help/power-batterywindows.page
 share/help/pt_BR/gnome-help/power-closelid.page
 share/help/pt_BR/gnome-help/power-constantfan.page
-share/help/pt_BR/gnome-help/power-hibernate.page
 share/help/pt_BR/gnome-help/power-hotcomputer.page
 share/help/pt_BR/gnome-help/power-lowpower.page
 share/help/pt_BR/gnome-help/power-nowireless.page
@@ -8467,7 +8425,6 @@ share/help/pt_BR/gnome-help/shell-keyboard-shortcuts.page
 share/help/pt_BR/gnome-help/shell-lockscreen.page
 share/help/pt_BR/gnome-help/shell-notifications.page
 share/help/pt_BR/gnome-help/shell-overview.page
-share/help/pt_BR/gnome-help/shell-terminology.page
 share/help/pt_BR/gnome-help/shell-windows-lost.page
 share/help/pt_BR/gnome-help/shell-windows-maximize.page
 share/help/pt_BR/gnome-help/shell-windows-states.page
@@ -8520,7 +8477,6 @@ share/help/ru/gnome-help/a11y-visualalert.page
 share/help/ru/gnome-help/a11y.page
 share/help/ru/gnome-help/about-this-guide.page
 share/help/ru/gnome-help/accounts-add.page
-share/help/ru/gnome-help/accounts-create.page
 share/help/ru/gnome-help/accounts-disable-service.page
 share/help/ru/gnome-help/accounts-provider-not-available.page
 share/help/ru/gnome-help/accounts-remove.page
@@ -8545,6 +8501,7 @@ share/help/ru/gnome-help/bluetooth.page
 share/help/ru/gnome-help/clock-calendar.page
 share/help/ru/gnome-help/clock-set.page
 share/help/ru/gnome-help/clock-timezone.page
+share/help/ru/gnome-help/clock-world.page
 share/help/ru/gnome-help/clock.page
 share/help/ru/gnome-help/color-assignprofiles.page
 share/help/ru/gnome-help/color-calibrate-camera.page
@@ -8579,6 +8536,8 @@ share/help/ru/gnome-help/disk-check.page
 share/help/ru/gnome-help/disk-format.page
 share/help/ru/gnome-help/disk-partitions.page
 share/help/ru/gnome-help/disk.page
+share/help/ru/gnome-help/display-blank.page
+share/help/ru/gnome-help/display-brightness.page
 share/help/ru/gnome-help/display-dual-monitors.page
 share/help/ru/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ru/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -8725,7 +8684,6 @@ share/help/ru/gnome-help/look-display-fuzzy.page
 share/help/ru/gnome-help/look-resolution.page
 share/help/ru/gnome-help/media.page
 share/help/ru/gnome-help/more-help.page
-share/help/ru/gnome-help/mouse-disabletouchpad.page
 share/help/ru/gnome-help/mouse-doubleclick.page
 share/help/ru/gnome-help/mouse-lefthanded.page
 share/help/ru/gnome-help/mouse-middleclick.page
@@ -8760,7 +8718,6 @@ share/help/ru/gnome-help/net-firewall-ports.page
 share/help/ru/gnome-help/net-fixed-ip-address.page
 share/help/ru/gnome-help/net-general.page
 share/help/ru/gnome-help/net-install-flash.page
-share/help/ru/gnome-help/net-install-moonlight.page
 share/help/ru/gnome-help/net-macaddress.page
 share/help/ru/gnome-help/net-manual.page
 share/help/ru/gnome-help/net-mobile.page
@@ -8797,7 +8754,6 @@ share/help/ru/gnome-help/power-batteryslow.page
 share/help/ru/gnome-help/power-batterywindows.page
 share/help/ru/gnome-help/power-closelid.page
 share/help/ru/gnome-help/power-constantfan.page
-share/help/ru/gnome-help/power-hibernate.page
 share/help/ru/gnome-help/power-hotcomputer.page
 share/help/ru/gnome-help/power-lowpower.page
 share/help/ru/gnome-help/power-nowireless.page
@@ -8852,7 +8808,6 @@ share/help/ru/gnome-help/shell-keyboard-shortcuts.page
 share/help/ru/gnome-help/shell-lockscreen.page
 share/help/ru/gnome-help/shell-notifications.page
 share/help/ru/gnome-help/shell-overview.page
-share/help/ru/gnome-help/shell-terminology.page
 share/help/ru/gnome-help/shell-windows-lost.page
 share/help/ru/gnome-help/shell-windows-maximize.page
 share/help/ru/gnome-help/shell-windows-states.page
@@ -8905,7 +8860,6 @@ share/help/sl/gnome-help/a11y-visualalert.page
 share/help/sl/gnome-help/a11y.page
 share/help/sl/gnome-help/about-this-guide.page
 share/help/sl/gnome-help/accounts-add.page
-share/help/sl/gnome-help/accounts-create.page
 share/help/sl/gnome-help/accounts-disable-service.page
 share/help/sl/gnome-help/accounts-provider-not-available.page
 share/help/sl/gnome-help/accounts-remove.page
@@ -8930,6 +8884,7 @@ share/help/sl/gnome-help/bluetooth.page
 share/help/sl/gnome-help/clock-calendar.page
 share/help/sl/gnome-help/clock-set.page
 share/help/sl/gnome-help/clock-timezone.page
+share/help/sl/gnome-help/clock-world.page
 share/help/sl/gnome-help/clock.page
 share/help/sl/gnome-help/color-assignprofiles.page
 share/help/sl/gnome-help/color-calibrate-camera.page
@@ -8964,6 +8919,8 @@ share/help/sl/gnome-help/disk-check.page
 share/help/sl/gnome-help/disk-format.page
 share/help/sl/gnome-help/disk-partitions.page
 share/help/sl/gnome-help/disk.page
+share/help/sl/gnome-help/display-blank.page
+share/help/sl/gnome-help/display-brightness.page
 share/help/sl/gnome-help/display-dual-monitors.page
 share/help/sl/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sl/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -9110,7 +9067,6 @@ share/help/sl/gnome-help/look-display-fuzzy.page
 share/help/sl/gnome-help/look-resolution.page
 share/help/sl/gnome-help/media.page
 share/help/sl/gnome-help/more-help.page
-share/help/sl/gnome-help/mouse-disabletouchpad.page
 share/help/sl/gnome-help/mouse-doubleclick.page
 share/help/sl/gnome-help/mouse-lefthanded.page
 share/help/sl/gnome-help/mouse-middleclick.page
@@ -9145,7 +9101,6 @@ share/help/sl/gnome-help/net-firewall-ports.page
 share/help/sl/gnome-help/net-fixed-ip-address.page
 share/help/sl/gnome-help/net-general.page
 share/help/sl/gnome-help/net-install-flash.page
-share/help/sl/gnome-help/net-install-moonlight.page
 share/help/sl/gnome-help/net-macaddress.page
 share/help/sl/gnome-help/net-manual.page
 share/help/sl/gnome-help/net-mobile.page
@@ -9182,7 +9137,6 @@ share/help/sl/gnome-help/power-batteryslow.page
 share/help/sl/gnome-help/power-batterywindows.page
 share/help/sl/gnome-help/power-closelid.page
 share/help/sl/gnome-help/power-constantfan.page
-share/help/sl/gnome-help/power-hibernate.page
 share/help/sl/gnome-help/power-hotcomputer.page
 share/help/sl/gnome-help/power-lowpower.page
 share/help/sl/gnome-help/power-nowireless.page
@@ -9237,7 +9191,6 @@ share/help/sl/gnome-help/shell-keyboard-shortcuts.page
 share/help/sl/gnome-help/shell-lockscreen.page
 share/help/sl/gnome-help/shell-notifications.page
 share/help/sl/gnome-help/shell-overview.page
-share/help/sl/gnome-help/shell-terminology.page
 share/help/sl/gnome-help/shell-windows-lost.page
 share/help/sl/gnome-help/shell-windows-maximize.page
 share/help/sl/gnome-help/shell-windows-states.page
@@ -9290,7 +9243,6 @@ share/help/sr/gnome-help/a11y-visualalert.page
 share/help/sr/gnome-help/a11y.page
 share/help/sr/gnome-help/about-this-guide.page
 share/help/sr/gnome-help/accounts-add.page
-share/help/sr/gnome-help/accounts-create.page
 share/help/sr/gnome-help/accounts-disable-service.page
 share/help/sr/gnome-help/accounts-provider-not-available.page
 share/help/sr/gnome-help/accounts-remove.page
@@ -9315,6 +9267,7 @@ share/help/sr/gnome-help/bluetooth.page
 share/help/sr/gnome-help/clock-calendar.page
 share/help/sr/gnome-help/clock-set.page
 share/help/sr/gnome-help/clock-timezone.page
+share/help/sr/gnome-help/clock-world.page
 share/help/sr/gnome-help/clock.page
 share/help/sr/gnome-help/color-assignprofiles.page
 share/help/sr/gnome-help/color-calibrate-camera.page
@@ -9349,6 +9302,8 @@ share/help/sr/gnome-help/disk-check.page
 share/help/sr/gnome-help/disk-format.page
 share/help/sr/gnome-help/disk-partitions.page
 share/help/sr/gnome-help/disk.page
+share/help/sr/gnome-help/display-blank.page
+share/help/sr/gnome-help/display-brightness.page
 share/help/sr/gnome-help/display-dual-monitors.page
 share/help/sr/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sr/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -9495,7 +9450,6 @@ share/help/sr/gnome-help/look-display-fuzzy.page
 share/help/sr/gnome-help/look-resolution.page
 share/help/sr/gnome-help/media.page
 share/help/sr/gnome-help/more-help.page
-share/help/sr/gnome-help/mouse-disabletouchpad.page
 share/help/sr/gnome-help/mouse-doubleclick.page
 share/help/sr/gnome-help/mouse-lefthanded.page
 share/help/sr/gnome-help/mouse-middleclick.page
@@ -9530,7 +9484,6 @@ share/help/sr/gnome-help/net-firewall-ports.page
 share/help/sr/gnome-help/net-fixed-ip-address.page
 share/help/sr/gnome-help/net-general.page
 share/help/sr/gnome-help/net-install-flash.page
-share/help/sr/gnome-help/net-install-moonlight.page
 share/help/sr/gnome-help/net-macaddress.page
 share/help/sr/gnome-help/net-manual.page
 share/help/sr/gnome-help/net-mobile.page
@@ -9567,7 +9520,6 @@ share/help/sr/gnome-help/power-batteryslow.page
 share/help/sr/gnome-help/power-batterywindows.page
 share/help/sr/gnome-help/power-closelid.page
 share/help/sr/gnome-help/power-constantfan.page
-share/help/sr/gnome-help/power-hibernate.page
 share/help/sr/gnome-help/power-hotcomputer.page
 share/help/sr/gnome-help/power-lowpower.page
 share/help/sr/gnome-help/power-nowireless.page
@@ -9622,7 +9574,6 @@ share/help/sr/gnome-help/shell-keyboard-shortcuts.page
 share/help/sr/gnome-help/shell-lockscreen.page
 share/help/sr/gnome-help/shell-notifications.page
 share/help/sr/gnome-help/shell-overview.page
-share/help/sr/gnome-help/shell-terminology.page
 share/help/sr/gnome-help/shell-windows-lost.page
 share/help/sr/gnome-help/shell-windows-maximize.page
 share/help/sr/gnome-help/shell-windows-states.page
@@ -9675,7 +9626,6 @@ share/help/sr@latin/gnome-help/a11y-visualalert.page
 share/help/sr@latin/gnome-help/a11y.page
 share/help/sr@latin/gnome-help/about-this-guide.page
 share/help/sr@latin/gnome-help/accounts-add.page
-share/help/sr@latin/gnome-help/accounts-create.page
 share/help/sr@latin/gnome-help/accounts-disable-service.page
 share/help/sr@latin/gnome-help/accounts-provider-not-available.page
 share/help/sr@latin/gnome-help/accounts-remove.page
@@ -9700,6 +9650,7 @@ share/help/sr@latin/gnome-help/bluetooth.page
 share/help/sr@latin/gnome-help/clock-calendar.page
 share/help/sr@latin/gnome-help/clock-set.page
 share/help/sr@latin/gnome-help/clock-timezone.page
+share/help/sr@latin/gnome-help/clock-world.page
 share/help/sr@latin/gnome-help/clock.page
 share/help/sr@latin/gnome-help/color-assignprofiles.page
 share/help/sr@latin/gnome-help/color-calibrate-camera.page
@@ -9734,6 +9685,8 @@ share/help/sr@latin/gnome-help/disk-check.page
 share/help/sr@latin/gnome-help/disk-format.page
 share/help/sr@latin/gnome-help/disk-partitions.page
 share/help/sr@latin/gnome-help/disk.page
+share/help/sr@latin/gnome-help/display-blank.page
+share/help/sr@latin/gnome-help/display-brightness.page
 share/help/sr@latin/gnome-help/display-dual-monitors.page
 share/help/sr@latin/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sr@latin/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -9880,7 +9833,6 @@ share/help/sr@latin/gnome-help/look-display-fuzzy.page
 share/help/sr@latin/gnome-help/look-resolution.page
 share/help/sr@latin/gnome-help/media.page
 share/help/sr@latin/gnome-help/more-help.page
-share/help/sr@latin/gnome-help/mouse-disabletouchpad.page
 share/help/sr@latin/gnome-help/mouse-doubleclick.page
 share/help/sr@latin/gnome-help/mouse-lefthanded.page
 share/help/sr@latin/gnome-help/mouse-middleclick.page
@@ -9915,7 +9867,6 @@ share/help/sr@latin/gnome-help/net-firewall-ports.page
 share/help/sr@latin/gnome-help/net-fixed-ip-address.page
 share/help/sr@latin/gnome-help/net-general.page
 share/help/sr@latin/gnome-help/net-install-flash.page
-share/help/sr@latin/gnome-help/net-install-moonlight.page
 share/help/sr@latin/gnome-help/net-macaddress.page
 share/help/sr@latin/gnome-help/net-manual.page
 share/help/sr@latin/gnome-help/net-mobile.page
@@ -9952,7 +9903,6 @@ share/help/sr@latin/gnome-help/power-batteryslow.page
 share/help/sr@latin/gnome-help/power-batterywindows.page
 share/help/sr@latin/gnome-help/power-closelid.page
 share/help/sr@latin/gnome-help/power-constantfan.page
-share/help/sr@latin/gnome-help/power-hibernate.page
 share/help/sr@latin/gnome-help/power-hotcomputer.page
 share/help/sr@latin/gnome-help/power-lowpower.page
 share/help/sr@latin/gnome-help/power-nowireless.page
@@ -10007,7 +9957,6 @@ share/help/sr@latin/gnome-help/shell-keyboard-shortcuts.page
 share/help/sr@latin/gnome-help/shell-lockscreen.page
 share/help/sr@latin/gnome-help/shell-notifications.page
 share/help/sr@latin/gnome-help/shell-overview.page
-share/help/sr@latin/gnome-help/shell-terminology.page
 share/help/sr@latin/gnome-help/shell-windows-lost.page
 share/help/sr@latin/gnome-help/shell-windows-maximize.page
 share/help/sr@latin/gnome-help/shell-windows-states.page
@@ -10060,7 +10009,6 @@ share/help/sv/gnome-help/a11y-visualalert.page
 share/help/sv/gnome-help/a11y.page
 share/help/sv/gnome-help/about-this-guide.page
 share/help/sv/gnome-help/accounts-add.page
-share/help/sv/gnome-help/accounts-create.page
 share/help/sv/gnome-help/accounts-disable-service.page
 share/help/sv/gnome-help/accounts-provider-not-available.page
 share/help/sv/gnome-help/accounts-remove.page
@@ -10085,6 +10033,7 @@ share/help/sv/gnome-help/bluetooth.page
 share/help/sv/gnome-help/clock-calendar.page
 share/help/sv/gnome-help/clock-set.page
 share/help/sv/gnome-help/clock-timezone.page
+share/help/sv/gnome-help/clock-world.page
 share/help/sv/gnome-help/clock.page
 share/help/sv/gnome-help/color-assignprofiles.page
 share/help/sv/gnome-help/color-calibrate-camera.page
@@ -10119,6 +10068,8 @@ share/help/sv/gnome-help/disk-check.page
 share/help/sv/gnome-help/disk-format.page
 share/help/sv/gnome-help/disk-partitions.page
 share/help/sv/gnome-help/disk.page
+share/help/sv/gnome-help/display-blank.page
+share/help/sv/gnome-help/display-brightness.page
 share/help/sv/gnome-help/display-dual-monitors.page
 share/help/sv/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/sv/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -10265,7 +10216,6 @@ share/help/sv/gnome-help/look-display-fuzzy.page
 share/help/sv/gnome-help/look-resolution.page
 share/help/sv/gnome-help/media.page
 share/help/sv/gnome-help/more-help.page
-share/help/sv/gnome-help/mouse-disabletouchpad.page
 share/help/sv/gnome-help/mouse-doubleclick.page
 share/help/sv/gnome-help/mouse-lefthanded.page
 share/help/sv/gnome-help/mouse-middleclick.page
@@ -10300,7 +10250,6 @@ share/help/sv/gnome-help/net-firewall-ports.page
 share/help/sv/gnome-help/net-fixed-ip-address.page
 share/help/sv/gnome-help/net-general.page
 share/help/sv/gnome-help/net-install-flash.page
-share/help/sv/gnome-help/net-install-moonlight.page
 share/help/sv/gnome-help/net-macaddress.page
 share/help/sv/gnome-help/net-manual.page
 share/help/sv/gnome-help/net-mobile.page
@@ -10337,7 +10286,6 @@ share/help/sv/gnome-help/power-batteryslow.page
 share/help/sv/gnome-help/power-batterywindows.page
 share/help/sv/gnome-help/power-closelid.page
 share/help/sv/gnome-help/power-constantfan.page
-share/help/sv/gnome-help/power-hibernate.page
 share/help/sv/gnome-help/power-hotcomputer.page
 share/help/sv/gnome-help/power-lowpower.page
 share/help/sv/gnome-help/power-nowireless.page
@@ -10392,7 +10340,6 @@ share/help/sv/gnome-help/shell-keyboard-shortcuts.page
 share/help/sv/gnome-help/shell-lockscreen.page
 share/help/sv/gnome-help/shell-notifications.page
 share/help/sv/gnome-help/shell-overview.page
-share/help/sv/gnome-help/shell-terminology.page
 share/help/sv/gnome-help/shell-windows-lost.page
 share/help/sv/gnome-help/shell-windows-maximize.page
 share/help/sv/gnome-help/shell-windows-states.page
@@ -10445,7 +10392,6 @@ share/help/ta/gnome-help/a11y-visualalert.page
 share/help/ta/gnome-help/a11y.page
 share/help/ta/gnome-help/about-this-guide.page
 share/help/ta/gnome-help/accounts-add.page
-share/help/ta/gnome-help/accounts-create.page
 share/help/ta/gnome-help/accounts-disable-service.page
 share/help/ta/gnome-help/accounts-provider-not-available.page
 share/help/ta/gnome-help/accounts-remove.page
@@ -10470,6 +10416,7 @@ share/help/ta/gnome-help/bluetooth.page
 share/help/ta/gnome-help/clock-calendar.page
 share/help/ta/gnome-help/clock-set.page
 share/help/ta/gnome-help/clock-timezone.page
+share/help/ta/gnome-help/clock-world.page
 share/help/ta/gnome-help/clock.page
 share/help/ta/gnome-help/color-assignprofiles.page
 share/help/ta/gnome-help/color-calibrate-camera.page
@@ -10504,6 +10451,8 @@ share/help/ta/gnome-help/disk-check.page
 share/help/ta/gnome-help/disk-format.page
 share/help/ta/gnome-help/disk-partitions.page
 share/help/ta/gnome-help/disk.page
+share/help/ta/gnome-help/display-blank.page
+share/help/ta/gnome-help/display-brightness.page
 share/help/ta/gnome-help/display-dual-monitors.page
 share/help/ta/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/ta/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -10650,7 +10599,6 @@ share/help/ta/gnome-help/look-display-fuzzy.page
 share/help/ta/gnome-help/look-resolution.page
 share/help/ta/gnome-help/media.page
 share/help/ta/gnome-help/more-help.page
-share/help/ta/gnome-help/mouse-disabletouchpad.page
 share/help/ta/gnome-help/mouse-doubleclick.page
 share/help/ta/gnome-help/mouse-lefthanded.page
 share/help/ta/gnome-help/mouse-middleclick.page
@@ -10685,7 +10633,6 @@ share/help/ta/gnome-help/net-firewall-ports.page
 share/help/ta/gnome-help/net-fixed-ip-address.page
 share/help/ta/gnome-help/net-general.page
 share/help/ta/gnome-help/net-install-flash.page
-share/help/ta/gnome-help/net-install-moonlight.page
 share/help/ta/gnome-help/net-macaddress.page
 share/help/ta/gnome-help/net-manual.page
 share/help/ta/gnome-help/net-mobile.page
@@ -10722,7 +10669,6 @@ share/help/ta/gnome-help/power-batteryslow.page
 share/help/ta/gnome-help/power-batterywindows.page
 share/help/ta/gnome-help/power-closelid.page
 share/help/ta/gnome-help/power-constantfan.page
-share/help/ta/gnome-help/power-hibernate.page
 share/help/ta/gnome-help/power-hotcomputer.page
 share/help/ta/gnome-help/power-lowpower.page
 share/help/ta/gnome-help/power-nowireless.page
@@ -10777,7 +10723,6 @@ share/help/ta/gnome-help/shell-keyboard-shortcuts.page
 share/help/ta/gnome-help/shell-lockscreen.page
 share/help/ta/gnome-help/shell-notifications.page
 share/help/ta/gnome-help/shell-overview.page
-share/help/ta/gnome-help/shell-terminology.page
 share/help/ta/gnome-help/shell-windows-lost.page
 share/help/ta/gnome-help/shell-windows-maximize.page
 share/help/ta/gnome-help/shell-windows-states.page
@@ -10830,7 +10775,6 @@ share/help/te/gnome-help/a11y-visualalert.page
 share/help/te/gnome-help/a11y.page
 share/help/te/gnome-help/about-this-guide.page
 share/help/te/gnome-help/accounts-add.page
-share/help/te/gnome-help/accounts-create.page
 share/help/te/gnome-help/accounts-disable-service.page
 share/help/te/gnome-help/accounts-provider-not-available.page
 share/help/te/gnome-help/accounts-remove.page
@@ -10855,6 +10799,7 @@ share/help/te/gnome-help/bluetooth.page
 share/help/te/gnome-help/clock-calendar.page
 share/help/te/gnome-help/clock-set.page
 share/help/te/gnome-help/clock-timezone.page
+share/help/te/gnome-help/clock-world.page
 share/help/te/gnome-help/clock.page
 share/help/te/gnome-help/color-assignprofiles.page
 share/help/te/gnome-help/color-calibrate-camera.page
@@ -10889,6 +10834,8 @@ share/help/te/gnome-help/disk-check.page
 share/help/te/gnome-help/disk-format.page
 share/help/te/gnome-help/disk-partitions.page
 share/help/te/gnome-help/disk.page
+share/help/te/gnome-help/display-blank.page
+share/help/te/gnome-help/display-brightness.page
 share/help/te/gnome-help/display-dual-monitors.page
 share/help/te/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/te/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -11035,7 +10982,6 @@ share/help/te/gnome-help/look-display-fuzzy.page
 share/help/te/gnome-help/look-resolution.page
 share/help/te/gnome-help/media.page
 share/help/te/gnome-help/more-help.page
-share/help/te/gnome-help/mouse-disabletouchpad.page
 share/help/te/gnome-help/mouse-doubleclick.page
 share/help/te/gnome-help/mouse-lefthanded.page
 share/help/te/gnome-help/mouse-middleclick.page
@@ -11070,7 +11016,6 @@ share/help/te/gnome-help/net-firewall-ports.page
 share/help/te/gnome-help/net-fixed-ip-address.page
 share/help/te/gnome-help/net-general.page
 share/help/te/gnome-help/net-install-flash.page
-share/help/te/gnome-help/net-install-moonlight.page
 share/help/te/gnome-help/net-macaddress.page
 share/help/te/gnome-help/net-manual.page
 share/help/te/gnome-help/net-mobile.page
@@ -11107,7 +11052,6 @@ share/help/te/gnome-help/power-batteryslow.page
 share/help/te/gnome-help/power-batterywindows.page
 share/help/te/gnome-help/power-closelid.page
 share/help/te/gnome-help/power-constantfan.page
-share/help/te/gnome-help/power-hibernate.page
 share/help/te/gnome-help/power-hotcomputer.page
 share/help/te/gnome-help/power-lowpower.page
 share/help/te/gnome-help/power-nowireless.page
@@ -11162,7 +11106,6 @@ share/help/te/gnome-help/shell-keyboard-shortcuts.page
 share/help/te/gnome-help/shell-lockscreen.page
 share/help/te/gnome-help/shell-notifications.page
 share/help/te/gnome-help/shell-overview.page
-share/help/te/gnome-help/shell-terminology.page
 share/help/te/gnome-help/shell-windows-lost.page
 share/help/te/gnome-help/shell-windows-maximize.page
 share/help/te/gnome-help/shell-windows-states.page
@@ -11215,7 +11158,6 @@ share/help/vi/gnome-help/a11y-visualalert.page
 share/help/vi/gnome-help/a11y.page
 share/help/vi/gnome-help/about-this-guide.page
 share/help/vi/gnome-help/accounts-add.page
-share/help/vi/gnome-help/accounts-create.page
 share/help/vi/gnome-help/accounts-disable-service.page
 share/help/vi/gnome-help/accounts-provider-not-available.page
 share/help/vi/gnome-help/accounts-remove.page
@@ -11240,6 +11182,7 @@ share/help/vi/gnome-help/bluetooth.page
 share/help/vi/gnome-help/clock-calendar.page
 share/help/vi/gnome-help/clock-set.page
 share/help/vi/gnome-help/clock-timezone.page
+share/help/vi/gnome-help/clock-world.page
 share/help/vi/gnome-help/clock.page
 share/help/vi/gnome-help/color-assignprofiles.page
 share/help/vi/gnome-help/color-calibrate-camera.page
@@ -11274,6 +11217,8 @@ share/help/vi/gnome-help/disk-check.page
 share/help/vi/gnome-help/disk-format.page
 share/help/vi/gnome-help/disk-partitions.page
 share/help/vi/gnome-help/disk.page
+share/help/vi/gnome-help/display-blank.page
+share/help/vi/gnome-help/display-brightness.page
 share/help/vi/gnome-help/display-dual-monitors.page
 share/help/vi/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/vi/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -11420,7 +11365,6 @@ share/help/vi/gnome-help/look-display-fuzzy.page
 share/help/vi/gnome-help/look-resolution.page
 share/help/vi/gnome-help/media.page
 share/help/vi/gnome-help/more-help.page
-share/help/vi/gnome-help/mouse-disabletouchpad.page
 share/help/vi/gnome-help/mouse-doubleclick.page
 share/help/vi/gnome-help/mouse-lefthanded.page
 share/help/vi/gnome-help/mouse-middleclick.page
@@ -11455,7 +11399,6 @@ share/help/vi/gnome-help/net-firewall-ports.page
 share/help/vi/gnome-help/net-fixed-ip-address.page
 share/help/vi/gnome-help/net-general.page
 share/help/vi/gnome-help/net-install-flash.page
-share/help/vi/gnome-help/net-install-moonlight.page
 share/help/vi/gnome-help/net-macaddress.page
 share/help/vi/gnome-help/net-manual.page
 share/help/vi/gnome-help/net-mobile.page
@@ -11492,7 +11435,6 @@ share/help/vi/gnome-help/power-batteryslow.page
 share/help/vi/gnome-help/power-batterywindows.page
 share/help/vi/gnome-help/power-closelid.page
 share/help/vi/gnome-help/power-constantfan.page
-share/help/vi/gnome-help/power-hibernate.page
 share/help/vi/gnome-help/power-hotcomputer.page
 share/help/vi/gnome-help/power-lowpower.page
 share/help/vi/gnome-help/power-nowireless.page
@@ -11547,7 +11489,6 @@ share/help/vi/gnome-help/shell-keyboard-shortcuts.page
 share/help/vi/gnome-help/shell-lockscreen.page
 share/help/vi/gnome-help/shell-notifications.page
 share/help/vi/gnome-help/shell-overview.page
-share/help/vi/gnome-help/shell-terminology.page
 share/help/vi/gnome-help/shell-windows-lost.page
 share/help/vi/gnome-help/shell-windows-maximize.page
 share/help/vi/gnome-help/shell-windows-states.page
@@ -11600,7 +11541,6 @@ share/help/zh_CN/gnome-help/a11y-visualalert.page
 share/help/zh_CN/gnome-help/a11y.page
 share/help/zh_CN/gnome-help/about-this-guide.page
 share/help/zh_CN/gnome-help/accounts-add.page
-share/help/zh_CN/gnome-help/accounts-create.page
 share/help/zh_CN/gnome-help/accounts-disable-service.page
 share/help/zh_CN/gnome-help/accounts-provider-not-available.page
 share/help/zh_CN/gnome-help/accounts-remove.page
@@ -11625,6 +11565,7 @@ share/help/zh_CN/gnome-help/bluetooth.page
 share/help/zh_CN/gnome-help/clock-calendar.page
 share/help/zh_CN/gnome-help/clock-set.page
 share/help/zh_CN/gnome-help/clock-timezone.page
+share/help/zh_CN/gnome-help/clock-world.page
 share/help/zh_CN/gnome-help/clock.page
 share/help/zh_CN/gnome-help/color-assignprofiles.page
 share/help/zh_CN/gnome-help/color-calibrate-camera.page
@@ -11659,6 +11600,8 @@ share/help/zh_CN/gnome-help/disk-check.page
 share/help/zh_CN/gnome-help/disk-format.page
 share/help/zh_CN/gnome-help/disk-partitions.page
 share/help/zh_CN/gnome-help/disk.page
+share/help/zh_CN/gnome-help/display-blank.page
+share/help/zh_CN/gnome-help/display-brightness.page
 share/help/zh_CN/gnome-help/display-dual-monitors.page
 share/help/zh_CN/gnome-help/figures/audio-volume-high-symbolic.svg
 share/help/zh_CN/gnome-help/figures/audio-volume-low-symbolic.svg
@@ -11805,7 +11748,6 @@ share/help/zh_CN/gnome-help/look-display-fuzzy.page
 share/help/zh_CN/gnome-help/look-resolution.page
 share/help/zh_CN/gnome-help/media.page
 share/help/zh_CN/gnome-help/more-help.page
-share/help/zh_CN/gnome-help/mouse-disabletouchpad.page
 share/help/zh_CN/gnome-help/mouse-doubleclick.page
 share/help/zh_CN/gnome-help/mouse-lefthanded.page
 share/help/zh_CN/gnome-help/mouse-middleclick.page
@@ -11840,7 +11782,6 @@ share/help/zh_CN/gnome-help/net-firewall-ports.page
 share/help/zh_CN/gnome-help/net-fixed-ip-address.page
 share/help/zh_CN/gnome-help/net-general.page
 share/help/zh_CN/gnome-help/net-install-flash.page
-share/help/zh_CN/gnome-help/net-install-moonlight.page
 share/help/zh_CN/gnome-help/net-macaddress.page
 share/help/zh_CN/gnome-help/net-manual.page
 share/help/zh_CN/gnome-help/net-mobile.page
@@ -11877,7 +11818,6 @@ share/help/zh_CN/gnome-help/power-batteryslow.page
 share/help/zh_CN/gnome-help/power-batterywindows.page
 share/help/zh_CN/gnome-help/power-closelid.page
 share/help/zh_CN/gnome-help/power-constantfan.page
-share/help/zh_CN/gnome-help/power-hibernate.page
 share/help/zh_CN/gnome-help/power-hotcomputer.page
 share/help/zh_CN/gnome-help/power-lowpower.page
 share/help/zh_CN/gnome-help/power-nowireless.page
@@ -11932,7 +11872,6 @@ share/help/zh_CN/gnome-help/shell-keyboard-shortcuts.page
 share/help/zh_CN/gnome-help/shell-lockscreen.page
 share/help/zh_CN/gnome-help/shell-notifications.page
 share/help/zh_CN/gnome-help/shell-overview.page
-share/help/zh_CN/gnome-help/shell-terminology.page
 share/help/zh_CN/gnome-help/shell-windows-lost.page
 share/help/zh_CN/gnome-help/shell-windows-maximize.page
 share/help/zh_CN/gnome-help/shell-windows-states.page

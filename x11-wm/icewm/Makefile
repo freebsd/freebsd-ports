@@ -11,8 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Manager designed for speed, usability and consistency
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake iconv:translit pkgconfig
+USES=		gmake iconv:translit localbase pkgconfig
 USE_XORG=	ice sm x11 xext
 USE_GNOME=	gdkpixbuf2
 GNU_CONFIGURE=	yes
@@ -22,9 +23,6 @@ CONFIGURE_ARGS=	--enable-guievents \
 		--with-kdedatadir=${LOCALBASE}/share \
 		--with-docdir=${PREFIX}/share/doc \
 		--with-mkfontdir=${NONEXISTENT}
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		BEASTIE ESOUND GNOME LITE MENUFIX NLS XFT XINERAMA \
 			XRANDR DOCS
@@ -51,26 +49,9 @@ XINERAMA_USE=		XORG=xinerama
 XINERAMA_CONFIGURE_ENABLE=	xinerama
 XRANDR_USE=		XORG=xrandr
 XRANDR_CONFIGURE_ENABLE=	xrandr
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MASM}
-CONFIGURE_ARGS+=--enable-x86-asm
-.else
-CONFIGURE_ARGS+=--disable-x86-asm
-.endif
-
-.if ${PORT_OPTIONS:MBEASTIE}
-STARTUP_PIXMAP=	${DATADIR}/taskbar/bsd-daemon.xpm
-.else
-STARTUP_PIXMAP=	icewm-logo.xpm
-.endif
-
-.if ${PORT_OPTIONS:MLITE}
-PLIST_SUB+=	NOLITE="@comment "
-.else
-PLIST_SUB+=	NOLITE=""
-.endif
+ASM_CONFIGURE_ENABLE=	x86-asm
+BEASTIE_VARS=		STARTUP_PIXMAP=${DATADIR}/taskbar/bsd-daemon.xpm
+BEASTIE_VARS_OFF=	STARTUP_PIXMAP=icewm-logo.xpm
 
 post-extract:
 .for dir in taskbar themes/Infadel2/taskbar
@@ -99,10 +80,11 @@ post-install:
 .for dir in taskbar themes/Infadel2/taskbar
 	@${LN} -s ${STARTUP_PIXMAP} ${STAGEDIR}${DATADIR}/${dir}/start.xpm
 .endfor
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for f in CHANGES INSTALL README TODO
+.for f in CHANGES INSTALL README TODO doc/*.html
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-. endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
