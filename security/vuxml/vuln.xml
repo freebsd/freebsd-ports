@@ -73,8 +73,12 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Mozilla Foundation reports:</p>
 	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/#firefox44.0.2">
-	  <p>MFSA 2016-13 Same-origin-policy violation using Service Workers
-	    with plugins</p>
+	  <p>MFSA 2016-13 Jason Pang of OneSignal reported that service workers intercept
+	    responses to plugin network requests made through the browser. Plugins which
+	    make security decisions based on the content of network requests can have these
+	    decisions subverted if a service worker forges responses to those requests. For
+	    example, a forged crossdomain.xml could allow a malicious site to violate the
+	    same-origin policy using the Flash plugin.</p>
 	</blockquote>
       </body>
     </description>
