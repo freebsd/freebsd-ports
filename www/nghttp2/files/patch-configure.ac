@@ -1,0 +1,35 @@
+From e4b2847d3135a024c740d25f9e11da7ff0bf0fd6 Mon Sep 17 00:00:00 2001
+From: Bernard Spil <Sp1l@users.noreply.github.com>
+Date: Sat, 6 Feb 2016 14:36:27 +0100
+Subject: [PATCH] Don't check for dlopen/libdl on *BSD
+
+This makes linking fail on -ldl as there is no libdl on in /usr/lib or /usr/local/lib on *BSD
+Tested (and part of the proposed nghttp2 1.7.0) on [https://reviews.freebsd.org/D5218|FreeBSD]
+---
+ configure.ac | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 09a2538..4a4defe 100644
+--- configure.ac.orig
++++ configure.ac
+@@ -256,9 +256,16 @@ if test "x${have_zlib}" = "xno"; then
+ fi
+ 
+ # dl: openssl requires libdl when it is statically linked.
+-LIBS_OLD=$LIBS
+-AC_SEARCH_LIBS([dlopen], [dl], [APPLDFLAGS="-ldl $APPLDFLAGS"], [], [])
+-LIBS=$LIBS_OLD
++case "${host_os}" in
++  *bsd*)
++    # dlopen is in libc on *BSD
++    ;;
++  *)
++    save_LIBS=$LIBS
++    AC_SEARCH_LIBS([dlopen], [dl], [APPLDFLAGS="-ldl $APPLDFLAGS"], [], [])
++    LIBS=$save_LIBS
++    ;;
++esac
+ 
+ # cunit
+ PKG_CHECK_MODULES([CUNIT], [cunit >= 2.1], [have_cunit=yes], [have_cunit=no])
