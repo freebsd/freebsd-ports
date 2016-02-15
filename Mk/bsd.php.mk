@@ -56,7 +56,10 @@ PHP_EXT_DIR!=	${PHPBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${PHPBA
 DEFAULT_PHP_VER?=	${PHP_DEFAULT:S/.//}
 
 PHP_VER?=	${DEFAULT_PHP_VER}
-.if ${PHP_VER}  == 56
+.if ${PHP_VER}  == 70
+PHP_EXT_DIR=   20151012
+PHP_EXT_INC=    pcre spl
+.elif ${PHP_VER}  == 56
 PHP_EXT_DIR=	20131226
 PHP_EXT_INC=	pcre spl
 .elif ${PHP_VER}  == 55
@@ -252,6 +255,7 @@ _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dom \
 # version specific components
 _USE_PHP_VER55=	${_USE_PHP_ALL} phar sqlite3
 _USE_PHP_VER56=	${_USE_PHP_ALL} phar sqlite3
+_USE_PHP_VER70=	${_USE_PHP_ALL} phar sqlite3
 
 apc_DEPENDS=	www/pecl-APC
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
@@ -275,7 +279,11 @@ iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
+.if ${PHP_VER}	== 70
+intl_DEPENDS=	devel/php${PHP_VER}-intl
+.else
 intl_DEPENDS=	devel/pecl-intl
+.endif
 json_DEPENDS=	devel/php${PHP_VER}-json
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
@@ -288,12 +296,9 @@ mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
 ncurses_DEPENDS=devel/php${PHP_VER}-ncurses
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
 oci8_DEPENDS=	databases/php${PHP_VER}-oci8
-.if ${PHP_VER} == 55 || ${PHP_VER} == 56
 opcache_DEPENDS=	www/php${PHP_VER}-opcache
-.endif	
 openssl_DEPENDS=security/php${PHP_VER}-openssl
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
-pcre_DEPENDS=	devel/php${PHP_VER}-pcre
 pdf_DEPENDS=	print/pecl-pdflib
 pdo_DEPENDS=	databases/php${PHP_VER}-pdo
 pdo_dblib_DEPENDS=	databases/php${PHP_VER}-pdo_dblib

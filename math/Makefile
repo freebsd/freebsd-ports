@@ -560,6 +560,8 @@
     SUBDIR += php55-gmp
     SUBDIR += php56-bcmath
     SUBDIR += php56-gmp
+    SUBDIR += php70-bcmath
+    SUBDIR += php70-gmp
     SUBDIR += physcalc
     SUBDIR += picosat
     SUBDIR += plman

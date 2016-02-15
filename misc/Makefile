@@ -362,6 +362,7 @@
     SUBDIR += pfm
     SUBDIR += php55-calendar
     SUBDIR += php56-calendar
+    SUBDIR += php70-calendar
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe
