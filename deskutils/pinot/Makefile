@@ -45,7 +45,7 @@ CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
 		--enable-mempool=no
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
 USES=		gettext libarchive libtool pkgconfig python shebangfix
 USE_OPENSSL=	yes
