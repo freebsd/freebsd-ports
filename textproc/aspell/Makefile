@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR}	\
 		--enable-curses=ncursesw \
 		--enable-static
 
-USES=		cpe gmake iconv libtool perl5 shebangfix
+USES=		cpe gmake iconv libtool ncurses perl5 shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/aspell-import
 CPE_VENDOR=	gnu
