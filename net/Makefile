@@ -892,6 +892,10 @@
     SUBDIR += php56-soap
     SUBDIR += php56-sockets
     SUBDIR += php56-xmlrpc
+    SUBDIR += php70-ldap
+    SUBDIR += php70-soap
+    SUBDIR += php70-sockets
+    SUBDIR += php70-xmlrpc
     SUBDIR += phpldapadmin
     SUBDIR += pim6-tools
     SUBDIR += pim6dd

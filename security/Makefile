@@ -760,6 +760,10 @@
     SUBDIR += php56-hash
     SUBDIR += php56-mcrypt
     SUBDIR += php56-openssl
+    SUBDIR += php70-filter
+    SUBDIR += php70-hash
+    SUBDIR += php70-mcrypt
+    SUBDIR += php70-openssl
     SUBDIR += phpdeadlock
     SUBDIR += phpsecinfo
     SUBDIR += pidentd
