@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php70
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-extensions
 
@@ -90,8 +90,6 @@ XSL_DESC=		XSL support (Implies DOM)
 ZIP_DESC=		ZIP support
 ZLIB_DESC=		ZLIB support
 
-.include <bsd.port.options.mk>
-
 OPTIONS_DEFAULT=	CTYPE \
 			DOM \
 			FILTER \
@@ -110,6 +108,8 @@ OPTIONS_DEFAULT=	CTYPE \
 			XML \
 			XMLREADER \
 			XMLWRITER
+
+.include <bsd.port.options.mk>
 
 .for opt in ${OPTIONS_DEFINE}
 .	if ${PORT_OPTIONS:M${opt}}
