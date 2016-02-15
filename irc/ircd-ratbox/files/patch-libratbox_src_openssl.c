@@ -4,7 +4,7 @@
  
  	switch (seed_type)
  	{
-+#ifdef HAVE_RAND_EGD
++#ifndef OPENSSL_NO_EGD
  	case RB_PRNG_EGD:
  		if(RAND_egd(path) == -1)
  			return -1;
