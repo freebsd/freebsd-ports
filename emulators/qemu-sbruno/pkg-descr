@@ -13,7 +13,7 @@ cross-debugging.
 
 As QEMU requires no host kernel patches to run, it is very safe and easy to use.
 
-http://wiki.qemu.org/Main_Page
+WWW: http://wiki.qemu.org/Main_Page
 
 This is building sbruno's bsd-user github branch:
 
