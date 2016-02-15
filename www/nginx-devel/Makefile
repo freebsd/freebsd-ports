@@ -75,6 +75,7 @@ OPTIONS_DEFINE=	\
 	HTTP_EVAL \
 	HTTP_FANCYINDEX \
 	HTTP_FOOTER \
+	HTTP_JSON_STATUS \
 	HTTP_MOGILEFS \
 	HTTP_NOTICE \
 	HTTP_PUSH \
@@ -174,6 +175,7 @@ HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
 HTTP_EVAL_DESC=			3rd party eval module
 HTTP_FANCYINDEX_DESC=		3rd party http_fancyindex module
 HTTP_FOOTER_DESC=		3rd party http_footer module
+HTTP_JSON_STATUS_DESC=		3rd party http_json_status module
 HTTP_MOGILEFS_DESC=		3rd party mogilefs module
 HTTP_MP4_H264_DESC=		3rd party mp4/h264 module
 HTTP_NOTICE_DESC=		3rd party notice module
@@ -454,6 +456,14 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_footer}
 
 .if ${PORT_OPTIONS:MHTTP_FLV}
 CONFIGURE_ARGS+=--with-http_flv_module
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_JSON_STATUS}
+NGINX_JSON_STATUS_VERSION= 1d2f303 
+GH_ACCOUNT+=	nginx-modules:json_status
+GH_PROJECT+=	ngx_http_json_status_module:json_status
+GH_TAGNAME+=	${NGINX_JSON_STATUS_VERSION}:json_status
+CONFIGURE_ARGS+=--add-module=${WRKSRC_json_status}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_GEOIP}
