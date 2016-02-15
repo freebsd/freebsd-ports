@@ -3,7 +3,7 @@
 
 CATEGORIES=	net-mgmt
 
-MASTERDIR=	${.CURDIR}/../../lang/php56
+MASTERDIR=	${.CURDIR}/../../lang/php70
 
 PKGNAMESUFFIX=	-snmp
 
