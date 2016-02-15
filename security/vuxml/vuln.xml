@@ -57,6 +57,37 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="172b22cb-d3f6-11e5-ac9e-485d605f4717">
+    <topic>firefox -- Same-origin-policy violation using Service Workers with plugins</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>44.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>44.0.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Foundation reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/#firefox44.0.2">
+	  <p>MFSA 2016-13 Same-origin-policy violation using Service Workers
+	    with plugins</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1949</cvename>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2016-13/</url>
+    </references>
+    <dates>
+      <discovery>2016-02-11</discovery>
+      <entry>2016-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07718e2b-d29d-11e5-a95f-b499baebfeaf">
     <topic>nghttp2 -- Out of memory in nghttpd, nghttp, and libnghttp2_asio</topic>
     <affects>
