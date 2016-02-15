@@ -389,18 +389,18 @@ USE_OPENSSL_PORT=	yes
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
-NGINX_ECHO_VERSION=	0.57
+NGINX_ECHO_VERSION=	4f7aa50
 GH_ACCOUNT+=	openresty:echo
 GH_PROJECT+=	echo-nginx-module:echo
-GH_TAGNAME+=	v${NGINX_ECHO_VERSION}:echo
+GH_TAGNAME+=	${NGINX_ECHO_VERSION}:echo
 CONFIGURE_ARGS+=--add-module=${WRKSRC_echo}
 .endif
 
 .if ${PORT_OPTIONS:MHEADERS_MORE}
-NGINX_HEADERS_MORE_VERSION=	0.261
+NGINX_HEADERS_MORE_VERSION=	f5559ec
 GH_ACCOUNT+=	openresty:headers_more
 GH_PROJECT+=	headers-more-nginx-module:headers_more
-GH_TAGNAME+=	v${NGINX_HEADERS_MORE_VERSION}:headers_more
+GH_TAGNAME+=	${NGINX_HEADERS_MORE_VERSION}:headers_more
 CONFIGURE_ARGS+=--add-module=${WRKSRC_headers_more}
 .endif
 
@@ -419,8 +419,8 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_dav_ext}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_EVAL}
-NGINX_EVAL_VERSION=	1.0.3
-GH_ACCOUNT+=	vkholodkov:eval
+NGINX_EVAL_VERSION=	342c812
+GH_ACCOUNT+=	openresty:eval
 GH_PROJECT+=	nginx-eval-module:eval
 GH_TAGNAME+=	${NGINX_EVAL_VERSION}:eval
 CONFIGURE_ARGS+=--add-module=${WRKSRC_eval}
@@ -666,10 +666,10 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	0.10.0
+NGINX_LUA_VERSION=	7410339
 GH_ACCOUNT+=	openresty:lua
 GH_PROJECT+=	lua-nginx-module:lua
-GH_TAGNAME+=	v${NGINX_LUA_VERSION}:lua
+GH_TAGNAME+=	${NGINX_LUA_VERSION}:lua
 CONFIGURE_ARGS+=--add-module=${WRKSRC_lua}
 .endif
 
@@ -768,12 +768,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_rtmp}
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
-NGINX_SET_MISC_VERSION=	0.29
+NGINX_SET_MISC_VERSION=	6582fb4
 GH_ACCOUNT+=	openresty:setmisc
 GH_PROJECT+=	set-misc-nginx-module:setmisc
-GH_TAGNAME+=	v${NGINX_SET_MISC_VERSION}:setmisc
+GH_TAGNAME+=	${NGINX_SET_MISC_VERSION}:setmisc
 CONFIGURE_ARGS+=--add-module=${WRKSRC_setmisc}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-set-misc-nginx-module-config
 .endif
 
 .if ${PORT_OPTIONS:MSFLOW}
