@@ -1,0 +1,13 @@
+Index: files/patch-configure.ac
+===================================================================
+--- configure.ac.orig	2012-07-02 14:50:46 UTC
++++ configure.ac
+@@ -148,7 +148,7 @@ AC_ARG_WITH(execpath,[  --with-execpath=
+ AC_MSG_RESULT([Execpath: $EXECPATH])
+ AC_SUBST(EXECPATH)
+ 
+-AC_CONFIG_FILES([Makefile beh foomatic-rip.1])
++AC_CONFIG_FILES([Makefile foomatic-beh foomatic-rip.1])
+ AC_CONFIG_HEADER(config.h)
+ AC_OUTPUT
+ 
