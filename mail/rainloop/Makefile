@@ -49,8 +49,6 @@ MYSQL_USE=	PHP=pdo_mysql
 PGSQL_USE=	PHP=pdo_pgsql
 SQLITE_USE=	PHP=pdo_sqlite
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
 	${INSTALL_DATA} ${WRKSRC}/data/* ${STAGEDIR}${WWWDIR}/data
