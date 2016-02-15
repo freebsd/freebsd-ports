@@ -121,6 +121,7 @@
     SUBDIR += burrtools
     SUBDIR += bygfoot
     SUBDIR += bzflag
+    SUBDIR += bzflag-server
     SUBDIR += cake
     SUBDIR += caph
     SUBDIR += capicity
