@@ -57,6 +57,35 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f1bf28c5-d447-11e5-b2bd-002590263bf5">
+    <topic>xdelta3 -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>xdelta3</name>
+	<range><lt>3.0.9,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stepan Golosunov reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2016/02/08/1">
+	  <p>Buffer overflow was found and fixed in xdelta3 binary diff tool
+	    that allows arbitrary code execution from input files at least on
+	    some systems.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9765</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2016/02/08/1</url>
+      <url>https://github.com/jmacd/xdelta-devel/commit/ef93ff74203e030073b898c05e8b4860b5d09ef2</url>
+    </references>
+    <dates>
+      <discovery>2014-10-08</discovery>
+      <entry>2016-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="172b22cb-d3f6-11e5-ac9e-485d605f4717">
     <topic>firefox -- Same-origin-policy violation using Service Workers with plugins</topic>
     <affects>
