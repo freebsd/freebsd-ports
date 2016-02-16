@@ -304,28 +304,28 @@ Notes:
       </body>
     </description>
     <references>
-      <cvename>CVE-2015-0964</cvename>
-      <cvename>CVE-2015-0965</cvename>
-      <cvename>CVE-2015-0966</cvename>
-      <cvename>CVE-2015-0967</cvename>
-      <cvename>CVE-2015-0968</cvename>
-      <cvename>CVE-2015-0969</cvename>
-      <cvename>CVE-2015-0970</cvename>
-      <cvename>CVE-2015-0971</cvename>
-      <cvename>CVE-2015-0972</cvename>
-      <cvename>CVE-2015-0973</cvename>
-      <cvename>CVE-2015-0974</cvename>
-      <cvename>CVE-2015-0975</cvename>
-      <cvename>CVE-2015-0976</cvename>
-      <cvename>CVE-2015-0977</cvename>
-      <cvename>CVE-2015-0978</cvename>
-      <cvename>CVE-2015-0979</cvename>
-      <cvename>CVE-2015-0980</cvename>
-      <cvename>CVE-2015-0981</cvename>
-      <cvename>CVE-2015-0982</cvename>
-      <cvename>CVE-2015-0983</cvename>
-      <cvename>CVE-2015-0984</cvename>
-      <cvename>CVE-2015-0985</cvename>
+      <cvename>CVE-2016-0964</cvename>
+      <cvename>CVE-2016-0965</cvename>
+      <cvename>CVE-2016-0966</cvename>
+      <cvename>CVE-2016-0967</cvename>
+      <cvename>CVE-2016-0968</cvename>
+      <cvename>CVE-2016-0969</cvename>
+      <cvename>CVE-2016-0970</cvename>
+      <cvename>CVE-2016-0971</cvename>
+      <cvename>CVE-2016-0972</cvename>
+      <cvename>CVE-2016-0973</cvename>
+      <cvename>CVE-2016-0974</cvename>
+      <cvename>CVE-2016-0975</cvename>
+      <cvename>CVE-2016-0976</cvename>
+      <cvename>CVE-2016-0977</cvename>
+      <cvename>CVE-2016-0978</cvename>
+      <cvename>CVE-2016-0979</cvename>
+      <cvename>CVE-2016-0980</cvename>
+      <cvename>CVE-2016-0981</cvename>
+      <cvename>CVE-2016-0982</cvename>
+      <cvename>CVE-2016-0983</cvename>
+      <cvename>CVE-2016-0984</cvename>
+      <cvename>CVE-2016-0985</cvename>
       <url>https://helpx.adobe.com/security/products/flash-player/apsb16-04.html</url>
     </references>
     <dates>
