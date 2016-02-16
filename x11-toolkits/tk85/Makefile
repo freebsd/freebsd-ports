@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tk
-PORTVERSION=	8.5.18
+PORTVERSION=	8.5.19
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	TCLTK/tcl8_5 SF/tcl/Tcl/${PORTVERSION}
-PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
+PKGNAMESUFFIX=	${SHORT_TK_VER}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -21,8 +21,8 @@ USE_XORG=	x11 xft xscrnsaver
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/unix
 GNU_CONFIGURE=	yes
-TK_VER=		8.5
-SHORT_TK_VER=	85
+TK_VER=		${PORTVERSION:R}
+SHORT_TK_VER=	${TK_VER:S/.//}
 CONFIGURE_ARGS=	--enable-shared \
 		--enable-xss \
 		--enable-xft \
@@ -35,6 +35,7 @@ CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1 \
 MAN_SUFFIX=	${PKGBASE}
 
 INSTALL_TARGET=	install
+TEST_TARGET=	do-test
 
 MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
 PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
@@ -44,34 +45,17 @@ SUB_FILES=	pkgIndex.tcl
 
 OPTIONS_DEFINE=	TK85_MAN DEMOS THREADS
 OPTIONS_DEFAULT=THREADS
+OPTIONS_SUB=	yes
 TK85_MAN_DESC=	Install tk 8.5 function manpages
 DEMOS_DESC=	Install demos
 
 SUB_LIST+=	TCLPATCHLEVEL="${PORTVERSION}"
 
-.include <bsd.port.pre.mk>
-
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
 
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=	--enable-threads
-.else
-CONFIGURE_ARGS+=	--disable-threads
-.endif
-
-.if ${PORT_OPTIONS:MDEMOS}
-INSTALL_TARGET+=	install install-demos
-PLIST_SUB+=	DEMOS=""
-.else
-PLIST_SUB+=	DEMOS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTK85_MAN}
-INSTALL_TARGET+=install-doc
-PLIST_SUB+=	MAN=""
-.else
-PLIST_SUB+=	MAN="@comment "
-.endif
+THREADS_CONFIGURE_ENABLE=	threads
+TK85_MAN_VARS=	INSTALL_TARGET+=install-doc
+DEMOS_VARS=	INSTALL_TARGET+=install-demos
 
 TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${PKGBASE}
 
@@ -96,9 +80,9 @@ post-install:
 	${LN} -fs libtk${SHORT_TK_VER}.so.1.0 \
 	    ${STAGEDIR}${PREFIX}/lib/libtk${SHORT_TK_VER}.so.1
 
-regression-test:	build
-	cd ${WRKSRC}; ${MAKE} test
+do-test:
+	cd ${WRKSRC} && ${MAKE} test
 	${ECHO_CMD} "package require Tk" | tclsh${TK_VER}
 	${ECHO_CMD} "load libtk${SHORT_TK_VER}.so" | tclsh${TK_VER}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
