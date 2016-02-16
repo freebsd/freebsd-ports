@@ -239,17 +239,6 @@ CONFIGURE_ARGS+=--with-pdo-firebird=${LOCALBASE}
 USES+=	firebird
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
-
-.endif
-
-.if ${PHP_MODNAME} == "pdo_mysql"
-CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
-USE_PHP=pdo
-USE_PHP_BUILD=	yes
-.else
-CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
-		--with-zlib-dir=/usr
-USE_MYSQL=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_odbc"
@@ -542,6 +531,19 @@ CONFIGURE_ARGS+=--with-mysqli=mysqlnd
 .	else
 CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
 
+USE_MYSQL=	yes
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "pdo_mysql"
+USE_PHP=pdo
+USE_PHP_BUILD=	yes
+.	if ${PORT_OPTIONS:MMYSQLND}
+CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
+USE_PHP+=	mysqli
+.	else
+CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
+		--with-zlib-dir=/usr
 USE_MYSQL=	yes
 .	endif
 .endif
