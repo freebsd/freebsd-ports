@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	synth
-PORTVERSION=	0.99
+PORTVERSION=	1.00
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	marino@FreeBSD.org
@@ -13,15 +12,14 @@ COMMENT=	Custom package repository builder for FreeBSD and DragonFly
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-#BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/util.gpr:${PORTSDIR}/devel/ada-util \
-#		${LOCALBASE}/lib/gnat/${IFM}.gpr:${PORTSDIR}/misc/${IFM} \
+#BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/${IFM}.gpr:${PORTSDIR}/misc/${IFM} \
 #		${LOCALBASE}/lib/gnat/${AC}.gpr:${PORTSDIR}/devel/${AC}
 
 USES=		ada:6 ncurses:port
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
 GH_PROJECT=	synth_external:bundle
-GH_TAGNAME=	v1.3:bundle a8ed62b
+GH_TAGNAME=	v1.3:bundle
 
 # When framework is moved to Ada6, the ada-util and ini-file-manager
 # libraries can be used as prebuilt (switch default.gpr url)
