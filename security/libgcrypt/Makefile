@@ -2,11 +2,11 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.6.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	General purpose crypto library based on code used in GnuPG
 
 LICENSE=	GPLv2 LGPL21
