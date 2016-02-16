@@ -57,6 +57,32 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="95b92e3b-d451-11e5-9794-e8e0b747a45a">
+    <topic>libgcrypt -- side-channel attack on ECDH</topic>
+    <affects>
+      <package>
+	<name>libgcrypt</name>
+	<range><lt>1.6.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GnuPG reports:</p>
+	<blockquote cite="https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000384.html">
+	  <p>Mitigate side-channel attack on ECDH with Weierstrass curves.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7511</cvename>
+      <url>https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000384.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-09</discovery>
+      <entry>2016-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f1bf28c5-d447-11e5-b2bd-002590263bf5">
     <topic>xdelta3 -- buffer overflow vulnerability</topic>
     <affects>
