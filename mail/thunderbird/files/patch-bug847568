@@ -101,14 +101,11 @@ diff --git gfx/graphite2/moz-gr-update.sh gfx/graphite2/moz-gr-update.sh
 index f3d76ea..a9e7fb6 100644
 --- mozilla/gfx/graphite2/moz-gr-update.sh
 +++ mozilla/gfx/graphite2/moz-gr-update.sh
-@@ -37,6 +37,12 @@
+@@ -37,6 +37,9 @@
  #find gfx/graphite2/ -name "*.cpp" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
  #find gfx/graphite2/ -name "*.h" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
  
-+# closest tag/release to require for system version
-+TAG=$(cd ../graphitedev/ && hg parents --template {latesttag})
-+
-+perl -p -i -e "s/[0-9]+\,[0-9]+\,[0-9]+/$TAG/ and tr/./,/ \
++perl -p -i -e "s/[0-9]+\,[0-9]+\,[0-9]+/$RELEASE/ and tr/./,/ \
 +  if /GR2_VERSION_REQUIRE/" configure.in
 +
  # summarize what's been touched
