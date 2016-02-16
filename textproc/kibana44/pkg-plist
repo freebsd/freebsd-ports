@@ -11489,6 +11489,7 @@
 %%WWWDIR%%/src/ui/public/chrome/config/filter.html
 %%WWWDIR%%/src/ui/public/chrome/config/interval.html
 %%WWWDIR%%/src/ui/public/chrome/context.js
+%%WWWDIR%%/src/ui/public/chrome/directives/active_http_spinner.html
 %%WWWDIR%%/src/ui/public/chrome/directives/app_switcher/app_switcher.html
 %%WWWDIR%%/src/ui/public/chrome/directives/app_switcher/app_switcher.js
 %%WWWDIR%%/src/ui/public/chrome/directives/app_switcher/app_switcher.less
