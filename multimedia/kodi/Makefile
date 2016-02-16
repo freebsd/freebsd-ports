@@ -120,8 +120,6 @@ NFS_LIB_DEPENDS=	libnfs.so:${PORTSDIR}/net/libnfs
 NFS_CONFIGURE_ENABLE=	nfs
 
 NONFREE_CONFIGURE_ENABLE=	non-free
-NONFREE_VARS=		NO_CDROM="Restricted binary distribution" \
-			NO_PACKAGE="Restricted binary distribution"
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
