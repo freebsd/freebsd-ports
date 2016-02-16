@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtermkey
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	devel
 MASTER_SITES=	http://www.leonerd.org.uk/code/libtermkey/
 
@@ -21,6 +20,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/Makefile
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtermkey.so.1.11.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtermkey.so.1.12.0
 
 .include <bsd.port.mk>

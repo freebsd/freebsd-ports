@@ -252,9 +252,9 @@
     SUBDIR += pandorafms_server
     SUBDIR += percona-monitoring-plugins
     SUBDIR += pftabled
-    SUBDIR += php5-snmp
     SUBDIR += php55-snmp
     SUBDIR += php56-snmp
+    SUBDIR += php70-snmp
     SUBDIR += phpip
     SUBDIR += phpipam
     SUBDIR += phpweathermap

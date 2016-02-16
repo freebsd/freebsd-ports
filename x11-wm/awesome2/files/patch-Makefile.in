@@ -1,6 +1,6 @@
---- Makefile.in.orig
+--- Makefile.in.orig	2009-04-18 14:56:52 UTC
 +++ Makefile.in
-@@ -33,12 +33,12 @@
+@@ -33,12 +33,12 @@ PRE_UNINSTALL = :
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
@@ -19,7 +19,7 @@
  @HAVE_ASCIIDOC_TRUE@@HAVE_XMLTO_TRUE@@XMLTO_MAN_WORKS_TRUE@	awesomerc.5
  @HAVE_ASCIIDOC_TRUE@@HAVE_PYTHON_TRUE@am__append_2 = optsdocgen.txt \
  @HAVE_ASCIIDOC_TRUE@@HAVE_PYTHON_TRUE@	rcskeletongen.txt \
-@@ -278,8 +278,8 @@
+@@ -279,8 +279,8 @@ CLEANFILES = awesomerc defconfig.h uicbg
  #       restart the whole dist process from the start and there is none.
  EXTRA_DIST = UPGRADE LICENSE UPGRADE STYLE awesomerc.in \
  	build-utils/uicbgen.sh build-utils/layoutgen.sh \
@@ -30,7 +30,7 @@
  	build-utils/extractuicbdoc.py build-utils/extractoptsdoc.py \
  	build-utils/extractrcskeleton.py build-utils/package-version \
  	awesome.doxygen.in
-@@ -496,17 +496,17 @@
+@@ -497,17 +497,17 @@ widgets/emptybox.$(OBJEXT): widgets/$(am
  	widgets/$(DEPDIR)/$(am__dirstamp)
  widgets/common.$(OBJEXT): widgets/$(am__dirstamp) \
  	widgets/$(DEPDIR)/$(am__dirstamp)

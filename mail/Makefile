@@ -200,6 +200,7 @@
     SUBDIR += libesmtp
     SUBDIR += libetpan
     SUBDIR += libmapi
+    SUBDIR += libmilter
     SUBDIR += libpst
     SUBDIR += librfc822
     SUBDIR += libsieve
@@ -465,9 +466,9 @@
     SUBDIR += pflogsumm
     SUBDIR += pfqueue
     SUBDIR += pgpsendmail
-    SUBDIR += php5-imap
     SUBDIR += php55-imap
     SUBDIR += php56-imap
+    SUBDIR += php70-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += pine-pgp-filters

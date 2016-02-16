@@ -1,6 +1,6 @@
---- gtkextra/gtkitementry.c.orig	2010-03-13 14:49:00.000000000 +0900
-+++ gtkextra/gtkitementry.c	2010-11-30 21:38:09.000000000 +0900
-@@ -131,7 +131,6 @@
+--- gtkextra/gtkitementry.c.orig	2010-03-13 05:49:00 UTC
++++ gtkextra/gtkitementry.c
+@@ -131,7 +131,6 @@ static void         gtk_entry_draw_curso
  static PangoLayout *gtk_entry_ensure_layout            (GtkEntry       *entry,
                                                          gboolean        include_preedit);
  static void         gtk_entry_queue_draw               (GtkEntry       *entry);
@@ -8,7 +8,7 @@
  static void         gtk_entry_recompute                (GtkEntry       *entry);
  static void         gtk_entry_get_cursor_locations     (GtkEntry       *entry,
  							CursorType      type,
-@@ -1755,16 +1754,6 @@
+@@ -1755,16 +1754,6 @@ gtk_entry_queue_draw (GtkEntry *entry)
  }
  
  static void

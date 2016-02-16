@@ -1,0 +1,34 @@
+--- extra/CMakeLists.txt.orig	2015-12-23 15:33:29 UTC
++++ extra/CMakeLists.txt
+@@ -46,6 +46,7 @@ ADD_CUSTOM_TARGET(GenError
+                   DEPENDS 
+                   ${CMAKE_BINARY_DIR}/include/mysqld_error.h.tmp)
+ 
++IF(FALSE)
+ MYSQL_ADD_EXECUTABLE(my_print_defaults my_print_defaults.c)
+ TARGET_LINK_LIBRARIES(my_print_defaults  mysys)
+ 
+@@ -88,18 +89,23 @@ IF(WITH_INNOBASE_STORAGE_ENGINE OR WITH_
+          )
+   ENDIF()
+ 
++IF(FALSE)
+   MYSQL_ADD_EXECUTABLE(innochecksum innochecksum.cc ${INNOBASE_SOURCES})
+   TARGET_LINK_LIBRARIES(innochecksum mysys mysys_ssl)
+   ADD_DEPENDENCIES(innochecksum GenError)
+ ENDIF()
++ENDIF()
+ 
+ MYSQL_ADD_EXECUTABLE(replace replace.c COMPONENT Server)
+ TARGET_LINK_LIBRARIES(replace mysys)
++ENDIF()
+ 
+ IF(UNIX)
++IF(FALSE)
+   MYSQL_ADD_EXECUTABLE(resolve_stack_dump resolve_stack_dump.c)
+   TARGET_LINK_LIBRARIES(resolve_stack_dump mysys)
+ 
+   MYSQL_ADD_EXECUTABLE(mysql_waitpid mysql_waitpid.c COMPONENT Client)
+   TARGET_LINK_LIBRARIES(mysql_waitpid mysys)
+ ENDIF()
++ENDIF()

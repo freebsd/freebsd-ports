@@ -1,8 +1,4 @@
-@group games
-@mode 2555
-bin/monsterz
-@mode
-@group
+@(,games,2555) bin/monsterz
 %%DATADIR%%/graphics/background.png
 %%DATADIR%%/graphics/bigtiles.png
 %%DATADIR%%/graphics/board.png
@@ -26,9 +22,5 @@ bin/monsterz
 %%DATADIR%%/sound/warning.wav
 %%DATADIR%%/sound/whip.wav
 share/pixmaps/monsterz.png
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/graphics
-@dirrm %%DATADIR%%
-@exec if [ ! -e %%SCOREDIR%% ] ; then mkdir -p -m 775 %%SCOREDIR%% ; fi
-@unexec if [ ! -s %%SCOREDIR%%/monsterz ] ; then rm -f %%SCOREDIR%%/monsterz && rm -r %%SCOREDIR%% || true ; fi
-@exec [ -e %%SCOREDIR%%/monsterz ] || touch %%SCOREDIR%%/monsterz && chmod 664 %%SCOREDIR%%/monsterz && chgrp games %%SCOREDIR%%/monsterz
+@sample(,games,664) %%SCOREDIR%%/monsterz.sample
+@dir(,,775) %%SCOREDIR%%

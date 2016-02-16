@@ -2010,12 +2010,6 @@ share/help/zh_CN/anjuta-manual/project-wizard-template.page
 share/help/zh_CN/anjuta-manual/run-parameters-dialog.page
 share/help/zh_CN/anjuta-manual/run-run.page
 share/help/zh_CN/anjuta-manual/widget-index.page
-share/icons/HighContrast/16x16/apps/anjuta.png
-share/icons/HighContrast/22x22/apps/anjuta.png
-share/icons/HighContrast/24x24/apps/anjuta.png
-share/icons/HighContrast/256x256/apps/anjuta.png
-share/icons/HighContrast/32x32/apps/anjuta.png
-share/icons/HighContrast/48x48/apps/anjuta.png
 share/icons/hicolor/16x16/apps/anjuta.png
 share/icons/hicolor/16x16/mimetypes/application-x-anjuta.png
 share/icons/hicolor/22x22/apps/anjuta.png
@@ -2028,6 +2022,7 @@ share/icons/hicolor/48x48/apps/anjuta.png
 share/icons/hicolor/48x48/mimetypes/application-x-anjuta.png
 share/icons/hicolor/scalable/apps/anjuta.svg
 share/icons/hicolor/scalable/mimetypes/application-x-anjuta.svg
+share/icons/hicolor/symbolic/apps/anjuta-symbolic.svg
 share/locale/ar/LC_MESSAGES/anjuta.mo
 share/locale/ast/LC_MESSAGES/anjuta.mo
 share/locale/az/LC_MESSAGES/anjuta.mo
@@ -2060,6 +2055,7 @@ share/locale/hy/LC_MESSAGES/anjuta.mo
 share/locale/id/LC_MESSAGES/anjuta.mo
 share/locale/it/LC_MESSAGES/anjuta.mo
 share/locale/ja/LC_MESSAGES/anjuta.mo
+share/locale/kk/LC_MESSAGES/anjuta.mo
 share/locale/km/LC_MESSAGES/anjuta.mo
 share/locale/kn/LC_MESSAGES/anjuta.mo
 share/locale/ko/LC_MESSAGES/anjuta.mo

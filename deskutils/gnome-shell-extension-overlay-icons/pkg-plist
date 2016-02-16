@@ -4,12 +4,14 @@ share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/locale/cs
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/locale/de/LC_MESSAGES/windowoverlay-icons.mo
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/locale/en/LC_MESSAGES/windowoverlay-icons.mo
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/locale/ja/LC_MESSAGES/windowoverlay-icons.mo
+share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/locale/pt_BR/LC_MESSAGES/windowoverlay-icons.mo
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/metadata.json
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/po/build_locales.sh
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/po/cs.po
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/po/de.po
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/po/en.po
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/po/ja.po
+share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/po/pt_BR.po
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/po/windowoverlay-icons.pot
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/prefs.js
 share/gnome-shell/extensions/windowoverlay-icons@sustmidown.centrum.cz/prefs.xml

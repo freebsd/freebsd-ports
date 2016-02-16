@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	atspi
-PORTVERSION=	2.16.0
+PORTVERSION=	2.18.0
 CATEGORIES=	accessibility x11-toolkits python
 MASTER_SITES=	GNOME/sources/pyatspi/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/at-spi2-registryd:${PORTSDIR}/accessibility/at
 CONFLICTS=	at-spi-1.[0-9]*
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig python:2 tar:xz
+USES=		gettext gmake gnome pathfix pkgconfig python:2 tar:xz
 USE_GNOME=	intlhack pygobject3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

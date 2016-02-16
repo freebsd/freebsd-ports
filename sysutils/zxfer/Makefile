@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zxfer
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.6
 CATEGORIES=	sysutils
 
 USE_GITHUB=	yes
@@ -24,6 +24,6 @@ RSYNC_RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zxfer ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/zxfer.8.gz ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/zxfer.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 .include <bsd.port.mk>

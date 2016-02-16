@@ -28,6 +28,8 @@ man/man5/mu-bookmarks.5.gz
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-compose.elc
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-contrib.el
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-contrib.elc
+%%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-context.el
+%%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-context.elc
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-draft.el
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-draft.elc
 %%MU4E%%%%EMACS_SITE_LISPDIR%%/mu4e/mu4e-headers.el

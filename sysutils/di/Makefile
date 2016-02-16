@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	di
-PORTVERSION=	4.37
+PORTVERSION=	4.41
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gentoo.com/di/ \
 		http://www.cyberbotx.com/di/
@@ -10,7 +10,8 @@ MASTER_SITES=	http://www.gentoo.com/di/ \
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Disk Information Utility
 
-MAKE_ENV+=	prefix="${PREFIX}"
+MAKE_ENV=	prefix="${PREFIX}"
+MAKE_ARGS=	-e
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

@@ -30,5 +30,8 @@ command="%%PREFIX%%/bin/${name}"
 command_args="-m daemon -c ${h2o_config}"
 procname="%%LOCALBASE%%/bin/perl"
 
+# support SIGHUP to reload configuration file
+extra_commands="reload"
+
 load_rc_config $name
 run_rc_command "$1"

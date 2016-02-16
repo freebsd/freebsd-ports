@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	edown
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	erlang-
 

@@ -11,7 +11,8 @@ DISTNAME=	awesome-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiling window manager initially based on a dwm code rewriting
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
@@ -59,13 +60,13 @@ post-configure:
 			      /^doc_DATA/s/=.*$$/=/g' \
 		${WRKSRC}/Makefile
 
-post-install:
-	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO_MSG} "installing example config file to ${EXAMPLESDIR}"
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for example in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${example} ${STAGEDIR}${EXAMPLESDIR}

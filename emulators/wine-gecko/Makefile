@@ -9,7 +9,7 @@ DISTNAME=	wine_gecko-${DISTVERSION}-x86
 EXTRACT_SUFX=	.msi
 EXTRACT_ONLY=
 
-MAINTAINER=	dbn@FreeBSD.org
+MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Gecko Layout Engine for Wine (HTML support)
 
 LICENSE=	MPL GPLv2 GPLv3 LGPL21 LGPL3

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grilo-plugins
-PORTVERSION=	0.2.14
+PORTVERSION=	0.2.17
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgrilo-0.2.so:${PORTSDIR}/net/grilo \
 		libavahi-gobject.so:${PORTSDIR}/net/avahi-app \
 		libgdata.so:${PORTSDIR}/devel/libgdata
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 intlhack libxml2
 GNU_CONFIGURE=	yes

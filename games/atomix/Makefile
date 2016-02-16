@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	atomix
-PORTVERSION=	3.16.0
+PORTVERSION=	3.18.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack libxml2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

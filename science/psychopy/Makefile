@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	psychopy
-PORTVERSION=	1.83.03
+PORTVERSION=	1.83.04
 CATEGORIES=	science python
 
 MAINTAINER=	ports@FreeBSD.org

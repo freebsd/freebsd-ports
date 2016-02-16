@@ -1,3 +1,4 @@
+share/gnome-shell/extensions/openweather-extension@jenslody.de/OpenWeather.png
 share/gnome-shell/extensions/openweather-extension@jenslody.de/convenience.js
 share/gnome-shell/extensions/openweather-extension@jenslody.de/extension.js
 share/gnome-shell/extensions/openweather-extension@jenslody.de/forecast_io.js
@@ -17,6 +18,7 @@ share/locale/fi/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/fr/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/he/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/hu/LC_MESSAGES/gnome-shell-extension-openweather.mo
+share/locale/id/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/it/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/ja/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/lt/LC_MESSAGES/gnome-shell-extension-openweather.mo
@@ -28,6 +30,8 @@ share/locale/pt_BR/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/ro/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/ru/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/sk/LC_MESSAGES/gnome-shell-extension-openweather.mo
+share/locale/sr/LC_MESSAGES/gnome-shell-extension-openweather.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/sv/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/uk/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/vi/LC_MESSAGES/gnome-shell-extension-openweather.mo

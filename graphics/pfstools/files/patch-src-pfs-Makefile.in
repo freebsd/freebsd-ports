@@ -1,6 +1,6 @@
---- src/pfs/Makefile.in.orig	2011-10-27 08:40:30.000000000 +0000
-+++ src/pfs/Makefile.in	2014-02-20 19:04:01.566588122 +0000
-@@ -259,7 +259,7 @@
+--- src/pfs/Makefile.in.orig	2011-10-27 08:40:30 UTC
++++ src/pfs/Makefile.in
+@@ -259,7 +259,7 @@ libpfs_1_2_la_SOURCES = pfs.cpp pfsutils
  library_includedir = $(includedir)/pfs-1.2
  library_include_HEADERS = pfs.h array2d.h
  #INCLUDES = 

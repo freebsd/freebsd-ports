@@ -1,0 +1,57 @@
+--- client/CMakeLists.txt.orig	2015-12-23 15:33:29 UTC
++++ client/CMakeLists.txt
+@@ -38,11 +38,12 @@ IF(UNIX)
+   SET_TARGET_PROPERTIES(mysql PROPERTIES ENABLE_EXPORTS TRUE)
+ ENDIF(UNIX)
+ 
++IF(FALSE)
+ MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
+ SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
+ TARGET_LINK_LIBRARIES(mysqltest mysqlclient pcre pcreposix)
+ SET_TARGET_PROPERTIES(mysqltest PROPERTIES ENABLE_EXPORTS TRUE)
+-
++ENDIF()
+ 
+ MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
+ TARGET_LINK_LIBRARIES(mysqlcheck mysqlclient)
+@@ -54,21 +55,25 @@ MYSQL_ADD_EXECUTABLE(mysqlimport mysqlim
+ SET_SOURCE_FILES_PROPERTIES(mysqlimport.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
+ TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
+ 
++IF(FALSE)
+ MYSQL_ADD_EXECUTABLE(mysql_upgrade mysql_upgrade.c COMPONENT Server)
+ TARGET_LINK_LIBRARIES(mysql_upgrade mysqlclient)
+ ADD_DEPENDENCIES(mysql_upgrade GenFixPrivs)
++ENDIF()
+ 
+ MYSQL_ADD_EXECUTABLE(mysqlshow mysqlshow.c)
+ TARGET_LINK_LIBRARIES(mysqlshow mysqlclient)
+ 
++IF(FALSE)
+ MYSQL_ADD_EXECUTABLE(mysql_plugin mysql_plugin.c)
+ TARGET_LINK_LIBRARIES(mysql_plugin mysqlclient)
++ENDIF()
+ 
+ MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
+ TARGET_LINK_LIBRARIES(mysqlbinlog mysqlclient)
+ 
+ MYSQL_ADD_EXECUTABLE(mysqladmin mysqladmin.cc)
+-TARGET_LINK_LIBRARIES(mysqladmin mysqlclient)
++tARGET_LINK_LIBRARIES(mysqladmin mysqlclient)
+ 
+ MYSQL_ADD_EXECUTABLE(mysqlslap mysqlslap.c)
+ SET_SOURCE_FILES_PROPERTIES(mysqlslap.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
+@@ -80,10 +85,12 @@ IF(WIN32)
+ ENDIF(WIN32)
+ 
+ # async_example is just a code example, do not install it.
++IF(FALSE)
+ ADD_EXECUTABLE(async_example async_example.c)
+ TARGET_LINK_LIBRARIES(async_example mysqlclient)
++ENDIF()
+ 
+-SET_TARGET_PROPERTIES (mysqlcheck mysqldump mysqlimport mysql_upgrade mysqlshow mysqlslap mysql_plugin async_example
++SET_TARGET_PROPERTIES (mysqlcheck mysqldump mysqlimport mysqlshow mysqlslap
+ PROPERTIES HAS_CXX TRUE)
+ 
+ ADD_DEFINITIONS(-DHAVE_DLOPEN)

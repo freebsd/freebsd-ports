@@ -11,7 +11,7 @@ include/libgdl-3.0/gdl/libgdltypebuiltins.h
 lib/girepository-1.0/Gdl-3.typelib
 lib/libgdl-3.so
 lib/libgdl-3.so.5
-lib/libgdl-3.so.5.0.8
+lib/libgdl-3.so.5.0.9
 libdata/pkgconfig/gdl-3.0.pc
 share/gir-1.0/Gdl-3.gir
 share/gtk-doc/html/gdl-3.0/GdlDock.html

@@ -71,6 +71,7 @@ OPTIONS_DEFINE=	\
 	HTTP_EVAL \
 	HTTP_FANCYINDEX \
 	HTTP_FOOTER \
+	HTTP_JSON_STATUS \
 	HTTP_MOGILEFS \
 	HTTP_NOTICE \
 	HTTP_PUSH \
@@ -85,6 +86,7 @@ OPTIONS_DEFINE=	\
 	HTTP_UPSTREAM_STICKY \
 	HTTP_ZIP \
 	ARRAYVAR \
+	BROTLI \
 	DRIZZLE \
 	ENCRYPTSESSION \
 	FORMINPUT \
@@ -164,6 +166,7 @@ HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
 HTTP_EVAL_DESC=			3rd party eval module
 HTTP_FANCYINDEX_DESC=		3rd party http_fancyindex module
 HTTP_FOOTER_DESC=		3rd party http_footer module
+HTTP_JSON_STATUS_DESC=		3rd party http_json_status module
 HTTP_MOGILEFS_DESC=		3rd party mogilefs module
 HTTP_MP4_H264_DESC=		3rd party mp4/h264 module
 HTTP_NOTICE_DESC=		3rd party notice module
@@ -179,6 +182,7 @@ HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_ZIP_DESC=			3rd party http_zip module
 ARRAYVAR_DESC=			3rd party array_var module
+BROTLI_DESC=			3rd party brotli module
 DRIZZLE_DESC=			3rd party drizzlie module
 ENCRYPTSESSION_DESC=		3rd party encrypted_session module
 FORMINPUT_DESC=			3rd party form_input module
@@ -308,7 +312,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_auth_digest_module.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
-GIT_HTTP_AUTH_KRB5_VERSION=	f76d5d9
+GIT_HTTP_AUTH_KRB5_VERSION=	c85a38c
 GH_ACCOUNT+=	stnoonan:auth_krb5
 GH_PROJECT+=	spnego-http-auth-nginx-module:auth_krb5
 GH_TAGNAME+=	${GIT_HTTP_AUTH_KRB5_VERSION}:auth_krb5
@@ -385,18 +389,18 @@ USE_OPENSSL_PORT=	yes
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
-NGINX_ECHO_VERSION=	0.57
+NGINX_ECHO_VERSION=	4f7aa50
 GH_ACCOUNT+=	openresty:echo
 GH_PROJECT+=	echo-nginx-module:echo
-GH_TAGNAME+=	v${NGINX_ECHO_VERSION}:echo
+GH_TAGNAME+=	${NGINX_ECHO_VERSION}:echo
 CONFIGURE_ARGS+=--add-module=${WRKSRC_echo}
 .endif
 
 .if ${PORT_OPTIONS:MHEADERS_MORE}
-NGINX_HEADERS_MORE_VERSION=	0.261
+NGINX_HEADERS_MORE_VERSION=	f5559ec
 GH_ACCOUNT+=	openresty:headers_more
 GH_PROJECT+=	headers-more-nginx-module:headers_more
-GH_TAGNAME+=	v${NGINX_HEADERS_MORE_VERSION}:headers_more
+GH_TAGNAME+=	${NGINX_HEADERS_MORE_VERSION}:headers_more
 CONFIGURE_ARGS+=--add-module=${WRKSRC_headers_more}
 .endif
 
@@ -415,8 +419,8 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_dav_ext}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_EVAL}
-NGINX_EVAL_VERSION=	1.0.3
-GH_ACCOUNT+=	vkholodkov:eval
+NGINX_EVAL_VERSION=	342c812
+GH_ACCOUNT+=	openresty:eval
 GH_PROJECT+=	nginx-eval-module:eval
 GH_TAGNAME+=	${NGINX_EVAL_VERSION}:eval
 CONFIGURE_ARGS+=--add-module=${WRKSRC_eval}
@@ -440,6 +444,14 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_footer}
 
 .if ${PORT_OPTIONS:MHTTP_FLV}
 CONFIGURE_ARGS+=--with-http_flv_module
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_JSON_STATUS}
+NGINX_JSON_STATUS_VERSION= 1d2f303 
+GH_ACCOUNT+=	nginx-modules:json_status
+GH_PROJECT+=	ngx_http_json_status_module:json_status
+GH_TAGNAME+=	${NGINX_JSON_STATUS_VERSION}:json_status
+CONFIGURE_ARGS+=--add-module=${WRKSRC_json_status}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_GEOIP}
@@ -496,7 +508,7 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-GIT_PUSH_VERSION=	0.98
+GIT_PUSH_VERSION=	0.99.4
 GH_ACCOUNT+=	slact:push
 GH_PROJECT+=	nchan:push
 GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push
@@ -654,10 +666,10 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	0.10.0
+NGINX_LUA_VERSION=	7410339
 GH_ACCOUNT+=	openresty:lua
 GH_PROJECT+=	lua-nginx-module:lua
-GH_TAGNAME+=	v${NGINX_LUA_VERSION}:lua
+GH_TAGNAME+=	${NGINX_LUA_VERSION}:lua
 CONFIGURE_ARGS+=--add-module=${WRKSRC_lua}
 .endif
 
@@ -756,12 +768,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_rtmp}
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
-NGINX_SET_MISC_VERSION=	0.29
+NGINX_SET_MISC_VERSION=	6582fb4
 GH_ACCOUNT+=	openresty:setmisc
 GH_PROJECT+=	set-misc-nginx-module:setmisc
-GH_TAGNAME+=	v${NGINX_SET_MISC_VERSION}:setmisc
+GH_TAGNAME+=	${NGINX_SET_MISC_VERSION}:setmisc
 CONFIGURE_ARGS+=--add-module=${WRKSRC_setmisc}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-set-misc-nginx-module-config
 .endif
 
 .if ${PORT_OPTIONS:MSFLOW}
@@ -889,6 +900,16 @@ GH_ACCOUNT+=	openresty:arrayvar
 GH_PROJECT+=	array-var-nginx-module:arrayvar
 GH_TAGNAME+=	v${NGINX_ARRAYVAR_VERSION}:arrayvar
 CONFIGURE_ARGS+=--add-module=${WRKSRC_arrayvar}
+.endif
+
+.if ${PORT_OPTIONS:MBROTLI}
+NGINX_BROTLI_VERSION=	86998c6
+LIB_DEPENDS+=	libbrotlidec.so:${PORTSDIR}/devel/libbrotli \
+		libbrotlienc.so:${PORTSDIR}/devel/libbrotli
+GH_ACCOUNT+=	google:brotli
+GH_PROJECT+=	ngx_brotli:brotli
+GH_TAGNAME+=	${NGINX_BROTLI_VERSION}:brotli
+CONFIGURE_ARGS+=--add-module=${WRKSRC_brotli}
 .endif
 
 .if ${PORT_OPTIONS:MFORMINPUT}

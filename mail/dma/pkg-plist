@@ -1,5 +1,5 @@
-@(,mail,2555) libexec/dma
-@(root,mail,4555) libexec/dma-mbox-create
+@(root,mail,2555) libexec/dma
+@(root,mail,4554) libexec/dma-mbox-create
 @sample(root,mail,0644) etc/dma/dma.conf.sample
 @sample(root,mail,0640) etc/dma/auth.conf.sample
 man/man8/dma.8.gz

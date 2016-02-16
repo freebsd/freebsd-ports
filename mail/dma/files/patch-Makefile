@@ -1,6 +1,0 @@
---- Makefile.orig	2012-01-28 20:35:32.000000000 +0000
-+++ Makefile	2012-01-28 20:31:56.000000000 +0000
-@@ -0,0 +1,3 @@
-+SUBDIR= dma dma-mbox-create
-+
-+.include <bsd.subdir.mk>

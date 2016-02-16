@@ -1,5 +1,5 @@
---- src/hdrhtml/hdrhtml.cpp.orig	2009-03-11 21:45:55.000000000 +0000
-+++ src/hdrhtml/hdrhtml.cpp	2014-02-20 19:04:01.566588122 +0000
+--- src/hdrhtml/hdrhtml.cpp.orig	2009-03-11 21:45:55 UTC
++++ src/hdrhtml/hdrhtml.cpp
 @@ -27,6 +27,7 @@
  
  #include "hdrhtml.h"
@@ -17,7 +17,7 @@
  // ================================================
  //        Parameters controllig the web page 
  // ================================================
-@@ -94,8 +97,8 @@
+@@ -94,8 +97,8 @@ public:
      
      if( min_val > max_val )             // missing min/max info
      {
@@ -28,7 +28,7 @@
  
        for( int k=0; k < d_size; k++ ) {
          if( data[k] > max_val ) max_val = data[k];
-@@ -195,6 +198,7 @@
+@@ -195,6 +198,7 @@ public:
      this->y_i = new float[lut_size];
      own_y_i = true;
      memcpy(this->y_i, other.y_i, lut_size * sizeof(float));
@@ -36,7 +36,7 @@
    }
  
    ~UniformArrayLUT()
-@@ -341,7 +345,7 @@
+@@ -341,7 +345,7 @@ public:
      for( int k = 1; k < bin_n; k++ )
        hist.n[k] += hist.n[k-1];
  
@@ -45,7 +45,7 @@
      assert( hist.n[bin_n-1] == d_size );    
    }
  
-@@ -361,7 +365,7 @@
+@@ -361,7 +365,7 @@ public:
  //            Text template file utils
  // ================================================
  
@@ -54,7 +54,7 @@
  
  class ReplacePattern
  {
-@@ -403,7 +407,7 @@
+@@ -403,7 +407,7 @@ public:
    {
    }
    
@@ -63,7 +63,7 @@
    {
      if( callback != NULL )
        callback( out, user_data, parameter );
-@@ -567,7 +571,7 @@
+@@ -567,7 +571,7 @@ public:
          // Skip white spaces
          while( line_str[pos] == ' ' || line_str[pos] == '\t' ) pos++;
          int new_pos = line_str.find_first_of( ',', pos );
@@ -72,7 +72,7 @@
          if( new_pos == std::string::npos ) {
            if( k != columns-1 ) {
              std::string full_message( "Missing column data in the file: " );
-@@ -576,16 +580,16 @@
+@@ -576,16 +580,16 @@ public:
            }
            len = std::string::npos;
          } else
@@ -92,7 +92,7 @@
            value = strtof( str_beg, &str_end );
            if( str_beg == str_end ) {
              std::ostringstream error_message;
-@@ -643,15 +647,15 @@
+@@ -643,15 +647,15 @@ void HDRHTMLSet::add_image( int width, i
      basis_table.data[0][k] = log2f( basis_table.data[0][k] );
    
  // Fix zero and negative values in the image, convert to log2 space, find min and max values
@@ -111,7 +111,7 @@
        for( int i=0; i < pixels; i++ ) {
          if( x[i] < min_val && x[i] > 0)
            min_val = x[i];
-@@ -741,7 +745,7 @@
+@@ -741,7 +745,7 @@ void HDRHTMLSet::add_image( int width, i
    for( int k=1; k <= f8_stops+1; k++ ) {
  
  
@@ -120,7 +120,7 @@
  
      float exp_multip = log2f(1/powf( 2, l_start + k*8 ));
  
-@@ -796,9 +800,9 @@
+@@ -796,9 +800,9 @@ void HDRHTMLSet::add_image( int width, i
    
  }
  
@@ -133,7 +133,7 @@
  
  void HDRHTMLSet::generate_webpage( const char *page_template, const char *image_template,
    const char *object_output, const char *html_output)
-@@ -852,11 +856,11 @@
+@@ -852,11 +856,11 @@ void HDRHTMLSet::generate_webpage( const
    
  }
  
@@ -147,7 +147,7 @@
    for( it = hdrhtml_set->image_list.begin(); it != hdrhtml_set->image_list.end(); it++ ) {  
      std::string obj_name( "hdr_" );
      obj_name.append( it->base_name );
-@@ -882,7 +886,7 @@
+@@ -882,7 +886,7 @@ void print_image_objects( ostream &out, 
    
  }
  
@@ -156,7 +156,7 @@
  {
      std::string obj_name( "hdr_" );
      obj_name.append( it.base_name );
-@@ -907,13 +911,13 @@
+@@ -907,13 +911,13 @@ void print_image_htmlcode( ostream &out,
   
  }
  
@@ -172,7 +172,7 @@
      for( it = hdrhtml_set->image_list.begin(); it != hdrhtml_set->image_list.end(); it++ ) {
        if( it->base_name.compare( parameter ) == 0 )
          break;
-@@ -925,7 +929,7 @@
+@@ -925,7 +929,7 @@ void print_image_htmlcode( ostream &out,
      
    } else {
      
@@ -181,7 +181,7 @@
      for( it = hdrhtml_set->image_list.begin(); it != hdrhtml_set->image_list.end(); it++ ) {
        
        print_image_htmlcode( out, hdrhtml_set, *it );
-@@ -935,7 +939,7 @@
+@@ -935,7 +939,7 @@ void print_image_htmlcode( ostream &out,
    
  }
  

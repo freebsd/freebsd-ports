@@ -3,6 +3,7 @@
 
 PORTNAME=	drivel
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/${PORTNAME}/Drivel%20%28stable%29/${PORTVERSION}
 
@@ -36,5 +37,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/-g2/s|^|#|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|make -C|$$(MAKE) -C|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/-ldl/s|^|#|g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|soup_xmlrpc_message_new|d_soup_xmlrpc_message_new|g' \
+		${WRKSRC}/src/soup-xmlrpc-message.[ch] \
+		${WRKSRC}/src/xmlrpc.c
 
 .include <bsd.port.mk>

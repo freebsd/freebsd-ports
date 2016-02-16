@@ -2,7 +2,7 @@
 
 PORTNAME=	spamilter
 PORTVERSION=	0.60
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.wanlink.com/spamilter/download/
 
@@ -69,9 +69,9 @@ post-install:
 .for i in ${BINFILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCSFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

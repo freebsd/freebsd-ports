@@ -3,8 +3,9 @@
 
 PORTNAME=	bzr
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Distributed version control system by Canonical

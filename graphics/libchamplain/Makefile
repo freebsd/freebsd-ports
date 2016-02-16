@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libchamplain
-PORTVERSION=	0.12.10
+PORTVERSION=	0.12.12
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -12,7 +12,7 @@ COMMENT=	C library aimed to provide a Gtk+ widget to display rasterized maps and
 LIB_DEPENDS=	libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3 \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 
-USES=		gmake libtool pathfix pkgconfig sqlite tar:xz
+USES=		gmake gnome libtool pathfix pkgconfig sqlite tar:xz
 USE_GNOME=	gtk30 introspection:build
 USE_GL=		gl
 GNU_CONFIGURE=	yes

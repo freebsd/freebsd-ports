@@ -1,0 +1,183 @@
+Index: configure
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ CONFIG="config.mk"
+ PREFIX="/usr/local"
+@@ -8,7 +8,7 @@
+ SSE=auto
+ OPENMP=
+ LIBPNG_DIR=.
+-if [[ "$OSTYPE" =~ "darwin" ]]; then
++if echo "$OSTYPE" | grep -q "darwin"; then
+     COCOA_READER=auto
+     LCMS2=0
+ else
+@@ -38,7 +38,7 @@
+         echo
+         help "--with-openmp=static          compile with multicore support"
+         help "--with-lcms2/--without-lcms2  compile with color profile support"
+-if [[ "$OSTYPE" =~ "darwin" ]]; then
++if echo "$OSTYPE" | grep -q "darwin"; then
+         help "--with-cocoa/--without-cocoa  use Cocoa framework to read images"
+         help "--with-libpng=<dir>           search for libpng in directory"
+ fi
+@@ -110,7 +110,7 @@
+ 
+ # If someone runs sudo make install as very first command, and configure later,
+ # $CONFIG cannot be overwritten, and must be deleted before continuing.
+-if [[ -f "$CONFIG" && ! -w "$CONFIG" ]]; then
++if [ -f "$CONFIG" -a ! -w "$CONFIG" ]; then
+     echo "Cannot overwrite file $CONFIG! Please delete it."
+     exit 1
+ fi
+@@ -147,7 +147,7 @@
+ 
+ find_pkgconfig() {
+     LIBNAME=$1
+-    if pkg-config --exists "$LIBNAME" &> /dev/null; then
++    if pkg-config --exists "$LIBNAME" >/dev/null 2>&1; then
+         cflags "$(pkg-config --cflags "$LIBNAME")"
+         lflags "$(pkg-config --libs "$LIBNAME")"
+         status "$LIBNAME" "shared ($(pkg-config --modversion "$LIBNAME"))"
+@@ -191,11 +191,16 @@
+         return 0
+     fi
+ 
+-    for i in "${DIRS[@]}"; do
+-        DIR=($i)
+-        HPATH=$(find_h "${DIR[0]}" "$HEADERPATTERN")
++    # destroys positional parameters
++    set -- ${DIRS}
++    while [ -n "$1" -a -n "$2" ]; do
++        DIRS_h="$1"
++        DIRS_l="$2"
++        shift 2
++
++        HPATH=$(find_h "${DIRS_h}" "$HEADERPATTERN")
+         if [ -n "$HPATH" ]; then
+-            SOPATH=$(find_f "${DIR[1]}" "$DYNAMICPATTERN")
++            SOPATH=$(find_f "${DIRS_l}" "$DYNAMICPATTERN")
+             if [ -n "$SOPATH" ]; then
+                 cflags "-I${HPATH%/*}"
+                 lflags "-L${SOPATH%/*} -l$DYNAMICLIBNAME"
+@@ -250,10 +255,8 @@
+ 
+ # SSE
+ if [ "$SSE" = 'auto' ]; then
+-    if [[ "$(uname -m)" =~ (amd|x86_)64 ||
+-          "$(grep -E -m1 "^flags" /proc/cpuinfo)" =~ "sse" ]]; then
+-        SSE=1
+-    fi
++    echo $(uname -m) | grep -E -q '(amd|x86_)64' && SSE=1
++    grep -E -m1 -q '^flags.*sse' /proc/cpuinfo 2>/dev/null && SSE=1
+ fi
+ 
+ if [ "$SSE" -eq 1 ]; then
+@@ -276,9 +279,8 @@
+     else
+         OPENMPFLAGS="-fopenmp"
+     fi
+-    if [[ "$("$CC" -xc -E $OPENMPFLAGS <(echo "#ifdef _OPENMP
+-           #include <omp.h>
+-           #endif") 2>&1)" =~ "omp_get_thread_num" ]]; then
++    if echo "$(printf '#ifdef _OPENMP\n#include <omp.h>\n#endif\n' | \
++        "$CC" -xc -E $OPENMPFLAGS - 2>&1)" | grep -q omp_get_thread_num; then
+         cflags "$OPENMPFLAGS"
+         lflags "$OPENMPFLAGS"
+         status "OpenMP" "yes"
+@@ -293,11 +295,13 @@
+ fi
+ 
+ # Cocoa
+-if [[ "$OSTYPE" =~ "darwin" ]]; then
++if echo "$OSTYPE" | grep -q "darwin"; then
+     cflags "-mmacosx-version-min=10.6"
+     lflags "-mmacosx-version-min=10.6"
+ 
+-    if [ "$COCOA_READER" != 0 ] && "$CC" 2>/dev/null 1>/dev/null -xc -E <(echo "#import <Cocoa/Cocoa.h>"); then
++    if [ "$COCOA_READER" != 0 ] && \
++        echo "#import <Cocoa/Cocoa.h>" | \
++		"$CC" 2>/dev/null 1>/dev/null -xc -E -; then
+         COCOA_READER=1
+         cflags "-DUSE_COCOA=1"
+         lflags "-framework Cocoa"
+@@ -308,19 +312,18 @@
+ fi
+ 
+ # pairs of possible *.h and lib*.so locations
+-DIRS=("/usr/local/include /usr/local/lib"
+-      "/usr/include /usr/lib"
+-      "/opt/local/include /opt/local/lib" # macports
+-      )
++DIRS="${PREFIX}/include ${PREFIX}/lib \
++      /usr/include /usr/lib \
++      /opt/local/include /opt/local/lib" # macports
+ 
+-if [[ "$OSTYPE" =~ "darwin" ]]; then
++if echo "$OSTYPE" | grep -q "darwin"; then
+     SOLIBSUFFIX=dylib
+ 
+     # Search Developer SDK paths, since Apple seems to have dropped the standard Unixy ones
+     XCODE_CMD="xcode-select"
+     XCODE_PATH=$($XCODE_CMD -p)
+-    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib")
+-    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib")
++    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib"
++    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib"
+ else
+     SOLIBSUFFIX=so
+ fi
+@@ -332,7 +335,7 @@
+ if echo "#include \"png.h\"
+     int main(){
+     return !png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+-}" | "$CC" -xc -std=c99 -o /dev/null $CFLAGS $LDFLAGS - &> /dev/null; then
++}" | "$CC" -xc -std=c99 -o /dev/null $CFLAGS $LDFLAGS - >/dev/null 2>&1; then
+     status "libpng" "custom flags"
+     SUCCESS=1
+ fi
+@@ -343,7 +346,7 @@
+     if [ -n "$PNGH" ]; then
+         PNGH_STRING=$(pngh_string "$PNGH")
+         PNGH_MAJMIN=$(pngh_majmin "$PNGH")
+-        if [[ -n "$PNGH_STRING" && -n "$PNGH_MAJMIN" ]]; then
++        if [ -n "$PNGH_STRING" -a -n "$PNGH_MAJMIN" ]; then
+             LIBPNGA=$(find_f "$LIBPNG_DIR" "libpng${PNGH_MAJMIN}.a")
+             if [ -n "$LIBPNGA" ]; then
+                 cflags "-I${PNGH%/*}"
+@@ -359,14 +362,19 @@
+     if find_pkgconfig libpng; then
+         SUCCESS=1
+     else
+-        for i in "${DIRS[@]}"; do
+-            DIR=($i)
+-            PNGH=$(find_h "${DIR[0]}" "png.h")
++        # destroys positional parameters
++        set -- ${DIRS}
++        while [ -n "$1" -a -n "$2" ]; do
++            DIRS_h="$1"
++            DIRS_l="$2"
++            shift 2
++
++            PNGH=$(find_h "${DIRS_h}" "png.h")
+             if [ -n "$PNGH" ]; then
+                 PNGH_STRING=$(pngh_string "$PNGH")
+                 PNGH_MAJMIN=$(pngh_majmin "$PNGH")
+-                if [[ -n "$PNGH_STRING" && -n "$PNGH_MAJMIN" ]]; then
+-                    LIBPNGSO=$(find_f "${DIR[1]}" "libpng${PNGH_MAJMIN}.$SOLIBSUFFIX*")
++                if [ -n "$PNGH_STRING" -a -n "$PNGH_MAJMIN" ]; then
++                    LIBPNGSO=$(find_f "${DIRS_l}" "libpng${PNGH_MAJMIN}.$SOLIBSUFFIX*")
+                     if [ -n "$LIBPNGSO" ]; then
+                         cflags "-I${PNGH%/*}"
+                         lflags "-L${LIBPNGSO%/*} -lpng${PNGH_MAJMIN}"
+@@ -380,7 +388,7 @@
+     fi
+ fi
+ if [ "$SUCCESS" -eq 0 ]; then
+-    if [[ "$OSTYPE" =~ "darwin" ]]; then
++    if echo "$OSTYPE" | grep -q "darwin"; then
+         LIBPNG_CMD='`brew install libpng`'
+     else
+         LIBPNG_CMD='`apt-get install libpng-dev` or `yum install libpng-devel`'

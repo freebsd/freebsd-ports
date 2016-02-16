@@ -1,5 +1,5 @@
---- config.h.in.orig	2011-10-27 08:40:42.000000000 +0000
-+++ config.h.in	2014-02-20 19:04:01.536587053 +0000
+--- config.h.in.orig	2011-10-27 08:40:42 UTC
++++ config.h.in
 @@ -99,13 +99,13 @@
  
  /* Output stream for debug messages. */

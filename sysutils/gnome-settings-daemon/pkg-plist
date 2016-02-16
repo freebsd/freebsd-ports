@@ -28,6 +28,9 @@ lib/gnome-settings-daemon-3.0/libmedia-keys.a
 lib/gnome-settings-daemon-3.0/libmedia-keys.so
 lib/gnome-settings-daemon-3.0/libmouse.a
 lib/gnome-settings-daemon-3.0/libmouse.so
+lib/gnome-settings-daemon-3.0/liborientation.a
+lib/gnome-settings-daemon-3.0/liborientation.so
+lib/gnome-settings-daemon-3.0/orientation.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/libpower.a
 lib/gnome-settings-daemon-3.0/libpower.so
 %%CUPS%%lib/gnome-settings-daemon-3.0/libprint-notifications.a
@@ -67,6 +70,7 @@ libexec/gsd-test-housekeeping
 libexec/gsd-test-keyboard
 libexec/gsd-test-media-keys
 libexec/gsd-test-mouse
+libexec/gsd-test-orientation
 %%CUPS%%libexec/gsd-test-print-notifications
 %%SMARTCARD%%libexec/gsd-test-smartcard
 libexec/gsd-test-sound

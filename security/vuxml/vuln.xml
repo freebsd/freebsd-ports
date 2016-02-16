@@ -57,6 +57,222 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="95b92e3b-d451-11e5-9794-e8e0b747a45a">
+    <topic>libgcrypt -- side-channel attack on ECDH</topic>
+    <affects>
+      <package>
+	<name>libgcrypt</name>
+	<range><lt>1.6.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GnuPG reports:</p>
+	<blockquote cite="https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000384.html">
+	  <p>Mitigate side-channel attack on ECDH with Weierstrass curves.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7511</cvename>
+      <url>https://lists.gnupg.org/pipermail/gnupg-announce/2016q1/000384.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-09</discovery>
+      <entry>2016-02-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f1bf28c5-d447-11e5-b2bd-002590263bf5">
+    <topic>xdelta3 -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>xdelta3</name>
+	<range><lt>3.0.9,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stepan Golosunov reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2016/02/08/1">
+	  <p>Buffer overflow was found and fixed in xdelta3 binary diff tool
+	    that allows arbitrary code execution from input files at least on
+	    some systems.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-9765</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2016/02/08/1</url>
+      <url>https://github.com/jmacd/xdelta-devel/commit/ef93ff74203e030073b898c05e8b4860b5d09ef2</url>
+    </references>
+    <dates>
+      <discovery>2014-10-08</discovery>
+      <entry>2016-02-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="172b22cb-d3f6-11e5-ac9e-485d605f4717">
+    <topic>firefox -- Same-origin-policy violation using Service Workers with plugins</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>44.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>44.0.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Foundation reports:</p>
+	<blockquote cite="https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/#firefox44.0.2">
+	  <p>MFSA 2016-13 Jason Pang of OneSignal reported that service workers intercept
+	    responses to plugin network requests made through the browser. Plugins which
+	    make security decisions based on the content of network requests can have these
+	    decisions subverted if a service worker forges responses to those requests. For
+	    example, a forged crossdomain.xml could allow a malicious site to violate the
+	    same-origin policy using the Flash plugin.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1949</cvename>
+      <url>https://www.mozilla.org/en-US/security/advisories/mfsa2016-13/</url>
+    </references>
+    <dates>
+      <discovery>2016-02-11</discovery>
+      <entry>2016-02-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="07718e2b-d29d-11e5-a95f-b499baebfeaf">
+    <topic>nghttp2 -- Out of memory in nghttpd, nghttp, and libnghttp2_asio</topic>
+    <affects>
+      <package>
+	<name>nghttp2</name>
+	<range><lt>1.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nghttp2 reports:</p>
+	<blockquote cite="https://nghttp2.org/blog/2016/02/11/nghttp2-v1-7-1/">
+	  <p>Out of memory in nghttpd, nghttp, and libnghttp2_asio applications
+	   due to unlimited incoming HTTP header fields.</p>
+	  <p>nghttpd, nghttp, and libnghttp2_asio applications do not limit the memory usage
+	   for the incoming HTTP header field. If peer sends specially crafted HTTP/2
+	   HEADERS frames and CONTINUATION frames, they will crash with out of memory
+	   error.</p>
+	  <p>Note that libnghttp2 itself is not affected by this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://nghttp2.org/blog/2016/02/11/nghttp2-v1-7-1/</url>
+      <cvename>CVE-2016-1544</cvename>
+    </references>
+    <dates>
+      <discovery>2016-02-03</discovery>
+      <entry>2016-02-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3aa8b781-d2c4-11e5-b2bd-002590263bf5">
+    <topic>horde -- XSS vulnerabilies</topic>
+    <affects>
+      <package>
+	<name>horde</name>
+	<range><lt>5.2.9</lt></range>
+      </package>
+      <package>
+	<name>pear-Horde_Core</name>
+	<range><lt>2.22.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Horde Team reports:</p>
+	<blockquote cite="http://lists.horde.org/archives/announce/2016/001149.html">
+	  <p>Fixed XSS vulnerabilities in menu bar and form renderer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8807</cvename>
+      <cvename>CVE-2016-2228</cvename>
+      <url>https://github.com/horde/horde/commit/11d74fa5a22fe626c5e5a010b703cd46a136f253</url>
+      <url>https://bugs.horde.org/ticket/14213</url>
+      <url>https://github.com/horde/horde/commit/f03301cf6edcca57121a15e80014c4d0f29d99a0</url>
+      <url>https://github.com/horde/horde/commit/ab07a1b447de34e13983b4d7ceb18b58c3a358d8</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/02/06/4</url>
+      <url>http://lists.horde.org/archives/announce/2016/001149.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-02</discovery>
+      <entry>2016-02-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e8b6605b-d29f-11e5-8458-6cc21735f730">
+    <topic>PostgreSQL -- Security Fixes for Regular Expressions, PL/Java.</topic>
+    <affects>
+      <package>
+	<name>postgresql91-server</name>
+	<range><ge>9.1.0</ge><lt>9.1.20</lt></range>
+      </package>
+      <package>
+	<name>postgresql92-server</name>
+	<range><ge>9.2.0</ge><lt>9.2.15</lt></range>
+      </package>
+      <package>
+	<name>postgresql93-server</name>
+	<range><ge>9.3.0</ge><lt>9.3.11</lt></range>
+      </package>
+      <package>
+	<name>postgresql94-server</name>
+	<range><ge>9.4.0</ge><lt>9.4.6</lt></range>
+      </package>
+      <package>
+	<name>postgresql95-server</name>
+	<range><ge>9.5.0</ge><lt>9.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="http://www.postgresql.org/about/news/1644/">
+	  <p>
+	  Security Fixes for Regular Expressions, PL/Java
+	  </p>
+	  <ul>
+	    <li>CVE-2016-0773: This release closes security hole CVE-2016-0773,
+	     an issue with regular expression (regex) parsing. Prior code allowed
+	     users to pass in expressions which included out-of-range Unicode
+	     characters, triggering a backend crash.  This issue is critical for
+	     PostgreSQL systems with untrusted users or which generate regexes
+	     based on user input.
+	    </li>
+	    <li>CVE-2016-0766: The update also fixes CVE-2016-0766, a privilege
+	     escalation issue for users of PL/Java.  Certain custom configuration
+	     settings (GUCS) for PL/Java will now be modifiable only by the
+	     database superuser
+	    </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-0773</cvename>
+      <cvename>CVE-2016-0766</cvename>
+    </references>
+    <dates>
+      <discovery>2016-02-08</discovery>
+      <entry>2016-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d8e56c3-9e67-4d5b-81c9-3a409dfd705f">
     <topic>flash -- multiple vulnerabilities</topic>
     <affects>
@@ -129,7 +345,7 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Frank Denis reports:</p>
-	<blockquote cite="ihttps://github.com/jedisct1/dnscrypt-proxy/blob/1d129f7d5f0d469308967cbe4eacb4a6919f1fa1/NEWS#L2-L8">
+	<blockquote cite="https://github.com/jedisct1/dnscrypt-proxy/blob/1d129f7d5f0d469308967cbe4eacb4a6919f1fa1/NEWS#L2-L8">
 	  <p>Malformed packets could lead to denial of service or code
 	    execution.</p>
 	</blockquote>
@@ -141,6 +357,7 @@ Notes:
     <dates>
       <discovery>2016-02-02</discovery>
       <entry>2016-02-10</entry>
+      <modified>2016-02-14</modified>
     </dates>
   </vuln>
 
@@ -3027,7 +3244,7 @@ Notes:
       <package>
 	<name>qemu-sbruno</name>
 	<name>qemu-user-static</name>
-	<range><ge>0</ge></range>
+	<range><lt>2.5.50.g20160213</lt></range>
       </package>
     </affects>
     <description>
@@ -3051,10 +3268,13 @@ Notes:
       <freebsdpr>ports/205814</freebsdpr>
       <url>http://www.openwall.com/lists/oss-security/2015/12/28/6</url>
       <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg04629.html</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=007cd223de527b5f41278f2d886c1a4beb3e67aa</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/007cd223de527b5f41278f2d886c1a4beb3e67aa</url>
     </references>
     <dates>
       <discovery>2015-12-28</discovery>
       <entry>2016-01-03</entry>
+      <modified>2016-02-13</modified>
     </dates>
   </vuln>
 
@@ -3109,7 +3329,7 @@ Notes:
       <package>
 	<name>qemu-sbruno</name>
 	<name>qemu-user-static</name>
-	<range><ge>0</ge></range>
+	<range><lt>2.5.50.g20160213</lt></range>
       </package>
     </affects>
     <description>
@@ -3131,10 +3351,13 @@ Notes:
       <freebsdpr>ports/205814</freebsdpr>
       <url>http://www.openwall.com/lists/oss-security/2015/12/22/8</url>
       <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg02930.html</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=64ffbe04eaafebf4045a3ace52a360c14959d196</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/64ffbe04eaafebf4045a3ace52a360c14959d196</url>
     </references>
     <dates>
       <discovery>2015-12-23</discovery>
       <entry>2016-01-03</entry>
+      <modified>2016-02-13</modified>
     </dates>
   </vuln>
 
@@ -3149,7 +3372,7 @@ Notes:
       <package>
 	<name>qemu-sbruno</name>
 	<name>qemu-user-static</name>
-	<range><ge>0</ge></range>
+	<range><lt>2.5.50.g20160213</lt></range>
       </package>
     </affects>
     <description>
@@ -3170,10 +3393,13 @@ Notes:
       <freebsdpr>ports/205814</freebsdpr>
       <url>http://www.openwall.com/lists/oss-security/2015/12/21/7</url>
       <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg03737.html</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=36fef36b91f7ec0435215860f1458b5342ce2811</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/36fef36b91f7ec0435215860f1458b5342ce2811</url>
     </references>
     <dates>
       <discovery>2015-12-21</discovery>
       <entry>2016-01-03</entry>
+      <modified>2016-02-13</modified>
     </dates>
   </vuln>
 
@@ -3188,7 +3414,7 @@ Notes:
       <package>
 	<name>qemu-sbruno</name>
 	<name>qemu-user-static</name>
-	<range><ge>0</ge></range>
+	<range><lt>2.5.50.g20160213</lt></range>
       </package>
     </affects>
     <description>
@@ -3210,10 +3436,13 @@ Notes:
       <freebsdpr>ports/205814</freebsdpr>
       <url>http://www.openwall.com/lists/oss-security/2015/12/15/4</url>
       <url>https://lists.gnu.org/archive/html/qemu-devel/2015-12/msg02299.html</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=aa4a3dce1c88ed51b616806b8214b7c8428b7470</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/aa4a3dce1c88ed51b616806b8214b7c8428b7470</url>
     </references>
     <dates>
       <discovery>2015-12-15</discovery>
       <entry>2016-01-03</entry>
+      <modified>2016-02-13</modified>
     </dates>
   </vuln>
 
@@ -3411,7 +3640,7 @@ Notes:
       <package>
 	<name>qemu-sbruno</name>
 	<name>qemu-user-static</name>
-	<range><ge>0</ge></range>
+	<range><lt>2.5.50.g20160213</lt></range>
       </package>
     </affects>
     <description>
@@ -3435,10 +3664,13 @@ Notes:
       <freebsdpr>ports/205814</freebsdpr>
       <url>http://www.openwall.com/lists/oss-security/2015/11/25/3</url>
       <url>https://lists.gnu.org/archive/html/qemu-devel/2015-10/msg03911.html</url>
+      <url>http://git.qemu.org/?p=qemu.git;a=commit;h=00837731d254908a841d69298a4f9f077babaf24</url>
+      <url>https://github.com/seanbruno/qemu-bsd-user/commit/00837731d254908a841d69298a4f9f077babaf24</url>
     </references>
     <dates>
       <discovery>2015-10-16</discovery>
       <entry>2016-01-03</entry>
+      <modified>2016-02-13</modified>
     </dates>
   </vuln>
 
@@ -11032,6 +11264,10 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<blockquote cite="http://www.openssh.com/txt/release-7.0">
+	  <p>OpenSSH 6.8 and 6.9 incorrectly set TTYs to be world-writable.
+	    Local attackers may be able to write arbitrary messages to
+	    logged-in users, including terminal escape sequences. Reported
+	    by Nikolay Edigaryev.</p>
 	  <p>Fixed a privilege separation
 	    weakness related to PAM support. Attackers who could successfully
 	    compromise the pre-authentication process for remote code
@@ -11046,11 +11282,14 @@ Notes:
     </description>
     <references>
       <url>http://www.openssh.com/txt/release-7.0</url>
+      <cvename>CVE-2015-6563</cvename>
+      <cvename>CVE-2015-6564</cvename>
+      <cvename>CVE-2015-6565</cvename>
     </references>
     <dates>
       <discovery>2015-08-11</discovery>
       <entry>2015-08-21</entry>
-      <modified>2016-01-15</modified>
+      <modified>2016-02-14</modified>
     </dates>
   </vuln>
 

@@ -9,12 +9,15 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalist window manager inspired by Ratpoison
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_XORG=	x11
 
 PLIST_FILES=	bin/antiwm
-PORTDOCS=	README LICENSE
+PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
 
 pre-everything::
 	@${ECHO_MSG} "You can build antiwm with your own conf.h using the ANTIWM_CONF knob:"
@@ -28,7 +31,9 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

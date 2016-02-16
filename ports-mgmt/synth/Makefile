@@ -3,8 +3,8 @@
 
 PORTNAME=	synth
 PORTVERSION=	0.99
-PORTREVISION=	6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	7
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	marino@FreeBSD.org
@@ -21,7 +21,7 @@ USES=		ada:6 ncurses:port
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
 GH_PROJECT=	synth_external:bundle
-GH_TAGNAME=	v1.3:bundle 4417017
+GH_TAGNAME=	v1.3:bundle a8ed62b
 
 # When framework is moved to Ada6, the ada-util and ini-file-manager
 # libraries can be used as prebuilt (switch default.gpr url)
@@ -51,12 +51,18 @@ do-build:
 		-largs build/unix_core.o)
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions \
+		${STAGEDIR}/var/log/synth \
+		${STAGEDIR}/var/synth/live_packages
 	${INSTALL_PROGRAM} ${WRKSRC}/build/synth \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/build/synthexec \
 		${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/synth.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}/var/log/synth \
-		${STAGEDIR}/var/synth/live_packages
+	${INSTALL_SCRIPT} ${WRKSRC}/shell-completers/_synth.bash \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/shell-completers/_synth \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 .include <bsd.port.mk>

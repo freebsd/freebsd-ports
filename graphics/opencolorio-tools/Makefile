@@ -6,10 +6,7 @@ PKGNAMESUFFIX=	-tools
 COMMENT=	Tools to work with OpenColorIO profiles
 
 MASTERDIR=	${.CURDIR}/../opencolorio
+OCIO_SLAVE=	tools
 OPTIONS_EXCLUDE=DOCS
-
-USE_GL=		glew glut
-
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-CMakeLists.txt
 
 .include "${MASTERDIR}/Makefile"

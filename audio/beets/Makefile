@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beets
-PORTVERSION=	1.3.15
+PORTVERSION=	1.3.17
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 
@@ -22,21 +22,23 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.27:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 PLIST_FILES=	man/man1/beet.1.gz man/man5/beetsconfig.5.gz
 
-OPTIONS_DEFINE=	BADFILES BPD CHROMA DISCOGS ECHONEST FETCHART FFMPEG \
-		IMAGEMAGICK IPFS LASTFM LASTIMPORT LYRICS LYRICS_GOOGLE \
-		MPDSTATS METASYNC_DBUS PLEXUPDATE REPLAYGAIN SPOTIFY \
-		THUMBNAILS WEB WEB_CORS
+OPTIONS_DEFINE=	ACOUSTICBRAINZ BADFILES BPD CHROMA DISCOGS ECHONEST EMBYUPDATE \
+		FETCHART FFMPEG IMAGEMAGICK IPFS LASTFM LASTIMPORT LYRICS \
+		LYRICS_GOOGLE MPDSTATS METASYNC_DBUS PLEXUPDATE REPLAYGAIN \
+		SPOTIFY THUMBNAILS WEB WEB_CORS
 OPTIONS_DEFAULT=
 
+ACOUSTICBRAINZ_DESC=	AcousticBrainz Plugin
 BADFILES_DESC=	Bad Files Plugin
 BPD_DESC=	MPD Compatible Music Player Plugin
 CHROMA_DESC=	Audio Fingerprinting Plugin
 DISCOGS_DESC=	Discogs Search Plugin
 ECHONEST_DESC=	Echo Nest Plugin
+EMBYUPDATE_DESC=	Emby Update Plugin
 FETCHART_DESC=	Cover Art Fetch Plugin
 IPFS_DESC=	IPFS Plugin
 IMAGEMAGICK_DESC=	Cover Art Resizing and Comparison
@@ -53,12 +55,14 @@ THUMBNAILS_DESC=	Thumbnails for freedesktop.org-compliant file managers
 WEB_DESC=		Web plugin for querying, browsing and playing music
 WEB_CORS_DESC=		Cross-origin resource sharing for the Web plugin
 
+ACOUSTICBRAINZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
 BADFILES_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac \
 			mp3val:${PORTSDIR}/audio/mp3val
 BPD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:${PORTSDIR}/multimedia/py-gstreamer
 CHROMA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyacoustid>=0:${PORTSDIR}/audio/py-pyacoustid
 DISCOGS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discogs-client>=2.1.0:${PORTSDIR}/audio/py-discogs-client
 ECHONEST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyechonest>=8.0.1:${PORTSDIR}/devel/py-pyechonest
+EMBYUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
 FETCHART_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
 FFMPEG_RUN_DEPENDS=	ffmpeg>=2:${PORTSDIR}/multimedia/ffmpeg
 IMAGEMAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick

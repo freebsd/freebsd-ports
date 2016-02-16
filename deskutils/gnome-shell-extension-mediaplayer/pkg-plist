@@ -8,6 +8,7 @@ share/gnome-shell/extensions/mediaplayer@patapon.info/player.js
 share/gnome-shell/extensions/mediaplayer@patapon.info/prefs.js
 share/gnome-shell/extensions/mediaplayer@patapon.info/settings.js
 share/gnome-shell/extensions/mediaplayer@patapon.info/stylesheet.css
+share/gnome-shell/extensions/mediaplayer@patapon.info/ui.js
 share/gnome-shell/extensions/mediaplayer@patapon.info/widget.js
 share/locale/de/LC_MESSAGES/gnome-shell-extensions-mediaplayer.mo
 share/locale/es/LC_MESSAGES/gnome-shell-extensions-mediaplayer.mo
@@ -21,5 +22,8 @@ share/locale/pl/LC_MESSAGES/gnome-shell-extensions-mediaplayer.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-shell-extensions-mediaplayer.mo
 share/locale/ro/LC_MESSAGES/gnome-shell-extensions-mediaplayer.mo
 share/locale/ru/LC_MESSAGES/gnome-shell-extensions-mediaplayer.mo
+share/locale/sk/LC_MESSAGES/gnome-shell-extensions-mediaplayer.mo
+share/locale/sr/LC_MESSAGES/gnome-shell-extensions-mediaplayer.mo
 share/locale/tr/LC_MESSAGES/gnome-shell-extensions-mediaplayer.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-shell-extensions-mediaplayer.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-shell-extensions-mediaplayer.mo

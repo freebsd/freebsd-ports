@@ -1,6 +1,6 @@
---- tls/gnutls/gtlsclientconnection-gnutls.c.orig	2015-03-17 14:53:17.000000000 +0100
-+++ tls/gnutls/gtlsclientconnection-gnutls.c	2015-03-17 16:02:39.897699000 +0100
-@@ -309,7 +309,8 @@ g_tls_client_connection_gnutls_finish_ha
+--- tls/gnutls/gtlsclientconnection-gnutls.c.orig	2015-04-30 17:57:54.000000000 +0200
++++ tls/gnutls/gtlsclientconnection-gnutls.c	2015-08-06 17:06:17.000000000 +0200
+@@ -322,7 +322,8 @@
  
    g_assert (inout_error != NULL);
  
@@ -10,12 +10,21 @@
        gnutls->priv->cert_requested)
      {
        g_clear_error (inout_error);
-@@ -327,7 +328,7 @@ g_tls_client_connection_gnutls_finish_ha
+@@ -339,7 +340,7 @@
+     }
  
-   if (gnutls->priv->session_id)
+   resumed = gnutls_session_is_resumed (g_tls_connection_gnutls_get_session (conn));
+-  if (*inout_error || !resumed)
++  if (inout_error && *inout_error || !resumed)
      {
--      if (!*inout_error)
-+      if (inout_error && !*inout_error)
- 	{
-           if (!gnutls_session_is_resumed (g_tls_connection_gnutls_get_session (conn)))
-             {
+       /* Clear session data since the server did not accept what we provided. */
+       gnutls->priv->session_data_override = FALSE;
+@@ -348,7 +349,7 @@
+         g_tls_backend_gnutls_remove_session (GNUTLS_CLIENT, gnutls->priv->session_id);
+     }
+ 
+-  if (!*inout_error && !resumed)
++  if (inout_error && !*inout_error && !resumed)
+     {
+       gnutls_datum_t session_datum;
+ 

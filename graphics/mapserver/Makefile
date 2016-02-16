@@ -125,8 +125,8 @@ CMAKE_ARGS+=		-DWITH_POSTGIS=0
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5
-RUN_BUILDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5
+BUILD_DEPENDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php56
+RUN_BUILDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php56
 PHP_EXTENSION_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e "s,/usr/local/,,"
 CMAKE_ARGS+=		-DWITH_PHP=1
 PLIST_SUB+=		PHP_EXTENSION_DIR=${PHP_EXTENSION_DIR}

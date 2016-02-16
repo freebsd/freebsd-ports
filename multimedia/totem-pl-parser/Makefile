@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	totem-pl-parser
-PORTVERSION=	3.10.5
-PORTREVISION=	1
+PORTVERSION=	3.10.6
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -14,7 +13,7 @@ COMMENT=	GObject-based library to parse a host of playlist formats
 LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 
-USES=		gettext gmake libarchive libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libarchive libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomeprefix intltool introspection:build \
 		libxml2
 USE_LDCONFIG=	yes

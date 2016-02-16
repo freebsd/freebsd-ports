@@ -4,7 +4,6 @@
     COMMENT = Things that used to be on the desktop before computers were invented
 
     SUBDIR += affiche
-    SUBDIR += alacarte
     SUBDIR += anamnesis
     SUBDIR += appwrapper
     SUBDIR += aspostit
@@ -73,7 +72,6 @@
     SUBDIR += gnome-search-tool
     SUBDIR += gnome-shell-extension-audio-output-switcher
     SUBDIR += gnome-shell-extension-backslide
-    SUBDIR += gnome-shell-extension-calculator
     SUBDIR += gnome-shell-extension-coverflow
     SUBDIR += gnome-shell-extension-dashtodock
     SUBDIR += gnome-shell-extension-filesmenu
@@ -89,6 +87,7 @@
     SUBDIR += gnome-shell-extra-extensions
     SUBDIR += gnome-sound-recorder
     SUBDIR += gnome-system-log
+    SUBDIR += gnome-todo
     SUBDIR += gnome-tweak-tool
     SUBDIR += gnome-utils
     SUBDIR += gnome-weather

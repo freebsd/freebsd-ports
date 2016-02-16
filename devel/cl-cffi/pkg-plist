@@ -34,7 +34,7 @@ lib/common-lisp/cffi/uffi-compat/uffi.asd
 lib/common-lisp/system-registry/cffi-grovel.asd
 lib/common-lisp/system-registry/cffi-uffi-compat.asd
 lib/common-lisp/system-registry/cffi.asd
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/allegro-internals.txt
 %%PORTDOCS%%%%DOCSDIR%%/cffi-manual.html
 %%PORTDOCS%%%%DOCSDIR%%/cffi-manual.pdf
@@ -59,6 +59,7 @@ lib/common-lisp/system-registry/cffi.asd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/foreign-globals.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/fsbv.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/funcall.lisp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/grovel.lisp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/libfsbv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/libtest.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/libtest2.c

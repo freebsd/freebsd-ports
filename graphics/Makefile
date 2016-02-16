@@ -765,13 +765,13 @@
     SUBDIR += php-gdal
     SUBDIR += php-libpuzzle
     SUBDIR += php-magickwand
-    SUBDIR += php5-exif
     SUBDIR += php5-ffmpeg
-    SUBDIR += php5-gd
     SUBDIR += php55-exif
     SUBDIR += php55-gd
     SUBDIR += php56-exif
     SUBDIR += php56-gd
+    SUBDIR += php70-exif
+    SUBDIR += php70-gd
     SUBDIR += phplot
     SUBDIR += picpuz
     SUBDIR += piddle
@@ -845,6 +845,7 @@
     SUBDIR += py-mcomix
     SUBDIR += py-ming
     SUBDIR += py-nwdiag
+    SUBDIR += py-opencolorio
     SUBDIR += py-opencv
     SUBDIR += py-openexr
     SUBDIR += py-opengl

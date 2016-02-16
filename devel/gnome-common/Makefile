@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-common
-PORTVERSION=	3.14.0
-PORTREVISION=	1
+PORTVERSION=	3.18.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,13 +11,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Common automake macros for GNOME 3
 
 BUILD_DEPENDS=	autoconf-archive>=0:${PORTSDIR}/devel/autoconf-archive
+RUN_DEPENDS=	autoconf-archive>=0:${PORTSDIR}/devel/autoconf-archive
 
-USES=		gmake pkgconfig tar:xz
+USES=		gmake gnome pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-
-# remove files provided by autoconf-archive
-post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/share/aclocal/ax_check_enable_debug.m4
-	@${RM} ${STAGEDIR}${PREFIX}/share/aclocal/ax_code_coverage.m4
+CONFIGURE_ARGS=	--with-autoconf-archive
 
 .include <bsd.port.mk>

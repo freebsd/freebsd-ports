@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geocode-glib
-PORTVERSION=	3.16.2
+PORTVERSION=	3.18.1
 CATEGORIES=	net devel gnome
 MASTER_SITES=	GNOME
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -56,21 +56,18 @@ PHP_EXT_DIR!=	${PHPBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${PHPBA
 DEFAULT_PHP_VER?=	${PHP_DEFAULT:S/.//}
 
 PHP_VER?=	${DEFAULT_PHP_VER}
-.if ${PHP_VER}  == 53
-PHP_EXT_DIR=	20090626
-PHP_EXT_INC=	pcre spl
+.if ${PHP_VER}  == 70
+PHP_EXT_DIR=   20151012
+PHP_EXT_INC=    pcre spl
 .elif ${PHP_VER}  == 56
 PHP_EXT_DIR=	20131226
 PHP_EXT_INC=	pcre spl
 .elif ${PHP_VER}  == 55
 PHP_EXT_DIR=	20121212
 PHP_EXT_INC=	pcre spl
-.elif ${PHP_VER}  == 54
-PHP_VER=	5
-PHP_EXT_DIR=	20100525
-PHP_EXT_INC=	pcre spl
 .else
-PHP_EXT_DIR=	20100525
+# (rene) default to DEFAULT_VERSIONS
+PHP_EXT_DIR=	20131226
 PHP_EXT_INC=	pcre spl
 .endif
 
@@ -93,13 +90,11 @@ PHP_SAPI?=	""
 .endif	# .if exists(${PHPBASE}/etc/php.conf)
 PHP_EXT_INC?=	""
 
-PHP5_LAST_VER=	54
-
 .if defined(IGNORE_WITH_PHP)
 .	for VER in ${IGNORE_WITH_PHP}
 .		if ${PHP_VER} == "${VER}"
 IGNORE=		cannot be installed: doesn't work with lang/php${PHP_VER} port\
-		(doesn't support PHP ${IGNORE_WITH_PHP:C/^5$/${PHP5_LAST_VER}/:C/^5/5./})
+		(doesn't support PHP ${IGNORE_WITH_PHP:C/^5/5./})
 .		endif
 .	endfor
 .endif
@@ -109,11 +104,6 @@ IGNORE=		cannot be installed: doesn't work with lang/php${PHP_VER} port\
 check-makevars::
 		@${ECHO_CMD} "If you define WANT_PHP_WEB you cannot set also WANT_PHP_CGI"
 		@${ECHO_CMD} "or WANT_PHP_MOD. Use only one of them."
-		@${FALSE}
-.	elif defined(PHP_VERSION) && ${PHP_VER} == 53 && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "" && ${PHP_SAPI:Mmod} == ""
-check-makevars::
-		@${ECHO_CMD} "This port requires the Apache Module or the CGI version of PHP, but you have"
-		@${ECHO_CMD} "already installed a PHP port without them."
 		@${FALSE}
 .	endif
 .endif
@@ -136,15 +126,6 @@ check-makevars::
 .	endif
 .endif
 
-.if defined(WANT_PHP_MOD)
-.	if defined(PHP_VERSION) && ${PHP_VER} == 53 && ${PHP_SAPI:Mmod} == ""
-check-makevars::
-		@${ECHO_CMD} "This port requires the Apache Module for PHP, but you have already"
-		@${ECHO_CMD} "installed a PHP port without the Apache Module."
-		@${FALSE}
-.	endif
-.endif
-
 .if defined(WANT_PHP_EMB)
 .	if defined(PHP_VERSION) && ${PHP_SAPI:Membed} == ""
 check-makevars::
@@ -155,11 +136,7 @@ check-makevars::
 .endif
 
 PHP_PORT?=	lang/php${PHP_VER}
-.if ${PHP_VER} == 53
-MOD_PHP_PORT?=	${PHP_PORT}
-.else
 MOD_PHP_PORT?=	www/mod_php${PHP_VER}
-.endif
 
 .if defined(USE_PHP_BUILD)
 BUILD_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PORTSDIR}/${PHP_PORT}
@@ -276,10 +253,9 @@ _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dom \
 		sockets spl sybase_ct sysvmsg sysvsem sysvshm \
 		tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
-_USE_PHP_VER5=	${_USE_PHP_ALL} phar sqlite3
-_USE_PHP_VER53=	${_USE_PHP_ALL} phar sqlite sqlite3
 _USE_PHP_VER55=	${_USE_PHP_ALL} phar sqlite3
 _USE_PHP_VER56=	${_USE_PHP_ALL} phar sqlite3
+_USE_PHP_VER70=	${_USE_PHP_ALL} phar sqlite3
 
 apc_DEPENDS=	www/pecl-APC
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
@@ -303,7 +279,11 @@ iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
+.if ${PHP_VER}	== 70
+intl_DEPENDS=	devel/php${PHP_VER}-intl
+.else
 intl_DEPENDS=	devel/pecl-intl
+.endif
 json_DEPENDS=	devel/php${PHP_VER}-json
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
@@ -316,14 +296,9 @@ mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
 ncurses_DEPENDS=devel/php${PHP_VER}-ncurses
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
 oci8_DEPENDS=	databases/php${PHP_VER}-oci8
-.if ${PHP_VER} == 55 || ${PHP_VER} == 56
 opcache_DEPENDS=	www/php${PHP_VER}-opcache
-.else
-opcache_DEPENDS=	www/pecl-zendopcache
-.endif	
 openssl_DEPENDS=security/php${PHP_VER}-openssl
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
-pcre_DEPENDS=	devel/php${PHP_VER}-pcre
 pdf_DEPENDS=	print/pecl-pdflib
 pdo_DEPENDS=	databases/php${PHP_VER}-pdo
 pdo_dblib_DEPENDS=	databases/php${PHP_VER}-pdo_dblib

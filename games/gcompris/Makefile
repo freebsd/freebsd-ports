@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	gcompris
-PORTVERSION=	15.02
-PORTREVISION=	1
+PORTVERSION=	15.10
 CATEGORIES=	games gnome
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	http://gcompris.net/download/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome2 educational games and activities for kids ages 2 to 10
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
@@ -21,15 +21,13 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		gnucap:${PORTSDIR}/cad/gnucap
 
-USES=		display:configure gettext gmake libtool pathfix pkgconfig \
-		python:2 shebangfix sqlite tar:bzip2
+USES=		display:configure gettext gmake libtool localbase pathfix \
+		pkgconfig python:2 shebangfix sqlite tar:bzip2
 SHEBANG_FILES=	boards/voices/*.sh
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
 USE_SDL=	mixer
 USE_GNOME=	intlhack gnomeprefix gtk20 pygtk2 libxml2 librsvg2
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

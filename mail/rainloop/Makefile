@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rainloop
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES?=	mail www
 MASTER_SITES=	http://repository.rainloop.net/v2/webmail/${PORTVERSION}/
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.${RBUILD}-${RHASH}
@@ -18,16 +18,16 @@ LICENSE_PERMS=	auto-accept
 
 .if !defined(PKGNAMESUFFIX)
 # Refresh using info from http://repository.rainloop.net/v2/core.stable.json
-RHASH=		e5a505507a5bf04426aa8578dd85c6d1
+RHASH=		5549831c2d752bcb4e8daff5435c081b
 .endif
 
 .if defined(PKGNAMESUFFIX)
 # Refresh using info from http://repository.rainloop.net/v2/core.open.json
-RHASH=		4903b60f0199347bca03c1a26125e907
+RHASH=		fa88eab9037241e8a1d24ed40a4b7bb1
 .endif
 
 # Refresh using info from http://repository.rainloop.net/v2/core.(stable|open).json
-RBUILD=		363
+RBUILD=		398
 
 .if !defined(PKGNAMESUFFIX)
 RESTRICTED=	Redistribution in any form is prohibited
@@ -48,8 +48,6 @@ OPTIONS_DEFAULT=	SQLITE
 MYSQL_USE=	PHP=pdo_mysql
 PGSQL_USE=	PHP=pdo_pgsql
 SQLITE_USE=	PHP=pdo_sqlite
-
-.include <bsd.port.options.mk>
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/data

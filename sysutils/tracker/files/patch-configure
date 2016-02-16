@@ -1,6 +1,6 @@
---- configure.orig	2015-03-16 09:35:17.635124000 +0100
-+++ configure	2015-03-16 09:36:55.795920000 +0100
-@@ -21333,8 +21333,6 @@
+--- configure.orig	2015-07-21 23:39:50.000000000 +0200
++++ configure	2015-08-14 14:37:54.000000000 +0200
+@@ -21334,8 +21334,6 @@
  # First test for 3_3_5
  TRACKER_MINER_EVOLUTION_3_3_5_REQUIRED="glib-2.0                  >= $GLIB_REQUIRED
                                          evolution-shell-3.0       >= 3.1
@@ -9,7 +9,7 @@
                                          libemail-engine
                                          evolution-data-server-1.2 >= $EDS_REQUIRED
                                          camel-1.2                 >= $CAMEL_REQUIRED"
-@@ -21428,7 +21426,6 @@
+@@ -21429,7 +21427,6 @@
  # Second test for 3_2
  TRACKER_MINER_EVOLUTION_3_2_REQUIRED="glib-2.0                  >= $GLIB_REQUIRED
                                        evolution-shell-3.0       >= 3.1
@@ -17,7 +17,7 @@
                                        evolution-data-server-1.2 >= $EDS_REQUIRED
                                        camel-1.2                 >= $CAMEL_REQUIRED"
  
-@@ -21518,7 +21515,6 @@
+@@ -21519,7 +21516,6 @@
  # Third test for 2_91
  TRACKER_MINER_EVOLUTION_2_91_REQUIRED="glib-2.0                  >= $GLIB_REQUIRED
                                         evolution-shell-3.0
@@ -25,7 +25,7 @@
                                         evolution-data-server-1.2 >= $EDS_REQUIRED
                                         camel-1.2                 >= $CAMEL_REQUIRED"
  
-@@ -21604,7 +21600,6 @@
+@@ -21605,7 +21601,6 @@
  # Fourth test others (do we really want support for anything < 3.2)?
  TRACKER_MINER_EVOLUTION_LAST_REQUIRED="glib-2.0                  >= $GLIB_REQUIRED
                                         evolution-shell           >= $EVO_SHELL_REQUIRED
@@ -33,7 +33,7 @@
                                         evolution-data-server-1.2 >= $EDS_REQUIRED
                                         camel-1.2                 >= $CAMEL_REQUIRED"
  
-@@ -24317,14 +24312,14 @@
+@@ -24247,14 +24242,14 @@
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
      { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"dbus-1      >= \$DBUS_REQUIRED
@@ -51,7 +51,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -24337,14 +24332,16 @@
+@@ -24267,14 +24262,16 @@
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
      { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"dbus-1      >= \$DBUS_REQUIRED
@@ -71,7 +71,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -24366,10 +24363,12 @@
+@@ -24296,10 +24293,12 @@
  fi
          if test $_pkg_short_errors_supported = yes; then
  	        HAL_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "dbus-1      >= $DBUS_REQUIRED
@@ -86,7 +86,7 @@
          fi
  	# Put the nasty error message in config.log where it belongs
  	echo "$HAL_PKG_ERRORS" >&5
-@@ -25567,7 +25566,6 @@
+@@ -25497,7 +25496,6 @@
  if test "${with_evolution_plugin_dir+set}" = set; then :
    withval=$with_evolution_plugin_dir;
  fi
@@ -94,3 +94,35 @@
                 tracker_miner_evolution_install_dir=$withval,
                 tracker_miner_evolution_install_dir=`$PKG_CONFIG $evolution_plugin_name --variable=plugindir`,
  
+@@ -27296,7 +27294,6 @@
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ # Check whether --enable-libgif was given.
+@@ -27406,7 +27403,6 @@
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ # Check whether --enable-libjpeg was given.
+@@ -27516,7 +27512,6 @@
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ # Check whether --enable-libtiff was given.
+@@ -27626,7 +27621,6 @@
+ OLD_LDFLAGS="$LDFLAGS"
+ OLD_LIBS="$LIBS"
+ CFLAGS=""
+-LDFLAGS=""
+ LIBS=""
+ 
+ # Check whether --enable-libpng was given.

@@ -2,7 +2,7 @@
 # $FreeBSD: head/net-mgmt/nsca-ng/Makefile 390689 2015-06-27 01:59:02Z amdmi3 $
 
 PORTNAME=	nsca-ng
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nsca-ng.org/download/ http://www.nsca-ng.org/download/
 

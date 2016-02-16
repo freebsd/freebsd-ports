@@ -733,12 +733,12 @@
     SUBDIR += pftables
     SUBDIR += pftop
     SUBDIR += phantom
-    SUBDIR += php5-fileinfo
-    SUBDIR += php5-posix
     SUBDIR += php55-fileinfo
     SUBDIR += php55-posix
     SUBDIR += php56-fileinfo
     SUBDIR += php56-posix
+    SUBDIR += php70-fileinfo
+    SUBDIR += php70-posix
     SUBDIR += phybs
     SUBDIR += pick
     SUBDIR += pidof

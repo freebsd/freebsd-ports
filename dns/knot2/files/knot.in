@@ -12,43 +12,91 @@
 #			Set it to YES to enable knot.
 # knot_config="":	Set to %%PREFIX%%/etc/knot/knot.conf
 #			by default.
+#
+# -----------------------------------------------------------------------------
+#
+# This script supports running multiple instances of knot.
+# To run additional instances link this script to something like
+# % ln -s knot knot_foo
+# and define additional knot_foo_* variables in one of
+# /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/knot_foo
+#
+# Below NAME should be substituted with the name of this script. By default
+# it is knot, so read as knot_enable. If you linked the script to
+# knot_foo, then read as knot_foo_enable etc.
+#
+# The following variables are supported (defaults are shown).
+# You can place them in any of
+# /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/NAME
+#
+# NAME_enable="NO"	# set to YES to enable knot
+#
+# # optional:
+# NAME_config="%%PREFIX%%/etc/knot/NAME.conf"  # (-c)onfig file
+# NAME_diruser="%%USERS%%"   # /var/db/NAME and /var/run/NAME are created if they
+# NAME_dirgroup="%%GROUPS%%"  # don't exist. These don't control the user/group knot
+#                       # runs as, the config file has a setting for that.
+#
+# You also need to set the rundir directive in the server section of the
+# config file to /var/run/NAME (if using a NAME other than the default)
+# and you will want the storage directive(s) declared in the zone section
+# to point to /var/db/NAME overriding the default of /var/db/knot.
+#
+# For further documentation, please see knot.conf(5).
 
 . /etc/rc.subr
 
-name=knot
-rcvar=knot_enable
+case "$0" in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name="$_file"
+	;;
+*)
+	name="$0"
+	;;
+esac
+
+name="${name##*/}"
+rcvar=${name}_enable
 
 load_rc_config ${name}
 
-: ${knot_enable:=NO}
-: ${knot_config="%%PREFIX%%/etc/knot/knot.conf"}
+eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_diruser:=\"%%USERS%%\"}"
+eval ": \${${name}_dirgroup:=\"%%GROUPS%%\"}"
+eval ": \${${name}_config:=\"%%PREFIX%%/etc/knot/${name}.conf\"}"
+
+configfile="$(eval echo \${${name}_config})"
+diruser="$(eval echo \${${name}_diruser})"
+dirgroup="$(eval echo \${${name}_dirgroup})"
 
 command=%%PREFIX%%/sbin/knotd
-command_args="-c ${knot_config} -d"
+command_args="-c ${configfile} -d"
 control=%%PREFIX%%/sbin/knotc
-pidfile=/var/run/knot/knot.pid
+pidfile=/var/run/${name}/knot.pid
 
-required_files=${knot_config}
+required_files=${configfile}
 
 extra_commands=reload
-reload_cmd="${name}_reload"
-start_precmd="${name}_prestart"
+reload_cmd="knot_reload"
+start_precmd="knot_prestart"
 
 knot_prestart()
 {
-	if [ ! -d /var/run/knot ]; then
-		install -d -o %%USERS%% -g %%GROUPS%% /var/run/knot
+	if [ ! -d /var/run/${name} ]; then
+		install -d -o ${diruser} -g ${dirgroup} /var/run/${name}
 	fi
-	if [ ! -d /var/db/knot ]; then
-		install -d -o %%USERS%% -g %%GROUPS%% /var/db/knot
+	if [ ! -d /var/db/${name} ]; then
+		install -d -o ${diruser} -g ${dirgroup} /var/db/${name}
 	fi
-	${control} -c ${knot_config} checkconf
+	${control} -c ${configfile} checkconf
 }
 
 knot_reload()
 {
 	echo "Reloading ${name}."
-	${control} -c ${knot_config} reload
+	${control} -c ${configfile} reload
 }
 
 run_rc_command "$1"

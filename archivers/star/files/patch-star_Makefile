@@ -1,0 +1,22 @@
+--- star/Makefile.orig	2016-02-10 20:47:23 UTC
++++ star/Makefile
+@@ -15,7 +15,7 @@ include		$(SRCROOT)/$(RULESDIR)/rules.to
+ INSDIR=		bin
+ TARGET=		star
+ #SYMLINKS=	ustar tar
+-SYMLINKS=	ustar tar gnutar suntar scpio spax
++SYMLINKS=	ustar suntar scpio spax
+ CPPOPTS +=	-D__STAR__
+ CPPOPTS +=	-DSET_CTIME -DFIFO -DUSE_MMAP -DUSE_REMOTE -DUSE_RCMD_RSH
+ #CPPOPTS +=	-DSET_CTIME -DFIFO -DUSE_MMAP
+@@ -52,8 +52,8 @@ LIBS=		-ldeflt -lrmt -lfind -lschily $(L
+ #
+ #	Wenn -lfind, dann auch  $(LIB_INTL)
+ #
+-XMK_FILE=	Makefile.man ustarman.mk starformatman.mk scpioman.mk gnutarman.mk \
+-		spaxman.mk suntarman.mk Makefile.dfl Makefile.doc
++XMK_FILE=	Makefile.man starformatman.mk scpioman.mk \
++		spaxman.mk suntarman.mk
+ 
+ star_fat.c: star.c
+ 	$(RM) $(RM_FORCE) $@; cp star.c $@
