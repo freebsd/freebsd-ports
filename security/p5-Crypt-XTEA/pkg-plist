@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Crypt/XTEA.pm
+%%SITE_ARCH%%/auto/Crypt/XTEA/XTEA.so
+%%PERL5_MAN3%%/Crypt::XTEA.3.gz

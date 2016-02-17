@@ -3,6 +3,7 @@
 
 PORTNAME=	xdelta
 PORTVERSION=	3.0.11
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES?=	misc devel
 PKGNAMESUFFIX=	3
@@ -17,9 +18,8 @@ USES=		autoreconf gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	jmacd
 GH_PROJECT=	xdelta-devel
-GH_TAGNAME=	v3.0.11
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-devel-${PORTVERSION}/xdelta3
+WRKSRC_SUBDIR=	xdelta3
 
 GNU_CONFIGURE=	yes
 

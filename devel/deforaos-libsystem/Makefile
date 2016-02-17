@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libsystem
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.defora.org/os/download/download/4330/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	libSystem-${PORTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS core system library
 
 LICENSE=	GPLv3

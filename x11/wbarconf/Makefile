@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	wbarconf
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://koti.kapsi.fi/ighea/wbarconf/
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Configuration GUI for wbar
 
 LICENSE=	GPLv3

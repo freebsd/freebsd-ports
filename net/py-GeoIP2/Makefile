@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbé <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbé <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	GeoIP2
@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	net python geography
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	MaxMind GeoIP2 Python API
 
 LICENSE=	APACHE20

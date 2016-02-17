@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tiled
-PORTVERSION=	0.15.0
+PORTVERSION=	0.15.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics editors games
 
@@ -35,6 +35,8 @@ post-patch:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
+.for f in AUTHORS README.md NEWS
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
+.endfor
 
 .include <bsd.port.mk>

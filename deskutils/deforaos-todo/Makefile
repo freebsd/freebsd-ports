@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	todo
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.defora.org/os/download/download/3506/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Todo-${PORTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop todo list
 
 LICENSE=	GPLv3

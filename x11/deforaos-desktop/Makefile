@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	desktop
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 PKGNAMEPREFIX=	deforaos-
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Deforaos distribution metaport
 
 RUN_DEPENDS=	${LOCALBASE}/bin/keyboard:${PORTSDIR}/x11/deforaos-keyboard \

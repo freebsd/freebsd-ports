@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	keyboard
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.defora.org/os/download/download/3696/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Keyboard-${PORTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop virtual keyboardr
 
 LICENSE=	GPLv3

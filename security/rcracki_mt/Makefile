@@ -7,7 +7,7 @@ MASTER_SITES=	SF/rcracki/rcracki_mt/rcracki_mt_${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 EXTRACT_SUFX=	.7z
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Rainbow table based crack tool
 
 LICENSE=	GPLv2

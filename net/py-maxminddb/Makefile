@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbé <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbé <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	maxminddb
@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	net python geography
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Python module for reading MaxMind DB file
 
 LICENSE=	APACHE20
