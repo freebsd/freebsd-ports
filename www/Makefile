@@ -1776,6 +1776,7 @@
     SUBDIR += py-tvdb_api
     SUBDIR += py-twistedWeb
     SUBDIR += py-twistedWeb2
+    SUBDIR += py-txrequests
     SUBDIR += py-uliweb
     SUBDIR += py-urlgrabber
     SUBDIR += py-urljr
