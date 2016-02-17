@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	deforaos-panel
@@ -7,7 +7,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.defora.org/os/download/download/4338/
 DISTNAME=	Panel-${PORTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop panel
 
 LICENSE=	GPLv3

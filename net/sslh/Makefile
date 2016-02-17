@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 MASTER_SITES=	http://www.rutschle.net/tech/
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	SSL/SSH multiplexer
 
 LICENSE=	GPLv2

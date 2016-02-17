@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mailer
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.defora.org/os/download/download/4029/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Mailer-${PORTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop mail client
 
 LICENSE=	GPLv3

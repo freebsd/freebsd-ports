@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	surfer
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.defora.org/os/download/download/4345/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Surfer-${PORTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop web browser
 
 LICENSE=	GPLv3

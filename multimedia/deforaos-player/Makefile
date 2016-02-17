@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	player
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.defora.org/os/download/download/4297/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Player-${PORTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop media player
 
 LICENSE=	GPLv3
