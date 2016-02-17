@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	deforaos-browser
@@ -7,7 +7,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.defora.org/os/download/download/4310/
 DISTNAME=	Browser-${PORTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop file browser
 
 LICENSE=	GPLv3

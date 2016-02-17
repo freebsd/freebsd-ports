@@ -4,7 +4,7 @@ PORTNAME=	ttygif
 PORTVERSION=	1.0.8
 CATEGORIES=	graphics
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Converts a ttyrec file into animated gif
 
 LICENSE=	MIT
