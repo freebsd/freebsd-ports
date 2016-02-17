@@ -21,7 +21,7 @@ SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
-CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON
+CMAKE_ARGS=
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	llvm-mirror
@@ -148,10 +148,6 @@ MAN1SRCS+=	clang.1 \
 CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer)
 .endif
 
-.if ${PORT_OPTIONS:MEXTRAS}
-COMMANDS+=	${EXTRAS_COMMANDS}
-.endif
-
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=	lit.1 FileCheck.1
 _USES_PYTHON=	python
@@ -191,6 +187,14 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MEXTRAS}
+.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
+COMMANDS+=	${EXTRAS_COMMANDS}
+MAN1SRCS+=	extraclangtools.1
+PORTDOCS+=	clang-tools
+.endif
+.endif
 
 .if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
 # Evil hack around gcc48 not providing a usable c++11 environment on 9.x

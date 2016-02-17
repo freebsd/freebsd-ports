@@ -14,6 +14,8 @@ LLVM_PORTDIR=	${.CURDIR}/../llvm${LLVM_SUFFIX}
 
 USES=		cmake:outsource compiler:c++11-lib ninja
 
+BROKEN=	relies on incompatible stdarg.h from clang
+
 BUILD_DEPENDS=	llvm-config${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}/
@@ -25,6 +27,9 @@ GH_TAGNAME=	${COMPILER_RT_COMMIT}
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	plist contents not known
+
+CC=clang-devel
+CXX=clang++-devel
 
 .include <bsd.port.pre.mk>
 
