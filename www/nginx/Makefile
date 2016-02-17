@@ -801,7 +801,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 .endif
 
 .if ${PORT_OPTIONS:MSMALL_LIGHT}
-NGINX_SMALL_LIGHT_VERSION=	0.6.9
+NGINX_SMALL_LIGHT_VERSION=	0.6.15
 LIB_DEPENDS+=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick \
 		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
 		libpcre.so:${PORTSDIR}/devel/pcre
