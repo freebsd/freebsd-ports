@@ -9,6 +9,16 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of www/nginx-devel
   AUTHOR: osa@FreeBSD.org
 
+  Dynamic modules support has been enabled for the dynamic_upstream
+  third-party module, in case of usage of this module please update nginx
+  configuration file for load this module:
+
+  load_module "modules/ngx_dynamic_upstream_module.so";
+
+20160214:
+  AFFECTS: users of www/nginx-devel
+  AUTHOR: osa@FreeBSD.org
+
   Dynamic modules support has been enabled for the following third-party
   modules, in case of usage of these modules please update nginx
   configuration file for load these modules:

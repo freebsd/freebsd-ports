@@ -646,11 +646,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
 .endif
 
 .if ${PORT_OPTIONS:MDYNAMIC_UPSTREAM}
-NGINX_DYNAMIC_UPSTREAM_VERSION=	0.1.1
+NGINX_DYNAMIC_UPSTREAM_VERSION=	0.1.3
 GH_ACCOUNT+=	cubicdaiya:dyn_upstream
 GH_PROJECT+=	ngx_dynamic_upstream:dyn_upstream
 GH_TAGNAME+=	v${NGINX_DYNAMIC_UPSTREAM_VERSION}:dyn_upstream
-CONFIGURE_ARGS+=--add-module=${WRKSRC_dyn_upstream}
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_dyn_upstream}
 .endif
 
 .if ${PORT_OPTIONS:MARRAYVAR} || ${PORT_OPTIONS:MENCRYPTSESSION} || ${PORT_OPTIONS:MFORMINPUT} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MSET_MISC}
