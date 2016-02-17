@@ -825,14 +825,14 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 .endif
 
 .if ${PORT_OPTIONS:MSMALL_LIGHT}
-NGINX_SMALL_LIGHT_VERSION=	0.6.9
+NGINX_SMALL_LIGHT_VERSION=	0.6.15
 LIB_DEPENDS+=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick \
 		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick \
 		libpcre.so:${PORTSDIR}/devel/pcre
 GH_ACCOUNT+=	cubicdaiya:small_light
 GH_PROJECT+=	ngx_small_light:small_light
 GH_TAGNAME+=	v${NGINX_SMALL_LIGHT_VERSION}:small_light
-CONFIGURE_ARGS+=--add-module=${WRKSRC_small_light}
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_small_light}
 .endif
 
 .if ${PORT_OPTIONS:MSRCACHE}
