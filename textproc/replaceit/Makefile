@@ -19,8 +19,12 @@ MAKE_ARGS=	CC="${CC}" PRF="${CFLAGS}"
 PORTDOCS=	CHANGELOG README
 PLIST_FILES=	bin/replaceit
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/replaceit ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
