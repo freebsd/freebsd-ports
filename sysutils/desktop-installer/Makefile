@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	desktop-installer
-PORTVERSION=	0.4.9
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
@@ -11,7 +11,7 @@ COMMENT=	Quickly configure a FreeBSD desktop system
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	auto-admin>=0.3.5:${PORTSDIR}/sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.3.6:${PORTSDIR}/sysutils/auto-admin
 
 USES=		tar:xz
 
