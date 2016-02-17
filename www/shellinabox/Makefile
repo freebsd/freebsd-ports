@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	shellinabox
@@ -6,7 +6,7 @@ PORTVERSION=	2.19
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Publish command line shell through AJAX interface
 
 LICENSE=	GPLv2

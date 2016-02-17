@@ -4,7 +4,7 @@ PORTNAME=	pimd
 PORTVERSION=	2.2.0
 CATEGORIES=	net
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Lightweight stand-alone PIM-SM v2 multicast routing daemon
 
 LICENSE=	BSD3CLAUSE

@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libdesktop
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.defora.org/os/download/download/4293/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	libDesktop-${PORTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop library
 
 LICENSE=	GPLv3
