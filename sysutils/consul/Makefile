@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	consul
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	https://dl.bintray.com/mitchellh/consul/:web_ui
-DISTFILES=	${PORTVERSION}_web_ui.zip:web_ui
+MASTER_SITES=	https://releases.hashicorp.com/consul/${PORTVERSION}/:web_ui
+DISTFILES=	consul_${PORTVERSION}_web_ui.zip:web_ui
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Service discovery and configuration made easy
@@ -17,12 +17,16 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 USES=		compiler
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	hashicorp:DEFAULT,go_checkpoint,go_msgpack,go_multierror,go_syslog,golang_lru,hcl,logutils,memberlist,raft,raft_mdb,serf,scada,yamux,migrate,msgpackrpc,boltdb \
-		armon:circbuf,go_metrics,go_radix,gomdb golang:protobuf,crypto \
+GH_ACCOUNT=	hashicorp:DEFAULT,go_checkpoint,go_msgpack,go_multierror,go_syslog \
+		hashicorp:golang_lru,hcl,logutils,memberlist,raft,raft_mdb,serf \
+		hashicorp:scada,yamux,migrate,msgpackrpc,boltdb,reap,memdb \
+		hashicorp:iradix,chttp,errwrap \
+		armon:circbuf,go_metrics,go_radix,gomdb golang:protobuf,crypto,sys \
 		boltdb:bolt inconshreveable:muxado matttproud:protobuf_ext \
 		miekg:dns mitchellh:cli mitchellh:mapstructure \
 		prometheus:client_golang,client_model,procfs \
-		ryanuber:columnize ugorji:go
+		ryanuber:columnize ugorji:go mattn:isatty \
+		fsouza:dclient elazarl:assetfs bgentry:speakeasy DataDog:datadog
 GH_PROJECT=	circbuf:circbuf protobuf:protobuf go-metrics:go_metrics \
 		go-radix:go_radix gomdb:gomdb go-checkpoint:go_checkpoint \
 		go-msgpack:go_msgpack go-multierror:go_multierror \
@@ -34,19 +38,23 @@ GH_PROJECT=	circbuf:circbuf protobuf:protobuf go-metrics:go_metrics \
 		golang_protobuf_extensions:protobuf_ext dns:dns cli:cli \
 		mapstructure:mapstructure client_golang:client_golang \
 		client_model:client_model procfs:procfs columnize:columnize \
-		go:go
-GH_TAGNAME=	f092b4f:circbuf 5677a0e:protobuf a54701e:go_metrics \
-		0bab926:go_radix 151f2e0:gomdb 88326f6:go_checkpoint \
-		71c2886:go_msgpack fcdddc3:go_multierror 42a2b57:go_syslog \
-		995efda:golang_lru 513e04c:hcl 367a65d:logutils \
-		6025015:memberlist a8065f2:raft 4ec3694:raft_mdb 320787d:serf \
-		c26580c:scada b2e5585:yamux 4977886:migrate \
-		d377902:msgpackrpc d1e82c1:boltdb 74f810a:crypto 2c04100:bolt \
-		f693c7e:muxado ba7d65a:protobuf_ext bb1103f:dns 6cc8bc5:cli \
-		442e588:mapstructure 38dbb2e:client_golang \
-		fa8ad6f:client_model 92faa30:procfs 44cb478:columnize \
-		e906e39:go
-
+		go:go go-isatty:isatty go-reap:reap sys:sys go-memdb:memdb \
+		go-immutable-radix:iradix go-cleanhttp:chttp errwrap:errwrap \
+		go-dockerclient:dclient go-bindata-assetfs:assetfs \
+		speakeasy:speakeasy datadog-go:datadog
+GH_TAGNAME=	bbbad09:circbuf 2402d76:protobuf 345426c:go_metrics \
+		4239b77:go_radix 151f2e0:gomdb e4b2dc3:go_checkpoint \
+		fa3f638:go_msgpack d30f099:go_multierror 42a2b57:go_syslog \
+		bf88e0d:golang_lru aee8c49:hcl 0dc08b1:logutils \
+		9888dc5:memberlist 8023e5e:raft 55f2947:raft_mdb b60fe33:serf \
+		84989fd:scada df94978:yamux 678fb10:migrate \
+		a14192a:msgpackrpc d1e82c1:boltdb 3760e01:crypto 109049b:bolt \
+		f693c7e:muxado d0c3fe8:protobuf_ext 297a77c:dns cb6853d:cli \
+		281073e:mapstructure 67994f1:client_golang \
+		fa8ad6f:client_model 406e5b7:procfs 983d3a5:columnize \
+		646ae4a:go 56b76bd:isatty 2d85522:reap 442cd60:sys 31949d5:memdb \
+		12e9005:iradix ce617e7:chttp 7554cd9:errwrap 2fb7694:dclient \
+		57eb5e1:assetfs 36e9cfd:speakeasy bc97e07:datadog
 
 USE_RC_SUBR=	consul
 
@@ -57,10 +65,10 @@ STRIP=		# stripping can break go binaries
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/hashicorp/consul
-.for src in .travis.yml CHANGELOG.md LICENSE Makefile README.md Vagrantfile \
-	api acl bench contrib command commands.go consul demo deps main.go \
-	main_test.go scripts terraform test testutil tlsutil ui version.go \
-	watch website
+.for src in .gitignore .travis.yml CHANGELOG.md LICENSE Makefile README.md \
+	Vagrantfile acl api bench command commands.go consul contrib demo deps \
+	main.go main_test.go make.bat scripts terraform test testutil \
+	tlsutil ui version.go watch website
 	@${MV} ${WRKSRC}/${src} \
 		${WRKSRC}/src/github.com/hashicorp/consul
 .endfor
@@ -74,6 +82,11 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/golang
 	@${MKDIR} ${WRKSRC}/src/github.com/matttproud
 	@${MKDIR} ${WRKSRC}/src/github.com/prometheus
+	@${MKDIR} ${WRKSRC}/src/github.com/mattn
+	@${MKDIR} ${WRKSRC}/src/github.com/fsouza
+	@${MKDIR} ${WRKSRC}/src/github.com/elazarl
+	@${MKDIR} ${WRKSRC}/src/github.com/bgentry
+	@${MKDIR} ${WRKSRC}/src/github.com/DataDog
 	@${MKDIR} ${WRKSRC}/src/golang.org/x
 	@${MV} ${WRKSRC_circbuf} \
 		${WRKSRC}/src/github.com/armon/circbuf
@@ -137,6 +150,28 @@ post-patch:
 		${WRKSRC}/src/github.com/boltdb/bolt
 	@${MV} ${WRKSRC_migrate} \
 		${WRKSRC}/src/github.com/hashicorp/consul-migrate
+	@${MV} ${WRKSRC_isatty} \
+		${WRKSRC}/src/github.com/mattn/go-isatty
+	@${MV} ${WRKSRC_reap} \
+		${WRKSRC}/src/github.com/hashicorp/go-reap
+	@${MV} ${WRKSRC_memdb} \
+		${WRKSRC}/src/github.com/hashicorp/go-memdb
+	@${MV} ${WRKSRC_iradix} \
+		${WRKSRC}/src/github.com/hashicorp/go-immutable-radix
+	@${MV} ${WRKSRC_chttp} \
+		${WRKSRC}/src/github.com/hashicorp/go-cleanhttp
+	@${MV} ${WRKSRC_errwrap} \
+		${WRKSRC}/src/github.com/hashicorp/errwrap
+	@${MV} ${WRKSRC_dclient} \
+		${WRKSRC}/src/github.com/fsouza/go-dockerclient
+	@${MV} ${WRKSRC_assetfs} \
+		${WRKSRC}/src/github.com/elazarl/go-bindata-assetfs
+	@${MV} ${WRKSRC_speakeasy} \
+		${WRKSRC}/src/github.com/bgentry/speakeasy
+	@${MV} ${WRKSRC_datadog} \
+		${WRKSRC}/src/github.com/DataDog/datadog-go
+	@${MV} ${WRKSRC_sys} \
+		${WRKSRC}/src/golang.org/x/sys
 	@${MV} ${WRKSRC_crypto} \
 		${WRKSRC}/src/golang.org/x/crypto
 
@@ -146,6 +181,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/hashicorp/consul/bin/consul ${STAGEDIR}${PREFIX}/bin/consul
 	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${WRKDIR}/dist
+	${MV} ${WRKDIR}/index.html ${WRKDIR}/static ${WRKDIR}/dist
 	cd ${WRKDIR}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.pre.mk>
