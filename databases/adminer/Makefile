@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	adminer
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.4
 CATEGORIES=	databases www
-MASTER_SITES=	SF/${PORTNAME}/Adminer/Adminer%20${PORTVERSION}
+MASTER_SITES=	https://www.adminer.org/static/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}.php ${PORTNAME}-${PORTVERSION}-en.php \
 		${PORTNAME}-${PORTVERSION}-mysql.php ${PORTNAME}-${PORTVERSION}-mysql-en.php
