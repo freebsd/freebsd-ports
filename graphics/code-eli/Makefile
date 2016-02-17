@@ -66,7 +66,7 @@ do-install-EXAMPLES-on:
 	${FIND} ${STAGEDIR}${EXAMPLESDIR}${TEST_SUBDIR} -name *Test | \
 		${XARGS} ${STRIP_CMD}
 
-post-install-DOCS-on:
+do-install-DOCS-on:
 	(cd ${BUILD_WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
