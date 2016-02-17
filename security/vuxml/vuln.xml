@@ -57,6 +57,107 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dd563930-d59a-11e5-8fa8-14dae9d210b8">
+    <topic>adminer -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>adminer</name>
+	<range><lt>4.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jakub Vrana reports:</p>
+	<blockquote cite="https://github.com/vrana/adminer/commit/e5352cc5acad21513bb02677e2021b80bf7e7b8b">
+	  <p>Fix remote code execution in SQLite query</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/vrana/adminer/commit/e5352cc5acad21513bb02677e2021b80bf7e7b8b</url>
+    </references>
+    <dates>
+      <discovery>2016-02-06</discovery>
+      <entry>2016-02-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="18201a1c-d59a-11e5-8fa8-14dae9d210b8">
+    <topic>adminer -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>adminer</name>
+	<range><lt>4.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jakub Vrana reports:</p>
+	<blockquote cite="https://github.com/vrana/adminer/commit/4be0b6655e0bf415960659db2a6dd4e60eebbd66">
+	  <p>Fix XSS in indexes (non-MySQL only)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/vrana/adminer/commit/4be0b6655e0bf415960659db2a6dd4e60eebbd66</url>
+    </references>
+    <dates>
+      <discovery>2015-11-08</discovery>
+      <entry>2016-02-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ad91ee9b-d599-11e5-8fa8-14dae9d210b8">
+    <topic>adminer -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>adminer</name>
+	<range><lt>4.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jakub Vrana reports:</p>
+	<blockquote cite="https://github.com/vrana/adminer/commit/596f8df373cd3efe5bcb6013858bd7a6bb5ecb2c">
+	  <p>Fix XSS in alter table</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/vrana/adminer/commit/596f8df373cd3efe5bcb6013858bd7a6bb5ecb2c</url>
+    </references>
+    <dates>
+      <discovery>2015-08-05</discovery>
+      <entry>2016-02-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8cf54d73-d591-11e5-8fa8-14dae9d210b8">
+    <topic>adminer -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>adminer</name>
+	<range><lt>4.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jakub Vrana reports:</p>
+	<blockquote cite="https://github.com/vrana/adminer/commit/c990de3b3ee1816afb130bd0e1570577bf54a8e5">
+	  <p>Fix XSS in login form</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/vrana/adminer/commit/c990de3b3ee1816afb130bd0e1570577bf54a8e5</url>
+      <url>https://sourceforge.net/p/adminer/bugs-and-features/436/</url>
+    </references>
+    <dates>
+      <discovery>2015-01-30</discovery>
+      <entry>2016-02-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="95b92e3b-d451-11e5-9794-e8e0b747a45a">
     <topic>libgcrypt -- side-channel attack on ECDH</topic>
     <affects>
