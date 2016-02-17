@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Turn-based strategy engine inspired by Panzer General
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv2
 
 BROKEN_powerpc=	does not install
 BROKEN_sparc64=	does not install

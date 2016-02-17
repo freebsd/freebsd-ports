@@ -8,7 +8,7 @@ MASTER_SITES=	GNUPG
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	General purpose crypto library based on code used in GnuPG
 
-LICENSE=	GPLv2+ LGPL21+
+LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error

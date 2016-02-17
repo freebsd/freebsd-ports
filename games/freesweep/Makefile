@@ -9,7 +9,7 @@ CATEGORIES=	games
 MAINTAINER=	rwestlun@gmail.com
 COMMENT=	Minesweeper-style game for text-mode terminals
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rwestlund
