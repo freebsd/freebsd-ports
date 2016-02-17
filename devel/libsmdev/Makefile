@@ -10,7 +10,8 @@ MASTER_SITES=	https://github.com/libyal/libsmdev/releases/download/${PORTVERSION
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Library to access to storage media devices
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE}
@@ -23,15 +24,8 @@ PORTDOCS=	AUTHORS ChangeLog
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-# posix_fadvise(2) did not return correct value on error
-.if (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100007) || (${OSVERSION} >= 1000000 && ${OSVERSION} < 1000703) || (${OSVERSION} < 902507)
-CONFIGURE_ENV+=	ac_cv_func_posix_fadvise=no
-.endif
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
