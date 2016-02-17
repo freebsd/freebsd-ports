@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Scalar/Util/Numeric.pm
+%%SITE_ARCH%%/auto/Scalar/Util/Numeric/Numeric.so
+%%PERL5_MAN3%%/Scalar::Util::Numeric.3.gz
