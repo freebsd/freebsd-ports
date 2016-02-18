@@ -23,6 +23,7 @@ NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	ftp mysql session zlib
 USES=		cpe perl5 zip
+IGNORE_WITH_PHP=	70
 
 PLIST_SUB=	WWWGRP=${WWWGRP} WWWOWN=${WWWOWN}
 WRKSRC=		${WRKDIR}/msd${PORTVERSION}
