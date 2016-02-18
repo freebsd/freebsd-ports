@@ -7,12 +7,13 @@
 -	_f=`echo $(1) | tr '[:upper:]' '[:lower:]'` &&\
 -	_d=`mktemp -d $(OBJDIR)/$$_f.XXXXXX` &&\
 -	_t=`basename $(3)` &&\
-+	_f=$(notdir $(basename $(2))) &&\
-+	_d=$$(mktemp -d $(3).XXXXXX) &&\
- 	$(YACC) $(YFLAGS) -p$(1) -o$$_d/$$_f.c -d $(2) &&\
+-	$(YACC) $(YFLAGS) -p$(1) -o$$_d/$$_f.c -d $(2) &&\
 -	mv $$_d/$$_f.$${_t\#\#*.} $(3);\
 -	test -d $$_d && rm -fr $$_d
-+	mv $$_d/$$_f$(suffix $(3)) $(3) &&\
++	_d=$$(mktemp -d $(3).XXXXXX) &&\
++	_t=$$_d/$(notdir $(basename $(2))) &&\
++	$(YACC) $(YFLAGS) -p$(1) -o$$_t.c -d $(2) &&\
++	mv $$_t$(suffix $(3)) $(3) &&\
 +	rm -fr $$_d
  
  #
