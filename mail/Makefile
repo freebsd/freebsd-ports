@@ -499,7 +499,6 @@
     SUBDIR += prepflog
     SUBDIR += procmail
     SUBDIR += prom-wl
-    SUBDIR += pronto
     SUBDIR += proxsmtp
     SUBDIR += py-Products.MailHost
     SUBDIR += py-Products.SecureMailHost
