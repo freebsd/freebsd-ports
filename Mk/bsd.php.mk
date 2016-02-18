@@ -291,8 +291,11 @@ mcrypt_DEPENDS=	security/php${PHP_VER}-mcrypt
 memcache_DEPENDS=	databases/pecl-memcache
 mhash_DEPENDS=	security/php${PHP_VER}-mhash
 mssql_DEPENDS=	databases/php${PHP_VER}-mssql
+.if ${PHP_VER} == 55 || ${PHP_VER} == 56
 mysql_DEPENDS=	databases/php${PHP_VER}-mysql
+.else
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
+.endif
 ncurses_DEPENDS=devel/php${PHP_VER}-ncurses
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
 oci8_DEPENDS=	databases/php${PHP_VER}-oci8
