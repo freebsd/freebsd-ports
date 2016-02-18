@@ -57,6 +57,51 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2dd7e97e-d5e8-11e5-bcbd-bc5ff45d0f28">
+    <topic>glibc -- getaddrinfo stack-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>linux_base-c6</name>
+	<name>linux_base-c6_64</name>
+	<range><lt>6.7_1</lt></range>
+      </package>
+      <package>
+	<name>linux_base-f10</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fabio Olive Leite reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-7547">
+	  <p>A stack-based buffer overflow was found in libresolv when invoked
+	    from nss_dns, allowing specially crafted DNS responses to seize
+	    control of EIP in the DNS client. The buffer overflow occurs in the
+	    functions send_dg (send datagram) and send_vc (send TCP) for the
+	    NSS module libnss_dns.so.2 when calling getaddrinfo with AF_UNSPEC
+	    family, or in some cases AF_INET6 family. The use of AF_UNSPEC (or
+	    AF_INET6 in some cases) triggers the low-level resolver code to
+	    send out two parallel queries for A and AAAA. A mismanagement of
+	    the buffers used for those queries could result in the response of
+	    a query writing beyond the alloca allocated buffer created by
+	    __res_nquery.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7547</cvename>
+      <freebsdpr>ports/207272</freebsdpr>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-7547</url>
+      <url>https://blog.des.no/2016/02/freebsd-and-cve-2015-7547/</url>
+      <url>https://googleonlinesecurity.blogspot.no/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html</url>
+      <url>https://sourceware.org/ml/libc-alpha/2016-02/msg00416.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-16</discovery>
+      <entry>2016-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="56562efb-d5e4-11e5-b2bd-002590263bf5">
     <topic>squid -- SSL/TLS processing remote DoS</topic>
     <affects>
