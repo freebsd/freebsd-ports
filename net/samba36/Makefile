@@ -14,6 +14,10 @@ LICENSE=		GPLv3
 LICENSE_FILE=		${WRKDIR}/${DISTNAME}/COPYING
 
 CONFLICTS?=		*samba3[2-5]-3.*
+
+DEPRECATED=		not supported by the upstream
+EXPIRATION_DATE=	2016-03-01
+
 # Additional patches from Sernet.de
 PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch
