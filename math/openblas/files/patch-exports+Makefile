@@ -1,10 +1,10 @@
---- exports/Makefile.orig	2012-11-27 08:24:53.000000000 +0900
-+++ exports/Makefile	2012-11-28 01:24:49.000000000 +0900
-@@ -122,6 +122,7 @@
+--- exports/Makefile.orig	2015-10-27 20:44:50 UTC
++++ exports/Makefile
+@@ -140,6 +140,7 @@ endif
  #http://stackoverflow.com/questions/7656425/makefile-ifeq-logical-or
  ifeq ($(OSNAME), $(filter $(OSNAME),FreeBSD NetBSD))
  
 +EXTRALIB += -lgfortran
  so : ../$(LIBSONAME)
  
- ../$(LIBSONAME) : ../$(LIBNAME) linux.def linktest.c
+ ifeq (, $(SYMBOLPREFIX)$(SYMBOLSUFFIX))
