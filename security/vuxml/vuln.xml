@@ -57,6 +57,35 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="368993bb-d685-11e5-8858-00262d5ed8ee">
+    <topic>chromium -- same origin bypass</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>48.0.2564.116</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2016/02/stable-channel-update_18.html">
+	  <p>[583431] Critical CVE-2016-1629: Same-origin bypass in Blink
+	    and Sandbox escape in Chrome. Credit to anonymous.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1629</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2016/02/stable-channel-update_18.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-18</discovery>
+      <entry>2016-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2dd7e97e-d5e8-11e5-bcbd-bc5ff45d0f28">
     <topic>glibc -- getaddrinfo stack-based buffer overflow</topic>
     <affects>
