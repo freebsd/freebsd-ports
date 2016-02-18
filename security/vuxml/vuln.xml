@@ -10001,11 +10001,13 @@ Notes:
     </description>
     <references>
       <freebsdpr>ports/203186</freebsdpr>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2015_3.txt</url>
       <url>http://www.openwall.com/lists/oss-security/2015/09/18/1</url>
     </references>
     <dates>
       <discovery>2015-09-18</discovery>
       <entry>2015-09-18</entry>
+      <modified>2016-02-18</modified>
     </dates>
   </vuln>
 
