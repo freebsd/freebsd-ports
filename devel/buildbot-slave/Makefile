@@ -3,7 +3,7 @@
 
 PORTNAME=	buildbot-slave
 PORTVERSION=	0.8.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
@@ -19,6 +19,9 @@ TEST_DEPENDS=	trial:${PORTSDIR}/devel/py-twisted \
 
 USES=		python:-2.7
 USE_PYTHON=	autoplist distutils
+USE_RC_SUBR=	buildslave
+
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 NO_ARCH=	yes
 
