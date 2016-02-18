@@ -51,6 +51,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/d.lang
 %%DATADIR%%/langDefs/dart.lang
 %%DATADIR%%/langDefs/diff.lang
+%%DATADIR%%/langDefs/dts.lang
 %%DATADIR%%/langDefs/dylan.lang
 %%DATADIR%%/langDefs/ebnf.lang
 %%DATADIR%%/langDefs/eiffel.lang
@@ -85,6 +86,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/jasmin.lang
 %%DATADIR%%/langDefs/java.lang
 %%DATADIR%%/langDefs/js.lang
+%%DATADIR%%/langDefs/json.lang
 %%DATADIR%%/langDefs/jsp.lang
 %%DATADIR%%/langDefs/julia.lang
 %%DATADIR%%/langDefs/kotlin.lang
@@ -104,6 +106,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/maple.lang
 %%DATADIR%%/langDefs/matlab.lang
 %%DATADIR%%/langDefs/maya.lang
+%%DATADIR%%/langDefs/md.lang
 %%DATADIR%%/langDefs/mercury.lang
 %%DATADIR%%/langDefs/miranda.lang
 %%DATADIR%%/langDefs/mod2.lang
@@ -111,6 +114,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/modelica.lang
 %%DATADIR%%/langDefs/moon.lang
 %%DATADIR%%/langDefs/ms.lang
+%%DATADIR%%/langDefs/msl.lang
 %%DATADIR%%/langDefs/mssql.lang
 %%DATADIR%%/langDefs/mxml.lang
 %%DATADIR%%/langDefs/n3.lang
@@ -120,6 +124,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/netrexx.lang
 %%DATADIR%%/langDefs/nginx.lang
 %%DATADIR%%/langDefs/nice.lang
+%%DATADIR%%/langDefs/nim.lang
 %%DATADIR%%/langDefs/nsis.lang
 %%DATADIR%%/langDefs/nxc.lang
 %%DATADIR%%/langDefs/oberon.lang
@@ -176,6 +181,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/langDefs/sql.lang
 %%DATADIR%%/langDefs/squirrel.lang
 %%DATADIR%%/langDefs/styl.lang
+%%DATADIR%%/langDefs/svg.lang
 %%DATADIR%%/langDefs/swift.lang
 %%DATADIR%%/langDefs/sybase.lang
 %%DATADIR%%/langDefs/tcl.lang
@@ -198,6 +204,7 @@ man/man1/highlight.1.gz
 %%DATADIR%%/plugins/asciidoc_html_add_links.lua
 %%DATADIR%%/plugins/bash_functions.lua
 %%DATADIR%%/plugins/bash_ref_linuxmanpages_com.lua
+%%DATADIR%%/plugins/comment_links.lua
 %%DATADIR%%/plugins/cpp_qt.lua
 %%DATADIR%%/plugins/cpp_ref_cplusplus_com.lua
 %%DATADIR%%/plugins/cpp_ref_gtk_gnome_org.lua
@@ -211,14 +218,17 @@ man/man1/highlight.1.gz
 %%DATADIR%%/plugins/keywords_capitalize.lua
 %%DATADIR%%/plugins/keywords_lowercase.lua
 %%DATADIR%%/plugins/keywords_uppercase.lua
+%%DATADIR%%/plugins/mark_lines.lua
 %%DATADIR%%/plugins/outhtml_add_background_stripes.lua
 %%DATADIR%%/plugins/outhtml_add_background_svg.lua
 %%DATADIR%%/plugins/outhtml_add_line.lua
 %%DATADIR%%/plugins/outhtml_add_shadow.lua
+%%DATADIR%%/plugins/outhtml_codefold.lua
 %%DATADIR%%/plugins/outhtml_curly_brackets_matcher.lua
 %%DATADIR%%/plugins/outhtml_keyword_matcher.lua
 %%DATADIR%%/plugins/outhtml_modern_fonts.lua
 %%DATADIR%%/plugins/outhtml_parantheses_matcher.lua
+%%DATADIR%%/plugins/outhtml_tooltips.lua
 %%DATADIR%%/plugins/perl_ref_perl_org.lua
 %%DATADIR%%/plugins/python_ref_python_org.lua
 %%DATADIR%%/plugins/reduce_filesize.lua
