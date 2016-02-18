@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfu-util
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	comms
 MASTER_SITES=	http://dfu-util.sourceforge.net/releases/
 
