@@ -249,6 +249,16 @@ USE_PHP=	pdo
 USE_PHP_BUILD=	yes
 .endif
 
+.if ${PHP_MODNAME} == "pdo_mysql"
+OPTIONS_DEFINE=	MYSQLND
+OPTIONS_DEFAULT=MYSQLND
+
+MYSQLND_DESC=	Use MySQL Native Driver
+
+USE_PHP=	pdo
+USE_PHP_BUILD=	yes
+.endif
+
 .if ${PHP_MODNAME} == "pdo_pgsql"
 USES+=		pgsql
 
@@ -530,17 +540,13 @@ CONFIGURE_ARGS+=--disable-mbregex
 CONFIGURE_ARGS+=--with-mysqli=mysqlnd
 .	else
 CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
-
 USE_MYSQL=	yes
 .	endif
 .endif
 
 .if ${PHP_MODNAME} == "pdo_mysql"
-USE_PHP=pdo
-USE_PHP_BUILD=	yes
 .	if ${PORT_OPTIONS:MMYSQLND}
 CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
-USE_PHP+=	mysqli
 .	else
 CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
 		--with-zlib-dir=/usr
@@ -558,19 +564,6 @@ post-extract:
 LIB_DEPENDS+=	libsybdb.so:${PORTSDIR}/databases/freetds
 .	else
 LIB_DEPENDS+=	libct.so:${PORTSDIR}/databases/freetds
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "pdo_mysql"
-.	if ${PORT_OPTIONS:MMYSQLND}
-CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
-
-USE_PHP+=	mysql
-.	else
-CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
-		--with-zlib-dir=/usr
-
-USE_MYSQL=	yes
 .	endif
 .endif
 
