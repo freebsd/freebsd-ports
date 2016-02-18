@@ -17,7 +17,7 @@ USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 USE_PHP_BUILD=	yes
-IGNORE_WITH_PHP=	53
+IGNORE_WITH_PHP=	70
 
 USES=		perl5 tar:tgz
 

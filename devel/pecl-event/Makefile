@@ -22,6 +22,6 @@ USE_PHP=	sockets
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	event
-IGNORE_WITH_PHP=52 53
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

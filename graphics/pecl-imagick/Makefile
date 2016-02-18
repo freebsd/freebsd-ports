@@ -22,6 +22,7 @@ X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick-nox11
 USES=		pkgconfig tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--with-imagick=${LOCALBASE}
 
