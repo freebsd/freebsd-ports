@@ -1,4 +1,4 @@
---- src/sock.c.orig	2015-06-03 19:01:21 UTC
+--- src/sock.c.orig	2015-12-22 20:12:40 UTC
 +++ src/sock.c
 @@ -148,7 +148,7 @@ new_socket(CONN *C, const char *hostpara
        hp = NULL;
