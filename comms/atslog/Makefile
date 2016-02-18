@@ -3,7 +3,7 @@
 
 PORTNAME=	atslog
 PORTVERSION=	2.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms
 MASTER_SITES=	BERLIOS
 
@@ -39,7 +39,7 @@ WANT_PHP_WEB=	yes
 USE_PHP+=	gd
 .endif
 .if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
+USE_PHP+=	mysqli
 .endif
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
