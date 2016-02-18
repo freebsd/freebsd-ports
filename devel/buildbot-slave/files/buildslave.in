@@ -42,6 +42,8 @@
 
 . /etc/rc.subr
 
+export PATH=${PATH}:%%LOCALBASE%%/bin
+
 name=buildslave
 desc="Buildbot Buildslave"
 rcvar=buildslave_enable
