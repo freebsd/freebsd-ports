@@ -57,6 +57,43 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="56562efb-d5e4-11e5-b2bd-002590263bf5">
+    <topic>squid -- SSL/TLS processing remote DoS</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>3.5.13</ge><lt>3.5.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squid security advisory 2016:1 reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2016_1.txt">
+	  <p>Due to incorrectly handling server errors Squid is vulnerable to a
+	    denial of service attack when connecting to TLS or SSL servers.</p>
+	  <p>This problem allows any trusted client to perform a denial of
+	    service attack on the Squid service regardless of whether TLS or
+	    SSL is configured for use in the proxy.</p>
+	  <p>Misconfigured client or server software may trigger this issue
+	    to perform a denial of service unintentionally.</p>
+	  <p>However, the bug is exploitable only if Squid is built using the
+	    --with-openssl option.</p>
+	</blockquote>
+	<p>The FreeBSD port does not use SSL by default and is not vulnerable
+	  in the default configuration.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-2390</cvename>
+      <freebsdpr>ports/207294</freebsdpr>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2016_1.txt</url>
+    </references>
+    <dates>
+      <discovery>2016-02-16</discovery>
+      <entry>2016-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dd563930-d59a-11e5-8fa8-14dae9d210b8">
     <topic>adminer -- remote code execution</topic>
     <affects>
