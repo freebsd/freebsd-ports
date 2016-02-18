@@ -16,5 +16,6 @@ LICENSE=	MIT
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

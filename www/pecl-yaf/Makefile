@@ -23,5 +23,6 @@ PHP_MODNAME=	${PORTNAME:tl}
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

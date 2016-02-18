@@ -18,5 +18,6 @@ LIB_DEPENDS=	librabbitmq.so:${PORTSDIR}/net/rabbitmq-c-devel
 PHP_MODNAME=	${PORTNAME}
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

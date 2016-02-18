@@ -18,6 +18,7 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 USES=		tar:tgz
 USE_GCC=	any
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.pre.mk>
 
