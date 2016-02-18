@@ -28,9 +28,6 @@ GH_TAGNAME=	${COMPILER_RT_COMMIT}
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	plist contents not known
 
-CC=clang-devel
-CXX=clang++-devel
-
 .include <bsd.port.pre.mk>
 
 .for arch in ${ONLY_FOR_ARCHS}
