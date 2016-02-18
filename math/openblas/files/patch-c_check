@@ -1,6 +1,6 @@
---- c_check.orig	2014-12-03 16:14:21.000000000 +0100
-+++ c_check	2015-02-01 01:01:27.784108000 +0100
-@@ -228,7 +228,7 @@
+--- c_check.orig	2015-10-27 20:44:50 UTC
++++ c_check
+@@ -235,7 +235,7 @@ open(CONFFILE, "> $config"  ) || die "Ca
  # print $data, "\n";
  
  print MAKEFILE "OSNAME=$os\n";
