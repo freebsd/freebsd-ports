@@ -16,6 +16,6 @@ LICENSE=	PHP301
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USES=		tar:tgz
-IGNORE_WITH_PHP=	53
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

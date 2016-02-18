@@ -17,6 +17,6 @@ USES=		tar:tgz
 USE_PHP=	dom xml xsl
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=	5
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

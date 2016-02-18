@@ -17,6 +17,8 @@ USES=		tar:tgz
 USE_PHP=	spl
 USE_PHPEXT=	yes
 USE_PHP_BUILD=	yes
+IGNORE_WITH_PHP=	70
+
 
 CONFIGURE_ARGS=	--enable-rar
 
