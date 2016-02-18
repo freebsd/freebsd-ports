@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	glebius@FreeBSD.org
+MAINTAINER=	z7dr6ut7gs@snkmail.com
 COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 
 LICENSE=	BSD3CLAUSE
