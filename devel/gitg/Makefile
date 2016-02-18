@@ -12,8 +12,6 @@ COMMENT=	GTK-based git repository viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build
-
 LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libgee-0.8.so:${PORTSDIR}/devel/libgee \
 		libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
@@ -25,6 +23,7 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 CONFLICTS=	gitg0-[0-9]*
+PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
@@ -33,6 +32,8 @@ CONFIGURE_ARGS=	--disable-silent-rules \
 		--enable-compile-warnings=no
 USE_GNOME=	glib20 gtk30 gtksourceview3 intlhack introspection
 INSTALL_TARGET=	install-strip
+
+MAKE_JOBS_UNSAFE=	yes
 
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
