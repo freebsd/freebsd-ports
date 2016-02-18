@@ -10,8 +10,6 @@ COMMENT=	Accessibility Toolkit, Linux/i386 binary (Linux CentOS ${LINUX_DIST_VER
 
 LICENSE=	GPLv3
 
-PKGNAMEPREFIX=	linux-${USE_LINUX}-
-
 CONFLICTS=	linux-atk-[0-9]* linux-f10-atk-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64

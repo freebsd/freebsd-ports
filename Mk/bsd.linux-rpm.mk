@@ -11,7 +11,7 @@
 #					  Valid values for "fedora": all version numbers
 #					  e.g. 10 for fedora 10
 #					  Valid values for "centos": all version numbers
-#					  e.g. 6.6 for centos 6.6
+#					  e.g. 6.7 for centos 6.7
 #					  This is used to set MASTER_SITE_{,SRC_}SUBDIR
 #					  if it isn't already set.
 # MASTER_SITE_SRC_SUBDIR
@@ -63,7 +63,7 @@ LINUX_DIST=	fedora
 LINUX_DIST_VER=	10
 .else			# default to CentOS
 LINUX_DIST=	centos
-LINUX_DIST_VER=	6.6
+LINUX_DIST_VER=	6.7
 .endif
 
 .if defined(LINUX_DIST)
@@ -162,7 +162,7 @@ PLIST?=		${MASTERDIR}/pkg-plist.${LINUX_RPM_ARCH}
 _LINUX_BASE_SUFFIX=		f10
 .	elif ${USE_LINUX} == "c6" || ${USE_LINUX} == "yes"
 _LINUX_BASE_SUFFIX=		c6
-.	elif ${USE_LINUX} == "c6_64
+.	elif ${USE_LINUX} == "c6_64"
 _LINUX_BASE_SUFFIX=		c6
 .	else
 # other linux_base ports do not provide a pkg-plist file

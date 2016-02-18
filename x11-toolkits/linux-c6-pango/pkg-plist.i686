@@ -33,10 +33,4 @@ usr/share/man/man1/pango-querymodules.1.gz
 usr/share/man/man1/pango-view.1.gz
 @comment deal with empty directories created by the port
 @exec /bin/mkdir -p %D/etc/pango/i386-redhat-linux-gnu
-@dirrmtry etc/pango/i386-redhat-linux-gnu
-@comment non-empty directory listing in revers order
-@dirrm usr/share/doc/pango-1.28.1
-@dirrm usr/lib/pango/1.6.0/modules
-@dirrm usr/lib/pango/1.6.0
-@dirrm usr/lib/pango
-@dirrm etc/pango
+@dir etc/pango/i386-redhat-linux-gnu

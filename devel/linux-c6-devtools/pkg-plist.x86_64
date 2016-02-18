@@ -1161,6 +1161,7 @@ usr/include/linux/keyboard.h
 usr/include/linux/keyctl.h
 usr/include/linux/kvm.h
 usr/include/linux/kvm_para.h
+usr/include/linux/libc-compat.h
 usr/include/linux/limits.h
 usr/include/linux/llc.h
 usr/include/linux/loop.h
@@ -1713,6 +1714,7 @@ usr/include/tgmath.h
 usr/include/thread_db.h
 usr/include/time.h
 usr/include/ttyent.h
+usr/include/uapi/nvme.h
 usr/include/ucontext.h
 usr/include/ulimit.h
 usr/include/unistd.h
@@ -1827,7 +1829,7 @@ usr/lib/gcc/x86_64-redhat-linux/4.4.7
 usr/lib64/gcrt1.o
 usr/lib64/libBrokenLocale.so
 usr/lib64/libanl.so
-usr/lib64/libbfd-2.20.51.0.2-5.42.el6.so
+usr/lib64/libbfd-2.20.51.0.2-5.43.el6.so
 usr/lib64/libbfd.a
 usr/lib64/libbfd.so
 usr/lib64/libbsd-compat.a
@@ -1853,7 +1855,7 @@ usr/lib64/libnss_files.so
 usr/lib64/libnss_hesiod.so
 usr/lib64/libnss_nis.so
 usr/lib64/libnss_nisplus.so
-usr/lib64/libopcodes-2.20.51.0.2-5.42.el6.so
+usr/lib64/libopcodes-2.20.51.0.2-5.43.el6.so
 usr/lib64/libopcodes.a
 usr/lib64/libopcodes.so
 usr/lib64/libpthread.so

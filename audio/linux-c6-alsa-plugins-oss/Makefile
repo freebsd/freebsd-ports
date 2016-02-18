@@ -5,7 +5,6 @@ PORTNAME=	alsa-plugins-oss
 PORTVERSION=	1.0.21
 PORTREVISION=	3
 CATEGORIES=	audio linux
-PKGNAMEPREFIX=	linux-${USE_LINUX}-
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	OSS plugin for ALSA (Linux CentOS ${LINUX_DIST_VER})
