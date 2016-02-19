@@ -370,6 +370,7 @@ safe_port=                                      devel/hs-safe
 SafeSemaphore_port=                             devel/hs-SafeSemaphore
 sandi_port=                                     converters/hs-sandi
 scientific_port=                                devel/hs-scientific
+scroll_port=                                    games/hs-scroll                                 # executable
 securemem_port=                                 devel/hs-securemem
 semigroupoids_port=                             math/hs-semigroupoids
 semigroups_port=                                math/hs-semigroups
