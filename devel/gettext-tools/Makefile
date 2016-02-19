@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 .include "${.CURDIR}/../gettext/Makefile.common"
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-csharp --disable-java --disable-openmp \
 		--with-included-glib --with-included-libcroco \
