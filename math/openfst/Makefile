@@ -16,7 +16,4 @@ USE_LDCONFIG=	${LOCALBASE}/lib/fst
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-bin --enable-compact-fsts --enable-compress --enable-const-fsts --enable-far --enable-linear-fsts --enable-lookahead-fsts --enable-mpdt --enable-ngram-fsts --enable-pdt
 
-post-patch:
-	${REINPLACE_CMD} -e s#-ldl## ${WRKSRC}/src/extensions/far/Makefile.in ${WRKSRC}/src/extensions/pdt/Makefile.in ${WRKSRC}/src/bin/Makefile.in ${WRKSRC}/src/test/Makefile.in ${WRKSRC}/src/extensions/linear/Makefile.in ${WRKSRC}/src/extensions/compress/Makefile.in ${WRKSRC}/src/extensions/mpdt/Makefile.in ${WRKSRC}/src/lib/Makefile.in ${WRKSRC}/src/script/Makefile.in
-
 .include <bsd.port.mk>
