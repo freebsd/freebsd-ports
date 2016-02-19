@@ -3,6 +3,7 @@
 
 PORTNAME=	cdash
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cdash.org/wp-content/uploads/2014/11/
 DISTNAME=	CDash-2-2-3
@@ -34,7 +35,7 @@ OPTIONS_DEFAULT=MYSQL
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-USE_PHP+=	mysql pdo_mysql
+USE_PHP+=	pdo_mysql
 DB_TYPE=	mysql
 .endif
 
