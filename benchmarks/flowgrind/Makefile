@@ -6,7 +6,7 @@ PORTVERSION=	0.7.5
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	benchmarks
 
-MAINTAINER=	lars@eggert.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Measure throughput and other metrics for TCP
 
 LICENSE=	GPLv3+
