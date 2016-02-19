@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.5.50.g20160215
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox:dtc \
@@ -276,7 +276,6 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ivshmem-*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/qemu/palcode-clipper
 .endif
 
 .include <bsd.port.mk>
