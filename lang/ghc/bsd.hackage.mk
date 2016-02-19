@@ -304,6 +304,7 @@ murmur-hash_port=                               devel/hs-murmur-hash
 mutable-containers_port=                        devel/hs-mutable-containers
 mwc-random_port=                                math/hs-mwc-random
 mysql_port=                                     databases/hs-mysql
+ncurses_port=                                   devel/hs-ncurses                                # lib_depends
 network_port=                                   net/hs-network
 network-info_port=                              net/hs-network-info
 network-multicast_port=                         net/hs-network-multicast
