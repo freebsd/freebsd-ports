@@ -189,6 +189,7 @@
     SUBDIR += hitch
     SUBDIR += hlfl
     SUBDIR += hmap
+    SUBDIR += honeybadger
     SUBDIR += honggfuzz
     SUBDIR += hotssh
     SUBDIR += hpenc
