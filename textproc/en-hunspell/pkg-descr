@@ -1,4 +1,5 @@
-English hunspell dictionaries
+This port installs English dictionaries for US, British, and Canadian
+variants of the language. Although use of the "standard" ones is
+encouraged, multiple spelling options are available for all three.
 
-WWW: http://wordlist.sourceforge.net/
-WWW: http://en-gb.pyxidium.co.uk/dictionary/
+WWW: http://wordlist.aspell.net/

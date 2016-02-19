@@ -1,6 +1,6 @@
---- Makefile.rule.orig	2012-02-05 16:36:05.000000000 +0900
-+++ Makefile.rule	2012-02-05 16:36:23.000000000 +0900
-@@ -14,10 +14,10 @@
+--- Makefile.rule.orig	2015-10-27 20:44:50 UTC
++++ Makefile.rule
+@@ -19,10 +19,10 @@ VERSION = 0.2.15
  
  # C compiler including binary type(32bit / 64bit). Default is gcc.
  # Don't use Intel Compiler or PGI, it won't generate right codes as I expect.
@@ -11,5 +11,5 @@
 -# FC = gfortran
 +FC = %%FC%%
  
- # Even you can specify cross compiler
- # CC = x86_64-w64-mingw32-gcc
+ # Even you can specify cross compiler. Meanwhile, please set HOSTCC.
+ 

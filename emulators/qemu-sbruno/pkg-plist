@@ -2,6 +2,8 @@
 %%SOFTMMU%%bin/qemu-img
 %%SOFTMMU%%bin/qemu-io
 %%SOFTMMU%%bin/qemu-nbd
+%%SOFTMMU%%bin/ivshmem-client
+%%SOFTMMU%%bin/ivshmem-server
 %%NONX86%%bin/qemu-system-aarch64
 %%NONX86%%bin/qemu-system-alpha
 %%NONX86%%bin/qemu-system-arm

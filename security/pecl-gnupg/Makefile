@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include/gpgme
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USES=		localbase tar:tgz
+IGNORE_WITH_PHP=	70
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$GNUPG_DIR/lib|${LOCALBASE}/lib|; s| -ldl||g' ${WRKSRC}/config.m4

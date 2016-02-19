@@ -19,5 +19,6 @@ LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USES=		tar:tgz
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

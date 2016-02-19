@@ -6,21 +6,24 @@ PORTVERSION=	0.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.icir.org/mallman/software/tcpsplit/
 
-MAINTAINER=	lars@eggert.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Breaks a libpcap trace along TCP connection boundaries
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 PLIST_FILES=	bin/tcpsplit
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -E '/^(CC|CFLAGS|INC|LD)/d' ${WRKSRC}/Makefile
 
-OPTIONS_DEFINE=	DOCS
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpsplit ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

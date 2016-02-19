@@ -246,16 +246,16 @@ php-ini:
 _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dom \
 		exif fileinfo filter ftp gd gettext gmp \
 		hash iconv igbinary imap interbase intl json ldap mbstring mcrypt \
-		memcache mssql mysql mysqli odbc opcache \
+		memcache mysqli odbc opcache \
 		openssl pcntl pcre pdf pdo pdo_dblib pdo_firebird pdo_mysql \
-		pdo_odbc pdo_pgsql pdo_sqlite pgsql posix \
+		pdo_odbc pdo_pgsql pdo_sqlite phar pgsql posix \
 		pspell radius readline recode session shmop simplexml snmp soap\
-		sockets spl sybase_ct sysvmsg sysvsem sysvshm \
+		sockets spl sqlite3 sysvmsg sysvsem sysvshm \
 		tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
-_USE_PHP_VER55=	${_USE_PHP_ALL} phar sqlite3
-_USE_PHP_VER56=	${_USE_PHP_ALL} phar sqlite3
-_USE_PHP_VER70=	${_USE_PHP_ALL} phar sqlite3
+_USE_PHP_VER55=	${_USE_PHP_ALL} mssql mysql sybase_ct
+_USE_PHP_VER56=	${_USE_PHP_ALL} mssql mysql sybase_ct
+_USE_PHP_VER70=	${_USE_PHP_ALL}
 
 apc_DEPENDS=	www/pecl-APC
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath

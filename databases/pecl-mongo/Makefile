@@ -21,5 +21,6 @@ USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--enable-mongo
 SUB_FILES=	pkg-message
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

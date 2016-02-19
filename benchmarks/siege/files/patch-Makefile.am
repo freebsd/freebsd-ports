@@ -1,4 +1,4 @@
---- Makefile.am.orig	2015-06-04 10:45:57 UTC
+--- Makefile.am.orig	2015-12-22 20:12:40 UTC
 +++ Makefile.am
 @@ -20,6 +20,8 @@
  ## 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.

@@ -49,6 +49,7 @@ plex_precmd()
 	export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=${%%PORTNAME%%_maxplugins}
 	export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=${%%PORTNAME%%_support_path}
 	export PLEX_MEDIA_SERVER_PIDFILE=${pidfile}
+	export PLEX_MEDIA_SERVER_LOG_DIR="${%%PORTNAME%%_support_path}/Plex Media Server/Logs"
 	export PATH="${SCRIPTPATH}/Resources/Python/bin:${PATH}"
 	export LC_ALL="en_US.UTF-8"
 	export LANG="en_US.UTF-8"

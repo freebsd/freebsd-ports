@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tivoka
-PORTVERSION=	3.2.1
+PORTVERSION=	3.4.2
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org

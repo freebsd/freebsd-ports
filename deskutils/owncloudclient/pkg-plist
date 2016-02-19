@@ -26,6 +26,8 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client-3.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client-4.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client-7.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client-8.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client-9.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client6.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/folderwizard_local.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/folderwizard_remote.png
@@ -37,12 +39,15 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/ignored_files_editor.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/log_output_window.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/mac-share.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/menu.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/save_log_file.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/settings_account.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/settings_activity.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/settings_general.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/settings_network.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/share-1.png
+%%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/share-2.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/advancedusage.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/architecture.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_sources/autoupdate.txt
@@ -109,6 +114,8 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/latex/client-3.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/client-4.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/client-7.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/client-8.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/client-9.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/client6.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/fncychap.sty
 %%PORTDOCS%%%%DOCSDIR%%/latex/icon-error.png
@@ -120,6 +127,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/latex/ignored_files_editor.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/log_output_window.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/logo-blue.pdf
+%%PORTDOCS%%%%DOCSDIR%%/latex/mac-share.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/menu.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.aux
 %%PORTDOCS%%%%DOCSDIR%%/latex/ownCloudClientManual.idx
@@ -133,6 +141,8 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/latex/python.ist
 %%PORTDOCS%%%%DOCSDIR%%/latex/save_log_file.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/settings_network.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/share-1.png
+%%PORTDOCS%%%%DOCSDIR%%/latex/share-2.png
 %%PORTDOCS%%%%DOCSDIR%%/latex/sphinx.sty
 %%PORTDOCS%%%%DOCSDIR%%/latex/sphinxhowto.cls
 %%PORTDOCS%%%%DOCSDIR%%/latex/sphinxmanual.cls
@@ -201,6 +211,7 @@ share/icons/hicolor/72x72/apps/ownCloud_sync_shared.png
 share/icons/hicolor/72x72/apps/ownCloud_warn.png
 share/icons/hicolor/72x72/apps/ownCloud_warn_shared.png
 share/nautilus-python/extensions/syncstate.py
+share/nemo-python/extensions/syncstate.py
 share/owncloud/i18n/client_TW.qm
 share/owncloud/i18n/client_ca.qm
 share/owncloud/i18n/client_cs.qm

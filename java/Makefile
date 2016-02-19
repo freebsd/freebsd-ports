@@ -65,6 +65,7 @@
     SUBDIR += jcalendar
     SUBDIR += jcckit
     SUBDIR += jcommon
+    SUBDIR += jd-gui
     SUBDIR += jdbcpool
     SUBDIR += jdk16-doc
     SUBDIR += jdk7-doc

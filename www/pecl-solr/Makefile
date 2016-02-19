@@ -18,5 +18,6 @@ USE_PHP=	json
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

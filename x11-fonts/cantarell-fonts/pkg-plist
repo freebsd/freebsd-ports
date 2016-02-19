@@ -1,5 +1,5 @@
 etc/fonts/conf.avail/31-cantarell.conf
-%%FONTSDIR%%/Cantarell-Bold-Oblique.otf
+%%FONTSDIR%%/Cantarell-BoldOblique.otf
 %%FONTSDIR%%/Cantarell-Bold.otf
 %%FONTSDIR%%/Cantarell-Oblique.otf
 %%FONTSDIR%%/Cantarell-Regular.otf

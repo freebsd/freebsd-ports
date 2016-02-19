@@ -5,6 +5,7 @@
 %%LIBDIR%%/lib/Tivoka/Client/Connection/ConnectionInterface.php
 %%LIBDIR%%/lib/Tivoka/Client/Connection/Http.php
 %%LIBDIR%%/lib/Tivoka/Client/Connection/Tcp.php
+%%LIBDIR%%/lib/Tivoka/Client/Connection/WebSocket.php
 %%LIBDIR%%/lib/Tivoka/Client/NativeInterface.php
 %%LIBDIR%%/lib/Tivoka/Client/Notification.php
 %%LIBDIR%%/lib/Tivoka/Client/Request.php

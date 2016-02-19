@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	letsencrypt.sh
-PORTVERSION=	0.0.0.20160215
+PORTVERSION=	0.0.0.20160217
 CATEGORIES=	security
 
 MAINTAINER=	sascha@root-login.org
@@ -14,7 +14,7 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lukas2511
-GH_TAGNAME=	63b61b8
+GH_TAGNAME=	669185a
 
 OPTIONS_SINGLE=	SHELL
 OPTIONS_SINGLE_SHELL=	BASH ZSH
@@ -39,9 +39,11 @@ PLIST_FILES=	bin/letsencrypt.sh \
 		%%ETCDIR%%/hook.sh.example \
 		%%ETCDIR%%/domains.txt.example \
 		${PERIODIC_DIRS}/000.letsencrypt.sh
+PORTDOCS_PLIST_FILES=	%%PORTDOCS%%%%DOCSDIR%%/README.md
 
 SUB_FILES=	000.letsencrypt.sh pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
+PORTDOCS=	README.md
 
 SHEBANG_FILES=	config.sh.example hook.sh.example letsencrypt.sh
 
@@ -57,5 +59,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/domains.txt.example ${STAGEDIR}${ETCDIR}/domains.txt.example
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODIC_FILES} ${STAGEDIR}${PREFIX}/${PERIODIC_DIRS}/${PERIODIC_FILES}
+
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

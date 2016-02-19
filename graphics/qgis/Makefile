@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qgis
-PORTVERSION=	2.12.2
-PORTREVISION=	1
+PORTVERSION=	2.12.3
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -24,24 +23,24 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
-GH_TAGNAME=	B403532
+GH_TAGNAME=	99ac688
 
-USES=		cpe bison cmake execinfo fortran gmake sqlite python
+USES=		cpe bison cmake execinfo fortran gmake python sqlite
 USE_QT4=	gui svg xml network sql designer testlib linguist_build \
 		qmake_build moc_build rcc_build uic_build
 
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=		POSTGIS PYTHON GRASS SERVER
+OPTIONS_DEFINE=		PYTHON POSTGIS GRASS SERVER
 OPTIONS_GROUP=		DEVELOPER
 OPTIONS_GROUP_DEVELOPER=	CUSTOMWIDGETS ASTYLE DEBUG
-OPTIONS_DEFAULT=	POSTGIS PYTHON
+OPTIONS_DEFAULT=	PYTHON POSTGIS
 OPTIONS_SUB=		yes
 NO_OPTIONS_SORT=	yes
 ASTYLE_DESC=		Enable AStyle for QGis
 CUSTOMWIDGETS_DESC=	Enable QT4/QGis Custom Widgets
 DEBUG_DESC=		Write Debugging Output to Console
-SERVER_DESC=	Enable QGIS server
+SERVER_DESC=		Enable QGIS server
 
 CMAKE_ARGS+=	-DWITH_ORACLE:BOOL=FALSE
 
@@ -69,10 +68,6 @@ POSTGIS_LIB_DEPENDS=	liblwgeom.so:${PORTSDIR}/databases/postgis21
 POSTGIS_CMAKE_ON=	-DWITH_POSTGRESQL:BOOL=TRUE
 POSTGIS_CMAKE_OFF=	-DWITH_POSTGRESQL:BOOL=FALSE
 
-SERVER_LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
-SERVER_CMAKE_ON=	-DWITH_SERVER:BOOL=TRUE
-SERVER_CMAKE_OFF=	-DWITH_SERVER:BOOL=FALSE
-
 PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.5:${PORTSDIR}/devel/py-qt4-core \
 			${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 			${PYTHON_PKGNAMEPREFIX}qt4-network>=4.8.5:${PORTSDIR}/net/py-qt4-network \
@@ -98,6 +93,10 @@ PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdal>=2.0.1:${PORTSDIR}/graphics/py-g
 PYTHON_CMAKE_ON=	-DWITH_BINDINGS:BOOL=TRUE
 PYTHON_CMAKE_OFF=	-DWITH_BINDINGS:BOOL=FALSE
 
+SERVER_LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
+SERVER_CMAKE_ON=	-DWITH_SERVER:BOOL=TRUE
+SERVER_CMAKE_OFF=	-DWITH_SERVER:BOOL=FALSE
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000033
@@ -112,5 +111,19 @@ CXXFLAGS+=	-I${LOCALBASE}/include/flex
 pre-patch:
 	@${REINPLACE_CMD} -e 's|tr( "QGIS code revision" ) + QString( "</td><td><a href=\\"https://github.com/qgis/QGIS/commit/%1\\">%1</a></td>" ).arg( QGis::QGIS_DEV_VERSION )|tr( "QGIS code revision" ) + "</td><td>" + tr( "${GH_TAGNAME}" ) + "</td>"|g' \
 		${WRKSRC}/src/app/qgisapp.cpp
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000033
+# [Ugly workaround!] Because of GitHub #76aa035 from 2015-05-23
+# 'Hide shared library symbols by default on GCC and Clang',
+# some layer properties are not visible on FreeBSD > 9.x
+	@${REINPLACE_CMD} -e 's|SET(CMAKE_CXX_FLAGS "$${CMAKE_CXX_FLAGS} -fvisibility=hidden -fvisibility-inlines-hidden")|#SET(CMAKE_CXX_FLAGS "$${CMAKE_CXX_FLAGS} -fvisibility=hidden -fvisibility-inlines-hidden")|g' \
+		${WRKSRC}/src/analysis/CMakeLists.txt \
+		${WRKSRC}/src/app/CMakeLists.txt \
+		${WRKSRC}/src/core/CMakeLists.txt \
+		${WRKSRC}/src/customwidgets/CMakeLists.txt \
+		${WRKSRC}/src/gui/CMakeLists.txt \
+		${WRKSRC}/src/plugins/CMakeLists.txt \
+		${WRKSRC}/src/python/CMakeLists.txt \
+		${WRKSRC}/src/server/CMakeLists.txt
+.endif
 
 .include <bsd.port.mk>

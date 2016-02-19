@@ -1,6 +1,6 @@
---- cpuid_sparc.c.orig	2012-02-05 16:29:26.000000000 +0900
-+++ cpuid_sparc.c	2012-02-05 16:29:45.000000000 +0900
-@@ -49,6 +49,7 @@
+--- cpuid_sparc.c.orig	2015-10-27 20:44:50 UTC
++++ cpuid_sparc.c
+@@ -49,6 +49,7 @@ void get_subdirname(void){
  }
  
  void get_cpuconfig(void){

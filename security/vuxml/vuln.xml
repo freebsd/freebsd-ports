@@ -57,6 +57,117 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="368993bb-d685-11e5-8858-00262d5ed8ee">
+    <topic>chromium -- same origin bypass</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>48.0.2564.116</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2016/02/stable-channel-update_18.html">
+	  <p>[583431] Critical CVE-2016-1629: Same-origin bypass in Blink
+	    and Sandbox escape in Chrome. Credit to anonymous.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1629</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2016/02/stable-channel-update_18.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-18</discovery>
+      <entry>2016-02-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2dd7e97e-d5e8-11e5-bcbd-bc5ff45d0f28">
+    <topic>glibc -- getaddrinfo stack-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>linux_base-c6</name>
+	<name>linux_base-c6_64</name>
+	<range><lt>6.7_1</lt></range>
+      </package>
+      <package>
+	<name>linux_base-f10</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fabio Olive Leite reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-7547">
+	  <p>A stack-based buffer overflow was found in libresolv when invoked
+	    from nss_dns, allowing specially crafted DNS responses to seize
+	    control of EIP in the DNS client. The buffer overflow occurs in the
+	    functions send_dg (send datagram) and send_vc (send TCP) for the
+	    NSS module libnss_dns.so.2 when calling getaddrinfo with AF_UNSPEC
+	    family, or in some cases AF_INET6 family. The use of AF_UNSPEC (or
+	    AF_INET6 in some cases) triggers the low-level resolver code to
+	    send out two parallel queries for A and AAAA. A mismanagement of
+	    the buffers used for those queries could result in the response of
+	    a query writing beyond the alloca allocated buffer created by
+	    __res_nquery.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7547</cvename>
+      <freebsdpr>ports/207272</freebsdpr>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-7547</url>
+      <url>https://blog.des.no/2016/02/freebsd-and-cve-2015-7547/</url>
+      <url>https://googleonlinesecurity.blogspot.no/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html</url>
+      <url>https://sourceware.org/ml/libc-alpha/2016-02/msg00416.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-16</discovery>
+      <entry>2016-02-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="56562efb-d5e4-11e5-b2bd-002590263bf5">
+    <topic>squid -- SSL/TLS processing remote DoS</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>3.5.13</ge><lt>3.5.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squid security advisory 2016:1 reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2016_1.txt">
+	  <p>Due to incorrectly handling server errors Squid is vulnerable to a
+	    denial of service attack when connecting to TLS or SSL servers.</p>
+	  <p>This problem allows any trusted client to perform a denial of
+	    service attack on the Squid service regardless of whether TLS or
+	    SSL is configured for use in the proxy.</p>
+	  <p>Misconfigured client or server software may trigger this issue
+	    to perform a denial of service unintentionally.</p>
+	  <p>However, the bug is exploitable only if Squid is built using the
+	    --with-openssl option.</p>
+	</blockquote>
+	<p>The FreeBSD port does not use SSL by default and is not vulnerable
+	  in the default configuration.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-2390</cvename>
+      <freebsdpr>ports/207294</freebsdpr>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2016_1.txt</url>
+    </references>
+    <dates>
+      <discovery>2016-02-16</discovery>
+      <entry>2016-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dd563930-d59a-11e5-8fa8-14dae9d210b8">
     <topic>adminer -- remote code execution</topic>
     <affects>
@@ -516,6 +627,10 @@ Notes:
 	<name>graphite2</name>
 	<range><lt>1.3.5</lt></range>
       </package>
+      <package>
+	<name>silgraphite</name>
+	<range><lt>2.3.1_4</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -546,7 +661,7 @@ Notes:
     <dates>
       <discovery>2016-02-05</discovery>
       <entry>2016-02-09</entry>
-      <modified>2016-02-09</modified>
+      <modified>2016-02-18</modified>
     </dates>
   </vuln>
 
@@ -9964,11 +10079,13 @@ Notes:
     </description>
     <references>
       <freebsdpr>ports/203186</freebsdpr>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2015_3.txt</url>
       <url>http://www.openwall.com/lists/oss-security/2015/09/18/1</url>
     </references>
     <dates>
       <discovery>2015-09-18</discovery>
       <entry>2015-09-18</entry>
+      <modified>2016-02-18</modified>
     </dates>
   </vuln>
 

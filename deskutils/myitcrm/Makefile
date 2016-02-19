@@ -3,7 +3,7 @@
 
 PORTNAME=	myitcrm
 PORTVERSION=	0.2.9.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/myitcrm/
 DISTNAME=	MyITCRM1-${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	MyIT CRM is a CRM project designed for Computer Servicing and Repairs
 LICENSE=	GPLv3
 
 USES=		dos2unix zip
-USE_PHP=	mysql session xml
+USE_PHP=	mysqli session xml
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/MyITCRM-${PORTVERSION}
 

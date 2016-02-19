@@ -22,5 +22,6 @@ USE_PHP=	json
 USE_PHPEXT=	yes
 USE_PHP_BUILD=	yes
 CONFIGURE_ARGS=	--with-jsonnet=${LOCALBASE}
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

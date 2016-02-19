@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lwm
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.jfc.org.uk/files/lwm/
 
