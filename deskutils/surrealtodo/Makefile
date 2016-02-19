@@ -16,6 +16,7 @@ USE_MYSQL=	yes
 NO_BUILD=	yes
 WWWOWN=		www
 WWWGRP=		${WWWOWN}
+IGNORE_WITH_PHP=	70
 
 PKGMESSAGE=	${WRKDIR}/${PORTNAME}/pkg-message
 SUB_FILES=	pkg-message
