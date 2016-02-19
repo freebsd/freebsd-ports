@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ubuntu-font
-PORTVERSION=	0.80
-PORTREVISION=	2
+PORTVERSION=	0.83
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://font.ubuntu.com/download/
 
