@@ -948,6 +948,7 @@
     SUBDIR += hs-mueval
     SUBDIR += hs-murmur-hash
     SUBDIR += hs-mutable-containers
+    SUBDIR += hs-ncurses
     SUBDIR += hs-newtype
     SUBDIR += hs-old-locale
     SUBDIR += hs-old-time
