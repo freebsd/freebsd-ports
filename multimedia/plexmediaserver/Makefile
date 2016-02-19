@@ -3,7 +3,7 @@
 
 PORTNAME=	plexmediaserver
 PORTVERSION?=	0.9.15.3.1674
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.plexapp.com/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/ \
 		https://nightlies.plexapp.com/directdl/plex-media-server/dist-ninja/${PORTVERSION}-${PLEX_BUILD}/
