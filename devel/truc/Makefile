@@ -3,7 +3,7 @@
 
 PORTNAME=	truc
 PORTVERSION=	0.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TRUC%20Testing%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -12,7 +12,7 @@ MAINTAINER=	jsi@jules.de
 COMMENT=	Web-based tool for requirement and use case tracking
 
 NO_BUILD=	yes
-USE_PHP=	mysql gd
+USE_PHP=	mysqli gd
 
 USES=		cpe shebangfix
 SHEBANG_FILES=	FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.pl \
