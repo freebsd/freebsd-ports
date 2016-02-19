@@ -787,6 +787,7 @@
     SUBDIR += py-tarantool
     SUBDIR += py-umemcache
     SUBDIR += py-whisper
+    SUBDIR += py3-bsddb3
     SUBDIR += py33-gdbm
     SUBDIR += py33-sqlite3
     SUBDIR += py34-gdbm
