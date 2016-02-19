@@ -26,6 +26,7 @@ SHEBANG_FILES=	externals/httpful/build \
 		scripts/install/install_ubuntu.sh
 USE_PHP=	ctype curl fileinfo hash iconv filter mbstring mysql openssl \
 		pcntl posix
+IGNORE_WITH_PHP=	70
 
 GD_USE=		PHP=gd
 
