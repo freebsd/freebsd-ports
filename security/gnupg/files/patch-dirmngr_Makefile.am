@@ -1,7 +1,11 @@
---- dirmngr/Makefile.am.orig	2016-02-19 16:13:57 UTC
+--- dirmngr/Makefile.am.orig	2016-01-26 09:36:37 UTC
 +++ dirmngr/Makefile.am
-@@ -143,7 +143,7 @@ t_ldap_parse_uri_SOURCES = \
- t_ldap_parse_uri_CFLAGS = -DWITHOUT_NPTH=1
+@@ -140,10 +140,10 @@ t_ldap_parse_uri_SOURCES = \
+ 	t-ldap-parse-uri.c ldap-parse-uri.c ldap-parse-uri.h \
+         http.c dns-stuff.c \
+         $(ldap_url) $(t_common_src)
+-t_ldap_parse_uri_CFLAGS = -DWITHOUT_NPTH=1
++t_ldap_parse_uri_CFLAGS = -DWITHOUT_NPTH=1 $(LIBGCRYPT_FLAGS)
  t_ldap_parse_uri_LDADD = $(ldaplibs) $(t_common_ldadd) $(DNSLIBS)
  
 -t_dns_stuff_CFLAGS = -DWITHOUT_NPTH=1
