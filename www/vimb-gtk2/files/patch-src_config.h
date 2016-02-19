@@ -1,4 +1,4 @@
---- src/config.h.orig	2015-06-13 15:29:55 UTC
+--- src/config.h.orig	2015-12-17 19:21:00 UTC
 +++ src/config.h
 @@ -27,7 +27,7 @@
  /* highlight search results */
@@ -9,7 +9,7 @@
  /* show page title in url completions */
  #define FEATURE_TITLE_IN_COMPLETION
  /* enable the read it later queue */
-@@ -63,7 +63,7 @@
+@@ -65,7 +65,7 @@
  #define SHOWCMD_LEN                 10
  
  /* parh to crt file for the certificate validation */
