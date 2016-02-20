@@ -2,6 +2,7 @@
 
 PORTNAME=	rofi
 PORTVERSION=	0.15.11
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	nomoo@nomoo.ru
@@ -25,7 +26,7 @@ OPTIONS_DEFINE=	I3
 
 I3_DESC=	I3 support
 I3_BUILD_DEPENDS=	i3:${PORTSDIR}/x11-wm/i3
-I3_CFLAGS=	-I${LOCALBASE}/include/i3
+I3_CFLAGS=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/rofi bin/rofi-sensible-terminal man/man1/rofi.1.gz \
 		man/man1/rofi-sensible-terminal.1.gz
