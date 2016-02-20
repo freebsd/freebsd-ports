@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	conform_exrm
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 
