@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.9.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -1106,7 +1106,7 @@ do-install:
 .for i in koi-utf koi-win win-utf
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${STAGEDIR}${ETCDIR}
 .endfor
-.for i in fastcgi_params mime.types nginx.conf scgi_params uwsgi_params
+.for i in fastcgi_params mime.types scgi_params uwsgi_params
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${STAGEDIR}${ETCDIR}/${i}-dist
 .endfor
 .if !empty(PORT_OPTIONS:MHTTP) && !empty(PORT_OPTIONS:MWWW)
@@ -1148,6 +1148,13 @@ post-install:
 
 # Add dynamic modules to the plist
 	(cd ${STAGEDIR}${PREFIX} && ${FIND} ${MODULESDIR:S|${PREFIX}/||} \
-		! -type d >> ${TMPPLIST})
+		! -type d >>${TMPPLIST})
+# Update nginx.conf-dist with a list of staged dynamic modules
+	(cd ${STAGEDIR}${ETCDIR} && \
+		${FIND} ${MODULESDIR:S|${ETCDIR}/||} -type f -name '*.so' \
+			-exec ${ECHO_CMD} "load_module {};" \; \
+			>>${STAGEDIR}${ETCDIR}/nginx.conf-dist && \
+		${CAT} ${WRKSRC}/conf/nginx.conf \
+			>>${STAGEDIR}${ETCDIR}/nginx.conf-dist)
 
 .include <bsd.port.mk>
