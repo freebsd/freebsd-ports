@@ -390,11 +390,11 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_clojure}/src/c
 .endif
 
 .if ${PORT_OPTIONS:MCT}
-GIT_CT_VERSION=	1790ac0
+GIT_CT_VERSION=	f3cad5e
 GH_ACCOUNT+=	grahamedgecombe:ct
 GH_PROJECT+=	nginx-ct:ct
 GH_TAGNAME+=	${GIT_CT_VERSION}:ct
-CONFIGURE_ARGS+=--add-module=${WRKSRC_ct}
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_ct}
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 USE_OPENSSL_PORT=	yes
