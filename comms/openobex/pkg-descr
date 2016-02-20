@@ -3,4 +3,4 @@ implementation of the Object Exchange (OBEX) protocol. OBEX is a
 session protocol and can best be described as a binary HTTP protocol.
 It's used mainly for Infrared and Bluetooth communication.
 
-WWW: http://gitorious.org/openobex/pages/Home
+WWW: http://dev.zuckschwerdt.org/openobex/
