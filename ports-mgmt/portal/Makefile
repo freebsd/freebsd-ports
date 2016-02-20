@@ -1,0 +1,24 @@
+# $FreeBSD$
+
+PORTNAME=	portal
+PORTVERSION=	0.1
+CATEGORIES=	ports-mgmt
+MASTER_SITES=	GH
+
+MAINTAINER=	culot@FreeBSD.org
+COMMENT=	Front-end to pkg(8)
+
+LICENSE=	BSD2CLAUSE
+
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	culot
+GH_TAGNAME=	0.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+.include <bsd.port.mk>
