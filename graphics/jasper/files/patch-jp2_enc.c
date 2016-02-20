@@ -1,6 +1,6 @@
---- src/libjasper/jp2/jp2_enc.c.orig	2013-04-17 22:32:23.000000000 +0200
-+++ src/libjasper/jp2/jp2_enc.c	2013-04-17 22:32:23.000000000 +0200
-@@ -194,7 +194,7 @@
+--- src/libjasper/jp2/jp2_enc.c.orig	2007-01-19 22:43:05.000000000 +0100
++++ src/libjasper/jp2/jp2_enc.c	2016-02-20 13:49:45.569962000 +0100
+@@ -191,7 +191,7 @@
  		}
  		bpcc = &box->data.bpcc;
  		bpcc->numcmpts = jas_image_numcmpts(image);
@@ -9,7 +9,7 @@
  		  sizeof(uint_fast8_t)))) {
  			goto error;
  		}
-@@ -288,7 +288,7 @@
+@@ -285,7 +285,7 @@
  		}
  		cdef = &box->data.cdef;
  		cdef->numchans = jas_image_numcmpts(image);
