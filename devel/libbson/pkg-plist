@@ -19,6 +19,7 @@ include/libbson-1.0/bson-string.h
 include/libbson-1.0/bson-types.h
 include/libbson-1.0/bson-utf8.h
 include/libbson-1.0/bson-value.h
+include/libbson-1.0/bson-version-functions.h
 include/libbson-1.0/bson-version.h
 include/libbson-1.0/bson-version-functions.h
 include/libbson-1.0/bson-writer.h
