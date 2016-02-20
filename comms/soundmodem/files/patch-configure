@@ -1,6 +1,6 @@
---- configure.orig	2012-11-07 05:55:37.000000000 -0500
-+++ configure	2012-11-07 07:02:34.000000000 -0500
-@@ -844,7 +844,7 @@
+--- configure.orig	2015-05-04 17:59:03 UTC
++++ configure
+@@ -869,7 +869,7 @@ pdfdir='${docdir}'
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
@@ -9,7 +9,7 @@
  
  ac_prev=
  ac_dashdash=
-@@ -7265,7 +7265,7 @@
+@@ -7565,7 +7565,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_
  int
  main ()
  {
