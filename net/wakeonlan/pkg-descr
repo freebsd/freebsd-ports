@@ -1,4 +1,4 @@
 Wakeonlan is a Perl script that sends 'magic packets' to wake-on-LAN enabled
 ethernet adapters and motherboards, in order to switch on remote computers.
 
-WWW: http://gsd.di.uminho.pt/jpo/software/wakeonlan/
+WWW: https://github.com/jpoliv/wakeonlan
