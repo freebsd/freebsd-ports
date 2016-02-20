@@ -2067,6 +2067,7 @@
     SUBDIR += sqstat
     SUBDIR += squid
     SUBDIR += squid_radius_auth
+    SUBDIR += squidanalyzer
     SUBDIR += squidclamav
     SUBDIR += squidguard
     SUBDIR += squidpurge
