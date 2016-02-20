@@ -57,6 +57,70 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="006e3b7c-d7d7-11e5-b85f-0018fe623f2b">
+    <topic>jasper -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>jasper</name>
+        <range><le>1.900.1_16</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>oCERT reports:</p>
+        <blockquote cite="http://www.ocert.org/advisories/ocert-2014-012.html">
+          <p>The library is affected by a double-free vulnerability in function
+            jas_iccattrval_destroy()
+            as well as a heap-based buffer overflow in function jp2_decode().
+            A specially crafted jp2 file can be used to trigger the vulnerabilities.</p>
+        </blockquote>
+        <p>oCERT reports:</p>
+        <blockquote cite="http://www.ocert.org/advisories/ocert-2015-001.html">
+          <p>The library is affected by an off-by-one error in a buffer boundary check
+            in jpc_dec_process_sot(), leading to a heap based buffer overflow, as well
+            as multiple unrestricted stack memory use issues in jpc_qmfb.c, leading to
+            stack overflow.
+            A specially crafted jp2 file can be used to trigger the vulnerabilities.</p>
+        </blockquote>
+        <p>oCERT reports:</p>
+        <blockquote cite="http://www.ocert.org/advisories/ocert-2014-009.html">
+          <p>Multiple off-by-one flaws, leading to heap-based buffer overflows, were
+            found in the way JasPer decoded JPEG 2000 files. A specially crafted file
+            could cause an application using JasPer to crash or,
+            possibly, execute arbitrary code.</p>
+        </blockquote>
+        <p>limingxing reports:</p>
+        <blockquote cite="http://seclists.org/oss-sec/2016/q1/233">
+          <p>A vulnerability was found in the way the JasPer's jas_matrix_clip()
+            function parses certain JPEG 2000 image files. A specially crafted file
+            could cause an application using JasPer to crash.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ocert.org/advisories/ocert-2014-012.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1173157</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1173162</url>
+      <url>http://www.ocert.org/advisories/ocert-2015-001.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1179282</url>
+      <url>http://www.ocert.org/advisories/ocert-2014-009.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1167537</url>
+      <url>http://seclists.org/oss-sec/2016/q1/233</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1302636</url>
+      <cvename>CVE-2014-8137</cvename>
+      <cvename>CVE-2014-8138</cvename>
+      <cvename>CVE-2014-8157</cvename>
+      <cvename>CVE-2014-8158</cvename>
+      <cvename>CVE-2014-9029</cvename>
+      <cvename>CVE-2016-2089</cvename>
+    </references>
+    <dates>
+      <discovery>2014-12-10</discovery>
+      <entry>2016-02-20</entry>
+      <modified>2016-02-20</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="368993bb-d685-11e5-8858-00262d5ed8ee">
     <topic>chromium -- same origin bypass</topic>
     <affects>
@@ -11775,7 +11839,7 @@ Notes:
     <affects>
       <package>
 	<name>jasper</name>
-	<range><le>1.900.1_14</le></range>
+	<range><le>1.900.1_16</le></range>
       </package>
     </affects>
     <description>
@@ -11805,7 +11869,7 @@ Notes:
     <dates>
       <discovery>2015-08-17</discovery>
       <entry>2015-08-18</entry>
-      <modified>2015-08-20</modified>
+      <modified>2016-02-20</modified>
     </dates>
   </vuln>
 
