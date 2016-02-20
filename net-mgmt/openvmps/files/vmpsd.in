@@ -17,7 +17,7 @@ load_rc_config $name
 #       /etc/rc.conf
 #       /etc/rc.conf.local
 #       /etc/rc.conf.d/vmpsd
-#
+# 
 # DO NOT CHANGE THESE DEFAULT VALUES HERE 
 
 : ${vmpsd_enable:=NO}				# Enable vmpsd
