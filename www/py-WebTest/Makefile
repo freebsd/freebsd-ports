@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	WebTest
-PORTVERSION=	2.0.14
+PORTVERSION=	2.0.20
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
@@ -21,7 +20,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}waitress>0:${PORTSDIR}/www/py-waitress \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.2:${PORTSDIR}/www/py-webob
 
-USES=		python zip
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	Pylons
+USES=		python
 USE_PYTHON=	autoplist distutils
+WRKSRC=		${WRKDIR}/webtest-${PORTVERSION}
 
 .include <bsd.port.mk>
