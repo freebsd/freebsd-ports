@@ -1,0 +1,5 @@
+VMPS (VLAN Management Policy Server) is a way of assigning switch ports to
+specific VLANs based on the MAC address of connecting device. OpenVMPS is a
+GPL implementation of VMPS.
+
+WWW: http://vmps.sourceforge.net/
