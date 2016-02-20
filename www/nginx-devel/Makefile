@@ -950,7 +950,7 @@ LIB_DEPENDS+=	libbrotlidec.so:${PORTSDIR}/devel/libbrotli \
 GH_ACCOUNT+=	google:brotli
 GH_PROJECT+=	ngx_brotli:brotli
 GH_TAGNAME+=	${NGINX_BROTLI_VERSION}:brotli
-CONFIGURE_ARGS+=--add-module=${WRKSRC_brotli}
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_brotli}
 .endif
 
 .if ${PORT_OPTIONS:MFORMINPUT}
