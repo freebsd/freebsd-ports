@@ -52,9 +52,7 @@ LUA_SUBDIR?=	lua${PKGNAMESUFFIX}
 LUA_INCDIR?=	${LUA_PREFIX}/include/${LUA_SUBDIR}
 LUA_LIBDIR?=	${LUA_PREFIX}/lib
 
-CFLAGS_aarch64=	-fPIC
-CFLAGS_amd64=	-fPIC
-CFLAGS_powerpc=	-fPIC
+CFLAGS+=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,rand *(,random(,g' \
