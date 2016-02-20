@@ -3,8 +3,4 @@ editing, live preview and image uploads (stored locally in MEDIA folder) with
 drag&drop functionality and auto tag insertion. Also, django-markdownx
 supports multiple editors on one page.
 
-Template is highly customizable, so you can easily use i.e. Bootstrap to
-layout editor pane and preview pane side by side (as in preview animation
-below).
-
 WWW: https://github.com/adi-/django-markdownx
