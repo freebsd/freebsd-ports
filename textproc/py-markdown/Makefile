@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	markdown
-PORTVERSION=	2.4.1
+PORTVERSION=	2.6.5
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,13 +14,17 @@ COMMENT=	Python implementation of Markdown
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-TEST_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}pytidylib:${PORTSDIR}/textproc/py-pytidylib
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}pytidylib>0:${PORTSDIR}/textproc/py-pytidylib \
+		${PYTHON_PKGNAMEPREFIX}pygments>0:${PORTSDIR}/textproc/py-pygments \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
 
-USES=		dos2unix python
+USES=		python
 USE_PYTHON=	distutils autoplist
 
-regression-test: build
-	@cd ${WRKSRC} && nosetests
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
