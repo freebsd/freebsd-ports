@@ -57,6 +57,39 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6171eb07-d8a9-11e5-b2bd-002590263bf5">
+    <topic>libsrtp -- DoS via crafted RTP header vulnerability</topic>
+    <affects>
+      <package>
+	<name>libsrtp</name>
+	<range><lt>1.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>libsrtp reports:</p>
+	<blockquote cite="https://github.com/cisco/libsrtp/commit/704a31774db0dd941094fd2b47c21638b8dc3de2">
+	  <p>Prevent potential DoS attack due to lack of bounds checking on RTP
+	    header CSRC count and extension header length. Credit goes to
+	    Randell Jesup and the Firefox team for reporting this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6360</cvename>
+      <freebsdpr>ports/207003</freebsdpr>
+      <url>https://github.com/cisco/libsrtp/releases/tag/v1.5.3</url>
+      <url>https://github.com/cisco/libsrtp/commit/704a31774db0dd941094fd2b47c21638b8dc3de2</url>
+      <url>https://github.com/cisco/libsrtp/commit/be95365fbb4788b688cab7af61c65b7989055fb4</url>
+      <url>https://github.com/cisco/libsrtp/commit/be06686c8e98cc7bd934e10abb6f5e971d03f8ee</url>
+      <url>https://github.com/cisco/libsrtp/commit/cdc69f2acde796a4152a250f869271298abc233f</url>
+    </references>
+    <dates>
+      <discovery>2015-11-02</discovery>
+      <entry>2016-02-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="006e3b7c-d7d7-11e5-b85f-0018fe623f2b">
     <topic>jasper -- multiple vulnerabilities</topic>
     <affects>
