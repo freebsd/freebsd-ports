@@ -10,7 +10,8 @@ MASTER_SITES=	SUNSITE/apps/www/converters \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts HTML documents into plain text
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 HAS_CONFIGURE=	yes
 
@@ -20,6 +21,8 @@ PLIST_FILES=	bin/html2text man/man1/html2text.1.gz man/man5/html2textrc.5.gz
 CONFLICTS=	py27-html2text-[0-9]*
 
 PORTSCOUT=	skipb:0 skipv:1.3.2
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/echo=/s/ -e//' ${WRKSRC}/configure
@@ -35,9 +38,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/html2text ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/html2text.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/html2textrc.5.gz ${STAGEDIR}${MANPREFIX}/man/man5
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for fle in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${fle} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
