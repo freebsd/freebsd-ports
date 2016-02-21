@@ -3,6 +3,7 @@
 
 PORTNAME=	latexila
 PORTVERSION=	3.18.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +19,8 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala \
 LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
 	libgspell-1.so:${PORTSDIR}/textproc/gspell
 
-USES=	desktop-file-utils gettext-tools gmake pkgconfig tar:xz
+USES=	compiler:c11 desktop-file-utils gettext-tools gmake pkgconfig \
+	tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 gtksourceview3 intltool intlhack libxml2
 USE_TEX=	latex dvipsk
