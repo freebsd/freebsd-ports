@@ -3,7 +3,6 @@
 PORTNAME=	portal
 PORTVERSION=	0.1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	GH
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Front-end to pkg(8)
@@ -15,7 +14,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	culot
-GH_TAGNAME=	0.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
