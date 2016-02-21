@@ -1,6 +1,6 @@
---- src/attrib.c.orig	2014-07-16 00:41:51.940655746 +0800
-+++ src/attrib.c	2014-07-16 00:43:36.205651630 +0800
-@@ -583,6 +583,9 @@
+--- src/attrib.c.orig	2015-11-22 01:14:29.000000000 +0100
++++ src/attrib.c	2016-02-21 20:49:48.322143000 +0100
+@@ -593,6 +593,9 @@
  		add_scope("*");
  		snprintf(buf, sizeof(buf), "%s", "~/.tin/headers");
  		set_attrib(OPT_ATTRIB_X_HEADERS, "*", "", buf);
