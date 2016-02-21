@@ -1,0 +1,4 @@
+envconsul provides a convenient way to populate values from Consul into a child
+process environment using the envconsul daemon.
+
+WWW: https://github.com/hashicorp/envconsul
