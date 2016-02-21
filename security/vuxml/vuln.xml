@@ -53,10 +53,54 @@ a new entry is available in The Porter's Handbook at:
 Help is also available from ports-security@freebsd.org.
 
 Notes:
+
   * Please add new entries to the beginning of this file.
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9e5bbffc-d8ac-11e5-b2bd-002590263bf5">
+    <topic>bsh -- remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>bsh</name>
+	<range><lt>2.0.b6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stian Soiland-Reyes reports:</p>
+	<blockquote cite="https://github.com/beanshell/beanshell/releases/tag/2.0b6">
+	  <p>This release fixes a remote code execution vulnerability that was
+	    identified in BeanShell by Alvaro Muñoz and Christian Schneider.
+	    The BeanShell team would like to thank them for their help and
+	    contributions to this fix!</p>
+	  <p>An application that includes BeanShell on the classpath may be
+	    vulnerable if another part of the application uses Java
+	    serialization or XStream to deserialize data from an untrusted
+	    source.</p>
+	  <p>A vulnerable application could be exploited for remote code
+	    execution, including executing arbitrary shell commands.</p>
+	  <p>This update fixes the vulnerability in BeanShell, but it is worth
+	    noting that applications doing such deserialization might still be
+	    insecure through other libraries. It is recommended that application
+	    developers take further measures such as using a restricted class
+	    loader when deserializing. See notes on Java serialization security
+	    XStream security and How to secure deserialization from untrusted
+	    input without using encryption or sealing.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-2510</cvename>
+      <freebsdpr>ports/207334</freebsdpr>
+      <url>https://github.com/beanshell/beanshell/releases/tag/2.0b6</url>
+    </references>
+    <dates>
+      <discovery>2016-02-18</discovery>
+      <entry>2016-02-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6171eb07-d8a9-11e5-b2bd-002590263bf5">
     <topic>libsrtp -- DoS via crafted RTP header vulnerability</topic>
     <affects>
