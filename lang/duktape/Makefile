@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	duktape
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	lang devel
 MASTER_SITES=	http://duktape.org/
 
