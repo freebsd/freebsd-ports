@@ -9,7 +9,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Populate values from Consul into a process environment
 
 LICENSE=	MPL
-LICENSE_FILE=	${WRKSRC}/src/github.com/hashicorp/envconsul/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
@@ -52,7 +52,7 @@ PORTDOCS=	README.md
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/hashicorp/envconsul
-.for src in .gitignore .travis.yml CHANGELOG.md LICENSE Makefile README.md \
+.for src in .gitignore .travis.yml CHANGELOG.md Makefile README.md \
 	cli.go cli_test.go config.go config_test.go flags.go main.go runner.go \
 	runner_test.go scripts signals.go signals_windows.go
 	@${MV} ${WRKSRC}/${src} \
