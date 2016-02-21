@@ -41,7 +41,7 @@ PLIST_SUB+=	PGBOUNCER_USER="${USERS}" \
 		PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
 SUB_LIST+=	PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
 WITH_OPENSSL_PORT=	yes
@@ -65,4 +65,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PGBOUNCER_RUNDIR} \
 		${STAGEDIR}${PGBOUNCER_LOGDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
