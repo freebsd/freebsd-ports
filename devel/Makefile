@@ -1034,6 +1034,7 @@
     SUBDIR += idutils
     SUBDIR += ifd-test
     SUBDIR += imake
+    SUBDIR += include-what-you-use
     SUBDIR += inilib
     SUBDIR += iniparser
     SUBDIR += initutil
