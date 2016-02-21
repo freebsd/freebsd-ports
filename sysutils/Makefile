@@ -244,6 +244,7 @@
     SUBDIR += enteruser
     SUBDIR += entr
     SUBDIR += env4801
+    SUBDIR += envconsul
     SUBDIR += etcmerge
     SUBDIR += etcupdate
     SUBDIR += eventlog
