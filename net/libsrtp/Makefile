@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.4
 CATEGORIES=	net
 
-MAINTAINER=	alexander@brovikov.ru
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Secure RTP (SRTP) Reference Implementation
 
 LICENSE=	BSD3CLAUSE
