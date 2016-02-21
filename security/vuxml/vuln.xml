@@ -61,40 +61,40 @@ Notes:
     <topic>jasper -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>jasper</name>
-        <range><le>1.900.1_16</le></range>
+	<name>jasper</name>
+	<range><le>1.900.1_16</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>oCERT reports:</p>
-        <blockquote cite="http://www.ocert.org/advisories/ocert-2014-012.html">
-          <p>The library is affected by a double-free vulnerability in function
-            jas_iccattrval_destroy()
-            as well as a heap-based buffer overflow in function jp2_decode().
-            A specially crafted jp2 file can be used to trigger the vulnerabilities.</p>
-        </blockquote>
-        <p>oCERT reports:</p>
-        <blockquote cite="http://www.ocert.org/advisories/ocert-2015-001.html">
-          <p>The library is affected by an off-by-one error in a buffer boundary check
-            in jpc_dec_process_sot(), leading to a heap based buffer overflow, as well
-            as multiple unrestricted stack memory use issues in jpc_qmfb.c, leading to
-            stack overflow.
-            A specially crafted jp2 file can be used to trigger the vulnerabilities.</p>
-        </blockquote>
-        <p>oCERT reports:</p>
-        <blockquote cite="http://www.ocert.org/advisories/ocert-2014-009.html">
-          <p>Multiple off-by-one flaws, leading to heap-based buffer overflows, were
-            found in the way JasPer decoded JPEG 2000 files. A specially crafted file
-            could cause an application using JasPer to crash or,
-            possibly, execute arbitrary code.</p>
-        </blockquote>
-        <p>limingxing reports:</p>
-        <blockquote cite="http://seclists.org/oss-sec/2016/q1/233">
-          <p>A vulnerability was found in the way the JasPer's jas_matrix_clip()
-            function parses certain JPEG 2000 image files. A specially crafted file
-            could cause an application using JasPer to crash.</p>
-        </blockquote>
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2014-012.html">
+	  <p>The library is affected by a double-free vulnerability in function
+	    jas_iccattrval_destroy()
+	    as well as a heap-based buffer overflow in function jp2_decode().
+	    A specially crafted jp2 file can be used to trigger the vulnerabilities.</p>
+	</blockquote>
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2015-001.html">
+	  <p>The library is affected by an off-by-one error in a buffer boundary check
+	    in jpc_dec_process_sot(), leading to a heap based buffer overflow, as well
+	    as multiple unrestricted stack memory use issues in jpc_qmfb.c, leading to
+	    stack overflow.
+	    A specially crafted jp2 file can be used to trigger the vulnerabilities.</p>
+	</blockquote>
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2014-009.html">
+	  <p>Multiple off-by-one flaws, leading to heap-based buffer overflows, were
+	    found in the way JasPer decoded JPEG 2000 files. A specially crafted file
+	    could cause an application using JasPer to crash or,
+	    possibly, execute arbitrary code.</p>
+	</blockquote>
+	<p>limingxing reports:</p>
+	<blockquote cite="http://seclists.org/oss-sec/2016/q1/233">
+	  <p>A vulnerability was found in the way the JasPer's jas_matrix_clip()
+	    function parses certain JPEG 2000 image files. A specially crafted file
+	    could cause an application using JasPer to crash.</p>
+	</blockquote>
       </body>
     </description>
     <references>
