@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pygithub
-PORTVERSION=	1.25.0
+PORTVERSION=	1.26.0
 CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,14 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python library implementing the full GitHub API v3
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
