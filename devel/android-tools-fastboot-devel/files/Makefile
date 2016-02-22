@@ -11,6 +11,9 @@ SRCS+=	engine.cpp
 SRCS+=	fastboot.cpp
 SRCS+=	fs.cpp
 SRCS+=	protocol.cpp
+SRCS+=	socket.cpp
+SRCS+=	tcp.cpp
+SRCS+=	udp.cpp
 SRCS+=	util.cpp
 
 .PATH: ${EXTRADIR}
@@ -23,9 +26,11 @@ SRCS+=	diagnose_usb.cpp
 
 # required by fastboot, diagnose_usb and libziparchive
 .PATH: ${.CURDIR}/../base
+SRCS+=	errors_unix.cpp
 SRCS+=	file.cpp
-SRCS+=	strings.cpp
+SRCS+=	parsenetaddress.cpp
 SRCS+=	stringprintf.cpp
+SRCS+=	strings.cpp
 
 # required by fastboot
 .PATH: ${.CURDIR}/../ext4_utils
@@ -40,6 +45,14 @@ SRCS+=	indirect.c
 SRCS+=	make_ext4fs.c
 SRCS+=	sha1.c
 SRCS+=	wipe.c
+
+# required by fastboot
+.PATH: ${.CURDIR}/../libcutils
+SRCS+=	../libcutils/sockets.cpp
+SRCS+=	socket_inaddr_any_server_unix.c
+SRCS+=	socket_network_client_unix.c
+SRCS+=	sockets_unix.cpp
+CPPFLAGS.sockets.cpp+=	-o ${.TARGET} # XXX pre-r279980
 
 # required by base and libutils
 .PATH:	${.CURDIR}/../liblog
