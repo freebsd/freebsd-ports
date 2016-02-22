@@ -20,7 +20,7 @@
 
 check_process()
 {
-	/bin/pgrep -j none -f 'smtpd: \[priv\]'
+	/bin/pgrep -j none -f "^$smtpd_procname\$"
 }
 
 name="smtpd"

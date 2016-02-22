@@ -9,8 +9,8 @@ if [ "$TARGET" = POST-INSTALL -a -z "%%MAILERCONF%%" ]; then
 sendmail        %%PREFIX%%/sbin/smtpctl
 send-mail       %%PREFIX%%/sbin/smtpctl
 mailq           %%PREFIX%%/sbin/smtpctl
-makemap         %%PREFIX%%/libexec/opensmtpd/makemap
-newaliases      %%PREFIX%%/libexec/opensmtpd/makemap
+makemap         %%PREFIX%%/sbin/smtpctl
+newaliases      %%PREFIX%%/sbin/smtpctl
 EOF
 fi
 
