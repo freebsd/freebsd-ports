@@ -1,6 +1,6 @@
---- mk/smtpd/Makefile.in.orig	2015-06-20 04:17:57.656811000 +0000
-+++ mk/smtpd/Makefile.in	2015-06-20 04:19:53.711103000 +0000
-@@ -1366,11 +1366,7 @@ install-exec-hook: $(CONFIGFILES) $(MANP
+--- mk/smtpd/Makefile.in.orig	2016-02-07 00:04:24 UTC
++++ mk/smtpd/Makefile.in
+@@ -1339,12 +1339,7 @@ install-exec-hook: $(CONFIGFILES) $(MANP
  	$(MKDIR_P) $(DESTDIR)$(mandir)/$(mansubdir)5
  	$(MKDIR_P) $(DESTDIR)$(mandir)/$(mansubdir)8
  
@@ -9,7 +9,8 @@
 -	else									\
 -		echo "$(DESTDIR)$(sysconfdir)/smtpd.conf already exists, install will not overwrite"; \
 -	fi
-+	$(INSTALL) -m 644 smtpd.conf.out $(DESTDIR)$(sysconfdir)/smtpd.conf.sample
- 
+-
++	$(INSTALL) -m 644 smtpd.conf.out	$(DESTDIR)$(sysconfdir)/smtpd.conf.sample
  	$(INSTALL) -m 644 aliases.5.out		$(DESTDIR)$(mandir)/$(mansubdir)5/aliases.5
  	$(INSTALL) -m 644 forward.5.out		$(DESTDIR)$(mandir)/$(mansubdir)5/forward.5
+ 	$(INSTALL) -m 644 table.5.out		$(DESTDIR)$(mandir)/$(mansubdir)5/table.5

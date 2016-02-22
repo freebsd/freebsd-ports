@@ -1,6 +1,6 @@
---- common/cmd_elf.c.orig	2015-10-19 23:59:38 UTC
+--- common/cmd_elf.c.orig	2016-01-12 14:06:54 UTC
 +++ common/cmd_elf.c
-@@ -35,22 +35,15 @@ static unsigned long do_bootelf_exec(ulo
+@@ -110,22 +110,15 @@ static unsigned long do_bootelf_exec(ulo
  	unsigned long ret;
  
  	/*

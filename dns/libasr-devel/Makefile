@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libasr
-PORTVERSION=	201501300026
-PORTREVISION=	1
+PORTVERSION=	201602131606
 CATEGORIES=	dns
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/

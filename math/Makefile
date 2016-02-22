@@ -667,6 +667,7 @@
     SUBDIR += slgrace
     SUBDIR += snns
     SUBDIR += solitaire
+    SUBDIR += sound-of-sorting
     SUBDIR += spar
     SUBDIR += spblas
     SUBDIR += speedcrunch

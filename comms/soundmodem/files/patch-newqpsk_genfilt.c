@@ -1,6 +1,6 @@
---- newqpsk/genfilt.c.orig	2014-12-01 09:43:37.000000000 +0000
-+++ newqpsk/genfilt.c	2014-12-01 09:43:45.000000000 +0000
-@@ -18,7 +18,7 @@
+--- newqpsk/genfilt.c.orig	2002-08-09 20:01:52 UTC
++++ newqpsk/genfilt.c
+@@ -18,7 +18,7 @@ int main(int argc, char **argv)
  	puts("#define _FILTER_I386_H");
  	puts("#define __HAVE_ARCH_MAC");
  

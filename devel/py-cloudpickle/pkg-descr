@@ -1,0 +1,12 @@
+cloudpickle makes it possible to serialize Python constructs not
+supported by the default pickle module from the Python standard library.
+
+cloudpickle is especially useful for cluster computing where Python
+expressions are shipped over the network to execute on remote hosts,
+possibly close to the data.
+
+Among other things, cloudpickle supports pickling for lambda
+expressions, functions and classes defined interactively in the
+`__main__` module.
+
+WWW: https://github.com/cloudpipe/cloudpickle

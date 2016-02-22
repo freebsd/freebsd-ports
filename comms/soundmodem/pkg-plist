@@ -1,6 +1,5 @@
 bin/soundmodemconfig
 sbin/soundmodem
-etc/rc.d/soundmodem
 include/modem.h
 include/simd.h
 share/locale/fr/LC_MESSAGES/soundmodem.mo

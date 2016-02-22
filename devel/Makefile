@@ -948,6 +948,7 @@
     SUBDIR += hs-mueval
     SUBDIR += hs-murmur-hash
     SUBDIR += hs-mutable-containers
+    SUBDIR += hs-ncurses
     SUBDIR += hs-newtype
     SUBDIR += hs-old-locale
     SUBDIR += hs-old-time
@@ -1033,6 +1034,7 @@
     SUBDIR += idutils
     SUBDIR += ifd-test
     SUBDIR += imake
+    SUBDIR += include-what-you-use
     SUBDIR += inilib
     SUBDIR += iniparser
     SUBDIR += initutil
@@ -3963,6 +3965,7 @@
     SUBDIR += py-click
     SUBDIR += py-clint
     SUBDIR += py-clonedigger
+    SUBDIR += py-cloudpickle
     SUBDIR += py-cmdln
     SUBDIR += py-codegen
     SUBDIR += py-cog

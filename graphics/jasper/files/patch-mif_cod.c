@@ -1,5 +1,5 @@
 --- src/libjasper/mif/mif_cod.c.orig	2007-01-19 22:43:05.000000000 +0100
-+++ src/libjasper/mif/mif_cod.c	2015-08-29 08:07:01.000000000 +0200
++++ src/libjasper/mif/mif_cod.c	2016-02-20 14:19:34.799575000 +0100
 @@ -107,7 +107,7 @@
  static int mif_hdr_addcmpt(mif_hdr_t *hdr, int cmptno, mif_cmpt_t *cmpt);
  static mif_cmpt_t *mif_cmpt_create(void);
@@ -19,7 +19,16 @@
  	if (!newcmpts) {
  		return -1;
  	}
-@@ -658,7 +657,7 @@
+@@ -571,6 +570,8 @@
+ 		}
+ 	}
+ 	jas_tvparser_destroy(tvp);
++	/* fix for CVE-2015-5221 */
++	tvp = NULL;
+ 	if (!cmpt->sampperx || !cmpt->samppery) {
+ 		goto error;
+ 	}
+@@ -658,7 +659,7 @@
  * MIF parsing code.
  \******************************************************************************/
  
