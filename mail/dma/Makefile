@@ -13,6 +13,7 @@ COMMENT=	DragonFly Mail Agent, a small MTA for local/outbound mail
 LICENSE=	BSD3CLAUSE
 
 USE_OPENSSL=	yes
+USES=		uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	corecode
