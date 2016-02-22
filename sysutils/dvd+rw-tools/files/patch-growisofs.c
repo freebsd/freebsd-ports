@@ -1,5 +1,5 @@
---- growisofs.c.orig	2008-03-04 10:15:03.000000000 +0100
-+++ growisofs.c	2013-01-15 00:53:04.894335000 +0100
+--- growisofs.c.orig	2008-03-04 09:15:03 UTC
++++ growisofs.c
 @@ -409,7 +409,7 @@
  #  define _GNU_SOURCE
  # endif
@@ -9,7 +9,7 @@
  # define off64_t	off_t
  # if !defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) || \
                __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__<1050
-@@ -995,7 +995,7 @@
+@@ -995,7 +995,7 @@ char *setup_fds (char *device)
      goto open_rw;
  }
  
@@ -18,7 +18,7 @@
  
  #include <sys/cdio.h>
  #include <camlib.h>
-@@ -2940,7 +2940,9 @@
+@@ -2940,7 +2940,9 @@ int main (int argc, char *argv[])
  # ifdef __FreeBSD__
  	syscall(SYS_mlockall,3);
  # else
