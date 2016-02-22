@@ -4,13 +4,11 @@
 PORTNAME=	sarep
 PORTVERSION=	1.1
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/linux/utils/text/
+MASTER_SITES=   http://ftp.vim.org/ibiblio/utils/text/
 EXTRACT_SUFX=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line search and replace tool; written in Perl; handles regexps
-
-BROKEN=		unfetchable
 
 RUN_DEPENDS=	p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS
 
