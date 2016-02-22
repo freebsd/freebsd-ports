@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnsdist
-DISTVERSION=	0.0.679g176fdd7
+DISTVERSION=	0.0.734g1f3f982
 CATEGORIES=	dns net
 MASTER_SITES=	http://builder.powerdns.com/files/dnsdist/dist/ \
 		http://fbsd.es/~cpm/freebsd/ports/distfiles/ \
