@@ -40,6 +40,8 @@ CONFIGURE_ARGS=	--with-table-db \
 USE_RC_SUBR=	smtpd
 SUB_FILES=	pkg-install pkg-deinstall
 
+CPE_VENDOR=	openbsd
+
 CONFLICTS_INSTALL=	postfix-[0-9]* sendmail-[0-9]* opensmtpd-[0-9]*
 
 USERS=		_smtpd _smtpq
