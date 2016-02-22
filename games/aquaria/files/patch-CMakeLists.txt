@@ -1,26 +1,5 @@
-partially https://github.com/AquariaOSE/Aquaria/pull/22
-
 --- CMakeLists.txt.orig	2015-08-16 13:19:19 UTC
 +++ CMakeLists.txt
-@@ -227,6 +227,7 @@ endif (NOT OPENAL_FOUND)
- 
- OPTION(AQUARIA_INTERNAL_TINYXML2 "Always use included TinyXML2 library" ${WIN32_TRUE})
- if(NOT AQUARIA_INTERNAL_TINYXML2)
-+    set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
-     find_package(TinyXML2)
- endif(NOT AQUARIA_INTERNAL_TINYXML2)
- if (AQUARIA_INTERNAL_TINYXML2 OR NOT TINYXML2_FOUND)
-@@ -316,6 +317,10 @@ ELSE(AQUARIA_DEMO_BUILD)
-     ADD_DEFINITIONS(-DAQUARIA_BUILD_SCENEEDITOR=1)
- ENDIF(AQUARIA_DEMO_BUILD)
- 
-+IF(CMAKE_BUILD_TYPE STREQUAL "Release")
-+    ADD_DEFINITIONS(-DNDEBUG)
-+    message(STATUS "This is a release build.")
-+ENDIF(CMAKE_BUILD_TYPE STREQUAL "Release")
- IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
-     ADD_DEFINITIONS(-D_DEBUG) # MSVC defines this in debug mode by default, gcc/mingw do not
-     message(STATUS "This is a debug build.")
 @@ -341,7 +346,7 @@ IF(UNIX AND NOT HAIKU)
      ADD_DEFINITIONS(-DLUA_USE_ULONGJMP=1)
  ENDIF()
