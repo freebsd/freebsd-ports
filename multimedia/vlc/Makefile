@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -284,6 +284,7 @@ TWOLAME_CONFIGURE_ENABLE=	twolame
 UPNP_LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
 UPNP_CONFIGURE_ENABLE=	upnp
 
+V4L_BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 V4L_CONFIGURE_ENABLE=	v4l2
 
