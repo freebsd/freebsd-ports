@@ -3925,6 +3925,7 @@
     SUBDIR += py-argh
     SUBDIR += py-argparse
     SUBDIR += py-args
+    SUBDIR += py-arrow
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
     SUBDIR += py-astroid
