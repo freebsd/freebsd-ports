@@ -14,13 +14,14 @@
 %%WWWDIR%%/data/osnames.ini
 %%WWWDIR%%/gfx/ajax-loader.gif
 %%WWWDIR%%/gfx/ajaxLoader.gif
-%%WWWDIR%%/gfx/attention.png
-%%WWWDIR%%/gfx/body.png
-%%WWWDIR%%/gfx/bullet_toggle_minus.png
-%%WWWDIR%%/gfx/bullet_toggle_plus.png
+%%WWWDIR%%/gfx/attention.gif
+%%WWWDIR%%/gfx/blank.gif
+%%WWWDIR%%/gfx/body.gif
+%%WWWDIR%%/gfx/bullet_toggle_minus.gif
+%%WWWDIR%%/gfx/bullet_toggle_plus.gif
 %%WWWDIR%%/gfx/close.gif
+%%WWWDIR%%/gfx/favicon.gif
 %%WWWDIR%%/gfx/favicon.ico
-%%WWWDIR%%/gfx/favicon.png
 %%WWWDIR%%/gfx/html.gif
 %%WWWDIR%%/gfx/htmlwarn.gif
 %%WWWDIR%%/gfx/images/4MLinux.png
@@ -101,6 +102,7 @@
 %%WWWDIR%%/gfx/images/Slackware.png
 %%WWWDIR%%/gfx/images/Slax.png
 %%WWWDIR%%/gfx/images/SliTaz.png
+%%WWWDIR%%/gfx/images/Solus.png
 %%WWWDIR%%/gfx/images/SolusOS.png
 %%WWWDIR%%/gfx/images/SolydXK.png
 %%WWWDIR%%/gfx/images/StartOS.png
@@ -133,9 +135,9 @@
 %%WWWDIR%%/gfx/images/pfSense.png
 %%WWWDIR%%/gfx/images/unknown.png
 %%WWWDIR%%/gfx/logo_48.png
-%%WWWDIR%%/gfx/next.png
-%%WWWDIR%%/gfx/prev.png
-%%WWWDIR%%/gfx/reload.png
+%%WWWDIR%%/gfx/next.gif
+%%WWWDIR%%/gfx/prev.gif
+%%WWWDIR%%/gfx/reload.gif
 %%WWWDIR%%/gfx/sort_asc.png
 %%WWWDIR%%/gfx/sort_both.png
 %%WWWDIR%%/gfx/sort_desc.png
@@ -150,7 +152,7 @@
 %%WWWDIR%%/includes/autoloader.inc.php
 %%WWWDIR%%/includes/class.CommonFunctions.inc.php
 %%WWWDIR%%/includes/class.Parser.inc.php
-%%WWWDIR%%/includes/error/class.Error.inc.php
+%%WWWDIR%%/includes/error/class.PSI_Error.inc.php
 %%WWWDIR%%/includes/interface/class.PSI_Interface_OS.inc.php
 %%WWWDIR%%/includes/interface/class.PSI_Interface_Output.inc.php
 %%WWWDIR%%/includes/interface/class.PSI_Interface_Plugin.inc.php
@@ -217,6 +219,7 @@
 %%WWWDIR%%/js/jQuery/README_bootstrap
 %%WWWDIR%%/js/jQuery/jquery-1.js
 %%WWWDIR%%/js/jQuery/jquery.dataTables.js
+%%WWWDIR%%/js/jQuery/jquery.ifixpng.js
 %%WWWDIR%%/js/jQuery/jquery.jgrowl.js
 %%WWWDIR%%/js/jQuery/jquery.js
 %%WWWDIR%%/js/jQuery/jquery.nyroModal.js
@@ -230,7 +233,6 @@
 %%WWWDIR%%/js/vendor/console-shim.js
 %%WWWDIR%%/js/vendor/html5shiv-printshiv.js
 %%WWWDIR%%/js/vendor/sorttable.js
-%%WWWDIR%%/js/vendor/sorttable_org.js
 %%WWWDIR%%/js/vendor/transparency.js
 %%WWWDIR%%/language/ast.xml
 %%WWWDIR%%/language/bg.xml
@@ -340,8 +342,8 @@
 %%WWWDIR%%/plugins/ps/ps_bootstrap.html
 %%WWWDIR%%/plugins/psstatus/class.psstatus.inc.php
 %%WWWDIR%%/plugins/psstatus/css/psstatus.css
-%%WWWDIR%%/plugins/psstatus/gfx/offline.png
-%%WWWDIR%%/plugins/psstatus/gfx/online.png
+%%WWWDIR%%/plugins/psstatus/gfx/offline.gif
+%%WWWDIR%%/plugins/psstatus/gfx/online.gif
 %%WWWDIR%%/plugins/psstatus/js/psstatus.js
 %%WWWDIR%%/plugins/psstatus/js/psstatus_bootstrap.js
 %%WWWDIR%%/plugins/psstatus/lang/cz.xml
@@ -509,6 +511,7 @@
 %%WWWDIR%%/sample/distrotest/Slackware/14.0.txt
 %%WWWDIR%%/sample/distrotest/Slax/7.0.1.txt
 %%WWWDIR%%/sample/distrotest/SliTaz/2014.02.16-cooking.txt
+%%WWWDIR%%/sample/distrotest/Solus/1.0-rc1.txt
 %%WWWDIR%%/sample/distrotest/SolusOS/1.3.txt
 %%WWWDIR%%/sample/distrotest/SolusOS/2-alpha7.txt
 %%WWWDIR%%/sample/distrotest/SolydXK/2014.01-K.txt
@@ -649,6 +652,8 @@
 %%WWWDIR%%/templates/cleansyn.css
 %%WWWDIR%%/templates/cream.css
 %%WWWDIR%%/templates/cream/bg.gif
+%%WWWDIR%%/templates/dark_bootstrap.css
+%%WWWDIR%%/templates/green_bootstrap.css
 %%WWWDIR%%/templates/html/error_config.html
 %%WWWDIR%%/templates/html/index_all.html
 %%WWWDIR%%/templates/html/index_bootstrap.html
@@ -663,6 +668,7 @@
 %%WWWDIR%%/templates/nextgen/nextgen_bg.png
 %%WWWDIR%%/templates/phpsysinfo.css
 %%WWWDIR%%/templates/phpsysinfo_bootstrap.css
+%%WWWDIR%%/templates/phpsysinfo_bootstrap.css.new
 %%WWWDIR%%/templates/plugin/jquery.dataTables.css
 %%WWWDIR%%/templates/plugin/jquery.jgrowl.css
 %%WWWDIR%%/templates/plugin/jquery.treeTable.css
