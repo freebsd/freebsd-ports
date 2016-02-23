@@ -11,6 +11,7 @@ lib/elixir/lib/plug/ebin/Elixir.Plug.CSRFProtection.InvalidCrossOriginRequestErr
 lib/elixir/lib/plug/ebin/Elixir.Plug.CSRFProtection.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.Adapter.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.AlreadySentError.beam
+lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.CookieOverflowError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.Cookies.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.InvalidHeaderError.beam
 lib/elixir/lib/plug/ebin/Elixir.Plug.Conn.NotSentError.beam
