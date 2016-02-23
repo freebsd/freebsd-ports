@@ -399,6 +399,7 @@ lib/xemacs/site-lisp/git/git-blame.el
 %%NLS%%share/locale/fr/LC_MESSAGES/git.mo
 %%NLS%%share/locale/is/LC_MESSAGES/git.mo
 %%NLS%%share/locale/it/LC_MESSAGES/git.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/git.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/git.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/git.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/git.mo
