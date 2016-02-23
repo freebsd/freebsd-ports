@@ -1250,6 +1250,7 @@ llvm-cheri/include/llvm/Transforms/IPO/PassManagerBuilder.h
 llvm-cheri/include/llvm/Transforms/InstCombine/InstCombine.h
 llvm-cheri/include/llvm/Transforms/InstCombine/InstCombineWorklist.h
 llvm-cheri/include/llvm/Transforms/Instrumentation.h
+llvm-cheri/include/llvm/Transforms/MemCap.h
 llvm-cheri/include/llvm/Transforms/ObjCARC.h
 llvm-cheri/include/llvm/Transforms/Scalar.h
 llvm-cheri/include/llvm/Transforms/Scalar/EarlyCSE.h
@@ -1516,6 +1517,9 @@ llvm-cheri/lib/libLLVMMSP430Desc.so.3.8.0svn
 llvm-cheri/lib/libLLVMMSP430Info.so
 llvm-cheri/lib/libLLVMMSP430Info.so.3.8
 llvm-cheri/lib/libLLVMMSP430Info.so.3.8.0svn
+llvm-cheri/lib/libLLVMMemCapOpts.so
+llvm-cheri/lib/libLLVMMemCapOpts.so.3.8
+llvm-cheri/lib/libLLVMMemCapOpts.so.3.8.0svn
 llvm-cheri/lib/libLLVMMipsAsmParser.so
 llvm-cheri/lib/libLLVMMipsAsmParser.so.3.8
 llvm-cheri/lib/libLLVMMipsAsmParser.so.3.8.0svn
