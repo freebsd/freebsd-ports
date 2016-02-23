@@ -911,6 +911,7 @@ plexpy/data/interfaces/default/js/tables/history_table_modal.js
 plexpy/data/interfaces/default/js/tables/libraries.js
 plexpy/data/interfaces/default/js/tables/logs.js
 plexpy/data/interfaces/default/js/tables/media_info_table.js
+plexpy/data/interfaces/default/js/tables/notification_logs.js
 plexpy/data/interfaces/default/js/tables/plex_logs.js
 plexpy/data/interfaces/default/js/tables/sync_table.js
 plexpy/data/interfaces/default/js/tables/user_ips.js
@@ -926,6 +927,7 @@ plexpy/data/interfaces/default/notification_config.html
 plexpy/data/interfaces/default/notification_triggers_modal.html
 plexpy/data/interfaces/default/plexwatch_import.html
 plexpy/data/interfaces/default/recently_added.html
+plexpy/data/interfaces/default/scheduler_table.html
 plexpy/data/interfaces/default/search.html
 plexpy/data/interfaces/default/settings.html
 plexpy/data/interfaces/default/shutdown.html
@@ -939,6 +941,7 @@ plexpy/data/interfaces/default/user_watch_time_stats.html
 plexpy/data/interfaces/default/users.html
 plexpy/data/interfaces/default/welcome.html
 plexpy/data/interfaces/default/xml/IEconfig.xml
+plexpy/lib/IPy.py
 plexpy/lib/MultipartPostHandler.py
 plexpy/lib/apscheduler/__init__.py
 plexpy/lib/apscheduler/events.py
@@ -1195,6 +1198,7 @@ plexpy/lib/osxnotify/__init__.py
 plexpy/lib/osxnotify/appIcon.icns
 plexpy/lib/osxnotify/registerapp.py
 plexpy/lib/pkg_resources.py
+plexpy/lib/profilehooks.py
 plexpy/lib/pygazelle/__init__.py
 plexpy/lib/pygazelle/api.py
 plexpy/lib/pygazelle/artist.py
@@ -2133,6 +2137,7 @@ plexpy/plexpy/activity_handler.py
 plexpy/plexpy/activity_pinger.py
 plexpy/plexpy/activity_processor.py
 plexpy/plexpy/api.py
+plexpy/plexpy/api2.py
 plexpy/plexpy/classes.py
 plexpy/plexpy/common.py
 plexpy/plexpy/config.py
