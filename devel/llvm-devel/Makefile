@@ -154,12 +154,6 @@ _USES_PYTHON=	python
 LIT_COMMANDS=	lit llvm-lit FileCheck
 .endif
 
-.if ${PORT_OPTIONS:MLLD}
-COMMANDS+=	lld \
-		lld-link
-PORTDOCS+=	lld
-.endif
-
 .if ${PORT_OPTIONS:MLLDB}
 COMMANDS+=	lldb \
 		lldb-argdumper \
@@ -196,10 +190,19 @@ PORTDOCS+=	clang-tools
 .endif
 .endif
 
+.if ${PORT_OPTIONS:MLLD}
+.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
+COMMANDS+=	lld \
+		lld-link
+PORTDOCS+=	lld
+.endif
+.endif
+
 .if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
 # Evil hack around gcc48 not providing a usable c++11 environment on 9.x
 PLIST_SUB:=	${PLIST_SUB:NEXTRAS=*} EXTRAS="@comment "
 PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
+PLIST_SUB:=	${PLIST_SUB:NLLD=*} LLD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLLDB} && ${PYTHON_REL} >= 3000
@@ -215,7 +218,9 @@ post-extract-EXTRAS-on:
 .endif
 
 post-extract-LLD-on:
+.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
+.endif
 
 post-extract-LLDB-on:
 .if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
