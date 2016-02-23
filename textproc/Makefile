@@ -750,6 +750,7 @@
     SUBDIR += p5-Search-Elasticsearch
     SUBDIR += p5-Search-Estraier
     SUBDIR += p5-Search-Odeum
+    SUBDIR += p5-Search-QueryParser
     SUBDIR += p5-Search-Saryer
     SUBDIR += p5-Search-VectorSpace
     SUBDIR += p5-Senna
