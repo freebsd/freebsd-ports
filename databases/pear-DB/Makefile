@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DB
-PORTVERSION=	1.8.2
+PORTVERSION=	1.9.2
 PORTEPOCH=	1
 CATEGORIES=	databases www pear
 
