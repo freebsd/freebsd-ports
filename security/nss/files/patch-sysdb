@@ -108,7 +108,7 @@
  
 -#include "prtypes.h"
 +#include <prtypes.h>
- #include <limits.h>     /* for LONG_MAX */
+ #include <limits.h> /* for LONG_MAX */
  #include "seccomon.h"
  #include "secdert.h"
 --- lib/certdb/xconst.c.orig	2009-08-31 12:43:46.000000000 +0200
