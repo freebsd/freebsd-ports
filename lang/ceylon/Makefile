@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ceylon
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	lang java
 MASTER_SITES=	http://downloads.ceylon-lang.org/cli/
 
