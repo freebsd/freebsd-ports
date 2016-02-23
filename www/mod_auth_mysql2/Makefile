@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_mysql
-PORTVERSION=	1.10
-PORTREVISION=	2
+PORTVERSION=	1.11
 CATEGORIES=	www
 MASTER_SITES=	http://www.heuer.org/mod_auth_mysql/old/
 PKGNAMESUFFIX=	2
