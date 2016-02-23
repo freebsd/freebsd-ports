@@ -1,0 +1,4 @@
+Turn free-text queries into SQL WHERE clauses. The idea is to allow you to treat
+your database like a free-text search index, when it really isn't.
+
+WWW: http://search.cpan.org/dist/Search-QueryParser-SQL/
