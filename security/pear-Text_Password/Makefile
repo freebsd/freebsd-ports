@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text_password
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
