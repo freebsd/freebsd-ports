@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PEAR_PackageFileManager_Plugins
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
