@@ -1,0 +1,4 @@
+This module parses a query string into a data structure to be handled by
+external search engines.
+
+WWW: http://search.cpan.org/dist/Search-QueryParser/
