@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	portal
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	culot@FreeBSD.org
