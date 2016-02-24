@@ -11,7 +11,8 @@ MASTER_SITES=	http://download.gna.org/gaupol/0.19/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
@@ -21,10 +22,13 @@ USE_GNOME=	pygtk2 intltool
 USE_PYTHON=	distutils
 USES=		desktop-file-utils python
 INSTALLS_ICONS=	yes
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
+
 NLS_USES=	gettext
+NLS_USES_OFF=	gettext-tools
 
 post-patch:
 	@${REINPLACE_CMD} \
