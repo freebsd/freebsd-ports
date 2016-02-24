@@ -3,6 +3,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
 		LOCAL/ehaupt
@@ -32,17 +33,18 @@ CONFIGURE_ARGS=	--enable-ipv6 \
 CONFLICTS=	sylpheed-1.[0-8]* sylpheed-2.[0-9]* sylpheed-gtk2-[0-9]*
 
 OPTIONS_DEFINE=	CA_BUNDLE COMPFACE CURL DOCS GPGME GTKSPELL JPILOT LDAP \
-		ONIGURUMA SSL
+		ONIGURUMA SSL HIDE_OSSIG
 
 CA_BUNDLE_DESC=	Include CA bundle for certificate verification
 COMPFACE_DESC=	X-Face support
 CURL_DESC=	libcurl dependency (remote update check)
 GPGME_DESC=	GnuPG support using GPGME
 GTKSPELL_DESC=	Spell checking support
+HIDE_OSSIG_DESC=Hide OS and GTK signature in mail header
 JPILOT_DESC=	JPilot support
 ONIGURUMA_DESC=	Oniguruma support
 
-OPTIONS_DEFAULT=CA_BUNDLE CURL GTKSPELL SSL
+OPTIONS_DEFAULT=CA_BUNDLE CURL GTKSPELL GPGME SSL
 
 CA_BUNDLE_RUN_DEPENDS=		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 CA_BUNDLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libsylph_ssl.c
@@ -58,6 +60,8 @@ GPGME_CONFIGURE_ENABLE=		gpgme
 
 GTKSPELL_LIB_DEPENDS=		libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 GTKSPELL_CONFIGURE_ENABLE=	gtkspell
+
+HIDE_OSSIG_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_main.c
 
 JPILOT_LIB_DEPENDS=		libpisock.so:${PORTSDIR}/palm/pilot-link
 JPILOT_RUN_DEPENDS=		jpilot:${PORTSDIR}/palm/jpilot
