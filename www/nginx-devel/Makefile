@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.9.11
-PORTREVISION=	2
+PORTVERSION=	1.9.12
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
