@@ -155,6 +155,7 @@
     SUBDIR += gkrellmwireless2
     SUBDIR += glflow
     SUBDIR += glib-networking
+    SUBDIR += glusterfs
     SUBDIR += gnet2
     SUBDIR += gnetcat
     SUBDIR += gnome-nettool
