@@ -82,6 +82,7 @@ OPTIONS_DEFINE=	\
 	HTTP_TARANTOOL \
 	HTTP_UPLOAD \
 	HTTP_UPLOAD_PROGRESS \
+	HTTP_UPSTREAM_HEALTH \
 	HTTP_UPSTREAM_FAIR \
 	HTTP_UPSTREAM_STICKY \
 	HTTP_ZIP \
@@ -178,6 +179,7 @@ HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
 HTTP_TARANTOOL_DESC=		3rd party tarantool upstream module
 HTTP_UPLOAD_DESC=		3rd party upload module
 HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
+HTTP_UPSTREAM_HEALTH_DESC=	3rd party upstream_health_check_module
 HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
 HTTP_ZIP_DESC=			3rd party http_zip module
@@ -590,6 +592,15 @@ GH_ACCOUNT+=	masterzen:uploadprogress
 GH_PROJECT+=	nginx-upload-progress-module:uploadprogress
 GH_TAGNAME+=	v${NGINX_UPLOADPROGRESS_VERSION}:uploadprogress
 CONFIGURE_ARGS+=--add-module=${WRKSRC_uploadprogress}
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_UPSTREAM_HEALTH}
+GIT_UPSTREAM_HEALTH_VERSION=	10782ea
+GH_ACCOUNT+=	yaoweibin:upstream_health
+GH_PROJECT+=	nginx_upstream_check_module:upstream_health
+GH_TAGNAME+=	${GIT_UPSTREAM_HEALTH_VERSION}:upstream_health
+EXTRA_PATCHES+=${WRKSRC_upstream_health}/check_1.7.5+.patch:-p1
+CONFIGURE_ARGS+=--add-module=${WRKSRC_upstream_health}
 .endif
 
 .if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_FAIR)
