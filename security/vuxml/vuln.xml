@@ -58,6 +58,38 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="660ebbf5-daeb-11e5-b2bd-002590263bf5">
+    <topic>squid -- remote DoS in HTTP response processing</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>3.5.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Amos Jeffries reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2016/02/24/12">
+	  <p>The proxy contains a String object class with 64KB content limits.
+	    Some code paths do not bounds check before appending to these
+	    String and overflow leads to an assertion which terminates all
+	    client transactions using the proxy, including those unrelated to
+	    the limit being exceeded.</p>
+	  <p>Error handling for malformed HTTP responses can lead to a second
+	    assertion with the same effects as the first issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/207454</freebsdpr>
+      <url>http://www.openwall.com/lists/oss-security/2016/02/24/12</url>
+    </references>
+    <dates>
+      <discovery>2016-02-24</discovery>
+      <entry>2016-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9e5bbffc-d8ac-11e5-b2bd-002590263bf5">
     <topic>bsh -- remote code execution vulnerability</topic>
     <affects>
