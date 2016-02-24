@@ -4,3 +4,5 @@ SHA256 (libtcd-2.2.7-r2.tar.bz2) = aff1f218b84106c572d094912cd11c828e1ea212db566
 SIZE (libtcd-2.2.7-r2.tar.bz2) = 308959
 SHA256 (harmonics-dwf-20151227-free.tar.bz2) = b382acfd94cefd6f6434ff3efdbecfd929abe3639e345979da7826a37ed5a7ac
 SIZE (harmonics-dwf-20151227-free.tar.bz2) = 499871
+SHA256 (wvs.tar.bz2) = 4e996ce2e608d612ba78e35cdf50c2c73b01fce06bd5b561a7fe957ea75d6d75 
+SIZE (wvs.tar.bz2) = 37461520
