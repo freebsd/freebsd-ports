@@ -6,7 +6,7 @@ PORTVERSION=	0.32
 CATEGORIES=	benchmarks
 MASTER_SITES=	SUNSITE/system/benchmark
 
-MAINTAINER=	brian@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix Benchmark Utility for CPU(s) and memory
 
 HAS_CONFIGURE=	yes
