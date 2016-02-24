@@ -171,7 +171,7 @@ Notes:
     <affects>
       <package>
 	<name>jasper</name>
-	<range><le>1.900.1_16</le></range>
+	<range><lt>1.900.1_16</lt></range>
       </package>
     </affects>
     <description>
@@ -226,7 +226,7 @@ Notes:
     <dates>
       <discovery>2014-12-10</discovery>
       <entry>2016-02-20</entry>
-      <modified>2016-02-20</modified>
+      <modified>2016-02-24</modified>
     </dates>
   </vuln>
 
@@ -11948,7 +11948,7 @@ Notes:
     <affects>
       <package>
 	<name>jasper</name>
-	<range><le>1.900.1_16</le></range>
+	<range><lt>1.900.1_16</lt></range>
       </package>
     </affects>
     <description>
@@ -11978,7 +11978,7 @@ Notes:
     <dates>
       <discovery>2015-08-17</discovery>
       <entry>2015-08-18</entry>
-      <modified>2016-02-20</modified>
+      <modified>2016-02-24</modified>
     </dates>
   </vuln>
 
