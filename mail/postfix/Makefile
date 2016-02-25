@@ -3,7 +3,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.11.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -27,9 +27,8 @@ PORTSCOUT=	limit:^2\.11\.
 
 VDAVERSION=	2.10.0
 CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* \
-		postfix2?-* postfix210-* postfix-3.* \
-		postfix-current-[23].* postfix-current-base-[23].* \
-		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
+		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* \
+		postfix2?-* postfix-3.* postfix-current-* 
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
@@ -45,9 +44,8 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BDB CDB DOCS INST_BASE LDAP LDAP_SASL LMDB MYSQL \
 		NIS PCRE PGSQL SASL SPF SQLITE TEST TLS VDA
 
-OPTIONS_RADIO=		RG1 RG2
-OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
-OPTIONS_RADIO_RG2=	SASLKRB5 SASLKMIT
+OPTIONS_RADIO=		RG1
+OPTIONS_RADIO_RG1=	SASLKRB5 SASLKMIT
 OPTIONS_DEFAULT=	PCRE TLS
 
 BDB_USE=		BDB=yes
@@ -72,10 +70,8 @@ SPF_DESC=	SPF support (via libspf2 1.2.x)
 TEST_DESC=	SMTP/LMTP test server and generator
 VDA_DESC=	VDA (Virtual Delivery Agent)
 
-RG1_DESC=	Dovecot SASL authentication methods
-DOVECOT_DESC=	Dovecot 1.x SASL authentication method
-DOVECOT2_DESC=	Dovecot 2.x SASL authentication method
-RG2_DESC=	Kerberos network authentication protocol type
+SASL_DESC=	Cyrus SASL support (Dovecot SASL is always build in)
+RG1_DESC=	Kerberos network authentication protocol type
 SASLKRB5_DESC=	If your SASL req. Kerberos5, select this
 SASLKMIT_DESC=	If your SASL req. MIT Kerberos5, select this
 
@@ -102,7 +98,11 @@ MAKEFILEFLAGS+=	DEBUG=
 MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 
 .if ${PORT_OPTIONS:MINST_BASE}
+.if defined(SASL_SLAVE)
+PKGNAMESUFFIX=	-base-sasl
+.else
 PKGNAMESUFFIX=	-base
+.endif
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
 PLIST_SUB+=	BMAN="share/"
@@ -111,6 +111,13 @@ PLIST_SUB+=	BMAN=""
 .endif
 
 PLIST_SUB+=	PFETC=${ETCDIR}
+
+# check if mailwrapper supports $LOCALBASE
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1002506 || ${OSVERSION} >= 1100094)
+SUB_LIST+=	USE_LOCALBASE_MAILER_CONF="yes" MC_PREFIX=${LOCALBASE}
+.else
+SUB_LIST+=	USE_LOCALBASE_MAILER_CONF="no" MC_PREFIX=""
+.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
@@ -141,7 +148,11 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-Wmissing-prototypes -Wformat -Wno-comment
 
 # Default requirement for postfix rc script
-_REQUIRE=		LOGIN cleanvar
+_REQUIRE=		LOGIN cleanvar dovecot
+
+# Always build with Dovecot SASL support, Cyrus is optional
+# see Postfix HISTORY 20051222
+POSTFIX_CCARGS+=	-DUSE_SASL_AUTH
 
 .if ${PORT_OPTIONS:MPCRE}
 POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
@@ -151,18 +162,10 @@ POSTFIX_CCARGS+=	-DNO_PCRE
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
-POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
+POSTFIX_CCARGS+=	-DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
-.endif
-
-.if ${PORT_OPTIONS:MDOVECOT} || ${PORT_OPTIONS:MDOVECOT2}
-.if ${PORT_OPTIONS:MDOVECOT}
-RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
 .else
-RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot2
-.endif
-POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
-_REQUIRE+=		dovecot
+POSTFIX_CCARGS+=	-DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
 .endif
 
 .if ${PORT_OPTIONS:MSASLKRB5}
