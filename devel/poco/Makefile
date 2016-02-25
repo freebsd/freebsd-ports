@@ -6,7 +6,7 @@ DISTVERSION=	1.6.0
 CATEGORIES=	devel net
 MASTER_SITES=	http://pocoproject.org/releases/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	wes@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ libraries with a network/internet focus
 
 LICENSE=	BSL
