@@ -2,31 +2,31 @@
 
 PORTNAME=	libe-book
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/libebook/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for import of reflowable e-book formats
 
-LICENSE=	LGPL21 MPL
-LICENSE_COMB=	dual
-
-OPTIONS_DEFINE=	DOCS
+LICENSE=	MPL
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
 		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
 
+OPTIONS_DEFINE=	DOCS
+
 USE_GNOME=	libxml2
 
-USES=		gmake gperf libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lang gmake gperf libtool pathfix pkgconfig \
+		tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ZLIB_CFLAGS="-DWEHAVEZLIBINBASE" ZLIB_LIBS="-DWEDOHAVEIT"
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-werror --disable-tests
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -DBOOST_ERROR_CODE_HEADER_ONLY
 
 PORTDOCS=	*
 DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
