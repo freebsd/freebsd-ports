@@ -9,26 +9,26 @@ MASTER_SITES=	BERLIOS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gimmix is a graphical MPD client written in C using GTK+2
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
 		libtag.so:${PORTSDIR}/audio/taglib \
 		libnxml.so:${PORTSDIR}/textproc/libnxml
 
-LICENSE=	GPLv2
+USES=		tar:bzip2 desktop-file-utils gmake pkgconfig
+USE_GNOME=	gtk20 intltool libglade2
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	DATADIRNAME=share
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-
-USE_GNOME=	gtk20 intltool libglade2
-
-GNU_CONFIGURE=	yes
-USES=		tar:bzip2 desktop-file-utils gmake pkgconfig
-
-CONFIGURE_ENV=	DATADIRNAME=share
 
 NLS_CPPFLAGS=	-I${LOCALBASE}/include
 NLS_LDFLAGS=	-L${LOCALBASE}/lib -lintl
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+NLS_USES_OFF=		gettext-tools
 
 post-patch:
 	@${LN} -sf ${LOCALBASE}/share/intltool/Makefile.in.in ${WRKSRC}/po/Makefile.in.in
