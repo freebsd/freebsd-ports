@@ -26,7 +26,7 @@ LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
 		libqca-qt5.so:${PORTSDIR}/devel/qca-qt5 \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libgadu.so:${PORTSDIR}/polish/libgadu \
-		libotr.so:${PORTSDIR}/security/libotr \
+		libotr.so.5:${PORTSDIR}/security/libotr \
 		libenchant.so:${PORTSDIR}/textproc/enchant
 # TODO ntrack and ntrack-qt (needs porting) ?
 # TODO separate ports for plugins and themes (possible starting with 0.10)
