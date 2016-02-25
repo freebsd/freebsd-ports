@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drupal6
-PORTVERSION=	6.37
-PORTREVISION=	1
+PORTVERSION=	6.38
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
