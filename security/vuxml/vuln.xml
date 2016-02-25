@@ -58,6 +58,59 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7e01df39-db7e-11e5-b937-00e0814cab4e">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><le>1.650</le></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><le>1.642.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Security+Advisory+2016-02-24">
+	  <h1>Description</h1>
+	  <h5>SECURITY-232 / CVE-2016-0788(Remote code execution vulnerability in remoting module)</h5>
+	  <p>A vulnerability in the Jenkins remoting module allowed
+	    unauthenticated remote attackers to open a JRMP listener on the
+	    server hosting the Jenkins master process, which allowed arbitrary
+	    code execution.</p>
+	  <h5>SECURITY-238 / CVE-2016-0789(HTTP response splitting vulnerability)</h5>
+	  <p>An HTTP response splitting vulnerability in the CLI command
+	    documentation allowed attackers to craft Jenkins URLs that serve
+	    malicious content.</p>
+	  <h5>SECURITY-241 / CVE-2016-0790(Non-constant time comparison of API token)</h5>
+	  <p>The verification of user-provided API tokens with the expected
+	    value did not use a constant-time comparison algorithm, potentially
+	    allowing attackers to use statistical methods to determine valid
+	    API tokens using brute-force methods.</p>
+	  <h5>SECURITY-245 / CVE-2016-0791(Non-constant time comparison of CSRF crumbs)</h5>
+	  <p>The verification of user-provided CSRF crumbs with the expected
+	    value did not use a constant-time comparison algorithm, potentially
+	    allowing attackers to use statistical methods to determine valid
+	    CSRF crumbs using brute-force methods.</p>
+	  <h5>SECURITY-247 / CVE-2016-0792(Remote code execution through remote API)</h5>
+	  <p>Jenkins has several API endpoints that allow low-privilege users
+	    to POST XML files that then get deserialized by Jenkins.
+	    Maliciously crafted XML files sent to these API endpoints could
+	    result in arbitrary code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Security+Advisory+2016-02-24</url>
+    </references>
+    <dates>
+      <discovery>2016-02-24</discovery>
+      <entry>2016-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="660ebbf5-daeb-11e5-b2bd-002590263bf5">
     <topic>squid -- remote DoS in HTTP response processing</topic>
     <affects>
