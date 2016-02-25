@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=		FREETYPE JPEG LCMS PNG TIFF TKINTER WEBP
-OPTIONS_DEFAULT=	FREETYPE JPEG PNG TKINTER
+OPTIONS_DEFAULT=	FREETYPE JPEG PNG TKINTER WEBP
 
 LCMS_DESC=		Little Color Management System
 TKINTER_DESC=		Tkinter (Tcl/Tk) BitmapImage & PhotoImage support
@@ -39,11 +39,11 @@ TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 TIFF_VARS=		PYDISTUTILS_BUILDARGS+=--enable-tiff
 TIFF_VARS_OFF=		PYDISTUTILS_BUILDARGS+=--disable-tiff
 
-TKINTER_USES=		tk:build
+TKINTER_USES=		tk
 TKINTER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 TKINTER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
-TKINTER_VARS=		PYDISTUTILS_BUILDARGS+=--enable-tcl --enable-tk --include-dirs=${TCL_INCLUDEDIR}:${TK_INCLUDEDIR}
-TKINTER_VARS_OFF=	PYDISTUTILS_BUILDARGS+=--disable-tcl --disable-tk
+TKINTER_VARS=		PYDISTUTILS_BUILDARGS+="--enable-tcl --enable-tk --include-dirs=${TCL_INCLUDEDIR}:${TK_INCLUDEDIR}"
+TKINTER_VARS_OFF=	PYDISTUTILS_BUILDARGS+="--disable-tcl --disable-tk"
 
 WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 WEBP_VARS=		PYDISTUTILS_BUILDARGS+=--enable-webp
@@ -54,12 +54,15 @@ USE_GITHUB=	yes
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
-PYDISTUTILS_BUILD_TARGET=	build build_ext
-
 GH_ACCOUNT=	python-${PORTNAME}
 GH_PROJECT=	${PORTNAME:C/p/P/}
 
 CONFLICTS_INSTALL=	py*-imaging-*
+
+.include <bsd.port.pre.mk>
+
+PYDISTUTILS_BUILD_TARGET=	build build_ext
+PYDISTUTILS_BUILDARGS+=		saveopts
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PIL/*.so
@@ -70,4 +73,4 @@ do-test:
 	${PYTHON_CMD} selftest.py && \
 	${PYTHON_CMD} -m nose -vx Tests/test_*.py
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
