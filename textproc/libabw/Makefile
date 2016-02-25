@@ -4,14 +4,12 @@ PORTNAME=	libabw
 PORTVERSION=	0.1.1
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	LODEV
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	LODEV/${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library providing ability to interpret Abiword documents
 
-LICENSE=	LGPL21 MPL
-LICENSE_COMB=	dual
+LICENSE=	MPL
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
