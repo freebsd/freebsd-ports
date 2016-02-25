@@ -14,7 +14,6 @@
 @sample %%ETCDIR%%/downloadmanagers/fancy.conf.sample
 @sample %%ETCDIR%%/e2guardian.conf.sample
 @sample %%ETCDIR%%/e2guardianf1.conf.sample
-%%ETCDIR%%/installation_or_migration_from_dg.sh
 @sample %%ETCDIR%%/lists/addheaderregexplist.sample
 %%DNS%%@sample %%ETCDIR%%/lists/authexceptionsitelist.sample
 %%DNS%%@sample %%ETCDIR%%/lists/authexceptionurllist.sample
@@ -31,8 +30,6 @@
 @sample %%ETCDIR%%/lists/bannedsitelist.sample
 @sample %%ETCDIR%%/lists/bannedsslsitelist.sample
 @sample %%ETCDIR%%/lists/bannedurllist.sample
-%%ETCDIR%%/lists/blacklists/ads/domains
-%%ETCDIR%%/lists/blacklists/ads/urls
 @sample %%ETCDIR%%/lists/contentregexplist.sample
 %%SCANNERS%%@sample %%ETCDIR%%/lists/contentscanners/exceptionvirusextensionlist.sample
 %%SCANNERS%%@sample %%ETCDIR%%/lists/contentscanners/exceptionvirusmimetypelist.sample
@@ -68,6 +65,7 @@
 @sample %%ETCDIR%%/lists/logregexpurllist.sample
 @sample %%ETCDIR%%/lists/logsitelist.sample
 @sample %%ETCDIR%%/lists/logurllist.sample
+@sample %%ETCDIR%%/lists/nocheckcertsitelist.sample
 %%ETCDIR%%/lists/phraselists/badwords/weighted_dutch
 %%ETCDIR%%/lists/phraselists/badwords/weighted_french
 %%ETCDIR%%/lists/phraselists/badwords/weighted_german
@@ -243,6 +241,7 @@ sbin/e2guardian
 %%DATADIR%%/languages/ukenglish/template.html
 %%DATADIR%%/scripts/bsd-init
 %%DATADIR%%/scripts/e2guardian
+%%DATADIR%%/scripts/e2guardian.service
 %%DATADIR%%/scripts/logrotation
 %%DATADIR%%/scripts/solaris-init
 %%DATADIR%%/scripts/systemv-init
