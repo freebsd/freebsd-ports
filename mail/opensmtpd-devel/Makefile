@@ -53,6 +53,7 @@ OPTIONS_SUB=		yes
 
 LIBASR_LIB_DEPENDS_OFF=	libasr.so:${PORTSDIR}/dns/libasr-devel
 LIBASR_LIB_DEPENDS=	libasr.so:${PORTSDIR}/dns/libasr
+LIBASR_BROKEN=		incompatible with libasr
 
 CA_BUNDLE_CONFIGURE_WITH=	path-CAfile=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
