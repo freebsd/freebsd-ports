@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	e2guardian
-PORTVERSION=	3.0.4
+PORTVERSION=	3.4.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	www
 
 MAINTAINER=	marcellocoutinho@gmail.com
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_GITHUB=	yes
-USES=		iconv pkgconfig
+USES=		autoreconf libtool iconv pkgconfig
 USE_RC_SUBR=	e2guardian
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
@@ -91,6 +91,9 @@ post-extract:
 	@${ECHO_MSG} ""
 	@sleep 3
 .endif
+
+pre-configure:
+	@cd ${WRKSRC} && ${SH} ${WRKSRC}/autogen.sh
 
 post-install:
 	@${FIND} ${STAGEDIR}${ETCDIR} -type f \
