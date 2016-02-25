@@ -13,13 +13,12 @@ USES=		uidfix
 USE_LDCONFIG=	yes
 SHLIB_MAJOR=	3
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
+MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 USE_OPENSSL=	yes
 
 post-patch:
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
-	@${SED} -e "s=%%SHLIB_MAJOR%%=${SHLIB_MAJOR}=g" \
-		${FILESDIR}/Makefile > ${WRKSRC}/Makefile
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
