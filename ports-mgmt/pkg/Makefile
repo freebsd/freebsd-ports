@@ -30,7 +30,7 @@ CFLAGS+=	-Wno-error
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .endif
 
-EXTRA_PATCHES+=	${FILESDIR}/0001-Fix-installation-of-hardlinks.patch:-p1
+EXTRA_PATCHES+=	${FILESDIR}/0001-Fix-installation-of-hardlinks.patch
 
 .include <bsd.port.pre.mk>
 
