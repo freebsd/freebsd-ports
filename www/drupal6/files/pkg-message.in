@@ -1,3 +1,11 @@
+PLEASE NOTE: on 24th February 2016, Drupal 6 will reach end of life
+upstream and will no longer be supported. This means no further security
+updates. Please consider upgrading to Drupal 7.
+
+https://www.drupal.org/drupal-6-eol
+
+===============================
+
 You now need to create the DB where Drupal is going to live
 
  PostgreSQL::
