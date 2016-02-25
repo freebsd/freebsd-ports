@@ -1,6 +1,6 @@
---- spambayes/Dibbler.py~	2009-07-10 21:43:59.000000000 +0200
-+++ spambayes/Dibbler.py	2009-07-10 21:44:37.655326444 +0200
-@@ -218,7 +218,7 @@
+--- spambayes/Dibbler.py.orig	2013-02-06 11:28:18 UTC
++++ spambayes/Dibbler.py
+@@ -215,7 +215,7 @@ class BrighterAsyncChat(asynchat.async_c
          # self.initiate_send() raises an exception, causing self.close()
          # to be called.  If we didn't check, we could end up in an infinite
          # loop.
