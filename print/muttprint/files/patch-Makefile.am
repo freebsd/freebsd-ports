@@ -1,0 +1,15 @@
+--- Makefile.am.orig	2006-05-06 09:13:46.000000000 +0200
++++ Makefile.am	2016-02-18 08:45:16.859074000 +0100
+@@ -10,4 +10,11 @@
+ 		sample-muttprintrc-fr \
+ 		sample-muttprintrc-it \
+ 		sample-muttprintrc-nl \
+-		sample-muttprintrc-si
++		sample-muttprintrc-si \
++		CHANGES	\
++		COPYING	\
++		README	\
++		README.Gnus	\
++		README.Latex	\
++		README.es	\
++		README.translations
