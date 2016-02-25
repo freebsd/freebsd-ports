@@ -1,4 +1,3 @@
-bin/toadfarm
 %%SITE_PERL%%/Toadfarm.pm
 %%SITE_PERL%%/Toadfarm/Command/reload.pm
 %%SITE_PERL%%/Toadfarm/Command/start.pm
