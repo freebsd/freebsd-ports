@@ -69,7 +69,7 @@ LMDB_DESC=	LMDB maps
 TEST_DESC=	SMTP/LMTP test server and generator
 VDA_DESC=	VDA (Virtual Delivery Agent)
 
-SASL_DESC=	Cyrus SASL support (Dovecot SASL is always build in)
+SASL_DESC=	Cyrus SASL support (Dovecot SASL is always built in)
 RG1_DESC=	Kerberos network authentication protocol type
 SASLKRB5_DESC=	If your SASL req. Kerberos5, select this
 SASLKMIT_DESC=	If your SASL req. MIT Kerberos5, select this
