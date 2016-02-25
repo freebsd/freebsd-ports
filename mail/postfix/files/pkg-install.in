@@ -130,6 +130,20 @@ install_mailer_conf() {
 }
 
 # ==============================================================================
+# Run postfix reload
+# This is a candidate for a dedicated pkg-post-upgrade script, but it seems
+# this not fully implemented in pkg :(see upstream PR 941)
+# ==============================================================================
+try_reload(){
+	${PREFIX}/sbin/postfix status 2>/dev/null
+if [ $? -eq 0 ]; then
+	${PREFIX}/sbin/postfix reload
+else
+	echo "postfix not running"
+fi
+}
+
+# ==============================================================================
 # Run postfix post-install to fix permissions and new config values
 # ==============================================================================
 if [ "$2" = "POST-INSTALL" ]; then
@@ -152,6 +166,7 @@ if [ -f "${MC_BASE}" ]; then
 		if [ $? -eq 0 ]; then
 			show_activated_msg ${MC_BASE}
 			cmp_mailer ${MC_LOCALBASE} || install_mailer_conf ${MC_LOCALBASE}
+			try_reload
 		else
 			cmp_mailer ${MC_LOCALBASE} || install_choise ${MC_LOCALBASE}
 		fi
@@ -161,6 +176,7 @@ if [ -f "${MC_BASE}" ]; then
 			install_choise ${MC_BASE}
 		else
 			show_activated_msg ${MC_BASE}
+			try_reload
 		fi
 	fi
 
