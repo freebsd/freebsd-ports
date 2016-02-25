@@ -1,6 +1,6 @@
---- ./libe-book.pc.in.orig	2014-05-24 15:06:06.000000000 +0200
-+++ ./libe-book.pc.in	2014-06-10 15:47:26.723536905 +0200
-@@ -10,4 +10,4 @@
+--- libe-book.pc.in.orig	2014-06-27 10:20:12 UTC
++++ libe-book.pc.in
+@@ -10,4 +10,4 @@ Requires: librevenge-0.0 librevenge-stre
  Libs: -L${libdir} -le-book-@EBOOK_MAJOR_VERSION@.@EBOOK_MINOR_VERSION@
  Cflags: -I${includedir}/libe-book-@EBOOK_MAJOR_VERSION@.@EBOOK_MINOR_VERSION@
  
