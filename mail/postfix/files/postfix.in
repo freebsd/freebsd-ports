@@ -32,6 +32,7 @@ load_rc_config $name
 start_cmd=${name}_start
 stop_cmd=${name}_stop
 extra_commands="reload"
+reload_cmd="${name}_reload"
 
 pidfile=${postfix_pidfile}
 procname=${postfix_procname}
@@ -42,6 +43,10 @@ postfix_start() {
 
 postfix_stop() {
 	%%PREFIX%%/sbin/postfix ${postfix_flags} stop
+}
+
+postfix_reload() {
+	%%PREFIX%%/sbin/postfix ${postfix_flags} reload
 }
 
 run_rc_command "$1"
