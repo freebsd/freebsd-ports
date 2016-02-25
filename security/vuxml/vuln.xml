@@ -58,6 +58,60 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="59a0af97-dbd4-11e5-8fa8-14dae9d210b8">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal6</name>
+	<range><lt>6.38</lt></range>
+      </package>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.43</lt></range>
+      </package>
+      <package>
+	<name>drupal8</name>
+	<range><lt>8.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Security Team reports:</p>
+	<blockquote cite="https://www.drupal.org/SA-CORE-2016-001">
+	  <ul>
+	  <li><p>File upload access bypass and denial of service (File
+	    module - Drupal 7 and 8 - Moderately Critical)</p></li>
+	  <li><p>Brute force amplification attacks via XML-RPC (XML-RPC
+	    server - Drupal 6 and 7 - Moderately Critical)</p></li>
+	  <li><p>Open redirect via path manipulation (Base system -
+	    Drupal 6, 7 and 8 - Moderately Critical) </p></li>
+	  <li><p>Form API ignores access restrictions on submit buttons
+	    (Form API - Drupal 6 - Critical)</p></li>
+	  <li><p>HTTP header injection using line breaks (Base system -
+	    Drupal 6 - Moderately Critical)</p></li>
+	  <li><p>Open redirect via double-encoded 'destination'
+	    parameter (Base system - Drupal 6 - Moderately Critical)</p></li>
+	  <li><p>Reflected file download vulnerability (System module -
+	    Drupal 6 and 7 - Moderately Critical)</p></li>
+	  <li><p>Saving user accounts can sometimes grant the user all
+	    roles (User module - Drupal 6 and 7 - Less Critical)</p></li>
+	  <li><p>Email address can be matched to an account (User module
+	    - Drupal 7 and 8 - Less Critical)</p></li>
+	  <li><p>Session data truncation can lead to unserialization of
+	    user provided data (Base system - Drupal 6 - Less Critical)</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.drupal.org/SA-CORE-2016-001</url>
+    </references>
+    <dates>
+      <discovery>2016-02-24</discovery>
+      <entry>2016-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7e01df39-db7e-11e5-b937-00e0814cab4e">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
