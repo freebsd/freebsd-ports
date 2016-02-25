@@ -1,17 +1,5 @@
---- config.mk.orig	2013-10-09 16:23:24.000000000 +0200
-+++ config.mk	2013-10-09 16:25:18.000000000 +0200
-@@ -18,6 +18,9 @@
- CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
- LDFLAGS = -s ${LIBS}
- 
-+# To enable PAM-based authentication, remove -DHAVE_SHADOW_H from CPPFLAGS
-+# and add -DHAVE_PAM instead. Also, add -lpam to LDFLAGS.
-+#
- # On *BSD remove -DHAVE_SHADOW_H from CPPFLAGS and add -DHAVE_BSD_AUTH
- # On OpenBSD and Darwin remove -lcrypt from LIBS
- 
---- slock.c.orig	2013-10-09 16:23:14.000000000 +0200
-+++ slock.c	2013-10-09 16:23:18.000000000 +0200
+--- slock.c.orig	2016-02-17 12:36:44.640577000 -0800
++++ slock.c	2016-02-17 12:48:20.966625000 -0800
 @@ -23,6 +23,10 @@
  #include <bsd_auth.h>
  #endif
@@ -20,19 +8,19 @@
 +#include <security/pam_appl.h>
 +#endif
 +
- typedef struct {
- 	int screen;
- 	Window root, win;
-@@ -44,7 +48,7 @@
- 	exit(EXIT_FAILURE);
+ enum {
+ 	INIT,
+ 	INPUT,
+@@ -85,7 +89,7 @@
  }
+ #endif
  
 -#ifndef HAVE_BSD_AUTH
 +#if !defined(HAVE_BSD_AUTH) && !defined(HAVE_PAM)
+ /* only run as root */
  static const char *
- getpw(void) { /* only run as root */
- 	const char *rval;
-@@ -74,8 +78,41 @@
+ getpw(void)
+@@ -119,8 +123,41 @@
  }
  #endif
  
@@ -75,8 +63,8 @@
  readpw(Display *dpy)
  #else
  readpw(Display *dpy, const char *pws)
-@@ -111,8 +148,10 @@
- 			switch(ksym) {
+@@ -159,8 +196,10 @@
+ 			switch (ksym) {
  			case XK_Return:
  				passwd[len] = 0;
 -#ifdef HAVE_BSD_AUTH
@@ -85,9 +73,9 @@
 +#elif defined (HAVE_PAM)
 +				running = !auth_pam(getlogin(), passwd);
  #else
- 				running = strcmp(crypt(passwd, pws), pws);
+ 				running = !!strcmp(crypt(passwd, pws), pws);
  #endif
-@@ -233,7 +272,7 @@
+@@ -289,7 +328,7 @@
  
  int
  main(int argc, char **argv) {
@@ -96,16 +84,16 @@
  	const char *pws;
  #endif
  	Display *dpy;
-@@ -247,7 +286,7 @@
- 	if(!getpwuid(getuid()))
- 		die("slock: no passwd entry for you");
+@@ -308,7 +347,7 @@
+ 	if (!getpwuid(getuid()))
+ 		die("slock: no passwd entry for you\n");
  
 -#ifndef HAVE_BSD_AUTH
 +#if !defined(HAVE_BSD_AUTH) && !defined(HAVE_PAM)
  	pws = getpw();
  #endif
  
-@@ -273,7 +312,7 @@
+@@ -341,7 +380,7 @@
  	}
  
  	/* Everything is now blank. Now wait for the correct password. */
