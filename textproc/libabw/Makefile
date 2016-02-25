@@ -2,8 +2,10 @@
 
 PORTNAME=	libabw
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
+MASTER_SITES=	LODEV
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library providing ability to interpret Abiword documents
@@ -21,7 +23,7 @@ GNU_CONFIGURE=	yes
 USE_PERL5=	build
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	-disable-werror --without-docs
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
