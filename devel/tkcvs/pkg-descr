@@ -1,8 +1,14 @@
-TkCVS is a cross-platform, TCL/Tk-based GUI for the CVS configuration
-management system. It displays the status of the files in the current
-working directory, and provides buttons and menus to execute CVS
-commands on the selected files. The Module Browser extends CVS with
-facilities for a user-friendly listing of modules in the repository.
-TkDiff is included for browsing and merging your changes.
+TkCVS is a Tcl/Tk-based graphical interface to the CVS, and Subversion
+configuration management systems. It will also help with RCS. The user
+interface is consistent across Unix/Linux, Windows, and MacOS X. TkDiff
+is included for browsing and merging your changes.
+
+It shows the status of the files in the current working directory, and
+has tools for tagging, merging, importing, exporting, checking in/out,
+and other user operations. TkCVS also aids in browsing the repository.
+For Subversion, the repository tree is browsed like an ordinary file
+tree. For CVS, the CVSROOT/modules file is read. TkCVS extends CVS with
+a method to produce a "user friendly" listing of modules by using special
+comments in the CVSROOT/modules file.
 
 WWW: http://www.twobarleycorns.net/tkcvs.html
