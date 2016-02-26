@@ -10,7 +10,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Cache earlier sendmail's verdicts for the relays
 
 .if !exists( /usr/include/libmilter/mfapi.h )
-BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
+BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/libmilter
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
