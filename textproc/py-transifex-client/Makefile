@@ -2,24 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	transifex-client
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	textproc python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Command line interface for Transifex
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>0:${PORTSDIR}/net/py-urllib3
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
-USE_GITHUB=	yes
-USES=		python:-2.7
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
-GH_ACCOUNT=	transifex
+NO_ARCH=	yes
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
