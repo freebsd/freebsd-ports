@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.5.2
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/ \
 		http://code.coreboot.org/p/seabios/downloads/get/:seabios
@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
 
-SEABIOSVERSION=	1.8.1
+SEABIOSVERSION=	1.8.2
 DISTFILES+=	${DISTNAME}.tar.gz \
 		seabios-${SEABIOSVERSION}.tar.gz:seabios
 
@@ -49,6 +49,7 @@ QEMU_ARGS=	--disable-gtk \
 		--cxx=c++
 
 EXTRA_PATCHES=	${FILESDIR}/0002-libxc-fix-xc_dom_load_elf_symtab.patch:-p1 \
+		${FILESDIR}/0001-build-fix-.text-section-address-alignment.patch:-p1 \
 		${FILESDIR}/xsa160-4.6.patch:-p1
 
 CONFIGURE_ARGS+=	--with-extra-qemuu-configure-args="${QEMU_ARGS}"
@@ -77,9 +78,9 @@ post-patch:
 		${WRKSRC}/tools/qemu-xen-traditional/i386-dm/helper2.c \
 		${WRKSRC}/docs/man/*
 	@for p in ${FILESDIR}/*qemuu*.patch; do \
-                 ${ECHO_CMD} "====> Applying $${p##*/}" ; \
-                 ${PATCH} -s -p1 -i $${p} -d ${WRKSRC}/tools/qemu-xen ; \
-         done
+		${ECHO_CMD} "====> Applying $${p##*/}" ; \
+		${PATCH} -s -p1 -i $${p} -d ${WRKSRC}/tools/qemu-xen ; \
+	done
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/run/xen
