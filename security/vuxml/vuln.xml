@@ -58,6 +58,35 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6540c8f0-dca3-11e5-8fa8-14dae9d210b8">
+    <topic>pitivi -- code execution</topic>
+    <affects>
+      <package>
+	<name>pitivi</name>
+	<range><lt>0.95</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Luke Farone reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/12/23/8">
+	  <p>Double-clicking a file in the user's media library with a
+	    specially-crafted path or filename allows for arbitrary code execution
+	    with the permissions of the user running Pitivi.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/12/23/8</url>
+      <url>https://git.gnome.org/browse/pitivi/commit/?id=45a4c84edb3b4343f199bba1c65502e3f49f5bb2</url>
+      <cvename>CVE-2015-0855</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-13</discovery>
+      <entry>2016-02-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="90c8385a-dc9f-11e5-8fa8-14dae9d210b8">
     <topic>giflib -- heap overflow</topic>
     <affects>
