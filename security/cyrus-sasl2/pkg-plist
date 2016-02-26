@@ -10,11 +10,11 @@ lib/libsasl2.la
 lib/libsasl2.so
 lib/libsasl2.so.3
 lib/libsasl2.so.3.0.0
-lib/sasl2/libanonymous.a
-lib/sasl2/libanonymous.la
-lib/sasl2/libanonymous.so
-lib/sasl2/libanonymous.so.3
-lib/sasl2/libanonymous.so.3.0.0
+%%ANONYMOUS%%lib/sasl2/libanonymous.a
+%%ANONYMOUS%%lib/sasl2/libanonymous.la
+%%ANONYMOUS%%lib/sasl2/libanonymous.so
+%%ANONYMOUS%%lib/sasl2/libanonymous.so.3
+%%ANONYMOUS%%lib/sasl2/libanonymous.so.3.0.0
 %%CRAM%%lib/sasl2/libcrammd5.a
 %%CRAM%%lib/sasl2/libcrammd5.la
 %%CRAM%%lib/sasl2/libcrammd5.so
