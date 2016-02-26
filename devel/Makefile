@@ -5368,6 +5368,7 @@
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += xxl
+    SUBDIR += yaggo
     SUBDIR += yajl
     SUBDIR += yajl-tcl
     SUBDIR += yaml-cpp
