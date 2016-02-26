@@ -1094,11 +1094,6 @@ pre-configure:
 	( cd ${WRKSRC_small_light} && ./setup )
 .endif
 
-post-configure:
-.if ${PORT_OPTIONS:MNJS}
-	( cd ${WRKSRC_njs} && ./${CONFIGURE_SCRIPT} && ${MAKE} )
-.endif
-
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 
