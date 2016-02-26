@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	valgrind
-PORTVERSION=	3.10.0.20150126
+PORTVERSION=	3.10.1.20160113
 DISTVERSIONPREFIX=	freebsd-
-PORTREVISION=	2
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/ \
@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Memory debugging and profiling tool
 
-BB_COMMIT=	963c4a777573
+BB_COMMIT=	ce1acb28953f
 BB_ACCOUNT=	stass
 BB_PROJECT=	valgrind-freebsd
 
@@ -46,6 +46,12 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
+
+EXTRA_PATCHES=	\
+		${FILESDIR}/accept4_syscall.patch:-p1 \
+		${FILESDIR}/jail_syscalls.patch:-p1 \
+		${FILESDIR}/kldload_syscalls.patch:-p1 \
+		${FILESDIR}/missing_fcntls.patch:-p1
 
 PORTDOCS=	html
 
