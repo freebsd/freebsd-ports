@@ -58,6 +58,37 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="90c8385a-dc9f-11e5-8fa8-14dae9d210b8">
+    <topic>giflib -- heap overflow</topic>
+    <affects>
+      <package>
+	<name>giflib</name>
+	<range><lt>5.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hans Jerry Illikainen reports:</p>
+	<blockquote cite="http://seclists.org/bugtraq/2015/Dec/114">
+	  <p>A heap overflow may occur in the giffix utility included in
+	    giflib-5.1.1 when processing records of the type
+	    `IMAGE_DESC_RECORD_TYPE' due to the allocated size of `LineBuffer'
+	    equaling the value of the logical screen width, `GifFileIn-&gt;SWidth',
+	    while subsequently having `GifFileIn-&gt;Image.Width' bytes of data written
+	    to it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://seclists.org/bugtraq/2015/Dec/114</url>
+      <cvename>CVE-2015-7555</cvename>
+    </references>
+    <dates>
+      <discovery>2015-12-21</discovery>
+      <entry>2016-02-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="59a0af97-dbd4-11e5-8fa8-14dae9d210b8">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
