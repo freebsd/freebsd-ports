@@ -46,24 +46,21 @@ CONFIGURE_ARGS+=--with-dblib=none \
 
 MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
 
-OPTIONS_SINGLE=		KERBEROS
-OPTIONS_SINGLE_KERBEROS=BASE HEIMDAL MIT
-OPTIONS_DEFAULT=	BASE
-BASE_DESC=		Use Heimdal in base
-BASE_USES=		gssapi
-BASE_CONFIGURE_ENABLE=	gssapi
-HEIMDAL_DESC=		Use Heimdal from ports
-HEIMDAL_USES=		gssapi:heimdal,flags
-HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
-			--with-gss_impl=heimdal
-HEIMDAL_PLIST_FILES=	lib/sasl2/libgs2.a \
-			lib/sasl2/libgs2.so \
-			lib/sasl2/libgs2.so.3 \
-			lib/sasl2/libgs2.so.3.0.0
-MIT_DESC=		Use MIT Kerberos V5
-MIT_USES=		gssapi:mit
-MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
-			--with-gss_impl=mit
+OPTIONS_SINGLE=			GSSAPI
+OPTIONS_SINGLE_GSSAPI=		GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+OPTIONS_DEFAULT=		GSSAPI_BASE
+GSSAPI_BASE_USES=		gssapi
+GSSAPI_BASE_CONFIGURE_ENABLE=	gssapi
+GSSAPI_HEIMDAL_USES=		gssapi:heimdal,flags
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+				--with-gss_impl=heimdal
+GSSAPI_HEIMDAL_PLIST_FILES=	lib/sasl2/libgs2.a \
+				lib/sasl2/libgs2.so \
+				lib/sasl2/libgs2.so.3 \
+				lib/sasl2/libgs2.so.3.0.0
+GSSAPI_MIT_USES=		gssapi:mit
+GSSAPI_MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+				--with-gss_impl=mit
 
 PLIST_FILES=	lib/sasl2/libgssapiv2.a \
 		lib/sasl2/libgssapiv2.so \

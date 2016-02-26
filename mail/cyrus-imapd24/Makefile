@@ -87,15 +87,12 @@ OPTIONS_RADIO_GSSAPI=		GSSAPI_HEIMDAL GSSAPI_MIT
 OPTIONS_RADIO_GSSAPI+=		GSSAPI_BASE
 OPTIONS_DEFAULT+=		GSSAPI_BASE
 .endif
-GSSAPI_BASE_DESC=		Use Heimdal in base
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
 				--with-gss_impl=heimdal
-GSSAPI_HEIMDAL_DESC=		Use Heimdal from ports
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal,flags
 GSSAPI_HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
 				--with-gss_impl=heimdal
-GSSAPI_MIT_DESC=		Use MIT Kerberos V5
 GSSAPI_MIT_USES=		gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
 				--with-gss_impl=mit
