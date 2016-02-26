@@ -9,8 +9,8 @@ bin/shptreevis
 bin/sortshp
 bin/tile4ms
 lib/libmapserver.so
-lib/libmapserver.so.1
-lib/libmapserver.so.7.0.0
+lib/libmapserver.so.2
+lib/libmapserver.so.7.0.1
 %%PHP%%%%PHP_EXTENSION_DIR%%/php_mapscript.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/mapscript.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_mapscript.so

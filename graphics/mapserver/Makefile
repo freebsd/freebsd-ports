@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		mapserver
-PORTVERSION=		7.0.0
-PORTREVISION=		1
+PORTVERSION=		7.0.1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -37,7 +36,7 @@ FRIBIDI_DESC=		Fribidi library support
 KML_DESC=		KML support
 WMS_DESC=		WMS Server support
 WFS_DESC=		WFS Server support
-WCS_DESC=               WCS Server support
+WCS_DESC=		WCS Server support
 
 .include <bsd.port.options.mk>
 
@@ -200,8 +199,8 @@ do-install:
 .endif
 
 post-install:
-	@${LN} -s ${PREFIX}/lib/libmapserver.so.7.0.0 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.1
-	@${LN} -s ${PREFIX}/lib/libmapserver.so.1 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
+	@${LN} -s ${PREFIX}/lib/libmapserver.so.7.0.0 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
+	@${LN} -s ${PREFIX}/lib/libmapserver.so.2 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
 
 .if ${PORT_OPTIONS:MPHP}
 	@${ECHO_MSG} "Please add the line extension=php_mapscript.so to ${PREFIX}/etc/php/extensions.ini"
