@@ -4395,6 +4395,7 @@
     SUBDIR += py-tgMochiKit
     SUBDIR += py-thrift
     SUBDIR += py-timelib
+    SUBDIR += py-tinyarray
     SUBDIR += py-tipper
     SUBDIR += py-total-ordering
     SUBDIR += py-tox
