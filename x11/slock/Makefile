@@ -6,7 +6,7 @@ PORTVERSION=	1.3
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Simple X screen locker
 
 LICENSE=	MIT
