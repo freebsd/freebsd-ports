@@ -2,52 +2,50 @@
 # $FreeBSD$
 
 PORTNAME=	oauthlib
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	security net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	RFC-compliant Python implementation of OAuth
+COMMENT=	RFC-compliant implementation of the OAuth request-signing logic
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}pyjwt>0:${PORTSDIR}/www/py-pyjwt \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}cryptography>0:${PORTSDIR}/security/py-cryptography \
+		${PYTHON_PKGNAMEPREFIX}pyjwt>=1.0.0:${PORTSDIR}/www/py-pyjwt \
 		${PYTHON_PKGNAMEPREFIX}blinker>0:${PORTSDIR}/devel/py-blinker
 
-OPTIONS_DEFINE=		RSA SIGNALS SIGNEDTOKEN TESTS
+OPTIONS_DEFINE=		RSA SIGNALS SIGNEDTOKEN
 OPTIONS_DEFAULT=	RSA SIGNALS SIGNEDTOKEN
 
-RSA_DESC=			Enable RSA Support
-RSA_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
+RSA_DESC=		Enable RSA Support
+SIGNALS_DESC=		Enable signal support
+SIGNEDTOKEN_DESC=	Support for Signed Token
 
-SIGNALS_DESC=			Enable signal support
+RSA_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}cryptography>0:${PORTSDIR}/security/py-cryptography
 SIGNALS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}blinker>0:${PORTSDIR}/devel/py-blinker
-
-SIGNEDTOKEN_DESC=		Support for Signed Token
-SIGNEDTOKEN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
-				${PYTHON_PKGNAMEPREFIX}pyjwt>0:${PORTSDIR}/www/py-pyjwt
-
-TESTS_DESC=			Include test suite dependencies
-TESTS_BUILD_DEPENDS=		${TEST_DEPENDS}
+SIGNEDTOKEN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:${PORTSDIR}/security/py-cryptography \
+				${PYTHON_PKGNAMEPREFIX}pyjwt>=1.0.0:${PORTSDIR}/www/py-pyjwt
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2 \
+		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 .endif
 
 post-extract:
 	@${CHMOD} -R a+rX ${WRKSRC}
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.post.mk>
