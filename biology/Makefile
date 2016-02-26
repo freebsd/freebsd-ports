@@ -94,6 +94,7 @@
     SUBDIR += treepuzzle
     SUBDIR += treeviewx
     SUBDIR += ugene
+    SUBDIR += vcftools
     SUBDIR += velvet
     SUBDIR += wise
     SUBDIR += xmolwt
