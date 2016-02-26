@@ -4,14 +4,14 @@
 PORTNAME=	valgrind
 PORTVERSION=	3.10.0.20150126
 DISTVERSIONPREFIX=	freebsd-
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Memory debugging and profiling tool
 
 BB_COMMIT=	963c4a777573
