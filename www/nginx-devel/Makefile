@@ -884,8 +884,8 @@ USE_OPENSSL_PORT=	yes
 .if ${PORT_OPTIONS:MNJS}
 GH_ACCOUNT+=	nginx:njs
 GH_PROJECT+=	njs:njs
-GH_TAGNAME+=	bb38609:njs
-CONFIGURE_ARGS+=--add-module=${WRKSRC_njs}/nginx
+GH_TAGNAME+=	dbd4181:njs
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_njs}/nginx
 .endif
 
 .if ${PORT_OPTIONS:MSTREAM}
@@ -1092,6 +1092,11 @@ pre-configure:
 .endif
 .if ${PORT_OPTIONS:MSMALL_LIGHT}
 	( cd ${WRKSRC_small_light} && ./setup )
+.endif
+
+post-configure:
+.if ${PORT_OPTIONS:MNJS}
+	( cd ${WRKSRC_njs} && ./${CONFIGURE_SCRIPT} && ${MAKE} )
 .endif
 
 do-build:
