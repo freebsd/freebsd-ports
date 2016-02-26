@@ -1,27 +1,35 @@
 # $FreeBSD$
 
 PORTNAME=	pyjwt
-PORTVERSION=	0.2.1
+PORTVERSION=	1.4.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
-DISTNAME=	PyJWT-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	PyJWT-${PORTVERSION}
 
 MAINTAINER=	terje@elde.net
 COMMENT=	JSON Web Token implementation in Python
 
 LICENSE=	MIT
-# LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RSASSA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto
-
-OPTIONS_DEFINE=	RSASSA
-RSASSA_DESC=	RSASSA-PKCS1 v1.5 signature support
+# Some tests are skipped without pycrypto, but its not
+# referenced as a requirement anymore. 
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest \
+		${PYTHON_PKGNAMEPREFIX}cryptography>0:${PORTSDIR}/security/py-cryptography \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+OPTIONS_DEFINE=	RSASSA
+
+RSASSA_DESC=		RSASSA-PKCS1 v1.5 signature support
+RSASSA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:${PORTSDIR}/security/py-cryptography
+
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -c /dev/null -v -rs
 
 .include <bsd.port.mk>
