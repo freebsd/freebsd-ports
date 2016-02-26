@@ -1,0 +1,54 @@
+diff --git a/coregrind/m_syswrap/syswrap-freebsd.c b/coregrind/m_syswrap/syswrap-freebsd.c
+--- a/coregrind/m_syswrap/syswrap-freebsd.c
++++ b/coregrind/m_syswrap/syswrap-freebsd.c
+@@ -3278,9 +3278,12 @@ PRE(sys_fcntl)
+ 
+    // These ones use ARG3 as "arg".
+    case VKI_F_DUPFD:
++   case VKI_F_DUPFD_CLOEXEC:
+    case VKI_F_SETFD:
+    case VKI_F_SETFL:
+    case VKI_F_SETOWN:
++   case VKI_F_READAHEAD:
++   case VKI_F_RDAHEAD:
+       PRINT("sys_fcntl[ARG3=='arg'] ( %ld, %ld, %ld )", ARG1,ARG2,ARG3);
+       PRE_REG_READ3(long, "fcntl",
+                     unsigned int, fd, unsigned int, cmd, unsigned long, arg);
+@@ -3300,6 +3303,7 @@ PRE(sys_fcntl)
+ 
+    // This one uses ARG3 as "oldd" and ARG4 as "newd".
+    case VKI_F_DUP2FD:
++   case VKI_F_DUP2FD_CLOEXEC:
+       PRINT("sys_fcntl[ARG3=='oldd', ARG4=='newd'] ( %ld, %ld, %ld, %ld )",
+          ARG1,ARG2,ARG3,ARG4);
+       PRE_REG_READ4(long, "fcntl",
+@@ -3339,6 +3343,15 @@ POST(sys_fcntl)
+             ML_(record_fd_open_named)(tid, RES);
+       }
+    }
++   else if (ARG2 == VKI_F_DUPFD_CLOEXEC) {
++      if (!ML_(fd_allowed)(RES, "fcntl(DUPFD_CLOEXEC)", tid, True)) {
++         VG_(close)(RES);
++         SET_STATUS_Failure( VKI_EMFILE );
++      } else {
++         if (VG_(clo_track_fds))
++            ML_(record_fd_open_named)(tid, RES);
++      }
++   }
+ }
+ 
+ PRE(sys_ioctl)
+diff --git a/include/vki/vki-freebsd.h b/include/vki/vki-freebsd.h
+--- a/include/vki/vki-freebsd.h
++++ b/include/vki/vki-freebsd.h
+@@ -1554,6 +1554,10 @@ struct vki_dirent {
+ #define VKI_F_SETLK		12	/* set record locking information */
+ #define VKI_F_SETLKW		13	/* F_SETLK; wait if blocked */
+ #define VKI_F_SETLK_REMOTE	14	/* debugging support for remote locks */
++#define VKI_F_READAHEAD		15	/* read ahead */
++#define VKI_F_RDAHEAD		16	/* Darwin compatible read ahead */
++#define VKI_F_DUPFD_CLOEXEC	17	/* Like F_DUPFD, but FD_CLOEXEC is set */
++#define VKI_F_DUP2FD_CLOEXEC	18	/* Like F_DUP2FD, but FD_CLOEXEC is set */
+ 
+ /* for F_[GET|SET]FL */
+ #define VKI_FD_CLOEXEC	1	/* actually anything with low bit set goes */
