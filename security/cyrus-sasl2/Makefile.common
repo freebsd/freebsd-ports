@@ -49,9 +49,9 @@ DISTINFO_FILE=	${CYRUS_SASL2_DIR}/distinfo
 PATCHDIR=	${CYRUS_SASL2_DIR}/files
 
 .if defined(PKGNAMESUFFIX)
-CYRUS_BUILD_TARGET=	${PKGNAMESUFFIX:S/^-//}
+CYRUS_BUILD_TARGET?=	${PKGNAMESUFFIX:S/^-//}
 .else
-CYRUS_BUILD_TARGET=	${PORTNAME}
+CYRUS_BUILD_TARGET?=	${PORTNAME}
 .endif
 
 .if ${CYRUS_BUILD_TARGET} != "cyrus-sasl" && ${CYRUS_BUILD_TARGET} != "saslauthd"
@@ -60,6 +60,11 @@ INSTALL_WRKSRC=	${WRKSRC}/plugins
 LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 USES=		libtool:build
 CONFIGURE_ARGS+=--with-dblib=none
+
+PLIST_FILES+=	lib/sasl2/lib${CYRUS_BUILD_TARGET}.a \
+		lib/sasl2/lib${CYRUS_BUILD_TARGET}.so \
+		lib/sasl2/lib${CYRUS_BUILD_TARGET}.so.3 \
+		lib/sasl2/lib${CYRUS_BUILD_TARGET}.so.3.0.0
 
 .endif
 

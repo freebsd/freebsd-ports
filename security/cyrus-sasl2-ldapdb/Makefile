@@ -12,9 +12,4 @@ WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 
 CONFIGURE_ARGS+=--enable-ldapdb --with-ldap=${LOCALBASE}
 
-PLIST_FILES=	lib/sasl2/libldapdb.a \
-		lib/sasl2/libldapdb.so \
-		lib/sasl2/libldapdb.so.3 \
-		lib/sasl2/libldapdb.so.3.0.0
-
 .include "${.CURDIR}/../../security/cyrus-sasl2/Makefile.common"
