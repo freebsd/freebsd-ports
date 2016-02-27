@@ -1,0 +1,23 @@
+U-Boot loader for Utilite and Utilite Pro
+
+Install the cm-fx6-firmware file onto the boot disk using:
+
+  dd if=cm-fx6-firmware of=/dev/whatever bs=1k skip=1 seek=1 oflag=dsync
+
+The U-Boot built by this port expects the first 1MB of the boot media to
+be reserved for the U-Boot executable and saved environment. The firmware
+file begins at an offset of 1K from the start of the boot disk. The U-Boot
+environment area begins at an offset of 512K.
+
+This version is patched so that:
+ * ELF and API features are enabled to support ubldr.
+ * A single U-Boot image supports Utilite and Utilite Pro.
+ * When the selected board has multiple SD or MMC devices available, the
+   mmc0 device in U-Boot (and thus the disk0 device in loader(8)) will be
+   whichever device U-Boot was loaded from by the ROM bootloader routines.
+
+The sources for this port are based on stock U-Boot 2015.07 with patches
+provided by CompuLab at:
+http://www.compulab.co.il/wp-content/uploads/2015/10/u-boot-2015.07.tar.bz2
+
+For general information about U-Boot see WWW: http://www.denx.de/wiki/U-Boot
