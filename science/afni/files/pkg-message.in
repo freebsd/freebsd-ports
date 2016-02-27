@@ -12,6 +12,12 @@ or DRI (graphics/dri).
 
 ---
 
+FreeBSD ports for other AFNI versions are available at
+
+    https://github.com/outpaddling/freebsd-ports-wip
+
+---
+
 For large 3dDeconvolve analyses, you may need to increase one or
 more of the following shared memory limits using sysctl (and
 /etc/sysctl.conf to make the changes permanent):
@@ -24,12 +30,9 @@ more of the following shared memory limits using sysctl (and
 
 ---
 
-The program "abut" has been renamed "afni_abut" to resolve a collision
-with the unixstat port.
-
----
-
 AFNI_PLUGIN_PATH should be set to %%PREFIX%%/lib/afni:%%DATADIR%%
 AFNI_GLOBAL_SESSION should be set to %%DATADIR%%.
+You can do this by sourcing %%PREFIX%%/etc/mri/afni.profiles for 
+Bourne-style shells or or %%PREFIX%%/etc/mri/afni.cshrc for C-style shells.
 
 =============================================================================
