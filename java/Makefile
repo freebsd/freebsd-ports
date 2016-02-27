@@ -29,6 +29,8 @@
     SUBDIR += icedtea-web
     SUBDIR += infobus
     SUBDIR += intellij
+    SUBDIR += intellij-fsnotifier
+    SUBDIR += intellij-pty4j
     SUBDIR += jad
     SUBDIR += jaf
     SUBDIR += jai
