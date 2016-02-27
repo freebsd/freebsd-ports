@@ -56,7 +56,7 @@ BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 
 .if ${ARCH} == amd64
 USE_BINUTILS=	# intel-gcm.s
-CFLAGS+=	-B${LOCALBASE}/bin
+CC+=	-B${LOCALBASE}/bin
 .endif
 
 check regression-test test:
