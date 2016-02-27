@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb32
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 DISTVERSIONPREFIX=	r
-PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/ \
@@ -18,19 +17,25 @@ COMMENT=	Distributed document-oriented "NoSQL" database
 LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
 
+# Bugs when compiled with < Clang 3.7
+#  - https://jira.mongodb.org/browse/SERVER-21217
+#  - https://jira.mongodb.org/browse/SERVER-22740
+BUILD_DEPENDS=	${LOCALBASE}/bin/clang37:${PORTSDIR}/lang/clang37
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libsnappy.so:${PORTSDIR}/archivers/snappy
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pymongo>=3.0:${PORTSDIR}/databases/pymongo
 
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
+CPP=	${LOCALBASE}/bin/clang-cpp37
+CC=	${LOCALBASE}/bin/clang37
+CXX=	${LOCALBASE}/bin/clang++37
+CHOSEN_COMPILER_TYPE=	clang
 
-OPTIONS_DEFINE=		SASL SSL WIREDTIGER
-OPTIONS_DEFAULT=	SSL WIREDTIGER
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 (i386 deprecated in v3)"
 
-# Only supported on 64-bit
-OPTIONS_EXCLUDE_i386=	WIREDTIGER
+OPTIONS_DEFINE=		SASL SSL
+OPTIONS_DEFAULT=	SASL SSL
 
 SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
@@ -38,14 +43,9 @@ SASL_MAKE_ARGS=		--use-sasl-client
 SSL_USE=	openssl=yes
 SSL_MAKE_ARGS=	--ssl
 
-WIREDTIGER_DESC=	WiredTiger database engine support
-WIREDTIGER_VARS=	wiredtiger_build=on
-WIREDTIGER_VARS_OFF=	wiredtiger_build=off
-
 USES=		cpe execinfo python:build scons
 
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
-		--wiredtiger=${WIREDTIGER_BUILD} \
 		--use-system-pcre --use-system-snappy \
 		--release
 
@@ -58,10 +58,6 @@ ALL_TARGET=	core
 TEST_TARGET=	unittests
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-WIREDTIGER_BUILD=	off
-.endif
 
 .if ${OSVERSION} < 1000000
 # Cannot be built
