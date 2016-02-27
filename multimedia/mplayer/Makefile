@@ -3,7 +3,6 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	3
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -131,9 +130,6 @@ pre-everything::
 	@${ECHO_MSG} "or download them from"
 	@${ECHO_MSG} "http://www.mplayerhq.hu/"
 .endif
-
-pre-patch:
-	${MV} ${WRKDIR}/ffmpeg-${FFMPEG_VERSION} ${WRKSRC}/ffmpeg
 
 post-patch:
 	@${REINPLACE_CMD} \
