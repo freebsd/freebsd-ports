@@ -40,6 +40,8 @@
 
 USE_ZLIB = -DHAVE_ZLIB
 LZLIB    = -lz
+USE_GIFTI = -DHAVE_GIFTI
+LGIFTI    = -L${LOCALBASE}/lib -lexpat
 
 CC?     = cc
 LD?     = ${CC}
@@ -94,17 +96,18 @@ LIBDIR = ${INSTALLDIR}
 
 # for dynamic linking
 
-LLIBS  = -lmri -lf2c -lXm -lXp -lXpm -lXext -lXmu -lXt -lX11 -lm $(LZLIB)
+LLIBS  = -lmri -lf2c -lXm -lXp -lXpm -lXext -lXmu -lXt -lX11 -lm $(LZLIB) $(LGIFTI)
 
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 # For suma (NO STATIC LINKING OF GL libs)
-SUMA_INCLUDE_PATH = -I${LOCALBASE}/include -I./ -I../ -I../niml/ -Igts/src 
+SUMA_INCLUDE_PATH = -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/lib/glib-2.0/include -I${LOCALBASE}/include -I./ -I../ -I../niml/ -Igts/src 
 SUMA_LINK_PATH = -L/usr/lib -L${LOCALBASE}/lib -L../
 #use -lGLw if you have libGLw.a or libGLw.so* or 
 #  -lMesaGLw if you have Mesa's version (libMesaGLw*) of libGLw
-SUMA_LINK_LIB = -lXm -lGLw -lGLU -lGL -lXmu -lXp -lXt -lXext -lX11 -lm $(LZLIB)
+SUMA_LINK_LIB = -lXm -lGLw -lGLU -lGL -lXmu -lXp -lXt -lXext -lX11 -lm $(LZLIB) -lxml2 -lexpat
 SUMA_MAKEFILE_NAME = SUMA_Makefile
 SUMA_BIN_ARCHIVE = SUMA_FreeBSD.tar
+SUMA_GLIB_VER = -2.0
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ###############################################################
