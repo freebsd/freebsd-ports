@@ -140,6 +140,7 @@ include/wine/windows/cierror.h
 include/wine/windows/clusapi.h
 include/wine/windows/cmdbas.idl
 include/wine/windows/cmdtxt.idl
+include/wine/windows/colinf.idl
 include/wine/windows/comcat.h
 include/wine/windows/comcat.idl
 include/wine/windows/commctrl.h
@@ -297,6 +298,8 @@ include/wine/windows/dwrite_1.h
 include/wine/windows/dwrite_1.idl
 include/wine/windows/dwrite_2.h
 include/wine/windows/dwrite_2.idl
+include/wine/windows/dwrite_3.h
+include/wine/windows/dwrite_3.idl
 include/wine/windows/dxdiag.h
 include/wine/windows/dxerr8.h
 include/wine/windows/dxerr9.h
@@ -787,6 +790,7 @@ include/wine/windows/wintrust.h
 include/wine/windows/winuser.h
 include/wine/windows/winuser.rh
 include/wine/windows/winver.h
+include/wine/windows/wlanapi.h
 include/wine/windows/wmistr.h
 include/wine/windows/wmiutils.h
 include/wine/windows/wmiutils.idl
@@ -895,6 +899,7 @@ lib/wine/api-ms-win-core-kernel32-legacy-l1-1-0.dll.so
 lib/wine/api-ms-win-core-libraryloader-l1-1-0.dll.so
 lib/wine/api-ms-win-core-libraryloader-l1-1-1.dll.so
 %%STAGING%%lib/wine/api-ms-win-core-libraryloader-l1-2-0.dll.so
+lib/wine/api-ms-win-core-localization-l1-1-0.dll.so
 lib/wine/api-ms-win-core-localization-l1-2-0.dll.so
 lib/wine/api-ms-win-core-localization-l1-2-1.dll.so
 lib/wine/api-ms-win-core-localization-obsolete-l1-1-0.dll.so
@@ -1184,6 +1189,7 @@ lib/wine/fakedlls/api-ms-win-core-kernel32-legacy-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-libraryloader-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-libraryloader-l1-1-1.dll
 %%STAGING%%lib/wine/fakedlls/api-ms-win-core-libraryloader-l1-2-0.dll
+lib/wine/fakedlls/api-ms-win-core-localization-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-localization-l1-2-0.dll
 lib/wine/fakedlls/api-ms-win-core-localization-l1-2-1.dll
 lib/wine/fakedlls/api-ms-win-core-localization-obsolete-l1-1-0.dll
@@ -1458,6 +1464,7 @@ lib/wine/fakedlls/hlink.dll
 lib/wine/fakedlls/hnetcfg.dll
 lib/wine/fakedlls/hostname.exe
 lib/wine/fakedlls/httpapi.dll
+lib/wine/fakedlls/icacls.exe
 lib/wine/fakedlls/iccvid.dll
 lib/wine/fakedlls/icinfo.exe
 lib/wine/fakedlls/icmp.dll
@@ -1706,6 +1713,7 @@ lib/wine/fakedlls/shdocvw.dll
 lib/wine/fakedlls/shell32.dll
 lib/wine/fakedlls/shfolder.dll
 lib/wine/fakedlls/shlwapi.dll
+%%STAGING%%lib/wine/fakedlls/shutdown.exe
 lib/wine/fakedlls/slbcsp.dll
 lib/wine/fakedlls/slc.dll
 lib/wine/fakedlls/snmpapi.dll
@@ -1878,6 +1886,7 @@ lib/wine/hlink.dll.so
 lib/wine/hnetcfg.dll.so
 lib/wine/hostname.exe.so
 lib/wine/httpapi.dll.so
+lib/wine/icacls.exe.so
 lib/wine/iccvid.dll.so
 lib/wine/icinfo.exe.so
 lib/wine/icmp.dll.so
@@ -2311,6 +2320,7 @@ lib/wine/shell32.dll.so
 %%STAGING%%lib/wine/shcore.dll.so
 lib/wine/shfolder.dll.so
 lib/wine/shlwapi.dll.so
+%%STAGING%%lib/wine/shutdown.exe.so
 lib/wine/slbcsp.dll.so
 lib/wine/slc.dll.so
 lib/wine/snmpapi.dll.so
