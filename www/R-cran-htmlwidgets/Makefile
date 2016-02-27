@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htmlwidgets
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,7 +11,7 @@ COMMENT=	HTML Widgets for R
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-htmltools>=0.2.6:${PORTSDIR}/textproc/R-cran-htmltools \
+RUN_DEPENDS=	R-cran-htmltools>=0.3:${PORTSDIR}/textproc/R-cran-htmltools \
 		R-cran-jsonlite>=0.9.16:${PORTSDIR}/converters/R-cran-jsonlite \
 		R-cran-yaml>0:${PORTSDIR}/textproc/R-cran-yaml
 
