@@ -394,6 +394,7 @@
     SUBDIR += octave-forge-video
     SUBDIR += octave-forge-xraylib
     SUBDIR += octave-forge-zenity
+    SUBDIR += octave-forge-zeromq
     SUBDIR += ogdf
     SUBDIR += oleo
     SUBDIR += open-axiom
