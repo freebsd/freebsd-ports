@@ -2,6 +2,7 @@
 
 PORTNAME=	letsencrypt.sh
 PORTVERSION=	0.0.0.20160217
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	sascha@root-login.org

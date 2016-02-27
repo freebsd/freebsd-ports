@@ -8,6 +8,9 @@ then
     source_periodic_confs
 fi
 
+PATH=$PATH:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
+export PATH
+
 case "$weekly_letsencrypt_enable" in
     [Yy][Ee][Ss])
 	if [ -z "$weekly_letsencrypt_user" ]
