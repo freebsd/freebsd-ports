@@ -337,25 +337,9 @@ share/swat/lang/tr/images/samba.gif
 share/swat/lang/tr/images/shares.gif
 share/swat/lang/tr/images/status.gif
 share/swat/lang/tr/images/viewconfig.gif
-@dirrm share/swat/lang/tr/js
-@dirrm share/swat/lang/tr/include
-@dirrm share/swat/lang/tr/images
-@dirrm share/swat/lang/tr/help
-@dirrm share/swat/lang/tr
-@dirrm share/swat/lang/ja/js
-@dirrm share/swat/lang/ja/include
-@dirrm share/swat/lang/ja/images
-@dirrm share/swat/lang/ja/help
-@dirrm share/swat/lang/ja
-@dirrm share/swat/lang
-@dirrm share/swat/js
-@dirrm share/swat/include
-@dirrm share/swat/images
-@dirrm share/swat/help/manpages
-@dirrm share/swat/help/Samba3-HOWTO/images
-@dirrm share/swat/help/Samba3-HOWTO
-@dirrm share/swat/help/Samba3-Developers-Guide
-@dirrm share/swat/help/Samba3-ByExample/images
-@dirrm share/swat/help/Samba3-ByExample
-@dirrm share/swat/help
-@dirrm share/swat
+@dir share/swat/lang/tr/js
+@dir share/swat/lang/tr/include
+@dir share/swat/lang/ja/js
+@dir share/swat/lang/ja/include
+@dir share/swat/lang/ja/images
+@dir share/swat/js
