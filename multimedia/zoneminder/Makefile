@@ -35,6 +35,7 @@ USE_MYSQL=	yes
 USE_RC_SUBR=	zoneminder
 USE_GCC=	any
 USE_PERL5=	run build
+IGNORE_WITH_PHP=	70
 
 CFLAGS+=	-I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/ffmpeg0
