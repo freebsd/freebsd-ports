@@ -1,0 +1,4 @@
+DSBWrtSysctl is a FreeBSD command-line tool to add variable=value pairs to
+/etc/sysctl.conf, or to change the values of existing variables.
+
+WWW: http://freeshell.de/~mk/projects/dsbwrtsysctl.html
