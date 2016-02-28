@@ -1,6 +1,6 @@
---- cpp/server/ct-mirror.cc.orig	2016-02-02 11:35:23 UTC
-+++ cpp/server/ct-mirror.cc
-@@ -98,7 +98,7 @@ using cert_trans::Update;
+--- cpp/server/ct-mirror_v2.cc.orig	2016-02-02 11:35:23 UTC
++++ cpp/server/ct-mirror_v2.cc
+@@ -91,7 +91,7 @@ using cert_trans::Update;
  using cert_trans::UrlFetcher;
  using ct::ClusterNodeState;
  using ct::SignedTreeHead;

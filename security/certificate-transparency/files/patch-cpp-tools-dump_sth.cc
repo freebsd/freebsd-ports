@@ -1,9 +1,9 @@
---- cpp/tools/dump_sth.cc.orig	2015-10-27 10:35:13.973569000 +0100
-+++ cpp/tools/dump_sth.cc	2015-10-27 10:35:44.745588000 +0100
-@@ -26,11 +26,11 @@ void DumpSth(const char *filename) {
+--- cpp/tools/dump_sth.cc.orig	2016-02-02 11:35:23 UTC
++++ cpp/tools/dump_sth.cc
+@@ -26,11 +26,11 @@ void DumpSth(const char* filename) {
  
  
- int main(int argc, char *argv[]) {
+ int main(int argc, char* argv[]) {
 -  google::SetVersionString(cert_trans::kBuildVersion);
 -  google::ParseCommandLineFlags(&argc, &argv, true);
 +  gflags::SetVersionString(cert_trans::kBuildVersion);
