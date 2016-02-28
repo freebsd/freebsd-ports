@@ -3,6 +3,7 @@
 
 PORTNAME=	frontaccounting
 DISTVERSION=	2.3.24
+PORTREVISION=	1
 CATEGORIES=	finance www
 MASTER_SITES=	SF/${PORTNAME}/FrontAccounting-2.3/${PORTVERSION}
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
 USES=		cpe
-USE_PHP+=	mysql mysqli openssl session hash ctype zlib
+USE_PHP+=	mysqli openssl session hash ctype zlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
