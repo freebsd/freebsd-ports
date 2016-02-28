@@ -2,6 +2,7 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	2015.07
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/:source1 \
 		http://www.compulab.co.il/wp-content/uploads/2015/10/:source2
@@ -23,7 +24,8 @@ EXTRA_PATCHES=	${WRKDIR}/cm-fx6-u-boot/u-boot/u-boot-2015.07-cm-fx6-3.patch:-p1
 NO_ARCH=	yes
 
 USES=		gmake
-SSP_UNSAFE=	yes # cross-build static linking dies with -fstack-protector
+
+PORTSCOUT=	ignore
 
 U_BOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 
