@@ -58,6 +58,46 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2d299950-ddb0-11e5-8fa8-14dae9d210b8">
+    <topic>moodle -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>moodle28</name>
+	<range><lt>2.8.10</lt></range>
+      </package>
+      <package>
+	<name>moodle29</name>
+	<range><lt>2.9.4</lt></range>
+      </package>
+      <package>
+	<name>moodle30</name>
+	<range><lt>3.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Marina Glancy reports:</p>
+	<blockquote cite="https://moodle.org/security/">
+	  <ul>
+	    <li><p>MSA-16-0001: Two enrolment-related web services don't
+	    check course visibility</p></li>
+	    <li><p>MSA-16-0002: XSS Vulnerability in course management
+	    search</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://moodle.org/security/</url>
+      <cvename>CVE-2016-0724</cvename>
+      <cvename>CVE-2016-0725</cvename>
+    </references>
+    <dates>
+      <discovery>2016-01-18</discovery>
+      <entry>2016-02-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6540c8f0-dca3-11e5-8fa8-14dae9d210b8">
     <topic>pitivi -- code execution</topic>
     <affects>
