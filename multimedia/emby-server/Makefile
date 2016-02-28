@@ -3,6 +3,7 @@
 
 PORTNAME=	emby-server
 PORTVERSION=	3.0.5821
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
