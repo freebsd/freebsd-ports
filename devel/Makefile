@@ -1538,6 +1538,7 @@
     SUBDIR += nxt-python
     SUBDIR += obby
     SUBDIR += obfuscatejs
+    SUBDIR += objecthash
     SUBDIR += ocaml-annexlib
     SUBDIR += ocaml-calendar
     SUBDIR += ocaml-camljava
