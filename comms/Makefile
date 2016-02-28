@@ -79,6 +79,7 @@
     SUBDIR += klog
     SUBDIR += kremotecontrol
     SUBDIR += kvasd
+    SUBDIR += libcodec2
     SUBDIR += libconcord
     SUBDIR += libfap
     SUBDIR += libfec
