@@ -443,6 +443,7 @@
     SUBDIR += nload
     SUBDIR += nmsg
     SUBDIR += nocatsplash
+    SUBDIR += norm
     SUBDIR += nos-ttb
     SUBDIR += nph
     SUBDIR += ns3
