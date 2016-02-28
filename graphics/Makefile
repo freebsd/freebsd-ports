@@ -172,6 +172,7 @@
     SUBDIR += exiftran
     SUBDIR += exiv2
     SUBDIR += exrtools
+    SUBDIR += farbfeld
     SUBDIR += feh
     SUBDIR += ffff
     SUBDIR += fig2sxd
