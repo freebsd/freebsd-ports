@@ -22,6 +22,7 @@ SUB_FILES=	pkg-message
 NO_BUILD=	yes
 USE_PHP=	gettext session posix
 USES=		gettext
+IGNORE_WITH_PHP=	70
 
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL
