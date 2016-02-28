@@ -3,7 +3,7 @@
 
 PORTNAME=	today
 PORTVERSION=	2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese games
 MASTER_SITES=	http://ftp.vector.co.jp/29/42/476/
 DISTNAME=	ja-${PORTNAME}-${PORTVERSION}
@@ -32,7 +32,7 @@ post-extract:
 		gengo.tbl hist??.tbl history.tbl holiday.tbl magazine.tbl \
 		monthly.tbl schedule.tbl suffix.tbl week.tbl; \
 	do \
-		${SED} 's/.$$//' $$i | nkf -Se > $$i.tmp ;\
+		nkf -Se $$i | ${TR} -d '\015' > $$i.tmp ;\
 		${MV} -f $$i.tmp $$i ; \
 	done)
 
