@@ -20,6 +20,7 @@ NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	mysql session xml
 WANT_PHP_WEB=	yes
+IGNORE_WITH_PHP=	70
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
