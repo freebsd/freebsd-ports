@@ -15,6 +15,7 @@ POSTFIX_DEFAULT_MTA=${POSTFIX_DEFAULT_MTA:=no}
 PREFIX="%%PREFIX%%"
 ETCDIR="%%ETCDIR%%"
 DAEMONDIR="%%DAEMONDIR%%"
+META_DIRECTORY="%%META_DIRECTORY%%"
 READMEDIR="%%READMEDIR%%"
 MC_TEMPLATE="%%DATADIR%%/mailer.conf.postfix"
 
@@ -149,6 +150,7 @@ fi
 if [ "$2" = "POST-INSTALL" ]; then
 	/bin/sh ${DAEMONDIR}/post-install tempdir=/tmp \
 	 daemon_directory=${DAEMONDIR} \
+ 	 meta_directory=${META_DIRECTORY} \
 	 html_directory=${READMEDIR} \
 	 readme_directory=${READMEDIR} \
 	 upgrade-package
