@@ -17,6 +17,7 @@ USE_APACHE_RUN=	22+
 USE_PHP=	gd mysql
 USES=		perl5 zip
 USE_PERL5=	run
+IGNORE_WITH_PHP=	70
 
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
