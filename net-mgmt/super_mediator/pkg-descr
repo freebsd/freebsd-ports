@@ -1,0 +1,8 @@
+super_mediator is an IPFIX mediator designed to split IPFIX sensing flows
+and distribute the network telemetry information to multiple sources.  It
+can export the network telemetry data gathered into formats designed for
+bulk loading into databases (e.g.  MySQL) or as JSON outputs, as well as
+directly loading MySQL tables.  super_mediator is primarily designed to get
+network telemetry data from YAF.
+
+WWW: http://tools.netsa.cert.org/super_mediator/
