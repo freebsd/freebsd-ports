@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	auto-accept
 
 USES=		gmake iconv shebangfix
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 
 SHEBANG_FILES=	${WRKSRC}/hxcite-mkbib ${WRKSRC}/hxprintlinks
