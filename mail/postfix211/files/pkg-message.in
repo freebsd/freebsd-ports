@@ -1,0 +1,25 @@
+To use postfix instead of sendmail:
+  - clear sendmail queue and stop the sendmail daemons
+
+Run the following commands to enable postfix during startup:
+  - sysrc postfix_enable="YES"
+  - sysrc sendmail_enable="NONE"
+
+If postfix is *not* already activated in %%MC_PREFIX%%/etc/mail/mailer.conf
+  - mv %%MC_PREFIX%%/etc/mail/mailer.conf %%MC_PREFIX%%/etc/mail/mailer.conf.old
+  - install -m 0644 %%DATADIR%%/mailer.conf.postfix %%MC_PREFIX%%/etc/mail/mailer.conf
+
+Disable sendmail(8) specific tasks,
+add the following lines to /etc/periodic.conf(.local):
+  daily_clean_hoststat_enable="NO"
+  daily_status_mail_rejects_enable="NO"
+  daily_status_include_submit_mailq="NO"
+  daily_submit_queuerun="NO"
+
+If you are using SASL, you need to make sure that postfix has access to read
+the sasldb file.  This is accomplished by adding postfix to group mail and
+making the %%PREFIX%%/etc/sasldb* file(s) readable by group mail (this should
+be the default for new installs).
+
+If you are upgrading from prior postfix version, review the RELEASE_NOTES to
+familiarize yourself with new features and incompatabilities. 
