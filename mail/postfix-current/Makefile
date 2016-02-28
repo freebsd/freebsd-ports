@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.0-20160204
+DISTVERSION=	3.2-20160224
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -11,10 +11,8 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
 		http://www.artfiles.org/postfix.org/postfix-release/ \
 		http://mirror.lhsolutions.nl/postfix-release/ \
 		ftp://postfix.mirrors.pair.com/
-#MASTER_SITES:=	${MASTER_SITES:S|$|experimental/|}
-MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
+MASTER_SITES:=	${MASTER_SITES:S|$|experimental/|}
 PKGNAMESUFFIX?=	-current
-DISTNAME=	${PORTNAME}-3.0.4
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ohauer@FreeBSD.org
@@ -33,17 +31,16 @@ CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* \
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
-USES=		perl5 shebangfix cpe
+USES=		shebangfix cpe
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
 USE_RC_SUBR=	postfix
 USE_SUBMAKE=	yes
-USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BDB CDB DOCS INST_BASE LDAP LDAP_SASL LMDB MYSQL \
-		NIS PCRE PGSQL SASL SQLITE TEST TLS VDA
+		NIS PCRE PGSQL SASL SQLITE TEST TLS
 
 OPTIONS_RADIO=		RG1
 OPTIONS_RADIO_RG1=	SASLKRB5 SASLKMIT
@@ -67,7 +64,6 @@ LDAP_DESC=	LDAP maps (uses WITH_OPENLDAP_VER)
 LDAP_SASL_DESC=	LDAP client-to-server SASL auth
 LMDB_DESC=	LMDB maps
 TEST_DESC=	SMTP/LMTP test server and generator
-VDA_DESC=	VDA (Virtual Delivery Agent)
 
 SASL_DESC=	Cyrus SASL support (Dovecot SASL is always built in)
 RG1_DESC=	Kerberos network authentication protocol type
@@ -82,13 +78,6 @@ HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 STRIP_LIBEXEC=	anvil bounce cleanup discard dnsblog error flush lmtp local master \
 		nqmgr oqmgr pickup pipe postscreen proxymap qmgr qmqpd scache showq \
 		smtp smtpd spawn tlsmgr tlsproxy trivial-rewrite verify virtual
-
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
-OLD_MAILER!=	${GREP} -m 1 '^purgestat' /etc/mail/mailer.conf || ${ECHO_CMD}
-.if !empty(OLD_MAILER)
-IS_INTERACTIVE=	yes
-.endif
-.endif
 
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
@@ -248,10 +237,6 @@ POSTFIX_CCARGS+=	-DHAS_NIS
 _REQUIRE+=		ypserv
 .endif
 
-.if ${PORT_OPTIONS:MVDA}
-BROKEN=		At the moment, VDA support is unavailable for ${PORTNAME}-${DISTVERSION}
-.endif
-
 .if ${PORT_OPTIONS:MTEST}
 BINTEST=	qmqp-sink qmqp-source smtp-sink smtp-source
 MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
@@ -295,8 +280,6 @@ pre-patch:
 
 	@${ECHO} '<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>' \
 		> ${WRKSRC}/html/body_checks.5.html
-	@${REINPLACE_CMD} -E -e 's![[:<:]]perl[[:>:]]!${PERL}!' \
-		${WRKSRC}/src/bounce/Makefile.in
 	@${REINPLACE_CMD} -E -e 's!^(#define DEF_SGID_GROUP[^"]+)"postdrop"$$!\1"maildrop"!' \
 		${WRKSRC}/src/global/mail_params.h
 	@${FIND} -X ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man \
