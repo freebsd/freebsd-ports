@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PKGNAMESUFFIX?=	-sasl
+PKGNAMESUFFIX?=	211-sasl
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Postfix with Cyrus SASL support

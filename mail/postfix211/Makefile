@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
 		http://mirror.lhsolutions.nl/postfix-release/ \
 		ftp://postfix.mirrors.pair.com/
 MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
+PKGNAMESUFFIX?=	211
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ohauer@FreeBSD.org
@@ -98,9 +99,9 @@ MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 
 .if ${PORT_OPTIONS:MINST_BASE}
 .if defined(SASL_SLAVE)
-PKGNAMESUFFIX=	-base-sasl
+PKGNAMESUFFIX=	211-base-sasl
 .else
-PKGNAMESUFFIX=	-base
+PKGNAMESUFFIX=	211-base
 .endif
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
