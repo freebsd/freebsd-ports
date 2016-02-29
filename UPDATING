@@ -173,7 +173,7 @@ you update your ports collection, before attempting any port upgrades.
 
   OR
 
-    # portmaster -o www/node4 www/node
+    # portmaster -o www/node4 node
 
 20151210:
   AFFECTS: users of comms/gammu
@@ -436,7 +436,7 @@ you update your ports collection, before attempting any port upgrades.
   'pkg delete -f jpeg' before 'pkg upgrade'.
 
   If using portmaster:
-  # portmaster -o graphics/jpeg-turbo graphics/jpeg
+  # portmaster -o graphics/jpeg-turbo jpeg
 
   If using portupgrade:
   # portupgrade -f -o graphics/jpeg-turbo graphics/jpeg
