@@ -4,7 +4,6 @@ lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.NetworkClient.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.ConsumerMetadata.Response.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.ConsumerMetadata.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Fetch.Message.beam
-lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Fetch.Request.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Fetch.Response.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Fetch.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Metadata.Broker.beam
@@ -28,6 +27,7 @@ lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Produce.Response.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.Produce.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Protocol.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Server.beam
+lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Server.State.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.Supervisor.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaEx.beam
 lib/elixir/lib/kafka_ex/ebin/Elixir.KafkaExHandler.beam
