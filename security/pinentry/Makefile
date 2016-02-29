@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinentry
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.7
 PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
@@ -36,12 +36,8 @@ GTK2_DESC=	Gtk+ 2 frontend
 PINENTRY_GTK2=	pinentry-gtk-2
 GTK2_RUN_DEPENDS=	${PINENTRY_GTK2}:${PORTSDIR}/security/pinentry-gtk2
 
-.if exists(/usr/lib/libc++.so)
-QT4_DESC=	Qt 4 frontend (broken)
-.else
 QT4_DESC=	Qt 4 frontend
-.endif
-PINENTRY_QT4=	pinentry-qt4
+PINENTRY_QT4=	pinentry-qt
 QT4_RUN_DEPENDS=	${PINENTRY_QT4}:${PORTSDIR}/security/pinentry-qt4
 
 GNOME3_DESC=	GNOME 3 frontend
@@ -90,14 +86,11 @@ CONFIGURE_ARGS+=--disable-pinentry-gnome3
 
 .if ${PINENTRY_GUI} == "qt4"
 USES+=		compiler:c++11-lib
-USE_CXXSTD=	c++11
-. if exists(/usr/lib/libc++.so)
-IGNORE=		does not compile with libc++
-. endif
 USE_QT4=	gui moc_build
-PLIST_FILES=	bin/pinentry-qt4
+PLIST_FILES=	bin/pinentry-qt
+CONFIGURE_ARGS+=--disable-pinentry-qt5
 .else
-CONFIGURE_ARGS+=--disable-pinentry-qt4
+CONFIGURE_ARGS+=--disable-pinentry-qt --disable-pinentry-qt5
 .endif
 
 .if ${PINENTRY_GUI} == "gtk2"
@@ -119,14 +112,6 @@ PLIST_FILES=	bin/pinentry-tty
 CONFIGURE_ARGS+=--enable-pinentry-tty
 .else
 CONFIGURE_ARGS+=--disable-pinentry-tty
-.endif
-
-pre-configure:
-.if ${PINENTRY_GUI} == "qt4"
-	cd ${WRKSRC}/qt4 && \
-		${MOC} pinentrydialog.h > pinentrydialog.moc && \
-		${MOC} qsecurelineedit.h > qsecurelineedit.moc && \
-		${MOC} pinentryconfirm.h > pinentryconfirm.moc
 .endif
 
 post-install:
