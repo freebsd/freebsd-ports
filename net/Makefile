@@ -455,7 +455,6 @@
     SUBDIR += ntimed
     SUBDIR += ntlmaps
     SUBDIR += ntop
-    SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntp-devel
     SUBDIR += ntraceroute
@@ -1077,7 +1076,6 @@
     SUBDIR += rubygem-amq-protocol
     SUBDIR += rubygem-amqp
     SUBDIR += rubygem-amqp-utils
-    SUBDIR += rubygem-amqp067
     SUBDIR += rubygem-aws-s3
     SUBDIR += rubygem-aws-ses
     SUBDIR += rubygem-bunny

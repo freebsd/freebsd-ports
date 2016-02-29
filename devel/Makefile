@@ -4426,7 +4426,6 @@
     SUBDIR += py-uncompyle2
     SUBDIR += py-unipath
     SUBDIR += py-unittest2
-    SUBDIR += py-unittestplus
     SUBDIR += py-unpaddedbase64
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
