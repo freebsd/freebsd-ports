@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	5.6.0
+PORTVERSION=	5.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		compiler execinfo gmake python:2
+USES=		compiler execinfo gmake python
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -54,7 +54,8 @@ post-patch:
 		${WRKSRC}/tools/icu/icu-generic.gyp \
 		${WRKSRC}/deps/v8/build/shim_headers.gypi \
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp \
-		${WRKSRC}/deps/v8/src/d8.gyp
+		${WRKSRC}/deps/v8/src/d8.gyp \
+		${WRKSRC}/node.gyp
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
