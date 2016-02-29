@@ -35,7 +35,6 @@
     SUBDIR += asunder
     SUBDIR += atunes
     SUBDIR += aubio
-    SUBDIR += audacious-dumb
     SUBDIR += audacity
     SUBDIR += audex
     SUBDIR += audiere
@@ -650,7 +649,6 @@
     SUBDIR += rem
     SUBDIR += resid
     SUBDIR += rexima
-    SUBDIR += rezound
     SUBDIR += rhythmbox
     SUBDIR += rio500
     SUBDIR += rioutil
