@@ -1,5 +1,3 @@
-@comment slogin must be deleted first
-bin/slogin
 bin/scp
 bin/sftp
 bin/ssh
@@ -23,7 +21,6 @@ man/man1/ssh-keygen.1.gz
 man/man1/ssh-keyscan.1.gz
 man/man1/scp.1.gz
 man/man1/ssh.1.gz
-man/man1/slogin.1.gz
 man/man5/moduli.5.gz
 man/man5/ssh_config.5.gz
 man/man5/sshd_config.5.gz

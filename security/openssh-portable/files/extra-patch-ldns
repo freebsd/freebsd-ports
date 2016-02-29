@@ -35,9 +35,9 @@ be verified, OpenSSH will print a message and prompt the user as usual.
 +#   VerifyHostKeyDNS yes
  #   ProxyCommand ssh -q -W %h:%p gateway.example.com
  #   RekeyLimit 1G 1h
---- ssh_config.5	2013-10-03 08:15:03.621130815 -0500
-+++ ssh_config.5	2013-10-03 08:15:22.851132133 -0500
-@@ -1246,7 +1246,10 @@ The argument must be
+--- ssh_config.5.orig	2016-02-25 19:40:04.000000000 -0800
++++ ssh_config.5	2016-02-29 07:57:41.763889000 -0800
+@@ -1715,7 +1715,10 @@
  or
  .Dq ask .
  The default is
@@ -46,6 +46,6 @@ be verified, OpenSSH will print a message and prompt the user as usual.
 +if compiled with LDNS and
 +.Dq no
 +otherwise.
- Note that this option applies to protocol version 2 only.
  .Pp
  See also VERIFYING HOST KEYS in
+ .Xr ssh 1 .

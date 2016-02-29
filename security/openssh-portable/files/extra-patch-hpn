@@ -447,29 +447,18 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  echo ""
  
---- work.clean/openssh-6.8p1/kex.c.orig	2015-08-11 01:57:29.000000000 -0700
-+++ work.clean/openssh-6.8p1/kex.c	2015-08-17 17:02:06.770901000 -0700
-@@ -652,6 +652,13 @@ kex_choose_conf(struct ssh *ssh)
- 	int nenc, nmac, ncomp;
- 	u_int mode, ctos, need, dh_need, authlen;
- 	int r, first_kex_follows;
-+#ifdef NONE_CIPHER_ENABLED
-+	/* XXX: Could this move into the lower block? */
-+	int auth_flag;
-+
-+	auth_flag = ssh_packet_authentication_state(ssh);
-+	debug ("AUTH STATE IS %d", auth_flag);
-+#endif
- 
- 	if ((r = kex_buf2prop(kex->my, NULL, &my)) != 0 ||
- 	    (r = kex_buf2prop(kex->peer, &first_kex_follows, &peer)) != 0)
-@@ -709,6 +716,17 @@ kex_choose_conf(struct ssh *ssh)
+--- work.clean/openssh-7.2p1/kex.c.orig	2016-02-25 19:40:04.000000000 -0800
++++ work.clean/openssh-7.2p1/kex.c	2016-02-29 08:02:25.565288000 -0800
+@@ -822,6 +822,20 @@ kex_choose_conf(struct ssh *ssh)
  			peer[ncomp] = NULL;
  			goto out;
  		}
 +#ifdef NONE_CIPHER_ENABLED
 +		debug("REQUESTED ENC.NAME is '%s'", newkeys->enc.name);
 +		if (strcmp(newkeys->enc.name, "none") == 0) {
++			int auth_flag;
++
++			auth_flag = ssh_packet_authentication_state(ssh);
 +			debug("Requesting NONE. Authflag is %d", auth_flag);
 +			if (auth_flag == 1) {
 +				debug("None requested post authentication.");
@@ -478,13 +467,13 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +			}
 +		}
 +#endif
- 		debug("kex: %s %s %s %s",
+ 		debug("kex: %s cipher: %s MAC: %s compression: %s",
  		    ctos ? "client->server" : "server->client",
  		    newkeys->enc.name,
---- work.clean/openssh-6.8p1/packet.c	2015-03-17 00:49:20.000000000 -0500
-+++ work/openssh-6.8p1/packet.c	2015-04-03 16:10:57.002066000 -0500
-@@ -2199,6 +2199,24 @@
- 	}
+--- work.clean/openssh-7.2p1/packet.c.orig	2016-02-25 19:40:04.000000000 -0800
++++ work.clean/openssh-7.2p1/packet.c	2016-02-29 08:05:15.744201000 -0800
+@@ -1037,6 +1037,24 @@ ssh_set_newkeys(struct ssh *ssh, int mod
+ 	return 0;
  }
  
 +#ifdef NONE_CIPHER_ENABLED
@@ -506,10 +495,10 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +#endif
 +
  #define MAX_PACKETS	(1U<<31)
- int
- ssh_packet_need_rekeying(struct ssh *ssh)
-@@ -2207,6 +2225,12 @@
- 
+ static int
+ ssh_packet_need_rekeying(struct ssh *ssh, u_int outbound_packet_len)
+@@ -1055,6 +1073,12 @@ ssh_packet_need_rekeying(struct ssh *ssh
+ 	/* Peer can't rekey */
  	if (ssh->compat & SSH_BUG_NOREKEY)
  		return 0;
 +#ifdef NONE_CIPHER_ENABLED
@@ -518,9 +507,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +               return 1;
 +        }
 +#endif
- 	return
- 	    (state->p_send.packets > MAX_PACKETS) ||
- 	    (state->p_read.packets > MAX_PACKETS) ||
+ 
+ 	/*
+ 	 * Permit one packet in or out per rekey - this allows us to
 --- work.clean/openssh-6.8p1/packet.h	2015-03-17 00:49:20.000000000 -0500
 +++ work/openssh-6.8p1/packet.h	2015-04-03 16:10:34.728161000 -0500
 @@ -188,6 +188,11 @@
@@ -1110,8 +1099,8 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	}
  	if (roaming_atomicio(vwrite, connection_out, client_version_string,
  	    strlen(client_version_string)) != strlen(client_version_string))
---- work.clean/openssh-7.1p2/sshconnect2.c.orig	2016-01-13 17:10:45.000000000 -0800
-+++ work.clean/openssh-7.1p2/sshconnect2.c	2016-01-19 17:49:17.929000000 -0800
+--- work.clean/openssh-7.2p1/sshconnect2.c.orig	2016-02-25 19:40:04.000000000 -0800
++++ work.clean/openssh-7.2p1/sshconnect2.c	2016-02-29 08:06:31.134954000 -0800
 @@ -80,6 +80,14 @@
  extern char *client_version_string;
  extern char *server_version_string;
@@ -1127,7 +1116,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  /*
   * SSH2 key exchange
-@@ -153,13 +161,16 @@ order_hostkeyalgs(char *host, struct soc
+@@ -153,14 +161,17 @@ order_hostkeyalgs(char *host, struct soc
  	return ret;
  }
  
@@ -1137,6 +1126,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  ssh_kex2(char *host, struct sockaddr *hostaddr, u_short port)
  {
 -	char *myproposal[PROPOSAL_MAX] = { KEX_CLIENT };
+ 	char *s;
  	struct kex *kex;
  	int r;
  
@@ -1145,7 +1135,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	xxx_host = host;
  	xxx_hostaddr = hostaddr;
  
-@@ -232,6 +243,9 @@ ssh_kex2(char *host, struct sockaddr *ho
+@@ -235,6 +246,9 @@ ssh_kex2(char *host, struct sockaddr *ho
  	packet_send();
  	packet_write_wait();
  #endif
@@ -1155,9 +1145,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  }
  
  /*
-@@ -416,6 +430,29 @@ ssh_userauth2(const char *local_user, co
+@@ -404,6 +418,29 @@ ssh_userauth2(const char *local_user, co
  	pubkey_cleanup(&authctxt);
- 	dispatch_range(SSH2_MSG_USERAUTH_MIN, SSH2_MSG_USERAUTH_MAX, NULL);
+ 	ssh_dispatch_range(ssh, SSH2_MSG_USERAUTH_MIN, SSH2_MSG_USERAUTH_MAX, NULL);
  
 +#ifdef NONE_CIPHER_ENABLED
 +	/*
