@@ -1,0 +1,7 @@
+This software creates output using the PPA (printer performance
+architecture) protocol.  This protocol is used by some HP "Windows-only"
+printers, including the HP Deskjet 820C series, the HP DeskJet 720 series,
+and the HP DeskJet 1000 series.  It has been tested on all three printers,
+but your personal experience (positive or negative) is very much appreciated!
+
+WWW: http://pnm2ppa.sourceforge.net/

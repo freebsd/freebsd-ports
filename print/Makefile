@@ -185,6 +185,7 @@
     SUBDIR += pkipplib
     SUBDIR += pkpgcounter
     SUBDIR += pmw
+    SUBDIR += pnm2ppa
     SUBDIR += poster
     SUBDIR += ps2eps
     SUBDIR += pscal
