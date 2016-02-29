@@ -1,0 +1,4 @@
+This Apache module supports the "h2" (HTTP2 over TLS) and "h2c" (HTTP2 
+over plain HTTP connections via Upgrade). You can enable it for the 
+whole server or for specific virtual hosts only. More on this below on 
+"Configuration".
