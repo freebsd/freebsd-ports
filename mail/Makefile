@@ -291,6 +291,7 @@
     SUBDIR += openemm2015
     SUBDIR += opensmtpd
     SUBDIR += opensmtpd-devel
+    SUBDIR += opensmtpd-extras
     SUBDIR += openwebmail
     SUBDIR += osbf-lua
     SUBDIR += ovs
