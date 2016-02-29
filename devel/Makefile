@@ -4310,6 +4310,7 @@
     SUBDIR += py-qt5-test
     SUBDIR += py-rauth
     SUBDIR += py-raven
+    SUBDIR += py-rcsparse
     SUBDIR += py-rednose
     SUBDIR += py-repl
     SUBDIR += py-repoze.lru
