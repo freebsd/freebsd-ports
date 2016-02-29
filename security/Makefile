@@ -812,6 +812,7 @@
     SUBDIR += py-scrypt
     SUBDIR += py-SecretStorage
     SUBDIR += py-acme
+    SUBDIR += py-acme-tiny
     SUBDIR += py-artifacts
     SUBDIR += py-bcrypt
     SUBDIR += py-borg.localrole
