@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160229:
+  AFFECTS: users of security/openssh-portable-devel
+  AUTHOR: bdrewery@FreeBSD.org
+
+  openssh-portable-devel has been removed since it is stale, insecure and
+  not worth maintaining any longer.
+
+  Users should switch back to openssh-portable.
+
+  Using packages:
+
+    # pkg delete openssh-portable-devel
+    # pkg install openssh-portable
+
+  Using ports:
+
+    # portmaster -o security/openssh-portable openssh-portable-devel
+
+  OR
+
+    # portupgrade -o security/openssh-portable security/openssh-portable-devel
+
 20160217:
   AFFECTS: users of www/nginx-devel
   AUTHOR: osa@FreeBSD.org
