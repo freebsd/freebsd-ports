@@ -8206,3 +8206,4 @@ www/php5-session||2016-02-14|PHP 5.4 is End of Life http://php.net/supported-ver
 www/php5-tidy||2016-02-14|PHP 5.4 is End of Life http://php.net/supported-versions.php
 mail/pronto||2016-02-18|No release since 2002 http://www.muhri.net/pronto/page.php3?node=news
 russian/muttprint||2016-02-25|The Russian translation is included in print/muttprint
+security/openssh-portable-devel|security/openssh-portable|2016-02-29|Outdated and insecure, use the main port.
