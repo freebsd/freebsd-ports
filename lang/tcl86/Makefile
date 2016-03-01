@@ -3,6 +3,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.6.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION} \
 		TCLTK/tcl8_6
@@ -28,7 +29,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install-strip install-libraries
-TEST_TARGET=	do-test
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -48,12 +48,10 @@ MAKE_ENV=	SHORT_TCL_VER=${SHORT_TCL_VER} \
 PLIST_SUB=	TCL_VER=${TCL_VER} \
 		SHORT_TCL_VER=${SHORT_TCL_VER}
 
-TCLMAN_VARS=	INSTALL_TARGET+=install-doc
-TZDATA_VARS=	INSTALL_TARGET+=install-tzdata
-MODULES_VARS=	INSTALL_TARGET+=install-modules
+TCLMAN_INSTALL_TARGET=	install-doc
+TZDATA_INSTALL_TARGET=	install-tzdata
+MODULES_INSTALL_TARGET=	install-modules
 THREADS_CONFIGURE_ENABLE=	threads
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e \
@@ -62,10 +60,10 @@ post-patch:
 	     s|@TCL_BUILD_STUB_LIB_PATH@|@TCL_STUB_LIB_PATH@|; \
 	     s|@TCL_SRC_DIR@|${PREFIX}/include/tcl${TCL_VER}|' \
 	     ${WRKSRC}/tclConfig.sh.in
-.if !${PORT_OPTIONS:MTCLMAN}
+
+post-patch-TCLMAN-off:
 	@${FIND} ${WRKSRC}/../pkgs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
 	    -e '/^install:/s|install-doc||'
-.endif
 
 post-configure:
 	${REINPLACE_CMD} \
