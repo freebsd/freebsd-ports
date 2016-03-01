@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_http2-devel
 PORTVERSION=	1.2.7
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -27,6 +28,7 @@ USE_APACHE=	24+
 MODULENAME=	${GH_PROJECT}
 
 CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 post-install:
 	# Rename mod_http2 to the mod_h2 to avoid conflict with Apache24
