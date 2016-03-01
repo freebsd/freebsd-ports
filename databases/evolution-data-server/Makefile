@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	3.18.4
+PORTVERSION=	3.18.5
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
