@@ -13,6 +13,7 @@ bin/zxidwsctool
 bin/zxlogview
 bin/zxpasswd
 include/zx/zx.h
+include/zxid/HRR.h
 include/zxid/akbox.h
 include/zxid/aktab.h
 include/zxid/errmac.h
