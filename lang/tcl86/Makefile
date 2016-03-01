@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcl
-PORTVERSION=	8.6.4
+PORTVERSION=	8.6.5
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION} \
 		TCLTK/tcl8_6
@@ -22,11 +22,13 @@ OPTIONS_DEFAULT=MODULES THREADS
 TCLMAN_DESC=	Install Tcl function manpages
 TZDATA_DESC=	Install Tcl timezone data
 MODULES_DESC=	Install Tcl common modules
+OPTIONS_SUB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install-strip install-libraries
+TEST_TARGET=	do-test
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -46,34 +48,12 @@ MAKE_ENV=	SHORT_TCL_VER=${SHORT_TCL_VER} \
 PLIST_SUB=	TCL_VER=${TCL_VER} \
 		SHORT_TCL_VER=${SHORT_TCL_VER}
 
+TCLMAN_VARS=	INSTALL_TARGET+=install-doc
+TZDATA_VARS=	INSTALL_TARGET+=install-tzdata
+MODULES_VARS=	INSTALL_TARGET+=install-modules
+THREADS_CONFIGURE_ENABLE=	threads
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTCLMAN}
-INSTALL_TARGET+=install-doc
-PLIST_SUB+=	MAN=""
-.else
-PLIST_SUB+=	MAN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTZDATA}
-PLIST_SUB+=	TZDATA=""
-INSTALL_TARGET+=install-tzdata
-.else
-PLIST_SUB+=	TZDATA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMODULES}
-PLIST_SUB+=	MODULES=""
-INSTALL_TARGET+=install-modules
-.else
-PLIST_SUB+=	MODULES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=--enable-threads
-.else
-CONFIGURE_ARGS+=--disable-threads
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e \
@@ -92,7 +72,7 @@ post-configure:
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
 		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
 
-regression-test:	build
-	cd ${WRKSRC} && LC_ALL=C ${MAKE} test
+do-test:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test-tcl
 
 .include <bsd.port.mk>

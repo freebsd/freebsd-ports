@@ -75,6 +75,7 @@ lib/tk%%TK_VER%%/console.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/image2.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/images/earth.gif
 %%DEMOS%%lib/tk%%TK_VER%%/demos/images/earthris.gif
+%%DEMOS%%lib/tk%%TK_VER%%/demos/images/face.xbm
 %%DEMOS%%lib/tk%%TK_VER%%/demos/images/flagdown.xbm
 %%DEMOS%%lib/tk%%TK_VER%%/demos/images/flagup.xbm
 %%DEMOS%%lib/tk%%TK_VER%%/demos/images/gray25.xbm
@@ -133,8 +134,6 @@ lib/tk%%TK_VER%%/fontchooser.tcl
 lib/tk%%TK_VER%%/iconlist.tcl
 lib/tk%%TK_VER%%/icons.tcl
 lib/tk%%TK_VER%%/images/README
-lib/tk%%TK_VER%%/images/lamp.png
-lib/tk%%TK_VER%%/images/lamp.svg
 lib/tk%%TK_VER%%/images/logo.eps
 lib/tk%%TK_VER%%/images/logo100.gif
 lib/tk%%TK_VER%%/images/logo64.gif
