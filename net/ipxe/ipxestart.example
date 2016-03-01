@@ -1,0 +1,6 @@
+#!ipxe
+# An example iPXE start script
+# To build iPXE with this script embedded build the port with:
+#   make IPXE_EMBED=${PWD}/ipxestart.example
+ifconf
+chain https://boot.ipxe.org/demo/boot.php
