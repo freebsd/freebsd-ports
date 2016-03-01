@@ -1,0 +1,46 @@
+See https://sourceforge.net/p/openil/patches/42/
+
+This patch allows luminance BMPs to be saved as straight grayscale, saving
+lots of space for colorless images.
+--- src-IL/src/il_bmp.c	(revision 1662)
++++ src-IL/src/il_bmp.c	(working copy)
+@@ -928,6 +928,28 @@
+ 		}
+ 	}
+ 
++	if((iCurImage->Format == IL_LUMINANCE) && (iCurImage->Pal.Palette == NULL))
++	{
++		// For luminance images it is necessary to generate a grayscale BGR32
++		//  color palette.  Could call iConvertImage(..., IL_COLOR_INDEX, ...)
++		//  to generate an RGB24 palette, followed by iConvertPal(..., IL_PAL_BGR32),
++		//  to convert the palette to BGR32, but it seemed faster to just
++		//  explicitely generate the correct palette.
++		
++		iCurImage->Pal.PalSize = 256*4;
++		iCurImage->Pal.PalType = IL_PAL_BGR32;
++		iCurImage->Pal.Palette = (ILubyte*)ialloc(iCurImage->Pal.PalSize);
++		
++		// Generate grayscale palette
++		for (i = 0; i < 256; i++)
++		{
++			iCurImage->Pal.Palette[i * 4] = i;
++			iCurImage->Pal.Palette[i * 4 + 1] = i;
++			iCurImage->Pal.Palette[i * 4 + 2] = i;
++			iCurImage->Pal.Palette[i * 4 + 3] = 0;
++		}
++	}
++	
+ 	// If the current image has a palette, take care of it
+ 	TempPal = &iCurImage->Pal;
+ 	if( iCurImage->Pal.PalSize && iCurImage->Pal.Palette && iCurImage->Pal.PalType != IL_PAL_NONE ) {
+@@ -948,8 +970,8 @@
+ 	//BITMAPINFOHEADER, so that the written header refers to
+ 	//TempImage instead of the original image
+ 	
+-	// @TODO LUMINANCE converted to BGR insteaf of beign saved to luminance
+-	if (iCurImage->Format != IL_BGR && iCurImage->Format != IL_BGRA && iCurImage->Format != IL_COLOUR_INDEX) {
++	if ((iCurImage->Format != IL_BGR) && (iCurImage->Format != IL_BGRA) && 
++			(iCurImage->Format != IL_COLOUR_INDEX) && (iCurImage->Format != IL_LUMINANCE)) {
+ 		if (iCurImage->Format == IL_RGBA) {
+ 			TempImage = iConvertImage(iCurImage, IL_BGRA, IL_UNSIGNED_BYTE);
+ 		} else {
