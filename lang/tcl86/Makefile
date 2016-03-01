@@ -25,6 +25,7 @@ TZDATA_DESC=	Install Tcl timezone data
 MODULES_DESC=	Install Tcl common modules
 OPTIONS_SUB=	yes
 
+PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 
 ALL_TARGET=	all
@@ -59,10 +60,10 @@ post-patch:
 	     s|@TCL_BUILD_STUB_LIB_SPEC@|@TCL_STUB_LIB_SPEC@|; \
 	     s|@TCL_BUILD_STUB_LIB_PATH@|@TCL_STUB_LIB_PATH@|; \
 	     s|@TCL_SRC_DIR@|${PREFIX}/include/tcl${TCL_VER}|' \
-	     ${WRKSRC}/tclConfig.sh.in
+	     ${PATCH_WRKSRC}/unix/tclConfig.sh.in
 
 post-patch-TCLMAN-off:
-	@${FIND} ${WRKSRC}/../pkgs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
+	@${FIND} ${PATCH_WRKSRC}/pkgs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
 	    -e '/^install:/s|install-doc||'
 
 post-configure:
