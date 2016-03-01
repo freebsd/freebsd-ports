@@ -3,6 +3,7 @@
 
 PORTNAME=	openfire
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://download.igniterealtime.org/openfire/
