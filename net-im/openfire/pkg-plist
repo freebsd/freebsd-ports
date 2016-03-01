@@ -383,3 +383,4 @@
 %%PLUGINS%%%%DATADIR%%/plugins/xmldebugger.jar
 @dir %%VARDB%%
 @dir %%VARLOG%%
+@dir %%ETCDIR%%
