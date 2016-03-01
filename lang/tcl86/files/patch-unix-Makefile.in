@@ -1,6 +1,6 @@
---- Makefile.in.orig	2016-03-01 01:59:35.000000000 +0000
-+++ Makefile.in	2016-03-01 10:27:50.303199000 +0000
-@@ -54,6 +54,8 @@
+--- unix/Makefile.in.orig	2016-03-01 01:59:35 UTC
++++ unix/Makefile.in
+@@ -54,6 +54,8 @@ SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TC
  
  # Directory in which to install the include file tcl.h:
  INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
@@ -9,7 +9,7 @@
  
  # Path to the private tcl header dir:
  PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
-@@ -80,10 +82,10 @@
+@@ -80,10 +82,10 @@ HTML_DIR		= @HTML_DIR@
  HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
  
  # Directory in which to install the configuration file tclConfig.sh
@@ -22,7 +22,7 @@
  
  # Package search path.
  TCL_PACKAGE_PATH	= @TCL_PACKAGE_PATH@
-@@ -612,9 +614,9 @@
+@@ -612,9 +614,9 @@ SRCS = $(GENERIC_SRCS) $(TOMMATH_SRCS) $
  # Start of rules
  #--------------------------------------------------------------------------
  
@@ -34,7 +34,7 @@
  
  libraries:
  
-@@ -625,6 +627,12 @@
+@@ -625,6 +627,12 @@ doc:
  ${LIB_FILE}: ${STUB_LIB_FILE} ${OBJS}
  	rm -f $@
  	@MAKE_LIB@
@@ -47,7 +47,7 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	@if test "x${LIB_FILE}" = "xlibtcl${MAJOR_VERSION}.${MINOR_VERSION}.dll"; then \
-@@ -768,13 +776,13 @@
+@@ -768,13 +776,13 @@ trace-test: ${TCLTEST_EXE}
  # Installation rules
  #--------------------------------------------------------------------------
  
@@ -64,7 +64,7 @@
  
  install: $(INSTALL_TARGETS)
  
-@@ -796,6 +804,11 @@
+@@ -796,6 +804,11 @@ install-binaries: binaries
  	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
  	@@INSTALL_LIB@
  	@chmod 555 "$(DLL_INSTALL_DIR)/$(LIB_FILE)"
@@ -76,7 +76,7 @@
  	@echo "Installing ${TCL_EXE} as $(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
  	@$(INSTALL_PROGRAM) ${TCL_EXE} "$(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
  	@echo "Installing tclConfig.sh to $(CONFIG_INSTALL_DIR)/"
-@@ -808,12 +821,17 @@
+@@ -808,12 +821,17 @@ install-binaries: binaries
  	    @INSTALL_STUB_LIB@ ; \
  	fi
  	@EXTRA_INSTALL_BINARIES@
@@ -98,7 +98,7 @@
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
-@@ -821,7 +839,13 @@
+@@ -821,7 +839,13 @@ install-libraries: libraries
  		else true; \
  		fi; \
  	    done;
@@ -113,7 +113,7 @@
  	    do \
  	    if [ ! -d "$(SCRIPT_INSTALL_DIR)"/$$i ] ; then \
  		echo "Making directory $(SCRIPT_INSTALL_DIR)/$$i"; \
-@@ -841,31 +865,31 @@
+@@ -841,31 +865,31 @@ install-libraries: libraries
  	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/http1.0; \
  	    done;
  	@echo "Installing package http 2.8.9 as a Tcl Module";
@@ -155,7 +155,7 @@
  
  install-tzdata:
  	@for i in tzdata; \
-@@ -940,7 +964,7 @@
+@@ -940,7 +964,7 @@ install-doc: doc
  	done
  
  install-headers:
@@ -164,7 +164,7 @@
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
-@@ -949,14 +973,19 @@
+@@ -949,14 +973,19 @@ install-headers:
  		fi; \
  	    done;
  	@echo "Installing header files to $(INCLUDE_INSTALL_DIR)/";
