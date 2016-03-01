@@ -253,6 +253,7 @@
     SUBDIR += ipsorc
     SUBDIR += ipsumdump
     SUBDIR += ipsvd
+    SUBDIR += ipxe
     SUBDIR += irrd
     SUBDIR += isboot-kmod
     SUBDIR += isc-dhcp41-client
