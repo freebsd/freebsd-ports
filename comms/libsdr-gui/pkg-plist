@@ -1,0 +1,6 @@
+include/libsdr/gui/gui.hh
+include/libsdr/gui/spectrum.hh
+include/libsdr/gui/spectrumview.hh
+include/libsdr/gui/waterfallview.hh
+lib/libsdr-gui.so
+lib/libsdr-gui.so.0.1.0
