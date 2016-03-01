@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cherivis-devel
-PORTVERSION=	0.1
-PORTREVISION=	3
+PORTVERSION=	0.4
 CATEGORIES=	devel gnustep
 
 MAINTAINER=	theraven@FreeBSD.org
@@ -16,13 +15,10 @@ USES=		gnustep
 USE_GITHUB=	yes
 GH_ACCOUNT=	CTSRD-CHERI
 GH_PROJECT=	CheriVis
-GH_TAGNAME=	525aeb4
+GH_TAGNAME=	98c6c04
 
-LLVM_VERSION?=	34
-BUILD_DEPENDS+=	llvm-config${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
-LIB_DEPENDS+=	libdispatch.so:${PORTSDIR}/devel/libdispatch
+LIB_DEPENDS+=	libcheritrace.so:${PORTSDIR}/devel/cheritrace-devel
 
-MAKE_FLAGS+=		LLVM_CONFIG=llvm-config${LLVM_VERSION}
 USE_GNUSTEP=		back build
 USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
