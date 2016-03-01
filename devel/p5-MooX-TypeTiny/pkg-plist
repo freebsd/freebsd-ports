@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Method/Generate/Accessor/Role/TypeTiny.pm
+%%SITE_PERL%%/MooX/TypeTiny.pm
+%%PERL5_MAN3%%/MooX::TypeTiny.3.gz
