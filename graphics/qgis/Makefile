@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qgis
-PORTVERSION=	2.12.3
+PORTVERSION=	2.14.0
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -23,13 +23,14 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
-GH_TAGNAME=	99ac688
+GH_TAGNAME=	654fabd
 
-USES=		cpe bison cmake execinfo fortran gmake python sqlite
+USES=		cpe bison cmake desktop-file-utils execinfo fortran gmake python sqlite
 USE_QT4=	gui svg xml network sql designer testlib linguist_build \
 		qmake_build moc_build rcc_build uic_build
 
 USE_LDCONFIG=	yes
+ICON_SIZES=	8 16 22 24 32 36 42 48 64 72 80 96 128 192 256 512
 
 OPTIONS_DEFINE=		PYTHON POSTGIS GRASS SERVER
 OPTIONS_GROUP=		DEVELOPER
@@ -68,7 +69,10 @@ POSTGIS_LIB_DEPENDS=	liblwgeom.so:${PORTSDIR}/databases/postgis21
 POSTGIS_CMAKE_ON=	-DWITH_POSTGRESQL:BOOL=TRUE
 POSTGIS_CMAKE_OFF=	-DWITH_POSTGRESQL:BOOL=FALSE
 
-PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.5:${PORTSDIR}/devel/py-qt4-core \
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.3:${PORTSDIR}/math/py-matplotlib \
+			${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:${PORTSDIR}/devel/py-mock \
+			${PYTHON_PKGNAMEPREFIX}pip>=8.0.2:${PORTSDIR}/devel/py-pip \
+			${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.5:${PORTSDIR}/devel/py-qt4-core \
 			${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 			${PYTHON_PKGNAMEPREFIX}qt4-network>=4.8.5:${PORTSDIR}/net/py-qt4-network \
 			${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.8.3:${PORTSDIR}/devel/py-qt4-qscintilla2 \
@@ -76,9 +80,13 @@ PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.5:${PORTSDIR}/devel/p
 			${PYTHON_PKGNAMEPREFIX}qt4-svg>=4.8.5:${PORTSDIR}/graphics/py-qt4-svg \
 			${PYTHON_PKGNAMEPREFIX}qt4-xml>=4.5.4:${PORTSDIR}/textproc/py-qt4-xml \
 			${PYTHON_PKGNAMEPREFIX}sip>=4.14.6:${PORTSDIR}/devel/py-sip \
-			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.6:${PORTSDIR}/databases/py-sqlite3
+			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.6:${PORTSDIR}/databases/py-sqlite3 \
+			${PYTHON_PKGNAMEPREFIX}yaml>=3.11:${PORTSDIR}/devel/py-yaml
 PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdal>=2.0.1:${PORTSDIR}/graphics/py-gdal \
+			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.3:${PORTSDIR}/math/py-matplotlib \
+			${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:${PORTSDIR}/devel/py-mock \
 			${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1:${PORTSDIR}/math/py-numpy \
+			${PYTHON_PKGNAMEPREFIX}pip>=8.0.2:${PORTSDIR}/devel/py-pip \
 			${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.3:${PORTSDIR}/databases/py-psycopg2 \
 			${PYTHON_PKGNAMEPREFIX}pyspatialite>=3.0.1:${PORTSDIR}/databases/pyspatialite \
 			${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.5:${PORTSDIR}/devel/py-qt4-core \
@@ -89,7 +97,8 @@ PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdal>=2.0.1:${PORTSDIR}/graphics/py-g
 			${PYTHON_PKGNAMEPREFIX}qt4-svg>=4.8.5:${PORTSDIR}/graphics/py-qt4-svg \
 			${PYTHON_PKGNAMEPREFIX}qt4-webkit>=4.11.1:${PORTSDIR}/www/py-qt4-webkit \
 			${PYTHON_PKGNAMEPREFIX}qt4-xml>=4.5.4:${PORTSDIR}/textproc/py-qt4-xml \
-			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.6:${PORTSDIR}/databases/py-sqlite3
+			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.6:${PORTSDIR}/databases/py-sqlite3 \
+			${PYTHON_PKGNAMEPREFIX}yaml>=3.11:${PORTSDIR}/devel/py-yaml
 PYTHON_CMAKE_ON=	-DWITH_BINDINGS:BOOL=TRUE
 PYTHON_CMAKE_OFF=	-DWITH_BINDINGS:BOOL=FALSE
 
@@ -125,5 +134,21 @@ pre-patch:
 		${WRKSRC}/src/python/CMakeLists.txt \
 		${WRKSRC}/src/server/CMakeLists.txt
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/qgis|${LOCALBASE}/bin/qgis|g' ${WRKSRC}/debian/${PORTNAME}.desktop
+	@${REINPLACE_CMD} -e 's|Icon=qgis|Icon=qgis-icon|' ${WRKSRC}/debian/${PORTNAME}.desktop
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor
+.for SZ in ${ICON_SIZES}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/apps
+	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}-icon${SZ}x${SZ}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/apps/${PORTNAME}.png
+.endfor
 
 .include <bsd.port.mk>
