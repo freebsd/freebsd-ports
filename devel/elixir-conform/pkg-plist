@@ -20,7 +20,6 @@ lib/elixir/lib/conform/ebin/Elixir.Mix.Tasks.Conform.Archive.beam
 lib/elixir/lib/conform/ebin/Elixir.Mix.Tasks.Conform.Configure.beam
 lib/elixir/lib/conform/ebin/Elixir.Mix.Tasks.Conform.Effective.beam
 lib/elixir/lib/conform/ebin/Elixir.Mix.Tasks.Conform.New.beam
-lib/elixir/lib/conform/ebin/Elixir.Mix.Tasks.Conform.Release.beam
 lib/elixir/lib/conform/ebin/conf_parse.beam
 lib/elixir/lib/conform/ebin/conform.app
 lib/elixir/lib/conform/lib/conform.ex
@@ -41,5 +40,5 @@ lib/elixir/lib/conform/lib/mix/tasks/conform.archive.ex
 lib/elixir/lib/conform/lib/mix/tasks/conform.configure.ex
 lib/elixir/lib/conform/lib/mix/tasks/conform.effective.ex
 lib/elixir/lib/conform/lib/mix/tasks/conform.new.ex
-lib/elixir/lib/conform/lib/mix/tasks/conform.release.ex
+lib/elixir/lib/conform/priv/bin/conform
 %%PORTDOCS%%%%DOCSDIR%%/README.md
