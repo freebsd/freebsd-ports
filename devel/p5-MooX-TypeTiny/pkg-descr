@@ -1,0 +1,12 @@
+This module optimizes Moo type checks when used with Type::Tiny to
+perform better. It will automatically apply to isa checks and coercions
+that use Type::Tiny. Non-Type::Tiny isa checks will work as normal.
+
+This is done by inlining the type check in a more optimal manner that
+is specific to Type::Tiny rather than the general mechanism Moo usually
+uses.
+
+With this module, setters with type checks should be as fast as an
+equivalent check in Moose.
+
+WWW: https://metacpan.org/pod/MooX::TypeTiny
