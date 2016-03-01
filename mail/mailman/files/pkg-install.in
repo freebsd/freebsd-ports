@@ -63,8 +63,8 @@ POST-INSTALL)
     "%%MAILMANDIR%%/archives/public"
   # this can be 2770 or 2771 but should not be stomped over
   test -d "%%MAILMANDIR%%/archives/private" \
-  || /usr/bin/install -d -m 02771 \
-	"%%MAILMANDIR%%/archives/private" -g "%%GROUP%%"
+  || /usr/bin/install -m 02771 -g "%%GROUP%%" \
+      -d "%%MAILMANDIR%%/archives/private"
 
   /bin/chmod u+rwx,g+srwx      "%%MAILMANDIR%%/archives/private"
   /bin/chmod u+rwx,g+srwx,o+rx "%%MAILMANDIR%%/logs"
