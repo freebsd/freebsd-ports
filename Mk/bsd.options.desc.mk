@@ -90,6 +90,7 @@ FINGER_DESC?=		finger(1) user information support
 FIREBIRD_DESC?=		Firebird (Interbase) database support
 FLAC_DESC?=		FLAC lossless audio codec support
 FLICKR_DESC?=		Flickr support via flickcurl
+FLUIDSYNTH_DESC?=	MIDI playback support via FluidSynth
 FONTCONFIG_DESC?=	X11 font configuration support
 FORTRAN_DESC?=		Fortran language support
 FPECTL_DESC?=		Floating point exception handling
