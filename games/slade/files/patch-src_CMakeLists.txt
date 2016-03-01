@@ -19,9 +19,9 @@
  if(NOT ${GLEW_FOUND})
  	message(SEND_ERROR "GLEW required.")
  endif()
--include_directories(${FREEIMAGE_INCLUDE_DIR} ${SFML_INCLUDE_DIR} ${FTGL_INCLUDE_DIR} ${FREETYPE_INCLUDE_DIRS} ${GLEW_INCLUDE_PATH} ${GTK2_INCLUDE_DIRS} . ./dumb)
+-include_directories(${FREEIMAGE_INCLUDE_DIR} ${SFML_INCLUDE_DIR} ${FTGL_INCLUDE_DIR} ${FREETYPE_INCLUDE_DIRS} ${GLEW_INCLUDE_PATH} ${GTK2_INCLUDE_DIRS} . ./External/dumb ./Application)
 +# Put local `dumb' directory first to avoid conflict with `audio/dumb' port
-+include_directories(dumb ${FREEIMAGE_INCLUDE_DIR} ${SFML_INCLUDE_DIR} ${FTGL_INCLUDE_DIR} ${FREETYPE_INCLUDE_DIRS} ${GLEW_INCLUDE_PATH} ${GTK2_INCLUDE_DIRS} .)
++include_directories(External/dumb ${FREEIMAGE_INCLUDE_DIR} ${SFML_INCLUDE_DIR} ${FTGL_INCLUDE_DIR} ${FREETYPE_INCLUDE_DIRS} ${GLEW_INCLUDE_PATH} ${GTK2_INCLUDE_DIRS} . Application)
  
  if (NOT NO_FLUIDSYNTH)
  	include_directories(${FLUIDSYNTH_INCLUDE_DIR})
