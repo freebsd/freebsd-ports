@@ -24,12 +24,7 @@ OPTIONS_DEFAULT=	FLUIDSYNTH MODPLUG FLAC SMPEG VORBIS
 OPTIONS_RADIO=		MOD
 OPTIONS_RADIO_MOD=	MIKMOD MODPLUG
 
-FLUIDSYNTH_DESC=	Enable SoundFont2 Midi support via fluidsynth
-MIKMOD_DESC=	Enable MOD music via libMikMod
-MODPLUG_DESC=	Enable MOD music via libModPlug
-FLAC_DESC=	Enable FLAC encoding support via flac
-SMPEG_DESC=	Enable MP3 music via SMPEG2
-VORBIS_DESC=	Enable Ogg Vorbis music
+SMPEG_DESC=	MP3 audio support via SMPEG2
 
 MIKMOD_LIB_DEPENDS=		libmikmod.so:${PORTSDIR}/audio/libmikmod
 MIKMOD_CONFIGURE_ENABLE=	music-mod-mikmod
