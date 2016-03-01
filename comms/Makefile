@@ -87,6 +87,7 @@
     SUBDIR += libirman
     SUBDIR += libmodbus
     SUBDIR += librs232
+    SUBDIR += libsdr
     SUBDIR += libticables2
     SUBDIR += libticalcs2
     SUBDIR += libusbmuxd
