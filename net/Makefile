@@ -256,12 +256,7 @@
     SUBDIR += ipxe
     SUBDIR += irrd
     SUBDIR += isboot-kmod
-    SUBDIR += isc-dhcp41-client
-    SUBDIR += isc-dhcp41-relay
     SUBDIR += isc-dhcp41-server
-    SUBDIR += isc-dhcp42-client
-    SUBDIR += isc-dhcp42-relay
-    SUBDIR += isc-dhcp42-server
     SUBDIR += isc-dhcp43-client
     SUBDIR += isc-dhcp43-relay
     SUBDIR += isc-dhcp43-server
@@ -1168,7 +1163,6 @@
     SUBDIR += samba-nmblookup
     SUBDIR += samba-smbclient
     SUBDIR += samba36
-    SUBDIR += samba4
     SUBDIR += samba41
     SUBDIR += samba42
     SUBDIR += samba43

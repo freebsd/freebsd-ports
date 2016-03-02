@@ -8210,3 +8210,11 @@ net/ntopng||2016-02-29|Has expired: Broken for more than 6 months
 audio/rezound||2016-02-29|Has expired: Broken for more than 6 months
 net/rubygem-amqp067|net/rubygem-bunny|2016-02-29|Has expired: Upstream prefers net/rubygem-bunny
 devel/py-unittestplus||2016-02-29|Has expired: Tarballs and upstream website disappeared
+net/samba4||2016-03-02|Has expired: not supported by the upstream
+net/isc-dhcp42-client|net/isc-dhcp43-client|2016-03-02|Has expired: isc-dhcp 4.2 is End of Life
+net/isc-dhcp41-relay|net/isc-dhcp43-relay|2016-03-02|Has expired: isc-dhcp 4.1 is now End of Life
+net/isc-dhcp42-relay|net/isc-dhcp43-relay|2016-03-02|Has expired: isc-dhcp 4.2 is End of Life
+net/isc-dhcp41-client|net/isc-dhcp43-cliet|2016-03-02|Has expired: isc-dhcp 4.1 is now End of Life
+net/isc-dhcp42-server|net/isc-dhcp43-server|2016-03-02|Has expired: isc-dhcp 4.2 is End of Life
+devel/pear-IO_Bit||2016-03-02|Has expired: Unsupported upstream
+graphics/pear-IO_SWF||2016-03-02|Has expired: Unsupported upstream

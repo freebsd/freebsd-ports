@@ -739,7 +739,6 @@
     SUBDIR += partio
     SUBDIR += pdf2svg
     SUBDIR += pear-Horde_Image
-    SUBDIR += pear-IO_SWF
     SUBDIR += pear-Image_3D
     SUBDIR += pear-Image_Barcode
     SUBDIR += pear-Image_Barcode2
