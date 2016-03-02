@@ -1,4 +1,4 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
+# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	pam_google_authenticator
@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	LOCAL/riggs/google-authenticator
 DISTNAME=	google-authenticator-${PORTVERSION}
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	PAM module for two-step authentication from Google
 
 LICENSE=	APACHE20

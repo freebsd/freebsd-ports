@@ -1,4 +1,4 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
+# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	phpserialize
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PHPSerialize_v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Python implementation of PHP's native serialize() and unserialize()
 
 WRKSRC=		${WRKDIR}/v${PORTVERSION}
