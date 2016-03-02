@@ -11,8 +11,6 @@ COMMENT=	Better top(1) - interactive process viewer
 
 LICENSE=	GPLv2
 
-NOT_FOR_ARCHS=	ia64 powerpc sparc64
-
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo
