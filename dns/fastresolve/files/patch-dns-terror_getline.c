@@ -1,6 +1,6 @@
---- dns-terror/getline.c.orig	2009-03-25 02:34:45.000000000 -0400
-+++ dns-terror/getline.c	2009-03-25 02:38:48.000000000 -0400
-@@ -26,6 +26,7 @@
+--- dns-terror/getline.c.orig	2002-10-07 02:53:13 UTC
++++ dns-terror/getline.c
+@@ -26,6 +26,7 @@ Foundation, Inc., 59 Temple Place - Suit
     is defined.  */
  #define _GNU_SOURCE	1
  #include <stdio.h>
@@ -8,7 +8,7 @@
  #include <sys/types.h>
  
  #if defined __GNU_LIBRARY__ && HAVE_GETDELIM
-@@ -134,6 +135,7 @@
+@@ -134,6 +135,7 @@ getstr (lineptr, n, stream, terminator, 
    return ret;
  }
  
@@ -16,7 +16,7 @@
  int
  getline (lineptr, n, stream)
       char **lineptr;
-@@ -152,4 +154,5 @@
+@@ -152,4 +154,5 @@ getdelim (lineptr, n, delimiter, stream)
  {
    return getstr (lineptr, n, stream, delimiter, 0);
  }

@@ -1,6 +1,6 @@
---- dns-terror/dns-terror.cc.orig	Mon Oct  4 13:28:02 2004
-+++ dns-terror/dns-terror.cc	Mon Oct  4 13:28:53 2004
-@@ -331,8 +331,7 @@
+--- dns-terror/dns-terror.cc.orig	2003-05-17 18:04:55 UTC
++++ dns-terror/dns-terror.cc
+@@ -331,8 +331,7 @@ submit_query(adns_state ads, BoolStringM
    }
    
    r = adns_submit(ads, rev, adns_r_ptr_raw,
