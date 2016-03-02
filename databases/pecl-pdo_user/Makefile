@@ -1,4 +1,4 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
+# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	pdo_user
@@ -10,7 +10,7 @@ DISTNAME=	PDO_USER-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	PECL classes provides a Userspace interface for PDO drivers
 
 WRKSRC=		${WRKDIR}/PDO_USER-${PORTVERSION}
