@@ -3,8 +3,8 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.2
-DISTVERSIONSUFFIX=	f
-PORTREVISION=	7
+DISTVERSIONSUFFIX=	g
+PORTREVISION=	9
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -92,6 +92,7 @@ EXTRACONFIGURE+=	no-sse2
 .endif
 
 .if ${PORT_OPTIONS:MASM}
+BROKEN_sparc64=	option ASM generates illegal instructions
 EXTRACONFIGURE+=	enable-asm
 .else
 EXTRACONFIGURE+=	no-asm
