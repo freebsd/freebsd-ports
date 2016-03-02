@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	itcl4
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.4
 CATEGORIES=	lang
-MASTER_SITES=	SF/incrtcl/%5Bincr%20Tcl_Tk%5D-4-source/itcl%20${PORTVERSION}/
+MASTER_SITES=	TCLTK/itcl \
+		SF/incrtcl/%5Bincr%20Tcl_Tk%5D-4-source/itcl%20${PORTVERSION}/
 DISTNAME=	itcl${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -16,5 +17,8 @@ CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR} \
 		--includedir=${PREFIX}/include/itcl${PORTVERSION:R}
 PLIST_SUB+=	PKGVER=${PORTVERSION}
+
+do-test:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>
