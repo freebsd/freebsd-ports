@@ -1,23 +1,36 @@
-
 IMPORTANT NOTE:
 ===============
 
-Please read %%DOCSDIR%%/POST-INSTALL-NOTES for important
-information regarding your Exim installation.
+All installations having Exim set-uid root and using 'perl_startup' are
+vulnerable to a local privilege escalation. Any user who can start an
+instance of Exim (and this is normally *any* user) can gain root
+privileges. If you do not use 'perl_startup' you *should* be safe.
 
+New options
+-----------
 
-How to restore pre-4.77 behaviour of match_* expansions
-=======================================================
+We had to introduce two new configuration options:
 
-Just two steps to do it:
+    keep_environment =
+    add_environment =
 
- 1. first, read README.UPDATING and in most cases you will
-    realize that pre-4.77 behaviour is not what you want;
+Both options are empty per default. That is, Exim cleans the complete
+environment on startup. This affects Exim itself and any subprocesses,
+as transports, that may call other programs via some alias mechanisms,
+as routers (queryprogram), lookups, and so on. This may affect used
+libraries (e.g. LDAP).
 
- 2. if you're still here, turn on port's knob LISTMATCH_RHS
-    and carefully review your configuration for untrusted
-    right-hand sides in match_* operations.
+** THIS MAY BREAK your existing installation **
 
+New behaviour
+-------------
+
+Now Exim changes it's working directory to / right after startup,
+even before reading it's configuration. (Later Exim changes it's working
+directory to $spool_directory, as usual.)
+
+Exim only accepts an absolute configuration file path now, when using
+the -C option.
 
 Upgrades to Exim 4.80
 =====================
@@ -34,4 +47,3 @@ There are more details, covering more changes, in README.UPDATING.
 We now enable accept_8bitmime by default, as the Exim maintainers agree
 with Dan Bernstein about the best way to deal with the 8BITMIME
 extension.
-
