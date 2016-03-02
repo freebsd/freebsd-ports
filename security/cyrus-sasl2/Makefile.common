@@ -29,10 +29,14 @@ CONFIGURE_ARGS+=--disable-anon \
 		--disable-digest \
 		--disable-gssapi \
 		--disable-krb4 \
+		--disable-login \
 		--disable-ntlm \
 		--disable-otp \
 		--disable-plain \
-		--disable-scram
+		--disable-scram \
+		--disable-srp \
+		--with-dblib=none
+CONFIGURE_ARGS+=${CYRUS_CONFIGURE_ARGS}
 MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
 
 DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
@@ -59,7 +63,6 @@ CYRUS_BUILD_TARGET?=	${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/plugins
 LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 USES=		libtool:build
-CONFIGURE_ARGS+=--with-dblib=none
 
 PLIST_FILES+=	lib/sasl2/lib${CYRUS_BUILD_TARGET}.a \
 		lib/sasl2/lib${CYRUS_BUILD_TARGET}.so \
@@ -76,13 +79,21 @@ CONFIGURE_ARGS+=--with-openssl=yes
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
+.if ${ARCH} == "amd64"
+CPPFLAGS+=	-fPIC
+.endif
+
 .if ${CYRUS_BUILD_TARGET} == "cyrus-sasl"
 
-.if ${PORT_OPTIONS:MBDB}
+.if ${PORT_OPTIONS:MBDB1}
+SASLDB_NAME=	sasldb2.db
+.elif ${PORT_OPTIONS:MBDB}
 INVALID_BDB_VER=2
 SASLDB_NAME=	sasldb2
+.elif ${PORT_OPTIONS:MGDBM}
+SASLDB_NAME=	sasldb2
 .else
-SASLDB_NAME=	sasldb2.db
+SASLDB=	"@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL} || \
@@ -92,31 +103,12 @@ CONFIGURE_ARGS+=--enable-sql
 SQL=	"@comment "
 .endif
 
-.if ${ARCH} == "amd64"
-CPPFLAGS+=	-fPIC
-.endif
-
-DOCS=	AUTHORS COPYING ChangeLog INSTALL INSTALL.TXT NEWS README
-
-DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-xx.txt \
-	draft-ietf-sasl-anon-xx.txt draft-ietf-sasl-crammd5-xx.txt \
-	draft-ietf-sasl-gssapi-xx.txt draft-ietf-sasl-plain-xx.txt \
-	draft-ietf-sasl-rfc2222bis-xx.txt draft-ietf-sasl-rfc2831bis-xx.txt \
-	draft-ietf-sasl-saslprep-xx.txt draft-murchison-sasl-login-xx.txt \
-	draft-newman-sasl-c-api-xx.txt rfc1321.txt rfc1939.txt rfc2104.txt \
-	rfc2195.txt rfc2222.txt rfc2243.txt rfc2245.txt rfc2289.txt \
-	rfc2444.txt rfc2595.txt rfc2831.txt rfc2945.txt rfc3174.txt \
-	server-plugin-flow.fig testing.txt
-
-HTDOCS=	advanced appconvert components gssapi index install macosx \
-	mechanisms options plugprog programming readme sysadmin upgrading \
-	windows
-
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP} \
-		SASLDB=${SASLDB_NAME}
+		SASLDB_NAME=${SASLDB_NAME}
 
 PLIST_SUB+=	PREFIX=${PREFIX} \
+		SASLDB=${SASLDB} \
 		SQL=${SQL} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 
@@ -156,16 +148,9 @@ WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MGSSAPI_BASE} || ${PORT_OPTIONS:MGSSAPI_HEIMDAL} || \
-    ${PORT_OPTIONS:MGSSAPI_MIT}
-CONFIGURE_ARGS+=--enable-gssapi
-.endif
-
 .if ${SASLAUTHD_RUNPATH} != /var/run/saslauthd
 RUNPATH=	"@comment "
 .endif
-
-DOCS=		AUTHORS COPYING ChangeLog INSTALL LDAP_SASLAUTHD NEWS README
 
 PLIST_SUB=	PREFIX=${PREFIX} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
@@ -175,7 +160,9 @@ SUB_LIST+=	SASLAUTHD_RUNPATH=${SASLAUTHD_RUNPATH}
 
 do-build:
 	cd ${WRKSRC}/include && ${MAKE}
+.if ${PORT_OPTIONS:MBDB1} || ${PORT_OPTIONS:MBDB} || ${PORT_OPTIONS:MGDBM}
 	cd ${WRKSRC}/sasldb && ${MAKE}
+.endif
 	cd ${WRKSRC}/saslauthd && ${MAKE}
 	cd ${WRKSRC}/saslauthd && ${MAKE} saslcache
 	cd ${WRKSRC}/saslauthd && ${MAKE} testsaslauthd
