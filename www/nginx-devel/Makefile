@@ -396,7 +396,7 @@ GH_TAGNAME+=	${GIT_CT_VERSION}:ct
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_ct}
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
-USE_OPENSSL_PORT=	yes
+WITH_OPENSSL_PORT=	yes
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
@@ -878,7 +878,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_xss}
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 CONFIGURE_ARGS+=--with-http_v2_module
-USE_OPENSSL_PORT=	yes
+WITH_OPENSSL_PORT=	yes
 .endif
 
 .if ${PORT_OPTIONS:MNJS}
