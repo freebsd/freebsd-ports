@@ -1,0 +1,44 @@
+See https://sourceforge.net/p/openil/patches/47/
+
+From 5ab2eae2939463aba7fd7bf9a37cc43b9d8cdc43 Mon Sep 17 00:00:00 2001
+From: Jeff Epler <jepler@unpythonic.net>
+Date: Thu, 3 Jun 2010 16:38:46 -0500
+Subject: [PATCH] PR20713: fix out of bounds access in iluGaussian
+
+the 'rightmost pixel' case in iluBlurGaussian was the same as the
+'leftmost pixel' case, which makes it refer to pixels that are off the
+right-hand side of the image by 1 or 2 pixels.  In the final row they
+are beyond the end of the image, and if the bytes just beyond the end of
+the image are in an unmapped page, the program can segfault.
+
+change the 'rightmost' case to use the pixels to the left of the pixel
+being filtered instead.
+
+Signed-off-by: Jeff Epler <jepler@unpythonic.net>
+
+--- src-ILU/src/ilu_filter.c
++++ src-ILU/src/ilu_filter.c
+@@ -378,14 +378,14 @@ ILubyte *Filter(ILimage *Image, const ILint *matrix, ILint scale, ILint bias)
+ 			}
+ 			for (c = 0; c < Image->Bpp; c++) {
+ 				Num =   Image->Data[y - Image->Bps + c] * matrix[0] +
+-						Image->Data[y - Image->Bps + Image->Bpp + c] * matrix[1]+
+-						Image->Data[y - Image->Bps + 2 * Image->Bpp + c] * matrix[2]+
++						Image->Data[y - Image->Bps - Image->Bpp + c] * matrix[1]+
++						Image->Data[y - Image->Bps - 2 * Image->Bpp + c] * matrix[2]+
+ 						Image->Data[y + c] * matrix[3]+
+-						Image->Data[y + Image->Bpp + c] * matrix[4]+
+-						Image->Data[y + 2 * Image->Bpp + c] * matrix[5]+
++						Image->Data[y - Image->Bpp + c] * matrix[4]+
++						Image->Data[y - 2 * Image->Bpp + c] * matrix[5]+
+ 						Image->Data[y + Image->Bps + c] * matrix[6]+
+-						Image->Data[y + Image->Bps + Image->Bpp + c] * matrix[7]+
+-						Image->Data[y + Image->Bps + 2 * Image->Bpp + c] * matrix[8];
++						Image->Data[y + Image->Bps - Image->Bpp + c] * matrix[7]+
++						Image->Data[y + Image->Bps - 2 * Image->Bpp + c] * matrix[8];
+ 
+ 					Temp = (ILuint)fabs((Num / (ILdouble)scale) + bias);
+ 					if (Temp > 255)
+-- 
+1.7.1
+

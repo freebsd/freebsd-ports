@@ -1,0 +1,206 @@
+# $FreeBSD$
+
+PORTNAME=	cyrus-sasl
+PORTVERSION=	2.1.26
+CATEGORIES=	security ipv6
+MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
+		http://cyrusimap.org/releases/
+
+MAINTAINER=	ume@FreeBSD.org
+
+LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc \
+		--with-configdir=${PREFIX}/lib/sasl2:${PREFIX}/etc/sasl2 \
+		--with-plugindir=${PREFIX}/lib/sasl2 \
+		--with-dbpath=${PREFIX}/etc/sasldb2 \
+		--with-lib-subdir=lib \
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
+		--includedir=${PREFIX}/include \
+		--enable-static \
+		--with-rc4=openssl
+CONFIGURE_ARGS+=--disable-anon \
+		--disable-cram \
+		--disable-digest \
+		--disable-gssapi \
+		--disable-krb4 \
+		--disable-login \
+		--disable-ntlm \
+		--disable-otp \
+		--disable-plain \
+		--disable-scram \
+		--disable-srp \
+		--with-dblib=none
+CONFIGURE_ARGS+=${CYRUS_CONFIGURE_ARGS}
+MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
+
+DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
+
+CPE_VENDOR=	cmu
+
+SASLAUTHD_RUNPATH?=	/var/run/saslauthd
+
+CYRUS_USER?=	cyrus
+CYRUS_GROUP?=	cyrus
+
+CYRUS_SASL2_DIR=${MASTERDIR}/../../security/cyrus-sasl2
+DISTINFO_FILE=	${CYRUS_SASL2_DIR}/distinfo
+PATCHDIR=	${CYRUS_SASL2_DIR}/files
+
+.if defined(PKGNAMESUFFIX)
+CYRUS_BUILD_TARGET?=	${PKGNAMESUFFIX:S/^-//}
+.else
+CYRUS_BUILD_TARGET?=	${PORTNAME}
+.endif
+
+.if ${CYRUS_BUILD_TARGET} != "cyrus-sasl" && ${CYRUS_BUILD_TARGET} != "saslauthd"
+
+INSTALL_WRKSRC=	${WRKSRC}/plugins
+LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+USES=		libtool:build
+
+PLIST_FILES+=	lib/sasl2/lib${CYRUS_BUILD_TARGET}.a \
+		lib/sasl2/lib${CYRUS_BUILD_TARGET}.so \
+		lib/sasl2/lib${CYRUS_BUILD_TARGET}.so.3 \
+		lib/sasl2/lib${CYRUS_BUILD_TARGET}.so.3.0.0
+
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OPENSSLBASE} == /usr
+CONFIGURE_ARGS+=--with-openssl=yes
+.else
+CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
+.endif
+
+.if ${ARCH} == "amd64"
+CPPFLAGS+=	-fPIC
+.endif
+
+.if ${CYRUS_BUILD_TARGET} == "cyrus-sasl"
+
+.if ${PORT_OPTIONS:MBDB1}
+SASLDB_NAME=	sasldb2.db
+.elif ${PORT_OPTIONS:MBDB}
+INVALID_BDB_VER=2
+SASLDB_NAME=	sasldb2
+.elif ${PORT_OPTIONS:MGDBM}
+SASLDB_NAME=	sasldb2
+.else
+SASLDB=	"@comment "
+.endif
+
+.if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL} || \
+    ${PORT_OPTIONS:MSQLITE2} || ${PORT_OPTIONS:MSQLITE3}
+CONFIGURE_ARGS+=--enable-sql
+.else
+SQL=	"@comment "
+.endif
+
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
+SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP} \
+		SASLDB_NAME=${SASLDB_NAME}
+
+PLIST_SUB+=	PREFIX=${PREFIX} \
+		SASLDB=${SASLDB} \
+		SQL=${SQL} \
+		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
+
+post-patch:
+# Try to unbreak parallel (-jX) builds, part 1: make build commands atomic
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} -w0pi.bak \
+		-e 's/(^\@am__fastdepCC_TRUE\@.*?) \
+		\n\@am__fastdepCC_TRUE\@\s+(.*?)$$/$$1 && $$2/mgx'
+# Part 2: prevent intermediate *.Tpo output files clash (use unique names)
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} -wpi.bak \
+		-e 's/\$$\*\.Tpo/$$&.$$./g'
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+.for f in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
+.for f in ${DOC2}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
+.for f in ${HTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html \
+		${STAGEDIR}${DOCSDIR}/html
+.endfor
+	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README \
+		${STAGEDIR}${DOCSDIR}
+
+.elif ${CYRUS_BUILD_TARGET} == "saslauthd"
+
+.if ${PORT_OPTIONS:MBDB}
+INVALID_BDB_VER=2
+.endif
+
+.if ${PORT_OPTIONS:MOPENLDAP}
+.if defined(WITH_OPENLDAP_VER)
+WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
+.endif
+.endif
+
+.if ${SASLAUTHD_RUNPATH} != /var/run/saslauthd
+RUNPATH=	"@comment "
+.endif
+
+PLIST_SUB=	PREFIX=${PREFIX} \
+		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
+		RUNPATH=${RUNPATH}
+
+SUB_LIST+=	SASLAUTHD_RUNPATH=${SASLAUTHD_RUNPATH}
+
+do-build:
+	cd ${WRKSRC}/include && ${MAKE}
+.if ${PORT_OPTIONS:MBDB1} || ${PORT_OPTIONS:MBDB} || ${PORT_OPTIONS:MGDBM}
+	cd ${WRKSRC}/sasldb && ${MAKE}
+.endif
+	cd ${WRKSRC}/saslauthd && ${MAKE}
+	cd ${WRKSRC}/saslauthd && ${MAKE} saslcache
+	cd ${WRKSRC}/saslauthd && ${MAKE} testsaslauthd
+
+post-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/saslcache \
+		${STAGEDIR}${PREFIX}/sbin/saslcache
+	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/testsaslauthd \
+		${STAGEDIR}${PREFIX}/sbin/testsaslauthd
+.if ${SASLAUTHD_RUNPATH} != /var/run/saslauthd
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "SASLAUTHD_RUNPATH was specified."
+	@${ECHO_MSG} "Make sure you create ${SASLAUTHD_RUNPATH}."
+	@${ECHO_MSG} ""
+.else
+	@${MKDIR} ${STAGEDIR}/var/run/saslauthd
+.endif
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/saslauthd
+.for file in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/saslauthd/${file} \
+		${STAGEDIR}${DOCSDIR}/saslauthd
+.endfor
+
+.else		# plugin
+
+LIBTOOL=	${LOCALBASE}/bin/libtool
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e "/^LIBTOOL=/s|\$$(top_builddir)/libtool|${LIBTOOL}|g" \
+		${WRKSRC}/configure
+
+do-build:
+	cd ${WRKSRC}/include && ${MAKE}
+	cd ${WRKSRC}/plugins && ${MAKE}
+
+.endif
+
+.include <bsd.port.post.mk>

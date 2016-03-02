@@ -3,7 +3,7 @@ include/IL/devil_cpp_wrapper.hpp
 include/IL/il.h
 include/IL/ilu.h
 include/IL/ilu_region.h
-%%X11%%include/IL/ilut.h
+include/IL/ilut.h
 lib/libIL.a
 lib/libIL.so
 lib/libIL.so.1
@@ -12,10 +12,10 @@ lib/libILU.a
 lib/libILU.so
 lib/libILU.so.1
 lib/libILU.so.1.1.0
-%%X11%%lib/libILUT.a
-%%X11%%lib/libILUT.so
-%%X11%%lib/libILUT.so.1
-%%X11%%lib/libILUT.so.1.1.0
+lib/libILUT.a
+lib/libILUT.so
+lib/libILUT.so.1
+lib/libILUT.so.1.1.0
 libdata/pkgconfig/IL.pc
 libdata/pkgconfig/ILU.pc
-%%X11%%libdata/pkgconfig/ILUT.pc
+libdata/pkgconfig/ILUT.pc

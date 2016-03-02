@@ -2,3 +2,6 @@ bin/ct
 bin/ct-clustertool
 bin/ct-mirror
 bin/ct-server
+bin/ct-mirror-v2
+bin/ct-server-v2
+bin/xjson-server

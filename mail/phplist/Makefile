@@ -3,6 +3,7 @@
 
 PORTNAME=	phplist
 PORTVERSION=	3.2.4
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
 USES=		cpe tar:tgz
-USE_PHP=	hash iconv imap mysql pcre session xml zlib
+USE_PHP=	hash iconv imap mysqli pcre session xml zlib
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes

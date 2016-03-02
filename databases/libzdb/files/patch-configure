@@ -1,0 +1,51 @@
+Stop passing -dl when trying to detect SQLite3's presence.
+
+If we don't, the configuration tests will fail and SQLite3 support will always
+be disabled.
+--- configure.orig	2015-08-31 12:55:11 UTC
++++ configure
+@@ -16834,7 +16834,7 @@ for ac_lib in '' sqlite3; do
+     ac_res="none required"
+   else
+     ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib -ldl $ac_func_search_save_LIBS"
++    LIBS="-l$ac_lib $ac_func_search_save_LIBS"
+   fi
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_sqlite3_open=$ac_res
+@@ -16900,7 +16900,7 @@ for ac_lib in '' sqlite3; do
+     ac_res="none required"
+   else
+     ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib -ldl $ac_func_search_save_LIBS"
++    LIBS="-l$ac_lib $ac_func_search_save_LIBS"
+   fi
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_sqlite3_open=$ac_res
+@@ -17031,7 +17031,7 @@ for ac_lib in '' sqlite3; do
+     ac_res="none required"
+   else
+     ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib -ldl $ac_func_search_save_LIBS"
++    LIBS="-l$ac_lib $ac_func_search_save_LIBS"
+   fi
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_sqlite3_soft_heap_limit=$ac_res
+@@ -17089,7 +17089,7 @@ for ac_lib in '' sqlite3; do
+     ac_res="none required"
+   else
+     ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib -ldl $ac_func_search_save_LIBS"
++    LIBS="-l$ac_lib $ac_func_search_save_LIBS"
+   fi
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_sqlite3_soft_heap_limit64=$ac_res
+@@ -17147,7 +17147,7 @@ for ac_lib in '' sqlite3; do
+     ac_res="none required"
+   else
+     ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib -ldl $ac_func_search_save_LIBS"
++    LIBS="-l$ac_lib $ac_func_search_save_LIBS"
+   fi
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_sqlite3_errstr=$ac_res

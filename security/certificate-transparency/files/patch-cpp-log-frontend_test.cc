@@ -1,5 +1,5 @@
---- cpp/log/frontend_test.cc.orig	2015-11-20 15:34:34.528539000 +0100
-+++ cpp/log/frontend_test.cc	2015-11-20 15:34:47.368662000 +0100
+--- cpp/log/frontend_test.cc.orig	2016-02-02 11:35:23 UTC
++++ cpp/log/frontend_test.cc
 @@ -1,5 +1,8 @@
  /* -*- indent-tabs-mode: nil -*- */
  #include <glog/logging.h>
@@ -8,4 +8,4 @@
 +#define GTEST_HAS_POSIX_RE 0
  #include <gmock/gmock.h>
  #include <gtest/gtest.h>
- #include <memory>
+ #include <openssl/err.h>

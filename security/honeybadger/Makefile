@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	honeybadger
-PORTVERSION=	0.0.0.2016021901
+PORTVERSION=	0.0.0.2016022301
 CATEGORIES=	security
 
 MAINTAINER=	shawn.webb@hardenedbsd.org
@@ -14,10 +14,10 @@ GH_ACCOUNT=	david415:DEFAULT google:gp fatih:co mattn:gc,gi \
 		golang:xs,xn
 GH_PROJECT=	HoneyBadger:DEFAULT gopacket:gp color:co go-colorable:gc \
 		go-isatty:gi net:xn sys:xs
-GH_TAGNAME=	39d9557:DEFAULT cdd2162:gp 7a5857d:co 9fdad7c:gc 56b76bd:gi \
+GH_TAGNAME=	11dc0ca:DEFAULT f361903:gp 7a5857d:co 9fdad7c:gc 56b76bd:gi \
 		b6d7b13:xn 50c6bc5:xs
 
-BIN_FILES=	coalesceInjector handshakeHijacker honeyBadger \
+BIN_FILES=	handshakeHijacker honeyBadger \
 		honeybadgerReportTool honeybadgerReportToolColor sprayInjector
 
 PLIST_FILES=	${BIN_FILES:S/^/bin\//}

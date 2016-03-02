@@ -1,19 +1,7 @@
-[ excerpt with modifications from developer's site ]
-
-The SpamBayes project is working on developing a Bayesian anti-spam
-filter.
-
-SpamBayes will attempt to classify incoming email messages as 'spam',
-'ham' (good, non-spam email) or 'unsure'. This means you can have
-spam or unsure messages automatically filed away in a different
-mail folder, where it won't interrupt your email reading.
-
-First, SpamBayes must be trained by each user to identify spam and
-ham. Essentially, you show SpamBayes a pile of email that you like
-(ham) and a pile you don't like (spam). SpamBayes will then analyze
-the piles for clues as to what makes the spam and ham different.
-For example; different words, differences in the mailer headers and
-content style. The system then uses these clues to examine new
-messages.
+SpamBayes is a tool used to segregate unwanted mail (spam) from the mail you
+want (ham). Before SpamBayes can be your spam filter of choice you need to
+train it on representative samples of email you receive. After it's been
+trained, you use SpamBayes to classify new mail according to its spamminess
+and hamminess qualities. 
 
 WWW: http://spambayes.sourceforge.net/

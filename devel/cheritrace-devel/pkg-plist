@@ -1,0 +1,9 @@
+include/cheritrace/addressmap.hh
+include/cheritrace/cheri.hh
+include/cheritrace/cheritrace.hh
+include/cheritrace/disassembler.hh
+include/cheritrace/objectfile.hh
+include/cheritrace/streamtrace.hh
+lib/libcheritrace.a
+lib/libcheritrace.so
+bin/cheri-tracedump

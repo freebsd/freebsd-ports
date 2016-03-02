@@ -172,6 +172,7 @@
     SUBDIR += exiftran
     SUBDIR += exiv2
     SUBDIR += exrtools
+    SUBDIR += farbfeld
     SUBDIR += feh
     SUBDIR += ffff
     SUBDIR += fig2sxd
@@ -738,7 +739,6 @@
     SUBDIR += partio
     SUBDIR += pdf2svg
     SUBDIR += pear-Horde_Image
-    SUBDIR += pear-IO_SWF
     SUBDIR += pear-Image_3D
     SUBDIR += pear-Image_Barcode
     SUBDIR += pear-Image_Barcode2

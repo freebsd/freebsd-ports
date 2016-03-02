@@ -39,7 +39,7 @@ PYTHON_UTILS_DESC=	Python scripts useful for administering MySQL
 
 USES=		autoreconf compiler:gcc-c++11-lib desktop-file-utils gettext \
 		gmake iconv libtool lua:51 pathfix pkgconfig python:2 \
-		shared-mime-info shebangfix
+		shared-mime-info shebangfix sqlite
 SHEBANG_FILES=	ext/ctemplate/ctemplate-src/src/htmlparser/*.py \
 		ext/mysql-utilities/*.py \
 		ext/mysql-utilities/scripts/*.py \
@@ -54,7 +54,6 @@ SHEBANG_FILES=	ext/ctemplate/ctemplate-src/src/htmlparser/*.py \
 USE_GL=		gl
 USE_GNOME=	gtk20 libxml2
 USE_MYSQL=	client
-USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LUA_CFLAGS="$$(pkg-config --cflags lua-${LUA_VER})" \
 		LUA_LIBS="$$(pkg-config --libs lua-${LUA_VER})" \

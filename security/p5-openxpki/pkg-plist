@@ -881,6 +881,7 @@ bin/openxpkictl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/vendor/ember/ember-template-compiler.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config/openxpki/config.d/realm/ca-one/workflow/def/set_motd.yaml
 @dir(openxpki,openxpki,754) %%ETCDIR%%
 @dir(openxpki,openxpki,751) /var/log/openxpki
 @dir(openxpki,openxpki,750) /var/openxpki/session

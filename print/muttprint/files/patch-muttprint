@@ -1,6 +1,6 @@
---- muttprint.orig	Wed Apr  7 19:27:31 2004
-+++ muttprint	Sun May 23 17:37:08 2004
-@@ -92,13 +92,13 @@
+--- muttprint.orig	2008-12-26 01:33:36.000000000 +0100
++++ muttprint	2016-02-17 12:27:58.437344000 +0100
+@@ -105,13 +105,13 @@
  ######## 'private' variables for the rest
  %Config = (
  	PRINTER			=> 	'',
@@ -16,13 +16,13 @@
  	DEBUG			=>	'0',
  	REM_SIG			=>	'off',
  	REM_QUOTE		=>	'off',
-@@ -196,16 +196,16 @@
+@@ -211,16 +211,16 @@
  	}
  }
  
 -$Config{PAPER} = getPaperConfig ();
 -readConfig ("/etc/Muttprintrc", "$ENV{HOME}/.muttprintrc");
-+#$Config{PAPER} = getPaperConfig ();
++# $Config{PAPER} = getPaperConfig ();
 +readConfig ("%%PREFIX%%/etc/Muttprintrc", "$ENV{HOME}/.muttprintrc");
  
  
@@ -37,7 +37,7 @@
  			: "off";
  }
  
-@@ -1978,7 +1978,7 @@
+@@ -2027,7 +2027,7 @@
  Options:
  
  PLEASE NOTICE: These options override the corresponding settings in 

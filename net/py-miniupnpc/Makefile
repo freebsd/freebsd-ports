@@ -15,10 +15,6 @@ USE_PYTHON=	autoplist distutils
 WRKDIR=		${WRKDIRPREFIX}${MASTERDIR}/work
 PLIST=		${.CURDIR}/pkg-plist
 
-.if exists(${.CURDIR}/Makefile.local)
-.include "${.CURDIR}/Makefile.local"
-.endif
-
 post-patch:
 	${REINPLACE_CMD} 's/\(version\)="[^"]*"/\1="${PORTVERSION}"/' \
 		${WRKSRC}/setup.py

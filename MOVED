@@ -5269,7 +5269,6 @@ science/omnetpp||2013-12-05|Has expired: depends on expired textproc/libxml
 textproc/libxml||2013-12-05|Has expired: No release since 2002, no support from upstream
 deskutils/taskjuggler|deskutils/rubygem-taskjuggler|2013-12-05|Rename to match our rubygems naming
 www/clickheat||2013-12-07|Has expired: No more activity since 2011
-security/pdfcrack||2013-12-08|Has expired: Not active since several years
 security/rarcrack||2013-12-08|Has expired: Not active since several years
 java/subversion-java|java/java-subversion|2013-12-08|Rename to reflect subversion child port naming scheme
 games/flare|games/flare-game|2013-12-10|Flare port was split into engine and game counterparts, as upstream did
@@ -5945,7 +5944,6 @@ mail/althea||2014-04-13|Has expired: Unmaintained since 2001
 graphics/claraocr||2014-04-13|Has expired: Unmaintained since 2001
 graphics/qvplay||2014-04-13|Has expired: Unmaintained since 2001
 print/guitartex||2014-04-13|Has expired: Unmaintained since 2001
-print/pnm2ppa||2014-04-13|Has expired: Unmaintained since 2001
 graphics/opendis||2014-04-13|Has expired: Unmaintained since 2001
 net/gnome-mud||2014-04-13|Has expired: Unmaintained since 2001
 graphics/maverik||2014-04-13|Has expired: Unmaintained since 2001
@@ -8206,3 +8204,18 @@ www/pecl-zendopcache||2016-02-14|PHP 5.4 EOL reached
 www/php5-session||2016-02-14|PHP 5.4 is End of Life http://php.net/supported-versions.php
 www/php5-tidy||2016-02-14|PHP 5.4 is End of Life http://php.net/supported-versions.php
 mail/pronto||2016-02-18|No release since 2002 http://www.muhri.net/pronto/page.php3?node=news
+russian/muttprint||2016-02-25|The Russian translation is included in print/muttprint
+security/openssh-portable-devel|security/openssh-portable|2016-02-29|Outdated and insecure, use the main port.
+audio/audacious-dumb||2016-02-29|Has expired: Broken for more than 6 months
+net/ntopng||2016-02-29|Has expired: Broken for more than 6 months
+audio/rezound||2016-02-29|Has expired: Broken for more than 6 months
+net/rubygem-amqp067|net/rubygem-bunny|2016-02-29|Has expired: Upstream prefers net/rubygem-bunny
+devel/py-unittestplus||2016-02-29|Has expired: Tarballs and upstream website disappeared
+net/samba4||2016-03-02|Has expired: not supported by the upstream
+net/isc-dhcp42-client|net/isc-dhcp43-client|2016-03-02|Has expired: isc-dhcp 4.2 is End of Life
+net/isc-dhcp41-relay|net/isc-dhcp43-relay|2016-03-02|Has expired: isc-dhcp 4.1 is now End of Life
+net/isc-dhcp42-relay|net/isc-dhcp43-relay|2016-03-02|Has expired: isc-dhcp 4.2 is End of Life
+net/isc-dhcp41-client|net/isc-dhcp43-cliet|2016-03-02|Has expired: isc-dhcp 4.1 is now End of Life
+net/isc-dhcp42-server|net/isc-dhcp43-server|2016-03-02|Has expired: isc-dhcp 4.2 is End of Life
+devel/pear-IO_Bit||2016-03-02|Has expired: Unsupported upstream
+graphics/pear-IO_SWF||2016-03-02|Has expired: Unsupported upstream

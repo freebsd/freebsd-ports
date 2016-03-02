@@ -79,12 +79,12 @@ include/ImageMagick-7/MagickCore/fourier.h
 include/ImageMagick-7/MagickCore/fx.h
 include/ImageMagick-7/MagickCore/gem.h
 include/ImageMagick-7/MagickCore/geometry.h
-include/ImageMagick-7/MagickCore/hashmap.h
 include/ImageMagick-7/MagickCore/histogram.h
 include/ImageMagick-7/MagickCore/identify.h
 include/ImageMagick-7/MagickCore/image-view.h
 include/ImageMagick-7/MagickCore/image.h
 include/ImageMagick-7/MagickCore/layer.h
+include/ImageMagick-7/MagickCore/linked-list.h
 include/ImageMagick-7/MagickCore/list.h
 include/ImageMagick-7/MagickCore/locale_.h
 include/ImageMagick-7/MagickCore/log.h
@@ -591,6 +591,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/Magick++/FormatCharacters.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/Magick++/Future.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/Magick++/Geometry.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/Magick++/Image++.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/Magick++/Image.fig
 %%PORTDOCS%%%%DOCSDIR%%-7/www/Magick++/Image.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/Magick++/Image.png
@@ -619,7 +620,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/advanced-windows-installation.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/animate.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/api/Image.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/api/Image++.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/MagickCore/ImageMagick_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/MagickCore/ImageMagick_8h.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/MagickCore/MagickCore_8h-source.html

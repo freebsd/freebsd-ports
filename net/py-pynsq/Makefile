@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pynsq
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,27 +11,24 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Official Python client library for NSQ
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>0:${PORTSDIR}/www/py-tornado
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>0:${PORTSDIR}/www/py-tornado \
-		${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest \
-		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest \
+		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}python-snappy>0:${PORTSDIR}/archivers/py-python-snappy \
+		${PYTHON_PKGNAMEPREFIX}simplejson>0:${PORTSDIR}/devel/py-simplejson
 
-OPTIONS_DEFINE=	TESTS
-TESTS_DESC=	Install tools to run test suite
-
-USES=		python
-USE_PYTHON=	distutils autoplist
+USES=		python:-2.7
 USE_GITHUB=	yes
+USE_PYTHON=	distutils autoplist
+
 GH_ACCOUNT=	bitly
 
-.include <bsd.port.options.mk>
+NO_ARCH=	yes
 
-.if ${PORT_OPTIONS:MTESTS}
-BUILD_DEPENDS:=	${TEST_DEPENDS}
-.endif
-
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+# test_reader requires nsqd(8)
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test -a "--ignore=tests/test_reader.py"
 
 .include <bsd.port.mk>

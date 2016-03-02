@@ -1,141 +1,58 @@
 # $FreeBSD$
 
-PORTNAME=	saslauthd
-PORTVERSION=	2.1.26
+PKGNAMESUFFIX=	-saslauthd
 PORTREVISION=	3
-CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
-		http://cyrusimap.org/releases/
-PKGNAMEPREFIX=	cyrus-sasl-
-DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
-MAINTAINER=	ume@FreeBSD.org
 COMMENT=	SASL authentication server for cyrus-sasl2
-
-LICENSE=	BSD4CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
-CYRUS_SASL2_DIR=${MASTERDIR}/../cyrus-sasl2
-DISTINFO_FILE=	${CYRUS_SASL2_DIR}/distinfo
-PATCHDIR=	${CYRUS_SASL2_DIR}/files
 INSTALL_WRKSRC=	${WRKSRC}/saslauthd
-DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
 
 USE_RC_SUBR=	saslauthd
-USE_OPENSSL=	yes
-GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
-		--with-plugindir=${PREFIX}/lib/sasl2 \
-		--with-dbpath=${PREFIX}/etc/sasldb2 \
-		--with-lib-subdir=lib \
-		--includedir=${PREFIX}/include \
-		--enable-static \
-		--enable-login \
-		--enable-auth-sasldb \
-		--with-rc4=openssl \
-		--with-saslauthd=${SASLAUTHD_RUNPATH} \
-		--disable-krb4
+CYRUS_CONFIGURE_ARGS=	--with-saslauthd=${SASLAUTHD_RUNPATH}
 CONFIGURE_ENV+=	andrew_cv_runpath_switch=none
 
-OPTIONS_DEFINE=		BDB DOCS OPENLDAP HTTPFORM
-BDB_CONFIGURE_ON=	--with-dblib=berkeley \
-			--with-bdb-libdir=${BDB_LIB_DIR} \
-			--with-bdb-incdir=${BDB_INCLUDE_DIR} \
-			--with-bdb=${BDB_LIB_NAME}
-BDB_USE=		BDB=yes
-BDB_CONFIGURE_OFF=	--with-dblib=ndbm
+OPTIONS_DEFINE=		DOCS HTTPFORM OPENLDAP
+OPTIONS_RADIO=		GSSAPI SASLDB
+OPTIONS_RADIO_SASLDB=	BDB1 BDB GDBM
+OPTIONS_DEFAULT=	BDB1
+
+HTTPFORM_DESC=		Enable HTTP form authentication
+HTTPFORM_CONFIGURE_ENABLE=httpform
 OPENLDAP_DESC=		Use OpenLDAP
 OPENLDAP_USE=		OPENLDAP=yes
 OPENLDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
-HTTPFORM_DESC=		Enable HTTP form authentication
-HTTPFORM_CONFIGURE_ENABLE=httpform
 
-OPTIONS_RADIO=		KERBEROS
-OPTIONS_RADIO_KERBEROS=	HEIMDAL MIT
+SASLDB_DESC=		Experimental SASLdb authentication module
+BDB_USE=		BDB=yes
+BDB_CONFIGURE_ON=	--enable-auth-sasldb \
+			--with-dblib=berkeley \
+			--with-bdb-libdir=${BDB_LIB_DIR} \
+			--with-bdb-incdir=${BDB_INCLUDE_DIR} \
+			--with-bdb=${BDB_LIB_NAME}
+BDB1_CONFIGURE_ON=	--enable-auth-sasldb \
+			--with-dblib=ndbm
+GDBM_CONFIGURE_ON=	--enable-auth-sasldb \
+			--with-dblib=gdbm \
+			--with-gdbm=${LOCALBASE}
+
 .if exists(/usr/lib/libkrb5.a)
-OPTIONS_RADIO_KERBEROS+=BASE
-OPTIONS_DEFAULT+=	BASE
+OPTIONS_RADIO_GSSAPI+=	GSSAPI_BASE
+OPTIONS_DEFAULT+=	GSSAPI_BASE
 .endif
-BASE_DESC=		Use Heimdal in base
-BASE_USES=		gssapi:base
-BASE_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
-			--with-gss_impl=heimdal
-HEIMDAL_DESC=		Use Heimdal from ports
-HEIMDAL_USES=		gssapi:heimdal,flags
-HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
-			--with-gss_impl=heimdal
-MIT_DESC=		Use MIT Kerberos V5
-MIT_USES=		gssapi:mit
-MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
-			--with-gss_impl=mit
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MBDB}
-INVALID_BDB_VER=2
-.endif
-
-.if ${PORT_OPTIONS:MOPENLDAP}
-.if defined(WITH_OPENLDAP_VER)
-WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
-.endif
-.endif
-
-.if !${PORT_OPTIONS:MBASE} && !${PORT_OPTIONS:MHEIMDAL} && \
-    !${PORT_OPTIONS:MMIT}
-CONFIGURE_ARGS+=--disable-gssapi
-.endif
-
-.if ${OPENSSLBASE} == /usr
-CONFIGURE_ARGS+=--with-openssl=yes
-.else
-CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
-.endif
-
-SASLAUTHD_RUNPATH?=	/var/run/saslauthd
-.if ${SASLAUTHD_RUNPATH} != /var/run/saslauthd
-RUNPATH=	"@comment "
-.endif
-
-CYRUS_USER?=	cyrus
+OPTIONS_RADIO_GSSAPI+=	GSSAPI_HEIMDAL GSSAPI_MIT
+GSSAPI_BASE_USES=		gssapi:base
+GSSAPI_BASE_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+				--with-gss_impl=heimdal
+GSSAPI_HEIMDAL_USES=		gssapi:heimdal,flags
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+				--with-gss_impl=heimdal
+GSSAPI_MIT_USES=		gssapi:mit
+GSSAPI_MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
+				--with-gss_impl=mit
 
 DOCS=		AUTHORS COPYING ChangeLog INSTALL LDAP_SASLAUTHD NEWS README
 
-PLIST_SUB=	PREFIX=${PREFIX} \
-		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
-		RUNPATH=${RUNPATH}
-
-SUB_LIST+=	SASLAUTHD_RUNPATH=${SASLAUTHD_RUNPATH}
-
-do-build:
-	cd ${WRKSRC}/include && ${MAKE}
-	cd ${WRKSRC}/sasldb && ${MAKE}
-	cd ${WRKSRC}/saslauthd && ${MAKE}
-	cd ${WRKSRC}/saslauthd && ${MAKE} saslcache
-	cd ${WRKSRC}/saslauthd && ${MAKE} testsaslauthd
-
-post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/saslcache \
-		${STAGEDIR}${PREFIX}/sbin/saslcache
-	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/testsaslauthd \
-		${STAGEDIR}${PREFIX}/sbin/testsaslauthd
-.if ${SASLAUTHD_RUNPATH} != /var/run/saslauthd
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "SASLAUTHD_RUNPATH was specified."
-	@${ECHO_MSG} "Make sure you create ${SASLAUTHD_RUNPATH}."
-	@${ECHO_MSG} ""
-.else
-	@${MKDIR} ${STAGEDIR}/var/run/saslauthd
-.endif
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/saslauthd
-.for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/saslauthd/${file} \
-		${STAGEDIR}${DOCSDIR}/saslauthd
-.endfor
-
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../../security/cyrus-sasl2/Makefile.common"

@@ -1,5 +1,5 @@
---- cpp/log/log_lookup_test.cc.orig	2015-11-20 15:36:32.679863000 +0100
-+++ cpp/log/log_lookup_test.cc	2015-11-20 15:36:50.639269000 +0100
+--- cpp/log/log_lookup_test.cc.orig	2016-02-02 11:35:23 UTC
++++ cpp/log/log_lookup_test.cc
 @@ -1,4 +1,7 @@
  /* -*- indent-tabs-mode: nil -*- */
 +// Without this, build will fail due to clash between onigposix.h

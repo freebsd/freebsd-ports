@@ -1,5 +1,5 @@
---- Makefile.orig	2013-10-07 03:52:05.000000000 +0900
-+++ Makefile	2013-10-30 05:16:36.000000000 +0900
+--- Makefile.orig	2016-02-29 01:15:13 UTC
++++ Makefile
 @@ -1,19 +1,21 @@
  VERSION=v2.4
  
@@ -26,7 +26,7 @@
  
  SYS=posix
  CRYPTO=OPENSSL
-@@ -23,14 +25,14 @@
+@@ -23,14 +25,14 @@ DEF_OPENSSL=-DUSE_OPENSSL
  DEF_GNUTLS=-DUSE_GNUTLS
  DEF_=-DNO_CRYPTO
  REQ_GNUTLS=gnutls,hogweed,nettle
@@ -43,7 +43,7 @@
  LIB_POLARSSL=-lpolarssl $(LIBZ)
  PRIVATE_LIBS=$(LIBS_$(SYS))
  CRYPTO_LIB=$(LIB_$(CRYPTO)) $(PRIVATE_LIBS)
-@@ -74,8 +76,9 @@
+@@ -74,8 +76,9 @@ SO_INST=$(SOINST_$(SHARED))
  
  DEF=-DRTMPDUMP_VERSION=\"$(VERSION)\" $(CRYPTO_DEF) $(XDEF)
  OPT=-O2
@@ -55,7 +55,7 @@
  
  
  OBJS=rtmp.o log.o amf.o hashswf.o parseurl.o
-@@ -102,16 +105,18 @@
+@@ -102,20 +105,22 @@ librtmp.pc: librtmp.pc.in Makefile
  	sed -e "s;@prefix@;$(prefix);" -e "s;@libdir@;$(libdir);" \
  		-e "s;@VERSION@;$(VERSION);" \
  		-e "s;@CRYPTO_REQ@;$(CRYPTO_REQ);" \
@@ -76,3 +76,8 @@
  	cp librtmp.3 $(MANDIR)/man3
  
  install_so:	librtmp$(SO_EXT)
+-	cp librtmp$(SO_EXT) $(SODIR)
++	${BSD_INSTALL_LIB} librtmp$(SO_EXT) $(SODIR)
+ 	$(INSTALL_IMPLIB)
+ 	cd $(SODIR); ln -sf librtmp$(SO_EXT) librtmp.$(SOX)
+ 

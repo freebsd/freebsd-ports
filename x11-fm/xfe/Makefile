@@ -9,24 +9,24 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast MS-Explorer like file manager for X
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
 
-OPTIONS_DEFINE=	NLS
-
-OPTIONS_SUB=	yes
-
-USES=		desktop-file-utils gmake pathfix
+USES=		desktop-file-utils gmake localbase pathfix
 USE_XORG=	xft
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 
+LDFLAGS+=	-pthread
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+NLS_USES_OFF=	gettext-tools
 
 post-patch:
 .for i in XFileExplorer.cpp help.h xfedefs.h

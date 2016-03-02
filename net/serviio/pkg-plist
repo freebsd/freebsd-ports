@@ -1,5 +1,4 @@
 sbin/serviiod
-bin/serviio-console
 %%JAVAJARDIR%%/serviio/commons-codec.jar
 %%JAVAJARDIR%%/serviio/commons-imaging.jar
 %%JAVAJARDIR%%/serviio/commons-io.jar
@@ -29,9 +28,10 @@ bin/serviio-console
 %%JAVAJARDIR%%/serviio/rome-modules.jar
 %%JAVAJARDIR%%/serviio/rome.jar
 %%JAVAJARDIR%%/serviio/sbbi-upnp.jar
-%%JAVAJARDIR%%/serviio/serviio-client.jar
 %%JAVAJARDIR%%/serviio/serviio-mediabrowser-api.jar
 %%JAVAJARDIR%%/serviio/serviio-mediabrowser-web.jar
+%%JAVAJARDIR%%/serviio/serviio-web-console-api.jar
+%%JAVAJARDIR%%/serviio/serviio-web-console.jar
 %%JAVAJARDIR%%/serviio/serviio.jar
 %%JAVAJARDIR%%/serviio/simple.jar
 %%JAVAJARDIR%%/serviio/slf4j-api.jar

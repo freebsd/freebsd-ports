@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pcmanx
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	chinese net gnome
-MASTER_SITES=	http://pcmanx-gtk2.googlecode.com/files/
+MASTER_SITES=	https://github.com/pcman-bbs/${PORTNAME}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

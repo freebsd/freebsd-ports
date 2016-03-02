@@ -29,8 +29,4 @@ lib/liblineak.so
 lib/liblineak.so.0
 lib/liblineak.so.0.8.0
 man/man1/lineakd.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lineakd.conf.example
 @dir lib/lineakd/plugins

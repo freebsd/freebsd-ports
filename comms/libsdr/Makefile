@@ -1,0 +1,29 @@
+# Created by: Jeffrey Baitis <baitisj@pcbsd.org>
+# $FreeBSD$
+
+PORTNAME=	libsdr
+PORTVERSION=	0.1.0
+CATEGORIES=	comms hamradio
+
+MAINTAINER=	baitisj@pcbsd.org
+COMMENT=	Simple software defined radio (SDR) library
+
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		librtlsdr.so:${PORTSDIR}/comms/rtl-sdr
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	hmatuschek
+GH_PROJECT=	libsdr
+GH_TAGNAME=	0982a68
+
+MAKE_JOBS_UNSAFE=	yes
+USES=		cmake pkgconfig
+CMAKE_ARGS+=-DCMAKE_BUILD_TYPE=RELEASE
+CMAKE_VERBOSE=	1
+USE_LDCONFIG=	yes
+
+.include <bsd.port.mk>

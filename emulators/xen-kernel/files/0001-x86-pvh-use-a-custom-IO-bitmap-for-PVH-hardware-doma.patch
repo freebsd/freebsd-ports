@@ -1,0 +1,197 @@
+From 8ddb99287cd18da99a95a9f70904a97b52893599 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Roger=20Pau=20Monn=C3=A9?= <roger.pau@citrix.com>
+Date: Wed, 20 May 2015 13:26:43 +0200
+Subject: [PATCH 1/2] x86/pvh: use a custom IO bitmap for PVH hardware domains
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Since a PVH hardware domain has access to the physical hardware create a
+custom more permissive IO bitmap. The permissions set on the bitmap are
+populated based on the contents of the ioports rangeset.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+---
+ xen/arch/x86/hvm/hvm.c           | 24 ++++++++++++++++++++++--
+ xen/arch/x86/hvm/svm/vmcb.c      |  2 +-
+ xen/arch/x86/hvm/vmx/vmcs.c      |  4 ++--
+ xen/arch/x86/setup.c             | 28 ++++++++++++++++++++++++++++
+ xen/common/domain.c              |  3 +++
+ xen/include/asm-x86/hvm/domain.h |  2 ++
+ xen/include/asm-x86/setup.h      |  1 +
+ 7 files changed, 59 insertions(+), 5 deletions(-)
+
+diff --git a/xen/arch/x86/hvm/hvm.c b/xen/arch/x86/hvm/hvm.c
+index 689e402..89423fa 100644
+--- a/xen/arch/x86/hvm/hvm.c
++++ b/xen/arch/x86/hvm/hvm.c
+@@ -77,9 +77,13 @@ integer_param("hvm_debug", opt_hvm_debug_level);
+ 
+ struct hvm_function_table hvm_funcs __read_mostly;
+ 
+-/* I/O permission bitmap is globally shared by all HVM guests. */
++/*
++ * The I/O permission bitmap is globally shared by all HVM guests except
++ * the hardware domain which needs a more permissive one.
++ */
++#define HVM_IOBITMAP_SIZE (3 * PAGE_SIZE)
+ unsigned long __attribute__ ((__section__ (".bss.page_aligned")))
+-    hvm_io_bitmap[3*PAGE_SIZE/BYTES_PER_LONG];
++    hvm_io_bitmap[HVM_IOBITMAP_SIZE / BYTES_PER_LONG];
+ 
+ /* Xen command-line option to enable HAP */
+ static bool_t __initdata opt_hap_enabled = 1;
+@@ -1461,6 +1465,20 @@ int hvm_domain_initialise(struct domain *d)
+         goto fail1;
+     d->arch.hvm_domain.io_handler->num_slot = 0;
+ 
++    /* Set the default IO Bitmap. */
++    if ( is_hardware_domain(d) )
++    {
++        d->arch.hvm_domain.io_bitmap = _xmalloc(HVM_IOBITMAP_SIZE, PAGE_SIZE);
++        if ( d->arch.hvm_domain.io_bitmap == NULL )
++        {
++            rc = -ENOMEM;
++            goto fail1;
++        }
++        memset(d->arch.hvm_domain.io_bitmap, ~0, HVM_IOBITMAP_SIZE);
++    }
++    else
++        d->arch.hvm_domain.io_bitmap = hvm_io_bitmap;
++
+     if ( is_pvh_domain(d) )
+     {
+         register_portio_handler(d, 0, 0x10003, handle_pvh_io);
+@@ -1496,6 +1514,8 @@ int hvm_domain_initialise(struct domain *d)
+     stdvga_deinit(d);
+     vioapic_deinit(d);
+  fail1:
++    if ( is_hardware_domain(d) )
++        xfree(d->arch.hvm_domain.io_bitmap);
+     xfree(d->arch.hvm_domain.io_handler);
+     xfree(d->arch.hvm_domain.params);
+  fail0:
+diff --git a/xen/arch/x86/hvm/svm/vmcb.c b/xen/arch/x86/hvm/svm/vmcb.c
+index 21292bb..6339d2a 100644
+--- a/xen/arch/x86/hvm/svm/vmcb.c
++++ b/xen/arch/x86/hvm/svm/vmcb.c
+@@ -118,7 +118,7 @@ static int construct_vmcb(struct vcpu *v)
+         svm_disable_intercept_for_msr(v, MSR_AMD64_LWP_CBADDR);
+ 
+     vmcb->_msrpm_base_pa = (u64)virt_to_maddr(arch_svm->msrpm);
+-    vmcb->_iopm_base_pa  = (u64)virt_to_maddr(hvm_io_bitmap);
++    vmcb->_iopm_base_pa = __pa(v->domain->arch.hvm_domain.io_bitmap);
+ 
+     /* Virtualise EFLAGS.IF and LAPIC TPR (CR8). */
+     vmcb->_vintr.fields.intr_masking = 1;
+diff --git a/xen/arch/x86/hvm/vmx/vmcs.c b/xen/arch/x86/hvm/vmx/vmcs.c
+index 3123706..355d1b5 100644
+--- a/xen/arch/x86/hvm/vmx/vmcs.c
++++ b/xen/arch/x86/hvm/vmx/vmcs.c
+@@ -1032,8 +1032,8 @@ static int construct_vmcs(struct vcpu *v)
+     }
+ 
+     /* I/O access bitmap. */
+-    __vmwrite(IO_BITMAP_A, virt_to_maddr((char *)hvm_io_bitmap + 0));
+-    __vmwrite(IO_BITMAP_B, virt_to_maddr((char *)hvm_io_bitmap + PAGE_SIZE));
++    __vmwrite(IO_BITMAP_A, __pa(d->arch.hvm_domain.io_bitmap));
++    __vmwrite(IO_BITMAP_B, __pa(d->arch.hvm_domain.io_bitmap) + PAGE_SIZE);
+ 
+     if ( cpu_has_vmx_virtual_intr_delivery )
+     {
+diff --git a/xen/arch/x86/setup.c b/xen/arch/x86/setup.c
+index 2b9787a..cd333f9 100644
+--- a/xen/arch/x86/setup.c
++++ b/xen/arch/x86/setup.c
+@@ -1446,6 +1446,8 @@ void __init noreturn __start_xen(unsigned long mbi_p)
+ 
+     dmi_end_boot();
+ 
++    setup_io_bitmap(dom0);
++
+     system_state = SYS_STATE_active;
+ 
+     domain_unpause_by_systemcontroller(dom0);
+@@ -1509,6 +1511,32 @@ int __hwdom_init xen_in_range(unsigned long mfn)
+     return 0;
+ }
+ 
++static int __hwdom_init io_bitmap_cb(unsigned long s, unsigned long e,
++                                     void *ctx)
++{
++    struct domain *d = ctx;
++    unsigned int i;
++
++    ASSERT(e <= INT_MAX);
++    for ( i = s; i <= e; i++ )
++        __clear_bit(i, d->arch.hvm_domain.io_bitmap);
++
++    return 0;
++}
++
++void __hwdom_init setup_io_bitmap(struct domain *d)
++{
++    int rc;
++
++    if ( has_hvm_container_domain(d) )
++    {
++        bitmap_fill(d->arch.hvm_domain.io_bitmap, 0x10000);
++        rc = rangeset_report_ranges(d->arch.ioport_caps, 0, 0x10000,
++                                    io_bitmap_cb, d);
++        BUG_ON(rc);
++    }
++}
++
+ /*
+  * Local variables:
+  * mode: C
+diff --git a/xen/common/domain.c b/xen/common/domain.c
+index 6803c4d..b0e83f5 100644
+--- a/xen/common/domain.c
++++ b/xen/common/domain.c
+@@ -42,6 +42,7 @@
+ #include <xsm/xsm.h>
+ #include <xen/trace.h>
+ #include <xen/tmem.h>
++#include <asm/setup.h>
+ 
+ /* Linux config option: propageted to domain0 */
+ /* xen_processor_pmbits: xen control Cx, Px, ... */
+@@ -219,6 +220,8 @@ static int late_hwdom_init(struct domain *d)
+     rangeset_swap(d->iomem_caps, dom0->iomem_caps);
+ #ifdef CONFIG_X86
+     rangeset_swap(d->arch.ioport_caps, dom0->arch.ioport_caps);
++    setup_io_bitmap(d);
++    setup_io_bitmap(dom0);
+ #endif
+ 
+     rcu_unlock_domain(dom0);
+diff --git a/xen/include/asm-x86/hvm/domain.h b/xen/include/asm-x86/hvm/domain.h
+index 0f8b19a..bdab45d 100644
+--- a/xen/include/asm-x86/hvm/domain.h
++++ b/xen/include/asm-x86/hvm/domain.h
+@@ -141,6 +141,8 @@ struct hvm_domain {
+      */
+     uint64_t sync_tsc;
+ 
++    unsigned long *io_bitmap;
++
+     union {
+         struct vmx_domain vmx;
+         struct svm_domain svm;
+diff --git a/xen/include/asm-x86/setup.h b/xen/include/asm-x86/setup.h
+index 08bc23a..381d9f8 100644
+--- a/xen/include/asm-x86/setup.h
++++ b/xen/include/asm-x86/setup.h
+@@ -32,6 +32,7 @@ int construct_dom0(
+     module_t *initrd,
+     void *(*bootstrap_map)(const module_t *),
+     char *cmdline);
++void setup_io_bitmap(struct domain *d);
+ 
+ unsigned long initial_images_nrpages(nodeid_t node);
+ void discard_initial_images(void);
+-- 
+2.5.4 (Apple Git-61)
+

@@ -1,7 +1,7 @@
---- cpp/util/fake_etcd_test.cc.orig	2015-11-20 15:53:01.290954000 +0100
-+++ cpp/util/fake_etcd_test.cc	2015-11-20 15:53:17.991665000 +0100
-@@ -4,6 +4,9 @@
- #include <functional>
+--- cpp/util/fake_etcd_test.cc.orig	2016-02-02 11:35:23 UTC
++++ cpp/util/fake_etcd_test.cc
+@@ -2,6 +2,9 @@
+ 
  #include <gflags/gflags.h>
  #include <glog/logging.h>
 +// Without this, build will fail due to clash between onigposix.h
@@ -9,4 +9,4 @@
 +#define GTEST_HAS_POSIX_RE 0
  #include <gmock/gmock.h>
  #include <gtest/gtest.h>
- #include <memory>
+ #include <atomic>

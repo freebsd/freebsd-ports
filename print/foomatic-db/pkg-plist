@@ -254,6 +254,7 @@ share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C3003_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C300SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C300_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C305_PS.ppd.gz
+share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C306Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C3300_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C3501_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C3502_PS.ppd.gz
@@ -263,6 +264,7 @@ share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C400SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C400_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C401SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C401_PS.ppd.gz
+share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C406Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C4501A_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C4501_PS.ppd.gz
 share/foomatic/db/source/PPD/Gestetner/PS/Gestetner-MP_C4502A_PS.ppd.gz
@@ -609,6 +611,7 @@ share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C3003_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C300SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C300_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C305_PS.ppd.gz
+share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C306Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C3300_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C3501_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C3502_PS.ppd.gz
@@ -618,6 +621,7 @@ share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C400SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C400_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C401SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C401_PS.ppd.gz
+share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C406Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C4501A_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C4501_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-MP_C4502A_PS.ppd.gz
@@ -642,7 +646,9 @@ share/foomatic/db/source/PPD/Infotec/PS/Infotec-Pro_1356EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-Pro_1357EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-Pro_8100S_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-Pro_8110S_PS.ppd.gz
+share/foomatic/db/source/PPD/Infotec/PS/Infotec-Pro_8110_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-Pro_8120S_PS.ppd.gz
+share/foomatic/db/source/PPD/Infotec/PS/Infotec-Pro_8120_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-Pro_906EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-Pro_907EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PS/Infotec-Pro_C5100S_PS.ppd.gz
@@ -793,7 +799,9 @@ share/foomatic/db/source/PPD/Infotec/PXL/Infotec-Pro_1356EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PXL/Infotec-Pro_1357EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PXL/Infotec-Pro_8100S_PXL.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PXL/Infotec-Pro_8110S_PXL.ppd.gz
+share/foomatic/db/source/PPD/Infotec/PXL/Infotec-Pro_8110_PXL.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PXL/Infotec-Pro_8120S_PXL.ppd.gz
+share/foomatic/db/source/PPD/Infotec/PXL/Infotec-Pro_8120_PXL.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PXL/Infotec-Pro_906EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PXL/Infotec-Pro_907EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Infotec/PXL/Infotec-Pro_C5100S_PXL.ppd.gz
@@ -1679,6 +1687,7 @@ share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C3003_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C300SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C300_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C305_PS.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C306Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C3300_LD533C_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C3500_LD435c_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C3501_LD635C_PS.ppd.gz
@@ -1689,6 +1698,7 @@ share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C400SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C400_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C401SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C401_PS.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C406Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C4500_LD445c_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C4501_LD645C_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-MP_C4502A_PS.ppd.gz
@@ -1713,7 +1723,9 @@ share/foomatic/db/source/PPD/Lanier/PS/Lanier-Pro_1356EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-Pro_1357EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-Pro_8100S_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-Pro_8110S_PS.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PS/Lanier-Pro_8110_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-Pro_8120S_PS.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PS/Lanier-Pro_8120_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-Pro_906EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-Pro_907EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-Pro_C5100S_PS.ppd.gz
@@ -1746,6 +1758,8 @@ share/foomatic/db/source/PPD/Lanier/PS/Lanier-SP_C320DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-SP_C400DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-SP_C430DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-SP_C431DN_PS.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PS/Lanier-SP_C435DN_PS.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PS/Lanier-SP_C440DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-SP_C730DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-SP_C830DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PS/Lanier-SP_C831DN_PS.ppd.gz
@@ -1894,7 +1908,9 @@ share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_1356EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_1357EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_8100S_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_8110S_PXL.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_8110_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_8120S_PXL.ppd.gz
+share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_8120_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_906EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_907EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_C5100S_PXL.ppd.gz
@@ -1906,6 +1922,7 @@ share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_C7110_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PXL/Lanier-SG3110SFNw_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_6500e_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C2100_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_C4100_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C510.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C520.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C522.ppd.gz
@@ -1914,6 +1931,7 @@ share/foomatic/db/source/PPD/Lexmark/Lexmark_C540.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C543.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C544.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C546.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_C6100_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C734.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C736.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C740_Series.ppd.gz
@@ -1931,9 +1949,16 @@ share/foomatic/db/source/PPD/Lexmark/Lexmark_C950_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_CS310_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_CS410_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_CS510_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_CS720_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_CS725_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_CS820_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_CX310_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_CX410_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_CX510_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_CX725_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_CX820_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_CX825_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_CX860_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_E260.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_E260d.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_E260dn.ppd.gz
@@ -2002,6 +2027,9 @@ share/foomatic/db/source/PPD/Lexmark/Lexmark_X940e.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_X945e.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_X950_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_XC2100_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_XC4100_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_XC6100_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_XC8100_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_XM1100_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_XM3100_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_XM5100_Series.ppd.gz
@@ -2135,6 +2163,7 @@ share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C3003_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C300SR_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C300_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C305_PS.ppd.gz
+share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C306Z_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C3300_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C3500_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C3501_PS.ppd.gz
@@ -2145,6 +2174,7 @@ share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C400SR_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C400_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C401SR_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C401_PS.ppd.gz
+share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C406Z_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C4500_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C4501A_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-MP_C4501_PS.ppd.gz
@@ -2191,7 +2221,9 @@ share/foomatic/db/source/PPD/NRG/PS/NRG-Pro_1356EX_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-Pro_1357EX_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-Pro_8100S_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-Pro_8110S_PS.ppd.gz
+share/foomatic/db/source/PPD/NRG/PS/NRG-Pro_8110_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-Pro_8120S_PS.ppd.gz
+share/foomatic/db/source/PPD/NRG/PS/NRG-Pro_8120_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-Pro_906EX_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-Pro_907EX_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-Pro_C5100S_PS.ppd.gz
@@ -2227,6 +2259,7 @@ share/foomatic/db/source/PPD/NRG/PS/NRG-SP_C411DN_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-SP_C420DN_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-SP_C430DN_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-SP_C431DN_PS.ppd.gz
+share/foomatic/db/source/PPD/NRG/PS/NRG-SP_C440DN_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-SP_C730DN_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-SP_C811DN_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-SP_C820DN_PS.ppd.gz
@@ -2376,7 +2409,9 @@ share/foomatic/db/source/PPD/NRG/PXL/NRG-Pro_1356EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/NRG/PXL/NRG-Pro_1357EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/NRG/PXL/NRG-Pro_8100S_PXL.ppd.gz
 share/foomatic/db/source/PPD/NRG/PXL/NRG-Pro_8110S_PXL.ppd.gz
+share/foomatic/db/source/PPD/NRG/PXL/NRG-Pro_8110_PXL.ppd.gz
 share/foomatic/db/source/PPD/NRG/PXL/NRG-Pro_8120S_PXL.ppd.gz
+share/foomatic/db/source/PPD/NRG/PXL/NRG-Pro_8120_PXL.ppd.gz
 share/foomatic/db/source/PPD/NRG/PXL/NRG-Pro_906EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/NRG/PXL/NRG-Pro_907EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/NRG/PXL/NRG-Pro_C5100S_PXL.ppd.gz
@@ -2652,9 +2687,11 @@ share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C2011_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C2503Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C2503_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C3003_PS.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C306Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C3503_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C401SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C401_PS.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C406Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C4503_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C5503_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-MP_C6003_PS.ppd.gz
@@ -2667,7 +2704,9 @@ share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_1356EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_1357EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_8100S_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_8110S_PS.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_8110_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_8120S_PS.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_8120_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_906EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_907EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Pro_C5100S_PS.ppd.gz
@@ -2683,6 +2722,8 @@ share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-SP_4510DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-SP_4510SF_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-SP_4520DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-SP_6430DN_PS.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-SP_C435DN_PS.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-SP_C440DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-AficioSG3110DN_PXL.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-AficioSG3110DNw_PXL.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-AficioSG3110SFNw_PXL.ppd.gz
@@ -2836,7 +2877,9 @@ share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-Pro_1356EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-Pro_1357EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-Pro_8100S_PXL.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-Pro_8110S_PXL.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-Pro_8110_PXL.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-Pro_8120S_PXL.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-Pro_8120_PXL.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-Pro_906EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-Pro_907EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PXL/Ricoh-Pro_C5100S_PXL.ppd.gz
@@ -2881,8 +2924,11 @@ share/foomatic/db/source/PPD/Samsung/PS/Samsung_CLX-9252_9352_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_CLX-92x1_93x1_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_CLX-981x_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_CLX-982x_Series.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PS/Samsung_K3250_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_K401_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_K4350_Series.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PS/Samsung_K703_Series.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PS/Samsung_K7600_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_M403x_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_M408x_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_M4370_5370_Series.ppd.gz
@@ -2925,8 +2971,11 @@ share/foomatic/db/source/PPD/Samsung/PS/Samsung_SCX-8123_8128_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_SCX-8230_8240_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_SCX-881x_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_SCX-882x_Series.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PS/Samsung_X3220_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_X401_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PS/Samsung_X4300_Series.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PS/Samsung_X703_Series.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PS/Samsung_X7600_Series.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_CLP-610_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_CLP-620_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_M262x_282x_Series_PXL.ppd.gz
@@ -3113,10 +3162,12 @@ share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C2503_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C3002_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C3003_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C305_PS.ppd.gz
+share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C306Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C3502_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C3503_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C401SR_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C401_PS.ppd.gz
+share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C406Z_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C4502A_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C4502_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-MP_C4503_PS.ppd.gz
@@ -3133,7 +3184,9 @@ share/foomatic/db/source/PPD/Savin/PS/Savin-Pro_1356EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-Pro_1357EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-Pro_8100S_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-Pro_8110S_PS.ppd.gz
+share/foomatic/db/source/PPD/Savin/PS/Savin-Pro_8110_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-Pro_8120S_PS.ppd.gz
+share/foomatic/db/source/PPD/Savin/PS/Savin-Pro_8120_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-Pro_906EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-Pro_907EX_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-Pro_C5100S_PS.ppd.gz
@@ -3164,6 +3217,8 @@ share/foomatic/db/source/PPD/Savin/PS/Savin-SP_6430DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-SP_8300DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-SP_C320DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-SP_C400DN_PS.ppd.gz
+share/foomatic/db/source/PPD/Savin/PS/Savin-SP_C435DN_PS.ppd.gz
+share/foomatic/db/source/PPD/Savin/PS/Savin-SP_C440DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-SP_C730DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-SP_C830DN_PS.ppd.gz
 share/foomatic/db/source/PPD/Savin/PS/Savin-SP_C831DN_PS.ppd.gz
@@ -3304,7 +3359,9 @@ share/foomatic/db/source/PPD/Savin/PXL/Savin-Pro_1356EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Savin/PXL/Savin-Pro_1357EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Savin/PXL/Savin-Pro_8100S_PXL.ppd.gz
 share/foomatic/db/source/PPD/Savin/PXL/Savin-Pro_8110S_PXL.ppd.gz
+share/foomatic/db/source/PPD/Savin/PXL/Savin-Pro_8110_PXL.ppd.gz
 share/foomatic/db/source/PPD/Savin/PXL/Savin-Pro_8120S_PXL.ppd.gz
+share/foomatic/db/source/PPD/Savin/PXL/Savin-Pro_8120_PXL.ppd.gz
 share/foomatic/db/source/PPD/Savin/PXL/Savin-Pro_906EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Savin/PXL/Savin-Pro_907EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Savin/PXL/Savin-Pro_C5100S_PXL.ppd.gz
@@ -5592,6 +5649,7 @@ share/foomatic/db/source/printer/Gestetner-MP_C3002.xml
 share/foomatic/db/source/printer/Gestetner-MP_C3003.xml
 share/foomatic/db/source/printer/Gestetner-MP_C300SR.xml
 share/foomatic/db/source/printer/Gestetner-MP_C305.xml
+share/foomatic/db/source/printer/Gestetner-MP_C306Z.xml
 share/foomatic/db/source/printer/Gestetner-MP_C3300.xml
 share/foomatic/db/source/printer/Gestetner-MP_C3501.xml
 share/foomatic/db/source/printer/Gestetner-MP_C3502.xml
@@ -5601,6 +5659,7 @@ share/foomatic/db/source/printer/Gestetner-MP_C4000.xml
 share/foomatic/db/source/printer/Gestetner-MP_C400SR.xml
 share/foomatic/db/source/printer/Gestetner-MP_C401.xml
 share/foomatic/db/source/printer/Gestetner-MP_C401SR.xml
+share/foomatic/db/source/printer/Gestetner-MP_C406Z.xml
 share/foomatic/db/source/printer/Gestetner-MP_C4501.xml
 share/foomatic/db/source/printer/Gestetner-MP_C4501A.xml
 share/foomatic/db/source/printer/Gestetner-MP_C4502.xml
@@ -6376,6 +6435,7 @@ share/foomatic/db/source/printer/Infotec-MP_C3002.xml
 share/foomatic/db/source/printer/Infotec-MP_C3003.xml
 share/foomatic/db/source/printer/Infotec-MP_C300SR.xml
 share/foomatic/db/source/printer/Infotec-MP_C305.xml
+share/foomatic/db/source/printer/Infotec-MP_C306Z.xml
 share/foomatic/db/source/printer/Infotec-MP_C3300.xml
 share/foomatic/db/source/printer/Infotec-MP_C3501.xml
 share/foomatic/db/source/printer/Infotec-MP_C3502.xml
@@ -6385,6 +6445,7 @@ share/foomatic/db/source/printer/Infotec-MP_C4000.xml
 share/foomatic/db/source/printer/Infotec-MP_C400SR.xml
 share/foomatic/db/source/printer/Infotec-MP_C401.xml
 share/foomatic/db/source/printer/Infotec-MP_C401SR.xml
+share/foomatic/db/source/printer/Infotec-MP_C406Z.xml
 share/foomatic/db/source/printer/Infotec-MP_C4501.xml
 share/foomatic/db/source/printer/Infotec-MP_C4501A.xml
 share/foomatic/db/source/printer/Infotec-MP_C4502.xml
@@ -6408,7 +6469,9 @@ share/foomatic/db/source/printer/Infotec-Pro_1107EX.xml
 share/foomatic/db/source/printer/Infotec-Pro_1356EX.xml
 share/foomatic/db/source/printer/Infotec-Pro_1357EX.xml
 share/foomatic/db/source/printer/Infotec-Pro_8100S.xml
+share/foomatic/db/source/printer/Infotec-Pro_8110.xml
 share/foomatic/db/source/printer/Infotec-Pro_8110S.xml
+share/foomatic/db/source/printer/Infotec-Pro_8120.xml
 share/foomatic/db/source/printer/Infotec-Pro_8120S.xml
 share/foomatic/db/source/printer/Infotec-Pro_906EX.xml
 share/foomatic/db/source/printer/Infotec-Pro_907EX.xml
@@ -6795,6 +6858,7 @@ share/foomatic/db/source/printer/Lanier-MP_C3002.xml
 share/foomatic/db/source/printer/Lanier-MP_C3003.xml
 share/foomatic/db/source/printer/Lanier-MP_C300SR.xml
 share/foomatic/db/source/printer/Lanier-MP_C305.xml
+share/foomatic/db/source/printer/Lanier-MP_C306Z.xml
 share/foomatic/db/source/printer/Lanier-MP_C3300_LD533C.xml
 share/foomatic/db/source/printer/Lanier-MP_C3500_LD435c.xml
 share/foomatic/db/source/printer/Lanier-MP_C3501_LD635C.xml
@@ -6805,6 +6869,7 @@ share/foomatic/db/source/printer/Lanier-MP_C4000_LD540C.xml
 share/foomatic/db/source/printer/Lanier-MP_C400SR.xml
 share/foomatic/db/source/printer/Lanier-MP_C401.xml
 share/foomatic/db/source/printer/Lanier-MP_C401SR.xml
+share/foomatic/db/source/printer/Lanier-MP_C406Z.xml
 share/foomatic/db/source/printer/Lanier-MP_C4500_LD445c.xml
 share/foomatic/db/source/printer/Lanier-MP_C4501_LD645C.xml
 share/foomatic/db/source/printer/Lanier-MP_C4502.xml
@@ -6828,7 +6893,9 @@ share/foomatic/db/source/printer/Lanier-Pro_1107EX.xml
 share/foomatic/db/source/printer/Lanier-Pro_1356EX.xml
 share/foomatic/db/source/printer/Lanier-Pro_1357EX.xml
 share/foomatic/db/source/printer/Lanier-Pro_8100S.xml
+share/foomatic/db/source/printer/Lanier-Pro_8110.xml
 share/foomatic/db/source/printer/Lanier-Pro_8110S.xml
+share/foomatic/db/source/printer/Lanier-Pro_8120.xml
 share/foomatic/db/source/printer/Lanier-Pro_8120S.xml
 share/foomatic/db/source/printer/Lanier-Pro_906EX.xml
 share/foomatic/db/source/printer/Lanier-Pro_907EX.xml
@@ -6865,6 +6932,8 @@ share/foomatic/db/source/printer/Lanier-SP_C320DN.xml
 share/foomatic/db/source/printer/Lanier-SP_C400DN.xml
 share/foomatic/db/source/printer/Lanier-SP_C430DN.xml
 share/foomatic/db/source/printer/Lanier-SP_C431DN.xml
+share/foomatic/db/source/printer/Lanier-SP_C435DN.xml
+share/foomatic/db/source/printer/Lanier-SP_C440DN.xml
 share/foomatic/db/source/printer/Lanier-SP_C730DN.xml
 share/foomatic/db/source/printer/Lanier-SP_C830DN.xml
 share/foomatic/db/source/printer/Lanier-SP_C831DN.xml
@@ -6887,6 +6956,8 @@ share/foomatic/db/source/printer/Lexmark-7000.xml
 share/foomatic/db/source/printer/Lexmark-7200.xml
 share/foomatic/db/source/printer/Lexmark-C2100.xml
 share/foomatic/db/source/printer/Lexmark-C2132.xml
+share/foomatic/db/source/printer/Lexmark-C4100.xml
+share/foomatic/db/source/printer/Lexmark-C4150.xml
 share/foomatic/db/source/printer/Lexmark-C500.xml
 share/foomatic/db/source/printer/Lexmark-C500n.xml
 share/foomatic/db/source/printer/Lexmark-C510.xml
@@ -6904,6 +6975,8 @@ share/foomatic/db/source/printer/Lexmark-C540.xml
 share/foomatic/db/source/printer/Lexmark-C543.xml
 share/foomatic/db/source/printer/Lexmark-C544.xml
 share/foomatic/db/source/printer/Lexmark-C546.xml
+share/foomatic/db/source/printer/Lexmark-C6100.xml
+share/foomatic/db/source/printer/Lexmark-C6160de.xml
 share/foomatic/db/source/printer/Lexmark-C720n.xml
 share/foomatic/db/source/printer/Lexmark-C734.xml
 share/foomatic/db/source/printer/Lexmark-C736.xml
@@ -6947,6 +7020,16 @@ share/foomatic/db/source/printer/Lexmark-CS410dn.xml
 share/foomatic/db/source/printer/Lexmark-CS410n.xml
 share/foomatic/db/source/printer/Lexmark-CS510.xml
 share/foomatic/db/source/printer/Lexmark-CS510de.xml
+share/foomatic/db/source/printer/Lexmark-CS720.xml
+share/foomatic/db/source/printer/Lexmark-CS720de.xml
+share/foomatic/db/source/printer/Lexmark-CS720dte.xml
+share/foomatic/db/source/printer/Lexmark-CS725.xml
+share/foomatic/db/source/printer/Lexmark-CS725de.xml
+share/foomatic/db/source/printer/Lexmark-CS725dte.xml
+share/foomatic/db/source/printer/Lexmark-CS820.xml
+share/foomatic/db/source/printer/Lexmark-CS820de.xml
+share/foomatic/db/source/printer/Lexmark-CS820dte.xml
+share/foomatic/db/source/printer/Lexmark-CS820dtfe.xml
 share/foomatic/db/source/printer/Lexmark-CX310.xml
 share/foomatic/db/source/printer/Lexmark-CX310dn.xml
 share/foomatic/db/source/printer/Lexmark-CX310n.xml
@@ -6955,6 +7038,23 @@ share/foomatic/db/source/printer/Lexmark-CX410de.xml
 share/foomatic/db/source/printer/Lexmark-CX410e.xml
 share/foomatic/db/source/printer/Lexmark-CX510.xml
 share/foomatic/db/source/printer/Lexmark-CX510de.xml
+share/foomatic/db/source/printer/Lexmark-CX725.xml
+share/foomatic/db/source/printer/Lexmark-CX725de.xml
+share/foomatic/db/source/printer/Lexmark-CX725dhe.xml
+share/foomatic/db/source/printer/Lexmark-CX725dthe.xml
+share/foomatic/db/source/printer/Lexmark-CX820.xml
+share/foomatic/db/source/printer/Lexmark-CX820de.xml
+share/foomatic/db/source/printer/Lexmark-CX820dtfe.xml
+share/foomatic/db/source/printer/Lexmark-CX825.xml
+share/foomatic/db/source/printer/Lexmark-CX825de.xml
+share/foomatic/db/source/printer/Lexmark-CX825dte.xml
+share/foomatic/db/source/printer/Lexmark-CX825dtfe.xml
+share/foomatic/db/source/printer/Lexmark-CX825dtpe.xml
+share/foomatic/db/source/printer/Lexmark-CX860.xml
+share/foomatic/db/source/printer/Lexmark-CX860de.xml
+share/foomatic/db/source/printer/Lexmark-CX860dte.xml
+share/foomatic/db/source/printer/Lexmark-CX860dtfe.xml
+share/foomatic/db/source/printer/Lexmark-CX860dtpe.xml
 share/foomatic/db/source/printer/Lexmark-E120.xml
 share/foomatic/db/source/printer/Lexmark-E120n.xml
 share/foomatic/db/source/printer/Lexmark-E210.xml
@@ -7118,6 +7218,16 @@ share/foomatic/db/source/printer/Lexmark-X954.xml
 share/foomatic/db/source/printer/Lexmark-XC2100.xml
 share/foomatic/db/source/printer/Lexmark-XC2130.xml
 share/foomatic/db/source/printer/Lexmark-XC2132.xml
+share/foomatic/db/source/printer/Lexmark-XC4100.xml
+share/foomatic/db/source/printer/Lexmark-XC4150.xml
+share/foomatic/db/source/printer/Lexmark-XC6100.xml
+share/foomatic/db/source/printer/Lexmark-XC6152de.xml
+share/foomatic/db/source/printer/Lexmark-XC6152dtfe.xml
+share/foomatic/db/source/printer/Lexmark-XC8100.xml
+share/foomatic/db/source/printer/Lexmark-XC8155de.xml
+share/foomatic/db/source/printer/Lexmark-XC8155dte.xml
+share/foomatic/db/source/printer/Lexmark-XC8160de.xml
+share/foomatic/db/source/printer/Lexmark-XC8160dte.xml
 share/foomatic/db/source/printer/Lexmark-XM1100.xml
 share/foomatic/db/source/printer/Lexmark-XM1135.xml
 share/foomatic/db/source/printer/Lexmark-XM1140.xml
@@ -7332,6 +7442,7 @@ share/foomatic/db/source/printer/NRG-MP_C3002.xml
 share/foomatic/db/source/printer/NRG-MP_C3003.xml
 share/foomatic/db/source/printer/NRG-MP_C300SR.xml
 share/foomatic/db/source/printer/NRG-MP_C305.xml
+share/foomatic/db/source/printer/NRG-MP_C306Z.xml
 share/foomatic/db/source/printer/NRG-MP_C3300.xml
 share/foomatic/db/source/printer/NRG-MP_C3500.xml
 share/foomatic/db/source/printer/NRG-MP_C3501.xml
@@ -7342,6 +7453,7 @@ share/foomatic/db/source/printer/NRG-MP_C4000.xml
 share/foomatic/db/source/printer/NRG-MP_C400SR.xml
 share/foomatic/db/source/printer/NRG-MP_C401.xml
 share/foomatic/db/source/printer/NRG-MP_C401SR.xml
+share/foomatic/db/source/printer/NRG-MP_C406Z.xml
 share/foomatic/db/source/printer/NRG-MP_C4500.xml
 share/foomatic/db/source/printer/NRG-MP_C4501.xml
 share/foomatic/db/source/printer/NRG-MP_C4501A.xml
@@ -7387,7 +7499,9 @@ share/foomatic/db/source/printer/NRG-Pro_1107EX.xml
 share/foomatic/db/source/printer/NRG-Pro_1356EX.xml
 share/foomatic/db/source/printer/NRG-Pro_1357EX.xml
 share/foomatic/db/source/printer/NRG-Pro_8100S.xml
+share/foomatic/db/source/printer/NRG-Pro_8110.xml
 share/foomatic/db/source/printer/NRG-Pro_8110S.xml
+share/foomatic/db/source/printer/NRG-Pro_8120.xml
 share/foomatic/db/source/printer/NRG-Pro_8120S.xml
 share/foomatic/db/source/printer/NRG-Pro_906EX.xml
 share/foomatic/db/source/printer/NRG-Pro_907EX.xml
@@ -7427,6 +7541,7 @@ share/foomatic/db/source/printer/NRG-SP_C411DN.xml
 share/foomatic/db/source/printer/NRG-SP_C420DN.xml
 share/foomatic/db/source/printer/NRG-SP_C430DN.xml
 share/foomatic/db/source/printer/NRG-SP_C431DN.xml
+share/foomatic/db/source/printer/NRG-SP_C440DN.xml
 share/foomatic/db/source/printer/NRG-SP_C730DN.xml
 share/foomatic/db/source/printer/NRG-SP_C811DN.xml
 share/foomatic/db/source/printer/NRG-SP_C820DN.xml
@@ -7881,9 +7996,11 @@ share/foomatic/db/source/printer/Ricoh-MP_C2011.xml
 share/foomatic/db/source/printer/Ricoh-MP_C2503.xml
 share/foomatic/db/source/printer/Ricoh-MP_C2503Z.xml
 share/foomatic/db/source/printer/Ricoh-MP_C3003.xml
+share/foomatic/db/source/printer/Ricoh-MP_C306Z.xml
 share/foomatic/db/source/printer/Ricoh-MP_C3503.xml
 share/foomatic/db/source/printer/Ricoh-MP_C401.xml
 share/foomatic/db/source/printer/Ricoh-MP_C401SR.xml
+share/foomatic/db/source/printer/Ricoh-MP_C406Z.xml
 share/foomatic/db/source/printer/Ricoh-MP_C4503.xml
 share/foomatic/db/source/printer/Ricoh-MP_C5503.xml
 share/foomatic/db/source/printer/Ricoh-MP_C6003.xml
@@ -7895,7 +8012,9 @@ share/foomatic/db/source/printer/Ricoh-Pro_1107EX.xml
 share/foomatic/db/source/printer/Ricoh-Pro_1356EX.xml
 share/foomatic/db/source/printer/Ricoh-Pro_1357EX.xml
 share/foomatic/db/source/printer/Ricoh-Pro_8100S.xml
+share/foomatic/db/source/printer/Ricoh-Pro_8110.xml
 share/foomatic/db/source/printer/Ricoh-Pro_8110S.xml
+share/foomatic/db/source/printer/Ricoh-Pro_8120.xml
 share/foomatic/db/source/printer/Ricoh-Pro_8120S.xml
 share/foomatic/db/source/printer/Ricoh-Pro_906EX.xml
 share/foomatic/db/source/printer/Ricoh-Pro_907EX.xml
@@ -7917,6 +8036,8 @@ share/foomatic/db/source/printer/Ricoh-SP_4510DN.xml
 share/foomatic/db/source/printer/Ricoh-SP_4510SF.xml
 share/foomatic/db/source/printer/Ricoh-SP_4520DN.xml
 share/foomatic/db/source/printer/Ricoh-SP_6430DN.xml
+share/foomatic/db/source/printer/Ricoh-SP_C435DN.xml
+share/foomatic/db/source/printer/Ricoh-SP_C440DN.xml
 share/foomatic/db/source/printer/Samsung-C140x.xml
 share/foomatic/db/source/printer/Samsung-C145x.xml
 share/foomatic/db/source/printer/Samsung-C1810.xml
@@ -7973,8 +8094,11 @@ share/foomatic/db/source/printer/Samsung-CLX-9252_9352.xml
 share/foomatic/db/source/printer/Samsung-CLX-92x1_93x1.xml
 share/foomatic/db/source/printer/Samsung-CLX-981x.xml
 share/foomatic/db/source/printer/Samsung-CLX-982x.xml
+share/foomatic/db/source/printer/Samsung-K3250.xml
 share/foomatic/db/source/printer/Samsung-K401.xml
 share/foomatic/db/source/printer/Samsung-K4350.xml
+share/foomatic/db/source/printer/Samsung-K703.xml
+share/foomatic/db/source/printer/Samsung-K7600.xml
 share/foomatic/db/source/printer/Samsung-M262x_282x.xml
 share/foomatic/db/source/printer/Samsung-M267x_287x.xml
 share/foomatic/db/source/printer/Samsung-M283x.xml
@@ -8093,8 +8217,11 @@ share/foomatic/db/source/printer/Samsung-SCX-881x.xml
 share/foomatic/db/source/printer/Samsung-SCX-882x.xml
 share/foomatic/db/source/printer/Samsung-SF_MSYS_MJ-4700_4800_4500C.xml
 share/foomatic/db/source/printer/Samsung-SI-630A.xml
+share/foomatic/db/source/printer/Samsung-X3220.xml
 share/foomatic/db/source/printer/Samsung-X401.xml
 share/foomatic/db/source/printer/Samsung-X4300.xml
+share/foomatic/db/source/printer/Samsung-X703.xml
+share/foomatic/db/source/printer/Samsung-X7600.xml
 share/foomatic/db/source/printer/Savin-2404WD.xml
 share/foomatic/db/source/printer/Savin-2404WDP.xml
 share/foomatic/db/source/printer/Savin-2406WD.xml
@@ -8267,10 +8394,12 @@ share/foomatic/db/source/printer/Savin-MP_C2503.xml
 share/foomatic/db/source/printer/Savin-MP_C3002.xml
 share/foomatic/db/source/printer/Savin-MP_C3003.xml
 share/foomatic/db/source/printer/Savin-MP_C305.xml
+share/foomatic/db/source/printer/Savin-MP_C306Z.xml
 share/foomatic/db/source/printer/Savin-MP_C3502.xml
 share/foomatic/db/source/printer/Savin-MP_C3503.xml
 share/foomatic/db/source/printer/Savin-MP_C401.xml
 share/foomatic/db/source/printer/Savin-MP_C401SR.xml
+share/foomatic/db/source/printer/Savin-MP_C406Z.xml
 share/foomatic/db/source/printer/Savin-MP_C4502.xml
 share/foomatic/db/source/printer/Savin-MP_C4502A.xml
 share/foomatic/db/source/printer/Savin-MP_C4503.xml
@@ -8286,7 +8415,9 @@ share/foomatic/db/source/printer/Savin-Pro_1107EX.xml
 share/foomatic/db/source/printer/Savin-Pro_1356EX.xml
 share/foomatic/db/source/printer/Savin-Pro_1357EX.xml
 share/foomatic/db/source/printer/Savin-Pro_8100S.xml
+share/foomatic/db/source/printer/Savin-Pro_8110.xml
 share/foomatic/db/source/printer/Savin-Pro_8110S.xml
+share/foomatic/db/source/printer/Savin-Pro_8120.xml
 share/foomatic/db/source/printer/Savin-Pro_8120S.xml
 share/foomatic/db/source/printer/Savin-Pro_906EX.xml
 share/foomatic/db/source/printer/Savin-Pro_907EX.xml
@@ -8321,6 +8452,8 @@ share/foomatic/db/source/printer/Savin-SP_6430DN.xml
 share/foomatic/db/source/printer/Savin-SP_8300DN.xml
 share/foomatic/db/source/printer/Savin-SP_C320DN.xml
 share/foomatic/db/source/printer/Savin-SP_C400DN.xml
+share/foomatic/db/source/printer/Savin-SP_C435DN.xml
+share/foomatic/db/source/printer/Savin-SP_C440DN.xml
 share/foomatic/db/source/printer/Savin-SP_C730DN.xml
 share/foomatic/db/source/printer/Savin-SP_C830DN.xml
 share/foomatic/db/source/printer/Savin-SP_C831DN.xml

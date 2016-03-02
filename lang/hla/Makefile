@@ -65,6 +65,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hlaparse ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/stdlib/hla/hlalib/hlalib.a ${STAGEDIR}${PREFIX}/lib
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/hla
+	@${CHMOD} 755 ${WRKDIR}/stdlib/hla/include/include # broken archive
 	(cd ${WRKDIR}/stdlib/hla/include/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/hla)
 
 post-install:

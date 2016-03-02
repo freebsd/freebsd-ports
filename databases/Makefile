@@ -576,6 +576,7 @@
     SUBDIR += pgtcl
     SUBDIR += pgtop
     SUBDIR += pgtune
+    SUBDIR += pguri
     SUBDIR += pgworksheet
     SUBDIR += php-adodb-ext
     SUBDIR += php-mdcached

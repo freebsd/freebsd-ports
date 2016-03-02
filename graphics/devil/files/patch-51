@@ -1,0 +1,52 @@
+See https://sourceforge.net/p/openil/patches/51/
+
+*** src-ILU/src/ilu_scale2d.c	Wed Oct 28 16:51:50 2009
+--- src-ILU/src/ilu_scale2d.c	Tue Dec 18 12:11:08 2012
+***************
+*** 204,209 ****
+--- 204,217 ----
+  	ILfloat	SrcX, SrcY;
+  	ILuint	iSrcX, iSrcY, iSrcXPlus1, iSrcYPlus1, ulOff, llOff, urOff, lrOff;
+  
++ 	// only downscale is allowed
++ 	assert(ScaleX>0 && ScaleX<=1.0f);
++ 	assert(ScaleY>0 && ScaleY<=1.0f);
++ 
++ 	// scale factors should match images size
++ 	assert( ((ILfloat)Width -0.5f) / ScaleX < Image->Width );
++ 	assert( ((ILfloat)Height-0.5f) / ScaleY < Image->Height );
++ 
+  	ImgBps = Image->Bps / Image->Bpc;
+  	SclBps = Scaled->Bps / Scaled->Bpc;
+  
+***************
+*** 213,226 ****
+  			for (y = 0; y < Height; y++) {
+  				for (x = 0; x < Width; x++) {
+  					// Calculate where we want to choose pixels from in our source image.
+! 					SrcX = (ILfloat)x / (ILfloat)ScaleX;
+! 					SrcY = (ILfloat)y / (ILfloat)ScaleY;
+! 					// Integer part of SrcX and SrcY
+! 					iSrcX = (ILuint)floor(SrcX);
+! 					iSrcY = (ILuint)floor(SrcY);
+! 					// Fractional part of SrcX and SrcY
+! 					FracX = SrcX - (ILfloat)(iSrcX);
+! 					FracY = SrcY - (ILfloat)(iSrcY);
+  
+  					// We do not want to go past the right edge of the image or past the last line in the image,
+  					//  so this takes care of that.  Normally, iSrcXPlus1 is iSrcX + 1, but if this is past the
+--- 221,234 ----
+  			for (y = 0; y < Height; y++) {
+  				for (x = 0; x < Width; x++) {
+  					// Calculate where we want to choose pixels from in our source image.
+! 					SrcX = (ILfloat)(x+0.5f) / (ILfloat)ScaleX;
+! 					SrcY = (ILfloat)(y+0.5f) / (ILfloat)ScaleY;
+! 					// indices of upper-left pixel
+! 					iSrcX = (ILuint)(SrcX-0.5f);
+! 					iSrcY = (ILuint)(SrcY-0.5f);
+! 					// how far SrcX and SrcY are from upper-left pixel center
+! 					FracX = SrcX - (ILfloat)(iSrcX) - 0.5f;
+! 					FracY = SrcY - (ILfloat)(iSrcY) - 0.5f;
+  
+  					// We do not want to go past the right edge of the image or past the last line in the image,
+  					//  so this takes care of that.  Normally, iSrcXPlus1 is iSrcX + 1, but if this is past the

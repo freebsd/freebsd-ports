@@ -1,0 +1,14 @@
+See https://sourceforge.net/p/openil/patches/50/
+
+--- src-IL/src/il_targa.c	(revision 1678)
++++ src-IL/src/il_targa.c	(working copy)
+@@ -219,6 +219,9 @@
+ 			ilSetError(IL_ILLEGAL_FILE_VALUE);
+ 			return IL_FALSE;
+ 	}
++
++	if (bTarga==IL_FALSE)
++		return IL_FALSE;
+ 	
+ 	// @JASON Extra Code to manipulate the image depending on
+ 	// the Image Descriptor's origin bits.

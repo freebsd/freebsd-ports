@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	slock
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Simple X screen locker
 
 LICENSE=	MIT
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe
 CPE_VENDOR=	suckless
-USE_XORG=	x11 xt xproto xext
+USE_XORG=	x11 xext xproto xrandr xt
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
 		X11INC="${LOCALBASE}/include" CC="${CC}" \
 		MANPREFIX="${MANPREFIX}/man"

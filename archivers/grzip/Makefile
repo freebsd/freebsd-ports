@@ -5,9 +5,10 @@ PORTNAME=	grzip
 PORTVERSION=	0.3.0
 PORTREVISION=	2
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/
+MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/ \
+		http://BSDforge.com/projects/source/archivers/grzip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Efficient file compressor
 
 LICENSE=	LGPL21

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtide
-PORTVERSION=	2.15
-PORTREVISION=	1
+PORTVERSION=	2.15.1
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
