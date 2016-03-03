@@ -1,4 +1,4 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
+# Created by: Philippe Audeoud <jadawin@tuxaco.net>
 # $FreeBSD$
 
 PORTNAME=	pdfcrack
