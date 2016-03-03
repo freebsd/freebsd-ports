@@ -1142,6 +1142,7 @@
     SUBDIR += libclaw
     SUBDIR += libclc
     SUBDIR += libcli
+    SUBDIR += libconcurrent
     SUBDIR += libconfig
     SUBDIR += libconfuse
     SUBDIR += libcutl
