@@ -1,4 +1,8 @@
-Aqualung is a music player. It plays audio files from your filesystem
-and has the feature of inserting no gaps between adjacent tracks.
+Aqualung is an advanced music player originally targeted at the GNU/Linux
+operating system.  Today it is also running on FreeBSD and OpenBSD, with
+native ports to Mac OS X and even Microsoft Windows.  It plays audio CDs,
+internet radio streams and podcasts as well as sound files in just about
+any audio format, and has a feature of inserting no gaps between adjacent
+tracks.
 
-WWW: http://aqualung.factorial.hu/
+WWW: http://aqualung.jeremyevans.net/
