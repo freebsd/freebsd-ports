@@ -23,18 +23,17 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-O[0-9]|| ; \
-		 /chmod/d' ${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e 's|-O[0-9]||; /chmod/d' ${WRKSRC}/SConstruct
 
 post-install:
+	@${TOUCH} ${STAGEDIR}${PREFIX}/etc/orthruskeys
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liborthrus-0.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/security/pam_orthrus.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} NOTICE README TODO \
 		${STAGEDIR}${DOCSDIR})
-	@${ECHO_CMD} -n > ${STAGEDIR}${PREFIX}/etc/orthruskeys
-.for i in bin/ortcalc bin/ortpasswd lib/liborthrus-0.so \
-	lib/security/pam_orthrus.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${i}
-.endfor
 
 .include <bsd.port.mk>
