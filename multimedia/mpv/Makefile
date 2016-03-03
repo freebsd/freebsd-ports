@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+ LGPL21+
+LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
