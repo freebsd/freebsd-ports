@@ -1,0 +1,6 @@
+Tiny asymmetric-coroutine library:
+- generator bidirectional communication with yield_value/resume_value
+- native context switch
+- C11
+
+WWW: https://github.com/sharow/libconcurrent/
