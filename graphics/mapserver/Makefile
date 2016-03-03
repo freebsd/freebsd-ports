@@ -3,6 +3,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		7.0.1
+PORTREVISION=		1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -199,7 +200,7 @@ do-install:
 .endif
 
 post-install:
-	@${LN} -s ${PREFIX}/lib/libmapserver.so.7.0.0 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
+	@${LN} -s ${PREFIX}/lib/libmapserver.so.7.0.1 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
 	@${LN} -s ${PREFIX}/lib/libmapserver.so.2 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
 
 .if ${PORT_OPTIONS:MPHP}
