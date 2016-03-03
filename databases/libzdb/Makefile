@@ -29,7 +29,7 @@ MYSQL_CONFIGURE_OFF=	--without-mysql
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config
 PGSQL_CONFIGURE_OFF=	--without-postgresql
-SQLITE_USES=		sqlite
+SQLITE_USE=		sqlite=3
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 SQLITE_CONFIGURE_OFF=	--without-sqlite
 SSL_USE=		openssl=yes
