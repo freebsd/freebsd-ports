@@ -4,12 +4,10 @@
 PORTNAME=	snortreport
 PORTVERSION=	1.3.4
 CATEGORIES=	security www
-MASTER_SITES=	http://www.symmetrixtech.com/ids/
+MASTER_SITES=	http://symmetrixtech.com/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Add-on module for snort to generate real-time web reports
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
