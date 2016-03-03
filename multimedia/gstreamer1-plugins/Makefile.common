@@ -24,6 +24,7 @@ BAD_GST_ALL_PLUGINS+= \
 		flite \
 		gme \
 		gsm \
+		gtksink \
 		hls \
 		kate \
 		libde265 \
@@ -279,6 +280,10 @@ gst_gme_LIB_DEPENDS=	libgme.so:${PORTSDIR}/audio/libgme
 
 # gsm
 gst_gsm_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+
+# gtksink
+gst_gtksink_USE_GNOME=	gtk30
+gst_gtksink_GST_PLUGIN_DIR=ext/gtk
 
 # hls
 gst_hls_LIB_DEPENDS=	libnettle.so:${PORTSDIR}/security/nettle
