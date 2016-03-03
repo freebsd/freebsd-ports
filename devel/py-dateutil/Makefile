@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dateutil
-PORTVERSION=	2.4.2
+PORTVERSION=	2.5.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-dateutil-${PORTVERSION}
 
@@ -14,9 +13,10 @@ COMMENT=	Extensions to the standard Python datetime module
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.5:${PORTSDIR}/devel/py-six
 
-USES=		python
+USES=		python dos2unix
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes	
