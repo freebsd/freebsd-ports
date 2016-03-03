@@ -1,0 +1,38 @@
+# Drop poisonous -ansi from default *BSD flags
+
+diff --git a/coreconf/FreeBSD.mk b/coreconf/FreeBSD.mk
+--- coreconf/FreeBSD.mk
++++ coreconf/FreeBSD.mk
+@@ -21,7 +21,7 @@ ifeq ($(CPU_ARCH),amd64)
+ CPU_ARCH		= x86_64
+ endif
+ 
+-OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
++OS_CFLAGS		= $(DSO_CFLAGS) -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
+ 
+ DSO_CFLAGS		= -fPIC
+ DSO_LDOPTS		= -shared -Wl,-soname -Wl,$(notdir $@)
+diff --git a/coreconf/NetBSD.mk b/coreconf/NetBSD.mk
+--- coreconf/NetBSD.mk
++++ coreconf/NetBSD.mk
+@@ -26,7 +26,7 @@ else
+ DLL_SUFFIX		= so.1.0
+ endif
+ 
+-OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -Wno-switch -pipe -DNETBSD -Dunix -DHAVE_STRERROR -DHAVE_BSD_FLOCK
++OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -Wall -Wno-switch -pipe -DNETBSD -Dunix -DHAVE_STRERROR -DHAVE_BSD_FLOCK
+ 
+ OS_LIBS			= -lcompat
+ 
+diff --git a/coreconf/OpenBSD.mk b/coreconf/OpenBSD.mk
+--- coreconf/OpenBSD.mk
++++ coreconf/OpenBSD.mk
+@@ -26,7 +26,7 @@ endif
+ 
+ DLL_SUFFIX		= so.1.0
+ 
+-OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -Wno-switch -pipe -DOPENBSD
++OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -Wall -Wno-switch -pipe -DOPENBSD
+ 
+ OS_LIBS			= 
+ 
