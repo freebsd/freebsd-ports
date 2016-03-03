@@ -25,4 +25,4 @@ include/codec2/kiss_fft.h
 include/codec2/modem_stats.h
 include/codec2/varicode.h
 lib/libcodec2.so
-lib/libcodec2.so.0.4
+lib/libcodec2.so.0.5
