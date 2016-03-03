@@ -27,7 +27,8 @@ EXTRA_CONF_ARGS=--disable-cli \
 post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|/share/man|/man|g ; /PKGCONFIG/s| openssl||g' \
 		${WRKSRC}/qt/qtr.pro
-	@${ECHO_CMD} 'LIBS += -l${PORT_OPTIONS:M*SSL:tl}' >>${WRKSRC}/qt/qtr.pro
+	@${ECHO_CMD} 'LIBS += -l${PORT_OPTIONS:M*SSL:tl:S/openssl/crypto/}' \
+		>>${WRKSRC}/qt/qtr.pro
 
 post-build:
 	@(cd ${WRKSRC}/qt && ${QMAKE} ${QMAKE_ARGS} qtr.pro && ${MAKE_CMD})
