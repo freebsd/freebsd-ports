@@ -1,6 +1,6 @@
---- plugins/ffmpeg/Makefile.in.orig	2014-06-28 23:22:55.232212539 +0400
-+++ plugins/ffmpeg/Makefile.in	2014-06-28 23:31:19.076178566 +0400
-@@ -166,11 +166,11 @@
+--- plugins/ffmpeg/Makefile.in.orig	2016-01-31 20:21:50 UTC
++++ plugins/ffmpeg/Makefile.in
+@@ -166,11 +166,11 @@ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
  am__mv = mv -f

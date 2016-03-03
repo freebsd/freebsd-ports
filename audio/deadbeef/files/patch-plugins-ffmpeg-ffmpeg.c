@@ -1,5 +1,5 @@
---- plugins/ffmpeg/ffmpeg.c.orig	2014-01-28 01:24:09.000000000 +0400
-+++ plugins/ffmpeg/ffmpeg.c	2014-02-23 16:32:57.108250350 +0400
+--- plugins/ffmpeg/ffmpeg.c.orig	2016-01-24 17:49:33 UTC
++++ plugins/ffmpeg/ffmpeg.c
 @@ -26,20 +26,11 @@
  #include "../../deadbeef.h"
  #include "../../strdupa.h"
@@ -28,9 +28,9 @@
 -#endif
 -
  #if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(54, 6, 0)
- #define AVCODEC_MAX_AUDIO_FRAME_SIZE 192000
  #define av_find_stream_info(ctx) avformat_find_stream_info(ctx,NULL)
-@@ -239,7 +228,7 @@ ffmpeg_init (DB_fileinfo_t *_info, DB_pl
+ #define avcodec_open(ctx,codec) avcodec_open2(ctx,codec,NULL)
+@@ -254,7 +243,7 @@ ffmpeg_init (DB_fileinfo_t *_info, DB_pl
      _info->fmt.bps = bps;
      _info->fmt.channels = info->ctx->channels;
      _info->fmt.samplerate = samplerate;
@@ -39,7 +39,7 @@
          _info->fmt.is_float = 1;
      }
  
-@@ -307,7 +296,7 @@ ffmpeg_read (DB_fileinfo_t *_info, char 
+@@ -326,7 +315,7 @@ ffmpeg_read (DB_fileinfo_t *_info, char 
      _info->fmt.channels = info->ctx->channels;
      _info->fmt.samplerate = info->ctx->sample_rate;
      _info->fmt.bps = av_get_bits_per_sample_format (info->ctx->sample_fmt);
