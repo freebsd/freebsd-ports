@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcodec2
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://files.freedv.org/codec2/
 DISTNAME=	codec2-${PORTVERSION}
@@ -15,6 +15,6 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speexdsp
 
 USE_LDCONFIG=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 
 .include <bsd.port.mk>
