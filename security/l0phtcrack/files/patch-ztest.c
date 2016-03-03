@@ -1,6 +1,6 @@
---- ztest.c.orig	Sat Nov  4 15:24:32 2000
-+++ ztest.c	Sat Nov  4 15:25:05 2000
-@@ -144,7 +144,7 @@
+--- ztest.c.orig	2016-03-03 16:20:49 UTC
++++ ztest.c
+@@ -144,7 +144,7 @@ int issame(char *, char *, int);
  
  char str_to_crypt[] = "\x4b\x47\x53\x21\x40\x23\x24\x25";
  
