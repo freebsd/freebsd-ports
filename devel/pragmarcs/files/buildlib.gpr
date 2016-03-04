@@ -1,0 +1,6 @@
+library project BuildLib is
+   for Library_Name     use "pragmarcs";
+   for Object_Dir       use "build";
+   for Library_Dir      use "library";
+   for Library_Kind     use "static";
+end BuildLib;
