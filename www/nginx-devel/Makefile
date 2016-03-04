@@ -740,8 +740,9 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 PASSENGER_VERSION=	5.0.26
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/src/nginx_module
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb \
+		${PATCHDIR}/extra-patch-passenger-src-nginx_module-config
 .if empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
