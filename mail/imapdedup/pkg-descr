@@ -1,0 +1,5 @@
+IMAPdedup is a Python script (imapdedup.py) that looks for duplicate
+messages in a set of IMAP mailboxes and tidies up all but the first
+copy of any duplicates found.
+
+WWW: http://quentinsf.com/software/imapdedup/

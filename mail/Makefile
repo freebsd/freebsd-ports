@@ -179,6 +179,7 @@
     SUBDIR += ifile
     SUBDIR += im
     SUBDIR += imap-uw
+    SUBDIR += imapdedup
     SUBDIR += imapfilter
     SUBDIR += imapsync
     SUBDIR += imaptools
