@@ -1,0 +1,22 @@
+--- doc/Makefile.orig	2016-02-07 03:47:06 UTC
++++ doc/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)download.1 $(OBJDIR)download.html $(OBJDIR)helper.1 $(OBJDIR)helper.html $(OBJDIR)htmlapp.1 $(OBJDIR)htmlapp.html $(OBJDIR)surfer.1 $(OBJDIR)surfer.html
++TARGETS	= $(OBJDIR)download.1 $(OBJDIR)helper.1 $(OBJDIR)htmlapp.1 $(OBJDIR)surfer.1
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -50,13 +50,9 @@ distclean: clean
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)download.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)download.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)helper.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)helper.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)htmlapp.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)htmlapp.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)surfer.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)surfer.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "download.1"
