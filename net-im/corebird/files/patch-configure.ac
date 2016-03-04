@@ -1,20 +1,11 @@
---- configure.ac.orig	2015-07-17 13:15:47 UTC
+--- configure.ac.orig	2016-02-29 16:55:42 UTC
 +++ configure.ac
-@@ -93,8 +93,6 @@ GLIB_GSETTINGS
- GETTEXT_PACKAGE=corebird
- AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [Gettext Package])
- AC_SUBST(GETTEXT_PACKAGE)
--AM_GNU_GETTEXT([external])
--AM_GNU_GETTEXT_VERSION([0.18.3])
- AM_GLIB_GNU_GETTEXT
- 
- 
-@@ -103,7 +101,7 @@ AC_CONFIG_FILES([Makefile
-                  src/Makefile
-                  ui/Makefile
-                  data/Makefile
--                 data/org.baedert.corebird.desktop.in
-+                 data/corebird.desktop.in
-                  assets/Makefile
-                  assets/128x128/Makefile
-                  assets/96x96/Makefile
+@@ -113,7 +113,7 @@ Makefile
+ src/Makefile
+ ui/Makefile
+ data/Makefile
+-data/org.baedert.corebird.desktop.in
++data/corebird.desktop.in
+ assets/Makefile
+ assets/256x256/Makefile
+ assets/128x128/Makefile
