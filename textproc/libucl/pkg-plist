@@ -1,11 +1,13 @@
 %%UTILS%%bin/ucl_chargen
 %%UTILS%%bin/ucl_objdump
+%%UTILS%%bin/ucl_tool
 %%LUA%%include/lua_ucl.h
 include/ucl.h
+include/ucl++.h
 lib/libucl.a
 lib/libucl.so
-lib/libucl.so.3
-lib/libucl.so.3.2.0
+lib/libucl.so.6
+lib/libucl.so.6.0.0
 %%LUA%%%%LUA_MODLIBDIR%%/ucl.a
 %%LUA%%%%LUA_MODLIBDIR%%/ucl.so
 libdata/pkgconfig/libucl.pc
