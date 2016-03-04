@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb32-tools
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 DISTVERSIONPREFIX=	r
-PORTREVISION=	1
 CATEGORIES=	databases net
 
 MAINTAINER=	brendan+freebsd@bbqsrc.net
