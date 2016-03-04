@@ -10,12 +10,13 @@ include/json-glib-1.0/json-glib/json-parser.h
 include/json-glib-1.0/json-glib/json-path.h
 include/json-glib-1.0/json-glib/json-reader.h
 include/json-glib-1.0/json-glib/json-types.h
+include/json-glib-1.0/json-glib/json-utils.h
 include/json-glib-1.0/json-glib/json-version-macros.h
 include/json-glib-1.0/json-glib/json-version.h
+lib/girepository-1.0/Json-1.0.typelib
 lib/libjson-glib-1.0.so
 lib/libjson-glib-1.0.so.0
-lib/libjson-glib-1.0.so.0.0.4
-lib/girepository-1.0/Json-1.0.typelib
+lib/libjson-glib-1.0.so.0.102.0
 libdata/pkgconfig/json-glib-1.0.pc
 %%DOCSDIR%%/JsonBuilder.html
 %%DOCSDIR%%/JsonGenerator.html
@@ -26,7 +27,8 @@ libdata/pkgconfig/json-glib-1.0.pc
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/ch03.html
-%%DOCSDIR%%/ch05.html
+%%DOCSDIR%%/ch04.html
+%%DOCSDIR%%/ch06.html
 %%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
@@ -40,6 +42,7 @@ libdata/pkgconfig/json-glib-1.0.pc
 %%DOCSDIR%%/ix08.html
 %%DOCSDIR%%/ix09.html
 %%DOCSDIR%%/ix10.html
+%%DOCSDIR%%/ix11.html
 %%DOCSDIR%%/json-advanced.html
 %%DOCSDIR%%/json-base.html
 %%DOCSDIR%%/json-format-tool.html
@@ -50,6 +53,7 @@ libdata/pkgconfig/json-glib-1.0.pc
 %%DOCSDIR%%/json-glib-JSON-Node.html
 %%DOCSDIR%%/json-glib-JSON-Object.html
 %%DOCSDIR%%/json-glib-Serializable-Interface.html
+%%DOCSDIR%%/json-glib-Utility-API.html
 %%DOCSDIR%%/json-glib-Versioning-information.html
 %%DOCSDIR%%/json-glib.devhelp2
 %%DOCSDIR%%/json-glib.html
@@ -96,11 +100,13 @@ share/locale/lt/LC_MESSAGES/json-glib-1.0.mo
 share/locale/lv/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ml/LC_MESSAGES/json-glib-1.0.mo
 share/locale/nb/LC_MESSAGES/json-glib-1.0.mo
+share/locale/oc/LC_MESSAGES/json-glib-1.0.mo
 share/locale/or/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pa/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pl/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pt/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pt_BR/LC_MESSAGES/json-glib-1.0.mo
+share/locale/ro/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ru/LC_MESSAGES/json-glib-1.0.mo
 share/locale/sk/LC_MESSAGES/json-glib-1.0.mo
 share/locale/sl/LC_MESSAGES/json-glib-1.0.mo
