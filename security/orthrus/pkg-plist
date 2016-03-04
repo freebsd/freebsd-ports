@@ -1,7 +1,5 @@
 bin/ortcalc
-@mode 4555
-bin/ortpasswd
-@mode
+@(,,4555) bin/ortpasswd
 etc/orthruskeys
 include/orthrus-0/context.h
 include/orthrus-0/orthrus.h

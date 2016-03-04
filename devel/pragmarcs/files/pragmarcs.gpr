@@ -1,0 +1,7 @@
+library project PragmARCs is
+   for Library_Name     use "pragmarcs";
+   for Library_Kind     use "static";
+   for Source_Dirs      use ("../../include/pragmarcs");
+   for Library_Dir      use "../../lib/pragmarcs";
+   for Externally_Built use "true";
+end PragmARCs;

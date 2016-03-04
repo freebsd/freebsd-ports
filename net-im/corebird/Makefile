@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	corebird
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net-im
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	GTK3 Twitter client written in Vala
 
 LICENSE=	GPLv3
@@ -27,7 +27,7 @@ INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		GSTREAMER
 OPTIONS_DEFAULT=	GSTREAMER
-GSTREAMER_USE=	gstreamer1=yes,bad,good,libav,x,ximagesrc
+GSTREAMER_USE=	gstreamer1=yes,bad,good,gtksink,libav,x,ximagesrc
 GSTREAMER_CONFIGURE_OFF=	--disable-video
 
 GLIB_SCHEMAS=	org.baedert.corebird.gschema.xml

@@ -4,7 +4,7 @@
 PORTNAME=	openssl
 PORTVERSION=	1.0.2
 DISTVERSIONSUFFIX=	g
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -18,7 +18,7 @@ COMMENT=	SSL and crypto library
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-CONFLICTS?=	libressl-*
+CONFLICTS?=	libressl-* openssl-devel-*
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

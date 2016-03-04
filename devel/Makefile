@@ -660,6 +660,7 @@
     SUBDIR += git-bzr-ng
     SUBDIR += git-codereview
     SUBDIR += git-cola
+    SUBDIR += git-cvs
     SUBDIR += git-extras
     SUBDIR += git-gui
     SUBDIR += git-lfs
@@ -1141,6 +1142,7 @@
     SUBDIR += libclaw
     SUBDIR += libclc
     SUBDIR += libcli
+    SUBDIR += libconcurrent
     SUBDIR += libconfig
     SUBDIR += libconfuse
     SUBDIR += libcutl
@@ -3811,6 +3813,7 @@
     SUBDIR += powerpc64-xtoolchain-gcc
     SUBDIR += poxml
     SUBDIR += ppl
+    SUBDIR += pragmarcs
     SUBDIR += premake
     SUBDIR += premake4
     SUBDIR += privman
@@ -4219,6 +4222,7 @@
     SUBDIR += py-pluggy
     SUBDIR += py-ply
     SUBDIR += py-polib
+    SUBDIR += py-positional
     SUBDIR += py-posix_ipc
     SUBDIR += py-pp
     SUBDIR += py-pqueue

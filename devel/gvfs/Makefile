@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gvfs
-PORTVERSION=	1.26.2
+PORTVERSION=	1.26.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -24,8 +24,7 @@ USE_GNOME=	glib20 intlhack libxslt:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-obexftp \
-		--disable-bluray
+CONFIGURE_ARGS=	--disable-bluray
 
 CONFIGURE_ARGS+=\
 		--disable-gudev \
@@ -46,7 +45,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	AVAHI SAMBA GPHOTO2 CDDA HAL FUSE AFC GOOGLE
 OPTIONS_DEFAULT=AVAHI SAMBA GPHOTO2 CDDA HAL FUSE GOOGLE
 CDDA_DESC=	CDDA (enables HAL)
-GPHOTO2_DESC=	Gphoto 2 camera support (enables HAL)
+GPHOTO2_DESC=	Gphoto 2 camera support (enables HAL) for PTP support
 SAMBA_DESC=	Samba support
 AFC_DESC=	Apple device support
 GOOGLE_DESC=	Google backend

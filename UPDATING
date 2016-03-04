@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160302:
+  AFFECTS: audio/alsa-utils, www/firefox, www/firefox-esr, www/seamonkey
+  AUTHOR: jbeich@FreeBSD.org
+
+  ALSA backend in libcubeb as used by Firefox has an unresolved issue
+  with the OSS patch in audio/alsa-plugins. To avoid excessive CPU
+  usage when playing HTML5 videos rebuild the port with BUFSZ_P2
+  option enabled or reset options to default.
+
+  However, with BUFSZ_P2 enabled alsa-utils may crash:
+
+    $ aplay test.wav
+    Playing WAVE 'test.wav' : Signed 16 bit Little Endian, Rate 48000 Hz, Stereo
+    Assertion failed: (err >= 0), function set_params, file aplay.c, line 1289.
+    Aborted by signal Abort trap...
+
 20160229:
   AFFECTS: users of security/openssh-portable-devel
   AUTHOR: bdrewery@FreeBSD.org

@@ -1,0 +1,8 @@
+positional provides a decorator which enforces only some args may be passed
+positionally. The idea and some of the code was taken from the oauth2 client
+of the google-api client.
+
+The decorator makes it easy to support Python 3 style key-word only
+parameters.
+
+WWW: https://github.com/morganfainberg/positional

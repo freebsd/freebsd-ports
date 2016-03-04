@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-qt4
 
 MAINTAINER=	crees@FreeBSD.org
@@ -16,7 +16,7 @@ SLAVEPORT=	qt4
 
 QT_NONSTANDARD=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build gui dbus network
-USES=		desktop-file-utils
+USES=		compiler:c++11-lib desktop-file-utils
 
 EXTRA_CONF_ARGS=--disable-cli \
 		--disable-daemon \
@@ -27,7 +27,8 @@ EXTRA_CONF_ARGS=--disable-cli \
 post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|/share/man|/man|g ; /PKGCONFIG/s| openssl||g' \
 		${WRKSRC}/qt/qtr.pro
-	@${ECHO_CMD} 'LIBS += -lcrypto' >> ${WRKSRC}/qt/qtr.pro
+	@${ECHO_CMD} 'LIBS += -l${PORT_OPTIONS:M*SSL:tl:S/openssl/crypto/}' \
+		>>${WRKSRC}/qt/qtr.pro
 
 post-build:
 	@(cd ${WRKSRC}/qt && ${QMAKE} ${QMAKE_ARGS} qtr.pro && ${MAKE_CMD})
