@@ -2,26 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	p2c
-PORTVERSION=	1.21a
-PORTREVISION=	3
+PORTVERSION=	2.01
 CATEGORIES=	lang
-MASTER_SITES=	http://darkstar.ist.utl.pt/slackware/slackware_source/d/p2c/ \
-		http://www.slackware.at/data/slackware-10.0/source/d/p2c/
-DISTFILES=	p2c-1.21alpha2.tar.gz
+MASTER_SITES=	https://schneider.ncifcrf.gov/p2c/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pascal to C translator
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/p2c-1.21alpha-07.Dec.93/src
+WRKSRC_SUBDIR=	src
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	p2cc.perl
 perl_OLD_CMD=	/bin/perl
+USE_PERL5=	run
 ALL_TARGET=	all p2cc
+
+pre-build:
+	@${RM} -f ${WRKSRC}/p2c.man.inst
+
+post-build:
+	@${LN} -sf p2c.man.inst ${WRKSRC}/p2c.1
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} p2c \
@@ -40,5 +42,7 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${PREFIX}/lib/p2c)
 .endfor
+	(cd ${WRKSRC} && ${INSTALL_MAN} p2c.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>

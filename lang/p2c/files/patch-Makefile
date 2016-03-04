@@ -1,4 +1,4 @@
---- Makefile.orig
+--- Makefile.orig	2015-11-18 20:12:06 UTC
 +++ Makefile
 @@ -19,29 +19,30 @@
  SHELL = /bin/sh
@@ -39,13 +39,13 @@
 +CC ?= cc                    # you may wish to use gcc here instead
  OPT = # -O		   # uncomment this for optimization
  DEB = # -g		   # uncomment this for debugging
- DEFS =			   # place other -D types of things here
+ DEFS =	-DTEST_MALLOC      # place other -D types of things here # TDS 2015nov18
 -CFLAGS = $(OPT) $(DEB) $(DEFS)
 +CFLAGS += $(OPT) $(DEB) $(DEFS)
  LFLAGS =
  
  
-@@ -64,9 +65,9 @@
+@@ -64,9 +65,9 @@ LIBSRCS = p2clib.c loc.p2clib.c
  LIBOBJS = p2clib.o loc.p2clib.o
  OTHERLIBOBJS =
  
@@ -58,7 +58,7 @@
  
  MISCSRCS = makeproto.c
  PROTOS = p2c.proto p2c.hdrs
-@@ -128,7 +129,6 @@
+@@ -128,7 +129,6 @@ p2cc: p2cc.perl
  	sed -e "s;--HOMEDIR--;$(ABSHOMEDIR);"   \
  	    -e "s;--INCDIR--;$(ABSINCDIR);"     \
  	    -e "s;--LIBDIR--;$(ABSLIBDIR);"     \
