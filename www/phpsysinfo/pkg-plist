@@ -283,9 +283,7 @@
 %%WWWDIR%%/language/tw.xml
 %%WWWDIR%%/language/uk.xml
 %%WWWDIR%%/language/zh.xml
-@unexec if cmp -s %D/%%WWWDIR%%/phpsysinfo.ini.new %D/%%WWWDIR%%/phpsysinfo.ini; then rm -f %D/%%WWWDIR%%/phpsysinfo.ini; fi
-%%WWWDIR%%/phpsysinfo.ini.new
-@exec if [ ! -f %D/%%WWWDIR%%/phpsysinfo.ini ] ; then cp -p %D/%F %B/phpsysinfo.ini; fi
+@sample %%WWWDIR%%/phpsysinfo.ini.new %%WWWDIR%%/phpsysinfo.ini
 %%WWWDIR%%/phpsysinfo.xslt
 %%WWWDIR%%/phpsysinfo3.xsd
 %%WWWDIR%%/plugins/bat/bat_bootstrap.html
