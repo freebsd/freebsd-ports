@@ -262,6 +262,7 @@
     SUBDIR += ltl2ba
     SUBDIR += lybniz
     SUBDIR += math77
+    SUBDIR += mathmod
     SUBDIR += mathomatic
     SUBDIR += matio
     SUBDIR += matlab-installer
