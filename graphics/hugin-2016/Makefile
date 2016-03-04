@@ -8,6 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/hugin/2016.0/2016.0rc1/+download/
 DISTFILES=	hugin-2016.0.0_rc1.tar.bz2
 WRKSRC=		${WRKDIR}/hugin-2016.0.0
+PKGNAMESUFFIX=	-2016
 
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	GUI for Panorama Tools, to stitch panoramic images
