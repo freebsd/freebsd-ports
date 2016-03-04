@@ -8,6 +8,7 @@ bin/oiiotool
 include/OpenImageIO/argparse.h
 include/OpenImageIO/array_view.h
 include/OpenImageIO/color.h
+include/OpenImageIO/coordinate.h
 include/OpenImageIO/dassert.h
 include/OpenImageIO/errorhandler.h
 include/OpenImageIO/export.h
@@ -35,7 +36,6 @@ include/OpenImageIO/refcnt.h
 include/OpenImageIO/SHA1.h
 include/OpenImageIO/simd.h
 include/OpenImageIO/strided_ptr.h
-include/OpenImageIO/string_ref.h
 include/OpenImageIO/string_view.h
 include/OpenImageIO/strutil.h
 include/OpenImageIO/sysutil.h
@@ -51,12 +51,19 @@ include/OpenImageIO/varyingref.h
 include/OpenImageIO/version.h
 lib/libOpenImageIO.so
 lib/libOpenImageIO.so.1
-lib/libOpenImageIO.so.1.5
+lib/libOpenImageIO.so.1.6
 lib/libOpenImageIO.so.%%LIBVERS%%
 lib/libOpenImageIO_Util.so
 lib/libOpenImageIO_Util.so.1
-lib/libOpenImageIO_Util.so.1.5
+lib/libOpenImageIO_Util.so.1.6
 lib/libOpenImageIO_Util.so.%%LIBVERS%%
+share/fonts/oiio/DroidSans-Bold.ttf
+share/fonts/oiio/DroidSans.ttf
+share/fonts/oiio/DroidSansMono.ttf
+share/fonts/oiio/DroidSerif-Bold.ttf
+share/fonts/oiio/DroidSerif-BoldItalic.ttf
+share/fonts/oiio/DroidSerif-Italic.ttf
+share/fonts/oiio/DroidSerif.ttf
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/openimageio.pdf
