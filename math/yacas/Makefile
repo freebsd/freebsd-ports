@@ -3,8 +3,8 @@
 
 PORTNAME=	yacas
 PORTVERSION=	1.4.0
-CATEGORIES=	math
 DISTVERSIONPREFIX=	v
+CATEGORIES=	math
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Yet Another Computer Algebra System
@@ -22,7 +22,7 @@ GH_ACCOUNT=	grzegorzmazur
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == "gcc"
-CPPFLAGS+=	-D_GLIBCXX_USE_C99
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 post-patch:
