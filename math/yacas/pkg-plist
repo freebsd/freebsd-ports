@@ -1,10 +1,10 @@
 bin/yacas
-bin/ytxt2tex
 include/yacas/GPL_stuff.h
 include/yacas/anumber.h
 include/yacas/anumber.inl
 include/yacas/arggetter.h
 include/yacas/arrayclass.h
+include/yacas/associationclass.h
 include/yacas/choices.h
 include/yacas/commandline.h
 include/yacas/core_yacasmain.h
@@ -17,7 +17,6 @@ include/yacas/genericobject.h
 include/yacas/genericstructs.h
 include/yacas/infixparser.h
 include/yacas/lispatom.h
-include/yacas/lispcleanupstack.h
 include/yacas/lispenvironment.h
 include/yacas/lisperror.h
 include/yacas/lispeval.h
@@ -45,11 +44,17 @@ include/yacas/standard.h
 include/yacas/standard.inl
 include/yacas/stdcommandline.h
 include/yacas/stdfileio.h
+include/yacas/string_utils.h
 include/yacas/stringio.h
 include/yacas/stubs.h
 include/yacas/substitute.h
 include/yacas/tokenizer.h
 include/yacas/unixcommandline.h
+include/yacas/utf8.h
+include/yacas/utf8/checked.h
+include/yacas/utf8/core.h
+include/yacas/utf8/unchecked.h
+include/yacas/win32commandline.h
 include/yacas/xmltokenizer.h
 include/yacas/yacas.h
 include/yacas/yacas_version.h
@@ -57,12 +62,8 @@ include/yacas/yacasbase.h
 include/yacas/yacasprivate.h
 lib/libyacas.a
 lib/libyacas.so
-lib/libyacas.so.1
 lib/libyacas.so.1.0.0
-%%DATADIR%%/documentation/hints
-%%DATADIR%%/manmake/book2TeX.sh
-%%DATADIR%%/manmake/book2TeX.ys
-%%DATADIR%%/manmake/txt2yacasdoc.pl
+%%DATADIR%%/scripts/Makefile.am
 %%DATADIR%%/scripts/array.rep/code.ys
 %%DATADIR%%/scripts/array.rep/code.ys.def
 %%DATADIR%%/scripts/assoc.rep/code.ys
@@ -81,7 +82,6 @@ lib/libyacas.so.1.0.0
 %%DATADIR%%/scripts/constants.rep/om.ys
 %%DATADIR%%/scripts/controlflow.rep/code.ys
 %%DATADIR%%/scripts/controlflow.rep/code.ys.def
-%%DATADIR%%/scripts/corefunctions.ys
 %%DATADIR%%/scripts/debug.rep/code.ys
 %%DATADIR%%/scripts/debug.rep/code.ys.def
 %%DATADIR%%/scripts/deffunc.rep/code.ys
@@ -136,6 +136,7 @@ lib/libyacas.so.1.0.0
 %%DATADIR%%/scripts/logic.rep/code.ys
 %%DATADIR%%/scripts/logic.rep/code.ys.def
 %%DATADIR%%/scripts/logic.rep/om.ys
+%%DATADIR%%/scripts/maketest
 %%DATADIR%%/scripts/multivar.rep/code.ys
 %%DATADIR%%/scripts/multivar.rep/code.ys.def
 %%DATADIR%%/scripts/multivar.rep/makemulti.ys
@@ -144,6 +145,8 @@ lib/libyacas.so.1.0.0
 %%DATADIR%%/scripts/multivar.rep/sparsetree.ys.def
 %%DATADIR%%/scripts/newly.rep/code.ys
 %%DATADIR%%/scripts/newly.rep/code.ys.def
+%%DATADIR%%/scripts/nintegrate.rep/code.ys
+%%DATADIR%%/scripts/nintegrate.rep/code.ys.def
 %%DATADIR%%/scripts/numbers.rep/GaussianIntegers.ys
 %%DATADIR%%/scripts/numbers.rep/GaussianIntegers.ys.def
 %%DATADIR%%/scripts/numbers.rep/NumberTheory.ys
@@ -184,6 +187,8 @@ lib/libyacas.so.1.0.0
 %%DATADIR%%/scripts/radsimp.rep/code.ys.def
 %%DATADIR%%/scripts/random.rep/code.ys
 %%DATADIR%%/scripts/random.rep/code.ys.def
+%%DATADIR%%/scripts/rational.rep/code.ys
+%%DATADIR%%/scripts/rational.rep/code.ys.def
 %%DATADIR%%/scripts/simplify.rep/code.ys
 %%DATADIR%%/scripts/simplify.rep/code.ys.def
 %%DATADIR%%/scripts/simplify.rep/factorial.ys
