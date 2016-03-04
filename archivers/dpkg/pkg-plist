@@ -541,13 +541,15 @@ sbin/start-stop-daemon
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dselect.mo
+@sample %%DPKGDIR%%/available.sample
+@sample %%DPKGDIR%%/diversions.sample
+@sample %%DPKGDIR%%/statoverride.sample
+@sample %%DPKGDIR%%/status.sample
 %%NLS%%@dir man/hu/man8
 %%NLS%%@dir man/hu/man1
 @dir etc/dpkg/dselect.cfg.d
 @dir etc/dpkg/dpkg.cfg.d
 @dir %%DPKGDIR%%/updates
-@dir %%DPKGDIR%%/status
-@dir %%DPKGDIR%%/statoverride
 @dir %%DPKGDIR%%/parts
 @dir %%DPKGDIR%%/methods/multicd
 @dir %%DPKGDIR%%/methods/mnt
@@ -556,7 +558,5 @@ sbin/start-stop-daemon
 @dir %%DPKGDIR%%/methods/disk
 @dir %%DPKGDIR%%/methods
 @dir %%DPKGDIR%%/info
-@dir %%DPKGDIR%%/diversions
-@dir %%DPKGDIR%%/available
 @dir %%DPKGDIR%%/alternatives
 @dir %%DPKGDIR%%
