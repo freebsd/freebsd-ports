@@ -1,6 +1,8 @@
 include/websocketpp/base64/base64.hpp
 include/websocketpp/client.hpp
 include/websocketpp/close.hpp
+include/websocketpp/common/asio.hpp
+include/websocketpp/common/asio_ssl.hpp
 include/websocketpp/common/chrono.hpp
 include/websocketpp/common/connection_hdl.hpp
 include/websocketpp/common/cpp11.hpp
@@ -15,6 +17,7 @@ include/websocketpp/common/stdint.hpp
 include/websocketpp/common/system_error.hpp
 include/websocketpp/common/thread.hpp
 include/websocketpp/common/time.hpp
+include/websocketpp/common/type_traits.hpp
 include/websocketpp/concurrency/basic.hpp
 include/websocketpp/concurrency/none.hpp
 include/websocketpp/config/asio.hpp
@@ -34,7 +37,6 @@ include/websocketpp/connection_base.hpp
 include/websocketpp/endpoint.hpp
 include/websocketpp/endpoint_base.hpp
 include/websocketpp/error.hpp
-include/websocketpp/error_container.hpp
 include/websocketpp/extensions/extension.hpp
 include/websocketpp/extensions/permessage_deflate/disabled.hpp
 include/websocketpp/extensions/permessage_deflate/enabled.hpp
@@ -52,6 +54,7 @@ include/websocketpp/impl/utilities_impl.hpp
 include/websocketpp/logger/basic.hpp
 include/websocketpp/logger/levels.hpp
 include/websocketpp/logger/stub.hpp
+include/websocketpp/logger/syslog.hpp
 include/websocketpp/message_buffer/alloc.hpp
 include/websocketpp/message_buffer/message.hpp
 include/websocketpp/message_buffer/pool.hpp
@@ -75,6 +78,9 @@ include/websocketpp/transport/asio/security/none.hpp
 include/websocketpp/transport/asio/security/tls.hpp
 include/websocketpp/transport/base/connection.hpp
 include/websocketpp/transport/base/endpoint.hpp
+include/websocketpp/transport/debug/base.hpp
+include/websocketpp/transport/debug/connection.hpp
+include/websocketpp/transport/debug/endpoint.hpp
 include/websocketpp/transport/iostream/base.hpp
 include/websocketpp/transport/iostream/connection.hpp
 include/websocketpp/transport/iostream/endpoint.hpp
