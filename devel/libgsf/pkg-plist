@@ -54,7 +54,7 @@ lib/girepository-1.0/Gsf-1.typelib
 lib/libgsf-1.a
 lib/libgsf-1.so
 lib/libgsf-1.so.114
-lib/libgsf-1.so.114.0.34
+lib/libgsf-1.so.114.0.36
 libdata/pkgconfig/libgsf-1.pc
 man/man1/gsf-office-thumbnailer.1.gz
 man/man1/gsf-vba-dump.1.gz
