@@ -54,7 +54,7 @@ BINS=		${DIST}/${OPSYS}${OSREL}_OPT.OBJ
 BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 .endif
 
-.if ${ARCH} == amd64
+.if ${OPSYS} == FreeBSD && ${ARCH} == amd64
 USE_BINUTILS=	# intel-gcm.s
 CC+=	-B${LOCALBASE}/bin
 .endif
