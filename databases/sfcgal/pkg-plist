@@ -60,6 +60,7 @@ include/SFCGAL/detail/EnvelopeVisitor.h
 include/SFCGAL/detail/GeometrySet.h
 include/SFCGAL/detail/GetPointsVisitor.h
 include/SFCGAL/detail/Interval.h
+include/SFCGAL/detail/Point_inside_polyhedron.h
 include/SFCGAL/detail/TestGeometry.h
 include/SFCGAL/detail/TypeForDimension.h
 include/SFCGAL/detail/algorithm/coversPoints.h
@@ -106,4 +107,4 @@ include/SFCGAL/triangulate/triangulatePolygon.h
 include/SFCGAL/version.h
 lib/libSFCGAL.so
 lib/libSFCGAL.so.1
-lib/libSFCGAL.so.1.1.0
+lib/libSFCGAL.so.1.2.2
