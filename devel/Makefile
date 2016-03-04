@@ -4222,6 +4222,7 @@
     SUBDIR += py-pluggy
     SUBDIR += py-ply
     SUBDIR += py-polib
+    SUBDIR += py-positional
     SUBDIR += py-posix_ipc
     SUBDIR += py-pp
     SUBDIR += py-pqueue
