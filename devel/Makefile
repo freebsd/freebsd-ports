@@ -3813,6 +3813,7 @@
     SUBDIR += powerpc64-xtoolchain-gcc
     SUBDIR += poxml
     SUBDIR += ppl
+    SUBDIR += pragmarcs
     SUBDIR += premake
     SUBDIR += premake4
     SUBDIR += privman
