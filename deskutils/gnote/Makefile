@@ -19,6 +19,8 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
+PORTSCOUT=	limitw:1,even
+
 USE_GNOME=	gtk30 gtkmm30 intltool libxml2 libxslt
 USES=		desktop-file-utils compiler:c++11-lib gettext gmake \
 		gnome libtool pathfix pkgconfig tar:xz
