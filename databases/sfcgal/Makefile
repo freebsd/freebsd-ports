@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sfcgal
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases math graphics
 
