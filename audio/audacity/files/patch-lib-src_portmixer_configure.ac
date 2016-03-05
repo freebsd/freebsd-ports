@@ -1,0 +1,11 @@
+--- lib-src/portmixer/configure.ac.orig	2016-01-08 22:05:48 UTC
++++ lib-src/portmixer/configure.ac
+@@ -43,7 +43,7 @@ PKG_CHECK_MODULES([PORTAUDIO], [portaudi
+ 
+ dnl The following tests need to have the header files of portaudio available.
+ cppflags_save="$CPPFLAGS"
+-CPPFLAGS="$CPPFLAGS $PORTAUDIO_CFLAGS"
++CPPFLAGS="$PORTAUDIO_CFLAGS $CPPFLAGS"
+ 
+ have_oss=no
+ AC_CHECK_HEADERS([sys/soundcard.h linux/soundcard.h machine/soundcard.h], have_oss=yes)

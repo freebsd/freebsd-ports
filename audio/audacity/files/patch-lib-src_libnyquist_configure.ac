@@ -1,0 +1,11 @@
+--- lib-src/libnyquist/configure.ac.orig	2016-01-08 22:05:48 UTC
++++ lib-src/libnyquist/configure.ac
+@@ -117,6 +117,8 @@ dnl Checks for typedefs, structures, and
+ AC_C_CONST
+ AC_TYPE_SIZE_T
+ 
++AC_SUBST([SNDFILE_CFLAGS])
++
+ AC_CONFIG_FILES([Makefile])
+ 
+ AC_OUTPUT
