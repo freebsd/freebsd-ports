@@ -1,5 +1,7 @@
---- storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake.orig	2015-12-23 16:33:32.000000000 +0100
-+++ storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake	2016-01-10 22:34:14.059204126 +0100
+Do NOT use bundled libs, use xz/lzma from base and archivers/snappy from ports
+
+--- storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake.orig	2016-01-28 12:12:55 UTC
++++ storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake
 @@ -34,6 +34,13 @@ if (CMAKE_PROJECT_NAME STREQUAL TokuDB)
      endif ()
  endif ()
