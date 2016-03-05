@@ -1,0 +1,4 @@
+Script that uses the periodic system to create and manage tarsnap
+backups. Easily configured via /etc/periodic.conf
+
+WWW: https://github.com/anotherkamila/tarsnap-periodic
