@@ -3,7 +3,7 @@
 
 PORTNAME=	ficl
 PORTVERSION=	4.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-all/${PORTNAME}${PORTVERSION:C/([[:digit:]]+\.[[:digit:]]+)\.0/\1/}
 
@@ -15,10 +15,7 @@ LICENSE_NAME=	BSD-style
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://ficl.sourceforge.net/license.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-OPTIONS_DEFINE=	DATA DOCS
-OPTIONS_DEFAULT=	DATA
-
-MAKE_JOBS_UNSAFE=	YES
+OPTIONS_DEFINE=	DOCS
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	this port is not tested on anything other than i386 and amd64
