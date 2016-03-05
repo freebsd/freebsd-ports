@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Searching BGP update files
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libbgpdump.so:${PORTSDIR}/net/libbgpdump \
 		libsilk.so:${PORTSDIR}/security/silktools
