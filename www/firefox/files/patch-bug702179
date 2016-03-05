@@ -1,10 +1,13 @@
 --- js/src/moz.build.orig	2015-12-16 12:32:04.574425000 +0100
 +++ js/src/moz.build	2015-12-16 12:32:09.032032000 +0100
-@@ -637,7 +637,3 @@
+@@ -671,10 +671,6 @@ CFLAGS += CONFIG['MOZ_ICU_CFLAGS']
+ CXXFLAGS += CONFIG['MOZ_ICU_CFLAGS']
+ LOCAL_INCLUDES += CONFIG['MOZ_ICU_INCLUDES']
  
- if not CONFIG['GNU_CXX']:
-     ALLOW_COMPILER_WARNINGS = True
--
 -NO_EXPAND_LIBS = True
 -
 -DIST_INSTALL = True
+-
+ # Prepare self-hosted JS code for embedding
+ GENERATED_FILES += ['selfhosted.out.h']
+ selfhosted = GENERATED_FILES['selfhosted.out.h']
