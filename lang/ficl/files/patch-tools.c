@@ -1,6 +1,6 @@
---- tools.c.orig	2010-08-12 17:57:22.000000000 +0400
-+++ tools.c	2012-03-20 19:08:11.000000000 +0400
-@@ -236,24 +236,24 @@
+--- tools.c.orig	2010-08-12 13:57:22 UTC
++++ tools.c
+@@ -236,24 +236,24 @@ static void ficlPrimitiveSeeXT(ficlVm *v
          break;
  
      case FICL_WORDKIND_VARIABLE:
@@ -29,7 +29,7 @@
          ficlVmTextOut(vm, vm->pad);
  		break;
  
-@@ -567,7 +567,7 @@
+@@ -567,7 +567,7 @@ static ficlInteger ficlStackDisplayCallb
  {
      struct stackContext *context = (struct stackContext *)c;
      char buffer[64];
@@ -38,7 +38,7 @@
  	ficlVmTextOut(context->vm, buffer);
  	return FICL_TRUE;
  }
-@@ -580,7 +580,7 @@
+@@ -580,7 +580,7 @@ void ficlStackDisplay(ficlStack *stack, 
  
      FICL_STACK_CHECK(stack, 0, 0);
  
@@ -47,7 +47,7 @@
  	ficlVmTextOut(vm, buffer);
  
      if (callback == NULL)
-@@ -592,7 +592,7 @@
+@@ -592,7 +592,7 @@ void ficlStackDisplay(ficlStack *stack, 
      }
  	ficlStackWalk(stack, callback, context, FICL_FALSE);
  
@@ -56,7 +56,7 @@
  	ficlVmTextOut(vm, buffer);
  
      return;
-@@ -612,7 +612,7 @@
+@@ -612,7 +612,7 @@ static ficlInteger ficlStackDisplaySimpl
  {
      struct stackContext *context = (struct stackContext *)c;
      char buffer[32];
@@ -65,7 +65,7 @@
      context->count++;
      ficlVmTextOut(context->vm, buffer);
  	return FICL_TRUE;
-@@ -644,7 +644,7 @@
+@@ -644,7 +644,7 @@ static ficlInteger ficlReturnStackDispla
      struct stackContext *context = (struct stackContext *)c;
      char buffer[128];
  
