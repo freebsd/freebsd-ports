@@ -3,7 +3,7 @@
 
 PORTNAME=	netdot
 PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://netdot.uoregon.edu/pub/dists/
 
@@ -61,6 +61,7 @@ perl2_CMD=	${LOCALBASE}/bin/perl
 
 INSTALL_TARGET=	install		\
 	PREFIX=${WWWDIR}	\
+	PERL=${PERL}		\
 	STAGEDIR=${STAGEDIR}${WWWDIR}	\
 	APACHEUSER=${WWWOWN}	\
 	APACHEGROUP=${WWWGRP}
