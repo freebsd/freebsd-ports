@@ -12,6 +12,7 @@
     SUBDIR += biococoa
     SUBDIR += biojava
     SUBDIR += blat
+    SUBDIR += bowtie
     SUBDIR += bwa
     SUBDIR += cd-hit
     SUBDIR += cdbfasta
