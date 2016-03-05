@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	svxlink
-PORTVERSION=	14.08
+PORTVERSION=	14.08.2
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sm0svx
 GH_PROJECT=	svxlink
 
-USES=		cmake tcl
+USES=		compiler:c++11-lib cmake tcl
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ARGS+=	-DMAN_INSTALL_DIR:FILEPATH=${MANDIRS} \
 		-DLOCAL_STATE_DIR=/var
