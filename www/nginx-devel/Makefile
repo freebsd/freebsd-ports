@@ -514,7 +514,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c
 
 .if ${PORT_OPTIONS:MHTTP_PERL}
 CATEGORIES+=	perl5
-CONFIGURE_ARGS+=--with-http_perl_module
+CONFIGURE_ARGS+=--with-http_perl_module=dynamic
 USES+=		perl5
 .endif
 
