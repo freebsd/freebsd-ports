@@ -7,6 +7,7 @@ include/yaml-cpp/emitfromevents.h
 include/yaml-cpp/emitter.h
 include/yaml-cpp/emitterdef.h
 include/yaml-cpp/emittermanip.h
+include/yaml-cpp/emitterstyle.h
 include/yaml-cpp/eventhandler.h
 include/yaml-cpp/exceptions.h
 include/yaml-cpp/mark.h
@@ -36,5 +37,5 @@ include/yaml-cpp/traits.h
 include/yaml-cpp/yaml.h
 lib/libyaml-cpp.so
 lib/libyaml-cpp.so.0
-lib/libyaml-cpp.so.0.5.1
+lib/libyaml-cpp.so.0.5.3
 libdata/pkgconfig/yaml-cpp.pc

@@ -25,8 +25,11 @@ CDIO_CONFIGURE_OFF=	--disable-libcdio
 DV_LIB_DEPENDS=		libdv.so:${PORTSDIR}/multimedia/libdv
 DV_CONFIGURE_OFF=	--disable-libdv
 
+DVDNAV_LIB_DEPENDS=	libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
+DVDNAV_CONFIGURE_OFF=	--disable-dvdnav
+
 ENCA_LIB_DEPENDS=	libenca.so:${PORTSDIR}/converters/enca
-ENCA_CONFIGURE_OFF=		--disable-enca
+ENCA_CONFIGURE_OFF=	--disable-enca
 
 FAAC_LIB_DEPENDS=	libfaac.so:${PORTSDIR}/audio/faac
 FAAC_CONFIGURE_OFF=	--disable-faac

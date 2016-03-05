@@ -750,6 +750,8 @@
     SUBDIR += p5-Search-Elasticsearch
     SUBDIR += p5-Search-Estraier
     SUBDIR += p5-Search-Odeum
+    SUBDIR += p5-Search-QueryParser
+    SUBDIR += p5-Search-QueryParser-SQL
     SUBDIR += p5-Search-Saryer
     SUBDIR += p5-Search-VectorSpace
     SUBDIR += p5-Senna
@@ -1183,6 +1185,15 @@
     SUBDIR += php56-xmlreader
     SUBDIR += php56-xmlwriter
     SUBDIR += php56-xsl
+    SUBDIR += php70-ctype
+    SUBDIR += php70-dom
+    SUBDIR += php70-pspell
+    SUBDIR += php70-simplexml
+    SUBDIR += php70-wddx
+    SUBDIR += php70-xml
+    SUBDIR += php70-xmlreader
+    SUBDIR += php70-xmlwriter
+    SUBDIR += php70-xsl
     SUBDIR += plover
     SUBDIR += po4a
     SUBDIR += pocketreader

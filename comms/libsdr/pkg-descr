@@ -1,0 +1,7 @@
+A simple software defined radio (SDR) library. 
+Although being simple, libsdr is sufficient to write a simple SDR receiver
+application (github.com/hmatuschek/sdr-rx, above). This RX application
+supports several input sources (i.e. sound card, files, RTL2382 dongles etc.)
+and modes (i.e. AM, FM, SSB, CW, etc.).
+
+WWW: https://github.com/hmatuschek/libsdr

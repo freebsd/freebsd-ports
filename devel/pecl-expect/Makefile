@@ -18,6 +18,7 @@ LIB_DEPENDS=	libexpect.so:${PORTSDIR}/lang/expect
 USES=		tar:tgz tcl:86
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 CFLAGS+=	-I${TCL_INCLUDEDIR}
 CONFIGURE_ARGS+=--with-expect=${LOCALBASE}

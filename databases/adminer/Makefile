@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	adminer
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.4
+PORTREVISION=	1
 CATEGORIES=	databases www
-MASTER_SITES=	SF/${PORTNAME}/Adminer/Adminer%20${PORTVERSION}
+MASTER_SITES=	https://www.adminer.org/static/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}.php ${PORTNAME}-${PORTVERSION}-en.php \
 		${PORTNAME}-${PORTVERSION}-mysql.php ${PORTNAME}-${PORTVERSION}-mysql-en.php
@@ -17,7 +18,7 @@ LICENSE=	APACHE20
 
 USES=		zip
 NO_BUILD=	yes
-USE_PHP=	mysql session
+USE_PHP=	mysqli session
 SUB_FILES=	pkg-message
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 

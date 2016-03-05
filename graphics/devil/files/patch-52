@@ -1,0 +1,47 @@
+See https://sourceforge.net/p/openil/patches/52/
+
+--- src-IL/src/il_pcx.c	(revision 1678)
++++ src-IL/src/il_pcx.c	(working copy)
+@@ -375,20 +375,26 @@
+ 	if (Header->NumPlanes == 1 && Header->Bpp == 1) {
+ 		for (j = 0; j < iCurImage->Height; j++) {
+ 			i = 0; //number of written pixels
+-			while (i < iCurImage->Width) {
++			Bps = 0;
++			while (Bps<Header->Bps) {
+ 				if (iread(&HeadByte, 1, 1) != 1)
+ 					return IL_FALSE;
++				++Bps;
++				// Check if we got duplicates with RLE compression
+ 				if (HeadByte >= 192) {
+ 					HeadByte -= 192;
+ 					if (iread(&Data, 1, 1) != 1)
+ 						return IL_FALSE;
+ 
++					--Bps;
++					// duplicate next byte
+ 					for (c = 0; c < HeadByte; c++) {
+ 						k = 128;
+ 						for (d = 0; d < 8 && i < iCurImage->Width; d++) {
+ 							iCurImage->Data[j * iCurImage->Width + i++] = ((Data & k) != 0 ? 255 : 0);
+ 							k >>= 1;
+ 						}
++						++Bps;
+ 					}
+ 				}
+ 				else {
+@@ -408,8 +414,12 @@
+ 			//If Width/8 is even no padding is needed,
+ 			//one pad byte has to be read otherwise.
+ 			//(let's hope the above is true ;-))
+-			if(!((iCurImage->Width >> 3) & 0x1))
+-				igetc();	// Skip pad byte
++
++			// changed 2012-05-06
++			// Not the good size - don't need it, padding inside data already !
++
++		//	if(!((iCurImage->Width >> 3) & 0x1))
++		//		igetc();	// Skip pad byte
+ 		}
+ 	}
+ 	else if (Header->NumPlanes == 4 && Header->Bpp == 1){   // 4-bit images

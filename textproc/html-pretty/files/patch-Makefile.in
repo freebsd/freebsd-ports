@@ -1,5 +1,5 @@
---- ./Makefile.in.orig	2001-08-25 21:56:14.000000000 +0000
-+++ ./Makefile.in	2014-01-28 15:44:55.000000000 +0000
+--- Makefile.in.orig	2001-08-25 21:56:14 UTC
++++ Makefile.in
 @@ -34,7 +34,7 @@
  ###	install			install htmlpty in system directories
  ###	install-exe		install only htmlpty executable
@@ -45,7 +45,7 @@
  MANDIR          = $(prefix)/man
  MANEXT		= 1
  
-@@ -217,7 +217,7 @@
+@@ -217,7 +217,7 @@ INSTALL         = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_DATA    = @INSTALL_DATA@
  
@@ -54,7 +54,7 @@
  LIBS            = @LIBS@
  
  VPATH           = @srcdir@
-@@ -743,32 +743,22 @@
+@@ -743,32 +743,22 @@ htmlpty.zoo:	htmlpty.tar
  	$(ZOO) v htmlpty-$(VERSION).zoo >htmlpty-$(VERSION).zoo-lst
  	$(LN) htmlpty-$(VERSION).zoo htmlpty.zoo
  
@@ -94,7 +94,7 @@
  
  install-ftp:	htmlpty.tar htmlpty.zip htmlpty.zoo
  	$(TAR) tvf htmlpty-$(VERSION).tar >$(FTPDIR)/htmlpty-$(VERSION).tar-lst
-@@ -827,14 +817,14 @@
+@@ -827,14 +817,14 @@ table.o:	table.c builtin.h default.h $(H
  test-version:
  	@echo "Version number is ""'"$(VERSION)"'"
  

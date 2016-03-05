@@ -1,5 +1,5 @@
 bin/bzadmin
-bin/bzflag
+%%CLIENT%%bin/bzflag
 bin/bzfs
 lib/bzflag/HoldTheFlag.so
 lib/bzflag/Phoenix.so

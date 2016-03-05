@@ -18,6 +18,7 @@ LIB_DEPENDS=	libyaz.so:${PORTSDIR}/net/yaz
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}
 

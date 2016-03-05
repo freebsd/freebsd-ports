@@ -3,6 +3,7 @@
 
 PORTNAME=	cloog
 PORTVERSION=	0.18.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.bastoul.net/cloog/pages/download/
 

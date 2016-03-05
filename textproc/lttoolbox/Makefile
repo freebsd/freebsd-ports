@@ -3,17 +3,18 @@
 
 PORTNAME=	lttoolbox
 PORTVERSION=	${APVER}.${APREV}
-PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/apertium/${PORTNAME}/${APVER}
 
 MAINTAINER=	i@levsha.me
 COMMENT=	Tool for lexical, morphological analysis and generation of words
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 APVER=	3.3
-APREV=	0
+APREV=	2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

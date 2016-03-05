@@ -1,0 +1,8 @@
+The Java Decompiler project aims to develop tools in order to
+decompile and analyze Java 5 byte code and later versions.
+
+JD-GUI is a standalone graphical utility that displays Java source
+codes of .class files.  You can browse the reconstructed source code
+with the JD-GUI for instant access to methods and fields.
+
+WWW: http://jd.benow.ca/

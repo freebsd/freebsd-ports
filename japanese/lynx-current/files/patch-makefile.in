@@ -1,15 +1,6 @@
---- makefile.in.orig	2014-05-18 17:40:49.321601176 +0200
-+++ makefile.in	2014-05-18 17:42:33.446626842 +0200
-@@ -320,7 +320,7 @@
- 	fi'
- 	$(SHELL) -c 'for name in COPYING COPYHEADER; do \
- 		cd $(HELPDIR) && rm -f $$name ;\
--		cd $(HELPDIR) && ( $(LN_S) $(DOCDIR)/$$name . || cp $(DOCDIR)/$$name . );\
-+		cd $(HELPDIR) && ( $(LN_S) $(docdir)/$$name . || cp $(DOCDIR)/$$name . );\
- 		done'
- 	-$(SHELL) -c 'case `id|sed -e "s/(.*//"` in uid=0) chown -R root $(DOCDIR);; esac'
- 
-@@ -399,8 +399,8 @@
+--- makefile.in.orig	2014-03-10 06:43:10.000000000 +0900
++++ makefile.in	2015-11-28 14:46:42.000000000 +0900
+@@ -421,8 +421,8 @@
  	$(SHELL) $(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir) | \
  	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
@@ -20,7 +11,7 @@
  	-rm -f $(SYSCONFDIR)/lynx.tmp
  
  LYHelp.h : help_files.sed $(srcdir)/LYHelp.hin
-@@ -423,10 +423,9 @@
+@@ -445,10 +445,9 @@
  	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(SYSCONFDIR)

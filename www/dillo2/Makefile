@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dillo
-PORTVERSION=	3.0.4.1
+PORTVERSION=	3.0.5
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/ LOCAL/bf/dillo/ \
 		TEX_CTAN/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/:hyphen

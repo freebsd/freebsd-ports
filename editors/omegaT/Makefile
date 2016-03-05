@@ -1,20 +1,16 @@
-# Created by: Rodrigo OSORIO <rodrigo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	omegaT
-DISTVERSION=	3.1.8
-PORTREVISION=	1
+DISTVERSION=	3.1.9
 CATEGORIES=	editors java x11
-MASTER_SITES=	SF/${PORTNAME:tl}/OmegaT%20-%20Standard/OmegaT%20${DISTVERSION}/
-DISTNAME=	OmegaT_${DISTVERSION}_Source
+MASTER_SITES=	SF/${PORTNAME:tl}/OmegaT%20-%20Standard/OmegaT%20${DISTVERSION}%20update%204/
+DISTNAME=	OmegaT_${DISTVERSION}_04_Source
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Powerful translation memory application written in Java
 
 LICENSE=	GPLv2
-
-BROKEN=		unfetchable
 
 USES=		shebangfix zip
 SHEBANG_FILES=	release/linux-specific/OmegaT \

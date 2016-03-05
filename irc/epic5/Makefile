@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	epic5
-PORTVERSION=	1.8
+PORTVERSION=	2.0
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
 

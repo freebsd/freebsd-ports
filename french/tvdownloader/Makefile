@@ -18,6 +18,8 @@ RUN_DEPENDS=	msdl:${PORTSDIR}/multimedia/msdl	\
 		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto\
 		${PYTHON_SITELIBDIR}/mechanize/_mechanize.py:${PORTSDIR}/www/py-mechanize
 
+DEPRECATED=	Many channels have modified their protocols and cannot be DL anymore
+
 USES=		python shebangfix
 SHEBANG_FILES=	doc/installdox
 ALL_TARGET=	build

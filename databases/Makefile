@@ -576,6 +576,7 @@
     SUBDIR += pgtcl
     SUBDIR += pgtop
     SUBDIR += pgtune
+    SUBDIR += pguri
     SUBDIR += pgworksheet
     SUBDIR += php-adodb-ext
     SUBDIR += php-mdcached
@@ -615,6 +616,19 @@
     SUBDIR += php56-redis
     SUBDIR += php56-sqlite3
     SUBDIR += php56-sybase_ct
+    SUBDIR += php70-dba
+    SUBDIR += php70-interbase
+    SUBDIR += php70-mysqli
+    SUBDIR += php70-odbc
+    SUBDIR += php70-pdo
+    SUBDIR += php70-pdo_dblib
+    SUBDIR += php70-pdo_firebird
+    SUBDIR += php70-pdo_mysql
+    SUBDIR += php70-pdo_odbc
+    SUBDIR += php70-pdo_pgsql
+    SUBDIR += php70-pdo_sqlite
+    SUBDIR += php70-pgsql
+    SUBDIR += php70-sqlite3
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
@@ -774,6 +788,7 @@
     SUBDIR += py-tarantool
     SUBDIR += py-umemcache
     SUBDIR += py-whisper
+    SUBDIR += py3-bsddb3
     SUBDIR += py33-gdbm
     SUBDIR += py33-sqlite3
     SUBDIR += py34-gdbm

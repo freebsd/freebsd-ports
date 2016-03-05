@@ -1,0 +1,7 @@
+This program demonstrates the working principles of some 20 sorting 
+algorithms and is very easy to use. Select the algorithm, the speed
+of the visualisation and whether you want to get sound output (that
+reflects the values being moved and is characteristic for each kind
+of algorithm).
+
+WWW: http://panthema.net/2013/sound-of-sorting/

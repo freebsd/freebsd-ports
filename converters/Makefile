@@ -140,6 +140,9 @@
     SUBDIR += php56-iconv
     SUBDIR += php56-mbstring
     SUBDIR += php56-recode
+    SUBDIR += php70-iconv
+    SUBDIR += php70-mbstring
+    SUBDIR += php70-recode
     SUBDIR += psiconv
     SUBDIR += py-bencode
     SUBDIR += py-bsdconv

@@ -2,23 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	adms
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.5
 CATEGORIES=	cad
 MASTER_SITES=	SF/mot-${PORTNAME}/${PORTNAME}-source/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Model generator for SPICE simulators
 
-LICENSE=	LGPL21
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		bison libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ax_cv_c_compiler_vendor=gnu
+CONFIGURE_ARGS=	--disable-silent-rules
 INSTALL_TARGET=	install-strip
-
-PLIST_FILES=	bin/admsCheck \
-		bin/admsXml \
-		man/man1/admsCheck.1.gz \
-		man/man1/admsXml.1.gz
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

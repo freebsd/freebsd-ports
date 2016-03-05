@@ -1,0 +1,121 @@
+#!/bin/sh
+
+# $FreeBSD$
+# PROVIDE: buildslave
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to run buildslave:
+#
+# buildslave_enable (bool):	Set to "YES" to enable buildslave.
+#				Default: "NO"
+#
+# buildslave_flags (flags):	Set extra command flags here. See buildslave(8)
+#				Default: Empty ("").
+#
+# buildslave_uid (user):	User to run buildslave as.
+#				Default: "buildbot"
+#
+# buildslave_gid (group):	Group to run buildslave as.
+#				Default: "buildbot"
+#
+# buildslave_basedir (path):    Location for buildslave base directory
+#                               Default: %%PREFIX%%/etc/buildslave
+#
+# buildslave_profiles (str):    Define profiles names. Space-delimited.
+#                               Default: Empty ("")
+#
+# This rc.d script supports multiple "profiles". When profiles are
+# specified, the non-profile specific parameters become defaults.
+#
+# Example:
+#
+# buildslave_profiles="foo bar"
+#
+# buildslave_foo_enable="YES"
+# buildslave_foo_basedir="/usr/home/foo/buildbot"
+# buildslave_foo_uid="foo"
+# buildslave_foo_gid="foo"
+#
+# buildslave_bar_enable="YES"
+# buildslave_bar_basedir="/usr/home/buildbot/"
+
+. /etc/rc.subr
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+
+name=buildslave
+desc="Buildbot Buildslave"
+rcvar=buildslave_enable
+
+load_rc_config ${name}
+
+# These are just the defaults, they might get overriden for a specific profile.
+eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_flags:=\"\"}"
+eval ": \${${name}_uid:=\"buildbot\"}"
+eval ": \${${name}_gid:=\"buildbot\"}"
+eval ": \${${name}_basedir:=\"%%PREFIX%%/etc/${name}\"}"
+
+command="%%PREFIX%%/bin/twistd"
+command_interpreter="%%PYTHON_CMD%%"
+pidfile="${buildslave_basedir}/twistd.pid"
+
+	# A specific profile is specified in the command
+	if [ -n "$2" ]; then
+		profile="$2"
+		# Override defaults with profile-specific values
+		if [ -n "${buildslave_profiles}" ]; then
+			eval buildslave_enable="\${buildslave_${profile}_enable:-${buildslave_enable}}"
+			eval buildslave_flags="\${buildslave_${profile}_flags:-${buildslave_flags}}"
+			eval buildslave_uid="\${buildslave_${profile}_uid:-${buildslave_uid}}"
+			eval buildslave_gid="\${buildslave_${profile}_gid:-${buildslave_gid}}"
+			eval buildslave_basedir="\${buildslave_${profile}_basedir:-${buildslave_basedir}}"
+			eval pidfile="\${buildslave_${profile}_basedir:-${buildslave_basedir}}/twistd.pid"
+		else
+			echo "%%PREFIX%%/etc/rc.d/${name}: extra argument ignored"
+		fi
+	# A specific profile is not in the command
+	else
+		# Check if any profiles are defined
+		if [ -n "$1" -a -n "${buildslave_profiles}" ]; then
+			# Loop through them
+			for profile in ${buildslave_profiles}; do
+				eval _enable="\${buildslave_${profile}_enable}"
+				case "${_enable:-${buildslave_enable}}" in
+				[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+					continue
+					;;
+				[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+					;;
+				*)
+					if test -z "$_enable"; then
+						_var=buildslave_enable
+					else
+						_var=buildslave_"${profile}"_enable
+					fi
+					warn "Bad value" \
+					    "'${_enable:-${buildslave_enable}}'" \
+					    "for ${_var}. " \
+					    "Profile ${profile} skipped."
+					continue
+					;;
+				esac
+				echo "===> ${name} profile: ${profile}"
+				if %%PREFIX%%/etc/rc.d/${name} $1 ${profile}; then
+					success="${profile} ${success:-}"
+				else
+					failed="${profile} (${retcode}) ${failed:-}"
+				fi
+			done
+			# Exit so that non-profile rc.d is not started when there are profiles
+			exit 0
+		fi
+	fi
+
+# run_rc_command would send ${name}_flags as parameters to $command (daemon)
+# This ensures they are actually passed to fcgiwrap instead.
+actual_buildslave_flags="${buildslave_flags}"
+buildslave_flags=""
+command_args="--uid=${buildslave_uid} --gid=${buildslave_gid} --pidfile=${pidfile} --python=${buildslave_basedir}/buildbot.tac ${actual_buildslave_flags}"
+run_rc_command "$1"

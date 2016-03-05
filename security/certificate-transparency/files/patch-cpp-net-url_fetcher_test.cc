@@ -1,6 +1,6 @@
---- cpp/net/url_fetcher_test.cc.orig	2015-11-20 15:17:37.750964000 +0100
-+++ cpp/net/url_fetcher_test.cc	2015-11-20 15:18:12.043994000 +0100
-@@ -8,6 +8,9 @@
+--- cpp/net/url_fetcher_test.cc.orig	2016-02-02 11:35:23 UTC
++++ cpp/net/url_fetcher_test.cc
+@@ -7,6 +7,9 @@
  #include <fcntl.h>
  #include <gflags/gflags.h>
  #include <glog/logging.h>
@@ -8,5 +8,5 @@
 +// and regex.h; note it's only compiled with "make check".
 +#define GTEST_HAS_POSIX_RE 0
  #include <gtest/gtest.h>
+ #include <csignal>
  #ifdef HAVE_NETDB_H
- #  include <netdb.h>

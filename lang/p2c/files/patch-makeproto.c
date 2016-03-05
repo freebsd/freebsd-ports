@@ -1,4 +1,4 @@
---- makeproto.c.orig
+--- makeproto.c.orig	1993-12-08 05:36:53 UTC
 +++ makeproto.c
 @@ -7,6 +7,7 @@
  
@@ -8,7 +8,7 @@
  #include <ctype.h>
  #include <time.h>
  
-@@ -157,7 +158,7 @@
+@@ -157,7 +158,7 @@ char **argv;
      char argdecls[MAXARGS][256], argnames[MAXARGS][80];
      char *cp, *cp2, *cp3;
      int i, j, pos, len, thistab, numstars, whichf, nargs, incomment, errors = 0;

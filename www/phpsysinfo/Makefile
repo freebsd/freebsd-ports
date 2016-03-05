@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	phpsysinfo
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	walt@relnor.com
+MAINTAINER=	tremere@cainites.net
 COMMENT=	PHP script for displaying system information
 
 LICENSE=	GPLv2

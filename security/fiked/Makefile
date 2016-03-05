@@ -10,22 +10,22 @@ MASTER_SITES=	http://mirror.roe.ch/dist/fiked/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fake IKE PSK+XAUTH daemon based on VPNC
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USES=	tar:bzip2 gmake
-
-OPTIONS_DEFINE=	LIBNET DOCS
-OPTIONS_DEFAULT=LIBNET
-LIBNET_DESC=	Build with libnet support
-
-LIBNET_LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+USES=		gmake tar:bzip2
 
 MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/fiked man/man1/fiked.1.gz
 PORTDOCS=	README NEWS
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+OPTIONS_DEFINE=	LIBNET DOCS
+OPTIONS_DEFAULT=LIBNET
+LIBNET_DESC=	Build with libnet support
+LIBNET_LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|=-g|=|' ${WRKSRC}/${MAKEFILE}
@@ -33,6 +33,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fiked ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/fiked.1 ${STAGEDIR}${PREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 

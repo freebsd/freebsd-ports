@@ -1,0 +1,9 @@
+bin/2ff
+bin/ff2png
+bin/jpg2ff
+bin/png2ff
+man/man1/2ff.1.gz
+man/man1/ff2png.1.gz
+man/man1/jpg2ff.1.gz
+man/man1/png2ff.1.gz
+man/man5/farbfeld.5.gz

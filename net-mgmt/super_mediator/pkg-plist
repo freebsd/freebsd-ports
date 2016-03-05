@@ -1,0 +1,6 @@
+man/man1/super_mediator.conf.1.gz
+man/man1/super_table_creator.1.gz
+man/man1/super_mediator.1.gz
+bin/super_table_creator
+bin/super_mediator
+@sample etc/super_mediator.conf.sample

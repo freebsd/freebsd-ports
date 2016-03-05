@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drood
-PORTVERSION=	5.14
+PORTVERSION=	5.18
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 

@@ -664,6 +664,7 @@ lib/calibre/calibre/gui2/actions/tweak_epub.py
 lib/calibre/calibre/gui2/actions/unpack_book.py
 lib/calibre/calibre/gui2/actions/view.py
 lib/calibre/calibre/gui2/add.py
+lib/calibre/calibre/gui2/add_filters.py
 lib/calibre/calibre/gui2/auto_add.py
 lib/calibre/calibre/gui2/bars.py
 lib/calibre/calibre/gui2/book_details.py
@@ -1202,8 +1203,10 @@ lib/calibre/calibre/srv/errors.py
 lib/calibre/calibre/srv/handler.py
 lib/calibre/calibre/srv/http_request.py
 lib/calibre/calibre/srv/http_response.py
+lib/calibre/calibre/srv/legacy.py
 lib/calibre/calibre/srv/loop.py
 lib/calibre/calibre/srv/metadata.py
+lib/calibre/calibre/srv/opds.py
 lib/calibre/calibre/srv/opts.py
 lib/calibre/calibre/srv/pool.py
 lib/calibre/calibre/srv/pre_activated.py
@@ -1581,6 +1584,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/coffee-script.js
 %%DATADIR%%/compiled_coffeescript.zip
 %%DATADIR%%/content-server/autoreload.js
+%%DATADIR%%/content-server/calibre.png
 %%DATADIR%%/content-server/empty.html
 %%DATADIR%%/content-server/font-awesome/FontAwesome.otf
 %%DATADIR%%/content-server/font-awesome/fa.css
@@ -1591,6 +1595,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/content-server/font-awesome/fontawesome-webfont.woff2
 %%DATADIR%%/content-server/index.html
 %%DATADIR%%/content-server/main.js
+%%DATADIR%%/content-server/mobile.css
 %%DATADIR%%/content-server/reset.css
 %%DATADIR%%/content_server/av.jpg
 %%DATADIR%%/content_server/bg_search_box.png
@@ -1902,6 +1907,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/localization/stats.pickle
 %%DATADIR%%/metadata_sqlite.sql
 %%DATADIR%%/mime.types
+%%DATADIR%%/mozilla-ca-certs.pem
 %%DATADIR%%/quick_start/deu.epub
 %%DATADIR%%/quick_start/eng.epub
 %%DATADIR%%/quick_start/fra.epub

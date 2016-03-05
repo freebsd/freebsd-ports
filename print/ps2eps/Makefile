@@ -1,4 +1,4 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
+# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	ps2eps
@@ -8,7 +8,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.tm.uka.de/~bless/ \
 		http://www.ipv6.tm.uka.de/~bless/
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Generate Encapsulated Postscript file from Postscript document
 
 WRKSRC=		${WRKDIR}/ps2eps

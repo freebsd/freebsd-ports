@@ -121,6 +121,7 @@
     SUBDIR += burrtools
     SUBDIR += bygfoot
     SUBDIR += bzflag
+    SUBDIR += bzflag-server
     SUBDIR += cake
     SUBDIR += caph
     SUBDIR += capicity
@@ -410,6 +411,7 @@
     SUBDIR += hoichess
     SUBDIR += holotz-castle
     SUBDIR += hoverboard-sdl
+    SUBDIR += hs-scroll
     SUBDIR += hypatia_engine
     SUBDIR += iagno
     SUBDIR += icbm3d

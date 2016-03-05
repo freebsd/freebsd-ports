@@ -3,7 +3,7 @@
 
 PORTNAME=	devil
 PORTVERSION=	1.7.8
-PORTREVISION=	20
+PORTREVISION=	21
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openil/DevIL/${PORTVERSION}
@@ -14,12 +14,11 @@ COMMENT=	Full featured cross-platform image library
 
 USES=		alias autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-ILU \
+CONFIGURE_ARGS=	--enable-ILU --enable-ILUT \
 		--disable-allegro --disable-directx8 --disable-directx9 \
 		--without-libsquish
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USE_GCC=	any
 
 WRKSRC=		${WRKDIR}/${DISTNAME:tl}
 
@@ -73,11 +72,8 @@ CONFIGURE_ENV+=	libpng_app=no
 
 .if ${PORT_OPTIONS:MX11}
 USE_GL=		glut
-CONFIGURE_ARGS+=--enable-ILUT
-PLIST_SUB+=	X11=""
 .else
 CONFIGURE_ARGS+=--disable-opengl --disable-x11 --disable-xpm --disable-shm
-PLIST_SUB+=	X11="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
@@ -97,6 +93,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \
 		${WRKSRC}/src-ILU/ilur/ilur.c
 
+post-configure:
+	${REINPLACE_CMD} -e 's,-std=gnu99,,'	\
+		${WRKSRC}/Makefile ${WRKSRC}/*/Makefile
+
 post-install:
 	@${RMDIR} ${STAGEDIR}${DATADIR}/examples
 	@${RMDIR} ${STAGEDIR}${DATADIR}
@@ -104,5 +104,9 @@ post-install:
 .for file in AUTHORS CREDITS ChangeLog Libraries.txt README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+do-test: build
+	${MAKE} -C ${WRKSRC}/test testil
+	cd ${WRKSRC}/test && ${SH} format_test/format_checks.sh
 
 .include <bsd.port.mk>

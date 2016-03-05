@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	slade
-DISTVERSION=	3.1.1_b3
+PORTVERSION=	3.1.1
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Modern editor for Doom-engine based games and source ports
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
-		libsfml-system.so:${PORTSDIR}/devel/sfml \
+LIB_DEPENDS=	libsfml-system.so:${PORTSDIR}/devel/sfml \
 		libftgl.so:${PORTSDIR}/graphics/ftgl \
 		libfreeimage.so:${PORTSDIR}/graphics/freeimage
 
@@ -24,8 +23,15 @@ USE_CXXSTD=	c++11
 
 PLIST_FILES=	bin/slade share/slade3/slade.pk3
 
+OPTIONS_DEFINE=	FLUIDSYNTH
+OPTIONS_DEFAULT=	FLUIDSYNTH
+
+FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+FLUIDSYNTH_CMAKE_OFF=	-DNO_FLUIDSYNTH:BOOL=ON
+
 post-patch:
-	@${REINPLACE_CMD} -e 's,"alsa","oss",' ${WRKSRC}/src/MIDIPlayer.cpp
+	@${REINPLACE_CMD} -e 's,"alsa","oss",' \
+		${WRKSRC}/src/Audio/MIDIPlayer.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

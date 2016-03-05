@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gputty
@@ -6,7 +6,7 @@ PORTVERSION=	0.9.10
 CATEGORIES=	security
 MASTER_SITES=	http://www.defora.org/os/download/download/3381/
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Frontend to the SSH client, using the Gtk+ toolkit
 
 LICENSE=	GPLv3

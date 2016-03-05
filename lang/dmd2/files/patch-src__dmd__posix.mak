@@ -1,14 +1,5 @@
 --- ../../src/dmd/posix.mak.orig	2016-01-27 07:22:54.000000000 -0800
 +++ ../../src/dmd/posix.mak	2016-01-28 12:32:14.044394178 -0800
-@@ -19,7 +19,7 @@
- endif
- 
- INSTALL_DIR=../../install
--SYSCONFDIR=/etc
-+SYSCONFDIR=/usr/local/etc
- PGO_DIR=$(abspath pgo)
- 
- C=backend
 @@ -31,9 +31,9 @@
  endif
  

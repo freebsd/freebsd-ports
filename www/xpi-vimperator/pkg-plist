@@ -26,7 +26,6 @@
 %%XPI_XPIDIR%%/common/content/hints.js
 %%XPI_XPIDIR%%/common/content/history.js
 %%XPI_XPIDIR%%/common/content/io.js
-%%XPI_XPIDIR%%/common/content/io.js.rej
 %%XPI_XPIDIR%%/common/content/javascript.js
 %%XPI_XPIDIR%%/common/content/liberator-overlay.js
 %%XPI_XPIDIR%%/common/content/liberator.js
@@ -68,10 +67,10 @@
 %%XPI_XPIDIR%%/common/locale/en-US/tabs.xml
 %%XPI_XPIDIR%%/common/locale/en-US/various.xml
 %%XPI_XPIDIR%%/common/modules/storage.jsm
+%%XPI_XPIDIR%%/common/modules/template-tag.js
+%%XPI_XPIDIR%%/common/modules/template.js
 %%XPI_XPIDIR%%/common/skin/liberator.css
-%%XPI_XPIDIR%%/common/skin/prompt (purple).png
 %%XPI_XPIDIR%%/common/skin/prompt.png
-%%XPI_XPIDIR%%/common/skin/prompt2.png
 %%XPI_XPIDIR%%/components/about-handler.js
 %%XPI_XPIDIR%%/components/commandline-handler.js
 %%XPI_XPIDIR%%/components/protocols.js

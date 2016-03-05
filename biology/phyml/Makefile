@@ -2,31 +2,59 @@
 # $FreeBSD$
 
 PORTNAME=	phyml
-PORTVERSION=	20121109
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.2.0
+PORTEPOCH=	1
 CATEGORIES=	biology
-MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	${PORTNAME}-20120412
-DIST_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTVERSION}.patch
-PATCH_DIST_STRIP=	-p4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, fast, and accurate algorithm to estimate large phylogenies
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-PATCH_WRKSRC=	${WRKSRC}/src
+USE_GITHUB=	yes
+GH_ACCOUNT=	stephaneguindon
 
-USES=		autoreconf
+USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-beagle
 
-PLIST_FILES=	bin/phyml
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/phyml${BIN_SUFFIX}
+
+OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_RADIO=		MPI
+OPTIONS_RADIO_MPI=	MPICH2 OPENMPI
+
+MPICH2_LIB_DEPENDS=	libmpich.so:${PORTSDIR}/net/mpich2
+MPICH2_MAKE_ARGS=	CC="${LOCALBASE}/bin/mpicc"
+OPENMPI_LIB_DEPENDS=	libmpi.so:${PORTSDIR}/net/openmpi
+OPENMPI_MAKE_ARGS=	CC="${LOCALBASE}/mpi/openmpi/bin/mpicc"
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMPICH2} || ${PORT_OPTIONS:MOPENMPI}
+CONFIGURE_ARGS+=	--enable-mpi
+BIN_SUFFIX=		-mpi
+.else
+CONFIGURE_ARGS+=	--disable-mpi
+BIN_SUFFIX=		# none
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/^AC_INIT/s|,esyscmd.*,|,[${PORTVERSION}],| ; \
-		 s|-O2 -msse|$${CFLAGS}|' ${WRKSRC}/configure.ac
+		's|-O2 .* $${ARCH_flag}|$${CFLAGS}|' ${WRKSRC}/configure.ac
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.pdf \
+		${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

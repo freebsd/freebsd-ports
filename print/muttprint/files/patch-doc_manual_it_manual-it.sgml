@@ -1,0 +1,11 @@
+--- doc/manual/it/manual-it.sgml.orig	2005-05-16 14:38:51.000000000 +0200
++++ doc/manual/it/manual-it.sgml	2016-02-20 09:33:23.732880000 +0100
+@@ -1079,7 +1079,7 @@
+             <row>
+               <entry>ISO-8859-4</entry>
+               <entry><literal>latin4</literal></entry>
+-              <entry>Lingue Europa sud-orientale ed altre lingue/entry>
++              <entry>Lingue Europa sud-orientale ed altre lingue</entry>
+             </row>
+             <row>
+               <entry>ISO-8859-9</entry>

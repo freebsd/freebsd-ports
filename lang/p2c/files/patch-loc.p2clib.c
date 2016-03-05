@@ -1,4 +1,4 @@
---- loc.p2clib.c.orig
+--- loc.p2clib.c.orig	1993-12-08 05:36:53 UTC
 +++ loc.p2clib.c
 @@ -4,3 +4,42 @@
   * the symbol LOCAL_INIT when you compile p2clib.c.

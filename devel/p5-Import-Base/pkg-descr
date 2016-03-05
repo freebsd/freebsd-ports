@@ -1,0 +1,6 @@
+This module makes it easier to build and manage a base set of imports. Rather
+than importing a dozen modules in each of your project's modules, you simply
+import one module and get all the other modules you want. This reduces your
+module boilerplate from 12 lines to 1.
+
+WWW: https://metacpan.org/pod/Import::Base

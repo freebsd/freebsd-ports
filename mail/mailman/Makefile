@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.20
-PORTREVISION=	2
+DISTVERSION=	2.1.21
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
 		https://launchpad.net/mailman/${DISTVERSION:R}/${DISTVERSION}/+download/
+PATCH_SITES=	LOCAL/mandree
 DIST_SUBDIR=	mailman
 
 PATCH_DIST_STRIP=	-p1
@@ -109,9 +110,13 @@ MAIL_GID?=	_smtpd
 .endif
 
 .if ${PORT_OPTIONS:MHTDIG}
-PATCH_SITES+=	http://www.msapiro.net/mm/
-PATCHFILES+=	index_htdig.patch.2.1.20
 PKGNAMESUFFIX+=	-with-htdig
+# how to create PATCHFILES:
+#X fetch http://bazaar.launchpad.net/~msapiro/mailman/htdig/tarball/1632?start_revid=1632
+#X unpack this tarball, and the original distfile
+#X diff -NEur original-unpack bazaar-unpack | xz --best -c >msapiro-htdig-1632.patch.xz
+#X upload the latter with mode 0644 or similar to freefall's public_distfiles/ directory
+PATCHFILES+=	msapiro-htdig-1632.patch.xz
 RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 PLIST_SUB+=	SUB_HTDIG=""
 .else

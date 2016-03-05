@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	1.96b
+PORTVERSION=	2.03b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
 
@@ -12,46 +12,64 @@ COMMENT=	Fast instrumented fuzzer
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-USES=		compiler gmake tar:tgz
+USES=	compiler gmake tar:tgz
 
-OPTIONS_DEFINE=		DEBUG DOCS MINIMIZE_CORPUS PLOT_SUPPORT TEST_INSTRUMENTATION
+OPTIONS_DEFINE=		DEBUG DOCS MINIMIZE_CORPUS LLVM TEST_INSTRUMENTATION
 MINIMIZE_CORPUS_DESC=	Install afl-cmin. Adds bash dependency
-PLOT_SUPPORT_DESC=	Support progress plotting. Adds Gnuplot dependency
 TEST_INSTRUMENTATION_DESC=	Execute tests (expected to fail in jails)
-OPTIONS_DEFAULT=		DOCS MINIMIZE_CORPUS PLOT_SUPPORT
+LLVM_DESC=	LLVM-based instrumentation (broken on 9.x)
+OPTIONS_DEFAULT=	DOCS LLVM MINIMIZE_CORPUS
 
 OPTIONS_SUB=	yes
 
-PORTSCOUT=	ignore:1
-
-ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Uses binary instrumentation
 
-.include <bsd.port.pre.mk>
+LLVM_BUILD_DEPENDS=	clang37:${PORTSDIR}/devel/llvm37
+LLVM_RUN_DEPENDS=	clang37:${PORTSDIR}/devel/llvm37
+MINIMIZE_CORPUS_RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-.if (${COMPILER_TYPE} == "clang" && ${ARCH} == "i386")
-# Clang i386 emits .cfi_sections which base as(1) doesn't understand
-BUILD_DEPENDS +=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-RUN_DEPENDS +=		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000013
+# Broken on FreeBSD 9
+PLIST_SUB+=	LLVM_SUB="@comment "
+.else
+PLIST_SUB+=	LLVM_SUB=""
 .endif
 
-MINIMIZE_CORPUS_RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
-PLOT_SUPORT_RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+.if ${ARCH} == "i386"
+# Clang i386 emits .cfi_sections which base as(1) doesn't understand
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+.endif
 
-post-patch:
-.if ! ${PORT_OPTIONS:MTEST_INSTRUMENTATION}
+MAKE_ARGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+
+post-patch-TEST_INSTRUMENTATION-off:
 # afl needs shmget() which usually isn't available in jails. Disabling
 # the instrumentation tests makes sure building packages in jails works
 # by default anyway.
 	${REINPLACE_CMD} -e 's@^\(all.*\) test_build@\1@' ${WRKSRC}/Makefile
-.endif
-	${REINPLACE_CMD} -E -e 's@ -O3@@; s@ -g@@' \
-		-e 's@install -m 755@${INSTALL_PROGRAM}@' \
-		-e 's@ afl-(cmin|plot|whatsup) @ @g' \
-		${WRKSRC}/Makefile
-.if (${COMPILER_TYPE} == "clang" && ${ARCH} == "i386")
+	${REINPLACE_CMD} -e 's@^\(all.*\) test_build@\1@' ${WRKSRC}/llvm_mode/Makefile
+
+post-patch:
+.if ${ARCH} == "i386"
 	${REINPLACE_CMD} -e 's@\(  as_params\[0\] = afl_as ? afl_as : \)\(.*\)@\1(u8*)"${LOCALBASE}/bin/as";@' \
 		${WRKSRC}/afl-as.c
+.endif
+
+.if ! ${OSVERSION} < 1000013
+# Broken on FreeBSD 9
+post-build-LLVM-on:
+	@(cd ${WRKSRC}/llvm_mode; ${SETENV} \
+		CC=clang37 \
+		CXX=clang++37 \
+		LLVM_CONFIG=llvm-config37 \
+		CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		${GMAKE})
 .endif
 
 post-install:
@@ -64,4 +82,4 @@ post-install:
 post-install-MINIMIZE_CORPUS-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/afl-cmin ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

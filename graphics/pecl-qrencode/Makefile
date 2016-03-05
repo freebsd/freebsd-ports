@@ -16,6 +16,7 @@ LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USES=	tar:bzip2
+IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--with-qrencode=${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}

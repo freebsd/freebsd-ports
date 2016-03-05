@@ -379,13 +379,13 @@ man/man8/named-compilezone.8.gz
 man/man8/named-journalprint.8.gz
 man/man8/named.8.gz
 man/man8/nsec3hash.8.gz
-man/man8/tsig-keygen.8.gz
 %%NATIVE_PKCS11%%man/man8/pkcs11-destroy.8.gz
 %%NATIVE_PKCS11%%man/man8/pkcs11-keygen.8.gz
 %%NATIVE_PKCS11%%man/man8/pkcs11-list.8.gz
 %%NATIVE_PKCS11%%man/man8/pkcs11-tokens.8.gz
 man/man8/rndc-confgen.8.gz
 man/man8/rndc.8.gz
+man/man8/tsig-keygen.8.gz
 sbin/arpaname
 sbin/ddns-confgen
 %%PYTHON%%sbin/dnssec-checkds

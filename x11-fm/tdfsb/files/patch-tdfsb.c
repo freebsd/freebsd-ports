@@ -1,6 +1,6 @@
---- ./tdfsb.c.orig	2007-06-22 14:43:02.000000000 +0200
-+++ ./tdfsb.c	2013-05-03 22:58:48.944863278 +0200
-@@ -2795,7 +2795,7 @@
+--- tdfsb.c.orig	2007-06-22 12:43:02 UTC
++++ tdfsb.c
+@@ -2795,7 +2795,7 @@ int keyboard (unsigned char key)
                              {
                                  strcpy(TDFSB_CURRENTPATH,temp_trunc);        
                                  TDFSB_FUNC_IDLE=nullDisplay; TDFSB_FUNC_DISP=noDisplay; 

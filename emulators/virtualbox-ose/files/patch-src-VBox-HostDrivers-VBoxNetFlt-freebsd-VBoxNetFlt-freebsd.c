@@ -3,8 +3,8 @@ Add VLAN trunking support to vboxnetflt
 See:		http://lists.freebsd.org/pipermail/freebsd-emulation/2012-April/009698.html
 See:		http://lists.freebsd.org/pipermail/freebsd-emulation/2013-May/010605.html
 Submitted by:	Landon J Fuller <landonf at plausible.coop>
---- ./src/VBox/HostDrivers/VBoxNetFlt/freebsd/VBoxNetFlt-freebsd.c.orig	2013-04-12 06:38:11.000000000 -0400
-+++ ./src/VBox/HostDrivers/VBoxNetFlt/freebsd/VBoxNetFlt-freebsd.c	2013-05-25 20:14:52.152180452 -0400
+--- src/VBox/HostDrivers/VBoxNetFlt/freebsd/VBoxNetFlt-freebsd.c.orig	2016-01-19 19:18:38 UTC
++++ src/VBox/HostDrivers/VBoxNetFlt/freebsd/VBoxNetFlt-freebsd.c
 @@ -51,6 +51,7 @@
  #include <net/if_dl.h>
  #include <net/if_types.h>
@@ -13,7 +13,31 @@ Submitted by:	Landon J Fuller <landonf at plausible.coop>
  
  #include <netgraph/ng_message.h>
  #include <netgraph/netgraph.h>
-@@ -427,6 +428,8 @@
+@@ -369,7 +370,11 @@ static int ng_vboxnetflt_rcvdata(hook_p 
+         mtx_lock_spin(&pThis->u.s.inq.ifq_mtx);
+         _IF_ENQUEUE(&pThis->u.s.inq, m);
+         mtx_unlock_spin(&pThis->u.s.inq.ifq_mtx);
++#if __FreeBSD_version >= 1100100
++        taskqueue_enqueue(taskqueue_fast, &pThis->u.s.tskin);
++#else
+         taskqueue_enqueue_fast(taskqueue_fast, &pThis->u.s.tskin);
++#endif
+     }
+     /*
+      * Handle mbufs on the outgoing hook, frames going to the interface
+@@ -387,7 +392,11 @@ static int ng_vboxnetflt_rcvdata(hook_p 
+         mtx_lock_spin(&pThis->u.s.outq.ifq_mtx);
+         _IF_ENQUEUE(&pThis->u.s.outq, m);
+         mtx_unlock_spin(&pThis->u.s.outq.ifq_mtx);
++#if __FreeBSD_version >= 1100100
++        taskqueue_enqueue(taskqueue_fast, &pThis->u.s.tskout);
++#else
+         taskqueue_enqueue_fast(taskqueue_fast, &pThis->u.s.tskout);
++#endif
+     }
+     else
+     {
+@@ -427,6 +436,8 @@ static void vboxNetFltFreeBSDinput(void 
      struct ifnet *ifp = pThis->u.s.ifp;
      unsigned int cSegs = 0;
      bool fDropIt = false, fActive;
@@ -22,7 +46,7 @@ Submitted by:	Landon J Fuller <landonf at plausible.coop>
      PINTNETSG pSG;
  
      VBOXCURVNET_SET(ifp->if_vnet);
-@@ -439,6 +442,19 @@
+@@ -439,6 +450,19 @@ static void vboxNetFltFreeBSDinput(void 
          if (m == NULL)
              break;
  
@@ -42,7 +66,7 @@ Submitted by:	Landon J Fuller <landonf at plausible.coop>
          for (m0 = m; m0 != NULL; m0 = m0->m_next)
              if (m0->m_len > 0)
                  cSegs++;
-@@ -453,6 +469,27 @@
+@@ -453,6 +477,27 @@ static void vboxNetFltFreeBSDinput(void 
          vboxNetFltFreeBSDMBufToSG(pThis, m, pSG, cSegs, 0);
          fDropIt = pThis->pSwitchPort->pfnRecv(pThis->pSwitchPort, NULL /* pvIf */, pSG, INTNETTRUNKDIR_WIRE);
          RTMemTmpFree(pSG);

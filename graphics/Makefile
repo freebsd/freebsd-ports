@@ -172,6 +172,7 @@
     SUBDIR += exiftran
     SUBDIR += exiv2
     SUBDIR += exrtools
+    SUBDIR += farbfeld
     SUBDIR += feh
     SUBDIR += ffff
     SUBDIR += fig2sxd
@@ -342,6 +343,7 @@
     SUBDIR += hs-svgcairo
     SUBDIR += hsetroot
     SUBDIR += hugin
+    SUBDIR += hugin-2016
     SUBDIR += hugin-devel
     SUBDIR += icat
     SUBDIR += icc-profiles-basiccolor
@@ -738,7 +740,6 @@
     SUBDIR += partio
     SUBDIR += pdf2svg
     SUBDIR += pear-Horde_Image
-    SUBDIR += pear-IO_SWF
     SUBDIR += pear-Image_3D
     SUBDIR += pear-Image_Barcode
     SUBDIR += pear-Image_Barcode2
@@ -770,6 +771,8 @@
     SUBDIR += php55-gd
     SUBDIR += php56-exif
     SUBDIR += php56-gd
+    SUBDIR += php70-exif
+    SUBDIR += php70-gd
     SUBDIR += phplot
     SUBDIR += picpuz
     SUBDIR += piddle

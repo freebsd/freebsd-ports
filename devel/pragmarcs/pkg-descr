@@ -1,0 +1,23 @@
+PragmAda Reusable Components (PragmARCs) from PragmAda S/W Engineering
+
+Provides basic to high-level reusable components to reduce requirements
+to write new code by 50%.  An non-comprehensive component list:
+
+ * ANSI TTY control      * Assertion handler      * Assignment
+ * Unbounded bags        * Binary searcher        * Binary semaphores
+ * Regex matcher         * Complex numbers        * Date handler
+ * Card deck handler     * Concurrent forwarder   * Genetic algorithm
+ * New getline           * fast string hashing    * Extended num. images
+ * Signed int. images    * Least squares fitting  * Linear eq. solver
+ * Bounded lists         * Unbounded lists        * Extended maths
+ * GCD/LCM Int. functs   * Generic math functs    * Matrix maths
+ * Text menu handler     * Min/Max functions      * Mix case converter
+ * Concurrent monitor    * Postfix calculator     * Protected options
+ * Bounded queues        * Blocking queues        * Quick searcher
+ * Generic Regex         * REM neural network     * Safe pointers
+ * Safe suspension       * Safe semaphores        * Discrete operations
+ * Skip lists            * Generic heap sort      * Generic insert sort
+ * Quick in-place sort   * Generic radix sort     * General stacks
+ * 3-way comparisons     * Random Num. generator  * and more!
+
+WWW: http://pragmada.x10hosting.com/pragmarc.htm

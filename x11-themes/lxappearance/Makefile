@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxappearance
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/lxde/LXAppearance
 
@@ -13,12 +13,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=		gettext-tools gmake pathfix pkgconfig tar:xz
+USES=		gettext-tools gmake localbase pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool
 CONFIGURE_ARGS=	--enable-dbus
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS README
 

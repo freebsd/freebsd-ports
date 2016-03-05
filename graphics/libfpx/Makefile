@@ -3,6 +3,7 @@
 
 PORTNAME=	libfpx
 DISTVERSION=	1.3.1-4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://imagemagick.mirrorcatalogs.com/delegates/	\
 		http://www.imagemagick.org/download/delegates/	\

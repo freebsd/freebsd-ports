@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	chrpath
-PORTVERSION=	0.13
-PORTREVISION=	2
+PORTVERSION=	0.16
 CATEGORIES=	devel sysutils
-MASTER_SITES=	http://ftp.tux.org/pub/X-Windows/ftp.hungry.com/chrpath/
+MASTER_SITES=	DEBIAN_POOL
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to modify DT_RPATH in existing ELF binaries
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

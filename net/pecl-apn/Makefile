@@ -21,6 +21,6 @@ USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--with-apn=${LOCALBASE}
-IGNORE_WITH_PHP=52
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

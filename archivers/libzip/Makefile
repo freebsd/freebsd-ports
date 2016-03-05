@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libzip
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.2
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 

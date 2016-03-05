@@ -10,13 +10,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Build tool alternative to make
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		python:2
+USES=		python:2 shebangfix
+SHEBANG_FILES=	script/scons
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
-PLIST_SUB+=	SCONS_VER=${PORTVERSION}
+PLIST_SUB=	SCONS_VER=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} \

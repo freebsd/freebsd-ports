@@ -1,5 +1,5 @@
 --- src/libjasper/base/jas_icc.c.orig	2007-01-19 22:43:05.000000000 +0100
-+++ src/libjasper/base/jas_icc.c	2013-04-17 22:32:23.000000000 +0200
++++ src/libjasper/base/jas_icc.c	2016-02-20 13:49:45.521860000 +0100
 @@ -373,7 +373,7 @@
  	jas_icctagtab_t *tagtab;
  
@@ -37,7 +37,15 @@
  		goto error;
  	for (i = 0; i < curv->numents; ++i) {
  		if (jas_iccgetuint16(in, &curv->ents[i]))
-@@ -1100,7 +1099,7 @@
+@@ -1011,7 +1010,6 @@
+ 	return 0;
+ 
+ error:
+-	jas_icccurv_destroy(attrval);
+ 	return -1;
+ }
+ 
+@@ -1100,7 +1098,7 @@
  	if (jas_iccgetuint32(in, &txtdesc->uclangcode) ||
  	  jas_iccgetuint32(in, &txtdesc->uclen))
  		goto error;
@@ -46,7 +54,24 @@
  		goto error;
  	if (jas_stream_read(in, txtdesc->ucdata, txtdesc->uclen * 2) !=
  	  JAS_CAST(int, txtdesc->uclen * 2))
-@@ -1292,17 +1291,17 @@
+@@ -1129,7 +1127,6 @@
+ #endif
+ 	return 0;
+ error:
+-	jas_icctxtdesc_destroy(attrval);
+ 	return -1;
+ }
+ 
+@@ -1208,8 +1205,6 @@
+ 		goto error;
+ 	return 0;
+ error:
+-	if (txt->string)
+-		jas_free(txt->string);
+ 	return -1;
+ }
+ 
+@@ -1292,17 +1287,17 @@
  	  jas_iccgetuint16(in, &lut8->numouttabents))
  		goto error;
  	clutsize = jas_iccpowi(lut8->clutlen, lut8->numinchans) * lut8->numoutchans;
@@ -71,7 +96,15 @@
  	  sizeof(jas_iccuint8_t *))))
  		goto error;
  	for (i = 0; i < lut8->numoutchans; ++i)
-@@ -1461,17 +1460,17 @@
+@@ -1330,7 +1325,6 @@
+ 		goto error;
+ 	return 0;
+ error:
+-	jas_icclut8_destroy(attrval);
+ 	return -1;
+ }
+ 
+@@ -1461,17 +1455,17 @@
  	  jas_iccgetuint16(in, &lut16->numouttabents))
  		goto error;
  	clutsize = jas_iccpowi(lut16->clutlen, lut16->numinchans) * lut16->numoutchans;
@@ -96,3 +129,11 @@
  	  sizeof(jas_iccuint16_t *))))
  		goto error;
  	for (i = 0; i < lut16->numoutchans; ++i)
+@@ -1499,7 +1493,6 @@
+ 		goto error;
+ 	return 0;
+ error:
+-	jas_icclut16_destroy(attrval);
+ 	return -1;
+ }
+ 

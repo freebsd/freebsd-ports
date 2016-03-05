@@ -14,13 +14,16 @@
 %%WWWDIR%%/data/osnames.ini
 %%WWWDIR%%/gfx/ajax-loader.gif
 %%WWWDIR%%/gfx/ajaxLoader.gif
-%%WWWDIR%%/gfx/attention.png
-%%WWWDIR%%/gfx/body.png
-%%WWWDIR%%/gfx/bullet_toggle_minus.png
-%%WWWDIR%%/gfx/bullet_toggle_plus.png
+%%WWWDIR%%/gfx/attention.gif
+%%WWWDIR%%/gfx/blank.gif
+%%WWWDIR%%/gfx/body.gif
+%%WWWDIR%%/gfx/bullet_toggle_minus.gif
+%%WWWDIR%%/gfx/bullet_toggle_plus.gif
 %%WWWDIR%%/gfx/close.gif
+%%WWWDIR%%/gfx/down_black.gif
+%%WWWDIR%%/gfx/down_gray.gif
+%%WWWDIR%%/gfx/favicon.gif
 %%WWWDIR%%/gfx/favicon.ico
-%%WWWDIR%%/gfx/favicon.png
 %%WWWDIR%%/gfx/html.gif
 %%WWWDIR%%/gfx/htmlwarn.gif
 %%WWWDIR%%/gfx/images/4MLinux.png
@@ -57,6 +60,7 @@
 %%WWWDIR%%/gfx/images/HPUX.png
 %%WWWDIR%%/gfx/images/Haiku.png
 %%WWWDIR%%/gfx/images/Handy.png
+%%WWWDIR%%/gfx/images/HipServ.png
 %%WWWDIR%%/gfx/images/IPFire.png
 %%WWWDIR%%/gfx/images/KaOS.png
 %%WWWDIR%%/gfx/images/Korora.png
@@ -73,6 +77,7 @@
 %%WWWDIR%%/gfx/images/Netrunner.png
 %%WWWDIR%%/gfx/images/NixOS.png
 %%WWWDIR%%/gfx/images/OpenBSD.png
+%%WWWDIR%%/gfx/images/OpenMamba.png
 %%WWWDIR%%/gfx/images/OpenMandriva.png
 %%WWWDIR%%/gfx/images/Oracle.png
 %%WWWDIR%%/gfx/images/PCLinuxOS.png
@@ -84,6 +89,7 @@
 %%WWWDIR%%/gfx/images/Porteus.png
 %%WWWDIR%%/gfx/images/Puppy.png
 %%WWWDIR%%/gfx/images/QNX.png
+%%WWWDIR%%/gfx/images/QTS.png
 %%WWWDIR%%/gfx/images/Qubes.png
 %%WWWDIR%%/gfx/images/ROSA.png
 %%WWWDIR%%/gfx/images/Raspbian.png
@@ -101,6 +107,7 @@
 %%WWWDIR%%/gfx/images/Slackware.png
 %%WWWDIR%%/gfx/images/Slax.png
 %%WWWDIR%%/gfx/images/SliTaz.png
+%%WWWDIR%%/gfx/images/Solus.png
 %%WWWDIR%%/gfx/images/SolusOS.png
 %%WWWDIR%%/gfx/images/SolydXK.png
 %%WWWDIR%%/gfx/images/StartOS.png
@@ -132,13 +139,15 @@
 %%WWWDIR%%/gfx/images/openSUSE.png
 %%WWWDIR%%/gfx/images/pfSense.png
 %%WWWDIR%%/gfx/images/unknown.png
-%%WWWDIR%%/gfx/logo_48.png
-%%WWWDIR%%/gfx/next.png
-%%WWWDIR%%/gfx/prev.png
-%%WWWDIR%%/gfx/reload.png
-%%WWWDIR%%/gfx/sort_asc.png
-%%WWWDIR%%/gfx/sort_both.png
-%%WWWDIR%%/gfx/sort_desc.png
+%%WWWDIR%%/gfx/logo_32.gif
+%%WWWDIR%%/gfx/next.gif
+%%WWWDIR%%/gfx/prev.gif
+%%WWWDIR%%/gfx/reload.gif
+%%WWWDIR%%/gfx/right_black.gif
+%%WWWDIR%%/gfx/right_gray.gif
+%%WWWDIR%%/gfx/sort_asc.gif
+%%WWWDIR%%/gfx/sort_both.gif
+%%WWWDIR%%/gfx/sort_desc.gif
 %%WWWDIR%%/gfx/treeTable/blank.gif
 %%WWWDIR%%/gfx/treeTable/tv-collapsable-last.gif
 %%WWWDIR%%/gfx/treeTable/tv-collapsable.gif
@@ -150,7 +159,7 @@
 %%WWWDIR%%/includes/autoloader.inc.php
 %%WWWDIR%%/includes/class.CommonFunctions.inc.php
 %%WWWDIR%%/includes/class.Parser.inc.php
-%%WWWDIR%%/includes/error/class.Error.inc.php
+%%WWWDIR%%/includes/error/class.PSI_Error.inc.php
 %%WWWDIR%%/includes/interface/class.PSI_Interface_OS.inc.php
 %%WWWDIR%%/includes/interface/class.PSI_Interface_Output.inc.php
 %%WWWDIR%%/includes/interface/class.PSI_Interface_Plugin.inc.php
@@ -162,6 +171,7 @@
 %%WWWDIR%%/includes/mb/class.freeipmi.inc.php
 %%WWWDIR%%/includes/mb/class.hddtemp.inc.php
 %%WWWDIR%%/includes/mb/class.healthd.inc.php
+%%WWWDIR%%/includes/mb/class.hwmon.inc.php
 %%WWWDIR%%/includes/mb/class.hwsensors.inc.php
 %%WWWDIR%%/includes/mb/class.ipmi.inc.php
 %%WWWDIR%%/includes/mb/class.ipmiutil.inc.php
@@ -171,7 +181,9 @@
 %%WWWDIR%%/includes/mb/class.mbmon.inc.php
 %%WWWDIR%%/includes/mb/class.ohm.inc.php
 %%WWWDIR%%/includes/mb/class.pitemp.inc.php
+%%WWWDIR%%/includes/mb/class.qtssnmp.inc.php
 %%WWWDIR%%/includes/mb/class.sensors.inc.php
+%%WWWDIR%%/includes/mb/class.speedfan.inc.php
 %%WWWDIR%%/includes/mb/class.thermalzone.inc.php
 %%WWWDIR%%/includes/os/class.AIX.inc.php
 %%WWWDIR%%/includes/os/class.Android.inc.php
@@ -208,6 +220,7 @@
 %%WWWDIR%%/includes/ups/class.nut.inc.php
 %%WWWDIR%%/includes/ups/class.pmset.inc.php
 %%WWWDIR%%/includes/ups/class.powersoftplus.inc.php
+%%WWWDIR%%/includes/ups/class.snmpups.inc.php
 %%WWWDIR%%/includes/ups/class.ups.inc.php
 %%WWWDIR%%/includes/xml/class.SimpleXMLExtended.inc.php
 %%WWWDIR%%/includes/xml/class.XML.inc.php
@@ -217,6 +230,7 @@
 %%WWWDIR%%/js/jQuery/README_bootstrap
 %%WWWDIR%%/js/jQuery/jquery-1.js
 %%WWWDIR%%/js/jQuery/jquery.dataTables.js
+%%WWWDIR%%/js/jQuery/jquery.ifixpng.js
 %%WWWDIR%%/js/jQuery/jquery.jgrowl.js
 %%WWWDIR%%/js/jQuery/jquery.js
 %%WWWDIR%%/js/jQuery/jquery.nyroModal.js
@@ -229,8 +243,8 @@
 %%WWWDIR%%/js/vendor/bootstrap.min.js
 %%WWWDIR%%/js/vendor/console-shim.js
 %%WWWDIR%%/js/vendor/html5shiv-printshiv.js
+%%WWWDIR%%/js/vendor/respond.js
 %%WWWDIR%%/js/vendor/sorttable.js
-%%WWWDIR%%/js/vendor/sorttable_org.js
 %%WWWDIR%%/js/vendor/transparency.js
 %%WWWDIR%%/language/ast.xml
 %%WWWDIR%%/language/bg.xml
@@ -269,9 +283,7 @@
 %%WWWDIR%%/language/tw.xml
 %%WWWDIR%%/language/uk.xml
 %%WWWDIR%%/language/zh.xml
-@unexec if cmp -s %D/%%WWWDIR%%/phpsysinfo.ini.new %D/%%WWWDIR%%/phpsysinfo.ini; then rm -f %D/%%WWWDIR%%/phpsysinfo.ini; fi
-%%WWWDIR%%/phpsysinfo.ini.new
-@exec if [ ! -f %D/%%WWWDIR%%/phpsysinfo.ini ] ; then cp -p %D/%F %B/phpsysinfo.ini; fi
+@sample %%WWWDIR%%/phpsysinfo.ini.new %%WWWDIR%%/phpsysinfo.ini
 %%WWWDIR%%/phpsysinfo.xslt
 %%WWWDIR%%/phpsysinfo3.xsd
 %%WWWDIR%%/plugins/bat/bat_bootstrap.html
@@ -340,8 +352,8 @@
 %%WWWDIR%%/plugins/ps/ps_bootstrap.html
 %%WWWDIR%%/plugins/psstatus/class.psstatus.inc.php
 %%WWWDIR%%/plugins/psstatus/css/psstatus.css
-%%WWWDIR%%/plugins/psstatus/gfx/offline.png
-%%WWWDIR%%/plugins/psstatus/gfx/online.png
+%%WWWDIR%%/plugins/psstatus/gfx/offline.gif
+%%WWWDIR%%/plugins/psstatus/gfx/online.gif
 %%WWWDIR%%/plugins/psstatus/js/psstatus.js
 %%WWWDIR%%/plugins/psstatus/js/psstatus_bootstrap.js
 %%WWWDIR%%/plugins/psstatus/lang/cz.xml
@@ -438,6 +450,7 @@
 %%WWWDIR%%/sample/distrotest/Debian/8-20140106-netinstall.txt
 %%WWWDIR%%/sample/distrotest/Debian/8-20140106.txt
 %%WWWDIR%%/sample/distrotest/Deepin/2013.txt
+%%WWWDIR%%/sample/distrotest/Eisfair/1-2.6.5.txt
 %%WWWDIR%%/sample/distrotest/Eisfair/2-1.8.1.txt
 %%WWWDIR%%/sample/distrotest/Fedora/20-lsb.txt
 %%WWWDIR%%/sample/distrotest/Fedora/20.txt
@@ -450,6 +463,7 @@
 %%WWWDIR%%/sample/distrotest/Gentoo/2.2.txt
 %%WWWDIR%%/sample/distrotest/Gobo/015.beta2.txt
 %%WWWDIR%%/sample/distrotest/Handy/2.0.txt
+%%WWWDIR%%/sample/distrotest/HipServ/2.6.txt
 %%WWWDIR%%/sample/distrotest/IPFire/2.13.txt
 %%WWWDIR%%/sample/distrotest/KaOS/2014.0301.txt
 %%WWWDIR%%/sample/distrotest/Korora/20.txt
@@ -467,6 +481,7 @@
 %%WWWDIR%%/sample/distrotest/Netrunner/13.06.txt
 %%WWWDIR%%/sample/distrotest/Netrunner/2014.04.txt
 %%WWWDIR%%/sample/distrotest/NixOS/13.10.txt
+%%WWWDIR%%/sample/distrotest/OpenMamba/3.0.1.txt
 %%WWWDIR%%/sample/distrotest/OpenMandriva/2013.0-RC1.txt
 %%WWWDIR%%/sample/distrotest/Oracle/5.10-el.txt
 %%WWWDIR%%/sample/distrotest/Oracle/6.3.txt
@@ -487,6 +502,7 @@
 %%WWWDIR%%/sample/distrotest/Puppy/5.3-wary.txt
 %%WWWDIR%%/sample/distrotest/Puppy/5.3.3-slacko.txt
 %%WWWDIR%%/sample/distrotest/Puppy/528-lucid.txt
+%%WWWDIR%%/sample/distrotest/QTS/3.1.2.txt
 %%WWWDIR%%/sample/distrotest/Qubes/3.0.txt
 %%WWWDIR%%/sample/distrotest/ROSA/2012.0.0-11-LTS.txt
 %%WWWDIR%%/sample/distrotest/ROSA/2012.0.0-6-LTS.txt
@@ -509,6 +525,7 @@
 %%WWWDIR%%/sample/distrotest/Slackware/14.0.txt
 %%WWWDIR%%/sample/distrotest/Slax/7.0.1.txt
 %%WWWDIR%%/sample/distrotest/SliTaz/2014.02.16-cooking.txt
+%%WWWDIR%%/sample/distrotest/Solus/1.0-rc1.txt
 %%WWWDIR%%/sample/distrotest/SolusOS/1.3.txt
 %%WWWDIR%%/sample/distrotest/SolusOS/2-alpha7.txt
 %%WWWDIR%%/sample/distrotest/SolydXK/2014.01-K.txt
@@ -649,6 +666,8 @@
 %%WWWDIR%%/templates/cleansyn.css
 %%WWWDIR%%/templates/cream.css
 %%WWWDIR%%/templates/cream/bg.gif
+%%WWWDIR%%/templates/dark_bootstrap.css
+%%WWWDIR%%/templates/green_bootstrap.css
 %%WWWDIR%%/templates/html/error_config.html
 %%WWWDIR%%/templates/html/index_all.html
 %%WWWDIR%%/templates/html/index_bootstrap.html
@@ -663,6 +682,7 @@
 %%WWWDIR%%/templates/nextgen/nextgen_bg.png
 %%WWWDIR%%/templates/phpsysinfo.css
 %%WWWDIR%%/templates/phpsysinfo_bootstrap.css
+%%WWWDIR%%/templates/phpsysinfo_bootstrap.css.new
 %%WWWDIR%%/templates/plugin/jquery.dataTables.css
 %%WWWDIR%%/templates/plugin/jquery.jgrowl.css
 %%WWWDIR%%/templates/plugin/jquery.treeTable.css
@@ -679,6 +699,8 @@
 %%WWWDIR%%/tools/distrotest.php
 %%WWWDIR%%/tools/lint.bat
 %%WWWDIR%%/tools/phpsysinfo.ini
+%%WWWDIR%%/tools/speedfan/SpeedFanGet_bin.zip
+%%WWWDIR%%/tools/speedfan/SpeedFanGet_src.zip
 %%WWWDIR%%/xml.php
 @owner
 @group

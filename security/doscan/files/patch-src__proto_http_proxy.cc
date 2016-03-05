@@ -1,6 +1,6 @@
---- ./src/proto_http_proxy.cc.orig	2014-07-08 13:39:24.466003083 +0200
-+++ ./src/proto_http_proxy.cc	2014-07-08 13:40:02.286093067 +0200
-@@ -36,6 +36,7 @@
+--- src/proto_http_proxy.cc.orig	2014-10-22 20:12:56 UTC
++++ src/proto_http_proxy.cc
+@@ -37,6 +37,7 @@
  #include <string>
  #include <sys/types.h>
  #include <sys/socket.h>

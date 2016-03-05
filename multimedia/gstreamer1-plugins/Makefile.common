@@ -24,6 +24,7 @@ BAD_GST_ALL_PLUGINS+= \
 		flite \
 		gme \
 		gsm \
+		gtksink \
 		hls \
 		kate \
 		libde265 \
@@ -280,6 +281,10 @@ gst_gme_LIB_DEPENDS=	libgme.so:${PORTSDIR}/audio/libgme
 # gsm
 gst_gsm_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
 
+# gtksink
+gst_gtksink_USE_GNOME=	gtk30
+gst_gtksink_GST_PLUGIN_DIR=ext/gtk
+
 # hls
 gst_hls_LIB_DEPENDS=	libnettle.so:${PORTSDIR}/security/nettle
 gst_hls_PLIST_FILES=	${GST_LIB_DIR}/libgstfragmented.so
@@ -362,7 +367,7 @@ gst_resindvd_BUILD_DEPENDS=	libdvdnav>=4.1.2:${PORTSDIR}/multimedia/libdvdnav
 gst_resindvd_RUN_DEPENDS=	libdvdnav>=4.1.2:${PORTSDIR}/multimedia/libdvdnav
 
 # rtmp xxx
-gst_rtmp_LIB_DEPENDS=	librtmp.so.0:${PORTSDIR}/multimedia/librtmp
+gst_rtmp_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 
 # rsvg
 gst_rsvg_USE_GNOME=	librsvg2

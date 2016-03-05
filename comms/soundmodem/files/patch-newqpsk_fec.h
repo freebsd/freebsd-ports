@@ -1,20 +1,18 @@
---- newqpsk/fec.h.orig	2002-08-09 15:01:52.000000000 -0500
-+++ newqpsk/fec.h	2013-12-14 17:37:25.000000000 -0500
-@@ -13,7 +13,7 @@
+--- newqpsk/fec.h.orig	2015-05-04 17:49:44 UTC
++++ newqpsk/fec.h
+@@ -3,11 +3,15 @@
  
  /* --------------------------------------------------------------------- */
  
--extern inline void init_fec(struct fecstate *f)
-+static inline void init_fec(struct fecstate *f)
- {
- 	switch (f->feclevel) {
- 	case 0:
-@@ -33,7 +33,7 @@
++#if __clang__ > 0
++#define only_inline inline
++#else
+ #if __GNUC__ < 5
+ #define only_inline extern inline
+ #else
+ #define only_inline inline
+ #endif
++#endif
  
- /* --------------------------------------------------------------------- */
- 
--extern inline void init_inlv(struct fecstate *f)
-+static inline void init_inlv(struct fecstate *f)
- {
-         int i;
- 
+ struct fecstate {
+ 	int feclevel;

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ledger
-PORTVERSION=	3.1
+PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	finance
 
@@ -10,7 +10,7 @@ MAINTAINER=	woodycarey@hotmail.com
 COMMENT=	John Wiegley's command line accounting program
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/doc/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${LOCALBASE}/include/utf8.h:${PORTSDIR}/devel/utf8cpp
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USES=		cmake compiler:c++11-lib libedit
 
-CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man \
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man \
 		-DCMAKE_INCLUDE_PATH=${LOCALBASE}/include
 
 .include <bsd.port.mk>

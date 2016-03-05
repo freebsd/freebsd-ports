@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-DISTVERSION=	3.1.10
-PORTREVISION=	2
+DISTVERSION=	3.1.12
+PORTREVISION=	0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -31,5 +31,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completions/zsh/_poudriere \
 	    ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/MANIFESTS
+	${INSTALL_DATA} ${FILESDIR}/MANIFESTS/* ${STAGEDIR}${PREFIX}/share/${PORTNAME}/MANIFESTS/
 
 .include <bsd.port.mk>

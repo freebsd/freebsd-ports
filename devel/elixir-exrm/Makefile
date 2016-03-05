@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	exrm
-DISTVERSION=	1.0.0-rc7
+DISTVERSION=	1.0.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 

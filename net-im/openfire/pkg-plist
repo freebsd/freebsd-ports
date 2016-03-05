@@ -1,24 +1,18 @@
 @owner openfire
 @group openfire
 @mode 0600
+@sample %%ETCDIR%%/keystore.sample
 @sample %%ETCDIR%%/openfire.xml.sample
 @sample %%ETCDIR%%/security.xml.sample
-@sample %%ETCDIR%%/keystore.sample
 @sample %%ETCDIR%%/truststore.sample
 @mode
 %%DATADIR%%/conf
 %%DATADIR%%/embedded-db
-%%DATADIR%%/logs
 %%DATADIR%%/lib/bcpg-jdk15on.jar
 %%DATADIR%%/lib/bcpkix-jdk15on.jar
 %%DATADIR%%/lib/bcprov-jdk15on.jar
-%%DATADIR%%/lib/commons-el.jar
 %%DATADIR%%/lib/hsqldb.jar
-%%DATADIR%%/lib/jasper-compiler.jar
-%%DATADIR%%/lib/jasper-runtime.jar
 %%DATADIR%%/lib/javax.websocket-api.jar
-%%DATADIR%%/lib/jdic.jar
-%%DATADIR%%/lib/jetty-schemas.jar
 %%DATADIR%%/lib/jtds.jar
 %%DATADIR%%/lib/log4j.xml
 %%DATADIR%%/lib/mail.jar
@@ -26,18 +20,23 @@
 %%DATADIR%%/lib/npn-boot.jar
 %%DATADIR%%/lib/openfire.jar
 %%DATADIR%%/lib/postgres.jar
-%%DATADIR%%/lib/servlet-api.jar
 %%DATADIR%%/lib/slf4j-log4j12.jar
 %%DATADIR%%/lib/startup.jar
+%%DATADIR%%/logs
 %%DATADIR%%/plugins/admin/plugin.xml
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/admin.tld
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/classes/openfire_init.xml
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/decorators.xml
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/dwr.xml
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/admin-jsp.jar
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/commons-fileupload.jar
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/commons-io.jar
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/dwr.jar
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/readme.txt
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/versions.txt
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/sitemesh.xml
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/tags/admin/contentBox.tagx
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/tags/admin/infoBox.tagx
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/web.xml
 %%DATADIR%%/plugins/admin/webapp/favicon.ico
 %%DATADIR%%/plugins/admin/webapp/images/add-16x16.gif
@@ -102,6 +101,7 @@
 %%DATADIR%%/plugins/admin/webapp/images/jive-tertnav-top.gif
 %%DATADIR%%/plugins/admin/webapp/images/language_zh_CN.gif
 %%DATADIR%%/plugins/admin/webapp/images/lock.gif
+%%DATADIR%%/plugins/admin/webapp/images/lock_both.gif
 %%DATADIR%%/plugins/admin/webapp/images/login_background.png
 %%DATADIR%%/plugins/admin/webapp/images/login_boxbg.gif
 %%DATADIR%%/plugins/admin/webapp/images/login_header.gif
@@ -293,6 +293,13 @@
 %%DATADIR%%/resources/database/upgrade/21/openfire_postgresql.sql
 %%DATADIR%%/resources/database/upgrade/21/openfire_sqlserver.sql
 %%DATADIR%%/resources/database/upgrade/21/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/22/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/22/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/22/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/22/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/22/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/22/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/22/openfire_sybase.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_db2.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_hsqldb.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_mysql.sql
@@ -337,12 +344,12 @@
 %%DATADIR%%/resources/database/upgrade/9/openfire_sybase.sql
 %%DATADIR%%/resources/nativeAuth/linux-i386/libshaj.so
 %%DATADIR%%/resources/nativeAuth/osx-ppc/libshaj.jnilib
-%%DATADIR%%/resources/nativeAuth/solaris-sparc/libshaj.so
 %%DATADIR%%/resources/nativeAuth/win32-x86/shaj.dll
 %%DATADIR%%/resources/security
 %%DATADIR%%/resources/spank/WEB-INF/web.xml
 %%DATADIR%%/resources/spank/index.html
 %%PLUGINS%%%%DATADIR%%/plugins/broadcast.jar
+%%PLUGINS%%%%DATADIR%%/plugins/callbackOnOffline.jar
 %%PLUGINS%%%%DATADIR%%/plugins/clientControl.jar
 %%PLUGINS%%%%DATADIR%%/plugins/contentFilter.jar
 %%PLUGINS%%%%DATADIR%%/plugins/dbaccess.jar
@@ -352,6 +359,7 @@
 %%PLUGINS%%%%DATADIR%%/plugins/gojara.jar
 %%PLUGINS%%%%DATADIR%%/plugins/hazelcast.jar
 %%PLUGINS%%%%DATADIR%%/plugins/jingleNodes.jar
+%%PLUGINS%%%%DATADIR%%/plugins/jmxweb.jar
 %%PLUGINS%%%%DATADIR%%/plugins/justmarried.jar
 %%PLUGINS%%%%DATADIR%%/plugins/kraken.jar
 %%PLUGINS%%%%DATADIR%%/plugins/loadStats.jar
@@ -359,7 +367,6 @@
 %%PLUGINS%%%%DATADIR%%/plugins/motd.jar
 %%PLUGINS%%%%DATADIR%%/plugins/mucservice.jar
 %%PLUGINS%%%%DATADIR%%/plugins/nodejs.jar
-%%PLUGINS%%%%DATADIR%%/plugins/ofmeet.jar
 %%PLUGINS%%%%DATADIR%%/plugins/packetFilter.jar
 %%PLUGINS%%%%DATADIR%%/plugins/presence.jar
 %%PLUGINS%%%%DATADIR%%/plugins/rayo.jar
@@ -372,52 +379,8 @@
 %%PLUGINS%%%%DATADIR%%/plugins/userCreation.jar
 %%PLUGINS%%%%DATADIR%%/plugins/userImportExport.jar
 %%PLUGINS%%%%DATADIR%%/plugins/userservice.jar
+%%PLUGINS%%%%DATADIR%%/plugins/websocket.jar
 %%PLUGINS%%%%DATADIR%%/plugins/xmldebugger.jar
-@dir %%DATADIR%%/resources/spank/WEB-INF
-@dir %%DATADIR%%/resources/spank
-@dir %%DATADIR%%/resources/nativeAuth/win32-x86
-@dir %%DATADIR%%/resources/nativeAuth/solaris-sparc
-@dir %%DATADIR%%/resources/nativeAuth/osx-ppc
-@dir %%DATADIR%%/resources/nativeAuth/linux-i386
-@dir %%DATADIR%%/resources/nativeAuth
-@dir %%DATADIR%%/resources/database/upgrade/9
-@dir %%DATADIR%%/resources/database/upgrade/8
-@dir %%DATADIR%%/resources/database/upgrade/7
-@dir %%DATADIR%%/resources/database/upgrade/6
-@dir %%DATADIR%%/resources/database/upgrade/5
-@dir %%DATADIR%%/resources/database/upgrade/4
-@dir %%DATADIR%%/resources/database/upgrade/21
-@dir %%DATADIR%%/resources/database/upgrade/20
-@dir %%DATADIR%%/resources/database/upgrade/2
-@dir %%DATADIR%%/resources/database/upgrade/19
-@dir %%DATADIR%%/resources/database/upgrade/18
-@dir %%DATADIR%%/resources/database/upgrade/17
-@dir %%DATADIR%%/resources/database/upgrade/16
-@dir %%DATADIR%%/resources/database/upgrade/15
-@dir %%DATADIR%%/resources/database/upgrade/14
-@dir %%DATADIR%%/resources/database/upgrade/13
-@dir %%DATADIR%%/resources/database/upgrade/12
-@dir %%DATADIR%%/resources/database/upgrade/11
-@dir %%DATADIR%%/resources/database/upgrade/10
-@dir %%DATADIR%%/resources/database/upgrade/1
-@dir %%DATADIR%%/resources/database/upgrade
-@dir %%DATADIR%%/resources/database
-@dir %%DATADIR%%/resources
-@dir %%DATADIR%%/plugins/admin/webapp/style
-@dir %%DATADIR%%/plugins/admin/webapp/setup
-@dir %%DATADIR%%/plugins/admin/webapp/js/tooltips
-@dir %%DATADIR%%/plugins/admin/webapp/js/jscalendar
-@dir %%DATADIR%%/plugins/admin/webapp/js
-@dir %%DATADIR%%/plugins/admin/webapp/images
-@dir %%DATADIR%%/plugins/admin/webapp/WEB-INF/lib
-@dir %%DATADIR%%/plugins/admin/webapp/WEB-INF
-@dir %%DATADIR%%/plugins/admin/webapp
-@dir %%DATADIR%%/plugins/admin
-@dir %%DATADIR%%/plugins
-@dir %%DATADIR%%/lib
-@dir %%DATADIR%%
-@dir %%ETCDIR%%
-@dir %%VARLOG%%
 @dir %%VARDB%%
-@owner
-@group
+@dir %%VARLOG%%
+@dir %%ETCDIR%%

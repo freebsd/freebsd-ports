@@ -1,11 +1,18 @@
---- soundcard/modem.h.orig	2003-01-02 13:53:04.000000000 -0500
-+++ soundcard/modem.h	2013-12-14 17:32:44.000000000 -0500
-@@ -103,7 +103,7 @@
- extern void logprintf(unsigned int level, const char *fmt, ...);
- extern void logerr(unsigned int level, const char *st);
- extern unsigned int log_verblevel;
--extern inline int logcheck(unsigned int vl)
-+static inline int logcheck(unsigned int vl)
- {
- 	return vl <= log_verblevel;
- }
+--- soundcard/modem.h.orig	2015-05-04 17:48:03 UTC
++++ soundcard/modem.h
+@@ -79,11 +79,15 @@ typedef unsigned long long /* deduced */
+ 
+ /* ---------------------------------------------------------------------- */
+ 
++#if __clang__ > 0
++#define only_inline inline
++#else
+ #if __GNUC__ < 5
+ #define only_inline extern inline
+ #else
+ #define only_inline inline
+ #endif
++#endif
+ 
+ struct modemchannel;
+ 

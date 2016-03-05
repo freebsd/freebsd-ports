@@ -1,0 +1,24 @@
+--- Makefile.orig	2015-10-14 16:25:43 UTC
++++ Makefile
+@@ -1,12 +1,14 @@
+-prefix ?= /usr/local
++PREFIX ?= /usr/local
++DESTDIR ?= 
++MANPREFIX ?= $(PREFIX)/share
+ 
+ all: bin/create_yaggo_one_file
+ 	ruby bin/create_yaggo_one_file ./yaggo
+ 
+ install: all
+-	mkdir -p $(prefix)/bin
+-	mkdir -p $(prefix)/share/doc/yaggo
+-	mkdir -p $(prefix)/share/man/man1
+-	cp ./yaggo $(prefix)/bin
+-	cp ./README.md $(prefix)/share/doc/yaggo
+-	./yaggo -m $(prefix)/share/man/man1/yaggo.1
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
++	mkdir -p $(DESTDIR)$(PREFIX)/share/doc/yaggo
++	mkdir -p $(DESTDIR)$(MANPREFIX)/man/man1
++	cp ./yaggo $(DESTDIR)$(PREFIX)/bin
++	cp ./README.md $(DESTDIR)$(PREFIX)/share/doc/yaggo
++	./yaggo -m $(DESTDIR)$(MANPREFIX)/man/man1/yaggo.1

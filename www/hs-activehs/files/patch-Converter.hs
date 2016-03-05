@@ -18,12 +18,13 @@
  
  showBlockSimple :: Language -> String -> String -> Int -> String -> [Block]
  
-@@ -244,13 +244,13 @@ mkImport m d 
+@@ -244,13 +244,14 @@ mkImport m d 
          , HSyn.importSrc = False
          , HSyn.importPkg = Nothing
          , HSyn.importAs = Nothing
 -        , HSyn.importSpecs = Just (True, map (HSyn.IVar . mkName) d)
 +        , HSyn.importSpecs = Just (True, map (HSyn.IVar HSyn.NoNamespace . mkName) d)
++        , HSyn.importSafe = False
          }
  
  mkName :: String -> HSyn.Name
