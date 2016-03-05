@@ -1,0 +1,23 @@
+2016-01-31 lacks snapshots for any BSD system, skip them to use 2015-04-02.
+
+  gmake[2]: Entering directory '.../cargo-0.9.0'
+  /usr/local/bin/python2.7 src/etc/dl-snapshot.py x86_64-unknown-freebsd
+  Traceback (most recent call last):
+    File "src/etc/dl-snapshot.py", line 57, in <module>
+      raise Exception("no snapshot for the triple '%s'" % triple)
+  Exception: no snapshot for the triple 'x86_64-unknown-freebsd'
+
+--- src/snapshots.txt.orig	2016-02-29 19:32:24 UTC
++++ src/snapshots.txt
+@@ -1,11 +1,3 @@
+-2016-01-31
+-  linux-i386 7e2f9c82e1af5aa43ef3ee2692b985a5f2398f0a
+-  linux-x86_64 4c03a3fd2474133c7ad6d8bb5f6af9915ca5292a
+-  macos-i386 4d84d31449a5926f9e7ceb344540d6e5ea530b88
+-  macos-x86_64 f8baef5b0b3e6f9825be1f1709594695ac0f0abc
+-  winnt-i386 8702f7e3c49ef4a4eb9ffed2f1ca94ac288e48ff
+-  winnt-x86_64 a531f9a7399cdcc6aa14a0f070df4ff3851772fa
+-
+ 2015-04-02
+   dragonfly-x86_64 7d330a67ad82701ee65a08a47a51c3b0b26697bc
+   freebsd-x86_64 2e0ade0901864ea67200f990cb289343b08959e7
