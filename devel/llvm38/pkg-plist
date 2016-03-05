@@ -34,7 +34,6 @@ bin/opt38
 %%CLANG%%bin/clang-tblgen38
 %%CLANG%%bin/scan-build38
 %%CLANG%%bin/scan-view38
-%%LLD%%bin/lld38
 %%LLDB%%bin/argdumper38
 %%LLDB%%bin/lldb38
 %%LLDB%%bin/lldb-mi38
@@ -45,6 +44,7 @@ bin/opt38
 %%EXTRAS%%bin/clang-rename38
 %%EXTRAS%%bin/clang-tidy38
 %%EXTRAS%%bin/modularize38
+%%LLD%%bin/lld38
 %%LIT%%bin/lit38
 %%LIT%%llvm38/bin/lit
 %%LIT%%bin/llvm-lit38
