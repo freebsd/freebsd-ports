@@ -4587,7 +4587,6 @@ lang/klogoturtle||2013-07-26|Has expired: Depends on Qt 3.x
 mail/kcheckgmail||2013-07-26|Has expired: Depends on Qt 3.x
 math/digitizer||2013-07-26|Has expired: Depends on Qt 3.x
 math/fung-calc||2013-07-26|Has expired: Depends on Qt 3.x
-math/k3dsurf||2013-07-26|Has expired: Depends on Qt 3.x
 math/koctave||2013-07-26|Has expired: Depends on Qt 3.x
 math/kseg||2013-07-26|Has expired: Depends on Qt 3.x
 math/pgcalc||2013-07-26|Has expired: Depends on Qt 3.x
@@ -8219,3 +8218,4 @@ net/isc-dhcp41-client|net/isc-dhcp43-cliet|2016-03-02|Has expired: isc-dhcp 4.1 
 net/isc-dhcp42-server|net/isc-dhcp43-server|2016-03-02|Has expired: isc-dhcp 4.2 is End of Life
 devel/pear-IO_Bit||2016-03-02|Has expired: Unsupported upstream
 graphics/pear-IO_SWF||2016-03-02|Has expired: Unsupported upstream
+math/k3dsurf|math/mathmod|2016-03-04|K3DSurf was the previous release, based on Qt3, MathMod is the new one, based on Qt5.

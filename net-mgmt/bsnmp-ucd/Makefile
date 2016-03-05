@@ -22,6 +22,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/snmpd.config.sample ${STAGEDIR}${EXAMPLESDIR}
 
 pre-build:
-	${MAKE} -C ${WRKSRC} depend
+	${MAKE_CMD} -C ${WRKSRC} depend
 
 .include <bsd.port.mk>
