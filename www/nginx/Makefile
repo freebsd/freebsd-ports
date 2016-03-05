@@ -964,6 +964,11 @@ post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
 		s!%%PREFIX%%!${PREFIX}!' \
 		${WRKSRC}/conf/nginx.conf
+.if ${PORT_OPTIONS:MHTTP_ACCESSKEY}
+	@${REINPLACE_CMD} \
+		'128s!NGX_OK!NGX_DECLINED!' \
+		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_VERSION}/ngx_http_accesskey_module.c
+.endif
 .if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
 	@${REINPLACE_CMD} \
 		's!%%GSSAPILIBS%%!${GSSAPILIBS}!' \
