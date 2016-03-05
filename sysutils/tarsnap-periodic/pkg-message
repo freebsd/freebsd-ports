@@ -1,0 +1,13 @@
+
+In order to enable periodic tarsnap backups you need
+to add these lines to your /etc/periodic.conf
+
+daily_tarsnap_backup_enable="YES"
+daily_tarsnap_backup_paths="/"
+daily_tarsnap_backup_keep=7
+weekly_tarsnap_backup_enable="YES"
+weekly_tarsnap_backup_paths="/"
+weekly_tarsnap_backup_keep=5
+monthly_tarsnap_backup_enable="YES"
+monthly_tarsnap_backup_paths="/"
+monthly_tarsnap_backup_keep=2
