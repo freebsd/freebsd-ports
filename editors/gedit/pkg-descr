@@ -1,4 +1,4 @@
-gEdit is a Gtk+-2 text editor. Its features include:
+gEdit is a Gtk+ 3 text editor. Its features include:
 
 	* Complete integration with the GNOME Environment, including GnomeMDI
 	* Global Search and Replace
