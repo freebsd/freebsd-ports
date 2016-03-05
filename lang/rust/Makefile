@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap
@@ -35,8 +35,8 @@ CONFLICTS_INSTALL=	rust-nightly
 RUST_SOURCE=	${DISTNAME}-src${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG_${ARCH}}.tar.bz2
 
-RUST_BOOT_SIG_amd64=	2015-08-11-1af31d4-freebsd-x86_64-de1f36592bac0eeb90c049a8421246652c511b9e
-RUST_BOOT_SIG_i386=	2015-08-11-1af31d4-freebsd-i386-3cd4a44fb97b3135be3d1b760bea604a381e85dc
+RUST_BOOT_SIG_amd64=	2015-12-18-3391630-freebsd-x86_64-91724d4e655807a2a2e940ac50992ebeaac16ea9
+RUST_BOOT_SIG_i386=	2015-12-18-3391630-freebsd-i386-7e624c50494402e1feb14c743d659fbd71b448f5
 
 # Rust's libraries are named librustc_${component}-${RUST_VSN_HASH}.so.
 # The hash depends on Rust version and, if the channel is not "stable",
@@ -111,7 +111,7 @@ pre-fetch:
 post-extract:
 	@${MKDIR} ${WRKSRC}/dl
 	${LN} -sf ${DISTDIR}/${RUST_BOOT} ${WRKSRC}/dl
-	(cd ${WRKSRC} && ${FIND} . -type d -exec chmod 0755 {} \;)
+	(cd ${WRKSRC} && ${FIND} . -type d -exec ${CHMOD} 0755 {} \;)
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
