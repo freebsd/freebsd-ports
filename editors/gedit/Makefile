@@ -47,10 +47,19 @@ GLIB_SCHEMAS=	org.gnome.gedit.enums.xml \
 		org.gnome.gedit.plugins.time.enums.xml \
 		org.gnome.gedit.plugins.time.gschema.xml
 
-PLIST_SUB+=	PYVER=${PYTHON_VER:S/.//}
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3500
+PYOEXTENSION=	pyo
+.else
+PYOEXTENSION=	opt-1.pyc
+.endif
+
+PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION} \
+		PYVER=${PYTHON_VER:S/.//}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|=python|=${PYTHON_CMD}|g' \
 		${WRKSRC}/py-compile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
