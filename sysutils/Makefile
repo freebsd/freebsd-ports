@@ -1018,6 +1018,7 @@
     SUBDIR += tai64nfrac
     SUBDIR += tarsnap
     SUBDIR += tarsnap-gui
+    SUBDIR += tarsnap-periodic
     SUBDIR += tartarus
     SUBDIR += tbku
     SUBDIR += tclsyslog
