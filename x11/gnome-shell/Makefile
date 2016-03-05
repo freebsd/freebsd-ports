@@ -30,7 +30,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		gnome-control-center:${PORTSDIR}/sysutils/gnome-control-center \
 		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
-		gkbd-keyboard-display>0:${PORTSDIR}/x11/libgnomekbd
+		gkbd-keyboard-display:${PORTSDIR}/x11/libgnomekbd
 
 PORTSCOUT=	limitw:1,even
 
