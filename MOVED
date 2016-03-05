@@ -8218,3 +8218,4 @@ net/isc-dhcp42-server|net/isc-dhcp43-server|2016-03-02|Has expired: isc-dhcp 4.2
 devel/pear-IO_Bit||2016-03-02|Has expired: Unsupported upstream
 graphics/pear-IO_SWF||2016-03-02|Has expired: Unsupported upstream
 math/k3dsurf|math/mathmod|2016-03-04|K3DSurf was the previous release, based on Qt3, MathMod is the new one, based on Qt5.
+databases/mysql-workbench52||2016-03-05|Has expired: Broken for more than 6 months
