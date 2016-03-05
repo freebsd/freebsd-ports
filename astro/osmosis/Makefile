@@ -6,12 +6,13 @@ PORTVERSION=	0.43.1
 CATEGORIES=	astro java
 MASTER_SITES=	http://bretth.dev.openstreetmap.org/osmosis-build/ \
 		http://mirror.amdmi3.ru/distfiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Command line Java app for processing OpenStreetMap data
 
+USES=		tar:tgz
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}
 
 USE_JAVA=	yes
