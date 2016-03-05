@@ -163,6 +163,7 @@
     SUBDIR += suxus
     SUBDIR += symbola
     SUBDIR += terminus-font
+    SUBDIR += terminus-ttf
     SUBDIR += tkfont
     SUBDIR += tlwg-ttf
     SUBDIR += tmu
