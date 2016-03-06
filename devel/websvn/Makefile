@@ -3,6 +3,7 @@
 
 PORTNAME=	websvn
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://websvn.tigris.org/files/documents/1380/49056/
 
