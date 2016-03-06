@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smart_proxy_dynflow
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.7
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
