@@ -10,12 +10,12 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Adds a CodeRay syntax highlighting filter to Haml
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-coderay>=0:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-haml>=0:${PORTSDIR}/www/rubygem-haml
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
