@@ -1,0 +1,6 @@
+With this gem it is possible to define form or wizard and display it to the user
+using one of the defined backends. The form definition is independent on the
+chosen backend so it can be changed freely. Currently only command line
+(highline) backend is implemented, YAD or web based backend is planed.
+
+WWW: https://github.com/theforeman/kafo_wizards
