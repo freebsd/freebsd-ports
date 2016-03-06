@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160306:
+  AFFECTS: net-mgmt/yaf
+  AUTHOR: pi@FreeBSD.org
+
+  YAF is updated to version 2.8.1 with many new OPTIONS. Please use
+  the default options to get same behavior as previous version.
+
 20160302:
   AFFECTS: audio/alsa-utils, www/firefox, www/firefox-esr, www/seamonkey
   AUTHOR: jbeich@FreeBSD.org
