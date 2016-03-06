@@ -1,18 +1,20 @@
-Fityk is a program for nonlinear fitting of analytical functions (especially 
-peak-shaped) to data (usually experimental data). There are also people using
-it only to display data or to remove baseline from data.
+Fityk is a program for nonlinear fitting of analytical functions
+(especially peak-shaped) to data (usually experimental data). There are
+also people using it only to display data or to remove baseline from
+data.
 
 It is reported to be used in crystallography, chromatography,
 photoluminescence, infrared and Raman spectroscopy and other fields.
 
-Fityk knows about common peak-shaped functions (Gaussian, Lorentzian, Voigt,
-Pearson VII, bifurcated Gaussian, EMG, Doniach-Sunjic, etc.) and polynomials.
-It also supports user-defined functions.
+Fityk knows about common peak-shaped functions (Gaussian, Lorentzian,
+Voigt, Pearson VII, bifurcated Gaussian, EMG, Doniach-Sunjic, etc.) and
+polynomials. It also supports user-defined functions.
 
-Fityk offers intuitive graphical interface (and also command line interface),
-variouse optimization methods (standard Marquardt least-square algorithm,
-Genetic Algorithms, Nelder-Mead simplex), equality constraints, modelling
-error of x coordinate of points (eg. zero-shift of instrument), handling
-series of datasets, automation of common tasks with scripts, and more.
+Fityk offers intuitive graphical interface (and also command line
+interface), variouse optimization methods (standard Marquardt
+least-square algorithm, Genetic Algorithms, Nelder-Mead simplex),
+equality constraints, modelling error of x coordinate of points (eg.
+zero-shift of instrument), handling series of datasets, automation of
+common tasks with scripts, and more.
 
-WWW: http://www.unipress.waw.pl/fityk/
+WWW: http://fityk.nieto.pl/
