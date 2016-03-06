@@ -3,6 +3,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 
@@ -27,7 +28,6 @@ CONFIGURE_ARGS=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		--enable-python
 CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig3.0"
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-lopencv_contrib
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
 USE_WX=		3.0+
@@ -76,6 +76,8 @@ post-extract:
 		${WRKSRC}/src/modules/pointcloud/pointcloud_viewer/Makefile.am \
 		${WRKSRC}/src/modules/tin/tin_viewer/Makefile.am \
 		${WRKSRC}/src/modules/statistics/statistics_kriging/Makefile.am
+	@${REINPLACE_CMD} -e 's|/usr/include/opencv|${LOCALBASE}/include/opencv ${LOCALBASE}/include|g' \
+		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile.am
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2832)" + "\\n"|' \
@@ -92,6 +94,8 @@ post-configure:
 		${WRKSRC}/src/saga_core/saga_gui/Makefile
 	@${REINPLACE_CMD} -e 's|mv saga_dic.txt saga_prj.dic|mv ${STAGEDIR}${DATADIR}/saga_dic.txt ${STAGEDIR}${DATADIR}/saga_prj.dic|g' \
 		${WRKSRC}/src/saga_core/saga_gui/Makefile
+	@${REINPLACE_CMD} -e 's|^LDFLAGS = .*|& -lopencv_contrib|' \
+		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
