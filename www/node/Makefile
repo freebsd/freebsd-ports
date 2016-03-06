@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		compiler execinfo gmake python
+USES=		compiler execinfo gmake python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
