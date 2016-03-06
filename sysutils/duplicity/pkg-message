@@ -12,3 +12,8 @@
 * Please refer to upstream duplicity documentation for information on   *
 * the use of these backends.                                            *
 *************************************************************************
+*                                                                       *
+* For gnupg 2 insert "pinentry-mode loopback" into ~/.gnupg/gpg.conf    *
+* and "allow-loopback-pinentry" into ~/.gnupg/gpg-agent.conf            *
+*                                                                       *
+*************************************************************************
