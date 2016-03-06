@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	science
-MASTER_SITES=	https://code.zmaw.de/attachments/download/11392/ \
+MASTER_SITES=	https://code.zmaw.de/attachments/download/12070/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
