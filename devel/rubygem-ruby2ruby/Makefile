@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby2ruby
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,13 +15,13 @@ RUN_DEPENDS=	rubygem-ruby_parser>=3.1:${PORTSDIR}/devel/rubygem-ruby_parser \
 		rubygem-sexp_processor>=4.0:${PORTSDIR}/devel/rubygem-sexp_processor
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 USES=		shebangfix
-SHEBANG_FILES=	bin/r2r_show
 
 PLIST_FILES=	bin/r2r_show
+
+SHEBANG_FILES=	bin/r2r_show
 
 .include <bsd.port.mk>
