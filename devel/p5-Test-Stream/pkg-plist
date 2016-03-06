@@ -50,6 +50,7 @@
 %%SITE_PERL%%/Test/Stream/Manual.pod
 %%SITE_PERL%%/Test/Stream/Manual/Components.pod
 %%SITE_PERL%%/Test/Stream/Manual/FromTestBuilder.pod
+%%SITE_PERL%%/Test/Stream/Manual/ToTest2.pod
 %%SITE_PERL%%/Test/Stream/Manual/Tooling.pod
 %%SITE_PERL%%/Test/Stream/Mock.pm
 %%SITE_PERL%%/Test/Stream/Plugin.pm
@@ -143,6 +144,7 @@
 %%PERL5_MAN3%%/Test::Stream::Manual.3.gz
 %%PERL5_MAN3%%/Test::Stream::Manual::Components.3.gz
 %%PERL5_MAN3%%/Test::Stream::Manual::FromTestBuilder.3.gz
+%%PERL5_MAN3%%/Test::Stream::Manual::ToTest2.3.gz
 %%PERL5_MAN3%%/Test::Stream::Manual::Tooling.3.gz
 %%PERL5_MAN3%%/Test::Stream::Mock.3.gz
 %%PERL5_MAN3%%/Test::Stream::Plugin.3.gz
