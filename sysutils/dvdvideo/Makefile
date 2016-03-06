@@ -8,18 +8,15 @@ CATEGORIES=	sysutils multimedia
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Video DVD backup tool
 
 LICENSE=	GPLv3
 
-USES=	python:3
-USE_PYTHON=	distutils
-PYDISTUTILS_EGGINFO=	python_dvdvideo-0.${PORTVERSION}-py${PYTHON_VER}.egg-info
-
-PLIST_SUB+=	PYTHON_SUFFIX=${PYTHON_SUFFIX}
+NO_ARCH=	yes
+USES=		python:3 tar:tgz
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	DVDCSS
 .if !defined(PACKAGE_BUILDING)
