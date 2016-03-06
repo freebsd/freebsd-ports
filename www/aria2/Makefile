@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aria2
-PORTVERSION=	1.19.3
+PORTVERSION=	1.20.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/release-${PORTVERSION}/
 
