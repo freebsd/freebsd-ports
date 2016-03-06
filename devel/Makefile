@@ -4255,6 +4255,7 @@
     SUBDIR += py-pygit2
     SUBDIR += py-pygithub
     SUBDIR += py-pygpx
+    SUBDIR += py-pyinotify
     SUBDIR += py-pyinstaller
     SUBDIR += py-pykde4
     SUBDIR += py-pykdeuic4
