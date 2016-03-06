@@ -10,12 +10,12 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Twitter client API in pure Ruby
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-json>=1.1.1:${PORTSDIR}/devel/rubygem-json \
 		rubygem-oauth>=0.4.1:${PORTSDIR}/net/rubygem-oauth
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
