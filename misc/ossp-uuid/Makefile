@@ -3,7 +3,7 @@
 
 PORTNAME=	uuid
 PORTVERSION=	1.6.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	misc devel
 MASTER_SITES=	OSSP/lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
@@ -19,11 +19,14 @@ CONFIGURE_ARGS=	--with-cxx \
 
 .if defined(SLAVEPORT) && ${SLAVEPORT}=="perl"
 PKGNAMEPREFIX=	p5-OSSP-
-.else
-CONFLICTS=	e2fsprogs-libuuid-[0-9]*
 .endif
 
 regression-test: test
+
+pre-patch:
+### Fixes lib conflicts with misc/e2fsprogs-libuuid ###
+	${REINPLACE_CMD} 's/libuuid.la/libossp-uuid.la/ ; s/libuuid++.la/libossp-uuid++.la/' \
+		${WRKDIR}/${DISTNAME}/Makefile.in
 
 test: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
