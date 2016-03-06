@@ -3,6 +3,7 @@
 
 PORTNAME=	warbler
 PORTVERSION=	1.4.9
+PORTREVISION=	1
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 
