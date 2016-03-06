@@ -160,7 +160,7 @@
     SUBDIR += gap
     SUBDIR += gdcalc
     SUBDIR += geg
-    SUBDIR += geogebra-i18n
+    SUBDIR += geogebra
     SUBDIR += geonext
     SUBDIR += gexpr
     SUBDIR += ggobi
