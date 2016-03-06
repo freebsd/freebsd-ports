@@ -1,5 +1,6 @@
+# Created by: jpaetzel@FreeBSD.org
 # $FreeBSD$
-#
+
 PORTNAME=	catfish
 PORTVERSION=	1.4.1
 CATEGORIES=	sysutils
@@ -7,6 +8,8 @@ MASTER_SITES=	http://launchpad.net/catfish-search/1.4/1.4.1/+download/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	GTK search utility
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:${PORTSDIR}/devel/py-python-distutils-extra
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>0:${PORTSDIR}/misc/py-pexpect
