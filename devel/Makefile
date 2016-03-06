@@ -5190,8 +5190,6 @@
     SUBDIR += sdlskk
     SUBDIR += sdts++
     SUBDIR += sedsed
-    SUBDIR += seed
-    SUBDIR += seed3
     SUBDIR += serdisplib
     SUBDIR += sfio
     SUBDIR += sfml
