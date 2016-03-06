@@ -21,6 +21,9 @@ RUN_DEPENDS=	rubygem-fastimage>=1.6:${PORTSDIR}/graphics/rubygem-fastimage \
 		rubygem-sprockets-helpers>=0:${PORTSDIR}/devel/rubygem-sprockets-helpers \
 		rubygem-sprockets-sass>=0:${PORTSDIR}/devel/rubygem-sprockets-sass
 
+DEPRECATED=	Use textproc/rubygem-jekyll-assets instead
+EXPIRATION_DATE=2016-03-31
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
