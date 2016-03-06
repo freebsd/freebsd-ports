@@ -11,27 +11,29 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Last File Manager, a simple 'commander'-type file manager
 
-LICENSE=	GPLv3
-
-OPTIONS_DEFINE=	DOCS
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python
 USE_PYTHON=	distutils
+NO_ARCH=	yes
 
-DOCS=	ChangeLog NEWS README README.pyview TODO
+PORTDOCS=	ChangeLog NEWS README README.pyview TODO
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/DOC_FILES/d ; \
 		 /MAN_FILES/d' ${WRKSRC}/setup.py
 
-.include <bsd.port.options.mk>
-
 post-install:
 .for f in lfm pyview
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${f}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1)
+	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
