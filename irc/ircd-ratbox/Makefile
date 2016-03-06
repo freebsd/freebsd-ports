@@ -83,6 +83,7 @@ CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
 .endif
 
 #-----------------------------------------------------------------------
+.include <bsd.port.options.mk>
 
 post-patch:
 .if !defined(WITH_DEBUG)
@@ -129,7 +130,6 @@ pre-build:
 		-e "s#%%WRKSRC%%#${WRKSRC}#g" ${WRKSRC}/contrib/ircd-shortcut.pl
 
 # ----- Execute ircd-shortcut perl script to generate the .c file. -----
-.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSHORTCUTS}
 	@${ECHO_MSG} "Executing ircd-shortcut.pl for ircd-shortcuts generation."
