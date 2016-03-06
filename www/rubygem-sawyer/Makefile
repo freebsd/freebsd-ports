@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sawyer
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
