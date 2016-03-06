@@ -2,20 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	cconv
-PORTVERSION=	0.6.2
-PORTREVISION=	4
+PORTVERSION=	0.6.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	chinese converters
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplified-Traditional Chinese conversion tool
 
-LICENSE=	GPLv2
+LICENSE=	MIT
+LICNESE_FILE=	${WRKSRC}/License
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		iconv libtool
+USES=		autoreconf iconv libtool
+
+GH_ACCOUNT=	xiaoyjy
+USE_GITHUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|unicode.h||; s|libcconv_la_LDFLAGS|cconv_LDFLAGS|' ${WRKSRC}/Makefile.in
