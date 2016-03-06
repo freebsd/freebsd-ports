@@ -72,8 +72,8 @@ post-extract-EXAMPLES-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = /s| examples | |' \
 		${WRKSRC}/Makefile.in
 
-post-install:
-.if !defined(BATCH) && ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
+.if !defined(BATCH)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "############################################################################"
 	@${ECHO_MSG} "# See ${EXAMPLESDIR} for some demonstration code        #"
