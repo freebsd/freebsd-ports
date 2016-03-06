@@ -1,0 +1,11 @@
+--- octokit.gemspec.orig	2016-03-03 17:01:37 UTC
++++ octokit.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_development_dependency(%q<bundler>, ["~> 1.0"])
+-      s.add_runtime_dependency(%q<sawyer>, [">= 0.5.3", "~> 0.6.0"])
++      s.add_runtime_dependency(%q<sawyer>, [">= 0.6.0"])
+     else
+       s.add_dependency(%q<bundler>, ["~> 1.0"])
+       s.add_dependency(%q<sawyer>, [">= 0.5.3", "~> 0.6.0"])
