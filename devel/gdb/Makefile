@@ -34,7 +34,7 @@ EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
 VER=		${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64	# untested elsewhere, might work
+ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 armv6	# untested elsewhere, might work
 
 OPTIONS_DEFINE=	DEBUG EXPAT GDB_LINK GUILE KGDB PYTHON THREADS TUI
 
