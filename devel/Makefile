@@ -5153,6 +5153,7 @@
     SUBDIR += rubygem-tzinfo
     SUBDIR += rubygem-tzinfo03
     SUBDIR += rubygem-unicode
+    SUBDIR += rubygem-unicode-display_width
     SUBDIR += rubygem-uuid
     SUBDIR += rubygem-uuidtools
     SUBDIR += rubygem-validatable
