@@ -1,8 +1,8 @@
 lib/gstreamer-1.0/libgstpythonplugin.so
-%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gst.cpython-%%PVERSION%%.pyc
-%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gst.cpython-%%PVERSION%%.pyo
-%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstPbutils.cpython-%%PVERSION%%.pyc
-%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstPbutils.cpython-%%PVERSION%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gst.cpython-%%PYVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gst.cpython-%%PYVER%%.%%PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstPbutils.cpython-%%PYVER%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstPbutils.cpython-%%PYVER%%.%%PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/gi/overrides/Gst.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/GstPbutils.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/_gi_gst.so
