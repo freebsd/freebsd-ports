@@ -513,7 +513,6 @@
     SUBDIR += logrotate
     SUBDIR += logstalgia
     SUBDIR += logstash
-    SUBDIR += logstash-contrib
     SUBDIR += logstash-forwarder
     SUBDIR += logtool
     SUBDIR += logwatch
