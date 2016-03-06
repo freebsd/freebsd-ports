@@ -45,28 +45,21 @@ PLIST_FILES=	%%DATADIR%%/en_CA${CA_VARIANT}.aff \
 		%%DATADIR%%/en_GB.dic \
 		%%DATADIR%%/en_GB.aff \
 
-COPY=	-lh	# Use hardlinks rather than copies under stage/
-
-.include <bsd.port.options.mk>
+COPY=		-lh	# Use hardlinks rather than copies under stage/
 
 .for c in CA GB US
 .	for v in STANDARD ISE IZE LARGE
-.		if ${PORT_OPTIONS:M${c}_${v}}
-${c}_VARIANT=	${v:S/STANDARD//:tl:C/^.+$/-&/}
-.		endif
+${c}_${v}_VARS=		${c}_VARIANT=${v:S/STANDARD//:tl:C/^.+$/-&/}
 .	endfor
 .endfor
 
-.if ${PORT_OPTIONS:MUS_LARGE}
-PLIST_FILES+=	%%DATADIR%%/en_US.aff %%DATADIR%%/en_US.dic
-.endif
-.if ${PORT_OPTIONS:MCA_LARGE}
-PLIST_FILES+=	%%DATADIR%%/en_CA.aff %%DATADIR%%/en_CA.dic
-.endif
+US_LARGE_PLIST_FILES=	%%DATADIR%%/en_US.aff %%DATADIR%%/en_US.dic
+CA_LARGE_PLIST_FILES=	%%DATADIR%%/en_CA.aff %%DATADIR%%/en_CA.dic
 
 GBALIASES=	en_AG en_AU en_BS en_BW en_BZ en_DK en_GH en_HK en_IE en_IN \
 		en_JM en_NA en_NG en_NZ en_SG en_TT en_ZA en_ZW
 USALIASES=	en_PH
+
 .for ALIAS in ${GBALIASES} ${USALIASES}
 PLIST_FILES+=	%%DATADIR%%/${ALIAS}.aff \
 		%%DATADIR%%/${ALIAS}.dic
@@ -78,14 +71,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README_*.txt ${STAGEDIR}${DATADIR}/
 	${LN} -s en_GB${GB_VARIANT}.aff ${STAGEDIR}${DATADIR}/en_GB.aff
 	${LN} -s en_GB${GB_VARIANT}.dic ${STAGEDIR}${DATADIR}/en_GB.dic
-.if ${PORT_OPTIONS:MUS_LARGE}
-	${LN} -s en_US-large.aff ${STAGEDIR}${DATADIR}/en_US.aff
-	${LN} -s en_US-large.dic ${STAGEDIR}${DATADIR}/en_US.dic
-.endif
-.if ${PORT_OPTIONS:MCA_LARGE}
-	${LN} -s en_CA-large.aff ${STAGEDIR}${DATADIR}/en_CA.aff
-	${LN} -s en_CA-large.dic ${STAGEDIR}${DATADIR}/en_CA.dic
-.endif
 .for ALIAS in ${GBALIASES}
 	${LN} -s en_GB.aff ${STAGEDIR}${DATADIR}/${ALIAS}.aff
 	${LN} -s en_GB.dic ${STAGEDIR}${DATADIR}/${ALIAS}.dic
@@ -94,5 +79,13 @@ do-install:
 	${LN} -s en_US.aff ${STAGEDIR}${DATADIR}/${ALIAS}.aff
 	${LN} -s en_US.dic ${STAGEDIR}${DATADIR}/${ALIAS}.dic
 .endfor
+
+do-install-CA_LARGE-on:
+	${LN} -s en_CA-large.aff ${STAGEDIR}${DATADIR}/en_CA.aff
+	${LN} -s en_CA-large.dic ${STAGEDIR}${DATADIR}/en_CA.dic
+
+do-install-US_LARGE-on:
+	${LN} -s en_US-large.aff ${STAGEDIR}${DATADIR}/en_US.aff
+	${LN} -s en_US-large.dic ${STAGEDIR}${DATADIR}/en_US.dic
 
 .include <bsd.port.mk>
