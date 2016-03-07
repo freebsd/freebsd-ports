@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fntsample
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/fntsample/fntsample/${PORTVERSION} \
 		http://unicode.org/Public/6.0.0/ucd/:unidata
