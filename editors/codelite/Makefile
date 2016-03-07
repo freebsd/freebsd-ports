@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	codelite
-PORTVERSION=	9.0
+PORTVERSION=	9.1
 CATEGORIES=	editors devel
-MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source IDE for C/C++
@@ -17,14 +16,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	eranif
 
 USES=		cmake:outsource compiler:c++11-lib dos2unix execinfo gettext \
-		shebangfix
+		shebangfix sqlite
 DOS2UNIX_GLOB=	*.cpp *.txt
 SHEBANG_FILES=	Runtime/codelite_xterm
 bash_CMD=	/bin/sh
-USE_SQLITE=	3
 USE_WX=		3.0
 CMAKE_ARGS=	-DENABLE_LLDB:STRING=0 \
-		-DPREFIX:STRING="${PREFIX}"
+		-DPREFIX:STRING="${PREFIX}" \
+		-DIS_FREEBSD:STRING=1 \
+		-DCL_WX_CONFIG:STRING="${WX_CONFIG:T}"
 USE_LDCONFIG=	${PREFIX}/lib/codelite
 INSTALLS_ICONS=	yes
 
@@ -33,7 +33,7 @@ LDFLAGS+=	${EXECINFO_LDFLAGS}
 
 OPTIONS_DEFINE=		CSCOPE SFTP
 OPTIONS_RADIO=		CLANG
-OPTIONS_RADIO_CLANG=	CLANG34 CLANG35 CLANG36
+OPTIONS_RADIO_CLANG=	CLANG34 CLANG35 CLANG36 CLANG37
 OPTIONS_SUB=		yes
 
 CLANG_DESC=		Clang code-completion
@@ -46,11 +46,15 @@ CLANG35_RUN_DEPENDS=	clang35>0:${PORTSDIR}/lang/clang35
 CLANG36_DESC=		Clang 3.6.x
 CLANG36_BUILD_DEPENDS=	clang36>0:${PORTSDIR}/lang/clang36
 CLANG36_RUN_DEPENDS=	clang36>0:${PORTSDIR}/lang/clang36
+CLANG37_DESC=		Clang 3.7.x
+CLANG37_BUILD_DEPENDS=	clang37>0:${PORTSDIR}/lang/clang37
+CLANG37_RUN_DEPENDS=	clang37>0:${PORTSDIR}/lang/clang37
 CSCOPE_DESC=		CScope integration
 CSCOPE_RUN_DEPENDS=	cscope:${PORTSDIR}/devel/cscope
 SFTP_DESC=		Secure FTP support via libssh
 SFTP_LIB_DEPENDS=	libssh.so:${PORTSDIR}/security/libssh
 SFTP_CMAKE_OFF=		-DENABLE_SFTP:STRING=0
+SFTP_USES=		localbase
 
 .include <bsd.port.options.mk>
 
@@ -63,9 +67,10 @@ CMAKE_ARGS+=	-DENABLE_CLANG:STRING=0
 post-patch:
 #	Use the correct wx-config
 	@${REINPLACE_CMD} -e \
-		'/IS_FREEBSD/s|0|1| ; \
-		 /CL_WX_CONFIG/s|wx-config|${WX_CONFIG:T}| ; \
-		 /-O2/s|^|#| ; \
+		'/ IS_FREEBSD/s|^|#| ; \
+		 / CL_WX_CONFIG/s|^|#| ; \
+		 / -Wno-/s|^|#| ; \
+		 / -O2/s|^|#| ; \
 		 s|"-s"|""|' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e \
