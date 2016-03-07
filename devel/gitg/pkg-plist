@@ -15,7 +15,7 @@ lib/libgitg-ext-1.0.so.0
 lib/libgitg-ext-1.0.so.0.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gi/overrides/GitgExt.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GitgExt.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GitgExt.cpython-%%PYTHON_SUFFIX%%.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GitgExt.cpython-%%PYTHON_SUFFIX%%.%%PYOEXTENSION%%
 libdata/pkgconfig/libgitg-1.0.pc
 libdata/pkgconfig/libgitg-ext-1.0.pc
 man/man1/gitg.1.gz
