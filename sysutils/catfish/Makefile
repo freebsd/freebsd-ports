@@ -11,12 +11,16 @@ COMMENT=	GTK search utility
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:${PORTSDIR}/devel/py-python-distutils-extra
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>0:${PORTSDIR}/misc/py-pexpect
+RUN_DEPENDS=	\
+	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:${PORTSDIR}/devel/py-python-distutils-extra \
+	${PYTHON_PKGNAMEPREFIX}pexpect>0:${PORTSDIR}/misc/py-pexpect \
+	${PYTHON_PKGNAMEPREFIX}gobject3>=0:${PORTSDIR}/devel/py-gobject3 \
+	gksu:${PORTSDIR}/sysutils/gksu
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		python
 USE_PYTHON=	distutils
-USE_GNOME=	gtk30
+USE_GNOME=	gtk30 intltool
 
 .include <bsd.port.pre.mk>
 
