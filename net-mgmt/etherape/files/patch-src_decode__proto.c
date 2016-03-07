@@ -1,4 +1,4 @@
---- src/decode_proto.c.orig
+--- src/decode_proto.c.orig	2014-02-02 18:38:16 UTC
 +++ src/decode_proto.c
 @@ -27,6 +27,15 @@
  #include "appdata.h"
