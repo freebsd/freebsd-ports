@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	six
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
 
 .include <bsd.port.mk>
