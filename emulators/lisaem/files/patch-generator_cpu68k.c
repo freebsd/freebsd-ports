@@ -1,6 +1,6 @@
---- generator/cpu68k.c.orig
+--- generator/cpu68k.c.orig	2007-12-04 16:57:08 UTC
 +++ generator/cpu68k.c
-@@ -259,7 +259,7 @@
+@@ -259,7 +259,7 @@ int cpu68k_init(void)
              continue;
            }
          }
@@ -9,7 +9,7 @@
  
          cpu68k_iibtable[bitmap] = iib;
          /* set both flag and non-flag versions */
-@@ -285,7 +285,7 @@
+@@ -285,7 +285,7 @@ int cpu68k_init(void)
  
    if (j != cpu68k_totalinstr) 
      {
@@ -18,7 +18,7 @@
                    cpu68k_totalinstr, i);
      }
  
-@@ -904,19 +904,19 @@
+@@ -904,19 +904,19 @@ t_ipc_table *get_ipct(void)
  	else /*---- Nope! We're out of IPCt's, allocate some more.  ----*/
  	{
  
@@ -41,7 +41,7 @@
  		}
  
  //        DEBUG_LOG(0,"zzzzzzz ipct land allocated:: %p -to- %p", ipct_mallocs[iipct_mallocs], (void *)(ipct_mallocs[iipct_mallocs]+size_to_get * sizeof(t_ipc_table)));
-@@ -1084,8 +1084,8 @@
+@@ -1084,8 +1084,8 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
          DEBUG_LOG(1000,"Nope - calling get_ipct()");
  		mmu_trn->table=get_ipct(); // allocate an ipc table for this mmu_t
          table=mmu_trn->table;
@@ -52,7 +52,7 @@
  
          //check_iib();
  
-@@ -1094,11 +1094,11 @@
+@@ -1094,11 +1094,11 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
  			// ipc points to the MMU translation table entry for this page.
              ipc = &(table->ipc[((pc>>1) & 0xff)]);
              DEBUG_LOG(200,"ipc is now %p at pc %06x max %06x",ipc,pc,xpc);
@@ -67,7 +67,7 @@
  	}
  
      //check_iib();
-@@ -1106,7 +1106,7 @@
+@@ -1106,7 +1106,7 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
  
          if ( !ipc)
                  {
@@ -76,7 +76,7 @@
                  }
  
      //check_iib();
-@@ -1126,7 +1126,7 @@
+@@ -1126,7 +1126,7 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
  
      if ( !ipc)
                  {
@@ -85,7 +85,7 @@
                  }
  
      //check_iib();
-@@ -1236,8 +1236,8 @@
+@@ -1236,8 +1236,8 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
          // fflush(buglog);
          // #endif
  
@@ -96,7 +96,7 @@
  
          //DEBUG_LOG(200,"ipc is %s",(!ipc)?"null":"ok");
  
-@@ -1283,7 +1283,7 @@
+@@ -1283,7 +1283,7 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
  		// grow the list of ipcs if we need to.
  		if (instrs>=ipcs_to_get)
  		{
@@ -105,7 +105,7 @@
              pc24=pc;
  		}
  
-@@ -1308,7 +1308,7 @@
+@@ -1308,7 +1308,7 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
                table=mmu_trn->table;
  
                if (!table) {
@@ -114,7 +114,7 @@
  
                //if (pc&1) {DEBUG_LOG(200,"odd pc!"); EXIT(26);}
              }
-@@ -1333,7 +1333,7 @@
+@@ -1333,7 +1333,7 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
  
                   // check_iib();
  
@@ -123,7 +123,7 @@
                    //ipc = &(mmu_trn->table->ipc[((pc>>1) & 0xff)]);
                    //myiib=cpu68k_iibtable[opcode]; iib=myiib; // iib =  myiib ? myiib : illegaliib;
                    //////cpu68k_ipc(pc, iib, ipc);
-@@ -1370,7 +1370,7 @@
+@@ -1370,7 +1370,7 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
      if (instrs == 2)
      {
  
@@ -132,7 +132,7 @@
          DEBUG_LOG(200,"*~*~*~*~*~*~ in 2instrs ipc is now %p at pc %06x max %06x",ipc,pc,xpc);
          ipc=ipcs[instrs-1-1]; //ipc--
          DEBUG_LOG(200,"ipc is now %p at pc %06x max %06x",ipc,pc,xpc);
-@@ -1443,7 +1443,7 @@
+@@ -1443,7 +1443,7 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
          DEBUG_LOG(200,"ipc is now %p at pc %06x max %06x ix=%d",ipc,pc,xpc,ix);
          if ( !ipc)
          {
@@ -141,7 +141,7 @@
          }
  
          //check_iib();
-@@ -1460,7 +1460,7 @@
+@@ -1460,7 +1460,7 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
  
          if (!ipc->function)
               {
@@ -150,7 +150,7 @@
                // cpu68k_printipc(ipc);
               }
  
-@@ -1479,7 +1479,7 @@
+@@ -1479,7 +1479,7 @@ t_ipc_table *cpu68k_makeipclist(uint32 p
  		{
            //  check_iib();
              ipc=ipcs[ix];
