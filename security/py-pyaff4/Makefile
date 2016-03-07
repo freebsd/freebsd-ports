@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PyAFF4
-PORTVERSION=	0.20
-PORTREVISION=	1
+PORTVERSION=	0.22
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,5 +22,8 @@ USE_PYTHON=	distutils autoplist
 
 post-extract:
 	@${CHMOD} -R a+rX ${WRKSRC}
+
+post-patch:
+	${REINPLACE_CMD} '/aff4-snappy/d' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
