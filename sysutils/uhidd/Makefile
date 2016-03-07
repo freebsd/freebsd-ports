@@ -3,15 +3,17 @@
 
 PORTNAME=	uhidd
 PORTVERSION=	0.2.1
+DISTVERSIONPREFIX=	REL-
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE \
-		http://people.freebsd.org/~kaiw/distfiles/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Userland USB HID device driver using libusb20
 
 LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	kaiwang27
 
 USES=		uidfix
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man"
