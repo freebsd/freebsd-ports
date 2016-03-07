@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	hatari
-PORTVERSION=	1.8.0
-PORTREVISION=	4
+PORTVERSION=	1.9.0
 CATEGORIES=	emulators
-MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
+MASTER_SITES=	http://download.tuxfamily.org/hatari/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atari ST emulator
@@ -16,14 +16,27 @@ LICENSE_FILE=	${WRKSRC}/gpl.txt
 LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libpng.so:${PORTSDIR}/graphics/png
 
-USES=		cmake readline tar:bzip2
+USES=		cmake desktop-file-utils python readline shared-mime-info \
+		shebangfix tar:bzip2
+SHEBANG_FILES=	tools/atari-convert-dir.py
+python_OLD_CMD=	/usr/bin/python2
 USE_GNOME=	pygtk2
-USE_SDL=	sdl
-CMAKE_ARGS=	-DCMAKE_C_FLAGS_RELEASE:STRING="-DNDEBUG" \
-		-DETCDIR:STRING="${PREFIX}/etc" \
-		-DMANDIR:STRING="man/man1"
+CMAKE_ARGS=	-DETCDIR:PATH="${PREFIX}/etc" \
+		-DMANDIR:PATH="man/man1" \
+		-DREADLINE_FOUND:BOOL=ON
+INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DEBUG DOCS SDL2 WINUAE
+
+DEBUG_CFLAGS_OFF=	-DNDEBUG
+SDL2_DESC=		Use SDL2 libraries instead of SDL 1.2
+SDL2_USES=		iconv
+SDL2_USE=		sdl=sdl2
+SDL2_USE_OFF=		sdl=sdl
+SDL2_CMAKE_ON=		-DENABLE_SDL2:BOOL=ON
+SDL2_CFLAGS=		-I${ICONV_INCLUDE_PATH}
+WINUAE_DESC=		Build with WinUAE CPU core (experimental)
+WINUAE_CMAKE_ON=	-DENABLE_WINUAE_CPU:BOOL=ON
 
 post-patch:
 .for i in doc/hatari.1 doc/fr/hatari.1 tools/hconsole/hconsole.1
@@ -31,15 +44,12 @@ post-patch:
 		's|^/etc/hatari.cfg .*|${PREFIX}/etc/hatari.cfg| ; \
 		 s|/usr/share|${PREFIX}/share|' ${WRKSRC}/${i}
 .endfor
-	@${REINPLACE_CMD} -e '/DESTINATION/s|/icons/.*)|/pixmaps)|' \
-		${WRKSRC}/python-ui/CMakeLists.txt
-
-post-build:
-	@cd ${WRKSRC}/doc/fr && ${GZIP_CMD} -c ${PORTNAME}.1 > ${PORTNAME}.1.gz
+	@${REINPLACE_CMD} -e \
+		's|-Wno-maybe-uninitialized||' ${WRKSRC}/src/cpu/CMakeLists.txt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${MANPREFIX}/man/fr/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/fr/${PORTNAME}.1.gz ${STAGEDIR}${MANPREFIX}/man/fr/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/fr/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/fr/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/fr

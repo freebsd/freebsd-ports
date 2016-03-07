@@ -1,0 +1,24 @@
+--- share/CMakeLists.txt.orig	2015-09-10 21:16:03 UTC
++++ share/CMakeLists.txt
+@@ -5,8 +5,8 @@ foreach(size 32x32 48x48 64x64 128x128 2
+ 	install(FILES icons/hicolor/${size}/mimetypes/application-x-st-disk-image.png
+ 		DESTINATION ${ICONDIR}/${size}/mimetypes)
+ 	foreach(type vnd.msa vnd.fastcopy x-stx)
+-		install(CODE "execute_process(COMMAND ln -sf application-x-st-disk-image.png
+-				${CMAKE_INSTALL_PREFIX}/${ICONDIR}/${size}/mimetypes/application-${type}-disk-image.png)
++		install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink application-x-st-disk-image.png application-${type}-disk-image.png
++				WORKING_DIRECTORY \$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${ICONDIR}/${size}/mimetypes)
+ 				")
+ 	endforeach()
+ endforeach()
+@@ -16,8 +16,8 @@ install(FILES icons/hicolor/scalable/app
+ install(FILES icons/hicolor/scalable/mimetypes/application-x-st-disk-image.svg
+ 	DESTINATION ${ICONDIR}/scalable/mimetypes)
+ foreach(type vnd.msa vnd.fastcopy x-stx)
+-	install(CODE "execute_process(COMMAND ln -sf application-x-st-disk-image.svg
+-			${CMAKE_INSTALL_PREFIX}/${ICONDIR}/scalable/mimetypes/application-${type}-disk-image.svg)
++	install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink application-x-st-disk-image.svg application-${type}-disk-image.svg
++			WORKING_DIRECTORY \$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${ICONDIR}/scalable/mimetypes)
+ 			")
+ endforeach()
+ install(FILES mime/packages/hatari.xml DESTINATION share/mime/packages)
