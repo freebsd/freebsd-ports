@@ -9,6 +9,9 @@ MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Modern scalable datacenter orchestration framework
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	rubygem-stomp>=0:${PORTSDIR}/devel/rubygem-stomp
 
 NO_BUILD=	yes
