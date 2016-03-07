@@ -1,4 +1,6 @@
+bin/lisadiskinfo
 bin/lisaem
+bin/lisafsh-tool
 %%DATADIR%%/Info.plist
 %%DATADIR%%/LisaEm.icns
 %%DATADIR%%/floppy0.png
@@ -27,3 +29,4 @@ bin/lisaem
 %%DATADIR%%/power_on.png
 %%DATADIR%%/poweroffclk.wav
 share/LisaEm
+share/pixmaps/lisaem.png
