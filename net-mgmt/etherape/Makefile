@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	etherape
-PORTVERSION=	0.9.13
-PORTREVISION=	2
+PORTVERSION=	0.9.14
 CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical network traffic monitor tool modeled after Etherman
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext gmake iconv pathfix pkgconfig
 USE_GNOME=	gnomedocutils libglade2 libgnomeui
@@ -18,18 +18,20 @@ GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic	# XXX: G_MODULE_EXPORT?
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORTDOCS=	*
+PORTDOCS=	AUTHORS ChangeLog FAQ NEWS README README.bugs TODO
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|char \*argv)|char **argv)|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|__EXPORT__|__EXPORT_H__|' ${WRKSRC}/src/export.h
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} FAQ README* TODO ${STAGEDIR}${DOCSDIR}
-.for f in AUTHORS ChangeLog NEWS
-	${ICONV_CMD} -f latin1 -t utf-8 ${WRKSRC}/${f} > \
-		${STAGEDIR}${DOCSDIR}/${f}
-.endfor
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

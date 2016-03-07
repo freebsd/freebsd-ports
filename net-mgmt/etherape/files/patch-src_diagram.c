@@ -1,5 +1,5 @@
---- src/names.c.orig
-+++ src/names.c
+--- src/diagram.c.orig	2016-01-25 20:19:16 UTC
++++ src/diagram.c
 @@ -21,7 +21,18 @@
  #include <config.h>
  #endif
@@ -11,11 +11,11 @@
 +#include <sys/socket.h>
 +#endif
 +#ifdef HAVE_NETINET_IN_H
- #include <netinet/in.h>
++#include <netinet/in.h>
 +#endif
 +#ifdef HAVE_ARPA_INET_H
-+#include <arpa/inet.h>
+ #include <arpa/inet.h>
 +#endif
- #ifdef HAVE_UNISTD_H
- #include <unistd.h>
- #endif
+ 
+ #include <gnome.h>
+ #include <regex.h>
