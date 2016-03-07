@@ -2072,7 +2072,6 @@
     SUBDIR += p5-DateTime-Event-NameDay
     SUBDIR += p5-DateTime-Event-Random
     SUBDIR += p5-DateTime-Event-Recurrence
-    SUBDIR += p5-DateTime-Event-SolarTerm
     SUBDIR += p5-DateTime-Event-Sunrise
     SUBDIR += p5-DateTime-Event-Zodiac
     SUBDIR += p5-DateTime-Fiscal-Year
@@ -2111,7 +2110,6 @@
     SUBDIR += p5-DateTime-TimeZone
     SUBDIR += p5-DateTime-TimeZone-Alias
     SUBDIR += p5-DateTime-TimeZone-LMT
-    SUBDIR += p5-DateTime-Util-Astro
     SUBDIR += p5-DateTime-Util-Calc
     SUBDIR += p5-DateTimeX-Easy
     SUBDIR += p5-Debug-Client
