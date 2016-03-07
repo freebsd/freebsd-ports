@@ -1,6 +1,6 @@
---- setup.py.orig	2015-06-27 09:00:49 UTC
+--- setup.py.orig	2016-01-01 22:16:41 UTC
 +++ setup.py
-@@ -55,8 +55,8 @@ options = dict(
+@@ -64,8 +64,8 @@ options = dict(
      long_description=open("README.rst").read()
  )
  
@@ -8,6 +8,6 @@
 -    # Install desktop file. Required for mpris on Ubuntu
 +if sys.platform.startswith(('freebsd', 'linux')):
 +    # Install desktop file. Required for mpris on FreeBSD and Ubuntu
-     options['data_files'] = [('share/applications/', ['mps-youtube.desktop'])]
+     options['data_files'].append(('share/applications/', ['mps-youtube.desktop']))
  
- try:
+ if os.name == "nt":
