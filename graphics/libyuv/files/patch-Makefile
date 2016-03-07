@@ -1,0 +1,26 @@
+--- Makefile.orig	2015-06-19 22:04:28 UTC
++++ Makefile
+@@ -1,9 +1,9 @@
+ # This is a generic makefile for libyuv for gcc.
+ # make -f linux.mk CXX=clang++
+ 
+-PREFIX:=/usr
+ EXEC_PREFIX:=$(PREFIX)
+ LIBDIR:=$(PREFIX)/lib/
++LIBDATA:=$(PREFIX)/libdata/
+ INCDIR:=$(PREFIX)/include/
+ 
+ CXX?=g++
+@@ -63,10 +63,10 @@ install: libyuv.a libyuv.so libyuv.pc
+ 	install -d -m 755 $(DESTDIR)/$(LIBDIR)
+ 	install -d -m 755 $(DESTDIR)/$(INCDIR)
+ 	install -d -m 755 $(DESTDIR)/$(INCDIR)/libyuv
+-	install -d -m 755 $(DESTDIR)/$(LIBDIR)/pkgconfig
++	install -d -m 755 $(DESTDIR)/$(LIBDATA)/pkgconfig
+ 	install -m 644 libyuv.a $(DESTDIR)/$(LIBDIR)
+ 	install -m 644 libyuv.so $(DESTDIR)/$(LIBDIR)
+-	install -m 644 libyuv.pc $(DESTDIR)/$(LIBDIR)/pkgconfig
++	install -m 644 libyuv.pc $(DESTDIR)/$(LIBDATA)/pkgconfig
+ 	install -m 644 include/libyuv.h $(DESTDIR)/$(INCDIR)
+ 	install -m 644 include/libyuv/* $(DESTDIR)/$(INCDIR)/libyuv
+ 
