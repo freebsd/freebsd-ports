@@ -9,6 +9,7 @@ COMMENT=	XCB base autolocker
 
 LICENSE=	BSD2CLAUSE
 
+USES=		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	bapt
 
