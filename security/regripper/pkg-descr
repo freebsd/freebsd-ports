@@ -2,4 +2,4 @@ RegRipper is an open source tool, written in Perl, for extracting/parsing
 information (keys, values, data) from the Registry and presenting it for
 analysis.
 
-WWW: http://code.google.com/p/regripper/
+WWW: https://github.com/keydet89/RegRipper2.8
