@@ -3,7 +3,7 @@
 
 PORTNAME=	bundy
 PORTVERSION=	0.20160125
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	LOCAL/mat/bundy GH
 
@@ -41,6 +41,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var	\
 		--without-werror \
 		--enable-install-configurations
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
@@ -50,4 +51,14 @@ post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem.sample
 	${MV} ${STAGEDIR}${ETCDIR}/cmdctl-keyfile.pem ${STAGEDIR}${ETCDIR}/cmdctl-keyfile.pem.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3500
+PYOEXTENSION=	pyo
+.else
+PYOEXTENSION=	opt-1.pyc
+.endif
+
+PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION}
+
+.include <bsd.port.post.mk>
