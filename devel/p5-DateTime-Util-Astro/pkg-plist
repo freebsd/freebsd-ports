@@ -1,8 +1,0 @@
-%%SITE_PERL%%/DateTime/Util/Astro/Common.pm
-%%SITE_PERL%%/DateTime/Util/Astro/Moon.pm
-%%SITE_PERL%%/DateTime/Util/Astro/Sun.pm
-%%SITE_PERL%%/DateTime/Util/Astro.pm
-%%PERL5_MAN3%%/DateTime::Util::Astro.3.gz
-%%PERL5_MAN3%%/DateTime::Util::Astro::Common.3.gz
-%%PERL5_MAN3%%/DateTime::Util::Astro::Moon.3.gz
-%%PERL5_MAN3%%/DateTime::Util::Astro::Sun.3.gz
