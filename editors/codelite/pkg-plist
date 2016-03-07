@@ -50,6 +50,7 @@ share/applications/codelite.desktop
 %%DATADIR%%/LICENSE
 %%DATADIR%%/PHP.zip
 %%DATADIR%%/astyle.sample
+%%DATADIR%%/codelite-bitmaps.zip
 %%DATADIR%%/codelite-icons-dark.zip
 %%DATADIR%%/codelite-icons-fresh-farm.zip
 %%DATADIR%%/codelite-icons.zip
@@ -84,6 +85,7 @@ share/applications/codelite.desktop
 %%DATADIR%%/images/recent_files.png
 %%DATADIR%%/images/recent_workspaces.png
 %%DATADIR%%/images/splashscreen.png
+%%DATADIR%%/images/splashscreen@2x.png
 %%DATADIR%%/javascript.zip
 %%DATADIR%%/lexers/lexers.json
 %%DATADIR%%/rc/menu.xrc
@@ -272,6 +274,13 @@ share/applications/codelite.desktop
 %%DATADIR%%/templates/projects/wxWidgets_ConsoleApp/wxWidgets_ConsoleApp.project
 %%DATADIR%%/templates/qmake/qmake.project
 %%DATADIR%%/unittest++1.3.tar.gz
+share/icons/hicolor/128x128/apps/codelite.png
+share/icons/hicolor/128x128@2x/apps/codelite.png
+share/icons/hicolor/256x256/apps/codelite.png
+share/icons/hicolor/256x256@2x/apps/codelite.png
 share/icons/hicolor/32x32/apps/codelite.png
+share/icons/hicolor/32x32@2x/apps/codelite.png
+share/icons/hicolor/64x64/apps/codelite.png
+share/icons/hicolor/64x64@2x/apps/codelite.png
 share/locale/cs/LC_MESSAGES/codelite.mo
 share/locale/zh_CN/LC_MESSAGES/codelite.mo
