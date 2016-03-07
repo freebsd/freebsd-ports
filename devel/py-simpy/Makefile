@@ -15,7 +15,6 @@ LICENSE=	LGPL21
 NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
-PYDISTUTILS_PKGNAME=	SimPy
 
 OPTIONS_DEFINE=	TKINTER DOCS
 TKINTER_DESC=	py-tkinter for plot
