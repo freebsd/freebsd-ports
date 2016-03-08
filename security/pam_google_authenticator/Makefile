@@ -15,12 +15,12 @@ LICENSE=	APACHE20
 USES=		autoreconf gmake libtool
 GNU_CONFIGURE=	YES
 
-WRKSRC_SUBDIR=  libpam
+WRKSRC_SUBDIR=	libpam
 
-USE_GITHUB=     yes
-GH_ACCOUNT=     google
-GH_PROJECT=     google-authenticator
-GH_TAGNAME=     195ddc1
+USE_GITHUB=	yes
+GH_ACCOUNT=	google
+GH_PROJECT=	google-authenticator
+GH_TAGNAME=	195ddc1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's;/security;;'	\
