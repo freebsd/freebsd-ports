@@ -1,7 +1,7 @@
---- ./memdb.c.orig	2009-12-15 07:18:40.000000000 -0500
-+++ ./memdb.c	2011-10-14 22:36:47.000000000 -0400
-@@ -170,7 +170,9 @@
- 	asprintf(&env[ei++], "THRESHOLD_COUNT=%d", bucket->count + bucket->excess);
+--- memdb.c.orig	2016-02-10 18:38:43 UTC
++++ memdb.c
+@@ -172,7 +172,9 @@ void memdb_trigger(char *msg, struct mem
+ 	asprintf(&env[ei++], "THRESHOLD_COUNT=%d", bucket->count);
  	env[ei] = NULL;	
  	assert(ei < MAX_ENV);
 +#ifdef __Linux__
