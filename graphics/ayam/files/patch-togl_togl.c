@@ -1,4 +1,4 @@
---- togl/togl.c.orig	2015-06-23 18:03:50 UTC
+--- togl/togl.c.orig	2016-01-13 20:09:57 UTC
 +++ togl/togl.c
 @@ -709,7 +709,7 @@ int Togl_Init(Tcl_Interp *interp)
     }

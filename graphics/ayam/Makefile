@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ayam
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Ayam/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
@@ -97,7 +97,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/lib/ayam-splash.gif \
 		${STAGEDIR}${DATADIR}
-# docs
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} \
 		${STAGEDIR}${DOCSDIR}/html \
 		${STAGEDIR}${DOCSDIR}/html/pics

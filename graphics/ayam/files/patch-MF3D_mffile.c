@@ -1,4 +1,4 @@
---- MF3D/mffile.c.orig	2015-06-23 18:03:50 UTC
+--- MF3D/mffile.c.orig	2016-01-13 20:09:57 UTC
 +++ MF3D/mffile.c
 @@ -102,7 +102,7 @@ MF3D_TypeObjWrite (
        /* Add this type to the table */
