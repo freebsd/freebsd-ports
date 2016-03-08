@@ -1,4 +1,4 @@
-%%WITH_GFORTRAN%%bin/himenobmtxp
+%%NO_IFC%%bin/himenobmtxp
 bin/himenobmtxp_l
 bin/himenobmtxp_m
 bin/himenobmtxp_s
@@ -7,12 +7,12 @@ bin/himenobmtxps_l
 bin/himenobmtxps_m
 bin/himenobmtxps_s
 bin/himenobmtxps_ss
-%%WITH_ICC%%bin/himenobmtxpa.icc
-%%WITH_ICC%%bin/himenobmtxps_l.icc
-%%WITH_ICC%%bin/himenobmtxps_m.icc
-%%WITH_ICC%%bin/himenobmtxps_s.icc
-%%WITH_ICC%%bin/himenobmtxps_ss.icc
-%%WITH_IFC%%bin/himenobmtxp.ifc
-%%WITH_IFC%%bin/himenobmtxp_l.ifc
-%%WITH_IFC%%bin/himenobmtxp_m.ifc
-%%WITH_IFC%%bin/himenobmtxp_s.ifc
+%%ICC%%bin/himenobmtxpa.icc
+%%ICC%%bin/himenobmtxps_l.icc
+%%ICC%%bin/himenobmtxps_m.icc
+%%ICC%%bin/himenobmtxps_s.icc
+%%ICC%%bin/himenobmtxps_ss.icc
+%%IFC%%bin/himenobmtxp.ifc
+%%IFC%%bin/himenobmtxp_l.ifc
+%%IFC%%bin/himenobmtxp_m.ifc
+%%IFC%%bin/himenobmtxp_s.ifc

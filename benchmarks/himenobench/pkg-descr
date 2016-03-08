@@ -1,6 +1,6 @@
 Himeno Benchmark is made by HIMENO, Ryutaro,
 for evaluation of performance of the calculation
 of incompressible flow analysis. This program solves Poisson equation
-by Jacobi's iterative method which have many loops
+by Jacobi's iterative method which have many loops.
 
-WWW: http://accc.riken.jp/HPC/HimenoBMT.html
+WWW: http://accc.riken.jp/en/supercom/himenobmt/
