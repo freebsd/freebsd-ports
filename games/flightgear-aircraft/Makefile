@@ -2,52 +2,50 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear-aircraft
-PORTVERSION=	20150303
+PORTVERSION=	20160305
 CATEGORIES=	games
-# see http://www.flightgear.org/templates.js
-MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-3.4/ \
-		http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Aircraft-3.4/ \
-		ftp://ftp.kingmont.com/flightsims/flightgear/Aircraft-3.4/ \
-		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft-3.4/ \
-		ftp://flightgear.wo0t.de/flightgear-ftp/ftp/Aircraft-3.4/
+# See http://www.flightgear.org/templates.js
+MASTER_SITES=	http://fgfs.goneabitbursar.com/official/ \
+	http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2016.1/ \
+	http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Aircraft-2016.1/
 # Selection of production-ready/well-known planes
 # (planes already included in flightgear-data are excluded)
-# Please contact the MAINTAINER if a plane is missing
-DISTFILES=	737-200_20140909.zip \
-		A-10_20140909.zip \
-		A300_20140909.zip \
-		Alouette-II_20140909.zip \
-		Alphajet_20140909.zip \
-		B-17_0.1.zip \
-		Breguet-XIX_20140909.zip \
-		C130_20140909.zip \
-		Caravelle_20140909.zip \
-		Caudron-G3_20140909.zip \
-		F80C_20140909.zip \
-		Hurricane_20140909.zip \
-		IL-2_20140909.zip \
-		Lightning_20140909.zip \
-		Lockheed1049h_1.0.zip \
-		Messerschmitt-P1101_20140909.zip \
-		MirageIII_20140909.zip \
-		PaperAirplane_20140909.zip \
-		Pond-Racer_20140909.zip \
-		R44_20140909.zip \
-		Spitfire_20140909.zip \
-		Stieglitz_20140909.zip \
-		Super-Etendard_20140909.zip \
-		Supermarine-S.6B_20140909.zip \
-		Superwal_20140909.zip \
-		airwaveXtreme150_January-2015.zip \
-		asw20_June-2014.zip \
-		bf109_20140909.zip \
-		c310_20150114.zip \
-		dhc3_0.1.zip \
-		f16_20140909.zip \
-		harrier_20140909.zip \
-		pa24-250_20140909.zip \
-		tu154_20140909.zip \
-		wrightFlyer1903_20140909.zip
+# Please contact MAINTAINER if a plane is missing
+DISTFILES=	737-200.zip \
+	A-10.zip \
+	A300.zip \
+	Alouette-II.zip \
+	Alphajet.zip \
+	B-17.zip \
+	Breguet-XIX.zip \
+	C130.zip \
+	Caravelle.zip \
+	Caudron-G3.zip \
+	F80C.zip \
+	Hurricane.zip \
+	IL-2.zip \
+	Lightning.zip \
+	Lockheed1049h.zip \
+	Messerschmitt-P1101.zip \
+	MirageIII.zip \
+	PaperAirplane.zip \
+	Pond-Racer.zip \
+	R44.zip \
+	Spitfire.zip \
+	Stieglitz.zip \
+	Super-Etendard.zip \
+	Supermarine-S.6B.zip \
+	Superwal.zip \
+	airwaveXtreme150.zip \
+	asw20.zip \
+	bf109.zip \
+	c310.zip \
+	dhc3.zip \
+	f16.zip \
+	harrier.zip \
+	pa24-250.zip \
+	tu154.zip \
+	wrightFlyer1903.zip
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	martymac@FreeBSD.org
