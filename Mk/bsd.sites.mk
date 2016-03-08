@@ -634,12 +634,12 @@ _GITHUB_REV=	0
 DISTNAME:=	${DISTNAME}_GH${_GITHUB_REV}
 .  endif
 _GITHUB_EXTRACT_SUFX=	.tar.gz
+# Put the DEFAULT distfile first
+.  if !${USE_GITHUB:Mnodefault} && defined(_GITHUB_MUST_SET_DISTNAME)
+DISTFILES+=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
+.  endif
 # If there are non default groups
 .  if !empty(_GITHUB_GROUPS:NDEFAULT)
-# Put the DEFAULT distfile first
-.    if !${USE_GITHUB:Mnodefault}
-DISTFILES+=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
-.    endif
 # Then for each of the remaining groups, add DISTFILES and MASTER_SITES
 # entries with the correct group and create {WRKSRC,DISTNAME,DISTFILES}_group
 # helper variables.
