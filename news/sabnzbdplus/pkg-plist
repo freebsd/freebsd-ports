@@ -422,4 +422,3 @@ bin/SABnzbd.py
 %%DATADIR%%/util/apireg.py
 %%DATADIR%%/util/mailslot.py
 %%DATADIR%%/util/pystone.py
-@dir(_sabnzbd,_sabnzbd,755) sabnzbd
