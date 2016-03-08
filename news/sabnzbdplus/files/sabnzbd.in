@@ -46,7 +46,6 @@ command_args="--daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini --pidfile ${pidfile}"
 
 sabnzbd_prestart()
 {
-	PATH=${PATH}:/usr/local/bin:/usr/local/sbin
 	for sabdir in ${sabnzbd_conf_dir} ${pidfile%/*}; do
 		if [ ! -d "${sabdir}" ]; then
 			install -d -o ${sabnzbd_user} -g ${sabnzbd_group} ${sabdir}
