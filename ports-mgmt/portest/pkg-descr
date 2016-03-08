@@ -1,0 +1,7 @@
+With portest, you can create, update, patch and revert a port tree with
+svn, git and portsnap. Portest can also do portlint testing, test a port
+with port test, or poudriere, and also generate a list of ports a
+patchfile(s) will modify. Portest is written in shell with minimal
+dependencies mostly using FreeBSD-base
+
+WWW: https://github.com/Ultima1252/portest
