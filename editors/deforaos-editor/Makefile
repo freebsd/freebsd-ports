@@ -3,6 +3,7 @@
 
 PORTNAME=	editor
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.defora.org/os/download/download/4326/
 PKGNAMEPREFIX=	deforaos-
