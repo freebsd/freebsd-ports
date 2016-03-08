@@ -1,44 +1,56 @@
---- Makefile.orig	2010-01-21 02:36:52 UTC
+--- Makefile.orig	2016-02-10 18:38:43 UTC
 +++ Makefile
 @@ -1,5 +1,4 @@
 -CFLAGS := -g -Os
 -prefix := /usr
 +prefix := /usr/local
  etcprefix :=
+ MANDIR := ${prefix}/share/man
  # Define appropiately for your distribution
- # DOCDIR := /usr/share/doc/packages/mcelog
-@@ -28,11 +27,18 @@ all: mcelog
+@@ -32,13 +31,19 @@ all: mcelog
  
- .PHONY: install clean depend
+ .PHONY: install clean depend FORCE
  
 +LIBS :=
  OBJ := p4.o k8.o mcelog.o dmi.o tsc.o core2.o bitfield.o intel.o \
         nehalem.o dunnington.o tulsa.o config.o memutil.o msg.o   \
 -       eventloop.o leaky-bucket.o memdb.o server.o trigger.o 	 \
 -       client.o cache.o sysfs.o yellow.o page.o rbtree.o 	 \
--       xeon75xx.o
+-       xeon75xx.o sandy-bridge.o ivy-bridge.o haswell.o		 \
+-       broadwell_de.o broadwell_epex.o msr.o bus.o \
+-       unknown.o
 +       eventloop.o leaky-bucket.o memdb.o server.o client.o 	 \
-+       cache.o rbtree.o xeon75xx.o
++       cache.o rbtree.o xeon75xx.o sandy-bridge.o ivy-bridge.o	\
++       haswell.o broadwell_de.o broadwell_epex.o msr.o
 +ifndef FREEBSD
-+OBJ += page.o trigger.o sysfs.o yellow.o
++OBJ += page.o trigger.o sysfs.o yellow.o bus.o unknown.o
 +endif
 +ifdef FREEBSD
 +OBJ += memstream.o
 +LIBS += -lkvm
 +endif
  DISKDB_OBJ := diskdb.o dimm.o db.o
- CLEAN := mcelog dmi tsc dbquery .depend .depend.X dbquery.o ${DISKDB_OBJ}
- DOC := mce.pdf
-@@ -48,7 +54,7 @@ endif
+ CLEAN := mcelog dmi tsc dbquery .depend .depend.X dbquery.o ${DISKDB_OBJ} \
+ 	version.o version.c version.tmp
+@@ -55,7 +60,7 @@ endif
  
  SRC := $(OBJ:.o=.c)
  
--mcelog: ${OBJ}
-+mcelog: ${OBJ} ${LIBS}
+-mcelog: ${OBJ} version.o
++mcelog: ${OBJ} ${LIBS} version.o
  
  # dbquery intentionally not installed by default
- install: mcelog
-@@ -82,8 +88,6 @@ depend: .depend
+ install: mcelog mcelog.conf mcelog.conf.5 mcelog.triggers.5
+@@ -94,7 +99,7 @@ depend: .depend
+ 
+ version.tmp: FORCE
+ 	( echo -n "char version[] = \"" ; 	\
+-	if type -p git >/dev/null; then 	\
++	if command -v git >/dev/null; then 	\
+ 	if [ -d .git ] ; then 			\
+ 		git describe --tags HEAD | tr -d '\n'; 	\
+ 	else 					\
+@@ -110,8 +115,6 @@ version.c: version.tmp
  .depend: ${SRC}
  	${CC} -MM -I. ${SRC} > .depend.X && mv .depend.X .depend
  
