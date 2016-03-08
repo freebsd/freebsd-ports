@@ -1,37 +1,37 @@
---- Makefile.orig
+--- Makefile.orig	2015-10-26 10:22:55 UTC
 +++ Makefile
-@@ -46,7 +46,7 @@
- # remove the examples directory from this line.
- # If you want to build the XmHTML tutorial examples, add the book directory.
- 
+@@ -61,7 +61,7 @@ HAVE_XPM=1
+ ifeq ($(OS),IRIX)
+ SUBDIRS= lib http
+ else
 -SUBDIRS= lib http examples tools
 +SUBDIRS= lib http
+ endif
  
  # some common definitions
- #
-@@ -61,7 +61,7 @@
- RANLIB= ranlib
+@@ -81,7 +81,7 @@ RANLIB = ranlib
+ endif
  
- SHELL     = /bin/sh
--MAKE      = make 
-+#MAKE      = make
+ SHELL = /bin/sh
+-MAKE  = make 
++#MAKE  = make 
  # change this to makedepend if your system doesn't have gcc
  MAKEDEPEND= gccmakedep
  
-@@ -70,9 +70,9 @@
+@@ -99,9 +99,9 @@ endif
  # Compiler Settings #
  #                   #
  #####################
--CC       = gcc
--CFLAGS   = -g -funroll-loops -Wall -pipe -ansi $(EXTRA_CFLAGS)
--LDFLAGS  = 
-+#CC       = gcc
-+#CFLAGS   = -g -funroll-loops -Wall -pipe -ansi $(EXTRA_CFLAGS)
-+#LDFLAGS  = 
+-CC       	= gcc
+-CFLAGS   	= -funroll-loops -Wall -pipe -ansi -fPIC $(OS_CFLAGS) $(EXTRA_CFLAGS)
+-LDFLAGS  	= 
++#CC       	= gcc
++#CFLAGS   	= -funroll-loops -Wall -pipe -ansi -fPIC $(OS_CFLAGS) $(EXTRA_CFLAGS)
++#LDFLAGS  	= 
  
  # The following flags are *very* usefull if you are getting unresolved
  # references to functions in libraries that you *know* to exist.
-@@ -125,7 +125,7 @@
+@@ -160,7 +160,7 @@ endif
  # HAVE_LIBZ => zlib.h
  
  ZLIBINC       =
@@ -40,16 +40,16 @@
  
  # Image libraries
  # No need to add -lXpm if you need to include it with LIBS below
-@@ -136,7 +136,7 @@
+@@ -171,7 +171,7 @@ IMAGEINCLUDES = $(ZLIBINC)
  # HAVE_LIBZ => libz (and possibly libm)
  
  ZLIBLIB   = -lz -lm
 -IMAGELIBS = -ljpeg -lpng $(ZLIBLIB)
-+IMAGELIBS = `libpng-config --libs` -L${LOCALBASE}/lib -ljpeg $(ZLIBLIB)
++IMAGELIBS = `libpng-config --libs` -L${LOCALBASE}/lib -ljpeg $(LDFLAGS)
  
  # It might be troublesome to know what the correct defines are for your
  # system. A possible set of defines for some OS's is given below. Pick
-@@ -176,7 +176,7 @@
+@@ -211,7 +211,7 @@ IMAGELIBS = -ljpeg -lpng $(ZLIBLIB)
  # Add -DDEBUG to enable selective debug output (see the file DEBUGGING for more
  # info).
  #
@@ -58,21 +58,21 @@
  	$(EXTRA_CPPFLAGS) \
  	$(IMAGEDEFINES) \
  	$(XFT_DEFINES)
-@@ -186,7 +186,7 @@
- 
- # Platform specific includes
- ifeq ($(PLATFORM),Motif)
--PLATFORMINC=-I../../include/XmHTML -I/usr/X11R6/include -I/usr/include/freetype2
-+PLATFORMINC=-I../../include/XmHTML `pkg-config --cflags xft`
+@@ -224,7 +224,7 @@ ifeq ($(TOOLKIT),Motif)
+ ifeq ($(OS),IRIX)
+ TOOLKITINC=-I../../include/XmHTML -I/usr/include
  else
- ifeq ($(PLATFORM),gtk)
- PLATFORMINC=\
-@@ -209,7 +209,7 @@
- # Motif version (default)
- ifeq ($(PLATFORM),Motif)
- 
+-TOOLKITINC=-I../../include/XmHTML -I/usr/X11R6/include -I/usr/include/freetype2
++TOOLKITINC=-I../../include/XmHTML `pkg-config --cflags xft`
+ endif
+ else
+ ifeq ($(TOOLKIT),gtk)
+@@ -250,7 +250,7 @@ ifeq ($(TOOLKIT),Motif)
+ ifeq ($(OS),IRIX)
+ LIBDIR = -L/usr/lib32
+ else
 -LIBDIR = -L/usr/X11R6/lib
 +LIBDIR = -L${LOCALBASE}/lib
+ endif
  # This is what is required under Linux (Motif 2.0.1).
  # Your mileage may vary.
- LIBS   = -lXm -lXpm -lXmu -lXt -lXext -lX11 -lSM -lICE 

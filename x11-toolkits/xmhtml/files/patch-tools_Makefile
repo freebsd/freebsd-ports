@@ -1,6 +1,6 @@
---- tools/Makefile.orig
+--- tools/Makefile.orig	2015-10-26 10:22:55 UTC
 +++ tools/Makefile
-@@ -39,7 +39,7 @@
+@@ -39,7 +39,7 @@ TARGETS = reptype wsize gifinfo HTMLpars
  # rule to create .o files from .c files 
  .c.o:
  	$(RM) $@
@@ -9,7 +9,7 @@
  
  #
  # Special object rules
-@@ -50,21 +50,21 @@
+@@ -50,21 +50,21 @@ TARGETS = reptype wsize gifinfo HTMLpars
  #
  gif2gzf.o: gif2gzf.c
  	$(RM) $@
@@ -34,7 +34,7 @@
  
  #
  # All Targets
-@@ -76,33 +76,33 @@
+@@ -76,33 +76,33 @@ all: $(TARGETS)
  
  reptype::  GetRepTypes.o
  	$(RM) $@ \ 
