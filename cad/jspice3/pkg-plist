@@ -1,5 +1,5 @@
 bin/jspice3
-bin/help
+%%X11%%bin/help
 bin/nutmeg
 bin/proc2mod
 bin/multidec

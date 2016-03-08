@@ -1,6 +1,6 @@
---- src/lib/fte/misccoms.c.orig	Tue Feb 28 16:57:47 2006
-+++ src/lib/fte/misccoms.c	Tue Feb 28 16:59:28 2006
-@@ -284,7 +284,7 @@
+--- src/lib/fte/misccoms.c.orig	2001-05-01 20:58:18 UTC
++++ src/lib/fte/misccoms.c
+@@ -284,7 +284,7 @@ wordlist *wl;
                                  pl->pl_title,
                                  pl->pl_name);
              }
