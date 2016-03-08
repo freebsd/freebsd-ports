@@ -1,4 +1,4 @@
---- Makefile.shared.orig	2015-06-23 18:03:50 UTC
+--- Makefile.shared.orig	2016-01-13 20:09:57 UTC
 +++ Makefile.shared
 @@ -7,7 +7,7 @@
  # You can also use "wish ayamConf.tcl" to create a Makefile.

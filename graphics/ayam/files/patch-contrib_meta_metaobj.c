@@ -1,4 +1,4 @@
---- contrib/meta/metaobj.c.orig	2015-06-23 18:03:50 UTC
+--- contrib/meta/metaobj.c.orig	2016-01-13 20:09:57 UTC
 +++ contrib/meta/metaobj.c
 @@ -859,7 +859,7 @@ metaobj_notifycb (ay_object *o)
   meta_world *w;
