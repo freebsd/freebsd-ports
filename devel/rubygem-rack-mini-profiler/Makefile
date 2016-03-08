@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-mini-profiler
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Profiles loading speed for rack applications
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack16>=1.1.3:${PORTSDIR}/www/rubygem-rack16
+RUN_DEPENDS=	rubygem-rack16>=1.2.0:${PORTSDIR}/www/rubygem-rack16
 
 NO_ARCH=	yes
 USE_RUBY=	yes
