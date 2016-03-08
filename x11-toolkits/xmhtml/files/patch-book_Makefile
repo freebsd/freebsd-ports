@@ -1,6 +1,6 @@
---- book/Makefile.orig
+--- book/Makefile.orig	2015-10-26 10:22:55 UTC
 +++ book/Makefile
-@@ -12,13 +12,13 @@
+@@ -12,13 +12,13 @@ EXAMPLES=simple_html simple_html2 autosi
  
  # The library
  XMHTMLINC= -I../lib
@@ -16,7 +16,7 @@
  
  all: $(EXAMPLES)
  
-@@ -26,27 +26,27 @@
+@@ -26,27 +26,27 @@ all: $(EXAMPLES)
  
  simple_html::  ../src/libXmHTML.a simple_html.o
  	$(RM) $@ \ 

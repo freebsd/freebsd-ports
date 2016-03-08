@@ -1,4 +1,4 @@
---- http/Makefile.orig
+--- http/Makefile.orig	2015-10-26 10:22:55 UTC
 +++ http/Makefile
 @@ -2,7 +2,7 @@
  # lint configuration. I use lclint.
@@ -9,7 +9,7 @@
  SHAREDLIB=libhttp.so.0
  SONAME=libhttp.so.0
  
-@@ -23,16 +23,15 @@
+@@ -23,16 +23,15 @@ SUBDIRS=
  # rule to create .o files from .c files 
  .c.o:
  	$(RM) $@
