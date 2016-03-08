@@ -10,27 +10,30 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple tool to export pf (packet filter) logs to XML files
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-OPTIONS_DEFINE=	EXPAT DOCS
-EXPAT_DESC=	Ability to merge new events (require expat)
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXPAT}
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
-MAKE_ARGS+=	-DWITH_EXPAT \
-		EXPAT_INCLUDEDIR=${LOCALBASE}/include \
-		EXPAT_LIBDIR=${LOCALBASE}/lib
-.endif
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_sparc64=	cannot compile: error in C++ code
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+OPTIONS_DEFINE=	EXPAT DOCS EXAMPLES
+
+EXPAT_DESC=		Ability to merge new events (require expat)
+EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+EXPAT_MAKE_ARGS=	-DWITH_EXPAT \
+			EXPAT_INCLUDEDIR=${LOCALBASE}/include \
+			EXPAT_LIBDIR=${LOCALBASE}/lib
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/pflogx ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/dtd/* ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/xsl/* ${STAGEDIR}${EXAMPLESDIR}
