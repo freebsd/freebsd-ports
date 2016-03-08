@@ -1,4 +1,4 @@
---- objects/riproc.c.orig	2015-06-23 18:03:50 UTC
+--- objects/riproc.c.orig	2016-01-13 20:09:57 UTC
 +++ objects/riproc.c
 @@ -197,7 +197,7 @@ ay_riproc_setpropcb(Tcl_Interp *interp, 
   char *n1 = "RiProcAttrData";

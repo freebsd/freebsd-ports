@@ -1,4 +1,4 @@
---- contrib/sm.c.orig	2015-06-23 18:03:50 UTC
+--- contrib/sm.c.orig	2016-01-13 20:09:57 UTC
 +++ contrib/sm.c
 @@ -474,7 +474,7 @@ ay_sm_wriballsm(char *file, char *objfil
   static int countsm = 0;
