@@ -1,6 +1,6 @@
---- examples/Makefile.orig
+--- examples/Makefile.orig	2015-10-26 10:22:55 UTC
 +++ examples/Makefile
-@@ -11,10 +11,10 @@
+@@ -11,10 +11,10 @@ MOBJS= visual.o misc.o cache.o menu.o hi
  EXAMPLES=example_1 example_2 example_4
  
  # The XmHTML library
@@ -13,7 +13,7 @@
  
  # Libraries against which all examples are linked 
  LINKLIBS = $(XMHTMLLIB) $(LOADLIBES) $(DMALLOCLIB)
-@@ -22,7 +22,7 @@
+@@ -22,7 +22,7 @@ LINKLIBS = $(XMHTMLLIB) $(LOADLIBES) $(D
  # rule to create .o files from .c files 
  .c.o:
  	$(RM) $@
@@ -22,7 +22,7 @@
  
  all: $(EXAMPLES)
  
-@@ -30,15 +30,15 @@
+@@ -30,15 +30,15 @@ all: $(EXAMPLES)
  
  example_1::  ../src/libXmHTML.a example_1.o
  	$(RM) $@ \ 
