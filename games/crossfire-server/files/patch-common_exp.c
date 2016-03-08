@@ -1,6 +1,6 @@
---- ./common/exp.c.orig	2012-03-18 07:31:50.000000000 +0100
-+++ ./common/exp.c	2014-03-27 18:59:52.047466456 +0100
-@@ -224,7 +224,7 @@
+--- common/exp.c.orig	2014-04-05 22:30:50 UTC
++++ common/exp.c
+@@ -209,7 +209,7 @@ void init_experience(void) {
                  exit(1);
              }
  
