@@ -1,8 +1,5 @@
 %%HEXEN2%%bin/glhexen2
 %%HW%%bin/glhwcl
-%%LAUNCHER_GTK1%%bin/h2launcher.gtk1
-%%LAUNCHER_GTK2%%bin/h2launcher.gtk2
-%%LAUNCHER_GTK3%%bin/h2launcher.gtk3
 %%HEXEN2%%bin/hexen2
 %%HW%%bin/hwcl
 %%HW%%bin/hwmaster
@@ -22,7 +19,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.hwcl
 %%PORTDOCS%%%%DOCSDIR%%/README.hwmaster
 %%PORTDOCS%%%%DOCSDIR%%/README.hwsv
-%%PORTDOCS%%%%DOCSDIR%%/README.launcher
 %%PORTDOCS%%%%DOCSDIR%%/README.music
 %%PORTDOCS%%%%DOCSDIR%%/README.win32
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes
