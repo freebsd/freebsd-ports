@@ -1,6 +1,6 @@
---- ./common/loader.l.orig	2012-03-18 07:31:50.000000000 +0100
-+++ ./common/loader.l	2014-03-27 18:59:52.047466456 +0100
-@@ -856,8 +856,8 @@
+--- common/loader.l.orig	2014-04-05 22:30:50 UTC
++++ common/loader.l
+@@ -858,8 +858,8 @@ A       .+
  ^maxsp{S}           op->stats.maxsp = IVAL;
  ^grace{S}           op->stats.grace = IVAL;
  ^maxgrace{S}        op->stats.maxgrace = IVAL;

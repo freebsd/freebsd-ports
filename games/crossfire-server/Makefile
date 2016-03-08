@@ -2,72 +2,84 @@
 # $FreeBSD$
 
 PORTNAME=	crossfire
-PORTVERSION=	1.70.0
-PORTREVISION=	7
+PORTVERSION=	1.71.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-server/${PORTVERSION} \
+		SF/${PORTNAME}/${PORTNAME}-arch/${PORTVERSION}:arch \
 		SF/${PORTNAME}/${PORTNAME}-maps/${PORTVERSION}:maps
 PKGNAMESUFFIX=	-server
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.maps${EXTRACT_SUFX}:maps
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}.arch${EXTRACT_SUFX}:arch \
+		${DISTNAME}.maps${EXTRACT_SUFX}:maps
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server for multiplayer graphical arcade and adventure game
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libsablot.so:${PORTSDIR}/textproc/sablotron
+		libpng.so:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
-
-USES=		gmake libtool localbase perl5 python sqlite uidfix
+USES=		autoreconf gmake libtool perl5 python shebangfix tar:bzip2 \
+		uidfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --with-check=no --localstatedir=/var/games
-CONFIGURE_SHELL=${LOCALBASE}/bin/bash
-REINPLACE_ARGS=	-i ""
+MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
+
+WRKSRC=		${WRKDIR}/${PKGNAME}
+
+SHEBANG_FILES=	../maps/Info/*.pl ../maps/brest/pshops/pshop_copier \
+		doc/*.pl doc/playbook/*.pl doc/scripts/*.pl \
+		lib/adm/*.pl lib/adm/map_info utils/*.in utils/mktable.script
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS ChangeLog DEVELOPERS NEWS README
+OPTIONS_DEFINE=		DOCS
+OPTIONS_GROUP=		PLUGINS
+OPTIONS_GROUP_PLUGINS=	CFLOGGER CFNEWSPAPER CFRHG
+OPTIONS_SUB=		yes
 
-DOCSRCDIR2=	${WRKSRC}/doc
-DOCSDIR2=	${DOCSDIR}/doc
-DOC_FILES2=	PlayerStats README RunTimeCommands SurvivalGuide *.doc *.ps \
-		metaserver multigod plugins spellcasters_guide_to_runes
-
-OPTIONS_DEFINE=	DOCS
+CFLOGGER_DESC=		SQLite logging plugin
+CFLOGGER_USE=		sqlite=3
+CFLOGGER_CONFIGURE_ON=	--enable-logger=yes
+CFNEWSPAPER_DESC=	Newspaper plugin
+CFLOGGER_USE=		sqlite=3
+CFNEWSPAPER_CONFIGURE_ON=	--enable-newspaper=yes
+CFRHG_DESC=		Random house genetor plugin
+CFRHG_CONFIGURE_ON=	--enable-cfrhg=yes
 
 post-patch:
-	@${FIND} ${WRKSRC} -name 'Makefile.in'| ${XARGS} ${REINPLACE_CMD} -e \
-		's|-ldl||g'
-	@${REINPLACE_CMD} -e 's|^#.*/bin/sh|#! ${LOCALBASE}/bin/bash|g; \
-		 s|-ldl||g; \
-		 s|python[{].*[}]|${PYTHON_VERSION}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/socket/metaserver.c
-	@${REINPLACE_CMD} -e 's| /usr/bin/perl|${LOCALBASE}/bin/perl|' \
-		${WRKSRC}/lib/adm/map_expand.pl
+	@${FIND} ${WRKSRC} -name 'Makefile.am' | ${XARGS} ${REINPLACE_CMD} -e \
+		's|=-ldl|=|'
+	@${REINPLACE_CMD} -e \
+		's|exec /usr/bin/perl|exec ${LOCALBASE}/bin/perl|' \
+		${WRKSRC}/doc/scripts/*-extract.pl
+	@${REINPLACE_CMD} -e \
+		'/PYTHON_CHECK_VERSIONS/s|=".*"|="${PYTHON_VER}"|' \
+		${WRKSRC}/macros/cf_python.m4
+
+pre-configure:
+	@${CHMOD} 644 ${WRKSRC}/macros/*.m4
+
+pre-build:
+	@${LN} -sf ../../arch ${WRKSRC}/lib
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/maps
-	@(cd ${WRKDIR}/maps && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/maps)
-
-	@${FIND} ${STAGEDIR}${PREFIX} -exec ${GREP} -q "#!/usr/bin/perl" {} \; \
-		-exec ${REINPLACE_CMD} -e \
-		's|#!/usr/bin/perl|#!${LOCALBASE}/bin/perl|g' {} \;
-	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
-		${STAGEDIR}${PREFIX}/bin/crossloop.web
+	${MKDIR} ${STAGEDIR}${DATADIR}/maps
+	(cd ${WRKDIR}/maps && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/maps)
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	@${FIND} ${WRKSRC}/doc -name 'Makefile*' -delete
-.for d in playbook playbook-html spoiler spoiler-html
-	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DOCSDIR2})
-.endfor
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog NEWS README \
+		${STAGEDIR}${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DOCSDIR}/doc "! -name '*Makefile*'")
 
 .include <bsd.port.mk>
