@@ -1,6 +1,6 @@
---- all.c.orig	Fri Dec 22 13:05:56 1995
-+++ all.c	Sat Oct 19 22:49:11 2002
-@@ -637,8 +637,10 @@
+--- all.c.orig	1995-12-22 12:05:56 UTC
++++ all.c
+@@ -637,8 +637,10 @@ FUNCARG((stream),
   * returns the error string, or NULL
   */
  {
