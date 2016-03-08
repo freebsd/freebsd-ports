@@ -50,6 +50,20 @@ you update your ports collection, before attempting any port upgrades.
 
     # portupgrade -o security/openssh-portable security/openssh-portable-devel
 
+20160228:
+  AFFECTS: users of mail/postfix
+  AUTHOR: ohauer@FreeBSD.org
+
+   Postfix has been updated to version 3.1, VDA and native SPF is no
+   longer supported.
+
+   - if VDA support is needed, users should stay on mail/postfix211
+   - SPF support can be added to postfix via one of the mail/*spf* ports
+
+   The Dovecot SASL OPTION was removed, Dovecot SASL support is always given
+   from now on.  In addition, for each mail/postfix* port there is now a
+   mail/postfix*-sasl slave port providing Cyrus SASL as default.
+
 20160217:
   AFFECTS: users of www/nginx-devel
   AUTHOR: osa@FreeBSD.org
