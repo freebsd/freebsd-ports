@@ -1,15 +1,15 @@
-In 2000, Raven Software released the source code to their class based shooter
-game Hexen II and its multiplayer extension HexenWorld.
+In 2000, Raven Software released the source code to their class based
+shooter game Hexen II and its multiplayer extension HexenWorld.
 
-Since then, there has been some source ports of this game, most notably the
-now neglected Anvil of Thyrion project. But nothing has been done for Linux
-since the beginning of 2002.
+Since then, there has been some source ports of this game, most notably
+the now neglected Anvil of Thyrion project. But nothing has been done
+for Linux since the beginning of 2002.
 
-The Hammer of Thyrion project continues the development for Linux and BSD
-people, with continued support for Windows users as well. Many bugs are fixed
-and even new features are added:
+The Hammer of Thyrion project continues the development for Linux and
+BSD people, with continued support for Windows users as well. Many bugs
+are fixed and even new features are added:
 
-New sound modes, improved mouse handling, improved video modes, OpenGL glows
-and more.
+New sound modes, improved mouse handling, improved video modes, OpenGL
+glows and more.
 
 WWW: http://uhexen2.sourceforge.net/
