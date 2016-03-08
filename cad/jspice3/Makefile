@@ -2,35 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	jspice3
-PORTVERSION=	2.5.011109
-PORTREVISION=	1
+DISTVERSION=	2.5-110615
 CATEGORIES=	cad
 MASTER_SITES=	http://www.wrcad.com/ftp/pub/
-DISTNAME=	${PORTNAME}-2.5-011109
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptation of the Berkeley Spice3f4 with superconductivity
-
-BROKEN=		unfetchable
 
 CONFLICTS=	spice-[0-9]*
 
 OPTIONS_DEFINE=	X11 EXAMPLES
 OPTIONS_DEFAULT=	X11
-WRKSRC=		${WRKDIR}/${PORTNAME}-2.5
+OPTIONS_SUB=		yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 X11_USE=	XORG=x11,xaw,xt
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+g;s+-O -g+${CFLAGS}+g;' \
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^prefix/s|=.*|= ${PREFIX}| ; \
+		 /^SPICE_HOST/s|=.*|= localhost| ; \
+		 /^CC_OPT/s|=.*|= ${CFLAGS}|' \
 		${WRKSRC}/conf/unixconf/mkheader.0
 
-pre-configure-X11-on:
-	@${REINPLACE_CMD} -e 's+#%%WITH_X%%++g' \
+post-patch-X11-off:
+	@${REINPLACE_CMD} -e \
+		'/$$makeprog depend/s|^|#|' \
+		${WRKSRC}/build
+	@${REINPLACE_CMD} -e \
+		's|^LIBX|#LIBX| ; \
+		 s|-DWANT_X11||' \
 		${WRKSRC}/conf/unixconf/mkheader.0
-
-pre-configure-X11-off:
-	@${ECHO} "#undef HAVE_X11" >> ${WRKSRC}/src/include/spice.h
 
 do-build:
 	(cd ${WRKSRC};${SETENV} ${MAKE_ENV} ${SH} build)
