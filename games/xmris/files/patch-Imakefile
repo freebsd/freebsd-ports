@@ -1,0 +1,23 @@
+--- Imakefile.orig	1995-12-22 12:05:52 UTC
++++ Imakefile
+@@ -59,7 +59,7 @@ EXTRA_LOAD_FLAGS = -lV3
+ XCOMM system environment
+ XCOMM
+ XCOMM don't you have gettimeofday?
+-TIME =
++TIME = -DPOSIX
+ XCOMM TIME = -DUSETIME
+ XCOMM don't you have lockf or flock?
+ LOCK =
+@@ -71,9 +71,9 @@ XCOMM
+ /* #define thefont "-*-courier-*-r-*-*-18-*-*-*-m-*-*-*" */
+ XCOMM where is the high score file?
+ XCOMM SCORE = $(LOCAL)/lib/$(APP)
+-SCORE = $(LIBDIR)/$(APP)
++SCORE = /var/games/$(APP)
+ /* to install default gardens not in app_defaults/$(APP)
+-/* #define InstallDefaultGardens $(SCORE)/gardens */
++#define InstallDefaultGardens $(LIBDIR)/$(APP)
+ 
+ XCOMM The following defines are needed for some implementations and/or sites.
+ XCOMM It is xmkmf's job to get these right in the first place.
