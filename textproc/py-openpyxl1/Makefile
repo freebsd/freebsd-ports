@@ -14,6 +14,7 @@ COMMENT=	Python library to read/write Excel 2007 xlsx/xlsm files
 LICENSE=	MIT
 
 DEPRECATED=	Use textproc/py-openpyxl instead
+EXPIRATION_DATE=	2016-04-10
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}openpyxl-[0-9]*
 
 USES=		python
