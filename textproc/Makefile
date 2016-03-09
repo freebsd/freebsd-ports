@@ -156,6 +156,7 @@
     SUBDIR += elasticsearch-plugin-head
     SUBDIR += elasticsearch-plugin-hq
     SUBDIR += elasticsearch-plugin-marvel
+    SUBDIR += elasticsearch-plugin-marvel2
     SUBDIR += elasticsearch-plugin-sql
     SUBDIR += elasticsearch-river-rabbitmq
     SUBDIR += elasticsearch2
@@ -1216,10 +1217,10 @@
     SUBDIR += py-chardet
     SUBDIR += py-cloud_sptheme
     SUBDIR += py-creole
-    SUBDIR += py-curator
     SUBDIR += py-diff-match-patch
     SUBDIR += py-docutils
     SUBDIR += py-dsv
+    SUBDIR += py-elasticsearch-curator
     SUBDIR += py-elasticsearch-dsl-py
     SUBDIR += py-elasticsearch-py
     SUBDIR += py-elib.intl

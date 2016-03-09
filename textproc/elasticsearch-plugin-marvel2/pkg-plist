@@ -1,0 +1,10 @@
+lib/elasticsearch/plugins/license/LICENSE.txt
+lib/elasticsearch/plugins/license/NOTICE.txt
+lib/elasticsearch/plugins/license/license-%%VERSION%%.jar
+lib/elasticsearch/plugins/license/license-core-%%VERSION%%.jar
+lib/elasticsearch/plugins/license/license-plugin-api-%%VERSION%%.jar
+lib/elasticsearch/plugins/license/plugin-descriptor.properties
+lib/elasticsearch/plugins/marvel-agent/LICENSE.txt
+lib/elasticsearch/plugins/marvel-agent/NOTICE.txt
+lib/elasticsearch/plugins/marvel-agent/marvel-agent-%%VERSION%%.jar
+lib/elasticsearch/plugins/marvel-agent/plugin-descriptor.properties
