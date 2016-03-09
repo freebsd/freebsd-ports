@@ -1,7 +1,7 @@
 bin/lynis
+etc/bash_completion.d/lynis
 @sample %%ETCDIR%%/default.prf.sample
 man/man8/lynis.8.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bash_completion.d/lynis
 %%DATADIR%%/db/fileperms.db
 %%DATADIR%%/db/hints.db
 %%DATADIR%%/db/integrity.db
