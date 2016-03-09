@@ -1,0 +1,47 @@
+--- makefile.include.orig	2016-02-03 18:07:27 UTC
++++ makefile.include
+@@ -14,15 +14,15 @@ ifndef PREFIX
+   PREFIX=
+ endif
+ 
+-ifeq ($(CC),cc)
+-  CC = $(PREFIX)gcc
+-endif
+-LD=$(PREFIX)ld
+-AR=$(PREFIX)ar
+-RANLIB=$(PREFIX)ranlib
++#ifeq ($(CC),cc)
++#  CC = $(PREFIX)gcc
++#endif
++#LD=$(PREFIX)ld
++AR=$(shell which ar)
++RANLIB=$(shell which ranlib)
+ 
+ ifndef MAKE
+-   MAKE=make
++   MAKE=$(shell which gmake)
+ endif
+ 
+ CFLAGS += -I./ -Wall -Wsign-compare -Wextra -Wshadow
+@@ -55,7 +55,7 @@ endif # COMPILE_SIZE
+ endif # COMPILE_DEBUG
+ 
+ # adjust coverage set
+-ifneq ($(filter $(shell arch), i386 i686 x86_64 amd64 ia64),)
++ifneq ($(filter $(shell /sbin/sysctl -b hw.machine_arch), i386 i686 x86_64 amd64 ia64),)
+    COVERAGE = test_standalone timing
+    COVERAGE_APP = ./test && ./ltmtest
+ else
+@@ -71,9 +71,9 @@ test_standalone: CFLAGS+=-DLTM_DEMO_TEST
+ #LIBPATH-The directory for libtommath to be installed to.
+ #INCPATH-The directory to install the header files for libtommath.
+ #DATAPATH-The directory to install the pdf docs.
+-LIBPATH?=/usr/lib
+-INCPATH?=/usr/include
+-DATAPATH?=/usr/share/doc/libtommath/pdf
++LIBPATH?=$(PREFIX)/lib
++INCPATH?=$(PREFIX)/include
++DATAPATH?=$(DOCSDIR)/pdf
+ 
+ #make the code coverage of the library
+ #
