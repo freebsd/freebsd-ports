@@ -35,8 +35,6 @@ bin/router-slim
 %%PORTDOCS%%%%DOCSDIR%%/html/tagging.html
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
 include/routino.h
-lib/libroutino-slim.so
-lib/libroutino.so
 %%DATADIR%%/profiles.xml
 %%DATADIR%%/tagging-drive.xml
 %%DATADIR%%/tagging-ride.xml
@@ -912,8 +910,10 @@ lib/libroutino.so
 %%WWWDIR%%/%%WWWDIR%%/icons/waypoint-home.png
 %%WWWDIR%%/%%WWWDIR%%/icons/waypoint-left.png
 %%WWWDIR%%/%%WWWDIR%%/icons/waypoint-locate.png
+%%WWWDIR%%/%%WWWDIR%%/icons/waypoint-loop.png
 %%WWWDIR%%/%%WWWDIR%%/icons/waypoint-recentre.png
 %%WWWDIR%%/%%WWWDIR%%/icons/waypoint-remove.png
+%%WWWDIR%%/%%WWWDIR%%/icons/waypoint-reverse.png
 %%WWWDIR%%/%%WWWDIR%%/icons/waypoint-right.png
 %%WWWDIR%%/%%WWWDIR%%/icons/waypoint-search.png
 %%WWWDIR%%/%%WWWDIR%%/icons/waypoint-up.png
