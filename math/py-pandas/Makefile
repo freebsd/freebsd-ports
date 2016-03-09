@@ -35,14 +35,12 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 # Note: we cannot include math/py-statsmodels in TEST_DEPENDS because it
 # depends upon us for BUILD and RUN.
 
-OPTIONS_DEFINE=		MPL SCIPY
+OPTIONS_DEFINE=		MPL OPENPYXL SCIPY
 OPTIONS_GROUP=		ACCEL STORAGE HTML EXCEL
 OPTIONS_GROUP_ACCEL=	BTLNCK NUMEXPR
 OPTIONS_GROUP_STORAGE=	BOTO TABLES SQL
 OPTIONS_GROUP_HTML=	LXML HTML5LIB
 OPTIONS_GROUP_EXCEL=	XLRD XLWT
-OPTIONS_RADIO=		OPYXL
-OPTIONS_RADIO_OPYXL=	OPENPYXL1 OPENPYXL2
 OPTIONS_DEFAULT=	BTLNCK NUMEXPR
 
 MPL_DESC=	Support graphical plotting output via math/py-matplotlib
@@ -54,15 +52,13 @@ TABLES_DESC=	Support HDF5-based storage via devel/py-tables
 SQL_DESC=	Support SQL databases via databases/py-sqlalchemy
 LXML_DESC=	Parse HTML with devel/py-lxml and www/py-beautifulsoup
 HTML5LIB_DESC=	Parse HTML with www/py-html5lib and www/py-beautifulsoup
-OPENPYXL1_DESC=	Read/write MS Excel 2007+ with textproc/py-openpyxl1
-OPENPYXL2_DESC=	Read/write MS Excel 2007+ with textproc/py-openpyxl (EXPERIMENTAL)
+OPENPYXL_DESC=	Read/write MS Excel 2007+ with textproc/py-openpyxl
 XLRD_DESC=	Read MS Excel with textproc/py-xlrd
 XLWT_DESC=	Write MS Excel with textproc/py-xlwt
 ACCEL_DESC=	Computation Acceleration Add-ons
 STORAGE_DESC=	Data Storage Add-ons
 HTML_DESC=	HTML Parsing Add-ons
 EXCEL_DESC=	MS Excel I/O Add-ons
-OPYXL_DESC=	MS Excel I/O Add-ons (openpyxl alternatives)
 
 MPL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib
 SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:${PORTSDIR}/science/py-scipy
@@ -74,8 +70,7 @@ SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:${PORTSDIR}/databases/py-sq
 
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml
 HTML5LIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>0:${PORTSDIR}/www/py-html5lib
-OPENPYXL1_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl1<2.0.0:${PORTSDIR}/textproc/py-openpyxl1
-OPENPYXL2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl>=2.0.0:${PORTSDIR}/textproc/py-openpyxl
+OPENPYXL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl>=2.0.0:${PORTSDIR}/textproc/py-openpyxl
 XLRD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlrd>0:${PORTSDIR}/textproc/py-xlrd
 XLWT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlwt>0:${PORTSDIR}/textproc/py-xlwt
 
