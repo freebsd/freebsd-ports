@@ -3,6 +3,7 @@
 
 PORTNAME=	include-what-you-use
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -11,8 +12,8 @@ COMMENT=	Tool for use with clang to analyze #includes in C and C++ source files
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BUILD_DEPENDS=	clang37:${PORTSDIR}/lang/clang37
-RUN_DEPENDS=	clang37:${PORTSDIR}/lang/clang37
+BUILD_DEPENDS=	clang37:${PORTSDIR}/devel/llvm37
+RUN_DEPENDS=	clang37:${PORTSDIR}/devel/llvm37
 
 USES=		cmake:outsource ncurses python:run
 USE_GITHUB=	yes
