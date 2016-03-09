@@ -3,29 +3,36 @@
 
 PORTNAME=	videogen
 PORTVERSION=	0.33
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.dynaweb.hu/opensource/videogen/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for calculating XFree86 modelines
 
+LICENSE=	GPLv2
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
-
-DOCS=		BUGS CHANGES README THANKS
-
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	DOCS
+PLIST_FILES=	bin/videogen man/man1/videogen.1.gz
+PORTDOCS=	BUGS CHANGES README THANKS
+PORTEXAMPLES=	*
 
-post-extract:
-	@${LN} -sf ${PORTNAME}.1x ${WRKSRC}/${PORTNAME}.1
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1x ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${DOCS}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${STAGEDIR}${EXAMPLESDIR}/${PORTNAME}.conf
 
 .include <bsd.port.mk>
