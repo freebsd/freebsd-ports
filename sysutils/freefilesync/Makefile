@@ -26,5 +26,10 @@ WX_UNICODE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/wx-config/${WX_CONFIG:T}/' \
 		-e 's,g++,${CXX},' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|<sys/vfs.h>|<sys/mount.h>|' \
+		${WRKDIR}/zen/file_access.cpp
+	@${REINPLACE_CMD} -e 's|WEXITSTATUS||' ${WRKDIR}/zen/shell_execute.h
+	@${REINPLACE_CMD} -e 's|CLOCK_MONOTONIC_RAW|CLOCK_MONOTONIC|' \
+		${WRKDIR}/zen/tick_count.h
 
 .include <bsd.port.mk>
