@@ -1,5 +1,5 @@
---- ./tsc.c.orig	2009-12-15 07:18:40.000000000 -0500
-+++ ./tsc.c	2011-10-14 22:36:47.000000000 -0400
+--- tsc.c.orig	2016-02-10 18:38:43 UTC
++++ tsc.c
 @@ -15,6 +15,12 @@
     on your Linux system; if not, write to the Free Software Foundation,
     Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA */
@@ -13,7 +13,7 @@
  #include <string.h>
  #include <stdio.h>
  #include <stdlib.h>
-@@ -46,6 +52,7 @@
+@@ -46,6 +52,7 @@ static int fmt_tsc(char **buf, u64 tsc, 
  	return 0;
  }
  
@@ -21,7 +21,7 @@
  static double cpufreq_mhz(int cpu, double infomhz)
  {
  	double mhz;
-@@ -68,12 +75,29 @@
+@@ -68,12 +75,29 @@ static double cpufreq_mhz(int cpu, doubl
  	fclose(f);
  	return mhz;
  }
@@ -51,7 +51,7 @@
  static int deep_sleep_states(int cpu)
  {
  	int ret;
-@@ -132,6 +156,41 @@
+@@ -132,6 +156,41 @@ static int tsc_reliable(int cputype, int
  		return 0;
  	return 1;
  }

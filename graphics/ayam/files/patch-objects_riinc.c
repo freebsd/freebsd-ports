@@ -1,4 +1,4 @@
---- objects/riinc.c.orig	2015-06-23 18:03:50 UTC
+--- objects/riinc.c.orig	2016-01-13 20:09:57 UTC
 +++ objects/riinc.c
 @@ -184,7 +184,7 @@ ay_riinc_setpropcb(Tcl_Interp *interp, i
   char *n1 = "RiIncAttrData";

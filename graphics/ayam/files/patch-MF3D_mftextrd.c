@@ -1,4 +1,4 @@
---- MF3D/mftextrd.c.orig	2015-06-23 18:03:50 UTC
+--- MF3D/mftextrd.c.orig	2016-01-13 20:09:57 UTC
 +++ MF3D/mftextrd.c
 @@ -178,7 +178,7 @@ MF3D_GetTOCLabels(
  			MFASSERT(numNewLabels >= 0);

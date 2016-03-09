@@ -15,6 +15,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/multilog:${PORTSDIR}/sysutils/daemontools
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 
+TEST_TARGET=	check
+
 PORTDOCS=	ChangeLog NEWS SECURITY-BUG
 bin=		uschedule uschedulecmd uscheduleconf uschedulecp \
 		uscheduleedit uschedulelist uschedulerm uscheduleruntimelimit
@@ -29,12 +31,7 @@ pre-build:
 	${ECHO_CMD} "${CC}" > ${WRKSRC}/src/conf-cc
 	${ECHO_CMD} "${CFLAGS}" > ${WRKSRC}/src/conf-cflags
 
-regression-test: build
-	cd ${WRKSRC} && ${MAKE} check
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/src && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/command && ${INSTALL_PROGRAM} ${bin} \
 		${STAGEDIR}${PREFIX}/bin)
 	${INSTALL_PROGRAM} ${WRKSRC}/command/${sbin} ${STAGEDIR}${PREFIX}/sbin
@@ -44,5 +41,9 @@ do-install:
 		${STAGEDIR}${MANPREFIX}/man/man7
 	${INSTALL_MAN} ${WRKSRC}/doc/uscheduled.8 \
 		${STAGEDIR}${MANPREFIX}/man/man8
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/src && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

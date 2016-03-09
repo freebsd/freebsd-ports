@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	Email-Simple
-PORTVERSION=	2.208
+PORTVERSION=	2.210
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -19,5 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

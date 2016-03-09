@@ -3,7 +3,7 @@
 
 PORTNAME=	libbrotli
 PORTVERSION=	${BROTLI_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel archivers
 
 MAINTAINER=	osa@FreeBSD.org
@@ -24,8 +24,10 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-pre-configure:
+post-extract:
 	${RMDIR} ${WRKSRC}/brotli && ${MV} ${WRKDIR}/brotli-${BROTLI_VERSION} ${WRKSRC}/brotli
+
+pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
 
 .include <bsd.port.mk>

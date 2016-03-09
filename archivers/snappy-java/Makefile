@@ -10,12 +10,10 @@ PORTVERSION=	1.0.4.1
 DISTVERSIONPREFIX=	snappy-java-
 PORTREVISION=	2
 CATEGORIES=	archivers java
-MASTER_SITES=	GH:source1 \
-		http://snappy.googlecode.com/files/:source2 \
+MASTER_SITES=	http://snappy.googlecode.com/files/:source2 \
 		LOCAL/jgh/archivers/${PORTNAME}/:source3
 PKGNAMESUFFIX=	java
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:source1 \
-		snappy-${PORTVERSION:R}.tar.gz:source2 \
+DISTFILES+=	snappy-${PORTVERSION:R}.tar.gz:source2 \
 		FreeBSD-snappy-${PORTVERSION}-maven-repository.tar.gz:source3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		FreeBSD-snappy-${PORTVERSION}-maven-repository.tar.gz

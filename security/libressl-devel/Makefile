@@ -21,8 +21,9 @@ CERTBUNDLE_DESC=	Install LibreSSL's cert bundle ${PREFIX}/etc/ssl/cert.pem
 MAN3_DESC=	Install API manpages (section 3)
 NC_DESC=	Build nc libtls demo application
 
-CONFLICTS?=	openssl-[0-9]* \
-		libressl-[0-9]*
+CONFLICTS?=	libressl-[0-9]* \
+		openssl-[0-9]* \
+		openssl-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig

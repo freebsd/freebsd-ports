@@ -178,7 +178,6 @@ icu_LIB_DEPENDS=		libicui18n.so:${PORTSDIR}/devel/icu
 icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api
 
 -jpeg_BUILD_DEPENDS=yasm:${PORTSDIR}/devel/yasm
-# XXX JCS_EXTENSIONS API is currently disabled by r371283
 # XXX Remove files/patch-ijg-libjpeg once -turbo is default
 jpeg_USES=		jpeg
 jpeg_MOZ_OPTIONS=	--with-system-jpeg=${LOCALBASE}
@@ -189,7 +188,7 @@ nspr_MOZ_OPTIONS=	--with-system-nspr
 nss_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
 nss_MOZ_OPTIONS=	--with-system-nss
 
-.if exists(${FILESDIR}/patch-z-bug517422)
+.if exists(${FILESDIR}/patch-z-bug517422) && ${MOZILLA_VER:R:R} < 45
 opus_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
 opus_MOZ_OPTIONS=	--with-system-opus
 .endif
@@ -203,10 +202,6 @@ png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
 .if exists(${FILESDIR}/patch-z-bug517422)
 soundtouch_LIB_DEPENDS=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
 soundtouch_MOZ_OPTIONS=	--with-system-soundtouch
-
-# XXX disabled: bug 913854 not yet upstreamed
-speex_LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speex
-speex_MOZ_OPTIONS=	--with-system-speex
 .endif
 
 sqlite_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3

@@ -44,6 +44,7 @@
     SUBDIR += portconf
     SUBDIR += portdowngrade
     SUBDIR += portell
+    SUBDIR += portest
     SUBDIR += portfind
     SUBDIR += portless
     SUBDIR += portlint

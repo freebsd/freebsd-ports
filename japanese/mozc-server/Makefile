@@ -251,14 +251,11 @@ do-install-ibus_mozc:
 
 # uim_mozc
 .if ${BUILD_MOZC_LIST:Muim_mozc} == "uim_mozc" || make(makesum)
-#USE_GITHUB=	yes	# XXX
-GH_ACCOUNT=	e-kato
-GH_PROJECT=	macuim
-GH_TAGNAME=	v0.6.16.2
-DISTFILES+=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}:gh
-EXTRACT_ONLY+=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}
-MASTER_SITES+=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/:gh
-WRKSRC_MU=	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
+USE_GITHUB=	nodefault	# XXX
+GH_ACCOUNT=	e-kato:MU
+GH_PROJECT=	macuim:MU
+GH_TAGNAME=	v0.6.16.2:MU
+EXTRACT_ONLY+=	${DISTFILE_MU}
 
 LIB_DEPENDS+=	libuim.so:${PORTSDIR}/textproc/uim
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \

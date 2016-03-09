@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bosh_common
-PORTVERSION=	1.3184.1.0
+PORTVERSION=	1.3202.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

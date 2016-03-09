@@ -1,0 +1,43 @@
+--- examples/Makefile.orig	2015-10-26 10:22:55 UTC
++++ examples/Makefile
+@@ -11,10 +11,10 @@ MOBJS= visual.o misc.o cache.o menu.o hi
+ EXAMPLES=example_1 example_2 example_4
+ 
+ # The XmHTML library
+-XMHTMLLIB = -L../lib -lXmHTML
++XMHTMLLIB = ../lib/libXmHTML.la
+ 
+ # Richard Offer's http client-side library
+-HTTPLIB   = -L../http -lhttp
++HTTPLIB   = ../http/libhttp.la
+ 
+ # Libraries against which all examples are linked 
+ LINKLIBS = $(XMHTMLLIB) $(LOADLIBES) $(DMALLOCLIB)
+@@ -22,7 +22,7 @@ LINKLIBS = $(XMHTMLLIB) $(LOADLIBES) $(D
+ # rule to create .o files from .c files 
+ .c.o:
+ 	$(RM) $@
+-	$(CC) $(CFLAGS) $(CPPFLAGS) $(INCLUDES) -c $<
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) $(CPPFLAGS) $(INCLUDES) -c $<
+ 
+ all: $(EXAMPLES)
+ 
+@@ -30,15 +30,15 @@ all: $(EXAMPLES)
+ 
+ example_1::  ../src/libXmHTML.a example_1.o
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) example_1.o $(LINKLIBS)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) example_1.o $(LINKLIBS)
+ 
+ example_2::  ../src/libXmHTML.a example_2.o $(MOBJS)
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) example_2.o $(MOBJS) $(LINKLIBS)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) example_2.o $(MOBJS) $(LINKLIBS)
+ 
+ example_4::  ../src/libXmHTML.a example_4.o
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) example_4.o $(LINKLIBS) $(HTTPLIB)
++	$(LIBTOOL) --mode=link $(CC) -o $@ $(LDFLAGS) example_4.o $(LINKLIBS) $(HTTPLIB)
+ 
+ .PHONY: ../src/libXmHTML.a 
+ .PHONY: stamp-includes

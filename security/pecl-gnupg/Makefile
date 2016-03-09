@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.6
 CATEGORIES=	security
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,10 +17,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 
 CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include/gpgme
+IGNORE_WITH_PHP=70
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USES=		localbase tar:tgz
-IGNORE_WITH_PHP=	70
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$GNUPG_DIR/lib|${LOCALBASE}/lib|; s| -ldl||g' ${WRKSRC}/config.m4

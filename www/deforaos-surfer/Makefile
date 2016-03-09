@@ -3,6 +3,7 @@
 
 PORTNAME=	surfer
 PORTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.defora.org/os/download/download/4411/
 PKGNAMEPREFIX=	deforaos-

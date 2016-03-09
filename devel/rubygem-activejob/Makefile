@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activejob
-PORTVERSION=	4.2.5.1
+PORTVERSION=	4.2.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

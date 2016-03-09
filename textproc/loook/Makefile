@@ -3,6 +3,7 @@
 
 PORTNAME=	loook
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.danielnaber.de/loook/
 DISTNAME=	${PORTNAME}
@@ -13,8 +14,7 @@ COMMENT=	Simple Python tool that search in LibreOffice/OpenOffice files
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_PKGNAMEPREFIX}iniparse>=0:${PORTSDIR}/devel/py-iniparse
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter
 
 WRKSRC=		${WRKDIR}
 

@@ -812,6 +812,8 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/timezone_p2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/topic_sort_username.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v310/ucp_popuppm_module.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/increase_size_of_dateformat.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/m_pm_report.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/m_softdelete_global.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/plupload_last_gc_dynamic.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/profilefield_remove_underscore_from_alpha.php
@@ -829,6 +831,13 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v314rc2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v315.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v31x/v315rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/v316.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/v316rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/v317.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/v317pl1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/v317rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/v318.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v31x/v318rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/exception.php
 %%PHPBBDIR%%/phpbb/db/migration/helper.php
 %%PHPBBDIR%%/phpbb/db/migration/migration.php
@@ -1625,7 +1634,9 @@
 %%PHPBBDIR%%/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/CacheWarmer/CacheWarmerInterface.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/CacheWarmer/WarmableInterface.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Client.php
+%%PHPBBDIR%%/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Config/EnvParametersResource.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Config/FileLocator.php
+%%PHPBBDIR%%/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/EventListener/SaveSessionListener.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Controller/ControllerReference.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Controller/ControllerResolver.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Controller/ControllerResolverInterface.php
@@ -1778,8 +1789,10 @@
 %%PHPBBDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/Yaml.php
 %%PHPBBDIR%%/vendor/symfony/yaml/Symfony/Component/Yaml/composer.json
 %%PHPBBDIR%%/vendor/twig/twig/LICENSE
+%%PHPBBDIR%%/vendor/twig/twig/README.rst
 %%PHPBBDIR%%/vendor/twig/twig/composer.json
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Autoloader.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/BaseNodeVisitor.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Compiler.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/CompilerInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Environment.php
@@ -1794,11 +1807,13 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Extension/Debug.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Extension/Escaper.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Extension/Optimizer.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Extension/Profiler.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Extension/Sandbox.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Extension/Staging.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Extension/StringLoader.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/ExtensionInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Filter.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/FileExtensionEscapingStrategy.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Filter/Function.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Filter/Method.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Filter/Node.php
@@ -1823,6 +1838,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Block.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/BlockReference.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Body.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/CheckSecurity.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Do.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Embed.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression.php
@@ -1836,6 +1852,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/BitwiseXor.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Concat.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Div.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/EndsWith.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Equal.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/FloorDiv.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Greater.php
@@ -1843,6 +1860,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/In.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Less.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/LessEqual.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Matches.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Mod.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Mul.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/NotEqual.php
@@ -1851,6 +1869,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Power.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Range.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/Sub.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Binary/StartsWith.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/BlockReference.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Call.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression/Conditional.php
@@ -1886,7 +1905,6 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Module.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Print.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Sandbox.php
-%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/SandboxedModule.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/SandboxedPrint.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Set.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/SetTemp.php
@@ -1902,7 +1920,17 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/NodeVisitorInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Parser.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/ParserInterface.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Profiler/Dumper/Blackfire.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Profiler/Dumper/Html.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Profiler/Dumper/Text.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Profiler/Node/EnterProfile.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Profiler/Node/LeaveProfile.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Profiler/NodeVisitor/Profiler.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Profiler/Profile.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityError.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedFilterError.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedFunctionError.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityNotAllowedTagError.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityPolicy.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Sandbox/SecurityPolicyInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/SimpleFilter.php

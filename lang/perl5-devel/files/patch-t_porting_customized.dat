@@ -1,4 +1,4 @@
---- t/porting/customized.dat.orig	2016-02-01 02:22:53 UTC
+--- t/porting/customized.dat.orig	2016-03-07 08:18:35 UTC
 +++ t/porting/customized.dat
 @@ -14,7 +14,7 @@ ExtUtils::MakeMaker cpan/ExtUtils-MakeMa
  ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/Mksymlists.pm 23a4b33b974e036d59bf55aa02e025506a408048
@@ -15,6 +15,6 @@
  Math::BigRat cpan/Math-BigRat/lib/Math/BigRat.pm 6eabc68e04f67694f6fe523e64eb013fc337ca5b
 -Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm fe0bc906fb74b69cfd3fb289316ba669d770d465
 +Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 07e7d337de37d19b3cc7025af17b9111fb2ba265
- Scalar-List-Utils cpan/Scalar-List-Utils/lib/List/Util.pm 62d2a82a811b531a3fd25cb60c4c2ef943858892
- Scalar-List-Utils cpan/Scalar-List-Utils/lib/List/Util/XS.pm 08abbe1a707927cee53e85ba85d6bd35c1c2ae50
- Scalar-List-Utils cpan/Scalar-List-Utils/lib/Scalar/Util.pm 7f1e6eb11105623200ef9cdcb881545ccb769ded
+ Scalar-List-Utils cpan/Scalar-List-Utils/lib/List/Util.pm 3b501b7332480b34929bc4df5d48581df3307267
+ Scalar-List-Utils cpan/Scalar-List-Utils/lib/List/Util/XS.pm ebd169113d3df79d31ad5535dbd7a538a8c14fd2
+ Scalar-List-Utils cpan/Scalar-List-Utils/lib/Scalar/Util.pm def601405bac7a4d6690b8c4207e0f05d65eb4ca

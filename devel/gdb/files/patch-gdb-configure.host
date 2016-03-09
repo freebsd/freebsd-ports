@@ -1,0 +1,12 @@
+diff --git gdb/configure.host gdb/configure.host
+index 48714f4..53989d3 100644
+--- gdb/configure.host
++++ gdb/configure.host
+@@ -90,6 +90,7 @@ alpha*-*-netbsd* | alpha*-*-knetbsd*-gnu)
+ 			gdb_host=nbsd ;;
+ alpha*-*-openbsd*)	gdb_host=nbsd ;;
+ 
++arm*-*-freebsd*)	gdb_host=fbsd ;;
+ arm*-*-linux*)		gdb_host=linux ;;
+ arm*-*-netbsdelf* | arm*-*-knetbsd*-gnu)
+ 			gdb_host=nbsdelf ;;

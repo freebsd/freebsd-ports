@@ -1,6 +1,6 @@
---- tcl/shader.tcl.orig	2015-06-23 18:03:50 UTC
+--- tcl/shader.tcl.orig	2016-01-13 20:09:57 UTC
 +++ tcl/shader.tcl
-@@ -76,14 +76,14 @@
+@@ -76,14 +76,14 @@ proc shader_scanAll {} {
  
      foreach p $spathstr {
  	set files [glob -nocomplain "${p}/*${sext}"]

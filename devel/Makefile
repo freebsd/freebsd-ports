@@ -2072,7 +2072,6 @@
     SUBDIR += p5-DateTime-Event-NameDay
     SUBDIR += p5-DateTime-Event-Random
     SUBDIR += p5-DateTime-Event-Recurrence
-    SUBDIR += p5-DateTime-Event-SolarTerm
     SUBDIR += p5-DateTime-Event-Sunrise
     SUBDIR += p5-DateTime-Event-Zodiac
     SUBDIR += p5-DateTime-Fiscal-Year
@@ -2111,7 +2110,6 @@
     SUBDIR += p5-DateTime-TimeZone
     SUBDIR += p5-DateTime-TimeZone-Alias
     SUBDIR += p5-DateTime-TimeZone-LMT
-    SUBDIR += p5-DateTime-Util-Astro
     SUBDIR += p5-DateTime-Util-Calc
     SUBDIR += p5-DateTimeX-Easy
     SUBDIR += p5-Debug-Client
@@ -3301,6 +3299,8 @@
     SUBDIR += p5-Test-YAML-Meta
     SUBDIR += p5-Test-YAML-Valid
     SUBDIR += p5-Test-utf8
+    SUBDIR += p5-Test2
+    SUBDIR += p5-Test2-Suite
     SUBDIR += p5-Text-Levenshtein
     SUBDIR += p5-Text-Levenshtein-Damerau
     SUBDIR += p5-Text-LevenshteinXS
@@ -4255,6 +4255,7 @@
     SUBDIR += py-pygit2
     SUBDIR += py-pygithub
     SUBDIR += py-pygpx
+    SUBDIR += py-pyinotify
     SUBDIR += py-pyinstaller
     SUBDIR += py-pykde4
     SUBDIR += py-pykdeuic4
@@ -4433,6 +4434,7 @@
     SUBDIR += py-unipath
     SUBDIR += py-unittest2
     SUBDIR += py-unpaddedbase64
+    SUBDIR += py-update_checker
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
     SUBDIR += py-urwidtrees
@@ -4921,6 +4923,7 @@
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-kafo
     SUBDIR += rubygem-kafo_parsers
+    SUBDIR += rubygem-kafo_wizards
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-launchy22
@@ -5149,6 +5152,7 @@
     SUBDIR += rubygem-tzinfo
     SUBDIR += rubygem-tzinfo03
     SUBDIR += rubygem-unicode
+    SUBDIR += rubygem-unicode-display_width
     SUBDIR += rubygem-uuid
     SUBDIR += rubygem-uuidtools
     SUBDIR += rubygem-validatable
@@ -5185,8 +5189,6 @@
     SUBDIR += sdlskk
     SUBDIR += sdts++
     SUBDIR += sedsed
-    SUBDIR += seed
-    SUBDIR += seed3
     SUBDIR += serdisplib
     SUBDIR += sfio
     SUBDIR += sfml

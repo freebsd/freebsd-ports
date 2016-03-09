@@ -2,47 +2,59 @@
 # $FreeBSD$
 
 PORTNAME=	mad_fcl
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.atm.tut.fi/mad/download/
+MASTER_SITES=	http://mad.cs.tut.fi/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
 
-BROKEN=		unfetchable
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
-
-USES=		gmake
+USES=		dos2unix gmake
 USE_OPENSSL=	yes
-
-DOC_FILES=	fdt-example.xml flute-sdp-example.sdp
-
-PORTDOCS=	${DOC_FILES} README.TXT
-PLIST_FILES=	bin/flute
-
+MAKE_ENV=	LFLAGS="${LDFLAGS}"
 MAKE_JOBS_UNSAFE= yes
 
-OPTIONS_DEFINE=	DOCS
+CFLAGS+=	-DHAVE_SYS_TYPES_H -DHAVE_SYS_SELECT_H -DHAVE_UNISTD_H \
+		-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-pre-patch:
-	# Fixing the end-of-lines:
-	@for f in `${FIND} ${WRKSRC}/.. -type f` ; do \
-		${TR} -d '\015' < $$f > $$f.noms && \
-			${CAT} $$f.noms > $$f && ${RM} $$f.noms; done
+PORTDOCS=	README.TXT
+PORTEXAMPLES=	fdt-example.xml flute-sdp-example.sdp
+PLIST_FILES=	bin/flute bin/multis_flute
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
-		${REINPLACE_CMD} -e 's|gcc|${CC}|'
+		${REINPLACE_CMD} -e '/CC/s| =| ?=|; \
+		 s|-O3 -g||; s|-D_ISOC99_SOURCE||; \
+		 s|-D_XOPEN_SOURCE=500||; \
+		 s|/usr/local/ssl|${OPENSSLBASE}|; \
+		 s|-I/usr/local/include/boost-1_33_1||; \
+		 s|-L/usr/local/lib||; s|-lpthread|-lcompat|'
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|fopen64|fopen|; s|ftruncate64|ftruncate|; \
+		 s|lseek64|lseek|; s|off64_t|off_t|; \
+		 s|open64|open|; s|stat64|stat|'
+	@${REINPLACE_CMD} -e \
+		'/<curl\/types.h>/d' ${WRKSRC}/flutelib/http_file_repair.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/flute ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/README.TXT ${STAGEDIR}${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/flute \
+		${WRKSRC}/bin/multis_flute ${STAGEDIR}${PREFIX}/bin
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} \
+		${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTEXAMPLES} \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

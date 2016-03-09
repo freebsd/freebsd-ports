@@ -160,7 +160,7 @@
     SUBDIR += gap
     SUBDIR += gdcalc
     SUBDIR += geg
-    SUBDIR += geogebra-i18n
+    SUBDIR += geogebra
     SUBDIR += geonext
     SUBDIR += gexpr
     SUBDIR += ggobi
@@ -556,6 +556,7 @@
     SUBDIR += pear-Math_Combinatorics
     SUBDIR += pecl-big_int
     SUBDIR += pecl-bitset
+    SUBDIR += pecl-bitset2
     SUBDIR += pecl-stats
     SUBDIR += pecl-trader
     SUBDIR += php55-bcmath

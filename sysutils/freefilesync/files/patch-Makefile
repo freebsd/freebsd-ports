@@ -1,0 +1,51 @@
+--- Makefile.orig	2016-03-09 02:07:44 UTC
++++ Makefile
+@@ -1,14 +1,14 @@
+ APPNAME     = FreeFileSync
+-prefix      = /usr
++prefix      = $(PREFIX)
+ BINDIR      = $(DESTDIR)$(prefix)/bin
+ SHAREDIR    = $(DESTDIR)$(prefix)/share
+ APPSHAREDIR = $(SHAREDIR)/$(APPNAME)
+ DOCSHAREDIR = $(SHAREDIR)/doc/$(APPNAME)
+ 
+ CXXFLAGS  = -std=c++14 -pipe -DWXINTL_NO_GETTEXT_MACRO -I../.. -I../../zenXml -include "zen/i18n.h" -include "zen/warn_static.h" -Wall \
+--O3 -DNDEBUG `wx-config --cxxflags --debug=no` -DZEN_LINUX -pthread
++-O3 -DNDEBUG `wxgtk2u-3.0-config --cxxflags --debug=no` -DZEN_LINUX -pthread
+ 
+-LINKFLAGS = -s `wx-config --libs std, aui --debug=no` -lboost_thread -lboost_chrono -lboost_system -lz -pthread
++LINKFLAGS = -s `wxgtk2u-3.0-config --libs std, aui --debug=no` -lboost_thread -lboost_chrono -lboost_system -lz -pthread
+ 
+ #Gtk - support recycler/icon loading/no button border/grid scrolling
+ CXXFLAGS  += `pkg-config --cflags gtk+-2.0`
+@@ -96,10 +96,10 @@ launchpad: FreeFileSync
+ 
+ ../Obj/FFS_GCC_Make_Release/ffs/src/%.o : %.cpp
+ 	mkdir -p $(dir $@)
+-	g++ $(CXXFLAGS) -c $< -o $@
++	c++ $(CXXFLAGS) -c $< -o $@
+ 
+ FreeFileSync: $(OBJECT_LIST)
+-	g++ -o ../Build/$(APPNAME) $(OBJECT_LIST) $(LINKFLAGS)
++	c++ -o ../Build/$(APPNAME) $(OBJECT_LIST) $(LINKFLAGS)
+ 
+ clean:
+ 	rm -rf ../Obj/FFS_GCC_Make_Release
+@@ -108,16 +108,11 @@ clean:
+ 
+ install:
+ 	mkdir -p $(BINDIR)
+-	cp ../Build/$(APPNAME) $(BINDIR)
++	cp ../Build/$(APPNAME) $(BINDIR)/freefilesync
+ 
+ 	mkdir -p $(APPSHAREDIR)
+ 	cp -R ../Build/Languages/ \
+ 	../Build/Help/ \
+-	../Build/Sync_Complete.wav \
+ 	../Build/Resources.zip \
+ 	../Build/styles.gtk_rc \
+ 	$(APPSHAREDIR)
+-
+-	mkdir -p $(DOCSHAREDIR)
+-	cp ../Build/Changelog.txt $(DOCSHAREDIR)/changelog
+-	gzip $(DOCSHAREDIR)/changelog

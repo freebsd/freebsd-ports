@@ -91,11 +91,11 @@ lib/gedit/plugins/commander/windowactivatable.py
 lib/gedit/plugins/dashboard.plugin
 lib/gedit/plugins/dashboard/__init__.py
 lib/gedit/plugins/dashboard/__pycache__/__init__.cpython-%%PYVER%%.pyc
-lib/gedit/plugins/dashboard/__pycache__/__init__.cpython-%%PYVER%%.pyo
+lib/gedit/plugins/dashboard/__pycache__/__init__.cpython-%%PYVER%%.%%PYOEXTENSION%%
 lib/gedit/plugins/dashboard/__pycache__/dashboard.cpython-%%PYVER%%.pyc
-lib/gedit/plugins/dashboard/__pycache__/dashboard.cpython-%%PYVER%%.pyo
+lib/gedit/plugins/dashboard/__pycache__/dashboard.cpython-%%PYVER%%.%%PYOEXTENSION%%
 lib/gedit/plugins/dashboard/__pycache__/utils.cpython-%%PYVER%%.pyc
-lib/gedit/plugins/dashboard/__pycache__/utils.cpython-%%PYVER%%.pyo
+lib/gedit/plugins/dashboard/__pycache__/utils.cpython-%%PYVER%%.%%PYOEXTENSION%%
 lib/gedit/plugins/dashboard/dashboard.py
 lib/gedit/plugins/dashboard/utils.py
 lib/gedit/plugins/drawspaces.plugin

@@ -57,6 +57,7 @@
 %%SITE_PERL%%/Net/DNS/RR/RRSIG.pm
 %%SITE_PERL%%/Net/DNS/RR/RT.pm
 %%SITE_PERL%%/Net/DNS/RR/SIG.pm
+%%SITE_PERL%%/Net/DNS/RR/SMIMEA.pm
 %%SITE_PERL%%/Net/DNS/RR/SOA.pm
 %%SITE_PERL%%/Net/DNS/RR/SPF.pm
 %%SITE_PERL%%/Net/DNS/RR/SRV.pm
@@ -137,6 +138,7 @@
 %%PERL5_MAN3%%/Net::DNS::RR::RRSIG.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::RT.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::SIG.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::SMIMEA.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::SOA.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::SPF.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::SRV.3.gz

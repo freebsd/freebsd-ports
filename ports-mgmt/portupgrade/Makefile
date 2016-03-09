@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 
 DIST_SUBDIR=	${PORTNAME}
-USES=		tar:bzip2 uidfix
+USES=		uidfix
 USE_RUBY=	yes
 
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg

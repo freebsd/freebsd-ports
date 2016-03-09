@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=		chan_sccp
-PORTVERSION=		4.2.1
+PORTVERSION=		4.2.3
 CATEGORIES=		net
-MASTER_SITES=		SF/chan-sccp-b/V4/
+MASTER_SITES=		SF/chan-sccp-b
 PKGNAMEPREFIX=		asterisk-
-DISTNAME=		Chan_SCCP-4.2.1_STABLE_r6370
+DISTNAME=		Chan_SCCP-4.2.3_STABLE_r6728
 
 MAINTAINER=		ddegroot@talon.nl
 COMMENT=		Replacement for the SCCP channel driver in Asterisk
@@ -15,12 +15,15 @@ LICENSE=		GPLv1
 
 GNU_CONFIGURE=		yes
 USES=			iconv compiler libtool
-CONFIGURE_ARGS+=	--enable-video --enable-video-layer
-CONFIGURE_ARGS+=	--enable-conference --enable-advanced-functions
-CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
-NO_OPTIONS_SORT=	yes
+CONFIGURE_ARGS+=	--enable-video \
+			--enable-video-layer \
+			--enable-conference \
+			--enable-advanced-functions \
+			--with-hash-size=3001 \
+			${ICONV_CONFIGURE_ARG}
 
-LDFLAGS+=		-L${LOCALBASE}/lib
+CPPFLAGS+=		-I${ICONV_INCLUDE_PATH}
+LDFLAGS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 
 PLIST_FILES=		lib/asterisk/modules/chan_sccp.so \
 			etc/asterisk/sccp.conf \

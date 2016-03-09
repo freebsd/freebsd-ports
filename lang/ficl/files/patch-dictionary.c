@@ -1,6 +1,6 @@
---- dictionary.c.orig	2010-09-12 19:14:52.000000000 +0400
-+++ dictionary.c	2012-03-20 19:19:53.000000000 +0400
-@@ -662,7 +662,7 @@
+--- dictionary.c.orig	2010-09-12 15:14:52 UTC
++++ dictionary.c
+@@ -662,7 +662,7 @@ void ficlDictionarySee(ficlDictionary *d
              *trace++ = '>';
          else
              *trace++ = ' ';
@@ -9,7 +9,7 @@
          
          if (ficlDictionaryIsAWord(dictionary, word))
          {
-@@ -676,7 +676,7 @@
+@@ -676,7 +676,7 @@ void ficlDictionarySee(ficlDictionary *d
                  break;
              case FICL_WORDKIND_INSTRUCTION_WITH_ARGUMENT:
                  c = *++cell;
@@ -18,7 +18,7 @@
                  break;
              case FICL_WORDKIND_INSTRUCTION_WORD:
                  sprintf(trace, "%s :: executes %s (instruction word %ld)", word->name, ficlDictionaryInstructionNames[(long)word->code], (long)word->code);
-@@ -687,20 +687,20 @@
+@@ -687,20 +687,20 @@ void ficlDictionarySee(ficlDictionary *d
                  {
                      ficlWord *word = (ficlWord *)c.p;
                      sprintf(trace, "%.*s ( %#lx literal )", 
@@ -43,7 +43,7 @@
                  break;
  #endif /* FICL_WANT_FLOAT */
              case FICL_WORDKIND_STRING_LITERAL:
-@@ -719,32 +719,32 @@
+@@ -719,32 +719,32 @@ void ficlDictionarySee(ficlDictionary *d
                  break;
              case FICL_WORDKIND_BRANCH0:
                  c = *++cell;
@@ -83,7 +83,7 @@
                  break;
              default:
                  sprintf(trace, "%.*s", word->length, word->name);
-@@ -754,7 +754,7 @@
+@@ -754,7 +754,7 @@ void ficlDictionarySee(ficlDictionary *d
          }
          else /* probably not a word - punt and print value */
          {

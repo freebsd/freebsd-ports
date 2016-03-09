@@ -1,9 +1,10 @@
-The SDPARA (SemiDefinite Programming Algorithm PARAllel version) is a parallel
-version of the SDPA. C++ source codes of the SDPARA are available in
-this homepage. They form a stand-alone software package for solving SDPs in
-parallel with the help of MPI (Message Passing Interface) and ScaLAPACK
-(Scalable LAPACK). However callable libraries of the SDPARA, which could be
-used combinedly with other C++ programs, are not available.
-We assume that you know how to use the latest version of the SDPA and MPICH.
+The SDPARA (SemiDefinite Programming Algorithm PARAllel version) is a
+parallel version of the SDPA. C++ source codes of the SDPARA are
+available in this homepage. They form a stand-alone software package for
+solving SDPs in parallel with the help of MPI (Message Passing
+Interface) and ScaLAPACK (Scalable LAPACK). However callable libraries
+of the SDPARA, which could be used combinedly with other C++ programs,
+are not available. We assume that you know how to use the latest version
+of the SDPA and MPICH.
 
-WWW: http://grid.r.dendai.ac.jp/sdpa/
+WWW: http://sdpa.sourceforge.net/

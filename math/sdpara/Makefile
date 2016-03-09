@@ -2,95 +2,76 @@
 # $FreeBSD$
 
 PORTNAME=	sdpara
-PORTVERSION=	7.2.1
-PORTREVISION=	10
+PORTVERSION=	7.3.1
 CATEGORIES=	math parallel
-MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
-DISTFILES=	${SRCFILE}#${MANUALFILE}
+MASTER_SITES=	SF/sdpa/sdpara
+DISTNAME=	${PORTNAME}.${PORTVERSION}.src.20100914
 DIST_SUBDIR=	sdpa
-EXTRACT_ONLY=	${SRCFILE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDPARA parallel version of SDPA (math/sdpa)
 
-BROKEN=		unfetchable
+LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libscalapack.so:${PORTSDIR}/math/scalapack \
-		libblacs.so:${PORTSDIR}/math/blacs \
+LIB_DEPENDS=	libblacs.so:${PORTSDIR}/math/blacs \
+		libscalapack.so:${PORTSDIR}/math/scalapack \
 		libmpich.so:${PORTSDIR}/net/mpich2
 
-SRCDATE=	20090109
-MANDATE=	20080618
-MANUALVER=	7.1.1
-SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
-#MANUALFILE=	${PORTNAME}.${MANUALVER}.manual.${MANDATE}.pdf
-USES=		fortran gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
-.if exists(${LOCALBASE}/lib/libgoto2.so)
-WITH_BLAS?=	gotoblas
-.elif exists(${LOCALBASE}/lib/libatlas.so)
-WITH_BLAS?=	atlas
-.else
-WITH_BLAS?=	reference
-.endif
+USES=		fortran gmake
 
-. if ${WITH_BLAS} == reference
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
-BLAS=		-lblas
-LAPACK=		-llapack
-.elif ${WITH_BLAS} == gotoblas
-LIB_DEPENDS+=	libgoto2.so:${PORTSDIR}/math/gotoblas
-BLAS=		-lgoto2p
-LAPACK=		-lgoto2p
-.elif ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
-BLAS=		-lptf77blas
-LAPACK=		-lalapack -lptcblas
-.endif
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/sdpara %%DATADIR%%/param.sdpa
 
-#PLIST_SUB+=	MANUALFILE=${MANUALFILE}
+OPTIONS_DEFINE=		EXAMPLES
+OPTIONS_SINGLE=		BLAS
+OPTIONS_SINGLE_BLAS=	ATLAS GOTOBLAS REFERENCE
+OPTIONS_DEFAULT=	REFERENCE
 
-SCALAPACK=	-L/usr/local/lib -lscalapack -lblacs -lblacsc
-FORTRAN_LIBS=	-lgfortran
-GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+ATLAS_USES=		blaslapack:atlas
+GOTOBLAS_DESC=		GotoBLAS blas implementation
+GOTOBLAS_USES=		blaslapack:gotoblas
+REFERENCE_DESC=		Reference blas implementation
+REFERENCE_USES=		blaslapack
+
+LAPACK_LIBS=	-L${LOCALBASE}/lib ${LAPACKLIB}
+BLAS_LIBS=	-L${LOCALBASE}/lib ${BLASLIB}
+SCALAPACK_LIBS=	-L${LOCALBASE}/lib -lscalapack -lblacs -lblacsc
+FORTRAN_LIBS=	${LDFLAGS} -lgfortran
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%MPICC%%|${LOCALBASE}/bin/mpicc|g ; \
-				s|%%MPICXX%%|${LOCALBASE}/bin/mpicxx|g ; \
-				s|%%MPIF77%%|${LOCALBASE}/bin/mpif77|g ; \
-				s|%%CFLAGS%%|${CFLAGS}|g ; \
-				s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
-				s|%%FFLAGS%%|${FFLAGS}|g ; \
-				s|%%BLAS%%|${BLAS}|g ; \
-				s|%%LAPACK%%|${LAPACK}|g ; \
-				s|%%SCALAPACK%%|${SCALAPACK}|g ; \
-				s|%%FORTRAN_LIBS%%|${GCCLIBDIR} ${FORTRAN_LIBS}|g '  ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|%%MPICC%%|${LOCALBASE}/bin/mpicc|g ; \
-				s|%%MPICXX%%|${LOCALBASE}/bin/mpicxx|g ; \
-				s|%%MPIF77%%|${LOCALBASE}/bin/mpif77|g ; \
-				s|%%CFLAGS%%|${CFLAGS}|g ; \
-				s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
-				s|%%FFLAGS%%|${FFLAGS}|g ; \
-				s|%%BLAS%%|${BLAS}|g ; \
-				s|%%LAPACK%%|${LAPACK}|g ' ${WRKSRC}/mumps/Makefile
+	@${REINPLACE_CMD} -e \
+		'/^CC /s|=.*|= ${LOCALBASE}/bin/mpicc| ; \
+		 /^CXX /s|=.*|= ${LOCALBASE}/bin/mpicxx| ; \
+		 /^FC /s|=.*|= ${LOCALBASE}/bin/mpif77| ; \
+		 /^CFLAGS /s|=.*|= ${CFLAGS}| ; \
+		 /^CXXFLAGS /s|=.*|= ${CXXFLAGS}| ; \
+		 /^FFLAGS /s|=.*|= ${FFLAGS}| ; \
+		 /^LAPACK_LIBS /s|=.*|= ${LAPACK_LIBS}| ; \
+		 /^BLAS_LIBS /s|=.*|= ${BLAS_LIBS}| ; \
+		 /^SCALAPACK_LIBS /s|=.*|= ${SCALAPACK_LIBS}| ; \
+		 /^FORTRAN_LIBS /s|=.*|= ${FORTRAN_LIBS}|' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		'/^CC /s|=.*|= ${LOCALBASE}/bin/mpicc| ; \
+		 /^CFLAGS /s|=.*|= ${CFLAGS}| ; \
+		 /^CXX /s|=.*|= ${LOCALBASE}/bin/mpicxx| ; \
+		 /^CXXFLAGS /s|=.*|= ${CXXFLAGS}| ; \
+		 /^FC /s|=.*|= ${LOCALBASE}/bin/mpif77| ; \
+		 /^FFLAGS /s|=.*|= ${FFLAGS}|' \
+		${WRKSRC}/mumps/Makefile
 
 pre-build:
-	${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
-
-do-build:
-	cd ${WRKSRC} ; ${MAKE_CMD} mumps
-	cd ${WRKSRC} ; ${MAKE_CMD}
+	@(cd ${WRKSRC}/mumps && ${DO_MAKE_BUILD} ${ALL_TARGET})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sdpara ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA}    ${WRKSRC}/param.sdpa ${STAGEDIR}${DATADIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA}    ${WRKSRC}/example* ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA}    ${WRKSRC}/param.sdpa ${STAGEDIR}${EXAMPLESDIR}
-#	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-#	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${MANUALFILE} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

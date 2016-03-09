@@ -1,5 +1,34 @@
 --- vumeter.c.orig	2014-09-14 12:31:32 UTC
 +++ vumeter.c
+@@ -386,6 +386,8 @@ on_config_changed (gpointer user_data, u
+     return 0;
+ }
+ 
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ static void
+ on_button_config (GtkMenuItem *menuitem, gpointer user_data)
+ {
+@@ -433,8 +435,6 @@ on_button_config (GtkMenuItem *menuitem,
+     GtkWidget *applybutton1;
+     GtkWidget *cancelbutton1;
+     GtkWidget *okbutton1;
+-#pragma GCC diagnostic push
+-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+     vumeter_properties = gtk_dialog_new ();
+     gtk_window_set_title (GTK_WINDOW (vumeter_properties), "vumeter Properties");
+     gtk_window_set_type_hint (GTK_WINDOW (vumeter_properties), GDK_WINDOW_TYPE_HINT_DIALOG);
+@@ -753,9 +753,9 @@ on_button_config (GtkMenuItem *menuitem,
+         break;
+     }
+     gtk_widget_destroy (vumeter_properties);
+-#pragma GCC diagnostic pop
+     return;
+ }
++#pragma GCC diagnostic pop
+ 
+ ///// vumeter vis
+ void
 @@ -809,12 +809,8 @@ vumeter_draw_retro (w_vumeter_t *w, cair
  {
      if (!w->surf_png) {

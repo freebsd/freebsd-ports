@@ -944,7 +944,6 @@
     SUBDIR += rcracki_mt
     SUBDIR += rdigest
     SUBDIR += regripper
-    SUBDIR += regripperplugins
     SUBDIR += reop
     SUBDIR += retranslator
     SUBDIR += revealrk

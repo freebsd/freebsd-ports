@@ -17,6 +17,7 @@
     SUBDIR += bandwidthd
     SUBDIR += bgpq
     SUBDIR += bgpq3
+    SUBDIR += bgpuma
     SUBDIR += bpft
     SUBDIR += braa
     SUBDIR += bsnmp-jails

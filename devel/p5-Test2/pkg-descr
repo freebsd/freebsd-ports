@@ -1,0 +1,4 @@
+Test2 is a new testing framework produced by forking Test::Builder, completely
+refactoring it, adding many new features and capabilities.
+
+WWW: http://search.cpan.org/dist/Test2/

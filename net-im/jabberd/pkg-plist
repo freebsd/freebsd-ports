@@ -96,6 +96,9 @@ lib/jabberd/mod_vacation.so.0.0.0
 lib/jabberd/mod_validate.so
 lib/jabberd/mod_validate.so.0
 lib/jabberd/mod_validate.so.0.0.0
+lib/jabberd/mod_verify.so
+lib/jabberd/mod_verify.so.0
+lib/jabberd/mod_verify.so.0.0.0
 %%FS%%lib/jabberd/storage_fs.so
 %%BDB%%lib/jabberd/storage_db.so
 %%LDAP%%lib/jabberd/storage_ldapvcard.so

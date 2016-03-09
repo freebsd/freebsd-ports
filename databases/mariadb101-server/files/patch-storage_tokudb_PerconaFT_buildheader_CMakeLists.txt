@@ -1,7 +1,15 @@
-Fix build failure due to Linuxisms (bash)
+https://github.com/MariaDB/server/pull/157
 
---- storage/tokudb/PerconaFT/buildheader/CMakeLists.txt.orig	2015-12-23 16:33:32.000000000 +0100
-+++ storage/tokudb/PerconaFT/buildheader/CMakeLists.txt	2016-01-03 15:09:21.941678309 +0100
+MDEV-9657 - Use /bin/sh #157 
+
+Sp1l commented Feb 27, 2016
+
+Remove Linuxism.
+
+Works fine with a POSIX-compat shell
+
+--- storage/tokudb/PerconaFT/buildheader/CMakeLists.txt.orig	2016-01-28 12:12:55 UTC
++++ storage/tokudb/PerconaFT/buildheader/CMakeLists.txt
 @@ -1,6 +1,6 @@
  set_directory_properties(PROPERTIES INCLUDE_DIRECTORIES "")
  

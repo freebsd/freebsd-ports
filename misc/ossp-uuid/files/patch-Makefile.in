@@ -1,0 +1,35 @@
+### This Patch is to fix conflicts with misc/e2fsprogs-libuuid ###
+--- Makefile.in.orig	2016-02-07 14:59:23 UTC
++++ Makefile.in
+@@ -74,7 +74,7 @@ CXX_OBJS    = uuid++.lo $(LIB_OBJS)
+ PRG_NAME    = uuid
+ PRG_OBJS    = uuid_cli.o
+ 
+-MAN_NAME    = uuid.3 uuid++.3 uuid.1
++MAN_NAME    = ossp-uuid.3 ossp-uuid++.3 uuid.1
+ 
+ PERL_NAME   = $(S)/perl/blib/lib/OSSP/uuid.pm
+ PERL_OBJS   = $(S)/perl/uuid.pm
+@@ -231,7 +231,7 @@ install:
+ 	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(mandir)/man1
+ 	$(SHTOOL) install -c -m 755 uuid-config $(DESTDIR)$(bindir)/
+ 	$(SHTOOL) install -c -m 644 $(S)/uuid-config.1 $(DESTDIR)$(mandir)/man1/
+-	$(SHTOOL) install -c -m 644 $(S)/uuid.pc $(DESTDIR)$(prefix)/libdata/pkgconfig/
++	$(SHTOOL) install -c -m 644 $(S)/uuid.pc $(DESTDIR)$(prefix)/libdata/pkgconfig/ossp-uuid.pc
+ 	$(SHTOOL) install -c -m 644 uuid.h $(DESTDIR)$(includedir)/
+ 	-@if [ ".$(WITH_DCE)" = .yes ]; then \
+ 	    echo "$(SHTOOL) install -c -m 644 $(S)/uuid_dce.h $(DESTDIR)$(includedir)/"; \
+@@ -241,10 +241,10 @@ install:
+ 	    echo "$(SHTOOL) install -c -m 644 $(S)/uuid++.hh $(DESTDIR)$(includedir)/"; \
+ 	    $(SHTOOL) install -c -m 644 $(S)/uuid++.hh $(DESTDIR)$(includedir)/; \
+ 	fi
+-	$(SHTOOL) install -c -m 644 $(S)/uuid.3 $(DESTDIR)$(mandir)/man3/
++	$(SHTOOL) install -c -m 644 $(S)/uuid.3 $(DESTDIR)$(mandir)/man3/ossp-uuid.3
+ 	-@if [ ".$(WITH_CXX)" = .yes ]; then \
+-	    echo "$(SHTOOL) install -c -m 644 $(S)/uuid++.3 $(DESTDIR)$(mandir)/man3/"; \
+-	    $(SHTOOL) install -c -m 644 $(S)/uuid++.3 $(DESTDIR)$(mandir)/man3/; \
++	    echo "$(SHTOOL) install -c -m 644 $(S)/uuid++.3 $(DESTDIR)$(mandir)/man3/ossp-uuid++.3"; \
++	    $(SHTOOL) install -c -m 644 $(S)/uuid++.3 $(DESTDIR)$(mandir)/man3/ossp-uuid++.3; \
+ 	fi
+ 	@$(LIBTOOL) --mode=install $(SHTOOL) install -c -m 644 $(LIB_NAME) $(DESTDIR)$(libdir)/
+ 	-@if [ ".$(WITH_DCE)" = .yes ]; then \

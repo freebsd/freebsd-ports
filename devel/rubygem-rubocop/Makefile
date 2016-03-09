@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubocop
-PORTVERSION=	0.36.0
+PORTVERSION=	0.37.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -11,10 +11,11 @@ COMMENT=	Ruby code style checking tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-parser>=2.3.0.0:${PORTSDIR}/devel/rubygem-parser \
+RUN_DEPENDS=	rubygem-parser>=2.3.0.4:${PORTSDIR}/devel/rubygem-parser \
 		rubygem-powerpack>=0.1:${PORTSDIR}/devel/rubygem-powerpack \
 		rubygem-rainbow>=1.99.1:${PORTSDIR}/devel/rubygem-rainbow \
-		rubygem-ruby-progressbar>=1.7:${PORTSDIR}/devel/rubygem-ruby-progressbar
+		rubygem-ruby-progressbar>=1.7:${PORTSDIR}/devel/rubygem-ruby-progressbar \
+		rubygem-unicode-display_width>=0.3:${PORTSDIR}/devel/rubygem-unicode-display_width
 
 NO_ARCH=	yes
 USE_RUBY=	yes

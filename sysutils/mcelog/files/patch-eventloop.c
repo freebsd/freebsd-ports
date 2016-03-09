@@ -1,6 +1,6 @@
---- eventloop.c.orig	2010-01-20 18:36:52.000000000 -0800
-+++ eventloop.c	2012-09-22 02:25:13.281116126 -0700
-@@ -38,7 +38,9 @@
+--- eventloop.c.orig	2016-02-10 18:38:43 UTC
++++ eventloop.c
+@@ -38,7 +38,9 @@ struct pollcb { 
  static struct pollfd pollfds[MAX_POLLFD];
  static struct pollcb pollcbs[MAX_POLLFD];	
  
@@ -10,7 +10,7 @@
  
  static int closeonexec(int fd)
  {
-@@ -97,6 +99,7 @@
+@@ -97,6 +99,7 @@ static void poll_callbacks(int n)
  }
  
  /* Run signal handler only directly after event loop */
@@ -18,7 +18,7 @@
  int event_signal(int sig)
  {
  	static int first = 1;
-@@ -126,17 +129,25 @@
+@@ -126,17 +129,25 @@ static int ppoll_fallback(struct pollfd 
  
  static int (*ppoll_vec)(struct pollfd *, nfds_t, const struct timespec
  			*, const sigset_t *);

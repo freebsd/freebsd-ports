@@ -1,6 +1,6 @@
---- server.c.orig	2010-01-20 18:36:52.000000000 -0800
-+++ server.c	2012-09-22 02:39:04.991117023 -0700
-@@ -101,7 +101,9 @@
+--- server.c.orig	2016-02-10 18:38:43 UTC
++++ server.c
+@@ -101,7 +101,9 @@ static void dispatch_dump(FILE *fh, char
  
  static void dispatch_pages(FILE *fh)
  {
@@ -10,7 +10,7 @@
  	fprintf(fh, "done\n");
  }
  
-@@ -137,6 +139,7 @@
+@@ -137,6 +139,7 @@ static void process_cmd(struct clientcon
  		Enomem();
  }
  
@@ -18,7 +18,7 @@
  /* check if client is allowed to access */
  static int access_check(int fd, struct msghdr *msg)
  {
-@@ -162,6 +165,35 @@
+@@ -162,11 +165,44 @@ static int access_check(int fd, struct m
  	sendstring(fd, "permission denied\n");
  	return -1;
  }
@@ -54,7 +54,16 @@
  
  /* retrieve commands from client */
  static int client_input(int fd, struct clientcon *cc)
-@@ -242,18 +274,22 @@
+ {
++#ifdef __Linux__
+ 	char ctlbuf[CMSG_SPACE(sizeof(struct ucred))];
++#else
++	char ctlbuf[CMSG_SPACE(sizeof(struct cmsgcred))];
++#endif
+ 	struct iovec miov;
+ 	struct msghdr msg = {
+ 		.msg_iov = &miov,
+@@ -242,18 +278,22 @@ static void client_accept(struct pollfd 
  {
  	struct clientcon *cc = NULL;
  	int nfd = accept(pfd->fd, NULL, 0);	
@@ -77,9 +86,9 @@
  
  	cc = xalloc(sizeof(struct clientcon));
  	if (register_pollcb(nfd, POLLIN, client_event, cc) < 0) {
-@@ -300,7 +336,12 @@
- 	sigaction(SIGALRM, &sa, &oldsa);	
+@@ -301,7 +341,12 @@ static int server_ping(struct sockaddr_u
  	if (sigsetjmp(ping_timeout_ctx, 1) == 0) {
+ 		ret = -1;
  		alarm(initial_ping_timeout);
 +#ifdef __Linux__
  		if (connect(fd, un, sizeof(struct sockaddr_un)) < 0)

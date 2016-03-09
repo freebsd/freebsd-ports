@@ -1,11 +1,27 @@
---- src/bin/help.c.intermediate	2014-08-18 06:30:22.000000000 +0000
+--- src/bin/help.c.orig	2015-11-05 17:57:50 UTC
 +++ src/bin/help.c
-@@ -53,7 +53,7 @@ XErrorEvent *errorev;
+@@ -14,6 +14,7 @@ Authors: 1986 Wayne A. Christopher
+ #include <pwd.h>
+ #endif
  
-     XGetErrorText(display, errorev->error_code, ErrorMessage, 1024);
-     printf(ErrorMessage);
--    return;
-+    return (NULL);
- }   
++static char *hcopydev;
+ #ifdef HAVE_X11
  
+ #include <X11/Intrinsic.h>
+@@ -22,7 +23,6 @@ Authors: 1986 Wayne A. Christopher
+ Display *Xdisplay;
+ static XtAppContext app_con;
+ static Widget toplevel;
+-static char *hcopydev;
  
+ static String fallback_resources[] = {
+     
+@@ -188,7 +188,7 @@ int t;
+ {
+     if (!strcmp(n, kw_hcopydev)) {
+         strcpy(r, hcopydev);
+-        return (True);
++        return (1);
+     }
+     return (false);
+ }

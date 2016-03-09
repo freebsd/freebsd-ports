@@ -32,8 +32,3 @@ man/man1/pyview.1.gz
 %%PYTHON_SITELIBDIR%%/lfm/vfs.py
 %%PYTHON_SITELIBDIR%%/lfm/vfs.pyc
 %%PYTHON_SITELIBDIR%%/lfm/vfs.pyo
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.pyview
-%%PORTDOCS%%%%DOCSDIR%%/TODO

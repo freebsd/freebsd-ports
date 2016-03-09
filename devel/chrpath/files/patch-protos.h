@@ -4,7 +4,7 @@
  #ifndef PROTOS_H
  #define PROTOS_H
  
-+#ifdef __FreeBSD__
++#if defined __FreeBSD__ || defined __DragonFly__
 +#include <sys/endian.h>
 +#define bswap_16 bswap16
 +#define bswap_32 bswap32
@@ -19,7 +19,7 @@
  #error "Unknown word size (SIZEOF_VOID_P)!"
  #endif
  
-+#ifdef __FreeBSD__
++#if defined __FreeBSD__ || defined __DragonFly__
 +#define Elf_Ehdr Elf__Ehdr
 +#define Elf_Shdr Elf__Shdr
 +#define Elf_Phdr Elf__Phdr

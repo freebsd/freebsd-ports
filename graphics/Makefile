@@ -540,6 +540,7 @@
     SUBDIR += libwmf-nox11
     SUBDIR += libwpg
     SUBDIR += libwpg03
+    SUBDIR += libyuv
     SUBDIR += lightzone
     SUBDIR += linplasma
     SUBDIR += linux-adobesvg

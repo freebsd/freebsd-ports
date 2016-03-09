@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	formatR
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Format R Code Automatically
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 USES=	cran:auto-plist
 

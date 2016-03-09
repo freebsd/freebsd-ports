@@ -1,4 +1,4 @@
---- plugins/ayslx.c.orig	2015-06-23 18:03:50 UTC
+--- plugins/ayslx.c.orig	2016-01-13 20:09:57 UTC
 +++ plugins/ayslx.c
 @@ -17,7 +17,7 @@
  #include <string.h>

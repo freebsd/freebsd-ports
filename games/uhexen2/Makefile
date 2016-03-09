@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	uhexen2
-PORTVERSION=	1.5.6
-PORTREVISION=	2
+PORTVERSION=	1.5.7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Hammer%20of%20Thyrion/${PORTVERSION}/Source \
-		SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.28:data
+		SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.29:data \
+		SF/${PORTNAME}/Hexen2%20GameData/hexenworld-pakfiles:hw
 DISTNAME=	hexen2source-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		gamedata-all-1.28${EXTRACT_SUFX}:data
+		gamedata-all-1.29${EXTRACT_SUFX}:data
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,85 +18,64 @@ COMMENT=	Hexen II source port supporting Linux/FreeBSD/Unix/Windows
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
-
-OPTIONS_MULTI=	BIN
-OPTIONS_MULTI_BIN=	HEXEN2 HW
-OPTIONS_DEFINE=	LAUNCHER_GTK1 LAUNCHER_GTK2 LAUNCHER_GTK3 DOCS
-OPTIONS_DEFAULT=	HEXEN2 HW LAUNCHER_GTK2
-OPTIONS_DEFINE_i386=	ASM
-OPTIONS_DEFAULT_i386=	ASM
-
-HEXEN2_DESC=		Build Hexen II clients and servers
-HW_DESC=		Build HexenWorld clients and servers
-LAUNCHER_GTK1_DESC=	Build graphical (GTK1) game launcher
-LAUNCHER_GTK2_DESC=	Build graphical (GTK2) game launcher
-LAUNCHER_GTK3_DESC=	Build graphical (GTK3) game launcher
-
 USES=		gmake pkgconfig tar:tgz
-USE_SDL=	sdl
 USE_GL=		gl
-MAKE_ENV=	X11BASE="${LOCALBASE}"
-MAKE_JOBS_UNSAFE=yes
+USE_SDL=	sdl
+MAKE_ARGS=	X11BASE="${LOCALBASE}"
+MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 
 PORTSCOUT=	skipb:yes
 
+OPTIONS_DEFINE=		DOCS FLAC MIKMOD OGG OPUS
+OPTIONS_MULTI=		BIN
+OPTIONS_MULTI_BIN=	HEXEN2 HW
+OPTIONS_RADIO=		MP3LIB VORBISLIB
+OPTIONS_RADIO_MP3LIB=	MAD MPG123
+OPTIONS_RADIO_VORBISLIB=	TREMOR VORBIS
+OPTIONS_DEFAULT=	HEXEN2 HW MAD OGG VORBIS
+OPTIONS_DEFINE_i386=	ASM
+OPTIONS_DEFAULT_i386=	ASM
+OPTIONS_SUB=		yes
+
+ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+ASM_MAKE_ARGS_OFF=	USE_X86_ASM=no
+FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_MAKE_ARGS=		USE_CODEC_FLAC=yes
+HEXEN2_DESC=		Build Hexen II clients and servers
+HEXEN2_MAKE_ARGS=	BUILD_HEXEN2=yes
+HW_DESC=		Build HexenWorld clients and servers
+HW_DISTFILES=		hexenworld-pakfiles-0.15${EXTRACT_SUFX}:hw
+HW_MAKE_ARGS=		BUILD_HW=yes
+MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MAD_MAKE_ARGS=		MP3LIB=mad
+MIKMOD_LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
+MIDMOD_MAKE_ARGS=	USE_CODEC_MIKMOD=yes
+MP3LIB_DESC=		MP3 audio codec
+MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+MPG123_MAKE_ARGS=	MP3LIB=mpg123
+OGG_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+OGG_MAKE_ARGS_OFF=	USE_CODEC_OGG=no
+OPUS_LIB_DEPENDS=	libopusfile.so:${PORTSDIR}/audio/opusfile
+OPUS_MAKE_ARGS=		USE_CODEC_OPUS=yes
+OPUS_IMPLIES=		OGG
+TREMOR_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
+TREMOR_MAKE_ARGS=	VORBISLIB=tremor
+TREMOR_IMPLIES=		OGG
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_MAKE_ARGS=	VORBISLIB=vorbis
+VORBIS_IMPLIES=		OGG
+VORBISLIB_DESC=		Vorbis audio codec
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MHEXEN2}
-MAKE_ENV+=	BUILD_HEXEN2=yes
-PLIST_SUB+=	HEXEN2=""
-UH2_BIN+=	engine/hexen2/glhexen2 \
-		engine/hexen2/hexen2
-.else
-PLIST_SUB+=	HEXEN2="@comment "
+.if !${PORT_OPTIONS:MMAD} && !${PORT_OPTIONS:MMPG123}
+MAKE_ARGS+=	USE_CODEC_MP3=no
 .endif
 
-.if ${PORT_OPTIONS:MHW}
-MASTER_SITES+=	SF/${PORTNAME}/Hexen2%20GameData/hexenworld-pakfiles:hw
-DISTFILES+=	hexenworld-pakfiles-0.15${EXTRACT_SUFX}:hw
-MAKE_ENV+=	BUILD_HW=yes
-PLIST_SUB+=	HW=""
-UH2_BIN+=	engine/hexenworld/client/glhwcl \
-		engine/hexenworld/client/hwcl \
-		engine/hexenworld/server/hwsv \
-		hw_utils/hwmaster/hwmaster
-.else
-PLIST_SUB+=	HW="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLAUNCHER_GTK1}
-USE_GNOME+=	gtk12
-MAKE_ENV+=	BUILD_LAUNCHER_GTK1=yes
-PLIST_SUB+=	LAUNCHER_GTK1=""
-.else
-PLIST_SUB+=	LAUNCHER_GTK1="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLAUNCHER_GTK2}
-USE_GNOME+=	gtk20
-MAKE_ENV+=	BUILD_LAUNCHER_GTK2=yes
-PLIST_SUB+=	LAUNCHER_GTK2=""
-.else
-PLIST_SUB+=	LAUNCHER_GTK2="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLAUNCHER_GTK3}
-USE_GNOME+=	gtk30
-MAKE_ENV+=	BUILD_LAUNCHER_GTK3=yes
-PLIST_SUB+=	LAUNCHER_GTK3=""
-.else
-PLIST_SUB+=	LAUNCHER_GTK3="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MASM}
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-MAKE_ENV+=	USE_X86_ASM=yes
-.else
-MAKE_ENV+=	USE_X86_ASM=no
+.if !${PORT_OPTIONS:MTREMOR} && !${PORT_OPTIONS:MVORBIS}
+MAKE_ARGS+=	USE_CODEC_VORBIS=no
 .endif
 
 post-extract:
@@ -105,10 +84,9 @@ post-extract:
 post-patch:
 .for f in engine/hexen2/Makefile engine/hexenworld/client/Makefile \
 	engine/hexenworld/server/Makefile hw_utils/hwmaster/Makefile \
-	launcher/Makefile libs/timidity/Makefile
+	libs/timidity/Makefile
 	@${REINPLACE_CMD} -e \
-		'/^USE_X86_ASM/s|^|#| ; \
-		 /^CPU_X86/s|^|#| ; \
+		'/^CPU_X86/s|=.*|=| ; \
 		 /^CFLAGS/s| -g | | ; \
 		 /^CFLAGS/s| -O2 | | ;' ${WRKSRC}/${f}
 .endfor
@@ -122,31 +100,26 @@ post-patch:
 .endfor
 
 do-install:
-.for f in ${UH2_BIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
-.endfor
-	${MKDIR} ${STAGEDIR}${DATADIR}/data1
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data1
 .for f in default.cfg hexen.rc progs.dat progs2.dat strings.txt
 	${INSTALL_DATA} ${WRKDIR}/data1/${f} ${STAGEDIR}${DATADIR}/data1
 .endfor
 	${INSTALL_DATA} ${WRKDIR}/patchdat/data1/* ${STAGEDIR}${DATADIR}/data1
-	@(cd ${WRKDIR} && ${COPYTREE_SHARE} portals ${STAGEDIR}${DATADIR})
-.if ${PORT_OPTIONS:MHW}
+	(cd ${WRKDIR} && ${COPYTREE_SHARE} portals ${STAGEDIR}${DATADIR})
+
+post-install-HW-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/engine/hexenworld/client/glhwcl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/engine/hexenworld/client/hwcl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/engine/hexenworld/server/hwsv ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/hw_utils/hwmaster/hwmaster ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}/hw
 	${INSTALL_DATA} ${WRKDIR}/hw/* ${STAGEDIR}${DATADIR}/hw
-.endif
-.if ${PORT_OPTIONS:MLAUNCHER_GTK1}
-	${INSTALL_PROGRAM} ${WRKSRC}/launcher/h2launcher.gtk1 \
-		${STAGEDIR}${PREFIX}/bin
-.endif
-.if ${PORT_OPTIONS:MLAUNCHER_GTK2}
-	${INSTALL_PROGRAM} ${WRKSRC}/launcher/h2launcher.gtk2 \
-		${STAGEDIR}${PREFIX}/bin
-.endif
-.if ${PORT_OPTIONS:MLAUNCHER_GTK3}
-	${INSTALL_PROGRAM} ${WRKSRC}/launcher/h2launcher.gtk3 \
-		${STAGEDIR}${PREFIX}/bin
-.endif
+
+post-install-HEXEN2-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/engine/hexen2/glhexen2 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/engine/hexen2/hexen2 ${STAGEDIR}${PREFIX}/bin
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 

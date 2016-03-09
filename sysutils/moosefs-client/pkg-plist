@@ -19,7 +19,6 @@ bin/mfsgetquota
 bin/mfssetquota
 bin/mfsdelquota
 bin/mfsfilepaths
-bin/mfssnapshot
 bin/mfsmount
 bin/mfstools
 @sample etc/mfs/mfsmount.cfg.sample

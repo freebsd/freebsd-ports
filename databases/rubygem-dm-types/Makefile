@@ -3,6 +3,7 @@
 
 PORTNAME=	dm-types
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +11,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin providing extra data types
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bcrypt-ruby>=3.0:${PORTSDIR}/security/rubygem-bcrypt-ruby \
 		rubygem-dm-core>=1.2.0:${PORTSDIR}/databases/rubygem-dm-core \
