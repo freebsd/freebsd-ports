@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geogebra
-PORTVERSION=	5.0.208.0
+PORTVERSION=	5.0.212.0
 CATEGORIES=	math java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/
 DISTNAME=	GeoGebra-Linux-Portable-${PORTVERSION}
@@ -15,8 +15,11 @@ LICENSE_NAME=	GeoGebra Non-Commercial License Agreement
 LICENSE_TEXT=   See on http://www.geogebra.org/license
 LICENSE_PERMS=	dist-sell pkg-sell auto-accept
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-    /compat/linux/bin/sh:${PORTSDIR}/emulators/linux_base-c6
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+USE_LINUX?=	c6
+
+USE_LINUX_APPS=	xorglibs
 
 ONLY_FOR_ARCHS=i386 amd64
 
