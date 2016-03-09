@@ -23,7 +23,7 @@ include/libotr/version.h
 lib/libotr.a
 lib/libotr.so
 lib/libotr.so.5
-lib/libotr.so.5.1.0
+lib/libotr.so.5.1.1
 libdata/pkgconfig/libotr.pc
 man/man1/otr_mackey.1.gz
 man/man1/otr_modify.1.gz
