@@ -1,0 +1,21 @@
+Make sure targets depending on tomahawklib also include LIBATTICA_INCLUDE_DIR.
+
+If x11-toolkits/attica is not installed in a location such as
+${LOCALBASE}/include, we risk breaking the build like this:
+
+  In file included from /wrkdirs/usr/ports/audio/tomahawk/work/tomahawk-0.8.4/src/infoplugins/generic/charts/ChartsPlugin.cpp:29:
+  In file included from /wrkdirs/usr/ports/audio/tomahawk/work/tomahawk-0.8.4/src/libtomahawk/TomahawkSettings.h:28:
+  /wrkdirs/usr/ports/audio/tomahawk/work/tomahawk-0.8.4/src/libtomahawk/AtticaManager.h:30:10: fatal error: 'attica/provider.h' file not found
+  #include <attica/provider.h>
+--- src/libtomahawk/CMakeLists.txt.orig	2015-04-15 04:41:40 UTC
++++ src/libtomahawk/CMakeLists.txt
+@@ -488,6 +488,9 @@ set_target_properties(
+             OUTPUT_NAME "tomahawk"
+ )
+ 
++if(LIBATTICA_FOUND)
++    TARGET_INCLUDE_DIRECTORIES(tomahawklib INTERFACE ${LIBATTICA_INCLUDE_DIR})
++endif(LIBATTICA_FOUND)
+ 
+ qt5_use_modules(tomahawklib Widgets Network Sql WebKitWidgets Concurrent Xml UiTools Svg)
+ 
