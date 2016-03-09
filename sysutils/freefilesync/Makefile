@@ -18,14 +18,13 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 
 WRKSRC=		${WRKDIR}/FreeFileSync/Source
 
-USES=		dos2unix gmake pkgconfig zip
+USES=		compiler:c++11-lang dos2unix gmake pkgconfig zip
 USE_LDCONFIG=	yes
 USE_WX=		3.0+
-WX_UNICODE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/wx-config/${WX_CONFIG:T}/' \
-		-e 's,g++,${CXX},' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/wx-config/$${WX_CONFIG:T}/' \
+		-e 's,g++,$${CXX},' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|<sys/vfs.h>|<sys/mount.h>|' \
 		${WRKDIR}/zen/file_access.cpp
 	@${REINPLACE_CMD} -e 's|WEXITSTATUS||' ${WRKDIR}/zen/shell_execute.h
