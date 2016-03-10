@@ -31,6 +31,7 @@ OPTIONS_DEFAULT+=	TREMOR
 OPTIONS_DEFAULT+=	VORBIS
 .endif
 
+MOD_DESC=	Tracker music support
 SMPEG_DESC=	MP3 audio support via SMPEG2
 
 MIKMOD_LIB_DEPENDS=		libmikmod.so:${PORTSDIR}/audio/libmikmod
