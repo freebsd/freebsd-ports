@@ -6,8 +6,7 @@ PORTVERSION=	2.1.0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://download.elastic.co/elasticsearch/release/org/elasticsearch/plugin/license/${PORTVERSION}/:source1 \
 		http://download.elastic.co/elasticsearch/release/org/elasticsearch/plugin/marvel-agent/${PORTVERSION}/:source2
-PKGNAMEPREFIX=	elasticsearch-plugin-
-PKGNAMESUFFIX=	2
+PKGNAMEPREFIX=	elasticsearch2-plugin-
 DISTFILES=	license-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}:source1 \
 		marvel-agent-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}:source2
 

@@ -8226,3 +8226,4 @@ sysutils/logstash-contrib||2016-03-06|Has expired: Upstream now distributing plu
 devel/p5-DateTime-Event-SolarTerm|devel/p5-DateTime-Astro|2016-03-07|Has been part of DateTime-Astro for a long time
 devel/p5-DateTime-Util-Astro|devel/p5-DateTime-Astro|2016-03-07|Has been part of DateTime-Astro for a long time
 security/regripperplugins||2016-03-07|Merged into security/regripper
+elasticsearch-plugin-marvel2|elasticsearch2-plugin-marvel|Rename to match other Elasticsearch 2 plugins
