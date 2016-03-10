@@ -1,5 +1,5 @@
---- Makefile.orig	2015-10-25 12:46:54 UTC
-+++ Makefile
+--- Makefile.orig	2016-03-07 14:46:34.000000000 +0100
++++ Makefile	2016-03-10 22:51:25.356292000 +0100
 @@ -17,14 +17,14 @@ opt:
  	for p in $(PARTS); do ( cd src/$$p; $(MAKE) opt ) || exit; done
  
@@ -35,8 +35,8 @@
  
  .PHONY: install-meta
  install-meta:
--	for x in `ls site-lib-src`; do if [ "$$x" != "CVS" -a -f "site-lib-src/$$x/META" ]; then mkdir -p "$(prefix)$(OCAML_SITELIB)/$$x"; cp site-lib-src/$$x/META "$(prefix)$(OCAML_SITELIB)/$$x"; fi; done
-+	for x in `ls site-lib-src`; do if [ "$$x" != "CVS" -a -f "site-lib-src/$$x/META" ]; then mkdir -p "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$$x"; ${BSD_INSTALL_DATA}  site-lib-src/$$x/META "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$$x"; fi; done
+-	for x in `ls site-lib-src`; do if [ -f "site-lib-src/$$x/META" ]; then mkdir -p "$(prefix)$(OCAML_SITELIB)/$$x"; cp site-lib-src/$$x/META "$(prefix)$(OCAML_SITELIB)/$$x"; fi; done
++	for x in `ls site-lib-src`; do if [ -f "site-lib-src/$$x/META" ]; then mkdir -p "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$$x"; cp site-lib-src/$$x/META "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$$x"; fi; done
  
  .PHONY: uninstall-meta
  uninstall-meta:
