@@ -1,0 +1,96 @@
+#!/bin/sh
+#
+# PROVIDE: graylog
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+
+# graylog_enable (bool):
+#   Default value: "NO"
+#   Flag that determines whether graylog is enabled
+#
+# graylog_user (username):
+#   Default value: "graylog"
+#   Name of the graylog user account
+#
+# graylog_group (group):
+#   Default value: "graylog"
+#   Name of the graylog group
+#
+# graylog_config (string)
+#   Default value %%ETCDIR%%/graylog.conf
+#   Path to the graylog configuration file
+#
+# graylog_min_mem (string):
+#   Default value: 256m
+#   Minumum JVM heap size
+#
+# graylog_max_mem (string):
+#   Default value: 1g
+#   Maximum JVM heap size
+#
+# graylog_dir (string):
+#   Default value: %%GRAYLOG_DIR%%
+#   Path the the graylog installation.
+#
+# graylog_run_dir (string):
+#   Default value: /var/graylog
+#   Path the the graylog run folder.
+#
+# graylog_java_home (string):
+#   Default value: %%JAVA_HOME%%
+#   Root directory of the desired Java SDK.
+#
+# graylog_log4j_config (string):
+#   Default value: file://%%ETCDIR%%/graylog_logging.xml
+#   Path to the log4j configuration file for graylog
+
+. /etc/rc.subr
+
+name=graylog
+rcvar=graylog_enable
+load_rc_config $name
+
+: ${graylog_enable:="NO"}
+: ${graylog_user:="%%GRAYLOGUSER%%"}
+: ${graylog_group:="%%GRAYLOGGROUP%%"}
+: ${graylog_config:="%%ETCDIR%%/${name}.conf"}
+: ${graylog_min_mem:="256m"}
+: ${graylog_max_mem:="1g"}
+: ${graylog_dir:="%%GRAYLOG_DIR%%"}
+: ${graylog_run_dir:="/var/graylog"}
+: ${graylog_java_home:="%%JAVA_HOME%%"}
+: ${graylog_log4j_config="file://%%ETCDIR%%/graylog_logging.xml"}
+
+
+java_options=" -Xms${graylog_min_mem} \
+               -Xmx${graylog_max_mem} \
+               -XX:NewRatio=1 \
+               -XX:+ResizeTLAB \
+               -XX:+UseConcMarkSweepGC \
+               -XX:+CMSConcurrentMTEnabled \
+               -XX:+CMSClassUnloadingEnabled \
+               -XX:+UseParNewGC \
+               -XX:-OmitStackTraceInFastThrow\
+               -Djava.library.path=${graylog_dir}/lib/sigar \
+               -Dlog4j.configuration=${graylog_log4j_config}"
+
+start_precmd="graylog_precmd"
+
+pidfile=/var/run/${name}.pid
+command=/usr/sbin/daemon
+procname=`env JAVAVM_DRYRUN=true JAVA_VERSION=1.7+ %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -f 2 -d =`
+
+command_args="-p $pidfile -f /usr/local/bin/java ${java_options} -jar ${graylog_dir}/graylog.jar server --configfile ${graylog_config} --no-pid-file"
+
+graylog_precmd() {
+    /usr/bin/install -d -o ${graylog_group} -g ${graylog_group} -m 755 /var/log/graylog
+    /usr/bin/install -d -o ${graylog_group} -g ${graylog_group} -m 755 /var/log/graylog/server
+    /usr/bin/install -d -o ${graylog_group} -g ${graylog_group} -m 755 ${graylog_run_dir}
+    touch $pidfile
+    chown ${graylog_user}:${graylog_group} ${pidfile}
+    cd ${graylog_run_dir}
+}
+
+run_rc_command "$1"

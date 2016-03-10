@@ -243,6 +243,7 @@ dahdi:*:843:asterisk
 subsonic:*:844:
 sogod:*:846:
 domoticz:*:847:
+graylog:*:848:
 guacamole:*:899:
 fossy:*:901:www
 scanlogd:*:902:
