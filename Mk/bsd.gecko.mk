@@ -245,6 +245,7 @@ MOZ_TOOLKIT?=	cairo-gtk2
 MOZ_OPTIONS+=	\
 		--enable-chrome-format=${MOZ_CHROME} \
 		--enable-default-toolkit=${MOZ_TOOLKIT} \
+		--enable-pie \
 		--with-pthreads
 # Configure options for install
 .if !defined(MOZ_EXTENSIONS)
