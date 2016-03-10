@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-mentions
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
