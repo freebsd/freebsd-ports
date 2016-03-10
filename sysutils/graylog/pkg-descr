@@ -1,0 +1,5 @@
+Graylog is a centralized log server that accepts various structured
+and unstructred log data. Logs are stored in Elasticsearch. Graylog
+let's you search and analyze logs using a REST HTTP API.
+
+WWW: http://www.graylog.org
