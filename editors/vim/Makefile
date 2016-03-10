@@ -27,7 +27,7 @@ ALL_TARGET=	# empty
 MAKE_ARGS+=	CC="${CC}" CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" STRIP="${STRIP_CMD}" CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=termlib
 MAKE_ARGS+=	VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} VIMRCLOC=${ETCDIR}
 REINPLACE_ARGS=	-i ''
-USES=		cpe iconv ncurses pkgconfig shebangfix tar:bzip2
+USES=		cpe iconv ncurses pkgconfig shebangfix
 WANT_GNOME=	yes
 
 PLIST_SUB=	VIM_VER=${VIM_VER}
