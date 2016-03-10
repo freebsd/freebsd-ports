@@ -1,0 +1,3 @@
+You need to configure the Graylog Web Interface with the URL of a
+Graylog Server, and the secret for the Graylog Server in
+%%LOCALBASE%%/etc/graylog-web-interface.conf
