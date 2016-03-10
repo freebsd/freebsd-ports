@@ -1,5 +1,5 @@
---- src/findlib-toolbox/Makefile.orig	2015-10-25 12:46:55 UTC
-+++ src/findlib-toolbox/Makefile
+--- src/findlib-toolbox/Makefile.orig	2016-03-07 14:46:34.000000000 +0100
++++ src/findlib-toolbox/Makefile	2016-03-10 22:51:25.360014000 +0100
 @@ -13,7 +13,8 @@ make_wizard$(EXEC_SUFFIX): make_wizard.m
  	 	findlib.cma make_wizard.ml
  
