@@ -3,6 +3,7 @@
 
 PORTNAME=	xterm
 PORTVERSION=	323
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/:src1 \
 		LOCAL/ehaupt:src1 LOCAL/ehaupt:src2
@@ -21,6 +22,7 @@ USE_XORG=	xft
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto
+CONFIGURE_ENV+=	cf_cv_posix_source=no
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
