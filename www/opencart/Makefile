@@ -3,6 +3,7 @@
 
 PORTNAME=	opencart
 PORTVERSION=	2.2.0.0
+PORTREVISION=	1
 CATEGORIES=	www misc
 
 MAINTAINER=	wen@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	opencart
 
-USE_PHP=	mysqli curl mbstring gd zlib mcrypt session zip hash
+USE_PHP=	filter mysqli curl mbstring gd zlib mcrypt session zip hash
 WRKSRC_SUBDIR=	upload
 
 NO_BUILD=	yes
