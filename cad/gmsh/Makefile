@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-PORTVERSION=	2.11.0
+PORTVERSION=	2.12.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -91,7 +91,6 @@ IGNORE=		METIS must be set if TAUCS is set
 .if !${PORT_OPTIONS:MMETIS} && ${PORT_OPTIONS:MDOCS}
 IGNORE=		the license for Metis requires that its documentation is included
 .endif
-
 
 # TODO
 # Dependencies against PythonLibs, swig and petsc are found and registered if installed
