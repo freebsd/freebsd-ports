@@ -157,7 +157,7 @@ post-configure:
 
 .if ${PORT_OPTIONS:MMAILNEWS} && ${PORT_OPTIONS:MENIGMAIL}
 post-build:
-	${DO_MAKE_BUILD:S/${MAKEFILE}/Makefile/} all xpi \
+	${DO_MAKE_BUILD:N-j*:S,${MAKEFILE},Makefile,} all xpi \
 		-C ${WRKSRC}/mailnews/extensions/enigmail
 .endif
 

@@ -137,7 +137,7 @@ post-configure:
 		${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ./configure
 
 post-build:
-	${DO_MAKE_BUILD:S/${MAKEFILE}/Makefile/} all xpi \
+	${DO_MAKE_BUILD:N-j*:S,${MAKEFILE},Makefile,} all xpi \
 		-C ${WRKSRC}/mailnews/extensions/enigmail
 .endif
 
