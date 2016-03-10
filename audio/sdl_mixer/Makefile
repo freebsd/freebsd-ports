@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.12
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -61,7 +61,9 @@ TIMIDITYPLUS_RUN_DEPENDS_OFF=	${LOCALBASE}/lib/timidity/timidity.cfg:${PORTSDIR}
 TIMIDITYPLUS_VARS_OFF=		CONFIG_FILE=${LOCALBASE}/lib/timidity/timidity.cfg
 
 TREMOR_LIB_DEPENDS=		libvorbisidec.so:${PORTSDIR}/audio/libtremor
-TREMOR_CONFIGURE_ENABLE=	music-ogg music-ogg-tremor
+TREMOR_CONFIGURE_ON=		--enable-music-ogg
+# TREMOR_CONFIGURE_OFF is handled by VORBIS=off
+TREMOR_CONFIGURE_ENABLE=	music-ogg-tremor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\($$(prefix)/libdata/pkgconfig\)|$$(DESTDIR)\1|' \
