@@ -2,6 +2,7 @@
 
 PORTNAME=	profanity
 PORTVERSION=	0.4.7
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.profanity.im/
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libstrophe.so:${PORTSDIR}/net-im/libstrophe \
 		libglib-2.0.so:${PORTSDIR}/devel/glib20 \
 		libcurl.so:${PORTSDIR}/ftp/curl \
-		libotr.so.2:${PORTSDIR}/security/libotr3 \
+		libotr.so.5:${PORTSDIR}/security/libotr \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		libgpgme.so:${PORTSDIR}/security/gpgme
 
