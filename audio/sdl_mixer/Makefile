@@ -32,11 +32,8 @@ OPTIONS_DEFAULT+=	TREMOR
 OPTIONS_DEFAULT+=	VORBIS
 .endif
 
-MIKMOD_DESC=	Enable MOD music via libMikMod
-MODPLUG_DESC=	Enable MOD music via libModPlug
-SMPEG_DESC=	Enable MP3 music via SMPEG
-FLAC_DESC=	Enable FLAC encoding support via flac
-VORBIS_DESC=	Enable Ogg Vorbis music
+MOD_DESC=	Tracker music support
+SMPEG_DESC=	MP3 audio support via SMPEG
 TIMIDITYPLUS_DESC=	Use Timidity++ instead of Timidity (soundfont)
 
 MIKMOD_LIB_DEPENDS=		libmikmod.so:${PORTSDIR}/audio/libmikmod
