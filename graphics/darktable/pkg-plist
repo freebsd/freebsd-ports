@@ -337,6 +337,7 @@ share/icons/hicolor/scalable/apps/darktable.svg
 %%NLS%%share/locale/el/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/es/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/he/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/it/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/darktable.mo
