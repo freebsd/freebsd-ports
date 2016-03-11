@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	getdp
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.0
 CATEGORIES=	science
 MASTER_SITES=	http://www.geuz.org/getdp/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Rather general finite element solver using mixed finite elements
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/README.txt
 
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl	\
 		liblapack.so:${PORTSDIR}/math/lapack
