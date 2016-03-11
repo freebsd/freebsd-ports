@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	portest
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.6
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	ultima1252@gmail.com
