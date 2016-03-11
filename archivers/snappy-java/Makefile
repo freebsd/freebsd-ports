@@ -18,7 +18,7 @@ DISTFILES+=	snappy-${PORTVERSION:R}.tar.gz:source2 \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		FreeBSD-snappy-${PORTVERSION}-maven-repository.tar.gz
 
-MAINTAINER=	hsn@sendmail.cz
+MAINTAINER=	mark@tranquillussoftware.co.uk
 COMMENT=	Fast compressor/decompressor library
 
 LICENSE=	APACHE20
@@ -39,7 +39,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/snappy-java.jar lib/libsnappyjava.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|curl.*||g ; \
-		s|MVN:=mvn|MVN:=mvn -Dmaven.repo.local=${WRKDIR}/repository --offline|g' \
+		s|MVN:=mvn|MVN:=${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/repository --offline|g' \
 		${WRKSRC}/Makefile
 
 do-build:
