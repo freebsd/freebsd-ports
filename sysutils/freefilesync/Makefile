@@ -17,6 +17,8 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 
 WRKSRC=		${WRKDIR}/FreeFileSync/Source
+DOS2UNIX_WRKSRC=${WRKDIR}
+DOS2UNIX_GLOB=	*.cpp *.h
 
 USES=		compiler:c++14-lang dos2unix gmake pkgconfig zip
 USE_LDCONFIG=	yes
