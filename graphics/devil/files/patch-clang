@@ -2,6 +2,15 @@ Submitted upstream as:
 
 	https://sourceforge.net/p/openil/bugs/212/
 
+--- lib/Makefile.am.orig	2009-03-08 20:45:36 UTC
++++ lib/Makefile.am
+@@ -41,5 +41,5 @@ endif #BUILD_ILUT
+ 
+ libIL_la_CPPFLAGS = -I $(il_include) -I $(all_include)
+ libIL_la_CFLAGS = $(AM_CFLAGS) @IL_CFLAGS@
+-libIL_la_CXXFLAGS = $(AM_CFLAGS) @IL_CFLAGS@
++libIL_la_CXXFLAGS = $(filter-out -std=% -fgnu89-inline,$(AM_CFLAGS)) @IL_CFLAGS@
+ 
 --- src-IL/include/il_internal.h	2009-03-08 03:10:08.000000000 -0400
 +++ src-IL/include/il_internal.h	2014-12-20 01:11:39.000000000 -0500
 @@ -228,5 +228,5 @@

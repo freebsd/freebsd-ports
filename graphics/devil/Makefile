@@ -12,7 +12,7 @@ DISTNAME=	DevIL-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Full featured cross-platform image library
 
-USES=		alias autoreconf libtool pkgconfig
+USES=		alias autoreconf gmake libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ILU --enable-ILUT \
 		--disable-allegro --disable-directx8 --disable-directx9 \
@@ -21,9 +21,6 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:tl}
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 
@@ -55,6 +52,7 @@ MNG_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
 MNG_CONFIGURE_ENABLE=	mng
 PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 PNG_CONFIGURE_ENABLE=	png
+PNG_CONFIGURE_OFF=	libpng_app=no
 TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 TIFF_CONFIGURE_ENABLE=	tiff
 EXR_LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
@@ -63,28 +61,11 @@ EXR_CONFIGURE_ENABLE=	exr
 #SQUISH_CONFIGURE_WITH=	libsquish
 NVTT_LIB_DEPENDS=	libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
 NVTT_CONFIGURE_WITH=	nvtt
-
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MPNG}
-CONFIGURE_ENV+=	libpng_app=no
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_GL=		glut
-.else
-CONFIGURE_ARGS+=--disable-opengl --disable-x11 --disable-xpm --disable-shm
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl
-.else
-CONFIGURE_ARGS+=--disable-sdl
-.endif
-
-.if ! ${PORT_OPTIONS:MSIMD}
-CONFIGURE_ARGS+=--disable-altivec --disable-sse --disable-sse2 --disable-sse3
-.endif
+X11_USE=		GL=glut
+X11_CONFIGURE_OFF=-	-disable-opengl --disable-x11 --disable-xpm --disable-shm
+SDL_USE=		SDL=sdl
+SDL_CONFIGURE_OFF=	--disable-sdl
+SIMD_CONFIGURE_OFF=	--disable-altivec --disable-sse --disable-sse2 --disable-sse3
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g' ${WRKSRC}/Makefile.am
@@ -93,20 +74,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \
 		${WRKSRC}/src-ILU/ilur/ilur.c
 
-post-configure:
-	${REINPLACE_CMD} -e 's,-std=gnu99,,'	\
-		${WRKSRC}/Makefile ${WRKSRC}/*/Makefile
-
 post-install:
 	@${RMDIR} ${STAGEDIR}${DATADIR}/examples
 	@${RMDIR} ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS CREDITS ChangeLog Libraries.txt README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-do-test: build
-	${MAKE} -C ${WRKSRC}/test testil
+do-test:
+	cd ${WRKSRC}/test && ${MAKE_CMD} testil
 	cd ${WRKSRC}/test && ${SH} format_test/format_checks.sh
 
 .include <bsd.port.mk>
