@@ -17,6 +17,6 @@ SRC_DISTFILES=	cups-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 RPMVERSION=	72.el6
 USE_LDCONFIG=	yes
 
-DESCR=		${.CURDIR}/../cups-base/pkg-descr
+DESCR=		${.CURDIR}/../cups/pkg-descr
 
 .include <bsd.port.mk>

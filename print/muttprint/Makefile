@@ -3,6 +3,7 @@
 
 PORTNAME=	muttprint
 PORTVERSION=	0.73
+PORTREVISION=	1
 CATEGORIES=	print mail
 MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 
@@ -29,8 +30,7 @@ OPTIONS_DEFINE=		CUPS X11
 OPTIONS_DEFAULT=	X11
 X11_DESC=		graphics/ImageMagick[-nox11] dependency
 
-CUPS_RUN_DEPENDS=	cupstestppd:${PORTSDIR}/print/cups-base \
-			espgs:${PORTSDIR}/print/cups-pstoraster
+CUPS_RUN_DEPENDS=	lpr-cups:${PORTSDIR}/print/cups
 
 .if !defined(PAPERSIZE)
 PAPERSIZE=	letter

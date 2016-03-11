@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	3.18.2
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -57,7 +58,7 @@ OPTIONS_DEFINE_i386=	CHEESE
 OPTIONS_DEFAULT_i386=	CHEESE
 OPTIONS_DEFINE_amd64=	CHEESE
 OPTIONS_DEFAULT_amd64=	CHEESE
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups \
 			libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 CUPS_CONFIGURE_ENABLE=	cups
 CHEESE_LIB_DEPENDS=	libcheese.so:${PORTSDIR}/multimedia/cheese

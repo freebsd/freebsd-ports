@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160311:
+  AFFECTS: print/hplip
+  AUTHOR: tijl@FreeBSD.org
+
+  HPLIP has been updated to verion 3.16.2.  As part of the update support
+  for the hpijs/foomatic-rip filter has been dropped.  This has long been
+  unsupported upstream.  If you used this filter with your printer you'll
+  have to reconfigure it.
+
+20160311:
+  AFFECTS: print/cups-base, print/cups-client, print/cups-image
+  AUTHOR: tijl@FreeBSD.org
+
+  The cups-base, cups-client and cups-image packages have been combined
+  into one cups package.  If you build your own ports the easiest way to
+  update is to delete these packages first and then build and install
+  print/cups.
+
 20160306:
   AFFECTS: net-mgmt/yaf
   AUTHOR: pi@FreeBSD.org

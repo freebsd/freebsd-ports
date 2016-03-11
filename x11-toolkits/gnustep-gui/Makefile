@@ -3,7 +3,7 @@
 
 PORTNAME=	gnustep-gui
 PORTVERSION=	0.24.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	GNUSTEP/core
 
@@ -48,7 +48,7 @@ MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
 CUPS_CONFIGURE_ENABLE=		cups
-CUPS_LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups
 ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
 ASPELL_CONFIGURE_ENABLE=	aspell
 

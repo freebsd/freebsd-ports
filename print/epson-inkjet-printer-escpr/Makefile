@@ -3,6 +3,7 @@
 PORTNAME=	epson-inkjet-printer-escpr
 PORTVERSION=	1.6.4
 DISTVERSIONSUFFIX=	-1lsb3.2
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/hrs
 
@@ -11,9 +12,7 @@ COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-client
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
-		libcupsimage.so:${PORTSDIR}/print/cups-image
+LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups
 
 USES=		autoreconf dos2unix gmake libtool
 USE_LDCONFIG=	yes

@@ -3,6 +3,7 @@
 
 PORTNAME=	gui
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt4-
 
@@ -51,7 +52,7 @@ FONTENCOD=	${LOCALBASE}/share/fonts/encodings/encodings.dir
 .include "${.CURDIR}/../../devel/qt4/files/Makefile.options"
 
 .if ${QT4_OPTIONS:MCUPS}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcups.a:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups
 CONFIGURE_ARGS+=-cups -L${LOCALBASE}/lib -I. -I${LOCALBASE}/include
 .endif
 

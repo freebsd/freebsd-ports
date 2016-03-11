@@ -23,16 +23,13 @@
     SUBDIR += catdvi
     SUBDIR += cdlabelgen
     SUBDIR += cloudprint
-    SUBDIR += cups-base
+    SUBDIR += cups
     SUBDIR += cups-bjnp
-    SUBDIR += cups-client
     SUBDIR += cups-cloud-print
     SUBDIR += cups-filters
     SUBDIR += cups-fxlinuxprint
-    SUBDIR += cups-image
     SUBDIR += cups-pdf
     SUBDIR += cups-pk-helper
-    SUBDIR += cups-pstoraster
     SUBDIR += cups-smb-backend
     SUBDIR += deforaos-pdfviewer
     SUBDIR += detex

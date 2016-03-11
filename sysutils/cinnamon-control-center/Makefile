@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/9363a4a1e121344ae98f22b55fb28623cf0f6038/panels/datetime/data/:tzpng
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -58,7 +58,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	CUPS
 OPTIONS_DEFAULT=CUPS
 CUPS_CONFIGURE_ENABLE=	cups
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 
 MISSING_PNG=timezone_8.5.png timezone_8.5_dim.png
 .for i in ${MISSING_PNG}

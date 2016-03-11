@@ -2,16 +2,14 @@
 
 PORTNAME=	splix
 PORTVERSION=	2.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES?=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CUPS printer drivers for Samsung Printer Language printers
 
-LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups-image
-BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-client
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups
 
 USES=		gmake tar:bzip2
 

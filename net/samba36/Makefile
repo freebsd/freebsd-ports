@@ -2,7 +2,7 @@
 
 PORTNAME=		${SAMBA_BASENAME}36
 PORTVERSION=		3.6.25
-PORTREVISION?=		2
+PORTREVISION?=		3
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba SAMBA/samba/stable SAMBA/samba/pre
 DISTNAME=		${SAMBA_BASENAME}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
@@ -195,7 +195,7 @@ SAMBA_WANT_LDAP=	yes
 .endif
 
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=		libcups.so:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=		libcups.so:${PORTSDIR}/print/cups
 CONFIGURE_ARGS+=	--enable-cups --enable-iprint
 SUB_LIST+=		CUPS=""
 .else

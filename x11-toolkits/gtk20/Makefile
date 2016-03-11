@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.24.29
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	2
@@ -42,7 +42,7 @@ OPTIONS_DEFINE=	CUPS DEBUG
 OPTIONS_DEFAULT=CUPS
 OPTIONS_SUB=	yes
 
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 CUPS_CONFIGURE_ON=	--enable-cups=auto
 CUPS_CONFIGURE_OFF=	--disable-cups
 DEBUG_CONFIGURE_ON=	--enable-debug=yes

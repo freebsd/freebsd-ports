@@ -3,7 +3,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -63,7 +63,7 @@ MONO_DESC=	Bundle Mono MSI package for Wine
 PORTSCOUT=	limitw:1,even
 
 CUPS_CONFIGURE_WITH=	cups
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 
 DOSBOX_RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
 
