@@ -26,7 +26,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 SHEBANG_FILES=	weathermap
 
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 PORTDOCS=	README INSTALL
 
