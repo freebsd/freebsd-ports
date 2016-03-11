@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cadubi
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.3.1
 CATEGORIES=	graphics editors
 
 MAINTAINER=	ports@FreeBSD.org
