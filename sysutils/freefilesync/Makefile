@@ -18,9 +18,14 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 
 WRKSRC=		${WRKDIR}/FreeFileSync/Source
 
-USES=		compiler:c++11-lang dos2unix gmake pkgconfig zip
+USES=		compiler:c++14-lang dos2unix gmake pkgconfig zip
 USE_LDCONFIG=	yes
 USE_WX=		3.0+
+
+pre-patch:
+# XXX Pretend USES=dos2unix supports DOS2UNIX_WRKSRC=${WRKDIR}
+	@${SED} 's/^+++ //; /^\.\./!d; s,^,${PATCH_WRKSRC}/,' \
+		${PATCHDIR}/patch-* | ${XARGS} ${REINPLACE_CMD} 's/$$//'
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/wx-config/$${WX_CONFIG:T}/' \
