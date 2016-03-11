@@ -1,4 +1,3 @@
 @sample etc/pimd.conf.sample
-etc/rc.d/pimd
 sbin/pimd
 man/man8/pimd.8.gz
