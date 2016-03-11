@@ -19,6 +19,7 @@ RUN_DEPENDS=	ldapadd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
 		ldapmodrdn:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
 		ldappasswd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client
 
+NO_ARCH=	yes
 USE_OPENLDAP=	yes
 USES=		iconv tar:tgz
 LIBDIR=	${PREFIX}/lib/${PORTNAME}
