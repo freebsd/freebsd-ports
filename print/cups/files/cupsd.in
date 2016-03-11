@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: cupsd
-# REQUIRE: DAEMON %%ZEROCONF%%
+# REQUIRE: DAEMON %%DBUS_DAEMON%% %%AVAHI_DAEMON%%
 # KEYWORD: shutdown
 #
 # Add the following to /etc/rc.conf[.local] to enable this service

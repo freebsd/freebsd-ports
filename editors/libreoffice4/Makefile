@@ -2,7 +2,7 @@
 
 PORTNAME=	libreoffice
 PORTVERSION=	4.3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/ \
 		http://dev-www.libreoffice.org/extern/:ext \
@@ -217,7 +217,7 @@ TEST_DESC=	Run all regression tests
 VERBOSE_DESC=	Increase build verbosity
 WEBDAV_DESC=	Enable webdav protocol
 
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 CUPS_CONFIGURE_ENABLE=	cups
 
 DEBUG_CONFIGURE_ON=	--enable-crashdump --enable-dbgutil --enable-debug

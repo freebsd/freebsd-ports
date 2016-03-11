@@ -3,6 +3,7 @@
 
 PORTNAME=	x2goclient
 PORTVERSION=	4.0.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 # Avoid clash with libssh from base
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
+LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups \
 		libssh.so:${PORTSDIR}/security/libssh
 RUN_DEPENDS=	nxproxy:${PORTSDIR}/net/nxproxy \
 		x2goclient-cli:${PORTSDIR}/net/x2goclient-cli

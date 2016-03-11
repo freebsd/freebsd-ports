@@ -3,6 +3,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -86,7 +87,7 @@ OPENEXR_CMAKE_OFF=	-DUSE_OPENEXR:BOOL=OFF
 OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 OPENJPEG_CMAKE_OFF=	-DUSE_OPENJPEG:BOOL=OFF
 
-PRINT_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+PRINT_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 PRINT_CMAKE_OFF=	-DBUILD_PRINT:BOOL=OFF
 
 RAWSPEED_CMAKE_OFF=	-DDONT_USE_RAWSPEED:BOOL=ON

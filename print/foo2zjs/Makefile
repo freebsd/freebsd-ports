@@ -3,7 +3,7 @@
 
 PORTNAME=	foo2zjs
 PORTVERSION=	20150511
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	GOOGLE_CODE \
 		LOCAL/bsam/${PORTNAME}  \
@@ -15,7 +15,7 @@ COMMENT=	Driver for printers that use the ZjStream wire protocol
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:${PORTSDIR}/print/foomatic-db \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
 		gsed:${PORTSDIR}/textproc/gsed

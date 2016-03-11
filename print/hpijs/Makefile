@@ -2,7 +2,7 @@
 
 PORTNAME=	hpijs
 PORTVERSION=	2.1.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	SF/hpinkjet/${PORTNAME}/${PORTVERSION}
 
@@ -37,8 +37,8 @@ CONFIGURE_ARGS+=	--disable-foomatic-install
 .endif
 
 .if ${PORT_OPTIONS:MCUPS}
-BUILD_DEPENDS+=		cups-base>0:${PORTSDIR}/print/cups-base
-RUN_DEPENDS+=		cups-base>0:${PORTSDIR}/print/cups-base
+BUILD_DEPENDS+=		cups>0:${PORTSDIR}/print/cups
+RUN_DEPENDS+=		cups>0:${PORTSDIR}/print/cups
 CONFIGURE_ARGS+=	--enable-cups-install
 .else
 CONFIGURE_ARGS+=	--disable-cups-install

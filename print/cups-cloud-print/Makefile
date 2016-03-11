@@ -2,7 +2,7 @@
 
 PORTNAME=	cups-cloud-print
 PORTVERSION=	20140814.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,8 +11,8 @@ COMMENT=	Print using Google Cloud Print
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-client
-RUN_DEPENDS=	cancel:${PORTSDIR}/print/cups-base \
+BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups
+RUN_DEPENDS=	cancel:${PORTSDIR}/print/cups \
 		${PYTHON_PKGNAMEPREFIX}pycups>0:${PORTSDIR}/print/py-pycups \
 		bash:${PORTSDIR}/shells/bash \
 		${PYTHON_PKGNAMEPREFIX}httplib2>0:${PORTSDIR}/www/py-httplib2
