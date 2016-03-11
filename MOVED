@@ -8227,3 +8227,4 @@ devel/p5-DateTime-Event-SolarTerm|devel/p5-DateTime-Astro|2016-03-07|Has been pa
 devel/p5-DateTime-Util-Astro|devel/p5-DateTime-Astro|2016-03-07|Has been part of DateTime-Astro for a long time
 security/regripperplugins||2016-03-07|Merged into security/regripper
 textproc/elasticsearch-plugin-marvel2|textproc/elasticsearch2-plugin-marvel|2016-03-10|Rename to match other Elasticsearch 2 plugins
+print/cups||2016-03-11|Deleted to be replaced by print/cups-base
