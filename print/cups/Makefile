@@ -85,7 +85,7 @@ CONFIGURE_ARGS+=ac_cv_search_libiconv_open=no
 
 post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' ${WRKSRC}/Makedefs.in
-	@${REINPLACE_CMD} -e 's|/private/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
+	@${REINPLACE_CMD} -e 's|/usr/local/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
 		-e 's/-fstack-protector//' ${WRKSRC}/configure
 	@${REINPLACE_CMD} 's|http://www.cups.org|https://cups.org|' \
 		${WRKSRC}/doc/index.html.in \

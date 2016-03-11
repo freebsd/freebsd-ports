@@ -22,3 +22,18 @@
  DBUS_NOTIFIER=""
  DBUS_NOTIFIERLIBS=""
  
+@@ -8684,13 +8690,7 @@ fi
+ 			PAMLIBS="-lpam"
+ 		fi
+ 
+-		# Find the PAM configuration directory, if any...
+-		for dir in /private/etc/pam.d /etc/pam.d; do
+-			if test -d $dir; then
+-				PAMDIR=$dir
+-				break;
+-			fi
+-		done
++		PAMDIR=/usr/local/etc/pam.d
+ 	fi
+ 
+ 	LIBS="$SAVELIBS"
