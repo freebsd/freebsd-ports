@@ -12,15 +12,13 @@
 
 . /etc/rc.subr
 
-pimd_enable=${pimd_enable-"NO"}
-
 name="pimd"
-rcvar=${name}_enable
-
-command="/usr/local/sbin/${name}"
-
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
 extra_commands=reload
 
 load_rc_config $name
+: ${pimd_enable="NO"}
 run_rc_command "$1"
 
