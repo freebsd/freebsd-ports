@@ -1,0 +1,9 @@
+@sample etc/csync2.cfg.sample
+man/man1/csync2.1.gz
+sbin/csync2
+%%CSYNC2_COMPARE%%sbin/csync2-compare
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dir(,,700) /var/db/csync2
+@dir(,,700) /var/backups/csync2
