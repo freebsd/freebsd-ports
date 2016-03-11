@@ -3,16 +3,15 @@
 
 PORTNAME=	xpp
 PORTVERSION=	1.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	print
 MASTER_SITES=	SF/cups/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	X11-based printer manager for CUPS
 
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
+LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups \
 		libfltk.so.1:${PORTSDIR}/x11-toolkits/fltk
-BUILD_DEPENDS=	${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes

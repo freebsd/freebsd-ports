@@ -4,7 +4,7 @@
 
 PORTNAME?=	gutenprint
 PORTVERSION=	5.2.10
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 PKGNAMESUFFIX?=	-base
@@ -56,9 +56,8 @@ INSTALL_WRKSRC=	${WRKSRC}/src/gimp2
 PLIST_FILES+=	libexec/cups/backend/gutenprint52+usb \
 		share/cups/usb/net.sf.gimp-print.usb-quirks
 .endif
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client \
-		libcupsimage.so:${PORTSDIR}/print/cups-image
-RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster
+LIB_DEPENDS+=	libcupsimage.so:${PORTSDIR}/print/cups
+RUN_DEPENDS+=	${LOCALBASE}/libexec/cups/filter/gstoraster:${PORTSDIR}/print/cups-filters
 CONFIGURE_ARGS+=	--with-cups=${PREFIX} \
 			--enable-cups-ppds \
 			--enable-cups-level3-ppds

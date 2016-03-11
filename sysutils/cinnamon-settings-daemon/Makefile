@@ -3,6 +3,7 @@
 
 PORTNAME=	cinnamon-settings-daemon
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -64,7 +65,7 @@ OPTIONS_DEFINE=	CUPS SMARTCARD
 OPTIONS_DEFAULT=CUPS SMARTCARD
 SMARTCARD_DESC=	Smartcard support
 CUPS_CONFIGURE_ENABLE=	cups
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 SMARTCARD_CONFIGURE_ENABLE=	smartcard-support
 SMARTCARD_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
 

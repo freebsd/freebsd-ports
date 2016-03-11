@@ -3,7 +3,7 @@
 
 PORTNAME=	epdfview
 PORTVERSION=	0.1.8
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	FRUGALWARE/xapps-extra/${PORTNAME} \
 		ftp://ftp.slackware.com/.1/blfs/conglomeration/${PORTNAME}/ \
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	CUPS NLS
 OPTIONS_SUB=	yes
 
 CUPS_CONFIGURE_WITH=	cups
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 
 NLS_USES=	gettext
 NLS_CPPFLAGS=	-I${LOCALBASE}/include

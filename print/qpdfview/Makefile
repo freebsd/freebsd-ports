@@ -3,7 +3,7 @@
 
 PORTNAME=	qpdfview
 PORTVERSION=	0.4.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	https://launchpadlibrarian.net/226592308/ \
 	https://launchpad.net/${PORTVERSION}/trunk/${PORTVERSION}/+download/
@@ -29,7 +29,7 @@ OPTIONS_DEFAULT=	QT4 CUPS PS
 OPTIONS_SUB=	yes
 
 CUPS_QMAKE_OFF=	"CONFIG+=without_cups"
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 
 DJVU_LIB_DEPENDS=	libdjvulibre.so:${PORTSDIR}/graphics/djvulibre
 DJVU_QMAKE_OFF=	"CONFIG+=without_djvu"

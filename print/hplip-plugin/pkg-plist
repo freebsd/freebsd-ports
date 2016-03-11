@@ -19,6 +19,8 @@ share/hplip/prnt/plugins/hbpl1-%%LINARCH%%.so
 share/hplip/prnt/plugins/hbpl1.so
 share/hplip/prnt/plugins/lj-%%LINARCH%%.so
 share/hplip/prnt/plugins/lj.so
+share/hplip/scan/plugins/bb_escl-%%LINARCH%%.so
+share/hplip/scan/plugins/bb_escl.so
 share/hplip/scan/plugins/bb_marvell-%%LINARCH%%.so
 share/hplip/scan/plugins/bb_marvell.so
 share/hplip/scan/plugins/bb_soap-%%LINARCH%%.so

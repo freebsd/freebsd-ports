@@ -2,7 +2,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}/ \
 		ftp://opera.inode.at/${MASTER_SITES_VER_PATH}/ \
@@ -42,7 +42,7 @@ NO_OPTIONS_SORT=yes
 CUPS_DESC=	support for printing (requires CUPS)
 VIDEO_DESC=	support for HTML5 video (requires GStreamer)
 
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 
 VIDEO_USE=	gstreamer=vorbis,ogg,theora,vp8,good
 GTK2_USE=	gnome=gtk20,libxml2

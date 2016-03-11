@@ -2,7 +2,7 @@
 
 PORTNAME=	oyranos
 PORTVERSION=	0.9.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Oyranos/Oyranos%20${PORTVERSION:C|(.*)\.[0-9]*$|\1|}
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libraw.so:${PORTSDIR}/graphics/libraw \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libyajl.so:${PORTSDIR}/devel/yajl \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libcups.so:${PORTSDIR}/print/cups-client \
+		libcups.so:${PORTSDIR}/print/cups \
 		libxdot.so:${PORTSDIR}/graphics/graphviz \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \

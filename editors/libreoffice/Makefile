@@ -2,6 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
+PORTREVISION=	1
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
@@ -113,7 +114,7 @@ VERBOSE_DESC=	Increase build verbosity
 WEBDAV_DESC=	Enable webdav protocol
 
 CUPS_CONFIGURE_ENABLE=	cups
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 
 GNOME_CONFIGURE_ENABLE=	dbus gconf lockdown
 GNOME_IMPLIES=	GTK2

@@ -2,6 +2,7 @@
 
 PORTNAME=	printsupport
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	print
 PKGNAMEPREFIX=	qt5-
 
@@ -22,7 +23,7 @@ OPTIONS_SUB=	yes
 
 CUPS_CONFIGURE_ON=	-cups
 CUPS_CONFIGURE_OFF=	-no-cups
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 
 .include <bsd.port.options.mk>
 
