@@ -1,6 +1,6 @@
---- Makefile.in.orig     Sat Aug 30 18:18:03 2003
-+++ Makefile.in          Sat Mar  5 00:24:22 2005
-@@ -60,13 +60,7 @@
+--- Makefile.in.orig	2009-11-01 21:11:30 UTC
++++ Makefile.in
+@@ -60,13 +60,7 @@ install: $(BIN_OUT)
  	$(INSTALL_BIN) -d $(bindir)
  	$(INSTALL_BIN) -s $(BIN_OUT) $(bindir)
  	$(INSTALL) -d $(mandir)/man1
