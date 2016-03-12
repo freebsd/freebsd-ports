@@ -353,6 +353,7 @@
     SUBDIR += jdictionary
     SUBDIR += jdictionary-int-eng
     SUBDIR += jing
+    SUBDIR += jo
     SUBDIR += jq
     SUBDIR += jrefentry
     SUBDIR += jshon
