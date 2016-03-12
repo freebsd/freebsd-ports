@@ -1063,6 +1063,7 @@
     SUBDIR += jech-dht
     SUBDIR += jenkins
     SUBDIR += jenkins-lts
+    SUBDIR += jenkins2
     SUBDIR += jiic
     SUBDIR += jline
     SUBDIR += jna
