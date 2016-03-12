@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hackney
-PORTVERSION=	1.4.10
+PORTVERSION=	1.5.1
 CATEGORIES=	www
 PKGNAMEPREFIX=	erlang-
 
@@ -17,6 +17,7 @@ GH_ACCOUNT=	benoitc
 ERL_BUILD_DEPS=	dns/erlang-idna \
 		devel/erlang-certifi \
 		devel/erlang-ssl_verify_hostname \
+		devel/erlang-metrics \
 		misc/erlang-mimerl
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 
