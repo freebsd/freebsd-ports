@@ -11,6 +11,7 @@ COMMENT=	Generate postscript for frontcards and traycards for CDs
 
 USES=		perl5 tar:tgz shebangfix
 SHEBANG_FILES=	cdlabelgen
+NO_ARCH=	yes
 NO_BUILD=	yes
 MAKE_ARGS=	BASE_DIR="${STAGEDIR}${PREFIX}" \
 		LIB_DIR="${STAGEDIR}${DATADIR}" \
