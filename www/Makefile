@@ -469,9 +469,9 @@
     SUBDIR += mod_flickr
     SUBDIR += mod_geoip2
     SUBDIR += mod_gzip2
-    SUBDIR += mod_http2-devel
     SUBDIR += mod_h264_streaming
     SUBDIR += mod_hosts_access
+    SUBDIR += mod_http2-devel
     SUBDIR += mod_jail
     SUBDIR += mod_jk
     SUBDIR += mod_layout22
@@ -1565,10 +1565,6 @@
     SUBDIR += py-django-registration
     SUBDIR += py-django-registration-defaults
     SUBDIR += py-django-registration-redux
-    SUBDIR += py-djangorestframework
-    SUBDIR += py-djangorestframework-csv
-    SUBDIR += py-djangorestframework-filters
-    SUBDIR += py-djangorestframework-xml
     SUBDIR += py-django-reversion
     SUBDIR += py-django-sekizai
     SUBDIR += py-django-signals-ahoy
@@ -1590,6 +1586,10 @@
     SUBDIR += py-django18
     SUBDIR += py-django19
     SUBDIR += py-django_compressor
+    SUBDIR += py-djangorestframework
+    SUBDIR += py-djangorestframework-csv
+    SUBDIR += py-djangorestframework-filters
+    SUBDIR += py-djangorestframework-xml
     SUBDIR += py-djangotoolbox
     SUBDIR += py-djblets
     SUBDIR += py-dojango
