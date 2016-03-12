@@ -3,6 +3,7 @@
 
 PORTNAME=	Net-DNS
 PORTVERSION=	1.05
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
@@ -37,8 +38,8 @@ SSHFP_RUN_DEPENDS=	p5-Digest-BubbleBabble>=0.01:${PORTSDIR}/security/p5-Digest-B
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIPV6} && ${PERL_LEVEL} < 502200
-BUILD_DEPENDS=	p5-IO-Socket-IP>=0.32:${PORTSDIR}/net/p5-IO-Socket-IP
-RUN_DEPENDS=	p5-IO-Socket-IP>=0.32:${PORTSDIR}/net/p5-IO-Socket-IP
+BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.32:${PORTSDIR}/net/p5-IO-Socket-IP
+RUN_DEPENDS+=	p5-IO-Socket-IP>=0.32:${PORTSDIR}/net/p5-IO-Socket-IP
 .endif
 
 .include <bsd.port.post.mk>
