@@ -373,10 +373,10 @@ diff --git a/eclipse.platform.releng.tychoeclipsebuilder/pom.xml b/eclipse.platf
 --- a/eclipse.platform.releng.tychoeclipsebuilder/pom.xml
 +++ b/eclipse.platform.releng.tychoeclipsebuilder/pom.xml
 @@ -35,6 +35,6 @@
-     <module>platform.sdk</module>
-     <module>sdk</module>
-     <module>eclipse-junit-tests</module>
--    <module>eclipse.platform.repository</module>
-+    <!-- module>eclipse.platform.repository</module -->
+       <module>platform.sdk</module>
+       <module>sdk</module>
+       <module>eclipse-junit-tests</module>
+-      <module>eclipse.platform.repository</module>
++      <!-- module>eclipse.platform.repository</module -->
    </modules>
  </project>
