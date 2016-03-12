@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-GeoNames
-PORTVERSION=	1.06
+PORTVERSION=	1.08
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perform geographical queries using GeoNames Web Services
 
-LICENSE=	ART10 GPLv1
-LICENSE_COMB=	dual
+LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-JSON>=1.14:${PORTSDIR}/converters/p5-JSON \
 		p5-Mojolicious>=0:${PORTSDIR}/www/p5-Mojolicious \
