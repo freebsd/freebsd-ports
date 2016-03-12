@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	folsom
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 USES=		erlang:rebar
 USE_GITHUB=	yes
-GH_ACCOUNT=	boundary
+GH_ACCOUNT=	puzza007
 
 ERL_BUILD_DEPS=	devel/erlang-bear
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
