@@ -141,6 +141,7 @@
     SUBDIR += freeradius2
     SUBDIR += freeradius3
     SUBDIR += freerdp
+    SUBDIR += freeswitch
     SUBDIR += freevrrpd
     SUBDIR += fspclient
     SUBDIR += fspd
