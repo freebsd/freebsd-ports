@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-i18n-qt5
-PORTVERSION=	20151106
+PORTVERSION=	20160312
 CATEGORIES=	misc
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -18,7 +18,7 @@ NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
 GH_PROJECT=	pcbsd-translate
-GH_TAGNAME=     fdf7666c7cc07786b3987d2a8b135913440773dd
+GH_TAGNAME=     8156abdd079866f2e2a141ecc1d74d4a1a2615ec
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pcbsd/i18n
