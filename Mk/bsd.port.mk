@@ -3520,6 +3520,9 @@ do-package: ${TMPPLIST}
 				fi ; \
 				${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
 			fi; \
+		elif [ ! -d ${PACKAGES} ]; then \
+			${LN} -f ${WRKDIR_PKGFILE} ${PKGFILE} 2>/dev/null \
+				|| ${CP} -f ${WRKDIR_PKGFILE} ${PKGFILE}; \
 		fi; \
 	else \
 		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
