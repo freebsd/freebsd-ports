@@ -774,6 +774,7 @@
     SUBDIR += puppet37
     SUBDIR += puppet38
     SUBDIR += puppet4
+    SUBDIR += puppetserver
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen
