@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cdlabelgen
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	print perl5
 MASTER_SITES=	http://www.aczoom.com/pub/tools/
 
