@@ -1,0 +1,11 @@
+lib/erlang/lib/metrics-%%VERSION%%/ebin/metrics.app
+lib/erlang/lib/metrics-%%VERSION%%/ebin/metrics.beam
+lib/erlang/lib/metrics-%%VERSION%%/ebin/metrics_dummy.beam
+lib/erlang/lib/metrics-%%VERSION%%/ebin/metrics_exometer.beam
+lib/erlang/lib/metrics-%%VERSION%%/ebin/metrics_folsom.beam
+lib/erlang/lib/metrics-%%VERSION%%/src/metrics.app.src
+lib/erlang/lib/metrics-%%VERSION%%/src/metrics.erl
+lib/erlang/lib/metrics-%%VERSION%%/src/metrics_dummy.erl
+lib/erlang/lib/metrics-%%VERSION%%/src/metrics_exometer.erl
+lib/erlang/lib/metrics-%%VERSION%%/src/metrics_folsom.erl
+%%PORTDOCS%%%%DOCSDIR%%/README.md
