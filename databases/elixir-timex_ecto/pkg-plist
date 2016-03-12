@@ -1,3 +1,4 @@
+lib/elixir/lib/timex_ecto/ebin/Elixir.Ecto.DataType.Timex.Date.beam
 lib/elixir/lib/timex_ecto/ebin/Elixir.Ecto.DataType.Timex.DateTime.beam
 lib/elixir/lib/timex_ecto/ebin/Elixir.Timex.Ecto.Date.beam
 lib/elixir/lib/timex_ecto/ebin/Elixir.Timex.Ecto.DateTime.beam
