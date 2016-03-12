@@ -866,8 +866,8 @@
     SUBDIR += py-pyganim
     SUBDIR += py-pyggel
     SUBDIR += py-pyglet
-    SUBDIR += py-pygraphviz
     SUBDIR += py-pygooglechart
+    SUBDIR += py-pygraphviz
     SUBDIR += py-pyproj
     SUBDIR += py-qt4-svg
     SUBDIR += py-qt5-svg
