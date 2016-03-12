@@ -778,7 +778,6 @@
     SUBDIR += p5-Sort-Key-IPv4
     SUBDIR += p5-Test-URI
     SUBDIR += p5-URI
-    SUBDIR += p5-URI-db
     SUBDIR += p5-URI-FromHash
     SUBDIR += p5-URI-Match
     SUBDIR += p5-URI-Nested
@@ -787,6 +786,7 @@
     SUBDIR += p5-URI-SmartURI
     SUBDIR += p5-URI-Template
     SUBDIR += p5-URI-Template-Restrict
+    SUBDIR += p5-URI-db
     SUBDIR += p5-URI-ws
     SUBDIR += p5-VM-EC2
     SUBDIR += p5-VM-EC2-Security-CredentialCache
