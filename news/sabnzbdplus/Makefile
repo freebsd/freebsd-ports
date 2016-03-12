@@ -2,7 +2,7 @@
 
 PORTNAME=	sabnzbdplus
 PORTVERSION=	0.7.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -43,13 +43,13 @@ UNRAR_DESC=	Often required for unpacking many downloads
 FEEDPARSER_DESC=	rss-feed support
 YENC_DESC=	yenc support
 
-.include <bsd.port.pre.mk>
-
 PAR2CMDLINE_RUN_DEPENDS=	par2repair:${PORTSDIR}/archivers/par2cmdline-tbb
 FEEDPARSER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:${PORTSDIR}/textproc/py-feedparser
 YENC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yenc>=0:${PORTSDIR}/news/py-yenc
 OPENSSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl
 UNRAR_RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s:/usr/bin/python:${PYTHON_CMD}:g" \
