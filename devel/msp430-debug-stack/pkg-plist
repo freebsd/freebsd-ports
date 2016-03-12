@@ -8,3 +8,4 @@ include/libmsp430/MSP430_HIL.h
 lib/libmsp430.so
 %%PORTDOCS%%%%DOCSDIR%%/slau320v.pdf
 %%PORTDOCS%%%%DOCSDIR%%/slau656.pdf
+etc/devd/mspfet.conf
