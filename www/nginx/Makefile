@@ -508,7 +508,7 @@ USES+=		perl5
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_PUSH}
-GIT_PUSH_VERSION=	0.99.6
+GIT_PUSH_VERSION=	0.99.7
 GH_ACCOUNT+=	slact:push
 GH_PROJECT+=	nchan:push
 GH_TAGNAME+=	v${GIT_PUSH_VERSION}:push
@@ -682,7 +682,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
-NGINX_MODSECURITY_VERSION=	2.9.1-RC1
+NGINX_MODSECURITY_VERSION=	2.9.1
 LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
