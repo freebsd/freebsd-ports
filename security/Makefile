@@ -811,7 +811,6 @@
     SUBDIR += py-Products.PlonePAS
     SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
-    SUBDIR += py-scrypt
     SUBDIR += py-SecretStorage
     SUBDIR += py-acme
     SUBDIR += py-acme-tiny
@@ -886,6 +885,7 @@
     SUBDIR += py-rekall_gui
     SUBDIR += py-requests-kerberos
     SUBDIR += py-rsa
+    SUBDIR += py-scrypt
     SUBDIR += py-service_identity
     SUBDIR += py-signedjson
     SUBDIR += py-slowaes
