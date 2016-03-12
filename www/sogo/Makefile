@@ -3,6 +3,7 @@
 
 PORTNAME=		sogo
 PORTVERSION=		2.3.8
+PORTREVISION=		1
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
@@ -42,6 +43,7 @@ CONFIGURE_ARGS=		--disable-debug --enable-strip
 post-patch:
 	@${GREP} -rlF '/etc/sogo' ${WRKSRC} \
 		| ${XARGS} ${REINPLACE_CMD} 's#/etc/sogo#${PREFIX}/etc/sogo#g'
+	@${REINPLACE_CMD} -e 's|/usr/lib/GNUstep|${GNUSTEP_LOCAL_ROOT}/Library|' ${WRKSRC}/Apache/SOGo.conf
 
 post-patch-ACTIVESYNC-on:
 	@${REINPLACE_CMD} -e 's/Tools/Tools ActiveSync/' ${WRKSRC}/GNUmakefile
