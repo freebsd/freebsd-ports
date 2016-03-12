@@ -590,6 +590,7 @@
     SUBDIR += pavucontrol
     SUBDIR += pavumeter
     SUBDIR += pd
+    SUBDIR += pd-cyclone
     SUBDIR += pear-Text_Spell_Audio
     SUBDIR += penguinsap
     SUBDIR += pianobar
