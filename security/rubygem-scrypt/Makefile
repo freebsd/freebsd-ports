@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scrypt
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-ffi-compiler>=0.0.2:${PORTSDIR}/devel/rubygem-ffi-compiler \
 		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
