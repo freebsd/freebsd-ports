@@ -1029,8 +1029,8 @@
     SUBDIR += hs-word8
     SUBDIR += htable
     SUBDIR += hub
-    SUBDIR += hyperscan
     SUBDIR += hwloc
+    SUBDIR += hyperscan
     SUBDIR += ice
     SUBDIR += icmake
     SUBDIR += icu
@@ -2671,9 +2671,9 @@
     SUBDIR += p5-MooX-HandlesVia
     SUBDIR += p5-MooX-Options
     SUBDIR += p5-MooX-StrictConstructor
+    SUBDIR += p5-MooX-TypeTiny
     SUBDIR += p5-MooX-Types-MooseLike
     SUBDIR += p5-MooX-Types-MooseLike-Numeric
-    SUBDIR += p5-MooX-TypeTiny
     SUBDIR += p5-MooX-late
     SUBDIR += p5-Moos
     SUBDIR += p5-Moose
@@ -4365,8 +4365,8 @@
     SUBDIR += py-setuptools_hg
     SUBDIR += py-setuptools_scm
     SUBDIR += py-sh
-    SUBDIR += py-should_dsl
     SUBDIR += py-shapely
+    SUBDIR += py-should_dsl
     SUBDIR += py-simplegeneric
     SUBDIR += py-simplejson
     SUBDIR += py-simpleparse
@@ -4562,8 +4562,8 @@
     SUBDIR += py3-gobject3
     SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
-    SUBDIR += py3-pytz
     SUBDIR += py3-python-magic
+    SUBDIR += py3-pytz
     SUBDIR += py3-vcversioner
     SUBDIR += py3-xdg
     SUBDIR += py_static_check
