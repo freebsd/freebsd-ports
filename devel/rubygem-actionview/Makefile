@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionview
-PORTVERSION=	4.2.5.2
+PORTVERSION=	4.2.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
