@@ -492,6 +492,7 @@
     SUBDIR += erlang-lager
     SUBDIR += erlang-lager_syslog
     SUBDIR += erlang-meck
+    SUBDIR += erlang-metrics
     SUBDIR += erlang-msgpack
     SUBDIR += erlang-neotoma
     SUBDIR += erlang-oserl
