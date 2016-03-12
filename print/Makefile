@@ -26,6 +26,7 @@
     SUBDIR += cups
     SUBDIR += cups-bjnp
     SUBDIR += cups-cloud-print
+    SUBDIR += cups-connector
     SUBDIR += cups-filters
     SUBDIR += cups-fxlinuxprint
     SUBDIR += cups-pdf
