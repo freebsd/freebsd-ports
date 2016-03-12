@@ -1,5 +1,5 @@
---- prompt.c.orig	2009-04-25 20:18:13.000000000 -0700
-+++ prompt.c	2009-10-18 15:29:39.000000000 -0700
+--- prompt.c.orig	2009-04-26 03:18:13 UTC
++++ prompt.c
 @@ -41,9 +41,9 @@
  
  #include "std.h"
@@ -11,7 +11,7 @@
  #include "wipe.h"
  #include "blkdev.h"
  #include "prompt.h"
-@@ -69,7 +69,10 @@
+@@ -69,7 +69,10 @@ public void prompt_destroy(struct file_s
      }
  #endif
  
@@ -23,7 +23,7 @@
  
    permdenied = access(f->name, perm);
    if (options.interactive) /* force overrides interaction */
-@@ -119,7 +122,10 @@
+@@ -119,7 +122,10 @@ public void prompt_destroy(struct file_s
  
  	      fgets(prompt, sizeof(prompt), stdin);
  
