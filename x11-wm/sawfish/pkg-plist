@@ -3,6 +3,7 @@ bin/sawfish-about
 bin/sawfish-client
 bin/sawfish-config
 bin/sawfish-kde4-session
+bin/sawfish-kde5-session
 bin/sawfish-lumina-session
 bin/sawfish-mate-session
 bin/sawfish-xfce-session
@@ -38,6 +39,9 @@ share/applications/sawfish.desktop
 share/applications/sawfish-config.desktop
 share/gnome/wm-properties/sawfish-wm.desktop
 share/icons/hicolor/32x32/apps/sawfish-config.png
+share/kde4/apps/ksmserver/windowmanagers/sawfish.desktop
+share/ksmserver/windowmanagers/sawfish.desktop
+share/xsessions/sawfish-kde5.desktop
 %%NLS%%share/locale/ak/LC_MESSAGES/sawfish.mo
 %%NLS%%share/locale/am/LC_MESSAGES/sawfish.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/sawfish.mo
