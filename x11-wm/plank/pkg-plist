@@ -1,8 +1,12 @@
 bin/plank
 include/plank/plank.h
 lib/libplank.so
-lib/libplank.so.0
-lib/libplank.so.0.0.0
+lib/libplank.so.1
+lib/libplank.so.1.0.0
+lib/plank/docklets/libdocklet-clippy.so
+lib/plank/docklets/libdocklet-clock.so
+lib/plank/docklets/libdocklet-desktop.so
+lib/plank/docklets/libdocklet-trash.so
 libdata/pkgconfig/plank.pc
 man/man1/plank.1.gz
 share/appdata/plank.appdata.xml
