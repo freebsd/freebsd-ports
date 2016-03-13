@@ -124,6 +124,7 @@
     SUBDIR += guile
     SUBDIR += guile2
     SUBDIR += harbour
+    SUBDIR += haskell-mode.el
     SUBDIR += hla
     SUBDIR += hope
     SUBDIR += hs-brainfuck
