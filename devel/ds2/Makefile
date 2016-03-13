@@ -14,6 +14,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 GH_TAGNAME=	52c45f3
 
+ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS_REASON=	the ptrace code only has an amd64 backend
+
 USES=		cmake compiler
 
 PLIST_FILES=	bin/ds2
