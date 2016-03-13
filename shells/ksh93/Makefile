@@ -14,7 +14,8 @@ PORTNAME=	ksh93
 PORTVERSION=	${KSHVERSION:S/-//g}
 PORTREVISION=	2
 CATEGORIES=	shells
-MASTER_SITES=	http://www2.research.att.com/~astopen/download/tgz/
+MASTER_SITES=	http://www2.research.att.com/~astopen/download/tgz/ \
+		LOCAL/sunpoet/${PORTNAME}
 DISTFILES=	INIT.${INITVERSION}.tgz ast-ksh.${KSHVERSION}.tgz
 DIST_SUBDIR=	${PORTNAME}
 
@@ -44,8 +45,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/fun/ && ${INSTALL_SCRIPT} dirs popd pushd ${STAGEDIR}${EXAMPLESDIR}/
 
-test: build
-	@cd ${WRKSRC}/src/cmd/ksh93/tests/ && \
-		${SETENV} SHELL=${WRKSRC}/bin/ksh ${WRKSRC}/bin/ksh shtests
+do-test:
+	cd ${WRKSRC}/src/cmd/ksh93/tests/ && ${SETENV} SHELL=${WRKSRC}/bin/ksh ${WRKSRC}/bin/ksh shtests
 
 .include <bsd.port.mk>
