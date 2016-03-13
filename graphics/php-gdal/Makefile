@@ -25,6 +25,7 @@ PHP_MOD_NAME=	php_${PORTNAME}
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USES=		gmake localbase tar:xz
+IGNORE_WITH_PHP=	70
 
 WRKSRC_SUBDIR=	swig/php
 

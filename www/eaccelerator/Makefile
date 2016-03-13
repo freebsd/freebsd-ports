@@ -25,7 +25,7 @@ DOCCOMM_CONFIGURE_WITH=	eaccelerator-doc-comment-inclusion
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
-IGNORE_WITH_PHP=	55 56
+IGNORE_WITH_PHP=	55 56 70
 
 CONFIGURE_ARGS=	--enable-eaccelerator=shared \
 		--with-eaccelerator-userid=80

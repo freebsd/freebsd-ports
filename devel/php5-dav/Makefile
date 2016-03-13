@@ -21,6 +21,8 @@ USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	dav
 
+IGNORE_WITH_PHP=	70
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

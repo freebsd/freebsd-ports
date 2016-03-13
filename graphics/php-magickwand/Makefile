@@ -17,6 +17,7 @@ LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
 USES=		pkgconfig
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--with-magickwand=${LOCALBASE}
 
