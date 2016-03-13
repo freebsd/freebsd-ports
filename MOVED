@@ -8229,3 +8229,5 @@ print/cups-base|print/cups|2016-03-11|Merged
 print/cups-client|print/cups|2016-03-11|Merged
 print/cups-image|print/cups|2016-03-11|Merged
 print/cups-pstoraster|print/cups-filters|2016-03-11|Obsolete
+russian/MT||2016-03-13|Has expired: Reached it's EOL in September 2015
+www/MT||2016-03-13|Has expired: Reached it's EOL in September 2015
