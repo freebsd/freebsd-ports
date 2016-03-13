@@ -20,6 +20,7 @@ GH_PROJECT=	php-ext-jq
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 USES=		tar:tgz
 
 JQ_CMD=		${LOCALBASE}/bin/jq

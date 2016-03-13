@@ -17,6 +17,7 @@ LIB_DEPENDS=	libmdcached.so:${PORTSDIR}/databases/mdcached
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 CONFIGURE_ARGS=	--enable-mdcached
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}/client_php/${PORTNAME}
 

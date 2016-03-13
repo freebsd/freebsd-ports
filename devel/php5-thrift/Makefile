@@ -15,6 +15,7 @@ USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	thrift_protocol
+IGNORE_WITH_PHP=	70
 
 DISTINFO_FILE=	${.CURDIR}/../thrift/distinfo
 WRKSRC_SUBDIR=	lib/php/src/ext/thrift_protocol
