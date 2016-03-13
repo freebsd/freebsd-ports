@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plexpy
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.10
 CATEGORIES=	multimedia python
 DISTVERSIONPREFIX=v
 
