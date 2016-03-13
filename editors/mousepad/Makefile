@@ -22,7 +22,7 @@ USE_GNOME=	glib20 intltool intlhack
 
 OPTIONS_DEFINE=	GTK3
 GTK3_CONFIGURE_ENABLE=	gtk3
-GTK3_USE=	gnome=gtk30,gtksourceview3
+GTK3_USE=	gnome=gtk30,gtksourceview3,dconf
 GTK3_USE_OFF=	gnome=gtk20,gtksourceview2
 
 GLIB_SCHEMAS=	org.xfce.mousepad.gschema.xml
