@@ -5287,7 +5287,6 @@ net/freeswitch-core||2013-12-20|Has expired: Broken for more than 6 months
 misc/freeswitch-pizzademo||2013-12-20|Has expired: Depends on expired net/freeswitch-core
 misc/freeswitch-scripts||2013-12-20|Has expired: Depends on expired net/freeswitch-core
 www/p5-HTML-Webmake||2013-12-20|Has expired: Depends on expired textproc/p5-XML-Sablotron
-net/freeswitch||2013-12-20|Has expired: Depends on expired net/freeswitch-core
 games/blue|games/bluemoon|2013-12-21|Rename to match upstream naming
 devel/ruby-cvs||2013-12-22|Has expired: Broken for more than 6 months
 devel/hs-reactive||2013-12-22|Has expired: Broken for more than 6 months
@@ -6618,7 +6617,6 @@ java/jc||2014-09-01|Not staged
 java/poseidon||2014-09-01|Not staged
 lang/Sather||2014-09-01|Not staged
 lang/gnustep-guile||2014-09-01|Not staged
-lang/haskell-mode.el||2014-09-01|Not staged
 lang/hiphop-php||2014-09-01|Not staged
 lang/lush||2014-09-01|Not staged
 lang/metaocaml||2014-09-01|Not staged
