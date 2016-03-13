@@ -1,7 +1,7 @@
 # This file is part of DejaGnu.
 
 if {![info exists board]} {
-    error "must set $board before loading android.exp"
+    error "must set $board before loading android6.exp"
 }
 
 # For rcp_download, rsh_exec.
