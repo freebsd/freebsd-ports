@@ -23,6 +23,8 @@ USES=		compiler:c++11-lib openal:soft qmake
 QMAKE_ARGS+=	target.path=${LOCALBASE}/bin
 
 BROKEN=		No longer connects to Telegram network, appears abandonded
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-04-15
 
 .include <bsd.port.pre.mk>
 

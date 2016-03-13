@@ -14,6 +14,8 @@ PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs
 
 NO_CDROM=	Do not sell for profit
 BROKEN=		fails to fetch; mastersite disappeared
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-04-15
 
 PLIST_FILES=	bin/su2 \
 		man/man1/su2.1.gz

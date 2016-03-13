@@ -12,6 +12,8 @@ MAINTAINER=	matt@peterson.org
 COMMENT=	X11 application launcher
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-04-15
 PLIST_FILES=	bin/deskmenu
 USES=		gmake
 USE_GNOME=	gtk12

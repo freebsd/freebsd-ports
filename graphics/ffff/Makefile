@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Mandelbrot fractal generator
 
 BROKEN=		fails to link
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-04-15
 
 USE_XORG=	x11 xmu xext
 USE_GL=		gl glut

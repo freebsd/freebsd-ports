@@ -12,6 +12,8 @@ COMMENT=	Download videos from the Dutch uitzending gemist site
 LICENSE=	MIT
 
 BROKEN=		does not work (needs to be updated to the latest version)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-04-15
 
 USES=		python
 NO_BUILD=	yes

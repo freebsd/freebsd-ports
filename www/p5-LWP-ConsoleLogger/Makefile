@@ -11,6 +11,9 @@ COMMENT=	Perl extension for LWP tracing and debugging
 
 LICENSE=	ART20
 
+DEPRECATED=	Depends on expiring www/p5-HTTP-CookieMonster
+EXPIRATION_DATE=	2016-04-15
+
 RUN_DEPENDS=	\
 	p5-Data-Printer>0:${PORTSDIR}/devel/p5-Data-Printer \
 	p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime \

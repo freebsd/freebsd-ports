@@ -15,6 +15,8 @@ COMMENT=	Implementation of the Opendap/DODS protocol
 LICENSE=	MIT
 
 BROKEN=		does not build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-04-15
 
 BUILD_DEPENDS=	paver:${PORTSDIR}/devel/py-paver \
 		${PYNUMPY}
