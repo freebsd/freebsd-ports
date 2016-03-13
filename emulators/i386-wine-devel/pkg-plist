@@ -921,10 +921,14 @@ lib32/libglapi.so.0
 %%OSREL9%%lib32/libiconv.so.2
 lib32/libjpeg.so.8
 lib32/liblcms2.so.2
+%%STAGING%%lib32/libmpg123.so.0
 lib32/libpciaccess.so.0
 lib32/libpng16.so.16
 lib32/libpthread-stubs.so.0
 %%OSREL9%%lib32/libstdc++.so.6
+%%STAGING%%lib32/libv4l1.so.0
+%%STAGING%%lib32/libv4l2.so.0
+%%STAGING%%lib32/libv4lconvert.so.0
 lib32/libwine.so
 lib32/libwine.so.1
 lib32/libxcb-dri2.so.0
@@ -1873,6 +1877,7 @@ lib32/wine/fakedlls/winefile.exe
 lib32/wine/fakedlls/winemapi.dll
 lib32/wine/fakedlls/winemenubuilder.exe
 lib32/wine/fakedlls/winemine.exe
+%%STAGING%%lib32/wine/fakedlls/winemp3.acm
 lib32/wine/fakedlls/winemsibuilder.exe
 lib32/wine/fakedlls/wineoss.drv
 lib32/wine/fakedlls/winepath.exe
@@ -2476,6 +2481,7 @@ lib32/wine/winefile.exe.so
 lib32/wine/winemapi.dll.so
 lib32/wine/winemenubuilder.exe.so
 lib32/wine/winemine.exe.so
+%%STAGING%%lib32/wine/winemp3.acm.so
 lib32/wine/winemsibuilder.exe.so
 lib32/wine/wineoss.drv.so
 lib32/wine/winepath.exe.so
