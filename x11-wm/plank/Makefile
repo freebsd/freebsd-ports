@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	plank
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://launchpadlibrarian.net/220768016/ \
+MASTER_SITES=	https://launchpadlibrarian.net/247653534/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -22,10 +22,13 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 CFLAGS+=	-Wno-return-type
-USE_GNOME=	glib20 gtk30 gdkpixbuf2 intlhack libxml2 libwnck3
+USE_GNOME=	glib20 gtk30 gdkpixbuf2 intlhack libxml2 libwnck3 dconf
 USE_XORG=	x11 xfixes xi
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+
+GLIB_SCHEMAS=	net.launchpad.plank.gschema.xml
+
 OPTIONS_SUB=	yes
 
 OPTIONS_DEFINE=	NLS DBUSMENU
