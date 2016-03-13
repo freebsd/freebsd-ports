@@ -325,6 +325,7 @@
     SUBDIR += p5-Email-MIME-CreateHTML
     SUBDIR += p5-Email-MIME-Creator-ISO_2022_JP
     SUBDIR += p5-Email-MIME-Encodings
+    SUBDIR += p5-Email-MIME-RFC2047
     SUBDIR += p5-Email-MessageID
     SUBDIR += p5-Email-Reply
     SUBDIR += p5-Email-Send
