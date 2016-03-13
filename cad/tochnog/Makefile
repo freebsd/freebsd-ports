@@ -3,7 +3,7 @@
 
 PORTNAME=	tochnog
 PORTVERSION=	20140100
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/Tochnog%20Latest%20January%202014
 DISTFILES=	Sources${EXTRACT_SUFX} gid${EXTRACT_SUFX} \
@@ -50,11 +50,11 @@ BLAS_LIBS=	-llapack -lblas
 
 .if ${PORT_OPTIONS:MTHREADS}
 ALL_TARGET=	freebsd_parallel
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu_mt.a:${PORTSDIR}/math/superlu_mt
+LIB_DEPENDS+=	libsuperlu_mt.so:${PORTSDIR}/math/superlu_mt
 SUPERLU=	superlu_mt
 .else
 ALL_TARGET=	freebsd_old
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
+LIB_DEPENDS+=	libsuperlu.so:${PORTSDIR}/math/superlu
 SUPERLU=	superlu
 .endif
 
