@@ -106,6 +106,7 @@
     SUBDIR += discid
     SUBDIR += dream
     SUBDIR += drumpiler
+    SUBDIR += dsbmixer
     SUBDIR += dssi
     SUBDIR += dtmfdial
     SUBDIR += dumb
