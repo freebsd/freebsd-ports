@@ -2,7 +2,7 @@
 
 PORTNAME=	cups-filters
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -36,7 +36,7 @@ SHEBANG_FILES=	filter/braille/drivers/generic/brftoembosser.in \
 USE_GNOME=	glib20
 USE_RC_SUBR=	cups_browsed
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	ZLIB_CFLAGS=" " ZLIB_LIBS="-lz"
+CONFIGURE_ARGS=	--with-shell=/bin/sh ZLIB_CFLAGS=" " ZLIB_LIBS="-lz"
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -55,8 +55,6 @@ post-patch:
 	@${REINPLACE_CMD} 's:-std=c++0x:-std=c++11:' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} 's|/usr/share/liblouis|${LOCALBASE}/share/liblouis|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/filter/pdftops.c
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
 		-e 's|README.gz|README|' \
 		${WRKSRC}/utils/cups-browsed.8 \
