@@ -6,8 +6,7 @@
 # in any of it's log files.  This version was tested under the load and
 # no problems encountered so far.  Thanks.
 PORTNAME=	hadoop
-PORTVERSION=	2.7.1
-PORTREVISION=	1
+PORTVERSION=	2.7.2
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/common/stable \
 		LOCAL/demon/:maven \
@@ -44,7 +43,7 @@ MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} HADOOP_PROTOC_PATH=${LOCALBASE}/protobuf25/bin
 OPTIONS_DEFINE=		EXAMPLES
 OPTIONS_DEFAULT=	EXAMPLES
 
-TOMCAT_VERSION=	6.0.41
+TOMCAT_VERSION=	6.0.44
 HADOOP_DIST=	${WRKSRC}/hadoop-dist/target/hadoop-${PORTVERSION}
 
 HADOOP_LOGDIR=	/var/log/hadoop
@@ -80,7 +79,7 @@ do-build:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/apache-tomcat-${TOMCAT_VERSION}.tar.gz ${WRKSRC}/hadoop-hdfs-project/hadoop-hdfs-httpfs/downloads/
 	${MKDIR} ${WRKSRC}/hadoop-common-project/hadoop-kms/downloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/apache-tomcat-${TOMCAT_VERSION}.tar.gz ${WRKSRC}/hadoop-common-project/hadoop-kms/downloads/
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline  package -Pdist,native -DskipTests -Drequire.snappy -Dsnappy.prefix=${LOCALBASE} -Drequire.openssl
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline package -Pdist,native -DskipTests -Drequire.snappy -Dsnappy.prefix=${LOCALBASE} -Drequire.openssl
 
 post-build:
 	${RM} ${HADOOP_DIST}/etc/hadoop/*.cmd
