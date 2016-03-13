@@ -46,6 +46,7 @@ bin/pypy
 %%PYPY_DIR%%/include/pyport.h
 %%PYPY_DIR%%/include/pypy_decl.h
 %%PYPY_DIR%%/include/pypy_macros.h
+%%PYPY_DIR%%/include/pypy_structmember_decl.h
 %%PYPY_DIR%%/include/pysignals.h
 %%PYPY_DIR%%/include/pystate.h
 %%PYPY_DIR%%/include/pythonrun.h
@@ -1254,10 +1255,12 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/badsyntax_future9.py
 %%PYPY_DIR%%/lib-python/2.7/test/badsyntax_nocaret.py
 %%PYPY_DIR%%/lib-python/2.7/test/buffer_tests.py
+%%PYPY_DIR%%/lib-python/2.7/test/capath/0e4015b9.0
 %%PYPY_DIR%%/lib-python/2.7/test/capath/4e1295a3.0
 %%PYPY_DIR%%/lib-python/2.7/test/capath/5ed36f99.0
 %%PYPY_DIR%%/lib-python/2.7/test/capath/6e88d7b8.0
 %%PYPY_DIR%%/lib-python/2.7/test/capath/99d0fa06.0
+%%PYPY_DIR%%/lib-python/2.7/test/capath/ce7b8643.0
 %%PYPY_DIR%%/lib-python/2.7/test/cfgparser.1
 %%PYPY_DIR%%/lib-python/2.7/test/check_soundcard.vbs
 %%PYPY_DIR%%/lib-python/2.7/test/cjkencodings/big5-utf8.txt
@@ -1461,7 +1464,6 @@ bin/pypy
 %%PYPY_DIR%%/lib-python/2.7/test/formatfloat_testcases.txt
 %%PYPY_DIR%%/lib-python/2.7/test/gdb_sample.py
 %%PYPY_DIR%%/lib-python/2.7/test/greyrgb.uue
-%%PYPY_DIR%%/lib-python/2.7/test/https_svn_python_org_root.pem
 %%PYPY_DIR%%/lib-python/2.7/test/ieee754.txt
 %%PYPY_DIR%%/lib-python/2.7/test/imghdrdata/python.bmp
 %%PYPY_DIR%%/lib-python/2.7/test/imghdrdata/python.gif
@@ -2109,6 +2111,7 @@ bin/pypy
 %%PYPY_DIR%%/lib_pypy/cffi.egg-info/top_level.txt
 %%PYPY_DIR%%/lib_pypy/cffi/__init__.py
 %%PYPY_DIR%%/lib_pypy/cffi/_cffi_include.h
+%%PYPY_DIR%%/lib_pypy/cffi/_embedding.h
 %%PYPY_DIR%%/lib_pypy/cffi/_pycparser/README
 %%PYPY_DIR%%/lib_pypy/cffi/_pycparser/__init__.py
 %%PYPY_DIR%%/lib_pypy/cffi/_pycparser/_ast_gen.py
