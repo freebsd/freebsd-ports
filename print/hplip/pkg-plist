@@ -39,9 +39,9 @@ bin/hp-wificonfig
 @sample etc/hp/hplip.conf.sample
 @comment etc/sane.d/dll.conf
 %%X11%%etc/xdg/autostart/hplip-systray.desktop
-lib/libhpdiscovery.so
-lib/libhpdiscovery.so.0
-lib/libhpdiscovery.so.0.0.1
+%%SNMP%%lib/libhpdiscovery.so
+%%SNMP%%lib/libhpdiscovery.so.0
+%%SNMP%%lib/libhpdiscovery.so.0.0.1
 lib/libhpip.so
 lib/libhpip.so.0
 lib/libhpip.so.0.0.1
