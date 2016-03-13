@@ -675,6 +675,7 @@
     SUBDIR += gitg0
     SUBDIR += github-backup-utils
     SUBDIR += gitinspector
+    SUBDIR += gitlab-shell
     SUBDIR += gitlist
     SUBDIR += gitolite
     SUBDIR += gitolite2
