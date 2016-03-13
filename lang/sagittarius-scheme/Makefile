@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	sagittarius
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.1
 CATEGORIES=	lang
-MASTER_SITES=	http://distfiles.pirateparty.in/ashish/ \
+MASTER_SITES=	https://bitbucket.org/ktakashi/sagittarius-scheme/downloads/ \
 		LOCAL/ashish
 PKGNAMESUFFIX=	-scheme
 
