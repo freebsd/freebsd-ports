@@ -13,6 +13,8 @@ COMMENT=	DeforaOS desktop panel
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
 		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop
 BUILD_DEPENDS=	browser:${PORTSDIR}/x11-fm/deforaos-browser \
