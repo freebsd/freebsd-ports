@@ -12,6 +12,8 @@ COMMENT=	Git extension for versioning large files
 
 LICENSE=	MIT
 
+BROKEN=		fails to build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	github
 PLIST_FILES=	bin/git-lfs
