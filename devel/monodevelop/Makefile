@@ -17,6 +17,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:${PORTSDIR}/x11-toolkits/libgdiplus \
 		mautil:${PORTSDIR}/devel/mono-addins
 
 BROKEN=		GUI does not start
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-04-15
 
 USE_GNOME=	gtksharp20 gnomesharp20
 GNU_CONFIGURE=	yes
