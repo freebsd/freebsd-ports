@@ -50,6 +50,7 @@
     SUBDIR += dnstop
     SUBDIR += dnstracer
     SUBDIR += dnsutl
+    SUBDIR += dnsviz
     SUBDIR += dnswalk
     SUBDIR += dnswall
     SUBDIR += doc
