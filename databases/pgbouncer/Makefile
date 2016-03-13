@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgbouncer
-PORTVERSION=	1.7
+PORTVERSION=	1.7.2
 CATEGORIES=	databases
 MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
 		http://pgbouncer.github.io/downloads/files/${PORTVERSION}/
