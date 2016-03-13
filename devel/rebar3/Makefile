@@ -7,8 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		https://s3.amazonaws.com/s3.hex.pm/tarballs/:hex
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		rebar3-cache-4${EXTRACT_SUFX}:deps
+DISTFILES=	rebar3-cache-4${EXTRACT_SUFX}:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		rebar3-cache-4${EXTRACT_SUFX}
 
