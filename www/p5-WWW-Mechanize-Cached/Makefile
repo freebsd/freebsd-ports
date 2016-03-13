@@ -12,6 +12,9 @@ COMMENT=	Perl extension to cache response to be polite
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expiring www/p5-HTTP-CookieMonster
+EXPIRATION_DATE=	2016-04-15
+
 RUN_DEPENDS=	\
 	p5-Cache-Cache>=1.02:${PORTSDIR}/devel/p5-Cache-Cache \
 	p5-Class-Load>0:${PORTSDIR}/devel/p5-Class-Load \
