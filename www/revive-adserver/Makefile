@@ -23,6 +23,7 @@ PLIST_SUB+=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	xml pcre zlib mysql pgsql ftp
+IGNORE_WITH_PHP=	70
 .endif
 
 do-install:

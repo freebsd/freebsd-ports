@@ -54,6 +54,7 @@ SHEBANG_FILES=	mibs/process.pl \
 
 USE_PHP=	ctype filter gd iconv json mcrypt mysql mysqli posix session snmp tokenizer xml zlib
 WANT_PHP_CLI=	yes
+IGNORE_WITH_PHP=	70
 
 NO_BUILD=	yes
 

@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	mrss
+IGNORE_WITH_PHP=	70
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/phpmrss
 
 post-install:

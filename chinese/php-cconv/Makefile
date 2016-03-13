@@ -18,6 +18,7 @@ LIB_DEPENDS=	libcconv.so:${PORTSDIR}/chinese/cconv
 CONFIGURE_ARGS=	--with-cconv-dir=${LOCALBASE}
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| function_entry| zend_function_entry|' ${WRKSRC}/php_cconv.c

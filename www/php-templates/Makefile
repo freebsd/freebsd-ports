@@ -19,6 +19,7 @@ USES=		dos2unix
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
+IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-templates=shared
 

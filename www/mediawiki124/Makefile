@@ -40,6 +40,8 @@ XCACHE_DESC=	Use xCache (instead of pecl-APC)
 IMAGICK_DESC=	Use ImageMagick
 SOCKETS_DESC=	Use sockets
 
+MYSQL_VARS=	IGNORE_WITH_PHP+=70
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}

@@ -16,4 +16,6 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_OPENSSL=	yes
 
+IGNORE_WITH_PHP=	70
+
 .include <bsd.port.mk>
