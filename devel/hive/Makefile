@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	hive
-PORTVERSION=	1.2.1
+PORTVERSION=	2.0.0
 CATEGORIES=	devel java
-MASTER_SITES=	APACHE/${PORTNAME}/stable \
+MASTER_SITES=	APACHE/${PORTNAME}/stable-2 \
 		LOCAL/demon/:maven \
 		http://people.freebsd.org/~demon/:maven
 DISTFILES=	apache-${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
@@ -48,6 +48,9 @@ HIVE_DIST=	${WRKSRC}/packaging/target/apache-hive-${PORTVERSION}-bin/apache-hive
 
 post-patch:
 		${REINPLACE_CMD} -e s#%%PREFIX%%#${PREFIX}# -e s#%%LOCALBASE%%#${LOCALBASE}# ${WRKSRC}/conf/hive-env.sh.template
+
+pre-build:
+	${RM} ${WRKSRC}/bin/*.cmd ${WRKSRC}/bin/ext/*.cmd
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean install -Phadoop-2,dist -DskipTests
