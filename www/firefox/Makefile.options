@@ -11,6 +11,15 @@ OPTIONS_DEFAULT+=	DBUS DTRACE FFMPEG GIO GSTREAMER LOGGING OPTIMIZED_CFLAGS \
 OPTIONS_MULTI+=		AUDIO
 OPTIONS_MULTI_AUDIO=	ALSA PULSEAUDIO
 
+# dragonfly, sparc64, riscv
+.if !exists(/usr/sbin/dtrace)
+OPTIONS_EXCLUDE+=	DTRACE
+.endif
+
+# dtrace(1) crashes during build
+OPTIONS_EXCLUDE_FreeBSD_9_i386+=	DTRACE
+OPTIONS_EXCLUDE+=	${OPTIONS_EXCLUDE_${OPSYS}_${OSREL:R}_${ARCH}}
+
 BUNDLED_CAIRO_DESC?=	Use bundled fork of cairo-1.9.5
 CANBERRA_DESC?=		Sound theme alerts
 ENIGMAIL_DESC?=		Enigmail extension
