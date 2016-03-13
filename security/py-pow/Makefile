@@ -14,8 +14,6 @@ COMMENT=	Python OpenSSL Wrappers
 
 LICENSE=	BSD3CLAUSE
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		python
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	POW
@@ -23,14 +21,18 @@ USE_OPENSSL=	yes
 
 PORTDOCS=	POW.pdf
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	${REINPLACE_CMD} -e 's|licence|license|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|licence|license|' ${WRKSRC}/setup.py
 
 do-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext -D NO_IDEA -D NO_RC5_32_12_16 ${PYDISTUTILS_BUILD_TARGET}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/POW/_POW.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/POW/_POW.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
