@@ -1,3 +1,5 @@
+@sample etc/nagios/nagios-snmp-plugins.cfg.sample
 libexec/nagios/check_snmp_disk
+libexec/nagios/check_snmp_load
 libexec/nagios/check_snmp_proc
-%%PORTDOCS%%%%DOCSDIR%%/README
+libexec/nagios/check_snmp_swap
