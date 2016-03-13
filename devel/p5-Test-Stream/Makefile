@@ -14,6 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 DEPRECATED=	Use devel/p5-Test2-Suite instead
+EXPIRATION_DATE=	2016-04-14
 
 NO_ARCH=	yes
 USE_PERL5=	configure

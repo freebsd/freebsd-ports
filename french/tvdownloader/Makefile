@@ -19,6 +19,7 @@ RUN_DEPENDS=	msdl:${PORTSDIR}/multimedia/msdl	\
 		${PYTHON_SITELIBDIR}/mechanize/_mechanize.py:${PORTSDIR}/www/py-mechanize
 
 DEPRECATED=	Many channels have modified their protocols and cannot be DL anymore
+EXPIRATION_DATE=	2016-04-14
 
 USES=		python shebangfix
 SHEBANG_FILES=	doc/installdox
