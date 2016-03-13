@@ -254,20 +254,17 @@ do-install:
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
 		${MAKE_CMD} install-strip ${MAKE_ARGS}
 	${MV} ${STAGEDIR}${PKG_PREFIX}/share ${WRKDIR}/moved_share
-#	Don't activate until this port builds gnatdroid
-#	Otherwise it will conflict with lang/gcc-aux
-#	Add "share" after {PORTNAME} on 3rd line of post-stage target
-#	${MKDIR} ${STAGEDIR}${PREFIX}/share/dejagnu/baseboards \
-#		${STAGEDIR}${PREFIX}/share/dejagnu/config
-#	${INSTALL_DATA} ${FILESDIR}/android.exp \
-#		${STAGEDIR}${PREFIX}/share/dejagnu/config
-#	${INSTALL_DATA} ${FILESDIR}/gnatdroid.exp \
-#		${STAGEDIR}${PREFIX}/share/dejagnu/baseboards
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/dejagnu/baseboards \
+		${STAGEDIR}${PREFIX}/share/dejagnu/config
+	${INSTALL_DATA} ${FILESDIR}/android6.exp \
+		${STAGEDIR}${PREFIX}/share/dejagnu/config
+	${INSTALL_DATA} ${FILESDIR}/gnatdroid6.exp \
+		${STAGEDIR}${PREFIX}/share/dejagnu/baseboards
 
 post-stage:
 	(cd ${STAGEDIR}${PKG_PREFIX}; ${FIND} * -type d -empty | \
 		${SORT} -dr | ${XARGS} ${RMDIR})
-	(cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} \
+	(cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} share \
 		\( -type f -or -type l \) | ${SORT} | ${SED} \
 		-e 's/\/man\/man[1578]\/.*[1578]$$/&.gz/' >> ${TMPPLIST})
 .if ${PORT_OPTIONS:MBOOTSTRAP}

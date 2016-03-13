@@ -1,6 +1,6 @@
 # gnatdroid testsuite running over ssh.
 
-load_generic_config "android"
+load_generic_config "android6"
 
 process_multilib_options ""
 
