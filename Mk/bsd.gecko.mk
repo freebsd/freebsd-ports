@@ -304,7 +304,8 @@ CFLAGS+=		-O3
 MOZ_EXPORT+=	MOZ_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
 MOZ_OPTIONS+=	--enable-optimize
 .else
-. if ${MOZILLA_VER:R:R} >= 45 && ${OSREL:R} == 10 && ${ARCH} == i386
+. if ${MOZILLA_VER:R:R} >= 45 && ${ARCH} == i386 && \
+  (${OSVERSION} >= 1000000 && ${OSVERSION} < 1003501)
 USES:=			compiler:c++14-lang ${USES:Ncompiler*c++11*} # XXX ports/207837
 . endif
 MOZ_OPTIONS+=	--disable-optimize
