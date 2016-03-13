@@ -1,4 +1,4 @@
---- plugins/wlx/WlxMplayer/src/wlxMplayer.lpr.orig	2013-03-10 10:26:35 UTC
+--- plugins/wlx/WlxMplayer/src/wlxMplayer.lpr.orig	2016-01-13 13:19:01 UTC
 +++ plugins/wlx/WlxMplayer/src/wlxMplayer.lpr
 @@ -258,7 +258,7 @@ var
    sPlayerPath: String;
