@@ -343,8 +343,8 @@
 %%DATADIR%%/examples/src/main/scala/org/apache/spark/examples/streaming/ZeroMQWordCount.scala
 %%DATADIR%%/examples/src/main/scala/org/apache/spark/examples/streaming/clickstream/PageViewGenerator.scala
 %%DATADIR%%/examples/src/main/scala/org/apache/spark/examples/streaming/clickstream/PageViewStream.scala
-%%DATADIR%%/lib/spark-assembly-%%VER%%-hadoop%%PYTHON_VER%%.1.jar
-%%DATADIR%%/lib/spark-examples-%%VER%%-hadoop%%PYTHON_VER%%.1.jar
+%%DATADIR%%/lib/spark-assembly-%%VER%%-hadoop2.7.2.jar
+%%DATADIR%%/lib/spark-examples-%%VER%%-hadoop2.7.2.jar
 %%DATADIR%%/python/.gitignore
 %%DATADIR%%/python/docs/Makefile
 %%DATADIR%%/python/docs/_static/pyspark.css
