@@ -215,6 +215,7 @@ lib/calibre/calibre/ebooks/conversion/plumber.py
 lib/calibre/calibre/ebooks/conversion/preprocess.py
 lib/calibre/calibre/ebooks/conversion/utils.py
 lib/calibre/calibre/ebooks/covers.py
+lib/calibre/calibre/ebooks/css_transform_rules.py
 lib/calibre/calibre/ebooks/djvu/__init__.py
 lib/calibre/calibre/ebooks/djvu/djvu.py
 lib/calibre/calibre/ebooks/djvu/djvubzzdec.py
@@ -747,6 +748,7 @@ lib/calibre/calibre/gui2/convert/xpath_wizard.py
 lib/calibre/calibre/gui2/convert/xpath_wizard_ui.py
 lib/calibre/calibre/gui2/cover_flow.py
 lib/calibre/calibre/gui2/covers.py
+lib/calibre/calibre/gui2/css_transform_rules.py
 lib/calibre/calibre/gui2/custom_column_widgets.py
 lib/calibre/calibre/gui2/dbus_export/__init__.py
 lib/calibre/calibre/gui2/dbus_export/demo.py
@@ -836,7 +838,6 @@ lib/calibre/calibre/gui2/dialogs/tag_list_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/template_dialog.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/template_line_editor.py
-lib/calibre/calibre/gui2/dialogs/test_email_ui.py
 lib/calibre/calibre/gui2/dialogs/trim_image.py
 lib/calibre/calibre/gui2/dialogs/user_profiles_ui.py
 lib/calibre/calibre/gui2/dnd.py
@@ -1203,6 +1204,7 @@ lib/calibre/calibre/srv/errors.py
 lib/calibre/calibre/srv/handler.py
 lib/calibre/calibre/srv/http_request.py
 lib/calibre/calibre/srv/http_response.py
+lib/calibre/calibre/srv/jobs.py
 lib/calibre/calibre/srv/legacy.py
 lib/calibre/calibre/srv/loop.py
 lib/calibre/calibre/srv/metadata.py
@@ -1210,6 +1212,7 @@ lib/calibre/calibre/srv/opds.py
 lib/calibre/calibre/srv/opts.py
 lib/calibre/calibre/srv/pool.py
 lib/calibre/calibre/srv/pre_activated.py
+lib/calibre/calibre/srv/render_book.py
 lib/calibre/calibre/srv/routes.py
 lib/calibre/calibre/srv/sendfile.py
 lib/calibre/calibre/srv/standalone.py
@@ -1594,6 +1597,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/content-server/font-awesome/fontawesome-webfont.woff
 %%DATADIR%%/content-server/font-awesome/fontawesome-webfont.woff2
 %%DATADIR%%/content-server/index.html
+%%DATADIR%%/content-server/locales.zip
 %%DATADIR%%/content-server/main.js
 %%DATADIR%%/content-server/mobile.css
 %%DATADIR%%/content-server/reset.css
