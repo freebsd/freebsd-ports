@@ -989,6 +989,7 @@
     SUBDIR += py-ripe.atlas.sagan
     SUBDIR += py-ripe.atlas.tools
     SUBDIR += py-s3cmd
+    SUBDIR += py-s3transfer
     SUBDIR += py-simplesoap
     SUBDIR += py-smbpasswd
     SUBDIR += py-soappy
