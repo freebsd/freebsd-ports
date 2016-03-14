@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mc
-PORTVERSION=	4.8.15
+PORTVERSION=	4.8.16
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		http://ftp.osuosl.org/pub/midnightcommander/ \
