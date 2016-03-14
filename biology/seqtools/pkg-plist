@@ -3,7 +3,9 @@ bin/blixem
 bin/blixemh
 bin/dotter
 include/gbtools/gbtools.hpp
+include/gbtools/gbtoolsCurl.hpp
 include/gbtools/gbtoolsGUI.hpp
+include/gbtools/gbtoolsPfetch.hpp
 include/gbtools/gbtoolsUtils.hpp
 lib/libgbtools.a
 %%PORTDOCS%%%%DOCSDIR%%/Belvu_manual.pdf
