@@ -939,6 +939,7 @@
     SUBDIR += safecat
     SUBDIR += samefile
     SUBDIR += samesame
+    SUBDIR += sample
     SUBDIR += sas2ircu
     SUBDIR += sas3ircu
     SUBDIR += savelogs
