@@ -1,0 +1,3 @@
+bin/dsbmc
+share/applications/dsbmc.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/dsbmc.mo
