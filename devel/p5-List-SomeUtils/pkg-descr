@@ -1,0 +1,10 @@
+List::SomeUtils provides some trivial but commonly needed functionality on lists
+which is not going to go into List::Util.
+
+All of the below functions are implementable in only a couple of lines of Perl
+code. Using the functions from this module however should give slightly better
+performance as everything is implemented in C. The pure-Perl implementation of
+these functions only serves as a fallback in case the C portions of this module
+couldn't be compiled on this machine.
+
+WWW: http://search.cpan.org/dist/List-SomeUtils/

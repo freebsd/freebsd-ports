@@ -2520,6 +2520,7 @@
     SUBDIR += p5-List-Permutor
     SUBDIR += p5-List-PowerSet
     SUBDIR += p5-List-Rotation-Cycle
+    SUBDIR += p5-List-SomeUtils
     SUBDIR += p5-List-SomeUtils-XS
     SUBDIR += p5-List-Uniq
     SUBDIR += p5-List-UtilsBy
