@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://collectd.org/files/ \
 		http://collectd.org/files/
@@ -28,7 +28,7 @@ OPTIONS_GROUP_OUTPUT=	KAFKA MONGODB NOTIFYDESKTOP NOTIFYEMAIL RIEMANN RRDTOOL
 OPTIONS_GROUP_INPUT=	CURL CURL_JSON CURL_XML DBI IPMI JSON MEMCACHEC \
 			MODBUS MYSQL NUTUPS OLSRD ONEWIRE OPENLDAP \
 			PERL PGSQL PINBA PING PYTHON RABBITMQ REDIS ROUTEROS \
-			SIGROK SNMP STATGRAB STATSD TOKYOTYRANT VARNISH XML \
+			SIGROK SNMP STATSD TOKYOTYRANT VARNISH XML \
 			XMMS ZOOKEEPER
 
 CGI_DESC=		Install collection.cgi (requires rrdtool)
@@ -64,7 +64,6 @@ ROUTEROS_DESC=		Enable routeros plugin
 RRDTOOL_DESC=		Enable rrdtool plugin (also rrdcached plugin)
 SIGROK_DESC=		Enable sigrok plugin
 SNMP_DESC=		Enable SNMP plugin
-STATGRAB_DESC=		Enable statgrab-based plugins (interface, etc)
 STATSD_DESC=		Enable statsd plugin
 TOKYOTYRANT_DESC=	Enable tokyotyrant plugin
 VARNISH_DESC=		Enable varnish 4.x cache statistics
@@ -226,11 +225,6 @@ RRDTOOL_LIB_DEPENDS=		librrd.so:${PORTSDIR}/databases/rrdtool
 RRDTOOL_CONFIGURE_ENABLE=	rrdcached rrdtool
 RRDTOOL_CONFIGURE_WITH=		librrd=${LOCALBASE}
 
-STATGRAB_LIB_DEPENDS=		libstatgrab.so:${PORTSDIR}/devel/libstatgrab
-STATGRAB_LIBS=			`pkg-config --libs libstatgrab`
-STATGRAB_CONFIGURE_ENABLE=	interface
-STATGRAB_CONFIGURE_WITH=	libstatgrab=${LOCALBASE}
-
 SIGROK_USE=			GNOME=glib20
 SIGROK_CFLAGS=			`pkg-config --cflags glib-2.0`
 SIGROK_LIB_DEPENDS=		libsigrok.so:${PORTSDIR}/devel/libsigrok
@@ -280,6 +274,7 @@ CONFIGURE_ARGS+=--enable-aggregation \
 		--enable-email \
 		--enable-exec \
 		--enable-filecount \
+		--enable-interface \
 		--enable-load \
 		--enable-logfile \
 		--enable-match_empty_counter \
