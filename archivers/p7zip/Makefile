@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p7zip
-PORTVERSION=	15.09
+PORTVERSION=	15.14
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
@@ -35,7 +35,7 @@ post-patch:
 	       -e 's/ -s //' \
 	       -e 's/-D_LARGEFILE_SOURCE//' \
 	       -e 's/-D_FILE_OFFSET_BITS=64//' \
-	       ${WRKSRC}/makefile.freebsd6 > ${WRKSRC}/makefile.machine
+	       ${WRKSRC}/makefile.freebsd6+ > ${WRKSRC}/makefile.machine
 	${REINPLACE_CMD} -e 's|{DEST_SHARE_DOC}|${DOCSDIR}|' \
 		${WRKSRC}/man1/*
 	${MV} ${WRKSRC}/README ${WRKSRC}/DOC/readme.unix
