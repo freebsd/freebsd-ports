@@ -168,7 +168,7 @@ tomcat_check_pidfile() {
 		debug "pid file ($_pidfile): no pid in file."
 		return
 	fi
-	if [ -n "`%%LOCALBASE%%/bin/jps -l | grep -e "^$_pid $java_class\$"`" ]; then
+	if [ -n "`/usr/bin/procstat -c $_pid | grep -e "^$_pid.*$java_class"`" ]; then
 		echo -n $_pid
 	fi
 }
