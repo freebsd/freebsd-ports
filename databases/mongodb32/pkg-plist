@@ -1,5 +1,4 @@
-@unexec if [ ! -s %D/etc/mongodb.conf ]; then /bin/rm -f %D/etc/mongodb.conf; fi
-@exec  if [ ! -f %D/etc/mongodb.conf ]; then /usr/bin/touch %D/etc/mongodb.conf; fi
+@sample etc/mongodb.conf.sample
 bin/mongo
 bin/mongod
 bin/mongoperf
