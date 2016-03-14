@@ -222,6 +222,7 @@
     SUBDIR += dolly
     SUBDIR += downtime
     SUBDIR += downtimed
+    SUBDIR += dsbdriverd
     SUBDIR += dsbwrtsysctl
     SUBDIR += dt
     SUBDIR += dtpstree
