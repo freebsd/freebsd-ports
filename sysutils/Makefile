@@ -223,6 +223,7 @@
     SUBDIR += downtime
     SUBDIR += downtimed
     SUBDIR += dsbdriverd
+    SUBDIR += dsbmd
     SUBDIR += dsbwrtsysctl
     SUBDIR += dt
     SUBDIR += dtpstree
