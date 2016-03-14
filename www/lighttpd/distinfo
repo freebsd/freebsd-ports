@@ -2,5 +2,5 @@ SHA256 (lighttpd-1.4.39.tar.xz) = 7eb9a1853c3d6dd5851682b0733a729ba4158d6bdff809
 SIZE (lighttpd-1.4.39.tar.xz) = 579180
 SHA256 (lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz) = d7c3704d5253c4f3c18459f89059063b311e50096cd2c38fc982cec683c32e61
 SIZE (lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz) = 44695
-SHA256 (lighttpd-1.4.26_mod_geoip.patch.gz) = db43cc0ed7c808b5eed3185d97346e70dea0f1ef4fa9ed436d08e4faff7f97e7
-SIZE (lighttpd-1.4.26_mod_geoip.patch.gz) = 3267
+SHA256 (lighttpd-1.4.26_mod_geoip.patch) = 2858036310b778852d9f039a81629902edffc368658e13bf4779f3642ee1a5ba
+SIZE (lighttpd-1.4.26_mod_geoip.patch) = 15173
