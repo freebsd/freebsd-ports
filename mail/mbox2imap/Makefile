@@ -3,25 +3,19 @@
 
 PORTNAME=	mbox2imap
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://people.cs.uchicago.edu/~brendan/scripts/ \
-		http://people.freebsd.org/~gahr/distfiles/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	# none
-EXTRACT_ONLY=	# none
+MASTER_SITES=	http://BSDforge.com/projects/source/mail/mbox2imap/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Upload email stored in mbox file format to an IMAP server
 
-BROKEN=		unfetchable
+#LICENSE=	(if author can still be reached, ask; else BSD2CLAUSE)
 
-USES=		python
+USES=		python tar:xz
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-extract:
-	${CP} ${DISTDIR}/${PORTNAME} ${WRKDIR}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
