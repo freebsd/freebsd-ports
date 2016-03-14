@@ -347,20 +347,21 @@ diff --git gdb/Makefile.in gdb/Makefile.in
 index dfaa8a3..ddad28d 100644
 --- gdb/Makefile.in
 +++ gdb/Makefile.in
-@@ -655,7 +655,7 @@ ALL_64_TARGET_OBS = \
- # All other target-dependent objects files (used with --enable-targets=all).
+@@ -659,7 +659,7 @@
  ALL_TARGET_OBS = \
- 	armbsd-tdep.o arm-linux-tdep.o arm-symbian-tdep.o \
+ 	armbsd-tdep.o arm.o arm-linux.o arm-linux-tdep.o \
+ 	arm-get-next-pcs.o arm-symbian-tdep.o \
 -	armnbsd-tdep.o armobsd-tdep.o \
 +	armnbsd-tdep.o armobsd-tdep.o armfbsd-tdep.o \
  	arm-tdep.o arm-wince-tdep.o \
  	avr-tdep.o \
  	bfin-linux-tdep.o bfin-tdep.o \
-@@ -1660,6 +1660,6 @@ ALLDEPFILES = \
- 	amd64-linux-nat.c amd64-linux-tdep.c \
- 	amd64-sol2-tdep.c \
- 	arm-linux-nat.c arm-linux-tdep.c arm-symbian-tdep.c arm-tdep.c \
+@@ -1666,7 +1666,7 @@
+ 	arm.c arm-get-next-pcs.c \
+ 	arm-linux.c arm-linux-nat.c arm-linux-tdep.c \
+ 	arm-symbian-tdep.c arm-tdep.c \
 -	armnbsd-nat.c armbsd-tdep.c armnbsd-tdep.c armobsd-tdep.c \
 +	armnbsd-nat.c armbsd-tdep.c armnbsd-tdep.c armobsd-tdep.c armfbsd-tdep.c \
  	avr-tdep.c \
  	bfin-linux-tdep.c bfin-tdep.c \
+ 	bsd-uthread.c bsd-kvm.c \

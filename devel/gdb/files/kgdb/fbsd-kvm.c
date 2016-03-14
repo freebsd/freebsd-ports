@@ -478,7 +478,7 @@ kgdb_switch_to_thread(int tid)
 	char buf[16];
 	int thread_id;
 
-	thread_id = pid_to_thread_id(fbsd_vmcore_ptid(tid));
+	thread_id = ptid_to_global_thread_id(fbsd_vmcore_ptid(tid));
 	if (thread_id == 0)
 		error ("invalid tid");
 	snprintf(buf, sizeof(buf), "%d", thread_id);
