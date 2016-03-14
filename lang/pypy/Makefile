@@ -19,15 +19,18 @@ TEST_DEPENDS=	${PREFIX}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.pypy-${PYPY_CFFI_VER}.so
 ONLY_FOR_ARCHS=	i386 amd64 armv6 powerpc64
 ONLY_FOR_ARCHS_REASON=	PyPy JIT only supported on these architectures
 
+OPTIONS_SINGLE=	TRANS
+OPTIONS_SINGLE_TRANS=	PYTHON
 PYTHON_DESC=	Use Python-2.7 to translate (slowest)
 PYPY_DESC=	Use PyPy to translate (fastest, highest memory usage)
 PYPY_MINMEM_DESC=	Use PyPy to translate (lowest memory usage)
 TRANS_DESC=	Translation method
 LOCALBASE?=	/usr/local
 .if exists(${LOCALBASE}/bin/pypy)
-OPTIONS_SINGLE=	TRANS
-OPTIONS_SINGLE_TRANS=	PYTHON PYPY PYPY_MINMEM
-OPTIONS_DEFAULT+=	PYPY_MINMEM
+OPTIONS_DEFAULT=	PYPY_MINMEM
+OPTIONS_SINGLE_TRANS+=	PYPY PYPY_MINMEM
+.else
+OPTIONS_SLAVE=	PYTHON
 .endif
 
 CONFLICTS_INSTALL=	pypy3-[0-9]*
