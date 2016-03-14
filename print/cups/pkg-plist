@@ -30,6 +30,7 @@ bin/ppdpo
 @sample(,cups,640) %%ETCDIR%%/cupsd.conf.sample
 @sample(,cups,640) %%ETCDIR%%/snmp.conf.sample
 etc/dbus-1/system.d/cups.conf
+@sample etc/devd/cups.conf.sample
 etc/pam.d/cups
 include/cups/adminutil.h
 include/cups/array.h
