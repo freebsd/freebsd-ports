@@ -968,6 +968,7 @@
     SUBDIR += shim
     SUBDIR += shlock
     SUBDIR += shmcat
+    SUBDIR += showbeastie
     SUBDIR += sievelog
     SUBDIR += skill
     SUBDIR += slack
