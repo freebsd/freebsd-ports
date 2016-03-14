@@ -4,6 +4,7 @@
 PORTNAME=	cups
 PORTVERSION=	2.1.3
 DISTVERSIONSUFFIX=-source
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.cups.org/software/${PORTVERSION}/
 
@@ -85,6 +86,7 @@ CONFIGURE_ARGS+=ac_cv_search_libiconv_open=no
 
 post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' ${WRKSRC}/Makedefs.in
+	@${REINPLACE_CMD} 's/usblp/ulpt/g' ${WRKSRC}/backend/usb-libusb.c
 	@${REINPLACE_CMD} -e 's|/usr/local/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
 		-e 's/-fstack-protector//' ${WRKSRC}/configure
 	@${REINPLACE_CMD} 's|http://www.cups.org|https://cups.org|' \
@@ -116,6 +118,8 @@ post-patch-DOCS-off:
 
 post-install:
 	${LN} -sf lpr ${STAGEDIR}${PREFIX}/bin/lpr-cups
+	${INSTALL_DATA} ${FILESDIR}/cups.conf.sample \
+		${STAGEDIR}${PREFIX}/etc/devd
 	${INSTALL_DATA} ${FILESDIR}/cups ${STAGEDIR}${PREFIX}/etc/pam.d
 
 .include <bsd.port.post.mk>
