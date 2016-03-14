@@ -4,6 +4,7 @@
 PORTNAME=	kibana
 PORTVERSION?=	4.2.2
 DISTVERSIONSUFFIX=	-linux-x86
+PORTREVISION?=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	https://download.elastic.co/kibana/kibana/ \
 		http://download.elastic.co/kibana/kibana/
@@ -26,6 +27,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC} && \
 		${RM} -r bin config node && \
+		${RM} -r optimize/* && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
