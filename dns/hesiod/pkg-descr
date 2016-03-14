@@ -1,7 +1,5 @@
 Hesiod is part of MIT's Athena Project.  
 
-From the README file:
-
 	Hesiod can provide general name service for a variety of
 	applications and is based on the Berkeley Internet Name Daemon
 	(BIND).
