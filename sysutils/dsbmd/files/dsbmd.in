@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dsbmd
+# REQUIRE: LOGIN devfs devd mountlate
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dsbmd_enable (bool):		Set to NO by default.
+#				Set it to YES to enable dsbmd.
+#
+
+. /etc/rc.subr
+
+name=dsbmd
+rcvar=dsbmd_enable
+
+load_rc_config $name
+
+: ${dsbmd_enable:=NO}
+
+command=%%PREFIX%%/libexec/${name}
+pidfile=/var/run/${name}.pid
+
+run_rc_command "$1"
