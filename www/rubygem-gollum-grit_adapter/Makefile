@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gollum-grit_adapter
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
