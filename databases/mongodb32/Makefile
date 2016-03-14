@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb32
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 DISTVERSIONPREFIX=	r
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
@@ -34,6 +34,7 @@ CHOSEN_COMPILER_TYPE=	clang
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 (i386 deprecated in v3)"
 
+CONFLICTS_BUILD=	mongo-cxx-driver
 OPTIONS_DEFINE=		SASL SSL
 OPTIONS_DEFAULT=	SASL SSL
 
@@ -68,6 +69,7 @@ post-install:
 .for f in mongo mongod mongoperf mongos mongosniff
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
+	${CP} ${WRKSRC}/rpm/mongod.conf ${STAGEDIR}${PREFIX}/etc/mongodb.conf.sample
 
 do-test:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
