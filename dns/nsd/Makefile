@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	4.1.7
+PORTVERSION=	4.1.8
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} \
 		--with-configdir=${ETCDIR} \
 		--localstatedir=${NSDLSDIR} \
 		--with-dbfile=${NSDDBDIR}/nsd.db \
+		--with-ssl=${OPENSSLBASE} \
 		--with-pidfile=${NSDRUNDIR}/nsd.pid
 
 PLIST_SUB=	NSDUSER=${NSDUSER} \
@@ -54,6 +55,8 @@ OPTIONS_DEFINE=		ROOT_SERVER LARGEFILE IPV6 BIND8_STATS CHECKING \
 		MINRESPSIZE NSEC3 MMAP DOCS RRL ZONE_STATS MUNIN_PLUGIN
 OPTIONS_DEFAULT=	LARGEFILE IPV6 NSEC3 MINRESPSIZE RRL
 OPTIONS_SUB=	yes
+
+MUNIN_PLUGIN_IMPLIES=	BIND8_STATS
 
 ROOT_SERVER_DESC=	Configure as a root server
 LARGEFILE_DESC=		Largefile support
