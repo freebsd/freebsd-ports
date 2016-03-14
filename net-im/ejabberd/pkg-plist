@@ -229,11 +229,11 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/esip-1.0.2/include/esip.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/esip-1.0.2/include/esip_lib.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/esip-1.0.2/priv/lib/esip_drv.so
-%%ZLIB%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/ezlib-1.0.1/ebin/ezlib.app
-%%ZLIB%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/ezlib-1.0.1/ebin/ezlib.beam
-%%ZLIB%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/ezlib-1.0.1/ebin/ezlib_app.beam
-%%ZLIB%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/ezlib-1.0.1/ebin/ezlib_sup.beam
-%%ZLIB%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/ezlib-1.0.1/priv/lib/ezlib_drv.so
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/ezlib-1.0.1/ebin/ezlib.app
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/ezlib-1.0.1/ebin/ezlib.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/ezlib-1.0.1/ebin/ezlib_app.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/ezlib-1.0.1/ebin/ezlib_sup.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/ezlib-1.0.1/priv/lib/ezlib_drv.so
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/fast_tls-1.0.1/ebin/fast_tls.app
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/fast_tls-1.0.1/ebin/fast_tls.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/fast_tls-1.0.1/ebin/fast_tls_app.beam
