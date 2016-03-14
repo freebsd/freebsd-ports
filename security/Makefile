@@ -61,6 +61,7 @@
     SUBDIR += chntpw
     SUBDIR += chroot_safe
     SUBDIR += chrootuid
+    SUBDIR += cisco-torch
     SUBDIR += ckpass
     SUBDIR += cksfv
     SUBDIR += cl-md5

@@ -1,0 +1,24 @@
+bin/cisco-torch
+%%DATADIR%%/include/HTTP-brute.pm
+%%DATADIR%%/include/Banner.pm
+%%DATADIR%%/include/SSH-finger.pm
+%%DATADIR%%/include/Ntp.pm
+%%DATADIR%%/include/SNMP.pm
+%%DATADIR%%/include/TFTP.pm
+%%DATADIR%%/include/HTTP-bugs.pm
+%%DATADIR%%/include/log.pm
+%%DATADIR%%/include/SSL-brute.pm
+%%DATADIR%%/include/Telnet-SSH-brute.pm
+%%DATADIR%%/include/HTTP-finger.pm
+%%DATADIR%%/include/SNMPDOWNLOAD.pm
+%%DATADIR%%/include/IPmask-utils.pm
+%%DATADIR%%/include/SSL-finger.pm
+%%DATADIR%%/include/Telnet-finger.pm
+%%DATADIR%%/fingerprint.db
+%%DATADIR%%/password.txt
+%%DATADIR%%/tfingerprint.db
+%%DATADIR%%/community.txt
+%%DATADIR%%/brutefile.txt
+%%DATADIR%%/users.txt
+@dir  %%DATADIR%%/tftproot
+@sample %%ETCDIR%%/torch.conf.sample
