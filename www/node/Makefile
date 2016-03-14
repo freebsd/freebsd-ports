@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	5.2.0
-PORTREVISION=	1
+PORTVERSION=	5.7.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -55,7 +54,8 @@ post-patch:
 		${WRKSRC}/tools/icu/icu-generic.gyp \
 		${WRKSRC}/deps/v8/build/shim_headers.gypi \
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp \
-		${WRKSRC}/deps/v8/src/d8.gyp
+		${WRKSRC}/deps/v8/src/d8.gyp \
+		${WRKSRC}/node.gyp
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
