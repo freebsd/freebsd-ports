@@ -1116,6 +1116,7 @@
     SUBDIR += libafterbase
     SUBDIR += liballium
     SUBDIR += libantlr3c
+    SUBDIR += libarea
     SUBDIR += libarena
     SUBDIR += libassa
     SUBDIR += libassetml
