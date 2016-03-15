@@ -5,8 +5,7 @@ DISTVERSION=	1.0.0-410
 DISTVERSIONSUFFIX=	-g5e5ac35
 CATEGORIES=	graphics
 MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/:manpage
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME:C/-.*//}.1.gz?h=${PORTNAME:C/-.*//}-git\&id=5c150a5:manpage
+DISTFILES=	${PORTNAME:C/-.*//}.1.gz?h=${PORTNAME:C/-.*//}-git\&id=5c150a5:manpage
 EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
