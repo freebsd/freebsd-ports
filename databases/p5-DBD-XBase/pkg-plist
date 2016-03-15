@@ -8,6 +8,8 @@ bin/indexdump
 %%SITE_PERL%%/XBase/Memo.pm
 %%SITE_PERL%%/XBase/SDBM.pm
 %%SITE_PERL%%/XBase/SQL.pm
+%%PERL5_MAN1%%/dbfdump.1.gz
+%%PERL5_MAN1%%/indexdump.1.gz
 %%PERL5_MAN3%%/DBD::XBase.3.gz
 %%PERL5_MAN3%%/XBase.3.gz
 %%PERL5_MAN3%%/XBase::Base.3.gz
@@ -15,5 +17,3 @@ bin/indexdump
 %%PERL5_MAN3%%/XBase::Index.3.gz
 %%PERL5_MAN3%%/XBase::Memo.3.gz
 %%PERL5_MAN3%%/XBase::SDBM.3.gz
-%%PERL5_MAN1%%/dbfdump.1.gz
-%%PERL5_MAN1%%/indexdump.1.gz
