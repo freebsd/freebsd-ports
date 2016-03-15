@@ -13,6 +13,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce client
 
+BROKEN=		does not fetch
+
 RESTRICTED=	Restricted distribution
 
 NO_BUILD=	yes
