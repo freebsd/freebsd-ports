@@ -11,7 +11,7 @@ COMMENT=	SysAdm Qt5 Client
 LICENSE=	BSD3CLAUSE
 
 WRKSRC_SUBDIR=	src-qt5
-USE_QT5=	core buildtools gui network qmake websockets widgets
+USE_QT5=	core buildtools gui network qmake websockets widgets svg
 USES=		pkgconfig tar:xz qmake
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
