@@ -4,7 +4,6 @@ PORTNAME=	ktp-text-ui
 PORTVERSION=	${KTP_VERSION}
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE chat window application
