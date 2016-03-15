@@ -14,8 +14,7 @@ LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx \
 		libgrantlee_gui.so:${PORTSDIR}/devel/grantlee \
 		libkactivities.so:${PORTSDIR}/x11/kactivities
 
-USES=		cmake:outsource gettext shared-mime-info tar:xz
-USE_SQLITE=	yes
+USES=		cmake:outsource gettext shared-mime-info sqlite:3 tar:xz
 USE_QT4=	qmake_build moc_build uic_build rcc_build designer_build \
 		corelib dbus gui script sql webkit xml sql-sqlite3_run
 USE_KDE4=	automoc4 kdelibs kdeprefix pimlibs
