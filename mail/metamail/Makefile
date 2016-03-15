@@ -3,22 +3,22 @@
 
 PORTNAME=	metamail
 PORTVERSION=	2.7
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/ \
 		ftp://ftp.research.telcordia.com/pub/nsb/
 DISTNAME=	mm${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
+
+USES=		tar:Z
 
 LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=	X11
 OPTIONS_SUB=	yes
 
 X11_DESC=		X11 hebrew font support
