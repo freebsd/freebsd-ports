@@ -1,6 +1,6 @@
 bin/kpartloader
 bin/kuiviewer
-include/kprofilemethod.h
+include/kde4/kprofilemethod.h
 lib/kde4/kuiviewerpart.so
 lib/kde4/quithumbnail.so
 share/applications/kde4/kuiviewer.desktop
