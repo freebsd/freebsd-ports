@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libav
-PORTVERSION=	11.4
-PORTREVISION=	2
+PORTVERSION=	11.6
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
