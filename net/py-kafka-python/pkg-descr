@@ -1,0 +1,6 @@
+This module provides low-level protocol support for Apache Kafka as well as
+high-level consumer and producer classes. Request batching is supported by the
+protocol as well as broker-aware request routing. Gzip and Snappy compression
+is also supported for message sets.
+
+WWW: https://github.com/mumrah/kafka-python
