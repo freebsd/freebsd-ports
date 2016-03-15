@@ -2,6 +2,7 @@ bin/ktp-log-viewer
 lib/kde4/kcm_ktp_chat_appearance.so
 lib/kde4/kcm_ktp_chat_behavior.so
 lib/kde4/kcm_ktp_chat_messages.so
+lib/kde4/kcm_ktp_chat_otr.so
 lib/kde4/kcm_ktp_logviewer_behavior.so
 lib/kde4/kcm_ktptextui_message_filter_latex.so
 lib/kde4/ktptextui_message_filter_bugzilla.so
@@ -10,6 +11,7 @@ lib/kde4/ktptextui_message_filter_formatting.so
 lib/kde4/ktptextui_message_filter_highlight.so
 lib/kde4/ktptextui_message_filter_images.so
 lib/kde4/ktptextui_message_filter_latex.so
+lib/kde4/ktptextui_message_filter_otr.so
 lib/kde4/ktptextui_message_filter_searchexpansion.so
 lib/kde4/ktptextui_message_filter_tts.so
 lib/kde4/ktptextui_message_filter_urlexpansion.so
@@ -17,6 +19,7 @@ lib/kde4/ktptextui_message_filter_youtube.so
 lib/kde4/libexec/ktp-adiumxtra-protocol-handler
 lib/kde4/libexec/ktp-text-ui
 lib/libktpchat.so
+lib/libktpimagesharer.so
 share/applications/kde4/ktp-log-viewer.desktop
 share/apps/ktelepathy/Template.html
 share/apps/ktelepathy/longurl.js
@@ -33,6 +36,24 @@ share/apps/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Outgoi
 share/apps/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Outgoing/NextContent.html
 share/apps/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/Status.html
 share/apps/ktelepathy/styles/SimKete.AdiumMessageStyle/Contents/Resources/main.css
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Info.plist
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Footer.html
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Header.html
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Incoming/Content.html
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Incoming/NextContent.html
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Outgoing/Content.html
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Outgoing/NextContent.html
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Status.html
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Styles/Header.css
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Template.html
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/Topic.html
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/img/sidebar_header_bg.png
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/lib/jquery.min.js
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/lib/livepipe.js
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/lib/scriptaculous183.js
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/lib/scrollbar.js
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/Contents/Resources/main.css
+share/apps/ktelepathy/styles/WoshiChat.AdiumMessageStyle/LICENSE
 share/apps/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Info.plist
 share/apps/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Demo.html
 share/apps/ktelepathy/styles/renkoo.AdiumMessageStyle/Contents/Resources/Footer.html
@@ -194,6 +215,7 @@ share/kde4/services/adiumxtra.protocol
 share/kde4/services/kcm_ktp_chat_appearance.desktop
 share/kde4/services/kcm_ktp_chat_behavior.desktop
 share/kde4/services/kcm_ktp_chat_messages.desktop
+share/kde4/services/kcm_ktp_chat_otr.desktop
 share/kde4/services/kcm_ktp_logviewer_behavior.desktop
 share/kde4/services/kcm_ktptextui_message_filter_latex.desktop
 share/kde4/services/ktptextui_message_filter_bugzilla.desktop
@@ -202,6 +224,7 @@ share/kde4/services/ktptextui_message_filter_formatting.desktop
 share/kde4/services/ktptextui_message_filter_highlight.desktop
 share/kde4/services/ktptextui_message_filter_images.desktop
 share/kde4/services/ktptextui_message_filter_latex.desktop
+share/kde4/services/ktptextui_message_filter_otr.desktop
 share/kde4/services/ktptextui_message_filter_searchexpansion.desktop
 share/kde4/services/ktptextui_message_filter_tts.desktop
 share/kde4/services/ktptextui_message_filter_urlexpansion.desktop
@@ -249,6 +272,12 @@ share/locale/el/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
 share/locale/el/LC_MESSAGES/ktp-filters.mo
 share/locale/el/LC_MESSAGES/ktp-text-ui.mo
 share/locale/el/LC_MESSAGES/ktpchat.mo
+share/locale/en_GB/LC_MESSAGES/kcm_ktp_chat_appearance.mo
+share/locale/en_GB/LC_MESSAGES/kcm_ktp_chat_behavior.mo
+share/locale/en_GB/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/en_GB/LC_MESSAGES/ktp-filters.mo
+share/locale/en_GB/LC_MESSAGES/ktp-text-ui.mo
+share/locale/en_GB/LC_MESSAGES/ktpchat.mo
 share/locale/es/LC_MESSAGES/kcm_ktp_chat_appearance.mo
 share/locale/es/LC_MESSAGES/kcm_ktp_chat_behavior.mo
 share/locale/es/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
@@ -258,6 +287,7 @@ share/locale/es/LC_MESSAGES/ktpchat.mo
 share/locale/et/LC_MESSAGES/kcm_ktp_chat_appearance.mo
 share/locale/et/LC_MESSAGES/kcm_ktp_chat_behavior.mo
 share/locale/et/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/et/LC_MESSAGES/ktp-filters.mo
 share/locale/et/LC_MESSAGES/ktp-text-ui.mo
 share/locale/et/LC_MESSAGES/ktpchat.mo
 share/locale/fi/LC_MESSAGES/kcm_ktp_chat_appearance.mo
@@ -304,6 +334,7 @@ share/locale/it/LC_MESSAGES/ktpchat.mo
 share/locale/ja/LC_MESSAGES/kcm_ktp_chat_appearance.mo
 share/locale/ja/LC_MESSAGES/kcm_ktp_chat_behavior.mo
 share/locale/ja/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/ja/LC_MESSAGES/ktp-filters.mo
 share/locale/ja/LC_MESSAGES/ktp-text-ui.mo
 share/locale/ja/LC_MESSAGES/ktpchat.mo
 share/locale/kk/LC_MESSAGES/kcm_ktp_chat_appearance.mo
@@ -343,6 +374,7 @@ share/locale/nb/LC_MESSAGES/ktpchat.mo
 share/locale/nds/LC_MESSAGES/kcm_ktp_chat_appearance.mo
 share/locale/nds/LC_MESSAGES/kcm_ktp_chat_behavior.mo
 share/locale/nds/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
+share/locale/nds/LC_MESSAGES/ktp-filters.mo
 share/locale/nds/LC_MESSAGES/ktp-text-ui.mo
 share/locale/nds/LC_MESSAGES/ktpchat.mo
 share/locale/nl/LC_MESSAGES/kcm_ktp_chat_appearance.mo
