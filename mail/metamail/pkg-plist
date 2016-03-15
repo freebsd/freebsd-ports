@@ -29,7 +29,7 @@ bin/sun2mime
 %%X11%%lib/metamail/fonts/heb8x13B.pcf
 %%X11%%lib/metamail/fonts/fonts.dir
 %%X11%%lib/metamail/fonts/fonts.alias
-etc/mailcap
+@sample etc/mailcap.sample
 man/man1/audiocompose.1.gz
 man/man1/audiosend.1.gz
 man/man1/extcompose.1.gz
