@@ -1209,6 +1209,7 @@
     SUBDIR += socat
     SUBDIR += socketbind
     SUBDIR += socketpipe
+    SUBDIR += socketw
     SUBDIR += sofia-sip
     SUBDIR += spideroak
     SUBDIR += splatd
