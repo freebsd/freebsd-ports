@@ -10,11 +10,12 @@ MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Small terminal emulator with Lua scripting
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nonstop
 
-USES=		cmake lua pkgconfig tar:bzip2
+USES=		cmake lua pkgconfig
 USE_GNOME=	gdkpixbuf2 vte
 
 CPPFLAGS+=	-I${LOCALBASE}/include/vte-0.0
