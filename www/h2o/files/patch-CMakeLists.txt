@@ -1,17 +1,12 @@
---- CMakeLists.txt.orig	2015-10-20 06:50:39 UTC
+--- CMakeLists.txt.orig	2016-03-04 12:09:30 UTC
 +++ CMakeLists.txt
-@@ -357,11 +357,11 @@ ENDIF (WITH_MRUBY)
- TARGET_LINK_LIBRARIES(h2o ${EXTRA_LIBRARIES})
- 
- INSTALL(TARGETS h2o
--    RUNTIME DESTINATION bin
--    LIBRARY DESTINATION lib)
-+    RUNTIME DESTINATION bin)
+@@ -419,7 +419,8 @@ INSTALL(TARGETS h2o
+     LIBRARY DESTINATION lib)
  
  IF (NOT WITHOUT_LIBS)
 -    INSTALL(DIRECTORY include/ DESTINATION include FILES_MATCHING PATTERN "*.h")
 +    INSTALL(DIRECTORY include/ DESTINATION include FILES_MATCHING PATTERN "*.h"
 +        EXCLUDE PATTERN "h2o" EXCLUDE PATTERN "h2o/socket")
- ENDIF ()
- 
- INSTALL(PROGRAMS share/h2o/annotate-backtrace-symbols share/h2o/fetch-ocsp-response share/h2o/kill-on-close share/h2o/setuidgid share/h2o/start_server DESTINATION share/h2o)
+     IF (LIBUV_FOUND)
+         INSTALL(FILES "${CMAKE_BINARY_DIR}/libh2o.pc" DESTINATION lib/pkgconfig)
+     ENDIF ()

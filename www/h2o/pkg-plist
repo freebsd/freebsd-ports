@@ -3,6 +3,7 @@ share/h2o/annotate-backtrace-symbols
 share/h2o/fetch-ocsp-response
 share/h2o/kill-on-close
 share/h2o/start_server
+%%DATADIR%%/fastcgi-cgi
 %%DATADIR%%/setuidgid
 @dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%H2O_LOGDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/assets/8mbps100msec-nginx195-h2o150.png
