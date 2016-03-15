@@ -442,6 +442,7 @@
     SUBDIR += termatrix
     SUBDIR += terraform
     SUBDIR += teseq
+    SUBDIR += teslams
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkregexp
