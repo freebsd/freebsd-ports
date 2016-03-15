@@ -3,7 +3,7 @@
 
 PORTNAME=	strongswan
 PORTVERSION=	5.3.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
