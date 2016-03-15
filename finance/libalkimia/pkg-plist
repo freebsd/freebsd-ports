@@ -1,7 +1,7 @@
-include/alkimia/alk_export.h
-include/alkimia/alkcompany.h
-include/alkimia/alkquoteitem.h
-include/alkimia/alkvalue.h
+include/kde4/alkimia/alk_export.h
+include/kde4/alkimia/alkcompany.h
+include/kde4/alkimia/alkquoteitem.h
+include/kde4/alkimia/alkvalue.h
 lib/cmake/LibAlkimia/LibAlkimiaConfig.cmake
 lib/cmake/LibAlkimia/LibAlkimiaConfigVersion.cmake
 lib/cmake/LibAlkimia/LibAlkimiaTargets-%%CMAKE_BUILD_TYPE%%.cmake

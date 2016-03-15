@@ -1,4 +1,4 @@
-include/libkcompactdisc/kcompactdisc.h
+include/kde4/libkcompactdisc/kcompactdisc.h
 lib/cmake/libkcompactdisc/LibkcompactdiscConfig.cmake
 lib/cmake/libkcompactdisc/LibkcompactdiscTargets.cmake
 lib/cmake/libkcompactdisc/LibkcompactdiscTargets-%%CMAKE_BUILD_TYPE%%.cmake

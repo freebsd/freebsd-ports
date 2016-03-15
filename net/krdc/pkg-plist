@@ -1,8 +1,8 @@
 bin/krdc
 bin/krdc_rfb_approver
-include/krdc/hostpreferences.h
-include/krdc/remoteview.h
-include/krdc/remoteviewfactory.h
+include/kde4/krdc/hostpreferences.h
+include/kde4/krdc/remoteview.h
+include/kde4/krdc/remoteviewfactory.h
 lib/kde4/kcm_krdc_rdpplugin.so
 lib/kde4/kcm_krdc_vncplugin.so
 lib/kde4/krdc_rdpplugin.so
