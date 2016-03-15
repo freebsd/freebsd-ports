@@ -1,0 +1,4 @@
+An implementation in Node.js of the client-side interface to the Tesla
+Model S API, along with various utilities that exercise the API.
+
+WWW: https://github.com/hjespers/teslams
