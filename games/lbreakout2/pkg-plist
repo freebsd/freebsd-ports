@@ -35,7 +35,7 @@ share/applications/lbreakout2.desktop
 %%PORTDOCS%%%%DOCSDIR%%/x7.jpg
 %%PORTDOCS%%%%DOCSDIR%%/x8.jpg
 %%PORTDOCS%%%%DOCSDIR%%/x9.jpg
-%%DATADIR%%/empty.hscr
+@sample(,games,664) %%DATADIR%%/empty.hscr /var/games/lbreakout2.hscr
 %%DATADIR%%/gfx/AbsoluteB/ABOUT
 %%DATADIR%%/gfx/AbsoluteB/README
 %%DATADIR%%/gfx/AbsoluteB/back0.png
@@ -157,10 +157,8 @@ share/applications/lbreakout2.desktop
 %%DATADIR%%/levels/Alex
 %%DATADIR%%/levels/Alexandre
 %%DATADIR%%/levels/AllNighter
-%%DATADIR%%/levels/AllWorld
 %%DATADIR%%/levels/Arcade
 %%DATADIR%%/levels/Arkanoid
-%%DATADIR%%/levels/Asteroids
 %%DATADIR%%/levels/BeOS-4ever
 %%DATADIR%%/levels/Bertrand
 %%DATADIR%%/levels/BigBang
@@ -180,8 +178,6 @@ share/applications/lbreakout2.desktop
 %%DATADIR%%/levels/D2K
 %%DATADIR%%/levels/Daves
 %%DATADIR%%/levels/Demons
-%%DATADIR%%/levels/EastAsia
-%%DATADIR%%/levels/EastEurope
 %%DATADIR%%/levels/Family
 %%DATADIR%%/levels/Fantaisie
 %%DATADIR%%/levels/FatalDoomsday
@@ -191,7 +187,6 @@ share/applications/lbreakout2.desktop
 %%DATADIR%%/levels/Freek
 %%DATADIR%%/levels/FunCity
 %%DATADIR%%/levels/Gatinha
-%%DATADIR%%/levels/GreenBricks
 %%DATADIR%%/levels/GreenWall
 %%DATADIR%%/levels/GreenWall2
 %%DATADIR%%/levels/GreenWall3
@@ -202,7 +197,6 @@ share/applications/lbreakout2.desktop
 %%DATADIR%%/levels/HighBall
 %%DATADIR%%/levels/Holidays
 %%DATADIR%%/levels/Hommage
-%%DATADIR%%/levels/Horror
 %%DATADIR%%/levels/Impossibility
 %%DATADIR%%/levels/Invisible
 %%DATADIR%%/levels/IoriYagami
@@ -216,33 +210,23 @@ share/applications/lbreakout2.desktop
 %%DATADIR%%/levels/LBreakout1
 %%DATADIR%%/levels/LBreakout2
 %%DATADIR%%/levels/Lapis
-%%DATADIR%%/levels/Lattices
 %%DATADIR%%/levels/Lattsville
 %%DATADIR%%/levels/LinuxFun
 %%DATADIR%%/levels/Lord
-%%DATADIR%%/levels/Madness
 %%DATADIR%%/levels/Maze
 %%DATADIR%%/levels/MegaMan2
 %%DATADIR%%/levels/Megadoomer
-%%DATADIR%%/levels/Memory
-%%DATADIR%%/levels/MiddleAfrica
 %%DATADIR%%/levels/MontyHall
 %%DATADIR%%/levels/NES
 %%DATADIR%%/levels/N_Arenas
 %%DATADIR%%/levels/N_Snapshots
 %%DATADIR%%/levels/Nations
 %%DATADIR%%/levels/Negundoid
-%%DATADIR%%/levels/NewBricks
 %%DATADIR%%/levels/NewOERG1
-%%DATADIR%%/levels/NorthAfrica
-%%DATADIR%%/levels/NorthAmerica
 %%DATADIR%%/levels/ObiWan
-%%DATADIR%%/levels/Oceania
-%%DATADIR%%/levels/OldGames
 %%DATADIR%%/levels/OpenSource
 %%DATADIR%%/levels/OurWorld
 %%DATADIR%%/levels/P.I.T.A.
-%%DATADIR%%/levels/PCGames
 %%DATADIR%%/levels/Pabelo
 %%DATADIR%%/levels/Patience
 %%DATADIR%%/levels/Pawset
@@ -258,8 +242,6 @@ share/applications/lbreakout2.desktop
 %%DATADIR%%/levels/SkillShot
 %%DATADIR%%/levels/Smilies
 %%DATADIR%%/levels/SnyMaxx
-%%DATADIR%%/levels/SouthAfrica
-%%DATADIR%%/levels/SouthAmerica
 %%DATADIR%%/levels/StarWars
 %%DATADIR%%/levels/Symmetry
 %%DATADIR%%/levels/Symmetry-MKII
@@ -273,8 +255,6 @@ share/applications/lbreakout2.desktop
 %%DATADIR%%/levels/Vader
 %%DATADIR%%/levels/WTF
 %%DATADIR%%/levels/Weirdness
-%%DATADIR%%/levels/WestAsia
-%%DATADIR%%/levels/WestEurope
 %%DATADIR%%/levels/Wizi
 %%DATADIR%%/levels/Wolvie
 %%DATADIR%%/levels/WonderWalls
@@ -320,7 +300,8 @@ share/applications/lbreakout2.desktop
 %%DATADIR%%/sounds/wall.wav
 %%DATADIR%%/sounds/weak_ball.wav
 %%DATADIR%%/sounds/wontgiveup.wav
+%%NLS%%share/locale/da/LC_MESSAGES/lbreakout2.mo
 %%NLS%%share/locale/de/LC_MESSAGES/lbreakout2.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/lbreakout2.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/lbreakout2.mo
-share/pixmaps/lbreakout48.gif
+share/pixmaps/lbreakout2.png
