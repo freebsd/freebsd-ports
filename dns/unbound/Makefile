@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.8
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -27,16 +27,17 @@ USE_RC_SUBR=	unbound
 PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 		README.tests TODO control_proto_spec.txt ietf67-design-02.odp \
 		ietf67-design-02.pdf requirements.txt
-PLIST_SUB+=	PYTHON=${PYTHON} MUNIN=${MUNIN}
 
-OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT FILTER_AAAA
+OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN_PLUGIN DOCS LIBEVENT FILTER_AAAA DNSTAP
 OPTIONS_DEFAULT=THREADS ECDSA
 
 LIBEVENT_DESC=	Build against libevent
 GOST_DESC=	Enable GOST support (requires OpenSSL >= 1.0)
 ECDSA_DESC=	Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
-MUNIN_DESC=	Install Munin plugin
+MUNIN_PLUGIN_DESC=	Install Munin plugin
 FILTER_AAAA_DESC=	Build with AAAA filter functionality (contrib)
+DNSTAP_DESC=	Enable dnstap logging support
 
 .include <bsd.port.options.mk>
 
@@ -51,9 +52,6 @@ USES+=		python:2
 CONFIGURE_ARGS+=--with-pyunbound=yes --with-pythonmodule=yes LDFLAGS="-L${LOCALBASE}/lib"
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
 STRIP_FILES+=	.libs/_unbound.so
-PYTHON=
-.else
-PYTHON=		"@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGOST}
@@ -71,13 +69,16 @@ DEPENDS_ARGS+=	WITH_ECDSA=yes
 CONFIGURE_ARGS+=--disable-ecdsa
 .endif
 
-.if ${PORT_OPTIONS:MMUNIN}
+.if ${PORT_OPTIONS:MDNSTAP}
+CONFIGURE_ARGS+=--enable-dnstap
+LIB_DEPENDS+=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+LIB_DEPENDS+=	libfstrm.so:${PORTSDIR}/devel/fstrm
+.endif
+
+.if ${PORT_OPTIONS:MMUNIN_PLUGIN}
 SUB_FILES+=	pkg-message
-MUNIN_ALL=	hits queue memory by_type by_class by_opcode by_rcode \
+MUNIN_PLUGIN_ALL=	hits queue memory by_type by_class by_opcode by_rcode \
 		by_flags histogram
-MUNIN=
-.else
-MUNIN=		"@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBEVENT}
@@ -99,37 +100,35 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|if test ! -e $$(DESTDIR)$$(configfile); then || ; \
 		s|$$(configfile); fi|$$(configfile).sample|' \
 		${WRKSRC}/Makefile.in
-.if ${PORT_OPTIONS:MFILTER_AAAA}
+
+post-patch-FILTER_AAAA-on:
 	${CAT} ${WRKSRC}/contrib/aaaa-filter-iterator.patch | ${PATCH} -d ${WRKSRC} -p1 -s
-.endif
 
 post-build:
 	@for s in ${STRIP_FILES}; do ${STRIP_CMD} ${WRKSRC}/$$s; done
 
-post-install:
-.if ${PORT_OPTIONS:MPYTHON}
+post-install-PYTHON-on:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_unbound.so
-.endif
-.if ${PORT_OPTIONS:MMUNIN}
+
+post-install-MUNIN_PLUGIN-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/munin/plugins
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/munin/plugins
-	@${INSTALL_SCRIPT} ${WRKDIR}/unbound-${PORTVERSION}/contrib/unbound_munin_\
+	@${INSTALL_SCRIPT} ${WRKDIR}/unbound-${PORTVERSION}/contrib/unbound_munin_ \
 		${STAGEDIR}${PREFIX}/share/munin/plugins/
-	@for i in ${MUNIN_ALL}; do\
-		${LN} -fs ${PREFIX}/share/munin/plugins/unbound_munin_\
-			${STAGEDIR}${PREFIX}/etc/munin/plugins/unbound_munin_$$i ;\
+	@for i in ${MUNIN_PLUGIN_ALL}; do \
+		${LN} -fs ${PREFIX}/share/munin/plugins/unbound_munin_ \
+			${STAGEDIR}${PREFIX}/etc/munin/plugins/unbound_munin_$$i; \
 	done
 	@${ECHO_MSG}
 	@${ECHO_MSG} "============================================================="
 	@${CAT} ${WRKDIR}/pkg-message
 	@${ECHO_MSG} "============================================================="
-.endif
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 regression-test: build
-	cd ${WRKSRC} && ${MAKE} test
+	(cd ${WRKSRC} && ${MAKE} test)
 
 .include <bsd.port.mk>
