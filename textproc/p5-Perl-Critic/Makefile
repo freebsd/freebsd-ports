@@ -37,5 +37,6 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

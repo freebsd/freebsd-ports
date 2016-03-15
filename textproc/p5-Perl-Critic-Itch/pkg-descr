@@ -1,0 +1,6 @@
+Perl::Critic::Itch was created to fulfill some special requests when analyzing
+Perl Code. This policies, may not be useful to everyone, and surely not
+consensual, but they solve some little itches I had, and it makes me sleep
+better at night!
+
+WWW: https://metacpan.org/release/Perl-Critic-Itch
