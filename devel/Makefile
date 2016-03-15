@@ -4027,6 +4027,7 @@
     SUBDIR += py-django-rq
     SUBDIR += py-django-tastypie-mongoengine
     SUBDIR += py-django16-tastypie-mongoengine
+    SUBDIR += py-docker-py
     SUBDIR += py-docopt
     SUBDIR += py-dogpile.cache
     SUBDIR += py-dogpile.core
