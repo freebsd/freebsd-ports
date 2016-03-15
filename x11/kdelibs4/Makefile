@@ -3,7 +3,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -55,6 +55,18 @@ CMAKE_ARGS+=	-DWITH_ACL:BOOL=Off \
 		-DHUPNP_ENABLED:BOOL=On \
 		-DKDE_DISTRIBUTION_TEXT:STRING="${OPSYS}" \
 		-DKDE_DEFAULT_HOME:STRING=".kde4"
+
+# Do not conflict with KDE Frameworks 5 headers: instead of installing kdelibs4
+# headers directly into ${LOCALBASE}/include, put them into include/kde4 (this
+# also applies to all ports depending on kdelibs4 that derive their header
+# installation location from it).
+# If we install the headers directly into ${LOCALBASE}/include, with KDE
+# Frameworks 5 installed it is possible to end up in a situation where the
+# compiler is passed this:
+#   -I${LOCALBASE}/include -I${LOCALBASE}/KF5
+# which in turn leads to kdelibs4 headers with the same name being used instead
+# of the KF5 ones, possibly breaking the build.
+CMAKE_ARGS+=	-DINCLUDE_INSTALL_DIR:PATH="${KDE4_PREFIX}/include/kde4"
 
 SHEBANG_FILES=	kdecore/kconfig_compiler/checkkcfg.pl \
 		kdeui/preparetips \

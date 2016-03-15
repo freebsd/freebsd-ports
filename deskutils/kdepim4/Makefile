@@ -3,7 +3,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -48,12 +48,13 @@ post-patch:
 	${REINPLACE_CMD} -e '1 s|^.*/|/|g' \
 		${WRKSRC}/knotes/configdialog/knotecollectionconfigwidget.cpp
 
+# net-im/kopete-kde4 needs Kleopatra's headers for its Cryptography plugin.
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/kleo
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/kde4/kleo
 	${INSTALL_DATA} ${WRKSRC}/libkleo/kleo/*.h \
-		${STAGEDIR}${PREFIX}/include/kleo
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/kleo/ui
+		${STAGEDIR}${PREFIX}/include/kde4/kleo
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/kde4/kleo/ui
 	${INSTALL_DATA} ${WRKSRC}/libkleo/ui/*.h \
-		${STAGEDIR}${PREFIX}/include/kleo/ui
+		${STAGEDIR}${PREFIX}/include/kde4/kleo/ui
 
 .include <bsd.port.mk>

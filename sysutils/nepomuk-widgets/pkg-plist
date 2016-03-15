@@ -1,8 +1,8 @@
-include/nepomuk2/filemetadataconfigwidget.h
-include/nepomuk2/filemetadatawidget.h
-include/nepomuk2/nepomukwidgets_export.h
-include/nepomuk2/resourcemodel.h
-include/nepomuk2/tagwidget.h
+include/kde4/nepomuk2/filemetadataconfigwidget.h
+include/kde4/nepomuk2/filemetadatawidget.h
+include/kde4/nepomuk2/nepomukwidgets_export.h
+include/kde4/nepomuk2/resourcemodel.h
+include/kde4/nepomuk2/tagwidget.h
 lib/cmake/NepomukWidgets/NepomukWidgetsConfig.cmake
 lib/cmake/NepomukWidgets/NepomukWidgetsConfigVersion.cmake
 lib/cmake/NepomukWidgets/NepomukWidgetsTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake

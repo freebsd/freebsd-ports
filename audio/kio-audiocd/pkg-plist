@@ -1,4 +1,4 @@
-include/audiocdencoder.h
+include/kde4/audiocdencoder.h
 lib/kde4/kcm_audiocd.so
 lib/kde4/kio_audiocd.so
 lib/kde4/libaudiocd_encoder_flac.so

@@ -2,10 +2,10 @@ bin/kfilereplace
 bin/kimagemapeditor
 bin/klinkstatus
 bin/kommander
-include/kommandercore_export.h
-include/kommanderplugin.h
-include/kommanderwidget.h
-include/specials.h
+include/kde4/kommandercore_export.h
+include/kde4/kommanderplugin.h
+include/kde4/kommanderwidget.h
+include/kde4/specials.h
 lib/kde4/automationklinkstatus.so
 lib/kde4/klinkstatuspart.so
 lib/kde4/krossmoduleklinkstatus.so

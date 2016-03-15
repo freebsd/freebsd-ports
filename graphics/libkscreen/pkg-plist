@@ -1,10 +1,10 @@
-include/kscreen/config.h
-include/kscreen/configmonitor.h
-include/kscreen/edid.h
-include/kscreen/kscreen_export.h
-include/kscreen/mode.h
-include/kscreen/output.h
-include/kscreen/screen.h
+include/kde4/kscreen/config.h
+include/kde4/kscreen/configmonitor.h
+include/kde4/kscreen/edid.h
+include/kde4/kscreen/kscreen_export.h
+include/kde4/kscreen/mode.h
+include/kde4/kscreen/output.h
+include/kde4/kscreen/screen.h
 lib/cmake/LibKScreen/LibKScreenConfig.cmake
 lib/cmake/LibKScreen/LibKScreenConfigVersion.cmake
 lib/cmake/LibKScreen/LibKScreenTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
