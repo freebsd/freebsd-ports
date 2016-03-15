@@ -30,7 +30,7 @@
  
  $(PROGRAM): $(OBJ)
  	$(CC) $(CFLAGS) -o $(PROGRAM) $(OBJ)
-@@ -19,12 +20,12 @@
+@@ -19,12 +20,12 @@ $(PROGRAM): $(OBJ)
  clean:
  	/bin/rm -f $(OBJ) $(PROGRAM) *~ 
  
