@@ -956,6 +956,8 @@
     SUBDIR += teeworlds
     SUBDIR += teg
     SUBDIR += tenebrae
+    SUBDIR += tesseract
+    SUBDIR += tesseract-data
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
     SUBDIR += tetrons
