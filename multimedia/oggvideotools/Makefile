@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oggvideotools
-PORTVERSION=	0.8a
-PORTREVISION=	4
+PORTVERSION=	0.9
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
@@ -17,11 +16,16 @@ LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USES=		cmake pkgconfig
+USES=		cmake compiler:c++11-lib pkgconfig
+USE_CXXSTD=	c++11
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-O0.*-fPIC|-fPIC|' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

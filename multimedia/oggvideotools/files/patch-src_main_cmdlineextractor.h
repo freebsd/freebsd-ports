@@ -1,8 +1,8 @@
---- src/cmdlineextractor.h.orig	2010-05-30 21:11:10.000000000 +0200
-+++ src/cmdlineextractor.h	2014-01-25 18:46:51.620972183 +0100
-@@ -20,7 +20,7 @@
- #include "oggComment.h"
+--- src/main/cmdlineextractor.h.orig	2015-10-05 06:33:52 UTC
++++ src/main/cmdlineextractor.h
+@@ -21,7 +21,7 @@
  #include "blendElement.h"
+ #include "effectorTypes.h"
  
 -const std::string validChars ( "0123456789,x" );
 +const std::string validChars ( "0123456789,x:" );
