@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apsw
-PORTVERSION=	3.9.2
+PORTVERSION=	3.11.1
 DISTVERSIONSUFFIX=	-r1
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,8 @@ LICENSE=	ZLIB
 USE_GITHUB=	yes
 GH_ACCOUNT=	rogerbinns
 
-USES=		localbase python
+USES=		localbase python sqlite:3
 USE_PYTHON=	distutils autoplist
-USE_SQLITE=	3
 PYDISTUTILS_EGGINFO=	apsw-${PORTVERSION|.post1-py${PYTHON_VER}.egg-info
 
 post-install:
