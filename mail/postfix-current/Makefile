@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.2-20160224
+DISTVERSION=	3.2-20160314
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -16,7 +16,7 @@ PKGNAMESUFFIX?=	-current
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ohauer@FreeBSD.org
-COMMENT=	Secure alternative to widely-used Sendmail
+COMMENT=	Experimental Postfix version
 
 LICENSE=	IPL10
 LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
@@ -26,8 +26,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 
 CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* \
-		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* \
-		postfix-2.* postfix-base-2.* postfix21?-*
+		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* postfix211-* \
+		postfix-[2|3].* postfix-base-[2|3].* postfix-sasl-[2|3].*
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
