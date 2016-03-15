@@ -2,6 +2,7 @@ bin/rosegarden
 share/appdata/rosegarden.appdata.xml
 share/applications/rosegarden.desktop
 share/icons/hicolor/128x128/apps/rosegarden.png
+share/icons/hicolor/16x16/apps/rosegarden.png
 share/icons/hicolor/16x16/mimetypes/application-x-rosegarden-composition.png
 share/icons/hicolor/16x16/mimetypes/application-x-rosegarden-device.png
 share/icons/hicolor/16x16/mimetypes/application-x-rosegarden-project.png

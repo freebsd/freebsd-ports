@@ -1,6 +1,6 @@
---- src/gui/application/main.cpp.orig	2015-12-31 13:49:35 UTC
+--- src/gui/application/main.cpp.orig	2016-02-29 12:18:01 UTC
 +++ src/gui/application/main.cpp
-@@ -354,6 +354,11 @@ void usage()
+@@ -359,6 +359,11 @@ void usage()
      exit(2);
  }
  
@@ -11,8 +11,8 @@
 +
  int main(int argc, char *argv[])
  {
-     for (int i = 1; i < argc; ++i) {
-@@ -377,7 +382,6 @@ int main(int argc, char *argv[])
+ 
+@@ -405,7 +410,6 @@ int main(int argc, char *argv[])
      // (this has to be outside the ifdef block below)
      QSettings preAppSettings("rosegardenmusic", "Rosegarden");
      preAppSettings.beginGroup(GeneralOptionsConfigGroup);
@@ -20,7 +20,7 @@
      unsigned int graphicsSystem = preAppSettings.value("graphics_system", Native).toUInt();
      preAppSettings.endGroup();
  
-@@ -840,4 +844,7 @@ int main(int argc, char *argv[])
+@@ -868,4 +872,7 @@ int main(int argc, char *argv[])
  
      return returnCode;
  }
