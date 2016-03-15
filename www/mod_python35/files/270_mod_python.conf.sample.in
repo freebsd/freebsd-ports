@@ -1,0 +1,11 @@
+## $FreeBSD$
+## vim: set filetype=apache:
+##
+## module file for mod_python 3.5.x
+##
+## PROVIDE: mod_python
+## REQUIRE: 
+
+## make sure the following module is activated (httpd.conf or here)
+#LoadModule python_module %%APACHEMODDIR%%/mod_python.so
+
