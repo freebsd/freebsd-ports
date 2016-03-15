@@ -124,6 +124,8 @@ ask "Do you want to commit? (no = start a shell)" || (
     su -m $(id -un) || :
     ask "Do you want to commit now? (no = clean up and abort)" || clean
 )
+echo >> commit.txt
+echo "Approved by:	" >> commit.txt
 ${EDITOR:-vi} commit.txt
 "${svn}" ci -F commit.txt "${branch}"
 rm -rf "${dir}"
