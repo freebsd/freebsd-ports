@@ -1,4 +1,4 @@
---- common/Thread.h.orig	2014-11-18 15:26:49 UTC
+--- common/Thread.h.orig	2016-02-04 15:32:31 UTC
 +++ common/Thread.h
 @@ -62,7 +62,7 @@ typedef void *LPVOID;
  
