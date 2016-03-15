@@ -82,6 +82,10 @@ you update your ports collection, before attempting any port upgrades.
    from now on.  In addition, for each mail/postfix* port there is now a
    mail/postfix*-sasl slave port providing Cyrus SASL as default.
 
+   To stay on postfix-2.11.x run the command:
+
+   # pkg set -o mail/postfix:mail/postfix211
+
 20160217:
   AFFECTS: users of www/nginx-devel
   AUTHOR: osa@FreeBSD.org
