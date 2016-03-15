@@ -686,6 +686,12 @@
     SUBDIR += p5-Parse-Syslog
     SUBDIR += p5-Perl-Critic
     SUBDIR += p5-Perl-Critic-Bangs
+    SUBDIR += p5-Perl-Critic-Itch
+    SUBDIR += p5-Perl-Critic-Moose
+    SUBDIR += p5-Perl-Critic-More
+    SUBDIR += p5-Perl-Critic-Pulp
+    SUBDIR += p5-Perl-Critic-Swift
+    SUBDIR += p5-Perl-Critic-Tics
     SUBDIR += p5-Perl-Lint
     SUBDIR += p5-Perl-MinimumVersion
     SUBDIR += p5-PerlPoint-Converters
