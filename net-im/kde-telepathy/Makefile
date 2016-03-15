@@ -36,7 +36,4 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plasma_applet_ktp_presence.so:${PORTSDIR}/
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ktp-send-file:${PORTSDIR}/net-im/ktp-send-file
 .endif
 
-do-install:
-	@${DO_NADA}
-
 .include <bsd.port.mk>
