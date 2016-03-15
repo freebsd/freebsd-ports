@@ -4142,6 +4142,7 @@
     SUBDIR += py-kazoo
     SUBDIR += py-keystoneauth1
     SUBDIR += py-kid
+    SUBDIR += py-kitchen
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-krosspython
