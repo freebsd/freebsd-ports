@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	posix
-PORTVERSION=	33.3.1
+PORTVERSION=	33.4.0
 DISTVERSIONPREFIX=	release-v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -29,7 +29,6 @@ GH_ACCOUNT=	luaposix
 DOCSDIR=	${PREFIX}/share/doc/luaposix
 
 PLIST_FILES=	%%LUA_MODLIBDIR%%/posix.so \
-		%%LUA_MODSHAREDIR%%/curses.lua \
 		%%LUA_MODSHAREDIR%%/posix/_argcheck.lua \
 		%%LUA_MODSHAREDIR%%/posix/compat.lua \
 		%%LUA_MODSHAREDIR%%/posix/deprecated.lua \
@@ -41,7 +40,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|\(\*\|\)\(openbsd\*)\)|\1freebsd*\|dragonfly*\|\2| ; \
-		 s|"GNU strip"|"strip"|' ${WRKSRC}/configure
+		's/\(darwin\*\)|\(freebsd\*\)/\1|dragonfly*|\2/' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
