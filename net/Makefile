@@ -273,6 +273,7 @@
     SUBDIR += jsch
     SUBDIR += jumpgate
     SUBDIR += jwhois
+    SUBDIR += kafkacat
     SUBDIR += kamailio
     SUBDIR += kdenetwork4
     SUBDIR += kdenetwork4-filesharing
