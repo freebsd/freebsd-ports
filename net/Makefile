@@ -943,6 +943,7 @@
     SUBDIR += py-impacket
     SUBDIR += py-ipaddress
     SUBDIR += py-iplib
+    SUBDIR += py-kafka-python
     SUBDIR += py-kombu
     SUBDIR += py-ldap
     SUBDIR += py-ldap3
