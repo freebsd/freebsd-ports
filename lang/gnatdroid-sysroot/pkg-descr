@@ -1,5 +1,5 @@
 This package is used by lang/gnatdroid to install the system root of
-Android 2.2 to 5.0 (API Level 8 to API Level 21) of the ARM architecture.
+Android 4.0 to 6.0 (API Level 15 to API Level 23) of the ARM architecture.
 The ARM cross-tools are built using these files, which in turn is required
 for the GNAT FreeBSD->ARM cross-compiler that is gnatdroid.
 
