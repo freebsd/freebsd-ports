@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc-dicomweb
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	science net
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-dicom-web/
 DISTNAME=	OrthancDicomWeb-${PORTVERSION}
