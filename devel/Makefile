@@ -3495,6 +3495,7 @@
     SUBDIR += p5-uni-perl
     SUBDIR += p5-version
     SUBDIR += p65
+    SUBDIR += p8-platform
     SUBDIR += paexec
     SUBDIR += papi
     SUBDIR += papp
