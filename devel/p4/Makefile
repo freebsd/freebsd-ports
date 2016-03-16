@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p4
-PORTVERSION=	2015.1.1341249
+PORTVERSION=	2015.1.1362963
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/ \
 		http://filehost.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/
@@ -12,8 +12,6 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce client
-
-BROKEN=		does not fetch
 
 RESTRICTED=	Restricted distribution
 
