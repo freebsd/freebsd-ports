@@ -22,4 +22,8 @@ GH_TAGNAME=	201ef8e
 USES=		tar:xz python:3.3+
 USE_PYTHON=	distutils autoplist
 
+.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
+IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
+.endif
+
 .include <bsd.port.mk>
