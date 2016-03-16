@@ -1,4 +1,5 @@
 bin/oroborus
+@sample etc/oroborusrc.sample
 %%DATADIR%%/defaults
 %%DATADIR%%/schemes/beos
 %%DATADIR%%/schemes/blue
