@@ -65,6 +65,7 @@
     SUBDIR += p5-Bio-SCF
     SUBDIR += p5-bioperl
     SUBDIR += p5-bioperl-run
+    SUBDIR += p5-transdecoder
     SUBDIR += paml
     SUBDIR += phrap
     SUBDIR += phred
