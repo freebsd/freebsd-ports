@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc-webviewer
-PORTVERSION=	1.2
+PORTVERSION=	2.1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-webviewer/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/WebViewer/:thirdparty
 DISTFILES=	OrthancWebViewer-${PORTVERSION}.tar.gz:main \
 		jsPanel-2.3.3-fixed.zip:thirdparty \
-		cornerstone-0.7.1.zip:thirdparty \
+		cornerstone-0.8.4.zip:thirdparty \
 		jquery-ui-1.11.3.zip:thirdparty \
 		pako-0.2.5.zip:thirdparty \
 		js-url-1.8.6.zip:thirdparty
@@ -42,7 +42,7 @@ PLIST_FILES=	share/orthanc/plugins/libOrthancWebViewer.so \
 post-extract:
 	${MKDIR} ${WRKSRC}/ThirdPartyDownloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/jsPanel-2.3.3-fixed.zip ${WRKSRC}/ThirdPartyDownloads
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/cornerstone-0.7.1.zip ${WRKSRC}/ThirdPartyDownloads
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/cornerstone-0.8.4.zip ${WRKSRC}/ThirdPartyDownloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/jquery-ui-1.11.3.zip ${WRKSRC}/ThirdPartyDownloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/pako-0.2.5.zip ${WRKSRC}/ThirdPartyDownloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/js-url-1.8.6.zip ${WRKSRC}/ThirdPartyDownloads
