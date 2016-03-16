@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc-portgresql
-PORTVERSION=	1.3
+PORTVERSION=	2.0
 CATEGORIES=	science graphics
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/plugin-postgresql/
 DISTNAME=	OrthancPostgreSQL-${PORTVERSION}
