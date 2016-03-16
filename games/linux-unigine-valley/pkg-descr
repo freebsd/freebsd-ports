@@ -1,0 +1,13 @@
+Valley Benchmark is a new GPU stress-testing tool from the developers
+of the very popular and highly acclaimed Heaven Benchmark. The
+forest-covered valley surrounded by vast mountains amazes with its
+scale from a bird's-eye view and is extremely detailed down to every
+leaf and flower petal. This non-synthetic benchmark powered by the
+state-of-the art UNIGINE Engine showcases a comprehensive set of
+cutting-edge graphics technologies with a dynamic environment and
+fully interactive modes available to the end user.
+
+This port includes the linux-binaries of the basic (free-to-use)
+version of the benchmark.
+
+WWW: http://unigine.com/en/products/benchmarks/valley
