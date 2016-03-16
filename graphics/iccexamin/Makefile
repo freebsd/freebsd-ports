@@ -24,7 +24,7 @@ USES=		desktop-file-utils gettext iconv jpeg pkgconfig tar:bzip2
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_XORG=	#
-CONFIGURE_ARGS+=--mandir=${PREFIX}/man
+CONFIGURE_ARGS+=--mandir=${PREFIX}/man --disable-openmp
 
 post-patch:
 	@${REINPLACE_CMD} 's:\\$$(iconv):${ICONV_LIB}:' \
