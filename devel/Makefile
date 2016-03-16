@@ -317,6 +317,7 @@
     SUBDIR += cssc
     SUBDIR += cstringbuffer
     SUBDIR += ctags
+    SUBDIR += ctypes.sh
     SUBDIR += cunit
     SUBDIR += cut
     SUBDIR += cutils
