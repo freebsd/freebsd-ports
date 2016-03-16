@@ -13,4 +13,6 @@ include/orthanc/OrthancCPlugin.h
 include/orthanc/OrthancCppDatabasePlugin.h
 %%DATADIR%%/plugins/libServeFolders.so
 %%DATADIR%%/plugins/libServeFolders.so.%%PORTVERSION%%
+%%DATADIR%%/plugins/libModalityWorklists.so
+%%DATADIR%%/plugins/libModalityWorklists.so.%%PORTVERSION%%
 sbin/Orthanc
