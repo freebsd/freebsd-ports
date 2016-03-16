@@ -3,7 +3,7 @@
 
 PORTNAME=	unigine-heaven
 PORTVERSION=	4.0
-CATEGORIES=	games linux
+CATEGORIES=	games benchmarks linux
 MASTER_SITES=	http://de1-dl.techpowerup.com/Benchmarking/ \
 		http://nl1-dl.techpowerup.com/Benchmarking/ \
 		http://uk1-dl.techpowerup.com/Benchmarking/ \
@@ -29,14 +29,8 @@ NO_BUILD=	yes
 
 OPTIONS_DEFINE=	NVIDIA_GL
 NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNVIDIA_GL}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.else
-USE_LINUX_APPS+=dri
-.endif
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+NVIDIA_GL_VARS_OFF=	USE_LINUX_APPS+=dri
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
