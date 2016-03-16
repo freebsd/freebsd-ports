@@ -15,6 +15,9 @@ COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+DEPRECATED=	Use newer lang/gcc5-aux or lang/gcc6-aux compilers instead
+EXPIRATION_DATE=	2016-05-15
+
 .include "${.CURDIR}/Makefile.common"
 
 LANGS=			c c++ ada
