@@ -1,0 +1,31 @@
+--- deskmenu.1.orig	2010-02-14 16:09:36 UTC
++++ deskmenu.1
+@@ -17,9 +17,7 @@ You can use deskmenu for session managem
+ last line of your .xinitrc and using the \-\-quit command line
+ option, which adds a quit option to the menu.
+ .LP 
+-NOTE: Deskmenu will do nothing unless you have a ${HOME}/.deskmenurc file or a /etc/deskmenurc (/etc/deskmenurc.debian is automatically generated)
+-.br 
+-This manpage is specific to the debian package of deskmenu.
++NOTE: Deskmenu will do nothing unless you have a ${HOME}/.deskmenurc file or a /usr/local/etc/deskmenurc.
+ .br
+ \fBIMPORTANT NOTE:\fR
+ You have to set a keycode, when using this version of keylaunch, in your config file.
+@@ -60,7 +58,7 @@ deskmenu \-\-button=[1...5] \-\-file=/ho
+ .LP 
+ \fI${HOME}/.deskmenurc\fP
+ .br 
+-\fI/etc/deskmenurc.debian\fP
++\fI/usr/local/etc/deskmenurc\fP
+ .SH "RCFILE"
+ .LP .deskmenurc
+ .br 
+@@ -133,7 +131,7 @@ The current developer of Deskmenu.
+ This manpage was written for the Debian GNU/Linux package of
+ this program by 
+ Brandon L. Griffith <brandon@debian.org> 
+-because the origonal program did not include one. You are
++because the original program did not include one. You are
+ free to edit, translate, convert, or otherwise do anything
+ you wish with this manpage. This program was patched with a diff from Martin Hedenfalk <mhe@hjome.se> to allow submenu recursion.
+ Updated and added to the official deskmenu by

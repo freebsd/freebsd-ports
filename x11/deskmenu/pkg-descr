@@ -1,4 +1,6 @@
-DeskMenu is a root menu program which is activated by clicking the root window.
-This gtk+ program is complementary to the Oroborus window manager.
+DeskMenu is a root menu program which is activated by clicking the root
+window.  It is configured from a .deskmenurc file in user's home directory.
+DeskMenu is useful for window managers which do not provide a menu such as
+Oroborus.
 
-WWW: http://www.kensden.pwp.blueyonder.co.uk/Oroborus/
+WWW: http://www.oroborus.org/
