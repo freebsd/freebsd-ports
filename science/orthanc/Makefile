@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	orthanc
-PORTVERSION=	0.9.4
+PORTVERSION=	1.0.0
 CATEGORIES=	science graphics net www
 MASTER_SITES=	http://orthanc-server.com/downloads/get.php?path=/orthanc/:main \
 		http://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/:mongoose
@@ -83,10 +83,6 @@ post-install:
 
 .if ${OSVERSION} < 1001000
 IGNORE=	supported only on 10.x by upstream, not all unit tests are passed
-.endif
-
-.if ${OSVERSION} > 1100000
-BROKEN=	unit tests are crashing, bug 200544
 .endif
 
 .include <bsd.port.post.mk>
