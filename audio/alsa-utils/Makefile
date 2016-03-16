@@ -12,8 +12,8 @@ COMMENT=	ALSA compatibility utils
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
-RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+LIB_DEPENDS=	libasound.so:audio/alsa-lib
+RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 
 USES=		gmake localbase shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
@@ -27,10 +27,10 @@ OPTIONS_DEFINE=	BAT MANPAGES NLS
 OPTIONS_DEFAULT=BAT MANPAGES
 
 BAT_DESC=	Basic Audio Tester support
-BAT_LIB_DEPENDS=libfftw3.so:${PORTSDIR}/math/fftw3
+BAT_LIB_DEPENDS=libfftw3.so:math/fftw3
 BAT_CONFIGURE_ENABLE=bat
 
-MANPAGES_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
+MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto
 MANPAGES_CONFIGURE_ENABLE=xmlto
 
 NLS_USES=	gettext

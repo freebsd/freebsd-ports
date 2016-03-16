@@ -16,9 +16,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:${PORTSDIR}/devel/opencl
-LIB_DEPENDS=	libopencv_highgui.so:${PORTSDIR}/graphics/opencv \
-		libopencv_imgproc.so:${PORTSDIR}/graphics/opencv-core
+BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
+LIB_DEPENDS=	libopencv_highgui.so:graphics/opencv \
+		libopencv_imgproc.so:graphics/opencv-core
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tanakamura

@@ -13,9 +13,9 @@ COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+		libltdl.so:devel/libltdl \
+		libfreetype.so:print/freetype2
 
 OPTIONS_DEFINE=	ESOUND DOCS EXAMPLES
 OPTIONS_DEFINE_i386=	MMX
@@ -31,7 +31,7 @@ GTK1_CONFIGURE_OFF=--with-glib-prefix=${NONEXISTENT} \
 		--with-gtk-prefix=${NONEXISTENT}
 GTK2_USE=	GNOME=gtk20
 GTK2_USES=	pkgconfig
-MMX_BUILD_DEPENDS=nasm:${PORTSDIR}/devel/nasm
+MMX_BUILD_DEPENDS=nasm:devel/nasm
 MMX_CONFIGURE_ENABLE=mmx
 
 EXTRACT_AFTER_ARGS=--exclude libltdl

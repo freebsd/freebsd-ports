@@ -11,8 +11,8 @@ COMMENT=	NScripter-like novel-game interpreter with Unicode support
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libsmpeg2.so:${PORTSDIR}/multimedia/smpeg2 \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libsmpeg2.so:multimedia/smpeg2 \
+		libfreetype.so:print/freetype2
 
 CONFLICTS=	ponscripter-[0-9]* # doesn't exist yet
 
@@ -37,16 +37,16 @@ PLIST_FILES=	bin/ponscr \
 OPTIONS_DEFINE=	DOCS MANPAGES TREMOR
 OPTIONS_DEFAULT=MANPAGES ${MACHINE_CPU:tu:MSOFTFP:S/SOFTFP/TREMOR/}
 
-MANPAGES_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
+MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto
 MANPAGES_PLIST_FILES=\
 	man/man6/ponscr.6.gz \
 	man/man7/ponscr-ext.7.gz \
 	man/man7/ponscr-syntax.7.gz \
 	man/man7/ponscripter.7.gz
 
-TREMOR_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
+TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
 TREMOR_CFLAGS=		-DINTEGER_OGG_VORBIS
-TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:audio/libvorbis
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^ifdef DEBUG/,/^$$/d' \

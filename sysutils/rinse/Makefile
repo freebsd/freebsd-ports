@@ -11,8 +11,8 @@ COMMENT=	Install RPM-based system into a directory
 
 LICENSE=	ART10
 
-RUN_DEPENDS=	p5-Term-Size>0:${PORTSDIR}/devel/p5-Term-Size \
-		p5-libwww>0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-Term-Size>0:devel/p5-Term-Size \
+		p5-libwww>0:www/p5-libwww
 
 NO_ARCH=	yes
 NO_BUILD=	yes

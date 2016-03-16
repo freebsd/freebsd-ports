@@ -22,7 +22,7 @@ LICENSE_NAME=	Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported
 LICENSE_TEXT=	See https://creativecommons.org/licenses/by-nc-nd/3.0/
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-RUN_DEPENDS=	renpy:${PORTSDIR}/devel/renpy
+RUN_DEPENDS=	renpy:devel/renpy
 
 USES=		tar:bz2
 NO_ARCH=	yes

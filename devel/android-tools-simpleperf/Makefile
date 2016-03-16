@@ -11,7 +11,7 @@ COMMENT=	Android simpleperf tool
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	llvm-config${LLVM_VER}:${PORTSDIR}/devel/llvm${LLVM_VER}
+BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	android:bionic,core jbeich
@@ -35,7 +35,7 @@ LLVM_VER?=	36 # XXX Move to DEFAULT_VERSIONS
 
 OPTIONS_DEFINE=	TEST
 
-TEST_BUILD_DEPENDS=	googletest>=1.6.0:${PORTSDIR}/devel/googletest
+TEST_BUILD_DEPENDS=	googletest>=1.6.0:devel/googletest
 TEST_ALL_TARGET=	simpleperf_test
 
 post-extract:
