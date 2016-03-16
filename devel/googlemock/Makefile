@@ -13,9 +13,9 @@ COMMENT=	Library for writing and using C++ mock classes
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_pthread.m4:${PORTSDIR}/devel/autoconf-archive \
-		googletest>=1.7.0:${PORTSDIR}/devel/googletest
-LIB_DEPENDS=	libgtest.so:${PORTSDIR}/devel/googletest
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_pthread.m4:devel/autoconf-archive \
+		googletest>=1.7.0:devel/googletest
+LIB_DEPENDS=	libgtest.so:devel/googletest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google

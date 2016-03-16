@@ -24,15 +24,15 @@ OPTIONS_RADIO_TLS=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	IDN OPENSSL
 OPTIONS_SUB=		yes
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ON=	--with-tls=gnutls
 GSASL_DESC=		${SASL_DESC} via GNU SASL
-GSASL_LIB_DEPENDS=	libgsasl.so:${PORTSDIR}/security/gsasl
+GSASL_LIB_DEPENDS=	libgsasl.so:security/gsasl
 GSASL_CONFIGURE_WITH=	libgsasl
-IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_WITH=	libidn
 LIBSECRET_DESC=		GNOME password management
-LIBSECRET_LIB_DEPENDS=	libsecret-1.so:${PORTSDIR}/security/libsecret
+LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CONFIGURE_WITH=	libsecret
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls

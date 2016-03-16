@@ -13,7 +13,7 @@ COMMENT=	ALSA compatibility library plugins
 
 LICENSE=	LGPL21+
 
-LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 GNU_CONFIGURE=	yes
 USES=		alias libtool:keepla localbase pkgconfig tar:bzip2
@@ -38,20 +38,20 @@ BLKCNT_P2_CFLAGS=-DFREEBSD_OSS_BLKCNT_P2
 BUFSZ_P2_CFLAGS=-DFREEBSD_OSS_BUFSZ_P2
 VERBOSE_CFLAGS=	-DFREEBSD_OSS_DEBUG_VERBOSE
 
-JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ENABLE=	jack
 JACK_IMPLIES=		SAMPLERATE
 
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENABLE=avcodec
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=pulseaudio
 
-SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENABLE=samplerate
 
-SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 SPEEX_CONFIGURE_ON=	--with-speex=lib
 SPEEX_CONFIGURE_OFF=	--without-speex
 

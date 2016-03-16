@@ -15,10 +15,10 @@ COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip \
-		libsnappy.so:${PORTSDIR}/archivers/snappy \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libzip.so:archivers/libzip \
+		libsnappy.so:archivers/snappy \
+		libavcodec.so:multimedia/ffmpeg
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard:DEFAULT,lang Kingcom:ext_armips
@@ -54,8 +54,8 @@ QT4_USE=	QT4=qmake_build,moc_build,rcc_build,uic_build,linguisttools_build,gui,o
 QT5_USES=	qmake:outsource
 QT5_USE=	QT5=qmake_build,buildtools_build,linguisttools_build,gui,opengl,widgets
 SDL_USES=	cmake:outsource ninja
-SDL_BUILD_DEPENDS=	png>=1.6:${PORTSDIR}/graphics/png
-SDL_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+SDL_BUILD_DEPENDS=	png>=1.6:graphics/png
+SDL_LIB_DEPENDS=	libpng.so:graphics/png
 SDL_VARS=	PORTDATA+="assets ${PORTNAME}"
 
 post-extract:
