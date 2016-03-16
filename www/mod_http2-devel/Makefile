@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_http2-devel
-PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTVERSION=	1.2.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -31,7 +30,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 post-install:
-	# Rename mod_http2 to the mod_h2 to avoid conflict with Apache24
+	# Rename mod_http2 to mod_h2 to avoid conflict with Apache24
 	${MV} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_http2.so.0.0.0 \
 		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
 	${RM} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_http2.so
