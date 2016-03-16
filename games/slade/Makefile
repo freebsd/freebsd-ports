@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	slade
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.1.1
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Modern editor for Doom-engine based games and source ports
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	libsfml-system.so:${PORTSDIR}/devel/sfml \
