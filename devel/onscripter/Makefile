@@ -10,9 +10,9 @@ COMMENT?=	Visual novel engine compatible with NScripter
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	sdl_ttf>=2.0.11_6:${PORTSDIR}/graphics/sdl_ttf
+LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg \
+		libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	sdl_ttf>=2.0.11_6:graphics/sdl_ttf
 
 USES=		gmake
 USE_SDL=	image mixer ttf

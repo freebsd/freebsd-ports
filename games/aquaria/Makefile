@@ -11,11 +11,11 @@ COMMENT=	Underwater 2D fantasy action-adventure (game engine)
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libftgl.so:${PORTSDIR}/graphics/ftgl \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtinyxml2.so:${PORTSDIR}/textproc/tinyxml2
+BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+		libftgl.so:graphics/ftgl \
+		libpng.so:graphics/png \
+		libtinyxml2.so:textproc/tinyxml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AquariaOSE
