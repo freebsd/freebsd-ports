@@ -579,6 +579,7 @@
     SUBDIR += maim
     SUBDIR += makehuman
     SUBDIR += mandelbulber
+    SUBDIR += mapcache
     SUBDIR += mapnik
     SUBDIR += mapserver
     SUBDIR += mapyrus
