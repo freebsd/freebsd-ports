@@ -3,15 +3,3 @@ bin/zebedee
 etc/server.zbd.sample
 man/man1/ftpgw.tcl.1.gz
 man/man1/zebedee.1.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/client1.key
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/client2.key
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clients.id
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.id
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.key
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vncserver.zbd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vncviewer.zbd
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENCE.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/ftpgw.tcl.html
-%%PORTDOCS%%%%DOCSDIR%%/zebedee.html
