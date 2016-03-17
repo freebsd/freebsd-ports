@@ -20,6 +20,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/n
 RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus \
 		nmap:${PORTSDIR}/security/nmap
 
+DEPRECATED=	Abandoned, consider using OpenVAS
+EXPIRATION_DATE=2016-09-30
+
 USES=		libtool
 WRKSRC=		${WRKDIR}/nessus-plugins
 
