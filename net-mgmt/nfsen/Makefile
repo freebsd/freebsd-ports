@@ -3,7 +3,7 @@
 
 PORTNAME=	nfsen
 PORTVERSION=	1.3.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 		http://nfsen.sourceforge.net/
