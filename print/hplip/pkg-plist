@@ -34,8 +34,6 @@ bin/hp-uninstall
 bin/hp-unload
 bin/hp-upgrade
 bin/hp-wificonfig
-%%FAX%%etc/cups/pstotiff.convs
-%%FAX%%etc/cups/pstotiff.types
 @sample etc/hp/hplip.conf.sample
 @comment etc/sane.d/dll.conf
 %%X11%%etc/xdg/autostart/hplip-systray.desktop
@@ -66,6 +64,8 @@ libexec/cups/filter/hpps
 libexec/cups/filter/pstotiff
 %%X11%%share/applications/hplip.desktop
 share/cups/drv/hpcups.drv
+%%FAX%%share/cups/mime/pstotiff.convs
+%%FAX%%share/cups/mime/pstotiff.types
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README_LIBJPG
 %%PORTDOCS%%%%DOCSDIR%%/commandline.html
