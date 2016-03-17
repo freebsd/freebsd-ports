@@ -1,6 +1,6 @@
 bin/gpgme-config
 bin/gpgme-tool
-include/gpgme/gpgme.h
+include/gpgme.h
 lib/common-lisp/gpgme/gpgme-package.lisp
 lib/common-lisp/gpgme/gpgme.asd
 lib/common-lisp/gpgme/gpgme.lisp

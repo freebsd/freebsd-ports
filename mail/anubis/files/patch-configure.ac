@@ -8,15 +8,6 @@
  
  AC_SUBST(ADD_INCLUDES)
  case $build in
-@@ -137,7 +136,7 @@
-  if test $gpgmedir; then
-   AC_DEFINE(HAVE_GPGME_H, 1, [Define to 1 if HAVE_GPGME_H is requested.])
-  else
--  AC_CHECK_HEADERS(gpgme.h)
-+  AC_CHECK_HEADERS(gpgme/gpgme.h)
-  fi
-  ANUBIS_GPGFILES='$(GPGFILES)'
-  M4_DEFS="$M4_DEFS -DWITH_GPG"
 @@ -179,11 +178,21 @@
      ANUBIS_BIN_ADM='$(adm_bin_programs)'
      M4_DEFS="$M4_DEFS -DWITH_GSASL"

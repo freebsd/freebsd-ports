@@ -54,7 +54,6 @@ CONFIGURE_ARGS+=--without-libcurl
 .if ${PORT_OPTIONS:MGPGME}
 CONFIGURE_ARGS+=--with-gpgme
 LIB_DEPENDS+=	libgpgme.so:${PORTSDIR}/security/gpgme
-CFLAGS+=	-I${LOCALBASE}/include/gpgme
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
