@@ -5,7 +5,7 @@ PORTNAME=	libbson
 PORTVERSION=	1.3.4
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@bsdserwis.com
 COMMENT=	BSON utility library
 
 LICENSE=	APACHE20
