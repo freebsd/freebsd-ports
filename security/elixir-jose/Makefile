@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jose
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	security
 PKGNAMEPREFIX=	elixir-
 
