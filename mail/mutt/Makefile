@@ -111,7 +111,7 @@ OPTIONS_DEFAULT=	COMPRESSED_FOLDERS HTML ICONV IDN IFDEF_PATCH \
 RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 .if !defined (LITE)
-RUN_DEPENDS+=	${LOCALBASE}/etc/mailcap:${PORTSDIR}/mail/metamail
+RUN_DEPENDS+=	${LOCALBASE}/etc/mailcap.sample:${PORTSDIR}/mail/metamail
 ASPELL_BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 ASPELL_RUN_DEPENDS=		aspell:${PORTSDIR}/textproc/aspell
 ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
