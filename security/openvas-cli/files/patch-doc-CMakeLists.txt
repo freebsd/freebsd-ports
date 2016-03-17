@@ -1,0 +1,8 @@
+--- doc/CMakeLists.txt.orig	2015-10-12 12:46:59 UTC
++++ doc/CMakeLists.txt
+@@ -97,4 +97,4 @@ else (XMLMANTOHTML_EXECUTABLE)
+ endif (XMLMANTOHTML_EXECUTABLE)
+ 
+ install (FILES omp.8
+-  DESTINATION ${DATADIR}/man/man8 )
++  DESTINATION man/man8 )

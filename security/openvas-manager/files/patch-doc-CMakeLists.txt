@@ -1,0 +1,9 @@
+--- doc/CMakeLists.txt.orig	2015-08-03 05:52:11 UTC
++++ doc/CMakeLists.txt
+@@ -164,5 +164,5 @@ install (FILES omp.html
+          COMPONENT doc)
+ 
+ install (FILES openvasmd.8
+-  DESTINATION share/man/man8/
++  DESTINATION man/man8/
+   COMPONENT doc)

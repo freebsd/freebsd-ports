@@ -1,0 +1,24 @@
+--- tools/greenbone-nvt-sync.in.orig	2015-08-03 10:14:44 UTC
++++ tools/greenbone-nvt-sync.in
+@@ -279,7 +279,7 @@ sync_nvts(){
+       log_err "rsync failed, aborting synchronization."
+       exit 1
+     fi
+-    eval "cd \"$NVT_DIR\" ; md5sum -c --status \"$NVT_DIR/md5sums\""
++    eval "cd \"$NVT_DIR\" ; xargs -n 2 md5 -c < \"$NVT_DIR/md5sums\" > /dev/null"
+     if [ $? -ne 0 ]  ; then
+       if [ -n "$retried" ]
+       then
+@@ -351,10 +351,10 @@ do_self_test ()
+     SELFTEST_FAIL=1
+     stderr_write "The rsync binary could not be found."
+   fi
+-  MD5SUM_AVAIL=`command -v md5sum`
++  MD5SUM_AVAIL=`command -v md5`
+   if [ $? -ne 0 ] ; then
+     SELFTEST_FAIL=1
+-    stderr_write "The md5sum binary could not be found."
++    stderr_write "The md5 binary could not be found."
+   fi
+   if [ ! -s $ACCESS_KEY ] ; then
+     SELFTEST_FAIL=1
