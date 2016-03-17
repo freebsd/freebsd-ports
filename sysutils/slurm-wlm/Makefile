@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-PORTVERSION=	14.11.9
+PORTVERSION=	15.08.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
