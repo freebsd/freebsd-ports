@@ -176,6 +176,7 @@
     SUBDIR += gpgdir
     SUBDIR += gpgme
     SUBDIR += gputty
+    SUBDIR += greenbone-security-assistant
     SUBDIR += gringotts
     SUBDIR += gsasl
     SUBDIR += gsfv
@@ -411,11 +412,10 @@
     SUBDIR += openssl
     SUBDIR += openssl-devel
     SUBDIR += openssl_tpm_engine
-    SUBDIR += openvas-client
-    SUBDIR += openvas-libnasl
+    SUBDIR += openvas-cli
     SUBDIR += openvas-libraries
-    SUBDIR += openvas-plugins
-    SUBDIR += openvas-server
+    SUBDIR += openvas-manager
+    SUBDIR += openvas-scanner
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
     SUBDIR += openvpn-auth-ldap

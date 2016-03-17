@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160317:
+  AFFECTS: security/openvas-client
+  AUTHOR: tijl@FreeBSD.org
+
+  The OpenVAS ports have been updated from version 2 to version 8.  All
+  components have been renamed and rearranged.  The old OpenVAS client
+  no longer exists.  Instead there is a web interface provided by
+  security/greenbone-security-assistant or a command-line interface
+  provided by security/openvas-cli.
+
 20160311:
   AFFECTS: print/hplip
   AUTHOR: tijl@FreeBSD.org
