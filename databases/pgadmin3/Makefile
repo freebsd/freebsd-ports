@@ -15,11 +15,13 @@ LICENSE=	PostgreSQL
 
 BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
-USES=		gettext gmake pgsql:9.0+
+USES=		compiler:c++11-lib gettext gmake pgsql:9.0+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-version=${USE_WX} --enable-databasedesigner
+CXXFLAGS=	-Wno-c++11-narrowing
 USE_GNOME=	libxml2 libxslt
 USE_WX=		3.0
+USE_CXXSTD=	c++11
 WX_COMPS=	wx
 ICON_SIZES=	16 32
 
