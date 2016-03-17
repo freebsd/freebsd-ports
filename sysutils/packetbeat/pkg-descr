@@ -1,0 +1,12 @@
+Beats is the platform for building lightweight, open source data
+shippers for many types of operational data you want to enrich with
+Logstash, search and analyze in Elasticsearch, and visualize in Kibana.
+Whether you're interested in log files, infrastructure metrics, network
+packets, or any other type of data, Beats serves as the foundation for
+keeping a beat on your data.
+
+Packetbeat is the open source data shipper that integrates with
+Elasticsearch and Kibana to provide real-time analytics for web,
+database, and other network protocols.
+
+WWW: https://www.elastic.co/products/beats/packetbeat

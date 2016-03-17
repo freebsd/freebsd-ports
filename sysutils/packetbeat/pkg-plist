@@ -1,0 +1,2 @@
+sbin/packetbeat
+@sample etc/packetbeat.yml.sample
