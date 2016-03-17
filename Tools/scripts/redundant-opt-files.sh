@@ -9,6 +9,12 @@
 # deleted in order to prevent future configuration check failures.
 
 portsdir=${PORTSDIR:-/usr/ports}
+if [ ! -d "${portsdir}" ]; then
+   echo "The ${portsdir} ports directory does not exist"
+   echo "There is nothing more to do."
+   exit
+fi
+
 db_dir=$(/usr/bin/make -C ${portsdir}/devel/gmake -V PORT_DBDIR 2>/dev/null)
 
 if [ ! -d "${db_dir}" ]; then
