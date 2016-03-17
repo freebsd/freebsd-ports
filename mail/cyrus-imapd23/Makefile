@@ -190,4 +190,10 @@ post-install-EXAMPLES-on:
 	cd ${WRKSRC}/master/conf && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR}
 
+post-install-EXAMPLES-off:
+	${INSTALL_DATA} ${WRKSRC}/master/conf/normal.conf \
+		${STAGEDIR}${EXAMPLESDIR}
+	@${ECHO_CMD} ${EXAMPLESDIR}/imapd.conf >> ${TMPPLIST}
+	@${ECHO_CMD} ${EXAMPLESDIR}/normal.conf >> ${TMPPLIST}
+
 .include <bsd.port.mk>
