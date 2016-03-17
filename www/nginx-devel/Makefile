@@ -87,6 +87,7 @@ OPTIONS_DEFINE=	\
 	HTTP_UPLOAD_PROGRESS \
 	HTTP_UPSTREAM_FAIR \
 	HTTP_UPSTREAM_STICKY \
+	HTTP_VIDEO_THUMBEXTRACTOR \
 	HTTP_ZIP \
 	ARRAYVAR \
 	BROTLI \
@@ -188,6 +189,7 @@ HTTP_UPLOAD_DESC=		3rd party upload module
 HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
 HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
 HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
+HTTP_VIDEO_THUMBEXTRACTOR_DESC=	3rd party video_thumbextractor module
 HTTP_ZIP_DESC=			3rd party http_zip module
 ARRAYVAR_DESC=			3rd party array_var module
 BROTLI_DESC=			3rd party brotli module
@@ -620,6 +622,21 @@ NGINX_UPSTREAM_STICKY_VERSION=	1.2.4
 MASTER_SITES+=	https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng/get/:upstreamsticky
 DISTFILES+=	${NGINX_UPSTREAM_STICKY_VERSION}.tar.gz:upstreamsticky
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-goodies-nginx-sticky-module-ng-c825ea7c5c91/
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_VIDEO_THUMBEXTRACTOR}
+NGINX_VIDEO_THUMBEXTRACTOR_VERSION=	0.7.0
+LIB_DEPENDS+= 	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libavutil.so:${PORTSDIR}/multimedia/ffmpeg \
+		libswscale.so:${PORTSDIR}/multimedia/ffmpeg \
+		libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+GH_ACCOUNT+=	wandenberg:vte
+GH_PROJECT+=	nginx-video-thumbextractor-module:vte
+GH_TAGNAME+=	${NGINX_VIDEO_THUMBEXTRACTOR_VERSION}:vte
+CONFIGURE_ARGS+=--add-module=${WRKSRC_vte} --with-cc-opt="-I ${LOCALBASE}/include \
+		-I ${LOCALBASE}/include/ImageMagick"
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_XSLT}
