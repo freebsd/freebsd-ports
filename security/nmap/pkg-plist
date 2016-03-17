@@ -122,6 +122,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/lfs.luadoc
 %%DATADIR%%/nselib/listop.lua
 %%DATADIR%%/nselib/lpeg-utility.lua
+%%DATADIR%%/nselib/lpeg.luadoc
 %%DATADIR%%/nselib/ls.lua
 %%DATADIR%%/nselib/match.lua
 %%DATADIR%%/nselib/membase.lua
@@ -131,6 +132,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/msrpcperformance.lua
 %%DATADIR%%/nselib/msrpctypes.lua
 %%DATADIR%%/nselib/mssql.lua
+%%DATADIR%%/nselib/multicast.lua
 %%DATADIR%%/nselib/mysql.lua
 %%DATADIR%%/nselib/natpmp.lua
 %%DATADIR%%/nselib/ncp.lua
@@ -331,6 +333,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-adobe-coldfusion-apsa1301.nse
 %%DATADIR%%/scripts/http-affiliate-id.nse
 %%DATADIR%%/scripts/http-apache-negotiation.nse
+%%DATADIR%%/scripts/http-apache-server-status.nse
 %%DATADIR%%/scripts/http-auth-finder.nse
 %%DATADIR%%/scripts/http-auth.nse
 %%DATADIR%%/scripts/http-avaya-ipoffice-users.nse
@@ -428,11 +431,13 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-vuln-cve2011-3368.nse
 %%DATADIR%%/scripts/http-vuln-cve2012-1823.nse
 %%DATADIR%%/scripts/http-vuln-cve2013-0156.nse
+%%DATADIR%%/scripts/http-vuln-cve2013-6786.nse
 %%DATADIR%%/scripts/http-vuln-cve2013-7091.nse
 %%DATADIR%%/scripts/http-vuln-cve2014-2126.nse
 %%DATADIR%%/scripts/http-vuln-cve2014-2127.nse
 %%DATADIR%%/scripts/http-vuln-cve2014-2128.nse
 %%DATADIR%%/scripts/http-vuln-cve2014-2129.nse
+%%DATADIR%%/scripts/http-vuln-cve2014-3704.nse
 %%DATADIR%%/scripts/http-vuln-cve2014-8877.nse
 %%DATADIR%%/scripts/http-vuln-cve2015-1427.nse
 %%DATADIR%%/scripts/http-vuln-cve2015-1635.nse
@@ -451,6 +456,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/ike-version.nse
 %%DATADIR%%/scripts/imap-brute.nse
 %%DATADIR%%/scripts/imap-capabilities.nse
+%%DATADIR%%/scripts/imap-ntlm-info.nse
 %%DATADIR%%/scripts/informix-brute.nse
 %%DATADIR%%/scripts/informix-query.nse
 %%DATADIR%%/scripts/informix-tables.nse
@@ -461,6 +467,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/ip-geolocation-maxmind.nse
 %%DATADIR%%/scripts/ip-https-discover.nse
 %%DATADIR%%/scripts/ipidseq.nse
+%%DATADIR%%/scripts/ipv6-multicast-mld-list.nse
 %%DATADIR%%/scripts/ipv6-node-info.nse
 %%DATADIR%%/scripts/ipv6-ra-flood.nse
 %%DATADIR%%/scripts/irc-botnet-channels.nse
@@ -508,6 +515,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/ms-sql-empty-password.nse
 %%DATADIR%%/scripts/ms-sql-hasdbaccess.nse
 %%DATADIR%%/scripts/ms-sql-info.nse
+%%DATADIR%%/scripts/ms-sql-ntlm-info.nse
 %%DATADIR%%/scripts/ms-sql-query.nse
 %%DATADIR%%/scripts/ms-sql-tables.nse
 %%DATADIR%%/scripts/ms-sql-xp-cmdshell.nse
@@ -543,6 +551,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/nfs-showmount.nse
 %%DATADIR%%/scripts/nfs-statfs.nse
 %%DATADIR%%/scripts/nje-node-brute.nse
+%%DATADIR%%/scripts/nntp-ntlm-info.nse
 %%DATADIR%%/scripts/nping-brute.nse
 %%DATADIR%%/scripts/nrpe-enum.nse
 %%DATADIR%%/scripts/ntp-info.nse
@@ -564,6 +573,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/pjl-ready-message.nse
 %%DATADIR%%/scripts/pop3-brute.nse
 %%DATADIR%%/scripts/pop3-capabilities.nse
+%%DATADIR%%/scripts/pop3-ntlm-info.nse
 %%DATADIR%%/scripts/pptp-version.nse
 %%DATADIR%%/scripts/qconn-exec.nse
 %%DATADIR%%/scripts/qscan.nse
@@ -591,10 +601,12 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/rsync-list-modules.nse
 %%DATADIR%%/scripts/rtsp-methods.nse
 %%DATADIR%%/scripts/rtsp-url-brute.nse
+%%DATADIR%%/scripts/rusers.nse
 %%DATADIR%%/scripts/s7-info.nse
 %%DATADIR%%/scripts/samba-vuln-cve-2012-1182.nse
 %%DATADIR%%/scripts/script.db
 %%DATADIR%%/scripts/servicetags.nse
+%%DATADIR%%/scripts/shodan-api.nse
 %%DATADIR%%/scripts/sip-brute.nse
 %%DATADIR%%/scripts/sip-call-spoof.nse
 %%DATADIR%%/scripts/sip-enum-users.nse
@@ -628,6 +640,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/smtp-brute.nse
 %%DATADIR%%/scripts/smtp-commands.nse
 %%DATADIR%%/scripts/smtp-enum-users.nse
+%%DATADIR%%/scripts/smtp-ntlm-info.nse
 %%DATADIR%%/scripts/smtp-open-relay.nse
 %%DATADIR%%/scripts/smtp-strangeport.nse
 %%DATADIR%%/scripts/smtp-vuln-cve2010-4344.nse
@@ -681,6 +694,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/teamspeak2-version.nse
 %%DATADIR%%/scripts/telnet-brute.nse
 %%DATADIR%%/scripts/telnet-encryption.nse
+%%DATADIR%%/scripts/telnet-ntlm-info.nse
 %%DATADIR%%/scripts/tftp-enum.nse
 %%DATADIR%%/scripts/tls-nextprotoneg.nse
 %%DATADIR%%/scripts/tor-consensus-checker.nse
