@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	super_mediator
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
