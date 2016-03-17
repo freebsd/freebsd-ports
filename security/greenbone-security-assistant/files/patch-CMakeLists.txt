@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2016-02-03 09:07:18 UTC
++++ CMakeLists.txt
+@@ -214,7 +214,7 @@ if (NOT LIBDIR)
+ endif (NOT LIBDIR)
+ 
+ if (NOT LOCALSTATEDIR)
+-  set (LOCALSTATEDIR "${CMAKE_INSTALL_PREFIX}/var")
++  set (LOCALSTATEDIR "/var")
+ endif (NOT LOCALSTATEDIR)
+ 
+ if (NOT INCLUDEDIR)
+@@ -487,7 +487,7 @@ install (FILES ${CMAKE_CURRENT_BINARY_DI
+ 
+ ## Program
+ 
+-set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
++set (HARDENING_FLAGS            "-Wformat -Wformat-security -Wl,-z,relro -Wl,-z,now")
+ 
+ set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")
+ set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall")
