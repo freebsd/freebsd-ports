@@ -23,14 +23,11 @@ PYDISTUTILS_PKGNAME=pygpgme
 
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-	@${REINPLACE_CMD} -e 's,gpgme-config,${PREFIX}/bin/&,' \
+	@${REINPLACE_CMD} 's,gpgme-config,${LOCALBASE}/bin/&,' \
 		${WRKSRC}/Makefile ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e 's,include/,&gpgme/,' ${WRKSRC}/Makefile
 
 pre-build:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} build
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

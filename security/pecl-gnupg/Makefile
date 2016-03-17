@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 
-CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include/gpgme
+CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include
 IGNORE_WITH_PHP=70
 USE_PHP=	yes
 USE_PHPEXT=	yes
