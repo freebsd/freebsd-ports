@@ -4,12 +4,10 @@
 PORTNAME=	dbeacon
 PORTVERSION=	0.3.9.1
 CATEGORIES=	net
-MASTER_SITES=	http://fivebits.net/files/dbeacon/
+MASTER_SITES=	http://BSDforge.com/projects/source/net/dbeacon/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Distributed multicast beacon server
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2+
 
