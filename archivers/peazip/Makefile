@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	peazip
-PORTVERSION=	5.9.1
+PORTVERSION=	6.0.0
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -23,7 +23,7 @@ DOS2UNIX_REGEX=		.*\.([txt]|pas|lpi|txt)
 LAZARUS_PROJECT_FILES=	project_pea.lpi project_peach.lpi project_gwrap.lpi
 LAZBUILD_CMD=		${LOCALBASE}/bin/lazbuild -d
 LCL_UNITS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
-LAZARUS_VER=		1.6RC2
+LAZARUS_VER=		1.6.0
 LAZARUS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 ARCHIVER_FILES=		#
 
@@ -40,7 +40,7 @@ QT4_DESC=		Use qt4 interface
 
 OPTIONS_DEFAULT=	GTK2 7Z
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
@@ -112,4 +112,4 @@ do-install:
 		${INSTALL_DATA} peazip.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_SCRIPT} ${WRKDIR}/pea ${WRKDIR}/pealauncher ${WRKDIR}/peazip ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
