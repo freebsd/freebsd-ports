@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2014-09-21 14:50:21.000000000 +0200
-+++ CMakeLists.txt	2014-09-21 14:56:31.000000000 +0200
-@@ -56,7 +56,7 @@
- ADD_SUBDIRECTORY(eio)
- ADD_SUBDIRECTORY(matc)
+--- CMakeLists.txt.orig	2015-08-18 12:26:58 UTC
++++ CMakeLists.txt
+@@ -248,7 +248,7 @@ ADD_SUBDIRECTORY(umfpack)
+ ADD_SUBDIRECTORY(fhutiter)
+ ADD_SUBDIRECTORY(meshgen2d)
  ADD_SUBDIRECTORY(fem)
 -ADD_SUBDIRECTORY(mathlibs)
 +#ADD_SUBDIRECTORY(mathlibs)
  ADD_SUBDIRECTORY(elmergrid)
+ ADD_SUBDIRECTORY(license_texts)
  
- MESSAGE(STATUS "------------------------------------------------")

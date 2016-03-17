@@ -1,6 +1,6 @@
---- matc/src/CMakeLists.txt.orig	2014-09-25 15:07:43.000000000 +0200
-+++ matc/src/CMakeLists.txt	2014-09-30 22:27:34.000000000 +0200
-@@ -12,7 +12,7 @@
+--- matc/src/CMakeLists.txt.orig	2015-08-18 12:26:58 UTC
++++ matc/src/CMakeLists.txt
+@@ -12,7 +12,7 @@ TARGET_LINK_LIBRARIES(Matc_bin matc)
  
  SET_TARGET_PROPERTIES(Matc_bin PROPERTIES OUTPUT_NAME matc)
  IF(NOT(WIN32))
