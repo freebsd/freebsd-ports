@@ -1,6 +1,6 @@
---- fem/src/CMakeLists.txt.orig	2014-09-25 15:07:43.000000000 +0200
-+++ fem/src/CMakeLists.txt	2014-10-06 23:29:26.000000000 +0200
-@@ -117,9 +117,9 @@
+--- fem/src/CMakeLists.txt.orig	2015-08-18 12:26:58 UTC
++++ fem/src/CMakeLists.txt
+@@ -131,9 +131,9 @@ ENDIF()
  
  
  ADD_EXECUTABLE(Solver_TGT Solver.F90)
@@ -12,7 +12,7 @@
  ENDIF()
  
  IF(NOT(WITH_MPI))
-@@ -214,7 +214,7 @@
+@@ -229,7 +229,7 @@ TARGET_LINK_LIBRARIES(ViewFactors ${ELME
  INSTALL(TARGETS ViewFactors RUNTIME DESTINATION "bin")
  
  IF(NOT(WIN32))
@@ -21,7 +21,7 @@
  ENDIF()
  
  # GebhardFactors
-@@ -223,7 +223,7 @@
+@@ -238,7 +238,7 @@ TARGET_LINK_LIBRARIES(GebhardtFactors ${
                                        mpi_stubs elmersolver)
  
  IF(NOT(WIN32))
@@ -30,17 +30,17 @@
  ENDIF()
  
  IF(WITH_Trilinos)
-@@ -267,9 +267,10 @@
+@@ -282,9 +282,10 @@ INSTALL(DIRECTORY ${CMAKE_Fortran_MODULE
  
  IF(WITH_MPI)
    IF(NOT(WIN32))
--    INSTALL(CODE "EXECUTE_PROCESS(COMMAND \${CMAKE_COMMAND} -E create_symlink
--    \${CMAKE_INSTALL_PREFIX}/bin/ElmerSolver_mpi
--    \${CMAKE_INSTALL_PREFIX}/bin/ElmerSolver)")
-+    # Create symlink after, to repect STAGEDIR
-+    #INSTALL(CODE "EXECUTE_PROCESS(COMMAND \${CMAKE_COMMAND} -E create_symlink
-+    #\${CMAKE_INSTALL_PREFIX}/bin/ElmerSolver_mpi
-+    #\${CMAKE_INSTALL_PREFIX}/bin/ElmerSolver)")
+-    INSTALL(CODE "
+-    EXECUTE_PROCESS(COMMAND \${CMAKE_COMMAND} -E create_symlink ElmerSolver_mpi ElmerSolver
+-    WORKING_DIRECTORY \${CMAKE_INSTALL_PREFIX}/bin)")
++    # Create symlink after, to respect STAGEDIR
++    #INSTALL(CODE "
++    #EXECUTE_PROCESS(COMMAND \${CMAKE_COMMAND} -E create_symlink ElmerSolver_mpi ElmerSolver
++    #WORKING_DIRECTORY \${CMAKE_INSTALL_PREFIX}/bin)")
    ELSE()
      INSTALL(CODE "EXECUTE_PROCESS(COMMAND \${CMAKE_COMMAND} -E copy
      \${CMAKE_INSTALL_PREFIX}/bin/ElmerSolver_mpi.exe
