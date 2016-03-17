@@ -6,6 +6,15 @@
 # See the slurm.conf man page for more information.
 #
 
+# NOTE: The parent directories for Slurm's log files, process ID
+# files, state save directories, etc. are not created by Slurm. They
+# must be created and made writable by the slurm user as needed prior to
+# starting Slurm daemons.
+#
+# If you keep the configuration directives below, you should create
+# the directories /var/log/slurm/, /var/run/slurm/, and
+# /var/spool/slurmd and make them owned and writable by the slurm user. 
+
 AuthType=auth/munge
 #BackupAddr=
 #BackupController=
@@ -75,9 +84,9 @@ SelectType=select/linear
 #JobCompLoc=
 JobCompType=jobcomp/none
 SlurmctldDebug=3
-SlurmctldLogFile=/var/log/slurmctld.log
+SlurmctldLogFile=/var/log/slurm/slurmctld.log
 SlurmdDebug=3
-SlurmdLogFile=/var/log/slurmd.log
+SlurmdLogFile=/var/log/slurm/slurmd.log
 
 # ACCOUNTING
 #AccountingStorageHost=
