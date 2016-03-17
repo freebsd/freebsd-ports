@@ -3,6 +3,7 @@
 
 PORTNAME=	spice-gtk
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES?=	deskutils gnome
 MASTER_SITES=	http://www.spice-space.org/download/gtk/
 
@@ -18,6 +19,7 @@ CPE_VENDOR=	redhat
 
 BUILD_DEPENDS=	spice-protocol>=0.12.10:${PORTSDIR}/devel/spice-protocol \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:${PORTSDIR}/devel/py-pyparsing
+RUN_DEPENDS=	spice-protocol>=0.12.10:${PORTSDIR}/devel/spice-protocol
 
 .if defined(SPICE_SLAVE)
 PORTREVISION=	1
