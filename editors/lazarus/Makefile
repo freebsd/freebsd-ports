@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lazarus
-PORTVERSION=	1.6RC2
+PORTVERSION=	1.6.0
 DISTVERSIONSUFFIX=	-0
 PORTREVISION?=	0
 CATEGORIES=	editors devel
@@ -20,9 +20,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		gmake
 USE_GNOME=	#
-USE_FPC?=	cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json \
-		fcl-registry fcl-res fcl-xml gtk2 ibase iconvenc rtl-extra \
-		mysql numlib odbc oracle pasjpeg postgres sqlite x11
+USE_FPC?=	cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-net \
+		fcl-registry fcl-res fcl-web fcl-xml gtk2 ibase iconvenc rtl-extra \
+		mysql numlib odbc openssl oracle pasjpeg postgres sqlite x11
 OPT?=		"-Sgic "
 
 MAKE_ENV=	OPT=${OPT}
