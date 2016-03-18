@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2015-07-11 10:02:22 UTC
-+++ src/Makefile.in
-@@ -1118,8 +1118,7 @@ audacity_CPPFLAGS = -D__STDC_CONSTANT_MA
+--- src/Makefile.am.orig	2016-01-08 22:05:48 UTC
++++ src/Makefile.am
+@@ -75,8 +75,7 @@ audacity_CPPFLAGS = \
  #  /usr/local/include/wx-2.8/wx/buffer.h:289:9: note: in expansion of macro 'wxCHECK_RET'
  #           wxCHECK_RET( m_bufdata->m_data, wxT("invalid wxMemoryBuffer") );
  #           ^
@@ -9,4 +9,4 @@
 +audacity_CXXFLAGS =
  
  audacity_LDFLAGS = -rdynamic
- audacity_LDADD = $(EXPAT_LIBS) $(FILEDIALOG_LIBS) $(PORTAUDIO_LIBS) \
+ audacity_LDADD = \
