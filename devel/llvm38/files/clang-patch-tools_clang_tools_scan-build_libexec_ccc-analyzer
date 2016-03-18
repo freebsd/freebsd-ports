@@ -7,7 +7,7 @@ $FreeBSD$
    if (-x "/usr/bin/xcrun") {
      $UseXCRUN = 1;
    }
-+} elsif (`uname -s` == "FreeBSD") {
++} elsif (`uname -s` eq "FreeBSD\n") {
 +  $DefaultCCompiler = 'cc';
 +  $DefaultCXXCompiler = 'c++';
  } else {
