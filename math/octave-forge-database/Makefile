@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-database
-PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -20,7 +19,6 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 GNU_CONFIGURE=	yes
 USES+=		pgsql
-ALL_TARGET=
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
