@@ -1,5 +1,5 @@
---- include/radius/radutmp.h.orig	2009-05-07 22:24:02.000000000 +0200
-+++ include/radius/radutmp.h	2009-05-07 22:24:45.000000000 +0200
+--- include/radius/radutmp.h.orig	2008-12-15 08:03:24 UTC
++++ include/radius/radutmp.h
 @@ -30,7 +30,7 @@
  #define P_ACCT_ENABLED  131
  

@@ -2,7 +2,7 @@
 
 # $FreeBSD$
 #
-# PROVIDE radiusd
+# PROVIDE: radiusd
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON
 # KEYWORD: shutdown
