@@ -7,7 +7,7 @@ PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	Tools and library routines for working with GIF images
 
 CONFLICTS=	libungif-[0-9]*

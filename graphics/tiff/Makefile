@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://download.osgeo.org/libtiff/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
 
 LICENSE=	BSD3CLAUSE
