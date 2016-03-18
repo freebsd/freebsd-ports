@@ -2,9 +2,9 @@ bin/sudo
 bin/sudoedit
 bin/sudoreplay
 @sample etc/sudoers.sample
-@unexec if cmp -s %D/etc/pam.d/sudo.default %D/etc/pam.d/sudo; then rm -f %D/etc/pam.d/sudo ; fi
+@preunexec if cmp -s %D/etc/pam.d/sudo.default %D/etc/pam.d/sudo; then rm -f %D/etc/pam.d/sudo ; fi
 etc/pam.d/sudo.default
-@exec if [ ! -f %D/etc/pam.d/sudo ] ; then cp -p %D/%F %B/sudo; fi
+@postexec if [ ! -f %D/etc/pam.d/sudo ] ; then cp -p %D/%F %B/sudo; fi
 include/sudo_plugin.h
 libexec/sudo/group_file.so
 libexec/sudo/libsudo_util.so
@@ -60,6 +60,7 @@ sbin/visudo
 %%NLS%%share/locale/gl/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sudoers.mo
