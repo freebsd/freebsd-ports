@@ -1,11 +1,11 @@
-# Created by: Jeffrey Baitis <baitisj@pcbsd.org>
+# Created by: Jeffrey Baitis <jeff@baitis.net>
 # $FreeBSD$
 
 PORTNAME=	libsdr-gui
 PORTVERSION=	0.1.0
 CATEGORIES=	comms hamradio
 
-MAINTAINER=	baitisj@pcbsd.org
+MAINTAINER=	jeff@baitis.net
 COMMENT=	GUI functions (e.g. waterfall) for libsdr library
 
 LICENSE=	GPLv2
