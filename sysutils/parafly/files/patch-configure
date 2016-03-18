@@ -1,0 +1,11 @@
+--- configure.orig	2013-01-22 01:21:10 UTC
++++ configure
+@@ -3016,7 +3016,7 @@ fi
+ 
+ 
+ #AC_OPENMP # requires autoconf >= 2.62
+-AM_CXXFLAGS=-m64
++#AM_CXXFLAGS=-m64
+ 
+ case $CXX in
+   g++*) AM_CXXFLAGS="-pedantic -fopenmp -Wall -Wextra -Wno-long-long -Wno-deprecated $AM_CXXFLAGS"

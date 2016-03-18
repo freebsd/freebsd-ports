@@ -699,6 +699,7 @@
     SUBDIR += paicc
     SUBDIR += pam_mount
     SUBDIR += panicmail
+    SUBDIR += parafly
     SUBDIR += parallel
     SUBDIR += password-store
     SUBDIR += patchelf
