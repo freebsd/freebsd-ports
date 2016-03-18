@@ -78,6 +78,12 @@ PLIST_SUB+=	OVERWRITE=""
 PLIST_SUB+=	OVERWRITE="@comment "
 .endif
 
+.if exists(/usr/lib/libusb.so)
+PLIST_SUB+=	USB=""
+.else
+PLIST_SUB+=	USB="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB)
