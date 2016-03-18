@@ -1,6 +1,6 @@
---- radiusd/builddbm.c.orig	2008-12-08 14:22:12.000000000 +0100
-+++ radiusd/builddbm.c	2008-12-08 14:22:37.000000000 +0100
-@@ -58,7 +58,7 @@
+--- radiusd/builddbm.c.orig	2008-12-15 08:03:24 UTC
++++ radiusd/builddbm.c
+@@ -58,7 +58,7 @@ append_symbol(DBM_closure *closure, User
  
          if (2 + check_len + reply_len > closure->pair_buffer_size) {
                  grad_log(GRAD_LOG_ERR, "%s:%d: %s",
