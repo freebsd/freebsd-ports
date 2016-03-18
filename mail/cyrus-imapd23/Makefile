@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.3.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 PKGNAMESUFFIX=	23
@@ -107,7 +107,6 @@ DRAC_USE=	AUTOTOOLS=autoconf,autoheader
 MANDIRS=	${CYRUS_PREFIX}/man
 
 PORTDOCS=	*
-PORTEXAMPLES=	*
 
 SUB_FILES=	pkg-message pkg-install pkg-deinstall cyrus-imapd-man.conf
 
@@ -131,6 +130,9 @@ CYRUS_MAN8=	arbitron chk_cyrus ctl_cyrusdb ctl_deliver ctl_mboxlist \
 CYRUS_PERL_MAN1=cyradm
 CYRUS_PERL_MAN3=Cyrus::IMAP Cyrus::IMAP::Admin Cyrus::IMAP::IMSP \
 		Cyrus::IMAP::Shell Cyrus::SIEVE::managesieve
+
+CONFS=		cmu-backend.conf cmu-frontend.conf normal.conf prefork.conf \
+		small.conf
 
 .include <bsd.port.options.mk>
 
@@ -157,7 +159,10 @@ post-patch-DRAC-on:
 	@${RM} -rf ${WRKSRC}/autom4te.cache
 
 post-install:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/imapd.conf \
+		${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/master/conf/normal.conf \
 		${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
 		${STAGEDIR}${CYRUS_PREFIX}/bin/mkimap
@@ -182,18 +187,18 @@ post-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
-		"! ( -name Makefile.dist -o -name Makefile -o -name .cvsignore )"
+		"! ( -name Makefile.dist -o -name Makefile \
+		-o -name .cvsignore -o -name htmlstrip.c )"
 
 # There are already files in EXAMPLESDIR at that point, so no
 # need to create it.
 post-install-EXAMPLES-on:
-	cd ${WRKSRC}/master/conf && ${COPYTREE_SHARE} . \
+.for f in ${CONFS}
+.if ${f} != normal.conf
+	@${INSTALL_DATA} ${WRKSRC}/master/conf/${f} \
 		${STAGEDIR}${EXAMPLESDIR}
-
-post-install-EXAMPLES-off:
-	${INSTALL_DATA} ${WRKSRC}/master/conf/normal.conf \
-		${STAGEDIR}${EXAMPLESDIR}
-	@${ECHO_CMD} ${EXAMPLESDIR}/imapd.conf >> ${TMPPLIST}
-	@${ECHO_CMD} ${EXAMPLESDIR}/normal.conf >> ${TMPPLIST}
+	@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
+.endif
+.endfor
 
 .include <bsd.port.mk>
