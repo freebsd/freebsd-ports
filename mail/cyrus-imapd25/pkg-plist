@@ -137,3 +137,5 @@ lib/libcyrus_sieve.so.0.0.0
 libdata/pkgconfig/libcyrus.pc
 libdata/pkgconfig/libcyrus_min.pc
 libdata/pkgconfig/libcyrus_sieve.pc
+@sample %%EXAMPLESDIR%%/imapd.conf etc/imapd.conf
+@sample %%EXAMPLESDIR%%/normal.conf etc/cyrus.conf
