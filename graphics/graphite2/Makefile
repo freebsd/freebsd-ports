@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	graphite2
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/silgraphite/${PORTNAME}
-DISTFILES=	graphite-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Rendering capabilities for complex non-Roman writing systems
