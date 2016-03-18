@@ -11,17 +11,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for analysing HTTP and HTTPS web application traffic
 
 USES=		zip
-USE_JAVA=	YES
+USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}-1304
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 PORTDOCS=	README LICENSE ChangeLog
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 	${RM} ${WRKSRC}/lib/W32WinInet.dll
@@ -33,14 +32,16 @@ pre-install:
 		< ${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/lib
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}_lite
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.       for i in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.       endfor
 
-.include <bsd.port.post.mk>
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.endfor
+
+.include <bsd.port.mk>
