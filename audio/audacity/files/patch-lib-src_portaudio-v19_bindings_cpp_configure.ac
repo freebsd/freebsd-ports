@@ -1,0 +1,11 @@
+--- lib-src/portaudio-v19/bindings/cpp/configure.ac.orig	2016-01-08 22:05:48 UTC
++++ lib-src/portaudio-v19/bindings/cpp/configure.ac
+@@ -14,7 +14,7 @@ m4_define([lt_age], [0])
+ 
+ AC_INIT([PortAudioCpp], [12])
+ AC_CONFIG_SRCDIR([include/portaudiocpp/PortAudioCpp.hxx])
+-AM_INIT_AUTOMAKE
++AM_INIT_AUTOMAKE([subdir-objects])
+ AM_MAINTAINER_MODE
+ 
+ ###### Top-level directory of pacpp
