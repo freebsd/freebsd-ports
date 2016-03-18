@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmgr@FreeBSD.org
 COMMENT?=	SIMD-accelerated JPEG codec which replaces libjpeg
 
 USES=		cpe libtool
