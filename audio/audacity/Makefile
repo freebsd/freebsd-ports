@@ -3,7 +3,7 @@
 
 PORTNAME=	audacity
 PORTVERSION=	2.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/audacity/audacity/archive/
 DISTNAME=	Audacity-${PORTVERSION}
@@ -25,8 +25,8 @@ BROKEN_powerpc64=	Does not build
 WRKSRC=		${WRKDIR}/${PORTNAME}-Audacity-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib cpe desktop-file-utils gmake iconv pkgconfig shared-mime-info shebangfix dos2unix
-NLS_USES=	gettext
+USES=		autoreconf compiler:c++11-lib cpe desktop-file-utils gettext-tools gmake iconv libtool pkgconfig shared-mime-info shebangfix dos2unix
+NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_WITH=	libintl-prefix="${LOCALBASE}"
 OPTIONS_SUB=	yes
@@ -134,10 +134,6 @@ VST_CONFIGURE_ENABLE=	vst
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 CXXFLAGS+=	-std=c++11
 .endif
-
-post-configure:
-	${REINPLACE_CMD} -e '/SNDFILE_CFLAGS/s,%%LOCALBASE%%,${LOCALBASE},'\
-		${WRKSRC}/lib-src/libnyquist/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
