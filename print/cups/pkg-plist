@@ -68,7 +68,7 @@ libexec/cups/backend/ipps
 libexec/cups/backend/lpd
 libexec/cups/backend/snmp
 libexec/cups/backend/socket
-libexec/cups/backend/usb
+%%USB%%libexec/cups/backend/usb
 %%AVAHI%%libexec/cups/backend/dnssd
 libexec/cups/cgi-bin/admin.cgi
 libexec/cups/cgi-bin/classes.cgi
@@ -561,7 +561,7 @@ sbin/reject
 %%DATADIR%%/templates/test-page.tmpl
 %%DATADIR%%/templates/trailer.tmpl
 %%DATADIR%%/templates/users.tmpl
-%%DATADIR%%/usb/org.cups.usb-quirks
+%%USB%%%%DATADIR%%/usb/org.cups.usb-quirks
 %%DOCSDIR%%/apple-touch-icon.png
 %%DOCSDIR%%/cups-printable.css
 %%DOCSDIR%%/cups.css
