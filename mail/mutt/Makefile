@@ -3,7 +3,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.5.24
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -111,7 +111,6 @@ OPTIONS_DEFAULT=	COMPRESSED_FOLDERS HTML ICONV IDN IFDEF_PATCH \
 RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 .if !defined (LITE)
-RUN_DEPENDS+=	${LOCALBASE}/etc/mailcap.sample:${PORTSDIR}/mail/metamail
 ASPELL_BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 ASPELL_RUN_DEPENDS=		aspell:${PORTSDIR}/textproc/aspell
 ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
@@ -278,6 +277,9 @@ post-patch-NNTP-off:
 .if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime
 .endif
+
+post-install:
+	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
 
 post-install-NNTP-on:
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog.nntp ${STAGEDIR}${DOCSDIR}
