@@ -1,11 +1,11 @@
-# Created by: Jeffrey Baitis <baitisj@pcbsd.org>
+# Created by: Jeffrey Baitis <jeff@baitis.net>
 # $FreeBSD$
 
 PORTNAME=	libsdr
 PORTVERSION=	0.1.0
 CATEGORIES=	comms hamradio
 
-MAINTAINER=	baitisj@pcbsd.org
+MAINTAINER=	jeff@baitis.net
 COMMENT=	Simple software defined radio (SDR) library
 
 LICENSE=	GPLv2
