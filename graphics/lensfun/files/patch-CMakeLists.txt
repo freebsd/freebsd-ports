@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2014-09-30 17:37:34 UTC
+--- CMakeLists.txt.orig	2015-11-15 17:07:26 UTC
 +++ CMakeLists.txt
-@@ -28,12 +28,18 @@ IF(NOT HAVE_REGEX_H)
+@@ -31,12 +31,18 @@ IF(NOT HAVE_REGEX_H)
    INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/libs/regex)
  ENDIF()
  
@@ -12,8 +12,8 @@
 +
  # options controlling the build process
  OPTION(BUILD_STATIC "Build static library" OFF)
- OPTION(BUILD_TESTS "Build test programs" OFF)
- OPTION(BUILD_AUXFUN "Build auxfun library (requires libpng)" OFF)
+ OPTION(BUILD_TESTS "Build test suite" OFF)
+ OPTION(BUILD_LENSTOOL "Build the lenstool (requires libpng)" OFF)
 -OPTION(BUILD_FOR_SSE "Build with support for SSE" ON)
 -OPTION(BUILD_FOR_SSE2 "Build with support for SSE2" ON)
 +OPTION(BUILD_FOR_SSE "Build with support for SSE" ${X86_ON})
@@ -21,7 +21,7 @@
  OPTION(BUILD_DOC "Build documentation with doxygen" OFF)
  OPTION(INSTALL_HELPER_SCRIPTS "Install various helper scripts" ON)
  
-@@ -46,14 +52,14 @@ ENDIF()
+@@ -62,14 +68,14 @@ ENDIF()
  
  IF(BUILD_FOR_SSE)
    SET(VECTORIZATION_SSE 1)
@@ -40,11 +40,11 @@
    ENDIF()
  ENDIF()
  
-@@ -68,6 +74,7 @@ ENDIF()
- # find dependencies
- FIND_PACKAGE(GLIB2 REQUIRED)
- INCLUDE_DIRECTORIES(${GLIB2_INCLUDE_DIRS})
+@@ -91,6 +97,7 @@ SET(LENSFUN_GLIB_REQUIREMENT_MACRO "GLIB
+ FIND_PACKAGE(GLIB2 REQUIRED 2.40)
+ 
+ INCLUDE_DIRECTORIES(SYSTEM ${GLIB2_INCLUDE_DIRS})
 +LINK_DIRECTORIES(${GLIB2_LIBRARY_DIRS})
  
- IF(BUILD_AUXFUN)
-   FIND_PACKAGE(PNG REQUIRED)
+ 
+ IF(BUILD_STATIC)
