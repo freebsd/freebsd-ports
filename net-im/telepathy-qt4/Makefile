@@ -4,7 +4,7 @@
 PORTNAME=	telepathy-qt4
 PORTVERSION=	0.9.6.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME:C/4//}/
+MASTER_SITES=	https://telepathy.freedesktop.org/releases/${PORTNAME:C/4//}/
 DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
