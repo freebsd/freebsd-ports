@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	silnrsi
 GH_PROJECT=	graphite
 
-USES=		cmake tar:tgz
+USES=		cmake
 USE_LDCONFIG=	yes
 
 post-patch:
