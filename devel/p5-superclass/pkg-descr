@@ -1,0 +1,8 @@
+Allows you to both load one or more modules, while setting up
+inheritance from those modules at the same time.
+
+If a module in the import list is followed by something that
+doesn't look like a legal module name,
+the VERSION method will be called with it as an argument.
+
+WWW: http://search.cpan.org/dist/superclass/
