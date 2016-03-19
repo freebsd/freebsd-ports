@@ -1,0 +1,21 @@
+This commit is required to avoid occasional build failures in parallel builds
+especially after CMake 3.5.0.
+
+commit 1e1f53e9d91684918c34ec50392f86287e001a1e
+Author: Alexandr Akulich <akulichalexander@gmail.com>
+Date:   Fri Jan 15 18:52:59 2016 +0500
+
+    BaseChannel: Reduced includes (doesn't depend on client stuff anymore).
+
+--- TelepathyQt/base-channel.cpp
++++ TelepathyQt/base-channel.cpp
+@@ -26,7 +26,8 @@
+ 
+ #include "TelepathyQt/_gen/base-channel.moc.hpp"
+ #include "TelepathyQt/_gen/base-channel-internal.moc.hpp"
+-#include "TelepathyQt/future-internal.h"
++#include "TelepathyQt/_gen/future-constants.h"
++#include "TelepathyQt/_gen/future-types.h"
+ 
+ #include "TelepathyQt/debug-internal.h"
+ 
