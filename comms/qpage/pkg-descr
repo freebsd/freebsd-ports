@@ -1,0 +1,11 @@
+QuickPage sends messages to a paging terminal using the SNPP and IXO
+(also known as TAP) protocols.  It is normally used with no options
+other than a recipient and the message text, in which case the message
+is sent to the SNPP server where it is submitted to a page queue to be
+sent by a separate daemon process.
+
+Page groups and duty schedules are supported.  Status notification
+messages indicating the success or failure of a page are sent via
+e-mail to submitters of high-priority (level 0) pages.
+
+WWW: http://www.qpage.org/

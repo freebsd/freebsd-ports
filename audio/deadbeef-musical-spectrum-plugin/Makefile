@@ -22,6 +22,8 @@ USES=		gmake pkgconfig
 OPTIONS_DEFINE=	GTK2 GTK3
 OPTIONS_DEFAULT=	GTK2
 
+MAKE_JOBS_UNSAFE=	yes
+
 .for v in 2 3
 GTK${v}_USE=	GNOME=gtk${v}0
 

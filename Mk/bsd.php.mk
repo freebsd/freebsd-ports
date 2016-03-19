@@ -56,13 +56,13 @@ PHP_EXT_DIR!=	${PHPBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${PHPBA
 DEFAULT_PHP_VER?=	${PHP_DEFAULT:S/.//}
 
 PHP_VER?=	${DEFAULT_PHP_VER}
-.if ${PHP_VER}  == 70
+.if ${PHP_VER} == 70
 PHP_EXT_DIR=   20151012
 PHP_EXT_INC=    pcre spl
-.elif ${PHP_VER}  == 56
+.elif ${PHP_VER} == 56
 PHP_EXT_DIR=	20131226
 PHP_EXT_INC=	pcre spl
-.elif ${PHP_VER}  == 55
+.elif ${PHP_VER} == 55
 PHP_EXT_DIR=	20121212
 PHP_EXT_INC=	pcre spl
 .else
@@ -259,7 +259,11 @@ _USE_PHP_VER70=	${_USE_PHP_ALL}
 
 apc_DEPENDS=	www/pecl-APC
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
+.if ${PHP_VER} == 70
 bitset_DEPENDS=	math/pecl-bitset
+.else
+bitset_DEPENDS=	math/pecl-bitset2
+.endif
 bz2_DEPENDS=	archivers/php${PHP_VER}-bz2
 calendar_DEPENDS=	misc/php${PHP_VER}-calendar
 ctype_DEPENDS=	textproc/php${PHP_VER}-ctype
@@ -279,7 +283,7 @@ iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
-.if ${PHP_VER}	== 70
+.if ${PHP_VER} == 70
 intl_DEPENDS=	devel/php${PHP_VER}-intl
 .else
 intl_DEPENDS=	devel/pecl-intl

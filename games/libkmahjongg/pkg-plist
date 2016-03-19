@@ -1,7 +1,7 @@
-include/kmahjonggbackground.h
-include/kmahjonggconfigdialog.h
-include/kmahjonggtileset.h
-include/libkmahjongg_export.h
+include/kde4/kmahjonggbackground.h
+include/kde4/kmahjonggconfigdialog.h
+include/kde4/kmahjonggtileset.h
+include/kde4/libkmahjongg_export.h
 lib/libkmahjongglib.so
 lib/libkmahjongglib.so.4
 lib/libkmahjongglib.so.%%KDE4_GENERIC_LIB_VERSION%%

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	7.10
-PORTREVISION=	5
+PORTVERSION=	7.11
+#PORTREVISION=
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -34,11 +34,11 @@ EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
 VER=		${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64	# untested elsewhere, might work
+ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 armv6	# untested elsewhere, might work
 
-OPTIONS_DEFINE=	DEBUG EXPAT GDB_LINK GUILE KGDB PYTHON THREADS TUI
+OPTIONS_DEFINE=	DEBUG EXPAT GDB_LINK GUILE KGDB PYTHON TUI
 
-OPTIONS_DEFAULT=	GDB_LINK KGDB THREADS TUI PORT_READLINE
+OPTIONS_DEFAULT=	GDB_LINK KGDB TUI PORT_READLINE
 
 OPTIONS_SINGLE=	READLINE
 OPTIONS_SINGLE_READLINE=	BASE_READLINE BUNDLED_READLINE PORT_READLINE
@@ -80,21 +80,10 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$| [GDB v${PORTVERSION} for FreeBSD]|' \
 		${WRKSRC}/gdb/version.in
-.if ${PORT_OPTIONS:MTHREADS}
-	@${CP} ${FILESDIR}/fbsd-threads.c ${WRKSRC}/gdb/
-	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-threads
-.endif
-.if ${PORT_OPTIONS:MKGDB}
+
+post-patch-KGDB-on:
 	@${CP} -r ${FILESDIR}/kgdb/*.[ch] ${WRKSRC}/gdb/
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-kgdb
-.if ${PORT_OPTIONS:MTHREADS}
-	@${PATCH} ${PATCH_ARGS} < \
-	    ${FILESDIR}/extrapatch-kgdb-configure.tgt-threads
-.else
-	@${PATCH} ${PATCH_ARGS} < \
-	    ${FILESDIR}/extrapatch-kgdb-configure.tgt-plain
-.endif
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
@@ -119,7 +108,7 @@ do-install-PYTHON-on:
 	(cd ${WRKSRC}/gdb; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
 	(cd ${WRKSRC}/gdb/data-directory ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
-. for f in gdb gdb/command gdb/function
+. for f in gdb gdb/command gdb/function gdb/printer
 	@(cd ${STAGEDIR}${PREFIX}/share/gdb${VER}/python/${f} ; ${CHMOD} 644 *.py* )
 . endfor
 

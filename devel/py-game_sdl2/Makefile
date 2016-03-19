@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	game_sdl2
-PORTVERSION=	6.99.8
+PORTVERSION=	6.99.9
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 		GENTOO
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	py${PORTNAME}-for-renpy-${DISTVERSION}
+DISTNAME=	py${PORTNAME}-2.1.0-for-renpy-${DISTVERSION}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Reimplementation of portions of the pygame API using SDL2
@@ -14,16 +14,17 @@ COMMENT=	Reimplementation of portions of the pygame API using SDL2
 LICENSE=	LGPL21+ ZLIB
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	cython:lang/cython
+LIB_DEPENDS=	libpng.so:graphics/png
 
 # Upstream tends to reroll distfiles before moving under /release/
 PORTSCOUT=	site:http://www.renpy.org/dl/release/
 
-USES=		jpeg python tar:bz2
+USES=		jpeg python
 USE_SDL=	image2 mixer2 ttf2
 USE_PYTHON=	autoplist distutils
-WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
+EXCLUDE=	gen gen3 PKG-INFO '*.egg-info'
+EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name \*.so \

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pybugz
-PORTVERSION=	0.11.1
+DISTVERSION=	0.12.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,5 +18,11 @@ USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
 GH_ACCOUNT=	williamh
+
+post-patch:
+	${REINPLACE_CMD} 's,share/man,man,' ${WRKSRC}/${PYSETUP}
+	${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
+		-e 's,/etc,${PREFIX}&,' \
+		${WRKSRC}/man/pybugz.d.5
 
 .include <bsd.port.mk>

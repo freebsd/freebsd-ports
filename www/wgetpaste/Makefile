@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wgetpaste
-PORTVERSION=	2.26
+PORTVERSION=	2.27
 CATEGORIES=	www
 MASTER_SITES=	http://wgetpaste.zlin.dk/ \
 		LOCAL/sunpoet

@@ -1,0 +1,32 @@
+From ff3674a15e5b1a006546e1edc64c3e778eb34ab1 Mon Sep 17 00:00:00 2001
+From: James Zern <jzern@google.com>
+Date: Thu, 3 Dec 2015 16:16:28 -0800
+Subject: vp8: fix quantizer clamping
+
+the quantizer is transmitted as 7-bits + sign so needs to be clamped in
+the delta + absolute case.
+
+BUG=https://bugzilla.mozilla.org/show_bug.cgi?id=1224361
+
+Change-Id: I9115f5d1d5cf7e0a1d149d79486d9d17de9b9639
+---
+ vp8/decoder/decodeframe.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git vp8/decoder/decodeframe.c vp8/decoder/decodeframe.c
+index f0d7603..4bc87eb 100644
+--- vp8/decoder/decodeframe.c
++++ vp8/decoder/decodeframe.c
+@@ -73,10 +73,9 @@ void vp8_mb_init_dequantizer(VP8D_COMP *pbi, MACROBLOCKD *xd)
+ 
+         /* Delta Value */
+         else
+-        {
+             QIndex = pc->base_qindex + xd->segment_feature_data[MB_LVL_ALT_Q][mbmi->segment_id];
+-            QIndex = (QIndex >= 0) ? ((QIndex <= MAXQ) ? QIndex : MAXQ) : 0;    /* Clamp to valid range */
+-        }
++
++        QIndex = (QIndex >= 0) ? ((QIndex <= MAXQ) ? QIndex : MAXQ) : 0;    /* Clamp to valid range */
+     }
+     else
+         QIndex = pc->base_qindex;

@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Single wrapper for most popular notification libraries
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-nenv>=0.1:${PORTSDIR}/devel/rubygem-nenv \
 		rubygem-shellany>=0:${PORTSDIR}/sysutils/rubygem-shellany

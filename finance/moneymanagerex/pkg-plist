@@ -2,6 +2,11 @@ bin/mmex
 man/man1/mmex.1.gz
 share/applications/mmex.desktop
 share/icons/hicolor/scalable/apps/mmex.svg
+%%DATADIR%%/Info.plist
+%%DATADIR%%/contrib.txt
+%%DATADIR%%/license.txt
+%%DATADIR%%/mmdb.icns
+%%DATADIR%%/mmex.icns
 %%DATADIR%%/po/en/arabic.mo
 %%DATADIR%%/po/en/bulgarian.mo
 %%DATADIR%%/po/en/chinese_chs.mo
@@ -16,6 +21,7 @@ share/icons/hicolor/scalable/apps/mmex.svg
 %%DATADIR%%/po/en/german.mo
 %%DATADIR%%/po/en/greek.mo
 %%DATADIR%%/po/en/hebrew.mo
+%%DATADIR%%/po/en/hindi.mo
 %%DATADIR%%/po/en/hungarian.mo
 %%DATADIR%%/po/en/indonesian.mo
 %%DATADIR%%/po/en/italian.mo
@@ -23,6 +29,7 @@ share/icons/hicolor/scalable/apps/mmex.svg
 %%DATADIR%%/po/en/norwegian.mo
 %%DATADIR%%/po/en/polish.mo
 %%DATADIR%%/po/en/portuguese.mo
+%%DATADIR%%/po/en/portuguese_br.mo
 %%DATADIR%%/po/en/portuguese_portugal.mo
 %%DATADIR%%/po/en/romanian.mo
 %%DATADIR%%/po/en/russian.mo
@@ -36,5 +43,11 @@ share/icons/hicolor/scalable/apps/mmex.svg
 %%DATADIR%%/po/en/turkish.mo
 %%DATADIR%%/po/en/ukrainian.mo
 %%DATADIR%%/po/en/vietnamese.mo
+%%DATADIR%%/res/Chart.js
+%%DATADIR%%/res/ChartNew.js
+%%DATADIR%%/res/home_page.htt
 %%DATADIR%%/res/kaching.wav
+%%DATADIR%%/res/master.css
 %%DATADIR%%/res/mmex.ico
+%%DATADIR%%/res/sorttable.js
+%%DATADIR%%/version.txt

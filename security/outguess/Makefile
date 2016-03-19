@@ -14,9 +14,13 @@ MASTER_SITES=	http://www.outguess.org/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steganographic tool
 
+LICENSE=	BSD4CLAUSE
+
 CONFLICTS_INSTALL=	csound-*
+
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/outguess
+
 PORTDOCS=	ChangeLog README STIRMARK-README TODO
 
 OPTIONS_DEFINE=	DOCS
@@ -24,8 +28,10 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/outguess ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf outguess ${STAGEDIR}${PREFIX}/bin/extract
-	${INSTALL_MAN} ${WRKSRC}/outguess.1 ${STAGEDIR}${PREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/outguess.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor

@@ -4,4 +4,4 @@ messages into postfix.
 
 It is very useful for a postfix setup which uses amavis for virus filtering.
 
-WWW: http://www.gufonero.com/postfix/prepflog.html
+WWW: https://github.com/johnfawcett/prepflog

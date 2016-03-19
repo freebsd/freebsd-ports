@@ -9,7 +9,6 @@ bin/mcview
 %%ETCDIR%%/mc.ext
 %%ETCDIR%%/mc.keymap
 %%ETCDIR%%/mc.menu
-%%ETCDIR%%/mc.menu.sr
 %%ETCDIR%%/mcedit.menu
 %%ETCDIR%%/sfs.ini
 libexec/mc/ext.d/archive.sh
@@ -252,6 +251,7 @@ share/applications/mc.desktop
 %%EDITOR%%%%DATADIR%%/syntax/f90.syntax
 %%EDITOR%%%%DATADIR%%/syntax/filehighlight.syntax
 %%EDITOR%%%%DATADIR%%/syntax/fortran.syntax
+%%EDITOR%%%%DATADIR%%/syntax/go.syntax
 %%EDITOR%%%%DATADIR%%/syntax/haskell.syntax
 %%EDITOR%%%%DATADIR%%/syntax/html.syntax
 %%EDITOR%%%%DATADIR%%/syntax/idl.syntax

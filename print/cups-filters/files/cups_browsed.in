@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: cups_browsed
-# REQUIRE: LOGIN
+# REQUIRE: cupsd %%AVAHI_DAEMON%%
 # KEYWORD: shutdown
 #
 # Add the following to /etc/rc.conf[.local] to enable this service

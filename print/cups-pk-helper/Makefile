@@ -4,13 +4,14 @@
 
 PORTNAME=	cups-pk-helper
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Helper that makes system-config-printer use PolicyKit
 
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
+LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
 USE_GNOME=	glib20 intltool

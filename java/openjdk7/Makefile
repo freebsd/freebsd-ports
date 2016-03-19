@@ -74,7 +74,7 @@ LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
-		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
+		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups
 RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper \
 		dejavu>0:${PORTSDIR}/x11-fonts/dejavu
 

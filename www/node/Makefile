@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	5.7.0
+PORTVERSION=	5.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		compiler execinfo gmake python
+USES=		compiler execinfo gmake python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

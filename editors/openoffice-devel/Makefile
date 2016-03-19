@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -158,7 +158,7 @@ WIKI_PUBLISHER_DESC=	Build and install Wiki Publisher extension
 CCACHE_DESC=		Mimimize compile time of C/C++ programs
 
 CUPS_CONFIGURE_ENABLE=		cups
-CUPS_LIB_DEPENDS=		libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=		libcups.so:${PORTSDIR}/print/cups
 
 GNOME_CONFIGURE_ENABLE=		dbus gconf lockdown
 GNOME_LIB_DEPENDS=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib

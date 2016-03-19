@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	fb-adb
-DISTVERSION=	1.4.4-122
-DISTVERSIONSUFFIX=	-g37ba40c
+DISTVERSION=	1.4.4-124
+DISTVERSIONSUFFIX=	-gb230619
 CATEGORIES=	devel
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Better shell for Android devices
@@ -12,9 +11,9 @@ COMMENT=	Better shell for Android devices
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	xxd:${PORTSDIR}/editors/vim-lite \
-		${BASH_CMD}:${PORTSDIR}/shells/${BASH_CMD:T}
-RUN_DEPENDS=	adb:${PORTSDIR}/devel/android-tools-adb
+BUILD_DEPENDS=	xxd:editors/vim-lite \
+		${BASH_CMD}:shells/${BASH_CMD:T}
+RUN_DEPENDS=	adb:devel/android-tools-adb
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
@@ -48,12 +47,12 @@ OPTIONS_EXCLUDE_DragonFly=NDK
 
 ASSERT_CONFIGURE_ENABLE=checking
 BASH_DESC=		Install JSON parser used by bash-completion
-BASH_RUN_DEPENDS=	jq:${PORTSDIR}/textproc/jq
+BASH_RUN_DEPENDS=	jq:textproc/jq
 DEBUG_CONFIGURE_ENABLE=	debuggable-stubs
 
 # XXX Convert into USES=android once more things depend on it
 NDK_DESC=		Build target stubs using Android NDK
-NDK_VARS=		MASTER_SITES+=https://dl.google.com/android/ndk/:ndk
+NDK_MASTER_SITES=	https://dl.google.com/android/ndk/:ndk
 .if defined(ANDROID_NDK)
 # Prefer NDK from environment
 WRKSRC_ndk=		${ANDROID_NDK}
@@ -68,8 +67,8 @@ NDK_SHELL=		${SETENV} UNAME_s=Linux UNAME_m=${LINUX_RPM_ARCH} ${SH}
 NDK_CONFIGURE_ENV=	ANDROID_NDK="${WRKSRC_ndk}" \
 			ANDROID_NDK_SHELL="${NDK_SHELL}" \
 			NDK_TMPDIR="${WRKDIR}"
-NDK_BUILD_DEPENDS_OFF=	${LOCALBASE}/android/ARMv7/bin/arm-aux-linux-androideabi-gcc:${PORTSDIR}/lang/gnatdroid-armv7 \
-			${LOCALBASE}/android-x86/x86_32/bin/i686-aux-linux-android-gcc:${PORTSDIR}/lang/gnatdroid-x86
+NDK_BUILD_DEPENDS_OFF=	${LOCALBASE}/android/ARMv7/bin/arm-aux-linux-androideabi-gcc:lang/gnatdroid-armv7 \
+			${LOCALBASE}/android-x86/x86_32/bin/i686-aux-linux-android-gcc:lang/gnatdroid-x86
 .if defined(.PARSEDIR)
 NDK_CONFIGURE_ENV_OFF=	PATH="${NDK_BUILD_DEPENDS_OFF:C/:.*//:H:ts:}:$$PATH"
 .else
@@ -117,7 +116,7 @@ do-autoreconf:
 .if defined(OVERRIDE_LINUX_BASE_PORT) || \
 	(${OPSYS} == FreeBSD && ${OSVERSION} < 1000009)
 EXTRACT_ONLY+=	${DISTFILES:N*\:*p7zip*:C/:.*//}
-EXTRACT_DEPENDS+=${P7ZIP_CMD}:${PORTSDIR}/archivers/p7zip
+EXTRACT_DEPENDS+=${P7ZIP_CMD}:archivers/p7zip
 
 P7ZIP_CMD?=	7z
 P7ZIP_ARGS?=	x -bd -y -o${WRKDIR} >/dev/null

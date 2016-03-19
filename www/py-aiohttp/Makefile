@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aiohttp
-PORTVERSION=	0.16.3
+PORTVERSION=	0.21.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,28 +13,17 @@ COMMENT=	HTTP client/server for asyncio
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py-chardet
-TEST_DEPENDS:=	${RUN_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py3-chardet
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>0:${PORTSDIR}/www/py-gunicorn
 
-OPTIONS_DEFINE=		TESTS
-TESTS_DESC=		Install test suite requirements
-TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
-
-USES=		python:3.3+
+USES=		python:3.4+
 USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.pre.mk>
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/aiohttp/*.so
 
-.if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}asyncio>0:${PORTSDIR}/devel/py-asyncio
-.endif
-.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
-IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
-.endif
-
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.4.35
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--with-xshm=no
 .endif
 #
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups
 CONFIGURE_ARGS+=	--enable-cups
 .else
 CONFIGURE_ARGS+=	--disable-cups

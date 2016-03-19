@@ -19,7 +19,7 @@ PATHFIX_MAKEFILEIN=	Makefile.am
 TEST_TARGET=	check
 USE_CSTD=	c99	# for audio/clementine-player support
 USE_LDCONFIG=	yes
-USES=		autoreconf gmake libtool pathfix pkgconfig tar:bzip2
+USES=		autoreconf gmake libtool pathfix pkgconfig
 
 GH_ACCOUNT=	google
 USE_GITHUB=	yes

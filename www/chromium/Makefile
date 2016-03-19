@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	48.0.2564.116
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -34,7 +35,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libcups.so:${PORTSDIR}/print/cups-client \
+		libcups.so:${PORTSDIR}/print/cups \
 		libevent.so:${PORTSDIR}/devel/libevent2 \
 		libexif.so:${PORTSDIR}/graphics/libexif \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \

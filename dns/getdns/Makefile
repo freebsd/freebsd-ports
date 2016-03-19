@@ -3,7 +3,7 @@
 
 PORTNAME=	getdns
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
     		https://mirrors.rit.edu/zi/ \

@@ -39,14 +39,13 @@ load_rc_config ${name}
 pidfile=${sabnzbd_pidfile}
 
 start_precmd="${name}_prestart"
-extra_commands="status"
 command_interpreter="%%PYTHON_CMD%%"
 command="%%PREFIX%%/bin/SABnzbd.py"
 command_args="--daemon -f ${sabnzbd_conf_dir}/sabnzbd.ini --pidfile ${pidfile}"
 
 sabnzbd_prestart()
 {
-	PATH=${PATH}:/usr/local/bin:/usr/local/sbin
+	PATH=${PATH}:%%PREFIX%%/bin:%%PREFIX%%/sbin
 	for sabdir in ${sabnzbd_conf_dir} ${pidfile%/*}; do
 		if [ ! -d "${sabdir}" ]; then
 			install -d -o ${sabnzbd_user} -g ${sabnzbd_group} ${sabdir}

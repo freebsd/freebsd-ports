@@ -3,6 +3,7 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/gpgme
 
@@ -18,7 +19,6 @@ GNU_CONFIGURE=	yes
 USES=		cpe gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gpgme
 INSTALL_TARGET=	install-strip
 
 CPE_VENDOR=	gnu

@@ -8,6 +8,7 @@ bin/%%TARGET%%-gcc
 bin/%%TARGET%%-gcc-ar
 bin/%%TARGET%%-gcc-nm
 bin/%%TARGET%%-gcc-ranlib
+bin/%%TARGET%%-gcov-tool
 %%FORT%%bin/%%TARGET%%-gfortran
 bin/%%TARGET%%-gnat
 bin/%%TARGET%%-gnatbind

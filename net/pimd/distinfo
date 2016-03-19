@@ -1,2 +1,4 @@
-SHA256 (troglobit-pimd-2.2.0_GH0.tar.bz2) = a6d969e235323852afdd1c9aebc15a2ff1e4da75e8277a736b3be9b2b484e30e
-SIZE (troglobit-pimd-2.2.0_GH0.tar.bz2) = 223012
+SHA256 (troglobit-pimd-2.3.2_GH0.tar.gz) = b6cda75a55952fac06fdc50a95ab7ee2f94f8568de365c49c49a2acf078488eb
+SIZE (troglobit-pimd-2.3.2_GH0.tar.gz) = 237277
+SHA256 (troglobit-libite-v1.4.4_GH0.tar.gz) = c4327e7d3ade7efb191d02a4f9ffaf7b8e86e7e7f91a2f7e8b600e2102330607
+SIZE (troglobit-libite-v1.4.4_GH0.tar.gz) = 36086

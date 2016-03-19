@@ -20,7 +20,7 @@ LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
 
-USES=		autoreconf gmake libtool lua pgsql tar:bzip2
+USES=		autoreconf gmake libtool lua pgsql
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LUA="${LUA_CMD}" \
 		LUA_INCLUDE="-I${LUA_INCDIR}" \

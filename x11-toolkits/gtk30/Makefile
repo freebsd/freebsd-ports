@@ -5,7 +5,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	3.18.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	3
@@ -65,7 +65,7 @@ COLORD_DESC=	Color profile support
 COLORD_LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord
 COLORD_CONFIGURE_ENABLE=colord
 
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 CUPS_CONFIGURE_ENABLE=	cups
 
 CLOUDPRINT_DESC=	Cloud printing support

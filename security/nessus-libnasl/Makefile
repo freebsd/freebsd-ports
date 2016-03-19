@@ -20,6 +20,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libnessus.so:${PORTSDIR}/security/nessus-libraries
 
+DEPRECATED=	Abandoned, consider using OpenVAS
+EXPIRATION_DATE=2016-09-30
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 USES=		bison libtool

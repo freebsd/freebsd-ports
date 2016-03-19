@@ -1,0 +1,38 @@
+# Created by: Ultima <ultima1252@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	portest
+PORTVERSION=	0.1.6
+CATEGORIES=	ports-mgmt
+
+MAINTAINER=	ultima1252@gmail.com
+COMMENT=	Patch file automation for FreeBSD-ports
+
+LICENSE=	BSD2CLAUSE
+
+RUN_DEPENDS=	portlint:${PORTSDIR}/ports-mgmt/portlint
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ultima1252
+
+NO_BUILD=	yes
+
+PLIST_FILES=	sbin/portest
+
+OPTIONS_DEFINE=		GIT PORTTOOLS POUDRIERE
+OPTIONS_DEFAULT=	GIT PORTTOOLS POUDRIERE
+
+GIT_DESC=		Git support
+GIT_RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+
+PORTTOOLS_DESC=		Porttools support
+PORTTOOLS_RUN_DEPENDS=	port:${PORTSDIR}/ports-mgmt/porttools
+
+POUDRIERE_DESC=		Poudriere and parallel build support
+POUDRIERE_RUN_DEPENDS=	poudriere:${PORTSDIR}/ports-mgmt/poudriere \
+			tmux:${PORTSDIR}/sysutils/tmux
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/portest ${STAGEDIR}${PREFIX}/sbin/portest
+
+.include <bsd.port.mk>

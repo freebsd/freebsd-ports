@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WebError
-PORTVERSION=	0.10.3
-PORTREVISION=	2
+PORTVERSION=	0.13
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Paste>=1.7:${PORTSDIR}/www/py-paste \
 		${PYTHON_PKGNAMEPREFIX}webob>=0.9.6.1:${PORTSDIR}/www/py-webob
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 post-extract:
 		${CHMOD} -R a+r ${WRKSRC}

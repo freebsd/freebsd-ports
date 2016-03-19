@@ -1,0 +1,18 @@
+--- configure.ac.orig	2016-01-08 22:05:48 UTC
++++ configure.ac
+@@ -43,6 +43,7 @@ AC_CONFIG_MACRO_DIR([m4])
+ 
+ AM_INIT_AUTOMAKE([1.9 dist-xz foreign no-dist-gzip subdir-objects -Wall -Wno-override tar-ustar])
+ AM_MAINTAINER_MODE([disable])
++AM_SILENT_RULES([yes])
+ 
+ AM_GNU_GETTEXT_VERSION([0.18])
+ AM_GNU_GETTEXT([external])
+@@ -690,6 +690,7 @@ AC_CONFIG_FILES([
+    Makefile
+    help/Makefile
+    images/Makefile
++   include/Makefile
+    lib-src/Makefile
+    po/Makefile.in
+    src/audacity.desktop

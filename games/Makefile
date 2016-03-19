@@ -551,6 +551,7 @@
     SUBDIR += linux-ssamtfe
     SUBDIR += linux-ssamtse
     SUBDIR += linux-unigine-heaven
+    SUBDIR += linux-unigine-valley
     SUBDIR += linux-unrealgold
     SUBDIR += linux-uplink-demo
     SUBDIR += linux-ut
@@ -956,6 +957,8 @@
     SUBDIR += teeworlds
     SUBDIR += teg
     SUBDIR += tenebrae
+    SUBDIR += tesseract
+    SUBDIR += tesseract-data
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
     SUBDIR += tetrons

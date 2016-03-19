@@ -3,7 +3,7 @@
 
 PORTNAME=	locker
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.defora.org/os/download/download/3703/
 PKGNAMEPREFIX=	deforaos-

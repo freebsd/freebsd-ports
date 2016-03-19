@@ -31,12 +31,12 @@ lib/libpmi.so.0
 lib/libpmi.so.0.0.0
 lib/libslurm.a
 lib/libslurm.so
-lib/libslurm.so.28
-lib/libslurm.so.28.0.0
+lib/libslurm.so.29
+lib/libslurm.so.29.0.0
 lib/libslurmdb.a
 lib/libslurmdb.so
-lib/libslurmdb.so.28
-lib/libslurmdb.so.28.0.0
+lib/libslurmdb.so.29
+lib/libslurmdb.so.29.0.0
 lib/slurm/accounting_storage_filetxt.a
 lib/slurm/accounting_storage_filetxt.so
 %%MYSQL%%lib/slurm/accounting_storage_mysql.a
@@ -45,6 +45,10 @@ lib/slurm/accounting_storage_none.a
 lib/slurm/accounting_storage_none.so
 lib/slurm/accounting_storage_slurmdbd.a
 lib/slurm/accounting_storage_slurmdbd.so
+lib/slurm/acct_gather_energy_cray.a
+lib/slurm/acct_gather_energy_cray.so
+lib/slurm/acct_gather_energy_ibmaem.a
+lib/slurm/acct_gather_energy_ibmaem.so
 lib/slurm/acct_gather_energy_none.a
 lib/slurm/acct_gather_energy_none.so
 lib/slurm/acct_gather_energy_rapl.a
@@ -63,6 +67,8 @@ lib/slurm/auth_munge.a
 lib/slurm/auth_munge.so
 lib/slurm/auth_none.a
 lib/slurm/auth_none.so
+lib/slurm/burst_buffer_generic.a
+lib/slurm/burst_buffer_generic.so
 lib/slurm/checkpoint_none.a
 lib/slurm/checkpoint_none.so
 lib/slurm/checkpoint_ompi.a
@@ -125,6 +131,12 @@ lib/slurm/jobcomp_script.a
 lib/slurm/jobcomp_script.so
 lib/slurm/launch_slurm.a
 lib/slurm/launch_slurm.so
+lib/slurm/layouts_power_cpufreq.a
+lib/slurm/layouts_power_cpufreq.so
+lib/slurm/layouts_power_default.a
+lib/slurm/layouts_power_default.so
+lib/slurm/layouts_unit_default.a
+lib/slurm/layouts_unit_default.so
 lib/slurm/mpi_lam.a
 lib/slurm/mpi_lam.so
 lib/slurm/mpi_mpich1_p4.a
@@ -143,6 +155,8 @@ lib/slurm/mpi_openmpi.a
 lib/slurm/mpi_openmpi.so
 lib/slurm/mpi_pmi2.a
 lib/slurm/mpi_pmi2.so
+lib/slurm/power_none.a
+lib/slurm/power_none.so
 lib/slurm/preempt_job_prio.a
 lib/slurm/preempt_job_prio.so
 lib/slurm/preempt_none.a
@@ -205,6 +219,8 @@ lib/slurm/task_none.a
 lib/slurm/task_none.so
 lib/slurm/topology_3d_torus.a
 lib/slurm/topology_3d_torus.so
+lib/slurm/topology_hypercube.a
+lib/slurm/topology_hypercube.so
 lib/slurm/topology_node_rank.a
 lib/slurm/topology_node_rank.so
 lib/slurm/topology_none.a
@@ -298,6 +314,7 @@ man/man3/slurm_job_step_launch_t_init.3.gz
 man/man3/slurm_job_step_layout_free.3.gz
 man/man3/slurm_job_step_layout_get.3.gz
 man/man3/slurm_job_will_run.3.gz
+man/man3/slurm_job_will_run2.3.gz
 man/man3/slurm_jobinfo_ctx_get.3.gz
 man/man3/slurm_kill_job.3.gz
 man/man3/slurm_kill_job_step.3.gz
@@ -374,6 +391,7 @@ man/man3/slurm_update_reservation.3.gz
 man/man3/slurm_update_step.3.gz
 man/man5/acct_gather.conf.5.gz
 man/man5/bluegene.conf.5.gz
+man/man5/burst_buffer.conf.5.gz
 man/man5/cgroup.conf.5.gz
 man/man5/cray.conf.5.gz
 man/man5/ext_sensors.conf.5.gz
@@ -403,9 +421,11 @@ sbin/slurmstepd
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/api.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/arch.gif
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/authplugins.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/bb_plugins.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/big_sys.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/bluegene.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/bull.jpg
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/burst_buffer.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/cgroups.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/checkpoint_blcr.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/checkpoint_plugins.html
@@ -425,7 +445,6 @@ sbin/slurmstepd
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/dist_plane.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/documentation.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/download.html
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/dynalloc.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/elastic_computing.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/entities.gif
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/example_usage.gif
@@ -455,7 +474,6 @@ sbin/slurmstepd
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/launch_plugins.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/licenses.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/linuxstyles.css
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/lll.gif
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/mail.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/man_index.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/maui.html
@@ -477,11 +495,12 @@ sbin/slurmstepd
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/plane_ex7.gif
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/platforms.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/plugins.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/power_mgmt.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/power_plugins.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/power_save.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/preempt.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/preemption_plugins.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/priority_multifactor.html
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/priority_multifactor2.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/priority_multifactor3.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/priority_plugins.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/proctrack_plugins.html
@@ -518,8 +537,10 @@ sbin/slurmstepd
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/topo_ex2.gif
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/topology.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/topology_plugin.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/tres.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/troubleshoot.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/tutorial_intro_files.tar
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/tutorials.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/usage_pies.gif
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/user_permissions.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/wckey.html

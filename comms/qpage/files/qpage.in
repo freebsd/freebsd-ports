@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# PROVIDE: qpage
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable/configure this service:
+#
+# qpage_enable (bool):         Set to NO by default.
+#                              Set it to YES to enable qpage.
+# qpage_queue_interval (int):  Set to 10 (seconds) by default.
+# qpage_cfg_file (path):       Set it to an alternate configuration file path
+#                              if desired.
+# qpage_flags (str):           Set it to a list of additional command-line
+#                              parameters if desired.
+#
+
+. /etc/rc.subr
+
+name="qpage"
+rcvar=qpage_enable
+
+command=%%PREFIX%%/bin/${name}
+
+load_rc_config $name
+
+: ${qpage_enable="NO"}
+: ${qpage_queue_interval="10"}
+
+stop_cmd=${name}_stop
+extra_commands="reload"
+reload_cmd=${name}_reload
+
+command_args="-q ${qpage_queue_interval} ${qpage_flags}"
+if [ -n "${qpage_cfg_file}" ]; then
+	command_args="${command_args} -C ${qpage_cfg_file}"
+fi
+
+qpage_stop() {
+	/usr/bin/killall qpage
+}
+
+qpage_reload() {
+	# awk pattern matches master daemon process only (PPID 1 in 3rd column)
+	pid=`/bin/ps alcxww | /usr/bin/awk "/^ *[0-9]+ +[0-9]+ +1 .* ${name}\$/{print \\\$2}"`
+
+	if [ -n "$pid" ]; then
+		kill -HUP $pid
+	else
+		echo "$0: no qpage daemon found" >& 2
+	fi
+}
+
+run_rc_command "$1"

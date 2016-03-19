@@ -12,6 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of accessibility apps for GNOME 2
 
+DEPRECATED=	Not developed upstream anymore. Obsoleted by accessibility/orca
+EXPIRATION_DATE=	2016-04-07
+
 LIB_DEPENDS=	libgnome-mag.so:${PORTSDIR}/accessibility/gnome-mag
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2

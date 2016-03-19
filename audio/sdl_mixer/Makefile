@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.12
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -20,16 +20,20 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=		SMPEG FLAC VORBIS TIMIDITYPLUS
-OPTIONS_DEFAULT=	SMPEG FLAC VORBIS MIKMOD
-OPTIONS_RADIO=		MOD
+OPTIONS_DEFINE=		SMPEG FLAC TIMIDITYPLUS
+OPTIONS_DEFAULT=	SMPEG FLAC MIKMOD
+OPTIONS_RADIO=		MOD OGG
 OPTIONS_RADIO_MOD=	MIKMOD MODPLUG
+OPTIONS_RADIO_OGG=	VORBIS TREMOR
 
-MIKMOD_DESC=	Enable MOD music via libMikMod
-MODPLUG_DESC=	Enable MOD music via libModPlug
-SMPEG_DESC=	Enable MP3 music via SMPEG
-FLAC_DESC=	Enable FLAC encoding support via flac
-VORBIS_DESC=	Enable Ogg Vorbis music
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Msoftfp}
+OPTIONS_DEFAULT+=	TREMOR
+.else
+OPTIONS_DEFAULT+=	VORBIS
+.endif
+
+MOD_DESC=	Tracker music support
+SMPEG_DESC=	MP3 audio support via SMPEG
 TIMIDITYPLUS_DESC=	Use Timidity++ instead of Timidity (soundfont)
 
 MIKMOD_LIB_DEPENDS=		libmikmod.so:${PORTSDIR}/audio/libmikmod
@@ -52,6 +56,11 @@ TIMIDITYPLUS_VARS=		CONFIG_FILE=${LOCALBASE}/share/timidity/timidity.cfg-eawpats
 
 TIMIDITYPLUS_RUN_DEPENDS_OFF=	${LOCALBASE}/lib/timidity/timidity.cfg:${PORTSDIR}/audio/timidity
 TIMIDITYPLUS_VARS_OFF=		CONFIG_FILE=${LOCALBASE}/lib/timidity/timidity.cfg
+
+TREMOR_LIB_DEPENDS=		libvorbisidec.so:${PORTSDIR}/audio/libtremor
+TREMOR_CONFIGURE_ON=		--enable-music-ogg
+# TREMOR_CONFIGURE_OFF is handled by VORBIS=off
+TREMOR_CONFIGURE_ENABLE=	music-ogg-tremor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\($$(prefix)/libdata/pkgconfig\)|$$(DESTDIR)\1|' \

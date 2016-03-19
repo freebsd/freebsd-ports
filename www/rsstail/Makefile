@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rsstail
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.vanheusden.com/${PORTNAME}/
+MASTER_SITES=	https://www.vanheusden.com/rsstail/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple RSS monitor
@@ -14,18 +13,23 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmrss.so:${PORTSDIR}/textproc/libmrss
 
+MAKE_ENV=	bindir="${PREFIX}/bin" mandir="${MANPREFIX}/man/man1"
+
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 USES=		iconv tar:tgz
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CFLAGS/ s|=|+=|; /^LDFLAGS/ s|=|+=|; s|-liconv|${ICONV_LIB}|' ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	@${REINPLACE_CMD} -e \
+		's|^DEBUG=|#DEBUG=| ; \
+		 s|^LDFLAGS=-liconv_hook |LDFLAGS+=| ; \
+		 s|^CFLAGS=-O3 |CFLAGS+=| ; \
+		 s|\([[:space:]]\)\($$(..ndir)\)|\1$$(DESTDIR)\2|g ; \
+		 /bindir/s|install |$${BSD_INSTALL_PROGRAM} | ; \
+		 /mandir/s|install -m 644 |$${BSD_INSTALL_MAN} |' \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

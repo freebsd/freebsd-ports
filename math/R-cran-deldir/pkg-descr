@@ -3,4 +3,4 @@ tessellation (with respect to the entire plane) of a planar point
 set. Plots triangulations and tessellations in various ways. Clips
 tessellations to sub-windows. Calculates perimeters of tessellations.
 
-WWW: http://cran.r-project.org/web/packages/deldir/
+WWW: https://cran.r-project.org/web/packages/deldir/

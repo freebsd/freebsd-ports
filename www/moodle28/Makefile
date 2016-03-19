@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	2.8.10
+PORTVERSION=	2.8.11
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable28/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
@@ -12,14 +12,11 @@ COMMENT=	Course management system based on social constructionism
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
-RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
-
 CONFLICTS=	moodle30-3.0.[0-9]* moodle29-2.9.[0-9]*
 
 USES=		cpe tar:tgz
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
-		soap openssl simplexml spl dom json zip zlib hash opcache
+		soap openssl simplexml spl dom json zip zlib hash opcache intl
 WRKSRC=		${WRKDIR}/moodle
 
 OPTIONS_SINGLE=		BACKEND

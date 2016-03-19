@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	compass-rails
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

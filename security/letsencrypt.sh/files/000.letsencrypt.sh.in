@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# If there is a global system configuration file, suck it in.
-#
 if [ -r /etc/defaults/periodic.conf ]
 then
     . /etc/defaults/periodic.conf
@@ -13,18 +11,25 @@ export PATH
 
 case "$weekly_letsencrypt_enable" in
     [Yy][Ee][Ss])
+	echo
+	echo "Checking Let's Encrypt certificate status:"
+
 	if [ -z "$weekly_letsencrypt_user" ]
 	then
 		%%PREFIX%%/bin/letsencrypt.sh -c
 	else
 		su -m "$weekly_letsencrypt_user" -c '%%PREFIX%%/bin/letsencrypt.sh -c'
 	fi
+
+	echo "Deploying Let's Encrypt certificates:"
+
 	if [ -x "$weekly_letsencrypt_deployscript" ]
 	then
 		$weekly_letsencrypt_deployscript
+	else
+		echo 'Skipped, deploy script not set.'
 	fi
         ;;
     *)
         ;;
 esac
-

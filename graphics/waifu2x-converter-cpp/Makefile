@@ -5,8 +5,7 @@ DISTVERSION=	1.0.0-410
 DISTVERSIONSUFFIX=	-g5e5ac35
 CATEGORIES=	graphics
 MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/:manpage
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME:C/-.*//}.1.gz?h=${PORTNAME:C/-.*//}-git\&id=5c150a5:manpage
+DISTFILES=	${PORTNAME:C/-.*//}.1.gz?h=${PORTNAME:C/-.*//}-git\&id=5c150a5:manpage
 EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,9 +16,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:${PORTSDIR}/devel/opencl
-LIB_DEPENDS=	libopencv_highgui.so:${PORTSDIR}/graphics/opencv \
-		libopencv_imgproc.so:${PORTSDIR}/graphics/opencv-core
+BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
+LIB_DEPENDS=	libopencv_highgui.so:graphics/opencv \
+		libopencv_imgproc.so:graphics/opencv-core
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tanakamura

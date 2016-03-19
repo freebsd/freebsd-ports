@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------
+ 
+	When plugging in FET debuggers a symlink will be created from
+	the corresponding cuaU device to mspfetXX with XX being the
+	product number (see mspfet.conf).
+        Only a single instance of each FET product is supported.
+
+-------------------------------------------------------------------------

@@ -1,16 +1,7 @@
---- configure.orig	2015-06-11 09:26:00 UTC
+--- configure.orig	2016-03-12 21:43:12 UTC
 +++ configure
-@@ -664,6 +664,8 @@ X11_FALSE
- X11_TRUE
- OSTYPE_DARWIN_FALSE
- OSTYPE_DARWIN_TRUE
-+OSTYPE_FREEBSD_FALSE
-+OSTYPE_FREEBSD_TRUE
- OSTYPE_LINUX_FALSE
- OSTYPE_LINUX_TRUE
- OSTYPE_WIN_FALSE
-@@ -8512,7 +8514,7 @@ fi
- LIBTOOL_DEPS="$ltmain"
+@@ -9002,7 +9002,7 @@ esac
+ LIBTOOL_DEPS=$ltmain
  
  # Always use our own libtool.
 -LIBTOOL='$(SHELL) $(top_builddir)/libtool'
@@ -18,47 +9,12 @@
  
  
  
-@@ -18232,6 +18234,14 @@ else
-   OSTYPE_LINUX_FALSE=
- fi
+@@ -17104,7 +17104,7 @@ case "$target" in
+ 	OSTYPE=LINUX ;;
+ *-*-darwin*)
+ 	OSTYPE=DARWIN ;;
+-*-*-*bsd*)
++*-*-*bsd*|*-*-dragonfly*)
+ 	OSTYPE=BSD ;;
+ esac
  
-+ if test "$OSTYPE" == FREEBSD; then
-+  OSTYPE_FREEBSD_TRUE=
-+  OSTYPE_FREEBSD_FALSE='#'
-+else
-+  OSTYPE_FREEBSD_TRUE='#'
-+  OSTYPE_FREEBSD_FALSE=
-+fi
-+
-  if test "$OSTYPE" == DARWIN; then
-   OSTYPE_DARWIN_TRUE=
-   OSTYPE_DARWIN_FALSE='#'
-@@ -18249,6 +18259,14 @@ else
-   X11_FALSE=
- fi
- 
-+ if test "$OSTYPE" == FREEBSD; then
-+  X11_TRUE=
-+  X11_FALSE='#'
-+else
-+  X11_TRUE='#'
-+  X11_FALSE=
-+fi
-+
-  if test "$OSTYPE" == DARWIN; then
-   COCOA_TRUE=
-   COCOA_FALSE='#'
-@@ -18301,6 +18319,13 @@ else
-   FREETYPE_FALSE=
- fi
- 
-+ if test "x$OSTYPE" = x""FREEBSD; then
-+  FREETYPE_TRUE=
-+  FREETYPE_FALSE='#'
-+else
-+  FREETYPE_TRUE='#'
-+  FREETYPE_FALSE=
-+fi
- 
- # turns zlib and alsa off always
-  if test "x" = x""yes; then

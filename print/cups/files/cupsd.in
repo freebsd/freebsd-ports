@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: cupsd
+# REQUIRE: DAEMON %%DBUS_DAEMON%% %%AVAHI_DAEMON%%
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# cupsd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="cupsd"
+rcvar="cupsd_enable"
+
+start_precmd="${name}_prestart"
+
+command="%%PREFIX%%/sbin/cupsd"
+extra_commands="reload"
+
+cupsd_prestart()
+{
+	if [ -n "$TZ" ]; then
+		export TZ
+	fi
+}
+
+load_rc_config ${name}
+
+: ${cupsd_enable=NO}
+
+run_rc_command "$1"

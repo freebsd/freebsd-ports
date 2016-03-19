@@ -1,0 +1,4 @@
+Python module for separating the TLD from the registered domain and subdomains
+of a URL, using the Public Suffix List.
+
+WWW: https://github.com/john-kurkowski/tldextract

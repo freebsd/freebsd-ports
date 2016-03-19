@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	avelsieve
-PORTVERSION=	1.9.7
-PORTREVISION=	4
+PORTVERSION=	1.9.9
 CATEGORIES=	mail www
 
 MAINTAINER=	ports@FreeBSD.org

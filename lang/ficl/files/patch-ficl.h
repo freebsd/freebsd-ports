@@ -1,6 +1,6 @@
---- ficl.h.orig	Mon Dec  8 18:33:42 2003
-+++ ficl.h	Mon Dec  8 18:33:58 2003
-@@ -163,6 +163,8 @@
+--- ficl.h.orig	2010-10-03 09:52:12 UTC
++++ ficl.h
+@@ -163,6 +163,8 @@ extern "C" {
  	#include "ficlplatform/ansi.h"
  #elif defined(_WIN32)
  	#include "ficlplatform/win32.h"
@@ -8,4 +8,4 @@
 +	#include "ficlplatform/unix.h"
  #elif defined (FREEBSD_ALPHA)
  	#include "ficlplatform/alpha.h"
- #elif defined(linux)
+ #elif defined(unix) || defined(__unix__) || defined(__unix)

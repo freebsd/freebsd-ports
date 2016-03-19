@@ -3,7 +3,7 @@
 
 PORTNAME=	Perl-Lint
 PORTVERSION=	0.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MOZNION
@@ -30,6 +30,14 @@ TEST_DEPENDS=	p5-Text-TestBase>=0:${PORTSDIR}/textproc/p5-Text-TestBase
 
 USES=		perl5
 USE_PERL5=	modbuildtiny
+
+OPTIONS_DEFINE=	EXAMPLES
+
+PORTEXAMPLES=	lint.pl lint_string.pl
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/eg/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.pre.mk>
 

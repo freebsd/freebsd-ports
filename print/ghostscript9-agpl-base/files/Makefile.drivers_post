@@ -41,7 +41,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:NGS_${D}}
 .endfor
 
 .if defined(_CUPS_DEVS)
-LIB_DEPENDS+=	libcupsimage.so:${PORTSDIR}/print/cups-image
+LIB_DEPENDS+=	libcupsimage.so:${PORTSDIR}/print/cups
 CONFIGURE_ARGS+=	--enable-cups
 .else
 CONFIGURE_ARGS+=	--disable-cups

@@ -160,6 +160,7 @@ include/simgear/nasal/cppbind/detail/nasal_traits.hxx
 include/simgear/nasal/cppbind/detail/to_nasal_helper.hxx
 include/simgear/nasal/cppbind/from_nasal.hxx
 include/simgear/nasal/cppbind/to_nasal.hxx
+include/simgear/nasal/iolib.h
 include/simgear/nasal/naref.h
 include/simgear/nasal/nasal.h
 include/simgear/package/Catalog.hxx
@@ -327,3 +328,7 @@ include/simgear/version.h
 include/simgear/xml/easyxml.hxx
 lib/libSimGearCore.a
 lib/libSimGearScene.a
+lib/cmake/SimGear/SimGearConfig.cmake
+lib/cmake/SimGear/SimGearConfigVersion.cmake
+lib/cmake/SimGear/SimGearTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SimGear/SimGearTargets.cmake

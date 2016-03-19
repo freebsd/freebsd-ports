@@ -1,9 +1,0 @@
-
-# This is a sample printcap file suitable for use with the ifhp
-# input filter.  It assumes that you are using the first USB print
-# device.  If not, adjust lp= accordingly.
-
-lp:\
-	:sh:\
-	:lp=/dev/ulpt0:sd=/var/spool/output/lpd:lf=/var/log/lpd-errs:\
-	:mx#0:if=/usr/local/etc/bin/ifhp:

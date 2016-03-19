@@ -5,7 +5,7 @@ PORTNAME=	tomahawk
 PORTVERSION=	0.8.4
 CATEGORIES=	audio
 
-MAINTAINER=	port@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-source, social, and smart music player
 
 LICENSE=	GPLv3

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	groonga
-PORTVERSION=	5.1.0
+PORTVERSION=	6.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -50,8 +50,6 @@ SUGGEST_CONFIGURE_OFF=	--without-libevent \
 RUBY_CONFIGURE_ON=	--enable-mruby
 RUBY_USE=		RUBY=yes
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|lib/$${PACKAGE}/db/db|db/$${PACKAGE}/db| ; \
@@ -60,7 +58,7 @@ post-patch:
 		'/NGX_PID_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
-		${WRKSRC}/vendor/nginx-1.9.7/auto/install
+		${WRKSRC}/vendor/nginx-1.9.11/auto/install
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/groonga-httpd

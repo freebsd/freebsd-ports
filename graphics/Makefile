@@ -540,6 +540,7 @@
     SUBDIR += libwmf-nox11
     SUBDIR += libwpg
     SUBDIR += libwpg03
+    SUBDIR += libyuv
     SUBDIR += lightzone
     SUBDIR += linplasma
     SUBDIR += linux-adobesvg
@@ -578,6 +579,7 @@
     SUBDIR += maim
     SUBDIR += makehuman
     SUBDIR += mandelbulber
+    SUBDIR += mapcache
     SUBDIR += mapnik
     SUBDIR += mapserver
     SUBDIR += mapyrus
@@ -865,8 +867,8 @@
     SUBDIR += py-pyganim
     SUBDIR += py-pyggel
     SUBDIR += py-pyglet
-    SUBDIR += py-pygraphviz
     SUBDIR += py-pygooglechart
+    SUBDIR += py-pygraphviz
     SUBDIR += py-pyproj
     SUBDIR += py-qt4-svg
     SUBDIR += py-qt5-svg

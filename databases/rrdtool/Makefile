@@ -11,9 +11,12 @@ MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	rrdtool10-* rrdtool12-*
 
+CONFIGURE_ARGS=	--disable-tcl --disable-silent-rules
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 USE_RC_SUBR=	rrdcached
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -22,109 +25,68 @@ SHEBANG_FILES=	examples/rrdcached/rrdcached-size.pl
 USE_GNOME=	glib20 libxml2
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ARGS=	--disable-tcl --disable-silent-rules
-
 PORTEXAMPLES=	4charts.pl bigtops.pl cgi-demo.cgi minmax.pl perftest.pl \
 		piped-demo.pl shared-demo.pl stripes.pl
 
-OPTIONS_DEFINE=	DEJAVU GRAPH MMAP NLS PERL_MODULE PYTHON_MODULE \
-		RUBY_MODULE EXAMPLES DOCS
-OPTIONS_DEFAULT=	DEJAVU GRAPH MMAP PERL_MODULE
-GRAPH_DESC=		Enable the rrdtool graph command (needs cairo)
-DEJAVU_DESC=		Use DejaVu fonts (requires X11)
-MMAP_DESC=		Use mmap in rrd_update
-PERL_MODULE_DESC=	Build PERL module
-PYTHON_MODULE_DESC=	Build PYTHON bindings
-RUBY_MODULE_DESC=	Build RUBY bindings
+OPTIONS_DEFINE=	DEJAVU GRAPH MMAP NLS PERL PYTHON \
+		RUBY EXAMPLES DOCS
+OPTIONS_DEFAULT=DEJAVU GRAPH MMAP PERL
+OPTIONS_SUB=	yes
+GRAPH_DESC=	Enable the rrdtool graph command (needs cairo)
+DEJAVU_DESC=	Use DejaVu fonts (requires X11)
+MMAP_DESC=	Use mmap in rrd_update
+PERL_DESC=	Build PERL module
+PYTHON_DESC=	Build PYTHON bindings
+RUBY_DESC=	Build RUBY bindings
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON_MODULE}
-USES+=		python
-PLIST_SUB+=	WITH_PYTHON=""
-CONFIGURE_ARGS+=	--enable-python
-.else
-CONFIGURE_ARGS+=	--disable-python
-PLIST_SUB+=	WITH_PYTHON="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MRUBY_MODULE}
-USE_RUBY=	yes
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
-PLIST_SUB+=	WITH_RUBY=""
-CONFIGURE_ARGS+=	--enable-ruby
-.else
-CONFIGURE_ARGS+=	--disable-ruby
-PLIST_SUB+=	WITH_RUBY="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPERL_MODULE}
-USES+=		perl5
-USE_PERL5+=	build run
-CONFIGURE_ARGS+=	--enable-perl --enable-perl-site-install
-PLIST_SUB+=	WITH_PERL=""
-.else
-CONFIGURE_ARGS+=	--disable-perl
-PLIST_SUB+=	WITH_PERL="@comment "
-.endif
-
-.if ! ${PORT_OPTIONS:MMMAP}
-CONFIGURE_ARGS+=	--disable-mmap
-.endif
-
-.if ${PORT_OPTIONS:MGRAPH}
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng.so:${PORTSDIR}/graphics/png
-USE_GNOME+=	cairo pango
-PLIST_SUB+=	WITH_GRAPH=""
-.else
-CONFIGURE_ARGS+=--disable-rrdcgi --disable-rrd_graph
-PLIST_SUB+=	WITH_GRAPH="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-USE_GNOME+=	intltool
-.else
-CONFIGURE_ARGS+=--disable-nls
-.endif
-
-.if ${PORT_OPTIONS:MDEJAVU}
-RUN_DEPENDS+=	dejavu>0:${PORTSDIR}/x11-fonts/dejavu
-.endif
-
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
+DEJAVU_RUN_DEPENDS=	dejavu>0:${PORTSDIR}/x11-fonts/dejavu
+GRAPH_CONFIGURE_OFF=	--disable-rrdcgi --disable-rrd_graph
+GRAPH_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+			libpng.so:${PORTSDIR}/graphics/png
+GRAPH_USE=		GNOME=cairo,pango
+GRAPH_USES=		gnome
+MMAP_CONFIGURE_ENABLE=	mmap
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USE=		GNOME=intltool
+NLS_USES=		gettext
+PERL_CONFIGURE_OFF=	--disable-perl
+PERL_CONFIGURE_ON=	--enable-perl --enable-perl-site-install
+PERL_USES=		perl5
+PYTHON_CONFIGURE_ENABLE=python
+PYTHON_USES=		python
+RUBY_CONFIGURE_ENABLE=	ruby
+RUBY_USE=		RUBY=yes
 
 post-extract:
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^SUBDIRS = /s| doc | |' \
-		${WRKSRC}/Makefile.in
-.endif
-.if ! ${PORT_OPTIONS:MEXAMPLES}
-	@${REINPLACE_CMD} -e '/^SUBDIRS = /s| examples | |' \
-		${WRKSRC}/Makefile.in
-.endif
 	@${REINPLACE_CMD} -E 's|(^rrdcached_LDADD = librrd_th.la)|\1 $$\(ALL_LIBS\)|' \
 		${WRKSRC}/src/Makefile.in
 
 	@${REINPLACE_CMD} -E 's|(^rrdtool_LDADD = librrd.la)|\1 $$\(ALL_LIBS\)|' \
 		${WRKSRC}/src/Makefile.in
 
-post-install:
-.if !defined(BATCH) && ${PORT_OPTIONS:MEXAMPLES}
+post-extract-DOCS-off:
+	@${REINPLACE_CMD} -e '/^SUBDIRS = /s| doc | |' \
+		${WRKSRC}/Makefile.in
+
+post-extract-EXAMPLES-off:
+	@${REINPLACE_CMD} -e '/^SUBDIRS = /s| examples | |' \
+		${WRKSRC}/Makefile.in
+
+post-install-EXAMPLES-on:
+.if !defined(BATCH)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "############################################################################"
 	@${ECHO_MSG} "# See ${EXAMPLESDIR} for some demonstration code        #"
 	@${ECHO_MSG} "############################################################################"
 .endif
-.if ${PORT_OPTIONS:MPERL_MODULE}
+
+post-install-PERL-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/RRDs/RRDs.so
-.endif
-.if ${PORT_OPTIONS:MPYTHON_MODULE}
+
+post-install-PYTHON-on:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rrdtool.so
-.endif
-.if ${PORT_OPTIONS:MRUBY_MODULE}
+
+post-install-RUBY-on:
 	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/RRD.so
-.endif
 
 .include <bsd.port.mk>

@@ -1,13 +1,11 @@
 # Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	misc devel
 PKGNAMESUFFIX=	-libuuid
 
 COMMENT=	UUID library from e2fsprogs package
-
-CONFLICTS=	ossp-uuid-[0-9]*
 
 CONFIGURE_ARGS=	--enable-elf-shlibs
 

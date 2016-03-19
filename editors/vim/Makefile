@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	7.4.1229
+PORTVERSION=	7.4.1556
 DISTVERSIONPREFIX=	v
 CATEGORIES?=	editors
 
@@ -27,7 +27,7 @@ ALL_TARGET=	# empty
 MAKE_ARGS+=	CC="${CC}" CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" STRIP="${STRIP_CMD}" CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=termlib
 MAKE_ARGS+=	VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} VIMRCLOC=${ETCDIR}
 REINPLACE_ARGS=	-i ''
-USES=		cpe iconv ncurses pkgconfig shebangfix tar:bzip2
+USES=		cpe iconv ncurses pkgconfig shebangfix
 WANT_GNOME=	yes
 
 PLIST_SUB=	VIM_VER=${VIM_VER}
@@ -59,7 +59,7 @@ PLIST_SUB+=	NON_LITE="@comment "
 .else
 CONFLICTS_INSTALL=	vim-lite-[0-9]*
 OPTIONS_DEFAULT=CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS GTK2 LUA PERL PYTHON RUBY TCL
-MAKE_ARGS+=	CONF_OPT_FEAT=--with-features=big \
+MAKE_ARGS+=	CONF_OPT_FEAT=--with-features=huge \
 		CONF_OPT_INPUT=--enable-xim \
 		CONF_OPT_OUTPUT=--enable-fontset
 PLIST_SUB+=	NON_LITE=""

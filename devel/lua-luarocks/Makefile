@@ -12,8 +12,8 @@ COMMENT=	Package manager for Lua modules
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	zip:archivers/zip \
+		curl:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keplerproject
@@ -36,22 +36,22 @@ FETCH_DESC=		Fetch from repositories
 OPTIONS_GROUP_FETCH=	CVS GIT HG SVN
 
 CMAKE_DESC=		CMake support
-CMAKE_RUN_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+CMAKE_RUN_DEPENDS=	cmake:devel/cmake
 GMAKE_DESC=		GNU Make support
-GMAKE_RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
+GMAKE_RUN_DEPENDS=	gmake:devel/gmake
 
 CVS_DESC=		CVS support
-CVS_RUN_DEPENDS=	cvs:${PORTSDIR}/devel/cvs-devel
+CVS_RUN_DEPENDS=	cvs:devel/cvs-devel
 GIT_DESC=		Git support
-GIT_RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+GIT_RUN_DEPENDS=	git:devel/git
 HG_DESC=		Mercurial support
-HG_RUN_DEPENDS=		hg:${PORTSDIR}/devel/mercurial
+HG_RUN_DEPENDS=		hg:devel/mercurial
 SVN_DESC=		Subversion support
-SVN_RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
+SVN_RUN_DEPENDS=	svn:devel/subversion
 
 LUAJIT_DESC=		Use LuaJIT instead of Lua
-LUAJIT_BUILD_DEPENDS=	luajit:${PORTSDIR}/lang/luajit
-LUAJIT_RUN_DEPENDS=	luajit:${PORTSDIR}/lang/luajit
+LUAJIT_BUILD_DEPENDS=	luajit:lang/luajit
+LUAJIT_RUN_DEPENDS=	luajit:lang/luajit
 LUAJIT_CONFIGURE_ON=	--lua-suffix=jit
 LUAJIT_PLIST_SUB=	LUA_VER=${LUA_VER} \
 			LUA_MODSHAREDIR=share/lua/${LUA_VER}

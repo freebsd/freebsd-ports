@@ -6,14 +6,14 @@ PORTVERSION=	6.1
 PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tbz2
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Lightweight, NETWM compliant X11 desktop panel
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias gmake pkgconfig tar:bzip2
+USES=		alias gmake pkgconfig tar:tbz2
 USE_GNOME=	gtk20
 USE_XORG=	x11
 HAS_CONFIGURE=	yes
@@ -36,6 +36,8 @@ post-patch:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/data/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${LN} -sf ${DATADIR}/images/logo.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

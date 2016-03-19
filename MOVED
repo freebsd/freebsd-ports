@@ -389,7 +389,6 @@ misc/utf8locale||2009-01-05|Part of the base system since FreeBSD 5.3
 lang/gcc41-withgcjawt||2009-01-06|Removed
 java/gjdoc||2009-01-06|Removed
 java/ecj-bootstrap||2009-01-06|Removed
-audio/dream||2009-01-06|Has expired: Needs DRM enabled in FAAD
 emulators/mupen64plus-sound||2009-01-06|No supported anymore by mupen64plus team
 misc/heyu||2009-01-07|Has expired: no longer under development, use misc/heyu2
 sysutils/pkill||2009-01-07|Part of the base system since FreeBSD 5.3
@@ -5288,7 +5287,6 @@ net/freeswitch-core||2013-12-20|Has expired: Broken for more than 6 months
 misc/freeswitch-pizzademo||2013-12-20|Has expired: Depends on expired net/freeswitch-core
 misc/freeswitch-scripts||2013-12-20|Has expired: Depends on expired net/freeswitch-core
 www/p5-HTML-Webmake||2013-12-20|Has expired: Depends on expired textproc/p5-XML-Sablotron
-net/freeswitch||2013-12-20|Has expired: Depends on expired net/freeswitch-core
 games/blue|games/bluemoon|2013-12-21|Rename to match upstream naming
 devel/ruby-cvs||2013-12-22|Has expired: Broken for more than 6 months
 devel/hs-reactive||2013-12-22|Has expired: Broken for more than 6 months
@@ -6619,7 +6617,6 @@ java/jc||2014-09-01|Not staged
 java/poseidon||2014-09-01|Not staged
 lang/Sather||2014-09-01|Not staged
 lang/gnustep-guile||2014-09-01|Not staged
-lang/haskell-mode.el||2014-09-01|Not staged
 lang/hiphop-php||2014-09-01|Not staged
 lang/lush||2014-09-01|Not staged
 lang/metaocaml||2014-09-01|Not staged
@@ -8013,7 +8010,6 @@ astro/dgpsip||2015-11-28|Has expired: Broken for more than 6 months
 databases/pecl-handlersocket||2015-11-28|Has expired: Broken for more than 6 months
 audio/cymbaline||2015-11-28|Has expired: Broken for more than 6 months
 french/dico||2015-11-28|Has expired: Broken for more than 6 months
-comms/qpage||2015-11-28|Has expired: Broken for more than 6 months
 audio/sonice||2015-11-28|Has expired: Broken for more than 6 months
 cad/geda-symbols||2015-11-28|Has expired: Broken for more than 6 months
 databases/java-mybatis||2015-11-28|Has expired: Broken for more than 6 months
@@ -8120,7 +8116,7 @@ www/codeigniter22|www/codeigniter|2016-02-01|Has expired: Codeigniter 2.2.x reac
 java/wildfly80||2016-02-01|Has expired: Fully EOL when version 8.2 was released
 java/wildfly81||2016-02-01|Has expired: Fully EOL when version 9.0 was released
 mail/phpmailer2|mail/phpmailer|2016-02-01|Has expired: Obsolete, use mail/phpmailer instead
-cad/pycam|cad/py-pycam|2016-02-03|Add py- prefix to directory name
+cad/pycam|cad/py-pycam|2016-02-02|Add py- prefix to directory name
 lang/python32||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
 devel/py-setuptools32||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
 databases/py32-gdbm||2016-02-02|Has expired: Full EOL reached. Please update to Python 3.5
@@ -8133,8 +8129,8 @@ security/polarssl||2016-02-07|Has expired: Upstream is ending support for 1.2.x
 multimedia/xbmc-addon-pvr||2016-02-12|Has expired: Does not work with multimedia/kodi 15.x and newer
 security/py-openid|security/py-python-openid|2016-02-13|Renamed to match upstream (PyPI) name
 ports-mgmt/tinderbox-devel|ports-mgmt/tinderbox|2016-02-14|Has expired: use newer stable version (ports-mgmt/tinderbox)
-deskutils/alacarte||2016-02-10|Not part of GNOME anymore
-deskutils/gnome-shell-extension-calculator||2016-02-10|Obsolete. gnome-calculator provides the functionality since GNOME 3.14
+deskutils/alacarte||2016-02-14|Not part of GNOME anymore
+deskutils/gnome-shell-extension-calculator||2016-02-14|Obsolete. gnome-calculator provides the functionality since GNOME 3.14
 archivers/php5-bz2||2016-02-14|PHP 5.4 is End of Life http://php.net/supported-versions.php
 archivers/php5-phar||2016-02-14|PHP 5.4 is End of Life http://php.net/supported-versions.php
 archivers/php5-zip||2016-02-14|PHP 5.4 is End of Life http://php.net/supported-versions.php
@@ -8203,7 +8199,7 @@ www/php5-session||2016-02-14|PHP 5.4 is End of Life http://php.net/supported-ver
 www/php5-tidy||2016-02-14|PHP 5.4 is End of Life http://php.net/supported-versions.php
 mail/pronto||2016-02-18|No release since 2002 http://www.muhri.net/pronto/page.php3?node=news
 russian/muttprint||2016-02-25|The Russian translation is included in print/muttprint
-security/openssh-portable-devel|security/openssh-portable|2016-02-29|Outdated and insecure, use the main port.
+security/openssh-portable-devel|security/openssh-portable|2016-02-29|Outdated and insecure, use the main port
 audio/audacious-dumb||2016-02-29|Has expired: Broken for more than 6 months
 net/ntopng||2016-02-29|Has expired: Broken for more than 6 months
 audio/rezound||2016-02-29|Has expired: Broken for more than 6 months
@@ -8213,8 +8209,28 @@ net/samba4||2016-03-02|Has expired: not supported by the upstream
 net/isc-dhcp42-client|net/isc-dhcp43-client|2016-03-02|Has expired: isc-dhcp 4.2 is End of Life
 net/isc-dhcp41-relay|net/isc-dhcp43-relay|2016-03-02|Has expired: isc-dhcp 4.1 is now End of Life
 net/isc-dhcp42-relay|net/isc-dhcp43-relay|2016-03-02|Has expired: isc-dhcp 4.2 is End of Life
-net/isc-dhcp41-client|net/isc-dhcp43-cliet|2016-03-02|Has expired: isc-dhcp 4.1 is now End of Life
+net/isc-dhcp41-client|net/isc-dhcp43-client|2016-03-02|Has expired: isc-dhcp 4.1 is now End of Life
 net/isc-dhcp42-server|net/isc-dhcp43-server|2016-03-02|Has expired: isc-dhcp 4.2 is End of Life
 devel/pear-IO_Bit||2016-03-02|Has expired: Unsupported upstream
 graphics/pear-IO_SWF||2016-03-02|Has expired: Unsupported upstream
-math/k3dsurf|math/mathmod|2016-03-04|K3DSurf was the previous release, based on Qt3, MathMod is the new one, based on Qt5.
+math/k3dsurf|math/mathmod|2016-03-04|K3DSurf was the previous release, based on Qt3, MathMod is the new one, based on Qt5
+databases/mysql-workbench52||2016-03-05|Has expired: Broken for more than 6 months
+math/geogebra-i18n|math/geogebra|2016-03-06|Portname simplified
+devel/seed||2016-03-06|Has expired: No longer used
+devel/seed3||2016-03-06|Has expired: No longer used
+audio/waheela||2016-03-06|Has expired: Distfiles unavailable and no updates in 6 years
+sysutils/logstash-contrib||2016-03-06|Has expired: Upstream now distributing plugins separately: see https://github.com/logstash-plugins
+devel/p5-DateTime-Event-SolarTerm|devel/p5-DateTime-Astro|2016-03-07|Has been part of DateTime-Astro for a long time
+devel/p5-DateTime-Util-Astro|devel/p5-DateTime-Astro|2016-03-07|Has been part of DateTime-Astro for a long time
+security/regripperplugins||2016-03-07|Merged into security/regripper
+textproc/elasticsearch-plugin-marvel2|textproc/elasticsearch2-plugin-marvel|2016-03-10|Rename to match other Elasticsearch 2 plugins
+print/cups-base|print/cups|2016-03-11|Merged
+print/cups-client|print/cups|2016-03-11|Merged
+print/cups-image|print/cups|2016-03-11|Merged
+print/cups-pstoraster|print/cups-filters|2016-03-11|Obsolete
+russian/MT||2016-03-13|Has expired: Reached it's EOL in September 2015
+www/MT||2016-03-13|Has expired: Reached it's EOL in September 2015
+security/openvas-libnasl|security/openvas-libraries|2016-03-17|Merged
+security/openvas-server|security/openvas-scanner|2016-03-17|Renamed
+security/openvas-plugins|security/openvas-scanner|2016-03-17|Merged
+security/openvas-client||2016-03-17|Discontinued, try security/greenbone-security-assistant

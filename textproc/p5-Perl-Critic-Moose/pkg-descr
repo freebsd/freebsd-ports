@@ -1,0 +1,4 @@
+Some Perl::Critic policies that will help you keep your code in good shape with
+regards to Moose.
+
+WWW: https://metacpan.org/release/Perl-Critic-Moose

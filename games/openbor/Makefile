@@ -11,8 +11,8 @@ COMMENT=	Moddable fighting game engine (aka Beats of Rage)
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libvpx.so:${PORTSDIR}/multimedia/libvpx
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libvpx.so:multimedia/libvpx
 
 USES=		dos2unix gmake pkgconfig tar:xz
 USE_SDL=	gfx2
@@ -39,12 +39,12 @@ OPTIONS_DEFAULT=	${MACHINE_CPU:tu:MSOFTFP:S/SOFTFP/TREMOR/}
 OPTIONS_DEFINE_i386=	MMX
 OPTIONS_DEFAULT_i386=	MMX # runtime detection
 
-MMX_BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
+MMX_BUILD_DEPENDS=	yasm:devel/yasm
 MMX_MAKE_ARGS=		BUILD_MMX=1
 
-TREMOR_LIB_DEPENDS=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
+TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
 TREMOR_MAKE_ARGS=	BUILD_TREMOR=1 BUILD_VORBIS=""
-TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:audio/libvorbis
 
 #
 # To update snapshot: make makesum BOOTSTRAP=
@@ -62,7 +62,7 @@ SVN_REV?=	${PORTVERSION:E:S/r//}
 .endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 
 do-fetch:
 	${MKDIR} ${WRKDIR}

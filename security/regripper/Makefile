@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	regripper
-DISTVERSION=	2.8
+PORTVERSION=	2.8.20160225
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	rrv${DISTVERSION}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Tool for registry analysis in forensics examinations
@@ -14,20 +12,29 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	p5-Parse-Win32Registry>=0:${PORTSDIR}/devel/p5-Parse-Win32Registry
 
-NO_WRKSUBDIR=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	keydet89
+GH_PROJECT=	RegRipper2.8
+GH_TAGNAME=	c538c7a
+
+NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		dos2unix perl5 zip shebangfix
+USES=		perl5 shebangfix
 SHEBANG_FILES=	rip.pl
 perl_OLD_CMD=	c:\\\\perl\\\\bin\\\\perl.exe
 USE_PERL5=	run
 
 PLIST_FILES=	bin/rip.pl
+PORTDATA=	plugins/*.pl plugins/all plugins/ntuser plugins/sam \
+		plugins/security plugins/software plugins/system \
+		plugins/usrclass
 
 post-patch:
-	${REINPLACE_CMD} -e 's|plugindir = $$str|plugindir = "${DATADIR}"| ; \
-		s|require "plugins/|require "${DATADIR}plugins/|' ${WRKSRC}/rip.pl
+	${REINPLACE_CMD} 's|"plugins"|"${DATADIR}/plugins"|' ${WRKSRC}/rip.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rip.pl ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins
+	${INSTALL_DATA} ${PORTDATA:S,^,${WRKSRC}/,} ${STAGEDIR}${DATADIR}/plugins
 
 .include <bsd.port.mk>

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	soundconverter
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	audio python
-MASTER_SITES=	https://launchpad.net/soundconverter/trunk/2.1.5/+download/ \
+MASTER_SITES=	https://launchpad.net/soundconverter/trunk/2.1.6/+download/ \
 		http://BSDforge.com/projects/source/audio/soundconverter/
 
 MAINTAINER=	portmaster@BSDforge.com

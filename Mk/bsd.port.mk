@@ -3520,6 +3520,9 @@ do-package: ${TMPPLIST}
 				fi ; \
 				${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
 			fi; \
+		elif [ ! -d ${PACKAGES} ]; then \
+			${LN} -f ${WRKDIR_PKGFILE} ${PKGFILE} 2>/dev/null \
+				|| ${CP} -f ${WRKDIR_PKGFILE} ${PKGFILE}; \
 		fi; \
 	else \
 		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
@@ -4005,13 +4008,14 @@ fetch-list:
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi; \
+			${ECHO_CMD} -n ${MKDIR} ${_DISTDIR} '&& ' ; \
+			${ECHO_CMD} -n cd ${_DISTDIR} '&& { ' ; \
 			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				if [ ! -z "`${ECHO_CMD} ${NOFETCHFILES} | ${GREP} -w $${file}`" ]; then \
 					if [ -z "`${ECHO_CMD} ${MASTER_SITE_OVERRIDE} | ${GREP} -w $${site}`" ]; then \
 						continue; \
 					fi; \
 				fi; \
-				DIR=${DIST_SUBDIR};\
 				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
@@ -4019,7 +4023,7 @@ fetch-list:
 				esac; \
 				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
-			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched" ; \
+			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched; }" ; \
 		fi; \
 	done)
 .if defined(PATCHFILES)
@@ -4047,6 +4051,8 @@ fetch-list:
 			else \
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi; \
+			${ECHO_CMD} -n ${MKDIR} ${_DISTDIR} '&& ' ; \
+			${ECHO_CMD} -n cd ${_DISTDIR} '&& { ' ; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
 				case $${file} in \
@@ -4055,7 +4061,7 @@ fetch-list:
 				esac; \
 				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
-			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched" ; \
+			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched; }" ; \
 		fi; \
 	 done)
 .endif
@@ -4390,6 +4396,10 @@ deinstall-depends:
 fetch-specials:
 	@${ECHO_MSG} "===> Fetching all distfiles required by ${PKGNAME} for building"
 	@for dir in ${_DEPEND_SPECIALS}; do \
+		case $$dir in \
+		/*) ;; \
+		*) dir=${PORTSDIR}/$$dir ;; \
+		esac; \
 		(cd $$dir; ${MAKE} fetch); \
 	done
 .endif

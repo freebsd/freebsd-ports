@@ -1,0 +1,3 @@
+%%ETCDIR%%/graylog.conf.example
+%%ETCDIR%%/graylog_logging.xml
+graylog/graylog.jar

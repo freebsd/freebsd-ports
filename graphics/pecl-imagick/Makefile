@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imagick
-DISTVERSION=	3.1.2
-PORTREVISION=	2
+DISTVERSION=	3.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -19,10 +18,9 @@ OPTIONS_DEFINE=	X11
 X11_LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
 X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick-nox11
 
-USES=		pkgconfig tar:tgz
+USES=		pkgconfig tar:tgz localbase
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--with-imagick=${LOCALBASE}
 

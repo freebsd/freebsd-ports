@@ -3,6 +3,7 @@
 
 PORTNAME=	deforaos-panel
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.defora.org/os/download/download/4338/
 DISTNAME=	Panel-${PORTVERSION}
@@ -11,6 +12,8 @@ MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop panel
 
 LICENSE=	GPLv3
+
+BROKEN=		fails to build
 
 LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
 		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop

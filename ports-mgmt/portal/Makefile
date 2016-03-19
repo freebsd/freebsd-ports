@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	portal
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	culot@FreeBSD.org
@@ -14,6 +14,8 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	culot
+
+USES=		compiler:c++11-lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

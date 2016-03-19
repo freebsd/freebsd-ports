@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	0.99
-PORTREVISION=	1
+PORTVERSION=	0.99.1
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	http://www.clamav.net/downloads/production/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C

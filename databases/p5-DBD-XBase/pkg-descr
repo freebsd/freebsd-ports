@@ -9,3 +9,5 @@ to work with the data, providing you with DBI compliant processing
 interface and SQL commands ($dbh->prepare("SELECT * FROM TABLE")). As
 an argument to DBI->connect, specify "dbi:XBase:$dir", where $dir is
 the directory with the data files.
+
+WWW: https://metacpan.org/pod/DBD::XBase

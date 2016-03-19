@@ -1,6 +1,6 @@
 bin/kdevelop
 bin/kdevelop!
-include/kdevelop/make/imakebuilder.h
+include/kde4/kdevelop/make/imakebuilder.h
 lib/kde4/kcm_kdev_cmakebuilder.so
 lib/kde4/kcm_kdev_makebuilder.so
 lib/kde4/kcm_kdev_ninjabuilder.so

@@ -1,5 +1,5 @@
---- ./cache.c.orig	2009-12-15 07:18:40.000000000 -0500
-+++ ./cache.c	2011-10-14 22:36:47.000000000 -0400
+--- cache.c.orig	2016-02-10 18:38:43 UTC
++++ cache.c
 @@ -27,6 +27,7 @@
  #include "sysfs.h"
  #include "cache.h"
@@ -8,7 +8,7 @@
  struct cache { 
  	unsigned level;
  	/* Numerical values must match MCACOD */
-@@ -164,6 +165,15 @@
+@@ -173,6 +174,15 @@ int cache_to_cpus(int cpu, unsigned leve
  	Wprintf("Cannot find sysfs cache for CPU %d", cpu);
  	return -1;
  }

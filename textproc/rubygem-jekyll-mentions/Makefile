@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-mentions
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ COMMENT=	At-mention support for Jekyll sites
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-html-pipeline>=2.2:${PORTSDIR}/textproc/rubygem-html-pipeline \
+RUN_DEPENDS=	rubygem-html-pipeline>=2.3:${PORTSDIR}/textproc/rubygem-html-pipeline \
 		rubygem-jekyll>=3.0:${PORTSDIR}/www/rubygem-jekyll
 
 NO_ARCH=	yes

@@ -3,6 +3,7 @@
 
 PORTNAME=	spice-gtk
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES?=	deskutils gnome
 MASTER_SITES=	http://www.spice-space.org/download/gtk/
 
@@ -13,11 +14,12 @@ LICENSE=	GPLv2
 
 USE_XORG=	pixman
 USE_GNOME=	gnomeprefix gtk20 gtk30 intltool introspection:build
-USES=		cpe gmake jpeg libtool pkgconfig tar:bzip2 pathfix
+USES=		cpe gmake jpeg libtool pkgconfig tar:bzip2 pathfix python
 CPE_VENDOR=	redhat
 
 BUILD_DEPENDS=	spice-protocol>=0.12.10:${PORTSDIR}/devel/spice-protocol \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:${PORTSDIR}/devel/py-pyparsing
+RUN_DEPENDS=	spice-protocol>=0.12.10:${PORTSDIR}/devel/spice-protocol
 
 .if defined(SPICE_SLAVE)
 PORTREVISION=	1
@@ -27,7 +29,6 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk2>=0:${PORTSDIR}/x11-toolkits/py-gtk2
 CONFIGURE_ARGS+=	--with-python
 PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/SpiceClientGtk.so
-USES+=	python
 .endif
 
 CONFIGURE_ENV+=	SSL_CFLAGS=-I${OPENSSLINC} \

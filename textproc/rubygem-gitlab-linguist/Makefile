@@ -11,11 +11,10 @@ COMMENT=	GitHub Language detection
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-charlock_holmes>=0.6.6:${PORTSDIR}/textproc/rubygem-charlock_holmes \
-		rubygem-escape_utils-rails4>=0.3.1:${PORTSDIR}/textproc/rubygem-escape_utils-rails4 \
+		rubygem-escape_utils-rails4>=0.2.4:${PORTSDIR}/textproc/rubygem-escape_utils-rails4 \
 		rubygem-mime-types1>=1.19:${PORTSDIR}/misc/rubygem-mime-types1
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

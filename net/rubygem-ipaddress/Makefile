@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipaddress
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

@@ -18,7 +18,9 @@ COMMENT=	SSL and crypto library
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-CONFLICTS?=	libressl-* openssl-devel-*
+CONFLICTS?=	libressl-[0-9]* \
+		libressl-devel-[0-9]* \
+		openssl-devel-[0-9]*
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

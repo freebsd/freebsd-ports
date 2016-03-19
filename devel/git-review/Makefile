@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	git-review
-PORTVERSION=	1.24
-PORTREVISION=	2
+PORTVERSION=	1.25.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	dereckson@gmail.com
-COMMENT=	Allow to push review and interact with a Gerrit server
+COMMENT=	Allow to push code to review and interact with a Gerrit server
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,7 +19,6 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
-PLIST_FILES=	man/man1/git-review.1.gz
 PORTDOCS=	README.rst HACKING.rst AUTHORS
 
 OPTIONS_DEFINE=	DOCS

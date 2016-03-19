@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spark
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		LOCAL/demon/:maven \
@@ -46,7 +46,7 @@ JAVA_ARCH = ${ARCH}
 do-build:
 	${MKDIR} ${WRKDIR}/snappy/org/xerial/snappy/native/${OPSYS}/${JAVA_ARCH}
 	${CP} ${LOCALBASE}/lib/libsnappyjava.so ${WRKDIR}/snappy/org/xerial/snappy/native/${OPSYS}/${JAVA_ARCH}
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven33/bin/mvn --offline -Dmaven.repo.local=${WRKDIR}/m2 clean package -Dhadoop.version=2.7.1 -Pyarn -Phadoop-2.6 -DskipTests
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/share/java/maven33/bin/mvn --offline -Dmaven.repo.local=${WRKDIR}/m2 clean package -Dhadoop.version=2.7.2 -Pyarn -Phadoop-2.6 -DskipTests
 	${JAR} uvf ${WRKSRC}/assembly/target/scala*/*assembly*hadoop*.jar -C ${WRKDIR}/snappy org
 
 post-build:
@@ -54,7 +54,7 @@ post-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib ${STAGEDIR}${DATADIR}/examples ${STAGEDIR}${DATADIR}/bin ${STAGEDIR}${DATADIR}/sbin ${STAGEDIR}${DATADIR}/conf
-	${ECHO_CMD} "Spark $PORTVERSION built for Hadoop 2.4.1" > ${STAGEDIR}${DATADIR}/RELEASE
+	${ECHO_CMD} "Spark $PORTVERSION built for Hadoop 2.7.2" > ${STAGEDIR}${DATADIR}/RELEASE
 	${INSTALL_DATA} ${WRKSRC}/assembly/target/scala*/*assembly*hadoop*.jar ${STAGEDIR}${DATADIR}/lib/
 	${INSTALL_DATA} ${WRKSRC}/examples/target/scala*/spark-examples*.jar ${STAGEDIR}${DATADIR}/lib/
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} src ${STAGEDIR}${DATADIR}/examples/

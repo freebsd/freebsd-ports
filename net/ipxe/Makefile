@@ -5,6 +5,7 @@
 
 PORTNAME=	ipxe
 PORTVERSION=	20160213
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	t@tobik.me
@@ -29,10 +30,12 @@ GH_PROJECT=	ipxe
 GH_TAGNAME=	7ecfe7159f94193a666200a17057d4cd5981b850
 
 USES=		gmake perl5 shebangfix
+USE_BINUTILS=	yes
 USE_GCC=	yes
 MAKE_ARGS=	PERL=${PERL} \
 		CC=${CC} \
 		HOST_CC=${CC} \
+		OBJCOPY="${LOCALBASE}/bin/objcopy" \
 		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
 		LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
 WRKSRC_SUBDIR=	src

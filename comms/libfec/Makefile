@@ -13,6 +13,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Several forward error correction (FEC) decoders
 
 BROKEN=		produces unusable library
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-04-15
 
 MAKEFILE=	makefile
 

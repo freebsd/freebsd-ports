@@ -14,7 +14,6 @@ COMMENT=	GNU editing macros
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_9=does not build
 BROKEN_sparc64=	fails to compile at bootstrap phase
 BROKEN_ia64=	Emacs 24.X does not currently build on ia64
 
@@ -23,11 +22,9 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]*              \
 		xemacs-devel-[0-9]* xemacs-mule-[0-9]*                \
 		xemacs-devel-mule-[0-9]* emacs-nox11-[0-9]*
 
-EMACS_VER=	25.0.90
+EMACS_VER=	25.0.92
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INFO_PATH=	${DATADIR_REL}/info
 CPE_VENDOR=	gnu
 

@@ -1,6 +1,6 @@
---- primitives.c.orig	2014-01-05 15:25:11.000000000 +0400
-+++ primitives.c	2014-01-05 16:00:30.000000000 +0400
-@@ -487,7 +487,7 @@
+--- primitives.c.orig	2010-09-13 18:43:04 UTC
++++ primitives.c
+@@ -487,7 +487,7 @@ static void ficlPrimitiveSprintf(ficlVm 
  
  	ficlStackPushPointer(vm->dataStack, bufferStart);
  	ficlStackPushInteger(vm->dataStack, buffer - bufferStart);
@@ -9,7 +9,7 @@
  }
  
  
-@@ -1350,7 +1350,7 @@
+@@ -1350,7 +1350,7 @@ static void ficlPrimitiveSetObjectFlag(f
  
  static void ficlPrimitiveIsObject(ficlVm *vm)
  {

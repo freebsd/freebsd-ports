@@ -26,6 +26,8 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 SHEBANG_FILES=	weathermap
 
+PORTSCOUT=	ignore:1
+
 PORTDOCS=	README INSTALL
 
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \

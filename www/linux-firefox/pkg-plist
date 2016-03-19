@@ -11,15 +11,11 @@ lib/%%APP_NAME%%/browser/components/components.manifest
 lib/%%APP_NAME%%/browser/components/libbrowsercomps.so
 lib/%%APP_NAME%%/browser/crashreporter-override.ini
 lib/%%APP_NAME%%/browser/defaults/preferences/browser-prefs.js
-lib/%%APP_NAME%%/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/chrome.manifest
-lib/%%APP_NAME%%/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
-lib/%%APP_NAME%%/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/%%APP_NAME%%/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+lib/%%APP_NAME%%/browser/features/loop@mozilla.org.xpi
 lib/%%APP_NAME%%/browser/icons/mozicon128.png
 lib/%%APP_NAME%%/browser/omni.ja
 lib/%%APP_NAME%%/browser/plugins
-lib/%%APP_NAME%%/chrome.manifest
-lib/%%APP_NAME%%/components/components.manifest
-lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/crashreporter
 lib/%%APP_NAME%%/crashreporter.ini
 lib/%%APP_NAME%%/defaults/pref/channel-prefs.js

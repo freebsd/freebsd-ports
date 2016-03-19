@@ -1,11 +1,11 @@
---- elmergrid/src/CMakeLists.txt.orig	2014-09-25 15:07:43.000000000 +0200
-+++ elmergrid/src/CMakeLists.txt	2014-09-30 22:31:29.000000000 +0200
-@@ -14,7 +14,7 @@
+--- elmergrid/src/CMakeLists.txt.orig	2015-08-18 12:26:58 UTC
++++ elmergrid/src/CMakeLists.txt
+@@ -29,7 +29,7 @@ ADD_EXECUTABLE(ElmerGrid ${elmergrid_SRC
  
- TARGET_LINK_LIBRARIES(ElmerGrid matc metis)
+ TARGET_LINK_LIBRARIES(ElmerGrid metis m)
  IF(NOT(WIN32))
 -  SET_TARGET_PROPERTIES(ElmerGrid PROPERTIES INSTALL_RPATH ${ELMERSOLVER_RPATH_STRING})
 +  SET_TARGET_PROPERTIES(ElmerGrid PROPERTIES INSTALL_RPATH "${ELMERSOLVER_RPATH_STRING}")
  ENDIF()
  
- #INSTALL(PROGRAMS ${CMAKE_BINARY_DIR}/elmergrid/src/ElmerGrid DESTINATION "bin")
+ INSTALL(TARGETS ElmerGrid RUNTIME DESTINATION "bin")

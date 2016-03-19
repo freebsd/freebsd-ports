@@ -1,0 +1,11 @@
+bgpuma is a program for searching BGP update files created by MRT
+or Zebra/Quagga for CIDR blocks and/or Autonomous Systems.  Given
+a list of CIDR blocks, it looks for those CIDR blocks which match
+the list, are contained in the list, or are contained by the list.
+For Autonomous Systems, it looks for routes that are announced by
+the given system.
+
+It is based on the library created by RIPE called bgpdump and SiLK,
+created by CERT.  
+
+WWW: https://github.com/cmu-sei/bgpuma

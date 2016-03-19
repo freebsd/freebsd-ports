@@ -10,17 +10,15 @@ PORTVERSION=	1.0.4.1
 DISTVERSIONPREFIX=	snappy-java-
 PORTREVISION=	2
 CATEGORIES=	archivers java
-MASTER_SITES=	GH:source1 \
-		http://snappy.googlecode.com/files/:source2 \
+MASTER_SITES=	http://snappy.googlecode.com/files/:source2 \
 		LOCAL/jgh/archivers/${PORTNAME}/:source3
 PKGNAMESUFFIX=	java
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:source1 \
-		snappy-${PORTVERSION:R}.tar.gz:source2 \
+DISTFILES+=	snappy-${PORTVERSION:R}.tar.gz:source2 \
 		FreeBSD-snappy-${PORTVERSION}-maven-repository.tar.gz:source3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		FreeBSD-snappy-${PORTVERSION}-maven-repository.tar.gz
 
-MAINTAINER=	hsn@sendmail.cz
+MAINTAINER=	mark@tranquillussoftware.co.uk
 COMMENT=	Fast compressor/decompressor library
 
 LICENSE=	APACHE20
@@ -41,7 +39,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/snappy-java.jar lib/libsnappyjava.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|curl.*||g ; \
-		s|MVN:=mvn|MVN:=mvn -Dmaven.repo.local=${WRKDIR}/repository --offline|g' \
+		s|MVN:=mvn|MVN:=${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/repository --offline|g' \
 		${WRKSRC}/Makefile
 
 do-build:

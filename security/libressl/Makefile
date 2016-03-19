@@ -18,8 +18,9 @@ OPTIONS_DEFINE=	MAN3
 OPTIONS_DEFAULT=	MAN3
 MAN3_DESC=	Install API manpages (section 3)
 
-CONFLICTS?=	openssl-[0-9]* \
-		libressl-devel-[0-9]*
+CONFLICTS?=	libressl-devel-[0-9]* \
+		openssl-[0-9]* \
+		openssl-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig

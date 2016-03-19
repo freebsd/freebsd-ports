@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -86,7 +87,7 @@ OPENEXR_CMAKE_OFF=	-DUSE_OPENEXR:BOOL=OFF
 OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
 OPENJPEG_CMAKE_OFF=	-DUSE_OPENJPEG:BOOL=OFF
 
-PRINT_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+PRINT_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
 PRINT_CMAKE_OFF=	-DBUILD_PRINT:BOOL=OFF
 
 RAWSPEED_CMAKE_OFF=	-DDONT_USE_RAWSPEED:BOOL=ON
@@ -124,6 +125,12 @@ LDFLAGS+=	${OPENMP_FLAGS}
 # See: https://cmake.org/cmake/help/v3.4/policy/CMP0056.html
 CMAKE_ARGS+=	-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW
 .endif
+
+# On FreeBSD 9.3-RELEASE, powl(3) is hidden behind the following
+# define. So let's define it to fix the build. This is only needed on
+# 9.3-RELEASE, but it's harmless on later branches because this define
+# is not used.
+CFLAGS+=	-D_DECLARE_C99_LDBL_MATH
 
 .if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=	RelWithDebInfo

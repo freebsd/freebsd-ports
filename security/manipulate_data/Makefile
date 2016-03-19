@@ -10,23 +10,25 @@ MASTER_SITES=	PACKETSTORM/groups/thc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search/extract/write raw data
 
-OPTIONS_DEFINE=	DOCS
+SBIN_PROGRAMS=	read_data replace_data search_data write_data
 
 PORTDOCS=	CHANGES README
 PLIST_FILES=	${SBIN_PROGRAMS:S,^,sbin/,}
 
-SBIN_PROGRAMS=	read_data replace_data search_data write_data
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-	's|^CC=|CC?=| ; \
-	s| -O2 | $$(CFLAGS) | ; \
-	/strip/s|^|#|' ${WRKSRC}/Makefile
+		's|^CC=|CC?=| ; \
+		s| -O2 | $$(CFLAGS) | ; \
+		/strip/s|^|#|' ${WRKSRC}/Makefile
 
 do-install:
 .for i in ${SBIN_PROGRAMS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}

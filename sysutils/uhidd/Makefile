@@ -3,15 +3,17 @@
 
 PORTNAME=	uhidd
 PORTVERSION=	0.2.1
+DISTVERSIONPREFIX=	REL-
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE \
-		http://people.freebsd.org/~kaiw/distfiles/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Userland USB HID device driver using libusb20
 
 LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	kaiwang27
 
 USES=		uidfix
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man"
@@ -29,8 +31,8 @@ OPTIONS_EXCLUDE+=	CUSE
 .endif
 
 CUSE_DESC=	Use cuse(3) over multimedia/cuse4bsd-kmod
-CUSE_BUILD_DEPENDS_OFF=	cuse4bsd-kmod>=0.1.24:${PORTSDIR}/multimedia/cuse4bsd-kmod
-CUSE_LIB_DEPENDS_OFF=	libcuse4bsd.so:${PORTSDIR}/multimedia/cuse4bsd-kmod
+CUSE_BUILD_DEPENDS_OFF=	cuse4bsd-kmod>=0.1.24:multimedia/cuse4bsd-kmod
+CUSE_LIB_DEPENDS_OFF=	libcuse4bsd.so:multimedia/cuse4bsd-kmod
 CUSE_SUB_LIST_OFF=	LIBCUSE="${LOCALBASE}/lib/libcuse4bsd.so"
 CUSE_SUB_LIST=		LIBCUSE=""
 

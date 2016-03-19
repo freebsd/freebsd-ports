@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tint2
-PORTVERSION=	0.12.6
+PORTVERSION=	0.12.7
 CATEGORIES=	x11
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/tint/
 

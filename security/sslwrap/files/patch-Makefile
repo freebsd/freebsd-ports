@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Sep 28 05:49:54 1999
-+++ Makefile	Thu Jan 27 23:09:09 2000
-@@ -6,16 +6,19 @@
+--- Makefile.orig	2000-11-11 22:01:25 UTC
++++ Makefile
+@@ -6,16 +6,19 @@ SRC = s_server.c s_socket.c s_cb.c
  
  # Debug/Optimizations
  #OPT = -g

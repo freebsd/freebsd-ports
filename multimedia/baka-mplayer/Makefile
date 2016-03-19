@@ -10,7 +10,7 @@ COMMENT=	Qt 5 multimedia player based on libmpv
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmpv.so:${PORTSDIR}/multimedia/mpv
+LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	u8sand
@@ -27,7 +27,7 @@ OPTIONS_SUB=	yes
 NLS_USE=	QT5=linguisttools_build
 NLS_QMAKE_ON=	CONFIG+="install_translations"
 NOTO_DESC=	Original look with Noto Sans font
-NOTO_RUN_DEPENDS=	noto>0:${PORTSDIR}/x11-fonts/noto
+NOTO_RUN_DEPENDS=	noto>0:x11-fonts/noto
 
 post-patch:
 	${REINPLACE_CMD} '/^Comment/s,=.*,=${COMMENT},' \

@@ -17,6 +17,7 @@
     SUBDIR += bandwidthd
     SUBDIR += bgpq
     SUBDIR += bgpq3
+    SUBDIR += bgpuma
     SUBDIR += bpft
     SUBDIR += braa
     SUBDIR += bsnmp-jails
@@ -343,5 +344,9 @@
     SUBDIR += zabbix24-frontend
     SUBDIR += zabbix24-proxy
     SUBDIR += zabbix24-server
+    SUBDIR += zabbix3-agent
+    SUBDIR += zabbix3-frontend
+    SUBDIR += zabbix3-proxy
+    SUBDIR += zabbix3-server
 
 .include <bsd.port.subdir.mk>

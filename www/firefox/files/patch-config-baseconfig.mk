@@ -1,6 +1,9 @@
 --- config/baseconfig.mk~
 +++ config/baseconfig.mk
-@@ -1,7 +1,7 @@
+@@ -2,10 +2,10 @@
+ # directly in python/mozbuild/mozbuild/base.py for gmake validation.
+ # We thus use INCLUDED_AUTOCONF_MK to enable/disable some parts depending
+ # whether a normal build is happening or whether the check is running.
 -includedir := $(includedir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
 -idldir = $(datadir)/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
 -installdir = $(libdir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
@@ -9,6 +12,6 @@
 +idldir = $(datadir)/idl/%%MOZILLA%%
 +installdir = $(libdir)/%%MOZILLA%%
 +sdkdir = $(libdir)/%%MOZILLA%%
- ifndef TOP_DIST
- TOP_DIST = dist
- endif
+ ifeq (.,$(DEPTH))
+ DIST = dist
+ else

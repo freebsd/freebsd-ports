@@ -1,0 +1,31 @@
+--- xmris.man.orig	1995-12-22 12:08:29 UTC
++++ xmris.man
+@@ -1,7 +1,7 @@
+-. Copyright (C) 1995, 1994, 1993, 1992 Nathan Sidwell
+-. RCS $Id: xmris.man,v 4.17 1995/12/14 13:53:27 nathan Exp $
++.\" Copyright (C) 1995, 1994, 1993, 1992 Nathan Sidwell
++.\" RCS $Id: xmris.man,v 4.17 1995/12/14 13:53:27 nathan Exp $
+ .TH XMRIS 6 "12 December 1995" "X Version 11"
+-.IX xmris#(n) "" "\fLxmris\fP(n)"
++.\" .IX xmris#(n) "" "\fLxmris\fP(n)"
+ .SH NAME
+ xmris - video game for X
+ .SH SYNOPSIS
+@@ -10,7 +10,7 @@ xmris - video game for X
+ .LP
+ .B xmsit
+ [-option ...] [-toolkitoption ...]
+-.IX xmris#(n) "" "\fLxmris\fP(n) \(em video game"
++.\" .IX xmris#(n) "" "\fLxmris\fP(n) \(em video game"
+ .SH DESCRIPTION
+ .PP
+ Mr Is is a version of the Mr Do video arcade game for the X Window
+@@ -986,7 +986,7 @@ requested time. This has to be detected,
+ .PP
+ The visual class name conversion is performed by a standard toolkit
+ routine. It accepts only American spelling, the English spelling of
+-'grey' and 'colour' are not allowed.
++\fIgrey\fR and \fIcolour\fR are not allowed.
+ .SH COPYRIGHT
+ Copyright (C) 1995, 1994, 1993, 1992 Nathan Sidwell.
+ .SH AUTHOR

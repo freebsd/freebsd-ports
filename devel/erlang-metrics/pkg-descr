@@ -1,0 +1,3 @@
+A generic interface to folsom or exometer or any compliant interface.
+
+WWW: https://github.com/benoitc/erlang-metrics

@@ -142,6 +142,7 @@
     SUBDIR += py-serial
     SUBDIR += pyla
     SUBDIR += qico
+    SUBDIR += qpage
     SUBDIR += qrq
     SUBDIR += qsstv
     SUBDIR += qt5-connectivity

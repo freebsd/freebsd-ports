@@ -3,7 +3,7 @@
 
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.ratbox.org/download/				\
 		http://www.ratbox.org/download/old/
@@ -83,6 +83,11 @@ CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
 .endif
 
 #-----------------------------------------------------------------------
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == "i386"
+USE_GCC=	yes
+.endif
 
 post-patch:
 .if !defined(WITH_DEBUG)
@@ -129,7 +134,6 @@ pre-build:
 		-e "s#%%WRKSRC%%#${WRKSRC}#g" ${WRKSRC}/contrib/ircd-shortcut.pl
 
 # ----- Execute ircd-shortcut perl script to generate the .c file. -----
-.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSHORTCUTS}
 	@${ECHO_MSG} "Executing ircd-shortcut.pl for ircd-shortcuts generation."

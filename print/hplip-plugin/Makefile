@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hplip-plugin
-PORTVERSION=	3.14.10
+PORTVERSION=	3.16.2
 CATEGORIES=	print
 MASTER_SITES=	http://hplipopensource.com/hplip-web/plugin/
 DISTNAME=	hplip-${DISTVERSION}-plugin
@@ -25,6 +25,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 PLUGIN_LINKS=	fax/plugins/fax_marvell \
 		prnt/plugins/hbpl1 \
 		prnt/plugins/lj \
+		scan/plugins/bb_escl \
 		scan/plugins/bb_marvell \
 		scan/plugins/bb_soap \
 		scan/plugins/bb_soapht
@@ -47,14 +48,14 @@ LINARCH=	x86_64
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && ${SH} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} --keep --noexec
+	@(cd ${WRKDIR} && ${SH} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
+		--keep --noexec --nox11)
 
 post-patch:
-	${REINPLACE_CMD} -e 's|ok, ans = tui.enter_yes_no.*|ok, ans = 1, 1|' \
-		${WRKSRC}/plugin_install.py
-	${REINPLACE_CMD} -e 's|rules,||;s|rules_alt,||' ${WRKSRC}/plugin.spec
-	${REINPLACE_CMD} -e 's|/etc/hp|${HPLIP_FAKEDIR}|g' \
-		${WRKSRC}/plugin_install.py
+	@${REINPLACE_CMD} -e 's|ok, ans = tui.enter_yes_no.*|ok, ans = 1, 1|' \
+		-e 's|/etc/hp|${HPLIP_FAKEDIR}|' \
+		${WRKSRC}/plugin_install.py \
+		${WRKSRC}/installPlugin.py
 
 do-install:
 # fake hplip installation
@@ -72,7 +73,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}/var/lib/hp
 # install hplip-plugin
 	${MKDIR} ${PLUGIN_DIRS:S,^,${STAGEDIR}${PREFIX}/share/hplip/,}
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -B plugin_install.py)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -B \
+		plugin_install.py -i)
 .for i in ${PLUGIN_LINKS}
 	${LN} -sf ${i:T}-${LINARCH}.so ${STAGEDIR}${PREFIX}/share/hplip/${i}.so
 .endfor

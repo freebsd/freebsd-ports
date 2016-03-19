@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dsbdriverd
+# REQUIRE: devd
+# BEFORE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dsbdriverd_enable (bool):	Set to NO by default.
+#				Set it to YES to enable dsbdriverd.
+# dsbdriverd_flags (str):	Flags passed to dsbdriverd on startup.
+#				Default is "".
+#
+
+. /etc/rc.subr
+
+name=dsbdriverd
+
+rcvar=dsbdriverd_enable
+load_rc_config ${name}
+
+: ${dsbdriverd_enable:=NO}
+
+command=%%PREFIX%%/libexec/dsbdriverd
+pidfile=/var/run/dsbdriverd.pid
+
+run_rc_command "$1"

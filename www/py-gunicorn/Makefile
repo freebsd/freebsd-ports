@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gunicorn
-PORTVERSION=	19.4.1
+PORTVERSION=	19.4.5
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -42,24 +42,16 @@ NO_ARCH=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3300
+.if ${PORT_OPTIONS:MGAIOHTTP}
+BROKEN=	GAIOHTTP requires Python 3.3+ but this port is building with Python ${PYTHON_VER}. \
+	Disable the GAIOHTTP option or change the version of Python to build with, using DEFAULT_VERSIONS
+.endif
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 .endif
 
 .if ${PYTHON_REL} > 3000 && ${PORT_OPTIONS:MGEVENT}
 BROKEN=	GEVENT requires Python < 3.x but this port is building with Python ${PYTHON_VER}. \
 	Disable the GEVENT option of change the version of Python to build with, using DEFAULT_VERSIONS
-.endif
-
-.if ${PYTHON_REL} < 3000
-
-# compileall() fails on 2.x, but .py[co] files are still in --record output
-post-patch:
-	${RM} ${WRKSRC}/gunicorn/workers/_gaiohttp.py
-
-.if ${PYTHON_REL} < 3300 && ${PORT_OPTIONS:MGAIOHTTP}
-BROKEN=	GAIOHTTP requires Python 3.3+ but this port is building with Python ${PYTHON_VER}. \
-	Disable the GAIOHTTP option or change the version of Python to build with, using DEFAULT_VERSIONS
-.endif
 .endif
 
 do-test:

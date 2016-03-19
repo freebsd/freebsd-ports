@@ -12,6 +12,7 @@
     SUBDIR += biococoa
     SUBDIR += biojava
     SUBDIR += blat
+    SUBDIR += bowtie
     SUBDIR += bwa
     SUBDIR += cd-hit
     SUBDIR += cdbfasta
@@ -64,6 +65,7 @@
     SUBDIR += p5-Bio-SCF
     SUBDIR += p5-bioperl
     SUBDIR += p5-bioperl-run
+    SUBDIR += p5-transdecoder
     SUBDIR += paml
     SUBDIR += phrap
     SUBDIR += phred
@@ -93,6 +95,7 @@
     SUBDIR += tinker
     SUBDIR += treepuzzle
     SUBDIR += treeviewx
+    SUBDIR += trimmomatic
     SUBDIR += ugene
     SUBDIR += vcftools
     SUBDIR += velvet

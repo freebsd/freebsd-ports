@@ -160,6 +160,7 @@
     SUBDIR += elasticsearch-river-rabbitmq
     SUBDIR += elasticsearch2
     SUBDIR += elasticsearch2-plugin-hq
+    SUBDIR += elasticsearch2-plugin-marvel
     SUBDIR += elasticsearch2-plugin-sql
     SUBDIR += elixir-earmark
     SUBDIR += elixir-ex_doc
@@ -352,6 +353,7 @@
     SUBDIR += jdictionary
     SUBDIR += jdictionary-int-eng
     SUBDIR += jing
+    SUBDIR += jo
     SUBDIR += jq
     SUBDIR += jrefentry
     SUBDIR += jshon
@@ -684,6 +686,12 @@
     SUBDIR += p5-Parse-Syslog
     SUBDIR += p5-Perl-Critic
     SUBDIR += p5-Perl-Critic-Bangs
+    SUBDIR += p5-Perl-Critic-Itch
+    SUBDIR += p5-Perl-Critic-Moose
+    SUBDIR += p5-Perl-Critic-More
+    SUBDIR += p5-Perl-Critic-Pulp
+    SUBDIR += p5-Perl-Critic-Swift
+    SUBDIR += p5-Perl-Critic-Tics
     SUBDIR += p5-Perl-Lint
     SUBDIR += p5-Perl-MinimumVersion
     SUBDIR += p5-PerlPoint-Converters
@@ -1705,6 +1713,7 @@
     SUBDIR += yi-hunspell
     SUBDIR += yodl
     SUBDIR += yould
+    SUBDIR += zenxml
     SUBDIR += zorba
     SUBDIR += zu-aspell
     SUBDIR += zu-hunspell

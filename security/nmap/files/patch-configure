@@ -1,6 +1,6 @@
---- configure.orig	2015-06-16 13:47:16 UTC
+--- configure.orig	2016-01-07 05:45:47 UTC
 +++ configure
-@@ -2545,7 +2545,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLA
+@@ -2546,7 +2546,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLA
  ac_compiler_gnu=$ac_cv_c_compiler_gnu
  if test -n "$ac_tool_prefix"; then
    # Extract the first word of "${ac_tool_prefix}gcc", so it can be a program name with args.
@@ -9,7 +9,7 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
  $as_echo_n "checking for $ac_word... " >&6; }
  if ${ac_cv_prog_CC+:} false; then :
-@@ -3378,7 +3378,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLA
+@@ -3379,7 +3379,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLA
  ac_compiler_gnu=$ac_cv_c_compiler_gnu
  if test -n "$ac_tool_prefix"; then
    # Extract the first word of "${ac_tool_prefix}gcc", so it can be a program name with args.

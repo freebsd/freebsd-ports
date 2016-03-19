@@ -8,6 +8,4 @@ Transport building block (LCT) (RFC 3451). MAD-ALC is an implementation of
 the ALC/LCT protocols. The MAD/TUT project is going on at Tampere
 University of Technology (TUT).
 
-WWW: http://www.atm.tut.fi/mad/
-
-Janos Mohacsi <janos.mohacsi@bsd.hu>
+WWW: http://mad.cs.tut.fi/

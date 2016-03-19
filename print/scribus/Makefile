@@ -3,6 +3,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -13,7 +14,7 @@ COMMENT=	Comprehensive desktop publishing program
 LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libcups.so:${PORTSDIR}/print/cups-client \
+		libcups.so:${PORTSDIR}/print/cups \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpodofo.so:${PORTSDIR}/graphics/podofo \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \

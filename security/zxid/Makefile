@@ -9,7 +9,10 @@ MASTER_SITES=	http://zxid.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source IdM for the Masses - SAML SSO
 
-LICENSE=	APACHE20
+LICENSE=	E2ETA
+LICENSE_NAME=	End2End Trust Architecture (e2eta) Software Copying
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	# none
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
@@ -57,6 +60,7 @@ do-install:
 	${LN} -sf libzxid.so.0.0 ${STAGEDIR}${PREFIX}/lib/libzxid.so
 	${LN} -sf libzxid.so.0.0 ${STAGEDIR}${PREFIX}/lib/libzxid.so.0
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.pd ${STAGEDIR}${DOCSDIR}
 

@@ -31,7 +31,7 @@
  #      3. For SuperLU_MT be sure to compile a multi threaded version
  #      of Tochnog (sparc_parallel, alpha_parallel, linux, etc.
 +SUPERLU=%%LOCALBASE%%
-+SUPERLU_LIB=$(SUPERLU)/lib/lib%%SUPERLU%%.a %%BLAS_LIBS%%
++SUPERLU_LIB=$(SUPERLU)/lib/lib%%SUPERLU%%.so %%BLAS_LIBS%%
 +SUPERLU_INCLUDE=-I$(SUPERLU)/include/%%SUPERLU%%
  
  #  ***********  PetSc library *******************

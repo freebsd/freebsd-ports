@@ -1,0 +1,14 @@
+--- configure.ac.orig	2015-12-11 11:19:25 UTC
++++ configure.ac
+@@ -27,11 +27,6 @@ AC_TYPE_SIZE_T
+ OS_TYPE="-D"`uname -s`
+ AC_SUBST(OS_TYPE)
+ 
+-for i in /usr/local/iconv /usr/local /usr; do
+-  (test -f $i/lib/libiconv.so ||\
+-   test -f $i/lib/libiconv.a) && ICONV_DIR=$i && break
+-done
+-
+ if test -z "$ICONV_DIR"; then
+   ICONV_LIBS=""
+   ICONV_INCLUDES=""

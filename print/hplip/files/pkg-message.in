@@ -1,5 +1,3 @@
-=====================================================================
-
 HPLIP expects printers to be attached as a ugen(4) devices.  This
 means that you must NOT have "device ulpt" in your kernel and ulpt
 must NOT be loaded as a kernel module (you may also want to compile
@@ -9,5 +7,3 @@ usb devices.
 
 In order to enable full functionality of hp tools, users must be
 added to group `cups'.
-
-=====================================================================

@@ -7,6 +7,8 @@ PKGNAMEPREFIX=	p5-
 COMMENT=	Perl API for QDBM
 
 BROKEN=		does not build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2016-04-15
 
 SLAVEPORT=	perl
 USES=		perl5 shebangfix

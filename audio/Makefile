@@ -106,6 +106,7 @@
     SUBDIR += discid
     SUBDIR += dream
     SUBDIR += drumpiler
+    SUBDIR += dsbmixer
     SUBDIR += dssi
     SUBDIR += dtmfdial
     SUBDIR += dumb
@@ -590,6 +591,7 @@
     SUBDIR += pavucontrol
     SUBDIR += pavumeter
     SUBDIR += pd
+    SUBDIR += pd-cyclone
     SUBDIR += pear-Text_Spell_Audio
     SUBDIR += penguinsap
     SUBDIR += pianobar
@@ -777,7 +779,6 @@
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
     SUBDIR += vsound
-    SUBDIR += waheela
     SUBDIR += waon
     SUBDIR += wav2cdr
     SUBDIR += wavbreaker

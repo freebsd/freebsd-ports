@@ -5,6 +5,41 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160317:
+  AFFECTS: security/openvas-client
+  AUTHOR: tijl@FreeBSD.org
+
+  The OpenVAS ports have been updated from version 2 to version 8.  All
+  components have been renamed and rearranged.  The old OpenVAS client
+  no longer exists.  Instead there is a web interface provided by
+  security/greenbone-security-assistant or a command-line interface
+  provided by security/openvas-cli.
+
+20160311:
+  AFFECTS: print/hplip
+  AUTHOR: tijl@FreeBSD.org
+
+  HPLIP has been updated to verion 3.16.2.  As part of the update support
+  for the hpijs/foomatic-rip filter has been dropped.  This has long been
+  unsupported upstream.  If you used this filter with your printer you'll
+  have to reconfigure it.
+
+20160311:
+  AFFECTS: print/cups-base, print/cups-client, print/cups-image
+  AUTHOR: tijl@FreeBSD.org
+
+  The cups-base, cups-client and cups-image packages have been combined
+  into one cups package.  If you build your own ports the easiest way to
+  update is to delete these packages first and then build and install
+  print/cups.
+
+20160306:
+  AFFECTS: net-mgmt/yaf
+  AUTHOR: pi@FreeBSD.org
+
+  YAF is updated to version 2.8.1 with many new OPTIONS. Please use
+  the default options to get same behavior as previous version.
+
 20160302:
   AFFECTS: audio/alsa-utils, www/firefox, www/firefox-esr, www/seamonkey
   AUTHOR: jbeich@FreeBSD.org
@@ -42,6 +77,24 @@ you update your ports collection, before attempting any port upgrades.
   OR
 
     # portupgrade -o security/openssh-portable security/openssh-portable-devel
+
+20160228:
+  AFFECTS: users of mail/postfix
+  AUTHOR: ohauer@FreeBSD.org
+
+   Postfix has been updated to version 3.1, VDA and native SPF is no
+   longer supported.
+
+   - if VDA support is needed, users should stay on mail/postfix211
+   - SPF support can be added to postfix via one of the mail/*spf* ports
+
+   The Dovecot SASL OPTION was removed, Dovecot SASL support is always given
+   from now on.  In addition, for each mail/postfix* port there is now a
+   mail/postfix*-sasl slave port providing Cyrus SASL as default.
+
+   To stay on postfix-2.11.x run the command:
+
+   # pkg set -o mail/postfix:mail/postfix211
 
 20160217:
   AFFECTS: users of www/nginx-devel

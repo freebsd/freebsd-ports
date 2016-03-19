@@ -42,6 +42,7 @@ bin/rjoe
 %%DATADIR%%/syntax/d.jsf
 %%DATADIR%%/syntax/debian.jsf
 %%DATADIR%%/syntax/diff.jsf
+%%DATADIR%%/syntax/dockerfile.jsf
 %%DATADIR%%/syntax/elixir.jsf
 %%DATADIR%%/syntax/erb.jsf
 %%DATADIR%%/syntax/erlang.jsf

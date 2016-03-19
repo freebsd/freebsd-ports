@@ -28,7 +28,7 @@ CONFIGURE_ENV+=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 .endif
 
 MTPZ_CONFIGURE_ENABLE=	mtpz
-MTPZ_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+MTPZ_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 post-patch:
 .if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)

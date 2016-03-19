@@ -59,6 +59,8 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwk_oct.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwk_openssh_key.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwk_pem.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwk_set.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwk_use_enc.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwk_use_sig.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jws.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jws_alg.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jws_alg_ecdsa.beam
@@ -141,6 +143,8 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwk_oct.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwk_openssh_key.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwk_pem.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwk_set.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwk_use_enc.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwk_use_sig.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jws.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jws_alg.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jws_alg_ecdsa.erl

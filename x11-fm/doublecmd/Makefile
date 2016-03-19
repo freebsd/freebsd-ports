@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -13,9 +14,6 @@ COMMENT=	Total Commander like file manager for the X Window System
 
 LICENSE=	GPLv2
 
-BROKEN=		fails with FPC-3.0.0-built Lazarus\
-		(Can't find unit uOverlayScrollBarFix) 
-
 BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
 		fpcres:${PORTSDIR}/lang/fpc-utils
 
@@ -23,7 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 PORTDOCS=	*
 
-USES=		dos2unix
+USES=		dos2unix desktop-file-utils
 USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-registry \
 		fcl-xml iconvenc pasjpeg rtl-extra x11
 DOS2UNIX_FILES=	src/dmhelpmanager.pas
@@ -32,7 +30,7 @@ WANT_GNOME=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
 PROJECT_FILE=	src/doublecmd.lpi
-LAZARUS_VER=	1.4.2
+LAZARUS_VER=	1.6.0
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 MAKE_ENV+=	LDVER=ld.bfd # for DragonFly
@@ -104,7 +102,6 @@ OPTIONS_DEFAULT=	GTK2 \
 GTK2_USE=		fpc=gtk2 gnome=gtk20
 GTK2_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
 
-QT4_USE=		fpc=yes
 QT4_LIB_DEPENDS=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
 QT4_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
 
@@ -141,10 +138,9 @@ post-patch:
 		${WRKSRC}/plugins/wlx/WlxMplayer/src/wlxMplayer.lpr
 
 do-build:
-.for FILE in chsdet/chsdet.lpk CmdLine/cmdbox.lpk dcpcrypt/dcpcrypt.lpk \
-	doublecmd/doublecmd_common.lpk KASToolBar/kascomp.lpk \
-	viewer/viewerpackage.lpk gifanim/pkg_gifanim.lpk \
-	ZVDateTimeCtrls/zvdatetimectrls.lpk
+.for FILE in chsdet/chsdet.lpk CmdLine/cmdbox.lpk multithreadprocs/multithreadprocslaz.lpk \
+	dcpcrypt/dcpcrypt.lpk doublecmd/doublecmd_common.lpk KASToolBar/kascomp.lpk \
+	viewer/viewerpackage.lpk gifanim/pkg_gifanim.lpk
 	@cd ${WRKSRC}/components && ${SETENV} ${MAKE_ENV} \
 		${LAZBUILD_CMD} --lazarusdir=${LAZARUS_DIR} --ws=${LCL_PLATFORM} "${FILE}"
 .endfor

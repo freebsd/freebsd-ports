@@ -53,6 +53,7 @@ include/rocksdb/utilities/geo_db.h
 include/rocksdb/utilities/info_log_finder.h
 include/rocksdb/utilities/json_document.h
 include/rocksdb/utilities/leveldb_options.h
+include/rocksdb/utilities/memory_util.h
 include/rocksdb/utilities/optimistic_transaction_db.h
 include/rocksdb/utilities/spatial_db.h
 include/rocksdb/utilities/stackable_db.h
@@ -63,6 +64,7 @@ include/rocksdb/utilities/transaction_db_mutex.h
 include/rocksdb/utilities/utility_db.h
 include/rocksdb/utilities/write_batch_with_index.h
 include/rocksdb/version.h
+include/rocksdb/wal_filter.h
 include/rocksdb/write_batch.h
 include/rocksdb/write_batch_base.h
 lib/librocksdb.a

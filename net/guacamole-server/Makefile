@@ -3,6 +3,7 @@
 
 PORTNAME=	guacamole-server
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ultima1252@gmail.com
@@ -11,13 +12,12 @@ COMMENT=	HTML5 Clientless Remote Desktop
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/ossp-uuid \
+LIB_DEPENDS=	libossp-uuid.so:${PORTSDIR}/misc/ossp-uuid \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg-turbo
 
-CONFLICTS_BUILD=	e2fsprogs-libuuid-* pulseaudio-*+jack_* \
-			ffmpeg-*+jack_*
+CONFLICTS_BUILD=pulseaudio-*+jack_* ffmpeg-*+jack_*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	glyptodon

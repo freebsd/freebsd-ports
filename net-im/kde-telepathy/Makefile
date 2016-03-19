@@ -2,7 +2,6 @@
 
 PORTNAME=	kde-telepathy
 PORTVERSION=	${KTP_VERSION}
-PORTREVISION=	3
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -35,8 +34,5 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plasma_applet_ktp_presence.so:${PORTSDIR}/
 .if ${PORT_OPTIONS:MSEND_FILE}
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ktp-send-file:${PORTSDIR}/net-im/ktp-send-file
 .endif
-
-do-install:
-	@${DO_NADA}
 
 .include <bsd.port.mk>

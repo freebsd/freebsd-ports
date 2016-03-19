@@ -29,7 +29,7 @@ COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client \
+		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \

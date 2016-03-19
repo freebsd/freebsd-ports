@@ -61,6 +61,7 @@
     SUBDIR += chntpw
     SUBDIR += chroot_safe
     SUBDIR += chrootuid
+    SUBDIR += cisco-torch
     SUBDIR += ckpass
     SUBDIR += cksfv
     SUBDIR += cl-md5
@@ -175,6 +176,7 @@
     SUBDIR += gpgdir
     SUBDIR += gpgme
     SUBDIR += gputty
+    SUBDIR += greenbone-security-assistant
     SUBDIR += gringotts
     SUBDIR += gsasl
     SUBDIR += gsfv
@@ -410,11 +412,10 @@
     SUBDIR += openssl
     SUBDIR += openssl-devel
     SUBDIR += openssl_tpm_engine
-    SUBDIR += openvas-client
-    SUBDIR += openvas-libnasl
+    SUBDIR += openvas-cli
     SUBDIR += openvas-libraries
-    SUBDIR += openvas-plugins
-    SUBDIR += openvas-server
+    SUBDIR += openvas-manager
+    SUBDIR += openvas-scanner
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
     SUBDIR += openvpn-auth-ldap
@@ -811,7 +812,6 @@
     SUBDIR += py-Products.PlonePAS
     SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
-    SUBDIR += py-scrypt
     SUBDIR += py-SecretStorage
     SUBDIR += py-acme
     SUBDIR += py-acme-tiny
@@ -886,6 +886,7 @@
     SUBDIR += py-rekall_gui
     SUBDIR += py-requests-kerberos
     SUBDIR += py-rsa
+    SUBDIR += py-scrypt
     SUBDIR += py-service_identity
     SUBDIR += py-signedjson
     SUBDIR += py-slowaes
@@ -944,7 +945,6 @@
     SUBDIR += rcracki_mt
     SUBDIR += rdigest
     SUBDIR += regripper
-    SUBDIR += regripperplugins
     SUBDIR += reop
     SUBDIR += retranslator
     SUBDIR += revealrk

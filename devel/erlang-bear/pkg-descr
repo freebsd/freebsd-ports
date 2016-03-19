@@ -2,4 +2,4 @@ A set of statistics functions for Erlang. Currently bear is focused
 on use inside the Folsom Erlang metrics library but all of these
 functions are generic and useful in other situations.
 
-WWW: https://github.com/boundary/bear
+WWW: https://github.com/puzza007/bear/
