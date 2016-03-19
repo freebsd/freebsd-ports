@@ -357,8 +357,6 @@
 %%WWWDIR%%/images/usercp_sprite.png
 %%WWWDIR%%/images/valid.png
 %%WWWDIR%%/inc/3rdparty/2fa/GoogleAuthenticator.php
-%%WWWDIR%%/inc/3rdparty/ayah/ayah.php
-%%WWWDIR%%/inc/3rdparty/ayah/index.html
 %%WWWDIR%%/inc/3rdparty/diff/Diff.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Engine/Native.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Engine/Shell.php
@@ -395,6 +393,7 @@
 %%WWWDIR%%/inc/cachehandlers/disk.php
 %%WWWDIR%%/inc/cachehandlers/eaccelerator.php
 %%WWWDIR%%/inc/cachehandlers/index.html
+%%WWWDIR%%/inc/cachehandlers/interface.php
 %%WWWDIR%%/inc/cachehandlers/memcache.php
 %%WWWDIR%%/inc/cachehandlers/memcached.php
 %%WWWDIR%%/inc/cachehandlers/xcache.php
@@ -635,6 +634,7 @@
 %%WWWDIR%%/install/resources/upgrade32.php
 %%WWWDIR%%/install/resources/upgrade33.php
 %%WWWDIR%%/install/resources/upgrade34.php
+%%WWWDIR%%/install/resources/upgrade35.php
 %%WWWDIR%%/install/resources/upgrade4.php
 %%WWWDIR%%/install/resources/upgrade5.php
 %%WWWDIR%%/install/resources/upgrade6.php
