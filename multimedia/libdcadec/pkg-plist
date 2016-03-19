@@ -1,0 +1,9 @@
+bin/dcadec
+include/libdcadec/dca_context.h
+include/libdcadec/dca_frame.h
+include/libdcadec/dca_stream.h
+include/libdcadec/dca_waveout.h
+lib/libdcadec.so
+lib/libdcadec.so.0
+lib/libdcadec.so.0.1.0
+libdata/pkgconfig/dcadec.pc
