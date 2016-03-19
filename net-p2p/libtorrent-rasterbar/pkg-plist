@@ -146,7 +146,6 @@ lib/libtorrent-rasterbar.so.%%SHLIB_VER%%.0.0
 libdata/pkgconfig/libtorrent-rasterbar.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/docs/building.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/building.rst
 %%PORTDOCS%%%%DOCSDIR%%/docs/client_test.html
