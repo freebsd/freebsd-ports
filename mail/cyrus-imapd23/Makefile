@@ -193,12 +193,10 @@ post-install-DOCS-on:
 # There are already files in EXAMPLESDIR at that point, so no
 # need to create it.
 post-install-EXAMPLES-on:
-.for f in ${CONFS}
-.if ${f} != normal.conf
+.for f in ${CONFS:Nnormal.conf}
 	@${INSTALL_DATA} ${WRKSRC}/master/conf/${f} \
 		${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
-.endif
 .endfor
 
 .include <bsd.port.mk>
