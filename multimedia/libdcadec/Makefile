@@ -2,6 +2,7 @@
 
 PORTNAME=	libdcadec
 PORTVERSION=	0.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -12,7 +13,6 @@ LICENSE=	LGPL21
 USE_GITHUB=	yes
 GH_ACCOUNT=	foo86
 GH_PROJECT=	dcadec
-GH_TAGNAME=	v${PORTVERSION}
 
 NO_CONFIGURE=	yes
 USES=		pkgconfig gmake
