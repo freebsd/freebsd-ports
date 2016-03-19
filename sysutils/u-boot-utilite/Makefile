@@ -25,7 +25,7 @@ NO_ARCH=	yes
 
 USES=		gmake
 
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 U_BOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 
