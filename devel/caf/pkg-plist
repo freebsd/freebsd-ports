@@ -7,6 +7,7 @@ include/caf/actor.hpp
 include/caf/actor_addr.hpp
 include/caf/actor_cast.hpp
 include/caf/actor_companion.hpp
+include/caf/actor_marker.hpp
 include/caf/actor_namespace.hpp
 include/caf/actor_ostream.hpp
 include/caf/actor_pool.hpp
@@ -67,11 +68,12 @@ include/caf/detail/memory_cache_flag_type.hpp
 include/caf/detail/message_data.hpp
 include/caf/detail/optional_message_visitor.hpp
 include/caf/detail/pair_storage.hpp
+include/caf/detail/parse_ini.hpp
 include/caf/detail/pseudo_tuple.hpp
 include/caf/detail/purge_refs.hpp
 include/caf/detail/raw_access.hpp
 include/caf/detail/ripemd_160.hpp
-include/caf/detail/run_program.hpp
+include/caf/detail/run_sub_unit_test.hpp
 include/caf/detail/safe_equal.hpp
 include/caf/detail/scope_guard.hpp
 include/caf/detail/shared_spinlock.hpp
@@ -118,6 +120,7 @@ include/caf/io/all.hpp
 include/caf/io/basp.hpp
 include/caf/io/basp_broker.hpp
 include/caf/io/broker.hpp
+include/caf/io/broker_servant.hpp
 include/caf/io/connection_handle.hpp
 include/caf/io/doorman.hpp
 include/caf/io/experimental/typed_broker.hpp
@@ -167,6 +170,7 @@ include/caf/node_id.hpp
 include/caf/none.hpp
 include/caf/on.hpp
 include/caf/optional.hpp
+include/caf/parse_config.hpp
 include/caf/policy/profiled.hpp
 include/caf/policy/scheduler_policy.hpp
 include/caf/policy/work_sharing.hpp
