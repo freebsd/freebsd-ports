@@ -33,7 +33,7 @@ GH_PROJECT=	grafana mysql:mysql aws-sdk-go:aws_sdk_go ini:ini \
 	amqp:amqp redis:redis macaron:macaron toml:toml go-spew:go_spew \
 	goconvey:goconvey asn1-ber:asn1_ber pq:pq binding:binding \
 	unidecode:unidecode ldap:ldap com:com oauth2:oauth2
-GH_TAGNAME=	${DISTVERSIONPREFIX}${PORTVERSION} \
+GH_TAGNAME=	\
 	v1.2-26-g9543750:mysql 972f0c5:net v1.0.0:aws_sdk_go \
 	v0-16-g1772191:ini 31e841d:session f1ac7f4:gls c58fcf0:oauth2 \
 	v1:bufio go1.0-cutoff-13-g19eeca3:pq v0.1.0-21-g056c9bc:toml \
