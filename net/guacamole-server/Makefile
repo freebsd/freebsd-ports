@@ -21,7 +21,6 @@ CONFLICTS_BUILD=pulseaudio-*+jack_* ffmpeg-*+jack_*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	glyptodon
-GH_TAGNAME=	${PORTVERSION}
 
 USES=		autoreconf libtool localbase pkgconfig shebangfix
 SHEBANG_FILES=	${WRKSRC}/src/protocols/rdp/keymaps/generate.pl
