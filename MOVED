@@ -8234,3 +8234,4 @@ security/openvas-libnasl|security/openvas-libraries|2016-03-17|Merged
 security/openvas-server|security/openvas-scanner|2016-03-17|Renamed
 security/openvas-plugins|security/openvas-scanner|2016-03-17|Merged
 security/openvas-client||2016-03-17|Discontinued, try security/greenbone-security-assistant
+devel/py-icu|devel/py-pyicu|2016-03-19|Renamed to match upstream (PyPI) name
