@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pypy
-PORTVERSION=	5.0.0	# Also update bsd.pypy.cffi.mk
+PORTVERSION=	5.0.1	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/
 DISTVERSIONSUFFIX=	-src
@@ -36,7 +36,7 @@ OPTIONS_SLAVE=	PYTHON
 CONFLICTS_INSTALL=	pypy3-[0-9]*
 
 ALL_TARGET=	pypy-c
-BUILD_WRKSRC=	${WRKDIR}/build/usession-release-5.0-0/testing_1
+BUILD_WRKSRC=	${WRKDIR}/build/usession-release-${PORTVERSION:C/0\.0/0/}-0/testing_1
 MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE}
 USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
 USES=		gettext-runtime gmake tar:bzip2
