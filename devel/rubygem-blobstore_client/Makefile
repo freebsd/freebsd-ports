@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	blobstore_client
-PORTVERSION=	1.3202.0
+PORTVERSION=	1.3215.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
