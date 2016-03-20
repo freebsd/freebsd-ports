@@ -13,8 +13,8 @@ COMMENT=	Detects, reconstructs, and analyzes any RTP session
 
 LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
-CFLAGS+=	-I${LOCALBASE}/include/libnet11
-LIBS+=		-L${LOCALBASE}/lib/libnet11 -lpcap -lnet
+CFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lpcap -lnet
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" LIBS="${LIBS}"
 

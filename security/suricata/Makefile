@@ -106,14 +106,12 @@ CONFIGURE_ARGS+=--enable-gccprotect \
 		--with-libpcre-libraries=${LOCALBASE}/lib \
 		--with-libyaml-includes=${LOCALBASE}/include \
 		--with-libyaml-libraries=${LOCALBASE}/lib \
-		--with-libnet-includes=${LOCALBASE}/include/libnet11 \
-		--with-libnet-libraries=${LOCALBASE}/lib/libnet11 \
+		--with-libnet-includes=${LOCALBASE}/include \
+		--with-libnet-libraries=${LOCALBASE}/lib \
 		--with-libhtp-includes=${LOCALBASE}/include/ \
 		--with-libhtp-libraries=${LOCALBASE}/lib \
-	        --disable-gccmarch-native \
-		--localstatedir=/var/
+	        --disable-gccmarch-native
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 CONFIG_DIR?=	${ETCDIR}
 CONFIG_FILES=	suricata.yaml classification.config reference.config threshold.config
 RULES_DIR=	${CONFIG_DIR}/rules

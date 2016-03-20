@@ -27,17 +27,10 @@ CONFIGURE_ARGS+=	--disable-gtk
 CONFLICTS=	yersinia-gtk-[0-9]*
 .endif
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBNET_CONFIG="${LIBNET_CONFIG}"
-
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 #NOT_FOR_ARCHS=	ia64 sparc64
 PLIST_FILES=	sbin/yersinia \
 		man/man8/yersinia.8.gz
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
-		${WRKSRC}/src/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${STAGEDIR}${PREFIX}/sbin/

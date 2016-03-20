@@ -18,7 +18,7 @@
 +	$(CC) -c $(ENTRY) $(CFLAGS) -DBUILD_IDENT_RECV=1 -o $@
 +
 +$(SENDERNAME): $(S_OBJS) $(G_HDRS) $(S_HDRS) $(C_OBJS) entry_send.o
-+	$(CC) $(CFLAGS) -o $(SENDERNAME) $(S_OBJS) $(C_OBJS) entry_send.o $(G_LDADD) -lpcap `/usr/local/bin/libnet11-config --libs` $(LDADD)
++	$(CC) $(CFLAGS) -o $(SENDERNAME) $(S_OBJS) $(C_OBJS) entry_send.o $(G_LDADD) -lpcap -lnet $(LDADD)
 +
 +$(LISTENERNAME): $(L_OBJS) $(G_HDRS) $(L_HDRS) $(C_OBJS) entry_recv.o
 +	$(CC) $(CFLAGS) -o $(LISTENERNAME) $(L_OBJS) $(C_OBJS) entry_recv.o $(G_LDADD) -lpcap $(LDADD)

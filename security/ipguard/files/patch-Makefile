@@ -1,15 +1,17 @@
---- Makefile.orig	2014-02-11 16:45:41.000000000 -0200
-+++ Makefile	2014-02-11 16:46:25.000000000 -0200
-@@ -10,7 +10,7 @@
+--- Makefile.orig	2010-07-12 03:46:36 UTC
++++ Makefile
+@@ -10,8 +10,8 @@ PREFIX?=/usr/local
  ETHERS?=/etc/ethers
  
  ## FreeBSD
 -LOCALBASE=/usr/local
+-LIBNET_CONFIG=libnet11-config
 +LOCALBASE?=/usr/local
- LIBNET_CONFIG=libnet11-config
++LIBNET_CONFIG=libnet-config
  
  ## OpenBSD (tested by irix)
-@@ -26,7 +26,7 @@
+ # LOCALBASE=/usr/local
+@@ -26,7 +26,7 @@ LIBS=`${LIBNET_CONFIG} --libs` -lpcap -L
  DEFINES=`${LIBNET_CONFIG} --defines`
  
  STATIC=
@@ -18,7 +20,7 @@
  
  CFLAGS+=-g -Wall -DETHERS='"$(ETHERS)"'
  
-@@ -58,10 +58,10 @@
+@@ -58,10 +58,10 @@ cleanall: clean
  	@rm -f $(NAME)
  
  install: all

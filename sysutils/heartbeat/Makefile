@@ -41,8 +41,8 @@ INSTALL_TARGET=	install-strip
 USERS=		hacluster
 GROUPS=		haclient
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libnet11
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/libnet11
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-miBsdir=${PREFIX}/snmp/mibs \
