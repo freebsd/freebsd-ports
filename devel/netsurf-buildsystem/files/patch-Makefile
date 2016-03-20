@@ -1,0 +1,29 @@
+--- Makefile.orig	2015-03-08 12:05:58 UTC
++++ Makefile
+@@ -19,7 +19,7 @@ usage:
+ 	@echo ""
+ 	@echo "Which is where the libraries etc look for it."
+ 
+-PREFIX?=/opt/netsurf
++PREFIX?=%%PREFIX%%
+ 
+ BASE=$(DESTDIR)$(PREFIX)/share/netsurf-buildsystem
+ 
+@@ -33,16 +33,13 @@ TESTTOOLS := testrunner.pl
+ CITOOLS := jenkins-build.sh
+ 
+ install:
+-	mkdir -p $(BASE)/makefiles $(BASE)/testtools $(BASE)/citools
++	mkdir -p $(BASE)/makefiles $(BASE)/testtools
+ 	for M in $(MAKEFILES); do \
+ 		cp makefiles/$$M $(BASE)/makefiles/; \
+ 	done
+ 	for T in $(TESTTOOLS); do \
+ 		cp testtools/$$T $(BASE)/testtools/; \
+ 	done
+-	for C in $(CITOOLS); do \
+-		cp citools/$$C $(BASE)/citools/; \
+-	done
+ 
+ # Distribution
+ # This constructs a distribution tar from the last git tag. It ensures
