@@ -1530,6 +1530,7 @@
     SUBDIR += ndesk-dbus-glib
     SUBDIR += ndesk-options
     SUBDIR += netscape-java40
+    SUBDIR += netsurf-buildsystem
     SUBDIR += newfile
     SUBDIR += newt
     SUBDIR += newtonsoft-json
