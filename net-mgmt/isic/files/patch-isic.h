@@ -1,10 +1,8 @@
---- isic.h.orig	2006-12-16 01:08:44.000000000 +0100
-+++ isic.h	2014-08-11 16:25:34.551003726 +0200
-@@ -5,11 +5,15 @@
- #endif
+--- isic.h.orig	2006-12-16 00:08:44 UTC
++++ isic.h
+@@ -6,10 +6,13 @@
  
  #include <libnet.h>
-+#include <libnet/libnet-headers.h>
  
 +#include <netinet/ip.h>
  #include <netinet/ip_icmp.h>
@@ -16,7 +14,7 @@
  
  #ifndef ETHER_FRAME_SIZE
  #define ETHER_FRAME_SIZE 1500
-@@ -21,11 +25,6 @@
+@@ -21,11 +24,6 @@
  #define IP6_FRAGH 8
  #define ICMP6_H   8
  

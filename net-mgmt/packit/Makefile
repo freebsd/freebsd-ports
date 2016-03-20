@@ -14,12 +14,11 @@ COMMENT=	Network auditing tool
 LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	sbin/packit \
 		man/man8/packit.8.gz
-
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 .if defined(WITHOUT_CAPTURE)
 CONFIGURE_ARGS+=	--without-capture
@@ -27,9 +26,5 @@ CONFIGURE_ARGS+=	--without-capture
 .if defined(WITHOUT_INJECTION)
 CONFIGURE_ARGS+=	--without-injection
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
