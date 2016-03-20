@@ -10,6 +10,9 @@ MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 MAINTAINER=	jochen@jochen-neumeister.de
 COMMENT=	Modular web application framework vor office
 
+LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.AGPL
+
 RESTRICTED=	Free for personal use only
 
 NO_ARCH=	yes
