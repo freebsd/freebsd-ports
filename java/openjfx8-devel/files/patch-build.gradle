@@ -1,0 +1,67 @@
+--- build.gradle.orig	2016-02-28 12:54:50 UTC
++++ build.gradle
+@@ -1167,7 +1167,7 @@ allprojects {
+     // By default all of our projects require junit for testing so we can just
+     // setup this dependency here.
+     dependencies {
+-        testCompile group: "junit", name: "junit", version: "4.8.2"
++        testCompile files("%%PREFIX%%/share/java/classes/junit4.jar")
+         if (BUILD_CLOSED && DO_JCOV)  {
+             testCompile name: "jcov"
+         }
+@@ -1307,11 +1307,9 @@ project(":graphics") {
+     dependencies {
+         compile project(":base"), BUILD_SRC
+         compile files("/usr/local/share/java/classes/swt-devel.jar")
+-        stubCompile group: "junit", name: "junit", version: "4.8.2",
++        stubCompile files("%%PREFIX%%/share/java/classes/junit4.jar"),
+         project(":base").sourceSets.test.output, sourceSets.main.output
+-        antlr3 group: "org.antlr", name: "antlr", version: "3.1.3"
+-        antlr3 group: "org.antlr", name: "antlr-runtime",  version: "3.1.3"
+-        antlr3 group: "org.antlr", name: "stringtemplate", version: "3.2"
++        antlr3 files("%%PREFIX%%/share/java/classes/antlr-3.5.2-complete.jar")
+     }
+ 
+     // Create a single "native" task which will depend on all the individual native tasks for graphics
+@@ -1601,9 +1599,7 @@ project(":graphics") {
+             copy {
+                 into libsDir
+                 from f.getParentFile()
+-                include "**/antlr-3.1.3.jar"
+-                include "**/stringtemplate-3.2.jar"
+-                include "**/antlr-runtime-3.1.3.jar"
++                include "**/antlr-3.5.2-complete.jar"
+                 includeEmptyDirs = false
+             }
+             // Have to rename the swt jar because it is some platform specific name but
+@@ -1787,7 +1783,7 @@ project(":fxpackager") {
+     }
+ 
+     dependencies {
+-        compile group: "org.apache.ant", name: "ant", version: "1.8.2"
++        compile files("%%PREFIX%%/share/java/apache-ant/lib/ant.jar")
+     }
+ 
+     // When producing the jar, we need to relocate a few class files
+@@ -2048,21 +2044,6 @@ project(":fxpackager") {
+     jar.dependsOn buildJavaPackager
+     jar.dependsOn packagerJar
+ 
+-    classes << {
+-        // Copy all of the download libraries to libs directory for the sake of the IDEs
+-        File libsDir = rootProject.file("build/libs");
+-        File antLib = new File(libsDir, "ant-1.8.2.jar")
+-        libsDir.mkdirs();
+-        for (File f : configurations.compile.files) {
+-            copy {
+-                into libsDir
+-                from f.getParentFile()
+-                include "**/ant-1.8.2.jar"
+-                includeEmptyDirs = false
+-            }
+-        }
+-    }
+-
+     task packagerFakeJar(type: Jar) {
+         dependsOn compileTestJava
+         from compileTestJava.destinationDir
