@@ -1,0 +1,10 @@
+--- Makefile.orig	2016-02-16 08:47:11 UTC
++++ Makefile
+@@ -51,5 +51,5 @@ endif
+ # Extra installation rules
+ I := /$(INCLUDEDIR)/libwapcaplet
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/libwapcaplet/libwapcaplet.h
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR)/pkgconfig:lib$(COMPONENT).pc.in
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR):$(OUTPUT)
++INSTALL_ITEMS := $(INSTALL_ITEMS) /libdata/pkgconfig:lib$(COMPONENT).pc.in
++INSTALL_ITEMS := $(INSTALL_ITEMS) /lib:$(OUTPUT)
