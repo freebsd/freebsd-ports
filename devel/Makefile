@@ -3702,7 +3702,6 @@
     SUBDIR += pecl-hidef
     SUBDIR += pecl-hrtime
     SUBDIR += pecl-htscanner
-    SUBDIR += pecl-inclued
     SUBDIR += pecl-inotify
     SUBDIR += pecl-intl
     SUBDIR += pecl-jsmin
