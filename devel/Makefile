@@ -1285,6 +1285,7 @@
     SUBDIR += libowfat
     SUBDIR += libpafe
     SUBDIR += libpafe-ruby
+    SUBDIR += libparserutils
     SUBDIR += libpasori
     SUBDIR += libpci
     SUBDIR += libpciaccess
