@@ -1,0 +1,10 @@
+--- libcss.pc.in.orig	2016-02-16 10:49:56 UTC
++++ libcss.pc.in
+@@ -1,6 +1,6 @@
+ prefix=PREFIX
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/LIBDIR
++libdir=${exec_prefix}/lib
+ includedir=${prefix}/INCLUDEDIR
+ 
+ Name: libcss
