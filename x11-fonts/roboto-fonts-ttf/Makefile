@@ -2,30 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	roboto-fonts-ttf
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	2.131
+DISTVERSIONPREFIX=v
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://developer.android.com/downloads/design/
-DISTNAME=	roboto-${PORTVERSION}
 
 MAINTAINER=	winston@ml1.net
-COMMENT=	The Roboto typeface family
+COMMENT=	Roboto typeface family
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/Roboto/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		fonts zip:infozip
-WRKSRC=		${WRKDIR}/Roboto_v${PORTVERSION}
 NO_ARCH=	yes
+NO_BUILD=	yes
+USES=		fonts
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	google
+GH_PROJECT=	roboto
 
 SUB_FILES=	pkg-message
 
-do-build:
-	@${MV} ${WRKSRC}/Roboto/*.ttf ${WRKSRC}/RobotoCondensed/*.ttf ${WRKSRC}
-
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/hinted/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
