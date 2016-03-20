@@ -1544,6 +1544,7 @@
     SUBDIR += notify-sharp
     SUBDIR += noweb
     SUBDIR += npth
+    SUBDIR += nsgenbind
     SUBDIR += nspr
     SUBDIR += nuitka
     SUBDIR += nxt-python
