@@ -919,6 +919,7 @@
     SUBDIR += repng2jpeg
     SUBDIR += rgbpaint
     SUBDIR += rigsofrods-caelum
+    SUBDIR += rigsofrods-pagedgeometry
     SUBDIR += ristretto
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdal
