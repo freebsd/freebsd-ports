@@ -1,0 +1,9 @@
+bin/s2tc_compress
+bin/s2tc_decompress
+bin/s2tc_from_s3tc
+include/txc_dxtn.h
+lib/libtxc_dxtn.a
+lib/libtxc_dxtn.so
+lib/libtxc_dxtn.so.0
+lib/libtxc_dxtn.so.0.0.0
+lib/pkgconfig/txc_dxtn.pc

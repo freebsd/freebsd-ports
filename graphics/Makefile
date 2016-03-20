@@ -959,6 +959,7 @@
     SUBDIR += rubygem-ruby-graphviz
     SUBDIR += rubygem-scruffy
     SUBDIR += s10sh
+    SUBDIR += s2tc
     SUBDIR += sage
     SUBDIR += sam2p
     SUBDIR += sampleicc
