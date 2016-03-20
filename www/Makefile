@@ -371,6 +371,7 @@
     SUBDIR += libgtkhtml
     SUBDIR += libhpack
     SUBDIR += libhtp-suricata
+    SUBDIR += libhubbub
     SUBDIR += libmicrohttpd
     SUBDIR += libsocialweb
     SUBDIR += libwww
