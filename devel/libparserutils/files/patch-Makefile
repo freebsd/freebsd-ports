@@ -1,0 +1,10 @@
+--- Makefile.orig	2016-02-16 08:49:51 UTC
++++ Makefile
+@@ -55,5 +55,5 @@ Is := include/parserutils/utils
+ I := /$(INCLUDEDIR)/parserutils/utils
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):$(Is)/buffer.h;$(Is)/stack.h;$(Is)/vector.h
+ 
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR)/pkgconfig:lib$(COMPONENT).pc.in
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR):$(OUTPUT)
++INSTALL_ITEMS := $(INSTALL_ITEMS) /libdata/pkgconfig:lib$(COMPONENT).pc.in
++INSTALL_ITEMS := $(INSTALL_ITEMS) /lib:$(OUTPUT)
