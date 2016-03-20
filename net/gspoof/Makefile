@@ -14,17 +14,13 @@ LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libnet-prefix=${LOCALBASE}
 USES=		gmake
 
 OPTIONS_DEFINE=	DOCS
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-Wall -O2|$${CFLAGS}|g; \
-		 s|libnet-config|${LIBNET_CONFIG}|' \
-		 ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} 's|-Wall -O2|$${CFLAGS}|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-Wall -O2|@CFLAGS@|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share|g ; \
 		 s|/usr/share|${LOCALBASE}/share|g' ${WRKSRC}/gtk.c

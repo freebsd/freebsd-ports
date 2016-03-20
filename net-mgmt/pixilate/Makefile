@@ -23,17 +23,10 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	README
 PLIST_FILES=	bin/pixilate man/man1/pixilate.1.gz
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@cd ${WRKSRC} && ${RM} -f INSTALL install-sh missing mkinstalldirs
-
-	@${REINPLACE_CMD} -e \
-		's|libnet-config|${LIBNET_CONFIG}|; \
-		 s|--defines`|& `${LIBNET_CONFIG} --cflags`|' \
-		${WRKSRC}/configure.ac
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

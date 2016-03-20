@@ -1,9 +1,0 @@
---- Makefile.am.orig	2015-01-28 01:27:58.000000000 -0500
-+++ Makefile.am	2015-01-28 01:38:40.000000000 -0500
-@@ -25,3 +25,6 @@
- 	extras/README
- 
- ACLOCAL_AMFLAGS = -I m4
-+
-+## Copy sample configuration file to PREFIX/etc/
-+sysconf_DATA=	extras/dhcp_probe.cf.sample

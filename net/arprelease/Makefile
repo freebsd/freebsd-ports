@@ -16,7 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/arprelease
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
 
 do-build:
 	(cd ${WRKSRC} && \

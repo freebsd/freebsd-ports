@@ -14,8 +14,6 @@ LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 LICENSE=	GPLv2
 
-CONFLICTS?=	libnids-libnet11-[0-9]*
-
 OPTIONS_DEFINE=	GLIB2 DOCS
 OPTIONS_DEFAULT=GLIB2
 GLIB2_DESC=	Use GLIB2 for multiprocessing support
@@ -26,14 +24,6 @@ GLIB2_CONFIGURE_ENABLE=	libglib
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
-
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
-
-post-patch:
-	@${REINPLACE_CMD} -Ee \
-		's|(LNET_CFLAGS=).*|\1"`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`"|; \
-		 s|(LNETLIB=).*|\1"`${LIBNET_CONFIG} --libs`"|' \
-		 ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/nids.h ${STAGEDIR}${PREFIX}/include
