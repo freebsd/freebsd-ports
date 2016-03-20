@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		snpservices
-DISTVERSION=		0.2.2-5
+DISTVERSION=		0.2.2-8
 CATEGORIES=		net-mgmt www
 MASTER_SITES=		http://serveis.guifi.net/debian/guifi/ \
 			http://www.potion-studios.com/
@@ -23,6 +23,9 @@ SUB_LIST=		SNPSERVICES_TMPDIR=${SNPSERVICES_TMPDIR}
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-0.2.2
 NO_BUILD=		yes
+
+post-patch:
+	@${FIND} ${WRKSRC} -name \*.orig -delete;
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
