@@ -405,6 +405,7 @@
     SUBDIR += heartbeat
     SUBDIR += heirloom
     SUBDIR += hextools
+    SUBDIR += hfm
     SUBDIR += hfsexplorer
     SUBDIR += hfsutils
     SUBDIR += hidesvn

@@ -137,6 +137,7 @@ bs:*:220:
 rtpproxy:*:222:
 postgrey:*:225:
 sqlgrey:*:226:
+_hfm:*:227:
 kismet:*:229:
 aprsd:*:240:
 tnc:*:241:
