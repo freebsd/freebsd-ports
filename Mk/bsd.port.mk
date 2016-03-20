@@ -1064,8 +1064,6 @@ LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
 MINIMAL_PKG_VERSION=	1.6.0
-LANG=			C
-.export LANG
 
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
@@ -1106,44 +1104,12 @@ STRIPBIN=	${STRIP_CMD}
 
 .else
 
-# Look for files named "*.orig" under ${PATCH_WRKSRC} and (re-)generate
-# ${PATCHDIR}/patch-* files from them.
 .if !target(makepatch)
 makepatch:
-	@${MKDIR} ${PATCHDIR}
-	@(cd ${PATCH_WRKSRC} && find -s * -type f -name '*.orig' | awk ' \
-		BEGIN { sep = "-" }; \
-		FILENAME == "-" { sub(/\.orig$$/, ""); list[n++] = $$0 }; \
-		FILENAME == "-" && index($$0, sep) { \
-			gsub(/-/, "_", sep) || gsub(/_/, "+", sep) || \
-			gsub(/\+/, "-", sep) && sep = sep "-" }; \
-		FILENAME != "-" && /^\+\+\+/ { \
-			sub(/^\.\//, "", $$2); patches[$$2] = FILENAME; \
-			if (index($$2, sep)) \
-				gsub(/-/, "_", sep) || gsub(/_/, "+", sep) || \
-				gsub(/\+/, "-", sep) && sep = sep "-" }; \
-		END { \
-			for (i in list) { \
-				p = list[i]; \
-				if (p in patches) system("${RM} " patches[p]); \
-			} \
-			for (i = 0; i < n; i++) { \
-				p = list[i]; \
-				if (p in patches) print p, patches[p]; \
-				else { \
-					gsub("/", sep, p); \
-					print list[i], "${PATCHDIR}/patch-" p; \
-				} \
-			} \
-		}' - `find -s ${PATCHDIR} -name 'patch-*'` | \
-		while read f p; do \
-			cmp -s $$f.orig $$f && continue; \
-			${ECHO} ${DIFF} -udp $$f.orig $$f '>>' $$p; \
-			TZ=UTC ${DIFF} -udp $$f.orig $$f | ${SED} \
-			-e '/^---/s|\.[0-9]* +0000$$| UTC|' \
-			-e '/^+++/s|\([[:blank:]][-0-9:.+]*\)*$$||' \
-			>> $$p || ${TRUE}; \
-		done)
+	@${SETENV} WRKDIR=${WRKDIR} PATCHDIR=${PATCHDIR} \
+		PATCH_WRKSRC=${PATCH_WRKSRC} \
+		STRIP_COMPONENTS="${PATCH_STRIP:S/-p//}" \
+		${SH} ${SCRIPTSDIR}/smart_makepatch.sh
 .endif
 
 
@@ -3248,14 +3214,6 @@ do-extract:
 		${CHOWN} -R 0:0 ${WRKDIR}; \
 	fi
 .endif
-
-.if !target(extract-recursive)
-extract-recursive:
-	@${ECHO_MSG} "===> Extracting ${PKGNAME} and dependencies";
-	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
-		(cd $$dir; ${MAKE} extract); \
-	done
-.endif # extract-recursive
 
 # Patch
 
