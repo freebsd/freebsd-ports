@@ -97,6 +97,10 @@ CVS_RUN_DEPENDS=	cvsps:${PORTSDIR}/devel/cvsps
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 1000000
+USE_GCC=	4.8+
+.endif
+
 # This is intentionally not exposed as an option.
 .ifndef (WITH_DEBUG)
 ALL_TARGET=	all strip
