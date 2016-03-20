@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitg
-PORTVERSION=	3.18.0
+PORTVERSION=	3.19.6
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -12,12 +12,11 @@ COMMENT=	GTK-based git repository viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
+LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libgee-0.8.so:${PORTSDIR}/devel/libgee \
 		libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
 		libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
-		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
-		libwebkit2gtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		valac:${PORTSDIR}/lang/vala
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
@@ -32,8 +31,6 @@ CONFIGURE_ARGS=	--disable-silent-rules \
 		--enable-compile-warnings=no
 USE_GNOME=	glib20 gtk30 gtksourceview3 intlhack introspection
 INSTALL_TARGET=	install-strip
-
-MAKE_JOBS_UNSAFE=	yes
 
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
@@ -62,5 +59,9 @@ PYOEXTENSION=	opt-1.pyc
 .endif
 
 PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|0.24.0|0.25.0|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
