@@ -107,6 +107,7 @@
     SUBDIR += openjdk7-jre
     SUBDIR += openjdk8
     SUBDIR += openjdk8-jre
+    SUBDIR += openjfx8-devel
     SUBDIR += phpeclipse
     SUBDIR += proguard
     SUBDIR += rubygem-rjb
