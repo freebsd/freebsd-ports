@@ -1,0 +1,16 @@
+include/PagedGeometry/BatchPage.h
+include/PagedGeometry/BatchedGeometry.h
+include/PagedGeometry/GrassLoader.h
+include/PagedGeometry/ImpostorPage.h
+include/PagedGeometry/MersenneTwister.h
+include/PagedGeometry/PagedGeometry.h
+include/PagedGeometry/PagedGeometryConfig.h
+include/PagedGeometry/PropertyMaps.h
+include/PagedGeometry/RandomTable.h
+include/PagedGeometry/StaticBillboardSet.h
+include/PagedGeometry/TreeLoader2D.h
+include/PagedGeometry/TreeLoader3D.h
+include/PagedGeometry/WindBatchPage.h
+include/PagedGeometry/WindBatchedGeometry.h
+lib/libPagedGeometry.a
+libdata/pkgconfig/PagedGeometry.pc
