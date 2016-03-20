@@ -19,8 +19,7 @@ OPTIONS_DEFINE=	DOCS
 PORTSCOUT=	limit:^[0-9]
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libnet=${LOCALBASE}
-USES=		gmake
+USES=		gmake localbase
 
 PORTDOCS=	*
 
