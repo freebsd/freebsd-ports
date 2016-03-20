@@ -748,7 +748,6 @@
     SUBDIR += pecl-pam
     SUBDIR += pecl-scrypt
     SUBDIR += pecl-ssh2
-    SUBDIR += pecl-taint
     SUBDIR += pecl-tcpwrap
     SUBDIR += pev
     SUBDIR += pft

@@ -1,4 +1,0 @@
-lib/php/%%PHP_EXT_DIR%%/eaccelerator.so
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/control.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dasm.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eaccelerator.ini
