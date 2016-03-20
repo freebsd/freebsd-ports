@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eventmachine
-PORTVERSION=	1.0.9.1
+PORTVERSION=	1.2.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,8 @@ COMMENT=	Fast, simple event-processing library for Ruby programs
 
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
+LICENSE_FILE_RUBY=	${WRKSRC}/GNU
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
