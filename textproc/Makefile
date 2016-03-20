@@ -421,6 +421,7 @@
     SUBDIR += libucl
     SUBDIR += libunibreak
     SUBDIR += libuninameslist
+    SUBDIR += libutf8proc
     SUBDIR += libvisio
     SUBDIR += libvisio01
     SUBDIR += libwapcaplet
