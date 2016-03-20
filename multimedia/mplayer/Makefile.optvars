@@ -105,6 +105,9 @@ SDL_CONFIGURE_OFF=	--disable-sdl
 SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 SMB_CONFIGURE_OFF=	--disable-smb
 
+SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_CONFIGURE_OFF=	--disable-speex
+
 SVGALIB_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
 SVGALIB_CONFIGURE_OFF=	--disable-svga
 
