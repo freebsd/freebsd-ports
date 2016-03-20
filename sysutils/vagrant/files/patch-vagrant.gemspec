@@ -1,6 +1,6 @@
 --- vagrant.gemspec.orig	2015-12-24 21:26:53 UTC
 +++ vagrant.gemspec
-@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
+@@ -15,16 +15,16 @@ Gem::Specification.new do |s|
    s.required_rubygems_version = ">= 1.3.6"
    s.rubyforge_project         = "vagrant"
  
@@ -9,9 +9,11 @@
    s.add_dependency "childprocess", "~> 0.5.0"
    s.add_dependency "erubis", "~> 2.7.0"
    s.add_dependency "i18n", ">= 0.6.0", "<= 0.8.0"
-@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+   s.add_dependency "listen", "~> 3.0.2"
+   s.add_dependency "hashicorp-checkpoint", "~> 0.1.1"
    s.add_dependency "log4r", "~> 1.1.9", "< 1.1.11"
-   s.add_dependency "net-ssh", "~> 3.0.1"
+-  s.add_dependency "net-ssh", "~> 3.0.1"
++  s.add_dependency "net-ssh", ">= 3.0.1"
    s.add_dependency "net-sftp", "~> 2.1"
 -  s.add_dependency "net-scp", "~> 1.1.0"
 +  s.add_dependency "net-scp", ">= 1.1.0"
