@@ -423,6 +423,7 @@
     SUBDIR += libuninameslist
     SUBDIR += libvisio
     SUBDIR += libvisio01
+    SUBDIR += libwapcaplet
     SUBDIR += libwpd
     SUBDIR += libwpd010
     SUBDIR += libwps
