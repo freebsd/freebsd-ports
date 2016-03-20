@@ -1,0 +1,14 @@
+S2TC's format specification is very easy to implement, so it is not hard to make
+a working compressor or decompressor for it. It is based on Color Cell
+Compression[1] from 1986, and decoding is done entirely using the methods from
+there. Encoding is done using a search and refinement method that is derived
+from the methods described in that paper.
+
+This also makes this format a great platform for learning about texture
+compression and how to tune a compressor for best quality.
+
+S2TC is especially well suited for runtime (on-load) compression of textures, as
+it is - in low quality settings - way faster than any other texture compressors
+out there.
+
+WWW: https://github.com/divVerent/s2tc/wiki
