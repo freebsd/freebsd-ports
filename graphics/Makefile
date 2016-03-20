@@ -514,6 +514,7 @@
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
+    SUBDIR += libnsbmp
     SUBDIR += libopenraw
     SUBDIR += libosmesa
     SUBDIR += libpano13

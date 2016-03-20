@@ -1,0 +1,5 @@
+Libnsbmp is a decoding library for BMP and ICO image file formats, written
+in C.
+It was developed as part of the NetSurf project.
+
+WWW: http://www.netsurf-browser.org/projects/libnsbmp/
