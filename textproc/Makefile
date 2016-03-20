@@ -387,6 +387,7 @@
     SUBDIR += libabw00
     SUBDIR += libcrm114
     SUBDIR += libcroco
+    SUBDIR += libcss
     SUBDIR += libcsv
     SUBDIR += libcue
     SUBDIR += libe-book
