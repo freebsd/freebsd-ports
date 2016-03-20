@@ -22,7 +22,8 @@ you update your ports collection, before attempting any port upgrades.
   HPLIP has been updated to verion 3.16.2.  As part of the update support
   for the hpijs/foomatic-rip filter has been dropped.  This has long been
   unsupported upstream.  If you used this filter with your printer you'll
-  have to reconfigure it.
+  have to remove the printer with HP Device Manager and then add it back as
+  a new device.
 
 20160311:
   AFFECTS: print/cups-base, print/cups-client, print/cups-image
@@ -32,6 +33,18 @@ you update your ports collection, before attempting any port upgrades.
   into one cups package.  If you build your own ports the easiest way to
   update is to delete these packages first and then build and install
   print/cups.
+
+  The device URI of USB printers has changed so you have to adjust the
+  printer configuration.  Go to http://localhost:631/printers/.  Click on
+  your printer and select "Modify Printer" in the Administration drop-down.
+  You should then be able to select the new URI of the printer.  The web
+  interface requires cookies and JavaScript to function properly so make
+  sure your browser does not block them.
+
+  The package also installs a devd(8) configuration file now that gives
+  cups access to USB printers.  Unless you have any special needs you can
+  remove any devd(8), devfs.conf(5) or devfs.rules(5) configuration related
+  to cups that you may have added in the past.
 
 20160306:
   AFFECTS: net-mgmt/yaf
