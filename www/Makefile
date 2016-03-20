@@ -365,6 +365,7 @@
     SUBDIR += larbin
     SUBDIR += lessc
     SUBDIR += libapreq2
+    SUBDIR += libdom
     SUBDIR += libecap
     SUBDIR += libepc
     SUBDIR += libevhtp
