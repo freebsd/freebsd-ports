@@ -1,0 +1,10 @@
+--- Makefile.orig	2015-05-01 09:14:45 UTC
++++ Makefile
+@@ -53,5 +53,5 @@ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):i
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/nsutils/base64.h
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/nsutils/time.h
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/nsutils/unistd.h
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR)/pkgconfig:lib$(COMPONENT).pc.in
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR):$(OUTPUT)
++INSTALL_ITEMS := $(INSTALL_ITEMS) /libdata/pkgconfig:lib$(COMPONENT).pc.in
++INSTALL_ITEMS := $(INSTALL_ITEMS) /lib:$(OUTPUT)
