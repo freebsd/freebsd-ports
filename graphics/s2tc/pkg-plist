@@ -4,6 +4,7 @@ bin/s2tc_from_s3tc
 include/txc_dxtn.h
 lib/libtxc_dxtn.a
 lib/libtxc_dxtn.so
-lib/libtxc_dxtn.so.0
-lib/libtxc_dxtn.so.0.0.0
-lib/pkgconfig/txc_dxtn.pc
+libdata/pkgconfig/txc_dxtn.pc
+man/man1/s2tc_compress.1.gz
+man/man1/s2tc_decompress.1.gz
+man/man1/s2tc_from_s3tc.1.gz
