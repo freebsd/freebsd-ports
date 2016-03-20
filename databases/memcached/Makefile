@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	1.4.24
-PORTREVISION=	2
+PORTVERSION=	1.4.25
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GOOGLE_CODE \
