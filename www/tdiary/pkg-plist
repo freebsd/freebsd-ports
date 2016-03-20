@@ -1,18 +1,16 @@
 bin/%%TDIARY_SCRIPT%%
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
-%%WWWDIR%%/Gruntfile.js
 %%WWWDIR%%/bin/tdiary
-%%WWWDIR%%/bower.json
 %%WWWDIR%%/data/.htaccess
 %%WWWDIR%%/dot.htaccess
 %%WWWDIR%%/index.fcgi
 %%WWWDIR%%/index.rb
 %%WWWDIR%%/js/00default.js
 %%WWWDIR%%/js/01conf.js
-%%WWWDIR%%/js/02edit.coffee
 %%WWWDIR%%/js/02edit.js
 %%WWWDIR%%/js/amazon.js
+%%WWWDIR%%/js/amazon_bitly.js
 %%WWWDIR%%/js/calendar3.js
 %%WWWDIR%%/js/caretposition.js
 %%WWWDIR%%/js/category.js
@@ -22,6 +20,82 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/js/draft.js
 %%WWWDIR%%/js/highlight.js
 %%WWWDIR%%/js/image.js
+%%WWWDIR%%/lib/tdiary.rb
+%%WWWDIR%%/lib/tdiary/admin.rb
+%%WWWDIR%%/lib/tdiary/application.rb
+%%WWWDIR%%/lib/tdiary/author_only_base.rb
+%%WWWDIR%%/lib/tdiary/base.rb
+%%WWWDIR%%/lib/tdiary/cache/file.rb
+%%WWWDIR%%/lib/tdiary/cli.rb
+%%WWWDIR%%/lib/tdiary/comment.rb
+%%WWWDIR%%/lib/tdiary/comment_manager.rb
+%%WWWDIR%%/lib/tdiary/compatible.rb
+%%WWWDIR%%/lib/tdiary/configuration.rb
+%%WWWDIR%%/lib/tdiary/core_ext.rb
+%%WWWDIR%%/lib/tdiary/diary_container.rb
+%%WWWDIR%%/lib/tdiary/dispatcher.rb
+%%WWWDIR%%/lib/tdiary/dispatcher/index_main.rb
+%%WWWDIR%%/lib/tdiary/dispatcher/update_main.rb
+%%WWWDIR%%/lib/tdiary/environment.rb
+%%WWWDIR%%/lib/tdiary/extensions.rb
+%%WWWDIR%%/lib/tdiary/extensions/core.rb
+%%WWWDIR%%/lib/tdiary/filter.rb
+%%WWWDIR%%/lib/tdiary/filter/default.rb
+%%WWWDIR%%/lib/tdiary/filter/spam.rb
+%%WWWDIR%%/lib/tdiary/io/base.rb
+%%WWWDIR%%/lib/tdiary/io/default.rb
+%%WWWDIR%%/lib/tdiary/io/plugin_pstore.rb
+%%WWWDIR%%/lib/tdiary/io/pstore.rb
+%%WWWDIR%%/lib/tdiary/lang/en.rb
+%%WWWDIR%%/lib/tdiary/lang/ja.rb
+%%WWWDIR%%/lib/tdiary/plugin.rb
+%%WWWDIR%%/lib/tdiary/plugin/00default.rb
+%%WWWDIR%%/lib/tdiary/plugin/05referer.rb
+%%WWWDIR%%/lib/tdiary/plugin/10spamfilter.rb
+%%WWWDIR%%/lib/tdiary/plugin/50sp.rb
+%%WWWDIR%%/lib/tdiary/plugin/60sf.rb
+%%WWWDIR%%/lib/tdiary/plugin/90migrate.rb
+%%WWWDIR%%/lib/tdiary/plugin/en/00default.rb
+%%WWWDIR%%/lib/tdiary/plugin/en/05referer.rb
+%%WWWDIR%%/lib/tdiary/plugin/en/10spamfilter.rb
+%%WWWDIR%%/lib/tdiary/plugin/en/50sp.rb
+%%WWWDIR%%/lib/tdiary/plugin/en/60sf.rb
+%%WWWDIR%%/lib/tdiary/plugin/ja/00default.rb
+%%WWWDIR%%/lib/tdiary/plugin/ja/05referer.rb
+%%WWWDIR%%/lib/tdiary/plugin/ja/10spamfilter.rb
+%%WWWDIR%%/lib/tdiary/plugin/ja/50sp.rb
+%%WWWDIR%%/lib/tdiary/plugin/ja/60sf.rb
+%%WWWDIR%%/lib/tdiary/rack.rb
+%%WWWDIR%%/lib/tdiary/rack/auth.rb
+%%WWWDIR%%/lib/tdiary/rack/auth/basic.rb
+%%WWWDIR%%/lib/tdiary/rack/auth/omniauth.rb
+%%WWWDIR%%/lib/tdiary/rack/auth/omniauth/authorization.rb
+%%WWWDIR%%/lib/tdiary/rack/html_anchor.rb
+%%WWWDIR%%/lib/tdiary/rack/session.rb
+%%WWWDIR%%/lib/tdiary/rack/static.rb
+%%WWWDIR%%/lib/tdiary/rack/valid_request_path.rb
+%%WWWDIR%%/lib/tdiary/referer_manager.rb
+%%WWWDIR%%/lib/tdiary/request.rb
+%%WWWDIR%%/lib/tdiary/response.rb
+%%WWWDIR%%/lib/tdiary/server.rb
+%%WWWDIR%%/lib/tdiary/style.rb
+%%WWWDIR%%/lib/tdiary/style/tdiary.rb
+%%WWWDIR%%/lib/tdiary/style/wiki.rb
+%%WWWDIR%%/lib/tdiary/tasks.rb
+%%WWWDIR%%/lib/tdiary/tasks/assets.rake
+%%WWWDIR%%/lib/tdiary/tasks/auth.rake
+%%WWWDIR%%/lib/tdiary/tasks/db.rake
+%%WWWDIR%%/lib/tdiary/tasks/doc.rake
+%%WWWDIR%%/lib/tdiary/tasks/heroku.rake
+%%WWWDIR%%/lib/tdiary/tasks/jasmine.rake
+%%WWWDIR%%/lib/tdiary/tasks/rdoc.rake
+%%WWWDIR%%/lib/tdiary/tasks/release.rake
+%%WWWDIR%%/lib/tdiary/tasks/rspec.rake
+%%WWWDIR%%/lib/tdiary/tasks/server.rake
+%%WWWDIR%%/lib/tdiary/tasks/test.rake
+%%WWWDIR%%/lib/tdiary/version.rb
+%%WWWDIR%%/lib/tdiary/view.rb
+%%WWWDIR%%/lib/tdiary/view_helper.rb
 %%WWWDIR%%/misc/convert2.rb
 %%WWWDIR%%/misc/filter/antispamservice.rb
 %%WWWDIR%%/misc/filter/limitdays.rb
@@ -36,8 +110,10 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/paas/cloudfoundry/Gemfile
 %%WWWDIR%%/misc/paas/cloudfoundry/Gemfile.lock
 %%WWWDIR%%/misc/paas/cloudfoundry/tdiary.conf
-%%WWWDIR%%/misc/paas/heroku/Gemfile
-%%WWWDIR%%/misc/paas/heroku/Gemfile.lock
+%%WWWDIR%%/misc/paas/heroku/Gemfile.local
+%%WWWDIR%%/misc/paas/heroku/app.json
+%%WWWDIR%%/misc/paas/heroku/config.ru
+%%WWWDIR%%/misc/paas/heroku/tasks/mongodb.rake
 %%WWWDIR%%/misc/paas/heroku/tdiary.conf
 %%WWWDIR%%/misc/paas/sqale/Gemfile
 %%WWWDIR%%/misc/paas/sqale/Gemfile.lock
@@ -174,112 +250,9 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/theme_convert/append.rcss
 %%WWWDIR%%/misc/theme_convert/theme_convert.rb
 %%WWWDIR%%/package.json
-%%WWWDIR%%/plugin/00default.rb
-%%WWWDIR%%/plugin/05referer.rb
-%%WWWDIR%%/plugin/10spamfilter.rb
-%%WWWDIR%%/plugin/50sp.rb
-%%WWWDIR%%/plugin/60sf.rb
-%%WWWDIR%%/plugin/90migrate.rb
-%%WWWDIR%%/plugin/en/00default.rb
-%%WWWDIR%%/plugin/en/05referer.rb
-%%WWWDIR%%/plugin/en/10spamfilter.rb
-%%WWWDIR%%/plugin/en/50sp.rb
-%%WWWDIR%%/plugin/en/60sf.rb
-%%WWWDIR%%/plugin/ja/00default.rb
-%%WWWDIR%%/plugin/ja/05referer.rb
-%%WWWDIR%%/plugin/ja/10spamfilter.rb
-%%WWWDIR%%/plugin/ja/50sp.rb
-%%WWWDIR%%/plugin/ja/60sf.rb
-%%WWWDIR%%/skel/category.rhtml
-%%WWWDIR%%/skel/conf.rhtml
-%%WWWDIR%%/skel/day.rhtml
-%%WWWDIR%%/skel/diary.rhtml
-%%WWWDIR%%/skel/footer.rhtml
-%%WWWDIR%%/skel/header.rhtml
-%%WWWDIR%%/skel/i.category.rhtml
-%%WWWDIR%%/skel/i.conf.rhtml
-%%WWWDIR%%/skel/i.day.rhtml
-%%WWWDIR%%/skel/i.diary.rhtml
-%%WWWDIR%%/skel/i.footer.rhtml
-%%WWWDIR%%/skel/i.header.rhtml
-%%WWWDIR%%/skel/i.latest.rhtml
-%%WWWDIR%%/skel/i.month.rhtml
-%%WWWDIR%%/skel/i.search.rhtml
-%%WWWDIR%%/skel/i.update.rhtml
-%%WWWDIR%%/skel/i.update.rhtml.en
-%%WWWDIR%%/skel/latest.rhtml
-%%WWWDIR%%/skel/mail.rtxt
-%%WWWDIR%%/skel/mail.rtxt.en
-%%WWWDIR%%/skel/month.rhtml
-%%WWWDIR%%/skel/plugin_error.rhtml
-%%WWWDIR%%/skel/preview.rhtml
-%%WWWDIR%%/skel/preview.rhtml.en
-%%WWWDIR%%/skel/referer.rhtml
-%%WWWDIR%%/skel/search.rhtml
-%%WWWDIR%%/skel/tdiary.rconf
-%%WWWDIR%%/skel/update.rhtml
-%%WWWDIR%%/skel/update.rhtml.en
 %%WWWDIR%%/tdiary.conf.beginner
 %%WWWDIR%%/tdiary.conf.sample
 %%WWWDIR%%/tdiary.conf.sample-en
-%%WWWDIR%%/tdiary.rb
-%%WWWDIR%%/tdiary/admin.rb
-%%WWWDIR%%/tdiary/application.rb
-%%WWWDIR%%/tdiary/application/configuration.rb
-%%WWWDIR%%/tdiary/application/extensions/omniauth.rb
-%%WWWDIR%%/tdiary/author_only_base.rb
-%%WWWDIR%%/tdiary/base.rb
-%%WWWDIR%%/tdiary/cache/file.rb
-%%WWWDIR%%/tdiary/cli.rb
-%%WWWDIR%%/tdiary/comment.rb
-%%WWWDIR%%/tdiary/comment_manager.rb
-%%WWWDIR%%/tdiary/compatible.rb
-%%WWWDIR%%/tdiary/configuration.rb
-%%WWWDIR%%/tdiary/core_ext.rb
-%%WWWDIR%%/tdiary/dispatcher.rb
-%%WWWDIR%%/tdiary/dispatcher/index_main.rb
-%%WWWDIR%%/tdiary/dispatcher/update_main.rb
-%%WWWDIR%%/tdiary/environment.rb
-%%WWWDIR%%/tdiary/extensions.rb
-%%WWWDIR%%/tdiary/extensions/core.rb
-%%WWWDIR%%/tdiary/filter.rb
-%%WWWDIR%%/tdiary/filter/default.rb
-%%WWWDIR%%/tdiary/filter/spam.rb
-%%WWWDIR%%/tdiary/io/base.rb
-%%WWWDIR%%/tdiary/io/default.rb
-%%WWWDIR%%/tdiary/io/pstore.rb
-%%WWWDIR%%/tdiary/lang/en.rb
-%%WWWDIR%%/tdiary/lang/ja.rb
-%%WWWDIR%%/tdiary/plugin.rb
-%%WWWDIR%%/tdiary/rack.rb
-%%WWWDIR%%/tdiary/rack/assets/precompile.rb
-%%WWWDIR%%/tdiary/rack/auth/basic.rb
-%%WWWDIR%%/tdiary/rack/auth/omniauth.rb
-%%WWWDIR%%/tdiary/rack/html_anchor.rb
-%%WWWDIR%%/tdiary/rack/static.rb
-%%WWWDIR%%/tdiary/rack/valid_request_path.rb
-%%WWWDIR%%/tdiary/referer_manager.rb
-%%WWWDIR%%/tdiary/request.rb
-%%WWWDIR%%/tdiary/response.rb
-%%WWWDIR%%/tdiary/server.rb
-%%WWWDIR%%/tdiary/style.rb
-%%WWWDIR%%/tdiary/style/tdiary.rb
-%%WWWDIR%%/tdiary/style/wiki.rb
-%%WWWDIR%%/tdiary/tasks.rb
-%%WWWDIR%%/tdiary/tasks/assets.rake
-%%WWWDIR%%/tdiary/tasks/auth.rake
-%%WWWDIR%%/tdiary/tasks/db.rake
-%%WWWDIR%%/tdiary/tasks/doc.rake
-%%WWWDIR%%/tdiary/tasks/heroku.rake
-%%WWWDIR%%/tdiary/tasks/jasmine.rake
-%%WWWDIR%%/tdiary/tasks/rdoc.rake
-%%WWWDIR%%/tdiary/tasks/release.rake
-%%WWWDIR%%/tdiary/tasks/rspec.rake
-%%WWWDIR%%/tdiary/tasks/server.rake
-%%WWWDIR%%/tdiary/tasks/test.rake
-%%WWWDIR%%/tdiary/version.rb
-%%WWWDIR%%/tdiary/view.rb
-%%WWWDIR%%/tdiary/view_helper.rb
 %%WWWDIR%%/theme/3minutes/3minutes.css
 %%WWWDIR%%/theme/3minutes/README
 %%WWWDIR%%/theme/3minutes/h3.png
@@ -1195,6 +1168,8 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/theme/lr/README
 %%WWWDIR%%/theme/lr/lr.css
 %%WWWDIR%%/theme/lr/lr.png
+%%WWWDIR%%/theme/machu/README
+%%WWWDIR%%/theme/machu/machu.css
 %%WWWDIR%%/theme/madrascheck/README
 %%WWWDIR%%/theme/madrascheck/madras-blue.jpg
 %%WWWDIR%%/theme/madrascheck/madras.png
@@ -1899,6 +1874,25 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/theme/zef/zef.css
 %%WWWDIR%%/update.fcgi
 %%WWWDIR%%/update.rb
+%%WWWDIR%%/views/category.rhtml
+%%WWWDIR%%/views/conf.rhtml
+%%WWWDIR%%/views/day.rhtml
+%%WWWDIR%%/views/diary.rhtml
+%%WWWDIR%%/views/footer.rhtml
+%%WWWDIR%%/views/header.rhtml
+%%WWWDIR%%/views/latest.rhtml
+%%WWWDIR%%/views/mail.rtxt
+%%WWWDIR%%/views/mail.rtxt.en
+%%WWWDIR%%/views/month.rhtml
+%%WWWDIR%%/views/plugin_error.rhtml
+%%WWWDIR%%/views/preview.rhtml
+%%WWWDIR%%/views/preview.rhtml.en
+%%WWWDIR%%/views/referer.rhtml
+%%WWWDIR%%/views/search.rhtml
+%%WWWDIR%%/views/tdiary.rconf
+%%WWWDIR%%/views/update.rhtml
+%%WWWDIR%%/views/update.rhtml.en
+@dir %%WWWDIR%%/views
 @dir %%WWWDIR%%/tmp
 @dir %%WWWDIR%%/theme/zef
 @dir %%WWWDIR%%/theme/yukon
@@ -2063,6 +2057,7 @@ bin/%%TDIARY_SCRIPT%%
 @dir %%WWWDIR%%/theme/manuscript-brown
 @dir %%WWWDIR%%/theme/magic
 @dir %%WWWDIR%%/theme/madrascheck
+@dir %%WWWDIR%%/theme/machu
 @dir %%WWWDIR%%/theme/lr
 @dir %%WWWDIR%%/theme/lovely_pink
 @dir %%WWWDIR%%/theme/lovely
@@ -2246,24 +2241,6 @@ bin/%%TDIARY_SCRIPT%%
 @dir %%WWWDIR%%/theme/3pink
 @dir %%WWWDIR%%/theme/3minutes
 @dir %%WWWDIR%%/theme
-@dir %%WWWDIR%%/tdiary/tasks
-@dir %%WWWDIR%%/tdiary/style
-@dir %%WWWDIR%%/tdiary/rack/auth
-@dir %%WWWDIR%%/tdiary/rack/assets
-@dir %%WWWDIR%%/tdiary/rack
-@dir %%WWWDIR%%/tdiary/lang
-@dir %%WWWDIR%%/tdiary/io
-@dir %%WWWDIR%%/tdiary/filter
-@dir %%WWWDIR%%/tdiary/extensions
-@dir %%WWWDIR%%/tdiary/dispatcher
-@dir %%WWWDIR%%/tdiary/cache
-@dir %%WWWDIR%%/tdiary/application/extensions
-@dir %%WWWDIR%%/tdiary/application
-@dir %%WWWDIR%%/tdiary
-@dir %%WWWDIR%%/skel
-@dir %%WWWDIR%%/plugin/ja
-@dir %%WWWDIR%%/plugin/en
-@dir %%WWWDIR%%/plugin
 @dir %%WWWDIR%%/misc/theme_convert
 @dir %%WWWDIR%%/misc/templates
 @dir %%WWWDIR%%/misc/plugin/xmlrpc
@@ -2272,6 +2249,7 @@ bin/%%TDIARY_SCRIPT%%
 @dir %%WWWDIR%%/misc/plugin/amazon
 @dir %%WWWDIR%%/misc/plugin
 @dir %%WWWDIR%%/misc/paas/sqale
+@dir %%WWWDIR%%/misc/paas/heroku/tasks
 @dir %%WWWDIR%%/misc/paas/heroku
 @dir %%WWWDIR%%/misc/paas/cloudfoundry
 @dir %%WWWDIR%%/misc/paas
@@ -2281,6 +2259,22 @@ bin/%%TDIARY_SCRIPT%%
 @dir %%WWWDIR%%/misc/filter/plugin
 @dir %%WWWDIR%%/misc/filter
 @dir %%WWWDIR%%/misc
+@dir %%WWWDIR%%/lib/tdiary/tasks
+@dir %%WWWDIR%%/lib/tdiary/style
+@dir %%WWWDIR%%/lib/tdiary/rack/auth/omniauth
+@dir %%WWWDIR%%/lib/tdiary/rack/auth
+@dir %%WWWDIR%%/lib/tdiary/rack
+@dir %%WWWDIR%%/lib/tdiary/plugin/ja
+@dir %%WWWDIR%%/lib/tdiary/plugin/en
+@dir %%WWWDIR%%/lib/tdiary/plugin
+@dir %%WWWDIR%%/lib/tdiary/lang
+@dir %%WWWDIR%%/lib/tdiary/io
+@dir %%WWWDIR%%/lib/tdiary/filter
+@dir %%WWWDIR%%/lib/tdiary/extensions
+@dir %%WWWDIR%%/lib/tdiary/dispatcher
+@dir %%WWWDIR%%/lib/tdiary/cache
+@dir %%WWWDIR%%/lib/tdiary
+@dir %%WWWDIR%%/lib
 @dir %%WWWDIR%%/js
 @dir %%WWWDIR%%/data
 @dir %%WWWDIR%%/bin
