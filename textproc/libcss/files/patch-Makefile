@@ -1,0 +1,10 @@
+--- Makefile.orig	2016-02-16 10:49:56 UTC
++++ Makefile
+@@ -65,5 +65,5 @@ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):i
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/libcss/select.h
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/libcss/stylesheet.h
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/libcss/types.h
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR)/pkgconfig:lib$(COMPONENT).pc.in
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /$(LIBDIR):$(OUTPUT)
++INSTALL_ITEMS := $(INSTALL_ITEMS) /libdata/pkgconfig:lib$(COMPONENT).pc.in
++INSTALL_ITEMS := $(INSTALL_ITEMS) /lib:$(OUTPUT)
