@@ -3,6 +3,7 @@ bin/pmat-cat-svpv
 bin/pmat-count
 bin/pmat-dump-symbols
 bin/pmat-explore-gtk
+bin/pmat-find-pv
 bin/pmat-identify-sv
 bin/pmat-largest-svs
 bin/pmat-list-dangling-ptrs
