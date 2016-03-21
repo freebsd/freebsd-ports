@@ -3,6 +3,7 @@
 
 PORTNAME=	SQL-Translator
 PORTVERSION=	0.11021
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,6 +29,7 @@ BUILD_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Try-Tiny>=0.04:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-XML-Writer>=0.5:${PORTSDIR}/textproc/p5-XML-Writer \
 		p5-XML-LibXML>=1.69:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-strictures>=0:${PORTSDIR}/devel/p5-strictures \
 		p5-YAML>=0.66:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
@@ -44,6 +46,7 @@ USE_PERL5=	configure
 DIAGRAM_BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 			p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
 			p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
+DIAGRAM_RUN_DEPENDS=	${DIAGRAM_BUILD_DEPENDS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@EXPORT|&_OK|' ${WRKSRC}/lib/SQL/Translator/Parser/xSV.pm
