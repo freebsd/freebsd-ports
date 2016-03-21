@@ -3,7 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.16.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -34,7 +34,6 @@ CONFIGURE_ARGS=	--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-SUB_FILES=	pkg-message
 FILES4FIX=	Makefile.in \
 		base/codes.py \
 		base/g.py \
