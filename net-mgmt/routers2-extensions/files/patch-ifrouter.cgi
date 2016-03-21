@@ -1,5 +1,5 @@
---- ifrouter.cgi.orig	Wed Nov 16 03:06:47 2005
-+++ ifrouter.cgi	Thu Dec 14 00:38:58 2006
+--- ifrouter.cgi.orig	2012-09-19 02:32:33 UTC
++++ ifrouter.cgi
 @@ -1,4 +1,4 @@
 -#!e:\perl\bin\perl
 +#!%%LOCALBASE%%/bin/speedy -- -M20 -t3600 -gnone -r500

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	routers2
-PORTVERSION=	2.19
-PORTREVISION=	5
+PORTVERSION=	2.23
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.steveshipway.org/software/rrd/ \
 		ftp://ftp.oav.oav.net/routers2/
