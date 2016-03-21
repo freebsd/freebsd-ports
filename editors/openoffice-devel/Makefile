@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	3
+#PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -101,7 +101,7 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1727463
+SVNREVISION=	1735889
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -141,7 +141,7 @@ USE_XORG=	ice x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
 USES=		autoreconf:autoconf bison compiler:c++11-lib cpe \
 		desktop-file-utils \
 		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
-		tar:${TARTYPE}
+		shared-mime-info tar:${TARTYPE}
 INSTALLS_ICONS=	yes
 WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
@@ -179,6 +179,9 @@ PDFIMPORT_LIB_DEPENDS=		libboost_system.so:${PORTSDIR}/devel/boost-libs
 PDFIMPORT_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 WIKI_PUBLISHER_CONFIGURE_ENABLE=	wiki-publisher
+
+# Don't run gnome-post-install until after post-install generates the plist
+TARGET_ORDER_OVERRIDE=	710:gnome-post-install
 
 .include <bsd.port.pre.mk>
 
