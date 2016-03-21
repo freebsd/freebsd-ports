@@ -1,0 +1,4 @@
+The mcollective nettest agent lets you ping or test remote connections via
+MCollective.
+
+WWW: https://github.com/puppetlabs/mcollective-nettest-agent

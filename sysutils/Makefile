@@ -542,6 +542,7 @@
     SUBDIR += mbgtools
     SUBDIR += mcelog
     SUBDIR += mcollective
+    SUBDIR += mcollective-nettest-common
     SUBDIR += mcollective-nrpe-agent
     SUBDIR += mcollective-puppet-agent
     SUBDIR += mcollective-shell-agent
