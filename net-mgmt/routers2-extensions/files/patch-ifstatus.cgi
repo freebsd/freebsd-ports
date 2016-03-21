@@ -1,12 +1,12 @@
---- ifstatus.cgi.orig	Thu Dec 14 00:39:56 2006
-+++ ifstatus.cgi	Thu Dec 14 00:41:44 2006
+--- ifstatus.cgi.orig	2012-09-19 02:32:33 UTC
++++ ifstatus.cgi
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
 +#!%%LOCALBASE%%/bin/speedy -- -M20 -t3600 -gnone -r500
  # vim:ts=4
  # ifstatus.pl v1.0
  #
-@@ -27,7 +27,7 @@
+@@ -25,7 +25,7 @@ use Net::SNMP;
  my($VERSION) = "v1.0";
  
  # Variables
