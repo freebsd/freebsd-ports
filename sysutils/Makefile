@@ -250,6 +250,7 @@
     SUBDIR += entr
     SUBDIR += env4801
     SUBDIR += envconsul
+    SUBDIR += epazote
     SUBDIR += etcmerge
     SUBDIR += etcupdate
     SUBDIR += eventlog
