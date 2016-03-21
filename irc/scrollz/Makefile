@@ -1,35 +1,37 @@
 # Created by: Will Andrews <andrews@technologist.com>
 # $FreeBSD$
 
-PORTNAME=	scrollz
-PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTNAME=	ScrollZ
+PORTVERSION=	2.3
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://www.netraam.net/scrollz/download/ \
-		http://BSDforge.com/projects/source/irc/scrollz/
-DISTNAME=	ScrollZ-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@bitchx.org
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		gmake iconv ncurses
+USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-ipv6 --enable-regexp --enable-utf8
 
+DATADIR=	${PREFIX}/share/${PORTNAME:tl}
 PLIST_SUB=	SCROLLZ_VER="${PORTVERSION}"
 
+OPTIONS_DEFINE=		IPV6 REGEX UTF8
 OPTIONS_RADIO=		SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
-OPTIONS_DEFAULT=	OPENSSL
+OPTIONS_DEFAULT=	OPENSSL REGEX UTF8
 
+IPV_CONFIGURE_ENABLE=	ipv6
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GNUTLS_USES=		pkgconfig
 GNUTLS_CONFIGURE_ON=	--with-ssl
+REGEX_CONFIGURE_ENABLE=	regexp
 OPENSSL_USE=		OPENSSL=yes
 OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
+UTF8_CONFIGURE_ENABLE=	utf8
 
 .include <bsd.port.pre.mk>
 
