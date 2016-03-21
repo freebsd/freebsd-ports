@@ -1303,6 +1303,7 @@
     SUBDIR += p5-WWW-Robot
     SUBDIR += p5-WWW-RobotRules
     SUBDIR += p5-WWW-RobotRules-Parser
+    SUBDIR += p5-WWW-Salesforce
     SUBDIR += p5-WWW-Scraper-ISBN
     SUBDIR += p5-WWW-Scraper-ISBN-Amazon_Driver
     SUBDIR += p5-WWW-Scraper-ISBN-ORA_Driver
