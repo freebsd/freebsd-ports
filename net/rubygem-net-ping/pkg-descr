@@ -1,0 +1,4 @@
+The net-ping library provides a ping interface for Ruby. It includes separate
+TCP, HTTP, LDAP, ICMP, UDP, WMI (for Windows) and external ping classes.
+
+WWW: https://github.com/chernesk/net-ping
