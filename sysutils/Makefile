@@ -543,6 +543,7 @@
     SUBDIR += mcelog
     SUBDIR += mcollective
     SUBDIR += mcollective-nettest-agent
+    SUBDIR += mcollective-nettest-client
     SUBDIR += mcollective-nettest-common
     SUBDIR += mcollective-nrpe-agent
     SUBDIR += mcollective-puppet-agent
