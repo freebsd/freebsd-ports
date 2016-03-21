@@ -7,9 +7,9 @@ CATEGORIES=	net
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Static multicast routing tool
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2
 USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	troglobit
