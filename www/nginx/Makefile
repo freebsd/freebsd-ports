@@ -1,6 +1,8 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 # $FreeBSD$
 
+update nginx
+
 PORTNAME=	nginx
 PORTVERSION=	1.6.0
 PORTEPOCH=	2
