@@ -3,6 +3,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	3.16.4
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -90,22 +91,13 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNOME_LOCALSTATEDIR=	/var
 
-OPTIONS_DEFINE=	IPV6 KEYRING
-OPTIONS_DEFAULT=KEYRING
-KEYRING_DESC=	Gnomekeyring/PAM integration
-KEYRING_LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+OPTIONS_DEFINE=	IPV6
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if ${PORT_OPTIONS:MKEYRING}
-SUB_LIST+=	PAM_KEYRING=
-.else
-SUB_LIST+=	PAM_KEYRING=\#
 .endif
 
 post-patch:

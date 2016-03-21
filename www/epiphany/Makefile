@@ -3,6 +3,7 @@
 
 PORTNAME=	epiphany
 PORTVERSION=	3.16.3
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libwebkit2gtk-4.0.so:${PORTSDIR}/www/webkit2-gtk3 \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libavahi-gobject.so:${PORTSDIR}/net/avahi-app \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+		libsecret-1.so:${PORTSDIR}/security/libsecret
 RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		gnome-icon-theme-symbolic>=0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
