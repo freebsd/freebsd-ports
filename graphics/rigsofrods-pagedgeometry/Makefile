@@ -23,9 +23,6 @@ DOS2UNIX_GLOB=	*.cpp *.h *.txt
 CMAKE_ARGS=	-DPAGEDGEOMETRY_BUILD_SAMPLES=FALSE
 USE_LDCONFIG=	yes
 
-# XXX dialog(1) doesn't like ^M in LICENSE_FILE
-post-extract:	dos2unix
-
 post-patch:
 	@${REINPLACE_CMD} -e '/install.*DOC_FILES/d' \
 		${WRKSRC}/CMakeLists.txt
