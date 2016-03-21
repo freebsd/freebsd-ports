@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PyAFF4
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Python Advanced Forensic Format Version 4 library
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}intervaltree>=2.1.0:${PORTSDIR}/devel/py-intervaltree \
-		${PYTHON_PKGNAMEPREFIX}python-snappy>=0:${PORTSDIR}/archivers/py-python-snappy \
+		${PYTHON_PKGNAMEPREFIX}python-snappy>=0.5:${PORTSDIR}/archivers/py-python-snappy \
 		${PYTHON_PKGNAMEPREFIX}rdflib>=4.2.1:${PORTSDIR}/textproc/py-rdflib
 
 NO_ARCH=	yes
@@ -24,6 +24,6 @@ post-extract:
 	@${CHMOD} -R a+rX ${WRKSRC}
 
 post-patch:
-	${REINPLACE_CMD} '/aff4-snappy/d' ${WRKSRC}/setup.py
+	${REINPLACE_CMD} 's/aff4-snappy == 0.5/snappy >= 0.5/' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
