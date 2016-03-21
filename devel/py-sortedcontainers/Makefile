@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sortedcontainers
-PORTVERSION=	0.9.6
+PORTVERSION=	1.4.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,7 @@ COMMENT=	Python Sorted Container Types: SortedList, SortedDict, and SortedSet
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
 
