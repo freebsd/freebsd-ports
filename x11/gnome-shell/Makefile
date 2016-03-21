@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-shell
 PORTVERSION=	3.18.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libcaribou.so:${PORTSDIR}/accessibility/caribou \
 		libmutter.so:${PORTSDIR}/x11-wm/mutter \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
+		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
 		libtelepathy-logger.so:${PORTSDIR}/net-im/telepathy-logger \

@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-keyring
 PORTVERSION=	3.18.3
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,8 +14,7 @@ COMMENT=	Program that keeps passwords and other secrets
 BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
 		gcr>=3.5.3:${PORTSDIR}/security/gcr
-LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
 		libtasn1.so:${PORTSDIR}/security/libtasn1 \
 		libp11-kit.so:${PORTSDIR}/security/p11-kit \
