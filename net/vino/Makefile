@@ -3,6 +3,7 @@
 
 PORTNAME=	vino
 PORTVERSION=	3.18.1
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,8 +14,8 @@ COMMENT=	VNC server that allows for remote access to your GNOME desktop
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
 		libavahi-glib.so:${PORTSDIR}/net/avahi-app
 

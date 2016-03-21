@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-online-accounts
 PORTVERSION=	3.18.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -15,7 +16,6 @@ LIB_DEPENDS=	libwebkit2gtk-4.0.so:${PORTSDIR}/www/webkit2-gtk3 \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		librest-0.7.so:${PORTSDIR}/devel/librest
 
