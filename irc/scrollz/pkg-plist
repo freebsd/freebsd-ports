@@ -517,6 +517,7 @@ man/man1/scrollz.1.gz
 %%DATADIR%%/help/set/input_aliases
 %%DATADIR%%/help/set/input_encoding
 %%DATADIR%%/help/set/input_prompt
+%%DATADIR%%/help/set/input_prompt_shift_new
 %%DATADIR%%/help/set/input_protection
 %%DATADIR%%/help/set/insert_mode
 %%DATADIR%%/help/set/inverse_video
@@ -567,6 +568,9 @@ man/man1/scrollz.1.gz
 %%DATADIR%%/help/set/show_numerics
 %%DATADIR%%/help/set/show_status_all
 %%DATADIR%%/help/set/show_who_hopcount
+%%DATADIR%%/help/set/ssl_ca_file
+%%DATADIR%%/help/set/ssl_priority_string
+%%DATADIR%%/help/set/ssl_verify_certificate
 %%DATADIR%%/help/set/stamp_format
 %%DATADIR%%/help/set/status_away
 %%DATADIR%%/help/set/status_channel
@@ -602,6 +606,7 @@ man/man1/scrollz.1.gz
 %%DATADIR%%/help/set/trace
 %%DATADIR%%/help/set/truncate_public_channel
 %%DATADIR%%/help/set/underline_video
+%%DATADIR%%/help/set/url_buffer_size
 %%DATADIR%%/help/set/user_information
 %%DATADIR%%/help/set/user_wallops
 %%DATADIR%%/help/set/username

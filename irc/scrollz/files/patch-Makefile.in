@@ -19,15 +19,16 @@
  #   installflush	- installs ircflush
  #   installscript 	- installs the scripts
  #   installhelp		- installs the help files
-@@ -50,8 +50,8 @@
+@@ -50,9 +50,9 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
  bindir = @bindir@
 -sharedir = @prefix@/share
--mandir = @prefix@/share/man/man1
 +sharedir = @datadir@
+ datarootdir = @datarootdir@
+-mandir = @mandir@
 +mandir = @mandir@/man1
- 
+
  DESTDIR =
  
 @@ -105,7 +105,7 @@
