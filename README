@@ -15,7 +15,7 @@ These will explain how to use ports and packages.
 
 If you would like to search for a port, you can do so easily by
 saying (in /usr/ports):
-
+asdasdasdasd
 
 	make search name="<name>"
 	or:
