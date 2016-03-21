@@ -19,9 +19,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	android:bionic,core jbeich:DEFAULT,lzma
 GH_PROJECT=	platform_bionic:bionic platform_system_core:core \
 		platform_system_extras platform_external_lzma:lzma
-GH_TAGNAME=	${DISTVERSIONFULL:C/-[0-9]*-g.*$//}-249-g5f1de52:bionic \
-		${DISTVERSIONFULL:C/-[0-9]*-g.*$//}-554-g371e7ea170d7:core \
-		${DISTVERSIONFULL:C/-[0-9]*-g.*$//}-6-ge43f249:lzma
+GH_MYTAG=	${DISTVERSIONPREFIX}${DISTVERSION:C/-[0-9]*$//}
+GH_TAGNAME=	${GH_MYTAG}-249-g5f1de52:bionic \
+		${GH_MYTAG}-554-g371e7ea170d7:core \
+		${GH_MYTAG}-6-ge43f249:lzma
 
 USES=		compiler:c++11-lib uidfix
 BUILD_WRKSRC=	${WRKSRC}/simpleperf
