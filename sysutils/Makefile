@@ -626,6 +626,7 @@
     SUBDIR += ods2
     SUBDIR += ohmu
     SUBDIR += open
+    SUBDIR += openhpi
     SUBDIR += openipmi
     SUBDIR += openupsd
     SUBDIR += ori
