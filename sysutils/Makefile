@@ -547,6 +547,7 @@
     SUBDIR += mcollective-nettest-common
     SUBDIR += mcollective-nrpe-agent
     SUBDIR += mcollective-puppet-agent
+    SUBDIR += mcollective-service-agent
     SUBDIR += mcollective-service-common
     SUBDIR += mcollective-shell-agent
     SUBDIR += mcollective-shell-client
