@@ -1,5 +1,0 @@
-The CloudABI environment uses Clang as its C/C++ compiler. This meta
-port installs Clang and sets up symbolic links, so that Clang can be
-used as a cross compiler for CloudABI.
-
-WWW: https://github.com/NuxiNL/cloudlibc
