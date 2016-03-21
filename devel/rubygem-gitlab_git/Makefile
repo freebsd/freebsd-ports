@@ -2,6 +2,7 @@
 
 PORTNAME=	gitlab_git
 PORTVERSION=	10.0.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
