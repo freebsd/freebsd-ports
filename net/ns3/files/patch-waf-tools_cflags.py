@@ -1,5 +1,5 @@
---- ns-3.24.1/waf-tools/cflags.py.orig	2015-12-12 12:44:40 UTC
-+++ ns-3.24.1/waf-tools/cflags.py
+--- waf-tools/cflags.py.orig	2015-09-23 19:28:42 UTC
++++ waf-tools/cflags.py
 @@ -19,7 +19,7 @@ class GccTraits(CompilerTraits):
  	def __init__(self):
  		super(GccTraits, self).__init__()
