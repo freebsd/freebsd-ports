@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R:R}
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
 LICENSE=	GPLv3 LGPL21
@@ -24,7 +24,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-guile \
 		--disable-silent-rules \
-		--enable-local-libopts
+		--enable-local-libopts \
+		ac_cv_type_max_align_t=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
