@@ -415,6 +415,7 @@ RADIUS_DESC?=		RADIUS protocol support
 RAW_DESC?=		RAW format support
 READLINE_DESC?=		Command line editing via libreadline
 REDIS_DESC?=		Redis key-value store database support
+REGEX_DESC?=		Regular expression support
 RESIN3_DESC?=		Resin 3.x support
 RTMP_DESC?=		RTMP protocol support via librtmp
 RUBY_DESC?=		Ruby bindings or support
