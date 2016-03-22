@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--enable-shared \
 		--datadir=${DATADIR} \
 		--with-tclconfig=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR}
+CONFIGURE_ENV=	ac_cv_sys_long_file_names=yes
 PLIST_SUB+=	EXPECT_VER=${PORTVERSION} \
 		LIBEXPECT_VER=${LIBEXPECT_VER}
 
