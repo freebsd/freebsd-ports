@@ -17,7 +17,7 @@ USE_RC_SUBR=	dsbmd
 
 OPTIONS_DEFINE=	DOCS
 
-PLIST_FILES=	libexec/dsbmd "@sample etc/dsbmd.conf.sample etc/dsbmd.conf"
+PLIST_FILES=	libexec/dsbmd "@sample etc/dsbmd.conf.sample"
 
 PORTDOCS=	README
 
