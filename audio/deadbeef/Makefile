@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -20,8 +20,7 @@ CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-static
 CPPFLAGS+=	-I../dumb/dumb-kode54/include -I../../plugins/libmp4ff \
 		-I../../plugins/gme/game-music-emu-0.6pre \
 		-I./sidplay-libs/libsidplay/include/sidplay \
-		-I${LOCALBASE}/include \
-		-D__POSIX_VISIBLE
+		-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo -lintl
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
