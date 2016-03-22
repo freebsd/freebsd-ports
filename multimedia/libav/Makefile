@@ -182,7 +182,7 @@ AV_NONFREE=		true
 .if ${PORT_OPTIONS:MCDIO} || ${PORT_OPTIONS:MX264} || ${PORT_OPTIONS:MXVID} || ${PORT_OPTIONS:MX11GRAB}
 CONFIGURE_ARGS+=	--enable-gpl
 .if !defined(AV_NONFREE)
-LICENSE=		GPLv2
+LICENSE=		GPLv2+
 AV_ISGPL=		true
 .endif
 .endif
@@ -191,15 +191,15 @@ AV_ISGPL=		true
 CONFIGURE_ARGS+=	--enable-version3
 .if !defined(AV_NONFREE)
 .if defined(AV_ISGPL)
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 .else
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
 .endif
 .endif
 .endif
 
 .if !defined(AV_NONFREE) && !defined(AV_ISGPL) && !defined(LICENSE)
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
 .endif
 
 post-patch:
