@@ -14,12 +14,6 @@
 %%SITE_PERL%%/XML/Compile/SOAP/Trace.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Util.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Util.pod
-%%SITE_PERL%%/XML/Compile/SOAP/xsd/bea/README
-%%SITE_PERL%%/XML/Compile/SOAP/xsd/bea/bea_wli_sb_context-fix.xsd
-%%SITE_PERL%%/XML/Compile/SOAP/xsd/bea/bea_wli_sb_context.xsd
-%%SITE_PERL%%/XML/Compile/SOAP/xsd/sharepoint/README.sharepoint
-%%SITE_PERL%%/XML/Compile/SOAP/xsd/sharepoint/sharepoint-serial.xsd
-%%SITE_PERL%%/XML/Compile/SOAP/xsd/sharepoint/sharepoint-soap.xsd
 %%SITE_PERL%%/XML/Compile/SOAP/xsd/xcdaemon/xcdaemon.xsd
 %%SITE_PERL%%/XML/Compile/SOAP11.pm
 %%SITE_PERL%%/XML/Compile/SOAP11.pod
