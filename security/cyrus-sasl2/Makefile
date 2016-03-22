@@ -36,6 +36,7 @@ BDB_CONFIGURE_ON=	--with-dblib=berkeley \
 			--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb=${BDB_LIB_NAME}
 BDB1_CONFIGURE_ON=	--with-dblib=ndbm
+GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 GDBM_CONFIGURE_ON=	--with-dblib=gdbm \
 			--with-gdbm=${LOCALBASE}
 MYSQL_USE=		MYSQL=yes
