@@ -2,11 +2,11 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Advanced general-purpose video player
 
 LICENSE=	GPLv2
@@ -14,10 +14,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-BUILD_DEPENDS=	python3:${PORTSDIR}/lang/python3 \
-		rst2man:${PORTSDIR}/textproc/py-docutils
+BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 
-USES=		cpe gmake iconv ncurses pkgconfig tar:xz
+USES=		cpe gmake iconv ncurses pkgconfig python:3,build tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--cc=${CC} \
