@@ -10,7 +10,7 @@ MASTER_SITES=	http://ffmpeg.org/releases/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
-LICENSE=	GPLv2 LGPL21
+LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
@@ -383,7 +383,7 @@ ZVBI_CONFIGURE_ENABLE=	libzvbi
 
 # License knobs
 GPL3_CONFIGURE_ENABLE=	version3
-GPL3_VARS=		LICENSE="GPLv3 LGPL3"
+GPL3_VARS=		LICENSE="GPLv3+ LGPL3+"
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
 
