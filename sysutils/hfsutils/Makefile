@@ -10,7 +10,8 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for accessing Apple's HFS volumes
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	hfs-[0-9]*
 
@@ -34,8 +35,6 @@ TCLTK_CONFIGURE_OFF=	--without-tcl --without-tk
 
 DEVLIBS_CONFIGURE_ON=	--enable-devlibs
 
-.include <bsd.port.options.mk>
-
 post-patch:
 # Unbreak against Tcl 8.6
 	@${ECHO_CMD} '#define USE_INTERP_RESULT 1' >> ${WRKSRC}/config.h.in
@@ -45,9 +44,11 @@ post-patch:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hfsck/hfsck ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MTCLTK}
+
+post-install-TCLTK-on:
 	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/hfs
-.endif
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in BLURB CHANGES README TODO doc/*.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
