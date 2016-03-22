@@ -9,16 +9,17 @@
 # Add the following to /etc/rc.conf[.local] to enable this service
 #
 # openhpid_enable="YES"
-# openhpid_flags="-c %%PREFIX%%/etc/openhpi/openhpi.conf"
 #
 
 . /etc/rc.subr
 
-name="openhpid"
-rcvar="openhpid_enable"
-command="%%PREFIX%%/sbin/openhpid"
+: ${openhpid_enable:=NO} ${openhpid_config:=%%ETCDIR%%/openhpi.conf}
 
-: ${openhpid_enable=NO} ${openhpid_flags=-c %%PREFIX%%/etc/openhpi/openhpi.conf}
+name=openhpid
+rcvar=openhpid_enable
+command="%%PREFIX%%/sbin/openhpid"
+command_args="-c ${openhpid_config}"
+required_files="${openhpid_config}"
 
 load_rc_config ${name}
 run_rc_command "$1"
