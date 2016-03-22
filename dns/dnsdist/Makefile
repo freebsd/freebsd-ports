@@ -2,18 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	dnsdist
-DISTVERSION=	0.0.791gfbb356b
+DISTVERSION=	1.0.0-alpha2
 CATEGORIES=	dns net
-MASTER_SITES=	http://builder.powerdns.com/files/dnsdist/dist/ \
+MASTER_SITES=	https://downloads.powerdns.com/releases/ \
 		LOCAL/cpm
 
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Highly DNS-, DoS- and abuse-aware loadbalancer
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 UNLICENSE
+LICENSE_COMB=	multi
+LICENSE_NAME_UNLICENSE=	The Unlicense
+LICENSE_FILE_UNLICENSE=	${WRKSRC}/ext/incbin/UNLICENSE
+LICENSE_PERMS_UNLICENSE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:${PORTSDIR}/devel/libatomic_ops \
-		ragel>0:${PORTSDIR}/devel/ragel
+BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:${PORTSDIR}/devel/libatomic_ops
 LIB_DEPENDS=	libboost_serialization.so:${PORTSDIR}/devel/boost-libs \
 		libsodium.so:${PORTSDIR}/security/libsodium
 
@@ -21,8 +24,8 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99
 LDFLAGS+=	-L${LOCALBASE}/lib -latomic
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
-USES=		bison cpe gmake libtool lua:52 pkgconfig readline tar:bz2
-CONFIGURE_ARGS=	--enable-libsodium
+USES=		bison cpe gmake libedit libtool lua:52 pkgconfig tar:bz2
+CONFIGURE_ARGS=	--enable-dnscrypt --enable-libsodium
 INSTALL_TARGET=	install-strip
 
 USE_RC_SUBR=	dnsdist
