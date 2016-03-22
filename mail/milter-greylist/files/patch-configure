@@ -1,8 +1,7 @@
 Index: configure
-diff -u configure.orig configure
---- configure.orig	2013-03-07 22:26:11.000000000 +0900
-+++ configure	2013-03-14 15:35:15.476674058 +0900
-@@ -5899,7 +5899,7 @@
+--- configure.orig	2013-03-07 13:26:11 UTC
++++ configure
+@@ -5899,7 +5899,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
