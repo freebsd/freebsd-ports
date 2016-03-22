@@ -2,6 +2,7 @@
 
 PORTNAME=	openhpi
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/openhpi/openhpi-stable/${PORTVERSION}/
 
