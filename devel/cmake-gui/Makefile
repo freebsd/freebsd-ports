@@ -3,7 +3,7 @@
 PORTNAME=	cmake
 PORTVERSION=	3.5.0
 CATEGORIES=	devel
-MASTER_SITES=	https://www.cmake.org/files/v3.5/
+MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-gui
 
 MAINTAINER=	kde@FreeBSD.org
