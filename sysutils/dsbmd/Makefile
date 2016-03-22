@@ -1,4 +1,4 @@
-Created by: Marcel Kaiser <mk@nic-nac-project.org>
+# Created by: Marcel Kaiser <mk@nic-nac-project.org>
 # $FreeBSD$
 
 PORTNAME=	dsbmd
@@ -19,10 +19,6 @@ OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	libexec/dsbmd "@sample etc/dsbmd.conf.sample etc/dsbmd.conf"
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README
-.endif
 
 .include <bsd.port.mk>
