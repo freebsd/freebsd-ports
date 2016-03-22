@@ -1263,3 +1263,11 @@
                                              SaHpiResourceIdT id,
                                              SaHpiResetActionT act ) {
     NewSimulator *newsim = 0;
+@@ -3563,6 +3134,7 @@ static SaErrorT NewSimulatorSetResetStat
+    return rv;
+ }
+ 
++#pragma GCC visibility pop
+ } // new plugin_loader
+ //@}
+ 
