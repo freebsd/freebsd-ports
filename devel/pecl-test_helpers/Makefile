@@ -19,6 +19,7 @@ USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USES=		tar:tgz
 SUB_FILES=	pkg-message
+IGNORE_WITH_PHP=	70
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

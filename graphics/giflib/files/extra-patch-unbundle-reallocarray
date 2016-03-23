@@ -1,0 +1,27 @@
+--- lib/Makefile.in.orig	2016-01-07 12:54:02 UTC
++++ lib/Makefile.in
+@@ -134,7 +134,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" 
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ libgif_la_LIBADD =
+ am_libgif_la_OBJECTS = dgif_lib.lo egif_lib.lo gif_font.lo gif_hash.lo \
+-	gifalloc.lo openbsd-reallocarray.lo gif_err.lo quantize.lo
++	gifalloc.lo gif_err.lo quantize.lo
+ libgif_la_OBJECTS = $(am_libgif_la_OBJECTS)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+@@ -331,7 +331,6 @@ libgif_la_SOURCES = dgif_lib.c  \
+ 					gif_hash.c  \
+ 					gif_hash.h	\
+                     gifalloc.c  \
+-		    openbsd-reallocarray.c \
+                     gif_err.c   \
+ 					gif_lib_private.h \
+ 		    quantize.c
+@@ -422,7 +421,6 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gif_font.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gif_hash.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gifalloc.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/openbsd-reallocarray.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quantize.Plo@am__quote@
+ 
+ .c.o:

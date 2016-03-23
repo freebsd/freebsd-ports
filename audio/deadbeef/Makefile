@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.6.2
-PORTREVISION=	8
+PORTVERSION=	0.7.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -14,28 +13,30 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils execinfo gettext gmake iconv libtool \
+USES=		compiler:c11 desktop-file-utils execinfo gettext gmake iconv libtool \
 		pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-static
 CPPFLAGS+=	-I../dumb/dumb-kode54/include -I../../plugins/libmp4ff \
 		-I../../plugins/gme/game-music-emu-0.6pre \
-		-I${LOCALBASE}/include
+		-I./sidplay-libs/libsidplay/include/sidplay \
+		-I${LOCALBASE}/include \
+		-D__POSIX_VISIBLE
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo -lintl
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 SHEBANG_FILES=	yasmwrapper.sh
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	MAD PULSEAUDIO GUI VFS LASTFM ART SUPEREQ SID FFAP VTX \
+OPTIONS_DEFINE=	PULSEAUDIO GUI VFS LASTFM ART SUPEREQ SID FFAP VTX \
 		HOTKEYS OGG FFMPEG FLAC SNDFILE WAVPACK CDDA GME DUMB NOTIFY \
-		MUSEPACK WILDMIDI TTA DCA AAC MMS SHN AO SHELLEXEC NLS M3U \
+		MUSEPACK WILDMIDI TTA DCA AAC MMS SHN SHELLEXEC NLS M3U \
 		PSF ADPLUG DSP MONO2STEREO CONVERTER VFS_ZIP ALAC PLTBROWSER \
-		WMA
-OPTIONS_DEFAULT=	MAD GTK2 VFS LASTFM ART SUPEREQ SID FFAP VTX HOSTKEYS \
+		WMA SC68
+OPTIONS_DEFAULT=MAD GTK2 VFS LASTFM ART SUPEREQ SID FFAP VTX HOSTKEYS \
 		OGG FLAC SNDFILE WAVPACK CDDA GME DUMB NOTIFY MUSEPACK \
-		WILDMIDI TTA DCA AAC MMS SHN AO SHELLEXEC M3U PSF ADPLUG DSP \
-		MONO2STEREO CONVERTER VFS_ZIP HOTKEYS ALAC PLTBROWSER WMA
+		WILDMIDI TTA DCA AAC MMS SHN SHELLEXEC M3U PSF ADPLUG DSP \
+		MONO2STEREO CONVERTER VFS_ZIP HOTKEYS ALAC PLTBROWSER WMA SC68
 
 PULSEAUDIO_DESC=	PulseAudio output plugin (unsupported)
 GUI_DESC=		Standard GUI plugin
@@ -52,8 +53,8 @@ GME_DESC=		Chiptune music support (based on GME)
 DUMB_DESC=		D.U.M.B. plugin for MOD, S3M, etc.
 NOTIFY_DESC=		OSD notification support in GTKUI plugin
 WILDMIDI_DESC=		WildMIDI synthesizer plugin
+SC68_DESC=		sc68 Atari ST And Amiga player
 SHN_DESC=		Shorten waveform encoder support
-AO_DESC=		Audio Overload (vintage hardware sound) plugin
 SHELLEXEC_DESC=		Shell commands execution plugin
 M3U_DESC=		M3U and PLS playlist format support
 PSF_DESC=		AOSDK-based PSF(,QSF,SSF,DSF) plugin
@@ -68,8 +69,14 @@ OPTIONS_RADIO+=		GUI
 OPTIONS_RADIO_GUI=	GTK2 GTK3
 GUI_IMPLIES=		CONVERTER
 
+OPTIONS_GROUP+=		MP3
+OPTIONS_GROUP_MP3=	MAD MPG123
+
 MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
-MAD_CONFIGURE_OFF=	--disable-mad
+MAD_CONFIGURE_OFF=	--disable-libmad
+
+MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+MPG123_CONFIGURE_OFF=	--disable-libmpg123
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
@@ -89,6 +96,7 @@ GTK3_IMPLIES=		GUI
 PLIST_SUB+=		GTK_VER=${GTK_VER}
 
 GUI_CONFIGURE_OFF=	--disable-gtk2 --disable-gtk3
+GUI_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
 
 VFS_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 VFS_CONFIGURE_OFF=	--disable-vfs-curl
@@ -157,9 +165,10 @@ AAC_CONFIGURE_OFF=	--disable-aac
 
 MMS_CONFIGURE_OFF=	--disable-mms
 
-SHN_CONFIGURE_OFF=	--disable-shn
+SC68_CONFIGURE_ON=	--enable-sc68
+SC68_CONFIGURE_OFF=	--disable-sc68
 
-AO_CONFIGURE_OFF=	--disable-ao
+SHN_CONFIGURE_OFF=	--disable-shn
 
 SHELLEXEC_CONFIGURE_ARGS+=	--disable-shellexec
 
@@ -189,6 +198,13 @@ WMA_CONFIGURE_OFF=		--disable-wma
 
 .if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3}
 PORT_OPTIONS:=          ${PORT_OPTIONS:NGUI}
+.endif
+
+.if !${PORT_OPTIONS:MMAD} && !${PORT_OPTIONS:MMPG123}
+CONFIGURE_ARGS+=	--disable-mp3
+PLIST_SUB+=		MP3="@comment "
+.else
+PLIST_SUB+=		MP3=""
 .endif
 
 post-patch:

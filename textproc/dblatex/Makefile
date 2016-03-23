@@ -3,6 +3,7 @@
 
 PORTNAME=	dblatex
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,7 +16,7 @@ RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 
 USES=		tar:bzip2 python:2
 USE_PYTHON=	distutils autoplist
-USE_TEX=	tex
+USE_TEX=	dvipsk:run tex
 NO_ARCH=	yes
 
 PYDISTUTILS_INSTALLARGS+=	--catalogs=${LOCALBASE}/share/xml/catalog.ports \

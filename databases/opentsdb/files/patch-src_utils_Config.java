@@ -1,6 +1,6 @@
---- src/utils/Config.java.orig	2015-11-04 10:25:48 UTC
+--- src/utils/Config.java.orig	2016-02-15 22:56:56 UTC
 +++ src/utils/Config.java
-@@ -509,6 +509,7 @@ public class Config {
+@@ -562,6 +562,7 @@ public class Config {
      } else {
        file_locations.add("/etc/opentsdb.conf");
        file_locations.add("/etc/opentsdb/opentsdb.conf");

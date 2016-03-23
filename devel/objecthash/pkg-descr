@@ -1,0 +1,4 @@
+Objecthash provides a way to cryptographically hash objects (in the
+JSON-ish sense) that works cross-language and therefore cross-encoding.
+
+WWW: https://github.com/benlaurie/objecthash

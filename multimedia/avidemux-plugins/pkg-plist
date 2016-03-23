@@ -2,6 +2,7 @@ lib/ADM_plugins6/audioDecoder/libADM_ad_Mad.so
 lib/ADM_plugins6/audioDecoder/libADM_ad_a52.so
 lib/ADM_plugins6/audioDecoder/libADM_ad_dca.so
 lib/ADM_plugins6/audioDecoder/libADM_ad_lav.so
+%%OPUS%%lib/ADM_plugins6/audioDecoder/libADM_ad_opus.so
 lib/ADM_plugins6/audioDecoder/libADM_ad_ulaw.so
 lib/ADM_plugins6/audioDecoder/libADM_ad_ms_adpcm.so
 lib/ADM_plugins6/audioDecoder/libADM_ad_ima_adpcm.so
@@ -12,6 +13,7 @@ lib/ADM_plugins6/audioEncoders/libADM_ae_lav_ac3.so
 lib/ADM_plugins6/audioEncoders/libADM_ae_lav_mp2.so
 lib/ADM_plugins6/audioEncoders/libADM_ae_lav_aac.so
 lib/ADM_plugins6/audioEncoders/libADM_ae_pcm.so
+%%TWOLAME%%lib/ADM_plugins6/audioEncoders/libADM_ae_twolame.so
 lib/ADM_plugins6/videoEncoders/libADM_ve_yv12.so
 lib/ADM_plugins6/videoEncoders/libADM_ve_png.so
 lib/ADM_plugins6/videoEncoders/libADM_ve_jpeg.so
@@ -37,6 +39,7 @@ lib/ADM_plugins6/videoFilters/libADM_vf_gauss.so
 lib/ADM_plugins6/videoFilters/libADM_vf_median.so
 lib/ADM_plugins6/videoFilters/libADM_vf_sharpen.so
 lib/ADM_plugins6/videoFilters/libADM_vf_separateField.so
+%%FRIBIDI%%%%FREETYPE%%lib/ADM_plugins6/videoFilters/libADM_vf_ssa.so
 lib/ADM_plugins6/videoFilters/libADM_vf_mergeField.so
 lib/ADM_plugins6/videoFilters/libADM_vf_FluxSmooth.so
 lib/ADM_plugins6/videoFilters/libADM_hf_hflip.so

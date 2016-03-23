@@ -1,0 +1,24 @@
+--- lib/dgif_lib.c.orig	2016-01-07 10:44:44 UTC
++++ lib/dgif_lib.c
+@@ -41,6 +41,9 @@ static int DGifDecompressInput(GifFileTy
+ static int DGifBufferedInput(GifFileType *GifFile, GifByteType *Buf,
+                              GifByteType *NextByte);
+ 
++extern void *
++reallocarray(void *optr, size_t nmemb, size_t size) __dso_hidden;
++
+ /******************************************************************************
+  Open a new GIF file for read, given by its name.
+  Returns dynamically allocated GifFileType pointer which serves as the GIF
+--- lib/gifalloc.c.orig	2015-07-13 04:05:46 UTC
++++ lib/gifalloc.c
+@@ -12,6 +12,9 @@
+ 
+ #define MAX(x, y)    (((x) > (y)) ? (x) : (y))
+ 
++extern void *
++reallocarray(void *optr, size_t nmemb, size_t size) __dso_hidden;
++
+ /******************************************************************************
+  Miscellaneous utility functions                          
+ ******************************************************************************/

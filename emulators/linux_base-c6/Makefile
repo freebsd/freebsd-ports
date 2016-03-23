@@ -3,7 +3,7 @@
 
 PORTNAME=	c6
 PORTVERSION=	6.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	CENTOS_LINUX CENTOS_LINUX_UPDATES
 MASTER_SITE_SUBDIR=	${LINUX_DIST_VER}/os/${LINUX_REPO_ARCH}/Packages/\
@@ -43,8 +43,8 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		gamin-0.1.10-9.el6.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-38.el6.${LINUX_RPM_ARCH}.rpm \
 		glib2-2.28.8-4.el6.${LINUX_RPM_ARCH}.rpm \
-		glibc-2.12-1.166.el6_7.3.${LINUX_RPM_ARCH}.rpm \
-		glibc-common-2.12-1.166.el6_7.3.${LINUX_RPM_ARCH}.rpm \
+		glibc-2.12-1.166.el6_7.7.${LINUX_RPM_ARCH}.rpm \
+		glibc-common-2.12-1.166.el6_7.7.${LINUX_RPM_ARCH}.rpm \
 		gmp-4.3.1-7.el6_2.2.${LINUX_RPM_ARCH}.rpm \
 		grep-2.20-3.el6_7.1.${LINUX_RPM_ARCH}.rpm \
 		info-4.13a-8.el6.${LINUX_RPM_ARCH}.rpm \
@@ -94,7 +94,7 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm:SOURCE \
 		gamin-0.1.10-9.el6.src.rpm:SOURCE \
 		gdbm-1.8.0-38.el6.src.rpm:SOURCE \
 		glib2-2.28.8-4.el6.src.rpm:SOURCE \
-		glibc-2.12-1.166.el6_7.3.src.rpm:SOURCE \
+		glibc-2.12-1.166.el6_7.7.src.rpm:SOURCE \
 		gmp-4.3.1-7.el6_2.2.src.rpm:SOURCE \
 		grep-2.20-3.el6_7.1.src.rpm:SOURCE \
 		texinfo-4.13a-8.el6.src.rpm:SOURCE \

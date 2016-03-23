@@ -1,0 +1,15 @@
+--- configure.orig	2000-05-29 01:46:09 UTC
++++ configure
+@@ -113,9 +113,9 @@ INCLUDE = -I.
+     ;;
+   *)
+ cat <<! >> Makefile
+-CC = cc
+-CFLAGS = 
+-LDFLAGS = -lm
++CC ?= cc
++CFLAGS += 
++LDFLAGS += -lm
+ INCLUDES = -I.
+ 
+ !

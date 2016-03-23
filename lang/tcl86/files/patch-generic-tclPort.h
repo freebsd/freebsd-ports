@@ -1,5 +1,5 @@
---- ../generic/tclPort.h.orig	2013-09-03 14:47:31.000000000 +0200
-+++ ../generic/tclPort.h	2013-09-04 10:23:22.000000000 +0200
+--- generic/tclPort.h.orig	2016-02-25 20:12:37 UTC
++++ generic/tclPort.h
 @@ -20,7 +20,7 @@
  #if defined(_WIN32)
  #   include "tclWinPort.h"

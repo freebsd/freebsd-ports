@@ -1,0 +1,11 @@
+--- configure.ac.orig	2008-12-25 15:27:57.000000000 +0100
++++ configure.ac	2016-02-17 15:15:50.968708000 +0100
+@@ -4,7 +4,7 @@
+ dnl Information on the package
+ dnl Checks for programs
+ AC_PROG_CC
+-AC_CHECK_PROG([have_docbook], [db2pdf], [true])
++AC_CHECK_PROG([have_docbook], [docbook2pdf], [true])
+ AM_CONDITIONAL([DOCBOOK], test x$have_docbook = xtrue)
+ AC_CHECK_PROG([have_pod2man], [pod2man], [true])
+ AM_CONDITIONAL([POD2MAN], test x$have_pod2man = xtrue)

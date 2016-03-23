@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160301:
+AUTHOR: mat@FreeBSD.org
+
+  Introduce GH_TUPLE.
+
+  GH_TUPLE allows one to put all the GH_{ACCOUNT,PROJECT,TAGNAME} into one
+  variable, in the form of account:project:tagname[:group].  It is helpful when
+  there are many submodules.
+
 20160207:
 AUTHOR: kwm@FreeBSD.org
 

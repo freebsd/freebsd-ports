@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-overlay-icons
-PORTVERSION=	0.0.0.20150422
+PORTVERSION=	0.0.0.20151015
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		gettext gmake pkgconfig tar:xz
+USES=		gettext gmake gnome pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -23,7 +23,7 @@ GLIB_SCHEMAS=	org.gnome.shell.extensions.windowoverlay-icons.gschema.xml
 
 GH_ACCOUNT=	sustmi
 GH_PROJECT=	gnome-shell-extensions-sustmi
-GH_TAGNAME=	9072ba8
+GH_TAGNAME=	e8200b3
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	3.16.5
+PORTVERSION=	3.18.5
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -26,7 +26,8 @@ LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bison gettext gmake gperf libtool pathfix pkgconfig tar:xz
+USES=		bison gettext gmake gnome gperf libtool pathfix pkgconfig \
+		sqlite tar:xz
 # Unbreak mail/evolution with webkit-gtk3 on FreeBSD 8 and 9.  Normally
 # this change would be done there, but it is not a C++ application, so it
 # does not link directly to libstdc++ and adding the libstdc++ rpath to
@@ -34,7 +35,6 @@ USES=		bison gettext gmake gperf libtool pathfix pkgconfig tar:xz
 USES+=		compiler:c++11-lib
 USE_GNOME=	gtk30 intltool introspection:build libxml2
 USE_OPENLDAP=	yes
-USE_SQLITE=	yes
 GNU_CONFIGURE=	yes
 USE_BDB=	5
 USE_LDCONFIG=	yes
@@ -55,11 +55,15 @@ GLIB_SCHEMAS=	org.gnome.Evolution.DefaultSources.gschema.xml \
 		org.gnome.evolution-data-server.gschema.xml \
 		org.gnome.evolution.shell.network-config.gschema.xml
 
-PLIST_SUB=	VERSION="3.16" EVO_VERSION="1.2"
+PLIST_SUB=	VERSION="3.18" EVO_VERSION="1.2"
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	WEATHER KERBEROS
 OPTIONS_DEFAULT=WEATHER KERBEROS
 WEATHER_DESC=	Weather calendar backend
+
+WEATHER_LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather
+WEATHER_CONFIGURE_ENABLE=	weather
 
 .include <bsd.port.options.mk>
 
@@ -68,15 +72,6 @@ CONFIGURE_ARGS+=	--with-krb5=/usr
 KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
 .else
 CONFIGURE_ARGS+=	--without-krb5
-.endif
-
-.if ${PORT_OPTIONS:MWEATHER}
-LIB_DEPENDS+=		libgweather-3.so:${PORTSDIR}/net/libgweather
-CONFIGURE_ARGS+=	--enable-weather
-PLIST_SUB+=		WEATHER=""
-.else
-CONFIGURE_ARGS+=	--disable-weather
-PLIST_SUB+=		WEATHER="@comment "
 .endif
 
 EDS_BDB_MSG=	"!!!WARNING!!!: Berkeley Database version is ${BDB_VER}.  If this is an upgrade, you may experience problems if you or any other Evolution-data-server users were previously using BDB_VER 5."

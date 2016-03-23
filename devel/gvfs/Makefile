@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gvfs
-PORTVERSION=	1.24.2
+PORTVERSION=	1.26.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,17 +14,17 @@ BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libgcr-base-3.so:${PORTSDIR}/security/gcr \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libarchive libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libarchive libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 intlhack libxslt:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-obexftp \
-		--disable-bluray
+CONFIGURE_ARGS=	--disable-bluray
 
 CONFIGURE_ARGS+=\
 		--disable-gudev \
@@ -42,12 +42,13 @@ INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.gnome.system.gvfs.enums.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	AVAHI SAMBA GPHOTO2 CDDA HAL FUSE AFC
-OPTIONS_DEFAULT=AVAHI SAMBA GPHOTO2 CDDA HAL FUSE
+OPTIONS_DEFINE=	AVAHI SAMBA GPHOTO2 CDDA HAL FUSE AFC GOOGLE
+OPTIONS_DEFAULT=AVAHI SAMBA GPHOTO2 CDDA HAL FUSE GOOGLE
 CDDA_DESC=	CDDA (enables HAL)
-GPHOTO2_DESC=	Gphoto 2 camera support (enables HAL)
+GPHOTO2_DESC=	Gphoto 2 camera support (enables HAL) for PTP support
 SAMBA_DESC=	Samba support
 AFC_DESC=	Apple device support
+GOOGLE_DESC=	Google backend
 
 FUSE_USES=	fuse
 FUSE_CONFIGURE_ENABLE=	fuse
@@ -67,6 +68,10 @@ AVAHI_CONFIGURE_ENABLE=	avahi
 AFC_LIB_DEPENDS=	libimobiledevice.so:${PORTSDIR}/comms/libimobiledevice \
 			libplist.so:${PORTSDIR}/devel/libplist
 AFC_CONFIGURE_ENABLE=	afc
+
+GOOGLE_CONFIGURE_ENABLE=	google
+GOOGLE_LIB_DEPENDS=	libgdata.so:${PORTSDIR}/devel/libgdata \
+			libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts
 
 .include <bsd.port.options.mk>
 
@@ -93,5 +98,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/remote-volume-monitors
+	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/systemd
 
 .include <bsd.port.mk>

@@ -12,6 +12,7 @@
     SUBDIR += biococoa
     SUBDIR += biojava
     SUBDIR += blat
+    SUBDIR += bowtie
     SUBDIR += bwa
     SUBDIR += cd-hit
     SUBDIR += cdbfasta
@@ -94,6 +95,7 @@
     SUBDIR += treepuzzle
     SUBDIR += treeviewx
     SUBDIR += ugene
+    SUBDIR += vcftools
     SUBDIR += velvet
     SUBDIR += wise
     SUBDIR += xmolwt

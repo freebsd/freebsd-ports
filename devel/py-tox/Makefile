@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tox
-PORTVERSION=	2.1.1
+PORTVERSION=	2.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,12 +22,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:${PORTSDIR}/devel/py-tox \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:${PORTSDIR}/devel/py-pytest-timeout
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
-OPTIONS_DEFINE=	PYTEST
-PYTEST_DESC=	Include the pytest test runner
-
-PYTEST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 

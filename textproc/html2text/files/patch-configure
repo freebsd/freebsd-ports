@@ -1,6 +1,6 @@
---- ./configure.orig	2012-11-11 09:42:22.000000000 -0500
-+++ ./configure	2012-11-11 09:46:01.000000000 -0500
-@@ -38,8 +38,7 @@
+--- configure.orig	2004-01-12 15:47:18 UTC
++++ configure
+@@ -38,8 +38,7 @@ int main(int, char **) {
    return 0;
  }
  EOF
@@ -10,7 +10,7 @@
    if $i -c $tmp_file.C 2>/dev/null; then
      CXX="$i";
      break;
-@@ -205,12 +205,19 @@
+@@ -205,12 +204,19 @@ cat <<EOF >$tmp_file.C;
  #include <new>
  #include <vector>
  using namespace std;

@@ -863,6 +863,8 @@
 %%DRUPAL_BASE%%/modules/system/system.updater.inc
 %%DRUPAL_BASE%%/modules/system/tests/cron_queue_test.info
 %%DRUPAL_BASE%%/modules/system/tests/cron_queue_test.module
+%%DRUPAL_BASE%%/modules/system/tests/system_cron_test.info
+%%DRUPAL_BASE%%/modules/system/tests/system_cron_test.module
 %%DRUPAL_BASE%%/modules/system/theme.api.php
 %%DRUPAL_BASE%%/modules/taxonomy/taxonomy-term.tpl.php
 %%DRUPAL_BASE%%/modules/taxonomy/taxonomy.admin.inc

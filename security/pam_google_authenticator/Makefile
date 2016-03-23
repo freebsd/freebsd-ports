@@ -1,32 +1,29 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
+# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	pam_google_authenticator
-PORTVERSION=	20140826
+PORTVERSION=	1.01.20160208
 PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	security
-MASTER_SITES=	LOCAL/riggs/google-authenticator
-DISTNAME=	google-authenticator-${PORTVERSION}
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	PAM module for two-step authentication from Google
 
 LICENSE=	APACHE20
 
-OPTIONS_DEFINE=	STEPSIZE
-STEPSIZE_DESC=	Allow time steps other than the default of 30 seconds
-STEPSIZE_CFLAGS= -DSTEPSIZE
+USES=		autoreconf gmake libtool
+GNU_CONFIGURE=	YES
 
-USES=		gmake
+WRKSRC_SUBDIR=	libpam
 
-PLIST_FILES=	bin/google-authenticator lib/pam_google_authenticator.so
+USE_GITHUB=	yes
+GH_ACCOUNT=	google
+GH_PROJECT=	google-authenticator
+GH_TAGNAME=	195ddc1
 
-.include <bsd.port.options.mk>
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/google-authenticator \
-		${STAGEDIR}${PREFIX}/bin/google-authenticator
-	${INSTALL_LIB} ${WRKSRC}/pam_google_authenticator.so \
-		${STAGEDIR}${PREFIX}/lib/pam_google_authenticator.so
+post-patch:
+	@${REINPLACE_CMD} -e 's;/security;;'	\
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

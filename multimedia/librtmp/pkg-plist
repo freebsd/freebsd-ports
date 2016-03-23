@@ -4,6 +4,6 @@ include/librtmp/log.h
 include/librtmp/rtmp.h
 lib/librtmp.a
 lib/librtmp.so
-lib/librtmp.so.0
+lib/librtmp.so.1
 libdata/pkgconfig/librtmp.pc
 man/man3/librtmp.3.gz

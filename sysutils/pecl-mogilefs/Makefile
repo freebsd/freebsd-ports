@@ -20,6 +20,7 @@ USE_PHP=	yes
 USE_PHP_BUILD=	spl
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 post-extract:
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/config.m4

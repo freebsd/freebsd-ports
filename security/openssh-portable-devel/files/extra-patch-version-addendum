@@ -1,5 +1,0 @@
---- servconf.c.orig	2015-03-28 23:08:41.296700000 -0500
-+++ servconf.c	2015-03-28 23:08:54.016291000 -0500
-@@ -318 +318 @@
--		options->version_addendum = xstrdup("");
-+		options->version_addendum = xstrdup(SSH_VERSION_FREEBSD_PORT);

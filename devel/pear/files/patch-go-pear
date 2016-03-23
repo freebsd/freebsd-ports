@@ -1,5 +1,5 @@
---- ./go-pear.orig	2013-07-18 07:18:00.000000000 +0000
-+++ ./go-pear	2014-02-07 08:08:36.000000000 +0000
+--- go-pear.orig	2013-07-18 07:18:00 UTC
++++ go-pear
 @@ -57,6 +57,8 @@
  
  define('WIN32GUI', !WEBINSTALLER && WINDOWS && $sapi_name=='cli' && which('cscript'));
@@ -72,7 +72,7 @@
  if (!WEBINSTALLER) {
      $msg = "The following PEAR packages are bundled with PHP: " .
          implode(', ', array_keys($pfc_packages));
-@@ -571,17 +573,17 @@
+@@ -571,17 +573,19 @@
      $install_optional_packages = array();
      print "\n";
  }
@@ -82,6 +82,8 @@
  # Download
  ####
  
++dl('xml.so');
++
  if (function_exists('set_include_path')) {
 -   set_include_path($ptmp);
 +   set_include_path($ptmp . PATH_SEPARATOR . "%%BUNDLEDIR%%");
@@ -94,7 +96,7 @@
  if (!extension_loaded('zlib') && !WEBINSTALLER) { // In Web context we could be in multithread env which makes dl() end up with a fatal error.
      if (WINDOWS) {
          @dl('php_zlib.dll');
-@@ -606,18 +608,19 @@
+@@ -606,18 +610,19 @@
  if (!$have_gzip) {
      print "Downloading uncompressed packages\n";
  };
@@ -116,7 +118,7 @@
  }
  
  // gopear_bundle usage
-@@ -645,19 +648,21 @@
+@@ -645,19 +650,21 @@
  
  // Bootstrap needed ?
  $nobootstrap = false;
@@ -140,7 +142,7 @@
      }
      include_once 'PEAR.php';
      print "ok\n";
-@@ -691,6 +696,7 @@
+@@ -691,6 +698,7 @@
  
  // Extract needed ?
  $noextract = false;
@@ -148,7 +150,7 @@
  if (is_dir($php_dir)) {
      $noextract = @include_once 'PEAR/Registry.php';
      
-@@ -701,6 +707,7 @@
+@@ -701,6 +709,7 @@
          }
      }
  }
@@ -156,7 +158,16 @@
  
  if ($noextract) {
      print('Using previously installed installer ... ');
-@@ -747,12 +754,7 @@
+@@ -722,7 +731,7 @@
+         displayHTMLProgress($progress += round(19 / count($bootstrap_pkgs)));
+ 
+         $fullpkg = substr($tarball, 0, strrpos($tarball, '.'));
+-        $tar = &new Archive_Tar($tarball, $have_gzip);
++        $tar = new Archive_Tar($tarball, $have_gzip);
+         if (!$tar->extractModify($ptmp, $fullpkg)) {
+             bail("Extraction for $fullpkg failed!\n");
+         }
+@@ -747,12 +756,7 @@
  include_once "PEAR/Command.php";
  include_once "PEAR/Registry.php";
  
@@ -170,7 +181,7 @@
  
  $config->set('preferred_state', 'stable');
  foreach ($config_vars as $var) {
-@@ -765,7 +767,7 @@
+@@ -765,7 +769,7 @@
  $config->set('http_proxy', $http_proxy);
  $config->store();
  
@@ -179,7 +190,7 @@
  PEAR_Command::setFrontendType('CLI');
  
  PEAR::staticPushErrorHandling(PEAR_ERROR_DIE); //fail silently
-@@ -787,6 +789,11 @@
+@@ -787,6 +791,11 @@
      } else {
          $options = array('onlyreqdeps' => true);
      }
@@ -191,7 +202,7 @@
      if ($registry->packageExists($pkg) || $registry->packageExists($pkg_basename)) {
          print(str_pad("Package: $pkg", max(50,9+strlen($pkg)+4), '.').' already installed ... ok'."\n");
          displayHTMLProgress($progress += round(50 / count($to_install)));
-@@ -821,7 +828,7 @@
+@@ -821,7 +830,7 @@
  
  
  // Base installation finished
@@ -200,7 +211,7 @@
  ini_restore("include_path");
  
  if (!WEBINSTALLER) {
-@@ -980,6 +987,7 @@
+@@ -980,6 +989,7 @@
  if (WINDOWS && !WEBINSTALLER) {
      win32CreateRegEnv();
  }
@@ -208,7 +219,7 @@
  // Set of functions following
  /**
   * Parse the given dirname
-@@ -1418,19 +1426,17 @@
+@@ -1418,19 +1428,17 @@
          }
      } else {
          if ($_prefix === null) {
@@ -233,7 +244,7 @@
          // check if the user has installed PHP with PHP or GNU layout
          if (@is_dir("$prefix/lib/php/.registry")) {
              $php_dir = '$prefix/lib/php';
-@@ -1442,6 +1448,7 @@
+@@ -1442,6 +1450,7 @@
          } elseif (@is_dir("$prefix/share/php/.registry")) {
              $php_dir = '$prefix/share/php';
          }

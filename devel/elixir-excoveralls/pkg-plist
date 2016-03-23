@@ -1,6 +1,12 @@
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Circle.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.ConfServer.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Cover.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.Line.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.Safe.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.Source.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.View.PathHelper.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.View.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.InvalidConfigError.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.InvalidOptionError.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Local.Count.beam
@@ -20,6 +26,7 @@ lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Travis.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Circle.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Detail.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Html.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Post.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Travis.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.beam
@@ -30,6 +37,9 @@ lib/elixir/lib/excoveralls/lib/excoveralls/circle.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/conf_server.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/cover.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/exceptions.ex
+lib/elixir/lib/excoveralls/lib/excoveralls/html.ex
+lib/elixir/lib/excoveralls/lib/excoveralls/html/safe.ex
+lib/elixir/lib/excoveralls/lib/excoveralls/html/view.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/local.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/path_reader.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/post.ex
@@ -42,4 +52,7 @@ lib/elixir/lib/excoveralls/lib/excoveralls/sub_apps.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/task/util.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/travis.ex
 lib/elixir/lib/excoveralls/lib/mix/tasks.ex
+lib/elixir/lib/excoveralls/lib/templates/html/htmlcov/_script.html.eex
+lib/elixir/lib/excoveralls/lib/templates/html/htmlcov/_style.html.eex
+lib/elixir/lib/excoveralls/lib/templates/html/htmlcov/coverage.html.eex
 %%PORTDOCS%%%%DOCSDIR%%/README.md

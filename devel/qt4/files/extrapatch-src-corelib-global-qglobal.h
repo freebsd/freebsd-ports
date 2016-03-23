@@ -27,7 +27,7 @@ __GLIBCXX__) and not worth the effort.
 + */
 +#      if defined(__cplusplus)  /* Only C++ has ciso646. */
 +#        include <ciso646>
-+#        if defined(_LIBCPP_VER)
++#        if defined(_LIBCPP_VERSION)
 +#          define Q_COMPILER_INITIALIZER_LISTS
 +#        endif
 +#      endif

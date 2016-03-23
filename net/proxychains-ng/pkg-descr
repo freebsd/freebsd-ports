@@ -7,7 +7,7 @@ connections through one or more SOCKS4a/5 or HTTP proxies.
 Since Proxy Chains NG relies on the dynamic linker, statically linked binaries
 are not supported.
 
-Adjust proxychains.conf for your Proxy and use ProxyChains NG with
+Adjust ~/.proxychains/proxychains.conf for your Proxy and use ProxyChains NG with
 
     proxychains application
 

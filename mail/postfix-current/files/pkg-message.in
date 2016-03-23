@@ -5,9 +5,9 @@ Run the following commands to enable postfix during startup:
   - sysrc postfix_enable="YES"
   - sysrc sendmail_enable="NONE"
 
-If postfix is *not* already activated in /etc/mail/mailer.conf
-  - mv /etc/mail/mailer.conf /etc/mail/mailer.conf.old
-  - install -m 0644 %%DAEMONDIR%%/mailer.conf.postfix /etc/mail/mailer.conf
+If postfix is *not* already activated in %%MC_PREFIX%%/etc/mail/mailer.conf
+  - mv %%MC_PREFIX%%/etc/mail/mailer.conf %%MC_PREFIX%%/etc/mail/mailer.conf.old
+  - install -m 0644 %%DATADIR%%/mailer.conf.postfix %%MC_PREFIX%%/etc/mail/mailer.conf
 
 Disable sendmail(8) specific tasks,
 add the following lines to /etc/periodic.conf(.local):

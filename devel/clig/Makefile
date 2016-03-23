@@ -5,15 +5,14 @@ PORTNAME=	clig
 PORTVERSION=	1.9.11.1
 PORTREVISION=	3
 CATEGORIES=	devel tcl
-MASTER_SITES=	http://wsd.iitb.fhg.de/~geg/clighome/
+MASTER_SITES=	http://BSDforge.com/projects/source/devel/clig/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Auto-generate an (argc, argv) processor, usage message, and manpage
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING-2.0
 
-BROKEN=		Does not fetch
 USES=		shebangfix tcl tk
 SHEBANG_FILES=	tcl/*.tcl
 tk_OLD_CMD=	/usr/bin/wish8.0

@@ -3,7 +3,7 @@
 
 COMMENT=	Perl bindings for ossp-uuid
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libuuid.a:${PORTSDIR}/misc/ossp-uuid
+BUILD_DEPENDS=	${LOCALBASE}/lib/libossp-uuid.a:${PORTSDIR}/misc/ossp-uuid
 
 SLAVEPORT=	perl
 USES=		perl5

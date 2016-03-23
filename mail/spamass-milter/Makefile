@@ -3,6 +3,7 @@
 
 PORTNAME=	spamass-milter
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SAVANNAH/spamass-milt
 

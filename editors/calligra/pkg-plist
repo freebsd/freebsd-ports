@@ -5643,7 +5643,7 @@ share/apps/krita/defaultpresets/spraybrush.kpp
 share/apps/krita/defaultpresets/tangentnormal.kpp
 share/apps/krita/dtd/krita.dtd
 %%GMIC%%share/apps/krita/gmic/gmic_def.gmic.blacklist
-%%GMIC%%share/apps/krita/gmic/update1610.gmic
+%%GMIC%%share/apps/krita/gmic/gimp_update169.gmic
 share/apps/krita/gradients/BG-Krita2.ggr
 share/apps/krita/gradients/GPS-FG-Glare.ggr
 share/apps/krita/gradients/GPS-Fire-Blueish.ggr

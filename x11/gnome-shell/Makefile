@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell
-PORTVERSION=	3.16.4
+PORTVERSION=	3.18.4
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -28,12 +29,13 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libgjs.so:${PORTSDIR}/lang/gjs
 RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		gnome-control-center:${PORTSDIR}/sysutils/gnome-control-center \
-		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss
+		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
+		gkbd-keyboard-display:${PORTSDIR}/x11/libgnomekbd
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 cpe gettext gmake libtool pathfix pkgconfig \
-		tar:xz webplugin:native
+USES=		compiler:c11 cpe gettext gmake gnome libtool pathfix \
+		pkgconfig tar:xz webplugin:native
 USE_GNOME=	evolutiondataserver3 gnomedesktop3 gtk30 intlhack \
 		introspection
 USE_XORG=	x11 xfixes sm

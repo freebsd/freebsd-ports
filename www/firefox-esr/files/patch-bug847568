@@ -101,22 +101,16 @@ diff --git gfx/graphite2/moz-gr-update.sh gfx/graphite2/moz-gr-update.sh
 index f3d76ea..a9e7fb6 100644
 --- gfx/graphite2/moz-gr-update.sh
 +++ gfx/graphite2/moz-gr-update.sh
-@@ -23,8 +23,14 @@ echo "\nSee" $0 "for update procedure.\n" >> gfx/graphite2/README.mozilla
- find gfx/graphite2/ -name "*.cpp" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
- find gfx/graphite2/ -name "*.h" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
+@@ -37,6 +37,9 @@
+ #find gfx/graphite2/ -name "*.cpp" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
+ #find gfx/graphite2/ -name "*.h" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
  
-+# closest tag/release to require for system version
-+TAG=$(cd ../graphitedev/ && hg parents --template {latesttag})
-+
-+perl -p -i -e "s/[0-9]+\,[0-9]+\,[0-9]+/$TAG/ and tr/./,/ \
++perl -p -i -e "s/[0-9]+\,[0-9]+\,[0-9]+/$RELEASE/ and tr/./,/ \
 +  if /GR2_VERSION_REQUIRE/" configure.in
 +
  # summarize what's been touched
--echo Updated to $CHANGESET.
-+echo Updated to $CHANGESET \($TAG for --with-system-graphite2\)
+ echo Updated to $RELEASE.
  echo Here is what changed in the gfx/graphite2 directory:
- echo
- 
 diff --git gfx/harfbuzz/README-mozilla gfx/harfbuzz/README-mozilla
 index ca57d16..1ce21fe 100644
 --- gfx/harfbuzz/README-mozilla

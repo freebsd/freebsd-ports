@@ -1,12 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	simgear
-PORTVERSION=	3.4.0
+PORTVERSION=	2016.1.1
 CATEGORIES=	devel games
-MASTER_SITES=	http://mirrors.ibiblio.org/simgear/ftp/Source/ \
-		ftp://ftp.de.flightgear.org/pub/simgear/Source/ \
-		ftp://goflyflightgear.com/simgear/Source/ \
-		ftp://flightgear.wo0t.de/simgear-ftp/ftp/Source/
+MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Toolkit for 3D games and simulations
@@ -18,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libosg.so:${PORTSDIR}/graphics/osg
 
-USE_XORG=	ice sm x11 xext xi xt xmu
+USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu glut
 USES=		alias cmake compiler cpe jpeg openal:al,alut tar:bzip2
 

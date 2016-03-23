@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-sudoku
-PORTVERSION=	3.16.0
+PORTVERSION=	3.18.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig python:3 shebangfix tar:xz
+USES=		gettext gmake gnome pathfix pkgconfig python:3 shebangfix tar:xz
 USE_GNOME=	gtk30 intlhack libxml2:build py3gobject3
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

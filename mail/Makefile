@@ -179,6 +179,7 @@
     SUBDIR += ifile
     SUBDIR += im
     SUBDIR += imap-uw
+    SUBDIR += imapdedup
     SUBDIR += imapfilter
     SUBDIR += imapsync
     SUBDIR += imaptools
@@ -200,6 +201,7 @@
     SUBDIR += libesmtp
     SUBDIR += libetpan
     SUBDIR += libmapi
+    SUBDIR += libmilter
     SUBDIR += libpst
     SUBDIR += librfc822
     SUBDIR += libsieve
@@ -290,6 +292,7 @@
     SUBDIR += openemm2015
     SUBDIR += opensmtpd
     SUBDIR += opensmtpd-devel
+    SUBDIR += opensmtpd-extras
     SUBDIR += openwebmail
     SUBDIR += osbf-lua
     SUBDIR += ovs
@@ -465,9 +468,9 @@
     SUBDIR += pflogsumm
     SUBDIR += pfqueue
     SUBDIR += pgpsendmail
-    SUBDIR += php5-imap
     SUBDIR += php55-imap
     SUBDIR += php56-imap
+    SUBDIR += php70-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += pine-pgp-filters
@@ -488,12 +491,16 @@
     SUBDIR += postfinger
     SUBDIR += postfix
     SUBDIR += postfix-current
+    SUBDIR += postfix-current-sasl
     SUBDIR += postfix-logwatch
     SUBDIR += postfix-policyd-sf
     SUBDIR += postfix-policyd-spf-perl
     SUBDIR += postfix-policyd-spf-python
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
+    SUBDIR += postfix-sasl
+    SUBDIR += postfix211
+    SUBDIR += postfix211-sasl
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postsrsd
@@ -501,7 +508,6 @@
     SUBDIR += prepflog
     SUBDIR += procmail
     SUBDIR += prom-wl
-    SUBDIR += pronto
     SUBDIR += proxsmtp
     SUBDIR += py-Products.MailHost
     SUBDIR += py-Products.SecureMailHost
@@ -568,6 +574,7 @@
     SUBDIR += roundcube-groupvice
     SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-login_info
+    SUBDIR += roundcube-markasjunk2
     SUBDIR += roundcube-mobilecube
     SUBDIR += roundcube-mvision2
     SUBDIR += roundcube-sauserprefs

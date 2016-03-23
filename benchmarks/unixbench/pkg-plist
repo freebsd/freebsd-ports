@@ -40,4 +40,3 @@ lib/unixbench/pgms/whetstone-double
 lib/unixbench/testdir/cctest.c
 lib/unixbench/testdir/dc.dat
 lib/unixbench/testdir/sort.src
-@dir lib/unixbench/results

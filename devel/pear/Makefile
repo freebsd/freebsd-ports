@@ -2,20 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	pear
-PORTVERSION=	1.9.4
-PORTREVISION=	3
+PORTVERSION=	1.10.1
 CATEGORIES=	devel
-MASTER_SITES=	http://miwibox.org/distfiles/
+MASTER_SITES=	http://mirror.miwibox.org/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR framework for PHP
 
+LICENSE=	PHP301
+
 USES=		cpe tar:bzip2
 CPE_VENDOR=	php
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 WANT_PHP_CLI=	yes
-USE_PHP=	pcre xml
+USE_PHP=	pcre xml zlib
 USE_PHP_BUILD=	yes
 
 PEARDIR=	${PREFIX}/share/pear
@@ -29,9 +31,7 @@ post-patch:
 	@cd ${WRKSRC}/go-pear-bundle/tmp/PEAR-${PORTVERSION} && ${PATCH} -s -p0 < ${FILESDIR}/extra-patch-PEAR-Config.php
 	@${RM} ${WRKSRC}/go-pear-bundle/tmp/PEAR-${PORTVERSION}/PEAR/Config.php.orig
 	@${MD5} -q ${WRKSRC}/go-pear-bundle/tmp/PEAR-${PORTVERSION}/PEAR/Config.php > ${WRKSRC}/Config.php.md5
-	@${REINPLACE_CMD} -E -e "s|(file md5sum=\").*(\" name=\"PEAR/Config.php\" role=\"php\")|\1`${CAT} ${WRKSRC}/Config.php.md5`\2|g" \
-		${WRKSRC}/go-pear-bundle/tmp/package2.xml ${WRKSRC}/go-pear-bundle/package2.xml
-	@cd ${WRKSRC}/go-pear-bundle/tmp && ${TAR} -cf ../PEAR-${PORTVERSION}.tar package2.xml PEAR-${PORTVERSION} package.xml
+	@cd ${WRKSRC}/go-pear-bundle/tmp && ${TAR} -cf ../PEAR-${PORTVERSION}.tar PEAR-${PORTVERSION} package.xml
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${LOCALBASE}/bin/php -q ./go-pear

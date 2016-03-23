@@ -172,6 +172,7 @@
     SUBDIR += py-py3dns
     SUBDIR += py-pydnstable
     SUBDIR += py-pywdns
+    SUBDIR += py-tldextract
     SUBDIR += py-twistedNames
     SUBDIR += radns
     SUBDIR += rbldnsd

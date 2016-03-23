@@ -6,6 +6,7 @@
 %%BRANCH2%%/%%TARGET%%/bin/objcopy
 %%BRANCH2%%/%%TARGET%%/bin/objdump
 %%BRANCH2%%/%%TARGET%%/bin/ranlib
+%%BRANCH2%%/%%TARGET%%/bin/readelf
 %%BRANCH2%%/%%TARGET%%/bin/strip
 %%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.x
 %%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xbn

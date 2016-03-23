@@ -34,6 +34,7 @@ status_cmd="su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} status\"'"
 extra_commands="rotate_logs status"
 
 export RABBITMQ_HOME=/var/db/${name}
+export RABBITMQ_LOGDIR=/var/log/${name}
 
 # Prevent conflicts with amqp_client and rabbit_common applications that
 # may be installed in ERL_LIBS.
@@ -45,6 +46,10 @@ rabbitmq_start()
 
 	if [ -d ${RABBITMQ_HOME} ]; then
 		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_HOME}
+	fi
+
+	if [ -d ${RABBITMQ_LOGDIR} ]; then
+		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_LOGDIR}
 	fi
 
 	env HOME=${RABBITMQ_HOME} daemon -c -f -u ${rabbitmq_user} -p ${pidfile} -P ${daemon_pidfile} ${rabbitmq_server}

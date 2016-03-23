@@ -1,4 +1,4 @@
---- MF3D/mfprimtv.c.orig	2015-06-23 18:03:50 UTC
+--- MF3D/mfprimtv.c.orig	2016-01-13 20:09:57 UTC
 +++ MF3D/mfprimtv.c
 @@ -1000,7 +1000,7 @@ MF3D_LabelWrite (
    if (result == kMF3DNoErr)

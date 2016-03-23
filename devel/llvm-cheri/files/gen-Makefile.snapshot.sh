@@ -4,11 +4,36 @@
 # curl and jq.  Uses unauthenticated access which is ratelimited to 60
 # queries per hour.
 
-get_repo_sha()
+REPOS_URL=https://api.github.com/repos/CTSRD-CHERI
+MAX_DATE=1970101
+
+tmpfile=`mktemp -t gen-Makefile.snapshot`
+
+query_repo()
 {
-	curl https://api.github.com/repos/CTSRD-CHERI/$1/branches/master | \
-	    jq -r '.commit.sha'
+	curl ${REPOS_URL}/$1/branches/master > $tmpfile
+
+	# Accumulate the dates of the last commits to find the snapshot date
+	committime=`jq -r '.commit.commit.committer.date' $tmpfile`
+	committime=${committime%%T*}
+	year=${committime%%-*}
+	month=${committime%-*}
+	month=${month#*-}
+	day=${committime##*-}
+	dateint=${year}${month}${day}
+	if [ $dateint -gt $MAX_DATE ]; then
+		export MAX_DATE=$dateint
+	fi
+
+	SHA=`jq -r '.commit.sha' $tmpfile`
 }
+
+query_repo llvm
+LLVM_COMMIT=$SHA
+query_repo clang
+CLANG_COMMIT=$SHA
+query_repo lldb
+LLDB_COMMIT=$SHA
 
 cat <<EOF > Makefile.snapshot
 # \$FreeBSD\$
@@ -19,9 +44,11 @@ cat <<EOF > Makefile.snapshot
 #
 LLVM_MAJOR=	3.8
 LLVM_RELEASE=	\${LLVM_MAJOR}.0
-SNAPDATE=	$(date +%Y%m%d)
+SNAPDATE=	${MAX_DATE}
 
-LLVM_COMMIT=		$(get_repo_sha llvm)
-CLANG_COMMIT=		$(get_repo_sha clang)
-LLDB_COMMIT=		$(get_repo_sha lldb)
+LLVM_COMMIT=		${LLVM_COMMIT}
+CLANG_COMMIT=		${CLANG_COMMIT}
+LLDB_COMMIT=		${LLDB_COMMIT}
 EOF
+
+rm -f $tmpfile

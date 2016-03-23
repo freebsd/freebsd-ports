@@ -3,7 +3,7 @@
 
 PORTNAME=	fastresolve
 PORTVERSION=	2.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	dns
 MASTER_SITES=	http://BSDforge.com/projects/source/dns/fastresolve/
 

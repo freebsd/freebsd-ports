@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.0-20151003
-PORTREVISION=	1
+DISTVERSION=	3.2-20160224
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -12,10 +11,8 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
 		http://www.artfiles.org/postfix.org/postfix-release/ \
 		http://mirror.lhsolutions.nl/postfix-release/ \
 		ftp://postfix.mirrors.pair.com/
-#MASTER_SITES:=	${MASTER_SITES:S|$|experimental/|}
-MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
-PKGNAMESUFFIX=	-current
-DISTNAME=	${PORTNAME}-3.0.3
+MASTER_SITES:=	${MASTER_SITES:S|$|experimental/|}
+PKGNAMESUFFIX?=	-current
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ohauer@FreeBSD.org
@@ -26,33 +23,31 @@ LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
+
 CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* \
-		postfix-2.* postfix-base-2.* \
-		postfix21?-* postfix-tls-* \
-		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
+		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* \
+		postfix-2.* postfix-base-2.* postfix21?-*
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
-USES=		perl5 shebangfix cpe
+USES=		shebangfix cpe
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
 USE_RC_SUBR=	postfix
 USE_SUBMAKE=	yes
-USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	BDB CDB DOCS EAI INST_BASE LDAP LDAP_SASL LMDB MYSQL \
-		NIS PCRE PGSQL SASL SPF SQLITE TEST TLS VDA
+OPTIONS_DEFINE=	BDB CDB DOCS INST_BASE LDAP LDAP_SASL LMDB MYSQL \
+		NIS PCRE PGSQL SASL SQLITE TEST TLS
 
-OPTIONS_RADIO=		RG1 RG2
-OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
-OPTIONS_RADIO_RG2=	SASLKRB5 SASLKMIT
-OPTIONS_DEFAULT=	PCRE TLS EAI
+OPTIONS_RADIO=		RG1
+OPTIONS_RADIO_RG1=	SASLKRB5 SASLKMIT
+OPTIONS_DEFAULT=	PCRE TLS
 
 BDB_USE=		BDB=yes
 CDB_LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
-EAI_LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 LDAP_USE=		OPENLDAP=yes
 LMDB_LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
 MYSQL_USE=		MYSQL=yes
@@ -60,24 +55,18 @@ PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PGSQL_USES=		pgsql
 SASLKMIT_LIB_DEPENDS=	libkrb5.so:${PORTSDIR}/security/krb5
 SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
 SQLITE_USES=		sqlite
 TLS_USE=		OPENSSL=yes
 
 CDB_DESC=	CDB maps lookups
-EAI_DESC=	Email Address Internationalization (EAI, RFC 6531..6533)
 INST_BASE_DESC=	Install into /usr and /etc/postfix
 LDAP_DESC=	LDAP maps (uses WITH_OPENLDAP_VER)
 LDAP_SASL_DESC=	LDAP client-to-server SASL auth
 LMDB_DESC=	LMDB maps
-SPF_DESC=	SPF support (via libspf2 1.2.x)
 TEST_DESC=	SMTP/LMTP test server and generator
-VDA_DESC=	VDA (Virtual Delivery Agent)
 
-RG1_DESC=	Dovecot SASL authentication methods
-DOVECOT_DESC=	Dovecot 1.x SASL authentication method
-DOVECOT2_DESC=	Dovecot 2.x SASL authentication method
-RG2_DESC=	Kerberos network authentication protocol type
+SASL_DESC=	Cyrus SASL support (Dovecot SASL is always built in)
+RG1_DESC=	Kerberos network authentication protocol type
 SASLKRB5_DESC=	If your SASL req. Kerberos5, select this
 SASLKMIT_DESC=	If your SASL req. MIT Kerberos5, select this
 
@@ -90,13 +79,6 @@ STRIP_LIBEXEC=	anvil bounce cleanup discard dnsblog error flush lmtp local maste
 		nqmgr oqmgr pickup pipe postscreen proxymap qmgr qmqpd scache showq \
 		smtp smtpd spawn tlsmgr tlsproxy trivial-rewrite verify virtual
 
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
-OLD_MAILER!=	${GREP} -m 1 '^purgestat' /etc/mail/mailer.conf || ${ECHO_CMD}
-.if !empty(OLD_MAILER)
-IS_INTERACTIVE=	yes
-.endif
-.endif
-
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
 .endif
@@ -104,7 +86,11 @@ MAKEFILEFLAGS+=	DEBUG=
 MAKEFILEFLAGS+=	pie=yes CC="${CC}" OPT="${CFLAGS}"
 
 .if ${PORT_OPTIONS:MINST_BASE}
-PKGNAMESUFFIX=	-base
+.if defined(SASL_SLAVE)
+PKGNAMESUFFIX=	-current-base-sasl2
+.else
+PKGNAMESUFFIX=	-current-base
+.endif
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
 PLIST_SUB+=	BMAN="share/"
@@ -113,6 +99,13 @@ PLIST_SUB+=	BMAN=""
 .endif
 
 PLIST_SUB+=	PFETC=${ETCDIR}
+
+# check if mailwrapper supports $LOCALBASE
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1002506 || ${OSVERSION} >= 1100094)
+SUB_LIST+=	USE_LOCALBASE_MAILER_CONF="yes" MC_PREFIX="${LOCALBASE}"
+.else
+SUB_LIST+=	USE_LOCALBASE_MAILER_CONF="no" MC_PREFIX=""
+.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
@@ -149,14 +142,16 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-Wmissing-prototypes -Wformat -Wno-comment
 
 # Default requirement for postfix rc script
-_REQUIRE=		LOGIN cleanvar
+_REQUIRE=		LOGIN cleanvar dovecot
 
-.if ${PORT_OPTIONS:MEAI}
+# always build with Dovecot SASL support, Cyrus is optional
+# see Postfix HISTORY 20051222
+POSTFIX_CCARGS+=	-DUSE_SASL_AUTH
+
+# Email Address Internationalization (EAI, RFC 6531..6533)
+# This is now mandantory!
 POSTFIX_CCARGS+=	-DHAS_EAI -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -licuuc
-.else
-POSTFIX_CCARGS+=	-DNO_EAI
-.endif
 
 .if ${PORT_OPTIONS:MPCRE}
 DYN_EXT+=		pcre
@@ -167,18 +162,10 @@ POSTFIX_CCARGS+=	-DNO_PCRE
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
-POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
+POSTFIX_CCARGS+=	-DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
-.endif
-
-.if ${PORT_OPTIONS:MDOVECOT} || ${PORT_OPTIONS:MDOVECOT2}
-.if ${PORT_OPTIONS:MDOVECOT}
-RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
 .else
-RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot2
-.endif
-POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
-_REQUIRE+=		dovecot
+POSTFIX_CCARGS+=	-DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
 .endif
 
 .if ${PORT_OPTIONS:MSASLKRB5}
@@ -195,14 +182,6 @@ POSTFIX_CCARGS+=	-DUSE_TLS -I${OPENSSLINC}
 POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .else
 POSTFIX_CCARGS+=	-DNO_TLS
-.endif
-
-.if ${PORT_OPTIONS:MSPF}
-BROKEN=			At the moment, SPF support is unavailable for ${PORTNAME}-${DISTVERSION}
-PATCH_SITES+=		LOCAL/mm
-PATCHFILES+=		postfix-2.8.0-libspf2-1.2.x-0.patch.gz:-p1
-POSTFIX_CCARGS+=	-DHAVE_NS_TYPE -DHAS_SPF -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lspf2
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
@@ -258,10 +237,6 @@ POSTFIX_CCARGS+=	-DHAS_NIS
 _REQUIRE+=		ypserv
 .endif
 
-.if ${PORT_OPTIONS:MVDA}
-BROKEN=		At the moment, VDA support is unavailable for ${PORTNAME}-${DISTVERSION}
-.endif
-
 .if ${PORT_OPTIONS:MTEST}
 BINTEST=	qmqp-sink qmqp-source smtp-sink smtp-source
 MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
@@ -305,8 +280,6 @@ pre-patch:
 
 	@${ECHO} '<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>' \
 		> ${WRKSRC}/html/body_checks.5.html
-	@${REINPLACE_CMD} -E -e 's![[:<:]]perl[[:>:]]!${PERL}!' \
-		${WRKSRC}/src/bounce/Makefile.in
 	@${REINPLACE_CMD} -E -e 's!^(#define DEF_SGID_GROUP[^"]+)"postdrop"$$!\1"maildrop"!' \
 		${WRKSRC}/src/global/mail_params.h
 	@${FIND} -X ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man \
@@ -322,12 +295,6 @@ post-patch:
 		>> ${WRKSRC}/conf/postfix-files
 	@${ECHO} '$$command_directory/posttls-finger:f:root:-:755' \
 		>> ${WRKSRC}/conf/postfix-files
-
-post-patch-SPF-on:
-	@${ECHO} '$$readme_directory/SPF_README:f:root:-:644' \
-		>> ${WRKSRC}/conf/postfix-files
-	@${REINPLACE_CMD} -E -e '${REINPLACE}' \
-		${WRKSRC}/README_FILES/SPF_README
 
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles \

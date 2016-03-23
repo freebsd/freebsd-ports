@@ -1,7 +1,4 @@
 bin/gnome-autogen.sh
-bin/gnome-doc-common
 share/aclocal/gnome-code-coverage.m4
 share/aclocal/gnome-common.m4
 share/aclocal/gnome-compiler-flags.m4
-%%DATADIR%%/data/omf.make
-%%DATADIR%%/data/xmldocs.make

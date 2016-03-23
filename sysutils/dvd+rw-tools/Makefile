@@ -12,9 +12,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVD burning software
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+
 # On some systems, among them one 900044 i386, the do-build-invoked
 # "make" will just do nothing for reasons not yet found, as of
 # dvd+rw-tools 7.1. It is supposed to call
@@ -40,7 +42,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/growisofs.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/index.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/index.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

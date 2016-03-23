@@ -1,0 +1,3 @@
+@sample etc/vmps.db.sample
+sbin/vmpsd
+man/man1/vmpsd.1.gz

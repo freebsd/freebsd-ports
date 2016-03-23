@@ -1,5 +1,5 @@
---- src/filter/Makefile.am.orig	2009-05-30 06:59:10.000000000 +0000
-+++ src/filter/Makefile.am	2014-02-20 19:04:01.556587853 +0000
+--- src/filter/Makefile.am.orig	2009-05-30 06:59:10 UTC
++++ src/filter/Makefile.am
 @@ -1,6 +1,7 @@
  ###
  bin_PROGRAMS = pfsgamma pfsclamp pfstag pfssize pfsextractchannels pfspanoramic \
@@ -9,7 +9,7 @@
  
  man_MANS = pfsgamma.1 pfsclamp.1 pfstag.1 pfssize.1 pfsextractchannels.1 \
  	pfspanoramic.1 pfsrotate.1 pfsflip.1 pfscut.1 pfspad.1 pfscat.1 \
-@@ -34,6 +35,8 @@
+@@ -34,6 +35,8 @@ pfscat_SOURCES = pfscat.cpp
  
  pfsabsolute_SOURCES = pfsabsolute.cpp
  

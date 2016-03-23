@@ -4,3 +4,5 @@ share/gnome-shell/extensions/panel-osd@berend.de.schouwer.gmail.com/metadata.jso
 share/gnome-shell/extensions/panel-osd@berend.de.schouwer.gmail.com/panel-osd-settings.ui
 share/gnome-shell/extensions/panel-osd@berend.de.schouwer.gmail.com/prefs.js
 share/locale/de/LC_MESSAGES/gnome-shell-extension-panel-osd.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-shell-extension-panel-osd.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-shell-extension-panel-osd.mo

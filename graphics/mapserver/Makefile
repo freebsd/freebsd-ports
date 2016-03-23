@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		mapserver
-PORTVERSION=		7.0.0
+PORTVERSION=		7.0.1
 PORTREVISION=		1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
@@ -37,7 +37,7 @@ FRIBIDI_DESC=		Fribidi library support
 KML_DESC=		KML support
 WMS_DESC=		WMS Server support
 WFS_DESC=		WFS Server support
-WCS_DESC=               WCS Server support
+WCS_DESC=		WCS Server support
 
 .include <bsd.port.options.mk>
 
@@ -125,8 +125,8 @@ CMAKE_ARGS+=		-DWITH_POSTGIS=0
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5
-RUN_BUILDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5
+BUILD_DEPENDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php56
+RUN_BUILDS+=		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php56
 PHP_EXTENSION_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e "s,/usr/local/,,"
 CMAKE_ARGS+=		-DWITH_PHP=1
 PLIST_SUB+=		PHP_EXTENSION_DIR=${PHP_EXTENSION_DIR}
@@ -200,8 +200,8 @@ do-install:
 .endif
 
 post-install:
-	@${LN} -s ${PREFIX}/lib/libmapserver.so.7.0.0 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.1
-	@${LN} -s ${PREFIX}/lib/libmapserver.so.1 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
+	@${LN} -s ${PREFIX}/lib/libmapserver.so.7.0.1 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
+	@${LN} -s ${PREFIX}/lib/libmapserver.so.2 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
 
 .if ${PORT_OPTIONS:MPHP}
 	@${ECHO_MSG} "Please add the line extension=php_mapscript.so to ${PREFIX}/etc/php/extensions.ini"

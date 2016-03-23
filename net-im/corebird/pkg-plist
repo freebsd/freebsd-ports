@@ -2,10 +2,6 @@ bin/corebird
 man/man1/corebird.1.gz
 share/appdata/org.baedert.corebird.appdata.xml
 share/applications/corebird.desktop
-%%DATADIR%%/sql/accounts/Create.1.sql
-%%DATADIR%%/sql/accounts/Create.2.sql
-%%DATADIR%%/sql/init/Create.1.sql
-%%DATADIR%%/sql/init/Create.2.sql
 share/dbus-1/services/org.baedert.corebird.service
 share/icons/hicolor/256x256/apps/corebird.png
 share/icons/hicolor/128x128/apps/corebird.png

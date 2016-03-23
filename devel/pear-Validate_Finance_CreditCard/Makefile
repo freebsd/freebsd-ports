@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Validate_Finance_CreditCard
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org

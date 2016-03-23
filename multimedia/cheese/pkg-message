@@ -1,0 +1,8 @@
+
+For cheese to work, webcamd needs to be running and the user which wants
+to run cheese needs to be added to the webcamd group.
+
+This can be done by:
+
+# pw groupmod webcamd -m jerry
+

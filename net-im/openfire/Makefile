@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	3.10.3
+PORTVERSION=	4.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://download.igniterealtime.org/openfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Enterprise instant messaging server
 
 LICENSE=	APACHE20

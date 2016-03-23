@@ -13,7 +13,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Shell wrapper for ${TX_SHELL} (${TX_PORT_U})
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	shc:${PORTSDIR}/misc/shc
 

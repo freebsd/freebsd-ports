@@ -1,9 +1,3 @@
 man/man8/libretto-config.8.gz
 man/ja/man8/libretto-config.8.gz
-@owner root
-@group operator
-@mode 4550
-sbin/libretto-config
-@mode
-@group
-@owner
+@(root,operator,4550) sbin/libretto-config

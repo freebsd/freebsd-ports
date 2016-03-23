@@ -7,16 +7,13 @@
 #set -vx
 
 PKG_BATCH=${BATCH:=NO}
-
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
-
-SASLDB_NAME=${PKG_PREFIX}/etc/%%SASLDB%%
-
+SASLDB_NAME=%%SASLDB_NAME%%
+SASLDB_NAME=${SASLDB_NAME:+${PKG_PREFIX}/etc/%%SASLDB_NAME%%}
 CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
 CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
 
 # delete sasldb database
-
 delete_sasldb() {
 	if [ -f ${SASLDB_NAME} ] ; then
 		if [ `${PKG_PREFIX}/sbin/sasldblistusers2 | wc -l` -eq 0 ]; then
@@ -39,10 +36,11 @@ delete_user() {
 
 case $2 in
 	DEINSTALL)
-		delete_sasldb
+		if [ -n "${SASLDB_NAME}" ]; then
+			delete_sasldb
+		fi
 		;;
 	POST-DEINSTALL)
 		delete_user
 		;;
-
 esac

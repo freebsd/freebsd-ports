@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text to LIPS filter
 
+USES=		ncurses
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//}
 
 PLIST_FILES=	bin/lipsf bin/pols man/ja/man1/lipsf.1.gz man/ja/man1/pols.1.gz

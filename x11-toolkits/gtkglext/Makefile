@@ -30,7 +30,7 @@ post-patch:
 		's|-DGTK_DISABLE_DEPRECATED||g ; \
 		 s|-DGDK_DISABLE_DEPRECATED||g'
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/reference/gtkglext/html/* ${STAGEDIR}${DOCSDIR}/
 

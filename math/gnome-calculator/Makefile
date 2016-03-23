@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-calculator
-PORTVERSION=	3.16.2
+PORTVERSION=	3.18.3
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pkgconfig tar:xz
 USE_GNOME=	gtksourceview3 gtk30 intlhack libxml2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

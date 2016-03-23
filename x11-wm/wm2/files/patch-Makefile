@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Mar 21 12:12:30 1997
-+++ Makefile	Tue Jan 28 17:53:41 2003
+--- Makefile.orig	1997-03-21 11:12:30 UTC
++++ Makefile
 @@ -1,9 +1,10 @@
  
 -LIBS	=  -L/usr/X11/lib -lXext -lX11 -lXmu -lm
@@ -15,7 +15,7 @@
  OBJECTS	= Border.o Buttons.o Client.o Events.o Main.o Manager.o Rotated.o
  
  .c.o:
-@@ -13,7 +16,6 @@
+@@ -13,7 +14,6 @@ OBJECTS	= Border.o Buttons.o Client.o Ev
  	$(CCC) -c $(CFLAGS) $<
  
  wm2:	$(OBJECTS)

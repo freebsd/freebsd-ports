@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2016-02-24 20:05:48.691700000 +0100
++++ Makefile.in	2016-02-24 20:07:55.252920000 +0100
+@@ -4591,7 +4591,7 @@
+ 	@if test -f $@; then :; else \
+ 	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/libgitg_ext_libgitg_ext_1_0_la_vala.stamp; \
+ 	fi
+-$(srcdir)/GitgExt-1.0.gir: $(srcdir)/libgitg_ext_libgitg_ext_1_0_la_vala.stamp
++$(srcdir)/GitgExt-1.0.gir: Gitg-1.0.gir $(srcdir)/libgitg_ext_libgitg_ext_1_0_la_vala.stamp
+ 	@if test -f $@; then :; else rm -f $(srcdir)/libgitg_ext_libgitg_ext_1_0_la_vala.stamp; fi
+ 	@if test -f $@; then :; else \
+ 	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/libgitg_ext_libgitg_ext_1_0_la_vala.stamp; \

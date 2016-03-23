@@ -3,7 +3,7 @@
 
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.ratbox.org/download/				\
 		http://www.ratbox.org/download/old/
@@ -61,59 +61,20 @@ SHORTCUTS_DESC=		Build with ircd-shortcut commands
 OPTIONS_DEFAULT=	OPENSSL IPV6 ZIPLINKS SHARED_MODS
 OPTIONS_EXCLUDE=	NLS EXAMPLES
 
-#----------------------------------------------------------------------
+OPTIONS_SUB=		yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-openssl
-.else
-CONFIGURE_ARGS+=	--disable-openssl
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MZIPLINKS}
-CONFIGURE_ARGS+=	--enable-zlib
-.else
-CONFIGURE_ARGS+=	--disable-zlib
-.endif
-
-.if ${PORT_OPTIONS:MSHARED_MODS}
-CONFIGURE_ARGS+=	--disable-static
-.else
-CONFIGURE_ARGS+=	--enable-static
-.endif
-
-.if ${PORT_OPTIONS:MASSERT}
-CONFIGURE_ARGS+=	--enable-assert
-.else
-CONFIGURE_ARGS+=	--disable-assert
-.endif
-
-.if ${PORT_OPTIONS:MSMALL_NET}
-CONFIGURE_ARGS+=	--enable-small-net
-.endif
-
-.if ${PORT_OPTIONS:MSERVICES}
-CONFIGURE_ARGS+=	--enable-services
-PLIST_SUB+=		SERVICES=""
-.else
-PLIST_SUB+=		SERVICES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSHORTCUTS}
-USES+=			perl5
-USE_PERL5=		build
-PLIST_SUB+=		SHORTCUTS=""
-.else
-PLIST_SUB+=		SHORTCUTS="@comment "
-.endif
+ASSERT_CONFIGURE_ENABLE=	assert
+IPV6_CONFIGURE_ENABLE=		ipv6
+OPENSSL_USE=		openssl=yes
+OPENSSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
+OPENSSL_CONFIGURE_OFF=	--disable-openssl
+SERVICES_CONFIGURE_ENABLE=	services
+SHARED_MODS_CONFIGURE_ON=	--disable-static
+SHARED_MODS_CONFIGURE_OFF=	--enable-static
+SHORTCUTS_USES=		perl5
+SHORTCUTS_USE=		perl5=build
+SMALL_NET_CONFIGURE_ENABLE=	small-net
+ZIPLINKS_CONFIGURE_ENABLE=	zlib
 
 #-- User Configuration -------------------------------------------------
 
@@ -122,6 +83,7 @@ CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
 .endif
 
 #-----------------------------------------------------------------------
+.include <bsd.port.options.mk>
 
 post-patch:
 .if !defined(WITH_DEBUG)
@@ -159,48 +121,16 @@ pre-build:
 			${WRKSRC}/doc/example.efnet.conf
 	@${REINPLACE_CMD} -e "s#%%RUNDIR%%#${RUNDIR}#g" ${WRKSRC}/include/config.h
 	@${REINPLACE_CMD} -e "s#%%DBDIR%%#${DBDIR}#g" ${WRKSRC}/include/config.h
-	@${REINPLACE_CMD} -e "s#%%WRKSRC%%#${WRKSRC}#g" ${WRKSRC}/contrib/ircd-shortcut.pl
-
 #-- ircd-shortcut.pl ratbox-services commands --------------------------------------
-
-.if !empty(SERVER_NAME)
-	@${REINPLACE_CMD} -e "s#services.ircd-ratbox.org#${SERVER_NAME}#"       \
-	${WRKSRC}/contrib/ircd-shortcut.pl
-.endif
-.if !empty(USER_SERV)
-	@${REINPLACE_CMD} -e "s#USERSERV#${USER_SERV}#" \
-	${WRKSRC}/contrib/ircd-shortcut.pl
-.endif
-.if !empty(CHAN_SERV)
-	@${REINPLACE_CMD} -e "s#CHANSERV#${CHAN_SERV}#" \
-	${WRKSRC}/contrib/ircd-shortcut.pl
-.endif
-.if !empty(NICK_SERV)
-	@${REINPLACE_CMD} -e "s#NICKSERV#${NICK_SERV}#" \
-	${WRKSRC}/contrib/ircd-shortcut.pl
-.endif
-.if !empty(ALIS_SERV)
-	@${REINPLACE_CMD} -e "s#ALIS#${ALIS_SERV}#"     \
-	${WRKSRC}/contrib/ircd-shortcut.pl
-.endif
-.if !empty(OPER_BOT)
-	@${REINPLACE_CMD} -e "s#OPERBOT#${OPER_BOT}#"   \
-	${WRKSRC}/contrib/ircd-shortcut.pl
-.endif
-.if !empty(OPER_SERV)
-	@${REINPLACE_CMD} -e "s#OPERSERV#${OPER_SERV}#" \
-	${WRKSRC}/contrib/ircd-shortcut.pl
-.endif
-.if !empty(JUPE_SERV)
-	@${REINPLACE_CMD} -e "s#JUPESERV#${JUPE_SERV}#" \
-	${WRKSRC}/contrib/ircd-shortcut.pl
-.endif
-.if !empty(GLOBAL_SERV)
-	@${REINPLACE_CMD} -e "s#GLOBAL#${GLOBAL_SERV}#" \
-	${WRKSRC}/contrib/ircd-shortcut.pl
-.endif
+	@${REINPLACE_CMD} -e "s#ALIS#${ALIS_SERV:UALIS}#" \
+		-e "s#CHANSERV#${CHAN_SERV:UCHANSERV}#" -e "s#GLOBAL#${GLOBAL_SERV:UGLOBAL}#" \
+		-e "s#JUPESERV#${JUPE_SERV:UJUPESERV}#" -e "s#NICKSERV#${NICK_SERV:UNICKSERV}#" \
+		-e "s#OPERBOT#${OPER_BOT:UOPERBOT}#" -e "s#USERSERV#${USER_SERV:UUSERSERV}#" \
+		-e "s#services.ircd-ratbox.org#${SERVER_NAME:Uservices.ircd-ratbox.org}#" \
+		-e "s#%%WRKSRC%%#${WRKSRC}#g" ${WRKSRC}/contrib/ircd-shortcut.pl
 
 # ----- Execute ircd-shortcut perl script to generate the .c file. -----
+
 .if ${PORT_OPTIONS:MSHORTCUTS}
 	@${ECHO_MSG} "Executing ircd-shortcut.pl for ircd-shortcuts generation."
 	${PERL} ${WRKSRC}/contrib/ircd-shortcut.pl

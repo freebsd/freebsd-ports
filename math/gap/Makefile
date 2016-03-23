@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gap
-PORTVERSION=	4.7.9.${GAP_DISTDATE}
+PORTVERSION=	4.8.2.${GAP_DISTDATE}
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap47/tar.bz2/ \
+MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap48/tar.bz2/ \
 		ftp://ftp.stack.nl/pub/users/johans/gap/ \
-		ftp://ftp.gap-system.org/pub/gap/gap47/old/
+		ftp://ftp.gap-system.org/pub/gap/gap48/old/
 DISTNAME=	${GAP_VERSION}p${PORTVERSION:R:E}_${GAP_DISTTIME}
 
 MAINTAINER=	johans@FreeBSD.org
@@ -16,26 +16,14 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 USES=		gmake shebangfix tar:bzip2
 SHEBANG_FILES=	configure \
-		pkg/GAPDoc-1.5.1/3k+1/clean \
-		pkg/GAPDoc-1.5.1/doc/clean \
-		pkg/GAPDoc-1.5.1/example/clean \
+		pkg/GAPDoc-*/*/clean \
+		pkg/*/doc/clean \
 		pkg/PolymakeInterface/configure \
-		pkg/SymbCompCC-1.2/doc/convert.pl \
-		pkg/anupq-3.1.1/tst/make_anupqeg \
+		pkg/*/doc/convert.pl \
+		pkg/anupq-*/tst/make_anupqeg \
 		pkg/crime/gap/print.pl \
-		pkg/cubefree/doc/convert.pl \
-		pkg/fr-2.2.1/cnf/config.status \
-		pkg/hecke/doc/clean \
-		pkg/io-4.4.4/doc/clean \
-		pkg/liepring/doc/convert.pl \
-		pkg/nilmat/doc/convert.pl \
-		pkg/orb-4.7.3/doc/clean \
-		pkg/pargap/mpinu/thwap \
-		pkg/recog-1.2.3/doc/clean \
-		pkg/recogbase-1.2.3/doc/clean \
-		pkg/sglppow/doc/convert.pl \
-		pkg/sonata/doc/convert.pl \
-		pkg/unipot-1.2/doc/convert.pl
+		pkg/fr-*/cnf/config.status \
+		pkg/pargap/mpinu/thwap
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
@@ -44,7 +32,7 @@ ALL_TARGET=	default
 MAKE_JOBS_UNSAFE=yes
 
 GAP_VERSION=	${PORTNAME}${PORTVERSION:R:R:S/./r/}	# gap4r5
-GAP_DISTTIME=	2015_11_29-20_35
+GAP_DISTTIME=	2016_02_20-18_51
 GAP_DISTDATE=	${GAP_DISTTIME:C/-.*//:S/_//g}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
 WRKSRC=		${WRKDIR}/${GAP_VERSION}

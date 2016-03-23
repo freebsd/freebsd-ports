@@ -1,7 +1,7 @@
 CryptoFS is a encrypted filesystem for Filesystem in Userspace (FUSE) and
 the Linux Userland FileSystem (LUFS). Visit http://fuse.sourceforge.net/
-for more information on FUSE or http://lufs.sourceforge.net/lufs/  for more
-information on LUFS.
+for more information on FUSE, or http://lufs.sourceforge.net/lufs/  for
+more information on LUFS.
 
 CryptoFS will use a normal directory to store files encrypted. The
 mountpoint will contain the decrypted files. Every file stored in this
@@ -11,9 +11,9 @@ be access by mounting the directory with the correct key again. Like other
 FUSE/LUFS filesystems it does not need root access or any complicated setup
 like creating a filesystem on a encrypted disk using the loop device.
 
-CryptoFS can be build for FUSE and LUFS. When you build for FUSE you get a
-program to mount the filesystem. For LUFS a shared library will be built
+CryptoFS can be build for FUSE, and LUFS. When you build for FUSE you get
+a program to mount the filesystem. For LUFS a shared library will be built
 that can be used by LUFS's lufsd. Both methods can use the same encrypted
 directory.
 
-WWW: http://reboot78.re.funpic.de/cryptofs/
+WWW: http://BSDforge.com/projects/sysutils/fusefs-cryptofs/

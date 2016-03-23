@@ -45,7 +45,7 @@ R_COMMAND=	${LOCALBASE}/bin/R
 R_POSTCMD_CHECK_OPTIONS?=	--timings
 
 .if !exists(${LOCALBASE}/bin/pdflatex)
-R_POSTCMD_CHECK_OPTIONS+=	--no-manual --no-rebuild-vignettes
+R_POSTCMD_CHECK_OPTIONS+=	--no-manual --no-build-vignettes
 .endif
 
 do-test:

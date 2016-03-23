@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengrok
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.12.1.5
 CATEGORIES=	devel java
 MASTER_SITES=	http://java.net/projects/opengrok/downloads/download/
 
@@ -15,7 +14,7 @@ LICENSE_COMB=	multi
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 SHAREOWN=	www
 SHAREGRP=	www
 NO_BUILD=	yes

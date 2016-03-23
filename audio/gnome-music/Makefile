@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-music
-PORTVERSION=	3.16.2
+PORTVERSION=	3.18.2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgrilo-0.2.so:${PORTSDIR}/net/grilo \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig python:3 tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig python:3 tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomedesktop3 gtk30 intltool introspection:build
 GNU_CONFIGURE=	yes
@@ -29,6 +29,15 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.Music.gschema.xml
 
-PLIST_SUB+=	PYVER=${PYTHON_VER:S/.//}
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PYTHON_REL} < 3500
+PYOEXTENSION=	pyo
+.else
+PYOEXTENSION=	opt-1.pyc
+.endif
+
+PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION} \
+		PYVER=${PYTHON_VER:S/.//}
+
+.include <bsd.port.post.mk>

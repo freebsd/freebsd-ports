@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	7.1p2
+DISTVERSION=	7.2p1
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
@@ -68,6 +68,7 @@ X509_PATCHFILES=	${PORTNAME}-7.0p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 # and https://bugzilla.mindrot.org/show_bug.cgi?id=1604
 SCTP_PATCHFILES=	${PORTNAME}-6.8p1-sctp-2573.patch.gz:-p1
 SCTP_CONFIGURE_WITH=	sctp
+SCTP_BROKEN=		SCTP does not apply with 7.2+
 
 MIT_LIB_DEPENDS=		libkrb5.so.3:${PORTSDIR}/security/krb5
 HEIMDAL_LIB_DEPENDS=		libkrb5.so.26:${PORTSDIR}/security/heimdal
@@ -92,6 +93,7 @@ EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
 
 # Must add this patch before HPN due to conflicts
 .if ${PORT_OPTIONS:MKERB_GSSAPI}
+BROKEN=		KERN_GSSAPI does not yet apply with 7.2+
 # 7.1 patch taken from
 # http://sources.debian.net/data/main/o/openssh/1:7.1p2-2/debian/patches/gssapi.patch
 # which was originally based on 5.7 patch from
@@ -117,13 +119,11 @@ CONFIGURE_LIBS+=	-lutil
 
 CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp --disable-wtmpx --without-lastlog
 
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-hostkeyalg_plus:-p1
-
 # Keep this last
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-version-addendum
 
 .if ${PORT_OPTIONS:MX509}
-BROKEN=	Patch does not apply with 7.1
+BROKEN=	X509 does not apply with 7.1+
 .  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 BROKEN=		X509 patch and HPN patch do not apply cleanly together
 .  endif

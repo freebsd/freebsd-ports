@@ -1,15 +1,19 @@
---- configure.orig	2015-03-06 15:13:58 UTC
-+++ configure
-@@ -7647,7 +7647,11 @@ fi
+--- configure.orig	2014-08-29 15:40:10.000000000 +0200
++++ configure	2014-08-29 15:40:23.000000000 +0200
+@@ -7764,15 +7764,11 @@
+ 		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
+ fi
  
+-	    case $system in
+-	    FreeBSD-3.*)
+ 		# Version numbers are dot-stripped by system policy.
+ 		TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
+ 		UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
+ 		TCL_LIB_VERSIONS_OK=nodots
+-		;;
+-	    esac
  	    ;;
- 	FreeBSD-*)
--	    # This configuration from FreeBSD Ports.
-+	    # Version numbers are dot-stripped by system policy.
-+	    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
-+	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
-+	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${SHLIB_VERSION}'
-+	    TCL_LIB_VERSIONS_OK=nodots
- 	    SHLIB_CFLAGS="-fPIC"
- 	    SHLIB_LD="${CC} -shared"
- 	    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} -Wl,-soname,\$@"
+ 	Darwin-*)
+ 	    CFLAGS_OPTIMIZE="-Os"

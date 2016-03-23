@@ -6,7 +6,7 @@ PORTVERSION=	0.3.6
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://caia.swin.edu.au/tools/spp/downloads/
 
-MAINTAINER=	lars@eggert.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calculates round trip time from pcap files or live capture
 
 LICENSE=	GPLv2

@@ -1,0 +1,103 @@
+See https://sourceforge.net/p/openil/patches/41/
+
+This patch improves alpha-compositing in DevIL.
+
+--- src-IL/src/il_devil.c	(revision 1654)
++++ src-IL/src/il_devil.c	(working copy)
+@@ -665,10 +665,10 @@
+ 	ILuint		c;
+ 	ILuint		StartX, StartY, StartZ;
+ 	ILboolean	DestFlipped = IL_FALSE;
++	ILboolean	DoAlphaBlend = IL_FALSE;
+ 	ILubyte 	*SrcTemp;
+-	ILfloat		Back;
+-
+-	// Check if the desiination image really exists
++	ILfloat		ResultAlpha;
++	// Check if the destination image really exists
+ 	if (DestName == 0 || iCurImage == NULL) {
+ 		ilSetError(IL_ILLEGAL_OPERATION);
+ 		return IL_FALSE;
+@@ -680,6 +680,9 @@
+ 		DestFlipped = IL_TRUE;
+ 		ilFlipImage();
+ 	}
++	//determining destination alpha support
++	DoAlphaBlend = ilIsEnabled(IL_BLIT_BLEND);
++
+ 	//DestOrigin = Dest->Origin;
+ 	ilBindImage(Source);
+ 	
+@@ -688,7 +691,9 @@
+ 		ilSetError(IL_INVALID_PARAM);
+ 		return IL_FALSE;
+ 	}
+-	
++	//determining source alpha support
++	DoAlphaBlend &= ilIsEnabled(IL_BLIT_BLEND);
++
+ 	Src = iCurImage;
+ 	
+ 	//@TODO test if coordinates are inside the images (hard limit for source)
+@@ -737,38 +742,49 @@
+ 					const ILuint  SrcIndex  = (z+SrcZ)*ConvSizePlane + (y+SrcY)*ConvBps + (x+SrcX)*Dest->Bpp;
+ 					const ILuint  DestIndex = (z+DestZ)*Dest->SizeOfPlane + (y+DestY)*Dest->Bps + (x+DestX)*Dest->Bpp;
+ 					const ILuint  AlphaIdx = SrcIndex + bpp_without_alpha;
+-					ILfloat Front = 0;
++					ILfloat FrontAlpha = 0; // foreground opacity
++					ILfloat BackAlpha = 0;	// background opacity
+ 					
+ 					switch (Dest->Type)
+ 					{
+ 						case IL_BYTE:
+ 						case IL_UNSIGNED_BYTE:
+-							Front = Converted[AlphaIdx]/((float)IL_MAX_UNSIGNED_BYTE);
++							FrontAlpha = Converted[AlphaIdx]/((float)IL_MAX_UNSIGNED_BYTE);
++							BackAlpha = Dest->Data[AlphaIdx]/((float)IL_MAX_UNSIGNED_BYTE);
+ 							break;
+ 						case IL_SHORT:
+ 						case IL_UNSIGNED_SHORT:
+-							Front = ((ILshort*)Converted)[AlphaIdx]/((float)IL_MAX_UNSIGNED_SHORT);
++							FrontAlpha = ((ILshort*)Converted)[AlphaIdx]/((float)IL_MAX_UNSIGNED_SHORT);
++							BackAlpha = ((ILshort*)Dest->Data)[AlphaIdx]/((float)IL_MAX_UNSIGNED_SHORT);
+ 							break;
+ 						case IL_INT:
+ 						case IL_UNSIGNED_INT:
+-							Front = ((ILint*)Converted)[AlphaIdx]/((float)IL_MAX_UNSIGNED_INT);
++							FrontAlpha = ((ILint*)Converted)[AlphaIdx]/((float)IL_MAX_UNSIGNED_INT);
++							BackAlpha = ((ILint*)Dest->Data)[AlphaIdx]/((float)IL_MAX_UNSIGNED_INT);
+ 							break;
+ 						case IL_FLOAT:
+-							Front = ((ILfloat*)Converted)[AlphaIdx];
++							FrontAlpha = ((ILfloat*)Converted)[AlphaIdx];
++							BackAlpha = ((ILfloat*)Dest->Data)[AlphaIdx];
+ 							break;
+ 						case IL_DOUBLE:
+-							Front = (ILfloat)(((ILdouble*)Converted)[AlphaIdx]);
++							FrontAlpha = (ILfloat)(((ILdouble*)Converted)[AlphaIdx]);
++							BackAlpha = (ILfloat)(((ILdouble*)Dest->Data)[AlphaIdx]);
+ 							break;
+ 					}
+-					Back = 1.0f - Front;
+-					// In case of Alpha channel, the data is blended. Keeps the original alpha.
+-					if (ilIsEnabled(IL_BLIT_BLEND)) {
++					
++					// In case of Alpha channel, the data is blended.
++					// Computes composite Alpha
++					if (DoAlphaBlend)
++					{
++						ResultAlpha = FrontAlpha + (1.0f - FrontAlpha) * BackAlpha;
+ 						for (c = 0; c < bpp_without_alpha; c++)
+ 						{
+-							Dest->Data[DestIndex + c] = 
+-								(ILubyte)(Converted[SrcIndex + c] * Front
+-											+ Dest->Data[DestIndex + c] * Back);
++							Dest->Data[DestIndex + c] = (ILubyte)( 0.5f + 
++								(Converted[SrcIndex + c] * FrontAlpha + 
++								(1.0f - FrontAlpha) * Dest->Data[DestIndex + c] * BackAlpha) 
++								/ ResultAlpha);
+ 						}
++						Dest->Data[AlphaIdx] = (ILubyte)(0.5f + ResultAlpha * (float)IL_MAX_UNSIGNED_BYTE);
+ 					}
+ 					else {
+ 						for (c = 0; c < Dest->Bpp; c++)

@@ -2,37 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	slumber
-PORTVERSION=	0.6.1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	0.7.1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Python library that makes consuming a RESTful API easier
+COMMENT=	Library that makes consuming a REST API easier and more convenient
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2 \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2 \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
-OPTIONS_DEFINE=		TESTS YAML
-
-TESTS_DESC=		Install test suite requirements
-TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
+OPTIONS_DEFINE=	YAML
 
 YAML_DESC=		YAML serializer support
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
 
 USES=		python
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
-USE_GITHUB=	yes
 GH_ACCOUNT=	samgiles
+GH_TAGNAME=	d84e140
 
-regression-test: build
+NO_ARCH=	yes
+
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

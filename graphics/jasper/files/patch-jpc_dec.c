@@ -1,5 +1,5 @@
 --- src/libjasper/jpc/jpc_dec.c.orig	2007-01-19 22:43:07.000000000 +0100
-+++ src/libjasper/jpc/jpc_dec.c	2013-04-17 22:29:42.000000000 +0200
++++ src/libjasper/jpc/jpc_dec.c	2016-02-20 13:49:45.581508000 +0100
 @@ -449,7 +449,7 @@
  
  	if (dec->state == JPC_MH) {
@@ -9,6 +9,15 @@
  		assert(compinfos);
  		for (cmptno = 0, cmpt = dec->cmpts, compinfo = compinfos;
  		  cmptno < dec->numcomps; ++cmptno, ++cmpt, ++compinfo) {
+@@ -489,7 +489,7 @@
+ 		dec->curtileendoff = 0;
+ 	}
+ 
+-	if (JAS_CAST(int, sot->tileno) > dec->numtiles) {
++	if (JAS_CAST(int, sot->tileno) >= dec->numtiles) {
+ 		jas_eprintf("invalid tile number in SOT marker segment\n");
+ 		return -1;
+ 	}
 @@ -692,7 +692,7 @@
  			tile->realmode = 1;
  		}
@@ -87,6 +96,33 @@
  		  sizeof(jpc_dec_tcomp_t)))) {
  			return -1;
  		}
+@@ -1280,7 +1280,7 @@
+ 	jpc_coc_t *coc = &ms->parms.coc;
+ 	jpc_dec_tile_t *tile;
+ 
+-	if (JAS_CAST(int, coc->compno) > dec->numcomps) {
++	if (JAS_CAST(int, coc->compno) >= dec->numcomps) {
+ 		jas_eprintf("invalid component number in COC marker segment\n");
+ 		return -1;
+ 	}
+@@ -1306,7 +1306,7 @@
+ 	jpc_rgn_t *rgn = &ms->parms.rgn;
+ 	jpc_dec_tile_t *tile;
+ 
+-	if (JAS_CAST(int, rgn->compno) > dec->numcomps) {
++	if (JAS_CAST(int, rgn->compno) >= dec->numcomps) {
+ 		jas_eprintf("invalid component number in RGN marker segment\n");
+ 		return -1;
+ 	}
+@@ -1355,7 +1355,7 @@
+ 	jpc_qcc_t *qcc = &ms->parms.qcc;
+ 	jpc_dec_tile_t *tile;
+ 
+-	if (JAS_CAST(int, qcc->compno) > dec->numcomps) {
++	if (JAS_CAST(int, qcc->compno) >= dec->numcomps) {
+ 		jas_eprintf("invalid component number in QCC marker segment\n");
+ 		return -1;
+ 	}
 @@ -1489,7 +1489,7 @@
  	cp->numlyrs = 0;
  	cp->mctid = 0;

@@ -1,0 +1,12 @@
+--- debian/qgis.desktop.orig	2016-02-26 12:23:48 UTC
++++ debian/qgis.desktop
+@@ -1,7 +1,9 @@
+ [Desktop Entry]
++Encoding=UTF-8
+ Type=Application
+ Name=QGIS Desktop
+ Version=1.0
++Comment=Quantum GIS Desktop
+ GenericName=Geographic Information System
+ GenericName[ar]=نظام المعلومات الجغرافي
+ GenericName[az]=Coğrafi informasiya sistemi

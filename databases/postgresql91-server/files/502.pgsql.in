@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/postgresql91-server/files/502.pgsql.in,v 1.4 2011-10-18 09:03:32 girgen Exp $
+# $FreeBSD$
 #
 # Maintenance shell script to vacuum and backup database
 # Put this in /usr/local/etc/periodic/daily, and it will be run 
@@ -19,14 +19,6 @@
 # daily_pgsql_backup_enable="foo bar db1 db2" # only do backup of a limited selection of databases
 # daily_pgsql_vacuum_enable="YES" # do vacuum
 
-daily_pgsql_user=%%PG_USER%%
-daily_pgsql_vacuum_args="-U ${daily_pgsql_user} -qaz"
-daily_pgsql_pgdump_args="-U ${daily_pgsql_user} -bF c"
-daily_pgsql_pgdumpall_globals_args="-U ${daily_pgsql_user}"
-# backupdir is relative to ~pgsql home directory unless it begins with a slash:
-daily_pgsql_backupdir="~${daily_pgsql_user}/backups"
-daily_pgsql_savedays="7"
-
 # If there is a global system configuration file, suck it in.
 #
 if [ -r /etc/defaults/periodic.conf ]
@@ -34,6 +26,15 @@ then
     . /etc/defaults/periodic.conf
     source_periodic_confs
 fi
+
+: ${daily_pgsql_user:="%%PG_USER%%"}
+: ${daily_pgsql_port:=5432}
+: ${daily_pgsql_vacuum_args:="-U ${daily_pgsql_user} -p ${daily_pgsql_port} -qaz"}
+: ${daily_pgsql_pgdump_args:="-U ${daily_pgsql_user} -p ${daily_pgsql_port} -bF c"}
+: ${daily_pgsql_pgdumpall_globals_args:="-U ${daily_pgsql_user} -p ${daily_pgsql_port}"}
+# backupdir is relative to ~pgsql home directory unless it begins with a slash:
+: ${daily_pgsql_backupdir:="~${daily_pgsql_user}/backups"}
+: ${daily_pgsql_savedays:="7"}
 
 # allow '~´ in dir name
 eval backupdir=${daily_pgsql_backupdir}
@@ -82,7 +83,7 @@ pgsql_backup() {
 
 case "$daily_pgsql_backup_enable" in
     [Yy][Ee][Ss])
-	dbnames=`su -l %%PG_USER%% -c "umask 077; psql -q -t -A -d template1 -U %%PG_USER%% -c SELECT\ datname\ FROM\ pg_database\ WHERE\ datname!=\'template0\'"`
+	dbnames=`su -l ${daily_pgsql_user} -c "umask 077; psql -U ${daily_pgsql_user} -p ${daily_pgsql_port} -q -t -A -d template1 -c SELECT\ datname\ FROM\ pg_database\ WHERE\ datname!=\'template0\'"`
 	pgsql_backup $dbnames
 	;;
 

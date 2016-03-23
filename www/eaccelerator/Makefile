@@ -10,6 +10,9 @@ COMMENT=	Free open-source PHP accelerator & optimizer
 
 LICENSE=	GPLv2
 
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2016-03-15
+
 OPTIONS_DEFINE=	DOCCOMM DOCS EXAMPLES
 DOCCOMM_DESC=	Retain doc-comments in internal php structures
 

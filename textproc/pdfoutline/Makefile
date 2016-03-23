@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdfoutline
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/fntsample/fntsample/${PORTVERSION}
 DISTNAME=	fntsample-${PORTVERSION}

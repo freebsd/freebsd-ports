@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dar
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 

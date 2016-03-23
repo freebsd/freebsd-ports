@@ -1,5 +1,5 @@
 --- src/libjasper/base/jas_seq.c.orig	2007-01-19 22:43:05.000000000 +0100
-+++ src/libjasper/base/jas_seq.c	2013-04-17 22:32:23.000000000 +0200
++++ src/libjasper/base/jas_seq.c	2016-02-20 13:59:01.014091000 +0100
 @@ -114,7 +114,7 @@
  	matrix->datasize_ = numrows * numcols;
  
@@ -27,3 +27,58 @@
  	for (i = 0; i < mat0->numrows_; ++i) {
  		mat0->rows_[i] = mat1->rows_[r0 + i] + c0;
  	}
+@@ -262,6 +262,10 @@
+ 	int rowstep;
+ 	jas_seqent_t *data;
+ 
++	if (!matrix->rows_) {
++		return;
++	}
++
+ 	rowstep = jas_matrix_rowstep(matrix);
+ 	for (i = matrix->numrows_, rowstart = matrix->rows_[0]; i > 0; --i,
+ 	  rowstart += rowstep) {
+@@ -282,6 +286,10 @@
+ 	jas_seqent_t *data;
+ 	int rowstep;
+ 
++	if (!matrix->rows_) {
++		return;
++	}
++
+ 	rowstep = jas_matrix_rowstep(matrix);
+ 	for (i = matrix->numrows_, rowstart = matrix->rows_[0]; i > 0; --i,
+ 	  rowstart += rowstep) {
+@@ -306,6 +314,10 @@
+ 	int rowstep;
+ 	jas_seqent_t *data;
+ 
++	if (!matrix->rows_) {
++		return;
++	}
++
+ 	assert(n >= 0);
+ 	rowstep = jas_matrix_rowstep(matrix);
+ 	for (i = matrix->numrows_, rowstart = matrix->rows_[0]; i > 0; --i,
+@@ -325,6 +337,10 @@
+ 	int rowstep;
+ 	jas_seqent_t *data;
+ 
++	if (!matrix->rows_) {
++		return;
++	}
++
+ 	rowstep = jas_matrix_rowstep(matrix);
+ 	for (i = matrix->numrows_, rowstart = matrix->rows_[0]; i > 0; --i,
+ 	  rowstart += rowstep) {
+@@ -367,6 +383,10 @@
+ 	int rowstep;
+ 	jas_seqent_t *data;
+ 
++	if (!matrix->rows_) {
++		return;
++	}
++
+ 	rowstep = jas_matrix_rowstep(matrix);
+ 	for (i = matrix->numrows_, rowstart = matrix->rows_[0]; i > 0; --i,
+ 	  rowstart += rowstep) {

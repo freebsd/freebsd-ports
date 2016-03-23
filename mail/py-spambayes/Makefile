@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spambayes
-PORTVERSION=	1.1b1
-PORTREVISION=	1
+PORTVERSION=	1.1b2
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,11 +16,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
 		${PYTHON_PKGNAMEPREFIX}dns>=2.0:${PORTSDIR}/dns/py-dns \
 		${PYTHON_PKGNAMEPREFIX}lockfile>=0.2:${PORTSDIR}/devel/py-lockfile
 
-USES=		python:2
+USES=		python:-2.7
 USE_PYTHON=	distutils autoplist
-NO_ARCH=	yes
-
 USE_RC_SUBR=	pyspamd
+
+OPTIONS_DEFINE=	DOCS
+
+NO_ARCH=	yes
 
 LOCALSTATDIR?=	/var/db/spambayes
 DBDIR?=		${LOCALSTATDIR}/dbs
@@ -44,18 +45,10 @@ PORTDOCS=	CHANGELOG.txt \
 		utilities/ \
 		contrib/
 
-OPTIONS_DEFINE=	DOCS
-
 post-extract:
 	@${CHMOD} -Rf u+w ${WRKSRC}
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f | \
-		${XARGS} -n 10 -x \
-		${REINPLACE_CMD} -E \
-		-e 's|/usr/bin/env python|${PYTHONBASE}/bin/${PYTHON_VERSION}|'
-	@${FIND} ${WRKSRC}/utilities ${WRKSRC}/contrib ${WRKSRC}/spambayes\
-		-type f -name *.bak | ${XARGS} ${RM}
 	@${REINPLACE_CMD} -e \
 		'/persistent_storage_file/s|hammie.db|${DBDIR}/hammie.db|' \
 		-e \

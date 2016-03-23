@@ -14,4 +14,9 @@ BUILD_DIRS?=	src/timezone src/backend src/backend/utils/mb/conversion_procs \
 INSTALL_DIRS?=	${BUILD_DIRS}
 COMPONENT?=	-server
 
+# EOL was reached in September 2015
+# http://www.postgresql.org/support/versioning/
+DEPRECATED=    "EOL was reached in September 2015"
+EXPIRATION_DATE=2016-04-13
+
 .include "${.CURDIR}/../postgresql91-server/Makefile"

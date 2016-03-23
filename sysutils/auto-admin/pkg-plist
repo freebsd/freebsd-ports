@@ -1,3 +1,4 @@
+man/man1/auto-add-fdesc-mount.1.gz
 man/man1/auto-admin.1.gz
 man/man1/auto-amd-nfs-setup.1.gz
 man/man1/auto-append-line.1.gz
@@ -25,8 +26,12 @@ man/man1/auto-ipfw-gateway-setup.1.gz
 man/man1/auto-kdm3-toggle.1.gz
 man/man1/auto-ldap-adduser.1.gz
 man/man1/auto-ldap-client-setup.1.gz
+man/man1/auto-mount-any.1.gz
+man/man1/auto-ostype.1.gz
 man/man1/auto-package-installed.1.gz
+man/man1/auto-pkgsrc-add-license.1.gz
 man/man1/auto-pkgsrc-setup.1.gz
+man/man1/auto-pkgsrc-wip-checkout.1.gz
 man/man1/auto-print-make-variable.1.gz
 man/man1/auto-pxe-installer-setup.1.gz
 man/man1/auto-pxe-node-discover.1.gz
@@ -35,11 +40,14 @@ man/man1/auto-restore-pw.1.gz
 man/man1/auto-service-enabled.1.gz
 man/man1/auto-set-suspend-mode.1.gz
 man/man1/auto-ssh-authorize.1.gz
+man/man1/auto-ssh-reverse-authorize.1.gz
 man/man1/auto-update-port-framework.1.gz
 man/man1/auto-update-system.1.gz
 man/man1/auto-update-xorg.conf.1.gz
 man/man1/auto-using-pkgng.1.gz
+man/man1/auto-wifi-failover.1.gz
 man/man1/auto-xdm-toggle.1.gz
+sbin/auto-add-fdesc-mount
 sbin/auto-amd-nfs-setup
 sbin/auto-append-line
 sbin/auto-ask
@@ -66,8 +74,12 @@ sbin/auto-ipfw-gateway-setup
 sbin/auto-kdm3-toggle
 sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
+sbin/auto-mount-any
+sbin/auto-ostype
 sbin/auto-package-installed
+sbin/auto-pkgsrc-add-license
 sbin/auto-pkgsrc-setup
+sbin/auto-pkgsrc-wip-checkout
 sbin/auto-print-make-variable
 sbin/auto-pxe-installer-setup
 sbin/auto-pxe-node-discover
@@ -76,9 +88,11 @@ sbin/auto-restore-pw
 sbin/auto-service-enabled
 sbin/auto-set-suspend-mode
 sbin/auto-ssh-authorize
+sbin/auto-ssh-reverse-authorize
 sbin/auto-update-port-framework
 sbin/auto-update-system
 sbin/auto-update-xorg.conf
 sbin/auto-using-pkgng
+sbin/auto-wifi-failover
 sbin/auto-xdm-toggle
 %%DATADIR%%/ipfw-rules.sh

@@ -12,6 +12,10 @@ DISTNAME=	session2-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quixote session manager with persistence support
 
+
+DEPRECATED=	That is a part of Quixote webapp framework we no longer have in ports
+EXPIRATION_DATE=	2016-03-25
+
 LICENSE=	MIT
 
 USES=		python:2

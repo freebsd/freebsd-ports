@@ -10,7 +10,7 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for processing logs from qmail and other packages
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTDOCS=	NEWS README
@@ -25,8 +25,10 @@ do-configure:
 
 do-install:
 	cd ${WRKSRC} && ./installer
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>

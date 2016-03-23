@@ -1,7 +1,7 @@
 lib/teamspeak/server/libmariadb.so.2
 lib/teamspeak/server/libts3db_mariadb.so
 lib/teamspeak/server/libts3db_sqlite3.so
-libexec/teamspeak_server
+libexec/ts3server
 share/teamspeak/server/CHANGELOG
 share/teamspeak/server/LICENSE
 share/teamspeak/server/serverquerydocs/banadd.txt
@@ -103,7 +103,6 @@ share/teamspeak/server/serverquerydocs/servergroupaddclient.txt
 share/teamspeak/server/serverquerydocs/servergroupaddperm.txt
 share/teamspeak/server/serverquerydocs/servergroupautoaddperm.txt
 share/teamspeak/server/serverquerydocs/servergroupautodelperm.txt
-share/teamspeak/server/serverquerydocs/servergroupbyclientid.txt
 share/teamspeak/server/serverquerydocs/servergroupclientlist.txt
 share/teamspeak/server/serverquerydocs/servergroupcopy.txt
 share/teamspeak/server/serverquerydocs/servergroupdel.txt
@@ -205,6 +204,9 @@ share/teamspeak/server/sql/perm_delete_by_permid.sql
 share/teamspeak/server/sql/perm_delete_by_serverid.sql
 share/teamspeak/server/sql/perm_get_by_id.sql
 share/teamspeak/server/sql/perm_get_by_serverid.sql
+share/teamspeak/server/sql/perm_group_copy.sql
+share/teamspeak/server/sql/perm_group_get_mapping.sql
+share/teamspeak/server/sql/perm_group_perm_copy.sql
 share/teamspeak/server/sql/perm_insert.sql
 share/teamspeak/server/sql/perm_rename.sql
 share/teamspeak/server/sql/perm_update_get_groups.sql
@@ -244,6 +246,7 @@ share/teamspeak/server/sql/update_20.sql
 share/teamspeak/server/sql/update_21.sql
 share/teamspeak/server/sql/update_22.sql
 share/teamspeak/server/sql/update_23.sql
+share/teamspeak/server/sql/update_24.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_permissions_12.sql
 share/teamspeak/server/sql/updates_and_fixes/convert_mysql_to_mariadb.sql

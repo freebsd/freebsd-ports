@@ -10,31 +10,30 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		python:2 shebangfix tar:tgz
-SHEBANG_FILES=	extras/html-update.sh
+SHEBANG_FILES=	extras/html-update.sh txt2tags
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PORTDOCS=	ChangeLog README userguide.pdf
-SAMPLE_DIRS=	css img module
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/env python|/env python2|' \
-		${WRKSRC}/txt2tags
-	@${MV} ${WRKSRC}/doc/userguide.pdf ${WRKSRC}/
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/txt2tags ${STAGEDIR}${PREFIX}/bin
-.for dir in ${SAMPLE_DIRS}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/samples/${dir}/* ${STAGEDIR}${EXAMPLESDIR}/${dir}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/samples/sample* ${STAGEDIR}${EXAMPLESDIR}/
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/extras
-	${CP} -a ${WRKSRC}/extras/* ${STAGEDIR}${EXAMPLESDIR}/extras
+
+do-install-EXAMPLES-on:
+	@cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} extras ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/userguide.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

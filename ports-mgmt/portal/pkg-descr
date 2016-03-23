@@ -1,0 +1,8 @@
+Portal is a front-end to FreeBSD's package manipulation tool pkg(8).
+
+Currently, the application is a MVP (Minimum Viable Product) which
+provides only the following features: packages listing and searching,
+installation and deinstallation of packages, and filtering based on
+the package state.
+
+WWW: https://github.com/culot/portal

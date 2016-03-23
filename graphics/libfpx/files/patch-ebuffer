@@ -1,0 +1,126 @@
+This removes unused code from ebuffer -- some of that code never
+worked and now clang-3.8.0 issues a very valid warning about it...
+
+Some of the variables are made static, while I'm here. This code
+was never thread-safe either...
+
+	-mi
+
+--- jpeg/ebuffer.h	2013-09-02 11:45:00.000000000 -0400
++++ jpeg/ebuffer.h	2016-02-18 16:31:36.053668000 -0500
+@@ -22,26 +22,12 @@
+    long int buf_size);
+ JPEGEXPORT
+-void EB_Clear(unsigned char *buf, /* output buffer */
+-   long int buf_size);
+-JPEGEXPORT
+-void EB_Write_Bits_Init(unsigned char *buf, /* compressed bitstream buffer */
+-   long int buf_size);
+-JPEGEXPORT
+-void EB_Write_Bytes(unsigned char *data,
+-   int size);
++void EB_Write_Bytes(const void *data, size_t size);
+ JPEGEXPORT
+ long cEB_Byte_Count(void);
+ 
+ JPEGEXPORT
+-void EB_Copy_To_Memory(unsigned char *buf,
+-   unsigned char *mem,
+-   long int num);
+-JPEGEXPORT
+ void EB_End(long int *bytes);
+ 
+ JPEGEXPORT
+-void EB_Write_Bits_End(long int *bytes);
+-
+-JPEGEXPORT
+ int EB_Write_Bits(int val,
+ int nbits);
+--- jpeg/ebuffer.c	2013-09-02 11:45:00.000000000 -0400
++++ jpeg/ebuffer.c	2016-02-18 16:32:03.964436000 -0500
+@@ -24,9 +24,9 @@
+ 
+ /****************************** GLOBAL VARIABLES **************************/
+-unsigned char *eb_ptr;      /* points to next avaible byte in output buffer */
+-unsigned char eb_byte;      /* current output byte to be inserted into buffer */
+-int eb_nbits;               /* # bits available in *eb_ptr */
+-unsigned char *eb_end_ptr, *eb_start_ptr;
+-long int eb_byte_count;
++static unsigned char *eb_ptr;      /* points to next avaible byte in output buffer */
++static unsigned char eb_byte;      /* current output byte to be inserted into buffer */
++static int eb_nbits;               /* # bits available in *eb_ptr */
++static unsigned char *eb_end_ptr, *eb_start_ptr;
++static long int eb_byte_count;
+ 
+ void EB_Init(unsigned char *buf, /* output buffer */
+@@ -40,31 +40,7 @@
+ }
+ 
+-void EB_Clear(unsigned char *buf, /* output buffer */
+-long int buf_size)
+-{
+-  unsigned char *eb_ptr, *eb_end_ptr;
+-
+-  eb_end_ptr = buf + buf_size;
+-  for (eb_ptr = buf; eb_ptr < eb_end_ptr ;*eb_ptr++ = 0)
+-    eb_byte = 0;
+-  eb_nbits = 8;
+-  eb_byte_count = 0;
+-}
+-
+-void EB_Write_Bits_Init(unsigned char *buf, /* compressed bitstream buffer */
+-long int buf_size)
+-{
+-  eb_ptr = eb_start_ptr = buf;
+-  eb_end_ptr = buf + buf_size;
+-  eb_byte = 0;
+-  eb_nbits = 8;
+-  eb_byte_count = 0;
+-}
+-
+-void EB_Write_Bytes(unsigned char *data,
+-int size)
++void
++EB_Write_Bytes(const void *data, size_t size)
+ {
+-  int i;
+-  unsigned char *ptr;
+ 
+   /* byte-align previous bits if any */
+@@ -74,24 +50,5 @@
+     if (eb_byte == 0xff) *eb_ptr++ = 0x00; /* byte stuffing */
+   }
+-  for (i=0, ptr=data; i < size ;i++) {
+-    *eb_ptr++ = *ptr++;
+-  }
+-}
+-
+-/* calculates the actual number of bytes written into output buffer */
+-long cEB_Byte_Count(void)
+-{
+-  return((long)(eb_ptr - eb_start_ptr));
+-}
+-
+-void EB_Copy_To_Memory(unsigned char *buf,
+-unsigned char *mem,
+-long int num)
+-{
+-  long int i;
+-  unsigned char *mem_ptr,*buf_ptr;
+-
+-  for(i=0,mem_ptr=mem,buf_ptr=buf; i < num ;*mem_ptr++=*buf_ptr++);
+-
++  memcpy(eb_ptr, data, size);
+ }
+ 
+@@ -102,10 +59,4 @@
+ }
+ 
+-/* calculates the actual number of bytes written into output buffer */
+-void EB_Write_Bits_End(long int *bytes)
+-{
+-  *bytes = eb_ptr - eb_start_ptr;
+-}
+-
+ /*
+  * Write 'nbits' bits of 'val' to the output buffer.

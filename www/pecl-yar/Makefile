@@ -19,6 +19,7 @@ USE_PHP=	json curl
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
+IGNORE_WITH_PHP=	70
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-php-config=${PREFIX}/bin/php-config

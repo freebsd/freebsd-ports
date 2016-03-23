@@ -1,0 +1,45 @@
+--- docs/en/pnm2ppa.1.orig	Mon Nov  6 10:16:38 2000
++++ docs/en/pnm2ppa.1	Tue Jan 30 22:02:49 2001
+@@ -51,13 +51,13 @@
+ .\"{{{	-f configFile
+ .IP "\fB\-f \fIconfigFile\fR\fP"
+ Re-reads configuration from \fIconfigFile\fR (after 
+-initially reading it from /etc/pnm2ppa.conf). 
++initially reading it from %%PREFIX%%/etc/pnm2ppa.conf). 
+ .\"}}}
+ 
+ .\"{{{	-F GammaFile
+ .IP "\fB\-F \fIGammaFile\fR\fP"
+ Overrides reading the color-correction table (Gamma curve) from the default 
+-file /etc/pnm2ppa.gamma, and uses \fIGammaFile\fR instead.
++file %%PREFIX%%/etc/pnm2ppa.gamma, and uses \fIGammaFile\fR instead.
+ .\"}}}
+ 
+ .\"{{{	--fd
+@@ -161,7 +161,7 @@
+ 
+  
+ .SH NOTES
+-The default configuration file \fI/etc/pnm2ppa.conf\fR  is read in first. Command line arguments then modify the resulting definitions.
++The default configuration file \fI%%PREFIX%%/etc/pnm2ppa.conf\fR  is read in first. Command line arguments then modify the resulting definitions.
+ .PP
+ The \fB-v\fP option resets all definitions (margins, offsets, etc.)  back to
+ the inbuilt defaults for that printer and should be used before subsequent
+@@ -171,13 +171,13 @@
+ 
+ .SH FILES
+ 
+-.\"{{{	/etc/pnm2ppa.conf
+-.IP "\fB\fI/etc/pnm2ppa.conf\fR\fP"
++.\"{{{	%%PREFIX%%/etc/pnm2ppa.conf
++.IP "\fB\fI%%PREFIX%%/etc/pnm2ppa.conf\fR\fP"
+ Default configuration file.
+ .\"}}}
+ 
+-.\"{{{	/etc/pnm2ppa.gamma
+-.IP "\fB\fI/etc/pnm2ppa.gamma\fR\fP"
++.\"{{{	%%PREFIX%%/etc/pnm2ppa.gamma
++.IP "\fB\fI%%PREFIX%%/etc/pnm2ppa.gamma\fR\fP"
+ Default Gamma (color-correction) file.
+ .\"}}}
+ 

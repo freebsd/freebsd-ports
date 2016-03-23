@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/postgresql92-server/files/502.pgsql.in,v 1.4 2011-10-18 09:03:32 girgen Exp $
+# $FreeBSD$
 #
 # Maintenance shell script to vacuum and backup database
 # Put this in /usr/local/etc/periodic/daily, and it will be run 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Readonly
-PORTVERSION=	2.00
-PORTREVISION=	1
+PORTVERSION=	2.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +14,6 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 
 .include <bsd.port.mk>

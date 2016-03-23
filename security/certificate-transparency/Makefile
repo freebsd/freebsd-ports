@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	certificate-transparency
-PORTVERSION=	20151025
+PORTVERSION=	20160102
 CATEGORIES=	security
 
 MAINTAINER=	trasz@FreeBSD.org
@@ -18,6 +18,7 @@ LIB_DEPENDS?=	libevent.so:${PORTSDIR}/devel/libevent2 \
 		libgmock.so:${PORTSDIR}/devel/googlemock \
 		libjson-c.so:${PORTSDIR}/devel/json-c \
 		libleveldb.so:${PORTSDIR}/databases/leveldb \
+		libobjecthash.so:${PORTSDIR}/devel/objecthash \
 		libprotobuf.so:${PORTSDIR}/devel/protobuf \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libtcmalloc.so:${PORTSDIR}/devel/google-perftools
@@ -31,7 +32,7 @@ MAKE_FLAGS+=	"V=1"
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	certificate-transparency
-GH_TAGNAME=	7e1cf3b
+GH_TAGNAME=	1cdd6b5
 
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 CPPFLAGS+=	"-I${LOCALBASE}/include/evhtp"

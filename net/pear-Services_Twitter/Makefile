@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Services_Twitter
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.0
 CATEGORIES=	net www pear
 
 MAINTAINER=	miwi@FreeBSD.org

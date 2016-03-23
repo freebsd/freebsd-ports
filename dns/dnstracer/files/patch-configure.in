@@ -1,0 +1,15 @@
+--- configure.in.orig	2016-01-20 08:50:27 UTC
++++ configure.in
+@@ -6,9 +6,10 @@ dnl rm -rf Makefile autom4te.cache autos
+ dnl rm -rf config.log config.status configure.scan stamp-*
+ dnl
+ 
+-AC_INIT(dnstracer.c)
++AC_INIT([dnstracer],[1.7])
+ AM_CONFIG_HEADER(config.h)
+-AM_INIT_AUTOMAKE(dnstracer,1.7)
++AC_CONFIG_SRCDIR ([dnstracer.c])
++AM_INIT_AUTOMAKE
+ 
+ AC_PROG_CC
+ AC_PROG_INSTALL

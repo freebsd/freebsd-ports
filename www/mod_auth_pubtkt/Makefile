@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_pubtkt
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	www
 MASTER_SITES=	https://neon1.net/mod_auth_pubtkt/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

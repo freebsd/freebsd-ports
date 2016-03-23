@@ -4,4 +4,4 @@ as a framework for managing existing password hashes. It's designed to be
 useful for a wide range of tasks, from verifying a hash found in /etc/shadow,
 to providing full-strength password hashing for multi-user application.
 
-WWW: http://passlib.googlecode.com
+WWW: https://bitbucket.org/ecollins/passlib

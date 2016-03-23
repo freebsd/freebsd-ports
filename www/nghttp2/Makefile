@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	1.6.0
+PORTVERSION=	1.8.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www net
-MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
-		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/2.0 C Library
@@ -19,11 +18,13 @@ BUILD_DEPENDS=	libev>=4.15:${PORTSDIR}/devel/libev \
 LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev \
 		libevent_openssl.so:${PORTSDIR}/devel/libevent2 \
 		libspdylay.so:${PORTSDIR}/www/spdylay
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	ASIO DOCS HPACK
 OPTIONS_DEFAULT=HPACK
 OPTIONS_SUB=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	tatsuhiro-t
 
 CONFIGURE_ARGS=	--disable-python-bindings \
 		--enable-app \
@@ -35,11 +36,12 @@ CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		ZLIB_LIBS="-L${LIBDIR} -lz"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+PATHFIX_MAKEFILEIN=	Makefile.am
 USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USES=		compiler:c++11-lib gmake libtool localbase pathfix pkgconfig tar:xz
+USES=		autoreconf compiler:c++11-lib gmake libtool localbase pathfix pkgconfig
 
 PORTDATA=	fetch-ocsp-response
 PORTDOCS=	*
@@ -61,8 +63,5 @@ CPPFLAGS+=	-D_GLIBCXX_USE_C99
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 CONFIGURE_ARGS+=--with-jemalloc
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/JEMALLOC_LIBS/ s|-ljemalloc||' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

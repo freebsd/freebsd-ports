@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	listen
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-rb-fsevent>=0.9.3:${PORTSDIR}/devel/rubygem-rb-fsevent \
-		rubygem-rb-inotify>=0.9:${PORTSDIR}/devel/rubygem-rb-inotify \
+		rubygem-rb-inotify>=0.9.7:${PORTSDIR}/devel/rubygem-rb-inotify \
 		rubygem-rb-kqueue>=0.2:${PORTSDIR}/devel/rubygem-rb-kqueue
 
 NO_ARCH=	yes

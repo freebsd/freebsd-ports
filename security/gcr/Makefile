@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gcr
-PORTVERSION=	3.16.0
+PORTVERSION=	3.18.0
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for bits of crypto UI and parsing
 
 BUILD_DEPENDS=	gtk-doc>0:${PORTSDIR}/textproc/gtk-doc \
@@ -20,10 +20,11 @@ CONFLICTS=	gnome-keyring-2.[0-9]*
 PORTSCOUT=	limitw:1,even
 
 USE_GNOME=	gtk30 intlhack introspection:build
-USES=		desktop-file-utils gettext gmake libtool pathfix \
+USES=		desktop-file-utils gettext gmake gnome libtool pathfix \
 		pkgconfig shared-mime-info tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-valgrind
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 

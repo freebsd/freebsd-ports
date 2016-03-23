@@ -1,17 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	soundmodem
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.baycom.org/~tom/ham/soundmodem/ \
-		http://soundmodem.vk4msl.yi.org/ \
-		http://pv529.ncsrv.de/soundmodem/ \
-		LOCAL/shurd
+MASTER_SITES=	http://download.gna.org/soundmodem/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio sound modem
 
-LICENSE=	GPLv1
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 
@@ -20,18 +18,15 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USES=		gmake pkgconfig gettext
 HAS_CONFIGURE=	yes
 USE_GNOME=	gtk20 libxml2
-
-pre-patch:
-	@${CP} ${FILESDIR}/soundmodem ${WRKSRC}
+USE_RC_SUBR=	soundmodem
+USE_SUBMAKE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/soundcard/soundmodem.8 \
-		${WRKSRC}/soundcard/main.c \
-		${WRKSRC}/configapp/src/soundmodemconfig.8 \
-		${WRKSRC}/configapp/src/main.c \
-		${WRKSRC}/soundmodem
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/soundmodem ${STAGEDIR}${PREFIX}/etc/rc.d
+	${REINPLACE_CMD} -e 's|/etc/ax25|${LOCALBASE}/etc|g' \
+		${WRKSRC}/configapp/src/main.c\
+		${WRKSRC}/configapp/src/soundmodemconfig.8\
+		${WRKSRC}/soundcard/soundmodem.8\
+		${WRKSRC}/soundcard/main.c\
+		${WRKSRC}/soundmodem.spec
 
 .include <bsd.port.mk>

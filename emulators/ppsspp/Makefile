@@ -2,11 +2,11 @@
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.1.1
-PORTREVISION?=	0
+DISTVERSION?=	1.2.1
+PORTREVISION?=	1
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
-MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/1/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
+MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
 DISTFILES=	${PORTNAME}.1:manpage
 EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard:DEFAULT,lang Kingcom:ext_armips
 GH_PROJECT=	${PORTNAME}-lang:lang armips:ext_armips
-GH_TAGNAME?=	c0db1fc:lang a0b878f:ext_armips
+GH_TAGNAME?=	b7da552:lang 9b225d9:ext_armips
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-[0-9]*
 

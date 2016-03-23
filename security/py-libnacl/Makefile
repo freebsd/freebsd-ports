@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libnacl
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,9 @@ LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-regression-test: build
+NO_ARCH=	yes
+
+do-test:
 	${TOUCH} ${WRKSRC}/tests/__init__.py
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 

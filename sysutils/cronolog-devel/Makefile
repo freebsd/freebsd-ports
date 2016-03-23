@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cronolog
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.7.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/cronolog-devel/
 PKGNAMESUFFIX=	-devel

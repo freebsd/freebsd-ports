@@ -24,6 +24,7 @@ share/icons/hicolor/36x36/apps/bareftp.png
 share/icons/hicolor/48x48/apps/bareftp.png
 share/icons/hicolor/scalable/apps/bareftp.svg
 %%NLS%%share/locale/ca/LC_MESSAGES/bareftp.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/bareftp.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bareftp.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bareftp.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bareftp.mo

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	treesheets
-PORTVERSION=	0.0.20160105
+PORTVERSION=	0.0.20160130
 CATEGORIES=	deskutils
 
 MAINTAINER=	lightside@gmx.com
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/ZLIB_LICENSE.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aardappel
-GH_TAGNAME=	a79eabe
+GH_TAGNAME=	ba34531
 
 BUILD_WRKSRC=	${WRKSRC}/src
 EXTRACT_AFTER_ARGS=	--exclude .gitignore

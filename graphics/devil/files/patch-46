@@ -1,0 +1,81 @@
+See: https://sourceforge.net/p/openil/patches/46/
+
+Add the ability to alter the PNG-compression.
+
+--- include/IL/il.h	(revision 1677)
++++ include/IL/il.h	(working copy)
+@@ -377,6 +377,7 @@
+ #define IL_PNG_ALPHA_INDEX 0x0724 //XIX : ILint : the color in the palette at this index value (0-255) is considered transparent, -1 for no trasparent color
+ #define IL_JPG_PROGRESSIVE         0x0725
+ #define IL_VTF_COMP                0x0726
++#define IL_PNG_COMPRESSION         0x0727
+ 
+ 
+ // DXTC definitions
+--- src-IL/include/il_states.h	(revision 1677)
++++ src-IL/include/il_states.h	(working copy)
+@@ -76,6 +76,7 @@
+ 	ILboolean	ilJpgProgressive;
+ 	ILenum		ilDxtcFormat;
+ 	ILenum		ilPcdPicNum;
++	ILuint		ilPngCompression;
+ 
+ 	ILint		ilPngAlphaIndex;	// this index should be treated as an alpha key (most formats use this rather than having alpha in the palette), -1 for none
+ 									// currently only used when writing out .png files and should obviously be set to -1 most of the time
+--- src-IL/src/il_png.c	(revision 1677)
++++ src-IL/src/il_png.c	(working copy)
+@@ -538,6 +538,8 @@
+ //	png_init_io(png_ptr, PngFile);
+ 	png_set_write_fn(png_ptr, NULL, png_write, flush_data);
+ 
++	png_set_compression_level(png_ptr, iGetInt(IL_PNG_COMPRESSION));
++
+ 	switch (iCurImage->Type)
+ 	{
+ 		case IL_BYTE:
+--- src-IL/src/il_states.c	(revision 1677)
++++ src-IL/src/il_states.c	(working copy)
+@@ -70,6 +70,10 @@
+ 	ilStates[ilCurrentPos].ilPngAlphaIndex = -1;
+ 	ilStates[ilCurrentPos].ilVtfCompression = IL_DXT_NO_COMP;
+ 
++	// Default PNG compression setting as defined in libpng manual:
++	//  http://www.libpng.org/pub/png/libpng-1.2.5-manual.html#section-5.8
++	ilStates[ilCurrentPos].ilPngCompression = 6;
++
+ 	ilStates[ilCurrentPos].ilTgaId = NULL;
+ 	ilStates[ilCurrentPos].ilTgaAuthName = NULL;
+ 	ilStates[ilCurrentPos].ilTgaAuthComment = NULL;
+@@ -500,6 +504,9 @@
+ 		case IL_VTF_COMP:
+ 			*Param = ilStates[ilCurrentPos].ilVtfCompression;
+ 			break;
++		case IL_PNG_COMPRESSION:
++			*Param = ilStates[ilCurrentPos].ilPngCompression;
++			break;
+ 
+ 		// Boolean values
+ 		case IL_CONV_PAL:
+@@ -815,6 +822,7 @@
+ 		ilStates[ilCurrentPos].ilPcdPicNum = ilStates[ilCurrentPos-1].ilPcdPicNum;
+ 
+ 		ilStates[ilCurrentPos].ilPngAlphaIndex = ilStates[ilCurrentPos-1].ilPngAlphaIndex;
++		ilStates[ilCurrentPos].ilPngCompression = ilStates[ilCurrentPos-1].ilPngCompression;
+ 
+ 		// Strings
+ 		if (ilStates[ilCurrentPos].ilTgaId)
+@@ -1159,6 +1167,14 @@
+ 				return;
+ 			}
+ 			break;
++		case IL_PNG_COMPRESSION:
++			// Valid PNG compression settings as defined in libpng manual:
++			//  http://www.libpng.org/pub/png/libpng-1.2.5-manual.html#section-5.8
++			if (Param >= 0 && Param <= 9) {
++				ilStates[ilCurrentPos].ilPngCompression = Param;
++				return;
++			}
++			break;
+ 
+ 		default:
+ 			ilSetError(IL_INVALID_ENUM);

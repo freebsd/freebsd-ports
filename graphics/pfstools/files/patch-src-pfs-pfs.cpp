@@ -1,6 +1,6 @@
---- src/pfs/pfs.cpp.orig	2010-07-14 09:44:27.000000000 +0000
-+++ src/pfs/pfs.cpp	2014-02-20 19:04:01.566588122 +0000
-@@ -71,7 +71,7 @@
+--- src/pfs/pfs.cpp.orig	2010-07-14 09:44:27 UTC
++++ src/pfs/pfs.cpp
+@@ -71,7 +71,7 @@ const char *PFSFILEID="PFS1\x0a";
  // TagContainer implementation  
  //------------------------------------------------------------------------------
  
@@ -9,7 +9,7 @@
  
  class TagIteratorImpl: public TagIterator
  {
-@@ -570,7 +570,7 @@
+@@ -570,7 +570,7 @@ public:
  
      //Read channel IDs and tags
      //       FrameImpl::ChannelID *channelID = new FrameImpl::ChannelID[channelCount];
@@ -18,7 +18,7 @@
      for( int i = 0; i < channelCount; i++ ) {
        char channelName[MAX_CHANNEL_NAME+1], *rs;
        rs = fgets( channelName, MAX_CHANNEL_NAME, inputStream );
-@@ -592,7 +592,7 @@
+@@ -592,7 +592,7 @@ public:
      
  
      //Read channels

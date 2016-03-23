@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Moose-More
-PORTVERSION=	0.035
+PORTVERSION=	0.037
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	More tools for testing Moose packages
 
 LICENSE=	LGPL21

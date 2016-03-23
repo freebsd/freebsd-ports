@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Path-Class
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KWILLIAMS
@@ -16,5 +16,6 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

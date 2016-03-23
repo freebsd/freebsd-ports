@@ -4,6 +4,7 @@ sbin/desktop-installer
 %%DATADIR%%/GNOME2/xinitrc
 %%DATADIR%%/KDE3/xinitrc
 %%DATADIR%%/KDE4/xinitrc
+%%DATADIR%%/LUMINA/xinitrc
 %%DATADIR%%/LXDE/GiveConsole
 %%DATADIR%%/LXDE/Xsetup_0
 %%DATADIR%%/LXDE/Xstartup

@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	2012-06-08 11:09:45.000000000 +0200
-+++ src/Makefile.in	2012-06-08 11:10:00.000000000 +0200
-@@ -8531,7 +8531,7 @@
- info-am:
+--- src/Makefile.in.orig	2016-02-01 11:20:44.952568000 +0100
++++ src/Makefile.in	2016-02-01 11:22:08.462998000 +0100
+@@ -11042,7 +11042,7 @@
  
- install-data-am: install-dbuspolicyDATA install-dist_alsapathsDATA \
--	install-dist_alsaprofilesetsDATA install-dist_udevrulesDATA \
-+	install-dist_alsaprofilesetsDATA \
- 	install-padsplibLTLIBRARIES install-pulseconfDATA \
- 	install-pulseincludeHEADERS install-xdgautostartDATA
+ install-data-am: install-commonlibLTLIBRARIES install-dbuspolicyDATA \
+ 	install-dist_alsapathsDATA install-dist_alsaprofilesetsDATA \
+-	install-dist_udevrulesDATA install-padsplibLTLIBRARIES \
++	install-padsplibLTLIBRARIES \
+ 	install-pulseconfDATA install-pulseincludeHEADERS \
+ 	install-systemduserunitDATA install-xdgautostartDATA
  

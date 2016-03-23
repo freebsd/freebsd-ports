@@ -1,11 +1,11 @@
 bin/vifm
 bin/vifm-convert-dircolors
 bin/vifm-pause
-bin/vifmrc-converter
+bin/vifm-screen-split
 man/man1/vifm-convert-dircolors.1.gz
 man/man1/vifm-pause.1.gz
+man/man1/vifm-screen-split.1.gz
 man/man1/vifm.1.gz
-man/man1/vifmrc-converter.1.gz
 share/applications/vifm.desktop
 share/pixmaps/vifm.png
 %%DATADIR%%/colors/astrell-root.vifm
@@ -33,8 +33,10 @@ share/pixmaps/vifm.png
 %%DATADIR%%/vim/plugin/vifm.vim
 %%DATADIR%%/vim/syntax/vifm.vim
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README

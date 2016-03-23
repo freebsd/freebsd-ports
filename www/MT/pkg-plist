@@ -3323,4 +3323,6 @@
 @dir %%CGIDIR%%/php/extlib/smarty/demo/templates_c
 @dir %%CGIDIR%%/php/plugins
 @dir %%DATADIR%%/mt-static/support
+%%DB%%@dir %%DB_DIR%%
+%%DB%%@dir %%DBMYSQL_DIR%%
 %%MYSQL%%@dir(mysql,mysql,) %%DB_DIR%%

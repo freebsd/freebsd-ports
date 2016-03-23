@@ -18,6 +18,7 @@ LIB_DEPENDS=	libsphinxclient.so:${PORTSDIR}/textproc/libsphinxclient
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

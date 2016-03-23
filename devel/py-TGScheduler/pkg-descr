@@ -1,5 +1,7 @@
-Turbogears Scheduler is based on the TurboGears 1 built-in scheduler
-which is based on Kronos by Irmen de Jong. The scheduler makes it easy
-to have one-time or recurring tasks run as needed.
+TGScheduler is a pure Python scheduler that can be used in any application.
+Tasks can be run in-process (within threads), forked (as new processes) or
+synchronously into the code.
 
-WWW: http://tgscheduler.googlecode.com/
+The scheduler makes it easy to have one-time or recurring tasks run as needed.
+
+WWW: https://bitbucket.org/xcg/tgscheduler

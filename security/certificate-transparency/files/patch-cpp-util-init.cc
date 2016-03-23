@@ -1,6 +1,6 @@
---- cpp/util/init.cc.orig	2015-10-24 17:36:31.678280000 +0200
-+++ cpp/util/init.cc	2015-10-24 17:37:42.378343000 +0200
-@@ -48,8 +48,8 @@ void LibEventLog(int severity, const cha
+--- cpp/util/init.cc.orig	2016-02-02 11:35:23 UTC
++++ cpp/util/init.cc
+@@ -49,8 +49,8 @@ void LibEventLog(int severity, const cha
  
  
  void InitCT(int* argc, char** argv[]) {
@@ -11,7 +11,7 @@
    google::InitGoogleLogging(*argv[0]);
    google::InstallFailureSignalHandler();
  
-@@ -67,7 +67,7 @@ void InitCT(int* argc, char** argv[]) {
+@@ -68,7 +68,7 @@ void InitCT(int* argc, char** argv[]) {
  
    cert_trans::LoadCtExtensions();
  

@@ -1,0 +1,11 @@
+--- lib-src/portmixer/configure.orig	2016-01-08 22:05:48 UTC
++++ lib-src/portmixer/configure
+@@ -12028,7 +12028,7 @@ fi
+ #
+ 
+ cppflags_save="$CPPFLAGS"
+-CPPFLAGS="$CPPFLAGS $PORTAUDIO_CFLAGS"
++CPPFLAGS="$PORTAUDIO_CFLAGS $CPPFLAGS"
+ 
+ have_oss=no
+ for ac_header in sys/soundcard.h linux/soundcard.h machine/soundcard.h

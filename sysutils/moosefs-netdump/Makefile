@@ -11,7 +11,4 @@ MFS_COMPONENT=	netdump
 
 MASTERDIR=	${.CURDIR}/../moosefs-master
 
-PLIST_FILES=	sbin/mfsnetdump \
-		man/man8/mfsnetdump.8.gz
-
 .include "${MASTERDIR}/Makefile"

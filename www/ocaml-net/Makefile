@@ -25,6 +25,8 @@ USE_OCAML_CAMLP4=	yes
 USE_OCAML_LDCONFIG=	yes
 USE_OCAMLFIND_PLIST=	yes
 HAS_CONFIGURE=		yes
+CONFIGURE_ARGS=		-disable-gtk \
+			-enable-pcre
 
 ALL_TARGET=		all opt
 MAKE_JOBS_UNSAFE=	yes
@@ -45,63 +47,41 @@ OCAML_PKGDIRS=	netsys netshm equeue shell netstring rpc-generator \
 OCAML_LDLIBS=	${OCAML_PKGDIRS:S/^/${OCAML_SITELIBDIR}\//}
 
 OPTIONS_DEFINE=	NETHTTPD GTK2 GNUTLS APACHE ZIP EXAMPLES DOCS
-OPTIONS_DEFAULT= GNUTLS
+OPTIONS_DEFAULT=GNUTLS
 NETHTTPD_DESC=	Integrated HTTP daemon
 ZIP_DESC=	Compression support
 APACHE_DESC=	Apache mod connector (experimental)
 GNUTLS_DESC=	SSL/TLS support via GnuTLS
 
-CONFIGURE_ARGS+=-disable-gtk \
-		-enable-pcre
-
 GTK2_BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 GTK2_RUN_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-
 ZIP_BUILD_DEPENDS=	${SA_DIR}/zip/zip.a:${PORTSDIR}/archivers/ocaml-zip
 ZIP_RUN_DEPENDS=	${SA_DIR}/zip/zip.a:${PORTSDIR}/archivers/ocaml-zip
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNETHTTPD}
-CONFIGURE_ARGS+=	-with-nethttpd
-OCAML_PKGDIRS+=		nethttpd
-.endif
-
-.if ${PORT_OPTIONS:MGTK2}
-CONFIGURE_ARGS+=	-enable-gtk2
-OCAML_PKGDIRS+=		equeue-gtk2
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-USES+=	pkgconfig
-LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	-enable-gnutls
-OCAML_PKGDIRS+=		nettls-gnutls
-.endif
-
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE=		22+
-CONFIGURE_ARGS+=	-enable-apache -apxs ${APXS} -apache ${HTTPD}
-OCAML_PKGDIRS+=		netcgi2-apache
-.endif
-
-.if ${PORT_OPTIONS:MZIP}
-CONFIGURE_ARGS+=	-enable-zip
-OCAML_PKGDIRS+=		netzip
-.endif
+NETHTTPD_CONFIGURE_ON=	-with-nethttpd
+NETHTTPD_VARS=		OCAML_PKGDIRS+=nethttpd
+GTK2_CONFIGURE_ON=	-enable-gtk2
+GTK2_VARS=		OCAML_PKGDIRS+=equeue-gtk2
+GNUTLS_USES=		pkgconfig
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_ON=	-enable-gnutls
+GNUTLS_VARS=		OCAML_PKGDIRS+=nettls-gnutls
+APACHE_BROKEN=		does not build with APACHE option enabled
+APACHE_USE=		APACHE=22+
+APACHE_CONFIGURE_ON=	-enable-apache -apxs ${APXS} -apache ${HTTPD}
+APACHE_VARS=		OCAML_PKGDIRS+=netcgi2-apache
+ZIP_CONFIGURE_ON=	-enable-zip
+ZIP_VARS=		OCAML_PKGDIRS+=netzip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/camlzip/zip/' ${WRKSRC}/configure
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/)
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/)
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	@(cd ${WRKSRC}/examples/ && \
-		${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
-.endif
+		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)
 
 .include <bsd.port.mk>

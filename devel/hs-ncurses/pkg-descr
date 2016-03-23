@@ -1,0 +1,5 @@
+GNU ncurses is a library for creating command-line application with
+pseudo-graphical interfaces. This package is a nice, modern binding to GNU
+ncurses.
+
+WWW: https://john-millikin.com/software/haskell-ncurses/

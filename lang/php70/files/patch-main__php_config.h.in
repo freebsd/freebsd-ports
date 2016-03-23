@@ -1,0 +1,12 @@
+--- main/php_config.h.in.orig	2015-12-01 16:36:43.000000000 +0300
++++ main/php_config.h.in	2015-12-09 21:45:32.033676604 +0300
+@@ -2405,6 +2405,9 @@
+ /* Define if processor uses big-endian word */
+ #undef WORDS_BIGENDIAN
+ 
++/* Include external shared modules configurations */
++#include "ext/php_config.h"
++
+ /* Whether sprintf is broken */
+ #undef ZEND_BROKEN_SPRINTF
+ 

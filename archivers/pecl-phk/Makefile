@@ -17,6 +17,7 @@ USES=		tar:tgz
 USE_PHP=	hash
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-phk
 

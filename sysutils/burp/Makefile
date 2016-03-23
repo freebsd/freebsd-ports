@@ -21,6 +21,8 @@ USE_RC_SUBR=	burp
 GNU_CONFIGURE=	yes
 USES=		gmake localbase ncurses
 
+PORTSCOUT=	limit:^1\.4\.
+
 CONFIGURE_ARGS=	--sbindir="${PREFIX}/sbin" \
 		--sysconfdir=${ETCDIR} \
 

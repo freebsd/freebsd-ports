@@ -1,5 +1,6 @@
 bin/zipcmp
 bin/zipmerge
+bin/ziptool
 include/zip.h
 include/zipconf.h
 lib/libzip.a
@@ -9,6 +10,7 @@ lib/libzip.so.4.0.0
 libdata/pkgconfig/libzip.pc
 man/man1/zipcmp.1.gz
 man/man1/zipmerge.1.gz
+man/man1/ziptool.1.gz
 man/man3/ZIP_SOURCE_GET_ARGS.3.gz
 man/man3/libzip.3.gz
 man/man3/zip_add.3.gz

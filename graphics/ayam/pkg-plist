@@ -197,6 +197,7 @@ lib/ayam/tcl/zap.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/birail2.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/birail2vc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/bpatch.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/btypes.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/cap.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/cbsps.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/chordalex.gif
@@ -237,13 +238,16 @@ lib/ayam/tcl/zap.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/insertac.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/inskn.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/insknnp.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/interpnp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/ipatch.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/lights.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/listbox.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/local-1.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/local-2.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/local-3.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/main.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/makecomp.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/makecomps.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/mark.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/markac.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/meta.gif
@@ -260,6 +264,10 @@ lib/ayam/tcl/zap.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/ncircles.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/ncurve.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/npatch.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/nsphere-s.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/nsphere-w.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/nsphere2-s.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/nsphere2-w.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/numpnted.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/objsearch.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/offnc.gif
@@ -267,6 +275,7 @@ lib/ayam/tcl/zap.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/pamesh.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/plotcur.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/polyh-jtD.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/pomesh.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/prefs.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/primitives.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/propgui.gif
@@ -280,6 +289,7 @@ lib/ayam/tcl/zap.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/remknnp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/resetwac.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/revolve.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/rhcs.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/rotateaac.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/rotateac.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/rotatevac.gif
@@ -302,8 +312,11 @@ lib/ayam/tcl/zap.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/sfcurve.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/sfcurvetmax.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/sgordon.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/shadowmaps.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/shiftclsbsp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/skin.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/smethods-def.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/smethods-hi.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/snapgrpnt.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/snapmrkpnt.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/splitnc.gif
@@ -316,6 +329,7 @@ lib/ayam/tcl/zap.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/swin.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/swing.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/tagac.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/tagbac.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/tce.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/tcone.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/text-ayam.gif
@@ -327,6 +341,7 @@ lib/ayam/tcl/zap.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/treeview.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/trimnc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/trpnt.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/tweenc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/unclampnc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/unclampnp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/view.gif

@@ -46,7 +46,6 @@ OPTIONS_GROUP=	PLAYBACK
 OPTIONS_GROUP_PLAYBACK=	AO CURL HTTPD JACK OPENAL OSS PIPE PULSEAUDIO SHOUTCAST
 
 ADPLUG_DESC=	AdPlug support
-FLUIDSYNTH_DESC=FludSynth support (MIDI files)
 GME_DESC=	GME support (video game music files)
 LAME_DESC=	Support for MP3 Icecast Streams
 PIPE_DESC=	Support for writing PCM audio to a pipe

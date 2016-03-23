@@ -1,0 +1,13 @@
+Disable check for updates button
+
+--- panels/info/info.ui.orig	2015-09-01 11:14:23.676754000 +0200
++++ panels/info/info.ui	2015-09-01 11:14:39.051974000 +0200
+@@ -551,7 +551,7 @@
+                                     <property name="can_focus">True</property>
+                                     <property name="receives_default">True</property>
+                                     <property name="use_action_appearance">False</property>
+-                                    <property name="visible">True</property>
++                                    <property name="visible">False</property>
+                                   </object>
+                                   <packing>
+                                     <property name="expand">False</property>

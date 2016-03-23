@@ -5,10 +5,19 @@
  cxx_warn_flags    = []
  debug_flags   = ['-g', '-O0']
 -release_flags = ['-O2']
-+release_flags = ['']
++release_flags = []
  defines       = []
  
  def CalcCommonFlags():
+@@ -69,7 +69,7 @@ def CalcCommonFlags():
+     global common_warn_flags, cxx_warn_flags, debug_flags, defines
+     if BV.IsGccCompiler():
+         # GCC
+-        common_warn_flags = ['-ansi']
++        common_warn_flags = []
+         # -Wno-reorder - not to warn if not accurate order in ctor (let compiler do!)
+         # :TODO: why 
+         #   CXXCOM = $CXX -o $TARGET -c $CXXFLAGS $CCFLAGS ...
 @@ -148,18 +148,6 @@ def AdjustConfigOptions(env):
      #env.Replace (PATH = user_options_dict['PATH'])
      #env.Replace (AR = user_options_dict['AR'])

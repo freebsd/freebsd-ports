@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gandi.cli
-PORTVERSION=	0.16
+PORTVERSION=	0.18
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,14 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}click>=3.1:${PORTSDIR}/devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}ipy>0:${PORTSDIR}/net-mgmt/py-ipy
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}coverage>0:${PORTSDIR}/devel/py-coverage
-
-OPTIONS_DEFINE=		TESTS
-
-TESTS_DESC=		Install test suite requirements
-TESTS_BUILD_DEPENDS=	${RUN_DEPENDS} \
-			${TEST_DEPENDS}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
@@ -37,7 +29,11 @@ NO_ARCH=	yes
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 .endif
 
-regression-test: build
+post-extract:
+	${FIND} ${WRKSRC} -type d -name __pycache__ -exec ${RM} -rf {} + && \
+	${FIND} ${WRKSRC} -type f -name '*.py[co]' -exec ${RM} -f {} +
+
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.post.mk>

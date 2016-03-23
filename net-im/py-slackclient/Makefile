@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	slackclient
-PORTVERSION=	0.14
+PORTVERSION=	1.0.0
 CATEGORIES=	net-im python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -12,9 +11,20 @@ COMMENT=	Python client for Slack.com
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}websocket-client>0:${PORTSDIR}/www/py-websocket-client
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}websocket-client>0:${PORTSDIR}/www/py-websocket-client \
+		${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
 
 USES=		python:-2.7
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
+
+GH_ACCOUNT=	slackhq
+GH_PROJECT=	python-${PORTNAME}
+
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>

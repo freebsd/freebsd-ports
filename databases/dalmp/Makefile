@@ -3,6 +3,7 @@
 
 PORTNAME=	dalmp
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -19,7 +20,7 @@ GH_PROJECT=	${PORTNAME:tu}
 USES=		tar:bzip2
 
 NO_BUILD=	yes
-USE_PHP=	pcre mysql mysqli session memcache sqlite3 curl
+USE_PHP=	pcre mysqli session memcache sqlite3 curl
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

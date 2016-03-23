@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Whois-Raw
-PORTVERSION=	2.91
+PORTVERSION=	2.93
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Very simple Perl interface to query raw whois data
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-Net-IDN-Encode>=0:${PORTSDIR}/textproc/p5-Net-IDN-Encode \

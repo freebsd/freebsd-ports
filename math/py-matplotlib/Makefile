@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	matplotlib
-PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	math python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,13 +14,17 @@ LICENSE=	PSFL
 
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libtcl86.so:${PORTSDIR}/lang/tcl86
 RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}cycler>0:${PORTSDIR}/devel/py-cycler \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:${PORTSDIR}/devel/py-pyparsing
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:${PORTSDIR}/devel/py-pyparsing \
+		${PYTHON_PKGNAMEPREFIX}tornado>0:${PORTSDIR}/www/py-tornado
 
-USES=		pkgconfig python shebangfix uniquefiles:dirs
+USES=		compiler:c++11-lib gettext pkgconfig python shebangfix uniquefiles:dirs
 USE_PYTHON=	autoplist distutils
 CFLAGS+=	-I${LOCALBASE}/include
 
@@ -32,9 +35,9 @@ OPTIONS_SUB=		yes
 GTKBACKEND_DESC=	GTK backend support
 GTKBACKEND_VARS=	GTK_BACKEND=True
 GTKBACKEND_VARS_OFF=	GTK_BACKEND=False
-GTKBACKEND_USE=		GNOME=gtk20,pygtk2
+GTKBACKEND_USE=		GNOME=gtk20,pygtk2,cairo,gdkpixbuf2
 GTKAGGBACKEND_DESC=	GTKAgg backend support
-GTKAGGBACKEND_USE=	GNOME=gtk20,pygtk2
+GTKAGGBACKEND_USE=	GNOME=gtk20,pygtk2,cairo,gdkpixbuf2
 GTKAGGBACKEND_VARS=	GTKAGG_BACKEND=True
 GTKAGGBACKEND_VARS_OFF=	GTKAGG_BACKEND=False
 QT4AGGBACKEND_DESC=	Qt4Agg backend support

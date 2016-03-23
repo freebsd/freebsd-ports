@@ -88,7 +88,18 @@ lib/gedit/plugins/commander/info.py
 lib/gedit/plugins/commander/modules.py
 lib/gedit/plugins/commander/utils.py
 lib/gedit/plugins/commander/windowactivatable.py
+lib/gedit/plugins/dashboard.plugin
+lib/gedit/plugins/dashboard/__init__.py
+lib/gedit/plugins/dashboard/__pycache__/__init__.cpython-%%PYVER%%.pyc
+lib/gedit/plugins/dashboard/__pycache__/__init__.cpython-%%PYVER%%.%%PYOEXTENSION%%
+lib/gedit/plugins/dashboard/__pycache__/dashboard.cpython-%%PYVER%%.pyc
+lib/gedit/plugins/dashboard/__pycache__/dashboard.cpython-%%PYVER%%.%%PYOEXTENSION%%
+lib/gedit/plugins/dashboard/__pycache__/utils.cpython-%%PYVER%%.pyc
+lib/gedit/plugins/dashboard/__pycache__/utils.cpython-%%PYVER%%.%%PYOEXTENSION%%
+lib/gedit/plugins/dashboard/dashboard.py
+lib/gedit/plugins/dashboard/utils.py
 lib/gedit/plugins/drawspaces.plugin
+lib/gedit/plugins/findinfiles.plugin
 lib/gedit/plugins/git.plugin
 lib/gedit/plugins/git/__init__.py
 lib/gedit/plugins/git/__pycache__/__init__.cpython-%%PYVER%%.pyc
@@ -116,7 +127,9 @@ lib/gedit/plugins/joinlines.plugin
 lib/gedit/plugins/joinlines.py
 lib/gedit/plugins/libbookmarks.so
 lib/gedit/plugins/libdrawspaces.so
+lib/gedit/plugins/libfindinfiles.so
 lib/gedit/plugins/libwordcompletion.so
+lib/gedit/plugins/libzeitgeist.so
 lib/gedit/plugins/multiedit.plugin
 lib/gedit/plugins/multiedit/__init__.py
 lib/gedit/plugins/multiedit/__pycache__/__init__.cpython-%%PYVER%%.pyc
@@ -158,6 +171,7 @@ lib/gedit/plugins/textsize/__pycache__/viewactivatable.cpython-%%PYVER%%.%%PYOEX
 lib/gedit/plugins/textsize/signals.py
 lib/gedit/plugins/textsize/viewactivatable.py
 lib/gedit/plugins/wordcompletion.plugin
+lib/gedit/plugins/zeitgeist.plugin
 share/appdata/gedit-bookmarks.metainfo.xml
 share/appdata/gedit-bracketcompletion.metainfo.xml
 share/appdata/gedit-charmap.metainfo.xml
@@ -165,7 +179,9 @@ share/appdata/gedit-codecomment.metainfo.xml
 share/appdata/gedit-colorpicker.metainfo.xml
 share/appdata/gedit-colorschemer.metainfo.xml
 share/appdata/gedit-commander.metainfo.xml
+share/appdata/gedit-dashboard.metainfo.xml
 share/appdata/gedit-drawspaces.metainfo.xml
+share/appdata/gedit-findinfiles.metainfo.xml
 share/appdata/gedit-git.metainfo.xml
 share/appdata/gedit-joinlines.metainfo.xml
 share/appdata/gedit-multiedit.metainfo.xml
@@ -174,6 +190,7 @@ share/appdata/gedit-synctex.metainfo.xml
 share/appdata/gedit-terminal.metainfo.xml
 share/appdata/gedit-textsize.metainfo.xml
 share/appdata/gedit-wordcompletion.metainfo.xml
+share/appdata/gedit-zeitgeist.metainfo.xml
 share/gedit/plugins/colorschemer/ui/schemer.ui
 share/gedit/plugins/commander/modules/__pycache__/align.cpython-%%PYVER%%.pyc
 share/gedit/plugins/commander/modules/__pycache__/align.cpython-%%PYVER%%.%%PYOEXTENSION%%
@@ -822,7 +839,6 @@ share/locale/sk/LC_MESSAGES/gedit-plugins.mo
 share/locale/sl/LC_MESSAGES/gedit-plugins.mo
 share/locale/sq/LC_MESSAGES/gedit-plugins.mo
 share/locale/sr/LC_MESSAGES/gedit-plugins.mo
-share/locale/sr@Latn/LC_MESSAGES/gedit-plugins.mo
 share/locale/sr@latin/LC_MESSAGES/gedit-plugins.mo
 share/locale/sv/LC_MESSAGES/gedit-plugins.mo
 share/locale/ta/LC_MESSAGES/gedit-plugins.mo

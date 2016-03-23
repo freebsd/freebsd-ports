@@ -19,19 +19,3 @@
  	    SHLIB_CFLAGS="-fPIC"
  	    SHLIB_LD="${CC} -shared"
  	    SHLIB_LD_LIBS="${SHLIB_LD_LIBS} -Wl,-soname,\$@"
-@@ -5486,15 +5491,6 @@
- 		CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
- 		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
- fi
--	    case $system in
--	    FreeBSD-3.*)
--		# Version numbers are dot-stripped by system policy.
--		TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
--		UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
--		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so'
--		TCL_LIB_VERSIONS_OK=nodots
--		;;
--	    esac
- 	    ;;
- 	Darwin-*)
- 	    CFLAGS_OPTIMIZE="-Os"

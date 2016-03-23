@@ -22,6 +22,8 @@ USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	crack
+IGNORE_WITH_PHP=	70
+
 EXTRACT_AFTER_ARGS=--no-same-permissions --no-same-owner --exclude libcrack
 CONFIGURE_ARGS=	--with-crack=${LOCALBASE}
 CFLAGS+=	-Wno-deprecated

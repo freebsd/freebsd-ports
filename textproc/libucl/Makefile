@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libucl
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	textproc devel
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -19,19 +18,22 @@ OPTIONS_SUB=		yes
 REGEX_DESC=		Enable regex checking for schema
 SIGNATURES_DESC=	Enable signatures checking
 URLS_DESC=		Enable fetching URLs
-UTILS_DESC=		Install utilities: chargen, ucldump
+UTILS_DESC=		Enable tools:  ucl_chargen, ucl_ucldump, ucl_tool
 
-LUA_USES=		lua
 LUA_CONFIGURE_ENABLE=	lua
+LUA_CPPFLAGS=		-I${LUA_INCDIR}
+LUA_LDFLAGS=		-L${LUA_LIBDIR}
+LUA_USES=		lua
 
 REGEX_CONFIGURE_ENABLE=	regex
 
-SIGNATURES_USE=			OPENSSL=yes
 SIGNATURES_CONFIGURE_ENABLE=	signatures
 SIGNATURES_CPPFLAGS=		-I${OPENSSLINC}
 SIGNATURES_LDFLAGS=		-L${OPENSSLLIB}
+SIGNATURES_USE=			OPENSSL=yes
 
 URLS_CONFIGURE_ENABLE=	urls
+
 UTILS_CONFIGURE_ENABLE=	utils
 
 USES=		autoreconf gmake libtool pathfix pkgconfig
@@ -44,10 +46,9 @@ CONFIGURE_ARGS+=	--disable-silent-rules
 GH_ACCOUNT=	vstakhov
 
 PATHFIX_MAKEFILEIN=	Makefile.am
-INSTALL_TARGET=		install-strip
 CONFLICTS_INSTALL=	ucl
 
-regression-test: build
-	@cd ${WRKSRC} && ${MAKE} check
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	eigen
-PORTVERSION=	3.2.7
+PORTVERSION=	3.2.8
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${PORTNAME}/${PORTNAME}/get/
 DISTNAME=	${PORTVERSION}
@@ -13,10 +13,10 @@ COMMENT=	Lightweight library for vector and matrix math
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	multi
 
+CMAKE_ARGS=	-DPKGCONFIG_INSTALL_DIR:PATH="${PREFIX}/libdata/pkgconfig"
 USES=		cmake:outsource tar:bzip2
-CONFIGURE_ENV+=	PKG_CONFIG_LIBDIR="${PREFIX}/libdata"
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-b30b87236a1b
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-07105f7124f9
 
 .include <bsd.port.mk>

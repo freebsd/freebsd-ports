@@ -5,11 +5,10 @@ PORTNAME=	aegisub
 PORTVERSION=	3.2.2
 PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
-		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
-		ftp://ftp2.aegisub.org/pub/archives/releases/source/:aegisub \
-		GH
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:aegisub ${FFMS_DISTFILE}
+MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/ \
+		ftp://ftp.aegisub.org/pub/archives/releases/source/ \
+		ftp://ftp2.aegisub.org/pub/archives/releases/source/
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform subtitle editor
@@ -21,12 +20,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libass.so:${PORTSDIR}/multimedia/libass \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	FFMS
-GH_PROJECT=	ffms2
-GH_TAGNAME=	${FFMS_VERSION}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+USE_GITHUB=	nodefault
 
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake iconv \
 		pkgconfig tar:xz
@@ -63,6 +57,7 @@ FFMPEG_CONFIGURE_ENV=	FFMS2_CFLAGS="${FFMS_CFLAGS}" \
 			FFMS2_LIBS="${FFMS_LIBS}"
 FFMPEG_CONFIGURE_OFF=	--without-ffms
 FFMPEG_CPPFLAGS=	${FFMS_CFLAGS}
+FFMPEG_GH_TUPLE=	FFMS:ffms2:2.20:ffms
 FFTW_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
 FFTW_CONFIGURE_OFF=	--without-fftw3
 HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
@@ -76,13 +71,8 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=\
 			--without-libpulse
 
-FFMS_NAME=	ffms2
-FFMS_VERSION=	2.20
-FFMS_DISTNAME=	${FFMS_NAME}-${FFMS_VERSION}
-FFMS_DISTFILE=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}-${GH_TAGNAME_SANITIZED}${EXTRACT_SUFX}
-FFMS_WRKSRC=	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME_EXTRACT}
-FFMS_CFLAGS=	-I${FFMS_WRKSRC}/include
-FFMS_LIBS=	${FFMS_WRKSRC}/src/core/.libs/libffms2.a \
+FFMS_CFLAGS=	-I${WRKSRC_ffms}/include
+FFMS_LIBS=	${WRKSRC_ffms}/src/core/.libs/libffms2.a \
 		$$(pkg-config --libs libavcodec libavformat libswscale libavutil libavresample)
 
 .include <bsd.port.pre.mk>
@@ -120,19 +110,15 @@ post-patch:
 		'/virtual /s|= default;$$|{ }|'
 .endif
 
-pre-configure:
-.if ${PORT_OPTIONS:MFFMPEG}
-	@(cd ${FFMS_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./configure \
+pre-configure-FFMPEG-on:
+	@(cd ${WRKSRC_ffms} && ${SETENV} ${CONFIGURE_ENV} ./configure \
 		--disable-shared CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}")
-.endif
 
-pre-build:
-.if ${PORT_OPTIONS:MFFMPEG}
-	@(cd ${FFMS_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+pre-build-FFMPEG-on:
+	@(cd ${WRKSRC_ffms} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} ${MAKEFILE} -j${MAKE_JOBS_NUMBER} ${MAKE_ARGS} \
 		${ALL_TARGET})
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/automation/v4-docs

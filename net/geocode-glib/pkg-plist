@@ -25,7 +25,6 @@ share/gtk-doc/html/geocode-glib-1.0/geocode-glib-geocode-enum-types.html
 share/gtk-doc/html/geocode-glib-1.0/geocode-glib-geocode-error.html
 share/gtk-doc/html/geocode-glib-1.0/home.png
 share/gtk-doc/html/geocode-glib-1.0/index.html
-share/gtk-doc/html/geocode-glib-1.0/index.sgml
 share/gtk-doc/html/geocode-glib-1.0/left-insensitive.png
 share/gtk-doc/html/geocode-glib-1.0/left.png
 share/gtk-doc/html/geocode-glib-1.0/right-insensitive.png
@@ -34,9 +33,13 @@ share/gtk-doc/html/geocode-glib-1.0/style.css
 share/gtk-doc/html/geocode-glib-1.0/up-insensitive.png
 share/gtk-doc/html/geocode-glib-1.0/up.png
 share/icons/gnome/scalable/places/poi-airport.svg
+share/icons/gnome/scalable/places/poi-bar.svg
 share/icons/gnome/scalable/places/poi-building.svg
 share/icons/gnome/scalable/places/poi-bus-stop.svg
 share/icons/gnome/scalable/places/poi-car.svg
 share/icons/gnome/scalable/places/poi-marker.svg
+share/icons/gnome/scalable/places/poi-place-of-worship.svg
 share/icons/gnome/scalable/places/poi-railway-station.svg
+share/icons/gnome/scalable/places/poi-restaurant.svg
+share/icons/gnome/scalable/places/poi-school.svg
 share/icons/gnome/scalable/places/poi-town.svg

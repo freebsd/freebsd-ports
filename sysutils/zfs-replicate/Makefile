@@ -1,4 +1,4 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
+# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	zfs-replicate
@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://blogs.sun.com/constantin/resource/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	ZFS Snapshot Replication Script
 
 RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh

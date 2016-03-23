@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	openimageio
-PORTVERSION=	1.5.20
+PORTVERSION=	1.6.10
 DISTVERSIONPREFIX=	Release-
-PORTREVISION?=	3
+PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -19,14 +19,14 @@ GH_PROJECT=	oiio
 # fbm also installs bin/idiff
 CONFLICTS=	fbm-[0-9]*
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c11
 CMAKE_ARGS=	-DBUILDSTATIC:BOOL=OFF \
 		-DLINKSTATIC:BOOL=OFF \
 		-DNOTHREADS:BOOL=OFF \
 		-DSTOP_ON_WARNING:BOOL=OFF \
-		-DUSE_CPP11:BOOL=OFF \
+		-DOIIO_BUILD_CPP11:BOOL=OFF \
+		-DOIIO_BUILD_CPP14:BOOL=OFF \
 		-DUSE_OPENSSL:BOOL=OFF
-CXXFLAGS+=	-D__STDC_CONSTANT_MACROS
 
 OPTIONS_DEFINE=		DOCS FFMPEG FREETYPE GIF IMAGEVIEWER OCIO OPENCV \
 			OPENJPEG RAW TEST
@@ -98,7 +98,7 @@ PLIST=		${PKGDIR}/pkg-plist-pybind
 #while oiio supports py3, ports doesn't have py3 support for boost-python yet
 USES+=		python:2
 CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=ON -DUSE_PYTHON3:BOOL=OFF \
-		-DOIIO_BUILD_TOOLS:BOOL=OFF
+		-DOIIO_BUILD_TOOLS:BOOL=OFF -DUSE_FFMPEG:BOOL=OFF
 .endif
 
 post-patch:
@@ -107,10 +107,13 @@ post-patch:
 
 post-install:
 .if ${SLAVE_PORT} == no
-	${LN} -sf libOpenImageIO.so.1.5 \
+	${LN} -sf libOpenImageIO.so.1.6 \
 		${STAGEDIR}${PREFIX}/lib/libOpenImageIO.so.1
-	${LN} -sf libOpenImageIO_Util.so.1.5 \
+	${LN} -sf libOpenImageIO_Util.so.1.6 \
 		${STAGEDIR}${PREFIX}/lib/libOpenImageIO_Util.so.1
 .endif
+
+do-test-TEST-on:
+	@cd ${BUILD_WRKSRC} && ${MAKE_CMD} ARGS=-V test
 
 .include <bsd.port.mk>

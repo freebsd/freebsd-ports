@@ -1,5 +1,4 @@
 bin/etherape
-%%ETCDIR%%/services
 man/man1/etherape.1.gz
 share/applications/etherape.desktop
 %%DATADIR%%/glade/etherape.glade

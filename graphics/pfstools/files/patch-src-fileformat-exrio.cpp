@@ -1,6 +1,6 @@
---- src/fileformat/exrio.cpp.orig	2005-06-15 13:36:54.000000000 +0000
-+++ src/fileformat/exrio.cpp	2014-02-20 19:04:01.546588828 +0000
-@@ -54,14 +54,14 @@
+--- src/fileformat/exrio.cpp.orig	2005-06-15 13:36:54 UTC
++++ src/fileformat/exrio.cpp
+@@ -54,14 +54,14 @@ OpenEXRReader::OpenEXRReader( const char
    }
  
    DEBUG_STR << "OpenEXR file \"" << filename << "\" ("
@@ -17,7 +17,7 @@
    
    Imf::Rgba* tmp_img = new Imf::Rgba[width*height];
  
-@@ -93,7 +93,7 @@
+@@ -93,7 +93,7 @@ void OpenEXRReader::readImage( pfs::Arra
  OpenEXRReader::~OpenEXRReader()
  {
    delete file;

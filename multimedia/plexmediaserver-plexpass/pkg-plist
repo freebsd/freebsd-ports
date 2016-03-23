@@ -1482,10 +1482,10 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nme/URL/NME/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/URL/NOS/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nowthisnews/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nowthisnews/URL/NowThis News/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/URL/NPO/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.oratv/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.oratv/URL/Ora TV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.orftvthek/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.orftvthek/URL/ORF TVThek Live/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.orftvthek/URL/ORF TVThek VOD/ServiceCode.pys
@@ -1497,7 +1497,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/faststream.in/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/gorillavid.in/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/nosvideo.com/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/royalvids.eu/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/vidzi.tv/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/Services.bundle/Contents/Service Sets/com.plexapp.plugins.pftv/URL/vodlocker.com/ServiceCode.pys
@@ -1687,7 +1686,6 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/System.bundle/Contents/Strings/ko.json
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/System.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheMovieDB.bundle/Contents/Code/__init__.py
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheMovieDB.bundle/Contents/Code/countrycode.py
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheMovieDB.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheMovieDB.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheMovieDB.bundle/Contents/Resources/attribution.png
@@ -1701,8 +1699,8 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/TheTVDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Info.plist
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.891ef9dc7f993d3aafe782dd989ec08a.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.1fee7e71799aa44574cdbde9fc7ed5c6.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.c2a54ecf8b2093b173e7a6b94ad3722b.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/css/main.v3.8a91e94955b34ebad3c6186b65927f35.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon-mask.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/favicon.ico
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/base/plex-logo.96faf245690b14fdd33eccd3294ac57f.svg
@@ -1764,14 +1762,27 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone-portrait.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone5-portrait@2x.png
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/asustor.4151ae1be5b67680c6b5160ac3fcee7e.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/drobo.53afe68dfb0e698ff5c104db424f52ba.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/freebsd.c4064fd247f89578aa3c92a34a1a14b8.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/linux.a66ceca3ea9d4b6261bc0bbbed31f8e1.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/mac.b3f08e8b89c4bce5381d28e322f83d78.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/netgear.843dc6c6c650a11eab86589c9737e13c.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/qnap.f33e9668d5725d98b5f5d3796bde8108.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/seagate.4f1104d9e8724381ca285aaaa8df0b5d.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/synology.f796634e7aad4aaed474601d28c9f562.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/thecus.e013a776ee8e35198874ca0633fddd10.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/unraid.2c0408d66d6e160afad628266bb5b1b0.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/wd.87277f9739ddb3828cfeaa8003ca6eea.svg
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/platform-logos/windows.a86d11ea55c7312c8e52af3cad19a556.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/queue/bookmarklet-steps-ie.3cbda4e75b0dd0e186e0c24999ab0d1d.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/queue/bookmarklet-steps.abc5147d9257f0ec59f7b2257db9cb8f.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/queue/email-links.f1b12dd82ea85b39a4c0fa07dd6df095.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/gracenote.18089cb7063ad397523859fa93f2d54c.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/vevo.0aa36b37d6a9aedfe67df4c5ff2ae8e0.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.4639c8161e9b5c8f178c.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.07251d82117d8bd6f466.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.049a0b6a725e89234822.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.2595594cc3e332b1074a.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/plex.xml
@@ -1874,6 +1885,7 @@
 %%DATADIR%%/Resources/Profiles/Windows.xml
 %%DATADIR%%/Resources/Profiles/Xbox 360.xml
 %%DATADIR%%/Resources/Profiles/Xbox One.xml
+%%DATADIR%%/Resources/Profiles/ZP.xml
 %%DATADIR%%/Resources/Profiles/cloudsync.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-1,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-1,1.xml

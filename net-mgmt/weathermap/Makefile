@@ -5,12 +5,14 @@ PORTNAME=	weathermap
 PORTVERSION=	1.1.1
 PORTREVISION=	6
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://netmon.grnet.gr/weathermap/dist/
+MASTER_SITES=	https://netmon.grnet.gr/weathermap/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This tool displays the utilization of the network links
 
 BROKEN=		unfetchable
+DEPRECATED=	Distfile unavailable, website no longer exists
+EXPIRATION_DATE=2016-04-04
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,6 +25,8 @@ USES=		perl5 shebangfix
 NO_BUILD=	yes
 NO_ARCH=	yes
 SHEBANG_FILES=	weathermap
+
+PORTSCOUT=	ignore
 
 PORTDOCS=	README INSTALL
 

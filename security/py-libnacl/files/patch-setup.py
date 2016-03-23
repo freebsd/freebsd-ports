@@ -1,6 +1,6 @@
---- setup.py.orig	2015-03-17 16:11:06 UTC
+--- setup.py.orig	2016-01-04 16:47:15 UTC
 +++ setup.py
-@@ -36,4 +36,6 @@ setup(name=NAME,
+@@ -29,4 +29,6 @@ setup(name=NAME,
            'Intended Audience :: Developers',
            'Topic :: Security :: Cryptography',
            ],

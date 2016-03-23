@@ -17,5 +17,6 @@ USES=		tar:tgz
 USE_PHP=	session
 USE_PHPEXT=	yes
 USE_PHP_BUILD=	yes
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

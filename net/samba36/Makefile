@@ -2,10 +2,12 @@
 
 PORTNAME=		${SAMBA_BASENAME}36
 PORTVERSION=		3.6.25
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba SAMBA/samba/stable SAMBA/samba/pre
 DISTNAME=		${SAMBA_BASENAME}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
+PATCH_SITES=		https://www.samba.org/samba/ftp/patches/security/
+PATCHFILES=		samba-3.6.25-security-2015-12-16.patch:-p1
 
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		Free SMB and CIFS client and server for Unix
@@ -14,6 +16,10 @@ LICENSE=		GPLv3
 LICENSE_FILE=		${WRKDIR}/${DISTNAME}/COPYING
 
 CONFLICTS?=		*samba3[2-5]-3.*
+
+DEPRECATED=		not supported by the upstream
+EXPIRATION_DATE=	2016-04-01
+
 # Additional patches from Sernet.de
 PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch

@@ -17,7 +17,7 @@ USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	${PORTNAME}
-IGNORE_WITH_PHP=	56
+IGNORE_WITH_PHP=	56 70
 
 post-extract::
 	@${CAT} ${PKGMESSAGE}

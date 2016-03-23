@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qnapi
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	polish multimedia
 
 MAINTAINER=	pawel@FreeBSD.org
@@ -11,12 +11,14 @@ COMMENT=	Qt5 based subtitle downloader
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-BUILD_DEPENDS=	libmaia>0:${PORTSDIR}/net/libmaia
+BUILD_DEPENDS=	qt-maybe>0:${PORTSDIR}/devel/qt-maybe \
+		libmaia>0:${PORTSDIR}/net/libmaia
+LIB_DEPENDS=	libmediainfo.so:${PORTSDIR}/multimedia/libmediainfo
 RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 USE_GITHUB=	yes
 
-USES=		compiler:c++11-lib qmake
+USES=		compiler:c++11-lib pkgconfig qmake
 USE_QT5=	buildtools_build gui network widgets xml
 
 CXXFLAGS+=	-I${LOCALBASE}/include/maia

@@ -1,5 +1,5 @@
-@unexec if cmp -s %D/%%MMDIR%%/Mailman/mm_cfg.py %D/%%MMDIR%%/Mailman/mm_cfg.py.dist; then rm -f %D/%%MMDIR%%/Mailman/mm_cfg.py; fi
-@unexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
+@postunexec if cmp -s %D/%%MMDIR%%/Mailman/mm_cfg.py %D/%%MMDIR%%/Mailman/mm_cfg.py.dist; then rm -f %D/%%MMDIR%%/Mailman/mm_cfg.py; fi
+@postunexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
 %%IMGDIR%%/mailman-large.jpg
 %%IMGDIR%%/gnu-head-tiny.jpg
 %%IMGDIR%%/mailman.jpg
@@ -308,7 +308,7 @@
 %%MMDIR%%/Mailman/i18n.py
 %%MMDIR%%/Mailman/i18n.pyc
 %%MMDIR%%/Mailman/mm_cfg.py.dist
-@exec [ -f %B/mm_cfg.py ] || cp %B/%f %B/mm_cfg.py
+@postexec [ -f %B/mm_cfg.py ] || cp %B/%f %B/mm_cfg.py
 %%MMDIR%%/Mailman/versions.py
 %%MMDIR%%/Mailman/versions.pyc
 %%MMDIR%%/bin/FreeBSD-post-install
@@ -379,7 +379,7 @@
 %%MMDIR%%/cron/mailpasswds
 %%MMDIR%%/cron/nightly_gzip
 %%SUB_HTDIG%%%%MMDIR%%/cron/nightly_htdig
-@unexec rm -f %%MMDIR%%/cron/paths.pyc
+@postunexec rm -f %%MMDIR%%/cron/paths.pyc
 %%MMDIR%%/cron/paths.py
 %%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig
 %%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig.pl
@@ -716,6 +716,7 @@
 %%NLS%%%%MMDIR%%/templates/da/unsubauth.txt
 %%NLS%%%%MMDIR%%/templates/da/userpass.txt
 %%NLS%%%%MMDIR%%/templates/da/verify.txt
+%%NLS%%%%MMDIR%%/templates/de/adminaddrchgack.txt
 %%NLS%%%%MMDIR%%/templates/de/admindbdetails.html
 %%NLS%%%%MMDIR%%/templates/de/admindbpreamble.html
 %%NLS%%%%MMDIR%%/templates/de/admindbsummary.html
@@ -1351,6 +1352,7 @@
 %%NLS%%%%MMDIR%%/templates/it/verify.txt
 %%NLS%%%%MMDIR%%/templates/it/probe.txt
 %%NLS%%%%MMDIR%%/templates/ja/probe.txt
+%%NLS%%%%MMDIR%%/templates/ja/adminaddrchgack.txt
 %%NLS%%%%MMDIR%%/templates/ja/admindbdetails.html
 %%NLS%%%%MMDIR%%/templates/ja/admindbpreamble.html
 %%NLS%%%%MMDIR%%/templates/ja/admindbsummary.html
@@ -1555,9 +1557,6 @@
 %%NLS%%%%MMDIR%%/templates/no/unsubauth.txt
 %%NLS%%%%MMDIR%%/templates/no/userpass.txt
 %%NLS%%%%MMDIR%%/templates/no/verify.txt
-%%NLS%%%%MMDIR%%/templates/pl/admindbdetails.html
-%%NLS%%%%MMDIR%%/templates/pl/admindbpreamble.html
-%%NLS%%%%MMDIR%%/templates/pl/admindbsummary.html
 %%NLS%%%%MMDIR%%/templates/pl/adminsubscribeack.txt
 %%NLS%%%%MMDIR%%/templates/pl/adminunsubscribeack.txt
 %%NLS%%%%MMDIR%%/templates/pl/admlogin.html
@@ -1573,11 +1572,9 @@
 %%NLS%%%%MMDIR%%/templates/pl/article.html
 %%NLS%%%%MMDIR%%/templates/pl/bounce.txt
 %%NLS%%%%MMDIR%%/templates/pl/checkdbs.txt
-%%NLS%%%%MMDIR%%/templates/pl/convert.txt
 %%NLS%%%%MMDIR%%/templates/pl/cronpass.txt
 %%NLS%%%%MMDIR%%/templates/pl/disabled.txt
 %%NLS%%%%MMDIR%%/templates/pl/emptyarchive.html
-%%NLS%%%%MMDIR%%/templates/pl/headfoot.html
 %%NLS%%%%MMDIR%%/templates/pl/help.txt
 %%NLS%%%%MMDIR%%/templates/pl/invite.txt
 %%NLS%%%%MMDIR%%/templates/pl/listinfo.html

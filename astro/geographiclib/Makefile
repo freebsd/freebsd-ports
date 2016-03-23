@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geographiclib
-PORTVERSION=	1.45
+PORTVERSION=	1.46
 CATEGORIES=	astro
 MASTER_SITES=	SF/geographiclib/distrib\
 		SF/geographiclib:geoids,gravity,magnetic
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_check_compile_flag.m4:${PORTSDIR}/devel/autoconf-archive
 
-USES=		autoreconf gmake libtool python
+USES=		autoreconf compiler:c++11-lang gmake libtool python
 PORTDOCS=	*
 FETCH_ENV+=	HTTP_REFERER=
 GNU_CONFIGURE=	yes

@@ -19,6 +19,7 @@ LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 # libImlib2 may or may not depend on X, however,
 # imlib2 extension doesn't need X related functions in libImlib2

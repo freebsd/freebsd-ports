@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Method-Modifiers
-PORTVERSION=	2.11
-PORTREVISION=	1
+PORTVERSION=	2.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,5 +19,6 @@ TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

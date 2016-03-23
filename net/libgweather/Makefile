@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgweather
-PORTVERSION=	3.16.1
+PORTVERSION=	3.18.1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -10,15 +10,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to accessing online weather informations
 
-BUILD_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
-		vala:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib
-RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack introspection:build
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

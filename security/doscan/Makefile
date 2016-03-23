@@ -24,11 +24,13 @@ PLIST_FILES=	bin/doscan man/man1/doscan.1.gz
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's|ony o|on yo|' \
-	    ${WRKSRC}/doc/doscan.1
+	@${REINPLACE_CMD} -e 's|ony o|on yo|' \
+		${WRKSRC}/doc/doscan.1
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

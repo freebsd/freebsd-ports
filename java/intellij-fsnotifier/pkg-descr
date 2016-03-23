@@ -1,0 +1,6 @@
+The fsnotifier is used by IntelliJ for detecting file changes.  This
+version supports FreeBSD and OpenBSD via libinotify and is a
+replacement for the bundled Linux-only version coming with the
+IntelliJ IDEA Community Edition.
+
+WWW: https://github.com/idea4bsd/fsnotifier/

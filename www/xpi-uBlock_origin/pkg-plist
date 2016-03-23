@@ -91,6 +91,8 @@
 %%XPI_XPIDIR%%/js/scriptlets/cosmetic-survey.js
 %%XPI_XPIDIR%%/js/scriptlets/dom-inspector.js
 %%XPI_XPIDIR%%/js/scriptlets/element-picker.js
+%%XPI_XPIDIR%%/js/scriptlets/load-large-media-all.js
+%%XPI_XPIDIR%%/js/scriptlets/load-large-media-interactive.js
 %%XPI_XPIDIR%%/js/scriptlets/subscriber.js
 %%XPI_XPIDIR%%/js/settings.js
 %%XPI_XPIDIR%%/js/start.js
@@ -115,6 +117,7 @@
 %%XPI_XPIDIR%%/locale/bn/messages.properties
 %%XPI_XPIDIR%%/locale/ca/messages.properties
 %%XPI_XPIDIR%%/locale/cs/messages.properties
+%%XPI_XPIDIR%%/locale/cv/messages.properties
 %%XPI_XPIDIR%%/locale/da/messages.properties
 %%XPI_XPIDIR%%/locale/de/messages.properties
 %%XPI_XPIDIR%%/locale/el/messages.properties

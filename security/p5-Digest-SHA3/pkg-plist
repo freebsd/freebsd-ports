@@ -1,0 +1,5 @@
+bin/sha3sum
+%%SITE_ARCH%%/Digest/SHA3.pm
+%%SITE_ARCH%%/auto/Digest/SHA3/SHA3.so
+%%PERL5_MAN1%%/sha3sum.1.gz
+%%PERL5_MAN3%%/Digest::SHA3.3.gz

@@ -73,6 +73,8 @@ WX_COMPS=	wx
 WX_UNICODE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+BROKEN_FreeBSD_9=	Does not build.
+
 DESKTOP_ENTRIES="Padre" \
 		"The Perl IDE" \
 		"${PREFIX}/${SITE_PERL_REL}/auto/share/dist/Padre/icons/padre/64x64/logo.png" \

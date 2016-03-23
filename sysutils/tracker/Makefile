@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tracker
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTVERSION=	1.6.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -25,8 +24,8 @@ RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
-		sqlite tar:xz
+USES=		desktop-file-utils gettext gmake gnome libarchive libtool \
+		pathfix pkgconfig sqlite tar:xz
 USE_GNOME=	gtk30 intltool introspection:build libxslt:build
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes
@@ -45,20 +44,23 @@ CONFIGURE_ARGS=	--with-session-bus-services-dir=${LOCALBASE}/share/dbus-1/servic
 		--enable-generic-media-extractor=gstreamer
 # disable evolution miner until tracker fixes the dep
 CONFIGURE_ARGS+=	--disable-miner-evolution
+CONFIGURE_ENV+=		enable_miner_evolution=no \
+			DATADIRNAME=share
 INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.freedesktop.Tracker.DB.gschema.xml \
 		org.freedesktop.Tracker.Extract.gschema.xml \
 		org.freedesktop.Tracker.FTS.gschema.xml \
 		org.freedesktop.Tracker.Miner.Files.gschema.xml \
+		org.freedesktop.Tracker.Needle.gschema.xml \
 		org.freedesktop.Tracker.Store.gschema.xml \
 		org.freedesktop.Tracker.Writeback.gschema.xml \
 		org.freedesktop.Tracker.enums.xml \
 		org.freedesktop.Tracker.gschema.xml
 
-PLIST_SUB=	TRACKER_VER="1.0" LIBVER=400
+PLIST_SUB=	TRACKER_VER="1.0" LIBVER=601
 
 OPTIONS_DEFINE=		AUDIO_MINERS DOCUMENT_MINERS GRAPHIC_MINERS \
-			NAUTILUS WEB_MINERS
+			WEB_MINERS
 OPTIONS_DEFAULT=	AUDIO_MINERS DOCUMENT_MINERS GRAPHIC_MINERS
 OPTIONS_SUB=yes
 WEB_MINERS_DESC=	Support for Firefox, Thunderbird
@@ -97,7 +99,9 @@ GRAPHIC_MINERS_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 				libpng.so:${PORTSDIR}/graphics/png \
 				libtiff.so:${PORTSDIR}/graphics/tiff
 
-NAUTILUS_CONFIGURE_ENABLE=	nautilus-extension
-NAUTILUS_USE=		GNOME=nautilus3
+# cirular dependancy tracker -> nautilus -> tracker
+CONFIGURE_ARGS=		--disable-nautilus-extension
+#NAUTILUS_CONFIGURE_ENABLE=	nautilus-extension
+#NAUTILUS_USE=		GNOME=nautilus3
 
 .include <bsd.port.mk>

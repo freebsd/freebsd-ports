@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drood
-PORTVERSION=	5.8
+PORTVERSION=	5.18
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -24,6 +24,7 @@ MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_SCRIPT="${INSTALL_SCRIPT}
 PLIST_FILES=	bin/drood \
 		bin/humdinger \
 		man/man8/drood.8.gz \
+		man/man8/droodpipe.8.gz \
 		man/man8/humdinger.8.gz \
 		etc/rc.d/drood \
 		"@(,,4550) etc/rc.d/humdinger" \

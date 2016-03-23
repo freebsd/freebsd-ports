@@ -1,0 +1,29 @@
+--- Makefile.orig	2016-02-16 07:14:22 UTC
++++ Makefile
+@@ -21,6 +21,8 @@ BIN_PATH    = $(PREFIX)/bin
+ HELPER_PATH = $(PREFIX)/lib/afl
+ DOC_PATH    = $(PREFIX)/share/doc/afl
+ MISC_PATH   = $(PREFIX)/share/afl
++INSTALL_PROGRAM?=	install -s -m755
++INSTALL_SCRIPT?=	isntall -m755
+ 
+ PROGS       = afl-gcc afl-fuzz afl-showmap afl-tmin afl-gotcpu afl-analyze
+ SH_PROGS    = afl-plot afl-cmin afl-whatsup
+@@ -115,12 +117,13 @@ clean:
+ install: all
+ 	mkdir -p -m 755 $${DESTDIR}$(BIN_PATH) $${DESTDIR}$(HELPER_PATH) $${DESTDIR}$(DOC_PATH) $${DESTDIR}$(MISC_PATH)
+ 	rm -f $${DESTDIR}$(BIN_PATH)/afl-plot.sh
+-	install -m 755 $(PROGS) $(SH_PROGS) $${DESTDIR}$(BIN_PATH)
++	${INSTALL_PROGRAM} $(PROGS) $${DESTDIR}$(BIN_PATH)
++	${INSTALL_SCRIPT} $(SH_PROGS) $${DESTDIR}$(BIN_PATH)
+ 	rm -f $${DESTDIR}$(BIN_PATH)/afl-as
+-	if [ -f afl-qemu-trace ]; then install -m 755 afl-qemu-trace $${DESTDIR}$(BIN_PATH); fi
+-	if [ -f afl-clang-fast -a -f afl-llvm-pass.so -a -f afl-llvm-rt.o ]; then set -e; install -m 755 afl-clang-fast $${DESTDIR}$(BIN_PATH); ln -sf afl-clang-fast $${DESTDIR}$(BIN_PATH)/afl-clang-fast++; install -m 755 afl-llvm-pass.so afl-llvm-rt.o $${DESTDIR}$(HELPER_PATH); fi
++	if [ -f afl-qemu-trace ]; then ${INSTALL_PROGRAM} afl-qemu-trace $${DESTDIR}$(BIN_PATH); fi
++	if [ -f afl-clang-fast -a -f afl-llvm-pass.so -a -f afl-llvm-rt.o ]; then set -e; ${INSTALL_PROGRAM} afl-clang-fast $${DESTDIR}$(BIN_PATH); ln -sf afl-clang-fast $${DESTDIR}$(BIN_PATH)/afl-clang-fast++; ${INSTALL_PROGRAM} afl-llvm-pass.so $${DESTDIR}$(HELPER_PATH); install -m 755 afl-llvm-rt.o $${DESTDIR}$(HELPER_PATH); fi
+ 	set -e; for i in afl-g++ afl-clang afl-clang++; do ln -sf afl-gcc $${DESTDIR}$(BIN_PATH)/$$i; done
+-	install -m 755 afl-as $${DESTDIR}$(HELPER_PATH)
++	${INSTALL_PROGRAM} afl-as $${DESTDIR}$(HELPER_PATH)
+ 	ln -sf afl-as $${DESTDIR}$(HELPER_PATH)/as
+ 	install -m 644 docs/README docs/ChangeLog docs/*.txt $${DESTDIR}$(DOC_PATH)
+ 	cp -r testcases/ $${DESTDIR}$(MISC_PATH)

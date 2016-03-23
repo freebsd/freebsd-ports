@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mp3guessenc
-PORTVERSION=	0.26.0
+PORTVERSION=	0.26.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.[0-9]*$//}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for guessing which encoder was used to encode an mp3 file
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PLIST_FILES=	bin/mp3guessenc
 SRC=		decode.c mp3guessenc.c bit_utils.c tags.c

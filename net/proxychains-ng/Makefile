@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	proxychains-ng
-PORTVERSION=	4.10
+PORTVERSION=	4.11
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}
-DISTNAME=	${PORTNAME:S/-ng//}-${PORTVERSION}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Redirect connection through proxy servers
@@ -18,12 +17,15 @@ USE_LDCONFIG=	yes
 
 CONFLICTS=	proxychains-[0-9]*
 
-PORTDOCS=	AUTHORS README
+PORTDOCS=	AUTHORS README TODO
 OPTIONS_DEFINE=	DOCS
 
 post-configure:
 	@${ECHO_CMD} "PXCHAINS=proxychains" >> ${WRKSRC}/config.mak
 	@${ECHO_CMD} "LDSO_PATHNAME=libproxychains-4.so" >> ${WRKSRC}/config.mak
+
+do-build:
+	cd ${WRKSRC} ; gmake
 
 post-patch:
 	@${REINPLACE_CMD} \

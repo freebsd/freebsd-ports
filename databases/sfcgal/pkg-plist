@@ -5,7 +5,6 @@ include/SFCGAL/Exception.h
 include/SFCGAL/Geometry.h
 include/SFCGAL/GeometryCollection.h
 include/SFCGAL/GeometryVisitor.h
-include/SFCGAL/Grid.h
 include/SFCGAL/Kernel.h
 include/SFCGAL/LineString.h
 include/SFCGAL/MultiLineString.h
@@ -57,9 +56,11 @@ include/SFCGAL/capi/sfcgal_c.h
 include/SFCGAL/config.h
 include/SFCGAL/detail/ComplexComparator.h
 include/SFCGAL/detail/EnvelopeVisitor.h
+include/SFCGAL/detail/ForceValidityVisitor.h
 include/SFCGAL/detail/GeometrySet.h
 include/SFCGAL/detail/GetPointsVisitor.h
 include/SFCGAL/detail/Interval.h
+include/SFCGAL/detail/Point_inside_polyhedron.h
 include/SFCGAL/detail/TestGeometry.h
 include/SFCGAL/detail/TypeForDimension.h
 include/SFCGAL/detail/algorithm/coversPoints.h
@@ -95,7 +96,6 @@ include/SFCGAL/detail/triangulate/triangulateInGeometrySet.h
 include/SFCGAL/detail/ublas.h
 include/SFCGAL/export.h
 include/SFCGAL/io/GeometryStreams.h
-include/SFCGAL/io/asc.h
 include/SFCGAL/io/ewkt.h
 include/SFCGAL/io/osg.h
 include/SFCGAL/io/vtk.h
@@ -106,4 +106,4 @@ include/SFCGAL/triangulate/triangulatePolygon.h
 include/SFCGAL/version.h
 lib/libSFCGAL.so
 lib/libSFCGAL.so.1
-lib/libSFCGAL.so.1.1.0
+lib/libSFCGAL.so.1.3.0

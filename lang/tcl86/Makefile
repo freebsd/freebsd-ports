@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tcl
-PORTVERSION=	8.6.4
+PORTVERSION=	8.6.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION} \
 		TCLTK/tcl8_6
@@ -22,7 +23,9 @@ OPTIONS_DEFAULT=MODULES THREADS
 TCLMAN_DESC=	Install Tcl function manpages
 TZDATA_DESC=	Install Tcl timezone data
 MODULES_DESC=	Install Tcl common modules
+OPTIONS_SUB=	yes
 
+PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 
 ALL_TARGET=	all
@@ -46,34 +49,10 @@ MAKE_ENV=	SHORT_TCL_VER=${SHORT_TCL_VER} \
 PLIST_SUB=	TCL_VER=${TCL_VER} \
 		SHORT_TCL_VER=${SHORT_TCL_VER}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTCLMAN}
-INSTALL_TARGET+=install-doc
-PLIST_SUB+=	MAN=""
-.else
-PLIST_SUB+=	MAN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTZDATA}
-PLIST_SUB+=	TZDATA=""
-INSTALL_TARGET+=install-tzdata
-.else
-PLIST_SUB+=	TZDATA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMODULES}
-PLIST_SUB+=	MODULES=""
-INSTALL_TARGET+=install-modules
-.else
-PLIST_SUB+=	MODULES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=--enable-threads
-.else
-CONFIGURE_ARGS+=--disable-threads
-.endif
+TCLMAN_INSTALL_TARGET=	install-doc
+TZDATA_INSTALL_TARGET=	install-tzdata
+MODULES_INSTALL_TARGET=	install-modules
+THREADS_CONFIGURE_ENABLE=	threads
 
 post-patch:
 	${REINPLACE_CMD} -e \
@@ -81,18 +60,18 @@ post-patch:
 	     s|@TCL_BUILD_STUB_LIB_SPEC@|@TCL_STUB_LIB_SPEC@|; \
 	     s|@TCL_BUILD_STUB_LIB_PATH@|@TCL_STUB_LIB_PATH@|; \
 	     s|@TCL_SRC_DIR@|${PREFIX}/include/tcl${TCL_VER}|' \
-	     ${WRKSRC}/tclConfig.sh.in
-.if !${PORT_OPTIONS:MTCLMAN}
-	@${FIND} ${WRKSRC}/../pkgs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
+	     ${PATCH_WRKSRC}/unix/tclConfig.sh.in
+
+post-patch-TCLMAN-off:
+	@${FIND} ${PATCH_WRKSRC}/pkgs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
 	    -e '/^install:/s|install-doc||'
-.endif
 
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
 		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
 
-regression-test:	build
-	cd ${WRKSRC} && LC_ALL=C ${MAKE} test
+do-test:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test-tcl
 
 .include <bsd.port.mk>

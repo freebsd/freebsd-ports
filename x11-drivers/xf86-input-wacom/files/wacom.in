@@ -4,6 +4,7 @@
 #
 # PROVIDE: wacom
 # REQUIRE: mountcritlocal
+# BEFORE:  devd
 # KEYWORD: nojail
 #
 # Add the following lines to /etc/rc.conf to enable this service:

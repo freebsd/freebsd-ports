@@ -1,22 +1,16 @@
-bin/idea
-%%IDEA_HOME%%/idea.png
 %%IDEA_HOME%%/Install-Linux-tar.txt
 %%IDEA_HOME%%/LICENSE.txt
 %%IDEA_HOME%%/NOTICE.txt
 %%IDEA_HOME%%/bin/appletviewer.policy
-@comment %%IDEA_HOME%%/bin/fsnotifier
-@comment %%IDEA_HOME%%/bin/fsnotifier-arm
-@comment %%IDEA_HOME%%/bin/fsnotifier64
 %%IDEA_HOME%%/bin/idea.png
 %%IDEA_HOME%%/bin/idea.properties
 %%IDEA_HOME%%/bin/idea.sh
 %%IDEA_HOME%%/bin/idea.vmoptions
 %%IDEA_HOME%%/bin/idea64.vmoptions
 %%IDEA_HOME%%/bin/inspect.sh
-@comment %%IDEA_HOME%%/bin/libbreakgen.so
-@comment %%IDEA_HOME%%/bin/libbreakgen64.so
 %%IDEA_HOME%%/bin/log.xml
 %%IDEA_HOME%%/build.txt
+%%IDEA_HOME%%/idea.png
 %%IDEA_HOME%%/lib/annotations.jar
 %%IDEA_HOME%%/lib/ant/INSTALL
 %%IDEA_HOME%%/lib/ant/KEYS
@@ -136,17 +130,6 @@ bin/idea
 %%IDEA_HOME%%/lib/jzlib-1.1.1.jar
 %%IDEA_HOME%%/lib/kotlin-reflect.jar
 %%IDEA_HOME%%/lib/kotlin-runtime.jar
-@comment %%IDEA_HOME%%/lib/libpty/linux/x86/libpty.so
-@comment %%IDEA_HOME%%/lib/libpty/linux/x86_64/libpty.so
-@comment %%IDEA_HOME%%/lib/libpty/macosx/x86/libpty.dylib
-@comment %%IDEA_HOME%%/lib/libpty/macosx/x86_64/libpty.dylib
-@comment %%IDEA_HOME%%/lib/libpty/win/x86/libwinpty.dll
-@comment %%IDEA_HOME%%/lib/libpty/win/x86/winpty-agent.exe
-@comment %%IDEA_HOME%%/lib/libpty/win/x86_64/cyglaunch.exe
-@comment %%IDEA_HOME%%/lib/libpty/win/x86_64/libwinpty.dll
-@comment %%IDEA_HOME%%/lib/libpty/win/x86_64/winpty-agent.exe
-@comment %%IDEA_HOME%%/lib/libpty/win/xp/libwinpty.dll
-@comment %%IDEA_HOME%%/lib/libpty/win/xp/winpty-agent.exe
 %%IDEA_HOME%%/lib/log4j.jar
 %%IDEA_HOME%%/lib/markdown4j-2.2.jar
 %%IDEA_HOME%%/lib/markdownj-core-0.4.2-SNAPSHOT.jar
@@ -154,14 +137,13 @@ bin/idea
 %%IDEA_HOME%%/lib/miglayout-swing.jar
 %%IDEA_HOME%%/lib/nanoxml-2.2.3.jar
 %%IDEA_HOME%%/lib/nekohtml-1.9.14.jar
-%%IDEA_HOME%%/lib/netty-all-4.1.0.Beta6.jar
+%%IDEA_HOME%%/lib/netty-all-4.1.0.Beta8.jar
 %%IDEA_HOME%%/lib/openapi.jar
 %%IDEA_HOME%%/lib/optimizedFileManager.jar
 %%IDEA_HOME%%/lib/oromatcher.jar
 %%IDEA_HOME%%/lib/picocontainer.jar
 %%IDEA_HOME%%/lib/protobuf-2.5.0.jar
 %%IDEA_HOME%%/lib/proxy-vole_20131209.jar
-%%IDEA_HOME%%/lib/pty4j-0.5.jar
 %%IDEA_HOME%%/lib/purejavacomm.jar
 %%IDEA_HOME%%/lib/resolver.jar
 %%IDEA_HOME%%/lib/resources.jar
@@ -253,7 +235,9 @@ bin/idea
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/android-compiler-plugin.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-android-sdk-annotations.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-ant.jar
+%%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-build-common.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-compiler.jar
+%%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-daemon-client.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-jdk-annotations.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-jslib-sources.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-jslib.jar
@@ -262,7 +246,7 @@ bin/idea
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-runner.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-runtime-sources.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-runtime.jar
-%%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlinr.jar
+%%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-test.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/LICENSE.txt
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/NOTICE.txt
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/third_party/args4j_LICENSE.txt
@@ -276,6 +260,8 @@ bin/idea
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/third_party/rhino_LICENSE.txt
 %%IDEA_HOME%%/plugins/Kotlin/lib/javax.inject.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/jps/kotlin-jps-plugin.jar
+%%IDEA_HOME%%/plugins/Kotlin/lib/kotlin-android-extensions-compiler-plugin.jar
+%%IDEA_HOME%%/plugins/Kotlin/lib/kotlin-android-extensions-plugin.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/kotlin-plugin.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/kotlin-reflect.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/kotlin-runtime.jar
@@ -1458,12 +1444,6 @@ bin/idea
 %%IDEA_HOME%%/plugins/gradle/lib/native-platform-0.10.jar
 %%IDEA_HOME%%/plugins/gradle/lib/native-platform-freebsd-amd64-0.10.jar
 %%IDEA_HOME%%/plugins/gradle/lib/native-platform-freebsd-i386-0.10.jar
-@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-linux-amd64-0.10.jar
-@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-linux-i386-0.10.jar
-@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-osx-amd64-0.10.jar
-@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-osx-i386-0.10.jar
-@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-windows-amd64-0.10.jar
-@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-windows-i386-0.10.jar
 %%IDEA_HOME%%/plugins/gradle/lib/objenesis-1.2.jar
 %%IDEA_HOME%%/plugins/gradle/lib/reflectasm-1.07.jar
 %%IDEA_HOME%%/plugins/gradle/lib/resources_en.jar
@@ -1633,5 +1613,28 @@ bin/idea
 %%IDEA_HOME%%/plugins/xslt-debugger/lib/xslt-debugger-engine.jar
 %%IDEA_HOME%%/plugins/xslt-debugger/lib/xslt-debugger.jar
 %%IDEA_HOME%%/redist/annotations-java8.jar
+@comment %%IDEA_HOME%%/bin/fsnotifier
+@comment %%IDEA_HOME%%/bin/fsnotifier-arm
+@comment %%IDEA_HOME%%/bin/fsnotifier64
+@comment %%IDEA_HOME%%/bin/libbreakgen.so
+@comment %%IDEA_HOME%%/bin/libbreakgen64.so
+@comment %%IDEA_HOME%%/lib/libpty/linux/x86/libpty.so
+@comment %%IDEA_HOME%%/lib/libpty/linux/x86_64/libpty.so
+@comment %%IDEA_HOME%%/lib/libpty/macosx/x86/libpty.dylib
+@comment %%IDEA_HOME%%/lib/libpty/macosx/x86_64/libpty.dylib
+@comment %%IDEA_HOME%%/lib/libpty/win/x86/libwinpty.dll
+@comment %%IDEA_HOME%%/lib/libpty/win/x86/winpty-agent.exe
+@comment %%IDEA_HOME%%/lib/libpty/win/x86_64/cyglaunch.exe
+@comment %%IDEA_HOME%%/lib/libpty/win/x86_64/libwinpty.dll
+@comment %%IDEA_HOME%%/lib/libpty/win/x86_64/winpty-agent.exe
+@comment %%IDEA_HOME%%/lib/libpty/win/xp/libwinpty.dll
+@comment %%IDEA_HOME%%/lib/libpty/win/xp/winpty-agent.exe
+@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-linux-amd64-0.10.jar
+@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-linux-i386-0.10.jar
+@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-osx-amd64-0.10.jar
+@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-osx-i386-0.10.jar
+@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-windows-amd64-0.10.jar
+@comment %%IDEA_HOME%%/plugins/gradle/lib/native-platform-windows-i386-0.10.jar
+bin/idea
 man/man1/idea.1.gz
 share/applications/idea.desktop

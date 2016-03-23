@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twitter
-PORTVERSION=	1.15.0
+PORTVERSION=	1.17.1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,12 +17,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	sixohsix
 
-regression-test: build
+NO_ARCH=	yes
+
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

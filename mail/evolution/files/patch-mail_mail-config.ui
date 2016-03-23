@@ -1,0 +1,539 @@
+From 2da59292e2ddebc9d72a923580d4a9af00e0c981 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Tue, 24 Nov 2015 15:42:22 +0100
+Subject: Mail Preferences->Junk page incorrectly referenced in the code
+
+The code expects a reference to a GtkNotebook page, but it wasn't
+the case for the Junk page, which was enclosed in a GtkAlignment.
+This could produce a runtime warning when opening the Preferences.
+---
+ mail/mail-config.ui | 430 ++++++++++++++++++++++++++--------------------------
+ 1 file changed, 212 insertions(+), 218 deletions(-)
+
+diff --git a/mail/mail-config.ui b/mail/mail-config.ui
+index c5edf9b..733f5e7 100644
+--- mail/mail-config.ui
++++ mail/mail-config.ui
+@@ -3032,47 +3032,65 @@
+       </packing>
+     </child>
+     <child>
+-      <object class="GtkAlignment" id="junk-alignment">
++      <object class="GtkVBox" id="vboxJunk">
+         <property name="visible">True</property>
+         <property name="can_focus">False</property>
+-        <property name="yalign">0</property>
+-        <property name="yscale">0</property>
++        <property name="border_width">12</property>
++        <property name="spacing">12</property>
++        <property name="valign">GTK_ALIGN_START</property>
+         <child>
+-          <object class="GtkVBox" id="vboxJunk">
++          <object class="GtkVBox" id="junk-general-section">
+             <property name="visible">True</property>
+             <property name="can_focus">False</property>
+-            <property name="border_width">12</property>
+-            <property name="spacing">12</property>
++            <property name="spacing">6</property>
+             <child>
+-              <object class="GtkVBox" id="junk-general-section">
++              <object class="GtkLabel" id="junk-general-header">
+                 <property name="visible">True</property>
+                 <property name="can_focus">False</property>
+-                <property name="spacing">6</property>
++                <property name="xalign">0</property>
++                <property name="label" translatable="yes">General</property>
++                <attributes>
++                  <attribute name="weight" value="bold"/>
++                </attributes>
++              </object>
++              <packing>
++                <property name="expand">False</property>
++                <property name="fill">False</property>
++                <property name="position">0</property>
++              </packing>
++            </child>
++            <child>
++              <object class="GtkTable" id="junk-general-table">
++                <property name="visible">True</property>
++                <property name="can_focus">False</property>
++                <property name="n_rows">7</property>
++                <property name="row_spacing">4</property>
+                 <child>
+-                  <object class="GtkLabel" id="junk-general-header">
++                  <object class="GtkCheckButton" id="chkCheckIncomingMail">
++                    <property name="label" translatable="yes">Check incoming _messages for junk</property>
+                     <property name="visible">True</property>
+-                    <property name="can_focus">False</property>
++                    <property name="can_focus">True</property>
++                    <property name="receives_default">False</property>
++                    <property name="use_underline">True</property>
+                     <property name="xalign">0</property>
+-                    <property name="label" translatable="yes">General</property>
+-                    <attributes>
+-                      <attribute name="weight" value="bold"/>
+-                    </attributes>
++                    <property name="draw_indicator">True</property>
+                   </object>
+                   <packing>
+-                    <property name="expand">False</property>
+-                    <property name="fill">False</property>
+-                    <property name="position">0</property>
++                    <property name="top_attach">0</property>
++                    <property name="bottom_attach">1</property>
++                    <property name="x_options">GTK_FILL</property>
++                    <property name="y_options"/>
++                    <property name="x_padding">12</property>
+                   </packing>
+                 </child>
+                 <child>
+-                  <object class="GtkTable" id="junk-general-table">
++                  <object class="GtkHBox" id="hbox237">
+                     <property name="visible">True</property>
+                     <property name="can_focus">False</property>
+-                    <property name="n_rows">7</property>
+-                    <property name="row_spacing">4</property>
++                    <property name="spacing">4</property>
+                     <child>
+-                      <object class="GtkCheckButton" id="chkCheckIncomingMail">
+-                        <property name="label" translatable="yes">Check incoming _messages for junk</property>
++                      <object class="GtkCheckButton" id="junk_empty_check">
++                        <property name="label" translatable="yes">_Delete junk messages</property>
+                         <property name="visible">True</property>
+                         <property name="can_focus">True</property>
+                         <property name="receives_default">False</property>
+@@ -3081,259 +3099,235 @@
+                         <property name="draw_indicator">True</property>
+                       </object>
+                       <packing>
+-                        <property name="top_attach">0</property>
+-                        <property name="bottom_attach">1</property>
+-                        <property name="x_options">GTK_FILL</property>
+-                        <property name="y_options"/>
+-                        <property name="x_padding">12</property>
++                        <property name="expand">False</property>
++                        <property name="fill">False</property>
++                        <property name="position">0</property>
+                       </packing>
+                     </child>
+                     <child>
+-                      <object class="GtkHBox" id="hbox237">
++                      <object class="GtkComboBox" id="junk_empty_combobox">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+-                        <property name="spacing">4</property>
+-                        <child>
+-                          <object class="GtkCheckButton" id="junk_empty_check">
+-                            <property name="label" translatable="yes">_Delete junk messages</property>
+-                            <property name="visible">True</property>
+-                            <property name="can_focus">True</property>
+-                            <property name="receives_default">False</property>
+-                            <property name="use_underline">True</property>
+-                            <property name="xalign">0</property>
+-                            <property name="draw_indicator">True</property>
+-                          </object>
+-                          <packing>
+-                            <property name="expand">False</property>
+-                            <property name="fill">False</property>
+-                            <property name="position">0</property>
+-                          </packing>
+-                        </child>
++                        <property name="model">model2</property>
+                         <child>
+-                          <object class="GtkComboBox" id="junk_empty_combobox">
+-                            <property name="visible">True</property>
+-                            <property name="can_focus">False</property>
+-                            <property name="model">model2</property>
+-                            <child>
+-                              <object class="GtkCellRendererText" id="renderer2"/>
+-                              <attributes>
+-                                <attribute name="text">0</attribute>
+-                              </attributes>
+-                            </child>
+-                          </object>
+-                          <packing>
+-                            <property name="expand">False</property>
+-                            <property name="fill">False</property>
+-                            <property name="position">1</property>
+-                          </packing>
++                          <object class="GtkCellRendererText" id="renderer2"/>
++                          <attributes>
++                            <attribute name="text">0</attribute>
++                          </attributes>
+                         </child>
+                       </object>
+                       <packing>
+-                        <property name="top_attach">1</property>
+-                        <property name="bottom_attach">2</property>
+-                        <property name="x_options">GTK_FILL</property>
+-                        <property name="x_padding">12</property>
+-                      </packing>
+-                    </child>
+-                    <child>
+-                     <object class="GtkLabel" id="junk-test-opts-header">
+-                        <property name="visible">True</property>
+-                        <property name="can_focus">False</property>
+-                        <property name="xalign">0</property>
+-                        <property name="margin-top">12</property>
+-                        <property name="label" translatable="yes">Junk Test Options</property>
+-                        <attributes>
+-                          <attribute name="weight" value="bold"/>
+-                        </attributes>
+-                      </object>
+-                      <packing>
+-                        <property name="top_attach">2</property>
+-                        <property name="bottom_attach">3</property>
+-                        <property name="x_options">GTK_FILL</property>
+-                        <property name="y_options"/>
+-                        <property name="x_padding">0</property>
+-                      </packing>
+-                    </child>
+-                    <child>
+-                      <object class="GtkCheckButton" id="lookup_book">
+-                        <property name="label" translatable="yes">Do not mar_k messages as junk if sender is in my address book</property>
+-                        <property name="visible">True</property>
+-                        <property name="can_focus">True</property>
+-                        <property name="receives_default">False</property>
+-                        <property name="use_underline">True</property>
+-                        <property name="xalign">0</property>
+-                        <property name="draw_indicator">True</property>
+-                      </object>
+-                      <packing>
+-                        <property name="top_attach">3</property>
+-                        <property name="bottom_attach">4</property>
+-                        <property name="x_options">GTK_FILL</property>
+-                        <property name="y_options"/>
+-                        <property name="x_padding">12</property>
+-                      </packing>
+-                    </child>
+-                    <child>
+-                      <object class="GtkCheckButton" id="junk_lookup_local_only">
+-                        <property name="label" translatable="yes">_Lookup in local address book only</property>
+-                        <property name="visible">True</property>
+-                        <property name="can_focus">True</property>
+-                        <property name="receives_default">False</property>
+-                        <property name="use_underline">True</property>
+-                        <property name="xalign">0</property>
+-                        <property name="draw_indicator">True</property>
+-                      </object>
+-                      <packing>
+-                        <property name="top_attach">4</property>
+-                        <property name="bottom_attach">5</property>
+-                        <property name="x_options">GTK_FILL</property>
+-                        <property name="y_options"/>
+-                        <property name="x_padding">24</property>
++                        <property name="expand">False</property>
++                        <property name="fill">False</property>
++                        <property name="position">1</property>
+                       </packing>
+                     </child>
++                  </object>
++                  <packing>
++                    <property name="top_attach">1</property>
++                    <property name="bottom_attach">2</property>
++                    <property name="x_options">GTK_FILL</property>
++                    <property name="x_padding">12</property>
++                  </packing>
++                </child>
++                <child>
++                 <object class="GtkLabel" id="junk-test-opts-header">
++                    <property name="visible">True</property>
++                    <property name="can_focus">False</property>
++                    <property name="xalign">0</property>
++                    <property name="margin-top">12</property>
++                    <property name="label" translatable="yes">Junk Test Options</property>
++                    <attributes>
++                      <attribute name="weight" value="bold"/>
++                    </attributes>
++                  </object>
++                  <packing>
++                    <property name="top_attach">2</property>
++                    <property name="bottom_attach">3</property>
++                    <property name="x_options">GTK_FILL</property>
++                    <property name="y_options"/>
++                    <property name="x_padding">0</property>
++                  </packing>
++                </child>
++                <child>
++                  <object class="GtkCheckButton" id="lookup_book">
++                    <property name="label" translatable="yes">Do not mar_k messages as junk if sender is in my address book</property>
++                    <property name="visible">True</property>
++                    <property name="can_focus">True</property>
++                    <property name="receives_default">False</property>
++                    <property name="use_underline">True</property>
++                    <property name="xalign">0</property>
++                    <property name="draw_indicator">True</property>
++                  </object>
++                  <packing>
++                    <property name="top_attach">3</property>
++                    <property name="bottom_attach">4</property>
++                    <property name="x_options">GTK_FILL</property>
++                    <property name="y_options"/>
++                    <property name="x_padding">12</property>
++                  </packing>
++                </child>
++                <child>
++                  <object class="GtkCheckButton" id="junk_lookup_local_only">
++                    <property name="label" translatable="yes">_Lookup in local address book only</property>
++                    <property name="visible">True</property>
++                    <property name="can_focus">True</property>
++                    <property name="receives_default">False</property>
++                    <property name="use_underline">True</property>
++                    <property name="xalign">0</property>
++                    <property name="draw_indicator">True</property>
++                  </object>
++                  <packing>
++                    <property name="top_attach">4</property>
++                    <property name="bottom_attach">5</property>
++                    <property name="x_options">GTK_FILL</property>
++                    <property name="y_options"/>
++                    <property name="x_padding">24</property>
++                  </packing>
++                </child>
++                <child>
++                  <object class="GtkCheckButton" id="junk_header_check">
++                    <property name="label" translatable="yes">Check cu_stom headers for junk</property>
++                    <property name="visible">True</property>
++                    <property name="can_focus">True</property>
++                    <property name="receives_default">False</property>
++                    <property name="use_underline">True</property>
++                    <property name="xalign">0</property>
++                    <property name="draw_indicator">True</property>
++                  </object>
++                  <packing>
++                    <property name="top_attach">5</property>
++                    <property name="bottom_attach">6</property>
++                    <property name="x_options">GTK_FILL</property>
++                    <property name="y_options"/>
++                    <property name="x_padding">12</property>
++                  </packing>
++                </child>
++                <child>
++                  <object class="GtkHBox" id="hbox243">
++                    <property name="visible">True</property>
++                    <property name="can_focus">False</property>
++                    <property name="spacing">6</property>
+                     <child>
+-                      <object class="GtkCheckButton" id="junk_header_check">
+-                        <property name="label" translatable="yes">Check cu_stom headers for junk</property>
++                      <object class="GtkScrolledWindow" id="scrolledwindow51">
+                         <property name="visible">True</property>
+                         <property name="can_focus">True</property>
+-                        <property name="receives_default">False</property>
+-                        <property name="use_underline">True</property>
+-                        <property name="xalign">0</property>
+-                        <property name="draw_indicator">True</property>
++                        <property name="shadow_type">in</property>
++                        <child>
++                          <object class="GtkTreeView" id="junk_header_tree">
++                            <property name="visible">True</property>
++                            <property name="can_focus">True</property>
++                            <child internal-child="selection">
++                              <object class="GtkTreeSelection" id="treeview-selection"/>
++                            </child>
++                          </object>
++                        </child>
+                       </object>
+                       <packing>
+-                        <property name="top_attach">5</property>
+-                        <property name="bottom_attach">6</property>
+-                        <property name="x_options">GTK_FILL</property>
+-                        <property name="y_options"/>
+-                        <property name="x_padding">12</property>
++                        <property name="expand">True</property>
++                        <property name="fill">True</property>
++                        <property name="position">0</property>
+                       </packing>
+                     </child>
+                     <child>
+-                      <object class="GtkHBox" id="hbox243">
++                      <object class="GtkVButtonBox" id="vbuttonbox26">
+                         <property name="visible">True</property>
+                         <property name="can_focus">False</property>
+                         <property name="spacing">6</property>
++                        <property name="layout_style">start</property>
+                         <child>
+-                          <object class="GtkScrolledWindow" id="scrolledwindow51">
++                          <object class="GtkButton" id="junk_header_add">
++                            <property name="label" translatable="yes">_Add</property>
+                             <property name="visible">True</property>
+                             <property name="can_focus">True</property>
+-                            <property name="shadow_type">in</property>
+-                            <child>
+-                              <object class="GtkTreeView" id="junk_header_tree">
+-                                <property name="visible">True</property>
+-                                <property name="can_focus">True</property>
+-                                <child internal-child="selection">
+-                                  <object class="GtkTreeSelection" id="treeview-selection"/>
+-                                </child>
+-                              </object>
+-                            </child>
++                            <property name="can_default">True</property>
++                            <property name="receives_default">True</property>
++                            <property name="use_stock">False</property>
++                            <property name="use-underline">True</property>
+                           </object>
+                           <packing>
+-                            <property name="expand">True</property>
+-                            <property name="fill">True</property>
++                            <property name="expand">False</property>
++                            <property name="fill">False</property>
+                             <property name="position">0</property>
+                           </packing>
+                         </child>
+                         <child>
+-                          <object class="GtkVButtonBox" id="vbuttonbox26">
++                          <object class="GtkButton" id="junk_header_remove">
++                            <property name="label" translatable="yes">_Remove</property>
+                             <property name="visible">True</property>
+-                            <property name="can_focus">False</property>
+-                            <property name="spacing">6</property>
+-                            <property name="layout_style">start</property>
+-                            <child>
+-                              <object class="GtkButton" id="junk_header_add">
+-                                <property name="label" translatable="yes">_Add</property>
+-                                <property name="visible">True</property>
+-                                <property name="can_focus">True</property>
+-                                <property name="can_default">True</property>
+-                                <property name="receives_default">True</property>
+-                                <property name="use_stock">False</property>
+-                                <property name="use-underline">True</property>
+-                              </object>
+-                              <packing>
+-                                <property name="expand">False</property>
+-                                <property name="fill">False</property>
+-                                <property name="position">0</property>
+-                              </packing>
+-                            </child>
+-                            <child>
+-                              <object class="GtkButton" id="junk_header_remove">
+-                                <property name="label" translatable="yes">_Remove</property>
+-                                <property name="visible">True</property>
+-                                <property name="can_focus">True</property>
+-                                <property name="can_default">True</property>
+-                                <property name="receives_default">True</property>
+-                                <property name="use_stock">False</property>
+-                                <property name="use-underline">True</property>
+-                              </object>
+-                              <packing>
+-                                <property name="expand">False</property>
+-                                <property name="fill">False</property>
+-                                <property name="position">1</property>
+-                              </packing>
+-                            </child>
++                            <property name="can_focus">True</property>
++                            <property name="can_default">True</property>
++                            <property name="receives_default">True</property>
++                            <property name="use_stock">False</property>
++                            <property name="use-underline">True</property>
+                           </object>
+                           <packing>
+                             <property name="expand">False</property>
+-                            <property name="fill">True</property>
++                            <property name="fill">False</property>
+                             <property name="position">1</property>
+                           </packing>
+                         </child>
+                       </object>
+                       <packing>
+-                        <property name="top_attach">6</property>
+-                        <property name="bottom_attach">7</property>
+-                        <property name="x_padding">12</property>
++                        <property name="expand">False</property>
++                        <property name="fill">True</property>
++                        <property name="position">1</property>
+                       </packing>
+                     </child>
++                  </object>
++                  <packing>
++                    <property name="top_attach">6</property>
++                    <property name="bottom_attach">7</property>
++                    <property name="x_padding">12</property>
++                  </packing>
++                </child>
++                <child>
++                  <object class="EMailJunkOptions" id="junk-module-options">
++                    <property name="visible">True</property>
++                    <property name="can_focus">False</property>
++                    <property name="row_spacing">6</property>
++                    <property name="column_spacing">6</property>
+                     <child>
+-                      <object class="EMailJunkOptions" id="junk-module-options">
+-                        <property name="visible">True</property>
+-                        <property name="can_focus">False</property>
+-                        <property name="row_spacing">6</property>
+-                        <property name="column_spacing">6</property>
+-                        <child>
+-                          <placeholder/>
+-                        </child>
+-                        <child>
+-                          <placeholder/>
+-                        </child>
+-                        <child>
+-                          <placeholder/>
+-                        </child>
+-                        <child>
+-                          <placeholder/>
+-                        </child>
+-                        <child>
+-                          <placeholder/>
+-                        </child>
+-                      </object>
+-                      <packing>
+-                        <property name="top_attach">7</property>
+-                        <property name="bottom_attach">8</property>
+-                        <property name="y_options">GTK_FILL</property>
+-                        <property name="y_padding">12</property>
+-                      </packing>
++                      <placeholder/>
++                    </child>
++                    <child>
++                      <placeholder/>
++                    </child>
++                    <child>
++                      <placeholder/>
++                    </child>
++                    <child>
++                      <placeholder/>
++                    </child>
++                    <child>
++                      <placeholder/>
+                     </child>
+                   </object>
+                   <packing>
+-                    <property name="expand">True</property>
+-                    <property name="fill">True</property>
+-                    <property name="position">1</property>
++                    <property name="top_attach">7</property>
++                    <property name="bottom_attach">8</property>
++                    <property name="y_options">GTK_FILL</property>
++                    <property name="y_padding">12</property>
+                   </packing>
+                 </child>
+               </object>
+               <packing>
+-                <property name="expand">False</property>
+-                <property name="fill">False</property>
+-                <property name="position">0</property>
++                <property name="expand">True</property>
++                <property name="fill">True</property>
++                <property name="position">1</property>
+               </packing>
+             </child>
+           </object>
++          <packing>
++            <property name="expand">False</property>
++            <property name="fill">False</property>
++            <property name="position">0</property>
++          </packing>
+         </child>
+       </object>
+       <packing>
+         <property name="position">4</property>
++        <property name="tab_fill">False</property>
+       </packing>
+     </child>
+     <child type="tab">
+-- 
+cgit v0.12
+

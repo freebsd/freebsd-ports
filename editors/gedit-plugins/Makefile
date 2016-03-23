@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gedit-plugins
-PORTVERSION=	3.16.0
-PORTREVISION=	2
+PORTVERSION=	3.18.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,14 +11,16 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plugins for GEdit 3
 
 BUILD_DEPENDS=	gedit>=0:${PORTSDIR}/editors/gedit \
+		valac:${PORTSDIR}/lang/vala \
 		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
+		libzeitgeist-2.0.so:${PORTSDIR}/sysutils/zeitgeist \
 		libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib
 RUN_DEPENDS=	gedit>=0:${PORTSDIR}/editors/gedit
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig \
+USES=		gettext gmake gnome libtool pathfix pkgconfig \
 		python:3 tar:xz
 USE_GNOME=	gtk30 gtksourceview3 intlhack
 USE_LDCONFIG=	yes

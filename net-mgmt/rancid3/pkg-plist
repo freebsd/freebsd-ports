@@ -1,5 +1,6 @@
 bin/rancid-cvs
 bin/rancid-run
+lib/rancid/acos.pm
 lib/rancid/arbor.pm
 lib/rancid/ciscowlc.pm
 lib/rancid/dell.pm
@@ -11,7 +12,10 @@ lib/rancid/junos.pm
 lib/rancid/mrv.pm
 lib/rancid/nxos.pm
 lib/rancid/panos.pm
+lib/rancid/rbt.pm
 lib/rancid/rancid.pm
+lib/rancid/wavesvros.pm
+libexec/rancid/a10login
 libexec/rancid/alogin
 libexec/rancid/anlogin
 libexec/rancid/arancid
@@ -58,9 +62,11 @@ libexec/rancid/rancid
 libexec/rancid/rancid-cvs
 libexec/rancid/rancid-fe
 libexec/rancid/rancid-run
+libexec/rancid/rblogin
 libexec/rancid/rivlogin
 libexec/rancid/rivrancid
 libexec/rancid/rrancid
+libexec/rancid/rtftpcopy
 libexec/rancid/srancid
 libexec/rancid/tlogin
 libexec/rancid/trancid
@@ -82,7 +88,6 @@ man/man1/brancid.1.gz
 man/man1/cat5rancid.1.gz
 man/man1/clogin.1.gz
 man/man1/complogin.1.gz
-man/man1/comprancid.1.gz
 man/man1/control_rancid.1.gz
 man/man1/cssrancid.1.gz
 man/man1/dllogin.1.gz

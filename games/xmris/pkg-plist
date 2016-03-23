@@ -1,16 +1,12 @@
-@group games
-@mode 2555
-bin/xmris
-bin/xmsit
-bin/xmred
-@mode
-@group
+@(,games,2555) bin/xmris
+@(,games,2555) bin/xmsit
+@(,games,2555) bin/xmred
 man/man6/xmred.6.gz
 man/man6/xmris.6.gz
 man/man6/xmsit.6.gz
 lib/X11/app-defaults/Xmris
-lib/X11/app-defaults/xmris/alphabet.gdn
-lib/X11/app-defaults/xmris/digits.gdn
-lib/X11/app-defaults/xmris/puzzle.gdn
-lib/X11/app-defaults/xmris/xmred.gdn
-@dir(,games,775) lib/X11/xmris
+lib/X11/xmris/alphabet.gdn
+lib/X11/xmris/digits.gdn
+lib/X11/xmris/puzzle.gdn
+lib/X11/xmris/xmred.gdn
+@dir(,games,755) /var/games/xmris

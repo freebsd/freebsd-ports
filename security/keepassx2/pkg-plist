@@ -1,4 +1,4 @@
-bin/keepassx
+%%QT_BINDIR%%/keepassx
 lib/keepassx/libkeepassx-autotype-x11.so
 share/applications/keepassx.desktop
 share/icons/hicolor/128x128/apps/keepassx.png

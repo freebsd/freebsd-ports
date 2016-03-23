@@ -1,0 +1,69 @@
+--- scripts/CMakeLists.txt.orig	2015-12-23 15:33:31 UTC
++++ scripts/CMakeLists.txt
+@@ -73,6 +73,7 @@ IF(UNIX)
+ )
+ ENDIF()
+ 
++IF(FALSE)
+ INSTALL(FILES 
+   ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables.sql 
+   ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables_data.sql
+@@ -84,6 +85,7 @@ INSTALL(FILES 
+   ${FIX_PRIVILEGES_SQL}
+   DESTINATION ${INSTALL_MYSQLSHAREDIR} COMPONENT Server
+ )
++ENDIF()
+ 
+ # TCMalloc hacks
+ IF(MALLOC_LIB)
+@@ -136,6 +138,7 @@ ENDIF()
+ SET(HOSTNAME "hostname")
+ SET(MYSQLD_USER "mysql")
+ 
++IF(FALSE)
+ # Required for mysqlbug until autotools are deprecated, once done remove these
+ # and expand default cmake variables
+ SET(CC ${CMAKE_C_COMPILER})
+@@ -170,6 +173,7 @@ INSTALL_SCRIPT(${CMAKE_CURRENT_BINARY_DI
+   DESTINATION ${INSTALL_BINDIR}
+   COMPONENT Server
+   )
++ENDIF()
+ 
+ ENDIF(UNIX)
+ 
+@@ -195,6 +199,7 @@ ELSE()
+   SET(localstatedir ${MYSQL_DATADIR})
+ ENDIF()
+ 
++IF()
+ IF(UNIX)
+ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql_install_db.sh
+   ${CMAKE_CURRENT_BINARY_DIR}/mysql_install_db ESCAPE_QUOTES @ONLY)
+@@ -208,6 +213,7 @@ INSTALL_SCRIPT(
+   COMPONENT Server
+   )
+ ENDIF()
++ENDIF()
+ 
+ SET(prefix "${CMAKE_INSTALL_PREFIX}")
+ IF(INSTALL_SYSCONFDIR)
+@@ -286,18 +292,8 @@ ELSE()
+   SET(BIN_SCRIPTS
+     msql2mysql
+     mysql_config
+-    mysql_fix_extensions
+-    mysql_setpermission
+-    mysql_secure_installation
+-    mysql_zap
+     mysqlaccess
+-    mysql_convert_table_format
+     mysql_find_rows
+-    mytop
+-    mysqlhotcopy
+-    mysqldumpslow
+-    mysqld_multi
+-    mysqld_safe
+     ${WSREP_BINARIES}
+     ${SYSTEMD_SCRIPTS}
+   )

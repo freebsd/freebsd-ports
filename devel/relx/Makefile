@@ -1,16 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	relx
-PORTVERSION=	3.13.0
+PORTVERSION=	3.18.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		https://s3.amazonaws.com/s3.hex.pm/tarballs/:hex
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		relx-cache-10.tar.gz:deps
+		relx-cache-11.tar.gz:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		relx-cache-10.tar.gz
+		relx-cache-11.tar.gz
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Sane, simple release creation for Erlang
@@ -30,7 +30,7 @@ GH_ACCOUNT=	erlware
 
 REBAR_DEPS=	bbmustache-1.0.4 \
 		cf-0.2.1 \
-		erlware_commons-0.18.0 \
+		erlware_commons-0.19.0 \
 		getopt-0.8.2 \
 		providers-1.6.0
 
@@ -43,7 +43,6 @@ DISTFILES+=	${_dep}.tar:hex
 # providing both before building.
 
 post-extract:
-	@${LN} -s cache ${WRKDIR}/.cache
 .for _dep in ${REBAR_DEPS}
 	@${MKDIR} ${WRKSRC}/_build/default/lib/${_dep:C/-.*//}
 	@${TAR} xOf ${DISTDIR}/${_dep}.tar contents.tar.gz |\

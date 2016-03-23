@@ -18,6 +18,7 @@ LIB_DEPENDS=	libxdiff.so:${PORTSDIR}/textproc/libxdiff
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -1,0 +1,13 @@
+bin/qlwm
+lib/qlwm/biff
+lib/qlwm/dclock
+lib/qlwm/files/appdefaults
+lib/qlwm/files/button_left.xpm
+lib/qlwm/files/button_right.xpm
+lib/qlwm/files/defaults
+lib/qlwm/files/menu.xpm
+lib/qlwm/files/menuconfig
+lib/qlwm/files/tiled.xpm
+lib/qlwm/files/winlist.xpm
+lib/qlwm/qlwm
+man/man1/qlwm.1.gz

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tk
-PORTVERSION=	8.6.4
+PORTVERSION=	8.6.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION} TCLTK/tcl8_6
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
@@ -18,6 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=	TKMAN DEMOS THREADS
 OPTIONS_DEFAULT=THREADS
+OPTIONS_SUB=	yes
 TKMAN_DESC=	Install Tk function manpages
 DEMOS_DESC=	Install demos
 XSS_DESC=	XScrnSaver support
@@ -52,27 +53,9 @@ MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
 PLIST_SUB=	TK_VER=${TK_VER} \
 		SHORT_TK_VER=${SHORT_TK_VER}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEMOS}
-INSTALL_TARGET+=	install-demos
-PLIST_SUB+=	DEMOS=""
-.else
-PLIST_SUB+=	DEMOS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTKMAN}
-INSTALL_TARGET+=install-doc
-PLIST_SUB+=	MAN=""
-.else
-PLIST_SUB+=	MAN="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=--enable-threads
-.else
-CONFIGURE_ARGS+=--disable-threads
-.endif
+DEMOS_INSTALL_TARGET=	install-demos
+TKMAN_INSTALL_TARGET=	install-doc
+THREADS_CONFIGURE_ENABLE=	threads
 
 post-patch:
 	${REINPLACE_CMD} -e \

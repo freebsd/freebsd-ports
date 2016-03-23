@@ -1,13 +1,5 @@
-commit 186730742519bfa9cb7f9668fb508a78e65d26cc
-Author: René Ladan <r.c.ladan@gmail.com>
-Date:   Fri Feb 21 12:20:57 2014 +0100
-
-    Add DESTDIR support and add install-strip and uninstall targets.
-
-diff --git a/Makefile b/Makefile
-index d527b55..2ddbb8b 100644
---- a/Makefile
-+++ b/Makefile
+--- Makefile.orig	2013-06-12 22:11:38 UTC
++++ Makefile
 @@ -1,4 +1,6 @@
 -.PHONY: all clean install
 +.PHONY: all clean install install-strip uninstall

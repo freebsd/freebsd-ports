@@ -1,6 +1,6 @@
---- src/fileformat/rgbeio.cpp.orig	2007-12-06 11:00:49.000000000 +0000
-+++ src/fileformat/rgbeio.cpp	2014-02-20 19:04:01.556587853 +0000
-@@ -141,7 +141,7 @@
+--- src/fileformat/rgbeio.cpp.orig	2007-12-06 11:00:49 UTC
++++ src/fileformat/rgbeio.cpp
+@@ -141,7 +141,7 @@ void rgb2rgbe( float r, float g, float b
  // Reading RGBE files
  void readRadianceHeader( FILE *file, int &width, int &height, float &exposure )
  {
@@ -9,7 +9,7 @@
  
    // read header information
    char head[255];
-@@ -208,7 +208,7 @@
+@@ -208,7 +208,7 @@ void readRadianceHeader( FILE *file, int
  	height = height - width;
  	}
  */
@@ -18,7 +18,7 @@
  }
  
  
-@@ -389,7 +389,7 @@
+@@ -389,7 +389,7 @@ void writeRadiance( FILE *file, pfs::Arr
    int width = X->getCols();
    int height = X->getRows();
  

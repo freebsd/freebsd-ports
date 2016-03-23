@@ -1,0 +1,18 @@
+--- doc/manual/en/manual-en.sgml.orig	2005-05-16 14:38:51.000000000 +0200
++++ doc/manual/en/manual-en.sgml	2016-02-17 20:39:53.059774000 +0100
+@@ -190,6 +190,7 @@
+ 
+ 			<para>As mentioned above, there must be a small C program compiled. If you use Perl
+ 				5.8 and/or Linux, you could skip this step. For this, just execute 
++			</para>
+ 
+ 			<para>
+ 				<prompt>$ </prompt>
+@@ -1023,6 +1024,7 @@
+ 			<para>For this, you can assign the variable <literal>BACKGROUND</literal>
+ 				the value <literal>on</literal>. In the debug mode (see <xref
+ 				linkend="debug">) this option has no effect.</para>
++		</sect3>
+ 		
+ 		<sect3 id="debug">
+ 			<title>Error messages</title>

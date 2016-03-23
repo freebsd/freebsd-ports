@@ -19,8 +19,9 @@ OPTIONS_DEFAULT=	CERTBUNDLE MAN3
 CERTBUNDLE_DESC=	Install LibreSSL's cert bundle ${PREFIX}/etc/ssl/cert.pem
 MAN3_DESC=	Install API manpages (section 3)
 
-CONFLICTS?=	openssl-[0-9]* \
-		libressl-devel-[0-9]*
+CONFLICTS?=	libressl-devel-[0-9]* \
+		openssl-[0-9]* \
+		openssl-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig

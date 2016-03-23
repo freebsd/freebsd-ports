@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serviio
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6
 #PORTREVISION=	0
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	http://download.serviio.org/releases/
@@ -20,7 +20,7 @@ USES=		dos2unix
 DOS2UNIX_GLOB=	derby.properties
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
-SUB_FILES+=	pkg-message serviiod serviio-console
+SUB_FILES+=	pkg-message serviiod
 USE_RC_SUBR=	serviio
 SUB_LIST+=	USER=${USERS}
 RESTRICTED=	License does not allow selling
@@ -42,6 +42,5 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/console-log4j.properties	\
 		${STAGEDIR}${ETCDIR}/console-log4j.properties.sample
 	${INSTALL_SCRIPT} ${WRKDIR}/serviiod ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKDIR}/serviio-console ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

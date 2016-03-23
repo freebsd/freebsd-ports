@@ -2,7 +2,7 @@ include/unibilium.h
 lib/libunibilium.a
 lib/libunibilium.so
 lib/libunibilium.so.0
-lib/libunibilium.so.0.2.1
+lib/libunibilium.so.0.3.0
 libdata/pkgconfig/unibilium.pc
 man/man3/unibi_add_ext_bool.3.gz
 man/man3/unibi_add_ext_num.3.gz
@@ -32,9 +32,11 @@ man/man3/unibi_get_ext_str_name.3.gz
 man/man3/unibi_get_name.3.gz
 man/man3/unibi_get_num.3.gz
 man/man3/unibi_get_str.3.gz
+man/man3/unibi_int_from_var.3.gz
 man/man3/unibi_name_bool.3.gz
 man/man3/unibi_name_num.3.gz
 man/man3/unibi_name_str.3.gz
+man/man3/unibi_num_from_var.3.gz
 man/man3/unibi_run.3.gz
 man/man3/unibi_set_aliases.3.gz
 man/man3/unibi_set_bool.3.gz
@@ -50,5 +52,8 @@ man/man3/unibi_set_str.3.gz
 man/man3/unibi_short_name_bool.3.gz
 man/man3/unibi_short_name_num.3.gz
 man/man3/unibi_short_name_str.3.gz
+man/man3/unibi_str_from_var.3.gz
 man/man3/unibi_terminfo_dirs.3.gz
+man/man3/unibi_var_from_num.3.gz
+man/man3/unibi_var_from_str.3.gz
 man/man3/unibilium.h.3.gz

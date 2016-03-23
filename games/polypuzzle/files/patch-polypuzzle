@@ -1,13 +1,22 @@
---- polypuzzle.orig	Fri Jun 18 11:51:04 2004
-+++ polypuzzle	Wed Jun 30 13:46:07 2004
+--- polypuzzle.orig	2008-10-26 00:53:04 UTC
++++ polypuzzle
 @@ -1,8 +1,8 @@
- #/bin/sh
+ #!/bin/sh
  # the next line restarts using tclsh \
 -exec wish "$0" "$@"
-+exec wish8.4 "$0" "$@"
++exec %%WISH%% "$0" "$@"
  
 -if {[file isdirectory /usr/local/lib/polypuzzle]} {cd  /usr/local/lib/polypuzzle}
 +if {[file isdirectory %%DATADIR%%]} {cd  %%DATADIR%%}
  
- source pieces.colours
- set colour(bg)  azure3		;# background colour
+ # wish8.5.2 still occasionally has problems for polypuzzle without this hack:
+ set tcl_precision 12
+@@ -380,7 +380,7 @@ proc DrawPiece {n xpos ypos} {
+   # Place this piece on top (but underneath text, which is our ceiling)
+   #   in windows tcl 8.2 this generates an error on initiation
+   #   as text is not defined - ooh noo (but is ok in tcl832)
+-  .c lower piece$n text
++  # .c lower piece$n text
+ 
+   .c move piece$n $xpos $ypos
+ 

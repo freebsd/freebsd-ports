@@ -93,7 +93,6 @@ include/shibsp/util/PropertySet.h
 include/shibsp/util/SPConstants.h
 include/shibsp/util/TemplateParameters.h
 include/shibsp/version.h
-lib/libshibsp.so.6.0.5
 lib/libshibsp.so.6
 lib/libshibsp.so
 lib/shibboleth/adfs.so
@@ -103,7 +102,6 @@ lib/shibboleth/plugins-lite.so
 lib/shibboleth/plugins.so
 %%WITH_APACHE_22%%lib/shibboleth/mod_shib_22.so
 %%WITH_APACHE_24%%lib/shibboleth/mod_shib_24.so
-lib/libshibsp-lite.so.6.0.5
 lib/libshibsp-lite.so.6
 lib/libshibsp-lite.so
 sbin/shibd

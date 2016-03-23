@@ -1,5 +1,5 @@
---- cpp/fetcher/remote_peer_test.cc.orig	2015-11-20 15:20:24.460754000 +0100
-+++ cpp/fetcher/remote_peer_test.cc	2015-11-20 15:22:18.618590000 +0100
+--- cpp/fetcher/remote_peer_test.cc.orig	2016-02-02 11:35:23 UTC
++++ cpp/fetcher/remote_peer_test.cc
 @@ -1,5 +1,8 @@
  #include <gflags/gflags.h>
  #include <glog/logging.h>
@@ -8,4 +8,4 @@
 +#define GTEST_HAS_POSIX_RE 0
  #include <gmock/gmock.h>
  #include <gtest/gtest.h>
- #include "log/etcd_consistent_store.h"
+ #include <openssl/err.h>

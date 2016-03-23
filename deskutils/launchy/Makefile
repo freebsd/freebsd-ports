@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Launchy%20on%20Linux/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source keystroke launcher
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/bin/xdg-open:${PORTSDIR}/devel/xdg-utils
 
@@ -31,7 +34,7 @@ post-patch:
 		${WRKSRC}/plugins/weby/weby.pro \
 		${WRKSRC}/src/src.pro
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/?eadme.* ${STAGEDIR}${DOCSDIR}
 

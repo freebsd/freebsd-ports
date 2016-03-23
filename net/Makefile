@@ -155,6 +155,7 @@
     SUBDIR += gkrellmwireless2
     SUBDIR += glflow
     SUBDIR += glib-networking
+    SUBDIR += glusterfs
     SUBDIR += gnet2
     SUBDIR += gnetcat
     SUBDIR += gnome-nettool
@@ -252,14 +253,10 @@
     SUBDIR += ipsorc
     SUBDIR += ipsumdump
     SUBDIR += ipsvd
+    SUBDIR += ipxe
     SUBDIR += irrd
     SUBDIR += isboot-kmod
-    SUBDIR += isc-dhcp41-client
-    SUBDIR += isc-dhcp41-relay
     SUBDIR += isc-dhcp41-server
-    SUBDIR += isc-dhcp42-client
-    SUBDIR += isc-dhcp42-relay
-    SUBDIR += isc-dhcp42-server
     SUBDIR += isc-dhcp43-client
     SUBDIR += isc-dhcp43-relay
     SUBDIR += isc-dhcp43-server
@@ -442,6 +439,7 @@
     SUBDIR += nload
     SUBDIR += nmsg
     SUBDIR += nocatsplash
+    SUBDIR += norm
     SUBDIR += nos-ttb
     SUBDIR += nph
     SUBDIR += ns3
@@ -453,7 +451,6 @@
     SUBDIR += ntimed
     SUBDIR += ntlmaps
     SUBDIR += ntop
-    SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntp-devel
     SUBDIR += ntraceroute
@@ -884,10 +881,6 @@
     SUBDIR += pen
     SUBDIR += pfinger
     SUBDIR += phamm
-    SUBDIR += php5-ldap
-    SUBDIR += php5-soap
-    SUBDIR += php5-sockets
-    SUBDIR += php5-xmlrpc
     SUBDIR += php55-ldap
     SUBDIR += php55-soap
     SUBDIR += php55-sockets
@@ -896,6 +889,10 @@
     SUBDIR += php56-soap
     SUBDIR += php56-sockets
     SUBDIR += php56-xmlrpc
+    SUBDIR += php70-ldap
+    SUBDIR += php70-soap
+    SUBDIR += php70-sockets
+    SUBDIR += php70-xmlrpc
     SUBDIR += phpldapadmin
     SUBDIR += pim6-tools
     SUBDIR += pim6dd
@@ -1075,7 +1072,6 @@
     SUBDIR += rubygem-amq-protocol
     SUBDIR += rubygem-amqp
     SUBDIR += rubygem-amqp-utils
-    SUBDIR += rubygem-amqp067
     SUBDIR += rubygem-aws-s3
     SUBDIR += rubygem-aws-ses
     SUBDIR += rubygem-bunny
@@ -1167,7 +1163,6 @@
     SUBDIR += samba-nmblookup
     SUBDIR += samba-smbclient
     SUBDIR += samba36
-    SUBDIR += samba4
     SUBDIR += samba41
     SUBDIR += samba42
     SUBDIR += samba43

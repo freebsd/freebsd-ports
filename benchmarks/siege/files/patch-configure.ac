@@ -1,14 +1,14 @@
---- configure.ac.orig	2015-06-04 10:43:01 UTC
+--- configure.ac.orig	2015-12-22 20:12:40 UTC
 +++ configure.ac
-@@ -7,6 +7,7 @@ dnl
- AC_INIT
- AC_CONFIG_SRCDIR([src/setup.h]) 
+@@ -17,6 +17,7 @@ AC_CONFIG_AUX_DIR(utils)  
+ AM_INIT_AUTOMAKE
+ AC_CONFIG_SRCDIR([src/setup.h])
  AC_CONFIG_HEADERS(include/config.h)
 +AC_CONFIG_MACRO_DIRS([m4])
- 
- dnl
- dnl Define the utils directory
-@@ -44,7 +45,6 @@ dnl
+ DATE=`${CONFIG_SHELL} ${srcdir}/utils/mkstamp`
+ AC_SUBST(DATE)
+ AC_SUBST(PROGRAM)
+@@ -42,7 +43,6 @@ dnl
  dnl Program support
  dnl
  AC_PATH_PROG( PERL, perl, false )

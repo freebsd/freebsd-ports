@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-mines
-PORTVERSION=	3.16.1
+PORTVERSION=	3.18.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack librsvg2 libxml2:build
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

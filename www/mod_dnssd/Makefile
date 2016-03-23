@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module that provides DNS-SD capabilities
 
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 
 USES=		gmake pkgconfig
@@ -18,8 +21,6 @@ USE_APACHE=	22+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	APR_CFLAGS="`${LOCALBASE}/bin/apr-1-config --cflags --cppflags --includes`" \
 		APR_LIBS="`${LOCALBASE}/bin/apr-1-config --ldflags`"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-lynx
 
 OPTIONS_DEFINE=	DOCS
@@ -31,8 +32,10 @@ pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/README ${STAGEDIR}${DOCSDIR}/README
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

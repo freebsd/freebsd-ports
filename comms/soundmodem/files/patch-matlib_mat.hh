@@ -1,6 +1,6 @@
---- matlib/mat.hh.orig	2013-12-13 08:25:15.148898287 -0500
-+++ matlib/mat.hh	2013-12-13 08:45:23.061999828 -0500
-@@ -91,36 +91,6 @@
+--- matlib/mat.hh.orig	2003-01-05 19:19:33 UTC
++++ matlib/mat.hh
+@@ -91,36 +91,6 @@ template<typename T> void mmul(T *c, con
                  memcpy(c, r, d1 * d3 * sizeof(c[0]));
  }
  
@@ -37,7 +37,7 @@
  /* Transpose a matrix (a el C^{d1 x d2}, b el C^{d2 x d1}) */
  template<typename T> void mtranspose(T *b, const T *a, unsigned int d1, unsigned int d2)
  {
-@@ -440,23 +410,6 @@
+@@ -440,23 +410,6 @@ template<typename T> void mlusolve(T *x,
  	}
  }
  

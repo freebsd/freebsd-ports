@@ -3,6 +3,7 @@
 
 PORTNAME=	BerkeleyDB
 PORTVERSION=	0.55
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +18,8 @@ TEST_DEPENDS=	p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
 USES=		perl5 shebangfix
+USE_BDB=	yes
 USE_PERL5=	configure
-USE_BDB=	47+
 
 SHEBANG_FILES=	mkconsts.pl
 
@@ -26,5 +27,8 @@ post-patch:
 	@${ECHO} "INCLUDE = ${BDB_INCLUDE_DIR}" > ${WRKSRC}/config.in
 	@${ECHO} "LIB = ${LOCALBASE}/lib" >> ${WRKSRC}/config.in
 	@${ECHO} "DBNAME = -l${BDB_LIB_NAME}" >> ${WRKSRC}/config.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/BerkeleyDB/BerkeleyDB.so
 
 .include <bsd.port.mk>

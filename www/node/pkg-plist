@@ -1,6 +1,8 @@
 bin/node
 include/node/android-ifaddrs.h
 include/node/ares.h
+include/node/ares_build.h
+include/node/ares_rules.h
 include/node/ares_version.h
 include/node/common.gypi
 include/node/config.gypi

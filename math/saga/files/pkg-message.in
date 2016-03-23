@@ -23,7 +23,7 @@ modules.
 From SAGA GIS 2.2.0 on, there is some example and test data installed.
 
 Predefined ToolChains are located at
-  %%DATADIR%%/scripting/toolchains/
+  %%DATADIR%%/toolchains/
 
 Python scripts with examples, helpers and test data reside at
   %%DATADIR%%/scripting/python/

@@ -32,19 +32,16 @@ EXAMPLES_LIB_DEPENDS=	libcpptest.so:${PORTSDIR}/devel/cpptest
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 DOCS_ALL_TARGET=	doc
 
-.include <bsd.port.options.mk>
+# The code uses std::cbrt(). Even if one passes some additional macros for
+# libstdc++ to enable additional math functions in math.h some of them, such as
+# acoshl() are not defined and linking fails.
+BROKEN_FreeBSD_9=	Needs additional math functions
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=	Can not compile if FreeBSD version lower than 10.0-RELEASE
-.endif
-
-post-patch:
-.if ! ${PORT_OPTIONS:MEXAMPLES}
+post-patch-EXAMPLES-off:
 	${REINPLACE_CMD} \
 		-e 's/add_subdirectory(example)//g' \
 		-e 's/find_package(CPPTest)//g' \
 		${WRKSRC}/CMakeLists.txt
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/eli \
@@ -55,7 +52,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/include/eli
 	(cd ${WRKSRC}/include/eli && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/eli "*")
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+do-install-EXAMPLES-on:
 	${INSTALL_DATA} \
 		${BUILD_WRKSRC}/example/${VSPPOD_DIR}/VSPPodExample \
 		${BUILD_WRKSRC}/example/${AIRFOIL_DIR}/AirfoilFitExample \
@@ -67,9 +65,8 @@ do-install:
 		"-name *Test -type f")
 	${FIND} ${STAGEDIR}${EXAMPLESDIR}${TEST_SUBDIR} -name *Test | \
 		${XARGS} ${STRIP_CMD}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	(cd ${BUILD_WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

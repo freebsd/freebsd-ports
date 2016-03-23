@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tdbc
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 CATEGORIES=	databases
-MASTER_SITES=	SF/tcl/TDBC/${PORTVERSION}
+MASTER_SITES=	TCLTK/tcl8_6 \
+		SF/tcl/Tcl/8.6.5
 DISTFILES=	${PORTNAME}${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -16,6 +17,8 @@ LICENSE_FILE=	${WRKDIR}/${PORTNAME}${PORTVERSION}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE ODBC
+OPTIONS_DEFAULT=MYSQL PGSQL SQLITE ODBC
+OPTIONS_SUB=	yes
 
 USES=		tcl:86
 USE_LDCONFIG=	yes
@@ -23,62 +26,35 @@ MAKE_ENV+=	DESTDIR=${STAGEDIR}
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} --with-tcloo=${TCL_LIBDIR} \
 		--prefix=${PREFIX} --exec-prefix=${PREFIX} \
 		--with-tdbc=${WRKDIR}/tdbc${PORTVERSION} --enable-threads \
-		--mandir=${PREFIX}/man
+		--mandir=${PREFIX}/man \
+		--includedir=${PREFIX}/include/tdbc
 PLIST_SUB+=	VERSION=${DISTVERSION} \
 		TCL_MAJ=${TCL_VER:R} \
 		TCL_VER=${TCL_VER}
 
 MODULES=	tdbc
 
-.include <bsd.port.options.mk>
-
-#
 # MySQL
-#
-.if ${PORT_OPTIONS:MMYSQL}
-DISTFILES+=	${PORTNAME}mysql${PORTVERSION}${EXTRACT_SUFX}
-MODULES+=	tdbcmysql
-PLIST_SUB+=	MYSQL=""
-USE_MYSQL=	client
-.else
-PLIST_SUB+=	MYSQL="@comment "
-.endif
+MYSQL_VARS=		MODULES+=tdbcmysql USE_MYSQL=client
+MYSQL_DISTFILES=	${PORTNAME}mysql${PORTVERSION}${EXTRACT_SUFX}
 
-#
 # ODBC
-#
-.if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
-DISTFILES+=	${PORTNAME}odbc${PORTVERSION}${EXTRACT_SUFX}
-MODULES+=	tdbcodbc
-PLIST_SUB+=	ODBC=""
-.else
-PLIST_SUB+=	ODBC="@comment "
-.endif
+ODBC_VARS=		MODULES+=tdbcodbc
+ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+ODBC_DISTFILES=		${PORTNAME}odbc${PORTVERSION}${EXTRACT_SUFX}
 
-#
 # PostgreSQL
-#
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-DISTFILES+=	${PORTNAME}postgres${PORTVERSION}${EXTRACT_SUFX}
-MODULES+=	tdbcpostgres
-PLIST_SUB+=	PGSQL=""
-.else
-PLIST_SUB+=	PGSQL="@comment "
-.endif
+PGSQL_VARS=		MODULES+=tdbcpostgres
+PGSQL_USES=		pgsql
+PGSQL_DISTFILES=	${PORTNAME}postgres${PORTVERSION}${EXTRACT_SUFX}
 
-#
 # SQLite
-#
-.if ${PORT_OPTIONS:MSQLITE}
-DISTFILES+=	${PORTNAME}sqlite3-${PORTVERSION}${EXTRACT_SUFX}
-MODULES+=	tdbcsqlite3
-PLIST_SUB+=	SQLITE="" \
-		TCL_LIBDIR="${TCL_LIBDIR:S/${LOCALBASE}\///}"
-.else
-PLIST_SUB+=	SQLITE="@comment "
-.endif
+SQLITE_VARS=		MODULES+=tdbcsqlite3
+SQLITE_DISTFILES=	${PORTNAME}sqlite3-${PORTVERSION}${EXTRACT_SUFX}
+SQLITE_PLIST_SUB=	TCL_LIBDIR="${TCL_LIBDIR:S/${LOCALBASE}\///}"
+SQLITE_RUN_DEPENDS=	${LOCALBASE}/lib/sqlite3/pkgIndex.tcl:${PORTSDIR}/databases/tcl-sqlite3
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	if [ -d ${WRKDIR}/tdbcsqlite3-${PORTVERSION} ]; then \
@@ -115,7 +91,7 @@ do-install:
 	cd ${WRKDIR}/${module}${PORTVERSION} && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
 .endfor
 
-test:
+do-test:
 .for module in ${MODULES}
 	@echo "================================="
 	@echo "Testing ${module}"

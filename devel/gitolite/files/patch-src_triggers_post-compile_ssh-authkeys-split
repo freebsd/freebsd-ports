@@ -1,0 +1,17 @@
+--- src/triggers/post-compile/ssh-authkeys-split.orig	2016-02-20 12:48:57 UTC
++++ src/triggers/post-compile/ssh-authkeys-split
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/bash
++#!/bin/sh
+ 
+ #   split multi-key files into separate keys like ssh-authkeys likes
+ 
+@@ -64,7 +64,7 @@ do
+             echo 1>&2 "ssh-authkeys-split: bad line $seq in keydir/$k"
+             rm -f $f
+         fi
+-        (( seq++ ))
++        seq=$(( $seq + 1 ))
+     done < $k
+ 
+     # now delete the original file

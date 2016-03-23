@@ -10,23 +10,32 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny English grammar checker
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
-		wn:${PORTSDIR}/textproc/wordnet \
-		${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
-		${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:2
-MAKE_ARGS=	dict WORDNETDICT="${LOCALBASE}/share/WordNet"
+BUILD_DEPENDS=	wn:${PORTSDIR}/textproc/wordnet \
+		${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
 
-PORTDOCS=	address.png index-e.html index.html
+USES=		python:2 shebangfix
+SHEBANG_FILES=	*.py misc/*.py qq
+ALL_TARGET=	dict
+MAKE_ARGS=	WORDNETDICT="${LOCALBASE}/share/WordNet" \
+		PYTHON="${PYTHON_CMD}"
+NO_ARCH=	yes
+
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/qq ${STAGEDIR}${DATADIR}
 	${LN} -shf ${DATADIR}/qq ${STAGEDIR}${PREFIX}/bin/qq
 	${INSTALL_DATA} ${WRKSRC}/*.py ${WRKSRC}/dict.cdb ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/htdocs; ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/htdocs/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

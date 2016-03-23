@@ -1,13 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	gitolite
-PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTVERSION=	3.6.5
+DISTVERSIONPREFIX=v
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	GH \
-		LOCAL/milki \
-		LOCAL/tdb
+MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access control layer on top of git
@@ -20,7 +18,6 @@ RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sitaramc
-GH_TAGNAME=	3455375
 
 CONFLICTS=	gitolite-[^3]*
 
@@ -45,7 +42,7 @@ post-patch:
 		-exec ${REINPLACE_CMD} -Ee 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' {} \;
 
 do-build:
-	echo "v${PORTVERSION}-0-g${GH_TAGNAME}" > ${WRKSRC}/src/VERSION
+	echo "${GH_TAGNAME}" > ${WRKSRC}/src/VERSION
 	${MKDIR} ${WRKSRC}/lib
 	${MV} ${WRKSRC}/src/lib/Gitolite ${WRKSRC}/lib/
 	${RMDIR} ${WRKSRC}/src/lib
@@ -63,7 +60,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.markdown ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

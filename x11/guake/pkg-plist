@@ -90,5 +90,6 @@ share/icons/hicolor/48x48/apps/guake.png
 share/pixmaps/guake/add_tab.png
 share/pixmaps/guake/guake-notification.png
 share/pixmaps/guake/guake-tray.png
+share/pixmaps/guake/guake-tray.svg
 share/pixmaps/guake/guake.png
 share/pixmaps/guake/quick-open.png

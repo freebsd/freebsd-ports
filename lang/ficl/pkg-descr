@@ -5,4 +5,3 @@ can typically be found in /usr/src/sys/boot/ficl on FreeBSD with the
 bindings needed by the OS loader.
 
 WWW: http://ficl.sourceforge.net/
-

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.1604
+PORTVERSION=	2.1605
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -47,12 +47,15 @@ TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
 		p5-Locale-US>=0:${PORTSDIR}/misc/p5-Locale-US \
 		p5-Module-Refresh>=0:${PORTSDIR}/devel/p5-Module-Refresh \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+		p5-PadWalker>=0:${PORTSDIR}/devel/p5-PadWalker \
 		p5-Params-Coerce>=0:${PORTSDIR}/devel/p5-Params-Coerce \
+		p5-Specio>=0:${PORTSDIR}/devel/p5-Specio \
 		p5-SUPER>=0:${PORTSDIR}/devel/p5-SUPER \
 		p5-Test-CleanNamespaces>=0.13:${PORTSDIR}/devel/p5-Test-CleanNamespaces \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-DependentModules>=0:${PORTSDIR}/devel/p5-Test-DependentModules \
 		p5-Test-LeakTrace>=0:${PORTSDIR}/devel/p5-Test-LeakTrace \
+		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 		p5-Test-Fatal>=0.001:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \

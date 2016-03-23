@@ -5,9 +5,9 @@ Run the following commands to enable postfix during startup:
   - sysrc postfix_enable="YES"
   - sysrc sendmail_enable="NONE"
 
-If postfix is *not* already activated in /etc/mail/mailer.conf
-  - mv /etc/mail/mailer.conf /etc/mail/mailer.conf.old
-  - install -m 0644 %%DAEMONDIR%%/mailer.conf.postfix /etc/mail/mailer.conf
+If postfix is *not* already activated in %%MC_PREFIX%%/etc/mail/mailer.conf
+  - mv %%MC_PREFIX%%/etc/mail/mailer.conf %%MC_PREFIX%%/etc/mail/mailer.conf.old
+  - install -m 0644 %%DATADIR%%/mailer.conf.postfix %%MC_PREFIX%%/etc/mail/mailer.conf
 
 Disable sendmail(8) specific tasks,
 add the following lines to /etc/periodic.conf(.local):
@@ -21,5 +21,6 @@ the sasldb file.  This is accomplished by adding postfix to group mail and
 making the %%PREFIX%%/etc/sasldb* file(s) readable by group mail (this should
 be the default for new installs).
 
-If you are upgrading from prior postfix version, review the RELEASE_NOTES to
-familiarize yourself with new features and incompatabilities. 
+If you are upgrading from prior postfix version, please see the README
+files for recommended changes to your configuration and additional
+http://www.postfix.org/COMPATIBILITY_README.html

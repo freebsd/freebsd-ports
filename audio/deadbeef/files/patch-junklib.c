@@ -1,8 +1,8 @@
---- junklib.c.orig	2014-07-31 19:03:51 UTC
+--- junklib.c.orig	2016-01-02 20:27:39 UTC
 +++ junklib.c
-@@ -32,7 +32,6 @@
- #include <stdlib.h>
+@@ -33,7 +33,6 @@
  #include <string.h>
+ #undef HAVE_ICI
  #if HAVE_ICONV
 -  #define LIBICONV_PLUG
    #include <iconv.h>

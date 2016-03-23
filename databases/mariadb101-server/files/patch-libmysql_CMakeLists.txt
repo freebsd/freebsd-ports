@@ -1,0 +1,41 @@
+Fix up missing WITHOUT_DOCS, WITHOUT_CLIENT options
+
+--- libmysql/CMakeLists.txt.orig	2015-10-15 15:43:37 UTC
++++ libmysql/CMakeLists.txt
+@@ -410,7 +410,7 @@ SET(LIBS clientlib dbug strings vio mysy
+ 
+ # Merge several convenience libraries into one big mysqlclient
+ # and link them together into shared library.
+-MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development)
++MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development NOINSTALL)
+ 
+ # Visual Studio users need debug  static library for debug projects
+ IF(MSVC)
+@@ -418,6 +418,7 @@ IF(MSVC)
+  INSTALL_DEBUG_TARGET(clientlib DESTINATION ${INSTALL_LIBDIR}/debug)
+ ENDIF()
+ 
++IF(FALSE)
+ IF(UNIX)
+   MACRO(GET_VERSIONED_LIBNAME LIBNAME EXTENSION VERSION OUTNAME)
+     SET(DOT_VERSION ".${VERSION}")
+@@ -432,11 +433,13 @@ IF(UNIX)
+   ENDMACRO()
+   INSTALL_SYMLINK(${CMAKE_STATIC_LIBRARY_PREFIX}mysqlclient_r.a mysqlclient ${INSTALL_LIBDIR} Development)
+ ENDIF()
++ENDIF()
+ 
+ IF(NOT DISABLE_SHARED)
+   MERGE_LIBRARIES(libmysql SHARED ${LIBS}
+     EXPORTS ${CLIENT_API_FUNCTIONS} ${CLIENT_API_5_1_EXTRA} ${CLIENT_API_5_5_EXTRA}
+-    COMPONENT SharedLibraries)
++	COMPONENT SharedLibraries NOINSTALL)
++IF(FALSE)
+   IF(UNIX)
+     # libtool compatability
+     IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
+@@ -484,3 +487,4 @@ IF(NOT DISABLE_SHARED)
+     ENDFOREACH()
+   ENDIF()
+ ENDIF()
++ENDIF()

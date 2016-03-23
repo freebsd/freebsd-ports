@@ -21,7 +21,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${STAGEDIR}${PREFIX}/libdata/pkgconfig
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${STAGEDIR}${PREFIX}/libdata/pkgconfig \
+		CXX="${CXX} -B${LOCALBASE}/bin"
 CONFIGURE_ARGS=	--with-lapack-lib="${LAPACKLIB} -L${LOCALBASE}/lib"	\
 		--with-blas-lib="${BLASLIB} -L${LOCALBASE}/lib"
 
@@ -36,6 +37,7 @@ post-patch::
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		-e 's|$$(DESTDIR)$$(addlibsdir)|$$(addlibsdir)|g'
+
 post-extract:
 	@(${ECHO} "Extracting Metis and Mumps ThirdParty libraries ..." )
 	@(cd ${WRKSRC}/ThirdParty/Metis && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/metis-4.0.3.tar.gz ${EXTRACT_AFTER_ARGS});

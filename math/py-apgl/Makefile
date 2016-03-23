@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apgl
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +17,6 @@ BUILD_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

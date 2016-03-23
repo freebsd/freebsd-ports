@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	2015-08-11 20:57:21.000000000 +0900
-+++ doc/Makefile.in	2015-08-12 01:06:54.960781832 +0900
-@@ -498,7 +498,7 @@
- myman_pages = gpg2.1 gpgsm.1 gpg-agent.1 dirmngr.8 scdaemon.1 gpgv2.1 \
-                 watchgnupg.1 gpgconf.1 addgnupghome.8 gpg-preset-passphrase.1 \
- 		gpg-connect-agent.1 gpgparsemail.1 symcryptrun.1 \
--		applygnupgdefaults.8 gpg-zip.1 \
-+		applygnupgdefaults.8 \
- 		dirmngr-client.1
+--- doc/Makefile.in.orig	2016-01-26 12:54:48.000000000 +0000
++++ doc/Makefile.in	2016-02-19 01:59:17.000000000 +0000
+@@ -507,7 +507,7 @@
+ watchgnupg_SOURCE = gnupg.texi
+ CLEANFILES = yat2m mkdefsinc defs.inc
+ DISTCLEANFILES = gnupg.tmp gnupg.ops yat2m-stamp.tmp yat2m-stamp \
+-		 $(myman_pages) gpg-zip.1 gnupg.7
++		 $(myman_pages) gnupg.7
  
- man_MANS = $(myman_pages) gnupg.7
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am

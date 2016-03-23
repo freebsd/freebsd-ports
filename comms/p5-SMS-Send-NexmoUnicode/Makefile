@@ -1,15 +1,14 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
+# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	SMS-Send-NexmoUnicode
-PORTVERSION=	0.01
-PORTREVISION=	1
+PORTVERSION=	0.02
 CATEGORIES=	comms perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JNLIN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	SMS::Send driver for www.nexmo.com (Unicode)
 
 BUILD_DEPENDS=	p5-Nexmo-SMS>=0.04:${PORTSDIR}/comms/p5-Nexmo-SMS \

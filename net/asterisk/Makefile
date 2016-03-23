@@ -3,7 +3,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.8.32.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:main,g729
 MASTER_SITE_SUBDIR=	asterisk/:main \
@@ -19,6 +19,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
+
+DEPRECATED=	Aterisk 1.8 reached EOL on 2015-10-21
+EXPIRATION_DATE=	2016-04-30
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64
 
@@ -222,9 +225,6 @@ post-patch:
 .else
 	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/%%LIBSYSINFO%%/d' ${WRKSRC}/main/Makefile
-.endif
-.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1000015 && !(defined(WITH_OPENSSL_PORT) || (!defined(WITH_OPENSSL_BASE) && exists(${LOCALBASE}/lib/libcrypto.so))))
-	@${REINPLACE_CMD} -e 's/SSL_OP_NO_TLSv1[_12]*;/0;/' ${WRKSRC}/main/tcptls.c
 .endif
 
 .if exists(${FILESDIR}/.asterisk.makeopts)

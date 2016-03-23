@@ -11,13 +11,11 @@ MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libenchant.so:${PORTSDIR}/textproc/enchant
-
-INSTALLS_ICONS=	yes
-USE_LDCONFIG=	yes
 
 USES=		gmake pkgconfig desktop-file-utils shared-mime-info \
 		tar:bzip2 libtool
@@ -31,19 +29,20 @@ CONFIGURE_ARGS=	--with-gtk2 \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
 		--with-icon-path=${PREFIX}/share/pixmaps
 INSTALL_TARGET=	install-strip
+INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DEBUG NLS TIDY WEBLINT EXAMPLES
+OPTIONS_DEFAULT=WEBLINT
+OPTIONS_SUB=	yes
 
 DEBUG_DESC=	Enable debugging output
 TIDY_DESC=	Include Tidy HTML cleanup program
 WEBLINT_DESC=	Include Weblint syntax and style checker
 
-OPTIONS_DEFAULT=WEBLINT
-
-OPTIONS_SUB=	yes
-
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
+NLS_USES_OFF=		gettext-tools
 
 DEBUG_CONFIGURE_ON=	--with-debugging-output
 LIBGNOME_USE=		GNOME=libgnomeui

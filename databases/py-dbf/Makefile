@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbf
-PORTVERSION=	0.95.012
-PORTREVISION=	1
+PORTVERSION=	0.96.005
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +12,8 @@ COMMENT=	Pure python package for reading/writing dbf files
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python zip
-USE_PYTHON=	distutils
-PYDISTUTILS_EGGINFO=	dbf-${PORTVERSION:C/\.0/./}-py${PYTHON_VER}.egg-info
+USES=		python
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

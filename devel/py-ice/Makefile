@@ -13,6 +13,7 @@ BUILD_DEPENDS=	mcpp:${PORTSDIR}/devel/mcpp
 LIB_DEPENDS=	libIce.so.${LIB_VRS}:${PORTSDIR}/devel/ice
 
 USES=		python shebangfix
+USE_PYTHON=	py3kplist
 SLAVE_PORT=	yes
 MASTERDIR=	${.CURDIR}/../ice
 PLIST=		${.CURDIR}/pkg-plist

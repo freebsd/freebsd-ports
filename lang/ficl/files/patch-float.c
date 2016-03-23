@@ -1,6 +1,6 @@
---- float.c.orig	2010-09-13 22:43:04.000000000 +0400
-+++ float.c	2012-03-20 19:09:18.000000000 +0400
-@@ -159,7 +159,7 @@
+--- float.c.orig	2010-09-13 18:43:04 UTC
++++ float.c
+@@ -159,7 +159,7 @@ static ficlInteger ficlFloatStackDisplay
  {
      struct stackContext *context = (struct stackContext *)c;
      char buffer[64];

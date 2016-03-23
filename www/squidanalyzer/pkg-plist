@@ -1,0 +1,33 @@
+bin/squid-analyzer
+@sample etc/squidreport/excluded.sample
+@sample etc/squidreport/included.sample
+@sample etc/squidreport/network-aliases.sample
+@sample etc/squidreport/squidanalyzer.conf.sample
+@sample etc/squidreport/user-aliases.sample
+etc/squidreport/lang/ca_CA.txt
+etc/squidreport/lang/cs_CZ.txt
+etc/squidreport/lang/de_DE.txt
+etc/squidreport/lang/en_US.txt
+etc/squidreport/lang/es_ES.txt
+etc/squidreport/lang/fr_FR.txt
+etc/squidreport/lang/it_IT.txt
+etc/squidreport/lang/pl_PL.txt
+etc/squidreport/lang/pt_BR.txt
+etc/squidreport/lang/ru_RU.txt
+etc/squidreport/lang/uk_UA.txt
+man/man3/squid-analyzer.3.gz
+%%SITE_PERL%%/SquidAnalyzer.pm
+%%PERL5_MAN3%%/SquidAnalyzer.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+www/squidreport/flotr2.js
+www/squidreport/images/back-arrow.png
+www/squidreport/images/cursor.png
+www/squidreport/images/domain.png
+www/squidreport/images/info.png
+www/squidreport/images/logo-squidanalyzer.png
+www/squidreport/images/network.png
+www/squidreport/images/user.png
+www/squidreport/sorttable.js
+www/squidreport/squidanalyzer.css

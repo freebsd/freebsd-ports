@@ -1,0 +1,6 @@
+include/gai/gai.h
+lib/libgai.so
+lib/libgai.so.0
+lib/libgai.so.0.5.10
+libdata/pkgconfig/gai.pc
+share/locale/de/LC_MESSAGES/gai.mo

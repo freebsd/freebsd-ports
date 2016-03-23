@@ -27,8 +27,21 @@ load_rc_config $name
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
+stop_postcmd="e2guardian_stop_postcmd"
+reload_cmd="e2guardian_reload_cmd"
+extra_commands="reload"
 
 command_args="-p $pidfile -f $e2guardian_config $e2guardian_flags"
 
-run_rc_command "$1"
+e2guardian_reload_cmd() {
+	if [ -f "${pidfile}" ]; then
+		${command} -g ${command_args}
+		echo "Reloading ${name}."
+	fi
+}
 
+e2guardian_stop_postcmd() {
+	rm ${pidfile}
+}
+
+run_rc_command "$1"

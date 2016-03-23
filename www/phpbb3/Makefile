@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	phpbb
-PORTVERSION=	3.1.5
+PORTVERSION=	3.1.8
 CATEGORIES=	www
 MASTER_SITES=	https://www.phpbb.com/files/release/
 PKGNAMESUFFIX=	3
 DISTNAME=	phpBB-${PORTVERSION}
 
-MAINTAINER=	coco@executive-computing.de
+MAINTAINER=	jochen@jochen-neumeister.de
 COMMENT=	PHP-based bulletin board / discussion forum system
 
 LICENSE=	GPLv2

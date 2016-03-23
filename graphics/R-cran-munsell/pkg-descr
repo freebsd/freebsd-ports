@@ -1,3 +1,8 @@
-Functions for exploring and using the Munsell colour system
+Provides easy access to, and manipulation of, the Munsell colours.
+Provides a mapping between Munsell's original notation (e.g. "5R
+5/10") and hexadecimal strings suitable for use directly in R
+graphics. Also provides utilities to explore slices through the
+Munsell colour tree, to transform Munsell colours and display colour
+palettes.
 
-WWW: http://cran.r-project.org/web/packages/munsell/
+WWW: https://cran.r-project.org/web/packages/munsell/

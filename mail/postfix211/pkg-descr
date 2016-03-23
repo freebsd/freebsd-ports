@@ -1,0 +1,15 @@
+Postfix attempts to be fast, easy to administer, and secure, while at the same
+time being sendmail compatible enough to not upset existing users. Thus, the
+outside has a sendmail-ish flavor, but the inside is completely different.
+
+Some feautures:
+
+Connection cache for SMTP, DSN status notifications, IP version 6, Plug-in
+support for multiple SASL implementations (Cyrus, Dovecot), TLS encryption and
+authentication, Configurable status notification message text, Access control
+per client/sender/recipient/etc, Content filter (built-in, external before
+queue, external after queue), Berkeley DB database, LDAP database, MySQL
+database, PostgreSQL database, Maildir and mailbox format, Virtual domains,
+VERP envelope return addresses and others.
+
+WWW: http://www.postfix.org/

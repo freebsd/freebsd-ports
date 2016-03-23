@@ -1,6 +1,7 @@
 bin/gnome-help
 bin/yelp
 include/libyelp/yelp-bookmarks.h
+include/libyelp/yelp-common-types.h
 include/libyelp/yelp-docbook-document.h
 include/libyelp/yelp-document.h
 include/libyelp/yelp-help-list.h
@@ -14,12 +15,17 @@ include/libyelp/yelp-sqlite-storage.h
 include/libyelp/yelp-storage.h
 include/libyelp/yelp-transform.h
 include/libyelp/yelp-types.h
+include/libyelp/yelp-uri-builder.h
 include/libyelp/yelp-uri.h
 include/libyelp/yelp-view.h
 lib/libyelp.a
 lib/libyelp.so
 lib/libyelp.so.0
 lib/libyelp.so.0.0.0
+lib/yelp/libyelpcommon.a
+lib/yelp/libyelpcommon.so
+lib/yelp/web-extensions/libyelpwebextension.a
+lib/yelp/web-extensions/libyelpwebextension.so
 share/applications/yelp.desktop
 share/gtk-doc/html/libyelp/YelpDocument.html
 share/gtk-doc/html/libyelp/YelpSettings.html

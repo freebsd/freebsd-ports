@@ -2,4 +2,4 @@ Two samples for the biosfont(4) kernel module:
 * showchar shows a requested character on stdout
 * showdati is a digital clock.  Best viewed on 80x25 consoles.
 
-WWW: http://rene-ladan.nl/biosfont/
+WWW: https://rene-ladan.nl/biosfont/

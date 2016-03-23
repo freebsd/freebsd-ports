@@ -10,12 +10,15 @@ MASTER_SITES=	SUNSITE/X11/clocks
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display the current time using the X root cursor
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		imake:notall
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

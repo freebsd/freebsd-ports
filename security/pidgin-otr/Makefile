@@ -10,7 +10,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows deniable private conversations using Pidgin
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 # explicitly use libotr.so.5 (see ports/186944)
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
@@ -19,10 +20,6 @@ LIB_DEPENDS=	libotr.so.5:${PORTSDIR}/security/libotr \
 		libpurple.so:${PORTSDIR}/net-im/libpurple
 
 USES=		cpe gmake libtool pkgconfig
-OPTIONS_DEFINE=	NLS
-NLS_USES=	gettext
-OPTIONS_SUB=	yes
-
 CPE_VENDOR=	cypherpunks
 CPE_PRODUCT=	${PKGNAMEPREFIX}${PORTNAME}
 USE_GNOME=	gtk20 intltool
@@ -33,6 +30,12 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-libotr-prefix=${LOCALBASE}/lib \
 		--with-libotr-inc-prefix=${LOCALBASE}/include
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+NLS_USES_OFF=	gettext-tools
 
 .include <bsd.port.options.mk>
 

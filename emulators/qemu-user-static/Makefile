@@ -18,6 +18,8 @@ post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/bin/qemu-img
 	@${RM} -r ${STAGEDIR}${PREFIX}/bin/qemu-io
 	@${RM} -r ${STAGEDIR}${PREFIX}/bin/qemu-nbd
+	@${RM} -r ${STAGEDIR}${PREFIX}/bin/ivshmem-client
+	@${RM} -r ${STAGEDIR}${PREFIX}/bin/ivshmem-server
 	@${MV} ${STAGEDIR}${PREFIX}/etc/rc.d ${WRKDIR}
 	@${RM} -r ${STAGEDIR}${PREFIX}/etc
 .if exists(/usr/sbin/binmiscctl)

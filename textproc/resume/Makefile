@@ -4,38 +4,40 @@
 PORTNAME=	resume
 DISTVERSION=	1_5_1
 PORTREVISION=	2
-CATEGORIES=	textproc
+CATEGORIES=	textproc java
 MASTER_SITES=	SF/xml${PORTNAME}/xml${PORTNAME}/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Resume library
 
+LICENSE=	MIT
+
+USES=		tar:tgz
 USE_JAVA=	yes
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
+NO_ARCH=	yes
+SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	${REINPLACE_CMD} -e 's|\.\./\.\./css|css|' ${WRKSRC}/xsl/params.xsl
-	${FIND} ${WRKSRC} -name '*.bak' -delete
+	@${REINPLACE_CMD} -e 's|\.\./\.\./css|css|' ${WRKSRC}/xsl/params.xsl
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/xml/${PORTNAME}
-	${CP} -R ${WRKSRC}/dtd/* ${STAGEDIR}${PREFIX}/share/xml/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/xsl/${PORTNAME}
-	${CP} -R ${WRKSRC}/xsl/* ${STAGEDIR}${PREFIX}/share/xsl/${PORTNAME}
-	${CP} -R ${WRKSRC}/css ${STAGEDIR}${PREFIX}/share/xsl/${PORTNAME}/format
+	cd ${WRKSRC}/dtd && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/xml/${PORTNAME}
+	cd ${WRKSRC}/xsl && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/xsl/${PORTNAME}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} css ${STAGEDIR}${PREFIX}/share/xsl/${PORTNAME}/format
 	${INSTALL_DATA} ${WRKSRC}/java/*.jar ${STAGEDIR}${JAVAJARDIR}
 
-post-install:
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
-	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" pkg-message >${PKGMESSAGE}
 
 .include <bsd.port.mk>

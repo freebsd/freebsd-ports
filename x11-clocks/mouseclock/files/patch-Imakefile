@@ -1,20 +1,20 @@
---- Imakefile.orig	1996-05-05 18:51:27.000000000 +0200
-+++ Imakefile	2013-09-01 17:04:26.000000000 +0200
+--- Imakefile.orig	1996-05-05 16:51:27 UTC
++++ Imakefile
 @@ -1,16 +1,10 @@
  
 -#define IHaveSubdirs
 -#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
-+OBJS = mouseclock.o
-+SRCS = mouseclock.c
-+SYS_LIBRARIES = $(XONLYLIB)
- 
+-
 -        DEPLIBS = $(DEPXLIB)
 -LOCAL_LIBRARIES = $(XLIB)
 -	CDEBUGFLAGS =
 -	CCOPTIONS = -O3 -s -pipe -Wall
++OBJS = mouseclock.o
++SRCS = mouseclock.c
++SYS_LIBRARIES = $(XONLYLIB)
  
 -AllTarget(mouseclock)
--
+ 
 -MakeMakeSubdirs($(SUBDIRS),install)
 -SimpleProgramTarget(mouseclock)
 +ComplexProgramTargetNoMan(mouseclock)

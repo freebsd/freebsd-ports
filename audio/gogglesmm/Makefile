@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gogglesmm
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.12
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,9 +17,8 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 
 USE_GITHUB=	yes
 
-USES=		compiler:c++11-lang desktop-file-utils gmake pkgconfig
+USES=		compiler:c++11-lang desktop-file-utils gmake pkgconfig sqlite
 USE_GL=		glew
-USE_SQLITE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LINK="${CXX}" \
 		OPT_CFLAGS="${CXXFLAGS}" \

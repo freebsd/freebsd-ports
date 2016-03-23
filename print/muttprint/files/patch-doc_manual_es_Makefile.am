@@ -1,0 +1,33 @@
+--- doc/manual/es/Makefile.am.orig	2006-05-06 09:13:46.000000000 +0200
++++ doc/manual/es/Makefile.am	2016-02-17 20:51:40.928061000 +0100
+@@ -18,24 +18,24 @@
+ 	$(do_subst) < $(srcdir)/manual-es.sgml > manual-es-sed.sgml
+ 
+ manual-es.pdf : manual-es-sed.sgml
+-	db2pdf -s ../stylesheet.dsl manual-es-sed.sgml
++	docbook2pdf -d ../stylesheet.dsl manual-es-sed.sgml
+ 	mv manual-es-sed.pdf manual-es.pdf
+ 
+ manual-es.ps : manual-es-sed.sgml
+-	db2ps -s ../stylesheet.dsl manual-es-sed.sgml
++	docbook2ps -d ../stylesheet.dsl manual-es-sed.sgml
+ 	mv manual-es-sed.ps manual-es.ps
+ 
+ manual-es.dvi : manual-es-sed.sgml
+-	db2dvi -s ../stylesheet.dsl manual-es-sed.sgml
++	docbook2dvi -d ../stylesheet.dsl manual-es-sed.sgml
+ 	mv manual-es-sed.dvi manual-es.dvi
+ 
+ manual-es.rtf : manual-es-sed.sgml
+-	db2rtf -s ../stylesheet.dsl manual-es-sed.sgml
++	docbook2rtf -d ../stylesheet.dsl manual-es-sed.sgml
+ 	mv manual-es-sed.rtf manual-es.rtf
+ 
+ manual-es.html : manual-es-sed.sgml
+-	db2html -u -s ../stylesheet.dsl manual-es-sed.sgml
+-	mv manual-es-sed/manual-es-sed.html manual-es.html
++	docbook2html -u manual-es-sed.sgml
++	mv manual-es-sed.html manual-es.html
+ 	rm -rf manual-es-sed
+ 	rm -rf manual-es-sed.junk
+ 

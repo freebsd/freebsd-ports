@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	websocketpp
-PORTVERSION=	0.4.0
+PORTVERSION=	0.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	arved@FreeBSD.org

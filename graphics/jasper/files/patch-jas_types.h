@@ -1,6 +1,6 @@
---- src/libjasper/include/jasper/jas_types.h	Sat Oct  4 12:57:58 2003
-+++ src/libjasper/include/jasper/jas_types.h	Wed Dec 17 10:29:46 2003
-@@ -223,13 +223,13 @@
+--- src/libjasper/include/jasper/jas_types.h.orig	2007-01-19 22:43:04.000000000 +0100
++++ src/libjasper/include/jasper/jas_types.h	2016-02-20 13:49:45.555375000 +0100
+@@ -179,13 +179,13 @@
  #endif
  /**********/
  #if !defined(INT_FAST64_MIN)

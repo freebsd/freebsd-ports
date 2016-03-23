@@ -19,6 +19,7 @@ USES=		tar:tgz
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 CFLAGS+=	-I${LOCALBASE}/include
 

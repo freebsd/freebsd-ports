@@ -1,0 +1,190 @@
+#!/bin/sh
+#
+#	$FreeBSD: /tmp/pcvs/ports/mail/postfix/files/pkg-install.in,v 1.6 2012-02-11 05:14:34 sahil Exp $
+#
+
+# If the POSTFIX_DEFAULT_MTA environment variable is set to YES, it
+# will make the port/package use defaults which make postfix replace
+# sendmail as much as possible.
+
+# allowed vars during package installation
+BATCH=${BATCH:=no}
+POSTFIX_DEFAULT_MTA=${POSTFIX_DEFAULT_MTA:=no}
+
+# fixed vars
+PREFIX="%%PREFIX%%"
+ETCDIR="%%ETCDIR%%"
+DAEMONDIR="%%DAEMONDIR%%"
+READMEDIR="%%READMEDIR%%"
+MC_TEMPLATE="%%DATADIR%%/mailer.conf.postfix"
+
+# FreeBSD <= 10.3
+MC_BASE="/etc/mail/mailer.conf"
+# FreeBSD >= 10.3 (and current)
+MC_LOCALBASE="%%LOCALBASE%%/etc/mail/mailer.conf"
+USE_LOCALBASE_MAILER_CONF="%%USE_LOCALBASE_MAILER_CONF%%"
+
+if [ "${POSTFIX_DEFAULT_MTA}" = "no" ]; then
+      DEFAULT_REPLACE_MAILERCONF=n
+else
+      DEFAULT_REPLACE_MAILERCONF=y
+fi
+
+ask() {
+      local question default answer
+
+      question=$1
+      default=$2
+      if [ -z "${PACKAGE_BUILDING}" -a "${BATCH}" = "no" ]; then
+	      read -p "${question} [${default}]? " answer
+      fi
+      if [ -z "${answer}" ]; then
+	      answer=${default}
+      fi
+      echo ${answer}
+}
+
+yesno() {
+      local question default answer
+
+      question=$1
+      default=$2
+      while :; do
+	      answer=$(ask "${question}" "${default}")
+	      case "${answer}" in
+		      [Yy]*)	return 0;;
+		      [Nn]*)	return 1;;
+	      esac
+	      echo "Please answer yes or no."
+      done
+}
+
+# ==============================================================================
+# Respect POSTFIX_DEFAULT_MTA, do not ask for confirmation!
+# (This helps tools like salt, ansible or puppet on new installations)
+# ==============================================================================
+install_choise(){
+	local mailerconf
+	mailerconf=$1
+
+	if [ "${DEFAULT_REPLACE_MAILERCONF}" = "y" ]; then
+		install_mailer_conf ${mailerconf}
+	elif [ "${DEFAULT_REPLACE_MAILERCONF}" = "n" -a -t 0 ]; then
+		if yesno "Would you like to activate Postfix in ${mailerconf}" ${DEFAULT_REPLACE_MAILERCONF:="n"}; then
+			install_mailer_conf ${mailerconf}
+		else
+			show_not_activated_msg ${mailerconf}
+		fi
+	else
+		show_not_activated_msg ${mailerconf}
+	fi
+}
+
+show_not_activated_msg() {
+	local mailerconf
+
+	mailerconf=$1
+	echo
+	echo "==============================================================="
+	echo "Postfix was *not* activated in ${mailerconf}! "
+	echo
+	echo "To finish installation run the following commands:"
+	echo
+	if [ "${USE_LOCALBASE_MAILER_CONF}" = "yes" ]; then
+		echo "  mkdir -p %%LOCALBASE%%/etc/mail"
+	else
+		echo "  mv -f ${mailerconf} ${mailerconf}.old"
+	fi
+	echo "  install -m 0644 ${MC_TEMPLATE} ${mailerconf}"
+	echo "==============================================================="
+	echo
+}
+
+show_activated_msg() {
+	local mailerconf
+
+	mailerconf=$1
+	echo "==============================================================="
+	echo "Postfix already activated in ${mailerconf}"
+	echo "==============================================================="
+}
+
+cmp_mailer() {
+	local mailerconf
+
+	mailerconf=$1
+	cmp -s ${mailerconf} ${MC_TEMPLATE}
+	return $?
+}
+
+install_mailer_conf() {
+	local mailerconf
+
+	mailerconf=$1
+	echo "Activate Postfix in ${mailerconf}"
+	if [ "${USE_LOCALBASE_MAILER_CONF}" = "yes" ]; then
+		[ -d %%LOCALBASE%%/etc/mail ] || mkdir -p %%LOCALBASE%%/etc/mail
+	fi
+	[ -f ${mailerconf} ] && mv -f ${mailerconf} ${mailerconf}.old
+	install -m 644 ${MC_TEMPLATE} ${mailerconf}
+}
+
+# ==============================================================================
+# Run postfix reload
+# This is a candidate for a dedicated pkg-post-upgrade script, but it seems
+# this not fully implemented in pkg :(see upstream PR 941)
+# ==============================================================================
+try_reload(){
+	${PREFIX}/sbin/postfix status 2>/dev/null
+if [ $? -eq 0 ]; then
+	${PREFIX}/sbin/postfix reload
+else
+	echo "postfix not running"
+fi
+}
+
+# ==============================================================================
+# Run postfix post-install to fix permissions and new config values
+# ==============================================================================
+if [ "$2" = "POST-INSTALL" ]; then
+	/bin/sh ${DAEMONDIR}/post-install tempdir=/tmp \
+	 daemon_directory=${DAEMONDIR} \
+	 html_directory=${READMEDIR} \
+	 readme_directory=${READMEDIR} \
+	 upgrade-package
+fi
+
+# ==============================================================================
+# If FreeBSD <= 10.2 is deprecated check only LOCALBASE and remove BASE checks,
+# regardless if installed in BASE or LOCALBASE
+# Iff postfix is activated in BASE, also activate postfix in LOCALBASE!
+# ==============================================================================
+if [ "$2" = "POST-INSTALL" -a -z "${PACKAGE_BUILDING}" ]; then
+if [ -f "${MC_BASE}" ]; then
+	if [ "${USE_LOCALBASE_MAILER_CONF}" = "yes" ]; then
+		cmp_mailer ${MC_BASE}
+		if [ $? -eq 0 ]; then
+			show_activated_msg ${MC_BASE}
+			cmp_mailer ${MC_LOCALBASE} || install_mailer_conf ${MC_LOCALBASE}
+			try_reload
+		else
+			cmp_mailer ${MC_LOCALBASE} || install_choise ${MC_LOCALBASE}
+		fi
+	else
+		cmp_mailer ${MC_BASE}
+		if [ $? -ne 0 ]; then
+			install_choise ${MC_BASE}
+		else
+			show_activated_msg ${MC_BASE}
+			try_reload
+		fi
+	fi
+
+else
+	if [ "${USE_LOCALBASE_MAILER_CONF}" = "yes" ]; then
+		show_not_activated_msg ${MC_LOCALBASE}
+	else
+		show_not_activated_msg ${MC_BASE}
+	fi
+fi # -f "${MC_BASE}"
+fi # "$2" = "POST-INSTALL" -a -z "${PACKAGE_BUILDING}" 

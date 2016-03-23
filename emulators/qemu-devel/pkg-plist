@@ -1,9 +1,13 @@
 bin/ivshmem-server
 bin/ivshmem-client
 bin/qemu-ga
+bin/qemu-i386
 bin/qemu-img
 bin/qemu-io
 bin/qemu-nbd
+bin/qemu-sparc
+bin/qemu-sparc64
+bin/qemu-x86_64
 %%X86_TARGETS%%bin/qemu-system-aarch64
 %%X86_TARGETS%%bin/qemu-system-alpha
 %%X86_TARGETS%%bin/qemu-system-arm

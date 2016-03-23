@@ -1,6 +1,6 @@
---- include/configs/rpi-common.h.orig	2015-10-19 23:59:38 UTC
+--- include/configs/rpi-common.h.orig	2016-01-12 14:06:54 UTC
 +++ include/configs/rpi-common.h
-@@ -183,4 +183,56 @@
+@@ -182,4 +182,55 @@
  
  #define CONFIG_BOOTDELAY 2
  
@@ -9,7 +9,6 @@
 + ****************************************************************************/
 +
 +#define CONFIG_API
-+#define CONFIG_CMD_ELF
 +#define CONFIG_EFI_PARTITION
 +#define CONFIG_PREBOOT
 +

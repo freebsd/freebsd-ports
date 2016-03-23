@@ -12,11 +12,10 @@ include/vte-%%VERSION%%/vte/vteversion.h
 lib/girepository-1.0/Vte-%%VERSION%%.typelib
 lib/libvte-%%VERSION%%.so
 lib/libvte-%%VERSION%%.so.0
-lib/libvte-%%VERSION%%.so.0.4000.2
+lib/libvte-%%VERSION%%.so.0.4200.4
 libdata/pkgconfig/vte-%%VERSION%%.pc
 share/gir-1.0/Vte-%%VERSION%%.gir
 share/gtk-doc/html/vte-%%VERSION%%/VteTerminal.html
-share/gtk-doc/html/vte-%%VERSION%%/annotation-glossary.html
 share/gtk-doc/html/vte-%%VERSION%%/api-index-0-40.html
 share/gtk-doc/html/vte-%%VERSION%%/api-index-deprecated.html
 share/gtk-doc/html/vte-%%VERSION%%/api-index-full.html
@@ -40,6 +39,7 @@ share/gtk-doc/html/vte-%%VERSION%%/vte-%%VERSION%%.devhelp2
 share/gtk-doc/html/vte-%%VERSION%%/vte-Version-Information.html
 share/gtk-doc/html/vte-%%VERSION%%/vte-Vte-PTY.html
 share/locale/am/LC_MESSAGES/vte-%%VERSION%%.mo
+share/locale/an/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/ang/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/as/LC_MESSAGES/vte-%%VERSION%%.mo

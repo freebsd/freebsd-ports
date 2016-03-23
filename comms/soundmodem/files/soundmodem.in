@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: soundmodem
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# soundmodem_enable (bool):	Set to NO by default.
+#				Set it to YES to enable soundmodem.
+# soundmodem_config (path):	Set to %%PREFIX%%/etc/soundmodem.conf
+#				by default.
+
+. /etc/rc.subr
+
+name=soundmodem
+rcvar=soundmodem_enable
+load_rc_config $name
+
+: ${soundmodem_enable:="NO"}
+: ${soundmodem_config:="%%PREFIX%%/etc/soundmodem.conf"}
+
+command=%%PREFIX%%/sbin/${name}
+command_args="$soundmodem_config --daemonize"
+stop_cmd=soundmodem_stop
+
+required_files=%%PREFIX%%/etc/soundmodem.conf
+
+soundmodem_stop()
+{
+	echo "Stopping soundmodem."
+	killall soundmodem
+	return 0
+}
+
+run_rc_command "$1"

@@ -1,6 +1,18 @@
---- contrib/Makefile.in.orig	2012-03-11 01:12:06.000000000 +0100
-+++ contrib/Makefile.in	2014-07-02 01:22:20.963771475 +0200
-@@ -429,8 +429,8 @@
+Fix linking ssl, used /usr/include/openssl even when --enable-openssl=%LOCALBASE%
+was used
+
+--- contrib/Makefile.in.orig	2012-03-11 00:12:06 UTC
++++ contrib/Makefile.in
+@@ -202,7 +202,7 @@ coredir = @moduledir@
+ servicesdir = @moduledir@/autoload
+ libmodulesdir = @moduledir@
+ contribdir = @moduledir@/contrib
+-INCLUDES = -I../include -I../libratbox/include $(INCLTDL)
++INCLUDES = -I../include -I../libratbox/include $(INCLTDL) $(SSL_INCLUDES)
+ AM_CFLAGS = $(WARNFLAGS)
+ SRCS = \
+ example_module.c        \
+@@ -429,8 +429,8 @@ clean-generic:
  	$(LIBTOOL) --mode=clean $(RB_RM) -f $(S_OBJS) $(S_CORE_OBJS)  $(ST_OBJS)
  
  install_modules: $(S_OBJS)

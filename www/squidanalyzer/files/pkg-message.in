@@ -1,0 +1,22 @@
+-----------------------------------------------------------------------------
+1. Modify your httpd.conf to allow access to HTML output like follow:
+        Alias /squidreport %%PREFIX%%/www/squidreport
+        <Directory %%PREFIX%%/www/squidreport>
+            Options -Indexes FollowSymLinks MultiViews
+            AllowOverride None
+            Order deny,allow
+            Deny from all
+            Allow from 127.0.0.1
+        </Directory>
+2. If necessary, give additional host access to SquidAnalyzer in httpd.conf.
+   Restart and ensure that httpd is running.
+3. Browse to http://my.host.dom/squidreport/ to ensure that things are working
+   properly.
+4. Setup a cronjob to run squid-analyzer daily:
+
+     # SquidAnalyzer log reporting daily
+     0 2 * * * %%PREFIX%%/bin/squid-analyzer > /dev/null 2>&1
+
+or run it manually.
+For more information, see %%PREFIX%%/share/doc/squidanalyzer/README file.
+-----------------------------------------------------------------------------

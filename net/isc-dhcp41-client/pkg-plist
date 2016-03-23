@@ -1,9 +1,0 @@
-sbin/dhclient
-sbin/dhclient-script
-man/man5/dhclient.conf.5.gz
-man/man5/dhclient.leases.5.gz
-man/man8/dhclient.8.gz
-man/man8/dhclient-script.8.gz
-@sample etc/dhclient.conf.sample
-@exec [ -f /var/run/dhclient.leases ] || touch /var/run/dhclient.leases
-@unexec [ -s /var/run/dhclient.leases ] || rm -f /var/run/dhclient.leases

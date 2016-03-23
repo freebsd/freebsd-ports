@@ -6,8 +6,7 @@
 
  Configuration templates are available in %%PREFIX%%/etc/nagios as
  *.cfg-sample files.  Copy them to *.cfg files where required and
- edit to suit your needs.  Documentation is available in HTML form
- in %%PREFIX%%/%%NAGIOSWWWDIR%%/docs.
+ edit to suit your needs.
 
  If you don't already have a web server running, you will need to
  install and configure one to finish off your Nagios installation.

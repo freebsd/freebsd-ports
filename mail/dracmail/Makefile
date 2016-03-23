@@ -13,6 +13,7 @@ COMMENT=	DracMail is a webmail interface built using PHP
 
 USE_PHP+=	mysql imap dom tidy iconv mbstring
 USE_MYSQL=	yes
+IGNORE_WITH_PHP=	70
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

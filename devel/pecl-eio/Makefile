@@ -17,6 +17,6 @@ LICENSE=	PHP301
 CONFIGURE_ARGS=	--enable-eio
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=	52
+IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

@@ -4,7 +4,8 @@ PORTNAME=	openobex
 PORTVERSION=	1.7.1
 PORTREVISION=	2
 CATEGORIES=	comms net
-MASTER_SITES=	http://www.hendrik-sattler.de/downloads/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF \
+		http://www.hendrik-sattler.de/downloads/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
 MAINTAINER=	madpilot@FreeBSD.org

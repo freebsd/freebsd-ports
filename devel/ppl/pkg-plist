@@ -6,8 +6,8 @@ include/ppl.hh
 include/ppl_c.h
 lib/libppl.a
 lib/libppl.so
-lib/libppl.so.13
-lib/libppl.so.13.0.0
+lib/libppl.so.14
+lib/libppl.so.14.0.0
 lib/libppl_c.a
 lib/libppl_c.so
 lib/libppl_c.so.4

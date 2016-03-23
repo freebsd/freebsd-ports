@@ -1,6 +1,6 @@
---- src/pfs/pfsutils.cpp.orig	2006-09-21 21:42:54.000000000 +0000
-+++ src/pfs/pfsutils.cpp	2014-02-20 19:04:01.566588122 +0000
-@@ -81,7 +81,7 @@
+--- src/pfs/pfsutils.cpp.orig	2006-09-21 21:42:54 UTC
++++ src/pfs/pfsutils.cpp
+@@ -81,7 +81,7 @@ class FrameFileIteratorImpl
    char fileName[1024];
    FILE *stdinout;
  

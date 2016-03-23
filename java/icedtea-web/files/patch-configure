@@ -1,0 +1,36 @@
+--- configure.orig	2016-02-03 13:49:09 UTC
++++ configure
+@@ -10114,14 +10114,10 @@ if test "${with_junit+set}" = set; then 
+         JUNIT_JAR=no
+         ;;
+       *)
+-        if test -f "${withval}"; then
+-          JUNIT_JAR="${withval}"
+-        elif test -z "${withval}"; then
++        if test -z "${withval}"; then
+           JUNIT_JAR=yes
+         else
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: result: not found" >&5
+-$as_echo "not found" >&6; }
+-          as_fn_error $? "\"The junit jar ${withval} was not found.\"" "$LINENO" 5
++          JUNIT_JAR="${withval}"
+         fi
+         ;;
+     esac
+@@ -10186,14 +10182,10 @@ if test "${with_hamcrest+set}" = set; th
+         HAMCREST_JAR=no
+         ;;
+       *)
+-        if test -f "${withval}"; then
+-          HAMCREST_JAR="${withval}"
+-        elif test -z "${withval}"; then
++        if test -z "${withval}"; then
+           HAMCREST_JAR=yes
+         else
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: result: not found" >&5
+-$as_echo "not found" >&6; }
+-          as_fn_error $? "\"The hamcrest jar ${withval} was not found.\"" "$LINENO" 5
++          HAMCREST_JAR="${withval}"
+         fi
+         ;;
+     esac

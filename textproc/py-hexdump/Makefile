@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hexdump
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,5 +15,6 @@ LICENSE=	PD
 WRKSRC=		${WRKDIR}
 USES=		python zip
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

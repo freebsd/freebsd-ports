@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rosegarden
-PORTVERSION=	15.10.2
+PORTVERSION=	15.12.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
@@ -22,24 +22,29 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 RUN_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 		lilypond:${PORTSDIR}/print/lilypond
 
-USES=		compiler:c++0x desktop-file-utils gmake pkgconfig \
-		shared-mime-info tar:bzip2
-USE_QT4=	gui network xml \
-		linguisttools_build moc_build rcc_build uic_build
-QT_NONSTANDARD=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-qtdir=${QT_PREFIX} \
-		--with-qtlibdir=${QT_LIBDIR}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+USES=		cmake:outsource desktop-file-utils gmake pkgconfig \
+		shared-mime-info tar:bzip2
+
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|15\.10\.1|${PORTVERSION}| ; \
-		 /LIBS/s|-ldl||' ${WRKSRC}/configure
+INSTALLS_ICONS=	yes
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rosegarden
+OPTIONS_SINGLE=		TOOLKIT
+OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
+OPTIONS_DEFAULT=	QT4
+
+QR4_USES=		compiler:c++0x
+QT4_USE=		qt4=gui,network,testlib,xml \
+			qt4=linguisttools_build,moc_build,qmake_build \
+			qt4=rcc_build,uic_build
+QT4_CMAKE_ON=		-DUSE_QT4:BOOL=ON
+QT5_USES=		compiler:c++11-lib
+QT5_USE=		qt5=network,printsupport,testlib,widgets,xml \
+			qt5=buildtools_build,linguisttools_build,qmake_build
+QT5_CMAKE_ON=		-DUSE_QT5:BOOL=ON
+TOOLKIT_DESC=		Qt toolkit
 
 .include <bsd.port.mk>

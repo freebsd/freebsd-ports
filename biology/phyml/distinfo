@@ -1,4 +1,2 @@
-SHA256 (phyml/phyml-20120412.tar.gz) = a43e51534a1ae2d1ee4c94ced3a1855813ff4872a6c9c2b83b369ddb71198417
-SIZE (phyml/phyml-20120412.tar.gz) = 4089133
-SHA256 (phyml/20121109.patch) = 3aa8bebd0ff78a553795ddda512ef1c7542d1e3c90c1da61c7125c304f6caa2c
-SIZE (phyml/20121109.patch) = 11016
+SHA256 (stephaneguindon-phyml-v3.2.0_GH0.tar.gz) = 9fec8fc26e69cad8d58bf2c9433b531754e4f026dc3464d07958b6c824783fde
+SIZE (stephaneguindon-phyml-v3.2.0_GH0.tar.gz) = 1239843

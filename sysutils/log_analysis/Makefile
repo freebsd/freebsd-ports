@@ -10,10 +10,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility that extracts a summary of useful data from logs
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL="${PERL}"
+NO_ARCH=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -25,10 +27,13 @@ OPTIONS_DEFINE=	DOCS EXAMPLES TK
 
 TK_RUN_DEPENDS=	p5-Tk>0:${PORTSDIR}/x11-toolkits/p5-Tk
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/Tutorial ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/NEWS \
+		${WRKSRC}/AUTHORS ${WRKSRC}/doc/Tutorial \
+		${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/sample-* ${STAGEDIR}${EXAMPLESDIR}
 

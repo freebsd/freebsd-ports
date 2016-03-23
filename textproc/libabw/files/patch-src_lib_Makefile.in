@@ -1,0 +1,19 @@
+--- src/lib/Makefile.in.orig	2014-12-20 13:23:18 UTC
++++ src/lib/Makefile.in
+@@ -364,7 +364,15 @@ libabw_@ABW_MAJOR_VERSION@_@ABW_MINOR_VE
+ 	$(top_srcdir)/inc/libabw/libabw.h \
+ 	$(top_srcdir)/inc/libabw/AbiDocument.h
+ 
+-AM_CXXFLAGS = -I$(top_srcdir)/inc $(REVENGE_CFLAGS) $(LIBXML_CFLAGS) $(ZLIB_CFLAGS) $(DEBUG_CXXFLAGS) -DLIBABW_BUILD=1
++AM_CXXFLAGS = -I$(top_srcdir)/inc \
++	$(REVENGE_CFLAGS) \
++	$(LIBXML_CFLAGS) \
++	$(ZLIB_CFLAGS) \
++	$(DEBUG_CXXFLAGS) \
++	-DLIBABW_BUILD=1 \
++	-DBOOST_ERROR_CODE_HEADER_ONLY \
++	-DBOOST_SYSTEM_NO_DEPRECATED
++
+ generated_files = \
+ 	$(top_builddir)/src/lib/tokens.h \
+ 	$(top_builddir)/src/lib/tokenhash.h

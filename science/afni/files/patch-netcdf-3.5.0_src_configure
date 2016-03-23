@@ -1,0 +1,43 @@
+--- netcdf-3.5.0/src/configure.orig	2015-11-06 21:25:09 UTC
++++ netcdf-3.5.0/src/configure
+@@ -933,10 +933,10 @@ echo "configure:928: checking for top-le
+ 
+ 
+ 
+-    echo "checking for m4 preprocessor" 1>&6
+-echo "configure:938: checking for m4 preprocessor" >&5
++    echo "checking for gm4 preprocessor" 1>&6
++echo "configure:938: checking for gm4 preprocessor" >&5
+     case "${M4-unset}" in
+-	unset) for ac_prog in m4 gm4
++	unset) for ac_prog in gm4
+ do
+ # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -969,9 +969,9 @@ fi
+ 
+ test -n "$M4" && break
+ done
+-test -n "$M4" || M4="m4"
++test -n "$M4" || M4="gm4"
+  ;;
+-	*) for ac_prog in $M4 m4 gm4
++	*) for ac_prog in $M4 gm4
+ do
+ # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -1004,11 +1004,11 @@ fi
+ 
+ test -n "$M4" && break
+ done
+-test -n "$M4" || M4="m4"
++test -n "$M4" || M4="gm4"
+  ;;
+     esac
+-    echo $ac_n "checking m4 flags""... $ac_c" 1>&6
+-echo "configure:1012: checking m4 flags" >&5
++    echo $ac_n "checking gm4 flags""... $ac_c" 1>&6
++echo "configure:1012: checking gm4 flags" >&5
+     case "${M4FLAGS-unset}" in
+ 	unset) M4FLAGS=-B10000 ;;
+     esac

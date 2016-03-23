@@ -3,6 +3,7 @@
 
 PORTNAME=	dpkg
 PORTVERSION=	1.18.4
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	dpkg_${PORTVERSION}
@@ -24,9 +25,6 @@ WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 DPKGDIR?=	/var/db/dpkg
 PLIST_SUB+=	DPKGDIR=${DPKGDIR}
 
-SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST+=	DPKGDIR=${DPKGDIR}
-
 CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --libdir=${PREFIX}/libexec \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-logdir=/var/log
@@ -39,7 +37,7 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
 post-install:
-	(cd ${STAGEDIR}${DPKGDIR} && ${MKDIR} available diversions \
-		statoverride status)
+	(cd ${STAGEDIR}${DPKGDIR} && ${TOUCH} available.sample \
+		diversions.sample statoverride.sample status.sample)
 
 .include <bsd.port.mk>

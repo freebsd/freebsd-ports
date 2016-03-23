@@ -1,5 +1,4 @@
 bin/consul
-%%DATADIR%%/.gitkeep
 %%DATADIR%%/index.html
 %%DATADIR%%/static/application.min.js
 %%DATADIR%%/static/base.css

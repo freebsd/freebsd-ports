@@ -2,14 +2,14 @@
 
 PORTNAME=	libabw
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
+MASTER_SITES=	LODEV/${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library providing ability to interpret Abiword documents
 
-LICENSE=	LGPL21 MPL
-LICENSE_COMB=	dual
+LICENSE=	MPL
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 USE_PERL5=	build
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	-disable-werror --without-docs
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>

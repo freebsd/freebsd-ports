@@ -22,6 +22,8 @@ EXTRACT_SUFX?=	.tar.bz2
 EXTRACT_SUFX?=	.tgz
 .elif ${tar_ARGS} == tbz
 EXTRACT_SUFX?=	.tbz
+.elif ${tar_ARGS} == tbz2
+EXTRACT_SUFX?=	.tbz2
 .elif ${tar_ARGS} == Z
 EXTRACT_SUFX?=	.tar.Z
 .elif empty(tar_ARGS)

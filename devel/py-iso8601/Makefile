@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iso8601
-PORTVERSION=	0.1.10
+PORTVERSION=	0.1.11
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,15 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.4.2:${PORTSDIR}/devel/py-pytest
 
-OPTIONS_DEFINE=		TESTS
-
-TESTS_DESC=		Install tools to run test suite
-TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
-
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-regression-test: extract
-	@cd ${WRKSRC} && py.test
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest iso8601
 
 .include <bsd.port.mk>

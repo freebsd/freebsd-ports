@@ -9,17 +9,15 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
-LICENSE=	GPLv2
-
-OPTIONS_DEFINE=	FAM DOCS
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	gtk30
 USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+OPTIONS_DEFINE=	FAM DOCS
 
 FAM_USES=		fam
 FAM_CONFIGURE_ENABLE=	fam
@@ -35,12 +33,14 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${STAGEDIR}${MANPREFIX}/man/man1/gentoo.1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS README.gtkrc \
 	TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-	cd ${WRKSRC}/docs; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	${RM} -f ${STAGEDIR}${DOCSDIR}/gentoo.1x
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- src/filter/pfstag.cpp.orig	2005-06-15 13:36:54.000000000 +0000
-+++ src/filter/pfstag.cpp	2014-02-20 19:04:01.556587853 +0000
-@@ -58,7 +58,7 @@
+--- src/filter/pfstag.cpp.orig	2005-06-15 13:36:54 UTC
++++ src/filter/pfstag.cpp
+@@ -58,7 +58,7 @@ struct TagOperation
    string channel;
  };
  
@@ -9,7 +9,7 @@
  
  TagOperation parseTagOperation( const char *tag, bool remove )
  {
-@@ -133,9 +133,9 @@
+@@ -133,9 +133,9 @@ void setTagsOnFrames( int argc, char* ar
      for( it = setTags.begin(); it != setTags.end(); it++ ) {
        TagOperation &tagop = *it;
        if( tagop.remove )       

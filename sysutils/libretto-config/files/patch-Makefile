@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Jun 18 13:44:09 1998
-+++ Makefile	Tue May 30 10:05:47 2000
+--- Makefile.orig	1998-06-18 10:44:09 UTC
++++ Makefile
 @@ -1,17 +1,18 @@
  OBJ     = libapm.o bios.o smi.o
  PROGRAM = libapm
@@ -14,9 +14,9 @@
 -#MANDIR  = /usr/local/man
 -#MANLANG = e
 +PROGRAM_NAME = libretto-config
-+OWNER = -o root
-+GROUP = -g operator
-+MODE  = -m 4550
++#OWNER = -o root
++#GROUP = -g operator
++#MODE  = -m 4550
 +BINDIR  = ${PREFIX}/sbin
 +MANSECT = 8
 +MANDIR  = ${PREFIX}/man

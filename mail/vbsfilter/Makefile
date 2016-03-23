@@ -2,7 +2,7 @@
 
 PORTNAME=	vbsfilter
 PORTVERSION=	1.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/approved/
 EXTRACT_SUFX=	.c
@@ -23,10 +23,6 @@ CFLAGS+=	-Wall
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
-
-.if defined(SENDMAIL_WITH_SFIO)
-LIBS+=		-lsfio
-.endif
 
 do-extract:
 	${MKDIR} ${WRKSRC}

@@ -80,7 +80,6 @@ LIB_DEPENDS+=	libffi.so.6:${PORTSDIR}/devel/libffi
 
 BOOT_GHC_VERSION=	7.10.2
 DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${EXTRACT_SUFX}:boot
-LIB_DEPENDS+=		libutil.so.9:${PORTSDIR}/misc/compat9x
 
 .endif # MBOOT
 

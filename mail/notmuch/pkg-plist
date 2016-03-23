@@ -2,7 +2,7 @@ bin/notmuch
 include/notmuch.h
 lib/libnotmuch.so
 lib/libnotmuch.so.4
-lib/libnotmuch.so.4.2.0
+lib/libnotmuch.so.4.3.0
 man/man1/notmuch-address.1.gz
 man/man1/notmuch-compact.1.gz
 man/man1/notmuch-config.1.gz

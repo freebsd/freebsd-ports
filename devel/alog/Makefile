@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alog
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libalog-${PORTVERSION}

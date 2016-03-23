@@ -1,4 +1,4 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
+# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	smbftpd
@@ -7,7 +7,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/SmbFTPD/${PORTVERSION}	\
 		http://www.twbsd.org/download/download.php?file=smbftpd/
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	FTP daemon using Samba-like share management mechanism
 
 OPTIONS_DEFINE=	MYSQL PGSQL SSL ICONV

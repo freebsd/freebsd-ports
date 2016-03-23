@@ -17,6 +17,7 @@ LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}

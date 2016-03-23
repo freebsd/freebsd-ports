@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-App
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +24,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most \
 		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

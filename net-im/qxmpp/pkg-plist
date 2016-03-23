@@ -42,7 +42,9 @@ include/qxmpp/QXmppRosterIq.h
 include/qxmpp/QXmppRosterManager.h
 include/qxmpp/QXmppRpcIq.h
 include/qxmpp/QXmppRpcManager.h
+include/qxmpp/QXmppRtcpPacket.h
 include/qxmpp/QXmppRtpChannel.h
+include/qxmpp/QXmppRtpPacket.h
 include/qxmpp/QXmppServer.h
 include/qxmpp/QXmppServerExtension.h
 include/qxmpp/QXmppServerPlugin.h
@@ -63,6 +65,6 @@ include/qxmpp/qdnslookup.h
 include/qxmpp/qdnslookup_p.h
 lib/libqxmpp.so
 lib/libqxmpp.so.0
-lib/libqxmpp.so.0.8
-lib/libqxmpp.so.0.8.0
+lib/libqxmpp.so.%%VERSION_MAJOR%%
+lib/libqxmpp.so.%%VERSION%%
 libdata/pkgconfig/qxmpp.pc

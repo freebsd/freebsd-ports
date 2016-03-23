@@ -102,6 +102,8 @@ share/help/fr/gnome-tetravex/shortcut.page
 share/help/fr/gnome-tetravex/size.page
 share/help/fr/gnome-tetravex/usage.page
 share/help/fr/gnome-tetravex/winning.page
+share/help/gl/gnome-tetravex/figures/gnome-tetravex-logo.png
+share/help/gl/gnome-tetravex/figures/gnome-tetravex-video.ogv
 share/help/gl/gnome-tetravex/hint.page
 share/help/gl/gnome-tetravex/index.page
 share/help/gl/gnome-tetravex/license.page
@@ -110,8 +112,6 @@ share/help/gl/gnome-tetravex/shortcut.page
 share/help/gl/gnome-tetravex/size.page
 share/help/gl/gnome-tetravex/usage.page
 share/help/gl/gnome-tetravex/winning.page
-share/help/gl/gnome-tetravex/figures/gnome-tetravex-logo.png
-share/help/gl/gnome-tetravex/figures/gnome-tetravex-video.ogv
 share/help/hu/gnome-tetravex/figures/gnome-tetravex-logo.png
 share/help/hu/gnome-tetravex/figures/gnome-tetravex-video.ogv
 share/help/hu/gnome-tetravex/hint.page
@@ -212,17 +212,12 @@ share/help/zh_CN/gnome-tetravex/shortcut.page
 share/help/zh_CN/gnome-tetravex/size.page
 share/help/zh_CN/gnome-tetravex/usage.page
 share/help/zh_CN/gnome-tetravex/winning.page
-share/icons/HighContrast/16x16/apps/gnome-tetravex.png
-share/icons/HighContrast/22x22/apps/gnome-tetravex.png
-share/icons/HighContrast/24x24/apps/gnome-tetravex.png
-share/icons/HighContrast/256x256/apps/gnome-tetravex.png
-share/icons/HighContrast/32x32/apps/gnome-tetravex.png
-share/icons/HighContrast/48x48/apps/gnome-tetravex.png
 share/icons/hicolor/16x16/apps/gnome-tetravex.png
 share/icons/hicolor/22x22/apps/gnome-tetravex.png
 share/icons/hicolor/24x24/apps/gnome-tetravex.png
 share/icons/hicolor/32x32/apps/gnome-tetravex.png
 share/icons/hicolor/48x48/apps/gnome-tetravex.png
+share/icons/hicolor/scalable/apps/gnome-tetravex-symbolic.svg
 share/icons/hicolor/scalable/apps/gnome-tetravex.svg
 share/locale/af/LC_MESSAGES/gnome-tetravex.mo
 share/locale/am/LC_MESSAGES/gnome-tetravex.mo

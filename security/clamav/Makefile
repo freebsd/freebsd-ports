@@ -3,6 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.99
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -150,7 +151,7 @@ LDFLAGS+=	-lldap
 . endif
 
 . if !exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/libmilter
 CONFIGURE_ARGS+=--with-sendmail=${LOCALBASE}/sbin/sendmail
 LDFLAGS+=	-L${LOCALBASE}/lib
 . else

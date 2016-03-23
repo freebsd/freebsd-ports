@@ -1,5 +1,5 @@
---- himenobmtxps.c~	Thu Feb 21 09:27:59 2002
-+++ himenobmtxps.c	Mon Aug 16 16:13:42 2004
+--- himenobmtxps.c.orig	2002-02-21 00:27:48 UTC
++++ himenobmtxps.c
 @@ -37,6 +37,7 @@
  ********************************************************************/
  
@@ -8,7 +8,7 @@
  
  #ifdef SSMALL
  #define MIMAX            33
-@@ -245,7 +246,6 @@
+@@ -245,7 +246,6 @@ mflops(int nn,double cpu,double flop)
  double
  second()
  {

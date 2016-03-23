@@ -431,7 +431,6 @@
     SUBDIR += x265
     SUBDIR += xanim
     SUBDIR += xawtv
-    SUBDIR += xbmc-addon-pvr
     SUBDIR += xfce4-parole
     SUBDIR += xine
     SUBDIR += xmms

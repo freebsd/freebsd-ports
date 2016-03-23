@@ -1,5 +1,5 @@
 bin/perltidy
 %%SITE_PERL%%/Perl/Tidy.pm
 %%SITE_PERL%%/Perl/Tidy.pod
-%%PERL5_MAN3%%/Perl::Tidy.3.gz
 %%PERL5_MAN1%%/perltidy.1.gz
+%%PERL5_MAN3%%/Perl::Tidy.3.gz

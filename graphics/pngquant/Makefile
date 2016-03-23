@@ -3,6 +3,7 @@
 
 PORTNAME=	pngquant
 PORTVERSION=	2.5.2
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	http://pngquant.org/
@@ -14,7 +15,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -42,14 +42,7 @@ SSE_CFLAGS=	-DUSE_SSE=1 -msse2
 OPENMP_CFLAGS=	-fopenmp
 OPENMP_LDFLAGS=	-lgomp -pthread
 
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MDEBUG)
-CFLAGS+=	-DNDEBUG
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-$$(MAKEFLAGS)||' ${WRKSRC}/Makefile
+DEBUG_CFLAGS_OFF=	-DNDEBUG
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngquant ${STAGEDIR}${PREFIX}/bin

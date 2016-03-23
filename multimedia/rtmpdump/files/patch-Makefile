@@ -1,5 +1,5 @@
---- Makefile.orig	2013-10-07 03:52:05.000000000 +0900
-+++ Makefile	2013-10-30 15:30:57.000000000 +0900
+--- Makefile.orig	2016-02-29 01:15:13 UTC
++++ Makefile
 @@ -1,9 +1,9 @@
  VERSION=v2.4
  
@@ -13,7 +13,7 @@
  
  SYS=posix
  #SYS=mingw
-@@ -21,8 +21,9 @@
+@@ -21,8 +21,9 @@ CRYPTO_DEF=$(DEF_$(CRYPTO))
  
  DEF=-DRTMPDUMP_VERSION=\"$(VERSION)\" $(CRYPTO_DEF) $(XDEF)
  OPT=-O2
@@ -25,7 +25,7 @@
  
  bindir=$(prefix)/bin
  sbindir=$(prefix)/sbin
-@@ -35,13 +36,13 @@
+@@ -35,13 +36,13 @@ MANDIR=$(DESTDIR)$(mandir)
  LIBS_posix=
  LIBS_darwin=
  LIBS_mingw=-lws2_32 -lwinmm -lgdi32
@@ -41,7 +41,7 @@
  SLIBS=$(THREADLIB) $(LIBS)
  
  LIBRTMP=librtmp/librtmp.a
-@@ -54,9 +55,7 @@
+@@ -54,21 +55,17 @@ EXT=$(EXT_$(SYS))
  
  PROGS=rtmpdump rtmpgw rtmpsrv rtmpsuck
  
@@ -52,11 +52,15 @@
  
  install:	$(PROGS)
  	-mkdir -p $(BINDIR) $(SBINDIR) $(MANDIR)/man1 $(MANDIR)/man8
-@@ -64,11 +63,9 @@
- 	cp rtmpgw$(EXT) rtmpsrv$(EXT) rtmpsuck$(EXT) $(SBINDIR)
- 	cp rtmpdump.1 $(MANDIR)/man1
- 	cp rtmpgw.8 $(MANDIR)/man8
+-	cp rtmpdump$(EXT) $(BINDIR)
+-	cp rtmpgw$(EXT) rtmpsrv$(EXT) rtmpsuck$(EXT) $(SBINDIR)
+-	cp rtmpdump.1 $(MANDIR)/man1
+-	cp rtmpgw.8 $(MANDIR)/man8
 -	@cd librtmp; $(MAKE) install
++	${BSD_INSTALL_PROGRAM} rtmpdump$(EXT) $(BINDIR)
++	${BSD_INSTALL_PROGRAM} rtmpgw$(EXT) rtmpsrv$(EXT) rtmpsuck$(EXT) $(SBINDIR)
++	${BSD_INSTALL_DATA} rtmpdump.1 $(MANDIR)/man1
++	${BSD_INSTALL_DATA} rtmpgw.8 $(MANDIR)/man8
  
  clean:
  	rm -f *.o rtmpdump$(EXT) rtmpgw$(EXT) rtmpsrv$(EXT) rtmpsuck$(EXT)

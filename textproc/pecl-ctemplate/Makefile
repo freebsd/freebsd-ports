@@ -19,6 +19,7 @@ USE_PHPEXT=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	vanillahsu
 GH_PROJECT=	pecl-ctemplate
+IGNORE_WITH_PHP=	70
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}

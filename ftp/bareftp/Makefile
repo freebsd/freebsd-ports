@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bareftp
-PORTVERSION=	0.3.11
-PORTREVISION=	1
+PORTVERSION=	0.3.12
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/
 

@@ -1,9 +1,10 @@
 This package provides OAuth 1.0/a, 2.0, and Ofly consumer support. The
 package is wrapped around the superb Python Requests.
 
-- Built on Python-Requests
-- Supports OAuth 1.0, 1.0a, 2.0 and Ofly]
-- Service wrappers for convenient connection initialization
-- Well tested (100% coverage)
+ * Supports OAuth 1.0/a, 2.0 and Ofly
+ * Service wrappers for convenient connection initialization
+ * Authenticated session objects providing nifty things like keep-alive
+ * Well tested (100% coverage)
+ * Built on Requests
 
 WWW: https://github.com/litl/rauth

@@ -57,9 +57,7 @@ SUB_LIST=	version=${PORTVERSION} \
 		libdir=${LUA_LIBDIR} \
 		soname=lua-${LUA_VER}
 
-CFLAGS_aarch64=	-fPIC
-CFLAGS_amd64=	-fPIC
-CFLAGS_powerpc=	-fPIC
+CFLAGS+=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,rand *(,random(,g' \

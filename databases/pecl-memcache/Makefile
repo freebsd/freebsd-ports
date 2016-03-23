@@ -20,6 +20,7 @@ USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USES=		dos2unix tar:tgz
+IGNORE_WITH_PHP=	70
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/

@@ -16,20 +16,25 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_APACHE=	22
+USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 MODULENAME=	${PORTNAME}20
 
 PORTDOCS=	README test.pl
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|/bin/mail|/usr/bin/mail|g" \
 		${WRKSRC}/mod_evasive.c ${WRKSRC}/mod_evasive20.c \
 		${WRKSRC}/mod_evasiveNSAPI.c
+.if ${APACHE_VERSION:M24}
+	${REINPLACE_CMD} -e 's/remote_ip/client_ip/g' ${WRKSRC}/mod_evasive20.c
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

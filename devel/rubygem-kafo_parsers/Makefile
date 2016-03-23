@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafo_parsers
-PORTVERSION=	0.0.5
-PORTREVISION=	1
+PORTVERSION=	0.0.6
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -15,7 +14,6 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	puppet:${PORTSDIR}/sysutils/puppet38
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

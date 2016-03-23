@@ -1,0 +1,6 @@
+django-html is an HTML minifier for Python, with full support for HTML 5.
+It supports Django, Flask and many other Python web frameworks.  It also
+provides a command line tool, that can be used for static websites or
+deployment scripts.
+
+WWW: https://pypi.python.org/pypi/django-htmlmin

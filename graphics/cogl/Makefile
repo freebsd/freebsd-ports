@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cogl
-PORTVERSION=	1.20.0
-PORTREVISION=	1
+PORTVERSION=	1.22.0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	clutter-1.6.[0-9]*
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	gdkpixbuf2 gnomeprefix atk pango introspection:build
 USE_GL=		gl egl
@@ -27,6 +26,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-PLIST_SUB=	LIBVER=20 LIBVERSION=20.3.0
+PLIST_SUB=	LIBVER=20 LIBVERSION=20.4.1
 
 .include <bsd.port.mk>

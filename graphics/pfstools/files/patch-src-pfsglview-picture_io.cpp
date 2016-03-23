@@ -1,6 +1,6 @@
---- src/pfsglview/picture_io.cpp.orig	2006-11-20 12:13:13.000000000 +0000
-+++ src/pfsglview/picture_io.cpp	2014-02-20 19:04:01.566588122 +0000
-@@ -87,7 +87,7 @@
+--- src/pfsglview/picture_io.cpp.orig	2006-11-20 12:13:13 UTC
++++ src/pfsglview/picture_io.cpp
+@@ -87,7 +87,7 @@ void PictureIO::setFrame(pfs::Frame *fra
  		return;
  
  	// only XYZ channels are taken into consideration
@@ -9,7 +9,7 @@
  		if(verbose)
  			fprintf( stderr, "WARNING: wrong channel (PictureIO::setFrame())\n");
  		return;
-@@ -573,7 +573,7 @@
+@@ -573,7 +573,7 @@ float PictureIO::getDynamicRange(void) {
  	}	
  	std::sort(vec.begin(), vec.end());
  	
@@ -18,7 +18,7 @@
  	
  	val = vec[0];
  	std::vector<unsigned int> svec;
-@@ -589,7 +589,7 @@
+@@ -589,7 +589,7 @@ float PictureIO::getDynamicRange(void) {
  	
  	float dr = svec[ svec.size()-1] / svec[0];
  			

@@ -13,10 +13,13 @@ COMMENT=	Inclued gives you a Clue for PHP inclusion check
 
 LICENSE=	PHP301
 
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2016-03-15
+
 USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=	55 56
+IGNORE_WITH_PHP=	55 56 70
 
 CONFIGURE_ARGS=	--enable-inclued
 

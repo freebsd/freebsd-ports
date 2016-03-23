@@ -3,6 +3,7 @@
 
 PORTNAME=	batv-milter
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -10,7 +11,7 @@ MAINTAINER=	umq@ueo.co.jp
 COMMENT=	Milter for BATV (Bounce Address Tag Validation)
 
 .if !exists( /usr/include/libmilter/mfapi.h )
-BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
+BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/libmilter
 .endif
 
 USES=		uidfix

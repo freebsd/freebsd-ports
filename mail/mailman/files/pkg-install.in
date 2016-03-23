@@ -63,8 +63,8 @@ POST-INSTALL)
     "%%MAILMANDIR%%/archives/public"
   # this can be 2770 or 2771 but should not be stomped over
   test -d "%%MAILMANDIR%%/archives/private" \
-  || /usr/bin/install -d -m 02771 \
-	"%%MAILMANDIR%%/archives/private" -g "%%GROUP%%"
+  || /usr/bin/install -m 02771 -g "%%GROUP%%" \
+      -d "%%MAILMANDIR%%/archives/private"
 
   /bin/chmod u+rwx,g+srwx      "%%MAILMANDIR%%/archives/private"
   /bin/chmod u+rwx,g+srwx,o+rx "%%MAILMANDIR%%/logs"
@@ -109,13 +109,14 @@ POST-INSTALL)
   echo "---> Running assorted other checks"
   if egrep -q "^[ \t]*MTA.*=.*Postfix" "%%MAILMANDIR%%/Mailman/mm_cfg.py" ; then
       # run Postfix-specific checks
-      if [ "x`${PKG_PREFIX}/sbin/postconf -h myhostname`" != "xlocalhost" ] \
-	  && ! egrep -q "^[ \t]*SMTPHOST.*=.*`${PKG_PREFIX}/sbin/postconf -h myhostname`" \
+      POSTCONF=$(PATH="${PKG_PREFIX}/sbin:/usr/sbin:/sbin:$PATH" which postconf)
+      if [ "x`${POSTCONF} -h myhostname`" != "xlocalhost" ] \
+	  && ! egrep -q "^[ \t]*SMTPHOST.*=.*`${POSTCONF} -h myhostname`" \
 	    "%%MAILMANDIR%%/Mailman/mm_cfg.py"
       then
 	  echo ""
 	  echo "Your Postfix hostname is non-default."
-	  echo -n "You must add \"SMTPHOST = '`${PKG_PREFIX}/sbin/postconf -h myhostname`'"
+	  echo -n "You must add \"SMTPHOST = '`${POSTCONF} -h myhostname`'"
 	  echo "\" to the bottom of mm_cfg.py (without quotes)."
 	  echo ""
       fi

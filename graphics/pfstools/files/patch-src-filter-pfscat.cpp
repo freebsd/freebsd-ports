@@ -1,5 +1,5 @@
---- src/filter/pfscat.cpp.orig	2008-01-01 13:01:21.000000000 +0000
-+++ src/filter/pfscat.cpp	2014-02-20 19:04:01.556587853 +0000
+--- src/filter/pfscat.cpp.orig	2008-01-01 13:01:21 UTC
++++ src/filter/pfscat.cpp
 @@ -27,6 +27,7 @@
  #include <pfs.h>
  #include <climits>
@@ -8,7 +8,7 @@
  #include <getopt.h>
  #include <fcntl.h>
  #include <stdlib.h>
-@@ -202,16 +203,12 @@
+@@ -202,16 +203,12 @@ if (alignment==UNSP) throw pfs::Exceptio
  
  pfs::FrameFileIterator it ( argc, argv, "rb", NULL, NULL, optString, cmdLineOptions);
  int pipe_no = 0;
@@ -27,7 +27,7 @@
  if(pipe_no == 0) { // no named pipes
      pipe_no = 1;
      pipes = false;
-@@ -408,7 +405,6 @@
+@@ -408,7 +405,6 @@ if(!pipes) {
      }
  
  for (int i=0; i<pipe_no; i++) it.closeFrameFile(ff[i]);

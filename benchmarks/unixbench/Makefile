@@ -8,7 +8,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://ftp.osuosl.org/pub/nslu2/sources/ \
 		http://www.tux.org/pub/tux/niemi/unixbench/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	luca.pizzamiglio@gmail.com
 COMMENT=	BYTE magazine's Public Domain benchmark for UNIX
 
 USES=		shebangfix tar:tgz
@@ -41,10 +41,6 @@ do-install:
 		${INSTALL_PROGRAM} $${f} ${STAGEDIR}${PREFIX}/lib/unixbench/pgms/ ;; \
 		esac ; \
 	done
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/unixbench/results
-#	for f in ${WRKSRC}/results/* ; do \
-#		${INSTALL_DATA} $${f} ${STAGEDIR}${PREFIX}/lib/unixbench/results/ ; \
-#	done
 	-${MKDIR} ${STAGEDIR}${PREFIX}/lib/unixbench/testdir
 	for f in ${WRKSRC}/testdir/* ; do \
 		${INSTALL_DATA} $${f} ${STAGEDIR}${PREFIX}/lib/unixbench/testdir/ ; \

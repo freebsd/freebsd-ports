@@ -21,6 +21,7 @@ USES=		gmake shebangfix tar:tgz
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 SHEBANG_FILES=	${CMDTOOLSRC}/phptrace
 PLIST_FILES=	bin/phptrace \

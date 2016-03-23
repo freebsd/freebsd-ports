@@ -3,6 +3,7 @@
 
 PORTNAME=	pandoc
 PORTVERSION=	1.15.0.6
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -26,11 +27,14 @@ USE_HAPPY=	yes
 
 EXECUTABLE=	pandoc
 
-# For PDF generation
-USE_TEX=	texmf:run
-
 MAN1SRC=	man
 MAN1PAGES=	pandoc.1
+
+OPTIONS_DEFINE=		PDFGEN
+OPTIONS_DEFAULT=	PDFGEN
+
+PDFGEN_DESC=	Include TeX for PDF generation
+PDFGEN_USE=	TEX=texmf:run
 
 FLAGS_DEFINE=			EMBED_DATA HTTPS TRYPANDOC
 FLAGS_DEFAULT=			HTTPS

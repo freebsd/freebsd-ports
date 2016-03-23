@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cups-filters
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -23,10 +22,15 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libpoppler.so:${PORTSDIR}/graphics/poppler
 
-USES=		compiler:c++11-lib cpe ghostscript jpeg libtool pathfix \
+USES=		compiler:c++11-lib cpe ghostscript gmake jpeg libtool pathfix \
 		pkgconfig shebangfix tar:xz
 CPE_VENDOR=	linuxfoundation
-SHEBANG_FILES=	filter/textonly
+SHEBANG_FILES=	filter/braille/drivers/generic/brftoembosser.in \
+		filter/braille/drivers/index/imageubrltoindexv3.in \
+		filter/braille/drivers/index/imageubrltoindexv4.in \
+		filter/braille/drivers/index/textbrftoindexv3.in \
+		filter/braille/filters/imagetobrf.in \
+		filter/braille/filters/texttobrf.in filter/textonly
 USE_GNOME=	glib20
 USE_RC_SUBR=	cups_browsed
 GNU_CONFIGURE=	yes

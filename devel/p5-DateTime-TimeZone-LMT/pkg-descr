@@ -7,4 +7,4 @@ again, the Solar:: modules will probably be a better bet.
 If you want more information on the difference between LMT and LAT, search the
 www for 'equation of time' or 'ephemeris'.
 
-WWW: http://datetime.perl.org/
+WWW: https://metacpan.org/pod/DateTime::TimeZone::LMT

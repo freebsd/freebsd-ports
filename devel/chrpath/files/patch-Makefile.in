@@ -1,27 +1,30 @@
---- Makefile.in.orig	2004-09-19 12:42:53.000000000 +0400
-+++ Makefile.in	2010-06-20 12:55:59.000000000 +0400
-@@ -66,7 +66,7 @@
- 
- SUBDIRS = testsuite deb
- 
+--- Makefile.in.orig	2014-01-12 09:03:45.000000000 +0100
++++ Makefile.in	2016-02-03 19:32:36.764942000 +0100
+@@ -243,7 +243,7 @@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(prefix)/share/doc/$(PACKAGE)
- 
- doc_DATA = AUTHORS COPYING ChangeLog INSTALL NEWS README
- 
-@@ -263,16 +263,6 @@
- 
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
+@@ -457,19 +457,6 @@
+ 	dir='$(DESTDIR)$(man1dir)'; $(am__uninstall_files_from_dir)
  install-docDATA: $(doc_DATA)
  	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(docdir)
--	@list='$(doc_DATA)'; for p in $$list; do \
--	  if test -f $(srcdir)/$$p; then \
--	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(docdir)/$$p"; \
--	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(docdir)/$$p; \
--	  else if test -f $$p; then \
--	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p"; \
--	    $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p; \
--	  fi; fi; \
+-	@list='$(doc_DATA)'; test -n "$(docdir)" || list=; \
+-	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(docdir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(docdir)" || exit 1; \
+-	fi; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
 -	done
  
  uninstall-docDATA:

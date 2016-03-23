@@ -3,9 +3,11 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_app.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_block_encryptor.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve25519.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve25519_libdecaf.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve25519_libsodium.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve25519_unsupported.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve448.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve448_libdecaf.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve448_unsupported.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_jiffy.beam
@@ -70,6 +72,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_server.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_keccakf1600_driver.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_keccakf1600_nif.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_libdecaf.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_unsupported.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sup.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose.hrl
@@ -82,9 +85,11 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_app.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_block_encryptor.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve25519.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve25519_libdecaf.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve25519_libsodium.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve25519_unsupported.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve448.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve448_libdecaf.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve448_unsupported.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_jiffy.erl
@@ -149,6 +154,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_server.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3_keccakf1600_driver.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3_keccakf1600_nif.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3_libdecaf.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3_unsupported.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sup.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geojson
-PORTVERSION=	1.0.9
+PORTVERSION=	1.3.2
 PORTEPOCH=	1
 CATEGORIES=	devel geography python
 MASTER_SITES=	CHEESESHOP
@@ -19,11 +19,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>1.9:${PORTSDIR}/devel/py-simplejs
 PORTDOCS=	LICENSE.rst CHANGELOG.rst README.rst
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

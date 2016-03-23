@@ -152,6 +152,7 @@ _ALL_DEPENDS+=	vorbis
 .endif
 
 .if ! ${PORT_OPTIONS:MBUNDLED_CAIRO}
+cairo_BUILD_DEPENDS=cairo>=1.12.16_1,2:${PORTSDIR}/graphics/cairo
 cairo_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 cairo_MOZ_OPTIONS=	--enable-system-cairo
 .endif
@@ -177,7 +178,6 @@ icu_LIB_DEPENDS=		libicui18n.so:${PORTSDIR}/devel/icu
 icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api
 
 -jpeg_BUILD_DEPENDS=yasm:${PORTSDIR}/devel/yasm
-# XXX JCS_EXTENSIONS API is currently disabled by r371283
 # XXX Remove files/patch-ijg-libjpeg once -turbo is default
 jpeg_USES=		jpeg
 jpeg_MOZ_OPTIONS=	--with-system-jpeg=${LOCALBASE}
@@ -188,7 +188,7 @@ nspr_MOZ_OPTIONS=	--with-system-nspr
 nss_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
 nss_MOZ_OPTIONS=	--with-system-nss
 
-.if exists(${FILESDIR}/patch-z-bug517422)
+.if exists(${FILESDIR}/patch-z-bug517422) && ${MOZILLA_VER:R:R} < 45
 opus_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
 opus_MOZ_OPTIONS=	--with-system-opus
 .endif
@@ -202,10 +202,6 @@ png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
 .if exists(${FILESDIR}/patch-z-bug517422)
 soundtouch_LIB_DEPENDS=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
 soundtouch_MOZ_OPTIONS=	--with-system-soundtouch
-
-# XXX disabled: bug 913854 not yet upstreamed
-speex_LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speex
-speex_MOZ_OPTIONS=	--with-system-speex
 .endif
 
 sqlite_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
@@ -293,6 +289,7 @@ USE_GNOME+=	pango
 USE_QT5+=	qmake_build buildtools_build gui network quick printsupport
 MOZ_EXPORT+=	HOST_QMAKE="${QMAKE}" HOST_MOC="${MOC}" HOST_RCC="${RCC}"
 .elif ${MOZ_TOOLKIT:Mcairo-gtk3}
+BUILD_DEPENDS+=	gtk3>=3.14.6:${PORTSDIR}/x11-toolkits/gtk30
 USE_GNOME+=	gtk30
 . if ${MOZILLA_VER:R:R} >= 32
 USE_GNOME+= gtk20 # bug 624422
@@ -330,6 +327,7 @@ MOZ_OPTIONS+=	--disable-ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
+RUN_DEPENDS+=	gstreamer1-libav>=1.2.4_1:${PORTSDIR}/multimedia/gstreamer1-libav
 USE_GSTREAMER1?=good libav
 MOZ_OPTIONS+=	--enable-gstreamer=1.0
 .else
@@ -376,6 +374,7 @@ MOZ_EXPORT+=MOZ_OPTIMIZE_FLAGS="-Os" MOZ_PGO_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
 .if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
 MOZ_OPTIONS+=	--enable-alsa
 .endif
 

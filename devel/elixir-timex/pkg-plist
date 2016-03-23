@@ -21,6 +21,8 @@ lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Tokenizers.Default.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Tokenizers.Directive.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.DateTime.Tokenizers.Strftime.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.ParseError.beam
+lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.Timezones.Posix.PosixTimezone.beam
+lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.Timezones.Posix.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.ZoneInfo.Parser.Header.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.ZoneInfo.Parser.LeapSecond.beam
 lib/elixir/lib/timex/ebin/Elixir.Timex.Parse.ZoneInfo.Parser.TransitionInfo.beam
@@ -54,6 +56,7 @@ lib/elixir/lib/timex/lib/parse/datetime/tokenizers/default.ex
 lib/elixir/lib/timex/lib/parse/datetime/tokenizers/directive.ex
 lib/elixir/lib/timex/lib/parse/datetime/tokenizers/strftime.ex
 lib/elixir/lib/timex/lib/parse/parse_error.ex
+lib/elixir/lib/timex/lib/parse/posix/parser.ex
 lib/elixir/lib/timex/lib/parse/zoneinfo/parser.ex
 lib/elixir/lib/timex/lib/time/time.ex
 lib/elixir/lib/timex/lib/timex.ex

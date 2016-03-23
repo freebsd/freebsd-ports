@@ -1,6 +1,6 @@
---- ./testsuite/Makefile.in.orig	2004-09-19 10:42:53.000000000 +0200
-+++ ./testsuite/Makefile.in	2014-04-04 15:32:16.000000000 +0200
-@@ -259,7 +259,7 @@
+--- testsuite/Makefile.in.orig	2014-01-12 09:03:45.000000000 +0100
++++ testsuite/Makefile.in	2016-02-03 19:34:07.381487000 +0100
+@@ -457,7 +457,7 @@
  
  
  prog: prog.c

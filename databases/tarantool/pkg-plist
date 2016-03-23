@@ -11,7 +11,9 @@ include/tarantool/lualib.h
 include/tarantool/module.h
 man/man1/tarantool.1.gz
 man/man1/tarantoolctl.1.gz
-@dir %%ETCDIR%%/instances.enabled
+@dir %%DATADIR%%
+@dir %%ETCDIR%%/instances.available
+@dir lib/tarantool
 @dir(%%TT_USER%%,%%TT_GROUP%%,) %%TT_DATADIR%%
 @dir(%%TT_USER%%,%%TT_GROUP%%,) %%TT_LOGDIR%%
 @dir(%%TT_USER%%,%%TT_GROUP%%,) %%TT_RUNDIR%%

@@ -12,7 +12,5 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_GHC_NATIVE=	yes
-
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

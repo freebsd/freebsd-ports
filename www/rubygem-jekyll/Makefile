@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll
-PORTVERSION=	3.0.2
+PORTVERSION=	3.1.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	rubygem-colorator>=0.1:${PORTSDIR}/textproc/rubygem-colorator \
 		rubygem-safe_yaml>=1.0:${PORTSDIR}/devel/rubygem-safe_yaml
 
 CONFLICTS_INSTALL=	rubygem-jekyll2-*
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

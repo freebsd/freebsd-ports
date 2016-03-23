@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sbt
-PORTVERSION=	0.13.9
+PORTVERSION=	0.13.11
 CATEGORIES=	devel java
 MASTER_SITES=	http://dl.bintray.com/sbt/native-packages/sbt/${PORTVERSION}/
 
@@ -12,6 +12,7 @@ COMMENT=	Build tool for Scala projects
 LICENSE=	APACHE20
 
 OPTIONS_DEFINE=	ADVANCED
+OPTIONS_DEFAULT=ADVANCED
 ADVANCED_DESC=	Install advanced bash shell-script
 
 USES=		tar:tgz

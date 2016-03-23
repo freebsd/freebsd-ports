@@ -1,4 +1,4 @@
---- configure.orig	2015-09-12 19:49:18 UTC
+--- configure.orig	2016-02-15 22:38:55 UTC
 +++ configure
 @@ -1714,7 +1714,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  

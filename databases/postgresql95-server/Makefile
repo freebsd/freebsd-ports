@@ -1,8 +1,7 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION?=	9.5.0
-PORTREVISION?=	2
+DISTVERSION?=	9.5.1
 
 MAINTAINER?=	pgsql@FreeBSD.org
 

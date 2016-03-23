@@ -1,0 +1,157 @@
+bin/mailq
+bin/newaliases
+%%TEST%%bin/qmqp-sink
+%%TEST%%bin/qmqp-source
+bin/qshape
+bin/rmail
+%%TEST%%bin/smtp-sink
+%%TEST%%bin/smtp-source
+%%PFETC%%/LICENSE
+%%PFETC%%/TLS_LICENSE
+%%PFETC%%/bounce.cf.default
+%%PFETC%%/main.cf.default
+@sample %%PFETC%%/main.cf.sample
+%%PFETC%%/makedefs.out
+@sample %%PFETC%%/master.cf.sample
+libexec/postfix/anvil
+libexec/postfix/bounce
+libexec/postfix/cleanup
+libexec/postfix/discard
+libexec/postfix/dnsblog
+libexec/postfix/error
+libexec/postfix/flush
+libexec/postfix/lmtp
+libexec/postfix/local
+libexec/postfix/main.cf
+libexec/postfix/master
+libexec/postfix/master.cf
+libexec/postfix/nqmgr
+libexec/postfix/oqmgr
+libexec/postfix/pickup
+libexec/postfix/pipe
+libexec/postfix/post-install
+libexec/postfix/postfix-files
+libexec/postfix/postfix-script
+libexec/postfix/postfix-wrapper
+libexec/postfix/postmulti-script
+libexec/postfix/postscreen
+libexec/postfix/proxymap
+libexec/postfix/qmgr
+libexec/postfix/qmqpd
+libexec/postfix/scache
+libexec/postfix/showq
+libexec/postfix/smtp
+libexec/postfix/smtpd
+libexec/postfix/spawn
+libexec/postfix/tlsmgr
+libexec/postfix/tlsproxy
+libexec/postfix/trivial-rewrite
+libexec/postfix/verify
+libexec/postfix/virtual
+%%BMAN%%man/man1/mailq.1.gz
+%%BMAN%%man/man1/newaliases.1.gz
+%%BMAN%%man/man1/postalias.1.gz
+%%BMAN%%man/man1/postcat.1.gz
+%%BMAN%%man/man1/postconf.1.gz
+%%BMAN%%man/man1/postdrop.1.gz
+%%BMAN%%man/man1/postfix.1.gz
+%%BMAN%%man/man1/postkick.1.gz
+%%BMAN%%man/man1/postlock.1.gz
+%%BMAN%%man/man1/postlog.1.gz
+%%BMAN%%man/man1/postmap.1.gz
+%%BMAN%%man/man1/postmulti.1.gz
+%%BMAN%%man/man1/postqueue.1.gz
+%%BMAN%%man/man1/postsuper.1.gz
+%%BMAN%%man/man1/posttls-finger.1.gz
+%%TEST%%%%BMAN%%man/man1/qmqp-sink.1.gz
+%%TEST%%%%BMAN%%man/man1/qmqp-source.1.gz
+%%BMAN%%man/man1/qshape.1.gz
+%%BMAN%%man/man1/sendmail.1.gz
+%%TEST%%%%BMAN%%man/man1/smtp-sink.1.gz
+%%TEST%%%%BMAN%%man/man1/smtp-source.1.gz
+%%BMAN%%man/man5/access.5.gz
+%%BMAN%%man/man5/aliases.5.gz
+%%BMAN%%man/man5/body_checks.5.gz
+%%BMAN%%man/man5/bounce.5.gz
+%%BMAN%%man/man5/canonical.5.gz
+%%BMAN%%man/man5/cidr_table.5.gz
+%%BMAN%%man/man5/generic.5.gz
+%%BMAN%%man/man5/header_checks.5.gz
+%%BMAN%%man/man5/ldap_table.5.gz
+%%BMAN%%man/man5/lmdb_table.5.gz
+%%BMAN%%man/man5/master.5.gz
+%%BMAN%%man/man5/memcache_table.5.gz
+%%BMAN%%man/man5/mysql_table.5.gz
+%%BMAN%%man/man5/nisplus_table.5.gz
+%%BMAN%%man/man5/pcre_table.5.gz
+%%BMAN%%man/man5/pgsql_table.5.gz
+%%BMAN%%man/man5/postconf.5.gz
+%%BMAN%%man/man5/postfix-wrapper.5.gz
+%%BMAN%%man/man5/regexp_table.5.gz
+%%BMAN%%man/man5/relocated.5.gz
+%%BMAN%%man/man5/socketmap_table.5.gz
+%%BMAN%%man/man5/sqlite_table.5.gz
+%%BMAN%%man/man5/tcp_table.5.gz
+%%BMAN%%man/man5/transport.5.gz
+%%BMAN%%man/man5/virtual.5.gz
+%%BMAN%%man/man8/anvil.8.gz
+%%BMAN%%man/man8/bounce.8.gz
+%%BMAN%%man/man8/cleanup.8.gz
+%%BMAN%%man/man8/defer.8.gz
+%%BMAN%%man/man8/discard.8.gz
+%%BMAN%%man/man8/dnsblog.8.gz
+%%BMAN%%man/man8/error.8.gz
+%%BMAN%%man/man8/flush.8.gz
+%%BMAN%%man/man8/lmtp.8.gz
+%%BMAN%%man/man8/local.8.gz
+%%BMAN%%man/man8/master.8.gz
+%%BMAN%%man/man8/oqmgr.8.gz
+%%BMAN%%man/man8/pickup.8.gz
+%%BMAN%%man/man8/pipe.8.gz
+%%BMAN%%man/man8/postscreen.8.gz
+%%BMAN%%man/man8/proxymap.8.gz
+%%BMAN%%man/man8/qmgr.8.gz
+%%BMAN%%man/man8/qmqpd.8.gz
+%%BMAN%%man/man8/scache.8.gz
+%%BMAN%%man/man8/showq.8.gz
+%%BMAN%%man/man8/smtp.8.gz
+%%BMAN%%man/man8/smtpd.8.gz
+%%BMAN%%man/man8/spawn.8.gz
+%%BMAN%%man/man8/tlsmgr.8.gz
+%%BMAN%%man/man8/tlsproxy.8.gz
+%%BMAN%%man/man8/trace.8.gz
+%%BMAN%%man/man8/trivial-rewrite.8.gz
+%%BMAN%%man/man8/verify.8.gz
+%%BMAN%%man/man8/virtual.8.gz
+sbin/postalias
+sbin/postcat
+sbin/postconf
+@(,maildrop,2755) sbin/postdrop
+sbin/postfix
+sbin/postkick
+sbin/postlock
+sbin/postlog
+sbin/postmap
+sbin/postmulti
+@(,maildrop,2755) sbin/postqueue
+sbin/postsuper
+sbin/posttls-finger
+sbin/sendmail
+%%DATADIR%%/mailer.conf.postfix
+@dir %%PFETC%%
+@dir(postfix,,700) /var/db/postfix
+@dir(postfix,,700) /var/spool/postfix/active
+@dir(postfix,,700) /var/spool/postfix/bounce
+@dir(postfix,,700) /var/spool/postfix/corrupt
+@dir(postfix,,700) /var/spool/postfix/defer
+@dir(postfix,,700) /var/spool/postfix/deferred
+@dir(postfix,,700) /var/spool/postfix/flush
+@dir(postfix,,700) /var/spool/postfix/hold
+@dir(postfix,,700) /var/spool/postfix/incoming
+@dir(postfix,maildrop,730) /var/spool/postfix/maildrop
+@dir(,postfix,755) /var/spool/postfix/pid
+@dir(postfix,,700) /var/spool/postfix/private
+@dir(postfix,maildrop,710) /var/spool/postfix/public
+@dir(postfix,,700) /var/spool/postfix/saved
+@dir(postfix,,700) /var/spool/postfix/trace
+@dir(,,755) /var/spool/postfix

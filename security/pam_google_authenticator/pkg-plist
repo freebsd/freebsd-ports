@@ -1,0 +1,5 @@
+bin/google-authenticator
+lib/pam_google_authenticator.so
+share/doc/google-authenticator/FILEFORMAT
+share/doc/google-authenticator/README.md
+share/doc/google-authenticator/totp.html

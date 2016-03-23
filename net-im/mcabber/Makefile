@@ -44,7 +44,7 @@ GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 GPGME_CONFIGURE_ENABLE=	gpgme
 
 OTR_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-			libotr.so:${PORTSDIR}/security/libotr
+			libotr.so.5:${PORTSDIR}/security/libotr
 OTR_CONFIGURE_ENABLE=	otr
 
 post-patch:

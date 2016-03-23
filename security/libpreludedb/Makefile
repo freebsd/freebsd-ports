@@ -54,21 +54,21 @@ SQLITE_DESC=		SQLite3 plugin
 SQLITE_USE=		sqlite=yes
 SQLITE_CONFIGURE_WITH=	sqlite3
 
-.include <bsd.port.options.mk>
-
 post-install:
-	(cd ${WRKSRC}/docs/manpages && ${INSTALL_MAN} *.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1)
+	${INSTALL_MAN} ${WRKSRC}/docs/manpages/*.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs/api/html && ${INSTALL_DATA} * \
-		${STAGEDIR}${DOCSDIR})
-.if ${PORT_OPTIONS:MPERL}
+	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* \
+		${STAGEDIR}${DOCSDIR}
+
+post-install-PERL-on:
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/perl5 \
 		-name "*.so" | ${XARGS} ${STRIP_CMD}
-.endif
-.if ${PORT_OPTIONS:MPYTHON}
+
+post-install-PYTHON-on:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		-name "*.so" | ${XARGS} ${STRIP_CMD}
-.endif
 
 .include <bsd.port.mk>

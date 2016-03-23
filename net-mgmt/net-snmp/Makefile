@@ -157,7 +157,7 @@ CFLAGS+=	-D_WANT_IFADDR
 .endif
 
 .if ${OSVERSION} >= 1100062
-CONFIGURE_ARGS+=	--with-out-mib-modules="mibII/ipv6"
+NET_SNMP_WITHOUT_MIB_MODULE_LIST+=	mibII/ipv6
 .endif
 
 .if ${PORT_OPTIONS:MMFD_REWRITES}

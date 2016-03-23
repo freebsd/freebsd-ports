@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	bottle-cork
-PORTVERSION=	0.10
-DISTVERSIONPREFIX=	v
+PORTVERSION=	0.12.0
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Bottle authentication and authorization module
 
 LICENSE=	LGPL3

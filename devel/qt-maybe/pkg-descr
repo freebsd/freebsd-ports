@@ -1,0 +1,5 @@
+A set of simple(ish) C++ templates which implement sum and option types.
+They serve a similar purpose to boost::variant and boost::optional but
+are implemented on top of Qt's QVariant container.
+
+WWW: https://github.com/robertknight/qt-maybe

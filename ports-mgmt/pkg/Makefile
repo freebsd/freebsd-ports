@@ -1,7 +1,8 @@
 # $FreeBSD: head/ports-mgmt/pkg/Makefile 366286 2014-08-26 23:12:10Z bdrewery $
 
 PORTNAME=	pkg
-DISTVERSION=	1.6.3
+DISTVERSION=	1.6.4
+PORTREVISION=	1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
@@ -28,6 +29,8 @@ CFLAGS+=	-Wno-error
 .if !exists(/usr/include/jail.h)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .endif
+
+EXTRA_PATCHES+=	${FILESDIR}/0001-Fix-installation-of-hardlinks.patch
 
 .include <bsd.port.pre.mk>
 

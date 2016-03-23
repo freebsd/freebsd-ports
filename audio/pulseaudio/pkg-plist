@@ -12,15 +12,15 @@ bin/pax11publish
 bin/pulseaudio
 bin/qpaeq
 bin/start-pulseaudio-x11
-%%BASH%%etc/bash_completion.d/pacat
-%%BASH%%etc/bash_completion.d/pacmd
-%%BASH%%etc/bash_completion.d/pactl
-%%BASH%%etc/bash_completion.d/padsp
-%%BASH%%etc/bash_completion.d/paplay
-%%BASH%%etc/bash_completion.d/parec
-%%BASH%%etc/bash_completion.d/parecord
-%%BASH%%etc/bash_completion.d/pasuspender
-%%BASH%%etc/bash_completion.d/pulseaudio
+%%BASH%%share/bash-completion/completions/pacat
+%%BASH%%share/bash-completion/completions/pacmd
+%%BASH%%share/bash-completion/completions/pactl
+%%BASH%%share/bash-completion/completions/padsp
+%%BASH%%share/bash-completion/completions/paplay
+%%BASH%%share/bash-completion/completions/parec
+%%BASH%%share/bash-completion/completions/parecord
+%%BASH%%share/bash-completion/completions/pasuspender
+%%BASH%%share/bash-completion/completions/pulseaudio
 etc/dbus-1/system.d/pulseaudio-system.conf
 @sample etc/pulse/client.conf.sample
 @sample etc/pulse/daemon.conf.sample
@@ -69,8 +69,7 @@ lib/libpulse-simple.so.0
 lib/libpulse-simple.so.0.1.0
 lib/libpulse.so
 lib/libpulse.so.0
-lib/libpulse.so.0.18.0
-lib/libpulsecore-%%PULSE_VERSION%%.so
+lib/libpulse.so.0.19.0
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/libavahi-wrap.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-device-manager.so
 %%ALSA%%lib/pulse-%%PULSE_VERSION%%/modules/libalsa-util.so
@@ -160,6 +159,7 @@ lib/pulse-%%PULSE_VERSION%%/modules/module-x11-xsmp.so
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/module-zeroconf-discover.so
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/module-zeroconf-publish.so
 lib/pulseaudio/libpulsecommon-%%PULSE_VERSION%%.so
+lib/pulseaudio/libpulsecore-%%PULSE_VERSION%%.so
 lib/pulseaudio/libpulsedsp.so
 libdata/pkgconfig/libpulse-mainloop-glib.pc
 libdata/pkgconfig/libpulse-simple.pc
@@ -170,7 +170,10 @@ man/man1/pacat.1.gz
 man/man1/pacmd.1.gz
 man/man1/pactl.1.gz
 man/man1/padsp.1.gz
+man/man1/pamon.1.gz
 man/man1/paplay.1.gz
+man/man1/parec.1.gz
+man/man1/parecord.1.gz
 man/man1/pasuspender.1.gz
 man/man1/pax11publish.1.gz
 man/man1/pulseaudio.1.gz
@@ -225,6 +228,7 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktor-audio2.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktor-audio6.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktorkontrol-s4.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/sb-omni-surround-5.1.conf
 %%ZSH%%share/zsh/site-functions/_pulseaudio
 share/locale/as/LC_MESSAGES/pulseaudio.mo
 share/locale/bn_IN/LC_MESSAGES/pulseaudio.mo
@@ -244,9 +248,11 @@ share/locale/id/LC_MESSAGES/pulseaudio.mo
 share/locale/it/LC_MESSAGES/pulseaudio.mo
 share/locale/ja/LC_MESSAGES/pulseaudio.mo
 share/locale/kn/LC_MESSAGES/pulseaudio.mo
+share/locale/ko/LC_MESSAGES/pulseaudio.mo
 share/locale/ml/LC_MESSAGES/pulseaudio.mo
 share/locale/mr/LC_MESSAGES/pulseaudio.mo
 share/locale/nl/LC_MESSAGES/pulseaudio.mo
+share/locale/oc/LC_MESSAGES/pulseaudio.mo
 share/locale/or/LC_MESSAGES/pulseaudio.mo
 share/locale/pa/LC_MESSAGES/pulseaudio.mo
 share/locale/pl/LC_MESSAGES/pulseaudio.mo

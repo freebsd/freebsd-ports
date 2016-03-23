@@ -23,9 +23,11 @@ lib/elixir/lib/jose/ebin/jose.beam
 lib/elixir/lib/jose/ebin/jose_app.beam
 lib/elixir/lib/jose/ebin/jose_block_encryptor.beam
 lib/elixir/lib/jose/ebin/jose_curve25519.beam
+lib/elixir/lib/jose/ebin/jose_curve25519_libdecaf.beam
 lib/elixir/lib/jose/ebin/jose_curve25519_libsodium.beam
 lib/elixir/lib/jose/ebin/jose_curve25519_unsupported.beam
 lib/elixir/lib/jose/ebin/jose_curve448.beam
+lib/elixir/lib/jose/ebin/jose_curve448_libdecaf.beam
 lib/elixir/lib/jose/ebin/jose_curve448_unsupported.beam
 lib/elixir/lib/jose/ebin/jose_json.beam
 lib/elixir/lib/jose/ebin/jose_json_jiffy.beam
@@ -90,6 +92,7 @@ lib/elixir/lib/jose/ebin/jose_server.beam
 lib/elixir/lib/jose/ebin/jose_sha3.beam
 lib/elixir/lib/jose/ebin/jose_sha3_keccakf1600_driver.beam
 lib/elixir/lib/jose/ebin/jose_sha3_keccakf1600_nif.beam
+lib/elixir/lib/jose/ebin/jose_sha3_libdecaf.beam
 lib/elixir/lib/jose/ebin/jose_sha3_unsupported.beam
 lib/elixir/lib/jose/ebin/jose_sup.beam
 lib/elixir/lib/jose/lib/jose.ex

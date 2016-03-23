@@ -2,8 +2,8 @@
 Version=1.0
 Encoding=UTF-8
 Type=Application
-Name=IntelliJ Idea
-GenericName=IntelliJ IDE
+Name=IntelliJ IDEA Community Edition
+GenericName=IntelliJ IDEA Community Edition
 Comment=IntelliJ Integrated Development Environment
 Icon=%%IDEA_HOME%%/idea.png
 Exec=%%IDEA_HOME%%/bin/idea.sh

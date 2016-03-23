@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	simple_components
-PORTVERSION=	4.8
+PORTVERSION=	4.11
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dmitry-kazakov.de/ada/
-DISTNAME=	components_4_8
+DISTNAME=	components_${PORTVERSION:S/./_/}
 
 MAINTAINER=	rodakay@internode.on.net
 COMMENT=	Simple Ada Components
-
-BORKEN=		unfetchable
 
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi

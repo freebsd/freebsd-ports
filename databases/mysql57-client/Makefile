@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql
+PORTREVISION?=	4
 PKGNAMESUFFIX=	57-client
 
 COMMENT=	Multithreaded SQL database (client)
@@ -28,5 +29,11 @@ MMAN1=		comp_err.1 msql2mysql.1 mysql.1 mysql_config.1 mysql_config_editor.1 mys
 		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1 mysqlslap.1
 
 CLIENT_ONLY=	yes
+
+# issue 166367: adding symlinks for back-compatibility with $(lib)_r
+post-install:
+	@${LN} -s libmysqlclient.a ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.a
+	@${LN} -s libmysqlclient.so ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so
+	@${LN} -s libmysqlclient.so.20 ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so.20
 
 .include "${MASTERDIR}/Makefile"

@@ -17,6 +17,7 @@ USES=		tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	runkit
+IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-runkit=classkit
 

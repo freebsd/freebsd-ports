@@ -3,6 +3,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	5.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -44,7 +45,8 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA \
-		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
+		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Schedule-Cron-Events>=1.94:${PORTSDIR}/sysutils/p5-Schedule-Cron-Events
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -72,6 +74,7 @@ GROUPS=		${USERS} www
 SUB_FILES=	pkg-message
 SUB_LIST=	OTRS_USER=${USERS} OTRS_GROUP=${USERS} WWWOWN=${WWWOWN}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+NO_ARCH=	YES
 
 ROOT_DIRS_LIST=	Kernel bin scripts
 BIN_DIRS_LIST=	"" cgi-bin fcgi-bin

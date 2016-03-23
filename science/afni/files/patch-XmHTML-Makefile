@@ -1,6 +1,6 @@
---- XmHTML/Makefile.orig	2011-07-05 08:07:36.000000000 -0500
-+++ XmHTML/Makefile	2013-10-29 20:59:28.000000000 -0500
-@@ -48,7 +48,7 @@
+--- XmHTML/Makefile.orig	2015-11-06 21:25:06 UTC
++++ XmHTML/Makefile
+@@ -48,7 +48,7 @@ AR    = ar cq 
  RANLIB= ranlib
  
  SHELL     = /bin/sh

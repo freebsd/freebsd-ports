@@ -1,0 +1,5 @@
+Wrapper scripts and code around the brotli code base.
+Builds libraries out of the brotli decode and encode sources.
+
+WWW: https://github.com/google/brotli
+WWW: https://github.com/bagder/libbrotli

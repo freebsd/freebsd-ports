@@ -3,10 +3,10 @@
 PORTNAME=	qemu
 PORTVERSION=	0.d${SNAPDATE}
 CATEGORIES=	emulators devel
-PKGNAMESUFFIX=	-cheri
+PKGNAMESUFFIX?=	-cheri
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	QEMU emulator with CHERI CPU support
+COMMENT?=	QEMU emulator with CHERI CPU support
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CTSRD-CHERI
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+= \
 		--disable-smartcard-nss \
 		--disable-vte \
 		--disable-xen \
-		--extra-cflags=-g \
+		--extra-cflags="-g ${EXTRA_CFLAGS}" \
 		--localstatedir=/var
 
 .include <bsd.port.mk>

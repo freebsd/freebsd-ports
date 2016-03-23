@@ -1,9 +1,8 @@
 GNUstep/System/Applications/CheriVis.app/CheriVis
 GNUstep/System/Applications/CheriVis.app/Resources/CheriVis.desktop
-GNUstep/System/Applications/CheriVis.app/Resources/CheriVis.gorm/data.classes
-GNUstep/System/Applications/CheriVis.app/Resources/CheriVis.gorm/data.info
-GNUstep/System/Applications/CheriVis.app/Resources/CheriVis.gorm/objects.gorm
 GNUstep/System/Applications/CheriVis.app/Resources/CheriVis.tiff
+GNUstep/System/Applications/CheriVis.app/Resources/Document.xib
 GNUstep/System/Applications/CheriVis.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/CheriVis.app/Resources/MainMenu.xib
 GNUstep/System/Applications/CheriVis.app/stamp.make
 GNUstep/System/Tools/CheriVis

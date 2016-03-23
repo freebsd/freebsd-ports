@@ -3,7 +3,7 @@
 
 PORTNAME=	milter
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python
 MASTER_SITES=	SF/${PYPORTNAME}/${PYPORTNAME}/${DISTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if !exists(/usr/lib/libmilter.so)
-LIB_DEPENDS=	libmilter.so:${PORTSDIR}/mail/sendmail
+LIB_DEPENDS=	libmilter.so:${PORTSDIR}/mail/libmilter
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 

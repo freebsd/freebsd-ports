@@ -180,6 +180,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2012.html
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2013.html
 %%DOCSDIR%%%%PORTVERSION%%/html/news-2014.html
+%%DOCSDIR%%%%PORTVERSION%%/html/news-2015.html
 %%DOCSDIR%%%%PORTVERSION%%/html/news.html
 %%DOCSDIR%%%%PORTVERSION%%/html/node.gif
 %%DOCSDIR%%%%PORTVERSION%%/html/pending.html

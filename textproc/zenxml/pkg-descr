@@ -1,0 +1,6 @@
+Zenxml is an XML library serializing structured user data in a convenient
+way.  Using compile-time information gathered by techniques of template
+metaprogramming it minimizes the manual overhead required and frees the
+user from implementing fundamental type conversions by himself.
+
+WWW: http://zenxml.sourceforge.net/

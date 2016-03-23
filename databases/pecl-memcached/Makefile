@@ -25,6 +25,7 @@ USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 USES=		pkgconfig tar:tgz
+IGNORE_WITH_PHP=	70
 
 IGBINARY_CONFIGURE_ENABLE=	memcached-igbinary
 IGBINARY_USE=		PHP=igbinary

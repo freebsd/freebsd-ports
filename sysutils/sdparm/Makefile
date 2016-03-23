@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdparm
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 

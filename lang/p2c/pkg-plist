@@ -1,10 +1,11 @@
 bin/p2c
 bin/p2cc
-lib/libp2c.a
 include/p2c/p2c.h
-lib/p2c/p2crc
+lib/libp2c.a
 lib/p2c/loc.p2crc
+lib/p2c/p2crc
+lib/p2c/string.pas
 lib/p2c/system.imp
 lib/p2c/system.m2
 lib/p2c/turbo.imp
-lib/p2c/string.pas
+man/man1/p2c.1.gz

@@ -3,6 +3,7 @@
 
 PORTNAME=	tine20
 PORTVERSION=	0.0.2012.10.04
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	2012.10.4
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.tine20.org/downloads/${DISTVERSIONSUFFIX}/
@@ -25,7 +26,7 @@ APC_DESC=	Enable pecl-APC support
 MEMCACHE_DESC=	Enable pecl-memcache support
 
 USE_MYSQL=	yes
-USE_PHP=	ctype dom gd iconv json mcrypt mysql pdo_mysql simplexml \
+USE_PHP=	ctype dom gd iconv json mcrypt pdo_mysql simplexml \
 		spl xml zip
 WANT_PHP_WEB=	yes
 

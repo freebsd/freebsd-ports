@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pynacl
-PORTVERSION=	0.3.0
+PORTVERSION=	1.0.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,15 +14,17 @@ COMMENT=	PyNaCl is a Python binding to the Networking and Cryptography library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnacl.a:${PORTSDIR}/security/nacl \
-		${PYTHON_PKGNAMEPREFIX}cffi>0:${PORTSDIR}/devel/py-cffi
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:${PORTSDIR}/devel/py-cffi
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:${PORTSDIR}/devel/py-cffi \
+		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+BUILD_DEPENDS=	${RUN_DEPENDS}
+LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-NO_ARCH=	yes
+MAKE_ENV+=	SODIUM_INSTALL=system
+CFLAGS+=	-I ${LOCALBASE}/include
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/nacl/_lib/_cffi__xfc5fefe5xfb751af7.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/nacl/_sodium.so
 
 .include <bsd.port.mk>

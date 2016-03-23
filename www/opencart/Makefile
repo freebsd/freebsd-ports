@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencart
-PORTVERSION=	2.0.3.1
+PORTVERSION=	2.2.0.0
 CATEGORIES=	www misc
 
 MAINTAINER=	wen@FreeBSD.org
@@ -19,8 +19,6 @@ WRKSRC_SUBDIR=	upload
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${MV} ${WRKSRC}/config-dist.php ${WRKSRC}/config.php
 	${MV} ${WRKSRC}/admin/config-dist.php ${WRKSRC}/admin/config.php
@@ -28,4 +26,4 @@ post-patch:
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

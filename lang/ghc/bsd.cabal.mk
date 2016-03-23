@@ -9,8 +9,10 @@
 # Maintained by: haskell@FreeBSD.org
 #
 
+PACKAGE=	${PORTNAME}-${PORTVERSION}
+
 .if !defined(METAPORT) && !defined(USE_GITHUB)
-MASTER_SITES?=	http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/:hackage
+MASTER_SITES?=	http://hackage.haskell.org/package/${PACKAGE}/:hackage
 DISTFILES?=	${DISTNAME}${EXTRACT_SUFX}:hackage
 EXTRACT_ONLY?=	${DISTNAME}${EXTRACT_SUFX}
 .endif
@@ -38,14 +40,15 @@ GHC_HADDOCK_CMD=${LOCALBASE}/bin/haddock-ghc-${GHC_VERSION}
 CABAL_DOCSDIR=		${PREFIX}/share/doc/cabal/ghc-${GHC_VERSION}
 CABAL_DOCSDIR_REL=	${CABAL_DOCSDIR:S,^${PREFIX}/,,}
 
-DATADIR=	${PREFIX}/share/cabal/ghc-${GHC_VERSION}/${DISTNAME}
-DOCSDIR=	${CABAL_DOCSDIR}/${DISTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/cabal/ghc-${GHC_VERSION}/${DISTNAME}
+
+DATADIR=	${PREFIX}/share/cabal/ghc-${GHC_VERSION}/${PACKAGE}
+DOCSDIR=	${CABAL_DOCSDIR}/${PACKAGE}
+EXAMPLESDIR=	${PREFIX}/share/examples/cabal/ghc-${GHC_VERSION}/${PACKAGE}
 
 GHC_LIB_DOCSDIR_REL=	share/doc/ghc-${GHC_VERSION}/html/libraries
 
 CABAL_LIBDIR=		${PREFIX}/lib/cabal/ghc-${GHC_VERSION}
-CABAL_LIBSUBDIR=	${DISTNAME}
+CABAL_LIBSUBDIR=	${PACKAGE}
 CABAL_LIBDIR_REL=	${CABAL_LIBDIR:S,^${PREFIX}/,,}
 
 CONFIGURE_ARGS+=	--libdir=${CABAL_LIBDIR} --libsubdir=${CABAL_LIBSUBDIR}
@@ -161,11 +164,6 @@ RUN_DEPENDS+=	${dependencies}
 
 .endif
 
-.if defined(USE_GHC_NATIVE)
-USES+=		perl5
-USE_PERL5=	build
-.endif
-
 .if ${PORT_OPTIONS:MDOCS}
 .if !defined(XMLDOCS)
 
@@ -175,7 +173,6 @@ HADDOCK_OPTS=	# empty
 .if ${PORT_OPTIONS:MHSCOLOUR}
 BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
 
-HSCOLOUR_VERSION=	1.23
 HSCOLOUR_DATADIR=	${LOCALBASE}/share/cabal/ghc-${GHC_VERSION}/hscolour-${HSCOLOUR_VERSION}
 HADDOCK_OPTS+=		--hyperlink-source --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
 .endif # HSCOLOUR
@@ -332,7 +329,7 @@ add-plist-cabal:
 .endif
 
 .if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
-	@(${ECHO_CMD} '@unexec ${RM} ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME}' ; \
+	@(${ECHO_CMD} '@unexec ${RM} ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${PACKAGE}' ; \
 	  ${ECHO_CMD} '@unexec cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && \
 	    ${RM} doc-index*.html && ./gen_contents_index') >> ${TMPPLIST}
 .endif
@@ -342,7 +339,7 @@ add-plist-cabal:
 .endif
 
 .if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
-	@(${ECHO_CMD} '@exec ${LN} -s ${DOCSDIR}/html ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
+	@(${ECHO_CMD} '@exec ${LN} -s ${DOCSDIR}/html ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${PACKAGE} && \
 	  cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && \
 	  ${RM} doc-index*.html && ./gen_contents_index') >> ${TMPPLIST}
 .endif

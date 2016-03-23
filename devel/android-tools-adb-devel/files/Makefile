@@ -23,7 +23,6 @@ SRCS+= file_sync_client.cpp
 SRCS+= line_printer.cpp
 SRCS+= services.cpp
 SRCS+= shell_service_protocol.cpp
-# XXX SuffFindDeps may fail to restore suffix lost in transformation
 SRCS+= ../adb/sockets.cpp
 SRCS+= transport.cpp
 SRCS+= transport_local.cpp
@@ -34,6 +33,7 @@ TEST_SRCS+= adb_utils_test.cpp
 TEST_SRCS+= fdevent_test.cpp
 TEST_SRCS+= shell_service_protocol_test.cpp
 TEST_SRCS+= socket_test.cpp
+TEST_SRCS+= sysdeps_test.cpp
 TEST_SRCS+= transport_test.cpp
 
 .PATH: ${.CURDIR}/client

@@ -1,11 +1,12 @@
---- configure.orig	2010-04-26 01:53:28.000000000 -0700
-+++ configure	2010-04-26 01:53:48.000000000 -0700
-@@ -12981,7 +12981,7 @@
+Work around the GNU sed-isms below with an awk script.
+--- configure.orig	2016-02-21 15:54:50 UTC
++++ configure
+@@ -13947,7 +13947,7 @@ done
  	#IT_PROG_INTLTOOL([0.35.0])
  	#AC_PROG_INTLTOOL([0.21])
  
 -	ALL_LINGUAS=`grep -v '^#' $srcdir/po/LINGUAS | sed -r ':a;N;$!ba;s/\n/ /g; s/[ ]+/ /g'`
-+	ALL_LINGUAS=`cat $srcdir/po/LINGUAS`
++	ALL_LINGUAS=`grep -v '^#' $srcdir/po/LINGUAS | awk 'BEGIN {OR=""; ORS=" "} {print NR": "$1 }' po/LINGUAS`
  	GETTEXT_PACKAGE=$PACKAGE
  
  

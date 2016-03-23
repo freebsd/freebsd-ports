@@ -1,9 +1,8 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/security/libsecret/Makefile 20031 2014-11-02 21:47:55Z kwm $
 
 PORTNAME=	libsecret
-PORTVERSION=	0.18.3
+PORTVERSION=	0.18.4
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
@@ -16,7 +15,7 @@ BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
 		vala:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 libxslt:build intltool \
 		introspection:build
 USE_LDCONFIG=	yes

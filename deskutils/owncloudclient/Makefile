@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	owncloudclient
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
-MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 
 MAINTAINER=	yonas@fizk.net
 COMMENT=	OwnCloud Desktop Syncing Client
@@ -14,18 +14,20 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify \
 		libqt5keychain.so:${PORTSDIR}/security/qtkeychain-qt5
 
-USES=		cmake:outsource compiler:c++11-lib gmake iconv pkgconfig tar:xz
+USES=		cmake:outsource compiler:c++11-lib gmake iconv localbase \
+		pkgconfig sqlite
 USE_QT5=	buildtools_build concurrent core dbus gui linguist_build network \
 		qmake_build webkit xml
 USE_OPENSSL=	yes
-USE_SQLITE=	3
 CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=OFF \
 		-DCMAKE_INSTALL_MANDIR:STRING=man \
 		-DWITH_STACK_PROTECTOR:BOOL=OFF
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_GITHUB=	yes
+GH_ACCOUNT=	owncloud
+GH_PROJECT=	client
 
 OPTIONS_DEFINE=		DEBUG DOCS
 

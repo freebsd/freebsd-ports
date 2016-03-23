@@ -1,0 +1,87 @@
+# HG changeset patch
+# User Bitbucket <noreply@bitbucket.org>
+# Date 0 0
+# Node ID 90c6097540f35e312d34340b916296130003c851
+# Parent  ce1acb28953fd6928ccb8f9511e374eab66e8625
+# Parent  5662e704b72c7ebb116f8478a4ff3847acc72fc6
+Merge preview of source (5662e704b72c7ebb116f8478a4ff3847acc72fc6) to destination (ce1acb28953fd6928ccb8f9511e374eab66e8625).
+
+diff -r ce1acb28953fd6928ccb8f9511e374eab66e8625 -r 90c6097540f35e312d34340b916296130003c851 coregrind/m_syswrap/syswrap-freebsd.c
+--- a/coregrind/m_syswrap/syswrap-freebsd.c
++++ b/coregrind/m_syswrap/syswrap-freebsd.c
+@@ -3670,6 +3670,42 @@
+         POST_MEM_WRITE( ARG5, ARG4 );
+ }
+ 
++PRE(sys_jail_get)
++{
++
++	PRINT("sys_jail_get ( %#lx, %lu, %ld )", ARG1, ARG2, ARG3);
++	PRE_REG_READ3(int, "jail_get", struct vki_iovec *, iov, unsigned int,
++		niov, int, flags);
++	PRE_MEM_WRITE("jail_get", ARG1, ARG2 * sizeof(struct vki_iovec));
++}
++
++POST(sys_jail_get)
++{
++	vg_assert(SUCCESS);
++	if (RES != -1)
++		POST_MEM_WRITE(ARG1, ARG2);
++}
++
++PRE(sys_jail_set)
++{
++	PRINT("sys_jail_set ( %#lx, %lu, %ld )", ARG1, ARG2, ARG3);
++	PRE_REG_READ3(int, "jail_set", struct vki_iovec *, iov, unsigned int,
++		niov, int, flags);
++	PRE_MEM_WRITE("jail_set", ARG1, ARG2 * sizeof(struct vki_iovec));
++}
++
++PRE(sys_jail_attach)
++{
++	PRINT("sys_jail_attach ( %ld )", ARG1);
++	PRE_REG_READ1(int, "jail_attach", int, jid);
++}
++
++PRE(sys_jail_remove)
++{
++	PRINT("sys_jail_remove ( %ld )", ARG1);
++	PRE_REG_READ1(int, "jail_remove", int, jid);
++}
++
+ #undef PRE
+ #undef POST
+ 
+@@ -4219,7 +4255,7 @@
+    BSDXY(__NR__umtx_lock,		sys__umtx_lock),		// 434
+    BSDXY(__NR__umtx_unlock,		sys__umtx_unlock),		// 435
+ 
+-   // jail_attach							   436
++   BSDX_(__NR_jail_attach,		sys_jail_attach),	// 436
+    // extattr_list_fd							   437
+    // extattr_list_file							   438
+    // extattr_list_link							   439
+@@ -4303,6 +4339,10 @@
+    BSDX_(__NR_symlinkat,		sys_symlinkat),			// 502
+    BSDX_(__NR_unlinkat,			sys_unlinkat),			// 503
+ 
++   BSDXY(__NR_jail_get,			sys_jail_get),			// 506
++   BSDX_(__NR_jail_set,			sys_jail_set),			// 507
++   BSDX_(__NR_jail_remove,		sys_jail_remove),		// 508
++
+    // posix_openpt							   504
+ 
+    BSDXY(__NR___semctl,			sys___semctl),			// 510
+diff -r ce1acb28953fd6928ccb8f9511e374eab66e8625 -r 90c6097540f35e312d34340b916296130003c851 include/vki/vki-scnums-freebsd.h
+--- a/include/vki/vki-scnums-freebsd.h
++++ b/include/vki/vki-scnums-freebsd.h
+@@ -405,6 +405,9 @@
+ #define	__NR_symlinkat		502
+ #define	__NR_unlinkat		503
+ #define	__NR_posix_openpt	504
++#define	__NR_jail_get		506
++#define	__NR_jail_set		507
++#define	__NR_jail_remove	508
+ #define	__NR___semctl		510
+ #define	__NR_shmctl		512
+ #define	__NR_pipe2		542

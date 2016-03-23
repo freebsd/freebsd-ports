@@ -1,4 +1,5 @@
 %%BROADWAY%%bin/broadwayd
+bin/gtk-builder-tool
 bin/gtk-encode-symbolic-svg
 bin/gtk-launch
 bin/gtk-query-immodules-3.0

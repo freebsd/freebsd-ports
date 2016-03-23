@@ -1,4 +1,4 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
+# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	Nexmo-SMS
@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RENEEB
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Send SMS via http://www.nexmo.com/ API
 
 BUILD_DEPENDS=	p5-HTTP-Message>=5.836:${PORTSDIR}/www/p5-HTTP-Message \

@@ -1,0 +1,13 @@
+In cryptography, XTEA (eXtended TEA) is a block cipher designed to correct
+weaknesses in TEA. The cipher's designers were David Wheeler and Roger Needham
+of the Cambridge Computer Laboratory, and the algorithm was presented in an
+unpublished technical report in 1997 (Needham and Wheeler, 1997). It is not
+subject to any patents.
+
+Like TEA, XTEA is a 64-bit block Feistel cipher with a 128-bit key and a
+suggested 64 Feistel rounds (i.e 32 cycles). Crypt::XTEA uses the recommended
+value of 32 cycles by default.
+
+This module implements XTEA encryption. It supports the Crypt::CBC interface.
+
+WWW: https://metacpan.org/pod/Crypt::XTEA

@@ -8,18 +8,15 @@
 #set -vx
 
 PKG_BATCH=${BATCH:=NO}
-
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
-
-SASLDB_NAME=${PKG_PREFIX}/etc/%%SASLDB%%
-
+SASLDB_NAME=%%SASLDB_NAME%%
+SASLDB_NAME=${SASLDB_NAME:+${PKG_PREFIX}/etc/%%SASLDB_NAME%%}
 CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
 CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
 
 #
 # create 'cyrus' user and group before installing
 #
-
 create_user() {
 	USER=${CYRUS_USER}
 	GROUP=${CYRUS_GROUP}
@@ -91,12 +88,13 @@ case $2 in
 		;;
 	POST-INSTALL)
 		if [ "${PKG_BATCH}" = "NO" ]; then
-			create_sasldb
-		elif [ ! -f ${SASLDB_NAME} ]; then
+			if [ -n "${SASLDB_NAME}" ]; then
+				create_sasldb
+			fi
+		elif [ -n "${SASLDB_NAME}" -a ! -f ${SASLDB_NAME} ]; then
 			echo "*** We do not create ${SASLDB_NAME} automatically in"
 			echo "*** BATCH mode.  Please create it by yourself.  It should be"
 			echo "*** owner: ${CYRUS_USER}, group: mail, mode: 0640."
 		fi
 		;;
-
 esac

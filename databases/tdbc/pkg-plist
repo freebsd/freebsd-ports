@@ -1,6 +1,6 @@
-include/tdbc.h
-include/tdbcDecls.h
-include/tdbcInt.h
+include/tdbc/tdbc.h
+include/tdbc/tdbcDecls.h
+include/tdbc/tdbcInt.h
 lib/tdbc%%VERSION%%/libtdbc%%VERSION%%.so
 lib/tdbc%%VERSION%%/libtdbcstub%%VERSION%%.a
 lib/tdbc%%VERSION%%/pkgIndex.tcl
@@ -14,22 +14,22 @@ man/mann/tdbc_resultset.n.gz
 man/mann/tdbc_statement.n.gz
 man/mann/tdbc_tokenize.n.gz
 @comment MySQL
-%%MYSQL%%include/fakemysql.h
-%%MYSQL%%include/mysqlStubs.h
+%%MYSQL%%include/tdbc/fakemysql.h
+%%MYSQL%%include/tdbc/mysqlStubs.h
 %%MYSQL%%lib/tdbcmysql%%VERSION%%/libtdbcmysql%%VERSION%%.so
 %%MYSQL%%lib/tdbcmysql%%VERSION%%/tdbcmysql.tcl
 %%MYSQL%%lib/tdbcmysql%%VERSION%%/pkgIndex.tcl
 %%MYSQL%%man/mann/tdbc_mysql.n.gz
 @comment ODBC
-%%ODBC%%include/fakesql.h
-%%ODBC%%include/odbcStubs.h
+%%ODBC%%include/tdbc/fakesql.h
+%%ODBC%%include/tdbc/odbcStubs.h
 %%ODBC%%lib/tdbcodbc%%VERSION%%/libtdbcodbc%%VERSION%%.so
 %%ODBC%%lib/tdbcodbc%%VERSION%%/tdbcodbc.tcl
 %%ODBC%%lib/tdbcodbc%%VERSION%%/pkgIndex.tcl
 %%ODBC%%man/mann/tdbc_odbc.n.gz
 @comment PGSQL
-%%PGSQL%%include/fakepq.h
-%%PGSQL%%include/pqStubs.h
+%%PGSQL%%include/tdbc/fakepq.h
+%%PGSQL%%include/tdbc/pqStubs.h
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/libtdbcpostgres%%VERSION%%.so
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/tdbcpostgres.tcl
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/pkgIndex.tcl

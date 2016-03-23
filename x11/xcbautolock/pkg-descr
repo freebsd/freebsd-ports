@@ -1,0 +1,5 @@
+XCB base user activity monitor. It fires up a progam if nothing happens during a
+user configurabel period of time. It respects the screensaver settings
+(enable/disable).
+
+WWW: https://github.com/bapt/xcbautolock

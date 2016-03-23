@@ -1,17 +1,18 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libsystem
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.defora.org/os/download/download/4330/
+MASTER_SITES=	http://www.defora.org/os/download/download/4392/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	libSystem-${PORTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS core system library
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig
 USE_LDCONFIG=	yes
@@ -19,10 +20,16 @@ USE_OPENSSL=	yes
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAKE_ARGS+=	PREFIX=${PREFIX}
+MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFAULT=	DOCS
+OPTIONS_DEFINE=	DOCS
+DOCS_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
+	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
+
+BROKEN_FreeBSD_9=	This port works only on FreeBSD 10 and newer
 
 post-patch:
 	${REINPLACE_CMD} 's|/lib/|/libdata/|g' \
@@ -31,10 +38,22 @@ post-patch:
 		${WRKSRC}/src/Makefile
 	${REINPLACE_CMD} 's|CPPFLAGS=|CPPFLAGS+=|' \
 		${WRKSRC}/src/Makefile
-	${REINPLACE_CMD} 's|data doc include|data include|' \
-		${WRKSRC}/Makefile
 	${REINPLACE_CMD} 's|_fail "python.sh"|#_fail "python.sh"|' \
 		${WRKSRC}/tests/tests.sh
+	${REINPLACE_CMD} 's|-Wl,-pie||g' \
+		${WRKSRC}/tools/Makefile \
+		${WRKSRC}/tests/Makefile
+	${REINPLACE_CMD} -e 's|$$(INSTALL)|#$${INSTALL}|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|$$(MKDIR) $$(DESTDIR)$$(PREFIX)/share/doc/| \
+		#$$(MKDIR) $$(DESTDIR)$$(PREFIX)/share/doc/|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|./docbook.sh -P "$$(DESTDIR)$$(PREFIX)" -i -- "$$(OBJDIR)configctl.html"| \
+		#./docbook.sh -P "$$(DESTDIR)$$(PREFIX)" -i -- "$$(OBJDIR)configctl.html"|' \
+		${WRKSRC}/doc/Makefile
+
+post-patch-DOCS-off:
+	${REINPLACE_CMD} 's|data doc include|data include|' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/^SUBDIRS/ s|doc||' ${WRKSRC}/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/configctl \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.22
+PORTVERSION=	3.23
 #DISTVERSIONSUFFIX=	-with-ckbi-1.98
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
@@ -11,7 +11,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		nspr>=4.11:${PORTSDIR}/devel/nspr \
+		nspr>=4.12:${PORTSDIR}/devel/nspr \
 		sqlite3>=3.7.15:${PORTSDIR}/databases/sqlite3
 LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
@@ -54,9 +54,9 @@ BINS=		${DIST}/${OPSYS}${OSREL}_OPT.OBJ
 BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 .endif
 
-.if ${ARCH} == amd64
+.if ${OPSYS} == FreeBSD && ${ARCH} == amd64
 USE_BINUTILS=	# intel-gcm.s
-CFLAGS+=	-B${LOCALBASE}/bin
+CC+=	-B${LOCALBASE}/bin
 .endif
 
 check regression-test test:

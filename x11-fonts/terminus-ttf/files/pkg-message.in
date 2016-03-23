@@ -1,0 +1,19 @@
+You can start using the fonts by following these instructions:
+
+Add the following line to the "Files" section of your X.Org
+configuration file:
+
+	FontPath "%%FONTSDIR%%/"
+
+Please also note that this font will only look good if used at the
+following sizes:
+
+        12 px or 9 pt
+        14 px or 10.5 pt
+        16 px or 12 pt
+        18 px or 13.5 pt
+        20 px or 15 pt
+        22 px or 16.5 pt
+        24 px or 18 pt
+        28 px or 21 pt
+        32 px or 24 pt

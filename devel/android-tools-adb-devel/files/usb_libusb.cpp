@@ -600,8 +600,8 @@ scan_usb_devices()
     libusb_free_device_list(devs, 1);
 }
 
-static void *
-device_poll_thread(void* unused)
+static void
+device_poll_thread(void*)
 {
     adb_thread_setname("USB scan");
     D("device_poll_thread(): Created USB scan thread");
@@ -611,9 +611,6 @@ device_poll_thread(void* unused)
         kick_disconnected();
         scan_usb_devices();
     }
-
-    /* never reaching this point */
-    return (NULL);
 }
 
 static void

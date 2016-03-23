@@ -2,6 +2,7 @@
 
 PORTNAME=	easy-rsa
 DISTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	security net-mgmt
 MASTER_SITES=	https://github.com/OpenVPN/easy-rsa/releases/download/${DISTVERSION}/
 DISTNAME=	EasyRSA-${DISTVERSION}
@@ -29,10 +30,11 @@ SUB_FILES=	easyrsa
 
 do-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/bin
-		${INSTALL_SCRIPT} ${WRKDIR}/easyrsa ${STAGEDIR}${PREFIX}/bin/
 		${MKDIR} ${STAGEDIR}${DATADIR}/x509-types/
+		${INSTALL_SCRIPT} ${WRKDIR}/easyrsa ${STAGEDIR}${PREFIX}/bin/
 		${INSTALL_SCRIPT} ${WRKSRC}/easyrsa ${STAGEDIR}${DATADIR}/easyrsa.real
-		${INSTALL_DATA} ${WRKSRC}/vars.example ${STAGEDIR}${DATADIR}
+		${INSTALL_DATA} ${WRKSRC}/vars.example ${STAGEDIR}${DATADIR}/
+		${INSTALL_DATA} ${WRKSRC}/openssl-1.0.cnf ${STAGEDIR}${DATADIR}/openssl-1.0.cnf.example
 		(cd ${WRKSRC}/x509-types/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/x509-types/)
 
 do-install-DOCS-on:

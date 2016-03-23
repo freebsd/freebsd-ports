@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-kernel
 PORTVERSION=	4.5.2
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	emulators
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 
@@ -31,10 +31,15 @@ EXTRA_PATCHES=	${FILESDIR}/0001-introduce-a-helper-to-allocate-non-contiguous-me
 		${FILESDIR}/0005-x86-rework-paging_log_dirty_op-to-work-with-hvm-gues.patch:-p2 \
 		${FILESDIR}/0006-xen-pvh-enable-mmu_update-hypercall.patch:-p2 \
 		${FILESDIR}/0007-iommu-fix-usage-of-shared-EPT-IOMMU-page-tables-on-P.patch:-p2 \
+		${FILESDIR}/0001-x86-pvh-use-a-custom-IO-bitmap-for-PVH-hardware-doma.patch:-p2 \
+		${FILESDIR}/0002-x86-pvh-trap-access-to-sensitive-IO-ports.patch:-p2 \
 		${FILESDIR}/xsa156-4.5.patch:-p2 \
 		${FILESDIR}/xsa159.patch:-p2 \
 		${FILESDIR}/xsa165-4.5.patch:-p2 \
-		${FILESDIR}/xsa166-4.5.patch:-p2
+		${FILESDIR}/xsa166-4.5.patch:-p2 \
+		${FILESDIR}/xsa167-4.6.patch:-p2 \
+		${FILESDIR}/xsa168.patch:-p2 \
+		${FILESDIR}/xsa170-4.5.patch:-p2
 
 
 .include <bsd.port.options.mk>

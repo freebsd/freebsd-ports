@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sushi
-PORTVERSION=	3.16.0
-PORTREVISION=	1
+PORTVERSION=	3.18.0
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,7 +21,7 @@ RUN_DEPENDS=	nautilus:${PORTSDIR}/x11-fm/nautilus
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gtksourceview3 intlhack introspection:build
 USE_LDCONFIG=	yes
@@ -30,7 +29,5 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-
-GLIB_SCHEMAS=	org.gnome.sushi.gschema.xml
 
 .include <bsd.port.mk>

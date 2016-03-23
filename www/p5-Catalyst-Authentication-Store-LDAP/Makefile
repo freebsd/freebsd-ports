@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Authentication-Store-LDAP
-PORTVERSION=	1.015
+PORTVERSION=	1.016
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0.10003:${PORTSDIR}/www/p5-Cat
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Net-LDAP-Server-Test>=0:${PORTSDIR}/net/p5-Net-LDAP-Server-Test \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Catalyst-Model-LDAP>=0:${PORTSDIR}/www/p5-Catalyst-Model-LDAP \
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 
 USES=		perl5

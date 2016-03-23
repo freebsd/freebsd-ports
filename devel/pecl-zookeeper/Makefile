@@ -20,6 +20,7 @@ USE_PHP=	session
 USE_PHP_BUILD=	session
 USE_PHPEXT=	yes
 USES=		tar:tgz
+IGNORE_WITH_PHP=	70
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

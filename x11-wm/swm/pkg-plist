@@ -1,0 +1,16 @@
+bin/startswm
+bin/swm
+bin/swmbg
+bin/swmswitch
+man/de/man1/swm.1.gz
+man/de/man1/swmbg.1.gz
+man/de/man1/swmswitch.1.gz
+man/man1/swm.1.gz
+man/man1/swmbg.1.gz
+man/man1/swmswitch.1.gz
+%%DATADIR%%/pixmaps/background.xpm
+%%DATADIR%%/pixmaps/closebox.xpm
+%%DATADIR%%/pixmaps/maxbox.xpm
+%%DATADIR%%/pixmaps/stickybox.xpm
+%%DATADIR%%/pixmaps/swm.colors
+%%DATADIR%%/pixmaps/unstickybox.xpm

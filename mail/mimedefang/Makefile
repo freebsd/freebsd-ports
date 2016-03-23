@@ -3,7 +3,7 @@
 
 PORTNAME=	mimedefang
 PORTVERSION=	2.78
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/ \
 		http://fossies.org/linux/misc/
@@ -56,7 +56,7 @@ CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf mimedefang-ip-key
 .include <bsd.port.options.mk>
 
 .if !exists( /usr/include/libmilter/mfapi.h )
-BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
+BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/libmilter
 .endif
 
 .if exists( ${LOCALBASE}/include/libmilter/mfapi.h )

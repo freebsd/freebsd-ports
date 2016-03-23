@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gdnsd
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.2
 CATEGORIES=	dns
-MASTER_SITES=	https://github.com/blblack/gdnsd/releases/download/v${PORTVERSION}/ \
+MASTER_SITES=	https://github.com/gdnsd/gdnsd/releases/download/v${PORTVERSION}/ \
 		http://mirrors.rit.edu/zi/ \
 		http://gdnsd.scaleengine.net/gdnsd/
 PKGNAMESUFFIX=	2

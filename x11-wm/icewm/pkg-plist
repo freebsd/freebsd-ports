@@ -1,4 +1,4 @@
-%%NOLITE%%bin/icehelp
+%%NO_LITE%%bin/icehelp
 bin/icesh
 bin/icesound
 bin/icewm

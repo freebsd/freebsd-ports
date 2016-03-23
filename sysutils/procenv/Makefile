@@ -3,6 +3,7 @@
 
 PORTNAME=	procenv
 PORTVERSION=	0.36
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpad.net/procenv/trunk/${PORTVERSION}/+download/ \
 		http://people.canonical.com/~jhunt/debian/procenv/${PORTVERSION}/ \
@@ -19,18 +20,18 @@ BUILD_DEPENDS=	xmlwf:${PORTSDIR}/textproc/expat2
 USES=		autoreconf gmake perl5
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
+TEST_TARGET=	check
 
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PLIST_FILES=	bin/procenv \
 		man/man1/procenv.1.gz
 
-# Test to ensure procenv will actually run.
-#
-# This has the attractive side-effect of displaying the environment
-# of the build system which may be of interest to those fixing FTBFS
-# packages that build correctly locally.
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
+OPTIONS_DEFINE=	DOCS
 
-test: regression-test
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

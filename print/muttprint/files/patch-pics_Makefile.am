@@ -1,0 +1,20 @@
+--- pics/Makefile.am.orig	2006-05-06 09:13:46.000000000 +0200
++++ pics/Makefile.am	2016-02-17 11:28:07.681020000 +0100
+@@ -1,16 +1,3 @@
+ dist_pkgdata_DATA = \
+-		    BabyTuX_color.eps \
+-		    BabyTuX_color.png \
+-		    BabyTuX.eps \
+-		    BabyTuX.png \
+-		    Debian_color.eps \
+-		    Debian_color.png \
+-		    Debian.eps \
+-		    Debian.png \
+-		    Gentoo_color.eps \
+-		    Gentoo_color.png \
+-		    Gentoo.eps \
+-		    Gentoo.png \
+-		    penguin.eps \
+-		    penguin.jpg \
++		    Beastie.eps \
+ 		    README.pics

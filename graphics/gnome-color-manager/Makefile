@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-color-manager
-PORTVERSION=	3.16.0
+PORTVERSION=	3.18.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -23,7 +23,7 @@ PORTSCOUT=	limitw:1,even
 
 USE_XORG=	xrandr
 USE_GNOME=	gnomedesktop3 gtk30 intlhack vte3
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

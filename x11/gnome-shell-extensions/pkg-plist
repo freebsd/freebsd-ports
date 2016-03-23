@@ -59,6 +59,7 @@ share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.
 share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/prefs.js
 share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/modes/classic.json
+share/gnome-shell/theme/calendar-today.svg
 share/gnome-shell/theme/classic-process-working.svg
 share/gnome-shell/theme/classic-toggle-off-intl.svg
 share/gnome-shell/theme/classic-toggle-off-us.svg

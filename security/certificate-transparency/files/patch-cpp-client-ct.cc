@@ -1,6 +1,6 @@
---- cpp/client/ct.cc.orig	2015-10-24 17:45:59.877372000 +0200
-+++ cpp/client/ct.cc	2015-10-24 17:47:35.728512000 +0200
-@@ -458,8 +458,8 @@ static void MakeCert() {
+--- cpp/client/ct.cc.orig	2016-02-02 11:35:23 UTC
++++ cpp/client/ct.cc
+@@ -461,8 +461,8 @@ static void MakeCert() {
  // (This means the relevant section should be last in the configuration.)
  // 1.2.3.1=DER:[raw encoding of proof]
  static void WriteProofToConfig() {
@@ -11,7 +11,7 @@
  
    string sct;
  
-@@ -486,8 +486,8 @@ static const char kPEMLabel[] = "SERVERI
+@@ -489,8 +489,8 @@ static const char kPEMLabel[] = "SERVERI
  // Wrap the proof in the format expected by the TLS extension,
  // so that we can feed it to OpenSSL.
  static void ProofToExtensionData() {
@@ -22,7 +22,7 @@
  
    string serialized_sct;
    PCHECK(util::ReadBinaryFile(FLAGS_sct_token, &serialized_sct))
-@@ -986,12 +986,12 @@ int Monitor() {
+@@ -990,12 +990,12 @@ int Monitor() {
  // Exit code upon abnormal exit (CHECK failures): != 0
  // (on UNIX, 134 is expected)
  int main(int argc, char** argv) {
@@ -37,7 +37,7 @@
      return 1;
    }
  
-@@ -1031,7 +1031,7 @@ int main(int argc, char** argv) {
+@@ -1035,7 +1035,7 @@ int main(int argc, char** argv) {
    } else if (cmd == "sth") {
      ret = GetSTH();
    } else {

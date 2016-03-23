@@ -3,7 +3,7 @@
 
 PORTNAME=	epic4
 PORTVERSION=	2.10.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://tehran.lain.pl/epic-mirror/EPIC4-PRODUCTION/ \
@@ -23,12 +23,11 @@ CONFLICTS=	epic5-0.[0-2]*
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-USES+=		tar:bzip2
+USES=		ncurses tar:bzip2
 CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 
-OPTIONS_DEFINE=	IPV6 TCL PERL SSL TERMCAP DOCS
+OPTIONS_DEFINE=	IPV6 TCL PERL SSL DOCS
 OPTIONS_DEFAULT=	TCL PERL SSL
-TERMCAP_DESC=	Refuse to use terminfo/ncurses
 
 .include <bsd.port.options.mk>
 
@@ -72,6 +71,7 @@ post-extract:
 
 post-patch:
 	@${RM} ${WRKDIR}/help/Makefile
+	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|' ${WRKSRC}/configure
 
 post-install:
 	@${CP} -R ${WRKDIR}/help/* ${STAGEDIR}${PREFIX}/share/epic/help

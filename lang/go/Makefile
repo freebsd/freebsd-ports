@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
@@ -18,8 +18,7 @@ BUILD_DEPENDS=	go14>=1.4:${PORTSDIR}/lang/go14
 USES=		shebangfix
 SHEBANG_LANG=	sh
 SHEBANG_FILES=	${WRKSRC}/src/*.bash \
-		${WRKSRC}/doc/articles/wiki/*.bash \
-		${WRKSRC}/test/bench/shootout/timing.sh
+		${WRKSRC}/doc/articles/wiki/*.bash
 
 sh_OLD_CMD=	"/usr/bin/env bash"
 sh_CMD=		${SH}

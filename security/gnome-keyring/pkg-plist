@@ -1,7 +1,6 @@
 bin/gnome-keyring
 bin/gnome-keyring-3
 bin/gnome-keyring-daemon
-etc/xdg/autostart/gnome-keyring-gpg.desktop
 etc/xdg/autostart/gnome-keyring-pkcs11.desktop
 etc/xdg/autostart/gnome-keyring-secrets.desktop
 etc/xdg/autostart/gnome-keyring-ssh.desktop

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	3.4.7
+PORTVERSION=	3.4.8
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -43,6 +43,62 @@ OPTIONS_GROUP=	DNSSEC EXPERIMENTAL REMOTEOPT
 OPTIONS_GROUP_DNSSEC=		BOTAN110
 OPTIONS_GROUP_EXPERIMENTAL=	LUA MYDNS TINYDNS
 OPTIONS_GROUP_REMOTEOPT=	ZEROMQ
+ZEROMQ_IMPLIES=			REMOTE
+
+OPTIONS_DEFAULT=	PGSQL DNSSEC BOTAN110 POLARSSL
+OPTIONS_SUB=		yes
+
+BOTAN110_CONFIGURE_ON=	--enable-botan1.10
+BOTAN110_LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110
+
+GEO_VARS=		MODULES+=geo
+
+GEOIP_LIB_DEPENDS=	libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp \
+			libGeoIP.so:${PORTSDIR}/net/GeoIP
+GEOIP_VARS=		MODULES+=geoip
+
+LMDB_LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
+LMDB_VARS=		MODULES+=lmdb
+
+LUA_VARS=		MODULES+=lua
+
+MYDNS_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
+MYDNS_USE=		MYSQL=YES
+MYDNS_VARS=		MODULES+=mydns
+
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
+MYSQL_CONFIGURE_OFF=	--without-mysql
+MYSQL_USE=		MYSQL=YES
+MYSQL_VARS=		MODULES+=gmysql
+
+OPENDBX_LIB_DEPENDS=	libopendbx.so:${PORTSDIR}/databases/opendbx
+OPENDBX_VARS=		MODULES+=opendbx
+
+OPENLDAP_CXXFLAGS=	-DLDAP_DEPRECATED=1
+OPENLDAP_USE=		OPENLDAP=YES
+OPENLDAP_VARS=		MODULES+=ldap
+
+PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
+PGSQL_CONFIGURE_OFF=	--without-pgsql
+PGSQL_USES=		pgsql
+PGSQL_VARS=		MODULES+=gpgsql
+
+POLARSSL_CONFIGURE_ARGS=	--without-system-polarssl
+POLARSSL_LIB_DEPENDS_OFF=	libmbedtls.so:${PORTSDIR}/security/polarssl13
+
+REMOTE_VARS=		MODULES+=remote
+
+SQLITE3_USE=		SQLITE=3
+SQLITE3_VARS=		MODULES+=gsqlite3
+
+TINYDNS_CONFIGURE_ON=	CDB_LIBS="-L${LOCALBASE}/lib -lcdb" CDB_CFLAGS="-I${LOCALBASE}/include"
+TINYDNS_LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
+TINYDNS_VARS=		MODULES+=tinydns
+
+ZEROMQ_CONFIGURE_ARGS=	--enable-remotebackend-zeromq
+ZEROMQ_LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq4
+
+TOOLS_CONFIGURE_ENABLE=	tools
 
 PGSQL_DESC=		PostgreSQL backend
 MYSQL_DESC=		MySQL backend
@@ -61,105 +117,9 @@ REMOTE_DESC=		Remote backend
 TINYDNS_DESC=		TinyDNS backend
 TOOLS_DESC=		Build extra tools
 REMOTEOPT_DESC=		Remote backend connectors
-ZEROMQ_DESC=		Enable ZeroMQ connector
-
-OPTIONS_DEFAULT=	PGSQL DNSSEC BOTAN110 POLARSSL
-
-OPTIONS_SUB=	yes
-
-# Don't use CONFIGURE_ENABLE, the configure script
-# has a bug. The options are being enabled even using --disable-
-
-TOOLS_CONFIGURE_ON=	--enable-tools
-
-PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
-PGSQL_CONFIGURE_OFF=	--without-pgsql
-PGSQL_USES=		pgsql
-
-MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
-MYSQL_CONFIGURE_OFF=	--without-mysql
-MYSQL_USE=		MYSQL=YES
-
-MYDNS_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
-MYDNS_USE=		MYSQL=YES
-
-OPENLDAP_CXXFLAGS=	-DLDAP_DEPRECATED=1
-OPENLDAP_USE=		OPENLDAP=YES
-
-SQLITE3_USE=		SQLITE=3
-
-OPENDBX_LIB_DEPENDS=	libopendbx.so:${PORTSDIR}/databases/opendbx
-
-BOTAN110_CONFIGURE_ON=	--enable-botan1.10
-BOTAN110_LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110
-
-TINYDNS_LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
-TINYDNS_CONFIGURE_ON=	CDB_LIBS="-L${LOCALBASE}/lib -lcdb" CDB_CFLAGS="-I${LOCALBASE}/include"
-
-LMDB_LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
-
-GEOIP_LIB_DEPENDS=	libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp \
-			libGeoIP.so:${PORTSDIR}/net/GeoIP
+ZEROMQ_DESC=		Enable ZeroMQ connector (Implies REMOTE enabled)
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGEO}
-MODULES+=	geo
-.endif
-
-.if ${PORT_OPTIONS:MGEOIP}
-MODULES+=	geoip
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-MODULES+=	gpgsql
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-MODULES+=	gmysql
-.endif
-
-.if ${PORT_OPTIONS:MOPENLDAP}
-MODULES+=	ldap
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE3}
-MODULES+=	gsqlite3
-.endif
-
-.if ${PORT_OPTIONS:MLMDB}
-MODULES+=	lmdb
-.endif
-
-.if ${PORT_OPTIONS:MLUA}
-MODULES+=	lua
-.endif
-
-.if ${PORT_OPTIONS:MMYDNS}
-MODULES+=	mydns
-.endif
-
-.if ${PORT_OPTIONS:MREMOTE}
-MODULES+=	remote
-.	if ${PORT_OPTIONS:MZEROMQ}
-CONFIGURE_ARGS+=	--enable-remotebackend-zeromq
-LIB_DEPENDS+=		libzmq.so:${PORTSDIR}/net/libzmq4
-.	endif
-.endif
-
-.if ${PORT_OPTIONS:MTINYDNS}
-MODULES+=	tinydns
-.endif
-
-.if ${PORT_OPTIONS:MOPENDBX}
-MODULES+=	opendbx
-.endif
-
-.if ${PORT_OPTIONS:MPOLARSSL}
-CONFIGURE_ARGS+=	--without-system-polarssl
-.else
-LIB_DEPENDS+=		libmbedtls.so.9:${PORTSDIR}/security/polarssl13
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

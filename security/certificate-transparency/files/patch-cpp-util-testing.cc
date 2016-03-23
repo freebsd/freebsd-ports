@@ -1,5 +1,5 @@
---- cpp/util/testing.cc.orig	2015-10-23 16:31:08.000000000 +0200
-+++ cpp/util/testing.cc	2015-10-30 10:54:40.169083000 +0100
+--- cpp/util/testing.cc.orig	2016-02-02 11:35:23 UTC
++++ cpp/util/testing.cc
 @@ -3,6 +3,9 @@
  #include <event2/thread.h>
  #include <evhtp.h>

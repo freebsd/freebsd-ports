@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	4.1
+PORTVERSION=	4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -15,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags \
 		libsnappy.so:${PORTSDIR}/archivers/snappy
 
-ALL_TARGET=	shared_lib all
+OPTIONS_DEFINE=	DEBUG
+
+ALL_TARGET=	shared_lib static_lib all
 CPPFLAGS+=	-DOS_FREEBSD
 MAKE_ENV=	CXX=${CXX}
 USE_CXXSTD=	c++11
@@ -29,6 +31,9 @@ BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
 BROKEN_sparc64=	cannot build: uses unknown compiler flags
 
 PROGRAMS=	db_bench db_repl_stress db_sanity_test db_stress ldb sst_dump table_reader_bench
+
+DEBUG_MAKE_ENV=		DEBUG_LEVEL=2
+DEBUG_MAKE_ENV_OFF=	DEBUG_LEVEL=0
 
 .include <bsd.port.pre.mk>
 

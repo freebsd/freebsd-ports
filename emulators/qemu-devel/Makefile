@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 DISTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 PKGNAMESUFFIX=	-devel
@@ -44,7 +44,7 @@ GTK2_USE=	GNOME=gtk20,vte
 GTK2_USES=	gettext
 GTK2_CONFIGURE_OFF=	--disable-gtk --disable-vte
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
-GNUTLS_CONFIGURE_OFF=	--disable-vnc-tls
+GNUTLS_CONFIGURE_OFF=	--disable-gnutls
 SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 SASL_CONFIGURE_OFF=	--disable-vnc-sasl
 JPEG_USES=		jpeg
@@ -59,8 +59,7 @@ USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:${PORTSDIR}/net/usbredir
 USBREDIR_RUN_DEPENDS=	usbredir>=0.6:${PORTSDIR}/net/usbredir
 USBREDIR_CONFIGURE_OFF=	--disable-usb-redir
 PCAP_CONFIGURE_ON=	--enable-pcap
-PCAP_CONFIGURE_OFF=	--disable-pcap
-
+PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch
 STATIC_LINK_CONFIGURE_ON=	--static
 STATIC_LINK_PREVENTS=		GTK2 X11
 STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
@@ -129,9 +128,6 @@ post-patch-CDROM_DMA-off:
 post-patch-GNS3-on:
 	@${REINPLACE_CMD} -e 's|(buf\[0\] & 1) && (rctl & E1000_RCTL_MPE)|buf[0] \& 1|' \
 		${WRKSRC}/hw/net/e1000.c
-
-post-patch-PCAP-on:
-	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
 
 # XXX need to disable usb host code on head while it's not ported to the
 # new usb stack yet

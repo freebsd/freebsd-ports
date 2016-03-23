@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	db
-PORTVERSION=	20150819
+PORTVERSION=	20160226
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/danilo
-
 PKGNAMEPREFIX=	foomatic-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${FOOMATICVER}-${PORTVERSION}
 
@@ -15,7 +14,7 @@ COMMENT=	Database for integrating printer drivers with common spoolers
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		autoreconf gmake
+USES=		autoreconf gmake tar:xz
 GNU_CONFIGURE=	yes
 
 FOOMATICVER=	4.0

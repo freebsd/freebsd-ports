@@ -11,28 +11,31 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JBroFuzz is a web application fuzzer
 
 USES=		zip
-USE_JAVA=	YES
-NO_BUILD=	YES
+USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-PORTDOCS=	README INSTALL
+NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	JAVA_CMD=${JAVA} JBROFUZZ=${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/JBroFuzz.jar ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}/${PORTNAME}.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	( cd ${WRKSRC}/fuzzers/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/fuzzers/ )
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	( cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} )
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for I in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${I} ${STAGEDIR}${DOCSDIR}
-.endfor
 
-.include <bsd.port.post.mk>
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

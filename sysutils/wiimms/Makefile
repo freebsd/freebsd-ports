@@ -1,4 +1,4 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	wiimms
@@ -9,7 +9,7 @@ MASTER_SITES=	http://gugus69.free.fr/wiimms/ \
 		LOCAL/martymac
 DISTNAME=	wit-${DISTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Wiimms ISO Tools
 
 LICENSE=	GPLv2

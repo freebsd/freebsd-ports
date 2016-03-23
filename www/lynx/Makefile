@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	lynx-2.8.[8-9]d*
 
-USES=		cpe gettext ncurses shebangfix tar:bzip2
+USES=		cpe ncurses shebangfix tar:bzip2
 SHEBANG_FILES=	samples/mailto-form.pl
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-8

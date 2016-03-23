@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	gxmessage
-PORTVERSION=	2.12.4
-PORTREVISION=	1
+PORTVERSION=	3.4.3
 CATEGORIES=	deskutils
 MASTER_SITES=	GNU \
 		LOCAL/martymac
 
 MAINTAINER=	avg@icyb.net.ua
-COMMENT=	GTK2 substitute for xmessage
+COMMENT=	GTK3 substitute for xmessage
 
-USE_GNOME=	gtk20 gnomeprefix intltool
+USE_GNOME=	gtk30 gnomeprefix intltool
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

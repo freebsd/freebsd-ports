@@ -1,0 +1,11 @@
+--- doc/manpages/en/muttprint.pod.orig	2006-05-06 09:13:46.000000000 +0200
++++ doc/manpages/en/muttprint.pod	2016-02-17 12:00:59.415601000 +0100
+@@ -397,7 +397,7 @@
+ 
+ =head1 COPYRIGHT
+ 
+-© 2000-03 Bernhard Walle
++(c) 2000-03 Bernhard Walle
+ 
+ 
+ This is free software; see the source for  copying  conditions.

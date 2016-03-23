@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	System for Automated Geoscientific Analyses
@@ -28,7 +28,6 @@ CONFIGURE_ARGS=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		--enable-python
 CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig3.0"
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-lopencv_contrib
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
 USE_WX=		3.0+
@@ -77,13 +76,11 @@ post-extract:
 		${WRKSRC}/src/modules/pointcloud/pointcloud_viewer/Makefile.am \
 		${WRKSRC}/src/modules/tin/tin_viewer/Makefile.am \
 		${WRKSRC}/src/modules/statistics/statistics_kriging/Makefile.am
+	@${REINPLACE_CMD} -e 's|/usr/include/opencv|${LOCALBASE}/include/opencv ${LOCALBASE}/include|g' \
+		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile.am
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lcv|-lopencv_core -lopencv_imgproc|g' \
-		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile.am
-	@${REINPLACE_CMD} -e 's|\[cv\]|\[opencv_core\]|' \
-		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2737)" + "\\n"|' \
+	@${REINPLACE_CMD} -e 's|wxString(SAGA_VERSION) + "\\n"|wxString(SAGA_VERSION) + " (SVN r2832)" + "\\n"|' \
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 .if ${ARCH} == "powerpc"
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
@@ -97,6 +94,8 @@ post-configure:
 		${WRKSRC}/src/saga_core/saga_gui/Makefile
 	@${REINPLACE_CMD} -e 's|mv saga_dic.txt saga_prj.dic|mv ${STAGEDIR}${DATADIR}/saga_dic.txt ${STAGEDIR}${DATADIR}/saga_prj.dic|g' \
 		${WRKSRC}/src/saga_core/saga_gui/Makefile
+	@${REINPLACE_CMD} -e 's|^LDFLAGS = .*|& -lopencv_contrib|' \
+		${WRKSRC}/src/modules/imagery/imagery_opencv/Makefile
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -106,6 +105,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.png ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/scripting
 	(cd ${WRKSRC}/src/scripting && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/scripting)
+# toolchains only needed in one place
+	@${RM} -R ${STAGEDIR}${DATADIR}/scripting/toolchains
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsaga_api-${PORTVERSION}.so

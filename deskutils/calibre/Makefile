@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	2.50.1
-PORTREVISION=	1
+PORTVERSION=	2.52.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -97,10 +96,13 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/applications \
 		${STAGEDIR}${PREFIX}/share/desktop-directories \
 		${STAGEDIR}${PREFIX}/share/mime/packages
+	# Create this file to avoid what looks like a bug in xdg-desktop-menu
+	@${TOUCH} ${STAGEDIR}${PREFIX}/share/applications/defaults.list
 	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
 		${PYSETUP} install --prefix ${PREFIX} \
 		--staging-root ${STAGEDIR}${PREFIX})
-	@${RM} ${STAGEDIR}${PREFIX}/bin/calibre-uninstall
+	@${RM} ${STAGEDIR}${PREFIX}/bin/calibre-uninstall \
+		${STAGEDIR}${PREFIX}/share/applications/defaults.list
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/desktop-directories
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/calibre/calibre/plugins/*
 

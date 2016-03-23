@@ -1,4 +1,4 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
+# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
 # $FreeBSD$
 
 PORTNAME=	libhsclient
@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.cs.nctu.edu.tw/~jnlin/distfiles/
 DISTNAME=	HandlerSocket-Plugin-for-MySQL-${DISTVERSION}
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Client Library of HandlerSocket Plugin
 
 WRKSRC=		${WRKDIR}/HandlerSocket-Plugin-for-MySQL

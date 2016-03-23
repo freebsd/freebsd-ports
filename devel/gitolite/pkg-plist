@@ -23,6 +23,7 @@ bin/gitolite
 %%SITE_PERL%%/Gitolite/Triggers/RefexExpr.pm
 %%SITE_PERL%%/Gitolite/Triggers/RepoUmask.pm
 %%SITE_PERL%%/Gitolite/Triggers/Shell.pm
+%%SITE_PERL%%/Gitolite/Triggers/TProxy.pm
 %%SITE_PERL%%/Gitolite/Triggers/Writable.pm
 libexec/gitolite/VERSION
 libexec/gitolite/VREF/COUNT
@@ -30,13 +31,16 @@ libexec/gitolite/VREF/EMAIL-CHECK
 libexec/gitolite/VREF/FILETYPE
 libexec/gitolite/VREF/MAX_NEWBIN_SIZE
 libexec/gitolite/VREF/MERGE-CHECK
+libexec/gitolite/VREF/NAME_NC
 libexec/gitolite/VREF/VOTES
 libexec/gitolite/VREF/lock
 libexec/gitolite/VREF/partial-copy
 libexec/gitolite/VREF/refex-expr
 libexec/gitolite/check-g2-compat
+libexec/gitolite/commands/1plus1
 libexec/gitolite/commands/D
 libexec/gitolite/commands/access
+libexec/gitolite/commands/config
 libexec/gitolite/commands/create
 libexec/gitolite/commands/creator
 libexec/gitolite/commands/desc
@@ -50,6 +54,7 @@ libexec/gitolite/commands/list-dangling-repos
 libexec/gitolite/commands/lock
 libexec/gitolite/commands/mirror
 libexec/gitolite/commands/motd
+libexec/gitolite/commands/option
 libexec/gitolite/commands/owns
 libexec/gitolite/commands/perms
 libexec/gitolite/commands/print-default-rc
@@ -73,6 +78,7 @@ libexec/gitolite/syntactic-sugar/refex-expr
 libexec/gitolite/triggers/bg
 libexec/gitolite/triggers/expand-deny-messages
 libexec/gitolite/triggers/partial-copy
+libexec/gitolite/triggers/post-compile/create-with-reference
 libexec/gitolite/triggers/post-compile/ssh-authkeys
 libexec/gitolite/triggers/post-compile/ssh-authkeys-shell-users
 libexec/gitolite/triggers/post-compile/ssh-authkeys-split
@@ -86,4 +92,4 @@ libexec/gitolite/triggers/repo-specific-hooks
 libexec/gitolite/triggers/set-default-roles
 libexec/gitolite/triggers/upstream
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.markdown

@@ -13,11 +13,14 @@ COMMENT=	Utility that reports when files have been altered
 LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
-USES=		fam gmake
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -largp
+USES=		fam gmake localbase
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc --disable-nls
+
+LIBS+=		-largp
 
 INFO=		fileschanged
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
@@ -28,8 +31,8 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's| -Werror||' ${WRKSRC}/src/Makefile.in
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for DOCFILE in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${STAGEDIR}${DOCSDIR}
 .endfor

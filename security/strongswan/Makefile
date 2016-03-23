@@ -3,7 +3,7 @@
 
 PORTNAME=	strongswan
 PORTVERSION=	5.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -43,10 +43,12 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEv1 \
 		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL PKI SCEP SMP \
 		SQLITE SWANCTL TESTVECTOR UNBOUND UNITY VICI XAUTH
-OPTIONS_DEFAULT=	IKEv1 BUILTIN
+OPTIONS_DEFAULT=	IKEv1 BUILTIN PKI SWANCTL VICI
 OPTIONS_SINGLE=	PRINTF_HOOKS
 OPTIONS_SINGLE_PRINTF_HOOKS=	BUILTIN VSTR LIBC
 OPTIONS_SUB=	yes
+
+# Description of options
 CURL_DESC=	Enable CURL to fetch CRL/OCSP
 EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
 EAPDYNAMIC_DESC=	Enable EAP dynamic proxy module
@@ -61,7 +63,7 @@ TESTVECTOR_DESC=	Enable crypto test vectors
 PKI_DESC=	Enable PKI tools
 SCEP_DESC=	Enable Simple Certificate Enrollment Protocol
 SMP_DESC=	Enable XML-based management protocol (DEPRECATED)
-SWANCTL_DESC=	Install swanctl
+SWANCTL_DESC=	Install swanctl (requires VICI)
 UNBOUND_DESC=	Enable DNSSEC-enabled resolver
 UNITY_DESC=	Enable Cisco Unity extension plugin
 VICI_DESC=	Enable VICI management protocol
@@ -90,6 +92,7 @@ MYSQL_USE=		MYSQL=yes
 SMP_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 SMP_CONFIGURE_ON=	--enable-smp
 SWANCTL_CONFIGURE_ON=	--enable-swanctl
+SWANCTL_IMPLIES=	VICI
 SQLITE_CONFIGURE_ON=	--enable-sqlite
 SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 TESTVECTOR_CONFIGURE_ON=--enable-test-vectors

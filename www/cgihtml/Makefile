@@ -17,11 +17,13 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgihtml.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgihtml.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for file in CHANGES CREDITS
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

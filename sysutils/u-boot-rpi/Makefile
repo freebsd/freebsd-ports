@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	u-boot
-PORTVERSION=	2015.10
+PORTVERSION=	2016.01
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/ \
 		LOCAL/ian/:bootfiles
 PKGNAMESUFFIX=	-rpi
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		rpi-boot-files-2014.10_2.tar.bz2:bootfiles
+		rpi-boot-files-2016.01.tar.bz2:bootfiles
 
 MAINTAINER=	ian@FreeBSD.org
 COMMENT=	Cross-build U-Boot loader for Raspberry Pi
@@ -26,7 +26,7 @@ WRK_BOOTFILES=	${WRKDIR}/rpi-boot-files
 U_BOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 PLIST_FILES=	${U_BOOT_DIR}/u-boot.img \
 		${U_BOOT_DIR}/LICENCE.broadcom \
-		${U_BOOT_DIR}/README \
+		${U_BOOT_DIR}/README-BootDetails \
 		${U_BOOT_DIR}/bootcode.bin \
 		${U_BOOT_DIR}/config.txt \
 		${U_BOOT_DIR}/fixup.dat \

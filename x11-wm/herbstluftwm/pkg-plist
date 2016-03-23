@@ -1,3 +1,4 @@
+bin/dmenu_run_hlwm
 bin/herbstclient
 bin/herbstluftwm
 %%DEFAULTCONF%%etc/xdg/herbstluftwm/autostart
@@ -8,8 +9,8 @@ man/man1/herbstclient.1.gz
 man/man1/herbstluftwm.1.gz
 man/man7/herbstluftwm-tutorial.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/herbstclient.html
 %%PORTDOCS%%%%DOCSDIR%%/herbstluftwm.html
 %%PORTDOCS%%%%DOCSDIR%%/herbstluftwm-tutorial.html
@@ -24,9 +25,12 @@ man/man7/herbstluftwm-tutorial.7.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lasttag.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadstate.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/maximize.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/q3terminal.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/savestate.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scratchpad.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toggledualhead.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/windowmenu.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wselect.sh
 share/xsessions/herbstluftwm.desktop
 %%ZSH%%share/zsh/functions/Completion/X/_herbstclient

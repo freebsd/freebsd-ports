@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-SAML
-PORTVERSION=	1.30
+PORTVERSION=	1.42
 CATEGORIES=	security perl5
 MASTER_SITES=	http://zxid.org/ \
 		CPAN
@@ -31,6 +31,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/INC/ s|-I\.\.|& -I${LOCALBASE}/include|; /LIBS/ s|-L\.\.|-L${LOCALBASE}/lib|; s|-ldl||' ${WRKSRC}/Makefile.PL
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/SAML/SAML.so
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/ && ${INSTALL_SCRIPT} ../zxid.pl ../zxidhlo.pl ${STAGEDIR}${EXAMPLESDIR})
 

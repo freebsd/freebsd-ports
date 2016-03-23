@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	transmission
-PORTVERSION=	2.84
-PORTREVISION?=	4
+PORTVERSION=	2.92
+PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 MASTER_SITES=	http://transmission.cachefly.net/
 PKGNAMESUFFIX?=	-cli
 
-MAINTAINER?=	jbeich@FreeBSD.org
+MAINTAINER?=	crees@FreeBSD.org
 COMMENT?=	Lightweight CLI (command line) BitTorrent client and utilities
 
 SLAVEPORT?=	cli
@@ -25,14 +25,14 @@ CPE_VENDOR=	transmissionbt
 
 CONFLICTS_INSTALL=	${PORTNAME}${PKGNAMESUFFIX}-2.5*
 
-OPTIONS_DEFINE=	LITE DOCS
 EXTRACT_AFTER_ARGS=--no-same-owner --no-same-permissions --exclude third-party
 
 .if ${SLAVEPORT} != web
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
 # General dependencies
-GEN_LIB_DEPENDS=libcurl.so:${PORTSDIR}/ftp/curl \
+GEN_LIB_DEPENDS=libb64.so:${PORTSDIR}/converters/libb64 \
+		libcurl.so:${PORTSDIR}/ftp/curl \
 		libdht.so:${PORTSDIR}/devel/jech-dht \
 		libminiupnpc.so:${PORTSDIR}/net/miniupnpc \
 		libnatpmp.so:${PORTSDIR}/net/libnatpmp \
@@ -42,22 +42,15 @@ GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/t
 
 # This is master port of transmission-*, so don't override USES definition
 USES+=		gmake iconv libtool localbase pkgconfig
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-DWITH_UTP=1
 LIBS+=		${ICONV_LIB}
-CONFIGURE_ARGS=--with-zlib=/usr \
-		 --without-inotify \
-		 --disable-utp \
-		 --enable-external-natpmp \
+CONFIGURE_ENV=	ZLIB_CFLAGS=" " ZLIB_LIBS="-lz" \
+		${ICONV_LIB:C@.+@ac_cv_func_iconv=yes@}
+CONFIGURE_ARGS=	--without-inotify \
+		--enable-external-b64 \
+		--enable-external-dht \
+		--enable-external-natpmp \
 		${EXTRA_CONF_ARGS}
-CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto" \
-		DHT_CFLAGS=" " \
-		DHT_LIBS="-ldht" \
-		LIBUTP_CFLAGS=" " \
-		LIBUTP_LIBS="-lutp" \
-		LIBUTP_LIBS_QT="-lutp"
 
 EXTRA_CONF_ARGS?=--enable-cli \
 		 --disable-daemon \
@@ -65,19 +58,30 @@ EXTRA_CONF_ARGS?=--enable-cli \
 		 --disable-mac \
 		 --disable-nls
 
+EXTRA_PATCHES=	${PATCHDIR}/disable-web
+
+OPTIONS_DEFINE+=	DOCS LITE
+OPTIONS_DEFAULT+=	OPENSSL
+OPTIONS_SINGLE+=	SSL
+OPTIONS_SINGLE_SSL+=	OPENSSL POLARSSL WOLFSSL
+
 LITE_CONFIGURE_ENABLE=	lightweight
 
-EXTRA_PATCHES=	${PATCHDIR}/disable-web
+OPENSSL_USE=		OPENSSL=yes
+OPENSSL_CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
+OPENSSL_CONFIGURE_ON=	--with-crypto=openssl
+
+POLARSSL_LIB_DEPENDS=	libpolarssl.so:${PORTSDIR}/security/polarssl13
+POLARSSL_CONFIGURE_ON=	--with-crypto=polarssl
+
+WOLFSSL_LIB_DEPENDS=	libwolfssl.so:${PORTSDIR}/security/wolfssl
+WOLFSSL_CONFIGURE_ON=	--with-crypto=cyassl
+WOLFSSL_BROKEN=		Requires security/wolfssl built with --enable-arc4
 .endif
 
 DOCS=		AUTHORS NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-
-.include <bsd.port.pre.mk>
-
-.if !empty(ICONV_LIB)
-CONFIGURE_ARGS+=ac_cv_func_iconv_open=yes
-.endif
 
 general-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
@@ -99,20 +103,18 @@ general-patch:
 # Don't conflict with patches but force system libraries
 	@${REINPLACE_CMD} -e 's|third-party \\|\\|g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -Ee '/^DHT_(CFLAGS|LIBS)=/d' \
+	@${REINPLACE_CMD} \
 		-e 's|third-party/[^ ]*Makefile||g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} \
-		-e 's,TRANSMISSION_TOP}/third-party/dht/libdht.a,DHT_LIBS},' \
-		${WRKSRC}/qt/qtr.pro
-	@${ECHO_CMD} 'DHT_LIBS = @DHT_LIBS@' >>${WRKSRC}/qt/config.pri.in
 
 post-patch: general-patch
 
 general-install:
+.if ${SLAVEPORT} != web
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${DOCS}" ${STAGEDIR}${DOCSDIR})
+.endif
 
 post-install: general-install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

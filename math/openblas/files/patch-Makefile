@@ -1,6 +1,6 @@
---- Makefile.orig	2013-07-27 01:21:05.000000000 +0900
-+++ Makefile	2013-07-27 01:22:18.000000000 +0900
-@@ -228,7 +228,7 @@
+--- Makefile.orig	2015-10-27 20:44:50 UTC
++++ Makefile
+@@ -238,7 +238,7 @@ ifndef NOFORTRAN
  	-@echo "LOADOPTS    = $(FFLAGS) $(EXTRALIB)" >> $(NETLIB_LAPACK_DIR)/make.inc
  	-@echo "CC          = $(CC)" >> $(NETLIB_LAPACK_DIR)/make.inc
  	-@echo "override CFLAGS      = $(LAPACK_CFLAGS)" >> $(NETLIB_LAPACK_DIR)/make.inc

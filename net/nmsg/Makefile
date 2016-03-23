@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmsg
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	net
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -40,6 +40,11 @@ MANPAGES_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 			docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
 			docbook-xsl-ns>0:${PORTSDIR}/textproc/docbook-xsl-ns
 MANPAGES_CONFIGURE_WITH=	xsltproc
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} README.md README.FILTERS.md \
+		${STAGEDIR}${DOCSDIR}
 
 post-install-DOXYGEN-on:
 	(cd ${WRKSRC}/doc/doxygen && \

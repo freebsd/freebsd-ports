@@ -8,5 +8,5 @@ echo
 echo "NOTE: The game world has not been deleted. It is still in"
 echo "/var/db/minecraft-server. If it is no longer required, it will"
 echo "need to be manually deleted."
-echo "Also, you may wish to delete any remaining files in" 
+echo "Also, you may wish to delete any remaining files in"
 echo "%%PREFIX%%/minecraft-server and %%ETCDIR%%"

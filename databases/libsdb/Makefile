@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsdb
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	databases
 MASTER_SITES=	http://siag.nu/pub/libsdb/
 DISTNAME=	sdb-${PORTVERSION}

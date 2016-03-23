@@ -1,6 +1,6 @@
---- configure.orig	2015-10-08 12:14:23.000000000 -0700
-+++ configure	2015-10-27 10:49:04.338642000 -0700
-@@ -3672,7 +3672,7 @@
+--- configure.orig	2015-10-08 19:14:23 UTC
++++ configure
+@@ -3672,7 +3672,7 @@ $as_echo "#define _XOPEN_SOURCE 500" >>c
        ;;
      *)
  
@@ -9,7 +9,7 @@
  
        ;;
    esac
-@@ -3694,7 +3694,7 @@
+@@ -3694,7 +3694,7 @@ $as_echo "#define _XOPEN_SOURCE_EXTENDED
    esac
  
  

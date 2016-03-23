@@ -985,6 +985,7 @@
 %%WWWDIR%%/images/link_error.png
 %%WWWDIR%%/images/link_go.png
 %%WWWDIR%%/images/linkpolicy.png
+%%WWWDIR%%/images/links.menu.png
 %%WWWDIR%%/images/list.png
 %%WWWDIR%%/images/load.png
 %%WWWDIR%%/images/local_component.png
@@ -1084,6 +1085,7 @@
 %%WWWDIR%%/images/networkmap/so_win.png
 %%WWWDIR%%/images/networkmap/unknown.png
 %%WWWDIR%%/images/new_message.png
+%%WWWDIR%%/images/no_data_toshow.png
 %%WWWDIR%%/images/noaccess.png
 %%WWWDIR%%/images/normal_screen.png
 %%WWWDIR%%/images/normalscreen.png
@@ -1553,6 +1555,7 @@
 %%WWWDIR%%/include/functions_gis.php
 %%WWWDIR%%/include/functions_graph.php
 %%WWWDIR%%/include/functions_groups.php
+%%WWWDIR%%/include/functions_groupview.php
 %%WWWDIR%%/include/functions_html.php
 %%WWWDIR%%/include/functions_incidents.php
 %%WWWDIR%%/include/functions_io.php
@@ -1573,6 +1576,7 @@
 %%WWWDIR%%/include/functions_servers.php
 %%WWWDIR%%/include/functions_snmp.php
 %%WWWDIR%%/include/functions_snmp_browser.php
+%%WWWDIR%%/include/functions_tactical.php
 %%WWWDIR%%/include/functions_tags.php
 %%WWWDIR%%/include/functions_themes.php
 %%WWWDIR%%/include/functions_treeview.php
@@ -1585,6 +1589,7 @@
 %%WWWDIR%%/include/functions_wmi.php
 %%WWWDIR%%/include/get_file.php
 %%WWWDIR%%/include/gettext.php
+%%WWWDIR%%/include/graphs/bullet.js
 %%WWWDIR%%/include/graphs/export_data.php
 %%WWWDIR%%/include/graphs/fgraph.php
 %%WWWDIR%%/include/graphs/flot/excanvas.js
@@ -1770,6 +1775,7 @@
 %%WWWDIR%%/include/help/en/help_snmp_alert_custom.php
 %%WWWDIR%%/include/help/en/help_snmp_alert_field1.php
 %%WWWDIR%%/include/help/en/help_snmp_alert_filters.php
+%%WWWDIR%%/include/help/en/help_snmp_alert_position.php
 %%WWWDIR%%/include/help/en/help_snmp_explorer.php
 %%WWWDIR%%/include/help/en/help_snmp_trap_types.php
 %%WWWDIR%%/include/help/en/help_snmpcommunity.php
@@ -1905,6 +1911,7 @@
 %%WWWDIR%%/include/help/es/help_snmp_alert_custom.php
 %%WWWDIR%%/include/help/es/help_snmp_alert_field1.php
 %%WWWDIR%%/include/help/es/help_snmp_alert_filters.php
+%%WWWDIR%%/include/help/es/help_snmp_alert_position.php
 %%WWWDIR%%/include/help/es/help_snmp_explorer.php
 %%WWWDIR%%/include/help/es/help_snmp_trap_types.php
 %%WWWDIR%%/include/help/es/help_snmpcommunity.php
@@ -2037,6 +2044,7 @@
 %%WWWDIR%%/include/help/ja/help_snmp_alert.php
 %%WWWDIR%%/include/help/ja/help_snmp_alert_custom.php
 %%WWWDIR%%/include/help/ja/help_snmp_alert_field1.php
+%%WWWDIR%%/include/help/ja/help_snmp_alert_position.php
 %%WWWDIR%%/include/help/ja/help_snmp_explorer.php
 %%WWWDIR%%/include/help/ja/help_snmp_trap_types.php
 %%WWWDIR%%/include/help/ja/help_snmpcommunity.php
@@ -2980,9 +2988,8 @@
 %%WWWDIR%%/operation/events/events_rss.php
 %%WWWDIR%%/operation/events/export_csv.php
 %%WWWDIR%%/operation/events/sound_events.php
-%%WWWDIR%%/operation/extensions.php
 %%WWWDIR%%/operation/gis_maps/ajax.php
-%%WWWDIR%%/operation/gis_maps/index.php
+%%WWWDIR%%/operation/gis_maps/gis_map.php
 %%WWWDIR%%/operation/gis_maps/public_console.php
 %%WWWDIR%%/operation/gis_maps/render_view.php
 %%WWWDIR%%/operation/incidents/incident.php
@@ -3303,3 +3310,4 @@
 @dir %%WWWDIR%%/operation/users
 @dir %%WWWDIR%%/operation/visual_console
 @sample(,,444) %%APACHEETCDIR%%/Includes/pandora_console.conf.sample
+etc/newsyslog.conf.d/pandora_console.conf

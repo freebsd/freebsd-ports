@@ -1,6 +1,7 @@
 bin/gnome-session
 bin/gnome-session-inhibit
 bin/gnome-session-quit
+libexec/gnome-session-binary
 libexec/gnome-session-check-accelerated
 libexec/gnome-session-check-accelerated-helper
 libexec/gnome-session-failed
@@ -19,6 +20,7 @@ share/icons/hicolor/24x24/apps/session-properties.png
 share/icons/hicolor/32x32/apps/session-properties.png
 share/icons/hicolor/48x48/apps/session-properties.png
 share/icons/hicolor/scalable/apps/session-properties.svg
+share/icons/hicolor/symbolic/apps/session-properties-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/an/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/am/LC_MESSAGES/gnome-session-3.0.mo

@@ -1,0 +1,11 @@
+--- plugins/gtkui/Makefile.in.orig	2016-03-02 16:53:16 UTC
++++ plugins/gtkui/Makefile.in
+@@ -305,7 +305,7 @@ am__objects_5 = ddb_gui_GTK3_la-gtkui.lo
+ @HAVE_GTK3_TRUE@am_ddb_gui_GTK3_la_OBJECTS = $(am__objects_7)
+ ddb_gui_GTK3_la_OBJECTS = $(am_ddb_gui_GTK3_la_OBJECTS)
+ ddb_gui_GTK3_la_LINK = $(LIBTOOL) $(AM_V_lt) $(AM_LIBTOOLFLAGS) \
+-	$(LIBTOOLFLAGS) --mode=link $(OBJCLD) \
++	$(LIBTOOLFLAGS) --mode=link --tag=LD $(OBJCLD) \
+ 	$(ddb_gui_GTK3_la_OBJCFLAGS) $(OBJCFLAGS) \
+ 	$(ddb_gui_GTK3_la_LDFLAGS) $(LDFLAGS) -o $@
+ @HAVE_GTK2_FALSE@@HAVE_GTK3_TRUE@@STATICLINK_FALSE@am_ddb_gui_GTK3_la_rpath =  \

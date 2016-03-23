@@ -2,6 +2,8 @@
 %%SOFTMMU%%bin/qemu-img
 %%SOFTMMU%%bin/qemu-io
 %%SOFTMMU%%bin/qemu-nbd
+%%SOFTMMU%%bin/ivshmem-client
+%%SOFTMMU%%bin/ivshmem-server
 %%NONX86%%bin/qemu-system-aarch64
 %%NONX86%%bin/qemu-system-alpha
 %%NONX86%%bin/qemu-system-arm
@@ -82,7 +84,6 @@
 %%SOFTMMU%%%%DATADIR%%/petalogix-ml605.dtb
 %%SOFTMMU%%%%DATADIR%%/spapr-rtas.bin
 %%SOFTMMU%%%%DATADIR%%/slof.bin
-%%SOFTMMU%%%%DATADIR%%/s390-zipl.rom
 %%SOFTMMU%%%%DATADIR%%/linuxboot.bin
 %%SOFTMMU%%%%DATADIR%%/multiboot.bin
 %%SOFTMMU%%%%DATADIR%%/sgabios.bin

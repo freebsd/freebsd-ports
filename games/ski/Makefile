@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ski
-PORTVERSION=	6.9
+PORTVERSION=	6.11
 CATEGORIES=	games python
 MASTER_SITES=	http://catb.org/~esr/ski/
 
@@ -11,7 +11,7 @@ COMMENT=	Skiing simulation with curses interface in python
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:run
+USES=		python:3.2+:run
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \

@@ -1,15 +1,15 @@
---- configapp/src/Makefile.in.orig	2012-11-07 05:55:36.000000000 -0500
-+++ configapp/src/Makefile.in	2013-12-14 12:09:14.352210905 -0500
-@@ -87,7 +87,7 @@
- COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
- 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- CCLD = $(CC)
--LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-+LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(INTLLIBS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
- SOURCES = $(soundmodemconfig_SOURCES)
- DIST_SOURCES = $(soundmodemconfig_SOURCES)
- am__can_run_installinfo = \
-@@ -300,7 +300,7 @@
+--- configapp/src/Makefile.in.orig	2015-05-04 17:59:05 UTC
++++ configapp/src/Makefile.in
+@@ -106,7 +106,7 @@ soundmodemconfig_DEPENDENCIES = ../../so
+ 	../../soundcard/libaudioio.a ../../soundcard/libpttio.a \
+ 	$(MODEMLIBS) ../../matlib/libmat.a ../../libmisc/libmisc.a \
+ 	../../soundcard/libcommon.a $(am__DEPENDENCIES_1)
+-soundmodemconfig_LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++soundmodemconfig_LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(INTLLIBS)\
+ 	$(soundmodemconfig_LDFLAGS) $(LDFLAGS) -o $@
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
+@@ -366,7 +366,7 @@ soundmodemconfig_SOURCES = \
  
  soundmodemconfig_LDADD = ../../soundcard/liblog.a ../../soundcard/libaudioio.a ../../soundcard/libpttio.a \
  			$(MODEMLIBS) ../../matlib/libmat.a ../../libmisc/libmisc.a ../../soundcard/libcommon.a \

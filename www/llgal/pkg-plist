@@ -5,6 +5,7 @@ bin/llgal
 %%SITE_PERL%%/Llgal/Utils.pm
 man/man1/llgal.1.gz
 man/man5/llgalrc.5.gz
+%%PORTDOCS%%%%DOCSDIR%%/Changes
 %%PORTDOCS%%%%DOCSDIR%%/examples/dynamic_comments_in_slides/README
 %%PORTDOCS%%%%DOCSDIR%%/examples/dynamic_comments_in_slides/add_comment.php
 %%PORTDOCS%%%%DOCSDIR%%/examples/dynamic_comments_in_slides/slidetemplate.html

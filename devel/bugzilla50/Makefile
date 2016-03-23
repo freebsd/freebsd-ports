@@ -207,4 +207,12 @@ do-install-CONTRIB-on:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/contrib
 	(cd ${WRKSRC}/contrib && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/contrib)
 
+do-install-MOREBUGURL-on:
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/extensions/MoreBugUrl
+	(cd ${WRKSRC}/extensions/MoreBugUrl && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/extensions/MoreBugUrl)
+
+do-install-VOTING-on:
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/extensions/Voting
+	(cd ${WRKSRC}/extensions/Voting && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/extensions/Voting)
+
 .include <bsd.port.post.mk>

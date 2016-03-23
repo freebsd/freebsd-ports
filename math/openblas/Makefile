@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.14
-PORTEPOCH=	1
+PORTVERSION=	0.2.15
 DISTVERSIONPREFIX=	v
+PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	GH NL/lapack/timing/:lapack_tmg
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		large.tgz:lapack_tmg timing.tgz:lapack_tmg
+DIST_SUBDIR=	openblas
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Optimized BLAS library based on GotoBLAS2
 
 LICENSE=	BSD3CLAUSE
 
-DIST_SUBDIR=	openblas
 USE_GITHUB=	yes
 GH_ACCOUNT=	xianyi
 GH_PROJECT=	OpenBLAS
@@ -141,9 +141,6 @@ do-build:
 	${MAKE_CMD} ${MAKE_ARGS}
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.a ${WRKDIR}/lib/libopenblasp.a
 	${CP} ${WRKSRC}/libopenblasp-${OPENBLAS_SUFX}.so ${WRKDIR}/lib/libopenblasp.so.${OPENBLAS_SVER}
-.if !${PORT_OPTIONS:MDEBUG}
-	${LOCALBASE}/bin/strip -X ${WRKDIR}/lib/*.so.${OPENBLAS_SVER}
-.endif
 
 BENCHMARK_MAXTHREADS?=	${MAXTHREADS}
 .if ${PORT_OPTIONS:MOPENMP}
@@ -159,16 +156,10 @@ benchmark: build
 	USE_THREAD=1 ${BENCHMARK_THREADS_FLAG} ${MAKE_CMD} ${MAKE_ARGS}
 
 do-install:
-	cd ${WRKDIR}/lib ; \
-	${INSTALL_DATA} ${OPENBLAS_LIBS:S|$|.a|} ${OPENBLAS_LIBS:S|$|.so.${OPENBLAS_SVER}|} \
-	${STAGEDIR}${PREFIX}/lib/
-	cd ${STAGEDIR}${PREFIX}/lib ; \
-	for i in ${OPENBLAS_LIBS:S|$|.so|}; do \
-		${LN} -sf $$i.${OPENBLAS_SVER} $$i ; \
-	done
-
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenblas.so.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenblasp.so.0
+.for L in ${OPENBLAS_LIBS}
+	${INSTALL_DATA} ${WRKDIR}/lib/${L}.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKDIR}/lib/${L}.so.${OPENBLAS_SVER} ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf ${L}.so.${OPENBLAS_SVER} ${STAGEDIR}${PREFIX}/lib/${L}.so
+.endfor
 
 .include <bsd.port.mk>

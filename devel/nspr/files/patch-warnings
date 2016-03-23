@@ -18,37 +18,6 @@
  #endif
  
  NSPR_API(PRCounterHandle) 
---- pr/src/io/prprf.c.orig	2015-10-16 13:22:19 UTC
-+++ pr/src/io/prprf.c
-@@ -697,7 +697,7 @@ static int dosprintf(SprintfState *ss, c
-     char *hexp;
-     int rv, i;
-     struct NumArg* nas = NULL;
--    struct NumArg* nap;
-+    struct NumArg* nap = NULL;
-     struct NumArg  nasArray[ NAS_DEFAULT_NUM ];
-     char  pattern[20];
-     const char* dolPt = NULL;  /* in "%4$.2f", dolPt will point to . */
---- pr/src/io/prscanf.c.orig	2015-10-16 13:22:19 UTC
-+++ pr/src/io/prscanf.c
-@@ -194,7 +194,7 @@ static PRStatus
- GetInt(ScanfState *state, int code)
- {
-     char buf[FMAX + 1], *p;
--    int ch;
-+    int ch = -1;
-     static const char digits[] = "0123456789abcdefABCDEF";
-     PRBool seenDigit = PR_FALSE;
-     int base;
-@@ -304,7 +304,7 @@ static PRStatus
- GetFloat(ScanfState *state)
- {
-     char buf[FMAX + 1], *p;
--    int ch;
-+    int ch = -1;
-     PRBool seenDigit = PR_FALSE;
- 
-     if (state->width == 0 || state->width > FMAX) {
 --- pr/src/misc/pralarm.c.orig	2015-10-16 13:22:19 UTC
 +++ pr/src/misc/pralarm.c
 @@ -101,7 +101,7 @@ static void PR_CALLBACK pr_alarmNotifier
@@ -71,30 +40,8 @@
  		j, j1, k, k0, k_check, leftright, m2, m5, s2, s5,
  		spec_case, try_quick;
  	Long L;
---- pr/src/misc/prtpool.c.orig	2015-10-16 13:22:19 UTC
-+++ pr/src/misc/prtpool.c
-@@ -281,8 +281,8 @@ PRThreadPool *tp = (PRThreadPool *) arg;
- int pollfd_cnt, pollfds_used;
- int rv;
- PRCList *qp, *nextqp;
--PRPollDesc *pollfds;
--PRJob **polljobs;
-+PRPollDesc *pollfds = NULL;
-+PRJob **polljobs = NULL;
- int poll_timeout;
- PRIntervalTime now;
- 
 --- pr/src/pthreads/ptio.c.orig	2015-10-16 13:22:19 UTC
 +++ pr/src/pthreads/ptio.c
-@@ -3765,7 +3765,7 @@ static PRInt32 _pr_poll_with_poll(
-      * We use these variables to figure out how much time has
-      * elapsed and how much of the timeout still remains.
-      */
--    PRIntervalTime start, elapsed, remaining;
-+    PRIntervalTime start = 0, elapsed, remaining;
- 
-     if (pt_TestAbort()) return -1;
- 
 @@ -4934,6 +4934,7 @@ PR_IMPLEMENT(PRInt32) PR_Select(
  
      if (timeout == PR_INTERVAL_NO_TIMEOUT) {

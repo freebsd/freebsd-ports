@@ -1,10 +1,10 @@
 Clig generates C code to take apart the typical command-line arguments
-given to a C program.  Input to clig is a simple description file that
+given to a C program. Input to clig is a simple description file that
 specifies the name and number of options, their type (Flag, String,
-Float, Int) and permissible range, and which options are mandatory.  From
+Float, Int) and permissible range, and which options are mandatory. From
 this, clig will generate self-contained C code to include in your program,
 a usage message, and a manual page skeleton.
 
 Clig does a lot more than getopt!
 
-WWW: http://wsd.iitb.fhg.de/~geg/clighome/
+WWW: http://BSDforge.com/projects/devel/clig

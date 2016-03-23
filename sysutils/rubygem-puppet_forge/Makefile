@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet_forge
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

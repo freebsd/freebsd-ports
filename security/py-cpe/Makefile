@@ -2,18 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	cpe
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Common Platform Enumeration (CPE) for Python
+COMMENT=	CPE: Common Platform Enumeration for Python
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:-2.7
+USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>

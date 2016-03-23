@@ -18,7 +18,8 @@ share/gir-1.0/GnomeMaps-1.0.gir
 %%DATADIR%%/icons/hicolor/16x16/apps/route-car-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/route-pedestrian-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/route-transit-symbolic.svg
-%%DATADIR%%/icons/hicolor/22x22/apps/user-location.png
+%%DATADIR%%/icons/hicolor/24x24/apps/user-location-compass.png
+%%DATADIR%%/icons/hicolor/24x24/apps/user-location.png
 %%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-continue-symbolic.svg
 %%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-left-symbolic.svg
 %%DATADIR%%/icons/hicolor/32x32/apps/maps-direction-right-symbolic.svg
@@ -61,6 +62,7 @@ share/locale/gl/LC_MESSAGES/gnome-maps.mo
 share/locale/he/LC_MESSAGES/gnome-maps.mo
 share/locale/hu/LC_MESSAGES/gnome-maps.mo
 share/locale/id/LC_MESSAGES/gnome-maps.mo
+share/locale/is/LC_MESSAGES/gnome-maps.mo
 share/locale/it/LC_MESSAGES/gnome-maps.mo
 share/locale/ja/LC_MESSAGES/gnome-maps.mo
 share/locale/kk/LC_MESSAGES/gnome-maps.mo
@@ -72,6 +74,7 @@ share/locale/ml/LC_MESSAGES/gnome-maps.mo
 share/locale/nb/LC_MESSAGES/gnome-maps.mo
 share/locale/ne/LC_MESSAGES/gnome-maps.mo
 share/locale/nl/LC_MESSAGES/gnome-maps.mo
+share/locale/oc/LC_MESSAGES/gnome-maps.mo
 share/locale/pa/LC_MESSAGES/gnome-maps.mo
 share/locale/pl/LC_MESSAGES/gnome-maps.mo
 share/locale/pt/LC_MESSAGES/gnome-maps.mo

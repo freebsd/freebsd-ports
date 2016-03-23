@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Compile-SOAP-AnyEvent
-PORTVERSION=	0.01
-PORTREVISION=	1
+PORTVERSION=	0.90
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Exchange XML via AnyEvent::HTTP
 
-BUILD_DEPENDS=	p5-XML-Compile-SOAP>=2.18:${PORTSDIR}/net/p5-XML-Compile-SOAP \
-		p5-AnyEvent-HTTP>=1.46:${PORTSDIR}/www/p5-AnyEvent-HTTP \
-		p5-Log-Report>=0.28:${PORTSDIR}/devel/p5-Log-Report
+BUILD_DEPENDS=	p5-AnyEvent-HTTP>=1.46:${PORTSDIR}/www/p5-AnyEvent-HTTP \
+		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
+		p5-Log-Report>=1.05:${PORTSDIR}/devel/p5-Log-Report \
+		p5-XML-Compile-SOAP>=3.05:${PORTSDIR}/net/p5-XML-Compile-SOAP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	ART10 GPLv1

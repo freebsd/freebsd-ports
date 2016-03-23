@@ -11,21 +11,23 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk-based simple TeX interface
 
 LICENSE=	GPLv2
-
-OPTIONS_DEFINE=	DOCS
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_TEX=	latex
-USES+=		tk desktop-file-utils
+USES=		tk desktop-file-utils shebangfix
+SHEBANG_FILES=	xtexsh
 INSTALLS_ICONS=	yes
+
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/usr/bin/wish|${WISH}|g ; \
-		s|"/etc|"${PREFIX}/etc| ; \
+	@${REINPLACE_CMD} -e 's|"/etc|"${PREFIX}/etc|; \
 		s|exec bash|exec sh|' ${WRKSRC}/xtexsh
 
 do-install:
@@ -40,6 +42,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/xtexsh.png \
 		${STAGEDIR}${PREFIX}/share/icons/locolor/32x32/apps/xtexsh.png
 	${INSTALL_DATA} ${WRKSRC}/xtexsh.png ${STAGEDIR}${PREFIX}/share/pixmaps
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/index.html ${STAGEDIR}${DOCSDIR}

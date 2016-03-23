@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aria2
-PORTVERSION=	1.19.3
+PORTVERSION=	1.20.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/release-${PORTVERSION}/
 
@@ -48,9 +48,8 @@ NLS_CONFIGURE_OFF=	--disable-nls --without-libintl-prefix
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 NLS_LDFLAGS=		-lintl
 NLS_USES=		gettext localbase
-SQLITE_CONFIGURE_OFF=	--without-sqlite3
-SQLITE_CONFIGURE_ON=	--with-sqlite3
-SQLITE_USE=		SQLITE=yes
+SQLITE_CONFIGURE_WITH=	sqlite3
+SQLITE_USES=		sqlite
 
 ARIA2_DISK_CACHE?=	16M
 

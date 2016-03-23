@@ -2,3 +2,5 @@
 %%SITE_PERL%%/Astro/Constants/CGS.pm
 %%SITE_PERL%%/Astro/Constants/MKS.pm
 %%PERL5_MAN3%%/Astro::Constants.3.gz
+%%PERL5_MAN3%%/Astro::Constants::CGS.3.gz
+%%PERL5_MAN3%%/Astro::Constants::MKS.3.gz

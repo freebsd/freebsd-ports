@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-DBIx-Class
-PORTVERSION=	0.45
+PORTVERSION=	0.47
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,10 +29,14 @@ BUILD_DEPENDS=	p5-Config-Any>=0.19:${PORTSDIR}/devel/p5-Config-Any \
 		p5-Path-Class>=0.21:${PORTSDIR}/devel/p5-Path-Class \
 		p5-SQL-Translator>=0.11006:${PORTSDIR}/databases/p5-SQL-Translator \
 		p5-Sub-Exporter>=0.982:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-mysqld>=0:${PORTSDIR}/databases/p5-Test-mysqld
+		p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
+TEST_DEPENDS=	p5-MooseX-Types-LoadableClass>=0:${PORTSDIR}/devel/p5-MooseX-Types-LoadableClass \
+		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
+		p5-Test-mysqld>=0:${PORTSDIR}/databases/p5-Test-mysqld \
+		p5-Test-postgresql>=0:${PORTSDIR}/databases/p5-Test-postgresql
+# Also for test:
+#USE_MYSQL+=	server
 
 NO_ARCH=	yes
 USES=		perl5

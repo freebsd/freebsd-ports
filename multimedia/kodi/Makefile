@@ -4,11 +4,6 @@ PORTNAME=	kodi
 DISTVERSION=	15.2
 PORTREVISION=	1
 CATEGORIES=	multimedia java
-MASTER_SITES=	https://codeload.github.com/xbmc/xbmc/tar.gz/${KODI_COMMIT}?dummy=/ \
-		GH:ffmpeg
-DISTFILES=	${DISTVERSION}-Isengard${EXTRACT_SUFX} \
-		${GH_PROJECT}-${GH_TAGNAME}.tar.gz:ffmpeg
-EXTRACT_ONLY=	${DISTVERSION}-Isengard${EXTRACT_SUFX}
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	Award winning media center application
@@ -56,10 +51,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	xbmc
-GH_PROJECT=	ffmpeg
-GH_TAGNAME=	2.6.4-Isengard
-KODI_COMMIT=	f4dda26
+GH_TUPLE=	xbmc:xbmc:f4dda26 xbmc:FFmpeg:2.6.4-Isengard:ffmpeg
 
 USES=		autoreconf:build compiler:c++11-lib gettext gmake iconv jpeg \
 		libtool pkgconfig python:2
@@ -76,8 +68,6 @@ INSTALLS_ICONS=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 KODI_ARCH_i386=	x86
 KODI_ARCH_amd64=x86_64
-
-WRKSRC=		${WRKDIR}/xbmc-${KODI_COMMIT}
 
 PLIST_SUB=	ARCH=${KODI_ARCH_${ARCH}}
 
@@ -120,8 +110,6 @@ NFS_LIB_DEPENDS=	libnfs.so:${PORTSDIR}/net/libnfs
 NFS_CONFIGURE_ENABLE=	nfs
 
 NONFREE_CONFIGURE_ENABLE=	non-free
-NONFREE_VARS=		NO_CDROM="Restricted binary distribution" \
-			NO_PACKAGE="Restricted binary distribution"
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
@@ -149,9 +137,7 @@ SFTP_CONFIGURE_ENABLE=	ssh
 CONFIGURE_ARGS+=	--disable-debug --disable-alsa
 
 post-extract:
-	${MKDIR} ${WRKSRC}/tools/depends/target/ffmpeg/${GH_PROJECT}-${GH_TAGNAME}
-	${TAR} --strip-components=1 -xf ${DISTDIR}/${GH_PROJECT}-${GH_TAGNAME}.tar.gz \
-		 -C ${WRKSRC}/tools/depends/target/ffmpeg/${GH_PROJECT}-${GH_TAGNAME}
+	${MV} ${WRKSRC_ffmpeg} ${WRKSRC}/tools/depends/target/ffmpeg/
 
 post-patch:
 	${REINPLACE_CMD} 's;make;gmake;' \

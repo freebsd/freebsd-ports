@@ -14,7 +14,7 @@ lib/libtotem-plparser.so.18
 lib/libtotem-plparser.so.18.1.0
 libdata/pkgconfig/totem-plparser-mini.pc
 libdata/pkgconfig/totem-plparser.pc
-%%QUVI%%libexec/totem-pl-parser-videosite
+%%QUVI%%libexec/totem-pl-parser/99-totem-pl-parser-videosite
 %%DOCSDIR%%/TotemPlParser.html
 %%DOCSDIR%%/TotemPlPlaylist.html
 %%DOCSDIR%%/annotation-glossary.html

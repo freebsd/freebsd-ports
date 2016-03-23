@@ -21,6 +21,8 @@ HSCOLOUR_CMD?=	${LOCALBASE}/bin/HsColour
 GHC_VERSION?=	7.10.2
 LLVM_VERSION=	35
 
+HSCOLOUR_VERSION=	1.23
+
 HSCOLOUR_DESC?=	Colorize generated documentation by HsColour
 DYNAMIC_DESC?=	Add support for dynamic linking
 PROFILE_DESC?=	Add support for profiling

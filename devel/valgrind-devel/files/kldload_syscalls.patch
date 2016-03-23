@@ -1,0 +1,127 @@
+# HG changeset patch
+# User Bitbucket <noreply@bitbucket.org>
+# Date 0 0
+# Node ID 7ecd33d57049211e1084fc5e8bf588da49088d75
+# Parent  ce1acb28953fd6928ccb8f9511e374eab66e8625
+# Parent  79bf8f58bec842a1aa94f4fff2e4884a6bb5378b
+Merge preview of source (79bf8f58bec842a1aa94f4fff2e4884a6bb5378b) to destination (ce1acb28953fd6928ccb8f9511e374eab66e8625).
+
+diff -r ce1acb28953fd6928ccb8f9511e374eab66e8625 -r 7ecd33d57049211e1084fc5e8bf588da49088d75 coregrind/m_syswrap/syswrap-freebsd.c
+--- a/coregrind/m_syswrap/syswrap-freebsd.c
++++ b/coregrind/m_syswrap/syswrap-freebsd.c
+@@ -1246,6 +1246,52 @@
+    POST_MEM_WRITE( ARG2, sizeof(struct vki_statfs6) );
+ }
+ 
++/* ---------------------------------------------------------------------
++   kld* wrappers
++   ------------------------------------------------------------------ */
++
++PRE(sys_kldload)
++{
++   PRINT("sys_kldload ( %#lx(%s) )", ARG1, (char *)ARG1);
++   PRE_REG_READ1(int, "kldload", const char *, "file");
++
++   PRE_MEM_RASCIIZ( "kldload(file)", ARG1 );
++}
++
++PRE(sys_kldunload)
++{
++   PRINT("sys_kldunload ( %ld )", ARG1);
++   PRE_REG_READ1(int, "kldunload", int, "fileid");
++}
++
++PRE(sys_kldfind)
++{
++   PRINT("sys_kldfind ( %#lx(%s) )", ARG1, (char *)ARG1);
++   PRE_REG_READ1(int, "kldfind", const char *, "file");
++
++   PRE_MEM_RASCIIZ( "kldfind(file)", ARG1 );
++}
++
++PRE(sys_kldnext)
++{
++   PRINT("sys_kldnext ( %ld )", ARG1);
++   PRE_REG_READ1(int, "kldnext", int, "fileid");
++}
++
++PRE(sys_kldsym)
++{
++   PRINT("sys_kldsym ( %ld, %ld, %#lx )", ARG1,ARG2,ARG3 );
++   PRE_REG_READ3(int, "kldsym", int, "fileid", int, "command", void*, "data");
++   PRE_MEM_READ( "kldsym(data)", ARG3, sizeof(struct vki_kld_sym_lookup) );
++   struct vki_kld_sym_lookup *kslp = (struct vki_kld_sym_lookup *)ARG3;
++   PRE_MEM_RASCIIZ( "kldsym(data.symname)", (Addr)kslp->symname );
++}
++POST(sys_kldsym)
++{
++   struct vki_kld_sym_lookup *kslp = (struct vki_kld_sym_lookup *)ARG3;
++   POST_MEM_WRITE( (Addr)&kslp->symvalue, sizeof(kslp->symvalue) );
++   POST_MEM_WRITE( (Addr)&kslp->symsize, sizeof(kslp->symsize) );
++}
+ 
+ #if 0
+ /* ---------------------------------------------------------------------
+@@ -3389,14 +3435,14 @@
+ 	    moans--;
+ 	    VG_(message)(Vg_UserMsg, 
+ 			 "Warning: noted but unhandled ioctl 0x%lx"
+-			 " with no size/direction hints",
++			 " with no size/direction hints\n",
+ 			 ARG2); 
+ 	    VG_(message)(Vg_UserMsg, 
+ 			 "   This could cause spurious value errors"
+-			 " to appear.");
++			 " to appear.\n");
+ 	    VG_(message)(Vg_UserMsg, 
+ 			 "   See README_MISSING_SYSCALL_OR_IOCTL for "
+-			 "guidance on writing a proper wrapper." );
++			 "guidance on writing a proper wrapper.\n" );
+ 	 }
+    } else {
+ 	 if ((dir & _VKI_IOC_WRITE) && size > 0)
+@@ -4054,10 +4100,10 @@
+ // BSDX_(__NR_modfnext,			sys_modfnext),			// 302
+    BSDX_(__NR_modfind,			sys_modfind),			// 303
+ 
+-// BSDX_(__NR_kldload,			sys_kldload),			// 304
+-// BSDX_(__NR_kldunload,		sys_kldunload),			// 305
+-// BSDX_(__NR_kldfind,			sys_kldfind),			// 306
+-// BSDX_(__NR_kldnext,			sys_kldnext),			// 307
++   BSDX_(__NR_kldload,			sys_kldload),			// 304
++   BSDX_(__NR_kldunload,		sys_kldunload),			// 305
++   BSDX_(__NR_kldfind,			sys_kldfind),			// 306
++   BSDX_(__NR_kldnext,			sys_kldnext),			// 307
+ 
+ // BSDXY(__NR_kldstat,			sys_kldstat),			// 308
+ // BSDX_(__NR_kldfirstmod,		sys_kldfirstmod),		// 309
+@@ -4095,7 +4141,7 @@
+    BSDX_(__NR_utrace,			sys_utrace),			// 335
+ 
+    // compat3 sendfile							   336
+-// BSDXY(__NR_kldsym,			sys_kldsym),			// 337
++   BSDXY(__NR_kldsym,			sys_kldsym),			// 337
+ // BSDX_(__NR_jail,			sys_jail),			// 338
+    // unimpl pioctl							   339
+ 
+diff -r ce1acb28953fd6928ccb8f9511e374eab66e8625 -r 7ecd33d57049211e1084fc5e8bf588da49088d75 include/vki/vki-freebsd.h
+--- a/include/vki/vki-freebsd.h
++++ b/include/vki/vki-freebsd.h
+@@ -2129,6 +2129,17 @@
+ 	void	*spare[3];
+ };
+ 
++//----------------------------------------------------------------------
++// From sys/linker.h
++//----------------------------------------------------------------------
++
++struct vki_kld_sym_lookup {
++    int         version;        /* set to sizeof(struct kld_sym_lookup) */
++    char        *symname;       /* Symbol name we are looking up */
++    unsigned long symvalue;
++    vki_size_t  symsize;
++};
++
+ /*--------------------------------------------------------------------*/
+ /*--- end                                                          ---*/
+ /*--------------------------------------------------------------------*/

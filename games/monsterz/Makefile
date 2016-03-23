@@ -3,7 +3,7 @@
 
 PORTNAME=	monsterz
 PORTVERSION=	0.7.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://sam.zoy.org/monsterz/ \
 		SF/nemysisfreebsdp/:icons
@@ -34,7 +34,9 @@ DESKTOP_ENTRIES="Monsterz" "${COMMENT}" "${PORTNAME}" \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+pre-configure:
+	${REINPLACE_CMD} '/test -f/ s|scorefile)|&.sample|g' \
+		${WRKSRC}/Makefile
 
 post-install:
 .for d in graphics sound
@@ -48,9 +50,9 @@ post-install:
 		-f ${DATADIR:S;${PREFIX}/;;})
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/monsterz
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

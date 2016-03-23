@@ -22,6 +22,7 @@
 %%BRANCH2%%/%%TARGET%%/bin/objcopy
 %%BRANCH2%%/%%TARGET%%/bin/objdump
 %%BRANCH2%%/%%TARGET%%/bin/ranlib
+%%BRANCH2%%/%%TARGET%%/bin/readelf
 %%BRANCH2%%/%%TARGET%%/bin/strip
 %%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf32_x86_64.x
 %%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf32_x86_64.xbn
@@ -49,6 +50,19 @@
 %%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_i386.xsw
 %%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_i386.xu
 %%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_i386.xw
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.x
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xbn
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xc
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xd
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xdc
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xdw
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xn
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xr
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xs
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xsc
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xsw
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xu
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_iamcu.xw
 %%AMD64%%%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_k1om.x
 %%AMD64%%%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_k1om.xbn
 %%AMD64%%%%BRANCH2%%/%%TARGET%%/lib/ldscripts/elf_k1om.xc

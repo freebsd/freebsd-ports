@@ -59,6 +59,7 @@ libexec/postfix/postfix-files
 %%PGSQL%%libexec/postfix/postfix-files.d/pgsql-files
 %%SQLITE%%libexec/postfix/postfix-files.d/sqlite-files
 libexec/postfix/postfix-script
+libexec/postfix/postfix-tls-script
 libexec/postfix/postfix-wrapper
 libexec/postfix/postmulti-script
 libexec/postfix/postscreen
@@ -81,6 +82,7 @@ libexec/postfix/virtual
 %%BMAN%%man/man1/postcat.1.gz
 %%BMAN%%man/man1/postconf.1.gz
 %%BMAN%%man/man1/postdrop.1.gz
+%%BMAN%%man/man1/postfix-tls.1.gz
 %%BMAN%%man/man1/postfix.1.gz
 %%BMAN%%man/man1/postkick.1.gz
 %%BMAN%%man/man1/postlock.1.gz

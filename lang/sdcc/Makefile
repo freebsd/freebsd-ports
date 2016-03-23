@@ -3,7 +3,7 @@
 PORTNAME=	sdcc
 PORTVERSION=	3.5.0
 DISTVERSIONPREFIX=	src-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -32,7 +32,6 @@ Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000, Toshiba TLCS-90
 
 CONFIGURE_ARGS=	--disable-avr --disable-install-libbfd --disable-werror \
 		--disable-st7 docdir=${DOCSDIR} sdcc_cv_c_fms_extensions=no
-NOPRECIOUSMAKEVARS=	yes
 PORTDATA=	*
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/sdcc-${DISTVERSION}
@@ -63,6 +62,27 @@ post-patch:
 	@${REINPLACE_CMD} '/install:/s/:.*/:/' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/support/sdbinutils/libiberty/Makefile.in
+	@${REINPLACE_CMD} 's/[[:<:]]ARCH[[:>:]]/PICARCH/g' \
+		${WRKSRC}/device/lib/pic14/Makefile.common \
+		${WRKSRC}/device/lib/pic14/Makefile.in \
+		${WRKSRC}/device/lib/pic14/configure \
+		${WRKSRC}/device/lib/pic14/libm/Makefile.in \
+		${WRKSRC}/device/lib/pic14/libsdcc/enhanced/Makefile.in \
+		${WRKSRC}/device/lib/pic14/libsdcc/enhanced-no-xinst/Makefile.in \
+		${WRKSRC}/device/lib/pic14/libsdcc/regular/Makefile.in \
+		${WRKSRC}/device/lib/pic16/Makefile.in \
+		${WRKSRC}/device/lib/pic16/configure \
+		${WRKSRC}/device/lib/pic16/debug/Makefile.in \
+		${WRKSRC}/device/lib/pic16/libc/Makefile.in \
+		${WRKSRC}/device/lib/pic16/libio/Makefile.in \
+		${WRKSRC}/device/lib/pic16/libm/Makefile.in \
+		${WRKSRC}/device/lib/pic16/libsdcc/Makefile.in \
+		${WRKSRC}/device/lib/pic16/startup/Makefile.in \
+		${WRKSRC}/device/non-free/lib/pic14/Makefile.common.in \
+		${WRKSRC}/device/non-free/lib/pic14/Makefile.rules \
+		${WRKSRC}/device/non-free/lib/pic16/Makefile.in \
+		${WRKSRC}/device/non-free/lib/pic16/configure \
+		${WRKSRC}/device/non-free/lib/pic16/libdev/Makefile.in
 .if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
 		${WRKSRC}/Makefile.in \

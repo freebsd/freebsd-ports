@@ -1,6 +1,6 @@
---- transport.hxx.orig	2013-01-15 00:38:53.673146000 +0100
-+++ transport.hxx	2013-01-15 00:39:31.283199000 +0100
-@@ -483,7 +483,7 @@
+--- transport.hxx.orig	2008-03-01 10:34:43 UTC
++++ transport.hxx
+@@ -483,7 +483,7 @@ public:
      {	return 1;   }
  };
  

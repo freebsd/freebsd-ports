@@ -1,6 +1,6 @@
---- src/filter/pfsclamp.cpp.orig	2005-11-02 13:35:42.000000000 +0000
-+++ src/filter/pfsclamp.cpp	2014-02-20 19:04:01.556587853 +0000
-@@ -151,8 +151,8 @@
+--- src/filter/pfsclamp.cpp.orig	2005-11-02 13:35:42 UTC
++++ src/filter/pfsclamp.cpp
+@@ -151,8 +151,8 @@ void clampFrames( int argc, char* argv[]
    }
    else
    {

@@ -38,17 +38,17 @@ lib/girepository-%%TRACKER_VER%%/TrackerMiner-1.0.typelib
 lib/libtracker-control-%%TRACKER_VER%%.a
 lib/libtracker-control-%%TRACKER_VER%%.so
 lib/libtracker-control-%%TRACKER_VER%%.so.0
-lib/libtracker-control-%%TRACKER_VER%%.so.0.%%LIBVER%%.1
+lib/libtracker-control-%%TRACKER_VER%%.so.0.%%LIBVER%%.0
 lib/libtracker-miner-%%TRACKER_VER%%.a
 lib/libtracker-miner-%%TRACKER_VER%%.so
 lib/libtracker-miner-%%TRACKER_VER%%.so.0
-lib/libtracker-miner-%%TRACKER_VER%%.so.0.%%LIBVER%%.1
+lib/libtracker-miner-%%TRACKER_VER%%.so.0.%%LIBVER%%.0
 lib/libtracker-sparql-%%TRACKER_VER%%.a
 lib/libtracker-sparql-%%TRACKER_VER%%.so
 lib/libtracker-sparql-%%TRACKER_VER%%.so.0
-lib/libtracker-sparql-%%TRACKER_VER%%.so.0.%%LIBVER%%.1
-%%NAUTILUS%%lib/nautilus/extensions-3.0/libnautilus-tracker-tags.a
-%%NAUTILUS%%lib/nautilus/extensions-3.0/libnautilus-tracker-tags.so
+lib/libtracker-sparql-%%TRACKER_VER%%.so.0.%%LIBVER%%.0
+@comment %%NAUTILUS%%lib/nautilus/extensions-3.0/libnautilus-tracker-tags.a
+@comment %%NAUTILUS%%lib/nautilus/extensions-3.0/libnautilus-tracker-tags.so
 %%DOCUMENT_MINERS%%lib/tracker-%%TRACKER_VER%%/extract-modules/libextract-abw.a
 %%DOCUMENT_MINERS%%lib/tracker-%%TRACKER_VER%%/extract-modules/libextract-abw.so
 %%GRAPHIC_MINERS%%lib/tracker-%%TRACKER_VER%%/extract-modules/libextract-bmp.a

@@ -20,10 +20,10 @@ load_rc_config ${name}
 
 : ${nzbget_enable:=NO}
 
+command=%%PREFIX%%/bin/nzbget
 start_cmd="${name}_start"
 status_cmd="${command} -L S"
 stop_cmd="${name}_stop"
-command=%%PREFIX%%/bin/nzbget
 
 nzbget_start()
 {

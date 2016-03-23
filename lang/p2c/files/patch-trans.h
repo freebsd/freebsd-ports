@@ -1,15 +1,6 @@
---- trans.h.orig
+--- trans.h.orig	2015-10-05 23:04:46 UTC
 +++ trans.h
-@@ -1773,7 +1773,7 @@
- 
- extern char *infname, *outfname, *codefname, *hdrfname;
- extern char *requested_module;
--extern FILE *inf, *outf, *codef, *hdrf, *logf;
-+extern FILE *inf, *outf, *codef, *hdrf, *p2c_logf;
- extern short setup_complete, found_module;
- extern short regression, verbose, conserve_mem;
- extern int inf_lnum, inf_ltotal;
-@@ -1861,8 +1861,10 @@
+@@ -1863,8 +1863,10 @@ extern Expr *new_array_size;
  
  /* Our library omits declarations for these functions! */
  

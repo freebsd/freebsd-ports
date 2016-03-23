@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-settings-daemon
-PORTVERSION=	3.16.4
+PORTVERSION=	3.18.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -33,7 +33,7 @@ PORTSCOUT=	limitw:1,even
 
 USE_XORG=	xxf86misc
 USE_GNOME=	gnomedesktop3 intltool libxslt
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-gudev \
@@ -64,6 +64,7 @@ GLIB_SCHEMAS=	org.gnome.settings-daemon.enums.xml \
 		org.gnome.settings-daemon.plugins.keyboard.gschema.xml \
 		org.gnome.settings-daemon.plugins.media-keys.gschema.xml \
 		org.gnome.settings-daemon.plugins.power.gschema.xml \
+		org.gnome.settings-daemon.plugins.power.gschema.xml.override \
 		org.gnome.settings-daemon.plugins.print-notifications.gschema.xml \
 		org.gnome.settings-daemon.plugins.sharing.gschema.xml \
 		org.gnome.settings-daemon.plugins.xrandr.gschema.xml \
@@ -72,5 +73,9 @@ GLIB_SCHEMAS=	org.gnome.settings-daemon.enums.xml \
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/gnome|${PREFIX}/etc/gnome|g' \
 		${WRKSRC}/data/org.gnome.settings-daemon.plugins.xrandr.gschema.xml.in.in
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/org.gnome.settings-daemon.plugins.power.gschema.xml.override \
+		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
 
 .include <bsd.port.mk>

@@ -1,0 +1,21 @@
+
+$FreeBSD$
+
+--- rmt/Makefile.orig	2016-02-10 20:47:23 UTC
++++ rmt/Makefile
+@@ -6,13 +6,13 @@ include		$(SRCROOT)/$(RULESDIR)/rules.to
+ ###########################################################################
+ 
+ INSDIR=		sbin
+-TARGET=		rmt
++TARGET=		srmt
+ CPPOPTS +=	-DUSE_REMOTE
+ CPPOPTS +=	-DUSE_LARGEFILES
+ CFILES=		rmt.c
+ #HFILES=
+ LIBS=		-ldeflt -lschily $(LIB_SOCKET)
+-XMK_FILE=	Makefile.man Makefile.dfl Makefile.doc
++XMK_FILE=	Makefile.man
+ 
+ ###########################################################################
+ include		$(SRCROOT)/$(RULESDIR)/rules.cmd

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/sources/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-ssl
 DISTNAME=	${PORTNAME}-${PORTVERSION}p1-all
 
-MAINTAINER=	wes@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ libraries with a network/internet focus (full version)
 
 LICENSE=	BSL

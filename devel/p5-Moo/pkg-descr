@@ -1,9 +1,13 @@
-This module is an extremely light-weight, high-performance Moose
-replacement. It also avoids depending on any XS modules to allow
-simple deployments. The name Moo is based on the idea that it
-provides almost -but not quite- two thirds of Moose.
+Moo is an extremely light-weight Object Orientation system. It allows
+one to concisely define objects and roles with a convenient syntax that
+avoids the details of Perl's object system. Moo contains a subset of
+Moose and is optimised for rapid startup.
 
-Unlike Mouse this module does not aim at full Moose compatibility.
-See "INCOMPATIBILITIES" for more details.
+The name Moo is based on the idea that it provides almost -- but not
+quite -- two thirds of Moose.
+
+Unlike Mouse this module does not aim at full compatibility with
+Moose's surface syntax, preferring instead to provide full
+interoperability via metaclass inflation capabilities.
 
 WWW: http://search.cpan.org/dist/Moo/

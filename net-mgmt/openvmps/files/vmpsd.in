@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+# PROVIDE: vmpsd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=vmpsd
+rcvar=vmpsd_enable
+
+load_rc_config $name
+
+# Define these vmpsd_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/vmpsd
+# 
+# DO NOT CHANGE THESE DEFAULT VALUES HERE 
+
+: ${vmpsd_enable:=NO}				# Enable vmpsd
+: ${vmpsd_program:=%%PREFIX%%/sbin/vmpsd}	# Location of vmpsd
+: ${vmpsd_flags=-f /usr/local/etc/vmps.db}	# Flags to vmpsd program
+
+command=%%PREFIX%%/sbin/${name}
+
+run_rc_command $1

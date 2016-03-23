@@ -90,7 +90,7 @@ _GSTREAMER_PLUGINS+= \
 .if defined(USE_GSTREAMER1)
 _GSTREAMER_PLUGINS+= \
 		assrender bs2b chromaprint curl dtls dvdread editing-services \
-		hls kate libav libde265 modplug mpg123 openh264 openjpeg \
+		gtksink hls kate libav libde265 modplug mpg123 openh264 openjpeg \
 		png rsvg rtmp spandsp vpx webp x x265 ximagesrc zbar
 # vaapi?
 .endif
@@ -373,6 +373,8 @@ x_DEPENDS=	x11/gstreamer-plugins-x
 ximagesrc_DEPENDS=	x11/gstreamer-plugins-ximagesrc
 
 #-- x11-toolkits plugins section ------------------------------------------#
+
+gtksink_DEPENDS=	x11-toolkits/gstreamer-plugins-gtksink
 
 pango_DEPENDS=	x11-toolkits/gstreamer-plugins-pango
 

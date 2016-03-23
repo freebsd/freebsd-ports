@@ -25,20 +25,11 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	ODBC
 
-CMAKE_ARGS+=	-DINSTALL_PREFIX=${PREFIX}
-
 PLIST_SUB=	PORTNAME=sagittarius PORTVERSION=${PORTVERSION}
 
 ODBC_LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
 ODBC_CMAKE_ON=		-DODBC_INCLUDE_DIR:STRING=${LOCALBASE}/include/libiodbc
 OPTIONS_SUB=		ODBC
-
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MODBC}
-post-patch:
-	@${REINPLACE_CMD} -e '/odbc odbc/d' ${WRKSRC}/ext/CMakeLists.txt
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -51,10 +42,13 @@ PLIST_ARCH=	x86_64
 
 PLIST_SUB+=	PLIST_ARCH=${PLIST_ARCH}
 
+post-patch-ODBC-off:
+	@${REINPLACE_CMD} -e '/odbc odbc/d' ${WRKSRC}/ext/CMakeLists.txt
+
 post-install:
 	@${LN} -sf ${PREFIX}/bin/sagittarius ${STAGEDIR}${PREFIX}/bin/sash
 
 post-build:
-	@${GMAKE} -C ${WRKSRC} doc
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} doc
 
 .include <bsd.port.post.mk>

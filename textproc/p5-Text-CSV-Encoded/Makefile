@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-CSV-Encoded
-PORTVERSION=	0.22
+PORTVERSION=	0.25
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

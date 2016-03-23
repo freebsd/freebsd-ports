@@ -11,16 +11,15 @@ DIST_SUBDIR=	lineak
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lineakd is a daemon which enables special keys on internet keyboards
 
-USES=		gmake libtool
+USES=		gmake libtool localbase
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xext xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	kde_cv_prog_cxx_fno_check_new=no
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-DOCS=		README TODO AUTHORS
+PORTDOCS=	README TODO AUTHORS
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -29,11 +28,13 @@ post-patch:
 		${WRKSRC}/lineak/Makefile.in ${WRKSRC}/lineakd/Makefile.in
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${DOCS}
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/lineakd.conf.example ${STAGEDIR}${EXAMPLESDIR}
 

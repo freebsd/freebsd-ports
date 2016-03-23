@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-08-29 14:34:05 UTC
+--- Makefile.in.orig	2016-02-21 23:18:58 UTC
 +++ Makefile.in
-@@ -806,7 +806,6 @@ am__leading_dot = @am__leading_dot@
+@@ -853,7 +853,6 @@ am__leading_dot = @am__leading_dot@
  am__quote = @am__quote@
  am__tar = @am__tar@
  am__untar = @am__untar@
@@ -8,7 +8,7 @@
  bindir = @bindir@
  build = @build@
  build_alias = @build_alias@
-@@ -852,7 +851,7 @@ top_builddir = @top_builddir@
+@@ -899,7 +898,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  ACLOCAL_AMFLAGS = -I m4
  DISTCHECK_CONFIGURE_FLAGS = \
@@ -17,16 +17,16 @@
  	--enable-flac \
  	--enable-id3v23 \
  	--enable-ogg \
-@@ -1056,8 +1055,6 @@ easytag_enum_headers = \
- @ENABLE_NAUTILUS_ACTIONS_TRUE@libnautilus_easytag_la_LIBADD = \
+@@ -1104,8 +1103,6 @@ easytag_enum_headers = \
  @ENABLE_NAUTILUS_ACTIONS_TRUE@	$(NAUTILUS_LIBS)
  
--appdata_in_files = data/easytag.appdata.xml.in data/easytag-nautilus.metainfo.xml.in
+ @ENABLE_NAUTILUS_ACTIONS_TRUE@nautilus_appdata_in_file = data/easytag-nautilus.metainfo.xml.in
+-appdata_in_files = data/easytag.appdata.xml.in $(nautilus_appdata_in_file)
 -appdata_XML = $(appdata_in_files:.xml.in=.xml)
  desktopdir = $(datadir)/applications
  desktop_in_files = data/easytag.desktop.in
  desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-@@ -1124,7 +1121,6 @@ dist_appiconsymbolic_DATA = \
+@@ -1172,7 +1169,6 @@ dist_appiconsymbolic_DATA = \
  
  UPDATE_ICON_CACHE = gtk-update-icon-cache --ignore-theme-index --force
  dist_noinst_DATA = \
@@ -34,7 +34,7 @@
  	$(desktop_in_files) \
  	$(gsettings_SCHEMAS) \
  	$(easytag_headers) \
-@@ -1271,7 +1267,6 @@ dist_noinst_SCRIPTS = \
+@@ -1319,7 +1315,6 @@ dist_noinst_SCRIPTS = \
  @EASYTAG_ENABLE_TESTS_TRUE@	$(check_SCRIPTS)
  
  CLEANFILES = \

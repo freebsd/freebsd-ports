@@ -2,22 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	port-for
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	net devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Python utility and library that helps with TCP ports management
+COMMENT=	Utility that helps with local TCP ports managment
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-# Python3 Ready
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:${PORTSDIR}/devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}mock>=0.8:${PORTSDIR}/devel/py-mock
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
+
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} '/DEFAULT_CONFIG_PATH/ s|/etc|${PREFIX}&|' ${WRKSRC}/port_for/store.py
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

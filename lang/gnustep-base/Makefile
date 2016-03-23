@@ -3,6 +3,7 @@
 
 PORTNAME=	gnustep-base
 PORTVERSION=	1.24.8
+PORTREVISION=	1
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	GNUSTEP/core
 
@@ -17,6 +18,8 @@ LIB_DEPENDS+=	libxml2.so:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS+=	libxslt.so:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+
+RUN_DEPENDS+=	${LOCALBASE}/GNUstep/System/Library/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs --disable-mixedabi

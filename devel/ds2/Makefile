@@ -8,9 +8,7 @@ MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Debug server for lldb
 
 LICENSE=	NCSA
-LICENSE_NAME=	University of Illinois/NCSA Open Source License
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook

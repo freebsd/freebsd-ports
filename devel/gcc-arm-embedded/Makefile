@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	5.2.20151219
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/5.0/5-2015-q4-major/+download/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src

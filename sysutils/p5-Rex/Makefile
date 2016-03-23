@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rex
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FERKI
@@ -13,6 +13,7 @@ COMMENT=	Perl framework for automation and systems administration
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	\
+	p5-Devel-Caller>=0:${PORTSDIR}/devel/p5-Devel-Caller \
 	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 	p5-Hash-Merge>=0:${PORTSDIR}/textproc/p5-Hash-Merge \
 	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \

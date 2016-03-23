@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutter
-PORTVERSION=	3.16.4
+PORTVERSION=	3.18.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,7 +22,8 @@ RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++0x gettext gmake gmake libtool pathfix \
+		pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gtk30 intlhack introspection:build
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm xfixes \
 		xrender xdamage
@@ -36,13 +37,6 @@ GLIB_SCHEMAS=	org.gnome.mutter.gschema.xml \
 		org.gnome.mutter.wayland.gschema.xml
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000000 && ${OPSYS} == FreeBSD
-EXTRA_PATCHES=	${FILESDIR}/extra-src_core_keybindings-private.h \
-		${FILESDIR}/extra-src_ui_frames.h
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wcast-align||g' \

@@ -1,0 +1,5 @@
+Squid Analyzer parses Squid proxy access log and reports general statistics
+about hits, bytes, users, networks, top URLs, and top second level domains.
+Statistic reports are oriented toward user and bandwidth control.
+
+WWW: http://squidanalyzer.darold.net/

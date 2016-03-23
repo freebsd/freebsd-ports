@@ -1,4 +1,4 @@
-# Created by: jnlin@csie.nctu.edu.tw
+# Created by: jnlin@freebsd.cs.nctu.edu.tw
 # $FreeBSD$
 
 PORTNAME=	Tie-ShareLite
@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	Tied hash interface to IPC::ShareLite
 
 RUN_DEPENDS=	p5-IPC-ShareLite>=0:${PORTSDIR}/devel/p5-IPC-ShareLite

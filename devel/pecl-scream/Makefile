@@ -16,6 +16,7 @@ LICENSE=	PHP301
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	70
 
 test: build
 	@(cd ${WRKSRC} && ${MAKE} test)

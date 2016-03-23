@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	MathJax
-PORTVERSION=	2.4.0
+PORTVERSION=	2.6.1
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marko.cupac@mimar.rs
 COMMENT=	Cross-browser JavaScript display engine for mathematics
 
 LICENSE=	APACHE20

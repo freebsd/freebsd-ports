@@ -1,11 +1,11 @@
---- cpp/server/ct-server.cc.orig	2015-10-24 17:48:38.840376000 +0200
-+++ cpp/server/ct-server.cc	2015-10-24 17:49:03.684762000 +0200
-@@ -116,7 +116,7 @@ using cert_trans::Update;
+--- cpp/server/ct-server.cc.orig	2016-02-02 11:35:23 UTC
++++ cpp/server/ct-server.cc
+@@ -64,7 +64,7 @@ using cert_trans::TreeSigner;
  using cert_trans::UrlFetcher;
  using ct::ClusterNodeState;
  using ct::SignedTreeHead;
 -using google::RegisterFlagValidator;
 +using gflags::RegisterFlagValidator;
  using std::bind;
- using std::chrono::duration;
- using std::chrono::duration_cast;
+ using std::function;
+ using std::make_shared;

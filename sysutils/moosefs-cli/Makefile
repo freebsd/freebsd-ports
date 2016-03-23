@@ -11,6 +11,4 @@ MFS_COMPONENT=	cli
 
 MASTERDIR=	${.CURDIR}/../moosefs-master
 
-PLIST_FILES=	bin/mfscli
-
 .include "${MASTERDIR}/Makefile"

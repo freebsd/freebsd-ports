@@ -1,6 +1,6 @@
---- librtmp.pc.in.orig	2013-10-07 03:52:05.000000000 +0900
-+++ librtmp.pc.in	2013-10-07 04:00:16.000000000 +0900
-@@ -8,6 +8,6 @@
+--- librtmp.pc.in.orig	2016-02-29 01:15:13 UTC
++++ librtmp.pc.in
+@@ -8,6 +8,6 @@ Description: RTMP implementation
  Version: @VERSION@
  Requires: @CRYPTO_REQ@
  URL: http://rtmpdump.mplayerhq.hu

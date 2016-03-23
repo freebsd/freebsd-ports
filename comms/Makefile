@@ -79,6 +79,7 @@
     SUBDIR += klog
     SUBDIR += kremotecontrol
     SUBDIR += kvasd
+    SUBDIR += libcodec2
     SUBDIR += libconcord
     SUBDIR += libfap
     SUBDIR += libfec
@@ -86,6 +87,8 @@
     SUBDIR += libirman
     SUBDIR += libmodbus
     SUBDIR += librs232
+    SUBDIR += libsdr
+    SUBDIR += libsdr-gui
     SUBDIR += libticables2
     SUBDIR += libticalcs2
     SUBDIR += libusbmuxd

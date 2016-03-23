@@ -1,5 +1,5 @@
---- conf.c.orig	2015-01-16 16:26:23.872241677 -0600
-+++ conf.c	2015-01-16 16:27:00.595237894 -0600
+--- conf.c.orig	2015-10-08 19:14:23 UTC
++++ conf.c
 @@ -321,7 +321,11 @@ conf_create(void)
  	conf->read_only = false;
  	conf->read_only_direct = false;

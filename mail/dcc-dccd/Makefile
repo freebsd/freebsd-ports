@@ -3,6 +3,7 @@
 
 PORTNAME=	dcc-dccd
 PORTVERSION=	1.3.158
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		ftp://ftp.dcc-servers.net/src/dcc/old/ \
@@ -61,7 +62,7 @@ CONFIGURE_ARGS=	--with-uid=${DCCUSER} \
 ALT_HOME_CONFIGURE_ON=	--libexecdir=${PREFIX}/dcc/libexec --with-cgibin=${PREFIX}/dcc/cgi-bin
 DCCM_CONFIGURE_ENABLE=	dccm
 DCCM_USE=	rc_subr=dccm
-PORTS_SENDMAIL_BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+PORTS_SENDMAIL_BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/libmilter
 PORTS_SENDMAIL_CONFIGURE_ON=	--with-sendmail=yes
 DCCIFD_CONFIGURE_ENABLE=	dccifd
 DCCIFD_USE=	rc_subr=dccifd

@@ -6,17 +6,20 @@ PORTVERSION=	0.0.2.b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/soft/
 DISTNAME=	fl0p-devel
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive L7 flow fingerprinting tool
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+USES=		tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	ChangeLog CREDITS README TODO
 PLIST_FILES=	bin/fl0p %%DATADIR%%/fl0p.fp
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -31,12 +34,14 @@ post-patch:
 		 /^all:/s|strip||' ${WRKSRC}/mk/Linux
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} fl0p ${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/fl0p ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} fl0p.fp ${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/fl0p.fp ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

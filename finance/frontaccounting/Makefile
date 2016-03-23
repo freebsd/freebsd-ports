@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	frontaccounting
-DISTVERSION=	2.3.24
+DISTVERSION=	2.3.25
 CATEGORIES=	finance www
 MASTER_SITES=	SF/${PORTNAME}/FrontAccounting-2.3/${PORTVERSION}
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
 USES=		cpe
-USE_PHP+=	mysql mysqli openssl session hash ctype zlib
+USE_PHP+=	mysqli openssl session hash ctype zlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -21,11 +21,13 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-deinstall pkg-message
 PORTDOCSARGS=
 
-OPTIONS_DEFINE=	APACHE LIGHTTPD MYSQL_SERVER NLS DOCS
+OPTIONS_DEFINE=	APACHE LIGHTTPD NGINX MYSQL_SERVER NLS DOCS
 OPTIONS_DEFAULT=	APACHE MYSQL_SERVER
 
 MYSQL_SERVER_DESC=	MySQL server support
+NGINX_DESC=		NGINX web server
 LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
+NGINX_RUN_DEPENDS=	nginx:${PORTSDIR}/www/nginx
 MYSQL_SERVER_USE=	MYSQL=server
 APACHE_USE=		APACHE_RUN=22+
 NLS_USES=		gettext
@@ -36,12 +38,16 @@ NLS_USES=		gettext
 WANT_PHP_WEB=yes
 .endif
 
-.if !${PORT_OPTIONS:MDOCS}
-PORTDOCSARGS=	'-not -path "./doc*"'
+.if ${PORT_OPTIONS:MLIGHTTPD}
+WANT_PHP_WEB=yes
 .endif
 
-.if !${PORT_OPTIONS:MMYSQL_SERVER}
-USE_MYSQL=	client
+.if ${PORT_OPTIONS:MNGINX}
+WANT_PHP_WEB=yes
+.endif
+
+.if !${PORT_OPTIONS:MDOCS}
+PORTDOCSARGS=	'-not -path "./doc*"'
 .endif
 
 do-install:

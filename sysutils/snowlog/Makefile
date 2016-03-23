@@ -10,6 +10,9 @@ MASTER_SITES=	http://kiza.kcore.de/software/snowlog/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webserver access log browser/analyzer
 
+LICENSE=	GPLv2 # only
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		ncurses
@@ -21,6 +24,8 @@ OPTIONS_DEFINE=	DOCS
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/share && ${INSTALL_DATA} ${SHAREDOCS} ${STAGEDIR}${DATADIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 

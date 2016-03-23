@@ -1,0 +1,31 @@
+Index: files/patch-Makefile.am
+===================================================================
+--- Makefile.am.orig	2012-07-02 14:50:46 UTC
++++ Makefile.am
+@@ -76,7 +76,7 @@ install-cups:	install-bin
+ 	${SRC}/mkinstalldirs $(DESTDIR)$(CUPS_FILTERS)
+ 	${SRC}/mkinstalldirs $(DESTDIR)$(CUPS_BACKENDS)
+ 	ln -sf $(BINDIR)/foomatic-rip $(DESTDIR)$(CUPS_FILTERS)
+-	${INSTALL} -m 755 beh $(DESTDIR)$(CUPS_BACKENDS)
++	${INSTALL} -m 755 foomatic-beh $(DESTDIR)$(CUPS_BACKENDS)
+ 
+ install-ppr:	install-bin
+ 	${SRC}/mkinstalldirs $(DESTDIR)$(PPR_INTERFACES)
+@@ -102,7 +102,7 @@ install-man:
+ 
+ # Clean up the source directory
+ clean:	remove-trash
+-	rm -f *.o foomatic-rip foomatic-rip.1 beh 
++	rm -f *.o foomatic-rip foomatic-rip.1 foomatic-beh 
+ 	rm -f .testing-stamp stamp-h1
+ 	rm -f test/*.out
+ 
+@@ -140,7 +140,7 @@ uninstall-etc:
+ 
+ uninstall-cups:
+ 	rm -f $(DESTDIR)$(CUPS_FILTERS)/foomatic-rip
+-	rm -f $(DESTDIR)$(CUPS_BACKENDS)/beh
++	rm -f $(DESTDIR)$(CUPS_BACKENDS)/foomatic-beh
+ 	rmdir $(DESTDIR)$(CUPS_FILTERS) || :
+ 	rmdir $(DESTDIR)$(CUPS_BACKENDS) || :
+ 	rmdir $(DESTDIR)$(CUPS) || :

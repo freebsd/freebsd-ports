@@ -8,5 +8,4 @@ MASTERDIR?=	${.CURDIR}/../cups-base
 
 CUPS_IMAGE=	yes
 
-.sinclude "${.CURDIR}/Makefile.local"
 .include "${MASTERDIR}/Makefile"

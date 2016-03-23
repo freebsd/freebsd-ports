@@ -1,4 +1,3 @@
-bin/pango-querymodules
 bin/pango-view
 include/pango-1.0/pango/pango-attributes.h
 include/pango-1.0/pango/pango-bidi-type.h
@@ -49,14 +48,10 @@ lib/libpangoft2-1.0.so.%%LIBVERSION%%
 %%X11%%lib/libpangoxft-1.0.so
 %%X11%%lib/libpangoxft-1.0.so.0
 %%X11%%lib/libpangoxft-1.0.so.%%LIBVERSION%%
-lib/pango/%%VERSION%%/modules/pango-arabic-lang.so
-lib/pango/%%VERSION%%/modules/pango-basic-fc.so
-lib/pango/%%VERSION%%/modules/pango-indic-lang.so
 libdata/pkgconfig/pango.pc
 libdata/pkgconfig/pangocairo.pc
 libdata/pkgconfig/pangoft2.pc
 %%X11%%libdata/pkgconfig/pangoxft.pc
-man/man1/pango-querymodules.1.gz
 man/man1/pango-view.1.gz
 share/gir-1.0/Pango-1.0.gir
 share/gir-1.0/PangoCairo-1.0.gir
@@ -85,6 +80,7 @@ share/gtk-doc/html/pango/api-index-1-31-0.html
 share/gtk-doc/html/pango/api-index-1-32.html
 share/gtk-doc/html/pango/api-index-1-32-4.html
 share/gtk-doc/html/pango/api-index-1-34.html
+share/gtk-doc/html/pango/api-index-1-38.html
 share/gtk-doc/html/pango/api-index-1-4.html
 share/gtk-doc/html/pango/api-index-1-6.html
 share/gtk-doc/html/pango/api-index-1-8.html
@@ -92,7 +88,6 @@ share/gtk-doc/html/pango/api-index-deprecated.html
 share/gtk-doc/html/pango/api-index-full.html
 share/gtk-doc/html/pango/home.png
 share/gtk-doc/html/pango/index.html
-share/gtk-doc/html/pango/index.sgml
 share/gtk-doc/html/pango/layout.gif
 share/gtk-doc/html/pango/left-insensitive.png
 share/gtk-doc/html/pango/left.png
@@ -118,7 +113,6 @@ share/gtk-doc/html/pango/pango-Vertical-Text.html
 share/gtk-doc/html/pango/pango-Win32-Fonts-and-Rendering.html
 share/gtk-doc/html/pango/pango-Xft-Fonts-and-Rendering.html
 share/gtk-doc/html/pango/pango-hierarchy.html
-share/gtk-doc/html/pango/pango-querymodules.html
 share/gtk-doc/html/pango/pango.devhelp2
 share/gtk-doc/html/pango/pango.html
 share/gtk-doc/html/pango/rendering.html
@@ -126,7 +120,6 @@ share/gtk-doc/html/pango/right-insensitive.png
 share/gtk-doc/html/pango/right.png
 share/gtk-doc/html/pango/rotated-text.png
 share/gtk-doc/html/pango/style.css
-share/gtk-doc/html/pango/tools.html
 share/gtk-doc/html/pango/up-insensitive.png
 share/gtk-doc/html/pango/up.png
 @unexec /bin/rm %D/lib/pango/%%VERSION%%/modules.cache

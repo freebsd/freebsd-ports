@@ -23,6 +23,7 @@ lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.MACADDR.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Network.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Numeric.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.OID.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Point.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Range.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Raw.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Record.beam
@@ -37,6 +38,7 @@ lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.MACADDR.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Messages.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Notifications.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Parameters.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Point.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Protocol.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Query.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Range.beam
@@ -74,6 +76,7 @@ lib/elixir/lib/postgrex/lib/postgrex/extensions/macaddr.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/network.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/numeric.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/oid.ex
+lib/elixir/lib/postgrex/lib/postgrex/extensions/point.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/range.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/raw.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/record.ex

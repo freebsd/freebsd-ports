@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/irssi/src/common.h:${PORTSDIR}/irc/irssi \
 		${LOCALBASE}/bin/libgcrypt-config:${PORTSDIR}/security/libgcrypt
-LIB_DEPENDS=	libotr.so:${PORTSDIR}/security/libotr \
+LIB_DEPENDS=	libotr.so.5:${PORTSDIR}/security/libotr \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuplot
-PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTVERSION=	5.0.3
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -20,6 +19,8 @@ CONFIGURE_ARGS+=--with-readline=gnu \
 		--without-lisp-files \
 		--without-tutorial \
 		--with-bitmap-terminals \
+		--with-gpic \
+		--with-mif \
 		--with-latex \
 		--with-qt=no \
 		ac_cv_prog_KPSEXPAND=${LOCALBASE}/bin/kpsexpand \

@@ -7,11 +7,13 @@
 %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/CD/Track.pm
 %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Company.pm
 %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Company/Employee.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/GermanPhone.pm
 %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Job.pm
 %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person.pm
 %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person/Artist.pm
 %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Person/Employee.pm
 %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/Phone.pm
+%%SITE_PERL%%/Test/DBIx/Class/Example/Schema/Result/RussianPhone.pm
 %%SITE_PERL%%/Test/DBIx/Class/Example/Schema/ResultSet.pm
 %%SITE_PERL%%/Test/DBIx/Class/FixtureCommand/Populate.pm
 %%SITE_PERL%%/Test/DBIx/Class/FixtureCommand/PopulateMore.pm
@@ -30,11 +32,13 @@
 %%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::CD::Track.3.gz
 %%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Company.3.gz
 %%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Company::Employee.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::GermanPhone.3.gz
 %%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Job.3.gz
 %%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Person.3.gz
 %%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Person::Artist.3.gz
 %%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Person::Employee.3.gz
 %%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::Phone.3.gz
+%%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::Result::RussianPhone.3.gz
 %%PERL5_MAN3%%/Test::DBIx::Class::Example::Schema::ResultSet.3.gz
 %%PERL5_MAN3%%/Test::DBIx::Class::FixtureCommand::Populate.3.gz
 %%PERL5_MAN3%%/Test::DBIx::Class::FixtureCommand::PopulateMore.3.gz

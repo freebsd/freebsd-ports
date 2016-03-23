@@ -1,15 +1,15 @@
-# Created by: Olivier Cochard-Labbe <olivier@cochard.me>
+# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	phone
 PORTVERSION=	0.3.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	http://www.defora.org/os/download/download/4296/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Phone-${PORTVERSION}
 
-MAINTAINER=	olivier@cochard.me
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS telephony application
 
 LICENSE=	GPLv3

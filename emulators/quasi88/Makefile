@@ -2,15 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	quasi88
-PORTVERSION=	0.6.3
-PORTREVISION=	5
+PORTVERSION=	0.6.4
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
+MASTER_SITES=	http://www.eonet.ne.jp/~showtime/quasi88/release/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC-8801 emulator for X
-
-BROKEN=		unfetchable
 
 USE_XORG=	x11 xext
 USES=		gmake tar:tgz
@@ -18,33 +15,34 @@ MAKE_ENV=	DATADIR="${DATADIR}" _CC="${CC}" _CFLAGS="${CFLAGS}" \
 		_CXX="${CXX}" LD="${CXX}" PROGRAM="${PORTNAME}"
 MAKE_ARGS=	ARCH="freebsd"
 
+DESKTOP_ENTRIES="Quasi88" "" "" "quasi88" "" ""
+
 PORTDOCS=	FAQ.TXT FORMAT.TXT GET-IMAGE.TXT HISTORY.TXT MANUAL.TXT \
 		QUASI88.TXT
-PORTEXAMPLES=	*
+PORTEXAMPLES=	keyconf.rc quasi88.rc
 PLIST_FILES=	bin/quasi88
 
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES SDL
+OPTIONS_DEFAULT=	SDL
+
+SDL_USE=		sdl=sdl
+SDL_MAKE_ENV=		SDL_VERSION=1 X11_JOYSTICK="joy_sdl"
+SDL_MAKE_ENV_OFF=	X11_VERSION=1 X11_JOYSTICK="joy_bsd_usb"
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "i386"
-MAKE_ENV+=	LSB_FIRST=1
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl
-MAKE_ENV+=	SDL_VERSION=1 JOYSTICK="joy_sdl"
-.else
-MAKE_ENV+=	X11_VERSION=1 JOYSTICK="joy_bsd_usb"
+.if ${ARCH} == amd64 || ${ARCH} == i386
+MAKE_ENV+=	X11_LSB_FIRST=1
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^X11_|# X11_|g ; \
+	@${REINPLACE_CMD} -e \
+		's|^X11_VERSION|# X11_VERSION|g ; \
 		 s|~/quasi88|$${DATADIR}|g ; \
-		 s|^LSB_|# LSB_|g ; \
-		 s|^JOY|# JOY|g ; \
+		 s|^X11_LSB|# X11_LSB|g ; \
+		 s|^X11_JOY|# X11_JOY|g ; \
 		 s|^SDL_|# SDL_|g ; \
 		 s|gcc|$${_CC}|g ; \
 		 s|-O2|$${_CFLAGS}|g ; \
@@ -56,10 +54,15 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/quasi88 ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.rc ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/document && ${INSTALL_DATA} ${PORTDOCS} \
 		${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

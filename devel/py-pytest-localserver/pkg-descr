@@ -1,0 +1,10 @@
+pytest-localserver is a plugin for the pytest testing framework which
+enables you to test server connections locally.
+
+Sometimes monkeypatching urllib2.urlopen() just does not cut it, for
+instance if you work with urllib2.Request, define your own
+openers/handlers or work with httplib. In these cases it may come in
+handy to have an HTTP server running locally which behaves just like
+the real thing. Well, look no further!
+
+WWW: https://bitbucket.org/pytest-dev/pytest-localserver/

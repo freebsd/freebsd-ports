@@ -1,6 +1,6 @@
---- psqlodbc.h.orig	2008-09-21 22:35:44.000000000 +0700
-+++ psqlodbc.h	2009-01-26 23:19:02.000000000 +0600
-@@ -178,13 +178,8 @@
+--- psqlodbc.h.orig	2016-01-10 13:25:14 UTC
++++ psqlodbc.h
+@@ -175,13 +175,8 @@ typedef	unsigned long long ULONG_PTR;
  #if (SIZEOF_LONG == 8)
  #define	FORMAT_INTEGER	"%d"	/* SQLINTEGER */
  #define	FORMAT_UINTEGER	"%u"	/* SQLUINTEGER */

@@ -1,0 +1,25 @@
+The following files have been installed in %%DATADIR%%:
+
+* ipxe.dsk:  To create a bootable floppy run
+
+    dd if=%%DATADIR%%/ipxe.dsk of=/dev/fd0
+
+  where /dev/fd0 is your floppy drive.  This will erase any data
+  already on the disk. 
+
+* ipxe.usb:  To create a bootable USB key run
+
+    dd if=%%DATADIR%%/ipxe.usb of=/dev/daX
+
+  where /dev/daX is your USB key, and is *not* a real hard disk on
+  your system.  This will erase any data already on the USB key. 
+
+* ipxe.iso:  To create a bootable CD-ROM run
+
+    cdrecord %%DATADIR%%/ipxe.iso
+
+  to write the image to a blank CD.
+
+* ipxe.pxe:  For chainloading from a PXE ROM.
+
+* ipxe.lkrn:  For any boot manager that can boot Linux kernels.

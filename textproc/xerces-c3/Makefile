@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xerces-c
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	textproc
 MASTER_SITES=	APACHE/xerces/c/3/sources
 PKGNAMESUFFIX=	3
@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS_INSTALL=	xerces-c2-[0-9]* xerces-c2-devel-[0-9]*
 
@@ -22,7 +23,7 @@ INSTALL_TARGET=	install-strip
 MAKE_ENV=	XERCESCROOT=${WRKSRC}
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		cpe gmake libtool pathfix
+USES=		cpe gmake iconv libtool pathfix
 
 PLIST_SUB=	MAJOR_VER=${PORTVERSION:R}
 

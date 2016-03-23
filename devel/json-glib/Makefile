@@ -1,9 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/json-glib/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	json-glib
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 

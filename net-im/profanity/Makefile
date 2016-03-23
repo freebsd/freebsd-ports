@@ -8,27 +8,24 @@ MASTER_SITES=	http://www.profanity.im/
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Console based XMPP client
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libstrophe.so:${PORTSDIR}/net-im/libstrophe \
 		libglib-2.0.so:${PORTSDIR}/devel/glib20 \
 		libcurl.so:${PORTSDIR}/ftp/curl \
-		libotr.so:${PORTSDIR}/security/libotr3 \
+		libotr.so.2:${PORTSDIR}/security/libotr3 \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		libgpgme.so:${PORTSDIR}/security/gpgme
 
-OPTIONS_DEFINE=NOTIFY
 USES=		ncurses pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-otr
 CONFIGURE_ENV=	LIBS="${CFLAGS} -lcrypto"
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NOTIFY
 
-.if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
-CONFIGURE_ARGS+=	--enable-notifications
-.endif
+NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_CONFIGURE_ENABLE=notifications
 
 .include <bsd.port.mk>

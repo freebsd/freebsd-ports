@@ -1,0 +1,28 @@
+Submitted upstream as https://sourceforge.net/p/openil/patches/53/
+
+Fix to allow running with regular shell. Actually, even bash was erroring
+out for some reason...
+--- test/format_test/format_checks.sh.in	2009-03-08 03:10:07.000000000 -0400
++++ test/format_test/format_checks.sh.in	2016-01-10 23:37:45.922896000 -0500
+@@ -27,8 +27,17 @@
+ do
+ 	#echo expr match "' $CAN_SAVE '" '.*\s'$EXTENSION'\s.*'
+-	if [ $(expr match "' $CAN_SAVE '" '.*\s'$EXTENSION'\s.*') -eq 0 -o $(expr match "' $PROBLEMATIC '" '.*\s'$EXTENSION'\s.*') -ne 0 ] 
+-	then # This extension is not considered as supported...
+-		continue;
+-	fi
++	case $CAN_SAVE in
++	*$EXTENSION*)
++		;;
++	*)
++		# This extension is not considered as supported...
++		continue
++		;;
++	esac
++	case $PROBLEMATIC in
++	*$EXTENSION*)
++		continue
++		;;
++	esac	
+ 	test -n	"$VERBOSE" && echo $WINE ./testil@EXEEXT@ -e $EXTENSION
+ 	# EXEEXT comes in when one compiles on platforms that append extensions to executables (testil.exe)
