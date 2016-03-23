@@ -28,6 +28,8 @@ PORTDOCS=	manual.html manual.pdf
 OPTIONS_DEFINE=	UTF8 DOCS
 UTF8_CONFIGURE_ENABLE=	utf8
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} 's|gcc|${CC}|' ${WRKSRC}/curses/curses.ml
 
