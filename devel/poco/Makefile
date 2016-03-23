@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	poco
-PORTVERSION=	1.7.0
-DISTVERSIONPREFIX=	poco-
-DISTVERSIONSUFFIX=	-release
+PORTVERSION=	1.7.2
+DISTVERSIONSUFFIX=	-all
 CATEGORIES=	devel net
+MASTER_SITES=	http://pocoproject.org/releases/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ libraries with a network/internet focus
@@ -20,9 +20,6 @@ CONFLICTS=	poco-ssl-[0-9]*
 USES=		cmake pkgconfig
 CMAKE_ARGS=	-DPOCO_UNBUNDLED:BOOL=ON
 USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	pocoproject
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
