@@ -2,6 +2,7 @@ bin/hfm
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/architecture-90dpi.png
 %%PORTDOCS%%%%DOCSDIR%%/architecture.svg
+%%PORTDOCS%%%%DOCSDIR%%/hfm-mascot.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hfm-test-fast.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hfm-test-start-delay.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hfm.conf.sample
