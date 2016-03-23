@@ -3,6 +3,7 @@
 
 PORTNAME=	hptcli
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.highpoint-tech.com/BIOS_Driver/HRM/FreeBSD/
 DISTNAME=	CLI-FreeBSD-3.6-1-120913
@@ -28,11 +29,11 @@ do-install:
 	#@${MKDIR} ${STAGEDIR}${PREFIX}
 	${INSTALL_MAN} ${WRKSRC}/hptraidconf.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${ARCH} == "i386"
-	${INSTALL_DATA} ${WRKSRC}/hptraidconf-8.0 ${STAGEDIR}${PREFIX}/bin/hptraidconf
-	${INSTALL_DATA} ${WRKSRC}/hptsvr-3.6/hptsvr-8.0 ${STAGEDIR}${PREFIX}/sbin/hptsvr
+	${INSTALL_PROGRAM} ${WRKSRC}/hptraidconf-8.0 ${STAGEDIR}${PREFIX}/bin/hptraidconf
+	${INSTALL_PROGRAM} ${WRKSRC}/hptsvr-3.6/hptsvr-8.0 ${STAGEDIR}${PREFIX}/sbin/hptsvr
 .else
-	${INSTALL_DATA} ${WRKSRC}/hptraidconf-8.0.amd64 ${STAGEDIR}${PREFIX}/bin/hptraidconf
-	${INSTALL_DATA} ${WRKSRC}/hptsvr-3.6/hptsvr-8.0.amd64 ${STAGEDIR}${PREFIX}/sbin/hptsvr
+	${INSTALL_PROGRAM} ${WRKSRC}/hptraidconf-8.0.amd64 ${STAGEDIR}${PREFIX}/bin/hptraidconf
+	${INSTALL_PROGRAM} ${WRKSRC}/hptsvr-3.6/hptsvr-8.0.amd64 ${STAGEDIR}${PREFIX}/sbin/hptsvr
 .endif
 
 .include <bsd.port.post.mk>
