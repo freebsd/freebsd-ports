@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-editi
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
+DEPRECATED=	EOL, no longer supported by bababit.hu
+EXPIRATION_DATE=	2016-06-30
+
 LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \

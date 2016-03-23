@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	03
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The syslog-ng module incubator
 
+DEPRECATED=	EOL, no longer supported by bababit.hu
+EXPIRATION_DATE=	2016-06-30
+
 WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(PORTVERSION)
 
 MAKE_JOBS_UNSAFE=	yes
