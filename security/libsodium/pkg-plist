@@ -1,5 +1,6 @@
 include/sodium.h
 include/sodium/core.h
+include/sodium/crypto_aead_aes256gcm.h
 include/sodium/crypto_aead_chacha20poly1305.h
 include/sodium/crypto_auth.h
 include/sodium/crypto_auth_hmacsha256.h
@@ -54,10 +55,9 @@ include/sodium/version.h
 @dir include/sodium
 lib/libsodium.a
 lib/libsodium.so
-lib/libsodium.so.13
-lib/libsodium.so.13.2.0
+lib/libsodium.so.18
+lib/libsodium.so.18.0.1
 libdata/pkgconfig/libsodium.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%@dir %%DOCSDIR%%
