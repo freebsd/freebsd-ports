@@ -89,6 +89,7 @@
     SUBDIR += seqio
     SUBDIR += seqtools
     SUBDIR += sim4
+    SUBDIR += slclust
     SUBDIR += ssaha
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee
