@@ -19,7 +19,6 @@ LIB_DEPENDS=	libqwt6.so:${PORTSDIR}/x11-toolkits/qwt6 \
 
 #LC_REV=		1526-g7fdb92a
 INSTALLS_ICONS=	yes
-MAKE_JOBS_UNSAFE=yes
 USE_LDCONFIG=	yes
 USES=		cmake pkgconfig tar:xz
 USE_QT4=	corelib declarative gui network script sql sql-sqlite3_run \
