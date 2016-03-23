@@ -3,7 +3,7 @@
 
 PORTNAME=	hugin
 PORTVERSION=	2016.0.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -13,6 +13,7 @@ COMMENT=	GUI for Panorama Tools, to stitch panoramic images
 LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libImath.so:${PORTSDIR}/graphics/ilmbase \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libpano13.so:${PORTSDIR}/graphics/libpano13 \
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 # gmake is really needed at _runtime_.   Do not remove it from this list.
-RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
+RUN_DEPENDS=	enblend>=4.1.4:${PORTSDIR}/graphics/enblend \
 		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		gmake:${PORTSDIR}/devel/gmake
 
