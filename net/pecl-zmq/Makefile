@@ -2,6 +2,7 @@
 
 PORTNAME=	zmq
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
