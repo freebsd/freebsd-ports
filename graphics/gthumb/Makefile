@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/graphics/gthumb/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	gthumb
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -89,7 +88,7 @@ WEBSERVICES_DESC=	Web services
 WEBSERVICES_LIB_DEPENDS=\
 			libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 			libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
-			libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
+			libwebkit2gtk-4.0.so:${PORTSDIR}/www/webkit2-gtk3
 WEBSERVICES_CONFIGURE_ENABLE=	libjson-glib libsoup webkit2
 YELP_DESC=		Viewer for built-in help system
 YELP_RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
@@ -97,7 +96,6 @@ YELP_RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-Wl,--as-needed|| ; \
-		 /^[[:blank:]]zlib/d ; \
-		 /webkit2gtk/s|-4.0|-3.0|' ${WRKSRC}/configure
+		 /^[[:blank:]]zlib/d' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
