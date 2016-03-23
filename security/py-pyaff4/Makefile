@@ -3,6 +3,7 @@
 
 PORTNAME=	PyAFF4
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +25,6 @@ post-extract:
 	@${CHMOD} -R a+rX ${WRKSRC}
 
 post-patch:
-	${REINPLACE_CMD} 's/aff4-snappy == 0.5/snappy >= 0.5/' ${WRKSRC}/setup.py
+	${REINPLACE_CMD} 's/aff4-snappy == 0.5/python-snappy >= 0.5/' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
