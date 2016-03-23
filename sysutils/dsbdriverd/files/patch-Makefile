@@ -1,0 +1,15 @@
+--- Makefile.orig	2016-03-15 11:38:05 UTC
++++ Makefile
+@@ -17,9 +17,9 @@ PROGRAM_FLAGS += -DPATH_DRIVERS_DB=\"${D
+ PROGRAM_FLAGS += -DPATH_LOG=\"${LOGFILE}\"
+ PROGRAM_FLAGS += -DPATH_PID_FILE=\"${PIDFILE}\"
+ PROGRAM_LIBS   = -lusb
+-INSTALL_DATA   = install -g wheel -o root -m 0644
+-INSTALL_SCRIPT = install -g wheel -m 0755 -o root
+-INSTALL_PROGRAM= install -s -g wheel -m 0755 -o root
++INSTALL_DATA   = install -m 0644
++INSTALL_SCRIPT = install -m 0755
++INSTALL_PROGRAM= install -s -m 0755
+ 
+ all: ${INSTALL_TARGETS}
+ 
