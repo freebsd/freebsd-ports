@@ -1,5 +1,5 @@
 hfm includes an rc.d script to control a daemon mode.  Use:
 
-sysrc hfh_enable=yes
+sysrc hfm_enable=yes
 
 to enable.
