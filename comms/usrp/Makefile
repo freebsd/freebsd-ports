@@ -35,6 +35,10 @@ USRP2_DESC=	Build Ettus USRP2 firmware
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
+BROKEN_i386=	does not build on i386 FreeBSD 11.x and later
+.endif
+
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
