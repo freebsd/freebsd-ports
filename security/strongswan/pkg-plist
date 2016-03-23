@@ -2,10 +2,6 @@ lib/ipsec/libcharon.a
 lib/ipsec/libcharon.la
 lib/ipsec/libcharon.so
 lib/ipsec/libcharon.so.0
-lib/ipsec/libhydra.a
-lib/ipsec/libhydra.la
-lib/ipsec/libhydra.so
-lib/ipsec/libhydra.so.0
 lib/ipsec/libstrongswan.a
 lib/ipsec/libstrongswan.la
 lib/ipsec/libstrongswan.so
@@ -420,7 +416,6 @@ man/man8/charon-cmd.8.gz
 @sample %%ETCDIR%%.d/charon/xcbc.conf.sample
 @sample %%ETCDIR%%.d/starter.conf.sample
 lib/ipsec/libcharon.so.0.0.0
-lib/ipsec/libhydra.so.0.0.0
 lib/ipsec/libstrongswan.so.0.0.0
 lib/ipsec/libtls.so.0.0.0
 @dir etc/ipsec.d/aacerts
@@ -431,12 +426,15 @@ lib/ipsec/libtls.so.0.0.0
 @dir etc/ipsec.d/ocspcerts
 @dir etc/ipsec.d/private
 @dir etc/ipsec.d/reqs
+%%SWANCTL%%@dir etc/swanctl/bliss
 %%SWANCTL%%@dir etc/swanctl/ecdsa
 %%SWANCTL%%@dir etc/swanctl/pkcs12
 %%SWANCTL%%@dir etc/swanctl/pkcs8
+%%SWANCTL%%@dir etc/swanctl/pubkey
 %%SWANCTL%%@dir etc/swanctl/rsa
 %%SWANCTL%%@dir etc/swanctl/x509
 %%SWANCTL%%@dir etc/swanctl/x509aa
 %%SWANCTL%%@dir etc/swanctl/x509ac
 %%SWANCTL%%@dir etc/swanctl/x509ca
 %%SWANCTL%%@dir etc/swanctl/x509crl
+%%SWANCTL%%@dir etc/swanctl/x509ocsp
