@@ -1,0 +1,4 @@
+Deface is a library that allows you to customize ERB, Haml and Slim
+views in a Rails application without editing the underlying view.
+
+WWW: https://github.com/DefaceCommunity/deface
