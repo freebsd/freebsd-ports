@@ -1301,6 +1301,7 @@
     SUBDIR += libpololu-avr
     SUBDIR += libpru
     SUBDIR += libpthread-stubs
+    SUBDIR += libqb
     SUBDIR += libqcow
     SUBDIR += libqxt
     SUBDIR += libr3
