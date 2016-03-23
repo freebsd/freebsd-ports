@@ -165,6 +165,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Baghdad.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Baku.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Bangkok.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Barnaul.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Beirut.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Bishkek.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Brunei.pm
@@ -257,6 +258,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/EST5EDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Amsterdam.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Andorra.pm
+%%SITE_PERL%%/DateTime/TimeZone/Europe/Astrakhan.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Athens.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Belgrade.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Berlin.pm
@@ -290,6 +292,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Stockholm.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Tallinn.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Tirane.pm
+%%SITE_PERL%%/DateTime/TimeZone/Europe/Ulyanovsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Uzhgorod.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vienna.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vilnius.pm
