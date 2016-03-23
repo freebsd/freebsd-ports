@@ -9,6 +9,8 @@ lib/gtags/exuberant-ctags.a
 lib/gtags/exuberant-ctags.so
 lib/gtags/pygments-parser.a
 lib/gtags/pygments-parser.so
+lib/gtags/universal-ctags.a
+lib/gtags/universal-ctags.so
 lib/gtags/user-custom.a
 lib/gtags/user-custom.so
 man/man1/global.1.gz
@@ -27,11 +29,11 @@ share/gtags/PLUGIN_HOWTO
 share/gtags/PLUGIN_HOWTO.pygments
 share/gtags/README.PATCHES
 share/gtags/SERVERSIDE_HOWTO
-share/gtags/completion.cgi.tmpl
+share/gtags/completion.cgi
 share/gtags/elvis-2.2_0.patch
 share/gtags/elvis.rc
 share/gtags/geco.rc
-share/gtags/global.cgi.tmpl
+share/gtags/global.cgi
 share/gtags/globash.rc
 share/gtags/gtags-cscope.vim
 share/gtags/gtags.conf
@@ -77,14 +79,14 @@ share/gtags/jquery/jquery.suggest.css
 share/gtags/jquery/jquery.suggest.js
 share/gtags/jquery/jquery.treeview.css
 share/gtags/jquery/jquery.treeview.js
-share/gtags/jscode_suggest.tmpl
-share/gtags/jscode_treeview.tmpl
+share/gtags/jscode_suggest
+share/gtags/jscode_treeview
 share/gtags/script/elvis-global
 share/gtags/script/global-client
 share/gtags/script/gtags-client
 share/gtags/script/htags-client
 share/gtags/script/less-global
 share/gtags/script/pygments_parser.py
-share/gtags/style.css.tmpl
+share/gtags/style.css
 share/gtags/vim74-gtags-cscope.patch
 @dir /var/gtags
