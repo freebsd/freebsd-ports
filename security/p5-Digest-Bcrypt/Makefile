@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Digest-Bcrypt
-PORTVERSION=	1.203
+PORTVERSION=	1.204
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Crypt-Eksblowfish>0:${PORTSDIR}/security/p5-Crypt-Eksblowfish
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+TEST_DEPENDS=	p5-Try-Tiny>=0.24:${PORTSDIR}/lang/p5-Try-Tiny
 
 USES=		perl5
 USE_PERL5=	configure
