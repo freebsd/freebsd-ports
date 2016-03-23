@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	responders
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
