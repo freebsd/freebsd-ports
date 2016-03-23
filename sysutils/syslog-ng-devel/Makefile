@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.7.2
+PORTVERSION=	3.7.3
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
@@ -52,6 +52,8 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
 .include <bsd.port.options.mk>
+
+BUILD_DEPENDS+=		xsltproc:${PORTSDIR}/textproc/libxslt
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
@@ -121,7 +123,8 @@ CONFIGURE_ARGS+=        --disable-json
 .if ${PORT_OPTIONS:MJAVA}
 CONFIGURE_ARGS+=	--enable-java
 USE_JAVA=	yes
-BUILD_DEPENDS=		gradle:${PORTSDIR}/devel/gradle
+BUILD_DEPENDS+=		gradle:${PORTSDIR}/devel/gradle
+BUILD_DEPENDS+=		bash:${PORTSDIR}/shells/bash
 PLIST_FILES+= 		lib/syslog-ng/libmod-java.so \
 			lib/syslog-ng/java-modules/syslog-ng-core.jar \
 			lib/syslog-ng/java-modules/log4j-1.2.16.jar \
