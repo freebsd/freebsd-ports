@@ -13,6 +13,7 @@
     SUBDIR += biojava
     SUBDIR += blat
     SUBDIR += bowtie
+    SUBDIR += bowtie2
     SUBDIR += bwa
     SUBDIR += cd-hit
     SUBDIR += cdbfasta
