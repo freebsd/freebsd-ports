@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpad
-PORTVERSION=	4.6.0
+PORTVERSION=	4.7.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 
