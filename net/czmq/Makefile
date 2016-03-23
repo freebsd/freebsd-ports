@@ -3,6 +3,7 @@
 
 PORTNAME=	czmq
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.zeromq.org/
 
