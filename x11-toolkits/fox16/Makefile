@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fox
-PORTVERSION=	1.6.50
-PORTREVISION=	1
+PORTVERSION=	1.6.51
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fox-toolkit.org/pub/ \
     		http://ftp.fox-toolkit.org/pub/
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 USES=		jpeg libtool pathfix
-USE_GL=		yes
+USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl --with-x --with-xim
 USE_LDCONFIG=	yes
@@ -30,8 +29,9 @@ PLIST_SUB=	MAJORVER="${MAJORVER}"
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		APPS DEBUG DOCS OPTIMIZED_CFLAGS PROFILE SHM XFT
-OPTIONS_DEFAULT= 	SHM XFT
+OPTIONS_DEFINE=		APPS DEBUG DOCS OPTIMIZED_CFLAGS PROFILE SHM \
+			XCURSOR XFT XINPUT XRANDR XRENDER
+OPTIONS_DEFAULT= 	SHM XCURSOR XFT XINPUT XRANDR XRENDER
 OPTIONS_SUB=		yes
 
 APPS_DESC=		Install sample applications
@@ -44,15 +44,28 @@ PROFILE_CONFIGURE_ON=	--with-profiling=gprof
 SHM_DESC=		Shared Memory support
 SHM_CONFIGURE_ON=	--with-xshm=yes
 SHM_CONFIGURE_OFF=	--with-xshm=no
+XCURSOR_USE=		xorg=xcursor
+XCURSOR_CONFIGURE_ON=	--with-xcursor=yes
+XCURSOR_CONFIGURE_OFF=	--with-xcursor=no
 XFT_USE=		xorg=xft
 XFT_CONFIGURE_ON=	--with-xft=yes
 XFT_CONFIGURE_OFF=	--with-xft=no
 XFT_CPPFLAGS=		$$(freetype-config --cflags)
 XFT_LDFLAGS=		$$(freetype-config --libs)
+XFT_IMPLIES=		XRENDER
+XINPUT_DESC=		X Input extension library support
+XINPUT_USE=		xorg=xi
+XINPUT_CONFIGURE_ON=	--with-xinput=yes
+XINPUT_CONFIGURE_OFF=	--with-xinput=no
+XRANDR_USE=		xorg=xrandr
+XRANDR_CONFIGURE_ON=	--with-xrandr=yes
+XRANDR_CONFIGURE_OFF=	--with-xrandr=no
+XRENDER_DESC=		X Render extension library support
+XRENDER_USE=		xorg=xrender
+XRENDER_CONFIGURE_ON=	--with-xrender=yes
+XRENDER_CONFIGURE_OFF=	--with-xrender=no
 
 MAJORVER=	${PORTVERSION:R}
-
-.include <bsd.port.options.mk>
 
 post-patch:
 # Rename man pages as in manpage.1 --> manpage-16.1 to avoid
@@ -83,13 +96,13 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^\(screenshotsdir\).*$$|\1=${DOCSDIR}/html|' \
 		${WRKSRC}/doc/screenshots/Makefile.in
-.if !${PORT_OPTIONS:MAPPS}
+
+post-patch-APPS-off:
 	@${REINPLACE_CMD} -e \
 		's|^\(SUBDIRS.*\)adie|\1|; \
 		 s|^\(SUBDIRS.*\)pathfinder|\1|; \
 		 s|^\(SUBDIRS.*\)calculator|\1|' \
 		${WRKSRC}/Makefile.in
-.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libCHART-${MAJORVER}.so.[0-9].*
