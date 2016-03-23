@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-skk
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	japanese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
