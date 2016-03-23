@@ -29,6 +29,8 @@ PLIST_FILES=	bin/advmess \
 		man/man1/advmess.1.gz \
 		share/advance/sysinfo.dat
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS_DEFINE=		FREETYPE SLANG
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT=	FREETYPE
