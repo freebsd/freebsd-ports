@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The aim is to remove all of the targets on each level
 
 BROKEN=		unfetchable
+DEPRECATED=	does not fetch
+EXPIRATION_DATE=2016-04-23
 
 LICENSE=	GPLv2
 
