@@ -17,7 +17,8 @@ LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
-		libnotify.so:${PORTSDIR}/devel/libnotify
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit \
 		gnome-keyring>=3.0.0:${PORTSDIR}/security/gnome-keyring
 
