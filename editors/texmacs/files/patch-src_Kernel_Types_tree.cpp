@@ -1,6 +1,6 @@
---- ./src/Kernel/Types/tree.cpp.orig	2014-08-28 13:09:45.011154991 -0400
-+++ ./src/Kernel/Types/tree.cpp	2014-08-28 13:10:18.050663990 -0400
-@@ -195,7 +195,7 @@
+--- src/Kernel/Types/tree.cpp.orig	2015-12-16 08:40:02 UTC
++++ src/Kernel/Types/tree.cpp
+@@ -197,7 +197,7 @@ operator << (tm_ostream& out, tree t) {
  }
  
  void

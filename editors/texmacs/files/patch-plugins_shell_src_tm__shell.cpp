@@ -1,5 +1,5 @@
---- plugins/shell/src/tm_shell.cpp.orig	2010-09-27 04:36:19.000000000 -0700
-+++ plugins/shell/src/tm_shell.cpp	2010-09-27 04:38:09.000000000 -0700
+--- plugins/shell/src/tm_shell.cpp.orig	2013-11-03 23:09:21 UTC
++++ plugins/shell/src/tm_shell.cpp
 @@ -19,14 +19,10 @@
  #include <unistd.h>
  #include <sys/time.h>

@@ -1,7 +1,7 @@
---- plugins/r/src/tm_r.c.orig	2010-11-24 12:52:55.000000000 -0800
-+++ plugins/r/src/tm_r.c	2010-12-12 11:31:52.000000000 -0800
-@@ -10,18 +10,21 @@
- ******************************************************************************/
+--- plugins/r/src/tm_r.c.orig	2014-03-03 11:44:12 UTC
++++ plugins/r/src/tm_r.c
+@@ -11,19 +11,22 @@
+ #define TEXMACS_R_VERSION "0.15"
  
  #include <stdio.h>
 +#include <sys/types.h>

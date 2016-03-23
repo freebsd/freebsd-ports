@@ -1,6 +1,6 @@
---- ./src/Typeset/Boxes/Basic/boxes.cpp.orig	2014-08-28 13:13:07.420709990 -0400
-+++ ./src/Typeset/Boxes/Basic/boxes.cpp	2014-08-28 13:13:15.171566990 -0400
-@@ -850,7 +850,7 @@
+--- src/Typeset/Boxes/Basic/boxes.cpp.orig	2015-12-10 11:04:15 UTC
++++ src/Typeset/Boxes/Basic/boxes.cpp
+@@ -868,7 +868,7 @@ attach_dip (tree ref, path dip) {
  ******************************************************************************/
  
  void
