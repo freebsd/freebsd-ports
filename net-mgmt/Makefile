@@ -194,6 +194,7 @@
     SUBDIR += p5-AnyEvent-SNMP
     SUBDIR += p5-BigIP-iControl
     SUBDIR += p5-Cflow
+    SUBDIR += p5-Cisco-CopyConfig
     SUBDIR += p5-Cisco-Reconfig
     SUBDIR += p5-Data-Validate-IP
     SUBDIR += p5-FusionInventory-Agent
