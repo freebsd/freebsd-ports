@@ -19,8 +19,6 @@ INSTALL_TARGET?=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
-BROKEN_FreeBSD_9=	Fails to build
-
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${ARCH} == i386 && ${OSVERSION} < 1000036
