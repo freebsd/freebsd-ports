@@ -281,7 +281,7 @@ OPTIONS_DEFINE+= \
 	GS_pngalpha \
 	GS_png48 \
 	GS_ps2write \
-	GS_epswrite \
+	GS_eps2write \
 	GS_cfax \
 	GS_sgirgb \
 	GS_sunhmono \
@@ -573,7 +573,7 @@ OPTIONS_DEFAULT+= \
 	GS_pngmono \
 	GS_psdf \
 	GS_ps2write \
-	GS_epswrite \
+	GS_eps2write \
 	GS_cfax \
 	GS_sgirgb \
 	GS_sunhmono \

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asymptote
-PORTVERSION=	2.32
-PORTREVISION=	5
+PORTVERSION=	2.37
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -14,7 +13,8 @@ COMMENT=	Powerful script-based vector graphics language
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
+LIB_DEPENDS=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded \
+		libsigsegv.so:${PORTSDIR}/devel/libsigsegv
 RUN_DEPENDS=	animate:${PORTSDIR}/graphics/ImageMagick \
 		gv:${PORTSDIR}/print/gv \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
@@ -22,20 +22,19 @@ RUN_DEPENDS=	animate:${PORTSDIR}/graphics/ImageMagick \
 
 ALL_TARGET=	asy asy-keywords.el
 
-CONFIGURE_ARGS=	--enable-gc
+CONFIGURE_ARGS=	--enable-gc=system
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-asy
 
-MAKE_ENV=	${CONFIGURE_ENV} ASYMPTOTE_HOME=${WRKDIR} HOME=${WRKDIR}
+MAKE_ENV=	ASYMPTOTE_HOME=${WRKDIR} HOME=${WRKDIR}
 MAKE_JOBS_UNSAFE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		ghostscript gmake perl5 python tar:tgz
-USE_AUTOTOOLS=	autoconf aclocal
+USES=		gettext-runtime ghostscript gmake ncurses perl5 python tar:tgz
 USE_GL=	glut
 USE_PERL5=	build
 USE_TEX=	dvipsk formats
@@ -64,6 +63,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES FFTW GSL MANPAGES OFFSCREEN READLINE
 
 READLINE_CONFIGURE_ENABLE=	readline
 READLINE_DESC=	${LIBEDIT_DESC}
+READLINE_USES=	readline
 
 .include <bsd.port.options.mk>
 
@@ -80,15 +80,11 @@ INSTALL_TARGET+=	install-man
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},1' -i.bak ${WRKSRC}/settings.cc
-
-run-autotools:
-	@(cd ${CONFIGURE_WRKSRC} && \
-	${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} --force --install)
+	@${REINPLACE_CMD} 's/-lgc/-lgc-threaded/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's,/usr/lib/libgs.so,${LOCALBASE}/lib/libgs.so,' \
+		${WRKSRC}/settings.cc
 
 post-install:
-	@(cd ${STAGEDIR}${PREFIX}/bin && \
-	${LN} -sf ../share/asymptote/GUI/xasy.py xasy)
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/asy
 
 .include <bsd.port.mk>

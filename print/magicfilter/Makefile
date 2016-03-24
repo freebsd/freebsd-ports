@@ -3,7 +3,7 @@
 
 PORTNAME=	magicfilter
 PORTVERSION=	2.3.h
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/magicfilter/
 

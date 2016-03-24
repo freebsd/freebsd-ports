@@ -3,7 +3,7 @@
 
 PORTNAME=	pspresent
 PORTVERSION=	1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.zmatt.net/pspresent/
 

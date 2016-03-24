@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160324:
+  AFFECTS: print/ghostscript9-base
+  AUTHOR: tijl@FreeBSD.org
+
+  The default Ghostscript port has changed from print/ghostscript9-base,
+  which is no longer developed, to print/ghostscript9-agpl-base.  Package
+  users will upgrade automatically.  Ports users can stick with the old
+  port by adding "DEFAULT_VERSIONS+=ghostscript=9" to /etc/make.conf, or
+  move to the new port with:
+
+    portmaster -o print/ghostscript9-agpl-base ghostscript9-base
+
+  And if you have ghostscript9-x11 installed:
+
+    portmaster -o print/ghostscript9-agpl-x11 ghostscript9-x11
+
 20160317:
   AFFECTS: security/openvas-client
   AUTHOR: tijl@FreeBSD.org
