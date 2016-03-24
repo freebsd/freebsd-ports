@@ -38,6 +38,11 @@ catport() {
 
 identical_options() {
    local origin=$(catport $1)
+   if [ ! -d ${origin} ]; then
+       # origin no longer exists, list it anyway without testing further
+       echo ${origin}
+       return
+   fi
    local selected_pristine=$(/usr/bin/make -C ${origin} \
    	-V SELECTED_OPTIONS PORT_DBDIR=/dev/null)
    local selected_now=$(/usr/bin/make -C ${origin} -V SELECTED_OPTIONS)
