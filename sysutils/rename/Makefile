@@ -12,7 +12,7 @@ COMMENT=	Rename multiple files using regular expressions
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/renamex man/man1/renamex.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
