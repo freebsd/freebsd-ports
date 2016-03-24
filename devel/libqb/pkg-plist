@@ -33,4 +33,4 @@ sbin/qb-blackbox
 @comment %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown
-@dir(,,1770) %%QB_SOCKET_DIR%%
+@dir(,haclient,1770) %%QB_SOCKET_DIR%%
