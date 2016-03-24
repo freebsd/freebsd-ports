@@ -3,6 +3,7 @@
 
 PORTNAME=	libqb
 PORTVERSION=	0.17.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ClusterLabs/libqb/releases/download/v${PORTVERSION}/
 
