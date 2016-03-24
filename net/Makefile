@@ -75,6 +75,7 @@
     SUBDIR += coda6_client
     SUBDIR += coda6_server
     SUBDIR += corkscrew
+    SUBDIR += corosync
     SUBDIR += courier-authlib-ldap
     SUBDIR += crtmpserver
     SUBDIR += cryptcat
