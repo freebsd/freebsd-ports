@@ -706,10 +706,10 @@ share/pixmaps/umit/wizard_logo.png
 %%DATADIR%%/misc/os_classification.dmp
 %%DATADIR%%/misc/os_db.dmp
 %%DATADIR%%/misc/services.dmp
-@dir %%DATADIR%%/plugins
 %%DATADIR%%/sql/sqlite-delete-triggers.sql
 %%DATADIR%%/sql/sqlite-drop-tables.sql
 %%DATADIR%%/sql/sqlite-drop-triggers.sql
 %%DATADIR%%/sql/sqlite-insert-triggers.sql
 %%DATADIR%%/sql/sqlite-schema.sql
 %%DATADIR%%/sql/sqlite-update-triggers.sql
+@dir %%DATADIR%%/plugins
