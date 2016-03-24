@@ -3,6 +3,7 @@
 
 PORTNAME=	corosync
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://build.clusterlabs.org/corosync/releases/
 
@@ -15,6 +16,7 @@ LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libqb.so:${PORTSDIR}/devel/libqb
 
 USES=		gmake libtool pathfix pkgconfig
+USE_GCC=	yes	# segfaults when built with Clang
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME} ${PORTNAME}-notifyd
 GNU_CONFIGURE=	yes
