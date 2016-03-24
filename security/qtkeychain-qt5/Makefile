@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtkeychain
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 PKGNAMESUFFIX?=	-qt5
@@ -10,6 +10,7 @@ MAINTAINER=	6yearold@gmail.com
 COMMENT=	Platform independent Qt API for storing passwords
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	frankosterfeld
