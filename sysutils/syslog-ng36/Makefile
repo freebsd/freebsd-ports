@@ -3,6 +3,9 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.6.4
+.if !defined(MASTERDIR)
+PKGNAMESUFFIX=	36
+.endif
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
