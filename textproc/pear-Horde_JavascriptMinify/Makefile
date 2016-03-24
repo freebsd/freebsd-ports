@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_JavascriptMinify
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org
