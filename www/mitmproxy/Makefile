@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mitmproxy
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	www python
 MASTER_SITES=	http://mitmproxy.org/download/
 
@@ -11,6 +10,7 @@ MAINTAINER=	gaod@hychen.org
 COMMENT=	SSL-capable man-in-the-middle proxy
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>0:${PORTSDIR}/devel/py-pyasn1 \
 		${PYTHON_PKGNAMEPREFIX}Flask>0:${PORTSDIR}/www/py-flask \
@@ -22,5 +22,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>0:${PORTSDIR}/devel/py-pyasn1 \
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
