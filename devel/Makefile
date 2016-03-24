@@ -1150,6 +1150,7 @@
     SUBDIR += libconcurrent
     SUBDIR += libconfig
     SUBDIR += libconfuse
+    SUBDIR += libcrossguid
     SUBDIR += libcutl
     SUBDIR += libcwd
     SUBDIR += libcxxrt
