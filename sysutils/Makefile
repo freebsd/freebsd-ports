@@ -544,6 +544,7 @@
     SUBDIR += mbgtools
     SUBDIR += mcelog
     SUBDIR += mcollective
+    SUBDIR += mcollective-actionpolicy-auth
     SUBDIR += mcollective-nettest-agent
     SUBDIR += mcollective-nettest-client
     SUBDIR += mcollective-nettest-common
