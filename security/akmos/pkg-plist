@@ -1,0 +1,7 @@
+bin/akmos
+include/akmos.h
+lib/libakmos.a
+lib/libakmos.so
+lib/libakmos.so.5
+lib/libakmos.so.0.5
+man/man1/akmos.1.gz
