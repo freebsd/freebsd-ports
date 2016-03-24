@@ -40,7 +40,7 @@ identical_options() {
    local origin=$(catport $1)
    if [ ! -d ${origin} ]; then
        # origin no longer exists, list it anyway without testing further
-       echo ${origin}
+       echo $1
        return
    fi
    local selected_pristine=$(/usr/bin/make -C ${origin} \
