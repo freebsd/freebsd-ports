@@ -3,6 +3,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.99.4
+PORTREVISION=	1
 CATEGORIES=	editors print
 MASTER_SITES=	http://www.texmacs.org/Download/ftp/tmftp/source/
 DISTNAME=	TeXmacs-${PORTVERSION}-src

@@ -1,6 +1,7 @@
 # Created by: Jing-Tang Keith Jang <keith@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	2
 CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org

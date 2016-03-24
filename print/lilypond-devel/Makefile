@@ -3,7 +3,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.19.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -46,7 +46,7 @@ INFO=		internals \
 		lilypond-web \
 		music-glossary
 
-USES=		bison:build gettext ghostscript:9 gmake pkgconfig perl5 \
+USES=		bison:build gettext ghostscript gmake pkgconfig perl5 \
 		compiler:c++11-lib python:-3
 USE_CXXSTD=	c++11
 USE_TEX=	latex
