@@ -3,7 +3,7 @@
 
 PORTNAME=	images
 PORTVERSION=	4.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/camlspotter/camlimages/get/

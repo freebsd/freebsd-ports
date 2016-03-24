@@ -3,7 +3,7 @@
 
 PORTNAME=	font2svg
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	http://BSDforge.com/projects/source/print/font2svg/
 

@@ -167,6 +167,7 @@ man/man1/xasy.1x.gz
 %%DATADIR%%/size11.asy
 %%DATADIR%%/slide.asy
 %%DATADIR%%/slopefield.asy
+%%DATADIR%%/smoothcontour3.asy
 %%DATADIR%%/solids.asy
 %%DATADIR%%/stats.asy
 %%DATADIR%%/syzygy.asy
@@ -203,6 +204,7 @@ man/man1/xasy.1x.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/1overx.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BezierPatch.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BezierSurface.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BezierTriangle.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Bode.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CAD1.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CDlabel.asy
@@ -323,6 +325,8 @@ man/man1/xasy.1x.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gamma3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/generalaxis.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/generalaxis3.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/genusthree.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/genustwo.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphmarkers.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid3xyz.asy
@@ -474,6 +478,7 @@ man/man1/xasy.1x.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tanh.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/teapot.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tensor.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tetra.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/textpath.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/thermodynamics.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threeviews.asy
@@ -516,4 +521,7 @@ man/man1/xasy.1x.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xxsq01y.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yingyang.asy
 %%TEXMFLOCALDIR%%/tex/context/third/asymptote/colo-asy.tex
-@dir %%TEXMFLOCALDIR%%/tex/latex/asymptote
+%%TEXMFLOCALDIR%%/tex/latex/asymptote/asycolors.sty
+%%TEXMFLOCALDIR%%/tex/latex/asymptote/asymptote.sty
+%%TEXMFLOCALDIR%%/tex/latex/asymptote/latexmkrc
+%%TEXMFLOCALDIR%%/tex/latex/asymptote/ocg.sty
