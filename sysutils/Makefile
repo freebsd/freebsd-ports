@@ -150,6 +150,7 @@
     SUBDIR += cloop-utils
     SUBDIR += cloudabi-utils
     SUBDIR += clsync
+    SUBDIR += cluster-glue
     SUBDIR += cmdwatch
     SUBDIR += cmockery2
     SUBDIR += cmogstored
