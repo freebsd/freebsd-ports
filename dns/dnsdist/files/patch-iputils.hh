@@ -1,7 +1,7 @@
---- iputils.hh.orig	2016-01-13 10:18:24 UTC
+--- iputils.hh.orig	2016-02-05 09:35:08 UTC
 +++ iputils.hh
-@@ -59,6 +59,11 @@
- #define le64toh(x) OSSwapLittleToHostInt64(x)
+@@ -79,6 +79,11 @@
+ 
  #endif
  
 +// for FreeBSD
@@ -9,6 +9,6 @@
 +#include <sys/endian.h>
 +#endif
 +
- // for illumos
- #ifdef BE_64
- 
+ union ComboAddress {
+   struct sockaddr_in sin4;
+   struct sockaddr_in6 sin6;

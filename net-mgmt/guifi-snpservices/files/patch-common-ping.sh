@@ -1,5 +1,5 @@
---- ./common/ping.sh.orig	2014-02-21 15:53:13.000000000 +0000
-+++ ./common/ping.sh	2014-04-10 14:19:56.000000000 +0000
+--- ./common/ping.sh.orig	2015-05-22 23:50:50.000000000 +0100
++++ ./common/ping.sh	2016-01-31 18:07:24.559136016 +0000
 @@ -1,15 +1,15 @@
  #!/bin/sh
 - PING="/bin/ping"
@@ -18,5 +18,5 @@
 - if [ $LOSS = 100 ];
 + if [ "$LOSS" = 100 ];
   then
-                echo 0
-  else
+     echo 0
+     echo ",$ADDR," >> /tmp/blacklist.snmp

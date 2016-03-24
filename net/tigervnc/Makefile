@@ -3,6 +3,7 @@
 
 PORTNAME=	tigervnc
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net x11-servers
 
@@ -24,7 +25,7 @@ CONFLICTS=	tridiavnc-[0-9]* \
 		tightvnc-[0-9]* \
 		vnc-[0-9]*
 
-USES=		autoreconf:build cmake cpe gmake libtool pkgconfig python
+USES=		autoreconf:build cmake cpe gmake jpeg libtool pkgconfig python
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
@@ -38,10 +39,9 @@ USE_XORG+=	bigreqsproto compositeproto damageproto fixesproto fontsproto glproto
 
 CFLAGS+=	-fPIC
 
-OPTIONS_DEFINE=		GNUTLS NLS PAM VIEWER HPJPG DOCS
+OPTIONS_DEFINE=		GNUTLS NLS PAM VIEWER DOCS
 OPTIONS_DEFAULT=	GNUTLS NLS PAM VIEWER
 VIEWER_DESC=		Build vncviewer
-HPJPG_DESC=		Build with High-Performance JPEG support
 
 .include <bsd.port.options.mk>
 
@@ -87,12 +87,6 @@ DESKTOP_ENTRIES=	"TigerVNC viewer" "Connect to VNC server and display remote des
 .else
 CMAKE_ARGS+=	-DBUILD_VIEWER=0
 PLIST_SUB+=	VIEWER="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MHPJPG}
-LIB_DEPENDS+=	libturbojpeg.so:${PORTSDIR}/graphics/libjpeg-turbo
-.else
-USES+=		jpeg
 .endif
 
 MAKE_ARGS+=	TIGERVNC_SRCDIR=${WRKSRC}

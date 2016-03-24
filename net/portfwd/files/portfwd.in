@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: portfwd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable the portfwd daemon:
+#
+# portfwd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=portfwd
+rcvar=portfwd_enable
+
+load_rc_config ${name}
+
+: ${portfwd_enable:="NO"}
+: ${portfwd_config:="%%PREFIX%%/etc/portfwd.conf"}
+
+required_files="${portfwd_config}"
+command="/usr/sbin/daemon"
+command_args="-f -r %%PREFIX%%/sbin/portfwd -g -c ${portfwd_config}"
+
+run_rc_command "$1"

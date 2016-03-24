@@ -3,6 +3,7 @@
 
 PORTNAME=	gvfs
 PORTVERSION=	1.26.3
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgcr-base-3.so:${PORTSDIR}/security/gcr \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+		libsecret-1.so:${PORTSDIR}/security/libsecret
 
 PORTSCOUT=	limitw:1,even
 
@@ -33,7 +34,6 @@ CONFIGURE_ARGS+=\
 		--disable-gdu \
 		--disable-udev \
 		--disable-goa \
-		--disable-keyring \
 		--disable-libmtp \
 		--disable-gtk
 
@@ -91,10 +91,6 @@ PLIST_SUB+=	HAL=""
 CONFIGURE_ARGS+=--disable-hal
 PLIST_SUB+=	HAL="@comment "
 .endif
-
-# https://bugzilla.gnome.org/show_bug.cgi?id=722411
-post-patch:
-	@${RM} ${WRKSRC}/monitor/hal/gvfsdbusutils.[ch]
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/remote-volume-monitors

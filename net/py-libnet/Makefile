@@ -28,6 +28,9 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 OPTIONS_DEFINE=	EXAMPLES
 OSVER=		uname -r
 
+post-patch:
+	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/setup.py
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	${INSTALL_LIB} \

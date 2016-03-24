@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	farbfeld
-PORTVERSION=	1
+PORTVERSION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.suckless.org/farbfeld/
 

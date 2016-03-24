@@ -1,0 +1,7 @@
+The PagedGeometry engine is an add-on to Ogre which provides highly
+optimized methods for rendering massive amounts of small meshes,
+covering a possibly infinite area. This is especially well suited for
+dense forests and outdoor scenes, with millions of trees, bushes,
+grass, rocks, etc.
+
+WWW: http://www.ogre3d.org/tikiwiki/PagedGeometry+Engine

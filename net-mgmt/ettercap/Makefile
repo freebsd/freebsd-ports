@@ -27,11 +27,10 @@ CMAKE_ARGS=	-DBUNDLED_LIBS=OFF \
 		-DHAVE_DLOPEN=ON \
 		-DHAVE_PCAP=${LIBDIR} \
 		-DHAVE_RESOLV=${LIBDIR} \
-		-DHAVE_LIBNET=${LOCALBASE}/lib/libnet11 \
 		-DINSTALL_SYSCONFDIR=${PREFIX}/etc \
 		-DMAN_INSTALLDIR=${PREFIX}/man
 CMAKE_VERBOSE=	yes
-LDFLAGS+=	-L${LIBDIR} -L${LOCALBASE}/lib/libnet11 ${ICONV_LIB} -lnet -lpcap
+LDFLAGS+=	${ICONV_LIB} -lnet -lpcap
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USES=		bison cmake:outsource cpe iconv localbase pkgconfig

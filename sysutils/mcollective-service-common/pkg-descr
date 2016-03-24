@@ -1,0 +1,4 @@
+The mcollective service agent lets you stop, start, restart and query the
+statuses of services via MCollective.
+
+WWW: https://github.com/puppetlabs/mcollective-service-agent

@@ -34,6 +34,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libpugixml.so:${PORTSDIR}/textproc/pugixml
 
 CMAKE_ARGS=	-DDCMTK_LIBRARIES="dcmdsig;charls;dcmjpls" \
+		-DDCMTK_DIR="${LOCALBASE}" \
 		-DDCMTK_DICTIONARY_DIR="${LOCALBASE}/share/dcmtk" \
 		-DUSE_SYSTEM_MONGOOSE=OFF \
 		-DUNIT_TESTS_WITH_HTTP_CONNEXIONS=OFF

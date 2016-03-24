@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:${PORTSDIR}/devel/maven33
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	glyptodon
-GH_TAGNAME=	${PORTVERSION}
 
 MVN=		mvn
 MVN_ARGS=	package -Duser.home=${WRKDIR}

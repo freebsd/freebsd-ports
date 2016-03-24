@@ -200,6 +200,7 @@ bin/tmlink
 %%SITE_ARCH%%/Prima/examples/fontdlg.pl
 %%SITE_ARCH%%/Prima/examples/frames.pl
 %%SITE_ARCH%%/Prima/examples/generic.pl
+%%SITE_ARCH%%/Prima/examples/gradient.pl
 %%SITE_ARCH%%/Prima/examples/grid.pl
 %%SITE_ARCH%%/Prima/examples/grip.pl
 %%SITE_ARCH%%/Prima/examples/iv.pl

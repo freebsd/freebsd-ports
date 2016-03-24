@@ -12,7 +12,7 @@
  # define GTEST_OS_HPUX 1
  #elif defined __native_client__
  # define GTEST_OS_NACL 1
-+#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__DragonFly__)
 +# define GTEST_OS_FREEBSD 1
 +# define GTEST_USE_OWN_TR1_TUPLE 1
  #endif  // __CYGWIN__

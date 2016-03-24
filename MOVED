@@ -6541,7 +6541,6 @@ devel/entity||2014-09-01|Not staged
 devel/flowdesigner||2014-09-01|Not staged
 devel/gjstest||2014-09-01|Not staged
 devel/jzmq||2014-09-01|Not staged
-devel/libparserutils||2014-09-01|Not staged
 devel/libslave||2014-09-01|Not staged
 devel/linux-kmod-compat||2014-09-01|Not staged
 devel/ml-doc||2014-09-01|Not staged
@@ -8234,3 +8233,11 @@ security/openvas-libnasl|security/openvas-libraries|2016-03-17|Merged
 security/openvas-server|security/openvas-scanner|2016-03-17|Renamed
 security/openvas-plugins|security/openvas-scanner|2016-03-17|Merged
 security/openvas-client||2016-03-17|Discontinued, try security/greenbone-security-assistant
+devel/py-icu|devel/py-pyicu|2016-03-19|Renamed to match upstream (PyPI) name
+www/eaccelerator||2016-03-20|Has expired: cannot be installed: doesn't work with lang/php56 port (doesn't support PHP 5.5 5.6 70)
+devel/pecl-inclued||2016-03-20|Has expired: cannot be installed: doesn't work with lang/php56 port (doesn't support PHP 5.5 5.6 70)
+security/pecl-taint||2016-03-20|Has expired: cannot be installed: doesn't work with lang/php56 port (doesn't support PHP 5.5 5.6 70)
+net/libnids-libnet11|net/libnids|2016-03-20|Same content
+lang/cloudabi-clang|devel/cloudabi-toolchain|2016-03-21|Merged
+graphics/hugin-devel||2016-03-22|overtaken by released version
+graphics/hugin-2016||2016-03-22|overtaken by released version

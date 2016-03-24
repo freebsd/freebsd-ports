@@ -1,0 +1,10 @@
+--- libnsutils.pc.in.orig	2015-05-01 09:14:45 UTC
++++ libnsutils.pc.in
+@@ -1,6 +1,6 @@
+ prefix=PREFIX
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/LIBDIR
++libdir=${exec_prefix}/lib
+ includedir=${prefix}/INCLUDEDIR
+ 
+ Name: libnsutils

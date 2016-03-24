@@ -151,6 +151,7 @@ libdata/pkgconfig/libsvn_client.pc
 libdata/pkgconfig/libsvn_delta.pc
 libdata/pkgconfig/libsvn_diff.pc
 libdata/pkgconfig/libsvn_fs.pc
+%%BDB%%libdata/pkgconfig/libsvn_fs_base.pc
 libdata/pkgconfig/libsvn_fs_fs.pc
 libdata/pkgconfig/libsvn_fs_util.pc
 libdata/pkgconfig/libsvn_fs_x.pc

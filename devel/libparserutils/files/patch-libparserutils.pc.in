@@ -1,0 +1,15 @@
+--- libparserutils.pc.in.orig	2016-02-16 08:49:51 UTC
++++ libparserutils.pc.in
+@@ -1,10 +1,10 @@
+ prefix=PREFIX
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/LIBDIR
++libdir=${exec_prefix}/lib
+ includedir=${prefix}/INCLUDEDIR
+ 
+ Name: libparserutils
+ Description: Utility library for facilitating parser development
+ Version: VERSION
+-Libs: -L${libdir} -lparserutils
++Libs: -L${libdir} -lparserutils -liconv
+ Cflags: -I${includedir}

@@ -1,61 +1,42 @@
 --- configure.orig	2004-01-20 18:54:58 UTC
 +++ configure
-@@ -2337,52 +2337,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
- #
- 
- filechk="yes"
--echo "$as_me:$LINENO: checking for /usr/lib/libnet.a" >&5
--echo $ECHO_N "checking for /usr/lib/libnet.a... $ECHO_C" >&6
--if test "${ac_cv_file__usr_lib_libnet_a+set}" = set; then
--  echo $ECHO_N "(cached) $ECHO_C" >&6
--else
--  test "$cross_compiling" = yes &&
--  { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
--echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
--   { (exit 1); exit 1; }; }
--if test -r "/usr/lib/libnet.a"; then
--  ac_cv_file__usr_lib_libnet_a=yes
--else
--  ac_cv_file__usr_lib_libnet_a=no
--fi
--fi
--echo "$as_me:$LINENO: result: $ac_cv_file__usr_lib_libnet_a" >&5
--echo "${ECHO_T}$ac_cv_file__usr_lib_libnet_a" >&6
--if test $ac_cv_file__usr_lib_libnet_a = yes; then
--  :
--else
--  filechk="no"
--fi
--
--if test "$filechk" = "no"; then
-- echo "$as_me:$LINENO: checking for /usr/local/lib/libnet.a" >&5
--echo $ECHO_N "checking for /usr/local/lib/libnet.a... $ECHO_C" >&6
--if test "${ac_cv_file__usr_local_lib_libnet_a+set}" = set; then
--  echo $ECHO_N "(cached) $ECHO_C" >&6
--else
--  test "$cross_compiling" = yes &&
--  { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
--echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
--   { (exit 1); exit 1; }; }
--if test -r "/usr/local/lib/libnet.a"; then
--  ac_cv_file__usr_local_lib_libnet_a=yes
--else
--  ac_cv_file__usr_local_lib_libnet_a=no
--fi
--fi
--echo "$as_me:$LINENO: result: $ac_cv_file__usr_local_lib_libnet_a" >&5
--echo "${ECHO_T}$ac_cv_file__usr_local_lib_libnet_a" >&6
--if test $ac_cv_file__usr_local_lib_libnet_a = yes; then
+@@ -2379,7 +2379,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_file__usr_local_lib_libnet_a" >&5
+ echo "${ECHO_T}$ac_cv_file__usr_local_lib_libnet_a" >&6
+ if test $ac_cv_file__usr_local_lib_libnet_a = yes; then
 -  filechk="yes" ; LDFLAGS="-L/usr/local/lib"; CPPFLAGS="-I/usr/local/include"
--fi
--
--fi
-+CPPFLAGS="${CPPFLAGS} `libnet-config --cflags`"
-+LDFLAGS="${LDFLAGS} `libnet-config --libs`"
++  filechk="yes" ; LIBS="$LIBS -L/usr/local/lib"; CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ fi
  
- if test "$filechk" = "no"; then { { echo "$as_me:$LINENO: error:
+ fi
+@@ -2530,7 +2530,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_file__usr_local_lib_libpcap_a" >&5
+ echo "${ECHO_T}$ac_cv_file__usr_local_lib_libpcap_a" >&6
+ if test $ac_cv_file__usr_local_lib_libpcap_a = yes; then
+-  filechk="yes" ; LDFLAGS="-L/usr/local/lib"; CPPFLAGS="-I/usr/local/include"
++  filechk="yes" ; LIBS="$LIBS -L/usr/local/lib"; CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ fi
  
-@@ -3045,8 +3001,8 @@ fi
+ fi
+@@ -2680,7 +2680,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_file__usr_local_lib_libncurses_a" >&5
+ echo "${ECHO_T}$ac_cv_file__usr_local_lib_libncurses_a" >&6
+ if test $ac_cv_file__usr_local_lib_libncurses_a = yes; then
+-  filechk="yes" ; LDFLAGS="-L/usr/local/lib"; CPPFLAGS="-I/usr/local/include"
++  filechk="yes" ; LIBS="$LIBS -L/usr/local/lib"; CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ fi
+ 
+ fi
+@@ -2840,7 +2840,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_file__usr_local_lib_libmenu_a" >&5
+ echo "${ECHO_T}$ac_cv_file__usr_local_lib_libmenu_a" >&6
+ if test $ac_cv_file__usr_local_lib_libmenu_a = yes; then
+-  filechk="yes" ; LDFLAGS="-L/usr/local/lib"; CPPFLAGS="-I/usr/local/include"
++  filechk="yes" ; LIBS="$LIBS -L/usr/local/lib"; CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+ fi
+ 
+ fi
+@@ -3045,8 +3045,8 @@ fi
  
  	CFLAGS="-Wall -O2"
  	;;

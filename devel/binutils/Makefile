@@ -4,7 +4,7 @@
 PORTNAME=	binutils
 PORTVERSION=	2.25.1
 PORTEPOCH=	1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 
@@ -82,5 +82,10 @@ post-install:
 .endif
 	${LN} -fs ../../bin/${BUTARGET}-size ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/size
 .endif
+.for tool in ${BUREMOVE}
+	@${RM} -f ${STAGEDIR}${PREFIX}/bin/${BUTARGET}-${tool} \
+	    ${STAGEDIR}${PREFIX}/man/man1/${BUTARGET}-${tool}.1 \
+	    ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/${tool}
+.endfor
 
 .include <bsd.port.post.mk>

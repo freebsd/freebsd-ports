@@ -23,7 +23,7 @@ QT_DIST=	${PORTNAME}
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_XORG=	x11 xcomposite xrender
-USES=		bison gmake gperf jpeg perl5 pkgconfig python:build qmake:outsource \
+USES=		bison gperf jpeg perl5 pkgconfig python:build qmake:outsource \
 		sqlite
 # Use flex(1) from ports.
 MAKE_ENV=	PATH="${LOCALBASE}/bin:${PATH}"

@@ -1,0 +1,11 @@
+--- gitlab_git.gemspec.orig	2016-03-21 16:38:03 UTC
++++ gitlab_git.gemspec
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<github-linguist>, ["~> 4.7.0"])
++      s.add_runtime_dependency(%q<github-linguist>, [">= 4.7.0"])
+       s.add_runtime_dependency(%q<activesupport>, ["~> 4.0"])
+       s.add_runtime_dependency(%q<rugged>, ["~> 0.24.0"])
+       s.add_runtime_dependency(%q<charlock_holmes>, ["~> 0.7.3"])

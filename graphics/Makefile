@@ -343,8 +343,6 @@
     SUBDIR += hs-svgcairo
     SUBDIR += hsetroot
     SUBDIR += hugin
-    SUBDIR += hugin-2016
-    SUBDIR += hugin-devel
     SUBDIR += icat
     SUBDIR += icc-profiles-basiccolor
     SUBDIR += icc-profiles-openicc
@@ -514,6 +512,8 @@
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
+    SUBDIR += libnsbmp
+    SUBDIR += libnsgif
     SUBDIR += libopenraw
     SUBDIR += libosmesa
     SUBDIR += libpano13
@@ -918,6 +918,8 @@
     SUBDIR += renrot
     SUBDIR += repng2jpeg
     SUBDIR += rgbpaint
+    SUBDIR += rigsofrods-caelum
+    SUBDIR += rigsofrods-pagedgeometry
     SUBDIR += ristretto
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdal
@@ -955,6 +957,7 @@
     SUBDIR += rubygem-ruby-graphviz
     SUBDIR += rubygem-scruffy
     SUBDIR += s10sh
+    SUBDIR += s2tc
     SUBDIR += sage
     SUBDIR += sam2p
     SUBDIR += sampleicc

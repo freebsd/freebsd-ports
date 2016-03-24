@@ -611,17 +611,9 @@ ${_LICENSE_COOKIE}:
 .	if !defined(NO_LICENSES_DIALOGS)
 # Dialog interface
 .		if ${_LICENSE_COMB} == "single"
-	@trap '${RM} -f $$tmpfile' EXIT INT TERM; \
-	tmpfile=$$(mktemp -t portlicenses); \
-	while true; do \
-		${DIALOG} --menu "License for ${PKGNAME} (${_LICENSE})" 21 70 15 accept "Accept license" reject "Reject license" view "View license" 2>"$${tmpfile}"; \
-		result=`${CAT} $${tmpfile}`; \
-		case $${result} in \
-		accept) break ;; \
-		reject) exit 1;; \
-		view)   ${DIALOG} --textbox "${_LICENSE_FILE}" 21 75 ;; \
-		esac; \
-	done
+	@${DIALOG} --title "License for ${PKGNAME} (${_LICENSE})" \
+		--yes-label Accept --no-label Reject --yesno \
+		"$$(${CAT} ${_LICENSE_FILE})" 21 76
 
 .		elif ${_LICENSE_COMB} == "dual"
 	@${RM} -f ${_LICENSE_ASK_DATA}

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-MAT
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,11 +12,12 @@ COMMENT=	Perl Memory Analysis Tool
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-List-UtilsBy>=0:${PORTSDIR}/devel/p5-List-UtilsBy \
-		p5-Struct-Dumb>=0:${PORTSDIR}/devel/p5-Struct-Dumb
+		p5-Struct-Dumb>=0.07:${PORTSDIR}/devel/p5-Struct-Dumb
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod

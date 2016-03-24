@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	routers2-extensions
-PORTVERSION=	2.19
-PORTREVISION=	2
+PORTVERSION=	2.23
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.steveshipway.org/software/rrd/ \
 		ftp://ftp.oav.oav.net/routers2/
@@ -18,7 +17,10 @@ RUN_DEPENDS=	${LOCALBASE}/www/routers2/routers2.cgi:${PORTSDIR}/net-mgmt/routers
 
 WRKSRC=		${WRKDIR}/routers2-v${PORTVERSION}/extensions
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	trend.cgi \
+		showcfg.cgi \
+		tonagios.cgi
 
 NO_BUILD=	YES
 NO_ARCH=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.9
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${PORTVERSION:S/./_/g}/
 
@@ -35,7 +35,7 @@ SHLIB_VER=	8
 PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}"
 
 DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS ChangeLog README
+DOC_FILES1=	AUTHORS ChangeLog
 
 DOCSRCDIR2=	${WRKSRC}/docs
 DOCSDIR2=	${DOCSDIR}/docs

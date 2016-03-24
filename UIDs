@@ -142,6 +142,7 @@ bs:*:220:220::0:0:Big Sister:/usr/local/bigsister:/bin/sh
 rtpproxy:*:222:222::0:0:& user:/nonexistent:/sbin/nologin
 postgrey:*:225:225::0:0:Postgrey Owner:/nonexistent:/usr/sbin/nologin
 sqlgrey:*:226:226::0:0:SQLgrey Owner:/nonexistent:/usr/sbin/nologin
+_hfm:*:227:227::0:0:hfm daemon:/nonexistent:/usr/sbin/nologin
 aprsd:*:240:240::0:0:aprsd:/nonexistent:/bin/sh
 tnc:*:241:241::0:0:aprsd:/nonexistent:/bin/sh
 prosody:*:242:242::0:0:Prosody Jabber Server:/nonexistent:/usr/sbin/nologin

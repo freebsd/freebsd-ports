@@ -387,6 +387,7 @@
     SUBDIR += libabw00
     SUBDIR += libcrm114
     SUBDIR += libcroco
+    SUBDIR += libcss
     SUBDIR += libcsv
     SUBDIR += libcue
     SUBDIR += libe-book
@@ -421,8 +422,10 @@
     SUBDIR += libucl
     SUBDIR += libunibreak
     SUBDIR += libuninameslist
+    SUBDIR += libutf8proc
     SUBDIR += libvisio
     SUBDIR += libvisio01
+    SUBDIR += libwapcaplet
     SUBDIR += libwpd
     SUBDIR += libwpd010
     SUBDIR += libwps

@@ -3,7 +3,7 @@
 
 PORTNAME=	vinagre
 PORTVERSION=	3.18.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,8 +14,7 @@ COMMENT=	VNC client for the GNOME Desktop
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libgtk-vnc-2.0.so:${PORTSDIR}/net/gtk-vnc \
 		libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libsecret-1.so:${PORTSDIR}/security/libsecret \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+		libsecret-1.so:${PORTSDIR}/security/libsecret
 RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
 PORTSCOUT=	limitw:1,even

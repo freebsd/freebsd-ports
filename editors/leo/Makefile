@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leo
-PORTVERSION=	5.1
-PORTREVISION=	2
+PORTVERSION=	5.2
 CATEGORIES=	editors python
 MASTER_SITES=	SF/${PORTNAME}/Leo/${PORTVERSION}-final
 DISTNAME=	Leo-${PORTVERSION}-final
@@ -30,10 +29,14 @@ USE_PYTHON=	autoplist distutils
 DESKTOP_ENTRIES="Leo" "Literate Editor with Outlines" \
 		"${PYTHONPREFIX_SITELIBDIR}/leo/Icons/leoapp32.png" "leo" "" ""
 
-OPTIONS_DEFINE=		DOCS PYENCHANT
+OPTIONS_DEFINE=		PYENCHANT
 
 PYENCHANT_DESC=		Spell checking support via PyEnchant
 PYENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>0:${PORTSDIR}/textproc/py-enchant
+
+post-patch:
+	@${LN} -sf leo/dist/leo-install.py ${WRKSRC}/leo-install.py
+	@${LN} -sf leo/dist/setup.py ${WRKSRC}/setup.py
 
 post-install:
 	@${REINPLACE_CMD} -e 's,===,==,' ${STAGEDIR}${PREFIX}/bin/leo \

@@ -3,6 +3,7 @@
 
 PORTNAME=	cclib
 PORTVERSION=	1.3.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 
 MAINTAINER=	robak@FreeBSD.org
@@ -15,8 +16,6 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	cclib
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

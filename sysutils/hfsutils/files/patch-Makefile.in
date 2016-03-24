@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Sep  1 02:40:14 1998
-+++ Makefile.in	Wed Nov  4 17:32:21 1998
-@@ -64,7 +64,8 @@
+--- Makefile.in.orig	1998-08-31 18:40:14 UTC
++++ Makefile.in
+@@ -64,7 +64,8 @@ TARGETS =	$(CLITARGETS) $(TCLTARGETS) $(
  
  CLITARGETS =	hattrib hcd hcopy hdel hdir hformat hls hmkdir hmount hpwd  \
  		hrename hrmdir humount hvol
@@ -10,7 +10,7 @@
  TKTARGETS =	xhfs
  
  LIBHFS =	libhfs/libhfs.a
-@@ -96,7 +97,7 @@
+@@ -96,7 +97,7 @@ UTILOBJS =	crc.o binhex.o copyin.o copyo
  all  :: @MAKE_TARGETS@
  
  all_cli :: $(CLITARGETS)
@@ -19,7 +19,7 @@
  all_tk  :: $(TKTARGETS)
  all_lib :: $(LIBHFS) $(LIBRSRC)
  
-@@ -129,9 +130,13 @@
+@@ -129,9 +130,13 @@ install_tcl :: all_tcl
  		$(BININSTALL) $$file "$(BINDEST)/.";  \
  	done
  

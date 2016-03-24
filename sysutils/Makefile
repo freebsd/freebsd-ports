@@ -250,6 +250,7 @@
     SUBDIR += entr
     SUBDIR += env4801
     SUBDIR += envconsul
+    SUBDIR += epazote
     SUBDIR += etcmerge
     SUBDIR += etcupdate
     SUBDIR += eventlog
@@ -405,6 +406,7 @@
     SUBDIR += heartbeat
     SUBDIR += heirloom
     SUBDIR += hextools
+    SUBDIR += hfm
     SUBDIR += hfsexplorer
     SUBDIR += hfsutils
     SUBDIR += hidesvn
@@ -541,8 +543,14 @@
     SUBDIR += mbgtools
     SUBDIR += mcelog
     SUBDIR += mcollective
+    SUBDIR += mcollective-nettest-agent
+    SUBDIR += mcollective-nettest-client
+    SUBDIR += mcollective-nettest-common
     SUBDIR += mcollective-nrpe-agent
     SUBDIR += mcollective-puppet-agent
+    SUBDIR += mcollective-service-agent
+    SUBDIR += mcollective-service-client
+    SUBDIR += mcollective-service-common
     SUBDIR += mcollective-shell-agent
     SUBDIR += mcollective-shell-client
     SUBDIR += mcron
@@ -618,6 +626,7 @@
     SUBDIR += ods2
     SUBDIR += ohmu
     SUBDIR += open
+    SUBDIR += openhpi
     SUBDIR += openipmi
     SUBDIR += openupsd
     SUBDIR += ori

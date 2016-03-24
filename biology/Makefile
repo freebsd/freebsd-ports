@@ -13,6 +13,7 @@
     SUBDIR += biojava
     SUBDIR += blat
     SUBDIR += bowtie
+    SUBDIR += bowtie2
     SUBDIR += bwa
     SUBDIR += cd-hit
     SUBDIR += cdbfasta
@@ -89,6 +90,7 @@
     SUBDIR += seqio
     SUBDIR += seqtools
     SUBDIR += sim4
+    SUBDIR += slclust
     SUBDIR += ssaha
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee

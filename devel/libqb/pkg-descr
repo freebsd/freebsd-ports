@@ -1,0 +1,5 @@
+libqb is a library with the primary purpose of providing high performance
+client server reusable features. It provides high performance logging, tracing,
+ipc, and poll.
+
+WWW: https://github.com/ClusterLabs/libqb/wiki

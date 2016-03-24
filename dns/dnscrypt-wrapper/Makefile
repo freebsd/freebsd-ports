@@ -3,7 +3,7 @@
 PORTNAME=	dnscrypt-wrapper
 PORTVERSION=	0.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 
 MAINTAINER=	freebsd@toyingwithfate.com

@@ -1,0 +1,3 @@
+If you've previously used IntelliJ IDEA for Java development make sure
+to recreate your Java SDK under "Platform Settings -> SDKs" so that
+the JavaFX runtime libraries are picked up correctly by IDEA.

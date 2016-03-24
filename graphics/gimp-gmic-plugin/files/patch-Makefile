@@ -1,64 +1,56 @@
---- Makefile.orig	2014-08-21 07:47:10 UTC
+--- Makefile.orig	2016-03-22 21:02:38 UTC
 +++ Makefile
-@@ -48,7 +48,7 @@
- # Set correct variables and paths.
- #----------------------------------
- OS := $(shell uname)
--CC = g++
-+CC = $(CXX)
- ifeq ($(OS),Linux)
- OS = Unix
- endif
-@@ -63,7 +63,7 @@
- USR = /opt/local
+@@ -158,14 +158,14 @@ OPENMP_LIBS = -lgomp
+ # This requires the presence of the X11 include and library files.
+ ifneq ($(OS),Darwin)
+ X11_CFLAGS = -Dcimg_display=1 -Dcimg_appname=\\\"gmic\\\" `pkg-config --cflags x11 || echo -I/usr/X11R6/include` #-Dcimg_use_xrandr
+-X11_LIBS = `pkg-config --libs x11 || echo -L/usr/X11R6/lib -lX11` -lpthread #`pkg-config --libs xrandr || echo -lXrandr`
++X11_LIBS = `pkg-config --libs x11 || echo -L/usr/X11R6/lib -lX11` $(PTHREAD_LIBS) #`pkg-config --libs xrandr || echo -lXrandr`
  else
- PLUGINDIR = `gimptool-2.0 --gimpplugindir`/plug-ins
--USR = /usr
-+USR = /usr/X11R6
+ ifeq (,$(wildcard /usr/X11R6))
+ X11_CFLAGS = -Dcimg_display=0 -Dcimg_appname=\\\"gmic\\\" #-Dcimg_use_xrandr
+-X11_LIBS = -lpthread #`pkg-config --libs xrandr || echo -lXrandr`
++X11_LIBS = $(PTHREAD_LIBS) #`pkg-config --libs xrandr || echo -lXrandr`
+ else
+ X11_CFLAGS = -Dcimg_display=1 -Dcimg_appname=\\\"gmic\\\" `pkg-config --cflags x11 || echo -I/usr/X11R6/include` #-Dcimg_use_xrandr
+-X11_LIBS = -L/usr/X11R6/lib -lX11 -lpthread #`pkg-config --libs xrandr || echo -lXrandr`
++X11_LIBS = -L/usr/X11R6/lib -lX11 $(PTHREAD_LIBS) #`pkg-config --libs xrandr || echo -lXrandr`
  endif
- ifeq ($(OSTYPE),msys)
- EXE = .exe
-@@ -136,7 +136,7 @@
- # This requires the presence of the X11 extension include and library files.
- # (package 'libx11-dev' on Debian).
- XSHM_CFLAGS = -Dcimg_use_xshm
--XSHM_LIBS = -L$(USR)/X11R6/lib -lXext
-+XSHM_LIBS = -L/usr/X11R6/lib -lXext
+ endif
+ # Flags to enable fast display, using XShm.
+@@ -287,7 +287,7 @@ STD_GIMP_CFLAGS += $(PARALLEL_CFLAGS) $(
+ STD_GIMP_LIBS += $(PARALLEL_LIBS) $(X11_LIBS)
+ else # Windows.
+ STD_GIMP_CFLAGS += $(PARALLEL_CFLAGS) $(OPENMP_CFLAGS) $(GDI32_CFLAGS)
+-STD_GIMP_LIBS += -mwindows $(PARALLEL_LIBS) $(OPENMP_LIBS) $(GDI32_LIBS) -lpthread -DPSAPI_VERSION=1 -lpsapi
++STD_GIMP_LIBS += -mwindows $(PARALLEL_LIBS) $(OPENMP_LIBS) $(GDI32_LIBS) $(PTHREAD_LIBS) -DPSAPI_VERSION=1 -lpsapi
+ endif
+ endif
  
- # Flags to enable image display, using GDI32.
- # This requires the presence of the GDI32 include and library files.
-@@ -293,6 +293,12 @@
+@@ -323,7 +323,7 @@ ifeq ($(OS),Unix)
  	@echo "**"
- 	$(MAKE) linux gimp lib  # zart
+ 	@echo "** Start building G'MIC with default Unix configuration."
+ 	@echo "**"
+-	$(MAKE) cli gimp lib zart
++	$(MAKE) cli gimp
  else
-+ifeq ($(OS),FreeBSD)
-+	@echo "**"
-+	@echo "** FreeBSD configuration"
-+	@echo "**"
-+	$(MAKE) freebsd gimp
-+else
  ifeq ($(OS),Darwin)
  	@echo "**"
- 	@echo "** MacOSX configuration."
-@@ -305,9 +311,10 @@
- 	$(MAKE) windows gimp
+@@ -339,7 +339,7 @@ endif
  endif
+ 
+ cli:
+-	$(MAKE) "CFLAGS+=$(STD_CLI_CFLAGS) $(OPT_CFLAGS)" "LIBS+=$(STD_CLI_LIBS)" gmic
++	$(MAKE) "CFLAGS+=$(STD_CLI_CFLAGS)" "LIBS+=$(STD_CLI_LIBS)" gmic
+ 	$(STRIP) gmic$(EXE)
+ 
+ cli_s:
+@@ -349,7 +349,7 @@ ifeq ($(OS),Darwin)
  endif
-+endif
  
  gimp:
--	$(MAKE) "CFLAGS=$(STD_GIMP_CFLAGS) $(OPT_CFLAGS)" "LIBS+=$(STD_GIMP_LIBS) $(OPT_LIBS)" "STRIP_EXE=1" gmic_gimp
-+	$(MAKE) "CFLAGS=$(STD_GIMP_CFLAGS)" "LIBS=$(STD_GIMP_LIBS)" "STRIP_EXE=1" gmic_gimp
+-	$(MAKE) "CFLAGS+=$(STD_GIMP_CFLAGS) $(OPT_CFLAGS)" "LIBS+=$(STD_GIMP_LIBS)" gmic_gimp
++	$(MAKE) "CFLAGS+=$(STD_GIMP_CFLAGS)" "LIBS+=$(STD_GIMP_LIBS)" gmic_gimp
  
  lib:
- 	$(MAKE) "CFLAGS=$(STD_LIB_CFLAGS) $(OPT_CFLAGS)" "LIBS+=$(STD_LIB_LIBS) $(OPT_LIBS)" gmic_lib
-@@ -323,6 +330,9 @@
- linux:
- 	$(MAKE) "CFLAGS=$(STD_UNIX_CFLAGS) $(OPT_CFLAGS)" "LIBS=$(STD_UNIX_LIBS)" "STRIP_EXE=1" gmic
- 
-+freebsd:
-+	$(MAKE) "CFLAGS+=$(STD_UNIX_CFLAGS)" "LIBS=$(STD_UNIX_LIBS)" "STRIP_EXE=1" gmic
-+
- solaris:
- 	$(MAKE) "CFLAGS=$(STD_UNIX_CFLAGS) $(OPT_CFLAGS)" "LIBS=$(STD_UNIX_LIBS) -R$(USR)/X11R6/lib -lrt -lnsl -lsocket" "STRIP_EXE=1" gmic
- 
+ 	$(MAKE) "CFLAGS+=$(STD_LIB_CFLAGS) $(OPT_CFLAGS)" "LIBS+=$(STD_LIB_LIBS)" libgmic

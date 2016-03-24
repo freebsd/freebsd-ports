@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	DOCS
 PORTSCOUT=	limit:^[0-9]
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake localbase
 
 PORTDOCS=	*
 

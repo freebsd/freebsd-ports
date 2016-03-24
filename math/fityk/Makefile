@@ -19,8 +19,8 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wojdyr
-GH_PROJECT=	fityk xylib:xylib
-GH_TAGNAME=	${DISTVERSIONFULL} v1.4:xylib
+GH_PROJECT=	xylib:xylib
+GH_TAGNAME=	v1.4:xylib
 
 USES=		autoreconf compiler:c++11-lib desktop-file-utils gmake \
 		libtool lua readline shared-mime-info

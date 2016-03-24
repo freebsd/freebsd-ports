@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.7.2
+PORTVERSION=	3.7.3
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
@@ -53,6 +53,8 @@ BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
 .include <bsd.port.options.mk>
 
+BUILD_DEPENDS+=		xsltproc:${PORTSDIR}/textproc/libxslt
+
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 
@@ -64,10 +66,7 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 
 .if ${PORT_OPTIONS:MSPOOF}
 LIB_DEPENDS+=		libnet.so:${PORTSDIR}/net/libnet
-LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
-CONFIGURE_ARGS+=	--enable-spoof-source --with-libnet=${LOCALBASE}/bin
-CFLAGS+=		`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
-LDFLAGS+=		`${LIBNET_CONFIG} --libs`
+CONFIGURE_ARGS+=	--enable-spoof-source
 .else
 CONFIGURE_ARGS+=	--disable-spoof-source
 .endif
@@ -124,7 +123,8 @@ CONFIGURE_ARGS+=        --disable-json
 .if ${PORT_OPTIONS:MJAVA}
 CONFIGURE_ARGS+=	--enable-java
 USE_JAVA=	yes
-BUILD_DEPENDS=		gradle:${PORTSDIR}/devel/gradle
+BUILD_DEPENDS+=		gradle:${PORTSDIR}/devel/gradle
+BUILD_DEPENDS+=		bash:${PORTSDIR}/shells/bash
 PLIST_FILES+= 		lib/syslog-ng/libmod-java.so \
 			lib/syslog-ng/java-modules/syslog-ng-core.jar \
 			lib/syslog-ng/java-modules/log4j-1.2.16.jar \
@@ -148,8 +148,6 @@ CONFIGURE_ARGS+=        --disable-python
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' \
-		${WRKSRC}/configure
 	@${CP} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 	@${CP} ${WRKSRC}/scl/scl.conf ${WRKSRC}/scl/scl.conf.sample
 

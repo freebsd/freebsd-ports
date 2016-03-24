@@ -153,7 +153,6 @@
     SUBDIR += dummyflash
     SUBDIR += e107
     SUBDIR += e2guardian
-    SUBDIR += eaccelerator
     SUBDIR += edbrowse
     SUBDIR += efront
     SUBDIR += elgg
@@ -366,12 +365,14 @@
     SUBDIR += larbin
     SUBDIR += lessc
     SUBDIR += libapreq2
+    SUBDIR += libdom
     SUBDIR += libecap
     SUBDIR += libepc
     SUBDIR += libevhtp
     SUBDIR += libgtkhtml
     SUBDIR += libhpack
     SUBDIR += libhtp-suricata
+    SUBDIR += libhubbub
     SUBDIR += libmicrohttpd
     SUBDIR += libsocialweb
     SUBDIR += libwww
@@ -1302,6 +1303,7 @@
     SUBDIR += p5-WWW-Robot
     SUBDIR += p5-WWW-RobotRules
     SUBDIR += p5-WWW-RobotRules-Parser
+    SUBDIR += p5-WWW-Salesforce
     SUBDIR += p5-WWW-Scraper-ISBN
     SUBDIR += p5-WWW-Scraper-ISBN-Amazon_Driver
     SUBDIR += p5-WWW-Scraper-ISBN-ORA_Driver

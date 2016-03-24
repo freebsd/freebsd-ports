@@ -41,7 +41,6 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-mad \
 		--disable-libmpeg2 \
 		--disable-nemesi \
-		--disable-speex \
 		--enable-ass-internal
 
 WANT_GNOME=	yes

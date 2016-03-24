@@ -327,7 +327,6 @@
     SUBDIR += libnetdude
     SUBDIR += libnfs
     SUBDIR += libnids
-    SUBDIR += libnids-libnet11
     SUBDIR += libnss-cache
     SUBDIR += libnss-mysql
     SUBDIR += liboauth
@@ -1119,6 +1118,7 @@
     SUBDIR += rubygem-macaddr
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
+    SUBDIR += rubygem-net-ping
     SUBDIR += rubygem-netrc
     SUBDIR += rubygem-network_interface
     SUBDIR += rubygem-oauth

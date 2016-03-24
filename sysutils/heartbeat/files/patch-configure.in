@@ -50,15 +50,6 @@
  AC_CHECK_PROGS(MAKE, gmake make)
  AC_MSG_CHECKING(for gmake or make)
  if test x"${MAKE}" = x""; then
-@@ -542,7 +538,7 @@
- AC_PATH_PROGS(MAILCMD, mail, mailx)
- AC_SUBST(MAILCMD)
- AC_DEFINE_UNQUOTED(IFCONFIG, "$IFCONFIG", path to the ifconfig command)
--AC_PATH_PROGS(LIBNETCONFIG, libnet-config)
-+AC_PATH_PROGS(LIBNETCONFIG, libnet11-config)
- AC_PATH_PROGS(GETENT, getent)
- AC_PATH_PROGS(IP2UTIL, ip, /sbin/ip)
- AC_PATH_PROGS(XML2CONFIG, xml2-config)
 @@ -1718,6 +1714,7 @@
  AC_CHECK_SIZEOF(int)
  AC_CHECK_SIZEOF(long)
