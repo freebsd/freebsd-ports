@@ -805,6 +805,8 @@
 %%PYTHON_SITELIBDIR%%/salt/modules/reg.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/rest_package.py
 %%PYTHON_SITELIBDIR%%/salt/modules/rest_package.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/rest_sample_utils.py
+%%PYTHON_SITELIBDIR%%/salt/modules/rest_sample_utils.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/rest_service.py
 %%PYTHON_SITELIBDIR%%/salt/modules/rest_service.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/ret.py
