@@ -12,8 +12,8 @@ MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Free timetabling software
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		qmake tar:bzip2
 USE_QT4=	gui network xml \
@@ -36,10 +36,10 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MONLYCL}
-INSTALL_TARGET=${WRKSRC}/fet-cl
+INSTALL_TARGET=	${WRKSRC}/fet-cl
 .else
-INSTALL_TARGET=${WRKSRC}/fet
-QMAKE_PRO=src/src-cl.pro
+INSTALL_TARGET=	${WRKSRC}/fet
+QMAKE_PRO=	src/src-cl.pro
 .endif
 
 post-patch:
@@ -50,9 +50,11 @@ do-install:
 	${INSTALL_PROGRAM} ${INSTALL_TARGET} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/fet-cl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/fet*.gz ${STAGEDIR}${MANPREFIX}/man/man1
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \. ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
 	cd ${WRKSRC}/translations && ${INSTALL_DATA} *.qm ${STAGEDIR}${DATADIR}/translations
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \. ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
