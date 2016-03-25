@@ -62,11 +62,13 @@ DISTNAME_ndk=		android-ndk-r10e-linux-${LINUX_RPM_ARCH:C/i.86/x86/}
 WRKSRC_ndk=		${WRKDIR}/${DISTNAME_ndk:C/(-[^-]+){2}$//}
 .endif
 NDK_BUILD_DEPENDS=	${LINUX_BASE_PORT}
+NDK_USES=		7z:partial${NDK_7z_ARGS_${LINUX_RPM_ARCH}}
 NDK_USE=		LINUX=yes # build
 NDK_SHELL=		${SETENV} UNAME_s=Linux UNAME_m=${LINUX_RPM_ARCH} ${SH}
 NDK_CONFIGURE_ENV=	ANDROID_NDK="${WRKSRC_ndk}" \
 			ANDROID_NDK_SHELL="${NDK_SHELL}" \
 			NDK_TMPDIR="${WRKDIR}"
+NDK_7z_ARGS_x86_64=	,p7zip # libarchive fails to read
 NDK_BUILD_DEPENDS_OFF=	${LOCALBASE}/android/ARMv7/bin/arm-aux-linux-androideabi-gcc:lang/gnatdroid-armv7 \
 			${LOCALBASE}/android-x86/x86_32/bin/i686-aux-linux-android-gcc:lang/gnatdroid-x86
 .if defined(.PARSEDIR)
@@ -107,27 +109,6 @@ do-autoreconf:
 .endfor
 	@(cd ${AUTORECONF_WRKSRC} && ${LOCALBASE}/bin/autoreconf -f -i)
 	@${MKDIR} ${CONFIGURE_WRKSRC}
-.endif
-
-.include <bsd.port.options.mk>
-
-# XXX D4190: Extract :p7zip files with 7z(1) if libarchive cannot handle
-# x86_64 self-extracting archive or is too old to have 7zip reader
-.if defined(OVERRIDE_LINUX_BASE_PORT) || \
-	(${OPSYS} == FreeBSD && ${OSVERSION} < 1000009)
-EXTRACT_ONLY+=	${DISTFILES:N*\:*p7zip*:C/:.*//}
-EXTRACT_DEPENDS+=${P7ZIP_CMD}:archivers/p7zip
-
-P7ZIP_CMD?=	7z
-P7ZIP_ARGS?=	x -bd -y -o${WRKDIR} >/dev/null
-
-_OPTIONS_extract+=	520:do-p7zip-extract
-do-p7zip-extract:
-	@for f in ${DISTFILES:M*\:*p7zip*:C/:.*//}; do \
-		if ! ${P7ZIP_CMD} ${P7ZIP_ARGS} ${_DISTDIR}/$$f; then \
-			return 1; \
-		fi; \
-	done
 .endif
 
 .include <bsd.port.mk>
