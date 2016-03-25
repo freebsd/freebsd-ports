@@ -73,6 +73,13 @@ command_args="-f %%LOCALBASE%%/bin/java -Des.pidfile=${pidfile} ${elasticsearch_
 
 elasticsearch_precmd()
 {
+	rc_pid=$(elasticsearch_check_pidfile $pidfile)
+
+	if [ -n "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		echo "${name} is already running: $rc_pid"
+		return 1
+	fi
         touch ${pidfile}
         chown ${elasticsearch_user}:${elasticsearch_group} ${pidfile}
 	/usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 ${elasticsearch_tmp}
@@ -82,6 +89,13 @@ elasticsearch_precmd()
 
 elasticsearch_console()
 {
+	rc_pid=$(elasticsearch_check_pidfile $pidfile)
+
+	if [ -n "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		echo "${name} is already running: $rc_pid"
+		return 1
+	fi
 	%%LOCALBASE%%/bin/java -Des.foreground=yes ${elasticsearch_props} ${java_options} org.elasticsearch.bootstrap.Elasticsearch
 }
 
@@ -127,7 +141,7 @@ elasticsearch_check_pidfile()
 		debug "pid file ($_pidfile): no pid in file."
 		return
 	fi
-	if [ -n "`%%LOCALBASE%%/bin/jps -l | grep -e "^$_pid"`" ]; then
+	if [ -n "`/usr/bin/su -m ${elasticsearch_user} -c '%%LOCALBASE%%/bin/jps -l' | grep -e "^$_pid"`" ]; then
 		echo -n $_pid
 	fi
 }
