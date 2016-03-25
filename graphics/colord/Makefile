@@ -3,6 +3,7 @@
 
 PORTNAME=	colord
 PORTVERSION=	1.2.11
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
@@ -41,7 +42,6 @@ GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	MANPAGES PPROFILES
-OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
 			docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml
