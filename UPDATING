@@ -46,9 +46,18 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: tijl@FreeBSD.org
 
   The cups-base, cups-client and cups-image packages have been combined
-  into one cups package.  If you build your own ports the easiest way to
-  update is to delete these packages first and then build and install
-  print/cups.
+  into one cups package.
+
+  If you build your own ports the easiest way to update is to delete these
+  packages first and then build and install print/cups.
+
+  If you are using binary packages, depending on the packages installed on
+  your system, pkg(8)'s solver might get confused. In this case do not proceed
+  with the upgrade but delete first the packages:
+
+  pkg delete -fg "cups*"
+
+  Then usual upgrade process: pkg upgrade
 
   The device URI of USB printers has changed so you have to adjust the
   printer configuration.  Go to http://localhost:631/printers/.  Click on
