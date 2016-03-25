@@ -62,17 +62,6 @@ diff --git config/system-headers config/system-headers
 index bef567c..9807c29 100644
 --- config/system-headers
 +++ config/system-headers
-@@ -1257,8 +1257,10 @@ X11/Xlocale.h
- X11/Xos.h
- X11/Xutil.h
- zmouse.h
-+#if MOZ_NATIVE_SOUNDTOUCH==1
- soundtouch/SoundTouch.h
- soundtouch/SoundTouchFactory.h
-+#endif
- #if MOZ_LIBAV_FFT==1
- libavcodec/avfft.h
- #endif
 @@ -1364,3 +1363,17 @@ graphite2/Segment.h
  harfbuzz/hb-ot.h
  harfbuzz/hb.h
