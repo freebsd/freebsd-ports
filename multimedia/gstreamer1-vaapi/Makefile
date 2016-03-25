@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-vaapi
-PORTVERSION=	0.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/gstreamer-vaapi/
+MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer-vaapi/
 DISTNAME=	gstreamer-vaapi-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -16,15 +16,16 @@ LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-wayland \
-		--disable-builtin-libvpx --disable-silent-rules
+		--disable-silent-rules
 INSTALL_TARGET=	install-strip
-USES=		compiler:c11 gmake libtool pkgconfig tar:bzip2
+USES=		compiler:c11 gmake libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USE_GSTREAMER1=	yes
+USE_GSTREAMER1=	bad gl
 USE_GL=		gl
 USE_XORG=	x11 xrandr xrender xproto:build
 
-PLIST_SUB=	VERSION=1.0 LIBVER=1.6
+# drm backend needs libudev so disable it for now.
+CONFIGURE_ARGS+=--disable-drm
 
 # manual since pathfix doesn't work.
 post-patch:
