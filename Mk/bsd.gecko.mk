@@ -395,6 +395,16 @@ MOZ_OPTIONS+=	--enable-pulseaudio
 MOZ_OPTIONS+=	--disable-pulseaudio
 .endif
 
+.if ${MOZILLA_VER:R:R} >= 40
+.if ${PORT_OPTIONS:MRUST}
+BUILD_DEPENDS+=	rustc:${PORTSDIR}/${RUST_PORT}
+RUST_PORT?=		lang/rust
+MOZ_OPTIONS+=	--enable-rust
+.else
+MOZ_OPTIONS+=	--disable-rust
+.endif
+.endif
+
 .if ${PORT_OPTIONS:MDEBUG}
 MOZ_OPTIONS+=	--enable-debug --disable-release
 STRIP=	# ports/184285
