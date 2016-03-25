@@ -25,4 +25,4 @@ post-install:
 BROKEN=		Unsupported
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.post.mk>
