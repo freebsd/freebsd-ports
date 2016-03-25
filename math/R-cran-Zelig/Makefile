@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Zelig
-DISTVERSION=	5.0-9
+DISTVERSION=	5.0-11
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -23,7 +23,8 @@ BUILD_DEPENDS=	R-cran-AER>=0:${PORTSDIR}/finance/R-cran-AER \
 		R-cran-jsonlite>=0:${PORTSDIR}/converters/R-cran-jsonlite \
 		R-cran-dplyr>=0:${PORTSDIR}/math/R-cran-dplyr \
 		R-cran-MatchIt>=0:${PORTSDIR}/math/R-cran-MatchIt \
-		R-cran-geepack>=0:${PORTSDIR}/math/R-cran-geepack
+		R-cran-geepack>=0:${PORTSDIR}/math/R-cran-geepack \
+		R-cran-survey>=0:${PORTSDIR}/math/R-cran-survey
 RUN_DEPENDS=	R-cran-AER>=0:${PORTSDIR}/finance/R-cran-AER \
 		R-cran-Amelia>=0:${PORTSDIR}/math/R-cran-Amelia \
 		R-cran-sandwich>=0:${PORTSDIR}/math/R-cran-sandwich \
@@ -35,7 +36,8 @@ RUN_DEPENDS=	R-cran-AER>=0:${PORTSDIR}/finance/R-cran-AER \
 		R-cran-jsonlite>=0:${PORTSDIR}/converters/R-cran-jsonlite \
 		R-cran-dplyr>=0:${PORTSDIR}/math/R-cran-dplyr \
 		R-cran-MatchIt>=0:${PORTSDIR}/math/R-cran-MatchIt \
-		R-cran-geepack>=0:${PORTSDIR}/math/R-cran-geepack
+		R-cran-geepack>=0:${PORTSDIR}/math/R-cran-geepack \
+		R-cran-survey>=0:${PORTSDIR}/math/R-cran-survey
 
 USES=	cran:auto-plist
 
