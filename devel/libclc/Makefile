@@ -5,7 +5,7 @@ PORTNAME=	libclc
 DISTVERSION=	0.2.0.20151006
 CATEGORIES=	devel
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Required library functions for OpenCL C programming language
 
 BUILD_DEPENDS=	clang${LLVMVER}:${PORTSDIR}/devel/llvm${LLVMVER} \
