@@ -49,13 +49,15 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --enable-manpages \
 		--disable-linux-caps \
-		--datadir=${PREFIX}/share/syslog-ng/
+		--datadir=${PREFIX}/share/syslog-ng/ \
+		--with-docbook-dir=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
 
 BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
 .include <bsd.port.options.mk>
 
-BUILD_DEPENDS+=		xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS+=		xsltproc:${PORTSDIR}/textproc/libxslt \
+			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
