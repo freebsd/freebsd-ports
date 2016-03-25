@@ -273,6 +273,7 @@
     SUBDIR += cloudabi-binutils-x86_64
     SUBDIR += cloudabi-toolchain
     SUBDIR += cmake
+    SUBDIR += cmake-doc
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
     SUBDIR += cmake-modules
