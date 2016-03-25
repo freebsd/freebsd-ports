@@ -21,12 +21,9 @@ EXPIRATION_DATE=2016-04-23
 
 LICENSE=	GPLv2
 
-EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
-BUILD_DEPENDS=		7z:${PORTSDIR}/archivers/p7zip
-
 WRKSRC=		${WRKDIR}/chains-${DISTVERSION}-src
 
-USES=		dos2unix qmake
+USES=		7z dos2unix qmake
 DOS2UNIX_GLOB=	*.pro *.cpp  *.h *.ui *.ui *.rc *.htm *.dat *.css
 USE_SDL=	sdl image mixer
 USE_GL=		glut glew glu
@@ -40,14 +37,6 @@ OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Bubble Chains" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
-
-P7ZIP_CMD=	${LOCALBASE}/bin/7z
-P7ZIP_ARGS=	x -o${WRKDIR}
-
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${P7ZIP_CMD} ${P7ZIP_ARGS} \
-		${_DISTDIR}/chains-${DISTVERSION}${EXTRACT_SUFX}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/games/chains|${DATADIR}|' \
