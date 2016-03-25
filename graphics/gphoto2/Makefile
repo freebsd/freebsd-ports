@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gphoto2
-PORTVERSION=	2.5.9
+PORTVERSION=	2.5.10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Command-line frontend to libgphoto2
 
 LICENSE=	GPLv2

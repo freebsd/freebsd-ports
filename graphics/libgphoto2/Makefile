@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.5.9
+PORTVERSION=	2.5.10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	woodsb02@gmail.com
 COMMENT=	Universal digital camera control library
 
 LICENSE=	LGPL21
