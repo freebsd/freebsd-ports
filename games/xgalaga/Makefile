@@ -6,7 +6,7 @@ PORTVERSION=	2.1.1.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
+MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Clone of the classic game Galaga for X11
 
 LICENSE=	GPLv2

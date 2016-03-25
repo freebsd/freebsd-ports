@@ -13,7 +13,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCH_DIST_STRIP=	-p1
 PATCHFILES=	dvi2tty-ascii-jtex-patch dvi2tty.c-patch
 
-MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
+MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Character-based DVI file previewer
 
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less

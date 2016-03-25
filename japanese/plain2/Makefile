@@ -12,7 +12,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${PORTNAME}_${PORTVERSION:R}p${PORTVERSION:E}-4.2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
+MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Text converter from plain to any format
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}p${PORTVERSION:E}.orig
