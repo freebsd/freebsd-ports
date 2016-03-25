@@ -70,7 +70,7 @@
 %%DATADIR%%/lib/optional/org.apache.servicemix.bundles.josql-1.5_5.jar
 %%DATADIR%%/lib/optional/org.linkedin.util-core-1.4.0.jar
 %%DATADIR%%/lib/optional/org.linkedin.zookeeper-impl-1.4.0.jar
-%%DATADIR%%/lib/optional/proton-j-0.11.0.jar
+%%DATADIR%%/lib/optional/proton-j-0.12.0.jar
 %%DATADIR%%/lib/optional/scala-library-2.11.0.jar
 %%DATADIR%%/lib/optional/shiro-core-1.2.4.jar
 %%DATADIR%%/lib/optional/shiro-spring-1.2.4.jar
@@ -99,14 +99,14 @@
 %%DATADIR%%/lib/web/geronimo-annotation_1.0_spec-1.1.1.jar
 %%DATADIR%%/lib/web/jdom-1.0.jar
 %%DATADIR%%/lib/web/jetty-all-%%JETTYVERSION%%.jar
-%%DATADIR%%/lib/web/jolokia-core-1.3.2.jar
+%%DATADIR%%/lib/web/jolokia-core-1.3.3.jar
 %%DATADIR%%/lib/web/json-simple-1.1.1.jar
 %%DATADIR%%/lib/web/org.eclipse.jdt.core-3.8.2.v20130121.jar
 %%DATADIR%%/lib/web/rome-1.0.jar
 %%DATADIR%%/lib/web/spring-web-%%SPRINGVERSION%%.RELEASE.jar
 %%DATADIR%%/lib/web/spring-webmvc-%%SPRINGVERSION%%.RELEASE.jar
-%%DATADIR%%/lib/web/taglibs-standard-impl-1.2.1.jar
-%%DATADIR%%/lib/web/taglibs-standard-spec-1.2.1.jar
+%%DATADIR%%/lib/web/taglibs-standard-impl-1.2.3.jar
+%%DATADIR%%/lib/web/taglibs-standard-spec-1.2.3.jar
 %%DATADIR%%/lib/web/tomcat-servlet-api-8.0.24.jar
 %%DATADIR%%/lib/web/tomcat-websocket-api-8.0.24.jar
 %%DATADIR%%/webapps-demo/demo/META-INF/LICENSE
@@ -299,6 +299,7 @@
 %%DATADIR%%/webapps/admin/xml/queues.jsp
 %%DATADIR%%/webapps/admin/xml/subscribers.jsp
 %%DATADIR%%/webapps/admin/xml/topics.jsp
+%%DATADIR%%/webapps/api/WEB-INF/classes/jolokia-access.xml
 %%DATADIR%%/webapps/api/WEB-INF/web.xml
 %%DATADIR%%/webapps/favicon.ico
 %%DATADIR%%/webapps/fileserver/META-INF/LICENSE

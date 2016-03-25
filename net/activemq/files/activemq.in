@@ -120,7 +120,7 @@ activemq_check_pidfile() {
 		debug "pid file ($_pidfile): no pid in file."
 		return
 	fi
-	if [ -n "`%%LOCALBASE%%/bin/jps -l | grep -e "^$_pid $jar_file\$"`" ]; then
+	if [ -n "`/usr/bin/su -m $activemq_user -c '%%LOCALBASE%%/bin/jps -l' | grep -e "^$_pid $jar_file\$"`" ]; then
 		echo -n $_pid
 	fi
 }
