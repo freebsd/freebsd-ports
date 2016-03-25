@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2016-02-04 15:57:56 UTC
+--- examples/Makefile.orig	2016-03-24 12:00:28 UTC
 +++ examples/Makefile
 @@ -85,7 +85,7 @@ CIMG_EXTRA_FILES = use_tiff_stream use_j
  # Set correct variables and paths
@@ -31,21 +31,21 @@
  
  # Flags to enable OpenCV support.
  CIMG_OPENCV_DEFINE = -Dcimg_use_opencv
--CIMG_OPENCV_INCDIR = -I/usr/include/opencv
-+CIMG_OPENCV_INCDIR = -I$(LOCALBASE)/include/opencv
+-CIMG_OPENCV_INCDIR = `pkg-config opencv --cflags || echo -I/usr/include/opencv` -I/usr/include/opencv
++CIMG_OPENCV_INCDIR = `pkg-config opencv --cflags || echo -I$(LOCALBASE)/include/opencv` -I$(LOCALBASE)/include/opencv
  CIMG_OPENCV_CFLAGS = $(CIMG_OPENCV_DEFINE) $(CIMG_OPENCV_INCDIR)
- CIMG_OPENCV_LIBS = -lopencv_core -lopencv_highgui
- #CIMG_OPENCV_LIBS = -lcv -lhighgui    #-> Use this for OpenCV < 2.2.0
-@@ -162,7 +162,7 @@ CIMG_NODISPLAY_CFLAGS = -Dcimg_display=0
+ CIMG_OPENCV_LIBS = `pkg-config opencv --libs || echo -lopencv_core -lopencv_highgui`
+ 
+@@ -160,7 +160,7 @@ CIMG_NODISPLAY_CFLAGS = -Dcimg_display=0
  CIMG_X11_DEFINE = -Dcimg_display=1
- CIMG_X11_INCDIR = -I$(X11PATH)/include
+ CIMG_X11_INCDIR = `pkg-config --cflags x11 || echo -I/usr/X11R6/include`
  CIMG_X11_CFLAGS = $(CIMG_X11_DEFINE) $(CIMG_X11_INCDIR)
--CIMG_X11_LIBS = -L$(X11PATH)/lib -lpthread -lX11
-+CIMG_X11_LIBS = -L$(X11PATH)/lib -lX11 $(PTHREAD_LIBS)
+-CIMG_X11_LIBS = `pkg-config --libs x11 || echo -L/usr/X11R6/lib -lX11` -lpthread
++CIMG_X11_LIBS = `pkg-config --libs x11 || echo -L$(LOCALBASE)/X11R6/lib -lX11` -lpthread
  
  # Flags to enable fast image display, using the XSHM library (when using X11).
  # !!! Seems to randomly crash when used on MacOSX and 64bits systems, so use it only when necessary !!!
-@@ -202,7 +202,7 @@ CIMG_JPEG_LIBS = -ljpeg
+@@ -200,7 +200,7 @@ CIMG_JPEG_LIBS = -ljpeg
  CIMG_TIFF_DEFINE = -Dcimg_use_tiff
  CIMG_TIFF_INCDIR =
  CIMG_TIFF_CFLAGS = $(CIMG_TIFF_DEFINE) $(CIMG_TIFF_INCDIR)
@@ -54,7 +54,7 @@
  
  # Flags to enable native support for MINC2 image files, using the MINC2 library.
  # ( http://en.wikibooks.org/wiki/MINC/Reference/MINC2.0_Users_Guide )
-@@ -214,14 +214,14 @@ CIMG_MINC2_LIBS = -lminc_io -lvolume_io2
+@@ -212,14 +212,14 @@ CIMG_MINC2_LIBS = -lminc_io -lvolume_io2
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
  CIMG_EXR_DEFINE = -Dcimg_use_openexr
@@ -71,7 +71,7 @@
  CIMG_FFMPEG_CFLAGS = $(CIMG_FFMPEG_DEFINE) $(CIMG_FFMPEG_INCDIR)
  CIMG_FFMPEG_LIBS = -lavcodec -lavformat -lswscale
  
-@@ -239,12 +239,12 @@ CIMG_CURL_INCDIR =
+@@ -237,10 +237,10 @@ CIMG_CURL_INCDIR =
  CIMG_CURL_CFLAGS = $(CIMG_CURL_DEFINE)
  CIMG_CURL_LIBS = -lcurl
  
@@ -79,20 +79,17 @@
 +# Flags to enable native support of most classical image file formats, using the GraphicsMagick++ library.
  # ( http://www.imagemagick.org/Magick++/ )
  CIMG_MAGICK_DEFINE = -Dcimg_use_magick
--CIMG_MAGICK_INCDIR = `Magick++-config --cppflags` `Magick++-config --cxxflags`
-+CIMG_MAGICK_INCDIR = `GraphicsMagick++-config --cppflags` `GraphicsMagick++-config --cxxflags`
+-CIMG_MAGICK_INCDIR = `pkg-config --cflags GraphicsMagick++ || echo -I$(USR)/$(INCLUDE)/GraphicsMagick`
++CIMG_MAGICK_INCDIR = `pkg-config --cflags GraphicsMagick++ || echo -I$(LOCALBASE)/$(INCLUDE)/GraphicsMagick`
  CIMG_MAGICK_CFLAGS = $(CIMG_MAGICK_DEFINE) $(CIMG_MAGICK_INCDIR)
--CIMG_MAGICK_LIBS = `Magick++-config --ldflags` `Magick++-config --libs`
-+CIMG_MAGICK_LIBS = `GraphicsMagick++-config --ldflags` `GraphicsMagick++-config --libs`
+ CIMG_MAGICK_LIBS = `pkg-config --libs GraphicsMagick++ || echo -lGraphicsMagick++`
  
- # Flags to enable faster Discrete Fourier Transform computation, using the FFTW3 library
- # ( http://www.fftw.org/ )
-@@ -261,16 +261,19 @@ endif
+@@ -259,16 +259,19 @@ endif
  # ( http://www.netlib.org/lapack/ )
  CIMG_LAPACK_DEFINE = -Dcimg_use_lapack
  CIMG_LAPACK_INCDIR =
 -CIMG_LAPACK_CFLAGS = $(CIMG_LAPACK_DEFINE) $(CIMG_LAPACK_INCDIR)
--CIMG_LAPACK_LIBS = -lblas -lg2c -llapack
+-CIMG_LAPACK_LIBS = -lblas -llapack
 +#CIMG_LAPACK_CFLAGS = $(CIMG_LAPACK_DEFINE) $(CIMG_LAPACK_INCDIR)
 +#CIMG_LAPACK_LIBS = -lblas -llapack
  
@@ -111,9 +108,9 @@
  CIMG_SOLARIS_LIBS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
 @@ -343,7 +346,8 @@ $(CIMG_XSHM_CFLAGS)" \
- "CONF_LIBS = \
  $(CIMG_X11_LIBS) \
  $(CIMG_TIFF_LIBS) \
+ $(CIMG_LAPACK_LIBS) \
 -$(CIMG_XSHM_LIBS)" \
 +$(CIMG_XSHM_LIBS) \
 +$(PTHREAD_LIBS)" \
