@@ -263,6 +263,13 @@ post-install-DOCS-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 
+.if ${PORT_OPTIONS:MCLANG}
+post-install-DOCS-off:
+	${RM} -f ${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/scan-build.1
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
+.endif
+
 post-install-LLDB-on:
 .if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
