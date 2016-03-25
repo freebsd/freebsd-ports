@@ -16,7 +16,8 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libnet.so:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-fatal-warnings \
