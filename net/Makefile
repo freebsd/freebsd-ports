@@ -137,6 +137,7 @@
     SUBDIR += fping
     SUBDIR += freebsd-tftp
     SUBDIR += freebsd-uucp
+    SUBDIR += freediameter
     SUBDIR += freenet6
     SUBDIR += freeradius-client
     SUBDIR += freeradius2
