@@ -741,6 +741,7 @@
     SUBDIR += panomatic
     SUBDIR += partio
     SUBDIR += pdf2svg
+    SUBDIR += pdfpc
     SUBDIR += pear-Horde_Image
     SUBDIR += pear-Image_3D
     SUBDIR += pear-Image_Barcode
