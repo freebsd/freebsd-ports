@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-libav
-PORTVERSION=	1.6.3
+PORTVERSION=	1.8.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-libav/
 DISTNAME=	gst-libav-${PORTVERSION}
@@ -24,7 +24,13 @@ USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-system-libav
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install-strip
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror||g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

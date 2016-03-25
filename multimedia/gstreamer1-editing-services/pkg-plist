@@ -33,7 +33,6 @@ include/gstreamer-%%VERSION%%/ges/ges-pitivi-formatter.h
 include/gstreamer-%%VERSION%%/ges/ges-project.h
 include/gstreamer-%%VERSION%%/ges/ges-screenshot.h
 include/gstreamer-%%VERSION%%/ges/ges-smart-adder.h
-include/gstreamer-%%VERSION%%/ges/ges-smart-video-mixer.h
 include/gstreamer-%%VERSION%%/ges/ges-source-clip.h
 include/gstreamer-%%VERSION%%/ges/ges-source.h
 include/gstreamer-%%VERSION%%/ges/ges-test-clip.h
