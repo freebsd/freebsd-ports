@@ -1,11 +1,11 @@
---- src/loader/Makefile.in.orig	2015-08-24 10:41:51.309456000 +0200
-+++ src/loader/Makefile.in	2015-08-24 10:42:39.452059000 +0200
-@@ -505,7 +505,7 @@
- noinst_LTLIBRARIES = libloader.la
- libloader_la_CPPFLAGS = $(DEFINES) -I$(top_srcdir)/include \
- 	-I$(top_srcdir)/src $(VISIBILITY_CFLAGS) $(LIBUDEV_CFLAGS) \
--	$(am__append_1) $(am__append_3)
-+	$(LIBDEVQ_CFLAGS) $(am__append_1) $(am__append_3)
+--- src/loader/Makefile.in.orig	2015-12-04 10:21:50.951759000 +0100
++++ src/loader/Makefile.in	2015-12-04 10:27:14.391665000 +0100
+@@ -531,7 +531,7 @@
+ 	$(LIBDRM_CFLAGS) \
+ 	$(LIBUDEV_CFLAGS)
+ 
+-libloader_la_CPPFLAGS = $(AM_CPPFLAGS) $(am__append_1)
++libloader_la_CPPFLAGS = $(AM_CPPFLAGS) $(LIBDEVQ_CFLAGS) $(am__append_1)
  libloader_la_SOURCES = $(LOADER_C_FILES)
- libloader_la_LIBADD = $(am__append_2) $(am__append_4)
- all: all-am
+ libloader_la_LIBADD = $(am__append_2) $(am__append_3)
+ @HAVE_DRI3_TRUE@libloader_dri3_helper_la_SOURCES = \
