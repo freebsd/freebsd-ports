@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: freediameterd
+# REQUIRE: LOGIN syslogd
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# freediameterd_enable (bool):  Set to NO by default.
+#                               Set it to YES to enable freediameterd.
+# freediameterd_flags (str):    Set to "" by default.
+#                               Extra flags passed to start command.
+
+. /etc/rc.subr
+
+name=freediameterd
+rcvar=freediameterd_enable
+desc="The freeDiameter daemon"
+
+load_rc_config $name
+
+: ${freediameterd_enable:=NO}
+
+command=%%PREFIX%%/sbin/freeDiameterd
+pidfile=/var/run/${name}.pid
+
+start_cmd=freediameterd_start
+stop_postcmd="[ -f ${pidfile} ] && /bin/rm -f ${pidfile}"
+
+freediameterd_start()
+{
+	pid=$(check_pidfile $pidfile $command)
+
+	if [ -n "${pid}" ]; then
+		echo "Already running? (pid=${pid})"
+		return 1
+	fi
+
+	echo "Starting ${name}."
+	( /usr/sbin/daemon -c -p ${pidfile} ${command} ${freediameterd_flags} 2>&1 ) | \
+		/usr/bin/logger -t "`basename ${command}`[`/bin/cat ${pidfile} 2>/dev/null`]" -p daemon.notice &
+}
+
+run_rc_command "$1"
