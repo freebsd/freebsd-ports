@@ -1,0 +1,22 @@
+TrenchBroom is a modern, cross platform level editor for Quake-engine based
+games.  It currently supports Quake, Quake 2, and Hexen 2, is easy to use,
+and provides many simple and advanced tools to make complex and interesting
+levels with ease.  Some of its features:
+
+  - True 3D editing, no 2D views required
+  - High performance renderer with support for huge maps
+  - Vertex editing with edge and face splitting that will not create
+    invalid brushes
+  - Manipulation of multiple vertices at once (great for trisoup editing)
+  - Move, rotate, and flip brushes and entities
+  - Precise texture lock for all operations
+  - Smart entity property editors
+  - Graphical entity browser with drag and drop support
+  - Comprehensive texture application and manipulation tools
+  - Search and filter functions
+  - Unlimited undo and redo
+  - Point file support
+  - Support for FGD and DEF entity definition files, mods, and multiple
+    WAD files
+
+WWW: http://kristianduske.com/trenchbroom/
