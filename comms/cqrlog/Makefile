@@ -11,7 +11,7 @@ COMMENT=	Amateur Radio logging application
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	lazarus:${PORTSDIR}/editors/lazarus
+BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus
 LIB_DEPENDS=	libhamlib.so:${PORTSDIR}/comms/hamlib
 
 USE_GITHUB=	yes
@@ -21,8 +21,9 @@ USES=		shebangfix
 SHEBANG_FILES=	tools/cqrlog-apparmor-fix \
 		voice_keyer/voice_keyer.sh
 
-USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-net \
-		fcl-registry fcl-xml mysql numlib openssl pasjpeg x11
+USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-net fcl-web \
+		fcl-registry rtl-extra fcl-xml mysql numlib openssl pasjpeg x11
+
 WANT_GNOME=	yes
 ALL_TARGET=	${PORTNAME}
 
