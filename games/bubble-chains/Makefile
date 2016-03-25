@@ -3,23 +3,23 @@
 
 PORTNAME=	bubble-chains
 PORTVERSION=	0.1.1
+DISTVERSIONSUFFIX=	-src
 PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://bubble-chains.sintegrial.com/files/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	chains-${DISTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	chains-${DISTVERSIONFULL}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
-EXTRACT_SUFX=	-src.7z
-EXTRACT_ONLY=	chains-${DISTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTFILES:N*\:icons:C/:.*//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The aim is to remove all of the targets on each level
 
+LICENSE=	GPLv2
+
 BROKEN=		unfetchable
 DEPRECATED=	does not fetch
 EXPIRATION_DATE=2016-04-23
-
-LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/chains-${DISTVERSION}-src
 
