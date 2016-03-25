@@ -13,6 +13,8 @@ COMMENT=	High performance logging, tracing, ipc, and polling library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+GROUPS=		haclient
+
 QB_SOCKET_DIR?=	/var/run/qb
 PLIST_SUB+=	QB_SOCKET_DIR=${QB_SOCKET_DIR}
 
