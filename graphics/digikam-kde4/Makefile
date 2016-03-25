@@ -24,7 +24,9 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libkgeomap.so:${PORTSDIR}/astro/libkgeomap \
 		libboost_graph.so:${PORTSDIR}/devel/boost-libs
 
-USES+=		pkgconfig shebangfix
+# compiler:c++11-lang is necessary because graphics/lensfun's lensfun.h
+# contains C++ code inside an extern "C" block that base GCC cannot handle.
+USES+=		compiler:c++11-lang pkgconfig shebangfix
 USE_KDE4+=	libkdcraw libkexiv2 libkipi
 USE_QT4+=	sql-sqlite3_run
 USE_LDCONFIG=	yes
