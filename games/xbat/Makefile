@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	LOCAL/hrs
 DISTNAME=	xev111
 
-MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
+MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	XEVIOUS like shooting game
 
 LICENSE=	GPLv2
