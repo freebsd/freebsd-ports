@@ -1,14 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	byacc
-PORTVERSION=	20150711
+PORTVERSION=	20160324
 CATEGORIES=	devel
-MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
+MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Best yacc variant available
 
 GNU_CONFIGURE=	yes
+MAKE_ARGS=	DEFINES="-DMAXTABLES=INT_MAX"
 MAKEFILE=	makefile
 TEST_TARGET=	check
 USES=		tar:tgz
