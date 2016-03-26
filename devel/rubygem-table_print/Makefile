@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	table_print
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.6
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
