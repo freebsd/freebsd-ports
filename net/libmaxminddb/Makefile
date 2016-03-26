@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmaxminddb
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/maxmind/libmaxminddb/releases/download/${PORTVERSION}/
 
@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool
