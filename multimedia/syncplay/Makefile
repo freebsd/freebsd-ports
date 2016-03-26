@@ -11,7 +11,6 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Syncplay
-GH_TAGNAME=	${PORTVERSION}
 
 USES=		desktop-file-utils gmake python:2 twisted
 USE_TWISTED=	run
