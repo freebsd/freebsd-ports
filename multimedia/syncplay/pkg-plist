@@ -1,0 +1,103 @@
+share/icons/128x128/apps/syncplay.png
+share/icons/16x16/apps/syncplay.png
+share/icons/24x24/apps/syncplay.png
+share/icons/256x256/apps/syncplay.png
+share/icons/32x32/apps/syncplay.png
+share/icons/48x48/apps/syncplay.png
+share/icons/64x64/apps/syncplay.png
+share/icons/96x96/apps/syncplay.png
+lib/syncplay/resources/accept.png
+lib/syncplay/resources/application_get.png
+lib/syncplay/resources/arrow_refresh.png
+lib/syncplay/resources/arrow_undo.png
+lib/syncplay/resources/chevrons_right.png
+lib/syncplay/resources/clock_go.png
+lib/syncplay/resources/cog.png
+lib/syncplay/resources/cog_delete.png
+lib/syncplay/resources/comments.png
+lib/syncplay/resources/control_pause_blue.png
+lib/syncplay/resources/control_play_blue.png
+lib/syncplay/resources/cross.png
+lib/syncplay/resources/cross_checkbox.png
+lib/syncplay/resources/door_in.png
+lib/syncplay/resources/empty_checkbox.png
+lib/syncplay/resources/eye.png
+lib/syncplay/resources/film_go.png
+lib/syncplay/resources/film_link.png
+lib/syncplay/resources/folder_explore.png
+lib/syncplay/resources/help.png
+lib/syncplay/resources/house.png
+lib/syncplay/resources/key_go.png
+lib/syncplay/resources/lock.png
+lib/syncplay/resources/lock_open.png
+lib/syncplay/resources/mpc-hc.png
+lib/syncplay/resources/mpc-hc64.png
+lib/syncplay/resources/mplayer.png
+lib/syncplay/resources/mpv.png
+lib/syncplay/resources/page_white_key.png
+lib/syncplay/resources/syncplay.png
+lib/syncplay/resources/table_refresh.png
+lib/syncplay/resources/tick.png
+lib/syncplay/resources/tick_checkbox.png
+lib/syncplay/resources/timeline_marker.png
+lib/syncplay/resources/user_key.png
+lib/syncplay/resources/vlc.png
+lib/syncplay/resources/world_explore.png
+lib/syncplay/resources/world_go.png
+lib/syncplay/resources/lua/intf/syncplay.lua
+lib/syncplay/syncplay/__init__.py
+lib/syncplay/syncplay/client.py
+lib/syncplay/syncplay/clientManager.py
+lib/syncplay/syncplay/constants.py
+lib/syncplay/syncplay/messages.py
+lib/syncplay/syncplay/players/__init__.py
+lib/syncplay/syncplay/players/basePlayer.py
+lib/syncplay/syncplay/players/mpc.py
+lib/syncplay/syncplay/players/mplayer.py
+lib/syncplay/syncplay/players/mpv.py
+lib/syncplay/syncplay/players/playerFactory.py
+lib/syncplay/syncplay/players/vlc.py
+lib/syncplay/syncplay/protocols.py
+lib/syncplay/syncplay/server.py
+lib/syncplay/syncplay/ui/ConfigurationGetter.py
+lib/syncplay/syncplay/ui/GuiConfiguration.py
+lib/syncplay/syncplay/ui/__init__.py
+lib/syncplay/syncplay/ui/consoleUI.py
+lib/syncplay/syncplay/ui/gui.py
+lib/syncplay/syncplay/utils.py
+lib/syncplay/syncplay/vendor/__init__.py
+lib/syncplay/syncplay/vendor/qt4reactor.py
+%%SERVER%%lib/syncplay/syncplayServer.py
+share/app-install/icons/syncplay.png
+share/pixmaps/syncplay.png
+%%CLIENT%%bin/syncplay
+%%CLIENT%%lib/syncplay/syncplayClient.py
+%%CLIENT%%share/applications/syncplay.desktop
+%%CLIENT%%%%VLC%%lib/vlc/lua/intf/syncplay.lua
+%%SERVER%%bin/syncplay-server
+%%SERVER%%share/applications/syncplay-server.desktop
+@dir share/applications
+@dir share/icons/128x128/apps
+@dir share/icons/128x128
+@dir share/icons/16x16/apps
+@dir share/icons/16x16
+@dir share/icons/24x24/apps
+@dir share/icons/24x24
+@dir share/icons/256x256/apps
+@dir share/icons/256x256
+@dir share/icons/32x32/apps
+@dir share/icons/32x32
+@dir share/icons/48x48/apps
+@dir share/icons/48x48
+@dir share/icons/64x64/apps
+@dir share/icons/64x64
+@dir share/icons/96x96/apps
+@dir share/icons/96x96
+@dir share/icons
+@dir lib/syncplay/resources/lua/intf
+@dir lib/syncplay/resources/lua
+@dir lib/syncplay/resources
+@dir lib/syncplay
+%%CLIENT%%%%VLC%%@dir lib/vlc/lua/intf
+%%CLIENT%%%%VLC%%@dir lib/vlc/lua
+%%CLIENT%%%%VLC%%@dir lib/vlc
