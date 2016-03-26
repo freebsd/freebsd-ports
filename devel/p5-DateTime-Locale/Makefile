@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Locale
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Localization support for DateTime
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Dist-CheckConflicts>=0.02:${PORTSDIR}/devel/p5-Dist-CheckConflicts \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
