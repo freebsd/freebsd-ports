@@ -1151,6 +1151,7 @@
     SUBDIR += libconcurrent
     SUBDIR += libconfig
     SUBDIR += libconfuse
+    SUBDIR += libcppformat
     SUBDIR += libcrossguid
     SUBDIR += libcutl
     SUBDIR += libcwd
