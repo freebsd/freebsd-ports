@@ -3,6 +3,7 @@
 
 PORTNAME=	crmsh
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	dpejesh@yahoo.com
