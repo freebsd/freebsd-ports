@@ -1,0 +1,13 @@
+What is Citus?
+
+  * Open-source PostgreSQL extension (not a fork)
+  * Scalable across multiple hosts through sharding and replication
+  * Distributed engine for query parallelization
+  * Highly available in the face of host failures
+
+Citus horizontally scales PostgreSQL across commodity servers using
+sharding and replication. Its query engine parallelizes incoming SQL
+queries across these servers to enable real-time responses on large
+datasets.
+
+WWW: https://www.citusdata.com/
