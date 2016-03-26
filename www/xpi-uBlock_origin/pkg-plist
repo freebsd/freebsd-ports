@@ -47,6 +47,7 @@
 %%XPI_XPIDIR%%/epicker.html
 %%XPI_XPIDIR%%/frameModule.js
 %%XPI_XPIDIR%%/frameScript.js
+%%XPI_XPIDIR%%/frameScript0.js
 %%XPI_XPIDIR%%/icon.png
 %%XPI_XPIDIR%%/img/browsericons/icon16-off.svg
 %%XPI_XPIDIR%%/img/browsericons/icon16.svg
