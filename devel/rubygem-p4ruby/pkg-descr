@@ -1,0 +1,4 @@
+The Ruby bindings for the Perforce Client API provide convenient classes
+within Ruby for communicating with Perforce SCM servers.
+
+WWW: http://www.perforce.com/perforce/loadsupp.html
