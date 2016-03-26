@@ -13,7 +13,7 @@ COMMENT=	Smooth FPS with map editing, instagib, DM and CTF
 LICENSE=	ZLIB
 
 LIB_DEPENDS=	libenet.so:net/enet
-RUN_DEPENDS=	${PKGBASE}-data>=${PORTVERSION}:${PKGORIGIN}-data
+RUN_DEPENDS=	${PKGBASE}-data>=${PORTVERSION}:games/tesseract-data
 
 USES=		gmake pkgconfig tar:xz
 EXCLUDE=	bin_unix config media screenshot src/enet src/lib\* src/xcode
