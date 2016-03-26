@@ -1,0 +1,10 @@
+--- ext/config/request-logging.xml.orig	2016-03-17 04:17:06 UTC
++++ ext/config/request-logging.xml
+@@ -1,6 +1,6 @@
+ <configuration debug="false">
+     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+-        <file>/var/log/puppetlabs/puppetdb/puppetdb-access.log</file>
++        <file>/var/log/puppetdb/puppetdb-access.log</file>
+         <encoder>
+             <pattern>%h %l %u [%t] "%r" %s %b "%i{Referer}" "%i{User-Agent}" %D</pattern>
+         </encoder>
