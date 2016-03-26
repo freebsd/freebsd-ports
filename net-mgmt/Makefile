@@ -129,6 +129,7 @@
     SUBDIR += nagios-check_relayd_status
     SUBDIR += nagios-check_smartmon
     SUBDIR += nagios-check_tftp
+    SUBDIR += nagios-check_zpools
     SUBDIR += nagios-geom
     SUBDIR += nagios-openldap-plugins
     SUBDIR += nagios-pf-plugin
