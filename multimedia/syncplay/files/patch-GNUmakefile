@@ -1,0 +1,55 @@
+--- GNUmakefile.orig	2015-05-29 20:27:43 UTC
++++ GNUmakefile
+@@ -1,4 +1,5 @@
+ SINGLE_USER	= false
++BSD		= true
+ 
+ ifndef VLC_SUPPORT
+ 	VLC_SUPPORT = true
+@@ -23,17 +24,21 @@ ifneq ($(BSD),true)
+ 	VLC_LIB_PATH = ${PREFIX}/usr/lib
+ else
+ 	BASE_PATH    = /usr/local
+-	VLC_LIB_PATH = ${PREFIX}/usr/local/lib	
++	VLC_LIB_PATH = ${DESTDIR}${PREFIX}/lib
+ endif
+ else
+ 	BASE_PATH    = ${HOME}/.local
+ 	VLC_LIB_PATH = ${HOME}/.local/share
+ endif
+ 
+-	BIN_PATH          = ${PREFIX}$(BASE_PATH)/bin
+-	LIB_PATH          = ${PREFIX}$(BASE_PATH)/lib
+-	APP_SHORTCUT_PATH = ${PREFIX}$(BASE_PATH)/share/applications
+-	SHARE_PATH        = ${PREFIX}$(BASE_PATH)/share
++	BIN_PATH          = ${DESTDIR}${PREFIX}/bin
++	LIB_PATH          = ${DESTDIR}${PREFIX}/lib
++	APP_SHORTCUT_PATH = ${DESTDIR}${PREFIX}/share/applications
++	SHARE_PATH        = ${DESTDIR}${PREFIX}/share
++
++default:
++
++all:
+ 
+ common:
+ 	-mkdir -p $(LIB_PATH)/syncplay/resources/lua/intf
+@@ -56,8 +61,8 @@ u-common:
+ 
+ client:
+ 	-mkdir -p $(BIN_PATH)
++	sed -i -e 's%# libpath%site.addsitedir\("$(BASE_PATH)/lib/syncplay"\)%' syncplayClient.py
+ 	cp syncplayClient.py $(BIN_PATH)/syncplay
+-	sed -i -e 's%# libpath%site.addsitedir\("$(BASE_PATH)/lib/syncplay"\)%' $(BIN_PATH)/syncplay
+ 	chmod 755 $(BIN_PATH)/syncplay
+ 	cp syncplayClient.py $(LIB_PATH)/syncplay/
+ 	cp resources/syncplay.desktop $(APP_SHORTCUT_PATH)/
+@@ -79,8 +84,8 @@ u-client:
+ 
+ server:
+ 	-mkdir -p $(BIN_PATH)
++	sed -i -e 's%# libpath%site.addsitedir\("$(BASE_PATH)/lib/syncplay"\)%' syncplayServer.py
+ 	cp syncplayServer.py $(BIN_PATH)/syncplay-server
+-	sed -i -e 's%# libpath%site.addsitedir\("$(BASE_PATH)/lib/syncplay"\)%' $(BIN_PATH)/syncplay-server
+ 	chmod 755 $(BIN_PATH)/syncplay-server
+ 	cp syncplayServer.py $(LIB_PATH)/syncplay/
+ 	cp resources/syncplay-server.desktop $(APP_SHORTCUT_PATH)/
