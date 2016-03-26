@@ -1,6 +1,6 @@
---- intl/Makefile.in.orig	Fri Oct 14 00:36:21 2005
-+++ intl/Makefile.in	Fri Oct 14 00:38:03 2005
-@@ -152,35 +152,6 @@
+--- intl/Makefile.in.orig	2015-12-22 22:00:40 UTC
++++ intl/Makefile.in
+@@ -152,35 +152,6 @@ install-exec: all
  	else \
  	  : ; \
  	fi
