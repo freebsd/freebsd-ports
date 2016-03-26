@@ -42,7 +42,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MEXAMPLES}
-USES+=		gmake pkgconf:build
+USES+=		gmake pkgconfig:build
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
