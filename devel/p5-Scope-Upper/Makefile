@@ -26,4 +26,4 @@ post-install:
 BROKEN=		Fails to build after argarray removal
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
