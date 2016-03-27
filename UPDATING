@@ -15,11 +15,16 @@ you update your ports collection, before attempting any port upgrades.
   port by adding "DEFAULT_VERSIONS+=ghostscript=9" to /etc/make.conf, or
   move to the new port with:
 
-    portmaster -o print/ghostscript9-agpl-base ghostscript9-base
+      portmaster -o print/ghostscript9-agpl-base ghostscript9-base
+  or: portupgrade -o print/ghostscript9-agpl-base print/ghostscript9-base
 
   And if you have ghostscript9-x11 installed:
 
-    portmaster -o print/ghostscript9-agpl-x11 ghostscript9-x11
+      portmaster -o print/ghostscript9-agpl-x11 ghostscript9-x11
+  or: portupgrade -o print/ghostscript9-agpl-x11 print/ghostscript9-x11
+
+  Note that print/ghostscript9-agpl-base is licensed under the AGPLv3
+  while print/ghostscript9-base is licensed under the GPLv3.
 
 20160317:
   AFFECTS: security/openvas-client
