@@ -302,6 +302,7 @@
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += plexpy
+    SUBDIR += plexwatch
     SUBDIR += podcastdl
     SUBDIR += poe
     SUBDIR += ppm2fli
