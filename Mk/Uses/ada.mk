@@ -29,10 +29,10 @@ ADAXX=	gcc6
 . endif
 
 . if ${ada_ARGS:Mrun}
-RUN_DEPENDS+=	${LOCALBASE}/${ADAXX}-aux/bin/ada:${PORTSDIR}/lang/${ADAXX}-aux
+RUN_DEPENDS+=	${LOCALBASE}/${ADAXX}-aux/bin/ada:lang/${ADAXX}-aux
 . endif
 
-BUILD_DEPENDS+=	${LOCALBASE}/${ADAXX}-aux/bin/ada:${PORTSDIR}/lang/${ADAXX}-aux
+BUILD_DEPENDS+=	${LOCALBASE}/${ADAXX}-aux/bin/ada:lang/${ADAXX}-aux
 MAKE_ENV+=	PATH=${LOCALBASE}/${ADAXX}-aux/bin:${PATH} \
 		ADA_PROJECT_PATH=${LOCALBASE}/lib/gnat
 CONFIGURE_ENV+=	PATH=${LOCALBASE}/${ADAXX}-aux/bin:${PATH} \
