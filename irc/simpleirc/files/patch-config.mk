@@ -1,6 +1,6 @@
---- config.mk.orig	2008-12-24 21:33:04.000000000 +0100
-+++ config.mk	2008-12-24 21:34:33.000000000 +0100
-@@ -4,17 +4,17 @@
+--- config.mk.orig	2013-06-16 06:03:32 UTC
++++ config.mk
+@@ -4,17 +4,17 @@ VERSION = 1.2
  # Customize below to fit your system
  
  # paths
