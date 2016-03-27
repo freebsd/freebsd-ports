@@ -24,3 +24,7 @@ SHA256 (patch-8u66-b17-1.xz) = 8d11cf62d9b70857d1008dea0cdcf9d5b4ba30320696cb256
 SIZE (patch-8u66-b17-1.xz) = 351328
 SHA256 (patch-8u72-b15.xz) = 42f774b72f3dbdbfadc63d0b8fb7d94c51c3062d80aedec86f59d295823136d1
 SIZE (patch-8u72-b15.xz) = 282984
+SHA256 (patch-8u74-b02.xz) = c21a08d00d8417369837fe82d68bb4f30bcf8c1c93aef85581761e328c58fccd
+SIZE (patch-8u74-b02.xz) = 2056
+SHA256 (patch-8u77-b03.xz) = d6469852d556ff9e379852e5a64cc104faf0545804c7f18f65b9840a8cb3a1c1
+SIZE (patch-8u77-b03.xz) = 4404
