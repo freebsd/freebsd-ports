@@ -2,6 +2,7 @@
 
 PORTNAME=	openvas-cli
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/2209/
 

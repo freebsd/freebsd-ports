@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

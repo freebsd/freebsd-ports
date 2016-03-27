@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.3.17.1
-PORTREVISION=	3
+PORTVERSION=	3.4.10
 CATEGORIES=	security net
-MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R:R}
+MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
@@ -27,22 +26,26 @@ CONFIGURE_ARGS=	--disable-guile \
 		--enable-local-libopts \
 		ac_cv_type_max_align_t=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
+INSTALL_TARGET=	install-strip
 
 CPE_VENDOR=	gnu
 
-OPTIONS_DEFINE=		CRYWRAP EXAMPLES LIBDANE NLS P11KIT TPM ZLIB
-OPTIONS_DEFAULT=	CRYWRAP P11KIT TPM ZLIB
+OPTIONS_DEFINE=		CRYWRAP DANE EXAMPLES IDN NLS P11KIT TPM ZLIB
+OPTIONS_DEFAULT=	CRYWRAP IDN P11KIT TPM ZLIB
 OPTIONS_SUB=		yes
 
 CRYWRAP_DESC=			Enable Crywrap TLS proxy service
-CRYWRAP_LIB_DEPENDS=		libidn.so:${PORTSDIR}/dns/libidn
+CRYWRAP_IMPLIES=		IDN
 CRYWRAP_CONFIGURE_ENABLE=	crywrap
 
-LIBDANE_DESC=			DNSSEC support for DANE (danetool --check)
-LIBDANE_LIB_DEPENDS=		libunbound.so:${PORTSDIR}/dns/unbound
-LIBDANE_CONFIGURE_ENABLE=	libdane
+DANE_DESC=		Certificate verification via DNSSEC
+DANE_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
+DANE_CONFIGURE_ENABLE=	libdane
+
+IDN_CONFIGURE_WITH=	idn
+IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
@@ -61,12 +64,9 @@ INFO=		gnutls gnutls-guile
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/*.info*
-	${SED} -i '' -e 's|^+_NORETURN_H|_NORETURN_H|' \
-	  ${WRKSRC}/src/libopts/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/*.[ch] ${STAGEDIR}${EXAMPLESDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnutls*.so.*
 
 .include <bsd.port.mk>

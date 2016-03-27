@@ -3,7 +3,7 @@
 
 PORTNAME=	xmlsec1
 PORTVERSION=	1.2.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \

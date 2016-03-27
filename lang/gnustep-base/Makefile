@@ -3,7 +3,7 @@
 
 PORTNAME=	gnustep-base
 PORTVERSION=	1.24.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	GNUSTEP/core
 
@@ -49,10 +49,8 @@ MDNS_DESC=		Zeroconf via mDNSResponder
 ICU_LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 ICU_CONFIGURE_OFF=	--disable-icu
 
-GNUTLS_LIB_DEPENDS=	libgnutls-openssl.so:${PORTSDIR}/security/gnutls
-GNUTLS_CONFIGURE_ON=	--with-tls-prefix=${LOCALBASE} \
-			TLS_CONFIG="pkg-config -gnutls"
-GNUTLS_CONFIGURE_OFF=	--disable-tls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_ENABLE=tls
 
 OPENSSL_USE=		OPENSSL=yes
 OPENSSL_CONFIGURE_OFF=	--disable-openssl

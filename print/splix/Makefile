@@ -2,7 +2,7 @@
 
 PORTNAME=	splix
 PORTVERSION=	2.0.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES?=	print
 MASTER_SITES=	SF
 
@@ -40,14 +40,7 @@ JBIG_DESC=	Enable use of JBIG algorithm (pattented)
 BLACKOPTIM_DESC=	Enable black correction algorithm
 OPTIONS_DEFAULT=	JBIG BLACKOPTIM
 
-.include "bsd.port.options.mk"
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^CC.*:= gcc/d' -e '/^CXX.*:= g++/d' \
-		-e 's/make/gmake/' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's/g++/$$(CXX)/' ${WRKSRC}/rules.mk
-
-post-configure:
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJBIG}
 PPD_SAMSUNG+=	${PPD_SAMSUNG_JBIG}
@@ -64,6 +57,13 @@ MAKE_ARGS+=	DISABLE_BLACKOPTIM=1
 .if defined(CACHESIZE)
 MAKE_ARGS+=	CACHESIZE=${CACHESIZE}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^CC.*:= gcc/d' -e '/^CXX.*:= g++/d' \
+		-e 's/make/$$(MAKE)/' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} '/cups-config --libs/s/$$/ -pthread/' \
+		${WRKSRC}/module.mk
+	@${REINPLACE_CMD} 's/g++/$$(CXX)/' ${WRKSRC}/rules.mk
 
 do-install:
 	${MKDIR} ${STAGEDIR}${BIN_DEST_DIR}
