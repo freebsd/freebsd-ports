@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ding-libs
-DISTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 
 MAINTAINER=	aweits@rit.edu
 COMMENT=	Collection of useful libraries for developers
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
