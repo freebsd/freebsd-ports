@@ -2,7 +2,7 @@
 # $FreeBSD$
 #    $MCom: ports/print/gutenprint-ijs/Makefile,v 1.1 2007/03/30 16:42:47 ahze Exp $
 
-PORTEPOCH=	0
+PORTREVISION=	2
 PKGNAMESUFFIX=	-ijs
 
 MAINTAINER=	cmt@burggraben.net

@@ -1,6 +1,12 @@
-Prelude is a new innovative hybrid Intrusion Detection system designed 
-to be very modular, distributed, rock solid and fast. 
+Prelude is a Universal "Security Information & Event Management" (SIEM)
+system.  Prelude collects, normalizes, sorts, aggregates, correlates and
+reports all security-related events.
+
+As well as being capable of recovering any type of log (system logs, syslog,
+flat files, etc.), Prelude benefits from a native support with a number of
+systems dedicated to enriching information even further (snort, samhain,
+ossec, auditd, etc.).
 
 This library provides a framework for easy access to the Prelude database.
 
-WWW: http://www.prelude-ids.org/
+WWW: https://www.prelude-siem.org/

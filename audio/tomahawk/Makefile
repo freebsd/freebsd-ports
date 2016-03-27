@@ -3,6 +3,7 @@
 
 PORTNAME=	tomahawk
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org

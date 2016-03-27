@@ -1,7 +1,7 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	5
+PORTREVISION=	6
 PKGNAMESUFFIX=	-vnc
 
 COMMENT=	Remmina plugin for VNC protocol

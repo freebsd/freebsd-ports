@@ -2,7 +2,7 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	7.6.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	net
 PORTVERSION=	4.0.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
