@@ -33,6 +33,8 @@ bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
+%%TOKUDB%%bin/tokuft_logprint
+%%TOKUDB%%bin/tokuftdump
 bin/wsrep_sst_common
 bin/wsrep_sst_mysqldump
 bin/wsrep_sst_rsync
@@ -44,14 +46,13 @@ lib/mysql/libmysqld.so
 lib/mysql/libmysqld.so.18
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth_0x0100.so
-lib/mysql/plugin/auth_gssapi.so
-lib/mysql/plugin/auth_gssapi_client.so
+%%NO_GSSAPI_NONE%%lib/mysql/plugin/auth_gssapi.so
 lib/mysql/plugin/auth_pam.so
 lib/mysql/plugin/auth_socket.so
 lib/mysql/plugin/auth_test_plugin.so
-lib/mysql/plugin/daemon_example.ini
+@comment lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/debug_key_management.so
-lib/mysql/plugin/dialog.so
+@comment lib/mysql/plugin/dialog.so
 lib/mysql/plugin/dialog_examples.so
 lib/mysql/plugin/example_key_management.so
 lib/mysql/plugin/file_key_management.so
@@ -72,7 +73,7 @@ lib/mysql/plugin/libdaemon_example.so
 lib/mysql/plugin/locales.so
 lib/mysql/plugin/metadata_lock_info.so
 lib/mysql/plugin/mypluglib.so
-lib/mysql/plugin/mysql_clear_password.so
+@comment lib/mysql/plugin/mysql_clear_password.so
 lib/mysql/plugin/qa_auth_client.so
 lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
@@ -159,8 +160,8 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/japanese/errmsg.sys
 %%DATADIR%%/korean/errmsg.sys
 %%DATADIR%%/magic
-%%DATADIR%%/maria_add_gis_sp.sql
-%%DATADIR%%/maria_add_gis_sp_bootstrap.sql
+@comment %%DATADIR%%/maria_add_gis_sp.sql
+@comment %%DATADIR%%/maria_add_gis_sp_bootstrap.sql
 %%MROONGA%%%%DATADIR%%/mroonga/install.sql
 %%MROONGA%%%%DATADIR%%/mroonga/uninstall.sql
 %%DATADIR%%/my-huge.cnf

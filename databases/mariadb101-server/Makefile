@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.11
+PORTVERSION=	10.1.13
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -17,6 +17,9 @@ MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
+LICENSE_NAME_PerconaFT=	PerconaFT patents license
+LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
+LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -26,10 +29,11 @@ USES=		bison:build cmake compiler:c++11-lib cpe execinfo shebangfix
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
+DOCSDIR=	${PREFIX}/share/doc/mysql
 
 OPTIONS_DEFINE=		FASTMTX
 OPTIONS_SINGLE=		GSSAPI
-OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 OPTIONS_DEFAULT=	GSSAPI_BASE
 
 FASTMTX_DESC=		Replace mutexes with spinlocks
@@ -46,7 +50,7 @@ ENGINES_DESC=	Optional MariaDB storage engines
 INNOBASE_DESC=	Build InnoDB engine next to XtraDB
 MAXKEY_DESC=	Change max key length from 1000 to 4000
 MROONGA_DESC=	Mroonga Full Text Search engine
-OQGRAPH_DESC=	Open Query Graph Computation engine (Requires GCC)
+OQGRAPH_DESC=	Open Query Graph Computation engine
 SPHINX_DESC=	SphinxSE engine
 SPIDER_DESC=	Partitioning and XA-transactions engine
 TOKUDB_DESC=	Fractal tree index tree data structure engine
@@ -91,20 +95,22 @@ CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 
 USE_OPENSSL=		yes
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
+OPTIONS_SUB=		yes
 
 .if defined(CLIENT_ONLY)
 # MySQL-Client part
 USES+=		readline
+GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=NO
 .else
 # MySQL-Server part
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	101m
-OPTIONS_SUB=	yes
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 USE_RC_SUBR=	mysql-server
 USERS=		mysql
 GROUPS=		mysql
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
+		-DPLUGIN_AUTH_GSSAPI_CLIENT=NO \
 		-DCMAKE_SKIP_BUILD_RPATH:BOOL=YES \
 		-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1
 
@@ -113,15 +119,14 @@ ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO \
 			-DWITHOUT_${ENGINE}=1
 .endfor
 
+GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI=NO
 MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 			libJudy.so:${PORTSDIR}/devel/judy
-# Currently OQGraph does not build using clang.
-# See See https://mariadb.atlassian.net/browse/MDEV-8051.
-OQGRAPH_USE=		gcc=yes
 TOKUDB_LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
-
-NOT_FOR_ARCHS=	i386
+TOKUDB_PORTDOCS=	README.md
+TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
+NOT_FOR_ARCHS=		i386
 NOT_FOR_ARCHS_REASON=	currently does not compile on i386, see \
 			https://mariadb.atlassian.net/browse/MDEV-9627
 
