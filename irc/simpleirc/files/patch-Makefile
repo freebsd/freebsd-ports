@@ -1,6 +1,6 @@
---- Makefile.orgi	2008-12-25 20:30:03.000000000 +0100
-+++ Makefile	2008-12-25 20:31:47.000000000 +0100
-@@ -38,17 +38,18 @@
+--- Makefile.orig	2013-06-16 06:03:32 UTC
++++ Makefile
+@@ -38,17 +38,18 @@ dist: clean
  install: all
  	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
  	@mkdir -p ${DESTDIR}${PREFIX}/bin
