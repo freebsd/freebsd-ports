@@ -3,7 +3,7 @@
 
 PORTNAME=	climm
 PORTVERSION=	0.7.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.climm.org/source/ \
 		http://http.bg.climm.org/source/

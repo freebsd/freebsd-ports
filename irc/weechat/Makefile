@@ -3,6 +3,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/
 
@@ -54,7 +55,7 @@ JAVASCRIPT_LIB_DEPENDS=	libv8.so:${PORTSDIR}/lang/v8
 
 GNUTLS_CMAKE_OFF=	-DENABLE_GNUTLS=no
 GNUTLS_USES=		pkgconfig
-GNUTLS_LIB_DEPENDS=	libgnutls.so.28:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
 LUA_CMAKE_OFF=		-DENABLE_LUA=no
 LUA_CMAKE_ON=		-DBSD_LUA_LIBDIR=${LUA_LIBDIR} \

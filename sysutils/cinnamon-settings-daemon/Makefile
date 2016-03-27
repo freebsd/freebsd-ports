@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon-settings-daemon
 PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome3
 

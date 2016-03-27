@@ -3,6 +3,7 @@
 
 PORTNAME=	librelp
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.rsyslog.com/librelp/
 

@@ -1,5 +1,5 @@
---- jabberd/mio_tls.cc.orig	2008-03-06 10:21:01.669677189 +0100
-+++ jabberd/mio_tls.cc	2008-03-06 10:35:04.744064592 +0100
+--- jabberd/mio_tls.cc.orig	2007-07-16 23:20:44 UTC
++++ jabberd/mio_tls.cc
 @@ -39,7 +39,6 @@
  #include <set>
  #include <string>
@@ -8,7 +8,7 @@
  #include <vector>
  #include <list>
  #include <iostream>
-@@ -612,7 +611,7 @@
+@@ -612,7 +611,7 @@ static void mio_tls_process_credentials(
  	    }
  
  	    // load OpenPGP key/certificate
@@ -17,7 +17,7 @@
  	    if (ret < 0) {
  		log_error(NULL, "Error loading OpenPGP key pub=%s/priv=%s: %s", pubfile, privfile, gnutls_strerror(ret));
  		continue;
-@@ -631,7 +630,7 @@
+@@ -631,7 +630,7 @@ static void mio_tls_process_credentials(
  	    }
  
  	    // load the OpenPGP keyring
@@ -26,7 +26,7 @@
  	    if (ret < 0) {
  		log_error(NULL, "Error loading OpenPGP keyring %s: %s", file, gnutls_strerror(ret));
  		continue;
-@@ -640,23 +639,6 @@
+@@ -640,23 +639,6 @@ static void mio_tls_process_credentials(
  	    continue;
  	}
  
@@ -50,7 +50,7 @@
  	// setup protocols to use
  	if (j_strcmp(xmlnode_get_localname(cur), "protocols") == 0) {
  	    char const *const protocols_data = xmlnode_get_data(cur);
-@@ -916,7 +898,7 @@
+@@ -916,7 +898,7 @@ bool mio_tls_early_init() {
      /* load asn1 tree to be used by libtasn1 */
      ret = asn1_array2tree(subjectAltName_asn1_tab, &mio_tls_asn1_tree, NULL);
      if (ret != ASN1_SUCCESS) {
@@ -59,7 +59,88 @@
  	return false;
  	/* XXX we have to delete the structure on shutdown using asn1_delete_structure(&mio_tls_asn1_tree) */
      }
-@@ -1498,7 +1480,6 @@
+@@ -1302,80 +1284,32 @@ int mio_ssl_starttls(mio m, int originat
+ 
+     // overwrite protocol priorities?
+     if (mio_tls_protocols.find(identity) != mio_tls_protocols.end()) {
+-	ret = gnutls_protocol_set_priority(session, mio_tls_protocols[identity]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting protocol priority: %s", gnutls_strerror(ret));
+-	}
+     } else if (mio_tls_protocols.find("*") != mio_tls_protocols.end()) {
+-	ret = gnutls_protocol_set_priority(session, mio_tls_protocols["*"]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting protocol priority: %s", gnutls_strerror(ret));
+-	}
+     }
+ 
+     // overwrite kx algorithm priorities?
+     if (mio_tls_kx.find(identity) != mio_tls_kx.end()) {
+-	ret = gnutls_kx_set_priority(session, mio_tls_kx[identity]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting kx algorithm priority: %s", gnutls_strerror(ret));
+-	}
+     } else if (mio_tls_kx.find("*") != mio_tls_kx.end()) {
+-	ret = gnutls_kx_set_priority(session, mio_tls_kx["*"]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting kx algorithm priority: %s", gnutls_strerror(ret));
+-	}
+     }
+ 
+     // overwrite cipher priorities?
+     if (mio_tls_ciphers.find(identity) != mio_tls_ciphers.end()) {
+-	ret = gnutls_cipher_set_priority(session, mio_tls_ciphers[identity]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting cipher algorithm priority: %s", gnutls_strerror(ret));
+-	}
+     } else if (mio_tls_ciphers.find("*") != mio_tls_ciphers.end()) {
+-	ret = gnutls_cipher_set_priority(session, mio_tls_ciphers["*"]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting cipher algorithm priority: %s", gnutls_strerror(ret));
+-	}
+     }
+ 
+     // overwrite certificate priorities?
+     if (mio_tls_certtypes.find(identity) != mio_tls_certtypes.end()) {
+-	ret = gnutls_certificate_type_set_priority(session, mio_tls_certtypes[identity]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting certificate priorities: %s", gnutls_strerror(ret));
+-	}
+     } else if (mio_tls_certtypes.find("*") != mio_tls_certtypes.end()) {
+-	ret = gnutls_certificate_type_set_priority(session, mio_tls_certtypes["*"]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting certificate priorities: %s", gnutls_strerror(ret));
+-	}
+     }
+ 
+     // overwrite mac algorithm priorities?
+     if (mio_tls_mac.find(identity) != mio_tls_mac.end()) {
+-	ret = gnutls_mac_set_priority(session, mio_tls_mac[identity]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting mac algorithm priorities: %s", gnutls_strerror(ret));
+-	}
+     } else if (mio_tls_mac.find("*") != mio_tls_mac.end()) {
+-	ret = gnutls_mac_set_priority(session, mio_tls_mac["*"]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting mac algorithm priorities: %s", gnutls_strerror(ret));
+-	}
+     }
+ 
+     // overwrite compression algorithm priorities?
+     if (mio_tls_compression.find(identity) != mio_tls_compression.end()) {
+-	ret = gnutls_compression_set_priority(session, mio_tls_compression[identity]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting compression algorithm priorities: %s", gnutls_strerror(ret));
+-	}
+     } else if (mio_tls_compression.find("*") != mio_tls_compression.end()) {
+-	ret = gnutls_compression_set_priority(session, mio_tls_compression["*"]);
+-	if (ret < 0) {
+-	    log_notice(identity, "error setting compression algorithm priorities: %s", gnutls_strerror(ret));
+-	}
+     }
+ 
+     /* setting certificate credentials */
+@@ -1498,7 +1432,6 @@ static int mio_tls_check_openpgp(mio m, 
      const gnutls_datum_t *cert_list = NULL;
      unsigned int cert_list_size = 0;
  
@@ -67,7 +148,7 @@
      // get the certificate (it's only a single one for OpenPGP)
      cert_list = gnutls_certificate_get_peers(static_cast<gnutls_session_t>(m->ssl), &cert_list_size);
      if (cert_list == NULL || cert_list_size <= 0) {
-@@ -1566,7 +1547,6 @@
+@@ -1566,7 +1499,6 @@ static int mio_tls_check_openpgp(mio m, 
      // free memory
      gnutls_openpgp_key_deinit(pgpkey);
      pool_free(jidpool);
@@ -75,7 +156,7 @@
      return 0;
  }
  
-@@ -1684,14 +1664,14 @@
+@@ -1684,14 +1616,14 @@ static int mio_tls_check_x509(mio m, cha
  		    /* init subjectAltName_element */
  		    ret = asn1_create_element(mio_tls_asn1_tree, "PKIX1.SubjectAltName", &subjectAltName_element);
  		    if (ret != ASN1_SUCCESS) {
@@ -92,7 +173,7 @@
  			asn1_delete_structure(&subjectAltName_element);
  			break;
  		    }
-@@ -1712,7 +1692,7 @@
+@@ -1712,7 +1644,7 @@ static int mio_tls_check_x509(mio m, cha
  			    break;
  			}
  			if (ret != ASN1_SUCCESS) {
@@ -101,7 +182,7 @@
  			    break;
  			}
  
-@@ -1732,7 +1712,7 @@
+@@ -1732,7 +1664,7 @@ static int mio_tls_check_x509(mio m, cha
  
  				ret = asn1_read_value(subjectAltName_element, access_string, dNSName, &dNSName_len);
  				if (ret != ASN1_SUCCESS) {
@@ -110,7 +191,7 @@
  				    break;
  				}
  
-@@ -1772,7 +1752,7 @@
+@@ -1772,7 +1704,7 @@ static int mio_tls_check_x509(mio m, cha
  			    /* get the OID of the otherName */
  			    ret = asn1_read_value(subjectAltName_element, access_string_type, otherNameType, &otherNameType_len);
  			    if (ret != ASN1_SUCCESS) {
@@ -119,7 +200,7 @@
  				break;
  			    }
  
-@@ -1785,7 +1765,7 @@
+@@ -1785,7 +1717,7 @@ static int mio_tls_check_x509(mio m, cha
  			    /* get the value of the otherName */
  			    ret = asn1_read_value(subjectAltName_element, access_string_value, otherNameValue, &otherNameValue_len);
  			    if (ret != ASN1_SUCCESS) {
@@ -128,7 +209,7 @@
  				break;
  			    }
  
-@@ -1799,21 +1779,21 @@
+@@ -1799,21 +1731,21 @@ static int mio_tls_check_x509(mio m, cha
  
  				ret = asn1_create_element(mio_tls_asn1_tree, "PKIX1.DirectoryString", &directoryString_element);
  				if (ret != ASN1_SUCCESS) {
