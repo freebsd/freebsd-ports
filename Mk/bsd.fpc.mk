@@ -60,7 +60,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
 .endif
 
-BUILD_DEPENDS+=		${PPNAME}:${PORTSDIR}/lang/fpc
+BUILD_DEPENDS+=		${PPNAME}:lang/fpc
 
 BUILDNAME=		${FPC_ARCH}-${OPSYS:tl}
 UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}

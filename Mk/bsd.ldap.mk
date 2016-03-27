@@ -89,7 +89,7 @@ IGNORE=		cannot install: doesn't work with OpenLDAP version: ${OPENLDAP_VER} (Do
 .		endif
 .	endfor
 .endif # IGNORE_WITH_OPENLDAP
-LIB_DEPENDS+=	${OPENLDAP${OPENLDAP_VER}_LIB}:${PORTSDIR}/net/openldap${OPENLDAP_VER}${_OPENLDAP_FLAVOUR}-client
+LIB_DEPENDS+=	${OPENLDAP${OPENLDAP_VER}_LIB}:net/openldap${OPENLDAP_VER}${_OPENLDAP_FLAVOUR}-client
 .else
 IGNORE=		cannot install: unknown OpenLDAP version: ${OPENLDAP_VER}
 .endif # Check for correct libs

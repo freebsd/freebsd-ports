@@ -24,11 +24,11 @@ ICONV_INCLUDE_PATH=	${LOCALBASE}/include
 ICONV_LIB_PATH=		${LOCALBASE}/lib/libiconv.so
 
 .if ${iconv_ARGS:Mbuild}
-BUILD_DEPENDS+=	${ICONV_CMD}:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS+=	${ICONV_CMD}:converters/libiconv
 .elif ${iconv_ARGS:Mpatch}
-PATCH_DEPENDS+=	${ICONV_CMD}:${PORTSDIR}/converters/libiconv
+PATCH_DEPENDS+=	${ICONV_CMD}:converters/libiconv
 .else
-LIB_DEPENDS+=	libiconv.so:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS+=	libiconv.so:converters/libiconv
 .endif
 
 .else
@@ -44,7 +44,7 @@ ICONV_LIB_PATH=		/usr/lib/libc.so
 .if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && (${OSVERSION} < 1001514 \
  || (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100069))) \
  || exists(${LOCALBASE}/include/iconv.h)
-BUILD_DEPENDS+=	libiconv>=1.14_9:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS+=	libiconv>=1.14_9:converters/libiconv
 CPPFLAGS+=	-DLIBICONV_PLUG
 CFLAGS+=	-DLIBICONV_PLUG
 CXXFLAGS+=	-DLIBICONV_PLUG
