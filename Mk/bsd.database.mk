@@ -167,12 +167,12 @@ IGNORE=		cannot install: does not work with MySQL version ${MYSQL_VER} (MySQL ${
 .	endfor
 .endif # IGNORE_WITH_MYSQL
 .if (${USE_MYSQL} == "server" || ${USE_MYSQL} == "embedded")
-RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/${_MYSQL_SERVER}
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${_MYSQL_SERVER}
 .if (${USE_MYSQL} == "embedded")
-BUILD_DEPENDS+=	${LOCALBASE}/lib/mysql/libmysqld.a:${PORTSDIR}/${_MYSQL_SERVER}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/mysql/libmysqld.a:${_MYSQL_SERVER}
 .endif
 .else
-LIB_DEPENDS+=	libmysqlclient.so.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/${_MYSQL_CLIENT}
+LIB_DEPENDS+=	libmysqlclient.so.${MYSQL${MYSQL_VER}_LIBVER}:${_MYSQL_CLIENT}
 .endif
 .else
 IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}
@@ -196,9 +196,9 @@ _DB_DEFAULTS+=	6
 . endif
 
 # Dependency lines for different db versions
-db48_DEPENDS=	libdb-4.8.so:${PORTSDIR}/databases/db48
-db5_DEPENDS=	libdb-5.3.so:${PORTSDIR}/databases/db5
-db6_DEPENDS=	libdb-6.1.so:${PORTSDIR}/databases/db6
+db48_DEPENDS=	libdb-4.8.so:databases/db48
+db5_DEPENDS=	libdb-5.3.so:databases/db5
+db6_DEPENDS=	libdb-6.1.so:databases/db6
 # Detect db versions by finding some files
 db48_FIND=	${LOCALBASE}/include/db48/db.h
 db5_FIND=	${LOCALBASE}/include/db5/db.h
@@ -390,10 +390,10 @@ _SQLITE_VER=	 ${USE_SQLITE}
 
 # USE_SQLITE is specified incorrectly, so mark this as IGNORE
 .if ${_SQLITE_VER} == "3"
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
+LIB_DEPENDS+=	libsqlite3.so:databases/sqlite${_SQLITE_VER}
 SQLITE_VER=	${_SQLITE_VER}
 .elif ${_SQLITE_VER} == "2"
-LIB_DEPENDS+=	libsqlite.so:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
+LIB_DEPENDS+=	libsqlite.so:databases/sqlite${_SQLITE_VER}
 SQLITE_VER=	${_SQLITE_VER}
 .else
 IGNORE=		cannot install: unknown SQLite version: ${_SQLITE_VER}
@@ -414,7 +414,7 @@ FIREBIRD_VER=	${USE_FIREBIRD}
 .endif
 
 .if ${FIREBIRD_VER} == "25"
-LIB_DEPENDS+=	libfbclient.so:${PORTSDIR}/databases/firebird25-client
+LIB_DEPENDS+=	libfbclient.so:databases/firebird25-client
 .else
 IGNORE=		cannot install: unknown Firebird version: ${FIREBIRD_VER}
 .endif
