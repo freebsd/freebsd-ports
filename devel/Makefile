@@ -4162,6 +4162,7 @@
     SUBDIR += py-liblarch
     SUBDIR += py-libpeas
     SUBDIR += py-libplist
+    SUBDIR += py-libusb1
     SUBDIR += py-libvirt
     SUBDIR += py-libzfs
     SUBDIR += py-ll-core
