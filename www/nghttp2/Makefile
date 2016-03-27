@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www net
 
@@ -24,7 +24,6 @@ OPTIONS_DEFAULT=HPACK
 OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	tatsuhiro-t
 
 CONFIGURE_ARGS=	--disable-python-bindings \
 		--enable-app \
