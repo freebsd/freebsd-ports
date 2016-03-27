@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Params-Validate
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validate method/function parameters
 
 LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Module-Implementation>=0.04:${PORTSDIR}/devel/p5-Module-Implementation
 RUN_DEPENDS=	p5-Module-Implementation>=0.04:${PORTSDIR}/devel/p5-Module-Implementation
