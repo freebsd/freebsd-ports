@@ -3931,6 +3931,7 @@
     SUBDIR += py-ToscaWidgets
     SUBDIR += py-TurboJinja
     SUBDIR += py-ZopeUndo
+    SUBDIR += py-adb
     SUBDIR += py-akismet
     SUBDIR += py-aniso8601
     SUBDIR += py-anonfunc
