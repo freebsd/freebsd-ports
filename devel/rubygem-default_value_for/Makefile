@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	default_value_for
-PORTVERSION=	3.0.0.1
+PORTVERSION=	3.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
