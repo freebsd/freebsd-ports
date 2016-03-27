@@ -1,5 +1,5 @@
 AsciiDoc is a text document format for writing short documents, articles, books
-and UNIX man pages. AsciiDoc files can be translated to HTML and DocBook
-markups using the asciidoc(1) command.
+and UNIX man pages. AsciiDoc files can be translated to HTML and DocBook markups
+using the asciidoc(1) command.
 
-WWW: http://www.methods.co.nz/asciidoc/
+WWW: http://asciidoc.org/

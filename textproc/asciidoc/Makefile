@@ -12,9 +12,11 @@ COMMENT=	Text document format for writing short documents and man pages
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 
+NO_ARCH=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2:run libxslt:run
 USES=		gmake gnome python:2 shebangfix
