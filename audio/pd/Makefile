@@ -8,7 +8,7 @@ DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
 MASTER_SITES=	http://msp.ucsd.edu/Software/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brittlehaus@gmail.com
 COMMENT=	MIDI-capable real-time audio processor/synthesizer
 
 LICENSE=	BSD3CLAUSE LGPL21
