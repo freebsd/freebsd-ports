@@ -1,8 +1,8 @@
 # Created by: Bernard Spil <brnrd@FreeBSD.org>
-# $FreeBSD: head/security/libressl-devel/Makefile 405278 2016-01-05 09:19:44Z brnrd $
+# $FreeBSD: head/security/libressl-devel/Makefile 410481 2016-03-06 20:06:41Z brnrd $
 
 PORTNAME=	libressl
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 PKGNAMESUFFIX=	-devel
@@ -15,9 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CPE_VENDOR=	openbsd
 
-OPTIONS_DEFINE=	CERTBUNDLE MAN3 NC
-OPTIONS_DEFAULT=	CERTBUNDLE MAN3 NC
-CERTBUNDLE_DESC=	Install LibreSSL's cert bundle ${PREFIX}/etc/ssl/cert.pem
+OPTIONS_DEFINE=	MAN3 NC
+OPTIONS_DEFAULT=	MAN3 NC
 MAN3_DESC=	Install API manpages (section 3)
 NC_DESC=	Build nc libtls demo application
 
