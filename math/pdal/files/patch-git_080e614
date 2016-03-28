@@ -1,0 +1,32 @@
+commit 080e614bd975aa3784a463a8a0b50885bc65c726
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Fri Mar 25 00:21:04 2016 +0100
+
+    Link against ${CMAKE_DL_LIBS} instead of libdl.
+
+    -dl only exists on Linux, so linking fails on other OSes like FreeBSD.
+    Use the portable CMAKE_DL_LIBS variable instead.
+--- src/util/CMakeLists.txt.orig	2016-03-24 21:27:02 UTC
++++ src/util/CMakeLists.txt
+@@ -33,20 +33,11 @@ set(PDAL_UTIL_SOURCES
+     ${PDAL_UTIL_HPP})
+ 
+ PDAL_ADD_LIBRARY(${PDAL_UTIL_LIB_NAME} SHARED ${PDAL_UTIL_SOURCES})
+-target_link_libraries(${PDAL_UTIL_LIB_NAME} ${Boost_LIBRARIES})
++target_link_libraries(${PDAL_UTIL_LIB_NAME} ${Boost_LIBRARIES} ${CMAKE_DL_LIBS})
+ 
+ set_target_properties(${PDAL_UTIL_LIB_NAME} PROPERTIES
+     VERSION "${PDAL_BUILD_VERSION}"
+     SOVERSION "${PDAL_API_VERSION}"
+     CLEAN_DIRECT_OUTPUT 1)
+ 
+-if (NOT WIN32)
+-    target_link_libraries(${PDAL_UTIL_LIB_NAME} dl)
+-endif (NOT WIN32)
+-
+-if (NOT WIN32)
+-    target_link_libraries(${PDAL_UTIL_LIB_NAME} dl)
+-endif (NOT WIN32)
+-
+ set_property(GLOBAL PROPERTY _UTIL_INCLUDED TRUE)
+-
