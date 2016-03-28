@@ -1,6 +1,6 @@
---- arpsnmp.c.orig	Mon Jan 18 01:47:40 1999
-+++ arpsnmp.c	Thu Feb 22 22:47:29 2001
-@@ -68,6 +68,8 @@
+--- arpsnmp.c.orig	2004-01-22 22:25:17 UTC
++++ arpsnmp.c
+@@ -68,6 +68,8 @@ __dead	void usage(void) __attribute__((v
  
  char *prog;
  
@@ -9,7 +9,7 @@
  extern int optind;
  extern int opterr;
  extern char *optarg;
-@@ -90,7 +92,7 @@
+@@ -90,7 +92,7 @@ main(int argc, char **argv)
  	}
  
  	opterr = 0;
@@ -18,7 +18,7 @@
  		switch (op) {
  
  		case 'd':
-@@ -105,6 +107,10 @@
+@@ -105,6 +107,10 @@ main(int argc, char **argv)
  			arpfile = optarg;
  			break;
  
@@ -29,7 +29,7 @@
  		default:
  			usage();
  		}
-@@ -184,6 +190,6 @@
+@@ -185,6 +191,6 @@ usage(void)
  
  	(void)fprintf(stderr, "Version %s\n", version);
  	(void)fprintf(stderr,
