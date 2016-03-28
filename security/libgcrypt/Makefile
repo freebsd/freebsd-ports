@@ -2,6 +2,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -39,11 +40,6 @@ CONFIGURE_ARGS+=	--disable-asm
 post-patch:
 	${RM} -f ${WRKSRC}/doc/gcrypt.info*
 	${REINPLACE_CMD} -e 's|ALIGN (3)|ALIGN (2)|g' ${WRKSRC}/mpi/i386/*.S
-
-# Fix crash at cipher/salsa20.c module on amd64
-.if ${ARCH} == "amd64" && exists(/usr/bin/clang)
-CFLAGS:=	${CFLAGS:N-O*} -O2
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so
