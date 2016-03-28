@@ -4,6 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.16.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -44,7 +45,7 @@ OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV ENCA OPENGL \
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L YTDL SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU X11 XINERAMA
-OPTIONS_GROUP_AO=	ALSA JACK PULSEAUDIO
+OPTIONS_GROUP_AO=	ALSA JACK PULSEAUDIO SDL
 OPTIONS_SUB=		yes
 
 ASS_DESC=	ASS/SSA subtitle and OSD rendering
@@ -104,6 +105,10 @@ OPENGL_IMPLIES=			X11
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
+SDL_USE=			SDL=sdl2
+SDL_CONFIGURE_ON=		--enable-sdl2
+SDL_CONFIGURE_OFF=		--disable-sdl2
+
 SMB_LIB_DEPENDS=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
 SMB_CONFIGURE_OFF=		--disable-libsmbclient
 
@@ -134,11 +139,6 @@ ZSH_USE=			PERL5=build
 ZSH_CONFIGURE_ENABLE=		zsh-comp
 
 .include <bsd.port.options.mk>
-
-# Fix crash on i386
-.if ${ARCH} == "i386"
-CFLAGS:=	${CFLAGS:N-O*} -O0
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
