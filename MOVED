@@ -8241,3 +8241,4 @@ net/libnids-libnet11|net/libnids|2016-03-20|Same content
 lang/cloudabi-clang|devel/cloudabi-toolchain|2016-03-21|Merged
 graphics/hugin-devel||2016-03-22|overtaken by released version
 graphics/hugin-2016||2016-03-22|overtaken by released version
+net/rubygem-omniauth-cas3||2016-03-28|Removed
