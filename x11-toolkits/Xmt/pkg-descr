@@ -1,0 +1,7 @@
+Xmt is a Motif Tools library, introduced in the book Motif Tools
+(ISBN 1-56592-044-9). The Xmt Motif Tools library provides developers
+of user interfaces tools that make Motif easier to use.  Xmt consists
+of the core library of additional widgets, utility programs, docs,
+tutorials, and example code.
+
+WWW: http://motiftools.sourceforge.net/

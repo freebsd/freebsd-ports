@@ -5,6 +5,7 @@
 
     SUBDIR += SoXt
     SUBDIR += Xaw3d
+    SUBDIR += Xmt
     SUBDIR += attica
     SUBDIR += bakery
     SUBDIR += blt
