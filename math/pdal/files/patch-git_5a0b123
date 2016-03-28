@@ -1,0 +1,20 @@
+commit 5a0b123bfd7a843b18318ec2e95ce725c5f1f386
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Mon Mar 28 15:07:22 2016 +0200
+
+    utils: Include sys/wait.h for the WIFEXITED and WEXITSTATUS macros.
+
+    These two macros are defined in sys/wait.h, which was being included
+    indirectly by other headers. This did not work on systems such as
+    FreeBSD, so explicitly include all headers that we actually need.
+
+--- src/util/Utils.cpp.orig	2015-11-25 18:45:33 UTC
++++ src/util/Utils.cpp
+@@ -43,6 +43,7 @@
+ #ifndef _WIN32
+ #include <cxxabi.h>
+ #include <sys/ioctl.h>
++#include <sys/wait.h>  // WIFEXITED, WEXITSTATUS
+ #endif
+ 
+ #ifdef PDAL_COMPILER_MSVC
