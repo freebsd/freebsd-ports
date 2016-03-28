@@ -3,6 +3,7 @@
 
 PORTNAME=	xdiskusage
 PORTVERSION=	1.51
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/ \
 		http://www.gnu-darwin.org/distfiles/
@@ -20,9 +21,9 @@ LDFLAGS+=	`fltk-config --ldflags`
 PLIST_FILES=	bin/xdiskusage man/man1/xdiskusage.1.gz
 
 post-patch:
-	${REINPLACE_CMD} -e '/^configure:/d; /autoconf/d' \
+	@${REINPLACE_CMD} -e '/^configure:/d; /autoconf/d' \
 		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e '/@CXXFLAGS@/s|$$| ${CXXFLAGS}|' \
+	@${REINPLACE_CMD} -e '/@CXXFLAGS@/s|$$| ${CXXFLAGS}|' \
 		${WRKSRC}/makeinclude.in
 
 do-install:
