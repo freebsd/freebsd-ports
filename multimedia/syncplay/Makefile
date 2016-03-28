@@ -34,8 +34,4 @@ VLC_MAKE_ARGS_OFF=	VLC_SUPPORT=false
 CLIENT_INSTALL_TARGET=	install-client
 SERVER_INSTALL_TARGET=	install-server
 
-.if !empty(PORT_OPTIONS:MCLIENT) && !empty(PORT_OPTIONS:MSERVER)
-INSTALL_TARGET=	install
-.endif
-
 .include <bsd.port.mk>
