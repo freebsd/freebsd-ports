@@ -1,7 +1,0 @@
-include/libvisio-0.0/libvisio/VSDStringVector.h
-include/libvisio-0.0/libvisio/VisioDocument.h
-include/libvisio-0.0/libvisio/libvisio.h
-lib/libvisio-0.0.so
-lib/libvisio-0.0.so.0
-lib/libvisio-0.0.so.0.0.31
-libdata/pkgconfig/libvisio-0.0.pc

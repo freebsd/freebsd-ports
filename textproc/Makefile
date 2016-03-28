@@ -391,7 +391,6 @@
     SUBDIR += libcsv
     SUBDIR += libcue
     SUBDIR += libe-book
-    SUBDIR += libe-book00
     SUBDIR += libebml
     SUBDIR += libextractor
     SUBDIR += libexttextcat
@@ -423,7 +422,6 @@
     SUBDIR += libunibreak
     SUBDIR += libuninameslist
     SUBDIR += libutf8proc
-    SUBDIR += libvisio
     SUBDIR += libvisio01
     SUBDIR += libwapcaplet
     SUBDIR += libwpd
