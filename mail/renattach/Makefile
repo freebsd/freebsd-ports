@@ -3,17 +3,22 @@
 
 PORTNAME=	renattach
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.pc-tools.net/files/unix/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename or remove certain attachments or kill entire messages
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	INSTALL
-PLIST_FILES=	bin/renattach etc/renattach.conf.ex man/man1/renattach.1.gz
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
+PLIST_FILES=	bin/renattach \
+		"@sample etc/renattach.conf.sample" \
+		man/man1/renattach.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -21,10 +26,11 @@ post-extract:
 	@${RM} -f ${WRKSRC}/src/getopt*
 
 post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.ex \
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-	@${ECHO_MSG} "===================="
-	@${ECHO_MSG} "Check with ${DOCSDIR}/INSTALL"
-	@${ECHO_MSG} "After that you may need to adjust renattach.conf to your needs"
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
