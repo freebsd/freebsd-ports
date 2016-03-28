@@ -3,20 +3,22 @@
 
 PORTNAME=	3dm
 PORTVERSION=	2.11.00.021
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.avagotech.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/
-DISTFILES=	3DM2_CLI-freebsd_10-2-2-1_9-5-5-1.zip
+DISTNAME=	3DM2_CLI-freebsd_10-2-2-1_9-5-5-1
 DIST_SUBDIR=	3dm2
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
-RESTRICTED=	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/Pages/user/eula.aspx
+LICENSE=	3dm
+LICENSE_NAME=	AVAGO
+LICENSE_TEXT=	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.avagotech.com/products/server-storage/raid-controllers/3ware-sas-9750-24i4e
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
-
+USES=		zip
 USE_RC_SUBR=	3dm2
 SUB_FILES=	pkg-message 3dm2.conf.sample
 SUB_LIST=	HOSTNAME=`hostname`
