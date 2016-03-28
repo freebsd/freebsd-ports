@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Nov  7 11:17:18 1995
-+++ Makefile.in	Tue Sep 28 01:41:35 1999
+--- Makefile.in.orig	1995-11-07 02:17:18 UTC
++++ Makefile.in
 @@ -1,7 +1,7 @@
  
  # Common prefix for installation directories.
@@ -9,7 +9,7 @@
  exec_prefix	= $(prefix)
  # Where to put the executables.
  bindir		= $(exec_prefix)/bin
-@@ -19,7 +19,7 @@
+@@ -19,7 +19,7 @@ CC	= @CC@
  CFLAGS	= @CFLAGS@
  DEFS	= @DEFS@
  LIBS	= @LIBS@
