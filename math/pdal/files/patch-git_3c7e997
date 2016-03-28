@@ -1,0 +1,38 @@
+commit 3c7e9979ea67a56e8d29f7404e1e8153dc93c6bb
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Mon Mar 28 14:55:29 2016 +0200
+
+    portable_endian: Remove wrong byte-order macro definitions for the BSDs.
+
+    Only OpenBSD has {b,l}etoh{16,32,64} in addition to {b,l}e{16,32,64}toh,
+    so the macro definitions were breaking the build on all those OSes.
+
+--- include/pdal/util/portable_endian.hpp.orig	2015-11-25 18:45:33 UTC
++++ include/pdal/util/portable_endian.hpp
+@@ -41,23 +41,10 @@
+ #   define __PDP_ENDIAN    PDP_ENDIAN
+ **/
+             
+-#elif defined(__OpenBSD__)
+-             
+-#   include <sys/endian.h>
+-              
+-#elif defined(__NetBSD__) || defined(__FreeBSD__) || defined(__DragonFly__)
+-               
++#elif defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__) || defined(__DragonFly__)
++
+ #   include <sys/endian.h>
+-                
+-#   define be16toh betoh16
+-#   define le16toh letoh16
+-                 
+-#   define be32toh betoh32
+-#   define le32toh letoh32
+-                  
+-#   define be64toh betoh64
+-#   define le64toh letoh64
+-                   
++
+ #elif defined(__WINDOWS__)
+                     
+ #   include <winsock2.h>
