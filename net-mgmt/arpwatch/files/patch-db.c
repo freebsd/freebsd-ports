@@ -1,6 +1,6 @@
---- db.c.orig	Sat Sep 30 19:39:58 2000
-+++ db.c	Tue Apr 13 17:42:20 2004
-@@ -283,7 +283,7 @@
+--- db.c.orig	2000-09-30 23:39:58 UTC
++++ db.c
+@@ -283,7 +283,7 @@ elist_alloc(register u_int32_t a, regist
  	BCOPY(e, ep->e, 6);
  	if (h == NULL && !initializing)
  		h = getsname(a);
@@ -9,7 +9,7 @@
  		strcpy(ep->h, h);
  	ep->t = t;
  	return (ep);
-@@ -301,7 +301,7 @@
+@@ -301,7 +301,7 @@ check_hname(register struct ainfo *ap)
  		return;
  	ep = ap->elist[0];
  	h = getsname(ap->a);

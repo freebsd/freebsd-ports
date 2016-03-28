@@ -1,6 +1,6 @@
 --- Makefile.in.orig	2000-06-15 00:39:55 UTC
 +++ Makefile.in
-@@ -31,7 +31,7 @@
+@@ -31,7 +31,7 @@ BINDEST = @sbindir@
  # Pathname of directory to install the man page
  MANDEST = @mandir@
  # Pathname of directory to install database file
@@ -9,7 +9,7 @@
  
  # VPATH
  srcdir = @srcdir@
-@@ -45,7 +45,7 @@
+@@ -45,7 +45,7 @@ CC = @CC@
  PROG = arpwatch
  CCOPT = @V_CCOPT@
  INCLS = -I. @V_INCLS@
@@ -18,7 +18,7 @@
  
  # Standard CFLAGS
  CFLAGS = $(CCOPT) $(DEFS) $(INCLS)
-@@ -110,13 +110,13 @@
+@@ -110,13 +110,13 @@ zap: zap.o intoa.o
  	$(CC) $(CFLAGS) -o $@ zap.o intoa.o -lutil
  
  install: force

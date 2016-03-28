@@ -1,6 +1,6 @@
---- report.c.orig	Sat Sep 30 19:41:10 2000
-+++ report.c	Tue Apr 13 17:47:16 2004
-@@ -45,6 +45,8 @@
+--- report.c.orig	2000-09-30 23:41:10 UTC
++++ report.c
+@@ -45,6 +45,8 @@ struct rtentry;
  
  #include <ctype.h>
  #include <errno.h>
@@ -9,7 +9,7 @@
  #include <signal.h>
  #include <stdio.h>
  #include <stdlib.h>
-@@ -70,6 +72,8 @@
+@@ -70,6 +72,8 @@ struct rtentry;
  
  #define PLURAL(n) ((n) == 1 || (n) == -1 ? "" : "s")
  
@@ -18,7 +18,7 @@
  static int cdepth;	/* number of outstanding children */
  
  static char *fmtdate(time_t);
-@@ -240,7 +244,7 @@
+@@ -240,7 +244,7 @@ report(register char *title, register u_
  	register FILE *f;
  	char tempfile[64], cpu[64], os[64];
  	char *fmt = "%20s: %s\n";
@@ -27,7 +27,19 @@
  	char *watchee = WATCHEE;
  	char *sendmail = PATH_SENDMAIL;
  	char *unknown = "<unknown>";
-@@ -303,7 +307,7 @@
+@@ -251,6 +255,11 @@ report(register char *title, register u_
+ 	if (initializing)
+ 		return;
+ 
++	/* No mail for 0.0.0.0 if -z */
++	if (zeroflag == 1 && strncmp("0.0.0.0",intoa(a),16) == 0 ) {
++		dosyslog(LOG_NOTICE, title, a, e1, e2);
++		return;
++	}
+ 	if (debug) {
+ 		if (debug > 1) {
+ 			dosyslog(LOG_NOTICE, title, a, e1, e2);
+@@ -303,7 +312,7 @@ report(register char *title, register u_
  	(void)fprintf(f, "From: %s\n", watchee);
  	(void)fprintf(f, "To: %s\n", watcher);
  	hn = gethname(a);
@@ -36,7 +48,7 @@
  		(void)fprintf(f, "Subject: %s (%s)\n", title, hn);
  	else {
  		(void)fprintf(f, "Subject: %s\n", title);
-@@ -344,6 +348,25 @@
+@@ -344,6 +353,25 @@ report(register char *title, register u_
  		exit(1);
  	}
  	/* XXX Need to freopen()? */
