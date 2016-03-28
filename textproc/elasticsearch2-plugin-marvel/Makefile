@@ -3,7 +3,7 @@
 
 PORTNAME=	marvel
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://download.elastic.co/elasticsearch/release/org/elasticsearch/plugin/license/${PORTVERSION}/:source1 \
 		http://download.elastic.co/elasticsearch/release/org/elasticsearch/plugin/marvel-agent/${PORTVERSION}/:source2
