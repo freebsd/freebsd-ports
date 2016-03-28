@@ -1,0 +1,14 @@
+--- clients/Imakefile.orig	2001-02-10 05:52:34.000000000 -0800
++++ clients/Imakefile	2016-03-27 22:42:40.102281000 -0700
+@@ -24,7 +24,7 @@
+ #endif
+ 
+ ComplexProgramTarget(mockup)
+-InstallProgram(checkres, $(BINDIR))
+-InstallProgram(ad2c, $(BINDIR))
+-InstallProgram(xbm2res, $(BINDIR))
+-InstallProgram(xpm2res, $(BINDIR))
++InstallNamedProg(checkres,checkres,$(BINDIR))
++InstallNamedProg(ad2c,ad2c,$(BINDIR))
++InstallNamedProg(xbm2res,xbm2res,$(BINDIR))
++InstallNamedProg(xpm2res,xpm2res,$(BINDIR))
