@@ -39,7 +39,9 @@ RAET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libnacl>=1.4.2:${PORTSDIR}/security/py-
 		${PYTHON_PKGNAMEPREFIX}ioflo>=1.2.1:${PORTSDIR}/devel/py-ioflo \
 		${PYTHON_PKGNAMEPREFIX}raet>0:${PORTSDIR}/net/py-raet
 
-USES=		python:2
+USES=		cpe python:2
+CPE_VENDOR=	saltstack
+CPE_PRODUCT=	salt
 USE_PYTHON=	distutils
 NO_ARCH=	yes
 PYDISTUTILS_EGGINFO=	salt-${DISTVERSION}-py${PYTHON_VER}.egg-info
