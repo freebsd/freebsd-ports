@@ -49,6 +49,8 @@ INFO=		as \
 CONFIGURE_ARGS+=	--disable-werror \
 			--with-sysroot=/
 
+MAKE_ENV+=	ac_cv_func_sbrk=0
+
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
