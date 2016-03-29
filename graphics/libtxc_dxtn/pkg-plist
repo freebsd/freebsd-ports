@@ -1,6 +1,0 @@
-include/txc_dxtn.h
-lib/libtxc_dxtn.a
-lib/libtxc_dxtn.so
-lib/libtxc_dxtn.so.0
-lib/libtxc_dxtn.so.0.0.0
-libdata/pkgconfig/txc_dxtn.pc

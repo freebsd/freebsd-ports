@@ -532,7 +532,6 @@
     SUBDIR += libspiro
     SUBDIR += libsvg
     SUBDIR += libsvg-cairo
-    SUBDIR += libtxc_dxtn
     SUBDIR += libvisual
     SUBDIR += libvisual04
     SUBDIR += libvisual04-plugins
