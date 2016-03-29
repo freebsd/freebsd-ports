@@ -9,7 +9,7 @@
 -LOCAL_LIBRARIES=$(XTESTLIB) $(XLIB) $(XRENDERLIB) $(XFTLIB) -lm -ldl -lpthread
 +LOCAL_LIBRARIES=$(XTESTLIB) $(XLIB) $(XRENDERLIB) $(XFTLIB) -lm $(LDFLAGS)
  FLEX=flex
-+YACC=bison -y
++YACC=byacc
  OBJS=xstroke.o args.o backing.o bresenham.o brush.o control_win.o stroke.o matrix.o \
       action.o action_item.o feature.o gesture.o log.o option.o sprintf_alloc.o \
       rec.o rec_callback.o rec_history.o rec_lex.o rec_mode.o rec_parse.o \
