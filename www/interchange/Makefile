@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	interchange
-PORTVERSION=	5.6.1
-PORTREVISION=	5
+PORTVERSION=	5.6.3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.6/tar/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RedHat's database-enabled e-commerce server
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Safe-Hole>=0.10:${PORTSDIR}/security/p5-Safe-Hole \
@@ -28,6 +27,7 @@ SHEBANG_FILES=	dist/src/compile.pl \
 		dist/src/tlink.pl \
 		dist/src/vlink.pl
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=		MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
