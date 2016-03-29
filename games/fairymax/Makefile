@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fairymax
-PORTVERSION=	5.0b
+PORTVERSION=	5.0b.20160316.1
 CATEGORIES=	games
 MASTER_SITES=	http://freeheimdall.spdns.org/files/
 # http://hgm.nubati.net/cgi-bin/gitweb.cgi?p=fairymax.git;a=snapshot;h=${COMMIT_HASH};sf=tgz
@@ -13,9 +13,7 @@ DISTNAME=	${PORTNAME}-${COMMIT_HASH}
 MAINTAINER=	kalten@gmx.at
 COMMENT=	Chess engine for shatranj, courier chess, and others
 
-CONFLICTS=	fairymax-4.*
-
-COMMIT_HASH=	f7a7847
+COMMIT_HASH=	67cee03
 
 OPTIONS_DEFINE=	DOCS
 
