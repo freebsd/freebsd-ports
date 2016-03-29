@@ -26,15 +26,13 @@ GH_PROJECT=	Jellyfish
 
 INSTALL_TARGET=	install-strip
 
+BROKEN_FreeBSD_9_i386=	multiple code issues on i386 < 10.0-RELEASE
+
 .include <bsd.port.pre.mk>
 
 # SSE code assumes amd64 features
 .if ${ARCH} != "amd64"
-.if ${OSVERSION} < 1000000
-IGNORE=		multiple code issues on i386 < 10.0-RELEASE
-.else
 CONFIGURE_ARGS+=--without-sse
-.endif
 .endif
 
 # configure does not support --with-pkgconfigdir
