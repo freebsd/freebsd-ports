@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.14.2
+PORTVERSION=	0.14.3
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -11,21 +11,22 @@ EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 CONFLICTS_INSTALL=	${PORTNAME}-qt4-0.12.*
 
 USES=		cmake gettext
 USE_QT5=	qmake_build buildtools_build linguisttools_build \
-		concurrent core declarative serialport
+		concurrent core gui network opengl serialport widgets
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE=		MORE_STARS TEXTURES MULTIMEDIA DOCS
-OPTIONS_DEFAULT=	MULTIMEDIA TEXTURES
+OPTIONS_DEFINE=		DOCS MORE_STARS MULTIMEDIA SCRIPTING TEXTURES
+OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING TEXTURES
 MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
 TEXTURES_DESC=		Install better quality textures
 MULTIMEDIA_DESC=	Sound and video support
+SCRIPTING_DESC=		Scripting support
 
 .include <bsd.port.options.mk>
 
@@ -52,17 +53,24 @@ USE_QT5+=	multimedia
 CMAKE_ARGS+=	-DENABLE_SOUND:BOOL=OFF
 .endif
 
+.if ${PORT_OPTIONS:MSCRIPTING}
+USE_QT5+=	script
+PLIST_SUB+=	SCRIPTS=""
+.else
+CMAKE_ARGS+=	-DENABLE_SCRIPTING:BOOL=OFF
+PLIST_SUB+=	SCRIPTS="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's,-Testscene,&_ground,' \
 		${WRKSRC}/scenery3d/Testscene/TX_Stellarium-Testscene_ground/CMakeLists.txt
 
-post-install:
-.if ${PORT_OPTIONS:MMORE_STARS}
+post-install-MORE_STARS-on:
 	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_1.cat \
 		${STAGEDIR}${DATADIR}/stars/default
-.endif
-.if ${PORT_OPTIONS:MTEXTURES}
+
+post-install-TEXTURES-on:
 	(cd ${WRKDIR} && for f in *.png; do \
 		new=`${STAT} -f '%z' $$f` ; \
 		existing=`${STAT} -f '%z' \
@@ -72,7 +80,8 @@ post-install:
 			(has larger file size: $$new > $$existing)" ; \
 		${INSTALL_DATA} $$f ${STAGEDIR}${DATADIR}/textures ; \
 	done)
-.endif
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
