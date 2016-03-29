@@ -8,23 +8,21 @@ CATEGORIES=	www
 MASTER_SITES=	http://anyterm.org/download/ \
 		http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/${PORTNAME}/
-EXTRACT_SUFX=	.tbz2
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Terminal emulator on a Web page
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_RC_SUBR=	anytermd
-USES=		gmake iconv tar:bzip2
+USES=		gmake iconv localbase tar:tbz2
 USE_GCC=	any
 ALL_TARGET=	default_target
 PLIST_FILES=	man/man1/anytermd.1.gz \
 		sbin/anytermd
-
-CPPFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/private/etc/apache2|${FILESDIR}|' \
@@ -42,7 +40,7 @@ post-patch:
 		${WRKSRC}/libpbe/common.mk
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/anytermd ${STAGEDIR}${PREFIX}/sbin/anytermd
-	@${INSTALL_MAN} ${WRKSRC}/anytermd.1 ${STAGEDIR}${MANPREFIX}/man/man1/anytermd.1
+	${INSTALL_PROGRAM} ${WRKSRC}/anytermd ${STAGEDIR}${PREFIX}/sbin/anytermd
+	${INSTALL_MAN} ${WRKSRC}/anytermd.1 ${STAGEDIR}${MANPREFIX}/man/man1/anytermd.1
 
 .include <bsd.port.mk>
