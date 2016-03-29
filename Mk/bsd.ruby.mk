@@ -479,6 +479,7 @@ RUBYGEM_ARGS+=	--no-rdoc --no-ri
 RUBYGEM_ARGS+=	--rdoc --ri
 .endif
 
+.if !target(do-extract)
 do-extract:
 	@${SETENV} ${GEM_ENV} ${RUBYGEMBIN} unpack --target=${WRKDIR} ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES}
 	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} spec --ruby ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES} > ${GEMSPEC} ; then \
@@ -488,7 +489,9 @@ do-extract:
 			fi; \
 		${FALSE}; \
 		fi)
+.endif
 
+.if !target(do-build)
 do-build:
 	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} build --force ${GEMSPEC} ; then \
 		if [ -n "${BUILD_FAIL_MESSAGE}" ] ; then \
@@ -497,7 +500,9 @@ do-build:
 			fi; \
 		${FALSE}; \
 		fi)
+.endif
 
+.if !target(do-install)
 do-install:
 	(cd ${BUILD_WRKSRC}; ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} ${GEMFILES} -- --build-args ${CONFIGURE_ARGS})
 	${RM} -r ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}/build_info/
@@ -508,6 +513,7 @@ do-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/${EXT_DIR} 2> /dev/null || ${TRUE}
 .if defined(NOPORTDOCS)
 	-@${RMDIR} ${STAGEDIR}${PREFIX}/${DOC_DIR}
+.endif
 .endif
 
 . if defined(RUBYGEM_AUTOPLIST)
