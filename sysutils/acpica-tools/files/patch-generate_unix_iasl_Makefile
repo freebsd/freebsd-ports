@@ -1,6 +1,6 @@
 --- generate/unix/iasl/Makefile.orig	2016-03-18 16:25:41 UTC
 +++ generate/unix/iasl/Makefile
-@@ -274,12 +274,11 @@ include ../Makefile.rules
+@@ -274,12 +274,14 @@ include ../Makefile.rules
  # Function to safely execute yacc
  #
  safe_yacc = \
@@ -10,11 +10,14 @@
 -	$(YACC) $(YFLAGS) -p$(1) -o$$_d/$$_f.c -d $(2) &&\
 -	mv $$_d/$$_f.$${_t\#\#*.} $(3);\
 -	test -d $$_d && rm -fr $$_d
-+	_d=$$(mktemp -d '$(abspath $(OBJDIR))/$(1).XXXXXX') &&\
-+	cd "$$_d" &&\
-+	$(YACC) $(YFLAGS) -p$(1) -o$(1).c -d '$(abspath $(2))' &&\
-+	mv $(1)$(suffix $(3)) '$(abspath $(3))' &&\
-+	rm -fr "$$_d"
++	_d=`mktemp -d $(OBJDIR)/$(1).XXXXXX` &&\
++	cd $$_d &&\
++	$(YACC) $(YFLAGS) -d -p$(1) $(abspath $(2)) &&\
++	cd - &&\
++	mv $$_d/y.tab$(suffix $(3)) $(3);\
++	_r=$$?;\
++	rm -fr $$_d;\
++	exit $$_r
  
  #
  # Macro processing for iASL .y files
