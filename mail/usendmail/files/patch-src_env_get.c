@@ -1,5 +1,5 @@
---- src/env_get.c.orig	Wed Jul 20 19:28:21 2005
-+++ src/env_get.c	Wed Jul 20 19:28:43 2005
+--- src/env_get.c.orig	2003-04-24 07:07:23 UTC
++++ src/env_get.c
 @@ -4,7 +4,6 @@
   */
  #include "env.h"
