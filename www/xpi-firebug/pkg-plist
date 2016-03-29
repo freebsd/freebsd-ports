@@ -217,6 +217,7 @@
 %%XPI_XPIDIR%%/content/firebug/firefox/firebugMenuOverlay.xul
 %%XPI_XPIDIR%%/content/firebug/firefox/macBrowserOverlay.css
 %%XPI_XPIDIR%%/content/firebug/firefox/multiprocessNotificationPanel.xml
+%%XPI_XPIDIR%%/content/firebug/firefox/newMultiprocessNotificationPanel.xml
 %%XPI_XPIDIR%%/content/firebug/firefox/panelBarWaiter.js
 %%XPI_XPIDIR%%/content/firebug/firefox/searchBox.xml
 %%XPI_XPIDIR%%/content/firebug/firefox/start-button/startButton.xml
