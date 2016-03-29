@@ -265,7 +265,7 @@ post-install-DOCS-on:
 
 .if ${PORT_OPTIONS:MCLANG}
 post-install-DOCS-off:
-	${RM} -f ${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/scan-build.1
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/scan-build.1
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 .endif
