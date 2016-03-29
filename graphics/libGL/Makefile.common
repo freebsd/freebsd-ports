@@ -87,8 +87,11 @@ CONFIGURE_ARGS+=	--enable-gles2
 
 # Clover (OpenCL).
 .if ${OPSYS} == DragonFly || \
-	(${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && \
-	 (${ARCH} == i386 || ${ARCH} == amd64))
+	(${OPSYS} == FreeBSD && \
+		(${OSVERSION} >= 1001000 && ${ARCH} == amd64 || \
+		${OSVERSION} >= 1002000 && ${ARCH} == i386))
+# Disabled on 10.1-R i386 because of compile issues with libclc.
+
 BUILD_DEPENDS+=	libclc>=0.0.r222830:${PORTSDIR}/devel/libclc
 
 # We need the clang port too even if it is not used to compile because
