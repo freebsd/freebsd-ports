@@ -10,11 +10,12 @@ MAINTAINER=	zrj@dragonflybsd.org
 COMMENT=	Portable hex editor with vi like interface
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GH_ACCOUNT=	kusumi
 USE_GITHUB=	yes
 
-USES=		python tar:bzip2
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
