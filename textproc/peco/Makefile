@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	peco
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -13,7 +13,8 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/jessevdk/go-flags.a:${PORTSDIR}/devel/go-flags \
 		${LOCALBASE}/${GO_LIBDIR}/github.com/mattn/go-runewidth.a:${PORTSDIR}/devel/go-runewidth \
-		${LOCALBASE}/${GO_LIBDIR}/github.com/nsf/termbox-go.a:${PORTSDIR}/devel/go-termbox
+		${LOCALBASE}/${GO_LIBDIR}/github.com/nsf/termbox-go.a:${PORTSDIR}/devel/go-termbox \
+		${LOCALBASE}/${GO_LIBDIR}/github.com/google/btree.a:${PORTSDIR}/devel/go-btree
 
 USE_GITHUB=	yes
 
