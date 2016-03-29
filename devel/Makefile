@@ -506,7 +506,7 @@
     SUBDIR += erlang-rebar3_hex
     SUBDIR += erlang-recon
     SUBDIR += erlang-sbroker
-    SUBDIR += erlang-ssl_verify_hostname
+    SUBDIR += erlang-ssl_verify_fun
     SUBDIR += erlang-syslog
     SUBDIR += es-eric6
     SUBDIR += etcd

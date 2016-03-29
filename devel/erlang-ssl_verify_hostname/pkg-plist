@@ -1,5 +1,0 @@
-lib/erlang/lib/ssl_verify_hostname-%%VERSION%%/ebin/ssl_verify_hostname.app
-lib/erlang/lib/ssl_verify_hostname-%%VERSION%%/ebin/ssl_verify_hostname.beam
-lib/erlang/lib/ssl_verify_hostname-%%VERSION%%/src/ssl_verify_hostname.app.src
-lib/erlang/lib/ssl_verify_hostname-%%VERSION%%/src/ssl_verify_hostname.erl
-%%PORTDOCS%%%%DOCSDIR%%/README.md
