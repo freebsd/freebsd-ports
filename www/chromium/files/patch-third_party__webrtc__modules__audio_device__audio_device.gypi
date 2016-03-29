@@ -1,7 +1,7 @@
---- third_party/webrtc/modules/audio_device/audio_device.gypi.orig	2014-10-10 09:16:13 UTC
-+++ third_party/webrtc/modules/audio_device/audio_device.gypi
-@@ -49,7 +49,7 @@
-         'dummy/file_audio_device.h',
+--- third_party/webrtc/modules/audio_device/audio_device.gypi.orig	2016-03-05 14:34:43.377223299 +0100
++++ third_party/webrtc/modules/audio_device/audio_device.gypi	2016-03-05 14:36:01.230217200 +0100
+@@ -47,7 +47,7 @@
+         'fine_audio_buffer.h',
        ],
        'conditions': [
 -        ['OS=="linux"', {
@@ -9,12 +9,12 @@
            'include_dirs': [
              'linux',
            ],
-@@ -150,7 +150,7 @@
+@@ -113,7 +113,7 @@
                  ],
                },
              }],
 -            ['OS=="linux"', {
 +            ['OS=="linux" or OS=="freebsd"', {
-               'defines': [
-                 'LINUX_ALSA',
-               ],
+               'sources': [
+                 'linux/alsasymboltable_linux.cc',
+                 'linux/alsasymboltable_linux.h',

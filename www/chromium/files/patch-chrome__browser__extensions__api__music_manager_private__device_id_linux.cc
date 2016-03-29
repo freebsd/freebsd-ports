@@ -1,5 +1,5 @@
---- chrome/browser/extensions/api/music_manager_private/device_id_linux.cc.orig	2014-10-10 08:54:10 UTC
-+++ chrome/browser/extensions/api/music_manager_private/device_id_linux.cc
+--- chrome/browser/extensions/api/music_manager_private/device_id_linux.cc.orig	2016-03-04 21:17:01.250966286 +0100
++++ chrome/browser/extensions/api/music_manager_private/device_id_linux.cc	2016-03-04 21:17:09.082965156 +0100
 @@ -4,6 +4,10 @@
  
  #include "chrome/browser/extensions/api/music_manager_private/device_id.h"
@@ -8,9 +8,9 @@
 +#include <sys/types.h>
 +#include <net/if_dl.h>
 +#endif
- #include <sys/socket.h>  // Must be included before ifaddrs.h.
  #include <ifaddrs.h>
  #include <net/if.h>
+ #include <stddef.h>
 @@ -102,11 +106,33 @@
                          const char* prefixes[],
                          size_t prefixes_count) {

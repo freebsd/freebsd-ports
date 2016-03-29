@@ -1,9 +1,9 @@
---- content/browser/indexed_db/indexed_db_backing_store.cc.orig	2014-10-10 09:15:31 UTC
-+++ content/browser/indexed_db/indexed_db_backing_store.cc
-@@ -2377,7 +2377,7 @@
+--- content/browser/indexed_db/indexed_db_backing_store.cc.orig	2016-03-04 22:40:11.786622515 +0100
++++ content/browser/indexed_db/indexed_db_backing_store.cc	2016-03-04 22:40:23.035622110 +0100
+@@ -2455,7 +2455,7 @@
          // The round-trip can be lossy; round to nearest millisecond.
-         int64 delta = (descriptor.last_modified() -
-             info.last_modified).InMilliseconds();
+         int64_t delta =
+             (descriptor.last_modified() - info.last_modified).InMilliseconds();
 -        if (std::abs(delta) > 1)
 +        if (std::labs(delta) > 1)
            return false;

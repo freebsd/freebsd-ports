@@ -31,13 +31,13 @@
            'use_dbus%': 1,
          }, {
            'use_dbus%': 0,
-@@ -997,7 +1003,7 @@
+@@ -1011,7 +1011,7 @@
          }, {
            'use_openmax_dl_fft%': 0,
          }],
 -        ['OS=="win" or OS=="linux"', {
 +        ['OS=="win" or OS=="linux" or OS=="freebsd"', {
-             'enable_mdns%' : 1,
+           'enable_mdns%' : 1,
          }],
  
 @@ -1263,6 +1269,10 @@
