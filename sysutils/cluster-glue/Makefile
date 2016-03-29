@@ -53,7 +53,7 @@ IPMI_DESC=		Intelligent Platform Management Interface support
 IPMI_LIB_DEPENDS=	libOpenIPMI.so:${PORTSDIR}/sysutils/openipmi
 
 MANPAGES_BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-			docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
+			help2man:${PORTSDIR}/misc/help2man \
 			xsltproc:${PORTSDIR}/textproc/libxslt
 MANPAGES_CONFIGURE_ENABLE=doc
 
