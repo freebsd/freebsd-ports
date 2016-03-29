@@ -1,35 +1,46 @@
---- base/sys_info_freebsd.cc.orig	2015-07-15 16:29:55.000000000 -0400
-+++ base/sys_info_freebsd.cc	2015-07-21 20:50:15.595303000 -0400
-@@ -4,6 +4,7 @@
+--- base/sys_info_freebsd.cc.orig_orig	2016-03-20 18:19:10.466074029 +0100
++++ base/sys_info_freebsd.cc	2016-03-20 18:22:51.449059006 +0100
+@@ -12,12 +12,34 @@
  
- #include "base/sys_info.h"
+ namespace base {
  
-+#include <sys/types.h>
- #include <sys/sysctl.h>
- 
- #include "base/logging.h"
-@@ -23,6 +24,19 @@
- }
- 
- // static
-+int64 SysInfo::AmountOfAvailablePhysicalMemory() {
-+  int available_pages, page_size;
-+  size_t size = sizeof(available_pages);
-+  sysctlbyname("vm.stats.vm.v_free_count", &available_pages, &size, NULL, 0);
-+  sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
-+  if (available_pages == -1 || page_size == -1) {
++int64_t SysInfo::AmountOfAvailablePhysicalMemory() {
++  int page_size, r = 0;
++  unsigned pgfree, pginact, pgcache;
++  size_t size = sizeof(page_size);
++  size_t szpg = sizeof(pgfree);
++  if(r == 0)
++    r = sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
++  if(r == 0)
++    r = sysctlbyname("vm.stats.vm.v_free_count", &pgfree, &szpg, NULL, 0);
++  if(r == 0)
++    r = sysctlbyname("vm.stats.vm.v_inactive_count", &pginact, &szpg, NULL, 0);
++  if(r == 0)
++    r = sysctlbyname("vm.stats.vm.v_cache_count", &pgcache, &szpg, NULL, 0);
++  if (r == -1) {
 +    NOTREACHED();
 +    return 0;
 +  }
-+  return static_cast<int64>(available_pages) * page_size;
++  return static_cast<int64_t>((pgfree + pginact + pgcache) * page_size);
 +}
 +
-+// static
- uint64 SysInfo::MaxSharedMemorySize() {
-   size_t limit;
-   size_t size = sizeof(limit);
-@@ -33,4 +47,25 @@
-   return static_cast<uint64>(limit);
+ int64_t SysInfo::AmountOfPhysicalMemory() {
+-  int pages, page_size;
++  int pages, page_size, r = 0;
+   size_t size = sizeof(pages);
+-  sysctlbyname("vm.stats.vm.v_page_count", &pages, &size, NULL, 0);
+-  sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
+-  if (pages == -1 || page_size == -1) {
++  if(r == 0)
++    r = sysctlbyname("vm.stats.vm.v_page_count", &pages, &size, NULL, 0);
++  if(r == 0)
++    r = sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
++  if (r == -1) {
+     NOTREACHED();
+     return 0;
+   }
+@@ -35,4 +57,25 @@
+   return static_cast<uint64_t>(limit);
  }
  
 +// static
