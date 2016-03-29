@@ -1,10 +1,11 @@
---- content/browser/gpu/gpu_data_manager_impl_private.cc.orig	2015-05-13 18:35:46.000000000 -0400
-+++ content/browser/gpu/gpu_data_manager_impl_private.cc    2015-05-20 11:59:04.537631000 -0400
-@@ -471,7 +471,9 @@
+--- content/browser/gpu/gpu_data_manager_impl_private.cc.orig	2016-03-04 22:36:56.082636647 +0100
++++ content/browser/gpu/gpu_data_manager_impl_private.cc	2016-03-04 22:37:11.778635557 +0100
+@@ -483,8 +483,10 @@
    gpu_info.gl_renderer = gl_renderer;
    gpu_info.gl_version = gl_version;
  
 +#if !defined(OS_FREEBSD)
+   gpu::IdentifyActiveGPU(&gpu_info);
    gpu::CollectDriverInfoGL(&gpu_info);
 +#endif
  
