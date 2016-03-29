@@ -93,6 +93,12 @@ lib/mysql/libmysqlclient.so.18
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.18
+%%NO_GSSAPI_NONE%%lib/mysql/plugin/auth_gssapi_client.so
+lib/mysql/plugin/daemon_example.ini
+lib/mysql/plugin/dialog.so
+lib/mysql/plugin/mysql_clear_password.so
+%%DATADIR%%/maria_add_gis_sp.sql
+%%DATADIR%%/maria_add_gis_sp_bootstrap.sql
 man/man1/msql2mysql.1.gz
 man/man1/mysql.1.gz
 man/man1/mysql_config.1.gz

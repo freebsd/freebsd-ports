@@ -4,8 +4,7 @@
 PORTNAME=	weedit
 PORTVERSION=	2.0.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://adm1n.cjb.net/cw/ \
-		LOCAL/ehaupt
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	File duplicate scanner with database support

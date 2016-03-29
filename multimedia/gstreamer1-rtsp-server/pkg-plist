@@ -18,6 +18,7 @@ include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-stream.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-thread-pool.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-token.h
 lib/girepository-%%VERSION%%/GstRtspServer-%%VERSION%%.typelib
+lib/gstreamer-%%VERSION%%/libgstrtspclientsink.so
 lib/libgstrtspserver-%%VERSION%%.so
 lib/libgstrtspserver-%%VERSION%%.so.0
 lib/libgstrtspserver-%%VERSION%%.so.%%SOVERSION%%

@@ -6,7 +6,7 @@ PORTVERSION=	1.10.4
 CATEGORIES=	audio
 MASTER_SITES=	http://code.fluffytapeworm.com/projects/${PORTNAME}/
 
-MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
+MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Id3 tag editor for mp3 files
 
 LICENSE=	GPLv2

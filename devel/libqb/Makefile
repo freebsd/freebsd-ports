@@ -3,6 +3,7 @@
 
 PORTNAME=	libqb
 PORTVERSION=	0.17.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ClusterLabs/libqb/releases/download/v${PORTVERSION}/
 
@@ -11,6 +12,8 @@ COMMENT=	High performance logging, tracing, ipc, and polling library
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+GROUPS=		haclient
 
 QB_SOCKET_DIR?=	/var/run/qb
 PLIST_SUB+=	QB_SOCKET_DIR=${QB_SOCKET_DIR}

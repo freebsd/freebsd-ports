@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nanumfonts
-PORTVERSION=	20141022
+PORTVERSION=	20160201
 CATEGORIES=	korean
 MASTER_SITES=	http://appdown.naver.com/naver/font/NanumFont/setup/ \
 		LOCAL/jkim
@@ -14,54 +14,55 @@ COMMENT=	Nanum family Hangul fonts (${FONTFORMAT})
 
 LICENSE=	OFL11
 
-EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
-
-DISTFILE_LIST=	ALL GOTHICECO MYUNGJOECO
+DISTFILE_LIST=	ALL
 DISTFILE_PRFX=	NanumFontSetup_${FONTTYPE:tu}_
 DISTFILE_SUFX=	_hangeulcamp.exe
 DISTINFO_FILE=	${PKGDIR}/distinfo.${FONTTYPE}
 
-EXTRACT_CMD=	7z
-EXTRACT_BEFORE_ARGS=	e -y
-EXTRACT_AFTER_ARGS=	'$$WINDIR/Fonts'
+EXTRACT_AFTER_ARGS=	${EXTRACT_SUBDIR}
+EXTRACT_SUBDIR=	\$$WINDIR/Fonts
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		fonts
+USES=		7z:p7zip fonts
 
 FONTTYPE?=	otf
 FONTFORMAT?=	OpenType
 
 FONTNAME=	nanum-${FONTTYPE}
-FONTLIST=	NanumBarunGothic \
-		NanumBarunGothicBold \
-		NanumBarunGothicLight \
-		NanumBarunGothicUltraLight \
-		NanumBarunpenB \
-		NanumBarunpenR \
-		NanumBrush \
-		NanumGothic \
-		NanumGothicBold \
-		NanumGothicEco \
-		NanumGothicEcoBold \
-		NanumGothicEcoExtraBold \
-		NanumGothicExtraBold \
-		NanumGothicLight \
-		NanumMyeongjo \
-		NanumMyeongjoBold \
-		NanumMyeongjoEco \
-		NanumMyeongjoEcoBold \
-		NanumMyeongjoEcoExtraBold \
-		NanumMyeongjoExtraBold \
-		NanumPen
-FONTFILES=	${FONTLIST:S|$|.${FONTTYPE}|}
+FONTLIST=	BarunGothic \
+		BarunGothicBold \
+		BarunGothicLight \
+		BarunGothicUltraLight \
+		BarunpenB \
+		BarunpenR \
+		Brush \
+		Gothic \
+		GothicBold \
+		GothicExtraBold \
+		GothicLight \
+		Myeongjo \
+		MyeongjoBold \
+		MyeongjoExtraBold \
+		Pen
+FONTFILES=	${FONTLIST:S|^|Nanum|:S|$|.${FONTTYPE}|}
 
 PLIST_FILES=	${FONTFILES:S|^|${FONTSDIR}/|}
+
+OPTIONS_DEFINE=	ECO
+
+ECO_DESC=	Include Eco family fonts
+ECO_VARS=	DISTFILE_LIST+="GOTHICECO MYUNGJOECO"
+.for f in GothicEco MyeongjoEco
+ECO_VARS+=	FONTLIST+="${f} ${f}Bold ${f}ExtraBold"
+.endfor
+
+.include <bsd.port.pre.mk>
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for f in ${FONTFILES}
-	${INSTALL_DATA} ${WRKDIR}/${f} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${EXTRACT_SUBDIR}/${f} ${STAGEDIR}${FONTSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

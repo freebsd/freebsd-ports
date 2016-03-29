@@ -273,6 +273,7 @@
     SUBDIR += cloudabi-binutils-x86_64
     SUBDIR += cloudabi-toolchain
     SUBDIR += cmake
+    SUBDIR += cmake-doc
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
     SUBDIR += cmake-modules
@@ -505,7 +506,7 @@
     SUBDIR += erlang-rebar3_hex
     SUBDIR += erlang-recon
     SUBDIR += erlang-sbroker
-    SUBDIR += erlang-ssl_verify_hostname
+    SUBDIR += erlang-ssl_verify_fun
     SUBDIR += erlang-syslog
     SUBDIR += es-eric6
     SUBDIR += etcd
@@ -713,6 +714,7 @@
     SUBDIR += gnustep
     SUBDIR += gnustep-make
     SUBDIR += go-bindata
+    SUBDIR += go-btree
     SUBDIR += go-flags
     SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
@@ -1150,6 +1152,8 @@
     SUBDIR += libconcurrent
     SUBDIR += libconfig
     SUBDIR += libconfuse
+    SUBDIR += libcppformat
+    SUBDIR += libcrossguid
     SUBDIR += libcutl
     SUBDIR += libcwd
     SUBDIR += libcxxrt
@@ -3928,6 +3932,7 @@
     SUBDIR += py-ToscaWidgets
     SUBDIR += py-TurboJinja
     SUBDIR += py-ZopeUndo
+    SUBDIR += py-adb
     SUBDIR += py-akismet
     SUBDIR += py-aniso8601
     SUBDIR += py-anonfunc
@@ -4159,6 +4164,7 @@
     SUBDIR += py-liblarch
     SUBDIR += py-libpeas
     SUBDIR += py-libplist
+    SUBDIR += py-libusb1
     SUBDIR += py-libvirt
     SUBDIR += py-libzfs
     SUBDIR += py-ll-core
@@ -4737,6 +4743,7 @@
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-activesupport4
     SUBDIR += rubygem-activesupport41
+    SUBDIR += rubygem-akismet
     SUBDIR += rubygem-algebrick
     SUBDIR += rubygem-algorithms
     SUBDIR += rubygem-allison
@@ -5010,6 +5017,7 @@
     SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-orm_adapter
+    SUBDIR += rubygem-p4ruby
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-paperclip
     SUBDIR += rubygem-parser
@@ -5101,6 +5109,7 @@
     SUBDIR += rubygem-sdoc
     SUBDIR += rubygem-semantic_puppet
     SUBDIR += rubygem-semi_semantic
+    SUBDIR += rubygem-sentry-raven
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sequel3
     SUBDIR += rubygem-settingslogic

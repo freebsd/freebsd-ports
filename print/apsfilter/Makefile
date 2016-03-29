@@ -3,7 +3,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.8
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 DIST_SUBDIR=	apsfilter

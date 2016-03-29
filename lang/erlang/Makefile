@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	18.2.4
+PORTVERSION=	18.3
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -20,7 +20,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=	patch-otp-18.2.2 patch-otp-18.2.3 patch-otp-18.2.4
+PATCHFILES=
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -51,7 +51,7 @@ WX_DESC=	Enable WX application
 OPTIONS_DEFAULT=HIPE KQUEUE OPENSSL SCTP SMP THREADS
 OPTIONS_EXCLUDE_DragonFly=	HIPE SCTP
 
-ERL_RELEASE=	18.2.1
+ERL_RELEASE=	18.3
 
 USES=		gmake ncurses perl5
 USE_PERL5=	build
@@ -59,9 +59,9 @@ USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-EI_VSN=		3.8.1
-SNMP_VSN=	5.2.1
-TOOLS_VSN=	2.8.2
+EI_VSN=		3.8.2
+SNMP_VSN=	5.2.2
+TOOLS_VSN=	2.8.3
 
 .include <bsd.port.options.mk>
 
@@ -205,6 +205,11 @@ pre-configure:
 	echo "disabled by port options" > ${WRKSRC}/lib/wx/SKIP
 .endif
 
+post-configure:
+.if ${PORT_OPTIONS:MODBC}
+	${RM} ${WRKSRC}/lib/odbc/SKIP
+.endif
+
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/erlang.conf ${STAGEDIR}${PREFIX}/etc/man.d/erlang.conf
 	${LN} -sf ../lib/${ERLANG_LIB}/lib/erl_interface-${EI_VSN}/bin/erl_call ${STAGEDIR}${PREFIX}/bin/erl_call
@@ -217,19 +222,6 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
-
-	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/common_test-1.11.1/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/common_test-1.11.2
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/common_test-1.11.1
-
-	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.1/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.1.1
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.1
-
-	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.2/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.2.1
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.2
-
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,0 +1,12 @@
+CMake is used to control the software compilation process using
+simple platform and compiler independent configuration files. CMake
+generates native makefiles and workspaces that can be used in the
+compiler environment of your choice. CMake is quite sophisticated:
+it is possible to support complex environments requiring system
+configuration, pre-processor generation, code generation, and
+template instantiation.
+
+This port contains CMake's documentation in additional formats such as
+HTML and QCH.
+
+WWW: https://www.cmake.org

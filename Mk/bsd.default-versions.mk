@@ -19,8 +19,10 @@ ${_l:tu}_DEFAULT=	${lang:C/.*=//g}
 .endfor
 
 APACHE_DEFAULT?=	2.4
+FIREBIRD_DEFAULT?=	2.5
 FPC_DEFAULT?=		3.0.0
 GCC_DEFAULT?=		4.8
+GHOSTSCRIPT_DEFAULT?=	agpl
 LUA_DEFAULT?=		5.2
 MYSQL_DEFAULT?=		5.6
 .if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
@@ -44,8 +46,6 @@ PYTHON2_DEFAULT?=	2.7
 PYTHON3_DEFAULT?=	3.4
 RUBY_DEFAULT?=		2.1
 TCLTK_DEFAULT?=		8.6
-FIREBIRD_DEFAULT?=	2.5
-GHOSTSCRIPT_DEFAULT?=	9
 
 # Version of lang/gcc.  Do not override!
 LANG_GCC_IS=		4.8

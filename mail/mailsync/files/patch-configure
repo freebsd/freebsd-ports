@@ -1,6 +1,6 @@
---- configure.orig	Wed Jun 30 18:04:12 2004
-+++ configure	Sun Sep 30 15:39:42 2007
-@@ -5012,7 +5012,7 @@
+--- configure.orig	2004-06-30 08:04:12 UTC
++++ configure
+@@ -5012,7 +5012,7 @@ fi
  
  
  
@@ -9,7 +9,7 @@
   HAVE_OPENSSL="no"
   OPENSSL_LDFLAGS=""
   OPENSSL_LIBS=""
-@@ -5035,14 +5035,13 @@
+@@ -5035,14 +5035,13 @@ fi;
   else
    echo "$as_me:$LINENO: checking for libssl" >&5
  echo $ECHO_N "checking for libssl... $ECHO_C" >&6
@@ -25,7 +25,7 @@
    if test -z "${OPENSSL_LDFLAGS}" ; then
     echo "$as_me:$LINENO: result: not found" >&5
  echo "${ECHO_T}not found" >&6
-@@ -5190,14 +5189,13 @@
+@@ -5190,14 +5189,13 @@ fi
     else
      echo "$as_me:$LINENO: checking for openssl/ssl.h" >&5
  echo $ECHO_N "checking for openssl/ssl.h... $ECHO_C" >&6
@@ -41,7 +41,7 @@
      if test -z "${OPENSSL_INCLUDES}" ; then
       echo "$as_me:$LINENO: result: not found" >&5
  echo "${ECHO_T}not found" >&6
-@@ -5447,7 +5445,7 @@
+@@ -5447,7 +5445,7 @@ fi
  
  
  
@@ -50,7 +50,7 @@
   HAVE_CCLIENT="no"
   CCLIENT_LIBS=""
   CCLIENT_INCLUDES=""
-@@ -5462,7 +5460,7 @@
+@@ -5462,7 +5460,7 @@ if test "${with_c_client+set}" = set; th
     if test "$withval" = "no" ; then
      CCLIENTLOCATIONS=""
     else
@@ -59,7 +59,7 @@
     fi
  
  
-@@ -5477,8 +5475,8 @@
+@@ -5477,8 +5475,8 @@ echo "$as_me: error: a working c-client 
  
           echo "$as_me:$LINENO: checking for c-client.h" >&5
  echo $ECHO_N "checking for c-client.h... $ECHO_C" >&6
@@ -70,7 +70,7 @@
      CCLIENT_INCLUDES="-I${p}"
      CCLIENT_LINKAGE_H="${p}/linkage.h"
      CCLIENT_LINKAGE_C="${p}/linkage.c"
-@@ -5486,7 +5484,6 @@
+@@ -5486,7 +5484,6 @@ echo $ECHO_N "checking for c-client.h...
  echo "${ECHO_T}found in ${p}" >&6
      break
     fi
@@ -78,7 +78,7 @@
    if test -z "${CCLIENT_INCLUDES}" ; then
     echo "$as_me:$LINENO: result: not found" >&5
  echo "${ECHO_T}not found" >&6
-@@ -5501,14 +5498,13 @@
+@@ -5501,14 +5498,13 @@ echo "$as_me: error: a working c-client 
  
              echo "$as_me:$LINENO: checking for c-client library" >&5
  echo $ECHO_N "checking for c-client library... $ECHO_C" >&6

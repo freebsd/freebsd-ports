@@ -1,0 +1,6 @@
+%%GO_LIBDIR%%/github.com/google/btree.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/LICENSE
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/README.md
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/btree.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/btree_mem.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/btree_test.go

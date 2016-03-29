@@ -7,10 +7,13 @@ include/gstreamer-%%VERSION%%/gst/allocators/gstfdmemory.h
 include/gstreamer-%%VERSION%%/gst/app/app.h
 include/gstreamer-%%VERSION%%/gst/app/gstappsink.h
 include/gstreamer-%%VERSION%%/gst/app/gstappsrc.h
+include/gstreamer-%%VERSION%%/gst/audio/audio-channel-mixer.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-channels.h
+include/gstreamer-%%VERSION%%/gst/audio/audio-converter.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-format.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-info.h
+include/gstreamer-%%VERSION%%/gst/audio/audio-quantize.h
 include/gstreamer-%%VERSION%%/gst/audio/audio.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiobasesink.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiobasesrc.h
@@ -35,6 +38,7 @@ include/gstreamer-%%VERSION%%/gst/pbutils/codec-utils.h
 include/gstreamer-%%VERSION%%/gst/pbutils/descriptions.h
 include/gstreamer-%%VERSION%%/gst/pbutils/encoding-profile.h
 include/gstreamer-%%VERSION%%/gst/pbutils/encoding-target.h
+include/gstreamer-%%VERSION%%/gst/pbutils/gstaudiovisualizer.h
 include/gstreamer-%%VERSION%%/gst/pbutils/gstdiscoverer.h
 include/gstreamer-%%VERSION%%/gst/pbutils/gstpluginsbaseversion.h
 include/gstreamer-%%VERSION%%/gst/pbutils/install-plugins.h
@@ -75,6 +79,7 @@ include/gstreamer-%%VERSION%%/gst/tag/tag.h
 include/gstreamer-%%VERSION%%/gst/tag/xmpwriter.h
 include/gstreamer-%%VERSION%%/gst/video/colorbalance.h
 include/gstreamer-%%VERSION%%/gst/video/colorbalancechannel.h
+include/gstreamer-%%VERSION%%/gst/video/gstvideoaffinetransformationmeta.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideodecoder.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideoencoder.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideofilter.h

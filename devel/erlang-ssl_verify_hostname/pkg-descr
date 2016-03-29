@@ -1,3 +1,0 @@
-Erlang library for certificate hostname validation based on RFC 6125.
-
-WWW: https://github.com/deadtrickster/ssl_verify_hostname.erl

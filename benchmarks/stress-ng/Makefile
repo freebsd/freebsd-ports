@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stress-ng
-PORTVERSION=	0.05.20
+PORTVERSION=	0.05.21
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://kernel.ubuntu.com/~cking/tarballs/stress-ng/
 
@@ -25,6 +25,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extrapatch-stress-cpu.c \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stress-ng ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/stress-ng.1 ${STAGEDIR}${MANDIRS}/man1
+	${INSTALL_MAN} ${WRKSRC}/stress-ng.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.post.mk>

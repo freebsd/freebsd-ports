@@ -29,10 +29,8 @@ MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${YACC}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1001506
-BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
-BUILD_DEPENDS+=	gm4:${PORTSDIR}/devel/m4
-MAKE_ARGS+=	MACROPROC="${LOCALBASE}/bin/gm4"
-YACC=		${LOCALBASE}/bin/bison
+BUILD_DEPENDS+=	byacc>=20160324_1:devel/byacc
+YACC=		${LOCALBASE}/bin/yacc
 .endif
 
 do-install:

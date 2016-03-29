@@ -549,6 +549,7 @@
     SUBDIR += percona56-client
     SUBDIR += percona56-server
     SUBDIR += pg_activity
+    SUBDIR += pg_citus
     SUBDIR += pg_reorg
     SUBDIR += pg_rman
     SUBDIR += pg_statsinfo
@@ -702,6 +703,8 @@
     SUBDIR += proftpd-mod_sql_tds
     SUBDIR += puppetdb
     SUBDIR += puppetdb-terminus
+    SUBDIR += puppetdb-terminus4
+    SUBDIR += puppetdb4
     SUBDIR += pure-sql3
     SUBDIR += puredb
     SUBDIR += pxlib

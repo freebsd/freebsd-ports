@@ -2,7 +2,7 @@
 
 PORTNAME=	wwwoffle
 PORTVERSION=	2.9i
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.gedanken.org.uk/software/wwwoffle/download/
 

@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	libfm
-PORTREVISION=	1
 PKGNAMESUFFIX=	-extra
 
 MAINTAINER=	horia@racoviceanu.com

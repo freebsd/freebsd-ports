@@ -77,7 +77,7 @@ IGNORE+=	Zope requires Python ${_PYTHON_VER_REQUIRED}.\
 
 # Zope-related variables
 .if ${ZOPE_VERSION} == ${_ZOPE_PORTBRANCH}
-RUN_DEPENDS+=	zope213>0:${PORTSDIR}/www/zope213
+RUN_DEPENDS+=	zope213>0:www/zope213
 .else
 _USES_sanity+=	300:check-makevars-zope
 check-makevars-zope:

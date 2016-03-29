@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	debootstrap
-PORTVERSION=	1.0.79
+PORTVERSION=	1.0.80
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN/pool/main/d/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -10,7 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Install Debian base system into a directory
 
-LICENSE=	GPLv2
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/debian/copyright
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
@@ -19,7 +20,6 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		gmake perl5
 USE_PERL5=	run
-MAKE_ARGS=	DESTDIR="${STAGEDIR}"
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Debian GNU/kFreeBSD available only for i386 and amd64

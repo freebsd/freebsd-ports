@@ -1,0 +1,6 @@
+Cisco::CopyConfig provides methods for manipulating the 
+running-config of devices running Cisco  IOS via  SNMP 
+directed TFTP. This module is essentially a wrapper for 
+Net::SNMP and the CISCO-CONFIG-COPY-MIB-V1SMI.my MIB schema.
+
+WWW: http://search.cpan.org/dist/Cisco-CopyConfig/

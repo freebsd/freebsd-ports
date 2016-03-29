@@ -3,7 +3,7 @@
 
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.9
+DISTVERSION=	1.7.0
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -42,7 +42,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MEXAMPLES}
-USES+=		gmake
+USES+=		gmake pkgconfig:build
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}

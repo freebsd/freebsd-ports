@@ -38,6 +38,7 @@
     SUBDIR += htslib
     SUBDIR += iolib
     SUBDIR += jalview
+    SUBDIR += jellyfish
     SUBDIR += lagan
     SUBDIR += lamarc
     SUBDIR += libgtextutils

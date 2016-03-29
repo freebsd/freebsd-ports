@@ -2,6 +2,7 @@
 
 PORTNAME=	openvas-manager
 PORTVERSION=	6.0.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/2295/
 

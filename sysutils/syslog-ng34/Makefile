@@ -6,7 +6,9 @@ PORTVERSION=	3.4.8
 PORTREVISION=	9
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
+.if !defined(MASTERDIR)
 PKGNAMESUFFIX=	34
+.endif
 DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/${DISTVERSION}/source/
 

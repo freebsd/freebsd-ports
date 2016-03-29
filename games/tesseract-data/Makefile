@@ -24,6 +24,8 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDATA=	config media screenshot
+PLIST_FILES=	"@dir %%DATADIR%%/media/prefab" \
+		"@dir %%DATADIR%%/screenshot"
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \

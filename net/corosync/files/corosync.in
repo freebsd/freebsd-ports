@@ -1,0 +1,19 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: corosync
+# REQUIRE: LOGIN FILESYSTEMS
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="corosync"
+rcvar="corosync_enable"
+
+load_rc_config $name
+
+: ${corosync_enable:=NO}
+
+command="%%PREFIX%%/sbin/corosync"
+
+run_rc_command "$1"

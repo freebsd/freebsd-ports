@@ -1,0 +1,9 @@
+Syncplay synchronizes the playback of media files across several
+remote machines. The Syncplay Client launches a media player on a
+user's computer, connects to a Syncplay server and join a virtual
+room on that server. Pauses, unpauses and seeks made within that
+media player instance are relayed to fellow viewers via the server
+to allow for these actions to be replicated by the media players
+of everyone else in the same virtual room.
+
+WWW: http://syncplay.pl/

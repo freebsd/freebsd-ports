@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uTox
-PORTVERSION=	0.5.1.20160121
-PORTREVISION=	2
+PORTVERSION=	0.7.0.20160321
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	fidaj@ukr.net
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GrayHatter
-GH_TAGNAME=	b623d58
+GH_TAGNAME=	9524f98
 
 USES=		compiler:c11 desktop-file-utils gmake openal:al pkgconfig
 USE_XORG=	x11 xext xrender
@@ -37,7 +36,7 @@ DBUS_MAKE_ARGS_OFF=	DBUS=0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(GIT_V)|${DISTVERSION}-${GH_TAGNAME}|' \
-		-e 's|share/man|man|' ${WRKSRC}/${MAKEFILE}
+		-e 's|(DATAROOTDIR)/man|(PREFIX)/man|' ${WRKSRC}/${MAKEFILE}
 
 pre-configure:
 	@(if [ ! -e "${LOCALBASE}/lib/libtoxav.so" ]; then \

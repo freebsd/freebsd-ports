@@ -74,6 +74,8 @@ include/clc/geometric/length.h
 include/clc/geometric/length.inc
 include/clc/geometric/normalize.h
 include/clc/geometric/normalize.inc
+include/clc/image/image.h
+include/clc/image/image_defines.h
 include/clc/integer/abs.h
 include/clc/integer/abs.inc
 include/clc/integer/abs_diff.h
@@ -157,10 +159,12 @@ include/clc/math/hypot.inc
 include/clc/math/ldexp.h
 include/clc/math/ldexp.inc
 include/clc/math/log.h
+include/clc/math/log.inc
 include/clc/math/log10.h
 include/clc/math/log1p.h
 include/clc/math/log1p.inc
 include/clc/math/log2.h
+include/clc/math/log2.inc
 include/clc/math/mad.h
 include/clc/math/mad.inc
 include/clc/math/native_cos.h
@@ -169,7 +173,9 @@ include/clc/math/native_exp.h
 include/clc/math/native_exp10.h
 include/clc/math/native_exp2.h
 include/clc/math/native_log.h
+include/clc/math/native_log.inc
 include/clc/math/native_log2.h
+include/clc/math/native_log2.inc
 include/clc/math/native_powr.h
 include/clc/math/native_sin.h
 include/clc/math/native_sqrt.h
@@ -186,8 +192,11 @@ include/clc/math/sincos.inc
 include/clc/math/sinpi.h
 include/clc/math/sinpi.inc
 include/clc/math/sqrt.h
+include/clc/math/sqrt.inc
 include/clc/math/tan.h
 include/clc/math/tan.inc
+include/clc/math/tanh.h
+include/clc/math/tanh.inc
 include/clc/math/ternary_intrin.inc
 include/clc/math/trunc.h
 include/clc/math/unary_decl.inc

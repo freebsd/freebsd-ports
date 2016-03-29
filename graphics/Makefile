@@ -532,7 +532,6 @@
     SUBDIR += libspiro
     SUBDIR += libsvg
     SUBDIR += libsvg-cairo
-    SUBDIR += libtxc_dxtn
     SUBDIR += libvisual
     SUBDIR += libvisual04
     SUBDIR += libvisual04-plugins
@@ -741,6 +740,7 @@
     SUBDIR += panomatic
     SUBDIR += partio
     SUBDIR += pdf2svg
+    SUBDIR += pdfpc
     SUBDIR += pear-Horde_Image
     SUBDIR += pear-Image_3D
     SUBDIR += pear-Image_Barcode

@@ -31,8 +31,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|' ${WRKSRC}/man/*[58].in
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/metalog.conf ${STAGEDIR}${PREFIX}/etc/metalog.conf.sample
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/metalog.conf ${STAGEDIR}${PREFIX}/etc/metalog.conf.sample
 
 .include <bsd.port.mk>

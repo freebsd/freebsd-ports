@@ -1,0 +1,9 @@
+Pacemaker is an advanced, scalable High-Availability cluster resource manager
+for Linux-HA (Heartbeat) and/or Corosync.
+
+It supports "n-node" clusters with significant capabilities for managing
+resources and dependencies.
+
+It will run scripts at initialization, when machines go up or down, when
+related resources fail and can be configured to periodically check resource
+health.

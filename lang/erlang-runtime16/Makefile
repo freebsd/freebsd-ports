@@ -173,6 +173,11 @@ pre-configure:
 	echo "disabled by port options" > ${WRKSRC}/lib/wx/SKIP
 .endif
 
+post-configure:
+.if ${PORT_OPTIONS:MODBC}
+	${RM} ${WRKSRC}/lib/odbc/SKIP
+.endif
+
 post-install:
 	for SECTION in 1 3 4 6 7; do \
 		${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \

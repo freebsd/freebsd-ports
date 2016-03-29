@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmark
-PORTVERSION=	0.24.1
+PORTVERSION=	0.25.2
 CATEGORIES=	textproc
 
 MAINTAINER=	t@tobik.me
@@ -17,7 +17,6 @@ GH_ACCOUNT=	jgm
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
 
-post-patch:
-	${REINPLACE_CMD} -i "" 's|share/||g' ${WRKSRC}/man/CMakeLists.txt
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man
 
 .include <bsd.port.mk>

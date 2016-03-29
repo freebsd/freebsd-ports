@@ -1,0 +1,7 @@
+Configure, manage and troubleshoot clusters from the command line, with full
+tab completion and extensive help. crmsh also provides advanced features like
+low-level cluster configuration, cluster scripting, package management, and
+history exploration tools giving you a complete insight into the state of your
+cluster.
+
+WWW: https://crmsh.github.io

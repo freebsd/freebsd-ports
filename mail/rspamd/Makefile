@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 

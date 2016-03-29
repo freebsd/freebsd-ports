@@ -287,7 +287,7 @@ strigi_PATH=		${LOCALBASE}/lib/libstreamanalyzer.so.0
 . if ${_USE_KDE4_ALL:M${component}} != ""
    # Skip meta-components (e.g. kdeprefix).
 .  if defined(${component}_PORT) && defined(${component}_PATH)
-${component}_DEPENDS=	${${component}_PATH}:${PORTSDIR}/${${component}_PORT}
+${component}_DEPENDS=	${${component}_PATH}:${${component}_PORT}
     # Check if a dependency type is explicitly requested.
 .   if ${USE_KDE4:M${component}_*} != "" && ${USE_KDE4:M${component}} == ""
 ${component}_TYPE=	# empty

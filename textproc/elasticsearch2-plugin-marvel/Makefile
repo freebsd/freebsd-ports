@@ -3,6 +3,7 @@
 
 PORTNAME=	marvel
 PORTVERSION=	2.1.0
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://download.elastic.co/elasticsearch/release/org/elasticsearch/plugin/license/${PORTVERSION}/:source1 \
 		http://download.elastic.co/elasticsearch/release/org/elasticsearch/plugin/marvel-agent/${PORTVERSION}/:source2
@@ -38,9 +39,7 @@ do-extract:
 .endfor
 
 do-install:
-.for file in ${ZIP_FILES}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/${file}
-	@cd ${WRKDIR}/${file}-${PORTVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/${file}
-.endfor
-
+	# while installing, rename marvel-agent to marvel, which is what the plugin expects when running
+	@cd ${WRKDIR}/license-${PORTVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/license
+	@cd ${WRKDIR}/marvel-agent-${PORTVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/elasticsearch/plugins/marvel
 .include <bsd.port.mk>

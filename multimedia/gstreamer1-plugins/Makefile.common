@@ -6,6 +6,7 @@ BASE_GST_ALL_PLUGINS= \
 		ivorbis \
 		libvisual \
 		ogg \
+		opus \
 		pango \
 		theora \
 		vorbis \
@@ -32,7 +33,6 @@ BAD_GST_ALL_PLUGINS+= \
 		librfb \
 		modplug \
 		mpeg2enc \
-		mpg123 \
 		mplex \
 		neon \
 		ofa \
@@ -41,7 +41,6 @@ BAD_GST_ALL_PLUGINS+= \
 		opengl \
 		openh264 \
 		openjpeg \
-		opus \
 		resindvd \
 		rtmp \
 		rsvg \
@@ -89,7 +88,6 @@ BAD_GST_NON_PLUGINS= \
 		--enable-dvb \
 		--enable-shm \
 		--disable-wgl \
-		--disable-gsettings \
 		--disable-acm \
 		--disable-android_media \
 		--disable-apple_media \
@@ -101,6 +99,7 @@ BAD_GST_NON_PLUGINS= \
 		--disable-fbdev \
 		--disable-uvch264 \
 		--disable-vcd \
+		--disable-vulkan \
 		--disable-wildmidi \
 		--disable-wininet
 
@@ -145,6 +144,7 @@ UGLY_GST_ALL_PLUGINS+= \
 		lame \
 		mad \
 		mpeg2dec \
+		mpg123 \
 		sidplay \
 		twolame \
 		x264
@@ -287,7 +287,6 @@ gst_gtksink_GST_PLUGIN_DIR=ext/gtk
 
 # hls
 gst_hls_LIB_DEPENDS=	libnettle.so:${PORTSDIR}/security/nettle
-gst_hls_PLIST_FILES=	${GST_LIB_DIR}/libgstfragmented.so
 
 # jack
 gst_jack_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
@@ -346,6 +345,7 @@ gst_opencv_LIB_DEPENDS=	libopencv_highgui.so:${PORTSDIR}/graphics/opencv
 gst_opencv_PLIST_FILES=	${GST_LIB_DIR}/libgstopencv.so \
 			share/gst-plugins-bad/${VERSION}/opencv_haarcascades/fist.xml \
 			share/gst-plugins-bad/${VERSION}/opencv_haarcascades/palm.xml
+gst_opencv_USES=	compiler:c++11-lib
 
 # openjpeg
 gst_openjpeg_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15

@@ -21,7 +21,9 @@ PATCHFILES=	patch-8u05-b13.xz \
 		patch-8u51-b16.xz \
 		patch-8u60-b23.xz \
 		patch-8u66-b17-1.xz \
-		patch-8u72-b15.xz
+		patch-8u72-b15.xz \
+		patch-8u74-b02.xz \
+		patch-8u77-b03.xz
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
@@ -199,8 +201,8 @@ NO_CCACHE=		yes
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	72
-JDK_BUILD_NUMBER=	15
+JDK_UPDATE_VERSION=	77
+JDK_BUILD_NUMBER=	03
 DIST_BUILD_NUMBER=	132
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08

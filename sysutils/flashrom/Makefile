@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flashrom
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.flashrom.org/releases/
 
@@ -21,9 +21,8 @@ DMIDECODE_DESC=		Use dmidecode to gather DMI information
 FTDI_DESC=		Enable external FT2232SPI flasher support
 
 USES=		gmake tar:bzip2
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lc
-MAKE_ENV=	CONFIG_BUSPIRATE_SPI=no
+MAKE_ENV=	CONFIG_BUSPIRATE_SPI=no \
+		WARNERROR=no
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -43,13 +42,8 @@ BUSPIRATE_MAKE_ENV=	CONFIG_BUSPIRATE_SPI=yes
 
 DMIDECODE_RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
 
-FTDI_LIB_DEPENDS=	libftdi.so:${PORTSDIR}/devel/libftdi
+FTDI_LIB_DEPENDS=	libftdi1.so:${PORTSDIR}/devel/libftdi1
 FTDI_USES=		pkgconfig
-FTDI_LDFLAGS=		-lz
-FTDI_MAKE_ENV_OFF=	2_SPI=no
-
-post-patch:
-	${REINPLACE_CMD} -e "s,-Werror,,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

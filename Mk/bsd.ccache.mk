@@ -22,7 +22,7 @@ WARNING+=	WITH_CCACHE_BUILD support disabled, please set CCACHE_DIR.
   !defined(NO_BUILD) && !defined(NOCCACHE)
 # Avoid depends loops between ccache and pkg
 .	if ${PKGORIGIN} != devel/ccache && ${PKGORIGIN} != ${PKG_ORIGIN}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:${PORTSDIR}/devel/ccache
+BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:devel/ccache
 .	endif
 
 _CCACHE_PATH=	${LOCALBASE}/libexec/ccache

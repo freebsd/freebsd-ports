@@ -3,6 +3,7 @@
 
 PORTNAME=	sowing
 PORTVERSION=	1.1.18
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/sowing/
 

@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Temperature control for fermenting beer and other applications
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		readline
 NO_WRKSUBDIR=	yes
@@ -33,6 +34,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/temperaturecontrol.sh.sample \
 		${STAGEDIR}${PREFIX}/etc/rc.d
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

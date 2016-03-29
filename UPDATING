@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160324:
+  AFFECTS: print/ghostscript9-base
+  AUTHOR: tijl@FreeBSD.org
+
+  The default Ghostscript port has changed from print/ghostscript9-base,
+  which is no longer developed, to print/ghostscript9-agpl-base.  Package
+  users will upgrade automatically.  Ports users can stick with the old
+  port by adding "DEFAULT_VERSIONS+=ghostscript=9" to /etc/make.conf, or
+  move to the new port with:
+
+      portmaster -o print/ghostscript9-agpl-base ghostscript9-base
+  or: portupgrade -o print/ghostscript9-agpl-base print/ghostscript9-base
+
+  And if you have ghostscript9-x11 installed:
+
+      portmaster -o print/ghostscript9-agpl-x11 ghostscript9-x11
+  or: portupgrade -o print/ghostscript9-agpl-x11 print/ghostscript9-x11
+
+  Note that print/ghostscript9-agpl-base is licensed under the AGPLv3
+  while print/ghostscript9-base is licensed under the GPLv3.
+
 20160317:
   AFFECTS: security/openvas-client
   AUTHOR: tijl@FreeBSD.org
@@ -30,9 +51,18 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: tijl@FreeBSD.org
 
   The cups-base, cups-client and cups-image packages have been combined
-  into one cups package.  If you build your own ports the easiest way to
-  update is to delete these packages first and then build and install
-  print/cups.
+  into one cups package.
+
+  If you build your own ports the easiest way to update is to delete these
+  packages first and then build and install print/cups.
+
+  If you are using binary packages, depending on the packages installed on
+  your system, pkg(8)'s solver might get confused. In this case do not proceed
+  with the upgrade but delete first the packages:
+
+  pkg delete -fg "cups*"
+
+  Then usual upgrade process: pkg upgrade
 
   The device URI of USB printers has changed so you have to adjust the
   printer configuration.  Go to http://localhost:631/printers/.  Click on

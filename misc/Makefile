@@ -23,6 +23,7 @@
     SUBDIR += bestfit
     SUBDIR += bibletime
     SUBDIR += biblical-curse
+    SUBDIR += binclock
     SUBDIR += biosfont-demos
     SUBDIR += birthday
     SUBDIR += bogosort

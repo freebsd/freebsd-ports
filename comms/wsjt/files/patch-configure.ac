@@ -1,0 +1,20 @@
+--- configure.ac.orig	2014-04-30 19:38:38 UTC
++++ configure.ac
+@@ -75,7 +75,7 @@ AC_PATH_PROG(AR, ar)
+ AC_PATH_PROG(LD, ld)
+ AC_PATH_PROG(TEST, [test], [test])
+ AC_PATH_PROG(PYTHON, python)
+-AC_PATH_PROG(F2PY, f2py)
++AC_PATH_PROG(F2PY, f2py-%%PYTHON_VER%%)
+ AC_SUBST(VERSION, "${version}")
+ AC_MSG_CHECKING([OS])
+ OS=`uname`
+@@ -206,7 +206,7 @@ fi
+ 
+ if test "$F2PY" = ""; then
+ 	echo "You are missing f2py, trying local copy."
+-	F2PY="python f2py.py";	
++	F2PY="%%PYTHON%% f2py-%%PYTHON_VER%%";	
+ fi
+ 
+ dnl

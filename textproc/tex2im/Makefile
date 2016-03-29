@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nought.de/
 
-MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
+MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Converts LaTeX formulas into high resolution pixmap graphics
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \

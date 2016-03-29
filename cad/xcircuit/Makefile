@@ -3,7 +3,7 @@
 
 PORTNAME=	xcircuit
 PORTVERSION=	3.8.78
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \

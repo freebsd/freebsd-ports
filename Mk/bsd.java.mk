@@ -368,7 +368,7 @@ JAVA_BUILD=		jdk
 .		endif
 
 # Add the JDK port to the dependencies
-DEPEND_JAVA=	${JAVA}:${PORTSDIR}/${JAVA_PORT}
+DEPEND_JAVA=	${JAVA}:${JAVA_PORT}
 .		if defined(JAVA_EXTRACT)
 EXTRACT_DEPENDS+=	${DEPEND_JAVA}
 .		endif
@@ -389,7 +389,7 @@ RUN_DEPENDS+=		${DEPEND_JAVA}
 DESTDIRNAME?=		-Dfreebsd.ports.destdir
 ANT?=				${LOCALBASE}/bin/ant
 MAKE_ENV+=			JAVA_HOME=${JAVA_HOME}
-BUILD_DEPENDS+=		${ANT}:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS+=		${ANT}:devel/apache-ant
 ALL_TARGET?=
 .			if !target(do-build)
 do-build:

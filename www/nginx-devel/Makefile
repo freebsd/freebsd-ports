@@ -902,7 +902,7 @@ WITH_OPENSSL_PORT=	yes
 .if ${PORT_OPTIONS:MNJS}
 GH_ACCOUNT+=	nginx:njs
 GH_PROJECT+=	njs:njs
-GH_TAGNAME+=	39f2320:njs
+GH_TAGNAME+=	50fbb3b:njs
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_njs}/nginx
 .endif
 

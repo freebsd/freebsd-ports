@@ -150,6 +150,7 @@
     SUBDIR += cloop-utils
     SUBDIR += cloudabi-utils
     SUBDIR += clsync
+    SUBDIR += cluster-glue
     SUBDIR += cmdwatch
     SUBDIR += cmockery2
     SUBDIR += cmogstored
@@ -222,6 +223,7 @@
     SUBDIR += dolly
     SUBDIR += downtime
     SUBDIR += downtimed
+    SUBDIR += dsbbatmon
     SUBDIR += dsbdriverd
     SUBDIR += dsbmc
     SUBDIR += dsbmd
@@ -543,6 +545,7 @@
     SUBDIR += mbgtools
     SUBDIR += mcelog
     SUBDIR += mcollective
+    SUBDIR += mcollective-actionpolicy-auth
     SUBDIR += mcollective-nettest-agent
     SUBDIR += mcollective-nettest-client
     SUBDIR += mcollective-nettest-common
@@ -1029,6 +1032,8 @@
     SUBDIR += syslog-ng-incubator03
     SUBDIR += syslog-ng34
     SUBDIR += syslog-ng35
+    SUBDIR += syslog-ng36
+    SUBDIR += syslog-ng37
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends

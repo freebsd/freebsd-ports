@@ -20,4 +20,10 @@ USE_PERL5=	configure
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Scope/Upper/Upper.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502308
+BROKEN=		Fails to build after argarray removal
+.endif
+
+.include <bsd.port.post.mk>

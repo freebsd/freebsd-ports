@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 DISTVERSION=	2.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 PKGNAMESUFFIX=	-devel
