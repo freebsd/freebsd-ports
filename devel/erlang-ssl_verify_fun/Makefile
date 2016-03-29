@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	ssl_verify_hostname
-PORTVERSION=	1.0.6
+PORTNAME=	ssl_verify_fun
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
@@ -13,6 +13,6 @@ LICENSE=	MIT
 USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	deadtrickster
-GH_PROJECT=	ssl_verify_hostname.erl
+GH_PROJECT=	ssl_verify_fun.erl
 
 .include <bsd.port.mk>

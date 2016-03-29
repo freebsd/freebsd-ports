@@ -8245,3 +8245,4 @@ net/rubygem-omniauth-cas3||2016-03-28|Removed
 textproc/libvisio||2016-03-28|No longer used by other ports: use textproc/libvisio01 instead
 textproc/libe-book00||2016-03-28|No longer used by other ports: use textproc/libe-book instead
 graphics/libtxc_dxtn|graphics/s2tc|2016-03-29|Superseded by graphics/s2tc
+devel/erlang-ssl_verify_hostname|devel/erlang-ssl_verify_fun|2016-03-28|Project renamed
