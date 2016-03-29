@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	4.3.1
+PORTVERSION=	4.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -52,10 +52,13 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|python -c|${PYTHON_CMD} -c|" \
 		${WRKSRC}/deps/v8/build/toolchain.gypi
 	@${REINPLACE_CMD} -e "s|'python',|'${PYTHON_CMD}',|" \
-		${WRKSRC}/tools/icu/icu-generic.gyp \
+		${WRKSRC}/common.gypi \
 		${WRKSRC}/deps/v8/build/shim_headers.gypi \
+		${WRKSRC}/deps/v8/build/standalone.gypi \
+		${WRKSRC}/deps/v8/src/d8.gyp \
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp \
-		${WRKSRC}/deps/v8/src/d8.gyp
+		${WRKSRC}/node.gyp \
+		${WRKSRC}/tools/icu/icu-generic.gyp
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
