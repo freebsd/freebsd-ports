@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-assembler for variety of microprocessors and controllers
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 USES=		gmake tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
@@ -25,8 +26,12 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/include/* \
 		${STAGEDIR}${PREFIX}/libdata/${PORTNAME}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 
