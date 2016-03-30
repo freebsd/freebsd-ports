@@ -13,8 +13,7 @@ EXTRACT_SUFX=		.tar
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
 
-BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4 \
-			krb5-config:${PORTSDIR}/security/krb5
+BUILD_DEPENDS=		krb5-config:${PORTSDIR}/security/krb5
 
 CONFLICTS=		krb4-[0-9]* krb5-1.[0-7].* heimdal-[0-9]* srp-[0-9]*
 
