@@ -6,7 +6,7 @@ PORTVERSION=	0.18
 CATEGORIES=	devel
 MASTER_SITES=	http://www.leonerd.org.uk/code/libtermkey/
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy processing of keyboard entry from terminal-based programs
 
 LICENSE=	MIT

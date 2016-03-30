@@ -6,7 +6,7 @@ PORTVERSION=	0.5.5
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X hotkey daemon
 
 LICENSE=	BSD2CLAUSE
