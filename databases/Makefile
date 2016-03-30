@@ -25,7 +25,6 @@
     SUBDIR += beansdb
     SUBDIR += buzhug
     SUBDIR += c3p0
-    SUBDIR += cassandra
     SUBDIR += cassandra-cpp-driver
     SUBDIR += cassandra2
     SUBDIR += casstcl

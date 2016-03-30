@@ -384,7 +384,6 @@
     SUBDIR += latex-service
     SUBDIR += latex2html
     SUBDIR += libabw
-    SUBDIR += libabw00
     SUBDIR += libcrm114
     SUBDIR += libcroco
     SUBDIR += libcss
@@ -424,10 +423,8 @@
     SUBDIR += libutf8proc
     SUBDIR += libvisio01
     SUBDIR += libwapcaplet
-    SUBDIR += libwpd
     SUBDIR += libwpd010
     SUBDIR += libwps
-    SUBDIR += libwps02
     SUBDIR += libwps03
     SUBDIR += libxdiff
     SUBDIR += libxml++26
