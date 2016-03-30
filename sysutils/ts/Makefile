@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	ts
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/ts/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Serial task spooler
+
+LICENSE=	GPLv2+
 
 USES=		gmake
 PLIST_FILES=	bin/ts \
