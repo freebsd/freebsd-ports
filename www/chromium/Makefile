@@ -56,7 +56,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		bison compiler:c++11-lib cpe desktop-file-utils execinfo jpeg \
+USES=		bison compiler:c++14-lang cpe desktop-file-utils execinfo jpeg \
 		ninja perl5 pkgconfig python:2,build shebangfix tar:xz
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
@@ -205,7 +205,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
 CFLAGS+=	-fno-stack-protector # gcc 4.8 cannot find __stack_chk_fail_local
 .else
 GYP_DEFINES+=	clang=1
-CFLAGS+=	-Wno-unknown-warning-option
+CFLAGS+=	-Wno-unknown-warning-option \
+			-D_LIBCPP_TRIVIAL_PAIR_COPY_CTOR=1 # work around base r261801
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 CONFIGURE_ENV+=	AR=/usr/bin/ar
 .endif
@@ -338,6 +339,7 @@ pre-configure:
 		'third_party/webdriver' \
 		'third_party/webrtc' \
 		'third_party/widevine' \
+		'third_party/woff2' \
 		'third_party/x86inc' \
 		'third_party/yasm' \
 		'third_party/zlib' \
