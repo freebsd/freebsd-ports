@@ -13,7 +13,7 @@ COMMENT=	Powerful and compact editor with nongraphical user interface
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/tecoc${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
-ALL_TARGET=	#
+ALL_TARGET=	# empty
 
 DOCSFILES=	src/readme.1st src/readme.lnx src/changes.txt src/aaout.txt \
 		src/problems.txt src/video.txt doc/teco.doc doc/wchart.txt
@@ -22,11 +22,11 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/tecoc ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOCSFILES}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor

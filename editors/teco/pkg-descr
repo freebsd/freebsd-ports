@@ -1,9 +1,8 @@
-	TECO is the grand old text editor. It is powerful and compact
-precursor to EMACS and has a completely nongraphical user interface.
-It is very fast (probably the fastes editor in the world) and have a
-macro language. TECO was written by Dan Murphy (http://www.opost.com/dlm)
-at Digital Equipment Corporation in 1962. This is based on Pete Siemsen's
-TECOC implementation, and comes with a copy of the originals DECUS TECO
-documentation.
+TECO is the grand old text editor.  It is powerful and compact precursor
+to EMACS and has a completely nongraphical user interface.  It is very fast
+(probably the fastes editor in the world) and have a macro language.  TECO
+was written by Dan Murphy (http://www.opost.com/dlm) at Digital Equipment
+Corporation in 1962.  This is based on Pete Siemsen's TECOC implementation,
+and comes with a copy of the originals DECUS TECO documentation.
 
 WWW: http://almy.us/teco.html
