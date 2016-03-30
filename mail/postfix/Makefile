@@ -22,7 +22,7 @@ LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libicuuc.so:devel/icu
 
 PORTSCOUT=	limit:^3\.1\.
 
@@ -48,14 +48,14 @@ OPTIONS_RADIO_RG1=	SASLKRB5 SASLKMIT
 OPTIONS_DEFAULT=	PCRE TLS
 
 BDB_USE=		BDB=yes
-CDB_LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
+CDB_LIB_DEPENDS=	libcdb.so:databases/tinycdb
 LDAP_USE=		OPENLDAP=yes
-LMDB_LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 MYSQL_USE=		MYSQL=yes
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PGSQL_USES=		pgsql
-SASLKMIT_LIB_DEPENDS=	libkrb5.so:${PORTSDIR}/security/krb5
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASLKMIT_LIB_DEPENDS=	libkrb5.so:security/krb5
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=		sqlite
 TLS_USE=		OPENSSL=yes
 
@@ -220,7 +220,7 @@ POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LDAP=-L${LOCALBASE}/lib -lldap -L${LOCALBASE}/lib
 _REQUIRE+=		slapd
 . if ${PORT_OPTIONS:MLDAP_SASL}
 .  if ! ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 .  endif
 WANT_OPENLDAP_SASL=	yes
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL
