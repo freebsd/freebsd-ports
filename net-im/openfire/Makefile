@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	4.0.1
-PORTREVISION=	1
+PORTVERSION=	4.0.2
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://download.igniterealtime.org/openfire/
@@ -25,7 +24,7 @@ DOS2UNIX_FILES=	src/java/org/jivesoftware/openfire/server/ServerDialback.java
 USE_LDCONFIG=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.7 # some plugins not available with later java, needs special handling
+JAVA_VERSION=	1.8
 
 CPE_VENDOR=	igniterealtime
 
