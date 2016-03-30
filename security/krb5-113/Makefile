@@ -17,8 +17,6 @@ COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
 
 LICENSE=		MIT
 
-BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
-
 CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[0-2]-* krb5-[0-9].*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
