@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab-shell
 PORTVERSION=	2.6.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ports.toco-domains.de/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -19,13 +20,12 @@ GROUPS=		git
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-do-install:
+post-patch:
 	${MV} ${WRKSRC}/config.yml.example ${WRKSRC}/config.yml.sample
 
-post-install:
-	${MKDIR} ${STAGEDIR}/var/log/
-	${TOUCH} ${STAGEDIR}/var/log/gitlab-shell.log
-	${MKDIR} ${STAGEDIR}${DATADIR}
+do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}/var/log/gitlab-shell
 
 .include <bsd.port.mk>
