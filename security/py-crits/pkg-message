@@ -1,4 +1,4 @@
-This port requires non-defualt configuration options for Apache.
+This port requires non-default configuration options for Apache.
 
 The list of modules and their configuration options are:
 
@@ -7,4 +7,4 @@ The list of modules and their configuration options are:
 * SUEXEC        : mod_suexec
 * PROXY_AJP     : mod_proxy_ajp
 * PROXY_CONNECT : mod_proxy_connect
-* PROXY_FPT     : mod_proxy_ftp
+* PROXY_FTP     : mod_proxy_ftp
