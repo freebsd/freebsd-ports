@@ -818,6 +818,7 @@
     SUBDIR += qt5-sqldrivers-pgsql
     SUBDIR += qt5-sqldrivers-sqlite2
     SUBDIR += qt5-sqldrivers-sqlite3
+    SUBDIR += qt5-sqldrivers-tds
     SUBDIR += rdb
     SUBDIR += rdfdb
     SUBDIR += recutils
