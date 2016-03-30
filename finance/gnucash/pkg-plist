@@ -456,6 +456,7 @@ share/applications/gnucash.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2012
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2013
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2014
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2015
 %%PORTDOCS%%%%DOCSDIR%%/DOCUMENTERS
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -1220,7 +1221,6 @@ share/locale/nl/LC_MESSAGES/gnucash.mo
 share/locale/pl/LC_MESSAGES/gnucash.mo
 share/locale/pt/LC_MESSAGES/gnucash.mo
 share/locale/pt_BR/LC_MESSAGES/gnucash.mo
-share/locale/pt_PT/LC_MESSAGES/gnucash.mo
 share/locale/ro/LC_MESSAGES/gnucash.mo
 share/locale/ru/LC_MESSAGES/gnucash.mo
 share/locale/rw/LC_MESSAGES/gnucash.mo
