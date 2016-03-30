@@ -1,0 +1,8 @@
+Moose type constraints are expected to return true if the value
+passes the constraint, and false otherwise; Moo "constraints", on
+the other hand, die if validation fails.
+
+This metaclass allows for Moo-style constraints; it will wrap them
+and translate their Moo into a dialect Moose understands.
+
+WWW: https://metacpan.org/release/MooseX-Meta-TypeConstraint-Mooish
