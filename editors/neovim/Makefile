@@ -6,7 +6,7 @@ PORTVERSION=	0.1.2
 CATEGORIES=	editors
 MASTER_SITES=	GH
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Next generation Vim
 
 LICENSE=	APACHE20

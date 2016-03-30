@@ -6,7 +6,7 @@ PORTVERSION=	0.9
 PORTREVISION=	2
 CATEGORIES=	x11-wm
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiling window manager based on binary space partitioning
 
 LICENSE=	BSD2CLAUSE

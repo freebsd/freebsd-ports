@@ -6,7 +6,7 @@ PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unibilium is a very basic terminfo library
 
 LICENSE=	LGPL3
