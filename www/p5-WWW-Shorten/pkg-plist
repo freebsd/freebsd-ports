@@ -7,6 +7,8 @@ bin/shorten
 %%PERL5_MAN3%%/WWW::Shorten::TinyClick.3.gz
 %%PERL5_MAN3%%/WWW::Shorten::TinyURL.3.gz
 %%PERL5_MAN3%%/WWW::Shorten::Tinylink.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::Qurl.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::Qwer.3.gz
 %%PERL5_MAN3%%/WWW::Shorten::UserAgent.3.gz
 %%PERL5_MAN3%%/WWW::Shorten::_dead.3.gz
 %%PERL5_MAN3%%/WWW::Shorten::generic.3.gz
@@ -16,6 +18,8 @@ bin/shorten
 %%SITE_PERL%%/WWW/Shorten/Linkz.pm
 %%SITE_PERL%%/WWW/Shorten/MakeAShorterLink.pm
 %%SITE_PERL%%/WWW/Shorten/Metamark.pm
+%%SITE_PERL%%/WWW/Shorten/Qurl.pm
+%%SITE_PERL%%/WWW/Shorten/Qwer.pm
 %%SITE_PERL%%/WWW/Shorten/TinyClick.pm
 %%SITE_PERL%%/WWW/Shorten/TinyURL.pm
 %%SITE_PERL%%/WWW/Shorten/Tinylink.pm
