@@ -13,8 +13,6 @@ COMMENT=	Callback Framework for C++
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix perl5 tar:xz
