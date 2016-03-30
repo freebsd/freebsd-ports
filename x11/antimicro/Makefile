@@ -5,7 +5,7 @@ PORTNAME=	antimicro
 PORTVERSION=	2.13
 CATEGORIES=	x11
 
-MAINTAINER=	antont@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for mapping keyboard and mouse to a gamepad
 
 LICENSE=	GPLv3
