@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -426,5 +427,16 @@ svn-patch-lldb:
 	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
 	    sed -E -e 's;^(---|\+\+\+) ;\1 tools/lldb/;' >> ${_PATCH_FILE}
 .endif
+.if make(svn-patch-llvm)
+.if !defined(PATCH_REV)
+.error svn-patch-llvm requires that PATCH_REV be set
+.endif
+_PATCH_FILE=${FILESDIR}/patch-llvm-svn-${PATCH_REV}
+_LLVM_BASE=http://llvm.org/svn/llvm-project/llvm/trunk
+svn-patch-llvm:
+	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+	svn diff -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+.endif
+
 
 .include <bsd.port.post.mk>
