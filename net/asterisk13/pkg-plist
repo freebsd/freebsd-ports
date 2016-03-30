@@ -70,6 +70,7 @@
 @sample %%ETCDIR%%/oss.conf.sample
 @sample %%ETCDIR%%/phone.conf.sample
 @sample %%ETCDIR%%/phoneprov.conf.sample
+@sample %%ETCDIR%%/pjproject.conf.sample
 @sample %%ETCDIR%%/pjsip.conf.sample
 @sample %%ETCDIR%%/pjsip_notify.conf.sample
 @sample %%ETCDIR%%/pjsip_wizard.conf.sample
@@ -242,6 +243,8 @@ include/asterisk/res_fax.h
 include/asterisk/res_hep.h
 include/asterisk/res_mwi_external.h
 include/asterisk/res_odbc.h
+include/asterisk/res_odbc_transaction.h
+include/asterisk/res_pjproject.h
 include/asterisk/res_pjsip.h
 include/asterisk/res_pjsip_body_generator_types.h
 include/asterisk/res_pjsip_cli.h
@@ -365,12 +368,13 @@ sbin/safe_asterisk
 %%DOCSDIR%%/images/asterisk-intro.jpg
 %%DOCSDIR%%/images/kpad2.jpg
 @dir lib/asterisk/modules
-@dir %%DATADIR%%/sounds
-@dir %%DATADIR%%/moh
-@dir %%DATADIR%%/keys
-@dir %%DATADIR%%/images
-@dir %%DATADIR%%/firmware/iax
 @dir %%DATADIR%%/documentation/thirdparty
+@dir %%DATADIR%%/firmware/iax
+@dir %%DATADIR%%/images
+@dir %%DATADIR%%/keys
+@dir %%DATADIR%%/moh
+@dir %%DATADIR%%/sounds
+@dir %%DATADIR%%/third-party
 @owner %%ASTERISK_USER%%
 @group %%ASTERISK_GROUP%%
 @dir %%VARDIR%%/log/asterisk/cdr-csv

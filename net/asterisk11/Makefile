@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	11.21.2
+PORTVERSION=	11.22.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:main,g729
 MASTER_SITE_SUBDIR=	asterisk/:main \
@@ -84,7 +84,7 @@ NEWT_DESC=			Newt User Interface
 OPTIONS_GROUP+=			SOUNDS
 OPTIONS_GROUP_SOUNDS=		G729
 SOUNDS_DESC=			Core and Music-on-Hold (MoH) Sound Files
-ASTERISK_CORE_G729_SOUNDS=	asterisk-core-sounds-en-g729-1.4.27.tar.gz
+ASTERISK_CORE_G729_SOUNDS=	asterisk-core-sounds-en-g729-1.5.tar.gz
 ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
 
 G729_DESC=			Install G.729 format sounds
