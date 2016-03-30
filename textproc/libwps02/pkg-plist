@@ -1,7 +1,0 @@
-include/libwps-0.2/libwps/WPSDocument.h
-include/libwps-0.2/libwps/libwps.h
-lib/libwps-0.2.la
-lib/libwps-0.2.so
-lib/libwps-0.2.so.2
-lib/libwps-0.2.so.2.0.10
-libdata/pkgconfig/libwps-0.2.pc
