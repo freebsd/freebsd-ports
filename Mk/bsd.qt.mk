@@ -314,8 +314,8 @@ _USE_QT4_ONLY=	accessible assistant-adp assistantclient codecs-cn codecs-jp \
 _USE_QT5_ONLY=	3d buildtools canvas3d concurrent connectivity core \
 				enginio graphicaleffects location paths phonon4 \
 				printsupport qdbus qdoc qev qml quick quickcontrols \
-				sensors serialport uiplugin uitools webchannel websockets \
-				widgets x11extras
+				sensors serialport sql-tds uiplugin uitools webchannel \
+				websockets widgets x11extras
 
 3d_PORT=		graphics/${_QT_RELNAME}-3d
 3d_PATH=		${QT_LIBDIR}/libQt${_QT_LIBVER}3DCore.so
@@ -523,7 +523,7 @@ sql-sqlite2_PORT=	databases/${_QT_RELNAME}-sqlite-plugin
 
 sql-sqlite3_PATH=	${QT_PLUGINDIR}/sqldrivers/libqsqlite.so
 
-.for db in ibase mysql odbc pgsql sqlite2 sqlite3
+.for db in ibase mysql odbc pgsql sqlite2 sqlite3 tds
 .if ${_QT_VERSION:M4*}
 sql-${db}_PORT?=	databases/${_QT_RELNAME}-${db}-plugin
 .else
