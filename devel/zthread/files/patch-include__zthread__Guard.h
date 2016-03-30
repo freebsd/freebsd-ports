@@ -1,6 +1,6 @@
---- ./include/zthread/Guard.h.orig	2005-03-12 21:10:09.000000000 -0500
-+++ ./include/zthread/Guard.h	2013-01-17 13:50:40.000000000 -0500
-@@ -108,7 +108,7 @@
+--- include/zthread/Guard.h.orig	2005-03-13 02:10:09 UTC
++++ include/zthread/Guard.h
+@@ -108,7 +108,7 @@ class CompoundScope {
    }
  
    template <class LockType>
@@ -9,7 +9,7 @@
  
      if(Scope1::createScope(l, ms))
        if(!Scope2::createScope(l, ms)) {
-@@ -428,7 +428,7 @@
+@@ -428,7 +428,7 @@ public:
    template <class U, class V>
    Guard(Guard<U, V>& g) : LockHolder<LockType>(g) {
  
@@ -18,7 +18,7 @@
      
    }
  
-@@ -458,7 +458,7 @@
+@@ -458,7 +458,7 @@ public:
    template <class U, class V>
    Guard(Guard<U, V>& g, LockType& lock) : LockHolder<LockType>(lock) {
  
@@ -27,7 +27,7 @@
  
    }
  
-@@ -491,7 +491,7 @@
+@@ -491,7 +491,7 @@ Guard<LockType, LockingPolicy>::~Guard()
      
    try {
      

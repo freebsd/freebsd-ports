@@ -1,6 +1,6 @@
---- ./include/zthread/BlockingQueue.h.orig	2005-03-12 21:04:18.000000000 -0500
-+++ ./include/zthread/BlockingQueue.h	2009-04-23 15:03:09.000000000 -0400
-@@ -83,7 +83,7 @@
+--- include/zthread/BlockingQueue.h.orig	2005-03-13 02:04:18 UTC
++++ include/zthread/BlockingQueue.h
+@@ -83,7 +83,7 @@ namespace ZThread {
        /**
         * @see Queue::add(const T& item, unsigned long timeout)
         */
