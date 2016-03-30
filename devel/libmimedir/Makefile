@@ -13,7 +13,6 @@ COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 USES=		desthack libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=byacc
-BUILD_DEPENDS=	byacc:devel/byacc
 USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=yes
