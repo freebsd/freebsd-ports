@@ -537,7 +537,6 @@
     SUBDIR += libvisual04-plugins
     SUBDIR += libwmf
     SUBDIR += libwmf-nox11
-    SUBDIR += libwpg
     SUBDIR += libwpg03
     SUBDIR += libyuv
     SUBDIR += lightzone

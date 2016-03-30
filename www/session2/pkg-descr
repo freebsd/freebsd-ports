@@ -1,5 +1,0 @@
-The session2 package provides simple session handling for Quixote 2.0,
-together with persistence mechanisms that can store sessions in a
-variety of backends, including MySQL and PostgreSQL databases.
-
-WWW: http://quixote.idyll.org/session2/
