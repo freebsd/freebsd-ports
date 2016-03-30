@@ -1,0 +1,7 @@
+#!/bin/sh
+
+TZ=Europe/London; export TZ
+PATH=$PATH:/usr/local/GNUstep/System/Tools; export PATH
+. /usr/local/GNUstep/System/Library/Makefiles/GNUstep.sh
+
+/usr/local/GNUstep/Local/Tools/Admin/sogo-ealarms-notify -p /usr/local/etc/sogo/ealarms-notify.creds >> /var/log/sogo/cron-ealarms-notify.log 2>&1
