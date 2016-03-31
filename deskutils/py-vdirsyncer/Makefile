@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vdirsyncer
-PORTVERSION=	0.4.3
+PORTVERSION=	0.9.3
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,7 @@ COMMENT=	Synchronize calendars and contacts
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.10.1:${PORTSDIR}/devel/py-setuptools_scm
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atomicwrites>=0.1.4:${PORTSDIR}/devel/py-atomicwrites \
 		${PYTHON_PKGNAMEPREFIX}click>=3.2:${PORTSDIR}/devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}icalendar>=3.6:${PORTSDIR}/devel/py-icalendar \
