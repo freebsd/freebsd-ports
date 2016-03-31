@@ -1102,6 +1102,7 @@
     SUBDIR += rubygem-fog-openstack
     SUBDIR += rubygem-fog-powerdns
     SUBDIR += rubygem-fog-profitbricks
+    SUBDIR += rubygem-fog-rackspace
     SUBDIR += rubygem-fog-radosgw
     SUBDIR += rubygem-fog-riakcs
     SUBDIR += rubygem-fog-sakuracloud
