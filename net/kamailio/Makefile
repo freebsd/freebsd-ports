@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kamailio
-PORTVERSION=	4.3.5
+PORTVERSION=	4.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -160,7 +160,7 @@ post-stage:
 	pua_dialoginfo pua_mi pua_reginfo pua_usrloc rls \
 	acc_radius misc_radius peering pua pua_xmpp xcap_client xcap_server \
 	tcpops auth_xkeys statsd dmq_usrloc rtjson websocket sctp \
-	app_perl
+	app_perl cfgt smsops log_custom topos statsc
 	@if [ -e ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so ]; then \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so; \
 	fi
