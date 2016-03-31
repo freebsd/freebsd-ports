@@ -3,7 +3,7 @@
 
 PORTNAME=	ElasticSearch-SearchBuilder
 PORTVERSION=	0.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN/../by-authors/id/D/DR/DRTECH/
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,7 @@ COMMENT=	ElasticSearch Query Builder
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Carp>=0:${PORTSDIR}/devel/p5-Carp \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS=	p5-Carp>=0:${PORTSDIR}/devel/p5-Carp
 TEST_DEPENDS=	p5-Test-Deep>=:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump

@@ -3,6 +3,7 @@
 
 PORTNAME=	RDF-Trine
 PORTVERSION=	1.014
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,7 +31,6 @@ BUILD_DEPENDS=	p5-Algorithm-Combinatorics>=0:${PORTSDIR}/math/p5-Algorithm-Combi
 		p5-Module-Load-Conditional>=0.38:${PORTSDIR}/devel/p5-Module-Load-Conditional \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-ArrayRef>=0:${PORTSDIR}/devel/p5-MooseX-ArrayRef \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Set-Scalar>=0:${PORTSDIR}/devel/p5-Set-Scalar \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
 		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV \
@@ -49,4 +49,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502000
+BUILD_DEPENDS+=      p5-Scalar-List-Utils>=1.33:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=        p5-Scalar-List-Utils>=1.33:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>

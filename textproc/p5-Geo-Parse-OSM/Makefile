@@ -3,7 +3,7 @@
 
 PORTNAME=	Geo-Parse-OSM
 PORTVERSION=	0.42
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc geography perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LIOSHA
@@ -13,7 +13,6 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenStreetMap XML file regexp parser
 
 BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
