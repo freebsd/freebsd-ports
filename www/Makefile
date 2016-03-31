@@ -1547,6 +1547,7 @@
     SUBDIR += py-django-haystack
     SUBDIR += py-django-htmlmin
     SUBDIR += py-django-json-rpc
+    SUBDIR += py-django-jsonfield
     SUBDIR += py-django-keyedcache
     SUBDIR += py-django-ldapdb
     SUBDIR += py-django-livesettings
