@@ -1099,6 +1099,7 @@
     SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-google
     SUBDIR += rubygem-fog-local
+    SUBDIR += rubygem-fog-openstack
     SUBDIR += rubygem-fog-powerdns
     SUBDIR += rubygem-fog-profitbricks
     SUBDIR += rubygem-fog-radosgw
