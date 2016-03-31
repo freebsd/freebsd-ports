@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qgis
-PORTVERSION=	2.14.0
+PORTVERSION=	2.14.1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -23,9 +23,9 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
-GH_TAGNAME=	654fabd
+GH_TAGNAME=	ea85bef
 
-USES=		cpe bison cmake desktop-file-utils execinfo fortran gmake python sqlite
+USES=		cpe bison cmake desktop-file-utils execinfo fortran gmake python:2 sqlite
 USE_QT4=	gui svg xml network sql designer testlib linguist_build \
 		qmake_build moc_build rcc_build uic_build
 
@@ -106,6 +106,8 @@ SERVER_LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
 SERVER_CMAKE_ON=	-DWITH_SERVER:BOOL=TRUE
 SERVER_CMAKE_OFF=	-DWITH_SERVER:BOOL=FALSE
 
+INSTALLS_ICONS=		yes
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000033
@@ -136,12 +138,29 @@ pre-patch:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/qgis|${LOCALBASE}/bin/qgis|g' ${WRKSRC}/debian/${PORTNAME}.desktop
-	@${REINPLACE_CMD} -e 's|Icon=qgis|Icon=qgis-icon|' ${WRKSRC}/debian/${PORTNAME}.desktop
+	@${REINPLACE_CMD} -e 's|/usr/bin/qgis|${LOCALBASE}/bin/qgis|g' \
+		${WRKSRC}/debian/${PORTNAME}.desktop
+	@${REINPLACE_CMD} -e 's|Icon=qgis|Icon=qgis-icon|' \
+		${WRKSRC}/debian/${PORTNAME}.desktop
+	@${REINPLACE_CMD} -e 's|env python|env ${PYTHON_VERSION}|g' \
+		${WRKSRC}/python/ext-libs/pygments/util.py \
+		${WRKSRC}/python/ext-libs/pytz/tzfile.py \
+		${WRKSRC}/scripts/generate_test_mask_image.py \
+		${WRKSRC}/scripts/random_vector.py \
+		${WRKSRC}/scripts/widgets_tree.py \
+		${WRKSRC}/src/plugins/grass/qgis_grass_test.py \
+		${WRKSRC}/src/plugins/grass/scripts/qgis.v.kernel.rast.py \
+		${WRKSRC}/src/plugins/grass/scripts/v.out.ogr.pg.py \
+		${WRKSRC}/src/plugins/grass/scripts/qgis.v.upgrade.py \
+		${WRKSRC}/src/plugins/grass/scripts/r.external.all.py \
+		${WRKSRC}/src/plugins/grass/scripts/db.connect-login.pg.py
 
 post-install:
+	${RM} ${STAGEDIR}${DATADIR}/python/pygments/util.py.bak
+	${RM} ${STAGEDIR}${DATADIR}/python/pytz/tzfile.py.bak
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor
 .for SZ in ${ICON_SIZES}
