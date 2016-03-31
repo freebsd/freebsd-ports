@@ -5,12 +5,10 @@ PORTNAME=	apachetop
 PORTVERSION=	0.12.6
 PORTREVISION=	4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.webta.org/apachetop/
+MASTER_SITES=	http://lukasz.wasikowski.net/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Apache RealTime log stats
-
-BROKEN=		unfetchable
 
 GNU_CONFIGURE=	yes
 USES=		readline
