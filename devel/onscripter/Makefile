@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	onscripter
-PORTVERSION=	20150820
+PORTVERSION=	20160327
 CATEGORIES=	devel games
 MASTER_SITES=	http://onscripter.sourceforge.jp/
 
@@ -41,8 +41,6 @@ UTF8_CFLAGS?=	-DUTF8_CAPTION -DUTF8_FILESYSTEM
 post-patch:
 	@${REINPLACE_CMD} -e 's/$$(LIBS)/$$(LDFLAGS) &/' \
 		${WRKSRC}/Makefile.onscripter
-	@${REINPLACE_CMD} -e 's/luaL_checkint/(int)&eger/' \
-		${WRKSRC}/LUAHandler.cpp
 
 post-patch-LUA-off:
 	@${REINPLACE_CMD} '/optional: lua/,/^$$/d' ${WRKSRC}/${MAKEFILE}
