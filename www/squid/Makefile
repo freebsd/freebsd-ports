@@ -2,7 +2,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.5.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -21,7 +21,19 @@ PATCH_SITE_SUBDIR=	Versions/v3/${PORTVERSION:R}/changesets
 PATCHFILES=	squid-3.5-13997.patch \
 		squid-3.5-13998.patch \
 		squid-3.5-13999.patch \
-		squid-3.5-14000.patch
+		squid-3.5-14000.patch \
+		squid-3.5-14001.patch \
+		squid-3.5-14002.patch \
+		squid-3.5-14003.patch \
+		squid-3.5-14004.patch \
+		squid-3.5-14005.patch \
+		squid-3.5-14006.patch \
+		squid-3.5-14007.patch \
+		squid-3.5-14008.patch \
+		squid-3.5-14009.patch \
+		squid-3.5-14010.patch \
+		squid-3.5-14011.patch \
+		squid-3.5-14012.patch
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	HTTP Caching Proxy
@@ -45,8 +57,11 @@ PORTEXAMPLES=	*
 SUB_FILES+=	pkg-install pkg-message
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB \
-		AUTH_SQL CACHE_DIGESTS DEBUG DELAY_POOLS ECAP ESI \
+OPTIONS_GROUP=	AUTH
+OPTIONS_RADIO=	SMB
+OPTIONS_GROUP_AUTH=AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SQL
+OPTIONS_RADIO_SMB=AUTH_SMB3 AUTH_SMB4
+OPTIONS_DEFINE=	ARP_ACL CACHE_DIGESTS DEBUG DELAY_POOLS ECAP ESI \
 		FOLLOW_XFF FS_AUFS FS_DISKD FS_ROCK HTCP ICAP ICMP IDENT IPV6 \
 		KQUEUE LARGEFILE NETTLE SNMP SSL SSL_CRTD STACKTRACES LAX_HTTP \
 		TP_IPF TP_IPFW TP_PF VIA_DB WCCP WCCPV2 DOCS EXAMPLES
@@ -54,8 +69,10 @@ OPTIONS_DEFINE=	ARP_ACL AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB \
 OPTIONS_SINGLE=	GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 
-OPTIONS_DEFAULT=GSSAPI_BASE AUTH_NIS FS_AUFS FS_DISKD HTCP IDENT KQUEUE SNMP \
-		WCCP WCCPV2
+OPTIONS_DEFAULT=ARP_ACL AUTH_NIS CACHE_DIGESTS DELAY_POOLS DOCS EXAMPLES FOLLOW_XFF \
+		FS_AUFS FS_DISKD FS_ROCK HTCP ICAP ICMP IDENT IPV6 KQUEUE LARGEFILE \
+		LAX_HTTP SNMP SSL SSL_CRTD TP_IPF TP_IPFW TP_PF VIA_DB WCCP WCCPV2 \
+		GSSAPI_BASE
 
 ARP_ACL_CONFIGURE_ENABLE=	eui
 AUTH_LDAP_CFLAGS=		-I${LOCALBASE}/include
@@ -65,10 +82,9 @@ AUTH_SASL_CFLAGS=		-I${LOCALBASE}/include
 AUTH_SASL_CPPFLAGS=		-I${LOCALBASE}/include
 AUTH_SASL_LDFLAGS=		-L${LOCALBASE}/lib
 AUTH_SASL_LIB_DEPENDS=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
-AUTH_SMB_BUILD_DEPENDS=		smbclient:${PORTSDIR}/net/samba36
-AUTH_SMB_RUN_DEPENDS=		smbclient:${PORTSDIR}/net/samba36
-AUTH_SQL_RUN_DEPENDS=		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
-AUTH_SQL_USE=			MYSQL=yes
+AUTH_SMB3_RUN_DEPENDS=		smbclient:${PORTSDIR}/net/samba36
+AUTH_SMB4_RUN_DEPENDS=		smbclient:${PORTSDIR}/net/samba42
+AUTH_SQL_RUN_DEPENDS=		p5-DBI>=1.08:${PORTSDIR}/databases/p5-DBI
 CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
 DELAY_POOLS_CONFIGURE_ENABLE=	delay-pools
 ECAP_CFLAGS=			-I${LOCALBASE}/include
@@ -123,6 +139,7 @@ GSSAPI_MIT_CONFIGURE_ON=	--with-mit-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARG
 # add an option for external_acl/session (requires some kind of external
 # Berkeley DB support, unsure which one)
 ARP_ACL_DESC=		ARP/MAC/EUI based authentification
+AUTH_DESC=		Authentication helpers
 GSSAPI_DESC=		Install Kerberos authentication helpers
 GSSAPI_NONE_DESC=	Build without Kerberos support
 GSSAPI_BASE_DESC=	Build with Kerberos support from base
@@ -131,8 +148,9 @@ GSSAPI_MIT_DESC=	Build with Kerberos support from security/krb5
 AUTH_LDAP_DESC=		Install LDAP authentication helpers
 AUTH_NIS_DESC=		Install NIS/YP authentication helpers
 AUTH_SASL_DESC=		Install SASL authentication helpers
-AUTH_SMB_DESC=		Install SMB auth. helpers (req. Samba)
-AUTH_SQL_DESC=		Install SQL based auth (uses MySQL)
+AUTH_SMB3_DESC=		Install SMB3 auth. helpers (req. net/samba36)
+AUTH_SMB4_DESC=		Install SMB4 auth. helpers (req. net/samba42)
+AUTH_SQL_DESC=		Install SQL based auth
 CACHE_DIGESTS_DESC=	Use cache digests
 DEBUG_DESC=		Build with extended debugging support
 DELAY_POOLS_DESC=	Delay pools (bandwidth limiting)
@@ -149,6 +167,7 @@ IDENT_DESC=		Ident lookups (RFC 931)
 KQUEUE_DESC=		Kqueue(2) support
 LARGEFILE_DESC=		Support large (>2GB) cache and log files
 NETTLE_DESC=		Nettle MD5 algorithm support
+SMB_DESC=		Samba authentication helpers
 SNMP_DESC=		SNMP support
 SSL_CRTD_DESC=		Use ssl_crtd to handle SSL cert requests
 SSL_DESC=		SSL gatewaying support
@@ -221,9 +240,12 @@ external_acl+=	LDAP_group
 basic_auth+=	SASL
 .endif
 
-.if ${PORT_OPTIONS:MAUTH_SMB}
+.if ${PORT_OPTIONS:MAUTH_SMB3} || ${PORT_OPTIONS:MAUTH_SMB4}
+PLIST_SUB+=	AUTH_SMB=""
 basic_auth+=	SMB
 external_acl+=	wbinfo_group
+.else
+PLIST_SUB+=	AUTH_SMB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAUTH_SQL}
@@ -310,6 +332,10 @@ CONFIGURE_ARGS+=	--enable-storeid-rewrite-helpers="${storeid_rewrite_helpers}"
 CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
 CFLAGS+=		-I${OPENSSLINC}
 LDFLAGS+=		-L${OPENSSLLIB}
+.endif
+
+.if ${PORT_OPTIONS:MSSL_CRTD} && !${PORT_OPTIONS:MSSL}
+IGNORE=SSL_CRTD option can be used only if SSL option is enabled
 .endif
 
 .if ${PORT_OPTIONS:MSTACKTRACES}

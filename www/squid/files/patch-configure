@@ -1,11 +1,7 @@
 --- configure.orig	2015-11-01 10:46:19 UTC
 +++ configure
-@@ -27729,9 +27729,11 @@
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
+@@ -27731,7 +27731,7 @@
    squid_pc_krb5_name="heimdal-gssapi"
-+    else
-+      squid_pc_krb5_name="heimdal-gssapi"
  fi
    fi
 -  if test "x$squid_pc_krb5_name" != "x" -a "$cross_compiling" = "no"; then
@@ -13,6 +9,15 @@
      # Look for krb5-config (unless cross-compiling)
      # Extract the first word of "krb5-config", so it can be a program name with args.
  set dummy krb5-config; ac_word=$2
+@@ -27777,7 +27777,7 @@
+     if test "x$ac_cv_path_krb5_config" != "xno" ; then
+       krb5confpath="`dirname $ac_cv_path_krb5_config`"
+       ac_heimdal="`$ac_cv_path_krb5_config --version 2>/dev/null | grep -c -i heimdal`"
+-      if test "x$with_heimdal_krb5" = "xyes"; then
++      if test "x$with_heimdal_krb5" = "xyes" -a $ac_heimdal = 0; then
+         as_fn_error $? "Could not find pkg-config or krb5-config for Heimdal Kerberos" "$LINENO" 5
+       fi
+     else
 @@ -32038,7 +32040,7 @@ done
  ##
  
