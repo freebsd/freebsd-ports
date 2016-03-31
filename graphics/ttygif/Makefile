@@ -1,30 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	ttygif
-PORTVERSION=	1.0.8
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Converts a ttyrec file into animated gif
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
+                ttyrec:${PORTSDIR}/misc/ttyrec
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icholy
 
 USES=		tar:bzip2 gmake
 
-PLIST_FILES=	bin/${PORTNAME} \
-		bin/concat
+PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} 's:\#\!/bin/bash:\#\!/bin/sh:' ${WRKSRC}/concat.sh
-	@${REINPLACE_CMD} 's:gcc:${CC}:' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's:gcc:${CC}:' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/concat.sh ${STAGEDIR}${PREFIX}/bin/concat
 
 .include <bsd.port.mk>
