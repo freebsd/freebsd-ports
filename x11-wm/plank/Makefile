@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	plank
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://launchpadlibrarian.net/247653534/ \
+MASTER_SITES=	https://launchpadlibrarian.net/250390926/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	olivierd@FreeBSD.org
@@ -34,8 +34,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	NLS DBUSMENU
 DBUSMENU_DESC=	DBusMenu protocol
 
-CONFIGURE_ARGS=	--enable-gee-0.8 \
-	--disable-benchmark \
+CONFIGURE_ARGS=	--disable-benchmark \
 	--disable-headless-tests \
 	--disable-apport
 
