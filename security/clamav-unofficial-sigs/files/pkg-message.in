@@ -1,15 +1,27 @@
 **********************************************************************
 
 In order to start using clamav-unofficial-sigs, you need to configure
-it first. A sample configuration file has been installed to:
+it first. Sample configuration files have been installed to:
 
-%%PREFIX%%/etc/clamav-unofficial-sigs.conf.sample
+%%ETCDIR%%
 
-Modify it according to your needs and copy to:
+All user configuration changes should go in file "user.conf". Modify
+it according to your needs and when you are done set the value of 
+"user_configuration_complete" parameter to "yes".
+
+NOTE: Starting with version 5.0.0 configuration has been split into
+multiple files, which now reside in:
+
+%%ETCDIR%%
+
+If you had previous version installed, you can remove the old
+obsolete configuration file:
 
 %%PREFIX%%/etc/clamav-unofficial-sigs.conf
 
 To run the script periodically by cron, you also need to add it to 
-your crontab.
+your crontab. Sample crontab and logrotate files are located in:
+
+%%EXAMPLESDIR%%
 
 **********************************************************************
