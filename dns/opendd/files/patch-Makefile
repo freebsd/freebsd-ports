@@ -1,7 +1,7 @@
---- Makefile.orig	Mon May  1 07:29:07 2006
-+++ Makefile	Sun Nov 12 14:57:38 2006
+--- Makefile.orig	2008-03-15 02:15:51 UTC
++++ Makefile
 @@ -5,8 +5,7 @@
- # USE_SOCKET_SSL=yto enable SSL socket
+ # USE_SOCKET_SSL=y	to enable SSL socket
  #
  
 -CC = cc
@@ -10,7 +10,7 @@
  
  BIN_PROGRAM = opendd
  
-@@ -49,15 +49,13 @@
+@@ -49,15 +48,13 @@ ${BIN_PROGRAM}: ${OBJS} ${COMMON_OBJS};
  	fi
  	@echo ""
  .c.o:
