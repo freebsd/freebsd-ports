@@ -1,5 +1,5 @@
-%%SITE_PERL%%/String/bench.pl
 %%SITE_PERL%%/String/Formatter.pm
 %%SITE_PERL%%/String/Formatter/Cookbook.pm
+%%SITE_PERL%%/String/bench.pl
 %%PERL5_MAN3%%/String::Formatter.3.gz
 %%PERL5_MAN3%%/String::Formatter::Cookbook.3.gz
