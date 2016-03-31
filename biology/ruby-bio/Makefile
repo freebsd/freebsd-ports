@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bio
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	biology ruby
 MASTER_SITES=	http://bioruby.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ XMLPARSER_DESC=	xmlparser support for faster Blast processing
 BDB4_DESC=	bdb4 support for faster flat file indexing
 
 NO_ARCH=	yes
-USES=	shebangfix
+USES=		shebangfix
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 SHEBANG_FILES=	sample/biofetch.rb
