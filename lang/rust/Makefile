@@ -35,6 +35,7 @@ CONFLICTS_INSTALL=	rust-nightly
 RUST_SOURCE=	${DISTNAME}-src${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG_${ARCH}}.tar.bz2
 
+RUST_BOOT_SIG_x86_64=	2015-12-18-3391630-dragonfly-x86_64-e74d79488e88ac2de3bd03afd5959d2ae6e2b628
 RUST_BOOT_SIG_amd64=	2015-12-18-3391630-freebsd-x86_64-91724d4e655807a2a2e940ac50992ebeaac16ea9
 RUST_BOOT_SIG_i386=	2015-12-18-3391630-freebsd-i386-7e624c50494402e1feb14c743d659fbd71b448f5
 
@@ -47,6 +48,7 @@ RUST_VSN_HASH!=	/usr/bin/printf '%s' ${RUST_VSN} | /sbin/md5 -q | cut -c 1-8
 PLIST_SUB+=	RUST_VSN_HASH=${RUST_VSN_HASH}
 
 # Rust's target arch string is different from *BSD arch strings
+RUST_ARCH_x86_64=	x86_64 # dragonfly
 RUST_ARCH_amd64=	x86_64
 RUST_ARCH_i386=		i686
 RUST_TARGET=		${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
