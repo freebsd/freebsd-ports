@@ -1581,6 +1581,7 @@
     SUBDIR += py-django-statici18n
     SUBDIR += py-django-storages
     SUBDIR += py-django-subdomains
+    SUBDIR += py-django-sudo
     SUBDIR += py-django-tables2
     SUBDIR += py-django-tagging
     SUBDIR += py-django-taggit
