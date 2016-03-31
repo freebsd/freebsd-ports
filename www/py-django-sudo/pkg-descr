@@ -1,0 +1,8 @@
+django-sudo provides an extra layer of security for after a user is already
+logged in. Views can be decorated with @sudo_required, and then a user must
+re-enter their password to view that page. After verifying their password, that
+user has elevated permissions for the duration of SUDO_COOKIE_AGE. This
+duration is independent of the normal session duration allowing short elevated
+permission durations, but retain long user sessions.
+
+WWW: https://github.com/mattrobenolt/django-sudo
