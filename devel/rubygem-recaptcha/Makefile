@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recaptcha
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Helpers for the reCAPTCHA API
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json
 
 NO_ARCH=	yes
 USE_RUBY=	yes
