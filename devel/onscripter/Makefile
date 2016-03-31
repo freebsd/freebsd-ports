@@ -3,7 +3,7 @@
 PORTNAME=	onscripter
 PORTVERSION=	20160327
 CATEGORIES=	devel games
-MASTER_SITES=	http://onscripter.sourceforge.jp/
+MASTER_SITES=	http://onscripter.osdn.jp/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	Visual novel engine compatible with NScripter
