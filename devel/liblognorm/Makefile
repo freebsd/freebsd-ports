@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblognorm
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www.liblognorm.com/download/files/download/
 
@@ -21,7 +21,6 @@ INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.options.mk>
 # Try to fix parallel (-jX) builds
 post-patch:
 	@${REINPLACE_CMD} -e \
