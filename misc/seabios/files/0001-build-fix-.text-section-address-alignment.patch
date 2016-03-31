@@ -1,6 +1,6 @@
-From 70a912f04dec2b556f37a60d1f596fcedb13f8a8 Mon Sep 17 00:00:00 2001
+From 8a0df37ee2f77a126925dfe9ae1d6a6bd24aad45 Mon Sep 17 00:00:00 2001
 From: Kevin O'Connor <kevin@koconnor.net>
-Date: Wed, 24 Feb 2016 11:45:55 +0100
+Date: Fri, 19 Feb 2016 21:34:16 -0500
 Subject: [PATCH] build: fix .text section address alignment
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
@@ -14,14 +14,16 @@ alignment of any section placed in ".text".
 Signed-off-by: Kevin O'Connor <kevin@koconnor.net>
 Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
 Reported by: Ed Maste <emaste@FreeBSD.org>
+
+(cherry picked from commit 3910de0dee216d5b5bf23cfa29bfc80d082b2ee7)
 ---
  scripts/layoutrom.py | 14 ++++++++++----
  1 file changed, 10 insertions(+), 4 deletions(-)
 
-diff --git a/tools/firmware/seabios-dir/scripts/layoutrom.py b/tools/firmware/seabios-dir/scripts/layoutrom.py
-index dd770fe..c7e406c 100755
---- a/tools/firmware/seabios-dir/scripts/layoutrom.py
-+++ b/tools/firmware/seabios-dir/scripts/layoutrom.py
+diff --git a/scripts/layoutrom.py b/scripts/layoutrom.py
+index b976fb0..6616721 100755
+--- a/scripts/layoutrom.py
++++ b/scripts/layoutrom.py
 @@ -34,18 +34,22 @@ COMMONTRAILER = """
  # Determine section locations
  ######################################################################
@@ -48,7 +50,7 @@ index dd770fe..c7e406c 100755
          totspace = alignpos(totspace, section.align) + section.size
      startaddr = int((endaddr - totspace) / minalign) * minalign
      curaddr = startaddr
-@@ -267,7 +271,7 @@ def doLayout(sections, config, genreloc):
+@@ -269,7 +273,7 @@ def doLayout(sections, config, genreloc):
          final_sec32low_end = BUILD_LOWRAM_END
          zonelow_base = final_sec32low_end - 64*1024
      relocdelta = final_sec32low_end - sec32low_end
@@ -57,15 +59,15 @@ index dd770fe..c7e406c 100755
          sections32low, sec32low_end, 16
          , segoffset=zonelow_base - relocdelta)
      li.sec32low_end = sec32low_end
-@@ -399,6 +403,8 @@ def writeLinkerScripts(li, out16, out32seg, out32flat):
-     filesections32flat = getSectionsFileid(li.sections, '32flat')
-     out = outXRefs([], exportsyms=li.varlowsyms
-                    , forcedelta=li.final_sec32low_start-li.sec32low_start)
+@@ -405,6 +409,8 @@ def writeLinkerScripts(li, out16, out32seg, out32flat):
+     if li.config.get('CONFIG_MULTIBOOT'):
+         multiboot_header = "LONG(0x1BADB002) LONG(0) LONG(-0x1BADB002)"
+         sec32all_start -= 3 * 4
 +    sec32all_align = max([section.align for section in li.sections])
 +    sec32all_start = aligndown(sec32all_start, sec32all_align)
      out += outXRefs(filesections32flat, exportsyms=[li.entrysym]) + """
      _reloc_min_align = 0x%x ;
      zonefseg_start = 0x%x ;
 -- 
-2.5.4 (Apple Git-61)
+2.6.4 (Apple Git-63)
 
