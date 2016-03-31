@@ -420,6 +420,7 @@
     SUBDIR += shc
     SUBDIR += shuffle
     SUBDIR += shuffle-db
+    SUBDIR += seabios
     SUBDIR += since
     SUBDIR += skyutils
     SUBDIR += sloccount
