@@ -3,6 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.7.3
+PORTREVISION=	1
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
@@ -41,7 +42,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 SUB_FILES=	pkg-message
 USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
