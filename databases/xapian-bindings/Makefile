@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-bindings
-PORTVERSION=	1.2.22
+PORTVERSION=	1.2.23
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -13,7 +13,7 @@ COMMENT=	Bindings allowing Xapian to be used from various programming languages
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxapian.so:${PORTSDIR}/databases/xapian-core
+LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
 OPTIONS_DEFINE=	DOCS LUA PHP PYTHON RUBY
 OPTIONS_DEFAULT=PHP PYTHON RUBY
