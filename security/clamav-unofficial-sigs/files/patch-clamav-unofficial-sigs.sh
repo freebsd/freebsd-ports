@@ -1,11 +1,11 @@
---- clamav-unofficial-sigs.sh.orig	2016-03-31 13:04:08 UTC
+--- clamav-unofficial-sigs.sh.orig	2016-03-31 14:38:13 UTC
 +++ clamav-unofficial-sigs.sh
 @@ -158,7 +158,7 @@ minimum_required_config_version="56"
  version_date="31 March 2016"
  
  #default config files
 -config_dir="/etc/clamav-unofficial-sigs"
-+config_dir="/usr/local/etc/clamav-unofficial-sigs"
++config_dir="%%PREFIX%%/etc/clamav-unofficial-sigs"
  config_files=("$config_dir/master.conf" "$config_dir/os.conf" "$config_dir/user.conf")
  
  
