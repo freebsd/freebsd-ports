@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsoap
-PORTVERSION=	2.8.27
-PORTREVISION=	1
+PORTVERSION=	2.8.29
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}2/gSOAP
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -16,7 +15,7 @@ LICENSE=	GPLv2
 CONFIGURE_ENV=	LEX=flex YACC=yacc
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-USES=		pathfix zip
+USES=		autoreconf pathfix zip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 OPTIONS_RADIO=	SSL
@@ -34,6 +33,8 @@ post-patch:
 	    -e 's|-DSOAPCPP_IMPORT_PATH=|-DSOAPCPP2_IMPORT_PATH=|' \
 	    -e 's|-DWSDL_IMPORT_PATH=|-DWSDL2H_IMPORT_PATH=|' \
 	    ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e 's|$$(libdir)|$$(libdir)data|' \
+	    ${WRKSRC}/Makefile.am
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gsoap
