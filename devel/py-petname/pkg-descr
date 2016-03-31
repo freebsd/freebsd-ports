@@ -1,0 +1,5 @@
+This utility will generate "pet names", consisting of a random combination of
+an adverb, adjective, and proper name. These are useful for unique hostnames,
+for instance.
+
+WWW: https://pypi.python.org/pypi/petname
