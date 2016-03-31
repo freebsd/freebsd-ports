@@ -2,6 +2,7 @@
 
 PORTNAME=	Rex
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FERKI
@@ -20,7 +21,6 @@ BUILD_DEPENDS=	\
 	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 	p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally \
 	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 	p5-Text-Glob>=0:${PORTSDIR}/textproc/p5-Text-Glob \

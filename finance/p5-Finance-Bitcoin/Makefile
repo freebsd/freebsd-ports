@@ -3,7 +3,7 @@
 
 PORTNAME=	Finance-Bitcoin
 PORTVERSION=	0.901
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,6 @@ COMMENT=	Perl interface to a bitcoin instance
 BUILD_DEPENDS=	p5-JSON-RPC>=0.96:${PORTSDIR}/devel/p5-JSON-RPC \
 		p5-Class-Accessor>=0.34:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Module-Signature>=0.66:${PORTSDIR}/security/p5-Module-Signature \
-		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Object-AUTHORITY>=0:${PORTSDIR}/devel/p5-Object-Authority
 RUN_DEPENDS:=	${BUILD_DEPENDS}

@@ -4,6 +4,7 @@
 
 PORTNAME=	Minilla
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=CPAN:TOKUHIROM
@@ -50,7 +51,6 @@ BUILD_DEPENDS=	git>=0:${PORTSDIR}/devel/git \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-Harness>=0:${PORTSDIR}/devel/p5-Test-Harness \
 		p5-strictures>=0:${PORTSDIR}/devel/p5-strictures \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Software-License>=0:${PORTSDIR}/misc/p5-Software-License \
 		p5-Version-Next>=0:${PORTSDIR}/textproc/p5-Version-Next
 RUN_DEPENDS:=	${BUILD_DEPENDS}

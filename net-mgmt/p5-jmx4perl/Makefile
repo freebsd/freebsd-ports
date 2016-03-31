@@ -2,11 +2,12 @@
 
 PORTNAME=	jmx4perl
 PORTVERSION=	1.11
+DISTVERSIONSUFFIX=	_2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ROLAND
 PKGNAMEPREFIX=	p5-
-DISTFILES=	${DISTNAME}_2${EXTRACT_SUFX}
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	JMX access for Perl
@@ -24,7 +25,6 @@ RUN_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
 		p5-Nagios-Plugin>=0:${PORTSDIR}/net-mgmt/p5-Nagios-Plugin \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Sys-SigAction>=0:${PORTSDIR}/devel/p5-Sys-SigAction \
 		p5-Term-Clui>=0:${PORTSDIR}/devel/p5-Term-Clui \
 		p5-Term-ProgressBar>=0:${PORTSDIR}/devel/p5-Term-ProgressBar \
@@ -53,7 +53,6 @@ ETC_FILES=	common.cfg \
 
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	ETC_FILES="${ETC_FILES}"
-WRKSRC=		${WRKDIR}/${DISTNAME}_2
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

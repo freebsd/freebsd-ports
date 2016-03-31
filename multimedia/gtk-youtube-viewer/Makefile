@@ -3,6 +3,7 @@
 
 PORTNAME=	gtk-youtube-viewer
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,7 +25,6 @@ BUILD_DEPENDS=	p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
 		p5-Term-ReadLine>0:${PORTSDIR}/devel/p5-Term-ReadLine \
 		p5-Thread-Queue>0:${PORTSDIR}/devel/p5-Thread-Queue \
 		p5-threads>0:${PORTSDIR}/devel/p5-threads \
-		p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Socket>0:${PORTSDIR}/net/p5-Socket \
 		p5-Text-CharWidth>0:${PORTSDIR}/textproc/p5-Text-CharWidth \
 		p5-Text-ParseWords>0:${PORTSDIR}/textproc/p5-Text-ParseWords \
