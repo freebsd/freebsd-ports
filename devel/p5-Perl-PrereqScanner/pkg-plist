@@ -1,5 +1,5 @@
-bin/scan_prereqs
 bin/scan-perl-prereqs
+bin/scan_prereqs
 %%SITE_PERL%%/Perl/PrereqScanner.pm
 %%SITE_PERL%%/Perl/PrereqScanner/Scanner.pm
 %%SITE_PERL%%/Perl/PrereqScanner/Scanner/Aliased.pm
