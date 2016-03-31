@@ -1236,7 +1236,6 @@
     SUBDIR += py-excelerator
     SUBDIR += py-feedparser
     SUBDIR += py-genshi
-    SUBDIR += py-genshi-devel
     SUBDIR += py-hexdump
     SUBDIR += py-html2text
     SUBDIR += py-hyperestraier-python
@@ -1430,7 +1429,6 @@
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml
     SUBDIR += rubygem-jekyll-assets
-    SUBDIR += rubygem-jekyll-assets1
     SUBDIR += rubygem-jekyll-feed
     SUBDIR += rubygem-jekyll-gist
     SUBDIR += rubygem-jekyll-mentions
@@ -1481,7 +1479,6 @@
     SUBDIR += rubygem-sass
     SUBDIR += rubygem-sass-rails
     SUBDIR += rubygem-sass-rails4
-    SUBDIR += rubygem-sass-rails4-rails41
     SUBDIR += rubygem-sass-rails5
     SUBDIR += rubygem-sass32
     SUBDIR += rubygem-sax-machine

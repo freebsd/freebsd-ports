@@ -1,6 +1,0 @@
-A toolkit for building modeling frameworks like Active Record and 
-Active Resource. Rich support for attributes, callbacks, 
-validations, observers, serialization, internationalization, 
-and testing.
-
-WWW: http://www.rubyonrails.org
