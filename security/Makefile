@@ -880,6 +880,7 @@
     SUBDIR += py-pysha3
     SUBDIR += py-python-gnupg
     SUBDIR += py-python-openid
+    SUBDIR += py-python-social-auth
     SUBDIR += py-python-registry
     SUBDIR += py-rekall
     SUBDIR += py-rekall-core
