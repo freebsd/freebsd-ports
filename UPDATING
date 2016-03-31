@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20160331:
+  AFFECTS: security/clamav-unofficial-sigs
+  AUTHOR: lukasz@wasikowski.net, sf@maxempire.com
+
+  This version of clamav-unofficial-sigs is eXtremeSHOK's fork.
+  Configuration file location has changed from
+  %PREFIX%/clamav-unofficial-sigs.conf to
+  %PREFIX%/clamav-unofficial-sigs/
+
+  master.conf and os.conf hold default values, local changes should
+  be placed in user.conf.
+
 20160324:
   AFFECTS: print/ghostscript9-base
   AUTHOR: tijl@FreeBSD.org
