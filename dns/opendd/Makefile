@@ -14,14 +14,14 @@ COMMENT=	DynDNS client
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	OPENSSL RCNG DOCS
-OPTIONS_DEFAULT=	OPENSSL RCNG
-RCNG_DESC=	Install RC_NG script
-
 PORTDOCS=	README
 PLIST_FILES=	sbin/${PORTNAME} \
 		"@sample(,,600) %%ETCDIR%%/${PORTNAME}.conf.sample" \
 		"%%ETCDIR%%/${PORTNAME}.pem"
+
+OPTIONS_DEFINE=	OPENSSL RCNG DOCS
+OPTIONS_DEFAULT=	OPENSSL RCNG
+RCNG_DESC=	Install RC_NG script
 
 .include <bsd.port.options.mk>
 
@@ -40,31 +40,31 @@ post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 post-patch:
-.if ${PORT_OPTIONS:MOPENSSL}
-	@${REINPLACE_CMD} 's|use_ssl = 0|use_ssl = 1|' ${WRKSRC}/${PORTNAME}.conf
-	@${REINPLACE_CMD} -e "s|^FLAGS =|FLAGS = ${CFLAGS}|" -e "s|^SSL =|SSL = ${LDFLAGS}|" \
-	    ${WRKSRC}/Makefile
-.endif
 .for i in ${PORTNAME}.conf globals.h
 	@${REINPLACE_CMD} 's|/etc/${PORTNAME}.pem|${ETCDIR}/${PORTNAME}.pem|' \
-	    ${WRKSRC}/${i}
+		${WRKSRC}/${i}
 .endfor
 	@${REINPLACE_CMD} 's|/etc/${PORTNAME}.conf|${ETCDIR}/${PORTNAME}.conf|' \
-	    ${WRKSRC}/globals.h
-.if ${PORT_OPTIONS:MRCNG}
+		${WRKSRC}/globals.h
+
+post-patch-OPENSSL-on:
+	@${REINPLACE_CMD} 's|use_ssl = 0|use_ssl = 1|' ${WRKSRC}/${PORTNAME}.conf
+	@${REINPLACE_CMD} -e "s|^FLAGS =|FLAGS = ${CFLAGS}|" -e "s|^SSL =|SSL = ${LDFLAGS}|" \
+		${WRKSRC}/Makefile
+
+post-patch-RCNG-on:
 	@${REINPLACE_CMD} 's|runasdaemon = 0|runasdaemon = 1|' ${WRKSRC}/${PORTNAME}.conf
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pem ${STAGEDIR}${ETCDIR}
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} -p ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
