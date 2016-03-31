@@ -225,6 +225,7 @@
     SUBDIR += get_flash_videos
     SUBDIR += getleft
     SUBDIR += gist
+    SUBDIR += gitlab
     SUBDIR += gitlab-workhorse
     SUBDIR += glassfish
     SUBDIR += glpi
