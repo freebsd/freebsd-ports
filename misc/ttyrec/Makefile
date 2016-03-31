@@ -3,7 +3,7 @@
 
 PORTNAME=	ttyrec
 PORTVERSION=	1.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://0xcc.net/ttyrec/
 
@@ -14,6 +14,7 @@ LICENSE=	BSD4CLAUSE
 
 OPTIONS_DEFINE=	OPENPTY
 OPENPTY_DESC=	Use openpty instead
+OPTIONS_DEFAULT=	OPENPTY
 
 PLIST_FILES=	bin/ttyplay bin/ttyrec bin/ttytime \
 		man/man1/ttyplay.1.gz man/man1/ttyrec.1.gz
