@@ -3,6 +3,7 @@
 
 PORTNAME=	MaxMind-DB-Reader
 PORTVERSION=	1.000009
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -27,7 +28,6 @@ BUILD_DEPENDS=	p5-Data-IEEE754>=0:${PORTSDIR}/devel/p5-Data-IEEE754 \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Path-Class>=0.27:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Scalar-List-Utils>=1.42:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Test-Bits>=0:${PORTSDIR}/devel/p5-Test-Bits \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta \
@@ -37,4 +37,10 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502300
+TEST_DEPENDS+=      p5-Scalar-List-Utils>=1.42:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
