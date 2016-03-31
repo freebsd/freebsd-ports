@@ -8,8 +8,6 @@ sbin/kamdbctl
 @sample etc/kamailio/kamailio.cfg.sample
 @sample etc/kamailio/kamctlrc.sample
 %%TLS%%@sample etc/kamailio/tls.cfg.sample
-%%TLS%%etc/kamailio/kamailio-selfsigned.key
-%%TLS%%etc/kamailio/kamailio-selfsigned.pem
 lib/kamailio/libbinrpc.so
 lib/kamailio/libbinrpc.so.0
 lib/kamailio/libkcore.so
@@ -57,6 +55,7 @@ lib/kamailio/modules/blst.so
 lib/kamailio/modules/call_control.so
 %%MYSQL%%lib/kamailio/modules/cfg_db.so
 lib/kamailio/modules/cfg_rpc.so
+lib/kamailio/modules/cfgt.so
 lib/kamailio/modules/cfgutils.so
 lib/kamailio/modules/corex.so
 lib/kamailio/modules/counters.so
@@ -85,6 +84,7 @@ lib/kamailio/modules/exec.so
 lib/kamailio/modules/ipops.so
 lib/kamailio/modules/jsonrpc-s.so
 lib/kamailio/modules/kex.so
+lib/kamailio/modules/log_custom.so
 lib/kamailio/modules/malloc_test.so
 lib/kamailio/modules/mangler.so
 %%MYSQL%%lib/kamailio/modules/matrix.so
@@ -131,10 +131,12 @@ lib/kamailio/modules/sipt.so
 lib/kamailio/modules/siputils.so
 lib/kamailio/modules/sl.so
 lib/kamailio/modules/sms.so
+lib/kamailio/modules/smsops.so
 %%MYSQL%%lib/kamailio/modules/speeddial.so
 %%MYSQL%%lib/kamailio/modules/sqlops.so
 lib/kamailio/modules/sst.so
 lib/kamailio/modules/statistics.so
+lib/kamailio/modules/statsc.so
 lib/kamailio/modules/statsd.so
 lib/kamailio/modules/stun.so
 lib/kamailio/modules/tcpops.so
@@ -145,6 +147,7 @@ lib/kamailio/modules/tm.so
 lib/kamailio/modules/tmrec.so
 lib/kamailio/modules/tmx.so
 lib/kamailio/modules/topoh.so
+lib/kamailio/modules/topos.so
 lib/kamailio/modules/tsilo.so
 %%MYSQL%%lib/kamailio/modules/uac.so
 lib/kamailio/modules/uac_redirect.so
@@ -242,12 +245,15 @@ lib/kamailio/modules/xprint.so
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/re_grp
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/rls_presentity
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/rls_watchers
+%%MYSQL%%%%DATADIR%%/dbtext/kamailio/rtpengine
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/rtpproxy
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/sca_subscriptions
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/silo
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/sip_trace
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/speed_dial
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/subscriber
+%%MYSQL%%%%DATADIR%%/dbtext/kamailio/topos_d
+%%MYSQL%%%%DATADIR%%/dbtext/kamailio/topos_t
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/trusted
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/uacreg
 %%MYSQL%%%%DATADIR%%/dbtext/kamailio/uid_credentials
@@ -294,11 +300,13 @@ lib/kamailio/modules/xprint.so
 %%MYSQL%%%%DATADIR%%/mysql/purple-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/registrar-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/rls-create.sql
+%%MYSQL%%%%DATADIR%%/mysql/rtpengine-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/rtpproxy-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/sca-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/siptrace-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/speeddial-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/standard-create.sql
+%%MYSQL%%%%DATADIR%%/mysql/topos-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/uac-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/uid_auth_db-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/uid_avp_db-create.sql
