@@ -79,7 +79,7 @@ SDL_POWER_DESC=		Enable the SDL Power subsystem
 SDL_RENDER_DESC=	Enable the SDL Render subsystem
 SDL_THREADS_DESC=	Enable the SDL Threads subsystem
 SDL_TIMERS_DESC=	Enable the SDL Timers subsystem
-SDL_VIDEO_DESC=		Eanble the SDL Video subsystem
+SDL_VIDEO_DESC=		Enable the SDL Video subsystem
 VIDEO_OPENGL_DESC=	OpenGL rendering support
 VIDEO_X11_DESC=		X11 rendering support
 
@@ -98,7 +98,7 @@ SDL_POWER_CONFIGURE_ENABLE=	power
 SDL_RENDER_CONFIGURE_ENABLE=	render
 SDL_THREADS_CONFIGURE_ENABLE=	threads
 SDL_TIMERS_CONFIGURE_ENABLE=	timers
-SDL_VIDEO_CONFIGURE_EANBLE=	video
+SDL_VIDEO_CONFIGURE_ENABLE=	video
 
 .include <bsd.port.options.mk>
 
