@@ -62,6 +62,7 @@ HTTP_DESC=		Enable HTTP (beta quality)
 HTTP_CONFIGURE_ENABLE=	http
 HTTP_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
 			libical.so:${PORTSDIR}/devel/libical
+HTTP_USES=		pkgconfig
 HTTP_USE=		GNOME=libxml2
 IDLED_DESC=		Enable IMAP idled support
 IDLED_CONFIGURE_ENABLE=	idled
