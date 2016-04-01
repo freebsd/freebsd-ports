@@ -12,11 +12,11 @@ COMMENT=	HTML to PDF converter
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTML-Tagset>=0:${PORTSDIR}/www/p5-HTML-Tagset \
-		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
-		p5-CSS-Tiny>=0:${PORTSDIR}/textproc/p5-CSS-Tiny \
-		fop:${PORTSDIR}/textproc/fop
+RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-HTML-Tagset>=0:www/p5-HTML-Tagset \
+		p5-HTML-Tree>=0:www/p5-HTML-Tree \
+		p5-CSS-Tiny>=0:textproc/p5-CSS-Tiny \
+		fop:textproc/fop
 
 USES=		perl5
 USE_JAVA=	yes

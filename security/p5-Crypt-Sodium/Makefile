@@ -14,7 +14,7 @@ COMMENT=	Perl bindings for portable NaCL (libsodium)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
+LIB_DEPENDS=	libsodium.so:security/libsodium
 
 CFLAGS+=	-I${LOCALBASE}/include
 USES=		perl5

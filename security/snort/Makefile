@@ -17,10 +17,10 @@ COMMENT=	Lightweight network intrusion detection system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libdnet.so:${PORTSDIR}/net/libdnet
-BUILD_DEPENDS=	daq>=2.0.0:${PORTSDIR}/net/daq
-RUN_DEPENDS=	daq>=2.0.0:${PORTSDIR}/net/daq
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libdnet.so:net/libdnet
+BUILD_DEPENDS=	daq>=2.0.0:net/daq
+RUN_DEPENDS=	daq>=2.0.0:net/daq
 
 OPTIONS_DEFINE=		IPV6 GRE HA NORMALIZER DOCS APPID \
 			PERFPROFILE LRGPCAP SOURCEFIRE NONETHER \
@@ -62,9 +62,9 @@ APPID_CONFIGURE_ENABLE=		open-appid
 HA_CONFIGURE_ENABLE=		ha
 FILEINSPECT_CONFIGURE_ENABLE=	file-inspect
 
-BARNYARD_RUN_DEPENDS=	barnyard2:${PORTSDIR}/security/barnyard2
-PULLEDPORK_RUN_DEPENDS=	pulledpork.pl:${PORTSDIR}/security/pulledpork
-APPID_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+BARNYARD_RUN_DEPENDS=	barnyard2:security/barnyard2
+PULLEDPORK_RUN_DEPENDS=	pulledpork.pl:security/pulledpork
+APPID_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 APPID_CONFIGURE_ENV+=	luajit_CFLAGS="-I${LOCALBASE}/include/luajit-2.0" \
 			luajit_LIBS="-L${LOCALBASE}/lib -lluajit-5.1"
 

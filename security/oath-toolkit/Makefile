@@ -22,8 +22,8 @@ PSKC_DESC=	Portable Symmetric Key Container (RFC 6030) support
 
 PSKC_CONFIGURE_ENABLE=	pskc
 PSKC_CONFIGURE_ON=	--with-xml-prefix=${LOCALBASE}
-PSKC_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-			libxmlsec1.so:${PORTSDIR}/security/xmlsec1
+PSKC_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+			libxmlsec1.so:security/xmlsec1
 
 DOCS=		AUTHORS ChangeLog NEWS README
 

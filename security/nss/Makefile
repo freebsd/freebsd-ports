@@ -10,11 +10,11 @@ MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RT
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		nspr>=4.12:${PORTSDIR}/devel/nspr \
-		sqlite3>=3.7.15:${PORTSDIR}/databases/sqlite3
-LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+BUILD_DEPENDS=	zip:archivers/zip \
+		nspr>=4.12:devel/nspr \
+		sqlite3>=3.7.15:databases/sqlite3
+LIB_DEPENDS=	libnspr4.so:devel/nspr \
+		libsqlite3.so:databases/sqlite3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/nss
 

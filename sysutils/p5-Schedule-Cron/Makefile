@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Schedule::Cron - cron-like scheduler for Perl subroutines
 
-RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
+RUN_DEPENDS=	p5-Time-modules>=0:devel/p5-Time-modules
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

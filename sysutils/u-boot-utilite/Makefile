@@ -15,7 +15,7 @@ COMMENT=	Cross-build U-Boot loader for Utilite (and Utilite Pro)
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${CROSS_GCC}:${PORTSDIR}/devel/arm-none-eabi-gcc
+BUILD_DEPENDS=	${CROSS_GCC}:devel/arm-none-eabi-gcc
 
 CROSS_GCC=	arm-none-eabi-gcc
 

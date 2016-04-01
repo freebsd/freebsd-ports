@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Parse nmap scan data with perl
 
-BUILD_DEPENDS=	p5-XML-Twig>=3.16:${PORTSDIR}/textproc/p5-XML-Twig \
-		p5-Storable>=2:${PORTSDIR}/devel/p5-Storable
+BUILD_DEPENDS=	p5-XML-Twig>=3.16:textproc/p5-XML-Twig \
+		p5-Storable>=2:devel/p5-Storable
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		nmap:${PORTSDIR}/security/nmap
+		nmap:security/nmap
 
 USES=		perl5
 USE_PERL5=	configure

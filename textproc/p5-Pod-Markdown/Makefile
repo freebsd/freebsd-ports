@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
+TEST_DEPENDS=	p5-Test-Differences>=0:devel/p5-Test-Differences
 
 NO_ARCH=	yes
 USES=		perl5

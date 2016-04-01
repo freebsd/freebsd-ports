@@ -7,8 +7,8 @@ PORTREVISION=	5
 
 COMMENT=	Network backup solution (GUI)
 
-LIB_DEPENDS+=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
-		libbac.so:${PORTSDIR}/sysutils/bacula5-client
+LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5 \
+		libbac.so:sysutils/bacula5-client
 
 CONFLICTS=	bacula-bat-*
 

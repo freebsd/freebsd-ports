@@ -11,7 +11,7 @@ COMMENT=	Full-text search system based on Tokyo Cabinet
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 GNU_CONFIGURE=	yes
 USES=		gmake

@@ -12,7 +12,7 @@ COMMENT=	Accesses and converts various ebook file formats
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip
+LIB_DEPENDS=	libzip.so:archivers/libzip
 
 USES=		cmake
 USE_LDCONFIG=	yes

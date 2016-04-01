@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=	ZFS_FACTS
 
 # Restrict dmidecode dependency to Intel based systems
 .if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ia64"
-RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
 .endif
 
 post-patch-ZFS_FACTS-off:

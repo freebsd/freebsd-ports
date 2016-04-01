@@ -10,7 +10,7 @@ COMMENT=	Open-source fulltext search engine and column store
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -35,12 +35,12 @@ OPTIONS_DEFAULT=	MECAB SUGGEST RUBY
 OPTIONS_SUB=		yes
 
 MECAB_DESC=		Morphological analysis support via MeCab
-MECAB_LIB_DEPENDS=	libmecab.so:${PORTSDIR}/japanese/mecab
+MECAB_LIB_DEPENDS=	libmecab.so:japanese/mecab
 MECAB_CONFIGURE_OFF=	--without-mecab
 SUGGEST_DESC=		Suggestions support
-SUGGEST_LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
-			libmsgpack.so:${PORTSDIR}/devel/msgpack \
-			libzmq.so:${PORTSDIR}/net/libzmq2
+SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent2 \
+			libmsgpack.so:devel/msgpack \
+			libzmq.so:net/libzmq2
 SUGGEST_CONFIGURE_ON=	--with-libevent=${LOCALBASE} \
 			--with-message-pack=${LOCALBASE} \
 			--enable-zeromq

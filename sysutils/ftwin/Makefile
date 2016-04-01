@@ -13,9 +13,9 @@ COMMENT=	Useful tool to find duplicate files
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libpuzzle.so:${PORTSDIR}/graphics/libpuzzle
+LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+		libpcre.so:devel/pcre \
+		libpuzzle.so:graphics/libpuzzle
 
 USES=		autoreconf libarchive tar:bzip2
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ COMMENT=	Useful task libraries and methods for Capistrano
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-capistrano>=1.0.0:${PORTSDIR}/sysutils/rubygem-capistrano
+RUN_DEPENDS=	rubygem-capistrano>=1.0.0:sysutils/rubygem-capistrano
 
 NO_ARCH=	yes
 USE_RUBY=	yes

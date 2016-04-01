@@ -11,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 MAINTAINER=	hsmtkk@gmail.com
 COMMENT=	XML-Conscious PPM Compression
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		iconv gmake
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}" \

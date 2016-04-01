@@ -13,7 +13,7 @@ COMMENT=	XSL formatter that produces PDF and PostScript
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libcairo.so:graphics/cairo
 
 USES=		gmake libtool pkgconfig pathfix
 USE_GNOME=	libgnomeprint libxslt \

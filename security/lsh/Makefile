@@ -13,9 +13,9 @@ COMMENT=	Secure (encrypted) remote shell compatible with ssh 2
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	liboop.so:${PORTSDIR}/devel/liboop \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libnettle.so:${PORTSDIR}/security/nettle
+LIB_DEPENDS=	liboop.so:devel/liboop \
+		libgmp.so:math/gmp \
+		libnettle.so:security/nettle
 
 BROKEN=		does not build
 BROKEN_FreeBSD_9=	does not build

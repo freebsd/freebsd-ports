@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.ubizen.com/tools/ \
 MAINTAINER=	onatan@gmail.com
 COMMENT=	PenTest tool for TCP Initial Sequence Numbers research
 
-RUN_DEPENDS=	p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP
+RUN_DEPENDS=	p5-Net-RawIP>=0:net/p5-Net-RawIP
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README

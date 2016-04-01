@@ -10,9 +10,9 @@ MASTER_SITES=	http://artificialtime.com/${PORTNAME}/
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Graphical user interface for smartmontools
 
-LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		smartctl:${PORTSDIR}/sysutils/smartmontools
+LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
+RUN_DEPENDS=	bash:shells/bash \
+		smartctl:sysutils/smartmontools
 
 USES=		pkgconfig tar:bzip2 libtool
 INSTALLS_ICONS=	yes

@@ -13,7 +13,7 @@ COMMENT=	Mount mediawikis
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	py*-fusefs>=0.2:${PORTSDIR}/devel/py-fusefs
+RUN_DEPENDS=	py*-fusefs>=0.2:devel/py-fusefs
 
 USES=		fuse python
 USE_PYTHON=	autoplist distutils

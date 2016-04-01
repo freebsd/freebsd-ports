@@ -14,7 +14,7 @@ COMMENT=	This plugin enables additional reports
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	glpi>=0.72:${PORTSDIR}/www/glpi
+RUN_DEPENDS=	glpi>=0.72:www/glpi
 
 WRKSRC=		${WRKDIR}/reports
 NO_BUILD=	yes

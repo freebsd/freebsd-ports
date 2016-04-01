@@ -11,9 +11,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-${PORTVERSION}-1
 MAINTAINER=	ohartman@zedat.fu-berlin.de
 COMMENT=	Bibliographic reference database
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libbtparse.so:${PORTSDIR}/textproc/btparse \
-		libdbi.so:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libbtparse.so:textproc/btparse \
+		libdbi.so:databases/libdbi
 
 USES=		gmake iconv readline perl5 libtool pkgconfig pathfix shebangfix
 HAS_CONFIGURE=	yes
@@ -35,8 +35,8 @@ OPTIONS_EXCLUDE=	CATALOG 	# may not be implemented correctly
 CATALOG_DESC=		Install SGML catalog
 
 OPTIONS_DEFAULT=	PGSQL
-DOCS_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-			docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
+DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+			docbook-xsl>=0:textproc/docbook-xsl
 
 SHEBANG_FILES=	${WRKSRC}/scripts/*
 
@@ -50,7 +50,7 @@ USE_MYSQL=	yes
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdmysql.so)
 IGNORE=		rebuild databases/libdbi-drivers with MySQL support
 .elif !exists(${LOCALBASE}/lib/dbd)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
+BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:databases/libdbi-drivers
 .endif
 CONFIGURE_ARGS+=	--with-db-server=mysql
 
@@ -60,17 +60,17 @@ USES+=	pgsql
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdpgsql.so)
 IGNORE=		rebuild databases/libdbi-drivers with PostgreSQL support
 .elif !exists(${LOCALBASE}/lib/dbd)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
+BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:databases/libdbi-drivers
 .endif
 CONFIGURE_ARGS+=	--with-db-server=pgsql
 
 .elif ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3
 # If libdbi-drivers has been built without SQLite driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdsqlite3.so)
 IGNORE=		rebuild databases/libdbi-drivers with SQLite support
 .elif !exists(${LOCALBASE}/lib/dbd)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
+BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:databases/libdbi-drivers
 .endif
 CONFIGURE_ARGS+=	--with-db-server=sqlite
 .endif
@@ -85,7 +85,7 @@ CONFIGURE_ARGS+=	--disable-docs
 .endif
 
 .if ${PORT_OPTIONS:MCATALOG}
-RUN_DEPENDS+=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS+=	xmlcatmgr:textproc/xmlcatmgr
 .endif
 
 post-patch:

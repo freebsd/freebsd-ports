@@ -6,7 +6,7 @@ COMMENT=	MCollective agent to manage the OS Services
 
 # See MASTERDIR for MAINTAINER.
 
-RUN_DEPENDS=	mcollective-service-common>=${PORTVERSION}:${PORTSDIR}/sysutils/mcollective-service-common
+RUN_DEPENDS=	mcollective-service-common>=${PORTVERSION}:sysutils/mcollective-service-common
 
 MASTERDIR=	${.CURDIR}/../mcollective-service-common
 

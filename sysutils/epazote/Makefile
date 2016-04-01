@@ -10,7 +10,7 @@ COMMENT=        Automated microservices supervisor
 LICENSE=        BSD3CLAUSE
 LICENSE_FILE=   ${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=  go>=1.6:${PORTSDIR}/lang/go
+BUILD_DEPENDS=  go>=1.6:lang/go
 
 USES=           compiler
 

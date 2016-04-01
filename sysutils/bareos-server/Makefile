@@ -18,8 +18,8 @@ USES+=		libtool:keepla pkgconfig
 
 CONFLICTS?=	bacula*-server-*
 
-LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2 \
-		libjansson.so:${PORTSDIR}/devel/jansson
+LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
+		libjansson.so:devel/jansson
 
 USERS=		bareos
 GROUPS=		${USERS}
@@ -57,7 +57,7 @@ PYTHON_CONFIGURE_ON=	--with-python=yes
 PYTHON_CONFIGURE_OFF=	--with-python=no
 
 .if !defined(WITH_CLIENT_ONLY)
-LIB_DEPENDS+=	libbareos.so:${PORTSDIR}/sysutils/bareos-client
+LIB_DEPENDS+=	libbareos.so:sysutils/bareos-client
 USE_RC_SUBR?=	bareos-dir bareos-sd
 .endif
 
@@ -137,11 +137,11 @@ CONFFILES=		sd dir
 MYSQL_CONFIGURE_ON=	--with-mysql=yes
 MYSQL_USE=	MYSQL=yes
 SQLITE3_CONFIGURE_ON=	--with-sqlite3=yes
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 PGSQL_CONFIGURE_ON=	--with-postgresql=yes
 PGSQL_USES=	pgsql
 
-MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
+MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 
 .include <bsd.port.options.mk>
 

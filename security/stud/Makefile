@@ -11,7 +11,7 @@ COMMENT=	Scalable TLS Unwrapping Daemon
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
+LIB_DEPENDS=	libev.so:devel/libev
 
 USES=		gmake
 USE_GITHUB=	yes

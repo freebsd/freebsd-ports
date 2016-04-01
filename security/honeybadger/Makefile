@@ -7,7 +7,7 @@ CATEGORIES=	security
 MAINTAINER=	shawn.webb@hardenedbsd.org
 COMMENT=	Quantum Insert detector and 0-day catcher
 
-BUILD_DEPENDS=	go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	david415:DEFAULT google:gp fatih:co mattn:gc,gi \

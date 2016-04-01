@@ -13,7 +13,7 @@ COMMENT=	Perl-based flexible backup system that can use dump/afio/cpio/tar
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS=	gtar:archivers/gtar
 
 USES=		perl5
 MAKE_ARGS=	PERLPATH=${PERL} CONFFILE=${PREFIX}/etc/flexbackup.conf
@@ -27,10 +27,10 @@ BUFFER_DESC=	Enable buffer support
 MBUFFER_DESC=	Enable mbuffer support
 ZIP_DESC=	Enable zip support
 
-AFIO_RUN_DEPENDS=	afio:${PORTSDIR}/sysutils/afio
-BUFFER_RUN_DEPENDS=	buffer:${PORTSDIR}/misc/buffer
-MBUFFER_RUN_DEPENDS=	mbuffer:${PORTSDIR}/misc/mbuffer
-ZIP_RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+AFIO_RUN_DEPENDS=	afio:sysutils/afio
+BUFFER_RUN_DEPENDS=	buffer:misc/buffer
+MBUFFER_RUN_DEPENDS=	mbuffer:misc/mbuffer
+ZIP_RUN_DEPENDS=	zip:archivers/zip
 
 DOCLIST=	CHANGES CREDITS README TODO faq.html
 

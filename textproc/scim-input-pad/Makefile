@@ -11,7 +11,7 @@ MASTER_SITES=	SF/scim/${PORTNAME}/0.1.3/ \
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	SCIM add-on to input various symbols with customisable on-screen pad
 
-LIB_DEPENDS=	libscim-1.0.so:${PORTSDIR}/textproc/scim
+LIB_DEPENDS=	libscim-1.0.so:textproc/scim
 
 USE_LDCONFIG=	yes
 USES=		gmake pkgconfig libtool

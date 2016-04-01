@@ -26,7 +26,7 @@ CLI_DESC=	Management CLI
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libreadline.so.6)
-LIB_DEPENDS+=	libreadline.so.6:${PORTSDIR}/devel/readline
+LIB_DEPENDS+=	libreadline.so.6:devel/readline
 .endif
 
 post-build-PRINTDB-on:

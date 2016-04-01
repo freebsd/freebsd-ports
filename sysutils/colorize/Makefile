@@ -12,7 +12,7 @@ COMMENT=	Robust log colorizer
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor
+RUN_DEPENDS=	p5-Term-ANSIColor>=0:devel/p5-Term-ANSIColor
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	raszi

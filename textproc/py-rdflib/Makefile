@@ -13,10 +13,10 @@ COMMENT=	Python library for RDF manipulation
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}isodate>=0:${PORTSDIR}/devel/py-isodate \
-	${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:${PORTSDIR}/devel/py-pyparsing \
-	${PYTHON_PKGNAMEPREFIX}sparqlwrapper>=1.5.2:${PORTSDIR}/textproc/py-sparqlwrapper \
-	${PYTHON_PKGNAMEPREFIX}html5lib>0:${PORTSDIR}/www/py-html5lib
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}isodate>=0:devel/py-isodate \
+	${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:devel/py-pyparsing \
+	${PYTHON_PKGNAMEPREFIX}sparqlwrapper>=1.5.2:textproc/py-sparqlwrapper \
+	${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib
 
 USES=		python
 USE_PYTHON=	distutils autoplist

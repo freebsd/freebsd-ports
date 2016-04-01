@@ -13,9 +13,9 @@ COMMENT=	Parser for Test::Base format
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite
+BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0.05:devel/p5-Class-Accessor-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-Test-Requires>0:devel/p5-Test-Requires
 
 NO_ARCH=	yes
 USES=		perl5

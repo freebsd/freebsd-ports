@@ -15,8 +15,8 @@ COMMENT=	Python bindings for XML Security Library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxmlsec1.so:${PORTSDIR}/security/xmlsec1
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
+LIB_DEPENDS=	libxmlsec1.so:security/xmlsec1
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

@@ -20,7 +20,7 @@ CPE_VENDOR=	pizzashack
 USE_CSTD=	gnu89
 OPTIONS_DEFINE=	RDIST RSYNC3
 RDIST_DESC=	rdist support
-RDIST_RUN_DEPENDS=	rdist6:${PORTSDIR}/net/rdist6
+RDIST_RUN_DEPENDS=	rdist6:net/rdist6
 RDIST_CONFIGURE_ON=	--with-rdist=${LOCALBASE}/bin/rdist6
 
 RSYNC3_DESC=		rsync3 support (Debian patch)

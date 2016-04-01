@@ -18,10 +18,10 @@ USE_OPENSSL=	yes
 OPTIONS_DEFINE=		CURL GSF
 OPTIONS_DEFAULT=	CURL GSF
 CURL_CONFIGURE_WITH=	curl
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 GSF_DESC?=		GSF support (enables signing of e.g. MSI files)
 GSF_CONFIGURE_WITH=	gsf
-GSF_LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
+GSF_LIB_DEPENDS=	libgsf-1.so:devel/libgsf
 
 post-patch:
 	${TOUCH} ${WRKSRC}/stamp-h1 ${WRKSRC}/config.h.in

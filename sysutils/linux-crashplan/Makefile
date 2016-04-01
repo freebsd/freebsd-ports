@@ -10,8 +10,8 @@ DISTNAME=	CrashPlan_${DISTVERSION}_Linux
 MAINTAINER=	subtil@gmail.com
 COMMENT=	Backs up data to remote servers or hard drives
 
-RUN_DEPENDS=	linux-sun-jre17>=0:${PORTSDIR}/java/linux-sun-jre17 \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	linux-sun-jre17>=0:java/linux-sun-jre17 \
+		bash:shells/bash
 
 WRKSRC=		${WRKDIR}/crashplan-install
 

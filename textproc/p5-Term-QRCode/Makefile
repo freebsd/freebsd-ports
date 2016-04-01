@@ -14,8 +14,8 @@ COMMENT=	Generate QR Code on Terminal
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	libqrencode>=2.0.0:${PORTSDIR}/graphics/libqrencode \
-		p5-Text-QRCode>0:${PORTSDIR}/textproc/p5-Text-QRCode
+BUILD_DEPENDS=	libqrencode>=2.0.0:graphics/libqrencode \
+		p5-Text-QRCode>0:textproc/p5-Text-QRCode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

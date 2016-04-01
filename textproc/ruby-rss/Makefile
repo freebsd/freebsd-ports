@@ -15,7 +15,7 @@ COMMENT=	Ruby library for parsing, creating, downloading, and caching RSS
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:textproc/ruby-xmlparser
 
 CONFLICTS=	ruby-rss.alt-*
 

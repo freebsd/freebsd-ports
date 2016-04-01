@@ -14,9 +14,9 @@ COMMENT=	Stringprep Profile for User Names and Passwords (RFC 4013)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Unicode-Stringprep>=1:${PORTSDIR}/converters/p5-Unicode-Stringprep
+BUILD_DEPENDS=	p5-Unicode-Stringprep>=1:converters/p5-Unicode-Stringprep
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
+TEST_DEPENDS=	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
 USE_PERL5=	configure
 USES=		perl5

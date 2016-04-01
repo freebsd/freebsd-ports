@@ -13,8 +13,8 @@ COMMENT=	GTK/GNOME-based genealogy program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
-		${PYTHON_PKGNAMEPREFIX}pyicu>=1.8:${PORTSDIR}/devel/py-pyicu
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb \
+		${PYTHON_PKGNAMEPREFIX}pyicu>=1.8:devel/py-pyicu
 
 NO_ARCH=	yes
 USE_BDB=	5+
@@ -34,11 +34,11 @@ ENCHANT_DESC=		Spellchecking support
 PYWEBKITGTK_DESC=	Use webkit backend for Geographic view
 EXIV_DESC=		Managing exiv metadata support
 
-ENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
-EXIV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}exiv2>=0.1.3:${PORTSDIR}/graphics/py-exiv2
+ENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=0:textproc/py-enchant
+EXIV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}exiv2>=0.1.3:graphics/py-exiv2
 GNOME_USE=		GNOME=pygnome2,gnomedocutils
-GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:${PORTSDIR}/graphics/py-pygraphviz
-PYWEBKITGTK_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:${PORTSDIR}/www/py-webkitgtk
+GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:graphics/py-pygraphviz
+PYWEBKITGTK_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:www/py-webkitgtk
 
 pre-extract:
 	@${ECHO_MSG} "=========================================================="

@@ -10,7 +10,7 @@ COMMENT=	Network sniffer that logs DNS replies for use in passive DNS setups
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libldns.so:${PORTSDIR}/dns/ldns
+LIB_DEPENDS=	libldns.so:dns/ldns
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gamelinux

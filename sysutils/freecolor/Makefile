@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.rkeene.org/files/oss/freecolor/
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Displays free memory as a bargraph
 
-LIB_DEPENDS=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
 
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	INSTALL="${INSTALL}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"

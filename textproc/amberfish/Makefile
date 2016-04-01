@@ -11,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/Amberfish%20source%20-%20stable/${PORTVERSION}	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose text retrieval Software
 
-LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
+LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 
 USES=		gmake makeinfo
 GNU_CONFIGURE=	yes

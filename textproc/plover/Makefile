@@ -12,9 +12,9 @@ COMMENT=	Open source solution for stenography
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>=0:${PORTSDIR}/x11-toolkits/py-xlib \
-		${PYTHON_PKGNAMEPREFIX}serial>=0:${PORTSDIR}/comms/py-serial \
-		${PYTHON_PKGNAMEPREFIX}lockfile>=0:${PORTSDIR}/devel/py-lockfile
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>=0:x11-toolkits/py-xlib \
+		${PYTHON_PKGNAMEPREFIX}serial>=0:comms/py-serial \
+		${PYTHON_PKGNAMEPREFIX}lockfile>=0:devel/py-lockfile
 
 USES=		python
 USE_PYTHON=	distutils

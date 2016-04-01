@@ -11,8 +11,8 @@ COMMENT=	PAM module for authenticating with PostgreSQL
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmhash.so:${PORTSDIR}/security/mhash \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libmhash.so:security/mhash \
+		libgcrypt.so:security/libgcrypt
 
 USES=		libtool pgsql
 GNU_CONFIGURE=	yes

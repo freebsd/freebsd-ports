@@ -12,7 +12,7 @@ COMMENT=	DocBook XSLT stylesheets for yelp
 
 PORTSCOUT=	limitw:1,even
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 
 USES=		gettext gmake gnome pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack libxml2 libxslt

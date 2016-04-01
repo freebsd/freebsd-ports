@@ -12,10 +12,10 @@ COMMENT=	Document preparation system that allows concurrent publication
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
-		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt \
-		convert:${PORTSDIR}/graphics/ImageMagick \
-		pygmentize:${PORTSDIR}/textproc/py-pygments
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2 \
+		${PYTHON_SITELIBDIR}/libxslt.py:textproc/py-libxslt \
+		convert:graphics/ImageMagick \
+		pygmentize:textproc/py-pygments
 
 NO_BUILD=	yes
 

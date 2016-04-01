@@ -12,7 +12,7 @@ COMMENT=	Wrapper around libsass
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libsass.so:${PORTSDIR}/textproc/libsass
+LIB_DEPENDS=	libsass.so:textproc/libsass
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sass

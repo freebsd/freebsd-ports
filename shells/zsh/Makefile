@@ -68,9 +68,9 @@ PORTEXAMPLES=	zlogin zshenv zshrc
 OPTIONS_SUB=	yes
 
 DOCS_DISTFILES=		${DISTNAME}-doc${EXTRACT_SUFX}:doc
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ENABLE=	gdbm
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_ENABLE=	pcre
 MEM_CONFIGURE_ENABLE=	zsh-mem
 SECURE_FREE_CONFIGURE_ENABLE=	zsh-secure-free

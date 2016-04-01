@@ -14,8 +14,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library to create, verify, and manipulate passwords
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
-RUN_DEPENDS=	rubygem-ruby-termios>=0:${PORTSDIR}/comms/rubygem-ruby-termios
+LIB_DEPENDS=	libcrack.so:security/cracklib
+RUN_DEPENDS=	rubygem-ruby-termios>=0:comms/rubygem-ruby-termios
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

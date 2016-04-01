@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for easily running the same commands on multiple hosts
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

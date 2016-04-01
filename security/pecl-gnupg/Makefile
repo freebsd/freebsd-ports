@@ -14,7 +14,7 @@ COMMENT=	PECL wrapper around the gpgme library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	libgpgme.so:security/gpgme
 
 CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include
 IGNORE_WITH_PHP=70

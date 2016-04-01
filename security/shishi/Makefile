@@ -9,10 +9,10 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Free implementation of the Kerberos 5 network security system
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
-		libtasn1.so:${PORTSDIR}/security/libtasn1 \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libidn.so:dns/libidn \
+		libtasn1.so:security/libtasn1 \
+		libgcrypt.so:security/libgcrypt \
+		libgnutls.so:security/gnutls
 
 USES=		iconv libtool makeinfo pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes

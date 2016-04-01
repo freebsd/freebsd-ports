@@ -10,7 +10,7 @@ MASTER_SITES=	http://fallabs.com/estraier/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search system for personal use
 
-LIB_DEPENDS=	libqdbm.so:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS=	libqdbm.so:databases/qdbm
 
 USES=		iconv
 GNU_CONFIGURE=	yes
@@ -27,16 +27,16 @@ CHASEN_DESC=	Japanese Morphological Analysis Support
 MECAB_DESC=	Part-of-Speech and Morphological Analyzer
 KAKASI_DESC=	Language processing filter/converter
 
-CHASEN_LIB_DEPENDS=	libchasen.so:${PORTSDIR}/japanese/chasen-base
+CHASEN_LIB_DEPENDS=	libchasen.so:japanese/chasen-base
 CHASEN_CONFIGURE_ENABLE=	chasen
 
-KAKASI_LIB_DEPENDS=	libkakasi.so:${PORTSDIR}/japanese/kakasi
+KAKASI_LIB_DEPENDS=	libkakasi.so:japanese/kakasi
 KAKASI_CONFIGURE_ENABLE=	kakasi
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMECAB} && ${ARCH} == "i386"
-LIB_DEPENDS+=	libmecab.so:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS+=	libmecab.so:japanese/mecab
 CONFIGURE_ARGS+=	--enable-mecab
 .endif
 

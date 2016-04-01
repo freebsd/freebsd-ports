@@ -12,7 +12,7 @@ DISTNAME=	PolicyKit-gnome-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME frontend to the PolicyKit framework
 
-LIB_DEPENDS=	libpolkit.so:${PORTSDIR}/sysutils/policykit
+LIB_DEPENDS=	libpolkit.so:sysutils/policykit
 
 USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gconf2 gnomedocutils intlhack

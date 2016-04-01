@@ -11,15 +11,15 @@ COMMENT=	Code_Saturne Kernel
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=0:${PORTSDIR}/devel/py-qt4	\
-		cs_preprocess:${PORTSDIR}/science/ecs	\
-		pyrcc4:${PORTSDIR}/textproc/py-qt4-xml
-LIB_DEPENDS=	libfvm.so:${PORTSDIR}/science/fvm	\
-		libmei.so:${PORTSDIR}/science/mei
-RUN_DEPENDS=	xmgrace:${PORTSDIR}/math/grace	\
-		bash:${PORTSDIR}/shells/bash	\
-		xterm:${PORTSDIR}/x11/xterm	\
-		cs_preprocess:${PORTSDIR}/science/ecs
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=0:devel/py-qt4	\
+		cs_preprocess:science/ecs	\
+		pyrcc4:textproc/py-qt4-xml
+LIB_DEPENDS=	libfvm.so:science/fvm	\
+		libmei.so:science/mei
+RUN_DEPENDS=	xmgrace:math/grace	\
+		bash:shells/bash	\
+		xterm:x11/xterm	\
+		cs_preprocess:science/ecs
 
 USES=		fortran gettext gmake iconv libtool python shebangfix
 USE_GNOME=	libxml2
@@ -41,7 +41,7 @@ FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
 OPTIONS_DEFINE=		DOCS EXAMPLES BATCH
 BATCH_DESC=		Use Torque to submit batches
 BATCH_CONFIGURE_WITH=	batch=PBS
-BATCH_LIB_DEPENDS=	libtorque.so:${PORTSDIR}/sysutils/torque
+BATCH_LIB_DEPENDS=	libtorque.so:sysutils/torque
 
 OPTIONS_RADIO=	BLAS
 OPTIONS_RADIO_BLAS=	REFERENCE ATLAS
@@ -75,30 +75,30 @@ BIN_DATAS=	Makefile SaturneGUI autovalid.xml cs_profile lance lance.help	\
 
 .if defined(WITH_LAM)
 MPI_HOME=	${LOCALBASE}
-BUILD_DEPENDS+=	${MPI_HOME}/lib/liblam.a:${PORTSDIR}/net/lam
-RUN_DEPENDS+=	${MPI_HOME}/bin/lamboot:${PORTSDIR}/net/lam
+BUILD_DEPENDS+=	${MPI_HOME}/lib/liblam.a:net/lam
+RUN_DEPENDS+=	${MPI_HOME}/bin/lamboot:net/lam
 MPI_LIBS=	-lmpi -llam
 .elif defined(WITH_OPENMPI)
 MPI_HOME=	${LOCALBASE}/mpi/openmpi
-BUILD_DEPENDS+=	${MPI_HOME}/bin/mpicc:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=	${MPI_HOME}/bin/mpirun:${PORTSDIR}/net/openmpi
+BUILD_DEPENDS+=	${MPI_HOME}/bin/mpicc:net/openmpi
+RUN_DEPENDS+=	${MPI_HOME}/bin/mpirun:net/openmpi
 MPI_LIBS=	-lmpi -lorte -lopal
 .else
 MPI_HOME=	${LOCALBASE}
-BUILD_DEPENDS+=	${MPI_HOME}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${MPI_HOME}/bin/mpirun:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS+=	${MPI_HOME}/bin/mpicc:net/mpich2
+RUN_DEPENDS+=	${MPI_HOME}/bin/mpirun:net/mpich2
 MPI_LIBS=	-lmpich -lmpl -lpthread
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	tex:build
-BUILD_DEPENDS+=	fig2dev:${PORTSDIR}/print/transfig
+BUILD_DEPENDS+=	fig2dev:print/transfig
 ALL_TARGET=	all pdf
 INSTALL_TARGET=	install install-pdf
 DOCS=		AUTHORS COMPATIBILITY ChangeLog README
 .endif
 
-RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
+RUN_DEPENDS+=	xpdf:graphics/xpdf
 
 pre-everything::
 	@${ECHO_MSG}

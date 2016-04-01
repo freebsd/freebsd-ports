@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.rkeene.org/files/oss/swapd/
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Daemon that watches free memory and manages swap files
 
-LIB_DEPENDS=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes

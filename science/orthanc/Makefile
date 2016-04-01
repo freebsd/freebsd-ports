@@ -17,21 +17,21 @@ COMMENT=	RESTful DICOM server for healthcare and medical research
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gtest-config:${PORTSDIR}/devel/googletest
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
-		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
-		libboost_locale.so:${PORTSDIR}/devel/boost-libs \
-		libdcmdsig.so:${PORTSDIR}/devel/dcmtk \
-		libcharls.so:${PORTSDIR}/devel/dcmtk \
-		libdcmjpls.so:${PORTSDIR}/devel/dcmtk \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libpugixml.so:${PORTSDIR}/textproc/pugixml
+BUILD_DEPENDS=	gtest-config:devel/googletest
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libjsoncpp.so:devel/jsoncpp \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libboost_filesystem.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
+		libboost_system.so:devel/boost-libs \
+		libboost_date_time.so:devel/boost-libs \
+		libboost_regex.so:devel/boost-libs \
+		libboost_locale.so:devel/boost-libs \
+		libdcmdsig.so:devel/dcmtk \
+		libcharls.so:devel/dcmtk \
+		libdcmjpls.so:devel/dcmtk \
+		libsqlite3.so:databases/sqlite3 \
+		libpugixml.so:textproc/pugixml
 
 CMAKE_ARGS=	-DDCMTK_LIBRARIES="dcmdsig;charls;dcmjpls" \
 		-DDCMTK_DIR="${LOCALBASE}" \

@@ -11,9 +11,9 @@ COMMENT=	Wrapper of the JavaScript Library 'DataTables'
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	R-cran-htmltools>0:${PORTSDIR}/textproc/R-cran-htmltools \
-		R-cran-htmlwidgets>=0.4:${PORTSDIR}/www/R-cran-htmlwidgets \
-		R-cran-magrittr>0:${PORTSDIR}/devel/R-cran-magrittr
+RUN_DEPENDS=	R-cran-htmltools>0:textproc/R-cran-htmltools \
+		R-cran-htmlwidgets>=0.4:www/R-cran-htmlwidgets \
+		R-cran-magrittr>0:devel/R-cran-magrittr
 
 USES=	cran:auto-plist
 

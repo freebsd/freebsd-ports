@@ -42,7 +42,7 @@ DEBUG_CONFIGURE_ENABLE=	debug
 
 .if ${PORT_OPTIONS:MEMULATOR}
 PKGNAMESUFFIX+=	-no_tddl
-LIB_DEPENDS+=	libtddl.so:${PORTSDIR}/emulators/tpm-emulator
+LIB_DEPENDS+=	libtddl.so:emulators/tpm-emulator
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-tcs-Makefile.am \
 		${FILESDIR}/extra-patch-src-tcsd-Makefile.am \

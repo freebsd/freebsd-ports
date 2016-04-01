@@ -13,7 +13,7 @@ EXTRACT_SUFX=		.tar
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Authentication system developed at MIT, successor to Kerberos IV
 
-BUILD_DEPENDS=		krb5-config:${PORTSDIR}/security/krb5
+BUILD_DEPENDS=		krb5-config:security/krb5
 
 CONFLICTS=		krb4-[0-9]* krb5-1.[0-7].* heimdal-[0-9]* srp-[0-9]*
 
@@ -47,24 +47,24 @@ KRB5_114_PORT_DESC=		Depend on security/krb5-114
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MKRB5_PORT}
-LIB_DEPENDS=		libkrb5support.so:${PORTSDIR}/security/krb5
-RUN_DEPENDS=		kinit:${PORTSDIR}/security/krb5
+LIB_DEPENDS=		libkrb5support.so:security/krb5
+RUN_DEPENDS=		kinit:security/krb5
 .elif ${PORT_OPTIONS:MKRB5_112_PORT}
-LIB_DEPENDS=		libkrb5support.so:${PORTSDIR}/security/krb5-112
-RUN_DEPENDS=		kinit:${PORTSDIR}/security/krb5-112
+LIB_DEPENDS=		libkrb5support.so:security/krb5-112
+RUN_DEPENDS=		kinit:security/krb5-112
 .elif ${PORT_OPTIONS:MKRB5_113_PORT}
-LIB_DEPENDS=		libkrb5support.so:${PORTSDIR}/security/krb5-113
-RUN_DEPENDS=		kinit:${PORTSDIR}/security/krb5-113
+LIB_DEPENDS=		libkrb5support.so:security/krb5-113
+RUN_DEPENDS=		kinit:security/krb5-113
 .elif ${PORT_OPTIONS:MKRB5_114_PORT}
-LIB_DEPENDS=		libkrb5support.so:${PORTSDIR}/security/krb5-114
-RUN_DEPENDS=		kinit:${PORTSDIR}/security/krb5-113
+LIB_DEPENDS=		libkrb5support.so:security/krb5-114
+RUN_DEPENDS=		kinit:security/krb5-113
 .else
 BROKEN=			krb5 dependency not selected
 .endif
 
 .if ${PORT_OPTIONS:MKRB5_DOC}
-BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/texinfo \
-			dvips:${PORTSDIR}/print/dvipsk-tetex
+BUILD_DEPENDS+=		texi2dvi:print/texinfo \
+			dvips:print/dvipsk-tetex
 INFO=			krb5-admin krb5-install krb5-user
 .endif
 

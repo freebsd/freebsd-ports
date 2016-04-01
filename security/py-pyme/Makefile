@@ -14,8 +14,8 @@ COMMENT=	Python interface to GPGME library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+BUILD_DEPENDS=	swig1.3:devel/swig13
+LIB_DEPENDS=	libgpgme.so:security/gpgme
 
 USES=		gmake python:2
 USE_PYTHON=	distutils

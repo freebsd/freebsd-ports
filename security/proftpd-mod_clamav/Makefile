@@ -19,7 +19,7 @@ MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 GH_TAGNAME=	v${DISTVERSION}
 GIT_REVISION=	f0cad45
 
-RUN_DEPENDS+=	clamd:${PORTSDIR}/security/clamav
+RUN_DEPENDS+=	clamd:security/clamav
 _PROFTPD_MODULE_DISTFILES=	mod_clamav-v0.13${EXTRACT_SUFX}:clamav
 _PROFTPD_MODULE_EXTRACT_ONLY= 	mod_clamav-v0.13${EXTRACT_SUFX}
 _PROFTPD_MODULE_MASTER_SITES=	https://codeload.github.com/jbenden/mod_clamav/legacy.tar.gz/${GH_TAGNAME}?dummy=/:clamav

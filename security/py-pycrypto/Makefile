@@ -23,7 +23,7 @@ GMP_DESC=		Use GMP for faster DSA/RSA operations
 GMP_CONFIGURE_WITH=	gmp
 GMP_CPPFLAGS=		-I${LOCALBASE}/include
 GMP_LDFLAGS=		-L${LOCALBASE}/lib
-GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
 pre-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/setup.py

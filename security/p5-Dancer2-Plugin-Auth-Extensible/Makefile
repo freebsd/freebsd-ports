@@ -13,9 +13,9 @@ COMMENT=	Extensible authentication framework for Dancer2 apps
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-SaltedHash>=0:${PORTSDIR}/security/p5-Crypt-SaltedHash \
-		p5-Session-Token>=0:${PORTSDIR}/security/p5-Session-Token \
-		p5-Dancer2>=0.166000:${PORTSDIR}/www/p5-Dancer2
+BUILD_DEPENDS=	p5-Crypt-SaltedHash>=0:security/p5-Crypt-SaltedHash \
+		p5-Session-Token>=0:security/p5-Session-Token \
+		p5-Dancer2>=0.166000:www/p5-Dancer2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
@@ -26,9 +26,9 @@ OPTIONS_DEFINE=	DPAEPD DPAEPU
 DPAEPD_DESC=	Extra dependencies for Provider::Database
 DPAEPU_DESC=	Extra dependencies for Provider::Unix
 
-DPAEPD_BUILD_DEPENDS=	p5-Dancer2-Plugin-Database>=0:${PORTSDIR}/databases/p5-Dancer2-Plugin-Database
-DPAEPU_BUILD_DEPENDS=	p5-Authen-Simple-PAM>=0:${PORTSDIR}/security/p5-Authen-Simple-PAM \
-			p5-Unix-Passwd-File>=0:${PORTSDIR}/security/p5-Unix-Passwd-File
+DPAEPD_BUILD_DEPENDS=	p5-Dancer2-Plugin-Database>=0:databases/p5-Dancer2-Plugin-Database
+DPAEPU_BUILD_DEPENDS=	p5-Authen-Simple-PAM>=0:security/p5-Authen-Simple-PAM \
+			p5-Unix-Passwd-File>=0:security/p5-Unix-Passwd-File
 
 # bin/generate-crypted-password belongs to D1 version
 post-patch:

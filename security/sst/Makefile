@@ -12,7 +12,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Simple SSL tunneling tool (uses netcat)
 
 .if !exists(/usr/bin/nc)
-RUN_DEPENDS=	netcat:${PORTSDIR}/net/netcat
+RUN_DEPENDS=	netcat:net/netcat
 .endif
 
 MAKEFILE=	${FILESDIR}/Makefile

@@ -12,10 +12,10 @@ COMMENT=	Basic Analysis and Security Engine - analyzing Snort alerts
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/GPL
 
-RUN_DEPENDS=	${ADODB_DIR}/adodb.inc.php:${PORTSDIR}/databases/adodb5 \
-		${LOCALBASE}/share/pear/Image/Graph.php:${PORTSDIR}/graphics/pear-Image_Graph \
-		${LOCALBASE}/share/pear/Mail.php:${PORTSDIR}/mail/pear-Mail \
-		${LOCALBASE}/share/pear/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
+RUN_DEPENDS=	${ADODB_DIR}/adodb.inc.php:databases/adodb5 \
+		${LOCALBASE}/share/pear/Image/Graph.php:graphics/pear-Image_Graph \
+		${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail \
+		${LOCALBASE}/share/pear/Mail/mime.php:mail/pear-Mail_Mime
 
 USE_PHP=	gd gettext pcre session zlib ctype
 
@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	MYSQL PGSQL PDF DOCS
 MYSQL_USE=	MYSQL=yes PHP=mysql
 PGSQL_USES=	pgsql
 PGSQL_USE=	PHP=pgsql
-PDF_RUN_DEPENDS=${LOCALBASE}/share/fpdf/fpdf.php:${PORTSDIR}/print/fpdf
+PDF_RUN_DEPENDS=${LOCALBASE}/share/fpdf/fpdf.php:print/fpdf
 
 do-build:
 	@${REINPLACE_CMD} -e 's,DBlib_path = "",DBlib_path = "${ADODB_DIR}",' \

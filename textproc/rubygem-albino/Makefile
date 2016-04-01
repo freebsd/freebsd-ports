@@ -11,8 +11,8 @@ COMMENT=	Ruby wrapper for pygmentize
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-posix-spawn>=0.3.6:${PORTSDIR}/devel/rubygem-posix-spawn \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0.8:${PORTSDIR}/textproc/py-pygments
+RUN_DEPENDS=	rubygem-posix-spawn>=0.3.6:devel/rubygem-posix-spawn \
+		${PYTHON_PKGNAMEPREFIX}pygments>=0.8:textproc/py-pygments
 
 USES=		python
 NO_ARCH=	yes

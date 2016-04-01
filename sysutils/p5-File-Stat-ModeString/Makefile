@@ -14,7 +14,7 @@ COMMENT=	Converts file stat(2) mode to/from string representation
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-File-Stat-Bits>0:${PORTSDIR}/sysutils/p5-File-Stat-Bits
+BUILD_DEPENDS=	p5-File-Stat-Bits>0:sysutils/p5-File-Stat-Bits
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

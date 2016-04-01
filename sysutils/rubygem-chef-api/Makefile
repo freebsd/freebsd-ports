@@ -11,7 +11,7 @@ COMMENT=	Leightweight Chef API client
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-logify>=0.1:${PORTSDIR}/sysutils/rubygem-logify
+RUN_DEPENDS=	rubygem-logify>=0.1:sysutils/rubygem-logify
 
 NO_ARCH=	yes
 

@@ -13,7 +13,7 @@ COMMENT=	Plugin for gkrellm 2.x shows top three processes, requires procfs
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gkrellmd:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	gkrellmd:sysutils/gkrellm2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}

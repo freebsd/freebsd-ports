@@ -12,14 +12,14 @@ COMMENT=	Mount smb shares (Fuse filesystem)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 
 OPTIONS_DEFINE=	DOCS GNOME_KEYRING
 OPTIONS_DEFAULT=GNOME_KEYRING
 
 GNOME_KEYRING_DESC=		Build with gnome-keyring support
 GNOME_KEYRING_CONFIGURE_WITH=	gnome-keyring
-GNOME_KEYRING_LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+GNOME_KEYRING_LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 

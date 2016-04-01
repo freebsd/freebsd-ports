@@ -14,8 +14,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	tsparks@appliedops.net
 COMMENT=	YALI: Yet Another LOLCODE Interpreter
 
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent
 
 USES=		perl5 dos2unix shebangfix
 USE_PERL5=	run

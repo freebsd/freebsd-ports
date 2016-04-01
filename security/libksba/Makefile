@@ -12,7 +12,7 @@ COMMENT=	KSBA is an X.509 Library
 LICENSE=	GPLv2 GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS=	libgpg-error.so:security/libgpg-error
 
 CONFIGURE_ARGS=	--enable-static
 INSTALL_TARGET=	install-strip

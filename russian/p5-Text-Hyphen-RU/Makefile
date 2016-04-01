@@ -13,7 +13,7 @@ COMMENT=	Determine positions for hyphens inside russian words
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	p5-Text-Hyphen>=0:${PORTSDIR}/textproc/p5-Text-Hyphen
+BUILD_DEPENDS=	p5-Text-Hyphen>=0:textproc/p5-Text-Hyphen
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

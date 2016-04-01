@@ -14,14 +14,14 @@ COMMENT=	Mail scanner interface between mailer and content checkers
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
-		p5-Convert-TNEF>=0:${PORTSDIR}/converters/p5-Convert-TNEF \
-		p5-Convert-UUlib>=1.08,1:${PORTSDIR}/converters/p5-Convert-UUlib \
-		p5-Archive-Zip>=1.14:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-Net-Server>=2.0:${PORTSDIR}/net/p5-Net-Server \
-		p5-Mail-DKIM>=0.33:${PORTSDIR}/mail/p5-Mail-DKIM \
-		p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN
+RUN_DEPENDS=	p5-Unix-Syslog>=0:sysutils/p5-Unix-Syslog \
+		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
+		p5-Convert-TNEF>=0:converters/p5-Convert-TNEF \
+		p5-Convert-UUlib>=1.08,1:converters/p5-Convert-UUlib \
+		p5-Archive-Zip>=1.14:archivers/p5-Archive-Zip \
+		p5-Net-Server>=2.0:net/p5-Net-Server \
+		p5-Mail-DKIM>=0.33:mail/p5-Mail-DKIM \
+		p5-Net-LibIDN>=0:dns/p5-Net-LibIDN
 
 USES=		perl5 shebangfix tar:xz
 USE_PERL5=	run
@@ -95,56 +95,56 @@ PLIST_SUB+=	AMAVISUSER=${AMAVISUSER} \
 USE_RC_SUBR+=	amavisd
 
 .if ${PORT_OPTIONS:MIPV6}
-RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
+RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6
 .endif
 
 .if ${PORT_OPTIONS:MSNMP} && ${PORT_OPTIONS:MBDB}
 USE_RC_SUBR+=	amavisd-snmp
-RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+RUN_DEPENDS+=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
-RUN_DEPENDS+=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB
+RUN_DEPENDS+=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
+RUN_DEPENDS+=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
-RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS+=	p5-perl-ldap>=0:net/p5-perl-ldap
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
-RUN_DEPENDS+=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
+RUN_DEPENDS+=	p5-Authen-SASL>=0:security/p5-Authen-SASL
 .endif
 
 .if ${PORT_OPTIONS:MSPAMASSASSIN}
-RUN_DEPENDS+=	spamassassin>=0:${PORTSDIR}/mail/spamassassin
+RUN_DEPENDS+=	spamassassin>=0:mail/spamassassin
 .endif
 
 .if ${PORT_OPTIONS:MP0F}
-RUN_DEPENDS+=	${LOCALBASE}/bin/p0f:${PORTSDIR}/net-mgmt/p0f
+RUN_DEPENDS+=	${LOCALBASE}/bin/p0f:net-mgmt/p0f
 USE_RC_SUBR+=	amavis-p0fanalyzer
 .else
 AMAVIS_NOP0F=	"@comment "
 .endif
 
 .if ${PORT_OPTIONS:MALTERMIME}
-RUN_DEPENDS+=	${LOCALBASE}/bin/altermime:${PORTSDIR}/mail/altermime
+RUN_DEPENDS+=	${LOCALBASE}/bin/altermime:mail/altermime
 .endif
 
 .if ${PORT_OPTIONS:MFILE}
 # security fix, file >= 4.21 needed
-RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
+RUN_DEPENDS+=	file>=4.21:sysutils/file
 .endif
 
 # archviers/rar is a 32-bit binary port, we don't want the install to fail
@@ -154,71 +154,71 @@ RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
 .if ${PORT_OPTIONS:MRAR}
 # support for archivers/rar is broken on ia64
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
-RUN_DEPENDS+=	${LOCALBASE}/bin/rar:${PORTSDIR}/archivers/rar
+RUN_DEPENDS+=	${LOCALBASE}/bin/rar:archivers/rar
 .else
 IGNORE=	archviers/rar is a 32-bit binary port and is not compatible with ${ARCH}
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MUNRAR}
-RUN_DEPENDS+=	${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar
+RUN_DEPENDS+=	${LOCALBASE}/bin/unrar:archivers/unrar
 .endif
 
 .if ${PORT_OPTIONS:MARJ}
-RUN_DEPENDS+=	${LOCALBASE}/bin/arj:${PORTSDIR}/archivers/arj
+RUN_DEPENDS+=	${LOCALBASE}/bin/arj:archivers/arj
 .endif
 
 .if ${PORT_OPTIONS:MUNARJ}
-RUN_DEPENDS+=	${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj
+RUN_DEPENDS+=	${LOCALBASE}/bin/unarj:archivers/unarj
 .endif
 
 .if ${PORT_OPTIONS:MLHA}
-RUN_DEPENDS+=	${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha
+RUN_DEPENDS+=	${LOCALBASE}/bin/lha:archivers/lha
 .endif
 
 .if ${PORT_OPTIONS:MARC}
-RUN_DEPENDS+=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc
+RUN_DEPENDS+=	${LOCALBASE}/bin/arc:archivers/arc
 .endif
 
 .if ${PORT_OPTIONS:MNOMARCH}
-RUN_DEPENDS+=	${LOCALBASE}/bin/nomarch:${PORTSDIR}/archivers/nomarch
+RUN_DEPENDS+=	${LOCALBASE}/bin/nomarch:archivers/nomarch
 .endif
 
 .if ${PORT_OPTIONS:MCAB}
-RUN_DEPENDS+=	${LOCALBASE}/bin/cabextract:${PORTSDIR}/archivers/cabextract
+RUN_DEPENDS+=	${LOCALBASE}/bin/cabextract:archivers/cabextract
 .endif
 
 .if ${PORT_OPTIONS:MRPM}
-RUN_DEPENDS+=	${LOCALBASE}/bin/rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+RUN_DEPENDS+=	${LOCALBASE}/bin/rpm2cpio.pl:archivers/rpm2cpio
 .endif
 
 .if ${PORT_OPTIONS:MZOO}
 # DOS condition in 2.10.1_2
-RUN_DEPENDS+=	zoo>=2.10.1_2:${PORTSDIR}/archivers/zoo
+RUN_DEPENDS+=	zoo>=2.10.1_2:archivers/zoo
 .endif
 
 .if ${PORT_OPTIONS:MUNZOO}
-RUN_DEPENDS+=	unzoo>=4.4_1:${PORTSDIR}/archivers/unzoo
+RUN_DEPENDS+=	unzoo>=4.4_1:archivers/unzoo
 .endif
 
 .if ${PORT_OPTIONS:MLZOP}
-RUN_DEPENDS+=	${LOCALBASE}/bin/lzop:${PORTSDIR}/archivers/lzop
+RUN_DEPENDS+=	${LOCALBASE}/bin/lzop:archivers/lzop
 .endif
 
 .if ${PORT_OPTIONS:MFREEZE}
-RUN_DEPENDS+=	${LOCALBASE}/bin/unfreeze:${PORTSDIR}/archivers/freeze
+RUN_DEPENDS+=	${LOCALBASE}/bin/unfreeze:archivers/freeze
 .endif
 
 .if ${PORT_OPTIONS:MP7ZIP}
-RUN_DEPENDS+=	${LOCALBASE}/bin/7zr:${PORTSDIR}/archivers/p7zip
+RUN_DEPENDS+=	${LOCALBASE}/bin/7zr:archivers/p7zip
 .endif
 
 .if ${PORT_OPTIONS:MMSWORD}
-RUN_DEPENDS+=	${LOCALBASE}/bin/ripole:${PORTSDIR}/textproc/ripole
+RUN_DEPENDS+=	${LOCALBASE}/bin/ripole:textproc/ripole
 .endif
 
 .if ${PORT_OPTIONS:MTNEF}
-RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
+RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:converters/tnef
 .endif
 
 .include <bsd.port.pre.mk>

@@ -11,16 +11,16 @@ COMMENT=	Utility to create and manage RPM metadata repositories
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sqlitecachec.py:${PORTSDIR}/devel/py-yum-metadata-parser \
-		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
-		${PYTHON_SITELIBDIR}/urlgrabber/__init__.py:${PORTSDIR}/www/py-urlgrabber \
-		${PYTHON_SITELIBDIR}/yum/__init__.py:${PORTSDIR}/sysutils/yum \
-		${PYTHON_SITELIBDIR}/deltarpm.py:${PORTSDIR}/sysutils/deltarpm
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sqlitecachec.py:devel/py-yum-metadata-parser \
+		${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2 \
+		${PYTHON_SITELIBDIR}/urlgrabber/__init__.py:www/py-urlgrabber \
+		${PYTHON_SITELIBDIR}/yum/__init__.py:sysutils/yum \
+		${PYTHON_SITELIBDIR}/deltarpm.py:sysutils/deltarpm
 
 USES=		gmake python shebangfix
 SHEBANG_FILES=	*.py */*.py Makefile
 
-BUILD_DEPENDS+=	ginstall:${PORTSDIR}/sysutils/coreutils
+BUILD_DEPENDS+=	ginstall:sysutils/coreutils
 GINSTALL=	ginstall
 
 MAKE_ARGS=	MAKE=${MAKE_CMD} INSTALL="${GINSTALL} -p -v" PYTHON=${PYTHON_CMD} \

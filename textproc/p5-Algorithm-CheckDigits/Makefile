@@ -15,7 +15,7 @@ COMMENT=	Perl extension to generate and test check digits
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Probe-Perl>=0:${PORTSDIR}/sysutils/p5-Probe-Perl
+TEST_DEPENDS=	p5-Probe-Perl>=0:sysutils/p5-Probe-Perl
 
 USES=		perl5
 USE_PERL5=	modbuild

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Simple perl script to generate Diceware dictionaries for passwords
 
-LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	libaspell.so:textproc/aspell
 
 USES=		perl5
 USE_PERL5=	run

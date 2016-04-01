@@ -10,7 +10,7 @@ MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	mdoc macro compiler
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 EXAMPLESDIR=	${PREFIX}/share/examples/mandoc
 

@@ -13,7 +13,7 @@ COMMENT=	Port of the syntax highlight engine of the Kate texteditor
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences
+TEST_DEPENDS=	p5-Test-Differences>0:devel/p5-Test-Differences
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	bin/hlansi.pl bin/hlhtml.pl

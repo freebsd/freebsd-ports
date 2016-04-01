@@ -17,7 +17,7 @@ LICENSE_NAME=	Special grant
 LICENSE_TEXT=	Special grant from the author
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/include/cfortran.h:${PORTSDIR}/lang/cfortran
+BUILD_DEPENDS=	${LOCALBASE}/include/cfortran.h:lang/cfortran
 
 USE_XORG=	x11 xmu xext
 USE_GL=		glut

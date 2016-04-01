@@ -10,8 +10,8 @@ COMMENT=	Connect virtual machines to the tor network
 
 LICENSE=	BSD4CLAUSE
 
-RUN_DEPENDS=	tor:${PORTSDIR}/security/tor \
-		tiny-dhcp-server:${PORTSDIR}/net/tiny-network-utilities
+RUN_DEPENDS=	tor:security/tor \
+		tiny-dhcp-server:net/tiny-network-utilities
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yurivict

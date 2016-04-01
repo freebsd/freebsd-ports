@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/bibtex2html/
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Tools for searching BibTeX and translating from BibTeX to HTML
 
-BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
+BUILD_DEPENDS=	ocaml:lang/ocaml
 
 USES=		perl5
 GNU_CONFIGURE=	yes
@@ -20,7 +20,7 @@ PDFDOCS_DESC=	${DOCS_DESC}
 
 PDFDOCS_CONFIGURE_ENABLE=	doc
 PDFDOCS_USE=	TEX=latex:build
-PDFDOCS_BUILD_DEPENDS=	hevea:${PORTSDIR}/textproc/hevea
+PDFDOCS_BUILD_DEPENDS=	hevea:textproc/hevea
 PDFDOCS_INSTALL_TARGET=	install install-doc
 
 PLIST_FILES=	bin/aux2bib bin/bib2bib bin/bibtex2html \

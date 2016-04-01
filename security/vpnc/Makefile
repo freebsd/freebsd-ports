@@ -11,8 +11,8 @@ MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Client for Cisco 3000 VPN Concentrator
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
-RUN_DEPENDS=	vpnc-script:${PORTSDIR}/sysutils/vpnc-scripts
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+RUN_DEPENDS=	vpnc-script:sysutils/vpnc-scripts
 
 USES=		shebangfix gmake perl5
 USE_PERL5=	build

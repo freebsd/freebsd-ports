@@ -10,9 +10,9 @@ COMMENT=	WYSIWYG ePub editor
 
 LICENSE=	GPLv3+
 
-LIB_DEPENDS=	libminizip.so:${PORTSDIR}/archivers/minizip \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+LIB_DEPENDS=	libminizip.so:archivers/minizip \
+		libpcre.so:devel/pcre \
+		libhunspell-1.3.so:textproc/hunspell
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Sigil-Ebook

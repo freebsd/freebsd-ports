@@ -12,7 +12,7 @@ COMMENT=	Modern scalable datacenter orchestration framework
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-stomp>=0:${PORTSDIR}/devel/rubygem-stomp
+RUN_DEPENDS=	rubygem-stomp>=0:devel/rubygem-stomp
 
 NO_BUILD=	yes
 USE_RUBY=	yes

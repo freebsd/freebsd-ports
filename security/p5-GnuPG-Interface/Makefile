@@ -14,10 +14,10 @@ COMMENT=	Perl module for interfacing with GnuPG
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg \
-		p5-MooX-HandlesVia>=0.04:${PORTSDIR}/devel/p5-MooX-HandlesVia \
-		p5-MooX-late>=0.14:${PORTSDIR}/devel/p5-MooX-late \
-		p5-Moo>=0.091011:${PORTSDIR}/devel/p5-Moo
+RUN_DEPENDS=	gpg2:security/gnupg \
+		p5-MooX-HandlesVia>=0.04:devel/p5-MooX-HandlesVia \
+		p5-MooX-late>=0.14:devel/p5-MooX-late \
+		p5-Moo>=0.091011:devel/p5-Moo
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

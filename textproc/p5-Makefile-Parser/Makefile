@@ -11,12 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Makefile::Parser - A Simple Parser for Makefiles
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Class-Trigger>=0.13:${PORTSDIR}/devel/p5-Class-Trigger \
-		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-IPC-Run3>=0.036:${PORTSDIR}/devel/p5-IPC-Run3 \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Makefile-DOM>=0.005:${PORTSDIR}/textproc/p5-Makefile-DOM
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-Class-Trigger>=0.13:devel/p5-Class-Trigger \
+		p5-File-Slurp>=0:devel/p5-File-Slurp \
+		p5-IPC-Run3>=0.036:devel/p5-IPC-Run3 \
+		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-Makefile-DOM>=0.005:textproc/p5-Makefile-DOM
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

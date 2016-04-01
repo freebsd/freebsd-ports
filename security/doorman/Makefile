@@ -13,7 +13,7 @@ COMMENT=	Port knocking implementation, both daemon and client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
+BUILD_DEPENDS=	lsof:sysutils/lsof
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PATCH_STRIP=	-p1

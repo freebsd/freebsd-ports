@@ -14,7 +14,7 @@ COMMENT=	More advanced and flexible object tree style for XML::Parser
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		perl5
 USE_PERL5=	configure

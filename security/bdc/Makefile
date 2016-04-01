@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.2-fbsd${BDREL}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitDefender Console Antivirus for FreeBSD
 
-LIB_DEPENDS=	libc.so.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	libc.so.5:misc/compat5x
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

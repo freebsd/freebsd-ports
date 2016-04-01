@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pluggable Captcha framework for Perl
 
-BUILD_DEPENDS=	p5-Number-Spell>=0:${PORTSDIR}/textproc/p5-Number-Spell \
-		p5-HTML-Email-Obfuscate>=0:${PORTSDIR}/security/p5-HTML-Email-Obfuscate
+BUILD_DEPENDS=	p5-Number-Spell>=0:textproc/p5-Number-Spell \
+		p5-HTML-Email-Obfuscate>=0:security/p5-HTML-Email-Obfuscate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

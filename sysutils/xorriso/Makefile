@@ -13,10 +13,10 @@ COMMENT=	ISO image manipulation tool based on Libburnia
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	libburn>=1.1.0:${PORTSDIR}/devel/libburn \
-		libisofs>=1.1.2:${PORTSDIR}/devel/libisofs
-RUN_DEPENDS=	libburn>=1.1.0:${PORTSDIR}/devel/libburn \
-		libisofs>=1.1.2:${PORTSDIR}/devel/libisofs
+BUILD_DEPENDS=	libburn>=1.1.0:devel/libburn \
+		libisofs>=1.1.2:devel/libisofs
+RUN_DEPENDS=	libburn>=1.1.0:devel/libburn \
+		libisofs>=1.1.2:devel/libisofs
 
 GNU_CONFIGURE=	yes
 USES=		gmake iconv libtool pathfix pkgconfig shebangfix

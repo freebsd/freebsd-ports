@@ -13,7 +13,7 @@ COMMENT=	Log file analysis program
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	p5-MIME-Base64>=0:converters/p5-MIME-Base64
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

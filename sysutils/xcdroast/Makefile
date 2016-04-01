@@ -17,8 +17,8 @@ OPTIONS_DEFINE=	GTK2 NONROOT NLS
 OPTIONS_DEFAULT=	GTK2
 NONROOT_DESC=	Use xcdroast w/o being root
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
-BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	cdrecord:sysutils/cdrtools
+BUILD_DEPENDS=	cdrecord:sysutils/cdrtools
 
 USES=		gettext gmake iconv pkgconfig
 GNU_CONFIGURE=	yes

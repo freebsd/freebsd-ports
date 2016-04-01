@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Grammar checking library
 
-LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	libaspell.so:textproc/aspell
 
 OPTIONS_DEFINE=	DOCS
 

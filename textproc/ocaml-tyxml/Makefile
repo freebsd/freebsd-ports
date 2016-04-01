@@ -15,8 +15,8 @@ LICENSE_NAME=	Lesser GPL 2.1 with a special OpenSSL exception clause
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${SA_DIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
-RUN_DEPENDS=	${SA_DIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
+BUILD_DEPENDS=	${SA_DIR}/netstring/netstring.a:www/ocaml-net
+RUN_DEPENDS=	${SA_DIR}/netstring/netstring.a:www/ocaml-net
 
 USES=			gmake
 USE_OCAML=		yes

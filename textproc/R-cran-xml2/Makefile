@@ -12,8 +12,8 @@ COMMENT=	Parse XML
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-Rcpp>=0.11.4.6:${PORTSDIR}/devel/R-cran-Rcpp \
-		R-cran-BH>0:${PORTSDIR}/devel/R-cran-BH
+RUN_DEPENDS=	R-cran-Rcpp>=0.11.4.6:devel/R-cran-Rcpp \
+		R-cran-BH>0:devel/R-cran-BH
 
 USES=	cran:auto-plist
 

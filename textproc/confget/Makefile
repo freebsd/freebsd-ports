@@ -23,7 +23,7 @@ PLIST_FILES=	bin/confget \
 		man/man1/confget.1.gz
 PORTEXAMPLES=	t1.ini t2.ini
 
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_MAKE_ENV_OFF=	PCRE_CFLAGS="" PCRE_LIBS=""
 
 do-install:

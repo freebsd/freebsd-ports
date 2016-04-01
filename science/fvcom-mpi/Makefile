@@ -8,7 +8,7 @@ MPIPREFIX=	mpi/openmpi/
 
 MAINTAINER=	bacon4000@gmail.com
 
-LIB_DEPENDS+=	libmpi.so:${PORTSDIR}/net/openmpi
+LIB_DEPENDS+=	libmpi.so:net/openmpi
 
 MASTERDIR=	${.CURDIR}/../fvcom
 

@@ -14,8 +14,8 @@ COMMENT=	Simple LDAP authentication
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Authen-Simple>=0:${PORTSDIR}/security/p5-Authen-Simple \
-		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
+BUILD_DEPENDS=	p5-Authen-Simple>=0:security/p5-Authen-Simple \
+		p5-perl-ldap>=0:net/p5-perl-ldap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

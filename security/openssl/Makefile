@@ -54,7 +54,7 @@ EXPCIPHERS_DESC?=	Include experimental ciphers
 EC_DESC?=	Optimize NIST elliptic curves
 MAN3_DESC?=	Install API manpages (section 3)
 
-GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
 MAKE_JOBS_UNSAFE=	yes
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch

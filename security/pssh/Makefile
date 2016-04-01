@@ -12,7 +12,7 @@ COMMENT=	Parallel versions of the openssh tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	rsync:net/rsync
 
 USES=		python
 USE_PYTHON=	autoplist distutils

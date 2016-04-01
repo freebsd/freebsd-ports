@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@christianserving.org
 COMMENT=	Interactive real-time monitoring tool for the HAProxy unix socket
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/haproxy:${PORTSDIR}/net/haproxy
+RUN_DEPENDS=	${LOCALBASE}/sbin/haproxy:net/haproxy
 
 USES=		python
 NO_BUILD=	yes

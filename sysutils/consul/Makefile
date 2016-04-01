@@ -12,7 +12,7 @@ COMMENT=	Service discovery and configuration made easy
 
 LICENSE=	MPL
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USES=		compiler
 

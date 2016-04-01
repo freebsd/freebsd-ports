@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	LuaExpat is a SAX XML parser based on the Expat library
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake lua:51
 ALL_TARGET=	lib

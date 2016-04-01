@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:C/_/-/}_${PORTVERSION}+git.orig
 MAINTAINER=	lichray@gmail.com
 COMMENT=	PAM module offering finger print authentication using libfprint
 
-LIB_DEPENDS=	libfprint.so:${PORTSDIR}/security/libfprint
+LIB_DEPENDS=	libfprint.so:security/libfprint
 
 USE_AUTOTOOLS=	autoconf automake
 AUTOMAKE_ARGS=	-a

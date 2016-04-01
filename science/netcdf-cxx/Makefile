@@ -10,7 +10,7 @@ CATEGORIES=	science
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ library for machine-independent, array-oriented data access
 
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
 CONFLICTS=	netcdf-3.* netcdf-4.[0-2].*
 

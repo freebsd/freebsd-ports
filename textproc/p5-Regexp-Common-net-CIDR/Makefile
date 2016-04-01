@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Provide patterns for CIDR blocks
 
-BUILD_DEPENDS=	p5-Regexp-Common>0:${PORTSDIR}/textproc/p5-Regexp-Common
+BUILD_DEPENDS=	p5-Regexp-Common>0:textproc/p5-Regexp-Common
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

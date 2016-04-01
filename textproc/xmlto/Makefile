@@ -18,14 +18,14 @@ COMMENT=	Front-end to an XSL toolchain
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash \
-		${GETOPT_CMD}:${PORTSDIR}/misc/getopt \
-		xmllint:${PORTSDIR}/textproc/libxml2 \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
-		paperconf:${PORTSDIR}/print/libpaper \
-		w3m:${PORTSDIR}/www/w3m \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
+BUILD_DEPENDS=	${BASH_CMD}:shells/bash \
+		${GETOPT_CMD}:misc/getopt \
+		xmllint:textproc/libxml2 \
+		xsltproc:textproc/libxslt \
+		docbook-xsl>0:textproc/docbook-xsl \
+		paperconf:print/libpaper \
+		w3m:www/w3m \
+		docbook-xml>0:textproc/docbook-xml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_FILES=	pkg-message
@@ -60,12 +60,12 @@ USE_TEX+=	xmltex
 .endif
 
 .if ${PORT_OPTIONS:MFOP}
-RUN_DEPENDS+=	fop>=0.90:${PORTSDIR}/textproc/fop
+RUN_DEPENDS+=	fop>=0.90:textproc/fop
 CONFIGURE_ARGS+=	--with-backend=fop
 .endif
 
 .if ${PORT_OPTIONS:MDBLATEX}
-RUN_DEPENDS+=	${LOCALBASE}/bin/dblatex:${PORTSDIR}/textproc/dblatex
+RUN_DEPENDS+=	${LOCALBASE}/bin/dblatex:textproc/dblatex
 .if ! ${PORT_OPTIONS:MFOP}
 CONFIGURE_ARGS+=	--with-backend=dblatex
 .endif

@@ -9,8 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Plugin to GKrellM that displays the current CPU frequencies
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gkrellm.pc:${PORTSDIR}/sysutils/gkrellm2
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gkrellm.pc:sysutils/gkrellm2
+RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 
 USES=		pkgconfig
 

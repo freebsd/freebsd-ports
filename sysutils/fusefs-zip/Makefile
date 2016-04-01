@@ -11,8 +11,8 @@ COMMENT=	FUSE filesystem to mount ZIP archives with write support
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip
-BUILD_DEPENDS=	libzip>=0.11.1:${PORTSDIR}/archivers/libzip
+LIB_DEPENDS=	libzip.so:archivers/libzip
+BUILD_DEPENDS=	libzip>=0.11.1:archivers/libzip
 
 USES=		gmake fuse pkgconfig
 

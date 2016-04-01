@@ -12,8 +12,8 @@ COMMENT=	Chef Plug-In for Foreman\'s Smart Proxy
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	foreman-proxy>=1.8.0:${PORTSDIR}/net/foreman-proxy \
-		rubygem-chef-api>0:${PORTSDIR}/sysutils/rubygem-chef-api
+RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
+		rubygem-chef-api>0:sysutils/rubygem-chef-api
 
 NO_ARCH=	yes
 USE_RUBY=	yes

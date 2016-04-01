@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	konstantin.lepa@gmail.com
 COMMENT=	C++ XML parser library
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		cmake iconv
 USE_LDCONFIG=	yes

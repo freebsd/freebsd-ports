@@ -11,8 +11,8 @@ COMMENT=	Parallel synchronization daemon for rsync
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
-		sudo:${PORTSDIR}/security/sudo
+RUN_DEPENDS=	rsync:net/rsync \
+		sudo:security/sudo
 
 USES=		python
 NO_BUILD=	yes

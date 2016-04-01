@@ -13,11 +13,11 @@ COMMENT=	Xen management tool, based on LibXenlight
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl \
-		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
-		libpixman-1.so:${PORTSDIR}/x11/pixman
-BUILD_DEPENDS=	dev86>0:${PORTSDIR}/devel/dev86 \
-		seabios>0:${PORTSDIR}/misc/seabios
+LIB_DEPENDS=	libyajl.so:devel/yajl \
+		liblzo2.so:archivers/lzo2 \
+		libpixman-1.so:x11/pixman
+BUILD_DEPENDS=	dev86>0:devel/dev86 \
+		seabios>0:misc/seabios
 
 OPTIONS_DEFINE=	DOCS
 

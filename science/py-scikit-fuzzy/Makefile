@@ -13,7 +13,7 @@ COMMENT=	Fuzzy logic toolkit for SciPy
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/scipy/version.py:${PORTSDIR}/science/py-scipy
+		${PYTHON_SITELIBDIR}/scipy/version.py:science/py-scipy
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		python

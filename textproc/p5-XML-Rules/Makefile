@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Parse XML and specify rules for individual tags
 
-RUN_DEPENDS=	p5-XML-Parser>=2.00:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	p5-XML-Parser>=2.00:textproc/p5-XML-Parser
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

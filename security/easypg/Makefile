@@ -11,7 +11,7 @@ DISTNAME=	epg-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EasyPG is yet another GnuPG interface for Emacs
 
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
+RUN_DEPENDS=	gpg:security/gnupg1
 
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes

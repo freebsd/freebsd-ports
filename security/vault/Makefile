@@ -10,7 +10,7 @@ COMMENT=	Tool for securely accessing secrets
 
 LICENSE=	MPL
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp

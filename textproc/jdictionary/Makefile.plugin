@@ -6,7 +6,7 @@ EXTRACT_SUFX=	#
 MAINTAINER?=	jmohacsi@bsd.hu
 COMMENT?=	JDictionary plugin master port
 
-RUN_DEPENDS+=	jdictionary:${PORTSDIR}/textproc/jdictionary
+RUN_DEPENDS+=	jdictionary:textproc/jdictionary
 
 # WARNING: USE_JAVA is set to be able to use JAVASHAREDIR.
 #          Please make sure that JAVA_VERSION here is the same as in Makefile.

@@ -18,7 +18,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	DSSSL stylesheets for the DocBook DTD by Norman Walsh
 
-BUILD_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+BUILD_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_MTREE=	yes

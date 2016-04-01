@@ -13,8 +13,8 @@ COMMENT=	Xosd-plugin for lineakd
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd \
-		liblineak.so:${PORTSDIR}/sysutils/lineakd
+LIB_DEPENDS=	libxosd.so:misc/xosd \
+		liblineak.so:sysutils/lineakd
 
 USES=		gmake libtool
 USE_LDCONFIG=	yes

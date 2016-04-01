@@ -6,8 +6,8 @@ COMMENT=	MCollective agent to test ICMP and TCP connectivity
 
 # See MASTERDIR for MAINTAINER.
 
-RUN_DEPENDS=	mcollective-nettest-common>=${PORTVERSION}:${PORTSDIR}/sysutils/mcollective-nettest-common \
-		rubygem-net-ping>=1:${PORTSDIR}/net/rubygem-net-ping
+RUN_DEPENDS=	mcollective-nettest-common>=${PORTVERSION}:sysutils/mcollective-nettest-common \
+		rubygem-net-ping>=1:net/rubygem-net-ping
 
 MASTERDIR=	${.CURDIR}/../mcollective-nettest-common
 

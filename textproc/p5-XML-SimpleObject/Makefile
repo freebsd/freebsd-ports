@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	API for accessing the structure of an XML document
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC?=	${WRKDIR}/${PORTNAME}${PORTVERSION}

@@ -13,7 +13,7 @@ COMMENT=	Helper scripts for xxdiff
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	xxdiff:${PORTSDIR}/textproc/xxdiff
+RUN_DEPENDS=	xxdiff:textproc/xxdiff
 
 USES=		python:2 tar:bzip2
 USE_PYTHON=	autoplist distutils

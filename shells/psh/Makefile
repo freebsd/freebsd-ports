@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	CPAN:GREGOR
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	New shell made entirely out of a Perl script
 
-RUN_DEPENDS=	${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-Term-ReadLine-Perl
+RUN_DEPENDS=	${SITE_PERL}/Term/ReadLine/Perl.pm:devel/p5-Term-ReadLine-Perl
 
 USES=		perl5
 USE_PERL5=	configure

@@ -10,17 +10,17 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Power management system for the MATE Desktop
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		gnome-keyring>=3.0.0:${PORTSDIR}/security/gnome-keyring
-LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
-		libupower-glib.so:${PORTSDIR}/sysutils/upower \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
-RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit \
-		gnome-keyring>=3.0.0:${PORTSDIR}/security/gnome-keyring
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		gnome-keyring>=3.0.0:security/gnome-keyring
+LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
+		libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libunique-1.0.so:x11-toolkits/unique \
+		libupower-glib.so:sysutils/upower \
+		libnotify.so:devel/libnotify \
+		libgnome-keyring.so:security/libgnome-keyring
+RUN_DEPENDS=	pkexec:sysutils/polkit \
+		gnome-keyring>=3.0.0:security/gnome-keyring
 
 PORTSCOUT=	limitw:1,even
 

@@ -14,8 +14,8 @@ COMMENT=	Wiimms ISO Tools
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 WRKSRC=	${WRKDIR}/wiimms-iso-tools
 USES+=		gmake

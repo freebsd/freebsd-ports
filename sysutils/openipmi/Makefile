@@ -13,7 +13,7 @@ COMMENT=	Complex IPMI management software
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -44,7 +44,7 @@ PORT_OPTIONS+=	GDBM
 
 .if ${PORT_OPTIONS:MSNMP}
 PORT_OPTIONS+=		SSL
-LIB_DEPENDS+=		libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=		libnetsnmp.so:net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-ucdsnmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-ucdsnmp=no
@@ -60,8 +60,8 @@ CONFIGURE_ARGS+=	--with-openssl=no
 .if ${PORT_OPTIONS:MTKINTER}
 USES+=			python
 WITH_PYTHON=		yes
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
-			${LOCALBASE}/lib/Tix8.4.3/Tix.tcl:${PORTSDIR}/x11-toolkits/tix
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
+			${LOCALBASE}/lib/Tix8.4.3/Tix.tcl:x11-toolkits/tix
 CONFIGURE_ARGS+=	--with-tkinter
 PLIST_SUB+=		TKINTER=""
 .else
@@ -82,7 +82,7 @@ PLIST_SUB+=		PERL="@comment "
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=			python
 CONFIGURE_ARGS+=	--with-python --with-swig ac_cv_path_pythonprog=${PYTHON_CMD}
-BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS+=		swig:devel/swig13
 PLIST_SUB+=		PYTHON=""
 .else
 CONFIGURE_ARGS+=	--with-python=no --with-swig=no
@@ -101,7 +101,7 @@ PLIST_SUB+=		TCL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=		libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		libgdbm.so:databases/gdbm
 .endif
 
 .if ${PORT_OPTIONS:MGLIB12}

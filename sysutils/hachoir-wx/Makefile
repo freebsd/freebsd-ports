@@ -10,7 +10,7 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Hachoir GUI
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:devel/hachoir-parser
 
 USES=		python
 USE_PYTHON=	distutils

@@ -5,7 +5,7 @@ PORTREVISION=	3
 
 COMMENT=	SASL authentication server for cyrus-sasl2
 
-LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 INSTALL_WRKSRC=	${WRKSRC}/saslauthd
 
@@ -36,7 +36,7 @@ BDB_CONFIGURE_ON=	--enable-auth-sasldb \
 			--with-bdb=${BDB_LIB_NAME}
 BDB1_CONFIGURE_ON=	--enable-auth-sasldb \
 			--with-dblib=ndbm
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ON=	--enable-auth-sasldb \
 			--with-dblib=gdbm \
 			--with-gdbm=${LOCALBASE}

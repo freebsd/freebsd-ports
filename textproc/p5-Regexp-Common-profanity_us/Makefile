@@ -14,7 +14,7 @@ COMMENT=	Provide regexes for U.S. profanity
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common
+BUILD_DEPENDS=	p5-Regexp-Common>=0:textproc/p5-Regexp-Common
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

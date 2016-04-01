@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for OpenSSL EC (Elliptic Curves) library
 
-BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0.04:${PORTSDIR}/security/p5-Crypt-OpenSSL-Bignum
+BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0.04:security/p5-Crypt-OpenSSL-Bignum
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

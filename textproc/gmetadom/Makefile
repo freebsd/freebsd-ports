@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of DOM Implementations
 
-LIB_DEPENDS=	libgdome.so:${PORTSDIR}/textproc/gdome2
+LIB_DEPENDS=	libgdome.so:textproc/gdome2
 
 USES=		gmake iconv libtool pathfix pkgconfig
 USE_GNOME=	glib20 libxml2
@@ -25,8 +25,8 @@ OPTIONS_SUB=	yes
 
 OCAML_DESC=	OCAML language support
 
-OCAML_BUILD_DEPENDS=	ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
-			ocamlc:${PORTSDIR}/lang/ocaml
+OCAML_BUILD_DEPENDS=	ocamlfind:devel/ocaml-findlib \
+			ocamlc:lang/ocaml
 OCAML_CONFIGURE_OFF=	HAVE_OCAMLDEP=no HAVE_OCAMLFIND=no HAVE_OCAMLOPT=no
 
 post-patch:

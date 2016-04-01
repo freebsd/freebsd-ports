@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/ehaupt
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	HP Lights-Out management perl scripts
 
-BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.19:${PORTSDIR}/security/p5-IO-Socket-SSL
+BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.19:security/p5-IO-Socket-SSL
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		shebangfix perl5

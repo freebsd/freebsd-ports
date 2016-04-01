@@ -12,8 +12,8 @@ COMMENT=	Lightweight implementation of the DOM in ANSI C
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libmba.so:${PORTSDIR}/devel/libmba
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libmba.so:devel/libmba
 
 USES=		gmake
 MAKE_ENV=	prefix="${LOCALBASE}" INSTDIR="${STAGEDIR}${PREFIX}"

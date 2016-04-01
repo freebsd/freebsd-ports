@@ -10,7 +10,7 @@ COMMENT=	Automatically report kernel panics
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	pkesh:${PORTSDIR}/security/pkesh
+RUN_DEPENDS=	pkesh:security/pkesh
 
 NO_BUILD=	yes
 NO_INSTALL=	yes

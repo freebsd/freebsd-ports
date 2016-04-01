@@ -13,7 +13,7 @@ COMMENT=	Perl extension to dump YAML with color
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Scalar-Util-LooksLikeNumber>0:${PORTSDIR}/devel/p5-Scalar-Util-LooksLikeNumber
+RUN_DEPENDS=	p5-Scalar-Util-LooksLikeNumber>0:devel/p5-Scalar-Util-LooksLikeNumber
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

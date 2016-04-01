@@ -9,8 +9,8 @@ PKGNAMEPREFIX=	sigrok-
 MAINTAINER=	uffe@uffe.org
 COMMENT=	Sigrok firmware
 
-RUN_DEPENDS=	parseelf.py:${PORTSDIR}/science/sigrok-firmware-utils \
-		${LOCALBASE}/share/sigrok-firmware/fx2lafw-cypress-fx2.fw:${PORTSDIR}/science/sigrok-firmware-fx2lafw
+RUN_DEPENDS=	parseelf.py:science/sigrok-firmware-utils \
+		${LOCALBASE}/share/sigrok-firmware/fx2lafw-cypress-fx2.fw:science/sigrok-firmware-fx2lafw
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uffejakobsen

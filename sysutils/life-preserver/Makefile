@@ -10,8 +10,8 @@ COMMENT=	PC-BSD Life Preserver Utility
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/share/pcbsd/scripts/functions.sh:${PORTSDIR}/sysutils/pcbsd-libsh \
-		stunnel:${PORTSDIR}/security/stunnel
+RUN_DEPENDS=	${LOCALBASE}/share/pcbsd/scripts/functions.sh:sysutils/pcbsd-libsh \
+		stunnel:security/stunnel
 
 WRKSRC_SUBDIR=	src-sh/lpreserver
 USES=		pkgconfig tar:xz

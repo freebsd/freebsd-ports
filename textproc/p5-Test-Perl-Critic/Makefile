@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Perl-Critic \
-		p5-MCE>=1.52:${PORTSDIR}/devel/p5-MCE
+BUILD_DEPENDS=	p5-Perl-Critic>=0:textproc/p5-Perl-Critic \
+		p5-MCE>=1.52:devel/p5-MCE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

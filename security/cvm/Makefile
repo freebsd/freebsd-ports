@@ -13,7 +13,7 @@ COMMENT=	Credential Validation Modules
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libbg.so:${PORTSDIR}/devel/bglibs
+LIB_DEPENDS=	libbg.so:devel/bglibs
 
 CONFLICTS=	bglibs-1.00*
 
@@ -34,7 +34,7 @@ VCHKPW_DESC=	Compile cvm-vchkpw
 
 VCHKPW_ALL_TARGET=	cvm-vchkpw
 
-VCHKPW_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+VCHKPW_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:mail/vpopmail
 
 do-configure:
 	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home

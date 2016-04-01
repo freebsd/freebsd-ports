@@ -42,7 +42,7 @@ PORTEXAMPLES=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCI}
-RUN_DEPENDS+=	${KMODDIR}/quantis.ko:${PORTSDIR}/security/quantis-kmod
+RUN_DEPENDS+=	${KMODDIR}/quantis.ko:security/quantis-kmod
 .else
 CMAKE_ARGS+=	-DDISABLE_QUANTIS_PCI=1
 .endif
@@ -69,7 +69,7 @@ PLIST_SUB+=	COMPAT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTOOL}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libboost_date_time.a:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libboost_date_time.a:devel/boost-libs
 CXXFLAGS+=	-I${LOCALBASE}/include
 
 . if ${PORT_OPTIONS:MGUI}

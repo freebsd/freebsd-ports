@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Send syslog messages over TCP, UDP, or UNIX sockets
 
-RUN_DEPENDS=	p5-IO-Socket-IP>=0.19:${PORTSDIR}/net/p5-IO-Socket-IP \
-		p5-Log-Syslog-Constants>-1.01:${PORTSDIR}/sysutils/p5-Log-Syslog-Constants
-BUILD_DEPENDS=	p5-IO-Socket-IP>=0.19:${PORTSDIR}/net/p5-IO-Socket-IP \
-		p5-Log-Syslog-Constants>-1.01:${PORTSDIR}/sysutils/p5-Log-Syslog-Constants
+RUN_DEPENDS=	p5-IO-Socket-IP>=0.19:net/p5-IO-Socket-IP \
+		p5-Log-Syslog-Constants>-1.01:sysutils/p5-Log-Syslog-Constants
+BUILD_DEPENDS=	p5-IO-Socket-IP>=0.19:net/p5-IO-Socket-IP \
+		p5-Log-Syslog-Constants>-1.01:sysutils/p5-Log-Syslog-Constants
 
 USES=		perl5
 USE_PERL5=	configure

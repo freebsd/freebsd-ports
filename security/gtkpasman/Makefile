@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GTK+ passwords manager for system and network administrators
 
-RUN_DEPENDS+=	gpgv2:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=	gpgv2:security/gnupg
 
 USES=		desktop-file-utils gettext gmake pkgconfig tar:xz
 USE_GNOME=	gtk20 intltool

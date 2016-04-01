@@ -12,9 +12,9 @@ COMMENT=	Framework for hardware logic analyzers, CLI client
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libserialport.so:${PORTSDIR}/devel/libserialport \
-		libsigrok.so:${PORTSDIR}/devel/libsigrok \
-		libsigrokdecode.so:${PORTSDIR}/devel/libsigrokdecode
+LIB_DEPENDS=	libserialport.so:devel/libserialport \
+		libsigrok.so:devel/libsigrok \
+		libsigrokdecode.so:devel/libsigrokdecode
 
 PLIST_FILES=	bin/sigrok-cli man/man1/sigrok-cli.1.gz
 

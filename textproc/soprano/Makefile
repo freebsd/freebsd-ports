@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Soprano/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt/C++ RDF framework
 
-LIB_DEPENDS=	libraptor2.so:${PORTSDIR}/textproc/raptor2 \
-		librdf.so:${PORTSDIR}/textproc/redland \
-		libiodbc.so:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS=	libraptor2.so:textproc/raptor2 \
+		librdf.so:textproc/redland \
+		libiodbc.so:databases/libiodbc
 
 USE_QT4=	corelib dbus network qtestlib_build xml \
 		qmake_build moc_build uic_build rcc_build

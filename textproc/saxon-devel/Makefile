@@ -36,17 +36,17 @@ PORTDOCS=	*
 
 .if ${PORT_OPTIONS:MJDOM}
 JARFILES+=	saxon9-jdom.jar
-RUN_DEPENDS+=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom
+RUN_DEPENDS+=	${JAVALIBDIR}/jdom.jar:java/jdom
 .endif
 
 .if ${PORT_OPTIONS:MDOM4J}
 JARFILES+=	saxon9-dom4j.jar
-RUN_DEPENDS+=	${JAVALIBDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j
+RUN_DEPENDS+=	${JAVALIBDIR}/dom4j.jar:textproc/dom4j
 .endif
 
 .if ${PORT_OPTIONS:MXOM}
 JARFILES+=	saxon9-xom.jar
-RUN_DEPENDS+=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom
+RUN_DEPENDS+=	${JAVALIBDIR}/xom.jar:textproc/xom
 .endif
 
 SUB_FILES=	saxon.sh

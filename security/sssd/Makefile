@@ -14,25 +14,25 @@ COMMENT=	System Security Services Daemon
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libtalloc.so:${PORTSDIR}/devel/talloc \
-		libtevent.so:${PORTSDIR}/devel/tevent \
-		libtdb.so:${PORTSDIR}/databases/tdb \
-		libldb.so:${PORTSDIR}/databases/ldb \
-		libcares.so:${PORTSDIR}/dns/c-ares \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libdhash.so:${PORTSDIR}/devel/ding-libs \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libunistring.so:${PORTSDIR}/devel/libunistring \
-		libnss3.so:${PORTSDIR}/security/nss \
-		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
-		libinotify.so:${PORTSDIR}/devel/libinotify
-BUILD_DEPENDS=	xmlcatalog:${PORTSDIR}/textproc/libxml2 \
-		docbook-xsl>=1:${PORTSDIR}/textproc/docbook-xsl \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr \
-		krb5>=1.10:${PORTSDIR}/security/krb5 \
-		nsupdate:${PORTSDIR}/dns/bind99
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libtalloc.so:devel/talloc \
+		libtevent.so:devel/tevent \
+		libtdb.so:databases/tdb \
+		libldb.so:databases/ldb \
+		libcares.so:dns/c-ares \
+		libdbus-1.so:devel/dbus \
+		libdhash.so:devel/ding-libs \
+		libpcre.so:devel/pcre \
+		libunistring.so:devel/libunistring \
+		libnss3.so:security/nss \
+		libsasl2.so:security/cyrus-sasl2 \
+		libinotify.so:devel/libinotify
+BUILD_DEPENDS=	xmlcatalog:textproc/libxml2 \
+		docbook-xsl>=1:textproc/docbook-xsl \
+		xsltproc:textproc/libxslt \
+		xmlcatmgr:textproc/xmlcatmgr \
+		krb5>=1.10:security/krb5 \
+		nsupdate:dns/bind99
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-selinux=no --with-semanage=no \
@@ -71,7 +71,7 @@ OPTIONS_DEFAULT=	DOCS
 OPTIONS_SUB=	yes
 
 SMB_DESC=		Install IPA and AD providers (requires Samba4)
-SMB_BUILD_DEPENDS=	samba41>=4.1.0:${PORTSDIR}/net/samba41
+SMB_BUILD_DEPENDS=	samba41>=4.1.0:net/samba41
 SMB_CONFIGURE_WITH=	samba
 
 .include <bsd.port.options.mk>

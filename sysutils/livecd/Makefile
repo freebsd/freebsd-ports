@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.primeirospassos.org/
 MAINTAINER=	ebrandi.home@uol.com.br
 COMMENT=	Tool Set to create custom FreeBSD LiveCD
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+RUN_DEPENDS=	cdrecord:sysutils/cdrtools
 
 NO_BUILD=	yes
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" \

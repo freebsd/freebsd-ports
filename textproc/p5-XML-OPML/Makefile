@@ -14,8 +14,8 @@ COMMENT=	Creates and updates OPML (Outline Processor Markup Language) files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-XML-SimpleObject>=0:${PORTSDIR}/textproc/p5-XML-SimpleObject
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-XML-SimpleObject>=0:textproc/p5-XML-SimpleObject
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -12,7 +12,7 @@ COMMENT=	ElasticSearch SQL plugin
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	elasticsearch2>=2.1.0:${PORTSDIR}/textproc/elasticsearch2
+RUN_DEPENDS=	elasticsearch2>=2.1.0:textproc/elasticsearch2
 
 CONFLICTS=      elasticsearch-plugin-sql-1.*
 

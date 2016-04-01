@@ -15,9 +15,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libnet.so:net/libnet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-fatal-warnings \
@@ -42,23 +42,23 @@ OPTIONS_SUB=		yes
 
 DRAC3_CONFIGURE_OFF=	ac_cv_header_curl_curl_h=no
 DRAC3_DESC=		Dell DRAC III support
-DRAC3_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+DRAC3_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 HPI_CONFIGURE_OFF=	ac_cv_header_openhpi_SaHpi_h=no
 HPI_DESC=		SAF Hardware Platform Interface support
-HPI_LIB_DEPENDS=	libopenhpi.so:${PORTSDIR}/sysutils/openhpi
+HPI_LIB_DEPENDS=	libopenhpi.so:sysutils/openhpi
 
 IPMI_CONFIGURE_ENABLE=	ipmilan
 IPMI_DESC=		Intelligent Platform Management Interface support
-IPMI_LIB_DEPENDS=	libOpenIPMI.so:${PORTSDIR}/sysutils/openipmi
+IPMI_LIB_DEPENDS=	libOpenIPMI.so:sysutils/openipmi
 
-MANPAGES_BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-			help2man:${PORTSDIR}/misc/help2man \
-			xsltproc:${PORTSDIR}/textproc/libxslt
+MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+			help2man:misc/help2man \
+			xsltproc:textproc/libxslt
 MANPAGES_CONFIGURE_ENABLE=doc
 
 SNMP_CONFIGURE_ENABLE=	snmp
-SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 .include <bsd.port.options.mk>
 

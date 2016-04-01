@@ -14,7 +14,7 @@ COMMENT=	Perl extension for OpenSSL ECDSA
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-OpenSSL-EC>=0.05:${PORTSDIR}/security/p5-Crypt-OpenSSL-EC
+BUILD_DEPENDS=	p5-Crypt-OpenSSL-EC>=0.05:security/p5-Crypt-OpenSSL-EC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

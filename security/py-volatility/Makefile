@@ -13,12 +13,12 @@ COMMENT=	Advanced memory forensics framework
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}distorm>=0:${PORTSDIR}/devel/py-distorm \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}yara>=0:${PORTSDIR}/security/py-yara \
-		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:${PORTSDIR}/textproc/py-openpyxl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}distorm>=0:devel/py-distorm \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara \
+		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl
 
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist

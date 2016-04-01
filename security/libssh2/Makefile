@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=	ZLIB
 TRACE_DESC=	Enable debug packet traces
 
 TRACE_CONFIGURE_ENABLE=	debug
-GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 GCRYPT_CONFIGURE_ON=	--with-libgcrypt --without-openssl
 GCRYPT_CONFIGURE_OFF=	--without-libgcrypt --with-openssl
 GCRYPT_CPPFLAGS=	-I${LOCALBASE}/include

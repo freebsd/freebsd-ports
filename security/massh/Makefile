@@ -16,8 +16,8 @@ BROKEN=		mismatch in distfile checksum
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		ambit:${PORTSDIR}/shells/ambit
+RUN_DEPENDS=	bash:shells/bash \
+		ambit:shells/ambit
 
 MASSHDIR?=	/var/spool/massh
 NO_BUILD=	yes

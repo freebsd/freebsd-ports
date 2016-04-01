@@ -11,7 +11,7 @@ COMMENT=	Utility for reading, writing, verifying, and erasing flash ROM chips
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpci.so:${PORTSDIR}/devel/libpci
+LIB_DEPENDS=	libpci.so:devel/libpci
 
 OPTIONS_DEFINE=		BUSPIRATE DMIDECODE DOCS FTDI
 OPTIONS_DEFAULT=	DMIDECODE FTDI
@@ -40,9 +40,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 BUSPIRATE_MAKE_ENV=	CONFIG_BUSPIRATE_SPI=yes
 
-DMIDECODE_RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+DMIDECODE_RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
 
-FTDI_LIB_DEPENDS=	libftdi1.so:${PORTSDIR}/devel/libftdi1
+FTDI_LIB_DEPENDS=	libftdi1.so:devel/libftdi1
 FTDI_USES=		pkgconfig
 
 do-install:

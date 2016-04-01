@@ -10,7 +10,7 @@ COMMENT=	JSON parser for the shell
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
+LIB_DEPENDS=	libjansson.so:devel/jansson
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keenerd

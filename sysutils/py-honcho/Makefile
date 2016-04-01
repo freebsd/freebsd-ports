@@ -13,7 +13,7 @@ COMMENT=	Managing Procfile-based applications tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7:${PORTSDIR}/devel/py-Jinja2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7:devel/py-Jinja2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nickstenning

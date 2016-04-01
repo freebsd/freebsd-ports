@@ -40,7 +40,7 @@ CRYPTO_DESC=	Enable crypto support for exslt
 
 MEM_DEBUG_CONFIGURE_ON=	--with-mem-debug
 CRYPTO_CONFIGURE_WITH=	crypto
-CRYPTO_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+CRYPTO_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' \

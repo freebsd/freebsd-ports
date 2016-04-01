@@ -13,7 +13,7 @@ COMMENT=	Tool to quickly scan your network for machines listening on a TCP port
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 USES=		gmake

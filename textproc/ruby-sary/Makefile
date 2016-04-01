@@ -16,7 +16,7 @@ COMMENT=	Ruby interface to the Sary library
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libsary.so:${PORTSDIR}/textproc/sary
+LIB_DEPENDS=	libsary.so:textproc/sary
 
 BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes

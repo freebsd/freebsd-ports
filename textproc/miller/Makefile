@@ -21,7 +21,7 @@ PLIST_FILES=	bin/mlr man/man1/mlr.1.gz
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
 .endif
 
 post-configure:

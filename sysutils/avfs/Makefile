@@ -13,7 +13,7 @@ COMMENT=	Virtual File System library
 LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		libtool pkgconfig tar:bz2 shebangfix perl5
 USE_PERL5=	run

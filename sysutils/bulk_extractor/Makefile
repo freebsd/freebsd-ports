@@ -13,10 +13,10 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		sqlite
-LIB_DEPENDS=	libafflib.so:${PORTSDIR}/sysutils/afflib \
-		libewf.so:${PORTSDIR}/devel/libewf \
-		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libafflib.so:sysutils/afflib \
+		libewf.so:devel/libewf \
+		libexiv2.so:graphics/exiv2 \
+		libexpat.so:textproc/expat2
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -36,7 +36,7 @@ BEVIEWER_PLIST_FILES=	bin/BEViewer bin/BEViewer.jar
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 CONFIGURE_ENV=	LEX=${LOCALBASE}/bin/flex
 .endif
 

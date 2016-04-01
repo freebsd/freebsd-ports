@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.yersinia.net/download/
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 .if !defined(WITHOUT_GTK)
 .if exists(${LOCALBASE}/include/gtk-2.0/gtk/gtk.h)

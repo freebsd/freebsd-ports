@@ -11,7 +11,7 @@ COMMENT=	GNU Privacy Guard (GPG)
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pear-Console_CommandLine>=1.1.10:${PORTSDIR}/devel/pear-Console_CommandLine
+BUILD_DEPENDS=	pear-Console_CommandLine>=1.1.10:devel/pear-Console_CommandLine
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

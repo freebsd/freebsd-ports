@@ -14,7 +14,7 @@ COMMENT=	Generate text based QR Code
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
+LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 
 USES=		perl5 pkgconfig
 USE_PERL5=	configure

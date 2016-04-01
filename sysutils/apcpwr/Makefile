@@ -10,7 +10,7 @@ MASTER_SITES=		LOCAL/jwd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control APC 9211 MasterSwitchs via snmp
 
-RUN_DEPENDS=	snmpwalk:${PORTSDIR}/net-mgmt/net-snmp
+RUN_DEPENDS=	snmpwalk:net-mgmt/net-snmp
 
 USES=		shebangfix
 SHEBANG_FILES=	apcpwr.pl

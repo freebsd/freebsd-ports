@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Client library for the MogileFS distributed file system
 
-BUILD_DEPENDS=	p5-IO-stringy>=2.102:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-IO-stringy>=2.102:devel/p5-IO-stringy \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

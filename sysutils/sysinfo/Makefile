@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 OPTIONS_DEFINE=	DMIDECODE
 
 DMIDECODE_DESC=		Include information from the dmidecode tool
-DMIDECODE_RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+DMIDECODE_RUN_DEPENDS=	dmidecode:sysutils/dmidecode
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|common.subr|${DATADIR}/common.subr|g' ${WRKSRC}/sysinfo

@@ -12,7 +12,7 @@ COMMENT=	LastPass command line interface tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gmake pkgconfig
 USE_GNOME=	libxml2
@@ -30,15 +30,15 @@ PINENTRY_DESC=		Use pinentry for password entry
 XCLIP_DESC=		Use xclip for interacting with X11 clipboard
 XSEL_DESC=		Use xsel for interacting with X11 clipboard
 
-MANPAGES_BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-			xmlto:${PORTSDIR}/textproc/xmlto
+MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+			xmlto:textproc/xmlto
 MANPAGES_ALL_TARGET=	all doc-man
 MANPAGES_INSTALL_TARGET=install install-doc
 MANPAGES_PLIST_FILES=	${MANPREFIX}/man/man1/lpass.1.gz
 
-PINENTRY_RUN_DEPENDS=	pinentry:${PORTSDIR}/security/pinentry
-XCLIP_RUN_DEPENDS=	xclip:${PORTSDIR}/x11/xclip
-XSEL_RUN_DEPENDS=	xsel:${PORTSDIR}/x11/xsel
+PINENTRY_RUN_DEPENDS=	pinentry:security/pinentry
+XCLIP_RUN_DEPENDS=	xclip:x11/xclip
+XSEL_RUN_DEPENDS=	xsel:x11/xsel
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/-Wno-language-extension-token//g' \

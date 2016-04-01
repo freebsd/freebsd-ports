@@ -14,9 +14,9 @@ COMMENT=	Medical Imaging NetCDF
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libnetcdf.so:${PORTSDIR}/science/netcdf
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+		libnetcdf.so:science/netcdf
+RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BIC-MNI

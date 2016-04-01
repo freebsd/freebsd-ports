@@ -11,7 +11,7 @@ COMMENT=	Command-line utilities to watch for file events
 
 LICENSE=	AGPLv3
 
-LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rvoicilas

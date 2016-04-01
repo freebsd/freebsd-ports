@@ -13,7 +13,7 @@ COMMENT=	Mount remote ftp directories
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 USES=		fuse pkgconfig

@@ -10,14 +10,14 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME application for managing encryption keys (PGP, SSH)
 
-BUILD_DEPENDS=	gnupg>=2.1.4:${PORTSDIR}/security/gnupg \
-		valac:${PORTSDIR}/lang/vala \
-		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
-		libgcr-3.so:${PORTSDIR}/security/gcr \
-		libsecret-1.so:${PORTSDIR}/security/libsecret \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
-RUN_DEPENDS=	gnupg>=2.1.4:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	gnupg>=2.1.4:security/gnupg \
+		valac:lang/vala \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libgpgme.so:security/gpgme \
+		libgcr-3.so:security/gcr \
+		libsecret-1.so:security/libsecret \
+		libsoup-2.4.so:devel/libsoup
+RUN_DEPENDS=	gnupg>=2.1.4:security/gnupg
 
 PORTSCOUT=	limitw:1,even
 
@@ -42,6 +42,6 @@ LDAP_USE=	OPENLDAP=yes
 LDAP_DESC=	LDAP keyserver support (for gpg)
 AVAHI_DESC=	DNS-SD key sharing
 AVAHI_CONFIGURE_ENABLE=	sharing
-AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 
 .include <bsd.port.mk>

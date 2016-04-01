@@ -12,8 +12,8 @@ COMMENT=	Wapiti is a vulnerability scanner for web applications
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:${PORTSDIR}/www/py-beautifulsoup32 \
-		${PYTHON_PKGNAMEPREFIX}requests>=1.2.3:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:www/py-beautifulsoup32 \
+		${PYTHON_PKGNAMEPREFIX}requests>=1.2.3:www/py-requests
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

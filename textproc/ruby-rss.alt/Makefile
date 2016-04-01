@@ -15,7 +15,7 @@ COMMENT=	Ruby library for handling RSS (alternative impl.)
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	ja-${RUBY_PKGNAMEPREFIX}uconv>=0:${PORTSDIR}/japanese/ruby-uconv
+RUN_DEPENDS=	ja-${RUBY_PKGNAMEPREFIX}uconv>=0:japanese/ruby-uconv
 
 BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes

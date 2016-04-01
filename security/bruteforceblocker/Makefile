@@ -11,10 +11,10 @@ MASTER_SITES=	http://danger.rulez.sk/projects/bruteforceblocker/ \
 MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Checks for SSH bruteforce and blocks given IPs
 
-RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		p5-Sys-Hostname-Long>=0:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS=	p5-Unix-Syslog>=0:sysutils/p5-Unix-Syslog \
+		p5-Sys-Hostname-Long>=0:sysutils/p5-Sys-Hostname-Long \
+		p5-libwww>=0:www/p5-libwww \
+		p5-Net-DNS>=0:dns/p5-Net-DNS
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

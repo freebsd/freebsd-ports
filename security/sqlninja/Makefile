@@ -12,11 +12,11 @@ COMMENT=	Sql Server exploit toolkit
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap \
-		p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP \
-		p5-NetPacket>=0:${PORTSDIR}/net/p5-NetPacket
+RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+		p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-Net-Pcap>=0:net/p5-Net-Pcap \
+		p5-Net-RawIP>=0:net/p5-Net-RawIP \
+		p5-NetPacket>=0:net/p5-NetPacket
 
 USES=		perl5 tar:tgz
 NO_BUILD=	yes

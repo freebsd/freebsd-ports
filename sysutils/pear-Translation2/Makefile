@@ -25,13 +25,13 @@ PEAR_FILE_GETTEXT_DESC=	PEAR::File_Gettext support
 PEAR_I18NV2_DESC=	PEAR::I18Nv2 support
 PEAR_XML_SERIALIZER_DESC=	PEAR::XML_Serializer support
 
-PEAR_CACHE_LITE_RUN_DEPENDS=	${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite
-PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-PEAR_DB_DATAOBJECT_RUN_DEPENDS=	${PEARDIR}/DB/DataObject.php:${PORTSDIR}/databases/pear-DB_DataObject
-PEAR_MDB_RUN_DEPENDS=	${PEARDIR}/MDB.php:${PORTSDIR}/databases/pear-MDB
-PEAR_MDB2_RUN_DEPENDS=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
-PEAR_FILE_GETTEXT_RUN_DEPENDS=	${PEARDIR}/File/Gettext.php:${PORTSDIR}/sysutils/pear-File_Gettext
-PEAR_I18NV2_RUN_DEPENDS=	${PEARDIR}/File/I18Nv2.php:${PORTSDIR}/sysutils/pear-I18Nv2
-PEAR_XML_SERIALIZER_RUN_DEPENDS=	${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
+PEAR_CACHE_LITE_RUN_DEPENDS=	${PEARDIR}/Cache/Lite.php:sysutils/pear-Cache_Lite
+PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
+PEAR_DB_DATAOBJECT_RUN_DEPENDS=	${PEARDIR}/DB/DataObject.php:databases/pear-DB_DataObject
+PEAR_MDB_RUN_DEPENDS=	${PEARDIR}/MDB.php:databases/pear-MDB
+PEAR_MDB2_RUN_DEPENDS=	${PEARDIR}/MDB2.php:databases/pear-MDB2
+PEAR_FILE_GETTEXT_RUN_DEPENDS=	${PEARDIR}/File/Gettext.php:sysutils/pear-File_Gettext
+PEAR_I18NV2_RUN_DEPENDS=	${PEARDIR}/File/I18Nv2.php:sysutils/pear-I18Nv2
+PEAR_XML_SERIALIZER_RUN_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer
 
 .include <bsd.port.mk>

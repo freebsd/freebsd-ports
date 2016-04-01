@@ -11,7 +11,7 @@ COMMENT=	MCollective shell agent plugin
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	mcollective>=2.2.4:${PORTSDIR}/sysutils/mcollective
+RUN_DEPENDS=	mcollective>=2.2.4:sysutils/mcollective
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs

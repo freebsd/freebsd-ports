@@ -14,12 +14,12 @@ COMMENT=	Forward secure, asynchronous messenger
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/golang.org/x/crypto/bcrypt.a:${PORTSDIR}/security/go.crypto \
-		${LOCALBASE}/${GO_LIBDIR}/github.com/golang/protobuf/proto.a:${PORTSDIR}/devel/goprotobuf \
-		${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.net/dict.a:${PORTSDIR}/net/go.net
-RUN_DEPENDS=	tor:${PORTSDIR}/security/tor
-LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
-		libtspi.so:${PORTSDIR}/security/trousers
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/golang.org/x/crypto/bcrypt.a:security/go.crypto \
+		${LOCALBASE}/${GO_LIBDIR}/github.com/golang/protobuf/proto.a:devel/goprotobuf \
+		${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.net/dict.a:net/go.net
+RUN_DEPENDS=	tor:security/tor
+LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell \
+		libtspi.so:security/trousers
 
 PLIST_FILES=	bin/pond-server bin/pond
 USE_GNOME=	gtk30

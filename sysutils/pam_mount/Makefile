@@ -13,7 +13,7 @@ COMMENT=	PAM module that can mount volumes for a user session
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libHX.so:${PORTSDIR}/lang/libhx
+LIB_DEPENDS=	libHX.so:lang/libhx
 
 USES=		pkgconfig libtool perl5 tar:xz
 USE_GNOME=	libxml2

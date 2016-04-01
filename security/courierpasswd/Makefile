@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.arda.homeunix.net/software-downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User authentication and password changing utility
 
-LIB_DEPENDS=	libcourierauth.so:${PORTSDIR}/security/courier-authlib-base
+LIB_DEPENDS=	libcourierauth.so:security/courier-authlib-base
 
 GNU_CONFIGURE=	yes
 USES=		gmake

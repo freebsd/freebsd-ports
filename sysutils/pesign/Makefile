@@ -10,11 +10,11 @@ COMMENT=	Signing utility for UEFI secure boot
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libefivar.so:${PORTSDIR}/devel/efivar \
-		libnspr4.so:${PORTSDIR}/devel/nspr \
-		libnss3.so:${PORTSDIR}/security/nss \
-		libpopt.so:${PORTSDIR}/devel/popt \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libefivar.so:devel/efivar \
+		libnspr4.so:devel/nspr \
+		libnss3.so:security/nss \
+		libpopt.so:devel/popt \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 USE_GCC=	yes
 USE_GITHUB=	yes

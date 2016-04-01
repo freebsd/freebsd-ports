@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Convert hash to xml and xml to hash using LibXML
 
-BUILD_DEPENDS=	p5-lib-abs>=0.90:${PORTSDIR}/devel/p5-lib-abs \
-		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS=	p5-lib-abs>=0.90:devel/p5-lib-abs \
+		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

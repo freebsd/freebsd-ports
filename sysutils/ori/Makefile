@@ -10,8 +10,8 @@ MASTER_SITES=	http://cdn.bitbucket.org/orifs/ori/downloads/
 MAINTAINER=	mashti@cs.stanford.edu
 COMMENT=	Ori distributed file system
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
-		libboost_date_time.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libevent.so:devel/libevent2 \
+		libboost_date_time.so:devel/boost-libs
 
 USES=		execinfo fuse pkgconfig scons tar:xz
 USE_OPENSSL=	yes

@@ -12,7 +12,7 @@ COMMENT=	Mount UPnP A/V Media
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
+LIB_DEPENDS=	libupnp.so:devel/upnp
 
 PLIST_FILES=	bin/${PORTNAME}
 GNU_CONFIGURE=	yes

@@ -11,8 +11,8 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Program that keeps passwords and other secrets
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libgcrypt.so:security/libgcrypt
 
 USE_GNOME=	glib20 gnomeprefix intlhack \
 		introspection:build

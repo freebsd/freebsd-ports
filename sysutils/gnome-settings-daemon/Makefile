@@ -11,24 +11,24 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 settings daemon
 
-BUILD_DEPENDS=	gnome-session>=0:${PORTSDIR}/x11/gnome-session \
-		geoclue>=0:${PORTSDIR}/net/geoclue \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
-		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
-		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libcolord.so:${PORTSDIR}/graphics/colord \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libpulse.so:${PORTSDIR}/audio/pulseaudio \
-		libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
-		libgweather-3.so:${PORTSDIR}/net/libgweather
-RUN_DEPENDS=	gnome-session>=0:${PORTSDIR}/x11/gnome-session \
-		geoclue>=0:${PORTSDIR}/net/geoclue \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	gnome-session>=0:x11/gnome-session \
+		geoclue>=0:net/geoclue \
+		docbook-xsl>=0:textproc/docbook-xsl \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libpolkit-gobject-1.so:sysutils/polkit \
+		libibus-1.0.so:textproc/ibus \
+		libdbus-1.so:devel/dbus \
+		libcolord.so:graphics/colord \
+		liblcms2.so:graphics/lcms2 \
+		libpulse.so:audio/pulseaudio \
+		libgdbm.so:databases/gdbm \
+		libnotify.so:devel/libnotify \
+		libgeocode-glib.so:net/geocode-glib \
+		libgweather-3.so:net/libgweather
+RUN_DEPENDS=	gnome-session>=0:x11/gnome-session \
+		geoclue>=0:net/geoclue \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
 
@@ -52,9 +52,9 @@ OPTIONS_DEFINE=	CUPS SMARTCARD
 OPTIONS_DEFAULT=CUPS SMARTCARD
 SMARTCARD_DESC=	Smartcard support
 CUPS_CONFIGURE_ENABLE=	cups
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
 SMARTCARD_CONFIGURE_ENABLE=	smartcard-support
-SMARTCARD_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
+SMARTCARD_LIB_DEPENDS=	libnss3.so:security/nss
 
 GLIB_SCHEMAS=	org.gnome.settings-daemon.enums.xml \
 		org.gnome.settings-daemon.peripherals.gschema.xml \

@@ -13,8 +13,8 @@ COMMENT=	Perl5 interface to SSL sockets
 
 LICENSE=	ARTPERL10
 
-BUILD_DEPENDS=	p5-Net-SSLeay>=1.59:${PORTSDIR}/security/p5-Net-SSLeay \
-		p5-Mozilla-CA>=20130114:${PORTSDIR}/www/p5-Mozilla-CA
+BUILD_DEPENDS=	p5-Net-SSLeay>=1.59:security/p5-Net-SSLeay \
+		p5-Mozilla-CA>=20130114:www/p5-Mozilla-CA
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix
@@ -30,10 +30,10 @@ PORTEXAMPLES=	*
 
 SHEBANG_FILES=	example/ssl_mitm.pl
 
-IDN_BUILD_DEPENDS=	p5-URI>=1.50:${PORTSDIR}/net/p5-URI
+IDN_BUILD_DEPENDS=	p5-URI>=1.50:net/p5-URI
 IDN_RUN_DEPENDS=	${IDN_BUILD_DEPENDS}
-IPV6_BUILD_DEPENDS=	p5-IO-Socket-IP>=0.31:${PORTSDIR}/net/p5-IO-Socket-IP \
-			p5-Socket>=1.95:${PORTSDIR}/net/p5-Socket
+IPV6_BUILD_DEPENDS=	p5-IO-Socket-IP>=0.31:net/p5-IO-Socket-IP \
+			p5-Socket>=1.95:net/p5-Socket
 IPV6_RUN_DEPENDS=	${IPV6_BUILD_DEPENDS}
 
 post-install:

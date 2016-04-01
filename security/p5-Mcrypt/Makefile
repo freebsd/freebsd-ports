@@ -15,7 +15,7 @@ COMMENT=	Perl extension for the Mcrypt cryptography library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt
+LIB_DEPENDS=	libmcrypt.so:security/libmcrypt
 
 CONFIGURE_ENV=	MCRYPT_CPPFLAGS=${CPPFLAGS}
 USE_PERL5=	configure

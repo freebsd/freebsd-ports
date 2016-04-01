@@ -17,12 +17,12 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libksba.so:${PORTSDIR}/security/libksba \
-		libpth.so:${PORTSDIR}/devel/pth
-BUILD_DEPENDS=	libgpg-error>=1.11:${PORTSDIR}/security/libgpg-error
-RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
+LIB_DEPENDS=	libassuan.so:security/libassuan \
+		libgcrypt.so:security/libgcrypt \
+		libksba.so:security/libksba \
+		libpth.so:devel/pth
+BUILD_DEPENDS=	libgpg-error>=1.11:security/libgpg-error
+RUN_DEPENDS=	pinentry>0:security/pinentry
 
 GNU_CONFIGURE=	YES
 USES=		cpe gmake iconv tar:bzip2
@@ -44,15 +44,15 @@ NO_OPTIONS_SORT=	YES
 OPTIONS_SUB=		YES
 
 DOCS_CONFIGURE_ENABLE=	doc
-GPGSM_RUN_DEPENDS=	dirmngr:${PORTSDIR}/security/dirmngr
+GPGSM_RUN_DEPENDS=	dirmngr:security/dirmngr
 GPGSM_CONFIGURE_ENABLE=	gpgsm
-KDNS_LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
+KDNS_LIB_DEPENDS=	libadns.so:dns/adns
 KDNS_CONFIGURE_ON=	--with-adns=${LOCALBASE}
 STD_SOCKET_CONFIGURE_ENABLE=	standard-socket
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 SCDAEMON_CONFIGURE_ENABLE=	scdaemon
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ON=	--with-libcurl=${LOCALBASE}
 CURL_CONFIGURE_OFF=	--without-libcurl
 

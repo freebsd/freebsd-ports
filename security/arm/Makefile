@@ -32,8 +32,8 @@ TOR_DESC=	Enable local tor support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOR}
-RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof \
-		tor:${PORTSDIR}/security/tor
+RUN_DEPENDS+=	lsof:sysutils/lsof \
+		tor:security/tor
 .endif
 
 .include <bsd.port.pre.mk>

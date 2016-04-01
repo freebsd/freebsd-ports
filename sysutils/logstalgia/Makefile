@@ -12,9 +12,9 @@ COMMENT=	Website access log visualization tool
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libftgl.so:${PORTSDIR}/graphics/ftgl \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libftgl.so:graphics/ftgl \
+		libpng.so:graphics/png \
+		libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 USES=		jpeg pkgconfig

@@ -13,8 +13,8 @@ COMMENT=	Perl extension for using SAML SSO
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libzxid.so:${PORTSDIR}/security/zxid
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libzxid.so:security/zxid
 
 OPTIONS_DEFINE=	EXAMPLES
 

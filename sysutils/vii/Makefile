@@ -13,7 +13,7 @@ COMMENT=	Execute a command repeatedly and scroll the output
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libexplain.so:${PORTSDIR}/devel/libexplain
+LIB_DEPENDS=	libexplain.so:devel/libexplain
 
 GNU_CONFIGURE=	yes
 

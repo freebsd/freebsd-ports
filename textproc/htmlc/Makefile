@@ -10,7 +10,7 @@ MASTER_SITES=	http://htmlc.inria.fr/ \
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Text file generator
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
+BUILD_DEPENDS=	ocamlc:lang/ocaml
 
 USES=		gmake tar:tgz
 

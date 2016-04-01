@@ -10,7 +10,7 @@ COMMENT=	IPFS implementation in Go
 
 BROKEN=		fails to build
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USES=		gmake
 

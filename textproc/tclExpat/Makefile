@@ -10,7 +10,7 @@ CATEGORIES=	textproc tcl
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tcl interface to Expat library
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USE_LDCONFIG=	yes
 

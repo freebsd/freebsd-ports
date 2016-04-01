@@ -11,7 +11,7 @@ COMMENT=	Utility for ASUS USB OLED Display
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${FONTDIR}/TTF/luxisr.ttf:${PORTSDIR}/x11-fonts/font-bh-ttf
+RUN_DEPENDS=	${FONTDIR}/TTF/luxisr.ttf:x11-fonts/font-bh-ttf
 
 USE_SDL=	image sdl ttf
 USE_RC_SUBR=	asusoled oled_clock

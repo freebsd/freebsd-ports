@@ -11,7 +11,7 @@ MASTER_SITES=	http://samm.kiev.ua/bruteblock/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Software for blocking bruteforce attacks with ipfw
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

@@ -14,8 +14,8 @@ COMMENT=	Telugu hunspell dictionaries
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	prezip-bin:${PORTSDIR}/textproc/aspell \
-		wordlist2hunspell:${PORTSDIR}/textproc/hunspell
+BUILD_DEPENDS=	prezip-bin:textproc/aspell \
+		wordlist2hunspell:textproc/hunspell
 
 NO_ARCH=	yes
 USES=		tar:bzip2

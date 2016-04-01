@@ -14,7 +14,7 @@ COMMENT=	Python wrapper for the GNUTLS library
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 USES=		python
 USE_PYTHON=	autoplist distutils
