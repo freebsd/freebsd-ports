@@ -48,12 +48,6 @@ MASTER_SITE_AFTERSTEP+= \
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_ALSA)
-MASTER_SITE_ALSA+= \
-	http://alsa.cybermirror.org/%SUBDIR%/ \
-	ftp://ftp.alsa-project.org/pub/%SUBDIR%/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_APACHE)
 MASTER_SITE_APACHE+= \
 	http://www.apache.org/dist/%SUBDIR%/ \
