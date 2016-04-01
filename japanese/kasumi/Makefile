@@ -12,7 +12,7 @@ COMMENT=	Dictionary management tool for anthy
 
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20
-LIB_DEPENDS=	libanthy.so:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS=	libanthy.so:japanese/anthy
 
 GNU_CONFIGURE=	yes
 

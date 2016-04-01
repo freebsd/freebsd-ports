@@ -28,7 +28,7 @@ PLIST_FILES=	bin/clojure \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJLINE}
-RUN_DEPENDS+=	jline>=0.9.91:${PORTSDIR}/devel/jline
+RUN_DEPENDS+=	jline>=0.9.91:devel/jline
 CLOJURE_JLINE_RUNNER=jline.ConsoleRunner
 .endif
 

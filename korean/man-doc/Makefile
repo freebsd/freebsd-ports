@@ -13,7 +13,7 @@ DISTNAME=	ko-man-doc-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean online manual pages
 
-RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff
+RUN_DEPENDS=	${LOCALBASE}/bin/groff:japanese/groff
 
 post-patch:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' -e 's,%%LOCALBASE%%,${LOCALBASE},g' \

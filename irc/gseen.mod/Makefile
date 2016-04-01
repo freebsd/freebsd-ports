@@ -13,9 +13,9 @@ COMMENT=	Seen-module for the eggdrop IRC bot
 
 LICENSE=	GPLv2+
 
-EXTRACT_DEPENDS=${NONEXISTENT}:${PORTSDIR}/irc/eggdrop:extract
-BUILD_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
-RUN_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
+EXTRACT_DEPENDS=${NONEXISTENT}:irc/eggdrop:extract
+BUILD_DEPENDS=	eggdrop:irc/eggdrop
+RUN_DEPENDS=	eggdrop:irc/eggdrop
 
 USES=		tcl:85+
 GNU_CONGFIGURE=	yes

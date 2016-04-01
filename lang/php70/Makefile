@@ -22,7 +22,7 @@ USE_AUTOTOOLS=	autoconf
 #USES+=		autoreconf gmake
 #GNU_CONFIGURE=	yes
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFIGURE_ARGS+=--with-layout=GNU \
 		--localstatedir=/var \

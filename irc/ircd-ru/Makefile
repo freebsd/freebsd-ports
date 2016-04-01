@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=--enable-hub
 # enable RC4 crypt (server to server connection)
 .if ${PORT_OPTIONS:MENCRYPTION}
 CONFIGURE_ARGS+=--enable-encryption
-LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:math/gmp
 .endif
 
 # log to file instead of syslog

@@ -15,7 +15,7 @@ COMMENT=	Kana-to-Kanji conversion system, binary part
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
+LIB_DEPENDS=	libcanna.so:japanese/canna-lib
 
 USES=		imake tar:bzip2
 USE_RC_SUBR=	canna

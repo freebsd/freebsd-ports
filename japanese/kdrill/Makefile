@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to quiz you on the meanings of Kanji
 
-RUN_DEPENDS=	xjdic:${PORTSDIR}/japanese/edict
+RUN_DEPENDS=	xjdic:japanese/edict
 
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

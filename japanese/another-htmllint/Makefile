@@ -9,8 +9,8 @@ DISTNAME=	htmllint
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Another HTML-lint (all messages are written in Japanese)
 
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		ja-p5-Jcode>=0:japanese/p5-Jcode
 
 USES=		dos2unix perl5 shebangfix zip
 WRKSRC=		${WRKDIR}
@@ -22,7 +22,7 @@ NO_ARCH=	YES
 
 OPTIONS_DEFINE=	W3M
 W3M_DESC=	Use w3m to show rendering result
-W3M_RUN_DEPENDS=	w3m>0:${PORTSDIR}/www/w3m
+W3M_RUN_DEPENDS=	w3m>0:www/w3m
 
 PM=		htmllint.pm RFC2396.pm htmllint.env
 RULE=		*.rul
@@ -35,7 +35,7 @@ HTMLLINT_ADMIN?=	kuriyama@FreeBSD.org
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 502200
-RUN_DEPENDS+=	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
+RUN_DEPENDS+=	p5-CGI.pm>=0:www/p5-CGI.pm
 .endif
 
 do-build:

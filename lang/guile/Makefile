@@ -14,8 +14,8 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libgmp.so:math/gmp
 
 CONFLICTS_INSTALL=	guile2-[0-9]*
 

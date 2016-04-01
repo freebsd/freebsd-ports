@@ -16,7 +16,7 @@ LICENSE_NAME=	public domain | FreeBSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept dist-sell pkg-sell
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake tar:bzip2
 

@@ -13,7 +13,7 @@ DISTNAME=	asterisk-sound-jp_${VENDORVERSION:S|.||}_pre
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese sound files for Asterisk
 
-RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+RUN_DEPENDS=	asterisk:net/asterisk
 
 VENDORVERSION=	1.6
 

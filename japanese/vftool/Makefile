@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual font kit (n2a,a2n,a2bk,p2pn)
 
-BUILD_DEPENDS=	${AFMDIR}/GothicBBB-Medium-H:${PORTSDIR}/japanese/japaneseAFM
+BUILD_DEPENDS=	${AFMDIR}/GothicBBB-Medium-H:japanese/japaneseAFM
 
 ALL_TARGET=	n2a a2n a2bk p2pn
 SCRIPTS_ENV=	MV=${MV} SED=${SED} AFMDIR=${AFMDIR} JFMDIR=${JFMDIR}

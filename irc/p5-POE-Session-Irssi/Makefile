@@ -15,13 +15,13 @@ COMMENT=	Emit POE events for Irssi signals
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-POE>=1.003:${PORTSDIR}/devel/p5-POE \
-		p5-Sub-Uplevel>0:${PORTSDIR}/devel/p5-Sub-Uplevel \
-		p5-POE-Loop-Glib>=0.036:${PORTSDIR}/devel/p5-POE-Loop-Glib
-RUN_DEPENDS=	p5-POE>=1.003:${PORTSDIR}/devel/p5-POE \
-		p5-Sub-Uplevel>0:${PORTSDIR}/devel/p5-Sub-Uplevel \
-		p5-POE-Loop-Glib>=0.036:${PORTSDIR}/devel/p5-POE-Loop-Glib \
-		irssi:${PORTSDIR}/irc/irssi
+BUILD_DEPENDS=	p5-POE>=1.003:devel/p5-POE \
+		p5-Sub-Uplevel>0:devel/p5-Sub-Uplevel \
+		p5-POE-Loop-Glib>=0.036:devel/p5-POE-Loop-Glib
+RUN_DEPENDS=	p5-POE>=1.003:devel/p5-POE \
+		p5-Sub-Uplevel>0:devel/p5-Sub-Uplevel \
+		p5-POE-Loop-Glib>=0.036:devel/p5-POE-Loop-Glib \
+		irssi:irc/irssi
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
 CONFIGURE_ARGS+=	INSTALLDIRS=site

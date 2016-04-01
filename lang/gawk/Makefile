@@ -10,14 +10,14 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU version of Awk
 
-LIB_DEPENDS=	libsigsegv.so:${PORTSDIR}/devel/libsigsegv
+LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv
 
 OPTIONS_DEFINE=		NLS MPFR
 OPTIONS_SUB=		yes
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 MPFR_DESC?=		Support multiple-precision floating-point computation
-MPFR_LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
+MPFR_LIB_DEPENDS=	libmpfr.so:math/mpfr
 MPFR_CONFIGURE_OFF=	--without-gmp --without-mpfr
 
 INFO=		gawk gawkinet

@@ -11,7 +11,7 @@ COMMENT=	Ada binding for Lua
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
+BUILD_DEPENDS=	gprbuild:devel/gprbuild
 
 USES=		ada lua
 USE_GITHUB=	yes

@@ -14,8 +14,8 @@ COMMENT=	Japanese marumoji fonts
 LICENSE=	MIT
 LICENSE_FILES=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
-		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	mkbold:x11-fonts/mkbold-mkitalic \
+		bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts:fc
 FONTNAME=	marumoji

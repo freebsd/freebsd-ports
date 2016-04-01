@@ -81,12 +81,12 @@ OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN PORT_LLVM
 GDB_DESC=		Install ports gdb (necessary for debugging rust programs)
 LLNEXTGEN_DESC=		Build with grammar verification
 
-GDB_RUN_DEPENDS=		${LOCALBASE}/bin/gdb:${PORTSDIR}/devel/gdb
-LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:${PORTSDIR}/devel/llnextgen
+GDB_RUN_DEPENDS=		${LOCALBASE}/bin/gdb:devel/gdb
+LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:devel/llnextgen
 
 # Rust may pass more regression tests with bundled LLVM
 PORT_LLVM_DESC=	Build against devel/llvm${LLVM_VER} instead of bundled version
-PORT_LLVM_BUILD_DEPENDS=	${LLVM_PREFIX}/bin/FileCheck:${PORTSDIR}/devel/llvm${LLVM_VER}
+PORT_LLVM_BUILD_DEPENDS=	${LLVM_PREFIX}/bin/FileCheck:devel/llvm${LLVM_VER}
 PORT_LLVM_CONFIGURE_ON=		--llvm-root=${LLVM_PREFIX}
 PORT_LLVM_EXTRACT_ONLY_OFF=	${DISTFILE_llvm}
 PORT_LLVM_GH_PROJECT_OFF=	llvm:llvm

@@ -13,13 +13,13 @@ COMMENT=	GNUstep Foundation library
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
-LIB_DEPENDS+=	libxml2.so:${PORTSDIR}/textproc/libxml2
-LIB_DEPENDS+=	libxslt.so:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
-LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	libffi.so:devel/libffi
+LIB_DEPENDS+=	libxml2.so:textproc/libxml2
+LIB_DEPENDS+=	libxslt.so:textproc/libxslt
+LIB_DEPENDS+=	libgmp.so:math/gmp
+LIB_DEPENDS+=	libgcrypt.so:security/libgcrypt
 
-RUN_DEPENDS+=	${LOCALBASE}/GNUstep/System/Library/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
+RUN_DEPENDS+=	${LOCALBASE}/GNUstep/System/Library/Makefiles/GNUstep.sh:devel/gnustep-make
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs --disable-mixedabi
@@ -46,10 +46,10 @@ ZEROCONF_DESC=		Zeroconf (Bonjour) support
 AVAHI_DESC=		Zeroconf via Avahi (preferred)
 MDNS_DESC=		Zeroconf via mDNSResponder
 
-ICU_LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
+ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
 ICU_CONFIGURE_OFF=	--disable-icu
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ENABLE=tls
 
 OPENSSL_USE=		OPENSSL=yes
@@ -59,10 +59,10 @@ OPENSSL_CONFIGURE_OFF=	--disable-openssl
 
 .if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--with-zeroconf-api=avahi
-LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=		libavahi-client.so:net/avahi-app
 .elif ${PORT_OPTIONS:MMDNS}
 CONFIGURE_ARGS+=	--with-zeroconf-api=mdns
-LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+LIB_DEPENDS+=		libdns_sd.so:net/mDNSResponder
 .else
 CONFIGURE_ARGS+=	--disable-zeroconf
 .endif

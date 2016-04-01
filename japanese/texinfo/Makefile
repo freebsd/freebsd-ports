@@ -17,7 +17,7 @@ COMMENT=	Typeset Texinfo files for printing. Uses TeX
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/tex-ptex
+RUN_DEPENDS=	ptex:japanese/tex-ptex
 
 USES=		cpe gettext gmake
 GNU_CONFIGURE=	yes

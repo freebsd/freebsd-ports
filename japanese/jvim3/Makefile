@@ -30,17 +30,17 @@ OPTIONS_RADIO=	FEP
 OPTIONS_RADIO_FEP=	FREEWNN_CANNA DIRECT_CANNA WNN6 WNN7
 FEP_DESC=	Japanese FrontEnd Processor
 DIRECT_CANNA_DESC=	Canna support (direct)
-DIRECT_CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
+DIRECT_CANNA_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
 FREEWNN_CANNA_DESC=	Canna and FreeWnn support (via ONEW library)
-FREEWNN_CANNA_LIB_DEPENDS=	libjd.so:${PORTSDIR}/japanese/FreeWnn-lib \
-				libcanna.so:${PORTSDIR}/japanese/canna-lib
-FREEWNN_CANNA_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-canna+freewnn.a:${PORTSDIR}/japanese/onew
+FREEWNN_CANNA_LIB_DEPENDS=	libjd.so:japanese/FreeWnn-lib \
+				libcanna.so:japanese/canna-lib
+FREEWNN_CANNA_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-canna+freewnn.a:japanese/onew
 WNN6_DESC=	Wnn6 support
-WNN6_LIB_DEPENDS=	libjd.so:${PORTSDIR}/japanese/FreeWnn-lib
-WNN6_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-wnn6.a:${PORTSDIR}/japanese/onew
+WNN6_LIB_DEPENDS=	libjd.so:japanese/FreeWnn-lib
+WNN6_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-wnn6.a:japanese/onew
 WNN7_DESC=	Wnn7 support
-WNN7_LIB_DEPENDS=	libjd.so:${PORTSDIR}/japanese/FreeWnn-lib
-WNN7_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-wnn7.a:${PORTSDIR}/japanese/onew
+WNN7_LIB_DEPENDS=	libjd.so:japanese/FreeWnn-lib
+WNN7_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-wnn7.a:japanese/onew
 
 PORTDOCS=	cygwin.txt differen.doc fepctrl.doc readme.doc \
 		termcap.dos uganda.jp vim-jp.htm vim32.ini tutor.j

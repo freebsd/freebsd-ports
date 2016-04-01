@@ -13,8 +13,8 @@ COMMENT=	Embeddable scripting language
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libxml2.so:textproc/libxml2
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes

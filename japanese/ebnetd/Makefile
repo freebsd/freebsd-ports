@@ -12,7 +12,7 @@ COMMENT=	Servers for accessing CD-ROM books via TCP/IP
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libeb.so:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	libeb.so:japanese/eb
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR}

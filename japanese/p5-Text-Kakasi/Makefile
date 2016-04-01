@@ -10,7 +10,7 @@ MASTER_SITES=	CPAN
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Kakasi library module for Perl5
 
-LIB_DEPENDS=	libkakasi.so:${PORTSDIR}/japanese/kakasi
+LIB_DEPENDS=	libkakasi.so:japanese/kakasi
 
 USES=		perl5
 USE_PERL5=	configure

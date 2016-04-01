@@ -12,9 +12,9 @@ DISTFILES=	# empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese Resource and Configuration for TGIF
 
-RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif \
-		${LOCALBASE}/share/fonts/TTF/ipagui.ttf:${PORTSDIR}/japanese/font-ipa-uigothic \
-		${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:${PORTSDIR}/japanese/font-std
+RUN_DEPENDS=	tgif:graphics/tgif \
+		${LOCALBASE}/share/fonts/TTF/ipagui.ttf:japanese/font-ipa-uigothic \
+		${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light:japanese/font-std
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

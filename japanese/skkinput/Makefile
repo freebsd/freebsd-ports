@@ -29,11 +29,11 @@ RSKKSERV_DESC=	Use ja-rskkserv as skkserver
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBSKKD}
-RUN_DEPENDS=	${LOCALBASE}/libexec/dbskkd-cdb:${PORTSDIR}/japanese/dbskkd-cdb
+RUN_DEPENDS=	${LOCALBASE}/libexec/dbskkd-cdb:japanese/dbskkd-cdb
 .elif ${PORT_OPTIONS:MRSKKSERV}
-RUN_DEPENDS=	${LOCALBASE}/libexec/rskkserv:${PORTSDIR}/japanese/rskkserv
+RUN_DEPENDS=	${LOCALBASE}/libexec/rskkserv:japanese/rskkserv
 .else
-RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skkserv
+RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:japanese/skkserv
 .endif
 
 post-install:

@@ -13,7 +13,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	ShellEd is a superb shell script editor for Eclipse
 
-RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	eclipse:java/eclipse
 
 USES=		zip
 NO_BUILD=	yes

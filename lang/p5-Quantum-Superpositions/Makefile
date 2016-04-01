@@ -14,7 +14,7 @@ COMMENT=	QM-like superpositions in Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Multimethods>=0:${PORTSDIR}/devel/p5-Class-Multimethods
+BUILD_DEPENDS=	p5-Class-Multimethods>=0:devel/p5-Class-Multimethods
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

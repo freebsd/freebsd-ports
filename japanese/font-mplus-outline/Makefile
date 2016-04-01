@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-TESTFLIGHT-060
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	M+ Outline Fonts
 
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+RUN_DEPENDS=	mkfontdir:x11-fonts/mkfontdir \
+		mkfontscale:x11-fonts/mkfontscale
 
 USES=		fonts:fc tar:xz
 NO_BUILD=	yes

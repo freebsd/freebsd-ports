@@ -11,10 +11,10 @@ COMMENT=	Java VM created by McGill University's Sable Research Group
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libffi.so:${PORTSDIR}/devel/libffi \
-		libltdl.so:${PORTSDIR}/devel/libltdl
-RUN_DEPENDS=	fastjar:${PORTSDIR}/archivers/fastjar
+LIB_DEPENDS=	libpopt.so:devel/popt \
+		libffi.so:devel/libffi \
+		libltdl.so:devel/libltdl
+RUN_DEPENDS=	fastjar:archivers/fastjar
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	SVMCP
 OPTIONS_DEFAULT=SVMCP
 SVMCP_DESC=	Install SableVM classpath
 
-SVMCP_RUN_DEPENDS=	${LOCALBASE}/lib/sablevm-classpath/libjavalang.so:${PORTSDIR}/java/sablevm-classpath
+SVMCP_RUN_DEPENDS=	${LOCALBASE}/lib/sablevm-classpath/libjavalang.so:java/sablevm-classpath
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^subdirs=".*,,' ${WRKSRC}/configure

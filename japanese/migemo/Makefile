@@ -18,10 +18,10 @@ COMMENT?=	Japanese incremental search tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
-		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
-		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
+BUILD_DEPENDS=	${RUBY_SITELIBDIR}/romkan.rb:japanese/ruby-romkan \
+		${RUBY_SITELIBDIR}/bsearch.rb:devel/ruby-bsearch
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/romkan.rb:japanese/ruby-romkan \
+		${RUBY_SITELIBDIR}/bsearch.rb:devel/ruby-bsearch
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rubydir=${RUBY_SITELIBDIR}

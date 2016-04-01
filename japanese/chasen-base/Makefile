@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-base
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Morphological Analysis System
 
-BUILD_DEPENDS=	${LOCALBASE}/include/darts.h:${PORTSDIR}/devel/darts
+BUILD_DEPENDS=	${LOCALBASE}/include/darts.h:devel/darts
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-darts=${LOCALBASE}/include ${ICONV_CONFIGURE_BASE}
