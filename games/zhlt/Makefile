@@ -12,7 +12,12 @@ COMMENT=	Zoner's Half-Life compile tools
 
 USES=		dos2unix zip
 DOS2UNIX_FILES=	common/bspfile.h common/cmdlib.cpp common/mathlib.h \
-		common/win32fix.h hlrad/mathutil.cpp
+		common/threads.cpp common/threads.h common/win32fix.h \
+		hlbsp/qbsp.cpp hlcsg/brush.cpp hlcsg/brushunion.cpp \
+		hlcsg/csg.h hlcsg/qcsg.cpp hlrad/lightmap.cpp \
+		hlrad/mathutil.cpp hlrad/qrad.cpp hlrad/qrad.h \
+		hlrad/sparse.cpp hlrad/vismatrix.cpp hlrad/vismatrixutil.cpp \
+		hlvis/flow.cpp hlvis/vis.cpp hlvis/vis.h
 
 MAKEFILE=	${FILESDIR}/Makefile
 NO_WRKSUBDIR=	yes
