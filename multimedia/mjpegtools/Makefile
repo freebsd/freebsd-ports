@@ -12,7 +12,7 @@ COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 
 CONFLICTS=	mplex-[0-9]*
 
@@ -31,13 +31,13 @@ OPTIONS_DEFINE=		DOCS DV GTK2 PNG QUICKTIME SDL
 OPTIONS_DEFAULT=	GTK2 PNG SDL
 OPTIONS_SUB=		yes
 
-DV_LIB_DEPENDS=		libdv.so:${PORTSDIR}/multimedia/libdv
+DV_LIB_DEPENDS=		libdv.so:multimedia/libdv
 DV_CONFIGURE_WITH=	libdv
 GTK2_USE=		GNOME=gtk20
 GTK2_CONFIGURE_WITH=	gtk
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	libpng
-QUICKTIME_LIB_DEPENDS=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime
+QUICKTIME_LIB_DEPENDS=	libquicktime.so:multimedia/libquicktime
 QUICKTIME_CONFIGURE_WITH=	libquicktime
 SDL_USE=		SDL=gfx,sdl
 SDL_CONFIGURE_OFF=	--without-libsdl --without-sdlgfx

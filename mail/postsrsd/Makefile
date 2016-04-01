@@ -10,9 +10,9 @@ COMMENT=	Postfix Sender Rewriting Scheme daemon
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS+=	help2man:${PORTSDIR}/misc/help2man \
-		base64:${PORTSDIR}/converters/base64
-RUN_DEPENDS+=	base64:${PORTSDIR}/converters/base64
+BUILD_DEPENDS+=	help2man:misc/help2man \
+		base64:converters/base64
+RUN_DEPENDS+=	base64:converters/base64
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	roehling

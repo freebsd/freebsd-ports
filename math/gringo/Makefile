@@ -12,7 +12,7 @@ COMMENT=	Grounding algorithm based on semi-naive database evaluation
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
+BUILD_DEPENDS=	re2c:devel/re2c
 
 USES=		bison compiler:c++11-lib scons
 

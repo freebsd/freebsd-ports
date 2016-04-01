@@ -15,12 +15,12 @@ COMMENT=	Keep track of the computers configuration and software
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
-		lspci:${PORTSDIR}/sysutils/pciutils \
-		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
-		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	dmidecode:sysutils/dmidecode \
+		lspci:sysutils/pciutils \
+		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
+		p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-libwww>=0:www/p5-libwww
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	postinst.pl
@@ -43,16 +43,16 @@ SNMP_DESC=	Scan network devices using SNMP
 # define default options
 OPTIONS_DEFAULT=	SSL SNMP
 
-DAEMON_RUN_DEPENDS=	p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
-			p5-Proc-PID-File>=0:${PORTSDIR}/devel/p5-Proc-PID-File
-IPMI_RUN_DEPENDS=	ipmitool:${PORTSDIR}/sysutils/ipmitool
-SSL_RUN_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-			p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https
-PRINTER_RUN_DEPENDS=	p5-Net-CUPS>=0:${PORTSDIR}/print/p5-Net-CUPS
-SNMP_RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-			p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
-			p5-Net-Ping>=0:${PORTSDIR}/net/p5-Net-Ping \
-			p5-Nmap-Parser>=0:${PORTSDIR}/security/p5-Nmap-Parser \
-			nmap:${PORTSDIR}/security/nmap
+DAEMON_RUN_DEPENDS=	p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \
+			p5-Proc-PID-File>=0:devel/p5-Proc-PID-File
+IPMI_RUN_DEPENDS=	ipmitool:sysutils/ipmitool
+SSL_RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
+			p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https
+PRINTER_RUN_DEPENDS=	p5-Net-CUPS>=0:print/p5-Net-CUPS
+SNMP_RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
+			p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask \
+			p5-Net-Ping>=0:net/p5-Net-Ping \
+			p5-Nmap-Parser>=0:security/p5-Nmap-Parser \
+			nmap:security/nmap
 
 .include <bsd.port.mk>

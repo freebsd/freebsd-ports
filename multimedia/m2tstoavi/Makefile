@@ -11,9 +11,9 @@ DISTNAME=	m2ts
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Utility which eases conversion of AVCHD (m2ts) to AVI
 
-RUN_DEPENDS=	xporthdmv:${PORTSDIR}/multimedia/xporthdmv \
-		ldecod:${PORTSDIR}/multimedia/jmref \
-		ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+RUN_DEPENDS=	xporthdmv:multimedia/xporthdmv \
+		ldecod:multimedia/jmref \
+		ffmpeg:multimedia/ffmpeg
 
 do-build:
 	${DO_NADA}

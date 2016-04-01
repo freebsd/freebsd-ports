@@ -16,13 +16,13 @@ PKGNAMESUFFIX?=	1-plugins${GST_PLUGIN_SUFFIX}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
 
-BUILD_DEPENDS+=	gstreamer1>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1 \
-		iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		orc>=0.4.16:${PORTSDIR}/devel/orc
-LIB_DEPENDS+=	libgstreamer-1.0.so:${PORTSDIR}/multimedia/gstreamer1 \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		liborc-0.4.so:${PORTSDIR}/devel/orc
-RUN_DEPENDS+=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
+BUILD_DEPENDS+=	gstreamer1>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:multimedia/gstreamer1 \
+		iso-codes>=0:misc/iso-codes \
+		orc>=0.4.16:devel/orc
+LIB_DEPENDS+=	libgstreamer-1.0.so:multimedia/gstreamer1 \
+		libfreetype.so:print/freetype2 \
+		liborc-0.4.so:devel/orc
+RUN_DEPENDS+=	iso-codes>=0:misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
 
@@ -71,8 +71,8 @@ PLIST_SUB+=	VERSION="${VERSION}" \
 DIST=	base
 NO_GSTREAMER_COMMON=	yes
 .else
-BUILD_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1-plugins
-RUN_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1-plugins
+BUILD_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:multimedia/gstreamer1-plugins
+RUN_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:multimedia/gstreamer1-plugins
 .endif
 
 .if ${DIST} == base || ${DIST} == ugly

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	SSL support for Net::IMAP::Simple
 
-BUILD_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-Net-IMAP-Simple>=0:${PORTSDIR}/mail/p5-Net-IMAP-Simple
+BUILD_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+		p5-Net-IMAP-Simple>=0:mail/p5-Net-IMAP-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

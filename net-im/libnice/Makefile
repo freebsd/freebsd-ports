@@ -20,7 +20,7 @@ INSTALL_TARGET=	install-strip
 .if !defined(LIBNICE_SLAVE)
 OPTIONS_DEFINE=	GUPNP
 GUPNP_DESC=	UPnP IGD port mapping support
-GUPNP_LIB_DEPENDS+=	libgupnp-igd-1.0.so:${PORTSDIR}/net/gupnp-igd
+GUPNP_LIB_DEPENDS+=	libgupnp-igd-1.0.so:net/gupnp-igd
 GUPNP_CONFIGURE_ENABLE=	gupnp
 .endif
 

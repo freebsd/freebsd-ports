@@ -13,8 +13,8 @@ COMMENT=	WYSIWYG CD cover printer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb \
-		libcdio.so:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS=	libcddb.so:audio/libcddb \
+		libcdio.so:sysutils/libcdio
 
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT4=	corelib dbus gui network svg xml \

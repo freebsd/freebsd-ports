@@ -12,7 +12,7 @@ COMMENT=	SSL/SSH multiplexer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig
+LIB_DEPENDS=	libconfig.so:devel/libconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yrutschle

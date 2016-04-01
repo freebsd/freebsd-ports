@@ -11,9 +11,9 @@ DISTNAME=	routers2-v${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Extensions of routers2 frontend
 
-RUN_DEPENDS=	${LOCALBASE}/www/routers2/routers2.cgi:${PORTSDIR}/net-mgmt/routers2 \
-		p5-Net-Telnet-Cisco>=0:${PORTSDIR}/net-mgmt/p5-Telnet-Cisco \
-		${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc
+RUN_DEPENDS=	${LOCALBASE}/www/routers2/routers2.cgi:net-mgmt/routers2 \
+		p5-Net-Telnet-Cisco>=0:net-mgmt/p5-Telnet-Cisco \
+		${LOCALBASE}/bin/htmldoc:textproc/htmldoc
 
 WRKSRC=		${WRKDIR}/routers2-v${PORTVERSION}/extensions
 

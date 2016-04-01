@@ -116,7 +116,7 @@ EOF
 # it.  Since we have no way of knowing what files are significant from
 # among whatever the port installs (and the port may not even be
 # installed yet) use the form
-# "pkgname>=n.nn:${PORTSDIR}/category/portname" where n.nn is the
+# "pkgname>=n.nn:category/portname" where n.nn is the
 # currently available version of the port.  Requires the INDEX to have
 # been installed.  This can return any number of dependency lines,
 # including none.

@@ -12,11 +12,11 @@ COMMENT=	Perl extension to sign AWS requests V3
 LICENSE=	LGPL21
 
 RUN_DEPENDS=	\
-	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC \
-	p5-HTTP-Date>0:${PORTSDIR}/www/p5-HTTP-Date \
-	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
-	p5-MooseX-Types-Common>=0:${PORTSDIR}/devel/p5-MooseX-Types-Common \
-	p5-namespace-autoclean>0:${PORTSDIR}/devel/p5-namespace-autoclean
+	p5-Digest-HMAC>0:security/p5-Digest-HMAC \
+	p5-HTTP-Date>0:www/p5-HTTP-Date \
+	p5-Moose>0:devel/p5-Moose \
+	p5-MooseX-Types-Common>=0:devel/p5-MooseX-Types-Common \
+	p5-namespace-autoclean>0:devel/p5-namespace-autoclean
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

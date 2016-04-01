@@ -15,7 +15,7 @@ COMMENT=	Multi-threaded mail queue manager for TurboGears applications
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	tg-admin:${PORTSDIR}/www/py-turbogears
+BUILD_DEPENDS=	tg-admin:www/py-turbogears
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python:2

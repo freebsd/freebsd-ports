@@ -48,14 +48,14 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSSH}
-LIB_DEPENDS+=	libssh_threads.so:${PORTSDIR}/security/libssh
+LIB_DEPENDS+=	libssh_threads.so:security/libssh
 LDFLAGS+=	-fstack-protector
 .else
 CMAKE_ARGS+=	-DWITH_LIBSSH=OFF
 .endif
 
 .if ${PORT_OPTIONS:MGCRYPT}
-LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	libgcrypt.so:security/libgcrypt
 .else
 CMAKE_ARGS+=	-DWITH_GCRYPT=OFF
 .endif
@@ -67,7 +67,7 @@ CMAKE_ARGS+=	-DWITH_VTE=OFF
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	libavahi-ui.so:${PORTSDIR}/net/avahi-gtk
+LIB_DEPENDS+=	libavahi-ui.so:net/avahi-gtk
 .else
 CMAKE_ARGS+=	-DWITH_AVAHI=OFF
 .endif

@@ -10,7 +10,7 @@ MASTER_SITES=	https://opsec.eu/src/
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Round Trip Time and Packet Loss Probe for MRTG
 
-RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg
+RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:net-mgmt/mrtg
 
 FETCH_BEFORE_ARGS=	-p      # MASTER_SITE needs PASSIVE FTP.
 

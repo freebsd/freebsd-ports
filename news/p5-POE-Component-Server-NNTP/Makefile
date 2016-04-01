@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Component that provides NNTP server functionality
 
-RUN_DEPENDS=	p5-POE>=0.38:${PORTSDIR}/devel/p5-POE \
-		p5-POE-Component-Pluggable>=0.03:${PORTSDIR}/devel/p5-POE-Component-Pluggable \
-		p5-POE-Component-Client-NNTP>=1.05:${PORTSDIR}/news/p5-POE-Component-Client-NNTP
+RUN_DEPENDS=	p5-POE>=0.38:devel/p5-POE \
+		p5-POE-Component-Pluggable>=0.03:devel/p5-POE-Component-Pluggable \
+		p5-POE-Component-Client-NNTP>=1.05:news/p5-POE-Component-Client-NNTP
 
 USES=		perl5
 USE_PERL5=	configure

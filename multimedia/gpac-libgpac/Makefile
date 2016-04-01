@@ -40,13 +40,13 @@ SSL_USE=	OPENSSL=yes
 SSL_CONFIGURE_ENABLE=	ssl
 OPENGL_USE=	GL=gl GL=glu
 OPENGL_CONFIGURE_ENABLE=3d
-XVIDEO_LIB_DEPENDS=	libXv.so:${PORTSDIR}/x11/libXv
+XVIDEO_LIB_DEPENDS=	libXv.so:x11/libXv
 XVIDEO_CONFIGURE_OFF=	--disable-x11-xv --disable-x11-shm
 IPV6_CONFIGURE_ENABLE=	ipv6
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_ON=	--use-jpeg=local
 JPEG_CONFIGURE_OFF=	--use-jpeg=no
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_ON=	--use-png=local
 PNG_CONFIGURE_OFF=	--use-png=no
 

@@ -14,7 +14,7 @@ COMMENT=	Extension for libmosquitto
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	mosquitto>=0:${PORTSDIR}/net/mosquitto
+BUILD_DEPENDS=	mosquitto>=0:net/mosquitto
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

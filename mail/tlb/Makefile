@@ -12,9 +12,9 @@ MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/tlb/ \
 MAINTAINER=	ports@toco-domains.de
 COMMENT=	The List Batcher, a general purpose mail list delivery engine
 
-RUN_DEPENDS=	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
-		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
-		p5-Net>=0:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	p5-Mail-Tools>=0:mail/p5-Mail-Tools \
+		p5-TimeDate>=0:devel/p5-TimeDate \
+		p5-Net>=0:net/p5-Net
 
 NO_BUILD=	yes
 

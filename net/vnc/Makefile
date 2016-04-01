@@ -13,9 +13,9 @@ DIST_SUBDIR=	xc
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
-RUN_DEPENDS=	xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts \
-		showrgb:${PORTSDIR}/x11/rgb \
-		xauth:${PORTSDIR}/x11/xauth
+RUN_DEPENDS=	xorg-fonts>=7.2:x11-fonts/xorg-fonts \
+		showrgb:x11/rgb \
+		xauth:x11/xauth
 
 LICENSE=	GPLv2
 
@@ -53,9 +53,9 @@ MAKE_ENV=	IMAKECPP="${CPP}"
 MAKE_ARGS=	AR='ar rc'
 .endif
 
-RUN_DEPENDS+=	xauth:${PORTSDIR}/x11/xauth \
-		xorg-fonts-miscbitmaps>0:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps \
-		${LOCALBASE}/share/fonts/misc/fonts.alias:${PORTSDIR}/x11-fonts/font-alias
+RUN_DEPENDS+=	xauth:x11/xauth \
+		xorg-fonts-miscbitmaps>0:x11-fonts/xorg-fonts-miscbitmaps \
+		${LOCALBASE}/share/fonts/misc/fonts.alias:x11-fonts/font-alias
 
 EXTRA_PATCHES+=	${WRKSRC}/xc.patch \
 		${PATCHDIR}/vnc.def-patch \

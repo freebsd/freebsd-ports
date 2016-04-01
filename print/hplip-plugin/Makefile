@@ -17,7 +17,7 @@ LICENSE_NAME=	HPLIP Driver Plug-in License
 LICENSE_PERMS=	none
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-RUN_DEPENDS=	hp-plugin:${PORTSDIR}/print/hplip
+RUN_DEPENDS=	hp-plugin:print/hplip
 
 RESTRICTED=	License agreement is required
 

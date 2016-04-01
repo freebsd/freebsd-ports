@@ -21,7 +21,7 @@ BROKEN=		is not compatible with the current version of pillow
 DEPRECATED=	no longer supported - use reportlab 3.x (py-reportlab) instead
 EXPIRATION_DATE=2016-05-02
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 
 OPTIONS_DEFINE=	DOCS
 

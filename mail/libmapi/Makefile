@@ -11,15 +11,15 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Open Source implementation of Microsoft Exchange protocols
 
 BUILD_DEPENDS=	${SAMBA_DEP} \
-		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		p5-Parse-Pidl>=4.0.1:${PORTSDIR}/devel/p5-Parse-Pidl
-LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical \
-		libnanomsg.so:${PORTSDIR}/net/nanomsg \
-		libmemcached.so:${PORTSDIR}/databases/libmemcached \
-		libcheck.so:${PORTSDIR}/devel/libcheck \
-		libtdb.so:${PORTSDIR}/databases/tdb \
-		libtevent.so:${PORTSDIR}/devel/tevent \
-		libtalloc.so:${PORTSDIR}/devel/talloc
+		${LOCALBASE}/bin/flex:textproc/flex \
+		p5-Parse-Pidl>=4.0.1:devel/p5-Parse-Pidl
+LIB_DEPENDS=	libical.so:devel/libical \
+		libnanomsg.so:net/nanomsg \
+		libmemcached.so:databases/libmemcached \
+		libcheck.so:devel/libcheck \
+		libtdb.so:databases/tdb \
+		libtevent.so:devel/tevent \
+		libtalloc.so:devel/talloc
 RUN_DEPENDS=	${SAMBA_DEP}
 
 CODENAME=	VULCAN
@@ -49,10 +49,10 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BOOST DOXYGEN
 # SAMBA43
 OPTIONS_DEFAULT=BOOST
-BOOST_LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+BOOST_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 BOOST_CONFIGURE_ENV_OFF=	ov_cv_boost_thread=no
 BOOST_DESC=	libmapi C++ library (needs boost)
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_path_DOXYGEN=""
 SAMBA43_DESC=	Build agains samba 4.3 instead of 4.2
 
@@ -60,10 +60,10 @@ SAMBA43_DESC=	Build agains samba 4.3 instead of 4.2
 
 # no support for samba 4.3 yet
 .if ${PORT_OPTIONS:MSAMBA43}
-SAMBA_DEP=	samba43>=4.3.0:${PORTSDIR}/net/samba43
+SAMBA_DEP=	samba43>=4.3.0:net/samba43
 PLIST_SUB+=	SAMBA=samba43
 .else
-SAMBA_DEP=	samba42>=4.2.0:${PORTSDIR}/net/samba42
+SAMBA_DEP=	samba42>=4.2.0:net/samba42
 PLIST_SUB+=	SAMBA=samba42
 .endif
 

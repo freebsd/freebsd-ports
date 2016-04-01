@@ -10,32 +10,32 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME IM client based around telepathy
 
-BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		geoclue>=0:${PORTSDIR}/net/geoclue \
-		itstool:${PORTSDIR}/textproc/itstool \
-		mc-tool:${PORTSDIR}/net-im/telepathy-mission-control
-LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
-		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
-		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
-		libpulse.so:${PORTSDIR}/audio/pulseaudio \
-		libtelepathy.so:${PORTSDIR}/net-im/libtelepathy \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libtelepathy-farstream.so:${PORTSDIR}/net-im/telepathy-farstream \
-		libtelepathy-logger.so:${PORTSDIR}/net-im/telepathy-logger \
-		libfolks-telepathy.so:${PORTSDIR}/net-im/folks \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libgcr-3.so:${PORTSDIR}/security/gcr \
-		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
-		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
-		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
-RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		geoclue>=0:${PORTSDIR}/net/geoclue \
-		mc-tool:${PORTSDIR}/net-im/telepathy-mission-control
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		ca_root_nss>=0:security/ca_root_nss \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+		geoclue>=0:net/geoclue \
+		itstool:textproc/itstool \
+		mc-tool:net-im/telepathy-mission-control
+LIB_DEPENDS=	libenchant.so:textproc/enchant \
+		libgeocode-glib.so:net/geocode-glib \
+		libgoa-1.0.so:net/gnome-online-accounts \
+		libpulse.so:audio/pulseaudio \
+		libtelepathy.so:net-im/libtelepathy \
+		libtelepathy-glib.so:net-im/telepathy-glib \
+		libtelepathy-farstream.so:net-im/telepathy-farstream \
+		libtelepathy-logger.so:net-im/telepathy-logger \
+		libfolks-telepathy.so:net-im/folks \
+		libnotify.so:devel/libnotify \
+		libgcr-3.so:security/gcr \
+		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libclutter-gst-2.0.so:multimedia/clutter-gst \
+		libwebkitgtk-3.0.so:www/webkit-gtk3 \
+		libsoup-2.4.so:devel/libsoup
+RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		ca_root_nss>=0:security/ca_root_nss \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+		geoclue>=0:net/geoclue \
+		mc-tool:net-im/telepathy-mission-control
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig python tar:xz
 USE_GNOME=	evolutiondataserver3 intlhack
@@ -65,16 +65,16 @@ SALUT_DESC=	Enable link-local (serverless) XMPP support
 HAZE_DESC=	Enable libpurple protocol integration
 MAP_DESC=	Enable graphical map support
 CHEESE_DESC=	Enable cheese camera support
-JABBER_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-gabble:${PORTSDIR}/net-im/telepathy-gabble
-MSN_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-butterfly:${PORTSDIR}/net-im/telepathy-butterfly
-IRC_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-idle:${PORTSDIR}/net-im/telepathy-idle
-SALUT_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-salut:${PORTSDIR}/net-im/telepathy-salut
-HAZE_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-haze:${PORTSDIR}/net-im/telepathy-haze
+JABBER_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-gabble:net-im/telepathy-gabble
+MSN_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-butterfly:net-im/telepathy-butterfly
+IRC_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-idle:net-im/telepathy-idle
+SALUT_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-salut:net-im/telepathy-salut
+HAZE_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-haze:net-im/telepathy-haze
 MAP_USE=		GL=gl
-MAP_LIB_DEPENDS=	libchamplain-0.12.so:${PORTSDIR}/graphics/libchamplain
+MAP_LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain
 MAP_CONFIGURE_ENABLE=	map
-CHEESE_BUILD_DEPENDS=	cheese>=0:${PORTSDIR}/multimedia/cheese
-CHEESE_RUN_DEPENDS=	cheese>=0:${PORTSDIR}/multimedia/cheese
+CHEESE_BUILD_DEPENDS=	cheese>=0:multimedia/cheese
+CHEESE_RUN_DEPENDS=	cheese>=0:multimedia/cheese
 CHEESE_CONFIGURE_WITH=	cheese
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

@@ -11,8 +11,8 @@ COMMENT=	Binary configuration file encoder/decoder
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+BUILD_DEPENDS=	gm4:devel/m4
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

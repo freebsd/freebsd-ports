@@ -12,9 +12,9 @@ COMMENT=	VDPAU-based backend for VAAPI
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libva.pc:${PORTSDIR}/multimedia/libva \
-		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libva.pc:multimedia/libva \
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 USES=		libtool gmake pkgconfig tar:bzip2

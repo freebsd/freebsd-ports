@@ -15,8 +15,8 @@ COMMENT=	Qt5 wrapper for SSO framework
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libaccounts-glib.so:${PORTSDIR}/net-im/libaccounts-glib
-BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib
+BUILD_DEPENDS=	doxygen:devel/doxygen
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 

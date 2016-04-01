@@ -12,9 +12,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME music playing application
 
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libgee-0.8.so:devel/libgee
+BUILD_DEPENDS=	vapigen:lang/vala
 
 USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk20 introspection:build
@@ -31,10 +31,10 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFAULT=	AVAHI
 OPTIONS_SINGLE=	MDNS
 OPTIONS_SINGLE_MDNS=	AVAHI MDNSRESPONDER
-AVAHI_LIB_DEPENDS=	libavahi-core.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=	libavahi-core.so:net/avahi-app
 AVAHI_CONFIGURE_ON=	--with-mdns=avahi
-MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder \
-				libavahi-glib.so:${PORTSDIR}/net/avahi-app
+MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder \
+				libavahi-glib.so:net/avahi-app
 MDNSRESPONDER_CONFIGURE_ON=	--with-mdns=mdns
 MDNSRESPONDER_DESC+=	Zeroconf support via mDNSResponder (broken)
 

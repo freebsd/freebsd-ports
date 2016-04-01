@@ -13,11 +13,11 @@ COMMENT=	Download manager application
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	curl-config:${PORTSDIR}/ftp/curl
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
-	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-	libgnutls.so:${PORTSDIR}/security/gnutls
-RUN_DEPENDS=	aria2c:${PORTSDIR}/www/aria2
+BUILD_DEPENDS=	curl-config:ftp/curl
+LIB_DEPENDS=	libnotify.so:devel/libnotify \
+	libgcrypt.so:security/libgcrypt \
+	libgnutls.so:security/gnutls
+RUN_DEPENDS=	aria2c:www/aria2
 
 USES=	compiler:c11 gettext-tools gmake pkgconfig
 GNU_CONFIGURE=	yes

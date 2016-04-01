@@ -13,7 +13,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	PHP extension for AMQP API
 
-LIB_DEPENDS=	librabbitmq.so:${PORTSDIR}/net/rabbitmq-c-devel
+LIB_DEPENDS=	librabbitmq.so:net/rabbitmq-c-devel
 
 PHP_MODNAME=	${PORTNAME}
 USE_PHP=	yes

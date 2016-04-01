@@ -10,7 +10,7 @@ MASTER_SITES=	SF/ofset/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GTK interactive geometry software
 
-LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libguile.so:lang/guile
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig pathfix

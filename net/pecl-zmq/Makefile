@@ -13,7 +13,7 @@ COMMENT=	PHP bindings for ZeroMQ
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq4
+LIB_DEPENDS=	libzmq.so:net/libzmq4
 
 USES=		tar:tgz pkgconfig
 USE_PHP=	yes

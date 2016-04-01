@@ -11,19 +11,19 @@ MASTER_SITES=	SF \
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Comprehensive desktop publishing program
 
-LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libcups.so:${PORTSDIR}/print/cups \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpodofo.so:${PORTSDIR}/graphics/podofo \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libhyphen.so:${PORTSDIR}/textproc/hyphen \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-pillow
+LIB_DEPENDS=	liblcms.so:graphics/lcms \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libcups.so:print/cups \
+		libfreetype.so:print/freetype2 \
+		libpodofo.so:graphics/podofo \
+		libboost_thread.so:devel/boost-libs \
+		libhunspell-1.3.so:textproc/hunspell \
+		libcairo.so:graphics/cairo \
+		libhyphen.so:textproc/hyphen \
+		libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
+		${PYTHON_SITELIBDIR}/PIL/_imaging.so:graphics/py-pillow
 
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	libartlgpl2 libxml2

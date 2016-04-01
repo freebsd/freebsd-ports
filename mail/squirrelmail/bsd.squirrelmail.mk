@@ -33,10 +33,10 @@ PKGNAMEPREFIX?=	squirrelmail-
 PKGNAMESUFFIX?=	-plugin
 DIST_SUBDIR?=	squirrelmail
 
-RUN_DEPENDS+=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
+RUN_DEPENDS+=	${SQUIRRELDIR}/index.php:mail/squirrelmail
 
 .ifdef USE_SM_COMPAT
-RUN_DEPENDS+=	squirrelmail-compatibility-plugin>0:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
+RUN_DEPENDS+=	squirrelmail-compatibility-plugin>0:mail/squirrelmail-compatibility-plugin
 .endif
 
 .ifndef WITHOUT_ACTIVATE

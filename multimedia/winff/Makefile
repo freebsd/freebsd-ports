@@ -14,8 +14,8 @@ COMMENT=	Convert your videos quickly, easily, and all at once
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus
-LIB_DEPENDS=	libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+BUILD_DEPENDS=	lazbuild:editors/lazarus
+LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
 NO_WRKSUBDIR=	yes
 USE_FPC=	cairo fcl-base fcl-image fcl-json fcl-xml pasjpeg x11
@@ -51,13 +51,13 @@ OPTIONS_DEFAULT=	GTK2
 USE_FPC+=	gtk2
 USE_GNOME+=	gtk20
 LCL_PLATFORM=	gtk2
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-LIB_DEPENDS+=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
+LIB_DEPENDS+=	libQt4Pas.so:x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
 .endif
 
 pre-configure:

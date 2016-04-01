@@ -12,7 +12,7 @@ COMMENT=	Tool to query VDPAU capabilities
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes

@@ -8,8 +8,8 @@ MASTER_SITES=	SAVANNAH/linphone/plugins/sources/
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Mediastreamer plugin for H264 encoding/decoding
 
-LIB_DEPENDS=	libmediastreamer_base.so:${PORTSDIR}/net/mediastreamer \
-		libopenh264.so:${PORTSDIR}/multimedia/openh264
+LIB_DEPENDS=	libmediastreamer_base.so:net/mediastreamer \
+		libopenh264.so:multimedia/openh264
 
 USES=		libtool pkgconfig
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create, edit, and parse MIME messages (via gmime2 C library)
 
-LIB_DEPENDS=	libgmime-2.0.so:${PORTSDIR}/mail/gmime2
+LIB_DEPENDS=	libgmime-2.0.so:mail/gmime2
 
 USES=		perl5
 USE_PERL5=	configure

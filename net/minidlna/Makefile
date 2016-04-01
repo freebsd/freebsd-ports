@@ -11,13 +11,13 @@ MASTER_SITES=	SF
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3	\
-		libexif.so:${PORTSDIR}/graphics/libexif	\
-		libid3tag.so:${PORTSDIR}/audio/libid3tag	\
-		libogg.so:${PORTSDIR}/audio/libogg		\
-		libvorbis.so:${PORTSDIR}/audio/libvorbis	\
-		libFLAC.so:${PORTSDIR}/audio/flac		\
-		libavformat.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3	\
+		libexif.so:graphics/libexif	\
+		libid3tag.so:audio/libid3tag	\
+		libogg.so:audio/libogg		\
+		libvorbis.so:audio/libvorbis	\
+		libFLAC.so:audio/flac		\
+		libavformat.so:multimedia/ffmpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-path=/var/db/minidlna \

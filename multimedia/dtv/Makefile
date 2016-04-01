@@ -13,7 +13,7 @@ COMMENT=	Client/server based TV capture/display program
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS=	wish8.4:x11-toolkits/tk84
 
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USES=		uidfix

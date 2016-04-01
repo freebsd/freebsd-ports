@@ -13,9 +13,9 @@ COMMENT=	Open source network boot firmware
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/share/syslinux/bios/core/isolinux.bin:${PORTSDIR}/sysutils/syslinux \
-		bash:${PORTSDIR}/shells/bash \
-		mkisofs:${PORTSDIR}/sysutils/cdrtools
+BUILD_DEPENDS=	${LOCALBASE}/share/syslinux/bios/core/isolinux.bin:sysutils/syslinux \
+		bash:shells/bash \
+		mkisofs:sysutils/cdrtools
 
 USE_GITHUB=	yes
 GH_PROJECT=	ipxe

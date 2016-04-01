@@ -40,13 +40,13 @@ CONFIGURE_ARGS+=	--enable-encoder-jpeg
 .endif
 
 .if ${PORT_OPTIONS:MMPEG4}
-LIB_DEPENDS+=		libxvidcore.so:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=		libxvidcore.so:multimedia/xvid
 CONFIGURE_ARGS+=	--enable-encoder-mpeg4
 .endif
 
 .if ${PORT_OPTIONS:MV4L}
-LIB_DEPENDS+=		libv4l1.so:${PORTSDIR}/multimedia/libv4l
-BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS+=		libv4l1.so:multimedia/libv4l
+BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 CONFIGURE_ARGS+=	--enable-input-v4l2 --enable-input-v4l
 .endif
 

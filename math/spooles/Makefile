@@ -17,7 +17,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SParse Object Oriented Linear Equations Solver
 
 .if defined(WITH_MPI)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmpich.a:${PORTSDIR}/net/mpich2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmpich.a:net/mpich2
 .endif
 
 USES=		gmake tar:tgz

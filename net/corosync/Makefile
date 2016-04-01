@@ -12,8 +12,8 @@ COMMENT=	Corosync Cluster Engine
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
-		libqb.so:${PORTSDIR}/devel/libqb
+LIB_DEPENDS=	libnss3.so:security/nss \
+		libqb.so:devel/libqb
 
 USES=		gmake libtool pathfix pkgconfig
 USE_GCC=	yes	# segfaults when built with Clang
@@ -25,10 +25,10 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	DBUS SNMP
 OPTIONS_SUB=	yes
 
-DBUS_LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS+=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_ENABLE=	dbus
 
-SNMP_LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ENABLE=	snmp
 
 post-install:

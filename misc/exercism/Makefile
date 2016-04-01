@@ -9,7 +9,7 @@ CATEGORIES=	misc
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CLI client for exercism.io
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	codegangsta:cg kardianos:osext golang:text,net davecgh:spew pmezard:diff stretchr:testify

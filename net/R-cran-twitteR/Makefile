@@ -11,10 +11,10 @@ COMMENT=	R based Twitter client
 
 LICENSE=	ART20
 
-RUN_DEPENDS=	R-cran-bit64>0:${PORTSDIR}/devel/R-cran-bit64 \
-		R-cran-rjson>0:${PORTSDIR}/converters/R-cran-rjson \
-		R-cran-DBI>=0.3.1:${PORTSDIR}/databases/R-cran-DBI \
-		R-cran-httr>=1.0.0:${PORTSDIR}/www/R-cran-httr
+RUN_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
+		R-cran-rjson>0:converters/R-cran-rjson \
+		R-cran-DBI>=0.3.1:databases/R-cran-DBI \
+		R-cran-httr>=1.0.0:www/R-cran-httr
 
 USES=	cran:auto-plist
 

@@ -10,7 +10,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides Ruby access to the Slicehost API
 
-RUN_DEPENDS=	rubygem-right_http_connection>=1.2.4:${PORTSDIR}/net/rubygem-right_http_connection
+RUN_DEPENDS=	rubygem-right_http_connection>=1.2.4:net/rubygem-right_http_connection
 
 NO_ARCH=	yes
 

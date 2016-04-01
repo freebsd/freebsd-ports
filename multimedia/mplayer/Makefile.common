@@ -12,8 +12,8 @@ DISTNAME=	MPlayer-${MPLAYER_PORT_VERSION}
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 USES=		compiler:c11 gmake iconv ncurses tar:xz
 GNU_CONFIGURE=	yes

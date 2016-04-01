@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt 4 based Jabber client
 
-LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca \
-		libminizip.so:${PORTSDIR}/archivers/minizip
+LIB_DEPENDS=	libqca.so:devel/qca \
+		libminizip.so:archivers/minizip
 
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes
@@ -36,13 +36,13 @@ DBUS_USE=	QT4=dbus
 DBUS_CONFIGURE_OFF=	--disable-qdbus
 
 ASPELL_DESC=	Use aspell for spell checking
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ASPELL_CONFIGURE_ON=	--with-aspell-inc=${LOCALBASE}/include \
 			--with-aspell-lib=${LOCALBASE}/lib
 ASPELL_CONFIGURE_OFF=	--disable-aspell
 
 ENCHANT_DESC=	Use Enchant for spell checking
-ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
 ENCHANT_CONFIGURE_OFF=	--disable-enchant
 
 post-configure:

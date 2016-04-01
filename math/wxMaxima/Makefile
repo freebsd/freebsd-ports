@@ -13,7 +13,7 @@ COMMENT=	WxWidgets GUI for the computer algebra system maxima
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	maxima:${PORTSDIR}/math/maxima
+RUN_DEPENDS=	maxima:math/maxima
 
 CONFIGURE_ARGS=	--program-prefix=
 

@@ -11,9 +11,9 @@ COMMENT=	Client library for the CMIS interface
 LICENSE=	LGPL20 MPL GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit \
-		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libcurl.so:ftp/curl
+BUILD_DEPENDS=	cppunit-config:devel/cppunit \
+		${LOCALBASE}/lib/libboost_regex.a:devel/boost-libs
 
 BROKEN_sparc64=	cannot link with boost
 

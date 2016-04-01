@@ -12,7 +12,7 @@ COMMENT=	NTOP-maintained superset of the popular OpenDPI library
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c
+LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 CONFIGURE_ARGS=	--with-pic
 CPPFLAGS+=	-I${LOCALBASE}/include/json-c

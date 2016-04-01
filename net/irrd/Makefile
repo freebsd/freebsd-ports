@@ -14,7 +14,7 @@ COMMENT=	Internet Routing Registry database server
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}${PORTVERSION}/COPYRIGHT
 
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	wget:ftp/wget
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src
 

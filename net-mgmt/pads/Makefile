@@ -15,7 +15,7 @@ SHEBANG_FILES=	src/pads-report.pl
 CFLAGS+=	-Wno-return-type
 USE_CSTD=	gnu89
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 

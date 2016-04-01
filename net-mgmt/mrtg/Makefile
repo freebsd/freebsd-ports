@@ -14,8 +14,8 @@ MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
 MAINTAINER=	ports@subnets.ru
 COMMENT=	Multi-router traffic grapher
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/${GD_PORT}
-RUN_DEPENDS=	p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session
+LIB_DEPENDS=	libgd.so:${GD_PORT}
+RUN_DEPENDS=	p5-SNMP_Session>=0:net-mgmt/p5-SNMP_Session
 
 # slave ports override with languages specific gd
 GD_PORT?=	graphics/gd
@@ -66,8 +66,8 @@ SCRIPTS=	cfgmaker indexmaker mrtg mrtg-traffic-sum
 
 OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 SNMPV3
 
-IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
-SNMPV3_RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6
+SNMPV3_RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

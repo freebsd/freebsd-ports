@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}beta
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Manage Cisco IOS Devices
 
-RUN_DEPENDS=	p5-Net-Telnet-Cisco>=0:${PORTSDIR}/net-mgmt/p5-Telnet-Cisco
+RUN_DEPENDS=	p5-Net-Telnet-Cisco>=0:net-mgmt/p5-Telnet-Cisco
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

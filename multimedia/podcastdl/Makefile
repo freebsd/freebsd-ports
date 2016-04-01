@@ -12,7 +12,7 @@ COMMENT=	Simple command line podcast client written in plain C
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libmrss.so:${PORTSDIR}/textproc/libmrss
+LIB_DEPENDS=	libmrss.so:textproc/libmrss
 
 USES=		cmake
 

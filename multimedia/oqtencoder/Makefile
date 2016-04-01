@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple encoder using OpenQuicktime (TM)
 
-LIB_DEPENDS=	libopenquicktime.so:${PORTSDIR}/multimedia/openquicktime
+LIB_DEPENDS=	libopenquicktime.so:multimedia/openquicktime
 
 USES=		localbase tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

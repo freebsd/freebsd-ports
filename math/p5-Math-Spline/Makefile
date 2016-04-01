@@ -14,7 +14,7 @@ COMMENT=	Cubic Spline Interpolation of data
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-Derivative>=0:${PORTSDIR}/math/p5-Math-Derivative
+BUILD_DEPENDS=	p5-Math-Derivative>=0:math/p5-Math-Derivative
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

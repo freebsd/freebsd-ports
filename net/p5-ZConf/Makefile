@@ -12,16 +12,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Configuration system allowing for either file or LDAP backed storage
 
-BUILD_DEPENDS=	p5-Chooser>=0:${PORTSDIR}/devel/p5-Chooser \
-		p5-Error-Helper>=0:${PORTSDIR}/devel/p5-Error-Helper \
-		p5-File-BaseDir>=0:${PORTSDIR}/devel/p5-File-BaseDir \
-		p5-Module-List>=0:${PORTSDIR}/devel/p5-Module-List \
-		p5-Net-LDAP-AutoDNs>=0:${PORTSDIR}/net/p5-Net-LDAP-AutoDNs \
-		p5-Net-LDAP-AutoServer>=0:${PORTSDIR}/net/p5-Net-LDAP-AutoServer \
-		p5-Net-LDAP-LDAPhash>=0:${PORTSDIR}/net/p5-Net-LDAP-LDAPhash \
-		p5-Net-LDAP-Makepath>=0:${PORTSDIR}/net/p5-Net-LDAP-Makepath \
-		p5-ZML>=0:${PORTSDIR}/devel/p5-ZML \
-		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
+BUILD_DEPENDS=	p5-Chooser>=0:devel/p5-Chooser \
+		p5-Error-Helper>=0:devel/p5-Error-Helper \
+		p5-File-BaseDir>=0:devel/p5-File-BaseDir \
+		p5-Module-List>=0:devel/p5-Module-List \
+		p5-Net-LDAP-AutoDNs>=0:net/p5-Net-LDAP-AutoDNs \
+		p5-Net-LDAP-AutoServer>=0:net/p5-Net-LDAP-AutoServer \
+		p5-Net-LDAP-LDAPhash>=0:net/p5-Net-LDAP-LDAPhash \
+		p5-Net-LDAP-Makepath>=0:net/p5-Net-LDAP-Makepath \
+		p5-ZML>=0:devel/p5-ZML \
+		p5-perl-ldap>=0:net/p5-perl-ldap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

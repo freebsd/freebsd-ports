@@ -12,9 +12,9 @@ COMMENT=	Monitoring, analytics, and notifications for Plex Media Server
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}openssl>0:${PORTSDIR}/security/py-openssl \
-		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USE_RC_SUBR=	${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}

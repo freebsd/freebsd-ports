@@ -9,9 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Client library for Amazon S3 REST API
 
-RUN_DEPENDS=	rubygem-xml-simple>=0:${PORTSDIR}/textproc/rubygem-xml-simple \
-		rubygem-builder>=0:${PORTSDIR}/devel/rubygem-builder \
-		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types
+RUN_DEPENDS=	rubygem-xml-simple>=0:textproc/rubygem-xml-simple \
+		rubygem-builder>=0:devel/rubygem-builder \
+		rubygem-mime-types>=0:misc/rubygem-mime-types
 
 NO_ARCH=	yes
 

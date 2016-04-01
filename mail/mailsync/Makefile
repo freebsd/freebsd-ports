@@ -13,7 +13,7 @@ COMMENT=	Mailsync is a way of keeping a collection of mailboxes synchronized
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libc-client4.so:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	libc-client4.so:mail/cclient
 
 USES=		gmake
 USE_OPENSSL=	yes

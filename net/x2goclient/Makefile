@@ -14,11 +14,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # Avoid clash with libssh from base
-BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups \
-		libssh.so:${PORTSDIR}/security/libssh
-RUN_DEPENDS=	nxproxy:${PORTSDIR}/net/nxproxy \
-		x2goclient-cli:${PORTSDIR}/net/x2goclient-cli
+BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
+LIB_DEPENDS=	libcups.so:print/cups \
+		libssh.so:security/libssh
+RUN_DEPENDS=	nxproxy:net/nxproxy \
+		x2goclient-cli:net/x2goclient-cli
 
 USES=		qmake
 USE_XORG=	xpm

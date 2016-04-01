@@ -12,7 +12,7 @@ COMMENT=	Application launcher and finder
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig gettext-tools tar:bzip2

@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl interface to the ISAAC PRNG Algorithm
 
-BUILD_DEPENDS=	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings
+BUILD_DEPENDS=	p5-Test-NoWarnings>0:devel/p5-Test-NoWarnings
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		p5-Math-Random-ISAAC-XS>0:${PORTSDIR}/math/p5-Math-Random-ISAAC-XS
+		p5-Math-Random-ISAAC-XS>0:math/p5-Math-Random-ISAAC-XS
 
 USES=		perl5
 USE_PERL5=	configure

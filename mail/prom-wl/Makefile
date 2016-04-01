@@ -12,7 +12,7 @@ COMMENT=	Procmail reader for Wanderlust on GNU Emacs
 
 # This port requires Wanderlust. But we can't decide which Wanderlust to
 # depends, there is NO RUN_DEPENDS mail/wanderlust-*.
-#RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
+#RUN_DEPENDS=	procmail:mail/procmail
 
 NO_BUILD=	yes
 

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${DISTNAME}
 
-RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:${PORTSDIR}/math/octave-forge-io
+RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:math/octave-forge-io
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

@@ -12,7 +12,7 @@ DISTNAME=	pyflowtools-${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python extension module for reading flow-tools' data
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:${PORTSDIR}/net-mgmt/flow-tools
+BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:net-mgmt/flow-tools
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

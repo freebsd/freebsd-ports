@@ -18,7 +18,7 @@ LICENSE_NAME_addl=Additional legal notices for copyrighted code
 LICENSE_FILE_addl=${WRKSRC}/COPYING
 LICENSE_PERMS_addl=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

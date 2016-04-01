@@ -9,7 +9,7 @@ COMMENT=	Classic web interface for Icinga 1 and 2
 
 .include "${.CURDIR}/../icinga-core/Makefile.common"
 
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:graphics/gd
 
 CONFIGURE_ARGS+=--disable-idoutils
 CFLAGS+=	-I${LOCALBASE}/include

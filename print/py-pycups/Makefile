@@ -14,7 +14,7 @@ COMMENT=	CUPS bindings for Python
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
+LIB_DEPENDS=	libcups.so:print/cups
 
 USE_PYTHON=	autoplist concurrent distutils
 USES=		iconv localbase python tar:bzip2

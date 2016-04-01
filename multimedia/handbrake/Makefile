@@ -28,26 +28,26 @@ COMMENT=	Versatile DVD ripper and video transcoder
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		cmake:${PORTSDIR}/devel/cmake
-LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libass.so:${PORTSDIR}/multimedia/libass \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libvorbisenc.so:${PORTSDIR}/audio/libvorbis \
-		libtheoradec.so:${PORTSDIR}/multimedia/libtheora \
-		libtheoraenc.so:${PORTSDIR}/multimedia/libtheora \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libx264.so:${PORTSDIR}/multimedia/libx264 \
-		libmp3lame.so:${PORTSDIR}/audio/lame
+BUILD_DEPENDS=	yasm:devel/yasm \
+		cmake:devel/cmake
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libfribidi.so:converters/fribidi \
+		libxml2.so:textproc/libxml2 \
+		libass.so:multimedia/libass \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libvorbisenc.so:audio/libvorbis \
+		libtheoradec.so:multimedia/libtheora \
+		libtheoraenc.so:multimedia/libtheora \
+		libsamplerate.so:audio/libsamplerate \
+		libx264.so:multimedia/libx264 \
+		libmp3lame.so:audio/lame
 CONFLICTS_BUILD=	x265
 
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread/src/dvd_input.c (dlopen'ed)
-LIB_DEPENDS+=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
+LIB_DEPENDS+=	libdvdcss.so.2:multimedia/libdvdcss
 .endif
 
 GNU_CONFIGURE=	yes
@@ -75,10 +75,10 @@ OPTIONS_DEFAULT=	X11
 # Recent GNU binutils are required to handle inline SSSE3 asm (in x264), and
 # to support --exclude-libs option for ld(1) when building GUI program
 .if ${PORT_OPTIONS:MX11}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-LIB_DEPENDS+=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
 .endif
 CC!=/usr/bin/which ${CC}
 MAKE_ENV+=ACLOCAL=${LOCALBASE}/bin/aclocal
@@ -87,8 +87,8 @@ MAKE_ENV+=ACLOCAL=${LOCALBASE}/bin/aclocal
 CONFIGURE_ARGS+=	--disable-gtk-update-checks --disable-gst
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libdbus-glib-1.so:devel/dbus-glib \
+		libnotify.so:devel/libnotify
 USES+=		gettext
 USE_GNOME+=	gtk30 intltool
 PLIST_FILES+=	bin/HandBrake

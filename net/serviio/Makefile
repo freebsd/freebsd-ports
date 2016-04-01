@@ -11,7 +11,7 @@ EXTRACT_SUFX=	-linux.tar.gz
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Transcoding DLNA-server implemented in Java
 
-RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 NO_BUILD=	yes
 USE_JAVA=	yes

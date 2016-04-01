@@ -11,12 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	papowell@astart.com
 COMMENT=	SOAP message messages with WSA fields
 
-BUILD_DEPENDS=	p5-Net-Server>=0.97:${PORTSDIR}/net/p5-Net-Server \
-		p5-libwww>=5.803:${PORTSDIR}/www/p5-libwww \
-		p5-Log-Report>=0.22:${PORTSDIR}/devel/p5-Log-Report \
-		p5-XML-Compile-SOAP>=2.10:${PORTSDIR}/net/p5-XML-Compile-SOAP \
-		p5-XML-Compile>=1.01:${PORTSDIR}/textproc/p5-XML-Compile \
-		p5-XML-Compile-Cache>=0.91:${PORTSDIR}/textproc/p5-XML-Compile-Cache
+BUILD_DEPENDS=	p5-Net-Server>=0.97:net/p5-Net-Server \
+		p5-libwww>=5.803:www/p5-libwww \
+		p5-Log-Report>=0.22:devel/p5-Log-Report \
+		p5-XML-Compile-SOAP>=2.10:net/p5-XML-Compile-SOAP \
+		p5-XML-Compile>=1.01:textproc/p5-XML-Compile \
+		p5-XML-Compile-Cache>=0.91:textproc/p5-XML-Compile-Cache
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

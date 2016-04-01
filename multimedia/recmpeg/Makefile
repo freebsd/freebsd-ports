@@ -10,7 +10,7 @@ MASTER_SITES=	SF/fame/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple video encoder
 
-LIB_DEPENDS=	libfame.so:${PORTSDIR}/multimedia/libfame
+LIB_DEPENDS=	libfame.so:multimedia/libfame
 
 GNU_CONFIGURE=	yes
 

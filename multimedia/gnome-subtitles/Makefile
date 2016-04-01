@@ -12,8 +12,8 @@ COMMENT=	Subtitle editor with video preview
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
-		libgtkspell.so:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS=	libenchant.so:textproc/enchant \
+		libgtkspell.so:textproc/gtkspell
 
 USES=		cpe gmake mono pkgconfig libtool localbase desktop-file-utils
 CPE_VENDOR=	pedro_castro

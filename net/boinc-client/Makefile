@@ -51,16 +51,16 @@ NO_NET_INFO_DESC=	Do not send host address and name to servers
 OPTIONS_SUB=		yes
 
 MANAGER_USES=		iconv
-MANAGER_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
-			libsqlite3.so:${PORTSDIR}/databases/sqlite3
+MANAGER_LIB_DEPENDS=	libnotify.so:devel/libnotify \
+			libsqlite3.so:databases/sqlite3
 MANAGER_CONFIGURE_ON=	--with-sqlite3-prefix=${LOCALBASE}
 MANAGER_CONFIGURE_OFF=	--with-wx-config=false --without-x
 MANAGER_CONFIGURE_ENABLE=manager
 MANAGER_USE=		XORG=x11,xext,xscrnsaver WX=2.8
 
 CLIENT_CONFIGURE_ENABLE=client
-CLIENT_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-CLIENT_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CLIENT_LIB_DEPENDS=	libcurl.so:ftp/curl
+CLIENT_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CLIENT_USE=		RC_SUBR=boinc-client
 
 LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=i686-pc-linux-gnu

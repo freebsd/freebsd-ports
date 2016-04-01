@@ -11,9 +11,9 @@ DISTNAME=	smm611
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Graphical mudclient with mapper
 
-RUN_DEPENDS=	iwidgets>0:${PORTSDIR}/x11-toolkits/iwidgets
-BUILD_DEPENDS=	${LOCALBASE}/lib/libitk.so:${PORTSDIR}/x11-toolkits/itk \
-		${LOCALBASE}/lib/libitcl.so:${PORTSDIR}/lang/itcl
+RUN_DEPENDS=	iwidgets>0:x11-toolkits/iwidgets
+BUILD_DEPENDS=	${LOCALBASE}/lib/libitk.so:x11-toolkits/itk \
+		${LOCALBASE}/lib/libitcl.so:lang/itcl
 
 WRKSRC=		${WRKDIR}/smm/Install.unix
 USES=		gmake tk tar:tgz

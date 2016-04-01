@@ -80,7 +80,7 @@ SQLITE_CONFIGURE_WITH=	sqlite
 SQLITE_USE=		SQLITE=3
 SSL_CONFIGURE_OFF=	--without-ssl
 SSL_CONFIGURE_ON=	--with-ssl=openssl
-VPOPMAIL_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/bin/vchkpw:${PORTSDIR}/mail/vpopmail
+VPOPMAIL_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/bin/vchkpw:mail/vpopmail
 VPOPMAIL_CONFIGURE_WITH=vpopmail
 
 .include <bsd.port.options.mk>

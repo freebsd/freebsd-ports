@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the Parallel Virtual Machine (PVM)
 
-BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm
+BUILD_DEPENDS=	pvm:net/pvm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

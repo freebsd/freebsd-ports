@@ -9,8 +9,8 @@ COMMENT=	Milter that performs rspamd, clamav, and other checks
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libopendkim.so:${PORTSDIR}/mail/opendkim
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libopendkim.so:mail/opendkim
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov

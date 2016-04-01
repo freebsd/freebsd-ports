@@ -48,11 +48,11 @@ WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == "atlas"
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 CONFIGURE_ARGS=	--with-lapack="-lalapack -lptcblas" --with-blas="-lptf77blas"
 .elif ${WITH_BLAS} == "reference"
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:math/blas
+LIB_DEPENDS+=	liblapack.so:math/lapack
 CONFIGURE_ARGS=	--with-lapack="-llapack" --with-blas="-lblas"
 .else
 IGNORE=		invalid value for WITH_BLAS: ${WITH_BLAS}
@@ -84,7 +84,7 @@ post-install:
 .endif
 
 .if defined(MAINTAINER_MODE)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/R/library/coda/R/coda.rdb:${PORTSDIR}/math/R-cran-coda
+BUILD_DEPENDS+=	${LOCALBASE}/lib/R/library/coda/R/coda.rdb:math/R-cran-coda
 
 check test: install
 .for i in 1 2

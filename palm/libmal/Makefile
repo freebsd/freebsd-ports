@@ -13,7 +13,7 @@ COMMENT=	Library encapsulating malsync
 LICENSE=	MPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpisock.so:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	libpisock.so:palm/pilot-link
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes

@@ -20,8 +20,8 @@ SMAP_DESC=	Socketmap protocol support
 
 OPTIONS_SUB=	yes
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
-RUN_DEPENDS=	${LOCALBASE}/sbin/smtpctl:${PORTSDIR}/mail/opensmtpd
+LIB_DEPENDS=	libevent.so:devel/libevent2
+RUN_DEPENDS=	${LOCALBASE}/sbin/smtpctl:mail/opensmtpd
 
 USES=		autoreconf libtool pkgconfig
 USE_OPENSSL=	yes
@@ -52,7 +52,7 @@ PYTHON_VARS=		PLIST_FILES+=${INSTALL_DIR}/table-python
 
 REDIS_CONFIGURE_WITH=	table-redis
 REDIS_CONFIGURE_ENV=	REDIS_CONFIG=${LOCALBASE}/bin/pkgconf
-REDIS_LIB_DEPENDS=	libhiredis.so:${PORTSDIR}/databases/hiredis
+REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
 REDIS_VARS=		CFLAGS+=-I${LOCALBASE}/include/hiredis \
 			PLIST_FILES+=${INSTALL_DIR}/table-redis \
 			PLIST_FILES+=man/man5/table-redis.5.gz

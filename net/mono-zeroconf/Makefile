@@ -8,7 +8,7 @@ MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Cross platform Zero Configuration Networking library for Mono
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-sharp.pc:${PORTSDIR}/net/avahi-sharp
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-sharp.pc:net/avahi-sharp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS

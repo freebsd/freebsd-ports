@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Interface for developing Trackback clients and servers
 
-BUILD_DEPENDS=	p5-Class-ErrorHandler>=0.01:${PORTSDIR}/devel/p5-Class-ErrorHandler \
-		p5-libwww>0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-Class-ErrorHandler>=0.01:${PORTSDIR}/devel/p5-Class-ErrorHandler \
-		p5-libwww>0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Class-ErrorHandler>=0.01:devel/p5-Class-ErrorHandler \
+		p5-libwww>0:www/p5-libwww
+RUN_DEPENDS=	p5-Class-ErrorHandler>=0.01:devel/p5-Class-ErrorHandler \
+		p5-libwww>0:www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	configure

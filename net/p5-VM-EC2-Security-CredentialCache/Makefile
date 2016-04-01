@@ -13,8 +13,8 @@ COMMENT=	Cache credentials respecting expriation time for IAM roles
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DateTime-Format-ISO8601>=0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601 \
-		p5-VM-EC2>=0:${PORTSDIR}/net/p5-VM-EC2
+BUILD_DEPENDS=	p5-DateTime-Format-ISO8601>=0:devel/p5-DateTime-Format-ISO8601 \
+		p5-VM-EC2>=0:net/p5-VM-EC2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

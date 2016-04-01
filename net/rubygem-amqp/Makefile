@@ -12,8 +12,8 @@ COMMENT=	Implementation of the AMQP protocol for RabbitMQ clients
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	rubygem-amq-protocol>=1.9:${PORTSDIR}/net/rubygem-amq-protocol \
-		rubygem-eventmachine>=0:${PORTSDIR}/devel/rubygem-eventmachine
+RUN_DEPENDS=	rubygem-amq-protocol>=1.9:net/rubygem-amq-protocol \
+		rubygem-eventmachine>=0:devel/rubygem-eventmachine
 
 DEPRECATED=	Upstream prefers net/rubygem-bunny
 

@@ -15,7 +15,7 @@ COMMENT=	GTK+2 viewer and editor for BitTorrent meta files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gmake pkgconfig desktop-file-utils
 USE_GNOME=	gtk20 intlhack

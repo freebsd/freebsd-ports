@@ -44,20 +44,20 @@ OPTIONS_EXCLUDE+=	PAM
 
 GDBM_DESC=		GDBM backend
 GDBM_IMPLIES=		GSASL
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
 
-GNUPG_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GNUPG_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GNUPG_CONFIGURE_WITH=	gpgme
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
 
 GSASL_DESC=		GSASL support (required for databases)
-GSASL_LIB_DEPENDS=	libgsasl.so:${PORTSDIR}/security/gsasl
+GSASL_LIB_DEPENDS=	libgsasl.so:security/gsasl
 GSASL_CONFIGURE_WITH=	gsasl
 
-GUILE_LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
+GUILE_LIB_DEPENDS=	libguile.so:lang/guile
 GUILE_CONFIGURE_WITH=	guile
 GUILE_PORTEXAMPLES=	anubis.scm anubisrc.guile
 
@@ -74,7 +74,7 @@ NLS_CONFIGURE_ENABLE=	nls
 PAM_CONFIGURE_WITH=	pam
 PAM_PORTEXAMPLES=	pam
 
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CONFIGURE_WITH=	pcre
 
 PGSQL_IMPLIES=		GSASL

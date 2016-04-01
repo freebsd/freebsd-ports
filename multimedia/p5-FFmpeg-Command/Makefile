@@ -12,11 +12,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrapper class for ffmpeg command line utility
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
-		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler \
+		p5-IPC-Run>=0:devel/p5-IPC-Run
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+RUN_DEPENDS+=	ffmpeg:multimedia/ffmpeg
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,7 +14,7 @@ COMMENT=	Scriptable telnet-based virtual users
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet
+BUILD_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

@@ -13,23 +13,23 @@ COMMENT=	GNU music typesetter
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	pdftexi2dvi:${PORTSDIR}/print/texinfo \
-		t1ascii:${PORTSDIR}/print/t1utils \
-		bash:${PORTSDIR}/shells/bash \
-		convert:${PORTSDIR}/graphics/ImageMagick \
-		dblatex:${PORTSDIR}/textproc/dblatex \
-		fontforge:${PORTSDIR}/print/fontforge \
-		help2man:${PORTSDIR}/misc/help2man \
-		pngtopnm:${PORTSDIR}/graphics/netpbm \
-		rsync:${PORTSDIR}/net/rsync \
-		texi2html:${PORTSDIR}/textproc/texi2html \
-		zip:${PORTSDIR}/archivers/zip \
-		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:${PORTSDIR}/print/gsfonts
-RUN_DEPENDS=	mftrace:${PORTSDIR}/print/mftrace \
-		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:${PORTSDIR}/x11-fonts/dejavu
-LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	pdftexi2dvi:print/texinfo \
+		t1ascii:print/t1utils \
+		bash:shells/bash \
+		convert:graphics/ImageMagick \
+		dblatex:textproc/dblatex \
+		fontforge:print/fontforge \
+		help2man:misc/help2man \
+		pngtopnm:graphics/netpbm \
+		rsync:net/rsync \
+		texi2html:textproc/texi2html \
+		zip:archivers/zip \
+		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:print/gsfonts
+RUN_DEPENDS=	mftrace:print/mftrace \
+		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu
+LIB_DEPENDS=	libguile.so:lang/guile \
+		libgmp.so:math/gmp \
+		libfreetype.so:print/freetype2
 
 BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
 

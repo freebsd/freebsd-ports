@@ -44,31 +44,31 @@ STOCK_RESOLVER_DESC=	Use the stock resolver library
 
 UNBOUND_DESC=		Use unbound DNS library
 UNBOUND_CONFIGURE_WITH=	unbound
-UNBOUND_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
+UNBOUND_LIB_DEPENDS=	libunbound.so:dns/unbound
 
 FILTER_DESC=		OpenDKIM filter, requires libmilter/Sendmail
 FILTER_USE=		RC_SUBR=milter-opendkim
 
 CURL_DESC=		Use cURL for web queries
 CURL_CONFIGURE_WITH=	libcurl
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNUTLS_DESC=		Use GnuTLS instead of OpenSSL
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_CONFIGURE_OFF=	--with-openssl=${OPENSSLBASE}
 
 JANSSON_DESC=		Statistics and other output as JSON data
 JANSSON_CONFIGURE_WITH=	libjansson
-JANSSON_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson
+JANSSON_LIB_DEPENDS=	libjansson.so:devel/jansson
 
 LDNS_DESC=		Use LDNS library for DNS queries
 LDNS_CONFIGURE_WITH=	ldns
-LDNS_LIB_DEPENDS=	libldns.so:${PORTSDIR}/dns/ldns
+LDNS_LIB_DEPENDS=	libldns.so:dns/ldns
 
 LMDB_DESC=		Use Lightning Memory-Mapped DB key-value store
 LMDB_CONFIGURE_WITH=	lmdb
-LMDB_LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
 LUA_DESC=		Describe filter policy with lua
 LUA_CONFIGURE_WITH=	lua
@@ -76,13 +76,13 @@ LUA_USES=		lua
 
 MEMCACHED_DESC=		Use memcached as a data set
 MEMCACHED_CONFIGURE_WITH=	libmemcached
-MEMCACHED_LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
+MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 BDB_BASE_DESC=		Use Berkeley DB from base
 
 OPENDBX_DESC=		Store filter policies via OpenDBX
 OPENDBX_CONFIGURE_WITH=	odbx
-OPENDBX_LIB_DEPENDS=	libopendbx.so:${PORTSDIR}/databases/opendbx
+OPENDBX_LIB_DEPENDS=	libopendbx.so:databases/opendbx
 
 OPENLDAP_DESC=		Store filter policies in LDAP
 OPENLDAP_CONFIGURE_WITH=openldap

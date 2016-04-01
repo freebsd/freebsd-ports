@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to perform T-test on 2 independent samples
 
-BUILD_DEPENDS=	p5-Statistics-Descriptive>=0:${PORTSDIR}/math/p5-Statistics-Descriptive \
-		p5-Statistics-Distributions>=0.07:${PORTSDIR}/math/p5-Statistics-Distributions
+BUILD_DEPENDS=	p5-Statistics-Descriptive>=0:math/p5-Statistics-Descriptive \
+		p5-Statistics-Distributions>=0.07:math/p5-Statistics-Distributions
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

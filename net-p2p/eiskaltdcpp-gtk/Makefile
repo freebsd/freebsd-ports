@@ -11,8 +11,8 @@ COMMENT=	EiskaltDC++ Direct Connect client GTK GUI
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	eiskaltdcpp-data>=0:${PORTSDIR}/net-p2p/eiskaltdcpp-data
-LIB_DEPENDS=	libeiskaltdcpp.so:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
+RUN_DEPENDS=	eiskaltdcpp-data>=0:net-p2p/eiskaltdcpp-data
+LIB_DEPENDS=	libeiskaltdcpp.so:net-p2p/eiskaltdcpp-lib
 
 MASTERDIR=	${.CURDIR}/../eiskaltdcpp-lib
 
@@ -41,10 +41,10 @@ NOSOUND_CMAKE_ON=	-DUSE_LIBGNOME2:BOOL=OFF -DUSE_LIBCANBERRA:BOOL=OFF
 LIBGNOME2_USE=		gnome=libgnome
 LIBGNOME2_CMAKE_ON=	-DUSE_LIBGNOME2:BOOL=ON -DUSE_LIBCANBERRA:BOOL=OFF
 
-LIBCANBERRA_LIB_DEPENDS=libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
+LIBCANBERRA_LIB_DEPENDS=libcanberra-gtk.so:audio/libcanberra
 LIBCANBERRA_CMAKE_ON=	-DUSE_LIBGNOME2:BOOL=OFF -DUSE_LIBCANBERRA:BOOL=ON
 
-LIBNOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+LIBNOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 LIBNOTIFY_CMAKE_ON=	-DUSE_LIBNOTIFY:BOOL=ON
 LIBNOTIFY_CMAKE_OFF=	-DUSE_LIBNOTIFY:BOOL=OFF
 

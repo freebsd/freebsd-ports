@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Translates string using Babelfish
 
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes

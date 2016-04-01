@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to parse daily newsletters from freshmeat.net
 
-BUILD_DEPENDS=	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
+BUILD_DEPENDS=	p5-Mail-Tools>=0:mail/p5-Mail-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

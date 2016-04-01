@@ -12,7 +12,7 @@ COMMENT=	Formats an ASCII file for printing on a postscript printer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	libpaper.so:print/libpaper
 
 PORTSCOUT=	skipv:4.14
 
@@ -32,7 +32,7 @@ LIBS+=		-L${LOCALBASE}/lib
 
 PAPERSIZE?=
 .if ${PAPERSIZE:tl} == a4
-RUN_DEPENDS+=	${LOCALBASE}/etc/papersize:${PORTSDIR}/print/papersize-default-a4
+RUN_DEPENDS+=	${LOCALBASE}/etc/papersize:print/papersize-default-a4
 .endif
 
 OPTIONS_DEFINE=NLS I18N EMACS

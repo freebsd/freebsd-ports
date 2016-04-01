@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clutter GStreamer integration
 
-LIB_DEPENDS=	libclutter-1.0.so:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter
 
 USES=		gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix introspection:build

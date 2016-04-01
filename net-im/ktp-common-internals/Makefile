@@ -8,9 +8,9 @@ MASTER_SITES=	KDE/${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Telepathy internal library
 
-LIB_DEPENDS=	libtelepathy-qt4.so:${PORTSDIR}/net-im/telepathy-qt4 \
-		libtelepathy-logger-qt4.so:${PORTSDIR}/net-im/telepathy-logger-qt4
-RUN_DEPENDS=	${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
+LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4 \
+		libtelepathy-logger-qt4.so:net-im/telepathy-logger-qt4
+RUN_DEPENDS=	${LOCALBASE}/libexec/mission-control-5:net-im/telepathy-mission-control
 
 USE_KDE4=	kdeprefix kdelibs pimlibs automoc4
 USE_QT4=	declarative script \

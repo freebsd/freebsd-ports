@@ -12,7 +12,7 @@ COMMENT=	Allows users to change their passwords stored in a SQL database
 
 USE_SM_COMPAT=	yes
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:databases/pear-DB
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 

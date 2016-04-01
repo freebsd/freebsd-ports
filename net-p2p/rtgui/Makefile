@@ -8,7 +8,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Web based front end for rTorrent
 
-BUILD_DEPENDS+=	xmlrpc-c-config:${PORTSDIR}/net/xmlrpc-c
+BUILD_DEPENDS+=	xmlrpc-c-config:net/xmlrpc-c
 
 USES=		tar:tgz
 
@@ -22,11 +22,11 @@ OPTIONS_DEFAULTS=	APACHE
 
 .if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE_RUN=	22+
-BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_scgi.so:${PORTSDIR}/www/mod_scgi
+BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_scgi.so:www/mod_scgi
 .endif
 
 .if ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
+RUN_DEPENDS+=	lighttpd:www/lighttpd
 .endif
 
 USE_PHP=	xmlrpc session mbstring

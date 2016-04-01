@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Utilities for statistical testing of uniform random number generators
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake zip libtool
 GNU_CONFIGURE=	yes

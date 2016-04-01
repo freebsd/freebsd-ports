@@ -12,15 +12,15 @@ COMMENT=	Non-linear video editor
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
-		frei0r-plugins>=0:${PORTSDIR}/graphics/frei0r-plugins \
-		${PYTHON_PKGNAMEPREFIX}goocanvas>=0:${PORTSDIR}/graphics/py-goocanvas \
-		${PYTHON_PKGNAMEPREFIX}httplib2>=0:${PORTSDIR}/www/py-httplib2 \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}mlt>=0:${PORTSDIR}/multimedia/py-mlt \
-		${PYTHON_PKGNAMEPREFIX}xdg>=0:${PORTSDIR}/devel/py-xdg \
-		scrollkeeper-install:${PORTSDIR}/textproc/rarian \
-		sox:${PORTSDIR}/audio/sox
+RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
+		frei0r-plugins>=0:graphics/frei0r-plugins \
+		${PYTHON_PKGNAMEPREFIX}goocanvas>=0:graphics/py-goocanvas \
+		${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2 \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}mlt>=0:multimedia/py-mlt \
+		${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg \
+		scrollkeeper-install:textproc/rarian \
+		sox:audio/sox
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils

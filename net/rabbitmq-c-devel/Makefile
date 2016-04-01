@@ -13,7 +13,7 @@ COMMENT=	RabbitMQ C AMQP client library
 LICENSE=	GPLv2 MPL
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson
 
 CONFLICTS=	rabbitmq-c-[0-9]*
 
@@ -25,7 +25,7 @@ GH_ACCOUNT=	alanxz
 OPTIONS_DEFINE=	POPT
 OPTIONS_SUB=	yes
 POPT_DESC=	Popt support in tools
-POPT_LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+POPT_LIB_DEPENDS=	libpopt.so:devel/popt
 POPT_CFLAGS=	-I${LOCALBASE}/include
 POPT_LDFLAGS=	-L${LOCALBASE}/lib
 

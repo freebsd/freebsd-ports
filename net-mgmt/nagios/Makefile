@@ -12,8 +12,8 @@ COMMENT=	Powerful network monitoring system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libgd.so:graphics/gd
 
 PORTSCOUT=	limit:^3.
 
@@ -83,8 +83,8 @@ NANOSLEEP_DESC=		Use nanosleep in event timing
 EVENT_BROKER_DESC=	Enable event broker functionality
 UNHANDLED_HACK_DESC=	Display passive checks in unhandled queries
 
-MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/monitoring-plugins
-NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
+MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/monitoring-plugins
+NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 
 OPTIONS_SUB=
 

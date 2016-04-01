@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Popular programmable MUD client, with macro support and more
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-manpage --enable-version --enable-symlink \

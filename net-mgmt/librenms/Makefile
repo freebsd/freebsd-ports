@@ -37,14 +37,14 @@ WANT_PHP_CLI=	yes
 
 NO_BUILD=	yes
 
-RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool \
-		dot:${PORTSDIR}/graphics/graphviz \
-		Magick-config:${PORTSDIR}/graphics/ImageMagick \
-		mtr:${PORTSDIR}/net/mtr-nox11 \
-		${LOCALBASE}/share/pear/Net/IPv4.php:${PORTSDIR}/net/pear-Net_IPv4 \
-		${LOCALBASE}/share/pear/Net/IPv6.php:${PORTSDIR}/net/pear-Net_IPv6 \
-		snmpget:${PORTSDIR}/net-mgmt/net-snmp \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	rrdtool:databases/rrdtool \
+		dot:graphics/graphviz \
+		Magick-config:graphics/ImageMagick \
+		mtr:net/mtr-nox11 \
+		${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4 \
+		${LOCALBASE}/share/pear/Net/IPv6.php:net/pear-Net_IPv6 \
+		snmpget:net-mgmt/net-snmp \
+		bash:shells/bash
 
 OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES
 OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES
@@ -55,13 +55,13 @@ MYSQLD_DESC=	Use local MySQL server
 WMIC_DESC=	Enable support for WMI polling
 PYPOLLER_DESC=	Enable Python Poller Wrapper
 
-FPING_RUN_DEPENDS=	fping:${PORTSDIR}/net/fping
-IPMITOOL_RUN_DEPENDS=	ipmitool:${PORTSDIR}/sysutils/ipmitool
-LIBVIRT_RUN_DEPENDS=	virsh:${PORTSDIR}/devel/libvirt
-NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
-NMAP_RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
-PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:${PORTSDIR}/databases/py-MySQLdb
-WMIC_RUN_DEPENDS=	wmic:${PORTSDIR}/net-mgmt/wmi-client
+FPING_RUN_DEPENDS=	fping:net/fping
+IPMITOOL_RUN_DEPENDS=	ipmitool:sysutils/ipmitool
+LIBVIRT_RUN_DEPENDS=	virsh:devel/libvirt
+NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
+NMAP_RUN_DEPENDS=	nmap:security/nmap
+PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb
+WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 MYSQLD_USE=		MYSQL=server
 MYSQLD_USE_OFF=		MYSQL=client
 

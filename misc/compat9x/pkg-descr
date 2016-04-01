@@ -7,6 +7,6 @@ Ports usage example:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1000009
-LIB_DEPENDS+=	archive.5:${PORTSDIR}/misc/compat9x
+LIB_DEPENDS+=	archive.5:misc/compat9x
 .endif
 --

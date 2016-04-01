@@ -11,8 +11,8 @@ WRKSRC?=	${WRKDIR}/${PLUGIN_NAME}
 
 COMMENT?=	${PLUGIN_DESC} plugin for VerliHub - a Direct Connect protocol server
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
-RUN_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
+BUILD_DEPENDS+=	${LOCALBASE}/bin/verlihub:net-p2p/verlihub
+RUN_DEPENDS+=	${LOCALBASE}/bin/verlihub:net-p2p/verlihub
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

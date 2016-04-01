@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.centerim.org/download/releases/ \
 MAINTAINER=	frank@altpeter.de
 COMMENT=	Text mode menu- and window-driven IM interface
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		iconv gmake ncurses pkgconfig shebangfix
 USE_OPENSSL=	yes
@@ -48,7 +48,7 @@ PORTDOCS=	FAQ README
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 MULTIBYTE_CONFIGURE_ENABLE=locales-fix
-FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_WITH=	fribidi
 MSN_CONFIGURE_ENABLE=	msn
 YAHOO_CONFIGURE_ENABLE=	yahoo
@@ -57,9 +57,9 @@ IRC_CONFIGURE_ENABLE=	irc
 JABBER_CONFIGURE_ENABLE=jabber
 RSS_CONFIGURE_ENABLE=	rss
 LJ_CONFIGURE_ENABLE=	lj
-GG_LIB_DEPENDS=		libgadu.so:${PORTSDIR}/polish/libgadu
+GG_LIB_DEPENDS=		libgadu.so:polish/libgadu
 GG_CONFIGURE_ENABLE=	gg
-GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_OFF=	--with-gpgme-prefix=/nonexistent
 
 post-patch:

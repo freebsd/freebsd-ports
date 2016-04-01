@@ -13,7 +13,7 @@ COMMENT=	DHCP set of classes designed to handle basic DHCP handling
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+TEST_DEPENDS=	p5-Test-Warn>=0:devel/p5-Test-Warn
 
 USES=		perl5
 USE_PERL5=	modbuild

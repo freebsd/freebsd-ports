@@ -13,8 +13,8 @@ COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
+		libpcre.so:devel/pcre
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^3].* cyrus-imapd2[^3]-2.[^3].*
 
@@ -53,7 +53,7 @@ BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb-libdir=${LOCALBASE}/lib
 DRAC_DESC=		Enable DRAC support
 DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
-DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:mail/drac
 IDLED_DESC=		Enable IMAP idled support
 IDLED_CONFIGURE_ENABLE=	idled
 LDAP_PTLOADER_DESC=	Enable LDAP ptloader
@@ -79,7 +79,7 @@ PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
 REPLICATION_DESC=	Enable replication
 REPLICATION_CONFIGURE_ENABLE=replication
 SNMP_5_DESC=		Enable SNMP support
-SNMP_5_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_5_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_5_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
 SNMP_5_CONFIGURE_OFF=	--with-snmp=no
 SQLITE_DESC=		Enable SQLite backend (experimental)

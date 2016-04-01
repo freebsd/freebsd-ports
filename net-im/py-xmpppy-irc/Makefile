@@ -12,8 +12,8 @@ DISTNAME=	irc-transport-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xmpp to irc transport
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy \
-		${PYTHON_PKGNAMEPREFIX}irc>0:${PORTSDIR}/irc/py-irc
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:net-im/py-xmpppy \
+		${PYTHON_PKGNAMEPREFIX}irc>0:irc/py-irc
 
 USES=		python
 NO_BUILD=	yes

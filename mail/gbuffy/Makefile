@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/gbuffy-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ multiple mailbox "biff" program
 
-LIB_DEPENDS=	libPropList.so:${PORTSDIR}/devel/libPropList \
-		libcompface.so:${PORTSDIR}/mail/faces
+LIB_DEPENDS=	libPropList.so:devel/libPropList \
+		libcompface.so:mail/faces
 
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib

@@ -4,8 +4,8 @@ PORTNAME=	husky-hpt
 
 COMMENT=	Husky FTN tosser
 
-LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf \
-		libareafix.so:${PORTSDIR}/news/husky-areafix
+LIB_DEPENDS=	libfidoconfig.so:news/husky-fidoconf \
+		libareafix.so:news/husky-areafix
 
 USES+=		makeinfo
 ALL_TARGET=	all doc

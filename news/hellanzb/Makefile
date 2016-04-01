@@ -12,11 +12,11 @@ COMMENT=	Nzb downloader and post processor
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	par2:${PORTSDIR}/archivers/par2cmdline \
-		flac:${PORTSDIR}/audio/flac \
-		shorten:${PORTSDIR}/audio/shorten \
-		${PYTHON_PKGNAMEPREFIX}yenc>=0:${PORTSDIR}/news/py-yenc \
-		mac:${PORTSDIR}/audio/mac
+RUN_DEPENDS=	par2:archivers/par2cmdline \
+		flac:audio/flac \
+		shorten:audio/shorten \
+		${PYTHON_PKGNAMEPREFIX}yenc>=0:news/py-yenc \
+		mac:audio/mac
 
 USE_PYTHON=	distutils
 USES=		python:2 twisted:run,web
@@ -29,9 +29,9 @@ OPTIONS_DEFINE=	DOCS
 
 # more fully-featured rar needs i386
 .if ${ARCH} == "i386"
-RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
+RUN_DEPENDS+=	rar:archivers/rar
 .else
-RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
+RUN_DEPENDS+=	unrar:archivers/unrar
 .endif
 
 post-install-DOCS-on:

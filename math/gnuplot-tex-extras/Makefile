@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-tex-extras
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Extra files for Gnuplot TeX support
 
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USE_TEX=	texmf
 NO_BUILD=	yes

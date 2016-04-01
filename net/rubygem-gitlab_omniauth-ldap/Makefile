@@ -10,10 +10,10 @@ COMMENT=	LDAP strategy for OmniAuth
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-net-ldap>=0.9:${PORTSDIR}/net/rubygem-net-ldap \
-		rubygem-omniauth>=1.0:${PORTSDIR}/security/rubygem-omniauth \
-		rubygem-pyu-ruby-sasl>=0.0.3.1:${PORTSDIR}/security/rubygem-pyu-ruby-sasl \
-		rubygem-rubyntlm>=0.3:${PORTSDIR}/net/rubygem-rubyntlm
+RUN_DEPENDS=	rubygem-net-ldap>=0.9:net/rubygem-net-ldap \
+		rubygem-omniauth>=1.0:security/rubygem-omniauth \
+		rubygem-pyu-ruby-sasl>=0.0.3.1:security/rubygem-pyu-ruby-sasl \
+		rubygem-rubyntlm>=0.3:net/rubygem-rubyntlm
 
 NO_ARCH=	yes
 USE_RUBY=	yes

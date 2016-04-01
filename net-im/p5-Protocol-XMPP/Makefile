@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Protocol-level support for XMPP interaction
 
-RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
-		p5-XML-LibXML-SAX-ChunkParser>=0.00003:${PORTSDIR}/textproc/p5-XML-LibXML-SAX-ChunkParser
+RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
+		p5-XML-LibXML-SAX-ChunkParser>=0.00003:textproc/p5-XML-LibXML-SAX-ChunkParser
 
 USES=		perl5
 USE_PERL5=	configure

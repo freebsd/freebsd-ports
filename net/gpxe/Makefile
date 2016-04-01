@@ -13,8 +13,8 @@ COMMENT=	Open Source (GPL) gPXE network bootloader
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux \
-		mkisofs:${PORTSDIR}/sysutils/cdrtools
+BUILD_DEPENDS=	syslinux:sysutils/syslinux \
+		mkisofs:sysutils/cdrtools
 
 USES=		gmake perl5
 MAKE_ARGS=	PERL=${PERL}

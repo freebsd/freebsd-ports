@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-python
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	python binding for libproxy
 
-RUN_DEPENDS=	libproxy>=${PORTVERSION}:${PORTSDIR}/net/libproxy
+RUN_DEPENDS=	libproxy>=${PORTVERSION}:net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr

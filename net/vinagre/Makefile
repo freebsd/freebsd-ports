@@ -11,11 +11,11 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgtk-vnc-2.0.so:${PORTSDIR}/net/gtk-vnc \
-		libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libsecret-1.so:${PORTSDIR}/security/libsecret
-RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgtk-vnc-2.0.so:net/gtk-vnc \
+		libgdbm.so:databases/gdbm \
+		libsecret-1.so:security/libsecret
+RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme
 
 PORTSCOUT=	limitw:1,even
 
@@ -34,19 +34,19 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	AVAHI SPICE TELEPATHY RDP DOCS
 OPTIONS_DEFAULT=AVAHI SPICE TELEPATHY RDP
 AVAHI_CONFIGURE_WITH=	avahi
-AVAHI_LIB_DEPENDS=	libavahi-ui-gtk3.so:${PORTSDIR}/net/avahi-gtk3
+AVAHI_LIB_DEPENDS=	libavahi-ui-gtk3.so:net/avahi-gtk3
 SPICE_DESC=	SPICE protocol support
 SPICE_CONFIGURE_ENABLE=	spice
-SPICE_BUILD_DEPENDS=	spice-gtk>=0.30_1:${PORTSDIR}/deskutils/spice-gtk
-SPICE_LIB_DEPENDS=	libspice-client-gtk-3.0.so:${PORTSDIR}/deskutils/spice-gtk
+SPICE_BUILD_DEPENDS=	spice-gtk>=0.30_1:deskutils/spice-gtk
+SPICE_LIB_DEPENDS=	libspice-client-gtk-3.0.so:deskutils/spice-gtk
 TELEPATHY_DESC=	Telepathy integration
 TELEPATHY_CONFIGURE_WITH=	telepathy
-TELEPATHY_LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-			libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+TELEPATHY_LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib \
+			libdbus-glib-1.so:devel/dbus-glib
 RDP_DESC=	MS Windows remote desktop support
 RDP_CONFIGURE_ENABLE=	rdp
-RDP_BUILD_DEPENDS=	xfreerdp:${PORTSDIR}/net/freerdp
-RDP_RUN_DEPENDS=	xfreerdp:${PORTSDIR}/net/freerdp
+RDP_BUILD_DEPENDS=	xfreerdp:net/freerdp
+RDP_RUN_DEPENDS=	xfreerdp:net/freerdp
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

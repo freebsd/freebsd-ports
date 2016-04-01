@@ -10,8 +10,8 @@ MASTER_SITES=	SF/netdude/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating libpcap/tcpdump trace files
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libpcapnav.so:${PORTSDIR}/net/libpcapnav
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libpcapnav.so:net/libpcapnav
 
 USES=		libtool
 GNU_CONFIGURE=	yes

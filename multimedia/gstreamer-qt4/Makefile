@@ -15,7 +15,7 @@ COMMENT=	Qt4 bindings for GStreamer multimedia library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		bison cmake gmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes

@@ -14,7 +14,7 @@ COMMENT=	Lightweight Jabber client library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libidn.so:dns/libidn
 
 USES=		gettext gmake libtool pkgconfig tar:bzip2
 USE_GNOME=	glib20
@@ -32,12 +32,12 @@ OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 CONFIGURE_ARGS+=--with-ssl=gnutls
 .elif ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-ssl=openssl
-RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 .else
 CONFIGURE_ARGS+=--without-ssl
 .endif

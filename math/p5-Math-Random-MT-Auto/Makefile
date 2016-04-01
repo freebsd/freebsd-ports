@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Auto-seeded Mersenne Twister PRNGs
 
-BUILD_DEPENDS=	p5-Exception-Class>=1.32:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Object-InsideOut>=3.88:${PORTSDIR}/devel/p5-Object-InsideOut
+BUILD_DEPENDS=	p5-Exception-Class>=1.32:devel/p5-Exception-Class \
+		p5-Object-InsideOut>=3.88:devel/p5-Object-InsideOut
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+TEST_DEPENDS=	p5-libwww>=0:www/p5-libwww
 
 USES=		perl5
 USE_PERL5=	configure

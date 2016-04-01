@@ -11,8 +11,8 @@ COMMENT=	Program that captures data transmitted as part of TCP connections
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/icl/interval.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/icl/interval.hpp:devel/boost-libs
+LIB_DEPENDS=	libcairo.so:graphics/cairo
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

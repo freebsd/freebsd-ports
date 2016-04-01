@@ -8,14 +8,14 @@ CATEGORIES=	net pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR DNSBL Checker
 
-BUILD_DEPENDS=	${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite \
-		${PEARDIR}/Net/CheckIP.php:${PORTSDIR}/net/pear-Net_CheckIP \
-		${PEARDIR}/Net/DNS/RR/A.php:${PORTSDIR}/dns/pear-Net_DNS \
-		${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
-RUN_DEPENDS:=	${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite \
-		${PEARDIR}/Net/CheckIP.php:${PORTSDIR}/net/pear-Net_CheckIP \
-		${PEARDIR}/Net/DNS/RR/A.php:${PORTSDIR}/dns/pear-Net_DNS \
-		${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
+BUILD_DEPENDS=	${PEARDIR}/Cache/Lite.php:sysutils/pear-Cache_Lite \
+		${PEARDIR}/Net/CheckIP.php:net/pear-Net_CheckIP \
+		${PEARDIR}/Net/DNS/RR/A.php:dns/pear-Net_DNS \
+		${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2
+RUN_DEPENDS:=	${PEARDIR}/Cache/Lite.php:sysutils/pear-Cache_Lite \
+		${PEARDIR}/Net/CheckIP.php:net/pear-Net_CheckIP \
+		${PEARDIR}/Net/DNS/RR/A.php:dns/pear-Net_DNS \
+		${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2
 
 USE_PHP=	yes
 USES=	pear

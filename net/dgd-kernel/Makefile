@@ -12,7 +12,7 @@ DISTNAME=	kernellib-${PORTVERSION}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Kernel mudlib, for use with DGD
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/dgd:${PORTSDIR}/net/dgd
+RUN_DEPENDS=	${LOCALBASE}/sbin/dgd:net/dgd
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}

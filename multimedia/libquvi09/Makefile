@@ -14,10 +14,10 @@ COMMENT=	Cross-platform library for parsing flash media stream URLs
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libquvi-scripts09>=0.9:${PORTSDIR}/multimedia/libquvi-scripts09
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libproxy.so:${PORTSDIR}/net/libproxy \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+BUILD_DEPENDS=	libquvi-scripts09>=0.9:multimedia/libquvi-scripts09
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libproxy.so:net/libproxy \
+		libgcrypt.so:security/libgcrypt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS

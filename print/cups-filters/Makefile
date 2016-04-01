@@ -8,12 +8,12 @@ MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Additional backends, filters and other software for CUPS
 
-LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libqpdf.so:${PORTSDIR}/print/qpdf \
-		libcupsimage.so:${PORTSDIR}/print/cups \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libpoppler.so:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
+		libqpdf.so:print/qpdf \
+		libcupsimage.so:print/cups \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libpoppler.so:graphics/poppler
 
 CONFLICTS=	cups-pstoraster-[0-9]* foomatic-filters-[0-9]*
 
@@ -47,26 +47,26 @@ OPTIONS_SUB=			yes
 
 BRAILLE_CONFIGURE_ENABLE=	braille
 BRAILLE_DESC=			Braille embosser support
-BRAILLE_LIB_DEPENDS=		liblouis.so:${PORTSDIR}/devel/liblouis \
-#				liblouisutdml.so:${PORTSDIR}/devel/liblouisutdml
-BRAILLE_RUN_DEPENDS=		convert:${PORTSDIR}/graphics/ImageMagick \
-				pdftotext:${PORTSDIR}/graphics/poppler-utils \
-				bash:${PORTSDIR}/shells/bash
+BRAILLE_LIB_DEPENDS=		liblouis.so:devel/liblouis \
+#				liblouisutdml.so:devel/liblouisutdml
+BRAILLE_RUN_DEPENDS=		convert:graphics/ImageMagick \
+				pdftotext:graphics/poppler-utils \
+				bash:shells/bash
 
 COLORD_CONFIGURE_ENABLE=	dbus
 COLORD_DESC=			Get ICC color profiles from colord (via D-Bus)
-COLORD_LIB_DEPENDS=		libdbus-1.so:${PORTSDIR}/devel/dbus
-COLORD_RUN_DEPENDS=		colord>0:${PORTSDIR}/graphics/colord
+COLORD_LIB_DEPENDS=		libdbus-1.so:devel/dbus
+COLORD_RUN_DEPENDS=		colord>0:graphics/colord
 
 IJS_CONFIGURE_ENABLE=		ijs
 IJS_DESC=			Support PPD files that use pdftoijs
-IJS_LIB_DEPENDS=		libijs.so:${PORTSDIR}/print/libijs
+IJS_LIB_DEPENDS=		libijs.so:print/libijs
 
 IMAGEFILTERS_CONFIGURE_ENABLE=	imagefilters
 IMAGEFILTERS_CONFIGURE_WITH=	jpeg png tiff
 IMAGEFILTERS_DESC=		Support printing image files
-IMAGEFILTERS_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-				libpng.so:${PORTSDIR}/graphics/png
+IMAGEFILTERS_LIB_DEPENDS=	libtiff.so:graphics/tiff \
+				libpng.so:graphics/png
 IMAGEFILTERS_USES=		jpeg
 
 # cups-browsed(8) options
@@ -74,7 +74,7 @@ IMAGEFILTERS_USES=		jpeg
 AVAHI_CONFIGURE_ENABLE=		avahi
 AVAHI_CONFIGURE_OFF=		--with-browseremoteprotocols=cups
 AVAHI_CONFIGURE_ON=		--with-browseremoteprotocols="dnssd cups"
-AVAHI_LIB_DEPENDS=		libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_LIB_DEPENDS=		libavahi-client.so:net/avahi-app
 AVAHI_SUB_LIST=			AVAHI_DAEMON=avahi_daemon
 AVAHI_SUB_LIST_OFF=		AVAHI_DAEMON=
 
@@ -88,13 +88,13 @@ LDAP_USE=			OPENLDAP=yes
 GS_CONFIGURE_ON=		--with-pdftops=gs
 GS_DESC=			Ghostscript gs(1)
 
-HYBRID_BUILD_DEPENDS=		pdftops:${PORTSDIR}/graphics/poppler-utils
-HYBRID_RUN_DEPENDS=		pdftops:${PORTSDIR}/graphics/poppler-utils
+HYBRID_BUILD_DEPENDS=		pdftops:graphics/poppler-utils
+HYBRID_RUN_DEPENDS=		pdftops:graphics/poppler-utils
 HYBRID_CONFIGURE_ON=		--with-pdftops=hybrid
 HYBRID_DESC=			Ghostscript or Poppler depending on printer
 
-PDFTOPS_BUILD_DEPENDS=		pdftops:${PORTSDIR}/graphics/poppler-utils
-PDFTOPS_RUN_DEPENDS=		pdftops:${PORTSDIR}/graphics/poppler-utils
+PDFTOPS_BUILD_DEPENDS=		pdftops:graphics/poppler-utils
+PDFTOPS_RUN_DEPENDS=		pdftops:graphics/poppler-utils
 PDFTOPS_CONFIGURE_ON=		--with-pdftops=pdftops
 PDFTOPS_DESC=			Poppler pdftops(1)
 

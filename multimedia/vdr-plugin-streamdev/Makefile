@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME:S/plugin-//}${EXTRACT_SUFX}:release
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - stream device plugin
 
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	bash:shells/bash
 
 USES=		shebangfix tar:tgz
 SHEBANG_FILES=	streamdev-server/externremux.sh

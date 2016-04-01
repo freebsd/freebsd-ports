@@ -8,7 +8,7 @@ CATEGORIES=	net
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Tools for replicating the Apple's Software Update Service
 
-RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	curl:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wdas

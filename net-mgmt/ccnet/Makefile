@@ -12,16 +12,16 @@ COMMENT=	Framework for writing networked applications
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libsearpc.so:${PORTSDIR}/devel/libsearpc \
-		libglib-2.0.so:${PORTSDIR}/devel/glib20 \
-		libgobject-2.0.so:${PORTSDIR}/devel/glib20 \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libzdb.so:${PORTSDIR}/databases/libzdb \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libevent.so:${PORTSDIR}/devel/libevent2 \
-		libjansson.so:${PORTSDIR}/devel/jansson \
-		libldap.so:${PORTSDIR}/net/openldap24-client
+BUILD_DEPENDS=	valac:lang/vala
+LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
+		libglib-2.0.so:devel/glib20 \
+		libgobject-2.0.so:devel/glib20 \
+		libsqlite3.so:databases/sqlite3 \
+		libzdb.so:databases/libzdb \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libevent.so:devel/libevent2 \
+		libjansson.so:devel/jansson \
+		libldap.so:net/openldap24-client
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen

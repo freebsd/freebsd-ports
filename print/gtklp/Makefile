@@ -14,7 +14,7 @@ COMMENT=	GTK interface to cups
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
+LIB_DEPENDS=	libcups.so:print/cups
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -11,8 +11,8 @@ COMMENT=	Helper for generating HTML mails in Rails applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-railties4>=3.0:${PORTSDIR}/www/rubygem-railties4 \
-		rubygem-roadie>=3.1:${PORTSDIR}/mail/rubygem-roadie
+RUN_DEPENDS=	rubygem-railties4>=3.0:www/rubygem-railties4 \
+		rubygem-roadie>=3.1:mail/rubygem-roadie
 
 NO_ARCH=	yes
 USE_RUBY=	yes

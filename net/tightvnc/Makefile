@@ -14,9 +14,9 @@ COMMENT=	Enhanced version of VNC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
-RUN_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
-		xauth:${PORTSDIR}/x11/xauth \
-		xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts
+RUN_DEPENDS=	showrgb:x11/rgb \
+		xauth:x11/xauth \
+		xorg-fonts>=7.2:x11-fonts/xorg-fonts
 
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]*

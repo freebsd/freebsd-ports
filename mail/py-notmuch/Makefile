@@ -12,7 +12,7 @@ COMMENT=	Python binding of the notmuch mail search and indexing library
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../../COPYING-GPL-3
 
-LIB_DEPENDS=	libnotmuch.so:${PORTSDIR}/mail/notmuch
+LIB_DEPENDS=	libnotmuch.so:mail/notmuch
 
 WRKSRC_SUBDIR=	bindings/python
 

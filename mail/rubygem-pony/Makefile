@@ -11,7 +11,7 @@ COMMENT=	Express way to send mail from Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-mail>=2.0:${PORTSDIR}/mail/rubygem-mail
+RUN_DEPENDS=	rubygem-mail>=2.0:mail/rubygem-mail
 
 NO_ARCH=	yes
 

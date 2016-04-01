@@ -12,23 +12,23 @@ COMMENT=		Open SIP Server
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-LIB_DEPENDS=		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-			libxmlrpc.so:${PORTSDIR}/net/xmlrpc-c-devel \
-			libpcre.so:${PORTSDIR}/devel/pcre \
-			libconfuse.so:${PORTSDIR}/devel/libconfuse \
-			librabbitmq.so:${PORTSDIR}/net/rabbitmq-c-devel \
-			libhiredis.so:${PORTSDIR}/databases/hiredis \
-			libexpat.so:${PORTSDIR}/textproc/expat2 \
-			libjson-c.so:${PORTSDIR}/devel/json-c
-BUILD_DEPENDS=		ginstall:${PORTSDIR}/sysutils/coreutils \
-			gtar:${PORTSDIR}/archivers/gtar \
-			gm4:${PORTSDIR}/devel/m4 \
-			redis-server:${PORTSDIR}/databases/redis-devel \
-			python2:${PORTSDIR}/lang/python2 \
-			python:${PORTSDIR}/lang/python
-RUN_DEPENDS=		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-			${LOCALBASE}/bin/python2:${PORTSDIR}/lang/python2 \
-			${LOCALBASE}/bin/grep:${PORTSDIR}/textproc/gnugrep
+LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
+			libxmlrpc.so:net/xmlrpc-c-devel \
+			libpcre.so:devel/pcre \
+			libconfuse.so:devel/libconfuse \
+			librabbitmq.so:net/rabbitmq-c-devel \
+			libhiredis.so:databases/hiredis \
+			libexpat.so:textproc/expat2 \
+			libjson-c.so:devel/json-c
+BUILD_DEPENDS=		ginstall:sysutils/coreutils \
+			gtar:archivers/gtar \
+			gm4:devel/m4 \
+			redis-server:databases/redis-devel \
+			python2:lang/python2 \
+			python:lang/python
+RUN_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash \
+			${LOCALBASE}/bin/python2:lang/python2 \
+			${LOCALBASE}/bin/grep:textproc/gnugrep
 
 GINSTALL=		ginstall
 
@@ -55,12 +55,12 @@ LDAP_USE=		OPENLDAP=client
 MYSQL_USE=		MYSQL=client
 PGSQL_USES+=		pgsql
 
-PGSQL_BUILD_DEPENDS+=	p5-DBD-Pg>=3.4:${PORTSDIR}/databases/p5-DBD-Pg
-RADIUS_BUILD_DEPENDS+=	radiusclient:${PORTSDIR}/net/radiusclient
-HTTP_LIB_DEPENDS+=	libmicrohttpd.so:${PORTSDIR}/www/libmicrohttpd
-GEOIP_LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
-MEMCACHED_LIB_DEPENDS+=	libmemcached.so:${PORTSDIR}/databases/libmemcached
-UNIXODBC_LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
+PGSQL_BUILD_DEPENDS+=	p5-DBD-Pg>=3.4:databases/p5-DBD-Pg
+RADIUS_BUILD_DEPENDS+=	radiusclient:net/radiusclient
+HTTP_LIB_DEPENDS+=	libmicrohttpd.so:www/libmicrohttpd
+GEOIP_LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
+MEMCACHED_LIB_DEPENDS+=	libmemcached.so:databases/libmemcached
+UNIXODBC_LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 
 SHEBANG_FILES=		scripts/osipsconsole \
 			modules/jabber/doc/jabberreg.pl \

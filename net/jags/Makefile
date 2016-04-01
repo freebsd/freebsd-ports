@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Jags/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JAGS - Just Another GTK+ Samba Client
 
-RUN_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
+RUN_DEPENDS=	smbclient:${SAMBA_PORT}
 
 SAMBA_PORT?=	net/samba36
 

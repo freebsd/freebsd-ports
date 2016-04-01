@@ -19,7 +19,7 @@ PLIST_FILES=	bin/44bsd-rdist \
 .include <bsd.port.pre.mk>
 
 .if  ${OSVERSION} >= 1000055
-BUILD_DEPENDS=    rcs:${PORTSDIR}/devel/rcs57
+BUILD_DEPENDS=    rcs:devel/rcs57
 .endif
 
 post-extract:

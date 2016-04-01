@@ -12,11 +12,11 @@ COMMENT=	Extract as much information as possible from a video file
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babelfish>=0.5.4:${PORTSDIR}/devel/py-babelfish \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}stevedore>=0.14:${PORTSDIR}/devel/py-stevedore \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}enzyme>=0:${PORTSDIR}/multimedia/py-enzyme
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babelfish>=0.5.4:devel/py-babelfish \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}stevedore>=0.14:devel/py-stevedore \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}enzyme>=0:multimedia/py-enzyme
 
 USES=		python
 USE_PYTHON=	distutils autoplist

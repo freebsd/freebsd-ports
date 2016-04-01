@@ -16,8 +16,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # Only autoreconf stage and sigrok plugin need GLIB:
-BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/glib-2.0.m4:${PORTSDIR}/devel/glib20
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/glib-2.0.m4:devel/glib20
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		autoreconf gmake libtool pkgconfig shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
@@ -108,13 +108,13 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--without-oracle \
 		--disable-turbostat
 
-CGI_RUN_DEPENDS=		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-				p5-CGI>=0:${PORTSDIR}/www/p5-CGI \
-				p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
-				p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
+CGI_RUN_DEPENDS=		p5-URI>=0:net/p5-URI \
+				p5-CGI>=0:www/p5-CGI \
+				p5-Data-Dumper>=0:devel/p5-Data-Dumper \
+				p5-HTML-Parser>=0:www/p5-HTML-Parser
 CGI_IMPLIES=			RRDTOOL
 
-CURL_LIB_DEPENDS=		libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
 CURL_CONFIGURE_ENABLE=		apache curl nginx write_http
 CURL_CONFIGURE_WITH=		libcurl=${LOCALBASE}
 
@@ -126,37 +126,37 @@ CURL_XML_CONFIGURE_ENABLE=	ascent bind curl_xml
 
 DEBUG_CONFIGURE_ENABLE=		debug
 
-DBI_LIB_DEPENDS=		libdbi.so:${PORTSDIR}/databases/libdbi
+DBI_LIB_DEPENDS=		libdbi.so:databases/libdbi
 DBI_CONFIGURE_WITH=		libdbi=${LOCALBASE}
 DBI_CONFIGURE_ENABLE=		dbi
 DBI_CFLAGS=			-Wno-deprecated-declarations
 
-GCRYPT_LIB_DEPENDS=		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+GCRYPT_LIB_DEPENDS=		libgcrypt.so:security/libgcrypt
 GCRYPT_CONFIGURE_WITH=		-with-libgcrypt=${LOCALBASE}
 GCRYPT_LIBS=			-lgcrypt
 
-IPMI_LIB_DEPENDS=		libOpenIPMI.so:${PORTSDIR}/sysutils/openipmi
+IPMI_LIB_DEPENDS=		libOpenIPMI.so:sysutils/openipmi
 IPMI_CONFIGURE_ENABLE=		ipmi
 
-JSON_LIB_DEPENDS=		libyajl.so:${PORTSDIR}/devel/yajl
+JSON_LIB_DEPENDS=		libyajl.so:devel/yajl
 JSON_CONFIGURE_WITH=		libyajl=${LOCALBASE}
 
-KAFKA_LIB_DEPENDS=		librdkafka.so:${PORTSDIR}/net/librdkafka
+KAFKA_LIB_DEPENDS=		librdkafka.so:net/librdkafka
 KAFKA_CONFIGURE_ENABLE=		write_kafka
 
 LOGSTASH_CONFIGURE_ENABLE=	log_logstash
 LOGSTASH_IMPLIES=		JSON
 
-MEMCACHEC_LIB_DEPENDS=		libmemcached.so:${PORTSDIR}/databases/libmemcached
+MEMCACHEC_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 MEMCACHEC_CONFIGURE_ENABLE=	memcachec
 MEMCACHEC_CONFIGURE_WITH=	libmemcached=${LOCALBASE}
 
-MODBUS_LIB_DEPENDS=		libmodbus.so:${PORTSDIR}/comms/libmodbus
+MODBUS_LIB_DEPENDS=		libmodbus.so:comms/libmodbus
 MODBUS_CONFIGURE_ENABLE=	modbus
 MODBUS_CONFIGURE_WITH=		libmodbus=use_pkgconfig
 
-MONGODB_LIB_DEPENDS=		libmongoc-1.0.so:${PORTSDIR}/devel/mongo-c-driver
-MONGODB_LIB_DEPENDS+=		libbson-1.0.so:${PORTSDIR}/devel/libbson
+MONGODB_LIB_DEPENDS=		libmongoc-1.0.so:devel/mongo-c-driver
+MONGODB_LIB_DEPENDS+=		libbson-1.0.so:devel/libbson
 MONGODB_CONFIGURE_ENABLE=	write_mongodb
 MONGODB_CONFIGURE_WITH=		libmongoc=${LOCALBASE}
 MONGODB_BROKEN=			fails to configure with write_mongodb option
@@ -165,21 +165,21 @@ MYSQL_USE=			mysql=yes
 MYSQL_CONFIGURE_ENABLE=		mysql
 MYSQL_CONFIGURE_WITH=		libmysql=${LOCALBASE}
 
-NOTIFYDESKTOP_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFYDESKTOP_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFYDESKTOP_CONFIGURE_ENABLE=	notify_desktop
 NOTIFYDESKTOP_CONFIGURE_WITH=	libnotify=${LOCALBASE}
 
-NOTIFYEMAIL_LIB_DEPENDS=	libesmtp.so:${PORTSDIR}/mail/libesmtp
+NOTIFYEMAIL_LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 NOTIFYEMAIL_CONFIGURE_ENABLE=	notify_email
 NOTIFYEMAIL_CONFIGURE_WITH=	libesmtp=${LOCALBASE}
 
-NUTUPS_LIB_DEPENDS=		libupsclient.so:${PORTSDIR}/sysutils/nut
+NUTUPS_LIB_DEPENDS=		libupsclient.so:sysutils/nut
 NUTUPS_CONFIGURE_ENABLE=	nut
 NUTUPS_CONFIGURE_WITH=		upsclient=${LOCALBASE}
 
 OLSRD_CONFIGURE_ENABLE=		olsrd
 
-ONEWIRE_LIB_DEPENDS=		libow.so:${PORTSDIR}/comms/owfs
+ONEWIRE_LIB_DEPENDS=		libow.so:comms/owfs
 ONEWIRE_CONFIGURE_ENABLE=	onewire
 ONEWIRE_CONFIGURE_WITH=		libowcapi=${LOCALBASE}
 
@@ -195,10 +195,10 @@ PGSQL_USES=			pgsql
 PGSQL_CONFIGURE_ENABLE=		postgresql
 PGSQL_CONFIGURE_WITH=		postgresql=${LOCALBASE} libpq
 
-PINBA_LIB_DEPENDS=		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+PINBA_LIB_DEPENDS=		libprotobuf-c.so:devel/protobuf-c
 PINBA_CONFIGURE_ENABLE=		pinba
 
-PING_LIB_DEPENDS=		liboping.so:${PORTSDIR}/net/liboping
+PING_LIB_DEPENDS=		liboping.so:net/liboping
 PING_CONFIGURE_ENABLE=		ping
 PING_CONFIGURE_WITH=		liboping=${LOCALBASE}
 
@@ -206,59 +206,59 @@ PYTHON_USES=			python:2
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_CONFIGURE_WITH=		python=${PYTHON_CMD}
 
-RABBITMQ_LIB_DEPENDS=		librabbitmq.so:${PORTSDIR}/net/rabbitmq-c
+RABBITMQ_LIB_DEPENDS=		librabbitmq.so:net/rabbitmq-c
 RABBITMQ_CONFIGURE_ENABLE=	rabbitmq
 RABBITMQ_CONFIGURE_WITH=	librabbitmq=${LOCALBASE}
 
-REDIS_LIB_DEPENDS=		libhiredis.so:${PORTSDIR}/databases/hiredis
+REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
 REDIS_CONFIGURE_ENABLE=		redis write_redis
 REDIS_CONFIGURE_WITH=		libhiredis=${LOCALBASE}
 
-RIEMANN_LIB_DEPENDS=		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
+RIEMANN_LIB_DEPENDS=		libprotobuf-c.so:devel/protobuf-c
 RIEMANN_CONFIGURE_ENABLE=	write_riemann
 
-ROUTEROS_LIB_DEPENDS=		librouteros.so:${PORTSDIR}/net/librouteros
+ROUTEROS_LIB_DEPENDS=		librouteros.so:net/librouteros
 ROUTEROS_CONFIGURE_ENABLE=	routeros
 ROUTEROS_CONFIGURE_WITH=	librouteros=${LOCALBASE}
 
-RRDTOOL_LIB_DEPENDS=		librrd.so:${PORTSDIR}/databases/rrdtool
+RRDTOOL_LIB_DEPENDS=		librrd.so:databases/rrdtool
 RRDTOOL_CONFIGURE_ENABLE=	rrdcached rrdtool
 RRDTOOL_CONFIGURE_WITH=		librrd=${LOCALBASE}
 
 SIGROK_USE=			GNOME=glib20
 SIGROK_CFLAGS=			`pkg-config --cflags glib-2.0`
-SIGROK_LIB_DEPENDS=		libsigrok.so:${PORTSDIR}/devel/libsigrok
+SIGROK_LIB_DEPENDS=		libsigrok.so:devel/libsigrok
 SIGROK_CONFIGURE_ENABLE=	sigrok
 SIGROK_CONFIGURE_WITH=		libsigrok
 
-SNMP_LIB_DEPENDS=		libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=		libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ENABLE=		snmp
 SNMP_CONFIGURE_WITH=		libnetsnmp
 
 STATSD_CONFIGURE_ENABLE=	statsd
 
-TOKYOTYRANT_LIB_DEPENDS=	libtokyotyrant.so:${PORTSDIR}/databases/tokyotyrant
+TOKYOTYRANT_LIB_DEPENDS=	libtokyotyrant.so:databases/tokyotyrant
 TOKYOTYRANT_CONFIGURE_ENABLE=	tokyotyrant
 TOKYOTYRANT_CONFIGURE_WITH=	libtokyotyrant=${LOCALBASE}
 
-VARNISH_LIB_DEPENDS=		libvarnishapi.so:${PORTSDIR}/www/varnish4
+VARNISH_LIB_DEPENDS=		libvarnishapi.so:www/varnish4
 VARNISH_CONFIGURE_ENABLE=	varnish
 VARNISH_CONFIGURE_WITH=		libvarnish=${LOCALBASE}
 
 VIRT_IMPLIES=			XML
-VIRT_LIB_DEPENDS=		libvirt.so:${PORTSDIR}/devel/libvirt
+VIRT_LIB_DEPENDS=		libvirt.so:devel/libvirt
 VIRT_CONFIGURE_ENABLE=		virt
 VIRT_CONFIGURE_WITH=		virt=${LOCALBASE}
 
-XML_LIB_DEPENDS=		libxml2.so:${PORTSDIR}/textproc/libxml2
+XML_LIB_DEPENDS=		libxml2.so:textproc/libxml2
 XML_CONFIGURE_WITH=		libxml2=${LOCALBASE}
 
 XMMS_CFLAGS=			`xmms-config --cflags`
-XMMS_LIB_DEPENDS=		libxmms.so:${PORTSDIR}/multimedia/xmms
+XMMS_LIB_DEPENDS=		libxmms.so:multimedia/xmms
 XMMS_CONFIGURE_ENABLE=		xmms
 XMMS_CONFIGURE_WITH=		libxmms=${LOCALBASE}
 
-ZOOKEEPER_LIB_DEPENDS=		libzookeeper_mt.so:${PORTSDIR}/devel/libzookeeper
+ZOOKEEPER_LIB_DEPENDS=		libzookeeper_mt.so:devel/libzookeeper
 ZOOKEEPER_CONFIGURE_ENABLE=	zookeeper
 ZOOKEEPER_CONFIGURE_WITH=	libzookeeper=${LOCALBASE}
 

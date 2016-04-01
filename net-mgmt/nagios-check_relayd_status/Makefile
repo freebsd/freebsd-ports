@@ -13,7 +13,7 @@ COMMENT=	Nagios plug-in to check on the status of relayd
 
 LICENSE=	MPL
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/relayctl:${PORTSDIR}/net/relayd
+RUN_DEPENDS=	${LOCALBASE}/sbin/relayctl:net/relayd
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

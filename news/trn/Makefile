@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Threaded Read News newsreader
 
-RUN_DEPENDS=	munpack:${PORTSDIR}/converters/mpack
+RUN_DEPENDS=	munpack:converters/mpack
 
 CONFLICTS_INSTALL=trn-4.[0-9]*
 

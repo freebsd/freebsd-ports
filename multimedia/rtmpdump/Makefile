@@ -11,7 +11,7 @@ COMMENT=	RTMP streams download utility
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
+LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 
 USES=		pkgconfig tar:bz2
 USE_OPENSSL=	yes

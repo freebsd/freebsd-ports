@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.mixmin.net/cleanfeed/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Spam filter for Usenet news servers
 
-RUN_DEPENDS=	${LOCALBASE}/news/bin/innd:${PORTSDIR}/news/inn
+RUN_DEPENDS=	${LOCALBASE}/news/bin/innd:news/inn
 
 NO_BUILD=	yes
 USES=		perl5

@@ -10,8 +10,8 @@ MASTER_SITES=	http://www.sweb.cz/tripie/gkrellm/xkb/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X keyboard layout plugin for GKrellM
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
+RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 
 USES=		pkgconfig
 PLIST_FILES=	libexec/gkrellm2/plugins/xkb.so

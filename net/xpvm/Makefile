@@ -11,7 +11,7 @@ DISTNAME=	XPVM.src.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical console and monitor for PVM
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:${PORTSDIR}/net/pvm
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:net/pvm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		tk:84 tar:tgz

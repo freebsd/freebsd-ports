@@ -12,9 +12,9 @@ COMMENT=	SPF policy service for Postfix written in Perl
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Mail-SPF>=2.006:${PORTSDIR}/mail/p5-Mail-SPF \
-		p5-NetAddr-IP>=4:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-		p5-Sys-Hostname-Long>=0:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long
+RUN_DEPENDS=	p5-Mail-SPF>=2.006:mail/p5-Mail-SPF \
+		p5-NetAddr-IP>=4:net-mgmt/p5-NetAddr-IP \
+		p5-Sys-Hostname-Long>=0:sysutils/p5-Sys-Hostname-Long
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

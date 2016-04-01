@@ -9,9 +9,9 @@ CATEGORIES=	net-im
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	OnScreenDisplay messages in licq
 
-LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd \
-		libboost_regex.so:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/lib/licq/licq_qt4-gui.so:${PORTSDIR}/${LICQ_PORT}-qt-gui
+LIB_DEPENDS=	libxosd.so:misc/xosd \
+		libboost_regex.so:devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/lib/licq/licq_qt4-gui.so:${LICQ_PORT}-qt-gui
 # run dependency may be too strict, delete it if you use another
 # plugin (gtk+) and wish run osd with it. i've not tested with
 # plugins other than qt-gui

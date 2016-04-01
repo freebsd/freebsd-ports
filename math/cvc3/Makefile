@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.cs.nyu.edu/acsys/cvc3/download/${PORTVERSION}/
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Automatic theorem prover for the SMT problem
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 CONFIGURE_ARGS=	--enable-dynamic \
 		--with-arith=gmp \

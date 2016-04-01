@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Data pack for Business::ISBN
 
-BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=6.65:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=6.65:devel/p5-ExtUtils-MakeMaker
 
 USES=		perl5
 USE_PERL5=	configure

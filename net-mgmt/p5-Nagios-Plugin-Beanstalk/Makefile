@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	thompsa@FreeBSD.org
 COMMENT=	Module to check beanstalkd via nagios
 
-BUILD_DEPENDS=	p5-Nagios-Plugin>=0:${PORTSDIR}/net-mgmt/p5-Nagios-Plugin \
-		p5-Beanstalk-Client>=0:${PORTSDIR}/net/p5-Beanstalk-Client
+BUILD_DEPENDS=	p5-Nagios-Plugin>=0:net-mgmt/p5-Nagios-Plugin \
+		p5-Beanstalk-Client>=0:net/p5-Beanstalk-Client
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

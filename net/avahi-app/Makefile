@@ -14,10 +14,10 @@ COMMENT?=	Service discovery on a local network
 AVAHI_SLAVE?=	no
 
 .if ${AVAHI_SLAVE} != header
-LIB_DEPENDS?=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libdaemon.so:${PORTSDIR}/devel/libdaemon \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS?=	libexpat.so:textproc/expat2 \
+		libdaemon.so:devel/libdaemon \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libgdbm.so:databases/gdbm
 
 USERS?=		${PORTNAME}
 GROUPS?=	${USERS}

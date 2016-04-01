@@ -9,9 +9,9 @@ PKGNAMEPREFIX=  p5-
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Create and update PF tables from LDAP groups
 
-RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
-		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
+		p5-perl-ldap>=0:net/p5-perl-ldap
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GITHUB=	yes

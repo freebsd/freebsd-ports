@@ -15,11 +15,11 @@ LICENSE=	GPLv2
 USES=		perl5 shebangfix tar:tgz
 USE_RC_SUBR=	snmptt
 
-RUN_DEPENDS=	net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp \
-		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
-		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced \
-		p5-Text-ParseWords>=0:${PORTSDIR}/textproc/p5-Text-ParseWords \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	net-snmp>=0:net-mgmt/net-snmp \
+		p5-Config-IniFiles>=0:devel/p5-Config-IniFiles \
+		p5-Text-Balanced>=0:textproc/p5-Text-Balanced \
+		p5-Text-ParseWords>=0:textproc/p5-Text-ParseWords \
+		p5-Time-HiRes>=0:devel/p5-Time-HiRes
 
 DOCS=		faqs.html index.html layout1.css snmptt.html \
 		snmpttconvert.html snmpttconvertmib.html

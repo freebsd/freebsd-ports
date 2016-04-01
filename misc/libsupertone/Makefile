@@ -12,10 +12,10 @@ COMMENT=	Library for supervisory tone generation and detection
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
-		libspandsp.so:${PORTSDIR}/comms/spandsp \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
+		libspandsp.so:comms/spandsp \
+		libtiff.so:graphics/tiff \
+		libxml2.so:textproc/libxml2
 
 USES=		tar:tgz libtool
 GNU_CONFIGURE=	yes

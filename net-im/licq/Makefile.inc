@@ -4,8 +4,8 @@
 PKGNAMEPREFIX=		licq-
 LICQ_VER=		1.8.2
 .if ${PORTNAME} != "base"
-BUILD_DEPENDS+=		licq:${PORTSDIR}/${LICQ_PORT}
-RUN_DEPENDS+=		licq:${PORTSDIR}/${LICQ_PORT}
+BUILD_DEPENDS+=		licq:${LICQ_PORT}
+RUN_DEPENDS+=		licq:${LICQ_PORT}
 WRKSRC?=		${WRKDIR}/${DISTNAME}/plugins/${PORTNAME}
 .endif
 MASTER_SITES=		SF/licq/licq/${LICQ_VER}

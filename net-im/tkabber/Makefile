@@ -13,8 +13,8 @@ COMMENT=	Tcl/Tk based jabber client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	tcllib>=1.2:${PORTSDIR}/devel/tcllib \
-		bwidget>=1.4:${PORTSDIR}/x11-toolkits/bwidget
+RUN_DEPENDS=	tcllib>=1.2:devel/tcllib \
+		bwidget>=1.4:x11-toolkits/bwidget
 
 OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 SOUND TDOM TKCON TKTRAY TLS GNUPG
 OPTIONS_DEFAULT=	TLS
@@ -26,15 +26,15 @@ SHEBANG_FILES=	contrib/extract-translations/extract.tcl
 
 IPV6_USES=	tk:86+
 IPV6_USES_OFF=	tk:85+
-SOUND_RUN_DEPENDS=	snack>=2.2.10:${PORTSDIR}/audio/snack
+SOUND_RUN_DEPENDS=	snack>=2.2.10:audio/snack
 TDOM_DESC=	Use more efficient tDOM parser for XML
-TDOM_RUN_DEPENDS=	tDOM>=0.8.0:${PORTSDIR}/www/tdom
+TDOM_RUN_DEPENDS=	tDOM>=0.8.0:www/tdom
 TKCON_DESC=	Install devel/tkcon for interactive debugging
-TKCON_RUN_DEPENDS=	tkcon>=2.3:${PORTSDIR}/devel/tkcon
+TKCON_RUN_DEPENDS=	tkcon>=2.3:devel/tkcon
 TKTRAY_DESC=	Install x11-toolkits/tktray for system tray support
-TKTRAY_RUN_DEPENDS=	tktray>=1.3:${PORTSDIR}/x11-toolkits/tktray
-TLS_RUN_DEPENDS=	tcltls>=1.4.1:${PORTSDIR}/devel/tcltls
-GNUPG_RUN_DEPENDS=	tclgpg>0:${PORTSDIR}/security/tclgpg
+TKTRAY_RUN_DEPENDS=	tktray>=1.3:x11-toolkits/tktray
+TLS_RUN_DEPENDS=	tcltls>=1.4.1:devel/tcltls
+GNUPG_RUN_DEPENDS=	tclgpg>0:security/tclgpg
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes

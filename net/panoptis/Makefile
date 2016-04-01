@@ -13,7 +13,7 @@ COMMENT=	Detect and block DoS/DDoS attacks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libccgnu2.so:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	libccgnu2.so:devel/commoncpp
 
 GNU_CONFIGURE=	yes
 USES=		python

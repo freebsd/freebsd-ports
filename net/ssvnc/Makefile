@@ -14,8 +14,8 @@ COMMENT=	Enhanced TightVNC Viewer (SSVNC: SSL/SSH VNC viewer)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel \
-		xterm:${PORTSDIR}/x11/xterm
+RUN_DEPENDS=	stunnel:security/stunnel \
+		xterm:x11/xterm
 
 OPTIONS_DEFINE=	DOCS ULTRAFTP
 ULTRAFTP_DESC=	UltraVNC File Transfer support (Java required)

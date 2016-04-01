@@ -12,8 +12,8 @@ COMMENT=	Open-Source MQTT Broker
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	libcares.so:dns/c-ares
+BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
 USES=		cmake python:2
 NOCONFIGURE=	yes

@@ -13,7 +13,7 @@ COMMENT=	Framework for manipulating Bible texts
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
+BUILD_DEPENDS=	cppunit-config:devel/cppunit
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-conf --with-zlib
@@ -31,15 +31,15 @@ OPTIONS_DEFAULT=CURL CLUCENE
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 CONFIGURE_ARGS+=	--with-curl
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif
 
 .if ${PORT_OPTIONS:MCLUCENE}
-LIB_DEPENDS+=	libclucene-core.so:${PORTSDIR}/textproc/clucene \
-		libicudata.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libclucene-core.so:textproc/clucene \
+		libicudata.so:devel/icu
 CONFIGURE_ARGS+=	--with-clucene=${LOCALBASE} --with-icu
 .else
 CONFIGURE_ARGS+=	--without-clucene --without-icu

@@ -11,8 +11,8 @@ COMMENT=	Home media server built using mono and other open source technologies
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+		libsqlite3.so:databases/sqlite3
 
 CONFLICTS_INSTALL=	mediabrowser
 
@@ -30,8 +30,8 @@ GROUPS=		emby
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
-X11_LIB_DEPENDS=libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
-X11_LIB_DEPENDS_OFF=libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick-nox11
+X11_LIB_DEPENDS=libMagickWand-6.so:graphics/ImageMagick
+X11_LIB_DEPENDS_OFF=libMagickWand-6.so:graphics/ImageMagick-nox11
 
 do-build:
 	(cd ${WRKSRC} && \

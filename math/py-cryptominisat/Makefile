@@ -11,7 +11,7 @@ COMMENT=	Bindings to CryptoMiniSat (a SAT solver)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcryptominisat4.so:${PORTSDIR}/math/cryptominisat
+LIB_DEPENDS=	libcryptominisat4.so:math/cryptominisat
 
 USES=		compiler:c++11-lang python:-2.7
 USE_PYTHON=	autoplist distutils

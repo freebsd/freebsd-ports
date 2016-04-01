@@ -34,7 +34,7 @@ PORTDOCS=	*
 .if ${PORT_OPTIONS:MGLPK}
 CONFIGURE_ARGS+=	--with-gmpl-incdir=${LOCALBASE}/include	\
 		--with-gmpl-lib="-L${LOCALBASE}/lib -lglpk"
-LIB_DEPENDS+=	libglpk.so:${PORTSDIR}/math/glpk
+LIB_DEPENDS+=	libglpk.so:math/glpk
 .else
 CONFIGURE_ARGS+=	--disable-glpk-libcheck
 .endif

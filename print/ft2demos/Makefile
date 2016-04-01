@@ -12,8 +12,8 @@ COMMENT=	Demo programs for FreeType2
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:build
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	${FREETYPE_WRKSRC}/config.mk:print/freetype2:build
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		gmake tar:bzip2
 USE_XORG=	x11

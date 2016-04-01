@@ -12,7 +12,7 @@ COMMENT=	Yet Another Computer Algebra System
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		cmake:outsource compiler:c++11-lib
 USE_LDCONFIG=	yes

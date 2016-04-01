@@ -21,7 +21,7 @@ DOCS=		ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	DOCS PCRE
 
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,void \*tmpp,FILE \*tmpp,g' ${WRKSRC}/src/main.c

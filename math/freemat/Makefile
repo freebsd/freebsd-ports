@@ -13,16 +13,16 @@ COMMENT=	Numerical computing environment
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/share/llvm33/cmake/LLVMConfig.cmake:${PORTSDIR}/devel/llvm33 \
-		${LOCALBASE}/llvm33/lib/libclang.a:${PORTSDIR}/lang/clang33
-LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack			\
-		libboost_math_c99.so:${PORTSDIR}/devel/boost-libs	\
-		libffi.so:${PORTSDIR}/devel/libffi			\
-		libfftw3.so:${PORTSDIR}/math/fftw3			\
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float		\
-		libpcre.so:${PORTSDIR}/devel/pcre			\
-		libportaudio.so:${PORTSDIR}/audio/portaudio		\
-		libumfpack.so:${PORTSDIR}/math/suitesparse
+BUILD_DEPENDS=	${LOCALBASE}/share/llvm33/cmake/LLVMConfig.cmake:devel/llvm33 \
+		${LOCALBASE}/llvm33/lib/libclang.a:lang/clang33
+LIB_DEPENDS=	libarpack.so:math/arpack			\
+		libboost_math_c99.so:devel/boost-libs	\
+		libffi.so:devel/libffi			\
+		libfftw3.so:math/fftw3			\
+		libfftw3f.so:math/fftw3-float		\
+		libpcre.so:devel/pcre			\
+		libportaudio.so:audio/portaudio		\
+		libumfpack.so:math/suitesparse
 
 USES=		blaslapack cmake:outsource dos2unix fortran pkgconfig python:build
 USE_GL=		yes

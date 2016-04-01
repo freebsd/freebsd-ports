@@ -17,13 +17,13 @@ LICENSE_COMB=	multi
 
 BROKEN=		broken by recent updated to an ocaml dependency
 
-BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir \
-		ocaml-zip>1:${PORTSDIR}/archivers/ocaml-zip \
-		ocaml-zarith>1.2:${PORTSDIR}/math/ocaml-zarith \
-		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
-		ocaml-sqlite3>2:${PORTSDIR}/databases/ocaml-sqlite3 \
-		ocaml-ocamlgraph>1.8:${PORTSDIR}/math/ocaml-ocamlgraph \
-		camlp5o:${PORTSDIR}/devel/ocaml-camlp5
+BUILD_DEPENDS=	menhir:devel/menhir \
+		ocaml-zip>1:archivers/ocaml-zip \
+		ocaml-zarith>1.2:math/ocaml-zarith \
+		lablgtk2:x11-toolkits/ocaml-lablgtk2 \
+		ocaml-sqlite3>2:databases/ocaml-sqlite3 \
+		ocaml-ocamlgraph>1.8:math/ocaml-ocamlgraph \
+		camlp5o:devel/ocaml-camlp5
 
 USES=		gmake
 USE_OCAML=	yes

@@ -14,11 +14,11 @@ LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libguile-2.0.so:${PORTSDIR}/lang/guile2
-BUILD_DEPENDS=	swig3.0:${PORTSDIR}/devel/swig30 \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1:${PORTSDIR}/math/py-numpy
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1:${PORTSDIR}/math/py-numpy
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libguile-2.0.so:lang/guile2
+BUILD_DEPENDS=	swig3.0:devel/swig30 \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1:math/py-numpy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1:math/py-numpy
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared

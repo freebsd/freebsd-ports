@@ -13,9 +13,9 @@ COMMENT=	DKIM filter for Postfix
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-Mail-DKIM>=0:${PORTSDIR}/mail/p5-Mail-DKIM \
-		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
-		p5-Error>=0:${PORTSDIR}/lang/p5-Error
+BUILD_DEPENDS=	p5-Mail-DKIM>=0:mail/p5-Mail-DKIM \
+		p5-Net-Server>=0:net/p5-Net-Server \
+		p5-Error>=0:lang/p5-Error
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	IPV6 TEST
@@ -34,7 +34,7 @@ GROUPS=		${DKIMPROXYUSER}
 SUB_LIST+=	PERL=${PERL} \
 		DKIMPROXYUSER=${DKIMPROXYUSER}
 
-IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
+IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6
 
 IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-lib-MSDW-SMTP-Server.pm \
 			${FILESDIR}/extra-patch-scripts-dkimproxy.out \
@@ -42,6 +42,6 @@ IPV6_EXTRA_PATCHES=	${FILESDIR}/extra-patch-lib-MSDW-SMTP-Server.pm \
 			${FILESDIR}/extra-patch-scripts-dkimproxy_out.conf.example
 
 TEST_DESC=	Use dkim_responder.pl
-TEST_RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
+TEST_RUN_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools
 
 .include <bsd.port.mk>

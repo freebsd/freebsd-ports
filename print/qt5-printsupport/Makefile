@@ -23,7 +23,7 @@ OPTIONS_SUB=	yes
 
 CUPS_CONFIGURE_ON=	-cups
 CUPS_CONFIGURE_OFF=	-no-cups
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 .include <bsd.port.options.mk>
 

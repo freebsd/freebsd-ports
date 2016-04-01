@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GConf-based plug-in for libproxy
 
-LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	libproxy.so:net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr

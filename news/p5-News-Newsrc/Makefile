@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manage newsrc files
 
-BUILD_DEPENDS=	p5-Set-IntSpan>=0:${PORTSDIR}/math/p5-Set-IntSpan
+BUILD_DEPENDS=	p5-Set-IntSpan>=0:math/p5-Set-IntSpan
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

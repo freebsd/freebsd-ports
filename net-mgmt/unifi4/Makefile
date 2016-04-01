@@ -12,8 +12,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	UniFi Controller
 
-RUN_DEPENDS=	mongodb>0:${PORTSDIR}/databases/mongodb \
-		snappyjava>0:${PORTSDIR}/archivers/snappy-java
+RUN_DEPENDS=	mongodb>0:databases/mongodb \
+		snappyjava>0:archivers/snappy-java
 
 BUILD=		7436
 

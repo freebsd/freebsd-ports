@@ -11,10 +11,10 @@ DISTNAME=	Vertex-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vertex is an implementation of the Q2Q protocol
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-epsilon \
-		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-epsilon \
-		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:devel/py-epsilon \
+		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:security/py-openssl
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:devel/py-epsilon \
+		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:security/py-openssl
 
 LICENSE=	MIT
 

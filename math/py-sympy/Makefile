@@ -18,7 +18,7 @@ USE_PYTHON=	autoplist distutils
 OPTIONS_DEFINE=	PYGLET
 PYGLET_DESC=	Enable plotting support
 
-PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=1.1.2:${PORTSDIR}/graphics/py-pyglet
+PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=1.1.2:graphics/py-pyglet
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#share/man/man1#man/man1#" ${WRKSRC}/setup.py

@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/P/p/:S/r/-RC/:S/b/-beta/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 CONFLICTS=	ntp-[0-9].* ntp-rc-*
 
@@ -45,7 +45,7 @@ NLS_USES=		gettext-runtime
 
 NTP_SIGND_CONFIGURE_ENABLE=	ntp-signd
 
-NTPSNMPD_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+NTPSNMPD_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 NTPSNMPD_CONFIGURE_OFF=	--without-ntpsnmpd
 
 PERL_UTILS_USES=	perl5

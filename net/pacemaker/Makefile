@@ -10,16 +10,16 @@ COMMENT=	Scalable High-Availability cluster resource manager
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		corosync:${PORTSDIR}/net/corosync
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libqb.so:${PORTSDIR}/devel/libqb \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libxslt.so:${PORTSDIR}/textproc/libxslt
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		corosync:${PORTSDIR}/net/corosync
+BUILD_DEPENDS=	bash:shells/bash \
+		corosync:net/corosync
+LIB_DEPENDS=	libgnutls.so:security/gnutls \
+		libltdl.so:devel/libltdl \
+		libqb.so:devel/libqb \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libxml2.so:textproc/libxml2 \
+		libxslt.so:textproc/libxslt
+RUN_DEPENDS=	bash:shells/bash \
+		corosync:net/corosync
 
 CONFLICTS=	heartbeat-[0-9]*
 
@@ -60,16 +60,16 @@ OPTIONS_DEFINE=	DBUS DOCS MANPAGES SNMP
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
-DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_VARS_OFF=		REPLACE_ARGS+="-e 's/HAVE_dbus=1/HAVE_dbus=0/'"
 
-DOCS_BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc
+DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 
-MANPAGES_BUILD_DEPENDS=	docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
-			help2man:${PORTSDIR}/misc/help2man \
-			xsltproc:${PORTSDIR}/textproc/libxslt
+MANPAGES_BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
+			help2man:misc/help2man \
+			xsltproc:textproc/libxslt
 
-SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_WITH=	snmp
 
 post-patch:

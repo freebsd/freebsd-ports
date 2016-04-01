@@ -95,8 +95,8 @@ MAIL_GID?=	mail
 .endif
 
 .if ${PORT_OPTIONS:MPOSTFIX}
-BUILD_DEPENDS+=	postfix:${PORTSDIR}/mail/postfix
-RUN_DEPENDS+=	postfix:${PORTSDIR}/mail/postfix
+BUILD_DEPENDS+=	postfix:mail/postfix
+RUN_DEPENDS+=	postfix:mail/postfix
 MAIL_GID?=	mailman
 EXTRA_PATCHES+=	${FILESDIR}/postfix-verp.diff
 .endif
@@ -117,7 +117,7 @@ PKGNAMESUFFIX+=	-with-htdig
 #X diff -NEur original-unpack bazaar-unpack | xz --best -c >msapiro-htdig-1632.patch.xz
 #X upload the latter with mode 0644 or similar to freefall's public_distfiles/ directory
 PATCHFILES+=	msapiro-htdig-1632.patch.xz
-RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
+RUN_DEPENDS+=	htdig:textproc/htdig
 PLIST_SUB+=	SUB_HTDIG=""
 .else
 PLIST_SUB+=	SUB_HTDIG="@comment "
@@ -125,12 +125,12 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-LP1551075
 .endif
 
 .if ${PORT_OPTIONS:MNAMAZU2}
-RUN_DEPENDS+=	mknmz:${PORTSDIR}/databases/namazu2
+RUN_DEPENDS+=	mknmz:databases/namazu2
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mailman-Cgi-private.py
 .endif
 
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:${PORTSDIR}/dns/py-dnspython
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:${PORTSDIR}/dns/py-dnspython
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython
 
 pre-everything::
 	@${ECHO} ""

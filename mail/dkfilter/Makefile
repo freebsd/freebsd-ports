@@ -13,10 +13,10 @@ COMMENT=	Domainkeys filter for Postfix
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
-		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server
+BUILD_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
+		p5-Mail-Tools>=0:mail/p5-Mail-Tools \
+		p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-Net-Server>=0:net/p5-Net-Server
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

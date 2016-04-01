@@ -13,12 +13,12 @@ COMMENT=	Shell-like environment for LDAP
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
-		p5-Term-Shell>=0:${PORTSDIR}/devel/p5-Term-Shell \
-		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
-		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
+RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
+		p5-perl-ldap>=0:net/p5-perl-ldap \
+		p5-Term-Shell>=0:devel/p5-Term-Shell \
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+		p5-ReadLine-Gnu>=0:devel/p5-ReadLine-Gnu \
+		p5-YAML-Syck>=0:textproc/p5-YAML-Syck
 
 USES=		perl5
 USE_PERL5=	extract build run

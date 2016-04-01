@@ -23,7 +23,7 @@ OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
 RASTER_DESC=	rasterization support
 RASTER_USES=	ghostscript:run
 RASTER_USE=	TEX=latex,dvipsk
-RASTER_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+RASTER_RUN_DEPENDS=	convert:graphics/ImageMagick
 
 MAKE_JOBS_UNSAFE=	yes
 

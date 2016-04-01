@@ -13,15 +13,15 @@ COMMENT=	System for Automated Geoscientific Analyses
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	swig3.0:${PORTSDIR}/devel/swig30
-LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
-		libgdal.so:${PORTSDIR}/graphics/gdal \
-		libhpdf.so:${PORTSDIR}/print/libharu \
-		libjasper.so:${PORTSDIR}/graphics/jasper \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libodbc.so:${PORTSDIR}/databases/unixODBC \
-		liblas.so:${PORTSDIR}/devel/liblas12 \
-		libopencv_ml.so:${PORTSDIR}/graphics/opencv
+BUILD_DEPENDS=	swig3.0:devel/swig30
+LIB_DEPENDS=	libproj.so:graphics/proj \
+		libgdal.so:graphics/gdal \
+		libhpdf.so:print/libharu \
+		libjasper.so:graphics/jasper \
+		libtiff.so:graphics/tiff \
+		libodbc.so:databases/unixODBC \
+		liblas.so:devel/liblas12 \
+		libopencv_ml.so:graphics/opencv
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFIGURE_ARGS=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
@@ -53,8 +53,8 @@ OPENMP_LDFLAGS=		-pthread
 PGSQL_CONFIGURE_OFF=	--with-postgresql=no
 PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config
 PGSQL_USES=		pgsql
-VIGRA_BUILD_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:${PORTSDIR}/graphics/vigra
-VIGRA_RUN_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:${PORTSDIR}/graphics/vigra
+VIGRA_BUILD_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:graphics/vigra
+VIGRA_RUN_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:graphics/vigra
 
 .include <bsd.port.pre.mk>
 

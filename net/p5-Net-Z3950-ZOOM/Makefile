@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl interface to the Z39.50 Object-Orientation Model (ZOOM)
 
-LIB_DEPENDS=	libyaz.so:${PORTSDIR}/net/yaz
-BUILD_DEPENDS=	p5-MARC-Record>=1.38:${PORTSDIR}/textproc/p5-MARC-Record
-RUN_DEPENDS=	p5-MARC-Record>=1.38:${PORTSDIR}/textproc/p5-MARC-Record
+LIB_DEPENDS=	libyaz.so:net/yaz
+BUILD_DEPENDS=	p5-MARC-Record>=1.38:textproc/p5-MARC-Record
+RUN_DEPENDS=	p5-MARC-Record>=1.38:textproc/p5-MARC-Record
 
 USES=		perl5
 USE_PERL5=	configure

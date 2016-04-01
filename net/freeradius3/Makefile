@@ -17,8 +17,8 @@ COMMENT=	Free RADIUS server implementation
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libtalloc.so:${PORTSDIR}/devel/talloc
+LIB_DEPENDS=	libgdbm.so:databases/gdbm \
+		libtalloc.so:devel/talloc
 
 LOGDIR?=	/var/log
 KRB5_CONFIG?=	/usr/bin/krb5-config --libs
@@ -60,7 +60,7 @@ REST_DESC=		Enable RESTful API support
 SSL_PORT_DESC=		Use OpenSSL from the ports collection
 
 SQLITE3_CONFIGURE_WITH=rlm_sql_sqlite
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 .include <bsd.port.options.mk>
 
@@ -83,11 +83,11 @@ GROUPS=		${RADIUS_GROUP}
 .if ${PORT_OPTIONS:MKERBEROS} || ${PORT_OPTIONS:MHEIMDAL}
 .if ${PORT_OPTIONS:MHEIMDAL}
 .if ${PORT_OPTIONS:MHEIMDAL_PORT}
-LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	libkrb5.so:security/heimdal
 .endif
 CONFIGURE_ARGS+=--enable-heimdal-krb5 --enable-pthread-support
 .else
-LIB_DEPENDS+=	libkrb5support.so:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	libkrb5support.so:security/krb5
 .endif
 CONFIGURE_ARGS+=--with-rlm_krb5
 .if ${PORT_OPTIONS:MHEIMDAL} && empty(PORT_OPTIONS:MHEIMDAL_PORT)
@@ -115,7 +115,7 @@ CONFIGURE_ARGS+=--without-edir
 
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	YES
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=--with-rlm_ldap
 PLIST_SUB+=	LDAP=""
 _REQUIRE+=	slapd
@@ -147,7 +147,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .if ${PORT_OPTIONS:MUNIXODBC}
 CONFIGURE_ARGS+=--with-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC=""
-LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 .else
 CONFIGURE_ARGS+=--without-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC="@comment "
@@ -203,7 +203,7 @@ EXPM=		yes
 .endif
 
 .if ${PORT_OPTIONS:MREDIS}
-LIB_DEPENDS+=	libhiredis.so:${PORTSDIR}/databases/hiredis
+LIB_DEPENDS+=	libhiredis.so:databases/hiredis
 CONFIGURE_ARGS+=--with-rlm_redis --with-rlm_rediswho
 PLIST_SUB+=	RLMREDIS=""
 .else
@@ -217,8 +217,8 @@ EXPM=		yes
 .endif
 
 .if ${PORT_OPTIONS:MREST}
-LIB_DEPENDS+=	libjson-c.so:${PORTSDIR}/devel/json-c \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libjson-c.so:devel/json-c \
+		libcurl.so:ftp/curl
 CONFIGURE_ARGS+=--with-rlm_rest \
 		--with-libcurl=${LOCALBASE} \
 		--with-jsonc-lib-dir=${LOCALBASE}/lib \
@@ -235,7 +235,7 @@ EXPM=		yes
 .endif
 
 .if ${PORT_OPTIONS:MFREETDS}
-LIB_DEPENDS+=	libct.so:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	libct.so:databases/freetds
 CONFIGURE_ARGS+=--with-rlm_freetds
 PLIST_SUB+=	RLMFREETDS=""
 .else
@@ -249,7 +249,7 @@ EXPM=		yes
 .endif
 
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:dns/libidn
 CONFIGURE_ARGS+=--with-rlm_idn
 PLIST_SUB+=	RLMIDN=""
 .else

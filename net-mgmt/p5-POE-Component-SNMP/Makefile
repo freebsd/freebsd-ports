@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Event-driven SNMP interface
 
-BUILD_DEPENDS=	p5-POE>=0.31:${PORTSDIR}/devel/p5-POE \
-		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+BUILD_DEPENDS=	p5-POE>=0.31:devel/p5-POE \
+		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

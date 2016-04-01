@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	DOCS SNMP
 OPTIONS_DEFAULT=SNMP
 
 SNMP_CONFIGURE_ENABLE=	snmp
-SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}

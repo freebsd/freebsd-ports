@@ -31,7 +31,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OPTIONS_DEFINE=	DOCS MPI
 OPTIONS_SUB=	yes
 MPI_CONFIGURE_ENABLE=	mpi
-MPI_LIB_DEPENDS=	libmpich.so.8:${PORTSDIR}/net/mpich2
+MPI_LIB_DEPENDS=	libmpich.so.8:net/mpich2
 MPI_CONFLICTS_INSTALL+=		arpack-ng-3.*
 MPI_CONFLICTS_INSTALL_OFF+=	arpack-ng-mpich-3.*
 
@@ -46,16 +46,16 @@ WITH_BLAS?=	blas
 .if ${WITH_BLAS} == "gotoblas"
 BLAS=		-lgoto2p
 LAPACK=		-lgoto2p
-LIB_DEPENDS+=	libgoto2p.so:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	libgoto2p.so:math/gotoblas
 .elif ${WITH_BLAS} == "atlas"
 BLAS=		-lptf77blas
 LAPACK=		-lalapack -lptcblas
-LIB_DEPENDS+=	libptf77blas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libptf77blas.so:math/atlas
 .elif ${WITH_BLAS} == "blas"
 BLAS=		-lblas
 LAPACK=		-llapack
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas \
-		liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:math/blas \
+		liblapack.so:math/lapack
 .else
 IGNORE=		unknown value of WITH_BLAS: ${WITH_BLAS}
 .endif

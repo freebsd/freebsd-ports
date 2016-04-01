@@ -15,7 +15,7 @@ COMMENT=	Interactive height field generation and manipulation program
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:${PORTSDIR}/devel/trio
+BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:devel/trio
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -11,7 +11,7 @@ COMMENT=	Data visualization system
 
 LICENSE=	EPL
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		pkgconfig tar:bzip2 libtool pathfix desktop-file-utils
 USE_GNOME=	gtk20 libxml2

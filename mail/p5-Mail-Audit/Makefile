@@ -12,10 +12,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9]+)$/\1/}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for creating easy mail filters
 
-RUN_DEPENDS=	p5-File-HomeDir>=0.61:${PORTSDIR}/devel/p5-File-HomeDir \
-		p5-File-Tempdir>=0:${PORTSDIR}/devel/p5-File-Tempdir \
-		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
-		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS=	p5-File-HomeDir>=0.61:devel/p5-File-HomeDir \
+		p5-File-Tempdir>=0:devel/p5-File-Tempdir \
+		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
+		p5-Mail-Tools>=0:mail/p5-Mail-Tools
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5 shebangfix

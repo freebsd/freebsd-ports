@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	pidgin-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PidgiMPD is a Pidgin plugin for monitoring/controlling MPD
 
-LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple \
-		libmpd.so:${PORTSDIR}/audio/libmpd
-BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
+LIB_DEPENDS=	libpurple.so:net-im/libpurple \
+		libmpd.so:audio/libmpd
+BUILD_DEPENDS=	pidgin:net-im/pidgin
+RUN_DEPENDS=	pidgin:net-im/pidgin
 
 USES=		libtool pkgconfig tar:bzip2
 USE_GNOME=	gtk20

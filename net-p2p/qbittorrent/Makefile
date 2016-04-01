@@ -12,8 +12,8 @@ COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 LICENSE=	GPLv2
 
 # ABI versions specified on purpose for libtorrent-rasterbar
-LIB_DEPENDS=	libtorrent-rasterbar.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
+		libboost_system.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	qBittorrent
@@ -26,7 +26,7 @@ QT_NONSTANDARD=	yes
 DESTDIRNAME=	INSTALL_ROOT
 
 .if !defined(SLAVE_PORT)
-LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
 USES+=		desktop-file-utils
 QT4_USE+=	QT4=gui,xml
 QT5_USE+=	QT5=gui,xml

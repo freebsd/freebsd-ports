@@ -16,8 +16,8 @@ OPTIONS_DEFINE=	DOCS
 DOCS_USE=	TEX=dvipsk,formats
 DOCS_USES=	makeinfo
 DOCS_INFO=	blitz
-DOCS_BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo \
-			texi2html:${PORTSDIR}/textproc/texi2html
+DOCS_BUILD_DEPENDS=	texi2dvi:print/texinfo \
+			texi2html:textproc/texi2html
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=yes
 
 GNU_CONFIGURE=	yes

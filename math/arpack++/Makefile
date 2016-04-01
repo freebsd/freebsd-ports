@@ -17,20 +17,20 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	ARPACK++ is an object-oriented version of the ARPACK package
 
-LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack \
-		libsuperlu.so:${PORTSDIR}/math/superlu \
-		libumfpack.so:${PORTSDIR}/math/suitesparse
+LIB_DEPENDS=	libarpack.so:math/arpack \
+		libsuperlu.so:math/superlu \
+		libumfpack.so:math/suitesparse
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:math/lapack
+LIB_DEPENDS+=	libblas.so:math/blas
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif

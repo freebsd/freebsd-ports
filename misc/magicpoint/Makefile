@@ -12,9 +12,9 @@ COMMENT=	X11-based presentation tool
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png \
-		libmng.so:${PORTSDIR}/graphics/libmng
-RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS+=	libpng.so:graphics/png \
+		libmng.so:graphics/libmng
+RUN_DEPENDS+=	pnmscale:graphics/netpbm
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -49,14 +49,14 @@ NO_OPTIONS_SORT=yes
 
 FREETYPE_PREVENTS=	XFT
 FREETYPE_CONFIGURE_ENABLE=	freetype
-FREETYPE_LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
+FREETYPE_LIB_DEPENDS=	libttf.so:print/freetype
 XFT_PREVENTS=	FREETYPE
 XFT_USES=	iconv
 XFT_USE=	XORG=xft
 XFT_CONFIGURE_ENABLE=	xft2
 XFT_CONFIGURE_ON=	--enable-freetype-charset16
 GIF_CONFIGURE_ENABLE=	gif
-GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CPPFLAGS=		-I${LOCALBASE}/include
 
 post-patch:

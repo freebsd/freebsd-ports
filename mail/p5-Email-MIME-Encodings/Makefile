@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Unified interface to MIME encoding and decoding
 
-RUN_DEPENDS=	p5-MIME-Base64>3.05:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	p5-MIME-Base64>3.05:converters/p5-MIME-Base64
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

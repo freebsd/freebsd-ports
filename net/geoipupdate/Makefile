@@ -12,7 +12,7 @@ COMMENT=	Fetch the latest copies of the paid GeoIP database
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind

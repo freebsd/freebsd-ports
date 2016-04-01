@@ -11,9 +11,9 @@ COMMENT=	Library for translating and manipulating point cloud data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
-		libgeos.so:${PORTSDIR}/graphics/geos \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libgdal.so:graphics/gdal \
+		libgeos.so:graphics/geos \
+		libboost_thread.so:devel/boost-libs
 
 USES=		cmake:outsource compiler:c++11-lib pathfix pkgconfig
 USE_LDCONFIG=	yes
@@ -58,7 +58,7 @@ ATTRIBUTE_CMAKE_ON=	-DBUILD_PLUGIN_ATTRIBUTE:BOOL=TRUE
 ATTRIBUTE_CMAKE_OFF=	-DBUILD_PLUGIN_ATTRIBUTE:BOOL=FALSE
 
 ICEBRIDGE_DESC=	Enable Icebridge plugin
-ICEBRIDGE_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
+ICEBRIDGE_LIB_DEPENDS=	libhdf5.so:science/hdf5
 ICEBRIDGE_CMAKE_ON=	-DBUILD_PLUGIN_ICEBRIDGE:BOOL=TRUE
 ICEBRIDGE_CMAKE_OFF=	-DBUILD_PLUGIN_ICEBRIDGE:BOOL=FALSE
 
@@ -68,18 +68,18 @@ APPS_CMAKE_OFF=	-DWITH_APPS:BOOL=FALSE
 
 BASH_DESC=	BASH completion
 BASH_CMAKE_ON=	-DWITH_BASH:BOOL=TRUE
-BASH_RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BASH_RUN_DEPENDS=	bash:shells/bash
 BASH_CMAKE_OFF=	-DWITH_BASH:BOOL=FALSE
 
 LASZIP_DESC=	Enable LASZip support (Recommended)
-LASZIP_LIB_DEPENDS=	liblaszip.so:${PORTSDIR}/archivers/laszip
+LASZIP_LIB_DEPENDS=	liblaszip.so:archivers/laszip
 
 GEOTIFF_CMAKE_ON=	-DWITH_GEOTIFF:BOOL=TRUE
-GEOTIFF_LIB_DEPENDS=	libgeotiff.so:${PORTSDIR}/graphics/libgeotiff
+GEOTIFF_LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff
 GEOTIFF_CMAKE_OFF=	-DWITH_GEOTIFF:BOOL=FALSE
 
 LIBXML2_CMAKE_ON=	-DWITH_LIBXML2:BOOL=TRUE
-LIBXML2_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 LIBXML2_CMAKE_OFF=	-DWITH_LIBXML2:BOOL=FALSE
 
 .include <bsd.port.mk>

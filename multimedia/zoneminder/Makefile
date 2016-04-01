@@ -14,19 +14,19 @@ COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
-LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
-		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
-		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
-		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
+RUN_DEPENDS=	${LOCALBASE}/bin/sudo:security/sudo
+LIB_DEPENDS=	libnetpbm.so:graphics/netpbm \
+		libpcre.so:devel/pcre \
+		libavutil0.so:multimedia/ffmpeg0
+BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+		p5-Date-Manip>=0:devel/p5-Date-Manip \
+		p5-libwww>=0:www/p5-libwww \
+		p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
+		p5-Archive-Tar>=0:archivers/p5-Archive-Tar \
+		p5-MIME-Lite>=0:mail/p5-MIME-Lite \
+		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
+		${LOCALBASE}/include/linux/videodev.h:multimedia/v4l_compat
 
 USES=		jpeg perl5 shebangfix
 GNU_CONFIGURE=	yes

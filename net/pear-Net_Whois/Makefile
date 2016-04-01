@@ -10,6 +10,6 @@ COMMENT=	Tool to query internet domain name services
 
 USES=	pear
 
-RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
+RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
 
 .include <bsd.port.mk>

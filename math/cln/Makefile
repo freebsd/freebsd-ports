@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.ginac.de/CLN/ \
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Class Library for Numbers
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}

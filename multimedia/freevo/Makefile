@@ -12,18 +12,18 @@ COMMENT=	Open source digital jukebox
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
-		mencoder:${PORTSDIR}/multimedia/mencoder \
-		aumix:${PORTSDIR}/audio/aumix \
-		tv_cat:${PORTSDIR}/textproc/p5-xmltv \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0_1:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_SITELIBDIR}/kaa/__init__.py:${PORTSDIR}/multimedia/py-kaa-base \
-		${PYTHON_SITELIBDIR}/kaa/imlib2/__init__.py:${PORTSDIR}/multimedia/py-kaa-imlib2 \
-		${PYTHON_SITELIBDIR}/kaa/metadata/__init__.py:${PORTSDIR}/multimedia/py-kaa-metadata \
-		${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32 \
-		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_SITELIBDIR}/Numeric/Numeric_headers/__init__.py:${PORTSDIR}/math/py-numeric
+RUN_DEPENDS=	mplayer:multimedia/mplayer \
+		mencoder:multimedia/mencoder \
+		aumix:audio/aumix \
+		tv_cat:textproc/p5-xmltv \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0_1:devel/py-zope.interface \
+		${PYTHON_SITELIBDIR}/kaa/__init__.py:multimedia/py-kaa-base \
+		${PYTHON_SITELIBDIR}/kaa/imlib2/__init__.py:multimedia/py-kaa-imlib2 \
+		${PYTHON_SITELIBDIR}/kaa/metadata/__init__.py:multimedia/py-kaa-metadata \
+		${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32 \
+		${PYTHON_SITELIBDIR}/pygame/__init__.py:devel/py-game \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		${PYTHON_SITELIBDIR}/Numeric/Numeric_headers/__init__.py:math/py-numeric
 
 FREEVO_USER=	freevo
 FREEVO_GROUP=	${FREEVO_USER}

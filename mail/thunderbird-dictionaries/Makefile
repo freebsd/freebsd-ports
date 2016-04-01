@@ -12,7 +12,7 @@ DIST_SUBDIR=	thunderbird
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Dictionaries for Mozilla Thunderbird
 
-RUN_DEPENDS=	thunderbird>=6.0:${PORTSDIR}/mail/thunderbird
+RUN_DEPENDS=	thunderbird>=6.0:mail/thunderbird
 
 USES=		zip:infozip
 NO_BUILD=	yes

@@ -13,8 +13,8 @@ COMMENT=	Enhance HTTPS support for httplib and urllib2
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.4:${PORTSDIR}/devel/py-pyasn1 \
-		${PYTHON_PKGNAMEPREFIX}openssl>=0.13:${PORTSDIR}/security/py-openssl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.4:devel/py-pyasn1 \
+		${PYTHON_PKGNAMEPREFIX}openssl>=0.13:security/py-openssl
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

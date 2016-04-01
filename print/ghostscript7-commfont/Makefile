@@ -12,8 +12,8 @@ DISTFILES=	# empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Common files for Ghostscript 7.x CJK font support
 
-BUILD_DEPENDS=	${CMAPDIR}/ac15/cid2code.txt:${PORTSDIR}/print/adobe-cmaps
-RUN_DEPENDS=	${CMAPDIR}/ac15/cid2code.txt:${PORTSDIR}/print/adobe-cmaps
+BUILD_DEPENDS=	${CMAPDIR}/ac15/cid2code.txt:print/adobe-cmaps
+RUN_DEPENDS=	${CMAPDIR}/ac15/cid2code.txt:print/adobe-cmaps
 
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message \

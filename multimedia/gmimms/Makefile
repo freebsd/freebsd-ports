@@ -13,7 +13,7 @@ COMMENT=	Frontend to MiMMS (Multimedia Stream ripper)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	mimms:${PORTSDIR}/multimedia/mimms
+RUN_DEPENDS=	mimms:multimedia/mimms
 
 USES=		pkgconfig tar:bzip2
 USE_GNOME=	gtk20

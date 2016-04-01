@@ -14,9 +14,9 @@ PKGNAMESUFFIX=	-${CODA_SUITE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server programs for a replicated high-performance network file system
 
-LIB_DEPENDS=	liblwp.so:${PORTSDIR}/devel/lwp \
-		librpc2.so:${PORTSDIR}/devel/rpc2 \
-		librvmlwp.so:${PORTSDIR}/devel/rvm
+LIB_DEPENDS=	liblwp.so:devel/lwp \
+		librpc2.so:devel/rpc2 \
+		librvmlwp.so:devel/rvm
 
 USES=		pkgconfig gmake shebangfix perl5 readline
 USE_PERL5=	run

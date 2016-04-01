@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Proxy server for the EPP protocol
 
-BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \
-		p5-Net-EPP>=0.03:${PORTSDIR}/net/p5-Net-EPP \
-		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
-		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		p5-IO-Multiplex>=0:devel/p5-IO-Multiplex \
+		p5-Net-EPP>=0.03:net/p5-Net-EPP \
+		p5-Net-Server>=0:net/p5-Net-Server \
+		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

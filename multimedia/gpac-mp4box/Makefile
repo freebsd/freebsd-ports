@@ -13,7 +13,7 @@ COMMENT=	Tool for merge mpg4 from Gpac
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libgpac.so:${PORTSDIR}/multimedia/gpac-libgpac
+LIB_DEPENDS=	libgpac.so:multimedia/gpac-libgpac
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lgpac

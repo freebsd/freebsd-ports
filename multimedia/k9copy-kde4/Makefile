@@ -13,9 +13,9 @@ COMMENT=	DVD-9 to DVD-5 shrinking application for KDE
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine \
-		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
-		libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+LIB_DEPENDS=	libxine.so:multimedia/libxine \
+		libmpeg2.so:multimedia/libmpeg2 \
+		libavcodec0.so:multimedia/ffmpeg0
 
 USES=		cmake gettext
 USE_KDE4=	kdeprefix kdelibs automoc4
@@ -26,9 +26,9 @@ MENCODER_DESC=	MEncoder support
 MPLAYER_DESC=	MPlayer support
 DVDAUTHOR_DESC=	DVD Author support
 
-MENCODER_RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
-MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
-DVDAUTHOR_RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor
+MENCODER_RUN_DEPENDS=	mencoder:multimedia/mencoder
+MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
+DVDAUTHOR_RUN_DEPENDS=	dvdauthor:multimedia/dvdauthor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/cmake/*.cmake

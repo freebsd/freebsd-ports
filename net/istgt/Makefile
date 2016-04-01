@@ -30,8 +30,8 @@ SYMLNKDEV_CONFIGURE_ON=	--enable-symlink-device
 
 .if ${PORT_OPTIONS:MVBOXVD}
 VBOX_WRKSRC=	`${MAKE} -C ${PORTSDIR}/emulators/virtualbox-ose -V WRKSRC`
-RUN_DEPENDS+=	${LOCALBASE}/lib/virtualbox/VBoxRT.so:${PORTSDIR}/emulators/virtualbox-ose
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/emulators/virtualbox-ose:patch
+RUN_DEPENDS+=	${LOCALBASE}/lib/virtualbox/VBoxRT.so:emulators/virtualbox-ose
+BUILD_DEPENDS+=	${NONEXISTENT}:emulators/virtualbox-ose:patch
 CONFIGURE_ARGS+=	--with-vbox=${VBOX_WRKSRC}/include
 .endif
 

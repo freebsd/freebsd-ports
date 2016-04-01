@@ -8,8 +8,8 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt network module
 
-LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+LIB_DEPENDS=	libproxy.so:net/libproxy
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USE_OPENSSL=	yes
 USE_QT5=	core qmake_build buildtools_build

@@ -20,9 +20,9 @@ WANT_PHP_WEB=	yes
 .endif
 
 .if defined(WITH_PERL_WEBINTERFACE)
-RUN_DEPENDS+=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-CGI-FastTemplate>=0:${PORTSDIR}/www/p5-CGI-FastTemplate
+RUN_DEPENDS+=	p5-URI>=0:net/p5-URI \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-CGI-FastTemplate>=0:www/p5-CGI-FastTemplate
 .endif
 
 .if defined(WITH_PERL_WEBINTERFACE)

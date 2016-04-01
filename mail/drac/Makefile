@@ -33,13 +33,13 @@ DEFS=		-DWITH_TI_RPC -DFLOCK_LOCK -DGETHOST -DDASH_C
 
 .if ${PORT_OPTIONS:MPOSTFIX}
 DEFS+=		-DTERM_KD
-RUN_DEPENDS+=	postfix:${PORTSDIR}/mail/postfix
+RUN_DEPENDS+=	postfix:mail/postfix
 .if ${PORT_OPTIONS:MDB}
 USE_BDB=	41+
 .endif
 .elif ${PORT_OPTIONS:MEXIM}
 DEFS+=		-DTERM_KD -DREQ_HASH -DCIDR_KEY
-RUN_DEPENDS+=	exim:${PORTSDIR}/mail/exim
+RUN_DEPENDS+=	exim:mail/exim
 .endif
 
 NO_WRKSUBDIR=	yes

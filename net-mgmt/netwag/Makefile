@@ -13,10 +13,10 @@ DISTFILES=	${DISTNAME}.tgz ${DISTNAME:S/src/doc_html/}.tgz
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Graphical front end for netwox
 
-BUILD_DEPENDS=	netwox:${PORTSDIR}/net-mgmt/netwox \
-		wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		appres:${PORTSDIR}/x11/appres \
-		xterm:${PORTSDIR}/x11/xterm
+BUILD_DEPENDS=	netwox:net-mgmt/netwox \
+		wish8.4:x11-toolkits/tk84 \
+		appres:x11/appres \
+		xterm:x11/xterm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS

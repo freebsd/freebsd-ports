@@ -13,9 +13,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Object oriented interface to SNMP
 
-BUILD_DEPENDS=	p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
+BUILD_DEPENDS=	p5-Crypt-DES>=0:security/p5-Crypt-DES \
+		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		p5-Digest-HMAC>=0:security/p5-Digest-HMAC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

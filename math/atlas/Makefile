@@ -14,7 +14,7 @@ COMMENT=	Automatically Tuned Linear Algebra Software (ATLAS)
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/math/lapack:checksum
+BUILD_DEPENDS=	${NONEXISTENT}:math/lapack:checksum
 
 USES=		fortran tar:bzip2
 USE_GCC=	yes
@@ -51,7 +51,7 @@ POINTER?=	32
 .endif
 
 .if defined(MAINTAINER_MODE)
-LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	libblas.so:math/blas
 .endif
 
 .if ${PORT_OPTIONS:MDATA}

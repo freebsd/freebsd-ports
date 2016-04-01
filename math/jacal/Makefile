@@ -11,8 +11,8 @@ COMMENT=	Symbolic mathematics program written in Scheme
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	scm:${PORTSDIR}/lang/scm \
-		${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib
+RUN_DEPENDS=	scm:lang/scm \
+		${LOCALBASE}/share/slib/require.scm:lang/slib
 
 WRKSRC=		${WRKDIR}/jacal
 

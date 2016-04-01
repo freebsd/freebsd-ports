@@ -10,7 +10,7 @@ MASTER_SITES=	SF/qalculate/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Multi-purpose desktop calculator (backend library)
 
-LIB_DEPENDS=	libcln.so:${PORTSDIR}/math/cln
+LIB_DEPENDS=	libcln.so:math/cln
 
 USES=		pkgconfig pathfix gmake libtool gettext-tools
 USE_GNOME=	glib20 intltool libxml2

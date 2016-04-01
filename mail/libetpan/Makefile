@@ -11,9 +11,9 @@ COMMENT=	Mail framework for C language
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexpat.so:textproc/expat2 \
+		libsasl2.so:security/cyrus-sasl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dinhviethoa
@@ -32,8 +32,8 @@ OPTIONS_SINGLE_CRYPTO=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
 
 GNUTLS_CONFIGURE_ON=	--without-openssl --with-gnutls
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-			libgcrypt.so:${PORTSDIR}/security/libgcrypt
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
+			libgcrypt.so:security/libgcrypt
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 

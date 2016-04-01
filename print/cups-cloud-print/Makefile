@@ -11,11 +11,11 @@ COMMENT=	Print using Google Cloud Print
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups
-RUN_DEPENDS=	cancel:${PORTSDIR}/print/cups \
-		${PYTHON_PKGNAMEPREFIX}pycups>0:${PORTSDIR}/print/py-pycups \
-		bash:${PORTSDIR}/shells/bash \
-		${PYTHON_PKGNAMEPREFIX}httplib2>0:${PORTSDIR}/www/py-httplib2
+BUILD_DEPENDS=	cups-config:print/cups
+RUN_DEPENDS=	cancel:print/cups \
+		${PYTHON_PKGNAMEPREFIX}pycups>0:print/py-pycups \
+		bash:shells/bash \
+		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2
 
 NO_ARCH=	yes
 NO_BUILD=	yes

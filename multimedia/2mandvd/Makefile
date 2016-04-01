@@ -12,21 +12,21 @@ COMMENT=	DVD authoring and slideshow tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
-		notify-send:${PORTSDIR}/devel/libnotify \
-		exif:${PORTSDIR}/graphics/exif \
-		netpbm>=10.26:${PORTSDIR}/graphics/netpbm \
-		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		ffmpegthumbnailer:${PORTSDIR}/multimedia/ffmpegthumbnailer \
-		mencoder:${PORTSDIR}/multimedia/mencoder \
-		ppmtoy4m:${PORTSDIR}/multimedia/mjpegtools \
-		mplayer:${PORTSDIR}/multimedia/mplayer \
-		tcprobe:${PORTSDIR}/multimedia/transcode \
-		xine:${PORTSDIR}/multimedia/xine \
-		bash:${PORTSDIR}/shells/bash \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+RUN_DEPENDS=	sox:audio/sox \
+		notify-send:devel/libnotify \
+		exif:graphics/exif \
+		netpbm>=10.26:graphics/netpbm \
+		dvdauthor:multimedia/dvdauthor \
+		ffmpegthumbnailer:multimedia/ffmpegthumbnailer \
+		mencoder:multimedia/mencoder \
+		ppmtoy4m:multimedia/mjpegtools \
+		mplayer:multimedia/mplayer \
+		tcprobe:multimedia/transcode \
+		xine:multimedia/xine \
+		bash:shells/bash \
+		cdrecord:sysutils/cdrtools \
+		growisofs:sysutils/dvd+rw-tools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

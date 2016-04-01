@@ -12,7 +12,7 @@ COMMENT=	GPL library that extends the capability of the oSIP library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libosip2.so:${PORTSDIR}/net/libosip2
+LIB_DEPENDS=	libosip2.so:net/libosip2
 
 CONFLICTS_INSTALL=	libeXosip2-legacy-[0-9]*
 

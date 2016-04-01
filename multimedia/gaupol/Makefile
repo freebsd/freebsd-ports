@@ -14,9 +14,9 @@ COMMENT=	Subtitle editor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
-		py*-enchant>=1.5.1:${PORTSDIR}/textproc/py-enchant
+RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		py*-chardet>=0:textproc/py-chardet \
+		py*-enchant>=1.5.1:textproc/py-enchant
 
 USE_GNOME=	pygtk2 intltool
 USE_PYTHON=	distutils

@@ -13,7 +13,7 @@ COMMENT=	Advanced editing and manipulation of MPEG streams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	liba52.so:${PORTSDIR}/audio/liba52
+LIB_DEPENDS=	liba52.so:audio/liba52
 
 USES=		alias gmake tar:bzip2
 MAKE_ARGS=	CC="${CC}" USE_CSS=0 OBJDIR="obj" \
@@ -36,7 +36,7 @@ NASM?=		${LOCALBASE}/bin/nasm
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFINE_i386=	MMX
 
-MMX_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+MMX_BUILD_DEPENDS=	nasm:devel/nasm
 MMX_MAKE_ARGS=		USE_MMX=1 NASM="${NASM}"
 MMX_CFLAGS=		-DHAVE_MMX
 MMX_MAKE_ARGS_OFF=	USE_MMX=0

@@ -12,7 +12,7 @@ PATCH_SITES=	http://www.ml-search.com/xisp/distfiles/
 MAINTAINER=	tm@onepost.net
 COMMENT=	User-friendly X interface to pppd/chat
 
-LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 
 USE_XORG=	xpm
 

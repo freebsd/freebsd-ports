@@ -57,11 +57,11 @@ SASL2AUTHD_DESC=	Enable plaintext authentication via SASL2
 PMILTER_CONFIGURE_ENABLE=	pmilter
 DKIM_CONFIGURE_ENABLE=	DKIM
 MSP_CONFIGURE_ENABLE=	msp
-SASL2_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL2_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL2_CONFIGURE_ENABLE=	SASL
 SASL2_CONFIGURE_ON=	--with-sasl-incdir=${LOCALBASE}/include \
 			--with-sasl-libdir=${LOCALBASE}/lib
-SASL2AUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
+SASL2AUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:security/cyrus-sasl2-saslauthd
 TLS_CONFIGURE_ENABLE=	TLS
 
 .include <bsd.port.options.mk>

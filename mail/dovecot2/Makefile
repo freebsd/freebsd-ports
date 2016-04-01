@@ -72,7 +72,7 @@ GSSAPI_HEIMDAL_DESC=	Use Heimdal GSSAPI from security/heimdal
 GSSAPI_MIT_DESC=	Use MIT GSSAPI from security/krb5
 
 CDB_CONFIGURE_WITH=	cdb
-CDB_LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
+CDB_LIB_DEPENDS=	libcdb.so:databases/tinycdb
 
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 GSSAPI_BASE_USES=		gssapi
@@ -83,7 +83,7 @@ GSSAPI_MIT_USES=		gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--with-gssapi ${GSSAPI_CONFIGURE_ARGS}
 
 ICU_CONFIGURE_WITH=	icu
-ICU_LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
+ICU_LIB_DEPENDS=	libicui18n.so:devel/icu
 ICU_USES=		pkgconfig
 
 KQUEUE_CONFIGURE_OFF=	--with-ioloop=poll --with-notify=none
@@ -95,9 +95,9 @@ LDAP_CONFIGURE_WITH=	ldap
 LIBWRAP_CONFIGURE_WITH=	libwrap
 
 LUCENE_CONFIGURE_WITH=	lucene
-LUCENE_LIB_DEPENDS=	libclucene-core.so:${PORTSDIR}/textproc/clucene
+LUCENE_LIB_DEPENDS=	libclucene-core.so:textproc/clucene
 
-LZ4_LIB_DEPENDS=	liblz4.so:${PORTSDIR}/archivers/liblz4
+LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_WITH=	mysql
@@ -106,8 +106,8 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	pgsql
 
 SOLR_CONFIGURE_WITH=	solr
-SOLR_BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-SOLR_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+SOLR_BUILD_DEPENDS=	curl:ftp/curl
+SOLR_LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 SQLITE_USE=		SQLITE=3
 SQLITE_CONFIGURE_WITH=	sqlite
@@ -115,9 +115,9 @@ SQLITE_CONFIGURE_WITH=	sqlite
 SSL_CONFIGURE_WITH=	ssl=openssl
 
 TEXTCAT_CONFIGURE_WITH=	textcat
-TEXTCAT_LIB_DEPENDS=	libtextcat.so:${PORTSDIR}/textproc/libtextcat
+TEXTCAT_LIB_DEPENDS=	libtextcat.so:textproc/libtextcat
 
-VPOPMAIL_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/bin/vchkpw:${PORTSDIR}/mail/vpopmail
+VPOPMAIL_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/bin/vchkpw:mail/vpopmail
 VPOPMAIL_CONFIGURE_WITH=vpopmail
 
 DOCS=		AUTHORS COPYING COPYING.LGPL COPYING.MIT INSTALL NEWS TODO README

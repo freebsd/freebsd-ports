@@ -10,7 +10,7 @@ MASTER_SITES=	SAVANNAH/m17n
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Library for handling OpenType fonts
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		pathfix pkgconfig libtool:keepla
 USE_XORG=	x11 xt xaw xmu

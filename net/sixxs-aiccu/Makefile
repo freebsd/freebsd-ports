@@ -34,7 +34,7 @@ OPTIONS_DEFAULT+=	GNUTLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 CFLAGS+=	-DAICCU_GNUTLS
 LDFLAGS+=	-lgnutls
 .endif

@@ -13,7 +13,7 @@ COMMENT=	Find the roots of polynomial equations
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-Utils>=1.06:${PORTSDIR}/math/p5-Math-Utils
+BUILD_DEPENDS=	p5-Math-Utils>=1.06:math/p5-Math-Utils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

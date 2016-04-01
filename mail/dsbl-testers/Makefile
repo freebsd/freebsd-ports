@@ -14,8 +14,8 @@ COMMENT=	Testing software for DSBL/DSBL-compliant services
 
 BROKEN=		unfetchable
 
-BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \
-		${LOCALBASE}/include/firedns.h:${PORTSDIR}/dns/firedns
+BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:misc/firestring \
+		${LOCALBASE}/include/firedns.h:dns/firedns
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes

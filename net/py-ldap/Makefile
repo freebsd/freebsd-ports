@@ -13,7 +13,7 @@ COMMENT=	LDAP module for python, for OpenLDAP2
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1-modules>0:${PORTSDIR}/devel/py-pyasn1-modules
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1-modules>0:devel/py-pyasn1-modules
 
 CONFLICTS_INSTALL=	py27-pyldap
 USES=		python:2

@@ -11,7 +11,7 @@ MASTER_SITES=	http://komquats.com/distfiles/ \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Print lines contans IP matching a pattern in CIDR format
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 PLIST_FILES=	bin/grepip
 PORTDOCS=	README.txt

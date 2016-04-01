@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>2.5.33:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>2.5.33:textproc/flex
 CONFIGURE_ENV+=	LEX="${FLEX}"
 FLEX=		${LOCALBASE}/bin/flex
 .endif

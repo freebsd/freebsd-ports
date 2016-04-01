@@ -16,7 +16,7 @@ CONFLICTS=	trafshow-[45].*
 
 .if defined(WITH_TRAFSHOW_SLANG) || \
     (exists(${LOCALBASE}/lib/libslang.a) && !defined(WITHOUT_TRAFSHOW_SLANG))
-LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	libslang.so:devel/libslang2
 .endif
 
 USES=		tar:tgz

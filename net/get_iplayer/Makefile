@@ -12,13 +12,13 @@ COMMENT=	Search, index, or stream archive video from BBC iPlayer
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTTP-Cookies>=0:${PORTSDIR}/www/p5-HTTP-Cookies \
-		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		rtmpdump:${PORTSDIR}/multimedia/rtmpdump
+RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-HTTP-Cookies>=0:www/p5-HTTP-Cookies \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-URI>=0:net/p5-URI \
+		p5-libwww>=0:www/p5-libwww \
+		rtmpdump:multimedia/rtmpdump
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

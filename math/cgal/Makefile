@@ -14,10 +14,10 @@ COMMENT=	Computational geometry library
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr \
-		libgmp.so:${PORTSDIR}/math/gmp
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs
+LIB_DEPENDS=	libmpfr.so:math/mpfr \
+		libgmp.so:math/gmp
 
 USE_LDCONFIG=		yes
 USES=			cmake tar:bzip2 shebangfix

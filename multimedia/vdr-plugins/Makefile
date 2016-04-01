@@ -9,7 +9,7 @@ CATEGORIES=	multimedia
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - plugin metaport
 
-RUN_DEPENDS+=	vdr:${PORTSDIR}/multimedia/vdr
+RUN_DEPENDS+=	vdr:multimedia/vdr
 
 USES=		metaport
 
@@ -53,13 +53,13 @@ VDRDIR=		${LOCALBASE}/lib/vdr
 
 .for OPT in ${OPTIONS_DEFINE}
 . if ${OPTIONS_DEFINE:MREELSCAN} == ${OPT}
-${OPT}_RUN_DEPENDS=	${VDRDIR}/libvdr-reelchannelscan.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-reelchannelscan
+${OPT}_RUN_DEPENDS=	${VDRDIR}/libvdr-reelchannelscan.so.${PORTVERSION}:multimedia/vdr-plugin-reelchannelscan
 . elif ${OPTIONS_DEFINE:MSTREAMDEV} == ${OPT}
-${OPT}_RUN_DEPENDS=	${VDRDIR}/libvdr-${OPT:tl}-server.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-${OPT:tl}
+${OPT}_RUN_DEPENDS=	${VDRDIR}/libvdr-${OPT:tl}-server.so.${PORTVERSION}:multimedia/vdr-plugin-${OPT:tl}
 . elif ${OPTIONS_DEFINE:MLIVE} == ${OPT}
-${OPT}_RUN_DEPENDS=	${VDRDIR}/libvdr-${OPT:tl}.so.${PORTVERSION}:${PORTSDIR}/www/vdr-plugin-${OPT:tl}
+${OPT}_RUN_DEPENDS=	${VDRDIR}/libvdr-${OPT:tl}.so.${PORTVERSION}:www/vdr-plugin-${OPT:tl}
 . else
-${OPT}_RUN_DEPENDS=	${VDRDIR}/libvdr-${OPT:tl}.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-${OPT:tl}
+${OPT}_RUN_DEPENDS=	${VDRDIR}/libvdr-${OPT:tl}.so.${PORTVERSION}:multimedia/vdr-plugin-${OPT:tl}
 . endif
 .endfor
 

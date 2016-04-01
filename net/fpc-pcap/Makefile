@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	LIBPCAP
 LIBPCAP_DESC=	Install ubiquitous network traffic capture library
 OPTIONS_DEFAULT=	LIBPCAP
 
-LIBPCAP_LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap
+LIBPCAP_LIB_DEPENDS=	libpcap.so:net/libpcap
 
 .include "${MASTERDIR}/Makefile"

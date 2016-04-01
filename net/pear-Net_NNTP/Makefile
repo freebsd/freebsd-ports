@@ -9,8 +9,8 @@ CATEGORIES=	net news pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR implementation of the NNTP protocol
 
-BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
-RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
+RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
 
 USES=	pear
 

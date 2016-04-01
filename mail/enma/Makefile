@@ -35,9 +35,9 @@ OPTIONS_DEFINE=	DOCS
 .if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
 CONF_SUB=	${REINPLACE_CMD} -e '/milter\.postfix/s/false/true/' ${WRKSRC}/enma/etc/enma.conf.sample
 . if defined(WITH_POSTFIX_CURRENT)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix-current
+RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:mail/postfix-current
 . else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
+RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:mail/postfix
 . endif
 .endif
 
@@ -48,10 +48,10 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
 CONFIGURE_ARGS+=	--with-resolver=libbind \
 			--with-libbind-incdir=${LOCALBASE}/include/bind \
 			--with-libbind-libdir=${LOCALBASE}/lib
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libbind.a:${PORTSDIR}/dns/libbind
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libbind.a:dns/libbind
 .else
 CONFIGURE_ARGS+=	--with-resolver=ldns
-LIB_DEPENDS+=	libldns.so:${PORTSDIR}/dns/ldns
+LIB_DEPENDS+=	libldns.so:dns/ldns
 .endif
 
 pre-configure:

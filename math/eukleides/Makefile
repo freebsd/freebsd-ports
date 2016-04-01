@@ -13,9 +13,9 @@ COMMENT=	Euclidean geometry drawing language
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libreadline.so:${PORTSDIR}/devel/readline
-RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit \
-		getopt>=0:${PORTSDIR}/misc/getopt
+LIB_DEPENDS=	libreadline.so:devel/readline
+RUN_DEPENDS=	pstoedit:graphics/pstoedit \
+		getopt>=0:misc/getopt
 
 USE_TEX=	latex
 USES=		bison gettext iconv gmake tar:bzip2

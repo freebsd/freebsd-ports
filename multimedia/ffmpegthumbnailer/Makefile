@@ -13,8 +13,8 @@ COMMENT=	Lightweight video thumbnailer that can be used by file managers
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libswscale.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libswscale.so:multimedia/ffmpeg
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
