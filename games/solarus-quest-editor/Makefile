@@ -12,12 +12,12 @@ COMMENT=	GUI to create and modify quests for the Solarus engine
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license_gpl.txt
 
-LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
-		libmodplug.so:${PORTSDIR}/audio/libmodplug \
-		liblua-5.1.so:${PORTSDIR}/lang/lua51 \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libsolarus.so:${PORTSDIR}/games/solarus
+LIB_DEPENDS=	libphysfs.so:devel/physfs \
+		libmodplug.so:audio/libmodplug \
+		liblua-5.1.so:lang/lua51 \
+		libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg \
+		libsolarus.so:games/solarus
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	christopho

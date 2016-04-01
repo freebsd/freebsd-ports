@@ -7,7 +7,7 @@ CATEGORIES=	devel elisp
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Distel extends Emacs Lisp with Erlang-style message passing
 
-BUILD_DEPENDS+=	erlc:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS+=	erlc:lang/erlang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	massemanet

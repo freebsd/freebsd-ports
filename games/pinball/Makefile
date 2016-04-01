@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 .if defined(WITH_ALLEGRO)
 BROKEN=		support with Allegro is (temporarily?) broken as of version 0.3.1
-LIB_DEPENDS+=	liballeg.so:${PORTSDIR}/devel/allegro
+LIB_DEPENDS+=	liballeg.so:devel/allegro
 CONFIGURE_ARGS+=	--with-allegro
 USE_GL+=	glu
 .else

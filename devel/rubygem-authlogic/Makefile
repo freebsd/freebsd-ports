@@ -13,10 +13,10 @@ COMMENT=	Clean, simple, and unobtrusive Ruby authentication solution
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activerecord4>=3.2:${PORTSDIR}/databases/rubygem-activerecord4 \
-		rubygem-activesupport4>=3.2:${PORTSDIR}/devel/rubygem-activesupport4 \
-		rubygem-request_store>=1.0:${PORTSDIR}/devel/rubygem-request_store \
-		rubygem-scrypt>=1.2:${PORTSDIR}/security/rubygem-scrypt
+RUN_DEPENDS=	rubygem-activerecord4>=3.2:databases/rubygem-activerecord4 \
+		rubygem-activesupport4>=3.2:devel/rubygem-activesupport4 \
+		rubygem-request_store>=1.0:devel/rubygem-request_store \
+		rubygem-scrypt>=1.2:security/rubygem-scrypt
 
 NO_ARCH=	yes
 USE_RUBY=	yes

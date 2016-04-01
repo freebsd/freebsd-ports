@@ -11,7 +11,7 @@ COMMENT=	MySQL JDBC driver for JRuby
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby
+RUN_DEPENDS=	jruby:lang/jruby
 
 NO_ARCH=	yes
 

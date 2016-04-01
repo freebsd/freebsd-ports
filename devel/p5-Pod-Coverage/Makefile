@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Checks if the documentation of a module is comprehensive
 
-BUILD_DEPENDS=	p5-Devel-Symdump>=2.01:${PORTSDIR}/devel/p5-Devel-Symdump
-RUN_DEPENDS=	p5-Devel-Symdump>=2.01:${PORTSDIR}/devel/p5-Devel-Symdump
+BUILD_DEPENDS=	p5-Devel-Symdump>=2.01:devel/p5-Devel-Symdump
+RUN_DEPENDS=	p5-Devel-Symdump>=2.01:devel/p5-Devel-Symdump
 
-TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
+TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure

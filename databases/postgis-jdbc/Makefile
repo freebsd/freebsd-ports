@@ -13,7 +13,7 @@ COMMENT=	PostGIS spatial data structures for JDBC
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
+RUN_DEPENDS=	${JAVALIBDIR}/postgresql.jar:databases/postgresql-jdbc
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -14,7 +14,7 @@ COMMENT=	Locate per-dist and per-module shared files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Class-Inspector>=1.12:${PORTSDIR}/devel/p5-Class-Inspector
+RUN_DEPENDS=	p5-Class-Inspector>=1.12:devel/p5-Class-Inspector
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

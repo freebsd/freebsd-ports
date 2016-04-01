@@ -14,29 +14,29 @@ COMMENT=	Personal search and metasearch for the Free Desktop
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	desktop-file-install:${PORTSDIR}/devel/desktop-file-utils \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info
-LIB_DEPENDS=	libxapian.so:${PORTSDIR}/databases/xapian-core		\
-		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24	\
-		libexttextcat-2.0.so:${PORTSDIR}/textproc/libexttextcat	\
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib		\
-		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26	\
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs		\
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo		\
-		libexif.so:${PORTSDIR}/graphics/libexif			\
-		libexiv2.so:${PORTSDIR}/graphics/exiv2			\
-		libgmime-2.4.so:${PORTSDIR}/mail/gmime24		\
-		libtag.so:${PORTSDIR}/audio/taglib			\
-		libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
-		antiword:${PORTSDIR}/textproc/antiword			\
-		xdg-open:${PORTSDIR}/devel/xdg-utils			\
-		${LOCALBASE}/libexec/xpdf/pdftotext:${PORTSDIR}/graphics/xpdf	\
-		catppt:${PORTSDIR}/textproc/catdoc			\
-		unzip:${PORTSDIR}/archivers/unzip			\
-		unrtf:${PORTSDIR}/textproc/unrtf			\
-		catdvi:${PORTSDIR}/print/catdvi				\
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	desktop-file-install:devel/desktop-file-utils \
+		update-mime-database:misc/shared-mime-info
+LIB_DEPENDS=	libxapian.so:databases/xapian-core		\
+		libgtkmm-2.4.so:x11-toolkits/gtkmm24	\
+		libexttextcat-2.0.so:textproc/libexttextcat	\
+		libdbus-glib-1.so:devel/dbus-glib		\
+		libxml++-2.6.so:textproc/libxml++26	\
+		libboost_thread.so:devel/boost-libs		\
+		libexecinfo.so:devel/libexecinfo		\
+		libexif.so:graphics/libexif			\
+		libexiv2.so:graphics/exiv2			\
+		libgmime-2.4.so:mail/gmime24		\
+		libtag.so:audio/taglib			\
+		libcurl.so:ftp/curl
+RUN_DEPENDS=	update-mime-database:misc/shared-mime-info	\
+		antiword:textproc/antiword			\
+		xdg-open:devel/xdg-utils			\
+		${LOCALBASE}/libexec/xpdf/pdftotext:graphics/xpdf	\
+		catppt:textproc/catdoc			\
+		unzip:archivers/unzip			\
+		unrtf:textproc/unrtf			\
+		catdvi:print/catdvi				\
+		bash:shells/bash
 
 PROJECTHOST=	${PORTNAME}-search
 
@@ -61,7 +61,7 @@ DEBUG_CONFIGURE_ON=	--enable-debug=yes
 
 CHMLIB_CONFIGURE_ON=	--enable-chmlib=yes
 CHMLIB_CONFIGURE_OFF=	--disable-chmlib
-CHMLIB_LIB_DEPENDS=	libchm.so:${PORTSDIR}/misc/chmlib
+CHMLIB_LIB_DEPENDS=	libchm.so:misc/chmlib
 
 INSTALLS_ICONS=	yes
 

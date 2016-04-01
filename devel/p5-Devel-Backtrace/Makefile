@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-oriented backtrace
 
-BUILD_DEPENDS=	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
-RUN_DEPENDS=	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+BUILD_DEPENDS=	p5-String-Escape>=0:textproc/p5-String-Escape \
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor
+RUN_DEPENDS=	p5-String-Escape>=0:textproc/p5-String-Escape \
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor
 
 USES=		perl5
 USE_PERL5=	configure

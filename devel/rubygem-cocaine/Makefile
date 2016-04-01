@@ -12,7 +12,7 @@ COMMENT=	Small library for doing (command) lines
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-climate_control>=0.0.3:${PORTSDIR}/devel/rubygem-climate_control
+RUN_DEPENDS=	rubygem-climate_control>=0.0.3:devel/rubygem-climate_control
 
 NO_ARCH=	yes
 USE_RUBY=	yes

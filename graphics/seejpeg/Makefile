@@ -10,7 +10,7 @@ MASTER_SITES=	SUNSITE/apps/graphics/viewers/svga
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console graphics viewer using the svga console graphics library
 
-LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS=	libvga.so:graphics/svgalib
 
 USES=		gmake jpeg tar:tgz
 ALL_TARGET=	seejpeg

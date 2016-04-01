@@ -13,8 +13,8 @@ COMMENT=	Determine file type
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-BaseDir>=0.03:${PORTSDIR}/devel/p5-File-BaseDir \
-		p5-File-DesktopEntry>=0.04:${PORTSDIR}/devel/p5-File-DesktopEntry
+BUILD_DEPENDS=	p5-File-BaseDir>=0.03:devel/p5-File-BaseDir \
+		p5-File-DesktopEntry>=0.04:devel/p5-File-DesktopEntry
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

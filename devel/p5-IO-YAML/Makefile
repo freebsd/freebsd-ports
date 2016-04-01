@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read and write YAML streams incrementally
 
-BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-YAML>=0:textproc/p5-YAML
+RUN_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-YAML>=0:textproc/p5-YAML
 
 USES=		perl5
 USE_PERL5=	modbuild

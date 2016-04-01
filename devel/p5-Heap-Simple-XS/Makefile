@@ -14,7 +14,7 @@ COMMENT=	XS implementation of the Heap::Simple interface
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Heap-Simple>=0:${PORTSDIR}/devel/p5-Heap-Simple
+BUILD_DEPENDS=	p5-Heap-Simple>=0:devel/p5-Heap-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

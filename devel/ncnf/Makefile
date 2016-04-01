@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic configuration management library
 
-LIB_DEPENDS=	libstrfunc.so:${PORTSDIR}/devel/libstrfunc
+LIB_DEPENDS=	libstrfunc.so:devel/libstrfunc
 
 USES=		libtool
 GNU_CONFIGURE=	yes

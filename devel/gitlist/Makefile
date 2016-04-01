@@ -13,7 +13,7 @@ COMMENT=	Web based Git repository browser written in PHP
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+RUN_DEPENDS=	git:devel/git
 
 PLIST=		${WRKDIR}/plist
 WRKSRC=		${WRKDIR}/${PORTNAME}

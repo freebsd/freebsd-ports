@@ -13,7 +13,7 @@ COMMENT=	Full-featured classic dice game Yahtzee
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/scoped_ptr.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/scoped_ptr.hpp:devel/boost-libs
 
 USES=		compiler:c++11-lib tar:bzip2
 USE_WX=		2.8

@@ -12,7 +12,7 @@ COMMENT=	Text-based front-end to Remind
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	remind:${PORTSDIR}/deskutils/remind
+RUN_DEPENDS=	remind:deskutils/remind
 
 USES=		gmake ncurses
 USE_OCAML=	yes

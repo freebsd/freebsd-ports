@@ -13,8 +13,8 @@ COMMENT=	Tryton Application Platform (Carrier Weight Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_product_measurements>=2.8.0:${PORTSDIR}/finance/trytond28_product_measurements \
-		trytond28_carrier>=2.8.0:${PORTSDIR}/finance/trytond28_carrier
+RUN_DEPENDS=	trytond28_product_measurements>=2.8.0:finance/trytond28_product_measurements \
+		trytond28_carrier>=2.8.0:finance/trytond28_carrier
 
 CONFLICTS=	trytond_carrier_weight-2.[46].*
 

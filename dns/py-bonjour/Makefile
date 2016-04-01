@@ -17,7 +17,7 @@ USE_PYTHON=	distutils autoplist
 OPTIONS_SINGLE=			ZEROCONF
 OPTIONS_SINGLE_ZEROCONF=	AVAHI MDNSRESPONDER
 OPTIONS_DEFAULT=		MDNSRESPONDER
-AVAHI_LIB_DEPENDS=		libdns_sd.so:${PORTSDIR}/net/avahi-libdns
-MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+AVAHI_LIB_DEPENDS=		libdns_sd.so:net/avahi-libdns
+MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
 .include <bsd.port.mk>

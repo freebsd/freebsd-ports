@@ -13,7 +13,7 @@ COMMENT=	Daemon notifying the user about devd(8) events \
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libnotify.so:devel/libnotify
 
 USES=		pkgconfig
 PLIST_FILES=	bin/devd-notifier \

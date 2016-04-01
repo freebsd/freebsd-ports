@@ -11,8 +11,8 @@ DISTNAME=	vanessa_socket-${PORTVERSION}
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Library that provides a simple layer for TCP/IP socket operations
 
-LIB_DEPENDS=	libvanessa_logger.so:${PORTSDIR}/devel/libvanessa_logger \
-		libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libvanessa_logger.so:devel/libvanessa_logger \
+		libpopt.so:devel/popt
 
 USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes

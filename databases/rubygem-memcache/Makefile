@@ -12,7 +12,7 @@ COMMENT=	Ruby bindings for libmemcached
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 CONFIGURE_ARGS=	--with-opt-dir=${LOCALBASE}
 GEM_ENV=	EXTERNAL_LIB="yes"

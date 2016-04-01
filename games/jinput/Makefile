@@ -9,8 +9,8 @@ MASTER_SITES=	LOCAL/loader
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Game Controller API
 
-BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils
-RUN_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils
+BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:games/jutils
+RUN_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:games/jutils
 
 USES=		tar:bzip2
 USE_JAVA=	yes

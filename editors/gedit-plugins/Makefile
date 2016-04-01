@@ -10,13 +10,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plugins for GEdit 3
 
-BUILD_DEPENDS=	gedit>=0:${PORTSDIR}/editors/gedit \
-		valac:${PORTSDIR}/lang/vala \
-		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
-		libzeitgeist-2.0.so:${PORTSDIR}/sysutils/zeitgeist \
-		libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib
-RUN_DEPENDS=	gedit>=0:${PORTSDIR}/editors/gedit
+BUILD_DEPENDS=	gedit>=0:editors/gedit \
+		valac:lang/vala \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas \
+		libzeitgeist-2.0.so:sysutils/zeitgeist \
+		libgit2-glib-1.0.so:devel/libgit2-glib
+RUN_DEPENDS=	gedit>=0:editors/gedit
 
 PORTSCOUT=	limitw:1,even
 
@@ -33,10 +33,10 @@ GLIB_SCHEMAS=	org.gnome.gedit.plugins.drawspaces.gschema.xml \
 		org.gnome.gedit.plugins.wordcompletion.gschema.xml
 
 USES+=		python
-BUILD_DEPENDS+=	py3?-dbus>=0:${PORTSDIR}/devel/py3-dbus
-LIB_DEPENDS+=	libgucharmap_2_90.so:${PORTSDIR}/deskutils/gucharmap
-RUN_DEPENDS+=	py3?-dbus>=0:${PORTSDIR}/devel/py3-dbus \
-		${PYTHON_PKGNAMEPREFIX}libpeas>=0:${PORTSDIR}/devel/py3-libpeas
+BUILD_DEPENDS+=	py3?-dbus>=0:devel/py3-dbus
+LIB_DEPENDS+=	libgucharmap_2_90.so:deskutils/gucharmap
+RUN_DEPENDS+=	py3?-dbus>=0:devel/py3-dbus \
+		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py3-libpeas
 USE_GNOME+=	vte3
 CONFIGURE_ARGS+=--enable-python
 GLIB_SCHEMAS+=	org.gnome.gedit.plugins.terminal.gschema.xml

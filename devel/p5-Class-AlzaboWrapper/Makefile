@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Higher level wrapper around Alzabo Row and Table objects
 
-BUILD_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Alzabo>=0:${PORTSDIR}/devel/p5-Alzabo
+BUILD_DEPENDS=	p5-Params-Validate>=0:devel/p5-Params-Validate \
+		p5-Exception-Class>=0:devel/p5-Exception-Class \
+		p5-Alzabo>=0:devel/p5-Alzabo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

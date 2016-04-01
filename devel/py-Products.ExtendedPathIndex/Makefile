@@ -13,9 +13,9 @@ COMMENT=	Zope catalog index for paths
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>0:${PORTSDIR}/security/py-AccessControl \
-		${PYTHON_PKGNAMEPREFIX}transaction>0:${PORTSDIR}/devel/py-transaction \
-		zodb${PYTHON_PKGNAMESUFFIX}>0:${PORTSDIR}/databases/zodb3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>0:security/py-AccessControl \
+		${PYTHON_PKGNAMEPREFIX}transaction>0:devel/py-transaction \
+		zodb${PYTHON_PKGNAMESUFFIX}>0:databases/zodb3
 
 USES=		python zope zip
 USE_PYTHON=	distutils autoplist

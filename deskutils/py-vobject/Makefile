@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	ICalendar library
 
-RUN_DEPENDS=	py*-dateutil>=1.1:${PORTSDIR}/devel/py-dateutil
+RUN_DEPENDS=	py*-dateutil>=1.1:devel/py-dateutil
 
 USES=		python
 USE_PYTHON=	distutils autoplist

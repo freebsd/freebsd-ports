@@ -13,7 +13,7 @@ COMMENT=	Perl module for manipulating .po entries from GNU gettext
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp
 
 USES=		perl5
 USE_PERL5=	configure

@@ -12,7 +12,7 @@ DIST_SUBDIR=	erlang
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Library for accessing SDL and OpenGL through Erlang
 
-BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erl:lang/erlang
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -11,7 +11,7 @@ COMMENT=	OpenCL Installable Client Driver
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	opencl>=0:${PORTSDIR}/devel/opencl
+BUILD_DEPENDS=	opencl>=0:devel/opencl
 
 CONFLICTS=	freeocl-[0-9]* opencl-icd-[0-9]*
 
@@ -31,8 +31,8 @@ OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
-MANPAGES_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
-			asciidoc:${PORTSDIR}/textproc/asciidoc
+MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto \
+			asciidoc:textproc/asciidoc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/|${LOCALBASE}/etc/|g' \

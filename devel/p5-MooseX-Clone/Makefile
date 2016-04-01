@@ -13,10 +13,10 @@ COMMENT=	Fine grained cloning support for Moose objects
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Data-Visitor>=0.24:${PORTSDIR}/devel/p5-Data-Visitor \
-		p5-Hash-Util-FieldHash-Compat>=0:${PORTSDIR}/devel/p5-Hash-Util-FieldHash-Compat \
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+RUN_DEPENDS=	p5-Data-Visitor>=0.24:devel/p5-Data-Visitor \
+		p5-Hash-Util-FieldHash-Compat>=0:devel/p5-Hash-Util-FieldHash-Compat \
+		p5-Moose>=0:devel/p5-Moose \
+		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

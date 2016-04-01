@@ -14,7 +14,7 @@ COMMENT=	Asynchronous job queue for Mojolicious
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Mojolicious>=6.0:${PORTSDIR}/www/p5-Mojolicious
+BUILD_DEPENDS=	p5-Mojolicious>=6.0:www/p5-Mojolicious
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
@@ -23,7 +23,7 @@ USE_PERL5=	configure
 
 OPTIONS_DEFINE=	PGSQL
 
-PGSQL_BUILD_DEPENDS=	p5-Mojo-Pg>=0:${PORTSDIR}/databases/p5-Mojo-Pg
+PGSQL_BUILD_DEPENDS=	p5-Mojo-Pg>=0:databases/p5-Mojo-Pg
 PGSQL_RUN_DEPENDS=	${PGSQL_BUILD_DEPENDS}
 
 .include <bsd.port.mk>

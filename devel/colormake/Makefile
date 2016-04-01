@@ -9,8 +9,8 @@ MASTER_SITES=	http://bre.klaki.net/programs/colormake/
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Wrapper to color gmake output
 
-RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	gmake:devel/gmake \
+		bash:shells/bash
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

@@ -42,7 +42,7 @@ ${lang}_DETECT?=	${PREFIX}/lib/${PORTNAME}/readmes/README_${lang:S/_/-/}
 ${lang}_NAME?=		${lang}
 ${lang:tu}_PORT?=	editors/${PORTNAME}-${lang}
 ${lang:tu}_DESC=	${${lang}_NAME} localization data
-${lang:tu}_RUN_DEPENDS=	${${lang}_DETECT}:${PORTSDIR}/${${lang:tu}_PORT}
+${lang:tu}_RUN_DEPENDS=	${${lang}_DETECT}:${${lang:tu}_PORT}
 .endfor
 
 all-lang-list:

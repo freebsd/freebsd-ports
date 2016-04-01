@@ -12,10 +12,10 @@ COMMENT=	Simple optical character recognition solution
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
-RUN_DEPENDS=	display:${PORTSDIR}/graphics/ImageMagick \
-		gnuplot:${PORTSDIR}/math/gnuplot \
-		ispell:${PORTSDIR}/textproc/aspell-ispell
+LIB_DEPENDS=	libaspell.so:textproc/aspell
+RUN_DEPENDS=	display:graphics/ImageMagick \
+		gnuplot:math/gnuplot \
+		ispell:textproc/aspell-ispell
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 

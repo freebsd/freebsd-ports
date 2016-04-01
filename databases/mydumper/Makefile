@@ -11,7 +11,7 @@ COMMENT=	MySQL Data Dumper
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CMAKE_ARGS=	-DBUILD_DOCS=OFF -DWITH_BINLOG=OFF
 USE_GNOME=	glib20

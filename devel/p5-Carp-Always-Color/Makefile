@@ -14,9 +14,9 @@ COMMENT=	Carp::Always, but with color
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Carp-Always>=0.10:${PORTSDIR}/devel/p5-Carp-Always
+BUILD_DEPENDS=	p5-Carp-Always>=0.10:devel/p5-Carp-Always
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-IO-Pty-Easy>=0:${PORTSDIR}/devel/p5-IO-Pty-Easy
+TEST_DEPENDS=	p5-IO-Pty-Easy>=0:devel/p5-IO-Pty-Easy
 
 NO_ARCH=	yes
 USE_PERL5=	configure

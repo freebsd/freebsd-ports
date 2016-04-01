@@ -11,7 +11,7 @@ COMMENT=	Complete - yet small - standard library for OCaml
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	cppo:${PORTSDIR}/devel/ocaml-cppo
+BUILD_DEPENDS=	cppo:devel/ocaml-cppo
 
 WRKSRC_SUBDIR=	src
 

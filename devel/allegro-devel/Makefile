@@ -17,11 +17,11 @@ COMMENT=	Cross-platform library for games and multimedia programming
 LICENSE=	ZLIB BSD3CLAUSE
 LICENSE_COMB=	dual
 
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libFLAC.so:${PORTSDIR}/audio/flac \
-		libphysfs.so:${PORTSDIR}/devel/physfs
+LIB_DEPENDS+=	libjack.so:audio/jack \
+		libpng.so:graphics/png \
+		libvorbis.so:audio/libvorbis \
+		libFLAC.so:audio/flac \
+		libphysfs.so:devel/physfs
 
 USES=		cmake gmake jpeg openal:soft pkgconfig
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
@@ -60,11 +60,11 @@ DOCSDIR2=	${DOCSDIR}/docs
 
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/pandoc:${PORTSDIR}/textproc/hs-pandoc
-ALSA_LIB_DEPENDS=	libasound.so.2:${PORTSDIR}/audio/alsa-lib
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/pandoc:textproc/hs-pandoc
+ALSA_LIB_DEPENDS=	libasound.so.2:audio/alsa-lib
 ALSA_CMAKE_ON=		-DWANT_ALSA=on
 ALSA_CMAKE_OFF=		-DWANT_ALSA=off
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_ON=	-DWANT_PULSEAUDIO=on
 PULSEAUDIO_CMAKE_OFF=	-DWANT_PULSEAUDIO=off
 

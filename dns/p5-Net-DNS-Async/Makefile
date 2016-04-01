@@ -14,7 +14,7 @@ COMMENT=	Asynchronous DNS helper for high volume applications
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+BUILD_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

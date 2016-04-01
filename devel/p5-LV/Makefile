@@ -15,8 +15,8 @@ COMMENT=	LV for lvalue
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Sentinel>=0:${PORTSDIR}/devel/p5-Sentinel \
-		p5-Variable-Magic>=0:${PORTSDIR}/devel/p5-Variable-Magic
+TEST_DEPENDS=	p5-Sentinel>=0:devel/p5-Sentinel \
+		p5-Variable-Magic>=0:devel/p5-Variable-Magic
 
 USE_PERL5=	configure
 USES=		perl5

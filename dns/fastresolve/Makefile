@@ -12,8 +12,8 @@ COMMENT=	Programs to get DNS and domain ownership information from web logs
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns
-RUN_DEPENDS=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB
+LIB_DEPENDS=	libadns.so:dns/adns
+RUN_DEPENDS=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB
 
 USES=		perl5 tar:bzip2
 USE_BDB=	yes

@@ -16,7 +16,7 @@ BROKEN=		unfetchable
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:${PORTSDIR}/games/gnuchess
+RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:games/gnuchess
 
 USE_XORG=	xpm
 

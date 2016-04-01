@@ -11,8 +11,8 @@ COMMENT=	TIFF reader for R
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	R-cran-pixmap>0:${PORTSDIR}/graphics/R-cran-pixmap
+LIB_DEPENDS=	libtiff.so:graphics/tiff
+RUN_DEPENDS=	R-cran-pixmap>0:graphics/R-cran-pixmap
 
 USES=	cran:auto-plist
 

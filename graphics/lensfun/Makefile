@@ -11,7 +11,7 @@ COMMENT=	Library for fixing lens geometry distortions
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cmake pathfix pkgconfig
 USE_GNOME=	glib20

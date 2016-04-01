@@ -8,8 +8,8 @@ CATEGORIES=	databases www pear
 MAINTAINER=	toshiya@saitoh.nu
 COMMENT=	PEAR Database Abstraction Layer
 
-BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
+RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
 
 USES=	pear
 

@@ -12,8 +12,8 @@ COMMENT=	C and C++ client library to the memcached server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS?=	libevent.so:${PORTSDIR}/devel/libevent2
-TEST_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
+LIB_DEPENDS?=	libevent.so:devel/libevent2
+TEST_DEPENDS=	memcached:databases/memcached
 
 USES=		autoreconf execinfo gmake pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
@@ -45,7 +45,7 @@ HSIEH_CONFIGURE_ENABLE=		hsieh_hash
 MURMUR_CONFIGURE_ENABLE=	murmur_hash
 
 SASL_CONFIGURE_ENABLE=	sasl
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 PATHFIX_MAKEFILEIN=	include.am
 

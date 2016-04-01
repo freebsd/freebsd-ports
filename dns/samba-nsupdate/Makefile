@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=	--with-gssapi="${HEIMDAL_HOME}"
 .elif exists(/usr/lib/libkrb5.so) && exists(/usr/bin/krb5-config)
 CONFIGURE_ARGS+=	--with-gssapi="/usr"
 .else
-LIB_DEPENDS+=		libkrb5.so:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=		libkrb5.so:security/heimdal
 CONFIGURE_ARGS+=	--with-gssapi="${LOCALBASE}"
 .endif
 

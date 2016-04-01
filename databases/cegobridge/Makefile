@@ -8,9 +8,9 @@ MASTER_SITES=	http://www.lemke-it.com/
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Imports non-cego database dump files into cego
 
-LIB_DEPENDS=	liblfcbase.so:${PORTSDIR}/devel/lfcbase \
-		liblfcxml.so:${PORTSDIR}/devel/lfcxml \
-		libcego.so:${PORTSDIR}/databases/cego
+LIB_DEPENDS=	liblfcbase.so:devel/lfcbase \
+		liblfcxml.so:devel/lfcxml \
+		libcego.so:databases/cego
 
 LICENSE=	GPLv3
 GNU_CONFIGURE=	yes

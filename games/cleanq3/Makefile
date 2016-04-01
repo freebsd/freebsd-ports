@@ -39,7 +39,7 @@ GAMELIBS_DESC=		Build game libraries (when not mandatory)
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:devel/nasm
 .endif
 
 .for i in ${ARCH}

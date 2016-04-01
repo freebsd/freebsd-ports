@@ -11,7 +11,7 @@ COMMENT=	Pure Ruby one-shot and periodic timers
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-hitimes>=0:${PORTSDIR}/devel/rubygem-hitimes
+RUN_DEPENDS=	rubygem-hitimes>=0:devel/rubygem-hitimes
 
 NO_ARCH=	yes
 USE_RUBY=	yes

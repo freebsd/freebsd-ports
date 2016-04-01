@@ -10,30 +10,30 @@ DIST_SUBDIR=	KDE/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE graphic art and office suite
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libqca.so:${PORTSDIR}/devel/qca \
-		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libwpd-0.10.so:${PORTSDIR}/textproc/libwpd010 \
-		libwpg-0.3.so:${PORTSDIR}/graphics/libwpg03 \
-		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
-		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libgsl.so:${PORTSDIR}/math/gsl \
-		libwps-0.3.so:${PORTSDIR}/textproc/libwps03 \
-		libvisio-0.1.so:${PORTSDIR}/textproc/libvisio01 \
-		libOpenColorIO.so:${PORTSDIR}/graphics/opencolorio \
-		libodfgen-0.1.so:${PORTSDIR}/textproc/libodfgen01 \
-		libetonyek-0.1.so:${PORTSDIR}/graphics/libetonyek01 \
-		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:${PORTSDIR}/math/eigen3 \
-		pstoedit:${PORTSDIR}/graphics/pstoedit
-RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libIlmImf.so:graphics/OpenEXR \
+		libboost_thread.so:devel/boost-libs \
+		libqca.so:devel/qca \
+		libexiv2.so:graphics/exiv2 \
+		liblcms2.so:graphics/lcms2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libwpd-0.10.so:textproc/libwpd010 \
+		libwpg-0.3.so:graphics/libwpg03 \
+		libpoppler-qt4.so:graphics/poppler-qt4 \
+		libopenjpeg.so:graphics/openjpeg15 \
+		libfftw3.so:math/fftw3 \
+		libtiff.so:graphics/tiff \
+		libgsl.so:math/gsl \
+		libwps-0.3.so:textproc/libwps03 \
+		libvisio-0.1.so:textproc/libvisio01 \
+		libOpenColorIO.so:graphics/opencolorio \
+		libodfgen-0.1.so:textproc/libodfgen01 \
+		libetonyek-0.1.so:graphics/libetonyek01 \
+		librevenge-0.0.so:textproc/librevenge
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3 \
+		pstoedit:graphics/pstoedit
+RUN_DEPENDS=	pstoedit:graphics/pstoedit
 
 USE_GL=		glew
 USE_GNOME=	glib20 libxml2 libxslt
@@ -71,12 +71,12 @@ MYSQL_USE=	MYSQL=yes
 MYSQL_CMAKE_OFF=-DWITH_MySQL:BOOL=FALSE
 
 PGSQL_DESC=	PostgreSQL database support in Kexi
-PGSQL_LIB_DEPENDS=libpqxx-3.1.so:${PORTSDIR}/databases/postgresql-libpqxx3
+PGSQL_LIB_DEPENDS=libpqxx-3.1.so:databases/postgresql-libpqxx3
 PGSQL_USES=	pgsql
 PGSQL_CMAKE_OFF=-DWITH_PostgreSQL:BOOL=FALSE
 
 SYBASE_DESC=	Sybase database support in Kexi
-SYBASE_LIB_DEPENDS=libsybdb.so:${PORTSDIR}/databases/freetds
+SYBASE_LIB_DEPENDS=libsybdb.so:databases/freetds
 SYBASE_CMAKE_OFF=-DWITH_FreeTDS:BOOL=FALSE
 
 post-patch:

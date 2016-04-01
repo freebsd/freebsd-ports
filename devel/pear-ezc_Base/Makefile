@@ -12,8 +12,8 @@ COMMENT=	Base package that all ezc components packages rely on
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc
-RUN_DEPENDS=	${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc
+BUILD_DEPENDS=	${PEARDIR}/.channels/components.ez.no.reg:devel/pear-channel-ezc
+RUN_DEPENDS=	${PEARDIR}/.channels/components.ez.no.reg:devel/pear-channel-ezc
 
 PEAR_CHANNEL=	ezc
 USES=	pear

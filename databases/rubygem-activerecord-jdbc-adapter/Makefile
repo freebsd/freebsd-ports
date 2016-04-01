@@ -12,8 +12,8 @@ COMMENT=	JDBC adapter for ActiveRecord, for use within JRuby on Rails
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
-		rubygem-activerecord4>=2.2:${PORTSDIR}/databases/rubygem-activerecord4
+RUN_DEPENDS=	jruby:lang/jruby \
+		rubygem-activerecord4>=2.2:databases/rubygem-activerecord4
 
 NO_ARCH=	yes
 USE_RUBY=	yes

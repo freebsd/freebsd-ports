@@ -14,10 +14,10 @@ COMMENT=	Single player 2D role-playing game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libboost_thread.so:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake iconv jpeg lua:51 openal:al

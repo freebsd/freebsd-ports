@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	LIBGD
 LIBGD_DESC=	Install gd graphic library
 OPTIONS_DEFAULT=	LIBGD
 
-LIBGD_LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIBGD_LIB_DEPENDS=	libgd.so:graphics/gd
 
 .include "${MASTERDIR}/Makefile"

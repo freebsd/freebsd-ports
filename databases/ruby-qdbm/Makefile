@@ -14,7 +14,7 @@ COMMENT=	Ruby API for QDBM
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/COPYING
 
-LIB_DEPENDS=	libqdbm.so:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS=	libqdbm.so:databases/qdbm
 
 USES=		iconv shebangfix
 SHEBANG_FILES=	curia/rbcrtest depot/rbdptest myrbdoc villa/rbvltest

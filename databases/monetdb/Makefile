@@ -16,7 +16,7 @@ LICENSE_NAME=	MonetDB Public License Version 1.1
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_GNOME=	libxml2
 
@@ -114,18 +114,18 @@ ODBC_CONFIGURE_ENABLE=		odbc
 PERL_CONFIGURE_WITH=		perl
 RDF_CONFIGURE_ENABLE=		rdf
 
-SPHINXCLIENT_LIB_DEPENDS=	libsphinxclient.so:${PORTSDIR}/textproc/libsphinxclient
-RUBYGEMS_BUILD_DEPENDS=		gem:${PORTSDIR}/devel/ruby-gems
-RUBYGEMS_RUN_DEPENDS=		gem:${PORTSDIR}/devel/ruby-gems
-PYTHON3_BUILD_DEPENDS=		python3:${PORTSDIR}/lang/python3
-PYTHON3_RUN_DEPENDS=		python3:${PORTSDIR}/lang/python3
-CURL_LIB_DEPENDS=		libcurl.so:${PORTSDIR}/ftp/curl
-FITS_LIB_DEPENDS=		libcfitsio.so:${PORTSDIR}/astro/cfitsio
-GEOM_LIB_DEPENDS=		libgeos.so:${PORTSDIR}/graphics/geos
-ODBC_LIB_DEPENDS=		libodbcinst.so:${PORTSDIR}/databases/unixODBC
-PERL_BUILD_DEPENDS=		p5-DBI>=1.08:${PORTSDIR}/databases/p5-DBI
-PERL_RUN_DEPENDS=		p5-DBI>=1.08:${PORTSDIR}/databases/p5-DBI
-RDF_LIB_DEPENDS=		libraptor.so:${PORTSDIR}/textproc/raptor
+SPHINXCLIENT_LIB_DEPENDS=	libsphinxclient.so:textproc/libsphinxclient
+RUBYGEMS_BUILD_DEPENDS=		gem:devel/ruby-gems
+RUBYGEMS_RUN_DEPENDS=		gem:devel/ruby-gems
+PYTHON3_BUILD_DEPENDS=		python3:lang/python3
+PYTHON3_RUN_DEPENDS=		python3:lang/python3
+CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
+FITS_LIB_DEPENDS=		libcfitsio.so:astro/cfitsio
+GEOM_LIB_DEPENDS=		libgeos.so:graphics/geos
+ODBC_LIB_DEPENDS=		libodbcinst.so:databases/unixODBC
+PERL_BUILD_DEPENDS=		p5-DBI>=1.08:databases/p5-DBI
+PERL_RUN_DEPENDS=		p5-DBI>=1.08:databases/p5-DBI
+RDF_LIB_DEPENDS=		libraptor.so:textproc/raptor
 PERL_USES=			perl5
 
 .include <bsd.port.options.mk>
@@ -140,7 +140,7 @@ CATEGORIES+=	math
 
 .if ${PORT_OPTIONS:MJDBC} || ${PORT_OPTIONS:MMEROCONTROL}
 CATEGORIES+=	java
-BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS+=	ant:devel/apache-ant
 USE_JAVA=	yes
 JAVA_VENDOR=	openjdk
 JAVA_BUILD=	yes
@@ -214,7 +214,7 @@ CONFIGURE_ARGS+=	-with-password-backend=SHA512
 # Compile chokes with  version of flex on FreeBSD 8 and 9
 # with "unknown flag '-'"
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
 CONFIGURE_ENV+=	LEX=${LOCALBASE}/bin/flex
 .endif
 

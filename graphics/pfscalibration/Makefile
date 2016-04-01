@@ -23,6 +23,6 @@ USE_PERL5=	run
 SHEBANG_FILES=	src/dcraw2hdrgen src/jpeg2hdrgen src/pfsinhdrgen
 bash_CMD=	${SH}
 
-LIB_DEPENDS=	libpfs-1.2.so:${PORTSDIR}/graphics/pfstools
+LIB_DEPENDS=	libpfs-1.2.so:graphics/pfstools
 
 .include <bsd.port.mk>

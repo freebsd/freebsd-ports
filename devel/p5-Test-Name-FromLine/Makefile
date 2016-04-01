@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp
+	p5-File-Slurp>0:devel/p5-File-Slurp
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

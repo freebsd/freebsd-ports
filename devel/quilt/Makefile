@@ -11,14 +11,14 @@ COMMENT=	Collection of bash scripts to ease working with patch files
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		gcp:${PORTSDIR}/sysutils/coreutils \
-		gsed:${PORTSDIR}/textproc/gsed \
-		gpatch:${PORTSDIR}/devel/patch \
-		diffstat:${PORTSDIR}/textproc/diffstat \
-		gawk:${PORTSDIR}/lang/gawk
+BUILD_DEPENDS=	bash:shells/bash \
+		gcp:sysutils/coreutils \
+		gsed:textproc/gsed \
+		gpatch:devel/patch \
+		diffstat:textproc/diffstat \
+		gawk:lang/gawk
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		formail:${PORTSDIR}/mail/procmail
+		formail:mail/procmail
 
 USES=		desthack gmake perl5
 NO_ARCH=	yes
@@ -34,8 +34,8 @@ CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed \
 
 PORTDOCS=	README README.MAIL quilt.pdf
 
-RPMBUILD_BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm4
-RPMBUILD_RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm4
+RPMBUILD_BUILD_DEPENDS=	rpm:archivers/rpm4
+RPMBUILD_RUN_DEPENDS=	rpm:archivers/rpm4
 RPMBUILD_CONFIGURE_OFF=	--without-rpmbuild
 
 NLS_USES=		gettext

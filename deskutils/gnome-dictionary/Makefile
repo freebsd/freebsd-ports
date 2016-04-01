@@ -10,8 +10,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 dictionary lookup application
 
-BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc \
-		itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc \
+		itstool:textproc/itstool
 
 PORTSCOUT=	limitw:1,even
 

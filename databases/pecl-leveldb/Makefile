@@ -13,7 +13,7 @@ COMMENT=	This extension is a PHP binding for Google LevelDB
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
+LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
 USES=		tar:tgz
 USE_PHP=	yes

@@ -13,7 +13,7 @@ COMMENT=	Perl cartographic projections wrapper for Proj library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj
+LIB_DEPENDS=	libproj.so:graphics/proj
 
 CONFIGURE_ENV=	GEOPROJ_FWTOOLS_DIR=${LOCALBASE}
 MAKE_ENV=	INC=-I${LOCALBASE}/include

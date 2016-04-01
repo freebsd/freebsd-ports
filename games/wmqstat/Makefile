@@ -12,7 +12,7 @@ COMMENT=	Dockapp for monitoring of various Internet game servers
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
+RUN_DEPENDS=	qstat:games/qstat
 
 USE_XORG=	xpm x11 xext
 

@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front end for cscope and cscope clones
 
-RUN_DEPENDS=	cscope:${PORTSDIR}/devel/cscope
+RUN_DEPENDS=	cscope:devel/cscope
 
 USES+=		tk:run
 NO_BUILD=	yes

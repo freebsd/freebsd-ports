@@ -12,8 +12,8 @@ COMMENT=	GUI for openMSX
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
-RUN_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
+BUILD_DEPENDS=	openmsx:emulators/openmsx
+RUN_DEPENDS=	openmsx:emulators/openmsx
 
 OPTIONS_DEFINE=	DEBUG DOCS
 

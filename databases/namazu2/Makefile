@@ -11,8 +11,8 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search system intended for easy use
 
-BUILD_DEPENDS=	p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic
-RUN_DEPENDS=	p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic
+BUILD_DEPENDS=	p5-File-MMagic>=0:devel/p5-File-MMagic
+RUN_DEPENDS=	p5-File-MMagic>=0:devel/p5-File-MMagic
 
 USES=		cpe gettext iconv libtool perl5
 GNU_CONFIGURE=	yes

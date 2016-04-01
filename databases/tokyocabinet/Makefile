@@ -50,13 +50,13 @@ CONFIGURE_ARGS+=	--enable-fastest
 # to not confuse with system liblzma
 .if ${PORT_OPTIONS:MLZMA}
 CONFIGURE_ARGS+=	--enable-exlzma
-LIB_DEPENDS+=		liblzma.so.1:${PORTSDIR}/archivers/lzmalib
+LIB_DEPENDS+=		liblzma.so.1:archivers/lzmalib
 .else
 CONFIGURE_ARGS+=	--disable-exlzma
 .endif
 .if ${PORT_OPTIONS:MLZO}
 CONFIGURE_ARGS+=	--enable-exlzo
-LIB_DEPENDS+=		liblzo2.so:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=		liblzo2.so:archivers/lzo2
 .else
 CONFIGURE_ARGS+=	--disable-exlzo
 .endif

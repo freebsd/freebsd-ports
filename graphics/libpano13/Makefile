@@ -13,8 +13,8 @@ COMMENT=	Cross-platform library behind Panorama Tools and other photo stitchers
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng16.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng16.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 USE_GNOME=	gtk20 glib20 pango atk
 

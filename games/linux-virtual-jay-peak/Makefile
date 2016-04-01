@@ -24,7 +24,7 @@ SUB_FILES=	virtual-jay-peak
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNVIDIA}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 .else
 USE_LINUX_APPS+=	dri
 .endif

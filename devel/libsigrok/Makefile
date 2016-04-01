@@ -12,8 +12,8 @@ COMMENT=	Framework for hardware logic analyzers, core library
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libserialport.so:${PORTSDIR}/devel/libserialport \
-		libzip.so:${PORTSDIR}/archivers/libzip
+LIB_DEPENDS=	libserialport.so:devel/libserialport \
+		libzip.so:archivers/libzip
 
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix libtool pkgconfig

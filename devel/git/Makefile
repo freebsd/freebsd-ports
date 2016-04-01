@@ -59,21 +59,21 @@ NLS_MAKE_ARGS_OFF=	NO_GETTEXT=yes
 
 PERL_USES=		perl5
 PERL_MAKE_ENV=		PERL_PATH=${PERL}
-PERL_BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
-PERL_RUN_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
+PERL_BUILD_DEPENDS=	p5-Error>=0:lang/p5-Error
+PERL_RUN_DEPENDS=	p5-Error>=0:lang/p5-Error
 PERL_MAKE_ARGS_OFF=	NO_PERL=1
 
 SEND_EMAIL_IMPLIES=	PERL
-SEND_EMAIL_RUN_DEPENDS= p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL \
-			p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
+SEND_EMAIL_RUN_DEPENDS= p5-Net-SMTP-SSL>=0:mail/p5-Net-SMTP-SSL \
+			p5-Authen-SASL>=0:security/p5-Authen-SASL
 
 ICONV_USES=		iconv
 ICONV_MAKE_ARGS_OFF=	NO_ICONV=1
 
 CURL_MAKE_ENV=		CURLDIR=${LOCALBASE}
-CURL_BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-CURL_RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-CURL_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+CURL_BUILD_DEPENDS=	curl:ftp/curl
+CURL_RUN_DEPENDS=	curl:ftp/curl
+CURL_LIB_DEPENDS=	libexpat.so:textproc/expat2
 CURL_MAKE_ARGS_OFF=	NO_CURL=1 NO_EXPAT=1
 
 HTMLDOCS_DISTFILES=	${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX}
@@ -87,14 +87,14 @@ GUI_MAKE_ARGS_OFF=	NO_TCLTK=yes
 # to have git use devel/subversion18 it will be brought in through
 # devel/p5-subversion if you set WITH_SUBVERSION_VER=18. Otherwise
 # devel/subversion will be brought in.
-SVN_RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-			p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
+SVN_RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+			p5-subversion>=0:devel/p5-subversion
 
-CONTRIB_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
-			asciidoc:${PORTSDIR}/textproc/asciidoc \
-			docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
+CONTRIB_BUILD_DEPENDS=	xmlto:textproc/xmlto \
+			asciidoc:textproc/asciidoc \
+			docbook-xml>0:textproc/docbook-xml
 
-CVS_RUN_DEPENDS=	cvsps:${PORTSDIR}/devel/cvsps
+CVS_RUN_DEPENDS=	cvsps:devel/cvsps
 
 .include <bsd.port.options.mk>
 

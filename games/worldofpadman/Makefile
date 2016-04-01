@@ -60,7 +60,7 @@ MAKE_ENV+=	HAVE_VM_COMPILED=true
 .if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSMP_CLIENT}
 # cURL
 .  if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 MAKE_ENV+=	USE_CURL=1
 .    if ${PORT_OPTIONS:MCURL_DLOPEN}
 MAKE_ENV+=	USE_CURL_DLOPEN=1
@@ -79,7 +79,7 @@ USE_GL=		glu
 USE_SDL=	sdl
 # Vorbis
 .  if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
 MAKE_ENV+=	USE_CODEC_VORBIS=1
 .  endif
 .endif
@@ -101,7 +101,7 @@ MAKE_ENV+=	BUILD_GAME_SO=1
 .endif
 
 .if ${PORT_OPTIONS:MMP3}
-LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad
+LIB_DEPENDS+=	libmad.so:audio/libmad
 MAKE_ENV+=	USE_CODEC_MP3=1
 .endif
 

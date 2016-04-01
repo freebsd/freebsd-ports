@@ -15,8 +15,8 @@ COMMENT=	Use Danga::Socket From Callbacks
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Danga-Socket>=0:${PORTSDIR}/devel/p5-Danga-Socket
-RUN_DEPENDS=	p5-Danga-Socket>=0:${PORTSDIR}/devel/p5-Danga-Socket
+BUILD_DEPENDS=	p5-Danga-Socket>=0:devel/p5-Danga-Socket
+RUN_DEPENDS=	p5-Danga-Socket>=0:devel/p5-Danga-Socket
 
 USES=		perl5
 USE_PERL5=	modbuild

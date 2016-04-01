@@ -13,12 +13,12 @@ COMMENT=	LaTeX editor based on BlueFish
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell \
-		libpcre.so:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos \
-		gv:${PORTSDIR}/print/gv \
-		tidy:${PORTSDIR}/www/tidy-lib \
-		xpdf:${PORTSDIR}/graphics/xpdf
+LIB_DEPENDS=	libaspell.so:textproc/aspell \
+		libpcre.so:devel/pcre
+RUN_DEPENDS=	dos2unix:converters/unix2dos \
+		gv:print/gv \
+		tidy:www/tidy-lib \
+		xpdf:graphics/xpdf
 
 CONFIGURE_ARGS=	--with-freedesktop_org-menu=${GNOME_LOCALSTATEDIR}/applications \
 		--with-icon-path=${GNOME_LOCALSTATEDIR}/pixmaps --disable-update-databases

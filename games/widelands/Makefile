@@ -15,8 +15,8 @@ COMMENT=	Realtime strategy game inspired by Settlers II
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libpng.so:graphics/png
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 USES=		cmake:outsource compiler:c++11-lib execinfo gettext \
 		lua:51 tar:bzip2 python:build

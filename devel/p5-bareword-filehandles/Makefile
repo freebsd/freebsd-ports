@@ -15,11 +15,11 @@ COMMENT=	Disables bareword filehandles
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-B-Hooks-OP-Check>=0:${PORTSDIR}/devel/p5-B-Hooks-OP-Check \
-		p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		p5-Lexical-SealRequireHints>=0:${PORTSDIR}/devel/p5-Lexical-SealRequireHints
-RUN_DEPENDS=	p5-B-Hooks-OP-Check>=0:${PORTSDIR}/devel/p5-B-Hooks-OP-Check \
-		p5-Lexical-SealRequireHints>=0:${PORTSDIR}/devel/p5-Lexical-SealRequireHints
+BUILD_DEPENDS=	p5-B-Hooks-OP-Check>=0:devel/p5-B-Hooks-OP-Check \
+		p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
+		p5-Lexical-SealRequireHints>=0:devel/p5-Lexical-SealRequireHints
+RUN_DEPENDS=	p5-B-Hooks-OP-Check>=0:devel/p5-B-Hooks-OP-Check \
+		p5-Lexical-SealRequireHints>=0:devel/p5-Lexical-SealRequireHints
 
 USE_PERL5=	configure
 USES=		perl5

@@ -13,9 +13,9 @@ COMMENT=	Simple sequence-diagram image generator
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}pillow>=2.2.1:${PORTSDIR}/graphics/py-pillow \
-		${PKGNAMEPREFIX}funcparserlib>=0.3.6:${PORTSDIR}/devel/py-funcparserlib \
-		${PKGNAMEPREFIX}blockdiag>=1.4.1:${PORTSDIR}/graphics/py-blockdiag
+RUN_DEPENDS=	${PKGNAMEPREFIX}pillow>=2.2.1:graphics/py-pillow \
+		${PKGNAMEPREFIX}funcparserlib>=0.3.6:devel/py-funcparserlib \
+		${PKGNAMEPREFIX}blockdiag>=1.4.1:graphics/py-blockdiag
 
 USES=	python
 USE_PYTHON=	autoplist distutils

@@ -12,7 +12,7 @@ COMMENT=	OCR (Optical Character Recognition) program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
 USES=		gmake
 GNU_CONFIGURE=	yes

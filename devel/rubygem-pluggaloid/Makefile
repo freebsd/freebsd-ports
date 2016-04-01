@@ -12,8 +12,8 @@ COMMENT=	Extensible plugin system for mikutter
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-delayer>=0:${PORTSDIR}/devel/rubygem-delayer \
-		rubygem-instance_storage>=1.0.0:${PORTSDIR}/devel/rubygem-instance_storage
+RUN_DEPENDS=	rubygem-delayer>=0:devel/rubygem-delayer \
+		rubygem-instance_storage>=1.0.0:devel/rubygem-instance_storage
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -14,9 +14,9 @@ COMMENT=	Image viewer and browser for the GNOME 3 environment
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		itstool:${PORTSDIR}/textproc/itstool
-RUN_DEPENDS=	gsettings-desktop-schemas>0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
+		itstool:textproc/itstool
+RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
 USES=		bison compiler:c++11-lib desktop-file-utils gettext gmake \
 		libtool pathfix pkgconfig tar:xz
@@ -68,31 +68,31 @@ OPTIONS_DEFAULT=	BRASERO CLUTTER EXIV2 GSTREAMER RAW SECRET \
 OPTIONS_SUB=		yes
 
 BRASERO_DESC=		Write galleries to CD/DVD (large dependency)
-BRASERO_LIB_DEPENDS=	libbrasero-media3.so:${PORTSDIR}/sysutils/brasero
+BRASERO_LIB_DEPENDS=	libbrasero-media3.so:sysutils/brasero
 BRASERO_CONFIGURE_ENABLE=	libbrasero
 CLUTTER_DESC=		Fancy slideshows
-CLUTTER_LIB_DEPENDS=	libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
+CLUTTER_LIB_DEPENDS=	libclutter-gtk-1.0.so:graphics/clutter-gtk3
 CLUTTER_CONFIGURE_ENABLE=	clutter
-EXIV2_LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_CONFIGURE_ENABLE=	exiv2
 GSTREAMER_USE=		gstreamer1=yes
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer
 RAW_DESC=		Raw image support via libraw
-RAW_LIB_DEPENDS=	libraw.so:${PORTSDIR}/graphics/libraw
+RAW_LIB_DEPENDS=	libraw.so:graphics/libraw
 RAW_CONFIGURE_ENABLE=	libraw
 SECRET_DESC=		Libsecret support for storing passwords
-SECRET_LIB_DEPENDS=	libsecret-1.so:${PORTSDIR}/security/libsecret
+SECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 SECRET_CONFIGURE_ENABLE=	libsecret
-WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CONFIGURE_ENABLE=	libwebp
 WEBSERVICES_DESC=	Web services
 WEBSERVICES_LIB_DEPENDS=\
-			libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
-			libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
-			libwebkit2gtk-4.0.so:${PORTSDIR}/www/webkit2-gtk3
+			libjson-glib-1.0.so:devel/json-glib \
+			libsoup-gnome-2.4.so:devel/libsoup-gnome \
+			libwebkit2gtk-4.0.so:www/webkit2-gtk3
 WEBSERVICES_CONFIGURE_ENABLE=	libjson-glib libsoup webkit2
 YELP_DESC=		Viewer for built-in help system
-YELP_RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
+YELP_RUN_DEPENDS=	yelp:x11/yelp
 
 post-patch:
 	@${REINPLACE_CMD} -e \

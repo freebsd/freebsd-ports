@@ -12,10 +12,10 @@ COMMENT=	Program matching and transformation engine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BUILD_DEPENDS=	menhir:${PORTSDIR}/devel/menhir \
-		ocaml-parmap>=0:${PORTSDIR}/devel/ocaml-parmap \
-		ocaml-pcre>=0:${PORTSDIR}/devel/ocaml-pcre
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	menhir:devel/menhir \
+		ocaml-parmap>=0:devel/ocaml-parmap \
+		ocaml-pcre>=0:devel/ocaml-pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_OCAML=	3.0+
 USE_OCAML_CAMLP4=yes

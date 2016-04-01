@@ -13,11 +13,11 @@ COMMENT=	Oracle Open Source ODBC driver
 
 BROKEN=		unfetchable
 
-LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONFIGURE_ARGS=	--with-unixODBC=${LOCALBASE}
 
-BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
-RUN_DEPENDS=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
+BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntst8.a:databases/oracle8-client
+RUN_DEPENDS=	${ORACLE_HOME}/lib/libclntst8.a:databases/oracle8-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ORACLE_HOME=	${LOCALBASE}/oracle8-client

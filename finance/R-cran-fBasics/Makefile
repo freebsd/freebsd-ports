@@ -12,10 +12,10 @@ COMMENT=	Markets and Basic Statistics
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	R-cran-timeDate>0:${PORTSDIR}/finance/R-cran-timeDate \
-		R-cran-timeSeries>=2100.84:${PORTSDIR}/finance/R-cran-timeSeries \
-		R-cran-stabledist>0:${PORTSDIR}/math/R-cran-stabledist \
-		R-cran-gss>0:${PORTSDIR}/math/R-cran-gss
+RUN_DEPENDS=	R-cran-timeDate>0:finance/R-cran-timeDate \
+		R-cran-timeSeries>=2100.84:finance/R-cran-timeSeries \
+		R-cran-stabledist>0:math/R-cran-stabledist \
+		R-cran-gss>0:math/R-cran-gss
 
 USES=	cran:auto-plist
 

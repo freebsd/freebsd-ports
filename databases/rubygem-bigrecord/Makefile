@@ -12,9 +12,9 @@ COMMENT=	Intended to work as a drop-in for Rails applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activerecord>=0:${PORTSDIR}/databases/rubygem-activerecord \
-		rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
-		rubygem-uuidtools>=2.0.0:${PORTSDIR}/devel/rubygem-uuidtools
+RUN_DEPENDS=	rubygem-activerecord>=0:databases/rubygem-activerecord \
+		rubygem-activesupport>=0:devel/rubygem-activesupport \
+		rubygem-uuidtools>=2.0.0:devel/rubygem-uuidtools
 
 NO_ARCH=	yes
 USE_RUBY=	yes

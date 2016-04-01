@@ -14,7 +14,7 @@ COMMENT=	Python bindings for compact language detector library
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libcld2.so:${PORTSDIR}/devel/cld2
+LIB_DEPENDS=	libcld2.so:devel/cld2
 
 USES=		python
 

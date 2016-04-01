@@ -12,8 +12,8 @@ COMMENT=		Extensive set of GNUstep web application frameworks
 
 LICENSE=		LGPL20
 
-LIB_DEPENDS=		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-			libmemcached.so:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
+			libmemcached.so:databases/libmemcached
 
 WRKSRC=			${WRKDIR}/SOPE
 
@@ -38,7 +38,7 @@ CONFIGURE_ARGS=		--with-gnustep --disable-debug --enable-strip
 LDAP_USE=	OPENLDAP=client
 PGSQL_USES=	pgsql
 MYSQL_USE=	MYSQL=client
-MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:${PORTSDIR}/databases/memcached
+MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:databases/memcached
 
 post-patch-LDAP-off:
 	@${REINPLACE_CMD} -e '/checkLinking "ldap"/d' ${WRKSRC}/configure

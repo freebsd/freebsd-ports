@@ -11,7 +11,7 @@ COMMENT=	Python Remote Server for Robot Framework
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}robotframework>=2.7.5:${PORTSDIR}/devel/py-robotframework
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}robotframework>=2.7.5:devel/py-robotframework
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

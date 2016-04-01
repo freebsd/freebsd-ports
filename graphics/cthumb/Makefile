@@ -10,10 +10,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themeable web picture album generator
 
-RUN_DEPENDS=	${LOCALBASE}/bin/pnmscale:${PORTSDIR}/graphics/netpbm \
-		${LOCALBASE}/bin/jhead:${PORTSDIR}/graphics/jhead \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	${LOCALBASE}/bin/pnmscale:graphics/netpbm \
+		${LOCALBASE}/bin/jhead:graphics/jhead \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-URI>=0:net/p5-URI
 
 USES=		jpeg:run perl5
 GNU_CONFIGURE=	yes

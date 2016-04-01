@@ -13,13 +13,13 @@ COMMENT=	Loads one of several alternate underlying implementations for a module
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+BUILD_DEPENDS=	p5-Module-Runtime>=0.012:devel/p5-Module-Runtime \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Fatal>=0.006:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-NoTabs>=0:${PORTSDIR}/devel/p5-Test-NoTabs \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-Taint>=0:${PORTSDIR}/devel/p5-Test-Taint
+TEST_DEPENDS=	p5-Test-Fatal>=0.006:devel/p5-Test-Fatal \
+		p5-Test-NoTabs>=0:devel/p5-Test-NoTabs \
+		p5-Test-Requires>=0:devel/p5-Test-Requires \
+		p5-Test-Taint>=0:devel/p5-Test-Taint
 
 USE_PERL5=	configure
 USES=		perl5

@@ -12,7 +12,7 @@ DISTNAME=	ContextFreeSource${PORTVERSION}
 MAINTAINER=	anatoly.borodin@gmail.com
 COMMENT=	Context Free Design Grammar compiler
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

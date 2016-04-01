@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:devel/m4
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

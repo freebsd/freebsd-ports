@@ -15,9 +15,9 @@ COMMENT=	CMYK plugin for The GIMP
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep
-LIB_DEPENDS=	liblcms.so.1:${PORTSDIR}/graphics/lcms \
-		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
+BUILD_DEPENDS=	gccmakedep:devel/gccmakedep
+LIB_DEPENDS=	liblcms.so.1:graphics/lcms \
+		libgimp-2.0.so:graphics/gimp-app
 
 USES=		gettext-tools gmake pkgconfig zip
 

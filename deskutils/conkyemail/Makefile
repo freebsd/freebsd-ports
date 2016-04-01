@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Email script for conky
 
-RUN_DEPENDS=	conky:${PORTSDIR}/sysutils/conky
+RUN_DEPENDS=	conky:sysutils/conky
 
 USES=		python
 USE_PYTHON=	distutils

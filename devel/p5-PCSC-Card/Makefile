@@ -16,7 +16,7 @@ COMMENT=	Perl bindings for the PC/SC Lite Framework
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USES=		perl5 pkgconfig tar:bzip2
 USE_PERL5=	configure

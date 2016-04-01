@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	coryking@mozimedia.com
 COMMENT=	Allows your classes to do coercion of parameters  (Params::Coerce)
 
-BUILD_DEPENDS=	p5-Params-Util>=0.20:${PORTSDIR}/devel/p5-Params-Util
-RUN_DEPENDS=	p5-Params-Util>=0.20:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-Params-Util>=0.20:devel/p5-Params-Util
+RUN_DEPENDS=	p5-Params-Util>=0.20:devel/p5-Params-Util
 
 USES=		perl5
 USE_PERL5=	configure

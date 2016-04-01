@@ -13,11 +13,11 @@ COMMENT=	Brick breaker (Arkanoid-like game)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod \
-		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libsmpeg.so:${PORTSDIR}/multimedia/smpeg \
-		libtinyxml.so:${PORTSDIR}/textproc/tinyxml
+LIB_DEPENDS=	libmikmod.so:audio/libmikmod \
+		libvorbisfile.so:audio/libvorbis \
+		libogg.so:audio/libogg \
+		libsmpeg.so:multimedia/smpeg \
+		libtinyxml.so:textproc/tinyxml
 
 USES=		autoreconf gmake tar:tgz
 USE_SDL=	sdl mixer image

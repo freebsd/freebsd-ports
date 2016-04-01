@@ -13,8 +13,8 @@ COMMENT=	Pure-Perl non-blocking I/O MongoDB driver
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	mongo:${PORTSDIR}/databases/mongodb \
-		p5-Mojolicious>=5.40:${PORTSDIR}/www/p5-Mojolicious
+BUILD_DEPENDS=	mongo:databases/mongodb \
+		p5-Mojolicious>=5.40:www/p5-Mojolicious
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

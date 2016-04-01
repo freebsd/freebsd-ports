@@ -15,7 +15,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 1000055
-BUILD_DEPENDS=	dnssec-signzone:${PORTSDIR}/dns/bind99
+BUILD_DEPENDS=	dnssec-signzone:dns/bind99
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 .endif
 

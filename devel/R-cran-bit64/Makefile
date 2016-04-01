@@ -11,7 +11,7 @@ COMMENT=	S3 Class for Vectors of 64bit Integers
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-bit>=1.1.12:${PORTSDIR}/devel/R-cran-bit
+RUN_DEPENDS=	R-cran-bit>=1.1.12:devel/R-cran-bit
 
 USES=	cran:auto-plist
 

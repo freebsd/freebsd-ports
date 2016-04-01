@@ -13,11 +13,11 @@ COMMENT=	Personal note taking system for the GNOME desktop
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:${PORTSDIR}/devel/dbus-sharp-glib \
-		mautil:${PORTSDIR}/devel/mono-addins
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:${PORTSDIR}/devel/dbus-sharp-glib \
-		mautil:${PORTSDIR}/devel/mono-addins
+LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:devel/dbus-sharp-glib \
+		mautil:devel/mono-addins
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:devel/dbus-sharp-glib \
+		mautil:devel/mono-addins
 
 USES=		cpe gettext gmake libtool mono pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack gnomeprefix gnomedocutils gnomesharp20
@@ -40,8 +40,8 @@ PORTSCOUT=	limitw:1,even
 
 .if ${PORT_OPTIONS:MEVOLUTION}
 CONFIGURE_ARGS+=--enable-evolution
-BUILD_DEPENDS+=	${LOCALBASE}/lib/mono/gmime-sharp-2.6/gmime-sharp.dll:${PORTSDIR}/mail/gmime26-sharp
-RUN_DEPENDS+=	${LOCALBASE}/lib/mono/gmime-sharp-2.6/gmime-sharp.dll:${PORTSDIR}/mail/gmime26-sharp
+BUILD_DEPENDS+=	${LOCALBASE}/lib/mono/gmime-sharp-2.6/gmime-sharp.dll:mail/gmime26-sharp
+RUN_DEPENDS+=	${LOCALBASE}/lib/mono/gmime-sharp-2.6/gmime-sharp.dll:mail/gmime26-sharp
 PLIST_SUB+=	EVOLUTION=""
 .else
 CONFIGURE_ARGS+=--disable-evolution

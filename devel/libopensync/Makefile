@@ -11,8 +11,8 @@ MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/ \
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	PIM data synchronization framework
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	libexslt.so:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	swig1.3:devel/swig13
+LIB_DEPENDS=	libexslt.so:textproc/libxslt
 
 CONFLICTS=	libopensync-0.22*
 

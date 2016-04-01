@@ -14,8 +14,8 @@ COMMENT=	Mercurial reviewboard extension
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
-		rbt:${PORTSDIR}/devel/rbtools
+RUN_DEPENDS=	hg:devel/mercurial \
+		rbt:devel/rbtools
 
 WRKSRC=		${WRKDIR}/ccaughie-hgreviewboard-e461a0baf62d
 USES=		python

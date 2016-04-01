@@ -13,9 +13,9 @@ COMMENT=	Database schema migrations for SQLAlchemy
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7:${PORTSDIR}/databases/py-sqlalchemy \
-		${PYTHON_PKGNAMEPREFIX}Tempita>0:${PORTSDIR}/textproc/py-Tempita \
-		${PYTHON_PKGNAMEPREFIX}decorator>0:${PORTSDIR}/devel/py-decorator
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7:databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}Tempita>0:textproc/py-Tempita \
+		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator
 
 USES=		python
 USE_PYTHON=	distutils autoplist

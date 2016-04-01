@@ -7,7 +7,7 @@ CATEGORIES=	graphics kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${KIPI_PLUGIN}_DESC}
 
-LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca
+LIB_DEPENDS=	libqca.so:devel/qca
 
 KIPI_PLUGIN=	shwup
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"

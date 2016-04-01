@@ -16,7 +16,7 @@ USE_PYTHON=	distutils
 OPTIONS_DEFINE=	DOCS
 
 .if defined(EMACS_PORT_NAME)
-RUN_DEPENDS+=	${LOCALBASE}/bin/pymacs-services:${PORTSDIR}/devel/pymacs
+RUN_DEPENDS+=	${LOCALBASE}/bin/pymacs-services:devel/pymacs
 .endif
 
 post-install:

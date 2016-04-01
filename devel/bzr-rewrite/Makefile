@@ -12,8 +12,8 @@ COMMENT=	Bzr plugin that provides rewriting existing revisions
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
+BUILD_DEPENDS=	bzr:devel/bzr
+RUN_DEPENDS=	bzr:devel/bzr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

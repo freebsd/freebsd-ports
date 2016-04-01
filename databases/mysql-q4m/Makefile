@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${_MYSQL_SERVER:T:C/-server$/-/}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Message queue that works as a pluggable storage engine of MySQL
 
-FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${_MYSQL_SERVER}:build
+FETCH_DEPENDS+=	${NONEXISTENT}:${_MYSQL_SERVER}:build
 
 USES=		gmake perl5 libtool
 USE_MYSQL=	server

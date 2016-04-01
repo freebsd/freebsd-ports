@@ -11,7 +11,7 @@ COMMENT=	High performance subdivision surface libraries
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/include/GLFW/glfw3.h:${PORTSDIR}/graphics/glfw
+BUILD_DEPENDS=	${LOCALBASE}/include/GLFW/glfw3.h:graphics/glfw
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PixarAnimationStudios
@@ -41,9 +41,9 @@ PLIST_SUB+=	OPENMP="@comment "
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
-		python2:${PORTSDIR}/lang/python2 \
-		rst2html:${PORTSDIR}/textproc/py-docutils
+BUILD_DEPENDS+=	doxygen:devel/doxygen \
+		python2:lang/python2 \
+		rst2html:textproc/py-docutils
 .else
 CMAKE_ARGS+=	-DNO_DOC:BOOL=ON
 .endif

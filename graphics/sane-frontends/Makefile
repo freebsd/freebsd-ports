@@ -13,7 +13,7 @@ COMMENT=	Tools for access to scanners, digitals camera, frame grabbers etc
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
+LIB_DEPENDS=	libsane.so:graphics/sane-backends
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--disable-gimp
 .else
 USE_GNOME+=	gtk20
 .if ${PORT_OPTIONS:MGIMP}
-LIB_DEPENDS+=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS+=	libgimp-2.0.so:graphics/gimp-app
 CONFIGURE_ARGS+=	--enable-gimp
 .else
 CONFIGURE_ARGS+=	--disable-gimp

@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python template plugin that supports Kid templates
 
-RUN_DEPENDS=	kid:${PORTSDIR}/devel/py-kid
+RUN_DEPENDS=	kid:devel/py-kid
 
 USES=		python
 USE_PYTHON=	distutils autoplist

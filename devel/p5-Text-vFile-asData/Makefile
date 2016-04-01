@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Parse vFile formatted files into data structures
 
-RUN_DEPENDS=	p5-Class-Accessor-Chained>0:${PORTSDIR}/devel/p5-Class-Accessor-Chained
+RUN_DEPENDS=	p5-Class-Accessor-Chained>0:devel/p5-Class-Accessor-Chained
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

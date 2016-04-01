@@ -11,10 +11,10 @@ DISTNAME=	opensnc-src-${PORTVERSION}
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Game based on the "Sonic the Hedgehog" universe
 
-BUILD_DEPENDS=	alpng>=1.3:${PORTSDIR}/graphics/alpng
-LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+BUILD_DEPENDS=	alpng>=1.3:graphics/alpng
+LIB_DEPENDS=	liballeg.so:devel/allegro \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis
 
 DESKTOP_ENTRIES="${PORTNAME}" \
 		"Sonic the Hedgehog" \

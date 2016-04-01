@@ -12,8 +12,8 @@ COMMENT=	C library to handle the Public Suffix List
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	public_suffix_list>=0:${PORTSDIR}/dns/public_suffix_list \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list \
+		xsltproc:textproc/libxslt
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SINGLE=	IDNA
@@ -36,14 +36,14 @@ GH_ACCOUNT=	rockdaboot
 USE_GITHUB=	yes
 
 ICU_CONFIGURE_ON=	--enable-builtin=libicu --enable-runtime=libicu
-ICU_LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
+ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
 IDN_CONFIGURE_ON=	--enable-builtin=libidn --enable-runtime=libidn
-IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
-			libunistring.so:${PORTSDIR}/devel/libunistring
+IDN_LIB_DEPENDS=	libidn.so:dns/libidn \
+			libunistring.so:devel/libunistring
 IDN_USES=		iconv
 IDN2_CONFIGURE_ON=	--enable-builtin=libidn2 --enable-runtime=libidn2
-IDN2_LIB_DEPENDS=	libidn2.so:${PORTSDIR}/dns/libidn2 \
-			libunistring.so:${PORTSDIR}/devel/libunistring
+IDN2_LIB_DEPENDS=	libidn2.so:dns/libidn2 \
+			libunistring.so:devel/libunistring
 IDN2_USES=		iconv
 NLS_CPPFLAGS=		-DENABLE_NLS=1
 NLS_USES=		gettext

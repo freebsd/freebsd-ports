@@ -10,24 +10,24 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	File manager extensions for the Cinnamon desktop
 
-BUILD_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
-		gtkdocize:${PORTSDIR}/textproc/gtk-doc \
-		rst2html:${PORTSDIR}/textproc/py-docutils \
-		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
-		libcinnamon-desktop.so:${PORTSDIR}/x11/cinnamon-desktop \
-		libnemo-extension.so:${PORTSDIR}/x11-fm/nemo \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libexempi.so:${PORTSDIR}/textproc/exempi \
-		libcjs.so:${PORTSDIR}/lang/cjs \
-		libclutter-1.0.so:${PORTSDIR}/graphics/clutter \
-		libevdocument3.so:${PORTSDIR}/graphics/evince \
-		libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3 \
-		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
-		libmusicbrainz5.so:${PORTSDIR}/audio/libmusicbrainz5
-RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
+		gtkdocize:textproc/gtk-doc \
+		rst2html:textproc/py-docutils \
+		gnome-autogen.sh:devel/gnome-common \
+		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libexif.so:graphics/libexif \
+		libcinnamon-desktop.so:x11/cinnamon-desktop \
+		libnemo-extension.so:x11-fm/nemo \
+		libnotify.so:devel/libnotify \
+		libexempi.so:textproc/exempi \
+		libcjs.so:lang/cjs \
+		libclutter-1.0.so:graphics/clutter \
+		libevdocument3.so:graphics/evince \
+		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
+		libclutter-gst-2.0.so:multimedia/clutter-gst \
+		libmusicbrainz5.so:audio/libmusicbrainz5
+RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint

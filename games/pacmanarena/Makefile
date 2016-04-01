@@ -17,7 +17,7 @@ COMMENT=	Pacman clone in full 3D with a few surprises
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	unzip:archivers/unzip
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/arena//}
 

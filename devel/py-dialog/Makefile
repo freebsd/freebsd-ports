@@ -14,7 +14,7 @@ COMMENT=	Python interface to dialog(3)
 
 LICENSE=	LGPL20
 
-RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
+RUN_DEPENDS=	cdialog:devel/cdialog
 
 USES=		python tar:bzip2
 USE_PYTHON=	distutils

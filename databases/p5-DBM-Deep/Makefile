@@ -10,12 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Pure perl persistent multi-level hash/array DBM
 
-BUILD_DEPENDS=	p5-FileHandle-Fmode>=0:${PORTSDIR}/devel/p5-FileHandle-Fmode
-RUN_DEPENDS=	p5-FileHandle-Fmode>=0:${PORTSDIR}/devel/p5-FileHandle-Fmode
+BUILD_DEPENDS=	p5-FileHandle-Fmode>=0:devel/p5-FileHandle-Fmode
+RUN_DEPENDS=	p5-FileHandle-Fmode>=0:devel/p5-FileHandle-Fmode
 
-TEST_DEPENDS=	p5-Test-Deep>=0.095:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Warn>=0.08:${PORTSDIR}/devel/p5-Test-Warn
+TEST_DEPENDS=	p5-Test-Deep>=0.095:devel/p5-Test-Deep \
+		p5-Test-Exception>=0.21:devel/p5-Test-Exception \
+		p5-Test-Warn>=0.08:devel/p5-Test-Warn
 
 USES=		perl5
 USE_PERL5=	configure

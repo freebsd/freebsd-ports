@@ -17,7 +17,7 @@ LICENSE=	LGPL21
 USES=		gnustep
 USE_GNUSTEP=	back build
 
-LIB_DEPENDS=	libEncore.so:${PORTSDIR}/devel/fortytwo-encore
+LIB_DEPENDS=	libEncore.so:devel/fortytwo-encore
 DEFAULT_LIBVERSION=	0.1
 USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 USE_BDB=	43+

@@ -13,10 +13,10 @@ COMMENT=	Free 3D kart racing game
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+		libogg.so:audio/libogg \
+		libcurl.so:ftp/curl \
+		libpng.so:graphics/png
 
 USES=		alias cmake compiler:c++11-lib dos2unix gettext \
 		gmake jpeg openal:al pkgconfig tar:xz
@@ -41,7 +41,7 @@ OPTIONS_DEFAULT=FRIBIDI XRANDR
 FRIBIDI_DESC=		Support for right-to-left languages
 FRIBIDI_CMAKE_ON=	-DUSE_FRIBIDI=YES
 FRIBIDI_CMAKE_OFF=	-DUSE_FRIBIDI=NO
-FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
 XRANDR_DESC=		Use xrandr instead of vidmode
 XRANDR_CMAKE_ON=	-DUSE_XRANDR=YES

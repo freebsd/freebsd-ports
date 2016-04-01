@@ -14,13 +14,13 @@ COMMENT=	Open-source, cross-platform WYSIWYG word processor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libpopt.so:${PORTSDIR}/devel/popt \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libwv.so:${PORTSDIR}/textproc/wv \
-		libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libgoffice-0.10.so:${PORTSDIR}/devel/goffice010
-RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-fonts/dejavu
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libpopt.so:devel/popt \
+		libpng.so:graphics/png \
+		libwv.so:textproc/wv \
+		libfribidi.so:converters/fribidi \
+		libgoffice-0.10.so:devel/goffice010
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:x11-fonts/dejavu
 
 USES=		desktop-file-utils gmake iconv jpeg libtool pathfix pkgconfig
 USE_GNOME=	libxml2 gtk30 librsvg2 libxslt
@@ -75,56 +75,56 @@ ABIWORD_PLUGINS=	garble loadbindings opml xslfo bmp iscii sdw babelfish \
 # Plugins we don't support:
 # gda
 
-AIKSAURUS_LIB_DEPENDS=		libAiksaurusGTK-1.2.so:${PORTSDIR}/textproc/aiksaurus-gtk
+AIKSAURUS_LIB_DEPENDS=		libAiksaurusGTK-1.2.so:textproc/aiksaurus-gtk
 
 CLIPART_CONFIGURE_ENABLE=	clipart
 
 COLFAKE_CONFIGURE_ENABLE=	collab-backend-fake
 
 COLSERVICE_CONFIGURE_ENABLE=	collab-backend-service
-COLSERVICE_BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
-COLSERVICE_LIB_DEPENDS=		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-				libgnutls.so:${PORTSDIR}/security/gnutls
-COLSERVICE_RUN_DEPENDS=		${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
+COLSERVICE_BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:net/asio
+COLSERVICE_LIB_DEPENDS=		libsoup-2.4.so:devel/libsoup \
+				libgnutls.so:security/gnutls
+COLSERVICE_RUN_DEPENDS=		${LOCALBASE}/include/asio.hpp:net/asio
 
 COLSIP_CONFIGURE_ENABLE=	collab-backend-sip
 
 COLSUGAR_CONFIGURE_ENABLE=	collab-backend-sugar
-COLSUGAR_LIB_DEPENDS=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+COLSUGAR_LIB_DEPENDS=		libdbus-glib-1.so:devel/dbus-glib
 
 COLTCP_CONFIGURE_ENABLE=	collab-backend-tcp
-COLTCP_BUILD_DEPENDS=		${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
-COLTCP_RUN_DEPENDS=		${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
+COLTCP_BUILD_DEPENDS=		${LOCALBASE}/include/asio.hpp:net/asio
+COLTCP_RUN_DEPENDS=		${LOCALBASE}/include/asio.hpp:net/asio
 
 COLTELEPATHY_CONFIGURE_ENABLE=	collab-backend-telepathy
-COLTELEPATHY_LIB_DEPENDS=	libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
+COLTELEPATHY_LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib
 
 COLXMPP_CONFIGURE_ENABLE=	collab-backend-xmpp
-COLXMPP_LIB_DEPENDS=		libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
+COLXMPP_LIB_DEPENDS=		libloudmouth-1.so:net-im/loudmouth
 
 DEBUG_CONFIGURE_ENABLE=		debug
 
-GRAMMAR_LIB_DEPENDS=		liblink-grammar.so:${PORTSDIR}/textproc/link-grammar
+GRAMMAR_LIB_DEPENDS=		liblink-grammar.so:textproc/link-grammar
 
 MATHVIEW_USES=			bison
-MATHVIEW_LIB_DEPENDS=		libmathview.so:${PORTSDIR}/x11-toolkits/gtkmathview
+MATHVIEW_LIB_DEPENDS=		libmathview.so:x11-toolkits/gtkmathview
 
 NLS_USES=			gettext
 NLS_CONFIGURE_ENABLE=		nls
 
-OTS_LIB_DEPENDS=		libots-1.so:${PORTSDIR}/textproc/ots
+OTS_LIB_DEPENDS=		libots-1.so:textproc/ots
 
-PSION_LIB_DEPENDS=		libpsiconv.so:${PORTSDIR}/converters/psiconv
+PSION_LIB_DEPENDS=		libpsiconv.so:converters/psiconv
 
-SPELLCHECK_LIB_DEPENDS=		libenchant.so:${PORTSDIR}/textproc/enchant
+SPELLCHECK_LIB_DEPENDS=		libenchant.so:textproc/enchant
 SPELLCHECK_CONFIGURE_ENABLE=	spell
 
 TEMPLATES_CONFIGURE_ENABLE=	templates
 
 WP_USE=		gnome=libgsf
-WP_LIB_DEPENDS=	libwpg-0.3.so:${PORTSDIR}/graphics/libwpg03 \
-		libwpd-0.10.so:${PORTSDIR}/textproc/libwpd010 \
-		libwps-0.4.so:${PORTSDIR}/textproc/libwps
+WP_LIB_DEPENDS=	libwpg-0.3.so:graphics/libwpg03 \
+		libwpd-0.10.so:textproc/libwpd010 \
+		libwps-0.4.so:textproc/libwps
 
 .include <bsd.port.options.mk>
 

@@ -14,9 +14,9 @@ COMMENT=	3D arcade with unique fighting system and anthropomorphic characters
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg
 
 USES=		cmake jpeg openal:soft pkgconfig tar:bzip2
 USE_GL=		glu

@@ -18,7 +18,7 @@ LICENSE_NAME=	IBM OpenCard Framework
 LICENSE_FILE=	${FILESDIR}/IBMOCF
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USES=		gmake
 USE_JAVA=	yes

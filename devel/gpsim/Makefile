@@ -12,9 +12,9 @@ COMMENT=	Software simulator for Microchip PIC microcontrollers
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gpasm:${PORTSDIR}/devel/gputils
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
-RUN_DEPENDS=	gpasm:${PORTSDIR}/devel/gputils
+BUILD_DEPENDS=	gpasm:devel/gputils
+LIB_DEPENDS=	libpopt.so:devel/popt
+RUN_DEPENDS=	gpasm:devel/gputils
 
 USES=		gmake libtool pathfix pkgconfig readline
 USE_GNOME=	glib20
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=		DOCS EXAMPLES GTK2
 OPTIONS_DEFAULT=	GTK2
 OPTIONS_SUB=		yes
 
-GTK2_LIB_DEPENDS=	libgtkextra-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtkextra2
+GTK2_LIB_DEPENDS=	libgtkextra-x11-2.0.so:x11-toolkits/gtkextra2
 GTK2_USE=		gnome=gtk20
 GTK2_CONFIGURE_ENABLE=	gui
 GTK2_DESKTOP_ENTRIES=	"GPSim" "" "" "gpsim" "Development;GTK;" ""

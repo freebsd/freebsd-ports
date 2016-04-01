@@ -12,7 +12,7 @@ COMMENT=	Breakout clone with an OpenGL 3D representation
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		tar:bzip2 gmake iconv desktop-file-utils
 USE_GL=		gl

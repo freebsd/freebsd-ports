@@ -11,7 +11,7 @@ DIST_SUBDIR=	oracle
 MAINTAINER=	mizhka@gmail.com
 COMMENT=	Graphical tool for database development
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		zip
 USE_JAVA=	yes

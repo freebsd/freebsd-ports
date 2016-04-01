@@ -14,8 +14,8 @@ COMMENT=	Method/Function Signatures w/Type::Tiny Constraints
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Type-Tiny>=1.000005:${PORTSDIR}/devel/p5-Type-Tiny \
-		p5-Function-Parameters>=1.0605:${PORTSDIR}/devel/p5-Function-Parameters
+BUILD_DEPENDS=	p5-Type-Tiny>=1.000005:devel/p5-Type-Tiny \
+		p5-Function-Parameters>=1.0605:devel/p5-Function-Parameters
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

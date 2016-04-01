@@ -13,7 +13,7 @@ COMMENT=	Test file attributes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-utf8>=0:${PORTSDIR}/devel/p5-Test-utf8
+TEST_DEPENDS=	p5-Test-utf8>=0:devel/p5-Test-utf8
 
 NO_ARCH=	yes
 USES=		perl5
@@ -22,8 +22,8 @@ USE_PERL5=	configure
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502104
-BUILD_DEPENDS+=	p5-Test-Simple>=1.001.006:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS+=	p5-Test-Simple>=1.001.006:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS+=	p5-Test-Simple>=1.001.006:devel/p5-Test-Simple
+RUN_DEPENDS+=	p5-Test-Simple>=1.001.006:devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>

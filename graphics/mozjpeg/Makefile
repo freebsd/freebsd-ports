@@ -39,7 +39,7 @@ SIMD_DESC=	Include SIMD extensions
 TURBOJPEG_DESC=	Include the TurboJPEG wrapper library and associated tests
 
 SIMD_CONFIGURE_WITH=		simd
-SIMD_BUILD_DEPENDS=		yasm:${PORTSDIR}/devel/yasm
+SIMD_BUILD_DEPENDS=		yasm:devel/yasm
 TURBOJPEG_CONFIGURE_WITH=	turbojpeg
 
 post-patch:

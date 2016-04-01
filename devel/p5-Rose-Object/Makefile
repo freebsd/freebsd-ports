@@ -14,7 +14,7 @@ COMMENT=	Simple object base class
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor
+TEST_DEPENDS=	p5-Class-XSAccessor>=0:devel/p5-Class-XSAccessor
 
 USES=		perl5
 USE_PERL5=	configure

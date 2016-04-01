@@ -13,8 +13,8 @@ COMMENT=	Detect what database you are connected to
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		p5-Moo>=0:devel/p5-Moo
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

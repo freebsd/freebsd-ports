@@ -22,7 +22,7 @@ NWNVER=		1.61
 NWNREV=		0
 NWN_DIAMOND=	yes
 
-EXTRACT_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip
+EXTRACT_DEPENDS+=	7z:archivers/p7zip
 
 PLIST_SUB+=	DIAMOND="" ORIGINAL="@comment "
 .else

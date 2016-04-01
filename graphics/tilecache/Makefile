@@ -10,8 +10,8 @@ MASTER_SITES=	http://tilecache.org/
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	Python-based WMS-C/TMS server
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup \
-		${PYTHON_PKGNAMEPREFIX}Paste>0:${PORTSDIR}/www/py-paste
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup>0:www/py-flup \
+		${PYTHON_PKGNAMEPREFIX}Paste>0:www/py-paste
 
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi

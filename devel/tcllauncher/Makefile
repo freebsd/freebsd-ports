@@ -11,7 +11,7 @@ COMMENT=	Launcher program for Tcl applications
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libtclx8.4.so:${PORTSDIR}/lang/tclX
+LIB_DEPENDS=	libtclx8.4.so:lang/tclX
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware

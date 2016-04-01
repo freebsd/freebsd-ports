@@ -12,7 +12,7 @@ DISTFILES=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TuxPaint Localized Fonts
 
-RUN_DEPENDS=	tuxpaint>=0.9.21:${PORTSDIR}/games/tuxpaint
+RUN_DEPENDS=	tuxpaint>=0.9.21:games/tuxpaint
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

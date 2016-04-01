@@ -13,8 +13,8 @@ COMMENT=	Support external branches like svn:externals
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
+BUILD_DEPENDS=	bzr:devel/bzr
+RUN_DEPENDS=	bzr:devel/bzr
 
 WRKSRC=		${WRKDIR}/externals
 

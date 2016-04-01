@@ -5,5 +5,5 @@ Q1SRCDIR=	${LOCALBASE}/share/quake-source
 .if ${PORTNAME} == "source"
 DATADIR=	${Q1SRCDIR}
 .else
-RUN_DEPENDS+=	${Q1SRCDIR}/v101qc/progs.src:${PORTSDIR}/games/quake-source
+RUN_DEPENDS+=	${Q1SRCDIR}/v101qc/progs.src:games/quake-source
 .endif

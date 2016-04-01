@@ -10,10 +10,10 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to generate JUnit compatible output from TAP
 
 RUN_DEPENDS=	\
-	p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
+	p5-XML-Simple>0:textproc/p5-XML-Simple
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
-	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
+	p5-Test-Deep>0:devel/p5-Test-Deep
 
 USES=		perl5
 USE_PERL5=	modbuild

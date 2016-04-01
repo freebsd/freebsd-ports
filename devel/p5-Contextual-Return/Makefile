@@ -13,8 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create context-sensitive return values
 
-BUILD_DEPENDS=	p5-Want>=0:${PORTSDIR}/devel/p5-Want
-RUN_DEPENDS=	p5-Want>=0:${PORTSDIR}/devel/p5-Want
+BUILD_DEPENDS=	p5-Want>=0:devel/p5-Want
+RUN_DEPENDS=	p5-Want>=0:devel/p5-Want
 
 USES=		perl5
 USE_PERL5=	configure

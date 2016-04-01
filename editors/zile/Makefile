@@ -12,8 +12,8 @@ COMMENT=	Small emacs-like text editor
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
-BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:${PORTSDIR}/misc/help2man
+LIB_DEPENDS=	libgc.so:devel/boehm-gc
+BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:misc/help2man
 
 USES=		gmake ncurses perl5 pkgconfig compiler:c++11-lang
 USE_PERL5=	build

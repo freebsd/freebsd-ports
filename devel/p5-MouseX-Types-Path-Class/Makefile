@@ -15,13 +15,13 @@ COMMENT=	Path::Class type library for Mouse
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Mouse>=0.39:${PORTSDIR}/devel/p5-Mouse \
-		p5-MouseX-Types>=0.02:${PORTSDIR}/devel/p5-MouseX-Types \
-		p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-MouseX-Getopt>=0.22:${PORTSDIR}/devel/p5-MouseX-Getopt
+BUILD_DEPENDS=	p5-Mouse>=0.39:devel/p5-Mouse \
+		p5-MouseX-Types>=0.02:devel/p5-MouseX-Types \
+		p5-Path-Class>0:devel/p5-Path-Class \
+		p5-MouseX-Getopt>=0.22:devel/p5-MouseX-Getopt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-TEST_DEPENDS=	p5-Test-UseAllModules>0:${PORTSDIR}/devel/p5-Test-UseAllModules
+TEST_DEPENDS=	p5-Test-UseAllModules>0:devel/p5-Test-UseAllModules
 
 USES=		perl5
 USE_PERL5=	configure

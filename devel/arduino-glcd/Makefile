@@ -13,7 +13,7 @@ COMMENT=	GLCD Graphical LCD Library
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	arduino:${PORTSDIR}/devel/arduino
+RUN_DEPENDS=	arduino:devel/arduino
 
 WRKSRC=		${WRKDIR}/glcd
 USES=		zip dos2unix

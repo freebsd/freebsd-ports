@@ -12,7 +12,7 @@ COMMENT=	Bindings to the Linux input handling subsystem
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	v4l_compat>=1.0.20110603:multimedia/v4l_compat
 
 USES=		python
 USE_PYTHON=	autoplist distutils

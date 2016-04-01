@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Colored ASCII Art
 
-RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses
+RUN_DEPENDS=	p5-Curses>=0:devel/p5-Curses
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

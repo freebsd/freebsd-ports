@@ -11,7 +11,7 @@ COMMENT=	Client interface for the Sentry error logger
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-faraday>=0.7.6:${PORTSDIR}/www/rubygem-faraday
+RUN_DEPENDS=	rubygem-faraday>=0.7.6:www/rubygem-faraday
 
 NO_ARCH=	yes
 USE_RUBY=	yes

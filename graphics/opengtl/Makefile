@@ -15,8 +15,8 @@ COMMENT=	Graphics Transformation Languages
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libLLVM-3.3.so:${PORTSDIR}/devel/llvm33
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libLLVM-3.3.so:devel/llvm33
 
 USES=		cmake perl5 tar:bzip2
 USE_LDCONFIG=	yes
@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	SHIVA
 OPTIONS_DEFAULT=SHIVA
 
 SHIVA_DESC=	Install filters and generators
-SHIVA_RUN_DEPENDS=${LOCALBASE}/share/OpenGTL/shiva/kernels/oilify.shiva:${PORTSDIR}/graphics/shiva-collections
+SHIVA_RUN_DEPENDS=${LOCALBASE}/share/OpenGTL/shiva/kernels/oilify.shiva:graphics/shiva-collections
 
 post-patch:
 	# Disable latex doc, it's not ready yet.

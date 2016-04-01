@@ -10,7 +10,7 @@ COMMENT=	Well designed and portable SQLite3 Wrapper for C++
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libboost_random.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_random.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vinzenz

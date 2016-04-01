@@ -11,8 +11,8 @@ COMMENT=	High-performance messaging layer
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libe.so:${PORTSDIR}/devel/libe
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpo6.pc:${PORTSDIR}/devel/libpo6
+LIB_DEPENDS=	libe.so:devel/libe
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpo6.pc:devel/libpo6
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

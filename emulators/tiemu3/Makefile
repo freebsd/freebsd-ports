@@ -12,9 +12,9 @@ EXTRACT_SUFX=	-nogdb.tar.gz
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	TI89(ti)/92(+)/V200 hand-helds emulator
 
-LIB_DEPENDS=	libticalcs2.so:${PORTSDIR}/comms/libticalcs2 \
-		libticables2.so:${PORTSDIR}/comms/libticables2 \
-		libtifiles2.so:${PORTSDIR}/devel/libtifiles2
+LIB_DEPENDS=	libticalcs2.so:comms/libticalcs2 \
+		libticables2.so:comms/libticables2 \
+		libtifiles2.so:devel/libtifiles2
 
 USES=		gmake libtool pkgconfig
 GNU_CONFIGURE=	yes

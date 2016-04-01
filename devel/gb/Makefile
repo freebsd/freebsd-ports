@@ -10,7 +10,7 @@ COMMENT=	Project based build tool for Go
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	constabulary

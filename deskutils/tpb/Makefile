@@ -12,7 +12,7 @@ COMMENT=	On-Screen-Display for hotkeys of IBM ThinkPads
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+LIB_DEPENDS=	libxosd.so:misc/xosd
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

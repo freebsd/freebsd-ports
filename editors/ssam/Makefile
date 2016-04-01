@@ -11,7 +11,7 @@ COMMENT=	Stream editor that uses the UTF routines with the sam(1) command set
 
 BROKEN=		unfetchable
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ure.h:${PORTSDIR}/misc/libutf
+BUILD_DEPENDS=	${LOCALBASE}/include/ure.h:misc/libutf
 
 GNU_CONFIGURE=	YES
 ALL_TARGET=	ssam

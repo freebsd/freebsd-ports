@@ -11,11 +11,11 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of postgresql runner for tests
 
 RUN_DEPENDS=	\
-	p5-Class-Accessor-Lite>0:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
-	p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
-	p5-DBD-Pg>0:${PORTSDIR}/databases/p5-DBD-Pg
+	p5-Class-Accessor-Lite>0:devel/p5-Class-Accessor-Lite \
+	p5-DBI>0:databases/p5-DBI \
+	p5-DBD-Pg>0:databases/p5-DBD-Pg
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-SharedFork>=0.06:${PORTSDIR}/devel/p5-Test-SharedFork
+TEST_DEPENDS=	p5-Test-SharedFork>=0.06:devel/p5-Test-SharedFork
 
 USES=		perl5
 USE_PERL5=	configure

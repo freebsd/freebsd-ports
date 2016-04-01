@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DirectX header files for use with MinGW
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
-		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
+BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
+		mingwm10.dll:devel/mingw32-bin-msvcrt
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

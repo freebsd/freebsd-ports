@@ -14,7 +14,7 @@ COMMENT=	Module designed to write games in Python
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		dos2unix python

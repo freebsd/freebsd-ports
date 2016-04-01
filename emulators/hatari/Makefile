@@ -13,8 +13,8 @@ COMMENT=	Atari ST emulator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libportaudio.so:audio/portaudio \
+		libpng.so:graphics/png
 
 USES=		cmake desktop-file-utils python readline shared-mime-info \
 		shebangfix tar:bzip2

@@ -14,9 +14,9 @@ COMMENT=	Read EXIF module
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	libexif>=0.6.18:${PORTSDIR}/graphics/libexif
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
-RUN_DEPENDS=	libexif>=0.6.18:${PORTSDIR}/graphics/libexif
+BUILD_DEPENDS=	libexif>=0.6.18:graphics/libexif
+LIB_DEPENDS=	libexif.so:graphics/libexif
+RUN_DEPENDS=	libexif>=0.6.18:graphics/libexif
 
 USE_PERL5=	configure
 USES=		perl5 pkgconfig

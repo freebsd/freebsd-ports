@@ -14,11 +14,11 @@ LICENSE=	ISCL CC0-1.0
 LICENSE_COMB=	multi
 LICENSE_FILE_ISCL=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libfreetype.so:print/freetype2 \
+		libogg.so:audio/libogg \
+		libpng.so:graphics/png \
+		libvorbis.so:audio/libvorbis
 
 BROKEN_FreeBSD_9=	does not build (lack of proper c++11 support)
 

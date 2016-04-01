@@ -13,9 +13,9 @@ COMMENT=	Perl module for generating random data
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Time-Piece>=1.16:${PORTSDIR}/devel/p5-Time-Piece \
-		p5-YAML-Tiny>=0:${PORTSDIR}/textproc/p5-YAML-Tiny
-RUN_DEPENDS=	p5-Time-Piece>=1.16:${PORTSDIR}/devel/p5-Time-Piece
+BUILD_DEPENDS=	p5-Time-Piece>=1.16:devel/p5-Time-Piece \
+		p5-YAML-Tiny>=0:textproc/p5-YAML-Tiny
+RUN_DEPENDS=	p5-Time-Piece>=1.16:devel/p5-Time-Piece
 
 OPTIONS_DEFINE=	GD
 GD_DESC=	Support for rand_image()
@@ -23,7 +23,7 @@ GD_DESC=	Support for rand_image()
 USES=		perl5
 USE_PERL5=	configure
 
-GD_BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
-GD_RUN_DEPENDS=		p5-GD>=0:${PORTSDIR}/graphics/p5-GD
+GD_BUILD_DEPENDS=	p5-GD>=0:graphics/p5-GD
+GD_RUN_DEPENDS=		p5-GD>=0:graphics/p5-GD
 
 .include <bsd.port.mk>

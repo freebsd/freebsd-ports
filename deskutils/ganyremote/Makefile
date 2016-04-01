@@ -11,7 +11,7 @@ COMMENT=	GNOME frontend for anyRemote
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote
+RUN_DEPENDS=	anyremote:comms/anyremote
 
 USES=		gettext python
 USE_GNOME=	pygtk2

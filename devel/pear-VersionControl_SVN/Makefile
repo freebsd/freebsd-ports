@@ -10,8 +10,8 @@ COMMENT=	Wrapper interface for the Subversion command-line client
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	pear-XML_Parser>=1.3.4:${PORTSDIR}/devel/pear-XML_Parser
-RUN_DEPENDS=	pear-XML_Parser>=1.3.4:${PORTSDIR}/devel/pear-XML_Parser
+BUILD_DEPENDS=	pear-XML_Parser>=1.3.4:devel/pear-XML_Parser
+RUN_DEPENDS=	pear-XML_Parser>=1.3.4:devel/pear-XML_Parser
 
 USE_PHP=	yes
 USES=	pear

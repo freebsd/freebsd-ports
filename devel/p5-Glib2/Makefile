@@ -14,8 +14,8 @@ COMMENT=	This module provides access to Glib and GObject libraries
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		p5-ExtUtils-PkgConfig>=1:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
+BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=1:devel/p5-ExtUtils-PkgConfig
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	glib20

@@ -11,7 +11,7 @@ DISTNAME=	FreeImagePy_w_dll-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeImage library python wrapper
 
-LIB_DEPENDS=	libfreeimage.so:${PORTSDIR}/graphics/freeimage
+LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 
 WRKSRC=		${WRKDIR}/FreeImagePy-${PORTVERSION}
 USES=		python tar:bzip2

@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the SANE (Scanner Access Now Easy) Project
 
-BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
-		sane-config:${PORTSDIR}/graphics/sane-backends
+BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig \
+		sane-config:graphics/sane-backends
 
 USES=		perl5
 USE_PERL5=	configure

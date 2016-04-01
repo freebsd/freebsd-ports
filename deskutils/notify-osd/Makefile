@@ -14,9 +14,9 @@ COMMENT=	On-screen-display notification agent using libnotify
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libnotify.so:devel/libnotify
+RUN_DEPENDS=	dbus-daemon:devel/dbus
 
 CONFLICTS=	xfce4-notification-daemon-[0-9]*
 

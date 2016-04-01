@@ -14,8 +14,8 @@ COMMENT=	Free mind-mapping software written in Java
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
-		zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	unzip:archivers/unzip \
+		zip:archivers/zip
 
 USES=		cpe zip:infozip
 USE_JAVA=	yes

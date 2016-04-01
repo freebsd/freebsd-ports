@@ -13,10 +13,10 @@ COMMENT=	APQ Ada95 MySQL database driver
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		gprbuild:${PORTSDIR}/devel/gprbuild \
-		${LOCALBASE}/lib/gnat/apq.gpr:${PORTSDIR}/databases/apq
-RUN_DEPENDS=	${LOCALBASE}/lib/gnat/apq.gpr:${PORTSDIR}/databases/apq
+BUILD_DEPENDS=	bash:shells/bash \
+		gprbuild:devel/gprbuild \
+		${LOCALBASE}/lib/gnat/apq.gpr:databases/apq
+RUN_DEPENDS=	${LOCALBASE}/lib/gnat/apq.gpr:databases/apq
 
 USES=		ada tar:bzip2
 USE_MYSQL=	yes

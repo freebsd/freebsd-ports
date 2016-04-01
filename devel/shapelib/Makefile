@@ -20,7 +20,7 @@ OPTIONS_SUB=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-PROJ_LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj
+PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
 
 .include <bsd.port.pre.mk>
 

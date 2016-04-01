@@ -69,7 +69,7 @@ RRL_DESC=		Response Rate Limiting
 ZONE_STATS_DESC=	Separate statistics for each zone
 MUNIN_PLUGIN_DESC=	Install Munin plugin (requires BIND8_STATS)
 
-LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS+=	libevent.so:devel/libevent2
 
 ROOT_SERVER_CONFIGURE_ENABLE=	root-server
 LARGEFILE_CONFIGURE_ENABLE=	largefile

@@ -21,7 +21,7 @@ OPTIONS_SUB=	yes
 
 PORTDOCS=	README.txt USAGE.txt
 
-GUI_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+GUI_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 .include <bsd.port.options.mk>
 

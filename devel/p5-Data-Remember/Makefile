@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Remember complex information without giving yourself a headache
 
-BUILD_DEPENDS=	p5-DBM-Deep>0:${PORTSDIR}/databases/p5-DBM-Deep \
-		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck \
-		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		p5-POE>0:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-DBM-Deep>0:databases/p5-DBM-Deep \
+		p5-YAML-Syck>0:textproc/p5-YAML-Syck \
+		p5-UNIVERSAL-require>0:devel/p5-UNIVERSAL-require \
+		p5-POE>0:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

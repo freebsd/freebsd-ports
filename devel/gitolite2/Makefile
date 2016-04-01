@@ -15,7 +15,7 @@ COMMENT=	Access control layer on top of git
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
+RUN_DEPENDS=	git>=0:devel/git
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sitaramc

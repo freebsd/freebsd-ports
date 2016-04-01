@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.tastyrabbit.net/visprint/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates fractal fingerprint images based on any data
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lpng

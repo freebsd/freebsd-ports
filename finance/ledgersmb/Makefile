@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Releases/archive-1.1/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Double entry accounting system
 
-BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes

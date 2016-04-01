@@ -12,7 +12,7 @@ DISTNAME=	sgb-2009-08-10
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	The Stanford GraphBase: A Platform for Combinatorial Computing
 
-BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
+BUILD_DEPENDS=	ctangle:devel/cweb
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	lib tests

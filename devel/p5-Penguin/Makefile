@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for passing digitally signed perl5 code between machines
 
-RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
+RUN_DEPENDS=	pgp:security/pgp
 
 USES=		perl5
 USE_PERL5=	configure

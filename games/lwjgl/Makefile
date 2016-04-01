@@ -13,8 +13,8 @@ COMMENT=	Lightweight Java Game Library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils \
-		${JAVALIBDIR}/jinput/jinput.jar:${PORTSDIR}/games/jinput
+BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:games/jutils \
+		${JAVALIBDIR}/jinput/jinput.jar:games/jinput
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 ONLY_FOR_ARCHS=	i386 amd64

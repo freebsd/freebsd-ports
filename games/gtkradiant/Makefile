@@ -16,9 +16,9 @@ COMMENT=	Map editor for FPS games, by id Software and Loki Software
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
-		libmhash.so:${PORTSDIR}/security/mhash \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libmhash.so:security/mhash \
+		libpng.so:graphics/png
 
 USES=		pkgconfig python:build scons zip
 USE_GNOME=	gtk20 libxml2

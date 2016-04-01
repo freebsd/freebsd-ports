@@ -26,7 +26,7 @@ SHEBANG_FILES=	${PORTNAME}
 
 .if ${OPSYS} == FreeBSD
 # DragonFly has CVS in base and devel/cvs doesn't build there
-RUN_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
+RUN_DEPENDS=	cvs:devel/cvs
 .endif
 
 do-extract:

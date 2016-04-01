@@ -13,10 +13,10 @@ COMMENT=	Simple painting program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libgif.so:${PORTSDIR}/graphics/giflib \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libgif.so:graphics/giflib \
+		libfreetype.so:print/freetype2
 
 USE_GNOME=	gtk20
 USES=		desktop-file-utils gmake iconv jpeg pkgconfig tar:bzip2
@@ -33,17 +33,17 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLCMS2}
-LIB_DEPENDS+=	liblcms2.so:${PORTSDIR}/graphics/lcms2
+LIB_DEPENDS+=	liblcms2.so:graphics/lcms2
 CONFIGURE_ARGS+=lcms2
 .else
 CONFIGURE_ARGS+=nolcms
 .endif
 
 .if ${PORT_OPTIONS:MOPENJPEG}
-LIB_DEPENDS+=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15
+LIB_DEPENDS+=	libopenjpeg.so:graphics/openjpeg15
 CONFIGURE_ARGS+=jp2
 .else
-LIB_DEPENDS+=	libjasper.so:${PORTSDIR}/graphics/jasper
+LIB_DEPENDS+=	libjasper.so:graphics/jasper
 CONFIGURE_ARGS+=jasper
 .endif
 

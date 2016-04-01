@@ -11,7 +11,7 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Summarizes and manages differences between local files and Subversion
 
 BROKEN=		unfetchable
-RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
+RUN_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion
 
 USE_RUBY=	yes
 NO_BUILD=	yes

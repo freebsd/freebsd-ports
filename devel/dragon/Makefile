@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.lemke-it.com/
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Combined C++ scanner/parser generator for LR compliant grammars
 
-LIB_DEPENDS=	liblfcbase.so:${PORTSDIR}/devel/lfcbase
+LIB_DEPENDS=	liblfcbase.so:devel/lfcbase
 
 LICENSE=	GPLv3
 GNU_CONFIGURE=	yes

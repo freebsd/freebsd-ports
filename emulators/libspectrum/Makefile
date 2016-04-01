@@ -12,7 +12,7 @@ COMMENT=	Handling of ZX-Spectrum emulator files formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
@@ -22,7 +22,7 @@ USES=		gmake pkgconfig libtool
 OPTIONS_DEFINE=	AUDIOFILE DOCS
 AUDIOFILE_DESC=	Support loading from .wav files
 
-AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
 AUDIOFILE_CONFIGURE_OFF=	--without-libaudiofile
 
 INSTALL_TARGET=	install-strip

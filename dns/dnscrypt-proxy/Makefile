@@ -14,7 +14,7 @@ COMMENT=	Boost privacy and security of DNS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
+LIB_DEPENDS=	libsodium.so:security/libsodium
 
 GNU_CONFIGURE=	yes
 USES=		execinfo gmake

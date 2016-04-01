@@ -39,7 +39,7 @@ SOLUTIONS_DESC=	Solutions for Holotz's Castle
 
 OPTIONS_SUB=	yes
 
-SOLUTIONS_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+SOLUTIONS_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 .include <bsd.port.options.mk>
 

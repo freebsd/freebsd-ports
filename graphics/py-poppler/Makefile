@@ -14,7 +14,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Python bindings for the Poppler PDF rendering library
 
-LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig python

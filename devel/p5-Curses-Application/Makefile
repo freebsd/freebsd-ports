@@ -14,7 +14,7 @@ COMMENT=	Curses application development framework
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Curses-Forms>=0:${PORTSDIR}/devel/p5-Curses-Forms
+BUILD_DEPENDS=	p5-Curses-Forms>=0:devel/p5-Curses-Forms
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

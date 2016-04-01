@@ -16,10 +16,10 @@ COMMENT=	Modern asynchronous DNS API
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libidn.so:${PORTSDIR}/dns/libidn \
-		libldns.so:${PORTSDIR}/dns/ldns \
-		libunbound.so:${PORTSDIR}/dns/unbound
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libidn.so:dns/libidn \
+		libldns.so:dns/ldns \
+		libunbound.so:dns/unbound
 
 USES=		libtool
 USE_LDCONFIG=	yes
@@ -37,11 +37,11 @@ LIBEV_DESC=	Build with libev extension
 LIBUV_DESC=	Build with libuv extension
 LIBEVENT_DESC=	Build with libevent extension
 
-LIBEV_LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
+LIBEV_LIB_DEPENDS=	libev.so:devel/libev
 LIBEV_CONFIGURE_WITH=	libev
-LIBUV_LIB_DEPENDS=	libuv.so:${PORTSDIR}/devel/libuv
+LIBUV_LIB_DEPENDS=	libuv.so:devel/libuv
 LIBUV_CONFIGURE_WITH=	libuv
-LIBEVENT_LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent2
 LIBEVENT_CONFIGURE_WITH=libevent
 
 .include <bsd.port.options.mk>

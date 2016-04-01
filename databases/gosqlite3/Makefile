@@ -12,7 +12,7 @@ COMMENT=	Go interface for SQLite3
 
 USES=		compiler
 
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3
 
 GO_PKGNAME=	github.com/kuroneko/${PORTNAME}
 

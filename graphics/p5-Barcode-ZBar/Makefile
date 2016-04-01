@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to ZBar barcode reader
 
-LIB_DEPENDS=	libzbar.so:${PORTSDIR}/graphics/zbar
+LIB_DEPENDS=	libzbar.so:graphics/zbar
 
 USES=		perl5
 USE_PERL5=	configure

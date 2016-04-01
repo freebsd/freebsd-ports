@@ -52,9 +52,9 @@ CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		xmlto:${PORTSDIR}/textproc/xmlto \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
+BUILD_DEPENDS+=	asciidoc:textproc/asciidoc \
+		xmlto:textproc/xmlto \
+		docbook-xml>0:textproc/docbook-xml
 
 .else
 CONFIGURE_ARGS+=	--without-documentation
@@ -68,7 +68,7 @@ CFLAGS+=		-fPIC
 
 .if ${PORT_OPTIONS:MEXTERNAL}
 CONFIGURE_ARGS+=	--with-system-pgm
-LIB_DEPENDS+=		libpgm.so:${PORTSDIR}/net/openpgm
+LIB_DEPENDS+=		libpgm.so:net/openpgm
 .endif
 
 .if ${PORT_OPTIONS:MPLUGINS}

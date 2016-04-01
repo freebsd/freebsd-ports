@@ -12,7 +12,7 @@ COMMENT=	Utility for generating icon and cursor themes
 
 LICENSE=	MIT # in readme and sources; COPYING seem to be unrelated
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES=		localbase pkgconfig
 USE_GNOME=	gtk20

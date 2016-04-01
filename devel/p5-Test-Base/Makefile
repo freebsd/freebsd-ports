@@ -15,13 +15,13 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	\
-		p5-Spiffy>=0.30:${PORTSDIR}/devel/p5-Spiffy \
-		p5-Test-Simple>=0.86:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
-		p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
-		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-Spiffy>=0.30:devel/p5-Spiffy \
+		p5-Test-Simple>=0.86:devel/p5-Test-Simple \
+		p5-Test-Deep>0:devel/p5-Test-Deep \
+		p5-Text-Diff>=0:textproc/p5-Text-Diff \
+		p5-Module-Install>=0:devel/p5-Module-Install \
+		p5-Text-Diff>=0:textproc/p5-Text-Diff \
+		p5-YAML>=0:textproc/p5-YAML \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

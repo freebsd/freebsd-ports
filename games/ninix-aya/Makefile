@@ -13,9 +13,9 @@ COMMENT=	Desktop mascot program compatible with "Ukagaka"
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
-		${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py-chardet \
+LIB_DEPENDS=	libpng.so:graphics/png
+RUN_DEPENDS=	unzip:archivers/unzip \
+		${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet \
 		${PYNUMPY}
 
 NO_ARCH=	yes

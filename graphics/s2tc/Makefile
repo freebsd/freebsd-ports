@@ -11,10 +11,10 @@ COMMENT=	Subset of a well-known texture compression scheme
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libGL>=9.1.7:${PORTSDIR}/graphics/libGL
-TEST_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		nvcompress:${PORTSDIR}/graphics/nvidia-texture-tools \
-		wget:${PORTSDIR}/ftp/wget
+BUILD_DEPENDS=	libGL>=9.1.7:graphics/libGL
+TEST_DEPENDS=	convert:graphics/ImageMagick \
+		nvcompress:graphics/nvidia-texture-tools \
+		wget:ftp/wget
 
 USES=		autoreconf libtool pathfix
 USE_GITHUB=	yes

@@ -18,7 +18,7 @@ LICENSE_NAME=	XBATTLE License
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	xdialog>0:${PORTSDIR}/x11/xdialog
+RUN_DEPENDS=	xdialog>0:x11/xdialog
 
 USES=		imake
 USE_XORG=	x11 xext

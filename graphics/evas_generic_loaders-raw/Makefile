@@ -14,8 +14,8 @@ COMMENT=	Additional loader for Evas (raw)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
-		libraw.so:${PORTSDIR}/graphics/libraw
+LIB_DEPENDS=	libefl.so:devel/efl \
+		libraw.so:graphics/libraw
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes

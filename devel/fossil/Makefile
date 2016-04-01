@@ -29,7 +29,7 @@ FUSE_DESC=	Enable fossil fusefs command
 JSON_CONFIGURE_ON=	--json
 STATIC_CONFIGURE_ON=	--static
 FUSE_CONFIGURE_OFF=	--disable-fusefs
-FUSE_LIB_DEPENDS=	libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
+FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
 FUSE_CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 post-install:

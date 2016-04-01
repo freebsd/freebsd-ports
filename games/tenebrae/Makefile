@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}_src${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake engine with lighting similar to that in Doom III
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gmake dos2unix zip
 USE_GL=		glu

@@ -11,7 +11,7 @@ EXTRACT_SUFX=	-src.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Kiki the nanobot is a 3-D puzzle game
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	swig:devel/swig13
 
 USES=		compiler dos2unix gmake python
 USE_GL=		gl glu glut

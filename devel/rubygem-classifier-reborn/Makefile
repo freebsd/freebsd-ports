@@ -11,7 +11,7 @@ COMMENT=	Classifier module for Bayesian and other types of classifications
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	rubygem-fast-stemmer>=1.0.0:${PORTSDIR}/devel/rubygem-fast-stemmer
+RUN_DEPENDS=	rubygem-fast-stemmer>=1.0.0:devel/rubygem-fast-stemmer
 
 PLIST_FILES=	bin/bayes.rb bin/summarize.rb
 

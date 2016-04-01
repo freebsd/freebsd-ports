@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client library for memcached using libmemcache
 
-LIB_DEPENDS=	libmemcache.so:${PORTSDIR}/databases/libmemcache
+LIB_DEPENDS=	libmemcache.so:databases/libmemcache
 
 USES=		perl5
 USE_PERL5=	configure

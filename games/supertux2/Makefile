@@ -9,10 +9,10 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Side-scroller game similar to Super Mario Brothers
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/smart_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/smart_ptr.hpp:devel/boost-libs
+LIB_DEPENDS=	libphysfs.so:devel/physfs \
+		libcurl.so:ftp/curl \
+		libvorbis.so:audio/libvorbis
 
 BROKEN_FreeBSD_10=	does not build on 10.x
 

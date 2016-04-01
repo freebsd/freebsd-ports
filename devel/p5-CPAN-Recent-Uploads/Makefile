@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Find the distributions recently uploaded to CPAN
 
-RUN_DEPENDS=	p5-libwww>=5.835:${PORTSDIR}/www/p5-libwww \
-		p5-URI>=1.56:${PORTSDIR}/net/p5-URI \
-		p5-YAML-Syck>=1.15:${PORTSDIR}/textproc/p5-YAML-Syck
+RUN_DEPENDS=	p5-libwww>=5.835:www/p5-libwww \
+		p5-URI>=1.56:net/p5-URI \
+		p5-YAML-Syck>=1.15:textproc/p5-YAML-Syck
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

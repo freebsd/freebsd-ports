@@ -12,7 +12,7 @@ COMMENT=	Simple Protocol for Independent Computing Environments
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix pkgconfig python tar:bzip2

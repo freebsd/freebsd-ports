@@ -13,7 +13,7 @@ COMMENT=	Clone of the Commodore game Paradroid
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		iconv jpeg
 USE_SDL=	mixer image sdl

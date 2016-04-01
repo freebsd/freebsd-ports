@@ -12,8 +12,8 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64
 
-RUN_DEPENDS=	/boot/xen:${PORTSDIR}/emulators/xen-kernel \
-		xl:${PORTSDIR}/sysutils/xen-tools
+RUN_DEPENDS=	/boot/xen:emulators/xen-kernel \
+		xl:sysutils/xen-tools
 
 USES=		metaport
 

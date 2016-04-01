@@ -10,12 +10,12 @@ MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Flash movie player
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libgif.so:${PORTSDIR}/graphics/giflib \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libnspr4.so:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libltdl.so:devel/libltdl \
+		libcurl.so:ftp/curl \
+		libgif.so:graphics/giflib \
+		libspeex.so:audio/speex \
+		libnspr4.so:devel/nspr
 
 CONFLICTS=	gnash-devel-[0-9]*
 
@@ -98,8 +98,8 @@ WEBPLUGIN_FILES=	libgnashplugin.so
 WEBPLUGIN_DIR=${_WEBPLUGIN_LIBDIR:S,^${LOCALBASE}/,${PREFIX}/,}/${WEBPLUGIN_NAME}
 PLIST_SUB+=	NPAPI=""
 CONFIGURE_ARGS+=--with-npapi-plugindir="${WEBPLUGIN_DIR}"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/xulrunner:${PORTSDIR}/www/libxul
-RUN_DEPENDS+=	${LOCALBASE}/bin/xulrunner:${PORTSDIR}/www/libxul
+BUILD_DEPENDS+=	${LOCALBASE}/bin/xulrunner:www/libxul
+RUN_DEPENDS+=	${LOCALBASE}/bin/xulrunner:www/libxul
 .else
 PLIST_SUB+=	NPAPI="@comment "
 CONFIGURE_ARGS+=	--disable-npapi
@@ -143,7 +143,7 @@ CONFIGURE_ARGS+=--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
 GNASH_RENDERERS=
 
 .if ${PORT_OPTIONS:MAGG}
-LIB_DEPENDS+=		libagg.so:${PORTSDIR}/graphics/agg
+LIB_DEPENDS+=		libagg.so:graphics/agg
 GNASH_RENDERERS+=	agg
 .endif
 
@@ -151,7 +151,7 @@ GNASH_RENDERERS+=	agg
 USE_GL=			yes
 GNASH_RENDERERS+=	ogl
 .if ${PORT_OPTIONS:MGTK2}
-LIB_DEPENDS+=		libgdkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=		libgdkglext-x11-1.0.so:x11-toolkits/gtkglext
 .endif
 .endif
 
@@ -159,7 +159,7 @@ LIB_DEPENDS+=		libgdkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 .if ${PORT_OPTIONS:MKDE4}
 IGNORE=			doesn't support Cairo renderer with KDE4 gui. Please rerun 'make config' and select different renderer or disable KDE4 GUI
 .endif
-LIB_DEPENDS+=		libcairo.so:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=		libcairo.so:graphics/cairo
 GNASH_RENDERERS+=	cairo
 .endif
 
@@ -176,7 +176,7 @@ CONFIGURE_ARGS+=	--enable-renderer=`${ECHO} ${GNASH_RENDERERS} | ${TR} ' ' ,`
 .if empty(PORT_OPTIONS:MFFMPEG) && empty(PORT_OPTIONS:MFFMPEG2)
 IGNORE=			VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG
 .endif
-LIB_DEPENDS+=		libva.so:${PORTSDIR}/multimedia/libva
+LIB_DEPENDS+=		libva.so:multimedia/libva
 .else
 CONFIGURE_ARGS+=	--enable-hwaccel=none # XVideo
 .endif
@@ -185,7 +185,7 @@ CONFIGURE_ARGS+=	--enable-hwaccel=none # XVideo
 # Media handler options processing
 #
 .if ${PORT_OPTIONS:MFFMPEG2} && empty(PORT_OPTIONS:MFFMPEG) && empty(PORT_OPTIONS:MGSTREAMER)
-LIB_DEPENDS+=		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=		libavcodec.so:multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-media=ffmpeg \
 			--with-ffmpeg-incl=${LOCALBASE}/include/libavcodec \
 			--with-ffmpeg-lib=${LOCALBASE}/lib
@@ -193,7 +193,7 @@ USE_SDL+=		sdl
 MAKE_ARGS+=		INCLUDES="-I${LOCALBASE}/include/ffmpeg"
 .elif ${PORT_OPTIONS:MFFMPEG} && empty(PORT_OPTIONS:MFFMPEG2) && empty(PORT_OPTIONS:MGSTREAMER)
 EXTRA_PATCHES+=		${FILESDIR}/ffmpeg0.patch
-LIB_DEPENDS+=		libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+LIB_DEPENDS+=		libavcodec0.so:multimedia/ffmpeg0
 CONFIGURE_ARGS+=	--enable-media=ffmpeg \
 			--with-ffmpeg-incl=${LOCALBASE}/include/ffmpeg0/libavcodec \
 			--with-ffmpeg-lib=${LOCALBASE}/lib/ffmpeg0

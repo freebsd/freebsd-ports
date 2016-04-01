@@ -10,7 +10,7 @@ COMMENT=	The main game for the Minetest game engine
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	minetest:${PORTSDIR}/games/minetest
+RUN_DEPENDS=	minetest:games/minetest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	minetest

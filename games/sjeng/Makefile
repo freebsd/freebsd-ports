@@ -11,7 +11,7 @@ DISTNAME=	Sjeng-Free-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess engine supporting chess variations
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

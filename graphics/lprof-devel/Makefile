@@ -12,9 +12,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open source color profiler
 
-LIB_DEPENDS=	liblcms.so:${PORTSDIR}/graphics/lcms \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libvigraimpex.so:${PORTSDIR}/graphics/vigra
+LIB_DEPENDS=	liblcms.so:graphics/lcms \
+		libtiff.so:graphics/tiff \
+		libvigraimpex.so:graphics/vigra
 
 USES=		cmake desktop-file-utils jpeg tar:bzip2
 USE_XORG=	x11 xext sm ice xxf86vm

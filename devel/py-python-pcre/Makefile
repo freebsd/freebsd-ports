@@ -12,8 +12,8 @@ COMMENT=	Python PCRE bindings
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pcre>=6.0:${PORTSDIR}/devel/pcre
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	pcre>=6.0:devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils

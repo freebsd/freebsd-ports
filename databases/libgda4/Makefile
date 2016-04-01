@@ -21,8 +21,8 @@ LIBGDA4_SLAVE?=	no
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libjson-glib-1.0.so:devel/json-glib
 
 USES+=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix glib20 libxslt intlhack referencehack
@@ -55,7 +55,7 @@ PLIST_SUB=	VERSION=${VERSION}
 .if ${LIBGDA4_SLAVE}=="no"
 .if ${PORT_OPTIONS:MUI}
 CONFIGURE_ARGS+=--with-ui
-BUILD_DEPENDS+=	xml2po:${PORTSDIR}/textproc/gnome-doc-utils
+BUILD_DEPENDS+=	xml2po:textproc/gnome-doc-utils
 USE_GNOME+=	gtk20
 INSTALLS_ICONS=	yes
 PLIST_SUB+=	UI=""
@@ -66,7 +66,7 @@ PLIST_SUB+=	UI="@comment "
 
 .if ${PORT_OPTIONS:MSOUP}
 CONFIGURE_ARGS+=--with-libsoup
-LIB_DEPENDS+=	libsoup-2.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	libsoup-2.so:devel/libsoup
 PLIST_SUB+=	WEB=""
 .else
 CONFIGURE_ARGS+=--without-libsoup
@@ -75,7 +75,7 @@ PLIST_SUB+=	WEB="@comment "
 
 .if ${PORT_OPTIONS:MKEYRING}
 CONFIGURE_ARGS+=--with-gnome-keyring
-LIB_DEPENDS+=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS+=	libgnome-keyring.so:security/libgnome-keyring
 .else
 CONFIGURE_ARGS+=--without-gnome-keyring
 .endif
@@ -115,7 +115,7 @@ CONFIGURE_ARGS+=	--without-postgres
 
 # MDB (MS Access)
 .if ${LIBGDA4_SLAVE}=="mdb"
-LIB_DEPENDS+=		libmdbsql.so:${PORTSDIR}/databases/mdbtools
+LIB_DEPENDS+=		libmdbsql.so:databases/mdbtools
 CONFIGURE_ARGS+=	--with-mdb=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-mdb

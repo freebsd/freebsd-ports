@@ -11,7 +11,7 @@ COMMENT=	Lightweight Embedded Database Engine
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-boost=${LOCALBASE}

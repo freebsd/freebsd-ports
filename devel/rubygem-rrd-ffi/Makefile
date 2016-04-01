@@ -10,9 +10,9 @@ COMMENT=	Ruby bindings for RRD functions
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
-		rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
-		rubygem-ffi>=0:${PORTSDIR}/devel/rubygem-ffi
+RUN_DEPENDS=	rrdtool:databases/rrdtool \
+		rubygem-activesupport>=0:devel/rubygem-activesupport \
+		rubygem-ffi>=0:devel/rubygem-ffi
 
 NO_ARCH=	yes
 

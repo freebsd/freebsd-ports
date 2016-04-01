@@ -16,9 +16,9 @@ COMMENT=	Build tool for Erlang
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/erl:${PORTSDIR}/lang/erlang \
-		${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
-RUN_DEPENDS=	${LOCALBASE}/bin/erl:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang \
+		${LOCALBASE}/bin/git:devel/git
+RUN_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang
 
 OPTIONS_DEFINE=	BASH ZSH
 

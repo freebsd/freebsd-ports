@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Event loop and event-driven async socket base class
 
-RUN_DEPENDS=	p5-IO-KQueue>=0:${PORTSDIR}/devel/p5-IO-KQueue \
-		p5-Sys-Syscall>=0:${PORTSDIR}/devel/p5-Sys-Syscall
+RUN_DEPENDS=	p5-IO-KQueue>=0:devel/p5-IO-KQueue \
+		p5-Sys-Syscall>=0:devel/p5-Sys-Syscall
 
 USES=		perl5
 USE_PERL5=	configure

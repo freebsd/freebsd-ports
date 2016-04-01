@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4 graphical interface to D-Bus
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 USES=		pkgconfig
 USE_QT4=	qmake_build moc_build rcc_build corelib dbus gui xml \

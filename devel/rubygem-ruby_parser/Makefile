@@ -11,7 +11,7 @@ COMMENT=	Ruby parser written in pure ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-sexp_processor>=4.1:${PORTSDIR}/devel/rubygem-sexp_processor
+RUN_DEPENDS=	rubygem-sexp_processor>=4.1:devel/rubygem-sexp_processor
 
 USES=		shebangfix
 USE_RUBY=	yes

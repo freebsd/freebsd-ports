@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensions to Class::DBI for MySQL
 
-BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
-		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+BUILD_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI \
+		p5-DBD-mysql>=0:databases/p5-DBD-mysql
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -14,7 +14,7 @@ COMMENT=	Robot programming game for UNIX
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=	gsed:textproc/gsed
 
 USES=		gettext gmake perl5 pkgconfig python tar:bzip2
 USE_GNOME=	gtk20

@@ -13,14 +13,14 @@ COMMENT=	Copy/Paste Detector (CPD) for PHP code
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \
-		pear-SebastianBergmann_FinderFacade>=1.0.4:${PORTSDIR}/devel/pear-SebastianBergmann_FinderFacade \
-		pear-PHP_Timer>=1.0.4:${PORTSDIR}/devel/pear-PHP_Timer \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
-RUN_DEPENDS=	pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \
-		pear-SebastianBergmann_FinderFacade>=1.0.4:${PORTSDIR}/devel/pear-SebastianBergmann_FinderFacade \
-		pear-PHP_Timer>=1.0.4:${PORTSDIR}/devel/pear-PHP_Timer \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
+BUILD_DEPENDS=	pear-ezc_ConsoleTools>=1.6:devel/pear-ezc_ConsoleTools \
+		pear-SebastianBergmann_FinderFacade>=1.0.4:devel/pear-SebastianBergmann_FinderFacade \
+		pear-PHP_Timer>=1.0.4:devel/pear-PHP_Timer \
+		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+RUN_DEPENDS=	pear-ezc_ConsoleTools>=1.6:devel/pear-ezc_ConsoleTools \
+		pear-SebastianBergmann_FinderFacade>=1.0.4:devel/pear-SebastianBergmann_FinderFacade \
+		pear-PHP_Timer>=1.0.4:devel/pear-PHP_Timer \
+		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
 USE_PHP=	tokenizer
 PEAR_CHANNEL=	phpunit

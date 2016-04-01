@@ -13,7 +13,7 @@ COMMENT=	Emulator for Sun 2/120, 3/150, and SPARCstation 2 machines
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		autoreconf compiler gettext gmake iconv libtool perl5 pkgconfig
 USE_GNOME=	gdkpixbuf2 gtk20

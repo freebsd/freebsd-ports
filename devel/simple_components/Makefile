@@ -13,7 +13,7 @@ COMMENT=	Simple Ada Components
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
+BUILD_DEPENDS=	gprbuild:devel/gprbuild
 
 USES=		ada tar:tgz
 DEST=		${STAGEDIR}${PREFIX}

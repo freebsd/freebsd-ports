@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Interface for OCaml to the curl lib
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
+BUILD_DEPENDS=	ocamlc:lang/ocaml \
+		ocamlfind:devel/ocaml-findlib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gmake
 GNU_CONFIGURE=	yes
@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	LWT
 OPTIONS_DEFAULT=LWT
 OPTIONS_SUB=	yes
 LWT_DESC=	Include threading support (ocaml-lwt)
-LWT_RUN_DEPENDS=${LOCALBASE}/${OCAML_SITELIBDIR}/lwt/lwt.a:${PORTSDIR}/devel/ocaml-lwt
+LWT_RUN_DEPENDS=${LOCALBASE}/${OCAML_SITELIBDIR}/lwt/lwt.a:devel/ocaml-lwt
 LWT_BUILD_DEPENDS=${LWT_RUN_DEPENDS}
 
 post-install:

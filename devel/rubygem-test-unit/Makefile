@@ -15,7 +15,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/GPL
 LICENSE_FILE_PSFL=	${WRKSRC}/PSFL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-power_assert>=0:${PORTSDIR}/devel/rubygem-power_assert
+RUN_DEPENDS=	rubygem-power_assert>=0:devel/rubygem-power_assert
 
 NO_ARCH=	yes
 USE_RUBY=	yes

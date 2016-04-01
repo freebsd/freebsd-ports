@@ -10,8 +10,8 @@ COMMENT=	Tree widgets for py-urwid
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwid>=1.0.0:${PORTSDIR}/devel/py-urwid
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwid>=1.0.0:${PORTSDIR}/devel/py-urwid
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwid>=1.0.0:devel/py-urwid
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwid>=1.0.0:devel/py-urwid
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pazz

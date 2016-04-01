@@ -10,13 +10,13 @@ MASTER_SITES=	http://kin.klever.net/dist/
 MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	C++ implementation of an OpenID decentralized identity system
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libtidy.so:${PORTSDIR}/www/tidy-lib \
-		libxslt.so:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpcre.so:devel/pcre \
+		libexpat.so:textproc/expat2 \
+		libtidy.so:www/tidy-lib \
+		libxslt.so:textproc/libxslt
 
 USE_LDCONFIG=	yes
 USES=		libtool gmake pkgconfig compiler:c++11-lang

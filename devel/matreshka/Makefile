@@ -11,7 +11,7 @@ COMMENT=	Ada framework for information systems development
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
+BUILD_DEPENDS=	gprbuild:devel/gprbuild
 
 USES=		ada gmake pkgconfig
 HAS_CONFIGURE=	yes

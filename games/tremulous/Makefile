@@ -71,7 +71,7 @@ USE_XORG=	x11 xxf86dga
 .  endif
 # Vorbis
 .  if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
 MAKE_ENV+=	USE_CODEC_VORBIS=1
 .  endif
 .endif
@@ -100,7 +100,7 @@ PLIST_SUB+=	GAMELIBS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMASTER_SERVER}
-LIB_DEPENDS+=	libtdb.so:${PORTSDIR}/databases/tdb
+LIB_DEPENDS+=	libtdb.so:databases/tdb
 MAKE_ENV+=	BUILD_MASTER_SERVER=1
 PLIST_SUB+=	MASTER_SERVER=""
 .else

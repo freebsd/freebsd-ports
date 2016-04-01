@@ -15,7 +15,7 @@ COMMENT=	Perl5 library for text-mode user interface widgets
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses
+RUN_DEPENDS=	p5-Curses>=0:devel/p5-Curses
 
 USES=		perl5
 

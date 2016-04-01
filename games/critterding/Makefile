@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sources
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Evolving Artificial Life
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		autoreconf libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

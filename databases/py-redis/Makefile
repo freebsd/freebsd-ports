@@ -12,13 +12,13 @@ COMMENT=	Python client for Redis key-value store
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	redis-server:${PORTSDIR}/databases/redis
+TEST_DEPENDS=	redis-server:databases/redis
 
 OPTIONS_DEFINE=	HIREDIS
 
 HIREDIS_DESC=	High performance response parser (via hiredis)
 
-HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>0:${PORTSDIR}/databases/py-hiredis
+HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>0:databases/py-hiredis
 
 USES=		python
 USE_PYTHON=	distutils autoplist concurrent

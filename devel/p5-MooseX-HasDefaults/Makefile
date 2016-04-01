@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Default "is" to "ro" or "rw" for all attributes
 
-BUILD_DEPENDS=	p5-Moose>2:${PORTSDIR}/devel/p5-Moose \
-		p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
+BUILD_DEPENDS=	p5-Moose>2:devel/p5-Moose \
+		p5-Test-Exception>0:devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	configure

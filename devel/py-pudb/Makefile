@@ -13,8 +13,8 @@ COMMENT=	Full-screen, console-based Python debugger
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.0:${PORTSDIR}/textproc/py-pygments \
-		${PYTHON_PKGNAMEPREFIX}urwid>=1.1.1:${PORTSDIR}/devel/py-urwid
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.0:textproc/py-pygments \
+		${PYTHON_PKGNAMEPREFIX}urwid>=1.1.1:devel/py-urwid
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils

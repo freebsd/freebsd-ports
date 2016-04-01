@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.sh
 MAINTAINER=	fw@moov.de
 COMMENT=	Make daily, weekly, and monthly backups of your MySQL databases
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 NO_BUILD=	yes
 PLIST_FILES=	sbin/autobackupmysql.sh

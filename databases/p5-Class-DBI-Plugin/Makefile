@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Abstract base class for Class::DBI plugins
 
-BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI
+BUILD_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

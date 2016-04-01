@@ -11,7 +11,7 @@ DIST_SUBDIR=	dynagui
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend to the dynamips router simulator
 
-BUILD_DEPENDS=	dynagen:${PORTSDIR}/emulators/dynagen
+BUILD_DEPENDS=	dynagen:emulators/dynagen
 
 USES=		python
 USE_PYTHON=	distutils

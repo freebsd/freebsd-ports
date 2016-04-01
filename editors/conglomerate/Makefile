@@ -19,6 +19,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	ENCHANT DOCS
 
-ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
 
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ COMMENT?=	Joe's Own Editor
 
 OPTIONS_DEFINE=	DOCS
 
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
+RUN_DEPENDS=	ispell:textproc/aspell-ispell
 
 PKGNAMESUFFIX=	2
 CONFLICTS=	joe-3*

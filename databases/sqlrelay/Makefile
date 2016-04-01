@@ -11,7 +11,7 @@ COMMENT=	Persistent DB connection pooling/proxying/load balancing system
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	librudiments.so:${PORTSDIR}/devel/rudiments
+LIB_DEPENDS=	librudiments.so:devel/rudiments
 
 WANT_GNOME=	yes
 USES=		gmake libtool
@@ -89,8 +89,8 @@ ORACLE_CONFIGURE_ENABLE=	oracle
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE3}
-LIB_DEPENDS+=		libgdbm.so:${PORTSDIR}/databases/gdbm \
-			libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=		libgdbm.so:databases/gdbm \
+			libsqlite3.so:databases/sqlite3
 CONFIGURE_ARGS+=	--with-gdbm-prefix="${LOCALBASE}" \
 			--with-sqlite-prefix="${LOCALBASE}"
 TOSTRIP+=		libexec/sqlrelay/sqlrconnection_sqlite.so
@@ -124,7 +124,7 @@ CONFIGURE_ARGS+=	--disable-postgresql
 .endif
 
 .if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=		libodbc.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		libodbc.so:databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc-prefix="${LOCALBASE}"
 TOSTRIP+=		libexec/sqlrelay/sqlrconnection_odbc.so
 .else
@@ -132,7 +132,7 @@ CONFIGURE_ARGS+=	--disable-odbc
 .endif
 
 .if ${PORT_OPTIONS:MFREETDS}
-LIB_DEPENDS+=		libtdsodbc.so:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=		libtdsodbc.so:databases/freetds
 CONFIGURE_ARGS+=	--with-freetds-prefix="${LOCALBASE}"
 TOSTRIP+=		libexec/sqlrelay/sqlrconnection_freetds.so
 .else

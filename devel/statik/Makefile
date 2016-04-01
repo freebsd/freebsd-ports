@@ -9,7 +9,7 @@ COMMENT=	Embed static files into a Go executable
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go:lang/go
 
 ONLY_FOR_ARCHS=	i386 amd64
 

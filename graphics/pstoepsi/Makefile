@@ -13,7 +13,7 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wiliam Chia-Wei Cheng's yet another PS to EPSI converter
 
-RUN_DEPENDS=	pbmtoepsi:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	pbmtoepsi:graphics/netpbm
 
 USES=		ghostscript:run
 NO_WRKSUBDIR=	yes

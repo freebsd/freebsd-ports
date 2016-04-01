@@ -12,7 +12,7 @@ COMMENT=	Integer Set Library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 CONFIGURE_ARGS=	--with-gmp-prefix=${LOCALBASE}
 GNU_CONFIGURE=	yes

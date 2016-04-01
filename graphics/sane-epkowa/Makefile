@@ -56,11 +56,11 @@ COMMENT=	The sane-epkowa driver for FreeBSD
 WRKSRC=${WRKDIR}/iscan-${PORTVERSION}
 
 # We use LIB_DEPENDS, but the dependency is also at build time
-LIB_DEPENDS+=	libltdl.so:${PORTSDIR}/devel/libltdl
-LIB_DEPENDS+=	libgetline.so:${PORTSDIR}/devel/libgetline
-LIB_DEPENDS+=	libsane.so:${PORTSDIR}/graphics/sane-backends
+LIB_DEPENDS+=	libltdl.so:devel/libltdl
+LIB_DEPENDS+=	libgetline.so:devel/libgetline
+LIB_DEPENDS+=	libsane.so:graphics/sane-backends
 
-#BUILD_DEPENDS+=	${LOCALBASE}/lib/libltdl.so:${PORTSDIR}/devel/libltdl
+#BUILD_DEPENDS+=	${LOCALBASE}/lib/libltdl.so:devel/libltdl
 
 # gtk libraries are used by the frontend, which we do not build, however
 # the configure script relies on that and fails if not present, so as

@@ -12,8 +12,8 @@ COMMENT=	Validate your CPAN META.yml files
 
 LICENSE=	ART20
 
-TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=0.08:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0.08:devel/p5-Test-Pod-Coverage
 
 USE_PERL5=	configure
 USES=		perl5

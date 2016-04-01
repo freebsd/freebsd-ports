@@ -16,7 +16,7 @@ PATCH_DIST_STRIP=-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit and library for raster image processing
 
-LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

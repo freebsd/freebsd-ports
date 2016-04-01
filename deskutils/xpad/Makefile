@@ -11,7 +11,7 @@ COMMENT=	Virtual note-pad system for your X11 desktop
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
+RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme
 
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes

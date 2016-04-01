@@ -9,8 +9,8 @@ MASTER_SITES=	http://people.xmms2.org/~alex/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DFUI curses frontend
 
-LIB_DEPENDS=	libaura3.so:${PORTSDIR}/devel/libaura \
-		libdfui4.so:${PORTSDIR}/devel/libdfui
+LIB_DEPENDS=	libaura3.so:devel/libaura \
+		libdfui4.so:devel/libdfui
 
 USES=	tar:bzip2
 

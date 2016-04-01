@@ -20,7 +20,7 @@ USE_PERL5=	configure
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS=	p5-Module-Load>=0.28:${PORTSDIR}/devel/p5-Module-Load
+BUILD_DEPENDS=	p5-Module-Load>=0.28:devel/p5-Module-Load
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 .endif
 

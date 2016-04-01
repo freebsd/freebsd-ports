@@ -11,10 +11,10 @@ DISTFILES=	${DISTNAME}-0${EXTRACT_SUFX}
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	IDE for the .NET platform
 
-BUILD_DEPENDS=	mautil:${PORTSDIR}/devel/mono-addins
-RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:${PORTSDIR}/x11-toolkits/libgdiplus \
-		exctags:${PORTSDIR}/devel/ctags \
-		mautil:${PORTSDIR}/devel/mono-addins
+BUILD_DEPENDS=	mautil:devel/mono-addins
+RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:x11-toolkits/libgdiplus \
+		exctags:devel/ctags \
+		mautil:devel/mono-addins
 
 BROKEN=		GUI does not start
 DEPRECATED=	Broken for more than 6 months
@@ -34,9 +34,9 @@ GIT_DESC=	git support
 
 MONOEXT_CONFIGURE_ENABLE=monoextensions
 GIT_CONFIGURE_ENABLE=git
-GIT_RUN_DEPENDS=git:${PORTSDIR}/devel/git
+GIT_RUN_DEPENDS=git:devel/git
 SVN_CONFIGURE_ENABLE=subversion
-SVN_RUN_DEPENDS=svn:${PORTSDIR}/devel/subversion
+SVN_RUN_DEPENDS=svn:devel/subversion
 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even

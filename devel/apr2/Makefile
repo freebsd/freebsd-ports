@@ -13,7 +13,7 @@ COMMENT=	Apache Portability Library
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 NO_PACKAGE=	yes
 
@@ -51,7 +51,7 @@ DEVRANDOM_CONFIGURE_WITH=	devrandom
 # APR-Util Options
 BDB_USE=		BDB=48+
 GDBM_CONFIGURE_WITH=	gdbm=${LOCALBASE}
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 IPV6_CONFIGURE_ENABLE=	ipv6
 MYSQL_CFLAGS=		-I${LOCALBASE}/include -I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
 MYSQL_CONFIGURE_WITH=	mysql=${LOCALBASE}
@@ -69,7 +69,7 @@ SSL_USE=		OPENSSL=yes
 SSL_CONFIGURE_WITH=	openssl=${OPENSSLBASE}
 SSL_CPPFLAGS=		-I${OPENSSLINC}
 SSL_LDFLAGS=		-L${OPENSSLLIB}
-NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
+NSS_LIB_DEPENDS=	libnss3.so:security/nss
 NSS_CPPFLAGS=		-I${LOCALBASE}/include/nss
 NSS_LDFLAGS=		-L${LOCALBASE}/lib/nss
 NSS_CONFIGURE_WITH=	nss=${LOCALBASE}

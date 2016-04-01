@@ -14,7 +14,7 @@ COMMENT=	PCI configuration space I/O made easy
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
+RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
 
 ALL_TARGET=	lib/libpci.a
 CPPFLAGS+=	-fPIC

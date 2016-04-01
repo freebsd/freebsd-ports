@@ -12,11 +12,11 @@ DISTNAME=	libdbiwrapper-perl-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for generic DBI database access
 
-BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Spreadsheet-WriteExcel>=0:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
-		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
+BUILD_DEPENDS=	p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+		p5-XML-SAX>=0:textproc/p5-XML-SAX \
+		p5-DBI>=0:databases/p5-DBI \
+		p5-Spreadsheet-WriteExcel>=0:textproc/p5-Spreadsheet-WriteExcel \
+		p5-IO-stringy>=0:devel/p5-IO-stringy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

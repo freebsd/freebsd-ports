@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS implementation of POE::Queue::Array
 
-BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

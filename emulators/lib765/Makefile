@@ -23,7 +23,7 @@ OPTIONS_DEFAULT=	LIBDSK
 LIBDSK_DESC=	Include LibDSK support (recommended)
 LIBDSK_CONFIGURE_ON=	--with-libdsk --with-libdsk-path=${LOCALBASE}
 LIBDSK_CONFIGURE_OFF=	--without-libdsk
-LIBDSK_LIB_DEPENDS=	libdsk.so:${PORTSDIR}/emulators/libdsk
+LIBDSK_LIB_DEPENDS=	libdsk.so:emulators/libdsk
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib765.so

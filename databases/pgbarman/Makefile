@@ -14,11 +14,11 @@ COMMENT=	Backup and recovery manager for PostgreSQL
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync						\
-		${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2	\
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil	\
-		${PYTHON_PKGNAMEPREFIX}argh>=0.21.2:${PORTSDIR}/devel/py-argh \
-		${PYTHON_PKGNAMEPREFIX}argcomplete>0:${PORTSDIR}/devel/py-argcomplete
+RUN_DEPENDS=	rsync:net/rsync						\
+		${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2	\
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil	\
+		${PYTHON_PKGNAMEPREFIX}argh>=0.21.2:devel/py-argh \
+		${PYTHON_PKGNAMEPREFIX}argcomplete>0:devel/py-argcomplete
 
 NO_ARCH=	yes
 

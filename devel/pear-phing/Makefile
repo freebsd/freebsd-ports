@@ -14,7 +14,7 @@ LICENSE=	LGPL3
 PEAR_CHANNEL=	phing
 USES=	pear
 
-BUILD_DEPENDS+= ${PEARDIR}/.channels/pear.phing.info.reg:${PORTSDIR}/devel/pear-channel-phing
-RUN_DEPENDS+= ${PEARDIR}/.channels/pear.phing.info.reg:${PORTSDIR}/devel/pear-channel-phing
+BUILD_DEPENDS+= ${PEARDIR}/.channels/pear.phing.info.reg:devel/pear-channel-phing
+RUN_DEPENDS+= ${PEARDIR}/.channels/pear.phing.info.reg:devel/pear-channel-phing
 
 .include <bsd.port.mk>

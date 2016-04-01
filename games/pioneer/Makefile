@@ -29,13 +29,13 @@ LICENSE_PERMS_GLEW=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IUP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/include/GL/glu.h:${PORTSDIR}/graphics/libGLU
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libassimp.so:${PORTSDIR}/multimedia/assimp
+BUILD_DEPENDS=	${LOCALBASE}/include/GL/glu.h:graphics/libGLU
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libsigc-2.0.so:devel/libsigc++20 \
+		libfreetype.so:print/freetype2 \
+		libvorbisfile.so:audio/libvorbis \
+		libpng.so:graphics/png \
+		libassimp.so:multimedia/assimp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Hide data (badly) in Png images
 
-BUILD_DEPENDS=	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+BUILD_DEPENDS=	p5-Imager>=0:graphics/p5-Imager \
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

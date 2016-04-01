@@ -12,7 +12,7 @@ COMMENT=	Prompt for user input with a default option
 
 LICENSE=	APACHE20
 
-TEST_DEPENDS=	p5-Capture-Tiny>=0.12:${PORTSDIR}/devel/p5-Capture-Tiny
+TEST_DEPENDS=	p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny
 
 USE_PERL5=	configure
 USES=		perl5

@@ -13,7 +13,7 @@ COMMENT=	Test routines for examining the contents of files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Text-Diff>=0.35:${PORTSDIR}/textproc/p5-Text-Diff
+BUILD_DEPENDS=	p5-Text-Diff>=0.35:textproc/p5-Text-Diff
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -16,8 +16,8 @@ COMMENT=	Perl script to load directories into a Subversion repository
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
+RUN_DEPENDS=	p5-URI>=0:net/p5-URI \
+		${LOCALBASE}/bin/svn:devel/subversion
 
 USES=		perl5
 

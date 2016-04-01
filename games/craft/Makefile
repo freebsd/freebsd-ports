@@ -11,7 +11,7 @@ CATEGORIES=	games
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Simple Minecraft clone written in C using modern OpenGL
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	daniloegea
@@ -27,8 +27,8 @@ USE_XORG=	x11 xi xrandr
 USE_GL=		gl glu
 
 SERVER_USES=		python
-SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.2:${PORTSDIR}/www/py-requests \
-			${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
+SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.2:www/py-requests \
+			${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3
 SERVER_CMAKE_ON=	-DSERVER:BOOL=ON
 
 .include <bsd.port.options.mk>

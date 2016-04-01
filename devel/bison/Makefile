@@ -10,8 +10,8 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Parser generator from FSF, (mostly) compatible with Yacc
 
-BUILD_DEPENDS=	m4>=1.4.16,1:${PORTSDIR}/devel/m4
-RUN_DEPENDS=	m4>=1.4.16,1:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	m4>=1.4.16,1:devel/m4
+RUN_DEPENDS=	m4>=1.4.16,1:devel/m4
 
 OPTIONS_DEFINE=	EXAMPLES NLS
 

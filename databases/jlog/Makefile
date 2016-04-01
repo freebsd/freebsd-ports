@@ -11,7 +11,7 @@ COMMENT=	Journaled log library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	autoconf-2.13:${PORTSDIR}/devel/autoconf213
+BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	omniti-labs

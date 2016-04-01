@@ -61,7 +61,7 @@ PLIST_SUB+=	GAME="@comment "
 USES+=		jpeg
 USE_GL=		gl
 USE_SDL=	sdl
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 ALL_TARGET+=	ref_gl
 PLIST_SUB+=	REF_GL=""
 .else

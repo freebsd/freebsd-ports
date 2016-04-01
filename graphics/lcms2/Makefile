@@ -30,7 +30,7 @@ PORTDOCS=	*
 JPEGICC_CONFIGURE_WITH=	jpeg
 JPEGICC_USES=		jpeg
 TIFFICC_CONFIGURE_WITH=	tiff
-TIFFICC_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFFICC_LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 post-install:
 	cd ${WRKSRC}/utils/ && ${INSTALL_MAN} linkicc/linkicc.1 psicc/psicc.1 transicc/transicc.1 ${STAGEDIR}${PREFIX}/man/man1/

@@ -12,7 +12,7 @@ COMMENT=	Computer role-playing game engine
 
 LICENSE=	GPLv2+ # GPLv3 text bundled, but sources mention GPLv2+
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes

@@ -13,8 +13,8 @@ COMMENT=	Open source keystroke launcher
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/bin/xdg-open:${PORTSDIR}/devel/xdg-utils
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/bin/xdg-open:devel/xdg-utils
 
 USES=		dos2unix qmake
 DOS2UNIX_FILES=	readme.lyx readme.txt

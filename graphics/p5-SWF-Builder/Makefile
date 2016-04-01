@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create SWF movie
 
-BUILD_DEPENDS=	p5-SWF-File>=0:${PORTSDIR}/graphics/p5-SWF-File \
-		p5-Math-Bezier-Convert>=0:${PORTSDIR}/math/p5-Math-Bezier-Convert \
-		p5-Font-TTF>=0:${PORTSDIR}/x11-fonts/p5-Font-TTF
+BUILD_DEPENDS=	p5-SWF-File>=0:graphics/p5-SWF-File \
+		p5-Math-Bezier-Convert>=0:math/p5-Math-Bezier-Convert \
+		p5-Font-TTF>=0:x11-fonts/p5-Font-TTF
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		dos2unix perl5 shebangfix

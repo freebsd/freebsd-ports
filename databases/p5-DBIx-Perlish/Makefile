@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perlish interface to SQL databases
 
-BUILD_DEPENDS=	p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
-		p5-PadWalker>0:${PORTSDIR}/devel/p5-PadWalker
+BUILD_DEPENDS=	p5-DBI>0:databases/p5-DBI \
+		p5-PadWalker>0:devel/p5-PadWalker
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -14,10 +14,10 @@ COMMENT=	Pure-Perl DNS resolver with support for timeout
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+BUILD_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Cache-LRU>=0:${PORTSDIR}/devel/p5-Cache-LRU \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-Cache-LRU>=0:devel/p5-Cache-LRU \
+		p5-Test-Requires>=0:devel/p5-Test-Requires
 
 USES=		perl5
 USE_PERL5=	configure

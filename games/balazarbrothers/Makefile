@@ -14,12 +14,12 @@ COMMENT=	Free software 3D puzzle game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d \
-		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vorbis>0:${PORTSDIR}/audio/py-vorbis \
-		${PYTHON_PKGNAMEPREFIX}soya3d>0:${PORTSDIR}/graphics/py-soya3d \
-		${PYTHON_PKGNAMEPREFIX}tofu>0:${PORTSDIR}/net/py-tofu \
-		${PYTHON_PKGNAMEPREFIX}cerealizer>0:${PORTSDIR}/security/py-cerealizer
+LIB_DEPENDS=	libcal3d.so:graphics/cal3d \
+		libfreetype.so:print/freetype2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis \
+		${PYTHON_PKGNAMEPREFIX}soya3d>0:graphics/py-soya3d \
+		${PYTHON_PKGNAMEPREFIX}tofu>0:net/py-tofu \
+		${PYTHON_PKGNAMEPREFIX}cerealizer>0:security/py-cerealizer
 
 NO_ARCH=	yes
 
@@ -37,7 +37,7 @@ DESKTOP_ENTRIES="BalazarBrothers" "" "" "balazarbrothers" "" ""
 OPTIONS_DEFINE=		OPENAL
 OPTIONS_DEFAULT=	OPENAL
 
-OPENAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openal>0:${PORTSDIR}/audio/py-openal
+OPENAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openal>0:audio/py-openal
 
 post-patch:
 	@${REINPLACE_CMD} -e \

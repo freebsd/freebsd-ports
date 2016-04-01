@@ -12,7 +12,7 @@ COMMENT=	PDO driver for Apache Cassandra
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mkoppanen
@@ -35,10 +35,10 @@ THRIFT_MINOR_VER=	${THRIFT_PORTVERSION:R:E}
 THRIFT_PATCH_VER=	${THRIFT_PORTVERSION:E}
 
 .if ${THRIFT_MAJOR_VER} >= 0 || ${THRIFT_MINOR_VER} >= 9 || ${THRIFT_PATCH_VER} >= 1
-LIB_DEPENDS+=	libthrift.so:${PORTSDIR}/devel/thrift-cpp
-BUILD_DEPENDS+=	${LOCALBASE}/bin/thrift:${PORTSDIR}/devel/thrift
+LIB_DEPENDS+=	libthrift.so:devel/thrift-cpp
+BUILD_DEPENDS+=	${LOCALBASE}/bin/thrift:devel/thrift
 .else
-LIB_DEPENDS+=	libthrift.so:${PORTSDIR}/devel/thrift
+LIB_DEPENDS+=	libthrift.so:devel/thrift
 .endif
 
 post-configure:

@@ -14,7 +14,7 @@ COMMENT=	Perl extension for generating fancy graphic plots in color
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager
+BUILD_DEPENDS=	p5-Imager>=0:graphics/p5-Imager
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

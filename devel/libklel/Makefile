@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	klm@uidzero.org
 COMMENT=	KoreLogic Expression Language library
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 USES=		perl5 libtool

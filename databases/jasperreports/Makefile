@@ -10,14 +10,14 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.jar ${PORTNAME}-applet-${PORTVERSION}.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JasperReports is a powerful open source Java reporting tool
 
-RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext			\
-		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j		\
-		${JAVALIBDIR}/crimson.jar:${PORTSDIR}/textproc/crimson		\
-		${JAVALIBDIR}/poi.jar:${PORTSDIR}/textproc/apache-poi		\
-		${JAVALIBDIR}/jfreechart.jar:${PORTSDIR}/java/jfreechart	\
-		${JAVASHAREDIR}/batik/batik.jar:${PORTSDIR}/graphics/batik	\
-		${JAVALIBDIR}/commons-beanutils.jar:${PORTSDIR}/java/jakarta-commons-beanutils\
-		${JAVALIBDIR}/commons-digester.jar:${PORTSDIR}/textproc/jakarta-commons-digester
+RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:devel/itext			\
+		${JAVALIBDIR}/xalan.jar:textproc/xalan-j		\
+		${JAVALIBDIR}/crimson.jar:textproc/crimson		\
+		${JAVALIBDIR}/poi.jar:textproc/apache-poi		\
+		${JAVALIBDIR}/jfreechart.jar:java/jfreechart	\
+		${JAVASHAREDIR}/batik/batik.jar:graphics/batik	\
+		${JAVALIBDIR}/commons-beanutils.jar:java/jakarta-commons-beanutils\
+		${JAVALIBDIR}/commons-digester.jar:textproc/jakarta-commons-digester
 
 OPTIONS_DEFINE=	MYSQL PGSQL ORACLE8 ORACLE9 HSQLDB
 OPTIONS_DEFAULT=MYSQL PGSQL
@@ -40,28 +40,28 @@ PLIST_FILES=	${DISTFILES:S|^|%%JAVAJARDIR%%/|:S|-${PORTVERSION}||}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
+RUN_DEPENDS+=	${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-java
 .else
-RUN_DEPENDS+=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
+RUN_DEPENDS+=	${JAVALIBDIR}/log4j.jar:devel/log4j
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
+RUN_DEPENDS+=	${JAVALIBDIR}/postgresql.jar:databases/postgresql-jdbc
 .endif
 
 
 .if ${PORT_OPTIONS:MORACLE8}
 WITH_ORACLE8=	yes
-RUN_DEPENDS+=	${JAVALIBDIR}/classes12.zip:${PORTSDIR}/databases/jdbc-oracle8i
+RUN_DEPENDS+=	${JAVALIBDIR}/classes12.zip:databases/jdbc-oracle8i
 .endif
 
 .if ${PORT_OPTIONS:MORACLE9}
 WITH_ORACLE9=	yes
-RUN_DEPENDS+=	${JAVALIBDIR}/ojdbc14.jar:${PORTSDIR}/databases/jdbc-oracle9i
+RUN_DEPENDS+=	${JAVALIBDIR}/ojdbc14.jar:databases/jdbc-oracle9i
 .endif
 
 .if ${PORT_OPTIONS:MHSQLDB}
-RUN_DEPENDS+=	${JAVALIBDIR}/hsqldb.jar:${PORTSDIR}/databases/hsqldb
+RUN_DEPENDS+=	${JAVALIBDIR}/hsqldb.jar:databases/hsqldb
 .endif
 
 post-extract:

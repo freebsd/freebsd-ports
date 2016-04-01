@@ -9,7 +9,7 @@ MASTER_SITES=	SUNSITE/apps/graphics/hacks/svgalib
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	SVGAlib demo which displays trippy mathematical images in cycling colors
 
-LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS=	libvga.so:graphics/svgalib
 
 ONLY_FOR_ARCHS=	i386
 ALL_TARGET=	${PORTNAME}

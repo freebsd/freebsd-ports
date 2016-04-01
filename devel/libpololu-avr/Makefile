@@ -11,8 +11,8 @@ COMMENT=	Support libraries for Pololu robots
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	avr-gcc:${PORTSDIR}/devel/avr-gcc \
-		${LOCALBASE}/avr/lib/libc.a:${PORTSDIR}/devel/avr-libc
+BUILD_DEPENDS=	avr-gcc:devel/avr-gcc \
+		${LOCALBASE}/avr/lib/libc.a:devel/avr-libc
 
 USES=		gmake zip
 

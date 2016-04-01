@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Implements the Perl 6 'form' built-in
 
-BUILD_DEPENDS=	p5-Perl6-Export>=0:${PORTSDIR}/devel/p5-Perl6-Export
+BUILD_DEPENDS=	p5-Perl6-Export>=0:devel/p5-Perl6-Export
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

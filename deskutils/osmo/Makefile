@@ -12,11 +12,11 @@ COMMENT=	Personal organizer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libgringotts.so:${PORTSDIR}/security/libgringotts \
-		libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
-		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	libical.so:devel/libical \
+		libnotify.so:devel/libnotify \
+		libgringotts.so:security/libgringotts \
+		libgtkspell.so:textproc/gtkspell \
+		libwebkitgtk-1.0.so:www/webkit-gtk2
 
 USES=		gettext gmake libarchive pkgconfig
 USE_GNOME=	gtk20 libxml2

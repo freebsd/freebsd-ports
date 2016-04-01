@@ -8,7 +8,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR RSS parser
 
-RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
+RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
 
 USES=	pear
 

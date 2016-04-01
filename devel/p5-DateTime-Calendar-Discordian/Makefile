@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl extension for the Discordian Calendar
 
-RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Locale>=0:${PORTSDIR}/devel/p5-DateTime-Locale \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
+RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+		p5-DateTime-Locale>=0:devel/p5-DateTime-Locale \
+		p5-Params-Validate>=0:devel/p5-Params-Validate
 
 NO_ARCH=	yes
 USES=		perl5

@@ -13,11 +13,11 @@ COMMENT=	Globulation 2, free and innovative strategy game
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libspeex.so:${PORTSDIR}/audio/speex \
-		libfribidi.so:${PORTSDIR}/converters/fribidi \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libspeex.so:audio/speex \
+		libfribidi.so:converters/fribidi \
+		libboost_thread.so:devel/boost-libs \
+		libfreetype.so:print/freetype2
 
 OPTIONS_DEFINE=	DOCS PORTAUDIO
 
@@ -40,7 +40,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
+LIB_DEPENDS+=	libportaudio.so:audio/portaudio
 MAKE_ARGS+=	--portaudio=true
 .else
 MAKE_ARGS+=	--portaudio=false

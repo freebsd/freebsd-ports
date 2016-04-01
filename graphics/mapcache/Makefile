@@ -12,10 +12,10 @@ COMMENT=		Server that implements tile caching to speed up access to WMS layers
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-LIB_DEPENDS=		libpng.so:${PORTSDIR}/graphics/png \
-			libapr-1.so:${PORTSDIR}/devel/apr1 \
-			libaprutil-1.so:${PORTSDIR}/devel/apr1 \
-			libpixman-1.so:${PORTSDIR}/x11/pixman
+LIB_DEPENDS=		libpng.so:graphics/png \
+			libapr-1.so:devel/apr1 \
+			libaprutil-1.so:devel/apr1 \
+			libpixman-1.so:x11/pixman
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		mapserver
@@ -34,12 +34,12 @@ APACHE_USE=		APACHE=22+
 APACHE_CMAKE_ON=	-DWITH_APACHE=1
 APACHE_CMAKE_OFF=	-DWITH_APACHE=0
 
-FASTCGI_LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
+FASTCGI_LIB_DEPENDS=	libfcgi.so:www/fcgi
 FASTCGI_CMAKE_ON=	-DWITH_FCGI=1
 FASTCGI_CMAKE_OFF=	-DWITH_FCGI=0
 
 SQLITE_DESC=		Use sqlite as a cache backend
-SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 SQLITE_CMAKE_ON=	-DWITH_SQLITE=1
 SQLITE_CMAKE_OFF=	-DWITH_SQLITE=0
 
@@ -48,31 +48,31 @@ MEMCACHE_CMAKE_ON=	-DWITH_MEMCACHE=1
 MEMCACHE_CMAKE_OFF=	-DWITH_MEMCACHE=0
 
 TIFF_DESC=		Use TIFFs as a cache backend
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CMAKE_ON=		-DWITH_TIFF=1
 TIFF_CMAKE_OFF=		-DWITH_TIFF=0
 
 TIFF_WRITE_DESC=	Support for writable TIFF cache backends (implies TIFF)
-TIFF_WRITE_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_WRITE_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_WRITE_CMAKE_ON=	-DWITH_TIFF_WRITE_SUPPORT=1
 TIFF_WRITE_CMAKE_OFF=	-DWITH_TIFF_WRITE_SUPPORT=0
 TIFF_WRITE_IMPLIES=	TIFF
 
 GEOTIFF_DESC=		GeoTIFF metadata creation for TIFF cache backends
-GEOTIFF_LIB_DEPENDS=	libgeotiff.so:${PORTSDIR}/graphics/libgeotiff
+GEOTIFF_LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff
 GEOTIFF_CMAKE_ON=	-DWITH_GEOTIFF=1
 GEOTIFF_CMAKE_OFF=	-DWITH_GEOTIFF=0
 
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CMAKE_ON=		-DWITH_PCRE=1
 PCRE_CMAKE_OFF=		-DWITH_PCRE=0
 
 GDAL_DESC=		GDAL library support
-GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
 GDAL_CMAKE_ON=		-DWITH_GDAL=1 -DWITH_OGR=1
 GDAL_CMAKE_OFF=		-DWITH_GDAL=0 -DWITH_OGR=0
 
-GEOS_LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos
+GEOS_LIB_DEPENDS=	libgeos_c.so:graphics/geos
 GEOS_CMAKE_ON=		-DWITH_GEOS=1
 GEOS_CMAKE_OFF=		-DWITH_GEOS=0
 

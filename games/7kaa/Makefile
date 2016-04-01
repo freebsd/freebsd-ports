@@ -12,7 +12,7 @@ COMMENT=	Seven Kingdoms: Ancient Adversaries
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libenet.so:${PORTSDIR}/net/enet
+LIB_DEPENDS=	libenet.so:net/enet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \

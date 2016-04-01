@@ -14,7 +14,7 @@ COMMENT=	Executable comments like the ANSI C library assert.h
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	pod2test:${PORTSDIR}/devel/p5-Pod-Tests
+TEST_DEPENDS=	pod2test:devel/p5-Pod-Tests
 
 USES=		perl5
 USE_PERL5=	configure

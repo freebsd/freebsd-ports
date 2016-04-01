@@ -13,7 +13,7 @@ COMMENT=	R-Tree Spatial Index For Python GIS
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS+=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:${PORTSDIR}/devel/spatialindex
+BUILD_DEPENDS+=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:devel/spatialindex
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USES=		python

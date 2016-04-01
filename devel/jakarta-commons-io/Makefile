@@ -13,7 +13,7 @@ COMMENT=	Collection of I/O utilities for Java
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
+BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
 
 ALL_TARGET=	dist
 JAVA_VERSION=	1.6+

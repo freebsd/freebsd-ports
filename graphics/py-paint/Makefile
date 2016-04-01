@@ -15,8 +15,8 @@ COMMENT=	Simple and flexible painting adaptor to libart for Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libttf.so:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libttf.so:print/freetype
 
 OPTIONS_DEFINE=	EXAMPLES
 

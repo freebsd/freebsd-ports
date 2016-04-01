@@ -16,8 +16,8 @@ COMMENT=	Python XCAP client library
 LICENSE=	LGPL20 LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1.2:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}application>=1.1.5:${PORTSDIR}/devel/py-application
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1.2:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}application>=1.1.5:devel/py-application
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python twisted

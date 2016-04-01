@@ -13,9 +13,9 @@ COMMENT=	Foreign Function Interface for Python calling C code
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycparser>=2.10:${PORTSDIR}/devel/py-pycparser
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
+LIB_DEPENDS=	libffi.so:devel/libffi
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycparser>=2.10:devel/py-pycparser
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
 CFLAGS+=	-I${LOCALBASE}/include -Wl,-rpath,${LOCALBASE}/lib
 LDFLAGS+=	-L${LOCALBASE}/lib

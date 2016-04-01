@@ -12,7 +12,7 @@ COMMENT=	Preview and select images for batch processing
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/bin/dcraw:${PORTSDIR}/graphics/dcraw
+RUN_DEPENDS=	${LOCALBASE}/bin/dcraw:graphics/dcraw
 
 USES=		qmake
 USE_QT4=	gui uic_build moc_build rcc_build \

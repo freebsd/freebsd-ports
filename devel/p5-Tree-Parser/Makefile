@@ -14,10 +14,10 @@ COMMENT=	Module to parse formatted files into tree structures
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Array-Iterator>=0:${PORTSDIR}/devel/p5-Array-Iterator \
-		p5-Tree-Simple>=0:${PORTSDIR}/devel/p5-Tree-Simple
+BUILD_DEPENDS=	p5-Array-Iterator>=0:devel/p5-Array-Iterator \
+		p5-Tree-Simple>=0:devel/p5-Tree-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	configure

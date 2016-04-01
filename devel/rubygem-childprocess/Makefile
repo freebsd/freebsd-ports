@@ -12,7 +12,7 @@ COMMENT=	External background process controller
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-ffi>=1.0.11:${PORTSDIR}/devel/rubygem-ffi
+RUN_DEPENDS=	rubygem-ffi>=1.0.11:devel/rubygem-ffi
 
 NO_ARCH=	yes
 USE_RUBY=	yes

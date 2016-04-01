@@ -27,7 +27,7 @@ COMMENT=	Good Web Calendar
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session
+BUILD_DEPENDS=	p5-CGI-Session>=0:www/p5-CGI-Session
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix zip

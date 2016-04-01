@@ -12,10 +12,10 @@ COMMENT=	OpenGL/FLTK development
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libgzstream.so:${PORTSDIR}/devel/gzstream
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libtiff.so:graphics/tiff \
+		libpng.so:graphics/png \
+		libgzstream.so:devel/gzstream
 
 BUILD_WRKSRC=	${WRKSRC}/src
 

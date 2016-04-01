@@ -16,8 +16,8 @@ COMMENT=	Parse META.yml and other similar CPAN metadata files
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CPAN-Meta-YAML>=0.011:${PORTSDIR}/devel/p5-CPAN-Meta-YAML
-RUN_DEPENDS=	p5-CPAN-Meta-YAML>=0.011:${PORTSDIR}/devel/p5-CPAN-Meta-YAML
+BUILD_DEPENDS=	p5-CPAN-Meta-YAML>=0.011:devel/p5-CPAN-Meta-YAML
+RUN_DEPENDS=	p5-CPAN-Meta-YAML>=0.011:devel/p5-CPAN-Meta-YAML
 
 USES=		perl5
 USE_PERL5=	configure

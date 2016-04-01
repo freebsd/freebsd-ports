@@ -13,11 +13,11 @@ COMMENT=	Zope applicationcontrol
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.component \
-		${PYTHON_PKGNAMEPREFIX}zope.location>=0:${PORTSDIR}/devel/py-zope.location \
-		${PYTHON_PKGNAMEPREFIX}zope.security>=0:${PORTSDIR}/security/py-zope.security \
-		${PYTHON_PKGNAMEPREFIX}zope.traversing>=3.7.0:${PORTSDIR}/devel/py-zope.traversing
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}zope.component>=0:devel/py-zope.component \
+		${PYTHON_PKGNAMEPREFIX}zope.location>=0:devel/py-zope.location \
+		${PYTHON_PKGNAMEPREFIX}zope.security>=0:security/py-zope.security \
+		${PYTHON_PKGNAMEPREFIX}zope.traversing>=3.7.0:devel/py-zope.traversing
 
 USES=		python
 USE_PYTHON=	distutils autoplist

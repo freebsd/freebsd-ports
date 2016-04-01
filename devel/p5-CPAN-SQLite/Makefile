@@ -12,13 +12,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Search CPAN using a SQLite database
 
-BUILD_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite	\
-		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
-		p5-CPAN-DistnameInfo>=0:${PORTSDIR}/devel/p5-CPAN-DistnameInfo \
-		p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib \
-		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
+BUILD_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite	\
+		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
+		p5-CPAN-DistnameInfo>=0:devel/p5-CPAN-DistnameInfo \
+		p5-IO-Zlib>=0:archivers/p5-IO-Zlib \
+		p5-Archive-Tar>=0:archivers/p5-Archive-Tar \
+		p5-libwww>=0:www/p5-libwww \
+		p5-PathTools>=0:devel/p5-PathTools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

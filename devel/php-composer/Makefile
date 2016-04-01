@@ -16,7 +16,7 @@ COMMENT=	Dependency Manager for PHP
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	ca_root_nss>0:${PORTSDIR}/security/ca_root_nss
+RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -14,15 +14,15 @@ COMMENT=	Data description and validation
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Scalar-Does>=0.007:${PORTSDIR}/devel/p5-Scalar-Does \
-		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
-		p5-experimental>=0:${PORTSDIR}/devel/p5-experimental
+BUILD_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
+		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-Scalar-Does>=0.007:devel/p5-Scalar-Does \
+		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
+		p5-experimental>=0:devel/p5-experimental
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=	p5-Test-Pod>=1.14:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage
 
 NO_ARCH=	yes
 USE_PERL5=	modbuild

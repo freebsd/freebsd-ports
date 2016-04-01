@@ -10,7 +10,7 @@ MASTER_SITES=	http://gltt.sourceforge.net/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType fonts rendering using OpenGL
 
-LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	libttf.so:print/freetype
 
 USES=		gmake libtool
 USE_GL=		gl glut

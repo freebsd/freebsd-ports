@@ -15,9 +15,9 @@ COMMENT=	CORBA Notification Service (CosNotification) for omniORB
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libomniORB4.so:${PORTSDIR}/devel/omniORB-4.1
+LIB_DEPENDS=	libomniORB4.so:devel/omniORB-4.1
 # parts of omniORB4-4.1 source tree is required to build
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB-4.1:patch
+BUILD_DEPENDS=	${NONEXISTENT}:devel/omniORB-4.1:patch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_WRKSRC=	${WRKSRC}/build

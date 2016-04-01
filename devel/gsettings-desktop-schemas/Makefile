@@ -12,7 +12,7 @@ COMMENT=	Collection of globally shared GSetting schemas
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${LOCALBASE}/etc/fonts/conf.avail/31-cantarell.conf:${PORTSDIR}/x11-fonts/cantarell-fonts
+RUN_DEPENDS=	${LOCALBASE}/etc/fonts/conf.avail/31-cantarell.conf:x11-fonts/cantarell-fonts
 
 PORTSCOUT=	limitw:1,even
 

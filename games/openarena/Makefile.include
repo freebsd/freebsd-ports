@@ -6,7 +6,7 @@ OABASE?=	baseoa
 PLIST_SUB+=	OADIR="share/openarena"
 
 .if ! ${OABASE:Mbaseoa}
-RUN_DEPENDS+=	openarena>0:${PORTSDIR}/games/openarena
+RUN_DEPENDS+=	openarena>0:games/openarena
 .endif
 
 .include <bsd.port.pre.mk>

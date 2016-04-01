@@ -13,9 +13,9 @@ COMMENT=	Setup test environments; parse, filter and visualize MongoDB log files
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=2.0:${PORTSDIR}/sysutils/py-psutil \
-		${PYTHON_PKGNAMEPREFIX}pymongo>0:${PORTSDIR}/databases/pymongo \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:${PORTSDIR}/math/py-matplotlib
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=2.0:sysutils/py-psutil \
+		${PYTHON_PKGNAMEPREFIX}pymongo>0:databases/pymongo \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib
 
 USE_PYTHON=	autoplist distutils
 USES=		python:2

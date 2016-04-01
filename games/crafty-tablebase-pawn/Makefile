@@ -36,7 +36,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	These are the pawn tablebases (3,4,5 man) for crafty
 
-RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
+RUN_DEPENDS=	crafty:games/crafty
 
 NO_BUILD=	yes
 NO_ARCH=	yes

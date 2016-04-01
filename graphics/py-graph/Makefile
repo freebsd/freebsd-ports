@@ -9,8 +9,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Library for working with graphs in Python
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:${PORTSDIR}/graphics/py-graph-core \
-		${PYTHON_PKGNAMEPREFIX}graph-dot>=${PORTVERSION}:${PORTSDIR}/graphics/py-graph-dot
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:graphics/py-graph-core \
+		${PYTHON_PKGNAMEPREFIX}graph-dot>=${PORTVERSION}:graphics/py-graph-dot
 
 USES=		metaport python
 

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Socket abstraction library for C programmers
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 OPTIONS_DEFINE=	DEBUG
 

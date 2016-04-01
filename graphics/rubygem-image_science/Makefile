@@ -12,7 +12,7 @@ COMMENT=	Ruby library that generates thumbnails
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rubyinline>=3.9:${PORTSDIR}/devel/rubygem-rubyinline
+RUN_DEPENDS=	rubygem-rubyinline>=3.9:devel/rubygem-rubyinline
 
 NO_ARCH=	yes
 

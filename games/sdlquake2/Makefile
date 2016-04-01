@@ -28,7 +28,7 @@ PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
-CLIENT_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+CLIENT_LIB_DEPENDS=	libpng.so:graphics/png
 CLIENT_USES=		jpeg
 CLIENT_USE=		GL=yes
 CLIENT_USE=		SDL=sdl

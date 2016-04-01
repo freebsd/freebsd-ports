@@ -13,11 +13,11 @@ COMMENT=	3D game. includes racing, car-crashing, and lots of action
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openal>0:${PORTSDIR}/audio/py-openal \
-		${PYTHON_PKGNAMEPREFIX}vorbis>0:${PORTSDIR}/audio/py-vorbis \
-		${PYTHON_PKGNAMEPREFIX}soya3d>0:${PORTSDIR}/graphics/py-soya3d \
-		${PYTHON_PKGNAMEPREFIX}py2play>0:${PORTSDIR}/net-p2p/py-py2play
+LIB_DEPENDS=	libcal3d.so:graphics/cal3d
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openal>0:audio/py-openal \
+		${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis \
+		${PYTHON_PKGNAMEPREFIX}soya3d>0:graphics/py-soya3d \
+		${PYTHON_PKGNAMEPREFIX}py2play>0:net-p2p/py-py2play
 
 USES=		dos2unix gettext python tar:bzip2
 DOS2UNIX_GLOB=	*.po *.mo

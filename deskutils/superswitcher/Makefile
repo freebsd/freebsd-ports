@@ -12,7 +12,7 @@ COMMENT=	Alt-Tab replacement
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
 USES=		gmake pkgconfig
 USE_GNOME=	gconf2 intltool libwnck

@@ -16,13 +16,13 @@ COMMENT=	Turn based, multiplayer strategic game with nice graphics
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	zip:archivers/zip
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
-		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libloki.so:${PORTSDIR}/devel/loki
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libboost_regex.so:devel/boost-libs \
+		libsigc-2.0.so:devel/libsigc++20 \
+		libexpat.so:textproc/expat2 \
+		libloki.so:devel/loki
 
 USES=		compiler:c++11-lib gmake libtool lua perl5 pkgconfig tar:bzip2 
 USE_CXXSTD=	c++11
@@ -57,7 +57,7 @@ OPTIONS_DEFINE=		MUSIC XVID
 MUSIC_DESC=		Install extra music files
 MUSIC_DISTFILES=	${ASC_MUSICS:S,$,:music,}
 MUSIC_PLIST_FILES=	${ASC_MUSICS:S,^,%%DATADIR%%/music/,}
-XVID_LIB_DEPENDS=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
+XVID_LIB_DEPENDS=	libxvidcore.so:multimedia/xvid
 XVID_CONFIGURE_ENV_OFF=	ac_cv_lib_xvidcore_xvid_encore=no
 ASC_MUSICS=		frontiers.ogg time_to_strike.ogg machine_wars.ogg
 

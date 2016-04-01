@@ -11,7 +11,7 @@ COMMENT=	Linux Test Project GCOV extension
 
 LICENSE=	GPLv1
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

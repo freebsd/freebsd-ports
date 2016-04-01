@@ -15,7 +15,7 @@ COMMENT=	GNU Go frontend for GNUstep
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
-RUN_DEPENDS=	gnugo:${PORTSDIR}/games/gnugo
+RUN_DEPENDS=	gnugo:games/gnugo
 
 USES=		gnustep
 USE_GNUSTEP=	back build

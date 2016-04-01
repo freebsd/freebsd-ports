@@ -14,7 +14,7 @@ COMMENT=	OpenGL FreeType fonts rendering library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gl-inc="${LOCALBASE}/include" \

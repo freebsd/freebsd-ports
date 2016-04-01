@@ -11,14 +11,14 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Next evolution of the Gedit plugins engine
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	valac:lang/vala
 
 LIBPEAS_SLAVE?=	no
 
 .if ${LIBPEAS_SLAVE} == no
 PORTSCOUT=	limitw:1,even
 .else
-LIB_DEPENDS+=	libpeas-1.0.so:${PORTSDIR}/devel/libpeas
+LIB_DEPENDS+=	libpeas-1.0.so:devel/libpeas
 PORTSCOUT=	ignore:1
 .endif
 

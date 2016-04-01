@@ -12,7 +12,7 @@ COMMENT=	Thai language support library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdatrie.so:${PORTSDIR}/devel/libdatrie
+LIB_DEPENDS=	libdatrie.so:devel/libdatrie
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	DOXYGEN
 OPTIONS_SUB=	yes
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENABLE=	doxygen-doc
 
 .include <bsd.port.mk>

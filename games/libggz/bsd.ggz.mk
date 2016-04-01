@@ -13,9 +13,9 @@ DIST_SUBDIR=	ggz
 
 _USE_GGZ_ALL=	core client
 
-core_LIB_DEPENDS=	libggz.so:${PORTSDIR}/games/libggz
+core_LIB_DEPENDS=	libggz.so:games/libggz
 
-client_LIB_DEPENDS=	libggzcore.so:${PORTSDIR}/games/ggz-client-libs
+client_LIB_DEPENDS=	libggzcore.so:games/ggz-client-libs
 
 .for component in ${USE_GGZ}
 LIB_DEPENDS+=	${${component}_LIB_DEPENDS}

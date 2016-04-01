@@ -11,9 +11,9 @@ COMMENT=	SDK yandex money API
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>2.4.0:${PORTSDIR}/www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}future>0:${PORTSDIR}/devel/py-future \
-		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>2.4.0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 
 NO_ARCH=	yes
 USES=		python

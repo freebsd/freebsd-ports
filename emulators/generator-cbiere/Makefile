@@ -33,7 +33,7 @@ OPTIONS_DEFINE_i386=	RAZE
 
 OPTIMIZED_CFLAGS_CONFIGURE_OFF=	--without-gcc
 RAZE_DESC=		Use RAZE z80 emulation
-RAZE_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+RAZE_BUILD_DEPENDS=	nasm:devel/nasm
 RAZE_CONFIGURE_ON=	--with-raze
 SDL_DESC=		Use SDL for audio
 SDL_CONFIGURE_ON=	--with-sdl-audio

@@ -24,8 +24,8 @@ SUB_FILES=	pkg-message ddclient_force
 OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=SSL
 
-SSL_RUN_DEPENDS=ca_root_nss>0:${PORTSDIR}/security/ca_root_nss \
-		p5-IO-Socket-SSL>0:${PORTSDIR}/security/p5-IO-Socket-SSL
+SSL_RUN_DEPENDS=ca_root_nss>0:security/ca_root_nss \
+		p5-IO-Socket-SSL>0:security/p5-IO-Socket-SSL
 
 PORTDOCS=	COPYRIGHT Changelog README.cisco README.ssl README.md \
 		sample-etc_cron.d_ddclient sample-etc_dhclient-exit-hooks \

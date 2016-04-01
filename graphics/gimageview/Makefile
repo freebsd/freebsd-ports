@@ -13,7 +13,7 @@ COMMENT=	Yet another GTK+ based image viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gmake jpeg libtool pkgconfig
 GNU_CONFIGURE=	yes
@@ -35,23 +35,23 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
 LIBMNG_CONFIGURE_WITH=	libmng
-LIBMNG_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
+LIBMNG_LIB_DEPENDS=	libmng.so:graphics/libmng
 
 LIBWMF_CONFIGURE_WITH=	libwmf
-LIBWMF_LIB_DEPENDS=	libwmf.so:${PORTSDIR}/graphics/libwmf
+LIBWMF_LIB_DEPENDS=	libwmf.so:graphics/libwmf
 
 LIBRSVG2_CONFIGURE_WITH=librsvg
-LIBRSVG2_LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
+LIBRSVG2_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
 
 LIBEXIF_CONFIGURE_ENABLE=exif
-LIBEXIF_LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+LIBEXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 LIBEXIF_EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-exit_view.c
 
 MPLAYER_CONFIGURE_ENABLE=mplayer
-MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 LIBXINE_CONFIGURE_WITH=	xine
-LIBXINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
+LIBXINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
 
 post-patch:
 	@${REINPLACE_CMD} '/^desktopdir =/s|=.*|= ${DESKTOPDIR}|' \

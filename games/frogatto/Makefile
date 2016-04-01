@@ -9,8 +9,8 @@ CATEGORIES=	games
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Old-school 2D classic adventure platformer game
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libpng.so:graphics/png
 
 NO_PACKAGE=	Package will be 144M, set FORCE_PACKAGE if you really want it
 

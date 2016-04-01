@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Python VISA bindings for GPIB, RS232, and USB instruments
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyvisa-py>0:${PORTSDIR}/devel/py-pyvisa-py
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyvisa-py>0:devel/py-pyvisa-py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hgrecco
@@ -19,7 +19,7 @@ USE_PYTHON=	autoplist concurrent distutils
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:${PORTSDIR}/devel/py-enum34
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
 .endif
 
 .include <bsd.port.post.mk>

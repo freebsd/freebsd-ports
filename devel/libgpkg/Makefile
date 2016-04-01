@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/luciad-libgpkg-c56e3708453e
 
 GEOS_CMAKE_OFF=		-DGPKG_GEOS=OFF
 GEOS_CMAKE_ON=		-DGPKG_GEOS=ON
-GEOS_LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos
+GEOS_LIB_DEPENDS=	libgeos_c.so:graphics/geos
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gpkg/libgpkg.a ${STAGEDIR}${PREFIX}/lib/

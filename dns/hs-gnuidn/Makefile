@@ -14,7 +14,7 @@ USE_CABAL=	text
 USE_C2HS=	yes
 
 USES=		pkgconfig
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	libidn.so:dns/libidn
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

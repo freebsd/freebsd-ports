@@ -11,7 +11,7 @@ COMMENT=	The main game for the Freeminer game engine
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	freeminer:${PORTSDIR}/games/freeminer
+RUN_DEPENDS=	freeminer:games/freeminer
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freeminer

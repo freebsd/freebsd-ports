@@ -10,9 +10,9 @@ COMMENT=	Powerful configuration library and automatic merging of coverage across
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-docile>=1.1.0:${PORTSDIR}/devel/rubygem-docile \
-		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-simplecov-html>=0.8.0:${PORTSDIR}/textproc/rubygem-simplecov-html
+RUN_DEPENDS=	rubygem-docile>=1.1.0:devel/rubygem-docile \
+		rubygem-multi_json>=1.0:devel/rubygem-multi_json \
+		rubygem-simplecov-html>=0.8.0:textproc/rubygem-simplecov-html
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -15,9 +15,9 @@ COMMENT=	AI script based strategy game
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	winicontoppm:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	winicontoppm:graphics/netpbm
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
+		libfreetype.so:print/freetype2
 
 OPTIONS_DEFINE=	FLEETS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
@@ -41,7 +41,7 @@ DESKTOP_ENTRIES="GalaxyHack" "" "${PREFIX}/share/pixmaps/galaxyhack.png" \
 		"${PORTNAME}" "" ""
 
 FLEETS_DISTFILES=		gh_fleets_020906.zip:fleets
-FLEETS_EXTRACT_DEPENDS=		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+FLEETS_EXTRACT_DEPENDS=		${UNZIP_CMD}:archivers/unzip
 OPTIMIZED_CFLAGS_MAKE_ENV=	OPTIMIZED_CFLAGS=YES
 
 .include <bsd.port.options.mk>

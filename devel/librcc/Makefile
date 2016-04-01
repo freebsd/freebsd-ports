@@ -14,9 +14,9 @@ COMMENT=	Library used by rusxmms for language autodetection
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	librcd.so:${PORTSDIR}/devel/librcd \
-		libenca.so:${PORTSDIR}/converters/enca \
-		libaspell.so:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	librcd.so:devel/librcd \
+		libenca.so:converters/enca \
+		libaspell.so:textproc/aspell
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
@@ -39,7 +39,7 @@ BDB_USE=		BDB=41+
 
 TRANSLATE_DESC=			Online translation support
 TRANSLATE_CONFIGURE_ENABLE=	libtranslate
-TRANSLATE_LIB_DEPENDS=		libtranslate.so:${PORTSDIR}/textproc/libtranslate
+TRANSLATE_LIB_DEPENDS=		libtranslate.so:textproc/libtranslate
 
 TOOLS_DESC=		Recode configuration utility
 TOOLS_EXTRA_PATCHES=	${FILESDIR}/extrapatch-rcc-config

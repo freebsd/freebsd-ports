@@ -14,8 +14,8 @@ COMMENT=	Weather forecast script for conky
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	conky:${PORTSDIR}/sysutils/conky \
-		pidof:${PORTSDIR}/sysutils/pidof
+RUN_DEPENDS=	conky:sysutils/conky \
+		pidof:sysutils/pidof
 
 USES=		gettext python fonts
 USE_PYTHON=	distutils

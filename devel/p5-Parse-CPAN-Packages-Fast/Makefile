@@ -13,7 +13,7 @@ COMMENT=	Parse CPAN package index
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CPAN-DistnameInfo>=0:${PORTSDIR}/devel/p5-CPAN-DistnameInfo
+BUILD_DEPENDS=	p5-CPAN-DistnameInfo>=0:devel/p5-CPAN-DistnameInfo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

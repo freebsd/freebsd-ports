@@ -12,7 +12,7 @@ COMMENT=	Minimal version control system
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Algorithm-Diff>=1.13:${PORTSDIR}/devel/p5-Algorithm-Diff
+BUILD_DEPENDS=	p5-Algorithm-Diff>=1.13:devel/p5-Algorithm-Diff
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

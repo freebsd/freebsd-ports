@@ -7,7 +7,7 @@ PKGNAMESUFFIX=		-stage2
 
 MAINTAINER=		tphilipp@potion-studios.com
 
-BUILD_DEPENDS=		${LOCALBASE}/psp/lib/libc.a:${PORTSDIR}/devel/psptoolchain-newlib
+BUILD_DEPENDS=		${LOCALBASE}/psp/lib/libc.a:devel/psptoolchain-newlib
 
 MAKE_ENV=		CFLAGS_FOR_TARGET="-G0" PATH=${PREFIX}/bin:${PATH}
 CONFIGURE_ARGS=		--prefix=${PREFIX} \

@@ -11,8 +11,8 @@ DISTNAME=	PDCurses-${PORTVERSION}
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Curses and Panel terminal library for Windows
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
-		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
+BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
+		mingwm10.dll:devel/mingw32-bin-msvcrt
 
 USES=		gmake
 MAKEFILE=	gccwin32.mak

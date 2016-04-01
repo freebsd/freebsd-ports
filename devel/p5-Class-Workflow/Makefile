@@ -14,11 +14,11 @@ COMMENT=	Lightweight workflow system
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-Compare>=0:${PORTSDIR}/devel/p5-Data-Compare \
-		p5-Moose>=0.37:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Clone>=0.04:${PORTSDIR}/devel/p5-MooseX-Clone \
-		p5-Set-Object>=1.19:${PORTSDIR}/devel/p5-Set-Object \
-		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
+BUILD_DEPENDS=	p5-Data-Compare>=0:devel/p5-Data-Compare \
+		p5-Moose>=0.37:devel/p5-Moose \
+		p5-MooseX-Clone>=0.04:devel/p5-MooseX-Clone \
+		p5-Set-Object>=1.19:devel/p5-Set-Object \
+		p5-YAML-Syck>=0:textproc/p5-YAML-Syck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -14,7 +14,7 @@ COMMENT=	Real kawari8 module for ninix-aya
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-RUN_DEPENDS=	ninix:${PORTSDIR}/games/ninix-aya
+RUN_DEPENDS=	ninix:games/ninix-aya
 
 BUILD_WRKSRC=	${WRKSRC}/build/src
 

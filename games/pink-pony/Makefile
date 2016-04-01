@@ -13,12 +13,12 @@ COMMENT=	Tron-like multiplayer racing game
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
-		libprotobuf.so:${PORTSDIR}/devel/protobuf \
-		libglfw.so:${PORTSDIR}/graphics/glfw2 \
-		libHalf.so:${PORTSDIR}/graphics/ilmbase \
-		libftgl.so:${PORTSDIR}/graphics/ftgl \
-		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20
+LIB_DEPENDS=	libIL.so:graphics/devil \
+		libprotobuf.so:devel/protobuf \
+		libglfw.so:graphics/glfw2 \
+		libHalf.so:graphics/ilmbase \
+		libftgl.so:graphics/ftgl \
+		libsigc-2.0.so:devel/libsigc++20
 
 USES=		dos2unix pkgconfig scons tar:bzip2
 USE_GL=		gl glu

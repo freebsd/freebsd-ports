@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM2 plugin that reminds you of important events
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
+RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 
 USES=		pkgconfig
 USE_GNOME=	gtk20

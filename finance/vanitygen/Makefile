@@ -10,7 +10,7 @@ COMMENT=	Standalone vanity address generator for bitcoin
 
 LICENSE=	AGPLv3
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	samr7

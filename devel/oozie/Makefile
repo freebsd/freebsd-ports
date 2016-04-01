@@ -19,11 +19,11 @@ COMMENT=	Workflow scheduler for Hadoop
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3 \
-		yarn:${PORTSDIR}/devel/hadoop2 \
-		zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		yarn:${PORTSDIR}/devel/hadoop2
+BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3 \
+		yarn:devel/hadoop2 \
+		zip:archivers/zip
+RUN_DEPENDS=	bash:shells/bash \
+		yarn:devel/hadoop2
 
 USES=		shebangfix
 USE_JAVA=	yes

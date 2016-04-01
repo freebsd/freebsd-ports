@@ -10,8 +10,8 @@ MASTER_SITES=	http://andy-shev.github.com/LogJam/download/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GTK2 interface to livejournals, ie www.livejournal.com
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libdbus-glib-1.so:devel/dbus-glib
 
 OPTIONS_DEFINE=	GTKSPELL SQLITE XMMS GTKHTML RSVG
 OPTIONS_DEFAULT=	GTKSPELL
@@ -30,13 +30,13 @@ CONFIGURE_ARGS=	--program-transform-name="s/$$//"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-GTKSPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
+GTKSPELL_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
 GTKSPELL_CONFIGURE_WITH=	gtkspell
 
 SQLITE_CONFIGURE_WITH=	sqlite3
-SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-XMMS_LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
+XMMS_LIB_DEPENDS=	libxmms.so:multimedia/xmms
 XMMS_CONFIGURE_WITH=	xmms
 
 GTKHTML_USE=	GNOME=gtkhtml3

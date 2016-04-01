@@ -12,7 +12,7 @@ COMMENT=	Java bindings for GeoIP API
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	GeoIP>=1.4.8:${PORTSDIR}/net/GeoIP
+RUN_DEPENDS=	GeoIP>=1.4.8:net/GeoIP
 
 PKGNAMESUFFIX:=	-java
 USES=		zip

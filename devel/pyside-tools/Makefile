@@ -12,9 +12,9 @@ COMMENT=	Utilities for creating PySide applications
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	pyside${PYTHON_PKGNAMESUFFIX}>=1.0.9:${PORTSDIR}/devel/pyside
-LIB_DEPENDS=	libshiboken-${PYTHON_VERSION}.so:${PORTSDIR}/devel/shiboken
-RUN_DEPENDS=	pyside${PYTHON_PKGNAMESUFFIX}>=1.0.9:${PORTSDIR}/devel/pyside
+BUILD_DEPENDS=	pyside${PYTHON_PKGNAMESUFFIX}>=1.0.9:devel/pyside
+LIB_DEPENDS=	libshiboken-${PYTHON_VERSION}.so:devel/shiboken
+RUN_DEPENDS=	pyside${PYTHON_PKGNAMESUFFIX}>=1.0.9:devel/pyside
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PySide

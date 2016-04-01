@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/Program/
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	Flight simulator in which the player rescues people
 
-RUN_DEPENDS=	${LOCALBASE}/share/searchandrescue/human.ini:${PORTSDIR}/games/searchandrescue-data
+RUN_DEPENDS=	${LOCALBASE}/share/searchandrescue/human.ini:games/searchandrescue-data
 
 USE_SDL=	mixer
 USE_XORG=	x11 xau xdmcp xext xmu xpm xxf86vm

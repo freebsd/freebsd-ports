@@ -13,7 +13,7 @@ COMMENT=	C library for encoding data in a QR Code symbol
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		pathfix pkgconfig libtool
 USE_LDCONFIG=	yes

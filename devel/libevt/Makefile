@@ -12,7 +12,7 @@ COMMENT=	Library and tooling to access the Windows Event Log (EVT) format
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libregf.so:${PORTSDIR}/devel/libregf
+LIB_DEPENDS=	libregf.so:devel/libregf
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} --with-libregf=${LOCALBASE}

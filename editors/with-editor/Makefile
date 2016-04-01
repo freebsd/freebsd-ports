@@ -12,8 +12,8 @@ COMMENT=	Use the Emacsclient as the $EDITOR of child processes
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	dash.el>0:${PORTSDIR}/devel/dash.el
-RUN_DEPENDS=	dash.el>0:${PORTSDIR}/devel/dash.el
+BUILD_DEPENDS=	dash.el>0:devel/dash.el
+RUN_DEPENDS=	dash.el>0:devel/dash.el
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit

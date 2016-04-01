@@ -11,9 +11,9 @@ DISTNAME=	tkimg${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Library of image format handlers for Tk4.1 and later
 
-BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	dtplite:devel/tcllib
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 PLIST_SUB+=	SHLIB_NAME="${SHLIB_NAME}" \
 		SHLIB_LINK="${SHLIB_LINK}"

@@ -8,10 +8,10 @@ CATEGORIES=	databases www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR OO-interface for easily retrieving and modifying data in a DB
 
-BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB \
-		${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
-RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB \
-		${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
+BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB \
+		${PEARDIR}/Log/null.php:sysutils/pear-Log
+RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB \
+		${PEARDIR}/Log/null.php:sysutils/pear-Log
 
 USES=	pear
 

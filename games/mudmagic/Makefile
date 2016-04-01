@@ -13,11 +13,11 @@ COMMENT=	GTK+ based MUD client
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpcre.so:devel/pcre \
+		libpng.so:graphics/png \
+		libexpat.so:textproc/expat2 \
+		libsqlite3.so:databases/sqlite3
 
 USES=		gmake libtool pathfix pkgconfig python
 USE_GNOME=	gtk20 libglade2 libxml2

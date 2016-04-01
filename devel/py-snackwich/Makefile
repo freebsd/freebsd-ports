@@ -12,7 +12,7 @@ COMMENT=	Configuration-based Console UI Framework
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snack>0:${PORTSDIR}/devel/py-snack
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snack>0:devel/py-snack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python

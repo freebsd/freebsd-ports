@@ -10,7 +10,7 @@ MASTER_SITES=	SF/universalindent/uigui/UniversalIndentGUI_${PORTVERSION}
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Graphical UI for multiple source code indent/format/beautify tools
 
-LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS=	libqscintilla2.so:devel/qscintilla2
 
 USES=		dos2unix qmake shebangfix
 SHEBANG_FILES=	indenters/pindent.py \

@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based contact management software
 
-LIB_DEPENDS=	libvc.so:${PORTSDIR}/devel/libvc
+LIB_DEPENDS=	libvc.so:devel/libvc
 
 USES=		ncurses tar:bzip2
 GNU_CONFIGURE=	yes

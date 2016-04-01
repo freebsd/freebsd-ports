@@ -13,8 +13,8 @@ COMMENT=	Library allowing communication with Google calendar and contacts
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libxml2.so:textproc/libxml2
 
 USES=		cmake tar:bzip2
 CMAKE_ARGS=	-DLIB_INSTALL_DIR="${LOCALBASE}/lib" \

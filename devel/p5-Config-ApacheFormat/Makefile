@@ -14,7 +14,7 @@ COMMENT=	Parse a configuration file in the same syntax as the Apache web server
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker
+BUILD_DEPENDS=	p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

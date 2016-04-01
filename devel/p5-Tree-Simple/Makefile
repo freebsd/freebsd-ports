@@ -14,7 +14,7 @@ COMMENT=	Simple tree object
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Exception>=0.15:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0.15:devel/p5-Test-Exception
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure

@@ -15,8 +15,8 @@ COMMENT=	SDL-based Marble Madness clone
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libguile.so:lang/guile
+RUN_DEPENDS=	bash:shells/bash
 
 USE_GL=		gl
 USE_SDL=	image mixer sdl ttf

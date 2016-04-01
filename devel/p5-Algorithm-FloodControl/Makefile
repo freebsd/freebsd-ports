@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Robot protection
 
-BUILD_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+BUILD_DEPENDS=	p5-Params-Validate>=0:devel/p5-Params-Validate \
+		p5-Cache-FastMmap>=0:devel/p5-Cache-FastMmap \
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

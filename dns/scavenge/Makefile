@@ -10,8 +10,8 @@ MASTER_SITES=	http://mark.foster.cc/pub/scavenge/
 MAINTAINER=	mark@foster.cc
 COMMENT=	Discover/audit forward and reverse DNS records
 
-RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		nmap:${PORTSDIR}/security/nmap
+RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
+		nmap:security/nmap
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

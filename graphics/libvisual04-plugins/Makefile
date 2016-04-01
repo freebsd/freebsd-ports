@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PKGNAMESUFFIX:C/.*-//}-${PORTVERSION}
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Set of plugins for the libvisual framework
 
-LIB_DEPENDS=	libvisual-${MAJORMINOR}.so:${PORTSDIR}/graphics/libvisual04
+LIB_DEPENDS=	libvisual-${MAJORMINOR}.so:graphics/libvisual04
 
 USES=		libtool pkgconfig
 USE_GL=		yes

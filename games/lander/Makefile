@@ -13,8 +13,8 @@ COMMENT=	Lunar Lander clone
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libboost_filesystem.so:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USES=		gettext pkgconfig

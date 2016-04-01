@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl VirtualFileSystem layer
 
-LIB_DEPENDS=	libTrf2.1.4.so:${PORTSDIR}/devel/tcl-trf
+LIB_DEPENDS=	libTrf2.1.4.so:devel/tcl-trf
 
 USES+=		gmake tcl
 GNU_CONFIGURE=	yes

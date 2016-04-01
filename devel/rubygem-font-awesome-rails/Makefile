@@ -12,7 +12,7 @@ LICENSE=	MIT OFL11
 LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-railties>=3.2:${PORTSDIR}/www/rubygem-railties
+RUN_DEPENDS=	rubygem-railties>=3.2:www/rubygem-railties
 
 NO_ARCH=	yes
 USE_RUBY=	yes

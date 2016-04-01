@@ -12,11 +12,11 @@ COMMENT=	OpenTSDB is the Scalable Timeseries Database
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		curl:${PORTSDIR}/ftp/curl \
-		gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	libhadoop.so:${PORTSDIR}/devel/hadoop2
-RUN_DEPENDS=	hbase>0:${PORTSDIR}/databases/hbase
+BUILD_DEPENDS=	bash:shells/bash \
+		curl:ftp/curl \
+		gawk:lang/gawk
+LIB_DEPENDS=	libhadoop.so:devel/hadoop2
+RUN_DEPENDS=	hbase>0:databases/hbase
 
 USES=		gmake python
 USE_JAVA=	yes
@@ -24,7 +24,7 @@ USE_JAVA=	yes
 OPTIONS_DEFINE=		GNUPLOT
 OPTIONS_DEFAULT=	GNUPLOT
 
-GNUPLOT_RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+GNUPLOT_RUN_DEPENDS=	gnuplot:math/gnuplot
 
 HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

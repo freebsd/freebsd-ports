@@ -13,8 +13,8 @@ COMMENT=	Access control layer on top of git
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
+RUN_DEPENDS=	git>=0:devel/git \
+		p5-JSON>=0:converters/p5-JSON
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sitaramc

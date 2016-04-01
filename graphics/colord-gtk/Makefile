@@ -9,11 +9,11 @@ MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
 
-BUILD_DEPENDS=	colord>=0.1.20:${PORTSDIR}/graphics/colord
-LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord \
-		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2
+BUILD_DEPENDS=	colord>=0.1.20:graphics/colord
+LIB_DEPENDS=	libcolord.so:graphics/colord \
+		libpolkit-gobject-1.so:sysutils/polkit \
+		libdbus-1.so:devel/dbus \
+		liblcms2.so:graphics/lcms2
 
 USE_GNOME=	gtk30 intlhack introspection:build
 USES=		gettext gmake libtool pathfix pkgconfig sqlite tar:xz
@@ -28,8 +28,8 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 
-MANPAGES_BUILD_DEPENDS=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
-			docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml
+MANPAGES_BUILD_DEPENDS=	docbook2html:textproc/docbook-utils \
+			docbook-sgml>0:textproc/docbook-sgml
 
 .include <bsd.port.options.mk>
 

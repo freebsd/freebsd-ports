@@ -18,7 +18,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	candy@kgc.co.jp
 COMMENT=	Cat chasing a mouse all over the screen
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS=	nkf:japanese/nkf
 
 CONFLICTS=	oneko-1.*
 

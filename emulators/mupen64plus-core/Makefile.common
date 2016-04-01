@@ -10,19 +10,19 @@ EXTRACT_AFTER_ARGS?=	"${DISTNAME}/source/${PORTNAME}-core/*" \
 				"${DISTNAME}/source/${PORTNAME}${PKGNAMESUFFIX}/*"
 
 .if ${PKGNAMESUFFIX} == "-core"
-LIB_DEPENDS+=		libfreetype.so:${PORTSDIR}/print/freetype2 \
-			libpng.so:${PORTSDIR}/graphics/png \
-			libminizip.so:${PORTSDIR}/archivers/minizip
+LIB_DEPENDS+=		libfreetype.so:print/freetype2 \
+			libpng.so:graphics/png \
+			libminizip.so:archivers/minizip
 .else
 PLIST=			${WRKDIR}/pkg-plist
 .endif
 
 .if ${PKGNAMESUFFIX} == "-video-rice"
-LIB_DEPENDS+=		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		libpng.so:graphics/png
 .endif
 
 .if ${PKGNAMESUFFIX} == "-video-glide64mk"
-LIB_DEPENDS+=		libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=		libboost_thread.so:devel/boost-libs
 .endif
 
 .if ${PKGNAMESUFFIX} != "-core"

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensions to Class::DBI for Oracle
 
-BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI
+BUILD_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

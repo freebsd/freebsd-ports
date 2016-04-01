@@ -14,11 +14,11 @@ COMMENT=	Hadoop database, a distributed, scalable, big data store
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		cmake:${PORTSDIR}/devel/cmake \
-		${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		yarn:${PORTSDIR}/devel/hadoop2
+BUILD_DEPENDS=	bash:shells/bash \
+		cmake:devel/cmake \
+		${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3
+RUN_DEPENDS=	bash:shells/bash \
+		yarn:devel/hadoop2
 
 USES=		cpe
 CPE_VENDOR=	apache

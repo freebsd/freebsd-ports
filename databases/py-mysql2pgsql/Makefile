@@ -12,11 +12,11 @@ COMMENT=	Tool for migrating/converting from MySQL to PostgreSQL
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:${PORTSDIR}/databases/py-MySQLdb \
-		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.4.2:${PORTSDIR}/databases/py-psycopg2 \
-		${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:${PORTSDIR}/devel/py-termcolor \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.10.0:${PORTSDIR}/devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:databases/py-MySQLdb \
+		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.4.2:databases/py-psycopg2 \
+		${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.10.0:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

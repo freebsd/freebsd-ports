@@ -12,7 +12,7 @@ COMMENT=	Ruby-based DSL for text parsing and interpretation
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-polyglot>=0.3:${PORTSDIR}/devel/rubygem-polyglot
+RUN_DEPENDS=	rubygem-polyglot>=0.3:devel/rubygem-polyglot
 
 NO_ARCH=	yes
 USE_RUBY=	yes

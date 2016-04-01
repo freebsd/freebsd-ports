@@ -12,9 +12,9 @@ COMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
 LICENSE=	GPLv2
 
 # To build man-pages
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
-		txt2man:${PORTSDIR}/textproc/txt2man
-LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+BUILD_DEPENDS=	gawk:lang/gawk \
+		txt2man:textproc/txt2man
+LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 OPTIONS_DEFINE=	GNOME DOCS
 OPTIONS_SUB=	yes

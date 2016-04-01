@@ -13,10 +13,10 @@ COMMENT=	Python bindings for your taskwarrior database
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.3.4:${PORTSDIR}/devel/py-nose
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.3.4:devel/py-nose
 
 USES=		python
 USE_PYTHON=	autoplist distutils

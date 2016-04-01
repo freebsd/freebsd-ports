@@ -12,7 +12,7 @@ COMMENT=	Real-time graphics effect able to increase the size of small bitmaps
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
 

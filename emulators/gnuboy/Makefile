@@ -13,7 +13,7 @@ COMMENT=	Nintendo GameBoy emulator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS=	libvga.so:graphics/svgalib
 
 USES=		autoreconf compiler
 USE_SDL=	sdl

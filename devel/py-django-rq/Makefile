@@ -13,8 +13,8 @@ COMMENT=	Provides Django integration for RQ (Redis Queue)
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.5:${PORTSDIR}/www/py-django18 \
-		${PYTHON_PKGNAMEPREFIX}rq>=0.5.5:${PORTSDIR}/devel/py-rq
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.5:www/py-django18 \
+		${PYTHON_PKGNAMEPREFIX}rq>=0.5.5:devel/py-rq
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ui

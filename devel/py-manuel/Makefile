@@ -13,7 +13,7 @@ COMMENT=	Lets you build tested documentation
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils

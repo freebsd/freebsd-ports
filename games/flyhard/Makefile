@@ -14,8 +14,8 @@ COMMENT=	Game resembling Thrust, but with lots of shooting and puzzles
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libpng.so:graphics/png
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USES=		gmake

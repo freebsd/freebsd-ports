@@ -41,8 +41,8 @@ DNSTAP_DESC=	Enable dnstap logging support
 
 .include <bsd.port.options.mk>
 
-LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libldns.so:${PORTSDIR}/dns/ldns
+LIB_DEPENDS+=	libexpat.so:textproc/expat2 \
+		libldns.so:dns/ldns
 
 STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 		unbound-control .libs/unbound-host .libs/unbound-anchor
@@ -50,7 +50,7 @@ STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=		python:2
 CONFIGURE_ARGS+=--with-pyunbound=yes --with-pythonmodule=yes LDFLAGS="-L${LOCALBASE}/lib"
-BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS+=	swig:devel/swig13
 STRIP_FILES+=	.libs/_unbound.so
 .endif
 
@@ -71,8 +71,8 @@ CONFIGURE_ARGS+=--disable-ecdsa
 
 .if ${PORT_OPTIONS:MDNSTAP}
 CONFIGURE_ARGS+=--enable-dnstap
-LIB_DEPENDS+=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
-LIB_DEPENDS+=	libfstrm.so:${PORTSDIR}/devel/fstrm
+LIB_DEPENDS+=	libprotobuf-c.so:devel/protobuf-c
+LIB_DEPENDS+=	libfstrm.so:devel/fstrm
 .endif
 
 .if ${PORT_OPTIONS:MMUNIN_PLUGIN}
@@ -82,7 +82,7 @@ MUNIN_PLUGIN_ALL=	hits queue memory by_type by_class by_opcode by_rcode \
 .endif
 
 .if ${PORT_OPTIONS:MLIBEVENT}
-LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS+=	libevent.so:devel/libevent2
 USES+=		pkgconfig
 CONFIGURE_ARGS+=--with-libevent
 CPPFLAGS+=	$$(pkg-config libevent --cflags-only-I)

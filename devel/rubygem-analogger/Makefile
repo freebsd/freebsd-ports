@@ -12,7 +12,7 @@ COMMENT=	Fast, flexible, easy to use logging service for Ruby
 
 LICENSE=	RUBY
 
-RUN_DEPENDS=	rubygem-eventmachine>=0.0.0:${PORTSDIR}/devel/rubygem-eventmachine
+RUN_DEPENDS=	rubygem-eventmachine>=0.0.0:devel/rubygem-eventmachine
 
 NO_ARCH=	yes
 

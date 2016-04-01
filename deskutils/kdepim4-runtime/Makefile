@@ -10,12 +10,12 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE PIM tools and services
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libkgapi2.so:${PORTSDIR}/devel/libkgapi \
-		libkolab.so:${PORTSDIR}/devel/libkolab \
-		libkolabxml.so:${PORTSDIR}/textproc/libkolabxml \
-		libkfbapi.so:${PORTSDIR}/net/libkfbapi \
-		libqjson.so:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libkgapi2.so:devel/libkgapi \
+		libkolab.so:devel/libkolab \
+		libkolabxml.so:textproc/libkolabxml \
+		libkfbapi.so:net/libkfbapi \
+		libqjson.so:devel/qjson
 
 CONFLICTS_INSTALL=	kdepim-runtime44-4.*
 

@@ -13,7 +13,7 @@ COMMENT=	Zlib extension library for the Tcl
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libtclmore0.so:${PORTSDIR}/devel/tclmore
+LIB_DEPENDS=	libtclmore0.so:devel/tclmore
 
 OPTIONS_DEFINE=	DOCS
 

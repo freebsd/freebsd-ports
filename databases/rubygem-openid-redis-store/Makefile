@@ -10,8 +10,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Redis store for OpenID
 
-RUN_DEPENDS=	rubygem-redis>=0:${PORTSDIR}/databases/rubygem-redis \
-		rubygem-ruby-openid>=0:${PORTSDIR}/net/rubygem-ruby-openid
+RUN_DEPENDS=	rubygem-redis>=0:databases/rubygem-redis \
+		rubygem-ruby-openid>=0:net/rubygem-ruby-openid
 
 NO_ARCH=	yes
 

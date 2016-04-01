@@ -10,9 +10,9 @@ COMMENT=	Analysis and visualization of DNS/DNSSEC behavior
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.0:${PORTSDIR}/graphics/py-pygraphviz \
-		${PYTHON_PKGNAMEPREFIX}m2crypto>0:${PORTSDIR}/security/py-m2crypto \
-		${PYTHON_PKGNAMEPREFIX}dnspython>0:${PORTSDIR}/dns/py-dnspython
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.0:graphics/py-pygraphviz \
+		${PYTHON_PKGNAMEPREFIX}m2crypto>0:security/py-m2crypto \
+		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython
 
 USES=		python
 USE_PYTHON=	autoplist distutils

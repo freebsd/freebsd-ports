@@ -13,8 +13,8 @@ COMMENT=	Perl DateTime extension for computing rfc2445 recurrences
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Event-Recurrence>=0.11:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence
+BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+		p5-DateTime-Event-Recurrence>=0.11:devel/p5-DateTime-Event-Recurrence
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

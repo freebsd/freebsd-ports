@@ -9,7 +9,7 @@ MASTER_SITES=	http://lisaem.sunder.net/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apple Lisa 2 Emulator
 
-BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS=	pngtopnm:graphics/netpbm
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

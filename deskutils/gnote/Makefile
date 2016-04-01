@@ -12,12 +12,12 @@ COMMENT=	C++ version of Tomboy, note taking application
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
-		libsecret-1.so:${PORTSDIR}/security/libsecret \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libgtkspell3-3.so:textproc/gtkspell3 \
+		libboost_filesystem.so:devel/boost-libs \
+		libsecret-1.so:security/libsecret \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 PORTSCOUT=	limitw:1,even
 

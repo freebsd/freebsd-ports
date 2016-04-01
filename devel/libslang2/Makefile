@@ -36,12 +36,12 @@ ONIG_DESC=	Oniguruma support
 PORTDOCS=	*
 
 PCRE_CONFIGURE_WITH=	pcre
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PNG_CONFIGURE_WITH=	png
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 ICONV_USES=		iconv
 ONIG_CONFIGURE_WITH=	onig
-ONIG_LIB_DEPENDS=	libonig.so:${PORTSDIR}/devel/oniguruma4
+ONIG_LIB_DEPENDS=	libonig.so:devel/oniguruma4
 
 .include <bsd.port.pre.mk>
 

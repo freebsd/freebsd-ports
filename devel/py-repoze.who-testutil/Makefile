@@ -14,8 +14,8 @@ COMMENT=	Test utilities for repoze.who-powered applications
 
 LICENSE=	BSD4CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}repoze.who>=1.0.15:${PORTSDIR}/devel/py-repoze.who \
-		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.3.3:${PORTSDIR}/www/py-pastedeploy
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}repoze.who>=1.0.15:devel/py-repoze.who \
+		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.3.3:www/py-pastedeploy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python

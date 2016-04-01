@@ -13,8 +13,8 @@ COMMENT=	Converts TIFF-sampled images to PNM image
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 PROJECTHOST=	sam2p
 USES=		pkgconfig

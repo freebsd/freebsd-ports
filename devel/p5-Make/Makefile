@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Test-Compile>=1.2.1:${PORTSDIR}/devel/p5-Test-Compile
+TEST_DEPENDS=	p5-Test-Compile>=1.2.1:devel/p5-Test-Compile
 
 USES=		perl5
 USE_PERL5=	configure

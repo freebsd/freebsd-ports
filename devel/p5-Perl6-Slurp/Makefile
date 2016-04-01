@@ -13,7 +13,7 @@ COMMENT=	Implements the Perl6 'slurp' built-in
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Perl6-Export>=0.07:${PORTSDIR}/devel/p5-Perl6-Export
+BUILD_DEPENDS=	p5-Perl6-Export>=0.07:devel/p5-Perl6-Export
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

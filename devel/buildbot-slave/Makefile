@@ -13,9 +13,9 @@ COMMENT=	Continuous Integration Framework (Slave)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=8.0.0:${PORTSDIR}/devel/py-twisted
-TEST_DEPENDS=	trial:${PORTSDIR}/devel/py-twisted \
-		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=8.0.0:devel/py-twisted
+TEST_DEPENDS=	trial:devel/py-twisted \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
 USES=		python:-2.7
 USE_PYTHON=	autoplist distutils

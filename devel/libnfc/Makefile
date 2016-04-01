@@ -85,8 +85,8 @@ PN53X_USB_DRIVER=
 CONFIGURE_ARGS+=--with-drivers="${ACR122_PCSC_DRIVER}${ACR122_USB_DRIVER}${ACR122S_DRIVER}${ARYGON_DRIVER}${PN532_I2C_DRIVER}${PN532_SPI_DRIVER}${PN532_UART_DRIVER}${PN53X_USB_DRIVER}"
 
 .if ${PORT_OPTIONS:MACR122_PCSC}
-LIB_DEPENDS+=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
-RUN_DEPENDS+=	${LOCALBASE}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so:${PORTSDIR}/devel/libccid
+LIB_DEPENDS+=	libpcsclite.so:devel/pcsc-lite
+RUN_DEPENDS+=	${LOCALBASE}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so:devel/libccid
 .endif
 
 post-install:

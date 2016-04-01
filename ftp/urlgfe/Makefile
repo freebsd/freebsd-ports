@@ -10,7 +10,7 @@ MASTER_SITES=	SF/urlget/Urlgfe%20%28legacy%29/${PORTVERSION}
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Download manager
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 USES=		dos2unix libtool pkgconfig

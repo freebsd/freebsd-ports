@@ -11,7 +11,7 @@ COMMENT=	Ruby coercion library
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-descendants_tracker>=0.0.1:${PORTSDIR}/devel/rubygem-descendants_tracker
+RUN_DEPENDS=	rubygem-descendants_tracker>=0.0.1:devel/rubygem-descendants_tracker
 
 NO_ARCH=	yes
 

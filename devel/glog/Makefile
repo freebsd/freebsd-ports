@@ -12,7 +12,7 @@ COMMENT=	Library of C++ classes for flexible logging
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags
+LIB_DEPENDS=	libgflags.so:devel/gflags
 
 OPTIONS_DEFINE=	DOCS
 

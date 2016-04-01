@@ -12,7 +12,7 @@ COMMENT=	KDE-based library for accessing various Google services
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libqjson.so:devel/qjson
 
 USES=		cmake:outsource tar:bzip2
 USE_KDE4=	automoc4 kdelibs kdeprefix pimlibs

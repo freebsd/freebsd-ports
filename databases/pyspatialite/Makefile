@@ -15,10 +15,10 @@ COMMENT=	DB-API 2.0 interface for SQLite 3.x with Spatialite
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite \
-		libgeos_c.so:${PORTSDIR}/graphics/geos \
-		libproj.so:${PORTSDIR}/graphics/proj \
-		libfreexl.so:${PORTSDIR}/textproc/freexl
+LIB_DEPENDS=	libspatialite.so:databases/spatialite \
+		libgeos_c.so:graphics/geos \
+		libproj.so:graphics/proj \
+		libfreexl.so:textproc/freexl
 
 OPTIONS_DEFINE=	DOCS
 

@@ -8,7 +8,7 @@ CATEGORIES=	games
 MAINTAINER=	yuri@rawbw.com
 COMMENT=	Core pack for RetroArch
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+BUILD_DEPENDS=	cmake:devel/cmake
 
 ONLY_FOR_ARCHS=	i386 amd64
 

@@ -14,7 +14,7 @@ COMMENT=	GTK-based git repository viewer (gtk2 version)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+RUN_DEPENDS=	git:devel/git
 
 CONFLICTS=	gitg-[0-9]*
 

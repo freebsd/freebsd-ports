@@ -12,8 +12,8 @@ COMMENT=	Graphics viewer for SVGAlib
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 OPTIONS_DEFINE=	SDL DOCS
 
@@ -32,7 +32,7 @@ MAKE_ENV+=	BACKEND=SDL
 CPPFLAGS+=	$$(${SDL_CONFIG} --cflags)
 LDFLAGS+=	$$(${SDL_CONFIG} --libs)
 .else
-LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:graphics/svgalib
 MAKE_ENV+=	BACKEND=SVGALIB
 ONLY_FOR_ARGS=	i386 amd64
 .endif

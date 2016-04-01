@@ -10,7 +10,7 @@ COMMENT=	Python based GUI for Syncthing
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	syncthing
