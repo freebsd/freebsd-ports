@@ -1,4 +1,4 @@
 PKG_NOTES+=	icon screen1 screen2
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/astro_xplanet.png"
-PKG_NOTE_screen1="http://www.pcbsd.org/appcafe/screenshots/astro/xplanet/screen1.png"
-PKG_NOTE_screen2="http://www.pcbsd.org/appcafe/screenshots/astro/xplanet/screen2.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/astro_xplanet.png
+PKG_NOTE_screen1=http://www.pcbsd.org/appcafe/screenshots/astro/xplanet/screen1.png
+PKG_NOTE_screen2=http://www.pcbsd.org/appcafe/screenshots/astro/xplanet/screen2.png

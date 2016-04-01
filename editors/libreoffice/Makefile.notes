@@ -1,5 +1,5 @@
 PKG_NOTES+=	icon screen1 screen2
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/editors_libreoffice.png"
-PKG_NOTE_screen1="http://www.pcbsd.org/appcafe/screenshots/editors/libreoffice/screen1.png"
-PKG_NOTE_screen2="http://www.pcbsd.org/appcafe/screenshots/editors/libreoffice/screen2.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/editors_libreoffice.png
+PKG_NOTE_screen1=http://www.pcbsd.org/appcafe/screenshots/editors/libreoffice/screen1.png
+PKG_NOTE_screen2=http://www.pcbsd.org/appcafe/screenshots/editors/libreoffice/screen2.png
 

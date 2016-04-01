@@ -1,2 +1,2 @@
 PKG_NOTES+=	icon
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/textproc_chm2pdf.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/textproc_chm2pdf.png

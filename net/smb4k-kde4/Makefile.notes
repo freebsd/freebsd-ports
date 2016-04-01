@@ -1,2 +1,2 @@
 PKG_NOTES+=	icon
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/net_smb4k-kde4.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/net_smb4k-kde4.png

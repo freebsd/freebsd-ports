@@ -1,2 +1,2 @@
 PKG_NOTES+=	icon
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/misc_pcbsd-meta-hplip.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/misc_pcbsd-meta-hplip.png

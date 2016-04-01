@@ -1,4 +1,4 @@
 PKG_NOTES+=	icon screen1 screen2
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/audio_audacity.png"
-PKG_NOTE_screen1="http://web.pcbsd.org/appcafe/screenshots/audio/audacity/screen1.png"
-PKG_NOTE_screen2="http://web.pcbsd.org/appcafe/screenshots/audio/audacity/screen2.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/audio_audacity.png
+PKG_NOTE_screen1=http://web.pcbsd.org/appcafe/screenshots/audio/audacity/screen1.png
+PKG_NOTE_screen2=http://web.pcbsd.org/appcafe/screenshots/audio/audacity/screen2.png

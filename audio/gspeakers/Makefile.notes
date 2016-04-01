@@ -1,5 +1,5 @@
 PKG_NOTES+=	icon screen1 screen2 screen3
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/audio_gspeakers.png"
-PKG_NOTE_screen1="http://www.pcbsd.org/appcafe/screenshots/audio/gspeakers/screen1.png"
-PKG_NOTE_screen2="http://www.pcbsd.org/appcafe/screenshots/audio/gspeakers/screen2.png"
-PKG_NOTE_screen3="http://www.pcbsd.org/appcafe/screenshots/audio/gspeakers/screen3.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/audio_gspeakers.png
+PKG_NOTE_screen1=http://www.pcbsd.org/appcafe/screenshots/audio/gspeakers/screen1.png
+PKG_NOTE_screen2=http://www.pcbsd.org/appcafe/screenshots/audio/gspeakers/screen2.png
+PKG_NOTE_screen3=http://www.pcbsd.org/appcafe/screenshots/audio/gspeakers/screen3.png

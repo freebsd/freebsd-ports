@@ -1,4 +1,4 @@
 PKG_NOTES+=	icon screen1 screen2
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/java_eclipse.png"
-PKG_NOTE_screen1="http://www.pcbsd.org/appcafe/screenshots/java/eclipse/screen1.png"
-PKG_NOTE_screen2="http://www.pcbsd.org/appcafe/screenshots/java/eclipse/screen2.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/java_eclipse.png
+PKG_NOTE_screen1=http://www.pcbsd.org/appcafe/screenshots/java/eclipse/screen1.png
+PKG_NOTE_screen2=http://www.pcbsd.org/appcafe/screenshots/java/eclipse/screen2.png

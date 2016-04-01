@@ -1,2 +1,2 @@
 PKG_NOTES+=	icon
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/java_dbvis.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/java_dbvis.png

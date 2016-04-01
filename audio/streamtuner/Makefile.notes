@@ -1,2 +1,2 @@
 PKG_NOTES+=	icon
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/audio_streamtuner.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/audio_streamtuner.png

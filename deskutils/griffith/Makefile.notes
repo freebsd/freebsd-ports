@@ -1,3 +1,3 @@
 PKG_NOTES+=	icon screen1
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/deskutils_griffith.png"
-PKG_NOTE_screen1="http://www.pcbsd.org/appcafe/screenshots/deskutils/griffith/screen1.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/deskutils_griffith.png
+PKG_NOTE_screen1=http://www.pcbsd.org/appcafe/screenshots/deskutils/griffith/screen1.png

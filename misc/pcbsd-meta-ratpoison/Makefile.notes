@@ -1,3 +1,3 @@
 PKG_NOTES+=	icon screen1
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/misc_pcbsd-meta-ratpoison.png"
-PKG_NOTE_screen1="http://www.nongnu.org/ratpoison/shot2.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/misc_pcbsd-meta-ratpoison.png
+PKG_NOTE_screen1=http://www.nongnu.org/ratpoison/shot2.png

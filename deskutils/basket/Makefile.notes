@@ -1,6 +1,6 @@
 PKG_NOTES+=	icon screen1 screen2 screen3 screen4
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/deskutils_basket.png"
-PKG_NOTE_screen1="http://www.pcbsd.org/appcafe/screenshots/deskutils//screen1.png"
-PKG_NOTE_screen2="http://www.pcbsd.org/appcafe/screenshots/deskutils//screen2.png"
-PKG_NOTE_screen3="http://www.pcbsd.org/appcafe/screenshots/deskutils//screen3.png"
-PKG_NOTE_screen4="http://www.pcbsd.org/appcafe/screenshots/deskutils//screen4.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/deskutils_basket.png
+PKG_NOTE_screen1=http://www.pcbsd.org/appcafe/screenshots/deskutils//screen1.png
+PKG_NOTE_screen2=http://www.pcbsd.org/appcafe/screenshots/deskutils//screen2.png
+PKG_NOTE_screen3=http://www.pcbsd.org/appcafe/screenshots/deskutils//screen3.png
+PKG_NOTE_screen4=http://www.pcbsd.org/appcafe/screenshots/deskutils//screen4.png

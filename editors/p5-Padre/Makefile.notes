@@ -1,2 +1,2 @@
 PKG_NOTES+=	icon
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/editors_p5-Padre.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/editors_p5-Padre.png

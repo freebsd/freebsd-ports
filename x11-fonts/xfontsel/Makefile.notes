@@ -1,2 +1,2 @@
 PKG_NOTES+=	icon
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/x11-fonts_xfontsel.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/x11-fonts_xfontsel.png

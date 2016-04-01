@@ -1,2 +1,2 @@
 PKG_NOTES+=	icon
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/sysutils_cfengine34.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/sysutils_cfengine34.png

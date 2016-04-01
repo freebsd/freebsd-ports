@@ -1,2 +1,2 @@
 PKG_NOTES+=	icon
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/shells_zsh.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/shells_zsh.png

@@ -1,4 +1,4 @@
 PKG_NOTES+=	icon screen1 screen2
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/graphics_autoq3d.png"
-PKG_NOTE_screen1="http://www.pcbsd.org/appcafe/screenshots/graphics/autoq3d/screen1.png"
-PKG_NOTE_screen2="http://www.pcbsd.org/appcafe/screenshots/graphics/autoq3d/screen2.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/graphics_autoq3d.png
+PKG_NOTE_screen1=http://www.pcbsd.org/appcafe/screenshots/graphics/autoq3d/screen1.png
+PKG_NOTE_screen2=http://www.pcbsd.org/appcafe/screenshots/graphics/autoq3d/screen2.png

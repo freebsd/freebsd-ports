@@ -1,4 +1,4 @@
 PKG_NOTES+=	icon screen1 screen2
-PKG_NOTE_icon="http://www.pcbsd.org/appcafe/icons/multimedia_obs-studio.png"
-PKG_NOTE_screen1="http://web.pcbsd.org/appcafe/screenshots/multimedia/obs-studio/screen1.png"
-PKG_NOTE_screen2="http://web.pcbsd.org/appcafe/screenshots/multimedia/obs-studio/screen2.png"
+PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/multimedia_obs-studio.png
+PKG_NOTE_screen1=http://web.pcbsd.org/appcafe/screenshots/multimedia/obs-studio/screen1.png
+PKG_NOTE_screen2=http://web.pcbsd.org/appcafe/screenshots/multimedia/obs-studio/screen2.png
