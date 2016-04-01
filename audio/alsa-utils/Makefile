@@ -4,7 +4,7 @@
 PORTNAME=	alsa-utils
 PORTVERSION=	1.1.1
 CATEGORIES=	audio
-MASTER_SITES=	ALSA/utils \
+MASTER_SITES=	ftp://ftp.alsa-project.org/pub/utils/ \
 		GENTOO
 
 MAINTAINER=	jbeich@FreeBSD.org
