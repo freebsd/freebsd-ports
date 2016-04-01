@@ -12,7 +12,8 @@ LICENSE=	LGPL3
 
 USES=	gmake python:build
 
-MAKE_ARGS=	HOSTCC="${CC}" LD32BIT_FLAG="-melf_i386_fbsd"
+MAKE_ARGS=	HOSTCC="${CC}" LD32BIT_FLAG="-melf_i386_fbsd" \
+		PYTHON="${PYTHON_CMD}"
 USE_GCC=	yes
 
 EXTRA_PATCHES=	${FILESDIR}/0001-build-fix-.text-section-address-alignment.patch:-p1
