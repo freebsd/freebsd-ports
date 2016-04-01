@@ -511,6 +511,7 @@
     SUBDIR += procmail
     SUBDIR += prom-wl
     SUBDIR += proxsmtp
+    SUBDIR += py-email-reply-parser
     SUBDIR += py-Products.MailHost
     SUBDIR += py-Products.SecureMailHost
     SUBDIR += py-apolicy
