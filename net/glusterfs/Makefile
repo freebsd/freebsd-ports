@@ -11,7 +11,7 @@ COMMENT=	GlusterFS distributed file system
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libargp.so:devel/argp-standalone liburcu-bp.so:${PORTSDIR}/sysutils/liburcu
+LIB_DEPENDS=	libargp.so:devel/argp-standalone liburcu-bp.so:sysutils/liburcu
 
 USE_GCC=	any
 
