@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alsa-utils
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	audio
 MASTER_SITES=	ALSA/utils \
 		GENTOO
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		gmake localbase shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-udev-rules-dir="\$${prefix}/lib/udev"
-SHEBANG_FILES=	alsa-info/alsa-info.sh alsaconf/alsaconf.in
+SHEBANG_FILES=	alsa-info/alsa-info.sh alsaconf/alsaconf.in bat/alsabat-test.sh
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${.CURDIR}/../alsa-lib/files
 
