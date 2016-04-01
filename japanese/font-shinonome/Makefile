@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME:C/^font-//}-${PORTVERSION:C/.p/p/}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Shinonome Japanese fonts, 12/14/16 dots
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts tar:bzip2
 FONTNAME=	misc

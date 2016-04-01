@@ -13,7 +13,7 @@ DIST_SUBDIR=	esecanna
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Esecanna module for VJE-Delta 3.0
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
+RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:japanese/esecanna
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes

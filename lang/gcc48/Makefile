@@ -14,14 +14,14 @@ COMMENT=	GNU Compiler Collection 4.8
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libmpfr.so:${PORTSDIR}/math/mpfr \
-		libmpc.so:${PORTSDIR}/math/mpc
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
+		libmpc.so:math/mpc
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
+RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 
 .if defined(MAINTAINER_MODE)
-BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
+BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
 CONFLICTS=	gcc-4.8.*
@@ -118,9 +118,9 @@ SUB_LIST+=	TARGLIB=${TARGLIB}
 
 .if ${PORT_OPTIONS:MJAVA}
 ECJ_JAR=	${LOCALBASE}/share/java/ecj-4.5.jar
-BUILD_DEPENDS+=	${ECJ_JAR}:${PORTSDIR}/lang/gcc-ecj45 \
-		zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS+=	${ECJ_JAR}:${PORTSDIR}/lang/gcc-ecj45
+BUILD_DEPENDS+=	${ECJ_JAR}:lang/gcc-ecj45 \
+		zip:archivers/zip
+RUN_DEPENDS+=	${ECJ_JAR}:lang/gcc-ecj45
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 CONFIGURE_ARGS+=--with-ecj-jar=${ECJ_JAR}
 LANGUAGES:=	${LANGUAGES},java

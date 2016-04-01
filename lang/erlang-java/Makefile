@@ -20,7 +20,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang interface for Java
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${LOCALBASE}/bin/erl:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang
 
 WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 

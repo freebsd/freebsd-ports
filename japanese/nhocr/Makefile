@@ -11,8 +11,8 @@ COMMENT=	OCR engine for Japanese language
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsip.a:${PORTSDIR}/graphics/O2-tools
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsip.a:graphics/O2-tools
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-O2tools=${LOCALBASE} --datadir=${DATADIR}

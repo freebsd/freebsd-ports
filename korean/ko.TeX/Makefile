@@ -11,7 +11,7 @@ DISTNAME=	ko.tex-macro-20080329
 MAINTAINER=	hyogeollee@gmail.com
 COMMENT=	Korean TeX macro and utilities
 
-RUN_DEPENDS=	${BASE_MAP}:${PORTSDIR}/korean/ko.TeX-fonts-base
+RUN_DEPENDS=	${BASE_MAP}:korean/ko.TeX-fonts-base
 
 USES=		shebangfix
 SHEBANG_FILES=	util/*.pl

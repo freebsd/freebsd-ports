@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE::Component::IRC plugin that provides RSS headline retrieval
 
-BUILD_DEPENDS=	p5-POE>=1.004:${PORTSDIR}/devel/p5-POE \
-		p5-POE-Component-IRC>=5.07:${PORTSDIR}/irc/p5-POE-Component-IRC \
-		p5-POE-Component-Client-HTTP>=0.73:${PORTSDIR}/www/p5-POE-Component-Client-HTTP \
-		p5-XML-RSS>=1.1:${PORTSDIR}/textproc/p5-XML-RSS \
-		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message
+BUILD_DEPENDS=	p5-POE>=1.004:devel/p5-POE \
+		p5-POE-Component-IRC>=5.07:irc/p5-POE-Component-IRC \
+		p5-POE-Component-Client-HTTP>=0.73:www/p5-POE-Component-Client-HTTP \
+		p5-XML-RSS>=1.1:textproc/p5-XML-RSS \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"

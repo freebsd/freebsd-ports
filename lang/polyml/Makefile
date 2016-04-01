@@ -14,7 +14,7 @@ COMMENT=	Fast open-source implementation of Standard ML
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libffi.so:devel/libffi
 
 ONLY_FOR_ARCHS=	i386 amd64
 

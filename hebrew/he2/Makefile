@@ -12,7 +12,7 @@ COMMENT=	Editor for editing (primarily LaTeX) Hebrew files
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	iw-elmar-fonts>0:${PORTSDIR}/hebrew/elmar-fonts
+RUN_DEPENDS=	iw-elmar-fonts>0:hebrew/elmar-fonts
 
 USES=		gmake ncurses
 GNU_CONFIGURE=	yes

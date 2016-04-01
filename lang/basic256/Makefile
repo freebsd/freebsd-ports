@@ -13,9 +13,9 @@ COMMENT=	Easy to use BASIC language and IDE for education
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	espeak:${PORTSDIR}/audio/espeak \
-		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	espeak:audio/espeak \
+		sqlite3:databases/sqlite3 \
+		flex:textproc/flex
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

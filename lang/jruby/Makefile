@@ -13,7 +13,7 @@ COMMENT=	Implementation of Ruby Interpreter in Pure Java
 LICENSE=	EPL GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe
 NO_BUILD=	yes

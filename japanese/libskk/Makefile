@@ -12,10 +12,10 @@ COMMENT=	Library to deal with Japanese Kana-to-Kanji conversion method
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06 \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+BUILD_DEPENDS=	valac:lang/vala \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser
+LIB_DEPENDS=	libgee.so:devel/libgee06 \
+		libjson-glib-1.0.so:devel/json-glib
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -31,19 +31,19 @@ LIBS+=		-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MANTHY}
-LIB_DEPENDS+=	libanthy.so:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS+=	libanthy.so:japanese/anthy
 .else
 CONFIGURE_ARGS+=	--disable-anthy
 .endif
 
 .if ${PORT_OPTIONS:MCANNA}
-LIB_DEPENDS+=	libRKC.so:${PORTSDIR}/japanese/canna-lib
+LIB_DEPENDS+=	libRKC.so:japanese/canna-lib
 .else
 CONFIGURE_ARGS+=	--disable-canna
 .endif
 
 .if ${PORT_OPTIONS:MWNN}
-LIB_DEPENDS+=	libwnn.so:${PORTSDIR}/japanese/FreeWnn-lib
+LIB_DEPENDS+=	libwnn.so:japanese/FreeWnn-lib
 .else
 CONFIGURE_ARGS+=	--disable-wnn
 .endif

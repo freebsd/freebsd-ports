@@ -13,7 +13,7 @@ COMMENT=	Berkeley DB Java Edition
 
 OPTIONS_DEFINE=	DOCS EXAMPLES TEST
 
-BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
+BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+

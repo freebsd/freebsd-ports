@@ -3,8 +3,8 @@
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=
 
-BUILD_DEPENDS+=	pypy:${PORTSDIR}/lang/pypy
-RUN_DEPENDS+=	pypy:${PORTSDIR}/lang/pypy
+BUILD_DEPENDS+=	pypy:lang/pypy
+RUN_DEPENDS+=	pypy:lang/pypy
 
 PLIST_FILES=	%%PYPY_DIR%%/lib_pypy/${CFFI_MODULE}_cffi.pypy-%%PYPY_CFFI_VER%%.so
 

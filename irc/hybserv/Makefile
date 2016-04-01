@@ -24,7 +24,7 @@ GROUPS=		${USERS}
 OPTIONS_DEFINE=		DAEMONTOOLS
 
 DAEMONTOOLS_DESC=		Daemontools support
-DAEMONTOOLS_RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools
+DAEMONTOOLS_RUN_DEPENDS=	supervise:sysutils/daemontools
 DAEMONTOOLS_CONFIGURE_ENABLE=	daemontools
 
 post-patch:

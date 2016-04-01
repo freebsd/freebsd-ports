@@ -10,8 +10,8 @@ MASTER_SITES=	SFJP/${PORTNAME}/24435
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Morphological Dictionary for ChaSen
 
-BUILD_DEPENDS=	chasen:${PORTSDIR}/japanese/chasen-base
-RUN_DEPENDS=	chasen:${PORTSDIR}/japanese/chasen-base
+BUILD_DEPENDS=	chasen:japanese/chasen-base
+RUN_DEPENDS=	chasen:japanese/chasen-base
 
 CONFIGURE_ARGS=	--with-dicdir=${PREFIX}/share/chasen/dic \
 		--with-chasenrc-path=${STAGEDIR}${PREFIX}/share/chasen/dic/ipadic

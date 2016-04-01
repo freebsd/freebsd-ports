@@ -20,7 +20,7 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	LOGCHARSET DOCS
 LOGCHARSET_DESC=	Character set for logfiles
-LOGCHARSET_RUN_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
+LOGCHARSET_RUN_DEPENDS=	p5-Text-Iconv>=0:converters/p5-Text-Iconv
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|lang.txt|${PREFIX}/share/pisg/lang.txt|; \

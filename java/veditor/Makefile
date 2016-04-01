@@ -13,15 +13,15 @@ EXTRACT_ONLY=
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Verilog and VHDL editor plugin for eclipse
 
-RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	eclipse:java/eclipse
 
 OPTIONS_DEFINE=	VERILOG VHDL
 VERILOG_DESC=	Support Verilog with Icarus Verilog
 VHDL_VHDL=	Support VHDL with FreeHDL
 OPTIONS_DEFAULT=	VERILOG VHDL
 
-VERILOG_RUN_DEPENDS=	iverilog:${PORTSDIR}/cad/iverilog
-VHDL_RUN_DEPENDS=	freehdl-v2cc:${PORTSDIR}/cad/freehdl
+VERILOG_RUN_DEPENDS=	iverilog:cad/iverilog
+VHDL_RUN_DEPENDS=	freehdl-v2cc:cad/freehdl
 
 PLIST_SUB=	VER=${PORTVERSION} \
 		ECLIPSE=${ECLIPSE}
