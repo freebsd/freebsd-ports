@@ -10,7 +10,7 @@ MASTER_SITES=	SUNSITE/apps/graphics/hacks/svgalib
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sinus plasma, an SVGAlib demo
 
-LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS=	libvga.so:graphics/svgalib
 
 ONLY_FOR_ARCHS=	i386
 

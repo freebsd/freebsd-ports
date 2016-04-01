@@ -12,9 +12,9 @@ COMMENT=	Create XHTML tables from SQL queries
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-HTML-TableExtract>=0:${PORTSDIR}/www/p5-HTML-TableExtract
+TEST_DEPENDS=	p5-HTML-TableExtract>=0:www/p5-HTML-TableExtract
 
 NO_ARCH=	yes
 USES=		perl5

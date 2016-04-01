@@ -12,7 +12,7 @@ COMMENT=	Library for property based testing
 
 LICENSE=	MPL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 USES=		python
 USE_PYTHON=	autoplist distutils

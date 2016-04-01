@@ -14,7 +14,7 @@ COMMENT=	Graphic development lightweight API
 LICENSE=	LGPL21
 
 BROKEN=		Does not fetch
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	FREETYPE X11 SDL UNIQUE TEST DOCS
 UNIQUE_DESC=	Unique (WM Module)
@@ -49,8 +49,8 @@ CONFIGURE_ARGS=	--disable-osx --disable-extra-warnings --disable-profiling \
 		--with-inputdrivers=all --with-smooth-scaling \
 		--with-dither-rgb16=advanced
 
-DOCS_BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
-FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
 X11_USE=	XORG=x11,xext,xproto
 X11_CONFIGURE_ENABLE=	--x11

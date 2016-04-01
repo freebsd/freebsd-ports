@@ -10,8 +10,8 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Ensures consistent *FEATURES* in Common Lisp
 
-BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:${PORTSDIR}/devel/cl-trivial-features
-RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:${PORTSDIR}/devel/cl-trivial-features
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:devel/cl-trivial-features
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:devel/cl-trivial-features
 
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl

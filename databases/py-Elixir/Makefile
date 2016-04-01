@@ -14,7 +14,7 @@ COMMENT=	Declarative Mapper for SQLAlchemy
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.4.0:${PORTSDIR}/databases/py-sqlalchemy06
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.4.0:databases/py-sqlalchemy06
 
 USES=		python
 USE_PYTHON=	distutils autoplist

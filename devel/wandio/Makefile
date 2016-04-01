@@ -33,9 +33,9 @@ HTTP_DESC=	Support for reading files over HTTP
 ZLIB_CONFIGURE_WITH=	zlib
 BZIP2_CONFIGURE_WITH=	bzip2
 LZO_CONFIGURE_WITH=	lzo
-LZO_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 LZMA_CONFIGURE_WITH=	lzma
 HTTP_CONFIGURE_WITH=	http
-HTTP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+HTTP_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 .include <bsd.port.mk>

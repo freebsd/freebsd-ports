@@ -13,8 +13,8 @@ COMMENT=	Organise and manage a collection of bzr branches
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
+BUILD_DEPENDS=	bzr:devel/bzr
+RUN_DEPENDS=	bzr:devel/bzr
 
 USES=		python
 USE_PYTHON=	distutils autoplist

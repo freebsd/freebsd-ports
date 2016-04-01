@@ -12,13 +12,13 @@ COMMENT=	Fast validating XML editor
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
-		libxslt.so:${PORTSDIR}/textproc/libxslt \
-		libaspell.so:${PORTSDIR}/textproc/aspell \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+LIB_DEPENDS=	libxerces-c.so.3:textproc/xerces-c3 \
+		libxslt.so:textproc/libxslt \
+		libaspell.so:textproc/aspell \
+		libpcre.so:devel/pcre \
+		libxml2.so:textproc/libxml2 \
+		libexpat.so:textproc/expat2
 
 USE_WX=		2.8+
 WX_COMPS=	wx contrib

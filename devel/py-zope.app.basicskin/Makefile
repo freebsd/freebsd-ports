@@ -13,9 +13,9 @@ COMMENT=	Zope ZMI Basic Skin
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.component \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}zope.publisher>=0:${PORTSDIR}/devel/py-zope.publisher
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:devel/py-zope.component \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}zope.publisher>=0:devel/py-zope.publisher
 
 USES=		python
 USE_PYTHON=	distutils autoplist

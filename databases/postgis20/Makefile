@@ -13,9 +13,9 @@ COMMENT=	Geographic objects support for PostgreSQL databases
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgeos.so:${PORTSDIR}/graphics/geos \
-		libjson-c.so:${PORTSDIR}/devel/json-c \
-		libproj.so:${PORTSDIR}/graphics/proj
+LIB_DEPENDS=	libgeos.so:graphics/geos \
+		libjson-c.so:devel/json-c \
+		libproj.so:graphics/proj
 
 CONFLICTS_INSTALL=	postgis-1.* postgis-2.1.*
 
@@ -57,7 +57,7 @@ NLS_CONFIGURE_WITH=	gettext
 NLS_USES=		gettext
 RASTER_CONFIGURE_OFF=	--without-raster
 RASTER_CONFIGURE_ON=	--with-gdalconfig=${LOCALBASE}/bin/gdal-config --with-raster
-RASTER_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+RASTER_LIB_DEPENDS=	libgdal.so:graphics/gdal
 TOPOLOGY_CONFIGURE_WITH=topology
 
 post-install:

@@ -24,9 +24,9 @@ OPTIONS_DEFAULT=	SVN
 GIT_DESC=	Git support
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-GIT_RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+GIT_RUN_DEPENDS=	git:devel/git
 GIT_CONFIGURE_ENABLE=	git
-SVN_LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
+SVN_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
 SVN_CONFIGURE_ENABLE=	subversion
 OPTIONS_SUB=	yes
 

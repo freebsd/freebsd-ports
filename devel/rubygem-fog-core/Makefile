@@ -12,9 +12,9 @@ COMMENT=	Shared classes and tests for fog providers and services
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-builder32>=0:${PORTSDIR}/devel/rubygem-builder32 \
-		rubygem-excon>=0.45:${PORTSDIR}/devel/rubygem-excon \
-		rubygem-formatador>=0.2:${PORTSDIR}/devel/rubygem-formatador
+RUN_DEPENDS=	rubygem-builder32>=0:devel/rubygem-builder32 \
+		rubygem-excon>=0.45:devel/rubygem-excon \
+		rubygem-formatador>=0.2:devel/rubygem-formatador
 
 NO_ARCH=	yes
 USE_RUBY=	yes

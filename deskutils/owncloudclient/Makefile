@@ -11,8 +11,8 @@ COMMENT=	OwnCloud Desktop Syncing Client
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify \
-		libqt5keychain.so:${PORTSDIR}/security/qtkeychain-qt5
+LIB_DEPENDS=	libinotify.so:devel/libinotify \
+		libqt5keychain.so:security/qtkeychain-qt5
 
 USES=		cmake:outsource compiler:c++11-lib gmake iconv localbase \
 		pkgconfig sqlite
@@ -31,7 +31,7 @@ GH_PROJECT=	client
 
 OPTIONS_DEFINE=		DEBUG DOCS
 
-DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 DOCS_USE=		tex=dvipsk:build,latex:build
 DOCS_CMAKE_ON=		-DWITH_DOC:BOOL=ON
 

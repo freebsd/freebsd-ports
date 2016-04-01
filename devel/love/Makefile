@@ -14,12 +14,12 @@ COMMENT=	Open-source 2D game engine
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug \
-		libmpg123.so:${PORTSDIR}/audio/mpg123 \
-		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libphysfs.so:${PORTSDIR}/devel/physfs \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
+		libmpg123.so:audio/mpg123 \
+		libvorbisfile.so:audio/libvorbis \
+		libphysfs.so:devel/physfs \
+		libfreetype.so:print/freetype2 \
+		libtheora.so:multimedia/libtheora
 
 USES=		compiler:c++11-lib desktop-file-utils gmake libtool \
 		localbase openal pkgconfig shared-mime-info
@@ -38,7 +38,7 @@ OPTIONS_DEFAULT_i386=	LUAJIT
 OPTIONS_DEFAULT_amd64=	LUAJIT
 
 LUAJIT_DESC=	Use luajit
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_CONFIGURE_ON=	--with-lua=luajit
 LUAJIT_USES_OFF=	lua
 LUAJIT_CONFIGURE_OFF=	--with-lua=lua \

@@ -12,9 +12,9 @@ COMMENT=	Python bindings for the remote Jenkins API
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.8.2:${PORTSDIR}/devel/py-pbr
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.8.2:${PORTSDIR}/devel/py-pbr \
-		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.8.2:devel/py-pbr
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.8.2:devel/py-pbr \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -12,7 +12,7 @@ COMMENT=	Convert PostScript to other vector graphic formats
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		ghostscript libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -29,18 +29,18 @@ OPTIONS_DEFAULT=	EMF MAGICK MING PLOTUTILS
 OPTIONS_SUB=		yes
 
 EMF_DESC=		WMF/EMF support via libEMF
-EMF_LIB_DEPENDS=	libEMF.so:${PORTSDIR}/graphics/libemf
+EMF_LIB_DEPENDS=	libEMF.so:graphics/libemf
 EMF_CONFIGURE_ON=	--with-libemf-include=${LOCALBASE}/include/libEMF
 EMF_CONFIGURE_OFF=	--without-emf
-MAGICK_LIB_DEPENDS=	libMagick++-6.so:${PORTSDIR}/graphics/ImageMagick
+MAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 MAGICK_CONFIGURE_ON=	--with-magick
 MAGICK_CONFIGURE_OFF=	--without-magick
 MING_DESC=		Flash support via Ming
-MING_LIB_DEPENDS=	libming.so:${PORTSDIR}/graphics/ming
+MING_LIB_DEPENDS=	libming.so:graphics/ming
 MING_CONFIGURE_ON=	--with-swf
 MING_CONFIGURE_OFF=	--without-swf
 PLOTUTILS_DESC=		Plotting support via Plotutils
-PLOTUTILS_LIB_DEPENDS=	libplotter.so:${PORTSDIR}/graphics/plotutils
+PLOTUTILS_LIB_DEPENDS=	libplotter.so:graphics/plotutils
 PLOTUTILS_CONFIGURE_ON=	--with-libplot
 PLOTUTILS_CONFIGURE_OFF=	--without-libplot
 

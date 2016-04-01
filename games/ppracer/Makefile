@@ -14,8 +14,8 @@ COMMENT=	3D downhill racing game... kind of like TuxRacer Improved
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 USES=		gmake pkgconfig dos2unix tar:bzip2
 DOS2UNIX_REGEX=	.*\.(c|cpp|h)

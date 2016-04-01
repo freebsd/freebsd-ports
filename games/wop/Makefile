@@ -16,7 +16,7 @@ COMMENT=	Free real-time Worms game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
+BUILD_DEPENDS=	makedepend:devel/makedepend
 
 USES=		tar:bzip2 gmake
 USE_SDL=	sdl net mixer ttf image

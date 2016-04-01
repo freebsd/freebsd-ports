@@ -11,10 +11,10 @@ COMMENT=	Network Visualization using 'vis.js' Library
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-htmlwidgets>0:${PORTSDIR}/www/R-cran-htmlwidgets \
-		R-cran-htmltools>0:${PORTSDIR}/textproc/R-cran-htmltools \
-		R-cran-jsonlite>0:${PORTSDIR}/converters/R-cran-jsonlite \
-		R-cran-magrittr>0:${PORTSDIR}/devel/R-cran-magrittr
+RUN_DEPENDS=	R-cran-htmlwidgets>0:www/R-cran-htmlwidgets \
+		R-cran-htmltools>0:textproc/R-cran-htmltools \
+		R-cran-jsonlite>0:converters/R-cran-jsonlite \
+		R-cran-magrittr>0:devel/R-cran-magrittr
 
 USES=	cran:auto-plist
 

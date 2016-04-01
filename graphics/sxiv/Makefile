@@ -11,8 +11,8 @@ COMMENT=	Lightweight image viewer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2 \
-		libexif.so:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
+		libexif.so:graphics/libexif
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	muennich

@@ -13,7 +13,7 @@ COMMENT=	Provides a wrapper to the GraphicsMagick library
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libGraphicsMagick.so:${PORTSDIR}/graphics/GraphicsMagick
+LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick
 
 USES=		tar:tgz
 

@@ -15,8 +15,8 @@ COMMENT=	PHP binding for GDAL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 
-BUILD_DEPENDS=	swig3.0:${PORTSDIR}/devel/swig30
-LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+BUILD_DEPENDS=	swig3.0:devel/swig30
+LIB_DEPENDS=	libgdal.so:graphics/gdal
 
 ALL_TARGET=	php_gdal.so php_gdalconst.so php_ogr.so php_osr.so
 CFLAGS+=	-fPIC

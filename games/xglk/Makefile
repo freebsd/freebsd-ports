@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Windows Implementation of the Glk API
 
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

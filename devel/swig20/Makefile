@@ -12,7 +12,7 @@ COMMENT=	Generate wrappers for calling C/C++ code from other languages
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake lua:51
 

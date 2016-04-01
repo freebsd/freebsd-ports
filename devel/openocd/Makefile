@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Open On-Chip Debugger
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-werror
@@ -279,17 +279,17 @@ CONFIGURE_ARGS+=	--disable-minidriver-dummy
 
 .if ${PORT_OPTIONS:MCMSISDAP}
 CONFIGURE_ARGS+=	--enable-cmsis-dap
-LIB_DEPENDS+=		libhidapi.so:${PORTSDIR}/comms/hidapi
+LIB_DEPENDS+=		libhidapi.so:comms/hidapi
 .else
 CONFIGURE_ARGS+=	--disable-cmsis-dap
 .endif
 
 .if defined(WITH_LIBFTDI)
-LIB_DEPENDS+=		libftdi.so:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=		libftdi.so:devel/libftdi
 .endif
 
 .if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=		doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=		doxygen:devel/doxygen
 .endif
 
 .include <bsd.port.mk>

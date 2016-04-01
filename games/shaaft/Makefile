@@ -11,7 +11,7 @@ DISTNAME=	Shaaft-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL 3D falling block game similar to Blockout
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 CONFLICTS=	criticalmass-*
 

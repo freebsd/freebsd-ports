@@ -11,8 +11,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generate interface introspection data for GObject libraries
 
 # we need cairo otherwise the generated Cairo gir is broken
-BUILD_DEPENDS=	cairo-trace:${PORTSDIR}/graphics/cairo
-LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+BUILD_DEPENDS=	cairo-trace:graphics/cairo
+LIB_DEPENDS=	libffi.so:devel/libffi
 
 PORTSCOUT=	limitw:1,even
 

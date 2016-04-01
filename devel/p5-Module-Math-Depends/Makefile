@@ -14,7 +14,7 @@ COMMENT=	Convenience object for manipulating module dependencies
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-Params-Util>=0:devel/p5-Params-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

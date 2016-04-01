@@ -54,9 +54,9 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Util \
 		Horde_View
 
-RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date
+RUN_DEPENDS+=	${PEARDIR}/Date.php:devel/pear-Date
 
-DATE_HOLIDAYS_RUN_DEPENDS=	${PEARDIR}/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
+DATE_HOLIDAYS_RUN_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays
 
 TIMEOBJECTS_USE=	HORDE_RUN=timeobjects
 XMLWRITER_USE=	PHP=xmlwriter

@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.caida.org/tools/visualization/cuttlefish/code/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plots diurnal and geographical patterns of supplied data
 
-RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		convert:${PORTSDIR}/graphics/ImageMagick \
-		gifsicle:${PORTSDIR}/graphics/gifsicle
+RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD \
+		convert:graphics/ImageMagick \
+		gifsicle:graphics/gifsicle
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

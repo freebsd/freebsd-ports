@@ -24,7 +24,7 @@ DESKTOP_ENTRIES="XScavenger" "" "" "scavenger" "" ""
 OPTIONS_DEFINE=		ALSA
 OPTIONS_DEFAULT=	ALSA
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CFLAGS_OFF=	-DNO_ALSA
 
 post-patch-ALSA-off:

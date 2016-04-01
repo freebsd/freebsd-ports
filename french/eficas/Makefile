@@ -10,9 +10,9 @@ COMMENT=	ASter Command FIle Editor
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Pmw>0:${PORTSDIR}/x11-toolkits/py-Pmw	\
-		${PYTHON_PKGNAMEPREFIX}mx-base>0:${PORTSDIR}/lang/py-mx-base		\
-		bash:${PORTSDIR}/shells/bash					\
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw	\
+		${PYTHON_PKGNAMEPREFIX}mx-base>0:lang/py-mx-base		\
+		bash:shells/bash					\
 		${PYNUMPY}
 
 USES=		shebangfix python
@@ -34,8 +34,8 @@ EF_LANG=	fr
 EF_LANG=	ang
 .endif
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui	\
-		xdg-open:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui	\
+		xdg-open:devel/xdg-utils
 
 FIXUBIN=	Openturns_Study/prefs_OPENTURNS_STUDY.py	\
 		Openturns_Wrapper/prefs_OPENTURNS_WRAPPER.py	\

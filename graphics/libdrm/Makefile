@@ -10,8 +10,8 @@ MASTER_SITES=	http://dri.freedesktop.org/libdrm/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
 
-LIB_DEPENDS=	libpciaccess.so:${PORTSDIR}/devel/libpciaccess \
-		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
+LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
+		libpthread-stubs.so:devel/libpthread-stubs
 
 USES=		libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
@@ -38,7 +38,7 @@ PLIST_SUB+=	KMS="@comment " NOUVEAU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 USE_GNOME+=	libxslt:build
 PLIST_SUB+=	MAN=""
 .else

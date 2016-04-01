@@ -13,8 +13,8 @@ COMMENT=	Perl extension for simple mock test library using RAII
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load
-RUN_DEPENDS=	p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load
+BUILD_DEPENDS=	p5-Class-Load>=0.06:devel/p5-Class-Load
+RUN_DEPENDS=	p5-Class-Load>=0.06:devel/p5-Class-Load
 
 USES=		perl5
 USE_PERL5=	modbuild

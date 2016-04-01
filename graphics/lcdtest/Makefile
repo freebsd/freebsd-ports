@@ -16,7 +16,7 @@ COMMENT=	LCD monitor test pattern generator
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	liberation-fonts-ttf>0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
+RUN_DEPENDS=	liberation-fonts-ttf>0:x11-fonts/liberation-fonts-ttf
 
 USE_SDL=	sdl image ttf
 

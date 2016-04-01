@@ -13,8 +13,8 @@ COMMENT=	Volume management daemon for the Xfce desktop
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
-		libkeybinder.so:${PORTSDIR}/x11/keybinder
+LIB_DEPENDS=	libnotify.so:devel/libnotify \
+		libkeybinder.so:x11/keybinder
 
 USES=		pkgconfig gmake xfce tar:bzip2
 GNU_CONFIGURE=	yes

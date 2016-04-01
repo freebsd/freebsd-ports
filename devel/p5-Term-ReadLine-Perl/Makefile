@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	anes@anes.su
 COMMENT=	Quick implementation of the minimal interface to Readline libraries
 
-BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
+BUILD_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure

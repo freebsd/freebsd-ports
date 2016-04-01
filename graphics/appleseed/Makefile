@@ -11,10 +11,10 @@ COMMENT=	Modern, physically-based production renderer
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libpng.so:graphics/png \
+		libIlmImf.so:graphics/OpenEXR \
+		libxerces-c.so:textproc/xerces-c3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}hq
@@ -51,11 +51,11 @@ DISNEY_DESC=	Disney material support
 EXAMPLES_CMAKE_OFF=	-DWITH_SAMPLES:BOOL=OFF
 
 OSL_CMAKE_ON=	-DWITH_OSL:BOOL=ON
-OSL_LIB_DEPENDS=	liboslexec.so:${PORTSDIR}/graphics/openshadinglanguage
+OSL_LIB_DEPENDS=	liboslexec.so:graphics/openshadinglanguage
 
 DISNEY_CMAKE_ON=	-DWITH_DISNEY_MATERIAL:BOOL=ON
-DISNEY_LIB_DEPENDS=	libOpenImageIO.so:${PORTSDIR}/graphics/openimageio \
-			libSeExprEditor.so:${PORTSDIR}/graphics/seexpr
+DISNEY_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
+			libSeExprEditor.so:graphics/seexpr
 
 post-patch:
 	@${RMDIR} ${WRKSRC}/sandbox/docs/api

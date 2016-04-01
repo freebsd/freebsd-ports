@@ -8,7 +8,7 @@ CATEGORIES=	databases python
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	PyPy bindings to the GNU dbm library
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 CFFI_NAME=	ffi
 

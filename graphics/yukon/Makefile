@@ -13,7 +13,7 @@ COMMENT=	Real-time capture tool for OpenGL applications
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libseom.so:${PORTSDIR}/graphics/seom
+LIB_DEPENDS=	libseom.so:graphics/seom
 
 USES=		gmake tar:bzip2
 USE_XORG=	x11 xv
@@ -31,7 +31,7 @@ PLIST_SUB+=	LIBGL_MAJOR="${LIBGL_MAJOR}" LIBX11_MAJOR="${LIBX11_MAJOR}"
 # To roll snapshot: as bms: make BOOTSTRAP=defined fetch
 #
 .if defined(BOOTSTRAP)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 SVN_REV=	158		# svn tip at epoch 2009120801
 SVNROOT_URI=	https://devel.neopsis.com/svn/yukon
 

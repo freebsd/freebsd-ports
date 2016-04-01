@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Library For Reading And Writing LAS-Format Data
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 LICENSE=	BSD2CLAUSE
 

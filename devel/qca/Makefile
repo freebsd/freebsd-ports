@@ -9,8 +9,8 @@ MASTER_SITES=	KDE/stable/qca/${PORTVERSION}/src
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform crypto API for Qt 4
 
-BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		cmake:outsource tar:xz
 CMAKE_ARGS=	-DBUILD_PLUGINS=none -DBUILD_TESTS=no \
@@ -35,13 +35,13 @@ OPTIONS_DEFAULT=GNUPG OPENSSL
 OPTIONS_SUB=	yes
 
 GNUPG_CMAKE_ON=		-DWITH_gnupg_PLUGIN=yes
-GNUPG_RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
+GNUPG_RUN_DEPENDS=	gpg2:security/gnupg
 
 OPENSSL_CMAKE_ON=	-DWITH_ossl_PLUGIN=yes
 OPENSSL_USE=		OPENSSL=yes
 
 SASL_CMAKE_ON=		-DWITH_cyrus-sasl_PLUGIN=yes
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 post-patch:
 # Qt Network module is used for tests only

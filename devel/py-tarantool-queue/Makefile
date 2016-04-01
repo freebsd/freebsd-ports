@@ -12,8 +12,8 @@ COMMENT=	Python bindings for Tarantool queue
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tarantool>=0:${PORTSDIR}/databases/py-tarantool \
-		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0:${PORTSDIR}/devel/py-msgpack-python
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tarantool>=0:databases/py-tarantool \
+		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0:devel/py-msgpack-python
 
 USES=		python
 USE_PYTHON=	distutils autoplist

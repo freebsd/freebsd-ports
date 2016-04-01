@@ -10,12 +10,12 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Code browser that augments the code with information
 
-BUILD_DEPENDS=	pear-Console_CommandLine>=1.1.3:${PORTSDIR}/devel/pear-Console_CommandLine \
-		pear-File_Iterator>=1.3.0:${PORTSDIR}/devel/pear-File_Iterator \
-		pear-Log>=1.2.1:${PORTSDIR}/sysutils/pear-Log
-RUN_DEPENDS=	pear-Console_CommandLine>=1.1.3:${PORTSDIR}/devel/pear-Console_CommandLine \
-		pear-File_Iterator>=1.3.0:${PORTSDIR}/devel/pear-File_Iterator \
-		pear-Log>=1.2.1:${PORTSDIR}/sysutils/pear-Log
+BUILD_DEPENDS=	pear-Console_CommandLine>=1.1.3:devel/pear-Console_CommandLine \
+		pear-File_Iterator>=1.3.0:devel/pear-File_Iterator \
+		pear-Log>=1.2.1:sysutils/pear-Log
+RUN_DEPENDS=	pear-Console_CommandLine>=1.1.3:devel/pear-Console_CommandLine \
+		pear-File_Iterator>=1.3.0:devel/pear-File_Iterator \
+		pear-Log>=1.2.1:sysutils/pear-Log
 
 USES=	pear
 USE_PHP=	dom

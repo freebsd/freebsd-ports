@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}-neutral${EXTRACT_SUFX} \
 MAINTAINER=	dds@FreeBSD.org
 COMMENT=	Source code analyzer and refactoring browser for C program collections
 
-LIB_DEPENDS+=	libc.so.6:${PORTSDIR}/misc/compat6x
+LIB_DEPENDS+=	libc.so.6:misc/compat6x
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64

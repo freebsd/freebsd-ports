@@ -25,11 +25,11 @@ OPTIONS_DEFAULT=JPEG PNG TIFF WEBP
 
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_ENABLE=	jpg
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_ENABLE=	png
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_ENABLE=	tif
-WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CONFIGURE_ENABLE=	webp
 
 post-install:

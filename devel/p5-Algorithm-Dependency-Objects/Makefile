@@ -14,9 +14,9 @@ COMMENT=	Implementation of an Object Dependency Algorithm
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Set-Object>=0:${PORTSDIR}/devel/p5-Set-Object
+BUILD_DEPENDS=	p5-Set-Object>=0:devel/p5-Set-Object
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
 USES=		perl5
 USE_PERL5=	configure

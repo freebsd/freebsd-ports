@@ -14,9 +14,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-GitDDL>=0.03:${PORTSDIR}/databases/p5-GitDDL \
-	p5-Mouse>0:${PORTSDIR}/devel/p5-Mouse \
-	p5-SQL-Translator>0:${PORTSDIR}/databases/p5-SQL-Translator
+	p5-GitDDL>=0.03:databases/p5-GitDDL \
+	p5-Mouse>0:devel/p5-Mouse \
+	p5-SQL-Translator>0:databases/p5-SQL-Translator
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

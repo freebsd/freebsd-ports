@@ -13,11 +13,11 @@ COMMENT=	Integrated LaTeX environment
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala \
-	itstool:${PORTSDIR}/textproc/itstool \
-	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
-	libgspell-1.so:${PORTSDIR}/textproc/gspell
+BUILD_DEPENDS=	valac:lang/vala \
+	itstool:textproc/itstool \
+	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
+	libgspell-1.so:textproc/gspell
 
 USES=	compiler:c11 desktop-file-utils gettext-tools gmake pkgconfig \
 	tar:xz

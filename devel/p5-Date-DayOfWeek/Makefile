@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Determine the day of the week for any date
 
-BUILD_DEPENDS=	p5-Date-Leapyear>=0:${PORTSDIR}/devel/p5-Date-Leapyear \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	p5-Date-Leapyear>=0:devel/p5-Date-Leapyear \
+		p5-Test-Simple>=0:devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

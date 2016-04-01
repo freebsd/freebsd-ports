@@ -3,8 +3,8 @@
 
 PORTREVISION=	0
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc:${PORTSDIR}/devel/glibmm \
-		gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc:devel/glibmm \
+		gm4:devel/m4
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig

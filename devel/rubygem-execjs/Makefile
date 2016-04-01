@@ -11,7 +11,7 @@ COMMENT=	ExecJS lets you run JavaScript code from Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	node:${PORTSDIR}/www/node
+RUN_DEPENDS=	node:www/node
 
 NO_ARCH=	yes
 

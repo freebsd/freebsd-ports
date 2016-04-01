@@ -13,7 +13,7 @@ COMMENT=	Helper functions for op tree manipulation
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.301:${PORTSDIR}/devel/p5-ExtUtils-Depends
+BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.301:devel/p5-ExtUtils-Depends
 
 USES=		perl5
 USE_PERL5=	configure

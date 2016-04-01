@@ -12,7 +12,7 @@ COMMENT=	Partial Extensible Provisioning Protocol to .br domains
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
+LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 
 USES=		gmake
 USE_OPENSSL=	yes

@@ -12,7 +12,7 @@ COMMENT=	POSIX Ada binding, IEEE Standards 1003.5(b,c)
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild
+BUILD_DEPENDS=	gprbuild:devel/gprbuild
 
 USES=		ada gmake
 GNU_CONFIGURE=	yes

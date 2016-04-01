@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate massive sorted CDB files simply
 
-BUILD_DEPENDS=	cdbmake:${PORTSDIR}/databases/cdb \
-		p5-CDB_File>=0:${PORTSDIR}/databases/p5-CDB_File
+BUILD_DEPENDS=	cdbmake:databases/cdb \
+		p5-CDB_File>=0:databases/p5-CDB_File
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

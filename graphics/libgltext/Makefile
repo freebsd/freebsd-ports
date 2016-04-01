@@ -11,7 +11,7 @@ DISTNAME=	gltext-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable font rendering library for C++
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		gmake libtool
 USE_GL=		glu

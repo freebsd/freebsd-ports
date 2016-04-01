@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	fbsd@grid.einherjar.de
 COMMENT=	Python bindings for Internationalized Domain Name toolkit 2
 
-LIB_DEPENDS=	libidnkitlite.so:${PORTSDIR}/dns/idnkit2
+LIB_DEPENDS=	libidnkitlite.so:dns/idnkit2
 
 USES=		python:2 tar:bzip2
 USE_PYTHON=	distutils autoplist

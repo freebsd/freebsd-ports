@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Time::Piece::Range - deal with a range of Time::Piece objects
 
-BUILD_DEPENDS=	p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece \
-		p5-Date-Range>=0:${PORTSDIR}/devel/p5-Date-Range
+BUILD_DEPENDS=	p5-Time-Piece>=0:devel/p5-Time-Piece \
+		p5-Date-Range>=0:devel/p5-Date-Range
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

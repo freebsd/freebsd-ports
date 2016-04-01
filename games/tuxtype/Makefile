@@ -18,7 +18,7 @@ BROKEN=		unfetchable
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
+BUILD_DEPENDS=	gsed:textproc/gsed
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_w_fonts-${PORTVERSION}
 

@@ -20,13 +20,13 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_FILE_CCbyNCSA3=${WRKSRC}/licenses/CC-BY-SA-3.0.txt
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libaldmb.a:${PORTSDIR}/audio/dumb-allegro \
-		${LOCALBASE}/include/alfont.h:${PORTSDIR}/x11-fonts/alfont \
-		alureplay:${PORTSDIR}/audio/alure
-LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
-RUN_DEPENDS=	${LOCALBASE}/lib/libaldmb.a:${PORTSDIR}/audio/dumb-allegro
+BUILD_DEPENDS=	${LOCALBASE}/lib/libaldmb.a:audio/dumb-allegro \
+		${LOCALBASE}/include/alfont.h:x11-fonts/alfont \
+		alureplay:audio/alure
+LIB_DEPENDS=	liballeg.so:devel/allegro \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis
+RUN_DEPENDS=	${LOCALBASE}/lib/libaldmb.a:audio/dumb-allegro
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-build${SVN_REV}
 

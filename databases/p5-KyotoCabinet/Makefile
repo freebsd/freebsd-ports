@@ -14,7 +14,7 @@ COMMENT=	Perl extension for KyotoCabinet
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libkyotocabinet.so:${PORTSDIR}/databases/kyotocabinet
+LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

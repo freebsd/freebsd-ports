@@ -11,9 +11,9 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Gtk+ frontend for UniConvertor
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:${PORTSDIR}/graphics/sk1libs \
-		${PYTHON_SITELIBDIR}/uniconvertor/__init__.py:${PORTSDIR}/graphics/uniconvertor \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:graphics/sk1libs \
+		${PYTHON_SITELIBDIR}/uniconvertor/__init__.py:graphics/uniconvertor \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2
 
 PROJECTHOST=	uniconvertor
 

@@ -13,10 +13,10 @@ COMMENT=	Fast and scalable library for XMPP written in Erlang/OTP
 
 LICENSE=	EPL
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS=	erlc:lang/erlang
+RUN_DEPENDS=	erl:lang/erlang
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libxml2.so:textproc/libxml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	processone

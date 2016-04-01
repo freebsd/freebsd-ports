@@ -10,13 +10,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	First boot setup tool for GNOME 3
 
-BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		gdm>=3.0.0:${PORTSDIR}/x11/gdm
-LIB_DEPENDS=	libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
-		libaccountsservice.so:${PORTSDIR}/sysutils/accountsservice \
-		libpwquality.so:${PORTSDIR}/security/libpwquality \
-		libgweather-3.so:${PORTSDIR}/net/libgweather
-RUN_DEPENDS=	gdm>=3.0.0:${PORTSDIR}/x11/gdm
+BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common \
+		gdm>=3.0.0:x11/gdm
+LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
+		libaccountsservice.so:sysutils/accountsservice \
+		libpwquality.so:security/libpwquality \
+		libgweather-3.so:net/libgweather
+RUN_DEPENDS=	gdm>=3.0.0:x11/gdm
 
 PORTSCOUT=	limitw:1,even
 

@@ -11,8 +11,8 @@ COMMENT=	Ruby FFI library
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-ffi>=1.0.0:${PORTSDIR}/devel/rubygem-ffi \
-		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
+RUN_DEPENDS=	rubygem-ffi>=1.0.0:devel/rubygem-ffi \
+		rubygem-rake>=0:devel/rubygem-rake
 
 NO_ARCH=	yes
 USE_RUBY=	yes

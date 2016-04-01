@@ -13,7 +13,7 @@ COMMENT=	IPC::Run - Run subprocesses with piping and redirection
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty
+BUILD_DEPENDS=	p5-IO-Tty>=1.08:devel/p5-IO-Tty
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -13,7 +13,7 @@ COMMENT=	Software for hosting mercurial repositories
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial
+RUN_DEPENDS=	hg:devel/mercurial
 
 WRKSRC=		${WRKDIR}/${SNAME}_${SVERSION}.orig
 SNAME=		mercurial-server

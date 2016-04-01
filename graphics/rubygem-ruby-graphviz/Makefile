@@ -11,7 +11,7 @@ COMMENT=	Ruby Interface to the GraphViz Graphing Tool
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gxl2dot:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS=	${LOCALBASE}/bin/gxl2dot:graphics/graphviz
 
 NO_ARCH=	yes
 

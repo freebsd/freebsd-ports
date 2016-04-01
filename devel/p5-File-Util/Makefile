@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jeffhung@mail2000.com.tw
 COMMENT=	Perl5 module for easy, versatile, portable file handling
 
-RUN_DEPENDS=	p5-Class-OOorNO>=0.01:${PORTSDIR}/devel/p5-Class-OOorNO \
-		p5-Exception-Handler>=1:${PORTSDIR}/devel/p5-Exception-Handler
+RUN_DEPENDS=	p5-Class-OOorNO>=0.01:devel/p5-Class-OOorNO \
+		p5-Exception-Handler>=1:devel/p5-Exception-Handler
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

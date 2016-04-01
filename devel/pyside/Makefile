@@ -14,9 +14,9 @@ COMMENT=	Python bindings for the Qt applications and UI framework
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libapiextractor.so:${PORTSDIR}/devel/apiextractor \
-		libgenrunner.so:${PORTSDIR}/devel/generatorrunner \
-		libshiboken-${PYTHON_VERSION}.so:${PORTSDIR}/devel/shiboken
+LIB_DEPENDS=	libapiextractor.so:devel/apiextractor \
+		libgenrunner.so:devel/generatorrunner \
+		libshiboken-${PYTHON_VERSION}.so:devel/shiboken
 
 CMAKE_ARGS+=	-DGL_H:FILEPATH="${LOCALBASE}/include/GL/gl.h" \
 		-DGL_INCLUDE_DIR:FILEPATH="${LOCALBASE}/include"

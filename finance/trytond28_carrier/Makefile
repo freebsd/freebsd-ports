@@ -14,8 +14,8 @@ COMMENT=	Tryton Application Platform (Carrier Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_party>=2.8.0:${PORTSDIR}/finance/trytond28_party \
-		trytond28_product>=2.8.0:${PORTSDIR}/finance/trytond28_product
+RUN_DEPENDS=	trytond28_party>=2.8.0:finance/trytond28_party \
+		trytond28_product>=2.8.0:finance/trytond28_product
 
 CONFLICTS=	trytond_carrier-2.[46].*
 

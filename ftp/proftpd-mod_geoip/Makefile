@@ -10,7 +10,7 @@ COMMENT=	GeoIP ProFTPD module
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 DESCR=		${.CURDIR}/pkg-descr
 

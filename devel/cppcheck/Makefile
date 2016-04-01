@@ -12,7 +12,7 @@ COMMENT=	Static analysis of C/C++ code
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libtinyxml2.so:${PORTSDIR}/textproc/tinyxml2
+LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 
 USES=		compiler:c++11-lib execinfo gmake tar:bzip2
 USE_CXXSTD=	c++11
@@ -32,15 +32,15 @@ MATCHCOMPILER_DESC=	Build-time optimizations via Python
 RULES_DESC=		User-defined rule support (requires PCRE)
 
 MANPAGES_ALL_TARGET=	man
-MANPAGES_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 MANPAGES_MAKE_ENV=	DB2MAN="${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl"
 MANPAGES_PLIST_FILES=	man/man1/cppcheck.1.gz
 
 MATCHCOMPILER_MAKE_ENV=	SRCDIR=build
 MATCHCOMPILER_USES=	python:2,build
 
-RULES_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+RULES_LIB_DEPENDS=	libpcre.so:devel/pcre
 RULES_MAKE_ENV=		HAVE_RULES=yes
 
 post-patch:

@@ -12,8 +12,8 @@ COMMENT=	Simple PEAR channel server manager
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PEARDIR}/.channels/pear.pirum-project.org.reg:${PORTSDIR}/devel/pear-channel-pirum
-RUN_DEPENDS=	${PEARDIR}/.channels/pear.pirum-project.org.reg:${PORTSDIR}/devel/pear-channel-pirum
+BUILD_DEPENDS=	${PEARDIR}/.channels/pear.pirum-project.org.reg:devel/pear-channel-pirum
+RUN_DEPENDS=	${PEARDIR}/.channels/pear.pirum-project.org.reg:devel/pear-channel-pirum
 
 PEAR_CHANNEL=	pirum
 USES=	pear

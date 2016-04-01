@@ -13,9 +13,9 @@ COMMENT=	Handling of internationalized status messages for Zope
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.annotation>=0:${PORTSDIR}/devel/py-zope.annotation \
-		${PYTHON_PKGNAMEPREFIX}zope.i18n>=0:${PORTSDIR}/devel/py-zope.i18n \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.annotation>=0:devel/py-zope.annotation \
+		${PYTHON_PKGNAMEPREFIX}zope.i18n>=0:devel/py-zope.i18n \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	VCP source driver for bk exported cvs repository
 
-BUILD_DEPENDS=	p5-VCP-autrijus>=0:${PORTSDIR}/devel/p5-VCP-autrijus \
-		p5-Module-Install>0:${PORTSDIR}/devel/p5-Module-Install
+BUILD_DEPENDS=	p5-VCP-autrijus>=0:devel/p5-VCP-autrijus \
+		p5-Module-Install>0:devel/p5-Module-Install
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

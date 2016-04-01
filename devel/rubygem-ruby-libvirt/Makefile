@@ -11,7 +11,7 @@ COMMENT=	Ruby bindings for libvirt
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS=	libvirt.so:devel/libvirt
 
 USES=		pkgconfig
 

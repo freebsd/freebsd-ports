@@ -15,8 +15,8 @@ COMMENT=	F/OSS Massively Multiplayer On-line Role-playing Game (MMORPG)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../../License
 
-LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libphysfs.so:devel/physfs \
+		libcurl.so:ftp/curl
 
 USES=		autoreconf
 GNU_CONFIGURE=	yes
@@ -46,7 +46,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-wrapper.c
 .endif
 
 .if ${PORT_OPTIONS:MMUSIC}
-RUN_DEPENDS+=	${DATADIR}/media/AnichGiantTrouble.ogg:${PORTSDIR}/games/daimonin-music
+RUN_DEPENDS+=	${DATADIR}/media/AnichGiantTrouble.ogg:games/daimonin-music
 .endif
 
 pre-patch:

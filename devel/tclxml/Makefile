@@ -12,8 +12,8 @@ COMMENT=	API for parsing XML documents using Tcl
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt
-RUN_DEPENDS?=	dtplite:${PORTSDIR}/devel/tcllib
+LIB_DEPENDS=	libxslt.so:textproc/libxslt
+RUN_DEPENDS?=	dtplite:devel/tcllib
 
 PORTDOCS=	README.xml html.xsl man.macros nroff.xsl tcldoc-1.0.dtd \
 		tcldom.html tcldom.xml tclxml.css tclxml.html tclxml.xml \

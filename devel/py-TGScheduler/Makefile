@@ -12,8 +12,8 @@ COMMENT=	Turbogears Scheduler
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six
 
 USES=		python
 USE_PYTHON=	autoplist distutils

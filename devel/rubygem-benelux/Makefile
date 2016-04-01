@@ -11,8 +11,8 @@ COMMENT=	Mad way to time Ruby codes
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-attic>=0.5.3:${PORTSDIR}/devel/rubygem-attic \
-		rubygem-storable>=0.8.6:${PORTSDIR}/devel/rubygem-storable
+RUN_DEPENDS=	rubygem-attic>=0.5.3:devel/rubygem-attic \
+		rubygem-storable>=0.8.6:devel/rubygem-storable
 
 NO_ARCH=	yes
 USE_RUBY=	yes

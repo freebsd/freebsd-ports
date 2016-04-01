@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Programs to make using DNS easier
 
-LIB_DEPENDS=	libexplain.so:${PORTSDIR}/devel/libexplain
+LIB_DEPENDS=	libexplain.so:devel/libexplain
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all sure

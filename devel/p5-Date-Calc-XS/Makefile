@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	XS wrapper and C library plug-in for Date::Calc
 
-BUILD_DEPENDS=	p5-Date-Calc>=6.4:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-Bit-Vector>=7.4:${PORTSDIR}/math/p5-Bit-Vector \
-		p5-Carp-Clan>=5.3:${PORTSDIR}/devel/p5-Carp-Clan
+BUILD_DEPENDS=	p5-Date-Calc>=6.4:devel/p5-Date-Calc \
+		p5-Bit-Vector>=7.4:math/p5-Bit-Vector \
+		p5-Carp-Clan>=5.3:devel/p5-Carp-Clan
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

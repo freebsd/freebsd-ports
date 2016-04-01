@@ -13,9 +13,9 @@ COMMENT=	Tryton Application Platform (Account Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28>=2.8.2:${PORTSDIR}/finance/trytond28 \
-		trytond28_company>=2.8.0:${PORTSDIR}/finance/trytond28_company \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil
+RUN_DEPENDS=	trytond28>=2.8.2:finance/trytond28 \
+		trytond28_company>=2.8.0:finance/trytond28_company \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil
 
 CONFLICTS=	trytond_account-2.[46].*
 

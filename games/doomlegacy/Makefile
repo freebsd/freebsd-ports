@@ -32,7 +32,7 @@ OPTIONS_DEFINE+=	IPX
 IPX_DESC=	IPX protocol support
 .endif
 
-ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+ASM_BUILD_DEPENDS=	nasm:devel/nasm
 ASM_MAKE_ENV=		USEASM=1 OLD_DEPENDENCIES=1
 
 .include <bsd.port.options.mk>

@@ -10,7 +10,7 @@ DISTNAME=	Visual_Paradigm_CE_${PORTVERSION:C/\./_/g}_Unix_InstallFree
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Visual modeling tool for all kinds of UML diagrams
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libsqlitejdbc.so:${PORTSDIR}/java/sqlitejdbc
+RUN_DEPENDS=	${LOCALBASE}/lib/libsqlitejdbc.so:java/sqlitejdbc
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+

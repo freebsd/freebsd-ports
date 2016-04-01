@@ -12,8 +12,8 @@ COMMENT=	Library of image understanding-related algorithms
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 OPTIONS_DEFINE=	SDL VIDIO
 SDL_DESC=	Enable SDL for graphical debugging
@@ -37,7 +37,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVIDIO}
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 .endif
 
 post-patch:

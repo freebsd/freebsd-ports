@@ -23,7 +23,7 @@ LICENSE_NAME_BuildLic=	Build source code license
 LICENSE_FILE_BuildLic=	${WRKSRC}/jfbuild/buildlic.txt
 LICENSE_PERMS_BuildLic=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
 JFSW_COMMIT=	5cff6a81708ff053b569ba4400fba073afe207fe
 JFBUILD_COMMIT=	a73583184aca466cebde152db2ce1020591d7049

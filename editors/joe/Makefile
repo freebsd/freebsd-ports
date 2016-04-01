@@ -12,8 +12,8 @@ COMMENT=	Joe's Own Editor
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
-RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+BUILD_DEPENDS=	aspell:textproc/aspell
+RUN_DEPENDS=	aspell:textproc/aspell
 
 OPTIONS_DEFINE=	DOCS
 

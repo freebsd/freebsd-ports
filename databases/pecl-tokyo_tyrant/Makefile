@@ -13,7 +13,7 @@ COMMENT=	Wrapper to the Tokyo Tyrant client library
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libtokyotyrant.so:${PORTSDIR}/databases/tokyotyrant
+LIB_DEPENDS=	libtokyotyrant.so:databases/tokyotyrant
 
 USES=		pkgconfig tar:tgz
 USE_PHP=	session

@@ -12,8 +12,8 @@ COMMENT=	Tcl interface to the D-Bus messaging system
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
-BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
+BUILD_DEPENDS=	dtplite:devel/tcllib
 
 OPTIONS_DEFINE=	DOCS
 DOCSDIR=	${PREFIX}/share/doc/dbus

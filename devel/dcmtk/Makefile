@@ -10,8 +10,8 @@ MASTER_SITES=	ftp://dicom.offis.de/pub/dicom/offis/software/${PORTNAME}/${PORTNA
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit to work with DICOM objects
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libpng.so:graphics/png
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Simple set of building blocks for both unit and runtime testing
 
-RUN_DEPENDS=	p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace
+RUN_DEPENDS=	p5-Log-Trace>0:devel/p5-Log-Trace
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

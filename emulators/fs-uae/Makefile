@@ -13,8 +13,8 @@ COMMENT=	Amiga emulator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libopenal.so:${PORTSDIR}/audio/openal-soft
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libopenal.so:audio/openal-soft
 
 USES=		gettext gmake pkgconfig
 USE_SDL=	sdl

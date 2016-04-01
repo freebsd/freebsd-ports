@@ -12,8 +12,8 @@ COMMENT=	Persistent key-value store for fast storage environments
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags \
-		libsnappy.so:${PORTSDIR}/archivers/snappy
+LIB_DEPENDS=	libgflags.so:devel/gflags \
+		libsnappy.so:archivers/snappy
 
 OPTIONS_DEFINE=	DEBUG
 

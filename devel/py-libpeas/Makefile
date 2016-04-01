@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	libpeas Python 2 support
 
-LIB_DEPENDS+=	libpeas-1.0.so:${PORTSDIR}/devel/libpeas
+LIB_DEPENDS+=	libpeas-1.0.so:devel/libpeas
 
 LIBPEAS_SLAVE=	python2
 

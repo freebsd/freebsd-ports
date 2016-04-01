@@ -16,7 +16,7 @@ COMMENT=	Improved NQ engine with ZQuake and FuhQuake graphical effects
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/src
 

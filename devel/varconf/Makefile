@@ -10,7 +10,7 @@ MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28config%20lib%29/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Configuration System for the STAGE Server
 
-LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20
+LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20
 
 OPTIONS_DEFINE=	DOCS
 

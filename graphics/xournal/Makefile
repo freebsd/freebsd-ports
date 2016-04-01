@@ -12,7 +12,7 @@ COMMENT=	Notetaking application that can annotate PDFs
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 
 USES=		pkgconfig desktop-file-utils shared-mime-info
 USE_GNOME=	libgnomecanvas

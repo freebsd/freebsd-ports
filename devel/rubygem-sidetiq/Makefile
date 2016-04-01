@@ -13,9 +13,9 @@ COMMENT=	Recurring jobs for Sidekiq
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-celluloid>=0.17.3:${PORTSDIR}/devel/rubygem-celluloid \
-		rubygem-ice_cube>=0.13.2:${PORTSDIR}/devel/rubygem-ice_cube \
-		rubygem-sidekiq>=4.0.0:${PORTSDIR}/devel/rubygem-sidekiq
+RUN_DEPENDS=	rubygem-celluloid>=0.17.3:devel/rubygem-celluloid \
+		rubygem-ice_cube>=0.13.2:devel/rubygem-ice_cube \
+		rubygem-sidekiq>=4.0.0:devel/rubygem-sidekiq
 
 NO_ARCH=	yes
 USE_RUBY=	yes

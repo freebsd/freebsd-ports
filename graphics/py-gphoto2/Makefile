@@ -12,7 +12,7 @@ COMMENT=	Python bindings for libgphoto2
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 
 USES=		pkgconfig python
 USE_PYTHON=	autoplist concurrent distutils

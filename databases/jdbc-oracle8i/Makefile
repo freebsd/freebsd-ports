@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${CLASSES}${EXTRACT_SUFX} ${PATCH_FILE}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The JDBC drivers for Oracle 8i
 
-PATCH_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip
+PATCH_DEPENDS=	${LOCALBASE}/bin/zip:archivers/zip
 
 RESTRICTED=	Must be downloaded direct from Oracle via www interface
 

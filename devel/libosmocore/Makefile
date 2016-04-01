@@ -12,7 +12,7 @@ COMMENT=	Common library for all Osmocom projects
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USES=		alias autoreconf execinfo gmake libtool pathfix pkgconfig
 PATHFIX_MAKEFILEIN=Makefile.am
@@ -23,8 +23,8 @@ INSTALL_TARGET=	install-strip
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOXYGEN
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
-			dot:${PORTSDIR}/graphics/graphviz
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			dot:graphics/graphviz
 DOXYGEN_CONFIGURE_ENV_OFF=ac_cv_path_DOXYGEN=false
 
 post-patch:

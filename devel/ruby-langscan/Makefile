@@ -13,8 +13,8 @@ COMMENT=	Program analyzer for source code search engine
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-PPI>=0:${PORTSDIR}/textproc/p5-PPI
-BUILD_DEPENDS=	flex>=2.5.31:${PORTSDIR}/textproc/flex
+RUN_DEPENDS=	p5-PPI>=0:textproc/p5-PPI
+BUILD_DEPENDS=	flex>=2.5.31:textproc/flex
 
 BROKEN_RUBY21=	yes
 BROKEN_RUBY22=	yes

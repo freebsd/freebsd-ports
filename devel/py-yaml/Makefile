@@ -33,7 +33,7 @@ PYDISTUTILS_SETUP+=		--with-libyaml
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS+=		--include-dirs=${LOCALBASE}/include \
 				--library-dirs=${LOCALBASE}/lib
-LIB_DEPENDS+=			libyaml.so:${PORTSDIR}/textproc/libyaml
+LIB_DEPENDS+=			libyaml.so:textproc/libyaml
 .else
 PYDISTUTILS_SETUP+=		--without-libyaml
 .endif

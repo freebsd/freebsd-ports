@@ -13,9 +13,9 @@ COMMENT=	Extend your attribute interfaces
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-Moose>=0.56:devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 DEPRECATED=	Functionality is now a part of p5-Moose (Moose::Meta::Attribute::Native). Do not use for new projects
 

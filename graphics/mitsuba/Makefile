@@ -12,12 +12,12 @@ COMMENT=	Research-oriented physically based rendering system
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:${PORTSDIR}/math/eigen3
-LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
-		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
-		libfftw3.so:${PORTSDIR}/math/fftw3
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libpng.so:graphics/png \
+		libIlmImf.so:graphics/OpenEXR \
+		libxerces-c.so:textproc/xerces-c3 \
+		libfftw3.so:math/fftw3
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions

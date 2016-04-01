@@ -12,8 +12,8 @@ COMMENT=	Library for synced document buffers
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libnet6.so:${PORTSDIR}/net/net6
+LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
+		libnet6.so:net/net6
 
 USES=		pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes

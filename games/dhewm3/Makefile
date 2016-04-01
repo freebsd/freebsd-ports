@@ -12,9 +12,9 @@ COMMENT=	Doom 3 GPL source port
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../COPYING.txt
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dhewm

@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Drawing program for X11
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
-RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libXaw3d.so:x11-toolkits/Xaw3d
+RUN_DEPENDS=	fig2dev:print/transfig
 
 CONFLICTS=	xfig-[12].* xfig-3.1* xfig-3.2.[1234]*
 

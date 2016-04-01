@@ -13,7 +13,7 @@ MAINTAINER=	devel@stasyan.com
 COMMENT=	Graphical VRML97 editor and animation tool
 
 BROKEN=		unfetchable
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 LICENSE=	GPLv2
 

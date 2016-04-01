@@ -13,9 +13,9 @@ COMMENT=	Perl extension for a front-end to gnuplot, XRT, and Xmgrace
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		xmgrace:${PORTSDIR}/math/grace \
-		ppmtogif:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	gnuplot:math/gnuplot \
+		xmgrace:math/grace \
+		ppmtogif:graphics/netpbm
 
 USES=		perl5
 USE_PERL5=	configure

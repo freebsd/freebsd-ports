@@ -15,8 +15,8 @@ COMMENT=	Traditional Chinese Calendar Implementation
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DateTime-Event-Chinese>=1.00:${PORTSDIR}/devel/p5-DateTime-Event-Chinese
-RUN_DEPENDS=	p5-DateTime-Event-Chinese>=1.00:${PORTSDIR}/devel/p5-DateTime-Event-Chinese
+BUILD_DEPENDS=	p5-DateTime-Event-Chinese>=1.00:devel/p5-DateTime-Event-Chinese
+RUN_DEPENDS=	p5-DateTime-Event-Chinese>=1.00:devel/p5-DateTime-Event-Chinese
 
 USES=		perl5
 USE_PERL5=	configure

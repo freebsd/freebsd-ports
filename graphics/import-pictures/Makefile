@@ -15,9 +15,9 @@ BROKEN=		unfetchable
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
-		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
-		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
+RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool \
+		p5-TimeDate>=0:devel/p5-TimeDate \
+		p5-Time-modules>=0:devel/p5-Time-modules
 
 USES=		gmake perl5 shebangfix tar:bzip2
 NO_ARCH=	yes

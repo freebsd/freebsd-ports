@@ -19,9 +19,9 @@ USE_XORG=	ice
 USE_GNOME=	glib20
 USES=		gettext iconv pkgconfig
 
-LIB_DEPENDS+=	libicui18n.so:${PORTSDIR}/devel/icu \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libdsk.so:${PORTSDIR}/emulators/libdsk
+LIB_DEPENDS+=	libicui18n.so:devel/icu \
+		libpcre.so:devel/pcre \
+		libdsk.so:emulators/libdsk
 
 OPTIONS_DEFINE=	MOTIF ATHENA XSHM DEBUG
 OPTIONS_DEFAULT=	MOTIF XSHM
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=--without-motif1
 .endif
 
 .if ${PORT_OPTIONS:MATHENA}
-LIB_DEPENDS+=	libXaw.so:${PORTSDIR}/x11-toolkits/libXaw
+LIB_DEPENDS+=	libXaw.so:x11-toolkits/libXaw
 CONFIGURE_ARGS+=--with-athena
 .else
 CONFIGURE_ARGS+=--without-athena

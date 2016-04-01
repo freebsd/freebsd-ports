@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Reimplementation of the classic Bullfrog game Syndicate
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cmake
 USE_SDL=	sdl image mixer

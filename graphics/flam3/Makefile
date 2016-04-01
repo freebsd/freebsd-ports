@@ -11,8 +11,8 @@ MASTER_SITES=	http://flam3.com/ \
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	Flame Renderer
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libxml2.so:textproc/libxml2
 
 GNU_CONFIGURE=	yes
 USES=		gmake jpeg libtool pathfix pkgconfig

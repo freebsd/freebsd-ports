@@ -8,8 +8,8 @@ CATEGORIES=	games
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Skill monitoring standalone application for EVE Online
 
-LIB_DEPENDS=	libgtkmm-3.0.so:${PORTSDIR}/x11-toolkits/gtkmm30 \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libgtkmm-3.0.so:x11-toolkits/gtkmm30 \
+		libcurl.so:ftp/curl
 
 USE_GITHUB=     yes
 GH_TAGNAME=     ac2ca34

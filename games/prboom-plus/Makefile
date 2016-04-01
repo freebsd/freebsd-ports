@@ -12,8 +12,8 @@ COMMENT=	Fork of the prboom Doom game engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg \
-		libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg \
+		libpng.so:graphics/png
 
 USES=		gmake
 USE_SDL=	mixer net sdl

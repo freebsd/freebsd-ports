@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-23jul2003
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 GUI for the bochs debugger (revision 2)
 
-RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs
+RUN_DEPENDS=	bochs:emulators/bochs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

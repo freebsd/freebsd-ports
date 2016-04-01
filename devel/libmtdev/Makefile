@@ -12,8 +12,8 @@ COMMENT=	Multitouch Protocol Translation Library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
-RUN_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	v4l_compat>=1.0.20110603:multimedia/v4l_compat
+RUN_DEPENDS=	v4l_compat>=1.0.20110603:multimedia/v4l_compat
 
 USES=		libtool pathfix tar:bz2
 GNU_CONFIGURE=	yes

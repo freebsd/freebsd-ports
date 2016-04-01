@@ -13,7 +13,7 @@ COMMENT=	MySQL DataStore implementation for GeoServer
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${LOCALBASE}/geoserver/start.jar:${PORTSDIR}/graphics/geoserver
+RUN_DEPENDS=	${LOCALBASE}/geoserver/start.jar:graphics/geoserver
 
 USES=		zip
 NO_BUILD=	yes

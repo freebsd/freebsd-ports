@@ -11,7 +11,7 @@ MASTER_SITES=	http://cairographics.org/snapshots/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	X11 SVG viewer
 
-LIB_DEPENDS=	libsvg-cairo.so:${PORTSDIR}/graphics/libsvg-cairo
+LIB_DEPENDS=	libsvg-cairo.so:graphics/libsvg-cairo
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes

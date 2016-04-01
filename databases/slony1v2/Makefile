@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	PostgreSQL master to multiple replicas replication system
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
 GNU_CONFIGURE=	yes
 USES=		bison gmake shebangfix tar:bzip2 pgsql
@@ -35,8 +35,8 @@ PERLTOOLS_DESC=	Install perl configuration tools
 PERLTOOLS_USES=	perl5
 PERLTOOLS_CONFIGURE_ENV=	PERL=${PERL}
 PERLTOOLS_CONFIGURE_ON=		--with-perltools=${LOCALBASE}/sbin
-PERLTOOLS_BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
-PERLTOOLS_RUN_DEPENDS=		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+PERLTOOLS_BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+PERLTOOLS_RUN_DEPENDS=		p5-DBD-Pg>=0:databases/p5-DBD-Pg
 
 .include <bsd.port.options.mk>
 

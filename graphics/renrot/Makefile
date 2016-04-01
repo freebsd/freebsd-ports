@@ -12,7 +12,7 @@ COMMENT=	Program to rename and rotate image files according to EXIF tags
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool
+BUILD_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 jpeg:run
@@ -23,7 +23,7 @@ PORTDOCS=	AUTHORS README README.russian ChangeLog NEWS TODO
 OPTIONS_DEFINE=	IMAGEMAGICK DOCS
 IMAGEMAGICK_DESC=	Image::Magick Perl module support
 
-IMAGEMAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

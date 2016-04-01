@@ -13,8 +13,8 @@ COMMENT=	Toolkit for building modeling frameworks
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport4>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport4 \
-		rubygem-builder32>=3.2.2:${PORTSDIR}/devel/rubygem-builder32
+RUN_DEPENDS=	rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4 \
+		rubygem-builder32>=3.2.2:devel/rubygem-builder32
 
 NO_ARCH=	yes
 USE_RUBY=	yes

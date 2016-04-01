@@ -11,9 +11,9 @@ COMMENT=	Highly scalable, fault-tolerant distributed file system
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/erlang17/bin/erlc:${PORTSDIR}/lang/erlang-runtime17 \
-		${LOCALBASE}/bin/cmake:${PORTSDIR}/devel/cmake \
-		${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck
+BUILD_DEPENDS=	${LOCALBASE}/lib/erlang17/bin/erlc:lang/erlang-runtime17 \
+		${LOCALBASE}/bin/cmake:devel/cmake \
+		${LOCALBASE}/lib/libcheck.a:devel/libcheck
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-project

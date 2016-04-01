@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Finding and running system commands made easy
 
-COMMON_DEPENDS=	p5-IPC-Run>=0.55:${PORTSDIR}/devel/p5-IPC-Run
+COMMON_DEPENDS=	p5-IPC-Run>=0.55:devel/p5-IPC-Run
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 

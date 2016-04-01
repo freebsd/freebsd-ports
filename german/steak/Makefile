@@ -12,7 +12,7 @@ DISTNAME=	Steak.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English <-> German dictionary under the GPL
 
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
+RUN_DEPENDS=	ispell:textproc/aspell-ispell
 
 USES=		tar:bzip2
 MAKE_JOBS_UNSAFE=	yes

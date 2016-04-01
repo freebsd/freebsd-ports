@@ -11,7 +11,7 @@ COMMENT=	Uses wkhtmltopdf to create PDFs using HTML
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	wkhtmltopdf:${PORTSDIR}/converters/wkhtmltopdf
+RUN_DEPENDS=	wkhtmltopdf:converters/wkhtmltopdf
 
 NO_ARCH=	yes
 

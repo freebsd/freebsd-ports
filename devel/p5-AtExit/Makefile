@@ -13,7 +13,7 @@ COMMENT=	Perform exit processing for a program or object
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny
+TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny
 
 NO_ARCH=	yes
 USES=		perl5

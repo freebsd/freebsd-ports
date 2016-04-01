@@ -10,10 +10,10 @@ COMMENT=	Toolkit for 3D games and simulations
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libosg.so:${PORTSDIR}/graphics/osg
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
+RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libosg.so:graphics/osg
 
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu glut

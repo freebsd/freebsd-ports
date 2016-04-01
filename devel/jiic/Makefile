@@ -11,8 +11,8 @@ COMMENT=	Streaming-based Java implementation of ISO 9660
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${JAVALIBDIR}/sabre.jar:${PORTSDIR}/devel/sabre
-RUN_DEPENDS=	${JAVALIBDIR}/sabre.jar:${PORTSDIR}/devel/sabre
+BUILD_DEPENDS=	${JAVALIBDIR}/sabre.jar:devel/sabre
+RUN_DEPENDS=	${JAVALIBDIR}/sabre.jar:devel/sabre
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_JAVA=	yes

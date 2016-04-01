@@ -13,9 +13,9 @@ COMMENT=	Aggregate Perl tests for better performance
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Test-Most>=0.21:${PORTSDIR}/devel/p5-Test-Most \
-		p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings \
-		p5-Test-Trap>0:${PORTSDIR}/devel/p5-Test-Trap
+BUILD_DEPENDS=	p5-Test-Most>=0.21:devel/p5-Test-Most \
+		p5-Test-NoWarnings>0:devel/p5-Test-NoWarnings \
+		p5-Test-Trap>0:devel/p5-Test-Trap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

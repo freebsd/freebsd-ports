@@ -11,7 +11,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 file search utilities
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 

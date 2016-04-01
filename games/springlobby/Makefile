@@ -14,9 +14,9 @@ COMMENT=	Cross-platform lobby client for the Spring RTS project
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	spring:${PORTSDIR}/games/spring
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS=	spring:games/spring
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libboost_thread.so:devel/boost-libs
 
 USES=		cmake compiler:c++11-lib pkgconfig tar:bzip2
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
@@ -38,11 +38,11 @@ NLS_USES=		gettext
 
 SOUND_CMAKE_ON=		-DOPTION_SOUND:BOOL=ON
 SOUND_CMAKE_OFF=	-DOPTION_SOUND:BOOL=OFF
-SOUND_LIB_DEPENDS=	libalure.so:${PORTSDIR}/audio/alure
+SOUND_LIB_DEPENDS=	libalure.so:audio/alure
 SOUND_USES=		openal:al
 
 NOTIFY_CMAKE_ON=	-DOPTION_NOTIFY=ON
 NOTIFY_CMAKE_OFF=	-DOPTION_NOTIFY=OFF
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 
 .include <bsd.port.mk>

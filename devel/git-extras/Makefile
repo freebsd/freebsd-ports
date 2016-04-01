@@ -9,8 +9,8 @@ COMMENT=	Sub-commands for repo summary, repl, changelog population, and more
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	git:devel/git \
+		bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tj

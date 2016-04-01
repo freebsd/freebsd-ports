@@ -12,7 +12,7 @@ COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
+RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:devel/log4j
 
 USES=		cpe
 CPE_VENDOR=	oracle

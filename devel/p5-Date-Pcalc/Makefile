@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Gregorian calendar date calculations
 
-BUILD_DEPENDS=	p5-Carp-Clan>=5.3:${PORTSDIR}/devel/p5-Carp-Clan \
-		p5-Bit-Vector>=7.0:${PORTSDIR}/math/p5-Bit-Vector
+BUILD_DEPENDS=	p5-Carp-Clan>=5.3:devel/p5-Carp-Clan \
+		p5-Bit-Vector>=7.0:math/p5-Bit-Vector
 
 USES=		perl5
 USE_PERL5=	configure

@@ -12,16 +12,16 @@ COMMENT=	PHP Documentation generation framework and tool
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	pear-TheSeer_DirectoryScanner>=1.1.0:${PORTSDIR}/devel/pear-TheSeer_DirectoryScanner \
-		pear-TheSeer_fDOMDocument>=1.2.3:${PORTSDIR}/devel/pear-TheSeer_fDOMDocument \
-		pear-TheSeer_fXSL>=1.0.4:${PORTSDIR}/devel/pear-TheSeer_fXSL \
-		pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \
-		pear-pdepend_staticReflection>=0.2.1:${PORTSDIR}/devel/pear-pdepend-staticReflection
-RUN_DEPENDS=	pear-TheSeer_DirectoryScanner>=1.1.0:${PORTSDIR}/devel/pear-TheSeer_DirectoryScanner \
-		pear-TheSeer_fDOMDocument>=1.2.3:${PORTSDIR}/devel/pear-TheSeer_fDOMDocument \
-		pear-TheSeer_fXSL>=1.0.4:${PORTSDIR}/devel/pear-TheSeer_fXSL \
-		pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \
-		pear-pdepend_staticReflection>=0.2.1:${PORTSDIR}/devel/pear-pdepend-staticReflection
+BUILD_DEPENDS=	pear-TheSeer_DirectoryScanner>=1.1.0:devel/pear-TheSeer_DirectoryScanner \
+		pear-TheSeer_fDOMDocument>=1.2.3:devel/pear-TheSeer_fDOMDocument \
+		pear-TheSeer_fXSL>=1.0.4:devel/pear-TheSeer_fXSL \
+		pear-ezc_ConsoleTools>=1.6:devel/pear-ezc_ConsoleTools \
+		pear-pdepend_staticReflection>=0.2.1:devel/pear-pdepend-staticReflection
+RUN_DEPENDS=	pear-TheSeer_DirectoryScanner>=1.1.0:devel/pear-TheSeer_DirectoryScanner \
+		pear-TheSeer_fDOMDocument>=1.2.3:devel/pear-TheSeer_fDOMDocument \
+		pear-TheSeer_fXSL>=1.0.4:devel/pear-TheSeer_fXSL \
+		pear-ezc_ConsoleTools>=1.6:devel/pear-ezc_ConsoleTools \
+		pear-pdepend_staticReflection>=0.2.1:devel/pear-pdepend-staticReflection
 
 USE_PHP=	dom tokenizer xsl iconv
 PEAR_CHANNEL=	theseer

@@ -19,8 +19,8 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow
+		${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-opengl \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow
 
 USES=		dos2unix python:2 zip
 DOS2UNIX_GLOB=	*.mtl *.py *.txt

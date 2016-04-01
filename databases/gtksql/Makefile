@@ -12,8 +12,8 @@ COMMENT=	Graphical query tool for PostgreSQL/MySQL/SQLite
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libscintilla.so:${PORTSDIR}/x11-toolkits/scintilla
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libscintilla.so:x11-toolkits/scintilla
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 OPTIONS_DEFINE=	AVAHI DOCS
 OPTIONS_MULTI=	DB
@@ -36,7 +36,7 @@ PGSQL_CONFIGURE_WITH=	postgresql
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	libavahi-common.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-common.so:net/avahi-app
 .else
 CONFIGURE_ARGS+=	--without-avahi
 .endif

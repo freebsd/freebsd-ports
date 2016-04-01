@@ -15,7 +15,7 @@ COMMENT=	OpenGL binding for Gauche
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
+BUILD_DEPENDS=	gosh:lang/gauche
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		makeinfo tar:tgz

@@ -10,7 +10,7 @@ COMMENT=	Free, easy, personal accounting for everyone
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libosp.so:${PORTSDIR}/textproc/opensp
+LIB_DEPENDS=	libosp.so:textproc/opensp
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake pkgconfig shared-mime-info
@@ -27,7 +27,7 @@ OFX_DESC=	OFX file format support
 OPTIONS_DEFAULT=OFX
 
 OFX_CONFIGURE_WITH=	ofx
-OFX_LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx
+OFX_LIB_DEPENDS=	libofx.so:finance/libofx
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

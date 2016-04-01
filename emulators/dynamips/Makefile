@@ -12,7 +12,7 @@ COMMENT=	Cisco 3600/7200 Simulator
 
 BROKEN=		Does not fetch
 
-LIB_DEPENDS=	libelf.so:${PORTSDIR}/devel/libelf
+LIB_DEPENDS=	libelf.so:devel/libelf
 
 USES=		gmake
 ALL_TARGET=	${PORTNAME} nvram_export

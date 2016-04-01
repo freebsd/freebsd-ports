@@ -13,8 +13,8 @@ MASTER_SITES=	SF/gnucash/${PORTNAME}/${PORTVERSION} \
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Documentation for gnucash
 
-LIB_DEPENDS=	librarian.so:${PORTSDIR}/textproc/rarian
-RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
+LIB_DEPENDS=	librarian.so:textproc/rarian
+RUN_DEPENDS=	yelp:x11/yelp
 
 INSTALLS_OMF=	yes
 USES=		autoreconf gmake

@@ -15,10 +15,10 @@ COMMENT=	DateTime Extension for Calculating Important Chinese Dates
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DateTime-Astro>=0:${PORTSDIR}/devel/p5-DateTime-Astro \
-		p5-Math-Round>=0:${PORTSDIR}/math/p5-Math-Round
-RUN_DEPENDS=	p5-DateTime-Astro>=0:${PORTSDIR}/devel/p5-DateTime-Astro \
-		p5-Math-Round>=0:${PORTSDIR}/math/p5-Math-Round
+BUILD_DEPENDS=	p5-DateTime-Astro>=0:devel/p5-DateTime-Astro \
+		p5-Math-Round>=0:math/p5-Math-Round
+RUN_DEPENDS=	p5-DateTime-Astro>=0:devel/p5-DateTime-Astro \
+		p5-Math-Round>=0:math/p5-Math-Round
 
 USES=		perl5
 USE_PERL5=	configure

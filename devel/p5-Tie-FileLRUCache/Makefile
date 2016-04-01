@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight but robust filesystem based persistent LRU cache
 
-BUILD_DEPENDS=	p5-Class-NamedParms>=0:${PORTSDIR}/devel/p5-Class-NamedParms \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-Class-ParmList>=0:${PORTSDIR}/devel/p5-Class-ParmList
+BUILD_DEPENDS=	p5-Class-NamedParms>=0:devel/p5-Class-NamedParms \
+		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		p5-Class-ParmList>=0:devel/p5-Class-ParmList
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -13,7 +13,7 @@ COMMENT=	Name your accessors foo() and set_foo()
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Moose>=0.94:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-Moose>=0.94:devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

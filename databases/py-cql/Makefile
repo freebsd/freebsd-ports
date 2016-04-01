@@ -13,7 +13,7 @@ COMMENT=	Python DB-API 2.0 client interface for Cassandra
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/thrift/Thrift.py:${PORTSDIR}/devel/py-thrift
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/thrift/Thrift.py:devel/py-thrift
 
 USES=		python
 USE_PYTHON=	distutils

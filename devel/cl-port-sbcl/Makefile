@@ -11,8 +11,8 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Cross-Lisp portability package
 
-BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:${PORTSDIR}/devel/cl-port
-RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:${PORTSDIR}/devel/cl-port
+BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:devel/cl-port
+RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:devel/cl-port
 
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl

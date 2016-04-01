@@ -9,12 +9,12 @@ CATEGORIES=	games
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Real time simulation game
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/fife/__init__.py:${PORTSDIR}/games/py-fife \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}gdbm>0:${PORTSDIR}/databases/py-gdbm
+BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+		${LOCALBASE}/bin/xsltproc:textproc/libxslt
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/fife/__init__.py:games/py-fife \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_SITELIBDIR}/yaml/__init__.py:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm
 
 ONLY_FOR_ARCHS=	i386 amd64
 

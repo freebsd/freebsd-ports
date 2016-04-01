@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	numptyphysics-
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Level pack for Numpty Physics
 
-RUN_DEPENDS=	numptyphysics:${PORTSDIR}/games/numptyphysics
+RUN_DEPENDS=	numptyphysics:games/numptyphysics
 
 USES=		tar:bzip2
 NO_BUILD=	yes

@@ -29,7 +29,7 @@ PLIST_FILES=	bin/rem \
 
 .if ${PORT_OPTIONS:MTCLTK}
 USES=		tk
-RUN_DEPENDS+=	dtplite:${PORTSDIR}/devel/tcllib
+RUN_DEPENDS+=	dtplite:devel/tcllib
 PLIST_FILES+=	bin/cm2rem.tcl bin/tkremind
 .endif
 

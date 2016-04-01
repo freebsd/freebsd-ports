@@ -13,7 +13,7 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce server
 
-RUN_DEPENDS=	p4:${PORTSDIR}/devel/p4
+RUN_DEPENDS=	p4:devel/p4
 
 RESTRICTED=	Restricted distribution
 

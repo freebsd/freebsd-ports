@@ -16,10 +16,10 @@ EXTRACT_ONLY=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	The Grid Analysis and Display System
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:${PORTSDIR}/science/udunits \
-		${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits2.a:science/udunits \
+		${LOCALBASE}/lib/libsx.a:x11/libsx
+LIB_DEPENDS=	libgd.so:graphics/gd \
+		libpng.so:graphics/png
 
 USES=		jpeg ncurses
 GNU_CONFIGURE=		yes
@@ -49,13 +49,13 @@ PORTEXAMPLES=	*
 
 .if ${PORT_OPTIONS:MHDF}
 BROKEN=			Fails to package
-LIB_DEPENDS+=		libmfhdf.so:${PORTSDIR}/science/hdf
+LIB_DEPENDS+=		libmfhdf.so:science/hdf
 CONFIGURE_ARGS+=	--with-hdf
 PLIST_SUB+=		NETCDF="@comment " HDF=""
 .endif
 
 .if ${PORT_OPTIONS:MNETCDF}
-LIB_DEPENDS+=		libnetcdf.so:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=		libnetcdf.so:science/netcdf
 CONFIGURE_ARGS+=	--with-nc
 PLIST_SUB+=		NETCDF="" HDF="@comment "
 .endif

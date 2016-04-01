@@ -14,8 +14,8 @@ COMMENT=	Tool for encoding data on paper
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	libpng.so:graphics/png
+RUN_DEPENDS=	convert:graphics/ImageMagick
 
 WRKSRC=		${WRKDIR}/optar_dist
 

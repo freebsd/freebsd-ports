@@ -15,8 +15,8 @@ COMMENT=	Non-blocking getaddrinfo() resolver
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
-		p5-Socket>=2.001:${PORTSDIR}/net/p5-Socket
+BUILD_DEPENDS=	p5-POE>=1.311:devel/p5-POE \
+		p5-Socket>=2.001:net/p5-Socket
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

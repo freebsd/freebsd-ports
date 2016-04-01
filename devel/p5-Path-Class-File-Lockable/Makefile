@@ -15,8 +15,8 @@ COMMENT=	Lock your files with Path::Class::File
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-NFSLock>0:${PORTSDIR}/devel/p5-File-NFSLock \
-		p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class
+BUILD_DEPENDS=	p5-File-NFSLock>0:devel/p5-File-NFSLock \
+		p5-Path-Class>0:devel/p5-Path-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

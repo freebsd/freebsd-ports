@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Prompt for input, read it, clean it, return it
 
-BUILD_DEPENDS=	devel/p5-Contextual-Return>0:${PORTSDIR}/devel/p5-Contextual-Return
+BUILD_DEPENDS=	devel/p5-Contextual-Return>0:devel/p5-Contextual-Return
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

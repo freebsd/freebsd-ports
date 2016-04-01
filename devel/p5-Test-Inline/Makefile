@@ -14,19 +14,19 @@ COMMENT=	Inlining your tests next to the code being tested
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Algorithm-Dependency>=1.02:${PORTSDIR}/devel/p5-Algorithm-Dependency \
-		p5-Class-Autouse>=1.15:${PORTSDIR}/devel/p5-Class-Autouse \
-		p5-Config-Tiny>=2.00:${PORTSDIR}/devel/p5-Config-Tiny \
-		p5-File-Find-Rule>=0.26:${PORTSDIR}/devel/p5-File-Find-Rule \
-		p5-File-Flat>=1.00:${PORTSDIR}/devel/p5-File-Flat \
-		p5-File-Remove>=0.37:${PORTSDIR}/devel/p5-File-Remove \
-		p5-File-Slurp>=9999.04:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-File-chmod>=0.31:${PORTSDIR}/devel/p5-File-chmod \
-		p5-Params-Util>=0.21:${PORTSDIR}/devel/p5-Params-Util \
-		p5-Pod-Tests>=0.18:${PORTSDIR}/devel/p5-Pod-Tests
+RUN_DEPENDS=	p5-Algorithm-Dependency>=1.02:devel/p5-Algorithm-Dependency \
+		p5-Class-Autouse>=1.15:devel/p5-Class-Autouse \
+		p5-Config-Tiny>=2.00:devel/p5-Config-Tiny \
+		p5-File-Find-Rule>=0.26:devel/p5-File-Find-Rule \
+		p5-File-Flat>=1.00:devel/p5-File-Flat \
+		p5-File-Remove>=0.37:devel/p5-File-Remove \
+		p5-File-Slurp>=9999.04:devel/p5-File-Slurp \
+		p5-File-chmod>=0.31:devel/p5-File-chmod \
+		p5-Params-Util>=0.21:devel/p5-Params-Util \
+		p5-Pod-Tests>=0.18:devel/p5-Pod-Tests
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-Test-ClassAPI>=1.02:${PORTSDIR}/devel/p5-Test-ClassAPI \
-		p5-Test-Script>=1.02:${PORTSDIR}/devel/p5-Test-Script
+BUILD_DEPENDS+=	p5-Test-ClassAPI>=1.02:devel/p5-Test-ClassAPI \
+		p5-Test-Script>=1.02:devel/p5-Test-Script
 
 USES=		perl5
 USE_PERL5=	configure

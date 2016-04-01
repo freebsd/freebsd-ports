@@ -13,11 +13,11 @@ COMMENT=	Distributed version control system with digital signatures
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libidn.so:${PORTSDIR}/dns/libidn \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libbotan-1.10.so:${PORTSDIR}/security/botan110
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libidn.so:dns/libidn \
+		libsqlite3.so:databases/sqlite3 \
+		libbotan-1.10.so:security/botan110
 
 SUB_FILES=	pkg-message
 USES=		cpe gmake iconv localbase lua:51 makeinfo perl5 \

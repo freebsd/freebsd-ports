@@ -11,7 +11,7 @@ COMMENT=	Massively-parallel build system implemented on top of GNU make
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake tar:bzip2

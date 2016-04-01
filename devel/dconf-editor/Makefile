@@ -10,9 +10,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Configuration database editor for GNOME
 
-BUILD_DEPENDS=	dconf>=0.23.2:${PORTSDIR}/devel/dconf \
-		vala>=0.18.1:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libdconf.so:${PORTSDIR}/devel/dconf
+BUILD_DEPENDS=	dconf>=0.23.2:devel/dconf \
+		vala>=0.18.1:lang/vala
+LIB_DEPENDS=	libdconf.so:devel/dconf
 
 PORTSCOUT=	limitw:1,even
 

@@ -10,9 +10,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK front-end to Qemu
 
-RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		p5-Glade2>=0:${PORTSDIR}/x11-toolkits/p5-Glade2 \
-		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
+RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		p5-Glade2>=0:x11-toolkits/p5-Glade2 \
+		p5-Locale-gettext>=0:devel/p5-Locale-gettext
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes

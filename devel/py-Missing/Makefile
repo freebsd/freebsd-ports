@@ -13,7 +13,7 @@ COMMENT=	Special Missing objects used in Zope2
 
 LICENSE=	ZPL21
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ExtensionClass>=0:${PORTSDIR}/devel/py-ExtensionClass
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ExtensionClass>=0:devel/py-ExtensionClass
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

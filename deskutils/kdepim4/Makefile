@@ -11,14 +11,14 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE PIM applications
 
-LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
-		libassuan.so:${PORTSDIR}/security/libassuan \
-		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libgrantlee_gui.so:${PORTSDIR}/devel/grantlee \
-		libkgapi2.so:${PORTSDIR}/devel/libkgapi
-RUN_DEPENDS=	${KDE4_PREFIX}/bin/accountwizard:${PORTSDIR}/deskutils/kdepim4-runtime \
-		${LOCALBASE}/bin/gmd5sum:${PORTSDIR}/sysutils/coreutils
+LIB_DEPENDS=	libgpgme.so:security/gpgme \
+		libassuan.so:security/libassuan \
+		libsasl2.so:security/cyrus-sasl2 \
+		libboost_thread.so:devel/boost-libs \
+		libgrantlee_gui.so:devel/grantlee \
+		libkgapi2.so:devel/libkgapi
+RUN_DEPENDS=	${KDE4_PREFIX}/bin/accountwizard:deskutils/kdepim4-runtime \
+		${LOCALBASE}/bin/gmd5sum:sysutils/coreutils
 
 CONFLICTS_INSTALL=	kdepim44-4.*
 

@@ -18,11 +18,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lvc
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS?=	exctags:${PORTSDIR}/devel/ctags
+BUILD_DEPENDS?=	exctags:devel/ctags
 .else
 USE_PERL5=	run
 .endif
-RUN_DEPENDS?=	exctags:${PORTSDIR}/devel/ctags
+RUN_DEPENDS?=	exctags:devel/ctags
 USE_GCC=	any
 
 NO_BUILD=	yes

@@ -13,7 +13,7 @@ COMMENT=	Portable NES/Famicom emulator based on Bero's original FCE
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
+RUN_DEPENDS=	zenity:x11/zenity
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -42,7 +42,7 @@ GTK3_USE=		GNOME=gtk30
 GTK3_MAKE_ARGS=		GTK3=1
 GTK3_MAKE_ARGS_OFF=	GTK3=0
 LOGO_DESC=		Enable a logoscreen when creating avis
-LOGO_LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LOGO_LIB_DEPENDS=	libgd.so:graphics/gd
 LOGO_MAKE_ARGS=		LOGO=1
 LOGO_MAKE_ARG_OFF=	LOGO=0
 LUA_USES=		lua:51

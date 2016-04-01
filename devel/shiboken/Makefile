@@ -13,8 +13,8 @@ COMMENT=	C++ code generator for CPython extensions
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libxslt.so:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+		libxslt.so:textproc/libxslt
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		PYTHON_VERSION=${PYTHON_VERSION}
@@ -39,7 +39,7 @@ CMAKE_ARGS=	-DNO_INSTALL_MANPAGES:BOOL="ON"
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
 ALL_TARGET+=	doc
 post-install:
 	if [ -d ${WRKSRC}/doc/html ]; then \

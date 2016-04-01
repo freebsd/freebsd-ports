@@ -14,8 +14,8 @@ DIST_SUBDIR=	linux-ut
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Gold for Linux
 
-BUILD_DEPENDS=	ut:${PORTSDIR}/games/linux-ut
-RUN_DEPENDS=	ut:${PORTSDIR}/games/linux-ut
+BUILD_DEPENDS=	ut:games/linux-ut
+RUN_DEPENDS=	ut:games/linux-ut
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
@@ -46,14 +46,14 @@ ANTHOLOGY=	yes
 RELEASE_MSG=	"Unreal Anthology"
 MANUALFILES=	Manual.pdf
 PORTDOCS+=	${MANUALFILES}
-EXTRACT_DEPENDS+=	unshield:${PORTSDIR}/archivers/unshield
-PATCH_DEPENDS+=	xdelta:${PORTSDIR}/misc/xdelta
+EXTRACT_DEPENDS+=	unshield:archivers/unshield
+PATCH_DEPENDS+=	xdelta:misc/xdelta
 # Original CD
 .elif exists(${CDROM_MOUNT}/SYSTEM/UPak.u)
 ORIGINAL=	yes
 RELEASE_MSG=	"original"
 PORTDOCS+=	${MANUALFILES}
-PATCH_DEPENDS+=	xdelta:${PORTSDIR}/misc/xdelta
+PATCH_DEPENDS+=	xdelta:misc/xdelta
 # TheSINHumanHead CD
 .elif exists(${CDROM_MOUNT}/System-int.tar.bz2)
 RAVAGE=		yes

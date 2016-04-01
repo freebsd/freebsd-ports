@@ -41,7 +41,7 @@ CPE_VERSION=	${ISCVERSION:C/-.*//}
 CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 .endif
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var --disable-linux-caps \
@@ -133,7 +133,7 @@ NEWSTATS_CONFIGURE_ENABLE=	newstats
 
 IDN_USES=		iconv
 IDN_CONFIGURE_ON=	--with-idn=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
-IDN_LIB_DEPENDS=	libidnkit.so:${PORTSDIR}/dns/idnkit
+IDN_LIB_DEPENDS=	libidnkit.so:dns/idnkit
 IDN_CONFIGURE_OFF=	--without-idn
 
 LARGE_FILE_CONFIGURE_ENABLE=	largefile
@@ -147,7 +147,7 @@ FILTER_AAAA_CONFIGURE_ENABLE=	filter-aaaa
 NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
 
 GEOIP_CONFIGURE_WITH=	geoip
-GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 GOST_CONFIGURE_ON=	--with-gost
 GOST_ASN1_CONFIGURE_ON=	--with-gost=asn1

@@ -11,7 +11,7 @@ COMMENT=	Mirror rubygems
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-net-http-persistent>=2.9:${PORTSDIR}/www/rubygem-net-http-persistent
+RUN_DEPENDS=	rubygem-net-http-persistent>=2.9:www/rubygem-net-http-persistent
 
 NO_ARCH=	yes
 

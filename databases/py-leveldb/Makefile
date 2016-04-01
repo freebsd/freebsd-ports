@@ -15,7 +15,7 @@ COMMENT=	Thread-safe Python binding for LevelDB
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
+LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
 USE_PYTHON=	autoplist concurrent distutils
 USES=		localbase python tar:xz

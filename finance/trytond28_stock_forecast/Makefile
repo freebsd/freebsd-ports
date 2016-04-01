@@ -13,8 +13,8 @@ COMMENT=	Tryton Application Platform (Stock Forecast Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil \
-		trytond28_stock>=2.8.2:${PORTSDIR}/finance/trytond28_stock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil \
+		trytond28_stock>=2.8.2:finance/trytond28_stock
 
 CONFLICTS=	trytond_stock_forecast-2.[46].*
 

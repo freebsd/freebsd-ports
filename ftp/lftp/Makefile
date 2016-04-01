@@ -19,7 +19,7 @@ COMMENT=	Shell-like command line ftp client
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		charsetfix iconv libtool localbase readline shebangfix
 GNU_CONFIGURE=	yes
@@ -42,7 +42,7 @@ NLS_CONFIGURE_ENABLE=	nls
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_USE=	OPENSSL=yes
 GNUTLS_CONFIGURE_WITH=	gnutls
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=	pkgconfig
 
 .include <bsd.port.options.mk>

@@ -8,9 +8,9 @@ DISTVERSIONPREFIX=	v
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Keynote-like multi-monitor presentation viewer
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
-		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+BUILD_DEPENDS=	valac:lang/vala
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
+		libpoppler-glib.so:graphics/poppler-glib
 
 USE_GITHUB=	yes
 

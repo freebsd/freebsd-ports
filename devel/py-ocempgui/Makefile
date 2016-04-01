@@ -14,8 +14,8 @@ COMMENT=	GUI toolkit in python
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/devel/py-game
-RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/devel/py-game
+BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:devel/py-game
+RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:devel/py-game
 
 USES=		python:2
 USE_GNOME=	atk

@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${PORTNAME:tu}${EXTRACT_SUFX}
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Portable emulator for the Philips P2000 home computer
 
-EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=${UNZIP_CMD}:archivers/unzip
 
 M2000TAPES=	3DDoolhof2.cas		\
 		BrickWall.cas		\

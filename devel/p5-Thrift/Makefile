@@ -12,9 +12,9 @@ DISTFILES=
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Perl interface to Thrift
 
-BUILD_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector
-RUN_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector
-FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
+BUILD_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector
+RUN_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector
+FETCH_DEPENDS+=	${NONEXISTENT}:devel/thrift:extract
 
 USES=		perl5
 USE_PERL5=	configure

@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	linux-enemyterritory-
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Jaymod - An Enemy Territory Modification
 
-RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
+RUN_DEPENDS=	et:games/linux-enemyterritory
 
 USES=		shebangfix
 SHEBANG_FILES=	linux/convert_shrub
@@ -28,7 +28,7 @@ DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 CLIENT_PK3=	${PORTNAME}-${PORTVERSION}.pk3
 PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
 
-OMNIBOT_RUN_DEPENDS=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot
+OMNIBOT_RUN_DEPENDS=	et-omni-bot:games/linux-enemyterritory-omni-bot
 
 do-build:
 .for f in et etded

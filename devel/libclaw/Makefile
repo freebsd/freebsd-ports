@@ -13,8 +13,8 @@ COMMENT=	C++ Library Absolutely Wonderful
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libpng.so:graphics/png
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:devel/boost-libs
 
 USES=		cmake gettext jpeg
 CMAKE_ARGS=	-DCLAW_CMAKE_MODULES_INSTALL_PATH="${DATADIR}/cmake"

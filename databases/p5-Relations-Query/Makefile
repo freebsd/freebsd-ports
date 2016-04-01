@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Object for building queries with DBI/DBD::mysql
 
-BUILD_DEPENDS=	p5-Relations>=0:${PORTSDIR}/databases/p5-Relations
+BUILD_DEPENDS=	p5-Relations>=0:databases/p5-Relations
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

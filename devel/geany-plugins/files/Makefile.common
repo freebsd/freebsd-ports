@@ -6,8 +6,8 @@ MASTER_SITES=	http://plugins.geany.org/geany-plugins/
 DISTNAME=	geany-plugins-${PORTVERSION}
 DISTINFO_FILE=	${.CURDIR}/../../devel/geany-plugins/distinfo
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/geany:${PORTSDIR}/devel/geany
-RUN_DEPENDS+=	${LOCALBASE}/bin/geany:${PORTSDIR}/devel/geany
+BUILD_DEPENDS+=	${LOCALBASE}/bin/geany:devel/geany
+RUN_DEPENDS+=	${LOCALBASE}/bin/geany:devel/geany
 
 GNU_CONFIGURE=	yes
 USES+=		gettext-tools gmake libtool pkgconfig tar:bzip2

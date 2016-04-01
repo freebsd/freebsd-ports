@@ -12,7 +12,7 @@ COMMENT=	Python Package for Manipulation 2D Geospatial Geometry
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos
+LIB_DEPENDS=	libgeos_c.so:graphics/geos
 
 USES=		python
 USE_PYTHON=	autoplist distutils

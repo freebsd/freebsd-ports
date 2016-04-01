@@ -13,7 +13,7 @@ COMMENT=	Time tracker for gnome2
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqof.so:${PORTSDIR}/databases/qof
+LIB_DEPENDS=	libqof.so:databases/qof
 
 USES=		gettext gmake libtool pathfix pkgconfig
 USE_XORG=	xscrnsaver
@@ -38,8 +38,8 @@ OPTIONS_DEFAULT=	GUILE1
 GUILE1_DESC=	Use lang/guile
 GUILE2_DESC=	Use lang/guile2
 
-GUILE1_LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
-GUILE2_LIB_DEPENDS=	libguile-2.0.so:${PORTSDIR}/lang/guile2
+GUILE1_LIB_DEPENDS=	libguile.so:lang/guile
+GUILE2_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
 GUILE2_LDFLAGS=		-lm
 
 post-patch:

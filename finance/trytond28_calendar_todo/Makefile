@@ -13,7 +13,7 @@ COMMENT=	Tryton Application Platform (Calendar Todo Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_calendar>=2.8.0:${PORTSDIR}/finance/trytond28_calendar
+RUN_DEPENDS=	trytond28_calendar>=2.8.0:finance/trytond28_calendar
 
 CONFLICTS=	trytond_calendar_todo-2.[46].*
 

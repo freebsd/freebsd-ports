@@ -12,7 +12,7 @@ COMMENT=	XML parser that returns python dictionaries
 
 LICENSE=	MIT
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose:${PORTSDIR}/devel/py-nose
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose:devel/py-nose
 
 USES=		python
 USE_PYTHON=	distutils autoplist

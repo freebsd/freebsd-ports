@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Type-Tiny>=1.000000:${PORTSDIR}/devel/p5-Type-Tiny \
-	p5-UUID-Tiny>=1.02:${PORTSDIR}/devel/p5-UUID-Tiny
+	p5-Type-Tiny>=1.000000:devel/p5-Type-Tiny \
+	p5-UUID-Tiny>=1.02:devel/p5-UUID-Tiny
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

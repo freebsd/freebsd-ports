@@ -9,7 +9,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GObject collection library
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	valac:lang/vala
 
 PORTSCOUT=	limitw:1,even
 

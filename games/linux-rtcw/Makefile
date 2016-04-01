@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	DOCS NVIDIA_GL
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNVIDIA_GL}
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
 NVIDIA_GL_EXTVER=	'__GL_ExtensionStringVersion=18999 '
 .else
 USE_LINUX_APPS+=	dri

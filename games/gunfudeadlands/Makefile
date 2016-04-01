@@ -14,7 +14,7 @@ COMMENT=	Far West themed 2D shooter featuring bullet time
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/gpl.txt
 
-RUN_DEPENDS=	love07:${PORTSDIR}/devel/love07
+RUN_DEPENDS=	love07:devel/love07
 
 USES=		zip
 NO_BUILD=	yes

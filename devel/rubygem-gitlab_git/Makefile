@@ -11,10 +11,10 @@ COMMENT=	GitLab wrapper around git objects
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport4>=4.0:${PORTSDIR}/devel/rubygem-activesupport4 \
-		rubygem-charlock_holmes>=0.7.3:${PORTSDIR}/textproc/rubygem-charlock_holmes \
-		rubygem-github-linguist>=4.7.0:${PORTSDIR}/textproc/rubygem-github-linguist \
-		rubygem-rugged>=0.24.0:${PORTSDIR}/devel/rubygem-rugged
+RUN_DEPENDS=	rubygem-activesupport4>=4.0:devel/rubygem-activesupport4 \
+		rubygem-charlock_holmes>=0.7.3:textproc/rubygem-charlock_holmes \
+		rubygem-github-linguist>=4.7.0:textproc/rubygem-github-linguist \
+		rubygem-rugged>=0.24.0:devel/rubygem-rugged
 
 NO_ARCH=	yes
 USE_RUBY=	yes

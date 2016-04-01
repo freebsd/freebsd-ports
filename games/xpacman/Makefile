@@ -12,7 +12,7 @@ COMMENT=	Old action game
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS+=	${LOCALBASE}/share/fonts/misc/9x18.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/misc/9x18.pcf.gz:x11-fonts/font-misc-misc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-doublesize

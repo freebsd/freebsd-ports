@@ -18,6 +18,6 @@ OPTIONS_DEFINE=	LIBPNG
 LIBPNG_DESC=	Install png library for manipulating PNG images
 OPTIONS_DEFAULT=	LIBPNG
 
-LIBPNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIBPNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 .include "${MASTERDIR}/Makefile"

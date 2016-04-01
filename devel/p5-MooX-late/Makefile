@@ -14,9 +14,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Moo>=1.006000:${PORTSDIR}/devel/p5-Moo \
-	p5-Test-Requires>=0.06:${PORTSDIR}/devel/p5-Test-Requires \
-	p5-Type-Tiny>=1.000001:${PORTSDIR}/devel/p5-Type-Tiny
+	p5-Moo>=1.006000:devel/p5-Moo \
+	p5-Test-Requires>=0.06:devel/p5-Test-Requires \
+	p5-Type-Tiny>=1.000001:devel/p5-Type-Tiny
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

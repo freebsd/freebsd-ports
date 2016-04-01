@@ -15,7 +15,7 @@ COMMENT=	Persistent VM library
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	liblwp.so:${PORTSDIR}/devel/lwp
+LIB_DEPENDS=	liblwp.so:devel/lwp
 
 USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes

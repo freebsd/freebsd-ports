@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tie a hash to a MySQL table + SQL utils
 
-BUILD_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+BUILD_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

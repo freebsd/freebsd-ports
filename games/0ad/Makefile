@@ -10,17 +10,17 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Real-time strategy (RTS) game of ancient warfare
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		cmake:${PORTSDIR}/devel/cmake
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libgloox.so:${PORTSDIR}/net-im/gloox \
-		libminiupnpc.so:${PORTSDIR}/net/miniupnpc \
-		libnspr4.so:${PORTSDIR}/devel/nspr \
-		libenet.so:${PORTSDIR}/net/enet
+BUILD_DEPENDS=	zip:archivers/zip \
+		cmake:devel/cmake
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libpng.so:graphics/png \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libcurl.so:ftp/curl \
+		libgloox.so:net-im/gloox \
+		libminiupnpc.so:net/miniupnpc \
+		libnspr4.so:devel/nspr \
+		libenet.so:net/enet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc

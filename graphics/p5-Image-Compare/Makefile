@@ -13,12 +13,12 @@ COMMENT=	Compare two images in a variety of ways
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager \
-		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Imager>=0:graphics/p5-Imager \
+		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage
 
 USES=		perl5
 USE_PERL5=	configure

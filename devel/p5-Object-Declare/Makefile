@@ -16,7 +16,7 @@ USE_PERL5=	configure
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502106
-TEST_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS+=	p5-Test-Simple>=0:devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>

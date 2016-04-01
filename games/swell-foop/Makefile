@@ -10,9 +10,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome swell-foop
 
-BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala \
-		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
+BUILD_DEPENDS=	vala:lang/vala \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libclutter-gtk-1.0.so:graphics/clutter-gtk3
 
 PORTSCOUT=	limitw:1,even
 

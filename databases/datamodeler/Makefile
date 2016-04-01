@@ -13,8 +13,8 @@ DIST_SUBDIR=	oracle
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Database modeling tool
 
-EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+EXTRACT_DEPENDS=rpm2cpio.pl:archivers/rpm2cpio
+RUN_DEPENDS=	bash:shells/bash
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+

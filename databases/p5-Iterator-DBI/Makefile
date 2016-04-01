@@ -14,7 +14,7 @@ COMMENT=	Iterator for returning DBI query results
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Iterator>=0:${PORTSDIR}/devel/p5-Iterator
+BUILD_DEPENDS=	p5-Iterator>=0:devel/p5-Iterator
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

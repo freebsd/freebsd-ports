@@ -12,10 +12,10 @@ COMMENT=	John Wiegley's command line accounting program
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	${LOCALBASE}/include/utf8.h:${PORTSDIR}/devel/utf8cpp
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libmpfr.so:${PORTSDIR}/math/mpfr \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/utf8.h:devel/utf8cpp
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
+		libboost_system.so:devel/boost-libs
 
 USE_GITHUB=	yes
 

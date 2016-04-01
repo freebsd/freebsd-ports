@@ -13,7 +13,7 @@ COMMENT=	MySQL database connector for C++
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 USE_MYSQL=	51+
 USES=		cmake:outsource

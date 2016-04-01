@@ -12,9 +12,9 @@ COMMENT=	Utility library for Ada 2005 applications
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	gprbuild:${PORTSDIR}/devel/gprbuild \
-		${LOCALBASE}/lib/gnat/ahven.gpr:${PORTSDIR}/devel/ahven
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	gprbuild:devel/gprbuild \
+		${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		ada gmake
 USE_GITHUB=	yes

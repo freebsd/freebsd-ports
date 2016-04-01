@@ -12,12 +12,12 @@ COMMENT=	Quicken-like money and finance manager
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
-		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
-		libgoffice-0.8.so:${PORTSDIR}/devel/goffice
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
-		p5-Finance-Quote>=0:${PORTSDIR}/finance/p5-Finance-Quote
+LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring \
+		libwebkitgtk-1.0.so:www/webkit-gtk2 \
+		libgoffice-0.8.so:devel/goffice
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		p5-Date-Manip>=0:devel/p5-Date-Manip \
+		p5-Finance-Quote>=0:finance/p5-Finance-Quote
 
 OPTIONS_DEFINE=	AQBANKING OFX DATABASE LOCALE_TAX PYTHON GTKMM DOCS
 OPTIONS_SINGLE=	GV
@@ -34,15 +34,15 @@ GUILE2_DESC=	Use lang/guile2
 
 OPTIONS_SUB=		yes
 AQBANKING_CONFIGURE_ENABLE=aqbanking
-AQBANKING_LIB_DEPENDS=	libgwengui-gtk2.so:${PORTSDIR}/devel/gwenhywfar-gtk2 \
-			libktoblzcheck.so:${PORTSDIR}/finance/ktoblzcheck \
-			libaqbanking.so:${PORTSDIR}/finance/aqbanking
+AQBANKING_LIB_DEPENDS=	libgwengui-gtk2.so:devel/gwenhywfar-gtk2 \
+			libktoblzcheck.so:finance/ktoblzcheck \
+			libaqbanking.so:finance/aqbanking
 OFX_CONFIGURE_ENABLE=	ofx
-OFX_LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx
+OFX_LIB_DEPENDS=	libofx.so:finance/libofx
 DATABASE_CONFIGURE_ENABLE=dbi
-DATABASE_BUILD_DEPENDS=	libdbi-drivers>=0:${PORTSDIR}/databases/libdbi-drivers
-DATABASE_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
-DATABASE_RUN_DEPENDS=	libdbi-drivers>=0:${PORTSDIR}/databases/libdbi-drivers
+DATABASE_BUILD_DEPENDS=	libdbi-drivers>=0:databases/libdbi-drivers
+DATABASE_LIB_DEPENDS=	libdbi.so:databases/libdbi
+DATABASE_RUN_DEPENDS=	libdbi-drivers>=0:databases/libdbi-drivers
 DATABASE_CONFIGURE_ON=	--with-dbi-dbd-dir=${LOCALBASE}/lib/dbd
 LOCALE_TAX_CONFIGURE_ON=--enable-locale-specific-tax
 PYTHON_CONFIGURE_ON=	--enable-python
@@ -50,12 +50,12 @@ PYTHON_USES=		python
 GTKMM_USE=		GNOME=gtkmm24
 GTKMM_CONFIGURE_ON=	--enable-gtkmm
 GTKMM_CONFIGURE_OFF=	--disable-gtkmm
-GUILE1_LIB_DEPENDS=     libguile.so:${PORTSDIR}/lang/guile
-GUILE1_BUILD_DEPENDS=	slib-guile>0:${PORTSDIR}/lang/slib-guile
-GUILE1_RUN_DEPENDS=	slib-guile>0:${PORTSDIR}/lang/slib-guile
-GUILE2_LIB_DEPENDS=     libguile-2.0.so:${PORTSDIR}/lang/guile2
-GUILE2_BUILD_DEPENDS=	slib-guile2>0:${PORTSDIR}/lang/slib-guile2
-GUILE2_RUN_DEPENDS=	slib-guile2>0:${PORTSDIR}/lang/slib-guile2
+GUILE1_LIB_DEPENDS=     libguile.so:lang/guile
+GUILE1_BUILD_DEPENDS=	slib-guile>0:lang/slib-guile
+GUILE1_RUN_DEPENDS=	slib-guile>0:lang/slib-guile
+GUILE2_LIB_DEPENDS=     libguile-2.0.so:lang/guile2
+GUILE2_BUILD_DEPENDS=	slib-guile2>0:lang/slib-guile2
+GUILE2_RUN_DEPENDS=	slib-guile2>0:lang/slib-guile2
 
 USE_XORG=	x11
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake libtool perl5 \

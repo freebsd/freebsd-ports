@@ -13,9 +13,9 @@ COMMENT=	C++ library for the manipulation of convex polyhedra
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	libglpk.so:${PORTSDIR}/math/glpk \
-		libgmp.so:${PORTSDIR}/math/gmp
+BUILD_DEPENDS=	gm4:devel/m4
+LIB_DEPENDS=	libglpk.so:math/glpk \
+		libgmp.so:math/gmp
 
 USES=		gmake perl5 tar:xz libtool
 USE_PERL5=	build

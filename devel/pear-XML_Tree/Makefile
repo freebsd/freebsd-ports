@@ -9,8 +9,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class for representing XML data in a tree structure
 
-BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
-RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
+BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
+RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
 
 USES=	pear
 

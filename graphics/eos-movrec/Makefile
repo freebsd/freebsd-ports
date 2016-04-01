@@ -12,7 +12,7 @@ COMMENT=	Capture short movies with Canon DSLR camera
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 
 USES=		cmake dos2unix pkgconfig tar:bzip2
 DOS2UNIX_GLOB=	*.pro *.cpp *.h

@@ -16,8 +16,8 @@ COMMENT=	VirtualBox additions for FreeBSD guests
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		kmk:${PORTSDIR}/devel/kBuild
+BUILD_DEPENDS=	yasm:devel/yasm \
+		kmk:devel/kBuild
 
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
@@ -85,7 +85,7 @@ VBOX_LIBS=	VBoxOGL.so \
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/X:${PORTSDIR}/x11-servers/xorg-server
+BUILD_DEPENDS+=	${LOCALBASE}/bin/X:x11-servers/xorg-server
 USE_XORG=	xcursor xmu inputproto xorg-server xrandr
 USES+=		pkgconfig
 VBOX_WITH_X11=	1

@@ -15,7 +15,7 @@ COMMENT=	Platform game featuring buggers equipped with weapons
 
 LICENSE=	ZLIB
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 CPE_VERSION=	${PORTVERSION:C/^0\.//}
 

@@ -12,8 +12,8 @@ COMMENT=	Addressbook for the GNOME 2 desktop
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
+LIB_DEPENDS=	libnotify.so:devel/libnotify
+RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme
 
 USES=		desktop-file-utils gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

@@ -16,7 +16,7 @@ COMMENT=	VirtualBox kernel module for FreeBSD
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	kmk:${PORTSDIR}/devel/kBuild
+BUILD_DEPENDS=	kmk:devel/kBuild
 
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox

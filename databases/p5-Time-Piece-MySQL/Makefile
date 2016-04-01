@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Time::Piece::MySQL - Adds MySQL-specific methods to Time::Piece
 
-BUILD_DEPENDS=	p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece
+BUILD_DEPENDS=	p5-Time-Piece>=0:devel/p5-Time-Piece
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

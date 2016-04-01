@@ -13,8 +13,8 @@ COMMENT=	Image viewer with Xfce integration
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS=	libexif.so:graphics/libexif \
+		libdbus-glib-1.so:devel/dbus-glib \
 
 USES=		pkgconfig gettext desktop-file-utils gmake xfce tar:bzip2
 GNU_CONFIGURE=	yes

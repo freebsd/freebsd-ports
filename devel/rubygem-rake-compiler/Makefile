@@ -11,7 +11,7 @@ COMMENT=	Build and package Ruby extensions (C, Java) using Rake
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
+RUN_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 
 NO_ARCH=	yes
 USE_RUBY=	yes

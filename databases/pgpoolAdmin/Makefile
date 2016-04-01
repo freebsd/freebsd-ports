@@ -11,7 +11,7 @@ COMMENT=	Web-based administration tool for pgpool-II
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	pgpool:${PORTSDIR}/databases/pgpool-II
+RUN_DEPENDS=	pgpool:databases/pgpool-II
 
 USE_PHP=	mbstring pcre pgsql session
 NO_BUILD=	yes

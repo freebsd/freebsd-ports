@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/ \
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Command line client for the OpenSync framework
 
-LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync
+LIB_DEPENDS=	libopensync.so:devel/libopensync
 
 CONFLICTS=	msynctool-0.2*
 

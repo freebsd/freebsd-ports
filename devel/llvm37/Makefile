@@ -64,13 +64,13 @@ LIT_DESC=		Install lit and FileCheck test tools
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
 LLDB_DESC=		Install lldb, the LLVM debugger (ignored on 9.x)
-LLDB_BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+LLDB_BUILD_DEPENDS=	swig:devel/swig13
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
-GOLD_BUILD_DEPENDS=	ld.gold:${PORTSDIR}/devel/binutils
+GOLD_BUILD_DEPENDS=	ld.gold:devel/binutils
 
 # Emulate USE_GITHUB's ${WRKSRC_tag} to reduce diffs to ../llvm-devel
 .for option in CLANG COMPILER_RT EXTRAS LLD LLDB OPENMP
@@ -79,7 +79,7 @@ WRKSRC_${option:tl}=		${WRKDIR}/${${option}_DISTFILES:S/${EXTRACT_SUFX}//}
 
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=		sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
 
 PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE}
 
@@ -241,7 +241,7 @@ NOT_FOR_ARCH=	ia64
 
 .if ${PYTHON_REL} < 3400
 LLDB_BUILD_DEPENDS+= \
-	${PYTHON_PKGNAMEPREFIX}enum34>0:${PORTSDIR}/devel/py-enum34
+	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
 .endif
 
 .if ${PORT_OPTIONS:MLLDB} && ${PYTHON_REL} >= 3000

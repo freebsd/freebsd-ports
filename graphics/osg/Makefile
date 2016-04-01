@@ -17,8 +17,8 @@ LICENSE_NAME=	OpenSceneGraph Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 CONFLICTS=	osg-devel-[0-9]*
 
@@ -47,21 +47,21 @@ NVTT_DESC=	Use NVidia texture tools
 
 OPTIONS_SUB=	yes
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
-GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
-GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
-INVENTOR_LIB_DEPENDS=	libInventor.so:${PORTSDIR}/graphics/inventor
-JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
-XINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
-GTA_LIB_DEPENDS=	libgta.so:${PORTSDIR}/devel/libgta
-VNC_LIB_DEPENDS=	libvncserver.so:${PORTSDIR}/net/libvncserver
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-SVG_LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
-PDF_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
+GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
+INVENTOR_LIB_DEPENDS=	libInventor.so:graphics/inventor
+JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
+XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
+GTA_LIB_DEPENDS=	libgta.so:devel/libgta
+VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+SVG_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
+PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 SDL_USE=		SDL=sdl
-NVTT_LIB_DEPENDS=	libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
+NVTT_LIB_DEPENDS=	libnvtt.so:graphics/nvidia-texture-tools
 XRANDR_CMAKE_ON=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
 XRANDR_CMAKE_OFF=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
 QT4_USE=		QT4=corelib,gui,opengl,qmake_build,moc_build,uic_build,rcc_build

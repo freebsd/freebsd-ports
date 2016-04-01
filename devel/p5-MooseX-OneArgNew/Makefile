@@ -14,9 +14,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Role-Parameterized>=1.01:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+BUILD_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
+		p5-MooseX-Role-Parameterized>=1.01:devel/p5-MooseX-Role-Parameterized \
+		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

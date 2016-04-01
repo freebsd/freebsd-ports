@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/nik
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Converts the output of "vidcontrol -p" to PNG
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 NO_WRKSUBDIR=	yes
 USES=		uidfix

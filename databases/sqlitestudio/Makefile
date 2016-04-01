@@ -48,7 +48,7 @@ USE_LDCONFIG=	yes
 
 .if ${COMPILER_TYPE} == clang && (${COMPILER_VERSION} < 37)
 # The reason for clang37 is that previous versions fail to compile with various errors
-BUILD_DEPENDS+=	clang37:${PORTSDIR}/lang/clang37
+BUILD_DEPENDS+=	clang37:lang/clang37
 CPP=		clang-cpp37
 CC=		clang37
 CXX=		clang++37

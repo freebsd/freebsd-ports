@@ -14,8 +14,8 @@ COMMENT=	Generic interface for processing online credit card payments
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-HTTPS-Any>=0:${PORTSDIR}/net/p5-Net-HTTPS-Any \
-		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
+BUILD_DEPENDS=	p5-Net-HTTPS-Any>=0:net/p5-Net-HTTPS-Any \
+		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	limit:^[0-9\.]*$$

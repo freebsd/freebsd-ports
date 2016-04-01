@@ -12,15 +12,15 @@ COMMENT=	Powerful RAW image processing application
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		libiptcdata.so:${PORTSDIR}/graphics/libiptcdata \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24 \
+		libiptcdata.so:graphics/libiptcdata \
+		liblcms2.so:graphics/lcms2 \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libsigc-2.0.so:devel/libsigc++20 \
+		libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libcanberra-gtk3.so:audio/libcanberra-gtk3
 
 USES=		cmake:outsource compiler:features desktop-file-utils dos2unix jpeg pkgconfig tar:xz
 DOS2UNIX_REGEX=	.*\.(cc|h)
@@ -63,7 +63,7 @@ USE_GCC=	yes
 LDFLAGS+=	-L/usr/local/lib/c++
 CXXFLAGS+=	-nostdinc++ -isystem /usr/local/include/c++/v1
 CFLAGS+=	-isystem /usr/local/include/c++/v1
-BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
+BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"

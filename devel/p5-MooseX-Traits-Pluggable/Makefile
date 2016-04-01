@@ -15,12 +15,12 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	\
-	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
-	p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
-	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+	p5-Moose>=0:devel/p5-Moose \
+	p5-Class-Load>=0:devel/p5-Class-Load \
+	p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
+	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	configure

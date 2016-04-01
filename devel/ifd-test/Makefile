@@ -12,7 +12,7 @@ COMMENT=	IFD Test Suite for PC/SC Lite
 
 BROKEN=		unfetchable
 
-LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USES=		gmake
 NOMAN=

@@ -11,7 +11,7 @@ COMMENT=	Create wizard like interfaces in terminal applications
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	rubygem-highline>=0:${PORTSDIR}/devel/rubygem-highline
+RUN_DEPENDS=	rubygem-highline>=0:devel/rubygem-highline
 
 NO_ARCH=	yes
 USE_RUBY=	yes

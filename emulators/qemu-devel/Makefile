@@ -43,28 +43,28 @@ X11_CONFIGURE_OFF=	--disable-sdl
 GTK2_USE=	GNOME=gtk20,vte
 GTK2_USES=	gettext
 GTK2_CONFIGURE_OFF=	--disable-gtk --disable-vte
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_OFF=	--disable-vnc-sasl
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_OFF=	--disable-vnc-jpeg
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_OFF=	--disable-vnc-png
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_OFF=	--disable-curl
 OPENGL_USE=	GL=yes
 OPENGL_CONFIGURE_OFF=	--disable-opengl
-USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:${PORTSDIR}/net/usbredir
-USBREDIR_RUN_DEPENDS=	usbredir>=0.6:${PORTSDIR}/net/usbredir
+USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:net/usbredir
+USBREDIR_RUN_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_CONFIGURE_OFF=	--disable-usb-redir
 PCAP_CONFIGURE_ON=	--enable-pcap
 PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch
 STATIC_LINK_CONFIGURE_ON=	--static
 STATIC_LINK_PREVENTS=		GTK2 X11
 STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
-SAMBA_RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba36
-DOCS_BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
+SAMBA_RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:net/samba36
+DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_USES=		makeinfo
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
 

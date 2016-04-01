@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	DateTime Calculation Utilities
 
-BUILD_DEPENDS=	p5-Math-BigInt>=0:${PORTSDIR}/math/p5-Math-BigInt \
-		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
+BUILD_DEPENDS=	p5-Math-BigInt>=0:math/p5-Math-BigInt \
+		p5-DateTime>=0:devel/p5-DateTime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	GMP
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGMP}
-BUILD_DEPENDS+=	p5-Math-BigInt-GMP>=0:${PORTSDIR}/math/p5-Math-BigInt-GMP
+BUILD_DEPENDS+=	p5-Math-BigInt-GMP>=0:math/p5-Math-BigInt-GMP
 .endif
 
 .include <bsd.port.mk>

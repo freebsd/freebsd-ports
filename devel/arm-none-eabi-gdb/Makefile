@@ -11,7 +11,7 @@ DISTNAME=	gdb-${PORTVERSION}
 
 MAINTAINER=	imp@FreeBSD.org
 COMMENT=	GNU GDB for the arm bare metal target
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake tar:xz iconv gmake libtool 
 

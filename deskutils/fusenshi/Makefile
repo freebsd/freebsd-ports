@@ -18,7 +18,7 @@ MAKE_JOBS_UNSAFE=	yes
 .ifdef WITHOUT_SSL
 MAKE_ARGS+=	WITHOUT_SSL=yes
 .else
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 .endif
 
 post-install:

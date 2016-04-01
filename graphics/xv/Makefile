@@ -18,9 +18,9 @@ PATCHFILES=	xv-3.10a-enhancements.20070520-20081216.diff
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	X11 program that displays images of various formats
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libjasper.so:${PORTSDIR}/graphics/jasper
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libpng.so:graphics/png \
+		libjasper.so:graphics/jasper
 
 USES=		imake jpeg
 USE_XORG=	xext x11 xt

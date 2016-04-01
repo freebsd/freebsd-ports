@@ -14,7 +14,7 @@ COMMENT=	Python bindings to the GNU dbm library (Python ${PYTHON_VER})
 
 LICENSE=	PSFL
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 PORTSCOUT=	ignore:1
 

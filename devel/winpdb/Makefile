@@ -12,7 +12,7 @@ COMMENT=	Advanced Python debugger
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:security/py-pycrypto
 
 USES=		python
 USE_PYTHON=	autoplist distutils

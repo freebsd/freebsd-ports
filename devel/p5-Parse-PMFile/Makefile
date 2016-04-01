@@ -12,7 +12,7 @@ COMMENT=	Perl extension to parses .pm file as PAUSE does
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-ExtUtils-MakeMaker-CPANfile>0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker-CPANfile
+BUILD_DEPENDS=	p5-ExtUtils-MakeMaker-CPANfile>0:devel/p5-ExtUtils-MakeMaker-CPANfile
 
 USES=		perl5
 USE_PERL5=	configure

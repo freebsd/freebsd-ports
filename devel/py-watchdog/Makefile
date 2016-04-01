@@ -12,12 +12,12 @@ COMMENT=	Python API library to monitor file system events
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}argh>=0.24.1:${PORTSDIR}/devel/py-argh \
-		${PKGNAMEPREFIX}pathtools>=0.1.2:${PORTSDIR}/devel/py-pathtools \
-		${PKGNAMEPREFIX}yaml>=3.10:${PORTSDIR}/devel/py-yaml
+RUN_DEPENDS=	${PKGNAMEPREFIX}argh>=0.24.1:devel/py-argh \
+		${PKGNAMEPREFIX}pathtools>=0.1.2:devel/py-pathtools \
+		${PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml
 
-DOCS_BUILD_DEPENDS=	${PKGNAMEPREFIX}pathtools>=0.1.2:${PORTSDIR}/devel/py-pathtools \
-		${PKGNAMEPREFIX}sphinx>=1.1.3:${PORTSDIR}/textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	${PKGNAMEPREFIX}pathtools>=0.1.2:devel/py-pathtools \
+		${PKGNAMEPREFIX}sphinx>=1.1.3:textproc/py-sphinx
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 GH_ACCOUNT=	gorakhargosh

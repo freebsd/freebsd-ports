@@ -10,7 +10,7 @@ MASTER_SITES=	http://distfiles.atheme.org/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	BSD licenced configuration database system
 
-LIB_DEPENDS=	libmowgli.so:${PORTSDIR}/devel/libmowgli
+LIB_DEPENDS=	libmowgli.so:devel/libmowgli
 
 OPTIONS_DEFINE=	GCONF
 OPTIONS_DEFAULT=	GCONF

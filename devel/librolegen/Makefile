@@ -9,7 +9,7 @@ COMMENT=	Library to dynamically generate webOS system bus role files
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/share/cmake/Modules/webOS/webOS.cmake:${PORTSDIR}/devel/cmake-modules-webos
+BUILD_DEPENDS=	${LOCALBASE}/share/cmake/Modules/webOS/webOS.cmake:devel/cmake-modules-webos
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeWebOS

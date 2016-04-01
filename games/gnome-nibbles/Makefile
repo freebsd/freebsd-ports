@@ -10,10 +10,10 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome nibbles
 
-BUILD_DEPENDS=	vala:${PORTSDIR}/lang/vala \
-		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
-		libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
+BUILD_DEPENDS=	vala:lang/vala \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libclutter-gtk-1.0.so:graphics/clutter-gtk3
 
 PORTSCOUT=	limitw:1,even
 

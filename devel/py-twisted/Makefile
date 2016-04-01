@@ -14,7 +14,7 @@ COMMENT=	Asynchronous networking framework written in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:${PORTSDIR}/devel/py-zope.interface
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:devel/py-zope.interface
 
 USES=		python:2 tar:bzip2
 USE_PYTHON=	distutils

@@ -7,7 +7,7 @@ CATEGORIES=	devel
 
 COMMENT=	Web-Based Bug And Patch-Set Tracking System For Subversion
 
-RUN_DEPENDS=	subversion>=0:${PORTSDIR}/devel/subversion
+RUN_DEPENDS=	subversion>=0:devel/subversion
 
 MASTERDIR=	${.CURDIR}/../cvstrac
 MAKE_ARGS=	APPNAME=svntrac

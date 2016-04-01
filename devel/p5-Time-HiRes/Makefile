@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl5 module implementing High resolution time, sleep, and alarm
 
-TEST_DEPENDS=	p5-Test-Simple>=0.82:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS=	p5-Test-Simple>=0.82:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

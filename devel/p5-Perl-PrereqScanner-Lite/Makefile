@@ -13,8 +13,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Compiler-Lexer>=0.22:${PORTSDIR}/devel/p5-Compiler-Lexer \
-	p5-Module-Path>0:${PORTSDIR}/devel/p5-Module-Path
+	p5-Compiler-Lexer>=0.22:devel/p5-Compiler-Lexer \
+	p5-Module-Path>0:devel/p5-Module-Path
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

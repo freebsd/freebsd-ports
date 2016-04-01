@@ -10,7 +10,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 hex editor
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack libxml2:build

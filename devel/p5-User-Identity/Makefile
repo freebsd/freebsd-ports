@@ -14,7 +14,7 @@ COMMENT=	Perl module for abstracting information about a physical person
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Geography-Countries>0:${PORTSDIR}/misc/p5-Geography-Countries
+RUN_DEPENDS=	p5-Geography-Countries>0:misc/p5-Geography-Countries
 
 USES=		perl5
 USE_PERL5=	configure

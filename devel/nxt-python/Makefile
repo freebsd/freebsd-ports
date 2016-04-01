@@ -12,7 +12,7 @@ COMMENT=	Python interface for the Lego Mindstorms NXT robot
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}usb>=0:${PORTSDIR}/devel/py-usb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}usb>=0:devel/py-usb
 
 USES=		python
 USE_PYTHON=	distutils autoplist

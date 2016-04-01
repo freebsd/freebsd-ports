@@ -12,7 +12,7 @@ COMMENT=	Allows to run callbacks after transaction is committed
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS?=	rubygem-activerecord4>=3.0:${PORTSDIR}/databases/rubygem-activerecord4
+RUN_DEPENDS?=	rubygem-activerecord4>=3.0:databases/rubygem-activerecord4
 
 NO_ARCH=	yes
 USE_RUBY=	yes

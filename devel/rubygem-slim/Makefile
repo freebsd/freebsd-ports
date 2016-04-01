@@ -11,8 +11,8 @@ COMMENT=	Template language whose goal is reduce the syntax to essential parts
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-temple>=0.7.3:${PORTSDIR}/devel/rubygem-temple \
-		rubygem-tilt>=1.3.3:${PORTSDIR}/devel/rubygem-tilt
+RUN_DEPENDS=	rubygem-temple>=0.7.3:devel/rubygem-temple \
+		rubygem-tilt>=1.3.3:devel/rubygem-tilt
 
 NO_ARCH=	yes
 USE_RUBY=	yes

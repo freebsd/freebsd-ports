@@ -21,7 +21,7 @@ DISTINFO_FILE=		${MASTERDIR}/distinfo.i386
 RESTRICTED=		Packaging prohibited by Oracle license
 
 # base
-RUN_DEPENDS+=		linux-oracle-instantclient-basic>0:${PORTSDIR}/databases/linux-oracle-instantclient-basic
+RUN_DEPENDS+=		linux-oracle-instantclient-basic>0:databases/linux-oracle-instantclient-basic
 
 USES=			zip
 USE_LINUX=		c6

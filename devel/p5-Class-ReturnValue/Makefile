@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Return-value object that can be treated as a boolean, array, or object
 
-BUILD_DEPENDS=	p5-Devel-StackTrace>=0:${PORTSDIR}/devel/p5-Devel-StackTrace
+BUILD_DEPENDS=	p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

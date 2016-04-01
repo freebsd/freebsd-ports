@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl5 module containing date manipulation routines
 
-TEST_DEPENDS=	p5-Test-Inter>=0:${PORTSDIR}/devel/p5-Test-Inter
+TEST_DEPENDS=	p5-Test-Inter>=0:devel/p5-Test-Inter
 
 USES=		perl5
 USE_PERL5=	configure

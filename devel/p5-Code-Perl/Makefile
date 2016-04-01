@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Produce Perl code from a tree
 
-BUILD_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker
+BUILD_DEPENDS=	p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
 USES=		perl5
 USE_PERL5=	configure

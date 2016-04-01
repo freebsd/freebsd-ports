@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-List-Objects-WithUtils>=2:${PORTSDIR}/devel/p5-List-Objects-WithUtils \
-		p5-Type-Tiny>=0.022:${PORTSDIR}/devel/p5-Type-Tiny
+BUILD_DEPENDS=	p5-List-Objects-WithUtils>=2:devel/p5-List-Objects-WithUtils \
+		p5-Type-Tiny>=0.022:devel/p5-Type-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

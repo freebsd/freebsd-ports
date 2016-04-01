@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	TLS NLS DOCS EXAMPLES
 OPTIONS_DEFAULT=TLS
 OPTIONS_SUB=	yes
 
-TLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+TLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 TLS_CONFIGURE_WITH=	ssl
 NLS_USES=		gettext iconv
 NLS_CONFIGURE_ENABLE=	nls

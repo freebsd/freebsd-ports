@@ -13,7 +13,7 @@ COMMENT=	Subversion repository activity report generator
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	subversion>=1.3:${PORTSDIR}/devel/subversion
+RUN_DEPENDS=	subversion>=1.3:devel/subversion
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

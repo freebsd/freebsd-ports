@@ -12,7 +12,7 @@ COMMENT=	Provide an implementation of SMPP-3.4 protocol for PDUs handling
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=		autoreconf libtool gmake
 

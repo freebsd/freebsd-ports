@@ -11,7 +11,7 @@ COMMENT=	Simple rake/rubygems helper for project Rakefiles
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rake>=0.8:${PORTSDIR}/devel/rubygem-rake
+RUN_DEPENDS=	rubygem-rake>=0.8:devel/rubygem-rake
 
 NO_ARCH=	yes
 USE_RUBY=	yes

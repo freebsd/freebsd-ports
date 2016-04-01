@@ -11,7 +11,7 @@ COMMENT=	CoffeeScript converter for Jekyll
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-coffee-script>=2.2:${PORTSDIR}/devel/rubygem-coffee-script
+RUN_DEPENDS=	rubygem-coffee-script>=2.2:devel/rubygem-coffee-script
 
 NO_ARCH=	yes
 USE_RUBY=	yes

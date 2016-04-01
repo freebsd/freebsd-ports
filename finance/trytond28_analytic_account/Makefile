@@ -13,10 +13,10 @@ COMMENT=	Tryton Application Platform (Analytic Account Module)
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	trytond28_company>=2.8.0:${PORTSDIR}/finance/trytond28_company \
-		trytond28_party>=2.8.0:${PORTSDIR}/finance/trytond28_party \
-		trytond28_currency>=2.8.0:${PORTSDIR}/finance/trytond28_currency \
-		trytond28_account>=2.8.1:${PORTSDIR}/finance/trytond28_account
+RUN_DEPENDS=	trytond28_company>=2.8.0:finance/trytond28_company \
+		trytond28_party>=2.8.0:finance/trytond28_party \
+		trytond28_currency>=2.8.0:finance/trytond28_currency \
+		trytond28_account>=2.8.1:finance/trytond28_account
 
 CONFLICTS=	trytond_analytic_account-2.[46].*
 

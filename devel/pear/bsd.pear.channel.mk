@@ -7,8 +7,8 @@ PKGNAMEPREFIX?=	pear-channel-
 MASTER_SITES?=	#no master sites
 DISTFILES?=	#no distfiles
 
-BUILD_DEPENDS?=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
-RUN_DEPENDS?=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
+BUILD_DEPENDS?=	${LOCALBASE}/bin/pear:devel/pear
+RUN_DEPENDS?=	${LOCALBASE}/bin/pear:devel/pear
 
 NO_BUILD?=	yes
 

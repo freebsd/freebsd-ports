@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	IO::Toolkit - Perl extension to create logfiles
 
-BUILD_DEPENDS=	p5-Crypt-RC6>=0:${PORTSDIR}/security/p5-Crypt-RC6
-RUN_DEPENDS=	p5-Crypt-RC6>=0:${PORTSDIR}/security/p5-Crypt-RC6
+BUILD_DEPENDS=	p5-Crypt-RC6>=0:security/p5-Crypt-RC6
+RUN_DEPENDS=	p5-Crypt-RC6>=0:security/p5-Crypt-RC6
 
 USES=		perl5
 USE_PERL5=	configure

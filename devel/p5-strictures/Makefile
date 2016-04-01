@@ -23,9 +23,9 @@ OPTIONS_DEFINE=	STRICTURES_EXTRA
 OPTIONS_DEFAULT=STRICTURES_EXTRA
 
 STRICTURES_EXTRA_DESC=		Enable full set of strictures (recommended)
-STRICTURES_EXTRA_BUILD_DEPENDS=	p5-bareword-filehandles>=0:${PORTSDIR}/devel/p5-bareword-filehandles \
-				p5-indirect>=0:${PORTSDIR}/devel/p5-indirect \
-				p5-multidimensional>=0:${PORTSDIR}/devel/p5-multidimensional
+STRICTURES_EXTRA_BUILD_DEPENDS=	p5-bareword-filehandles>=0:devel/p5-bareword-filehandles \
+				p5-indirect>=0:devel/p5-indirect \
+				p5-multidimensional>=0:devel/p5-multidimensional
 STRICTURES_EXTRA_RUN_DEPENDS=	${STRICTURES_EXTRA_BUILD_DEPENDS}
 
 .include <bsd.port.mk>

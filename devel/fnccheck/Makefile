@@ -13,7 +13,7 @@ COMMENT=	Profiling library/utilities for C/C++ programs
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libbfd.so:${PORTSDIR}/devel/libbfd
+LIB_DEPENDS=	libbfd.so:devel/libbfd
 
 USES=		autoreconf libtool
 GNU_CONFIGURE=	yes

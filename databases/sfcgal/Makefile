@@ -12,10 +12,10 @@ COMMENT=	Wrapper library around CGAL for PostGIS
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libCGAL.so:${PORTSDIR}/math/cgal \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libmpfr.so:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	libCGAL.so:math/cgal \
+		libboost_system.so:devel/boost-libs \
+		libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Oslandia

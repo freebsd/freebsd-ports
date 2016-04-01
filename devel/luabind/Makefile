@@ -13,7 +13,7 @@ COMMENT=	Library that helps you create bindings between C++ and Lua
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
 
 USES=		lua:51
 USE_LDCONFIG=	yes

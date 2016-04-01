@@ -10,7 +10,7 @@ COMMENT=	Keyboard layout switching plugin for the Xfce panel
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxklavier.so:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
 GNU_CONFIGURE=	yes
 USES=		gettext pkgconfig gmake xfce tar:bzip2

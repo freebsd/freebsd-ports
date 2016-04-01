@@ -13,8 +13,8 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	${LOCALBASE}/lib/Trf/pkgIndex.tcl:${PORTSDIR}/devel/tcl-trf	\
-		${LOCALBASE}/lib/tcllib/cmdline/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
+RUN_DEPENDS=	${LOCALBASE}/lib/Trf/pkgIndex.tcl:devel/tcl-trf	\
+		${LOCALBASE}/lib/tcllib/cmdline/pkgIndex.tcl:devel/tcllib
 
 USES+=		tcl:85+
 USE_GITHUB=	yes

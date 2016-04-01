@@ -12,11 +12,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make URLs for Gravatars from an email address
 
-BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-URI>=0:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+TEST_DEPENDS=	p5-Test-Warn>=0:devel/p5-Test-Warn
 
 USES=		perl5
 USE_PERL5=	modbuild

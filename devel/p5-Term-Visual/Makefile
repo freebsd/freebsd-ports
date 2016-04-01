@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Split-terminal user interface
 
-BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
-		p5-Curses>=0:${PORTSDIR}/devel/p5-Curses
+BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE \
+		p5-Curses>=0:devel/p5-Curses
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

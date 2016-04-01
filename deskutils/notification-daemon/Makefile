@@ -12,8 +12,8 @@ COMMENT=	Send small notifications to your desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libcanberra-gtk3.so:audio/libcanberra-gtk3
 
 PORTSCOUT=	limitw:1,even
 

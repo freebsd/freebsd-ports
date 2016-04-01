@@ -14,11 +14,11 @@ COMMENT=	Load (and optionally decrypt via GnuPG) user/pass identity information
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
-		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
-		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
+BUILD_DEPENDS=	p5-File-HomeDir>=0:devel/p5-File-HomeDir \
+		p5-File-Which>=0:sysutils/p5-File-Which \
+		p5-IPC-Run>=0:devel/p5-IPC-Run
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
+TEST_DEPENDS=	p5-Test-Most>=0:devel/p5-Test-Most
 
 NO_ARCH=	yes
 USE_PERL5=	configure

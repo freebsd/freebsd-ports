@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Convert LaTeX formula to image
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
+BUILD_DEPENDS=	help2man:misc/help2man
 
 USES=		cmake:outsource desktop-file-utils ghostscript:run \
 		shared-mime-info

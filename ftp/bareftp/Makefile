@@ -30,8 +30,8 @@ OPTIONS_DEFAULT=GNOMEKEYRING
 OPTIONS_SUB=	yes
 
 GNOMEKEYRING_CONFIGURE_WITH=	gnomekeyring
-GNOMEKEYRING_BUILD_DEPENDS=	gnome-keyring-sharp>0:${PORTSDIR}/security/gnome-keyring-sharp
-GNOMEKEYRING_RUN_DEPENDS=	gnome-keyring-sharp>0:${PORTSDIR}/security/gnome-keyring-sharp
+GNOMEKEYRING_BUILD_DEPENDS=	gnome-keyring-sharp>0:security/gnome-keyring-sharp
+GNOMEKEYRING_RUN_DEPENDS=	gnome-keyring-sharp>0:security/gnome-keyring-sharp
 NLS_CONFIGURE_ENABLE=	nls
 
 # TODO

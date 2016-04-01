@@ -27,8 +27,8 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Additional Player Levels for Rocks'n'Diamonds and R'n'D jue
 
-EXTRACT_DEPENDS+=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
-		7z:${PORTSDIR}/archivers/p7zip
+EXTRACT_DEPENDS+=${UNZIP_CMD}:archivers/unzip \
+		7z:archivers/p7zip
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -64,13 +64,13 @@ PREFIX=		/usr/local
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRnD}
-RUN_DEPENDS+=	rocksndiamonds:${PORTSDIR}/games/rocksndiamonds
+RUN_DEPENDS+=	rocksndiamonds:games/rocksndiamonds
 DATADIR=	${PREFIX}/share/rocksndiamonds
 DATADIR1=	${PREFIX}/share/rnd_jue
 .endif
 
 .if ${PORT_OPTIONS:MRnD_jue}
-RUN_DEPENDS+=	rnd_jue:${PORTSDIR}/games/rnd_jue
+RUN_DEPENDS+=	rnd_jue:games/rnd_jue
 DATADIR=	${PREFIX}/share/rnd_jue
 DATADIR1=	${PREFIX}/share/rocksndiamonds
 .endif

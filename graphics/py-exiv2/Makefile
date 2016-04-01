@@ -12,8 +12,8 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Python bindings for exiv2
 
-LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2\
-		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS=	libexiv2.so:graphics/exiv2\
+		libboost_python.so:devel/boost-python-libs
 
 USES=		python:2 scons tar:bzip2
 USE_LDCONFIG=	yes

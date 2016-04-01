@@ -12,10 +12,10 @@ COMMENT=	C and C++ toolchain for CloudABI
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	clang${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX} \
-		pkgconf:${PORTSDIR}/devel/pkgconf \
-		aarch64-unknown-cloudabi-ld:${PORTSDIR}/devel/cloudabi-binutils-aarch64 \
-		x86_64-unknown-cloudabi-ld:${PORTSDIR}/devel/cloudabi-binutils-x86_64
+RUN_DEPENDS=	clang${LLVM_SUFFIX}:devel/llvm${LLVM_SUFFIX} \
+		pkgconf:devel/pkgconf \
+		aarch64-unknown-cloudabi-ld:devel/cloudabi-binutils-aarch64 \
+		x86_64-unknown-cloudabi-ld:devel/cloudabi-binutils-x86_64
 
 LLVM_SUFFIX=	38
 

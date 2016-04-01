@@ -11,8 +11,8 @@ MASTER_SITES=	http://www.ndesk.org/archive/ndesk-dbus/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib main loop integration for Managed D-Bus
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:${PORTSDIR}/devel/ndesk-dbus
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:devel/ndesk-dbus
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:devel/ndesk-dbus
 
 USES=		gmake mono pathfix pkgconfig
 GNU_CONFIGURE=	yes

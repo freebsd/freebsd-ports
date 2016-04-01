@@ -13,10 +13,10 @@ DISTFILES=	# none
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Autotools meta-port
 
-RUN_DEPENDS=	libtoolize:${PORTSDIR}/devel/libtool \
-		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
-		autoconf-2.69:${PORTSDIR}/devel/autoconf \
-		automake-1.15:${PORTSDIR}/devel/automake
+RUN_DEPENDS=	libtoolize:devel/libtool \
+		autoconf-2.13:devel/autoconf213 \
+		autoconf-2.69:devel/autoconf \
+		automake-1.15:devel/automake
 
 PLIST_FILES=	share/${PORTNAME}
 NO_BUILD=	yes

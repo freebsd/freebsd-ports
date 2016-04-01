@@ -16,8 +16,8 @@ BROKEN=		unfetchable
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
-RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
+BUILD_DEPENDS=	timidity:audio/timidity
+RUN_DEPENDS=	timidity:audio/timidity
 
 USE_SDL=	sdl mixer
 USE_XORG=	x11

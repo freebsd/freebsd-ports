@@ -13,7 +13,7 @@ COMMENT=	Client and protocol library for the Drizzle database
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES DOCS
 
@@ -29,7 +29,7 @@ SAMPLE_PROGS=	client pipe_query proxy server simple \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen>=0:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen>=0:devel/doxygen
 ALL_TARGET=	all doxygen
 PLIST_SUB+=	PORTDOCS=""
 .else

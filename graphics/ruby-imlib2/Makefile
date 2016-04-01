@@ -13,7 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Imlib2 bindings for Ruby
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

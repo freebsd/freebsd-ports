@@ -11,9 +11,9 @@ COMMENT=	Relational and transactional database system
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	liblfcbase.so:${PORTSDIR}/devel/lfcbase \
-		liblfcxml.so:${PORTSDIR}/devel/lfcxml
-RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
+LIB_DEPENDS=	liblfcbase.so:devel/lfcbase \
+		liblfcxml.so:devel/lfcxml
+RUN_DEPENDS=	${LOCALBASE}/bin/sudo:security/sudo
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

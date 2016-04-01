@@ -13,7 +13,7 @@ COMMENT=	Mount PTP camera as a file system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 
 USES=		fuse pkgconfig tar:bzip2
 USE_GNOME=	glib20

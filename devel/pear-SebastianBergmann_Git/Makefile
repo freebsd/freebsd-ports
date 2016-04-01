@@ -12,10 +12,10 @@ COMMENT=	Simple wrapper for Git
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
-RUN_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
+BUILD_DEPENDS=	pear>=1.9.4:devel/pear \
+		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+RUN_DEPENDS=	pear>=1.9.4:devel/pear \
+		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
 USES=	pear
 PEAR_CHANNEL=	phpunit

@@ -11,7 +11,7 @@ COMMENT=	Ruby generic generator framework
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport>=2.3.5:${PORTSDIR}/devel/rubygem-activesupport
+RUN_DEPENDS=	rubygem-activesupport>=2.3.5:devel/rubygem-activesupport
 
 NO_ARCH=	yes
 

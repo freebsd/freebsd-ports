@@ -13,9 +13,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite
+	p5-Class-Accessor-Lite>=0.05:devel/p5-Class-Accessor-Lite
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires
 
 USES=		perl5
 USE_PERL5=	modbuild

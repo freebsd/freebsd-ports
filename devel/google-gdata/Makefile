@@ -12,7 +12,7 @@ COMMENT=	DOT NET library for the Google Data API
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Newtonsoft.Json.pc:${PORTSDIR}/devel/newtonsoft-json
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Newtonsoft.Json.pc:devel/newtonsoft-json
 
 USES=		dos2unix gmake mono
 DOS2UNIX_FILES=	Makefile misc/gdata-sharp-core.pc.in

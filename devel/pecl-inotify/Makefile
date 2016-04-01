@@ -15,7 +15,7 @@ COMMENT=	This extension allows to use inotify functions in a PHP scripts
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USE_PHP=	yes
 USE_PHP_BUILD=	yes

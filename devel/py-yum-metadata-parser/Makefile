@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	afb@rpm5.org
 COMMENT=	Fast metadata parser for yum
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libglib-2.0.so:${PORTSDIR}/devel/glib20
+LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+		libsqlite3.so:databases/sqlite3 \
+		libglib-2.0.so:devel/glib20
 
 USES=		pkgconfig python
 USE_PYTHON=	distutils autoplist

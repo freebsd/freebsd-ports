@@ -12,7 +12,7 @@ COMMENT=	SQLite extension functions for RSQLite
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	R-cran-RSQLite>=0.11.1:${PORTSDIR}/databases/R-cran-RSQLite
+BUILD_DEPENDS=	R-cran-RSQLite>=0.11.1:databases/R-cran-RSQLite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=	cran:auto-plist

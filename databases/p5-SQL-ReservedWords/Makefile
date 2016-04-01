@@ -14,7 +14,7 @@ COMMENT=	Reserved SQL words by ANSI/ISO
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
+BUILD_DEPENDS=	p5-Sub-Exporter>=0:devel/p5-Sub-Exporter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

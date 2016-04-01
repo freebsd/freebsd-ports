@@ -12,8 +12,8 @@ COMMENT=	Breakout-style arcade game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gif2png:${PORTSDIR}/graphics/gif2png
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	gif2png:graphics/gif2png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gmake
 USE_SDL=	mixer net sdl

@@ -12,11 +12,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fetch quotes of mutual funds in Taiwan
 
-RUN_DEPENDS=	p5-Data-TreeDumper>=0:${PORTSDIR}/devel/p5-Data-TreeDumper \
-		p5-HTML-Encoding>=0.6:${PORTSDIR}/www/p5-HTML-Encoding \
-		p5-HTML-TableExtract>=2.1:${PORTSDIR}/www/p5-HTML-TableExtract \
-		p5-Spiffy>=0.3:${PORTSDIR}/devel/p5-Spiffy \
-		p5-WWW-Mechanize>=1.34:${PORTSDIR}/www/p5-WWW-Mechanize
+RUN_DEPENDS=	p5-Data-TreeDumper>=0:devel/p5-Data-TreeDumper \
+		p5-HTML-Encoding>=0.6:www/p5-HTML-Encoding \
+		p5-HTML-TableExtract>=2.1:www/p5-HTML-TableExtract \
+		p5-Spiffy>=0.3:devel/p5-Spiffy \
+		p5-WWW-Mechanize>=1.34:www/p5-WWW-Mechanize
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

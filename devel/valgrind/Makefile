@@ -25,8 +25,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 LIB32_PATH?=	${DESTDIR}/usr/lib32/libc.so
 
-BUILD_DEPENDS+=		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-			xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS+=		docbook-xsl>=0:textproc/docbook-xsl \
+			xsltproc:textproc/libxslt
 
 OPTIONS_DEFINE=		MPI DOCS
 OPTIONS_DEFINE_amd64=	32BIT
@@ -36,7 +36,7 @@ OPTIONS_DEFAULT_amd64=	32BIT
 32BIT_DESC=	Enable debugging of 32-bit programs (requires lib32)
 MPI_DESC=	Enable build of MPI wrappers
 
-MPI_LIB_DEPENDS=	libmpich.so:${PORTSDIR}/net/mpich2
+MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
 
 OPTIONS_SUB=	yes
 USES=		pathfix pkgconfig gmake perl5 shebangfix autoreconf

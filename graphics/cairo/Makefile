@@ -17,9 +17,9 @@ USES=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png \
+		libfontconfig.so:x11-fonts/fontconfig
 
 PORTSCOUT=	skipv:5c-1.1,5c-1.2,5c-1.5
 
@@ -52,8 +52,8 @@ OPENGL_USE=	gl=gl,egl xorg=glproto:both,dri2proto:both
 OPENGL_CONFIGURE_ENABLE=gl egl
 GLIB_USE=	gnome=glib20
 GLIB_CONFIGURE_ENABLE=	gobject
-XCB_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util-renderutil
-XCB_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:${PORTSDIR}/x11/xcb-util-renderutil
+XCB_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:x11/xcb-util-renderutil
+XCB_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:x11/xcb-util-renderutil
 XCB_CONFIGURE_ENABLE=	xcb
 # this has another option --enable-xlib-xcb=auto but it is buggy.
 
@@ -62,7 +62,7 @@ PLIST_SUB+=	LIBVER=2.11400.6
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "mips"
-BUILD_DEPENDS+=	${LOCALBASE}/include/atomic_ops.h:${PORTSDIR}/devel/libatomic_ops
+BUILD_DEPENDS+=	${LOCALBASE}/include/atomic_ops.h:devel/libatomic_ops
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	cairo_cv_atomic_primitives="libatomic-ops"

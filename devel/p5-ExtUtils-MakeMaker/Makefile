@@ -20,8 +20,8 @@ USE_PERL5=	configure
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502200
-BUILD_DEPENDS+=	p5-ExtUtils-Manifest>=1.65:${PORTSDIR}/devel/p5-ExtUtils-Manifest
-RUN_DEPENDS+=	p5-ExtUtils-Manifest>=1.65:${PORTSDIR}/devel/p5-ExtUtils-Manifest
+BUILD_DEPENDS+=	p5-ExtUtils-Manifest>=1.65:devel/p5-ExtUtils-Manifest
+RUN_DEPENDS+=	p5-ExtUtils-Manifest>=1.65:devel/p5-ExtUtils-Manifest
 .endif
 
 post-patch:

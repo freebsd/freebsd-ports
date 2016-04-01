@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple ACL frontend for subversion
 
-BUILD_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
+		p5-YAML>=0:textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 tar:tgz

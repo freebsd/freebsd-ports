@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Determine type information for columns
 
-BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI
+BUILD_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
+TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 
 USES=		perl5
 USE_PERL5=	configure

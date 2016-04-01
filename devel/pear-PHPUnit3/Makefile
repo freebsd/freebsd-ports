@@ -15,20 +15,20 @@ COMMENT=	PEAR regression testing framework for unit tests
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pear-File_Iterator>=1.3.1:${PORTSDIR}/devel/pear-File_Iterator \
-		pear-Text_Template>=1.1.1:${PORTSDIR}/textproc/pear-Text_Template \
-		pear-PHP_CodeCoverage>=1.2.1:${PORTSDIR}/devel/pear-PHP_CodeCoverage \
-		pear-PHP_Timer>=1.0.2:${PORTSDIR}/devel/pear-PHP_Timer \
-		pear-PHPUnit_MockObject>=1.2.0:${PORTSDIR}/devel/pear-PHPUnit_MockObject \
-		pear-Symfony_Component_Yaml>=2.1.0:${PORTSDIR}/textproc/pear-Symfony_Component_Yaml \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
-RUN_DEPENDS=	pear-File_Iterator>=1.3.1:${PORTSDIR}/devel/pear-File_Iterator \
-		pear-Text_Template>=1.1.1:${PORTSDIR}/textproc/pear-Text_Template \
-		pear-PHP_CodeCoverage>=1.2.1:${PORTSDIR}/devel/pear-PHP_CodeCoverage \
-		pear-PHP_Timer>=1.0.2:${PORTSDIR}/devel/pear-PHP_Timer \
-		pear-PHPUnit_MockObject>=1.2.0:${PORTSDIR}/devel/pear-PHPUnit_MockObject \
-		pear-Symfony_Component_Yaml>=2.1.0:${PORTSDIR}/textproc/pear-Symfony_Component_Yaml \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
+BUILD_DEPENDS=	pear-File_Iterator>=1.3.1:devel/pear-File_Iterator \
+		pear-Text_Template>=1.1.1:textproc/pear-Text_Template \
+		pear-PHP_CodeCoverage>=1.2.1:devel/pear-PHP_CodeCoverage \
+		pear-PHP_Timer>=1.0.2:devel/pear-PHP_Timer \
+		pear-PHPUnit_MockObject>=1.2.0:devel/pear-PHPUnit_MockObject \
+		pear-Symfony_Component_Yaml>=2.1.0:textproc/pear-Symfony_Component_Yaml \
+		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+RUN_DEPENDS=	pear-File_Iterator>=1.3.1:devel/pear-File_Iterator \
+		pear-Text_Template>=1.1.1:textproc/pear-Text_Template \
+		pear-PHP_CodeCoverage>=1.2.1:devel/pear-PHP_CodeCoverage \
+		pear-PHP_Timer>=1.0.2:devel/pear-PHP_Timer \
+		pear-PHPUnit_MockObject>=1.2.0:devel/pear-PHPUnit_MockObject \
+		pear-Symfony_Component_Yaml>=2.1.0:textproc/pear-Symfony_Component_Yaml \
+		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
 CONFLICTS=	pear-PHPUnit-[12]*
 

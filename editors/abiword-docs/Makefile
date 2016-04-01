@@ -11,8 +11,8 @@ DIST_SUBDIR=	AbiWord
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	AbiWord help files
 
-BUILD_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
-RUN_DEPENDS=	abiword:${PORTSDIR}/editors/abiword
+BUILD_DEPENDS=	abiword:editors/abiword
+RUN_DEPENDS=	abiword:editors/abiword
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig

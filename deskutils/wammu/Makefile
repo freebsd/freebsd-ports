@@ -13,7 +13,7 @@ COMMENT=	GUI manager of contacts, todos, calendar, and messages in your phone
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libGammu.so:${PORTSDIR}/comms/gammu
+LIB_DEPENDS=	libGammu.so:comms/gammu
 
 USES=		gettext pkgconfig python tar:bz2
 USE_PYTHON=	distutils autoplist

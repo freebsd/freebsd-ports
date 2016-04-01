@@ -14,10 +14,10 @@ COMMENT=	GraphViz Writer for Graph object
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Graph>=0.54:${PORTSDIR}/math/p5-Graph \
-		p5-Graph-ReadWrite>=0:${PORTSDIR}/graphics/p5-Graph-ReadWrite \
-		p5-GraphViz>=2.02:${PORTSDIR}/graphics/p5-GraphViz \
-		p5-IO-All>=0.30:${PORTSDIR}/devel/p5-IO-All
+BUILD_DEPENDS=	p5-Graph>=0.54:math/p5-Graph \
+		p5-Graph-ReadWrite>=0:graphics/p5-Graph-ReadWrite \
+		p5-GraphViz>=2.02:graphics/p5-GraphViz \
+		p5-IO-All>=0.30:devel/p5-IO-All
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

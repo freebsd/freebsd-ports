@@ -12,8 +12,8 @@ COMMENT=	Syntactic try/catch sugar for use with Exception::Class
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS+=	p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class
-RUN_DEPENDS+=	p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class
+BUILD_DEPENDS+=	p5-Exception-Class>=0:devel/p5-Exception-Class
+RUN_DEPENDS+=	p5-Exception-Class>=0:devel/p5-Exception-Class
 
 NO_ARCH=	yes
 USES=		perl5

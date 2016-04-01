@@ -13,7 +13,7 @@ COMMENT=	Tcl/Tk frontends to CVS and Subversion
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
+RUN_DEPENDS=	tkdiff:textproc/tkdiff
 
 NO_BUILD=	yes
 NO_ARCH=	yes

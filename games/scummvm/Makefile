@@ -32,25 +32,25 @@ OPTIONS_DEFINE=	VORBIS MP3 PNG FLAC FLUIDSYNTH MT32EMU DOCS
 MT32EMU_DESC=	MT-32 emulator
 OPTIONS_DEFAULT=	VORBIS MP3 PNG MT32EMU
 
-VORBIS_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
-			libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
+			libvorbis.so:audio/libvorbis
 VORBIS_CONFIGURE_ON=	--with-ogg-prefix=${LOCALBASE} \
 			--with-vorbis-prefix=${LOCALBASE}
 VORBIS_CONFIGURE_OFF=	--disable-vorbis
 
-MP3_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MP3_LIB_DEPENDS=	libmad.so:audio/libmad
 MP3_CONFIGURE_ON=	--with-mad-prefix=${LOCALBASE}
 MP3_CONFIGURE_OFF=	--disable-mad
 
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_ON=	--with-png-prefix=${LOCALBASE}
 PNG_CONFIGURE_OFF=	--disable-png
 
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CONFIGURE_ON=	--with-flac-prefix=${LOCALBASE}
 FLAC_CONFIGURE_OFF=	--disable-flac
 
-FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_CONFIGURE_ON=	--with-fluidsynth-prefix=${LOCALBASE}
 FLUIDSYNTH_CONFIGURE_OFF=	--disable-fluidsynth
 

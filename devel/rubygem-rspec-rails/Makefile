@@ -12,13 +12,13 @@ COMMENT=	Testing framework for Rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.md
 
-RUN_DEPENDS=	rubygem-actionpack4>=3.0:${PORTSDIR}/www/rubygem-actionpack4 \
-		rubygem-activesupport4>=3.0:${PORTSDIR}/devel/rubygem-activesupport4 \
-		rubygem-railties4>=3.0:${PORTSDIR}/www/rubygem-railties4 \
-		rubygem-rspec-core>=${PORTVERSION:R}.0:${PORTSDIR}/devel/rubygem-rspec-core \
-		rubygem-rspec-expectations>=${PORTVERSION:R}.0:${PORTSDIR}/devel/rubygem-rspec-expectations \
-		rubygem-rspec-mocks>=${PORTVERSION:R}.0:${PORTSDIR}/devel/rubygem-rspec-mocks \
-		rubygem-rspec-support>=${PORTVERSION:R}.0:${PORTSDIR}/devel/rubygem-rspec-support
+RUN_DEPENDS=	rubygem-actionpack4>=3.0:www/rubygem-actionpack4 \
+		rubygem-activesupport4>=3.0:devel/rubygem-activesupport4 \
+		rubygem-railties4>=3.0:www/rubygem-railties4 \
+		rubygem-rspec-core>=${PORTVERSION:R}.0:devel/rubygem-rspec-core \
+		rubygem-rspec-expectations>=${PORTVERSION:R}.0:devel/rubygem-rspec-expectations \
+		rubygem-rspec-mocks>=${PORTVERSION:R}.0:devel/rubygem-rspec-mocks \
+		rubygem-rspec-support>=${PORTVERSION:R}.0:devel/rubygem-rspec-support
 
 NO_ARCH=	yes
 USE_RUBY=	yes

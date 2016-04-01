@@ -14,7 +14,7 @@ COMMENT=	Test::Exception simplified
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Mock-Quick>=1.100:${PORTSDIR}/devel/p5-Mock-Quick
+BUILD_DEPENDS=	p5-Mock-Quick>=1.100:devel/p5-Mock-Quick
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	modbuild

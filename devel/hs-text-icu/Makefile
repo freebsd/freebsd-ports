@@ -11,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	text>=0.9.1.0
 
-LIB_DEPENDS+=	libicui18n.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libicui18n.so:devel/icu
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

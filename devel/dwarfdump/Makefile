@@ -10,7 +10,7 @@ DISTNAME=	libdwarf-${PORTVERSION}
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Tool to display DWARF debugging information in ELF files
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdwarf.a:${PORTSDIR}/devel/libdwarf
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdwarf.a:devel/libdwarf
 
 WRKSRC=		${WRKDIR}/dwarf-${PORTVERSION}/dwarfdump
 

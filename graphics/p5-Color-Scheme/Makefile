@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Generate pleasant color schemes
 
-BUILD_DEPENDS=	p5-Test-Differences>=0.47:${PORTSDIR}/devel/p5-Test-Differences
+BUILD_DEPENDS=	p5-Test-Differences>=0.47:devel/p5-Test-Differences
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

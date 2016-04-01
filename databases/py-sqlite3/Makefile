@@ -16,7 +16,7 @@ COMMENT=	Standard Python binding to the SQLite3 library (Python ${PYTHON_VER})
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKDIR}/Python-${PORTVERSION}/LICENSE
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 PORTSCOUT=	ignore:1
 

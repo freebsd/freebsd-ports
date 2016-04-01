@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of the reCAPTCHA API
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-HTML-Tiny>=0:${PORTSDIR}/textproc/p5-HTML-Tiny
+BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+		p5-HTML-Tiny>=0:textproc/p5-HTML-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

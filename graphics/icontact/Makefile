@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.panix.com/~mbh/icontact/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Combines multiples images to create a single customisable image
 
-RUN_DEPENDS=	${LOCALBASE}/bin/ppmmake:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	${LOCALBASE}/bin/ppmmake:graphics/netpbm
 
 USES=		jpeg:run shebangfix
 SHEBANG_FILES=	icontact

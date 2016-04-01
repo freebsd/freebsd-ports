@@ -13,13 +13,13 @@ DIST_SUBDIR=	${PORTNAME:S/wx//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Mupen64Plus 2.0 GUI frontend written using wxWidgets
 
-LIB_DEPENDS=	libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64plus-core
-RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64plus-core \
-		${LOCALBASE}/lib/mupen64plus/mupen64plus-audio-sdl.so:${PORTSDIR}/emulators/mupen64plus-audio-sdl \
-		${LOCALBASE}/lib/mupen64plus/mupen64plus-input-sdl.so:${PORTSDIR}/emulators/mupen64plus-input-sdl \
-		${LOCALBASE}/lib/mupen64plus/mupen64plus-rsp-hle.so:${PORTSDIR}/emulators/mupen64plus-rsp-hle \
-		${LOCALBASE}/lib/mupen64plus/mupen64plus-video-rice.so:${PORTSDIR}/emulators/mupen64plus-video-rice \
-		mupen64plus:${PORTSDIR}/emulators/mupen64plus-ui-console
+LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
+RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
+		${LOCALBASE}/lib/mupen64plus/mupen64plus-audio-sdl.so:emulators/mupen64plus-audio-sdl \
+		${LOCALBASE}/lib/mupen64plus/mupen64plus-input-sdl.so:emulators/mupen64plus-input-sdl \
+		${LOCALBASE}/lib/mupen64plus/mupen64plus-rsp-hle.so:emulators/mupen64plus-rsp-hle \
+		${LOCALBASE}/lib/mupen64plus/mupen64plus-video-rice.so:emulators/mupen64plus-video-rice \
+		mupen64plus:emulators/mupen64plus-ui-console
 
 PROJECTHOST=	bsdistfiles
 USES=		compiler:c++11-lib python

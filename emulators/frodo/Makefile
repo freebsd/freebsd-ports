@@ -10,7 +10,7 @@ DISTNAME=	FrodoV4_1b.Src
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulates a Commodore 64
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS=	wish8.4:x11-toolkits/tk84
 
 USE_XORG=	x11 xt xext sm ice
 ALL_TARGET=	Frodo

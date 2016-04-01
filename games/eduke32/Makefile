@@ -14,10 +14,10 @@ COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/source/gpl-2.0.txt
 
-LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libvpx.so:${PORTSDIR}/multimedia/libvpx
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libvpx.so:multimedia/libvpx
 
 USES=		execinfo gmake tar:xz
 USE_GCC=	any
@@ -43,16 +43,16 @@ OPTIONS_DEFAULT=TIMIDITY
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_i386=	ASM
 
-ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+ASM_BUILD_DEPENDS=	nasm:devel/nasm
 HRP_DESC=	Install High Resolution Pack
 MIDI_DESC=	MIDI music support
 OFFENSIVE_DESC=	Install full XXX Pack
 OFFENSIVE_IMPLIES=	HRP
 SHAREWARE_DESC=	Install shareware game data version 1.3
 TIMIDITY_DESC=	Use Timidity for music support
-TIMIDITY_RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
+TIMIDITY_RUN_DEPENDS=	timidity:audio/timidity
 TIMIDITYPLUS_DESC=	Use Timidity++ for music support
-TIMIDITYPLUS_RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
+TIMIDITYPLUS_RUN_DEPENDS=	timidity:audio/timidity++
 
 .include <bsd.port.options.mk>
 

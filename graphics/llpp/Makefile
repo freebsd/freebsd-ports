@@ -19,13 +19,13 @@ LICENSE_NAME_PUBLIC_DOMAIN=	Public Domain
 LICENSE_FILE_PUBLIC_DOMAIN=	${WRKSRC}/README
 LICENSE_PERMS_PUBLIC_DOMAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
-		${LOCALBASE}/lib/libmupdf.a:${PORTSDIR}/graphics/mupdf
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
-		libopenjp2.so:${PORTSDIR}/graphics/openjpeg
-RUN_DEPENDS=	xsel:${PORTSDIR}/x11/xsel-conrad
+BUILD_DEPENDS=	gsed:textproc/gsed \
+		${LOCALBASE}/lib/libmupdf.a:graphics/mupdf
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libfreetype.so:print/freetype2 \
+		libjbig2dec.so:graphics/jbig2dec \
+		libopenjp2.so:graphics/openjpeg
+RUN_DEPENDS=	xsel:x11/xsel-conrad
 
 STRIP=	# Stripping renders the executable unusable, so don't do it for now
 USES=		desktop-file-utils gmake

@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	NETPBM
 OPTIONS_SUB=	yes
 
 NETPBM_DESC=		Build with libnetpbm support
-NETPBM_LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
+NETPBM_LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

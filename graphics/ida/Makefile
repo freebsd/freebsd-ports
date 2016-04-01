@@ -13,7 +13,7 @@ COMMENT=	Small and fast motif-based image viewer and editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	libexif.so:graphics/libexif
 
 USES=		compiler:c11 desktop-file-utils gmake iconv jpeg motif perl5
 USE_PERL5=	build
@@ -30,18 +30,18 @@ PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida \
 OPTIONS_DEFINE=		DOCS GIF PCD PNG SANE TIFF WEBP
 OPTIONS_DEFAULT=	GIF PNG TIFF
 
-GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_MAKE_ARGS_OFF=	HAVE_LIBGIF=no
 PCD_DESC=		PhotoCD support
-PCD_LIB_DEPENDS=	libpcd.so:${PORTSDIR}/graphics/libpcd
+PCD_LIB_DEPENDS=	libpcd.so:graphics/libpcd
 PCD_MAKE_ARGS_OFF=	HAVE_LIBPCD=no
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_MAKE_ARGS_OFF=	HAVE_LIBPNG=no
-SANE_LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
+SANE_LIB_DEPENDS=	libsane.so:graphics/sane-backends
 SANE_MAKE_ARGS_OFF=	HAVE_LIBSANE=no
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_MAKE_ARGS=		HAVE_LIBTIFF=no
-WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_MAKE_ARGS_OFF=	HAVE_LIBWEBP=no
 
 post-install:

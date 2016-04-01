@@ -12,8 +12,8 @@ COMMENT=	Brain teaser game and trainer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	mautil:${PORTSDIR}/devel/mono-addins \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	mautil:devel/mono-addins \
+		${LOCALBASE}/bin/bash:shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	gtksharp20 gnomesharp20 gnomedocutils intltool

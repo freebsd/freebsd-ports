@@ -12,7 +12,7 @@ COMMENT=	Extensions to devel/bzr
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
+RUN_DEPENDS=	bzr:devel/bzr
 
 OPTIONS_DEFINE=	GRAPHVIZ RSYNC
 GRAPHVIZ_DESC=	graphviz for graph-ancestry
@@ -23,7 +23,7 @@ USES=		python
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	BzrTools
 
-GRAPHVIZ_RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
-RSYNC_RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz
+RSYNC_RUN_DEPENDS=	rsync:net/rsync
 
 .include <bsd.port.mk>

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dates in the Christian calendar
 
-BUILD_DEPENDS=	p5-DateTime-Calendar-Julian>=0:${PORTSDIR}/devel/p5-DateTime-Calendar-Julian
+BUILD_DEPENDS=	p5-DateTime-Calendar-Julian>=0:devel/p5-DateTime-Calendar-Julian
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

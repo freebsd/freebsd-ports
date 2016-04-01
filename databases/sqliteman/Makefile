@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Admin's GUI tool for Sqlite3
 
-LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS=	libqscintilla2.so:devel/qscintilla2
 
 USES=		cmake
 USE_SQLITE=	yes

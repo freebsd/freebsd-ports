@@ -12,8 +12,8 @@ COMMENT=	Lightweight connection pooler for PostgreSQL
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
-BUILD_DEPENDS+=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
+LIB_DEPENDS=	libevent.so:devel/libevent2
+BUILD_DEPENDS+=	${LOCALBASE}/bin/gsed:textproc/gsed
 
 PORTSCOUT=	site:https://pgbouncer.github.io/downloads/
 

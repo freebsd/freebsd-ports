@@ -34,7 +34,7 @@ GTK2_USE=		GNOME=gtk20
 DANTE_CONFIGURE_ENABLE=	socks
 DANTE_CONFIGURE_ON=	--with-socks-includes=${LOCALBASE}/include \
 			--with-socks-libraries=${LOCALBASE}/lib
-DANTE_LIB_DEPENDS=	libsocks.so:${PORTSDIR}/net/dante
+DANTE_LIB_DEPENDS=	libsocks.so:net/dante
 
 pre-patch:
 	@${FIND}  ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \

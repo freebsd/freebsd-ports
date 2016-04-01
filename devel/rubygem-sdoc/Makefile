@@ -11,7 +11,7 @@ COMMENT=	Create rdoc html with javascript search index
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-json>=1.7.7:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	rubygem-json>=1.7.7:devel/rubygem-json
 
 NO_ARCH=	yes
 

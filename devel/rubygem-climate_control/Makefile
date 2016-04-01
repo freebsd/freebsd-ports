@@ -11,7 +11,7 @@ COMMENT=	Modify your ENV
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport>=3.0:${PORTSDIR}/devel/rubygem-activesupport
+RUN_DEPENDS=	rubygem-activesupport>=3.0:devel/rubygem-activesupport
 
 NO_ARCH=	yes
 

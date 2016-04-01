@@ -22,11 +22,11 @@ OPTIONS_DEFINE=		OPTIMIZED_CFLAGS OPENEXR GNET DOCS
 OPTIONS_DEFAULT=	OPENEXR GNET
 
 OPENEXR_CONFIGURE_ENABLE=	openexr
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
 
 GNET_DESC=		Networking support via GNet
 GNET_CONFIGURE_ENABLE=	gnet
-GNET_LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2
+GNET_LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
 
 .include <bsd.port.pre.mk>
 

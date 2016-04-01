@@ -10,9 +10,9 @@ COMMENT=		MongoEngine support for django-tastypie using Django 1.6
 LICENSE=		AGPLv3
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-tastypie16>=0.9.12:${PORTSDIR}/www/py-django16-tastypie \
-		${PYTHON_PKGNAMEPREFIX}mongoengine>=0.8.7:${PORTSDIR}/devel/py-mongoengine \
-		${PYTHON_PKGNAMEPREFIX}django16>0:${PORTSDIR}/www/py-django16
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-tastypie16>=0.9.12:www/py-django16-tastypie \
+		${PYTHON_PKGNAMEPREFIX}mongoengine>=0.8.7:devel/py-mongoengine \
+		${PYTHON_PKGNAMEPREFIX}django16>0:www/py-django16
 
 MASTERDIR=		${.CURDIR}/../py-django-tastypie-mongoengine
 

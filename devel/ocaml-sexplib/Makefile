@@ -15,8 +15,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.txt
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE-Tywith.txt
 
-BUILD_DEPENDS=	ocaml-type_conv>=0:${PORTSDIR}/devel/ocaml-type_conv
-RUN_DEPENDS=	ocaml-type_conv>=0:${PORTSDIR}/devel/ocaml-type_conv
+BUILD_DEPENDS=	ocaml-type_conv>=0:devel/ocaml-type_conv
+RUN_DEPENDS=	ocaml-type_conv>=0:devel/ocaml-type_conv
 
 OPTIONS_DEFINE=	DOCS
 

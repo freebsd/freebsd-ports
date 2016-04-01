@@ -12,7 +12,7 @@ COMMENT=	Rack middleware that provides authentication for rack applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-rack16>=1.0:${PORTSDIR}/www/rubygem-rack16
+RUN_DEPENDS=	rubygem-rack16>=1.0:www/rubygem-rack16
 
 NO_ARCH=	yes
 USE_RUBY=	yes

@@ -13,7 +13,7 @@ COMMENT=	Library for support of the Expert Witness Compression Format (EWF)
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		fuse gettext iconv libtool:keepla pathfix pkgconfig python:2
 USE_LDCONFIG=	yes

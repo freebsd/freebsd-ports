@@ -15,12 +15,12 @@ COMMENT=	Physically based and unbiased rendering system
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfreeimage.so:${PORTSDIR}/graphics/freeimage \
-		libOpenImageIO.so:${PORTSDIR}/graphics/openimageio
+LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
+		libfftw3.so:math/fftw3 \
+		libfreeimage.so:graphics/freeimage \
+		libOpenImageIO.so:graphics/openimageio
 .if ${DISTVERSION} != 1.4
-LIB_DEPENDS+=	libembree.so:${PORTSDIR}/graphics/embree
+LIB_DEPENDS+=	libembree.so:graphics/embree
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64

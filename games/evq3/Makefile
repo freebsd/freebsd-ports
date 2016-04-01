@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Marriage of XreaL and Icculus.org Q3 w/ Improvements
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		gmake dos2unix tar:bzip2
 ALL_TARGET=	release
@@ -61,7 +61,7 @@ MAKE_ENV+=	HAVE_VM_COMPILED=true
 .if ${PORT_OPTIONS:MCLIENT} || !empty(PORT_OPTIONS:MSMP)
 # curl
 .   if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 MAKE_ENV+=	USE_CURL=1
 .       if ${PORT_OPTIONS:MCURL_DLOPEN}
 MAKE_ENV+=	USE_CURL_DLOPEN=1
@@ -78,12 +78,12 @@ MAKE_ENV+=	USE_OPENAL_DLOPEN=1
 USE_SDL=	sdl
 # VOIP
 .   if ${PORT_OPTIONS:MVOIP}
-LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	libspeex.so:audio/speex
 MAKE_ENV+=	USE_VOIP=1
 .   endif
 # Vorbis
 .   if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
 MAKE_ENV+=	USE_CODEC_VORBIS=1
 .   endif
 .endif

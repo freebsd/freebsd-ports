@@ -14,9 +14,9 @@ COMMENT=	Cross-platform game SDK
 
 LICENSE=	ZLIB
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libmikmod.so:${PORTSDIR}/audio/libmikmod \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libmikmod.so:audio/libmikmod \
+		libvorbis.so:audio/libvorbis
 
 USES=		alias gmake jpeg libtool pathfix pkgconfig tar:tgz
 USE_XORG=	x11 xi

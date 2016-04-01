@@ -11,7 +11,7 @@ COMMENT=	GUI front-end to fossil SCM tool
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/bin/fossil:${PORTSDIR}/devel/fossil
+RUN_DEPENDS=	${LOCALBASE}/bin/fossil:devel/fossil
 
 USES=		qmake
 USE_QT4=	corelib gui \

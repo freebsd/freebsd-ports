@@ -61,13 +61,13 @@ PLIST=		${PKGDIR}/pkg-plist.emacs21
 .endif
 # depends on apel (case of xemacs-21.x or later)
 .if defined(EMACS_PACKAGESDIR)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/apel/emu.el:editors/xemacs-packages
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/apel/emu.el:editors/xemacs-packages
 MAKE_ARGS+=	PACKAGEDIR="${STAGEDIR}${LOCALBASE}/${EMACS_PACKAGESDIR}"
 .else
 # depends on apel (case of gnu emacsen etc...)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:editors/apel${DEPPORT_SUFFIX}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:editors/apel${DEPPORT_SUFFIX}
 .endif
 .else
 .BEGIN:
@@ -78,7 +78,7 @@ RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/
 
 .if !defined(BUILD_INFO_BY_EMACS) || (${BUILD_INFO_BY_EMACS} == "NO")
 # info files JIS to EUC
-BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS+=	nkf:japanese/nkf
 .endif
 
 # makeinfo stuff

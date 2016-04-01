@@ -9,7 +9,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	jev@ecad.org
 COMMENT=	A barcode generation library along with a command line frontend
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+BUILD_DEPENDS=	gawk:lang/gawk
 
 GNU_CONFIGURE=	yes
 INFO=		barcode

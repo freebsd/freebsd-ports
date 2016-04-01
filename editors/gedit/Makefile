@@ -10,16 +10,16 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small but powerful text editor for GNOME 3 Desktop Environment
 
-BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		vala:${PORTSDIR}/lang/vala \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
-		libpeas-gtk-1.0.so:${PORTSDIR}/devel/libpeas \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
-RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		${PYTHON_PKGNAMEPREFIX}libpeas>=0:${PORTSDIR}/devel/py3-libpeas
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		vala:lang/vala \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libenchant.so:textproc/enchant \
+		libpeas-gtk-1.0.so:devel/libpeas \
+		libsoup-2.4.so:devel/libsoup
+RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py3-libpeas
 
 PORTSCOUT=	limitw:1,even
 

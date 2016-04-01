@@ -12,7 +12,7 @@ COMMENT=	Code generator and libraries to use Protocol Buffers from pure C
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		autoreconf gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
@@ -29,7 +29,7 @@ PORTDOCS=	*
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install-strip
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	html-local
 
 post-install-DOXYGEN-on:

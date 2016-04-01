@@ -8,9 +8,9 @@ CATEGORIES=	dns
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Command line management of Route53 domains
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:${PORTSDIR}/devel/py-boto \
-		${PYTHON_PKGNAMEPREFIX}argparse>0:${PORTSDIR}/devel/py-argparse \
-		${PYTHON_PKGNAMEPREFIX}dnspython>0:${PORTSDIR}/dns/py-dnspython
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto \
+		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
+		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython
 
 USES=		python
 USE_PYTHON=	distutils autoplist

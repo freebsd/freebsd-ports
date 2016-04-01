@@ -16,8 +16,8 @@ COMMENT=	Graphic library for GTK+
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 PORTSCOUT=	ignore:1
 

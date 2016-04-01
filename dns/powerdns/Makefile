@@ -12,7 +12,7 @@ COMMENT=	Advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_serialization.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 
 USES=		cpe gmake libtool lua pkgconfig tar:bzip2
 USE_LDCONFIG=	YES
@@ -50,15 +50,15 @@ OPTIONS_DEFAULT=	PGSQL DNSSEC BOTAN110 POLARSSL
 OPTIONS_SUB=		yes
 
 BOTAN110_CONFIGURE_ON=	--enable-botan1.10
-BOTAN110_LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110
+BOTAN110_LIB_DEPENDS=	libbotan-1.10.so:security/botan110
 
 GEO_VARS=		MODULES+=geo
 
-GEOIP_LIB_DEPENDS=	libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp \
-			libGeoIP.so:${PORTSDIR}/net/GeoIP
+GEOIP_LIB_DEPENDS=	libyaml-cpp.so:devel/yaml-cpp \
+			libGeoIP.so:net/GeoIP
 GEOIP_VARS=		MODULES+=geoip
 
-LMDB_LIB_DEPENDS=	liblmdb.so:${PORTSDIR}/databases/lmdb
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 LMDB_VARS=		MODULES+=lmdb
 
 LUA_VARS=		MODULES+=lua
@@ -72,7 +72,7 @@ MYSQL_CONFIGURE_OFF=	--without-mysql
 MYSQL_USE=		MYSQL=YES
 MYSQL_VARS=		MODULES+=gmysql
 
-OPENDBX_LIB_DEPENDS=	libopendbx.so:${PORTSDIR}/databases/opendbx
+OPENDBX_LIB_DEPENDS=	libopendbx.so:databases/opendbx
 OPENDBX_VARS=		MODULES+=opendbx
 
 OPENLDAP_CXXFLAGS=	-DLDAP_DEPRECATED=1
@@ -85,7 +85,7 @@ PGSQL_USES=		pgsql
 PGSQL_VARS=		MODULES+=gpgsql
 
 POLARSSL_CONFIGURE_ARGS=	--without-system-polarssl
-POLARSSL_LIB_DEPENDS_OFF=	libmbedtls.so:${PORTSDIR}/security/polarssl13
+POLARSSL_LIB_DEPENDS_OFF=	libmbedtls.so:security/polarssl13
 
 REMOTE_VARS=		MODULES+=remote
 
@@ -93,11 +93,11 @@ SQLITE3_USE=		SQLITE=3
 SQLITE3_VARS=		MODULES+=gsqlite3
 
 TINYDNS_CONFIGURE_ON=	CDB_LIBS="-L${LOCALBASE}/lib -lcdb" CDB_CFLAGS="-I${LOCALBASE}/include"
-TINYDNS_LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
+TINYDNS_LIB_DEPENDS=	libcdb.so:databases/tinycdb
 TINYDNS_VARS=		MODULES+=tinydns
 
 ZEROMQ_CONFIGURE_ARGS=	--enable-remotebackend-zeromq
-ZEROMQ_LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq4
+ZEROMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
 
 TOOLS_CONFIGURE_ENABLE=	tools
 

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Getopt processing in a compact statement with long and short options
 
-RUN_DEPENDS=	p5-Text-Table>=0:${PORTSDIR}/textproc/p5-Text-Table \
-		p5-Env-Path>=0:${PORTSDIR}/devel/p5-Env-Path
+RUN_DEPENDS=	p5-Text-Table>=0:textproc/p5-Text-Table \
+		p5-Env-Path>=0:devel/p5-Env-Path
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

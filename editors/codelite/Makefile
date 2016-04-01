@@ -10,7 +10,7 @@ COMMENT=	Open Source IDE for C/C++
 
 LICENSE=	GPLv2+
 
-RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
+RUN_DEPENDS=	xterm:x11/xterm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eranif
@@ -38,21 +38,21 @@ OPTIONS_SUB=		yes
 
 CLANG_DESC=		Clang code-completion
 CLANG34_DESC=		Clang 3.4.x
-CLANG34_BUILD_DEPENDS=	clang34>0:${PORTSDIR}/lang/clang34
-CLANG34_RUN_DEPENDS=	clang34>0:${PORTSDIR}/lang/clang34
+CLANG34_BUILD_DEPENDS=	clang34>0:lang/clang34
+CLANG34_RUN_DEPENDS=	clang34>0:lang/clang34
 CLANG35_DESC=		Clang 3.5.x
-CLANG35_BUILD_DEPENDS=	clang35>0:${PORTSDIR}/lang/clang35
-CLANG35_RUN_DEPENDS=	clang35>0:${PORTSDIR}/lang/clang35
+CLANG35_BUILD_DEPENDS=	clang35>0:lang/clang35
+CLANG35_RUN_DEPENDS=	clang35>0:lang/clang35
 CLANG36_DESC=		Clang 3.6.x
-CLANG36_BUILD_DEPENDS=	clang36>0:${PORTSDIR}/lang/clang36
-CLANG36_RUN_DEPENDS=	clang36>0:${PORTSDIR}/lang/clang36
+CLANG36_BUILD_DEPENDS=	clang36>0:lang/clang36
+CLANG36_RUN_DEPENDS=	clang36>0:lang/clang36
 CLANG37_DESC=		Clang 3.7.x
-CLANG37_BUILD_DEPENDS=	clang37>0:${PORTSDIR}/lang/clang37
-CLANG37_RUN_DEPENDS=	clang37>0:${PORTSDIR}/lang/clang37
+CLANG37_BUILD_DEPENDS=	clang37>0:lang/clang37
+CLANG37_RUN_DEPENDS=	clang37>0:lang/clang37
 CSCOPE_DESC=		CScope integration
-CSCOPE_RUN_DEPENDS=	cscope:${PORTSDIR}/devel/cscope
+CSCOPE_RUN_DEPENDS=	cscope:devel/cscope
 SFTP_DESC=		Secure FTP support via libssh
-SFTP_LIB_DEPENDS=	libssh.so:${PORTSDIR}/security/libssh
+SFTP_LIB_DEPENDS=	libssh.so:security/libssh
 SFTP_CMAKE_OFF=		-DENABLE_SFTP:STRING=0
 SFTP_USES=		localbase
 

@@ -13,7 +13,7 @@ COMMENT=	Daylight-savings aware timezone support for Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-thread_safe1>=0.1:${PORTSDIR}/devel/rubygem-thread_safe1
+RUN_DEPENDS=	rubygem-thread_safe1>=0.1:devel/rubygem-thread_safe1
 
 NO_ARCH=	yes
 USE_RUBY=	yes

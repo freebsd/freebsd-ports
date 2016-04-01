@@ -13,12 +13,12 @@ COMMENT=	GIMP plug-ins to both quickly and easily beautify photo
 
 LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig \
-		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:${PORTSDIR}/print/freetype2 \
-		${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gimp-app
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig \
-		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:${PORTSDIR}/print/freetype2 \
-		${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:${PORTSDIR}/graphics/gimp-app
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig \
+		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
+		${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig \
+		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
+		${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hejiann

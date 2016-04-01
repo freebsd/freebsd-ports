@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Dump strings of characters or bytes for printing and debugging
 
-BUILD_DEPENDS=	p5-Getopt-Lucid>=0:${PORTSDIR}/textproc/p5-Getopt-Lucid
+BUILD_DEPENDS=	p5-Getopt-Lucid>=0:textproc/p5-Getopt-Lucid
 
 USES=		perl5
 USE_PERL5=	modbuild

@@ -12,10 +12,10 @@ COMMENT=	Interactive post-processing tool for scanned pages
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-		libjbig.so:${PORTSDIR}/graphics/jbigkit \
-		libpng.so:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libjbig.so:graphics/jbigkit \
+		libpng.so:graphics/png
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 USES=		cmake gettext jpeg
 USE_GCC=	yes
@@ -43,7 +43,7 @@ PORTDOCS=	*
 .endif
 
 .if ${PORT_OPTIONS:MHTML} || ${PORT_OPTIONS:MLATEX}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:devel/doxygen
 .endif
 
 post-patch:

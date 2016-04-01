@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	022
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freedesktop synchronization framework
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 BROKEN=		unfetchable
 SWIG_LANGUAGES=	python

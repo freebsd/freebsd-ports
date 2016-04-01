@@ -21,7 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	FTDI
 OPTIONS_DEFAULT=	FTDI
 FTDI_DESC=	libftdi support
-FTDI_LIB_DEPENDS=	libftdi1.so:${PORTSDIR}/devel/libftdi1
+FTDI_LIB_DEPENDS=	libftdi1.so:devel/libftdi1
 
 .include <bsd.port.options.mk>
 

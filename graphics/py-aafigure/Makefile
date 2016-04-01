@@ -13,8 +13,8 @@ COMMENT=	ASCII art to image converter written in Python
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		${PYTHON_SITELIBDIR}/reportlab/__init__.py:print/py-reportlab2
 
 USES=		python
 USE_PYTHON=	distutils autoplist

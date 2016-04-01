@@ -13,11 +13,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy-to-use and comprehensive named-color library
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-Class-Data-Inheritable>=0:devel/p5-Class-Data-Inheritable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
+TEST_DEPENDS=	p5-Test-Most>=0:devel/p5-Test-Most
 
 USES=		perl5
 USE_PERL5=	configure

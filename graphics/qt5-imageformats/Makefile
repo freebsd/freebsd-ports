@@ -9,10 +9,10 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt plugins for additional image formats
 
-LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper \
-		libmng.so:${PORTSDIR}/graphics/libmng \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libwebp.so:${PORTSDIR}/graphics/webp
+LIB_DEPENDS=	libjasper.so:graphics/jasper \
+		libmng.so:graphics/libmng \
+		libtiff.so:graphics/tiff \
+		libwebp.so:graphics/webp
 
 USE_QT5=	core gui buildtools_build
 QT_DIST=	${PORTNAME}

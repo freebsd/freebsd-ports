@@ -14,8 +14,8 @@ COMMENT=	Overhead, OpenGL space shooter
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libftgl.so:${PORTSDIR}/graphics/ftgl
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libftgl.so:graphics/ftgl
 
 USES=		tar:bzip2 libtool
 USE_GL=		gl

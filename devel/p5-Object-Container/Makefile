@@ -14,9 +14,9 @@ COMMENT=	Simple object container
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires
 
 PORTSCOUT=	limit:^[0-9]*.[0-9][0-9]$$
 

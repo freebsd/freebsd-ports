@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-nolib
 MAINTAINER=	vsasjason@gmail.com
 COMMENT=	Optimizer for PNG files
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		tar:xz
 CFLAGS+=	-DPNGCRUSH_COUNT_COLORS -I${LOCALBASE}/include

@@ -13,7 +13,7 @@ COMMENT=	Migrates changesets between version control systems
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync
 
 USES=		python
 USE_PYTHON=	distutils

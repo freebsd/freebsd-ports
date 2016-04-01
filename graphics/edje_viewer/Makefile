@@ -10,8 +10,8 @@ MASTER_SITES=	LOCAL/gblach/e17/extra/
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Simple viewer for .edj files
 
-LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
-		libelementary.so:${PORTSDIR}/x11-toolkits/elementary
+LIB_DEPENDS=	libefl.so:devel/efl \
+		libelementary.so:x11-toolkits/elementary
 
 USES=		pkgconfig tar:bzip2
 DIST_SUBDIR=	e17

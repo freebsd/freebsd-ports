@@ -13,9 +13,9 @@ COMMENT=	Gimp plug-in for texture synthesis
 
 LICENSE=	GPLv2+ # though COPYING has GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/gimp/2.2/python/gimpfu.py:${PORTSDIR}/graphics/py-gimp
-BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
-LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
+RUN_DEPENDS=	${LOCALBASE}/libexec/gimp/2.2/python/gimpfu.py:graphics/py-gimp
+BUILD_DEPENDS=	intltool-extract:textproc/intltool
+LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bootchk

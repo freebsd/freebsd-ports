@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BROKEN_ia64=	does not install: cleanname not found
 BROKEN_sparc64=	does not install: cleanname not found
 
-RUN_DEPENDS=	rc:${PORTSDIR}/shells/rc
+RUN_DEPENDS=	rc:shells/rc
 
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_LANG=	rc

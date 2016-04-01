@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Command-line parser and manual page generator
 
-BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0
+BUILD_DEPENDS=	makeme:devel/msrc0
 
 MAKE_FLAGS=
 MAKEFILE=

@@ -9,7 +9,7 @@ MASTER_SITES=	GNU/gnushogi
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Japanese chess-like game for X Window System
 
-RUN_DEPENDS=	gnushogi:${PORTSDIR}/games/gnushogi
+RUN_DEPENDS=	gnushogi:games/gnushogi
 
 USE_XORG=	xt xaw x11
 GNU_CONFIGURE=	yes

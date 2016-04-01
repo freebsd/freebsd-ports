@@ -12,8 +12,8 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Library for working with graphs in Python, dot module
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydot>=0:${PORTSDIR}/graphics/py-pydot \
-		${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:${PORTSDIR}/graphics/py-graph-core
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot \
+		${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:graphics/py-graph-core
 
 PROJECTHOST=	python-graph
 USES=		python

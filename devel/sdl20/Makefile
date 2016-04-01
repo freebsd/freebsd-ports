@@ -107,7 +107,7 @@ SDL_VIDEO_CONFIGURE_ENABLE=	video
 IGNORE=	option ALSA requires SDL_AUDIO
 .endif
 CONFIGURE_ARGS+=	--enable-alsa --enable-alsa-shared
-LIB_DEPENDS+=		libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=		libasound.so:audio/alsa-lib
 .else
 CONFIGURE_ARGS+=	--disable-alsa --disable-alsa-shared
 .endif
@@ -127,7 +127,7 @@ CONFIGURE_ARGS+=	--disable-esd --disable-esd-shared
 IGNORE=	option NAS requires SDL_AUDIO
 .endif
 CONFIGURE_ARGS+=	--enable-nas --enable-nas-shared
-LIB_DEPENDS+=		libaudio.so:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=		libaudio.so:audio/nas
 .else
 CONFIGURE_ARGS+=	--disable-nas --disable-nas-shared
 .endif

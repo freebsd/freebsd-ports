@@ -15,9 +15,9 @@ COMMENT=	Volume management daemon for Xfce using PulseAudio
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio \
-	libnotify.so:${PORTSDIR}/devel/libnotify \
-	libkeybinder.so:${PORTSDIR}/x11/keybinder
+LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
+	libnotify.so:devel/libnotify \
+	libkeybinder.so:x11/keybinder
 
 USES=	pkgconfig gmake xfce tar:bz2
 GNU_CONFIGURE=	yes

@@ -12,18 +12,18 @@ COMMENT=		GTK+ client for MaitreTarot, a Tarot card game
 
 LICENSE=		GPLv2
 
-LIB_DEPENDS=		libmt_client.so:${PORTSDIR}/games/libmt_client
-RUN_DEPENDS=		${LOCALBASE}/share/cardpics/images/78.png:${PORTSDIR}/games/cardpics
+LIB_DEPENDS=		libmt_client.so:games/libmt_client
+RUN_DEPENDS=		${LOCALBASE}/share/cardpics/images/78.png:games/cardpics
 
 GNU_CONFIGURE=		yes
 USES=			gettext pkgconfig tar:bzip2
 USE_GNOME=		glib20 gtk20 libxml2
 
 .if !defined(WITHOUT_SERVER)
-RUN_DEPENDS+=		${LOCALBASE}/bin/maitretarot_server:${PORTSDIR}/games/maitretarot
+RUN_DEPENDS+=		${LOCALBASE}/bin/maitretarot_server:games/maitretarot
 .endif
 .if !defined(WITHOUT_IA)
-RUN_DEPENDS+=		${LOCALBASE}/bin/mt_dolphin_ia:${PORTSDIR}/games/mt_dolphin_ia
+RUN_DEPENDS+=		${LOCALBASE}/bin/mt_dolphin_ia:games/mt_dolphin_ia
 .endif
 
 .include <bsd.port.mk>

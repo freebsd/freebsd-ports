@@ -10,10 +10,10 @@ MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Solitaire card game for X Window System
 
-LIB_DEPENDS=	libshhopt.so.1:${PORTSDIR}/devel/libshhopt \
-		libshhmsg.so.1:${PORTSDIR}/devel/libshhmsg \
-		libxalloc.so.1:${PORTSDIR}/devel/libxalloc \
-		libshhcards.so.1:${PORTSDIR}/games/libshhcards
+LIB_DEPENDS=	libshhopt.so.1:devel/libshhopt \
+		libshhmsg.so.1:devel/libshhmsg \
+		libxalloc.so.1:devel/libxalloc \
+		libshhcards.so.1:games/libshhcards
 
 CONFLICTS=	gnome-games-*
 

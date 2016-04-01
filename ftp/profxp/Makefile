@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/p/-pre/}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FXP (server-to-server FTP) client
 
-RUN_DEPENDS=	p5-SOCKS>=0:${PORTSDIR}/net/p5-Socks \
-		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
+RUN_DEPENDS=	p5-SOCKS>=0:net/p5-Socks \
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+		p5-ReadLine-Perl>=0:devel/p5-ReadLine-Perl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

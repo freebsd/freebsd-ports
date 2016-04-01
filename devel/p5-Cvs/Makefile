@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cvs - Object oriented interface to the CVS command
 
-RUN_DEPENDS=	p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty \
-		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
+RUN_DEPENDS=	p5-IO-Tty>=0:devel/p5-IO-Tty \
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-IPC-Run>=0:devel/p5-IPC-Run
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

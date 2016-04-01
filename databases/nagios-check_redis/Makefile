@@ -11,9 +11,9 @@ DISTFILES=	# none
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Nagios plugin to check redis server
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/utils.pm:${PORTSDIR}/net-mgmt/nagios-plugins \
-		p5-Redis>=0:${PORTSDIR}/databases/p5-Redis \
-		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/utils.pm:net-mgmt/nagios-plugins \
+		p5-Redis>=0:databases/p5-Redis \
+		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 
 USES=		perl5
 USE_PERL5=	run

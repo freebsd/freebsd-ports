@@ -9,10 +9,10 @@ CATEGORIES=	emulators
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Multi Arcade Machine Emulator
 
-LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	liberation-fonts-ttf>=0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libexpat.so:textproc/expat2 \
+		libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
 NOT_FOR_ARCHS=	ia64 powerpc sparc64
 

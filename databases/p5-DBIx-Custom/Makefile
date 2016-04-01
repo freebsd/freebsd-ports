@@ -14,9 +14,9 @@ COMMENT=	Customizable DBI
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI \
-		p5-Object-Simple>=3.1000:${PORTSDIR}/devel/p5-Object-Simple
+BUILD_DEPENDS=	p5-DBD-SQLite>=1.25:databases/p5-DBD-SQLite \
+		p5-DBI>=1.60.5:databases/p5-DBI \
+		p5-Object-Simple>=3.1000:devel/p5-Object-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

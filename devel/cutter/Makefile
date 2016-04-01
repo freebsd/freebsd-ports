@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Unit Testing Framework for C and C++
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libpangocairo-1.0.so:x11-toolkits/pango
 
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
@@ -34,7 +34,7 @@ regression-test: build
 .if ${PORT_OPTIONS:MGOFFICE}
 CONFIGURE_ARGS+=--enable-goffice
 # the 0.8 is part of the library name don't remove it.
-LIB_DEPENDS+=	libgoffice-0.8.so:${PORTSDIR}/devel/goffice
+LIB_DEPENDS+=	libgoffice-0.8.so:devel/goffice
 PLIST_SUB+=	GOFFICE=""
 .else
 CONFIGURE_ARGS+=--disable-goffice
@@ -42,12 +42,12 @@ PLIST_SUB+=	GOFFICE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLCOV}
-RUN_DEPENDS+=	lcov:${PORTSDIR}/devel/lcov
+RUN_DEPENDS+=	lcov:devel/lcov
 .endif
 
 .if ${PORT_OPTIONS:MSOUP}
 CONFIGURE_ARGS+=--enable-libsoup
-LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	libsoup-2.4.so:devel/libsoup
 PLIST_SUB+=	SOUP=""
 .else
 CONFIGURE_ARGS+=--disable-libsoup

@@ -12,8 +12,8 @@ COMMENT=	Small, fast, and free image viewer
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2 \
-		libsysinfo.so:${PORTSDIR}/devel/libsysinfo
+LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
+		libsysinfo.so:devel/libsysinfo
 
 USES=		cmake desktop-file-utils dos2unix pkgconfig tar:bzip2
 USE_QT4=	gui network linguist_build moc_build \
@@ -27,11 +27,11 @@ WRKSRC=		${WRKTOP}/${WRKSUBDIR}
 OPTIONS_DEFINE=	RAW TIFF
 OPTIONS_DEFAULT=	RAW TIFF
 
-RAW_LIB_DEPENDS=	libraw.so:${PORTSDIR}/graphics/libraw \
-			libopencv_core.so:${PORTSDIR}/graphics/opencv-core
+RAW_LIB_DEPENDS=	libraw.so:graphics/libraw \
+			libopencv_core.so:graphics/opencv-core
 RAW_CMAKE_OFF=		-DENABLE_RAW=0
 
-TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CMAKE_OFF=		-DENABLE_TIFF=0
 
 post-patch:

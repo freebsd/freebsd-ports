@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python DB-API 2 compliant library for using PostgreSQL databases
 
-RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
+RUN_DEPENDS=	${DATETIME_DEP}:lang/py-mx-base
 
 USES=	pgsql python
 USE_PYTHON=	distutils

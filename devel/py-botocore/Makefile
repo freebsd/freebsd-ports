@@ -12,9 +12,9 @@ COMMENT=	Low-level, core functionality of boto 3
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}jmespath>=0.9.0:${PORTSDIR}/devel/py-jmespath \
-		${PYTHON_PKGNAMEPREFIX}docutils>=0.10:${PORTSDIR}/textproc/py-docutils
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}jmespath>=0.9.0:devel/py-jmespath \
+		${PYTHON_PKGNAMEPREFIX}docutils>=0.10:textproc/py-docutils
 
 USES=		python
 USE_PYTHON=	autoplist distutils

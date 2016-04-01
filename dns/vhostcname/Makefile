@@ -12,7 +12,7 @@ COMMENT=	Synchronize DNS with server names and aliases from Apache vhost
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-Net-DNS>0:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS=	p5-Net-DNS>0:dns/p5-Net-DNS
 
 USES=		perl5
 USE_PERL5=	configure

@@ -27,8 +27,8 @@ USES=		libtool
 JPEG_CONFIGURE_WITH=	jpeg
 JPEG_USES=		jpeg
 PNG_CONFIGURE_WITH=	png
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 WEBP_CONFIGURE_WITH=	webp
-WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 .include <bsd.port.mk>

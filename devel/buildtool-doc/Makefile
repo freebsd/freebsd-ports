@@ -10,11 +10,11 @@ MASTER_SITES=	SF/buildtool/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Buildtool User's and Developer's manuals
 
-BUILD_DEPENDS=	${BUILDTOOL}:${PORTSDIR}/devel/buildtool \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		xmlcatalog:${PORTSDIR}/textproc/libxml2 \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml \
-		${DOCBOOK_XSL}:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS=	${BUILDTOOL}:devel/buildtool \
+		xsltproc:textproc/libxslt \
+		xmlcatalog:textproc/libxml2 \
+		docbook-xml>0:textproc/docbook-xml \
+		${DOCBOOK_XSL}:textproc/docbook-xsl
 
 BUILDTOOL=	${LOCALBASE}/bin/buildtool
 CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX} --dir-doc=${STAGEDIR}${DOCSDIR} \

@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perl5 module for SQL parsing and processing
 
-RUN_DEPENDS=	p5-Clone>=0.30:${PORTSDIR}/devel/p5-Clone \
-		p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util
+RUN_DEPENDS=	p5-Clone>=0.30:devel/p5-Clone \
+		p5-Params-Util>=1.00:devel/p5-Params-Util
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

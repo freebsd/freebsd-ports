@@ -13,7 +13,7 @@ COMMENT=	Viewer of hdr/pfm images
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gmake pkgconfig zip
 USE_GL=		glut

@@ -20,7 +20,7 @@ LICENSE_NAME_CCbySA3=	Creative Commons Attribution-ShareAlike 3.0 Unported
 LICENSE_TEXT_CCbySA3=	See http://creativecommons.org/licenses/by-sa/3.0/
 LICENSE_PERMS_CCbySA3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
 MANUAL_PACKAGE_BUILD=	huge (1GiB)
 

@@ -11,7 +11,7 @@ COMMENT=	Git extensions to provide high-level repository operations
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/bin/getopt:${PORTSDIR}/misc/getopt
+RUN_DEPENDS=	${LOCALBASE}/bin/getopt:misc/getopt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nbari

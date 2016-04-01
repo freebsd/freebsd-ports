@@ -10,7 +10,7 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Eye of MATE image viewer
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 
 PORTSCOUT=	limitw:1,even
 
@@ -46,7 +46,7 @@ _WITH_EXEMPI=	no
 
 .if ${PORT_OPTIONS:MEXIF}
 CONFIGURE_ARGS+=--with-libexif
-LIB_DEPENDS+=	libexif.so:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	libexif.so:graphics/libexif
 PLIST_SUB+=	EXIF=""
 _WITH_EXIF=	yes
 .else
@@ -56,7 +56,7 @@ PLIST_SUB+=	EXIF="@comment "
 
 .if ${PORT_OPTIONS:MEXEMPI}
 CONFIGURE_ARGS+=--with-xmp
-LIB_DEPENDS+=	libexempi.so:${PORTSDIR}/textproc/exempi
+LIB_DEPENDS+=	libexempi.so:textproc/exempi
 _WITH_EXEMPI=	yes
 .else
 CONFIGURE_ARGS+=--without-xmp

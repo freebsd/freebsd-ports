@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-1.0a0dev-r2302
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Protocol Definition, Declaration, and Adaptation for Python
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DecoratorTools>=1.7:${PORTSDIR}/devel/py-decoratortools
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DecoratorTools>=1.7:devel/py-decoratortools
 
 USES=		python zip
 USE_PYTHON=	distutils autoplist

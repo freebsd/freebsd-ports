@@ -13,11 +13,11 @@ COMMENT=	Let your Python tests travel through time
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.0:${PORTSDIR}/devel/py-dateutil
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.0:devel/py-dateutil
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
 USES=		python
 USE_PYTHON=	autoplist distutils

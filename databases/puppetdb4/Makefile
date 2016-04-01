@@ -11,8 +11,8 @@ COMMENT=	PuppetDB storeconfigs backend
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		puppet:${PORTSDIR}/sysutils/puppet4
+RUN_DEPENDS=	bash:shells/bash \
+		puppet:sysutils/puppet4
 
 USE_RC_SUBR=	puppetdb
 

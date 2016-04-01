@@ -12,9 +12,9 @@ COMMENT=	Qt-based GUI for CMake
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
-BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexpat.so:textproc/expat2
 
 USE_QT5=	core gui widgets buildtools_build qmake_build
 USES=		cmake:run desktop-file-utils libarchive shared-mime-info

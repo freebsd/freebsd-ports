@@ -12,10 +12,10 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX implementation translating WEB to C
 
-LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libzzip.so:${PORTSDIR}/devel/zziplib \
-		libmpfr.so:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15 \
+		libpng.so:graphics/png \
+		libzzip.so:devel/zziplib \
+		libmpfr.so:math/mpfr
 
 USES=		pkgconfig libtool tar:xz
 USE_TEX=	kpathsea ptexenc

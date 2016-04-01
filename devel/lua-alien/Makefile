@@ -12,7 +12,7 @@ COMMENT=	Lua -> C FFI
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libffi.so:devel/libffi
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

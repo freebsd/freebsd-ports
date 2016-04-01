@@ -14,7 +14,7 @@ COMMENT=	Draw arrows using GD
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
+BUILD_DEPENDS=	p5-GD>=0:graphics/p5-GD
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

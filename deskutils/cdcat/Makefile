@@ -13,11 +13,11 @@ COMMENT=	Qt based tool for offline CD/DVD/disk catalogs
 LICENSE=	GPLv2 MPL
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	cryptopp>0:${PORTSDIR}/security/cryptopp
-LIB_DEPENDS=	libtar.so:${PORTSDIR}/devel/libtar \
-		libexif.so:${PORTSDIR}/graphics/libexif \
-		libmediainfo.so:${PORTSDIR}/multimedia/libmediainfo \
-		libzen.so:${PORTSDIR}/multimedia/libzen
+BUILD_DEPENDS=	cryptopp>0:security/cryptopp
+LIB_DEPENDS=	libtar.so:devel/libtar \
+		libexif.so:graphics/libexif \
+		libmediainfo.so:multimedia/libmediainfo \
+		libzen.so:multimedia/libzen
 
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}

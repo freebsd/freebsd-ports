@@ -14,14 +14,14 @@ COMMENT=	Poker game written in C++/Qt4
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libmikmod.so:${PORTSDIR}/audio/libmikmod \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libgsasl.so:${PORTSDIR}/security/gsasl \
-		libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
-		libprotobuf.so:${PORTSDIR}/devel/protobuf
-BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libmikmod.so:audio/libmikmod \
+		libgnutls.so:security/gnutls \
+		libcurl.so:ftp/curl \
+		libgsasl.so:security/gsasl \
+		libtinyxml.so:textproc/tinyxml \
+		libprotobuf.so:devel/protobuf
+BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:irc/libircclient
 
 USES=		iconv gmake qmake tar:bzip2
 USE_QT4=	gui corelib network sql sql-sqlite3 \

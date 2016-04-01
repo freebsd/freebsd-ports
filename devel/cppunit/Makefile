@@ -12,8 +12,8 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	DOCS DOXYGEN
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
-			dot:${PORTSDIR}/graphics/graphviz
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			dot:graphics/graphviz
 DOXYGEN_CONFIGURE_ENABLE=	dot doxygen html-docs
 DOXYGEN_CONFIGURE_ON=	--htmldir="${DOCSDIR}/html"
 

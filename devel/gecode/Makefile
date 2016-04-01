@@ -12,7 +12,7 @@ COMMENT=	Generic Constraint Development Environment
 LICENSE=	BSL MIT
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	libmpfr.so:math/mpfr
 
 USES=		bison gmake perl5
 USE_PERL5=	build

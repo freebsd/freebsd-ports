@@ -28,7 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:dns/libidn
 .else
 CONFIGURE_ARGS+=--without-libidn
 .endif

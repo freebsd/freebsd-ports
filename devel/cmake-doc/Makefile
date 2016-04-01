@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
 DISTINFO_FILE=	${PORTSDIR}/devel/cmake/distinfo
 
-BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
 NO_ARCH=	yes
 USES=		cmake:outsource

@@ -23,7 +23,7 @@ LIBDSK_DESC=	Access to disks and disk images support
 
 LIBDSK_CONFIGURE_ON=	--with-libdsk=${LOCALBASE}
 LIBDSK_CONFIGURE_OFF=	--with-libdsk=''
-LIBDSK_LIB_DEPENDS=	libdsk.so:${PORTSDIR}/emulators/libdsk
+LIBDSK_LIB_DEPENDS=	libdsk.so:emulators/libdsk
 
 # remove unneeded getopt*.c
 # remove curses from all but fsed.cpm

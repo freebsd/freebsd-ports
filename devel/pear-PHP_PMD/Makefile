@@ -12,8 +12,8 @@ COMMENT=	PHP Mess Detector
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PEARDIR}/.channels/pear.phpmd.org.reg:${PORTSDIR}/devel/pear-channel-phpmd
-RUN_DEPENDS=	${PEARDIR}/.channels/pear.phpmd.org.reg:${PORTSDIR}/devel/pear-channel-phpmd
+BUILD_DEPENDS=	${PEARDIR}/.channels/pear.phpmd.org.reg:devel/pear-channel-phpmd
+RUN_DEPENDS=	${PEARDIR}/.channels/pear.phpmd.org.reg:devel/pear-channel-phpmd
 
 USES=	pear
 PEAR_CHANNEL=	phpmd

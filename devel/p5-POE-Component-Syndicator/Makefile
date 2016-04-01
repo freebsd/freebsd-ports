@@ -15,9 +15,9 @@ COMMENT=	POE component base class which implements the Observer pattern
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
-		p5-Object-Pluggable>=1.29:${PORTSDIR}/devel/p5-Object-Pluggable \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	p5-POE>=1.311:devel/p5-POE \
+		p5-Object-Pluggable>=1.29:devel/p5-Object-Pluggable \
+		p5-Test-Simple>=0:devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

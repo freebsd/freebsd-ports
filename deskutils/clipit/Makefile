@@ -23,7 +23,7 @@ OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ON=	localedir=${LOCALBASE}/share/locale
 NLS_CONFIGURE_OFF=	--disable-nls
-XDOTOOL_RUN_DEPENDS+=	xdotool:${PORTSDIR}/x11/xdotool
+XDOTOOL_RUN_DEPENDS+=	xdotool:x11/xdotool
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^itlocaledir =.*|itlocaledir = $$(datarootdir)/locale|' \

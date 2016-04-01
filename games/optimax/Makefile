@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Core War optimizer written in Perl
 
-RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS=	p5-Tk>=0:x11-toolkits/p5-Tk
 
 USES=		perl5 zip
 USE_PERL5=	run

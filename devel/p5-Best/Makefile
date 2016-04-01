@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Fallbackable module loader
 
-BUILD_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+BUILD_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

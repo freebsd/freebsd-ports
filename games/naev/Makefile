@@ -12,12 +12,12 @@ COMMENT=	2D action/RPG space game
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
-		libzip.so:${PORTSDIR}/archivers/libzip \
-		libcsparse.so:${PORTSDIR}/math/suitesparse
-RUN_DEPENDS=	${DATADIR}/ndata-${PORTVERSION}.zip:${PORTSDIR}/games/naev-data
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libfreetype.so:print/freetype2 \
+		libvorbisfile.so:audio/libvorbis \
+		libzip.so:archivers/libzip \
+		libcsparse.so:math/suitesparse
+RUN_DEPENDS=	${DATADIR}/ndata-${PORTVERSION}.zip:games/naev-data
 
 USES=		autoreconf:build compiler:features gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

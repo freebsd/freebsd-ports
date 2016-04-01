@@ -12,9 +12,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for paging results without total entries
 
 RUN_DEPENDS=	\
-	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite
+	p5-Class-Accessor-Lite>=0.05:devel/p5-Class-Accessor-Lite
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS=	p5-Test-Simple>=0.96:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

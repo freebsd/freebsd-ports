@@ -15,7 +15,7 @@ COMMENT=	Pysycache themes support
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	pysycache.py:${PORTSDIR}/games/pysycache
+RUN_DEPENDS=	pysycache.py:games/pysycache
 
 USES=		zip:infozip
 NO_BUILD=	yes
