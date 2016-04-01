@@ -13,7 +13,7 @@ DISTNAME=	PySyck-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python binding for Syck, a YAML parser and emitter
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsyck.a:${PORTSDIR}/textproc/syck
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsyck.a:textproc/syck
 
 USES=		python
 USE_PYTHON=	distutils autoplist

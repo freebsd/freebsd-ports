@@ -12,7 +12,7 @@ COMMENT=	Python bindings for ssdeep
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libfuzzy.so:${PORTSDIR}/security/ssdeep
+LIB_DEPENDS=	libfuzzy.so:security/ssdeep
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

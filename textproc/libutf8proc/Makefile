@@ -12,7 +12,7 @@ COMMENT=	UTF8 Processing library
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	netsurf-buildsystem>=1.5:${PORTSDIR}/devel/netsurf-buildsystem
+BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem
 
 USES=	gmake
 USE_LDCONFIG=	yes

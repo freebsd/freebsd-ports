@@ -15,7 +15,7 @@ USE_CABAL=	text>=0.11.0.8
 
 .if ${PORT_OPTIONS:MPCLANG} || ${PORT_OPTIONS:MBCLANG}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-double-conversion.cabal
-LIB_DEPENDS+=	libcxxrt.so:${PORTSDIR}/devel/libcxxrt
+LIB_DEPENDS+=	libcxxrt.so:devel/libcxxrt
 .endif
 
 .include <bsd.port.mk>

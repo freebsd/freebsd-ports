@@ -10,8 +10,8 @@ MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Draw organic molecules easily and store them
 
-LIB_DEPENDS=	libEMF.so:${PORTSDIR}/graphics/libemf
-RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
+LIB_DEPENDS=	libEMF.so:graphics/libemf
+RUN_DEPENDS=	transfig:print/transfig
 
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20

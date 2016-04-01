@@ -10,13 +10,13 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for MATE project
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
-		libxklavier.so:${PORTSDIR}/x11/libxklavier \
-		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
+		libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libunique-1.0.so:x11-toolkits/unique \
+		libxklavier.so:x11/libxklavier \
+		libpolkit-gobject-1.so:sysutils/polkit
 
 PORTSCOUT=	limitw:1,even
 

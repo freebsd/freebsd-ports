@@ -12,14 +12,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	SMILES linear notation parser/writer
 
-BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
-		p5-Chemistry-Bond-Find>=0:${PORTSDIR}/science/p5-Chemistry-Bond-Find \
-		p5-Chemistry-Canonicalize>=0:${PORTSDIR}/science/p5-Chemistry-Canonicalize \
-		p5-Chemistry-Ring>=0:${PORTSDIR}/science/p5-Chemistry-Ring
-RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
-		p5-Chemistry-Bond-Find>=0:${PORTSDIR}/science/p5-Chemistry-Bond-Find \
-		p5-Chemistry-Canonicalize>=0:${PORTSDIR}/science/p5-Chemistry-Canonicalize \
-		p5-Chemistry-Ring>=0:${PORTSDIR}/science/p5-Chemistry-Ring
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
+		p5-Chemistry-Bond-Find>=0:science/p5-Chemistry-Bond-Find \
+		p5-Chemistry-Canonicalize>=0:science/p5-Chemistry-Canonicalize \
+		p5-Chemistry-Ring>=0:science/p5-Chemistry-Ring
+RUN_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
+		p5-Chemistry-Bond-Find>=0:science/p5-Chemistry-Bond-Find \
+		p5-Chemistry-Canonicalize>=0:science/p5-Chemistry-Canonicalize \
+		p5-Chemistry-Ring>=0:science/p5-Chemistry-Ring
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	write.pl

@@ -9,7 +9,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU Generic Security Service Library
 
-LIB_DEPENDS=	libshishi.so:${PORTSDIR}/security/shishi
+LIB_DEPENDS=	libshishi.so:security/shishi
 
 CONFLICTS=	heimdal-[0-9]*
 

@@ -13,7 +13,7 @@ BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes

@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	LSOF NMAP DOCS
 OPTIONS_DEFAULT=LSOF
 
-RUN_DEPENDS+=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS+=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		${LOCALBASE}/bin/wget:ftp/wget
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	files/check_modules.pl files/filehashsha.pl \
@@ -26,8 +26,8 @@ SUB_FILES=	415.${PORTNAME}
 
 PORTDOCS=	ACKNOWLEDGMENTS CHANGELOG FAQ LICENSE README
 
-LSOF_RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
-NMAP_RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
+LSOF_RUN_DEPENDS=	lsof:sysutils/lsof
+NMAP_RUN_DEPENDS=	nmap:security/nmap
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|{SHAREDIR}/man/man8|{PREFIX}/man/man8|g' \

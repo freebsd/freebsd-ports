@@ -14,7 +14,7 @@ LICENSE_NAME=	End2End Trust Architecture (e2eta) Software Copying
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	# none
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gmake localbase tar:tgz
 USE_OPENSSL=	yes

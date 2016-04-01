@@ -10,7 +10,7 @@ COMMENT=	Code-searching tool similar to ack but faster
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ggreer

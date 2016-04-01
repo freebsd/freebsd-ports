@@ -13,7 +13,7 @@ COMMENT=	Libenchant Binder that Support Near All Spelling Tools
 
 LICENSE=	PHP30
 
-LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS=	libenchant.so:textproc/enchant
 
 USES=		tar:tgz
 USE_PHP=	yes

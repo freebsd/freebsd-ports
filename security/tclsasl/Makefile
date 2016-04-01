@@ -10,7 +10,7 @@ MASTER_SITES=	http://beepcore-tcl.sourceforge.net/
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Tcl interface to the Cyrus SASLv2 library
 
-LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 USES=		tcl libtool tar:tgz
 GNU_CONFIGURE=	yes

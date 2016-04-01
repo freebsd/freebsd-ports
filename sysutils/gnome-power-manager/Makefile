@@ -10,7 +10,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Power management system for the GNOME Desktop
 
-LIB_DEPENDS=	libupower-glib.so:${PORTSDIR}/sysutils/upower
+LIB_DEPENDS=	libupower-glib.so:sysutils/upower
 
 PORTSCOUT=	limitw:1,even
 
@@ -30,8 +30,8 @@ OPTIONS_DEFINE=	MANPAGES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES} || defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
-		docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml
+BUILD_DEPENDS+=	docbook2html:textproc/docbook-utils \
+		docbook-sgml>0:textproc/docbook-sgml
 PLIST_SUB+=	MAN=""
 .else
 PLIST_SUB+=	MAN="@comment "

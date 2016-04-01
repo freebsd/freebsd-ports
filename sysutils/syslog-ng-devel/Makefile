@@ -13,8 +13,8 @@ MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-$
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
-LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
+		libpcre.so:devel/pcre
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -54,8 +54,8 @@ BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
 .include <bsd.port.options.mk>
 
-BUILD_DEPENDS+=		xsltproc:${PORTSDIR}/textproc/libxslt \
-			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS+=		xsltproc:textproc/libxslt \
+			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .endif
 
 .if ${PORT_OPTIONS:MSPOOF}
-LIB_DEPENDS+=		libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS+=		libnet.so:net/libnet
 CONFIGURE_ARGS+=	--enable-spoof-source
 .else
 CONFIGURE_ARGS+=	--disable-spoof-source
@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if ${PORT_OPTIONS:MGEOIP}
 CONFIGURE_ARGS+=	--enable-geoip
-LIB_DEPENDS+=		libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=		libGeoIP.so:net/GeoIP
 CONFIGURE_ENV+=		GEOIP_LIBS="-L${LOCALBASE}/lib -lGeoIP"
 PLIST_FILES+=		lib/syslog-ng/libgeoip-plugin.so
 .else
@@ -90,7 +90,7 @@ CONFIGURE_ARGS+=	--disable-geoip
 
 .if ${PORT_OPTIONS:MREDIS}
 CONFIGURE_ARGS+=        --enable-redis
-LIB_DEPENDS+=           libhiredis.so:${PORTSDIR}/databases/hiredis
+LIB_DEPENDS+=           libhiredis.so:databases/hiredis
 PLIST_FILES+=           lib/syslog-ng/libredis.so
 .else
 CONFIGURE_ARGS+=        --disable-redis
@@ -98,14 +98,14 @@ CONFIGURE_ARGS+=        --disable-redis
 
 .if ${PORT_OPTIONS:MSMTP}
 CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/
-LIB_DEPENDS+=		libesmtp.so:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS+=		libesmtp.so:mail/libesmtp
 PLIST_FILES+=		lib/syslog-ng/libafsmtp.so
 .else
 CONFIGURE_ARGS+=	--disable-smtp
 .endif
 
 .if ${PORT_OPTIONS:MSQL}
-LIB_DEPENDS+=		libdbi.so:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=		libdbi.so:databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
 LDFLAGS+=		-L${LOCALBASE}/lib
@@ -115,7 +115,7 @@ CONFIGURE_ARGS+=	--disable-sql
 .endif
 
 .if ${PORT_OPTIONS:MJSON}
-LIB_DEPENDS+=		libjson-c.so:${PORTSDIR}/devel/json-c
+LIB_DEPENDS+=		libjson-c.so:devel/json-c
 CONFIGURE_ARGS+=	--enable-json
 PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
 .else
@@ -125,8 +125,8 @@ CONFIGURE_ARGS+=        --disable-json
 .if ${PORT_OPTIONS:MJAVA}
 CONFIGURE_ARGS+=	--enable-java
 USE_JAVA=	yes
-BUILD_DEPENDS+=		gradle:${PORTSDIR}/devel/gradle
-BUILD_DEPENDS+=		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS+=		gradle:devel/gradle
+BUILD_DEPENDS+=		bash:shells/bash
 PLIST_FILES+= 		lib/syslog-ng/libmod-java.so \
 			lib/syslog-ng/java-modules/syslog-ng-core.jar \
 			lib/syslog-ng/java-modules/log4j-1.2.16.jar \

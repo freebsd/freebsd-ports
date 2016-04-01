@@ -13,7 +13,7 @@ COMMENT=	Encode characters for LaTeX formatting
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly
+BUILD_DEPENDS=	p5-Readonly>=0:devel/p5-Readonly
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

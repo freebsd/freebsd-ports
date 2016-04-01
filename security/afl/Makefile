@@ -25,9 +25,9 @@ OPTIONS_SUB=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Uses binary instrumentation
 
-LLVM_BUILD_DEPENDS=	clang37:${PORTSDIR}/devel/llvm37
-LLVM_RUN_DEPENDS=	clang37:${PORTSDIR}/devel/llvm37
-MINIMIZE_CORPUS_RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+LLVM_BUILD_DEPENDS=	clang37:devel/llvm37
+LLVM_RUN_DEPENDS=	clang37:devel/llvm37
+MINIMIZE_CORPUS_RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 .include <bsd.port.options.mk>
 
@@ -40,8 +40,8 @@ PLIST_SUB+=	LLVM_SUB=""
 
 .if ${ARCH} == "i386"
 # Clang i386 emits .cfi_sections which base as(1) doesn't understand
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
+RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 .endif
 
 MAKE_ARGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \

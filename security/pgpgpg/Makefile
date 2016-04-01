@@ -16,8 +16,8 @@ COMMENT=	Wrapper for GnuPG to simulate PGP 2.6.x
 # if it can't find gpg.  RUN_DEPENDS is necessary to make the package
 # dependency register correctly.  Hence the apparent redundancy.
 
-BUILD_DEPENDS=	${PREFIX}/bin/gpgv:${PORTSDIR}/security/gnupg1
-RUN_DEPENDS=	${PREFIX}/bin/gpgv:${PORTSDIR}/security/gnupg1
+BUILD_DEPENDS=	${PREFIX}/bin/gpgv:security/gnupg1
+RUN_DEPENDS=	${PREFIX}/bin/gpgv:security/gnupg1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gpg-path=${PREFIX}/bin/gpg

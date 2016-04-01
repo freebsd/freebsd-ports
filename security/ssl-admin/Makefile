@@ -12,7 +12,7 @@ COMMENT=	OpenSSL certificate manager with OpenVPN support
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS=	zip:archivers/zip
 
 USES=		perl5 shebangfix tar:xz
 SHEBANG_FILES=	ssl-admin

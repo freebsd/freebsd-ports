@@ -13,7 +13,7 @@ COMMENT=	Tool for doing remote power control
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		libtool perl5 shebangfix
 SHEBANG_FILES=	heartbeat/powerman

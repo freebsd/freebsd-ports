@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to find URIs in arbitrary text
 
-BUILD_DEPENDS=	p5-URI>=1:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-URI>=1:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

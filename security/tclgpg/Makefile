@@ -12,8 +12,8 @@ COMMENT=	Tcl interface to GNU Privacy Guard with interface similar to TclGPGME
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
+BUILD_DEPENDS=	dtplite:devel/tcllib
+RUN_DEPENDS=	gpg:security/gnupg1
 
 USES=		autoreconf gmake tcl
 GNU_CONFIGURE=	yes

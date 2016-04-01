@@ -12,7 +12,7 @@ COMMENT=	Graphical certification authority
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		desktop-file-utils gmake localbase pkgconfig shared-mime-info
 USE_OPENSSL=	yes

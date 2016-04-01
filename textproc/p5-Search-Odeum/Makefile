@@ -14,7 +14,7 @@ COMMENT=	Perl interface to the Odeum inverted index API
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libqdbm.so:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS=	libqdbm.so:databases/qdbm
 
 USE_PERL5=	configure
 USES=		localbase perl5

@@ -16,8 +16,8 @@ LICENSE_TEXT=	It is and always will be free, and [Jim Graham] wrote it...\
 		so don't charge money for it, and don't claim that you wrote it
 LICENSE_PERMS=	dist-sell pkg-sell auto-accept
 
-LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
-RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
+LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
+RUN_DEPENDS=	dtplite:devel/tcllib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		tk:85

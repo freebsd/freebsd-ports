@@ -12,7 +12,7 @@ COMMENT=	Increment module version numbers simply and correctly
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
+BUILD_DEPENDS=	p5-Sub-Exporter>=0:devel/p5-Sub-Exporter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

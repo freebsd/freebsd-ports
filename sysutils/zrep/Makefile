@@ -11,7 +11,7 @@ EXTRACT_SUFX=
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	ZFS based replication and failover solution
 
-RUN_DEPENDS=	ksh93:${PORTSDIR}/shells/ksh93
+RUN_DEPENDS=	ksh93:shells/ksh93
 
 PLIST_FILES=	bin/zrep
 

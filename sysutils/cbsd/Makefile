@@ -10,11 +10,11 @@ COMMENT=	Yet another FreeBSD Jail and Bhyve Management Utility
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
-		sudo:${PORTSDIR}/security/sudo \
-		sqlite3:${PORTSDIR}/databases/sqlite3
-LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2 \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+RUN_DEPENDS=	rsync:net/rsync \
+		sudo:security/sudo \
+		sqlite3:databases/sqlite3
+LIB_DEPENDS=	libssh2.so:security/libssh2 \
+		libsqlite3.so:databases/sqlite3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	olevole
@@ -37,7 +37,7 @@ IGNORE=	does not support FreeBSD versions < 10.0
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-LIB_DEPENDS+=	libxo.so:${PORTSDIR}/devel/libxo
+LIB_DEPENDS+=	libxo.so:devel/libxo
 .endif
 
 do-install:

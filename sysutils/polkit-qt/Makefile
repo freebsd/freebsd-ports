@@ -13,7 +13,7 @@ COMMENT=	Qt wrapper around Polkit libraries
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpolkit-agent-1.so:${PORTSDIR}/sysutils/polkit
+LIB_DEPENDS=	libpolkit-agent-1.so:sysutils/polkit
 
 CMAKE_ARGS=	-DBUILD_EXAMPLES:BOOL=OFF \
 		-DBUILD_TEST:BOOL=OFF \

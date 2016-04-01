@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy creation of command line Atom processing tools
 
-BUILD_DEPENDS=	p5-XML-Atom>=0:${PORTSDIR}/textproc/p5-XML-Atom
+BUILD_DEPENDS=	p5-XML-Atom>=0:textproc/p5-XML-Atom
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

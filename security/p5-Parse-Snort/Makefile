@@ -12,8 +12,8 @@ COMMENT=	Perl module to parse and create Snort rules
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
-RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor
+RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor
 
 USES=		perl5
 USE_PERL5=	configure

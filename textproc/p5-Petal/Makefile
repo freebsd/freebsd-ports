@@ -12,10 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Template Attribute Language - TAL for Perl!
 
-BUILD_DEPENDS=	p5-MKDoc-XML>=0.72:${PORTSDIR}/textproc/p5-MKDoc-XML
+BUILD_DEPENDS=	p5-MKDoc-XML>=0.72:textproc/p5-MKDoc-XML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Locale-Maketext-Gettext>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Gettext \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+TEST_DEPENDS=	p5-Locale-Maketext-Gettext>=0:devel/p5-Locale-Maketext-Gettext \
+		p5-URI>=0:net/p5-URI
 
 USES=		perl5
 USE_PERL5=	configure

@@ -9,16 +9,16 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Converts between many translation formats
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}vobject>=0:${PORTSDIR}/deskutils/py-vobject \
-		msghack:${PORTSDIR}/devel/gettext-msghack \
-		${PYTHON_PKGNAMEPREFIX}iniparse>=0:${PORTSDIR}/devel/py-iniparse \
-		${PYTHON_PKGNAMEPREFIX}levenshtein>=0:${PORTSDIR}/devel/py-levenshtein \
-		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
-		iso-codes>=1.3:${PORTSDIR}/misc/iso-codes \
-		bash:${PORTSDIR}/shells/bash \
-		${PYTHON_PKGNAMEPREFIX}utidy>=0:${PORTSDIR}/www/py-utidy
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}vobject>=0:deskutils/py-vobject \
+		msghack:devel/gettext-msghack \
+		${PYTHON_PKGNAMEPREFIX}iniparse>=0:devel/py-iniparse \
+		${PYTHON_PKGNAMEPREFIX}levenshtein>=0:devel/py-levenshtein \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
+		iso-codes>=1.3:misc/iso-codes \
+		bash:shells/bash \
+		${PYTHON_PKGNAMEPREFIX}utidy>=0:www/py-utidy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
 

@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 OPTIONS_DEFINE=	EXPAT DOCS EXAMPLES
 
 EXPAT_DESC=		Ability to merge new events (require expat)
-EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 EXPAT_MAKE_ARGS=	-DWITH_EXPAT \
 			EXPAT_INCLUDEDIR=${LOCALBASE}/include \
 			EXPAT_LIBDIR=${LOCALBASE}/lib

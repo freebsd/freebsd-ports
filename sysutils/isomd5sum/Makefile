@@ -12,7 +12,7 @@ COMMENT=	Implanting and checking checksums within an ISO9660 image
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES=		gmake python tar:bzip2
 

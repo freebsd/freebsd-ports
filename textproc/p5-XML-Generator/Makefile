@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ah@linux-hq.de
 COMMENT=	Simple Perl module for generating XML documents
 
-BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
-RUN_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
+BUILD_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM
+RUN_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM
 
-TEST_DEPENDS=	p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
+TEST_DEPENDS=	p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 
 USES=		perl5
 USE_PERL5=	configure

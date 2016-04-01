@@ -3,7 +3,7 @@
 
 PORTREVISION=	0
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/textproc/libxslt:configure
+BUILD_DEPENDS=	${NONEXISTENT}:textproc/libxslt:configure
 
 PARENT_WRKSRC!=	cd ${.CURDIR}/../libxslt && ${MAKE} -V WRKSRC
 EXTRACT_ONLY=

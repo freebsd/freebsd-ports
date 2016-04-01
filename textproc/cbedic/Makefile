@@ -14,7 +14,7 @@ BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${DICT_DIR}/${DICT_CHECK}:${PORTSDIR}/textproc/bedic-data
+RUN_DEPENDS=	${DICT_DIR}/${DICT_CHECK}:textproc/bedic-data
 
 DICT_CHECK?=	buleng.dat
 DICT_DIR?=	${LOCALBASE}/share

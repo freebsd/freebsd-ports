@@ -37,7 +37,7 @@ PLIST_FILES=	bin/authforce \
 
 OPTIONS_DEFINE=		CURL NLS
 
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	curl
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls

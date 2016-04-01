@@ -11,16 +11,16 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Program that keeps passwords and other secrets
 
-BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		gcr>=3.5.3:${PORTSDIR}/security/gcr
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libgcr-3.so:${PORTSDIR}/security/gcr \
-		libtasn1.so:${PORTSDIR}/security/libtasn1 \
-		libp11-kit.so:${PORTSDIR}/security/p11-kit \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
-RUN_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
-		pinentry-gnome3:${PORTSDIR}/security/pinentry-gnome3
+BUILD_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
+		docbook-xsl>=0:textproc/docbook-xsl \
+		gcr>=3.5.3:security/gcr
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libgcr-3.so:security/gcr \
+		libtasn1.so:security/libtasn1 \
+		libp11-kit.so:security/p11-kit \
+		libgcrypt.so:security/libgcrypt
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
+		pinentry-gnome3:security/pinentry-gnome3
 
 PORTSCOUT=	limitw:1,even
 

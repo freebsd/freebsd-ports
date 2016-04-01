@@ -13,9 +13,9 @@ COMMENT=	Python library for parsing, manipulating, and generating STIX content
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}lxml>=3.1:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}cybox>=2.1.0.9:${PORTSDIR}/security/py-cybox
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}lxml>=3.1:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}cybox>=2.1.0.9:security/py-cybox
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

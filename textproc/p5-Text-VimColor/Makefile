@@ -13,13 +13,13 @@ COMMENT=	Syntax color text in HTML or XML using Vim
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
-		p5-File-ShareDir-Install>=0.03:${PORTSDIR}/devel/p5-File-ShareDir-Install \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		${LOCALBASE}/bin/vim:${PORTSDIR}/editors/vim
-RUN_DEPENDS=	p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		${LOCALBASE}/bin/vim:${PORTSDIR}/editors/vim
+BUILD_DEPENDS=	p5-File-ShareDir>=0:devel/p5-File-ShareDir \
+		p5-File-ShareDir-Install>=0.03:devel/p5-File-ShareDir-Install \
+		p5-Path-Class>=0:devel/p5-Path-Class \
+		${LOCALBASE}/bin/vim:editors/vim
+RUN_DEPENDS=	p5-File-ShareDir>=0:devel/p5-File-ShareDir \
+		p5-Path-Class>=0:devel/p5-Path-Class \
+		${LOCALBASE}/bin/vim:editors/vim
 
 USES=		perl5
 USE_PERL5=	configure

@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/udunits/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for manipulating units of physical quantities
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 OPTIONS_DEFINE=	DOCS
 

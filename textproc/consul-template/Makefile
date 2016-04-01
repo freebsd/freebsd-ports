@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Generic template rendering and notifications with Consul
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp:DEFAULT,consul,go_multierror,go_syslog,hcl,logutils \

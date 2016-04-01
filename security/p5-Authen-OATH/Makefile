@@ -15,9 +15,9 @@ COMMENT=	OATH one time passwords implementation
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC \
-		p5-Digest-SHA1>0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-Moose>0:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-Digest-HMAC>0:security/p5-Digest-HMAC \
+		p5-Digest-SHA1>0:security/p5-Digest-SHA1 \
+		p5-Moose>0:devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

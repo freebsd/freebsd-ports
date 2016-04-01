@@ -9,7 +9,7 @@ DISTNAME=	bugzilla-${PORTVERSION}-ru-20140422
 MAINTAINER=	bz-ports@FreeBSD.org
 COMMENT=	Russian localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla44>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla44
+RUN_DEPENDS=	bugzilla44>=${PORTVERSION}:devel/bugzilla44
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.ru
 

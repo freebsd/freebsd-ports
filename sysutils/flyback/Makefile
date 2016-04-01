@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backup frontend like Apple's Time Machine
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	rsync:net/rsync
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -14,7 +14,7 @@ COMMENT=	Elliptic Curve Crypto Utility for Reliable Encryption
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 USE_GCC=	any
 

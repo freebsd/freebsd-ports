@@ -11,7 +11,7 @@ COMMENT=	Software Token for UNIX compatible with RSA SecurID
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libtomcrypt.so:${PORTSDIR}/security/libtomcrypt
+LIB_DEPENDS=	libtomcrypt.so:security/libtomcrypt
 
 OPTIONS_DEFINE=	X11
 OPTIONS_SUB=	yes

@@ -12,7 +12,7 @@ COMMENT=	Intelligent predictive text entry platform
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
+BUILD_DEPENDS=	help2man:misc/help2man
 
 USES=		libtool pkgconfig sqlite
 GNU_CONFIGURE=	yes

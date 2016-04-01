@@ -11,7 +11,7 @@ COMMENT=	Character String Processing Facilities
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USES=	cran:auto-plist pkgconfig:build
 

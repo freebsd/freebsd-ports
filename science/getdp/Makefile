@@ -13,8 +13,8 @@ COMMENT=	Rather general finite element solver using mixed finite elements
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/README.txt
 
-LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl	\
-		liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	libgsl.so:math/gsl	\
+		liblapack.so:math/lapack
 
 USES=		fortran gmake tar:tgz cmake
 WANT_PERL=	yes

@@ -11,7 +11,7 @@ COMMENT=	Official Python low-level client for Elasticsearch
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.8.2:${PORTSDIR}/net/py-urllib3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.8.2:net/py-urllib3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elasticsearch

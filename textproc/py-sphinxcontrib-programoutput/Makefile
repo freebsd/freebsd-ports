@@ -12,7 +12,7 @@ COMMENT=	Sphinx extension to include program output
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.1.3:${PORTSDIR}/textproc/py-sphinx
+RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.1.3:textproc/py-sphinx
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -12,7 +12,7 @@ COMMENT=	Small tool for incremental backups over network
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	rsync:net/rsync
 
 USES=		perl5
 USE_PERL5=	run

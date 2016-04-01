@@ -41,18 +41,18 @@ ICONV_CONFIGURE_OFF=	--without-iconv
 # e2fsprogs does not provide ext2fs.so any more
 # since it does not do 'make install-libs'
 #.if defined(WITH_E2FSPROGS)
-#LIB_DEPENDS+=	ext2fs.2:${PORTSDIR}/sysutils/e2fsprogs
+#LIB_DEPENDS+=	ext2fs.2:sysutils/e2fsprogs
 #.else
 #CONFIGURE_ARGS+=--without-ext2fs
 #.endif
 
-NTFS3G_LIB_DEPENDS=	libntfs-3g.so:${PORTSDIR}/sysutils/fusefs-ntfs
+NTFS3G_LIB_DEPENDS=	libntfs-3g.so:sysutils/fusefs-ntfs
 NTFS3G_CONFIGURE_OFF=	--without-ntfs3g
 
-NTFSPROGS_LIB_DEPENDS=	libntfs.so:${PORTSDIR}/sysutils/ntfsprogs
+NTFSPROGS_LIB_DEPENDS=	libntfs.so:sysutils/ntfsprogs
 NTFS_PROGS_CONFIGURE_ARGS=	--without-ntfs
 
-PROGSREISERFS_LIB_DEPENDS=	libreiserfs-0.3.so:${PORTSDIR}/sysutils/progsreiserfs
+PROGSREISERFS_LIB_DEPENDS=	libreiserfs-0.3.so:sysutils/progsreiserfs
 PROGSREISERFS_CONFIGURE_OFF=	--without-reiserfs
 
 post-patch:

@@ -12,7 +12,7 @@ COMMENT=	Fast log colorizer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake ncurses
 GNU_CONFIGURE=	yes

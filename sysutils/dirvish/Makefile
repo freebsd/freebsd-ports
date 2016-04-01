@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.dirvish.org/
 MAINTAINER=	tarkhil@over.ru
 COMMENT=	Network backup system based off of rsync
 
-RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules \
-		p5-Time-Period>=0:${PORTSDIR}/devel/p5-Time-Period \
-		rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	p5-Time-modules>=0:devel/p5-Time-modules \
+		p5-Time-Period>=0:devel/p5-Time-Period \
+		rsync:net/rsync
 
 MAN5S=		dirvish.conf.5
 MAN8S=		dirvish.8 dirvish-expire.8 dirvish-locate.8 dirvish-runall.8

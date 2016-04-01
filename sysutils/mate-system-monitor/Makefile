@@ -10,9 +10,9 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE system monitor program
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
+		libdbus-glib-1.so:devel/dbus-glib
 
 PORTSCOUT=	limitw:1,even
 

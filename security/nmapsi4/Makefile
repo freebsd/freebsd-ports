@@ -12,7 +12,7 @@ COMMENT=	GUI frontend for the nmap scanning utility
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
+RUN_DEPENDS=	${LOCALBASE}/bin/nmap:security/nmap
 
 USES=		cmake tar:xz
 INSTALLS_ICONS=	yes

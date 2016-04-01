@@ -12,9 +12,9 @@ COMMENT=	Cascading Style Sheets library
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	netsurf-buildsystem>=1.5:${PORTSDIR}/devel/netsurf-buildsystem
-LIB_DEPENDS=	libwapcaplet.so:${PORTSDIR}/textproc/libwapcaplet \
-	libparserutils.so:${PORTSDIR}/devel/libparserutils
+BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem
+LIB_DEPENDS=	libwapcaplet.so:textproc/libwapcaplet \
+	libparserutils.so:devel/libparserutils
 
 USES=	gmake iconv:wchar_t localbase pkgconfig
 USE_LDCONFIG=	yes

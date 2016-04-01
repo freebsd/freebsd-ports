@@ -12,7 +12,7 @@ COMMENT=	GAI applet that displays the keyboard status leds
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgai.so:${PORTSDIR}/x11-toolkits/gai
+LIB_DEPENDS=	libgai.so:x11-toolkits/gai
 
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig tar:bzip2

@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	devttys0
 USE_PYTHON=	autoplist distutils
 
-RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip \
-		cabextract:${PORTSDIR}/archivers/cabextract
+RUN_DEPENDS=	7z:archivers/p7zip \
+		cabextract:archivers/cabextract
 
 .include <bsd.port.mk>

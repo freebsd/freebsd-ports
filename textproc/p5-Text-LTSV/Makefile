@@ -14,10 +14,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Project-Libs>0:${PORTSDIR}/devel/p5-Project-Libs \
-	p5-Tie-IxHash>0:${PORTSDIR}/devel/p5-Tie-IxHash \
-	p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-	p5-YAML-Tiny-Color>0:${PORTSDIR}/textproc/p5-YAML-Tiny-Color
+	p5-Project-Libs>0:devel/p5-Project-Libs \
+	p5-Tie-IxHash>0:devel/p5-Tie-IxHash \
+	p5-UNIVERSAL-require>0:devel/p5-UNIVERSAL-require \
+	p5-YAML-Tiny-Color>0:textproc/p5-YAML-Tiny-Color
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

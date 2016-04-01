@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 
 CONFLICTS+=	ispell* ??-ispell*
 
-RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+RUN_DEPENDS=	aspell:textproc/aspell
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/ispell \

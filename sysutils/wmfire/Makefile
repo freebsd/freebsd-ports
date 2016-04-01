@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.swanson.ukfsn.org/wmfire/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker dock app showing load average as a flame
 
-LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
+LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop
 
 USES=		pkgconfig
 USE_GNOME=	gtk20

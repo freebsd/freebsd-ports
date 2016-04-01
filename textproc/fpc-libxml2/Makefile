@@ -17,6 +17,6 @@ OPTIONS_DEFINE=	LIBXML2
 LIBXML2_DESC=	Install xml2 library
 OPTIONS_DEFAULT=	LIBXML2
 
-LIBXML2_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 .include "${MASTERDIR}/Makefile"

@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--enable-fhs
 CFLAGS+=	-Wno-error=implicit-function-declaration
 
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 
 OPTIONS_DEFINE=	PGSQL MYSQL LIBVIRT
 OPTIONS_SINGLE=	DB
@@ -52,12 +52,12 @@ post-patch:
 
 .if ${PORT_OPTIONS:MTOKYOCABINET}
 CONFIGURE_ARGS+=	--with-tokyocabinet=${LOCALBASE}
-LIB_DEPENDS+=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS+=	libtokyocabinet.so:databases/tokyocabinet
 .endif
 
 .if ${PORT_OPTIONS:MQDBM}
 CONFIGURE_ARGS+=	--with-qdbm=${LOCALBASE}
-LIB_DEPENDS+=	libqdbm.so:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS+=	libqdbm.so:databases/qdbm
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
@@ -68,13 +68,13 @@ CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-LIB_DEPENDS+=		libmysqlclient.so:${PORTSDIR}/${_MYSQL_CLIENT}
+LIB_DEPENDS+=		libmysqlclient.so:${_MYSQL_CLIENT}
 LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 .endif
 
 .if ${PORT_OPTIONS:MLIBVIRT}
 CONFIGURE_ARGS+=	--with-libvirt=${LOCALBASE}
-LIB_DEPENDS+=		libvirt.so:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS+=		libvirt.so:devel/libvirt
 .endif
 
 .include <bsd.port.mk>

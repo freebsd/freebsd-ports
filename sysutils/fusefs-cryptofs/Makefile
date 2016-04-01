@@ -13,8 +13,8 @@ COMMENT=	Encrypted filesystem for FUSE
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libglib-2.0.so:${PORTSDIR}/devel/glib20
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libglib-2.0.so:devel/glib20
 
 GNU_CONFIGURE=	yes
 USES=		fuse pkgconfig

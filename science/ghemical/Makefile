@@ -13,13 +13,13 @@ COMMENT=	Computational chemistry software package
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libmopac7.so:${PORTSDIR}/biology/mopac \
-		libghemical.so:${PORTSDIR}/science/libghemical \
-		liboglappth.so:${PORTSDIR}/science/liboglappth \
-		libmpqc.so:${PORTSDIR}/science/mpqc \
-		libopenbabel.so:${PORTSDIR}/science/openbabel \
-		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libmopac7.so:biology/mopac \
+		libghemical.so:science/libghemical \
+		liboglappth.so:science/liboglappth \
+		libmpqc.so:science/mpqc \
+		libopenbabel.so:science/openbabel \
+		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		fortran gettext gmake pathfix pkgconfig
 USE_GNOME=	gtk20 libglade2 intltool

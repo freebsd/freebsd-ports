@@ -21,7 +21,7 @@ CONFIG_DESC=	Enable custom config (recuire Config::General)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONFIG}
-RUN_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General
+RUN_DEPENDS=	p5-Config-General>=0:devel/p5-Config-General
 PLIST_FILES+=	etc/${PORTNAME}.cfg.sample
 .endif
 

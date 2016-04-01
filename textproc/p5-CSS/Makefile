@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object oriented access to Cascading Style Sheets (CSS)
 
-BUILD_DEPENDS=	p5-Parse-RecDescent>=1.94:${PORTSDIR}/devel/p5-Parse-RecDescent
+BUILD_DEPENDS=	p5-Parse-RecDescent>=1.94:devel/p5-Parse-RecDescent
 
 USES=		perl5
 USE_PERL5=	configure

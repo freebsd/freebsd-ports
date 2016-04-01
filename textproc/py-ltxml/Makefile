@@ -12,7 +12,7 @@ DISTNAME=	PyLTXML-${PORTVERSION}
 MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Python bindings to the LT XML toolkit
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ltxml12/lt-safe.h:${PORTSDIR}/textproc/ltxml
+BUILD_DEPENDS=	${LOCALBASE}/include/ltxml12/lt-safe.h:textproc/ltxml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python

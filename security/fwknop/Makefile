@@ -38,7 +38,7 @@ IPFW_CONFIGURE_WITH=	ipfw=/sbin/ipfw
 
 PF_CONFIGURE_WITH=	pf=/sbin/pfctl
 
-GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_WITH=	gpgme
 
 .include <bsd.port.mk>

@@ -11,7 +11,7 @@ COMMENT=	Org mode parser written in Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rubypants>=0.2.0:${PORTSDIR}/textproc/rubygem-rubypants
+RUN_DEPENDS=	rubygem-rubypants>=0.2.0:textproc/rubygem-rubypants
 
 NO_ARCH=	yes
 

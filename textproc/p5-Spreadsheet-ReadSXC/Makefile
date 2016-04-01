@@ -12,10 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Extract OpenOffice 1.x spreadsheet data
 
-BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-RUN_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser
+RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		perl5
 USE_PERL5=	configure

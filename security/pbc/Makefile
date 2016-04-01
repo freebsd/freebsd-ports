@@ -13,7 +13,7 @@ COMMENT=	Library of pairing-based cryptosystems
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		bison libtool
 GNU_CONFIGURE=	yes

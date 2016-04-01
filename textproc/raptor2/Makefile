@@ -16,9 +16,9 @@ COMMENT=	RDF Parser Toolkit for Redland
 LICENSE=	APACHE20 GPLv2 GPLv3 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libicuuc.so:${PORTSDIR}/devel/icu \
-		libyajl.so:${PORTSDIR}/devel/yajl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libicuuc.so:devel/icu \
+		libyajl.so:devel/yajl
 
 CONFLICTS=	raptor-1.4.1[0-9]* raptor-1.4.21
 

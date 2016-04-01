@@ -14,10 +14,10 @@ COMMENT=	Module to format HTML to text or PS
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Font-AFM>=0:${PORTSDIR}/x11-fonts/p5-Font-AFM \
-		p5-HTML-Tree>=3.15:${PORTSDIR}/www/p5-HTML-Tree
+BUILD_DEPENDS=	p5-Font-AFM>=0:x11-fonts/p5-Font-AFM \
+		p5-HTML-Tree>=3.15:www/p5-HTML-Tree
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp
 
 USES=		perl5
 USE_PERL5=	modbuild

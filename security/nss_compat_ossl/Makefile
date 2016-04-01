@@ -11,8 +11,8 @@ COMMENT=	Source-level compatibility library for OpenSSL to NSS porting
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr \
-		libnss3.so:${PORTSDIR}/security/nss
+LIB_DEPENDS=	libnspr4.so:devel/nspr \
+		libnss3.so:security/nss
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig libtool

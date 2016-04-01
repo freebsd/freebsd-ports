@@ -11,7 +11,7 @@ COMMENT=	Markdown Rendering for R
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-mime>=0.3:${PORTSDIR}/misc/R-cran-mime
+RUN_DEPENDS=	R-cran-mime>=0.3:misc/R-cran-mime
 
 USES=	cran:auto-plist
 

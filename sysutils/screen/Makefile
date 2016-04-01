@@ -50,7 +50,7 @@ PLIST_SUB+=	MAN="@comment"
 .endif
 .if ${PORT_OPTIONS:MINFO}
 .if !exists(/usr/bin/install-info)
-RUN_DEPENDS+=	install-info:${PORTSDIR}/print/texinfo
+RUN_DEPENDS+=	install-info:print/texinfo
 .endif
 INFO=		screen
 MAKE_ARGS+=	WITH_INFO=1

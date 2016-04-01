@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	eric@camachat.org
 COMMENT=	Cross Platform Password Manager
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 CONFLICTS_INSTALL=	keepassx-0.*
 

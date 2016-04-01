@@ -12,8 +12,8 @@ COMMENT=	Various sniffing utilities for penetration testing
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
+LIB_DEPENDS=	libnet.so:net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:net/libnids
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libnet=${LOCALBASE}

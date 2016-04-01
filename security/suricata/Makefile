@@ -13,9 +13,9 @@ COMMENT=	High Performance Network IDS, IPS and Security Monitoring engine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libnet.so:${PORTSDIR}/net/libnet \
-		libyaml.so:${PORTSDIR}/textproc/libyaml
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libnet.so:net/libnet \
+		libyaml.so:textproc/libyaml
 
 USES=		autoreconf cpe gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
@@ -50,10 +50,10 @@ PRELUDE_DESC=		Prelude support for NIDS alerts
 SC_DESC=		Suricata socket client (suricatasc)
 TESTS_DESC=		Unit tests in suricata binary
 
-GEOIP_LIB_DEPENDS=		libGeoIP.so:${PORTSDIR}/net/GeoIP
+GEOIP_LIB_DEPENDS=		libGeoIP.so:net/GeoIP
 GEOIP_CONFIGURE_ON=		--enable-geoip
 
-HTP_PORT_LIB_DEPENDS=		libhtp.so:${PORTSDIR}/devel/libhtp
+HTP_PORT_LIB_DEPENDS=		libhtp.so:devel/libhtp
 HTP_PORT_CONFIGURE_ON=		--enable-non-bundled-htp
 HTP_PORT_CONFIGURE_OFF=		--enable-bundled-htp
 HTP_PORT_CONFLICTS_INSTALL_OFF=	libhtp-[0-9]* libhtp-suricata
@@ -61,7 +61,7 @@ HTP_PORT_USES_OFF=		iconv:translit
 
 IPFW_CONFIGURE_ON=		--enable-ipfw
 
-JSON_LIB_DEPENDS=		libjansson.so:${PORTSDIR}/devel/jansson
+JSON_LIB_DEPENDS=		libjansson.so:devel/jansson
 JSON_CONFIGURE_ON=		--with-libjansson-includes=${LOCALBASE}/include \
 				--with-libjansson-libraries=${LOCALBASE}/lib
 
@@ -70,11 +70,11 @@ LUA_CONFIGURE_ON=		--enable-lua \
 				--with-liblua-includes=${LUA_INCDIR} \
 				--with-liblua-libraries=${LUA_LIBDIR}
 
-LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
 LUAJIT_CONFIGURE_ON=		--enable-luajit
 
-NSS_LIB_DEPENDS=		libnss3.so:${PORTSDIR}/security/nss \
-				libnspr4.so:${PORTSDIR}/devel/nspr
+NSS_LIB_DEPENDS=		libnss3.so:security/nss \
+				libnspr4.so:devel/nspr
 NSS_CONFIGURE_ON=		--with-libnss-includes=${LOCALBASE}/include/nss/nss \
 				--with-libnss-libraries=${LOCALBASE}/lib \
 				--with-libnspr-libraries=${LOCALBASE}/lib \
@@ -82,13 +82,13 @@ NSS_CONFIGURE_ON=		--with-libnss-includes=${LOCALBASE}/include/nss/nss \
 
 NETMAP_CONFIGURE_ENABLE=	netmap
 
-PORTS_PCAP_LIB_DEPENDS=		libpcap.so:${PORTSDIR}/net/libpcap
+PORTS_PCAP_LIB_DEPENDS=		libpcap.so:net/libpcap
 PORTS_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
 				--with-libpcap-libraries=${LOCALBASE}/lib
 PORTS_PCAP_CONFIGURE_OFF=	--with-libpcap-includes=/usr/include \
 				--with-libpcap-libraries=/usr/lib
 
-PRELUDE_LIB_DEPENDS=		libprelude.so:${PORTSDIR}/security/libprelude
+PRELUDE_LIB_DEPENDS=		libprelude.so:security/libprelude
 PRELUDE_CONFIGURE_ENABLE=	prelude
 PRELUDE_CONFIGURE_ON=		--with-libprelude-prefix=${LOCALBASE}
 

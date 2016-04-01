@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast XML parser and decoder written in pure assembler
 
-BUILD_DEPENDS=	fasm:${PORTSDIR}/lang/fasm
+BUILD_DEPENDS=	fasm:lang/fasm
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		dos2unix uidfix

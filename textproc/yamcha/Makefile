@@ -10,7 +10,7 @@ MASTER_SITES=	http://chasen.org/~taku/software/yamcha/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Multipurpose CHunk Annotator
 
-BUILD_DEPENDS=	svm_learn:${PORTSDIR}/science/svmlight
+BUILD_DEPENDS=	svm_learn:science/svmlight
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

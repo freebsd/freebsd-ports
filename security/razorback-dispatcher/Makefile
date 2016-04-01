@@ -15,10 +15,10 @@ COMMENT=	Framework for an intelligence driven security - Dispatcher
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
-		libjson-c.so:${PORTSDIR}/devel/json-c \
-		libmemcached.so:${PORTSDIR}/databases/libmemcached \
-		libcli.so:${PORTSDIR}/devel/libcli
+LIB_DEPENDS=	librazorback_api.so:security/razorback-api \
+		libjson-c.so:devel/json-c \
+		libmemcached.so:databases/libmemcached \
+		libcli.so:devel/libcli
 
 USES=		autoreconf libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -41,7 +41,7 @@ DEBUG_CONFIGURE_ENABLE=	debug
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MACTIVEMQ}
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/activemq:${PORTSDIR}/net/activemq
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/activemq:net/activemq
 SUB_LIST=	ACTIVEMQ="activemq " ACTIVEMQ_LOC="local" \
 		ACTIVEMQ_LOCATION="in the ActiveMQ configuration directory:" \
 		ACTIVEMQ_CONFIG="${LOCALBASE}/etc/activemq/"

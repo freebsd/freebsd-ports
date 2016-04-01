@@ -12,7 +12,7 @@ COMMENT=	Windows password cracker based on rainbow tables
 LICENSE=	APACHE20 GPLv2
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--disable-gui
 .endif
 
 .if ${PORT_OPTIONS:MGRAPH}
-LIB_DEPENDS+=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5
+LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5
 .else
 CONFIGURE_ARGS+=	--disable-graph
 .endif

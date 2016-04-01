@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kostjnspb@yandex.ru
 COMMENT=	Perl interface to the htmldoc program
 
-BUILD_DEPENDS=	htmldoc>0:${PORTSDIR}/textproc/htmldoc
+BUILD_DEPENDS=	htmldoc>0:textproc/htmldoc
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

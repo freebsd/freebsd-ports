@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Capitalize strings ("to WORK AS titles" becomes "To Work as Titles")
 
-TEST_DEPENDS=	p5-PerlIO-locale>=0:${PORTSDIR}/devel/p5-PerlIO-locale
+TEST_DEPENDS=	p5-PerlIO-locale>=0:devel/p5-PerlIO-locale
 
 USES=		perl5
 USE_PERL5=	configure

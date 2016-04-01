@@ -13,8 +13,8 @@ COMMENT=	Application for executing video card BIOS code
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpci.so:${PORTSDIR}/devel/libpci \
-		libx86.so:${PORTSDIR}/devel/libx86
+LIB_DEPENDS=	libpci.so:devel/libpci \
+		libx86.so:devel/libx86
 
 PLIST_FILES=	man/man1/vbetool.1.gz \
 		sbin/vbetool

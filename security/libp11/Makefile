@@ -12,7 +12,7 @@ COMMENT=	Small layer on top of PKCS\#11 API
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

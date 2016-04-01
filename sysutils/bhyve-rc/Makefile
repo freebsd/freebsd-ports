@@ -11,7 +11,7 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	freebsd@grem.de
 COMMENT=	FreeBSD RC script for starting bhyve guests in tmux
 
-RUN_DEPENDS=	tmux:${PORTSDIR}/sysutils/tmux
+RUN_DEPENDS=	tmux:sysutils/tmux
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

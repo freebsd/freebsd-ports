@@ -14,7 +14,7 @@ COMMENT=	Perl module for the Eksblowfish block cipher
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Mix>=0:${PORTSDIR}/devel/p5-Class-Mix
+BUILD_DEPENDS=	p5-Class-Mix>=0:devel/p5-Class-Mix
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

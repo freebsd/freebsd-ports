@@ -13,13 +13,13 @@ COMMENT=	Use WebKit to Generate PDFs from HTML
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
-		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo \
-		p5-XML-LibXML>=1.62:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+BUILD_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run \
+		p5-Moo>=0:devel/p5-Moo \
+		p5-XML-LibXML>=1.62:textproc/p5-XML-LibXML \
+		p5-namespace-clean>=0:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		wkhtmltopdf:${PORTSDIR}/converters/wkhtmltopdf
-TEST_DEPENDS=	p5-Test-Spec:${PORTSDIR}/devel/p5-Test-Spec
+		wkhtmltopdf:converters/wkhtmltopdf
+TEST_DEPENDS=	p5-Test-Spec:devel/p5-Test-Spec
 
 USE_PERL5=	configure
 USES=		perl5

@@ -24,7 +24,7 @@ BIN_SCRIPTS=	rst2html.py rst2s5.py rst2latex.py rst2xetex.py \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYGMENTS}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:${PORTSDIR}/textproc/py-pygments
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments
 .endif
 
 post-install:

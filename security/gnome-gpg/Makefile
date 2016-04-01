@@ -11,9 +11,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple commandline wrapper around gpg for gnome-keyring
 
-BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
-LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
-RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
+BUILD_DEPENDS=	gpgv:security/gnupg1
+LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring
+RUN_DEPENDS=	gpgv:security/gnupg1
 
 USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

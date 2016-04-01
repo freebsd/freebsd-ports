@@ -12,10 +12,10 @@ COMMENT=	OpenVAS web interface
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libopenvas_base.so:${PORTSDIR}/security/openvas-libraries \
-		libmicrohttpd.so:${PORTSDIR}/www/libmicrohttpd
+LIB_DEPENDS=	libgnutls.so:security/gnutls \
+		libgcrypt.so:security/libgcrypt \
+		libopenvas_base.so:security/openvas-libraries \
+		libmicrohttpd.so:www/libmicrohttpd
 
 USES=		cmake:outsource gettext gnome pkgconfig
 USE_GNOME=	glib20 libxml2 libxslt

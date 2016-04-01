@@ -11,7 +11,7 @@ COMMENT=	Physics simulation program for educational use
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS+=	libgsl.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	libgsl.so:math/gsl
 
 USES=		gnustep
 GNU_CONFIGURE=	yes

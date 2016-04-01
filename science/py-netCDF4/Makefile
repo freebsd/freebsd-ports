@@ -15,8 +15,8 @@ COMMENT=	Python Interface to the NetCDF Library (versions 3 and 4)
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libnetcdf.so:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+		libnetcdf.so:science/netcdf
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

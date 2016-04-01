@@ -12,9 +12,9 @@ COMMENT=	Signing utility for UEFI secure boot
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:${PORTSDIR}/devel/gnu-efi \
-		help2man:${PORTSDIR}/misc/help2man
-LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:devel/gnu-efi \
+		help2man:misc/help2man
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib

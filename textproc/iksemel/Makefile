@@ -13,7 +13,7 @@ COMMENT=	XML parser library mainly designed for Jabber applications
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 USES=		autoreconf libtool makeinfo pathfix pkgconfig
 PATHFIX_MAKEFILEIN=	Makefile.am

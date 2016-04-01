@@ -12,8 +12,8 @@ COMMENT=	SAML toolkit for Ruby on Rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-nokogiri>=1.5.10:${PORTSDIR}/textproc/rubygem-nokogiri \
-		rubygem-uuid>=2.3:${PORTSDIR}/devel/rubygem-uuid
+RUN_DEPENDS=	rubygem-nokogiri>=1.5.10:textproc/rubygem-nokogiri \
+		rubygem-uuid>=2.3:devel/rubygem-uuid
 
 NO_ARCH=	yes
 USE_RUBY=	yes

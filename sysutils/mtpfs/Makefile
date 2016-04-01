@@ -10,10 +10,10 @@ MASTER_SITES=	http://www.adebenham.com/files/mtp/
 MAINTAINER=	john@pcbsd.org
 COMMENT=	MTP device filesystem
 
-LIB_DEPENDS=	libmtp.so:${PORTSDIR}/multimedia/libmtp \
-		libid3.so:${PORTSDIR}/audio/id3lib \
-		libid3tag.so:${PORTSDIR}/audio/libid3tag \
-		libmad.so:${PORTSDIR}/audio/libmad
+LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
+		libid3.so:audio/id3lib \
+		libid3tag.so:audio/libid3tag \
+		libmad.so:audio/libmad
 
 USES=		fuse pkgconfig
 USE_GNOME=	glib20

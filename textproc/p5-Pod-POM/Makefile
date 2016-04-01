@@ -13,9 +13,9 @@ COMMENT=	POD Object Model
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-File-Slurper>=0.004:${PORTSDIR}/devel/p5-File-Slurper \
-		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
-		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff
+TEST_DEPENDS=	p5-File-Slurper>=0.004:devel/p5-File-Slurper \
+		p5-Test-Differences>=0:devel/p5-Test-Differences \
+		p5-Text-Diff>=0:textproc/p5-Text-Diff
 
 NO_ARCH=	yes
 USES=		perl5

@@ -13,12 +13,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Open Document Cataloging Project
 
-BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
-		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
-RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
-		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		docbook-xml>0:${PORTSDIR}/textproc/docbook-xml
+BUILD_DEPENDS=	intltool-extract:textproc/intltool \
+		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
+		docbook-xml>0:textproc/docbook-xml
+RUN_DEPENDS=	intltool-extract:textproc/intltool \
+		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
+		docbook-xml>0:textproc/docbook-xml
 
 DOCBOOK_VERSION=4.2
 

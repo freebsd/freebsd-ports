@@ -9,7 +9,7 @@ MASTER_SITES=	https://fedorahosted.org/releases/l/i/libpwquality/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for generating random passwords and quality checking
 
-LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
+LIB_DEPENDS=	libcrack.so:security/cracklib
 
 USES=		gettext gmake libtool pathfix tar:bzip2
 USE_GNOME=	intltool
@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 PYTHON_USES=	python
-PYTHON_BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+PYTHON_BUILD_DEPENDS=	python:lang/python
 PYTHON_CONFIGURE_ENABLE=	python-bindings
 
 post-patch:

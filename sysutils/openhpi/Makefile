@@ -14,9 +14,9 @@ LICENSE_NAME=	OpenHPI license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+		libnetsnmp.so:net-mgmt/net-snmp \
+		libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

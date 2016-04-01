@@ -13,8 +13,8 @@ COMMENT=	Perl interface to the libstree library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Devel-CheckLib>=0:${PORTSDIR}/devel/p5-Devel-CheckLib
-LIB_DEPENDS=	libstree.so:${PORTSDIR}/textproc/libstree
+BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib
+LIB_DEPENDS=	libstree.so:textproc/libstree
 
 USES=		perl5
 USE_PERL5=	configure

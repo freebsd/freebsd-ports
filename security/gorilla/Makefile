@@ -14,8 +14,8 @@ COMMENT=	Password Gorilla is a cross-platform Password Manager
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	itcl>=3.4:${PORTSDIR}/lang/itcl \
-		wish:${PORTSDIR}/x11-toolkits/tk-wrapper
+RUN_DEPENDS=	itcl>=3.4:lang/itcl \
+		wish:x11-toolkits/tk-wrapper
 
 .include <bsd.port.options.mk>
 

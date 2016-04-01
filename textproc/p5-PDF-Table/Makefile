@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Utility class for building table layouts in a PDF::API2 object
 
-BUILD_DEPENDS=	p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2
+BUILD_DEPENDS=	p5-PDF-API2>=0:textproc/p5-PDF-API2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -14,7 +14,7 @@ COMMENT=	Local/remote mirroring+incremental backup
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	librsync.so:${PORTSDIR}/net/librsync
+LIB_DEPENDS=	librsync.so:net/librsync
 
 CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup-1.0*
 

@@ -84,7 +84,7 @@ KX509_DESC=		Enable kx509 support
 KX509_CONFIGURE_ENABLE=	kx509
 
 CRACKLIB_DESC=		Use CrackLib for password quality checking
-CRACKLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
+CRACKLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:security/cracklib
 
 X11_DESC=		Build X11 utilies
 X11_USE=		XORG=x11,xt

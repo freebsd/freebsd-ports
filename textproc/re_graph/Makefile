@@ -12,8 +12,8 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Regular Expression Graphing Program
 
-RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		p5-GD-Arrow>=0:${PORTSDIR}/graphics/p5-GD-Arrow
+RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD \
+		p5-GD-Arrow>=0:graphics/p5-GD-Arrow
 
 USES=		perl5
 NO_WRKSUBDIR=	yes

@@ -12,7 +12,7 @@ COMMENT=	Framework for extending Ruby objects with linguistic methods
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-loggability>=0.11:${PORTSDIR}/textproc/rubygem-loggability
+RUN_DEPENDS=	rubygem-loggability>=0.11:textproc/rubygem-loggability
 
 NO_ARCH=	yes
 

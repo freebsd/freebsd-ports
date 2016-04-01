@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C library for machine-independent, array-oriented data access
 
-LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5
+LIB_DEPENDS=	libhdf5.so:science/hdf5
 
 CONFLICTS_INSTALL=	hdf-4.[0-9]* netcdf-3.[0-9]* netcdf3-3.[0-9]*
 
@@ -30,12 +30,12 @@ USE_LDCONFIG=	yes
 USES=		libtool localbase ncurses pathfix pkgconfig:run
 
 DAP_CONFIGURE_ENABLE=	dap
-DAP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
+DAP_LIB_DEPENDS=	libcurl.so:ftp/curl
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENABLE=	doxygen
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_PORTDOCS=	*
-SZIP_LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
+SZIP_LIB_DEPENDS=	libsz.so:science/szip
 SZIP_LIBS=		-lsz
 
 post-patch:

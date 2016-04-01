@@ -9,8 +9,8 @@ MASTER_SITES=	http://people.freedesktop.org/~hadess/
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Library for fingerprint reader devices
 
-LIB_DEPENDS=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick \
-		libnss3.so:${PORTSDIR}/security/nss
+LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick \
+		libnss3.so:security/nss
 
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig tar:xz

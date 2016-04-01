@@ -48,7 +48,7 @@ FORTRAN_CONFIGURE_OFF=	--disable-fortran --disable-fortran2003
 FORTRAN_CONFIGURE_ON=	--enable-fortran --enable-fortran2003
 FORTRAN_USES=		fortran
 SZIP_CONFIGURE_ON=	--with-szlib=${LOCALBASE}
-SZIP_LIB_DEPENDS=	libsz.so:${PORTSDIR}/science/szip
+SZIP_LIB_DEPENDS=	libsz.so:science/szip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/config/gnu-flags

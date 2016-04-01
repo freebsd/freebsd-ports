@@ -25,7 +25,7 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNMAP}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
+BUILD_DEPENDS+=	${LOCALBASE}/bin/nmap:security/nmap
 .endif
 
 .if ${PORT_OPTIONS:MWXGTK}

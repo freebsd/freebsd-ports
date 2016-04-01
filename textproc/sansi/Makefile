@@ -12,8 +12,8 @@ COMMENT=	Removes ANSI control sequences/characters, from files
 LICENSE=	ART20 BSD2CLAUSE
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	p5-PerlIO-eol>=0:${PORTSDIR}/devel/p5-PerlIO-eol \
-		p5-Modern-Perl>=0:${PORTSDIR}/lang/p5-Modern-Perl
+RUN_DEPENDS=	p5-PerlIO-eol>=0:devel/p5-PerlIO-eol \
+		p5-Modern-Perl>=0:lang/p5-Modern-Perl
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

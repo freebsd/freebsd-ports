@@ -11,10 +11,10 @@ MASTER_SITES=	http://hal.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Front-end to mount, umount, and eject using HAL
 
-LIB_DEPENDS=	libhal.so:${PORTSDIR}/sysutils/hal \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/polkit-gnome.pc:${PORTSDIR}/sysutils/policykit-gnome
+LIB_DEPENDS=	libhal.so:sysutils/hal \
+		libnotify.so:devel/libnotify \
+		libgnome-keyring.so:security/libgnome-keyring
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/polkit-gnome.pc:sysutils/policykit-gnome
 
 USE_GNOME=	gnomeprefix intlhack gconf2 gtk20
 USES=		alias gettext gmake pathfix pkgconfig

@@ -12,10 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Represent a ring as a substructure of a molecule
 
-BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
-		p5-Statistics-Regression>=0:${PORTSDIR}/math/p5-Statistics-Regression
-RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
-		p5-Statistics-Regression>=0:${PORTSDIR}/math/p5-Statistics-Regression
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
+		p5-Statistics-Regression>=0:math/p5-Statistics-Regression
+RUN_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
+		p5-Statistics-Regression>=0:math/p5-Statistics-Regression
 
 USES=		perl5
 USE_PERL5=	configure

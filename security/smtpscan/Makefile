@@ -13,7 +13,7 @@ COMMENT=	Remote SMTP server version detector
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

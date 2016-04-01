@@ -19,7 +19,7 @@ BROKEN=		unfetchable
 DEPRECATED=	Not updated since 2008 by upstream and abandoned in favor of pyClamd (security/py-pyclamd)
 EXPIRATION_DATE=	2016-03-31
 
-LIB_DEPENDS=	libclamav.so:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	libclamav.so:security/clamav
 
 DIST_SUBDIR=	python
 USES=		python

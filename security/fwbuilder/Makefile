@@ -29,8 +29,8 @@ CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-[234].* \
 CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-* \
 		libfwbuilder-[234].* libfwbuilder-devel-*
 .endif
-LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt \
-		libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libxslt.so:textproc/libxslt \
+		libnetsnmp.so:net-mgmt/net-snmp
 
 PLIST_SUB=	BUILD_VERSION=${DISTVERSION}.${BUILD}
 USE_QT4=	corelib \
@@ -68,7 +68,7 @@ PORTDOCS=	*
 
 .if  ${OSVERSION} >= 1000055
 # IMPORTANT: Newer versions of rcs will NOT work with fwbuilder.
-RUN_DEPENDS=	rcs:${PORTSDIR}/devel/rcs57
+RUN_DEPENDS=	rcs:devel/rcs57
 .endif
 
 .if empty(PORT_OPTIONS:MDOCS)

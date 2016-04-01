@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Returns a content of directory as XML
 
-BUILD_DEPENDS=	p5-RDF-Notation3>=0:${PORTSDIR}/textproc/p5-RDF-Notation3 \
-		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX
+BUILD_DEPENDS=	p5-RDF-Notation3>=0:textproc/p5-RDF-Notation3 \
+		p5-XML-SAX>=0:textproc/p5-XML-SAX
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

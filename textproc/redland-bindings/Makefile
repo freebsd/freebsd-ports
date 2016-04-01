@@ -15,7 +15,7 @@ COMMENT=	Language bindings for the Redland package
 LICENSE=	APACHE20 GPLv2 GPLv3 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	librdf.so:${PORTSDIR}/textproc/redland
+LIB_DEPENDS=	librdf.so:textproc/redland
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig

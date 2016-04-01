@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
-		swig:${PORTSDIR}/devel/swig13
+		swig:devel/swig13
 
 USES=		fortran python
 USE_PYTHON=	autoplist concurrent distutils

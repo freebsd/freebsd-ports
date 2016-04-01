@@ -13,7 +13,7 @@ COMMENT=	Converts a well formed csv file to a LaTeX document
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man
+BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/csv2latex man/man1/${PORTNAME}.1.gz

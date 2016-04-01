@@ -14,9 +14,9 @@ COMMENT=	Simple API for XML
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
-		p5-XML-NamespaceSupport>=0:${PORTSDIR}/textproc/p5-XML-NamespaceSupport
+RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-XML-SAX>=0:textproc/p5-XML-SAX \
+		p5-XML-NamespaceSupport>=0:textproc/p5-XML-NamespaceSupport
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5 dos2unix

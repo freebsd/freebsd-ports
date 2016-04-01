@@ -13,7 +13,7 @@ COMMENT=	Tool to update LDAP entries with a text editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES=		gmake iconv pkgconfig
 USE_OPENLDAP=	yes

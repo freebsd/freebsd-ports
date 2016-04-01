@@ -12,7 +12,7 @@ COMMENT=	Asynchronous TCP and UDP port scanner
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 USES=		gmake
 CFLAGS+=	-DWITH_LONGOPTS

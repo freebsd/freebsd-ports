@@ -12,10 +12,10 @@ DIST_SUBDIR=	kmfl
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	KMFL IMEngine for IBus framework
 
-LIB_DEPENDS=	libibus-1.0.so:${PORTSDIR}/textproc/ibus \
-		libkmfl.so:${PORTSDIR}/textproc/libkmfl \
-		libkmflcomp.so:${PORTSDIR}/textproc/kmflcomp
-RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
+LIB_DEPENDS=	libibus-1.0.so:textproc/ibus \
+		libkmfl.so:textproc/libkmfl \
+		libkmflcomp.so:textproc/kmflcomp
+RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 
 USES=		pkgconfig gmake
 USE_GNOME=	glib20

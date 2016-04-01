@@ -11,7 +11,7 @@ COMMENT=	C++ implementation of I2P client
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 BROKEN_FreeBSD_9=	does not build
 
@@ -35,7 +35,7 @@ AESNI_CMAKE_OFF=-DWITH_AESNI=OFF
 UPNP_DESC=	Include support for UPnP client
 UPNP_CMAKE_ON=	-DWITH_UPNP=ON
 UPNP_CMAKE_OFF=	-DWITH_UPNP=OFF
-UPNP_LIB_DEPENDS=libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+UPNP_LIB_DEPENDS=libminiupnpc.so:net/miniupnpc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

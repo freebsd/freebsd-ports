@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Liberal object-oriented parser for RSS feeds
 
-RUN_DEPENDS=	p5-XML-Elemental>=0:${PORTSDIR}/textproc/p5-XML-Elemental \
-		p5-Class-XPath>=0:${PORTSDIR}/devel/p5-Class-XPath \
-		p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler
+RUN_DEPENDS=	p5-XML-Elemental>=0:textproc/p5-XML-Elemental \
+		p5-Class-XPath>=0:devel/p5-Class-XPath \
+		p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

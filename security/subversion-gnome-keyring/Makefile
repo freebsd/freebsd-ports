@@ -18,7 +18,7 @@ SVN_BUILD_ADDONS=	yes
 
 .include "${MASTERDIR}/Makefile.common"
 
-LIB_DEPENDS+=		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS+=		libgnome-keyring.so:security/libgnome-keyring
 
 CONFIGURE_ARGS+=	--with-gnome-keyring
 

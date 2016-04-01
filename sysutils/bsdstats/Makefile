@@ -26,7 +26,7 @@ PLIST_FILES=	bin/bsdstats-send \
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTOR}
-RUN_DEPENDS+=	tor:${PORTSDIR}/security/tor
+RUN_DEPENDS+=	tor:security/tor
 .endif
 
 pre-install:

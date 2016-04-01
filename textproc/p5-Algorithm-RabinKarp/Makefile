@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Rabin-Karp streaming hash
 
-BUILD_DEPENDS=	p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp
+BUILD_DEPENDS=	p5-File-Temp>=0:devel/p5-File-Temp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

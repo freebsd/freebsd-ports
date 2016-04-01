@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windowmaker application, Resembles wmmount with extra functionality
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
+BUILD_DEPENDS=	${LOCALBASE}/lib/libWINGs.a:x11-wm/windowmaker
 
 USES=		gettext
 USE_GNOME=	gtk12 glib12

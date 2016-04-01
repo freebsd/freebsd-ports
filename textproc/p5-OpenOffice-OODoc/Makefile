@@ -13,8 +13,8 @@ COMMENT=	Perl Open OpenDocument Connector
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	p5-Archive-Zip>=1.18:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-XML-Twig>=3.32:${PORTSDIR}/textproc/p5-XML-Twig
+RUN_DEPENDS=	p5-Archive-Zip>=1.18:archivers/p5-Archive-Zip \
+		p5-XML-Twig>=3.32:textproc/p5-XML-Twig
 
 USES=		perl5
 USE_PERL5=	configure

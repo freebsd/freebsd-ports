@@ -15,11 +15,11 @@ COMMENT=	Framework for an intelligence driven security - Scripting Interface
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
-		libjson-c.so:${PORTSDIR}/devel/json-c
-BUILD_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-masterNugget
-RUN_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-masterNugget \
-		rubygem-razorback-scriptNugget>=0.5.0:${PORTSDIR}/security/rubygem-razorback-scriptNugget
+LIB_DEPENDS=	librazorback_api.so:security/razorback-api \
+		libjson-c.so:devel/json-c
+BUILD_DEPENDS=	razorback-masterNugget>=0.5.0:security/razorback-masterNugget
+RUN_DEPENDS=	razorback-masterNugget>=0.5.0:security/razorback-masterNugget \
+		rubygem-razorback-scriptNugget>=0.5.0:security/rubygem-razorback-scriptNugget
 
 RB_LIBDIR?=	${PREFIX}/lib/razorback
 USES=		autoreconf libtool pkgconfig

@@ -15,7 +15,7 @@ LICENSE_NAME=	Common Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libtspi.so:${PORTSDIR}/security/trousers
+LIB_DEPENDS=	libtspi.so:security/trousers
 
 USES=		alias autoreconf gmake libtool tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki

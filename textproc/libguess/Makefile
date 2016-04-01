@@ -9,7 +9,7 @@ MASTER_SITES=	http://distfiles.atheme.org/
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	High-speed character set detection library
 
-LIB_DEPENDS=	libmowgli.so:${PORTSDIR}/devel/libmowgli
+LIB_DEPENDS=	libmowgli.so:devel/libmowgli
 
 USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes

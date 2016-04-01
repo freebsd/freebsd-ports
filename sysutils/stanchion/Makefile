@@ -11,7 +11,7 @@ COMMENT=	Open source database cluster control for Riak
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/riak-erlang/bin/erlc:${PORTSDIR}/lang/erlang-riak
+BUILD_DEPENDS=	${LOCALBASE}/lib/riak-erlang/bin/erlc:lang/erlang-riak
 
 USES=		gmake readline
 USE_RC_SUBR=	stanchion

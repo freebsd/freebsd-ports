@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple SMB authentication
 
-BUILD_DEPENDS=	p5-Authen-Simple>=0:${PORTSDIR}/security/p5-Authen-Simple \
-		p5-Authen-Smb>=0:${PORTSDIR}/security/p5-Authen-Smb
+BUILD_DEPENDS=	p5-Authen-Simple>=0:security/p5-Authen-Simple \
+		p5-Authen-Smb>=0:security/p5-Authen-Smb
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

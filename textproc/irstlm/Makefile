@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-5.80
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The IRST Language Modeling Toolkit
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared

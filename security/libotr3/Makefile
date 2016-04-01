@@ -15,8 +15,8 @@ COMMENT=	Portable OTR Messaging Library and toolkit
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
+		libgcrypt.so:security/libgcrypt
 
 CONFLICTS=	libotr-*
 

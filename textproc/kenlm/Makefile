@@ -10,9 +10,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	KenLM Language Model Toolkit
 
-BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
-		bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	bjam:devel/boost-jam \
+		bash:shells/bash
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES+=		compiler:c++11-lib
 USE_LDCONFIG=	yes

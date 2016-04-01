@@ -13,7 +13,7 @@ COMMENT=	Formats a DICT protocol dictionary database
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmaa.so:${PORTSDIR}/devel/libmaa
+LIB_DEPENDS=	libmaa.so:devel/libmaa
 
 ALL_TARGET=	dictfmt
 GNU_CONFIGURE=	yes

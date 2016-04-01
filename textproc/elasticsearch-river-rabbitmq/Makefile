@@ -13,7 +13,7 @@ COMMENT=	ElasticSearch RabbitMQ River
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	elasticsearch>=1.6.0:${PORTSDIR}/textproc/elasticsearch
+RUN_DEPENDS=	elasticsearch>=1.6.0:textproc/elasticsearch
 
 USES=		zip
 

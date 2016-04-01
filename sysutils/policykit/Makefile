@@ -12,8 +12,8 @@ DISTNAME=	PolicyKit-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework for controlling access to system-wide components
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libexpat.so:textproc/expat2
 
 USERS=		polkit
 GROUPS=		polkit
@@ -38,8 +38,8 @@ OPTIONS_DEFAULT=MANPAGES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS=	docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+BUILD_DEPENDS=	docbook-sgml>0:textproc/docbook-sgml \
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 USE_GNOME+=	libxslt:build
 
 PLIST_SUB+=	MANPAGES=""

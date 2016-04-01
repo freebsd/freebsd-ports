@@ -14,10 +14,10 @@ COMMENT=	Simple authentication framework
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-Class-Data-Inheritable>=0:devel/p5-Class-Data-Inheritable \
+		p5-Crypt-PasswdMD5>=0:security/p5-Crypt-PasswdMD5 \
+		p5-Params-Validate>=0:devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

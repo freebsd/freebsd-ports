@@ -11,8 +11,8 @@ COMMENT=	Command line virus scanner written entirely in C
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libcurl.so:ftp/curl
 
 OPTIONS_DEFINE=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS MILTER LDAP ICONV STDERR \
 		EXPERIMENTAL DOCS IPV6 DMG_XAR JSON PCRE
@@ -32,18 +32,18 @@ DMG_XAR_DESC=		Enable DMG and XAR archives support
 OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DOCS IPV6 DMG_XAR \
 			JSON PCRE
 
-ARC_RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc
-ARJ_RUN_DEPENDS=	arj:${PORTSDIR}/archivers/arj
-LHA_RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
-UNZOO_RUN_DEPENDS=	unzoo:${PORTSDIR}/archivers/unzoo
-JSON_LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+ARC_RUN_DEPENDS=	arc:archivers/arc
+ARJ_RUN_DEPENDS=	arj:archivers/arj
+LHA_RUN_DEPENDS=	lha:archivers/lha
+UNZOO_RUN_DEPENDS=	unzoo:archivers/unzoo
+JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 UNRAR_CONFIGURE_ENABLE=	unrar
 MILTER_CONFIGURE_ENABLE=milter
 TESTS_CONFIGURE_ENABLE=	check
 JSON_CONFIGURE_WITH=	libjson
 PCRE_CONFIGURE_WITH=	pcre
-TESTS_BUILD_DEPENDS=	${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
+TESTS_BUILD_DEPENDS=	${LOCALBASE}/include/check.h:devel/libcheck
 ICONV_CONFIGURE_ON=	--with-iconv
 ICONV_CONFIGURE_OFF=	--without-iconv
 ICONV_USES=		iconv
@@ -150,7 +150,7 @@ LDFLAGS+=	-lldap
 . endif
 
 . if !exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/libmilter
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:mail/libmilter
 CONFIGURE_ARGS+=--with-sendmail=${LOCALBASE}/sbin/sendmail
 LDFLAGS+=	-L${LOCALBASE}/lib
 . else

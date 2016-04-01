@@ -11,7 +11,7 @@ COMMENT=	Semantic grep for the C language
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	spatch:${PORTSDIR}/devel/coccinelle
+RUN_DEPENDS=	spatch:devel/coccinelle
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	regit

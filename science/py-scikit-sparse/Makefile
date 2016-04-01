@@ -15,10 +15,10 @@ COMMENT=	Sparse matrix package
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/scipy/version.py:${PORTSDIR}/science/py-scipy
+		${PYTHON_SITELIBDIR}/scipy/version.py:science/py-scipy
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		cython>0:${PORTSDIR}/lang/cython
-LIB_DEPENDS=	libumfpack.so:${PORTSDIR}/math/suitesparse
+		cython>0:lang/cython
+LIB_DEPENDS=	libumfpack.so:math/suitesparse
 
 USES=		fortran python
 USE_PYTHON=	autoplist distutils

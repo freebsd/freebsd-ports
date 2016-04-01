@@ -14,14 +14,14 @@ COMMENT=	Lightleight form validation library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
-		p5-Class-Load>=0.11:${PORTSDIR}/devel/p5-Class-Load \
-		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
-		p5-Email-Valid-Loose>=0:${PORTSDIR}/mail/p5-Email-Valid-Loose
+BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0.05:devel/p5-Class-Accessor-Lite \
+		p5-Class-Load>=0.11:devel/p5-Class-Load \
+		p5-Email-Valid>=0:mail/p5-Email-Valid \
+		p5-Email-Valid-Loose>=0:mail/p5-Email-Valid-Loose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Text-TestBase>=0:${PORTSDIR}/textproc/p5-Text-TestBase \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+TEST_DEPENDS=	p5-Test-Requires>=0.05:devel/p5-Test-Requires \
+		p5-Text-TestBase>=0:textproc/p5-Text-TestBase \
+		p5-YAML>=0:textproc/p5-YAML
 
 USE_PERL5=	modbuild
 USES=		perl5

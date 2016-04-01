@@ -11,11 +11,11 @@ COMMENT=	Send system commands to a group of remote servers simultaneously
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	p5-Expect>=1.21:${PORTSDIR}/lang/p5-Expect \
-		p5-Net-Telnet>=3.03:${PORTSDIR}/net/p5-Net-Telnet \
-		p5-Net-Ping>=2.36:${PORTSDIR}/net/p5-Net-Ping \
-		p5-Proc-Queue>=1.23:${PORTSDIR}/devel/p5-Proc-Queue \
-		p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty
+RUN_DEPENDS=	p5-Expect>=1.21:lang/p5-Expect \
+		p5-Net-Telnet>=3.03:net/p5-Net-Telnet \
+		p5-Net-Ping>=2.36:net/p5-Net-Ping \
+		p5-Proc-Queue>=1.23:devel/p5-Proc-Queue \
+		p5-IO-Tty>=1.08:devel/p5-IO-Tty
 
 USES=		perl5 shebangfix
 NO_BUILD=	yes

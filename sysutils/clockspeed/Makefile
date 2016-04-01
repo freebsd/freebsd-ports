@@ -11,7 +11,7 @@ MASTER_SITES=	http://cr.yp.to/clockspeed/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Uses a hardware tick counter to compensate for deviant system clock
 
-LIB_DEPENDS=	libtai.so:${PORTSDIR}/devel/libtai
+LIB_DEPENDS=	libtai.so:devel/libtai
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check

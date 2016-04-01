@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dissociated Press algorithm and filter
 
-TEST_DEPENDS=	p5-Test-Pod>=1.00:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+TEST_DEPENDS=	p5-Test-Pod>=1.00:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>0:devel/p5-Test-Pod-Coverage
 
 USES=		perl5
 USE_PERL5=	configure

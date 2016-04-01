@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Perl tool for managing Certificate Authorities
 
-BUILD_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-Term-Prompt>=0:${PORTSDIR}/devel/p5-Term-Prompt \
-		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
+BUILD_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
+		p5-Term-Prompt>=0:devel/p5-Term-Prompt \
+		p5-IPC-Run>=0:devel/p5-IPC-Run
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

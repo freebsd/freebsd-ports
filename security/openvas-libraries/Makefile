@@ -13,14 +13,14 @@ COMMENT=	OpenVAS libraries
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.GPLv2
 
-LIB_DEPENDS=	libhiredis.so:${PORTSDIR}/databases/hiredis \
-		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libgpgme.so:${PORTSDIR}/security/gpgme \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libksba.so:${PORTSDIR}/security/libksba \
-		libssh.so:${PORTSDIR}/security/libssh
+LIB_DEPENDS=	libhiredis.so:databases/hiredis \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libnetsnmp.so:net-mgmt/net-snmp \
+		libgnutls.so:security/gnutls \
+		libgpgme.so:security/gpgme \
+		libgcrypt.so:security/libgcrypt \
+		libksba.so:security/libksba \
+		libssh.so:security/libssh
 
 USES=		bison cmake:outsource gnome pkgconfig
 USE_LDCONFIG=	yes
@@ -33,6 +33,6 @@ LDAP_CMAKE_OFF=	-DBUILD_WITHOUT_LDAP=1
 LDAP_USE=	OPENLDAP=yes
 
 RADIUS_CMAKE_ON=-DBUILD_WITH_RADIUS=1
-RADIUS_LIB_DEPENDS=	libfreeradius-client.so:${PORTSDIR}/net/freeradius-client
+RADIUS_LIB_DEPENDS=	libfreeradius-client.so:net/freeradius-client
 
 .include <bsd.port.mk>

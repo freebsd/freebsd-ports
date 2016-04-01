@@ -13,10 +13,10 @@ COMMENT=	Package manager from ArchLinux
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libarchive.so.13:${PORTSDIR}/archivers/libarchive
+BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+		bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	libarchive.so.13:archivers/libarchive
 
 USES=		gmake libtool perl5 pkgconfig shebangfix
 SHEBANG_FILES=	${WRKSRC}/scripts/makepkg-template.pl.in
@@ -45,14 +45,14 @@ GPGME_DESC=	Use GPGME for PGP signature verification
 
 .if ${PORT_OPTIONS:MCURL}
 CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 .else
 CONFIGURE_ARGS+=--without-libcurl
 .endif
 
 .if ${PORT_OPTIONS:MGPGME}
 CONFIGURE_ARGS+=--with-gpgme
-LIB_DEPENDS+=	libgpgme.so:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	libgpgme.so:security/gpgme
 .endif
 
 .if ${PORT_OPTIONS:MNLS}

@@ -15,10 +15,10 @@ COMMENT=	PyNaCl is a Python binding to the Networking and Cryptography library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:${PORTSDIR}/devel/py-cffi \
-		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	libsodium.so:${PORTSDIR}/security/libsodium
+LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -10,13 +10,13 @@ COMMENT=	Psychophysics toolkit for Python
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=0.90.1:${PORTSDIR}/math/py-matplotlib \
-		${PYTHON_PKGNAMEPREFIX}pandas>0:${PORTSDIR}/math/py-pandas \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.6.0:${PORTSDIR}/science/py-scipy \
-		${PYTHON_PKGNAMEPREFIX}openpyxl>0:${PORTSDIR}/textproc/py-openpyxl \
-		dejavu>0:${PORTSDIR}/x11-fonts/dejavu \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=0.90.1:math/py-matplotlib \
+		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.6.0:science/py-scipy \
+		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl \
+		dejavu>0:x11-fonts/dejavu \
 		${PYGAME} \
 		${PYNUMPY}
 
@@ -42,7 +42,7 @@ OPTIONS_DEFINE_i386=	PYGLET
 OPTIONS_DEFAULT_i386=	PYGLET
 
 PYGLET_DESC=		Drawing support via Pyglet
-PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=1.1.2:${PORTSDIR}/graphics/py-pyglet
+PYGLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=1.1.2:graphics/py-pyglet
 
 .include <bsd.port.options.mk>
 

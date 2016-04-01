@@ -9,7 +9,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Fluent plugin which provides directives for loop extraction
 
 RUN_DEPENDS=	\
-	rubygem-fluentd>0:${PORTSDIR}/sysutils/rubygem-fluentd
+	rubygem-fluentd>0:sysutils/rubygem-fluentd
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

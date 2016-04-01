@@ -11,7 +11,7 @@ COMMENT=	GTK+ client for DSBMD that lets you mount media, and more
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/dsbmd:${PORTSDIR}/sysutils/dsbmd
+RUN_DEPENDS=	${LOCALBASE}/libexec/dsbmd:sysutils/dsbmd
 
 USES=		tar:tgz pkgconfig
 USE_GNOME=	gtk20

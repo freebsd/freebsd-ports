@@ -6,7 +6,7 @@ COMMENT=	MCollective client to test ICMP and TCP connectivity
 
 # See MASTERDIR for MAINTAINER.
 
-RUN_DEPENDS=	mcollective-nettest-common>=${PORTVERSION}:${PORTSDIR}/sysutils/mcollective-nettest-common
+RUN_DEPENDS=	mcollective-nettest-common>=${PORTVERSION}:sysutils/mcollective-nettest-common
 
 MASTERDIR=	${.CURDIR}/../mcollective-nettest-common
 

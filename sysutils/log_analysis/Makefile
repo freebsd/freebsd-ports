@@ -25,7 +25,7 @@ PLIST_FILES=	bin/log_analysis \
 
 OPTIONS_DEFINE=	DOCS EXAMPLES TK
 
-TK_RUN_DEPENDS=	p5-Tk>0:${PORTSDIR}/x11-toolkits/p5-Tk
+TK_RUN_DEPENDS=	p5-Tk>0:x11-toolkits/p5-Tk
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -12,10 +12,10 @@ COMMENT=	Expert system for real-time log analysis
 
 OPTIONS_DEFINE=	DOCS
 
-BUILD_DEPENDS=	gperf>=3.0.3:${PORTSDIR}/devel/gperf
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libevent.so:${PORTSDIR}/devel/libevent2 \
-		libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
+BUILD_DEPENDS=	gperf>=3.0.3:devel/gperf
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libevent.so:devel/libevent2 \
+		libtokyocabinet.so:databases/tokyocabinet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_ENV+=	GPERF=${LOCALBASE}/bin/gperf \

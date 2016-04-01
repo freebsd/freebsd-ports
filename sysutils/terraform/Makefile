@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	hashicorp-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Provides a common configuration to launch infrastructure
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp:DEFAULT,atlasgo,consul,errwrap,gocheckpoint \

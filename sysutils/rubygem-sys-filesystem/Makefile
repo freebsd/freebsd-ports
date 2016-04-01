@@ -11,7 +11,7 @@ COMMENT=	Ruby interface for getting filesystem information
 
 LICENSE=	ART20
 
-RUN_DEPENDS=	rubygem-ffi>=0:${PORTSDIR}/devel/rubygem-ffi
+RUN_DEPENDS=	rubygem-ffi>=0:devel/rubygem-ffi
 
 NO_ARCH=	yes
 USE_RUBY=	yes

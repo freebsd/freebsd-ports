@@ -15,7 +15,7 @@ COMMENT=	Rewrite strings based on a set of known prefixes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
+TEST_DEPENDS=	p5-Sub-Exporter>0:devel/p5-Sub-Exporter
 
 USES=		perl5
 USE_PERL5=	configure

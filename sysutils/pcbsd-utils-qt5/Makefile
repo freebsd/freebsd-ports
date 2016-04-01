@@ -11,18 +11,18 @@ COMMENT=	PC-BSD Qt5 Utilities
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
-		${PYTHON_PKGNAMEPREFIX}sphinx-intl>=0:${PORTSDIR}/textproc/py-sphinx-intl \
-		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-httpdomain>=0:${PORTSDIR}/textproc/py-sphinxcontrib-httpdomain \
-		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0:${PORTSDIR}/textproc/py-sphinx_rtd_theme \
-		${PYTHON_PKGNAMEPREFIX}alabaster>=0:${PORTSDIR}/textproc/py-alabaster \
-		tex-formats>=0:${PORTSDIR}/print/tex-formats \
-		tex-dvipsk>=0:${PORTSDIR}/print/tex-dvipsk
-RUN_DEPENDS=	pc-updatemanager:${PORTSDIR}/sysutils/pcbsd-utils \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus \
-		cdda2wav:${PORTSDIR}/sysutils/cdrtools
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libpoppler-qt5.so:${PORTSDIR}/graphics/poppler-qt5
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+		${PYTHON_PKGNAMEPREFIX}sphinx-intl>=0:textproc/py-sphinx-intl \
+		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-httpdomain>=0:textproc/py-sphinxcontrib-httpdomain \
+		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0:textproc/py-sphinx_rtd_theme \
+		${PYTHON_PKGNAMEPREFIX}alabaster>=0:textproc/py-alabaster \
+		tex-formats>=0:print/tex-formats \
+		tex-dvipsk>=0:print/tex-dvipsk
+RUN_DEPENDS=	pc-updatemanager:sysutils/pcbsd-utils \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus \
+		cdda2wav:sysutils/cdrtools
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpoppler-qt5.so:graphics/poppler-qt5
 
 CONFLICTS?=	pcbsd-utils-qt4-[0-9]*
 

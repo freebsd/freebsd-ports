@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Linux/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface for easily configuring Synergy2
 
-BUILD_DEPENDS=	synergys:${PORTSDIR}/sysutils/synergy
+BUILD_DEPENDS=	synergys:sysutils/synergy
 
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig gettext iconv

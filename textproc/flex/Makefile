@@ -8,9 +8,9 @@ MASTER_SITES=	https://github.com/westes/flex/releases/download/v${PORTVERSION}/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Fast lexical analyzer generator
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
-		gm4:${PORTSDIR}/devel/m4
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	help2man:misc/help2man \
+		gm4:devel/m4
+RUN_DEPENDS=	gm4:devel/m4
 
 USES=		bison gmake libtool makeinfo tar:xz
 GNU_CONFIGURE=	yes

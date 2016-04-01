@@ -47,8 +47,8 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--enable-fhs
 INSTALL_TARGET=	install-strip
 
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
-		liblmdb.so:${PORTSDIR}/databases/lmdb
+LIB_DEPENDS+=	libpcre.so:devel/pcre \
+		liblmdb.so:databases/lmdb
 
 OPTIONS_DEFINE=	PGSQL MYSQL LIBVIRT
 
@@ -57,10 +57,10 @@ PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}
 
 MYSQL_USE=		MYSQL=yes
 MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
-MYSQL_LIB_DEPENDS=		libmysqlclient.so:${PORTSDIR}/${_MYSQL_CLIENT}
+MYSQL_LIB_DEPENDS=		libmysqlclient.so:${_MYSQL_CLIENT}
 MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql
 
 LIBVIRT_CONFIGURE_ON=	--with-libvirt=${LOCALBASE}
-LIBVIRT_LIB_DEPENDS+=		libvirt.so:${PORTSDIR}/devel/libvirt
+LIBVIRT_LIB_DEPENDS+=		libvirt.so:devel/libvirt
 
 .include <bsd.port.mk>

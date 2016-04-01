@@ -11,7 +11,7 @@ COMMENT=	Set of classes for parsing CSS in Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-addressable>=0:${PORTSDIR}/www/rubygem-addressable
+RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable
 
 NO_ARCH=	yes
 USE_RUBY=	yes
