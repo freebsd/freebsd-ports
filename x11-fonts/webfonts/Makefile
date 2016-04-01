@@ -17,7 +17,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	TrueType core fonts for the Web
 
-EXTRACT_DEPENDS=cabextract:${PORTSDIR}/archivers/cabextract
+EXTRACT_DEPENDS=cabextract:archivers/cabextract
 
 USES=		fonts
 NO_BUILD=	yes

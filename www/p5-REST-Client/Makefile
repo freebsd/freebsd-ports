@@ -13,9 +13,9 @@ COMMENT=	Simple client for interacting with RESTful http/https resources
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-SSLeay>0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-URI>0:${PORTSDIR}/net/p5-URI \
-		p5-libwww>0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Crypt-SSLeay>0:security/p5-Crypt-SSLeay \
+		p5-URI>0:net/p5-URI \
+		p5-libwww>0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

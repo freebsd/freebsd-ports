@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--without-motif --without-ttf --without-editres \
 USE_GNOME=	#
 USE_XORG=	x11 xaw ice
 
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:print/freetype2
 
 OPTIONS_DEFINE=	MESAGL MB SYSLOG DISABLE_ALLOW_ROOT NICE_ONLY BLANK_ONLY \
 		KERBEROS4 BAD_PAM GTK2 TIME_BOMB CUSTOMIZATION MAGICK JP
@@ -129,7 +129,7 @@ CONFIGURE_ARGS+=	--enable-customization
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickCore-6.so:graphics/ImageMagick
 .else
 CONFIGURE_ARGS+=	--without-magick
 .endif

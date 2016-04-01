@@ -11,9 +11,9 @@ DIST_SUBDIR=	apache22
 MAINTAINER?=	apache@FreeBSD.org
 COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM} MPM.
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libapr-1.so:${PORTSDIR}/devel/apr1 \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libapr-1.so:devel/apr1 \
+		libpcre.so:devel/pcre
 
 CONFLICTS_INSTALL=	caudium14-1.* \
 		apache-*-2.2.* apache22-*-2.2.* \

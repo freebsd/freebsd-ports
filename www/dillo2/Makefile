@@ -15,8 +15,8 @@ COMMENT=	Fast, small graphical Web browser built upon fltk
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+RUN_DEPENDS=	wget:ftp/wget
 
 USES=		gmake iconv pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

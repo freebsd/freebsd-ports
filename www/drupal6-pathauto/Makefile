@@ -8,7 +8,7 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically generates URLs for Drupal content
 
-RUN_DEPENDS=	drupal6-token>=0:${PORTSDIR}/www/drupal6-token
+RUN_DEPENDS=	drupal6-token>=0:www/drupal6-token
 
 USES=		drupal:6,module
 MODULE_FILES=	pathauto.admin.inc pathauto.inc pathauto.install pathauto.module \

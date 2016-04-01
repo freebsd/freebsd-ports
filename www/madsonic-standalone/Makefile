@@ -31,15 +31,15 @@ APE_DESC=	Depend on mac for Monkey's Audio transcoding #'
 OPTIONS_DEFAULT=	FFMPEG
 OPTIONS_SUB=	yes
 
-FFMPEG_RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
-FLAC_RUN_DEPENDS=	flac:${PORTSDIR}/audio/flac
-LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
-VORBIS_RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
-FAAC_RUN_DEPENDS=	faac:${PORTSDIR}/audio/faac
-FAAD_RUN_DEPENDS=	faad:${PORTSDIR}/audio/faad
-XMP_RUN_DEPENDS=	xmp:${PORTSDIR}/audio/xmp
-MPC_RUN_DEPENDS=	mpcdec:${PORTSDIR}/audio/musepack
-APE_RUN_DEPENDS=	mac:${PORTSDIR}/audio/mac
+FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
+FLAC_RUN_DEPENDS=	flac:audio/flac
+LAME_RUN_DEPENDS=	lame:audio/lame
+VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools
+FAAC_RUN_DEPENDS=	faac:audio/faac
+FAAD_RUN_DEPENDS=	faad:audio/faad
+XMP_RUN_DEPENDS=	xmp:audio/xmp
+MPC_RUN_DEPENDS=	mpcdec:audio/musepack
+APE_RUN_DEPENDS=	mac:audio/mac
 
 .include <bsd.port.options.mk>
 

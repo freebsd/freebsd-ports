@@ -13,11 +13,11 @@ COMMENT=	Web-based diary system (like weblog) written in Ruby
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-emot>=0.0.4:${PORTSDIR}/textproc/rubygem-emot \
-		rubygem-fastimage>=1.8.1:${PORTSDIR}/graphics/rubygem-fastimage \
-		rubygem-hikidoc>=0.1.0:${PORTSDIR}/textproc/rubygem-hikidoc \
-		rubygem-mail>=2.6.3:${PORTSDIR}/mail/rubygem-mail \
-		rubygem-sprockets3>=3.5.2:${PORTSDIR}/devel/rubygem-sprockets3
+RUN_DEPENDS=	rubygem-emot>=0.0.4:textproc/rubygem-emot \
+		rubygem-fastimage>=1.8.1:graphics/rubygem-fastimage \
+		rubygem-hikidoc>=0.1.0:textproc/rubygem-hikidoc \
+		rubygem-mail>=2.6.3:mail/rubygem-mail \
+		rubygem-sprockets3>=3.5.2:devel/rubygem-sprockets3
 
 NO_ARCH=	yes
 NO_BUILD=	yes

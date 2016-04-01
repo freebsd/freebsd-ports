@@ -10,10 +10,10 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the MATE desktop
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libupower-glib.so:${PORTSDIR}/sysutils/upower
-RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
-		${LOCALBASE}/bin/xdpyinfo:${PORTSDIR}/x11/xdpyinfo
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libupower-glib.so:sysutils/upower
+RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:sysutils/consolekit \
+		${LOCALBASE}/bin/xdpyinfo:x11/xdpyinfo
 
 PORTSCOUT=	limitw:1,even
 

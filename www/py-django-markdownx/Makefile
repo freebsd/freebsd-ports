@@ -12,8 +12,8 @@ COMMENT=	Django Markdown editor with image uploads and live preview
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django18 \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18 \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 
 USE_GITHUB=	yes
 

@@ -12,7 +12,7 @@ COMMENT=	X11 pager program
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USES=		scons
 

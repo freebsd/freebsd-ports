@@ -12,8 +12,8 @@ DISTNAME=	TGWebServices-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Multiprotocol Web Services for TurboGears
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.1.2:${PORTSDIR}/www/py-turbogears \
-		${PYTHON_PKGNAMEPREFIX}Genshi>=0.3.6:${PORTSDIR}/textproc/py-genshi
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.1.2:www/py-turbogears \
+		${PYTHON_PKGNAMEPREFIX}Genshi>=0.3.6:textproc/py-genshi
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python

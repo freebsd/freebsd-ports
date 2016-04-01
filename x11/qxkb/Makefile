@@ -11,7 +11,7 @@ COMMENT=	Qt4-based advanced keyboard layout switcher
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libxkbfile.so:${PORTSDIR}/x11/libxkbfile
+LIB_DEPENDS=	libxkbfile.so:x11/libxkbfile
 
 USES=		cmake tar:bzip2
 USE_QT4=	linguisttools_build moc_build qmake_build rcc_build uic_build \

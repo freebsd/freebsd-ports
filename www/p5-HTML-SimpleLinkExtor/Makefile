@@ -14,11 +14,11 @@ COMMENT=	This is a simple HTML link extractor
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Parser>=1.28:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-URI>=1.09:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-HTML-Parser>=1.28:www/p5-HTML-Parser \
+		p5-URI>=1.09:net/p5-URI \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output
+TEST_DEPENDS=	p5-Test-Output>=0:devel/p5-Test-Output
 
 USES=		perl5
 USE_PERL5=	configure

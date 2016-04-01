@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 LICENSE_DISTFILES=	${WRKSRC}/COPYING \
 	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
 USES=		desktop-file-utils gmake libtool pathfix gettext-tools perl5 \
 		pkgconfig tar:bzip2

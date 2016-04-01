@@ -10,7 +10,7 @@ COMMENT=	Perl extension scripts for rxvt-unicode terminal emulator
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/bin/urxvt:${PORTSDIR}/x11/rxvt-unicode
+RUN_DEPENDS=	${LOCALBASE}/bin/urxvt:x11/rxvt-unicode
 
 NO_BUILD=	yes
 USE_GITHUB=	yes

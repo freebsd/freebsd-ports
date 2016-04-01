@@ -14,7 +14,7 @@ COMMENT=	Query Yandex Thematic Index of Citing (TIC) for domain
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -15,8 +15,8 @@ COMMENT=	Command line plugin for the Xfce Desktop
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+	libdbus-glib-1.so:devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 USES=		gettext-tools gmake libtool pkgconfig tar:bzip2 xfce

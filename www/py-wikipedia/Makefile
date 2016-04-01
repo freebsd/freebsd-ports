@@ -12,8 +12,8 @@ COMMENT=	Wikipedia API for Python
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:${PORTSDIR}/www/py-beautifulsoup \
-	${PYTHON_PKGNAMEPREFIX}requests>=2.7:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:www/py-beautifulsoup \
+	${PYTHON_PKGNAMEPREFIX}requests>=2.7:www/py-requests
 
 USES=	python
 USE_PYTHON=	distutils autoplist

@@ -11,13 +11,13 @@ COMMENT=	Ruby binding for GTK+3
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:${PORTSDIR}/accessibility/rubygem-atk \
-		rubygem-gdk3>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-gdk3 \
-		rubygem-gdk_pixbuf2>=${PORTVERSION}:${PORTSDIR}/graphics/rubygem-gdk_pixbuf2 \
-		rubygem-gio2>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-gio2 \
-		rubygem-glib2>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-glib2 \
-		rubygem-gobject-introspection>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-gobject-introspection \
-		rubygem-pango>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-pango
+RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
+		rubygem-gdk3>=${PORTVERSION}:x11-toolkits/rubygem-gdk3 \
+		rubygem-gdk_pixbuf2>=${PORTVERSION}:graphics/rubygem-gdk_pixbuf2 \
+		rubygem-gio2>=${PORTVERSION}:devel/rubygem-gio2 \
+		rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2 \
+		rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection \
+		rubygem-pango>=${PORTVERSION}:x11-toolkits/rubygem-pango
 
 USE_GNOME=	gtk30
 USE_RUBY=	yes

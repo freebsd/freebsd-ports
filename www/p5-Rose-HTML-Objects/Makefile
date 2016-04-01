@@ -13,19 +13,19 @@ COMMENT=	Object-oriented interfaces for HTML
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Clone-PP>=0:${PORTSDIR}/devel/p5-Clone-PP \
-		p5-DateTime>=0.20:${PORTSDIR}/devel/p5-DateTime \
-		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-IO-String>=1.08:${PORTSDIR}/devel/p5-IO-String \
-		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Rose-DateTime>=0.532:${PORTSDIR}/devel/p5-Rose-DateTime \
-		p5-Rose-Object>=0.854:${PORTSDIR}/devel/p5-Rose-Object \
-		p5-Rose-URI>=0.021:${PORTSDIR}/net/p5-Rose-URI \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-Clone-PP>=0:devel/p5-Clone-PP \
+		p5-DateTime>=0.20:devel/p5-DateTime \
+		p5-Email-Valid>=0:mail/p5-Email-Valid \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-IO-String>=1.08:devel/p5-IO-String \
+		p5-Image-Size>=0:graphics/p5-Image-Size \
+		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-Rose-DateTime>=0.532:devel/p5-Rose-DateTime \
+		p5-Rose-Object>=0.854:devel/p5-Rose-Object \
+		p5-Rose-URI>=0.021:net/p5-Rose-URI \
+		p5-URI>=0:net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
+TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle
 
 PORTSCOUT=	skipv:0.6061
 

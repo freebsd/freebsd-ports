@@ -11,12 +11,12 @@ COMMENT=	X.org fonts meta-port
 USES=		metaport
 USE_XORG=	fontutil
 
-RUN_DEPENDS=	xorg-fonts-100dpi>0:${PORTSDIR}/x11-fonts/xorg-fonts-100dpi \
-		xorg-fonts-75dpi>0:${PORTSDIR}/x11-fonts/xorg-fonts-75dpi \
-		xorg-fonts-cyrillic>0:${PORTSDIR}/x11-fonts/xorg-fonts-cyrillic \
-		xorg-fonts-miscbitmaps>0:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps \
-		xorg-fonts-truetype>0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
-		xorg-fonts-type1>0:${PORTSDIR}/x11-fonts/xorg-fonts-type1 \
-		font-alias>0:${PORTSDIR}/x11-fonts/font-alias
+RUN_DEPENDS=	xorg-fonts-100dpi>0:x11-fonts/xorg-fonts-100dpi \
+		xorg-fonts-75dpi>0:x11-fonts/xorg-fonts-75dpi \
+		xorg-fonts-cyrillic>0:x11-fonts/xorg-fonts-cyrillic \
+		xorg-fonts-miscbitmaps>0:x11-fonts/xorg-fonts-miscbitmaps \
+		xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype \
+		xorg-fonts-type1>0:x11-fonts/xorg-fonts-type1 \
+		font-alias>0:x11-fonts/font-alias
 
 .include <bsd.port.mk>

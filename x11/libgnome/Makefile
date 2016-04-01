@@ -16,9 +16,9 @@ USES=	tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
-LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
-RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
+BUILD_DEPENDS=	rarian-sk-config:textproc/rarian
+LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra
+RUN_DEPENDS=	rarian-sk-config:textproc/rarian
 
 INSTALL_TARGET=	install-strip
 USE_GNOME=	gnomeprefix intlhack esound libbonobo \

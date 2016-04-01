@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Combination of Mollio CSS/HTML template and Yahoo UI grid
 
-RUN_DEPENDS=	rubygem-hoe>=1.1.6:${PORTSDIR}/devel/rubygem-hoe
+RUN_DEPENDS=	rubygem-hoe>=1.1.6:devel/rubygem-hoe
 
 NO_ARCH=	yes
 

@@ -10,7 +10,7 @@ MASTER_SITES=	http://siag.nu/pub/mowitz/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	This is the Mowitz ("More widgets") library
 
-LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
 USES=		libtool
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

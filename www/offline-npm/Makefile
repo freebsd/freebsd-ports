@@ -13,8 +13,8 @@ COMMENT=	Offline installation with npm install
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	npm>0:${PORTSDIR}/www/npm
-RUN_DEPENDS=	npm>0:${PORTSDIR}/www/npm
+BUILD_DEPENDS=	npm>0:www/npm
+RUN_DEPENDS=	npm>0:www/npm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	commenthol

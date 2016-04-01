@@ -13,8 +13,8 @@ COMMENT=	Plugin to use Mercurial instead of Subversion in Trac
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
-		tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	hg:devel/mercurial \
+		tracd:www/trac
 
 USES=		python:2
 USE_PYTHON=	distutils autoplist

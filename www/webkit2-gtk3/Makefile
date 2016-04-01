@@ -12,17 +12,17 @@ DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
 
-BUILD_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
-LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libwebp.so:${PORTSDIR}/graphics/webp \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libsecret-1.so:${PORTSDIR}/security/libsecret \
-		libicutu.so:${PORTSDIR}/devel/icu \
-		libharfbuzz.so:${PORTSDIR}/print/harfbuzz \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
-RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
+BUILD_DEPENDS=	geoclue>=0:net/geoclue
+LIB_DEPENDS=	libenchant.so:textproc/enchant \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libwebp.so:graphics/webp \
+		libpng.so:graphics/png \
+		libsecret-1.so:security/libsecret \
+		libicutu.so:devel/icu \
+		libharfbuzz.so:print/harfbuzz \
+		libsoup-2.4.so:devel/libsoup
+RUN_DEPENDS=	geoclue>=0:net/geoclue
 
 PORTSCOUT=	limitw:1,even
 
@@ -60,7 +60,7 @@ CFLAGS+=	-mminimal-toc
 .endif
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=0:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>=0:textproc/flex
 CONFIGURE_ENV+=	FLEX_PATH="${LOCALBASE}/bin/flex"
 .endif
 

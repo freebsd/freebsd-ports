@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NTLM authentication module for the Apache2 webserver
 
-BUILD_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
+BUILD_DEPENDS=	smbclient:${SAMBA_PORT}
 
 SAMBA_PORT?=	net/samba36
 

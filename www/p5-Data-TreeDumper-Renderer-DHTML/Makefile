@@ -14,7 +14,7 @@ COMMENT=	DHTML renderer for Data::TreeDumper
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-TreeDumper>=0:${PORTSDIR}/devel/p5-Data-TreeDumper
+BUILD_DEPENDS=	p5-Data-TreeDumper>=0:devel/p5-Data-TreeDumper
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

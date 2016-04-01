@@ -15,8 +15,8 @@ COMMENT=	X Window-System-based Visual/Integrated Environment for Workstations
 
 MAKE_JOBS_UNSAFE=	yes
 
-BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+BUILD_DEPENDS=	mkfontdir:x11-fonts/mkfontdir \
+		mkfontscale:x11-fonts/mkfontscale
 
 ONLY_FOR_ARCHS=	i386
 REINPLACE_ARGS=	-i ""

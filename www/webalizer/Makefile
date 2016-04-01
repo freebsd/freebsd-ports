@@ -51,11 +51,11 @@ DISTFILES+=	webalizer-geodb-20150901.tgz:geodb
 
 # slave ports override with languages specific gd
 .if !defined(LIB_DEPENDS)
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/${GD_PORT}
+LIB_DEPENDS+=	libgd.so:${GD_PORT}
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
 .endif
 
 .if ${PORT_OPTIONS:MGEODB}

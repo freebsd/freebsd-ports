@@ -12,10 +12,10 @@ COMMENT=	RFC822 marshalling for zope.schema fields
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.schema>0:${PORTSDIR}/devel/py-zope.schema \
-		${PYTHON_PKGNAMEPREFIX}zope.component>0:${PORTSDIR}/devel/py-zope.component \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>0:${PORTSDIR}/devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.schema>0:devel/py-zope.schema \
+		${PYTHON_PKGNAMEPREFIX}zope.component>0:devel/py-zope.component \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil
 
 NO_ARCH=	yes
 USES=		python zip

@@ -15,7 +15,7 @@ LICENSE_NAME_NODE=	Node's license
 LICENSE_FILE_NODE=	${WRKSRC}/LICENSE
 LICENSE_PERMS_NODE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	R-cran-Rcpp>=0.11.0:${PORTSDIR}/devel/R-cran-Rcpp
+RUN_DEPENDS=	R-cran-Rcpp>=0.11.0:devel/R-cran-Rcpp
 
 MAKE_ENV=	MAKE=${MAKE_CMD}
 USES=		cran:auto-plist gmake

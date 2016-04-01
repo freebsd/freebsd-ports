@@ -13,7 +13,7 @@ DIST_SUBDIR=	trac
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG editor for Trac wiki
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	tracd:www/trac
 
 USES=		python:2 tar:bzip2
 USE_PYTHON=	distutils autoplist
@@ -31,7 +31,7 @@ SVN_REV!=	svn info ${SVN_URL} | ${GREP} Revision | cut -d' ' -f2
 .endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+=	svn:devel/subversion
 
 do-fetch:
 	${MKDIR} ${WRKDIR}

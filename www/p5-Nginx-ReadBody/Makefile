@@ -21,7 +21,7 @@ NGINX_DEVEL_DESC=	Use nginx-devel
 USES=		perl5
 USE_PERL5=	configure
 
-NGINX_DEVEL_RUN_DEPENDS=	nginx:${PORTSDIR}/www/nginx-devel
-NGINX_DEVEL_RUN_DEPENDS_OFF=	nginx:${PORTSDIR}/www/nginx
+NGINX_DEVEL_RUN_DEPENDS=	nginx:www/nginx-devel
+NGINX_DEVEL_RUN_DEPENDS_OFF=	nginx:www/nginx
 
 .include <bsd.port.mk>

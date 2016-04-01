@@ -13,8 +13,8 @@ COMMENT=	Small and fast window manager based on BlackBox
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
-LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+RUN_DEPENDS=	xmessage:x11/xmessage
+LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
 USE_XORG=	xextproto xft xpm xrandr
 USES=		gmake pkgconfig
@@ -64,7 +64,7 @@ PLIST_SUB+=		DOCPDF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIMLIB2}
-LIB_DEPENDS+=		libImlib2.so:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=		libImlib2.so:graphics/imlib2
 CONFIGURE_ARGS+=	--enable-imlib2
 .else
 CONFIGURE_ARGS+=	--disable-imlib2

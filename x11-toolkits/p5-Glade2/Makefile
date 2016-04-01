@@ -16,11 +16,11 @@ COMMENT=	Gtk2-Perl bindings to libglade2
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
-RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
+BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
+		p5-Cairo>=0:graphics/p5-Cairo \
+		p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig
+RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
 USE_GNOME=	libglade2
 USES=		perl5

@@ -11,8 +11,8 @@ COMMENT=	JavaScript minifier written in Python
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.4:${PORTSDIR}/devel/py-ply
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.4:${PORTSDIR}/devel/py-ply
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.4:devel/py-ply
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.4:devel/py-ply
 
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist
@@ -21,7 +21,7 @@ USE_PYTHON=	distutils autoplist
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 3000
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 pre-build:
 	@cd ${WRKSRC} && 2to3-${PYTHON_VER} -w src
 .endif

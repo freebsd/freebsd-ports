@@ -15,8 +15,8 @@ COMMENT=	Image Web Generator - recursively build HTMLs, imagemaps, thumbnails
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libMagickCore-6.so:${PORTSDIR}/graphics/ImageMagick
-RUN_DEPENDS=	p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
+LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick
+RUN_DEPENDS=	p5-Sort-Naturally>=0:textproc/p5-Sort-Naturally
 
 USES=		shebangfix perl5 autoreconf
 GNU_CONFIGURE=	yes
@@ -36,8 +36,8 @@ SHEBANG_FILES=	utils/aub \
 		utils/make_dir_index.pl
 
 OPTIONS_DEFINE=		X11
-X11_BUILD_DEPENDS=	xlsfonts:${PORTSDIR}/x11-fonts/xlsfonts
-X11_RUN_DEPENDS=	xlsfonts:${PORTSDIR}/x11-fonts/xlsfonts
+X11_BUILD_DEPENDS=	xlsfonts:x11-fonts/xlsfonts
+X11_RUN_DEPENDS=	xlsfonts:x11-fonts/xlsfonts
 X11_CONFIGURE_ENV_OFF=	with_x=no
 
 .include <bsd.port.pre.mk>

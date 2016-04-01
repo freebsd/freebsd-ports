@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	TT Plugin that wraps around the MP3::Info module
 
-BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
+BUILD_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-MP3-Info>=0:audio/p5-MP3-Info
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

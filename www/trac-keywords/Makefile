@@ -12,7 +12,7 @@ DISTNAME=	trackeywordsplugin-r${REL}
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Plugin for using pre-configured keywords
 
-RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	trac>=0.11:www/trac
 
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist

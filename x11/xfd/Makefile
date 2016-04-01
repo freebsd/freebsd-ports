@@ -10,9 +10,9 @@ COMMENT=	Display all characters in an X font
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfreetype.so:print/freetype2
+BUILD_DEPENDS=	fc-cache:x11-fonts/fontconfig
+RUN_DEPENDS=	fc-cache:x11-fonts/fontconfig
 
 XORG_CAT=	app
 USE_XORG=	xft xt xaw

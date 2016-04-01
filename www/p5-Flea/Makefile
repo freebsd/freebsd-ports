@@ -12,14 +12,14 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for minimalistic sugar for your Plack
 
 RUN_DEPENDS=	\
-	p5-Devel-Declare-Parser>0:${PORTSDIR}/devel/p5-Devel-Declare-Parser \
-	p5-Exception-Class>0:${PORTSDIR}/devel/p5-Exception-Class \
-	p5-Exporter-Declare>=0.100:${PORTSDIR}/devel/p5-Exporter-Declare \
-	p5-HTTP-Exception>0:${PORTSDIR}/www/p5-HTTP-Exception \
-	p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
-	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
-	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
-	p5-URI>0:${PORTSDIR}/net/p5-URI
+	p5-Devel-Declare-Parser>0:devel/p5-Devel-Declare-Parser \
+	p5-Exception-Class>0:devel/p5-Exception-Class \
+	p5-Exporter-Declare>=0.100:devel/p5-Exporter-Declare \
+	p5-HTTP-Exception>0:www/p5-HTTP-Exception \
+	p5-JSON>0:converters/p5-JSON \
+	p5-Plack>0:www/p5-Plack \
+	p5-Try-Tiny>0:lang/p5-Try-Tiny \
+	p5-URI>0:net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

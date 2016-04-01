@@ -11,7 +11,7 @@ COMMENT=	Simple, web based IT Service Management tool
 
 LICENSE=	AGPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS=	${LOCALBASE}/bin/dot:graphics/graphviz
 
 USES=		cpe shebangfix zip
 SHEBANG_FILES=	lib/tcpdf/tools/tcpdf_addfont.php setup/install/install.sh

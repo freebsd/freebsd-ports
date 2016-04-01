@@ -12,9 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	More themes for the GNOME 2 desktop environment
 
-BUILD_DEPENDS=	gtk-engines2>=2.11.0:${PORTSDIR}/x11-themes/gtk-engines2 \
-		icon-naming-utils>=0.8.1:${PORTSDIR}/x11-themes/icon-naming-utils
-RUN_DEPENDS=	gtk-engines2>=2.11.0:${PORTSDIR}/x11-themes/gtk-engines2
+BUILD_DEPENDS=	gtk-engines2>=2.11.0:x11-themes/gtk-engines2 \
+		icon-naming-utils>=0.8.1:x11-themes/icon-naming-utils
+RUN_DEPENDS=	gtk-engines2>=2.11.0:x11-themes/gtk-engines2
 
 USES=		gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	libgnomeui intlhack

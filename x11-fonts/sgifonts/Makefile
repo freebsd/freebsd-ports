@@ -14,7 +14,7 @@ COMMENT=	Fonts from the SGI ProPack 1.4 (originally for Linux)
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts
 NO_ARCH=	yes

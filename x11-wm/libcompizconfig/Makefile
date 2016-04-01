@@ -9,7 +9,7 @@ MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Alternative configuration system for Compiz
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	INOTIFY
 OPTIONS_DEFAULT=	INOTIFY
 INOTIFY_DESC?=	Enable inotify support
 
-INOTIFY_LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
+INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 INOTIFY_LDFLAGS=	-linotify
 
 .include <bsd.port.pre.mk>

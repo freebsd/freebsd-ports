@@ -13,7 +13,7 @@ COMMENT=	Django reusable app enabling circular template inheritance
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.7:${PORTSDIR}/www/py-django18
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>=1.7:www/py-django18
 
 NO_ARCH=	yes
 

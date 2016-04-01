@@ -13,7 +13,7 @@ COMMENT=	Application launcher for Blackbox-like window manager
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11

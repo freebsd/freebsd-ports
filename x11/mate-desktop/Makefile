@@ -10,8 +10,8 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for MATE
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 
 PORTSCOUT=	limitw:1,even
 

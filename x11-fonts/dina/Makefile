@@ -12,7 +12,7 @@ COMMENT=	Monospace bitmap font, primarily aimed at programmers
 LICENSE=	MIT
 
 USES=		fonts
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 BDFLIST=	Dina_i400-10.bdf Dina_i400-8.bdf Dina_i400-9.bdf \
 		Dina_i700-10.bdf Dina_i700-8.bdf Dina_i700-9.bdf \

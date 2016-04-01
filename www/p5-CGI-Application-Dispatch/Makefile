@@ -14,14 +14,14 @@ COMMENT=	Dispatch requests to CGI::Application based objects
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CGI-Application>=4.50:${PORTSDIR}/www/p5-CGI-Application \
-		p5-CGI-PSGI>=0:${PORTSDIR}/www/p5-CGI-PSGI \
-		p5-Exception-Class>=1.20:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-HTTP-Exception>=0:${PORTSDIR}/www/p5-HTTP-Exception \
-		p5-Plack>=0.9956:${PORTSDIR}/www/p5-Plack \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+BUILD_DEPENDS=	p5-CGI-Application>=4.50:www/p5-CGI-Application \
+		p5-CGI-PSGI>=0:www/p5-CGI-PSGI \
+		p5-Exception-Class>=1.20:devel/p5-Exception-Class \
+		p5-HTTP-Exception>=0:www/p5-HTTP-Exception \
+		p5-Plack>=0.9956:www/p5-Plack \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-LongString>=0:${PORTSDIR}/devel/p5-Test-LongString
+TEST_DEPENDS=	p5-Test-LongString>=0:devel/p5-Test-LongString
 
 USES=		perl5
 USE_PERL5=	modbuild

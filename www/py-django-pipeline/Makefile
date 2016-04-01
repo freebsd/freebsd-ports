@@ -12,7 +12,7 @@ COMMENT=	Asset (css/js) packaging library for Django
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:${PORTSDIR}/www/py-django18
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:www/py-django18
 
 NO_ARCH=	yes
 USES=		python:2

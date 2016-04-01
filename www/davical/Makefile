@@ -14,11 +14,11 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
-		${LOCALBASE}/bin/pwgen:${PORTSDIR}/sysutils/pwgen \
-		php-libawl>=0.54:${PORTSDIR}/devel/php-libawl
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		p5-YAML>=0:textproc/p5-YAML \
+		p5-DBD-Pg>=0:databases/p5-DBD-Pg \
+		${LOCALBASE}/bin/pwgen:sysutils/pwgen \
+		php-libawl>=0.54:devel/php-libawl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DAViCal

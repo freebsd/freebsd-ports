@@ -14,16 +14,16 @@ COMMENT=	Website META Language, webdesign toolkit for HTML generation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 RUN_DEPENDS=	\
-		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-Bit-Vector>=5.2:${PORTSDIR}/math/p5-Bit-Vector \
-		p5-File-PathConvert>0:${PORTSDIR}/devel/p5-File-PathConvert \
-		p5-Image-Size>=2.6:${PORTSDIR}/graphics/p5-Image-Size \
-		p5-Term-ReadKey>=2.11:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-HTML-Clean>0:${PORTSDIR}/www/p5-HTML-Clean \
-		p5-GD>0:${PORTSDIR}/graphics/p5-GD
-BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-Bit-Vector>=5.2:math/p5-Bit-Vector \
+		p5-File-PathConvert>0:devel/p5-File-PathConvert \
+		p5-Image-Size>=2.6:graphics/p5-Image-Size \
+		p5-Term-ReadKey>=2.11:devel/p5-Term-ReadKey \
+		p5-HTML-Clean>0:www/p5-HTML-Clean \
+		p5-GD>0:graphics/p5-GD
+BUILD_DEPENDS=	lynx:www/lynx \
 		${RUN_DEPENDS}
 
 INFO=		logo-apache logo-freebsd logo-gimp logo-htdig logo-linux logo-netbsd \

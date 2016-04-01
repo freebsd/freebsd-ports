@@ -11,7 +11,7 @@ COMMENT=	Allows multiple Redmine plugins to use tags safely
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	rubygem-acts-as-taggable-on>=2.3:${PORTSDIR}/www/rubygem-acts-as-taggable-on
+RUN_DEPENDS=	rubygem-acts-as-taggable-on>=2.3:www/rubygem-acts-as-taggable-on
 
 NO_ARCH=	yes
 USE_RUBY=	yes

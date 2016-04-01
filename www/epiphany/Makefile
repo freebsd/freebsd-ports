@@ -11,21 +11,21 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Extremely lightweight and simple web browser for GNOME 3
 
-BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		itstool:${PORTSDIR}/textproc/itstool \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libwebkit2gtk-4.0.so:${PORTSDIR}/www/webkit2-gtk3 \
-		libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
-		libgcr-3.so:${PORTSDIR}/security/gcr \
-		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
-		libnss3.so:${PORTSDIR}/security/nss \
-		libavahi-gobject.so:${PORTSDIR}/net/avahi-app \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libsecret-1.so:${PORTSDIR}/security/libsecret
-RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
-		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		gnome-icon-theme-symbolic>=0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
-		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		itstool:textproc/itstool \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libsoup-gnome-2.4.so:devel/libsoup-gnome \
+		libgcr-3.so:security/gcr \
+		libstartup-notification-1.so:x11/startup-notification \
+		libnss3.so:security/nss \
+		libavahi-gobject.so:net/avahi-app \
+		libnotify.so:devel/libnotify \
+		libsecret-1.so:security/libsecret
+RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+		gnome-icon-theme-symbolic>=0:x11-themes/gnome-icon-theme-symbolic \
+		gnome-icon-theme>=0:misc/gnome-icon-theme
 
 PORTSCOUT=	limitw:1,even
 

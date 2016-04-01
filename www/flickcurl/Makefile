@@ -12,7 +12,7 @@ COMMENT=	C library for the Flickr API
 LICENSE=	APACHE20 GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 OPTIONS_DEFINE=	RAPTOR DOCS
 OPTIONS_RADIO=	WEBSERVICE
@@ -33,7 +33,7 @@ OFFLINE_CONFIGURE_ON=		--enable-offline
 OFFLINE_CONFIGURE_OFF=		offline=no
 CAPTURE_CONFIGURE_ON=		--enable-capture
 CAPTURE_CONFIGURE_OFF=		capture=no
-RAPTOR_LIB_DEPENDS=		libraptor2.so:${PORTSDIR}/textproc/raptor2
+RAPTOR_LIB_DEPENDS=		libraptor2.so:textproc/raptor2
 RAPTOR_CONFIGURE_ON=		--with-raptor=2
 RAPTOR_CONFIGURE_OFF=		--with-raptor=no
 

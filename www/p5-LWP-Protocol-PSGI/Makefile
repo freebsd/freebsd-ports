@@ -14,12 +14,12 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
-	p5-Guard>0:${PORTSDIR}/devel/p5-Guard \
-	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
-	p5-libwww>=5:${PORTSDIR}/www/p5-libwww
+	p5-Guard>0:devel/p5-Guard \
+	p5-Plack>0:www/p5-Plack \
+	p5-libwww>=5:www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
-	p5-LWP-Protocol-https>0:${PORTSDIR}/www/p5-LWP-Protocol-https
+	p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https
 
 USES=	perl5
 USE_PERL5=	modbuildtiny

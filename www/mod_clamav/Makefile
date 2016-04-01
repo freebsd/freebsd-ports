@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.options.mk>
 
 CLAMAV_PORT=	security/clamav
-LIB_DEPENDS+=	libclamav.so:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	libclamav.so:security/clamav
 
 CONFIGURE_ARGS=	--with-apxs=${APXS} \
 		--libdir=${PREFIX}/lib/apache2

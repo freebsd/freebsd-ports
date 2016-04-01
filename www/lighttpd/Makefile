@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 .endif
 
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool pkgconfig tar:xz
@@ -57,20 +57,20 @@ BZIP2_CONFIGURE_WITH=	bzip2
 FAM_USES=		fam
 FAM_CONFIGURE_ON=	--with-fam
 FAM_CONFIGURE_ENV=	FAM_CFLAGS="-I${LOCALBASE}/include" FAM_LIBS="-L${LOCALBASE}/lib"
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
 IPV6_CONFIGURE_OFF=	--disable-ipv6
 LIBEV_CONFIGURE_WITH=	libev=${LOCALBASE}
-LIBEV_LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
+LIBEV_LIB_DEPENDS=	libev.so:devel/libev
 LUA_USES=		lua:51+
 LUA_CONFIGURE_WITH=	lua
 LUA_CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
-MEMCACHE_LIB_DEPENDS=	libmemcache.so:${PORTSDIR}/databases/libmemcache
+MEMCACHE_LIB_DEPENDS=	libmemcache.so:databases/libmemcache
 MEMCACHE_CONFIGURE_WITH=memcache
 MYSQLAUTH_IMPLIES=	MYSQL
-SPAWNFCGI_RUN_DEPENDS=	spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
-VALGRIND_BUILD_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
-VALGRIND_RUN_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
+SPAWNFCGI_RUN_DEPENDS=	spawn-fcgi:www/spawn-fcgi
+VALGRIND_BUILD_DEPENDS=	valgrind:devel/valgrind
+VALGRIND_RUN_DEPENDS=	valgrind:devel/valgrind
 VALGRIND_CONFIGURE_WITH=valgrind
 
 LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf
@@ -142,8 +142,8 @@ _REQUIRE+=		slapd
 
 .if ${PORT_OPTIONS:MWEBDAV}
 USE_GNOME+=		libxml2
-LIB_DEPENDS+=		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
-			libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=		libuuid.so:misc/e2fsprogs-libuuid \
+			libsqlite3.so:databases/sqlite3
 CONFIGURE_ARGS+=	--with-webdav-props --with-webdav-locks
 .endif
 

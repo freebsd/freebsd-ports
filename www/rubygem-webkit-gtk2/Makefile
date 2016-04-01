@@ -11,9 +11,9 @@ COMMENT=	Ruby/WebKitGtk2 is a Ruby binding of WebKitGTK+ for Gtk 2.0 Toolkit
 
 LICENSE=	LGPL21+
 
-LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
-RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-gobject-introspection \
-		rubygem-gtk2>=${PORTVERSION}:${PORTSDIR}/x11-toolkits/rubygem-gtk2
+LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
+RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection \
+		rubygem-gtk2>=${PORTVERSION}:x11-toolkits/rubygem-gtk2
 
 NO_ARCH=	yes
 USE_RUBY=	yes

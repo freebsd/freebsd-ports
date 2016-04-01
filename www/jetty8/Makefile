@@ -15,7 +15,7 @@ COMMENT=	Full-featured web server implemented entirely in Java
 LICENSE=	APACHE20 EPL
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 CONFLICTS=	jetty-9.*
 

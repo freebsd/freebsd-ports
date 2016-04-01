@@ -9,10 +9,10 @@ CATEGORIES=	x11-wm
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Metaport of compiz-fusion
 
-LIB_DEPENDS=	libcompizconfig.so:${PORTSDIR}/x11-wm/libcompizconfig
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz \
-		${LOCALBASE}/lib/compiz/libanimation.so:${PORTSDIR}/x11-wm/compiz-plugins-main \
-		${LOCALBASE}/bin/ccsm:${PORTSDIR}/x11-wm/ccsm
+LIB_DEPENDS=	libcompizconfig.so:x11-wm/libcompizconfig
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz \
+		${LOCALBASE}/lib/compiz/libanimation.so:x11-wm/compiz-plugins-main \
+		${LOCALBASE}/bin/ccsm:x11-wm/ccsm
 
 USES=		metaport
 
@@ -23,11 +23,11 @@ EXTRA_DESC=	Enable extra plugins
 UNSUP_DESC=	Enable unsupported plugins
 EMERALD_DESC=	Enable emerald window decorator
 
-EXTRA_RUN_DEPENDS=	${LOCALBASE}/lib/compiz/libaddhelper.so:${PORTSDIR}/x11-wm/compiz-plugins-extra
-UNSUP_RUN_DEPENDS=	${LOCALBASE}/lib/compiz/libfakeargb.so:${PORTSDIR}/x11-wm/compiz-plugins-unsupported
-EMERALD_RUN_DEPENDS=	${LOCALBASE}/bin/emerald:${PORTSDIR}/x11-wm/emerald \
-		${LOCALBASE}/share/emerald/themes/Adonis_Mod/theme.ini:${PORTSDIR}/x11-themes/emerald-themes
+EXTRA_RUN_DEPENDS=	${LOCALBASE}/lib/compiz/libaddhelper.so:x11-wm/compiz-plugins-extra
+UNSUP_RUN_DEPENDS=	${LOCALBASE}/lib/compiz/libfakeargb.so:x11-wm/compiz-plugins-unsupported
+EMERALD_RUN_DEPENDS=	${LOCALBASE}/bin/emerald:x11-wm/emerald \
+		${LOCALBASE}/share/emerald/themes/Adonis_Mod/theme.ini:x11-themes/emerald-themes
 
-GCONF_RUN_DEPENDS=	${LOCALBASE}/lib/compizconfig/backends/libgconf.so:${PORTSDIR}/x11-wm/compizconfig-backend-gconf
+GCONF_RUN_DEPENDS=	${LOCALBASE}/lib/compizconfig/backends/libgconf.so:x11-wm/compizconfig-backend-gconf
 
 .include <bsd.port.mk>

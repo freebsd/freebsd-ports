@@ -14,7 +14,7 @@ COMMENT=	Dockable WindowMaker applet which displays the local temperature
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	wget:ftp/wget
 
 USE_XORG=	x11 xpm
 

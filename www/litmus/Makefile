@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.webdav.org/neon/litmus/
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	WebDAV server protocol compliance test suite
 
-LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon \
-		libk5crypto.so:${PORTSDIR}/security/krb5
+LIB_DEPENDS=	libneon.so:www/neon \
+		libk5crypto.so:security/krb5
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ssl --with-neon=/usr/local

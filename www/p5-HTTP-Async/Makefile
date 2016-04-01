@@ -13,14 +13,14 @@ COMMENT=	Process multiple HTTP requests in parallel without blocking
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
-		p5-Net-HTTPS-NB>=0.13:${PORTSDIR}/net/p5-Net-HTTPS-NB \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-HTTP-Server-Simple>=0:www/p5-HTTP-Server-Simple \
+		p5-Net-HTTPS-NB>=0.13:net/p5-Net-HTTPS-NB \
+		p5-URI>=0:net/p5-URI \
+		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
-		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
+TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
+		p5-Test-HTTP-Server-Simple>=0:www/p5-Test-HTTP-Server-Simple \
+		p5-Test-TCP>=0:devel/p5-Test-TCP
 
 NO_ARCH=	yes
 USES=		perl5

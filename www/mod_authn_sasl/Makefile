@@ -12,12 +12,12 @@ COMMENT=	Allows user authentication based on libsasl2 mechanisms on apache 2.2
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 OPTIONS_DEFINE=	SASLAUTHD
 SASLAUTHD_DESC=	cyrus-sasl2-saslauthd support
 
-SASLAUTHD_RUN_DEPENDS=	saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
+SASLAUTHD_RUN_DEPENDS=	saslauthd:security/cyrus-sasl2-saslauthd
 .include <bsd.port.options.mk>
 
 USES=		tar:bzip2

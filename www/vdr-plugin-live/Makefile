@@ -13,8 +13,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - live web plugin
 
-LIB_DEPENDS+=	libtntnet.so:${PORTSDIR}/www/tntnet \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libtntnet.so:www/tntnet \
+		libpcre.so:devel/pcre
 
 PATCH_STRIP=	-p1
 PORTDOCS=	COPYING README HISTORY

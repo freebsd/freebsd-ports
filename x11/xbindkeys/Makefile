@@ -24,7 +24,7 @@ PLIST_FILES=	bin/xbindkeys %%EXAMPLESDIR%%/xbindkeysrc man/man1/xbindkeys.1.gz
 TCL_USES=		tk
 TCL_CONFIGURE_OFF=	--disable-tk
 TCL_PLIST_FILES=	bin/xbindkeys_show man/man1/xbindkeys_show.1.gz
-GUILE_LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
+GUILE_LIB_DEPENDS=	libguile.so:lang/guile
 GUILE_CONFIGURE_OFF=	--disable-guile
 
 post-patch:

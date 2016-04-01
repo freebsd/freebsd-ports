@@ -11,12 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	peter@vereshagin.org
 COMMENT=	FastCGI server for CGI-like applications multiprocessing
 
-BUILD_DEPENDS=	p5-Const-Fast>0:${PORTSDIR}/devel/p5-Const-Fast \
-		p5-FCGI>0:${PORTSDIR}/www/p5-FCGI \
-		p5-FCGI-ProcManager>0:${PORTSDIR}/www/p5-FCGI-ProcManager
+BUILD_DEPENDS=	p5-Const-Fast>0:devel/p5-Const-Fast \
+		p5-FCGI>0:www/p5-FCGI \
+		p5-FCGI-ProcManager>0:www/p5-FCGI-ProcManager
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Most>0:${PORTSDIR}/devel/p5-Test-Most \
-		p5-Test-Strict>0:${PORTSDIR}/devel/p5-Test-Strict
+TEST_DEPENDS=	p5-Test-Most>0:devel/p5-Test-Most \
+		p5-Test-Strict>0:devel/p5-Test-Strict
 
 USES=		perl5
 USE_PERL5=	configure
@@ -30,14 +30,14 @@ PGSQL_DESC=	PgSQL dependency to run on RC start
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-# RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+# RUN_DEPENDS+=	mysql-server>=0:databases/mysql${MYSQL_VER}-server
 SUB_LIST+=	MYSQL=mysql
 .	else
 SUB_LIST+=	MYSQL=
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-# RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+# RUN_DEPENDS+=	postgresql-server>=0:databases/postgresql${PGSQL_VER}-server
 SUB_LIST+=	PGSQL=postgresql
 .	else
 SUB_LIST+=	PGSQL=

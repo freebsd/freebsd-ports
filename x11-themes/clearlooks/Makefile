@@ -35,8 +35,8 @@ PLIST_SUB+=	ENGINE=""
 .else
 CONFLICTS+=	clearlooks-[0-9]*
 
-BUILD_DEPENDS+=	gtk-engines2>=2.7.5_1:${PORTSDIR}/x11-themes/gtk-engines2
-RUN_DEPENDS+=	gtk-engines2>=2.7.5_1:${PORTSDIR}/x11-themes/gtk-engines2
+BUILD_DEPENDS+=	gtk-engines2>=2.7.5_1:x11-themes/gtk-engines2
+RUN_DEPENDS+=	gtk-engines2>=2.7.5_1:x11-themes/gtk-engines2
 
 BUILD_WRKSRC=	${WRKSRC}/themes
 INSTALL_WRKSRC=	${WRKSRC}/themes
@@ -45,7 +45,7 @@ PLIST_SUB+=	ENGINE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMETACITY} && !defined(PKGNAMESUFFIX)
-RUN_DEPENDS+=	${LOCALBASE}/share/themes/Clearlooks/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/clearlooks-metacity
+RUN_DEPENDS+=	${LOCALBASE}/share/themes/Clearlooks/metacity-1/metacity-theme-1.xml:x11-themes/clearlooks-metacity
 .endif
 
 .if ${PORT_OPTIONS:MANIMATION}

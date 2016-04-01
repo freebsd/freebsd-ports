@@ -10,9 +10,9 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Panel component for the MATE Desktop
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libcanberra-gtk.so:audio/libcanberra
 
 PORTSCOUT=	limitw:1,even
 

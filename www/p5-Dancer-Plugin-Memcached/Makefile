@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cache response content to memcached
 
-RUN_DEPENDS=	p5-Dancer>0:${PORTSDIR}/www/p5-Dancer
+RUN_DEPENDS=	p5-Dancer>0:www/p5-Dancer
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

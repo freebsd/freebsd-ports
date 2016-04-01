@@ -15,10 +15,10 @@ COMMENT=	Flexible I18N using Locale::Maketext::Lexicon for Dancer apps
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Dancer>=1.3118:${PORTSDIR}/www/p5-Dancer \
-		p5-Locale-Maketext-Lexicon>0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
-		p5-Package-Stash>0:${PORTSDIR}/devel/p5-Package-Stash \
-		p5-PathTools>0:${PORTSDIR}/devel/p5-PathTools
+RUN_DEPENDS=	p5-Dancer>=1.3118:www/p5-Dancer \
+		p5-Locale-Maketext-Lexicon>0:devel/p5-Locale-Maketext-Lexicon \
+		p5-Package-Stash>0:devel/p5-Package-Stash \
+		p5-PathTools>0:devel/p5-PathTools
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

@@ -15,8 +15,8 @@ COMMENT=	Configuration tool for Window Maker
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libWINGs.so:${PORTSDIR}/x11-wm/windowmaker
-RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm4
+LIB_DEPENDS=	libWINGs.so:x11-wm/windowmaker
+RUN_DEPENDS=	rpm:archivers/rpm4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

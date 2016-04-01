@@ -14,8 +14,8 @@ COMMENT=	Simple interface to complex MVC list widget
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Glib2>=1.00:${PORTSDIR}/devel/p5-Glib2 \
-		p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2
+BUILD_DEPENDS=	p5-Glib2>=1.00:devel/p5-Glib2 \
+		p5-Gtk2>=1.060:x11-toolkits/p5-Gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

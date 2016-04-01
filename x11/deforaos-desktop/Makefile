@@ -10,18 +10,18 @@ PKGNAMEPREFIX=	deforaos-
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Deforaos distribution metaport
 
-RUN_DEPENDS=	${LOCALBASE}/bin/keyboard:${PORTSDIR}/x11/deforaos-keyboard \
-		${LOCALBASE}/bin/panel:${PORTSDIR}/x11/deforaos-panel \
-		${LOCALBASE}/bin/browser:${PORTSDIR}/x11-fm/deforaos-browser \
-		${LOCALBASE}/bin/locker:${PORTSDIR}/x11/deforaos-locker \
-		${LOCALBASE}/bin/pdfviewer:${PORTSDIR}/print/deforaos-pdfviewer \
-		${LOCALBASE}/bin/mailer:${PORTSDIR}/mail/deforaos-mailer \
-		${LOCALBASE}/bin/surfer:${PORTSDIR}/www/deforaos-surfer \
-		${LOCALBASE}/bin/todo:${PORTSDIR}/deskutils/deforaos-todo \
-		${LOCALBASE}/bin/player:${PORTSDIR}/multimedia/deforaos-player \
-		${LOCALBASE}/bin/mixer:${PORTSDIR}/audio/deforaos-mixer \
-		${LOCALBASE}/bin/editor:${PORTSDIR}/editors/deforaos-editor \
-		${LOCALBASE}/bin/phone:${PORTSDIR}/comms/deforaos-phone
+RUN_DEPENDS=	${LOCALBASE}/bin/keyboard:x11/deforaos-keyboard \
+		${LOCALBASE}/bin/panel:x11/deforaos-panel \
+		${LOCALBASE}/bin/browser:x11-fm/deforaos-browser \
+		${LOCALBASE}/bin/locker:x11/deforaos-locker \
+		${LOCALBASE}/bin/pdfviewer:print/deforaos-pdfviewer \
+		${LOCALBASE}/bin/mailer:mail/deforaos-mailer \
+		${LOCALBASE}/bin/surfer:www/deforaos-surfer \
+		${LOCALBASE}/bin/todo:deskutils/deforaos-todo \
+		${LOCALBASE}/bin/player:multimedia/deforaos-player \
+		${LOCALBASE}/bin/mixer:audio/deforaos-mixer \
+		${LOCALBASE}/bin/editor:editors/deforaos-editor \
+		${LOCALBASE}/bin/phone:comms/deforaos-phone
 
 USES=		metaport
 

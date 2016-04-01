@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hybrid of WIKI and BLOG system
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mez_xml/__init__.py:${PORTSDIR}/devel/py-mez_xml
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mez_xml/__init__.py:devel/py-mez_xml
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_SITELIBDIR}/fcgi.py:${PORTSDIR}/www/py-fcgi
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
+		${PYTHON_SITELIBDIR}/fcgi.py:www/py-fcgi
 
 USES=		python:2 shebangfix
 SHEBANG_FILES=	GinGin/data/config.py.example

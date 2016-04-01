@@ -13,7 +13,7 @@ COMMENT=	Make subrequests to actions in Catalyst
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.90000:${PORTSDIR}/www/p5-Catalyst-Runtime
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.90000:www/p5-Catalyst-Runtime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -13,8 +13,8 @@ COMMENT=	Total Commander like file manager for the X Window System
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
-		fpcres:${PORTSDIR}/lang/fpc-utils
+BUILD_DEPENDS=	lazbuild:editors/lazarus \
+		fpcres:lang/fpc-utils
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -99,14 +99,14 @@ OPTIONS_DEFAULT=	GTK2 \
 			DSX_LOCATE
 
 GTK2_USE=		fpc=gtk2 gnome=gtk20
-GTK2_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+GTK2_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-gtk2
 
-QT4_LIB_DEPENDS=	libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
-QT4_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
+QT4_LIB_DEPENDS=	libQt4Pas.so:x11-toolkits/qt4pas
+QT4_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
 
-WCX_UNRAR_LIB_DEPENDS=	libunrar.so:${PORTSDIR}/archivers/libunrar
-WFX_SAMBA_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-WLX_MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+WCX_UNRAR_LIB_DEPENDS=	libunrar.so:archivers/libunrar
+WFX_SAMBA_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 .include <bsd.port.options.mk>
 

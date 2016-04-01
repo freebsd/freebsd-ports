@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	bob@bomar.us
 COMMENT=	Simple web based photo gallery
 
-RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm\
-		p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info\
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	anytopnm:graphics/netpbm\
+		p5-Image-Info>=0:graphics/p5-Image-Info\
+		p5-URI>=0:net/p5-URI
 
 USE_APACHE_RUN=	22+
 USES=		perl5 shebangfix tar

@@ -14,7 +14,7 @@ WRKSRC=		${WRKDIR}/nx-libs-${PORTVERSION}/${PORTNAME}
 USES=		autoreconf gmake jpeg
 USE_XORG=	xproto
 GNU_CONFIGURE=	yes
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,libdir}/nx,libdir},g" ${WRKSRC}/Makefile.in

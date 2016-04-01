@@ -13,8 +13,8 @@ COMMENT=	Oxygen-Gtk engine and theme
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libdbus-glib-1.so:devel/dbus-glib
 
 USE_GNOME=	gtk20
 USES=		cmake pkgconfig tar:bzip2

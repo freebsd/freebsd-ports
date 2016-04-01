@@ -21,8 +21,8 @@ SHEBANG_FILES=	type1inst t1embed
 OPTIONS_DEFINE=	DOCS X11
 OPTIONS_DEFAULT=X11
 
-X11_RUN_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-			${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+X11_RUN_DEPENDS=	${LOCALBASE}/bin/mkfontdir:x11-fonts/mkfontdir \
+			${LOCALBASE}/bin/mkfontscale:x11-fonts/mkfontscale
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_SCRIPT} type1inst t1embed \

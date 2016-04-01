@@ -12,9 +12,9 @@ COMMENT=	Extensible Perl toolkit for multi-platform GUI development
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libtiff.so:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libgif.so:graphics/giflib \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
 OPTIONS_DEFINE=	GTK2 ICONV XFT
 OPTIONS_DEFAULT=ICONV XFT

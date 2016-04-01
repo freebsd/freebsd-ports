@@ -9,7 +9,7 @@ CATEGORIES=	www
 MAINTAINER=	ultima1252@gmail.com
 COMMENT=	Web front-end for plexWatch
 
-RUN_DEPENDS=	multimedia/plexwatch>=0.1.6:${PORTSDIR}/multimedia/plexwatch
+RUN_DEPENDS=	multimedia/plexwatch>=0.1.6:multimedia/plexwatch
 
 USE_PHP=	curl json session simplexml sqlite3
 

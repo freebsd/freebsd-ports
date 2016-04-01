@@ -12,7 +12,7 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:${PORTSDIR}/security/py-certifi
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -20,15 +20,15 @@ USE_PYTHON=	autoplist distutils
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>0:${PORTSDIR}/devel/py-futures
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures
 .endif
 
 .if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>0:${PORTSDIR}/devel/py-singledispatch
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>0:devel/py-singledispatch
 .endif
 
 .if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports_abc>=0.4:${PORTSDIR}/devel/py-backports_abc
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports_abc>=0.4:devel/py-backports_abc
 .endif
 
 post-build:

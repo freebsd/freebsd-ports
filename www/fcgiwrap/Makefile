@@ -11,7 +11,7 @@ COMMENT=	Simple FastCGI wrapper for CGI scripts
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
+LIB_DEPENDS=	libfcgi.so:www/fcgi
 
 USES=		autoreconf gmake pkgconfig
 

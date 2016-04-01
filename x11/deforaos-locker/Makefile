@@ -14,12 +14,12 @@ COMMENT=	DeforaOS desktop screensaver
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem \
-		libDesktop.so:${PORTSDIR}/x11/deforaos-libdesktop \
-		libXss.so:${PORTSDIR}/x11/libXScrnSaver
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Panel.pc:${PORTSDIR}/x11/deforaos-panel \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
+		libDesktop.so:x11/deforaos-libdesktop \
+		libXss.so:x11/libXScrnSaver
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Panel.pc:x11/deforaos-panel \
+		xsltproc:textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
 USE_GNOME=	gtk20
 USES=		desktop-file-utils gettext pkgconfig

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multilingual templates for Template Toolkit
 
-RUN_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
+RUN_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit
 
 USES=		perl5
 USE_PERL5=	configure

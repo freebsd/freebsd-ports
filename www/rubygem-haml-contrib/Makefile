@@ -11,7 +11,7 @@ COMMENT=	Addons for the Ruby implementation of the Haml template language
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-haml>=4.0.0:${PORTSDIR}/www/rubygem-haml
+RUN_DEPENDS=	rubygem-haml>=4.0.0:www/rubygem-haml
 
 NO_ARCH=	yes
 

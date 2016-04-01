@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Make the Catalyst request context available in Models and Views
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>0:${PORTSDIR}/www/p5-Catalyst-Runtime
+BUILD_DEPENDS=	p5-Catalyst-Runtime>0:www/p5-Catalyst-Runtime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Devel-Cycle>=0:${PORTSDIR}/devel/p5-Devel-Cycle
+TEST_DEPENDS=	p5-Devel-Cycle>=0:devel/p5-Devel-Cycle
 
 USES=		perl5
 USE_PERL5=	configure

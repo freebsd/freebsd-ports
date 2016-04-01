@@ -11,9 +11,9 @@ COMMENT=	X.Org event device input driver
 LICENSE=	MIT # various styles
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libevdev.so:${PORTSDIR}/devel/libevdev
-RUN_DEPENDS=	webcamd>=3.1.0.1:${PORTSDIR}/multimedia/webcamd
+BUILD_DEPENDS=	v4l_compat>=1.0.20110603:multimedia/v4l_compat
+LIB_DEPENDS=	libevdev.so:devel/libevdev
+RUN_DEPENDS=	webcamd>=3.1.0.1:multimedia/webcamd
 
 XORG_CAT=	driver
 USES=		pathfix
@@ -23,7 +23,7 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	MULTITOUCH
 
 MULTITOUCH_DESC=	XInput 2.2 multitouch support
-MULTITOUCH_LIB_DEPENDS=	libmtdev.so:${PORTSDIR}/devel/libmtdev
+MULTITOUCH_LIB_DEPENDS=	libmtdev.so:devel/libmtdev
 
 post-patch-MULTITOUCH-off:
 # XXX Convert to CONFIGURE_ENV

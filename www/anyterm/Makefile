@@ -15,7 +15,7 @@ COMMENT=	Terminal emulator on a Web page
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 
 USE_RC_SUBR=	anytermd
 USES=		gmake iconv localbase tar:tbz2

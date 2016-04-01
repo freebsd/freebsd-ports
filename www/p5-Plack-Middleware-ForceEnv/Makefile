@@ -14,7 +14,7 @@ COMMENT=	Force set environment variables for testing
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Plack>=0.9925:${PORTSDIR}/www/p5-Plack
+BUILD_DEPENDS=	p5-Plack>=0.9925:www/p5-Plack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

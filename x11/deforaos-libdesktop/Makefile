@@ -15,7 +15,7 @@ COMMENT=	DeforaOS desktop library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libSystem.so:${PORTSDIR}/devel/deforaos-libsystem
+LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem
 
 USE_GNOME=	gtk20
 USES=		pkgconfig
@@ -26,9 +26,9 @@ MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE= DOCS
 
-DOCS_BUILD_DEPENDS= xsltproc:${PORTSDIR}/textproc/libxslt \
-	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
+DOCS_BUILD_DEPENDS= xsltproc:textproc/libxslt \
+	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+	gtkdoc-check:textproc/gtk-doc
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \

@@ -30,7 +30,7 @@ MYSQL_USE=	mysql=client php=mysqli
 PGSQL_USE=	php=pgsql
 MSSQL_USE=	php=mssql
 LDAP_USE=	php=ldap
-MIMETEX_RUN_DEPENDS=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
+MIMETEX_RUN_DEPENDS=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:www/mimetex
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist

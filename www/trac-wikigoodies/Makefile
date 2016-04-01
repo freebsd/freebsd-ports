@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}plugin.${PORTVERSION}
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Plugin for Trac which extends the Wiki with some goodies
 
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	tracd:www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 

@@ -12,10 +12,10 @@ COMMENT=	Free and open source enterprise wiki
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Error>=0.15:${PORTSDIR}/lang/p5-Error \
-		p5-Algorithm-Diff>=1.1901:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		p5-Text-Diff>=0.35:${PORTSDIR}/textproc/p5-Text-Diff \
-		p5-Sort-Maker>=0.06:${PORTSDIR}/devel/p5-Sort-Maker
+RUN_DEPENDS=	p5-Error>=0.15:lang/p5-Error \
+		p5-Algorithm-Diff>=1.1901:devel/p5-Algorithm-Diff \
+		p5-Text-Diff>=0.35:textproc/p5-Text-Diff \
+		p5-Sort-Maker>=0.06:devel/p5-Sort-Maker
 
 USES=		cpe perl5 tar:tgz
 NO_BUILD=	yes
@@ -28,18 +28,18 @@ OPTINT_DESC=	Perl modules for intl character support
 OPTOTH_DESC=	Other optional Perl modules
 APACHE_DESC=	Apache web server and sample config file
 
-OPTINT_RUN_DEPENDS=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon
-OPTOTH_RUN_DEPENDS=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
-		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
-		p5-CGI-Session>=4.40:${PORTSDIR}/www/p5-CGI-Session \
-		p5-CSS-Minifier-XS>=0:${PORTSDIR}/textproc/p5-CSS-Minifier-XS \
-		p5-JavaScript-Minifier-XS>=0:${PORTSDIR}/textproc/p5-JavaScript-Minifier-XS \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-Lingua-EN-Sentence>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Sentence \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree \
-		p5-Net>=1.19:${PORTSDIR}/net/p5-Net
+OPTINT_RUN_DEPENDS=	p5-Locale-Maketext-Lexicon>=0:devel/p5-Locale-Maketext-Lexicon
+OPTOTH_RUN_DEPENDS=	p5-Apache-Htpasswd>=0:security/p5-Apache-Htpasswd \
+		p5-Archive-Tar>=0:archivers/p5-Archive-Tar \
+		p5-Cache-Cache>=0:devel/p5-Cache-Cache \
+		p5-CGI-Session>=4.40:www/p5-CGI-Session \
+		p5-CSS-Minifier-XS>=0:textproc/p5-CSS-Minifier-XS \
+		p5-JavaScript-Minifier-XS>=0:textproc/p5-JavaScript-Minifier-XS \
+		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		p5-Lingua-EN-Sentence>=0:textproc/p5-Lingua-EN-Sentence \
+		p5-libwww>=0:www/p5-libwww \
+		p5-HTML-Tree>=3.23:www/p5-HTML-Tree \
+		p5-Net>=1.19:net/p5-Net
 APACHE_USE=	APACHE_RUN=22+
 APACHE_SUB_FILES=	pkg-message-apache
 APACHE_SUB_LIST=	FOSCONFDIR=${CONFDIR}

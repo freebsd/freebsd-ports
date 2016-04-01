@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Adds HEAD tag parsing to WWW::Mechanize
 
-RUN_DEPENDS=	p5-WWW-Mechanize>=1.20:${PORTSDIR}/www/p5-WWW-Mechanize
+RUN_DEPENDS=	p5-WWW-Mechanize>=1.20:www/p5-WWW-Mechanize
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

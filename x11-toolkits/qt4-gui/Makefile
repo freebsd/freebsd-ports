@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt graphical user interface module
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib
 QT_DIST=	yes
@@ -52,12 +52,12 @@ FONTENCOD=	${LOCALBASE}/share/fonts/encodings/encodings.dir
 .include "${.CURDIR}/../../devel/qt4/files/Makefile.options"
 
 .if ${QT4_OPTIONS:MCUPS}
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups
+LIB_DEPENDS+=	libcups.so:print/cups
 CONFIGURE_ARGS+=-cups -L${LOCALBASE}/lib -I. -I${LOCALBASE}/include
 .endif
 
 .if ${QT4_OPTIONS:MNAS}
-LIB_DEPENDS+=	libaudio.so:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=	libaudio.so:audio/nas
 CONFIGURE_ARGS+=-system-nas-sound
 .else
 CONFIGURE_ARGS+=-no-nas-sound
@@ -71,8 +71,8 @@ CONFIGURE_ARGS+=-no-gtkstyle
 .endif
 
 .if defined(PACKAGE_BUILDING)
-RUN_DEPENDS+=	xorg-fonts-truetype>0:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
-		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings
+RUN_DEPENDS+=	xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype \
+		${FONTENCOD}:x11-fonts/encodings
 .endif
 
 CFLAGS_powerpc64=	-mminimal-toc

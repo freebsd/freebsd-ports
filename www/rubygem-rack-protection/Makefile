@@ -12,7 +12,7 @@ COMMENT=	Collection of Rack middleware to protect against opportunistic attack
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack16>=0:${PORTSDIR}/www/rubygem-rack16
+RUN_DEPENDS=	rubygem-rack16>=0:www/rubygem-rack16
 
 NO_ARCH=	yes
 USE_RUBY=	yes

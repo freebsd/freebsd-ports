@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}plugin-r${REL}
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Plugin that adds default CC value for tickets
 
-RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	trac>=0.11:www/trac
 
 USES=		python:2 zip
 

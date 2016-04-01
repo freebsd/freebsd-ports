@@ -13,7 +13,7 @@ DIST_SUBDIR=	trac
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Account Manager Plugin for trac
 
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	tracd:www/trac
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 REV=			12583

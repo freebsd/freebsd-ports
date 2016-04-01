@@ -14,9 +14,9 @@ COMMENT=	Cookie storage and management for iCab
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTTP-Cookies>=0:${PORTSDIR}/www/p5-HTTP-Cookies
+BUILD_DEPENDS=	p5-HTTP-Cookies>=0:www/p5-HTTP-Cookies
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff
+TEST_DEPENDS=	p5-Text-Diff>=0:textproc/p5-Text-Diff
 
 USES=		perl5
 USE_PERL5=	configure

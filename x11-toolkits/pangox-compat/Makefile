@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Deprecated pangoX support
 
-BUILD_DEPENDS=	pango>=1.34.0:${PORTSDIR}/x11-toolkits/pango
+BUILD_DEPENDS=	pango>=1.34.0:x11-toolkits/pango
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_XORG=	x11 ice

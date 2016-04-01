@@ -12,11 +12,11 @@ COMMENT=	Circular application launcher
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-RUN_DEPENDS=	gnome-settings-daemon>=2.32.1_4:${PORTSDIR}/sysutils/gnome-settings-daemon
-LIB_DEPENDS=	libbamf3.so:${PORTSDIR}/sysutils/bamf \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee \
-		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
+BUILD_DEPENDS=	valac:lang/vala
+RUN_DEPENDS=	gnome-settings-daemon>=2.32.1_4:sysutils/gnome-settings-daemon
+LIB_DEPENDS=	libbamf3.so:sysutils/bamf \
+		libgee-0.8.so:devel/libgee \
+		libunique-1.0.so:x11-toolkits/unique
 
 DOCS_CMAKE_ON=	-DINSTALL_DOCS:BOOL=ON
 

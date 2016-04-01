@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	20
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
 
-RUN_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
+RUN_DEPENDS=	p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -13,7 +13,7 @@ COMMENT=	Themes for Openbox
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox
+RUN_DEPENDS=	openbox:x11-wm/openbox
 
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -12,9 +12,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for serialize Path::Class objects as file:// URI
 
 RUN_DEPENDS=	\
-	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
-	p5-URI>0:${PORTSDIR}/net/p5-URI \
-	p5-Exporter-Lite>0:${PORTSDIR}/devel/p5-Exporter-Lite
+	p5-Path-Class>0:devel/p5-Path-Class \
+	p5-URI>0:net/p5-URI \
+	p5-Exporter-Lite>0:devel/p5-Exporter-Lite
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

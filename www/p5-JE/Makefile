@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pure-Perl ECMAScript (JavaScript) Engine
 
-RUN_DEPENDS=	p5-TimeDate>0:${PORTSDIR}/devel/p5-TimeDate \
-		p5-Tie-RefHash-Weak>0:${PORTSDIR}/devel/p5-Tie-RefHash-Weak
+RUN_DEPENDS=	p5-TimeDate>0:devel/p5-TimeDate \
+		p5-Tie-RefHash-Weak>0:devel/p5-Tie-RefHash-Weak
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

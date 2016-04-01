@@ -11,7 +11,7 @@ COMMENT=	Basecamp Theme for Redmine
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	redmine>=0.9:${PORTSDIR}/www/redmine
+RUN_DEPENDS=	redmine>=0.9:www/redmine
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	theill

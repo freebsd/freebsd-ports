@@ -11,7 +11,7 @@ COMMENT=	Simple widget toolkit using EFL
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl
+LIB_DEPENDS=	libefl.so:devel/efl
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes

@@ -13,10 +13,10 @@ DISTNAME=	${PORTNAME:S/10$//}-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst model for Search::Xapian
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.30:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
-		p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
-		p5-Search-Xapian10>=0.9.2.4:${PORTSDIR}/databases/p5-Search-Xapian10
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.30:www/p5-Catalyst-Runtime \
+		p5-Catalyst-Devel>=1.00:www/p5-Catalyst-Devel \
+		p5-Data-Page>=0:databases/p5-Data-Page \
+		p5-Search-Xapian10>=0.9.2.4:databases/p5-Search-Xapian10
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix

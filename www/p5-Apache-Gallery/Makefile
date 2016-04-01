@@ -15,13 +15,13 @@ COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
-		p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info \
-		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
-		p5-Image-Imlib2>=0:${PORTSDIR}/graphics/p5-Image-Imlib2 \
-		p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
-		p5-CGI>=0:${PORTSDIR}/www/p5-CGI
+BUILD_DEPENDS=	p5-URI>=0:net/p5-URI \
+		p5-Text-Template>=0:textproc/p5-Text-Template \
+		p5-Image-Info>=0:graphics/p5-Image-Info \
+		p5-Image-Size>=0:graphics/p5-Image-Size \
+		p5-Image-Imlib2>=0:graphics/p5-Image-Imlib2 \
+		p5-libapreq2>=0:www/p5-libapreq2 \
+		p5-CGI>=0:www/p5-CGI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

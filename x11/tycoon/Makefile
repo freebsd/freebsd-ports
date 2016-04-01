@@ -10,7 +10,7 @@ MASTER_SITES=	SUNSITE/X11/desktop
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nifty set of desktop apps, including floating buttons
 
-LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 
 USES=		imake
 USE_XORG=	xaw

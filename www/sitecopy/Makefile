@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.manyfish.co.uk/${PORTNAME}/ \
 MAINTAINER=	sitecopy@oldach.net
 COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up w/ local copy
 
-LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon
+LIB_DEPENDS=	libneon.so:www/neon
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -34,8 +34,8 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 502000
-BUILD_DEPENDS+=	p5-Module-Pluggable>=5.1:${PORTSDIR}/devel/p5-Module-Pluggable
-RUN_DEPENDS+=	p5-Module-Pluggable>=5.1:${PORTSDIR}/devel/p5-Module-Pluggable
+BUILD_DEPENDS+=	p5-Module-Pluggable>=5.1:devel/p5-Module-Pluggable
+RUN_DEPENDS+=	p5-Module-Pluggable>=5.1:devel/p5-Module-Pluggable
 .endif
 
 .include <bsd.port.post.mk>

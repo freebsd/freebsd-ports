@@ -13,12 +13,12 @@ COMMENT=	Combine WWW::Mechanize and HTML::TreeBuilder
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-MooseX-Role-Parameterized>=0:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
-		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
-		p5-Moose>=2.1200:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-MooseX-Role-Parameterized>=0:devel/p5-MooseX-Role-Parameterized \
+		p5-HTML-Tree>=0:www/p5-HTML-Tree \
+		p5-Moose>=2.1200:devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Params-Util>0:${PORTSDIR}/devel/p5-Params-Util \
-		p5-Test-WWW-Mechanize>0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
+TEST_DEPENDS=	p5-Params-Util>0:devel/p5-Params-Util \
+		p5-Test-WWW-Mechanize>0:devel/p5-Test-WWW-Mechanize
 
 NO_ARCH=	yes
 USES=		perl5

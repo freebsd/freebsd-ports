@@ -11,9 +11,9 @@ DISTNAME=	VirtualGL-${PORTVERSION}
 MAINTAINER=	davidjx8p@gmail.com
 COMMENT=	Redirects commands from an OpenGL app to another X server
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libturbojpeg.so:${PORTSDIR}/graphics/libjpeg-turbo \
-		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libturbojpeg.so:graphics/libjpeg-turbo \
+		libxcb-keysyms.so:x11/xcb-util-keysyms
 
 ONLY_FOR_ARCHS=	amd64 i386
 

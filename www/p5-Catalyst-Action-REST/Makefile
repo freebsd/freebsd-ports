@@ -13,17 +13,17 @@ COMMENT=	Automated REST Method Dispatching for Catalyst
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80030:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Class-Inspector>=1.13:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-MRO-Compat>=0.10:${PORTSDIR}/devel/p5-MRO-Compat \
-		p5-Moose>=1.03:${PORTSDIR}/devel/p5-Moose \
-		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
-		p5-JSON-MaybeXS>=0:${PORTSDIR}/converters/p5-JSON-MaybeXS
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80030:www/p5-Catalyst-Runtime \
+		p5-Class-Inspector>=1.13:devel/p5-Class-Inspector \
+		p5-MRO-Compat>=0.10:devel/p5-MRO-Compat \
+		p5-Moose>=1.03:devel/p5-Moose \
+		p5-Params-Validate>=0.76:devel/p5-Params-Validate \
+		p5-URI-Find>=0:textproc/p5-URI-Find \
+		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
+		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-libwww>=5:www/p5-libwww \
+		p5-Test-Requires>=0:devel/p5-Test-Requires
 
 NO_ARCH=	yes
 CONFIGURE_ARGS=	--default
@@ -33,8 +33,8 @@ USE_PERL5=	configure
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 502000
-BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
-RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+BUILD_DEPENDS+=	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
+RUN_DEPENDS+=	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
 .endif
 
 .include <bsd.port.post.mk>

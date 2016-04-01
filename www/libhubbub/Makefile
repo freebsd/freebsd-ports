@@ -12,8 +12,8 @@ COMMENT=	HTML5 parser library
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	netsurf-buildsystem>=1.5:${PORTSDIR}/devel/netsurf-buildsystem
-LIB_DEPENDS=	libparserutils.so:${PORTSDIR}/devel/libparserutils
+BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem
+LIB_DEPENDS=	libparserutils.so:devel/libparserutils
 
 USES=	gmake iconv:wchar_t localbase pkgconfig
 USE_LDCONFIG=	yes

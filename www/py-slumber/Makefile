@@ -12,14 +12,14 @@ COMMENT=	Library that makes consuming a REST API easier and more convenient
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>0:${PORTSDIR}/devel/py-unittest2 \
-		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2 \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
 OPTIONS_DEFINE=	YAML
 
 YAML_DESC=		YAML serializer support
-YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
+YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml
 
 USES=		python
 USE_GITHUB=	yes

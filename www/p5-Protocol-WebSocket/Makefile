@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sec@42.org
 COMMENT=	Client/server WebSocket message and frame parser/constructor
 
-BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
-RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1
+RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 
 USES=		perl5
 USE_PERL5=	configure

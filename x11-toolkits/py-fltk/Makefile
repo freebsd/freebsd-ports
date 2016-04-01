@@ -14,7 +14,7 @@ COMMENT=	Python interface to FLTK window toolkit
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 CFLAGS+=	-DFL_LIBRARY
 MAKE_ENV=	FLTK_HOME=${LOCALBASE}/bin

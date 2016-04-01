@@ -12,11 +12,11 @@ COMMENT=	Agile plugin for Redmine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-holidays>=1.0.3:${PORTSDIR}/devel/rubygem-holidays \
-		rubygem-icalendar>=0.4.2:${PORTSDIR}/devel/rubygem-icalendar \
-		rubygem-nokogiri>=0:${PORTSDIR}/textproc/rubygem-nokogiri \
-		rubygem-open-uri-cached>=0:${PORTSDIR}/net/rubygem-open-uri-cached \
-		rubygem-prawn>=0:${PORTSDIR}/print/rubygem-prawn
+RUN_DEPENDS=	rubygem-holidays>=1.0.3:devel/rubygem-holidays \
+		rubygem-icalendar>=0.4.2:devel/rubygem-icalendar \
+		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
+		rubygem-open-uri-cached>=0:net/rubygem-open-uri-cached \
+		rubygem-prawn>=0:print/rubygem-prawn
 
 NO_ARCH=	yes
 USES=		shebangfix

@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk based replacement for xfontsel
 
 USES+=		tk:run
-RUN_DEPENDS+=	xlsfonts:${PORTSDIR}/x11-fonts/xlsfonts
+RUN_DEPENDS+=	xlsfonts:x11-fonts/xlsfonts
 NO_BUILD=	yes
 
 post-patch:

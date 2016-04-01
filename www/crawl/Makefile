@@ -12,7 +12,7 @@ COMMENT=	Small, efficient web crawler with advanced features
 
 LICENSE=	BSD4CLAUSE
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 USES=		pkgconfig
 

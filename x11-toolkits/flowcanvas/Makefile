@@ -13,10 +13,10 @@ COMMENT=	Interactive Gtkmm/Gnomecanvasmm widget
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
-		libgvc.so:${PORTSDIR}/graphics/graphviz \
-		libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26 \
-		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
+		libgvc.so:graphics/graphviz \
+		libgnomecanvasmm-2.6.so:graphics/libgnomecanvasmm26 \
+		libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
 USES=		tar:bzip2 pkgconfig python:build
 USE_LDCONFIG=	yes

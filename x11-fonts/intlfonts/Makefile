@@ -10,10 +10,10 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free X11 fonts for all characters that Emacs can handle
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-RUN_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
+		mkfontdir:x11-fonts/mkfontdir \
+		mkfontscale:x11-fonts/mkfontscale
+RUN_DEPENDS=	type1inst:x11-fonts/p5-type1inst
 
 OPTIONS_DEFINE=	DOCS
 

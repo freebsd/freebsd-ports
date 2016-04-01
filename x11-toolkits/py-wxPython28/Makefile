@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	28
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings for the wxWidgets/GTK GUI toolkit
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>=0:graphics/py-opengl
 
 WRKSRC_SUBDIR=	wxPython
 
@@ -75,8 +75,8 @@ PYDISTUTILS_BUILDARGS+=	\
 			INSTALL_MULTIVERSION=1
 .else
 ## These are shared
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}wxPython28-common>0:${PORTSDIR}/x11-toolkits/py-wxPython28-common \
-		${PYTHON_SITELIBDIR}/wxversion.py:${PORTSDIR}/x11-toolkits/py-wxPython-common
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}wxPython28-common>0:x11-toolkits/py-wxPython28-common \
+		${PYTHON_SITELIBDIR}/wxversion.py:x11-toolkits/py-wxPython-common
 
 PYDISTUTILS_BUILDARGS+=	\
 			NO_HEADERS=1 \

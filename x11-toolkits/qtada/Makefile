@@ -13,8 +13,8 @@ COMMENT=	Ada2005 language bindings to Qt4 framework
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
-		asis>=2011:${PORTSDIR}/lang/asis
+BUILD_DEPENDS=	gprbuild>=20120510:devel/gprbuild \
+		asis>=2011:lang/asis
 
 USES=		ada gmake pkgconfig
 GNU_CONFIGURE=	yes

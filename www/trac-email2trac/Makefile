@@ -13,7 +13,7 @@ COMMENT=	Convert email to trac tickets
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	tracd:www/trac
 
 CONFLICTS_INSTALL?=	trac-email2trac-postfix-[0-9]*
 

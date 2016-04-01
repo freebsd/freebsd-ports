@@ -13,9 +13,9 @@ COMMENT=	Elegant, simple, and clean dock
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libbamf3.so:${PORTSDIR}/sysutils/bamf \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee
+BUILD_DEPENDS=	vapigen:lang/vala
+LIB_DEPENDS=	libbamf3.so:sysutils/bamf \
+		libgee-0.8.so:devel/libgee
 
 USES=		gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
@@ -42,7 +42,7 @@ NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_ENABLE=	nls
 
-DBUSMENU_LIB_DEPENDS=		libdbusmenu-gtk3.so:${PORTSDIR}/devel/libdbusmenu
+DBUSMENU_LIB_DEPENDS=		libdbusmenu-gtk3.so:devel/libdbusmenu
 DBUSMENU_CONFIGURE_ENABLE=	dbusmenu
 
 .include <bsd.port.mk>

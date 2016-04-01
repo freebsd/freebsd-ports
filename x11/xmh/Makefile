@@ -7,7 +7,7 @@ CATEGORIES=	x11 mail
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Send and read mail with an X interface to MH
 
-RUN_DEPENDS+=	repl:${PORTSDIR}/mail/nmh
+RUN_DEPENDS+=	repl:mail/nmh
 
 XORG_CAT=	app
 USE_XORG=	xaw xmu xt xbitmaps

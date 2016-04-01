@@ -28,19 +28,19 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	pkg-message
 
-DCRAW_RUN_DEPENDS=	dcraw:${PORTSDIR}/graphics/dcraw
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-GD_RUN_DEPENDS=		pngtogd:${PORTSDIR}/graphics/gd
+DCRAW_RUN_DEPENDS=	dcraw:graphics/dcraw
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+GD_RUN_DEPENDS=		pngtogd:graphics/gd
 GD_USE=			PHP=gd
-GRAPHMAGICK_RUN_DEPENDS=gm:${PORTSDIR}/graphics/GraphicsMagick
-IMAGEMAGICK_RUN_DEPENDS=convert:${PORTSDIR}/graphics/ImageMagick
-JHEAD_RUN_DEPENDS=	jhead:${PORTSDIR}/graphics/jhead
+GRAPHMAGICK_RUN_DEPENDS=gm:graphics/GraphicsMagick
+IMAGEMAGICK_RUN_DEPENDS=convert:graphics/ImageMagick
+JHEAD_RUN_DEPENDS=	jhead:graphics/jhead
 MYSQL_USE=		PHP=mysqli
-NETPBM_RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
+NETPBM_RUN_DEPENDS=	giftopnm:graphics/netpbm
 NLS_USE=		PHP=gettext
 NLS_USES=		gettext
 PGSQL_USE=		PHP=pgsql
-UNZIP_RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+UNZIP_RUN_DEPENDS=	unzip:archivers/unzip
 
 do-install:
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/

@@ -44,7 +44,7 @@ USE_PHP+=	ldap
 .endif
 
 .if ${PORT_OPTIONS:MMIMETEX}
-RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
+RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:www/mimetex
 .endif
 
 NO_BUILD=	yes

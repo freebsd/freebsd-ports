@@ -13,7 +13,7 @@ COMMENT=	Xfce's window manager
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
 CONFIGURE_ARGS=	--enable-xsync \
 		--enable-render \
@@ -33,11 +33,11 @@ OPTIONS_DEFINE=		DRM NLS STARTUP
 OPTIONS_DEFAULT=	NLS STARTUP
 DRM_DESC=	Direct Rendering Module service
 STARTUP_DESC=	Startup notification
-DRM_LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
+DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm
 DRM_CONFIGURE_ENABLE=	libdrm
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 STARTUP_CONFIGURE_ENABLE=	startup-notification
 OPTIONS_SUB=	yes
 

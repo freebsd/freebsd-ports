@@ -12,7 +12,7 @@ COMMENT=	Lightweight interface for calling the PagerDuty Integration API
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-json>=1.7.7:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	rubygem-json>=1.7.7:devel/rubygem-json
 
 NO_ARCH=	yes
 USE_RUBY=	yes

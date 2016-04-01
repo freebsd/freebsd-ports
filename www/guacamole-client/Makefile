@@ -17,7 +17,7 @@ COMMENT=	HTML5 Clientless Remote Desktop
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:${PORTSDIR}/devel/maven33
+BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	glyptodon
@@ -31,10 +31,10 @@ OPTIONS_DEFINE=		MK_LINK SERVER TOMCAT
 OPTIONS_DEFAULT=	MK_LINK SERVER TOMCAT
 OPTIONS_SUB=		yes
 MK_LINK_DESC=		Make sybolic links
-TOMCAT_RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-8.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat8
+TOMCAT_RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-8.0/bin/bootstrap.jar:www/tomcat8
 TOMCAT_DESC=		Use Tomcat as your servlet
 
-SERVER_RUN_DEPENDS=	guacd:${PORTSDIR}/net/guacamole-server
+SERVER_RUN_DEPENDS=	guacd:net/guacamole-server
 SERVER_DESC=		Include Guacamole Server
 
 GUACAMOLE_CONF=	${PREFIX}/etc/guacamole

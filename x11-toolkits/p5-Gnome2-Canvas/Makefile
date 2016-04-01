@@ -14,13 +14,13 @@ COMMENT=	Allows a perl developer to use the GnomeCanvas widget with Gtk2-Perl
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
-		p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo
-RUN_DEPENDS=	p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
+BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig \
+		p5-Glib2>=0:devel/p5-Glib2 \
+		p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		p5-Cairo>=0:graphics/p5-Cairo
+RUN_DEPENDS=	p5-Glib2>=0:devel/p5-Glib2 \
+		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
 USE_GNOME=	libgnomecanvas
 USES=		pkgconfig perl5

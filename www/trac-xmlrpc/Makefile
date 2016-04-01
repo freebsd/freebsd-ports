@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 
 SVN_REV=	13203
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	tracd:www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/trunk
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}

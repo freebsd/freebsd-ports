@@ -10,8 +10,8 @@ DISTNAME=	Feedjack-${PORTVERSION}
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Feed aggregator written in Python using the Django framework
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
-		django-admin.py:${PORTSDIR}/www/py-django18
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:textproc/py-feedparser \
+		django-admin.py:www/py-django18
 
 DIST_SUBDIR=	python
 USES=		python

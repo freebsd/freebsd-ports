@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 window manager selector
 
-LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -26,7 +26,7 @@ OPTIONS_DEFAULT=ADDONS
 ADDONS_DESC=	Install the helper scripts and manpages
 OPTIONS_SUB=	yes
 
-ADDONS_RUNDEPENDS=	wmanager-loop:${PORTSDIR}/x11-wm/wmanager-addons
+ADDONS_RUNDEPENDS=	wmanager-loop:x11-wm/wmanager-addons
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmanager ${STAGEDIR}${PREFIX}/bin

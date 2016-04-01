@@ -11,12 +11,12 @@ COMMENT=	GNUstep GUI backend
 LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3
 
-LIB_DEPENDS+=	libgif.so:${PORTSDIR}/graphics/giflib \
-		libtiff.so:${PORTSDIR}/graphics/tiff \
-		libXft.so:${PORTSDIR}/x11-fonts/libXft \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libcairo.so:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	libgif.so:graphics/giflib \
+		libtiff.so:graphics/tiff \
+		libXft.so:x11-fonts/libXft \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libcairo.so:graphics/cairo
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tiff-library=${LOCALBASE}/lib \

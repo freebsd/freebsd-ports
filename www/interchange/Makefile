@@ -12,11 +12,11 @@ COMMENT=	RedHat's database-enabled e-commerce server
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Safe-Hole>=0.10:${PORTSDIR}/security/p5-Safe-Hole \
-		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=5.810:${PORTSDIR}/www/p5-libwww \
-		p5-Set-Crontab>=1.00:${PORTSDIR}/devel/p5-Set-Crontab \
-		p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
+RUN_DEPENDS=	p5-Safe-Hole>=0.10:security/p5-Safe-Hole \
+		p5-URI>=1.37:net/p5-URI \
+		p5-libwww>=5.810:www/p5-libwww \
+		p5-Set-Crontab>=1.00:devel/p5-Set-Crontab \
+		p5-Digest-SHA1>=2.11:security/p5-Digest-SHA1
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5 shebangfix tar:bzip2
@@ -31,8 +31,8 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=		MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
-MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
-PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 
 GROUPS=		interch
 USERS=		interch

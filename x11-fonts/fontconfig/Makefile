@@ -15,8 +15,8 @@ USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libexpat.so:textproc/expat2
 
 USES+=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

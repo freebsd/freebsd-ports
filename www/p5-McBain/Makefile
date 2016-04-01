@@ -14,9 +14,9 @@ COMMENT=	Lightweight auto-validating, self-documenting web framework
 LICENSE=	GPLv1 ARTPERL10
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Brannigan>=0:${PORTSDIR}/devel/p5-Brannigan \
-		p5-Getopt-Compact>=0:${PORTSDIR}/devel/p5-Getopt-Compact \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+RUN_DEPENDS=	p5-Brannigan>=0:devel/p5-Brannigan \
+		p5-Getopt-Compact>=0:devel/p5-Getopt-Compact \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
 USES=		perl5
 USE_PERL5=	configure

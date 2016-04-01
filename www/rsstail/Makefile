@@ -11,7 +11,7 @@ COMMENT=	Simple RSS monitor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmrss.so:${PORTSDIR}/textproc/libmrss
+LIB_DEPENDS=	libmrss.so:textproc/libmrss
 
 MAKE_ENV=	bindir="${PREFIX}/bin" mandir="${MANPREFIX}/man/man1"
 

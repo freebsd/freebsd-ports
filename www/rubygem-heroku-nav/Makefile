@@ -16,6 +16,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST= yes
 
-RUN_DEPENDS+=	rubygem-sinatra>=0:${PORTSDIR}/www/rubygem-sinatra
+RUN_DEPENDS+=	rubygem-sinatra>=0:www/rubygem-sinatra
 
 .include <bsd.port.mk>

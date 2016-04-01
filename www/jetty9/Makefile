@@ -14,7 +14,7 @@ LICENSE=	APACHE20 EPL
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/license-eplv10-aslv20.html
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 CONFLICTS=	jetty-8.*
 

@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.jmknoble.net/fonts/
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Jim Knoble's font package for X
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
+		mkfontdir:x11-fonts/mkfontdir
 
 USES=		fonts imake
 

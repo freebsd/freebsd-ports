@@ -14,12 +14,12 @@ COMMENT=	Yet another mixi scraper
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
-		p5-String-CamelCase>=0:${PORTSDIR}/textproc/p5-String-CamelCase \
-		p5-Test-UseAllModules>=0:${PORTSDIR}/devel/p5-Test-UseAllModules \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-Web-Scraper>=0.17:${PORTSDIR}/www/p5-Web-Scraper \
-		p5-WWW-Mechanize>=1.50:${PORTSDIR}/www/p5-WWW-Mechanize
+RUN_DEPENDS=	p5-Module-Find>=0:devel/p5-Module-Find \
+		p5-String-CamelCase>=0:textproc/p5-String-CamelCase \
+		p5-Test-UseAllModules>=0:devel/p5-Test-UseAllModules \
+		p5-URI>=0:net/p5-URI \
+		p5-Web-Scraper>=0.17:www/p5-Web-Scraper \
+		p5-WWW-Mechanize>=1.50:www/p5-WWW-Mechanize
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5 dos2unix

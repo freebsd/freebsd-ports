@@ -11,7 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for Sinatra-ish routers on Router::Simple
 
 RUN_DEPENDS=	\
-	p5-Router-Simple>=0.09:${PORTSDIR}/www/p5-Router-Simple
+	p5-Router-Simple>=0.09:www/p5-Router-Simple
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5

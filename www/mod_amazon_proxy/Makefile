@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/tota/${PORTNAME}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Amazon Auth Proxy for Product Advertising API
 
-LIB_DEPENDS=	libapreq2.so:${PORTSDIR}/www/libapreq2
+LIB_DEPENDS=	libapreq2.so:www/libapreq2
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

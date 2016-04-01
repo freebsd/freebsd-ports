@@ -15,7 +15,7 @@ COMMENT=	Extended HTTP Support
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		tar:tgz
 USE_PHP=	yes

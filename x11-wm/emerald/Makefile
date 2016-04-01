@@ -9,7 +9,7 @@ MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Emerald Window Decorator
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 INSTALLS_ICONS=	yes

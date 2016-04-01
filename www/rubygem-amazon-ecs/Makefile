@@ -12,8 +12,8 @@ COMMENT=	Generic Amazon E-commerce REST API written in Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-nokogiri>=1.4:${PORTSDIR}/textproc/rubygem-nokogiri \
-		${RUBY_PKGNAMEPREFIX}hmac>=0.3:${PORTSDIR}/security/ruby-hmac
+RUN_DEPENDS=	rubygem-nokogiri>=1.4:textproc/rubygem-nokogiri \
+		${RUBY_PKGNAMEPREFIX}hmac>=0.3:security/ruby-hmac
 
 NO_ARCH=	yes
 USE_RUBY=	yes

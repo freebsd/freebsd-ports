@@ -13,9 +13,9 @@ COMMENT=	Perl module to compile HTML Templates with Inline::C
 
 LICENSE=	ARTPERL10
 
-BUILD_DEPENDS=	p5-HTML-Template>=2.8:${PORTSDIR}/www/p5-HTML-Template \
-		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline \
-		p5-Inline-C>=0:${PORTSDIR}/devel/p5-Inline-C
+BUILD_DEPENDS=	p5-HTML-Template>=2.8:www/p5-HTML-Template \
+		p5-Inline>=0.43:devel/p5-Inline \
+		p5-Inline-C>=0:devel/p5-Inline-C
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -13,7 +13,7 @@ COMMENT=	Moka Plank theme
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	plank:${PORTSDIR}/x11-wm/plank
+RUN_DEPENDS=	plank:x11-wm/plank
 
 USES=	zip
 NO_WRKSUBDIR=	yes
