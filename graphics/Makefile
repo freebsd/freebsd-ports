@@ -978,6 +978,7 @@
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
     SUBDIR += seexpr
+    SUBDIR += sekrit-twc-zimg
     SUBDIR += seom
     SUBDIR += separate
     SUBDIR += seq2gif
