@@ -11,7 +11,7 @@ DISTNAME=	regutil126
 MAINTAINER=	bob@eager.cx
 COMMENT=	Implementation of IBM's RexxUtil function library for Regina
 
-BUILD_DEPENDS=	${LOCALBASE}/include/rexxsaa.h:${PORTSDIR}/lang/rexx-regina
+BUILD_DEPENDS=	${LOCALBASE}/include/rexxsaa.h:lang/rexx-regina
 
 USES=		ncurses zip
 

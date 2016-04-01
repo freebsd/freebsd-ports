@@ -12,7 +12,7 @@ COMMENT=	Electronic Book Viewer
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libeb.so:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	libeb.so:japanese/eb
 
 CONFLICTS=	ja-ebview-[0-9]*
 

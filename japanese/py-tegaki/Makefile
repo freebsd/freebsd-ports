@@ -13,8 +13,8 @@ COMMENT=	Open-source Chinese and Japanese handwriting recognition
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libzinnia.so:${PORTSDIR}/japanese/zinnia
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/zinnia.py:${PORTSDIR}/japanese/py-zinnia
+LIB_DEPENDS=	libzinnia.so:japanese/zinnia
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/zinnia.py:japanese/py-zinnia
 
 USES=		python
 USE_PYTHON=	distutils

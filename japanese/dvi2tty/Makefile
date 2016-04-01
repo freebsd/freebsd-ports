@@ -16,7 +16,7 @@ PATCHFILES=	dvi2tty-ascii-jtex-patch dvi2tty.c-patch
 MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Character-based DVI file previewer
 
-RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
+RUN_DEPENDS=	jless:japanese/less
 
 PLIST_FILES=	bin/jdvi2tty \
 		bin/jdisdvi \

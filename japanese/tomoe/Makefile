@@ -12,7 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Tegaki Online MOji-ninshiki Engine
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pathfix perl5 pkgconfig
@@ -42,18 +42,18 @@ RUBY_DESC=		Enable Ruby module
 RUBY_BROKEN=		Does not build
 RUBY_USE=		RUBY=yes
 RUBY_CONFIGURE_OFF=	--with-ruby=no
-RUBY_BUILD_DEPENDS=	rubygem-glib2>0:${PORTSDIR}/devel/rubygem-glib2
-RUBY_RUN_DEPENDS=	rubygem-glib2>0:${PORTSDIR}/devel/rubygem-glib2
+RUBY_BUILD_DEPENDS=	rubygem-glib2>0:devel/rubygem-glib2
+RUBY_RUN_DEPENDS=	rubygem-glib2>0:devel/rubygem-glib2
 RUBY_CFLAGS=		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
 			-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 UNIHAN_DESC=		Enable Unihan database dictionary module
 UNIHAN_BROKEN=		Does not build
 UNIHAN_MASTER_SITES=	ftp://ftp.unicode.org/Public/UNIDATA/:unihan
 UNIHAN_DISTFILES=	Unihan.zip:unihan
-UNIHAN_EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+UNIHAN_EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 UNIHAN_BUILD_DEPENDS=	\
-	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv \
-	${RUBY_SITELIBDIR}/suikyo/suikyo.rb:${PORTSDIR}/japanese/suikyo
+	${RUBY_SITEARCHLIBDIR}/uconv.so:japanese/ruby-uconv \
+	${RUBY_SITELIBDIR}/suikyo/suikyo.rb:japanese/suikyo
 UNIHAN_USE=		RUBY=yes
 UNIHAN_CONFIGURE_ENABLE=unihan
 

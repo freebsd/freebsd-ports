@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Handwritten Japanese TrueType fonts by Mika-chan
 
-EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS=	lha:archivers/lha
 
 USES=		fonts:fc
 FONTNAME=	TTF

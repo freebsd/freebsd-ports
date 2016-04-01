@@ -11,8 +11,8 @@ DISTNAME=	monafont-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	12,14,16-dot Kanji fonts
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
+		mkfontdir:x11-fonts/mkfontdir
 
 USES=		fonts perl5 tar:bzip2
 FONTNAME=	misc

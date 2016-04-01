@@ -13,7 +13,7 @@ DISTFILES=	td${PORTVERSION:S/.//}s.lzh \
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Tells you what day today is
 
-EXTRACT_DEPENDS=nkf:${PORTSDIR}/japanese/nkf
+EXTRACT_DEPENDS=nkf:japanese/nkf
 
 NO_WRKSUBDIR=	yes
 USES=		lha

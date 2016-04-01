@@ -10,11 +10,11 @@ DISTVERSIONSUFFIX=	-source
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenCL library for Intel GPUs
 
-BUILD_DEPENDS=	clang${LLVMVER}:${PORTSDIR}/lang/clang${LLVMVER} \
-		opencl>=0:${PORTSDIR}/devel/opencl
-LIB_DEPENDS=	libOpenCL.so:${PORTSDIR}/devel/ocl-icd \
-		libdrm.so:${PORTSDIR}/graphics/libdrm
-RUN_DEPENDS=	opencl>=0:${PORTSDIR}/devel/opencl
+BUILD_DEPENDS=	clang${LLVMVER}:lang/clang${LLVMVER} \
+		opencl>=0:devel/opencl
+LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
+		libdrm.so:graphics/libdrm
+RUN_DEPENDS=	opencl>=0:devel/opencl
 
 WRKSRC=		${WRKDIR}/Beignet-${PORTVERSION}-Source
 

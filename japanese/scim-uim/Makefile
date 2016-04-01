@@ -11,8 +11,8 @@ MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION} \
 MAINTAINER=	s_yanagita@ybb.ne.jp
 COMMENT=	SCIM IMEngine module using UIM input method library
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	libuim.so:${PORTSDIR}/textproc/uim
+BUILD_DEPENDS=	scim:textproc/scim
+LIB_DEPENDS=	libuim.so:textproc/uim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake iconv libtool:keepla pkgconfig

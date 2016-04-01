@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	jpbeconne@free.fr
 COMMENT=	Framework for flat/XML data transformations
 
-BUILD_DEPENDS=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS=	${ANT_CMD}:devel/apache-ant
 
 USES=		zip
 USE_JAVA=	yes

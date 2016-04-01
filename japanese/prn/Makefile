@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another converter from text file to postscript (with Japanese support)
 
-RUN_DEPENDS=	kcc:${PORTSDIR}/japanese/kcc
+RUN_DEPENDS=	kcc:japanese/kcc
 
 do-install:
 .for i in cmt prn psconv

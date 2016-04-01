@@ -13,7 +13,7 @@ COMMENT=	Aggressive optimizing Scheme compiler
 
 BROKEN=		unfetchable
 
-LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS=	libgc.so:devel/boehm-gc
 
 USES=	tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64 sparc64

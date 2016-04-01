@@ -16,8 +16,8 @@ COMMENT=	IntelliJ IDEA Community Edition
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	intellij-fsnotifier>0:${PORTSDIR}/java/intellij-fsnotifier \
-		intellij-pty4j>0:${PORTSDIR}/java/intellij-pty4j
+RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
+		intellij-pty4j>0:java/intellij-pty4j
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+

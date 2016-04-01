@@ -10,7 +10,7 @@ COMMENT=	Implementation of the Python language for microcontrollers
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libffi.so:devel/libffi
 
 USES=		gmake pkgconfig python:3,build readline shebangfix
 

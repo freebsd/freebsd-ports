@@ -17,7 +17,7 @@ COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
 LICENSE=	EPL LGPL21
 LICENSE_COMB=	multi
 
-EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+EXTRACT_DEPENDS=	rpm2cpio.pl:archivers/rpm2cpio
 
 RESTRICTED=	Intel forbids any redistribution.
 

@@ -13,8 +13,8 @@ COMMENT=	General dictionary/search engine front-end for X
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
+BUILD_DEPENDS=	gawk:lang/gawk
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/eb.so:japanese/ruby-eb
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-edict="${EDICT_FILE}" \
@@ -34,10 +34,10 @@ OPTIONS_DEFAULT=	UTF8
 
 .if ${PORT_OPTIONS:MUTF8}
 EDICT_FILE=	${LOCALBASE}/share/dict/edict-utf-8/edict
-RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict-utf-8
+RUN_DEPENDS+=	${EDICT_FILE}:japanese/edict-utf-8
 .else
 EDICT_FILE=	${LOCALBASE}/share/dict/edict/edict
-RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict
+RUN_DEPENDS+=	${EDICT_FILE}:japanese/edict
 .endif
 
 post-patch:

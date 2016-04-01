@@ -29,7 +29,7 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 CONFIGURE_ARGS+=--prefix=${PREFIX}		\
 		--sysconfdir=${PREFIX}/etc/	\
 		--with-logdir=${LOGDIR}		\

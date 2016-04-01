@@ -14,12 +14,12 @@ COMMENT?=	Mozc Japanese Input Method, Server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	ninja:${PORTSDIR}/devel/ninja \
-		python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	ninja:devel/ninja \
+		python:lang/python
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
-LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf \
-		libzinnia.so:${PORTSDIR}/japanese/zinnia
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
+		libzinnia.so:japanese/zinnia
+RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		compiler:c++11-lang pkgconfig iconv:wchar_t gmake \
 		tar:bzip2 python:build
@@ -131,7 +131,7 @@ DISTFILES+= \
 	ken_all-20130628.lzh:zipcode \
 	jigyosyo-20130628.lzh:zipcode
 
-EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS+=	lha:archivers/lha
 
 PLIST_FILES+=	bin/mozc \
 		bin/mozc_server \
@@ -170,7 +170,7 @@ do-install-mozc_server:
 GYP_DEFINES+=	use_libibus=0 \
 		enable_gtk_renderer=1
 
-RUN_DEPENDS+=	${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model:${PORTSDIR}/japanese/tegaki-zinnia-japanese
+RUN_DEPENDS+=	${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model:japanese/tegaki-zinnia-japanese
 
 PLIST_FILES+=	libexec/mozc_tool \
 		bin/mozc_tool \
@@ -201,10 +201,10 @@ GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=1 \
 		enable_gtk_renderer=1
 
-LIB_DEPENDS+=	libibus-1.0.so:${PORTSDIR}/textproc/ibus
-RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
-		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
+LIB_DEPENDS+=	libibus-1.0.so:textproc/ibus
+RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
+		mozc_tool:japanese/mozc-tool \
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:devel/py-notify
 
 PLIST_FILES+=	libexec/mozc_renderer \
 		libexec/ibus-engine-mozc \
@@ -257,9 +257,9 @@ GH_PROJECT=	macuim:MU
 GH_TAGNAME=	v0.6.16.2:MU
 EXTRACT_ONLY+=	${DISTFILE_MU}
 
-LIB_DEPENDS+=	libuim.so:${PORTSDIR}/textproc/uim
-RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
-		mozc_tool:${PORTSDIR}/japanese/mozc-tool
+LIB_DEPENDS+=	libuim.so:textproc/uim
+RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
+		mozc_tool:japanese/mozc-tool
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-unix-uim-key_translator.h \
 		${PATCHDIR}/extra-patch-src-unix-uim-mozc.cc \
@@ -325,9 +325,9 @@ GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=0 \
 		enable_gtk_renderer=0
 
-LIB_DEPENDS+=	libfcitx-core.so:${PORTSDIR}/chinese/fcitx
-RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
-		mozc_tool:${PORTSDIR}/japanese/mozc-tool
+LIB_DEPENDS+=	libfcitx-core.so:chinese/fcitx
+RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
+		mozc_tool:japanese/mozc-tool
 
 PLIST_FILES+=	lib/fcitx/fcitx-mozc.so \
 		share/fcitx/addon/fcitx-mozc.conf \
@@ -394,7 +394,7 @@ do-install-fcitx_mozc:
 # mozc_el
 .if ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
 CATEGORIES+=	elisp
-RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server
+RUN_DEPENDS+=	mozc_server:japanese/mozc-server
 
 PLIST_FILES+=	${EMACS_VERSION_SITE_LISPDIR}/mozc/mozc.elc \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc/leim-list.el

@@ -16,7 +16,7 @@ PATCHFILES=	rogue_s.patch04
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanized and message separated version of Rogue-clone: Version II
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS=	nkf:japanese/nkf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	Makefile.nix

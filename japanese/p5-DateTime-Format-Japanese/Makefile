@@ -11,11 +11,11 @@ MASTER_SITE_SUBDIR=	CPAN:DMAKI
 MAINTAINER=	markun@onohara.to
 COMMENT=	Japanese DateTime Formatter
 
-BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Calendar-Japanese>=0.05:${PORTSDIR}/devel/p5-DateTime-Calendar-Japanese \
-		ja-p5-DateTime-Calendar-Japanese-Era>=0.08000:${PORTSDIR}/japanese/p5-DateTime-Calendar-Japanese-Era \
-		p5-DateTime-Format-Builder>=0:${PORTSDIR}/devel/p5-DateTime-Format-Builder \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
+BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+		p5-DateTime-Calendar-Japanese>=0.05:devel/p5-DateTime-Calendar-Japanese \
+		ja-p5-DateTime-Calendar-Japanese-Era>=0.08000:japanese/p5-DateTime-Calendar-Japanese-Era \
+		p5-DateTime-Format-Builder>=0:devel/p5-DateTime-Format-Builder \
+		p5-Params-Validate>=0:devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

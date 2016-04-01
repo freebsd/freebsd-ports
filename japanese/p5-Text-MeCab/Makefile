@@ -10,14 +10,14 @@ MASTER_SITES=		CPAN
 MAINTAINER=		fmysh@iijmio-mail.jp
 COMMENT=		Alternate Interface To libmecab
 
-BUILD_DEPENDS=		p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort \
-			p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
-			p5-Test-Simple>=0.84:${PORTSDIR}/devel/p5-Test-Simple \
-			p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
-RUN_DEPENDS=		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
-			p5-Encode>0:${PORTSDIR}/converters/p5-Encode\
-			p5-XSLoader>0.1:${PORTSDIR}/devel/p5-XSLoader
-LIB_DEPENDS=		libmecab.so:${PORTSDIR}/japanese/mecab
+BUILD_DEPENDS=		p5-Devel-PPPort>=3.19:devel/p5-Devel-PPPort \
+			p5-ExtUtils-ParseXS>=2.21:devel/p5-ExtUtils-ParseXS \
+			p5-Test-Simple>=0.84:devel/p5-Test-Simple \
+			p5-Test-Requires>0:devel/p5-Test-Requires
+RUN_DEPENDS=		p5-Class-Accessor>0:devel/p5-Class-Accessor \
+			p5-Encode>0:converters/p5-Encode\
+			p5-XSLoader>0.1:devel/p5-XSLoader
+LIB_DEPENDS=		libmecab.so:japanese/mecab
 
 MAKE_JOBS_UNSAFE=	yes
 

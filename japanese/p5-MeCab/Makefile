@@ -15,7 +15,7 @@ COMMENT=	MeCab library module for Perl5
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libmecab.so:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS=	libmecab.so:japanese/mecab
 
 USES=		perl5
 USE_PERL5=	configure

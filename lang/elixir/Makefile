@@ -15,8 +15,8 @@ COMMENT=	Functional, meta-programming aware language built on top of Erlang VM
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	erlang>=18:${PORTSDIR}/lang/erlang
-RUN_DEPENDS=	erlang>=18:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erlang>=18:lang/erlang
+RUN_DEPENDS=	erlang>=18:lang/erlang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang

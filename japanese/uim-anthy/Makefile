@@ -15,8 +15,8 @@ COMMENT=	Uim plugin using Anthy input method
 USE_GNOME=	gtk20
 .endif
 
-LIB_DEPENDS=	libanthy.so:${PORTSDIR}/japanese/anthy \
-		libuim.so:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	libanthy.so:japanese/anthy \
+		libuim.so:textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

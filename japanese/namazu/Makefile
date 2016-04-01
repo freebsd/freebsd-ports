@@ -11,10 +11,10 @@ MASTER_SITES=	http://www.namazu.org/stable/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search engine software intended for easy use
 
-BUILD_DEPENDS=	kakasi:${PORTSDIR}/japanese/kakasi \
-		nkf:${PORTSDIR}/japanese/nkf
-RUN_DEPENDS=	kakasi:${PORTSDIR}/japanese/kakasi \
-		nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS=	kakasi:japanese/kakasi \
+		nkf:japanese/nkf
+RUN_DEPENDS=	kakasi:japanese/kakasi \
+		nkf:japanese/nkf
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	../contrib/bnamazu

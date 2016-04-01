@@ -12,10 +12,10 @@ COMMENT=	Small and fast Scheme interpreter
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall \
-		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre \
-		${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
-LIB_DEPENDS=	libgetline.so:${PORTSDIR}/devel/libgetline
+BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:devel/ffcall \
+		${LOCALBASE}/lib/libpcre.a:devel/pcre \
+		${LOCALBASE}/lib/libgmp.a:math/gmp
+LIB_DEPENDS=	libgetline.so:devel/libgetline
 
 USES=		gmake perl5 shebangfix
 USE_PERL5=	build

@@ -30,7 +30,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Xterm variant with Japanese support
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS=	nkf:japanese/nkf
 
 USES=		imake
 VGAFONT_USES=	fonts
@@ -45,11 +45,11 @@ OPTIONS_SINGLE_SCROLLBAR=	DEFAULT XAW3DLIB NEXTAWLIB
 OPTIONS_SUB=	yes
 
 XAW3DLIB_DESC=	with Xaw3d scrollbar
-XAW3DLIB_LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+XAW3DLIB_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 XAW3DLIB_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Xaw3d
 
 NEXTAWLIB_DESC=	with neXtaw scrollbar
-NEXTAWLIB_LIB_DEPENDS=	libneXtaw.so:${PORTSDIR}/x11-toolkits/neXtaw
+NEXTAWLIB_LIB_DEPENDS=	libneXtaw.so:x11-toolkits/neXtaw
 NEXTAWLIB_EXTRA_PATCHES=${PATCHDIR}/extra-patch-neXtaw
 
 TEKTRONIXEMU_DESC=	Tektronix emulation
@@ -57,9 +57,9 @@ TEKTRONIXEMU_EXTRA_PATCHES=${PATCHDIR}/extra-patch-Tektronix
 
 VGAFONT_DESC=	install VGA font
 VGAFONT_BUILD_DEPENDS= \
-    ${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-    ${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
-    ${LOCALBASE}/bin/bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+    ${LOCALBASE}/bin/mkfontdir:x11-fonts/mkfontdir \
+    ${LOCALBASE}/bin/mkfontscale:x11-fonts/mkfontscale \
+    ${LOCALBASE}/bin/bdftopcf:x11-fonts/bdftopcf
 
 NKFCMD=		${LOCALBASE}/bin/nkf
 

@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	XMPP MYSQL DOCS
 XMPP_DESC=	Jabber functions
 MYSQL_DESC=	Mysql functions
 
-RUN_DEPENDS+=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=	${LOCALBASE}/bin/gpg:security/gnupg
 
 .include <bsd.port.options.mk>
 
@@ -33,11 +33,11 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/gozerbot.1.FreeBSD ${STAGEDIR}${MAN1PREFIX}/man/man1/gozerbot.1
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:databases/py-MySQLdb
 .endif
 
 .if ${PORT_OPTIONS:MXMPP}
-RUN_DEPENDS+=${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy
+RUN_DEPENDS+=${PYTHON_SITELIBDIR}/xmpp/__init__.py:net-im/py-xmpppy
 .endif
 
 .include <bsd.port.mk>

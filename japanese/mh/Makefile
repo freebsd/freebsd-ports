@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-${VERSION}-JP-${JP_VERSION}
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Rand MH mail handling system + Japanese patches
 
-BUILD_DEPENDS=	jless:${PORTSDIR}/japanese/less
-RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
+BUILD_DEPENDS=	jless:japanese/less
+RUN_DEPENDS=	jless:japanese/less
 
 VERSION=	6.8.4
 JP_VERSION=	3.05

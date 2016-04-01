@@ -17,8 +17,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_PSFL=	${WRKDIR}/LICENSE.txt
 LICENSE_FILE_APACHE20=	${WRKDIR}/LICENSE_Apache.txt
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 # Extract only license files
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions \

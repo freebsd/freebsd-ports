@@ -25,7 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USERS=		ircservices
 GROUPS=		ircservices
 
-LIB_DEPENDS+=	libmowgli-2.so:${PORTSDIR}/devel/libmowgli2
+LIB_DEPENDS+=	libmowgli-2.so:devel/libmowgli2
 
 USE_RC_SUBR=	atheme-services
 
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--disable-contrib
 .endif
 
 .if ${PORT_OPTIONS:MCRACKLIB}
-LIB_DEPENDS+=	libcrack.so:${PORTSDIR}/security/cracklib
+LIB_DEPENDS+=	libcrack.so:security/cracklib
 CONFIGURE_ARGS+=	--with-cracklib
 .else
 CONFIGURE_ARGS+=	--without-cracklib
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 CONFIGURE_ARGS+=	--with-pcre
 .else
 CONFIGURE_ARGS+=	--without-pcre

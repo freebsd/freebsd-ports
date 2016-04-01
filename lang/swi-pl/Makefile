@@ -10,8 +10,8 @@ DISTNAME=	swipl-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Edinburgh-style Prolog compiler
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libodbc.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libodbc.so:databases/unixODBC
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

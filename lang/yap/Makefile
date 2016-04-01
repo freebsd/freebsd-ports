@@ -16,8 +16,8 @@ CONFLICTS=	yap-6.3.*
 OPTIONS_DEFINE=	DOCS
 
 DOCS_USE=		TEX=formats:build,dvipsk:build
-DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html \
-			${LOCALBASE}/bin/texi2pdf:${PORTSDIR}/print/texinfo
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/texi2html:textproc/texi2html \
+			${LOCALBASE}/bin/texi2pdf:print/texinfo
 DOCS_INSTALL_TARGET=	install install_docs
 
 USE_LDCONFIG=	yes

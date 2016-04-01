@@ -14,7 +14,7 @@ COMMENT=	Provide the stuff missing in List::Util
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Exporter-Tiny>=0.038:${PORTSDIR}/devel/p5-Exporter-Tiny
+BUILD_DEPENDS=	p5-Exporter-Tiny>=0.038:devel/p5-Exporter-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

@@ -105,7 +105,7 @@ PLIST_SUB+=	SQLITE="@comment "
 
 .if ${PORT_OPTIONS:MGNUTLS}
 USES+=	pkgconfig
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
 CONFIGURE_ARGS+=	--enable-gnutls
 EXTRAS:=${EXTRAS},m_ssl_gnutls.cpp
 PLIST_SUB+=	GNUTLS=""
@@ -123,7 +123,7 @@ PLIST_SUB+=	OPENSSL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 EXTRAS:=${EXTRAS},m_regex_pcre.cpp
 PLIST_SUB+=	PCRE=""
 .else

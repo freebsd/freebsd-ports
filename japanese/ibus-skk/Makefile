@@ -10,9 +10,9 @@ MASTER_SITES=	GHC
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese SKK input engine for IBus
 
-RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:${PORTSDIR}/japanese/skk-jisyo
-LIB_DEPENDS=	libskk.so:${PORTSDIR}/japanese/libskk \
-		libibus-1.0.so:${PORTSDIR}/textproc/ibus
+RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:japanese/skk-jisyo
+LIB_DEPENDS=	libskk.so:japanese/libskk \
+		libibus-1.0.so:textproc/ibus
 
 USES=		gettext gmake pkgconfig python
 USE_GNOME=	intltool

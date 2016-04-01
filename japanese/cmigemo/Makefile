@@ -17,7 +17,7 @@ COMMENT=	C implementation of Migemo Japanese incremental search tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE_MIT.txt
 
-RUN_DEPENDS=	${DATADIR}/cp932/migemo-dict:${PORTSDIR}/japanese/cmigemo-dict
+RUN_DEPENDS=	${DATADIR}/cp932/migemo-dict:japanese/cmigemo-dict
 
 USE_LDCONFIG=	yes
 
@@ -31,7 +31,7 @@ PORTDOCS=	README_j.txt
 
 OPTIONS_DEFINE+=DOCS
 USES+=		gmake
-BUILD_DEPENDS=	${LOCALBASE}/bin/nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS=	${LOCALBASE}/bin/nkf:japanese/nkf
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX}

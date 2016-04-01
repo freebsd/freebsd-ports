@@ -13,7 +13,7 @@ COMMENT=	IRC proxy/bouncer daemon
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcares.so:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS=	libcares.so:dns/c-ares
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes

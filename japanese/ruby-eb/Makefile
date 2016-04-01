@@ -12,7 +12,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bind of EB library
 
-LIB_DEPENDS=	libeb.so:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	libeb.so:japanese/eb
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

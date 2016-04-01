@@ -14,7 +14,7 @@ COMMENT=	Enhanced support for editing and running Scheme code
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	wget:ftp/wget
 
 USE_EMACS=	yes
 

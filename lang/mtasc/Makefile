@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/chinsan
 MAINTAINER=	saper@saper.info
 COMMENT=	Motion-Twin ActionScript 2 Compiler
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/extlib/IO.cmi:${PORTSDIR}/devel/ocaml-extlib
+BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/extlib/IO.cmi:devel/ocaml-extlib
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes

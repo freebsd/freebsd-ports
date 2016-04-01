@@ -14,7 +14,7 @@ COMMENT=	Enable all of the features of Modern Perl with one import
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-autodie>=2.22:${PORTSDIR}/devel/p5-autodie
+BUILD_DEPENDS=	p5-autodie>=2.22:devel/p5-autodie
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

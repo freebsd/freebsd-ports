@@ -25,9 +25,9 @@ PLIST_FILES=	bin/2to3 \
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_MAJOR_VER} == 2
-RUN_DEPENDS+=	python2:${PORTSDIR}/lang/python2
+RUN_DEPENDS+=	python2:lang/python2
 .elif ${PYTHON_MAJOR_VER} == 3
-RUN_DEPENDS+=	python3:${PORTSDIR}/lang/python3
+RUN_DEPENDS+=	python3:lang/python3
 .endif
 
 do-install:

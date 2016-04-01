@@ -14,7 +14,7 @@ DISTNAME=	mircryption_xchatsrc
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Free encryption add-on for the popular XChat irc client
 
-RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
+RUN_DEPENDS=	xchat:irc/xchat
 
 USES=		zip dos2unix shebangfix
 SHEBANG_FILES=	extras/mcps_masterkey_on_start.pl

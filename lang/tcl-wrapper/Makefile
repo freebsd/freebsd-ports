@@ -15,7 +15,7 @@ COMMENT=	Shell wrapper for ${TX_SHELL} (${TX_PORT_U})
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	shc:${PORTSDIR}/misc/shc
+BUILD_DEPENDS=	shc:misc/shc
 
 SUB_FILES=	wrapper conf.sample pkg-message
 

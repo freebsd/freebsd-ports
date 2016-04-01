@@ -21,9 +21,9 @@ EXTRACT_ONLY=	${SRC_DIST}
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Optimizing Standard ML compiler
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libgmp.so:math/gmp
+RUN_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
 LICENSE_FILE=	doc/license/MLton-LICENSE
 
@@ -38,8 +38,8 @@ USE_GCC=	any
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed \
-		htmldoc:${PORTSDIR}/textproc/htmldoc
+BUILD_DEPENDS+=	gsed:textproc/gsed \
+		htmldoc:textproc/htmldoc
 USE_TEX=	latex:build
 .else
 INSTALL_TARGET=	install-no-docs remove-docs
@@ -53,7 +53,7 @@ BROKEN=	${DISTNAME}-${PORTVERSION} does not bootstrap properly with smlnj
 .endif
 
 .if ${PORT_OPTIONS:MSMLNJ}
-BUILD_DEPENDS+=	smlnj>=110.65:${PORTSDIR}/lang/smlnj
+BUILD_DEPENDS+=	smlnj>=110.65:lang/smlnj
 BOOT_DIST=
 MAKE_ENV+=	SMLNJ_DEVEL=yes
 .if ! ${PORT_OPTIONS:MDOCS}
@@ -66,11 +66,11 @@ BOOT_DIST=	${PORTNAME}-${PORTVERSION}-1.${MACHINE_ARCH}-freebsd${OSRELMAJ}.${BOO
 .endif
 
 .if ${PORT_OPTIONS:MMINGW32}
-BUILD_DEPENDS+=	wine:${PORTSDIR}/emulators/wine \
-		mingw32-gcc:${PORTSDIR}/devel/mingw32-gcc \
-		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/math/mingw32-libgmp
-RUN_DEPENDS+=	mingw32-gcc:${PORTSDIR}/devel/mingw32-gcc \
-		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/math/mingw32-libgmp
+BUILD_DEPENDS+=	wine:emulators/wine \
+		mingw32-gcc:devel/mingw32-gcc \
+		${LOCALBASE}/mingw32/lib/libgmp.a:math/mingw32-libgmp
+RUN_DEPENDS+=	mingw32-gcc:devel/mingw32-gcc \
+		${LOCALBASE}/mingw32/lib/libgmp.a:math/mingw32-libgmp
 
 PLIST_SUB+=	MINGW32CROSS=""
 .else

@@ -12,8 +12,8 @@ DISTNAME=	PyProlog-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python extension embedding SWI-Prolog
 
-BUILD_DEPENDS=	swipl:${PORTSDIR}/lang/swi-pl
-RUN_DEPENDS=	swipl:${PORTSDIR}/lang/swi-pl
+BUILD_DEPENDS=	swipl:lang/swi-pl
+RUN_DEPENDS=	swipl:lang/swi-pl
 
 USES=		python
 USE_PYTHON=	distutils autoplist

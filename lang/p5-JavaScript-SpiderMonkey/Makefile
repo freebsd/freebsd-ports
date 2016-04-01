@@ -14,8 +14,8 @@ COMMENT=	Perl interface to Mozilla JavaScript implementation
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libjs.so:${PORTSDIR}/lang/spidermonkey17
-TEST_DEPENDS=	p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl
+LIB_DEPENDS=	libjs.so:lang/spidermonkey17
+TEST_DEPENDS=	p5-Log-Log4perl>=0:devel/p5-Log-Log4perl
 
 USE_PERL5=	configure
 USES=		perl5

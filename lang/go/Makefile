@@ -13,7 +13,7 @@ COMMENT=	Go programming language
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	go14>=1.4:${PORTSDIR}/lang/go14
+BUILD_DEPENDS=	go14>=1.4:lang/go14
 
 USES=		shebangfix
 SHEBANG_LANG=	sh

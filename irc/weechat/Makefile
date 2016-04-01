@@ -19,8 +19,8 @@ USES=		cmake iconv localbase ncurses tar:bzip2
 CMAKE_ARGS+=	-DENABLE_GUILE=no \
 		-DICONV_INCLUDE_PATH=${ICONV_INCLUDE_PATH}
 
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	libcurl.so:ftp/curl \
+		libgcrypt.so:security/libgcrypt
 
 OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA JAVASCRIPT CHARSET BACKTRACE ASPELL \
 		GNUTLS CA_BUNDLE NLS ICON MANPAGES DOCS
@@ -38,12 +38,12 @@ PYTHON_DESC=	Python scripting language support
 RUBY_DESC=	Ruby scripting language support
 
 ASPELL_CMAKE_OFF=	-DENABLE_ASPELL=no
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 
 BACKTRACE_USES=		execinfo
 
 CA_BUNDLE_CMAKE_ON=	-DCA_FILE=${LOCALBASE}/share/certs/ca-root-nss.crt
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 CHARSET_CMAKE_OFF=	-DENABLE_CHARSET=no
 
@@ -51,11 +51,11 @@ DOCS_CMAKE_ON=		-DENABLE_DOC=yes
 
 JAVASCRIPT_CMAKE_OFF=	-DENABLE_JAVASCRIPT=no
 JAVASCRIPT_CMAKE_ON=	-DENABLE_JAVASCRIPT=yes
-JAVASCRIPT_LIB_DEPENDS=	libv8.so:${PORTSDIR}/lang/v8
+JAVASCRIPT_LIB_DEPENDS=	libv8.so:lang/v8
 
 GNUTLS_CMAKE_OFF=	-DENABLE_GNUTLS=no
 GNUTLS_USES=		pkgconfig
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 LUA_CMAKE_OFF=		-DENABLE_LUA=no
 LUA_CMAKE_ON=		-DBSD_LUA_LIBDIR=${LUA_LIBDIR} \
@@ -90,10 +90,10 @@ TCL_USES=		tcl:85+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		asciidoc:${PORTSDIR}/textproc/asciidoc \
-		source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
+BUILD_DEPENDS+=	xsltproc:textproc/libxslt \
+		docbook-xsl>=0:textproc/docbook-xsl \
+		asciidoc:textproc/asciidoc \
+		source-highlight>=3.1.5:textproc/source-highlight
 .endif
 
 post-patch:

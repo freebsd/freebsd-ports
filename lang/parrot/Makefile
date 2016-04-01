@@ -12,11 +12,11 @@ COMMENT=	Parrot - virtual machine for dynamic languages
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		gm4:${PORTSDIR}/devel/m4 \
-		pcre-config:${PORTSDIR}/devel/pcre
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libicudata.so:${PORTSDIR}/devel/icu
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
+		gm4:devel/m4 \
+		pcre-config:devel/pcre
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libicudata.so:devel/icu
 
 OPTIONS_DEFINE=	DOCS
 

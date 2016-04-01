@@ -10,9 +10,9 @@ MASTER_SITES=	ftp://ftp.nog.net/pub/tony/nethirc/
 MAINTAINER=	matt_mills@btopenworld.com
 COMMENT=	Perl-based IRC client that uses Net::IRC
 
-BUILD_DEPENDS=	p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \
-		p5-String-Format>=0:${PORTSDIR}/textproc/p5-String-Format \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC \
+		p5-String-Format>=0:textproc/p5-String-Format \
+		p5-YAML>=0:textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

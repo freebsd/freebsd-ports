@@ -11,7 +11,7 @@ COMMENT=	Free Java class library for generating charts
 
 LICENSE=	LGPL21
 
-RUN_DEPENDS=	${JAVALIBDIR}/jcommon.jar:${PORTSDIR}/java/jcommon
+RUN_DEPENDS=	${JAVALIBDIR}/jcommon.jar:java/jcommon
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

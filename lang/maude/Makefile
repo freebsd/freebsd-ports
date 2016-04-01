@@ -16,11 +16,11 @@ BROKEN=		unfetchable
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	libbdd.so:${PORTSDIR}/science/buddy \
-		libtecla.so:${PORTSDIR}/devel/libtecla \
-		libgmp.so:${PORTSDIR}/math/gmp \
-		libsigsegv.so:${PORTSDIR}/devel/libsigsegv
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
+LIB_DEPENDS=	libbdd.so:science/buddy \
+		libtecla.so:devel/libtecla \
+		libgmp.so:math/gmp \
+		libsigsegv.so:devel/libsigsegv
 
 USES=		autoreconf bison
 GNU_CONFIGURE=	yes
@@ -49,7 +49,7 @@ FULL_MAUDE=	full-maude${FULL_MAUDE_VER}.maude
 FULL_MAUDE_DIST=	${FULL_MAUDE}.zip
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${FULL_MAUDE_DIST}:fm
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=	${LOCALBASE}/bin/unzip:archivers/unzip
 PLIST_SUB+=	FULL_MAUDE=""
 PLIST_SUB+=	FULL_MAUDE_VER="${FULL_MAUDE_VER}"
 .else

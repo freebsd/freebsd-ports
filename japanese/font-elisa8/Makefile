@@ -12,7 +12,7 @@ DISTNAME=	elisat10
 MAINTAINER=	toshi@tea.forus.or.jp
 COMMENT=	8-dot Kanji font 'elisa'
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts
 FONTNAME=	misc

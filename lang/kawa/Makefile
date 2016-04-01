@@ -11,7 +11,7 @@ COMMENT=	Java-based Scheme implementation
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
 
 USES=		gmake readline
 USE_JAVA=	yes

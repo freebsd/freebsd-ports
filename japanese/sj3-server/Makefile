@@ -18,7 +18,7 @@ COMMENT=	Japanese input method, binary part
 LICENSE=	MIT
 LICENSE_FILE=	${FILESDIR}/COPYING
 
-LIB_DEPENDS=	libsj3lib.so:${PORTSDIR}/japanese/sj3-lib
+LIB_DEPENDS=	libsj3lib.so:japanese/sj3-lib
 
 USES=		imake
 USE_RC_SUBR=	sj3

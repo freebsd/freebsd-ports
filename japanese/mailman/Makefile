@@ -89,8 +89,8 @@ MAIL_GID?=	mail
 .endif
 
 .if ${PORT_OPTIONS:MPOSTFIX}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/postconf:${PORTSDIR}/mail/postfix
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/postconf:${PORTSDIR}/mail/postfix
+RUN_DEPENDS+=	${LOCALBASE}/sbin/postconf:mail/postfix
+BUILD_DEPENDS+=	${LOCALBASE}/sbin/postconf:mail/postfix
 MAIL_GID?=	mailman
 EXTRA_PATCHES+=	${FILESDIR}/postfix-verp.diff
 .endif
@@ -100,7 +100,7 @@ MAIL_GID?=	courier
 .endif
 
 .if ${PORT_OPTIONS:MNAMAZU2}
-RUN_DEPENDS+=	mknmz:${PORTSDIR}/japanese/namazu2
+RUN_DEPENDS+=	mknmz:japanese/namazu2
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mailman-Cgi-private.py
 .endif
 

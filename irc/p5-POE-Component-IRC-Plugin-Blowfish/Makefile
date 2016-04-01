@@ -15,9 +15,9 @@ COMMENT=	POE::Component::IRC plugin tthat provides blowfish encryption
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-POE>=0.37:${PORTSDIR}/devel/p5-POE \
-		p5-POE-Component-IRC>=5.07:${PORTSDIR}/irc/p5-POE-Component-IRC \
-		p5-Crypt-Blowfish_PP>=1.12:${PORTSDIR}/security/p5-Crypt-Blowfish_PP
+BUILD_DEPENDS=	p5-POE>=0.37:devel/p5-POE \
+		p5-POE-Component-IRC>=5.07:irc/p5-POE-Component-IRC \
+		p5-Crypt-Blowfish_PP>=1.12:security/p5-Crypt-Blowfish_PP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"

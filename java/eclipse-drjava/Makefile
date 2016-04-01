@@ -12,7 +12,7 @@ DISTNAME=	drjava-eclipse-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	DrJava plugin for Eclipse
 
-RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 
 USES=		zip
 NO_BUILD=	yes

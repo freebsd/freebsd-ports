@@ -16,7 +16,7 @@ OPTIONS_SUB=	yes
 
 SSL_USE=		OPENSSL=YES
 SSL_CONFIGURE_WITH=	ssl
-COMPRESS_BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
+COMPRESS_BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 COMPRESS_CONFIGURE_WITH=boost
 COMPRESS_DESC=		Chat log compression (requires boost)
 

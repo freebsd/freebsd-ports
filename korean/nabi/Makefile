@@ -11,7 +11,7 @@ COMMENT=	Hangul X Input Method for Everywhere
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libhangul.so:${PORTSDIR}/korean/libhangul
+LIB_DEPENDS=	libhangul.so:korean/libhangul
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

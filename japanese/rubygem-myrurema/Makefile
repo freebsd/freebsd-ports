@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tool which helps searching/browsing/writing the Japanese Ruby docs
 
-RUN_DEPENDS=	rubygem-launchy>=2.3:${PORTSDIR}/devel/rubygem-launchy
+RUN_DEPENDS=	rubygem-launchy>=2.3:devel/rubygem-launchy
 
 NO_ARCH=	yes
 USE_RUBY=	yes

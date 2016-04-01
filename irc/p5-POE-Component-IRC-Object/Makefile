@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Slightly simpler OO interface to POE::Component::IRC
 
-BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
-		p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC
+BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE \
+		p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 #PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"

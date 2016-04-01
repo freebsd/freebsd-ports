@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and C++ compiler (use devel/llvm${LLVM_SUFFIX})
 
-RUN_DEPENDS+=	clang${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm-devel
+RUN_DEPENDS+=	clang${LLVM_SUFFIX}:devel/llvm-devel
 
 LLVM_SUFFIX=	-devel
 

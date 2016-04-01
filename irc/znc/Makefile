@@ -29,22 +29,22 @@ PYTHON_DESC=	Python scripting module
 TCL_DESC=	Tcl scripting module
 
 CHARSET_CONFIGURE_OFF=	--disable-charset
-CHARSET_LIB_DEPENDS=	libicuuc.so.55:${PORTSDIR}/devel/icu \
-			libicudata.so.55:${PORTSDIR}/devel/icu
+CHARSET_LIB_DEPENDS=	libicuuc.so.55:devel/icu \
+			libicudata.so.55:devel/icu
 CYRUS_CONFIGURE_ON=	--enable-cyrus
 CYRUS_LDFLAGS=	-L${LOCALBASE}/lib
-CYRUS_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+CYRUS_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 DEBUG_CONFIGURE_ON=	--enable-debug
 IPV6_CONFIGURE_OFF=	--disable-ipv6
 OPENSSL_CONFIGURE_OFF=	--disable-openssl
 OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 OPENSSL_USE=	openssl=yes
-PERL_BUILD_DEPENDS=	swig30>=3.0.0:${PORTSDIR}/devel/swig30
+PERL_BUILD_DEPENDS=	swig30>=3.0.0:devel/swig30
 PERL_CONFIGURE_ENABLE=	perl
 PERL_CONFIGURE_ON=	--enable-swig
 PERL_USE=	perl5=build,run
 PERL_USES=	perl5
-PYTHON_BUILD_DEPENDS=	swig30>=3.0.0:${PORTSDIR}/devel/swig30
+PYTHON_BUILD_DEPENDS=	swig30>=3.0.0:devel/swig30
 PYTHON_CONFIGURE_ON=	--enable-python=python-${PYTHON_VER} --enable-swig
 PYTHON_USE=	perl5=build
 PYTHON_USES=	perl5 python:3

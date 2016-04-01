@@ -11,8 +11,8 @@ DISTNAME=	honoka-plugin-romkan-${PORTVERSION}
 MAINTAINER=	chiba.masashi@gmail.com
 COMMENT=	Honoka plugin for romaji input
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
-		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/honoka.so:${PORTSDIR}/japanese/scim-honoka
+BUILD_DEPENDS=	scim:textproc/scim \
+		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/honoka.so:japanese/scim-honoka
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ COMMENT=	IRC to instant messaging gateway
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	libpurple.so:net-im/libpurple
 
 USES=		cmake pkgconfig
 USE_GNOME=	glib20
@@ -35,12 +35,12 @@ CACA_DESC=	Buddy icon display using libcaca
 VIDEO_DESC=	Webcam display using libcaca (implies CACA)
 PLUGINS_DESC=	Compile additional libpurple-plugins
 
-CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca \
-			libImlib2.so:${PORTSDIR}/graphics/imlib2
+CACA_LIB_DEPENDS=	libcaca.so:graphics/libcaca \
+			libImlib2.so:graphics/imlib2
 CACA_CMAKE_ON=		-DENABLE_CACA:BOOL=ON -DENABLE_IMLIB:BOOL=ON
 CACA_CMAKE_OFF=		-DENABLE_CACA:BOOL=OFF -DENABLE_IMLIB:BOOL=OFF
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CMAKE_ON=	-DENABLE_TLS:BOOL=ON
 GNUTLS_CMAKE_OFF=	-DENABLE_TLS:BOOL=OFF
 
@@ -53,7 +53,7 @@ PLUGINS_PLIST_FILES=	lib/purple-2/libcoincoin.so \
 VIDEO_USE=		GSTREAMER=core,good
 VIDEO_CMAKE_ON=		-DENABLE_VIDEO:BOOL=ON
 VIDEO_CMAKE_OFF=	-DENABLE_VIDEO:BOOL=OFF
-VIDEO_LIB_DEPENDS=	libgstfarsight-0.10.so:${PORTSDIR}/net-im/farsight2
+VIDEO_LIB_DEPENDS=	libgstfarsight-0.10.so:net-im/farsight2
 
 post-patch:
 	@${REINPLACE_CMD} -e \

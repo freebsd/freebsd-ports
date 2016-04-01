@@ -11,8 +11,8 @@ DISTNAME=	jaming-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	LGPL'ed Flash 4/5 movie output library with Japanese languages support
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libgif.so:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libgif.so:graphics/giflib
 
 CONFLICTS=	ming-*
 

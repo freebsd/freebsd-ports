@@ -44,8 +44,8 @@ COMMENT=	Text-based mail client (Japanised development version)
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview \
-		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS=	urlview:textproc/urlview \
+		${LOCALBASE}/etc/mime.types:misc/mime-support
 
 CONFLICTS=	ja-mutt-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
 
@@ -87,7 +87,7 @@ MAILDIR_HEADER_CACHE_DESC=	maildir header cache
 USES+=	gettext
 .endif
 .if ${PORT_OPTIONS:MCYRUS_SASL2}
-LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:security/cyrus-sasl2
 .endif
 .if ${PORT_OPTIONS:MMAILDIR_HEADER_CACHE}
 PORT_OPTIONS+=	MAILDIR_HEADER_CACHE
@@ -97,7 +97,7 @@ USE_BDB=	42+
 CONFIGURE_SED=	-e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /'
 .endif
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:dns/libidn
 .endif
 
 .if ${PORT_OPTIONS:MCYRUS_SASL2}

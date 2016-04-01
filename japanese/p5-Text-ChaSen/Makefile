@@ -11,7 +11,7 @@ DISTNAME=	chasen-${CHASEN_VERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ChaSen library module for Perl5
 
-LIB_DEPENDS=	libchasen.so:${PORTSDIR}/japanese/chasen-base
+LIB_DEPENDS=	libchasen.so:japanese/chasen-base
 
 DISTINFO_FILE=	${.CURDIR}/../chasen-base/distinfo
 

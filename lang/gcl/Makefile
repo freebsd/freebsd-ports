@@ -13,8 +13,8 @@ COMMENT=	GNU Common Lisp
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+BUILD_DEPENDS=	gawk:lang/gawk
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

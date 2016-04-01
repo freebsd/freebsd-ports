@@ -10,9 +10,9 @@ MASTER_SITES=	SF/tomoe/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Tomoe
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	libtomoe.so:${PORTSDIR}/japanese/tomoe \
-		libtomoe-gtk.so:${PORTSDIR}/japanese/libtomoe-gtk
+BUILD_DEPENDS=	scim:textproc/scim
+LIB_DEPENDS=	libtomoe.so:japanese/tomoe \
+		libtomoe-gtk.so:japanese/libtomoe-gtk
 
 USE_GNOME=	intlhack
 USES=		gettext gmake iconv libtool:keepla pkgconfig

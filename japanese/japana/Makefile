@@ -10,9 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web proxy converting Japanese into Romaji
 
-RUN_DEPENDS=	*p5-Text-Kakasi>=2:${PORTSDIR}/japanese/p5-Text-Kakasi \
-		p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	*p5-Text-Kakasi>=2:japanese/p5-Text-Kakasi \
+		p5-AppConfig>=0:devel/p5-AppConfig \
+		p5-libwww>=0:www/p5-libwww
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	japana

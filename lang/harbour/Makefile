@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}-project/source/${PORTVERSION}
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Open source Clipper-compatible compiler
 
-LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2\
-		libpcre.so:${PORTSDIR}/devel/pcre
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libslang.so:devel/libslang2\
+		libpcre.so:devel/pcre
+BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	MYSQL SQLITE FIREBIRD PGSQL DOCS
@@ -104,7 +104,7 @@ MAKE_ENV+=	HB_WITH_FIREBIRD=no
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3
 MAKE_ENV+=	HB_WITH_SQLITE3=nolocal
 PLIST_SUB+=	SQLITE=""
 .else

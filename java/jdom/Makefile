@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.jdom.org/dist/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java library for accessing and manipulating XML documents
 
-RUN_DEPENDS=	${JAVALIBDIR}/jaxen-jdom.jar:${PORTSDIR}/java/jaxen
+RUN_DEPENDS=	${JAVALIBDIR}/jaxen-jdom.jar:java/jaxen
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

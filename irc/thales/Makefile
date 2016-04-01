@@ -28,9 +28,9 @@ HYBRID_DESC=	Build for ircd-hybrid
 IRCDRU_DESC=	Build for ircd-ru
 UNREAL_DESC=	Build for unreal ircd
 
-HYBRID_RUN_DEPENDS=	${LOCALBASE}/bin/ircd:${PORTSDIR}/irc/ircd-hybrid
-IRCDRU_RUN_DEPENDS=	${LOCALBASE}/sbin/ircd:${PORTSDIR}/irc/ircd-ru
-UNREAL_RUN_DEPENDS=	${LOCALBASE}/libexec/ircd:${PORTSDIR}/irc/unreal
+HYBRID_RUN_DEPENDS=	${LOCALBASE}/bin/ircd:irc/ircd-hybrid
+IRCDRU_RUN_DEPENDS=	${LOCALBASE}/sbin/ircd:irc/ircd-ru
+UNREAL_RUN_DEPENDS=	${LOCALBASE}/libexec/ircd:irc/unreal
 
 # Currently, not all supported IRCDs are handled here, only the ones
 # I could find corresponding RUN_DEPENDS in our Ports Collection.

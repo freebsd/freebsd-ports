@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-1.7
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Compiler for the Elan Programming Environment
 
-LIB_DEPENDS=	libdcg.so:${PORTSDIR}/devel/mimir
+LIB_DEPENDS=	libdcg.so:devel/mimir
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

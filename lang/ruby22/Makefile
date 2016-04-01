@@ -19,9 +19,9 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
-BUILD_DEPENDS=	libffi>=0:${PORTSDIR}/devel/libffi
-LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
-RUN_DEPENDS=	libffi>=0:${PORTSDIR}/devel/libffi
+BUILD_DEPENDS=	libffi>=0:devel/libffi
+LIB_DEPENDS=	libyaml.so:textproc/libyaml
+RUN_DEPENDS=	libffi>=0:devel/libffi
 
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
@@ -60,17 +60,17 @@ RDOC_DESC=		Build and install Rdoc indexes
 EDIT_DESC=		Which line editing lib to use
 LIBEDIT_DESC=		Use libedit
 READLINE_DESC=		Use libreadline
-CAPIDOCS_BUILD_DEPENDS=	doxygen>0:${PORTSDIR}/devel/doxygen \
-			dot:${PORTSDIR}/graphics/graphviz
+CAPIDOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen \
+			dot:graphics/graphviz
 CAPIDOCS_CONFIGURE_ENABLE=	install-capi
 GMP_CONFIGURE_WITH=	gmp
-GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 LIBEDIT_CONFIGURE_ON=	--enable-libedit --with-libedit-dir=${LOCALBASE}
 LIBEDIT_USES=		libedit
 RDOC_CONFIGURE_ENABLE=	install-rdoc
-READLINE_BUILD_DEPENDS=	readline>=0:${PORTSDIR}/devel/readline
+READLINE_BUILD_DEPENDS=	readline>=0:devel/readline
 READLINE_CONFIGURE_ON=	--disable-libedit --with-readline-dir=${LOCALBASE}
-READLINE_RUN_DEPENDS=	readline>=0:${PORTSDIR}/devel/readline
+READLINE_RUN_DEPENDS=	readline>=0:devel/readline
 
 CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}

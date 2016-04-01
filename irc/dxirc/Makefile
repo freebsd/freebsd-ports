@@ -12,7 +12,7 @@ COMMENT=	Simple IRC client written using the FOX toolkit
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
+LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16
 
 USE_XORG=	xft
 USES=		gmake pkgconfig
@@ -62,12 +62,12 @@ CONFIGURE_ARGS+=	--disable-lua
 .endif
 
 .if ${PORT_OPTIONS:MENCHANT}
-LIB_DEPENDS+=	libenchant.so:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS+=	libenchant.so:textproc/enchant
 CONFIGURE_ARGS+=	--enable-enchant
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:devel/libnotify
 CONFIGURE_ARGS+=	--enable-libnotify
 .endif
 

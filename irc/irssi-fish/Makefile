@@ -11,10 +11,10 @@ DISTNAME=	FiSH-irssi.v${DISTVERSION}-source
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Encryption plugin for irssi
 
-BUILD_DEPENDS=	${LOCALBASE}/include/glib-2.0/glib.h:${PORTSDIR}/devel/glib20 \
-		${LOCALBASE}/lib/libmiracl.a:${PORTSDIR}/math/miracl \
-		${LOCALBASE}/include/irssi/src/common.h:${PORTSDIR}/irc/irssi
-RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
+BUILD_DEPENDS=	${LOCALBASE}/include/glib-2.0/glib.h:devel/glib20 \
+		${LOCALBASE}/lib/libmiracl.a:math/miracl \
+		${LOCALBASE}/include/irssi/src/common.h:irc/irssi
+RUN_DEPENDS=	irssi:irc/irssi
 
 USES=		zip
 USE_LDCONFIG=	yes

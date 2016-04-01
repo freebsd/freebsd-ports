@@ -16,7 +16,7 @@ COMMENT=	X11 KAIST font(ksc5601.1987-0 encoding) collection
 
 SUB_FILES=	pkg-message
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts gmake
 NO_WRKSUBDIR=	yes

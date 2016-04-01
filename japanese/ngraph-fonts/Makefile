@@ -10,8 +10,8 @@ MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Japanese Font Setup for math/ngraph
 
 RUN_DEPENDS= \
-	${LOCALBASE}/share/kanji/kanji18.pcf.gz:${PORTSDIR}/japanese/font-kanji18 \
-	${LOCALBASE}/share/kanji/kanji26.pcf.gz:${PORTSDIR}/japanese/font-kanji26
+	${LOCALBASE}/share/kanji/kanji18.pcf.gz:japanese/font-kanji18 \
+	${LOCALBASE}/share/kanji/kanji26.pcf.gz:japanese/font-kanji26
 
 USES=		metaport
 

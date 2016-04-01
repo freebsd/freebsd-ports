@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/old/1.4/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free JIS X 4081 (subset of EPWING V1) Formatter
 
-RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
+RUN_DEPENDS=	gmake:devel/gmake
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes

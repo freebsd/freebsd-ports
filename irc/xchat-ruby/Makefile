@@ -11,7 +11,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ruby-scripting plugin for XChat
 
-RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
+RUN_DEPENDS=	xchat:irc/xchat
 
 LICENSE=	GPLv2
 

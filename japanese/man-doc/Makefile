@@ -14,7 +14,7 @@ DISTFILES=	# empty
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Japanese translation of FreeBSD manual pages
 
-RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
+RUN_DEPENDS=	jman:japanese/man
 
 USES=		uidfix
 NO_MTREE=	yes

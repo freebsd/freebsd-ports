@@ -14,10 +14,10 @@ COMMENT=	Modern-style functional programming language
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libmpfr.so:${PORTSDIR}/math/mpfr \
-		libpcreposix.so:${PORTSDIR}/devel/pcre \
-		libLLVM-${LLVM_VERSION:C/./&./}.so:${PORTSDIR}/devel/llvm${LLVM_VERSION}
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
+		libpcreposix.so:devel/pcre \
+		libLLVM-${LLVM_VERSION:C/./&./}.so:devel/llvm${LLVM_VERSION}
 
 SUB_FILES=	pkg-message
 

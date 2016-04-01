@@ -13,7 +13,7 @@ COMMENT=	X-Chat Morse plugin
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
+BUILD_DEPENDS=	xchat:irc/xchat
 
 USES=		pkgconfig
 

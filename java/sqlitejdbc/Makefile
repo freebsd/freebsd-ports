@@ -12,7 +12,7 @@ MASTER_SITES=	http://files.zentus.com/sqlitejdbc/
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Java JDBC driver for SQLite
 
-LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}
 USE_JAVA=	yes

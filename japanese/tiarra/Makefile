@@ -13,7 +13,7 @@ COMMENT=	IRC Proxy software
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
+RUN_DEPENDS=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6
 
 USES=		perl5 tar:bzip2 shebangfix
 USE_PERL5=	run

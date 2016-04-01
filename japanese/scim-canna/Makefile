@@ -10,8 +10,8 @@ MASTER_SITES=	SFJP/scim-imengine/18849
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Canna
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
+BUILD_DEPENDS=	scim:textproc/scim
+LIB_DEPENDS=	libcanna.so:japanese/canna-lib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake iconv libtool:keepla pkgconfig

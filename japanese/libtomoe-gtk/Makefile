@@ -11,7 +11,7 @@ DISTNAME=	tomoe-gtk-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	TOMOE GTK+ library
 
-LIB_DEPENDS=	libtomoe.so:${PORTSDIR}/japanese/tomoe
+LIB_DEPENDS=	libtomoe.so:japanese/tomoe
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig
@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--with-gucharmap=no
 PLIST_SUB+=	GUCHARMAP="@comment "
 #.else
-#LIB_DEPENDS+=	libgucharmap.so:${PORTSDIR}/deskutils/gucharmap
+#LIB_DEPENDS+=	libgucharmap.so:deskutils/gucharmap
 #PLIST_SUB+=	GUCHARMAP=""
 #.endif
 

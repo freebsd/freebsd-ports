@@ -10,7 +10,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to convert Japanese chars
 
 TEST_DEPENDS=	\
-	p5-Text-TestBase>0:${PORTSDIR}/textproc/p5-Text-TestBase
+	p5-Text-TestBase>0:textproc/p5-Text-TestBase
 
 USES=		perl5
 USE_PERL5=	modbuild

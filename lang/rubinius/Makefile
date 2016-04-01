@@ -14,9 +14,9 @@ COMMENT=	LLVM based ruby language implementation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:${PORTSDIR}/sysutils/rubygem-bundler \
-		${LOCALBASE}/bin/llvm-config35:${PORTSDIR}/devel/llvm35 \
-		${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
+BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:sysutils/rubygem-bundler \
+		${LOCALBASE}/bin/llvm-config35:devel/llvm35 \
+		${LOCALBASE}/bin/bison:devel/bison
 
 BROKEN_FreeBSD_9=	does not build
 BROKEN_FreeBSD_11=	does not build

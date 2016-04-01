@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 USE_EMACS=	yes
 USE_GITHUB=	yes
 
-RUN_DEPENDS=	cmigemo:${PORTSDIR}/japanese/cmigemo
+RUN_DEPENDS=	cmigemo:japanese/cmigemo
 
 GH_ACCOUNT=	emacs-jp
 GH_PROJECT=	migemo

@@ -12,7 +12,7 @@ COMMENT=	Compact Java virtual machine
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
+RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:java/classpath
 
 CONFIGURE_ARGS=	--with-classpath-install-dir=${LOCALBASE}
 GNU_CONFIGURE=	yes
@@ -25,8 +25,8 @@ FFI_DESC=	use libffi to call native methods
 ZIP_DESC=	turn-on zip support in the bootstrap loader
 
 FFI_CONFIGURE_ENABLE=	ffi
-FFI_LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
-ZIP_BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+FFI_LIB_DEPENDS=	libffi.so:devel/libffi
+ZIP_BUILD_DEPENDS=	zip:archivers/zip
 ZIP_CONFIGURE_ENABLE=	zip
 
 .include <bsd.port.options.mk>

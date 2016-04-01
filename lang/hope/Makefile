@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	DOCS
 
 DOCS_USE=		TEX=latex:build
-DOCS_BUILD_DEPENDS=	latex2html:${PORTSDIR}/textproc/latex2html
+DOCS_BUILD_DEPENDS=	latex2html:textproc/latex2html
 DOCS_MAKE_ARGS=		WITH_DOCS=yes
 
 .include <bsd.port.mk>

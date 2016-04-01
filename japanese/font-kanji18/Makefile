@@ -14,8 +14,8 @@ DIST_SUBDIR=	${DISTNAME}
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	${PKGNAMESUFFIX}-dot Kanji font
 
-BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
-		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	mkbold:x11-fonts/mkbold-mkitalic \
+		bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts
 FONTNAME=	misc

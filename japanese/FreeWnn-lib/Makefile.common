@@ -18,8 +18,8 @@ OPTIONS_DEFAULT?=	SERVER WNN
 IPV6_CONFIGURE_ON=	--enable-ipv6
 WNN_CONFIGURE_ON=	--enable-cWnn=no --enable-kWnn=no
 CWNN_CONFIGURE_ON=	--enable-Wnn=no --enable-kWnn=no
-CWNN_LIB_DEPENDS=	libwnn.so:${PORTSDIR}/japanese/FreeWnn-lib
+CWNN_LIB_DEPENDS=	libwnn.so:japanese/FreeWnn-lib
 KWNN_CONFIGURE_ON=	--enable-Wnn=no --enable-cWnn=no
-KWNN_LIB_DEPENDS=	libwnn.so:${PORTSDIR}/japanese/FreeWnn-lib
+KWNN_LIB_DEPENDS=	libwnn.so:japanese/FreeWnn-lib
 SERVER_CONFIGURE_ON=	--enable-server=yes --enable-libraries=no
 LIB_CONFIGURE_ON=	--enable-server=no  --enable-libraries=yes

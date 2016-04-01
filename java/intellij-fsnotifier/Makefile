@@ -11,7 +11,7 @@ COMMENT=	Replacement for IntelliJ's fsnotifier
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	idea4bsd

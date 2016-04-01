@@ -14,9 +14,9 @@ COMMENT=		Standalone JavaScript (1.8.5) interpreter from Mozilla
 NOT_FOR_ARCHS=		powerpc powerpc64
 NOT_FOR_ARCHS_REASON=	PowerPC is not supported; use lang/spidermonkey170
 
-BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip \
-			autoconf-2.13:${PORTSDIR}/devel/autoconf213
-LIB_DEPENDS=		libnspr4.so:${PORTSDIR}/devel/nspr
+BUILD_DEPENDS=		zip:archivers/zip \
+			autoconf-2.13:devel/autoconf213
+LIB_DEPENDS=		libnspr4.so:devel/nspr
 
 CONFLICTS=		njs-[0-9]*
 

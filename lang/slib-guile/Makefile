@@ -12,8 +12,8 @@ DISTFILES=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLIB installation for Guile
 
-BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \
-		guile:${PORTSDIR}/lang/guile
+BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:lang/slib \
+		guile:lang/guile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_FILES+=	pkg-install pkg-deinstall

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.tildeslash.com/mmake/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create a Makefile for Your Java files, ready to compile
 
-BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
+BUILD_DEPENDS=	jikes:java/jikes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 gmake

@@ -10,10 +10,10 @@ MASTER_SITES=	SFJP/scim-imengine/37309
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module using Anthy
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	libanthy.so:${PORTSDIR}/japanese/anthy
+BUILD_DEPENDS=	scim:textproc/scim
+LIB_DEPENDS=	libanthy.so:japanese/anthy
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		kasumi:${PORTSDIR}/japanese/kasumi
+		kasumi:japanese/kasumi
 
 USES=		gmake iconv libtool:keepla pkgconfig
 GNU_CONFIGURE=	yes

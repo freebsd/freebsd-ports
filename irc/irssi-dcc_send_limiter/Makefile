@@ -17,8 +17,8 @@ PATCHFILES=	${DISTFILES}.diff
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Irssi plugin to limit the transmit speed of DCC sends
 
-BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
-RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
+BUILD_DEPENDS=	irssi:irc/irssi
+RUN_DEPENDS=	irssi:irc/irssi
 
 USES=		pkgconfig
 USE_GNOME=	glib20

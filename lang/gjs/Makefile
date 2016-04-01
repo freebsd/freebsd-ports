@@ -10,8 +10,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Javascript binding
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libmozjs-24.so:${PORTSDIR}/lang/spidermonkey24
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libmozjs-24.so:lang/spidermonkey24
 
 USES=		compiler:c++11-lib gettext gmake gnome libtool \
 		pathfix pkgconfig python:build tar:xz

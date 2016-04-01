@@ -13,9 +13,9 @@ COMMENT=	Optimizing Oberon-2 compiler of University of Kaiserslautern, Germany
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
+BUILD_DEPENDS=	xsltproc:textproc/libxslt
+RUN_DEPENDS=	libtool:devel/libtool
+LIB_DEPENDS=	libgc.so:devel/boehm-gc
 
 DOCSDIR=	lib/${PORTNAME}
 USES=		gmake libtool:build tar:bzip2

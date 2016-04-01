@@ -20,7 +20,7 @@ WRKSRC=			${WRKDIR}/NXT
 OPTIONS_DEFINE=		DOCS ROBOCTL
 ROBOCTL_DESC=		Include roboctl to communicate with the NXT
 
-ROBOCTL_RUN_DEPENDS=	legoctl:${PORTSDIR}/devel/roboctl
+ROBOCTL_RUN_DEPENDS=	legoctl:devel/roboctl
 
 USES=			dos2unix gmake tar:tgz
 USE_FPC=		fcl-base fcl-image pasjpeg rtl-objpas

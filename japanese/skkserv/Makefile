@@ -11,7 +11,7 @@ DISTNAME=	skk${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Dictionary server for the SKK Japanese-input software
 
-RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:${PORTSDIR}/japanese/skk-jisyo
+RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:japanese/skk-jisyo
 
 USE_RC_SUBR=	skkserv
 WRKSRC=		${WRKDIR}/skk-${PORTVERSION}

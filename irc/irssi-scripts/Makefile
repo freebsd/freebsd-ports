@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Collection of useful scripts for the irssi IRC-client
 
-RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
+RUN_DEPENDS=	irssi:irc/irssi
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

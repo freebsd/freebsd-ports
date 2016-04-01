@@ -9,13 +9,13 @@ MASTER_SITES=		SFJP/${PORTNAME}/47485
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC proxy for mobilephone that have a web interface
 
-RUN_DEPENDS=	p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
-		p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig
+RUN_DEPENDS=	p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC \
+		p5-URI>=0:net/p5-URI \
+		p5-libwww>=0:www/p5-libwww \
+		p5-HTML-Template>=0:www/p5-HTML-Template \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \
+		p5-AppConfig>=0:devel/p5-AppConfig
 
 CONFLICTS=	keitairc-1.*
 

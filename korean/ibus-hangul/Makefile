@@ -10,8 +10,8 @@ COMMENT=	Hangul input engine for IBus
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libhangul.so:${PORTSDIR}/korean/libhangul \
-		libibus-1.0.so:${PORTSDIR}/textproc/ibus
+LIB_DEPENDS=	libhangul.so:korean/libhangul \
+		libibus-1.0.so:textproc/ibus
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

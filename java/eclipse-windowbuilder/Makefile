@@ -19,7 +19,7 @@ COMMENT=	Powerful and easy to use Java GUI designer for Eclipse
 
 LICENSE=	EPL
 
-RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	eclipse:java/eclipse
 
 WRKSRC=		${WRKDIR}
 

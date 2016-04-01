@@ -10,8 +10,8 @@ MASTER_SITES=	http://sam.zoy.org/elk/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeddable Scheme interpreter
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libelf.so:${PORTSDIR}/devel/libelf
+LIB_DEPENDS=	libgdbm.so:databases/gdbm \
+		libelf.so:devel/libelf
 
 USES=		libtool motif tar:bzip2
 GNU_CONFIGURE=	yes

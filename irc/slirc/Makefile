@@ -21,7 +21,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLANG_INCDIR?=	${LOCALBASE}/include
 SLANG_LIBDIR?=	${LOCALBASE}/lib
-LIB_DEPENDS_LIBSLANG?=	libslang.so.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS_LIBSLANG?=	libslang.so.2:devel/libslang2
 
 MAKE_ARGS=	SLANG_INCDIR="${SLANG_INCDIR}" \
 		SLANG_LIBDIR="${SLANG_LIBDIR}" \

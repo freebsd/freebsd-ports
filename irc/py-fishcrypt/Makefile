@@ -9,7 +9,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	koalative@gmail.com
 COMMENT=	FiSH/Mircryption clone for XChat/HexChat
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kwaaak
@@ -31,8 +31,8 @@ XCHAT_DESC=		FiSH encryption for XChat
 
 OPTIONS_SUB=	yes
 
-HEXCHAT_RUN_DEPENDS=	hexchat:${PORTSDIR}/irc/hexchat
-XCHAT_RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
+HEXCHAT_RUN_DEPENDS=	hexchat:irc/hexchat
+XCHAT_RUN_DEPENDS=	xchat:irc/xchat
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

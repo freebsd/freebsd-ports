@@ -29,7 +29,7 @@ MONO_CMAKE_ON=	-DWANT_MONO=on
 MONO_CMAKE_OFF=	-DWANT_MONO=off
 
 CORE_DESC=	Quassel core (for use with client)
-CORE_LIB_DEPENDS=	libqca-qt5.so:${PORTSDIR}/devel/qca-qt5
+CORE_LIB_DEPENDS=	libqca-qt5.so:devel/qca-qt5
 CORE_USE=	QT5=script,sql,sql-sqlite3_run
 CORE_CMAKE_ON=	-DWANT_CORE=on
 CORE_CMAKE_OFF=	-DWANT_CORE=off
@@ -44,7 +44,7 @@ NLS_USE=	QT5=linguisttools_build
 
 .if ${PORT_OPTIONS:MMONO} || ${PORT_OPTIONS:MCLIENT}
 USE_QT5+=	dbus gui widgets phonon4 webkit
-LIB_DEPENDS+=	libdbusmenu-qt5.so:${PORTSDIR}/devel/libdbusmenu-qt5
+LIB_DEPENDS+=	libdbusmenu-qt5.so:devel/libdbusmenu-qt5
 PLIST_SUB+=	MONO_OR_CLIENT=""
 .else
 PLIST_SUB+=	MONO_OR_CLIENT="@comment "

@@ -23,13 +23,13 @@ OPTIONS_DEFAULT=CANNA FREEWNN           SJ3
 TCP_DESC=		TCP transport support (not needed for most cases)
 
 CANNA_DESC=		Canna support
-CANNA_LIB_DEPENDS= 	libcanna16.so:${PORTSDIR}/japanese/canna-lib
+CANNA_LIB_DEPENDS= 	libcanna16.so:japanese/canna-lib
 CANNA_CONF=		'\#define UseCanna' \
 			CANNASRC=${LOCALBASE}/include \
 			CANNALIB="-L${LOCALBASE}/lib -lcanna16"
 
 WNN6_DESC=		Wnn6 support
-WNN6_LIB_DEPENDS=	libwnn6.so:${PORTSDIR}/japanese/Wnn6-lib
+WNN6_LIB_DEPENDS=	libwnn6.so:japanese/Wnn6-lib
 WNN6_CONF=		'\#define UseWnn' \
 			'\#define UseWnn6' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn6/wnn \
@@ -37,7 +37,7 @@ WNN6_CONF=		'\#define UseWnn' \
 WNN6_PLIST_FILES=	${WNN_PLIST_FILES}
 
 WNN7_DESC=		Wnn7 support
-WNN7_LIB_DEPENDS=	libwnn7.so:${PORTSDIR}/japanese/Wnn7-lib
+WNN7_LIB_DEPENDS=	libwnn7.so:japanese/Wnn7-lib
 WNN7_CONF=		'\#define UseWnn' \
 			'\#define UseWnn6' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn7/wnn \
@@ -45,14 +45,14 @@ WNN7_CONF=		'\#define UseWnn' \
 WNN7_PLIST_FILES=	${WNN_PLIST_FILES}
 
 FREEWNN_DESC=		FreeWnn support
-FREEWNN_LIB_DEPENDS=	libwnn.so:${PORTSDIR}/japanese/FreeWnn-lib
+FREEWNN_LIB_DEPENDS=	libwnn.so:japanese/FreeWnn-lib
 FREEWNN_CONF=		'\#define UseWnn' \
 			WNNINCDIR=$(LOCALBASE)/include/wnn \
 			WNNLIB="-L$(LOCALBASE)/lib -lwnn -lcrypt"
 FREEWNN_PLIST_FILES=	${WNN_PLIST_FILES}
 
 SJ3_DESC=		SJ3 support
-SJ3_LIB_DEPENDS=	libsj3lib.so:${PORTSDIR}/japanese/sj3-lib
+SJ3_LIB_DEPENDS=	libsj3lib.so:japanese/sj3-lib
 SJ3_CONF=		'\#define UseSj3' \
 			SJ3SRC=${LOCALBASE}/include \
 			SJ3LIB="-L${LOCALBASE}/lib -lsj3lib" \

@@ -10,11 +10,11 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for encoding for mobile phones in Japan
 
 RUN_DEPENDS=	\
-	p5-File-ShareDir>=0.05:${PORTSDIR}/devel/p5-File-ShareDir \
-	p5-MIME-Tools>=5.428:${PORTSDIR}/mail/p5-MIME-Tools
+	p5-File-ShareDir>=0.05:devel/p5-File-ShareDir \
+	p5-MIME-Tools>=5.428:mail/p5-MIME-Tools
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
-	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
+	p5-YAML>0:textproc/p5-YAML
 
 USES=		perl5
 USE_PERL5=	configure

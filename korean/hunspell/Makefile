@@ -12,7 +12,7 @@ COMMENT=	Korean hunspell dictionaries
 LICENSE=	GPLv2 LGPL21 MPL
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml
+BUILD_DEPENDS+=	py*-lxml>=0:devel/py-lxml
 
 USES=		gmake python:build tar:xz
 

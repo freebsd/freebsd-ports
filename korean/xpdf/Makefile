@@ -13,9 +13,9 @@ DIST_SUBDIR=	${DISTNAME}-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Korean font support for xpdf
 
-RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
-		${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
-		${FONTSDIR}/UnBatang.ttf:${PORTSDIR}/korean/unfonts-core
+RUN_DEPENDS=	xpdf:graphics/xpdf \
+		${ADOBECMAPDIR}/ai0/CMap/Identity-H:print/adobe-cmaps \
+		${FONTSDIR}/UnBatang.ttf:korean/unfonts-core
 
 NO_BUILD=	yes
 SUB_FILES=	dot.xpdfrc

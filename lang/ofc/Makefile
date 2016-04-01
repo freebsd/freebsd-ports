@@ -10,9 +10,9 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The Objective-C Foundation Classes library
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libpng.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
 
 PROJECTHOST=	${PORTNAME}
 USE_SDL=	sdl
@@ -25,7 +25,7 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	GDBM GMP
 
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
-GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
 .include <bsd.port.mk>

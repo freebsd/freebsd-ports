@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE::Component::IRC plugin for IRC based DNS queries
 
-BUILD_DEPENDS=	p5-Net-IP>=1.25:${PORTSDIR}/net-mgmt/p5-Net-IP \
-		p5-POE-Component-Client-DNS>=1.00:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
-		p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC
+BUILD_DEPENDS=	p5-Net-IP>=1.25:net-mgmt/p5-Net-IP \
+		p5-POE-Component-Client-DNS>=1.00:dns/p5-POE-Component-Client-DNS \
+		p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"

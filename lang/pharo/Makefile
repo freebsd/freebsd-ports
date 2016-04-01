@@ -15,7 +15,7 @@ COMMENT=	Pharo is Smalltalk-inspired environment
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	squeak:${PORTSDIR}/lang/squeak
+RUN_DEPENDS=	squeak:lang/squeak
 
 SVNVERSION=	14438
 

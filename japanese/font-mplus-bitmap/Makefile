@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_bitmap_fonts-2.2.4
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	M+ Bitmap fonts
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts
 FONTNAME=	misc

@@ -45,7 +45,7 @@ DEBUG_CONFIGURE_ON=	-Doptimize="-g" -DDEBUGGING
 DEBUG_CONFIGURE_OFF=	-Doptimize="${CFLAGS}"
 GDBM_CONFIGURE_ON=	-Di_gdbm
 GDBM_CONFIGURE_OFF=	-Ui_gdbm
-GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 PERL_64BITINT_CONFIGURE_ON=	-Duse64bitint
 MULTIPLICITY_CONFIGURE_ON=	-Dusemultiplicity=y
 MULTIPLICITY_CONFIGURE_OFF=	-Dusemultiplicity=n

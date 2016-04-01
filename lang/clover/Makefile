@@ -7,11 +7,11 @@ CATEGORIES=	lang
 
 COMMENT=	Mesa "Clover" OpenCL library
 
-BUILD_DEPENDS=	opencl>=0:${PORTSDIR}/devel/opencl
-LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libOpenCL.so:${PORTSDIR}/devel/ocl-icd \
-		libexpat.so:${PORTSDIR}/textproc/expat2
-RUN_DEPENDS=	opencl>=0:${PORTSDIR}/devel/opencl
+BUILD_DEPENDS=	opencl>=0:devel/opencl
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+		libOpenCL.so:devel/ocl-icd \
+		libexpat.so:textproc/expat2
+RUN_DEPENDS=	opencl>=0:devel/opencl
 
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto \
 		presentproto xvmc xshmfence

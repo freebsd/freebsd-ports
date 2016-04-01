@@ -12,8 +12,8 @@ COMMENT=	Embeddable stack-based threaded interpreted language
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	cook:devel/cook
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		libedit shebangfix tar:bzip2
 GNU_CONFIGURE=	yes

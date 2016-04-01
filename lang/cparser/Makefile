@@ -12,7 +12,7 @@ COMMENT=	C99 compiler using libFIRM as backend
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfirm.so:${PORTSDIR}/devel/libfirm
+LIB_DEPENDS=	libfirm.so:devel/libfirm
 
 USES=		gmake pkgconfig tar:bzip2
 

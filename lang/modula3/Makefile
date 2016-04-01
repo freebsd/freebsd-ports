@@ -16,7 +16,7 @@ LICENSE_NAME=	CM3 License defined by DEC and Critical Mass copyrights
 LICENSE_FILE=	${WRKSRC}/COM_LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 NEWBOOTDIR=	${WRKDIR}/new-bootstrap/bootstrap
 SRCDISTFILE=	modula3-cm3-${PORTVERSION}-${GH_TAGNAME}_GH0.tar.gz

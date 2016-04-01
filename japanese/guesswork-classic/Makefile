@@ -12,7 +12,7 @@ COMMENT=	PHP lightweight framework
 
 BROKEN=		unfetchable
 
-RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
+RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:www/smarty2
 
 NO_BUILD=	yes
 USE_PHP=	yes

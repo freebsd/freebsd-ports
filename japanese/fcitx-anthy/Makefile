@@ -12,8 +12,8 @@ COMMENT=	Anthy support for Fcitx
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
-		libanthy.so:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
+		libanthy.so:japanese/anthy
 
 USES=		cmake gettext pkgconfig tar:xz
 INSTALLS_ICONS=	yes

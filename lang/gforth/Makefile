@@ -11,9 +11,9 @@ MASTER_SITES=	http://www.complang.tuwien.ac.at/forth/gforth/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Fast and portable Forth system
 
-LIB_DEPENDS=	libffi.so.6:${PORTSDIR}/devel/libffi \
-		libltdl.so:${PORTSDIR}/devel/libltdl
-BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:${PORTSDIR}/devel/ffcall
+LIB_DEPENDS=	libffi.so.6:devel/libffi \
+		libltdl.so:devel/libltdl
+BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:devel/ffcall
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

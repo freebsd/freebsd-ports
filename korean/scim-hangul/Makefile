@@ -12,8 +12,8 @@ COMMENT=	SCIM IMEngine module for Korean(Hangul) input
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libhangul.so:${PORTSDIR}/korean/libhangul \
-		libscim-1.0.so:${PORTSDIR}/textproc/scim
+LIB_DEPENDS=	libhangul.so:korean/libhangul \
+		libscim-1.0.so:textproc/scim
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool:keepla pkgconfig

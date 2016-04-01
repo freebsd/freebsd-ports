@@ -13,11 +13,11 @@ DISTNAME=	crypto-${DISTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
 
-BUILD_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf \
-		${JAVALIBDIR}/mail.jar:${PORTSDIR}/java/javamail \
-		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
-RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf \
-		${JAVALIBDIR}/mail.jar:${PORTSDIR}/java/javamail
+BUILD_DEPENDS=	${JAVALIBDIR}/activation.jar:java/jaf \
+		${JAVALIBDIR}/mail.jar:java/javamail \
+		${JAVALIBDIR}/junit.jar:java/junit
+RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:java/jaf \
+		${JAVALIBDIR}/mail.jar:java/javamail
 
 OPTIONS_DEFINE=	DOCS
 

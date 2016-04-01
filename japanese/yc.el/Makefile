@@ -26,7 +26,7 @@ PLIST_FILES=	%%EMACS_VERSION_SITE_LISPDIR%%/yc/yc.el \
 
 OPTIONS_DEFINE=	ICANNA
 ICANNA_DESC=	Enable icanna support
-ICANNA_RUN_DEPENDS=	icanna:${PORTSDIR}/japanese/icanna
+ICANNA_RUN_DEPENDS=	icanna:japanese/icanna
 
 do-build:
 	@cd ${WRKSRC} && \

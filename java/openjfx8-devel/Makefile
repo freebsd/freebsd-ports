@@ -16,12 +16,12 @@ COMMENT=	JavaFX (OpenJFX) SDK overlay for OpenJDK 8
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	apache-ant>0:${PORTSDIR}/devel/apache-ant \
-		antlr3>0:${PORTSDIR}/devel/antlr3 \
-		gradle:${PORTSDIR}/devel/gradle \
-		swt-devel>0:${PORTSDIR}/x11-toolkits/swt-devel
-RUN_DEPENDS=	swt-devel>0:${PORTSDIR}/x11-toolkits/swt-devel
-LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg-turbo
+BUILD_DEPENDS=	apache-ant>0:devel/apache-ant \
+		antlr3>0:devel/antlr3 \
+		gradle:devel/gradle \
+		swt-devel>0:x11-toolkits/swt-devel
+RUN_DEPENDS=	swt-devel>0:x11-toolkits/swt-devel
+LIB_DEPENDS=	libjpeg.so:graphics/jpeg-turbo
 
 USE_GL=		yes
 USE_GNOME=	gtk20

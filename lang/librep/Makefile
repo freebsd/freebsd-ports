@@ -12,10 +12,10 @@ COMMENT=	Emacs Lisp like runtime library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libffi.so:${PORTSDIR}/devel/libffi \
-		libgmp.so:${PORTSDIR}/math/gmp
-RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+LIB_DEPENDS=	libgdbm.so:databases/gdbm \
+		libffi.so:devel/libffi \
+		libgmp.so:math/gmp
+RUN_DEPENDS=	gtar:archivers/gtar
 
 USE_CSTD=	gnu89
 

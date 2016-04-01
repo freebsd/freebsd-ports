@@ -11,7 +11,7 @@ PKGDIR=		${.CURDIR}
 
 MAKE_ENV=	LOCALE_EXTENSION=-DTV_L10N
 
-RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv
+RUN_DEPENDS=	xv:graphics/xv
 
 PLIST_FILES=	bin/ja-xv
 

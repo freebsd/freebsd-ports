@@ -13,9 +13,9 @@ COMMENT=	Interpreter for the Whitespace programming language
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libffi.so.6:${PORTSDIR}/devel/libffi
+BUILD_DEPENDS=	ghc:lang/ghc
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libffi.so.6:devel/libffi
 
 USES=		perl5 gmake tar:tgz
 USE_PERL5=	build

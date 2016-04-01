@@ -69,14 +69,14 @@ JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-
 ANT_VERSION=		1.9.4
 ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
-		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
-		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups
-RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper \
-		dejavu>0:${PORTSDIR}/x11-fonts/dejavu
+LIB_DEPENDS+=	libasound.so:audio/alsa-lib \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+BUILD_DEPENDS+=	zip:archivers/zip \
+		${UNZIP_CMD}:archivers/unzip \
+		${LOCALBASE}/include/cups/cups.h:print/cups
+RUN_DEPENDS+=	javavm:java/javavmwrapper \
+		dejavu>0:x11-fonts/dejavu
 
 DOS2UNIX_FILES=	jdk/src/share/classes/com/sun/org/apache/xml/internal/security/resource/xmlsecurity_en.properties
 
@@ -124,7 +124,7 @@ BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
 
 DEBUG_MAKE_ENV=	ALT_OBJCOPY=${NONEXISTENT}
 POLICY_MAKE_ENV=	UNLIMITED_CRYPTO=1
-TZUPDATE_RUN_DEPENDS=	java-zoneinfo>0:${PORTSDIR}/java/java-zoneinfo
+TZUPDATE_RUN_DEPENDS=	java-zoneinfo>0:java/java-zoneinfo
 
 .include <bsd.port.options.mk>
 
@@ -138,7 +138,7 @@ BOOTSTRAPJDKDIR=	${BJDK}
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
 BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk
 .endif
 
 .include <bsd.port.pre.mk>

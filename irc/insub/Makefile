@@ -8,8 +8,8 @@ CATEGORIES=	irc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Some scripts for expressing how you feel on IRC and the web
 
-RUN_DEPENDS=	cowsay:${PORTSDIR}/games/cowsay \
-		figlet:${PORTSDIR}/misc/figlet
+RUN_DEPENDS=	cowsay:games/cowsay \
+		figlet:misc/figlet
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cjones

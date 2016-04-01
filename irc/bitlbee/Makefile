@@ -12,8 +12,8 @@ COMMENT=	IRC to other chat networks gateway
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	xmlto:textproc/xmlto \
+		xsltproc:textproc/libxslt
 
 SUB_FILES=	pkg-message
 PORTDOCS=	AUTHORS CHANGES CREDITS FAQ README
@@ -51,22 +51,22 @@ CONFIGURE_ARGS=		--config=/var/db/bitlbee \
 
 DEBUG_CONFIGURE_ON=	--debug=1
 GNUTLS_CONFIGURE_ON=	--ssl=gnutls
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
-			libgcrypt.so:${PORTSDIR}/security/libgcrypt
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
+			libgcrypt.so:security/libgcrypt
 JABBER_CONFIGURE_OFF=	--jabber=0
 LIBEVENT_CONFIGURE_ON=	--events=libevent --libevent=${LOCALBASE}
-LIBEVENT_LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent2
 LIBPURPLE_CONFIGURE_ON=	--purple=1
-LIBPURPLE_LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
+LIBPURPLE_LIB_DEPENDS=	libpurple.so:net-im/libpurple
 MSN_CONFIGURE_OFF=	--msn=0
 NSS_CONFIGURE_ON=	--ssl=nss
-NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
+NSS_LIB_DEPENDS=	libnss3.so:security/nss
 OPENSSL_CONFIGURE_ON=	--ssl=openssl
 OSCAR_CONFIGURE_OFF=	--oscar=0
 OTR_CONFIGURE_ON=	--otr=1
-OTR_LIB_DEPENDS=	libotr.so.5:${PORTSDIR}/security/libotr
+OTR_LIB_DEPENDS=	libotr.so.5:security/libotr
 SKYPE_CONFIGURE_ON=	--skype=1
-SKYPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Skype4Py>0:${PORTSDIR}/net-im/py-skype4py
+SKYPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Skype4Py>0:net-im/py-skype4py
 SKYPE_USES=		python
 TWITTER_CONFIGURE_OFF=	--twitter=0
 YAHOO_CONFIGURE_OFF=	--yahoo=0
