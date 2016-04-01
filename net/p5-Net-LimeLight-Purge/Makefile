@@ -14,10 +14,10 @@ COMMENT=	LimeLight Purge Service API
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DateTime-Format-ISO8601>=0.06:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601 \
-		p5-Moose>=0.72:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-AttributeHelpers>=0.14:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
-		p5-SOAP-Lite>=0.710.08:${PORTSDIR}/net/p5-SOAP-Lite
+BUILD_DEPENDS=	p5-DateTime-Format-ISO8601>=0.06:devel/p5-DateTime-Format-ISO8601 \
+		p5-Moose>=0.72:devel/p5-Moose \
+		p5-MooseX-AttributeHelpers>=0.14:devel/p5-MooseX-AttributeHelpers \
+		p5-SOAP-Lite>=0.710.08:net/p5-SOAP-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

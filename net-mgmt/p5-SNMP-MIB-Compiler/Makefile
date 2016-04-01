@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Perl MIB compiler supporting both SMIv1 and SMIv2
 
-BUILD_DEPENDS=	p5-Data-Compare>=0:${PORTSDIR}/devel/p5-Data-Compare
+BUILD_DEPENDS=	p5-Data-Compare>=0:devel/p5-Data-Compare
 
 USES=		perl5
 USE_PERL5=	configure

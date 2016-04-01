@@ -11,7 +11,7 @@ PKGNAMEPREFIX?=	en-
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT?=	Documentation from the FreeBSD Documentation Project
 
-BUILD_DEPENDS=	docproj>=2.0_6:${PORTSDIR}/textproc/docproj
+BUILD_DEPENDS=	docproj>=2.0_6:textproc/docproj
 
 USES=		uidfix
 WRKSRC=		${WRKDIR}/doc
@@ -66,14 +66,14 @@ PLIST_FORMATS+=	${O:tl:S,_,-,}
 .endfor
 
 .if ${PORT_OPTIONS:MPDF} || ${PORT_OPTIONS:MPS}
-BUILD_DEPENDS+=	fop:${PORTSDIR}/textproc/fop \
-		${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-R.ttf:${PORTSDIR}/x11-fonts/gentium-plus \
-		${LOCALBASE}/share/fonts/Droid/DroidSans.ttf:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
-		${LOCALBASE}/share/fonts/Lohit/Lohit-Bengali.ttf:${PORTSDIR}/x11-fonts/lohit \
-		${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:${PORTSDIR}/x11-fonts/dejavu \
-		${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
-		${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa \
-		${LOCALBASE}/share/fonts/nanum-ttf/NanumBarunGothic.ttf:${PORTSDIR}/korean/nanumfonts-ttf
+BUILD_DEPENDS+=	fop:textproc/fop \
+		${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-R.ttf:x11-fonts/gentium-plus \
+		${LOCALBASE}/share/fonts/Droid/DroidSans.ttf:x11-fonts/droid-fonts-ttf \
+		${LOCALBASE}/share/fonts/Lohit/Lohit-Bengali.ttf:x11-fonts/lohit \
+		${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:x11-fonts/dejavu \
+		${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:chinese/arphicttf \
+		${LOCALBASE}/share/fonts/OTF/ipam.otf:japanese/font-ipa \
+		${LOCALBASE}/share/fonts/nanum-ttf/NanumBarunGothic.ttf:korean/nanumfonts-ttf
 .endif
 
 # when html or html-split is defined as the format, add HTML_COMMON.

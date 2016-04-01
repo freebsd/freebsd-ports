@@ -103,7 +103,7 @@ post-build:
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 BLAS?=			-L${LOCALBASE}/lib -lblas
-BUILD_DEPENDS +=	${LOCALBASE}/lib/libblas.so:${PORTSDIR}/math/blas
+BUILD_DEPENDS +=	${LOCALBASE}/lib/libblas.so:math/blas
 MAKE_ENV+=		BLLIB="${BLAS}"
 
 check regression-test test: ${TESTS}

@@ -13,9 +13,9 @@ COMMENT=	Script to fetch mail from a Hotmail or MSN mailbox
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-Net>=0:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	curl:ftp/curl \
+		p5-URI>=0:net/p5-URI \
+		p5-Net>=0:net/p5-Net
 
 USES=		perl5 shebangfix
 

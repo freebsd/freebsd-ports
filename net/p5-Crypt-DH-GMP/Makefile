@@ -14,9 +14,9 @@ COMMENT=	Crypt::DH Using GMP Directly
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Devel-CheckLib>=0.40:${PORTSDIR}/devel/p5-Devel-CheckLib
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+BUILD_DEPENDS=	p5-Devel-CheckLib>=0.40:devel/p5-Devel-CheckLib
+LIB_DEPENDS=	libgmp.so:math/gmp
+TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5

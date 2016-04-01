@@ -14,9 +14,9 @@ COMMENT=	The x2go perl client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Proc-Simple>=0:${PORTSDIR}/devel/p5-Proc-Simple \
-		p5-Term-ReadPassword>=0:${PORTSDIR}/devel/p5-Term-ReadPassword \
-		nxproxy:${PORTSDIR}/net/nxproxy
+RUN_DEPENDS=	p5-Proc-Simple>=0:devel/p5-Proc-Simple \
+		p5-Term-ReadPassword>=0:devel/p5-Term-ReadPassword \
+		nxproxy:net/nxproxy
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	x2goclient-cli

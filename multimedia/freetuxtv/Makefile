@@ -11,11 +11,11 @@ COMMENT=	WebTV player based on GTK3+ and LibVLC
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libvlc.so:multimedia/vlc \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libsqlite3.so:databases/sqlite3 \
+		libcurl.so:ftp/curl \
+		libnotify.so:devel/libnotify
 
 USES=		gmake iconv libtool pkgconfig
 USE_GNOME=	gtk30 intltool
@@ -34,7 +34,7 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 NLS_USES_OFF=	gettext-tools
-NLS_BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+NLS_BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 SUB_FILES=	pkg-message
 

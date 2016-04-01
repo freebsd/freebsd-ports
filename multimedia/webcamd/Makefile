@@ -12,8 +12,8 @@ COMMENT=	Port of Linux USB webcam and DVB drivers into userspace
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
+BUILD_DEPENDS=	v4l_compat>=1.0.20100321:multimedia/v4l_compat
+LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
 
 USES=		pkgconfig tar:bzip2 uidfix
 MAKE_ARGS=	LIBDIR="${LOCALBASE}/lib"
@@ -33,13 +33,13 @@ OPTIONS_EXCLUDE+=	CUSE
 CUSE_DESC=	Use cuse(3) over multimedia/cuse4bsd-kmod
 CUSE_MAKE_ARGS=		HAVE_CUSE="YES"
 CUSE_SUB_LIST=		LIBCUSE=""
-CUSE_BUILD_DEPENDS_OFF=	cuse4bsd-kmod>=0.1.24:${PORTSDIR}/multimedia/cuse4bsd-kmod
-CUSE_LIB_DEPENDS_OFF=	libcuse4bsd.so:${PORTSDIR}/multimedia/cuse4bsd-kmod
+CUSE_BUILD_DEPENDS_OFF=	cuse4bsd-kmod>=0.1.24:multimedia/cuse4bsd-kmod
+CUSE_LIB_DEPENDS_OFF=	libcuse4bsd.so:multimedia/cuse4bsd-kmod
 CUSE_SUB_LIST_OFF=	LIBCUSE="${LOCALBASE}/lib/libcuse4bsd.so"
 
 HAL_DESC=	Build with HAL and DBUS support
-HAL_LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
-HAL_LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
+HAL_LIB_DEPENDS+=	libhal.so:sysutils/hal
+HAL_LIB_DEPENDS+=	libdbus-1.so:devel/dbus
 HAL_MAKE_ARGS=		HAVE_HAL="YES"
 HAL_SUB_LIST=		LIBHAL="${LOCALBASE}/lib/libhal.so:${LOCALBASE}/lib/libdbus-1.so:"
 HAL_SUB_LIST_OFF=	LIBHAL=""

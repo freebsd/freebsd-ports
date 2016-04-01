@@ -13,9 +13,9 @@ COMMENT=	Plugin for Pidgin to provide LCS/OCS connectivity
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
-		libpurple.so:${PORTSDIR}/net-im/libpurple
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
+LIB_DEPENDS=	libnss3.so:security/nss \
+		libpurple.so:net-im/libpurple
+RUN_DEPENDS=	pidgin:net-im/pidgin
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig tar:bzip2

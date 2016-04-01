@@ -9,11 +9,11 @@ MASTER_SITES=	SAVANNAH/linphone/3.9.x/sources
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	SIP client supporting voice/video calls and text messaging
 
-LIB_DEPENDS=	libbellesip.so:${PORTSDIR}/net/belle-sip \
-		libmediastreamer_base.so:${PORTSDIR}/net/mediastreamer \
-		libortp.so:${PORTSDIR}/net/ortp \
-		libmbedtls.so.9:${PORTSDIR}/security/polarssl13 \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libbellesip.so:net/belle-sip \
+		libmediastreamer_base.so:net/mediastreamer \
+		libortp.so:net/ortp \
+		libmbedtls.so.9:security/polarssl13 \
+		libsqlite3.so:databases/sqlite3
 
 CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
@@ -38,17 +38,17 @@ OPTIONS_DEFAULT=NOTIFY UPNP VIDEO
 OPTIONS_SUB=	yes
 
 LDAP_CONFIGURE_ENABLE=	ldap
-LDAP_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+LDAP_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 LDAP_USE=		OPENLDAP=yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
 
 NOTIFY_CONFIGURE_ENABLE=notify
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 
 UPNP_CONFIGURE_ENABLE=	upnp
-UPNP_LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
+UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
 
 VIDEO_CONFIGURE_ENABLE=	video
 

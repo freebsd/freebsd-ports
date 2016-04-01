@@ -11,7 +11,7 @@ COMMENT=	Prayer Webmail System
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libc-client4.so:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	libc-client4.so:mail/cclient
 
 USES=		iconv shebangfix gmake perl5 uidfix
 USE_PERL5=	build
@@ -36,7 +36,7 @@ GROUPS=		prayer
 SESSIONCACHE_USE=	BDB=5+
 LDAP_USE=		OPENLDAP=yes
 SSL_USE=		OPENSSL=yes
-TIDY_LIB_DEPENDS=	libtidy.so:${PORTSDIR}/www/tidy-lib
+TIDY_LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
 GID!=		id -g
 DESTDIRNAME=	BROOT

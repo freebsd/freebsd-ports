@@ -12,7 +12,7 @@ COMMENT=	Text-console utility for video stream processing
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 USE_LDCONFIG=	yes
 USES=		gmake libtool pkgconfig tar:bzip2
@@ -35,69 +35,69 @@ LZO_DESC=		LZO compression support
 X11_USE=			xorg=xv,xaw,xpm
 X11_CONFIGURE_WITH=		x
 
-MPEG2_LIB_DEPENDS=		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
+MPEG2_LIB_DEPENDS=		libmpeg2.so:multimedia/libmpeg2
 MPEG2_CONFIGURE_ENABLE=		libmpeg2 libmpeg2convert
 
 BKTR_CONFIGURE_ENABLE=		bktr
 
 POSTPROC_CONFIGURE_ENABLE=	libpostproc
 
-FREETYPE_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_LIB_DEPENDS=		libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype2
 
-LAME_LIB_DEPENDS=		libmp3lame.so:${PORTSDIR}/audio/lame
+LAME_LIB_DEPENDS=		libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=		lame
 LAME_CONFIGURE_ON=		--with-lame-prefix=${LOCALBASE}
 
-XVID_LIB_DEPENDS=		libxvidcore.so:${PORTSDIR}/multimedia/xvid
+XVID_LIB_DEPENDS=		libxvidcore.so:multimedia/xvid
 XVID_CONFIGURE_ENABLE=		xvid
 XVID_CONFIGURE_ON=		--with-xvid-prefix=${LOCALBASE}
 
-X264_LIB_DEPENDS=		libx264.so:${PORTSDIR}/multimedia/libx264
+X264_LIB_DEPENDS=		libx264.so:multimedia/libx264
 X264_CONFIGURE_ENABLE=		x264
 
-OGG_LIB_DEPENDS=		libogg.so:${PORTSDIR}/audio/libogg
+OGG_LIB_DEPENDS=		libogg.so:audio/libogg
 OGG_CONFIGURE_ENABLE=		ogg
 
-VORBIS_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=		libvorbis.so:audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=	vorbis
 
-THEORA_LIB_DEPENDS=		libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_LIB_DEPENDS=		libtheora.so:multimedia/libtheora
 THEORA_CONFIGURE_ENABLE=	theora
 
-DVDREAD_LIB_DEPENDS=		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+DVDREAD_LIB_DEPENDS=		libdvdread.so:multimedia/libdvdread
 DVDREAD_CONFIGURE_ENABLE=	libdvdread
 DVDREAD_CONFIGURE_ON=		--with-libdvdread-prefix=${LOCALBASE}
 
-DV_LIB_DEPENDS=			libdv.so:${PORTSDIR}/multimedia/libdv
+DV_LIB_DEPENDS=			libdv.so:multimedia/libdv
 DV_CONFIGURE_ENABLE=		libdv
 
-QUICKTIME_LIB_DEPENDS=		libquicktime.so:${PORTSDIR}/multimedia/libquicktime
+QUICKTIME_LIB_DEPENDS=		libquicktime.so:multimedia/libquicktime
 QUICKTIME_CONFIGURE_ENABLE=	libquicktime
 
-LZO_LIB_DEPENDS=		liblzo2.so:${PORTSDIR}/archivers/lzo2
+LZO_LIB_DEPENDS=		liblzo2.so:archivers/lzo2
 LZO_CONFIGURE_ENABLE=		lzo
 LZO_CONFIGURE_ON=		--with-lzo-prefix=${LOCALBASE} --with-lzo-includes=${LOCALBASE}
 
-A52_LIB_DEPENDS=		liba52.so:${PORTSDIR}/audio/liba52
+A52_LIB_DEPENDS=		liba52.so:audio/liba52
 A52_CONFIGURE_ENABLE=		a52
 A52_CONFIGURE_ON=		--with-a52-prefix=${LOCALBASE}
 
-FAAC_LIB_DEPENDS=		libfaac.so:${PORTSDIR}/audio/faac
+FAAC_LIB_DEPENDS=		libfaac.so:audio/faac
 FAAC_CONFIGURE_ENABLE=		faac
 FAAC_CONFIGURE_ON=		--with-faac-prefix=${LOCALBASE}
 
 LIBXML2_USE=			GNOME=libxml2
 LIBXML2_CONFIGURE_ENABLE=	libxml2
 
-MJPEGTOOLS_LIB_DEPENDS=		liblavjpeg.so:${PORTSDIR}/multimedia/mjpegtools
+MJPEGTOOLS_LIB_DEPENDS=		liblavjpeg.so:multimedia/mjpegtools
 MJPEGTOOLS_CONFIGURE_ENABLE=	mjpegtools
 
 SDL_USE=			SDL=sdl
 SDL_CONFIGURE_ENABLE=		sdl
 SDL_CONFIGURE_ENV_ON=		SDL_CONFIG="${SDL_CONFIG}"
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
 IMAGEMAGICK_CONFIGURE_ENABLE=	imagemagick
 IMAGEMAGICK_CONFIGURE_ON=	--with-imagemagick-prefix=${LOCALBASE}
 
@@ -109,7 +109,7 @@ ICONV_USES=			iconv
 ICONV_CONFIGURE_ENABLE=		iconv
 ICONV_CONFIGURE_ON=		--with-iconv-prefix=${ICONV_PREFIX}
 
-V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_CONFIGURE_ENABLE=		v4l
 
 .include <bsd.port.pre.mk>

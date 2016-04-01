@@ -11,9 +11,9 @@ GST_PLUGIN_SUFFIX=	-bad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 
-BUILD_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1-plugins \
-		v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
-RUN_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MININAL_VERSION}:${PORTSDIR}/multimedia/gstreamer1-plugins
+BUILD_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:multimedia/gstreamer1-plugins \
+		v4l_compat>=1.0.20100321:multimedia/v4l_compat
+RUN_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MININAL_VERSION}:multimedia/gstreamer1-plugins
 
 DIST=		bad
 BAD_GST_DIRS=	gst-libs sys gst po pkgconfig

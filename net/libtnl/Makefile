@@ -25,7 +25,7 @@ PLIST_SUB+=	PROFILE=''
 
 # When security/libtomcrypt is fixed to provide a shared version, we'll
 # stop extracting our own and will LIB_DEPEND on theirs instead:
-#LIB_DEPENDS=	tomcrypt:${PORTSDIR}/security/libtomcrypt
+#LIB_DEPENDS=	tomcrypt:security/libtomcrypt
 #
 #EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude tnl/libtomcrypt
 

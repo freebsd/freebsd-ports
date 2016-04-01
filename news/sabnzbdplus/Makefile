@@ -12,9 +12,9 @@ COMMENT=	Web-interface based binary newsgrabber in python, with nzb support
 LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2+ ISCL MIT PSFL
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
-		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS=	cheetah:devel/py-cheetah \
+		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:devel/py-utils \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 USES=		gettext python:2.6-2.7
 
@@ -42,12 +42,12 @@ UNRAR_DESC=	Often required for unpacking many downloads
 FEEDPARSER_DESC=	rss-feed support
 YENC_DESC=	yenc support
 
-PAR2CMDLINE_RUN_DEPENDS=	par2repair:${PORTSDIR}/archivers/par2cmdline-tbb
-FEEDPARSER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:${PORTSDIR}/textproc/py-feedparser
-YENC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yenc>=0:${PORTSDIR}/news/py-yenc
-OPENSSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl
-UNRAR_RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
-7ZIP_RUN_DEPENDS=	7za:${PORTSDIR}/archivers/p7zip
+PAR2CMDLINE_RUN_DEPENDS=	par2repair:archivers/par2cmdline-tbb
+FEEDPARSER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser
+YENC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yenc>=0:news/py-yenc
+OPENSSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl
+UNRAR_RUN_DEPENDS=	unrar:archivers/unrar
+7ZIP_RUN_DEPENDS=	7za:archivers/p7zip
 
 .include <bsd.port.pre.mk>
 

@@ -6,11 +6,11 @@ MASTER_SITES=	\
 		SF/avidemux/avidemux/${PORTVERSION}
 DISTNAME=	avidemux_${PORTVERSION}
 
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm \
-		bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad \
-		libdca.so:${PORTSDIR}/multimedia/libdca \
-		libpng.so:${PORTSDIR}/graphics/png
+BUILD_DEPENDS+=	yasm:devel/yasm \
+		bash:shells/bash
+LIB_DEPENDS+=	libmad.so:audio/libmad \
+		libdca.so:multimedia/libdca \
+		libpng.so:graphics/png
 
 LICENSE=	GPLv2
 
@@ -28,7 +28,7 @@ CMAKE_ARGS+=	-DQT5:BOOL=OFF
 CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 
@@ -41,11 +41,11 @@ OPTIONS_SUB=	yes
 CLI_DESC=	Build CLI tool
 
 FRIBIDI_CMAKE_OFF=	-DFRIDIBI:BOOL=OFF
-FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 OPUS_CMAKE_OFF=		-DOPUS:BOOL=OFF
-OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
+OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 TWOLAME_CMAKE_OFF=	-DTWOLAME:BOOL=OFF
-TWOLAME_LIB_DEPENDS=	libtwolame.so:${PORTSDIR}/audio/twolame
+TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
 
 .if !defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=	LAME FAAC AMR X264
@@ -128,7 +128,7 @@ PLIST_SUB+=	ESD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:audio/jack
 PLIST_SUB+=	JACK=""
 .else
 CMAKE_ARGS+=	-DJACK:BOOL=OFF
@@ -136,7 +136,7 @@ PLIST_SUB+=	JACK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:audio/pulseaudio
 PLIST_SUB+=	PULSE=""
 .else
 CMAKE_ARGS+=	-DPULSEAUDIOSIMPLE:BOOL=OFF
@@ -144,7 +144,7 @@ PLIST_SUB+=	PULSE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:print/freetype2
 PLIST_SUB+=	FREETYPE=""
 .else
 CMAKE_ARGS+=	-DFREETYPE2:BOOL=OFF
@@ -152,20 +152,20 @@ PLIST_SUB+=	FREETYPE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFONTCONFIG}
-LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
 .else
 CMAKE_ARGS+=	-DFONTCONFIG:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MXVIDEO}
-#LIB_DEPENDS+=	Xv:${PORTSDIR}/x11/libXv
+#LIB_DEPENDS+=	Xv:x11/libXv
 USE_XORG+=	xv
 .else
 CMAKE_ARGS+=	-DXVIDEO:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MFAAC}
-LIB_DEPENDS+=	libfaac.so:${PORTSDIR}/audio/faac
+LIB_DEPENDS+=	libfaac.so:audio/faac
 PLIST_SUB+=	FAAC=""
 .else
 CMAKE_ARGS+=	-DFAAC:BOOL=OFF
@@ -173,7 +173,7 @@ PLIST_SUB+=	FAAC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLAME}
-LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	libmp3lame.so:audio/lame
 PLIST_SUB+=	LAME=""
 .else
 CMAKE_ARGS+=	-DLAME:BOOL=OFF
@@ -181,7 +181,7 @@ PLIST_SUB+=	LAME="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFAAD}
-LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	libfaad.so:audio/faad
 PLIST_SUB+=	FAAD=""
 .else
 CMAKE_ARGS+=	-DFAAD:BOOL=OFF -DNeAAC:BOOL=OFF
@@ -189,7 +189,7 @@ PLIST_SUB+=	FAAD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MX264}
-LIB_DEPENDS+=	libx264.so:${PORTSDIR}/multimedia/libx264
+LIB_DEPENDS+=	libx264.so:multimedia/libx264
 PLIST_SUB+=	X264=""
 .else
 CMAKE_ARGS+=	-DX264:BOOL=OFF
@@ -197,7 +197,7 @@ PLIST_SUB+=	X264="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MX265}
-LIB_DEPENDS+=	libx265.so:${PORTSDIR}/multimedia/x265
+LIB_DEPENDS+=	libx265.so:multimedia/x265
 PLIST_SUB+=	X265=""
 .else
 CMAKE_ARGS+=	-DX265:BOOL=OFF
@@ -205,7 +205,7 @@ PLIST_SUB+=	X265="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVPX}
-LIB_DEPENDS+=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
 PLIST_SUB+=	VPX=""
 .else
 CMAKE_ARGS+=	-DVPXDEC:BOOL=OFF
@@ -213,7 +213,7 @@ PLIST_SUB+=	VPX="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXVID}
-LIB_DEPENDS+=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	libxvidcore.so:multimedia/xvid
 PLIST_SUB+=	XVID=""
 .else
 CMAKE_ARGS+=	-DXVID:BOOL=OFF
@@ -229,7 +229,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVAAPI}
-LIB_DEPENDS+=	libva.so:${PORTSDIR}/multimedia/libva
+LIB_DEPENDS+=	libva.so:multimedia/libva
 PLIST_SUB+=	VAAPI=""
 .else
 CMAKE_ARGS+=	-DVAAPI:BOOL=OFF -DLIBVA:BOOL=OFF
@@ -237,7 +237,7 @@ PLIST_SUB+=	VAAPI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVDPAU}
-LIB_DEPENDS+=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS+=	libvdpau.so:multimedia/libvdpau
 PLIST_SUB+=	VDPAU=""
 .else
 CMAKE_ARGS+=	-DVDPAU:BOOL=OFF
@@ -245,7 +245,7 @@ PLIST_SUB+=	VDPAU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 CMAKE_ARGS+=	-DLIBVORBIS:BOOL=OFF -DVORBIS:BOOL=OFF
@@ -253,7 +253,7 @@ PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAMR}
-LIB_DEPENDS+=	libopencore-amrnb.so:${PORTSDIR}/audio/opencore-amr
+LIB_DEPENDS+=	libopencore-amrnb.so:audio/opencore-amr
 PLIST_SUB+=	AMRNB=""
 PLIST_SUB+=	AMRWB=""
 .else

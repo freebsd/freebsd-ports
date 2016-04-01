@@ -11,8 +11,8 @@ COMMENT=	Console XMPP client
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython \
-		${PYTHON_SITELIBDIR}/sleekxmpp/__init__.py:${PORTSDIR}/net-im/py-sleekxmpp
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dns/__init__.py:dns/py-dnspython \
+		${PYTHON_SITELIBDIR}/sleekxmpp/__init__.py:net-im/py-sleekxmpp
 
 USES=		tar:xz python:3.3+
 USE_PYTHON=	distutils autoplist

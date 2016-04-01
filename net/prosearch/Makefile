@@ -45,24 +45,24 @@ SPHINX_DESC=		sphinx fulltext search engine
 .include <bsd.port.options.mk>
 
 RUN_DEPENDS+=\
-p5-lib-abs>=0:${PORTSDIR}/devel/p5-lib-abs
+p5-lib-abs>=0:devel/p5-lib-abs
 
 .if ${PORT_OPTIONS:MCRAWLER}
 RUN_DEPENDS+=\
-p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-p5-URI>=0:${PORTSDIR}/net/p5-URI \
-p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-nmap:${PORTSDIR}/security/nmap \
-p5-Net-DirectConnect>=0:${PORTSDIR}/net-p2p/p5-Net-DirectConnect
+p5-libwww>=0:www/p5-libwww \
+p5-URI>=0:net/p5-URI \
+p5-DBI>=0:databases/p5-DBI \
+p5-HTML-Parser>=0:www/p5-HTML-Parser \
+nmap:security/nmap \
+p5-Net-DirectConnect>=0:net-p2p/p5-Net-DirectConnect
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-smbclient
+RUN_DEPENDS+=	smbclient:net/samba-smbclient
 .endif
 
 .if ${PORT_OPTIONS:MRSYNC}
-RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS+=	rsync:net/rsync
 .endif
 
 .if ${PORT_OPTIONS:MAPACHE}
@@ -71,30 +71,30 @@ USE_APACHE_RUN=	22+
 
 .if ${PORT_OPTIONS:MNGINX}
 RUN_DEPENDS+=\
-nginx:${PORTSDIR}/www/nginx
+nginx:www/nginx
 .endif
 
 .if ${PORT_OPTIONS:MMOD_PERL2}
 RUN_DEPENDS+=\
-${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
+${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:www/mod_perl2
 .endif
 
 .if ${PORT_OPTIONS:MMOD_FASTCGI}
 RUN_DEPENDS+=\
-${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi	\
-p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI
+${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:www/mod_fastcgi	\
+p5-FCGI>=0:www/p5-FCGI
 .endif
 
 .if ${PORT_OPTIONS:MSPHINX}
 WITH_MYSQL=	client	# for dbi
 RUN_DEPENDS+=\
-searchd:${PORTSDIR}/textproc/sphinxsearch-devel
+searchd:textproc/sphinxsearch-devel
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	client
 RUN_DEPENDS+=\
-p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+p5-DBD-mysql>=0:databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MDB} && ${PORT_OPTIONS:MMYSQL}
@@ -103,24 +103,24 @@ USE_MYSQL=	server
 
 .if ${PORT_OPTIONS:MMARIA}
 RUN_DEPENDS+=\
-p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
-${LOCALBASE}bin/mysql:${PORTSDIR}/databases/mariadb-client
+p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+${LOCALBASE}bin/mysql:databases/mariadb-client
 .endif
 
 .if ${PORT_OPTIONS:MDB} && ${PORT_OPTIONS:MMARIA}
 RUN_DEPENDS+=\
-${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mariadb-server
+${LOCALBASE}/libexec/mysqld:databases/mariadb-server
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=		pgsql
 RUN_DEPENDS+=\
-p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+p5-DBD-Pg>=0:databases/p5-DBD-Pg
 .endif
 
 .if ${PORT_OPTIONS:MPGPP}
 RUN_DEPENDS+=\
-p5-DBD-PgPP>=0:${PORTSDIR}/databases/p5-DBD-PgPP
+p5-DBD-PgPP>=0:databases/p5-DBD-PgPP
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL} || ${PORT_OPTIONS:MPGPP} || ${PORT_OPTIONS:MDB}
@@ -131,7 +131,7 @@ WANT_PGSQL=	client server
 .if ${PORT_OPTIONS:MSQLITE}
 USES+=	sqlite
 RUN_DEPENDS+=\
-p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
+p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 .endif
 
 WRKSRC=	${WRKDIR}/search

@@ -14,7 +14,7 @@ COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 # Note USERS can only contain a single word as parts below rely on that.
 USERS=		${PORTNAME}
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--enable-POP2
 
 .if ${PORT_OPTIONS:MX11}
 USES+=		python
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter
 PLIST_SUB+=	NOX11="@comment "
 .else
 CONFIGURE_ARGS+=	PYTHON=:

@@ -11,7 +11,7 @@ COMMENT=	IMAP4rev1/POP2/POP3 mail servers forked from imap-uw
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libc-client4.so.10:${PORTSDIR}/mail/panda-cclient
+LIB_DEPENDS=	libc-client4.so.10:mail/panda-cclient
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jonabbey
@@ -39,7 +39,7 @@ NETSCAPE_BRAIN_DAMAGE_DESC=	See Makefile for documentation
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDRAC}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:mail/drac
 MAKE_ARGS+=	WITH_DRAC=yes
 .endif
 

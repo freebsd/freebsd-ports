@@ -24,6 +24,6 @@ CMAKE_ARGS=	-DPHONON_BUILD_PHONON4QT5=ON
 
 OPTIONS_DEFINE=	GST_PLUGINS
 GST_PLUGINS_DESC=	Install GStreamer plugins
-GST_PLUGINS_RUN_DEPENDS=	gstreamer1-plugins-all>=0:${PORTSDIR}/multimedia/gstreamer1-plugins-all
+GST_PLUGINS_RUN_DEPENDS=	gstreamer1-plugins-all>=0:multimedia/gstreamer1-plugins-all
 
 .include <bsd.port.mk>

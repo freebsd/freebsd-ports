@@ -14,7 +14,7 @@ COMMENT=	Tool for converting Outlook .pst files to mbox and other formats
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
+LIB_DEPENDS=	libgsf-1.so:devel/libgsf
 
 OPTIONS_DEFINE=	DOCS PST2DII
 OPTIONS_SUB=	yes
@@ -28,11 +28,11 @@ USES=		gmake iconv libtool pathfix pkgconfig
 
 PORTDOCS=	*
 
-PST2DII_BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+PST2DII_BUILD_DEPENDS=	convert:graphics/ImageMagick
 PST2DII_CONFIGURE_OFF=	--enable-dii=no
 PST2DII_CONFIGURE_ON=	--enable-dii=yes
-PST2DII_LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
-PST2DII_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+PST2DII_LIB_DEPENDS=	libgd.so:graphics/gd
+PST2DII_RUN_DEPENDS=	convert:graphics/ImageMagick
 
 post-patch:
 	@${GREP} -lr malloc.h ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g'

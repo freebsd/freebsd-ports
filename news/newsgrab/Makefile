@@ -10,10 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and uudecode binary files from USENET using regexps
 
-RUN_DEPENDS=	p5-NNTPClient>=0:${PORTSDIR}/news/p5-NNTPClient \
-		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-News-Newsrc>=0:${PORTSDIR}/news/p5-News-Newsrc \
-		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
+RUN_DEPENDS=	p5-NNTPClient>=0:news/p5-NNTPClient \
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
+		p5-News-Newsrc>=0:news/p5-News-Newsrc \
+		p5-Time-modules>=0:devel/p5-Time-modules
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix tar:tgz

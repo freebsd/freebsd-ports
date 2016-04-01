@@ -14,8 +14,8 @@ COMMENT=	Emails posts from subscribed RSS/Atom newsfeeds
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.0.1:${PORTSDIR}/textproc/py-feedparser \
-		${PYTHON_PKGNAMEPREFIX}html2text>=3.0.1:${PORTSDIR}/textproc/py-html2text
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.0.1:textproc/py-feedparser \
+		${PYTHON_PKGNAMEPREFIX}html2text>=3.0.1:textproc/py-html2text
 
 USES=		python:2 shebangfix
 SHEBANG_FILES=	rss2email.py

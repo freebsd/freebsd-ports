@@ -12,7 +12,7 @@ COMMENT=	Python library to control Sonos speakers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	SoCo

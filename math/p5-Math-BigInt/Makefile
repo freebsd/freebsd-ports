@@ -15,7 +15,7 @@ COMMENT=	Arbitrary size integer math perl package
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-Complex>=1.39:${PORTSDIR}/math/p5-Math-Complex
+BUILD_DEPENDS=	p5-Math-Complex>=1.39:math/p5-Math-Complex
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

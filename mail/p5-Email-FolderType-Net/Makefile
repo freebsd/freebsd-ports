@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Recognize folder types for network based message protocols
 
-RUN_DEPENDS=	p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
-		p5-Email-FolderType>=0.8:${PORTSDIR}/mail/p5-Email-FolderType
+RUN_DEPENDS=	p5-URI>=1.35:net/p5-URI \
+		p5-Email-FolderType>=0.8:mail/p5-Email-FolderType
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

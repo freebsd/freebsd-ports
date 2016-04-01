@@ -13,8 +13,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Administration tool for cups
 
-LIB_DEPENDS=	libgnomecups-1.0.so:${PORTSDIR}/print/libgnomecups
-RUN_DEPENDS=	gnomesu:${PORTSDIR}/security/libgnomesu
+LIB_DEPENDS=	libgnomecups-1.0.so:print/libgnomecups
+RUN_DEPENDS=	gnomesu:security/libgnomesu
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack libgnomeprintui libgnomeui

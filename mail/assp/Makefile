@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME:tu}_${PORTVERSION}_Install
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-Spam SMTP Proxy
 
-RUN_DEPENDS=	p5-Net-DNS>=0.68:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-libwww>=6.04:${PORTSDIR}/www/p5-libwww \
-		p5-HTML-Parser>=3.69:${PORTSDIR}/www/p5-HTML-Parser
+RUN_DEPENDS=	p5-Net-DNS>=0.68:dns/p5-Net-DNS \
+		p5-libwww>=6.04:www/p5-libwww \
+		p5-HTML-Parser>=3.69:www/p5-HTML-Parser
 
 USES=		perl5 zip:infozip shebangfix
 SHEBANG_FILES=	*.pl
@@ -63,63 +63,63 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/ASSP_1.9.9_14158_install/${PORTNAM
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMVALID}
-RUN_DEPENDS+=	p5-Email-Valid>=0.190:${PORTSDIR}/mail/p5-Email-Valid
+RUN_DEPENDS+=	p5-Email-Valid>=0.190:mail/p5-Email-Valid
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
-RUN_DEPENDS+=	p5-perl-ldap>=0.4400:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS+=	p5-perl-ldap>=0.4400:net/p5-perl-ldap
 .endif
 
 .if ${PORT_OPTIONS:MSPF}
-RUN_DEPENDS+=	p5-Mail-SPF>=2.007:${PORTSDIR}/mail/p5-Mail-SPF
+RUN_DEPENDS+=	p5-Mail-SPF>=2.007:mail/p5-Mail-SPF
 .endif
 
 .if ${PORT_OPTIONS:MSRS}
-RUN_DEPENDS+=	p5-Mail-SRS>=0.31:${PORTSDIR}/mail/p5-Mail-SRS
+RUN_DEPENDS+=	p5-Mail-SRS>=0.31:mail/p5-Mail-SRS
 .endif
 
 .if ${PORT_OPTIONS:MSEND}
-RUN_DEPENDS+=	p5-Email-Send>=2.198:${PORTSDIR}/mail/p5-Email-Send
+RUN_DEPENDS+=	p5-Email-Send>=2.198:mail/p5-Email-Send
 .endif
 
 .if ${PORT_OPTIONS:MFBACKW}
-RUN_DEPENDS+=	p5-File-ReadBackwards>=1.05:${PORTSDIR}/devel/p5-File-ReadBackwards
+RUN_DEPENDS+=	p5-File-ReadBackwards>=1.05:devel/p5-File-ReadBackwards
 .endif
 
 .if ${PORT_OPTIONS:MCLAMAV}
-RUN_DEPENDS+=	p5-File-Scan-ClamAV>=1.9.1:${PORTSDIR}/security/p5-File-Scan-ClamAV
+RUN_DEPENDS+=	p5-File-Scan-ClamAV>=1.9.1:security/p5-File-Scan-ClamAV
 PLIST_SUB+=	ASSP_CLAMAV=""
 .else
 PLIST_SUB+=	ASSP_CLAMAV="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDNSBL}
-RUN_DEPENDS+=	p5-Net-DNS>=0.68:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS+=	p5-Net-DNS>=0.68:dns/p5-Net-DNS
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	p5-Tie-DBI>=1.05:${PORTSDIR}/databases/p5-Tie-DBI
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-Tie-DBI>=1.05:databases/p5-Tie-DBI
+RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MMATCHRE}
-RUN_DEPENDS+=	p5-Net-IP-Match-Regexp>=1.01:${PORTSDIR}/net-mgmt/p5-Net-IP-Match-Regexp
+RUN_DEPENDS+=	p5-Net-IP-Match-Regexp>=1.01:net-mgmt/p5-Net-IP-Match-Regexp
 .endif
 
 .if ${PORT_OPTIONS:MSENDERB}
-RUN_DEPENDS+=	p5-Net-SenderBase>=1.02:${PORTSDIR}/mail/p5-Net-SenderBase
+RUN_DEPENDS+=	p5-Net-SenderBase>=1.02:mail/p5-Net-SenderBase
 .endif
 
 .if ${PORT_OPTIONS:MMIMEMOD}
-RUN_DEPENDS+=	p5-Email-MIME>=1.910:${PORTSDIR}/mail/p5-Email-MIME
+RUN_DEPENDS+=	p5-Email-MIME>=1.910:mail/p5-Email-MIME
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
-RUN_DEPENDS+=	p5-IO-Socket-SSL>=1.74:${PORTSDIR}/security/p5-IO-Socket-SSL
+RUN_DEPENDS+=	p5-IO-Socket-SSL>=1.74:security/p5-IO-Socket-SSL
 .endif
 
 .if ${PORT_OPTIONS:MIPV6}
-RUN_DEPENDS+=	p5-IO-Socket-INET6>=2.69:${PORTSDIR}/net/p5-IO-Socket-INET6
+RUN_DEPENDS+=	p5-IO-Socket-INET6>=2.69:net/p5-IO-Socket-INET6
 .endif
 
 EXTRACT_AFTER_ARGS=	-d ${PORTNAME}-${PORTVERSION}

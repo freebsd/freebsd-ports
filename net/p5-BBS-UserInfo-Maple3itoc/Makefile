@@ -15,7 +15,7 @@ COMMENT=	Get user information of Maple3itoc-style BBS
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect
+BUILD_DEPENDS=	p5-Expect>=0:lang/p5-Expect
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

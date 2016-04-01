@@ -12,8 +12,8 @@ COMMENT=	Alternative Bitcoin peer-to-peer currency client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
-		libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
+		libminiupnpc.so:net/miniupnpc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	baritus

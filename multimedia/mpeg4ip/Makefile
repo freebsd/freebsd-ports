@@ -12,17 +12,17 @@ MASTER_SITES=	LOCAL/ahze
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream, and play MPEG-4 audio/video
 
-BUILD_DEPENDS=	mp4v2>=1.9.1:${PORTSDIR}/multimedia/mp4v2 \
-		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libfaac.so:${PORTSDIR}/audio/faac \
-		libfaad.so:${PORTSDIR}/audio/faad \
-		libmp3lame.so:${PORTSDIR}/audio/lame \
-		libid3tag.so:${PORTSDIR}/audio/libid3tag \
-		liba52.so:${PORTSDIR}/audio/liba52 \
-		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
-		libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
-		libx264.so:${PORTSDIR}/multimedia/libx264
-RUN_DEPENDS=	mp4v2>=1.9.1:${PORTSDIR}/multimedia/mp4v2
+BUILD_DEPENDS=	mp4v2>=1.9.1:multimedia/mp4v2 \
+		${LOCALBASE}/include/linux/videodev.h:multimedia/v4l_compat
+LIB_DEPENDS=	libfaac.so:audio/faac \
+		libfaad.so:audio/faad \
+		libmp3lame.so:audio/lame \
+		libid3tag.so:audio/libid3tag \
+		liba52.so:audio/liba52 \
+		libmpeg2.so:multimedia/libmpeg2 \
+		libavcodec0.so:multimedia/ffmpeg0 \
+		libx264.so:multimedia/libx264
+RUN_DEPENDS=	mp4v2>=1.9.1:multimedia/mp4v2
 
 USE_GNOME=	gtk20
 USE_SDL=	sdl
@@ -72,7 +72,7 @@ USE_GNOME+=	esound
 .endif
 # nas
 .if ${PORT_OPTIONS:MNAS}
-LIB_DEPENDS+=	libaudio.so:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=	libaudio.so:audio/nas
 .endif
 
 # ipv6
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 # xvid
 .if ${PORT_OPTIONS:MXVID}
-LIB_DEPENDS+=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	libxvidcore.so:multimedia/xvid
 
 PLIST_SUB+=	XVID=""
 .else
@@ -161,7 +161,7 @@ MMX=yes
 ###
 # mmx
 .if defined(MMX)
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS+=	yasm:devel/yasm
 .else
 CONFIGURE_ARGS+=	--disable-mmx
 .endif

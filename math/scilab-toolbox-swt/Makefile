@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}-3-src${EXTRACT_SUFX}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 
-BUILD_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
+BUILD_DEPENDS=	${SCILAB_CMD}:math/scilab
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SCILAB_CMD=	${LOCALBASE}/bin/scilab-adv-cli
@@ -30,7 +30,7 @@ OPTIONS_SUB=	yes
 
 HELP_DESC=	Build help files (requires scilab with gui support)
 SIVP_DESC=	Enable Image and Video support
-SIVP_RUN_DEPENDS=	${LOCALBASE}/${CONTRIBDIR}/sivp/loader.sce:${PORTSDIR}/math/scilab-toolbox-sivp
+SIVP_RUN_DEPENDS=	${LOCALBASE}/${CONTRIBDIR}/sivp/loader.sce:math/scilab-toolbox-sivp
 
 WRKSRC=		${WRKDIR}/swt
 

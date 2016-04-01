@@ -12,8 +12,8 @@ COMMENT=	Computer algebra system
 
 BROKEN=		bootsys goes in an infinite loop during build
 
-BUILD_DEPENDS=	sbcl:${PORTSDIR}/lang/sbcl \
-		noweb:${PORTSDIR}/devel/noweb
+BUILD_DEPENDS=	sbcl:lang/sbcl \
+		noweb:devel/noweb
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lisp=sbcl

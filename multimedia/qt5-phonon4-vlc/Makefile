@@ -12,7 +12,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	VLC backend for Phonon 4 Qt 5
 
-LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc
+LIB_DEPENDS=	libvlc.so:multimedia/vlc
 
 USES=		cmake pkgconfig tar:xz
 USE_QT5=	core gui widgets phonon4 \

@@ -43,7 +43,7 @@ CNEWS_SUFFIX=	-cnews
 MAKE_ENV+=	DB_TYPE=-DUSE_DBZ DB_LIB=-lcnews
 MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/lib
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/${CNEWS_PORT}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${CNEWS_PORT}
 CONFLICTS+=	suck-4.*
 .endif
 
@@ -54,7 +54,7 @@ MAKE_ENV+=	DB_LIB="-linn -lstorage -linnhist"
 MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/news/lib
 MAKE_ENV+=	DB_INC_LOC="-I${LOCALBASE}/news/include -I${LOCALBASE}/news/include/inn"
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
-BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
+BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:news/inn
 CONFLICTS+=	suck-cnews-4.*
 .endif
 

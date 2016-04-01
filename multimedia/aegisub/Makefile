@@ -15,10 +15,10 @@ COMMENT=	Cross-platform subtitle editor
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libicui18n.so:${PORTSDIR}/devel/icu \
-		libass.so:${PORTSDIR}/multimedia/libass \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libicui18n.so:devel/icu \
+		libass.so:multimedia/libass \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USE_GITHUB=	nodefault
 
@@ -50,24 +50,24 @@ OPTIONS_DEFINE=		ALSA DOCS FFMPEG FFTW HUNSPELL OPENAL PORTAUDIO \
 			PULSEAUDIO
 OPTIONS_DEFAULT=	FFMPEG FFTW HUNSPELL PULSEAUDIO
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_OFF=	--without-alsa
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENV=	FFMS2_CFLAGS="${FFMS_CFLAGS}" \
 			FFMS2_LIBS="${FFMS_LIBS}"
 FFMPEG_CONFIGURE_OFF=	--without-ffms
 FFMPEG_CPPFLAGS=	${FFMS_CFLAGS}
 FFMPEG_GH_TUPLE=	FFMS:ffms2:2.20:ffms
-FFTW_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
 FFTW_CONFIGURE_OFF=	--without-fftw3
-HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
 HUNSPELL_CONFIGURE_OFF=	--without-hunspell
 OPENAL_USES=		openal
 OPENAL_CONFIGURE_OFF=	--without-openal
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_CONFIGURE_OFF=\
 			--without-portaudio
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=\
 			--without-libpulse
 
@@ -86,8 +86,8 @@ CFLAGS_i386=	-march=pentium
 USE_CXXSTD=	c++11
 CXXFLAGS+=	-Wno-c++11-narrowing
 .if ${COMPILER_VERSION} < 34
-BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++ \
-		${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34
+BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++ \
+		${LOCALBASE}/bin/clang34:lang/clang34
 CPP=		clang-cpp34
 CC=		clang34
 CXX=		clang++34

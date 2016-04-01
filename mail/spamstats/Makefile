@@ -11,8 +11,8 @@ MASTER_SITES=	LOCAL/leeym
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Tool to generate statistics for spamd of Mail::SpamAssassin
 
-RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
-		p5-Compress-Bzip2>=2.08:${PORTSDIR}/archivers/p5-Compress-Bzip2
+RUN_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
+		p5-Compress-Bzip2>=2.08:archivers/p5-Compress-Bzip2
 
 NO_BUILD=	yes
 PORTDOCS=	QUICK README copyright

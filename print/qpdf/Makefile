@@ -12,7 +12,7 @@ COMMENT=	Command-line tools for transforming and inspecting PDF documents
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/Artistic-2.0
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 OPTIONS_DEFINE=	DOCS
 

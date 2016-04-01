@@ -8,7 +8,7 @@ CATEGORIES=	multimedia kde
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Subtitle editor for KDE
 
-LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USES=		cmake:outsource gettext shared-mime-info
 USE_KDE4=	kdeprefix kdelibs automoc4
@@ -23,10 +23,10 @@ BACKEND_DESC=	Additional video backens
 OPTIONS_GROUP_BACKEND=	GSTREAMER MPLAYER XINE
 
 MPLAYER_DESC=	Install MPlayer
-MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 XINE_DESC=	Build Xine backend
-XINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
+XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
 XINE_CMAKE_OFF=	-DWITH_Xine:Bool=Off
 
 GSTREAMER_DESC=	Build GStreamer 1.x backend

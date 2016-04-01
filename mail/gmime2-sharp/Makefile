@@ -10,7 +10,7 @@ COMMENT=	Mono bindings for gmime
 
 IGNORE=		try to install weaked-named assembly into the GAC
 
-LIB_DEPENDS=	libgmime-2.0.so:${PORTSDIR}/mail/gmime2
+LIB_DEPENDS=	libgmime-2.0.so:mail/gmime2
 
 MASTERDIR=	${.CURDIR}/../gmime2
 BUILD_WRKSRC=	${WRKSRC}/mono

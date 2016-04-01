@@ -12,7 +12,7 @@ COMMENT=	Provides access to Amazon EC2, S3, SQS, and SDB web services
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-right_http_connection>=1.2.5:${PORTSDIR}/net/rubygem-right_http_connection
+RUN_DEPENDS=	rubygem-right_http_connection>=1.2.5:net/rubygem-right_http_connection
 
 NO_ARCH=	yes
 
@@ -23,6 +23,6 @@ RUBYGEM_AUTOPLIST=	yes
 OPTIONS_DEFINE=	LIBXML
 LIBXML_DESC=	Use libxml instead of REXML
 
-LIBXML_RUN_DEPENDS=	rubygem-libxml-ruby>=0.5.2:${PORTSDIR}/textproc/rubygem-libxml-ruby
+LIBXML_RUN_DEPENDS=	rubygem-libxml-ruby>=0.5.2:textproc/rubygem-libxml-ruby
 
 .include <bsd.port.mk>

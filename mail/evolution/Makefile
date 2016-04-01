@@ -10,18 +10,18 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated mail, calendar and address book distributed suite
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		highlight:${PORTSDIR}/textproc/highlight
-LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
-		libgcr-3.so:${PORTSDIR}/security/gcr \
-		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
-		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
-		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
-		libcryptui.so:${PORTSDIR}/security/libcryptui \
-		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
-		libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight \
-		gnome-keyring>=3.0.0:${PORTSDIR}/security/gnome-keyring
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		highlight:textproc/highlight
+LIB_DEPENDS=	libnss3.so:security/nss \
+		libgcr-3.so:security/gcr \
+		libgtkspell3-3.so:textproc/gtkspell3 \
+		libgeocode-glib.so:net/geocode-glib \
+		libwebkitgtk-3.0.so:www/webkit-gtk3 \
+		libcryptui.so:security/libcryptui \
+		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libnotify.so:devel/libnotify
+RUN_DEPENDS=	highlight:textproc/highlight \
+		gnome-keyring>=3.0.0:security/gnome-keyring
 
 PORTSCOUT=	limitw:1,even
 
@@ -80,29 +80,29 @@ MAPS_DESC=	Contact maps
 LDAP_CONFIGURE_WITH=	openldap
 LDAP_USE=	OPENLDAP=yes
 
-WEATHER_LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather
+WEATHER_LIB_DEPENDS=	libgweather-3.so:net/libgweather
 WEATHER_CONFIGURE_ENABLE=	weather
 
 SPAMASSASSIN_CONFIGURE_WITH=	spamassassin
-SPAMASSASSIN_BUILD_DEPENDS=	spamassassin:${PORTSDIR}/mail/spamassassin
-SPAMASSASSIN_RUN_DEPENDS=	spamassassin:${PORTSDIR}/mail/spamassassin
+SPAMASSASSIN_BUILD_DEPENDS=	spamassassin:mail/spamassassin
+SPAMASSASSIN_RUN_DEPENDS=	spamassassin:mail/spamassassin
 
 BOGOFILTER_CONFIGURE_WITH=	bogofilter
-BOGOFILTER_BUILD_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
-BOGOFILTER_RUN_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
+BOGOFILTER_BUILD_DEPENDS=	bogofilter:mail/bogofilter
+BOGOFILTER_RUN_DEPENDS=	bogofilter:mail/bogofilter
 
-CANBERRA_LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+CANBERRA_LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3
 CANBERRA_CONFIGURE_ENABLE=	canberra
 
 PST_CONFIGURE_ENABLE=	pst-import
-PST_BUILD_DEPENDS=	libpst>=0.6.58_1:${PORTSDIR}/mail/libpst
-PST_RUN_DEPENDS=	libpst>=0.6.58_1:${PORTSDIR}/mail/libpst
+PST_BUILD_DEPENDS=	libpst>=0.6.58_1:mail/libpst
+PST_RUN_DEPENDS=	libpst>=0.6.58_1:mail/libpst
 
 CONFIGURE_ARGS+=--disable-contact-maps
 #MAPS_CONFIGURE_ENABLE=	contact-maps
-#MAPS_LIB_DEPENDS=	libchamplain-0.12.so:${PORTSDIR}/graphics/libchamplain \
-#			libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3
-#MAPS_BUILD_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
+#MAPS_LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
+#			libclutter-gtk-1.0.so:graphics/clutter-gtk3
+#MAPS_BUILD_DEPENDS=	geoclue>=0:net/geoclue
 
 .include <bsd.port.options.mk>
 

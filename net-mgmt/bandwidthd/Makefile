@@ -12,7 +12,7 @@ COMMENT=	Tracks bandwidth usage by IP address
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:graphics/gd
 
 SUB_FILES=	bandwidthd
 

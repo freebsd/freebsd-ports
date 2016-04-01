@@ -27,7 +27,7 @@ SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \
 		vpopmail-vdir.sh wrapfd3.sh
 
 OPTIONS_DEFINE=	CDB DOCS EXAMPLES
-CDB_RUN_DEPENDS=${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
+CDB_RUN_DEPENDS=${PYTHON_SITELIBDIR}/cdbmodule.so:databases/py-cdb
 
 do-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} ./compileall

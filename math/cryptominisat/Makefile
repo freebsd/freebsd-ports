@@ -10,8 +10,8 @@ COMMENT=	General-purpose award-winning SAT solver
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE-LGPL
 
-BUILD_DEPENDS=	xxd:${PORTSDIR}/editors/vim-lite # for xxd tool
-LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs
+BUILD_DEPENDS=	xxd:editors/vim-lite # for xxd tool
+LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	msoos

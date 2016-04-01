@@ -14,9 +14,9 @@ COMMENT=	Simulate virtual network hosts (honeypots)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
-		libdnet.so:${PORTSDIR}/net/libdnet \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libevent.so:devel/libevent2 \
+		libdnet.so:net/libdnet \
+		libpcre.so:devel/pcre
 
 USES=		libedit libtool shebangfix
 SHEBANG_FILES=	scripts/*.pl scripts/snmp/*.pl

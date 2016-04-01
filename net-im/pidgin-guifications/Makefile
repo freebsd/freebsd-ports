@@ -12,8 +12,8 @@ COMMENT=	Plugin to add msn style "toaster" popups to Pidgin
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
+BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:net-im/pidgin
+RUN_DEPENDS=	pidgin:net-im/pidgin
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20 intltool

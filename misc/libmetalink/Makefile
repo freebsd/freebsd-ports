@@ -28,11 +28,11 @@ PORTEXAMPLES=	LibO_3.5.4_Win_x86_install_multi.msi.meta4 \
 		ubuntu-12.04-server-amd64.metalink
 
 EXPAT_CONFIGURE_WITH=	libexpat
-EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 LIBXML2_CONFIGURE_WITH=	libxml2
 LIBXML2_CPPFLAGS=	-I${LOCALBASE}/include/libxml2
 LIBXML2_USE=		GNOME=libxml2
-TEST_BUILD_DEPENDS=	cunit>=2.1:${PORTSDIR}/devel/cunit
+TEST_BUILD_DEPENDS=	cunit>=2.1:devel/cunit
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/

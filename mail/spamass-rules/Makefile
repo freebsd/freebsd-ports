@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.ranner.eu/stuff/
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Custom rulesets for SpamAssassin
 
-RUN_DEPENDS=	spamc:${PORTSDIR}/mail/spamassassin
+RUN_DEPENDS=	spamc:mail/spamassassin
 
 USES=		tar:bzip2
 

@@ -13,8 +13,8 @@ COMMENT=	Additional loader for Emotion (vlc)
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libefl.so:${PORTSDIR}/devel/efl \
-		libvlc.so:${PORTSDIR}/multimedia/vlc
+LIB_DEPENDS=	libefl.so:devel/efl \
+		libvlc.so:multimedia/vlc
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes

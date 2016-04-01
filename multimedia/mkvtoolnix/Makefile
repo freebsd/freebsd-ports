@@ -13,11 +13,11 @@ COMMENT=	Tools to extract from/get info about/create Matroska media streams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libebml.so:${PORTSDIR}/textproc/libebml \
-		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
-		libmatroska.so:${PORTSDIR}/multimedia/libmatroska
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg \
+		libebml.so:textproc/libebml \
+		libboost_regex.so:devel/boost-libs \
+		libmatroska.so:multimedia/libmatroska
 
 USES=		compiler:c++11-lib iconv pkgconfig tar:xz
 GNU_CONFIGURE=	yes
@@ -38,10 +38,10 @@ OPTIONS_DEFAULT=	FLAC QT5
 OPTIONS_SUB=	yes
 
 CURL_DESC=	Online update checks using curl
-CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	curl
 
-FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CONFIGURE_WITH=	flac
 
 NLS_USES=	gettext

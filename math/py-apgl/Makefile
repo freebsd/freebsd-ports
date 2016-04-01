@@ -13,7 +13,7 @@ COMMENT=	Fast python graph library with some machine learning features
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0.7.0:${PORTSDIR}/science/py-scipy
+		${PYTHON_PKGNAMEPREFIX}scipy>0.7.0:science/py-scipy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python

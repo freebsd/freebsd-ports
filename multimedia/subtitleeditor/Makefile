@@ -11,10 +11,10 @@ COMMENT=	Subtitle editor
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	iso-codes>0:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libenchant.so:${PORTSDIR}/textproc/enchant
+BUILD_DEPENDS=	iso-codes>0:misc/iso-codes
+LIB_DEPENDS=	libglademm-2.4.so:devel/libglademm24 \
+		libpcre.so:devel/pcre \
+		libenchant.so:textproc/enchant
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		desktop-file-utils gettext gmake libtool pkgconfig
@@ -32,7 +32,7 @@ OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_OFF=	--disable-nls
 
-OPENGL_LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:${PORTSDIR}/x11-toolkits/gtkglextmm
+OPENGL_LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm
 OPENGL_USE=		gl=glu
 OPENGL_CONFIGURE_ENABLE=gl
 

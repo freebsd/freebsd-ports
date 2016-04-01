@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-perl
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Perl binding for libproxy
 
-LIB_DEPENDS=	libproxy.so:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	libproxy.so:net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr

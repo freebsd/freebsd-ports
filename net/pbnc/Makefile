@@ -12,7 +12,7 @@ COMMENT=	Simple userspace TCP port bouncer
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
+RUN_DEPENDS=	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask
 
 USES=		perl5
 USE_PERL5=	run

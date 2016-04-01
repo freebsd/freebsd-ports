@@ -12,8 +12,8 @@ COMMENT=	Command-line interface for High-Availability cluster management
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ClusterLabs
@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc
+DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 
 MANPAGES_BUILD_DEPENDS=	${DOCS_BUILD_DEPENDS}
 

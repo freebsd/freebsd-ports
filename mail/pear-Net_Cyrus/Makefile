@@ -8,10 +8,10 @@ CATEGORIES=	mail net pear
 MAINTAINER=	bra@fsn.hu
 COMMENT=	PEAR class to administer Cyrus IMAP servers
 
-BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
-		${PEARDIR}/Net/IMAP.php:${PORTSDIR}/mail/pear-Net_IMAP
-RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
-		${PEARDIR}/Net/IMAP.php:${PORTSDIR}/mail/pear-Net_IMAP
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket \
+		${PEARDIR}/Net/IMAP.php:mail/pear-Net_IMAP
+RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket \
+		${PEARDIR}/Net/IMAP.php:mail/pear-Net_IMAP
 
 USES=	pear
 

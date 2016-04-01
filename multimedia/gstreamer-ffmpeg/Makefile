@@ -16,7 +16,7 @@ COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
+LIB_DEPENDS=	liborc-0.4.so:devel/orc
 
 PORTSCOUT=	limit:0\.10\..*
 
@@ -31,11 +31,11 @@ PLIST_SUB=	VERSION="${PORTVERSION:R}"
 OPTIONS_DEFINE=	FFMPEG
 FFMPEG_DESC?=	Use system ffmpeg instead of internal libav
 
-FFMPEG_LIB_DEPENDS=libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+FFMPEG_LIB_DEPENDS=libavcodec0.so:multimedia/ffmpeg0
 FFMPEG_CONFIGURE_WITH=system-ffmpeg
 
 FFMPEG_DISTFILES_OFF=libav-${LIBAV_VERSION}.tar.xz:libav
-FFMPEG_BUILD_DEPENDS_OFF=yasm:${PORTSDIR}/devel/yasm
+FFMPEG_BUILD_DEPENDS_OFF=yasm:devel/yasm
 FFMPEG_LDFLAGS_OFF=-Wl,-Bsymbolic
 FFMPEG_CONFIGURE_OFF=--with-ffmpeg-extra-configure="${FFMPEG_CONFIG}"
 FFMPEG_CONFIG=	--cc=${CC} \
@@ -65,14 +65,14 @@ FFMPEG_CFLAGS_OFF+=-msse
 .if ${ARCH} == armv6
 CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
 CFLAGS=	-no-integrated-as
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
 .if ! ${PORT_OPTIONS:MFFMPEG}
 .if ${ARCH} == ia64
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif

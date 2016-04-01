@@ -13,8 +13,8 @@ COMMENT=	Configurable static port network tracing tool
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
-		${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:net/libdnet \
+		${LOCALBASE}/lib/libpcap.a:net/libpcap
 
 USES=		tar:tgz
 WRKSRC=		${WRKDIR}/etrace

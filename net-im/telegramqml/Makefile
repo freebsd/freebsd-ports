@@ -12,7 +12,7 @@ COMMENT=	Telegram API tools for QtQML and Qml
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libqtelegram-ae.so:${PORTSDIR}/net-im/libqtelegram-ae
+LIB_DEPENDS=	libqtelegram-ae.so:net-im/libqtelegram-ae
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Aseman-Land

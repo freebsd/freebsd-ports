@@ -9,8 +9,8 @@ COMMENT=	Command-line twitter client for SIXEL-supported terminal
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		img2sixel:${PORTSDIR}/graphics/libsixel
+RUN_DEPENDS=	curl:ftp/curl \
+		img2sixel:graphics/libsixel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	isaki68k

@@ -11,7 +11,7 @@ COMMENT=	PEAR interface to various online weather-services
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
+RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request
 
 PORTSCOUT=	skipv:1.4.7
 
@@ -26,10 +26,10 @@ PEAR_DB_DESC=	PEAR::DB support
 PEAR_SOAP_DESC=	PEAR::SOAP support
 PEAR_XML_SERIALIZER_DESC=	PEAR::XML::Serializer support
 
-PEAR_NET_FTP_BUILD_DEPENDS=	${PEARDIR}/Net/FTP.php:${PORTSDIR}/ftp/pear-Net_FTP
-PEAR_CACHE_BUILD_DEPENDS=	${PEARDIR}/Cache.php:${PORTSDIR}/sysutils/pear-Cache
-PEAR_DB_BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-PEAR_SOAP_BUILD_DEPENDS=${PEARDIR}/SOAP/Base.php:${PORTSDIR}/net/pear-SOAP
-PEAR_XML_SERIALIZER_BUILD_DEPENDS=	${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
+PEAR_NET_FTP_BUILD_DEPENDS=	${PEARDIR}/Net/FTP.php:ftp/pear-Net_FTP
+PEAR_CACHE_BUILD_DEPENDS=	${PEARDIR}/Cache.php:sysutils/pear-Cache
+PEAR_DB_BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
+PEAR_SOAP_BUILD_DEPENDS=${PEARDIR}/SOAP/Base.php:net/pear-SOAP
+PEAR_XML_SERIALIZER_BUILD_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer
 
 .include <bsd.port.mk>

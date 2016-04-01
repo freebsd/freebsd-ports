@@ -13,7 +13,7 @@ COMMENT=	Transparent BigNumber/BigRational support for Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-BigInt>=1.999712:${PORTSDIR}/math/p5-Math-BigInt
+BUILD_DEPENDS=	p5-Math-BigInt>=1.999712:math/p5-Math-BigInt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

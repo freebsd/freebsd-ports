@@ -14,7 +14,7 @@ COMMENT=	All-platform eMule p2p client
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcryptopp.so:${PORTSDIR}/security/cryptopp
+LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
 CONFLICTS=	amule-[0-9]*
 
@@ -75,14 +75,14 @@ AMULEDAEMON_USE=	RC_SUBR=amuled
 AMULEGUI_CONFIGURE_ON=	--enable-amule-gui
 
 CAS_CONFIGURE_ON=	--enable-cas
-CAS_LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+CAS_LIB_DEPENDS=	libgd.so:graphics/gd
 
 ED2K_CONFIGURE_OFF=	--disable-ed2k
 
 FILEVIEW_CONFIGURE_ON=	--enable-fileview
 
 GEOIP_CONFIGURE_ON=	--enable-geoip
-GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 MMAP_CONFIGURE_ON=	--enable-mmap
 
@@ -95,7 +95,7 @@ PLASMAMULE_CONFIGURE_ENV= \
 			KBUILDSYCOCA=${KDE4_PREFIX}/bin/kbuildsycoca4 \
 			UPDATE_MIME_DATABASE=/usr/bin/true
 
-UPNP_LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
+UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
 UPNP_CONFIGURE_OFF=	--disable-upnp
 
 WEBSERVER_CONFIGURE_ON=	--enable-webserver

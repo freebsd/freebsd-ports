@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/math/pari:configure
-LIB_DEPENDS=	libpari.so:${PORTSDIR}/math/pari
+BUILD_DEPENDS=	${NONEXISTENT}:math/pari:configure
+LIB_DEPENDS=	libpari.so:math/pari
 
 USES=		perl5 zip
 USE_PERL5=	configure

@@ -12,7 +12,7 @@ COMMENT=	ARP level "ping" utility
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

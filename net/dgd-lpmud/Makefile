@@ -12,7 +12,7 @@ DISTNAME=	2.4.5-for-1.4
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	LPmud mudlib, for use with DGD
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/dgd:${PORTSDIR}/net/dgd
+RUN_DEPENDS=	${LOCALBASE}/sbin/dgd:net/dgd
 
 NO_PACKAGE=	May not be used for monetary gain
 NO_CDROM=	${NO_PACKAGE}

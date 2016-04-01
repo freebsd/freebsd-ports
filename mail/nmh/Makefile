@@ -25,7 +25,7 @@ OPTIONS_SINGLE_LOCKING=	DOT FCNTL FLOCK LOCKF
 
 SASL2_DESC=	SASL2 support
 SASL2_CONFIGURE_WITH=	cyrus-sasl
-SASL2_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL2_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL2_LDFLAGS=-L${LOCALBASE}/lib
 SASL2_CPPFLAGS=-I${LOCALBASE}/include
 
@@ -33,10 +33,10 @@ HASH_BKP_DESC=	Use hash as backup prefix (default is a comma)
 HASH_BKP_CONFIGURE_WITH=	hash-backup
 
 REPLYFILTER_DESC=	Install dependencies for contrib/replyfilter
-REPLYFILTER_RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
-				p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
-				w3m>=0:${PORTSDIR}/www/w3m \
-				par>=0:${PORTSDIR}/textproc/par
+REPLYFILTER_RUN_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools \
+				p5-Mail-Tools>=0:mail/p5-Mail-Tools \
+				w3m>=0:www/w3m \
+				par>=0:textproc/par
 
 SMTP_DESC=	Use remote SMTP
 SMTP_CONFIGURE_ON=	--with-mts=smtp

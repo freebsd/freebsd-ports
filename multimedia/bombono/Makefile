@@ -14,16 +14,16 @@ COMMENT=	DVD authoring program
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick
-LIB_DEPENDS=	libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \
-		liblavfile.so:${PORTSDIR}/multimedia/mjpegtools \
-		libdvdread.so:${PORTSDIR}/multimedia/libdvdread \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick \
-		enca:${PORTSDIR}/converters/enca \
-		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		toolame:${PORTSDIR}/audio/toolame
+BUILD_DEPENDS=	gm:graphics/GraphicsMagick
+LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26 \
+		liblavfile.so:multimedia/mjpegtools \
+		libdvdread.so:multimedia/libdvdread \
+		libavcodec.so:multimedia/ffmpeg \
+		libboost_filesystem.so:devel/boost-libs
+RUN_DEPENDS=	gm:graphics/GraphicsMagick \
+		enca:converters/enca \
+		growisofs:sysutils/dvd+rw-tools \
+		toolame:audio/toolame
 
 USES=		desktop-file-utils gettext pkgconfig scons shared-mime-info \
 		tar:bzip2

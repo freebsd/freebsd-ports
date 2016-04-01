@@ -5,8 +5,8 @@ PATCHDIR=	${.CURDIR}/../remmina/files
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS+=	remmina>=${PORTVERSION}:${PORTSDIR}/net/remmina
-RUN_DEPENDS+=	remmina>=${PORTVERSION}:${PORTSDIR}/net/remmina
+BUILD_DEPENDS+=	remmina>=${PORTVERSION}:net/remmina
+RUN_DEPENDS+=	remmina>=${PORTVERSION}:net/remmina
 
 USES+=		cmake gmake pkgconfig desktop-file-utils
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango

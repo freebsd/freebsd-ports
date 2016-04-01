@@ -13,17 +13,17 @@ COMMENT=	Perl Data Language
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header \
-		p5-Convert-UU>=0:${PORTSDIR}/converters/p5-Convert-UU \
-		p5-File-Map>=0.57:${PORTSDIR}/devel/p5-File-Map \
-		p5-Inline>=0.68:${PORTSDIR}/devel/p5-Inline \
-		p5-Inline-C>=0.62:${PORTSDIR}/devel/p5-Inline-C \
-		p5-Module-Compile>=0.23:${PORTSDIR}/devel/p5-Module-Compile
+BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:astro/p5-Astro-FITS-Header \
+		p5-Convert-UU>=0:converters/p5-Convert-UU \
+		p5-File-Map>=0.57:devel/p5-File-Map \
+		p5-Inline>=0.68:devel/p5-Inline \
+		p5-Inline-C>=0.62:devel/p5-Inline-C \
+		p5-Module-Compile>=0.23:devel/p5-Module-Compile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-BUILD_DEPENDS+=	p5-Devel-CheckLib>=1.01:${PORTSDIR}/devel/p5-Devel-CheckLib
-TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+BUILD_DEPENDS+=	p5-Devel-CheckLib>=1.01:devel/p5-Devel-CheckLib
+TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
+		p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Test-Warn>=0:devel/p5-Test-Warn
 
 PORTSCOUT=	limit:^[0-9]\.[0-9][0-9]+[0-9\.]*$$
 
@@ -55,22 +55,22 @@ F77_DESC=	Enable PDL::Minuit and PDL::Slatec
 READLINE_DESC=	Use GNU readline
 SINK_DESC=	Include PDL kitchen sink
 
-PGPLOT_BUILD_DEPENDS=	p5-PGPLOT>=0:${PORTSDIR}/graphics/p5-PGPLOT
-PLPLOT_LIB_DEPENDS=	libplplotd.so:${PORTSDIR}/math/plplot
-OPENGL_BUILD_DEPENDS=	p5-OpenGL>=0.65:${PORTSDIR}/graphics/p5-OpenGL
+PGPLOT_BUILD_DEPENDS=	p5-PGPLOT>=0:graphics/p5-PGPLOT
+PLPLOT_LIB_DEPENDS=	libplplotd.so:math/plplot
+OPENGL_BUILD_DEPENDS=	p5-OpenGL>=0.65:graphics/p5-OpenGL
 OPENGL_RUN_DEPENDS:=	${OPENGL_BUILD_DEPENDS}
 OPENGL_USE=		gl=yes
-GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
-F77_BUILD_DEPENDS=	p5-ExtUtils-F77>=0:${PORTSDIR}/lang/p5-ExtUtils-F77
-FFTW_LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
-GSL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
-HDF_LIB_DEPENDS=	libdf.so:${PORTSDIR}/science/hdf
-PROJ_LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj
-READLINE_RUN_DEPENDS=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu
-READLINE_RUN_DEPENDS_OFF=	p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
-SINK_RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm \
-			mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
-			saoimage:${PORTSDIR}/astro/saoimage
+GD_LIB_DEPENDS=		libgd.so:graphics/gd
+F77_BUILD_DEPENDS=	p5-ExtUtils-F77>=0:lang/p5-ExtUtils-F77
+FFTW_LIB_DEPENDS=	libfftw.so:math/fftw
+GSL_LIB_DEPENDS=	libgsl.so:math/gsl
+HDF_LIB_DEPENDS=	libdf.so:science/hdf
+PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
+READLINE_RUN_DEPENDS=	p5-ReadLine-Gnu>=0:devel/p5-ReadLine-Gnu
+READLINE_RUN_DEPENDS_OFF=	p5-ReadLine-Perl>=0:devel/p5-ReadLine-Perl
+SINK_RUN_DEPENDS=	ppmtogif:graphics/netpbm \
+			mpeg_encode:multimedia/mpeg_encode \
+			saoimage:astro/saoimage
 
 post-patch:
 	@${GREP} -lR '#!/.*bin/perl' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|#!/.*bin/perl|#!${PERL}|' -i ''

@@ -12,8 +12,8 @@ DISTNAME=	gmp-${DISTVERSION}a
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Library for arbitrary precision arithmetic (MinGW32)
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
-		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
+BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
+		mingwm10.dll:devel/mingw32-bin-msvcrt
 
 WRKSRC=		${WRKDIR}/gmp-${PORTVERSION}
 

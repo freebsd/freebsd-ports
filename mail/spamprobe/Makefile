@@ -26,7 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # PBL support
-PBL_BUILD_DEPENDS=	${LOCALBASE}/lib/libpbl.a:${PORTSDIR}/databases/libpbl
+PBL_BUILD_DEPENDS=	${LOCALBASE}/lib/libpbl.a:databases/libpbl
 PBL_RUN_DEPENDS+=	${PBL_BUILD_DEPENDS}
 PBL_CONFIGURE_WITH=	pbl
 PBL_LDFLAGS=	-lpbl
@@ -38,11 +38,11 @@ BDB_CPPFLAGS=	-DUSE_DB=1
 
 # giflib support
 GIF_CONFIGURE_WITH=	gif
-GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 
 # PNG support
 PNG_CONFIGURE_WITH=	png
-PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 # JPEG support
 JPEG_CONFIGURE_WITH=jpeg

@@ -14,8 +14,8 @@ COMMENT=	Dovecot plugin to train dspam about spam or false positives
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:configure
-RUN_DEPENDS=	dovecot>=1.1.2:${PORTSDIR}/mail/dovecot
+BUILD_DEPENDS=	${NONEXISTENT}:mail/dovecot:configure
+RUN_DEPENDS=	dovecot>=1.1.2:mail/dovecot
 
 USES=		gmake tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/dovecot/imap

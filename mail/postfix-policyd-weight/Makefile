@@ -15,8 +15,8 @@ COMMENT=	Weighted policy daemon for postfix
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Net-DNS>=0.72:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Net-IP>0:${PORTSDIR}/net-mgmt/p5-Net-IP
+RUN_DEPENDS=	p5-Net-DNS>=0.72:dns/p5-Net-DNS \
+		p5-Net-IP>0:net-mgmt/p5-Net-IP
 
 SUB_FILES=	pkg-message pkg-install
 PLIST_FILES=	bin/${PORTNAME} \

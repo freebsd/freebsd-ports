@@ -29,18 +29,18 @@ OPTIONS_DEFAULT=	QT4 CUPS PS
 OPTIONS_SUB=	yes
 
 CUPS_QMAKE_OFF=	"CONFIG+=without_cups"
-CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
-DJVU_LIB_DEPENDS=	libdjvulibre.so:${PORTSDIR}/graphics/djvulibre
+DJVU_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
 DJVU_QMAKE_OFF=	"CONFIG+=without_djvu"
 
 QT4_USE=	qt4=dbus,gui,linguisttools,moc_build,rcc_build,sql,sql-sqlite3,svg,xml
-QT4_LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
+QT4_LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4
 
 QT5_USE=	qt5=buildtools_build,concurrent,linguisttools,printsupport,sql,sql-sqlite3,svg,xml
-QT5_LIB_DEPENDS=	libpoppler-qt5.so:${PORTSDIR}/graphics/poppler-qt5
+QT5_LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
-PS_LIB_DEPENDS=	libspectre.so:${PORTSDIR}/print/libspectre
+PS_LIB_DEPENDS=	libspectre.so:print/libspectre
 PS_QMAKE_OFF=	"CONFIG+=without_ps"
 
 pre-configure:

@@ -12,8 +12,8 @@ COMMENT=	GTK frontend for rsync
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
-		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	rsync:net/rsync \
+		bash:shells/bash
 
 USE_GNOME=	gtk20 intltool
 USES=		desktop-file-utils gettext gmake \

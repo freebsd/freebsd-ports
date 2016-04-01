@@ -12,7 +12,7 @@ COMMENT=	Perform frequency scans for DVB and ATSC transmissions
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=  v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=  v4l_compat>=1.0.20120501:multimedia/v4l_compat
 
 PATCH_STRIP=	-lp1
 
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	LINUX DOCS
 
 LINUX_DESC=		Install Linux binary too (linux-w_scan)
 LINUX_USE=		LINUX=yes
-LINUX_RUN_DEPENDS=	linux_dvbwrapper-kmod>=1.0:${PORTSDIR}/multimedia/linux_dvbwrapper-kmod
+LINUX_RUN_DEPENDS=	linux_dvbwrapper-kmod>=1.0:multimedia/linux_dvbwrapper-kmod
 LINUX_PLIST_FILES=	bin/linux-${PORTNAME}
 
 post-patch:

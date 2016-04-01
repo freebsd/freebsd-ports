@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Check validity of Internet email addresses
 
-COMMON_DEPENDS=	p5-Net-DNS>0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Mail-Tools>0:${PORTSDIR}/mail/p5-Mail-Tools \
-		p5-Net-Domain-TLD>0:${PORTSDIR}/dns/p5-Net-Domain-TLD
+COMMON_DEPENDS=	p5-Net-DNS>0:dns/p5-Net-DNS \
+		p5-Mail-Tools>0:mail/p5-Mail-Tools \
+		p5-Net-Domain-TLD>0:dns/p5-Net-Domain-TLD
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 

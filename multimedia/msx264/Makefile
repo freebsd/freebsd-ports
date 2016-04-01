@@ -11,8 +11,8 @@ COMMENT=	Mediastreamer plugin for H264 encoding
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmediastreamer_base.so:${PORTSDIR}/net/mediastreamer \
-		libx264.so:${PORTSDIR}/multimedia/libx264
+LIB_DEPENDS=	libmediastreamer_base.so:net/mediastreamer \
+		libx264.so:multimedia/libx264
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-strict

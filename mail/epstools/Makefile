@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.inter7.com/eps/
 MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	EPS (Email Parsing System) sample tools
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libeps.a:${PORTSDIR}/mail/eps
+BUILD_DEPENDS=	${LOCALBASE}/lib/libeps.a:mail/eps
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTDOCS=	README

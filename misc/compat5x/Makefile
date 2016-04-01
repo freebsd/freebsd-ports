@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convenience package to install the compat5x libraries
 
-RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/localedata
+RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:misc/localedata
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

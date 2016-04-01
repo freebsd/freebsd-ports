@@ -15,7 +15,7 @@ COMMENT=	Qt APIs for mobile devices and desktop platforms
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libblkid.so:${PORTSDIR}/misc/e2fsprogs-libblkid
+LIB_DEPENDS=	libblkid.so:misc/e2fsprogs-libblkid
 
 DATE=	20130703
 USES=		pkgconfig qmake shebangfix tar:xz
@@ -42,8 +42,8 @@ LOCATION_USE=		qt4=rcc_build,sql
 MESSAGING_DESC=		Messaging module
 
 MULTIMEDIA_DESC=	Multimedia module
-MULTIMEDIA_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-MULTIMEDIA_BUILD_DEPENDS=	v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
+MULTIMEDIA_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+MULTIMEDIA_BUILD_DEPENDS=	v4l_compat>=1.0.20120501:multimedia/v4l_compat
 MULTIMEDIA_USE=		qt4=opengl gstreamer=bad
 
 ORGANIZER_DESC=		Organizer module

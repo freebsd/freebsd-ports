@@ -8,8 +8,8 @@ CATEGORIES=	net
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CLI for Cloud Foundry written in Go
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go \
-		${LOCALBASE}/bin/go-bindata:${PORTSDIR}/devel/go-bindata
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go \
+		${LOCALBASE}/bin/go-bindata:devel/go-bindata
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudfoundry

@@ -22,9 +22,9 @@ PLIST_FILES=	bin/abby
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCCLIVE}
-RUN_DEPENDS+=	cclive>=0.5.6:${PORTSDIR}/multimedia/cclive
+RUN_DEPENDS+=	cclive>=0.5.6:multimedia/cclive
 .else
-RUN_DEPENDS+=	clive>=2.2.5:${PORTSDIR}/multimedia/clive
+RUN_DEPENDS+=	clive>=2.2.5:multimedia/clive
 .endif
 
 do-install:

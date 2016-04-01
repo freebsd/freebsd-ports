@@ -11,10 +11,10 @@ COMMENT=	Python Twitter client for the console
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwid>0:${PORTSDIR}/devel/py-urwid \
-		${PYTHON_PKGNAMEPREFIX}tweepy>=2.2:${PORTSDIR}/net/py-tweepy
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest \
-		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwid>0:devel/py-urwid \
+		${PYTHON_PKGNAMEPREFIX}tweepy>=2.2:net/py-tweepy
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
 OPTIONS_DEFINE=		TESTS
 

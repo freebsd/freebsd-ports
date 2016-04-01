@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Complex number support for the Math::Symbolic parser
 
-BUILD_DEPENDS=	p5-Math-Symbolic>=0:${PORTSDIR}/math/p5-Math-Symbolic \
-		p5-Math-SymbolicX-ParserExtensionFactory>=0:${PORTSDIR}/math/p5-Math-SymbolicX-ParserExtensionFactory
+BUILD_DEPENDS=	p5-Math-Symbolic>=0:math/p5-Math-Symbolic \
+		p5-Math-SymbolicX-ParserExtensionFactory>=0:math/p5-Math-SymbolicX-ParserExtensionFactory
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

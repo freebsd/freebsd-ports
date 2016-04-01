@@ -14,11 +14,11 @@ COMMENT=	Simple frame work for talking with web services
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-SOAP-Data-Builder>=0.8:${PORTSDIR}/net/p5-SOAP-Data-Builder \
-		p5-SOAP-Lite>=0.67:${PORTSDIR}/net/p5-SOAP-Lite \
-		p5-XML-LibXML>=0.6:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+		p5-File-Slurp>=0:devel/p5-File-Slurp \
+		p5-SOAP-Data-Builder>=0.8:net/p5-SOAP-Data-Builder \
+		p5-SOAP-Lite>=0.67:net/p5-SOAP-Lite \
+		p5-XML-LibXML>=0.6:textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:2.26

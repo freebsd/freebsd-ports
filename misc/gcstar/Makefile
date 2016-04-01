@@ -14,26 +14,26 @@ COMMENT=	Open source application for managing your collections
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
-		p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag \
-		p5-Ogg-Vorbis-Header-PurePerl>=0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header-PurePerl \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece \
-		p5-Gtk2-Spell>=0:${PORTSDIR}/devel/p5-Gtk2-Spell \
-		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-Switch>0:${PORTSDIR}/lang/p5-Switch \
-		p5-Gnome2-VFS>=0:${PORTSDIR}/x11-toolkits/p5-Gnome2-VFS \
-		p5-Net-FreeDB>=0:${PORTSDIR}/audio/p5-Net-FreeDB \
-		p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally \
-		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
-		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil
+RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+		p5-Archive-Tar>=0:archivers/p5-Archive-Tar \
+		p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
+		p5-libwww>=0:www/p5-libwww \
+		p5-MP3-Info>=0:audio/p5-MP3-Info \
+		p5-MP3-Tag>=0:audio/p5-MP3-Tag \
+		p5-Ogg-Vorbis-Header-PurePerl>=0:audio/p5-Ogg-Vorbis-Header-PurePerl \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple \
+		p5-Time-Piece>=0:devel/p5-Time-Piece \
+		p5-Gtk2-Spell>=0:devel/p5-Gtk2-Spell \
+		p5-DateTime-Format-Strptime>=0:devel/p5-DateTime-Format-Strptime \
+		p5-Date-Calc>=0:devel/p5-Date-Calc \
+		p5-Switch>0:lang/p5-Switch \
+		p5-Gnome2-VFS>=0:x11-toolkits/p5-Gnome2-VFS \
+		p5-Net-FreeDB>=0:audio/p5-Net-FreeDB \
+		p5-Sort-Naturally>=0:textproc/p5-Sort-Naturally \
+		p5-GD>=0:graphics/p5-GD \
+		p5-GD-Graph>=0:graphics/p5-GD-Graph \
+		p5-GD-TextUtil>=0:graphics/p5-GD-TextUtil
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		perl5 desktop-file-utils shared-mime-info shebangfix

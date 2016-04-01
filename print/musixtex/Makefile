@@ -12,8 +12,8 @@ DISTFILES=	musixtex-${PORTVERSION}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of TeX macros to typeset music
 
-BUILD_DEPENDS=	initex:${PORTSDIR}/print/tex
-RUN_DEPENDS=	initex:${PORTSDIR}/print/tex
+BUILD_DEPENDS=	initex:print/tex
+RUN_DEPENDS=	initex:print/tex
 
 EXAMPLE_VERSION=	T112
 

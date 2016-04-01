@@ -10,7 +10,7 @@ MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/toilet/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced figlet(6)
 
-LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
+LIB_DEPENDS=	libcaca.so:graphics/libcaca
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""

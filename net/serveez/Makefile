@@ -13,7 +13,7 @@ COMMENT=	Server framework
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libguile.so:lang/guile
 
 USES=		tar:xz libtool
 GNU_CONFIGURE=	yes

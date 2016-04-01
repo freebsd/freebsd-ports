@@ -9,11 +9,11 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Crawls through your online content
 
-LIB_DEPENDS=	libgdata.so:${PORTSDIR}/devel/libgdata \
-		libtracker-control-1.0.so:${PORTSDIR}/sysutils/tracker \
-		libgfbgraph-0.2.so:${PORTSDIR}/net/gfbgraph \
-		libzapojit-0.0.so:${PORTSDIR}/net/libzapojit \
-		libgrilo-0.2.so:${PORTSDIR}/net/grilo
+LIB_DEPENDS=	libgdata.so:devel/libgdata \
+		libtracker-control-1.0.so:sysutils/tracker \
+		libgfbgraph-0.2.so:net/gfbgraph \
+		libzapojit-0.0.so:net/libzapojit \
+		libgrilo-0.2.so:net/grilo
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack introspection:build

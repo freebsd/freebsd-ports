@@ -17,7 +17,7 @@ USES=		python
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/google-cloud-sdk
 
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python:lang/python
 
 post-extract:
 	@${RM} ${WRKSRC}/install.bat

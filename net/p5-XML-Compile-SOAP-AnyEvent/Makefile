@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Exchange XML via AnyEvent::HTTP
 
-BUILD_DEPENDS=	p5-AnyEvent-HTTP>=1.46:${PORTSDIR}/www/p5-AnyEvent-HTTP \
-		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
-		p5-Log-Report>=1.05:${PORTSDIR}/devel/p5-Log-Report \
-		p5-XML-Compile-SOAP>=3.05:${PORTSDIR}/net/p5-XML-Compile-SOAP
+BUILD_DEPENDS=	p5-AnyEvent-HTTP>=1.46:www/p5-AnyEvent-HTTP \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		p5-Log-Report>=1.05:devel/p5-Log-Report \
+		p5-XML-Compile-SOAP>=3.05:net/p5-XML-Compile-SOAP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	ART10 GPLv1

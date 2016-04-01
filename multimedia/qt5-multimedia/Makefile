@@ -26,12 +26,12 @@ OPTIONS_RADIO_AUDIOPLUGIN=	ALSA PULSEAUDIO
 OPTIONS_SUB=			yes
 AUDIOPLUGIN_DESC=		Audio plugins to build
 
-ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
-GSTREAMER_BUILD_DEPENDS=${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+GSTREAMER_BUILD_DEPENDS=${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 GSTREAMER_EXTRA_PATCHES_OFF=	${FILESDIR}/extrapatch-no-gstreamer
 GSTREAMER_USE=		GSTREAMER1=bad
 OPENAL_USES=		openal
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 .include <bsd.port.options.mk>
 

@@ -14,7 +14,7 @@ COMMENT=	GNU RADIUS server
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
 GNU_CONFIGURE=	yes
@@ -45,7 +45,7 @@ EMACS_DESC=	Install Emacs dotfiles
 
 SNMP_CONFIGURE_ENABLE=		snmp
 CLIENT_CONFIGURE_ENABLE=	client
-CLIENT_LIB_DEPENDS=		libguile.so:${PORTSDIR}/lang/guile
+CLIENT_LIB_DEPENDS=		libguile.so:lang/guile
 CLIENT_CONFIGURE_OFF=		--without-guile
 MYSQL_USE=			mysql=yes
 MYSQL_CONFIGURE_WITH=		mysql

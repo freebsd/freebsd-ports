@@ -13,8 +13,8 @@ COMMENT=	CPU miner for Litecoin and Bitcoin
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libjansson.so:${PORTSDIR}/devel/jansson
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libjansson.so:devel/jansson
 
 USES=		autoreconf cpe
 GNU_CONFIGURE=	yes

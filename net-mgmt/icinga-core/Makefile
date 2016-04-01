@@ -26,13 +26,13 @@ OPTIONS_DEFAULT=	IDOUTILS MONPLUGINS
 
 IDOUTILS_DESC=		Enable Icinga Data Objects support
 
-MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/monitoring-plugins
-NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
+MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/monitoring-plugins
+NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIDOUTILS}
-LIB_DEPENDS+=		libdbi.so:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=		libdbi.so:databases/libdbi
 CONFIGURE_ARGS+=	--enable-idoutils \
 			--enable-ssl \
 			--with-dbi-lib=${LOCALBASE}/lib \

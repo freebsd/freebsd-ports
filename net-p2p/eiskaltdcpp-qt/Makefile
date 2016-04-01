@@ -11,8 +11,8 @@ COMMENT=	EiskaltDC++ Direct Connect client Qt GUI
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	eiskaltdcpp-data>=0:${PORTSDIR}/net-p2p/eiskaltdcpp-data
-LIB_DEPENDS=	libeiskaltdcpp.so:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
+RUN_DEPENDS=	eiskaltdcpp-data>=0:net-p2p/eiskaltdcpp-data
+LIB_DEPENDS=	libeiskaltdcpp.so:net-p2p/eiskaltdcpp-lib
 
 MASTERDIR=	${.CURDIR}/../eiskaltdcpp-lib
 
@@ -37,7 +37,7 @@ CMAKE_ARGS+=	-DINSTALL_DATA:BOOL=OFF
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}
 INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}
 
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ASPELL_CMAKE_ON=	-DUSE_ASPELL:BOOL=ON
 ASPELL_CMAKE_OFF=	-DUSE_ASPELL:BOOL=OFF
 
@@ -49,7 +49,7 @@ DBUS_NOTIFY_CMAKE_ON=	-DDBUS_NOTIFY:BOOL=ON
 DBUS_NOTIFY_CMAKE_OFF=	-DDBUS_NOTIFY:BOOL=OFF
 
 QTSCRIPT_USE=		QT4=script
-QTSCRIPT_RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so:${PORTSDIR}/devel/qtscriptgenerator
+QTSCRIPT_RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so:devel/qtscriptgenerator
 QTSCRIPT_CMAKE_ON=	-DUSE_JS:BOOL=ON
 QTSCRIPT_CMAKE_OFF=	-DUSE_JS:BOOL=OFF
 

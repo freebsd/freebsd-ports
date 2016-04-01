@@ -12,9 +12,9 @@ COMMENT=	Send messages inside a web application
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-carrierwave>=0.5.8:${PORTSDIR}/www/rubygem-carrierwave \
-		rubygem-foreigner>=0.9.1:${PORTSDIR}/devel/rubygem-foreigner \
-		rubygem-rails4>=3.2.0:${PORTSDIR}/www/rubygem-rails4
+RUN_DEPENDS=	rubygem-carrierwave>=0.5.8:www/rubygem-carrierwave \
+		rubygem-foreigner>=0.9.1:devel/rubygem-foreigner \
+		rubygem-rails4>=3.2.0:www/rubygem-rails4
 
 NO_ARCH=	yes
 USE_RUBY=	yes

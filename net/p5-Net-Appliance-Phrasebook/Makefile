@@ -12,10 +12,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Network appliance command-line phrasebook
 
-BUILD_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-Data-Phrasebook>=0:${PORTSDIR}/textproc/p5-Data-Phrasebook \
-		p5-Data-Phrasebook-Loader-YAML>=0:${PORTSDIR}/textproc/p5-Data-Phrasebook-Loader-YAML \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+BUILD_DEPENDS=	p5-Class-Data-Inheritable>=0:devel/p5-Class-Data-Inheritable \
+		p5-Data-Phrasebook>=0:textproc/p5-Data-Phrasebook \
+		p5-Data-Phrasebook-Loader-YAML>=0:textproc/p5-Data-Phrasebook-Loader-YAML \
+		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

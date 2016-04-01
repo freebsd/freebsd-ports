@@ -9,7 +9,7 @@ USE_XORG+=	xkbfile
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
-LIB_DEPENDS+=	libssh_threads.so:${PORTSDIR}/security/libssh
+LIB_DEPENDS+=	libssh_threads.so:security/libssh
 
 PLIST_SUB+=	ICONS="" SSH="@comment "
 

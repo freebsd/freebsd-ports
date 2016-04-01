@@ -12,9 +12,9 @@ COMMENT=	Framework for UPnP devices
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	gupnp>=0.3:${PORTSDIR}/net/gupnp
-LIB_DEPENDS=	libgupnp-1.0.so:${PORTSDIR}/net/gupnp \
-		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+BUILD_DEPENDS=	gupnp>=0.3:net/gupnp
+LIB_DEPENDS=	libgupnp-1.0.so:net/gupnp \
+		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

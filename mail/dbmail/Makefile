@@ -12,13 +12,13 @@ COMMENT=	SQL database-based mail system (POP3 and IMAP)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
-		libzdb.so:${PORTSDIR}/databases/libzdb \
-		libmhash.so:${PORTSDIR}/security/mhash \
-		libevent.so:${PORTSDIR}/devel/libevent2
-BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		xmlto:${PORTSDIR}/textproc/xmlto \
-		docbook-sgml>0:${PORTSDIR}/textproc/docbook-sgml
+LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
+		libzdb.so:databases/libzdb \
+		libmhash.so:security/mhash \
+		libevent.so:devel/libevent2
+BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+		xmlto:textproc/xmlto \
+		docbook-sgml>0:textproc/docbook-sgml
 
 CONFLICTS=	dbmail22-[0-9]*
 
@@ -45,7 +45,7 @@ MAKE_ARGS+=	mandir=${MANPREFIX}/man
 DOCS=		AUTHORS BUGS INSTALL THANKS UPGRADING
 
 SIEVE_CONFIGURE_WITH=	sieve
-SIEVE_LIB_DEPENDS=	libsieve.so:${PORTSDIR}/mail/libsieve
+SIEVE_LIB_DEPENDS=	libsieve.so:mail/libsieve
 
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes

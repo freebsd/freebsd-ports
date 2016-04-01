@@ -11,8 +11,8 @@ MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
 
-LIB_DEPENDS=	libhwloc.so:${PORTSDIR}/devel/hwloc \
-		libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libhwloc.so:devel/hwloc \
+		libltdl.so:devel/libltdl
 
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -51,7 +51,7 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 
 TORQUE_CONFIGURE_ON=	--with-tm=${LOCALBASE}
 TORQUE_CONFIGURE_OFF=	--without-tm
-TORQUE_LIB_DEPENDS=	libtorque.so:${PORTSDIR}/sysutils/torque
+TORQUE_LIB_DEPENDS=	libtorque.so:sysutils/torque
 TORQUE_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 			${MPIDIR}/lib/openmpi/mca_plm_tm.la \
 			${MPIDIR}/lib/openmpi/mca_ras_tm.la \
@@ -62,7 +62,7 @@ TORQUE_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 			${MPIDIR}/share/openmpi/help-ras-tm.txt
 
 SLURM_CONFIGURE_WITH=	slurm
-SLURM_LIB_DEPENDS=	libslurm.so:${PORTSDIR}/sysutils/slurm-wlm
+SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm
 SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_ess_slurm.so \
 			${MPIDIR}/lib/openmpi/mca_plm_slurm.la \

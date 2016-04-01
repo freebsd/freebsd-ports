@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	synce-
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	Library to support communication with WinCE devices
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libhal.so:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libhal.so:sysutils/hal
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

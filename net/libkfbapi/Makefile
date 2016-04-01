@@ -12,7 +12,7 @@ COMMENT=	Library for accessing Facebook services
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libqjson.so:devel/qjson
 
 USES=		cmake:outsource gettext tar:bzip2
 USE_KDE4=	automoc4 kdelibs kdeprefix pimlibs

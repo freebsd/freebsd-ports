@@ -12,8 +12,8 @@ COMMENT=	Project X addon to read Siemens Gigaset M740AV video recordings
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	projectx>=0.90.4.00:${PORTSDIR}/multimedia/projectx
-RUN_DEPENDS=	projectx>=0.90.4.00:${PORTSDIR}/multimedia/projectx
+BUILD_DEPENDS=	projectx>=0.90.4.00:multimedia/projectx
+RUN_DEPENDS=	projectx>=0.90.4.00:multimedia/projectx
 
 USES=		zip
 USE_JAVA=	yes

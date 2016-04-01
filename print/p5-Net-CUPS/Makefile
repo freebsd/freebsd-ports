@@ -14,8 +14,8 @@ COMMENT=	Interface to the CUPS API
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcupsimage.so:${PORTSDIR}/print/cups \
-		libcupsfilters.so:${PORTSDIR}/print/cups-filters
+LIB_DEPENDS=	libcupsimage.so:print/cups \
+		libcupsfilters.so:print/cups-filters
 
 USES=		perl5
 USE_PERL5=	configure

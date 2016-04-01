@@ -12,10 +12,10 @@ COMMENT=	Makes high quality X/K/S/VCD movies from many formats
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
-		bash:${PORTSDIR}/shells/bash \
-		mplayer:${PORTSDIR}/multimedia/mplayer \
-		transcode:${PORTSDIR}/multimedia/transcode
+RUN_DEPENDS=	mpeg2enc:multimedia/mjpegtools \
+		bash:shells/bash \
+		mplayer:multimedia/mplayer \
+		transcode:multimedia/transcode
 
 USES=		shebangfix
 SHEBANG_FILES=	${PORTNAME}.sh

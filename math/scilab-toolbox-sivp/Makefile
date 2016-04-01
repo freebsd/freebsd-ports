@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	scilab-toolbox-
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Scilab Image and Video Processing Toolbox
 
-BUILD_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
-LIB_DEPENDS=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
-RUN_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
+BUILD_DEPENDS=	${SCILAB_CMD}:math/scilab
+LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv
+RUN_DEPENDS=	${SCILAB_CMD}:math/scilab
 
 USES=		dos2unix pkgconfig tar:xz
 DOS2UNIX_FILES=	etc/SIVP.start \

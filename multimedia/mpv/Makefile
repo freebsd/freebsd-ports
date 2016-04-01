@@ -14,8 +14,8 @@ COMMENT=	Free and open-source general-purpose video player
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player waf-project:waf
@@ -60,40 +60,40 @@ IN_DESC=	Input
 VO_DESC=	Video Output
 AO_DESC=	Audio Output
 
-ALSA_LIB_DEPENDS=		libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_OFF=		--disable-alsa
 
-ASS_LIB_DEPENDS=		libass.so:${PORTSDIR}/multimedia/libass
+ASS_LIB_DEPENDS=		libass.so:multimedia/libass
 ASS_CONFIGURE_OFF=		--disable-libass
 
-CACA_LIB_DEPENDS=		libcaca.so:${PORTSDIR}/graphics/libcaca
+CACA_LIB_DEPENDS=		libcaca.so:graphics/libcaca
 CACA_CONFIGURE_OFF=		--disable-caca
 
-CDIO_LIB_DEPENDS=		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
+CDIO_LIB_DEPENDS=		libcdio_paranoia.so:sysutils/libcdio-paranoia
 CDIO_CONFIGURE_OFF=		--disable-cdda
 
-DVDNAV_LIB_DEPENDS=		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
+DVDNAV_LIB_DEPENDS=		libdvdnav.so:multimedia/libdvdnav
 DVDNAV_CONFIGURE_OFF=		--disable-dvdnav
 
-DVDREAD_LIB_DEPENDS=		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+DVDREAD_LIB_DEPENDS=		libdvdread.so:multimedia/libdvdread
 DVDREAD_CONFIGURE_OFF=		--disable-dvdread
 
-ENCA_LIB_DEPENDS=		libenca.so:${PORTSDIR}/converters/enca
+ENCA_LIB_DEPENDS=		libenca.so:converters/enca
 ENCA_CONFIGURE_OFF=		--disable-enca
 
-JACK_LIB_DEPENDS=		libjack.so:${PORTSDIR}/audio/jack
+JACK_LIB_DEPENDS=		libjack.so:audio/jack
 JACK_CONFIGURE_OFF=		--disable-jack
 
-LCMS2_LIB_DEPENDS=		liblcms2.so:${PORTSDIR}/graphics/lcms2
+LCMS2_LIB_DEPENDS=		liblcms2.so:graphics/lcms2
 LCMS2_CONFIGURE_OFF=		--disable-lcms2
 
-LIBBLURAY_LIB_DEPENDS=		libbluray.so:${PORTSDIR}/multimedia/libbluray
+LIBBLURAY_LIB_DEPENDS=		libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_OFF=	--disable-libbluray
 
-LIBGUESS_LIB_DEPENDS=		libguess.so:${PORTSDIR}/textproc/libguess
+LIBGUESS_LIB_DEPENDS=		libguess.so:textproc/libguess
 LIBGUESS_CONFIGURE_OFF=		--disable-libguess
 
-LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
 LUAJIT_USES_OFF=		lua
 LUAJIT_CONFIGURE_ON=		--lua=luajit
 LUAJIT_CONFIGURE_OFF=		--lua=${LUA_VER_STR}fbsd
@@ -102,27 +102,27 @@ OPENGL_USE=			GL=gl
 OPENGL_CONFIGURE_OFF=		--disable-gl
 OPENGL_IMPLIES=			X11
 
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
 SDL_USE=			SDL=sdl2
 SDL_CONFIGURE_ON=		--enable-sdl2
 SDL_CONFIGURE_OFF=		--disable-sdl2
 
-SMB_LIB_DEPENDS=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_LIB_DEPENDS=		libsmbclient.so:net/samba-libsmbclient
 SMB_CONFIGURE_OFF=		--disable-libsmbclient
 
-UCHARDET_LIB_DEPENDS=		libuchardet.so:${PORTSDIR}/textproc/uchardet
+UCHARDET_LIB_DEPENDS=		libuchardet.so:textproc/uchardet
 UCHARDET_CONFIGURE_OFF=		--disable-uchardet
 
-V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-V4L_LIB_DEPENDS=		libv4l2.so:${PORTSDIR}/multimedia/libv4l
+V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+V4L_LIB_DEPENDS=		libv4l2.so:multimedia/libv4l
 V4L_CONFIGURE_OFF=		--disable-tv-v4l2
 
-VAAPI_LIB_DEPENDS=		libva.so:${PORTSDIR}/multimedia/libva
+VAAPI_LIB_DEPENDS=		libva.so:multimedia/libva
 VAAPI_CONFIGURE_OFF=		--disable-vaapi
 
-VDPAU_LIB_DEPENDS=		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+VDPAU_LIB_DEPENDS=		libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=		--disable-vdpau
 
 X11_USE=			XORG=x11,xv,xxf86vm
@@ -132,7 +132,7 @@ XINERAMA_USE=			XORG=xinerama,xineramaproto
 XINERAMA_CONFIGURE_OFF=		--disable-xinerama
 XINERAMA_IMPLIES=		X11
 
-YTDL_RUN_DEPENDS=		youtube-dl:${PORTSDIR}/www/youtube_dl
+YTDL_RUN_DEPENDS=		youtube-dl:www/youtube_dl
 
 ZSH_USES=			perl5
 ZSH_USE=			PERL5=build

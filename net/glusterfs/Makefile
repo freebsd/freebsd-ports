@@ -11,7 +11,7 @@ COMMENT=	GlusterFS distributed file system
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone liburcu-bp.so:${PORTSDIR}/sysutils/liburcu
+LIB_DEPENDS=	libargp.so:devel/argp-standalone liburcu-bp.so:${PORTSDIR}/sysutils/liburcu
 
 USE_GCC=	any
 
@@ -46,7 +46,7 @@ KMODDIR?=	/boot/modules
 
 .if ${OSVERSION} < 1000000
 WITH_OPENSSL_PORT=	yes
-RUN_DEPENDS+=	${KMODDIR}/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+RUN_DEPENDS+=	${KMODDIR}/fuse.ko:sysutils/fusefs-kmod
 .endif
 
 .include <bsd.port.mk>

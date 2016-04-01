@@ -10,7 +10,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Printer manager for KDE 4
 
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups
+LIB_DEPENDS=	libcups.so:print/cups
 
 USES=		cmake:outsource tar:xz
 USE_KDE4=	kdelibs kdeprefix automoc4

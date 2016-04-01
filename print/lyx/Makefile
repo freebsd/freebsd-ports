@@ -16,8 +16,8 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
-		libmythes-1.2.so:${PORTSDIR}/textproc/mythes
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		libmythes-1.2.so:textproc/mythes
 
 MAJOR_VERSION=	2.1
 MINOR_VERSION=	4
@@ -36,11 +36,11 @@ OPTIONS_SUB=		yes
 ENCHANT_DESC=		Spell checking using Enchant
 
 ASPELL_CONFIGURE_OFF=	--without-aspell
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ENCHANT_CONFIGURE_OFF=	--without-enchant
-ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
 HUNSPELL_CONFIGURE_OFF=	--without-hunspell
-HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext
 

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.gropp.org/bwm-ng/
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Small and simple bandwidth monitor
 
-LIB_DEPENDS=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig

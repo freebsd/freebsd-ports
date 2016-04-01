@@ -16,6 +16,6 @@ PEAR_SYSTEM_COMMAND_DESC=	PEAR::System_Command support
 USES=		pear
 NO_ARCH=	yes
 
-PEAR_SYSTEM_COMMAND_RUN_DEPENDS=	${PEARDIR}/System/Command.php:${PORTSDIR}/devel/pear-System_Command
+PEAR_SYSTEM_COMMAND_RUN_DEPENDS=	${PEARDIR}/System/Command.php:devel/pear-System_Command
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ CATEGORIES=	net
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Discovery server for syncthing
 
-BUILD_DEPENDS=	go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	syncthing

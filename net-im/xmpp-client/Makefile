@@ -10,8 +10,8 @@ COMMENT=	XMPP client with OTR support
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/golang.org/x/crypto/bcrypt.a:${PORTSDIR}/security/go.crypto \
-		${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.net/dict.a:${PORTSDIR}/net/go.net
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/golang.org/x/crypto/bcrypt.a:security/go.crypto \
+		${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.net/dict.a:net/go.net
 
 PLIST_FILES=	bin/xmpp-client
 GO_PKGNAME=	github.com/agl/${PORTNAME}

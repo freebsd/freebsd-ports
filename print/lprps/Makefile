@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	PostScript printer filter supporting a bidirectional serial channel
 
-LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	libpaper.so:print/libpaper
 
 PORTDOCS=	INSTALL
 

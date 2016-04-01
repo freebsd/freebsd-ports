@@ -13,7 +13,7 @@ COMMENT=	C++ SOAP Library based on expat
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USE_OPENSSL=	yes
 USES=		libtool

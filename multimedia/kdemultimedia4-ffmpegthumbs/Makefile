@@ -13,7 +13,7 @@ COMMENT=	FFmpeg-based thumbnail generator for video files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libswscale.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libswscale.so:multimedia/ffmpeg
 
 USES=		cmake:outsource pkgconfig tar:xz
 USE_KDE4=	automoc4 kdelibs kdeprefix

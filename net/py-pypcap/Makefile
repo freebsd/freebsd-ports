@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Simplified object-oriented Python extension module for libpcap
 
-BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
+BUILD_DEPENDS=	pyrexc:devel/pyrex
 
 USES=		python
 USE_PYTHON=	distutils autoplist

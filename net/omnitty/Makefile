@@ -10,7 +10,7 @@ MASTER_SITES=	SF/omnitty/omnitty/omnitty-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based SSH multiplexer
 
-LIB_DEPENDS=	librote.so:${PORTSDIR}/devel/rote
+LIB_DEPENDS=	librote.so:devel/rote
 
 USES=		gmake ncurses
 GNU_CONFIGURE=	yes

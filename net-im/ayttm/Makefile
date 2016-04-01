@@ -13,11 +13,11 @@ COMMENT=	Chat program that combines AIM, ICQ, and Yahoo! Chat into one
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
-		libltdl.so:${PORTSDIR}/devel/libltdl \
-		libjasper.so:${PORTSDIR}/graphics/jasper \
-		libgpgme.so:${PORTSDIR}/security/gpgme \
-		libenchant.so:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
+		libltdl.so:devel/libltdl \
+		libjasper.so:graphics/jasper \
+		libgpgme.so:security/gpgme \
+		libenchant.so:textproc/enchant
 
 OPTIONS_DEFINE=	ESOUND YAHOO
 OPTIONS_SUB=	yes
@@ -39,7 +39,7 @@ INSTALL_TARGET=	install-strip
 ESOUND_CONFIGURE_ENABLE=	esd
 ESOUND_USE=		GNOME=esound
 
-YAHOO_LIB_DEPENDS=	libyahoo2.so:${PORTSDIR}/net-im/libyahoo2
+YAHOO_LIB_DEPENDS=	libyahoo2.so:net-im/libyahoo2
 YAHOO_CONFIGURE_ENABLE=	yahoo
 
 post-patch:

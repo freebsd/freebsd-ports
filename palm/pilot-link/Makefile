@@ -14,7 +14,7 @@ COMMENT=	Suite of tools to connect and sync your Palm handheld
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/popt -I${LOCALBASE}/include
@@ -42,7 +42,7 @@ IGNORE=		cannot be built: USB support requires THREADS turned on.  Please reconf
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng.so:graphics/png
 CONFIGURE_ARGS+=	--with-libpng=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--disable-png

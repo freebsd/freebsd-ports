@@ -14,6 +14,6 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Mail \
 		Horde_Smtp
 
-RUN_DEPENDS+=	${PEARDIR}/Net/DNS2.php:${PORTSDIR}/dns/pear-Net_DNS2
+RUN_DEPENDS+=	${PEARDIR}/Net/DNS2.php:dns/pear-Net_DNS2
 
 .include <bsd.port.mk>

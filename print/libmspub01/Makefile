@@ -13,9 +13,9 @@ COMMENT=	Library and tools for parsing Microsoft Publisher file format
 LICENSE=	LGPL21 MPL GPLv2
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/ptr_container/ptr_map.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu \
-		librevenge-0.0.so:${PORTSDIR}/textproc/librevenge
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/ptr_container/ptr_map.hpp:devel/boost-libs
+LIB_DEPENDS=	libicui18n.so:devel/icu \
+		librevenge-0.0.so:textproc/librevenge
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

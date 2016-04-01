@@ -12,8 +12,8 @@ COMMENT=	Alternative DHCP implementation by ISC
 LICENSE=	MPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	liblog4cplus.so:${PORTSDIR}/devel/log4cplus \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
+		libboost_system.so:devel/boost-libs
 
 USES=		libtool python:3.3+ autoreconf
 USE_LDCONFIG=	yes

@@ -10,10 +10,10 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Farstream Connection Manager for Telepathy Framework
 
-BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
-		libfarstream-0.2.so:${PORTSDIR}/net-im/farstream
+BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libtelepathy-glib.so:net-im/telepathy-glib \
+		libfarstream-0.2.so:net-im/farstream
 
 USES=		gmake libtool pathfix pkgconfig python
 USE_GNOME=	glib20 libxslt:build introspection:build

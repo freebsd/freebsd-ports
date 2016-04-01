@@ -14,8 +14,8 @@ LICENSE_NAME=	Ricochet
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
-RUN_DEPENDS=	tor:${PORTSDIR}/security/tor
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf
+RUN_DEPENDS=	tor:security/tor
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ricochet-im

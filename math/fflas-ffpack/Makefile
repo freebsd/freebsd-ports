@@ -12,7 +12,7 @@ COMMENT=	Library for dense linear algebra over word-size finite fields
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		shebangfix
 GNU_CONFIGURE=	yes
@@ -30,7 +30,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-givaro="${LOCALBASE}"
-LIB_DEPENDS+=		libgivaro.so:${PORTSDIR}/math/givaro
+LIB_DEPENDS+=		libgivaro.so:math/givaro
 .else
 CONFIGURE_ARGS+=	--with-givaro=no
 .endif
@@ -40,21 +40,21 @@ WITH_BLAS?=	gsl
 
 .if ${WITH_BLAS} == "gotoblas"
 CONFIGURE_ARGS+=	--with-gotoblas2="${LOCALBASE}" --with-lapack=blas
-LIB_DEPENDS+=	libgoto2p.so:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	libgoto2p.so:math/gotoblas
 USES+=		fortran
 .elif ${WITH_BLAS} == "atlas"
 CONFIGURE_ARGS+=	--with-cblas="${LOCALBASE}" --with-lapack=blas
-LIB_DEPENDS+=	libcblas.so:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libcblas.so:math/atlas
 USES+=		fortran
 .elif ${WITH_BLAS} == "gsl"
 CONFIGURE_ARGS+=	--with-gsl="${LOCALBASE}"
-LIB_DEPENDS+=	libgslcblas.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	libgslcblas.so:math/gsl
 .else
 IGNORE =	unknown value of WITH_BLAS: ${WITH_BLAS}
 .endif
 
 .if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=		doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=		doxygen:devel/doxygen
 CONFIGURE_ARGS+=	--enable-doc --with-docdir="${DOCSDIR}"
 PLIST_SUB+=	DOXYGEN=""
 .else

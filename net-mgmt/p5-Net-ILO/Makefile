@@ -14,8 +14,8 @@ COMMENT=	Interface to HP Integrated Lights-Out
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-Socket-SSL>0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
+BUILD_DEPENDS=	p5-IO-Socket-SSL>0:security/p5-IO-Socket-SSL \
+		p5-XML-Simple>0:textproc/p5-XML-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

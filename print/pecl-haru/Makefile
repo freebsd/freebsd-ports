@@ -13,8 +13,8 @@ COMMENT=	PECL extension to Haru PDF functions
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/hpdf.h:${PORTSDIR}/print/libharu
-RUN_DEPENDS:=	${LOCALBASE}/include/hpdf.h:${PORTSDIR}/print/libharu
+BUILD_DEPENDS=	${LOCALBASE}/include/hpdf.h:print/libharu
+RUN_DEPENDS:=	${LOCALBASE}/include/hpdf.h:print/libharu
 
 USES=		tar:tgz
 USE_PHP=	yes

@@ -18,8 +18,8 @@ LICENSE_NAME=	AS-IS
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c	\
-		libmpich.so:${PORTSDIR}/net/mpich2
+LIB_DEPENDS=	libf2c.so:lang/f2c	\
+		libmpich.so:net/mpich2
 
 USES=		fortran gmake tar:Z
 

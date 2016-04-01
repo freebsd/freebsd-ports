@@ -12,7 +12,7 @@ COMMENT=	Convert Type-2 DV codec-encoded AVI streams to mjpeg-encoded AVI
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libdv.so:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS=	libdv.so:multimedia/libdv
 
 USE_GNOME=	gdkpixbuf
 MAKEFILE=	makefile

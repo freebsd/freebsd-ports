@@ -40,7 +40,7 @@ PLIST_SUB+=	NLS="@comment "
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libgpgme.so) || defined(WITH_GPGME)
-LIB_DEPENDS+=	libgpgme.so:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	libgpgme.so:security/gpgme
 .else
 pre-everything::
 	@${ECHO_CMD}

@@ -13,8 +13,8 @@ COMMENT=	GTK front-end to find(1)
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	appres:${PORTSDIR}/x11/appres \
-		xterm:${PORTSDIR}/x11/xterm
+BUILD_DEPENDS=	appres:x11/appres \
+		xterm:x11/xterm
 
 USES=		gmake
 USE_GNOME=	gtk12

@@ -37,12 +37,12 @@ CYRUS_IMAPD_23_DESC=	Cyrus IMAPd version 2.3.x
 CYRUS_IMAPD_24_DESC=	Cyrus IMAPd version 2.4.x
 CYRUS_IMAPD_25_DESC=	Cyrus IMAPd version 2.5.x
 
-CYRUS_IMAPD_25_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:${PORTSDIR}/mail/cyrus-imapd25
-CYRUS_IMAPD_24_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:${PORTSDIR}/mail/cyrus-imapd24
-CYRUS_IMAPD_23_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:${PORTSDIR}/mail/cyrus-imapd23
+CYRUS_IMAPD_25_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd25
+CYRUS_IMAPD_24_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd24
+CYRUS_IMAPD_23_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd23
 
-PERL_RUN_DEPENDS=	p5-IMAP-Admin>=0:${PORTSDIR}/mail/p5-IMAP-Admin \
-			p5-IMAP-Sieve>=0:${PORTSDIR}/mail/p5-IMAP-Sieve
+PERL_RUN_DEPENDS=	p5-IMAP-Admin>=0:mail/p5-IMAP-Admin \
+			p5-IMAP-Sieve>=0:mail/p5-IMAP-Sieve
 
 .include <bsd.port.options.mk>
 

@@ -16,7 +16,7 @@ COMMENT=	Desktop Organizer Software for the Palm Pilot
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpisock.so:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	libpisock.so:palm/pilot-link
 
 USE_GCC=	any
 USES=		pkgconfig gmake libtool

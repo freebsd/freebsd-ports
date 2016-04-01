@@ -10,14 +10,14 @@ COMMENT=	Raspberry Pi video player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libEGL.so:${PORTSDIR}/misc/raspberrypi-userland \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/share/fonts/freefont-ttf/FreeSans.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libdbus-1.so:devel/dbus \
+		libpcre.so:devel/pcre \
+		libEGL.so:misc/raspberrypi-userland \
+		libavcodec.so:multimedia/ffmpeg \
+		libfreetype.so:print/freetype2
+RUN_DEPENDS=	bash:shells/bash \
+		${LOCALBASE}/share/fonts/freefont-ttf/FreeSans.ttf:x11-fonts/freefont-ttf
 
 ONLY_FOR_ARCHS=	armv6
 

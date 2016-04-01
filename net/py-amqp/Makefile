@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Low-level AMQP client for Python (fork of amqplib)
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>=0.4.0:${PORTSDIR}/devel/py-unittest2 \
-		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
-		${PYTHON_PKGNAMEPREFIX}coverage>0:${PORTSDIR}/devel/py-coverage \
-		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>=0.4.0:devel/py-unittest2 \
+		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
 LICENSE=	LGPL21
 

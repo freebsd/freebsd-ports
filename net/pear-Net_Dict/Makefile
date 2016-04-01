@@ -8,10 +8,10 @@ CATEGORIES=	net www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR interface to the DICT protocol
 
-BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
-		${PEARDIR}/Cache.php:${PORTSDIR}/sysutils/pear-Cache
-RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
-		${PEARDIR}/Cache.php:${PORTSDIR}/sysutils/pear-Cache
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket \
+		${PEARDIR}/Cache.php:sysutils/pear-Cache
+RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket \
+		${PEARDIR}/Cache.php:sysutils/pear-Cache
 
 USES=	pear
 

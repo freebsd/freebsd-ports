@@ -13,7 +13,7 @@ COMMENT=	SQL database-based mail system (POP3 and IMAP)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgmime-2.0.so:${PORTSDIR}/mail/gmime2
+LIB_DEPENDS=	libgmime-2.0.so:mail/gmime2
 
 CONFLICTS=	dbmail-3.*
 
@@ -32,7 +32,7 @@ SQLITE_CONFIGURE_WITH=	sqlite
 PGSQL_USES=	pgsql
 PGSQL_CONFIGURE_WITH=	pgsql
 SIEVE_CONFIGURE_WITH=	sieve
-SIEVE_LIB_DEPENDS=	libsieve.so:${PORTSDIR}/mail/libsieve
+SIEVE_LIB_DEPENDS=	libsieve.so:mail/libsieve
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
 INSTALL_TARGET=	install-strip

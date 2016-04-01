@@ -11,7 +11,7 @@ DISTNAME=	mozldap-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mozilla LDAP sdk
 
-LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=	libnspr4.so:devel/nspr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/c-sdk
 

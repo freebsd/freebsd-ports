@@ -15,7 +15,7 @@ LICENSE_NAME=	CeCILL-B Free Software License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS+=	dtplite:${PORTSDIR}/devel/tcllib
+RUN_DEPENDS+=	dtplite:devel/tcllib
 
 NO_ARCH?=	yes
 USES+=		pgsql:9.1+ tcl:85+

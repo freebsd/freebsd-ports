@@ -108,14 +108,14 @@ OPTIONS_DEFAULT=	COMPRESSED_FOLDERS HTML ICONV IDN IFDEF_PATCH \
 		SASL SMTP TRASH_PATCH URLVIEW XML GSSAPI_NONE
 .endif
 
-RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:misc/mime-support
 
 .if !defined (LITE)
-ASPELL_BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
-ASPELL_RUN_DEPENDS=		aspell:${PORTSDIR}/textproc/aspell
-ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
-ISPELL_RUN_DEPENDS=		ispell:${PORTSDIR}/textproc/aspell-ispell
-URLVIEW_RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
+ASPELL_BUILD_DEPENDS=	aspell:textproc/aspell
+ASPELL_RUN_DEPENDS=		aspell:textproc/aspell
+ISPELL_BUILD_DEPENDS=	ispell:textproc/aspell-ispell
+ISPELL_RUN_DEPENDS=		ispell:textproc/aspell-ispell
+URLVIEW_RUN_DEPENDS=	urlview:textproc/urlview
 .endif
 
 .if defined (LITE)
@@ -134,7 +134,7 @@ DEBUG_CONFIGURE_ON=	--enable-debug
 
 # Handle ncurses/ncurses-port/slang
 SLANG_CONFIGURE_ON=	--with-slang=${LOCALBASE}
-SLANG_LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
+SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
 SLANG_VARS=	PKGMESSAGE=${FILESDIR}/pkg-message.slang
 
 NCURSES_USES=	ncurses
@@ -159,11 +159,11 @@ ASPELL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aspell
 ##PARENT_CHILD_MATCH_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-parent-child-match
 REVERSE_REPLY_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-reverse_reply
 
-SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
 
-#MIXMASTER_BUILD_DEPENDS=	mixmaster:${PORTSDIR}/mail/mixmaster
-MIXMASTER_RUN_DEPENDS=	mixmaster:${PORTSDIR}/mail/mixmaster
+#MIXMASTER_BUILD_DEPENDS=	mixmaster:mail/mixmaster
+MIXMASTER_RUN_DEPENDS=	mixmaster:mail/mixmaster
 MIXMASTER_CONFIGURE_ON=	--with-mixmaster=${LOCALBASE}
 
 SMIME_OUTLOOK_COMPAT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-smime-outlook
@@ -174,11 +174,11 @@ FLOCK_CONFIGURE_OFF=	--disable-flock
 
 LOCALES_FIX_CONFIGURE_ON=	--enable-locales-fix
 
-IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_ON=	--with-idn
 IDN_CONFIGURE_OFF=	--without-idn
 
-GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_ON=	--enable-gpgme
 GPGME_CONFIGURE_OFF=	--disable-gpgme
 
@@ -315,7 +315,7 @@ pre-configure::
 .if ${PORT_OPTIONS:MIMAP_HEADER_CACHE} || ${PORT_OPTIONS:MMAILDIR_HEADER_CACHE}
 .if ${PORT_OPTIONS:MTOKYOCABINET}
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --without-bdb --with-tokyocabinet
-LIB_DEPENDS+=		libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS+=		libtokyocabinet.so:databases/tokyocabinet
 .else
 USE_BDB=		42+
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
@@ -328,9 +328,9 @@ CONFIGURE_ARGS+=	--disable-hcache
 .endif
 
 .if defined (XML_NEEDED) && ${PORT_OPTIONS:MXML}
-BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		lynx:${PORTSDIR}/www/lynx
+BUILD_DEPENDS+=	xsltproc:textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
+		lynx:www/lynx
 .else
 pre-build::
 	@${REINPLACE_CMD} -E -e 's|-xsltproc|@-true xsltproc|g' \

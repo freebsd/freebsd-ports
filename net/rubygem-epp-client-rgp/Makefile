@@ -11,8 +11,8 @@ COMMENT=	RGP EPP client library
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-builder>=2.1.2:${PORTSDIR}/devel/rubygem-builder \
-		rubygem-nokogiri>=1.4:${PORTSDIR}/textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
+		rubygem-nokogiri>=1.4:textproc/rubygem-nokogiri
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

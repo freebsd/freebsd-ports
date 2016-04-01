@@ -12,12 +12,12 @@ COMMENT=	Greylisting policy server for Postfix
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB \
-		p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \
-		p5-Parse-Syslog>=0:${PORTSDIR}/textproc/p5-Parse-Syslog \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
-		p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+RUN_DEPENDS=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB \
+		p5-IO-Multiplex>=0:devel/p5-IO-Multiplex \
+		p5-Parse-Syslog>=0:textproc/p5-Parse-Syslog \
+		p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-Net-Server>=0:net/p5-Net-Server \
+		p5-NetAddr-IP>=0:net-mgmt/p5-NetAddr-IP
 
 USE_PERL5=	run
 USE_RC_SUBR=	${PORTNAME}

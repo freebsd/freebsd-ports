@@ -14,9 +14,9 @@ COMMENT=	Net::Nmsg is a perl binding to libnmsg
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libnmsg.so:${PORTSDIR}/net/nmsg
-RUN_DEPENDS=	p5-Math-Int64>=0:${PORTSDIR}/math/p5-Math-Int64 \
-		p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+LIB_DEPENDS=	libnmsg.so:net/nmsg
+RUN_DEPENDS=	p5-Math-Int64>=0:math/p5-Math-Int64 \
+		p5-NetAddr-IP>=0:net-mgmt/p5-NetAddr-IP
 
 USES=		perl5
 MAKE_JOBS_UNSAFE=	yes

@@ -11,7 +11,7 @@ MASTER_SITES=	SF
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	File server for Mac OS X
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 USES=		gmake iconv libtool perl5 tar:bzip2
 USE_BDB=	46+
@@ -74,7 +74,7 @@ PLIST_SUB+=		NETATALKPAM="@comment "
 
 .if ${PORT_OPTIONS:MSRVLOC}
 CONFIGURE_ARGS+=	--enable-srvloc=${LOCALBASE}
-LIB_DEPENDS+=		libslp.so:${PORTSDIR}/net/openslp
+LIB_DEPENDS+=		libslp.so:net/openslp
 SUB_LIST+=		SRVLOC="slpd"
 .else
 SUB_LIST+=		SRVLOC=""
@@ -90,7 +90,7 @@ PLIST_SUB+=		TIMELORD="@comment "
 .if ${PORT_OPTIONS:MZEROCONF}
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
 CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
-LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=		libavahi-client.so:net/avahi-app
 USES+=			pkgconfig
 SUB_LIST+=		ZEROCONF="avahi_daemon"
 .else

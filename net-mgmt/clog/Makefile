@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/obrien
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcp connection logger daemon
 
-PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs
+PATCH_DEPENDS=	rcsdiff:devel/rcs
 
 WRKSRC=		${WRKDIR}/clog
 ALL_TARGET=	freebsd

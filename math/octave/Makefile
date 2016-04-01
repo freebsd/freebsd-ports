@@ -12,28 +12,28 @@ COMMENT=	High-level interactive language for numerical computations
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		gsed:${PORTSDIR}/textproc/gsed \
-		${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		gsed:${PORTSDIR}/textproc/gsed \
-		${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-LIB_DEPENDS=	libGraphicsMagick.so:${PORTSDIR}/graphics/GraphicsMagick \
-		libarpack.so:${PORTSDIR}/math/arpack \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libftgl.so:${PORTSDIR}/graphics/ftgl \
-		libhdf5.so:${PORTSDIR}/science/hdf5 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libqhull.so.5:${PORTSDIR}/math/qhull5 \
-		libqrupdate.so:${PORTSDIR}/math/qrupdate \
-		libumfpack.so:${PORTSDIR}/math/suitesparse \
-		libglpk.so:${PORTSDIR}/math/glpk \
-		libgl2ps.so:${PORTSDIR}/print/gl2ps \
-		libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
+BUILD_DEPENDS=	gnuplot:math/gnuplot \
+		${LOCALBASE}/bin/gperf:devel/gperf \
+		gsed:textproc/gsed \
+		${LOCALBASE}/bin/makeinfo:print/texinfo
+RUN_DEPENDS=	gnuplot:math/gnuplot \
+		gsed:textproc/gsed \
+		${LOCALBASE}/bin/makeinfo:print/texinfo
+LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
+		libarpack.so:math/arpack \
+		libcurl.so:ftp/curl \
+		libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libfltk.so:x11-toolkits/fltk \
+		libftgl.so:graphics/ftgl \
+		libhdf5.so:science/hdf5 \
+		libpcre.so:devel/pcre \
+		libqhull.so.5:math/qhull5 \
+		libqrupdate.so:math/qrupdate \
+		libumfpack.so:math/suitesparse \
+		libglpk.so:math/glpk \
+		libgl2ps.so:print/gl2ps \
+		libqscintilla2.so:devel/qscintilla2
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig tar:xz
 USE_LDCONFIG=	yes

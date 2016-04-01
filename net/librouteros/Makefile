@@ -13,7 +13,7 @@ COMMENT=	Library for communicating with network devices by MikroTik
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

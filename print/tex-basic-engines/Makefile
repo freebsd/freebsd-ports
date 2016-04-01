@@ -11,7 +11,7 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Basic TeX Engines
 
-LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		pkgconfig libtool tar:xz
 USE_TEX=	kpathsea web2c>=20150521_1

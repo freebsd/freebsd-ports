@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance Asterisk voice/video conferencing plugin
 
-BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
-RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+BUILD_DEPENDS=	asterisk:net/asterisk
+RUN_DEPENDS=	asterisk:net/asterisk
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

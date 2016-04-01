@@ -74,26 +74,26 @@ CONFIGURE_ARGS+=ac_cv_path_PATH_TO_QMAIL_QSTAT=/var/qmail/bin/qmail-qstat \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-QSTAT_BUILD_DEPENDS=	qstat:${PORTSDIR}/games/qstat
-QSTAT_RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
+QSTAT_BUILD_DEPENDS=	qstat:games/qstat
+QSTAT_RUN_DEPENDS=	qstat:games/qstat
 QSTAT_CONFIGURE_OFF=	ac_cv_path_PATH_TO_QUAKESTAT= \
 			ac_cv_path_PATH_TO_QSTAT=
 
 IPV6_CONFIGURE_WITH=	ipv6
 
-FPING_BUILD_DEPENDS=	fping:${PORTSDIR}/net/fping
-FPING_RUN_DEPENDS=	fping:${PORTSDIR}/net/fping
+FPING_BUILD_DEPENDS=	fping:net/fping
+FPING_RUN_DEPENDS=	fping:net/fping
 FPING_CONFIGURE_OFF=	ac_cv_path_PATH_TO_FPING= \
 			ac_cv_path_PATH_TO_FPING6=
 
-NETSNMP_BUILD_DEPENDS=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp \
-		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-NETSNMP_RUN_DEPENDS=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp \
-		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+NETSNMP_BUILD_DEPENDS=	snmpcheck:net-mgmt/net-snmp \
+		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
+NETSNMP_RUN_DEPENDS=	snmpcheck:net-mgmt/net-snmp \
+		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 NETSNMP_CONFIGURE_OFF=	ac_cv_path_PATH_TO_SNMPGET= \
 			ac_cv_path_PATH_TO_SNMPGETNEXT=
 
-RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
+RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
 RADIUS_CONFIGURE_WITH=	radius
 
 MYSQL_USE=	mysql=yes
@@ -108,20 +108,20 @@ LDAP_CONFIGURE_WITH=	ldap
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-DBI_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
+DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 DBI_CONFIGURE_WITH=	dbi
 
-DNS_BINDTOOLS_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:${PORTSDIR}/dns/bind-tools
+DNS_BINDTOOLS_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind-tools
 DNS_BINDTOOLS_CONFIGURE_ON=	--with-dig-command=${LOCALBASE}/bin/dig \
 				--with-nslookup-command=${LOCALBASE}/bin/nslookup
-DNS_BIND99_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:${PORTSDIR}/dns/bind99
+DNS_BIND99_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind99
 DNS_BIND99_CONFIGURE_ON=	--with-dig-command=${LOCALBASE}/bin/dig \
 				--with-nslookup-command=${LOCALBASE}/bin/nslookup
-DNS_BIND910_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:${PORTSDIR}/dns/bind910
+DNS_BIND910_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind910
 DNS_BIND910_CONFIGURE_ON=	--with-dig-command=${LOCALBASE}/bin/dig \
 				--with-nslookup-command=${LOCALBASE}/bin/nslookup
 
-SSH_PORTABLE_BUILD_DEPENDS=	${LOCALBASE}/bin/ssh:${PORTSDIR}/security/openssh-portable
+SSH_PORTABLE_BUILD_DEPENDS=	${LOCALBASE}/bin/ssh:security/openssh-portable
 SSH_PORTABLE_RUN_DEPENDS:=	${SSH_PORTABLE_BUILD_DEPENDS}
 SSH_PORTABLE_CONFIGURE_ON=	--with-ssh-command=${LOCALBASE}/bin/ssh
 

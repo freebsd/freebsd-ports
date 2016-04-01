@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MS Outlook Express .mbx to mbox file converter
 
-BUILD_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip
+BUILD_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

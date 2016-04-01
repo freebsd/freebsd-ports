@@ -13,7 +13,7 @@ COMMENT=	Mapping of IP addresses/hostnames to country names in Python
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 OPTIONS_DEFINE=	EXAMPLES
 

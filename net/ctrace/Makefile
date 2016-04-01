@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.pratyeka.org/ctrace/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiprotocol traceroute tool
 
-BUILD_DEPENDS=	p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP
-RUN_DEPENDS=	p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Net-RawIP>=0:net/p5-Net-RawIP
+RUN_DEPENDS=	p5-Net-RawIP>=0:net/p5-Net-RawIP \
+		p5-libwww>=0:www/p5-libwww
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

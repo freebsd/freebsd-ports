@@ -19,7 +19,7 @@ PATCH_DIST_STRIP=
 MAINTAINER=	faber@isi.edu
 COMMENT=	Display shaped icons for mail spool contents
 
-LIB_DEPENDS=	libcompface.so:${PORTSDIR}/mail/faces
+LIB_DEPENDS=	libcompface.so:mail/faces
 
 # GNU make properly processes some overridden rules in the makefile that
 # imake generates.  Specifically, installing the html docs.

@@ -13,11 +13,11 @@ COMMENT=	Greylisting policy server for Postfix using an SQL backend
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
-		p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \
-		p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/bin/gmd5sum:${PORTSDIR}/sysutils/coreutils
+RUN_DEPENDS=	p5-Net-Server>=0:net/p5-Net-Server \
+		p5-IO-Multiplex>=0:devel/p5-IO-Multiplex \
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
+		${LOCALBASE}/bin/bash:shells/bash \
+		${LOCALBASE}/bin/gmd5sum:sysutils/coreutils
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	${WRKSRC}/sqlgrey-logstats.pl ${WRKSRC}/update_sqlgrey_config ${WRKSRC}/sqlgrey
@@ -39,10 +39,10 @@ OPTIONS_DEFINE=	PGSQL MYSQL SQLITE STATS DOCS
 OPTIONS_DEFAULT=PGSQL
 STATS_DESC=	Depend on Date::Calc for logstats.pl script
 
-PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
-MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
-SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
-STATS_RUN_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
+STATS_RUN_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!/etc/sqlgrey!${ETCDIR}!g' ${WRKSRC}/sqlgrey

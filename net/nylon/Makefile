@@ -10,7 +10,7 @@ MASTER_SITES=	http://monkey.org/~marius/nylon/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix SOCKS 4 and 5 proxy server
 
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent2
 
 USE_RC_SUBR=	nylon
 

@@ -12,7 +12,7 @@ COMMENT=	Advanced PostgreSQL-based IMAP/POP server
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
+BUILD_DEPENDS=	jam:devel/jam
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aox

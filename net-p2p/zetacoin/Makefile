@@ -11,7 +11,7 @@ COMMENT=	Peer-to-Peer crypto currency with quick transactions
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 USES+=		autoreconf compiler:c++0x gmake libtool pkgconfig:build
 
@@ -31,15 +31,15 @@ OPTIONS_GROUP=		X11
 OPTIONS_GROUP_X11=	QRCODES
 
 UPNP_CONFIGURE_WITH=	miniupnpc
-UPNP_LIB_DEPENDS=		libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+UPNP_LIB_DEPENDS=		libminiupnpc.so:net/miniupnpc
 UPNP_CPPFLAGS=          -I${LOCALBASE}/include
 UPNP_LIBS=              -L${LOCALBASE}/lib
 
 X11_CONFIGURE_WITH=	gui
 X11_CONFIGURE_ON=	--without-daemon
 X11_CONFIGURE_OFF=	--with-daemon
-X11_BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
-X11_LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
+X11_BUILD_DEPENDS=	protoc:devel/protobuf
+X11_LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 X11_USE=	qt4=corelib,network,gui,qmake_build,linguisttools_build \
 			qt4=uic_build,moc_build,rcc_build,qtestlib_build
 X11_USES=	desktop-file-utils
@@ -50,7 +50,7 @@ WALLET_LIBS=		-L${BDB_LIB_DIR}
 WALLET_USE=	bdb=48
 
 QRCODES_IMPLIES=	X11
-QRCODES_LIB_DEPENDS=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
+QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 QRCODES_CONFIGURE_WITH=	qrencode
 
 CLI_CONFIGURE_WITH=	cli

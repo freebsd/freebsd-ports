@@ -14,7 +14,7 @@ COMMENT=	Spam filtering software for procmail
 
 PORTSCOUT=	limit:^20
 
-RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
+RUN_DEPENDS=	procmail:mail/procmail
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

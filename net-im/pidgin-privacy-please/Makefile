@@ -12,9 +12,9 @@ COMMENT=	Privacy plugin for the pidgin instant messenger
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
-BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
+LIB_DEPENDS=	libpurple.so:net-im/libpurple
+BUILD_DEPENDS=	pidgin:net-im/pidgin
+RUN_DEPENDS=	pidgin:net-im/pidgin
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pkgconfig

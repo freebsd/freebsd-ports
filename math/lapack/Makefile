@@ -47,8 +47,8 @@ ALL_TARGET=		lapackelib
 LAPACKELIB=		liblapacke.a
 LAPACKETMGLIB=		liblapacke_tmg.a
 MAKE_ENV+=	LAPACKELIB="${LAPACKELIB}" LAPACKETMGLIB="${LAPACKETMGLIB}"
-LIB_DEPENDS+=		libblas.so:${PORTSDIR}/math/blas \
-			liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=		libblas.so:math/blas \
+			liblapack.so:math/lapack
 LIBS=			lapacke lapacke_tmg
 INCLS=			lapacke lapacke_utils lapacke_mangling
 PLIST_SUB+=		BLAS="@comment " LAPACK="@comment " XLAPACK="@comment " LAPACKE=""
@@ -56,7 +56,7 @@ SVERSION=		1
 .else
 ALL_TARGET=		lib
 BLASLIB?=		-L${LOCALBASE}/lib -lblas
-LIB_DEPENDS+=		libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=		libblas.so:math/blas
 LIBS=			lapack tmglib
 SVERSION=		4
 TEST_TARGET=		lapack_testing
@@ -67,7 +67,7 @@ USES+=			python:build
 S=			\#
 .endif
 .if defined(XLAPACK_SLAVEPORT)
-LIB_DEPENDS+=		libxblas.so:${PORTSDIR}/math/xblas
+LIB_DEPENDS+=		libxblas.so:math/xblas
 MAKE_ENV+=		USEXBLAS=yes XBLASLIB="${XBLASLIB}"
 P=			x
 PLIST_SUB+=		BLAS="@comment " LAPACK="@comment " XLAPACK="" LAPACKE="@comment "
@@ -76,7 +76,7 @@ XBLASLIB?=		-L${LOCALBASE}/lib -lxblas
 PLIST_FILES+=		${MAN3L:S|^|man/man3/|:S|$|.gz|}
 PLIST_SUB+=		BLAS="@comment " LAPACK="" XLAPACK="@comment " LAPACKE="@comment "
 .if defined(MAINTAINER_MODE)
-BUILD_DEPENDS +=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS +=	doxygen:devel/doxygen
 MAN_TARGET=		build-manpages
 .endif
 .endif

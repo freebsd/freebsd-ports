@@ -11,12 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to jaiku.com's API
 
-RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
-		p5-JSON-Any>0:${PORTSDIR}/converters/p5-JSON-Any \
-		p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate
-BUILD_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
-		p5-JSON-Any>0:${PORTSDIR}/converters/p5-JSON-Any \
-		p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate
+RUN_DEPENDS=	p5-libwww>=5.805:www/p5-libwww \
+		p5-JSON-Any>0:converters/p5-JSON-Any \
+		p5-Params-Validate>0:devel/p5-Params-Validate
+BUILD_DEPENDS=	p5-libwww>=5.805:www/p5-libwww \
+		p5-JSON-Any>0:converters/p5-JSON-Any \
+		p5-Params-Validate>0:devel/p5-Params-Validate
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure

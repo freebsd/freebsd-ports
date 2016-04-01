@@ -13,7 +13,7 @@ COMMENT=	Small Jabber console client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
+LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
 
 USES=		gettext iconv libtool ncurses pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20
@@ -34,17 +34,17 @@ OTR_DESC=		Off-the-record messaging support
 
 OPTIONS_SUB=		yes
 
-ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ASPELL_CONFIGURE_ENABLE=aspell
 
-ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
 ENCHANT_CONFIGURE_ENABLE=enchant
 
-GPGME_LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
+GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_ENABLE=	gpgme
 
-OTR_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-			libotr.so.5:${PORTSDIR}/security/libotr
+OTR_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+			libotr.so.5:security/libotr
 OTR_CONFIGURE_ENABLE=	otr
 
 post-patch:

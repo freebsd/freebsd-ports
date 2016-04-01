@@ -12,8 +12,8 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	fbsd@dylanleigh.net
 COMMENT?=	Advanced Maryland Automatic Network Disk Archiver (server)
 
-RUN_DEPENDS=	perl-amanda:${PORTSDIR}/misc/amanda-perl-wrapper
-BUILD_DEPENDS=	perl-amanda:${PORTSDIR}/misc/amanda-perl-wrapper
+RUN_DEPENDS=	perl-amanda:misc/amanda-perl-wrapper
+BUILD_DEPENDS=	perl-amanda:misc/amanda-perl-wrapper
 
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda-client
@@ -77,8 +77,8 @@ S3_DESC=	Enable Amazon S3 device support
 .if ${PORT_OPTIONS:MGNUTAR}
 CONFIGURE_ARGS+=--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR} \
 		--with-gnutar=${LOCALBASE}/bin/gtar
-BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+BUILD_DEPENDS+=	gtar:archivers/gtar
+RUN_DEPENDS+=	gtar:archivers/gtar
 .endif
 
 # amanda-server part
@@ -105,15 +105,15 @@ pre-fetch:
 
 CONFLICTS=	amanda-server-2.* amanda-server-3.2.* amanda2[56]-server-*
 
-BUILD_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda-client
-RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda-client \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
+BUILD_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:misc/amanda-client
+RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:misc/amanda-client \
+		p5-XML-Simple>=0:textproc/p5-XML-Simple
 
 CONFIGURE_ARGS+=--without-client
 
 .if ${PORT_OPTIONS:MPLOT}
-BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
-RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
+BUILD_DEPENDS+=	gnuplot:math/gnuplot
+RUN_DEPENDS+=	gnuplot:math/gnuplot
 PLIST_SUB+=	PLOT=''
 CONFIGURE_ARGS+=	--with-gnuplot=${LOCALBASE}/bin/gnuplot
 .else
@@ -123,14 +123,14 @@ CONFIGURE_ARGS+=	--without-gnuplot
 
 .if ${PORT_OPTIONS:MSAMBA}
 SAMBA_PORT?=	samba36
-BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/${SAMBA_PORT}
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/${SAMBA_PORT}
+BUILD_DEPENDS+=	smbclient:net/${SAMBA_PORT}
+RUN_DEPENDS+=	smbclient:net/${SAMBA_PORT}
 CONFIGURE_ARGS+=	--with-smbclient=${LOCALBASE}/bin/smbclient
 .endif
 
 # If configure founds libcurl, automatically enabled it (with plist change).
 .if ${PORT_OPTIONS:MS3}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 CONFIGURE_ARGS+=	--enable-s3-device
 PLIST_SUB+=	S3DEVICE=''
 .else

@@ -13,8 +13,8 @@ COMMENT=	Custom package repository builder for FreeBSD and DragonFly
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-#BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/${IFM}.gpr:${PORTSDIR}/misc/${IFM} \
-#		${LOCALBASE}/lib/gnat/${AC}.gpr:${PORTSDIR}/devel/${AC}
+#BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/${IFM}.gpr:misc/${IFM} \
+#		${LOCALBASE}/lib/gnat/${AC}.gpr:devel/${AC}
 
 USES=		ada:6 ncurses:port
 USE_GITHUB=	yes

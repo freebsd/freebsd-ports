@@ -13,7 +13,7 @@ COMMENT=	PHP extension for pslib to generate postscript
 
 LICENSE=	PHP202
 
-LIB_DEPENDS=	libps.so:${PORTSDIR}/print/pslib
+LIB_DEPENDS=	libps.so:print/pslib
 
 USES=		tar:tgz
 USE_PHP=	yes

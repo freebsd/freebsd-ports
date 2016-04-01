@@ -12,8 +12,8 @@ COMMENT=	Logger utility library for the Telepathy framework
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libtelepathy-glib.so:net-im/telepathy-glib
 
 USES=		gettext-tools gmake libtool pathfix pkgconfig python:build \
 		sqlite tar:bzip2

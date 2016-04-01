@@ -12,10 +12,10 @@ COMMENT=	Flexible whois client and proxy
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
-		p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN \
-		lynx:${PORTSDIR}/www/lynx \
-		curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	p5-libwww>=5.805:www/p5-libwww \
+		p5-Net-LibIDN>=0:dns/p5-Net-LibIDN \
+		lynx:www/lynx \
+		curl:ftp/curl
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

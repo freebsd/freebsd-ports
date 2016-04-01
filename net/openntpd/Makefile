@@ -29,11 +29,11 @@ RESSL_DESC=		SSL/TLS support via LibreSSL
 
 OPTIONS_DEFAULT=	RESSL
 
-RESSL_LIB_DEPENDS=	libtls.so:${PORTSDIR}/security/libressl
+RESSL_LIB_DEPENDS=	libtls.so:security/libressl
 RESSL_CONFIGURE_WITH=	cacert=${LOCALBASE}/etc/ssl/cert.pem
 RESSL_CPPFLAGS=		-I${LOCALBASE}/include
 RESSL_LDFLAGS=		-L${LOCALBASE}/lib
-RESSL_RUN_DEPENDS=	ca_root_nss>=3.22.2:${PORTSDIR}/security/ca_root_nss
+RESSL_RUN_DEPENDS=	ca_root_nss>=3.22.2:security/ca_root_nss
 
 pre-build:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \

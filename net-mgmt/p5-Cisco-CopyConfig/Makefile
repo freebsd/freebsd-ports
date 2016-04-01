@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rihaz.jerrin@gmail.com
 COMMENT=	Cisco IOS running-config manipulation
 
-BUILD_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+BUILD_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
+RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure

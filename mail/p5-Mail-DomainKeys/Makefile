@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of DomainKeys
 
-RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
-		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
+		p5-Mail-Tools>=0:mail/p5-Mail-Tools
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5

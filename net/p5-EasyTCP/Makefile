@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easily create TCP/IP clients and servers
 
-BUILD_DEPENDS=	p5-Crypt-RSA>=0:${PORTSDIR}/security/p5-Crypt-RSA
+BUILD_DEPENDS=	p5-Crypt-RSA>=0:security/p5-Crypt-RSA
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

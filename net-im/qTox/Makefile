@@ -12,16 +12,16 @@ COMMENT=	Qt 5 based Tox client
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	libtoxcore.so:${PORTSDIR}/net-im/tox \
-		libopencv_highgui.so:${PORTSDIR}/graphics/opencv \
-		libopencv_core.so:${PORTSDIR}/graphics/opencv-core \
-		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libvpx.so:${PORTSDIR}/multimedia/libvpx \
-		libfilteraudio.so:${PORTSDIR}/audio/libfilteraudio \
-		libsodium.so:${PORTSDIR}/security/libsodium \
-		libqrencode.so:${PORTSDIR}/graphics/libqrencode \
-		libsqlcipher.so:${PORTSDIR}/databases/sqlcipher
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+LIB_DEPENDS=	libtoxcore.so:net-im/tox \
+		libopencv_highgui.so:graphics/opencv \
+		libopencv_core.so:graphics/opencv-core \
+		libavcodec.so:multimedia/ffmpeg \
+		libvpx.so:multimedia/libvpx \
+		libfilteraudio.so:audio/libfilteraudio \
+		libsodium.so:security/libsodium \
+		libqrencode.so:graphics/libqrencode \
+		libsqlcipher.so:databases/sqlcipher
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tux3

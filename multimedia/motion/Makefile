@@ -46,8 +46,8 @@ CONFIGURE_ARGS+=--without-bktr
 .if ${PORT_OPTIONS:MPWCBSD}
 # Location /boot/modules is hard coded in the pwc port, so use it here too
 KMODDIR=	/boot/modules
-BUILD_DEPENDS+=	v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
-RUN_DEPENDS+=	${KMODDIR}/pwc.ko:${PORTSDIR}/multimedia/pwcbsd
+BUILD_DEPENDS+=	v4l_compat>=1.0.20060801:multimedia/v4l_compat
+RUN_DEPENDS+=	${KMODDIR}/pwc.ko:multimedia/pwcbsd
 CONFIGURE_ARGS+=--with-pwcbsd
 .else
 CONFIGURE_ARGS+=--without-pwcbsd
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=--without-pwcbsd
 CONFIGURE_ARGS+=--without-linuxthreads
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavformat0.so:${PORTSDIR}/multimedia/ffmpeg0
+LIB_DEPENDS+=	libavformat0.so:multimedia/ffmpeg0
 CONFIGURE_ARGS+=--with-ffmpeg=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-ffmpeg

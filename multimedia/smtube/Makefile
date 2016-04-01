@@ -9,7 +9,7 @@ MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION}/
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	SMPlayer YouTube browser
 
-RUN_DEPENDS=	smplayer:${PORTSDIR}/multimedia/smplayer
+RUN_DEPENDS=	smplayer:multimedia/smplayer
 
 USES=		gmake tar:bzip2
 ALL_TARGET=	#empty

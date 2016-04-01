@@ -11,10 +11,10 @@ COMMENT=	Toolbox for manipulating Ogg video files
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libtheora.so:${PORTSDIR}/multimedia/libtheora \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libgd.so:graphics/gd \
+		libogg.so:audio/libogg \
+		libtheora.so:multimedia/libtheora \
+		libvorbis.so:audio/libvorbis
 
 USES=		cmake compiler:c++11-lib pkgconfig
 USE_CXXSTD=	c++11

@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-dev
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Network trace anonymizer
 
-LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
-		libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		libxerces-c.so.3:textproc/xerces-c3
 
 USES=		dos2unix
 GNU_CONFIGURE=	yes

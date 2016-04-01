@@ -15,7 +15,7 @@ COMMENT=	Fetion protocol plugin for libpurple
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	libpurple.so:net-im/libpurple
 
 GNU_CONFIGURE=	yes
 USES=		libtool pkgconfig tar:bzip2

@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	hizel@vyborg.ru
 COMMENT=	Generate rrdtool graphs using performance data from nagios plugins
 
-RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS=	rrdtool>=0:databases/rrdtool
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SINGLE=		NAGIOS
@@ -18,10 +18,10 @@ OPTIONS_SINGLE_NAGIOS=	NAGIOS35 NAGIOS4
 OPTIONS_DEFAULT=	NAGIOS35
 
 NAGIOS35_DESC=		Install for nagios-3.5.x (net-mgmt/nagios)
-NAGIOS35_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios
+NAGIOS35_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:net-mgmt/nagios
 
 NAGIOS4_DESC=		Install for nagios-4.0.x (net-mgmt/nagios4)
-NAGIOS4_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios4
+NAGIOS4_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:net-mgmt/nagios4
 
 USES=		perl5 shebangfix
 USE_PERL5=	run

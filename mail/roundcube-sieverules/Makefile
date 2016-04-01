@@ -12,8 +12,8 @@ COMMENT=	Roundcube webmail sieve plugin
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	roundcube>=1.0:${PORTSDIR}/mail/roundcube
-RUN_DEPENDS=	roundcube>=1.0:${PORTSDIR}/mail/roundcube
+BUILD_DEPENDS=	roundcube>=1.0:mail/roundcube
+RUN_DEPENDS=	roundcube>=1.0:mail/roundcube
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JohnDoh

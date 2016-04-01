@@ -11,7 +11,7 @@ DISTNAME=		emacs-jabber-${PORTVERSION}
 MAINTAINER=	max.n.boyarov@gmail.com
 COMMENT=	Minimal jabber client for [X]Emacs
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gnutls-cli:${PORTSDIR}/security/gnutls
+RUN_DEPENDS=	${LOCALBASE}/bin/gnutls-cli:security/gnutls
 
 INFO=		emacs-jabber
 PORTDOCS+=	AUTHORS NEWS README

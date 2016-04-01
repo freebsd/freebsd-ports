@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	james@now.ie
 COMMENT=	Perl module to provide a Quick Mail Transfer Protocol (QMTP) client
 
-BUILD_DEPENDS=	p5-Text-Netstring>=0:${PORTSDIR}/textproc/p5-Text-Netstring
-RUN_DEPENDS=	p5-Text-Netstring>=0:${PORTSDIR}/textproc/p5-Text-Netstring
+BUILD_DEPENDS=	p5-Text-Netstring>=0:textproc/p5-Text-Netstring
+RUN_DEPENDS=	p5-Text-Netstring>=0:textproc/p5-Text-Netstring
 
 USES=		perl5
 USE_PERL5=	configure

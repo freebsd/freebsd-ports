@@ -12,8 +12,8 @@ COMMENT=	SuperMediator is an IPFIX mediator by CMU CERT generally used with YAF
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfixbuf.so:${PORTSDIR}/net/libfixbuf \
-		libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libfixbuf.so:net/libfixbuf \
+		libltdl.so:devel/libltdl
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -30,9 +30,9 @@ SPREAD_DESC=	Enable Spread libary as a pub/sub distribution capability
 MYSQL_DESC=	Enable SuperMediator to directly write into MySQL
 SKIPSET_DESC=	Enable SiLK IPSET files for filtering
 
-SKIPSET_LIB_DEPENDS=	libsilk.so:${PORTSDIR}/security/silktools
-SPREAD_LIB_DEPENDS=	libspread.so:${PORTSDIR}/net/spread4
-MYSQL_LIB_DEPENDS=	libmysqlclient.so:${PORTSDIR}/${_MYSQL_CLIENT}
+SKIPSET_LIB_DEPENDS=	libsilk.so:security/silktools
+SPREAD_LIB_DEPENDS=	libspread.so:net/spread4
+MYSQL_LIB_DEPENDS=	libmysqlclient.so:${_MYSQL_CLIENT}
 
 MYSQL_USE=	mysql=yes
 

@@ -14,7 +14,7 @@ COMMENT=	Qmail-queue replacement to filter mail traffic
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ripmime:${PORTSDIR}/mail/ripmime
+BUILD_DEPENDS=	${LOCALBASE}/bin/ripmime:mail/ripmime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		qmail
@@ -40,7 +40,7 @@ DISABLELOCAL_DESC=	Disable filters for local users
 BACKUP_DESC=		Logging of incoming/outgoing mail
 CUSTOMERROR_DESC=	Custom error patch
 
-CLAMAV_BUILD_DEPENDS=	${LOCALBASE}/bin/clamdscan:${PORTSDIR}/security/clamav
+CLAMAV_BUILD_DEPENDS=	${LOCALBASE}/bin/clamdscan:security/clamav
 CLAMAV_RUN_DEPENDS=	${CLAMAV_BUILD_DEPENDS}
 CLAMAV_CONFIGURE_ON=	--with-clamav --with-clamd-socket=/var/run/clamav/clamd
 

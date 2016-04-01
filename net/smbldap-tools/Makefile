@@ -13,10 +13,10 @@ COMMENT=	Samba-LDAP management and support tools
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
-		p5-Crypt-SmbHash>=0:${PORTSDIR}/security/p5-Crypt-SmbHash \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-Unicode-MapUTF8>=0:${PORTSDIR}/converters/p5-Unicode-MapUTF8
+BUILD_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
+		p5-Crypt-SmbHash>=0:security/p5-Crypt-SmbHash \
+		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		p5-Unicode-MapUTF8>=0:converters/p5-Unicode-MapUTF8
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/a//}

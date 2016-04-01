@@ -13,9 +13,9 @@ COMMENT=	Creates movies out of your pictures
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
-RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
-		mplayer:${PORTSDIR}/multimedia/mplayer
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
+RUN_DEPENDS=	mencoder:multimedia/mencoder \
+		mplayer:multimedia/mplayer
 
 USES=		python gettext
 USE_PYTHON=	distutils autoplist

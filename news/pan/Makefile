@@ -14,8 +14,8 @@ COMMENT=	Threaded GTK+ newsreader based on Agent for Windows
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libgmime-2.6.so:${PORTSDIR}/mail/gmime26
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libgmime-2.6.so:mail/gmime26
 
 USES=		gmake iconv pathfix pkgconfig tar:bzip2
 USE_GNOME=	intlhack
@@ -32,7 +32,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFAULT=GTKSPELL GNUTLS GTK2
 GTKSPELL_DESC=	Spell checking support (gtk+2 only)
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=	pkgconfig
 GNUTLS_CONFIGURE_WITH=	gnutls
 
@@ -41,7 +41,7 @@ GTK3_USE=	gnome=gtk30
 
 GTK2_USE=	gnome=gtk20
 
-GTKSPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
+GTKSPELL_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
 GTKSPELL_CONFIGURE_WITH=	gtkspell
 
 GTK3_PREVENTS=	GTKSPELL

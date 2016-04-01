@@ -23,8 +23,8 @@ OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
-X11_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_PKGNAMEPREFIX}Pmw>0:${PORTSDIR}/x11-toolkits/py-Pmw
+X11_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
+		${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw
 
 .include <bsd.port.options.mk>
 

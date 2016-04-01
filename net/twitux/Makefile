@@ -10,10 +10,10 @@ MASTER_SITES=	SF
 MAINTAINER=	oz@cyprio.net
 COMMENT=	GNOME client for Twitter
 
-LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libsexy.so:${PORTSDIR}/x11-toolkits/libsexy \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libcanberra.so:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libsexy.so:x11-toolkits/libsexy \
+		libnotify.so:devel/libnotify \
+		libcanberra.so:audio/libcanberra
 
 USE_XORG=	x11
 USE_GNOME=	glib20 gtk20 gconf2 intltool libxml2 gnomedocutils

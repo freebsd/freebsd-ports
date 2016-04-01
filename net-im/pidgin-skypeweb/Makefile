@@ -12,9 +12,9 @@ COMMENT=	Plugin to use Skype chat from Pidgin(without Skype running)
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl3.txt
 
-BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-LIB_DEPENDS=	libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+BUILD_DEPENDS=	pidgin:net-im/pidgin
+RUN_DEPENDS=	pidgin:net-im/pidgin
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb

@@ -14,9 +14,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Mojolicious>=0:${PORTSDIR}/www/p5-Mojolicious \
-		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
-		p5-MIME-EncWords>=0:${PORTSDIR}/mail/p5-MIME-EncWords
+RUN_DEPENDS=	p5-Mojolicious>=0:www/p5-Mojolicious \
+		p5-MIME-Lite>=0:mail/p5-MIME-Lite \
+		p5-MIME-EncWords>=0:mail/p5-MIME-EncWords
 
 NO_ARCH=	yes
 USES=		perl5

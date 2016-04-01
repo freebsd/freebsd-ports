@@ -11,8 +11,8 @@ COMMENT=	Network simulator for Internet systems
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+		libsqlite3.so:databases/sqlite3
 
 USES=		pkgconfig python tar:bzip2 waf
 USE_LDCONFIG=	yes
@@ -33,13 +33,13 @@ EXAMPLES_CONFIGURE_ON=	--enable-examples
 EXAMPLES_CONFIGURE_OFF=	--disable-examples
 
 GSL_DESC=		GNU Scientific Library support
-GSL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 
-GTK2_LIB_DEPENDS=	libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
+GTK2_LIB_DEPENDS=	libgtk-x11-2.0.so:x11-toolkits/gtk20
 GTK2_CONFIGURE_OFF=	--disable-gtk
 
 SUDO_DESC=		Use sudo to set suid bits on executables
-SUDO_BUILD_DEPENDS=	sudo:${PORTSDIR}/security/sudo
+SUDO_BUILD_DEPENDS=	sudo:security/sudo
 SUDO_CONFIGURE_ON=	--enable-sudo
 
 TEST_CONFIGURE_ON=	--enable-tests

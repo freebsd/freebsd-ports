@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RFC-close address list parsing
 
-BUILD_DEPENDS=	p5-Email-Address>0:${PORTSDIR}/mail/p5-Email-Address
+BUILD_DEPENDS=	p5-Email-Address>0:mail/p5-Email-Address
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

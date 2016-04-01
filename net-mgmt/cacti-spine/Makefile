@@ -12,7 +12,7 @@ COMMENT=	Multithreaded poller for Cacti written in C
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --with-snmp=${LOCALBASE}

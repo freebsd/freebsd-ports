@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=	MHASH
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMHASH}
-LIB_DEPENDS+=	libmhash.so:${PORTSDIR}/security/mhash
+LIB_DEPENDS+=	libmhash.so:security/mhash
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .else

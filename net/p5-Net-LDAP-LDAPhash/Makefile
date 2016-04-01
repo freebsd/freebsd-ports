@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Make a hash out of the return from a search using Net::LDAP::Search
 
-BUILD_DEPENDS=	p5-perl-ldap>=0.39:${PORTSDIR}/net/p5-perl-ldap
-RUN_DEPENDS=	p5-perl-ldap>=0.39:${PORTSDIR}/net/p5-perl-ldap
+BUILD_DEPENDS=	p5-perl-ldap>=0.39:net/p5-perl-ldap
+RUN_DEPENDS=	p5-perl-ldap>=0.39:net/p5-perl-ldap
 
 USES=		perl5
 USE_PERL5=	configure

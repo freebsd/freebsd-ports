@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/local/${PORTNAME}/ \
 MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	A collection of SNMP command line management tools
 
-LIB_DEPENDS=	libgsnmp.so:${PORTSDIR}/net-mgmt/gsnmp
+LIB_DEPENDS=	libgsnmp.so:net-mgmt/gsnmp
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig readline

@@ -10,9 +10,9 @@ MASTER_SITES=	http://morebalance.coolprojects.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular open source user-space load balancing system
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libggz.so:${PORTSDIR}/games/libggz
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libgnutls.so:security/gnutls \
+		libggz.so:games/libggz
 
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"

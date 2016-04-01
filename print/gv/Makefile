@@ -10,7 +10,7 @@ MASTER_SITES=	GNU/${PORTNAME}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	PostScript and PDF previewer
 
-LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
 USE_XORG=	xpm ice sm xext xmu x11
 USES=		cpe ghostscript:x11 iconv gmake perl5 shebangfix

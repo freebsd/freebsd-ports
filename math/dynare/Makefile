@@ -10,10 +10,10 @@ MASTER_SITES=	http://www.dynare.org/release/source/
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Software platform for handling a wide class of economic models
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/unordered_set.hpp:${PORTSDIR}/devel/boost-libs \
-		ctangle:${PORTSDIR}/devel/cweb
-LIB_DEPENDS=	libumfpack.so:${PORTSDIR}/math/suitesparse \
-		libmatio.so:${PORTSDIR}/math/matio
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/unordered_set.hpp:devel/boost-libs \
+		ctangle:devel/cweb
+LIB_DEPENDS=	libumfpack.so:math/suitesparse \
+		libmatio.so:math/matio
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=	OCTAVE
 
 MATLAB_CONFIGURE_ENABLE=	matlab
 OCTAVE_CONFIGURE_ENABLE=	octave
-OCTAVE_BUILD_DEPENDS=		octave:${PORTSDIR}/math/octave
+OCTAVE_BUILD_DEPENDS=		octave:math/octave
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

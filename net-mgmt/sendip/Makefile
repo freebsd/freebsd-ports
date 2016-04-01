@@ -12,7 +12,7 @@ COMMENT=	SendIP is a commandline tool to allow sending arbitrary IP packets
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
+BUILD_DEPENDS=	help2man:misc/help2man
 
 USES=		gmake perl5 compiler
 

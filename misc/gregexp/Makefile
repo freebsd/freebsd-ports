@@ -9,7 +9,7 @@ MASTER_SITES=	http://dentrassi.de/download/gregexp/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical regular expression explorer
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui

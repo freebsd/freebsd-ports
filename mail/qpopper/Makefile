@@ -83,7 +83,7 @@ OPTIONS_UNSET+=	DOCS
 # with Dynamic Relay Authorization Control support.
 .if ${PORT_OPTIONS:MDRAC}
 CONFIGURE_ARGS+=	--with-drac
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:mail/drac
 .endif
 
 # If WITH_FULL_POPD_DEBUG variable present in the environment, qpopper builds

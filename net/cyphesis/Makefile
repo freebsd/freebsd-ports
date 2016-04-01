@@ -12,13 +12,13 @@ COMMENT=	Server for WorldForge games
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libAtlas-0.6.so:${PORTSDIR}/devel/atlas-devel \
-		libvarconf-1.0.so:${PORTSDIR}/devel/varconf \
-		libwfmath-1.0.so:${PORTSDIR}/math/wfmath \
-		libmercator-0.3.so:${PORTSDIR}/devel/mercator \
-		libskstream-0.3.so:${PORTSDIR}/net/skstream \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libboost_regex.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libAtlas-0.6.so:devel/atlas-devel \
+		libvarconf-1.0.so:devel/varconf \
+		libwfmath-1.0.so:math/wfmath \
+		libmercator-0.3.so:devel/mercator \
+		libskstream-0.3.so:net/skstream \
+		libgcrypt.so:security/libgcrypt \
+		libboost_regex.so:devel/boost-libs
 
 CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 

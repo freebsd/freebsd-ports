@@ -85,12 +85,12 @@ IPV6_CONFIGURE_WITH=	ipv6
 .if ! ${PORT_OPTIONS:MNOSPELL}
 .if ! ${PORT_OPTIONS:MISPELL}
 CONFIGURE_ARGS+=--with-interactive-spellcheck=${LOCALBASE}/bin/aspell
-BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
-RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+BUILD_DEPENDS+=	aspell:textproc/aspell
+RUN_DEPENDS+=	aspell:textproc/aspell
 .else
 CONFIGURE_ARGS+=	--with-interactive-spellcheck=${LOCALBASE}/bin/ispell
-BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
+BUILD_DEPENDS+=	ispell:textproc/aspell-ispell
+RUN_DEPENDS+=	ispell:textproc/aspell-ispell
 .endif
 .else
 CONFIGURE_ARGS+=--without-simple-spellcheck --without-interactive-spellcheck
@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=--without-simple-spellcheck --without-interactive-spellcheck
 
 .if !defined(PICO_ALPINE_SLAVE)
 .if ${PORT_OPTIONS:MPICO}
-RUN_DEPENDS+=	pico:${PORTSDIR}/editors/pico-alpine
+RUN_DEPENDS+=	pico:editors/pico-alpine
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}

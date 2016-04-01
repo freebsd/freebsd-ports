@@ -12,8 +12,8 @@ COMMENT=	Libpurple plugin for Telegram messenger
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
+BUILD_DEPENDS=	pidgin:net-im/pidgin
+RUN_DEPENDS=	pidgin:net-im/pidgin
 
 USES=		execinfo gmake pkgconfig tar:xz
 USE_GNOME=	glib20 libxml2

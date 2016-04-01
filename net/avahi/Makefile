@@ -10,7 +10,7 @@ CATEGORIES?=	net dns
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	"meta-port" for the Avahi service discovery suite
 
-RUN_DEPENDS=	avahi-app>=0.6.31:${PORTSDIR}/net/avahi-app
+RUN_DEPENDS=	avahi-app>=0.6.31:net/avahi-app
 
 USES=		metaport
 
@@ -20,11 +20,11 @@ AUTOIPD_DESC=	IPv4LL network address configuration daemon
 GTK_DESC=	Gtk+ tools and bindings
 LIBDNS_DESC=	Apple's mDNSResponder compatibility library
 
-AUTOIPD_RUN_DEPENDS=	avahi-autoipd:${PORTSDIR}/net/avahi-autoipd
-GTK_RUN_DEPENDS=	avahi-discover-standalone:${PORTSDIR}/net/avahi-gtk
-#LIBDNS_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-compat-libdns_sd.pc:${PORTSDIR}/net/avahi-libdns
-MONO_RUN_DEPENDS=	${LOCALBASE}/lib/mono/avahi-sharp/avahi-sharp.dll:${PORTSDIR}/net/avahi-sharp
-QT4_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-qt4.pc:${PORTSDIR}/net/avahi-qt4
-PYTHON_RUN_DEPENDS=	avahi-bookmarks:${PORTSDIR}/net/py-avahi
+AUTOIPD_RUN_DEPENDS=	avahi-autoipd:net/avahi-autoipd
+GTK_RUN_DEPENDS=	avahi-discover-standalone:net/avahi-gtk
+#LIBDNS_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-compat-libdns_sd.pc:net/avahi-libdns
+MONO_RUN_DEPENDS=	${LOCALBASE}/lib/mono/avahi-sharp/avahi-sharp.dll:net/avahi-sharp
+QT4_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-qt4.pc:net/avahi-qt4
+PYTHON_RUN_DEPENDS=	avahi-bookmarks:net/py-avahi
 
 .include <bsd.port.mk>

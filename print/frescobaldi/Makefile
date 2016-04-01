@@ -13,8 +13,8 @@ COMMENT=	Music score editor for lilypond
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	lilypond:${PORTSDIR}/print/lilypond \
-		${PYTHON_PKGNAMEPREFIX}poppler-qt4>=0:${PORTSDIR}/graphics/py-poppler-qt4
+RUN_DEPENDS=	lilypond:print/lilypond \
+		${PYTHON_PKGNAMEPREFIX}poppler-qt4>=0:graphics/py-poppler-qt4
 
 USES=		gettext python
 INSTALLS_ICONS=	yes

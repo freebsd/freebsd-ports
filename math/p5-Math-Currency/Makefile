@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for exact currency math with formatting and rounding
 
-BUILD_DEPENDS=	p5-Math-FixedPrecision>=0:${PORTSDIR}/math/p5-Math-FixedPrecision
+BUILD_DEPENDS=	p5-Math-FixedPrecision>=0:math/p5-Math-FixedPrecision
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

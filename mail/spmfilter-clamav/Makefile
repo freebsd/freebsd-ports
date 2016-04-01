@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.spmfilter.org/files/
 MAINTAINER=	ast@treibsand.com
 COMMENT=	ClamAV plugin for spmfilter
 
-BUILD_DEPENDS=	spmfilter>=0.6:${PORTSDIR}/mail/spmfilter
-RUN_DEPENDS=	spmfilter>=0.6:${PORTSDIR}/mail/spmfilter
+BUILD_DEPENDS=	spmfilter>=0.6:mail/spmfilter
+RUN_DEPENDS=	spmfilter>=0.6:mail/spmfilter
 
 USES=		cmake pkgconfig
 CMAKE_ARGS+=	--no-warn-unused-cli \

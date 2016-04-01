@@ -12,7 +12,7 @@ COMMENT=	SOAP and XML-RPC support for TCL library
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${LOCALBASE}/lib/TclxmlConfig.sh:${PORTSDIR}/devel/tclxml
+RUN_DEPENDS=	${LOCALBASE}/lib/TclxmlConfig.sh:devel/tclxml
 
 USES=		tcl:wrapper,build
 USE_AUTOTOOLS=	autoconf:autoconf

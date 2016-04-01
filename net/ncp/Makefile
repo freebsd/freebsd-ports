@@ -9,7 +9,7 @@ MASTER_SITES=	http://dl.fefe.de/ http://dl.mteege.de/fefe/
 MAINTAINER=	matthias@mteege.de
 COMMENT=	Fast file copy tool for LANs
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
+BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:devel/libowfat
 
 USES=		tar:bzip2
 

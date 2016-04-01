@@ -13,7 +13,7 @@ COMMENT=	General purpose implementation of the xmlrpc specification in C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake iconv libtool tar:bzip2
 USE_LDCONFIG=	yes

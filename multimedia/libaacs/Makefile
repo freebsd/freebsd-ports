@@ -12,9 +12,9 @@ COMMENT=	Advanced Access Content System implementation
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libgpg-error.so:${PORTSDIR}/security/libgpg-error
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LEX="${LOCALBASE}/bin/flex"

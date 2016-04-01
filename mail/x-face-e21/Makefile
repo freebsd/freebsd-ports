@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	X-Face utilities for Emacs 21 (and possibly 22)
 
-RUN_DEPENDS=	uncompface:${PORTSDIR}/mail/faces
+RUN_DEPENDS=	uncompface:mail/faces
 
 USE_EMACS=	yes
 

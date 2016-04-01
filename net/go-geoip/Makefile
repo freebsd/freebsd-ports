@@ -11,7 +11,7 @@ COMMENT=	Go library to wrap the libgeoip C library
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 USES=		compiler
 USE_GITHUB=	yes

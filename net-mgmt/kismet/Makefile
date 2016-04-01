@@ -41,7 +41,7 @@ PORTEXAMPLES=	*
 
 .if ${PORT_OPTIONS:MPCRE}
 CONFIGURE_ARGS+=--enable-pcre
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 .else
 CONFIGURE_ARGS+=--disable-pcre
 .endif

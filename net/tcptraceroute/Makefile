@@ -12,7 +12,7 @@ COMMENT=	Traceroute implementation using TCP packets
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:net/libnet
 
 OPTIONS_DEFINE=	DOCS
 

@@ -12,9 +12,9 @@ COMMENT=	Python wrapper around the RIPE Atlas API
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}socketio-client>=0.6.5:${PORTSDIR}/net/py-socketio-client \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}socketio-client>=0.6.5:net/py-socketio-client \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests
 
 USES=	python
 USE_PYTHON=	autoplist distutils

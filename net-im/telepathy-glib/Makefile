@@ -10,9 +10,9 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib utility library for the Telepathy framework
 
-BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS=	vapigen:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	vapigen:lang/vala
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+RUN_DEPENDS=	vapigen:lang/vala
 
 PORTSCOUT=	limitw:1,even
 

@@ -47,12 +47,12 @@ CONFIGURE_ARGS=--enable-clamavdb-path=/var/db/clamav \
 		--enable-user=nobody
 
 CLAMAV_CONFIGURE_OFF=	--enable-clamav=n
-CLAMAV_BUILD_DEPENDS=	clamdscan:${PORTSDIR}/security/clamav
+CLAMAV_BUILD_DEPENDS=	clamdscan:security/clamav
 
 RIPMIME_CONFIGURE_OFF=	--disable-ripmime
-RIPMIME_BUILD_DEPENDS=	ripmime:${PORTSDIR}/mail/ripmime
+RIPMIME_BUILD_DEPENDS=	ripmime:mail/ripmime
 
-SPAMD_BUILD_DEPENDS=	spamassassin:${PORTSDIR}/mail/spamassassin
+SPAMD_BUILD_DEPENDS=	spamassassin:mail/spamassassin
 SPAMD_CONFIGURE_ON=	--enable-spam=y \
 			--enable-spamassassin-path=${LOCALBASE}/bin/spamassassin
 
@@ -70,7 +70,7 @@ HEADERS_CONFIGURE_ON=	--enable-received=y \
 			--enable-sigtool-path=${LOCALBASE}/bin/sigtool
 
 DSPAM_CONFIGURE_ON=	--enable-dspam=y
-DSPAM_BUILD_DEPENDS=	dspam:${PORTSDIR}/mail/dspam
+DSPAM_BUILD_DEPENDS=	dspam:mail/dspam
 
 .if defined(SPAM_HITS)
 CONFIGURE_ARGS+=--enable-spam-hits=${SPAM_HITS}

@@ -12,7 +12,7 @@ COMMENT=	Automated program/system tester
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libexpect.so:${PORTSDIR}/lang/expect
+LIB_DEPENDS=	libexpect.so:lang/expect
 
 USES+=		gmake tcl
 GNU_CONFIGURE=	yes

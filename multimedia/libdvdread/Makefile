@@ -27,6 +27,6 @@ OPTIONS_DEFAULT=	DVDCSS
 .endif
 
 # DVDCSS version hardcoded in src/dvd_input.c (dlopen'ed)
-DVDCSS_LIB_DEPENDS=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
+DVDCSS_LIB_DEPENDS=	libdvdcss.so.2:multimedia/libdvdcss
 
 .include <bsd.port.mk>

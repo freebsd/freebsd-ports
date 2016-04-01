@@ -12,7 +12,7 @@ COMMENT=	Simple arp scanner
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet
+LIB_DEPENDS=	libdnet.so:net/libdnet
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jasonish

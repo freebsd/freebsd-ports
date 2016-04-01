@@ -12,10 +12,10 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib/GObject wrapper for the Skydrive and Hotmail API
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
-		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
-		librest-0.7.so:${PORTSDIR}/devel/librest
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
+		libjson-glib-1.0.so:devel/json-glib \
+		librest-0.7.so:devel/librest
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intltool

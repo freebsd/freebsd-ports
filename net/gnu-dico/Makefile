@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	gnu-
 MAINTAINER=	goran.tal@gmail.com
 COMMENT=	Flexible modular implementation of DICT server
 
-LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USE_LDCONFIG=	yes
 USES=		tar:xz gmake libtool
@@ -38,7 +38,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGUILE}
-LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	libguile.so:lang/guile
 PLIST_SUB+=	GUILE=""
 .else
 CONFIGURE_ARGS+=--without-guile
@@ -46,7 +46,7 @@ PLIST_SUB+=	GUILE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:devel/pcre
 PLIST_SUB+=	PCRE=""
 .else
 CONFIGURE_ARGS+=--without-pcre
@@ -54,7 +54,7 @@ PLIST_SUB+=	PCRE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGSASL}
-LIB_DEPENDS+=	libgsasl.so:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	libgsasl.so:security/gsasl
 CONFIGURE_ARGS+=--with-gsasl
 .else
 CONFIGURE_ARGS+=--without-gsasl

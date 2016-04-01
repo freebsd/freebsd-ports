@@ -11,14 +11,14 @@ COMMENT=	Bible interface utilizing the sword framework
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
+RUN_DEPENDS=	yelp:x11/yelp
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
-		docbook2html:${PORTSDIR}/textproc/docbook-utils \
-		gnome-doc-tool:${PORTSDIR}/textproc/gnome-doc-utils \
-		nspr>=4.8:${PORTSDIR}/devel/nspr
-LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib  \
-		libsword.so:${PORTSDIR}/misc/sword
+		docbook2html:textproc/docbook-utils \
+		gnome-doc-tool:textproc/gnome-doc-utils \
+		nspr>=4.8:devel/nspr
+LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3 \
+		libdbus-glib-1.so:devel/dbus-glib  \
+		libsword.so:misc/sword
 
 USES=		gettext pkgconfig waf
 INSTALLS_OMF=	yes

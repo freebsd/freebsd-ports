@@ -13,10 +13,10 @@ COMMENT=	Very fast and configurable open source SIP proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libcurl.so:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libxml2.so:textproc/libxml2 \
+		libcurl.so:ftp/curl
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		gmake readline shebangfix
 USE_LDCONFIG=	yes
@@ -43,9 +43,9 @@ WEBSOCKET_DESC=	Websocket support
 
 MYSQL_USE=	mysql=yes
 PGSQL_USES=	pgsql
-JITSI_RUN_DEPENDS=	jitsi:${PORTSDIR}/net-im/jitsi
-UNIXODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
-RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
+JITSI_RUN_DEPENDS=	jitsi:net-im/jitsi
+UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
 TLS_USE=		OPENSSL=yes
 
 .include <bsd.port.options.mk>
@@ -103,7 +103,7 @@ EXTRA_GROUPS+=	presence
 
 .if ${PORT_OPTIONS:MWEBSOCKET}
 EXTRA_MODULES+=	websocket
-LIB_DEPENDS+=	libunistring.so:${PORTSDIR}/devel/libunistring
+LIB_DEPENDS+=	libunistring.so:devel/libunistring
 .endif
 
 .if !empty (EXTRA_GROUPS)

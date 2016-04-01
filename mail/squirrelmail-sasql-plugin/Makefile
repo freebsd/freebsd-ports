@@ -9,7 +9,7 @@ CATEGORIES=	mail www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Edit SpamAssassin settings stored in an SQL DB
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:databases/pear-DB
 
 USE_SM_COMPAT=	yes
 USE_GENERIC_PKGMESSAGE=	yes

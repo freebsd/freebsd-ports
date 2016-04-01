@@ -12,8 +12,8 @@ GST_PLUGIN_SUFFIX=	-good
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
-BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
-RUN_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
+BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:multimedia/gstreamer-plugins
+RUN_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:multimedia/gstreamer-plugins
 
 USE_XORG+=	xdamage
 

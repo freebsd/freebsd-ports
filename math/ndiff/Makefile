@@ -23,7 +23,7 @@ PORTDOCS=	*.html *.pdf *.ps *.txt
 
 OPTIONS_DEFINE=	DOCS GMP
 
-GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 GMP_CFLAGS=	-I${LOCALBASE}/include
 GMP_LDFLAGS=	-L${LOCALBASE}/lib
 GMP_CONFIGURE_ON=	--with-gmp

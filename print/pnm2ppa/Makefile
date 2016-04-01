@@ -19,9 +19,9 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(A4) || !empty(PORT_OPTIONS:MA4SIZE)
-RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-a4
+RUN_DEPENDS=	enscript:print/enscript-a4
 .else
-RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-letter
+RUN_DEPENDS=	enscript:print/enscript-letter
 .endif
 
 post-patch:

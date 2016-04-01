@@ -10,7 +10,7 @@ MASTER_SITES=	http://ftp.indexdata.dk/pub/yazproxy/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Powerful general purpose Z39.50/SRW/SRU proxy
 
-LIB_DEPENDS=	libyazpp.so:${PORTSDIR}/net/yaz++
+LIB_DEPENDS=	libyazpp.so:net/yaz++
 
 USES=		libtool
 GNU_CONFIGURE=	yes

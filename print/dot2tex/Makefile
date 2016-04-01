@@ -10,8 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Graphviz to LaTeX converter
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:${PORTSDIR}/devel/py-pyparsing \
-		dot:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing \
+		dot:graphics/graphviz
 
 # The .tar.gz sucks!
 USES=		python zip

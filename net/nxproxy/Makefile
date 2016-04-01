@@ -12,7 +12,7 @@ COMMENT=	Helper program for x2go
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libXcomp.so:${PORTSDIR}/x11/nxcomp
+LIB_DEPENDS=	libXcomp.so:x11/nxcomp
 WRKSRC=	${WRKDIR}/nx-libs-${PORTVERSION}/${PORTNAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -10,10 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/Nepenthes%20development/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Determine the malware activity on a network
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libadns.so:${PORTSDIR}/dns/adns \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libmagic.so:${PORTSDIR}/sysutils/file
+LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libadns.so:dns/adns \
+		libcurl.so:ftp/curl \
+		libmagic.so:sysutils/file
 
 USES=		dos2unix libtool perl5
 DOS2UNIX_FILE=	modules/shellcode-generic/sch_generic_connect_trans.cpp
@@ -28,7 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=		DEBUG_LOGGING PRELUDE
 
 DEBUG_LOGGING_CONFIGURE_ENABLE=	debug-logging
-PRELUDE_LIB_DEPENDS=	libprelude.so:${PORTSDIR}/security/libprelude
+PRELUDE_LIB_DEPENDS=	libprelude.so:security/libprelude
 PRELUDE_CONFIGURE_ENABLE=	prelude
 
 post-patch:

@@ -12,10 +12,10 @@ COMMENT=	Maximum Likelihood Estimation and Related Tools
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	R-cran-miscTools>=0.6.8:${PORTSDIR}/math/R-cran-miscTools \
-		R-cran-sandwich>=0:${PORTSDIR}/math/R-cran-sandwich
-RUN_DEPENDS=	R-cran-miscTools>=0.6.8:${PORTSDIR}/math/R-cran-miscTools \
-		R-cran-sandwich>=0:${PORTSDIR}/math/R-cran-sandwich
+BUILD_DEPENDS=	R-cran-miscTools>=0.6.8:math/R-cran-miscTools \
+		R-cran-sandwich>=0:math/R-cran-sandwich
+RUN_DEPENDS=	R-cran-miscTools>=0.6.8:math/R-cran-miscTools \
+		R-cran-sandwich>=0:math/R-cran-sandwich
 
 USES=	cran:auto-plist
 
