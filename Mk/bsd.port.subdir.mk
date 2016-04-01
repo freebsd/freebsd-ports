@@ -481,7 +481,7 @@ _PORTSEARCH=	\
 	        -v icase="$${icase:-${PORTSEARCH_IGNORECASE}}" \
 	    'BEGIN { \
 	        if (icase) { \
-	    	if (length(name))  name = tolower(name);  if (length(xname))  xname = tolower(xname); \
+		if (length(name))  name = tolower(name);  if (length(xname))  xname = tolower(xname); \
 	        } \
 	        fields["name"]  = 1;  names[1]  = "Port"; \
 	        fields["destination"]  = 2;  names[2]  = "Moved"; \
@@ -494,9 +494,9 @@ _PORTSEARCH=	\
 		sub(".*\/", "", oldname);  newname = sub(".*\/", "", newname); \
 	        if (((icase ? tolower(oldname) : oldname) ~ name) || \
 		  ((icase ? tolower(newname) : newname) ~ name)) { \
-	    	    for (i = 1; i <= 4; i++) { \
-	    		printf("%s:\t%s\n", names[i], $$i); \
-	    	    } \
+		    for (i = 1; i <= 4; i++) { \
+			printf("%s:\t%s\n", names[i], $$i); \
+		    } \
 	        print(""); \
 	        } \
 	    }' ${MOVEDDIR}/${MOVEDFILE}; \

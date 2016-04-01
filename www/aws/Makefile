@@ -134,7 +134,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's|@ADDITIONAL_RPATH@|${ADDL_RPATH}|' \
 	    -e 's|@PREFIX@|${LOCALBASE}|g' \
-	   	${WRKSRC}/aws.gpr \
+		${WRKSRC}/aws.gpr \
 		${WRKSRC}/src/src.gpr \
 		${WRKSRC}/include/include.gpr
 	@${SED} -e 's|@PREFIX@|${LOCALBASE}|g' ${FILESDIR}/temparse.gpr.in \

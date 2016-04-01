@@ -11,14 +11,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit to work with DICOM objects
 
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
-    		libpng.so:${PORTSDIR}/graphics/png
+		libpng.so:${PORTSDIR}/graphics/png
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USES=		cmake:outsource jpeg
 CMAKE_ARGS+=	-DDCMTK_WITH_DOXYGEN:BOOL=OFF \
-    		-DDCMTK_WITH_OPENSSL:BOOL=ON
+		-DDCMTK_WITH_OPENSSL:BOOL=ON
 
 SHLIBS=		dcmdata dcmdsig dcmimage dcmimgle dcmjpeg dcmnet \
 		dcmpstat dcmqrdb dcmsr dcmtls dcmwlm ijg8 ijg12 \

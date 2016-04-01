@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libcanberra.so:${PORTSDIR}/audio/libcanberra \
-   		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
 		libgtkimageview.so:${PORTSDIR}/x11-toolkits/gtkimageview
 
 USES=		gmake pkgconfig tar:bzip2 tcl

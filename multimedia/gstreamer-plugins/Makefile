@@ -158,7 +158,7 @@ post-patch:
 	  s|$$(top_builddir)/gst-libs/gst/cdda/libgstcdda-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstcdda-@GST_MAJORMINOR@.la|'
 	@${REINPLACE_CMD} -e 's|DEFAULT_AUDIOSINK="alsasink"|DEFAULT_AUDIOSINK="${DEFAULT_AUDIOSINK}"|; \
 		s|DEFAULT_AUDIOSRC="alsasrc"|DEFAULT_AUDIOSRC="${DEFAULT_AUDIOSRC}"|' \
-        	-e 's|-Wmissing-include-dirs||g' \
+		-e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
 
 # workaround a crash in clang 3.3 crash llvm bug # 15840

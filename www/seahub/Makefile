@@ -109,7 +109,7 @@ post-install-sitepackages:
 		if [ "$$sp_pkg" == "Djblets-0.6.14" ]; then ${REINPLACE_CMD} -e "s|PIL|Pillow|" ./Djblets.egg-info/requires.txt; \
 			${REINPLACE_CMD} -e "s|PIL|Pillow|" ./setup.py; fi && \
 		${PYTHON_CMD} setup.py install; \
-	       	done))
+		done))
 	(cd ${VIRTUALENV}${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITEPACKAGEDIR})
 

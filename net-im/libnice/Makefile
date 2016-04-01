@@ -41,7 +41,7 @@ CONFIGURE_ARGS=	--without-gstreamer --without-gstreamer-0.10
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-	    	's|-Wno-missing-field-initializers|#|g'
+		's|-Wno-missing-field-initializers|#|g'
 	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

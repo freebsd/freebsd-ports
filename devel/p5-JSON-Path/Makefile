@@ -14,7 +14,7 @@ COMMENT=	Search nested hashref/arrayref structures using JSONPath
 LICENSE=	MIT
 
 BUILD_DEPENDS=	p5-Exporter-Tiny>=0:${PORTSDIR}/devel/p5-Exporter-Tiny \
-    		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-LV>=0:${PORTSDIR}/devel/p5-LV
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

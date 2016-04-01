@@ -37,8 +37,8 @@ do-build:
 do-install:
 	(cd ${WRKSRC}/Src/Newtonsoft.Json/bin/Release/Net45 && \
 		${SETENV} MONO_SHARED_DIR=${WRKDIR} ${LOCALBASE}/bin/gacutil \
-	       	/root ${STAGEDIR}${PREFIX}/lib/ \
-	       	/package Newtonsoft.Json /i Newtonsoft.Json.dll)
+		/root ${STAGEDIR}${PREFIX}/lib/ \
+		/package Newtonsoft.Json /i Newtonsoft.Json.dll)
 	(cd ${WRKDIR} && ${INSTALL_DATA} Newtonsoft.Json.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig)
 

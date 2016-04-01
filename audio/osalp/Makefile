@@ -12,7 +12,7 @@ COMMENT=	Open Source Audio Library Project
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
-    		libvorbis.so:${PORTSDIR}/audio/libvorbis
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USES=		libtool
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ COMMENT=	Module for dumping database (DBI) data into a variety of formats
 
 BUILD_DEPENDS=	p5-DBI>=1.57:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-    		p5-Spreadsheet-WriteExcel>=0:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
+		p5-Spreadsheet-WriteExcel>=0:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
 		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS
 
 USES=		perl5

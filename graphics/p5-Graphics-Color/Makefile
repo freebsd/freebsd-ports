@@ -15,10 +15,10 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Color-Library>=0.02:${PORTSDIR}/graphics/p5-Color-Library \
 		p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
-  		p5-MooseX-Aliases>=0.03:${PORTSDIR}/devel/p5-MooseX-Aliases \
-  		p5-MooseX-Clone>=0.03:${PORTSDIR}/devel/p5-MooseX-Clone \
-  		p5-MooseX-Storage>=0.23:${PORTSDIR}/devel/p5-MooseX-Storage \
-  		p5-MooseX-Types>=0.19:${PORTSDIR}/devel/p5-MooseX-Types
+		p5-MooseX-Aliases>=0.03:${PORTSDIR}/devel/p5-MooseX-Aliases \
+		p5-MooseX-Clone>=0.03:${PORTSDIR}/devel/p5-MooseX-Clone \
+		p5-MooseX-Storage>=0.23:${PORTSDIR}/devel/p5-MooseX-Storage \
+		p5-MooseX-Types>=0.19:${PORTSDIR}/devel/p5-MooseX-Types
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta
 

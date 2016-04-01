@@ -12,7 +12,7 @@ MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
 COMMENT=	SMS::Send driver for SNS service of CHT
 
 RUN_DEPENDS=	p5-SMS-Send>=0:${PORTSDIR}/comms/p5-SMS-Send \
-  		p5-Switch>=0:${PORTSDIR}/lang/p5-Switch \
+		p5-Switch>=0:${PORTSDIR}/lang/p5-Switch \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv

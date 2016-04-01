@@ -78,11 +78,11 @@ post-patch:
 .if ${PORT_OPTIONS:MPAM}
 .for f in driver/passwd-pam.c driver/xscreensaver.man
 	@${REINPLACE_CMD} -e 's|/etc/pam.d|${PREFIX}/etc/pam.d|g' \
-	    	${WRKSRC}/${f}
+		${WRKSRC}/${f}
 .endfor
 .else
 	@${REINPLACE_CMD} -e 's|install-xml install-pam|install-xml|' \
-	    	${WRKSRC}/driver/Makefile.in
+		${WRKSRC}/driver/Makefile.in
 .endif
 
 pre-build:
@@ -101,7 +101,7 @@ post-install-slave:
 
 post-install: post-install-slave
 	@(if test -x ${STAGEDIR}${PREFIX}/bin/xscreensaver-hacks/webcollage-helper; then \
-	    	${ECHO} "bin/xscreensaver-hacks/webcollage-helper" | \
+		${ECHO} "bin/xscreensaver-hacks/webcollage-helper" | \
 			${CAT} - ${TMPPLIST} > ${TMPPLIST}.cat && \
 			${MV} ${TMPPLIST}.cat ${TMPPLIST}; fi)
 

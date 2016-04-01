@@ -94,12 +94,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|girepositry|girepository|g' \
 		${WRKSRC}/lib/packagekit-glib2/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-	    	'/xsltproc/s|.xsl [$$]? &> /dev|.xsl $$? > /dev|g'
+		'/xsltproc/s|.xsl [$$]? &> /dev|.xsl $$? > /dev|g'
 
 post-install:
 .if !defined(SLAVEPORT)
 	@${INSTALL_DATA} ${WRKSRC}/data/transactions.db \
-	    	${STAGEDIR}${PREFIX}/share/PackageKit/transactions.db
+		${STAGEDIR}${PREFIX}/share/PackageKit/transactions.db
 .endif
 
 .include <bsd.port.mk>

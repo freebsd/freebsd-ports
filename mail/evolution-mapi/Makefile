@@ -32,6 +32,6 @@ post-patch:
 		${WRKSRC}/src/libexchangemapi/Makefile.in
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		-e 's|$$(prefix)/$$(DATADIRNAME)/|$$(prefix)/share/|g' \
-	    	${WRKSRC}/configure
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -26,7 +26,7 @@ USE_LDCONFIG=	${PREFIX}/lib/fltk-devel
 USES+=		cmake:outsource jpeg
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-DOPTION_BUILD_SHARED_LIBS:BOOL=ON \
-    		-DPREFIX_BIN:PATH=${PREFIX}/bin/fltk-devel \
+		-DPREFIX_BIN:PATH=${PREFIX}/bin/fltk-devel \
 		-DPREFIX_DATA:PATH=${PREFIX}/share/fltk-devel \
 		-DPREFIX_DOC:PATH=${PREFIX}/share/examples/fltk-devel \
 		-DPREFIX_INCLUDE:PATH=${PREFIX}/include/fltk-devel \

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE} \
-  		--with-vorbis-prefix=${LOCALBASE}
+		--with-vorbis-prefix=${LOCALBASE}
 
 OPTIONS_DEFINE=	DVDREAD
 OPTIONS_DEFAULT=	DVDREAD

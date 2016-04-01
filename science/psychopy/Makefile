@@ -69,7 +69,7 @@ post-build:
 
 post-install:
 	(cd ${WRKDIR} && ${INSTALL_SCRIPT} psychopy \
- 		${STAGEDIR}${PREFIX}/bin)
+		${STAGEDIR}${PREFIX}/bin)
 	@${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psychopy/app/Resources/DejaVuSerif.ttf
 	@${LN} -sf ${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psychopy/app/Resources

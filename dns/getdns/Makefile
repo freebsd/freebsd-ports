@@ -6,7 +6,7 @@ PORTVERSION=	0.9.0
 PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
-    		https://mirrors.rit.edu/zi/ \
+		https://mirrors.rit.edu/zi/ \
 		http://getdnsapi.net/dist/ \
 		http://mirrors.rit.edu/zi/
 
@@ -17,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-    		libidn.so:${PORTSDIR}/dns/libidn \
+		libidn.so:${PORTSDIR}/dns/libidn \
 		libldns.so:${PORTSDIR}/dns/ldns \
 		libunbound.so:${PORTSDIR}/dns/unbound
 
@@ -56,7 +56,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -Ee 's,^(sharedoc = ).*,\1${WRKDIR}/doc,' \
-	    	-e '/echo .\*\*\*/d' ${WRKSRC}/Makefile.in
+		-e '/echo .\*\*\*/d' ${WRKSRC}/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}

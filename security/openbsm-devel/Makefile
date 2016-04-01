@@ -5,7 +5,7 @@ PORTNAME=	openbsm
 DISTVERSION=	1.2-alpha4
 CATEGORIES=	security
 MASTER_SITES=	http://www.trustedbsd.org/downloads/ \
-    		http://mirrors.rit.edu/zi/
+		http://mirrors.rit.edu/zi/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	zi@FreeBSD.org

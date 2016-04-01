@@ -181,7 +181,7 @@ post-patch:
 .else
 	# In server port don't install filed
 	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' \
-	 	${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.in
 .endif
 
 .if !target(post-install)

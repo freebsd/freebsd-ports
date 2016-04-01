@@ -29,7 +29,7 @@ post-patch:
 	${MKDIR} ${WRKSRC}/cache
 	cd ${WRKSRC}; \
 	${REINPLACE_CMD} -e 's|/usr/bin/git|/usr/local/bin/git|g' config.ini-example; \
- 	${FIND} . ! -type d | ${SORT} | ${SED} -e "s,^\.,%%WWWDIR%%," > ${PLIST};
+	${FIND} . ! -type d | ${SORT} | ${SED} -e "s,^\.,%%WWWDIR%%," > ${PLIST};
 	${ECHO} "@dir %%WWWDIR%%/vendor/phpmd/phpmd/setup" >> ${PLIST}
 	${ECHO} "@dir(${WWWOWN},${WWWGRP},) %%WWWDIR%%/cache" >> ${PLIST}
 
